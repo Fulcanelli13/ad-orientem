@@ -108,6 +108,12 @@ try{
     assert.ok(folio.photoWidth>=0.7*folio.width,
       "C desktop artwork must span most of the folio "+JSON.stringify(folio));
    }
+   const selectedImage=page.locator("#ao-find-modular-root .aoHeritagePreview .aoHeritagePlaceThumb img");
+   if(await selectedImage.count()){
+    await page.waitForFunction(()=>{const img=document.querySelector(
+      "#ao-find-modular-root .aoHeritagePreview .aoHeritagePlaceThumb img");
+      return Boolean(img?.complete&&img.naturalWidth>0)},null,{timeout:15000});
+   }
    await page.screenshot({path:resolve(out,"explore-"+width+"-selected-place.png"),fullPage:false});
    await page.locator("#ao-find-modular-root .aoHeritagePreview button[data-find-close-place]").click();
    await search.fill("");
@@ -165,10 +171,18 @@ try{
    await page.waitForTimeout(1200);
    const emblemReview=await page.evaluate(()=>{
      const map=globalThis.__AO_EXPLORE_VISUAL_REVIEW_MAP;
-     return {pointCount:map.queryRenderedFeatures?.({layers:["ao-explore-points"]})?.length??0,
+     const points=map.queryRenderedFeatures?.({layers:["ao-explore-points"]})||[];
+     const eligible=points.filter(p=>["FSSP","ICKSP","IBP","SSPX","DIOCESAN"].includes(
+       String(p.properties?.provider_group||""))).length;
+     const logoOverlays=document.querySelectorAll(".aoExploreInstitutionMapPin img");
+     return {pointCount:points.length,eligible,
        emblemLayer:Boolean(map.getLayer?.("ao-explore-institution-emblems")),
+       logoOverlays:logoOverlays.length,
+       logoLoaded:[...logoOverlays].filter(img=>img.complete&&img.naturalWidth>0).length,
        clusterCount:map.queryRenderedFeatures?.({layers:["ao-explore-clusters"]})?.length??0};
    });
+   assert.ok(emblemReview.eligible===0||emblemReview.emblemLayer||emblemReview.logoLoaded>0,
+     "Institution logos must render ON eligible map pins, not only in filter chips: "+JSON.stringify(emblemReview));
    await page.screenshot({path:resolve(out,"explore-"+width+"-mass-emblems-closeup.png"),fullPage:false});
    captures.push({width,...measures,errors,massScreenshot:true,
      closeup:emblemReview});
