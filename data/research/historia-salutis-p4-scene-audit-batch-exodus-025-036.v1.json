@@ -1,0 +1,279 @@
+{
+  "schema": "ao.historia.p4.scene-audit.batch.v1",
+  "status": "RESEARCH_ONLY_NOT_PRODUCTION_CERTIFIED",
+  "createdOn": "2026-10-21",
+  "batch": "Exodus scenes indices 25–36 derived from registry JSON",
+  "inputs": [
+    "data/explore/biblical-cinematic-studies-review.v1.json",
+    "data/scripture/witness/cpdv-2009/Exodus.json",
+    "data/explore/historia-salutis-p0-master-crosswalk.v1.json"
+  ],
+  "policy": {
+    "canonicalAtlasEventsUnchanged": true,
+    "coordinatesAdded": false,
+    "baselineAtlasClassificationsPreserved": true,
+    "canonicalScriptureChanged": false
+  },
+  "reviewedSceneCount": 12,
+  "sceneKeys": [
+    "biblical:scene:moses:025",
+    "biblical:scene:moses:026",
+    "biblical:scene:moses:027",
+    "biblical:scene:moses:028",
+    "biblical:scene:moses:029",
+    "biblical:scene:moses:030",
+    "biblical:scene:moses:031",
+    "biblical:scene:moses:032",
+    "biblical:scene:moses:033",
+    "biblical:scene:moses:034",
+    "biblical:scene:moses:035",
+    "biblical:scene:moses:036"
+  ],
+  "scenes": [
+    {
+      "sceneKey": "biblical:scene:moses:025",
+      "index": 25,
+      "reference": "Exodus 1:8–22",
+      "title": "Israel under oppression",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasLinks": [],
+      "personsExplicitOrCollective": "Pharaoh; Hebrew midwives Shiphrah and Puah; Hebrew people collectively",
+      "chronologyAndNarrativeFinding": "Exodus 1:8–22 describes a new Pharaoh's oppression and order to kill Hebrew boys; no route or precise city is supplied. Goshen is linked in wider Genesis/Exodus context, but this passage says the Israelites multiplied in Egypt and names no Goshen location.",
+      "geography": {
+        "claim": "Egypt country-level; Goshen only contextual from other passages, not stated in 1:8–22. No exact location.",
+        "classification": "REGIONAL_DISPUTED_OR_UNLOCATED",
+        "sources": []
+      },
+      "covenantAndGenealogy": "No genealogy; oppression precedes Moses' birth and Exodus deliverance.",
+      "auditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:026",
+      "index": 26,
+      "reference": "Exodus 2:1–10",
+      "title": "Moses is born and hidden",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:passage:exodus-2-1-10",
+          "reference": "Exodus 2:1–10",
+          "relation": "EXACT_REFERENCE"
+        }
+      ],
+      "personsExplicitOrCollective": "Unnamed Levite man/woman, infant Moses, Moses' sister, Pharaoh's daughter, her maidens, Hebrew nurse",
+      "chronologyAndNarrativeFinding": "Exodus 2:1–10 narrates Moses' birth, concealment, basket on Nile bank among reeds, Pharaoh's daughter finding him, and his sister arranging a Hebrew nurse. It is an exact Atlas reference match, but no city is stated.",
+      "geography": {
+        "claim": "Nile riverbank/reeds are textual; Nile delta/valley only regional inference. Specific bank unknown.",
+        "classification": "REGIONAL_DISPUTED_OR_UNLOCATED",
+        "sources": []
+      },
+      "covenantAndGenealogy": "Moses' Levitical parentage is stated in adjacent context (2:1); no covenant act.",
+      "auditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:027",
+      "index": 27,
+      "reference": "Exodus 2:11–22",
+      "title": "Moses flees to Midian",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasLinks": [],
+      "personsExplicitOrCollective": "Moses; Egyptian; Hebrew disputants; Reuel/Jethro; his daughters; Zipporah",
+      "chronologyAndNarrativeFinding": "Exodus 2:11–22 covers Moses' killing of Egyptian, flight, and residence in Midian; Jethro's daughters and Zipporah are named later within the span. No single location for the whole sequence; the flight route is unstated.",
+      "geography": {
+        "claim": "Egypt, Midian textual regions. Midian's extent/modern location is broad and debated; no point pin or route.",
+        "classification": "REGIONAL_DISPUTED_OR_UNLOCATED",
+        "sources": []
+      },
+      "covenantAndGenealogy": "Moses marries Zipporah and becomes father of Gershom (2:21–22); no covenant event.",
+      "auditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:028",
+      "index": 28,
+      "reference": "Exodus 3:1–15",
+      "title": "The burning bush",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:passage:exodus-3-1-15",
+          "reference": "Exodus 3:1–15",
+          "relation": "EXACT_REFERENCE"
+        }
+      ],
+      "personsExplicitOrCollective": "Moses; God/LORD; angel of the LORD in flame; Jethro mentioned as owner/kin",
+      "chronologyAndNarrativeFinding": "Exodus 3:1–15 places Moses at Horeb, the mountain of God, while tending Jethro's flock. Burning bush, divine call, and name revelation are narrated; Jebel Musa is later tradition and not established by text.",
+      "geography": {
+        "claim": "Horeb named by text, but modern mountain identification contested; classify TEXTUAL_NAME / TRADITIONAL_SITE_CANDIDATE. Not exact coordinate.",
+        "classification": "TEXTUAL_REGION_OR_FEATURE",
+        "sources": []
+      },
+      "covenantAndGenealogy": "Call of Moses initiates deliverance; promise to patriarchs invoked (3:6,15), covenant continuity explicit.",
+      "auditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:029",
+      "index": 29,
+      "reference": "Exodus 4:18–31",
+      "title": "Moses returns to Egypt",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasLinks": [],
+      "personsExplicitOrCollective": "Moses, Zipporah, sons (unnamed), LORD/angel context, Aaron, Israelite elders",
+      "chronologyAndNarrativeFinding": "Exodus 4:18–31 narrates Moses' return to Egypt, encounter at lodging place with Zipporah's circumcision action, Aaron's meeting, signs, and elders' belief. Registry Goshen label is not stated in this passage.",
+      "geography": {
+        "claim": "Moses leaves Midian for Egypt; exact lodging, route and meeting place unspecified. Egypt regional only.",
+        "classification": "REGIONAL_DISPUTED_OR_UNLOCATED",
+        "sources": []
+      },
+      "covenantAndGenealogy": "Moses/Zipporah family; circumcision is covenant sign in narrative context; elders' worship responds to deliverance announcement.",
+      "auditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:030",
+      "index": 30,
+      "reference": "Exodus 5:1–23",
+      "title": "Let my people go",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasLinks": [],
+      "personsExplicitOrCollective": "Moses, Aaron, Pharaoh, Israelite foremen, taskmasters",
+      "chronologyAndNarrativeFinding": "Exodus 5:1–23 is Pharaoh's court confrontation and increased labor burden. Rameses is not named in this passage; the city marker is a hypothesis and should not be represented as exact.",
+      "geography": {
+        "claim": "Egypt; court/city not named. Rameses hypothesis is unsupported by cited verses.",
+        "classification": "REGIONAL_DISPUTED_OR_UNLOCATED",
+        "sources": []
+      },
+      "covenantAndGenealogy": "Deliverance conflict within covenant promise to Israel; no genealogy.",
+      "auditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:031",
+      "index": 31,
+      "reference": "Exodus 7:8–13",
+      "title": "The staff and the magicians",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasLinks": [],
+      "personsExplicitOrCollective": "Moses, Aaron, Pharaoh, Egyptian magicians",
+      "chronologyAndNarrativeFinding": "Exodus 7:8–13 is a sign before Pharaoh, not the first plague. Aaron's staff becomes a serpent and consumes the magicians' staffs; the registry title is accurate, but location Rameses is not specified.",
+      "geography": {
+        "claim": "Pharaoh's presence/court implied; no city or exact location in verses.",
+        "classification": "TEXTUAL_REGION_OR_FEATURE",
+        "sources": []
+      },
+      "covenantAndGenealogy": "Deliverance signs; no genealogy or covenant enactment.",
+      "auditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:032",
+      "index": 32,
+      "reference": "Exodus 7:14–25",
+      "title": "The first plague: the Nile turns to blood",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:passage:exodus-7-14-25",
+          "reference": "Exodus 7:14–25",
+          "relation": "EXACT_REFERENCE"
+        }
+      ],
+      "personsExplicitOrCollective": "Moses, Aaron, Pharaoh, Egyptians collectively",
+      "chronologyAndNarrativeFinding": "Exodus 7:14–25 narrates the Nile water sign/plague and seven-day interval. Text names river, canals, ponds, pools and vessels; no single reach of Nile is identified. The scene's first-plague description is text-faithful.",
+      "geography": {
+        "claim": "Nile and waters in Egypt exact at regional feature level; no exact river location.",
+        "classification": "TEXTUAL_REGION_OR_FEATURE",
+        "sources": []
+      },
+      "covenantAndGenealogy": "Plague begins confrontation; no covenant/genealogy event.",
+      "auditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:033",
+      "index": 33,
+      "reference": "Exodus 12:1–28",
+      "title": "The first Passover",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:passage:exodus-12-1-28",
+          "reference": "Exodus 12:1–28",
+          "relation": "EXACT_REFERENCE"
+        }
+      ],
+      "personsExplicitOrCollective": "LORD, Moses, Aaron, Israelite households collectively, firstborn/household members",
+      "chronologyAndNarrativeFinding": "Exodus 12:1–28 includes Passover instruction, household lamb/blood, meal, and Israel's observance in Egypt; it is not just a single location event. Keep household-scale activity, no registry pin beyond regional Egypt/Goshen.",
+      "geography": {
+        "claim": "Egypt; household doorways across Israelite settlements, not one point. Goshen may contextualize from Exodus 8:22 but not sole site from these verses.",
+        "classification": "TEXTUAL_REGION_OR_FEATURE",
+        "sources": []
+      },
+      "covenantAndGenealogy": "Passover institution becomes covenantal memorial; household generations and instruction to children explicit in vv24–27.",
+      "auditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:034",
+      "index": 34,
+      "reference": "Exodus 12:31–42",
+      "title": "The departure from Rameses",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:passage:exodus-12-31-42",
+          "reference": "Exodus 12:31–42",
+          "relation": "EXACT_REFERENCE"
+        }
+      ],
+      "personsExplicitOrCollective": "Moses, Aaron, Pharaoh, Israelite people, mixed multitude; Egyptians collectively",
+      "chronologyAndNarrativeFinding": "Exodus 12:31–42 narrates Pharaoh's release command and Israel's departure from Rameses, with 600,000 men and mixed multitude; the route starts at Rameses per v37. Rameses is explicit here, unlike 5:1.",
+      "geography": {
+        "claim": "Rameses named as departure point (12:37), exact archaeological departure point and route unknown. Registry's eastern Delta label remains regional/hypothetical.",
+        "classification": "REGIONAL_DISPUTED_OR_UNLOCATED",
+        "sources": []
+      },
+      "covenantAndGenealogy": "Israel leaves after Passover; firstborn judgment and deliverance memorial context. Genealogical age/sojourning summary in vv40–41 is textual chronology.",
+      "auditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:035",
+      "index": 35,
+      "reference": "Exodus 13:17–22",
+      "title": "The pillar of cloud and fire",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasLinks": [],
+      "personsExplicitOrCollective": "LORD; Israel collectively; Moses only implicit in narrative",
+      "chronologyAndNarrativeFinding": "Exodus 13:17–22 describes God directing the route away from Philistine road, cloud/fire pillar, and encampment at Etham on edge of wilderness. It does not name the northern Suez isthmus; that is modern route hypothesis.",
+      "geography": {
+        "claim": "Succoth, Etham named in surrounding itinerary (13:20); 13:17–22 route features but sea-crossing site unresolved. Regional/topographic sequence, not a precise line.",
+        "classification": "TEXTUAL_REGION_OR_FEATURE",
+        "sources": []
+      },
+      "covenantAndGenealogy": "Deliverance sequence and divine guidance; Joseph's bones carried from 13:19 (ancestral link).",
+      "auditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:036",
+      "index": 36,
+      "reference": "Exodus 14:15–31",
+      "title": "The crossing of the sea",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:passage:exodus-14-15-31",
+          "reference": "Exodus 14:15–31",
+          "relation": "EXACT_REFERENCE"
+        }
+      ],
+      "personsExplicitOrCollective": "Moses, LORD, angel of God, Israel collectively, Pharaoh's chariots/army, Egyptians collectively",
+      "chronologyAndNarrativeFinding": "Exodus 14:15–31 describes sea crossing, Egyptian pursuit, divided waters, Israel's passage, destruction of Egyptian force. Text does not identify the body of water by a modern name; keep location unestablished.",
+      "geography": {
+        "claim": "Sea crossing exact event in text, modern site UNKNOWN; Suez/Reed Sea identifications disputed. No pin or route.",
+        "classification": "REGIONAL_DISPUTED_OR_UNLOCATED",
+        "sources": []
+      },
+      "covenantAndGenealogy": "Deliverance from Egypt; follows Passover and pillar; covenant Sinai follows later. No named genealogy.",
+      "auditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    }
+  ],
+  "openQuestions": [
+    "Modern identification of Horeb/Sinai remains traditional and contested.",
+    "The Exodus sea-crossing location and route remain unresolved; source text provides no modern cartographic identification.",
+    "Goshen is not named in Exodus 1:8–22, 2:1–10, or 4:18–31; do not transfer a regional contextual label as verse-level location."
+  ]
+}
