@@ -195,6 +195,7 @@ try{
    }
   };
  });
+ await page.locator('.aoMassFolioStepNav [data-folio-goto="celebration"]').click();
  for(const [kind,expected] of [["VOTIVE","votive"],["NUPTIAL","nuptial"],["REQUIEM","requiem"],["OTHER","other"],["CALENDAR","day"]]){
   await page.locator('[data-full-mass-category="'+kind+'"]').click();
   const clicked=await page.evaluate(()=>__categoryClicks.at(-1));
