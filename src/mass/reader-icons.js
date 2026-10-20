@@ -248,6 +248,19 @@ function gestureKey(gesture){
   return null;
 }
 
+const SOURCE_SUNG_FORMS=new Set(["MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]);
+function sourceFormPriestVoiceIcon(state,baseKey){
+  const form=token(state.form??state.celebrationForm);
+  const raw=String(state.priestVoice?.value??state.priestVoice?.label??"").trim().toUpperCase();
+  if(!SOURCE_SUNG_FORMS.has(form)||!/^SUNG\s*\/\s*(CLEAR|PUBLIC)(?:\s*\(MISSA CANTATA\))?$/.test(raw))
+    return baseKey;
+  const id=String(state.cueId??state.priestVoice?.cueId??"");
+  const n=Number(id.match(/^AO\.SM\.C(\d{4})$/)?.[1]??NaN);
+  // At Solemn Mass the subdeacon/deacon chant the Epistle/Gospel.
+  if(form==="SOLEMN"&&((n>=75&&n<=78)||(n>=82&&n<=88)))return null;
+  return "final_ao_chant";
+}
+
 export function iconKeysForReaderState(state={}){
   // The final approved bank is opt-in for the actual 65-card curated LIVE
   // presentation. Do not change frozen/legacy/Low/special rite resolver rules.
@@ -260,7 +273,7 @@ export function iconKeysForReaderState(state={}){
     postureIconKey:R17_ICON_KEYS.posture[posture]??null,
     gestureIconKey:gestureKey(state.gesture),
     responseIconKey:state.response ? R17_ICON_KEYS.response : null,
-    priestVoiceIconKey:R17_ICON_KEYS.priestVoice[voice]??voiceIconKey(state.priestVoice?.value??state.priestVoice?.label),
+    priestVoiceIconKey:sourceFormPriestVoiceIcon(state,R17_ICON_KEYS.priestVoice[voice]??voiceIconKey(state.priestVoice?.value??state.priestVoice?.label)),
     scholaIconKey:state.schola ? R17_ICON_KEYS.schola : null,
     // Only an explicit turn toward the congregation owns this pictogram.
     // SEDILIA may face people OR altar depending on local layout; the
