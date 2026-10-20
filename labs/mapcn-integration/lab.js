@@ -202,7 +202,7 @@ async function start(){
     center:[5,25],zoom:1.5,renderWorldCopies:false,attributionControl:true,
     maxPitch:0,pitch:0,dragRotate:false,touchPitch:false});
   s.map.addControl(new maplibregl.NavigationControl({showCompass:false}),"bottom-right");
-  s.map.once("load",()=>{s.mapReady=true;setupLayers();applyMap();fit();$("#map-status").textContent=filtered.length+" mapped records · ready"});
+  s.map.once("load",()=>{s.mapReady=true;setupLayers();applyMap();s.map.resize();requestAnimationFrame(()=>{s.map.resize();fit()});$("#map-status").textContent=filtered.length+" mapped records · ready"});
   s.map.on("error",e=>{if(!s.mapReady)$("#map-status").textContent="Map tiles unavailable; records remain visible"});
  }catch(error){
   $("#map-status").textContent="Could not load laboratory";
@@ -216,6 +216,7 @@ $("#scope").addEventListener("change",e=>{s.scope=e.target.value;render();fit()}
 $("#selected-date").addEventListener("change",e=>{if(/^\d{4}-\d{2}-\d{2}$/.test(e.target.value)){s.selectedDate=e.target.value;render()}});
 $("#reset").addEventListener("click",()=>{s.query="";$("#search").value="";s.scope=s.mode==="time"?"tlm":"all";$("#scope").value=s.scope;render();fit()});
 $("#fit").addEventListener("click",fit);
+window.addEventListener("resize",()=>{if(s.mapReady){s.map.resize();if(!s.active)requestAnimationFrame(fit)}});
 $("#hide-sidebar").addEventListener("click",()=>{const closed=$("#lab").classList.toggle("panel-closed");
  $("#hide-sidebar").setAttribute("aria-pressed",String(!closed));$("#hide-sidebar").textContent=closed?"Show panel":"Panel";
  if(s.map)setTimeout(()=>s.map.resize(),280)});

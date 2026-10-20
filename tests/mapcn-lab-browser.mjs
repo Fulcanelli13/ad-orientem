@@ -42,7 +42,8 @@ try{
  // Same loaded browser across all widths: capture actual breakpoints, not mockups.
  for(const width of [320,390,1440]){
   await page.setViewportSize({width,height:width<700?844:960});
-  await page.waitForTimeout(650);
+  await page.waitForTimeout(1550);
+  await page.waitForFunction(()=>{const r=document.querySelector(".map-stage")?.getBoundingClientRect();const f=document.querySelector(".map-flag")?.getBoundingClientRect();return r&&f&&r.top>=0&&r.top<innerHeight-200&&f.top>=0&&f.top<innerHeight-250;},null,{timeout:20000});
   const viewport=await page.evaluate(()=>({
    overflow:document.documentElement.scrollWidth-innerWidth,
    map:document.querySelector(".map-stage")?.getBoundingClientRect().width,
@@ -70,6 +71,7 @@ try{
  assert.equal(await page.locator("#mode-title").textContent(),"Country coverage");
  assert.equal(await page.locator("#legend").isVisible(),true);
  await page.setViewportSize({width:1440,height:960});
+ await page.waitForTimeout(1550);
  await page.screenshot({path:resolve(output,"choropleth-1440.png")});
  assert.deepEqual(errors,[],"No JavaScript page exceptions allowed");
  console.log(JSON.stringify({status:"PASS",captured:6,source:"REAL_EXPLORE_DATASET",widths:[320,390,1440]}));
