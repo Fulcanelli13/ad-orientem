@@ -1,0 +1,3603 @@
+{
+  "schema": "AO_WEISER_P1_CANONICAL_RELEASE_PREP_V1",
+  "as_of": "2026-10-20",
+  "status": "RESEARCH_TRIAGE_COMPLETE_PUBLICATION_GATED",
+  "sources": [
+    "data/customs/research/weiser-p1-wave02-full-reconciliation.v1.json",
+    "data/customs/research/weiser-p1-wave03-source-corroboration.v1.json",
+    "data/customs/research/weiser-p1-wave04-source-corroboration.v1.json",
+    "data/customs/research/weiser-p1-wave05-source-corroboration.v1.json",
+    "data/customs/research/weiser-p1-wave06-final-dispositions.v1.json",
+    "data/customs/research/weiser-p1-wave02-bilingual-editorial-cards.v1.json",
+    "data/customs/research/weiser-p1-wave03-bilingual-editorial-cards.v1.json",
+    "data/customs/research/weiser-p1-wave04-bilingual-editorial-cards.v1.json",
+    "data/customs/research/weiser-p1-wave05-bilingual-editorial-cards.v1.json",
+    "data/customs/research/weiser-p1-wave06-bilingual-editorial-cards.v1.json"
+  ],
+  "scope": "144 P1 observations only; separate Wave 01's 12 selected summaries were not deduplicated into this number.",
+  "audit": {
+    "source_observations": 144,
+    "source_bounded": 60,
+    "partial_source_holds": 46,
+    "no_exact_source_match_holds": 38,
+    "bilingual_p1_drafts": 42,
+    "bounded_observations_in_bilingual_drafts": 56,
+    "owner_context_only_bounded_observations": 4,
+    "app_publications": 0,
+    "permanent_rejections_from_wave06": 0,
+    "dispositions": {
+      "NO_EXACT_INDEPENDENT_MATCH_HOLD": 38,
+      "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY": 56,
+      "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD": 46,
+      "BOUNDED_CONTEXT_EXISTING_OWNER_ONLY": 4
+    }
+  },
+  "release_rules": [
+    "None of the 42 drafts automatically corresponds to a unique canonical new custom.",
+    "For every draft, reconcile existing Calendar, Saints, Explore, Pray and Customs Atlas IDs, then check staged PRs #1512 and #1516.",
+    "Merged histories or source-observations never imply duplicated user content.",
+    "A source match from 1964 Roman Ritual translation does not prove its 1962 permissions or mandatory parish application.",
+    "Partial and unmatched holds are retained rather than labelled disproved or automatically published.",
+    "Respect copyright by publishing original summaries only."
+  ],
+  "records": [
+    {
+      "weiser_id": "WEI58-01-005",
+      "source_title": "Children recount the Sunday sermon",
+      "chapter": 1,
+      "printed_page": 16,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": null,
+      "proposed_app_owner": "Calendar / Learn",
+      "source_class": "UNMATCHED_HOLD",
+      "disposition": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "independent_witness": {
+        "confidence": "UNMATCHED_HOLD",
+        "witness_id": "W58B6-WEI58-01-005",
+        "url": null,
+        "note": "No exact independent witness established in the present targeted source sweep; Weiser remains a historical locator only.",
+        "wave": "06"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-02-002",
+      "source_title": "Voluntary Wednesday fasting",
+      "chapter": 2,
+      "printed_page": 23,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": null,
+      "proposed_app_owner": "Calendar / Learn",
+      "source_class": "UNMATCHED_HOLD",
+      "disposition": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "independent_witness": {
+        "confidence": "UNMATCHED_HOLD",
+        "witness_id": "W58B6-WEI58-02-002",
+        "url": null,
+        "note": "No exact independent witness established in the present targeted source sweep; Weiser remains a historical locator only.",
+        "wave": "06"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-03-002",
+      "source_title": "Ember vocational and priestly prayer",
+      "chapter": 3,
+      "printed_page": 33,
+      "original_triage": "ENRICH",
+      "canonical_cluster_id": null,
+      "proposed_app_owner": "Calendar / Learn",
+      "source_class": "BOUNDED",
+      "disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "independent_witness": {
+        "confidence": "BOUNDED",
+        "witness_id": "W58B4-EMBER_TRIPLE",
+        "url": "https://www.catholicculture.org/culture/library/view.cfm?recnum=12519",
+        "note": "The source specifically identifies seasonal Ember prayer, fasting, almsgiving, thanksgiving for crops, and petitions for clergy. These are historical 1962-linked meanings, not a current globally binding fast.",
+        "wave": "04"
+      },
+      "editorial_draft": {
+        "card_id": "W58-P1-B4-EMBER",
+        "title": "Ember Days: gratitude, vocations and charity",
+        "wave": "04",
+        "owner": "Calendar / Learn, enrich existing Embertide"
+      },
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-03-003",
+      "source_title": "Ember harvest gratitude",
+      "chapter": 3,
+      "printed_page": 32,
+      "original_triage": "ENRICH",
+      "canonical_cluster_id": null,
+      "proposed_app_owner": "Calendar / Learn",
+      "source_class": "BOUNDED",
+      "disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "independent_witness": {
+        "confidence": "BOUNDED",
+        "witness_id": "W58B4-EMBER_TRIPLE",
+        "url": "https://www.catholicculture.org/culture/library/view.cfm?recnum=12519",
+        "note": "The source specifically identifies seasonal Ember prayer, fasting, almsgiving, thanksgiving for crops, and petitions for clergy. These are historical 1962-linked meanings, not a current globally binding fast.",
+        "wave": "04"
+      },
+      "editorial_draft": {
+        "card_id": "W58-P1-B4-EMBER",
+        "title": "Ember Days: gratitude, vocations and charity",
+        "wave": "04",
+        "owner": "Calendar / Learn, enrich existing Embertide"
+      },
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-03-004",
+      "source_title": "Ember charity and alms",
+      "chapter": 3,
+      "printed_page": 36,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": null,
+      "proposed_app_owner": "Calendar / Learn",
+      "source_class": "BOUNDED",
+      "disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "independent_witness": {
+        "confidence": "BOUNDED",
+        "witness_id": "W58B4-EMBER_TRIPLE",
+        "url": "https://www.catholicculture.org/culture/library/view.cfm?recnum=12519",
+        "note": "The source specifically identifies seasonal Ember prayer, fasting, almsgiving, thanksgiving for crops, and petitions for clergy. These are historical 1962-linked meanings, not a current globally binding fast.",
+        "wave": "04"
+      },
+      "editorial_draft": {
+        "card_id": "W58-P1-B4-EMBER",
+        "title": "Ember Days: gratitude, vocations and charity",
+        "wave": "04",
+        "owner": "Calendar / Learn, enrich existing Embertide"
+      },
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-03-005",
+      "source_title": "Ember prayer for departed souls",
+      "chapter": 3,
+      "printed_page": 36,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": null,
+      "proposed_app_owner": "Calendar / Learn",
+      "source_class": "PARTIAL_HOLD",
+      "disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "independent_witness": {
+        "confidence": "PARTIAL_HOLD",
+        "witness_id": "W58B4-EMBER_SOULS",
+        "url": "https://www.catholicculture.org/culture/library/view.cfm?recnum=12519",
+        "note": "The source covers seasonal penitence and gratitude but does not substantiate a dedicated Ember prayer custom specifically for deceased souls.",
+        "wave": "04"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-03-008",
+      "source_title": "Pentecost Ember joyful character",
+      "chapter": 3,
+      "printed_page": 35,
+      "original_triage": "ENRICH",
+      "canonical_cluster_id": null,
+      "proposed_app_owner": "Calendar / Learn",
+      "source_class": "UNMATCHED_HOLD",
+      "disposition": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "independent_witness": {
+        "confidence": "UNMATCHED_HOLD",
+        "witness_id": "W58B6-WEI58-03-008",
+        "url": null,
+        "note": "No exact independent witness established in the present targeted source sweep; Weiser remains a historical locator only.",
+        "wave": "06"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-04-002",
+      "source_title": "Field sprinkling by priest at Rogations",
+      "chapter": 4,
+      "printed_page": 44,
+      "original_triage": "ENRICH",
+      "canonical_cluster_id": null,
+      "proposed_app_owner": "Calendar / Learn",
+      "source_class": "PARTIAL_HOLD",
+      "disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "independent_witness": {
+        "confidence": "PARTIAL_HOLD",
+        "witness_id": "W58B3-ROGATION_FIELDS",
+        "url": "https://eglise.catholique.fr/approfondir-sa-foi/la-celebration-de-la-foi/les-grandes-fetes-chretiennes/lascension-du-christ/499355-le-retour-des-rogations/",
+        "note": "Documented local priestly agricultural-equipment, livestock and seed blessing; NOT a witness to the exact priestly sprinkling of fields in the Weiser row.",
+        "wave": "03"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-04-003",
+      "source_title": "Homestead Rogation family prayer walk",
+      "chapter": 4,
+      "printed_page": 44,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": null,
+      "proposed_app_owner": "Calendar / Learn",
+      "source_class": "BOUNDED",
+      "disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "independent_witness": {
+        "confidence": "BOUNDED",
+        "witness_id": "W58B4-ROGATION_WALK",
+        "url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1234",
+        "note": "An independent Catholic family custom guide explicitly proposes a family walk asking for God's blessing on gardens and fields. A family prayer is distinct from a priest's processional blessing.",
+        "wave": "04"
+      },
+      "editorial_draft": {
+        "card_id": "W58-P1-B4-ROGATION",
+        "title": "A family Rogation prayer walk",
+        "wave": "04",
+        "owner": "Customs Atlas / Calendar; distinct from parish priestly procession"
+      },
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-05-002",
+      "source_title": "Family Advent wreath",
+      "chapter": 5,
+      "printed_page": 55,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": "ADVENT_ADOPTED",
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "BOUNDED",
+      "disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "independent_witness": {
+        "confidence": "BOUNDED",
+        "witness_id": "W58B3-WREATH",
+        "url": "https://www.usccb.org/prayers/blessing-advent-wreath",
+        "note": "Modern Catholic household wreath and family prayer in Advent, optional; original Protestant historical origin is not independently verified here.",
+        "wave": "03"
+      },
+      "editorial_draft": {
+        "card_id": "W58-P1-B3-ADVENT-WREATH",
+        "title": "The family Advent wreath",
+        "wave": "03",
+        "owner": "Calendar / family customs, not the 1962 Mass reader"
+      },
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-05-005",
+      "source_title": "French manger straw for good works",
+      "chapter": 5,
+      "printed_page": 56,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": "ADVENT_CRIB",
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "BOUNDED",
+      "disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "independent_witness": {
+        "confidence": "BOUNDED",
+        "witness_id": "W58B5-ADVENT_STRAW",
+        "url": "https://www.catholicculture.org/commentary/straws-in-manger-preparing-our-hearts-for-christs-birth/",
+        "note": "Contemporary independent Catholic family firsthand practice, explicitly describes a French-origin custom in which children put straw in the manger after prayers and good deeds. French origin is a traditional attribution, not documented in modern France by this source.",
+        "wave": "05"
+      },
+      "editorial_draft": {
+        "card_id": "W58-P1-B5-MANGER_STRAW",
+        "title": "The Advent manger of good deeds",
+        "wave": "05",
+        "owner": "Calendar / Existing Nativity and household devotions"
+      },
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-05-011",
+      "source_title": "Las Posadas processions",
+      "chapter": 5,
+      "printed_page": 58,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": "ADVENT_POSADAS",
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "BOUNDED",
+      "disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "independent_witness": {
+        "confidence": "BOUNDED",
+        "witness_id": "W58B2-POSADAS",
+        "url": "https://www.usccb.org/prayer-and-worship/liturgical-year/advent/advent-december-16",
+        "note": "Independent episcopal catechetical account of 16 December procession / Mary and Joseph seeking lodging in Latin American Catholic communities; never universal celebration or Mass rite",
+        "wave": "02"
+      },
+      "editorial_draft": {
+        "card_id": "W58-CARD-B2-POSADAS",
+        "title": "Las Posadas: welcoming the Holy Family",
+        "wave": "02",
+        "owner": "Calendar / Customs Atlas"
+      },
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-06-001",
+      "source_title": "Irish window lights brought into American Christmas observance",
+      "chapter": 6,
+      "printed_page": 66,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": "CHRISTMAS_CANDLES",
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "PARTIAL_HOLD",
+      "disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "independent_witness": {
+        "confidence": "PARTIAL_HOLD",
+        "witness_id": "W58B3-IRISH_TO_AMERICA",
+        "url": "https://www.duchas.ie/en/cbes/4921616/4885347/5149585",
+        "note": "Irish Christmas candle use is independently attested in County Cork; migration or historical adoption of the custom in America is not proved.",
+        "wave": "03"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-06-004",
+      "source_title": "Misa de Gallo Christmas night Mass name",
+      "chapter": 6,
+      "printed_page": 71,
+      "original_triage": "ENRICH",
+      "canonical_cluster_id": null,
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "BOUNDED",
+      "disposition": "BOUNDED_CONTEXT_EXISTING_OWNER_ONLY",
+      "independent_witness": {
+        "confidence": "BOUNDED",
+        "witness_id": "W58B6-WEI58-06-004",
+        "url": "https://hawaiicatholicherald.com/2014/12/19/pre-christmas-masses-at-dawn-a-long-and-cherished-philippine-tradition/",
+        "note": "Name Misa de Gallo applies to Philippine dawn/Christmas Midnight Mass depending on locality; existing Christmas Mass term only.",
+        "wave": "06"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-06-007",
+      "source_title": "Christmas Eve family prayer before crib",
+      "chapter": 6,
+      "printed_page": 74,
+      "original_triage": "ENRICH",
+      "canonical_cluster_id": "ADVENT_CRIB",
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "BOUNDED",
+      "disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "independent_witness": {
+        "confidence": "BOUNDED",
+        "witness_id": "W58B3-CRIB",
+        "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html",
+        "note": "Family Christmas Eve Nativity-crib prayers including Luke's account and carols, not a required 1962 pre-Mass ceremony.",
+        "wave": "03"
+      },
+      "editorial_draft": {
+        "card_id": "W58-P1-B3-NATIVITY-PRAYER",
+        "title": "Praying together at the Christmas crib",
+        "wave": "03",
+        "owner": "Calendar / Learn; reuse existing prayers"
+      },
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-06-009",
+      "source_title": "Opłatki shared with kiss and Christmas greeting",
+      "chapter": 6,
+      "printed_page": 74,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": "CHRISTMAS_OPLATEK",
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "BOUNDED",
+      "disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "independent_witness": {
+        "confidence": "BOUNDED",
+        "witness_id": "W58B2-OPLATEK",
+        "url": "https://stjohnvianney.vermontcatholic.org/oplatki",
+        "note": "Parish describes family sharing Christmas wafer and separate blessing by priest; not the Eucharist; traditions differ across Polish homes",
+        "wave": "02"
+      },
+      "editorial_draft": {
+        "card_id": "W58-CARD-B2-OPLATEK",
+        "title": "Sharing opłatek on Christmas Eve",
+        "wave": "02",
+        "owner": "Customs Atlas / Calendar"
+      },
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-06-011",
+      "source_title": "Christmas Eve household reconciliation and completion of tasks",
+      "chapter": 6,
+      "printed_page": 74,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": "CHRISTMAS_FAMILY",
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "UNMATCHED_HOLD",
+      "disposition": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "independent_witness": {
+        "confidence": "UNMATCHED_HOLD",
+        "witness_id": "W58B6-WEI58-06-011",
+        "url": null,
+        "note": "No exact independent witness established in the present targeted source sweep; Weiser remains a historical locator only.",
+        "wave": "06"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-06-012",
+      "source_title": "Extra fodder for livestock and grain for birds at Christmas",
+      "chapter": 6,
+      "printed_page": 75,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": null,
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "UNMATCHED_HOLD",
+      "disposition": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "independent_witness": {
+        "confidence": "UNMATCHED_HOLD",
+        "witness_id": "W58B6-WEI58-06-012",
+        "url": null,
+        "note": "No exact independent witness established in the present targeted source sweep; Weiser remains a historical locator only.",
+        "wave": "06"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-06-015",
+      "source_title": "French family réveillon after Midnight Mass",
+      "chapter": 6,
+      "printed_page": 76,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": "CHRISTMAS_FAMILY",
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "PARTIAL_HOLD",
+      "disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "independent_witness": {
+        "confidence": "PARTIAL_HOLD",
+        "witness_id": "W58B5-REVEILLON",
+        "url": "https://www.turismoroma.it/it/page/dicembre-roma-appuntamento-con-la-tradizione-di-ieri-e-di-oggi",
+        "note": "Italian Roman feast and Mass order is documented but does NOT verify French household réveillon specifically after Mass; wrong country and meal timing.",
+        "wave": "05"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-07-007",
+      "source_title": "French Canadian La guignolée collection for the poor",
+      "chapter": 7,
+      "printed_page": 87,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": "CHRISTMAS_CHARITY",
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "PARTIAL_HOLD",
+      "disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "independent_witness": {
+        "confidence": "PARTIAL_HOLD",
+        "witness_id": "W58B2-GUIGNOL",
+        "url": "https://fr.wikisource.org/wiki/Historiettes_et_fantaisies/La_guignol%C3%A9e",
+        "note": "Historically published direct account of French Canadian end-of-year song and collection for the poor; author's asserted prehistoric origin is speculative and NOT verified",
+        "wave": "02"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-07-008",
+      "source_title": "Polish Kolednicy Christmas star and Nativity drama rounds",
+      "chapter": 7,
+      "printed_page": 87,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": null,
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "PARTIAL_HOLD",
+      "disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "independent_witness": {
+        "confidence": "PARTIAL_HOLD",
+        "witness_id": "W58B6-WEI58-07-008",
+        "url": "https://www.polishmuseumofamerica.org/carolers-kolednicy-by-karol-tchorek-1904-1985-return-to-the-pma/",
+        "note": "Polish Museum of America documents carolers, not the exact home rounds/star/Nativity drama",
+        "wave": "06"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-08-002",
+      "source_title": "Large Alpine Nativity dioramas constructed in Advent",
+      "chapter": 8,
+      "printed_page": 96,
+      "original_triage": "ENRICH",
+      "canonical_cluster_id": "ADVENT_CRIB",
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "PARTIAL_HOLD",
+      "disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "independent_witness": {
+        "confidence": "PARTIAL_HOLD",
+        "witness_id": "W58B6-WEI58-08-002",
+        "url": "https://www.france.fr/fr/article/noel-provence-traditions/",
+        "note": "Provençal family crèche documented, not Alpine large-scale diorama",
+        "wave": "06"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-08-004",
+      "source_title": "Irish home Christmas candle and prayer for living and departed",
+      "chapter": 8,
+      "printed_page": 96,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": "CHRISTMAS_CANDLES",
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "BOUNDED",
+      "disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "independent_witness": {
+        "confidence": "BOUNDED",
+        "witness_id": "W58B3-IRISH_CANDLE",
+        "url": "https://source.museum.ie/en-IE/Collections-Research/Folklife-Collections/Folklife-Collections-List-%281%29/Religion-and-Calendar-Customs/Generations-past-how-Christmas-was-celebrated-in-y",
+        "note": "Irish household candles remembering the departed; local folk archive separately documents Christmas Eve window candle for hospitality. Folklore of guaranteed blessings/returning spirits is not promoted.",
+        "wave": "03"
+      },
+      "editorial_draft": {
+        "card_id": "W58-P1-B3-IRISH-CANDLE",
+        "title": "The Irish Christmas candle",
+        "wave": "03",
+        "owner": "Customs Atlas, Irish historical/regional example"
+      },
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-08-005",
+      "source_title": "Priest-blessed Christmas candle displayed at meal",
+      "chapter": 8,
+      "printed_page": 97,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": "CHRISTMAS_CANDLES",
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "UNMATCHED_HOLD",
+      "disposition": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "independent_witness": {
+        "confidence": "UNMATCHED_HOLD",
+        "witness_id": "W58B6-WEI58-08-005",
+        "url": null,
+        "note": "No exact independent witness established in the present targeted source sweep; Weiser remains a historical locator only.",
+        "wave": "06"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-08-008",
+      "source_title": "Christmas window candles as welcome",
+      "chapter": 8,
+      "printed_page": 97,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": "CHRISTMAS_CANDLES",
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "BOUNDED",
+      "disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "independent_witness": {
+        "confidence": "BOUNDED",
+        "witness_id": "W58B3-IRISH_CANDLE",
+        "url": "https://source.museum.ie/en-IE/Collections-Research/Folklife-Collections/Folklife-Collections-List-%281%29/Religion-and-Calendar-Customs/Generations-past-how-Christmas-was-celebrated-in-y",
+        "note": "Irish household candles remembering the departed; local folk archive separately documents Christmas Eve window candle for hospitality. Folklore of guaranteed blessings/returning spirits is not promoted.",
+        "wave": "03"
+      },
+      "editorial_draft": {
+        "card_id": "W58-P1-B3-IRISH-CANDLE",
+        "title": "The Irish Christmas candle",
+        "wave": "03",
+        "owner": "Customs Atlas, Irish historical/regional example"
+      },
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-08-019",
+      "source_title": "St Barbara's December 4 cherry blossom branches",
+      "chapter": 8,
+      "printed_page": 106,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": "CHRISTMAS_BARBARAZWEIGE",
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "PARTIAL_HOLD",
+      "disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "independent_witness": {
+        "confidence": "PARTIAL_HOLD",
+        "witness_id": "W58B2-BARBARA",
+        "url": "https://www.liturgicalartsjournal.com/2018/10/advent-customs-st-barbaras-branches.html",
+        "note": "Traditional Catholic editorial documentation of St Barbara branches; independent official parish/ethnographic confirmation still desirable; do not include divination or bloom-as-prophecy",
+        "wave": "02"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-08-025",
+      "source_title": "St Stephen Boxing Day alms to poor",
+      "chapter": 8,
+      "printed_page": 111,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": "CHRISTMAS_CHARITY",
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "BOUNDED",
+      "disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "independent_witness": {
+        "confidence": "BOUNDED",
+        "witness_id": "W58B5-STEPHEN_ALMS",
+        "url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=939",
+        "note": "Catholic family guide instructs using 26 December as a time to read Acts 6–7 and give useful gifts to the poor. No requirement for money, purchase or novel St Stephen rite.",
+        "wave": "05"
+      },
+      "editorial_draft": {
+        "card_id": "W58-P1-B5-STEPHEN_CHARITY",
+        "title": "Charity on St Stephen's Day",
+        "wave": "05",
+        "owner": "Calendar / Saints; optional household charity"
+      },
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-08-026",
+      "source_title": "Christ Child gift-bearer and prayer before opening gifts",
+      "chapter": 8,
+      "printed_page": 111,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": "CHRISTMAS_VISITORS",
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "PARTIAL_HOLD",
+      "disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "independent_witness": {
+        "confidence": "PARTIAL_HOLD",
+        "witness_id": "W58B5-CHRISTKIND_GIFTS",
+        "url": "https://church.mt/five-family-traditions-for-advent/",
+        "note": "Modern Catholic family gifts and Advent generosity described; specific historical Christkind gift-bringer and household prayer form are not substantiated.",
+        "wave": "05"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-08-028",
+      "source_title": "St Nicholas Eve visit carried in Dutch diaspora",
+      "chapter": 8,
+      "printed_page": 113,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": "CHRISTMAS_VISITORS",
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "PARTIAL_HOLD",
+      "disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "independent_witness": {
+        "confidence": "PARTIAL_HOLD",
+        "witness_id": "W58B5-NICHOLAS_DUTCH",
+        "url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=939",
+        "note": "A general saints-day household source is not evidence for Dutch migration of Sinterklaas customs. French St Nicholas is verified elsewhere but not the Dutch diaspora transmission claim.",
+        "wave": "05"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-09-002",
+      "source_title": "Ukrainian kutia wheat and honey Christmas Eve meal",
+      "chapter": 9,
+      "printed_page": 117,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": "CHRISTMAS_FOODS",
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "BOUNDED",
+      "disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "independent_witness": {
+        "confidence": "BOUNDED",
+        "witness_id": "W58B5-KUTIA",
+        "url": "https://folklife.si.edu/magazine/foodways-holidays-ukrainian-christmas-kutia-uzvar",
+        "note": "First-person Ukrainian cultural account documents wheat-berry, honey and poppy seed dish in Christmas Eve family meal. Pagan divination and dead-spirit beliefs are reported historically only, never recommended.",
+        "wave": "05"
+      },
+      "editorial_draft": {
+        "card_id": "W58-P1-B5-KUTIA",
+        "title": "Kutia at a Ukrainian Christmas Eve table",
+        "wave": "05",
+        "owner": "Customs Atlas / historical regional household"
+      },
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-09-006",
+      "source_title": "French Pain calendau Christmas loaf share with poor",
+      "chapter": 9,
+      "printed_page": 117,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": "CHRISTMAS_CHARITY",
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "PARTIAL_HOLD",
+      "disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "independent_witness": {
+        "confidence": "PARTIAL_HOLD",
+        "witness_id": "W58B6-WEI58-09-006",
+        "url": "https://www.france.fr/fr/article/noel-traditions-culinaires-provence/",
+        "note": "Provençal Christmas meal and share for poor documented, not named Pain calendau",
+        "wave": "06"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-09-007",
+      "source_title": "Slavic opłatki priest-blessed wafer at Christmas Eve dinner",
+      "chapter": 9,
+      "printed_page": 118,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": "CHRISTMAS_OPLATEK",
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "BOUNDED",
+      "disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "independent_witness": {
+        "confidence": "BOUNDED",
+        "witness_id": "W58B2-OPLATEK",
+        "url": "https://stjohnvianney.vermontcatholic.org/oplatki",
+        "note": "Parish describes family sharing Christmas wafer and separate blessing by priest; not the Eucharist; traditions differ across Polish homes",
+        "wave": "02"
+      },
+      "editorial_draft": {
+        "card_id": "W58-CARD-B2-OPLATEK",
+        "title": "Sharing opłatek on Christmas Eve",
+        "wave": "02",
+        "owner": "Customs Atlas / Calendar"
+      },
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-10-002",
+      "source_title": "Twelve Christmas nights as devotional domestic evenings",
+      "chapter": 10,
+      "printed_page": 123,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": "CHRISTMAS_FOODS",
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "PARTIAL_HOLD",
+      "disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "independent_witness": {
+        "confidence": "PARTIAL_HOLD",
+        "witness_id": "W58B6-WEI58-10-002",
+        "url": "https://www.ewtn.com/catholicism/library/twelve-days-of-christmas-10410",
+        "note": "Twelve Days of Christmas season documented, not regular household devotional evenings",
+        "wave": "06"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-10-006",
+      "source_title": "Roman Ara Coeli Santo Bambino children's devotions",
+      "chapter": 10,
+      "printed_page": 124,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": null,
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "PARTIAL_HOLD",
+      "disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "independent_witness": {
+        "confidence": "PARTIAL_HOLD",
+        "witness_id": "W58B5-ARACOELI_CHILD",
+        "url": "https://www.turismoroma.it/en/node/741",
+        "note": "Rome tourism authority documents longstanding veneration of the Holy Child figure and loss of original sculpture in 1994, but NOT a particular practice of children praying or preaching at Christmas.",
+        "wave": "05"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-10-010",
+      "source_title": "St Stephen blessing of horses",
+      "chapter": 10,
+      "printed_page": 129,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": "CHRISTMAS_STSTEPHEN",
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "PARTIAL_HOLD",
+      "disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "independent_witness": {
+        "confidence": "PARTIAL_HOLD",
+        "witness_id": "W58B5-STSTEPHEN_HORSES",
+        "url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=988",
+        "note": "Independent Catholic compiled cookbook documents horse blessings in parts of rural Europe, but no named parish, specific 1962 ritual formula or current service is documented.",
+        "wave": "05"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-11-006",
+      "source_title": "New Year rosary around midnight",
+      "chapter": 11,
+      "printed_page": 139,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": "NEW_YEAR_FAMILY",
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "UNMATCHED_HOLD",
+      "disposition": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "independent_witness": {
+        "confidence": "UNMATCHED_HOLD",
+        "witness_id": "W58B6-WEI58-11-006",
+        "url": null,
+        "note": "No exact independent witness established in the present targeted source sweep; Weiser remains a historical locator only.",
+        "wave": "06"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-11-007",
+      "source_title": "Father blesses family on Jan 1",
+      "chapter": 11,
+      "printed_page": 139,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": "NEW_YEAR_FAMILY",
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "UNMATCHED_HOLD",
+      "disposition": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "independent_witness": {
+        "confidence": "UNMATCHED_HOLD",
+        "witness_id": "W58B6-WEI58-11-007",
+        "url": null,
+        "note": "No exact independent witness established in the present targeted source sweep; Weiser remains a historical locator only.",
+        "wave": "06"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-12-005",
+      "source_title": "Annual Epiphany announcement of Easter and movable feasts",
+      "chapter": 12,
+      "printed_page": 148,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": null,
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "BOUNDED",
+      "disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "independent_witness": {
+        "confidence": "BOUNDED",
+        "witness_id": "W58B3-EPIPH_PROCL",
+        "url": "https://www.usccb.org/prayer-and-worship/liturgical-year-and-calendar/christmas/announcement-of-easter-and-the-moveable-feasts",
+        "note": "Custom of solemnly announcing movable feasts on Epiphany, linked to Easter's centrality; source gives contemporary text, not certified 1962 use.",
+        "wave": "03"
+      },
+      "editorial_draft": {
+        "card_id": "W58-P1-B3-EPIPHANY-PROCLAMATION",
+        "title": "Proclaiming the date of Easter at Epiphany",
+        "wave": "03",
+        "owner": "Calendar / Learn; reuse authoritative date calculation"
+      },
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-12-007",
+      "source_title": "Latin Roman Ritual Epiphany water blessing",
+      "chapter": 12,
+      "printed_page": 149,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": "EPIPHANY_RITUAL",
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "BOUNDED",
+      "disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "independent_witness": {
+        "confidence": "BOUNDED",
+        "witness_id": "W58B6-WEI58-12-007",
+        "url": "https://www.catholicculture.org/culture/liturgicalyear/prayers/view.cfm?id=1337",
+        "note": "Historic Latin Roman Ritual Epiphany water blessing as sacramental; permission and edition must be independently checked for 1962 use.",
+        "wave": "06"
+      },
+      "editorial_draft": {
+        "card_id": "W58-P1-B6-EPIPHANY_WATER",
+        "title": "Epiphany water and the priestly blessing",
+        "wave": "06",
+        "owner": "Existing Epiphany/Customs blessings owner, coordinate PR #1512; no ceremony in Mass reader"
+      },
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-12-008",
+      "source_title": "Epiphany water taken home by faithful",
+      "chapter": 12,
+      "printed_page": 149,
+      "original_triage": "ENRICH",
+      "canonical_cluster_id": "EPIPHANY_RITUAL",
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "BOUNDED",
+      "disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "independent_witness": {
+        "confidence": "BOUNDED",
+        "witness_id": "W58B6-WEI58-12-008",
+        "url": "https://1962ordo.today/season/",
+        "note": "Epiphany water may be made available to the faithful after the locally conferred priestly blessing; this is not mandatory.",
+        "wave": "06"
+      },
+      "editorial_draft": {
+        "card_id": "W58-P1-B6-EPIPHANY_WATER",
+        "title": "Epiphany water and the priestly blessing",
+        "wave": "06",
+        "owner": "Existing Epiphany/Customs blessings owner, coordinate PR #1512; no ceremony in Mass reader"
+      },
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-12-009",
+      "source_title": "Priestly Epiphany home blessing",
+      "chapter": 12,
+      "printed_page": 150,
+      "original_triage": "ENRICH",
+      "canonical_cluster_id": "EPIPHANY_RITUAL",
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "PARTIAL_HOLD",
+      "disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "independent_witness": {
+        "confidence": "PARTIAL_HOLD",
+        "witness_id": "W58B2-CHALK",
+        "url": "https://rcaos.org.uk/faith/prayer/the-feast-of-the-epiphany-house-blessing/",
+        "note": "Current Catholic domestic blessing example, C+M+B; do not conflate home lay prayer with priest's Rituale Romanum house blessing and blessed Epiphany water",
+        "wave": "02"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-12-013",
+      "source_title": "German/Austrian Sternsingen star house carols",
+      "chapter": 12,
+      "printed_page": 151,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": "EPIPHANY_STAR",
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "BOUNDED",
+      "disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "independent_witness": {
+        "confidence": "BOUNDED",
+        "witness_id": "W58B2-STERN",
+        "url": "https://www.kindermissionswerk.org/en/ueber-uns/the-carol-singers-campaign",
+        "note": "Catholic children's solidarity visits around Epiphany in Germany with seasonal C+M+B markings and alms; not a universal priestly ceremony",
+        "wave": "02"
+      },
+      "editorial_draft": {
+        "card_id": "W58-CARD-B2-STERN",
+        "title": "Epiphany star singers",
+        "wave": "02",
+        "owner": "Customs Atlas / Saints / Calendar"
+      },
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-12-017",
+      "source_title": "French Galette des Rois with bean or coin",
+      "chapter": 12,
+      "printed_page": 152,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": "EPIPHANY_CAKE",
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "BOUNDED",
+      "disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "independent_witness": {
+        "confidence": "BOUNDED",
+        "witness_id": "W58B2-EPIPHCAKE",
+        "url": "https://eglise.catholique.fr/approfondir-sa-foi/la-celebration-de-la-foi/les-grandes-fetes-chretiennes/epiphanie/426637-feter-lepiphanie/",
+        "note": "French episcopal site describes the family cake, bean and optional additional portion for poor/stranger; not proof of WEI58-12-019 educational donation",
+        "wave": "02"
+      },
+      "editorial_draft": {
+        "card_id": "W58-CARD-B2-EPIPHCAKE",
+        "title": "The Epiphany cake and the poor person's portion",
+        "wave": "02",
+        "owner": "Calendar / Customs Atlas"
+      },
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-12-018",
+      "source_title": "French Epiphany cake share reserved for poor",
+      "chapter": 12,
+      "printed_page": 153,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": "EPIPHANY_CAKE",
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "BOUNDED",
+      "disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "independent_witness": {
+        "confidence": "BOUNDED",
+        "witness_id": "W58B2-EPIPHCAKE",
+        "url": "https://eglise.catholique.fr/approfondir-sa-foi/la-celebration-de-la-foi/les-grandes-fetes-chretiennes/epiphanie/426637-feter-lepiphanie/",
+        "note": "French episcopal site describes the family cake, bean and optional additional portion for poor/stranger; not proof of WEI58-12-019 educational donation",
+        "wave": "02"
+      },
+      "editorial_draft": {
+        "card_id": "W58-CARD-B2-EPIPHCAKE",
+        "title": "The Epiphany cake and the poor person's portion",
+        "wave": "02",
+        "owner": "Calendar / Customs Atlas"
+      },
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-12-019",
+      "source_title": "French Magi cake donations for education of poor child",
+      "chapter": 12,
+      "printed_page": 153,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": "EPIPHANY_CAKE",
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "PARTIAL_HOLD",
+      "disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "independent_witness": {
+        "confidence": "PARTIAL_HOLD",
+        "witness_id": "W58B6-WEI58-12-019",
+        "url": "https://eglise.catholique.fr/approfondir-sa-foi/la-celebration-de-la-foi/les-grandes-fetes-chretiennes/epiphanie/426637-feter-lepiphanie/",
+        "note": "French Epiphany cake and generosity broadly attested, not school tuition payments",
+        "wave": "06"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-13-003",
+      "source_title": "Shrove Tuesday confession before Ash Wednesday",
+      "chapter": 13,
+      "printed_page": 157,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": null,
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "PARTIAL_HOLD",
+      "disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "independent_witness": {
+        "confidence": "PARTIAL_HOLD",
+        "witness_id": "W58B3-SHROVE_CONFESSION",
+        "url": "https://www.usccb.org/prayer-and-worship/sacraments-and-sacramentals/penance/sacrament-of-penance-diocesan-resources",
+        "note": "Confession as Lenten preparation documented, but no independent Shrove Tuesday date-specific practice or mandate.",
+        "wave": "03"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-13-011",
+      "source_title": "Spring Mary gardens of flowers and herbs",
+      "chapter": 13,
+      "printed_page": 162,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": null,
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "BOUNDED",
+      "disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "independent_witness": {
+        "confidence": "BOUNDED",
+        "witness_id": "W58B6-WEI58-13-011",
+        "url": "https://www.catholicculture.org/commentary/annunciation-and-lent-celebrating-new-life-through-mary-garden/",
+        "note": "Practical contemporary Catholic Mary gardens with flowers and herbs; legends about exact plant origins not historically certified.",
+        "wave": "06"
+      },
+      "editorial_draft": {
+        "card_id": "W58-P1-B6-MARY_GARDEN",
+        "title": "A little garden dedicated to Our Lady",
+        "wave": "06",
+        "owner": "Calendar / Marian customs; reuse Saints and devotional Learn links"
+      },
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-13-017",
+      "source_title": "Shrove Tuesday pancakes and pre-Lenten food usage",
+      "chapter": 13,
+      "printed_page": 166,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": null,
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "BOUNDED",
+      "disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "independent_witness": {
+        "confidence": "BOUNDED",
+        "witness_id": "W58B4-SHROVE_FOOD",
+        "url": "https://www.catholicculture.org/culture/liturgicalyear/calendar/day.cfm?date=2026-02-17",
+        "note": "Pancakes prepared in England/Ireland to use eggs, milk and fat before older penitential food restrictions; not a present legal Lenten requirement.",
+        "wave": "04"
+      },
+      "editorial_draft": {
+        "card_id": "W58-P1-B4-SHROVE",
+        "title": "Shrove Tuesday and the traditional pancake",
+        "wave": "04",
+        "owner": "Calendar / Customs Atlas, household practice"
+      },
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-13-020",
+      "source_title": "Forty Hours before Lent in carnival regions",
+      "chapter": 13,
+      "printed_page": 167,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": null,
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "PARTIAL_HOLD",
+      "disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "independent_witness": {
+        "confidence": "PARTIAL_HOLD",
+        "witness_id": "W58B4-FORTY_HOURS_CARNIVAL",
+        "url": "https://dioceseparis.fr/40-heures-pour-le-seigneur.html",
+        "note": "Contemporary forty-hour exposition/adoration in Lent documented; historical pre-Lenten carnival timing not established by this source.",
+        "wave": "04"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-14-009",
+      "source_title": "Lenten Hunger Cloth sanctuary veil",
+      "chapter": 14,
+      "printed_page": 176,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": null,
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "BOUNDED",
+      "disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "independent_witness": {
+        "confidence": "BOUNDED",
+        "witness_id": "W58B5-HUNGERTUCH",
+        "url": "https://www.erzbistum-muenchen.de/glaube-und-spiritualitaet/kirchenjahr/fastenzeit",
+        "note": "Official Catholic source describes Fastentuch before altar in some churches, a Lenten visual penitential custom. Liturgical rubrics and placement are not fixed for all parishes.",
+        "wave": "05"
+      },
+      "editorial_draft": {
+        "card_id": "W58-P1-B5-LENTEN_VEIL",
+        "title": "The Lenten hunger cloth in church",
+        "wave": "05",
+        "owner": "Learn / historical church custom, not an app ceremony"
+      },
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-14-012",
+      "source_title": "Mothering Sunday journey to mother church",
+      "chapter": 14,
+      "printed_page": 178,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": null,
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "BOUNDED",
+      "disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "independent_witness": {
+        "confidence": "BOUNDED",
+        "witness_id": "W58B5-MOTHERING_CHURCH",
+        "url": "https://www.english-heritage.org.uk/visit/familydaysout/mothers-day/",
+        "note": "Historic UK fourth Sunday of Lent: people visited their mother churches (places of baptism), and families gathered. Cultural historical claim verified, not a universal Roman Catholic 1962 law.",
+        "wave": "05"
+      },
+      "editorial_draft": {
+        "card_id": "W58-P1-B5-MOTHERING",
+        "title": "Mothering Sunday and the simnel cake",
+        "wave": "05",
+        "owner": "Calendar / Customs Atlas; no duplicate feast"
+      },
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-14-013",
+      "source_title": "Mothering Sunday visiting parents with simnel cake",
+      "chapter": 14,
+      "printed_page": 178,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": null,
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "BOUNDED",
+      "disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "independent_witness": {
+        "confidence": "BOUNDED",
+        "witness_id": "W58B5-MOTHERING_SIMNEL",
+        "url": "https://www.catholicculture.org/culture/liturgicalyear/recipes/view.cfm?id=1301",
+        "note": "British family custom associates mother-visiting and simnel cake with fourth Lent Sunday. The claim does not establish obligatory observance and overlaps Mothering Sunday mother-church visit without being identical.",
+        "wave": "05"
+      },
+      "editorial_draft": {
+        "card_id": "W58-P1-B5-MOTHERING",
+        "title": "Mothering Sunday and the simnel cake",
+        "wave": "05",
+        "owner": "Calendar / Customs Atlas; no duplicate feast"
+      },
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-14-020",
+      "source_title": "Lenten parish mission before Easter confession",
+      "chapter": 14,
+      "printed_page": 183,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": null,
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "UNMATCHED_HOLD",
+      "disposition": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "independent_witness": {
+        "confidence": "UNMATCHED_HOLD",
+        "witness_id": "W58B6-WEI58-14-020",
+        "url": null,
+        "note": "No exact independent witness established in the present targeted source sweep; Weiser remains a historical locator only.",
+        "wave": "06"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-14-022",
+      "source_title": "Lenten pretzels as folded arms in prayer",
+      "chapter": 14,
+      "printed_page": 184,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": null,
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "PARTIAL_HOLD",
+      "disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "independent_witness": {
+        "confidence": "PARTIAL_HOLD",
+        "witness_id": "W58B5-PRETZEL_ORIGIN",
+        "url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=543",
+        "note": "Direct derivative of the same author Francis X Weiser rather than an independent witness; ancient Roman crossed-arms, early date, etymology and early manuscript remain unconfirmed.",
+        "wave": "05"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-14-023",
+      "source_title": "Pretzels distributed to poor in Lent",
+      "chapter": 14,
+      "printed_page": 184,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": null,
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "PARTIAL_HOLD",
+      "disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "independent_witness": {
+        "confidence": "PARTIAL_HOLD",
+        "witness_id": "W58B5-PRETZEL_ALMS",
+        "url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=543",
+        "note": "Same-author folk-custom discussion does not independently prove specifically distributing pretzels to poor in particular historical regions.",
+        "wave": "05"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-14-026",
+      "source_title": "French Canadian Mi-Carême meal and gathering",
+      "chapter": 14,
+      "printed_page": 185,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": null,
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "PARTIAL_HOLD",
+      "disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "independent_witness": {
+        "confidence": "PARTIAL_HOLD",
+        "witness_id": "W58B6-WEI58-14-026",
+        "url": "https://cdn-contenu.quebec.ca/cdn-contenu/adm/min/culture-communications/documents/patrimoine/Guide_Municipalites_patrimoine_immateriel.pdf",
+        "note": "Quebec intangible heritage includes Mi-Carême in Îles de la Madeleine; exact Catholic meal custom not described",
+        "wave": "06"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-15-002",
+      "source_title": "Holy Week house-cleaning before Sacred Triduum",
+      "chapter": 15,
+      "printed_page": 188,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": null,
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "UNMATCHED_HOLD",
+      "disposition": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "independent_witness": {
+        "confidence": "UNMATCHED_HOLD",
+        "witness_id": "W58B6-WEI58-15-002",
+        "url": null,
+        "note": "No exact independent witness established in the present targeted source sweep; Weiser remains a historical locator only.",
+        "wave": "06"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-15-005",
+      "source_title": "Palm Sunday cemetery visits during procession",
+      "chapter": 15,
+      "printed_page": 190,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": "HOLY_WEEK_PALMS",
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "PARTIAL_HOLD",
+      "disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "independent_witness": {
+        "confidence": "PARTIAL_HOLD",
+        "witness_id": "W58B4-PALM_CEMETERY",
+        "url": "https://dioceseparis.fr/annee-c-le-puzzle-des-cendres-a.html",
+        "note": "Blessed branches placed on graves are documented, but cemetery visitation specifically during the Palm Sunday liturgical procession is not verified.",
+        "wave": "04"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-15-006",
+      "source_title": "Palm Sunday willow olive box yew substitution",
+      "chapter": 15,
+      "printed_page": 191,
+      "original_triage": "ENRICH",
+      "canonical_cluster_id": "HOLY_WEEK_PALMS",
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "BOUNDED",
+      "disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "independent_witness": {
+        "confidence": "BOUNDED",
+        "witness_id": "W58B3-PALM_FRONDS",
+        "url": "https://eglise.catholique.fr/espace-presse/dossiers-de-presse/368505-semaine-sainte-et-paques/",
+        "note": "French Catholic use of buis, olive, laurel or palm according to region, blessed by priest and brought home; no magical protection.",
+        "wave": "03"
+      },
+      "editorial_draft": {
+        "card_id": "W58-P1-B3-PALMS-AT-HOME",
+        "title": "Keeping and shaping blessed Palm Sunday branches",
+        "wave": "03",
+        "owner": "Existing DOM-013 / Calendar"
+      },
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-15-007",
+      "source_title": "Palm bouquet woven into crosses",
+      "chapter": 15,
+      "printed_page": 191,
+      "original_triage": "ENRICH",
+      "canonical_cluster_id": "HOLY_WEEK_PALMS",
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "BOUNDED",
+      "disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "independent_witness": {
+        "confidence": "BOUNDED",
+        "witness_id": "W58B3-PALM_CROSS",
+        "url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1035",
+        "note": "Modern Catholic household devotional practice making crosses from blessed Palm Sunday fronds; historical exact weaving and Weiser's geographic scope remain unverified.",
+        "wave": "03"
+      },
+      "editorial_draft": {
+        "card_id": "W58-P1-B3-PALMS-AT-HOME",
+        "title": "Keeping and shaping blessed Palm Sunday branches",
+        "wave": "03",
+        "owner": "Existing DOM-013 / Calendar"
+      },
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-15-008",
+      "source_title": "Blessed palms as reconciliation and peace between neighbours",
+      "chapter": 15,
+      "printed_page": 192,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": "HOLY_WEEK_PALMS",
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "UNMATCHED_HOLD",
+      "disposition": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "independent_witness": {
+        "confidence": "UNMATCHED_HOLD",
+        "witness_id": "W58B6-WEI58-15-008",
+        "url": null,
+        "note": "No exact independent witness established in the present targeted source sweep; Weiser remains a historical locator only.",
+        "wave": "06"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-15-015",
+      "source_title": "Visiting seven repositories or churches",
+      "chapter": 15,
+      "printed_page": 194,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": "HOLY_THURSDAY_7",
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "BOUNDED",
+      "disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "independent_witness": {
+        "confidence": "BOUNDED",
+        "witness_id": "W58B2-THURS7",
+        "url": "https://www.chicagocatholic.com/chicagoland/-/article/2026/03/18/visiting-seven-churches-on-holy-thursday-a-longstanding-tradition",
+        "note": "Diocesan-paper account of optional seven-church visits after Mass of Lord's Supper; visits can number fewer or more; each church must actually be accessible",
+        "wave": "02"
+      },
+      "editorial_draft": {
+        "card_id": "W58-CARD-B2-THURS7",
+        "title": "Visiting churches on Holy Thursday",
+        "wave": "02",
+        "owner": "Calendar / Explore / Adoration"
+      },
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-15-025",
+      "source_title": "Spanish and Latin American Calvary and entombment processions",
+      "chapter": 15,
+      "printed_page": 201,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": null,
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "BOUNDED",
+      "disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "independent_witness": {
+        "confidence": "BOUNDED",
+        "witness_id": "W58B3-HOLYWEEK_POPAYAN",
+        "url": "https://ich.unesco.org/en/RL/holy-week-processions-in-popayan-00259",
+        "note": "Longstanding local Holy Week processions in Popayán, Colombia, including Laying in the Tomb. No evidence of identical celebration in every Spanish or Latin American church.",
+        "wave": "03"
+      },
+      "editorial_draft": {
+        "card_id": "W58-P1-B3-POPAYAN-HOLYWEEK",
+        "title": "The Holy Week processions of Popayán",
+        "wave": "03",
+        "owner": "Customs Atlas / Explore geographical historical context"
+      },
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-15-028",
+      "source_title": "Hooded Holy Week confraternity processions",
+      "chapter": 15,
+      "printed_page": 203,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": null,
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "BOUNDED",
+      "disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "independent_witness": {
+        "confidence": "BOUNDED",
+        "witness_id": "W58B3-ANDALUSIAN_HOODS",
+        "url": "https://www.andalucia.org/eventos/semana-santa/terminos-de-semana-santa/",
+        "note": "Local Andalusian Semana Santa brotherhoods with nazareno, tunic and capirote; this is a public confraternity tradition, not a Roman Mass rubric.",
+        "wave": "03"
+      },
+      "editorial_draft": {
+        "card_id": "W58-P1-B3-ANDALUSIAN-PENITENTS",
+        "title": "Penitents and confraternities in Spanish Holy Week",
+        "wave": "03",
+        "owner": "Customs Atlas / Learn regional historical context"
+      },
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-15-030",
+      "source_title": "Good Friday voluntary silence and minimal food",
+      "chapter": 15,
+      "printed_page": 205,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": "GOOD_FRIDAY",
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "PARTIAL_HOLD",
+      "disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "independent_witness": {
+        "confidence": "PARTIAL_HOLD",
+        "witness_id": "W58B4-GOOD_FRIDAY_FOOD",
+        "url": "https://www.vatican.va/content/dam/wss/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html",
+        "note": "Good Friday recollection and penitence are supported but the precise household custom of minimal food alongside silence is not independently documented; modern fasting laws need separate jurisdiction/age handling.",
+        "wave": "04"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-15-032",
+      "source_title": "Good Friday hot cross buns",
+      "chapter": 15,
+      "printed_page": 206,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": "GOOD_FRIDAY",
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "BOUNDED",
+      "disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "independent_witness": {
+        "confidence": "BOUNDED",
+        "witness_id": "W58B5-HOT_CROSS",
+        "url": "https://www.english-heritage.org.uk/easter/a-history-of-hot-cross-buns/",
+        "note": "Documented English Good Friday eating and selling cross-marked spiced buns by eighteenth century. Ancient pagan origin, miraculous healing and protective charm claims remain unverified or rejected.",
+        "wave": "05"
+      },
+      "editorial_draft": {
+        "card_id": "W58-P1-B5-HOT_CROSS",
+        "title": "The Good Friday hot cross bun",
+        "wave": "05",
+        "owner": "Customs Atlas / Good Friday historical culture"
+      },
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-15-035",
+      "source_title": "Holy Saturday family egg dyeing and festive baking",
+      "chapter": 15,
+      "printed_page": 207,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": "EASTER_BASKETS",
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "PARTIAL_HOLD",
+      "disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "independent_witness": {
+        "confidence": "PARTIAL_HOLD",
+        "witness_id": "W58B5-HOLYSAT_EGGS",
+        "url": "https://www.si.edu/stories/designing-easter-eggs",
+        "note": "Polish/Ukrainian Easter egg decorating attested, but no explicit household practice specifically on Holy Saturday in cited museum witness.",
+        "wave": "05"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-15-036",
+      "source_title": "Slavic Easter food basket blessing",
+      "chapter": 15,
+      "printed_page": 208,
+      "original_triage": "ENRICH",
+      "canonical_cluster_id": "EASTER_BASKETS",
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "BOUNDED",
+      "disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "independent_witness": {
+        "confidence": "BOUNDED",
+        "witness_id": "W58B2-SWIE",
+        "url": "https://episkopat.pl/doc/180184.bishop-adam-balabuch-on-polish-easter-traditions",
+        "note": "Official episcopal description of Holy Saturday food blessing, Easter breakfast and sharing blessed eggs; it cannot replace Eucharistic observance; current witness not itself a 1962 Rituale proof",
+        "wave": "02"
+      },
+      "editorial_draft": {
+        "card_id": "W58-CARD-B2-SWIE",
+        "title": "Święconka and the Easter table",
+        "wave": "02",
+        "owner": "Existing Holy Saturday / Calendar and Customs Atlas; coordinate PR #1512"
+      },
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-16-005",
+      "source_title": "Surrexit Dominus vere Easter greeting",
+      "chapter": 16,
+      "printed_page": 212,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": "EASTER_FAMILY",
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "PARTIAL_HOLD",
+      "disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "independent_witness": {
+        "confidence": "PARTIAL_HOLD",
+        "witness_id": "W58B5-EASTER_GREETING",
+        "url": "https://www.vatican.va/content/francesco/en/messages/urbi/documents/20250420-urbi-et-orbi-pasqua.html",
+        "note": "Catholic Easter acclamation Christ is risen supported; precise traditional Latin exchange 'Surrexit Dominus vere' and local household greeting date not independently established by this modern address.",
+        "wave": "05"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-16-014",
+      "source_title": "Bringing home blessed Easter fire by lantern",
+      "chapter": 16,
+      "printed_page": 217,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": "EASTER_FIRE",
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "UNMATCHED_HOLD",
+      "disposition": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "independent_witness": {
+        "confidence": "UNMATCHED_HOLD",
+        "witness_id": "W58B6-WEI58-16-014",
+        "url": null,
+        "note": "No exact independent witness established in the present targeted source sweep; Weiser remains a historical locator only.",
+        "wave": "06"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-16-020",
+      "source_title": "Maltese running procession of Resurrection image",
+      "chapter": 16,
+      "printed_page": 220,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": "EASTER_PROCESSION",
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "PARTIAL_HOLD",
+      "disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "independent_witness": {
+        "confidence": "PARTIAL_HOLD",
+        "witness_id": "W58B3-MALTA_RUNNING",
+        "url": "https://church.mt/holy-week-processions-in-malta-and-gozo/",
+        "note": "Easter Sunday local processions with image of the Risen Christ are independently attested; this notice does not establish their exact running choreography.",
+        "wave": "03"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-16-022",
+      "source_title": "Easter walk with cross and prayer",
+      "chapter": 16,
+      "printed_page": 221,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": "EASTER_FAMILY",
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "UNMATCHED_HOLD",
+      "disposition": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "independent_witness": {
+        "confidence": "UNMATCHED_HOLD",
+        "witness_id": "W58B6-WEI58-16-022",
+        "url": null,
+        "note": "No exact independent witness established in the present targeted source sweep; Weiser remains a historical locator only.",
+        "wave": "06"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-16-024",
+      "source_title": "Easter open house and family visits",
+      "chapter": 16,
+      "printed_page": 221,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": "EASTER_FAMILY",
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "UNMATCHED_HOLD",
+      "disposition": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "independent_witness": {
+        "confidence": "UNMATCHED_HOLD",
+        "witness_id": "W58B6-WEI58-16-024",
+        "url": null,
+        "note": "No exact independent witness established in the present targeted source sweep; Weiser remains a historical locator only.",
+        "wave": "06"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-16-028",
+      "source_title": "Easter Monday Emmaus family walk",
+      "chapter": 16,
+      "printed_page": 223,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": "EASTER_FAMILY",
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "BOUNDED",
+      "disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "independent_witness": {
+        "confidence": "BOUNDED",
+        "witness_id": "W58B5-EMMAUS_WALK",
+        "url": "https://www2.erzbistum-muenchen.de/news/STK-Rosenheim/Emmausgang-30834.news",
+        "note": "Catholic archdiocesan explanation specifically documents Bavarian/Austrian Easter Monday family or parish walks tied to Luke 24:13–35, sometimes concluding at church or shrine.",
+        "wave": "05"
+      },
+      "editorial_draft": {
+        "card_id": "W58-P1-B5-EMMAUS",
+        "title": "An Easter Monday Emmaus walk",
+        "wave": "05",
+        "owner": "Calendar / seasonal domestic custom"
+      },
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-16-029",
+      "source_title": "Easter Monday visit to grandparents",
+      "chapter": 16,
+      "printed_page": 223,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": "EASTER_FAMILY",
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "UNMATCHED_HOLD",
+      "disposition": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "independent_witness": {
+        "confidence": "UNMATCHED_HOLD",
+        "witness_id": "W58B6-WEI58-16-029",
+        "url": null,
+        "note": "No exact independent witness established in the present targeted source sweep; Weiser remains a historical locator only.",
+        "wave": "06"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-16-031",
+      "source_title": "Easter Friday pilgrimage to nearby shrine",
+      "chapter": 16,
+      "printed_page": 225,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": "EASTER_PROCESSION",
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "UNMATCHED_HOLD",
+      "disposition": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "independent_witness": {
+        "confidence": "UNMATCHED_HOLD",
+        "witness_id": "W58B6-WEI58-16-031",
+        "url": null,
+        "note": "No exact independent witness established in the present targeted source sweep; Weiser remains a historical locator only.",
+        "wave": "06"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-17-006",
+      "source_title": "Lamb as Easter symbol of Christ",
+      "chapter": 17,
+      "printed_page": 233,
+      "original_triage": "ENRICH",
+      "canonical_cluster_id": "EASTER_SYMBOLS",
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "BOUNDED",
+      "disposition": "BOUNDED_CONTEXT_EXISTING_OWNER_ONLY",
+      "independent_witness": {
+        "confidence": "BOUNDED",
+        "witness_id": "W58B5-EASTER_LAMB",
+        "url": "https://www.vatican.va/content/benedict-xvi/en/homilies/2009/documents/hf_ben-xvi_hom_20090412_pasqua.html",
+        "note": "Christ as the Paschal lamb grounded in 1 Corinthians 5:7, with Jewish Paschal typology. This witnesses theological meaning, not historical sheep-meat blessing or exact decorative family use.",
+        "wave": "05"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-17-007",
+      "source_title": "Historical priestly blessing of Easter lamb",
+      "chapter": 17,
+      "printed_page": 233,
+      "original_triage": "ENRICH",
+      "canonical_cluster_id": "EASTER_SYMBOLS",
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "PARTIAL_HOLD",
+      "disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "independent_witness": {
+        "confidence": "PARTIAL_HOLD",
+        "witness_id": "W58B5-EASTER_LAMB_BLESS",
+        "url": "https://www2.erzbistum-muenchen.de/cms-media/media-70989420.pdf",
+        "note": "A 2025 parish newsletter describes Easter lamb cake brought for priestly blessing; that is not corroboration of Weiser's historical blessing of actual lamb meat or a particular 1962 formula.",
+        "wave": "05"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-17-010",
+      "source_title": "Easter egg as symbol of tomb and new life",
+      "chapter": 17,
+      "printed_page": 234,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": "EASTER_BASKETS",
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "BOUNDED",
+      "disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "independent_witness": {
+        "confidence": "BOUNDED",
+        "witness_id": "W58B3-EASTER_EGG",
+        "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html",
+        "note": "Easter eggs symbolize life in Christian popular piety; the Vatican documents egg blessings. Specific imagery of the tomb and historical 1962 Roman Ritual text not authenticated.",
+        "wave": "03"
+      },
+      "editorial_draft": {
+        "card_id": "W58-P1-B3-EASTER-EGGS",
+        "title": "Easter eggs as a sign of new life",
+        "wave": "03",
+        "owner": "Calendar / Customs Atlas, no new Holy Saturday rite"
+      },
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-17-011",
+      "source_title": "Historical Roman Ritual blessing of Easter eggs",
+      "chapter": 17,
+      "printed_page": 234,
+      "original_triage": "ENRICH",
+      "canonical_cluster_id": "EASTER_BASKETS",
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "PARTIAL_HOLD",
+      "disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "independent_witness": {
+        "confidence": "PARTIAL_HOLD",
+        "witness_id": "W58B3-ROMAN_EASTER_EGG_RITE",
+        "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html",
+        "note": "Church acknowledges egg blessing as popular piety, but does not certify the text, edition, minister or 1962 availability of the Roman Ritual rite.",
+        "wave": "03"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-17-014",
+      "source_title": "Ukrainian and Polish pysanky and krasanki eggs",
+      "chapter": 17,
+      "printed_page": 235,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": "EASTER_BASKETS",
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "BOUNDED",
+      "disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "independent_witness": {
+        "confidence": "BOUNDED",
+        "witness_id": "W58B5-PYSANKY",
+        "url": "https://www.si.edu/stories/designing-easter-eggs",
+        "note": "Museum documents named Polish and Ukrainian decorated eggs and Easter exchange, including wax-resist art. Does not validate symbolic lucky charms or mandatory Holy Saturday rites.",
+        "wave": "05"
+      },
+      "editorial_draft": {
+        "card_id": "W58-P1-B5-PYSANKY",
+        "title": "Decorated Easter eggs of Poland and Ukraine",
+        "wave": "05",
+        "owner": "Customs Atlas / optional Easter family art"
+      },
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-17-018",
+      "source_title": "Easter breakfast family sharing one blessed egg",
+      "chapter": 17,
+      "printed_page": 236,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": "EASTER_BASKETS",
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "BOUNDED",
+      "disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "independent_witness": {
+        "confidence": "BOUNDED",
+        "witness_id": "W58B2-SWIE",
+        "url": "https://episkopat.pl/doc/180184.bishop-adam-balabuch-on-polish-easter-traditions",
+        "note": "Official episcopal description of Holy Saturday food blessing, Easter breakfast and sharing blessed eggs; it cannot replace Eucharistic observance; current witness not itself a 1962 Rituale proof",
+        "wave": "02"
+      },
+      "editorial_draft": {
+        "card_id": "W58-CARD-B2-SWIE",
+        "title": "Święconka and the Easter table",
+        "wave": "02",
+        "owner": "Existing Holy Saturday / Calendar and Customs Atlas; coordinate PR #1512"
+      },
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-17-021",
+      "source_title": "Historical blessing of Easter ham",
+      "chapter": 17,
+      "printed_page": 237,
+      "original_triage": "ENRICH",
+      "canonical_cluster_id": "EASTER_SYMBOLS",
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "UNMATCHED_HOLD",
+      "disposition": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "independent_witness": {
+        "confidence": "UNMATCHED_HOLD",
+        "witness_id": "W58B6-WEI58-17-021",
+        "url": null,
+        "note": "No exact independent witness established in the present targeted source sweep; Weiser remains a historical locator only.",
+        "wave": "06"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-17-022",
+      "source_title": "Polish święconka family Easter food table",
+      "chapter": 17,
+      "printed_page": 238,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": "EASTER_BASKETS",
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "BOUNDED",
+      "disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "independent_witness": {
+        "confidence": "BOUNDED",
+        "witness_id": "W58B2-SWIE",
+        "url": "https://episkopat.pl/doc/180184.bishop-adam-balabuch-on-polish-easter-traditions",
+        "note": "Official episcopal description of Holy Saturday food blessing, Easter breakfast and sharing blessed eggs; it cannot replace Eucharistic observance; current witness not itself a 1962 Rituale proof",
+        "wave": "02"
+      },
+      "editorial_draft": {
+        "card_id": "W58-CARD-B2-SWIE",
+        "title": "Święconka and the Easter table",
+        "wave": "02",
+        "owner": "Existing Holy Saturday / Calendar and Customs Atlas; coordinate PR #1512"
+      },
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-17-023",
+      "source_title": "Easter paska bread decorated with crosses",
+      "chapter": 17,
+      "printed_page": 238,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": "EASTER_BASKETS",
+      "proposed_app_owner": "Calendar / Customs Atlas",
+      "source_class": "BOUNDED",
+      "disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "independent_witness": {
+        "confidence": "BOUNDED",
+        "witness_id": "W58B6-WEI58-17-023",
+        "url": "https://www.catholicculture.org/culture/liturgicalyear/recipes/view.cfm?id=1547",
+        "note": "Ukrainian Paska Easter bread with cross-shaped decoration documented; no claim this is a universal 1962 blessed food ritual.",
+        "wave": "06"
+      },
+      "editorial_draft": {
+        "card_id": "W58-P1-B6-PASKA",
+        "title": "Paska: a cross-marked Easter bread",
+        "wave": "06",
+        "owner": "Enrich existing Easter food blessing and regional family customs; no second Easter basket rite"
+      },
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-18-005",
+      "source_title": "Fields and pastures blessed in Ascension procession",
+      "chapter": 18,
+      "printed_page": 242,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": "EASTERTIDE_ASCENSION",
+      "proposed_app_owner": "Customs Atlas / Calendar",
+      "source_class": "PARTIAL_HOLD",
+      "disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "independent_witness": {
+        "confidence": "PARTIAL_HOLD",
+        "witness_id": "W58B6-WEI58-18-005",
+        "url": "https://www.kkbids-old.episkopat.pl/index.php?id=33",
+        "note": "Polish modern blessings include fields and pastures, not necessarily Ascension feast processions",
+        "wave": "06"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-18-013",
+      "source_title": "Bird-shaped Ascension pastries shared with customers",
+      "chapter": 18,
+      "printed_page": 245,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": null,
+      "proposed_app_owner": "Customs Atlas / Calendar",
+      "source_class": "UNMATCHED_HOLD",
+      "disposition": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "independent_witness": {
+        "confidence": "UNMATCHED_HOLD",
+        "witness_id": "W58B6-WEI58-18-013",
+        "url": null,
+        "note": "No exact independent witness established in the present targeted source sweep; Weiser remains a historical locator only.",
+        "wave": "06"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-18-014",
+      "source_title": "Ascension mountain climbs and hilltop family picnics",
+      "chapter": 18,
+      "printed_page": 245,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": "EASTERTIDE_ASCENSION",
+      "proposed_app_owner": "Customs Atlas / Calendar",
+      "source_class": "UNMATCHED_HOLD",
+      "disposition": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "independent_witness": {
+        "confidence": "UNMATCHED_HOLD",
+        "witness_id": "W58B6-WEI58-18-014",
+        "url": null,
+        "note": "No exact independent witness established in the present targeted source sweep; Weiser remains a historical locator only.",
+        "wave": "06"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-19-003",
+      "source_title": "Pentecost homes and churches decorated with flowering branches",
+      "chapter": 19,
+      "printed_page": 248,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": "EASTERTIDE_ASCENSION",
+      "proposed_app_owner": "Customs Atlas / Calendar",
+      "source_class": "UNMATCHED_HOLD",
+      "disposition": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "independent_witness": {
+        "confidence": "UNMATCHED_HOLD",
+        "witness_id": "W58B6-WEI58-19-003",
+        "url": null,
+        "note": "No exact independent witness established in the present targeted source sweep; Weiser remains a historical locator only.",
+        "wave": "06"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-19-009",
+      "source_title": "Veni Creator sung for retreats councils and important undertakings",
+      "chapter": 19,
+      "printed_page": 250,
+      "original_triage": "ENRICH",
+      "canonical_cluster_id": null,
+      "proposed_app_owner": "Customs Atlas / Calendar",
+      "source_class": "BOUNDED",
+      "disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "independent_witness": {
+        "confidence": "BOUNDED",
+        "witness_id": "W58B3-VENI_CREATOR",
+        "url": "https://www.vatican.va/content/john-paul-ii/en/homilies/2004/documents/hf_jp-ii_hom_20040529_vigil-pentecost.html",
+        "note": "The hymn Veni Creator Spiritus is directly attested for Pentecost prayer; this source does not establish all Weiser-described councils and retreats usages.",
+        "wave": "03"
+      },
+      "editorial_draft": {
+        "card_id": "W58-P1-B3-VENI-CREATOR",
+        "title": "Singing Veni Creator at Pentecost",
+        "wave": "03",
+        "owner": "Existing Pray / Pentecost Learn, no music module"
+      },
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-19-017",
+      "source_title": "Wooden dove suspended over household dining table",
+      "chapter": 19,
+      "printed_page": 252,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": "EASTERTIDE_ASCENSION",
+      "proposed_app_owner": "Customs Atlas / Calendar",
+      "source_class": "UNMATCHED_HOLD",
+      "disposition": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "independent_witness": {
+        "confidence": "UNMATCHED_HOLD",
+        "witness_id": "W58B6-WEI58-19-017",
+        "url": null,
+        "note": "No exact independent witness established in the present targeted source sweep; Weiser remains a historical locator only.",
+        "wave": "06"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-19-018",
+      "source_title": "Pentecost dawn hilltop prayer",
+      "chapter": 19,
+      "printed_page": 253,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": "EASTERTIDE_ASCENSION",
+      "proposed_app_owner": "Customs Atlas / Calendar",
+      "source_class": "UNMATCHED_HOLD",
+      "disposition": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "independent_witness": {
+        "confidence": "UNMATCHED_HOLD",
+        "witness_id": "W58B6-WEI58-19-018",
+        "url": null,
+        "note": "No exact independent witness established in the present targeted source sweep; Weiser remains a historical locator only.",
+        "wave": "06"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-19-023",
+      "source_title": "Pentecost Vigil blessing flowers fields and fruit trees",
+      "chapter": 19,
+      "printed_page": 253,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": null,
+      "proposed_app_owner": "Customs Atlas / Calendar",
+      "source_class": "UNMATCHED_HOLD",
+      "disposition": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "independent_witness": {
+        "confidence": "UNMATCHED_HOLD",
+        "witness_id": "W58B6-WEI58-19-023",
+        "url": null,
+        "note": "No exact independent witness established in the present targeted source sweep; Weiser remains a historical locator only.",
+        "wave": "06"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-20-007",
+      "source_title": "Eye within triangle in household Trinity images and wayside shrines",
+      "chapter": 20,
+      "printed_page": 257,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": null,
+      "proposed_app_owner": "Customs Atlas / Calendar",
+      "source_class": "UNMATCHED_HOLD",
+      "disposition": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "independent_witness": {
+        "confidence": "UNMATCHED_HOLD",
+        "witness_id": "W58B6-WEI58-20-007",
+        "url": null,
+        "note": "No exact independent witness established in the present targeted source sweep; Weiser remains a historical locator only.",
+        "wave": "06"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-20-009",
+      "source_title": "Trinity shrines and churches vowed after epidemics",
+      "chapter": 20,
+      "printed_page": 258,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": null,
+      "proposed_app_owner": "Customs Atlas / Calendar",
+      "source_class": "UNMATCHED_HOLD",
+      "disposition": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "independent_witness": {
+        "confidence": "UNMATCHED_HOLD",
+        "witness_id": "W58B6-WEI58-20-009",
+        "url": null,
+        "note": "No exact independent witness established in the present targeted source sweep; Weiser remains a historical locator only.",
+        "wave": "06"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-20-010",
+      "source_title": "Trinity plague columns erected in public squares",
+      "chapter": 20,
+      "printed_page": 258,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": null,
+      "proposed_app_owner": "Customs Atlas / Calendar",
+      "source_class": "BOUNDED",
+      "disposition": "BOUNDED_CONTEXT_EXISTING_OWNER_ONLY",
+      "independent_witness": {
+        "confidence": "BOUNDED",
+        "witness_id": "W58B5-VIENNA_COLUMN",
+        "url": "https://www.visitingvienna.com/sights/plague-column-pestsaule/",
+        "note": "Vienna's plague column after 1679 and explicit Trinity iconography documented; supports historical landmark context only, not a replicable domestic custom or a general rule for all Trinity shrines.",
+        "wave": "05"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-20-012",
+      "source_title": "Holy Trinity confraternities in seventeenth century",
+      "chapter": 20,
+      "printed_page": 258,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": null,
+      "proposed_app_owner": "Customs Atlas / Calendar",
+      "source_class": "UNMATCHED_HOLD",
+      "disposition": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "independent_witness": {
+        "confidence": "UNMATCHED_HOLD",
+        "witness_id": "W58B6-WEI58-20-012",
+        "url": null,
+        "note": "No exact independent witness established in the present targeted source sweep; Weiser remains a historical locator only.",
+        "wave": "06"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-21-006",
+      "source_title": "Kneeling to adore Eucharist before home on processional route",
+      "chapter": 21,
+      "printed_page": 262,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": "CORPUS_DEVOTION",
+      "proposed_app_owner": "Customs Atlas / Calendar",
+      "source_class": "BOUNDED",
+      "disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "independent_witness": {
+        "confidence": "BOUNDED",
+        "witness_id": "W58B4-CORPUS_KNEEL",
+        "url": "https://www.vatican.va/content/benedict-xvi/en/homilies/2008/documents/hf_ben-xvi_hom_20080522_corpus-domini.html",
+        "note": "Public kneeling/adoration accompanying procession confirmed; particular action 'outside one's own home' is not individually verified and must not be asserted.",
+        "wave": "04"
+      },
+      "editorial_draft": {
+        "card_id": "W58-P1-B4-CORPUS",
+        "title": "Adoration along the Corpus Christi procession",
+        "wave": "04",
+        "owner": "Existing Corpus Christi Special Days; Customs Atlas context"
+      },
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-21-007",
+      "source_title": "Procession route windows decorated with candles and sacred images",
+      "chapter": 21,
+      "printed_page": 262,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": "CORPUS_DECOR",
+      "proposed_app_owner": "Customs Atlas / Calendar",
+      "source_class": "BOUNDED",
+      "disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "independent_witness": {
+        "confidence": "BOUNDED",
+        "witness_id": "W58B3-CORPUS_WINDOWS",
+        "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html",
+        "note": "Decorating streets and windows with flowers accompanying Eucharistic processions. It does not independently verify Weiser's exact candles-and-images detail.",
+        "wave": "03"
+      },
+      "editorial_draft": {
+        "card_id": "W58-P1-B3-CORPUS-WINDOWS",
+        "title": "Decorating for the Corpus Christi procession",
+        "wave": "03",
+        "owner": "Customs Atlas / Calendar feast-day context, separate from procession state"
+      },
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-21-009",
+      "source_title": "Floral carpets spread along Corpus Christi streets",
+      "chapter": 21,
+      "printed_page": 262,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": "CORPUS_DECOR",
+      "proposed_app_owner": "Customs Atlas / Calendar",
+      "source_class": "BOUNDED",
+      "disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "independent_witness": {
+        "confidence": "BOUNDED",
+        "witness_id": "W58B2-FLOWER",
+        "url": "https://ich.unesco.org/en/RL/flower-carpets-tradition-for-corpus-christi-processions-01743",
+        "note": "UNESCO identifies the flower-carpet practice for Corpus Christi processions as intangible heritage, in a specific locality/tradition; does not establish a universal rite or floral-wreath blessing",
+        "wave": "02"
+      },
+      "editorial_draft": {
+        "card_id": "W58-CARD-B2-FLOWER",
+        "title": "Flower carpets for Corpus Christi",
+        "wave": "02",
+        "owner": "Customs Atlas / Corpus Christi Calendar context"
+      },
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-21-010",
+      "source_title": "Corpus Christi stations with prayers and Eucharistic Benediction",
+      "chapter": 21,
+      "printed_page": 262,
+      "original_triage": "ENRICH",
+      "canonical_cluster_id": "CORPUS_DEVOTION",
+      "proposed_app_owner": "Customs Atlas / Calendar",
+      "source_class": "BOUNDED",
+      "disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "independent_witness": {
+        "confidence": "BOUNDED",
+        "witness_id": "W58B4-CORPUS_STATIONS",
+        "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html",
+        "note": "The directory acknowledges stops at decorated altars on Eucharistic procession routes and solemn benediction at the conclusion; number/form of stations varies locally and is not 1962 rubric-certified by this witness.",
+        "wave": "04"
+      },
+      "editorial_draft": {
+        "card_id": "W58-P1-B4-CORPUS",
+        "title": "Adoration along the Corpus Christi procession",
+        "wave": "04",
+        "owner": "Existing Corpus Christi Special Days; Customs Atlas context"
+      },
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-21-018",
+      "source_title": "Flower wreaths attached to flags banners and homes on Fête-Dieu",
+      "chapter": 21,
+      "printed_page": 265,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": "CORPUS_DECOR",
+      "proposed_app_owner": "Customs Atlas / Calendar",
+      "source_class": "PARTIAL_HOLD",
+      "disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "independent_witness": {
+        "confidence": "PARTIAL_HOLD",
+        "witness_id": "W58B4-CORPUS_FLOWER_WREATH",
+        "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html",
+        "note": "Flowers and procession route decorations are documented, but woven wreaths on banners and a separate priestly wreath blessing have not been independently established.",
+        "wave": "04"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-21-019",
+      "source_title": "Priestly blessing of Corpus Christi flower wreaths",
+      "chapter": 21,
+      "printed_page": 265,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": "CORPUS_WREATH",
+      "proposed_app_owner": "Customs Atlas / Calendar",
+      "source_class": "PARTIAL_HOLD",
+      "disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "independent_witness": {
+        "confidence": "PARTIAL_HOLD",
+        "witness_id": "W58B4-CORPUS_FLOWER_WREATH",
+        "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html",
+        "note": "Flowers and procession route decorations are documented, but woven wreaths on banners and a separate priestly wreath blessing have not been independently established.",
+        "wave": "04"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-21-020",
+      "source_title": "Blessed floral wreaths hung at home and field margins",
+      "chapter": 21,
+      "printed_page": 266,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": "CORPUS_WREATH",
+      "proposed_app_owner": "Customs Atlas / Calendar",
+      "source_class": "PARTIAL_HOLD",
+      "disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "independent_witness": {
+        "confidence": "PARTIAL_HOLD",
+        "witness_id": "W58B6-WEI58-21-020",
+        "url": "https://www.kkbids-old.episkopat.pl/index.php?id=33",
+        "note": "Blessing of Corpus Christi octave wreaths documented, not home/field hanging or 1962 formula",
+        "wave": "06"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-22-005",
+      "source_title": "Cross-shaped last sheaf decorated in household",
+      "chapter": 22,
+      "printed_page": 269,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": null,
+      "proposed_app_owner": "Customs Atlas / Calendar",
+      "source_class": "UNMATCHED_HOLD",
+      "disposition": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "independent_witness": {
+        "confidence": "UNMATCHED_HOLD",
+        "witness_id": "W58B6-WEI58-22-005",
+        "url": null,
+        "note": "No exact independent witness established in the present targeted source sweep; Weiser remains a historical locator only.",
+        "wave": "06"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-22-006",
+      "source_title": "Polish blessed harvest wreaths",
+      "chapter": 22,
+      "printed_page": 270,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": null,
+      "proposed_app_owner": "Customs Atlas / Calendar",
+      "source_class": "BOUNDED",
+      "disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "independent_witness": {
+        "confidence": "BOUNDED",
+        "witness_id": "W58B4-HARVEST_POLISH",
+        "url": "https://episkopat.pl/News/przewodniczacy/201",
+        "note": "Polish episcopal account explicitly reports archbishop blessing harvest wreaths and bread during diocesan/provincial harvest celebration; source confirms a regional ministerial practice, not universal Roman calendar date.",
+        "wave": "04"
+      },
+      "editorial_draft": {
+        "card_id": "W58-P1-B4-HARVEST",
+        "title": "Polish dożynki: the blessed harvest wreath",
+        "wave": "04",
+        "owner": "Customs Atlas / regional history; Calendar contextual link only"
+      },
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-22-008",
+      "source_title": "Martinmas thanksgiving Mass and village harvest feasting",
+      "chapter": 22,
+      "printed_page": 270,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": null,
+      "proposed_app_owner": "Customs Atlas / Calendar",
+      "source_class": "UNMATCHED_HOLD",
+      "disposition": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "independent_witness": {
+        "confidence": "UNMATCHED_HOLD",
+        "witness_id": "W58B6-WEI58-22-008",
+        "url": null,
+        "note": "No exact independent witness established in the present targeted source sweep; Weiser remains a historical locator only.",
+        "wave": "06"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-23-005",
+      "source_title": "Parish and diocesan patron feast celebrations",
+      "chapter": 23,
+      "printed_page": 279,
+      "original_triage": "ENRICH",
+      "canonical_cluster_id": null,
+      "proposed_app_owner": "Saints / Customs Atlas",
+      "source_class": "BOUNDED",
+      "disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "independent_witness": {
+        "confidence": "BOUNDED",
+        "witness_id": "W58B4-PATRON_PARISH",
+        "url": "https://www.sainteanne-sanctuaire.com/?langue=en&mode=grand-pardon",
+        "note": "Specific Saint Anne patronal observance with pilgrimage, Mass, local procession and reconciliation; contributes a local example to existing PATR-001, no generalized parish patron calendar.",
+        "wave": "04"
+      },
+      "editorial_draft": {
+        "card_id": "W58-P1-B4-PATRON",
+        "title": "A French patronal pardon at Sainte-Anne-d'Auray",
+        "wave": "04",
+        "owner": "Enrich existing PATR-001 and Sainte Anne pilgrimage profile"
+      },
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-23-017",
+      "source_title": "Medieval pilgrimages Compostela Bari Cologne Marseille",
+      "chapter": 23,
+      "printed_page": 283,
+      "original_triage": "ENRICH",
+      "canonical_cluster_id": null,
+      "proposed_app_owner": "Saints / Customs Atlas",
+      "source_class": "PARTIAL_HOLD",
+      "disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "independent_witness": {
+        "confidence": "PARTIAL_HOLD",
+        "witness_id": "W58B6-WEI58-23-017",
+        "url": "https://whc.unesco.org/en/list/868",
+        "note": "UNESCO supports medieval Compostela pilgrimages via France, not all Bari/Cologne/Marseille itinerary claims",
+        "wave": "06"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-24-008",
+      "source_title": "Assumption blessing of gathered herbs",
+      "chapter": 24,
+      "printed_page": 290,
+      "original_triage": "ENRICH",
+      "canonical_cluster_id": "MARIAN_HARVEST",
+      "proposed_app_owner": "Customs Atlas / Calendar",
+      "source_class": "BOUNDED",
+      "disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "independent_witness": {
+        "confidence": "BOUNDED",
+        "witness_id": "W58B5-ASSUMPTION_HERBS",
+        "url": "https://bistum-augsburg.de/Pfarreien/St.-Ulrich_Neuburg/Aktuelles/Maria-Himmelfahrt-Kraeuterweihe",
+        "note": "Official parish describes herbs tied into bouquets by women before the Assumption Mass and blessed locally; future diocese schedules likewise announce herb blessings. Magical healing or lightning protection claims are historical folklore, not Catholic guarantees.",
+        "wave": "05"
+      },
+      "editorial_draft": {
+        "card_id": "W58-P1-B5-ASSUMPTION_HERBS",
+        "title": "Herb bouquets blessed on the Assumption",
+        "wave": "05",
+        "owner": "Existing blessing owner in PR #1512 / Calendar"
+      },
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-24-009",
+      "source_title": "Alpine pre-Mass herb bouquets for blessing",
+      "chapter": 24,
+      "printed_page": 290,
+      "original_triage": "ENRICH",
+      "canonical_cluster_id": "MARIAN_HARVEST",
+      "proposed_app_owner": "Customs Atlas / Calendar",
+      "source_class": "BOUNDED",
+      "disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "independent_witness": {
+        "confidence": "BOUNDED",
+        "witness_id": "W58B5-ASSUMPTION_HERBS",
+        "url": "https://bistum-augsburg.de/Pfarreien/St.-Ulrich_Neuburg/Aktuelles/Maria-Himmelfahrt-Kraeuterweihe",
+        "note": "Official parish describes herbs tied into bouquets by women before the Assumption Mass and blessed locally; future diocese schedules likewise announce herb blessings. Magical healing or lightning protection claims are historical folklore, not Catholic guarantees.",
+        "wave": "05"
+      },
+      "editorial_draft": {
+        "card_id": "W58-P1-B5-ASSUMPTION_HERBS",
+        "title": "Herb bouquets blessed on the Assumption",
+        "wave": "05",
+        "owner": "Existing blessing owner in PR #1512 / Calendar"
+      },
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-24-012",
+      "source_title": "Assumption blessing of countryside and fields",
+      "chapter": 24,
+      "printed_page": 291,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": "MARIAN_HARVEST",
+      "proposed_app_owner": "Customs Atlas / Calendar",
+      "source_class": "PARTIAL_HOLD",
+      "disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "independent_witness": {
+        "confidence": "PARTIAL_HOLD",
+        "witness_id": "W58B6-WEI58-24-012",
+        "url": "https://www.kkbids-old.episkopat.pl/index.php?id=33",
+        "note": "Blessing fields and herbs exists in modern Polish list, but not specifically Assumption fields",
+        "wave": "06"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-24-013",
+      "source_title": "French Alpine pasture and livestock blessing",
+      "chapter": 24,
+      "printed_page": 291,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": "MARIAN_HARVEST",
+      "proposed_app_owner": "Customs Atlas / Calendar",
+      "source_class": "UNMATCHED_HOLD",
+      "disposition": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "independent_witness": {
+        "confidence": "UNMATCHED_HOLD",
+        "witness_id": "W58B6-WEI58-24-013",
+        "url": null,
+        "note": "No exact independent witness established in the present targeted source sweep; Weiser remains a historical locator only.",
+        "wave": "06"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-24-021",
+      "source_title": "Spanish balcony candles and flowers for 8 December",
+      "chapter": 24,
+      "printed_page": 294,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": null,
+      "proposed_app_owner": "Customs Atlas / Calendar",
+      "source_class": "PARTIAL_HOLD",
+      "disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "independent_witness": {
+        "confidence": "PARTIAL_HOLD",
+        "witness_id": "W58B6-WEI58-24-021",
+        "url": "https://valence.cef.fr/actualites/soiree-et-nuit-illuminees-pour-limmaculee-conception/",
+        "note": "French Rhône-Alpes window lights attested for Dec 8; Spanish balcony candles/flowers not proven",
+        "wave": "06"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-25-012",
+      "source_title": "Taking down Christmas crib on Candlemas",
+      "chapter": 25,
+      "printed_page": 300,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": null,
+      "proposed_app_owner": "Customs Atlas / Calendar",
+      "source_class": "BOUNDED",
+      "disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "independent_witness": {
+        "confidence": "BOUNDED",
+        "witness_id": "W58B4-CANDLEMAS_CRIB",
+        "url": "https://dioceseparis.fr/la-chandeleur-fete-de-la-lumiere.html",
+        "note": "Diocese explicitly distinguishes the end of liturgical Christmas from the domestic tradition of keeping a Nativity crib until Candlemas; not a universal removal requirement.",
+        "wave": "04"
+      },
+      "editorial_draft": {
+        "card_id": "W58-P1-B4-CANDLEMAS",
+        "title": "Keeping the Nativity crib until Candlemas",
+        "wave": "04",
+        "owner": "Calendar / Customs Atlas; link to Candlemas existing DOM-011"
+      },
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-25-023",
+      "source_title": "Seed and harvest blessing for Nativity of Mary",
+      "chapter": 25,
+      "printed_page": 305,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": "MARIAN_HARVEST",
+      "proposed_app_owner": "Customs Atlas / Calendar",
+      "source_class": "BOUNDED",
+      "disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "independent_witness": {
+        "confidence": "BOUNDED",
+        "witness_id": "W58B6-WEI58-25-023",
+        "url": "https://www.kkbids-old.episkopat.pl/index.php?id=33",
+        "note": "A modern Polish blessing of seeds and sowing grain on Nativity of the Blessed Virgin Mary appears in an official church inventory; no proof of the exact 1962 form.",
+        "wave": "06"
+      },
+      "editorial_draft": {
+        "card_id": "W58-P1-B6-MARY_NATIVITY_SEEDS",
+        "title": "Blessing seeds on the Nativity of Our Lady",
+        "wave": "06",
+        "owner": "Existing Marian seasonal blessings / Calendar; no new priest script"
+      },
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-25-024",
+      "source_title": "French vineyard grapes brought for priestly blessing",
+      "chapter": 25,
+      "printed_page": 305,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": "MARIAN_HARVEST",
+      "proposed_app_owner": "Customs Atlas / Calendar",
+      "source_class": "PARTIAL_HOLD",
+      "disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "independent_witness": {
+        "confidence": "PARTIAL_HOLD",
+        "witness_id": "W58B6-WEI58-25-024",
+        "url": "https://www.kkbids-old.episkopat.pl/index.php?id=33",
+        "note": "Blessing fruits exists in modern Polish list, not specifically French vineyard grapes on Marian feast",
+        "wave": "06"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-25-025",
+      "source_title": "Our Lady of Grape Harvest family festive meal",
+      "chapter": 25,
+      "printed_page": 305,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": "MARIAN_HARVEST",
+      "proposed_app_owner": "Customs Atlas / Calendar",
+      "source_class": "UNMATCHED_HOLD",
+      "disposition": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "independent_witness": {
+        "confidence": "UNMATCHED_HOLD",
+        "witness_id": "W58B6-WEI58-25-025",
+        "url": null,
+        "note": "No exact independent witness established in the present targeted source sweep; Weiser remains a historical locator only.",
+        "wave": "06"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-26-008",
+      "source_title": "Priest blesses graves on All Souls",
+      "chapter": 26,
+      "printed_page": 310,
+      "original_triage": "ENRICH",
+      "canonical_cluster_id": null,
+      "proposed_app_owner": "DEAD-003 / Customs Atlas",
+      "source_class": "PARTIAL_HOLD",
+      "disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "independent_witness": {
+        "confidence": "PARTIAL_HOLD",
+        "witness_id": "W58B4-SOULS_PRIEST_GRAVES",
+        "url": "https://www.vatican.va/content/dam/wss/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html",
+        "note": "Community cemetery prayer and visits supported; specific priestly formula for blessing graves is not documented in this witness.",
+        "wave": "04"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-26-010",
+      "source_title": "Cleaning and decorating graves before November",
+      "chapter": 26,
+      "printed_page": 311,
+      "original_triage": "ENRICH",
+      "canonical_cluster_id": null,
+      "proposed_app_owner": "DEAD-003 / Customs Atlas",
+      "source_class": "BOUNDED",
+      "disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "independent_witness": {
+        "confidence": "BOUNDED",
+        "witness_id": "W58B4-SOULS_DECOR",
+        "url": "https://www.vatican.va/content/dam/wss/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html",
+        "note": "Cemetery visits with tending graves, flowers and lamps acknowledged, while Polish bishops confirm local November family candle traditions; no mandatory grave visit or superstitious implications.",
+        "wave": "04"
+      },
+      "editorial_draft": {
+        "card_id": "W58-P1-B4-ALLSOULS",
+        "title": "Caring for graves at All Souls",
+        "wave": "04",
+        "owner": "Enrich existing DEAD-001 / DEAD-003; never mint second Souls entry"
+      },
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-26-011",
+      "source_title": "All Souls lantern candles burning by tombs",
+      "chapter": 26,
+      "printed_page": 311,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": null,
+      "proposed_app_owner": "DEAD-003 / Customs Atlas",
+      "source_class": "BOUNDED",
+      "disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "independent_witness": {
+        "confidence": "BOUNDED",
+        "witness_id": "W58B4-SOULS_DECOR",
+        "url": "https://www.vatican.va/content/dam/wss/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html",
+        "note": "Cemetery visits with tending graves, flowers and lamps acknowledged, while Polish bishops confirm local November family candle traditions; no mandatory grave visit or superstitious implications.",
+        "wave": "04"
+      },
+      "editorial_draft": {
+        "card_id": "W58-P1-B4-ALLSOULS",
+        "title": "Caring for graves at All Souls",
+        "wave": "04",
+        "owner": "Enrich existing DEAD-001 / DEAD-003; never mint second Souls entry"
+      },
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-26-012",
+      "source_title": "Tolling bell at All Saints dusk to summon prayer",
+      "chapter": 26,
+      "printed_page": 311,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": null,
+      "proposed_app_owner": "DEAD-003 / Customs Atlas",
+      "source_class": "UNMATCHED_HOLD",
+      "disposition": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "independent_witness": {
+        "confidence": "UNMATCHED_HOLD",
+        "witness_id": "W58B6-WEI58-26-012",
+        "url": null,
+        "note": "No exact independent witness established in the present targeted source sweep; Weiser remains a historical locator only.",
+        "wave": "06"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-26-014",
+      "source_title": "Breton all-night prayer bells and farmhouse visits",
+      "chapter": 26,
+      "printed_page": 311,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": null,
+      "proposed_app_owner": "DEAD-003 / Customs Atlas",
+      "source_class": "UNMATCHED_HOLD",
+      "disposition": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "independent_witness": {
+        "confidence": "UNMATCHED_HOLD",
+        "witness_id": "W58B6-WEI58-26-014",
+        "url": null,
+        "note": "No exact independent witness established in the present targeted source sweep; Weiser remains a historical locator only.",
+        "wave": "06"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-26-020",
+      "source_title": "Eight days of family Soul Nights after All Souls",
+      "chapter": 26,
+      "printed_page": 312,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": null,
+      "proposed_app_owner": "DEAD-003 / Customs Atlas",
+      "source_class": "UNMATCHED_HOLD",
+      "disposition": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "independent_witness": {
+        "confidence": "UNMATCHED_HOLD",
+        "witness_id": "W58B6-WEI58-26-020",
+        "url": null,
+        "note": "No exact independent witness established in the present targeted source sweep; Weiser remains a historical locator only.",
+        "wave": "06"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-26-021",
+      "source_title": "Daily charitable meal portions during Soul Nights",
+      "chapter": 26,
+      "printed_page": 312,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": null,
+      "proposed_app_owner": "DEAD-003 / Customs Atlas",
+      "source_class": "UNMATCHED_HOLD",
+      "disposition": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "independent_witness": {
+        "confidence": "UNMATCHED_HOLD",
+        "witness_id": "W58B6-WEI58-26-021",
+        "url": null,
+        "note": "No exact independent witness established in the present targeted source sweep; Weiser remains a historical locator only.",
+        "wave": "06"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-26-024",
+      "source_title": "Beans peas lentils as food given to poor",
+      "chapter": 26,
+      "printed_page": 313,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": null,
+      "proposed_app_owner": "DEAD-003 / Customs Atlas",
+      "source_class": "PARTIAL_HOLD",
+      "disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "independent_witness": {
+        "confidence": "PARTIAL_HOLD",
+        "witness_id": "W58B4-SOULS_BEANS",
+        "url": "https://www.vatican.va/content/dam/wss/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html",
+        "note": "General almsgiving for the deceased supported, but specific beans/peas/lentils as a named regional food custom not verified.",
+        "wave": "04"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-26-028",
+      "source_title": "Hungarian orphan children invited for All Souls",
+      "chapter": 26,
+      "printed_page": 314,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": null,
+      "proposed_app_owner": "DEAD-003 / Customs Atlas",
+      "source_class": "UNMATCHED_HOLD",
+      "disposition": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "independent_witness": {
+        "confidence": "UNMATCHED_HOLD",
+        "witness_id": "W58B6-WEI58-26-028",
+        "url": null,
+        "note": "No exact independent witness established in the present targeted source sweep; Weiser remains a historical locator only.",
+        "wave": "06"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-27-002",
+      "source_title": "St Blaise pan bendito blessed sticks",
+      "chapter": 27,
+      "printed_page": 317,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": null,
+      "proposed_app_owner": "Saints / Customs Atlas",
+      "source_class": "UNMATCHED_HOLD",
+      "disposition": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "independent_witness": {
+        "confidence": "UNMATCHED_HOLD",
+        "witness_id": "W58B6-WEI58-27-002",
+        "url": null,
+        "note": "No exact independent witness established in the present targeted source sweep; Weiser remains a historical locator only.",
+        "wave": "06"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-27-008",
+      "source_title": "St Patrick March 17 Irish feast",
+      "chapter": 27,
+      "printed_page": 319,
+      "original_triage": "ENRICH",
+      "canonical_cluster_id": null,
+      "proposed_app_owner": "Saints / Customs Atlas",
+      "source_class": "BOUNDED",
+      "disposition": "BOUNDED_CONTEXT_EXISTING_OWNER_ONLY",
+      "independent_witness": {
+        "confidence": "BOUNDED",
+        "witness_id": "W58B6-WEI58-27-008",
+        "url": "https://eglise.catholique.fr/saint-du-jour/17/03/saint-patrick/",
+        "note": "St Patrick feast commemorated 17 March, already a Saints/Calendar identity; do not mint a second customs record.",
+        "wave": "06"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-27-010",
+      "source_title": "St Patrick's Day Mass parade and household feast",
+      "chapter": 27,
+      "printed_page": 322,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": null,
+      "proposed_app_owner": "Saints / Customs Atlas",
+      "source_class": "PARTIAL_HOLD",
+      "disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "independent_witness": {
+        "confidence": "PARTIAL_HOLD",
+        "witness_id": "W58B6-WEI58-27-010",
+        "url": "https://eglise.catholique.fr/saint-du-jour/03/17/saint-patrice/",
+        "note": "Feast date independently documented, not combined local parade/household meal",
+        "wave": "06"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-27-014",
+      "source_title": "Saint Patrick Breastplate Lorica prayer",
+      "chapter": 27,
+      "printed_page": 323,
+      "original_triage": "ENRICH",
+      "canonical_cluster_id": null,
+      "proposed_app_owner": "Saints / Customs Atlas",
+      "source_class": "PARTIAL_HOLD",
+      "disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "independent_witness": {
+        "confidence": "PARTIAL_HOLD",
+        "witness_id": "W58B5-PATRICK_LORICA",
+        "url": "https://www.catholicculture.org/culture/liturgicalyear/calendar/day.cfm?date=2026-03-17",
+        "note": "Common Catholic devotion may be associated with Patrick; without manuscript/provenance evidence, direct authorship or exact received prayer form is unverified.",
+        "wave": "05"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-27-018",
+      "source_title": "St Joseph small breads fritelli shared at feast",
+      "chapter": 27,
+      "printed_page": 324,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": null,
+      "proposed_app_owner": "Saints / Customs Atlas",
+      "source_class": "BOUNDED",
+      "disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "independent_witness": {
+        "confidence": "BOUNDED",
+        "witness_id": "W58B6-WEI58-27-018",
+        "url": "https://www.umbriatourism.it/it/w/le-frittelle-di-san-giuseppe",
+        "note": "Regional Italian St Joseph rice fritters eaten on March 19; Weiser's precise small-bread name may represent a variant not identical everywhere.",
+        "wave": "06"
+      },
+      "editorial_draft": {
+        "card_id": "W58-P1-B6-ST_JOSEPH_FRITTERS",
+        "title": "St Joseph's Day fritters",
+        "wave": "06",
+        "owner": "Saints / Calendar existing St Joseph record; optional food tradition, not separate feast"
+      },
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-27-027",
+      "source_title": "Tuesday devotions and novenas for St Anthony",
+      "chapter": 27,
+      "printed_page": 328,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": null,
+      "proposed_app_owner": "Saints / Customs Atlas",
+      "source_class": "BOUNDED",
+      "disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "independent_witness": {
+        "confidence": "BOUNDED",
+        "witness_id": "W58B4-ANTHONY_TUESDAYS",
+        "url": "https://www.franciscanmedia.org/franciscan-tradition-and-resources/st-anthony-of-padua-finder-teacher-matchmaker-guide/",
+        "note": "Franciscan account reports nine or thirteen Tuesday or Sunday devotional cycles at churches and shrines; stories of promised miracles/old indulgences not treated as current guarantees.",
+        "wave": "04"
+      },
+      "editorial_draft": {
+        "card_id": "W58-P1-B4-ANTHONY",
+        "title": "Tuesdays dedicated to St Anthony of Padua",
+        "wave": "04",
+        "owner": "Existing Saints and Pray/Novena modules; no duplicate novena"
+      },
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-27-030",
+      "source_title": "St John Baptist eve hilltop bonfires",
+      "chapter": 27,
+      "printed_page": 330,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": null,
+      "proposed_app_owner": "Saints / Customs Atlas",
+      "source_class": "BOUNDED",
+      "disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "independent_witness": {
+        "confidence": "BOUNDED",
+        "witness_id": "W58B4-JOHN_FIRES",
+        "url": "https://diocese64.org/evenement/feu-de-la-saint-jean-a-oloron-sainte-marie/",
+        "note": "A parish event near 24 June includes Mass, community bonfire, shared meal, songs and prayers; confirms one local celebration, not a church-mandated ceremony or all Breton sea-fire variants.",
+        "wave": "04"
+      },
+      "editorial_draft": {
+        "card_id": "W58-P1-B4-JOHN",
+        "title": "St John Baptist's bonfire and community prayer",
+        "wave": "04",
+        "owner": "Saints / Customs Atlas; local optional gathering"
+      },
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-27-031",
+      "source_title": "Brittany fishermen St John sea fires and crew prayers",
+      "chapter": 27,
+      "printed_page": 330,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": null,
+      "proposed_app_owner": "Saints / Customs Atlas",
+      "source_class": "PARTIAL_HOLD",
+      "disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "independent_witness": {
+        "confidence": "PARTIAL_HOLD",
+        "witness_id": "W58B4-ST_JOHN_SEA",
+        "url": "https://diocese64.org/evenement/feu-de-la-saint-jean-a-oloron-sainte-marie/",
+        "note": "Pyrenean Catholic bonfire documented, but no independent Breton fishing-boat or maritime rite evidence.",
+        "wave": "04"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-27-035",
+      "source_title": "Community intercessory prayer beside St John bonfire",
+      "chapter": 27,
+      "printed_page": 331,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": null,
+      "proposed_app_owner": "Saints / Customs Atlas",
+      "source_class": "BOUNDED",
+      "disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "independent_witness": {
+        "confidence": "BOUNDED",
+        "witness_id": "W58B4-JOHN_FIRES",
+        "url": "https://diocese64.org/evenement/feu-de-la-saint-jean-a-oloron-sainte-marie/",
+        "note": "A parish event near 24 June includes Mass, community bonfire, shared meal, songs and prayers; confirms one local celebration, not a church-mandated ceremony or all Breton sea-fire variants.",
+        "wave": "04"
+      },
+      "editorial_draft": {
+        "card_id": "W58-P1-B4-JOHN",
+        "title": "St John Baptist's bonfire and community prayer",
+        "wave": "04",
+        "owner": "Saints / Customs Atlas; local optional gathering"
+      },
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-28-004",
+      "source_title": "Priestly grain blessing on feast of Peter and Paul",
+      "chapter": 28,
+      "printed_page": 334,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": null,
+      "proposed_app_owner": "Saints / Customs Atlas",
+      "source_class": "PARTIAL_HOLD",
+      "disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "independent_witness": {
+        "confidence": "PARTIAL_HOLD",
+        "witness_id": "W58B6-WEI58-28-004",
+        "url": "https://www.kkbids-old.episkopat.pl/index.php?id=33",
+        "note": "Polish grain or seed blessings do not establish Peter and Paul as feast date",
+        "wave": "06"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-28-005",
+      "source_title": "Blessed straw crowns hung above dining table",
+      "chapter": 28,
+      "printed_page": 334,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": null,
+      "proposed_app_owner": "Saints / Customs Atlas",
+      "source_class": "UNMATCHED_HOLD",
+      "disposition": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "independent_witness": {
+        "confidence": "UNMATCHED_HOLD",
+        "witness_id": "W58B6-WEI58-28-005",
+        "url": null,
+        "note": "No exact independent witness established in the present targeted source sweep; Weiser remains a historical locator only.",
+        "wave": "06"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-28-006",
+      "source_title": "Special bread blessing for Peter and Paul",
+      "chapter": 28,
+      "printed_page": 334,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": null,
+      "proposed_app_owner": "Saints / Customs Atlas",
+      "source_class": "PARTIAL_HOLD",
+      "disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "independent_witness": {
+        "confidence": "PARTIAL_HOLD",
+        "witness_id": "W58B6-WEI58-28-006",
+        "url": "https://www.kkbids-old.episkopat.pl/index.php?id=33",
+        "note": "General bread blessings do not establish specific Peter-and-Paul bread custom",
+        "wave": "06"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-28-007",
+      "source_title": "Alpine outdoor Angelus on Peter and Paul feast",
+      "chapter": 28,
+      "printed_page": 334,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": null,
+      "proposed_app_owner": "Saints / Customs Atlas",
+      "source_class": "UNMATCHED_HOLD",
+      "disposition": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "independent_witness": {
+        "confidence": "UNMATCHED_HOLD",
+        "witness_id": "W58B6-WEI58-28-007",
+        "url": null,
+        "note": "No exact independent witness established in the present targeted source sweep; Weiser remains a historical locator only.",
+        "wave": "06"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-28-012",
+      "source_title": "Blessed St Christopher medal carried by drivers",
+      "chapter": 28,
+      "printed_page": 336,
+      "original_triage": "ENRICH",
+      "canonical_cluster_id": null,
+      "proposed_app_owner": "Saints / Customs Atlas",
+      "source_class": "PARTIAL_HOLD",
+      "disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "independent_witness": {
+        "confidence": "PARTIAL_HOLD",
+        "witness_id": "W58B6-WEI58-28-012",
+        "url": "https://www.kkbids-old.episkopat.pl/index.php?id=33",
+        "note": "Catholic medals and drivers' blessings documented as distinct practices; specific regular driver carrying medal not independently checked",
+        "wave": "06"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-28-015",
+      "source_title": "St Anne medieval French devotion and pilgrimage",
+      "chapter": 28,
+      "printed_page": 337,
+      "original_triage": "ENRICH",
+      "canonical_cluster_id": null,
+      "proposed_app_owner": "Saints / Customs Atlas",
+      "source_class": "PARTIAL_HOLD",
+      "disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "independent_witness": {
+        "confidence": "PARTIAL_HOLD",
+        "witness_id": "W58B4-STANNE_MEDIEVAL",
+        "url": "https://www.sainteanne-sanctuaire.com/?langue=en&mode=grand-pardon",
+        "note": "Living Breton Grand Pardon and French devotion documented; does not demonstrate Weiser's specific medieval chronology or extent in France.",
+        "wave": "04"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-28-018",
+      "source_title": "Saint Anne's feast celebrated as name day for Anne",
+      "chapter": 28,
+      "printed_page": 338,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": null,
+      "proposed_app_owner": "Saints / Customs Atlas",
+      "source_class": "PARTIAL_HOLD",
+      "disposition": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "independent_witness": {
+        "confidence": "PARTIAL_HOLD",
+        "witness_id": "W58B4-PATR_STANNE",
+        "url": "https://www.sainteanne-sanctuaire.com/?langue=en&mode=grand-pardon",
+        "note": "July 26 celebration documented; does not demonstrate baptismal name-day customs for Annes in all French households (already general NDAY-001).",
+        "wave": "04"
+      },
+      "editorial_draft": null,
+      "app_published": false,
+      "permanent_exclusion": false
+    },
+    {
+      "weiser_id": "WEI58-28-025",
+      "source_title": "Lucy bride white-dressed breakfast tray and candle wreath",
+      "chapter": 28,
+      "printed_page": 342,
+      "original_triage": "CANDIDATE",
+      "canonical_cluster_id": null,
+      "proposed_app_owner": "Saints / Customs Atlas",
+      "source_class": "BOUNDED",
+      "disposition": "EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY",
+      "independent_witness": {
+        "confidence": "BOUNDED",
+        "witness_id": "W58B5-LUCIA",
+        "url": "https://visitsweden.com/what-to-do/culture-history-and-art/swedish-traditions/christmas/lucia/",
+        "note": "Tourism authority documents 13 December white robes, Lucia wreath, saffron buns and light symbolism; predominantly Swedish cultural usage, not specifically a Catholic rite nor true hagiographic account. Prefer LED crown.",
+        "wave": "05"
+      },
+      "editorial_draft": {
+        "card_id": "W58-P1-B5-ST_LUCIA",
+        "title": "St Lucia's light and breakfast tradition",
+        "wave": "05",
+        "owner": "Saints profile / regional cultural context"
+      },
+      "app_published": false,
+      "permanent_exclusion": false
+    }
+  ],
+  "drafts": [
+    {
+      "id": "W58-CARD-B2-POSADAS",
+      "name": "Las Posadas: welcoming the Holy Family",
+      "wave": "02",
+      "owner": "Calendar / Customs Atlas"
+    },
+    {
+      "id": "W58-CARD-B2-OPLATEK",
+      "name": "Sharing opłatek on Christmas Eve",
+      "wave": "02",
+      "owner": "Customs Atlas / Calendar"
+    },
+    {
+      "id": "W58-CARD-B2-STERN",
+      "name": "Epiphany star singers",
+      "wave": "02",
+      "owner": "Customs Atlas / Saints / Calendar"
+    },
+    {
+      "id": "W58-CARD-B2-EPIPHCAKE",
+      "name": "The Epiphany cake and the poor person's portion",
+      "wave": "02",
+      "owner": "Calendar / Customs Atlas"
+    },
+    {
+      "id": "W58-CARD-B2-THURS7",
+      "name": "Visiting churches on Holy Thursday",
+      "wave": "02",
+      "owner": "Calendar / Explore / Adoration"
+    },
+    {
+      "id": "W58-CARD-B2-SWIE",
+      "name": "Święconka and the Easter table",
+      "wave": "02",
+      "owner": "Existing Holy Saturday / Calendar and Customs Atlas; coordinate PR #1512"
+    },
+    {
+      "id": "W58-CARD-B2-FLOWER",
+      "name": "Flower carpets for Corpus Christi",
+      "wave": "02",
+      "owner": "Customs Atlas / Corpus Christi Calendar context"
+    },
+    {
+      "id": "W58-P1-B3-ADVENT-WREATH",
+      "name": "The family Advent wreath",
+      "wave": "03",
+      "owner": "Calendar / family customs, not the 1962 Mass reader"
+    },
+    {
+      "id": "W58-P1-B3-NATIVITY-PRAYER",
+      "name": "Praying together at the Christmas crib",
+      "wave": "03",
+      "owner": "Calendar / Learn; reuse existing prayers"
+    },
+    {
+      "id": "W58-P1-B3-IRISH-CANDLE",
+      "name": "The Irish Christmas candle",
+      "wave": "03",
+      "owner": "Customs Atlas, Irish historical/regional example"
+    },
+    {
+      "id": "W58-P1-B3-EPIPHANY-PROCLAMATION",
+      "name": "Proclaiming the date of Easter at Epiphany",
+      "wave": "03",
+      "owner": "Calendar / Learn; reuse authoritative date calculation"
+    },
+    {
+      "id": "W58-P1-B3-PALMS-AT-HOME",
+      "name": "Keeping and shaping blessed Palm Sunday branches",
+      "wave": "03",
+      "owner": "Existing DOM-013 / Calendar"
+    },
+    {
+      "id": "W58-P1-B3-POPAYAN-HOLYWEEK",
+      "name": "The Holy Week processions of Popayán",
+      "wave": "03",
+      "owner": "Customs Atlas / Explore geographical historical context"
+    },
+    {
+      "id": "W58-P1-B3-ANDALUSIAN-PENITENTS",
+      "name": "Penitents and confraternities in Spanish Holy Week",
+      "wave": "03",
+      "owner": "Customs Atlas / Learn regional historical context"
+    },
+    {
+      "id": "W58-P1-B3-EASTER-EGGS",
+      "name": "Easter eggs as a sign of new life",
+      "wave": "03",
+      "owner": "Calendar / Customs Atlas, no new Holy Saturday rite"
+    },
+    {
+      "id": "W58-P1-B3-VENI-CREATOR",
+      "name": "Singing Veni Creator at Pentecost",
+      "wave": "03",
+      "owner": "Existing Pray / Pentecost Learn, no music module"
+    },
+    {
+      "id": "W58-P1-B3-CORPUS-WINDOWS",
+      "name": "Decorating for the Corpus Christi procession",
+      "wave": "03",
+      "owner": "Customs Atlas / Calendar feast-day context, separate from procession state"
+    },
+    {
+      "id": "W58-P1-B4-EMBER",
+      "name": "Ember Days: gratitude, vocations and charity",
+      "wave": "04",
+      "owner": "Calendar / Learn, enrich existing Embertide"
+    },
+    {
+      "id": "W58-P1-B4-ROGATION",
+      "name": "A family Rogation prayer walk",
+      "wave": "04",
+      "owner": "Customs Atlas / Calendar; distinct from parish priestly procession"
+    },
+    {
+      "id": "W58-P1-B4-SHROVE",
+      "name": "Shrove Tuesday and the traditional pancake",
+      "wave": "04",
+      "owner": "Calendar / Customs Atlas, household practice"
+    },
+    {
+      "id": "W58-P1-B4-CORPUS",
+      "name": "Adoration along the Corpus Christi procession",
+      "wave": "04",
+      "owner": "Existing Corpus Christi Special Days; Customs Atlas context"
+    },
+    {
+      "id": "W58-P1-B4-HARVEST",
+      "name": "Polish dożynki: the blessed harvest wreath",
+      "wave": "04",
+      "owner": "Customs Atlas / regional history; Calendar contextual link only"
+    },
+    {
+      "id": "W58-P1-B4-CANDLEMAS",
+      "name": "Keeping the Nativity crib until Candlemas",
+      "wave": "04",
+      "owner": "Calendar / Customs Atlas; link to Candlemas existing DOM-011"
+    },
+    {
+      "id": "W58-P1-B4-ALLSOULS",
+      "name": "Caring for graves at All Souls",
+      "wave": "04",
+      "owner": "Enrich existing DEAD-001 / DEAD-003; never mint second Souls entry"
+    },
+    {
+      "id": "W58-P1-B4-JOHN",
+      "name": "St John Baptist's bonfire and community prayer",
+      "wave": "04",
+      "owner": "Saints / Customs Atlas; local optional gathering"
+    },
+    {
+      "id": "W58-P1-B4-ANTHONY",
+      "name": "Tuesdays dedicated to St Anthony of Padua",
+      "wave": "04",
+      "owner": "Existing Saints and Pray/Novena modules; no duplicate novena"
+    },
+    {
+      "id": "W58-P1-B4-PATRON",
+      "name": "A French patronal pardon at Sainte-Anne-d'Auray",
+      "wave": "04",
+      "owner": "Enrich existing PATR-001 and Sainte Anne pilgrimage profile"
+    },
+    {
+      "id": "W58-P1-B5-MANGER_STRAW",
+      "name": "The Advent manger of good deeds",
+      "wave": "05",
+      "owner": "Calendar / Existing Nativity and household devotions"
+    },
+    {
+      "id": "W58-P1-B5-STEPHEN_CHARITY",
+      "name": "Charity on St Stephen's Day",
+      "wave": "05",
+      "owner": "Calendar / Saints; optional household charity"
+    },
+    {
+      "id": "W58-P1-B5-KUTIA",
+      "name": "Kutia at a Ukrainian Christmas Eve table",
+      "wave": "05",
+      "owner": "Customs Atlas / historical regional household"
+    },
+    {
+      "id": "W58-P1-B5-LENTEN_VEIL",
+      "name": "The Lenten hunger cloth in church",
+      "wave": "05",
+      "owner": "Learn / historical church custom, not an app ceremony"
+    },
+    {
+      "id": "W58-P1-B5-MOTHERING",
+      "name": "Mothering Sunday and the simnel cake",
+      "wave": "05",
+      "owner": "Calendar / Customs Atlas; no duplicate feast"
+    },
+    {
+      "id": "W58-P1-B5-HOT_CROSS",
+      "name": "The Good Friday hot cross bun",
+      "wave": "05",
+      "owner": "Customs Atlas / Good Friday historical culture"
+    },
+    {
+      "id": "W58-P1-B5-EMMAUS",
+      "name": "An Easter Monday Emmaus walk",
+      "wave": "05",
+      "owner": "Calendar / seasonal domestic custom"
+    },
+    {
+      "id": "W58-P1-B5-PYSANKY",
+      "name": "Decorated Easter eggs of Poland and Ukraine",
+      "wave": "05",
+      "owner": "Customs Atlas / optional Easter family art"
+    },
+    {
+      "id": "W58-P1-B5-ASSUMPTION_HERBS",
+      "name": "Herb bouquets blessed on the Assumption",
+      "wave": "05",
+      "owner": "Existing blessing owner in PR #1512 / Calendar"
+    },
+    {
+      "id": "W58-P1-B5-ST_LUCIA",
+      "name": "St Lucia's light and breakfast tradition",
+      "wave": "05",
+      "owner": "Saints profile / regional cultural context"
+    },
+    {
+      "id": "W58-P1-B6-EPIPHANY_WATER",
+      "name": "Epiphany water and the priestly blessing",
+      "wave": "06",
+      "owner": "Existing Epiphany/Customs blessings owner, coordinate PR #1512; no ceremony in Mass reader"
+    },
+    {
+      "id": "W58-P1-B6-MARY_GARDEN",
+      "name": "A little garden dedicated to Our Lady",
+      "wave": "06",
+      "owner": "Calendar / Marian customs; reuse Saints and devotional Learn links"
+    },
+    {
+      "id": "W58-P1-B6-PASKA",
+      "name": "Paska: a cross-marked Easter bread",
+      "wave": "06",
+      "owner": "Enrich existing Easter food blessing and regional family customs; no second Easter basket rite"
+    },
+    {
+      "id": "W58-P1-B6-MARY_NATIVITY_SEEDS",
+      "name": "Blessing seeds on the Nativity of Our Lady",
+      "wave": "06",
+      "owner": "Existing Marian seasonal blessings / Calendar; no new priest script"
+    },
+    {
+      "id": "W58-P1-B6-ST_JOSEPH_FRITTERS",
+      "name": "St Joseph's Day fritters",
+      "wave": "06",
+      "owner": "Saints / Calendar existing St Joseph record; optional food tradition, not separate feast"
+    }
+  ]
+}
