@@ -111,6 +111,29 @@ for(const [cueId,want] of [
   assert.equal(key({label:"WASHES / PURIFIES",cueId}),want,
     "Confused Lavabo and post-Communion ablutions at "+cueId);
 }
+// Assert against the actual 77-event source registry, not only synthetic labels.
+const priestSourceActions=load("../data/presentation/reader-priest-actions.v1.json").items;
+const exactSourceIcons={
+  "AO.SM.C0125":null,
+  "AO.SM.C0247":"review_priest_purify_chalice",
+  "AO.SM.C0248":"review_priest_purify_fingers",
+  "AO.SM.C0232":"review_priest_receive_host",
+};
+for(const [cueId,want] of Object.entries(exactSourceIcons)){
+  const source=priestSourceActions.find(row=>row.cueId===cueId);
+  assert.ok(source,"Missing authoritative priest action "+cueId);
+  assert.equal(key(source),want,"Source-owned action rendered the wrong approved icon at "+cueId);
+}
+const priestGenuflectionCues=[
+  "AO.SM.C0096","AO.SM.C0201","AO.SM.C0205","AO.SM.C0215","AO.SM.C0273"
+];
+for(const cueId of priestGenuflectionCues){
+  const source=priestSourceActions.find(row=>row.cueId===cueId);
+  assert.equal(source?.label,"GENUFLECTS","Missing canonical genuflection "+cueId);
+  assert.equal(key(source),null,
+    "Unapproved/rejected priest genuflection artwork was activated at "+cueId);
+}
+
 assert.equal(key({label:"WASHES / PURIFIES"}),null,
   "Ambiguous generic purification label invented an icon");
 assert.equal(key({label:"WASHES / PURIFIES",cueId:"AO.SM.C0248",
