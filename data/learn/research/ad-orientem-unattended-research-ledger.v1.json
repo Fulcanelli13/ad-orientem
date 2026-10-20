@@ -97,7 +97,8 @@
         "CHA-CSE-CSE018",
         "CHA-CSE-CSE019"
       ],
-      "status": "SOURCE_AUTHORITY_AND_CONSCIENCE_DISTINCTIONS_PREPARED"
+      "status": "SOURCE_AUTHORITY_AND_CONSCIENCE_DISTINCTIONS_PREPARED",
+      "latestCorrectionCommit": "f25f0a2234d5c338232d313957f4dfcf108ed37c"
     },
     {
       "batch": "B06",
@@ -143,7 +144,36 @@
         "SPX-EXP-045"
       ],
       "status": "LANGUAGE_SPECIFIC_LOCATORS_AND_PAPAL_SCOPE_REVIEW",
-      "aliasFamilies": 2
+      "aliasFamilies": 2,
+      "latestCorrectionCommit": "dd90cd83bb5e3429f888f05a97d62343c5570563"
+    },
+    {
+      "batch": "B09",
+      "kb": "CHANOINE",
+      "path": "research/chanoine/chanoine-unattended-b09-moral-object-source-deltas-20261021.v1.json",
+      "commit": "c8e73bf7ec12c52f4841a39488c1a18a3b8630b9",
+      "families": 3,
+      "answerUnits": 6,
+      "ids": [
+        "CHA-CSE-CSE008",
+        "CHA-CSE-CSE009",
+        "CHA-CSE-CSE010"
+      ],
+      "status": "MORAL_OBJECT_AND_CIRCUMSTANCE_MAPS_PREPARED"
+    },
+    {
+      "batch": "B10",
+      "kb": "SPX",
+      "path": "data/learn/research/pius-x-unattended-b10-e-supremi-attribution-20261021.v1.json",
+      "commit": "d1b6752a1aab98321e400b2b6714b8c08847a9a8",
+      "families": 3,
+      "answerUnits": 6,
+      "ids": [
+        "SPX-PILOT-01",
+        "SPX-EXP-010",
+        "SPX-EXP-021"
+      ],
+      "status": "ANSELM_QUOTE_BOUNDARY_AND_LATIN_PASSAGE_MAPS"
     }
   ],
   "blocked": [
@@ -165,8 +195,8 @@
     }
   ],
   "active": {
-    "batch": "B09",
-    "task": "Continue source-backed Chanoine moral foundations; current batch count not a stop condition"
+    "batch": "B11",
+    "task": "Chanoine reproductive-ethics specialist claims: distinguish precise doctrinal prohibitions from unresolved proposals"
   },
   "next": [
     "CSE016/018 Donum veritatis exact authority and theological difficulty distinctions",
