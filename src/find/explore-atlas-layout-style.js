@@ -79,6 +79,25 @@ export const EXPLORE_ATLAS_LAYOUT_STYLE = `
   border:0;border-radius:0;background:transparent;
   font:27px/1 Georgia,serif;color:#ddc99f;
 }
+/* Provider attribution remains readable, clickable and legally visible,
+   but no longer renders as a white strip on the dark Explore atlas. */
+.aoExploreSurface .aoFindMap .maplibregl-ctrl-attrib{
+  background:rgba(10,21,31,.94);color:#d6c9b1;
+  border:1px solid rgba(205,180,132,.3);
+  border-radius:12px 12px 0 0;
+  box-shadow:0 2px 10px #0008;
+  font:11px/1.35 var(--ao-font-ui,system-ui,sans-serif);
+}
+.aoExploreSurface .aoFindMap .maplibregl-ctrl-attrib a{
+  color:#edddbd;text-decoration:underline;text-underline-offset:2px;
+}
+.aoExploreSurface .aoFindMap .maplibregl-ctrl-attrib a:focus-visible,
+.aoExploreSurface .aoFindMap .maplibregl-ctrl-attrib-button:focus-visible{
+  outline:2px solid #edddbd;outline-offset:2px;
+}
+.aoExploreSurface .aoFindMap .maplibregl-ctrl-attrib-button{
+  background-color:#dfcfac;border-radius:50%;
+}
 .aoHeritageSurface .aoHeritageNearby{
   right:16px;bottom:75px;min-height:44px;background:#0d1925eb;
   border:1px solid rgba(205,180,132,.36);border-radius:50px;
@@ -145,6 +164,7 @@ export const EXPLORE_ATLAS_LAYOUT_STYLE = `
    top:120px;left:10px;max-width:calc(100% - 20px)
  }
  .aoHeritageSurface .aoHeritageWorldReset{top:116px;left:10px}
+ .aoHeritageSurface .aoHeritageMapHint{max-width:calc(100% - 136px)}
  .aoHeritageSurface .aoHeritageSearchResults{
    top:164px;left:10px;width:calc(100% - 20px);
  }
