@@ -1,7 +1,7 @@
 {
   "schema": "ao-mass-priest-position-continuity-v1",
   "date": "2026-10-20",
-  "scope": "ORDINARY_SUNG_1962_REFERENCE_BASELINE_NOT_LIVE_OBSERVATION",
+  "scope": "ORDINARY_SUNG_1962_REFERENCE_279_REAL_CUES_PLUS_ONE_SERMON_PAUSE_NOT_LIVE_OBSERVATION",
   "authority": {
     "priestPositions": "data/presentation/reader-priest-positions.v1.json",
     "sungSource": "data/presentation/reader-text-sung.v1.json",
@@ -10,8 +10,8 @@
   },
   "invariants": {
     "totalSourceBlocks": 96,
-    "totalSungSourceCueRows": 280,
-    "uniqueCueIds": 280,
+    "totalSungSourceCueRows": 279,
+    "uniqueCueIds": 279,
     "totalExistingSourcePositionTransitions": 49,
     "existingSourceTransitionsUnchanged": true,
     "userIconNamesUnchanged": true,
@@ -22,7 +22,10 @@
     "bookPositionSeparateFromPriestStation": true,
     "missalTransitions": 3,
     "supplementaryRitusCorrectedStationTransitions": 1,
-    "missalReturnRequiresIndependentObservation": true
+    "missalReturnRequiresIndependentObservation": true,
+    "totalOriginalUnitRecords": 280,
+    "syntheticPauseRecords": 1,
+    "sourceBlockPresentationOrderNotNumericSort": true
   },
   "sourceTransitions": [
     {
@@ -660,7 +663,7 @@
       "defaultEntry": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "FOOT_CENTER",
-        "stationLabel": "FOOT_OF_ALTAR",
+        "stationLabel": "FOOT_CENTER",
         "facing": "LITURGICAL_EAST",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0001",
@@ -671,7 +674,7 @@
       "defaultExit": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "FOOT_CENTER",
-        "stationLabel": "FOOT_OF_ALTAR",
+        "stationLabel": "FOOT_CENTER",
         "facing": "LITURGICAL_EAST",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0001",
@@ -713,7 +716,7 @@
       "defaultEntry": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "FOOT_CENTER",
-        "stationLabel": "FOOT_OF_ALTAR",
+        "stationLabel": "FOOT_CENTER",
         "facing": "LITURGICAL_EAST",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0001",
@@ -724,7 +727,7 @@
       "defaultExit": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "FOOT_CENTER",
-        "stationLabel": "FOOT_OF_ALTAR",
+        "stationLabel": "FOOT_CENTER",
         "facing": "LITURGICAL_EAST",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0001",
@@ -758,7 +761,7 @@
       "defaultEntry": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "FOOT_CENTER",
-        "stationLabel": "FOOT_OF_ALTAR",
+        "stationLabel": "FOOT_CENTER",
         "facing": "LITURGICAL_EAST",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0001",
@@ -769,7 +772,7 @@
       "defaultExit": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "FOOT_CENTER",
-        "stationLabel": "FOOT_OF_ALTAR",
+        "stationLabel": "FOOT_CENTER",
         "facing": "LITURGICAL_EAST",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0001",
@@ -803,7 +806,7 @@
       "defaultEntry": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "FOOT_CENTER",
-        "stationLabel": "FOOT_OF_ALTAR",
+        "stationLabel": "FOOT_CENTER",
         "facing": "LITURGICAL_EAST",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0001",
@@ -814,7 +817,7 @@
       "defaultExit": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "FOOT_CENTER",
-        "stationLabel": "FOOT_OF_ALTAR",
+        "stationLabel": "FOOT_CENTER",
         "facing": "LITURGICAL_EAST",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0001",
@@ -848,7 +851,7 @@
       "defaultEntry": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "FOOT_CENTER",
-        "stationLabel": "FOOT_OF_ALTAR",
+        "stationLabel": "FOOT_CENTER",
         "facing": "LITURGICAL_EAST",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0001",
@@ -859,7 +862,7 @@
       "defaultExit": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "FOOT_CENTER",
-        "stationLabel": "FOOT_OF_ALTAR",
+        "stationLabel": "FOOT_CENTER",
         "facing": "LITURGICAL_EAST",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0001",
@@ -893,7 +896,7 @@
       "defaultEntry": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "FOOT_CENTER",
-        "stationLabel": "FOOT_OF_ALTAR",
+        "stationLabel": "FOOT_CENTER",
         "facing": "LITURGICAL_EAST",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0001",
@@ -904,7 +907,7 @@
       "defaultExit": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "FOOT_CENTER",
-        "stationLabel": "FOOT_OF_ALTAR",
+        "stationLabel": "FOOT_CENTER",
         "facing": "LITURGICAL_EAST",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0001",
@@ -938,7 +941,7 @@
       "defaultEntry": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "FOOT_CENTER",
-        "stationLabel": "FOOT_OF_ALTAR",
+        "stationLabel": "FOOT_CENTER",
         "facing": "LITURGICAL_EAST",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0001",
@@ -949,7 +952,7 @@
       "defaultExit": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "FOOT_CENTER",
-        "stationLabel": "FOOT_OF_ALTAR",
+        "stationLabel": "FOOT_CENTER",
         "facing": "LITURGICAL_EAST",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0001",
@@ -983,7 +986,7 @@
       "defaultEntry": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "FOOT_CENTER",
-        "stationLabel": "FOOT_OF_ALTAR",
+        "stationLabel": "FOOT_CENTER",
         "facing": "LITURGICAL_EAST",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0001",
@@ -994,7 +997,7 @@
       "defaultExit": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "FOOT_CENTER",
-        "stationLabel": "FOOT_OF_ALTAR",
+        "stationLabel": "FOOT_CENTER",
         "facing": "LITURGICAL_EAST",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0001",
@@ -1028,7 +1031,7 @@
       "defaultEntry": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "FOOT_CENTER",
-        "stationLabel": "FOOT_OF_ALTAR",
+        "stationLabel": "FOOT_CENTER",
         "facing": "LITURGICAL_EAST",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0001",
@@ -1039,7 +1042,7 @@
       "defaultExit": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "FOOT_CENTER",
-        "stationLabel": "FOOT_OF_ALTAR",
+        "stationLabel": "FOOT_CENTER",
         "facing": "LITURGICAL_EAST",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0001",
@@ -1073,7 +1076,7 @@
       "defaultEntry": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "FOOT_CENTER",
-        "stationLabel": "FOOT_OF_ALTAR",
+        "stationLabel": "FOOT_CENTER",
         "facing": "LITURGICAL_EAST",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0001",
@@ -1084,7 +1087,7 @@
       "defaultExit": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "FOOT_CENTER",
-        "stationLabel": "FOOT_OF_ALTAR",
+        "stationLabel": "FOOT_CENTER",
         "facing": "LITURGICAL_EAST",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0001",
@@ -1118,7 +1121,7 @@
       "defaultEntry": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_STEPS_ASCENDING",
-        "stationLabel": "ASCENDING_ALTAR_STEPS",
+        "stationLabel": "ALTAR_STEPS_ASCENDING",
         "facing": "LITURGICAL_EAST",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0037",
@@ -1129,7 +1132,7 @@
       "defaultExit": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_STEPS_ASCENDING",
-        "stationLabel": "ASCENDING_ALTAR_STEPS",
+        "stationLabel": "ALTAR_STEPS_ASCENDING",
         "facing": "LITURGICAL_EAST",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0037",
@@ -1284,7 +1287,7 @@
       "defaultEntry": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_EPISTLE_MISSAL",
-        "stationLabel": "EPISTLE_SIDE_AT_MISSAL",
+        "stationLabel": "ALTAR_EPISTLE_MISSAL",
         "facing": "MISSAL",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0042",
@@ -1295,7 +1298,7 @@
       "defaultExit": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_EPISTLE_MISSAL",
-        "stationLabel": "EPISTLE_SIDE_AT_MISSAL",
+        "stationLabel": "ALTAR_EPISTLE_MISSAL",
         "facing": "MISSAL",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0042",
@@ -1337,7 +1340,7 @@
       "defaultEntry": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_EPISTLE_MISSAL",
-        "stationLabel": "EPISTLE_SIDE_AT_MISSAL",
+        "stationLabel": "ALTAR_EPISTLE_MISSAL",
         "facing": "MISSAL",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0042",
@@ -1348,7 +1351,7 @@
       "defaultExit": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_EPISTLE_MISSAL",
-        "stationLabel": "EPISTLE_SIDE_AT_MISSAL",
+        "stationLabel": "ALTAR_EPISTLE_MISSAL",
         "facing": "MISSAL",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0042",
@@ -1509,7 +1512,7 @@
       "defaultEntry": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_EPISTLE_MISSAL",
-        "stationLabel": "EPISTLE_SIDE_AT_MISSAL",
+        "stationLabel": "ALTAR_EPISTLE_MISSAL",
         "facing": "MISSAL",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0072",
@@ -1520,7 +1523,7 @@
       "defaultExit": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_EPISTLE_MISSAL",
-        "stationLabel": "EPISTLE_SIDE_AT_MISSAL",
+        "stationLabel": "ALTAR_EPISTLE_MISSAL",
         "facing": "MISSAL",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0072",
@@ -1562,7 +1565,7 @@
       "defaultEntry": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_EPISTLE_MISSAL",
-        "stationLabel": "EPISTLE_SIDE_AT_MISSAL",
+        "stationLabel": "ALTAR_EPISTLE_MISSAL",
         "facing": "MISSAL",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0072",
@@ -1573,7 +1576,7 @@
       "defaultExit": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_EPISTLE_MISSAL",
-        "stationLabel": "EPISTLE_SIDE_AT_MISSAL",
+        "stationLabel": "ALTAR_EPISTLE_MISSAL",
         "facing": "MISSAL",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0072",
@@ -1607,7 +1610,7 @@
       "defaultEntry": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_EPISTLE_MISSAL",
-        "stationLabel": "EPISTLE_SIDE_AT_MISSAL",
+        "stationLabel": "ALTAR_EPISTLE_MISSAL",
         "facing": "MISSAL",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0072",
@@ -1618,7 +1621,7 @@
       "defaultExit": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_EPISTLE_MISSAL",
-        "stationLabel": "EPISTLE_SIDE_AT_MISSAL",
+        "stationLabel": "ALTAR_EPISTLE_MISSAL",
         "facing": "MISSAL",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0072",
@@ -1810,7 +1813,7 @@
       "defaultEntry": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_GOSPEL_MISSAL",
-        "stationLabel": "GOSPEL_SIDE_AT_MISSAL",
+        "stationLabel": "ALTAR_GOSPEL_MISSAL",
         "facing": "MISSAL",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0082",
@@ -1821,7 +1824,7 @@
       "defaultExit": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_GOSPEL_MISSAL",
-        "stationLabel": "GOSPEL_SIDE_AT_MISSAL",
+        "stationLabel": "ALTAR_GOSPEL_MISSAL",
         "facing": "MISSAL",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0082",
@@ -1863,7 +1866,7 @@
       "defaultEntry": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_GOSPEL_MISSAL",
-        "stationLabel": "GOSPEL_SIDE_AT_MISSAL",
+        "stationLabel": "ALTAR_GOSPEL_MISSAL",
         "facing": "MISSAL",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0082",
@@ -1874,7 +1877,7 @@
       "defaultExit": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_GOSPEL_MISSAL",
-        "stationLabel": "GOSPEL_SIDE_AT_MISSAL",
+        "stationLabel": "ALTAR_GOSPEL_MISSAL",
         "facing": "MISSAL",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0082",
@@ -1908,7 +1911,7 @@
       "defaultEntry": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_GOSPEL_MISSAL",
-        "stationLabel": "GOSPEL_SIDE_AT_MISSAL",
+        "stationLabel": "ALTAR_GOSPEL_MISSAL",
         "facing": "MISSAL",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0082",
@@ -1919,7 +1922,7 @@
       "defaultExit": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_GOSPEL_MISSAL",
-        "stationLabel": "GOSPEL_SIDE_AT_MISSAL",
+        "stationLabel": "ALTAR_GOSPEL_MISSAL",
         "facing": "MISSAL",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0082",
@@ -1951,40 +1954,38 @@
       "firstCue": "AO.SM.B096.SYN",
       "lastCue": "AO.SM.B096.SYN",
       "defaultEntry": {
-        "status": "SOURCE_PERSISTENT_STATION",
-        "station": "ALTAR_CENTER",
-        "stationLabel": "ALTAR_CENTER",
-        "facing": "CROSS",
+        "status": "OPTIONAL_HOMILY_OBSERVER_ONLY",
+        "station": null,
+        "stationLabel": null,
+        "facing": null,
         "routeId": null,
-        "activeFromCueId": "AO.SM.C0263",
-        "proposedIconAssetId": "v46_priest_centre_hands_rich",
-        "proposedIconExactUserName": "Priest Centre of the altar",
-        "renderPolicy": "SHOW_SOURCE_STATION_ONLY_WHEN_PHYSICAL_STATE_IS_GROUNDED"
+        "activeFromCueId": "AO.SM.C0082",
+        "proposedIconAssetId": null,
+        "proposedIconExactUserName": null,
+        "renderPolicy": "SERMON_POSITION_ONLY_IF_INDEPENDENTLY_OBSERVED"
       },
       "defaultExit": {
-        "status": "SOURCE_PERSISTENT_STATION",
-        "station": "ALTAR_CENTER",
-        "stationLabel": "ALTAR_CENTER",
-        "facing": "CROSS",
+        "status": "OPTIONAL_HOMILY_OBSERVER_ONLY",
+        "station": null,
+        "stationLabel": null,
+        "facing": null,
         "routeId": null,
-        "activeFromCueId": "AO.SM.C0263",
-        "proposedIconAssetId": "v46_priest_centre_hands_rich",
-        "proposedIconExactUserName": "Priest Centre of the altar",
-        "renderPolicy": "SHOW_SOURCE_STATION_ONLY_WHEN_PHYSICAL_STATE_IS_GROUNDED"
+        "activeFromCueId": "AO.SM.C0082",
+        "proposedIconAssetId": null,
+        "proposedIconExactUserName": null,
+        "renderPolicy": "SERMON_POSITION_ONLY_IF_INDEPENDENTLY_OBSERVED"
       },
       "transitions": [],
-      "status": "PERSISTENT_SOURCE_STATE",
+      "status": "OPTIONAL_SERMON_OBSERVER_ONLY",
       "bookEntry": {
-        "location": "EPISTLE_SIDE",
-        "changedAtCueId": "AO.SM.C0249",
-        "stationDistinctFromBook": true,
-        "observationGate": "MC-END-010"
+        "location": "GOSPEL_SIDE",
+        "changedAtCueId": "AO.SM.C0081",
+        "stationDistinctFromBook": true
       },
       "bookExit": {
-        "location": "EPISTLE_SIDE",
-        "changedAtCueId": "AO.SM.C0249",
-        "stationDistinctFromBook": true,
-        "observationGate": "MC-END-010"
+        "location": "GOSPEL_SIDE",
+        "changedAtCueId": "AO.SM.C0081",
+        "stationDistinctFromBook": true
       },
       "supplementaryTransitions": []
     },
@@ -2273,7 +2274,7 @@
       "defaultExit": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_EPISTLE_MISSAL",
-        "stationLabel": "EPISTLE_SIDE_AT_MISSAL",
+        "stationLabel": "ALTAR_EPISTLE_MISSAL",
         "facing": "LITURGICAL_EAST",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0113",
@@ -2546,7 +2547,7 @@
       "defaultEntry": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_EPISTLE_SIDE",
-        "stationLabel": "EPISTLE_SIDE",
+        "stationLabel": "ALTAR_EPISTLE_SIDE",
         "facing": "LITURGICAL_EAST",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0125",
@@ -2557,7 +2558,7 @@
       "defaultExit": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_EPISTLE_SIDE",
-        "stationLabel": "EPISTLE_SIDE",
+        "stationLabel": "ALTAR_EPISTLE_SIDE",
         "facing": "LITURGICAL_EAST",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0125",
@@ -4791,24 +4792,24 @@
       "defaultEntry": {
         "status": "RITUS_DIRECT_SUPPLEMENT_OBSERVER_GATED",
         "station": "ALTAR_EPISTLE_MISSAL",
-        "stationLabel": "EPISTLE_SIDE_AT_MISSAL",
+        "stationLabel": "ALTAR_EPISTLE_MISSAL",
         "facing": "MISSAL",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0249",
         "proposedIconAssetId": "v46_priest_gospel_rich",
         "proposedIconExactUserName": "Epistle side",
-        "renderPolicy": "SHOW_ONLY_AFTER_INDEPENDENT_MC_END_010_PRIEST_EVENT"
+        "renderPolicy": "SHOW_ONLY_AFTER_INDEPENDENT_MC-END-010_PRIEST_EVENT"
       },
       "defaultExit": {
         "status": "RITUS_DIRECT_SUPPLEMENT_OBSERVER_GATED",
         "station": "ALTAR_EPISTLE_MISSAL",
-        "stationLabel": "EPISTLE_SIDE_AT_MISSAL",
+        "stationLabel": "ALTAR_EPISTLE_MISSAL",
         "facing": "MISSAL",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0249",
         "proposedIconAssetId": "v46_priest_gospel_rich",
         "proposedIconExactUserName": "Epistle side",
-        "renderPolicy": "SHOW_ONLY_AFTER_INDEPENDENT_MC_END_010_PRIEST_EVENT"
+        "renderPolicy": "SHOW_ONLY_AFTER_INDEPENDENT_MC-END-010_PRIEST_EVENT"
       },
       "transitions": [
         {
@@ -4819,7 +4820,7 @@
           "condition": null
         }
       ],
-      "status": "REQUIRES_INDEPENDENT_PRIEST_OBSERVATION",
+      "status": "PERSISTENT_SOURCE_STATE",
       "bookEntry": {
         "location": "EPISTLE_SIDE",
         "changedAtCueId": "AO.SM.C0249",
@@ -4915,7 +4916,7 @@
       "defaultEntry": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_EPISTLE_MISSAL",
-        "stationLabel": "EPISTLE_SIDE_AT_MISSAL",
+        "stationLabel": "ALTAR_EPISTLE_MISSAL",
         "facing": "MISSAL",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0253",
@@ -4926,7 +4927,7 @@
       "defaultExit": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_EPISTLE_MISSAL",
-        "stationLabel": "EPISTLE_SIDE_AT_MISSAL",
+        "stationLabel": "ALTAR_EPISTLE_MISSAL",
         "facing": "MISSAL",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0253",
@@ -4970,7 +4971,7 @@
       "defaultEntry": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_EPISTLE_MISSAL",
-        "stationLabel": "EPISTLE_SIDE_AT_MISSAL",
+        "stationLabel": "ALTAR_EPISTLE_MISSAL",
         "facing": "MISSAL",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0253",
@@ -4981,7 +4982,7 @@
       "defaultExit": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_EPISTLE_MISSAL",
-        "stationLabel": "EPISTLE_SIDE_AT_MISSAL",
+        "stationLabel": "ALTAR_EPISTLE_MISSAL",
         "facing": "MISSAL",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0253",
@@ -5236,7 +5237,7 @@
       "defaultEntry": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_GOSPEL_MISSAL",
-        "stationLabel": "GOSPEL_SIDE_AT_MISSAL",
+        "stationLabel": "ALTAR_GOSPEL_MISSAL",
         "facing": "MISSAL",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0267",
@@ -5247,7 +5248,7 @@
       "defaultExit": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_GOSPEL_MISSAL",
-        "stationLabel": "GOSPEL_SIDE_AT_MISSAL",
+        "stationLabel": "ALTAR_GOSPEL_MISSAL",
         "facing": "MISSAL",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0267",
@@ -5291,7 +5292,7 @@
       "defaultEntry": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_GOSPEL_MISSAL",
-        "stationLabel": "GOSPEL_SIDE_AT_MISSAL",
+        "stationLabel": "ALTAR_GOSPEL_MISSAL",
         "facing": "MISSAL",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0267",
@@ -5302,7 +5303,7 @@
       "defaultExit": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_GOSPEL_MISSAL",
-        "stationLabel": "GOSPEL_SIDE_AT_MISSAL",
+        "stationLabel": "ALTAR_GOSPEL_MISSAL",
         "facing": "MISSAL",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0267",
@@ -5338,7 +5339,7 @@
       "defaultEntry": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_GOSPEL_MISSAL",
-        "stationLabel": "GOSPEL_SIDE_AT_MISSAL",
+        "stationLabel": "ALTAR_GOSPEL_MISSAL",
         "facing": "MISSAL",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0267",
@@ -5349,7 +5350,7 @@
       "defaultExit": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_GOSPEL_MISSAL",
-        "stationLabel": "GOSPEL_SIDE_AT_MISSAL",
+        "stationLabel": "ALTAR_GOSPEL_MISSAL",
         "facing": "MISSAL",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0267",
@@ -5392,7 +5393,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "FOOT_CENTER",
-        "stationLabel": "FOOT_OF_ALTAR",
+        "stationLabel": "FOOT_CENTER",
         "facing": "LITURGICAL_EAST",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0001",
@@ -5406,7 +5407,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0002",
@@ -5420,7 +5424,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "FOOT_CENTER",
-        "stationLabel": "FOOT_OF_ALTAR",
+        "stationLabel": "FOOT_CENTER",
         "facing": "LITURGICAL_EAST",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0001",
@@ -5434,7 +5438,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0003",
@@ -5448,7 +5455,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "FOOT_CENTER",
-        "stationLabel": "FOOT_OF_ALTAR",
+        "stationLabel": "FOOT_CENTER",
         "facing": "LITURGICAL_EAST",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0001",
@@ -5462,7 +5469,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0004",
@@ -5476,7 +5486,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "FOOT_CENTER",
-        "stationLabel": "FOOT_OF_ALTAR",
+        "stationLabel": "FOOT_CENTER",
         "facing": "LITURGICAL_EAST",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0001",
@@ -5490,7 +5500,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0005",
@@ -5504,7 +5517,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "FOOT_CENTER",
-        "stationLabel": "FOOT_OF_ALTAR",
+        "stationLabel": "FOOT_CENTER",
         "facing": "LITURGICAL_EAST",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0001",
@@ -5518,7 +5531,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0006",
@@ -5532,7 +5548,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "FOOT_CENTER",
-        "stationLabel": "FOOT_OF_ALTAR",
+        "stationLabel": "FOOT_CENTER",
         "facing": "LITURGICAL_EAST",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0001",
@@ -5546,7 +5562,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0007",
@@ -5560,7 +5579,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "FOOT_CENTER",
-        "stationLabel": "FOOT_OF_ALTAR",
+        "stationLabel": "FOOT_CENTER",
         "facing": "LITURGICAL_EAST",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0001",
@@ -5574,7 +5593,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0008",
@@ -5588,7 +5610,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "FOOT_CENTER",
-        "stationLabel": "FOOT_OF_ALTAR",
+        "stationLabel": "FOOT_CENTER",
         "facing": "LITURGICAL_EAST",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0001",
@@ -5602,7 +5624,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0009",
@@ -5616,7 +5641,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "FOOT_CENTER",
-        "stationLabel": "FOOT_OF_ALTAR",
+        "stationLabel": "FOOT_CENTER",
         "facing": "LITURGICAL_EAST",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0001",
@@ -5630,7 +5655,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0010",
@@ -5644,7 +5672,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "FOOT_CENTER",
-        "stationLabel": "FOOT_OF_ALTAR",
+        "stationLabel": "FOOT_CENTER",
         "facing": "LITURGICAL_EAST",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0001",
@@ -5658,7 +5686,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0011",
@@ -5672,7 +5703,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "FOOT_CENTER",
-        "stationLabel": "FOOT_OF_ALTAR",
+        "stationLabel": "FOOT_CENTER",
         "facing": "LITURGICAL_EAST",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0001",
@@ -5686,7 +5717,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0012",
@@ -5700,7 +5734,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "FOOT_CENTER",
-        "stationLabel": "FOOT_OF_ALTAR",
+        "stationLabel": "FOOT_CENTER",
         "facing": "LITURGICAL_EAST",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0001",
@@ -5714,7 +5748,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0013",
@@ -5728,7 +5765,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "FOOT_CENTER",
-        "stationLabel": "FOOT_OF_ALTAR",
+        "stationLabel": "FOOT_CENTER",
         "facing": "LITURGICAL_EAST",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0001",
@@ -5742,7 +5779,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0014",
@@ -5756,7 +5796,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "FOOT_CENTER",
-        "stationLabel": "FOOT_OF_ALTAR",
+        "stationLabel": "FOOT_CENTER",
         "facing": "LITURGICAL_EAST",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0001",
@@ -5770,7 +5810,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0015",
@@ -5784,7 +5827,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "FOOT_CENTER",
-        "stationLabel": "FOOT_OF_ALTAR",
+        "stationLabel": "FOOT_CENTER",
         "facing": "LITURGICAL_EAST",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0001",
@@ -5798,7 +5841,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0016",
@@ -5812,7 +5858,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "FOOT_CENTER",
-        "stationLabel": "FOOT_OF_ALTAR",
+        "stationLabel": "FOOT_CENTER",
         "facing": "LITURGICAL_EAST",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0001",
@@ -5826,7 +5872,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0017",
@@ -5840,7 +5889,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "FOOT_CENTER",
-        "stationLabel": "FOOT_OF_ALTAR",
+        "stationLabel": "FOOT_CENTER",
         "facing": "LITURGICAL_EAST",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0001",
@@ -5854,7 +5903,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0018",
@@ -5868,7 +5920,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "FOOT_CENTER",
-        "stationLabel": "FOOT_OF_ALTAR",
+        "stationLabel": "FOOT_CENTER",
         "facing": "LITURGICAL_EAST",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0001",
@@ -5882,7 +5934,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0019",
@@ -5896,7 +5951,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "FOOT_CENTER",
-        "stationLabel": "FOOT_OF_ALTAR",
+        "stationLabel": "FOOT_CENTER",
         "facing": "LITURGICAL_EAST",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0001",
@@ -5910,7 +5965,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0020",
@@ -5924,7 +5982,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "FOOT_CENTER",
-        "stationLabel": "FOOT_OF_ALTAR",
+        "stationLabel": "FOOT_CENTER",
         "facing": "LITURGICAL_EAST",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0001",
@@ -5938,7 +5996,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0021",
@@ -5952,7 +6013,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "FOOT_CENTER",
-        "stationLabel": "FOOT_OF_ALTAR",
+        "stationLabel": "FOOT_CENTER",
         "facing": "LITURGICAL_EAST",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0001",
@@ -5966,7 +6027,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0022",
@@ -5980,7 +6044,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "FOOT_CENTER",
-        "stationLabel": "FOOT_OF_ALTAR",
+        "stationLabel": "FOOT_CENTER",
         "facing": "LITURGICAL_EAST",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0001",
@@ -5994,7 +6058,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0023",
@@ -6008,7 +6075,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "FOOT_CENTER",
-        "stationLabel": "FOOT_OF_ALTAR",
+        "stationLabel": "FOOT_CENTER",
         "facing": "LITURGICAL_EAST",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0001",
@@ -6022,7 +6089,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0024",
@@ -6036,7 +6106,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "FOOT_CENTER",
-        "stationLabel": "FOOT_OF_ALTAR",
+        "stationLabel": "FOOT_CENTER",
         "facing": "LITURGICAL_EAST",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0001",
@@ -6050,7 +6120,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0025",
@@ -6064,7 +6137,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "FOOT_CENTER",
-        "stationLabel": "FOOT_OF_ALTAR",
+        "stationLabel": "FOOT_CENTER",
         "facing": "LITURGICAL_EAST",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0001",
@@ -6078,7 +6151,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0026",
@@ -6092,7 +6168,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "FOOT_CENTER",
-        "stationLabel": "FOOT_OF_ALTAR",
+        "stationLabel": "FOOT_CENTER",
         "facing": "LITURGICAL_EAST",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0001",
@@ -6106,7 +6182,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0027",
@@ -6120,7 +6199,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "FOOT_CENTER",
-        "stationLabel": "FOOT_OF_ALTAR",
+        "stationLabel": "FOOT_CENTER",
         "facing": "LITURGICAL_EAST",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0001",
@@ -6134,7 +6213,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0028",
@@ -6148,7 +6230,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "FOOT_CENTER",
-        "stationLabel": "FOOT_OF_ALTAR",
+        "stationLabel": "FOOT_CENTER",
         "facing": "LITURGICAL_EAST",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0001",
@@ -6162,7 +6244,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0029",
@@ -6176,7 +6261,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "FOOT_CENTER",
-        "stationLabel": "FOOT_OF_ALTAR",
+        "stationLabel": "FOOT_CENTER",
         "facing": "LITURGICAL_EAST",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0001",
@@ -6190,7 +6275,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0030",
@@ -6204,7 +6292,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "FOOT_CENTER",
-        "stationLabel": "FOOT_OF_ALTAR",
+        "stationLabel": "FOOT_CENTER",
         "facing": "LITURGICAL_EAST",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0001",
@@ -6218,7 +6306,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0031",
@@ -6232,7 +6323,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "FOOT_CENTER",
-        "stationLabel": "FOOT_OF_ALTAR",
+        "stationLabel": "FOOT_CENTER",
         "facing": "LITURGICAL_EAST",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0001",
@@ -6246,7 +6337,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0032",
@@ -6260,7 +6354,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "FOOT_CENTER",
-        "stationLabel": "FOOT_OF_ALTAR",
+        "stationLabel": "FOOT_CENTER",
         "facing": "LITURGICAL_EAST",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0001",
@@ -6274,7 +6368,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0033",
@@ -6288,7 +6385,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "FOOT_CENTER",
-        "stationLabel": "FOOT_OF_ALTAR",
+        "stationLabel": "FOOT_CENTER",
         "facing": "LITURGICAL_EAST",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0001",
@@ -6302,7 +6399,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0034",
@@ -6316,7 +6416,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "FOOT_CENTER",
-        "stationLabel": "FOOT_OF_ALTAR",
+        "stationLabel": "FOOT_CENTER",
         "facing": "LITURGICAL_EAST",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0001",
@@ -6330,7 +6430,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0035",
@@ -6344,7 +6447,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "FOOT_CENTER",
-        "stationLabel": "FOOT_OF_ALTAR",
+        "stationLabel": "FOOT_CENTER",
         "facing": "LITURGICAL_EAST",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0001",
@@ -6358,7 +6461,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0036",
@@ -6372,7 +6478,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "FOOT_CENTER",
-        "stationLabel": "FOOT_OF_ALTAR",
+        "stationLabel": "FOOT_CENTER",
         "facing": "LITURGICAL_EAST",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0001",
@@ -6386,7 +6492,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0037",
@@ -6405,7 +6514,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_STEPS_ASCENDING",
-        "stationLabel": "ASCENDING_ALTAR_STEPS",
+        "stationLabel": "ALTAR_STEPS_ASCENDING",
         "facing": "LITURGICAL_EAST",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0037",
@@ -6419,7 +6528,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0038",
@@ -6452,7 +6564,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0039",
@@ -6480,7 +6595,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0040",
@@ -6513,7 +6631,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0041",
@@ -6546,7 +6667,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0042",
@@ -6565,7 +6689,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_EPISTLE_MISSAL",
-        "stationLabel": "EPISTLE_SIDE_AT_MISSAL",
+        "stationLabel": "ALTAR_EPISTLE_MISSAL",
         "facing": "MISSAL",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0042",
@@ -6579,7 +6703,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "STANDING_AT_EPISTLE_SIDE_MISSAL"
+      "priestOrientationToBook": "STANDING_AT_EPISTLE_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0043",
@@ -6593,7 +6720,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_EPISTLE_MISSAL",
-        "stationLabel": "EPISTLE_SIDE_AT_MISSAL",
+        "stationLabel": "ALTAR_EPISTLE_MISSAL",
         "facing": "MISSAL",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0042",
@@ -6607,7 +6734,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "STANDING_AT_EPISTLE_SIDE_MISSAL"
+      "priestOrientationToBook": "STANDING_AT_EPISTLE_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0044",
@@ -6621,7 +6751,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_EPISTLE_MISSAL",
-        "stationLabel": "EPISTLE_SIDE_AT_MISSAL",
+        "stationLabel": "ALTAR_EPISTLE_MISSAL",
         "facing": "MISSAL",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0042",
@@ -6635,7 +6765,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "STANDING_AT_EPISTLE_SIDE_MISSAL"
+      "priestOrientationToBook": "STANDING_AT_EPISTLE_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0045",
@@ -6649,7 +6782,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_EPISTLE_MISSAL",
-        "stationLabel": "EPISTLE_SIDE_AT_MISSAL",
+        "stationLabel": "ALTAR_EPISTLE_MISSAL",
         "facing": "MISSAL",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0042",
@@ -6663,7 +6796,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "STANDING_AT_EPISTLE_SIDE_MISSAL"
+      "priestOrientationToBook": "STANDING_AT_EPISTLE_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0046",
@@ -6677,7 +6813,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_EPISTLE_MISSAL",
-        "stationLabel": "EPISTLE_SIDE_AT_MISSAL",
+        "stationLabel": "ALTAR_EPISTLE_MISSAL",
         "facing": "MISSAL",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0042",
@@ -6691,7 +6827,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "STANDING_AT_EPISTLE_SIDE_MISSAL"
+      "priestOrientationToBook": "STANDING_AT_EPISTLE_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0047",
@@ -6705,7 +6844,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_EPISTLE_MISSAL",
-        "stationLabel": "EPISTLE_SIDE_AT_MISSAL",
+        "stationLabel": "ALTAR_EPISTLE_MISSAL",
         "facing": "MISSAL",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0042",
@@ -6719,7 +6858,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "STANDING_AT_EPISTLE_SIDE_MISSAL"
+      "priestOrientationToBook": "STANDING_AT_EPISTLE_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0048",
@@ -6733,7 +6875,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_EPISTLE_MISSAL",
-        "stationLabel": "EPISTLE_SIDE_AT_MISSAL",
+        "stationLabel": "ALTAR_EPISTLE_MISSAL",
         "facing": "MISSAL",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0042",
@@ -6747,7 +6889,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "STANDING_AT_EPISTLE_SIDE_MISSAL"
+      "priestOrientationToBook": "STANDING_AT_EPISTLE_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0049",
@@ -6761,7 +6906,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_EPISTLE_MISSAL",
-        "stationLabel": "EPISTLE_SIDE_AT_MISSAL",
+        "stationLabel": "ALTAR_EPISTLE_MISSAL",
         "facing": "MISSAL",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0042",
@@ -6775,7 +6920,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "STANDING_AT_EPISTLE_SIDE_MISSAL"
+      "priestOrientationToBook": "STANDING_AT_EPISTLE_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0050",
@@ -6789,7 +6937,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_EPISTLE_MISSAL",
-        "stationLabel": "EPISTLE_SIDE_AT_MISSAL",
+        "stationLabel": "ALTAR_EPISTLE_MISSAL",
         "facing": "MISSAL",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0042",
@@ -6803,7 +6951,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "STANDING_AT_EPISTLE_SIDE_MISSAL"
+      "priestOrientationToBook": "STANDING_AT_EPISTLE_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0051",
@@ -6817,7 +6968,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_EPISTLE_MISSAL",
-        "stationLabel": "EPISTLE_SIDE_AT_MISSAL",
+        "stationLabel": "ALTAR_EPISTLE_MISSAL",
         "facing": "MISSAL",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0042",
@@ -6831,7 +6982,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "STANDING_AT_EPISTLE_SIDE_MISSAL"
+      "priestOrientationToBook": "STANDING_AT_EPISTLE_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0052",
@@ -6845,7 +6999,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_EPISTLE_MISSAL",
-        "stationLabel": "EPISTLE_SIDE_AT_MISSAL",
+        "stationLabel": "ALTAR_EPISTLE_MISSAL",
         "facing": "MISSAL",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0042",
@@ -6859,7 +7013,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "STANDING_AT_EPISTLE_SIDE_MISSAL"
+      "priestOrientationToBook": "STANDING_AT_EPISTLE_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0053",
@@ -6892,7 +7049,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0054",
@@ -6920,7 +7080,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0055",
@@ -6948,7 +7111,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0056",
@@ -6976,7 +7142,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0057",
@@ -7004,7 +7173,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0058",
@@ -7032,7 +7204,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0059",
@@ -7060,7 +7235,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0060",
@@ -7088,7 +7266,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0061",
@@ -7116,7 +7297,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0062",
@@ -7144,7 +7328,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0063",
@@ -7172,7 +7359,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0064",
@@ -7200,7 +7390,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0065",
@@ -7228,7 +7421,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0066",
@@ -7256,7 +7452,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0067",
@@ -7284,7 +7483,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0068",
@@ -7312,7 +7514,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0069",
@@ -7340,7 +7545,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0276",
@@ -7373,7 +7581,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0277",
@@ -7406,7 +7617,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0070",
@@ -7439,7 +7653,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0071",
@@ -7472,7 +7689,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0072",
@@ -7491,7 +7711,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_EPISTLE_MISSAL",
-        "stationLabel": "EPISTLE_SIDE_AT_MISSAL",
+        "stationLabel": "ALTAR_EPISTLE_MISSAL",
         "facing": "MISSAL",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0072",
@@ -7505,7 +7725,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "STANDING_AT_EPISTLE_SIDE_MISSAL"
+      "priestOrientationToBook": "STANDING_AT_EPISTLE_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0073",
@@ -7519,7 +7742,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_EPISTLE_MISSAL",
-        "stationLabel": "EPISTLE_SIDE_AT_MISSAL",
+        "stationLabel": "ALTAR_EPISTLE_MISSAL",
         "facing": "MISSAL",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0072",
@@ -7533,7 +7756,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "STANDING_AT_EPISTLE_SIDE_MISSAL"
+      "priestOrientationToBook": "STANDING_AT_EPISTLE_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0074",
@@ -7547,7 +7773,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_EPISTLE_MISSAL",
-        "stationLabel": "EPISTLE_SIDE_AT_MISSAL",
+        "stationLabel": "ALTAR_EPISTLE_MISSAL",
         "facing": "MISSAL",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0072",
@@ -7561,7 +7787,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "STANDING_AT_EPISTLE_SIDE_MISSAL"
+      "priestOrientationToBook": "STANDING_AT_EPISTLE_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0075",
@@ -7575,7 +7804,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_EPISTLE_MISSAL",
-        "stationLabel": "EPISTLE_SIDE_AT_MISSAL",
+        "stationLabel": "ALTAR_EPISTLE_MISSAL",
         "facing": "MISSAL",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0072",
@@ -7589,7 +7818,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "STANDING_AT_EPISTLE_SIDE_MISSAL"
+      "priestOrientationToBook": "STANDING_AT_EPISTLE_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0076",
@@ -7603,7 +7835,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_EPISTLE_MISSAL",
-        "stationLabel": "EPISTLE_SIDE_AT_MISSAL",
+        "stationLabel": "ALTAR_EPISTLE_MISSAL",
         "facing": "MISSAL",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0072",
@@ -7617,7 +7849,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "STANDING_AT_EPISTLE_SIDE_MISSAL"
+      "priestOrientationToBook": "STANDING_AT_EPISTLE_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0077",
@@ -7650,7 +7885,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0078",
@@ -7678,7 +7916,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0079",
@@ -7711,7 +7952,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0080",
@@ -7739,7 +7983,10 @@
         "changedAtCueId": "AO.SM.C0001",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0081",
@@ -7772,7 +8019,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0082",
@@ -7791,7 +8041,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_GOSPEL_MISSAL",
-        "stationLabel": "GOSPEL_SIDE_AT_MISSAL",
+        "stationLabel": "ALTAR_GOSPEL_MISSAL",
         "facing": "MISSAL",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0082",
@@ -7805,7 +8055,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "STANDING_AT_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "STANDING_AT_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0083",
@@ -7819,7 +8072,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_GOSPEL_MISSAL",
-        "stationLabel": "GOSPEL_SIDE_AT_MISSAL",
+        "stationLabel": "ALTAR_GOSPEL_MISSAL",
         "facing": "MISSAL",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0082",
@@ -7833,7 +8086,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "STANDING_AT_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "STANDING_AT_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0084",
@@ -7847,7 +8103,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_GOSPEL_MISSAL",
-        "stationLabel": "GOSPEL_SIDE_AT_MISSAL",
+        "stationLabel": "ALTAR_GOSPEL_MISSAL",
         "facing": "MISSAL",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0082",
@@ -7861,7 +8117,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "STANDING_AT_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "STANDING_AT_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0085",
@@ -7875,7 +8134,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_GOSPEL_MISSAL",
-        "stationLabel": "GOSPEL_SIDE_AT_MISSAL",
+        "stationLabel": "ALTAR_GOSPEL_MISSAL",
         "facing": "MISSAL",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0082",
@@ -7889,7 +8148,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "STANDING_AT_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "STANDING_AT_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0086",
@@ -7903,7 +8165,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_GOSPEL_MISSAL",
-        "stationLabel": "GOSPEL_SIDE_AT_MISSAL",
+        "stationLabel": "ALTAR_GOSPEL_MISSAL",
         "facing": "MISSAL",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0082",
@@ -7917,7 +8179,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "STANDING_AT_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "STANDING_AT_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0087",
@@ -7931,7 +8196,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_GOSPEL_MISSAL",
-        "stationLabel": "GOSPEL_SIDE_AT_MISSAL",
+        "stationLabel": "ALTAR_GOSPEL_MISSAL",
         "facing": "MISSAL",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0082",
@@ -7945,7 +8210,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "STANDING_AT_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "STANDING_AT_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0088",
@@ -7959,7 +8227,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_GOSPEL_MISSAL",
-        "stationLabel": "GOSPEL_SIDE_AT_MISSAL",
+        "stationLabel": "ALTAR_GOSPEL_MISSAL",
         "facing": "MISSAL",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0082",
@@ -7973,7 +8241,43 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "STANDING_AT_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "STANDING_AT_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
+    },
+    {
+      "cueId": "AO.SM.B096.SYN",
+      "sort": 265,
+      "blockId": "AO.SM.B096",
+      "macroId": "AO.SM.M08",
+      "section": "Optional Sermon",
+      "title": "Sermon / Homily",
+      "unitType": "pause",
+      "sourceTransition": null,
+      "defaultTrack": {
+        "status": "OPTIONAL_HOMILY_OBSERVER_ONLY",
+        "station": null,
+        "stationLabel": null,
+        "facing": null,
+        "routeId": null,
+        "activeFromCueId": "AO.SM.C0082",
+        "proposedIconAssetId": null,
+        "proposedIconExactUserName": null,
+        "renderPolicy": "SERMON_POSITION_ONLY_IF_INDEPENDENTLY_OBSERVED"
+      },
+      "liveObservationRule": "REFERENCE_CEREMONIAL_SEQUENCE_NOT_PROOF_OF_ACTUAL_PRIEST_POSITION",
+      "missal": {
+        "location": "GOSPEL_SIDE",
+        "changedAtCueId": "AO.SM.C0081",
+        "stationDistinctFromBook": true
+      },
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": true,
+      "sourceUnitIsCanonicalCue": false,
+      "ceremonialObserverRequirement": "WHO_IS_PREACHING_AND_AT_WHICH_POSITION",
+      "supportedPriestStationIfObserved": "PREACHING_PLACE"
     },
     {
       "cueId": "AO.SM.C0089",
@@ -8006,7 +8310,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0090",
@@ -8034,7 +8341,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0091",
@@ -8062,7 +8372,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0092",
@@ -8090,7 +8403,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0093",
@@ -8118,7 +8434,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0094",
@@ -8146,7 +8465,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0095",
@@ -8174,7 +8496,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0096",
@@ -8202,7 +8527,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0097",
@@ -8230,7 +8558,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0098",
@@ -8258,7 +8589,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0099",
@@ -8286,7 +8620,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0100",
@@ -8314,7 +8651,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0101",
@@ -8342,7 +8682,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0102",
@@ -8370,7 +8713,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0103",
@@ -8398,7 +8744,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0104",
@@ -8426,7 +8775,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0105",
@@ -8454,7 +8806,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0278",
@@ -8487,7 +8842,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0279",
@@ -8520,7 +8878,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0106",
@@ -8553,7 +8914,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0107",
@@ -8586,7 +8950,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0108",
@@ -8614,7 +8981,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0109",
@@ -8642,7 +9012,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0110",
@@ -8670,7 +9043,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0111",
@@ -8698,7 +9074,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0112",
@@ -8731,7 +9110,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0113",
@@ -8750,7 +9132,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_EPISTLE_MISSAL",
-        "stationLabel": "EPISTLE_SIDE_AT_MISSAL",
+        "stationLabel": "ALTAR_EPISTLE_MISSAL",
         "facing": "LITURGICAL_EAST",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0113",
@@ -8764,7 +9146,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "STANDING_AT_EPISTLE_SIDE_MISSAL"
+      "priestOrientationToBook": "STANDING_AT_EPISTLE_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0114",
@@ -8797,7 +9182,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0115",
@@ -8825,7 +9213,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0116",
@@ -8853,7 +9244,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0117",
@@ -8881,7 +9275,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0118",
@@ -8909,7 +9306,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0119",
@@ -8937,7 +9337,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0120",
@@ -8970,7 +9373,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0121",
@@ -9003,7 +9409,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0122",
@@ -9036,7 +9445,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0123",
@@ -9069,7 +9481,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0124",
@@ -9102,7 +9517,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0125",
@@ -9121,7 +9539,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_EPISTLE_SIDE",
-        "stationLabel": "EPISTLE_SIDE",
+        "stationLabel": "ALTAR_EPISTLE_SIDE",
         "facing": "LITURGICAL_EAST",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0125",
@@ -9135,7 +9553,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0126",
@@ -9154,7 +9575,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_EPISTLE_SIDE",
-        "stationLabel": "EPISTLE_SIDE",
+        "stationLabel": "ALTAR_EPISTLE_SIDE",
         "facing": "LITURGICAL_EAST",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0125",
@@ -9168,7 +9589,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0127",
@@ -9187,7 +9611,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_EPISTLE_SIDE",
-        "stationLabel": "EPISTLE_SIDE",
+        "stationLabel": "ALTAR_EPISTLE_SIDE",
         "facing": "LITURGICAL_EAST",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0125",
@@ -9201,7 +9625,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0128",
@@ -9234,7 +9661,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0129",
@@ -9262,7 +9692,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0130",
@@ -9295,7 +9728,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0131",
@@ -9328,7 +9764,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0132",
@@ -9356,7 +9795,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0133",
@@ -9384,7 +9826,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0134",
@@ -9412,7 +9857,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0135",
@@ -9440,7 +9888,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0136",
@@ -9468,7 +9919,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0137",
@@ -9496,7 +9950,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0138",
@@ -9524,7 +9981,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0139",
@@ -9552,7 +10012,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0140",
@@ -9580,7 +10043,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0141",
@@ -9608,7 +10074,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0142",
@@ -9636,7 +10105,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0143",
@@ -9664,7 +10136,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0144",
@@ -9692,7 +10167,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0145",
@@ -9720,7 +10198,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0146",
@@ -9748,7 +10229,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0147",
@@ -9776,7 +10260,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0148",
@@ -9804,7 +10291,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0149",
@@ -9832,7 +10322,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0150",
@@ -9860,7 +10353,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0151",
@@ -9888,7 +10384,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0152",
@@ -9916,7 +10415,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0153",
@@ -9944,7 +10446,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0154",
@@ -9972,7 +10477,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0155",
@@ -10000,7 +10508,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0156",
@@ -10028,7 +10539,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0157",
@@ -10056,7 +10570,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0158",
@@ -10084,7 +10601,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0159",
@@ -10112,7 +10632,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0160",
@@ -10140,7 +10663,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0161",
@@ -10168,7 +10694,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0162",
@@ -10196,7 +10725,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0163",
@@ -10224,7 +10756,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0164",
@@ -10252,7 +10787,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0165",
@@ -10280,7 +10818,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0166",
@@ -10308,7 +10849,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0167",
@@ -10336,7 +10880,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0168",
@@ -10364,7 +10911,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0169",
@@ -10392,7 +10942,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0170",
@@ -10420,7 +10973,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0171",
@@ -10448,7 +11004,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0172",
@@ -10476,7 +11035,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0173",
@@ -10504,7 +11066,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0174",
@@ -10532,7 +11097,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0175",
@@ -10560,7 +11128,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0176",
@@ -10588,7 +11159,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0177",
@@ -10616,7 +11190,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0178",
@@ -10644,7 +11221,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0179",
@@ -10672,7 +11252,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0180",
@@ -10700,7 +11283,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0181",
@@ -10728,7 +11314,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0182",
@@ -10756,7 +11345,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0183",
@@ -10784,7 +11376,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0184",
@@ -10812,7 +11407,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0185",
@@ -10840,7 +11438,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0186",
@@ -10868,7 +11469,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0187",
@@ -10896,7 +11500,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0188",
@@ -10924,7 +11531,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0189",
@@ -10952,7 +11562,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0190",
@@ -10980,7 +11593,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0191",
@@ -11008,7 +11624,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0192",
@@ -11036,7 +11655,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0193",
@@ -11064,7 +11686,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0194",
@@ -11092,7 +11717,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0195",
@@ -11120,7 +11748,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0196",
@@ -11148,7 +11779,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0197",
@@ -11176,7 +11810,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0198",
@@ -11204,7 +11841,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0199",
@@ -11232,7 +11872,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0200",
@@ -11260,7 +11903,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0201",
@@ -11288,7 +11934,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0202",
@@ -11316,7 +11965,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0203",
@@ -11344,7 +11996,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0204",
@@ -11372,7 +12027,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0205",
@@ -11400,7 +12058,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0206",
@@ -11428,7 +12089,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0207",
@@ -11456,7 +12120,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0208",
@@ -11484,7 +12151,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0209",
@@ -11512,7 +12182,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0210",
@@ -11540,7 +12213,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0211",
@@ -11568,7 +12244,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0212",
@@ -11596,7 +12275,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0213",
@@ -11624,7 +12306,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0214",
@@ -11652,7 +12337,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0215",
@@ -11680,7 +12368,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0216",
@@ -11708,7 +12399,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0217",
@@ -11736,7 +12430,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0218",
@@ -11764,7 +12461,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0219",
@@ -11792,7 +12492,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0220",
@@ -11820,7 +12523,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0221",
@@ -11848,7 +12554,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0222",
@@ -11876,7 +12585,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0223",
@@ -11904,7 +12616,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0224",
@@ -11932,7 +12647,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0225",
@@ -11960,7 +12678,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0226",
@@ -11988,7 +12709,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0227",
@@ -12016,7 +12740,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0228",
@@ -12044,7 +12771,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0229",
@@ -12072,7 +12802,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0230",
@@ -12100,7 +12833,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0231",
@@ -12128,7 +12864,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0232",
@@ -12156,7 +12895,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0233",
@@ -12184,7 +12926,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0234",
@@ -12212,7 +12957,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0235",
@@ -12245,7 +12993,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0236",
@@ -12273,7 +13024,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0237",
@@ -12301,7 +13055,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0238",
@@ -12334,7 +13091,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0239",
@@ -12362,7 +13122,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0240",
@@ -12390,7 +13153,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0241",
@@ -12418,7 +13184,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0242",
@@ -12451,7 +13220,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0243",
@@ -12479,7 +13251,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0244",
@@ -12507,7 +13282,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0245",
@@ -12535,7 +13313,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0246",
@@ -12568,7 +13349,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0247",
@@ -12601,7 +13385,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0248",
@@ -12629,7 +13416,10 @@
         "changedAtCueId": "AO.SM.C0081",
         "stationDistinctFromBook": true
       },
-      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "AT_CENTER_FACING_TOWARD_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0249",
@@ -12648,13 +13438,13 @@
       "defaultTrack": {
         "status": "RITUS_DIRECT_SUPPLEMENT_OBSERVER_GATED",
         "station": "ALTAR_EPISTLE_MISSAL",
-        "stationLabel": "EPISTLE_SIDE_AT_MISSAL",
+        "stationLabel": "ALTAR_EPISTLE_MISSAL",
         "facing": "MISSAL",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0249",
         "proposedIconAssetId": "v46_priest_gospel_rich",
         "proposedIconExactUserName": "Epistle side",
-        "renderPolicy": "SHOW_ONLY_AFTER_INDEPENDENT_MC_END_010_PRIEST_EVENT"
+        "renderPolicy": "SHOW_ONLY_AFTER_INDEPENDENT_MC-END-010_PRIEST_EVENT"
       },
       "liveObservationRule": "REFERENCE_CEREMONIAL_SEQUENCE_NOT_PROOF_OF_ACTUAL_PRIEST_POSITION",
       "missal": {
@@ -12664,7 +13454,9 @@
         "observationGate": "MC-END-010"
       },
       "priestOrientationToBook": "STANDING_AT_EPISTLE_SIDE_MISSAL",
-      "sourcePositionRegistryMissingTransition": true
+      "sourcePositionRegistryMissingTransition": true,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0250",
@@ -12678,13 +13470,13 @@
       "defaultTrack": {
         "status": "RITUS_DIRECT_SUPPLEMENT_OBSERVER_GATED",
         "station": "ALTAR_EPISTLE_MISSAL",
-        "stationLabel": "EPISTLE_SIDE_AT_MISSAL",
+        "stationLabel": "ALTAR_EPISTLE_MISSAL",
         "facing": "MISSAL",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0249",
         "proposedIconAssetId": "v46_priest_gospel_rich",
         "proposedIconExactUserName": "Epistle side",
-        "renderPolicy": "SHOW_ONLY_AFTER_INDEPENDENT_MC_END_010_PRIEST_EVENT"
+        "renderPolicy": "SHOW_ONLY_AFTER_INDEPENDENT_MC-END-010_PRIEST_EVENT"
       },
       "liveObservationRule": "REFERENCE_CEREMONIAL_SEQUENCE_NOT_PROOF_OF_ACTUAL_PRIEST_POSITION",
       "missal": {
@@ -12694,7 +13486,9 @@
         "observationGate": "MC-END-010"
       },
       "priestOrientationToBook": "STANDING_AT_EPISTLE_SIDE_MISSAL",
-      "sourcePositionRegistryMissingTransition": false
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0251",
@@ -12728,7 +13522,10 @@
         "stationDistinctFromBook": true,
         "observationGate": "MC-END-010"
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0252",
@@ -12762,7 +13559,10 @@
         "stationDistinctFromBook": true,
         "observationGate": "MC-END-010"
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0253",
@@ -12781,7 +13581,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_EPISTLE_MISSAL",
-        "stationLabel": "EPISTLE_SIDE_AT_MISSAL",
+        "stationLabel": "ALTAR_EPISTLE_MISSAL",
         "facing": "MISSAL",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0253",
@@ -12796,7 +13596,10 @@
         "stationDistinctFromBook": true,
         "observationGate": "MC-END-010"
       },
-      "priestOrientationToBook": "STANDING_AT_EPISTLE_SIDE_MISSAL"
+      "priestOrientationToBook": "STANDING_AT_EPISTLE_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0254",
@@ -12810,7 +13613,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_EPISTLE_MISSAL",
-        "stationLabel": "EPISTLE_SIDE_AT_MISSAL",
+        "stationLabel": "ALTAR_EPISTLE_MISSAL",
         "facing": "MISSAL",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0253",
@@ -12825,7 +13628,10 @@
         "stationDistinctFromBook": true,
         "observationGate": "MC-END-010"
       },
-      "priestOrientationToBook": "STANDING_AT_EPISTLE_SIDE_MISSAL"
+      "priestOrientationToBook": "STANDING_AT_EPISTLE_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0255",
@@ -12839,7 +13645,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_EPISTLE_MISSAL",
-        "stationLabel": "EPISTLE_SIDE_AT_MISSAL",
+        "stationLabel": "ALTAR_EPISTLE_MISSAL",
         "facing": "MISSAL",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0253",
@@ -12854,7 +13660,10 @@
         "stationDistinctFromBook": true,
         "observationGate": "MC-END-010"
       },
-      "priestOrientationToBook": "STANDING_AT_EPISTLE_SIDE_MISSAL"
+      "priestOrientationToBook": "STANDING_AT_EPISTLE_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0256",
@@ -12868,7 +13677,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_EPISTLE_MISSAL",
-        "stationLabel": "EPISTLE_SIDE_AT_MISSAL",
+        "stationLabel": "ALTAR_EPISTLE_MISSAL",
         "facing": "MISSAL",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0253",
@@ -12883,7 +13692,10 @@
         "stationDistinctFromBook": true,
         "observationGate": "MC-END-010"
       },
-      "priestOrientationToBook": "STANDING_AT_EPISTLE_SIDE_MISSAL"
+      "priestOrientationToBook": "STANDING_AT_EPISTLE_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0257",
@@ -12917,7 +13729,10 @@
         "stationDistinctFromBook": true,
         "observationGate": "MC-END-010"
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0258",
@@ -12946,7 +13761,10 @@
         "stationDistinctFromBook": true,
         "observationGate": "MC-END-010"
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0259",
@@ -12975,7 +13793,10 @@
         "stationDistinctFromBook": true,
         "observationGate": "MC-END-010"
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0260",
@@ -13004,7 +13825,10 @@
         "stationDistinctFromBook": true,
         "observationGate": "MC-END-010"
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0261",
@@ -13038,7 +13862,10 @@
         "stationDistinctFromBook": true,
         "observationGate": "MC-END-010"
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0262",
@@ -13067,7 +13894,10 @@
         "stationDistinctFromBook": true,
         "observationGate": "MC-END-010"
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0263",
@@ -13101,7 +13931,10 @@
         "stationDistinctFromBook": true,
         "observationGate": "MC-END-010"
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0264",
@@ -13130,36 +13963,10 @@
         "stationDistinctFromBook": true,
         "observationGate": "MC-END-010"
       },
-      "priestOrientationToBook": null
-    },
-    {
-      "cueId": "AO.SM.B096.SYN",
-      "sort": 265,
-      "blockId": "AO.SM.B096",
-      "macroId": "AO.SM.M08",
-      "section": "Optional Sermon",
-      "title": "Sermon / Homily",
-      "unitType": "pause",
-      "sourceTransition": null,
-      "defaultTrack": {
-        "status": "SOURCE_PERSISTENT_STATION",
-        "station": "ALTAR_CENTER",
-        "stationLabel": "ALTAR_CENTER",
-        "facing": "CROSS",
-        "routeId": null,
-        "activeFromCueId": "AO.SM.C0263",
-        "proposedIconAssetId": "v46_priest_centre_hands_rich",
-        "proposedIconExactUserName": "Priest Centre of the altar",
-        "renderPolicy": "SHOW_SOURCE_STATION_ONLY_WHEN_PHYSICAL_STATE_IS_GROUNDED"
-      },
-      "liveObservationRule": "REFERENCE_CEREMONIAL_SEQUENCE_NOT_PROOF_OF_ACTUAL_PRIEST_POSITION",
-      "missal": {
-        "location": "EPISTLE_SIDE",
-        "changedAtCueId": "AO.SM.C0249",
-        "stationDistinctFromBook": true,
-        "observationGate": "MC-END-010"
-      },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0265",
@@ -13193,7 +14000,10 @@
         "stationDistinctFromBook": true,
         "observationGate": "MC-END-010"
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0266",
@@ -13222,7 +14032,10 @@
         "stationDistinctFromBook": true,
         "observationGate": "MC-END-010"
       },
-      "priestOrientationToBook": null
+      "priestOrientationToBook": null,
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0267",
@@ -13241,7 +14054,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_GOSPEL_MISSAL",
-        "stationLabel": "GOSPEL_SIDE_AT_MISSAL",
+        "stationLabel": "ALTAR_GOSPEL_MISSAL",
         "facing": "MISSAL",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0267",
@@ -13256,7 +14069,10 @@
         "stationDistinctFromBook": true,
         "observationGate": "MC-END-010"
       },
-      "priestOrientationToBook": "STANDING_AT_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "STANDING_AT_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0268",
@@ -13270,7 +14086,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_GOSPEL_MISSAL",
-        "stationLabel": "GOSPEL_SIDE_AT_MISSAL",
+        "stationLabel": "ALTAR_GOSPEL_MISSAL",
         "facing": "MISSAL",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0267",
@@ -13285,7 +14101,10 @@
         "stationDistinctFromBook": true,
         "observationGate": "MC-END-010"
       },
-      "priestOrientationToBook": "STANDING_AT_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "STANDING_AT_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0269",
@@ -13299,7 +14118,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_GOSPEL_MISSAL",
-        "stationLabel": "GOSPEL_SIDE_AT_MISSAL",
+        "stationLabel": "ALTAR_GOSPEL_MISSAL",
         "facing": "MISSAL",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0267",
@@ -13314,7 +14133,10 @@
         "stationDistinctFromBook": true,
         "observationGate": "MC-END-010"
       },
-      "priestOrientationToBook": "STANDING_AT_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "STANDING_AT_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0270",
@@ -13328,7 +14150,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_GOSPEL_MISSAL",
-        "stationLabel": "GOSPEL_SIDE_AT_MISSAL",
+        "stationLabel": "ALTAR_GOSPEL_MISSAL",
         "facing": "MISSAL",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0267",
@@ -13343,7 +14165,10 @@
         "stationDistinctFromBook": true,
         "observationGate": "MC-END-010"
       },
-      "priestOrientationToBook": "STANDING_AT_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "STANDING_AT_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0271",
@@ -13357,7 +14182,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_GOSPEL_MISSAL",
-        "stationLabel": "GOSPEL_SIDE_AT_MISSAL",
+        "stationLabel": "ALTAR_GOSPEL_MISSAL",
         "facing": "MISSAL",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0267",
@@ -13372,7 +14197,10 @@
         "stationDistinctFromBook": true,
         "observationGate": "MC-END-010"
       },
-      "priestOrientationToBook": "STANDING_AT_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "STANDING_AT_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0272",
@@ -13386,7 +14214,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_GOSPEL_MISSAL",
-        "stationLabel": "GOSPEL_SIDE_AT_MISSAL",
+        "stationLabel": "ALTAR_GOSPEL_MISSAL",
         "facing": "MISSAL",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0267",
@@ -13401,7 +14229,10 @@
         "stationDistinctFromBook": true,
         "observationGate": "MC-END-010"
       },
-      "priestOrientationToBook": "STANDING_AT_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "STANDING_AT_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0273",
@@ -13415,7 +14246,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_GOSPEL_MISSAL",
-        "stationLabel": "GOSPEL_SIDE_AT_MISSAL",
+        "stationLabel": "ALTAR_GOSPEL_MISSAL",
         "facing": "MISSAL",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0267",
@@ -13430,7 +14261,10 @@
         "stationDistinctFromBook": true,
         "observationGate": "MC-END-010"
       },
-      "priestOrientationToBook": "STANDING_AT_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "STANDING_AT_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0274",
@@ -13444,7 +14278,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_GOSPEL_MISSAL",
-        "stationLabel": "GOSPEL_SIDE_AT_MISSAL",
+        "stationLabel": "ALTAR_GOSPEL_MISSAL",
         "facing": "MISSAL",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0267",
@@ -13459,7 +14293,10 @@
         "stationDistinctFromBook": true,
         "observationGate": "MC-END-010"
       },
-      "priestOrientationToBook": "STANDING_AT_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "STANDING_AT_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     },
     {
       "cueId": "AO.SM.C0275",
@@ -13473,7 +14310,7 @@
       "defaultTrack": {
         "status": "SOURCE_PERSISTENT_STATION",
         "station": "ALTAR_GOSPEL_MISSAL",
-        "stationLabel": "GOSPEL_SIDE_AT_MISSAL",
+        "stationLabel": "ALTAR_GOSPEL_MISSAL",
         "facing": "MISSAL",
         "routeId": null,
         "activeFromCueId": "AO.SM.C0267",
@@ -13488,7 +14325,10 @@
         "stationDistinctFromBook": true,
         "observationGate": "MC-END-010"
       },
-      "priestOrientationToBook": "STANDING_AT_GOSPEL_SIDE_MISSAL"
+      "priestOrientationToBook": "STANDING_AT_GOSPEL_SIDE_MISSAL",
+      "sourcePositionRegistryMissingTransition": false,
+      "syntheticReaderPause": false,
+      "sourceUnitIsCanonicalCue": true
     }
   ],
   "issues": [
@@ -13499,10 +14339,6 @@
     {
       "kind": "POSITION_MISSAL_SEPARATION",
       "note": "Do not conflate station at altar centre with a separate Missal/book position or Gospel-side direction; book-side is a separate model dimension."
-    },
-    {
-      "kind": "MISSING_INDENTICAL_EVENT",
-      "note": "Sung text has 280 unique cue entries; current reader cue validation previously expected 279. Do not silently drop source cue without source reconciliation."
     },
     {
       "kind": "POSITION_OBSERVATION",
@@ -13516,6 +14352,11 @@
     {
       "kind": "SEPARATE_MISSAL_STATE",
       "note": "Gospel-side Missal from C0081 to C0250, while celebrant frequently stands at altar centre; do not replace priest-centre pictogram with Gospel-side priest pictogram during Preface."
+    },
+    {
+      "kind": "SOURCE_SYNTHETIC_SERMON_PAUSE",
+      "cueId": "AO.SM.B096.SYN",
+      "note": "One synthetic pause lives between Gospel B026 and Credo B027; its sort=265 is a legacy bookkeeping value, not a liturgical sort position. Source has 279 real cues + 1 synthetic pause."
     }
   ],
   "missalPositionTransitions": [
