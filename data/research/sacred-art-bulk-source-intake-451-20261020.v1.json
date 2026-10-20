@@ -31,8 +31,8 @@
     "excluded": 68,
     "editorialHold": 199,
     "eligibleExactMet": 23,
-    "eligibleExactCommons": 36,
-    "eligibleOtherSource": 80,
+    "eligibleExactCommons": 40,
+    "eligibleOtherSource": 76,
     "legacyFiveOutside451": [
       "W40-010",
       "W40-011",
@@ -44,22 +44,31 @@
     "pradoHoldsApprovedOrHistoric": 25,
     "pradoSourceHoldsApprovedExactCandidate": 1,
     "eligibleExactNga": 6,
-    "newNonPradoOpenSourceExactLinks": 1
+    "newNonPradoOpenSourceExactLinks": 5
   },
   "works": [
     {
       "id": "W05-027",
       "title": "The Crucifixion of Saint Peter",
       "artist": "Caravaggio",
-      "sourceUrl": "https://turismoroma.it/en/node/18610",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Caravaggio,_Crucifixion_of_Saint_Peter.jpg",
       "sourceClaim": "Public domain",
       "reviewStatus": "APPROVED_LOCKED",
       "reviewGate": "APPROVED",
-      "provider": "NO_EXACT_OPEN_SOURCE",
+      "provider": "COMMONS_EXACT_FILE_CANDIDATE",
       "preferredImageKey": "1|W05-027|0d9f7b9c85319cbb859baa002c684ca788dcf6f5b371819ac18c144af62cf6a2|W05-027-badf92d27d70b41b.webp",
       "hasReviewPreview": true,
       "assetHolds": [],
-      "sourceDestinationsCount": 2
+      "sourceDestinationsCount": 2,
+      "sourceObjectUrl": "https://turismoroma.it/en/node/18610",
+      "imageSourceVerification": {
+        "status": "OBJECT_OR_INSTITUTION_CROSSCHECKED_SOURCE_CANDIDATE",
+        "institution": "Santa Maria del Popolo, Cerasi Chapel",
+        "note": "Same Cerasi Chapel original; file photograph requires independent agreement with curator-selected preview.",
+        "reviewedImageFingerprintMatched": false,
+        "publicationCleared": false,
+        "independentPhoneQa": false
+      }
     },
     {
       "id": "met-441971",
@@ -209,15 +218,25 @@
       "id": "W38-006",
       "title": "Apostle Philip",
       "artist": "Anthony van Dyck",
-      "sourceUrl": "https://www.khm.at/kunstwerke/apostel-philippus-636",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Anthonis_van_Dyck_-_Apostel_Philippus_-_GG_9703_-_Kunsthistorisches_Museum.jpg",
       "sourceClaim": "Public domain",
       "reviewStatus": "APPROVED_LOCKED",
       "reviewGate": "APPROVED",
-      "provider": "NO_EXACT_OPEN_SOURCE",
+      "provider": "COMMONS_EXACT_FILE_CANDIDATE",
       "preferredImageKey": null,
       "hasReviewPreview": true,
       "assetHolds": [],
-      "sourceDestinationsCount": 2
+      "sourceDestinationsCount": 2,
+      "sourceObjectUrl": "https://www.khm.at/kunstwerke/apostel-philippus-636",
+      "imageSourceVerification": {
+        "status": "OBJECT_OR_INSTITUTION_CROSSCHECKED_SOURCE_CANDIDATE",
+        "institution": "Kunsthistorisches Museum, Vienna",
+        "note": "KHM GG 9703; Commons file 1276×1632 only, requires PREMIUM_MASTER_QUALITY_HOLD",
+        "reviewedImageFingerprintMatched": false,
+        "publicationCleared": false,
+        "independentPhoneQa": false
+      },
+      "verifiedMuseumAccession": "GG 9703"
     },
     {
       "id": "W02-001",
@@ -450,15 +469,24 @@
       "id": "B01-MARK-MARATTA-THYSSEN",
       "title": "Saint Mark the Evangelist (c. 1655–60)",
       "artist": "Carlo Maratta",
-      "sourceUrl": "https://www.museothyssen.org/en/collection/artists/maratta-carlo/saint-mark-evangelist",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:El_evangelista_san_Marcos_(Maratta).jpg",
       "sourceClaim": "Public domain",
       "reviewStatus": "APPROVED_LOCKED",
       "reviewGate": "APPROVED",
-      "provider": "NO_EXACT_OPEN_SOURCE",
+      "provider": "COMMONS_EXACT_FILE_CANDIDATE",
       "preferredImageKey": null,
       "hasReviewPreview": true,
       "assetHolds": [],
-      "sourceDestinationsCount": 2
+      "sourceDestinationsCount": 2,
+      "sourceObjectUrl": "https://www.museothyssen.org/en/collection/artists/maratta-carlo/saint-mark-evangelist",
+      "imageSourceVerification": {
+        "status": "OBJECT_OR_INSTITUTION_CROSSCHECKED_SOURCE_CANDIDATE",
+        "institution": "Museo Nacional Thyssen-Bornemisza",
+        "note": "Thyssen inventory 278 (1977.2), 2000×2693; identity independently reviewed.",
+        "reviewedImageFingerprintMatched": false,
+        "publicationCleared": false,
+        "independentPhoneQa": false
+      }
     },
     {
       "id": "B01-MARK-RENI-GENOA",
@@ -649,15 +677,24 @@
       "id": "W07-007",
       "title": "Saint Jerome Writing (Borghese original)",
       "artist": "Caravaggio",
-      "sourceUrl": "https://www.collezionegalleriaborghese.it/en/opere/saint-jerome",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Caravaggio_-_Saint_Jerome_-_Galleria_Borghese.jpg",
       "sourceClaim": "Public domain",
       "reviewStatus": "APPROVED_LOCKED",
       "reviewGate": "APPROVED",
-      "provider": "NO_EXACT_OPEN_SOURCE",
+      "provider": "COMMONS_EXACT_FILE_CANDIDATE",
       "preferredImageKey": "18|W07-007|32658856cad53ff82283aa2671b163e80664806d278839a2cf6dd2789a5d7158|W07-007-90ae4676f7500320.webp",
       "hasReviewPreview": true,
       "assetHolds": [],
-      "sourceDestinationsCount": 1
+      "sourceDestinationsCount": 1,
+      "sourceObjectUrl": "https://www.collezionegalleriaborghese.it/en/opere/saint-jerome",
+      "imageSourceVerification": {
+        "status": "OBJECT_OR_INSTITUTION_CROSSCHECKED_SOURCE_CANDIDATE",
+        "institution": "Galleria Borghese, Rome",
+        "note": "Same physical Borghese Saint Jerome, not Valletta Caravaggio Saint Jerome; curator-selected photograph still separately verified.",
+        "reviewedImageFingerprintMatched": false,
+        "publicationCleared": false,
+        "independentPhoneQa": false
+      }
     },
     {
       "id": "ART-usepe-de-ibera-aint-erome-riting",
