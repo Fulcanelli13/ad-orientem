@@ -170,12 +170,13 @@ const R17_REVIEW_20261019_ACTION_OVERRIDES=Object.freeze({
   "GIVES COMMUNION":"priest_rail_after_rich",
   "INCENSES PEOPLE":null, // incense of congregation belongs to the minister
   "RECEIVES INCENSE":null, // candidate reused an inappropriate priest-incensing icon
-  "RECEIVES HOST":null,    // old 'communion' = fraction = commingling image
+  "RECEIVES HOST":"review_priest_receive_host", // exact approved 1962 priest Communion Host art; never fallback to the ambiguous old icon
   // Exact modern artwork has now been recovered and hash-verified.
   // Keep source-owned action/gesture timing and actor unchanged.
   "RECEIVES CHALICE":"review_priest_receive_chalice",
   "BREAKS HOST":"review_priest_fraction_host",
   "PLACES PARTICLE":"review_priest_commingling",
+  "WASHES / PURIFIES":null, // requires exact source cue, not a general action-label fallback
   "INTONES CREDO":"review_priest_credo_chant", // NOT a Gloria illustration
   // Known incorrect donor illustrations: display the source rubric as text
   // rather than portraying a different ceremony or resurrecting a rejection.
@@ -210,6 +211,16 @@ function priestActionKey(action){
   const label=String(action?.label??action?.action??action?.value??"").trim().toUpperCase();
   // Explicit 19 October decisions take precedence over source-owned icon
   // *presentation*, but never over the source-owned action/gesture itself.
+  // This legacy label covers two different parts of the 1962 Mass.
+  // Cue identity, not a substring, distinguishes the Offertory Lavabo
+  // from the chalice and finger ablutions after the priest's Communion.
+  if(label==="WASHES / PURIFIES"){
+    const cue=String(action?.cueId??"");
+    if(cue==="AO.SM.C0247")return "review_priest_purify_chalice";
+    if(cue==="AO.SM.C0248")return "review_priest_purify_fingers";
+    // C0125 Lavabo remains on hold; all synthetic/unknown cues are text-only.
+    return null;
+  }
   if(Object.prototype.hasOwnProperty.call(R17_REVIEW_20261019_ACTION_OVERRIDES,label))
     return R17_REVIEW_20261019_ACTION_OVERRIDES[label];
   // Exact source-owned Host elevation; do not alter "OFFERS HOST".
