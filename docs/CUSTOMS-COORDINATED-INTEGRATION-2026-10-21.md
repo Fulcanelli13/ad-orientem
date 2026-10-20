@@ -38,3 +38,7 @@ These run under `npm run test:customs-atlas` plus existing release checks. Merge
 The [54-draft owner reconciliation](https://github.com/Fulcanelli13/ad-orientem/blob/research/weiser-chapters-01-05-20261020/data/customs/research/weiser-54-editorial-owner-reconciliation.v1.json) records 14 existing-canonical enrichments, nine owner-content enrichments, 12 regional-only references, two related variants, two source/ritual holds and **15 distinct prospective customs**. Six provisional P0 candidates are prioritized for the *next* release. None is automatically added in this coordinated branch.
 
 **Do not merge PR #1512 and PR #1516 separately on top of this release**; decide which coordinated PR is the superseding integration route and preserve authorial provenance and review history.
+
+## Release gate after main advances
+
+At review on 21 October 2026, `main` advanced to `825bd8db85f558dfa6237708f3ad6cf519dcc039` through independent Mass and Explore releases (#1515, #1502, #1517). The coordinated customs branch must be tested against the new PR merge base, not treated as approved solely because earlier tests were green on the previous base. New main changes include `package.json`, Map/Explore and Guided Folio code; the Customs Atlas integration must retain those owners. This release keeps its **27 / 86 / 96 / 11** canonical registry totals and does not change the Mass reader or explore map ownership.
