@@ -188,9 +188,18 @@ try{
      document.querySelector("#ao-find-modular-root .maplibregl-canvas")));
    await journey.locator('[data-explore-journey-select="route:FR:paris-chartres-pentecost"]').click();
    await journey.locator('[data-explore-journey-destination="place:FR:chartres-notre-dame"]').click();
-   await page.locator("#ao-find-modular-root .aoHeritagePreview").waitFor({state:"visible"});
-   assert.equal(await journey.count(),0,"Discovering destination returns to the C editorial folio");
-   await page.locator("#ao-find-modular-root .aoHeritagePreview button[data-find-close-place]").click();
+   const chartresPlace=page.locator('#ao-find-modular-root .aoHeritagePreview[data-explore-place-owner="place:FR:chartres-notre-dame"]');
+   await chartresPlace.waitFor({state:"visible"});
+   assert.equal(await journey.count(),1,
+     "Discovering a destination must keep the active Journey under its C editorial Place folio");
+   assert.ok(await page.evaluate(()=>globalThis.__AO_JOURNEY_CANVAS_REVIEW===
+     document.querySelector("#ao-find-modular-root .maplibregl-canvas")),
+     "Destination CTA must keep the same map canvas");
+   await chartresPlace.locator("[data-find-close-place]").click();
+   assert.equal(await journey.locator('[data-explore-journey-select="route:FR:paris-chartres-pentecost"]').getAttribute("aria-pressed"),"true");
+   await journey.locator("[data-explore-journey-close]").click();
+   assert.equal(await journey.count(),0,
+     "Explicit Journey close returns to the Atlas; Place sheet close does not");
 
    const search=page.locator("#ao-find-modular-root .aoHeritageSurface [data-find-query]");
    await search.fill("Lourdes");
