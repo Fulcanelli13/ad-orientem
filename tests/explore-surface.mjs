@@ -627,7 +627,7 @@ for(const guide of customGuidance.entries){
     assert.ok(html.includes(summary.replaceAll("&","&amp;").replaceAll("'","&#039;").replaceAll('"',"&quot;")),"Missing full description "+guide.custom_id);
     assert.ok(html.includes(meaning.replaceAll("&","&amp;").replaceAll("'","&#039;").replaceAll('"',"&quot;")),"Missing meaning "+guide.custom_id);
     assert.ok(html.includes(how.replaceAll("&","&amp;").replaceAll("'","&#039;").replaceAll('"',"&quot;")),"Missing optional observance "+guide.custom_id);
-    assert.match(html,/Sources and geographic evidence|Sources et références géographiques/);
+    assert.match(html,/<section class="aoFindSources"><small>SOURCES<\/small>/,"Canonical custom must show its source links");
     assert.doesNotMatch(html,/data-explore-open-place="(?:geo:country|(?:place:))/,"Do not invent a national map pin");
   }
 }
