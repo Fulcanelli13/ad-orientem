@@ -334,6 +334,20 @@
         "CHA-CSE-CSE044"
       ],
       "status": "SOURCE_MATCHED_CANONICAL_AND_BILINGUAL_REVIEW_PENDING"
+    },
+    {
+      "batch": "B22",
+      "kb": "Chanoine",
+      "path": "research/chanoine/chanoine-unattended-b22-looking-fidelity-20261021.v1.json",
+      "commit": "945ca9cd6f528fd009f0d31bb8f5f3e7e2264ba2",
+      "families": 3,
+      "answerUnits": 6,
+      "ids": [
+        "CHA-CSE-CSE038",
+        "CHA-CSE-CSE039",
+        "CHA-CSE-CSE040"
+      ],
+      "status": "SOURCE_COLLATED_MORAL_AND_PASTORAL_REVIEW_PENDING"
     }
   ],
   "blocked": [
@@ -355,21 +369,18 @@
     }
   ],
   "active": {
-    "state": "CHECKPOINT_SAVED",
-    "lastCompletedBatch": "B21",
-    "nextBatch": "B22"
+    "batch": "B23",
+    "state": "SOURCE_COLLATION",
+    "ids": [
+      "CSE046",
+      "CSE047",
+      "CSE048",
+      "CSE051",
+      "CSE052",
+      "CSE053"
+    ]
   },
   "next": [
-    {
-      "priority": 1,
-      "kb": "Chanoine",
-      "candidateIds": [
-        "CSE038",
-        "CSE039",
-        "CSE040"
-      ],
-      "action": "Read original composite records and specialist briefs first; exclude all completed family IDs. Check remaining modesty/occasion questions against exact existing sources; do not presume content or need for changes."
-    },
     {
       "priority": 2,
       "scope": "SPX first-balanced-release beyond existing first20",
@@ -381,15 +392,15 @@
   "publication": false,
   "denzingerMandatory": false,
   "progress": {
-    "conversationFamilyIdsWithResearchDeltas": 82,
+    "conversationFamilyIdsWithResearchDeltas": 85,
     "additionalMirrorFamilyIdsExamined": 3,
-    "totalDistinctFamilyIdsExaminedInSelectedResearch": 85,
-    "answerUnitsReviewed": 164,
-    "fullFamilyPacketsForHumanReview": 81,
+    "totalDistinctFamilyIdsExaminedInSelectedResearch": 88,
+    "answerUnitsReviewed": 170,
+    "fullFamilyPacketsForHumanReview": 84,
     "partialFamilyPackets": 1,
     "humanCertified": 0,
     "published": 0,
-    "meaning": "81 complete research packets can enter human certification review; no answer is certified or approved for publication."
+    "meaning": "84 complete research packets may enter human review; none certified."
   },
   "scheduling": {
     "created": false,
