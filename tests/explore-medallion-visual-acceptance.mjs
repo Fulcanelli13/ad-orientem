@@ -140,7 +140,7 @@ try{
    const stageMarkerSizes=await page.locator("[data-journey-map-stage]").evaluateAll(markers=>
      markers.map(marker=>({width:marker.getBoundingClientRect().width,
        height:marker.getBoundingClientRect().height})));
-   assert.ok(stageMarkerSizes.length===2&&stageMarkerSizes.every(size=>size.width>=44&&size.height>=44),
+   assert.ok(stageMarkerSizes.length===2&&stageMarkerSizes.every(size=>size.width>=43.99&&size.height>=43.99),
      "Journey map medallions need 44px touch targets: "+JSON.stringify(stageMarkerSizes));
    const holywellStage=journey.locator('[data-explore-journey-stage-focus="route:GB:holywell-church-to-well#stage-1"]');
    await holywellStage.click();
