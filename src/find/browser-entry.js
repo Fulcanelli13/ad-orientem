@@ -22,7 +22,7 @@ import { buildCustomsAtlasFacets, filterCustomsAtlasItems } from "./customs-atla
 import { groupTraditionsForBrowse, countCanonicalTraditions } from "./traditions-browse.js";
 import { HERITAGE_CATEGORIES, projectHeritagePlaces, heritageCustomCards, nearbyHeritagePlaces } from "./heritage-map.js";
 import { buildExplorePlaceProfiles } from "./place-profiles.js";
-import { buildPilgrimageJourneyCatalogue,selectedPilgrimageJourney } from "./pilgrimage-journey.js";
+import { buildPilgrimageJourneyCatalogue,selectedPilgrimageJourney,journeysForCanonicalPlace } from "./pilgrimage-journey.js";
 
 const VERSION="explore-v1";
 const ROOT_ID="ao-find-modular-root";
@@ -1072,6 +1072,27 @@ export function createFindOwner(win=globalThis){
     }
     if(target?.closest?.("[data-explore-sheet-toggle]")){
       event.preventDefault?.();state.expandPlace=true;void paint({selectionOnly:true});return;
+    }
+    const placeJourney=target?.closest?.("[data-explore-place-journey]");
+    if(placeJourney&&state.lens==="heritage"&&state.selectedPlaceId){
+      event.preventDefault?.();
+      const placeId=state.selectedPlaceId;
+      const routeId=placeJourney.dataset.explorePlaceJourney;
+      const candidates=journeysForCanonicalPlace(journeyCatalogue(),placeId);
+      if(!candidates.some(candidate=>candidate.routeId===routeId))return;
+      if(!state.journeyOpen)journeyPreviousCategories=[...state.heritageCategories];
+      state.journeyOpen=true;
+      state.journeySelectedId=routeId;
+      state.heritageCategories=["pilgrimages"];
+      state.query="";state.selectedPlaceId=null;state.selectedId=null;
+      state.expandPlace=false;state.expandDetail=false;nearbyResults=null;
+      // A single shared MapLibre atlas: switch C -> D without remounting it.
+      // Do not snap to the related Walsingham shrine as a Priory terminus.
+      void paint();return;
+    }
+    if(target?.closest?.("[data-explore-place-journey-list]")&&state.selectedPlaceId){
+      event.preventDefault?.();state.expandPlace=true;
+      void paint({selectionOnly:true});return;
     }
     if(target?.closest?.("[data-explore-expand-place]")){
       event.preventDefault?.();state.expandPlace=true;void paint({selectionOnly:true});return;
