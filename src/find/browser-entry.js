@@ -168,6 +168,7 @@ export function createFindOwner(win=globalThis){
     selectedId:null,
     selectedPlaceId:null,
     displayLimit:24,
+    mapcnDiscoverLimit:36,
     bibleAtlas:false,
     bibleIndex:0,
   };
@@ -1233,6 +1234,11 @@ export function createFindOwner(win=globalThis){
       state.view="list";state.saintScope=scope;state.saintCategory="ALL";
       state.query="";state.selectedId=id;state.selectedPlaceId=null;
       state.expandPlace=false;state.expandDetail=false;state.displayLimit=24;
+      void paint();return;
+    }
+    if(target?.closest?.("[data-mapcn-discover-more]")&&state.lens==="heritage"){
+      event.preventDefault?.();
+      state.mapcnDiscoverLimit=Math.min(180,(state.mapcnDiscoverLimit||36)+36);
       void paint();return;
     }
     const openPlace=target?.closest?.("[data-explore-open-place]");
