@@ -7,8 +7,11 @@ import {chromium} from "@playwright/test";
 const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
 const dest=resolve(root,"artifacts/customs-mobile-folios");
 await mkdir(dest,{recursive:true});
-const corpus=JSON.parse(await readFile(resolve(root,"data/customs/customs-p0-guidance-en-fr.v1.json"),"utf8")).entries;
-assert.equal(corpus.length,6);
+const corpus=[
+  ...JSON.parse(await readFile(resolve(root,"data/customs/customs-p0-guidance-en-fr.v1.json"),"utf8")).entries,
+  ...JSON.parse(await readFile(resolve(root,"data/customs/customs-p1-guidance-en-fr.v1.json"),"utf8")).entries,
+];
+assert.equal(corpus.length,11);
 const mime={".html":"text/html; charset=utf-8",".js":"text/javascript; charset=utf-8",".mjs":"text/javascript; charset=utf-8",".json":"application/json; charset=utf-8",".css":"text/css; charset=utf-8",".svg":"image/svg+xml",".png":"image/png",".jpg":"image/jpeg",".webp":"image/webp"};
 const server=http.createServer(async(req,res)=>{
   try{
@@ -101,5 +104,5 @@ try{
     await context.close();
   }
   await writeFile(resolve(dest,"audit.json"),JSON.stringify({profiles:measurements.length,measurements},null,2));
-  console.log("PASS Customs Atlas 18 EN/FR mobile/tablet full folios: legibility, overflow, exact identity, source links and screenshots");
+  console.log("PASS Customs Atlas 33 EN/FR mobile/tablet full folios: legibility, overflow, exact identity, source links and screenshots");
 }finally{await browser?.close();await new Promise(resolve=>server.close(resolve));}

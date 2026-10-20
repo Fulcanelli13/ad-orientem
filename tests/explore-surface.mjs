@@ -20,6 +20,7 @@ const phenomena=readJson("data/explore/sacred-phenomena-seed.v1.json");
 const customsSeed=readJson("data/customs/customs-atlas-seed.v1.json");
 const customSources=readJson("data/customs/source-registry.v1.json");
 const customGuidance=readJson("data/customs/customs-p0-guidance-en-fr.v1.json");
+const customGuidanceP1=readJson("data/customs/customs-p1-guidance-en-fr.v1.json");
 const shrineSeed=readJson("data/shrines/shrines-pilgrimages-seed.v1.json");
 const shrineSources=readJson("data/shrines/source-registry.v1.json");
 const novenaBridge=readJson("data/customs/novena-context-links.v1.json");
@@ -72,7 +73,7 @@ const dataset={
   },
   geography:{geoAreas:geography.geoAreas,places:geography.places},
   sacredPhenomena:phenomena,
-  customs:{customs:customsSeed.customs,attestations:customsSeed.attestations,sources:customSources.sources,guidance:customGuidance.entries},
+  customs:{customs:customsSeed.customs,attestations:customsSeed.attestations,sources:customSources.sources,guidance:[...customGuidance.entries,...customGuidanceP1.entries]},
   shrines:{
     shrines:shrineSeed.shrines,
     pilgrimages:shrineSeed.pilgrimages,
@@ -570,11 +571,11 @@ assert.deepEqual(atlasUngrounded.map(item=>item.place_id).sort(),[],"all exact-s
 
 
 const customsAtlasItems=projection.byLens.traditions;
-assert.equal(countCanonicalTraditions(customsAtlasItems),33,"33 customs remain independently canonical");
+assert.equal(countCanonicalTraditions(customsAtlasItems),38,"38 customs remain independently canonical");
 const practiceBrowse=groupTraditionsForBrowse(customsAtlasItems);
 assert.ok(practiceBrowse.some(item=>item.source_id==="BLSS-001"),"St Blaise must be discoverable as one canonical non-map tradition");
 assert.ok(customsAtlasItems.some(item=>item.raw?.custom?.custom_id==="BLSS-001"&&item.map_publishable===false),"St Blaise must not manufacture a map pin");
-assert.equal(practiceBrowse.length,33,"list should not turn 92 attestations and 18 novena context links into separate practices");
+assert.equal(practiceBrowse.length,38,"list should not turn 92 attestations and 18 novena context links into separate practices");
 assert.ok(practiceBrowse.every(item=>item.kind==="CANONICAL_CUSTOM"&&!item.map_publishable),"canonical practices are not map pins");
 assert.ok(practiceBrowse.every(item=>item.facts.every(fact=>fact.label!=="Class")),"geographically mixed legacy classification must not appear as exclusive nationality");
 assert.ok(customsAtlasItems.filter(item=>item.kind==="CUSTOM_ATTESTATION").every(item=>item.facts.every(fact=>fact.label!=="Class")),"place-specific evidence must not promote unreviewed national classification");
@@ -587,10 +588,10 @@ assert.ok(regionalPardons.attestation_examples.some(example=>example.place_id),"
 const holyWater=practiceBrowse.find(item=>item.source_id==="DOM-002");
 assert.equal(holyWater.attestation_examples.length,1,"one-locality customs remain one practice");
 const searchedContexts=groupTraditionsForBrowse(customsAtlasItems,{includeNovenaContext:true});
-assert.equal(searchedContexts.length,51,"18 novena contextual links should remain accessible through search/context");
-assert.equal(new Set(practiceBrowse.map(item=>item.item_id)).size,33,"canonical practice identities must be unique");
+assert.equal(searchedContexts.length,56,"18 novena contextual links should remain accessible through search/context");
+assert.equal(new Set(practiceBrowse.map(item=>item.item_id)).size,38,"canonical practice identities must be unique");
 const practiceVm=buildExploreViewModel({
-  language:"en",items:practiceBrowse,lens:"traditions",counts:{...projection.counts,traditions:33},
+  language:"en",items:practiceBrowse,lens:"traditions",counts:{...projection.counts,traditions:38},
   view:"list",filters:{},selectedId:"tradition:custom:DEV-007",expandDetail:true,
 });
 const practiceHtml=renderExploreToString(practiceVm);
@@ -598,10 +599,10 @@ assert.match(practiceHtml,/data-explore-item="tradition:custom:DEV-007"/);
 assert.match(practiceHtml,/Documented examples.*36/);
 assert.match(practiceHtml,/data-explore-open-place=/,"examples must deep-link to canonical Places");
 assert.match(practiceHtml,/Attested places/,"map is supplementary evidence navigation, not the default customs structure");
-assert.match(practiceHtml,/>33<\/strong><span>practices/,"list count must describe practices, not attestations");
+assert.match(practiceHtml,/>38<\/strong><span>practices/,"list count must describe practices, not attestations");
 
 
-for(const guide of customGuidance.entries){
+for(const guide of [...customGuidance.entries,...customGuidanceP1.entries]){
   const item=practiceBrowse.find(x=>x.source_id===guide.custom_id);
   assert.ok(item,"Missing guidance owner in Explore: "+guide.custom_id);
   assert.equal(item.item_id,"tradition:custom:"+guide.custom_id);
@@ -616,7 +617,7 @@ for(const guide of customGuidance.entries){
   assert.ok(item.sections.some(x=>x.label==="Pastoral context"&&x.body_fr===guide.caution_fr),"French caution must be visible");
   for(const language of ["en","fr"]){
     const vm=buildExploreViewModel({
-      language,items:practiceBrowse,lens:"traditions",counts:{...projection.counts,traditions:33},
+      language,items:practiceBrowse,lens:"traditions",counts:{...projection.counts,traditions:38},
       view:"list",filters:{},selectedId:item.item_id,expandDetail:true,
     });
     const html=renderExploreToString(vm);
