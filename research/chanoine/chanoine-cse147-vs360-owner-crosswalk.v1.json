@@ -1,7 +1,7 @@
 {
   "schema": "AO_CHANOINE_CSE147_VS_PREEXISTING360_OWNER_CROSSWALK_V1",
   "date": "2026-10-20",
-  "status": "RESEARCH_ONLY_SOURCE_AND_SEMANTIC_OWNER_CANDIDATES_NOT_APPROVED",
+  "status": "SOURCE_OWNER_IDS_VERIFIED_EDITORIAL_RELEVANCE_PENDING_NO_RUNTIME_HANDOFF",
   "method": "Verified original 360 English-only editorial index from user files + live PR #1489 147 bilingual draft corpus. Exact normalized main-question match, IDF-weighted lexical top-3, and explicit editorially curated source-owner mappings. Lexical score is NOT semantic proof or merge authorization. No destructive merges, no invented APOL/CSE owner equivalence.",
   "source360_snapshot": "research/chanoine/chanoine-360-readonly-owner-snapshot.v1.json",
   "source147": "research/chanoine/chanoine-cse-147-conversation-editorial-review.v1.json",
@@ -24,7 +24,10 @@
     },
     "cse_questions_without_curated_links": 102,
     "old_publication_approvals": 0,
-    "cse_publication_approvals": 0
+    "cse_publication_approvals": 0,
+    "owner_links_resolved_to_actual_canonical_dossier_ids": 53,
+    "owner_links_editorially_approved": 0,
+    "runtime_handoffs_approved": 0
   },
   "rows": [
     {
@@ -103,7 +106,20 @@
           ],
           "relationship": "FOUNDATION",
           "reason": "General object, intention and circumstances provide moral method",
-          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY"
+          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY",
+          "canonical_ownership_verified": true,
+          "canonical_owner_targets": [
+            {
+              "dossier_id": "APOL-052",
+              "dossier_title": "Can a good end justify a bad means?",
+              "dossier_domain": "APOLOGETICS",
+              "dossier_path": "data/learn/apologetics-canonical.v1.json",
+              "exact_owner_exists": true
+            }
+          ],
+          "editorial_relevance_approved": false,
+          "runtime_handoff_approved": false,
+          "resolution": "SOURCE_OWNER_ID_VERIFIED_REFERENCE_ONLY"
         }
       ],
       "nearest_lexical_3": [
@@ -176,7 +192,20 @@
           ],
           "relationship": "FOUNDATION",
           "reason": "Naturalness alone does not settle the moral object",
-          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY"
+          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY",
+          "canonical_ownership_verified": true,
+          "canonical_owner_targets": [
+            {
+              "dossier_id": "APOL-052",
+              "dossier_title": "Can a good end justify a bad means?",
+              "dossier_domain": "APOLOGETICS",
+              "dossier_path": "data/learn/apologetics-canonical.v1.json",
+              "exact_owner_exists": true
+            }
+          ],
+          "editorial_relevance_approved": false,
+          "runtime_handoff_approved": false,
+          "resolution": "SOURCE_OWNER_ID_VERIFIED_REFERENCE_ONLY"
         }
       ],
       "nearest_lexical_3": [
@@ -218,7 +247,20 @@
           ],
           "relationship": "FOUNDATION",
           "reason": "Visible harm is not the whole moral framework",
-          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY"
+          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY",
+          "canonical_ownership_verified": true,
+          "canonical_owner_targets": [
+            {
+              "dossier_id": "APOL-052",
+              "dossier_title": "Can a good end justify a bad means?",
+              "dossier_domain": "APOLOGETICS",
+              "dossier_path": "data/learn/apologetics-canonical.v1.json",
+              "exact_owner_exists": true
+            }
+          ],
+          "editorial_relevance_approved": false,
+          "runtime_handoff_approved": false,
+          "resolution": "SOURCE_OWNER_ID_VERIFIED_REFERENCE_ONLY"
         }
       ],
       "nearest_lexical_3": [
@@ -260,7 +302,20 @@
           ],
           "relationship": "FOUNDATION",
           "reason": "Consent is necessary but does not determine moral goodness alone",
-          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY"
+          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY",
+          "canonical_ownership_verified": true,
+          "canonical_owner_targets": [
+            {
+              "dossier_id": "APOL-052",
+              "dossier_title": "Can a good end justify a bad means?",
+              "dossier_domain": "APOLOGETICS",
+              "dossier_path": "data/learn/apologetics-canonical.v1.json",
+              "exact_owner_exists": true
+            }
+          ],
+          "editorial_relevance_approved": false,
+          "runtime_handoff_approved": false,
+          "resolution": "SOURCE_OWNER_ID_VERIFIED_REFERENCE_ONLY"
         }
       ],
       "nearest_lexical_3": [
@@ -302,7 +357,20 @@
           ],
           "relationship": "FOUNDATION",
           "reason": "Same general premise on good intention and wrongful means",
-          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY"
+          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY",
+          "canonical_ownership_verified": true,
+          "canonical_owner_targets": [
+            {
+              "dossier_id": "APOL-052",
+              "dossier_title": "Can a good end justify a bad means?",
+              "dossier_domain": "APOLOGETICS",
+              "dossier_path": "data/learn/apologetics-canonical.v1.json",
+              "exact_owner_exists": true
+            }
+          ],
+          "editorial_relevance_approved": false,
+          "runtime_handoff_approved": false,
+          "resolution": "SOURCE_OWNER_ID_VERIFIED_REFERENCE_ONLY"
         },
         {
           "existing_conversation_id": "CHA-MAIN-CR-MOR-05",
@@ -312,7 +380,20 @@
           ],
           "relationship": "HISTORICAL_CONTEXT",
           "reason": "Debate on consequentialism and proportionalism",
-          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY"
+          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY",
+          "canonical_ownership_verified": true,
+          "canonical_owner_targets": [
+            {
+              "dossier_id": "CR-MOR-05",
+              "dossier_title": "Proportionalism and consequentialism: can good consequences justify an otherwise evil act?",
+              "dossier_domain": "CHURCH_CRISIS",
+              "dossier_path": "data/learn/church-crisis-canonical.v1.json",
+              "exact_owner_exists": true
+            }
+          ],
+          "editorial_relevance_approved": false,
+          "runtime_handoff_approved": false,
+          "resolution": "SOURCE_OWNER_ID_VERIFIED_REFERENCE_ONLY"
         }
       ],
       "nearest_lexical_3": [
@@ -354,7 +435,20 @@
           ],
           "relationship": "FOUNDATION",
           "reason": "Intrinsically wrongful acts versus changed circumstances",
-          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY"
+          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY",
+          "canonical_ownership_verified": true,
+          "canonical_owner_targets": [
+            {
+              "dossier_id": "APOL-052",
+              "dossier_title": "Can a good end justify a bad means?",
+              "dossier_domain": "APOLOGETICS",
+              "dossier_path": "data/learn/apologetics-canonical.v1.json",
+              "exact_owner_exists": true
+            }
+          ],
+          "editorial_relevance_approved": false,
+          "runtime_handoff_approved": false,
+          "resolution": "SOURCE_OWNER_ID_VERIFIED_REFERENCE_ONLY"
         },
         {
           "existing_conversation_id": "CHA-QA-MOR-004",
@@ -364,7 +458,20 @@
           ],
           "relationship": "FOUNDATION",
           "reason": "Consequence-based reasoning critique",
-          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY"
+          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY",
+          "canonical_ownership_verified": true,
+          "canonical_owner_targets": [
+            {
+              "dossier_id": "APOL-052",
+              "dossier_title": "Can a good end justify a bad means?",
+              "dossier_domain": "APOLOGETICS",
+              "dossier_path": "data/learn/apologetics-canonical.v1.json",
+              "exact_owner_exists": true
+            }
+          ],
+          "editorial_relevance_approved": false,
+          "runtime_handoff_approved": false,
+          "resolution": "SOURCE_OWNER_ID_VERIFIED_REFERENCE_ONLY"
         }
       ],
       "nearest_lexical_3": [
@@ -406,7 +513,20 @@
           ],
           "relationship": "FOUNDATION",
           "reason": "Definition of intrinsic wrongness",
-          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY"
+          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY",
+          "canonical_ownership_verified": true,
+          "canonical_owner_targets": [
+            {
+              "dossier_id": "APOL-052",
+              "dossier_title": "Can a good end justify a bad means?",
+              "dossier_domain": "APOLOGETICS",
+              "dossier_path": "data/learn/apologetics-canonical.v1.json",
+              "exact_owner_exists": true
+            }
+          ],
+          "editorial_relevance_approved": false,
+          "runtime_handoff_approved": false,
+          "resolution": "SOURCE_OWNER_ID_VERIFIED_REFERENCE_ONLY"
         },
         {
           "existing_conversation_id": "CHA-MAIN-CR-MOR-06",
@@ -416,7 +536,20 @@
           ],
           "relationship": "HISTORICAL_CONTEXT",
           "reason": "Fundamental option controversy and intrinsically evil acts",
-          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY"
+          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY",
+          "canonical_ownership_verified": true,
+          "canonical_owner_targets": [
+            {
+              "dossier_id": "CR-MOR-06",
+              "dossier_title": "Fundamental option, mortal sin and intrinsically evil acts",
+              "dossier_domain": "CHURCH_CRISIS",
+              "dossier_path": "data/learn/church-crisis-canonical.v1.json",
+              "exact_owner_exists": true
+            }
+          ],
+          "editorial_relevance_approved": false,
+          "runtime_handoff_approved": false,
+          "resolution": "SOURCE_OWNER_ID_VERIFIED_REFERENCE_ONLY"
         }
       ],
       "nearest_lexical_3": [
@@ -551,7 +684,20 @@
           ],
           "relationship": "FOUNDATION",
           "reason": "Continuity and authentic doctrinal development",
-          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY"
+          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY",
+          "canonical_ownership_verified": true,
+          "canonical_owner_targets": [
+            {
+              "dossier_id": "CR-DOC-02",
+              "dossier_title": "Can doctrine develop without contradicting earlier doctrine?",
+              "dossier_domain": "CHURCH_CRISIS",
+              "dossier_path": "data/learn/church-crisis-canonical.v1.json",
+              "exact_owner_exists": true
+            }
+          ],
+          "editorial_relevance_approved": false,
+          "runtime_handoff_approved": false,
+          "resolution": "SOURCE_OWNER_ID_VERIFIED_REFERENCE_ONLY"
         },
         {
           "existing_conversation_id": "CHA-MAIN-CR-MOR-01",
@@ -561,7 +707,20 @@
           ],
           "relationship": "HISTORICAL_CONTEXT",
           "reason": "Historical moral-theology controversy",
-          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY"
+          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY",
+          "canonical_ownership_verified": true,
+          "canonical_owner_targets": [
+            {
+              "dossier_id": "CR-MOR-01",
+              "dossier_title": "Did the crisis in moral theology begin before Vatican II?",
+              "dossier_domain": "CHURCH_CRISIS",
+              "dossier_path": "data/learn/church-crisis-canonical.v1.json",
+              "exact_owner_exists": true
+            }
+          ],
+          "editorial_relevance_approved": false,
+          "runtime_handoff_approved": false,
+          "resolution": "SOURCE_OWNER_ID_VERIFIED_REFERENCE_ONLY"
         }
       ],
       "nearest_lexical_3": [
@@ -603,7 +762,20 @@
           ],
           "relationship": "FOUNDATION",
           "reason": "Doctrinal development must preserve substance",
-          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY"
+          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY",
+          "canonical_ownership_verified": true,
+          "canonical_owner_targets": [
+            {
+              "dossier_id": "CR-DOC-02",
+              "dossier_title": "Can doctrine develop without contradicting earlier doctrine?",
+              "dossier_domain": "CHURCH_CRISIS",
+              "dossier_path": "data/learn/church-crisis-canonical.v1.json",
+              "exact_owner_exists": true
+            }
+          ],
+          "editorial_relevance_approved": false,
+          "runtime_handoff_approved": false,
+          "resolution": "SOURCE_OWNER_ID_VERIFIED_REFERENCE_ONLY"
         }
       ],
       "nearest_lexical_3": [
@@ -645,7 +817,20 @@
           ],
           "relationship": "FOUNDATION",
           "reason": "Conscience judges but does not create moral truth",
-          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY"
+          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY",
+          "canonical_ownership_verified": true,
+          "canonical_owner_targets": [
+            {
+              "dossier_id": "APOL-051",
+              "dossier_title": "What is conscience, and can conscience be wrong?",
+              "dossier_domain": "APOLOGETICS",
+              "dossier_path": "data/learn/apologetics-canonical.v1.json",
+              "exact_owner_exists": true
+            }
+          ],
+          "editorial_relevance_approved": false,
+          "runtime_handoff_approved": false,
+          "resolution": "SOURCE_OWNER_ID_VERIFIED_REFERENCE_ONLY"
         },
         {
           "existing_conversation_id": "CHA-MAIN-CR-MOR-02",
@@ -655,7 +840,20 @@
           ],
           "relationship": "HISTORICAL_CONTEXT",
           "reason": "Conscience as moral judge versus creator",
-          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY"
+          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY",
+          "canonical_ownership_verified": true,
+          "canonical_owner_targets": [
+            {
+              "dossier_id": "CR-MOR-02",
+              "dossier_title": "Conscience: judge of moral truth or creator of moral truth?",
+              "dossier_domain": "CHURCH_CRISIS",
+              "dossier_path": "data/learn/church-crisis-canonical.v1.json",
+              "exact_owner_exists": true
+            }
+          ],
+          "editorial_relevance_approved": false,
+          "runtime_handoff_approved": false,
+          "resolution": "SOURCE_OWNER_ID_VERIFIED_REFERENCE_ONLY"
         }
       ],
       "nearest_lexical_3": [
@@ -697,7 +895,20 @@
           ],
           "relationship": "FOUNDATION",
           "reason": "Erroneous conscience and voluntariness",
-          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY"
+          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY",
+          "canonical_ownership_verified": true,
+          "canonical_owner_targets": [
+            {
+              "dossier_id": "APOL-051",
+              "dossier_title": "What is conscience, and can conscience be wrong?",
+              "dossier_domain": "APOLOGETICS",
+              "dossier_path": "data/learn/apologetics-canonical.v1.json",
+              "exact_owner_exists": true
+            }
+          ],
+          "editorial_relevance_approved": false,
+          "runtime_handoff_approved": false,
+          "resolution": "SOURCE_OWNER_ID_VERIFIED_REFERENCE_ONLY"
         }
       ],
       "nearest_lexical_3": [
@@ -739,7 +950,20 @@
           ],
           "relationship": "HISTORICAL_CONTEXT",
           "reason": "Distinguish theological inquiry from dissent about authoritative norms",
-          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY"
+          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY",
+          "canonical_ownership_verified": true,
+          "canonical_owner_targets": [
+            {
+              "dossier_id": "CR-MOR-04",
+              "dossier_title": "Is ‘responsible dissent’ from non-infallible moral teaching legitimate?",
+              "dossier_domain": "CHURCH_CRISIS",
+              "dossier_path": "data/learn/church-crisis-canonical.v1.json",
+              "exact_owner_exists": true
+            }
+          ],
+          "editorial_relevance_approved": false,
+          "runtime_handoff_approved": false,
+          "resolution": "SOURCE_OWNER_ID_VERIFIED_REFERENCE_ONLY"
         }
       ],
       "nearest_lexical_3": [
@@ -781,7 +1005,20 @@
           ],
           "relationship": "FOUNDATION",
           "reason": "Distinguish moral object, gravity and actual culpability",
-          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY"
+          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY",
+          "canonical_ownership_verified": true,
+          "canonical_owner_targets": [
+            {
+              "dossier_id": "CR-MOR-06",
+              "dossier_title": "Fundamental option, mortal sin and intrinsically evil acts",
+              "dossier_domain": "CHURCH_CRISIS",
+              "dossier_path": "data/learn/church-crisis-canonical.v1.json",
+              "exact_owner_exists": true
+            }
+          ],
+          "editorial_relevance_approved": false,
+          "runtime_handoff_approved": false,
+          "resolution": "SOURCE_OWNER_ID_VERIFIED_REFERENCE_ONLY"
         }
       ],
       "nearest_lexical_3": [
@@ -1319,7 +1556,20 @@
           ],
           "relationship": "ANALOGY",
           "reason": "Circumstances and intention affect prudential judgment",
-          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY"
+          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY",
+          "canonical_ownership_verified": true,
+          "canonical_owner_targets": [
+            {
+              "dossier_id": "APOL-052",
+              "dossier_title": "Can a good end justify a bad means?",
+              "dossier_domain": "APOLOGETICS",
+              "dossier_path": "data/learn/apologetics-canonical.v1.json",
+              "exact_owner_exists": true
+            }
+          ],
+          "editorial_relevance_approved": false,
+          "runtime_handoff_approved": false,
+          "resolution": "SOURCE_OWNER_ID_VERIFIED_REFERENCE_ONLY"
         }
       ],
       "nearest_lexical_3": [
@@ -1733,7 +1983,20 @@
           ],
           "relationship": "COMPARATIVE_CONTEXT",
           "reason": "Orthodox remarriage contrast, distinct Catholic canonical rule",
-          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY"
+          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY",
+          "canonical_ownership_verified": true,
+          "canonical_owner_targets": [
+            {
+              "dossier_id": "APOL-028",
+              "dossier_title": "Why is Christian marriage sacramental and indissoluble?",
+              "dossier_domain": "APOLOGETICS",
+              "dossier_path": "data/learn/apologetics-canonical.v1.json",
+              "exact_owner_exists": true
+            }
+          ],
+          "editorial_relevance_approved": false,
+          "runtime_handoff_approved": false,
+          "resolution": "SOURCE_OWNER_ID_VERIFIED_REFERENCE_ONLY"
         }
       ],
       "nearest_lexical_3": [
@@ -1775,7 +2038,20 @@
           ],
           "relationship": "COMPARATIVE_CONTEXT",
           "reason": "Orthodox remarriage is a comparative not replacement answer",
-          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY"
+          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY",
+          "canonical_ownership_verified": true,
+          "canonical_owner_targets": [
+            {
+              "dossier_id": "APOL-028",
+              "dossier_title": "Why is Christian marriage sacramental and indissoluble?",
+              "dossier_domain": "APOLOGETICS",
+              "dossier_path": "data/learn/apologetics-canonical.v1.json",
+              "exact_owner_exists": true
+            }
+          ],
+          "editorial_relevance_approved": false,
+          "runtime_handoff_approved": false,
+          "resolution": "SOURCE_OWNER_ID_VERIFIED_REFERENCE_ONLY"
         },
         {
           "existing_conversation_id": "CHA-MAIN-CR-MOR-08",
@@ -1785,7 +2061,20 @@
           ],
           "relationship": "HISTORICAL_CONTEXT",
           "reason": "Postconciliar sacraments controversy; not identical to nullity judgment",
-          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY"
+          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY",
+          "canonical_ownership_verified": true,
+          "canonical_owner_targets": [
+            {
+              "dossier_id": "CR-MOR-08",
+              "dossier_title": "Amoris laetitia: continuity, qualification or conflict with prior sacramental and moral discipline?",
+              "dossier_domain": "CHURCH_CRISIS",
+              "dossier_path": "data/learn/church-crisis-canonical.v1.json",
+              "exact_owner_exists": true
+            }
+          ],
+          "editorial_relevance_approved": false,
+          "runtime_handoff_approved": false,
+          "resolution": "SOURCE_OWNER_ID_VERIFIED_REFERENCE_ONLY"
         }
       ],
       "nearest_lexical_3": [
@@ -1827,7 +2116,20 @@
           ],
           "relationship": "FOUNDATION",
           "reason": "Agreement cannot change the moral object",
-          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY"
+          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY",
+          "canonical_ownership_verified": true,
+          "canonical_owner_targets": [
+            {
+              "dossier_id": "APOL-052",
+              "dossier_title": "Can a good end justify a bad means?",
+              "dossier_domain": "APOLOGETICS",
+              "dossier_path": "data/learn/apologetics-canonical.v1.json",
+              "exact_owner_exists": true
+            }
+          ],
+          "editorial_relevance_approved": false,
+          "runtime_handoff_approved": false,
+          "resolution": "SOURCE_OWNER_ID_VERIFIED_REFERENCE_ONLY"
         }
       ],
       "nearest_lexical_3": [
@@ -1962,7 +2264,20 @@
           ],
           "relationship": "FOUNDATION",
           "reason": "Chosen act, intention and circumstances in married life",
-          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY"
+          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY",
+          "canonical_ownership_verified": true,
+          "canonical_owner_targets": [
+            {
+              "dossier_id": "APOL-052",
+              "dossier_title": "Can a good end justify a bad means?",
+              "dossier_domain": "APOLOGETICS",
+              "dossier_path": "data/learn/apologetics-canonical.v1.json",
+              "exact_owner_exists": true
+            }
+          ],
+          "editorial_relevance_approved": false,
+          "runtime_handoff_approved": false,
+          "resolution": "SOURCE_OWNER_ID_VERIFIED_REFERENCE_ONLY"
         }
       ],
       "nearest_lexical_3": [
@@ -2004,7 +2319,20 @@
           ],
           "relationship": "ANALOGY",
           "reason": "Concrete circumstances of obligations",
-          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY"
+          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY",
+          "canonical_ownership_verified": true,
+          "canonical_owner_targets": [
+            {
+              "dossier_id": "APOL-052",
+              "dossier_title": "Can a good end justify a bad means?",
+              "dossier_domain": "APOLOGETICS",
+              "dossier_path": "data/learn/apologetics-canonical.v1.json",
+              "exact_owner_exists": true
+            }
+          ],
+          "editorial_relevance_approved": false,
+          "runtime_handoff_approved": false,
+          "resolution": "SOURCE_OWNER_ID_VERIFIED_REFERENCE_ONLY"
         }
       ],
       "nearest_lexical_3": [
@@ -2077,7 +2405,20 @@
           ],
           "relationship": "HISTORICAL_CONTEXT",
           "reason": "Humanae vitae crisis; CSE owns specific prohibition",
-          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY"
+          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY",
+          "canonical_ownership_verified": true,
+          "canonical_owner_targets": [
+            {
+              "dossier_id": "CR-MOR-03",
+              "dossier_title": "Why did Humanae vitae become a crisis of authority and moral method?",
+              "dossier_domain": "CHURCH_CRISIS",
+              "dossier_path": "data/learn/church-crisis-canonical.v1.json",
+              "exact_owner_exists": true
+            }
+          ],
+          "editorial_relevance_approved": false,
+          "runtime_handoff_approved": false,
+          "resolution": "SOURCE_OWNER_ID_VERIFIED_REFERENCE_ONLY"
         }
       ],
       "nearest_lexical_3": [
@@ -2119,7 +2460,20 @@
           ],
           "relationship": "HISTORICAL_CONTEXT",
           "reason": "Humanae vitae background; not pregnancy-planning counselling",
-          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY"
+          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY",
+          "canonical_ownership_verified": true,
+          "canonical_owner_targets": [
+            {
+              "dossier_id": "CR-MOR-03",
+              "dossier_title": "Why did Humanae vitae become a crisis of authority and moral method?",
+              "dossier_domain": "CHURCH_CRISIS",
+              "dossier_path": "data/learn/church-crisis-canonical.v1.json",
+              "exact_owner_exists": true
+            }
+          ],
+          "editorial_relevance_approved": false,
+          "runtime_handoff_approved": false,
+          "resolution": "SOURCE_OWNER_ID_VERIFIED_REFERENCE_ONLY"
         }
       ],
       "nearest_lexical_3": [
@@ -2161,7 +2515,20 @@
           ],
           "relationship": "HISTORICAL_CONTEXT",
           "reason": "Moral method behind contraception distinction",
-          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY"
+          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY",
+          "canonical_ownership_verified": true,
+          "canonical_owner_targets": [
+            {
+              "dossier_id": "CR-MOR-03",
+              "dossier_title": "Why did Humanae vitae become a crisis of authority and moral method?",
+              "dossier_domain": "CHURCH_CRISIS",
+              "dossier_path": "data/learn/church-crisis-canonical.v1.json",
+              "exact_owner_exists": true
+            }
+          ],
+          "editorial_relevance_approved": false,
+          "runtime_handoff_approved": false,
+          "resolution": "SOURCE_OWNER_ID_VERIFIED_REFERENCE_ONLY"
         }
       ],
       "nearest_lexical_3": [
@@ -2203,7 +2570,20 @@
           ],
           "relationship": "HISTORICAL_CONTEXT",
           "reason": "Humanae vitae authority and distinction",
-          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY"
+          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY",
+          "canonical_ownership_verified": true,
+          "canonical_owner_targets": [
+            {
+              "dossier_id": "CR-MOR-03",
+              "dossier_title": "Why did Humanae vitae become a crisis of authority and moral method?",
+              "dossier_domain": "CHURCH_CRISIS",
+              "dossier_path": "data/learn/church-crisis-canonical.v1.json",
+              "exact_owner_exists": true
+            }
+          ],
+          "editorial_relevance_approved": false,
+          "runtime_handoff_approved": false,
+          "resolution": "SOURCE_OWNER_ID_VERIFIED_REFERENCE_ONLY"
         }
       ],
       "nearest_lexical_3": [
@@ -2245,7 +2625,20 @@
           ],
           "relationship": "HISTORICAL_CONTEXT",
           "reason": "Historical contraception debate",
-          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY"
+          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY",
+          "canonical_ownership_verified": true,
+          "canonical_owner_targets": [
+            {
+              "dossier_id": "CR-MOR-03",
+              "dossier_title": "Why did Humanae vitae become a crisis of authority and moral method?",
+              "dossier_domain": "CHURCH_CRISIS",
+              "dossier_path": "data/learn/church-crisis-canonical.v1.json",
+              "exact_owner_exists": true
+            }
+          ],
+          "editorial_relevance_approved": false,
+          "runtime_handoff_approved": false,
+          "resolution": "SOURCE_OWNER_ID_VERIFIED_REFERENCE_ONLY"
         }
       ],
       "nearest_lexical_3": [
@@ -2318,7 +2711,20 @@
           ],
           "relationship": "HISTORICAL_CONTEXT",
           "reason": "Historical moral backdrop to periodic abstinence",
-          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY"
+          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY",
+          "canonical_ownership_verified": true,
+          "canonical_owner_targets": [
+            {
+              "dossier_id": "CR-MOR-03",
+              "dossier_title": "Why did Humanae vitae become a crisis of authority and moral method?",
+              "dossier_domain": "CHURCH_CRISIS",
+              "dossier_path": "data/learn/church-crisis-canonical.v1.json",
+              "exact_owner_exists": true
+            }
+          ],
+          "editorial_relevance_approved": false,
+          "runtime_handoff_approved": false,
+          "resolution": "SOURCE_OWNER_ID_VERIFIED_REFERENCE_ONLY"
         }
       ],
       "nearest_lexical_3": [
@@ -2360,7 +2766,20 @@
           ],
           "relationship": "FOUNDATION",
           "reason": "End, means and unintended infertility side effects",
-          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY"
+          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY",
+          "canonical_ownership_verified": true,
+          "canonical_owner_targets": [
+            {
+              "dossier_id": "APOL-052",
+              "dossier_title": "Can a good end justify a bad means?",
+              "dossier_domain": "APOLOGETICS",
+              "dossier_path": "data/learn/apologetics-canonical.v1.json",
+              "exact_owner_exists": true
+            }
+          ],
+          "editorial_relevance_approved": false,
+          "runtime_handoff_approved": false,
+          "resolution": "SOURCE_OWNER_ID_VERIFIED_REFERENCE_ONLY"
         }
       ],
       "nearest_lexical_3": [
@@ -2402,7 +2821,20 @@
           ],
           "relationship": "FOUNDATION",
           "reason": "Unintended side effect versus chosen sterilisation",
-          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY"
+          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY",
+          "canonical_ownership_verified": true,
+          "canonical_owner_targets": [
+            {
+              "dossier_id": "APOL-052",
+              "dossier_title": "Can a good end justify a bad means?",
+              "dossier_domain": "APOLOGETICS",
+              "dossier_path": "data/learn/apologetics-canonical.v1.json",
+              "exact_owner_exists": true
+            }
+          ],
+          "editorial_relevance_approved": false,
+          "runtime_handoff_approved": false,
+          "resolution": "SOURCE_OWNER_ID_VERIFIED_REFERENCE_ONLY"
         }
       ],
       "nearest_lexical_3": [
@@ -2444,7 +2876,20 @@
           ],
           "relationship": "HISTORICAL_CONTEXT",
           "reason": "Authority controversy, not the spouse-specific culpability decision",
-          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY"
+          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY",
+          "canonical_ownership_verified": true,
+          "canonical_owner_targets": [
+            {
+              "dossier_id": "CR-MOR-03",
+              "dossier_title": "Why did Humanae vitae become a crisis of authority and moral method?",
+              "dossier_domain": "CHURCH_CRISIS",
+              "dossier_path": "data/learn/church-crisis-canonical.v1.json",
+              "exact_owner_exists": true
+            }
+          ],
+          "editorial_relevance_approved": false,
+          "runtime_handoff_approved": false,
+          "resolution": "SOURCE_OWNER_ID_VERIFIED_REFERENCE_ONLY"
         }
       ],
       "nearest_lexical_3": [
@@ -2920,7 +3365,20 @@
           ],
           "relationship": "FOUNDATION",
           "reason": "The kind of act versus affection and motive",
-          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY"
+          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY",
+          "canonical_ownership_verified": true,
+          "canonical_owner_targets": [
+            {
+              "dossier_id": "APOL-052",
+              "dossier_title": "Can a good end justify a bad means?",
+              "dossier_domain": "APOLOGETICS",
+              "dossier_path": "data/learn/apologetics-canonical.v1.json",
+              "exact_owner_exists": true
+            }
+          ],
+          "editorial_relevance_approved": false,
+          "runtime_handoff_approved": false,
+          "resolution": "SOURCE_OWNER_ID_VERIFIED_REFERENCE_ONLY"
         }
       ],
       "nearest_lexical_3": [
@@ -2962,7 +3420,20 @@
           ],
           "relationship": "ANALOGY",
           "reason": "Judging objective action versus person",
-          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY"
+          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY",
+          "canonical_ownership_verified": true,
+          "canonical_owner_targets": [
+            {
+              "dossier_id": "APOL-052",
+              "dossier_title": "Can a good end justify a bad means?",
+              "dossier_domain": "APOLOGETICS",
+              "dossier_path": "data/learn/apologetics-canonical.v1.json",
+              "exact_owner_exists": true
+            }
+          ],
+          "editorial_relevance_approved": false,
+          "runtime_handoff_approved": false,
+          "resolution": "SOURCE_OWNER_ID_VERIFIED_REFERENCE_ONLY"
         }
       ],
       "nearest_lexical_3": [
@@ -3438,7 +3909,20 @@
           ],
           "relationship": "FOUNDATION",
           "reason": "Good aim of having a child does not justify every means",
-          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY"
+          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY",
+          "canonical_ownership_verified": true,
+          "canonical_owner_targets": [
+            {
+              "dossier_id": "APOL-052",
+              "dossier_title": "Can a good end justify a bad means?",
+              "dossier_domain": "APOLOGETICS",
+              "dossier_path": "data/learn/apologetics-canonical.v1.json",
+              "exact_owner_exists": true
+            }
+          ],
+          "editorial_relevance_approved": false,
+          "runtime_handoff_approved": false,
+          "resolution": "SOURCE_OWNER_ID_VERIFIED_REFERENCE_ONLY"
         }
       ],
       "nearest_lexical_3": [
@@ -3542,7 +4026,20 @@
           ],
           "relationship": "FOUNDATION",
           "reason": "Generous intention does not alone approve all means",
-          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY"
+          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY",
+          "canonical_ownership_verified": true,
+          "canonical_owner_targets": [
+            {
+              "dossier_id": "APOL-052",
+              "dossier_title": "Can a good end justify a bad means?",
+              "dossier_domain": "APOLOGETICS",
+              "dossier_path": "data/learn/apologetics-canonical.v1.json",
+              "exact_owner_exists": true
+            }
+          ],
+          "editorial_relevance_approved": false,
+          "runtime_handoff_approved": false,
+          "resolution": "SOURCE_OWNER_ID_VERIFIED_REFERENCE_ONLY"
         }
       ],
       "nearest_lexical_3": [
@@ -3646,7 +4143,20 @@
           ],
           "relationship": "FOUNDATION",
           "reason": "General method to evaluate new technologies",
-          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY"
+          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY",
+          "canonical_ownership_verified": true,
+          "canonical_owner_targets": [
+            {
+              "dossier_id": "APOL-052",
+              "dossier_title": "Can a good end justify a bad means?",
+              "dossier_domain": "APOLOGETICS",
+              "dossier_path": "data/learn/apologetics-canonical.v1.json",
+              "exact_owner_exists": true
+            }
+          ],
+          "editorial_relevance_approved": false,
+          "runtime_handoff_approved": false,
+          "resolution": "SOURCE_OWNER_ID_VERIFIED_REFERENCE_ONLY"
         }
       ],
       "nearest_lexical_3": [
@@ -4215,7 +4725,20 @@
           ],
           "relationship": "FOUNDATION",
           "reason": "Direct intention versus foreseen adverse medical effect",
-          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY"
+          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY",
+          "canonical_ownership_verified": true,
+          "canonical_owner_targets": [
+            {
+              "dossier_id": "APOL-052",
+              "dossier_title": "Can a good end justify a bad means?",
+              "dossier_domain": "APOLOGETICS",
+              "dossier_path": "data/learn/apologetics-canonical.v1.json",
+              "exact_owner_exists": true
+            }
+          ],
+          "editorial_relevance_approved": false,
+          "runtime_handoff_approved": false,
+          "resolution": "SOURCE_OWNER_ID_VERIFIED_REFERENCE_ONLY"
         },
         {
           "existing_conversation_id": "CHA-QA-MOR-013",
@@ -4225,7 +4748,20 @@
           ],
           "relationship": "ANALOGY",
           "reason": "Proportionate medical treatment but distinct pregnancy case",
-          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY"
+          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY",
+          "canonical_ownership_verified": true,
+          "canonical_owner_targets": [
+            {
+              "dossier_id": "APOL-052",
+              "dossier_title": "Can a good end justify a bad means?",
+              "dossier_domain": "APOLOGETICS",
+              "dossier_path": "data/learn/apologetics-canonical.v1.json",
+              "exact_owner_exists": true
+            }
+          ],
+          "editorial_relevance_approved": false,
+          "runtime_handoff_approved": false,
+          "resolution": "SOURCE_OWNER_ID_VERIFIED_REFERENCE_ONLY"
         }
       ],
       "nearest_lexical_3": [
@@ -4422,7 +4958,20 @@
           ],
           "relationship": "SACRAMENTAL_CONTEXT",
           "reason": "Why confess to a priest versus procedural kind and number",
-          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY"
+          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY",
+          "canonical_ownership_verified": true,
+          "canonical_owner_targets": [
+            {
+              "dossier_id": "APOL-026",
+              "dossier_title": "Why confess sins to a priest?",
+              "dossier_domain": "APOLOGETICS",
+              "dossier_path": "data/learn/apologetics-canonical.v1.json",
+              "exact_owner_exists": true
+            }
+          ],
+          "editorial_relevance_approved": false,
+          "runtime_handoff_approved": false,
+          "resolution": "SOURCE_OWNER_ID_VERIFIED_REFERENCE_ONLY"
         }
       ],
       "nearest_lexical_3": [
@@ -4464,7 +5013,20 @@
           ],
           "relationship": "SACRAMENTAL_CONTEXT",
           "reason": "Sacramental foundation, not counting procedure",
-          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY"
+          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY",
+          "canonical_ownership_verified": true,
+          "canonical_owner_targets": [
+            {
+              "dossier_id": "APOL-026",
+              "dossier_title": "Why confess sins to a priest?",
+              "dossier_domain": "APOLOGETICS",
+              "dossier_path": "data/learn/apologetics-canonical.v1.json",
+              "exact_owner_exists": true
+            }
+          ],
+          "editorial_relevance_approved": false,
+          "runtime_handoff_approved": false,
+          "resolution": "SOURCE_OWNER_ID_VERIFIED_REFERENCE_ONLY"
         }
       ],
       "nearest_lexical_3": [
@@ -4506,7 +5068,20 @@
           ],
           "relationship": "SACRAMENTAL_CONTEXT",
           "reason": "Sacramental foundation, not confessional privacy detail",
-          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY"
+          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY",
+          "canonical_ownership_verified": true,
+          "canonical_owner_targets": [
+            {
+              "dossier_id": "APOL-026",
+              "dossier_title": "Why confess sins to a priest?",
+              "dossier_domain": "APOLOGETICS",
+              "dossier_path": "data/learn/apologetics-canonical.v1.json",
+              "exact_owner_exists": true
+            }
+          ],
+          "editorial_relevance_approved": false,
+          "runtime_handoff_approved": false,
+          "resolution": "SOURCE_OWNER_ID_VERIFIED_REFERENCE_ONLY"
         }
       ],
       "nearest_lexical_3": [
@@ -4548,7 +5123,20 @@
           ],
           "relationship": "SACRAMENTAL_CONTEXT",
           "reason": "Sacramental rationale distinct from estimate of frequency",
-          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY"
+          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY",
+          "canonical_ownership_verified": true,
+          "canonical_owner_targets": [
+            {
+              "dossier_id": "APOL-026",
+              "dossier_title": "Why confess sins to a priest?",
+              "dossier_domain": "APOLOGETICS",
+              "dossier_path": "data/learn/apologetics-canonical.v1.json",
+              "exact_owner_exists": true
+            }
+          ],
+          "editorial_relevance_approved": false,
+          "runtime_handoff_approved": false,
+          "resolution": "SOURCE_OWNER_ID_VERIFIED_REFERENCE_ONLY"
         }
       ],
       "nearest_lexical_3": [
@@ -4590,7 +5178,20 @@
           ],
           "relationship": "SACRAMENTAL_CONTEXT",
           "reason": "Contrition and amendment as sacramental foundation",
-          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY"
+          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY",
+          "canonical_ownership_verified": true,
+          "canonical_owner_targets": [
+            {
+              "dossier_id": "APOL-026",
+              "dossier_title": "Why confess sins to a priest?",
+              "dossier_domain": "APOLOGETICS",
+              "dossier_path": "data/learn/apologetics-canonical.v1.json",
+              "exact_owner_exists": true
+            }
+          ],
+          "editorial_relevance_approved": false,
+          "runtime_handoff_approved": false,
+          "resolution": "SOURCE_OWNER_ID_VERIFIED_REFERENCE_ONLY"
         }
       ],
       "nearest_lexical_3": [
@@ -4725,7 +5326,20 @@
           ],
           "relationship": "SACRAMENTAL_CONTEXT",
           "reason": "Confession and worthy Communion distinction",
-          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY"
+          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY",
+          "canonical_ownership_verified": true,
+          "canonical_owner_targets": [
+            {
+              "dossier_id": "APOL-026",
+              "dossier_title": "Why confess sins to a priest?",
+              "dossier_domain": "APOLOGETICS",
+              "dossier_path": "data/learn/apologetics-canonical.v1.json",
+              "exact_owner_exists": true
+            }
+          ],
+          "editorial_relevance_approved": false,
+          "runtime_handoff_approved": false,
+          "resolution": "SOURCE_OWNER_ID_VERIFIED_REFERENCE_ONLY"
         }
       ],
       "nearest_lexical_3": [
@@ -4891,7 +5505,20 @@
           ],
           "relationship": "FOUNDATION",
           "reason": "Choosing lesser harm does not justify choosing an evil act",
-          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY"
+          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY",
+          "canonical_ownership_verified": true,
+          "canonical_owner_targets": [
+            {
+              "dossier_id": "APOL-052",
+              "dossier_title": "Can a good end justify a bad means?",
+              "dossier_domain": "APOLOGETICS",
+              "dossier_path": "data/learn/apologetics-canonical.v1.json",
+              "exact_owner_exists": true
+            }
+          ],
+          "editorial_relevance_approved": false,
+          "runtime_handoff_approved": false,
+          "resolution": "SOURCE_OWNER_ID_VERIFIED_REFERENCE_ONLY"
         },
         {
           "existing_conversation_id": "CHA-MAIN-CR-MOR-05",
@@ -4901,7 +5528,20 @@
           ],
           "relationship": "HISTORICAL_CONTEXT",
           "reason": "Catholic moral method on difficult outcomes",
-          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY"
+          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY",
+          "canonical_ownership_verified": true,
+          "canonical_owner_targets": [
+            {
+              "dossier_id": "CR-MOR-05",
+              "dossier_title": "Proportionalism and consequentialism: can good consequences justify an otherwise evil act?",
+              "dossier_domain": "CHURCH_CRISIS",
+              "dossier_path": "data/learn/church-crisis-canonical.v1.json",
+              "exact_owner_exists": true
+            }
+          ],
+          "editorial_relevance_approved": false,
+          "runtime_handoff_approved": false,
+          "resolution": "SOURCE_OWNER_ID_VERIFIED_REFERENCE_ONLY"
         }
       ],
       "nearest_lexical_3": [
@@ -4943,7 +5583,20 @@
           ],
           "relationship": "FOUNDATION",
           "reason": "Affection and intention must be assessed with the act",
-          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY"
+          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY",
+          "canonical_ownership_verified": true,
+          "canonical_owner_targets": [
+            {
+              "dossier_id": "APOL-052",
+              "dossier_title": "Can a good end justify a bad means?",
+              "dossier_domain": "APOLOGETICS",
+              "dossier_path": "data/learn/apologetics-canonical.v1.json",
+              "exact_owner_exists": true
+            }
+          ],
+          "editorial_relevance_approved": false,
+          "runtime_handoff_approved": false,
+          "resolution": "SOURCE_OWNER_ID_VERIFIED_REFERENCE_ONLY"
         }
       ],
       "nearest_lexical_3": [
@@ -4985,7 +5638,20 @@
           ],
           "relationship": "FOUNDATION",
           "reason": "Norm does not arise from social frequency",
-          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY"
+          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY",
+          "canonical_ownership_verified": true,
+          "canonical_owner_targets": [
+            {
+              "dossier_id": "APOL-052",
+              "dossier_title": "Can a good end justify a bad means?",
+              "dossier_domain": "APOLOGETICS",
+              "dossier_path": "data/learn/apologetics-canonical.v1.json",
+              "exact_owner_exists": true
+            }
+          ],
+          "editorial_relevance_approved": false,
+          "runtime_handoff_approved": false,
+          "resolution": "SOURCE_OWNER_ID_VERIFIED_REFERENCE_ONLY"
         }
       ],
       "nearest_lexical_3": [
@@ -5027,7 +5693,20 @@
           ],
           "relationship": "ANALOGY",
           "reason": "Moral duties accessible through reason to non-Catholics",
-          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY"
+          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY",
+          "canonical_ownership_verified": true,
+          "canonical_owner_targets": [
+            {
+              "dossier_id": "APOL-050",
+              "dossier_title": "Is morality objective, and what is natural law?",
+              "dossier_domain": "APOLOGETICS",
+              "dossier_path": "data/learn/apologetics-canonical.v1.json",
+              "exact_owner_exists": true
+            }
+          ],
+          "editorial_relevance_approved": false,
+          "runtime_handoff_approved": false,
+          "resolution": "SOURCE_OWNER_ID_VERIFIED_REFERENCE_ONLY"
         }
       ],
       "nearest_lexical_3": [
@@ -5100,7 +5779,20 @@
           ],
           "relationship": "COMPARATIVE_CONTEXT",
           "reason": "Science and religious reasoning but not specific sexuality research",
-          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY"
+          "decision": "DO_NOT_MERGE_CONVERSATION_AUTOMATICALLY",
+          "canonical_ownership_verified": true,
+          "canonical_owner_targets": [
+            {
+              "dossier_id": "APOL-049",
+              "dossier_title": "What is the Catholic answer to atheism and secular humanism?",
+              "dossier_domain": "APOLOGETICS",
+              "dossier_path": "data/learn/apologetics-canonical.v1.json",
+              "exact_owner_exists": true
+            }
+          ],
+          "editorial_relevance_approved": false,
+          "runtime_handoff_approved": false,
+          "resolution": "SOURCE_OWNER_ID_VERIFIED_REFERENCE_ONLY"
         }
       ],
       "nearest_lexical_3": [
@@ -5159,5 +5851,15 @@
       "publication_approved": false,
       "canonical_owner_reassignment_approved": false
     }
-  ]
+  ],
+  "source_registry_verification": {
+    "apologetics_path": "data/learn/apologetics-canonical.v1.json",
+    "apologetics_blob_sha": "7a24a14387af3b2f74226a0f37f41265d4c6c873",
+    "apologetics_dossiers": 60,
+    "church_crisis_path": "data/learn/church-crisis-canonical.v1.json",
+    "church_crisis_blob_sha": "67476d576ae500d363773ef383ae48f8952d507f",
+    "church_crisis_dossiers": 81,
+    "source_owner_links_verified": 53,
+    "publication_approvals": 0
+  }
 }
