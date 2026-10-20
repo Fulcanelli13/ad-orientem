@@ -17,8 +17,8 @@ const projected=projectPilgrimageItems({
  places:geography.places,sources:registry.sources,
 });
 const journeys=buildPilgrimageJourneyCatalogue(projected,registry.sources,evidence.routes);
-assert.equal(evidence.routes.length,6,"First verified waypoint evidence batch covers six itineraries");
-assert.equal(evidence.routes.reduce((n,r)=>n+r.waypoints.length,0),18);
+assert.equal(evidence.routes.length,8,"First waypoint evidence batch covers eight itineraries");
+assert.equal(evidence.routes.reduce((n,r)=>n+r.waypoints.length,0),34);
 const canonicalRoutes=new Map(seed.routes.map(row=>[row.route_id,row]));
 for(const entry of evidence.routes){
  assert.ok(canonicalRoutes.has(entry.route_id),"Do not create noncanonical route identity");
@@ -34,8 +34,8 @@ for(const entry of evidence.routes){
   assert.equal(waypoint.source_url,entry.source_url);
  }
 }
-assert.equal(journeys.reduce((n,r)=>n+r.namedStages.length,0),18);
-assert.equal(journeys.filter(r=>r.namedStages.length>0).length,6);
+assert.equal(journeys.reduce((n,r)=>n+r.namedStages.length,0),34);
+assert.equal(journeys.filter(r=>r.namedStages.length>0).length,8);
 assert.ok(journeys.every(j=>j.mappedStages.length===0),
  "Named stages are not navigable geographic stops");
 assert.equal(seed.pilgrimages.length,240,"Do not confuse source destinations with mapped routes");
@@ -85,6 +85,15 @@ const walkHtml=renderPilgrimageJourneyPanel({routes:journeys,selectedId:walk.id}
 assert.match(walkHtml,/Official interactive route map/);
 assert.match(walkHtml,/St. Peter and Paul Parish/);
 assert.ok(journeys.every(j=>j.routeGeometry===null&&j.stops.length===0));
+const preith=journeys.find(j=>j.id==="route:DE:preith-bettbrunn");
+assert.equal(preith.namedStages.length,9);
+assert.equal(preith.namedStages[1].role,"PASS_THROUGH");
+const belem=journeys.find(j=>j.id==="route:BR:belem-cathedral-nazare");
+assert.equal(belem.namedStages.length,7);
+assert.equal(belem.namedStages[3].role,"PASS_THROUGH");
+const belemHtml=renderPilgrimageJourneyPanel({routes:journeys,selectedId:belem.id});
+assert.match(belemHtml,/ROUTE PASSES THROUGH/);
+assert.match(belemHtml,/11 October 2026/);
 assert.doesNotMatch(en,/(?:data-explore-journey-waypoint|route-polyline|turn-by-turn directions\s+available)/i);
 const poisoned=buildPilgrimageJourneyCatalogue([
  {lens:"pilgrimages",place_id:"place:a",map_publishable:true,
@@ -98,4 +107,4 @@ const poisoned=buildPilgrimageJourneyCatalogue([
 assert.equal(poisoned.length,1);
 assert.equal(poisoned[0].destinationGeo,null,"Null coordinate must not become a fabricated map point");
 assert.equal(poisoned[0].sources.length,0,"Do not fabricate source URLs");
-console.log("PASS D journey catalogue: 240 pilgrimages, 20 routes, 18 named stages on 6 routes, zero fabricated geolocation, EN/FR + organizer sources");
+console.log("PASS D journey catalogue: 240 pilgrimages, 20 routes, 34 named stages on 8 routes, zero fabricated geolocation, EN/FR + organizer sources");
