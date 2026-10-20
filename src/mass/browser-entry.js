@@ -268,6 +268,77 @@ function installReaderCloseBridge(preview,prepared){
   });
 }
 
+// User-chosen post-Mass handoff. A voluntary exit prompts rather than
+// inferring completion from an arbitrary card or forcing thanksgiving early.
+function installReaderThanksgivingBridge(preview,prepared,{win=globalThis}={}){
+  if(prepared?.readerPreferences?.afterMass!=="thanksgiving")return null;
+  const root=preview?.root;
+  const close=root?.querySelector?.("[data-reader-home], [aria-label='Close Mass reader']");
+  const doc=close?.ownerDocument;
+  if(!doc?.createElement||!close?.addEventListener)return null;
+  const fr=String(prepared?.readerPreferences?.language??"en").startsWith("fr");
+  let dialog=null,busy=false;
+  const dismiss=()=>{dialog?.remove?.();dialog=null};
+  async function go(route){
+    if(busy)return;
+    busy=true;const notice=dialog?.querySelector("[data-thanks-error]");
+    if(notice)notice.hidden=true;
+    try{
+      checkpointPersistedMass({preview});
+      await navigateReaderSurface("home");
+      if(route){
+        const result=await win?.AO_MODULES?.open?.(route);
+        if(result!==true&&result?.ok!==true)throw Error("THANKSGIVING_PRAYERS_UNAVAILABLE");
+      }
+      dismiss();
+    }catch(error){
+      if(notice?.isConnected){
+        notice.hidden=false;
+        notice.textContent=fr?"Impossible d’ouvrir cette destination.":"Could not open this destination.";
+      }
+      try{win.console?.error?.(error)}catch{}
+    }finally{busy=false}
+  }
+  const intercept=e=>{
+    // The existing Home button remains present. The user's explicit choice
+    // is offered before closing, never before a real end-of-Mass decision.
+    if(dialog){e.preventDefault?.();e.stopImmediatePropagation?.();return;}
+    e.preventDefault?.();e.stopImmediatePropagation?.();
+    dialog=doc.createElement("section");
+    dialog.className="aoReaderAfterMassChoice";
+    dialog.setAttribute("role","dialog");
+    dialog.setAttribute("aria-label",fr?"Après la Messe":"After Mass");
+    dialog.style.cssText="position:absolute;z-index:95;top:68px;left:12px;right:12px;max-width:420px;margin:0 auto;padding:16px;background:#101923;color:#eee9df;border:1px solid #766c52;border-radius:10px;box-shadow:0 16px 40px #0009";
+    const h=doc.createElement("h3");h.textContent=fr?"Avant de quitter la Messe":"Before leaving Mass";
+    h.style.cssText="font:500 21px/1.3 var(--ao-font-display,'EB Garamond',Georgia,serif);margin:0 0 10px";
+    const p=doc.createElement("p");p.textContent=fr
+      ?"Souhaitez-vous ouvrir les prières d’action de grâces ?"
+      :"Would you like to open Thanksgiving prayers?";
+    p.style.cssText="font:400 15px/1.45 var(--ao-font-ui,'EB Garamond',Georgia,serif);margin:0 0 12px";
+    const actions=doc.createElement("div");actions.style.cssText="display:grid;gap:8px";
+    const thanks=doc.createElement("button");thanks.type="button";thanks.dataset.aoOpenThanksgiving="";
+    thanks.textContent=fr?"Ouvrir l’action de grâces":"Open Thanksgiving";
+    const home=doc.createElement("button");home.type="button";home.dataset.aoReturnHome="";
+    home.textContent=fr?"Retour à l’accueil":"Return Home";
+    const cancel=doc.createElement("button");cancel.type="button";cancel.dataset.aoStayMass="";
+    cancel.textContent=fr?"Rester dans la Messe":"Stay in Mass";
+    for(const button of [thanks,home,cancel]){
+      button.style.cssText="min-height:44px;padding:9px 12px;border:1px solid #56616a;border-radius:8px;background:#18212a;color:#e8ddc5;font:500 15px/1.3 var(--ao-font-ui,'EB Garamond',Georgia,serif)";
+      actions.append(button);
+    }
+    thanks.style.background="#ded5c0";thanks.style.color="#141a20";
+    const error=doc.createElement("p");error.hidden=true;error.dataset.thanksError="";error.setAttribute("role","alert");
+    dialog.append(h,p,actions,error);
+    (root.querySelector("[data-ao-reader-shell]")??root).append(dialog);
+    thanks.addEventListener("click",()=>{void go("mass.thanksgiving")});
+    home.addEventListener("click",()=>{void go(null)});
+    cancel.addEventListener("click",dismiss);
+    thanks.focus?.();
+  };
+  close.addEventListener("click",intercept,true);
+  return Object.freeze({dispose(){close.removeEventListener("click",intercept,true);dismiss()}});
+}
+
 function massGlossaryTerms(preview){
   const card=preview?.getCurrentCard?.()??null;
   const text=[card?.title,card?.sectionTitle,card?.sectionId,card?.id].filter(Boolean).join(" ").toLowerCase();
@@ -628,6 +699,8 @@ async function openProductionReader(prepared, { resumeRecord = null } = {}) {
   const restoredSection = resumeRecord?.readerPosition?.sectionId ?? null;
   if (restoredSection) previewState.preview?.showSection?.(restoredSection);
   installReaderCheckpoint(previewState.preview);
+  // Intercept the voluntary exit before the generic Home owner handles it.
+  installReaderThanksgivingBridge(previewState.preview,prepared);
   installReaderCloseBridge(previewState.preview,prepared);
   installReaderParametersBridge(previewState.preview,prepared);
   installReaderGlossaryBridge(previewState.preview);
@@ -718,8 +791,15 @@ export function createBrowserMassController({rogationPreflight=null,fullMassPref
   } : api;
   return createMassEntryController({
     celebrationApi: actualApi,
-    readReaderPreferences: resolvedMass => ({...readerPreferences(),
-      mode:fullMassPreflight?.selectionFor?.(resolvedMass)?.readerMode??readerPreferences().mode}),
+    readReaderPreferences: resolvedMass => {
+      const selected=fullMassPreflight?.selectionFor?.(resolvedMass);
+      return {...readerPreferences(),
+        mode:selected?.readerMode??readerPreferences().mode,
+        language:selected?.readerLanguage??readerPreferences().language,
+        beforeMass:selected?.beforeMass??"none",
+        afterMass:selected?.afterMass??"none",
+      };
+    },
     resolveHostOptions: async (resolvedMass) => {
       const options=deriveHostOptions({
         resolvedMass,
@@ -828,6 +908,14 @@ export function installBrowserMassBridge({ pollMs = 80, maxPolls = 150 } = {}) {
          },
          onBeforeCategoryChange:()=>state.observedSource?.clear?.(),
          onOpenSourceProper:()=>state.observedSource?.open?.(),
+         onOpenPrayerRoute:async route=>{
+           if(!["mass.prepare","mass.thanksgiving"].includes(route))return false;
+           const registry=globalThis.AO_MODULES;
+           if(typeof registry?.open!=="function")return false;
+           const result=await registry.open(route);
+           return result===true||result?.ok===true;
+         },
+
          getSourceGate:()=>state.observedSource?.preparationGate?.()??{ready:true,reason:null},
          getLocalOrationSummary:()=>state.localOrations?.status?.()??null,
          getCalendarState:()=>runtimeState(),

@@ -61,7 +61,7 @@
     "test:reader-transients": "node tests/reader-transients.mjs && node tests/reader-live-exact-cues.mjs && node tests/mass-cross-rite-bell-cues-review.mjs && node tests/reader-low-communion-bell.mjs",
     "test:reader-live-pre-gospel": "node tests/reader-live-pre-gospel.mjs",
     "test:reader-form-state": "node tests/reader-form-state-parity.mjs",
-    "test:full-mass-preflight": "node tests/full-mass-preflight.mjs && node tests/observed-mass-source.mjs",
+    "test:full-mass-preflight": "node tests/full-mass-folio-options.mjs && node tests/full-mass-preflight.mjs && node tests/observed-mass-source.mjs",
     "test:mass-icon-review": "node tests/mass-icon-gap-review.mjs && npm run test:mass-icon-necessity && npm run test:mass-icon-source",
     "test:mass-integration-grid": "node tests/mass-form-special-integration.mjs",
     "test:observed-mass": "node tests/observed-mass-source.mjs",
