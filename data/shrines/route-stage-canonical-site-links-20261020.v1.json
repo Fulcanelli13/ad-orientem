@@ -1,0 +1,142 @@
+{
+  "schema": "AO_PILGRIMAGE_STAGE_CANONICAL_SITE_LINKS_V1",
+  "as_of": "2026-10-20",
+  "policy": "Only explicit links to independently sourced canonical sacred-place records; never geocode an unmatched stage from its name, use a route endpoint for intermediate stages, or draw connecting paths. COMPLEX_ANCHOR denotes an area/site complex, never a precise stage entrance.",
+  "links": [
+    {
+      "stage_id": "route:FR:paris-chartres-pentecost#stage-4",
+      "canonical_place_id": "place:FR:chartres-notre-dame",
+      "site_relation": "MATCHED_SITE",
+      "coordinate_source": "CANONICAL_GEOGRAPHY_ONLY",
+      "locator_precision": "site",
+      "original_stage_name": "Notre-Dame Cathedral, Chartres",
+      "canonical_location_name": "Cathédrale Notre-Dame de Chartres"
+    },
+    {
+      "stage_id": "route:US:walk-to-mary#stage-4",
+      "canonical_place_id": "place:US:champion-shrine",
+      "site_relation": "MATCHED_SITE",
+      "coordinate_source": "CANONICAL_GEOGRAPHY_ONLY",
+      "locator_precision": "site",
+      "original_stage_name": "National Shrine of Our Lady of Champion",
+      "canonical_location_name": "National Shrine of Our Lady of Champion"
+    },
+    {
+      "stage_id": "route:MU:pere-laval-saint-louis#stage-1",
+      "canonical_place_id": "place:MU:saint-louis-cathedral-port-louis",
+      "site_relation": "MATCHED_SITE",
+      "coordinate_source": "CANONICAL_GEOGRAPHY_ONLY",
+      "locator_precision": "site",
+      "original_stage_name": "Saint Louis Cathedral, Port Louis",
+      "canonical_location_name": "Cathédrale Saint-Louis — Port-Louis"
+    },
+    {
+      "stage_id": "route:MU:pere-laval-saint-louis#stage-2",
+      "canonical_place_id": "place:MU:pere-laval-sainte-croix",
+      "site_relation": "RELATED_COMPLEX_ANCHOR",
+      "coordinate_source": "CANONICAL_GEOGRAPHY_ONLY",
+      "locator_precision": "complex_anchor",
+      "original_stage_name": "Tomb of Blessed Father Laval, Sainte-Croix",
+      "canonical_location_name": "Centre Père Laval"
+    },
+    {
+      "stage_id": "route:MU:pere-laval-saint-joseph#stage-2",
+      "canonical_place_id": "place:MU:pere-laval-sainte-croix",
+      "site_relation": "RELATED_COMPLEX_ANCHOR",
+      "coordinate_source": "CANONICAL_GEOGRAPHY_ONLY",
+      "locator_precision": "complex_anchor",
+      "original_stage_name": "Tomb of Blessed Father Laval, Sainte-Croix",
+      "canonical_location_name": "Centre Père Laval"
+    },
+    {
+      "stage_id": "route:US:lake-george-auriesville-restoration#stage-2",
+      "canonical_place_id": "place:US:auriesville-martyrs",
+      "site_relation": "RELATED_COMPLEX_ANCHOR",
+      "coordinate_source": "CANONICAL_GEOGRAPHY_ONLY",
+      "locator_precision": "complex_anchor",
+      "original_stage_name": "Shrine of Our Lady of Martyrs, Auriesville",
+      "canonical_location_name": "National Shrine of Our Lady of Martyrs"
+    },
+    {
+      "stage_id": "route:BR:belem-cathedral-nazare#stage-7",
+      "canonical_place_id": "place:BR:nazare-belem",
+      "site_relation": "MATCHED_SITE",
+      "coordinate_source": "CANONICAL_GEOGRAPHY_ONLY",
+      "locator_precision": "site",
+      "original_stage_name": "Basilica Sanctuary of Nazaré",
+      "canonical_location_name": "Basílica Santuário de Nossa Senhora de Nazaré do Desterro"
+    },
+    {
+      "stage_id": "route:FR:laghet-paillon-old-road#stage-2",
+      "canonical_place_id": "place:FR:sanctuaire-notre-dame-de-laghet",
+      "site_relation": "MATCHED_SITE",
+      "coordinate_source": "CANONICAL_GEOGRAPHY_ONLY",
+      "locator_precision": "site",
+      "original_stage_name": "Notre-Dame de Laghet Sanctuary",
+      "canonical_location_name": "Sanctuaire Notre-Dame de Laghet"
+    },
+    {
+      "stage_id": "route:FR:sainte-anne-chemin-nicolazic#stage-2",
+      "canonical_place_id": "place:FR:sainte-anne-d-auray",
+      "site_relation": "MATCHED_SITE",
+      "coordinate_source": "CANONICAL_GEOGRAPHY_ONLY",
+      "locator_precision": "site",
+      "original_stage_name": "Sanctuary of Sainte-Anne-d'Auray (overall site)",
+      "canonical_location_name": "Sanctuaire de Sainte-Anne-d'Auray"
+    },
+    {
+      "stage_id": "route:CA:canadian-martyrs-traditional#stage-3",
+      "canonical_place_id": "place:CA:martyrs-shrine-midland",
+      "site_relation": "MATCHED_SITE",
+      "coordinate_source": "CANONICAL_GEOGRAPHY_ONLY",
+      "locator_precision": "site",
+      "original_stage_name": "Canadian Martyrs' Shrine (relic veneration)",
+      "canonical_location_name": "Martyrs' Shrine"
+    },
+    {
+      "stage_id": "route:GB:holywell-church-to-well#stage-1",
+      "canonical_place_id": "place:GB:holywell-st-winefride-church",
+      "site_relation": "MATCHED_SITE",
+      "coordinate_source": "CANONICAL_GEOGRAPHY_ONLY",
+      "locator_precision": "site",
+      "original_stage_name": "St Winefride's RC Parish Church, Holywell",
+      "canonical_location_name": "St Winefride's RC Church, Holywell"
+    },
+    {
+      "stage_id": "route:GB:holywell-church-to-well#stage-2",
+      "canonical_place_id": "place:GB:holywell-st-winefride",
+      "site_relation": "RELATED_COMPLEX_ANCHOR",
+      "coordinate_source": "CANONICAL_GEOGRAPHY_ONLY",
+      "locator_precision": "complex_anchor",
+      "original_stage_name": "St Winefride's Well and Shrine, Holywell",
+      "canonical_location_name": "St Winefride's Shrine & Well"
+    },
+    {
+      "stage_id": "route:MX:guadalajara-zapopan-romeria#stage-10",
+      "canonical_place_id": "place:MX:basilica-zapopan",
+      "site_relation": "MATCHED_SITE",
+      "coordinate_source": "CANONICAL_GEOGRAPHY_ONLY",
+      "locator_precision": "site",
+      "original_stage_name": "Basilica of Our Lady of Zapopan",
+      "canonical_location_name": "Basílica de Nuestra Señora de Zapopan"
+    },
+    {
+      "stage_id": "route:PT:braga-cathedral-sameiro#stage-2",
+      "canonical_place_id": "place:PT:sameiro-braga",
+      "site_relation": "MATCHED_SITE",
+      "coordinate_source": "CANONICAL_GEOGRAPHY_ONLY",
+      "locator_precision": "site",
+      "original_stage_name": "Sanctuary of Our Lady of Sameiro",
+      "canonical_location_name": "Santuário de Nossa Senhora do Sameiro"
+    },
+    {
+      "stage_id": "route:US:amsterdam-auriesville#stage-2",
+      "canonical_place_id": "place:US:auriesville-martyrs",
+      "site_relation": "RELATED_COMPLEX_ANCHOR",
+      "coordinate_source": "CANONICAL_GEOGRAPHY_ONLY",
+      "locator_precision": "complex_anchor",
+      "original_stage_name": "National Shrine of Our Lady of Martyrs, Auriesville",
+      "canonical_location_name": "National Shrine of Our Lady of Martyrs"
+    }
+  ]
+}
