@@ -424,6 +424,13 @@ export function createFindOwner(win=globalThis){
       staged.innerHTML=rendered;
       const nextSheet=staged.querySelector(".aoFindSheetBackdrop");
       const surface=node.querySelector(".aoFindSurface");
+      // A selection-only update preserves the same MapLibre canvas. It must
+      // nevertheless reconcile the search result overlay: otherwise the
+      // original suggestions remain visible behind the editorial folio.
+      const mapBody=surface.querySelector(".aoHeritageBody");
+      const nextSearch=staged.querySelector(".aoHeritageSearchResults");
+      mapBody?.querySelector(".aoHeritageSearchResults")?.remove();
+      if(nextSearch&&mapBody)mapBody.append(nextSearch);
       surface.querySelectorAll(".aoFindSheetBackdrop").forEach(sheet=>sheet.remove());
       if(nextSheet)surface.append(nextSheet);
       node.dataset.aoFindLoadState="ready";
