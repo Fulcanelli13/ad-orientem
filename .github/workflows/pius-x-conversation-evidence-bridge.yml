@@ -45,6 +45,9 @@ on:
       - 'data/learn/research/pius-x-20path-bilingual-choice-navigation-20261020.v1.json'
       - 'data/learn/research/pius-x-23more-46turn-italian-review-20261020.v1.json'
       - 'data/learn/research/pius-x-46final-92turn-italian-review-20261020.v1.json'
+      - 'data/learn/research/pius-x-source-bounded-bilingual-corrections-20261020.v1.json'
+      - 'data/learn/research/pius-x-200answer-spx-chanoine-denzinger-crosswalk-20261020.v1.json'
+      - 'tests/pius-x-200turn-three-way-crosswalk.mjs'
       - 'tests/pius-x-bilingual-dialogue-choices.mjs'
       - 'tests/pius-x-20path-consolidation.mjs'
       - 'tests/pius-x-sacraments-100family-source-screen.mjs'
@@ -79,6 +82,7 @@ jobs:
       - run: node tests/pius-x-sacraments-100family-source-screen.mjs
       - run: node tests/pius-x-20path-consolidation.mjs
       - run: node tests/pius-x-bilingual-dialogue-choices.mjs
+      - run: node tests/pius-x-200turn-three-way-crosswalk.mjs
       - run: node tests/pius-x-ten-conversation-content-pilot.mjs
       - run: node tests/pius-x-batch50-content-acceptance.mjs
       - run: node tests/pius-x-batch2-production-acceptance.mjs
