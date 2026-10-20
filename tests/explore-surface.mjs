@@ -597,7 +597,7 @@ assert.match(practiceHtml,/data-explore-item="tradition:custom:DEV-007"/);
 assert.match(practiceHtml,/Documented examples.*36/);
 assert.match(practiceHtml,/data-explore-open-place=/,"examples must deep-link to canonical Places");
 assert.match(practiceHtml,/Attested places/,"map is supplementary evidence navigation, not the default customs structure");
-assert.match(practiceHtml,/>13<\/strong><span>practices/,"list count must describe practices, not attestations");
+assert.match(practiceHtml,/>17<\/strong><span>practices/,"list count must describe practices, not attestations");
 
 const atlasFacets=buildCustomsAtlasFacets(customsAtlasItems);
 assert.ok(atlasFacets.families.some(option=>option.value==="Sacred Heart"),"theme browsing must be independent of geography");
