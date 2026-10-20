@@ -1,7 +1,7 @@
 {
   "schema": "AO_SOT07_CANONICAL_CUSTOM_EXTENSION_V1",
   "version": "1.0.0",
-  "as_of": "2026-10-20",
+  "as_of": "2026-10-21",
   "purpose": "Authorize new source-backed customary identities beyond the frozen original 63-row French-world SOT-07 research workbook without pretending they belonged to its original rows.",
   "original_register": "Ad_Orientem_SOT-07_Traditional_Catholic_Customary_French_World_v1.xlsx",
   "governance": [
@@ -349,6 +349,122 @@
       ],
       "controlling_proof": "Independent 1956 Catholic family source describes Rogation prayers and family procession for crops.",
       "scope": "Optional well-bounded household or community custom; Calendar holds date, Learn holds context and original short EN/FR guidance.",
+      "guardrails": [
+        "NOT_UNIVERSAL",
+        "NOT_MAPPED",
+        "NO_AUTOMATIC_MASS_RITE",
+        "NO_INFERRED_LOCATION_OR_EVENT",
+        "NO_EXTRA_PRIESTLY_RITUAL",
+        "COPYRIGHT_ORIGINAL_SUMMARY_ONLY"
+      ],
+      "status": "PENDING_PR_REVIEW_AND_CI"
+    },
+    {
+      "custom_id": "EPIP-001",
+      "family": "Epiphany charity",
+      "name": "German Epiphany star singers / Sternsinger",
+      "origin": "NEW_SOT07_EXTENSION_NOT_IN_ORIGINAL_63_ROWS",
+      "decision": "SOURCE_LOCKED_P1_EDITORIAL_DRAFT_PENDING_CI",
+      "calendar_relation": "6 January, as a regional practice; visits must be locally announced",
+      "attestation_id": "att:EPIP-001:DE",
+      "source_ids": [
+        "STERN-KINDERMISSIONSWERK-2026"
+      ],
+      "controlling_proof": "German Kindermissionswerk directly documents carol singers visiting homes between Christmas and Epiphany for charitable solidarity.",
+      "scope": "Voluntary regionally bounded Catholic lay custom. Calendar is date owner; Learn is detail owner.",
+      "guardrails": [
+        "NOT_UNIVERSAL",
+        "NOT_MAPPED",
+        "NO_AUTOMATIC_MASS_RITE",
+        "NO_INFERRED_LOCATION_OR_EVENT",
+        "NO_EXTRA_PRIESTLY_RITUAL",
+        "COPYRIGHT_ORIGINAL_SUMMARY_ONLY"
+      ],
+      "status": "PENDING_PR_REVIEW_AND_CI"
+    },
+    {
+      "custom_id": "EPIP-002",
+      "family": "Epiphany household",
+      "name": "French Galette des Rois and the poor person's portion",
+      "origin": "NEW_SOT07_EXTENSION_NOT_IN_ORIGINAL_63_ROWS",
+      "decision": "SOURCE_LOCKED_P1_EDITORIAL_DRAFT_PENDING_CI",
+      "calendar_relation": "6 January in the 1962 calendar; household celebration date may differ",
+      "attestation_id": "att:EPIP-002:FR",
+      "source_ids": [
+        "ECF-GALETTE-EPIPHANIE"
+      ],
+      "controlling_proof": "The French Bishops' Conference describes the galette, fève and additional portion for a poor guest.",
+      "scope": "Voluntary regionally bounded Catholic lay custom. Calendar is date owner; Learn is detail owner.",
+      "guardrails": [
+        "NOT_UNIVERSAL",
+        "NOT_MAPPED",
+        "NO_AUTOMATIC_MASS_RITE",
+        "NO_INFERRED_LOCATION_OR_EVENT",
+        "NO_EXTRA_PRIESTLY_RITUAL",
+        "COPYRIGHT_ORIGINAL_SUMMARY_ONLY"
+      ],
+      "status": "PENDING_PR_REVIEW_AND_CI"
+    },
+    {
+      "custom_id": "CORP-001",
+      "family": "Corpus Christi regional decorations",
+      "name": "Corpus Christi flower carpets and window decorations",
+      "origin": "NEW_SOT07_EXTENSION_NOT_IN_ORIGINAL_63_ROWS",
+      "decision": "SOURCE_LOCKED_P1_EDITORIAL_DRAFT_PENDING_CI",
+      "calendar_relation": "Corpus Christi where a real procession is celebrated locally",
+      "attestation_id": "att:CORP-001:PL",
+      "source_ids": [
+        "UNESCO-CORPUS-FLOWER-CARPETS",
+        "VATICAN-DPP-CORPUS-FLOWERS-162"
+      ],
+      "controlling_proof": "UNESCO documents Polish flower carpets; Holy See Directory 162 supports flowers on streets and windows.",
+      "scope": "Voluntary regionally bounded Catholic lay custom. Calendar is date owner; Learn is detail owner.",
+      "guardrails": [
+        "NOT_UNIVERSAL",
+        "NOT_MAPPED",
+        "NO_AUTOMATIC_MASS_RITE",
+        "NO_INFERRED_LOCATION_OR_EVENT",
+        "NO_EXTRA_PRIESTLY_RITUAL",
+        "COPYRIGHT_ORIGINAL_SUMMARY_ONLY"
+      ],
+      "status": "PENDING_PR_REVIEW_AND_CI"
+    },
+    {
+      "custom_id": "EAST-001",
+      "family": "Eastertide regional devotional walks",
+      "name": "Easter Monday Emmaus walk",
+      "origin": "NEW_SOT07_EXTENSION_NOT_IN_ORIGINAL_63_ROWS",
+      "decision": "SOURCE_LOCKED_P1_EDITORIAL_DRAFT_PENDING_CI",
+      "calendar_relation": "Easter Monday calculated by Calendar; regional voluntary practice",
+      "attestation_id": "att:EAST-001:DE",
+      "source_ids": [
+        "MUNICH-FREISING-EMMAUSGANG"
+      ],
+      "controlling_proof": "Munich-Freising Archdiocese documents German/Austrian Emmaus walks connected to Luke 24.",
+      "scope": "Voluntary regionally bounded Catholic lay custom. Calendar is date owner; Learn is detail owner.",
+      "guardrails": [
+        "NOT_UNIVERSAL",
+        "NOT_MAPPED",
+        "NO_AUTOMATIC_MASS_RITE",
+        "NO_INFERRED_LOCATION_OR_EVENT",
+        "NO_EXTRA_PRIESTLY_RITUAL",
+        "COPYRIGHT_ORIGINAL_SUMMARY_ONLY"
+      ],
+      "status": "PENDING_PR_REVIEW_AND_CI"
+    },
+    {
+      "custom_id": "MARI-002",
+      "family": "Marian household customs",
+      "name": "Mary garden — flowers and herbs dedicated to Our Lady",
+      "origin": "NEW_SOT07_EXTENSION_NOT_IN_ORIGINAL_63_ROWS",
+      "decision": "SOURCE_LOCKED_P1_EDITORIAL_DRAFT_PENDING_CI",
+      "calendar_relation": "May or another suitable gardening season; linked to DEV-001",
+      "attestation_id": "att:MARI-002:US",
+      "source_ids": [
+        "CATHCULTURE-MARY-GARDEN"
+      ],
+      "controlling_proof": "Catholic Culture documents practical household Mary gardens, without independently establishing legends about particular plant names.",
+      "scope": "Voluntary regionally bounded Catholic lay custom. Calendar is date owner; Learn is detail owner.",
       "guardrails": [
         "NOT_UNIVERSAL",
         "NOT_MAPPED",
