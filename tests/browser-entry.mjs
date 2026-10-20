@@ -46,13 +46,14 @@ for(const name of [
 for(const name of [
   "review_priest_credo_chant","review_priest_receive_chalice",
   "review_priest_fraction_host","review_priest_commingling",
+  "review_priest_receive_host","review_priest_purify_chalice","review_priest_purify_fingers",
 ]){
   assert.ok(String(productionIcons[name]??"").startsWith("file:"),
     "Approved modern action artwork missing from native reader: "+name);
 }
 assert.equal(Object.keys(productionIcons).length,
-  R17_FROZEN_ACTIVE_ICON_KEYS.length+9,
-  "reviewed icon overlays must contain five posture and four action aliases beyond donor masters");
+  R17_FROZEN_ACTIVE_ICON_KEYS.length+12,
+  "reviewed icon overlays must contain five posture and seven action aliases beyond donor masters");
 assert.deepEqual(productionAudit.required,[...R17_FROZEN_ACTIVE_ICON_KEYS]);
 assert.deepEqual(productionAudit.excluded,[...R17_FROZEN_EXCLUDED_ICON_KEYS]);
 assert.match(productionIcons.stand,/assets\/active\/mass-v46\/stand\.svg$/);
