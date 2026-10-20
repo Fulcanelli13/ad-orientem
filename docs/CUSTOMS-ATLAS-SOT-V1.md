@@ -52,6 +52,12 @@ It includes:
 
 The seed is intentionally not the full 63-row SOT-07 corpus. Rows depending only on unresolved bibliographic/project evidence remain outside publication until source closure.
 
+### Domestic customary source-lock addition — 20 October 2026
+
+The current corpus now includes **16 active customs, 74 attestations, and 77 registered sources** following evidence-backed admission of three existing research IDs: `DOM-003` (holy water at home), `DOM-011` (Candlemas candle at home), and `DOM-013` (blessed branches at home). Each uses a French `AREA_CONTEXT` attestation and adds no map pin. The original 13-custom seed figures above record the **initial** foundation, not the current total.
+
+See `docs/CUSTOMS-BBG-SOURCE-LOCK-2026-10-20.md` for the direct-source table, Calendar handoff, historical prayer-book limitations, and the separate hold on St Blaise until admission under a new SOT identity. No negative-knowledge exceptions were removed.
+
 ## Map policy
 
 There are five states:
