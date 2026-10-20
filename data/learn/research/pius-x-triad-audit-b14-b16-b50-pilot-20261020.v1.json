@@ -18,8 +18,8 @@
     "bulkInstances": 200,
     "pilotInstances": 10,
     "spxLocated": 210,
-    "denzingerCandidates": 1,
-    "canonSpecificCandidates": 1,
+    "denzingerCandidates": 0,
+    "canonSpecificCandidates": 0,
     "published": 0
   },
   "records": [
@@ -6368,17 +6368,8 @@
         "status": "LOCATED_NOT_SENTENCE_CERTIFIED"
       },
       "denzinger": {
-        "status": "OLD_DZ_OCR_CANDIDATE_UNCERTIFIED",
-        "references": [
-          {
-            "magisteriumPassageId": "MG-P017",
-            "edition": "Bannwart 1911, old Dz",
-            "oldDz": 943,
-            "originalPageImageChecked": false,
-            "modernDHConfirmed": false,
-            "relationshipApproved": false
-          }
-        ]
+        "status": "UNASSESSED_NO_NUMBER_ASSIGNED",
+        "references": []
       },
       "chanoine": {
         "offerOptIn": true,
@@ -6386,7 +6377,7 @@
         "preserveQuestionAndLanguageAndSources": true,
         "prohibitReferralLoops": true,
         "sourceGated": true,
-        "topicCandidate": "mass.roman_canon",
+        "topicCandidate": null,
         "relatedPilotSourceCandidate": null,
         "answerCertified": false
       },
