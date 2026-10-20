@@ -292,7 +292,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - run: npm ci
+      - run: npm install --no-audit --no-fund --ignore-scripts --package-lock=false
       - run: npx playwright install --with-deps chromium
       - name: Validate actual St Pius X visual-novel on phone and desktop
         run: node tests/pius-x-20path-visual-novel-browser.mjs
