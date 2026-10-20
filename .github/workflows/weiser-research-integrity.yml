@@ -8,6 +8,7 @@ on:
       - 'tests/weiser-p1-wave02.mjs'
       - 'tests/weiser-p1-wave03.mjs'
       - 'tests/weiser-p1-wave04.mjs'
+      - 'tests/weiser-p1-wave05.mjs'
       - '.github/workflows/weiser-research-integrity.yml'
   push:
     branches:
@@ -18,6 +19,7 @@ on:
       - 'tests/weiser-p1-wave02.mjs'
       - 'tests/weiser-p1-wave03.mjs'
       - 'tests/weiser-p1-wave04.mjs'
+      - 'tests/weiser-p1-wave05.mjs'
       - '.github/workflows/weiser-research-integrity.yml'
 
 permissions:
@@ -37,3 +39,4 @@ jobs:
           node tests/weiser-p1-wave02.mjs
           node tests/weiser-p1-wave03.mjs
           node tests/weiser-p1-wave04.mjs
+          node tests/weiser-p1-wave05.mjs
