@@ -230,6 +230,22 @@
         "SPX-EXP-008"
       ],
       "status": "SECONDARY_BIOGRAPHY_MATCHED_HISTORY_AND_TRANSLATION_REVIEW_PENDING"
+    },
+    {
+      "batch": "B15",
+      "kb": "Chanoine",
+      "path": "research/chanoine/chanoine-unattended-b15-voluntariness-20261021.v1.json",
+      "commit": "6790fb360fd2eee621c5e79a9a50ba1e8964c9a9",
+      "families": 5,
+      "answerUnits": 10,
+      "ids": [
+        "CHA-CSE-CSE023",
+        "CHA-CSE-CSE024",
+        "CHA-CSE-CSE025",
+        "CHA-CSE-CSE026",
+        "CHA-CSE-CSE027"
+      ],
+      "status": "SOURCE_MATCHED_MORAL_THEOLOGY_AND_PASTORAL_REVIEW_PENDING"
     }
   ],
   "blocked": [
@@ -251,16 +267,60 @@
     }
   ],
   "active": {
-    "batch": "B15",
-    "task": "Chanoine existing natural-law source disputes; choose precise claims with accessible primary evidence."
+    "batch": "B16",
+    "state": "QUEUED_NOT_RESEARCHED",
+    "task": "Chanoine CSE031/CSE032/CSE033/CSE034: premarital acts, engagement and kissing. Read original records; reuse q154 a4 only within bounds, read CIC1062 and exact Casti/Persona humana passages before drafting."
   },
   "next": [
-    "CSE016/018 Donum veritatis exact authority and theological difficulty distinctions",
-    "Other source-specific specialist questions with accessible original sources",
-    "First-release SPX papal authenticity questions; no repeated full-corpus audit"
+    {
+      "priority": 1,
+      "ids": [
+        "CSE031",
+        "CSE032",
+        "CSE033",
+        "CSE034"
+      ],
+      "ownerBranch": "research/chanoine-cse-source-dialogue-20261019",
+      "ownerPath": "research/chanoine/chanoine-cse-147-conversation-editorial-review.v1.json",
+      "action": "B16 source collation not yet done; retain existing semantic repairs. Distinguish engagement promise from matrimonial consent; no individual guilt judgments."
+    },
+    {
+      "priority": 2,
+      "ids": [
+        "CSE020",
+        "CSE021",
+        "CSE022",
+        "CSE028",
+        "CSE029"
+      ],
+      "action": "Read actual owner drafts and specialist records first. Do not infer clinical generalizations about addiction/celibacy from moral sources or small qualitative studies."
+    },
+    {
+      "priority": 3,
+      "scope": "SPX first-balanced-release beyond existing first20",
+      "action": "Read generator/committed first40 membership first; no assumption missing130 artifact is canonical. Exclude all completed IDs/alias groups; prioritize unresolved original-language locators."
+    }
   ],
   "deduplication": "(kb, canonical familyId, turn, claim, source locator); retain duplicated conversation contexts, synchronize approved answer variants",
   "approvalsChanged": 0,
   "publication": false,
-  "denzingerMandatory": false
+  "denzingerMandatory": false,
+  "progress": {
+    "conversationFamilyIdsWithResearchDeltas": 61,
+    "additionalMirrorFamilyIdsExamined": 3,
+    "totalDistinctFamilyIdsExaminedInSelectedResearch": 64,
+    "answerUnitsReviewed": 122,
+    "fullFamilyPacketsForHumanReview": 60,
+    "partialFamilyPackets": 1,
+    "humanCertified": 0,
+    "published": 0,
+    "meaning": "Improved includes source precision, evidence additions and preserved stronger-source variants, not necessarily rewriting every answer. 60 packets can enter human review; this is not a theological or publication readiness approval."
+  },
+  "scheduling": {
+    "created": false,
+    "requested": "Nightly cloud Work task, Mauritius UTC+4",
+    "attempt": "automation_update executionEnvironment cloud rejected; tool accepts local only",
+    "fallbackCreated": false,
+    "resumptionPromise": false
+  }
 }
