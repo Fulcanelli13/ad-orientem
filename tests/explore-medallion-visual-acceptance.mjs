@@ -137,6 +137,11 @@ try{
    assert.equal(await journey.locator("[data-explore-journey-stage-focus]").count(),2);
    await page.waitForFunction(()=>document.querySelectorAll(
       "#ao-find-modular-root [data-journey-map-stage]").length===2,null,{timeout:12000});
+   const stageMarkerSizes=await page.locator("[data-journey-map-stage]").evaluateAll(markers=>
+     markers.map(marker=>({width:marker.getBoundingClientRect().width,
+       height:marker.getBoundingClientRect().height})));
+   assert.ok(stageMarkerSizes.length===2&&stageMarkerSizes.every(size=>size.width>=44&&size.height>=44),
+     "Journey map medallions need 44px touch targets: "+JSON.stringify(stageMarkerSizes));
    const holywellStage=journey.locator('[data-explore-journey-stage-focus="route:GB:holywell-church-to-well#stage-1"]');
    await holywellStage.click();
    assert.equal(await holywellStage.getAttribute("aria-pressed"),"true");
@@ -182,6 +187,8 @@ try{
    await stagePlace.locator("[data-explore-expand-place]").click();
    const expandedPlace=page.locator('#ao-find-modular-root .aoExplorePlaceSheet[data-explore-place-owner="place:GB:holywell-st-winefride-church"]');
    await expandedPlace.waitFor({state:"visible",timeout:12000});
+   assert.equal(await page.locator("#ao-find-modular-root .aoHeritageCardLayer:visible").count(),0,
+     "The expanded Place must hide the underlying preview and its duplicate close control");
    assert.match(await expandedPlace.locator("header small").innerText(),/PILGRIMAGE PLACE/);
    await expandedPlace.locator("header [data-find-close-place]").click();
    await page.waitForFunction(()=>!document.querySelector("#ao-find-modular-root .aoFindSheetBackdrop"),null,{timeout:12000});
