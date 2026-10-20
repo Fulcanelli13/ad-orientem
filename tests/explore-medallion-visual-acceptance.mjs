@@ -118,6 +118,16 @@ try{
      "Never offer exact destination navigation to the wrong Catholic Shrine");
    await page.waitForTimeout(500);
    await page.screenshot({path:resolve(out,"explore-"+width+"-journey-walsingham-2026.png"),fullPage:false});
+   await journey.locator('[data-explore-journey-select="route:NZ:nga-tapuwae-russell"]').click();
+   await page.waitForFunction(()=>document.querySelector("#ao-find-modular-root .aoJourneyDetail h3")
+      ?.textContent?.includes("Ngā Tapuwae"),null,{timeout:12000});
+   await journey.locator(".aoJourneyModeWarning").waitFor({state:"visible"});
+   assert.match(await journey.locator(".aoJourneyModeWarning").innerText(),/driving and ferry transfers/);
+   assert.equal(await journey.locator("[data-journey-named-stage]").count(),0,
+     "A multimodal regional booklet must not be converted to fabricated walking stages");
+   assert.ok((await journey.locator('.aoJourneyOfficialMap[href*="NGA-TAPUWAE-Route-Overview"]').count())===1,
+     "Diocesan PDF remains a link-only publication, not copied geometry");
+   await page.screenshot({path:resolve(out,"explore-"+width+"-journey-nga-tapuwae.png"),fullPage:false});
    await journey.locator('[data-explore-journey-select="route:FR:paris-chartres-pentecost"]').click();
    await journey.locator('[data-explore-journey-destination="place:FR:chartres-notre-dame"]').click();
    await page.locator("#ao-find-modular-root .aoHeritagePreview").waitFor({state:"visible"});
