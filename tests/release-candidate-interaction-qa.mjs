@@ -221,12 +221,12 @@ try{
     const root=document.getElementById("aoPray435930");
     if(!root?.classList?.contains("open"))return true;
     return root.querySelector(".aoP435930Mount")?.dataset?.aoPrayView==="traditional-pray"
-      &&globalThis.AOTraditionalPrayerBook?.getState?.()?.route==="mass.prepare";
+      &&globalThis.AO_TRADITIONAL_PRAY_V381?.state?.()?.route==="mass.prepare";
   },null,{timeout:10000});
   const handoffPresentation=await page.evaluate(()=>({
     prayerOpen:document.getElementById("aoPray435930")?.classList?.contains("open")??false,
     prayerView:document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView??null,
-    canonicalPrayer:globalThis.AOTraditionalPrayerBook?.getState?.()?.route??null,
+    canonicalPrayer:globalThis.AO_TRADITIONAL_PRAY_V381?.state?.()?.route??null,
     moduleTitle:globalThis.AO_MODULES?.get?.("mass.prepare")?.title??null,
     legacyOpen:document.getElementById("aoPrayerBookRoot")?.classList?.contains("open")??false,
   }));
