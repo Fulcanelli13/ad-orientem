@@ -124,7 +124,7 @@ const fr=renderPilgrimageJourneyPanel({routes:journeys,selectedId:chartres.id,la
 assert.equal((en.match(/data-explore-journey-select=/g)||[]).length,20);
 assert.match(en,/documented routes/);
 assert.match(en,/Saint-Sulpice/);
-assert.match(en,/named stages from official evidence/);
+assert.match(en,/organizer-named stages/);
 assert.match(en,/Choisel overnight camp/);
 assert.match(en,/Gas overnight camp/);
 assert.equal((en.match(/data-journey-named-stage=/g)||[]).length,4);
