@@ -34,6 +34,16 @@ Explicit exclusions:
 - `tests/explore-pilgrimage-journey.mjs` verifies exact joins, 15 links / 13 routes, two distinct Holywell sites, no Walsingham or Paray crosswalk, zero route geometry, and 20 canonical route IDs.
 - `tests/explore-medallion-visual-acceptance.mjs` adds 320, 390 and 1440 px Holywell screenshots and verifies two real stage medallions, tap-to-focus and no fabricated route line.
 
+## R5 — Open Sacred Atlas from a verified stage
+
+The stage **number** keeps its existing role: focus the selected, independently sourced canonical sacred-site pin. The **stage name** is an accessible button opening that exact site’s existing Sacred Atlas preview. Tapping the **numbered map medallion** also opens the same Place.
+
+This opens the **existing** C Place folio in a sheet over D, without remounting MapLibre or changing the selected pilgrimage. The Discover action expands the complete Place profile with its existing historical narratives, imagery, sources and any linked devotions. Closing the Place sheet (labelled *Return to pilgrimage journey*) reveals the original Journey rail at its previous route selection and leaves the map camera intact.
+
+No new Place records, inferred coordinates, licence costs, organizer contact, duplicate profile engine, artificial line or GPS instructions are introduced. All stage-name links are gated by the existing `stageSiteAnchors` exact canonical crosswalk. Unmapped names remain plain text.
+
+Browser acceptance now tests a full Holywell loop: a stage-name tap, compact Place preview, expanded profile, return to the same Journey and the same MapLibre canvas, and a second entry by map medallion into the distinct Well profile. Screenshots are captured on mobile and desktop.
+
 ## Next free improvements
 
 First use available internal source-backed site anchors and place editorial profiles. If later publicly downloadable geometry exists, verify that it is both edition-matched and redistributable under a free licence **without contacting anyone or spending money**. Otherwise leave the link-only/text-only experience in place and continue other release work.
