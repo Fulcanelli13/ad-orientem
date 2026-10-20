@@ -1,10 +1,10 @@
 # Pilgrimage route evidence — R1 (20 October 2026)
 
-Status: **named stages published for six of twenty documented routes; route geometry certified for zero**. Editorial candidate evidence only, not a GPS routing release.
+Status: **named stages published for eight of twenty documented routes; route geometry certified for zero**. Editorial candidate evidence only, not a GPS routing release.
 
 ## Release boundary
 - Source registry: `data/shrines/shrines-pilgrimages-seed.v1.json` (240 pilgrimage records; 20 exact route IDs). All 20 canonical routes remain `DOCUMENTED_UNMAPPED`; do not change to `MAPPED`.
-- New linked evidence: `data/shrines/route-stage-evidence-20261020.v1.json` (six route identities and 18 ordered names). Each entry has the exact route ID and an organizer or diocesan URL, edition context, and explicitly null latitude and longitude.
+- New linked evidence: `data/shrines/route-stage-evidence-20261020.v1.json` (eight route identities and 34 ordered names). Each entry has the exact route ID and an organizer or diocesan URL, edition context, and explicitly null latitude and longitude.
 - The D Journey timeline may show those **named** stages. It must not call them geolocated or navigable, place a pin at the destination's coordinate for a stage, estimate distances, or draw connecting polylines.
 - A route can gain renderable geometry only after direct KML/GPX/GeoJSON or cartographic evidence is obtained for the exact organizer route/edition and reuse rights are confirmed. A route planner's shortest path or straight line between buildings is **not** the pilgrimage.
 
@@ -19,6 +19,9 @@ Status: **named stages published for six of twenty documented routes; route geom
 | `route:MU:pere-laval-saint-joseph` | 2 | https://dioceseportlouis.org/informations-sur-le-pelerinage-au-caveau-du-pere-laval/ | Diocese's 2026 departure at Saint-Joseph Terre-Rouge, arrival at Père Laval, Sainte-Croix |
 | `route:US:lake-george-auriesville-restoration` | 2 | https://pilgrimage-for-restoration.org/arrival/check-in-thursday/ | Organizer's 2026 Wood Park gathering and step-off, Auriesville shrine destination; camping/check-in details are edition-specific |
 
+| `route:DE:preith-bettbrunn` | 9 | https://preith.bistum-eichstaett.de/wallfahrt/ | Official parish account names Preith, Buchenhüller Forst, Inching, Waltinger Schlag, Schambachtal, Schelldorf, Appertshofen, Köschinger Forst and Bettbrunn; these are route pass-through areas, not announced prayer stations |
+| `route:BR:belem-cathedral-nazare` | 7 | https://www.ciriodenazare.com.br/noticias/diretoria-da-festa-de-nazare-apresenta-o-roteiro-das-14-procissoes-do-cirio-2026 | Organizer's 11 October 2026 Cathedral–Basilica street progression: Padre Champagnat, Portugal, Castilhos França, Presidente Vargas and Nazaré; published description is not a validated vector polyline |
+
 ## Evidence not allowed to change stage geometry yet
 - Walk to Mary's official Google My Maps embed is **external**: https://www.google.com/maps/d/embed?ll=44.50775787430333%2C-87.9387949855585&mid=1Kf_rYIo3dg2Gltpn8sWmxkiJULpS6mY&z=11 . No rights or validated downloadable route artifact has been certified for republication.
 - Père Laval diocesan 2026 announcement names event departure locations and devotional animation zones. The more detailed published street-by-street pathway located in an older diocesan archival page concerns an earlier edition; do not present it as the 2026 route.
@@ -32,7 +35,7 @@ Status: **named stages published for six of twenty documented routes; route geom
 4. Only then populate a versioned `routeGeometry` reference, waypoint lat/lng values, and visible lines. Keep route status `DOCUMENTED_UNMAPPED` until all gates pass.
 5. Retain older journeys as historical editions. Never imply an obsolete route is safe/current for navigation.
 
-Remaining source-discovery queue: 14 routes without ordered named-stage evidence; 20 without app-owned certified walking line; all require 2026/2027 variant checks where applicable.
+Remaining source-discovery queue: 12 routes without ordered named-stage evidence; 20 without app-owned certified walking line; all require 2026/2027 variant checks where applicable.
 
 ## UX gate
-`node tests/explore-pilgrimage-journey.mjs` checks exact route joins, all 18 names, zero guessed locations and source links. `tests/explore-medallion-visual-acceptance.mjs` must verify the ordered 4-stage Chartres timeline at mobile and desktop widths before the draft PR is eligible for a merge review.
+`node tests/explore-pilgrimage-journey.mjs` checks exact route joins, all 34 names, zero guessed locations and source links. `tests/explore-medallion-visual-acceptance.mjs` must verify the ordered 4-stage Chartres timeline at mobile and desktop widths before the draft PR is eligible for a merge review.
