@@ -88,4 +88,28 @@ for(const x of cards.existing_owner_only){
  assert.equal(seen.has(x.weiser_id),false);
 }
 assert.equal(new Set(cards.existing_owner_only.map(x=>x.weiser_id)).size,2);
+const integration=read("../data/customs/research/weiser-p1-final-integration-ledger.v1.json");
+assert.equal(integration.records.length,144);
+assert.equal(integration.drafts.length,42);
+assert.equal(integration.audit.source_bounded,60);
+assert.equal(integration.audit.partial_source_holds,46);
+assert.equal(integration.audit.no_exact_source_match_holds,38);
+assert.equal(integration.audit.bounded_observations_in_bilingual_drafts,56);
+assert.equal(integration.audit.owner_context_only_bounded_observations,4);
+assert.equal(integration.audit.app_publications,0);
+const releaseIds=new Set();
+for(const row of integration.records){
+ assert.ok(p1.has(row.weiser_id));
+ assert.ok(!releaseIds.has(row.weiser_id));releaseIds.add(row.weiser_id);
+ assert.equal(row.app_published,false);
+ assert.equal(row.permanent_exclusion,false);
+ if(row.disposition==="EDITORIAL_DRAFT_REQUIRES_OWNER_PARITY"){
+   assert.equal(row.source_class,"BOUNDED");
+   assert.ok(row.editorial_draft?.card_id);
+ } else {
+   assert.equal(row.editorial_draft,null);
+ }
+ if(row.source_class==="UNMATCHED_HOLD")assert.equal(row.disposition,"NO_EXACT_INDEPENDENT_MATCH_HOLD");
+}
+assert.equal(releaseIds.size,144);
 console.log("PASS Weiser P1 Wave06: 144/144 dispositions; 82 earlier source topics, 8 new bounded, 16 partial, 38 unverified; five bilingual drafts/6 source IDs, 2 existing owner-only, 34 exclusions intact, zero app publications.");
