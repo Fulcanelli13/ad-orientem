@@ -29,3 +29,4 @@ jobs:
       - run: npm install --no-audit --no-fund
       - run: npx playwright install --with-deps chromium
       - run: node tests/pray-23-route-owner-parity-phone.mjs
+      - run: node tests/pray-route-lazy-e2e.mjs

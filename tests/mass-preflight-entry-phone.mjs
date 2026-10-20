@@ -75,6 +75,31 @@ try{
   assert.deepEqual(data.modes,["MISSAL","SIMPLE","LIVE"]);
   assert.equal(data.readerPresent,false,"Follow Mass started LIVE without preparation");
   assert.ok(data.startButtons>0,"No explicit Start Mass control");
+
+  // Real mobile handoff: a chosen full preparation must open the canonical
+  // Prayer reader and leave the Mass source selection untouched on Back.
+  assert.equal(await page.locator("[data-folio-before]").count(),3,
+    "Before Mass must have none, brief and full choices");
+  assert.equal(await page.locator("[data-folio-after]").count(),3,
+    "After Mass must have none, thanksgiving and full choices");
+  await page.locator("[data-folio-before][value='full']").check();
+  await page.locator("[data-folio-after][value='full']").check();
+  assert.deepEqual(await page.evaluate(()=>{
+    const x=globalThis.AO_R17_BROWSER_ENTRY?.status?.()?.fullMassPreflight?.experience;
+    return {before:x?.before,after:x?.after};
+  }),{before:"full",after:"full"},"Mass Folio choices did not reach the session");
+  await page.locator("[data-folio-open-prayer='before']").click();
+  await page.waitForSelector("#aoPray435930.open [data-tp381-mass-continue]",{state:"visible",timeout:15000});
+  assert.equal(await page.locator("#aoPray435930 .aoMassFolioPrayerNav").count(),1,
+    "Preparation rendered outside the existing canonical Prayer reader");
+  await page.locator("#aoPray435930 [data-tp381-mass-cancel]").click();
+  await page.waitForFunction(()=>!document.getElementById("aoPray435930")?.classList.contains("open"),null,{timeout:10000});
+  await prep.waitFor({state:"visible",timeout:10000});
+  assert.equal(await page.locator("[data-folio-before][value='full']").isChecked(),true,
+    "Prayer Back discarded the chosen Mass preparation");
+  assert.equal(await page.locator("[data-folio-after][value='full']").isChecked(),true,
+    "Prayer Back discarded post-Mass preference");
+
   console.log("PASS real phone "+width+"px Follow Mass opens Mass preparation, not LIVE",JSON.stringify(data));
   if(errors.length)console.log("Other page warnings",errors.slice(0,3));
   await page.close();

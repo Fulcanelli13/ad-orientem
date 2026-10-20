@@ -13,7 +13,9 @@ const TRADITIONAL=[
   ["pray.sacred_heart","Sacred Heart of Jesus","sacred-heart"],
   ["pray.communion_treasury","Traditional Communion Prayers","eucharistic"],
   ["pray.good_death","Preparation for a Good Death","traditional-devotion"],
-  ["pray.dying_companion","Dying Companion","pastoral-care"]
+  ["pray.dying_companion","Dying Companion","pastoral-care"],
+  ["mass.prepare","Before Mass Prayers","eucharistic"],
+  ["mass.thanksgiving","Thanksgiving After Mass","eucharistic"]
 ];
 const PROVISIONAL=Object.freeze(Object.fromEntries([
   ...TRADITIONAL,
@@ -56,7 +58,7 @@ export function installLazyPrayRegistry(win=globalThis,ensureReader){
       const previous=base.list?.(filter)||[];
       if((filter.type&&filter.type!=="module")||(filter.domain&&String(filter.domain).toLowerCase()!=="pray"))return previous;
       const known=new Set(previous.map(x=>x?.id));
-      return [...previous,...Object.values(PROVISIONAL).filter(x=>!known.has(x.id))];
+      return [...previous,...Object.values(PROVISIONAL).filter(x=>!known.has(x.id)&&!x.id.startsWith("mass."))];
     },
   };
   win.AO_MODULES=wrapper;
