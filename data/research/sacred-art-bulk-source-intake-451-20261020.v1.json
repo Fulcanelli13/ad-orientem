@@ -30,7 +30,7 @@
     "legacyFivesIn451": 77,
     "excluded": 68,
     "editorialHold": 199,
-    "eligibleExactMet": 23,
+    "eligibleExactMet": 22,
     "eligibleExactCommons": 58,
     "eligibleOtherSource": 58,
     "legacyFiveOutside451": [
@@ -49,7 +49,9 @@
     "sanPoloOriginalWrongLinksUnresolved": 0,
     "sanPoloExactCommonsFilesRouted": 12,
     "sourcesWithExplicitOriginalPhotoRightsClaim": 12,
-    "eligibleExactAllNonPrado": 101
+    "eligibleExactAllNonPrado": 100,
+    "canonicalSourceDuplicateAliases": 1,
+    "approvedWorksSourceRoutesIncludingAliases": 101
   },
   "works": [
     {
@@ -7210,11 +7212,22 @@
       "sourceClaim": "CC0",
       "reviewStatus": "APPROVED_LOCKED",
       "reviewGate": "APPROVED",
-      "provider": "MET_OPEN_ACCESS_CANDIDATE",
+      "provider": "CANONICAL_SOURCE_REUSE_ALIAS",
       "preferredImageKey": null,
       "hasReviewPreview": false,
       "assetHolds": [],
-      "sourceDestinationsCount": 1
+      "sourceDestinationsCount": 1,
+      "canonicalArtworkId": "ART-hilippe-de-hampaigne-he-nnunciation",
+      "sourcePhotoHold": "HOLD_DUPLICATE_SOURCE_BYTES_USE_CANONICAL",
+      "technicalRepeatAcquisitionAllowed": false,
+      "canonicalDuplicateEvidence": {
+        "sameInstitution": "Metropolitan Museum of Art",
+        "sameObjectID": 438724,
+        "sameSourceOriginalSHA256": "ae59a42e39896646d3d18d4761e04b8ce6fa1d84bfaa9f79bd23f8d72aa95be6",
+        "currentHumanRatingPreserved": true,
+        "canonicalPreferredPhotoKey": "101|ART-hilippe-de-hampaigne-he-nnunciation|ae59a42e39896646d3d18d4761e04b8ce6fa1d84bfaa9f79bd23f8d72aa95be6|ART-hilippe-de-hampaigne-he-nnunciation-afa559b282fb1ebd.webp",
+        "duplicateSourceReproductionAvoided": true
+      }
     },
     {
       "id": "met-442488",
