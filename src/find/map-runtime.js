@@ -1,6 +1,7 @@
 import { isApproximateDirectoryGeo, isMapPublishableGeo } from "./geo-provenance.js";
 import { attachExploreMapStatus } from "./map-status.js";
 import { registerMassInstitutionImages, massInstitutionEmblem } from "./institution-emblems.js";
+import { installMassMapEmblemOverlays } from "./institution-map-overlay.js";
 import {
   registerExploreCategoryMedallions,exploreCategoryMedallionExpression,
   EXPLORE_MEDALLION_ID_PREFIX,
@@ -383,6 +384,7 @@ export async function mountExploreMap(container,items,{
   map.addControl?.(new maplibre.NavigationControl({showCompass:false}),"top-right");
   if(maplibre.FullscreenControl)map.addControl?.(new maplibre.FullscreenControl({pseudo:true}),"top-right");
   const visualStatus=attachExploreMapStatus(container,map,{win});
+  let emblemOverlays=null;
   if(features.some(feature=>feature.properties?.lens==="tlm")){
     const reset=win.document.createElement("button");
     reset.type="button";reset.className="aoExploreMapReset";
@@ -504,6 +506,12 @@ export async function mountExploreMap(container,items,{
     // SAME bubble. A failed SVG fetch leaves an interactive church symbol.
     if(features.some(feature=>feature.properties?.lens==="tlm")){
       const loadedGroups=new Set();
+      // Cross-origin SVGs sometimes render in toolbar <img> but cannot be
+      // copied into MapLibre canvas sprites. Show the SAME real emblems
+      // using bounded, pointer-transparent DOM overlays at visible pins.
+      emblemOverlays=installMassMapEmblemOverlays(map,maplibre,{
+        win,hasSprite:group=>loadedGroups.has(group),
+      });
       const refreshEmblems=()=>{
         if(!map.getSource?.(sourceId)||!loadedGroups.size)return;
         const withEmblem=["all",["==",["get","lens"],"tlm"],
@@ -519,7 +527,7 @@ export async function mountExploreMap(container,items,{
       };
       void registerMassInstitutionImages(map,{win,onRegistered:group=>{
         loadedGroups.add(group);
-        try{refreshEmblems()}catch(error){
+        try{refreshEmblems();emblemOverlays?.refresh()}catch(error){
           console.warn("Explore affiliation emblem presentation failed",error);
         }
       }}).catch(()=>{});
@@ -587,7 +595,7 @@ export async function mountExploreMap(container,items,{
       source?.setData?.({type:"FeatureCollection",features});
     },
     mapStatus:()=>visualStatus.status(),
-    destroy(){visualStatus.dispose();try{map.remove()}catch{}}
+    destroy(){emblemOverlays?.dispose();visualStatus.dispose();try{map.remove()}catch{}}
   });
 }
 
