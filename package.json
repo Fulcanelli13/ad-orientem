@@ -140,7 +140,7 @@
     "directory:import:icksp": "node tools/directory/import-icksp.mjs",
     "directory:import:ibp": "node tools/directory/import-ibp.mjs",
     "test:find": "node tests/find-surface.mjs",
-    "test:explore-geography": "node tests/explore-geography-contracts.mjs && node tests/sacred-geography-r89-first-coverage-release.mjs && node tests/heritage-place-reconciliation.mjs && node tests/sacred-geography-r90-coverage-first-release.mjs",
+    "test:explore-geography": "node tests/explore-geography-contracts.mjs && node tests/sacred-geography-r89-first-coverage-release.mjs && node tests/heritage-place-reconciliation.mjs && node tests/sacred-geography-r90-coverage-first-release.mjs && node tests/sacred-geography-r91-coverage-first-release.mjs",
     "test:customs-atlas": "node tests/customs-atlas-contracts.mjs",
     "test:shrines-pilgrimages": "node tests/shrines-pilgrimages-contracts.mjs",
     "directory:geocode": "node tools/directory/geocode-runtime-snapshots.mjs",

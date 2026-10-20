@@ -1,0 +1,344 @@
+{
+  "schema": "AO_SACRED_GEOGRAPHY_R91_COVERAGE_FIRST_RELEASE_V1",
+  "date": "2026-10-20",
+  "status": "PROPOSED_VIA_PULL_REQUEST",
+  "policy": "First-country Place production requires Catholic physical identity anchored to Holy See, diocese, church/parish, or bishops conference source; separate geographically named OSM building; no new shrine, relic, apparition or Traditional Latin Mass claims. Features are not certified doorways.",
+  "baseline": {
+    "places": 318,
+    "country_areas": 112,
+    "sources": 563,
+    "represented_jurisdictions": 110,
+    "unrepresented_jurisdictions": 140
+  },
+  "result": {
+    "places": 330,
+    "country_areas": 124,
+    "sources": 587,
+    "represented_jurisdictions": 122,
+    "unrepresented_jurisdictions": 128,
+    "new_places": 12,
+    "new_country_scopes": 12
+  },
+  "country_areas_added": [
+    "geo:country:AG",
+    "geo:country:CW",
+    "geo:country:GP",
+    "geo:country:JM",
+    "geo:country:LS",
+    "geo:country:MG",
+    "geo:country:MP",
+    "geo:country:MQ",
+    "geo:country:SL",
+    "geo:country:VC",
+    "geo:country:VI",
+    "geo:country:ZW"
+  ],
+  "published_new": [
+    {
+      "place_id": "place:MG:immaculate-conception-cathedral-andohalo",
+      "research_id": "AO-R82-DISC-024",
+      "country": "MG",
+      "name": "Cathédrale de l'Immaculée-Conception, Andohalo",
+      "place_type": "cathedral",
+      "city": "Antananarivo",
+      "formatted": "Andohalo, Antananarivo, Madagascar",
+      "lat": -18.91786,
+      "lng": 47.53067,
+      "geo_source_url": "https://www.openstreetmap.org/way/511204750",
+      "geo_source_ref": "osm:way:511204750",
+      "identity_source_url": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2019/09/07/190907d.html",
+      "identity_source_issuer": "Holy See Press Office",
+      "identity_source_directness": "PRIMARY_HISTORICAL",
+      "geometry_note": "The Holy See explicitly identifies the current cathedral and distinguishes the nearby chapel of Blessed Victoire Rasoamanarivo from the cathedral itself.",
+      "source_ids": [
+        "AO-R91-SITE-AO-R82-DISC-024",
+        "AO-R91-GEO-AO-R82-DISC-024"
+      ],
+      "tlm_status": "NO_1962_MISSAL_ASSERTION",
+      "access_status": "CURRENT_VISITOR_HOURS_NOT_ASSERTED"
+    },
+    {
+      "place_id": "place:LS:our-lady-victories-cathedral-maseru",
+      "research_id": "AO-R82-DISC-028",
+      "country": "LS",
+      "name": "Cathedral of Our Lady of Victories, Maseru",
+      "place_type": "cathedral",
+      "city": "Maseru",
+      "formatted": "Maseru, Lesotho",
+      "lat": -29.317,
+      "lng": 27.49493,
+      "geo_source_url": "https://www.openstreetmap.org/way/295032311",
+      "geo_source_ref": "osm:way:295032311",
+      "identity_source_url": "https://www.vatican.va/content/john-paul-ii/en/speeches/1988/september/documents/hf_jp-ii_spe_19880915_religiosi-maseru.html",
+      "identity_source_issuer": "Holy See",
+      "identity_source_directness": "PRIMARY_HISTORICAL",
+      "geometry_note": "John Paul II's address names the Cathedral of Maseru as a church dedicated to Our Lady of Victories; building-level OSM way identifies its location, not its access status.",
+      "source_ids": [
+        "AO-R91-SITE-AO-R82-DISC-028",
+        "AO-R91-GEO-AO-R82-DISC-028"
+      ],
+      "tlm_status": "NO_1962_MISSAL_ASSERTION",
+      "access_status": "CURRENT_VISITOR_HOURS_NOT_ASSERTED"
+    },
+    {
+      "place_id": "place:ZW:sacred-heart-cathedral-harare",
+      "research_id": "AO-R82-DISC-029",
+      "country": "ZW",
+      "name": "Sacred Heart Cathedral, Harare",
+      "place_type": "cathedral",
+      "city": "Harare",
+      "formatted": "Fourth Street, Harare, Zimbabwe",
+      "lat": -17.82098,
+      "lng": 31.0532,
+      "geo_source_url": "https://www.openstreetmap.org/way/363592914",
+      "geo_source_ref": "osm:way:363592914",
+      "identity_source_url": "https://zcbc.co.zw/archdiocese-of-harare/",
+      "identity_source_issuer": "Zimbabwe Catholic Bishops' Conference",
+      "identity_source_directness": "OFFICIAL_DIOCESAN",
+      "geometry_note": "Bishops' conference identifies Sacred Heart as metropolitan cathedral; OSM mapped feature shows the cathedral building, not separate archbishop office.",
+      "source_ids": [
+        "AO-R91-SITE-AO-R82-DISC-029",
+        "AO-R91-GEO-AO-R82-DISC-029"
+      ],
+      "tlm_status": "NO_1962_MISSAL_ASSERTION",
+      "access_status": "CURRENT_VISITOR_HOURS_NOT_ASSERTED"
+    },
+    {
+      "place_id": "place:MQ:cathedrale-saint-louis-fort-de-france",
+      "research_id": "AO-R82-DISC-061",
+      "country": "MQ",
+      "name": "Cathédrale Saint-Louis, Fort-de-France",
+      "place_type": "cathedral",
+      "city": "Fort-de-France",
+      "formatted": "Rue Victor Schœlcher, 97200 Fort-de-France, Martinique",
+      "lat": 14.60427,
+      "lng": -61.06996,
+      "geo_source_url": "https://www.openstreetmap.org/way/94884319",
+      "geo_source_ref": "osm:way:94884319",
+      "identity_source_url": "https://cathedralesaintlouismartinique.fr/contact/",
+      "identity_source_issuer": "Paroisse Cathédrale Saint-Louis, Fort-de-France",
+      "identity_source_directness": "OFFICIAL_CHURCH",
+      "geometry_note": "Parish distinguishes cathedral Rue Victor Schœlcher from presbytery at 1 rue Abbé Lecornu; point represents cathedral building.",
+      "source_ids": [
+        "AO-R91-SITE-AO-R82-DISC-061",
+        "AO-R91-GEO-AO-R82-DISC-061"
+      ],
+      "tlm_status": "NO_1962_MISSAL_ASSERTION",
+      "access_status": "CURRENT_VISITOR_HOURS_NOT_ASSERTED"
+    },
+    {
+      "place_id": "place:GP:cathedrale-notre-dame-de-guadeloupe-basse-terre",
+      "research_id": "AO-R82-DISC-063",
+      "country": "GP",
+      "name": "Cathédrale Notre-Dame-de-Guadeloupe, Basse-Terre",
+      "place_type": "cathedral",
+      "city": "Basse-Terre",
+      "formatted": "Place Saint-François, 97100 Basse-Terre, Guadeloupe",
+      "lat": 15.99554,
+      "lng": -61.72977,
+      "geo_source_url": "https://www.openstreetmap.org/way/66439078",
+      "geo_source_ref": "osm:way:66439078",
+      "identity_source_url": "https://www.catholique-guadeloupe.org/63-les-paroisses.htm?view=paroisse&view_id=9710001",
+      "identity_source_issuer": "Diocese of Basse-Terre and Pointe-à-Pitre",
+      "identity_source_directness": "OFFICIAL_DIOCESAN",
+      "geometry_note": "Catholic diocese distinguishes cathedral at Place Saint-François from pastoral office at rue Victor Hugues; named church way verified.",
+      "source_ids": [
+        "AO-R91-SITE-AO-R82-DISC-063",
+        "AO-R91-GEO-AO-R82-DISC-063"
+      ],
+      "tlm_status": "NO_1962_MISSAL_ASSERTION",
+      "access_status": "CURRENT_VISITOR_HOURS_NOT_ASSERTED"
+    },
+    {
+      "place_id": "place:VI:saints-peter-paul-cathedral-charlotte-amalie",
+      "research_id": "AO-R82-DISC-067",
+      "country": "VI",
+      "name": "Saints Peter and Paul Cathedral, Charlotte Amalie",
+      "place_type": "cathedral",
+      "city": "Charlotte Amalie",
+      "formatted": "Kronprindsens Gade, Charlotte Amalie, St Thomas, U.S. Virgin Islands",
+      "lat": 18.34114,
+      "lng": -64.93668,
+      "geo_source_url": "https://www.openstreetmap.org/way/522510228",
+      "geo_source_ref": "osm:way:522510228",
+      "identity_source_url": "https://cathedralvi.org/contact-us",
+      "identity_source_issuer": "Saints Peter and Paul Cathedral, Diocese of St Thomas",
+      "identity_source_directness": "OFFICIAL_CHURCH",
+      "geometry_note": "Parish's original contact page identifies the current cathedral at Kronprindsens Gade; OSM church way distinguished from adjacent high school.",
+      "source_ids": [
+        "AO-R91-SITE-AO-R82-DISC-067",
+        "AO-R91-GEO-AO-R82-DISC-067"
+      ],
+      "tlm_status": "NO_1962_MISSAL_ASSERTION",
+      "access_status": "CURRENT_VISITOR_HOURS_NOT_ASSERTED"
+    },
+    {
+      "place_id": "place:MP:our-lady-mount-carmel-cathedral-saipan",
+      "research_id": "AO-R82-DISC-091",
+      "country": "MP",
+      "name": "Our Lady of Mount Carmel Cathedral, Saipan",
+      "place_type": "cathedral",
+      "city": "Chalan Kanoa",
+      "formatted": "Chalan Kanoa, Saipan, Northern Mariana Islands",
+      "lat": 15.15117,
+      "lng": 145.70248,
+      "geo_source_url": "https://www.openstreetmap.org/way/345101524",
+      "geo_source_ref": "osm:way:345101524",
+      "identity_source_url": "https://rcdck.org/parishes/mountcarmelcathedralsaipan/",
+      "identity_source_issuer": "Roman Catholic Diocese of Chalan Kanoa",
+      "identity_source_directness": "OFFICIAL_DIOCESAN",
+      "geometry_note": "Diocese confirms post-war cathedral in Chalan Kanoa; not same physical site as pre-1944 church in Garapan. OSM site not verified entryway.",
+      "source_ids": [
+        "AO-R91-SITE-AO-R82-DISC-091",
+        "AO-R91-GEO-AO-R82-DISC-091"
+      ],
+      "tlm_status": "NO_1962_MISSAL_ASSERTION",
+      "access_status": "CURRENT_VISITOR_HOURS_NOT_ASSERTED"
+    },
+    {
+      "place_id": "place:JM:holy-trinity-cathedral-kingston",
+      "research_id": "AO-R82-DISC-069",
+      "country": "JM",
+      "name": "Holy Trinity Cathedral, Kingston",
+      "place_type": "cathedral",
+      "city": "Kingston",
+      "formatted": "1 Emerald Road / North Street, Kingston, Jamaica",
+      "lat": 17.97535,
+      "lng": -76.7842,
+      "geo_source_url": "https://www.openstreetmap.org/way/296160942",
+      "geo_source_ref": "osm:way:296160942",
+      "identity_source_url": "https://archdioceseofkingston.org/article",
+      "identity_source_issuer": "Roman Catholic Archdiocese of Kingston in Jamaica",
+      "identity_source_directness": "OFFICIAL_DIOCESAN",
+      "geometry_note": "Archdiocese documents continued cathedral usage/restoration, named site in Kingston; old Holy Trinity church demolished 1907 is a different historical physical place.",
+      "source_ids": [
+        "AO-R91-SITE-AO-R82-DISC-069",
+        "AO-R91-GEO-AO-R82-DISC-069"
+      ],
+      "tlm_status": "NO_1962_MISSAL_ASSERTION",
+      "access_status": "CURRENT_VISITOR_HOURS_NOT_ASSERTED"
+    },
+    {
+      "place_id": "place:CW:queen-holy-rosary-cathedral-willemstad",
+      "research_id": "AO-R82-DISC-065",
+      "country": "CW",
+      "name": "Queen of the Most Holy Rosary Cathedral, Pietermaai",
+      "place_type": "cathedral",
+      "city": "Willemstad",
+      "formatted": "Pietermaai, Willemstad, Curaçao",
+      "lat": 12.10311,
+      "lng": -68.92465,
+      "geo_source_url": "https://www.openstreetmap.org/way/371810812",
+      "geo_source_ref": "osm:way:371810812",
+      "identity_source_url": "https://diocesewillemstad.com/",
+      "identity_source_issuer": "Roman Catholic Diocese of Willemstad",
+      "identity_source_directness": "OFFICIAL_DIOCESAN",
+      "geometry_note": "Diocese homepage explicitly names cathedral at Pietermaai; named OSM cathedral is distinct from nearby Chapter Klooster and other churches.",
+      "source_ids": [
+        "AO-R91-SITE-AO-R82-DISC-065",
+        "AO-R91-GEO-AO-R82-DISC-065"
+      ],
+      "tlm_status": "NO_1962_MISSAL_ASSERTION",
+      "access_status": "CURRENT_VISITOR_HOURS_NOT_ASSERTED"
+    },
+    {
+      "place_id": "place:VC:assumption-cathedral-kingstown",
+      "research_id": "AO-R82-DISC-057",
+      "country": "VC",
+      "name": "Cathedral of the Assumption, Kingstown",
+      "place_type": "cathedral",
+      "city": "Kingstown",
+      "formatted": "Kingstown, Saint Vincent and the Grenadines",
+      "lat": 13.15761,
+      "lng": -61.22904,
+      "geo_source_url": "https://www.openstreetmap.org/way/386076226",
+      "geo_source_ref": "osm:way:386076226",
+      "identity_source_url": "https://catholicsvg.org/cathedral-of-the-assumption-parish/",
+      "identity_source_issuer": "Roman Catholic Diocese of Kingstown",
+      "identity_source_directness": "OFFICIAL_DIOCESAN",
+      "geometry_note": "Official diocesan parish gives cathedral continuity since 1823 and 1990 diocesan elevation; do not conflate neighboring Anglican St George's Cathedral.",
+      "source_ids": [
+        "AO-R91-SITE-AO-R82-DISC-057",
+        "AO-R91-GEO-AO-R82-DISC-057"
+      ],
+      "tlm_status": "NO_1962_MISSAL_ASSERTION",
+      "access_status": "CURRENT_VISITOR_HOURS_NOT_ASSERTED"
+    },
+    {
+      "place_id": "place:AG:holy-family-cathedral-st-johns",
+      "research_id": "AO-R82-DISC-049",
+      "country": "AG",
+      "name": "Holy Family Cathedral, St John's",
+      "place_type": "cathedral",
+      "city": "St John's",
+      "formatted": "Michael's Mount, St John's, Antigua and Barbuda",
+      "lat": 17.11656,
+      "lng": -61.83752,
+      "geo_source_url": "https://www.openstreetmap.org/way/150145638",
+      "geo_source_ref": "osm:way:150145638",
+      "identity_source_url": "https://diocesesjb.org/places/",
+      "identity_source_issuer": "Roman Catholic Diocese of St John's–Basseterre",
+      "identity_source_directness": "OFFICIAL_DIOCESAN",
+      "geometry_note": "Diocesan Places page confirms Holy Family Cathedral at Michael's Mount; OSM building is distinct from Anglican St John's Cathedral farther northwest.",
+      "source_ids": [
+        "AO-R91-SITE-AO-R82-DISC-049",
+        "AO-R91-GEO-AO-R82-DISC-049"
+      ],
+      "tlm_status": "NO_1962_MISSAL_ASSERTION",
+      "access_status": "CURRENT_VISITOR_HOURS_NOT_ASSERTED"
+    },
+    {
+      "place_id": "place:SL:sacred-heart-cathedral-freetown",
+      "research_id": "R91-NEW-SL-001",
+      "country": "SL",
+      "name": "Sacred Heart Cathedral, Freetown",
+      "place_type": "cathedral",
+      "city": "Freetown",
+      "formatted": "Howe Street, Freetown, Sierra Leone",
+      "lat": 8.48949,
+      "lng": -13.2332,
+      "geo_source_url": "https://www.openstreetmap.org/way/177518789",
+      "geo_source_ref": "osm:way:177518789",
+      "identity_source_url": "https://www.catholicchurchsl.org/ncd.php",
+      "identity_source_issuer": "Catholic Bishops' Conference of The Gambia and Sierra Leone",
+      "identity_source_directness": "OFFICIAL_DIOCESAN",
+      "geometry_note": "National Catholic database explicitly lists Freetown Sacred Heart Cathedral; distinctive church building named in OSM.",
+      "source_ids": [
+        "AO-R91-SITE-R91-NEW-SL-001",
+        "AO-R91-GEO-R91-NEW-SL-001"
+      ],
+      "tlm_status": "NO_1962_MISSAL_ASSERTION",
+      "access_status": "CURRENT_VISITOR_HOURS_NOT_ASSERTED"
+    }
+  ],
+  "held": [
+    {
+      "research_id": "AO-R82-DISC-040",
+      "country": "AO",
+      "reason": "Institutional archdiocesan Sé Catedral source and mapped Nossa Senhora dos Remédios cathedral may designate distinct churches; requires exact title continuity."
+    },
+    {
+      "research_id": "AO-R82-DISC-033",
+      "country": "SZ",
+      "reason": "Manzini Diocese official street-level Cathedral identified but available feature marked only Catholic, not confidently the cathedral; exact building pin remains pending."
+    },
+    {
+      "research_id": "AO-R82-DISC-046",
+      "country": "MW",
+      "reason": "Maula Cathedral official parish confirmed but older archdiocesan relocation proposal complicates title and map pin; named building-level OSM geometry missing."
+    },
+    {
+      "research_id": "AO-R82-DISC-071",
+      "country": "BS",
+      "reason": "Nassau St Francis Xavier original parish identity confirmed; no uniquely identified church OSM feature, despite nearby Anglican cathedral/other buildings."
+    },
+    {
+      "research_id": "AO-R82-DISC-052",
+      "country": "DM",
+      "reason": "Roseau diocese confirms Cathedral Our Lady Fair Haven but no independently verified Catholic cathedral church footprint."
+    }
+  ],
+  "tlm_venue_links_added": 0,
+  "related_shrine_records_added": 0,
+  "osm_license": "© OpenStreetMap contributors, Open Database License 1.0; building feature centroids not surveyed visitor entrances."
+}

@@ -1862,6 +1862,198 @@
       "codes": {
         "iso_alpha2": "LC"
       }
+    },
+    {
+      "geo_area_id": "geo:country:MG",
+      "name": {
+        "official": "Madagascar",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "MG"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:LS",
+      "name": {
+        "official": "Lesotho",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "LS"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:ZW",
+      "name": {
+        "official": "Zimbabwe",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "ZW"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:MQ",
+      "name": {
+        "official": "Martinique",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "MQ"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:GP",
+      "name": {
+        "official": "Guadeloupe",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "GP"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:VI",
+      "name": {
+        "official": "U.S. Virgin Islands",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "VI"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:MP",
+      "name": {
+        "official": "Northern Mariana Islands",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "MP"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:JM",
+      "name": {
+        "official": "Jamaica",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "JM"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:CW",
+      "name": {
+        "official": "Curaçao",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "CW"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:VC",
+      "name": {
+        "official": "Saint Vincent and the Grenadines",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "VC"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:AG",
+      "name": {
+        "official": "Antigua and Barbuda",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "AG"
+      }
+    },
+    {
+      "geo_area_id": "geo:country:SL",
+      "name": {
+        "official": "Sierra Leone",
+        "aliases": []
+      },
+      "area_system": "CIVIL",
+      "area_type": "country",
+      "parent_geo_area_ids": [
+        "geo:world"
+      ],
+      "mappable": true,
+      "codes": {
+        "iso_alpha2": "SL"
+      }
     }
   ],
   "places": [
@@ -13955,6 +14147,450 @@
       "source_ids": [
         "AO-R90-SITE-AO-R82-DISC-055",
         "AO-R90-GEO-AO-R82-DISC-055"
+      ]
+    },
+    {
+      "place_id": "place:MG:immaculate-conception-cathedral-andohalo",
+      "name": {
+        "official": "Cathédrale de l'Immaculée-Conception, Andohalo",
+        "aliases": []
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:MG"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": -18.91786,
+        "lng": 47.53067,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/511204750",
+        "source_ref": "osm:way:511204750",
+        "matched_country_code": "MG",
+        "verified_at": "2026-10-20",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Antananarivo",
+        "region": null,
+        "country_code": "MG",
+        "country": "Madagascar",
+        "formatted": "Andohalo, Antananarivo, Madagascar"
+      },
+      "source_ids": [
+        "AO-R91-SITE-AO-R82-DISC-024",
+        "AO-R91-GEO-AO-R82-DISC-024"
+      ]
+    },
+    {
+      "place_id": "place:LS:our-lady-victories-cathedral-maseru",
+      "name": {
+        "official": "Cathedral of Our Lady of Victories, Maseru",
+        "aliases": []
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:LS"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": -29.317,
+        "lng": 27.49493,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/295032311",
+        "source_ref": "osm:way:295032311",
+        "matched_country_code": "LS",
+        "verified_at": "2026-10-20",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Maseru",
+        "region": null,
+        "country_code": "LS",
+        "country": "Lesotho",
+        "formatted": "Maseru, Lesotho"
+      },
+      "source_ids": [
+        "AO-R91-SITE-AO-R82-DISC-028",
+        "AO-R91-GEO-AO-R82-DISC-028"
+      ]
+    },
+    {
+      "place_id": "place:ZW:sacred-heart-cathedral-harare",
+      "name": {
+        "official": "Sacred Heart Cathedral, Harare",
+        "aliases": []
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:ZW"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": -17.82098,
+        "lng": 31.0532,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/363592914",
+        "source_ref": "osm:way:363592914",
+        "matched_country_code": "ZW",
+        "verified_at": "2026-10-20",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Harare",
+        "region": null,
+        "country_code": "ZW",
+        "country": "Zimbabwe",
+        "formatted": "Fourth Street, Harare, Zimbabwe"
+      },
+      "source_ids": [
+        "AO-R91-SITE-AO-R82-DISC-029",
+        "AO-R91-GEO-AO-R82-DISC-029"
+      ]
+    },
+    {
+      "place_id": "place:MQ:cathedrale-saint-louis-fort-de-france",
+      "name": {
+        "official": "Cathédrale Saint-Louis, Fort-de-France",
+        "aliases": []
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:MQ"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 14.60427,
+        "lng": -61.06996,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/94884319",
+        "source_ref": "osm:way:94884319",
+        "matched_country_code": "MQ",
+        "verified_at": "2026-10-20",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Fort-de-France",
+        "region": null,
+        "country_code": "MQ",
+        "country": "Martinique",
+        "formatted": "Rue Victor Schœlcher, 97200 Fort-de-France, Martinique"
+      },
+      "source_ids": [
+        "AO-R91-SITE-AO-R82-DISC-061",
+        "AO-R91-GEO-AO-R82-DISC-061"
+      ]
+    },
+    {
+      "place_id": "place:GP:cathedrale-notre-dame-de-guadeloupe-basse-terre",
+      "name": {
+        "official": "Cathédrale Notre-Dame-de-Guadeloupe, Basse-Terre",
+        "aliases": []
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:GP"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 15.99554,
+        "lng": -61.72977,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/66439078",
+        "source_ref": "osm:way:66439078",
+        "matched_country_code": "GP",
+        "verified_at": "2026-10-20",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Basse-Terre",
+        "region": null,
+        "country_code": "GP",
+        "country": "Guadeloupe",
+        "formatted": "Place Saint-François, 97100 Basse-Terre, Guadeloupe"
+      },
+      "source_ids": [
+        "AO-R91-SITE-AO-R82-DISC-063",
+        "AO-R91-GEO-AO-R82-DISC-063"
+      ]
+    },
+    {
+      "place_id": "place:VI:saints-peter-paul-cathedral-charlotte-amalie",
+      "name": {
+        "official": "Saints Peter and Paul Cathedral, Charlotte Amalie",
+        "aliases": []
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:VI"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 18.34114,
+        "lng": -64.93668,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/522510228",
+        "source_ref": "osm:way:522510228",
+        "matched_country_code": "VI",
+        "verified_at": "2026-10-20",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Charlotte Amalie",
+        "region": null,
+        "country_code": "VI",
+        "country": "U.S. Virgin Islands",
+        "formatted": "Kronprindsens Gade, Charlotte Amalie, St Thomas, U.S. Virgin Islands"
+      },
+      "source_ids": [
+        "AO-R91-SITE-AO-R82-DISC-067",
+        "AO-R91-GEO-AO-R82-DISC-067"
+      ]
+    },
+    {
+      "place_id": "place:MP:our-lady-mount-carmel-cathedral-saipan",
+      "name": {
+        "official": "Our Lady of Mount Carmel Cathedral, Saipan",
+        "aliases": []
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:MP"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 15.15117,
+        "lng": 145.70248,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/345101524",
+        "source_ref": "osm:way:345101524",
+        "matched_country_code": "MP",
+        "verified_at": "2026-10-20",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Chalan Kanoa",
+        "region": null,
+        "country_code": "MP",
+        "country": "Northern Mariana Islands",
+        "formatted": "Chalan Kanoa, Saipan, Northern Mariana Islands"
+      },
+      "source_ids": [
+        "AO-R91-SITE-AO-R82-DISC-091",
+        "AO-R91-GEO-AO-R82-DISC-091"
+      ]
+    },
+    {
+      "place_id": "place:JM:holy-trinity-cathedral-kingston",
+      "name": {
+        "official": "Holy Trinity Cathedral, Kingston",
+        "aliases": []
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:JM"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 17.97535,
+        "lng": -76.7842,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/296160942",
+        "source_ref": "osm:way:296160942",
+        "matched_country_code": "JM",
+        "verified_at": "2026-10-20",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Kingston",
+        "region": null,
+        "country_code": "JM",
+        "country": "Jamaica",
+        "formatted": "1 Emerald Road / North Street, Kingston, Jamaica"
+      },
+      "source_ids": [
+        "AO-R91-SITE-AO-R82-DISC-069",
+        "AO-R91-GEO-AO-R82-DISC-069"
+      ]
+    },
+    {
+      "place_id": "place:CW:queen-holy-rosary-cathedral-willemstad",
+      "name": {
+        "official": "Queen of the Most Holy Rosary Cathedral, Pietermaai",
+        "aliases": []
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:CW"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 12.10311,
+        "lng": -68.92465,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/371810812",
+        "source_ref": "osm:way:371810812",
+        "matched_country_code": "CW",
+        "verified_at": "2026-10-20",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Willemstad",
+        "region": null,
+        "country_code": "CW",
+        "country": "Curaçao",
+        "formatted": "Pietermaai, Willemstad, Curaçao"
+      },
+      "source_ids": [
+        "AO-R91-SITE-AO-R82-DISC-065",
+        "AO-R91-GEO-AO-R82-DISC-065"
+      ]
+    },
+    {
+      "place_id": "place:VC:assumption-cathedral-kingstown",
+      "name": {
+        "official": "Cathedral of the Assumption, Kingstown",
+        "aliases": []
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:VC"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 13.15761,
+        "lng": -61.22904,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/386076226",
+        "source_ref": "osm:way:386076226",
+        "matched_country_code": "VC",
+        "verified_at": "2026-10-20",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Kingstown",
+        "region": null,
+        "country_code": "VC",
+        "country": "Saint Vincent and the Grenadines",
+        "formatted": "Kingstown, Saint Vincent and the Grenadines"
+      },
+      "source_ids": [
+        "AO-R91-SITE-AO-R82-DISC-057",
+        "AO-R91-GEO-AO-R82-DISC-057"
+      ]
+    },
+    {
+      "place_id": "place:AG:holy-family-cathedral-st-johns",
+      "name": {
+        "official": "Holy Family Cathedral, St John's",
+        "aliases": []
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:AG"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 17.11656,
+        "lng": -61.83752,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/150145638",
+        "source_ref": "osm:way:150145638",
+        "matched_country_code": "AG",
+        "verified_at": "2026-10-20",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "St John's",
+        "region": null,
+        "country_code": "AG",
+        "country": "Antigua and Barbuda",
+        "formatted": "Michael's Mount, St John's, Antigua and Barbuda"
+      },
+      "source_ids": [
+        "AO-R91-SITE-AO-R82-DISC-049",
+        "AO-R91-GEO-AO-R82-DISC-049"
+      ]
+    },
+    {
+      "place_id": "place:SL:sacred-heart-cathedral-freetown",
+      "name": {
+        "official": "Sacred Heart Cathedral, Freetown",
+        "aliases": []
+      },
+      "place_type": "cathedral",
+      "geo_area_ids": [
+        "geo:country:SL"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 8.48949,
+        "lng": -13.2332,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/177518789",
+        "source_ref": "osm:way:177518789",
+        "matched_country_code": "SL",
+        "verified_at": "2026-10-20",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0"
+      },
+      "address": {
+        "line1": null,
+        "line2": null,
+        "postal_code": null,
+        "city": "Freetown",
+        "region": null,
+        "country_code": "SL",
+        "country": "Sierra Leone",
+        "formatted": "Howe Street, Freetown, Sierra Leone"
+      },
+      "source_ids": [
+        "AO-R91-SITE-R91-NEW-SL-001",
+        "AO-R91-GEO-R91-NEW-SL-001"
       ]
     }
   ],
