@@ -10,7 +10,8 @@
     "neverAutoPublish": true,
     "neverAssumeCandidatePhotoIsUserApproved": true,
     "requiresExactOriginal": true,
-    "requiresCanonicalGospelAndPhoneQA": true
+    "requiresCanonicalGospelAndPhoneQA": true,
+    "excludePradoMediaIncludingThirdPartyMirrors": true
   },
   "works": [
     {
@@ -21,12 +22,18 @@
       "artist": "Peter Paul Rubens",
       "title": "Adoration of the Magi",
       "sourceObjectUrl": "https://www.museodelprado.es/en/the-collection/art-work/adoration-of-the-magi/b6440da1-0c0c-4ead-84b7-f5a017e2fd17",
-      "sourceKind": "COMMONS_PUBLIC_DOMAIN_ART_SOURCE_FOR_TECHNICAL_STAGING",
-      "note": "Commons file explicitly identifies Rubens Prado P001638 and links exact Prado object b6440da1; reported original 3051x2131px. Still needs source/photo and mobile QA before release.",
-      "provider": "WIKIMEDIA_COMMONS_PD_ART",
+      "sourceKind": "HOLD_PRADO_SOURCE_POLICY",
+      "note": "Prado-associated reproduction excluded by user's 2026-10-20 instruction; preserve approved artwork but do not fetch museum/Commons/mirror pixels.",
+      "provider": null,
       "commonsTitle": "File:La adoración de los Reyes Magos (Rubens, Prado).jpg",
       "verifiedMuseumAccession": "P001638",
-      "filePageUrl": "https://commons.wikimedia.org/wiki/File:La_adoraci%C3%B3n_de_los_Reyes_Magos_(Rubens,_Prado).jpg"
+      "filePageUrl": "https://commons.wikimedia.org/wiki/File:La_adoraci%C3%B3n_de_los_Reyes_Magos_(Rubens,_Prado).jpg",
+      "sourcePolicy": {
+        "status": "HOLD_PRADO_SOURCE_POLICY",
+        "noFetch": true,
+        "noPromotion": true,
+        "appliesToMirrorsAndCommons": true
+      }
     },
     {
       "artworkId": "ART-hilippe-de-hampaigne-he-nnunciation",
