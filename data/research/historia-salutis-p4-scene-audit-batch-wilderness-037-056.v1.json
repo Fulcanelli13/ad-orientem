@@ -1,0 +1,442 @@
+{
+  "schema": "ao.historia.p4.scene-audit.batch.v1",
+  "status": "RESEARCH_ONLY_NOT_PRODUCTION_CERTIFIED",
+  "createdOn": "2026-10-21",
+  "batch": "Wilderness, Sinai and Jordan scenes indices 37–56 derived from registry JSON",
+  "inputs": [
+    "data/explore/biblical-cinematic-studies-review.v1.json",
+    "data/scripture/witness/cpdv-2009/{Exodus,Numbers,Deuteronomy,Joshua}.json",
+    "data/explore/historia-salutis-p0-master-crosswalk.v1.json"
+  ],
+  "policy": {
+    "canonicalAtlasEventsUnchanged": true,
+    "coordinatesAdded": false,
+    "baselineAtlasClassificationsPreserved": true,
+    "canonicalScriptureChanged": false
+  },
+  "reviewedSceneCount": 20,
+  "sceneKeys": [
+    "biblical:scene:moses:037",
+    "biblical:scene:moses:038",
+    "biblical:scene:moses:039",
+    "biblical:scene:moses:040",
+    "biblical:scene:moses:041",
+    "biblical:scene:moses:042",
+    "biblical:scene:moses:043",
+    "biblical:scene:moses:044",
+    "biblical:scene:moses:045",
+    "biblical:scene:moses:046",
+    "biblical:scene:moses:047",
+    "biblical:scene:moses:048",
+    "biblical:scene:moses:049",
+    "biblical:scene:moses:050",
+    "biblical:scene:moses:051",
+    "biblical:scene:moses:052",
+    "biblical:scene:moses:053",
+    "biblical:scene:moses:054",
+    "biblical:scene:moses:055",
+    "biblical:scene:moses:056"
+  ],
+  "scenes": [
+    {
+      "sceneKey": "biblical:scene:moses:037",
+      "index": 37,
+      "reference": "Exodus 15:1–21",
+      "title": "The song of Moses and Miriam",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasLinks": [],
+      "personsExplicitOrCollective": "Moses, sons of Israel collectively, Miriam, women with timbrels",
+      "chronologyAndNarrativeFinding": "The song follows the sea deliverance in Ex 14 and includes both Moses/Israel's song (1–18) and Miriam's response (20–21); no location for performance is named. Keep the two song parts and do not label a specific shore.",
+      "geography": {
+        "claim": "UNLOCATED; Red Sea context is preceding event, not a precise song site.",
+        "classification": "REGIONAL_DISPUTED_OR_UNLOCATED",
+        "sources": []
+      },
+      "covenantAndGenealogy": "Deliverance song recalls patriarchal promise and anticipates sanctuary (15:13,17); no covenant enactment or genealogy.",
+      "auditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:038",
+      "index": 38,
+      "reference": "Exodus 15:22–27",
+      "title": "Bitter water made sweet",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasLinks": [],
+      "personsExplicitOrCollective": "Moses; Israel collectively; LORD",
+      "chronologyAndNarrativeFinding": "Ex 15:22–27 explicitly says Shur wilderness, Marah, then Elim after three days without water; these are sequential itinerary toponyms, but modern sites are unidentified. Keep the bitter-water event at Marah, not a generalized Sinai pin.",
+      "geography": {
+        "claim": "Shur, Marah, Elim exact textual names; exact modern locations unknown. Text says water at Elim and camp there.",
+        "classification": "REGIONAL_DISPUTED_OR_UNLOCATED",
+        "sources": []
+      },
+      "covenantAndGenealogy": "Post-Exodus testing and provision; no genealogy/covenant event.",
+      "auditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:039",
+      "index": 39,
+      "reference": "Exodus 16:1–36",
+      "title": "Bread from heaven",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:passage:exodus-16-1-36",
+          "reference": "Exodus 16:1–36",
+          "relation": "EXACT_REFERENCE"
+        }
+      ],
+      "personsExplicitOrCollective": "Moses, Aaron, LORD, Israelite congregation; Aaron's descendants mentioned in priestly handling only if text context includes them",
+      "chronologyAndNarrativeFinding": "Ex 16:1–36 places the episode in the wilderness of Sin between Elim and Sinai and dates it to the fifteenth day of the second month after departure (v1). Manna/quail, Sabbath instruction, and memorial jar are all integral; Atlas exact match stands.",
+      "geography": {
+        "claim": "Desert of Sin textual region between Elim and Sinai; no coordinates. Date and relative geography explicit.",
+        "classification": "TEXTUAL_REGION_OR_FEATURE",
+        "sources": []
+      },
+      "covenantAndGenealogy": "Provision and Sabbath instruction in covenant sequence; memorial jar for future generations (16:32–34).",
+      "auditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:040",
+      "index": 40,
+      "reference": "Exodus 17:1–7",
+      "title": "Water from the rock",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasLinks": [],
+      "personsExplicitOrCollective": "Moses, Israel collectively, LORD",
+      "chronologyAndNarrativeFinding": "Ex 17:1–7 locates camp at Rephidim; the water-from-rock event ends with Massah/Meribah naming and Israel's testing. Do not collapse it into the distinct Amalek battle that follows in vv8–16.",
+      "geography": {
+        "claim": "Rephidim and Massah/Meribah named; modern identification unknown; broad Sinai wilderness only from Exodus itinerary.",
+        "classification": "REGIONAL_DISPUTED_OR_UNLOCATED",
+        "sources": []
+      },
+      "covenantAndGenealogy": "Tests trust in LORD after manna; no formal covenant event.",
+      "auditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:041",
+      "index": 41,
+      "reference": "Exodus 17:8–16",
+      "title": "Battle against Amalek",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasLinks": [],
+      "personsExplicitOrCollective": "Joshua, Moses, Aaron, Hur, Amalek, Israelite fighters",
+      "chronologyAndNarrativeFinding": "Ex 17:8–16 follows the water scene at Rephidim; Joshua first appears as military commander, Moses raises hands with Aaron/Hur support, then altar is named. Verses do not identify Amalek's territory or battle coordinates.",
+      "geography": {
+        "claim": "Rephidim is itinerary context; battle position not separately specified. No exact marker.",
+        "classification": "TEXTUAL_REGION_OR_FEATURE",
+        "sources": []
+      },
+      "covenantAndGenealogy": "Joshua introduced; future leadership connection is narrative, not genealogy/covenant lineage.",
+      "auditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:042",
+      "index": 42,
+      "reference": "Exodus 18:13–27",
+      "title": "Jethro advises Moses",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasLinks": [],
+      "personsExplicitOrCollective": "Moses, Jethro (Moses' father-in-law); Israel collectively",
+      "chronologyAndNarrativeFinding": "Ex 18:13–27 is Jethro's counsel to Moses in the wilderness near the mountain of God (context 18:5); it follows Jethro's visit/offerings in vv1–12 and precedes Sinai covenant in ch19. Current excerpt omits counsel's cause and Jethro's departure after it.",
+      "geography": {
+        "claim": "At mountain of God by narrative context (18:5); the selected verses do not name mountain or camp. Region only.",
+        "classification": "TEXTUAL_REGION_OR_FEATURE",
+        "sources": []
+      },
+      "covenantAndGenealogy": "Institution of delegated judges before Sinai covenant; Moses/Jethro kinship is explicit; no genealogy list.",
+      "auditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:043",
+      "index": 43,
+      "reference": "Exodus 19:1–15",
+      "title": "At the mountain of God",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasLinks": [],
+      "personsExplicitOrCollective": "LORD, Moses, Israel collectively; elders in 19:7",
+      "chronologyAndNarrativeFinding": "Ex 19:1–15 says Israel reached wilderness of Sinai in month three and camped before the mountain; it includes covenant proposal, Israel's response, and preparation. Jebel Musa is traditional, but text names Sinai only.",
+      "geography": {
+        "claim": "Wilderness of Sinai/mountain named; Jebel Musa is traditional candidate. Identification disputed; no exact campsite.",
+        "classification": "REGIONAL_DISPUTED_OR_UNLOCATED",
+        "sources": [
+          "Scholarship on Sinai identification notes text does not securely locate the mountain; traditional Jebel Musa association should be tagged tradition."
+        ]
+      },
+      "covenantAndGenealogy": "Sinai covenant preparation; explicit call to be a kingdom of priests/holy nation (19:5–6).",
+      "auditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:044",
+      "index": 44,
+      "reference": "Exodus 20:1–17",
+      "title": "The Ten Commandments",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:passage:exodus-20-1-17",
+          "reference": "Exodus 20:1–17",
+          "relation": "EXACT_REFERENCE"
+        }
+      ],
+      "personsExplicitOrCollective": "LORD speaking; Israel addressed collectively",
+      "chronologyAndNarrativeFinding": "Ex 20:1–17 is the Decalogue speech at Sinai in immediate ch19 context; it begins with deliverance from Egypt and preserves all ten commands. Exact Atlas match does not establish an excavated speech location.",
+      "geography": {
+        "claim": "Sinai context exact at narrative level; modern mountain identification unresolved/traditional.",
+        "classification": "TEXTUAL_REGION_OR_FEATURE",
+        "sources": [
+          "Mount Sinai localization remains disputed; don't use Jebel Musa as exact without traditional-site label."
+        ]
+      },
+      "covenantAndGenealogy": "Foundational covenant stipulations; cv:sinai anchor. No genealogical content.",
+      "auditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:045",
+      "index": 45,
+      "reference": "Exodus 24:1–18",
+      "title": "The covenant is ratified",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasLinks": [],
+      "personsExplicitOrCollective": "Moses, Aaron, Nadab, Abihu, seventy elders, Israel; LORD",
+      "chronologyAndNarrativeFinding": "Ex 24:1–18 narrates elders' ascent, covenant blood reading/response, Moses' ascent, cloud and forty days. It is the ratification scene, not merely a summit image; selected text includes named participants Nadab/Abihu and seventy elders.",
+      "geography": {
+        "claim": "Sinai mountain/camp explicitly contextual; Jebel Musa traditional/disputed, precise altar/halfway point unknown.",
+        "classification": "REGIONAL_DISPUTED_OR_UNLOCATED",
+        "sources": [
+          "Traditional Jebel Musa cannot certify exact event location; academic discussion leaves identification open."
+        ]
+      },
+      "covenantAndGenealogy": "Explicit covenant ratification (24:7–8), cv:sinai; covenant blood central.",
+      "auditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:046",
+      "index": 46,
+      "reference": "Exodus 32:1–35",
+      "title": "The golden calf",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:passage:exodus-32-1-35",
+          "reference": "Exodus 32:1–35",
+          "relation": "EXACT_REFERENCE"
+        }
+      ],
+      "personsExplicitOrCollective": "Israel collectively, Aaron, Moses, LORD, sons of Levi; about three thousand men in v28",
+      "chronologyAndNarrativeFinding": "Ex 32:1–35 occurs while Moses delays on mountain; calf-making, Moses' intercession, tablets broken, Levites' action, and plague form a complete causal/theological unit. The exact Atlas passage match stands; location still narrative Sinai context.",
+      "geography": {
+        "claim": "Camp at foot of Sinai/mountain context; modern peak traditional/disputed. No point-level camp location.",
+        "classification": "REGIONAL_DISPUTED_OR_UNLOCATED",
+        "sources": [
+          "https://kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART002159339"
+        ]
+      },
+      "covenantAndGenealogy": "Covenant breach and renewal need; links to cv:sinai. Aaron/Levites are priestly group but do not infer individual identities.",
+      "auditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:047",
+      "index": 47,
+      "reference": "Exodus 34:1–35",
+      "title": "The second tablets",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasLinks": [],
+      "personsExplicitOrCollective": "LORD, Moses, Israel addressed; no other named persons in selected text",
+      "chronologyAndNarrativeFinding": "Ex 34:1–35 narrates renewed tablets, Moses' ascent, covenant proclamation, forty days, and radiant face; complete episode includes return and veil. It is not an independent second mountain site.",
+      "geography": {
+        "claim": "Mount Sinai explicit in v2; Jebel Musa remains traditional candidate, modern identification disputed.",
+        "classification": "REGIONAL_DISPUTED_OR_UNLOCATED",
+        "sources": [
+          "https://kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART002159339"
+        ]
+      },
+      "covenantAndGenealogy": "Covenant renewal after calf (34:10 onward); cv:sinai. Moses as mediator, not genealogy.",
+      "auditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:048",
+      "index": 48,
+      "reference": "Exodus 40:1–38",
+      "title": "The Tabernacle is erected",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:passage:exodus-40-1-38",
+          "reference": "Exodus 40:1–38",
+          "relation": "EXACT_REFERENCE"
+        }
+      ],
+      "personsExplicitOrCollective": "Moses, LORD; Israel collectively; named craftspeople are not actors in this span",
+      "chronologyAndNarrativeFinding": "Ex 40:1–38 tells tabernacle erection on first day of first month in year two, then cloud/glory fills it. Text's location is wilderness camp at Sinai by Exodus narrative, not Jebel Musa summit. Exact Atlas match covers full chapter.",
+      "geography": {
+        "claim": "Sinai wilderness narrative context; camp layout not precisely mapped.",
+        "classification": "REGIONAL_DISPUTED_OR_UNLOCATED",
+        "sources": []
+      },
+      "covenantAndGenealogy": "Tabernacle as covenant worship center; cloud guides departure. cv:sinai context.",
+      "auditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:049",
+      "index": 49,
+      "reference": "Numbers 10:11–36",
+      "title": "Departure from Sinai",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasLinks": [],
+      "personsExplicitOrCollective": "Moses, Hobab, Israel by tribal companies; cloud/ark",
+      "chronologyAndNarrativeFinding": "Num 10:11–36 gives dated departure from Sinai in second year, second month, twentieth day, followed by tribal order, Hobab request and ark formula. 'Wilderness of Paran' is where the cloud rests in v12; not route coordinates.",
+      "geography": {
+        "claim": "Sinai departure and Paran destination named; route between them unspecified. Avoid drawn path as historical route.",
+        "classification": "REGIONAL_DISPUTED_OR_UNLOCATED",
+        "sources": []
+      },
+      "covenantAndGenealogy": "Tribal organization and covenant ark; Hobab relation by marriage/family role, genealogy not provided.",
+      "auditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:050",
+      "index": 50,
+      "reference": "Numbers 13:1–33",
+      "title": "The twelve spies",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasLinks": [],
+      "personsExplicitOrCollective": "Moses; twelve named tribal scouts (including Caleb and Hoshea/Joshua); Anakim and inhabitants collectively",
+      "chronologyAndNarrativeFinding": "Num 13:1–33 sends twelve leaders from Paran to scout Canaan; the excerpt names many land regions and the return to camp, with Caleb/Joshua differentiated. Kadesh-Barnea is not named in 13:1–33 itself, though 13:26 identifies the returned location as Kadesh (full chapter text).",
+      "geography": {
+        "claim": "Desert of Paran and multiple visited regions named; Kadesh appears at v26. Modern Kadesh candidate Tell el-Qudeirat is proposed, not certain point for all route.",
+        "classification": "TEXTUAL_REGION_OR_FEATURE",
+        "sources": [
+          "Tell el-Qudeirat is a leading archaeological candidate for Kadesh-Barnea, but this is an identification claim, not a scene coordinate."
+        ]
+      },
+      "covenantAndGenealogy": "Tribal representatives; Caleb/Joshua continuity; no covenant act.",
+      "auditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:051",
+      "index": 51,
+      "reference": "Numbers 14:1–38",
+      "title": "Forty years in the wilderness",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasLinks": [],
+      "personsExplicitOrCollective": "Israelite congregation, Moses, Aaron, LORD, Caleb, Joshua",
+      "chronologyAndNarrativeFinding": "Num 14:1–38 follows the scouts' report and records rebellion, Moses' intercession, judgment, and Caleb/Joshua spared. It starts after the report; as a standalone scene it needs that cause (Num 13:25–33) in reader context. Kadesh location is established by prior 13:26, not in these verses.",
+      "geography": {
+        "claim": "Kadesh-Barnea contextual from Num 13:26; broad proposed region, modern identification debated.",
+        "classification": "TEXTUAL_REGION_OR_FEATURE",
+        "sources": [
+          "Tell el-Qudeirat is a leading candidate for Kadesh-Barnea; do not encode exact event coordinate."
+        ]
+      },
+      "covenantAndGenealogy": "Wilderness judgment shapes generational transition; Caleb and Joshua alone from scouting generation survive (14:30,38). Covenant promise to land contested by rebellion.",
+      "auditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:052",
+      "index": 52,
+      "reference": "Numbers 21:4–9",
+      "title": "The bronze serpent",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasLinks": [],
+      "personsExplicitOrCollective": "Israel collectively, Moses, LORD",
+      "chronologyAndNarrativeFinding": "Num 21:4–9 places the episode on the route from Mount Hor by way to Red Sea while circling Edom. The bronze serpent is made after complaint and deadly serpents; it should not be relocated to Sinai just because of the registry label.",
+      "geography": {
+        "claim": "Text gives route toward Red Sea around Edom, no named camp in these verses; Edom is regional context, precise place unknown.",
+        "classification": "REGIONAL_DISPUTED_OR_UNLOCATED",
+        "sources": []
+      },
+      "covenantAndGenealogy": "Moses mediates healing; no covenant/genealogy event.",
+      "auditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:053",
+      "index": 53,
+      "reference": "Numbers 22:1–24:25",
+      "title": "Balaam and Balak",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasLinks": [],
+      "personsExplicitOrCollective": "Balak, Balaam, messengers, LORD, angel, donkey, Israel collectively",
+      "chronologyAndNarrativeFinding": "Num 22:1–24:25 is a multi-day, multi-location narrative: Israel camps in plains of Moab across Jordan from Jericho; Balak sends messengers to Balaam at Pethor; Balaam travels; sacrifices and oracles occur at multiple high places. A single point in Jordan Valley obscures route and event geography.",
+      "geography": {
+        "claim": "Plains of Moab and Pethor named; multiple altars/high places unnamed in modern geography. Regional route only; not one point.",
+        "classification": "TEXTUAL_REGION_OR_FEATURE",
+        "sources": []
+      },
+      "covenantAndGenealogy": "Balaam's oracle includes promise to Israel and future ruler imagery (24:17); no genealogical identification of star figure within scene.",
+      "auditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:054",
+      "index": 54,
+      "reference": "Deuteronomy 6:4–25",
+      "title": "Moses addresses Israel",
+      "baselineAtlasStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "atlasLinks": [],
+      "personsExplicitOrCollective": "Moses speaking; Israel addressed; children/households in instruction",
+      "chronologyAndNarrativeFinding": "Deut 6:4–25 is Moses' covenant exhortation to Israel, with Shema, love command, teaching children and future memory. The book's framing places Moses' speeches beyond Jordan in Moab (Deut 1:1–5), but selected verses do not name a specific camp or platform.",
+      "geography": {
+        "claim": "Plains of Moab is literary frame, not verse-specific local coordinate; no point location.",
+        "classification": "TEXTUAL_REGION_OR_FEATURE",
+        "sources": []
+      },
+      "covenantAndGenealogy": "Covenant loyalty, household transmission; no lineage list. Preserve the Shema and full command as theological core.",
+      "auditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:055",
+      "index": 55,
+      "reference": "Deuteronomy 34:1–8",
+      "title": "The view from Mount Nebo",
+      "baselineAtlasStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:passage:deuteronomy-34-1-6",
+          "reference": "Deuteronomy 34:1–6",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY"
+        }
+      ],
+      "personsExplicitOrCollective": "Moses, LORD; Israel collectively mourns; Joshua appears in v9 outside selection",
+      "chronologyAndNarrativeFinding": "Deut 34:1–8 includes Moses' view from Nebo/Pisgah opposite Jericho, his death, burial by God in Moab, mourning, and Joshua's succession (vv9 onward outside span). Registry title is too narrow; Atlas candidate covers only vv1–6, so keep overlap-only. Traditional Nebo identification, not exact viewpoint.",
+      "geography": {
+        "claim": "Mount Nebo/Pisgah textual names, opposite Jericho; exact summit/viewpoint and burial place unknown. Modern Mount Nebo association traditional.",
+        "classification": "REGIONAL_DISPUTED_OR_UNLOCATED",
+        "sources": [
+          "Mount Nebo is a longstanding pilgrimage/traditional site; does not prove exact biblical viewpoint or burial site."
+        ]
+      },
+      "covenantAndGenealogy": "Moses' death transitions to Joshua; Deut 34:9+ gives succession, but scene ends before it. Covenant leadership succession and tribal inheritance frame, no genealogy.",
+      "auditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:056",
+      "index": 56,
+      "reference": "Joshua 3:1–17",
+      "title": "Joshua leads the crossing",
+      "baselineAtlasStatus": "EXACT_REFERENCE",
+      "atlasLinks": [
+        {
+          "atlasEventKey": "biblical:passage:joshua-3-1-17",
+          "reference": "Joshua 3:1–17",
+          "relation": "EXACT_REFERENCE"
+        }
+      ],
+      "personsExplicitOrCollective": "Joshua, officers, priests bearing ark, Israel collectively; LORD",
+      "chronologyAndNarrativeFinding": "Josh 3:1–17 starts at Shittim, reaches Jordan, and crosses opposite Jericho; priests bearing ark stand in river while people cross. The scene's title says Joshua leads, but Joshua mostly gives instructions; officers, priests and people enact crossing. Exact Atlas match correct.",
+      "geography": {
+        "claim": "Shittim, Jordan, opposite Jericho exact textual sequence; specific ford/crossing point not given. Jericho settlement region, not town-center pin.",
+        "classification": "REGIONAL_DISPUTED_OR_UNLOCATED",
+        "sources": [
+          "Scholarly treatment of Josh 3–4 highlights narrative shaping and ford conditions; don't infer one exact archaeological crossing point."
+        ]
+      },
+      "covenantAndGenealogy": "Ark of covenant central; transition from Moses to Joshua (Josh 1–3); tribal/genealogical relationships not in selected unit.",
+      "auditStatus": "SOURCE_REVIEWED_RESEARCH_ONLY"
+    }
+  ],
+  "openQuestions": [
+    "Jebel Musa remains a traditional, disputed identification for the biblical Sinai/Horeb; exact peak remains unsettled.",
+    "Tell el-Qudeirat is a candidate for Kadesh-Barnea; textual itinerary does not give modern coordinates.",
+    "The exact sea-crossing site and wilderness routes remain unlocated.",
+    "Deut 34 scene registry title and linked Atlas span underrepresent Moses' death/burial and do not include Joshua succession; maintain the scene passage boundary as cited and flag scope."
+  ]
+}
