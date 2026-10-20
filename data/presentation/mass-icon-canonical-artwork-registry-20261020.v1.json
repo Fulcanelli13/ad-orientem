@@ -1,6 +1,6 @@
 {
   "schema": "ao-mass-artwork-canonical-reconciliation-v1",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "generatedDate": "2026-10-20",
   "scope": "Mass-specific V4.6 donor bank, Mass-relevant core bank roles, modern 19 October candidate studies, reviewed/posture SVGs; excludes unrelated UI/module art",
   "releaseStatus": "RESEARCH_REVIEW_ONLY_NOT_LIVE",
@@ -3529,7 +3529,15 @@
       "sourceDecisionRefs": [
         "AO.ICONBANK.FINAL_COMPARISON.01"
       ],
-      "semanticUses": [],
+      "semanticUses": [
+        {
+          "cueId": "AO.SM.C0089",
+          "action": "INTONES CREDO",
+          "confirmedUserSelected": true,
+          "readerPresentationAlias": "review_priest_credo_chant",
+          "onlyReviewBranch": true
+        }
+      ],
       "flags": [
         "STAGED_REVIEW_ONLY_NOT_RUNTIME_ACTIVE"
       ],
@@ -3544,7 +3552,12 @@
         }
       ],
       "status": "APPROVED_VISUAL",
-      "sourceSha256": "e2247df3cdddf4abbebc5f334ae42eb35a7deb072ef4d863ca715c6b956f1980"
+      "sourceSha256": "e2247df3cdddf4abbebc5f334ae42eb35a7deb072ef4d863ca715c6b956f1980",
+      "runtimeReviewBinding": {
+        "alias": "review_priest_credo_chant",
+        "sourceCueId": "AO.SM.C0089",
+        "status": "BRANCH_ONLY_NOT_RELEASED"
+      }
     },
     {
       "id": "AO.ICON.STUDY.20261019.ao_sign_of_cross",
@@ -3728,7 +3741,15 @@
         "AO.ICONBANK.SURVEY.B08",
         "AO.ICONBANK.FINAL_COMPARISON.01"
       ],
-      "semanticUses": [],
+      "semanticUses": [
+        {
+          "cueId": "AO.SM.C0234",
+          "action": "RECEIVES CHALICE",
+          "confirmedUserSelected": true,
+          "readerPresentationAlias": "review_priest_receive_chalice",
+          "onlyReviewBranch": true
+        }
+      ],
       "flags": [
         "STAGED_REVIEW_ONLY_NOT_RUNTIME_ACTIVE"
       ],
@@ -3752,7 +3773,12 @@
         }
       ],
       "status": "APPROVED_VISUAL",
-      "sourceSha256": "91b7c5ca554826cd81f75afca2572a6e43a22c12cb6c0ce25b6b37d8d42d245a"
+      "sourceSha256": "91b7c5ca554826cd81f75afca2572a6e43a22c12cb6c0ce25b6b37d8d42d245a",
+      "runtimeReviewBinding": {
+        "alias": "review_priest_receive_chalice",
+        "sourceCueId": "AO.SM.C0234",
+        "status": "BRANCH_ONLY_NOT_RELEASED"
+      }
     },
     {
       "id": "AO.ICON.STUDY.20261019.ao_purify_fingers",
@@ -4052,7 +4078,15 @@
       "sourceDecisionRefs": [
         "AO.ICONBANK.SURVEY.B08"
       ],
-      "semanticUses": [],
+      "semanticUses": [
+        {
+          "cueId": "AO.SM.C0216",
+          "action": "BREAKS HOST",
+          "confirmedUserSelected": true,
+          "readerPresentationAlias": "review_priest_fraction_host",
+          "onlyReviewBranch": true
+        }
+      ],
       "flags": [
         "STAGED_REVIEW_ONLY_NOT_RUNTIME_ACTIVE"
       ],
@@ -4068,7 +4102,12 @@
         }
       ],
       "status": "APPROVED_VISUAL",
-      "sourceSha256": "435debc00320983e57c2b923510d7c28228721ea9417c1eca988365ceda113f5"
+      "sourceSha256": "435debc00320983e57c2b923510d7c28228721ea9417c1eca988365ceda113f5",
+      "runtimeReviewBinding": {
+        "alias": "review_priest_fraction_host",
+        "sourceCueId": "AO.SM.C0216",
+        "status": "BRANCH_ONLY_NOT_RELEASED"
+      }
     },
     {
       "id": "AO.ICON.STUDY.20261019.ea_priest_commingling",
@@ -4084,7 +4123,15 @@
       "sourceDecisionRefs": [
         "AO.ICONBANK.SURVEY.B08"
       ],
-      "semanticUses": [],
+      "semanticUses": [
+        {
+          "cueId": "AO.SM.C0221",
+          "action": "PLACES PARTICLE",
+          "confirmedUserSelected": true,
+          "readerPresentationAlias": "review_priest_commingling",
+          "onlyReviewBranch": true
+        }
+      ],
       "flags": [
         "STAGED_REVIEW_ONLY_NOT_RUNTIME_ACTIVE"
       ],
@@ -4100,7 +4147,12 @@
         }
       ],
       "status": "APPROVED_VISUAL",
-      "sourceSha256": "143e4d0c3199193a25177a6d6a77735a935e16c2b72387c5dbe35ecbca88a4fa"
+      "sourceSha256": "143e4d0c3199193a25177a6d6a77735a935e16c2b72387c5dbe35ecbca88a4fa",
+      "runtimeReviewBinding": {
+        "alias": "review_priest_commingling",
+        "sourceCueId": "AO.SM.C0221",
+        "status": "BRANCH_ONLY_NOT_RELEASED"
+      }
     },
     {
       "id": "AO.ICON.STUDY.20261019.ea_priest_purifies_fingers",
@@ -4701,5 +4753,11 @@
   "notes": [
     "Corrected explicit prior approvals for priest opening Sign of Cross and Host Communion which automatic matching missed.",
     "Thirteen 19 October accepted modern SVG masters are now verified by exact Git blob SHA and staged under assets/review/mass-icon-candidates/recovered-20261020/."
-  ]
+  ],
+  "reviewBranchRemediation": {
+    "source": "data/presentation/mass-icon-runtime-binding-audit-20261020.v1.json",
+    "date": "2026-10-20",
+    "bindings": 4,
+    "hiddenWrongArt": 4
+  }
 }
