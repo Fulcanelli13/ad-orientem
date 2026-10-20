@@ -47,6 +47,10 @@ on:
       - 'data/learn/research/pius-x-46final-92turn-italian-review-20261020.v1.json'
       - 'data/learn/research/pius-x-source-bounded-bilingual-corrections-20261020.v1.json'
       - 'data/learn/research/pius-x-200answer-spx-chanoine-denzinger-crosswalk-20261020.v1.json'
+      - 'data/learn/research/pius-x-original-1905-print-page-ten-corrections-20261020.v1.json'
+      - 'data/learn/research/pius-x-chanoine-22-answer-aq04-aq05-eligibility-20261020.v1.json'
+      - 'data/learn/research/pius-x-eight-old-dz-number-print-facsimile-queue-20261020.v1.json'
+      - 'tests/pius-x-print-canon-denzinger-release-gate.mjs'
       - 'tests/pius-x-200turn-three-way-crosswalk.mjs'
       - 'tests/pius-x-bilingual-dialogue-choices.mjs'
       - 'tests/pius-x-20path-consolidation.mjs'
@@ -83,6 +87,26 @@ jobs:
       - run: node tests/pius-x-20path-consolidation.mjs
       - run: node tests/pius-x-bilingual-dialogue-choices.mjs
       - run: node tests/pius-x-200turn-three-way-crosswalk.mjs
+      - name: Stage exact P2 Apostolate owner for AQ04 and AQ05 (read-only)
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch --no-tags --depth=1 origin '0a920793bcdf40cc053ad0aff31132ade8185a33'
+          test "$(git rev-parse FETCH_HEAD)" = '0a920793bcdf40cc053ad0aff31132ade8185a33' || {
+            echo 'P2 source-owner changed: reconcile and repin before the SPX Canon gate' >&2
+            exit 1
+          }
+          for file in \
+            src/apostolate/corpus.js \
+            src/apostolate/contracts.js \
+            src/apostolate/source-registry.js \
+            src/learn/ask-church-source-digest.js
+          do
+            dest="research-out/pr1402-spx-owner/$file"
+            mkdir -p "$(dirname "$dest")"
+            git show "FETCH_HEAD:$file" > "$dest"
+          done
+      - run: node tests/pius-x-print-canon-denzinger-release-gate.mjs
       - run: node tests/pius-x-ten-conversation-content-pilot.mjs
       - run: node tests/pius-x-batch50-content-acceptance.mjs
       - run: node tests/pius-x-batch2-production-acceptance.mjs
