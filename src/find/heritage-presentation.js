@@ -165,7 +165,8 @@ export function renderHeritageToString(vm,{placeSheet,detailSheet,itemPreview,jo
   // MapCN's Store Locator rail shares the active canonical map and its
   // existing data-explore-open-place action. Hide it when a separate journey
   // has ownership or when the legacy search overlay is active.
-  if(!vm.journeyOpen&&!searching&&!arr(vm.nearby).length)html+=renderMapcnDiscoverRail(vm);
+  if(!vm.journeyOpen&&!searching&&!arr(vm.nearby).length&&!arr(vm.customCards).length&&!vm.filters?.highlightCustomId)
+    html+=renderMapcnDiscoverRail(vm);
   const customs=arr(vm.customCards);
   if(customs.length){
     html+='<div class="aoHeritageCustomStrip"><div class="aoHeritageStripHeading"><span>'+L(vm.language,"Living traditions","Traditions vivantes")+'</span>';
