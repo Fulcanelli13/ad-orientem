@@ -1,0 +1,122 @@
+{
+  "schema": "ao.historia.p4.movement-literary-review.batch.v1",
+  "status": "RESEARCH_ONLY_PROPOSED",
+  "createdOn": "2026-10-21",
+  "inputs": [
+    "data/research/historia-salutis-v18-continuous-reading-proof.v1.json",
+    "data/research/historia-salutis-v18-necessity-audit.v1.json",
+    "data/research/historia-salutis-v18-continuity-desk-pass.v1.json",
+    "data/scripture/witness/cpdv-2009/{Matthew,Mark,John}.json",
+    "data/scripture/witness/dr-challoner/{Matthew,Mark,John}.json",
+    "data/explore/biblical-pericope-comparative-full-master.v7.json"
+  ],
+  "reviewedMovementCount": 4,
+  "movements": [
+    {
+      "movementId": "HS-M20",
+      "decision": "PARTIAL_RESTORE",
+      "sourceRefs": [
+        "Matthew 3:1–17",
+        "Mark 1:14–15",
+        "John 1:35–51"
+      ],
+      "proposedRefs": [
+        "Matthew 3:1–17",
+        "Mark 1:14–15",
+        "John 1:29–51"
+      ],
+      "findings": [
+        "The current split Matthew 3:1–6, 11–17 removes 3:7–10, the direct continuation of John's call to repentance, including fruit worthy of repentance and warning against descent-only claims; restoring the source unit's continuous Matthew 3:1–17 is the smallest source-faithful repair and preserves the entire doctrinal warning.",
+        "John 1:35 opens 'the next day again'; John 1:29–34 is the immediately prior day's testimony, identifying Jesus as Lamb/Son and recounting John's Spirit sign. Add it before the already selected 1:35–51 so the relative-time phrase and disciples' recognition have their prior witness; keep this as John's independent testimony, not a harmonized baptism text.",
+        "Mark 1:14–15 begins after John's arrest, which the earlier selected Matthew account does not narrate. The temporal hinge is intelligible as a compression; no need to add the arrest as a featured scene, but label the switch to Mark as a new Gospel witness.",
+        "Matthew 3:13–17 is the selected baptism witness; Mark 1:9–11 and Luke 3:21–22 are parallel witnesses but must not be spliced into Matthew. John's 1:29–34 is his testimony, not another harmonized baptism scene."
+      ],
+      "safeOmissions": [
+        "Matthew 4:1–11 (H51-02, B/BRIDGE_ONLY) is a complete temptation episode; it is not needed to understand Mark 1:14–15, though may remain in the existing Scripture navigation.",
+        "John 2:1–11 (H52-02, B/BRIDGE_ONLY) and Mark 1:16–20 (H52-03, C) are subsequent self-contained episodes; their omission does not break this movement."
+      ],
+      "v7Evidence": [
+        "Existing V7 has Life Bible/Tecarta Matt 3:1–17 and lectionary Matt 3:13–17 for the baptism; V7 confirms these references as publisher-source scopes, not as automatic endorsement of the abridgment.",
+        "V7 retains John 1:35–51 as Atlas scope and the Catholic Lectionary separately identifies John 1:35–42 and 1:43–51; this supports the exact existing disciple span, not the proposed antecedent 1:29–34."
+      ],
+      "status": "REVIEWED; proposed references remain unapproved"
+    },
+    {
+      "movementId": "HS-M21",
+      "decision": "KEEP CORE; PROMOTE REPRESENTATIVE SIGN TO SCRIPTURE CANDIDATE",
+      "sourceRefs": [
+        "Matthew 5:1–12",
+        "Matthew 6:9–15"
+      ],
+      "proposedRefs": [
+        "Matthew 5:1–12",
+        "Matthew 6:9–15",
+        "Mark 2:1–12"
+      ],
+      "findings": [
+        "The Beatitudes (Matt 5:1–12) and Lord's Prayer plus forgiveness condition (Matt 6:9–15) each form complete teaching units. The jump from the former to the prayer is thematic, not narrated as consecutive dialogue; mark the omitted Sermon material as an editorial selection boundary rather than implying continuous speech.",
+        "The spine calls this movement teaching 'and signs' and says use one representative healing. The selected proof currently includes Mark 2:1–12 only as EDITORIAL_CONTEXT_NOT_BIBLE (H54-02); that is not a Scripture reading. Promote the whole 12-verse healing/perdón scene as a separate, unabridged Scripture candidate after the teaching, with an explicit passage transition. The complete unit contains the friends' action, Jesus' forgiveness, scribes' objection, healing command, response and glorification; trimming would break its dialogue-cause-response chain.",
+        "Matt 7:24–29 and 13:1–23 (H53-03/04 B) are additional teachings, but not needed to understand the Beatitudes/prayer; the chosen material is thematic and does not claim a continuous Sermon-on-the-Mount reading. John 4:4–26,39–42 (H55-01 B) is an independent Samaritan episode, safe to omit."
+      ],
+      "safeOmissions": [
+        "Mark 1:21–28, Mark 4:35–41, John 9:1–12, Luke 7:11–17, Luke 7:36–50 are self-contained additional signs/stories (C); the one sign selected is not a catalogue and duplicate John 6 feeding remains excluded per D H54-04."
+      ],
+      "v7Evidence": [
+        "V7 contains separate publisher records for the Beatitudes (Life Bible Matt 5:1–48; IBS Matthew 5–7) and for the paralytic (Mark 2:1–12 from lectionary, RightNow and Mannora; Luke 5:17–26 in another publisher). This supports complete reference boundaries as observed choices; it does not certify our narrative selection or Catholic edit."
+      ],
+      "status": "REVIEWED; inclusion remains proposed"
+    },
+    {
+      "movementId": "HS-M22",
+      "decision": "RESTORE CONTIGUOUS JOHN 6",
+      "sourceRefs": [
+        "John 6:24–35, 47–59 (v18)",
+        "John 6:26–35, 47–59 (proof)"
+      ],
+      "proposedRefs": [
+        "John 6:1–59"
+      ],
+      "findings": [
+        "Current proof drops John 6:24–25, leaving Jesus' answer at v26 without the crowd's question in v25 ('when did you come here?'); restoring 24–25 repairs the immediate dialogue and crowd search.",
+        "It also jumps from 6:35 to 6:47, omitting Jesus' intervening explanation of unbelief, the Father's drawing, resurrection on the last day, the prophets and the bread he gives as his flesh (vv36–46). These are integral to the same discourse and its doctrinal movement; retain them rather than compressing the Eucharistic discourse.",
+        "The contextual owner H56-01 is John 6:1–15, while D H54-04 marks the same feeding event duplicated in an earlier chapter. Read it once here, then retain the intervening narrative that brings the crowd to Capernaum. The minimally safe boundary is John 6:1–59 continuous, not an invented bridge sentence. The chapter's response/disciples leaving and Peter's confession vv60–71 are a further consequential ending and require a follow-on decision; do not imply vv59 is the end of John's episode."
+      ],
+      "safeOmissions": [
+        "No internal section of John 6:1–59 is judged safe to omit for this movement's current sign-to-doctrine purpose. John 6:60–71 remains an unresolved ending decision, not a silently approved omission."
+      ],
+      "v7Evidence": [
+        "V7 contains the full original feeding pericope John 6:1–15 and multiple Catholic Lectionary scopes through John 6:59 (6:22–29; 30–35; 35–40; 44–51; 52–59). The publisher evidence corroborates the source boundaries and shows the doctrinal discourse is normally selected across its stages; it does not prove the proposed narrative must stop at 59."
+      ],
+      "status": "REVIEWED; extend to John 6:71 ending decision open"
+    },
+    {
+      "movementId": "HS-M23",
+      "decision": "CONFIRM CURRENT CORE; KEEP NATURAL TRANSFIGURATION END",
+      "sourceRefs": [
+        "Matthew 16:13–28",
+        "Matthew 17:1–9 (from H57-02 source 17:1–13)"
+      ],
+      "proposedRefs": [
+        "Matthew 16:13–28",
+        "Matthew 17:1–9"
+      ],
+      "findings": [
+        "Matthew 16:13–28 is continuous from Peter's confession and promise (vv16–19), through Jesus' first Passion prediction and Peter's resistance (vv21–23), to the discipleship teaching and saying about the Son of Man's kingdom (vv24–28). No omitted verses inside this source unit.",
+        "Matthew 17:1 begins 'after six days', explicitly connecting the preceding saying with the Transfiguration. The selection preserves the mountain, Moses/Elijah, Peter's proposal, the Father's command to hear the Son, the disciples' fear and Jesus' command not to report until Resurrection: v9 is a complete narrative ending.",
+        "Matthew 17:10–13 (excluded from the A source's proof selection) is a distinct post-descent question/answer about Elijah and John; omission is safe for this movement's stated confession/transfiguration focus, but retain as an existing native Scripture companion. V7 publishers cite both Matt 17:1–13 and selected boundaries ending at v8; no source basis to treat v10–13 as necessary to close the Transfiguration scene."
+      ],
+      "safeOmissions": [
+        "No additional C/B unit listed for H57; keep the two scene units as separate movements in Matthew, not stitched into one quotation."
+      ],
+      "v7Evidence": [
+        "V7 includes Lectionary Mark 9:2–10 and Life Bible Matthew 17:1–13 as source scope; these support a complete Transfiguration pericope but do not decide the Matthew-only selected endpoint. The current v9 endpoint has a textual closing command."
+      ],
+      "status": "REVIEWED; source endpoints confirmed for this movement"
+    }
+  ],
+  "guards": [
+    "Citation and reference comparison is research only, not text approval.",
+    "CPDV and Douay wording remain unmodified; parallel Gospel witnesses are not harmonized.",
+    "Original v18 unit IDs and classifications retained; changes are proposals."
+  ]
+}
