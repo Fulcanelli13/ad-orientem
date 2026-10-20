@@ -58,7 +58,7 @@ export function installLazyPrayRegistry(win=globalThis,ensureReader){
       const previous=base.list?.(filter)||[];
       if((filter.type&&filter.type!=="module")||(filter.domain&&String(filter.domain).toLowerCase()!=="pray"))return previous;
       const known=new Set(previous.map(x=>x?.id));
-      return [...previous,...Object.values(PROVISIONAL).filter(x=>!known.has(x.id))];
+      return [...previous,...Object.values(PROVISIONAL).filter(x=>!known.has(x.id)&&!x.id.startsWith("mass."))];
     },
   };
   win.AO_MODULES=wrapper;
