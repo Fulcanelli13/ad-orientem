@@ -302,7 +302,7 @@ function installReaderThanksgivingBridge(preview,prepared,{win=globalThis}={}){
   const intercept=e=>{
     // The existing Home button remains present. The user's explicit choice
     // is offered before closing, never before a real end-of-Mass decision.
-    if(dialog)return;
+    if(dialog){e.preventDefault?.();e.stopImmediatePropagation?.();return;}
     e.preventDefault?.();e.stopImmediatePropagation?.();
     dialog=doc.createElement("section");
     dialog.className="aoReaderAfterMassChoice";
