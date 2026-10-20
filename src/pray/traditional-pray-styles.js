@@ -114,6 +114,16 @@ export const TRADITIONAL_PRAY_V381_CSS=String.raw`
 #aoPray435930 .aoTP381DonorBody .aoDevoTimeline{top:74px}
 @media(prefers-reduced-motion:reduce){#aoPray435930 .aoTP381DonorBody .aoDevoParagraph{transition:none!important}}
 
+/* The Mass companion borrows Prayer's canonical text reader, not Mass chrome. */
+#aoPray435930 .aoMassFolioPrayerBody{min-width:0}
+#aoPray435930 .aoMassFolioPrayerBody .aoDevoCard{min-width:0}
+#aoPray435930 .aoMassFolioPrayerNav{position:sticky;bottom:0;z-index:5;display:flex;gap:8px;flex-wrap:wrap;align-items:center;padding:12px 7px 14px;background:var(--surface,#101923);border-top:1px solid rgba(211,194,154,.24)}
+#aoPray435930 .aoMassFolioPrayerNav button{min-height:44px;padding:9px 12px;border-radius:7px;border:1px solid rgba(211,194,154,.3);background:transparent;color:var(--foreground,#eee9df);font:500 .88rem/1.35 var(--ao-font-ui,Georgia,serif)}
+#aoPray435930 .aoMassFolioPrayerNav [data-tp381-mass-continue],
+#aoPray435930 .aoMassFolioPrayerNav [data-tp381-mass-finish]{background:#d9caaa;color:#111820;border-color:#d9caaa;flex:1 1 100%}
+#aoPray435930 .aoMassFolioPrayerNav .aoTP381GuideCount{margin-inline-end:auto}
+#aoPray435930 [data-tp381-mass-error]:not([hidden]){color:#e6b9aa;padding:10px}
+
 `;
 
 export function installTraditionalPrayStyles(doc=globalThis.document){
