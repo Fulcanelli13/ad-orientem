@@ -189,9 +189,9 @@
       "previouslyArchivedOriginals": 8,
       "pendingOriginals": 214,
       "cumulativeB01toB06": {
-        "verifiedOrReconfirmedPhysicalIdentityTargets": 28,
+        "verifiedOrReconfirmedPhysicalIdentityTargets": 29,
         "sourceRoutes": 26,
-        "sourceRightsFindings": 24,
+        "sourceRightsFindings": 25,
         "rawImageFilesAcquired": 0,
         "newCanonicalArtworkIDs": 0,
         "ratingsOrApprovalsChanged": 0,
@@ -202,7 +202,8 @@
       "majorClassIIStrict": "13/24 unchanged",
       "otherClassIIStrict": "6/52 unchanged"
     },
-    "correctionToB05": "B05's first commit had inaccurate cumulative target counts; its same-branch correction commit updates the total to 27 identity targets, 24 source routes, and 23 rights findings through B05."
+    "correctionToB05": "B05's first commit had inaccurate cumulative target counts; its same-branch correction commit updates the total to 27 identity targets, 24 source routes, and 23 rights findings through B05.",
+    "correctionToB06": "Cumulative tally reconciled: B01–B05 had 27 identity targets, 24 source routes, 23 rights findings; B06 adds 2 identity confirmations, 2 routes, and 2 explicit rights findings."
   },
   "queue": {
     "highPriorityNext": [
