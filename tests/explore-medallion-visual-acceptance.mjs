@@ -88,18 +88,31 @@ try{
    const rgb=(credits.background.match(/[0-9.]+/g)||[]).slice(0,3).map(Number);
    assert.ok(rgb.length===3&&rgb.every(value=>value<100),
      "Attribution must use the dark atlas palette: "+JSON.stringify(credits));
+   const rail=page.locator("#ao-find-modular-root [data-mapcn-discover-rail]");
+   await rail.waitFor({state:"visible"});
+   assert.ok(await rail.locator("button[data-explore-open-place]").count()>0,
+     "MapCN Discover must contain canonical actionable Places");
+   const railGeometry=await rail.evaluate(el=>{const r=el.getBoundingClientRect();return {
+     width:r.width,height:r.height,left:r.left,right:r.right,top:r.top,bottom:r.bottom};});
+   assert.ok(railGeometry.width>280&&railGeometry.bottom<=844+(mobile?1:1000)&&railGeometry.height>150,
+     "Discover rail must remain inside the visual viewport: "+JSON.stringify(railGeometry));
    const guide=page.locator("#ao-find-modular-root .aoHeritageMapHint");
-   await guide.waitFor({state:"visible"});
-   assert.match(await guide.innerText(),/Numbers zoom.*icons open places/i,
-     "Map onboarding must distinguish number clusters from place pins");
    if(mobile){
-     const overlap=await page.evaluate(()=>{
-       const a=document.querySelector(".aoHeritageMapHint")?.getBoundingClientRect();
-       const b=document.querySelector(".aoHeritageNearby")?.getBoundingClientRect();
-       return a&&b?a.right>b.left&&a.left<b.right&&a.bottom>b.top&&a.top<b.bottom:false;
-     });
-     assert.equal(overlap,false,"Cluster guide must not obstruct Near me at "+width);
+     assert.equal(await guide.isVisible(),false,
+       "On phones the browsable list replaces the old passive map hint");
+   }else{
+     await guide.waitFor({state:"visible"});
+     assert.match(await guide.innerText(),/Numbers zoom.*icons open places/i);
    }
+   const originalCanvas=await page.locator(".aoHeritageSurface .aoFindMap canvas.maplibregl-canvas").count();
+   assert.equal(originalCanvas,1,"One map canvas, shared with canonical Explore");
+   await rail.locator("button[data-explore-open-place]").first().click();
+   await page.locator("#ao-find-modular-root .aoHeritagePreview").waitFor({state:"visible",timeout:15000});
+   assert.equal(await page.locator(".aoHeritageSurface .aoFindMap canvas.maplibregl-canvas").count(),1,
+     "Opening a rail Place must preserve the existing map canvas");
+   await page.locator("#ao-find-modular-root .aoHeritageCardClose").click();
+   await rail.waitFor({state:"visible"});
+   assert.equal(await page.locator(".aoHeritageSurface .aoFindMap canvas.maplibregl-canvas").count(),1);
    await page.screenshot({path:resolve(out,"explore-"+width+"-overview.png"),fullPage:false});
 
    // D is a same-map journey folio: no new page and no manufactured route
