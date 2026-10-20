@@ -25,7 +25,7 @@ export const R17_ICON_KEYS=Object.freeze({
     // the donor artwork named epistle visually depicts the Gospel side,
     // and vice versa. Preserve file identities; correct semantic use only.
     // Priest position remains independent of the transient priest action.
-    FOOT_CENTER:"priest_foot",
+    FOOT_CENTER:null, // 2026-10-20 user veto: no priest pictogram at the Foot
     ALTAR_STEPS_ASCENDING:"priest_ascending_rich",
     ALTAR_CENTER:"priest_centre_rich",
     ALTAR_EPISTLE_MISSAL:"priest_gospel_rich",
@@ -265,7 +265,8 @@ export function iconKeysForReaderState(state={}){
     // Only an explicit turn toward the congregation owns this pictogram.
     // SEDILIA may face people OR altar depending on local layout; the
     // ambiguous profile must keep its sedilia station icon.
-    priestPositionIconKey:(facing==="PEOPLE"||facing==="PEOPLE_DURING_TURN")
+    priestPositionIconKey:station==="FOOT_CENTER"?null:
+      (facing==="PEOPLE"||facing==="PEOPLE_DURING_TURN")
       ? "priest_facing_people"
       : (R17_ICON_KEYS.priestPosition[station]??null),
     priestActionIconKey:priestActionKey(state.priestAction),
