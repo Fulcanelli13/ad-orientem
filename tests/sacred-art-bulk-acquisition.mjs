@@ -45,7 +45,7 @@ for(const [id,exact] of [
  const row=intake.works.find(x=>x.id===id);
  assert(row?.provider==="COMMONS_EXACT_FILE_CANDIDATE"&&row.sourceUrl.includes("commons.wikimedia.org/wiki/File:"));
  assert(sourceGate(row)==="COMMONS");
- assert([row.sourceUrl,row.sourceObjectUrl,row.imageSourceVerification?.institution].join(" ").includes(exact),
+ assert([row.sourceUrl,row.sourceObjectUrl,row.imageSourceVerification?.institution].join(" ").replaceAll("_"," ").includes(exact),
    "Institution or accession matching evidence missing: "+id);
 }
 assert(intake.works.some(x=>x.id==="W14-016"&&x.provider==="NO_EXACT_OPEN_SOURCE"
