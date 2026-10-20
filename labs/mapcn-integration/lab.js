@@ -104,6 +104,14 @@ function setupLayers(){
 }
 function fit(){
  if(!s.mapReady||!filtered.length)return;
+ // A 360-degree bounding box that straddles the antimeridian makes MapLibre
+ // choose an off-world desktop camera. Keep the global catalogue on one
+ // deliberate world overview; only regional selections use fitBounds.
+ const xs=filtered.map(p=>p.lng);
+ if(xs.length>15 && Math.max(...xs)-Math.min(...xs)>250){
+   s.map.flyTo({center:[8,23],zoom:window.innerWidth<750?1.4:1.45,duration:550,essential:true});
+   return;
+ }
  if(filtered.length===1){s.map.flyTo({center:[filtered[0].lng,filtered[0].lat],zoom:10,duration:650});return;}
  const bounds=new moduleMap.LngLatBounds();
  filtered.forEach(p=>bounds.extend([p.lng,p.lat]));
