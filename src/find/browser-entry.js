@@ -1051,6 +1051,23 @@ export function createFindOwner(win=globalThis){
       event.preventDefault?.();event.stopPropagation?.();
       state.selectedPlaceId=openPlace.dataset.exploreOpenPlace||null;
       state.selectedId=null;state.expandPlace=false;state.expandDetail=false;
+      // Search selection should reveal the actual geographical context, not
+      // leave a worldwide zoom behind the editorial Place folio. Reuse the
+      // already published source coordinates, never infer a new entrance.
+      const focused=filtered().find(item=>item?.place_id===state.selectedPlaceId
+        &&item?.map_publishable&&Number.isFinite(Number(item?.geo?.lat))
+        &&Number.isFinite(Number(item?.geo?.lng)));
+      const map=mapHandle?.map;
+      if(map&&focused){
+        const mobile=Number(win.innerWidth)||map.getContainer?.()?.clientWidth||0;
+        const offset=mobile<800?[0,-110]:[-155,0];
+        const target={
+          center:[Number(focused.geo.lng),Number(focused.geo.lat)],
+          zoom:Math.max(9,Number(map.getZoom?.())||0),
+          offset,duration:win.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches?0:460,
+        };
+        map.easeTo?.(target);
+      }
       void paint({selectionOnly:true});return;
     }
     const placeItem=target?.closest?.("[data-explore-place-item]");
