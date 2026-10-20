@@ -201,7 +201,9 @@ for(const pool of pools){
 }
 if(selected.length<planned){
  const deficit=planned-selected.length;
- const extras={name:"BACKFILL",candidates:all.filter(x=>!used.has(x.id)).sort((a,b)=>score(b)-score(a)||a.id.localeCompare(b.id))};
+ const extras={name:"BACKFILL",candidates:all.filter(x=>!used.has(x.id)).sort((a,b)=>
+  Number(b.category==="PAPAL_TEACHING_AND_PASTORAL")-Number(a.category==="PAPAL_TEACHING_AND_PASTORAL")||
+  score(b)-score(a)||a.id.localeCompare(b.id))};
  pick(extras,deficit);
 }
 const finalCategory={};for(const s of selected)finalCategory[s.category]=(finalCategory[s.category]||0)+1;
