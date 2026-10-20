@@ -195,7 +195,15 @@ export function renderPilgrimageJourneyPanel({
         '/'+esc(String(selected.namedStages.length))+
         (stage.siteAnchor?' <span class="aoJourneyStageMapped">· '+esc(label(language,
           "MAP SITE","LIEU SUR CARTE"))+'</span>':"")+
-        '</small><strong>'+esc(language==="fr"?stage.nameFr:stage.name)+'</strong></div></li>';
+        '</small>'+
+        (stage.siteAnchor
+          ?'<button type="button" class="aoJourneyStagePlaceLink" data-explore-journey-stage-place="'+
+            esc(stage.id)+'" aria-label="'+esc(label(language,
+              "Explore sacred place: ","Découvrir le lieu sacré : ")+(language==="fr"?stage.nameFr:stage.name))+
+            '"><strong>'+esc(language==="fr"?stage.nameFr:stage.name)+'</strong>'+
+            '<span aria-hidden="true">↗</span></button>'
+          :'<strong>'+esc(language==="fr"?stage.nameFr:stage.name)+'</strong>')+
+        '</div></li>';
     });
   }else{
     html+='<li><span class="aoJourneyNode" aria-hidden="true">○</span><div><small>'+
