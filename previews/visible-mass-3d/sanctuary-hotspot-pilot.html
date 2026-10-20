@@ -912,8 +912,19 @@ async function guideInit(pilot){
               console.warn("Optional Pius X editorial source bundle unavailable; original visual novel remains unchanged",error);
             }
           }
+          // New 20-path St Pius X review is separately opt-in. Load only pinned
+          // read-only JSON from Formation PR #1458, never arbitrary source code.
+          let pius20Review=null;
+          if(new URLSearchParams(location.search).get("aoPius20Review")==="1"){
+            try{
+              const bridge=await import("./living-church-pius20-source-bridge.mjs");
+              pius20Review=await bridge.loadLivingChurchPius20Review();
+            }catch(error){
+              console.warn("Pinned St Pius X 20-path editorial source unavailable; the existing scene remains usable",error);
+            }
+          }
           window.AO_LIVING_CHURCH_P2=vn.mountLivingChurchVisualNovel({
-            win:window,context:livingChurchContextP1,piusReviewScript
+            win:window,context:livingChurchContextP1,piusReviewScript,pius20Review
           });
         }catch(sceneError){
           console.warn("Living Church P2 scene unavailable; original P1 viewer remains usable",sceneError);
