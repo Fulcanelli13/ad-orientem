@@ -7,9 +7,9 @@ export function visibleMassCardTitle(card){
 
 // Curated LIVE prayer-card presentation: one card per meaningful moment,
 // not per donor block. All source paragraphs, cue IDs and events are preserved.
-// Ordinary LIVE has 64 curated prayer cards (63 visible by default with
-// the optional second Confiteor omitted). `aoLiveCards=65` is a legacy
-// review activation flag, not a requirement for 65 separate prayer cards.
+// Ordinary LIVE has 65 curated source-backed prayer cards (64 visible by
+// default when the optional second Confiteor is omitted). The historical
+// aoLiveCards=65 opt-in flag now matches the actual ordinary card count.
 // The 48-card rollback remains available.
 // Keep the direct native fixture review activation backward compatible.
 // Pre-Gospel chant subnavigation requires a source-backed follow-up.
@@ -42,11 +42,12 @@ const GROUPS=Object.freeze({
   }),
   "AO.CARD.010":Object.freeze({
     titles:["Offertory · Invitation and Antiphon",
-      "Offertory · Offering of the Bread and Chalice",
+      "Offertory · Offering of the Bread",
+       "Offertory · Preparing and Offering the Chalice",
       "Offertory · Humility and Invocation",
       "Offertory · Incensation",
       "Offertory · Lavabo and Offering to the Trinity"],
-    after:[{block:"B030"},{block:"B033"},{block:"B035"},{block:"B036"}],
+    after:[{block:"B030"},{block:"B031"},{block:"B033"},{block:"B035"},{block:"B036"}],
   }),
   "AO.CARD.011":Object.freeze({
     titles:["Orate, fratres · Prayer and Response",
@@ -296,7 +297,7 @@ export function projectCuratedOrdinaryLiveCards(model){
   }
   const preGospelCount=result.filter(card=>card.sourceSectionId==="AO.CARD.006").length;
   if(preGospelCount<1||preGospelCount>3)throw new Error("PRE_GOSPEL_CARD_COUNT_UNSUPPORTED");
-  const expectedCards=64+(preGospelCount-1);
+  const expectedCards=65+(preGospelCount-1);
   if(result.length!==expectedCards)throw new Error(
     "Ordinary curated LIVE expected "+expectedCards+" source-backed cards; found "+result.length);
   const cards=Object.freeze(result);
@@ -336,7 +337,7 @@ export const CURATED_LIVE_GROUPS=GROUPS;
 // not renumber, synthesize or mutate their underlying canonical 39 steps.
 export function projectCuratedIntroitEntryLiveCards(curated){
   if(curated?.structureOwner!=="SOURCE_FIRST_LIVE_CURATED_65_REVIEW"||
-     ![64,65,66].includes(curated?.totalCards)||curated?.sourceModelTotalCards!==39)
+     ![65,66,67].includes(curated?.totalCards)||curated?.sourceModelTotalCards!==39)
     throw new Error("CURATED_INTROIT_ENTRY_REQUIRES_SOURCE_CURATED_65");
   const opening=curated.cards.filter(card=>card.sourceSectionId==="AO.CARD.001");
   const introit=opening.find(card=>card.title==="Introit" &&
