@@ -268,6 +268,45 @@ function installReaderCloseBridge(preview,prepared){
   });
 }
 
+// Explicit post-Mass handoff. The reader never infers Mass completion from
+// a card or a timestamp: the faithful open thanksgiving when actually ready.
+function installReaderThanksgivingBridge(preview,prepared,{win=globalThis}={}){
+  if(prepared?.readerPreferences?.afterMass!=="thanksgiving")return null;
+  const parent=preview?.root;
+  const close=parent?.querySelector?.("[data-reader-home], [aria-label='Close Mass reader']");
+  const doc=close?.ownerDocument;
+  if(!doc?.createElement||!close?.insertAdjacentElement)return null;
+  const fr=String(prepared?.readerPreferences?.language??"en").startsWith("fr");
+  const button=doc.createElement("button");button.type="button";
+  button.dataset.readerThanksgiving="";
+  button.className="aoReaderAfterMassPrayer";
+  button.textContent=fr?"Action de grâces après la Messe →":"Thanksgiving after Mass →";
+  button.style.cssText="min-height:44px;max-width:100%;padding:9px 12px;border-radius:7px;border:1px solid rgba(198,170,125,.35);background:#15201f;color:#e2d4b8;font:500 15px/1.3 var(--ao-font-ui,'EB Garamond',Georgia,serif);cursor:pointer";
+  // Use a nearby reader-owned control, never add a second global toolbar.
+  close.insertAdjacentElement("afterend",button);
+  let busy=false;
+  button.addEventListener("click",()=>{
+    if(busy)return;
+    busy=true;button.disabled=true;
+    checkpointPersistedMass({preview});
+    void Promise.resolve()
+      .then(()=>navigateReaderSurface("home"))
+      .then(()=>win?.AO_MODULES?.open?.("mass.thanksgiving"))
+      .then(result=>{
+        if(result!==true&&result?.ok!==true)throw Error("THANKSGIVING_PRAYERS_UNAVAILABLE");
+      })
+      .catch(error=>{
+        // Navigation or prayer failure must be visible, never a silent success.
+        const notice=doc.createElement("p");
+        notice.setAttribute("role","alert");
+        notice.textContent=fr?"Impossible d’ouvrir les prières d’action de grâces.":"Thanksgiving prayers could not be opened.";
+        (button.isConnected?button.parentElement:doc.body)?.append(notice);
+        try{win.console?.error?.(error)}catch{}
+      }).finally(()=>{busy=false;if(button.isConnected)button.disabled=false});
+  });
+  return Object.freeze({dispose:()=>button.remove()});
+}
+
 function massGlossaryTerms(preview){
   const card=preview?.getCurrentCard?.()??null;
   const text=[card?.title,card?.sectionTitle,card?.sectionId,card?.id].filter(Boolean).join(" ").toLowerCase();
@@ -629,6 +668,7 @@ async function openProductionReader(prepared, { resumeRecord = null } = {}) {
   if (restoredSection) previewState.preview?.showSection?.(restoredSection);
   installReaderCheckpoint(previewState.preview);
   installReaderCloseBridge(previewState.preview,prepared);
+  installReaderThanksgivingBridge(previewState.preview,prepared);
   installReaderParametersBridge(previewState.preview,prepared);
   installReaderGlossaryBridge(previewState.preview);
   installReaderScriptureBridge(previewState.preview,prepared);
