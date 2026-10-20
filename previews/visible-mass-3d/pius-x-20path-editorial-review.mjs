@@ -9,13 +9,14 @@ const NAV=BASE+"pius-x-20path-bilingual-choice-navigation-20261020.v1.json";
 const PATCH=BASE+"pius-x-source-bounded-bilingual-corrections-20261020.v1.json";
 const ELIG=BASE+"pius-x-chanoine-22-answer-aq04-aq05-eligibility-20261020.v1.json";
 const VISUAL=BASE+"pius-x-historical-visual-novel-stage-20261020.v1.json";
+const VOICE=BASE+"pius-x-six-period-voice-candidates-20261020.v1.json";
 const ORIGINAL_PRINT="https://it.wikisource.org/wiki/Indice:Compendio_della_dottrina_cristiana,_Roma,_1905.djvu";
 const allowedDraftPath=p=>/^data\/learn\/research\/pius-x-batch(?:9-sacraments|10-eucharist)-[a-e]-20261020\.v1\.json$/.test(p);
 const qid=id=>/^PX1905-Q(?:5(?:6[7-9]|[7-9]\d)|6(?:[0-5]\d|6[0-6]))$/.test(id);
 const reject=why=>{throw new Error("SPX review refused: "+why)};
 export async function createPiusX20PathReview(read){
  if(typeof read!=="function")reject("source owner read function missing");
- const [nav,patch,elig,visual]=await Promise.all([read(NAV),read(PATCH),read(ELIG),read(VISUAL)]);
+ const [nav,patch,elig,visual,voice]=await Promise.all([read(NAV),read(PATCH),read(ELIG),read(VISUAL),read(VOICE)]);
  if(nav?.schema!=="AO_SPX_20_BRANCHING_BILINGUAL_DIALOGUE_MENUS_V1"||
    nav?.counts?.chapters!==20||nav.counts.topicTracks!==50||
    nav.counts.mappedUniqueSourceQuestions!==100||nav.counts.certifiedPublication!==0||
@@ -34,6 +35,21 @@ export async function createPiusX20PathReview(read){
   visual.referencedOwners?.sprites?.commit!=="0a920793bcdf40cc053ad0aff31132ade8185a33"||
   visual.referencedOwners?.style?.commit!=="b99bedc27b194c7391375911c01b283fd88e9702")
   reject("visual character-owner provenance or release gate");
+ if(voice?.schema!=="AO_SPX_SIX_FIRST_PERIOD_VOICE_CANDIDATES_V1"||
+   voice?.claims?.independentlyApproved!==0||voice.records?.length!==6||
+   voice.voiceOwner?.headCommit!=="b99bedc27b194c7391375911c01b283fd88e9702")
+   reject("unapproved period-register review");
+ const voiceCases=new Map(voice.records.map(x=>[x.turnId,x]));
+ if(voiceCases.size!==6||
+   voice.records.filter(x=>x.channel==="PIUS_X_EDUCATIONAL_RECONSTRUCTION_UNAPPROVED").length!==5||
+   voice.records.filter(x=>x.channel==="OUT_OF_CHARACTER_EDITORIAL_HISTORICAL_NOTE").length!==1)reject("historical speaker boundary");
+ for(const [id,entry] of voiceCases){
+  const revised=patch.records.find(x=>x.turnId===id);
+  if(!revised||!entry.sourceQuestionIds.every(x=>revised.sourceQuestionIds.includes(x))||
+   entry.sourceQuestionIds.length!==revised.sourceQuestionIds.length||
+   entry.published!==false||entry.styleHumanApproved!==false||
+   entry.theologyHumanApproved!==false||entry.translationHumanApproved!==false)reject("unowned voice draft "+id);
+ }
  const poseIndex=new Map(visual.arcs.map(x=>[x.id,x.defaultPose]));
  const overrides=new Map(visual.poseExceptions.map(x=>[x.qid,x.pose]));
  if(poseIndex.size!==20||overrides.size!==7)reject("invalid source-owned visual cues");
@@ -84,6 +100,7 @@ export async function createPiusX20PathReview(read){
   const owned=(await original(q.answerSource.originalDraftFile)).get(q.answerSource.originalDraftFamily);
   if(!owned||owned.source?.questionId!==id)reject("question not owned by original draft");
   const turn=owned.turns[0],revised=patches.get(owned.id+"-T1")||null;
+  const period=voiceCases.get(owned.id+"-T1")||null;
   if(turn.question.en!==q.questionEN||turn.question.fr!==q.questionFR)reject("draft question divergence");
   const options=q.menu.map(c=>Object.freeze({id:c.sourceQuestionId,en:c.labelEN,fr:c.labelFR,
    category:c.linkNature}));
@@ -102,6 +119,10 @@ export async function createPiusX20PathReview(read){
    choices:Object.freeze(options),cross:Object.freeze(cross),reviewOnly:true,approved:false,
    proposedRevision:revised?Object.freeze({en:revised.revisionCandidate.en,
     fr:revised.revisionCandidate.fr,approved:false}):null,
+   periodVersion:period?.channel==="PIUS_X_EDUCATIONAL_RECONSTRUCTION_UNAPPROVED"?
+    Object.freeze({...period.candidate,approved:false,sourceOwner:"PR#1419_STYLE_ONLY"}):null,
+   editorialNote:period?.channel==="OUT_OF_CHARACTER_EDITORIAL_HISTORICAL_NOTE"?
+    Object.freeze({...period.candidate,approved:false,attributedToCharacter:false}):null,
    canon:canon.get(owned.id+"-T1")||null});
  }
  return Object.freeze({version:PIUS_X_20PATH_REVIEW_VERSION,reviewOnly:true,published:false,
@@ -109,5 +130,5 @@ export async function createPiusX20PathReview(read){
   stats:Object.freeze({chapters:20,questions:100,sourceOwnerTurns:200,revisions:10,
    narrowCanonCandidates:elig.counts.byStatus.MATCHED_NARROW_CONTENT_SUBJECT,
    denzingerRequired:false,approved:0,approvedExpressions:5,
-   periodVoiceHumanApproved:false})});
+   periodVoiceHumanApproved:false,periodStyleIllustrations:5,historicalDisciplineEditorialNotes:1})});
 }
