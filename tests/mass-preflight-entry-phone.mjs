@@ -50,7 +50,12 @@ try{
       nodes:flow?[...flow.querySelectorAll("*")].filter(e=>e.children.length<5 && /VOX|MASS OF THE DAY|CONTENT READINESS|HOW DO YOU WANT TO FOLLOW/i.test((e.textContent||"").trim().slice(0,90)))
         .slice(0,30).map(describe):[]};
   });
-  console.log("PREFLIGHT_DONOR_DOM_"+width,JSON.stringify(hierarchy));
+  for(const donor of hierarchy.siblings.filter(x=>/aoPreflightHero|aoReadiness|aoRubricStatus ok/.test(x.cls) ||
+    (x.cls==="aoChoiceGrid"&&/VOX.*Missal/.test(x.text)))){
+    assert.equal(donor.visible,false,"Obsolete host card appears above Guided Folio: "+JSON.stringify(donor));
+  }
+  assert.equal(hierarchy.siblings.filter(x=>x.cls==="aoFullMassPreflight").length,1,
+    "Exactly one Guided Folio must own the preparation form");
   const data=await page.evaluate(()=>{
    const root=document.querySelector("[data-ao-full-mass-preflight]");
    const backing=document.querySelector("#ao-mass-flow-v1 .aoMassFlowBackdrop");
