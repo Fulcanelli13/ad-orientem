@@ -397,7 +397,7 @@ export function createFindOwner(win=globalThis){
     const placeProfiles=preliminaryMode?[]:buildExplorePlaceProfiles(data,projection,{today:localTodayIso()});
     const journeys=preliminaryMode?[]:buildPilgrimageJourneyCatalogue(
       projection?.byLens?.pilgrimages,data?.shrines?.sources,
-      data?.shrines?.routeStageEvidence);
+      data?.shrines?.routeStageEvidence,data?.shrines?.routeGeometryReview);
     const featuredPlaces=placeProfiles.filter(p=>p.editorial_feature&&p.map_publishable&&p.sources.length)
       .sort((a,b)=>a.editorial_feature.ordinal-b.editorial_feature.ordinal);
     const vm=buildExploreViewModel({
@@ -645,7 +645,7 @@ export function createFindOwner(win=globalThis){
     if(!projection||!dataset||!mapHandle?.map)return false;
     const routes=buildPilgrimageJourneyCatalogue(
       projection.byLens?.pilgrimages,dataset.shrines?.sources,
-      dataset.shrines?.routeStageEvidence);
+      dataset.shrines?.routeStageEvidence,dataset.shrines?.routeGeometryReview);
     const active=selectedPilgrimageJourney(routes,state.journeySelectedId);
     // The Walsingham 2026 Priory endpoint differs from the canonical Catholic
     // shrine. It has no surveyed stage coordinate. Center the broader related
