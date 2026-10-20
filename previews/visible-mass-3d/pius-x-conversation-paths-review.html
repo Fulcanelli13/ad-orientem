@@ -90,7 +90,7 @@ aside{width:100%;padding:12px}#chapters{display:flex;overflow-x:auto;max-height:
 import {createPiusX20PathReview} from "./pius-x-20path-editorial-review.mjs";
 const $=id=>document.getElementById(id);
 const content=$("content"), status=$("status"), error=$("errors");
-let model=null,lang="en",currentChapter=null,currentQuestion=null,entry=null,revision=false,canonRevealed=false,sceneMode=true;
+let model=null,lang="en",currentChapter=null,currentQuestion=null,entry=null,revision=false,periodMode=false,canonRevealed=false,sceneMode=true;
 const decisions=new Map();
 const visited=new Set();
 const make=(tag,cl="",txt="")=>{const x=document.createElement(tag);if(cl)x.className=cl;if(txt)x.textContent=txt;return x;};
@@ -134,7 +134,7 @@ async function openChapter(id){
 }
 async function openQuestion(id){
  if(!model)return;entry=await model.inspect(id);if(!entry)return;
- currentQuestion=id;currentChapter=entry.arc;visited.add(id);revision=false;reset();renderMenu();renderQuestion();
+ currentQuestion=id;currentChapter=entry.arc;visited.add(id);revision=false;periodMode=false;reset();renderMenu();renderQuestion();
 }
 function renderQuestion(){
  if(!entry)return;reset();sectionLabel(word("St Pius X · source-bounded editorial dialogue","Saint Pie X · dialogue éditorial fondé sur les sources"));
@@ -151,17 +151,27 @@ function renderQuestion(){
  }
  const q=make("h2","question-title",entry.question[lang]);destination.append(q);
  const line=make("div","caption",word("PROPOSED PARAPHRASE · NOT AUTHENTIC SPOKEN WORDS","PARAPHRASE PROPOSÉE · NON PAROLES HISTORIQUES"));destination.append(line);
- const answer=entry.proposedRevision&&revision?entry.proposedRevision[lang]:entry.answer[lang];
+ const answer=entry.periodVersion&&periodMode?entry.periodVersion[lang]:(entry.proposedRevision&&revision?entry.proposedRevision[lang]:entry.answer[lang]);
  destination.append(make("p","answer",answer));
  if(entry.proposedRevision){
   const bar=make("div","toolbar");
   for(const [on,label] of [[false,word("Original draft","Première version")],[true,word("Proposed correction","Correction proposée")]]){
-   const b=make("button",on===revision?"active":"",label);b.type="button";b.setAttribute("aria-pressed",String(on===revision));
-   b.addEventListener("click",()=>{revision=on;renderQuestion()});bar.append(b);}
+   const selected=on===revision&&!periodMode;
+   const b=make("button",selected?"active":"",label);b.type="button";b.setAttribute("aria-pressed",String(selected));
+   b.addEventListener("click",()=>{revision=on;periodMode=false;renderQuestion()});bar.append(b);}
+  if(entry.periodVersion){
+   const period=make("button",periodMode?"active":"",word("Period-register draft","Version de style d’époque"));
+   period.type="button";period.setAttribute("aria-pressed",String(periodMode));
+   period.addEventListener("click",()=>{revision=false;periodMode=true;renderQuestion()});bar.append(period);
+  }
   content.append(bar);
  }
  warning(word("For research only. Historical Catechism source; English/French wording and theology still await independent approval. No current sacramental discipline should be inferred from a rule dated 1905.",
  "Pour la recherche seulement. Texte historique ; les traductions et leur précision théologique ne sont pas encore approuvées. Les règles de 1905 ne constituent pas nécessairement la discipline actuelle."));
+ if(entry.editorialNote){
+  sectionLabel(word("Historical editor’s note · never character speech","Note historique de l’éditeur · jamais parole du personnage"));
+  note(entry.editorialNote[lang]);
+ }
  const cite=make("div","caption",entry.sourceLabel);content.append(cite);sourceLinks(entry);
  editorialReview();
  const line2=make("div","divider");content.append(line2);
@@ -190,7 +200,7 @@ function editorialReview(){
  for(const [key,label] of marks){
   const b=make("button","",label);b.type="button";b.setAttribute("aria-pressed",String(current.status===key));
   b.addEventListener("click",()=>{const old=decisions.get(entry.id)||{status:null,note:""};
-   decisions.set(entry.id,{...old,status:key,variant:revision?"proposed_revision":"original_draft"});
+   decisions.set(entry.id,{...old,status:key,variant:periodMode?"period_register_unapproved":revision?"proposed_revision":"original_draft"});
    renderQuestion();});options.append(b);}
  block.append(options);
  const area=make("textarea");area.setAttribute("aria-label",word("Review note","Note de révision"));
