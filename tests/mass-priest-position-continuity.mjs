@@ -110,4 +110,8 @@ assert.equal(expanded.formActorExceptions.length,3);
 assert.ok(expanded.formActorExceptions.some(x=>x.form==='SOLEMN'&&x.cueId==='AO.SM.C0086'&&x.liturgicalActor==='DEACON'&&x.priestPosition==='ALTAR_EPISTLE_SIDE'),
  'Solemn Gospel is sung by deacon, not by celebrant at Gospel-side missal');
 
+assert.equal(expanded.conditionalBookOverlays.length,2);
+assert.ok(expanded.conditionalBookOverlays.some(x=>x.condition==='PROPER_LAST_GOSPEL_APPOINTED'&&x.station==='GOSPEL_SIDE'));
+assert.equal(cue('C0267').missal.location,'EPISTLE_SIDE',
+  'Ordinary Last Gospel should not activate proper Last Gospel Missal transfer');
 console.log('1962 source priest-station continuity: 280/280 sung cues, 96/96 source blocks, 49/49 transitions; no art/position overrides.');
