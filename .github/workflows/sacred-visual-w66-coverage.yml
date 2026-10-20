@@ -14,6 +14,7 @@ on:
       - "tests/sacred-art-open-source-recovery-76.mjs"
       - "tools/calendar/discover-sacred-art-76-open-sources.mjs"
       - "tools/calendar/merge-sacred-art-76-discovery.mjs"
+      - "tools/calendar/screen-sacred-art-discovery-candidates.mjs"
       - "tools/calendar/build-sacred-art-volume-control.mjs"
       - "tests/sacred-art-76-commons-discovery.mjs"
       - "tools/calendar/audit-staged-sacred-art-media.mjs"
@@ -187,6 +188,8 @@ jobs:
         run: |
           node --check tools/calendar/merge-sacred-art-76-discovery.mjs
           node tools/calendar/merge-sacred-art-76-discovery.mjs
+          node --check tools/calendar/screen-sacred-art-discovery-candidates.mjs
+          node tools/calendar/screen-sacred-art-discovery-candidates.mjs
       - name: Archive full 76-work ranked review with provenance
         if: always()
         uses: actions/upload-artifact@v4
