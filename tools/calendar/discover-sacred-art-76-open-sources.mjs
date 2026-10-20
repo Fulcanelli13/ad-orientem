@@ -113,13 +113,14 @@ export async function run(shard){
   assert(!hasPradoProvenance({id:work.artworkId,sourceUrl:work.sourceUrl}),"Prado search prohibited");
   let pages=[],error=null;
   const alreadyRouted=work.lane==="SOURCE_IDENTIFIED_QA"&&work.status==="MOVED_TO_EXACT_COMMONS_SOURCE_QA";
-  if(!alreadyRouted)try{pages=await commonsQuery(work);}
+  const pradoHold=work.lane==="PRADO_SOURCE_EMBARGO"||work.status==="HOLD_PRADO_SOURCE_POLICY"||INTAKE.works.find(x=>x.id===work.artworkId)?.sourcePolicy?.noFetch===true;
+  if(!alreadyRouted&&!pradoHold)try{pages=await commonsQuery(work);}
   catch(e){error=String(e.message||e).slice(0,130);}
   const candidates=pages.map(page=>screenCandidate(work,page)).filter(Boolean)
     .sort((a,b)=>b.searchScore-a.searchScore).slice(0,4);
   result.push({artworkId:work.artworkId,title:work.title,artist:work.artist,sourceUrl:work.sourceUrl,
    lane:work.lane,priority:work.priority,query:searchTerms(work),
-   discoveryStatus:alreadyRouted?"SOURCE_ALREADY_IDENTIFIED_FOR_IMAGE_QA":error?"HOLD_REQUEST_ERROR":candidates.length?"POTENTIAL_OPEN_LICENCE_MATCHES_FOR_QA":"HOLD_NO_EXACT_OPEN_CANDIDATE",
+   discoveryStatus:pradoHold?"HOLD_PRADO_SOURCE_POLICY":alreadyRouted?"SOURCE_ALREADY_IDENTIFIED_FOR_IMAGE_QA":error?"HOLD_REQUEST_ERROR":candidates.length?"POTENTIAL_OPEN_LICENCE_MATCHES_FOR_QA":"HOLD_NO_EXACT_OPEN_CANDIDATE",
    error,candidates,productionCertified:false,approvedArtworkIntact:true});
   await WAIT(350);
  }
