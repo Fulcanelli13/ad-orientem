@@ -613,6 +613,7 @@ for(const guide of customGuidance.entries){
   assert.ok(item.source_links.some(x=>customSources.sources.some(y=>y.id===guide.source_ids[0]&&y.url===x.url)),"No source link "+guide.custom_id);
   assert.ok(item.sections.some(x=>x.label==="Meaning"&&x.body===guide.meaning_en&&x.body_fr===guide.meaning_fr));
   assert.ok(item.sections.some(x=>x.label==="Optional observance"&&x.body===guide.how_en&&x.body_fr===guide.how_fr));
+  assert.ok(item.sections.some(x=>x.label==="Pastoral context"&&x.body_fr===guide.caution_fr),"French caution must be visible");
   for(const language of ["en","fr"]){
     const vm=buildExploreViewModel({
       language,items:practiceBrowse,lens:"traditions",counts:{...projection.counts,traditions:33},
