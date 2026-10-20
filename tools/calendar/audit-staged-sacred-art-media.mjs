@@ -19,7 +19,7 @@ const approved=new Set(freeze.approved.map(x=>x.artworkId));
 const legacy=new Set(freeze.historicallyFiveIDsPreservedSeparately);
 const rejected=new Set(freeze.rejected.map(x=>x.artworkId));
 const catalog=new Map(intake.works.map(x=>[x.id,x]));
-const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;":"&quot;","'":"&#39;"}[c]));
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 export function resolutionTier(w,h) {
  return Math.min(w,h)>=2400?"HIGH_RESOLUTION":Math.min(w,h)>=1600?"MEDIUM_RESOLUTION":"LOW_RESOLUTION";
 }
