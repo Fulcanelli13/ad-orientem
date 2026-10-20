@@ -55,13 +55,11 @@ const rows=incoming.records.map(item=>{
   significantIssues.push("DIRECT_MUSEUM_OBJECT_RECORD_NOT_YET_LINKED");
  if(ref?.evidenceClass==="INDEPENDENT_SCHOLARLY_OBJECT_RECORD_NOT_OFFICIAL_MUSEUM_PAGE")
   significantIssues.push("SCHOLARLY_INVENTORY_NEEDS_CURRENT_MUSEUM_CONFIRMATION");
- if(prior){
-  significantIssues.push("KNOWN_STRUCTURED_ARTWORK_QID_WRONG_OR_OTHER_VERSION");
-  if(prior.incorrectWikidataArtworkQID)
-   assert(qids.includes(prior.incorrectWikidataArtworkQID),"Lanfranco wrong-object test must not go unobserved");
-  if(prior.suspectWikidataArtworkQID)
-   assert(qids.includes(prior.suspectWikidataArtworkQID),"Zurbaran different version must not go unobserved");
- }
+ const incorrectArtworkQIDs=[prior?.incorrectWikidataArtworkQID,prior?.suspectWikidataArtworkQID].filter(Boolean);
+ const currentPhotoReferencesWrongArtworkQID=incorrectArtworkQIDs.some(id=>qids.includes(id));
+ if(currentPhotoReferencesWrongArtworkQID)significantIssues.push("KNOWN_STRUCTURED_ARTWORK_QID_WRONG_OR_OTHER_VERSION");
+ else if(prior)significantIssues.push("PRIOR_WRONG_OBJECT_VERSION_REJECTED_RECHECK_REPLACEMENT");
+
  if(ref&&item.possibleStructuredArtworkItems?.length){
   const dataInventory=new Set(item.possibleStructuredArtworkItems.flatMap(o=>o.inventoryNumbers||[])
    .map(x=>String(x).replace(/[^a-z0-9]/gi,"").toLowerCase()));
@@ -73,7 +71,7 @@ const rows=incoming.records.map(item=>{
   significantIssues.push("CHECK_APPROVED_COMPOSITION_NOT_JUST_TITLE");
  const lane=knownWrongPhoto?"KNOWN_WRONG_PHOTO_OR_MEDIUM_HOLD":
   !ref?"NEEDS_INSTITUTION_RECORD":
-  prior?"WRONG_ARTWORK_QID_OR_VERSION_HOLD":
+  currentPhotoReferencesWrongArtworkQID?"WRONG_ARTWORK_QID_OR_VERSION_HOLD":
   ref.evidenceClass==="OFFICIAL_INSTITUTION_OBJECT_RECORD"?
    "OFFICIAL_OBJECT_DOCUMENTED_PHOTO_COMPARISON_PENDING":
   ref.evidenceClass==="OFFICIAL_INSTITUTION_MULTIPLE_OBJECT_VERSIONS_IDENTITY_HOLD"?
@@ -86,7 +84,9 @@ const rows=incoming.records.map(item=>{
   institution:ref?.officialInstitution||null,institutionInventory:ref?.inventoryNumber||null,
   institutionalEvidenceURL:ref?.officialEvidenceURL||null,
   supportingOfficialRecordRefs:ref?.relatedDistinctVersions||[],
-  provenanceLane:lane,knownWrongPhotoHold:knownWrongPhoto,exceptions:[...new Set(significantIssues)],identityProblemDetail:ref?.caveat||null,
+  provenanceLane:lane,knownWrongPhotoHold:knownWrongPhoto,
+  previouslyIncorrectStructuredQIDs:incorrectArtworkQIDs,
+  currentPhotoReferencesWrongArtworkQID,exceptions:[...new Set(significantIssues)],identityProblemDetail:ref?.caveat||null,
   candidatePhotographComparedToKnownPhysicalOriginal:false,
   curatorApprovedImagePixelMatchCertified:false,
   rightsIndependentEvidenceCertified:false,
