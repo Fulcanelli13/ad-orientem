@@ -16,6 +16,8 @@ on:
       - "tests/sacred-art-76-commons-discovery.mjs"
       - "tools/calendar/audit-staged-sacred-art-media.mjs"
       - "tests/sacred-art-integrated-source-qa.mjs"
+      - "tools/calendar/prepare-sacred-art-visual-release-queue.mjs"
+      - "tests/sacred-art-visual-release-queue.mjs"
       - "tools/calendar/acquire-sacred-art-nga.mjs"
       - "tests/sacred-art-nga-open-access.mjs"
       - "data/research/sacred-visual-w67-main-runtime-existing-image-asset-and-legacy-exclusion-audit-20261015.v1.json"
@@ -171,6 +173,8 @@ jobs:
         run: |
           node tests/sacred-art-integrated-source-qa.mjs
           node tools/calendar/audit-staged-sacred-art-media.mjs
+          node tests/sacred-art-visual-release-queue.mjs
+          node tools/calendar/prepare-sacred-art-visual-release-queue.mjs
       - name: Preserve unified reproducible manifest (no automatic publication)
         if: always()
         uses: actions/upload-artifact@v4
