@@ -117,6 +117,28 @@ try{
    assert.equal(await page.locator(".aoHeritageSurface .aoFindMap canvas.maplibregl-canvas").count(),1);
    await page.screenshot({path:resolve(out,"explore-"+width+"-overview.png"),fullPage:false});
 
+   // P3 MapCN Uptime Monitor adaptation stays inside the SAME canonical map.
+   await page.locator("#ao-find-modular-root [data-explore-time-mass-toggle]").click();
+   const timeMass=page.locator("#ao-find-modular-root [data-explore-time-mass-panel]");
+   await timeMass.waitFor({state:"visible",timeout:15000});
+   assert.ok(await timeMass.locator("[data-explore-time-mass-date]").count()>0);
+   assert.ok(await timeMass.locator(".aoTimeMassRow").count()>0,
+     "P3 must show source-owned directory rows, not a template placeholder");
+   assert.ok(await timeMass.locator("a[href^='https://']").count()>0,
+     "P3 needs publisher links, not guessed times");
+   assert.equal(await page.locator(".aoHeritageSurface .aoFindMap canvas.maplibregl-canvas").count(),1);
+   await timeMass.locator("[data-explore-time-mass-date]").fill("2026-12-25");
+   await timeMass.locator("[data-explore-time-mass-date]").dispatchEvent("change");
+   await page.waitForFunction(()=>document.querySelector(".aoTimeMassSeason h3")?.textContent
+     ?.includes("Christmas"),null,{timeout:10000});
+   const boardFit=await timeMass.evaluate(el=>{const r=el.getBoundingClientRect();return {
+     top:r.top,bottom:r.bottom,width:r.width,height:r.height};});
+   assert.ok(boardFit.top>=0&&boardFit.bottom<=innerHeight+1&&boardFit.height>230,
+     "P3 panel must fit mobile and desktop: "+JSON.stringify(boardFit));
+   await page.screenshot({path:resolve(out,"explore-"+width+"-time-mass.png"),fullPage:false});
+   await timeMass.locator(".aoTimeMassHead [data-explore-time-mass-toggle]").click();
+   await timeMass.waitFor({state:"detached",timeout:10000});
+   assert.equal(await page.locator(".aoHeritageSurface .aoFindMap canvas.maplibregl-canvas").count(),1);
    // D is a same-map journey folio: no new page and no manufactured route
    // lines. Exercise a historical source-owned 3-stage pilgrimage.
    await page.locator("#ao-find-modular-root [data-explore-journey-open]").click();
