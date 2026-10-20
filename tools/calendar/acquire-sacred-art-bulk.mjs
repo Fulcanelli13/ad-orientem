@@ -23,7 +23,7 @@ const titleKey=title=>title.replace(/_/g," ");
 export function commonsLicenseUsable(name,copyrightedFlag){
  const lic=untag(name).toLowerCase().replace(/\s+/g," ");
  const copyright=untag(copyrightedFlag).toLowerCase();
- if(/^cc0\s*1\.0$/.test(lic))return true;
+ if(/^cc0(?:\s*1\.0)?$/.test(lic))return true;
  if(/^cc by(?:-sa)?\s*[234]\.0$/.test(lic))return true;
  if(/^(?:public domain|pd)$/.test(lic))return copyright!=="true";
  return false;
