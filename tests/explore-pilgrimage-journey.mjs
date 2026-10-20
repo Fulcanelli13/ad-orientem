@@ -78,7 +78,7 @@ assert.equal(holywellReverse[0].relation,"NAMED_STAGE");
 assert.equal(holywellReverse[0].ordinal,1);
 const pereLavalReverse=journeysForCanonicalPlace(journeys,"place:MU:pere-laval-sainte-croix");
 assert.deepEqual(pereLavalReverse.map(j=>j.routeId).sort(),
- ["route:MU:pere-laval-saint-louis","route:MU:pere-laval-saint-joseph"]);
+ ["route:MU:pere-laval-saint-joseph","route:MU:pere-laval-saint-louis"]);
 assert.equal(new Set(pereLavalReverse.map(j=>j.routeId)).size,2,"No duplicate routes per Place");
 const walsinghamReverse=journeysForCanonicalPlace(journeys,"place:GB:walsingham-catholic-shrine");
 assert.equal(walsinghamReverse.length,1);
