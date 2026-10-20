@@ -592,7 +592,7 @@ export const EXPLORE_ATLAS_LAYOUT_STYLE = `
    Numbers encode ordinal in a DOCUMENTED itinerary, never turn-by-turn routing. */
 .aoHeritageSurface .aoJourneyMapStageMarker{
   box-sizing:border-box;display:grid;place-items:center;
-  width:38px;height:38px;border-radius:50%;padding:0;
+  width:44px;height:44px;min-width:44px;min-height:44px;border-radius:50%;padding:0;
   border:2px solid #ddc395;background:#182b3a;color:#f1e4c8;
   box-shadow:0 0 0 4px rgba(8,15,24,.78),0 3px 13px rgba(0,0,0,.5);
   font:700 15px/1 var(--ao-font-ui,system-ui,sans-serif);
@@ -640,6 +640,13 @@ export const EXPLORE_ATLAS_LAYOUT_STYLE = `
 }
 .aoHeritageSurface .aoJourneyStagePlaceLink:focus-visible{
   outline:2px solid #d8bb84;outline-offset:2px;border-radius:4px;
+}
+
+/* An expanded C Place is the sole interactive folio. The underlying compact
+   preview remains mounted for Back but must not expose its own close control
+   or intercept pointer/keyboard interactions while full details are open. */
+.aoHeritageSurface:has(.aoExplorePlaceSheet) .aoHeritageCardLayer{
+  visibility:hidden;pointer-events:none;
 }
 
 /* D → C profile lifecycle: preserve Journey state and DOM under a Place
