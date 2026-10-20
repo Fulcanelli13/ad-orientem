@@ -88,6 +88,15 @@ try{
    await route.click();
    await page.waitForFunction(()=>document.querySelector("#ao-find-modular-root .aoJourneyDetail h3")
       ?.textContent?.includes("Saint-Sulpice"),null,{timeout:15000});
+   await page.waitForFunction(()=>{
+     const active=document.querySelector(".aoJourneyRoutes button.active"),
+       rail=document.querySelector(".aoJourneyRoutes");
+     if(!active||!rail)return false;
+     const a=active.getBoundingClientRect(),r=rail.getBoundingClientRect();
+     return a.left>=r.left-2&&a.right<=r.right+2;
+   },null,{timeout:8000});
+   assert.equal(await page.locator("#ao-find-modular-root .aoHeritageCategories button.active").count(),1,
+     "Journey uses one active mode marker, not a redundant pilgrimage chip");
    assert.ok(await journey.locator(".aoJourneyEvidence a[href^='https://']").count()>0,
      "D must link to original publisher evidence");
    assert.equal(await journey.locator(".aoJourneyAnchors li").count(),2,
