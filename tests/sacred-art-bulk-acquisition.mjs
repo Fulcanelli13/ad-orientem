@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import {hasPradoProvenance,commonsMetadataHasPradoProvenance,PRADO_SOURCE_HOLD} from "../tools/calendar/sacred-art-source-policy.mjs";
 import {readFileSync} from "node:fs";
-import {BATCH_SIZE,makeBatches,sourceGate,parseImageDimensions,commonsLicenseUsable} from "../tools/calendar/acquire-sacred-art-bulk.mjs";
+import {BATCH_SIZE,makeBatches,sourceGate,parseImageDimensions,commonsLicenseUsable,metadataAgreement} from "../tools/calendar/acquire-sacred-art-bulk.mjs";
 const read=p=>JSON.parse(readFileSync(new URL("../"+p,import.meta.url),"utf8"));
 const intake=read("data/research/sacred-art-bulk-source-intake-451-20261020.v1.json");
 const freeze=read("data/research/sacred-art-user-frozen-decisions-20261017.v1.json");
@@ -67,6 +67,17 @@ assert.equal(saintRosalia.verifiedMuseumAccession,"71.41");
 assert.equal(saintRosalia.sourceIdentityCorrection?.wrongObjectId,436235);
 assert.equal(saintRosalia.sourceIdentityCorrection?.wrongArtist,"Joseph Siffred Duplessis");
 assert.equal(saintRosalia.sourceIdentityCorrection?.replacementPhotoNotYetHumanApproved,true);
+const officialAlias=metadataAgreement(saintRosalia,
+  saintRosalia.sourceIdentityCorrection.actualMetTitle,"Anthony van Dyck");
+assert.equal(officialAlias.titleAgreement,true,"Historically selected Rosalia = official Met Rosalie title");
+assert.equal(officialAlias.documentaryTitleAliasMatch,true);
+const impostor=metadataAgreement(saintRosalia,"Madame de Saint-Morys","Joseph Siffred Duplessis");
+assert.equal(impostor.titleAgreement,false);
+assert.equal(impostor.artistAgreement,false);
+assert.equal(metadataAgreement({...saintRosalia,verifiedMuseumAccession:"OTHER"},
+  saintRosalia.sourceIdentityCorrection.actualMetTitle,"Anthony van Dyck").documentaryTitleAliasMatch,false,
+  "An unverified accession cannot activate a documented title exception");
+
 
 assert.equal(statuses.filter(x=>x==="COMMONS").length,61);
 assert.equal(statuses.filter(x=>x==="CLEVELAND").length,14);
