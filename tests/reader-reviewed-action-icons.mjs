@@ -13,6 +13,7 @@ assert.equal(manifest.status,"STAGED_VERIFIED_IN_PR_1485");
 assert.equal(manifest.entries.length,13);
 assert.equal(manifest.totals.githubVerifiedStagedSvgMasters,13);
 assert.equal(legacy.items.length,16,"legacy rejection hashes unexpectedly changed");
+const rejectedHashes=new Set(legacy.items.map(item=>item.sha256));
 
 // All recovered masters must stay pure, theme-aware SVGs and byte-identical to
 // the user's approved originals. No rejected/reserve artwork may be silently
@@ -20,6 +21,7 @@ assert.equal(legacy.items.length,16,"legacy rejection hashes unexpectedly change
 for(const item of manifest.entries){
   assert.equal(item.stagedInGithub,true,item.name);
   assert.equal(item.editorialStatus,"ACCEPTED_FOR_POTENTIAL_USE",item.name);
+  assert.ok(!rejectedHashes.has(item.sha256),"Rejected physical artwork reintroduced: "+item.name);
   const file=readFileSync(new URL("../"+item.githubReviewPath,import.meta.url));
   assert.equal(file.length,item.bytes,item.name+" byte length changed");
   assert.equal(createHash("sha256").update(file).digest("hex"),item.sha256,
