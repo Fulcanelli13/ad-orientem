@@ -1,6 +1,6 @@
 {
   "schema": "AO_WEISER_POST_EXTRACTION_EDITORIAL_GATE_V0",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "as_of": "2026-10-20",
   "status": "SELECTED_RECONCILIATION_QUEUE_ONLY_NOT_CANONICAL",
   "purpose": "Pilot crosswalk of high-signal Weiser feast customs after full book first pass. Not a comprehensive decision for all 568 records.",
@@ -15,7 +15,10 @@
     "source_corroborated_selected_rows": 12,
     "selected_rows_not_yet_source_corroborated": 18,
     "verified_existing_owner_links": 4,
-    "open_pr_owner_links": 1
+    "open_pr_owner_links": 1,
+    "implementation_staged_selected_rows": 8,
+    "new_custom_identities_in_draft_pr": 7,
+    "existing_owner_enrichments_in_draft_pr": 1
   },
   "active_app_baseline": {
     "main_canonical_customs_at_start": 17,
@@ -52,7 +55,11 @@
       "source_evidence": {
         "path": "data/customs/research/weiser-source-corroboration-batch-01.v1.json",
         "ref": "WEI58-23-006"
-      }
+      },
+      "implementation_state": "STAGED_IN_DRAFT_PR_1516_UNMERGED",
+      "implementation_custom_id": "PATR-001",
+      "implementation_pr_url": "https://github.com/Fulcanelli13/ad-orientem/pull/1516",
+      "release_certified": false
     },
     {
       "weiser_id": "WEI58-23-008",
@@ -73,7 +80,11 @@
       "source_evidence": {
         "path": "data/customs/research/weiser-source-corroboration-batch-01.v1.json",
         "ref": "WEI58-23-008"
-      }
+      },
+      "implementation_state": "STAGED_IN_DRAFT_PR_1516_UNMERGED",
+      "implementation_custom_id": "NDAY-001",
+      "implementation_pr_url": "https://github.com/Fulcanelli13/ad-orientem/pull/1516",
+      "release_certified": false
     },
     {
       "weiser_id": "WEI58-24-005",
@@ -94,7 +105,11 @@
       "source_evidence": {
         "path": "data/customs/research/weiser-source-corroboration-batch-01.v1.json",
         "ref": "WEI58-24-005"
-      }
+      },
+      "implementation_state": "STAGED_IN_DRAFT_PR_1516_UNMERGED",
+      "implementation_custom_id": "MARI-001",
+      "implementation_pr_url": "https://github.com/Fulcanelli13/ad-orientem/pull/1516",
+      "release_certified": false
     },
     {
       "weiser_id": "WEI58-24-008",
@@ -301,7 +316,11 @@
       "source_evidence": {
         "path": "data/customs/research/weiser-source-corroboration-batch-01.v1.json",
         "ref": "WEI58-26-019"
-      }
+      },
+      "implementation_state": "STAGED_IN_DRAFT_PR_1516_UNMERGED",
+      "implementation_custom_id": "DEAD-003",
+      "implementation_pr_url": "https://github.com/Fulcanelli13/ad-orientem/pull/1516",
+      "release_certified": false
     },
     {
       "weiser_id": "WEI58-26-020",
@@ -431,7 +450,11 @@
       "source_evidence": {
         "path": "data/customs/research/weiser-source-corroboration-batch-01.v1.json",
         "ref": "WEI58-27-019"
-      }
+      },
+      "implementation_state": "STAGED_IN_DRAFT_PR_1516_UNMERGED",
+      "implementation_custom_id": "SJOS-001",
+      "implementation_pr_url": "https://github.com/Fulcanelli13/ad-orientem/pull/1516",
+      "release_certified": false
     },
     {
       "weiser_id": "WEI58-27-023",
@@ -452,7 +475,11 @@
       "source_evidence": {
         "path": "data/customs/research/weiser-source-corroboration-batch-01.v1.json",
         "ref": "WEI58-27-023"
-      }
+      },
+      "implementation_state": "STAGED_IN_DRAFT_PR_1516_UNMERGED",
+      "implementation_custom_id": "SANT-001",
+      "implementation_pr_url": "https://github.com/Fulcanelli13/ad-orientem/pull/1516",
+      "release_certified": false
     },
     {
       "weiser_id": "WEI58-27-026",
@@ -542,7 +569,11 @@
       "source_evidence": {
         "path": "data/customs/research/weiser-source-corroboration-batch-01.v1.json",
         "ref": "WEI58-28-011"
-      }
+      },
+      "implementation_state": "STAGED_IN_DRAFT_PR_1516_UNMERGED",
+      "implementation_custom_id": "SCHR-001",
+      "implementation_pr_url": "https://github.com/Fulcanelli13/ad-orientem/pull/1516",
+      "release_certified": false
     },
     {
       "weiser_id": "WEI58-28-020",
@@ -562,7 +593,11 @@
       "source_evidence": {
         "path": "data/customs/research/weiser-source-corroboration-batch-01.v1.json",
         "ref": "WEI58-28-020"
-      }
+      },
+      "implementation_state": "STAGED_IN_DRAFT_PR_1516_UNMERGED",
+      "implementation_custom_id": "SNIC-001",
+      "implementation_pr_url": "https://github.com/Fulcanelli13/ad-orientem/pull/1516",
+      "release_certified": false
     },
     {
       "weiser_id": "WEI58-28-025",
