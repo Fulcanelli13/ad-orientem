@@ -10,6 +10,8 @@ on:
       - "data/research/sacred-art-bulk-source-intake-451-20261020.v1.json"
       - "tools/calendar/acquire-sacred-art-bulk.mjs"
       - "tests/sacred-art-bulk-acquisition.mjs"
+      - "data/research/sacred-art-open-source-recovery-76-20261020.v1.json"
+      - "tests/sacred-art-open-source-recovery-76.mjs"
       - "tools/calendar/acquire-sacred-art-nga.mjs"
       - "tests/sacred-art-nga-open-access.mjs"
       - "data/research/sacred-visual-w67-main-runtime-existing-image-asset-and-legacy-exclusion-audit-20261015.v1.json"
@@ -49,6 +51,7 @@ jobs:
           node tests/sacred-art-calendar-selected-proper-bridge.mjs
           node tests/sacred-art-first-five-open-master-intake.mjs
           node tests/sacred-art-bulk-acquisition.mjs
+          node tests/sacred-art-open-source-recovery-76.mjs
       - name: Stage exact Open Access Met master (never publish automatically)
         continue-on-error: true
         run: node tools/calendar/acquire-sacred-art-first-five.mjs
