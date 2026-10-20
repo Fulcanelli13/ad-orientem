@@ -19,9 +19,9 @@ const added=[
  ["SNIC-001","FR","STRASBOURG-SAINT-NICOLAS-2022"],
 ];
 assert.equal(added.length,7);
-assert.equal(atlas.customs.length,24);
-assert.equal(atlas.attestations.length,83);
-assert.equal(sources.sources.length,89);
+assert.equal(atlas.customs.length,27);
+assert.equal(atlas.attestations.length,86);
+assert.equal(sources.sources.length,96);
 assert.equal(negative.entries.length,7);
 const srcIds=new Set(sources.sources.map(s=>s.id));
 const blocked=new Set(negative.entries.map(e=>e.custom_id));
