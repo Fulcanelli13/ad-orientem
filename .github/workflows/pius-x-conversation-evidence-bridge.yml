@@ -62,6 +62,8 @@ on:
       - 'tests/pius-x-first40-italian-claim-review.mjs'
       - 'tools/formation/build-pius-x-810-corpus-release-selection.mjs'
       - 'tests/pius-x-full810-balanced130-corpus.mjs'
+      - 'data/learn/research/pius-x-first20-personal-and-papal-source-corrected-dialogue-20261020.v1.json'
+      - 'tests/pius-x-first20-personal-and-papal-source-edits.mjs'
       - 'previews/visible-mass-3d/pius-x-batch-release-editorial-review.html'
       - 'tools/formation/build-pius-x-release-review.mjs'
       - 'tests/pius-x-100answer-editorial-release-triage.mjs'
@@ -384,6 +386,8 @@ jobs:
         run: node tools/formation/build-pius-x-810-corpus-release-selection.mjs
       - name: Verify corpus ownership and the 130-candidate first-release shortlist
         run: node tests/pius-x-full810-balanced130-corpus.mjs
+      - name: Test first twenty revised papal teaching and biography replies against original owners
+        run: node tests/pius-x-first20-personal-and-papal-source-edits.mjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
