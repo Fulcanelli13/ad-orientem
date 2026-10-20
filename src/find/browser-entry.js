@@ -396,7 +396,8 @@ export function createFindOwner(win=globalThis){
       ?heritageCustomCards(canonical,{enabled:state.heritageCategories.includes("traditions")&&state.heritageCategories.length<HERITAGE_CATEGORIES.length,query:state.query}):[];
     const placeProfiles=preliminaryMode?[]:buildExplorePlaceProfiles(data,projection,{today:localTodayIso()});
     const journeys=preliminaryMode?[]:buildPilgrimageJourneyCatalogue(
-      projection?.byLens?.pilgrimages,data?.shrines?.sources);
+      projection?.byLens?.pilgrimages,data?.shrines?.sources,
+      data?.shrines?.routeStageEvidence);
     const featuredPlaces=placeProfiles.filter(p=>p.editorial_feature&&p.map_publishable&&p.sources.length)
       .sort((a,b)=>a.editorial_feature.ordinal-b.editorial_feature.ordinal);
     const vm=buildExploreViewModel({
@@ -643,7 +644,8 @@ export function createFindOwner(win=globalThis){
   function focusJourneyDestination(){
     if(!projection||!dataset||!mapHandle?.map)return false;
     const routes=buildPilgrimageJourneyCatalogue(
-      projection.byLens?.pilgrimages,dataset.shrines?.sources);
+      projection.byLens?.pilgrimages,dataset.shrines?.sources,
+      dataset.shrines?.routeStageEvidence);
     const active=selectedPilgrimageJourney(routes,state.journeySelectedId);
     const geo=active?.destinationGeo;
     if(!geo)return false;
