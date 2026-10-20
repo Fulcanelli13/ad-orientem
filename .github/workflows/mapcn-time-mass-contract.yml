@@ -1,0 +1,21 @@
+name: Explore Time and Mass source contracts
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "src/find/mapcn-time-mass-*"
+      - "src/find/heritage-presentation.js"
+      - "src/find/explore-presentation.js"
+      - "src/find/browser-entry.js"
+      - "src/find/explore-atlas-layout-style.js"
+      - "tests/mapcn-time-mass-contract.mjs"
+      - ".github/workflows/mapcn-time-mass-contract.yml"
+jobs:
+  contracts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: node --test tests/mapcn-time-mass-contract.mjs

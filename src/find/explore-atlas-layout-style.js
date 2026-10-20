@@ -797,4 +797,106 @@ export const EXPLORE_ATLAS_LAYOUT_STYLE = `
  .aoHeritageSurface:has(.aoFindSheetBackdrop[data-find-close-place]) .aoMapcnDiscoverRail{display:none}
 }
 
+
+/* P3: MapCN Uptime Monitor-inspired liturgical-time and source-evidence board.
+   It overlays the ONE existing Explore map; does not imply a second map or
+   continuous real-time Mass availability. */
+.aoHeritageSurface .aoTimeMassLaunch.active{
+  border-color:rgba(219,186,119,.9);
+  background:#443d2d;color:#f0dfb9;
+}
+.aoHeritageSurface .aoTimeMassPanel{
+  position:absolute;z-index:14;top:184px;bottom:13px;left:17px;
+  width:min(418px,calc(100% - 34px));min-height:0;
+  display:flex;flex-direction:column;color:#ebdfc9;
+  background:#101b26fa;border:1px solid rgba(207,181,126,.48);
+  border-radius:13px;overflow:hidden;box-shadow:0 18px 46px #000b;
+}
+.aoTimeMassHead{flex:none;display:flex;justify-content:space-between;align-items:center;
+  gap:9px;padding:14px 17px;background:#111d27;border-bottom:1px solid #a68d593e}
+.aoTimeMassHead small{display:block;color:#bda878;letter-spacing:.14em;
+  font:600 9px/1.3 var(--ao-font-ui,system-ui,sans-serif)}
+.aoTimeMassHead h2{margin:4px 0 0;color:#f3e6ce;
+  font:500 29px/1 var(--ao-font-display,Georgia,serif)}
+.aoTimeMassHead button{min-height:40px;min-width:40px;border:1px solid #866f4e88;
+  border-radius:50%;background:#1c2935;color:#e8d7b9;font-size:22px;cursor:pointer}
+.aoTimeMassScroll{min-height:0;flex:1;overflow:auto;overscroll-behavior:contain;
+  scrollbar-color:#88785e #15212b;padding:14px 16px 19px}
+.aoTimeMassSeason{position:relative;padding:15px 16px 13px 22px;
+  border:1px solid #ab936544;border-radius:9px;background:#172634;overflow:hidden}
+.aoTimeMassSeasonAccent{position:absolute;inset:0 auto 0 0;width:5px;background:#638b69}
+.aoTimeMassSeason[data-season-colour=violet] .aoTimeMassSeasonAccent{background:#85689b}
+.aoTimeMassSeason[data-season-colour=white] .aoTimeMassSeasonAccent{background:#e1cfad}
+.aoTimeMassSeason[data-season-colour=red] .aoTimeMassSeasonAccent{background:#ad685f}
+.aoTimeMassSeason[data-season-colour=black] .aoTimeMassSeasonAccent{background:#737576}
+.aoTimeMassSeason small{font:600 10px var(--ao-font-ui,system-ui,sans-serif);
+ color:#baaa8c;letter-spacing:.09em}
+.aoTimeMassSeason h3{font:500 25px/1.06 var(--ao-font-display,Georgia,serif);
+  color:#eee1ca;margin:8px 0 7px}
+.aoTimeMassSeason p{font:12px/1.5 var(--ao-font-ui,system-ui,sans-serif);
+ color:#b6c1bd;margin:0 0 8px}
+.aoTimeMassSeason>span{display:block;color:#cdb98f;
+ font:11px/1.4 var(--ao-font-ui,system-ui,sans-serif)}
+.aoTimeMassFields{display:flex;align-items:end;gap:9px;padding:12px 0 8px}
+.aoTimeMassFields label,.aoTimeMassFilters label{flex:1;min-width:0;display:grid;gap:6px;
+ font:600 10px/1.3 var(--ao-font-ui,system-ui,sans-serif);
+ text-transform:uppercase;letter-spacing:.055em;color:#cbb689}
+.aoTimeMassFields input,.aoTimeMassFilters input,.aoTimeMassFilters select{
+ display:block;width:100%;box-sizing:border-box;min-width:0;min-height:42px;
+ border:1px solid #ad925c63;border-radius:7px;padding:8px 9px;
+ background:#0d1721;color:#eee1cb;font:400 12px var(--ao-font-ui,system-ui,sans-serif)}
+.aoTimeMassFields button{min-height:42px;border:1px solid #ab93655e;
+ border-radius:7px;background:#24343e;color:#e6cf9d;padding:6px 10px;
+ font:600 11px/1.3 var(--ao-font-ui,system-ui,sans-serif);cursor:pointer}
+.aoTimeMassNotice{color:#b5b0a7;background:#101923;border-left:2px solid #a98d60;
+ padding:10px 11px;margin:5px 0 12px;font:11px/1.5 var(--ao-font-ui,system-ui,sans-serif)}
+.aoTimeMassMetrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.aoTimeMassMetrics>div{min-width:0;padding:10px;background:#1d2b34;border:1px solid #846f4745;
+  border-radius:7px}
+.aoTimeMassMetrics small{display:block;color:#bac2ba;font:10px/1.3 var(--ao-font-ui,system-ui,sans-serif)}
+.aoTimeMassMetrics strong{display:block;margin-top:5px;font:500 24px/1 var(--ao-font-display,Georgia,serif);color:#e8d2a4}
+.aoTimeMassFilters{display:grid;grid-template-columns:minmax(0,1fr);gap:10px;
+ margin:15px 0 12px}
+.aoTimeMassResults{font:600 11px var(--ao-font-ui,system-ui,sans-serif);
+ color:#cbb78e;margin:0 0 9px}
+.aoTimeMassRows{display:grid;gap:8px}
+.aoTimeMassRow{padding:13px;background:#152330;border:1px solid #ad925c40;border-radius:8px}
+.aoTimeMassRow>small{display:block;color:#c7ad81;text-transform:uppercase;
+ letter-spacing:.045em;font:600 9px/1.4 var(--ao-font-ui,system-ui,sans-serif)}
+.aoTimeMassRow h3{font:500 19px/1.16 var(--ao-font-display,Georgia,serif);
+ color:#f0e5d2;margin:5px 0 4px}
+.aoTimeMassRow p{font:11px/1.45 var(--ao-font-ui,system-ui,sans-serif);
+ color:#aebec0;margin:5px 0}
+.aoTimeMassRow blockquote{margin:9px 0;white-space:pre-line;max-height:130px;
+ overflow:auto;padding:9px 10px;background:#0e1b25;border-left:2px solid #c3a775;
+ font:12px/1.55 var(--ao-font-body,Georgia,serif);color:#dcd1bb}
+.aoTimeMassRow a{display:inline-block;margin-top:8px;color:#e1c591;
+ font:600 11px/1.4 var(--ao-font-ui,system-ui,sans-serif);
+ text-decoration:underline;text-underline-offset:3px}
+.aoTimeMassRow[data-time-mass-status=REVIEW_DUE]{
+ border-color:#bb8e626e}
+.aoTimeMassMore,.aoTimeMassScroll footer button{width:100%;min-height:44px;margin-top:12px;
+ cursor:pointer;border:1px solid #bda07272;border-radius:7px;
+ background:#24363d;color:#e5cca0;padding:9px;
+ font:600 11px/1.4 var(--ao-font-ui,system-ui,sans-serif)}
+.aoTimeMassScroll footer{margin-top:15px;border-top:1px solid #ae965d4a;padding-top:10px}
+.aoTimeMassScroll footer p{font:11px/1.5 var(--ao-font-ui,system-ui,sans-serif);color:#b5bdb9}
+.aoTimeMassPanel button:focus-visible,.aoTimeMassPanel input:focus-visible,
+.aoTimeMassPanel select:focus-visible,.aoTimeMassPanel a:focus-visible{
+ outline:2px solid #ebd3a3;outline-offset:2px}
+.aoHeritageSurface:has(.aoFindSheetBackdrop) .aoTimeMassPanel{visibility:hidden;pointer-events:none}
+@media(max-width:799px){
+ .aoHeritageSurface .aoTimeMassPanel{top:auto;left:0;right:0;bottom:0;width:100%;
+   height:min(53dvh,475px);border-radius:17px 17px 0 0;border-left:0;border-right:0}
+ .aoTimeMassHead{padding:10px 14px}
+ .aoTimeMassHead h2{font-size:23px}
+ .aoTimeMassScroll{padding:10px 12px 17px}
+ .aoTimeMassSeason{padding:10px 12px 10px 18px}
+ .aoTimeMassSeason h3{font-size:22px}
+ .aoTimeMassFields{align-items:stretch}
+ .aoTimeMassFields button{max-width:49%}
+ .aoTimeMassMetrics strong{font-size:20px}
+ .aoHeritageSurface:has(.aoTimeMassPanel) .aoHeritageMapHint{display:none}
+}
+
 `;
