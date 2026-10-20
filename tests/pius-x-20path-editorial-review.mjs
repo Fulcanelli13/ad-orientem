@@ -44,7 +44,7 @@ for(const chapter of review.chapters){
 }
 assert.equal(seen.size,100);
 assert.equal(revisions,6); // Four other optional revisions are on legacy T2, not automatic next turns.
-assert.equal(canonMatches,4);
+assert.equal(canonMatches,5);
 assert.equal((await review.inspect('PX1905-Q667')),null);
 const html=await readFile(new URL('../previews/visible-mass-3d/pius-x-conversation-paths-review.html',import.meta.url),'utf8');
 assert.ok(html.includes('pius-x-20path-editorial-review.mjs'));
