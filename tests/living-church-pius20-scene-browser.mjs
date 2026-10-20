@@ -40,7 +40,7 @@ try{
   const page=await ctx.newPage(),errors=[],sourceReads=new Set();
   page.on('pageerror',e=>errors.push(String(e)));
   await page.route('https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/**',async route=>{
-   const u=new URL(route.request().url);
+   const u=new URL(route.request().url());
    const pathPrefix='/Fulcanelli13/ad-orientem/'+PIUS_20_REVIEW_PIN+'/data/learn/research/';
    if(!u.pathname.startsWith(pathPrefix))return route.fulfill({status:404,body:'Unpinned original denied'});
    const file=u.pathname.slice(pathPrefix.length);
