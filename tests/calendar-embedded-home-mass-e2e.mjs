@@ -175,6 +175,7 @@ try{
   assert.ok(await page.locator("[data-full-mass-category]").count()>=5);
   await page.screenshot({path:resolve(shots,"mass-preflight-"+width+".png"),fullPage:true});
   assert.equal(await page.locator("[data-full-mass-reader-mode]").count(),3);
+  await page.locator("[data-folio-calendar-details] > summary").click();
   await page.locator("[data-mass-calendar-details] > summary").click();
   await page.locator('[data-mass-calendar-view="year"]').click();
   await page.waitForSelector('[data-mass-calendar-host] #ao-calendar-modular-root[data-ao-calendar-view="year"]',{state:"visible",timeout:45000});

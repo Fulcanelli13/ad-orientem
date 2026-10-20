@@ -1,0 +1,318 @@
+{
+  "schema": "AO_SACRED_GEOGRAPHY_R89_FIRST_COVERAGE_RELEASE_V1",
+  "date": "2026-10-20",
+  "status": "PROPOSED_VIA_PULL_REQUEST",
+  "policy": "Close zero-presence coverage with source-grounded unique Catholic Places; no satellite/shrine/TLM assertions from proximity. Map feature points are not certified visitor entrances.",
+  "baseline": {
+    "places": 294,
+    "country_areas": 89,
+    "sources": 515,
+    "represented_jurisdictions": 87,
+    "unrepresented_jurisdictions": 163
+  },
+  "result": {
+    "places": 306,
+    "country_areas": 100,
+    "sources": 539,
+    "represented_jurisdictions": 98,
+    "unrepresented_jurisdictions": 152,
+    "new_places": 12,
+    "new_country_scopes": 11
+  },
+  "country_areas_added": [
+    "geo:country:BB",
+    "geo:country:BM",
+    "geo:country:FO",
+    "geo:country:GD",
+    "geo:country:GL",
+    "geo:country:GY",
+    "geo:country:KW",
+    "geo:country:NC",
+    "geo:country:OM",
+    "geo:country:SC",
+    "geo:country:TH"
+  ],
+  "published_new": [
+    {
+      "place_id": "place:FO:mariukirkjan-torshavn",
+      "research_id": "AO-R81-DISC-006",
+      "country": "FO",
+      "name": "Mariukirkjan — St Mary's Catholic Church, Tórshavn",
+      "place_type": "church",
+      "identity_source_url": "https://www.katolsk.dk/kontakt/bispedoemmets-menigheder",
+      "geo_source_url": "https://www.openstreetmap.org/way/466897153",
+      "geo_source_ref": "osm:way:466897153",
+      "lat": 62.01438,
+      "lng": -6.77978,
+      "precision": "site",
+      "source_ids": [
+        "AO-R89-SITE-AO-R81-DISC-006",
+        "AO-R89-GEO-AO-R81-DISC-006"
+      ],
+      "access_status": "CURRENT_VISITOR_HOURS_NOT_ASSERTED",
+      "tlm_status": "NO_1962_MISSAL_ASSERTION",
+      "geometry_note": "Building feature point, not a verified entrance"
+    },
+    {
+      "place_id": "place:GL:christ-the-king-catholic-church-nuuk",
+      "research_id": "AO-R81-DISC-007",
+      "country": "GL",
+      "name": "Christ the King Catholic Church, Nuuk",
+      "place_type": "church",
+      "identity_source_url": "https://www.katolsk.dk/kontakt/bispedoemmets-menigheder/nuuk-krist-konge-kirke-58",
+      "geo_source_url": "https://www.openstreetmap.org/way/253674855",
+      "geo_source_ref": "osm:way:253674855",
+      "lat": 64.17942,
+      "lng": -51.73179,
+      "precision": "site",
+      "source_ids": [
+        "AO-R89-SITE-AO-R81-DISC-007",
+        "AO-R89-GEO-AO-R81-DISC-007"
+      ],
+      "access_status": "CURRENT_VISITOR_HOURS_NOT_ASSERTED",
+      "tlm_status": "NO_1962_MISSAL_ASSERTION",
+      "geometry_note": "Building feature point, not a verified entrance"
+    },
+    {
+      "place_id": "place:OM:saints-peter-paul-catholic-church-ruwi",
+      "research_id": "AO-R81-DISC-022",
+      "country": "OM",
+      "name": "Saints Peter and Paul Catholic Church, Ruwi",
+      "place_type": "church",
+      "identity_source_url": "https://avosa.org/parishes-1",
+      "geo_source_url": "https://www.openstreetmap.org/way/653760160",
+      "geo_source_ref": "osm:way:653760160",
+      "lat": 23.60649,
+      "lng": 58.53592,
+      "precision": "site",
+      "source_ids": [
+        "AO-R89-SITE-AO-R81-DISC-022",
+        "AO-R89-GEO-AO-R81-DISC-022"
+      ],
+      "access_status": "CURRENT_VISITOR_HOURS_NOT_ASSERTED",
+      "tlm_status": "NO_1962_MISSAL_ASSERTION",
+      "geometry_note": "Building feature point, not a verified entrance"
+    },
+    {
+      "place_id": "place:KW:holy-family-cocathedral-kuwait-city",
+      "research_id": "AO-R81-DISC-027",
+      "country": "KW",
+      "name": "Holy Family Catholic Co-Cathedral, Kuwait City",
+      "place_type": "cathedral",
+      "identity_source_url": "https://www.avona.org/kuwait-holy-family-co-cathedral/",
+      "geo_source_url": "https://www.openstreetmap.org/way/154721740",
+      "geo_source_ref": "osm:way:154721740",
+      "lat": 29.36383,
+      "lng": 47.95989,
+      "precision": "site",
+      "source_ids": [
+        "AO-R89-SITE-AO-R81-DISC-027",
+        "AO-R89-GEO-AO-R81-DISC-027"
+      ],
+      "access_status": "CURRENT_VISITOR_HOURS_NOT_ASSERTED",
+      "tlm_status": "NO_1962_MISSAL_ASSERTION",
+      "geometry_note": "Building feature point, not a verified entrance"
+    },
+    {
+      "place_id": "place:KW:our-lady-of-arabia-minor-basilica-ahmadi",
+      "research_id": "AO-R81-DISC-028",
+      "country": "KW",
+      "name": "Minor Basilica of Our Lady of Arabia, Ahmadi",
+      "place_type": "basilica",
+      "identity_source_url": "https://www.avona.org/kuwait-our-lady-of-arabia-parish/",
+      "geo_source_url": "https://www.openstreetmap.org/way/337916298",
+      "geo_source_ref": "osm:way:337916298",
+      "lat": 29.0922,
+      "lng": 48.06752,
+      "precision": "site",
+      "source_ids": [
+        "AO-R89-SITE-AO-R81-DISC-028",
+        "AO-R89-GEO-AO-R81-DISC-028"
+      ],
+      "access_status": "CURRENT_VISITOR_HOURS_NOT_ASSERTED",
+      "tlm_status": "NO_1962_MISSAL_ASSERTION",
+      "geometry_note": "Building feature point, not a verified entrance"
+    },
+    {
+      "place_id": "place:TH:assumption-cathedral-bangkok",
+      "research_id": "AO-R82-DISC-008",
+      "country": "TH",
+      "name": "Assumption Cathedral, Bangkok",
+      "place_type": "cathedral",
+      "identity_source_url": "https://assumptioncathedralbkk.org/",
+      "geo_source_url": "https://www.openstreetmap.org/way/32005418",
+      "geo_source_ref": "osm:way:32005418",
+      "lat": 13.72311,
+      "lng": 100.51516,
+      "precision": "site",
+      "source_ids": [
+        "AO-R89-SITE-AO-R82-DISC-008",
+        "AO-R89-GEO-AO-R82-DISC-008"
+      ],
+      "access_status": "CURRENT_VISITOR_HOURS_NOT_ASSERTED",
+      "tlm_status": "NO_1962_MISSAL_ASSERTION",
+      "geometry_note": "Building feature point, not a verified entrance"
+    },
+    {
+      "place_id": "place:BB:st-patrick-catholic-cathedral-bridgetown",
+      "research_id": "AO-R82-DISC-050",
+      "country": "BB",
+      "name": "St Patrick's Roman Catholic Cathedral, Bridgetown",
+      "place_type": "cathedral",
+      "identity_source_url": "https://stpatricksrcbarbados.org/",
+      "geo_source_url": "https://www.openstreetmap.org/way/385918684",
+      "geo_source_ref": "osm:way:385918684",
+      "lat": 13.09184,
+      "lng": -59.60897,
+      "precision": "site",
+      "source_ids": [
+        "AO-R89-SITE-AO-R82-DISC-050",
+        "AO-R89-GEO-AO-R82-DISC-050"
+      ],
+      "access_status": "CURRENT_VISITOR_HOURS_NOT_ASSERTED",
+      "tlm_status": "NO_1962_MISSAL_ASSERTION",
+      "geometry_note": "Building feature point, not a verified entrance"
+    },
+    {
+      "place_id": "place:GD:immaculate-conception-cathedral-st-georges",
+      "research_id": "AO-R82-DISC-054",
+      "country": "GD",
+      "name": "Cathedral of the Immaculate Conception, St George's",
+      "place_type": "cathedral",
+      "identity_source_url": "https://grenadacic.wixsite.com/grenadacic",
+      "geo_source_url": "https://www.openstreetmap.org/way/383927620",
+      "geo_source_ref": "osm:way:383927620",
+      "lat": 12.05343,
+      "lng": -61.7521,
+      "precision": "site",
+      "source_ids": [
+        "AO-R89-SITE-AO-R82-DISC-054",
+        "AO-R89-GEO-AO-R82-DISC-054"
+      ],
+      "access_status": "CURRENT_VISITOR_HOURS_NOT_ASSERTED",
+      "tlm_status": "NO_1962_MISSAL_ASSERTION",
+      "geometry_note": "Building feature point, not a verified entrance"
+    },
+    {
+      "place_id": "place:SC:immaculate-conception-cathedral-victoria",
+      "research_id": "AO-R82-DISC-027",
+      "country": "SC",
+      "name": "Cathedral of the Immaculate Conception, Victoria",
+      "place_type": "cathedral",
+      "identity_source_url": "https://dioceseportvictoria.org/diocese/?page_id=61&lang=en_GB",
+      "geo_source_url": "https://www.openstreetmap.org/way/616378214",
+      "geo_source_ref": "osm:way:616378214",
+      "lat": -4.61978,
+      "lng": 55.45164,
+      "precision": "site",
+      "source_ids": [
+        "AO-R89-SITE-AO-R82-DISC-027",
+        "AO-R89-GEO-AO-R82-DISC-027"
+      ],
+      "access_status": "CURRENT_VISITOR_HOURS_NOT_ASSERTED",
+      "tlm_status": "NO_1962_MISSAL_ASSERTION",
+      "geometry_note": "Building feature point, not a verified entrance"
+    },
+    {
+      "place_id": "place:NC:cathedrale-saint-joseph-noumea",
+      "research_id": "AO-R82-DISC-090",
+      "country": "NC",
+      "name": "Cathédrale Saint-Joseph, Nouméa",
+      "place_type": "cathedral",
+      "identity_source_url": "https://diocese.ddec.nc/paroisses/cathedrale.htm",
+      "geo_source_url": "https://www.openstreetmap.org/way/37794199",
+      "geo_source_ref": "osm:way:37794199",
+      "lat": -22.27278,
+      "lng": 166.44461,
+      "precision": "site",
+      "source_ids": [
+        "AO-R89-SITE-AO-R82-DISC-090",
+        "AO-R89-GEO-AO-R82-DISC-090"
+      ],
+      "access_status": "CURRENT_VISITOR_HOURS_NOT_ASSERTED",
+      "tlm_status": "NO_1962_MISSAL_ASSERTION",
+      "geometry_note": "Building feature point, not a verified entrance"
+    },
+    {
+      "place_id": "place:GY:immaculate-conception-cathedral-brickdam",
+      "research_id": "AO-R82-DISC-068",
+      "country": "GY",
+      "name": "Cathedral of the Immaculate Conception, Brickdam",
+      "place_type": "cathedral",
+      "identity_source_url": "https://rcdiocesegy.org/georgetown-parishes/",
+      "geo_source_url": "https://www.openstreetmap.org/way/222811604",
+      "geo_source_ref": "osm:way:222811604",
+      "lat": 6.80744,
+      "lng": -58.16201,
+      "precision": "site",
+      "source_ids": [
+        "AO-R89-SITE-AO-R82-DISC-068",
+        "AO-R89-GEO-AO-R82-DISC-068"
+      ],
+      "access_status": "CURRENT_VISITOR_HOURS_NOT_ASSERTED",
+      "tlm_status": "NO_1962_MISSAL_ASSERTION",
+      "geometry_note": "Building feature point, not a verified entrance"
+    },
+    {
+      "place_id": "place:BM:st-theresa-cathedral-hamilton",
+      "research_id": "AO-R82-DISC-077",
+      "country": "BM",
+      "name": "Cathedral of St Theresa of Lisieux, Hamilton",
+      "place_type": "cathedral",
+      "identity_source_url": "https://www.romancatholicbermuda.bm/parishes/st-theresas-cathedral-parish",
+      "geo_source_url": "https://www.openstreetmap.org/way/909567101",
+      "geo_source_ref": "osm:way:909567101",
+      "lat": 32.29725,
+      "lng": -64.78482,
+      "precision": "site",
+      "source_ids": [
+        "AO-R89-SITE-AO-R82-DISC-077",
+        "AO-R89-GEO-AO-R82-DISC-077"
+      ],
+      "access_status": "CURRENT_VISITOR_HOURS_NOT_ASSERTED",
+      "tlm_status": "NO_1962_MISSAL_ASSERTION",
+      "geometry_note": "Building feature point, not a verified entrance"
+    }
+  ],
+  "held": [
+    {
+      "research_id": "AO-R82-DISC-005",
+      "country": "AZ",
+      "name": "Baku Immaculate Conception",
+      "decision": "HOLD",
+      "missing": "Reconcile conflicting original Catholic custodian street addresses before placing a pin"
+    },
+    {
+      "research_id": "SG-INV-0689",
+      "country": "KZ",
+      "name": "Ozernoye Marian sanctuary",
+      "decision": "HOLD",
+      "missing": "Church footprint separate from sanctuary-area location"
+    },
+    {
+      "research_id": "AO-R82-DISC-075",
+      "country": "HT",
+      "name": "Historical Bel-Air sanctuary",
+      "decision": "HOLD",
+      "missing": "Confirm active successor; destroyed historic building must not be mapped as open"
+    },
+    {
+      "research_id": "AO-R82-DISC-056",
+      "country": "LC",
+      "name": "St Lucy church, Micoud",
+      "decision": "HOLD",
+      "missing": "National shrine rank decree or simpler parish classification plus exact map feature"
+    },
+    {
+      "research_id": "AO-R82-DISC-015",
+      "country": "KH",
+      "name": "St Joseph pro-cathedral, Phnom Penh",
+      "decision": "HOLD",
+      "missing": "Direct current ecclesiastical confirmation and precise Catholic building geometry"
+    }
+  ],
+  "source_research": "Worldwide Ultra Master Registry R81/R82, R88 country matrix; newly retrieved official Church pages; building-level mapped OSM features",
+  "tlm_venue_links_added": 0,
+  "existing_directory_links_preserved": 9,
+  "related_shrine_records_added": 0
+}

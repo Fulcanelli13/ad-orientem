@@ -74,10 +74,11 @@ try{
    assert.equal(metrics.calendarView,"picker");
    assert.equal(metrics.gridCount,42,"Never suppress unresolved liturgical days");
    assert.equal(metrics.tabDisplay,"flex","Month views must stay on one horizontal rail");
-   assert.equal(metrics.tabs.length,5);
+   assert.equal(metrics.tabs.length,3,"Month should offer only All, Temporale and Sanctorale");
    if(lang==="fr"){
-     assert.ok(metrics.tabs.some(t=>/Jours majeurs/i.test(t.label)),"French Major tab untranslated");
-     assert.ok(metrics.tabs.some(t=>/Pratiques/i.test(t.label)),"French Practices tab untranslated");
+     assert.ok(metrics.tabs.some(t=>/Tout/i.test(t.label)),"French All tab untranslated");
+     assert.ok(metrics.tabs.some(t=>/Temporal/i.test(t.label)),"French Temporale filter untranslated");
+     assert.ok(metrics.tabs.some(t=>/Sanctoral/i.test(t.label)),"French Sanctorale filter untranslated");
    }
    assert.ok(metrics.tabs.every(x=>Math.abs(x.top-metrics.tabs[0].top)<2),
      "Month categories wrapped, hiding the calendar dates: "+JSON.stringify(metrics.tabs));
@@ -100,20 +101,17 @@ try{
    await page.screenshot({path:resolve(output,"calendar-month-"+lang+"-"+width+".png"),
      fullPage:false,animations:"disabled"});
    await cal.locator('[data-cal-month-view="temporale"]').click();
-   await cal.locator('[data-cal-month-index="temporale"]').waitFor({state:"visible",timeout:25000});
-   assert.equal(await cal.locator(".aoCalMonthTimelineSurface").count(),1,
-     "Temporale must use the approved vertical chronology");
-   const unclassifiedDisclosure=cal.locator(".aoCalMonthUnclassified");
-   if(await unclassifiedDisclosure.count())
-     assert.equal(await unclassifiedDisclosure.getAttribute("open"),null,
-       "Unclassified source identities must be disclosed, not promoted as observed Temporale");
-   await cal.locator('[data-cal-month-view="calendar"]').click();
-   const practices=cal.locator('[data-cal-month-view="practices"]');
-   await practices.click();
-   assert.equal(await practices.getAttribute("aria-current"),"page",
-     "Practices not keyboard/touch accessible in horizontal category rail");
-   await cal.locator('[data-cal-month-view="calendar"]').click();
+   assert.equal(await cal.locator(".aoCalV2MonthGrid").getAttribute("data-cal-month-filter"),"temporale",
+     "Temporale should filter the existing grid, not open a second page");
    assert.equal(await cal.locator("[data-cal-pick-date]").count(),42);
+   await cal.locator('[data-cal-month-view="sanctorale"]').click();
+   assert.equal(await cal.locator(".aoCalV2MonthGrid").getAttribute("data-cal-month-filter"),"sanctorale",
+     "Sanctorale should filter the same 42-date grid");
+   assert.equal(await cal.locator("[data-cal-pick-date]").count(),42);
+   await cal.locator('[data-cal-month-view="calendar"]').click();
+   assert.equal(await cal.locator(".aoCalV2MonthGrid").getAttribute("data-cal-month-filter"),"calendar");
+   assert.equal(await cal.locator(".aoCalHybridMajorSection").count(),1);
+   assert.equal(await cal.locator(".aoCalHybridPracticesSection").count(),1);
    const original=await cal.locator(".aoCalV2YearHeading h2").innerText();
    await cal.locator('[data-cal-month-shift="1"]').click();
    await page.waitForFunction(previous=>
@@ -121,7 +119,7 @@ try{
      original,{timeout:10000});
    assert.equal(await cal.locator("[data-cal-pick-date]").count(),42);
    assert.equal(errors.length,0,"Calendar runtime errors: "+errors.slice(0,3).join("; "));
-   console.log("PASS "+width+"px "+lang+": five single-row month tabs, 44px controls, 42 days, month navigation");
+   console.log("PASS "+width+"px "+lang+": three in-grid filters, 44px controls, 42 days, month navigation");
   }finally{await page.close();}
  }
 }finally{

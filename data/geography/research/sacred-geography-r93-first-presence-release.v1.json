@@ -1,0 +1,336 @@
+{
+  "schema": "AO_SACRED_GEOGRAPHY_R93_FIRST_PRESENCE_CATHOLIC_PLACES_V1",
+  "date": "2026-10-20",
+  "status": "PROPOSED_VIA_PULL_REQUEST",
+  "policy": "Keep Catholic institution and actual place locator as separate evidence. Four named OSM Catholic church ways plus seven independent 10-character GCatholic Plus Codes, not fictional OSM building polygons. OLC center denotes an approximate ~14m grid-cell site and is not a certified visitor entrance. No invented TLM, liturgical calendar, relic or shrine association.",
+  "baseline": {
+    "places": 336,
+    "country_areas": 130,
+    "sources": 599,
+    "represented_jurisdictions": 128,
+    "unrepresented_jurisdictions": 122
+  },
+  "result": {
+    "places": 347,
+    "country_areas": 141,
+    "sources": 621,
+    "represented_jurisdictions": 139,
+    "unrepresented_jurisdictions": 111,
+    "new_places": 11,
+    "new_country_scopes": 11
+  },
+  "country_areas_added": [
+    "geo:country:AS",
+    "geo:country:CD",
+    "geo:country:CK",
+    "geo:country:CM",
+    "geo:country:FJ",
+    "geo:country:KN",
+    "geo:country:MW",
+    "geo:country:NP",
+    "geo:country:PG",
+    "geo:country:SB",
+    "geo:country:SZ"
+  ],
+  "published_new": [
+    {
+      "place_id": "place:CD:notre-dame-du-congo-cathedral-kinshasa",
+      "research_id": "AO-R82-DISC-042",
+      "country": "CD",
+      "name": "Cathédrale Notre-Dame du Congo, Kinshasa",
+      "place_type": "cathedral",
+      "city": "Kinshasa",
+      "formatted": "Kinshasa, Democratic Republic of the Congo",
+      "lat": -4.32384,
+      "lng": 15.29463,
+      "geo_source_kind": "OSM",
+      "geo_source_ref": "osm:way:4714383",
+      "geo_source_url": "https://www.openstreetmap.org/way/4714383",
+      "identity_source_url": "https://archidiocesekinshasa.org/article.php?id=213&titre=13-nouveaux-diacres-pour-le-service-de-l-evangile",
+      "identity_source_issuer": "Archdiocese of Kinshasa",
+      "identity_source_directness": "OFFICIAL_DIOCESAN",
+      "geometry_note": "Cathedral named by the Archdiocese of Kinshasa and independently identified as a Roman Catholic cathedral building on the mapped OSM feature.",
+      "source_ids": [
+        "AO-R93-SITE-AO-R82-DISC-042",
+        "AO-R93-GEO-AO-R82-DISC-042"
+      ],
+      "tlm_status": "NO_1962_MISSAL_ASSERTION",
+      "access_status": "CURRENT_VISITOR_HOURS_NOT_ASSERTED"
+    },
+    {
+      "place_id": "place:CM:notre-dame-des-victoires-cathedral-yaounde",
+      "research_id": "AO-R82-DISC-044",
+      "country": "CM",
+      "name": "Cathédrale Notre-Dame-des-Victoires, Yaoundé",
+      "place_type": "cathedral",
+      "city": "Yaoundé",
+      "formatted": "Yaoundé, Cameroon",
+      "lat": 3.86325,
+      "lng": 11.52106,
+      "geo_source_kind": "OSM",
+      "geo_source_ref": "osm:way:188702599",
+      "geo_source_url": "https://www.openstreetmap.org/way/188702599",
+      "identity_source_url": "https://action-45.com/cndv/images/stories/placementpretre2014.pdf",
+      "identity_source_issuer": "Archdiocese of Yaoundé — 2014 clergy assignment listing",
+      "identity_source_directness": "PRIMARY_HISTORICAL",
+      "geometry_note": "2014 original archdiocesan clergy assignment names the cathedral. Named OSM Catholic church feature maps its building; historic clerical roster does not certify present-day visitor opening.",
+      "source_ids": [
+        "AO-R93-SITE-AO-R82-DISC-044",
+        "AO-R93-GEO-AO-R82-DISC-044"
+      ],
+      "tlm_status": "NO_1962_MISSAL_ASSERTION",
+      "access_status": "CURRENT_VISITOR_HOURS_NOT_ASSERTED"
+    },
+    {
+      "place_id": "place:SB:holy-cross-cathedral-honiara",
+      "research_id": "AO-R93-NEW-SB-001",
+      "country": "SB",
+      "name": "Holy Cross Cathedral, Honiara",
+      "place_type": "cathedral",
+      "city": "Honiara",
+      "formatted": "Honiara, Solomon Islands",
+      "lat": -9.43624,
+      "lng": 159.96342,
+      "geo_source_kind": "OSM",
+      "geo_source_ref": "osm:way:271790885",
+      "geo_source_url": "https://www.openstreetmap.org/way/271790885",
+      "identity_source_url": "https://www.pngsicbc.com/dioceses-1/archdiocese-of-honiara",
+      "identity_source_issuer": "Catholic Bishops Conference of Papua New Guinea and Solomon Islands",
+      "identity_source_directness": "OFFICIAL_DIOCESAN",
+      "geometry_note": "Bishops conference explicitly identifies Holy Cross Cathedral; distinct named Roman Catholic cathedral church polygon.",
+      "source_ids": [
+        "AO-R93-SITE-AO-R93-NEW-SB-001",
+        "AO-R93-GEO-AO-R93-NEW-SB-001"
+      ],
+      "tlm_status": "NO_1962_MISSAL_ASSERTION",
+      "access_status": "CURRENT_VISITOR_HOURS_NOT_ASSERTED"
+    },
+    {
+      "place_id": "place:NP:assumption-cathedral-lalitpur",
+      "research_id": "AO-R82-DISC-010",
+      "country": "NP",
+      "name": "Cathedral of the Assumption of the Blessed Virgin Mary, Lalitpur",
+      "place_type": "cathedral",
+      "city": "Lalitpur",
+      "formatted": "Jawalakhel, Lalitpur, Kathmandu Valley, Nepal",
+      "lat": 27.67273,
+      "lng": 85.30654,
+      "geo_source_kind": "OSM",
+      "geo_source_ref": "osm:way:206956852",
+      "geo_source_url": "https://www.openstreetmap.org/way/206956852",
+      "identity_source_url": "https://www.asianews.it/news-en/Catholics-celebrate-Kathmandu-cathedral-31920.html",
+      "identity_source_issuer": "AsiaNews Catholic news service",
+      "identity_source_directness": "SECONDARY",
+      "geometry_note": "Catholic reporting identifies Cathedral of the Assumption in Kathmandu Valley; distinct named OSM Roman Catholic church building at Jawalakhel, not assumed to be another Kathmandu church.",
+      "source_ids": [
+        "AO-R93-SITE-AO-R82-DISC-010",
+        "AO-R93-GEO-AO-R82-DISC-010"
+      ],
+      "tlm_status": "NO_1962_MISSAL_ASSERTION",
+      "access_status": "CURRENT_VISITOR_HOURS_NOT_ASSERTED"
+    },
+    {
+      "place_id": "place:SZ:our-lady-assumption-cathedral-manzini",
+      "research_id": "AO-R82-DISC-033",
+      "country": "SZ",
+      "name": "Cathedral of Our Lady of the Assumption, Manzini",
+      "place_type": "cathedral",
+      "city": "Manzini",
+      "formatted": "Sandlane Street, Manzini, Eswatini",
+      "lat": -26.5005625,
+      "lng": 31.3775625,
+      "geo_source_kind": "OTHER",
+      "geo_source_ref": "olc:5G5HF9XH+Q2",
+      "geo_source_url": "https://gcatholic.org/churches/africa/4946.htm",
+      "identity_source_url": "https://www.dioceseofmanzini.org/lady-assumption-cathedral/",
+      "identity_source_issuer": "Roman Catholic Diocese of Manzini",
+      "identity_source_directness": "OFFICIAL_DIOCESAN",
+      "geometry_note": "Diocese identifies current Cathedral of Our Lady of the Assumption at Sandlane Street. GCatholic Plus Code is a mapped site grid cell, not a verified church polygon or entrance.",
+      "source_ids": [
+        "AO-R93-SITE-AO-R82-DISC-033",
+        "AO-R93-GEO-AO-R82-DISC-033"
+      ],
+      "tlm_status": "NO_1962_MISSAL_ASSERTION",
+      "access_status": "CURRENT_VISITOR_HOURS_NOT_ASSERTED"
+    },
+    {
+      "place_id": "place:MW:maula-cathedral-lilongwe",
+      "research_id": "AO-R82-DISC-046",
+      "country": "MW",
+      "name": "Maula Cathedral of Our Lady Queen of Africa, Lilongwe",
+      "place_type": "cathedral",
+      "city": "Lilongwe",
+      "formatted": "Maula, Lilongwe, Malawi",
+      "lat": -13.9796875,
+      "lng": 33.7624375,
+      "geo_source_kind": "OTHER",
+      "geo_source_ref": "olc:5GRM2QC6+4X",
+      "geo_source_url": "https://gcatholic.org/churches/africa/5250",
+      "identity_source_url": "https://www.maulaparish.org/",
+      "identity_source_issuer": "Maula Cathedral parish",
+      "identity_source_directness": "OFFICIAL_CHURCH",
+      "geometry_note": "Current Catholic parish operates the Maula Cathedral; site locator is a GCatholic Plus Code, not independent polygon. A Latin-language service listed by the parish is not proof of a 1962 rite.",
+      "source_ids": [
+        "AO-R93-SITE-AO-R82-DISC-046",
+        "AO-R93-GEO-AO-R82-DISC-046"
+      ],
+      "tlm_status": "NO_1962_MISSAL_ASSERTION",
+      "access_status": "CURRENT_VISITOR_HOURS_NOT_ASSERTED"
+    },
+    {
+      "place_id": "place:KN:immaculate-conception-cocathedral-basseterre",
+      "research_id": "AO-R82-DISC-058",
+      "country": "KN",
+      "name": "Immaculate Conception Co-Cathedral, Basseterre",
+      "place_type": "cathedral",
+      "city": "Basseterre",
+      "formatted": "East Independence Square, Basseterre, Saint Kitts and Nevis",
+      "lat": 17.2963125,
+      "lng": -62.7215625,
+      "geo_source_kind": "OTHER",
+      "geo_source_ref": "olc:779V77WH+G9",
+      "geo_source_url": "https://gcatholic.org/churches/centralamerica/1520",
+      "identity_source_url": "https://diocesesjb.org/places/",
+      "identity_source_issuer": "Roman Catholic Diocese of St John's–Basseterre",
+      "identity_source_directness": "OFFICIAL_DIOCESAN",
+      "geometry_note": "Diocese independently names the co-cathedral in Basseterre. The GCatholic ten-character Plus Code supplies a site grid-cell anchor, not a surveyed entrance.",
+      "source_ids": [
+        "AO-R93-SITE-AO-R82-DISC-058",
+        "AO-R93-GEO-AO-R82-DISC-058"
+      ],
+      "tlm_status": "NO_1962_MISSAL_ASSERTION",
+      "access_status": "CURRENT_VISITOR_HOURS_NOT_ASSERTED"
+    },
+    {
+      "place_id": "place:CK:st-joseph-cathedral-avarua",
+      "research_id": "AO-R82-DISC-080",
+      "country": "CK",
+      "name": "St Joseph's Cathedral, Avarua, Rarotonga",
+      "place_type": "cathedral",
+      "city": "Avarua",
+      "formatted": "Avarua, Rarotonga, Cook Islands",
+      "lat": -21.2050625,
+      "lng": -159.7804375,
+      "geo_source_kind": "OTHER",
+      "geo_source_ref": "olc:53C2Q6V9+XR",
+      "geo_source_url": "https://gcatholic.org/churches/oceania/2285",
+      "identity_source_url": "https://catholiccookislands.com/",
+      "identity_source_issuer": "Roman Catholic Diocese of Rarotonga",
+      "identity_source_directness": "OFFICIAL_DIOCESAN",
+      "geometry_note": "Diocese identifies St Joseph's Cathedral at Avarua; georeference is the center of a ten-character Plus Code published by GCatholic, not church building footprint.",
+      "source_ids": [
+        "AO-R93-SITE-AO-R82-DISC-080",
+        "AO-R93-GEO-AO-R82-DISC-080"
+      ],
+      "tlm_status": "NO_1962_MISSAL_ASSERTION",
+      "access_status": "CURRENT_VISITOR_HOURS_NOT_ASSERTED"
+    },
+    {
+      "place_id": "place:AS:holy-family-cathedral-tafuna",
+      "research_id": "AO-R82-DISC-078",
+      "country": "AS",
+      "name": "Holy Family Cathedral, Tafuna",
+      "place_type": "cathedral",
+      "city": "Tafuna",
+      "formatted": "Fatuoaiga, Tafuna, American Samoa",
+      "lat": -14.3309375,
+      "lng": -170.7343125,
+      "geo_source_kind": "OTHER",
+      "geo_source_ref": "olc:52QFM798+J7",
+      "geo_source_url": "https://gcatholic.org/churches/oceania/1548",
+      "identity_source_url": "https://www.dsppfatuoaiga.org/about-us",
+      "identity_source_issuer": "Roman Catholic Diocese of Samoa–Pago Pago",
+      "identity_source_directness": "OFFICIAL_DIOCESAN",
+      "geometry_note": "Official diocesan site confirms Cathedral of the Holy Family in Tafuna; GCatholic Plus Code points to an approximate site square and is not a visitor-entrance guarantee.",
+      "source_ids": [
+        "AO-R93-SITE-AO-R82-DISC-078",
+        "AO-R93-GEO-AO-R82-DISC-078"
+      ],
+      "tlm_status": "NO_1962_MISSAL_ASSERTION",
+      "access_status": "CURRENT_VISITOR_HOURS_NOT_ASSERTED"
+    },
+    {
+      "place_id": "place:FJ:sacred-heart-cathedral-suva",
+      "research_id": "AO-R82-DISC-081",
+      "country": "FJ",
+      "name": "Sacred Heart Cathedral, Suva",
+      "place_type": "cathedral",
+      "city": "Suva",
+      "formatted": "35 Pratt Street, Suva, Fiji",
+      "lat": -18.1399375,
+      "lng": 178.4251875,
+      "geo_source_kind": "OTHER",
+      "geo_source_ref": "olc:5VHWVC6G+23",
+      "geo_source_url": "https://gcatholic.org/churches/oceania/2288",
+      "identity_source_url": "https://aosfiji.org/parish-contact-list/",
+      "identity_source_issuer": "Roman Catholic Archdiocese of Suva",
+      "identity_source_directness": "OFFICIAL_DIOCESAN",
+      "geometry_note": "Archdiocese confirms Sacred Heart Cathedral at Suva/Pratt Street, distinct from adjacent Reserve Bank. GCatholic Plus Code is used instead of fabricating a building OSM way.",
+      "source_ids": [
+        "AO-R93-SITE-AO-R82-DISC-081",
+        "AO-R93-GEO-AO-R82-DISC-081"
+      ],
+      "tlm_status": "NO_1962_MISSAL_ASSERTION",
+      "access_status": "CURRENT_VISITOR_HOURS_NOT_ASSERTED"
+    },
+    {
+      "place_id": "place:PG:holy-cross-procathedral-vanimo",
+      "research_id": "AO-R82-DISC-099",
+      "country": "PG",
+      "name": "Holy Cross Pro-Cathedral, Vanimo",
+      "place_type": "cathedral",
+      "city": "Vanimo",
+      "formatted": "Vanimo, Papua New Guinea",
+      "lat": -2.6830625,
+      "lng": 141.3031875,
+      "geo_source_kind": "OTHER",
+      "geo_source_ref": "olc:6R938883+Q7",
+      "geo_source_url": "https://gcatholic.org/churches/oceania/2920",
+      "identity_source_url": "https://www.vatican.va/content/francesco/en/speeches/2024/september/documents/20240908-papua-nuovaguinea-fedeli.html",
+      "identity_source_issuer": "Holy See — Pope Francis address at Vanimo, 8 September 2024",
+      "identity_source_directness": "PRIMARY_HISTORICAL",
+      "geometry_note": "Pope Francis's Vanimo visit confirms Holy Cross pro-cathedral and esplanade separately; Plus Code georeferences the church site, not the event area or a separate shrine.",
+      "source_ids": [
+        "AO-R93-SITE-AO-R82-DISC-099",
+        "AO-R93-GEO-AO-R82-DISC-099"
+      ],
+      "tlm_status": "NO_1962_MISSAL_ASSERTION",
+      "access_status": "CURRENT_VISITOR_HOURS_NOT_ASSERTED"
+    }
+  ],
+  "held": [
+    {
+      "research_id": "AO-R82-DISC-040",
+      "country": "AO",
+      "reason": "Archdiocese identifies cathedral Nossa Senhora da Conceição at Cidade Alta; mapped Nossa Senhora dos Remédios in lower city is a distinct physical church. Do not substitute polygon or merge identities."
+    },
+    {
+      "research_id": "AO-R82-DISC-071",
+      "country": "BS",
+      "reason": "Nassau St Francis Xavier cathedral status/historical-old-cathedral geometry need independent reconciliation."
+    },
+    {
+      "research_id": "AO-R82-DISC-075",
+      "country": "HT",
+      "reason": "Port-au-Prince historic Marian sanctuary identity and post-destruction site status are unresolved."
+    },
+    {
+      "research_id": "AO-R82-DISC-011",
+      "country": "BD",
+      "reason": "Baptist-tagged Dhaka OSM feature contradicts claimed Catholic site; Chattogram published separately in R92, hold this identity."
+    }
+  ],
+  "resolved_prior_holds": [
+    "AO-R82-DISC-033",
+    "AO-R82-DISC-046",
+    "AO-R82-DISC-080",
+    "AO-R82-DISC-081"
+  ],
+  "tlm_venue_links_added": 0,
+  "related_shrine_records_added": 0,
+  "map_provenance": {
+    "osm_named_church_features": 4,
+    "gcatholic_plus_code_sites": 7,
+    "osm_license": "© OpenStreetMap contributors, ODbL 1.0; no inferred building entrances"
+  }
+}

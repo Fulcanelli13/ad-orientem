@@ -220,6 +220,74 @@
       "calendar_trigger_hint": null,
       "confidence": "HIGH",
       "guardrail": "Distinguish clearly from the Eucharist; stronger historical source closure is still desirable."
+    },
+    {
+      "custom_id": "DOM-003",
+      "family": "Home & family",
+      "name": "Using holy water at home",
+      "canonical_statement": "Keeping and using genuinely blessed holy water in the home is a traditional Catholic sacramental practice. French domestic bénitiers attest the custom; the blessing of the water itself is distinct from a layperson’s personal devotional use.",
+      "custom_class": "TRADITIONAL_CATHOLIC_PRACTICE",
+      "period_label": "Pre-conciliar → present",
+      "decision": "KEEP — RECONCILED FROM SOT-07",
+      "publication_state": "PUBLISHED",
+      "owners": [
+        "Learn",
+        "Pray"
+      ],
+      "calendar_trigger_hint": null,
+      "confidence": "HIGH",
+      "guardrail": "Using holy water is voluntary and is not a substitute for sacramental worship; do not reproduce or claim to perform reserved blessings. Keep distinct from DOM-002, which documents the vessel."
+    },
+    {
+      "custom_id": "DOM-011",
+      "family": "Sacramentals",
+      "name": "Keeping blessed Candlemas candles at home",
+      "canonical_statement": "Catholic families have traditionally taken blessed candles home after the Candlemas liturgy. Their light recalls Christ, light for the nations; their devotional use is neither compulsory nor a guarantee of physical protection.",
+      "custom_class": "FRENCH_CATHOLIC_CUSTOM",
+      "period_label": "Historical domestic practice → present",
+      "decision": "KEEP — RECONCILED FROM SOT-07",
+      "publication_state": "PUBLISHED",
+      "owners": [
+        "Calendar",
+        "Learn"
+      ],
+      "calendar_trigger_hint": "02/02 — Candlemas (date owned by Calendar)",
+      "confidence": "HIGH",
+      "guardrail": "The 1962 Candlemas reader owns the liturgical blessing and procession; no home ritual is mandated. Historical use near the dying is contextual, never an obligation."
+    },
+    {
+      "custom_id": "DOM-013",
+      "family": "Sacramentals",
+      "name": "Keeping blessed Palm Sunday branches at home",
+      "canonical_statement": "The faithful traditionally take blessed Palm Sunday branches home, including to adorn domestic crucifixes as a sign of trust in Christ crucified. This follows, rather than replaces, participation in the Palm Sunday liturgy.",
+      "custom_class": "FRENCH_CATHOLIC_CUSTOM",
+      "period_label": "Historical practice → present",
+      "decision": "KEEP — RECONCILED FROM SOT-07",
+      "publication_state": "PUBLISHED",
+      "owners": [
+        "Calendar",
+        "Learn"
+      ],
+      "calendar_trigger_hint": "Palm Sunday (calculated by Calendar)",
+      "confidence": "HIGH",
+      "guardrail": "Blessed branches are not talismans; branches and regional plant species vary. The Palm Sunday reader retains exclusive ownership of ceremonial mechanics."
+    },
+    {
+      "custom_id": "BLSS-001",
+      "family": "Saints & sacramental blessings",
+      "name": "St Blaise — blessing of throats",
+      "canonical_statement": "On or near 3 February, Catholics may receive a traditional blessing invoking St Blaise's intercession against ailments of the throat and other illnesses. In the historical Roman Ritual a priest blesses candles specifically for this blessing and applies two crossed candles while praying; the modern Book of Blessings provides different candle and ministerial provisions.",
+      "custom_class": "TRADITIONAL_ROMAN_PRACTICE",
+      "period_label": "Pre-1962 Roman Ritual witness → current practice in distinct ritual forms",
+      "decision": "KEEP — SOT-07 EXTENSION 2026-10-20",
+      "publication_state": "PUBLISHED",
+      "owners": [
+        "Calendar",
+        "Learn"
+      ],
+      "calendar_trigger_hint": "03/02, St Blaise commemoration in 1962 Roman calendar; Calendar owns calculation and precedence",
+      "confidence": "HIGH",
+      "guardrail": "Voluntary, not a Mass or a third-class feast in the ordinary 1962 calendar, not a promise of healing, and no app-provided or lay-invented priestly ceremony. The historical St Blaise candle blessing and modern Candlemas-candle provision must not be equated. Availability varies by parish."
     }
   ],
   "attestations": [
@@ -1359,6 +1427,75 @@
       ],
       "evidence_note": "The shrine documents more than a century of annual Saint Anne novena pilgrimage with nightly Rosary procession and Mass.",
       "map_policy": "PLACE",
+      "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:DOM-003:FR",
+      "custom_id": "DOM-003",
+      "geo_area_id": "geo:country:FR",
+      "place_id": null,
+      "place_name_hint": null,
+      "geographic_precision": "COUNTRY",
+      "period_label": "19th–20th century domestic artifacts; broader practice continuing",
+      "strength": "STRONG",
+      "source_ids": [
+        "MUCEM-BENITIER",
+        "RIT-WELLER"
+      ],
+      "evidence_note": "French historical domestic bénitiers document the household place of holy water; traditional Roman Ritual separately documents the blessing of water.",
+      "map_policy": "AREA_CONTEXT",
+      "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:DOM-011:FR",
+      "custom_id": "DOM-011",
+      "geo_area_id": "geo:country:FR",
+      "place_id": null,
+      "place_name_hint": null,
+      "geographic_precision": "COUNTRY",
+      "period_label": "Historical French custom, described in modern Catholic liturgical sources",
+      "strength": "STRONG",
+      "source_ids": [
+        "ECF-CHANDLEUR-HOME"
+      ],
+      "evidence_note": "French liturgical lexicon explicitly identifies taking home blessed Candlemas candles and a traditional use of the candle near the dying.",
+      "map_policy": "AREA_CONTEXT",
+      "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:DOM-013:FR",
+      "custom_id": "DOM-013",
+      "geo_area_id": "geo:country:FR",
+      "place_id": null,
+      "place_name_hint": null,
+      "geographic_precision": "COUNTRY",
+      "period_label": "Traditional French domestic use, continuing",
+      "strength": "STRONG",
+      "source_ids": [
+        "ECF-RAMEAUX-HOME",
+        "DPP-2001"
+      ],
+      "evidence_note": "French bishops describe taking blessed branches home to adorn crosses; the Vatican Directory §139 also describes domestic keeping of Palm Sunday foliage.",
+      "map_policy": "AREA_CONTEXT",
+      "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:BLSS-001:ROMAN",
+      "custom_id": "BLSS-001",
+      "geo_area_id": "geo:world",
+      "place_id": null,
+      "place_name_hint": null,
+      "geographic_precision": "GLOBAL",
+      "period_label": "Pre-1962 ritual witnesses and modern rite; observance local, not universal in every parish",
+      "strength": "STRONG",
+      "source_ids": [
+        "ROMR-BLAISE-1956",
+        "SCHOLA-BLAISE-LATIN",
+        "BOOK-BLESSINGS-BLAISE",
+        "ORDO-BLAISE-1962"
+      ],
+      "evidence_note": "A documented Roman ritual sacramental; global area marks broad Roman-rite status, not evidence that a particular parish or locality offers the blessing. The old and new ritual rules differ.",
+      "map_policy": "NOT_MAPPED",
       "confidence": "HIGH"
     }
   ]

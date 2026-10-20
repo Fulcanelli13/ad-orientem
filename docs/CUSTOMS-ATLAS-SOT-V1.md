@@ -52,6 +52,12 @@ It includes:
 
 The seed is intentionally not the full 63-row SOT-07 corpus. Rows depending only on unresolved bibliographic/project evidence remain outside publication until source closure.
 
+### Domestic customary source-lock addition — 20 October 2026
+
+The current review-branch corpus contains **17 active customs, 75 attestations, and 81 registered sources**. It source-locks three original SOT-07 research IDs: `DOM-003` (holy water at home), `DOM-011` (Candlemas candle at home), and `DOM-013` (blessed branches at home), plus separately documented new extension `BLSS-001` (St Blaise's throat blessing). The inherited three use French `AREA_CONTEXT` attestations; the new ritual extension has a global-context `NOT_MAPPED` attestation. None creates a map pin. The initial 13-custom figures above describe the **initial** foundation, not the current branch total.
+
+See `docs/CUSTOMS-BBG-SOURCE-LOCK-2026-10-20.md` for the direct-source table, Calendar handoff, historical prayer-book limitations, and the newly admitted St Blaise source-of-truth extension under its own fresh ID (see `data/customs/sot07-extensions.v1.json`). No negative-knowledge exceptions were removed.
+
 ## Map policy
 
 There are five states:

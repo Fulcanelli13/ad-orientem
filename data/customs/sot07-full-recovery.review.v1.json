@@ -1,18 +1,18 @@
 {
   "schema": "AO_SOT07_FULL_CUSTOMARY_CROSSWALK_REVIEW_V1",
-  "as_of": "2026-10-10",
+  "as_of": "2026-10-20",
   "status": "RESEARCH_RECOVERED_REVIEW_ONLY_NO_AUTOMATIC_PUBLICATION",
   "source_workbook": "Ad_Orientem_SOT-07_Traditional_Catholic_Customary_French_World_v1.xlsx",
   "source_sheet": "01_CUSTOMARY_REGISTER",
   "source_library_file_id": "file_00000000e08c82088333eb7f2f9be424",
   "source_start_row": 5,
-  "description": "All 63 original rows are crosswalked to the 13 published customs, 7 explicit HOLD/REJECT dispositions, and 43 rows belonging to other module owners or requiring editorial review. Source IDs are workbook research references, not proof of independently verified hyperlinks. No extra practices automatically added to Explore.",
+  "description": "All 63 original SOT-07 rows remain crosswalked to 16 now-published original IDs, 7 explicit HOLD/REJECT dispositions, and 40 remaining other-owner/editorial review rows. New SOT-07 extension BLSS-001 is recorded separately and is not counted among the original 63.",
   "counts": {
     "total": 63,
-    "published": 13,
+    "published": 16,
     "hold": 3,
     "reject": 4,
-    "cross_module_or_review": 43
+    "cross_module_or_review": 40
   },
   "rows": [
     {
@@ -50,9 +50,9 @@
         "RIT-WELLER"
       ],
       "original_owner_hint": "Learn + Pray",
-      "disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
-      "canonical_custom_id": null,
-      "notes": null
+      "disposition": "PUBLISHED_CANONICAL",
+      "canonical_custom_id": "DOM-003",
+      "notes": "2026-10-20 source lock: original holy-water household-use claim now published, anchored to Mucem domestic material evidence and Roman Ritual; distinct from DOM-002 vessel."
     },
     {
       "original_custom_id": "DOM-004",
@@ -152,9 +152,9 @@
         "FR-FAMILY-RESEARCH"
       ],
       "original_owner_hint": "Calendar + Learn",
-      "disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
-      "canonical_custom_id": null,
-      "notes": null
+      "disposition": "PUBLISHED_CANONICAL",
+      "canonical_custom_id": "DOM-011",
+      "notes": "2026-10-20 source lock: direct French liturgical explanation of Candlemas candle use, ECF-CHANDLEUR-HOME."
     },
     {
       "original_custom_id": "DOM-012",
@@ -177,9 +177,9 @@
         "FR-FAMILY-RESEARCH"
       ],
       "original_owner_hint": "Calendar + Learn",
-      "disposition": "CROSS_MODULE_OR_EDITORIAL_REVIEW",
-      "canonical_custom_id": null,
-      "notes": null
+      "disposition": "PUBLISHED_CANONICAL",
+      "canonical_custom_id": "DOM-013",
+      "notes": "2026-10-20 source lock: French episcopal witness for taking Palm branches home, ECF-RAMEAUX-HOME."
     },
     {
       "original_custom_id": "DOM-014",
@@ -811,6 +811,7 @@
     "Original row count is 63; published count 13 is not intended to represent all Catholic customs.",
     "Geographic attestation is independent of custom identity and is never an implied map pin.",
     "HOLD/REJECT records remain blocked pending their explicit reopen conditions.",
-    "CROSS_MODULE_OR_EDITORIAL_REVIEW does not mean unreviewed content may be published."
+    "CROSS_MODULE_OR_EDITORIAL_REVIEW does not mean unreviewed content may be published.",
+    "2026-10-20: DOM-003, DOM-011 and DOM-013 admitted with direct source closure; original workbook IDs and source foreign keys preserved. New BLSS-001 governed by data/customs/sot07-extensions.v1.json."
   ]
 }

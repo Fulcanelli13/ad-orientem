@@ -8,11 +8,11 @@ import {buildExploreViewModel,renderExploreToString} from "../src/find/explore-p
 
 const read=p=>JSON.parse(readFileSync(p,"utf8"));
 const geo=read("data/geography/seed-registry.v1.json"),sacred=read("data/explore/sacred-phenomena-seed.v1.json");
-assert.equal(geo.places.length,294);
+assert.equal(geo.places.length,347);
 assert.equal(sacred.apparitions.length,33);
 assert.equal(sacred.relics.length,122);
 assert.equal(sacred.scope,"PARTIAL_VERIFIED_SEED_NOT_COMPLETE_WORLD_CENSUS");
-assert.equal(assertExploreGeographyRegistry(geo).counts.places,294);
+assert.equal(assertExploreGeographyRegistry(geo).counts.places,347);
 const places=new Map(geo.places.map(p=>[p.place_id,p]));
 const ids=new Set();
 for(const record of [...sacred.apparitions,...sacred.relics]){
@@ -99,7 +99,7 @@ assert.match(detail,/Sainte Couronne d’épines/);
 assert.match(detail,/notredamedeparis.fr/);
 assert.match(detail,/aucune authentification canonique indépendante/);
 const profiles=buildExplorePlaceProfiles({geography:geo},projection,{today:"2026-10-09"});
-assert.equal(profiles.length,294);
+assert.equal(profiles.length,347);
 const cotignac=profiles.find(p=>p.place_id==="place:FR:saint-joseph-bessillon");
 assert.equal(cotignac.counts.apparitions,1);
 assert.equal(cotignac.counts.relics,0);

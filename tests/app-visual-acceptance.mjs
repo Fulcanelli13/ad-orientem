@@ -318,6 +318,23 @@ try{
   assert.equal(massEntry.active,"mass","Home Follow Mass did not activate the Mass destination");
   assert.equal(massEntry.preflightVisible,true,"Home Follow Mass did not open the celebration preflight");
   assert.equal(massEntry.nativeMounted,false,"fresh Mass entry bypassed preflight and mounted R17 immediately");
+  const preflightDonor=await page.evaluate(()=>{
+    const flow=document.querySelector("#ao-mass-flow-v1 .aoMassFlow");
+    const folio=flow?.querySelector("[data-ao-full-mass-preflight]");
+    const outline=e=>({tag:e.tagName,id:e.id,cls:String(e.className||"").slice(0,180),
+      data:Object.entries(e.dataset||{}).filter(([a])=>a.startsWith("ao")||a==="role").slice(0,9),
+      text:(e.textContent||"").trim().replace(/\\s+/g," ").slice(0,100),
+      display:getComputedStyle(e).display,visible:!!e.getClientRects().length,
+      parent:e.parentElement?.className||""});
+    return {flow:flow?outline(flow):null,
+      parents:folio?[folio.parentElement,folio.parentElement?.parentElement].filter(Boolean).map(outline):[],
+      siblings:folio?[...folio.parentElement.children].map(outline):[],
+      candidate:[...flow?.querySelectorAll?.("section,div,header,article,fieldset,h2,h3,button")||[]]
+        .filter(e=>e!==folio&&!folio?.contains(e)&&e.children.length<=5 &&
+         /MASS OF THE DAY|CONTENT READINESS|HOW DO YOU WANT TO FOLLOW|VOX|AD ORIENTEM MASS PREFLIGHT/.test((e.textContent||"").trim().replace(/\\s+/g," ").slice(0,110)))
+        .slice(0,35).map(outline)};
+  });
+  console.log("GUIDED_FOLIO_HOST_DOM",JSON.stringify(preflightDonor));
   await shot("01b-mass-preflight");
   await page.locator("#ao-mass-flow-v1 [data-ao-close]").last().click();
   await page.waitForFunction(()=>!document.getElementById("ao-mass-flow-v1"),null,{timeout:5000});
@@ -454,19 +471,22 @@ try{
   }));
   assert.equal(inlineMonth.cells,42,"Month lost its 42-day six-week grid");
   assert.equal(inlineMonth.markers,42,"Month lost its liturgical rank/colour markers");
-  assert.deepEqual(inlineMonth.views,["calendar","major","temporale","sanctorale","practices"],
-    "Month omitted an essential discoverable view");
+  assert.deepEqual(inlineMonth.views,["calendar","temporale","sanctorale"],
+    "Month must expose only All, Temporale and Sanctorale filters");
   assert.ok(inlineMonth.overflow<=1,"Month clips its grid on a 390px phone");
   assert.equal(inlineMonth.active,"page","Today did not identify the Month tab");
+  assert.equal(await page.locator("#ao-calendar-modular-root .aoCalHybridMajorSection").count(),1,
+    "Major celebrations must appear beneath the grid");
+  assert.equal(await page.locator("#ao-calendar-modular-root .aoCalHybridPracticesSection").count(),1,
+    "Practices and customs must appear beneath the grid");
   await shot("02d-calendar-month");
-  for(const category of ["major","temporale","sanctorale","practices"]){
-    await page.locator("#ao-calendar-modular-root .aoCalMonthTabs [data-cal-month-view='"+category+"']").click();
-    await page.waitForSelector("#ao-calendar-modular-root [data-cal-month-index='"+category+"']",
-      {state:"visible",timeout:5000});
-    assert.ok(await page.locator("#ao-calendar-modular-root [data-cal-month-index='"+category+"'] [data-cal-month-index-date]").count()>=3,
-      "Month category has no date-linked content: "+category);
+  for(const category of ["temporale","sanctorale"]){
+    await page.locator("#ao-calendar-modular-root [data-cal-month-view='"+category+"']").click();
+    assert.equal(await page.locator("#ao-calendar-modular-root .aoCalV2MonthGrid").getAttribute("data-cal-month-filter"),category);
+    assert.equal(await page.locator("#ao-calendar-modular-root .aoCalV2MonthGrid [data-cal-pick-date]").count(),42,
+      "Cycle filter must preserve the same 42 clickable date squares");
   }
-  await shot("02g-calendar-month-categories");
+  await shot("02g-calendar-month-filters");
 
   await page.locator(todayTabs+" [data-home-calendar-today]").click();
   await page.waitForFunction(()=>document.querySelector(".homeScreen.aoTodayV2 [data-home-calendar-inline]")?.hidden===true,

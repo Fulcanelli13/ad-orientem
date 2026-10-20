@@ -1,0 +1,339 @@
+{
+  "schema": "AO_SACRED_GEOGRAPHY_R90_COVERAGE_FIRST_RELEASE_V1",
+  "date": "2026-10-20",
+  "status": "PROPOSED_VIA_PULL_REQUEST",
+  "policy": "Named Catholic church/map feature identity is sufficient for a Place only when independently supported by a religious custodian or primary institution; noncustodial evidence is labelled; no TLM, shrine or visitor hours inference. OSM map reference is a feature marker, never certified entrance.",
+  "baseline": {
+    "places": 306,
+    "country_areas": 100,
+    "sources": 539,
+    "represented_jurisdictions": 98,
+    "unrepresented_jurisdictions": 152
+  },
+  "result": {
+    "places": 318,
+    "country_areas": 112,
+    "sources": 563,
+    "represented_jurisdictions": 110,
+    "unrepresented_jurisdictions": 140,
+    "new_places": 12,
+    "new_country_scopes": 12
+  },
+  "country_areas_added": [
+    "geo:country:BJ",
+    "geo:country:GU",
+    "geo:country:JO",
+    "geo:country:LC",
+    "geo:country:MM",
+    "geo:country:PF",
+    "geo:country:SR",
+    "geo:country:TG",
+    "geo:country:TO",
+    "geo:country:TZ",
+    "geo:country:UZ",
+    "geo:country:VU"
+  ],
+  "published_new": [
+    {
+      "place_id": "place:JO:memorial-moses-mount-nebo",
+      "research_id": "AO-R81-DISC-064",
+      "country": "JO",
+      "name": "Basilica of the Memorial of Moses, Mount Nebo",
+      "place_type": "shrine",
+      "city": "Madaba",
+      "formatted": "Mount Nebo, Ras Siyagha, Madaba, Jordan",
+      "lat": 31.76797,
+      "lng": 35.72567,
+      "geo_source_url": "https://www.openstreetmap.org/way/115677147",
+      "geo_source_ref": "osm:way:115677147",
+      "identity_source_url": "https://www.custodia.org/en/convents/madaba-mount-nebo/",
+      "identity_source_issuer": "Custody of the Holy Land",
+      "identity_source_directness": "OFFICIAL_SHRINE",
+      "geometry_note": "Named basilica inside the Franciscan Mount Nebo memorial; coordinates identify the church building rather than the summit viewpoint.",
+      "source_ids": [
+        "AO-R90-SITE-AO-R81-DISC-064",
+        "AO-R90-GEO-AO-R81-DISC-064"
+      ],
+      "tlm_status": "NO_1962_MISSAL_ASSERTION",
+      "access_status": "CURRENT_VISITOR_HOURS_NOT_ASSERTED"
+    },
+    {
+      "place_id": "place:MM:st-mary-cathedral-yangon",
+      "research_id": "AO-R82-DISC-016",
+      "country": "MM",
+      "name": "St Mary's Cathedral (Immaculate Conception), Yangon",
+      "place_type": "cathedral",
+      "city": "Yangon",
+      "formatted": "372 Bo Aung Kyaw Street, Yangon, Myanmar",
+      "lat": 16.77848,
+      "lng": 96.16554,
+      "geo_source_url": "https://www.openstreetmap.org/way/395657539",
+      "geo_source_ref": "osm:way:395657539",
+      "identity_source_url": "https://catholicarchdioceseofyangon.com/parish.php?parish=St.+Mary%27s+Cathedral",
+      "identity_source_issuer": "Archdiocese of Yangon",
+      "identity_source_directness": "OFFICIAL_CHURCH",
+      "geometry_note": "Catholic archdiocesan parish identified at Bo Aung Kyaw Street; named cathedral building, not archbishop residence.",
+      "source_ids": [
+        "AO-R90-SITE-AO-R82-DISC-016",
+        "AO-R90-GEO-AO-R82-DISC-016"
+      ],
+      "tlm_status": "NO_1962_MISSAL_ASSERTION",
+      "access_status": "CURRENT_VISITOR_HOURS_NOT_ASSERTED"
+    },
+    {
+      "place_id": "place:UZ:sacred-heart-cathedral-tashkent",
+      "research_id": "AO-R82-DISC-018",
+      "country": "UZ",
+      "name": "Cathedral of the Sacred Heart of Jesus, Tashkent",
+      "place_type": "cathedral",
+      "city": "Tashkent",
+      "formatted": "80/1 Mahtumquli Street, Tashkent, Uzbekistan",
+      "lat": 41.3056,
+      "lng": 69.29599,
+      "geo_source_url": "https://www.openstreetmap.org/node/12327792294",
+      "geo_source_ref": "osm:node:12327792294",
+      "identity_source_url": "https://catholics-in-tashkent.org/en",
+      "identity_source_issuer": "Roman Catholic Parish of the Sacred Heart of Jesus, Tashkent",
+      "identity_source_directness": "OFFICIAL_CHURCH",
+      "geometry_note": "Public authority independently identifies current Roman Catholic cathedral; named OSM point rather than a surveyed building entrance.",
+      "source_ids": [
+        "AO-R90-SITE-AO-R82-DISC-018",
+        "AO-R90-GEO-AO-R82-DISC-018"
+      ],
+      "tlm_status": "NO_1962_MISSAL_ASSERTION",
+      "access_status": "CURRENT_VISITOR_HOURS_NOT_ASSERTED"
+    },
+    {
+      "place_id": "place:BJ:immaculate-conception-basilica-ouidah",
+      "research_id": "AO-R82-DISC-035",
+      "country": "BJ",
+      "name": "Basilica of the Immaculate Conception, Ouidah",
+      "place_type": "basilica",
+      "city": "Ouidah",
+      "formatted": "Ouidah, Benin",
+      "lat": 6.36063,
+      "lng": 2.08486,
+      "geo_source_url": "https://www.openstreetmap.org/way/402951938",
+      "geo_source_ref": "osm:way:402951938",
+      "identity_source_url": "https://www.vatican.va/content/benedict-xvi/en/speeches/2011/november/documents/hf_ben-xvi_spe_20111119_firma-es-ap.html",
+      "identity_source_issuer": "Holy See",
+      "identity_source_directness": "PRIMARY_HISTORICAL",
+      "geometry_note": "Pope Benedict XVI's visit explicitly identifies the Basilica of the Immaculate Conception at Ouidah; no inference about other shrines.",
+      "source_ids": [
+        "AO-R90-SITE-AO-R82-DISC-035",
+        "AO-R90-GEO-AO-R82-DISC-035"
+      ],
+      "tlm_status": "NO_1962_MISSAL_ASSERTION",
+      "access_status": "CURRENT_VISITOR_HOURS_NOT_ASSERTED"
+    },
+    {
+      "place_id": "place:TG:sacred-heart-cathedral-lome",
+      "research_id": "AO-R82-DISC-036",
+      "country": "TG",
+      "name": "Cathédrale du Sacré-Cœur, Lomé",
+      "place_type": "cathedral",
+      "city": "Lomé",
+      "formatted": "Lomé, Togo",
+      "lat": 6.12493,
+      "lng": 1.22639,
+      "geo_source_url": "https://www.openstreetmap.org/way/49711568",
+      "geo_source_ref": "osm:way:49711568",
+      "identity_source_url": "https://archidiocesedelome.tg/actualites/bienvenue-archidiocese-lome",
+      "identity_source_issuer": "Archdiocese of Lomé",
+      "identity_source_directness": "OFFICIAL_CHURCH",
+      "geometry_note": "Archdiocese names the Sacré-Cœur Cathedral; church footprint distinct from diocesan administrative address.",
+      "source_ids": [
+        "AO-R90-SITE-AO-R82-DISC-036",
+        "AO-R90-GEO-AO-R82-DISC-036"
+      ],
+      "tlm_status": "NO_1962_MISSAL_ASSERTION",
+      "access_status": "CURRENT_VISITOR_HOURS_NOT_ASSERTED"
+    },
+    {
+      "place_id": "place:TZ:st-joseph-cathedral-dar-es-salaam",
+      "research_id": "AO-R82-DISC-031",
+      "country": "TZ",
+      "name": "St Joseph's Cathedral, Dar es Salaam",
+      "place_type": "cathedral",
+      "city": "Dar es Salaam",
+      "formatted": "Sokoine Drive, Dar es Salaam, Tanzania",
+      "lat": -6.8193,
+      "lng": 39.28799,
+      "geo_source_url": "https://www.openstreetmap.org/way/688369839",
+      "geo_source_ref": "osm:way:688369839",
+      "identity_source_url": "https://dsmarchdiocese.org/about-us/cathedral/",
+      "identity_source_issuer": "Catholic Archdiocese of Dar es Salaam",
+      "identity_source_directness": "OFFICIAL_CHURCH",
+      "geometry_note": "Archdiocese describes the St Joseph cathedral; building footprint independent of diocesan office location.",
+      "source_ids": [
+        "AO-R90-SITE-AO-R82-DISC-031",
+        "AO-R90-GEO-AO-R82-DISC-031"
+      ],
+      "tlm_status": "NO_1962_MISSAL_ASSERTION",
+      "access_status": "CURRENT_VISITOR_HOURS_NOT_ASSERTED"
+    },
+    {
+      "place_id": "place:SR:saints-peter-paul-cathedral-paramaribo",
+      "research_id": "AO-R82-DISC-076",
+      "country": "SR",
+      "name": "Cathedral Basilica of Saints Peter and Paul, Paramaribo",
+      "place_type": "cathedral",
+      "city": "Paramaribo",
+      "formatted": "Henck Arronstraat 22-24, Paramaribo, Suriname",
+      "lat": 5.82873,
+      "lng": -55.15394,
+      "geo_source_url": "https://www.openstreetmap.org/way/191965158",
+      "geo_source_ref": "osm:way:191965158",
+      "identity_source_url": "https://bisdomparamaribo.org/",
+      "identity_source_issuer": "Roman Catholic Diocese of Paramaribo",
+      "identity_source_directness": "OFFICIAL_CHURCH",
+      "geometry_note": "Diocese records continuing use of the cathedral basilica; map pin is for the distinctive timber church, not a visitor access promise.",
+      "source_ids": [
+        "AO-R90-SITE-AO-R82-DISC-076",
+        "AO-R90-GEO-AO-R82-DISC-076"
+      ],
+      "tlm_status": "NO_1962_MISSAL_ASSERTION",
+      "access_status": "CURRENT_VISITOR_HOURS_NOT_ASSERTED"
+    },
+    {
+      "place_id": "place:GU:dulce-nombre-maria-cathedral-basilica-hagatna",
+      "research_id": "AO-R82-DISC-086",
+      "country": "GU",
+      "name": "Dulce Nombre de Maria Cathedral-Basilica, Hagåtña",
+      "place_type": "cathedral",
+      "city": "Hagåtña",
+      "formatted": "207 Archbishop FC Flores Street, Hagåtña, Guam",
+      "lat": 13.47418,
+      "lng": 144.75232,
+      "geo_source_url": "https://www.openstreetmap.org/way/320402586",
+      "geo_source_ref": "osm:way:320402586",
+      "identity_source_url": "https://www.aganacathedral.org/about-us",
+      "identity_source_issuer": "Dulce Nombre de Maria Cathedral-Basilica",
+      "identity_source_directness": "OFFICIAL_CHURCH",
+      "geometry_note": "Cathedral parish confirms mother-church identity and current street address.",
+      "source_ids": [
+        "AO-R90-SITE-AO-R82-DISC-086",
+        "AO-R90-GEO-AO-R82-DISC-086"
+      ],
+      "tlm_status": "NO_1962_MISSAL_ASSERTION",
+      "access_status": "CURRENT_VISITOR_HOURS_NOT_ASSERTED"
+    },
+    {
+      "place_id": "place:PF:notre-dame-cathedral-papeete",
+      "research_id": "AO-R82-DISC-083",
+      "country": "PF",
+      "name": "Cathédrale Notre-Dame de l'Immaculée-Conception, Papeete",
+      "place_type": "cathedral",
+      "city": "Papeete",
+      "formatted": "Place de la Cathédrale, Papeete, Tahiti, French Polynesia",
+      "lat": -17.54027,
+      "lng": -149.567,
+      "geo_source_url": "https://www.openstreetmap.org/way/32774088",
+      "geo_source_ref": "osm:way:32774088",
+      "identity_source_url": "https://www.cathedraledepapeete.com/pages/presentation/",
+      "identity_source_issuer": "Paroisse de la Cathédrale de Papeete",
+      "identity_source_directness": "OFFICIAL_CHURCH",
+      "geometry_note": "Parish identifies Notre-Dame Cathedral and its PK0 location; historic opening times are not carried into live navigation.",
+      "source_ids": [
+        "AO-R90-SITE-AO-R82-DISC-083",
+        "AO-R90-GEO-AO-R82-DISC-083"
+      ],
+      "tlm_status": "NO_1962_MISSAL_ASSERTION",
+      "access_status": "CURRENT_VISITOR_HOURS_NOT_ASSERTED"
+    },
+    {
+      "place_id": "place:TO:st-anthony-padua-basilica-nukualofa",
+      "research_id": "AO-R82-DISC-095",
+      "country": "TO",
+      "name": "Basilica of St Anthony of Padua, Nukuʻalofa",
+      "place_type": "basilica",
+      "city": "Nukuʻalofa",
+      "formatted": "Nukuʻalofa, Tongatapu, Tonga",
+      "lat": -21.13683,
+      "lng": -175.20186,
+      "geo_source_url": "https://www.openstreetmap.org/way/339123017",
+      "geo_source_ref": "osm:way:339123017",
+      "identity_source_url": "https://catholictonga.to/palokia-st-atonio-patua-nukualofa/",
+      "identity_source_issuer": "Catholic Diocese of Tonga",
+      "identity_source_directness": "OFFICIAL_CHURCH",
+      "geometry_note": "Diocesan parish listing explicitly calls St Anthony of Padua a basilica; distinct from the Cathedral of the Immaculate Conception.",
+      "source_ids": [
+        "AO-R90-SITE-AO-R82-DISC-095",
+        "AO-R90-GEO-AO-R82-DISC-095"
+      ],
+      "tlm_status": "NO_1962_MISSAL_ASSERTION",
+      "access_status": "CURRENT_VISITOR_HOURS_NOT_ASSERTED"
+    },
+    {
+      "place_id": "place:VU:sacred-heart-cathedral-port-vila",
+      "research_id": "AO-R82-DISC-097",
+      "country": "VU",
+      "name": "Cathédrale du Sacré-Cœur, Port-Vila",
+      "place_type": "cathedral",
+      "city": "Port-Vila",
+      "formatted": "Port-Vila, Vanuatu",
+      "lat": -17.73465,
+      "lng": 168.31516,
+      "geo_source_url": "https://www.openstreetmap.org/way/319762684",
+      "geo_source_ref": "osm:way:319762684",
+      "identity_source_url": "https://diocese.ddec.nc/evenements/2026-06-Jubile_60/2026-06_Jubil.htm",
+      "identity_source_issuer": "Archdiocese of Nouméa — Port Vila Catholic diocesan jubilee 2026",
+      "identity_source_directness": "OFFICIAL_DIOCESAN",
+      "geometry_note": "Historical diocesan directory identifies the cathedral; named building-level OSM feature confirms its mapped site, but current opening arrangements not asserted.",
+      "source_ids": [
+        "AO-R90-SITE-AO-R82-DISC-097",
+        "AO-R90-GEO-AO-R82-DISC-097"
+      ],
+      "tlm_status": "NO_1962_MISSAL_ASSERTION",
+      "access_status": "CURRENT_VISITOR_HOURS_NOT_ASSERTED"
+    },
+    {
+      "place_id": "place:LC:immaculate-conception-cathedral-basilica-castries",
+      "research_id": "AO-R82-DISC-055",
+      "country": "LC",
+      "name": "Cathedral Basilica of the Immaculate Conception, Castries",
+      "place_type": "basilica",
+      "city": "Castries",
+      "formatted": "Micoud Street / Laborie Street, Castries, Saint Lucia",
+      "lat": 14.00888,
+      "lng": -60.99012,
+      "geo_source_url": "https://www.openstreetmap.org/way/255580407",
+      "geo_source_ref": "osm:way:255580407",
+      "identity_source_url": "https://castriescity.com/places/cathedral-basilica-of-the-immaculate-conception/",
+      "identity_source_issuer": "Castries City destination directory",
+      "identity_source_directness": "SECONDARY",
+      "geometry_note": "Local destination directory identifies Catholic cathedral basilica at Derek Walcott Square; this does not certify visitor hours or Mass rite.",
+      "source_ids": [
+        "AO-R90-SITE-AO-R82-DISC-055",
+        "AO-R90-GEO-AO-R82-DISC-055"
+      ],
+      "tlm_status": "NO_1962_MISSAL_ASSERTION",
+      "access_status": "CURRENT_VISITOR_HOURS_NOT_ASSERTED"
+    }
+  ],
+  "held": [
+    {
+      "research_id": "AO-R82-DISC-011",
+      "country": "BD",
+      "reason": "Named OSM church way 226516707 explicitly tagged baptist; do not turn contradictory denominational map data into Catholic pin without site audit."
+    },
+    {
+      "research_id": "AO-R82-DISC-081",
+      "country": "FJ",
+      "reason": "Official Suva cathedral identity confirmed but no unambiguous named building OSM map geometry established in R90."
+    },
+    {
+      "research_id": "AO-R82-DISC-092",
+      "country": "WS",
+      "reason": "Institutional archdiocese locality evidence exists but an original current cathedral custodial reference remains insufficient."
+    },
+    {
+      "research_id": "AO-R82-DISC-056",
+      "country": "LC",
+      "reason": "Separate Micoud national shrine claim still requires original diocesan recognition and exact site access."
+    }
+  ],
+  "tlm_venue_links_added": 0,
+  "related_shrine_records_added": 0,
+  "osm_license": "© OpenStreetMap contributors, Open Database License 1.0; map markers based on named features."
+}

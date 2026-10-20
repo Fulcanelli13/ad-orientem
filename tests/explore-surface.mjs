@@ -114,7 +114,7 @@ assert.deepEqual(projection.counts,{
   shrines:257,
   apparitions:33,
   relics:122,
-  traditions:89,
+  traditions:93,
   pilgrimages:240,
   saints:0, // Only six pilot profiles loaded in dedicated fixture.
 });
@@ -569,9 +569,11 @@ assert.deepEqual(atlasUngrounded.map(item=>item.place_id).sort(),[],"all exact-s
 
 
 const customsAtlasItems=projection.byLens.traditions;
-assert.equal(countCanonicalTraditions(customsAtlasItems),13,"13 customs remain independently canonical");
+assert.equal(countCanonicalTraditions(customsAtlasItems),17,"17 customs remain independently canonical");
 const practiceBrowse=groupTraditionsForBrowse(customsAtlasItems);
-assert.equal(practiceBrowse.length,13,"list should not turn 71 attestations and 18 novena context links into 97 practices");
+assert.ok(practiceBrowse.some(item=>item.source_id==="BLSS-001"),"St Blaise must be discoverable as one canonical non-map tradition");
+assert.ok(customsAtlasItems.some(item=>item.raw?.custom?.custom_id==="BLSS-001"&&item.map_publishable===false),"St Blaise must not manufacture a map pin");
+assert.equal(practiceBrowse.length,17,"list should not turn 75 attestations and 18 novena context links into 93 separate practices");
 assert.ok(practiceBrowse.every(item=>item.kind==="CANONICAL_CUSTOM"&&!item.map_publishable),"canonical practices are not map pins");
 assert.ok(practiceBrowse.every(item=>item.facts.every(fact=>fact.label!=="Class")),"geographically mixed legacy classification must not appear as exclusive nationality");
 assert.ok(customsAtlasItems.filter(item=>item.kind==="CUSTOM_ATTESTATION").every(item=>item.facts.every(fact=>fact.label!=="Class")),"place-specific evidence must not promote unreviewed national classification");
@@ -584,10 +586,10 @@ assert.ok(regionalPardons.attestation_examples.some(example=>example.place_id),"
 const holyWater=practiceBrowse.find(item=>item.source_id==="DOM-002");
 assert.equal(holyWater.attestation_examples.length,1,"one-locality customs remain one practice");
 const searchedContexts=groupTraditionsForBrowse(customsAtlasItems,{includeNovenaContext:true});
-assert.equal(searchedContexts.length,31,"18 novena contextual links should remain accessible through search/context");
-assert.equal(new Set(practiceBrowse.map(item=>item.item_id)).size,13,"canonical practice identities must be unique");
+assert.equal(searchedContexts.length,35,"18 novena contextual links should remain accessible through search/context");
+assert.equal(new Set(practiceBrowse.map(item=>item.item_id)).size,17,"canonical practice identities must be unique");
 const practiceVm=buildExploreViewModel({
-  language:"en",items:practiceBrowse,lens:"traditions",counts:{...projection.counts,traditions:13},
+  language:"en",items:practiceBrowse,lens:"traditions",counts:{...projection.counts,traditions:17},
   view:"list",filters:{},selectedId:"tradition:custom:DEV-007",expandDetail:true,
 });
 const practiceHtml=renderExploreToString(practiceVm);
@@ -595,7 +597,7 @@ assert.match(practiceHtml,/data-explore-item="tradition:custom:DEV-007"/);
 assert.match(practiceHtml,/Documented examples.*36/);
 assert.match(practiceHtml,/data-explore-open-place=/,"examples must deep-link to canonical Places");
 assert.match(practiceHtml,/Attested places/,"map is supplementary evidence navigation, not the default customs structure");
-assert.match(practiceHtml,/>13<\/strong><span>practices/,"list count must describe practices, not attestations");
+assert.match(practiceHtml,/>17<\/strong><span>practices/,"list count must describe practices, not attestations");
 
 const atlasFacets=buildCustomsAtlasFacets(customsAtlasItems);
 assert.ok(atlasFacets.families.some(option=>option.value==="Sacred Heart"),"theme browsing must be independent of geography");
@@ -678,7 +680,7 @@ assert.ok(globalCustom.length<13,"the global pilgrimage custom cannot create a p
 assert.ok(globalCustom.every(item=>item.heritage_categories.includes("traditions")),"custom selection must not turn on other categories");
 assert.equal(projectHeritagePlaces(projection,{categories:[],query:""}).length,0,"empty map category filter must not show pins");
 const heritageCustoms=heritageCustomCards(practiceBrowse);
-assert.equal(heritageCustoms.length,13,"all canonical practices must be available without a geographical list");
+assert.equal(heritageCustoms.length,17,"all canonical practices must be available without a geographical list");
 assert.equal(heritageCustomCards(practiceBrowse,{enabled:false}).length,0);
 const heritageVm=buildExploreViewModel({
   language:"en",lens:"heritage",view:"map",items:heritagePlaces,
