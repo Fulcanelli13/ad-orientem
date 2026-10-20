@@ -19,6 +19,14 @@ const escaped=x=>String(x??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">
 const untag=x=>String(x??"").replace(/<[^>]+>/g,"").trim();
 const tidy=x=>String(x??"").normalize("NFKD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim();
 const titleKey=title=>title.replace(/_/g," ");
+export function commonsLicenseUsable(name,copyrightedFlag){
+ const lic=untag(name).toLowerCase().replace(/\s+/g," ");
+ const copyright=untag(copyrightedFlag).toLowerCase();
+ if(/^cc0\s*1\.0$/.test(lic))return true;
+ if(/^cc by(?:-sa)?\s*[234]\.0$/.test(lic))return true;
+ if(/^(?:public domain|pd)$/.test(lic))return copyright!=="true";
+ return false;
+}
 
 export const BATCH_SIZE=50;
 export function makeBatches(rows=INTAKE.works){return Array.from({length:Math.ceil(rows.length/BATCH_SIZE)},(_,i)=>rows.slice(i*BATCH_SIZE,(i+1)*BATCH_SIZE));}
@@ -59,9 +67,9 @@ async function request(url,kind="json"){
  const host=new URL(url).hostname;
  if(kind==="json")assert(["collectionapi.metmuseum.org","commons.wikimedia.org","openaccess-api.clevelandart.org"].includes(host),"Untrusted metadata endpoint");
  else assert(["images.metmuseum.org","upload.wikimedia.org","openaccess-cdn.clevelandart.org"].includes(host),"Untrusted image endpoint");
- for(let attempt=0;attempt<3;attempt++){
+ for(let attempt=0;attempt<4;attempt++){
    const res=await fetch(url,{signal:AbortSignal.timeout(25000),headers:{"user-agent":"AdOrientemSacredArtResearch/1.0 (https://github.com/Fulcanelli13/ad-orientem)"}});
-   if([429,502,503,504].includes(res.status)&&attempt<2){await wait(800*(attempt+1));continue;}
+   if([429,502,503,504].includes(res.status)&&attempt<3){await wait([1500,4500,9000][attempt]);continue;}
    if(!res.ok)throw Error("HTTP "+res.status);
    if(new URL(res.url).hostname!==host)throw Error("Cross-host redirect prohibited");
    return res;
@@ -122,8 +130,7 @@ async function commonsSource(row){
  const lic=untag(info.extmetadata?.LicenseShortName?.value);
  const licurl=untag(info.extmetadata?.LicenseUrl?.value);
  const copyrighted=untag(info.extmetadata?.Copyrighted?.value);
- const allowed=/^(?:public domain|pd|cc0\s*1\.0|cc by(?:-sa)?\s*[234]\.0)$/i.test(lic);
- assert(allowed&&copyrighted!=="True","Commons has no acceptable file rights declaration: "+lic);
+ assert(commonsLicenseUsable(lic,copyrighted),"Commons has no acceptable file rights declaration: "+lic);
  assert(typeof info.url==="string"&&new URL(info.url).hostname==="upload.wikimedia.org","Commons exact original missing");
  const r=await request(info.url,"image");
  assert((r.headers.get("content-type")||"").toLowerCase().includes(info.mime),"MIME mismatch");
@@ -131,7 +138,7 @@ async function commonsSource(row){
  if(info.sha1)assert.equal(createHash("sha1").update(bytes).digest("hex"),info.sha1,"Commons fingerprint mismatch");
  return {bytes,mime:info.mime,source:{provider:"WIKIMEDIA_COMMONS",exactFile:page.title,
     filePage:row.sourceUrl,apiUrl:q.toString(),imageUrl:info.url,licenseName:lic,licenseUrl:licurl,
-    creator:untag(info.extmetadata?.Artist?.value),attribution:untag(info.extmetadata?.Attribution?.value),
+    creator:untag(info.extmetadata?.Artist?.value),attribution:untag(info.extmetadata?.Attribution?.value),copyrightedFlag:copyrighted,
     usageTerms:untag(info.extmetadata?.UsageTerms?.value),attributionRequired:untag(info.extmetadata?.AttributionRequired?.value),
     licenseStillRequiresLegalCheck:true}};
 }
@@ -167,7 +174,7 @@ export async function runBatch(index){
      await writeFile(join(folder,filename+".json"),JSON.stringify(item,null,2)+"\n");
      results.push(item);
    }catch(e){results.push({...evidence,status:"HOLD_SOURCE_CHECK",reason:String(e.message||e).slice(0,350)});}
-   await wait(120);
+   await wait(350);
  }
  const staged=results.filter(x=>x.imageStaged).length,held=results.length-staged;
  const summary={schema:"AO_SACRED_ART_BULK_ACQUISITION_RESULT_V1",batch:index+1,range:[index*BATCH_SIZE,Math.min((index+1)*BATCH_SIZE,INTAKE.works.length)-1],
