@@ -67,14 +67,42 @@ export function installMassMapEmblemOverlays(map,maplibre,{
       img.src=definition.image;
     }
   }
+  // Source/cluster features can become queryable AFTER the camera move and
+  // MapLibre's initial idle callback. Sample the rendered frames sparingly,
+  // and perform two delayed retries following a finished camera move.
+  let lastRenderProbe=0;
+  const timers=new Set();
+  const schedule=(delay)=>{
+    const timer=win.setTimeout?.(()=>{
+      timers.delete(timer);
+      if(!disposed)refresh();
+    },delay);
+    if(timer!==undefined)timers.add(timer);
+  };
+  const onRender=()=>{
+    const now=Date.now();
+    if(now-lastRenderProbe<500)return;
+    lastRenderProbe=now;
+    refresh();
+  };
+  const onMoveEnd=()=>{
+    refresh();
+    schedule(360);
+    schedule(1000);
+  };
   map.on?.("idle",refresh);
-  map.on?.("moveend",refresh);
+  map.on?.("render",onRender);
+  map.on?.("moveend",onMoveEnd);
+  schedule(850);
   refresh();
   return Object.freeze({
     refresh, count:()=>visible.size,
     dispose(){
       disposed=true;
-      map.off?.("idle",refresh);map.off?.("moveend",refresh);
+      map.off?.("idle",refresh);map.off?.("render",onRender);
+      map.off?.("moveend",onMoveEnd);
+      for(const timer of timers)win.clearTimeout?.(timer);
+      timers.clear();
       for(const id of [...visible.keys()])remove(id);
     },
   });
