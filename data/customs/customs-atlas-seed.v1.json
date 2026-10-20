@@ -271,6 +271,23 @@
       "calendar_trigger_hint": "Palm Sunday (calculated by Calendar)",
       "confidence": "HIGH",
       "guardrail": "Blessed branches are not talismans; branches and regional plant species vary. The Palm Sunday reader retains exclusive ownership of ceremonial mechanics."
+    },
+    {
+      "custom_id": "BLSS-001",
+      "family": "Saints & sacramental blessings",
+      "name": "St Blaise — blessing of throats",
+      "canonical_statement": "On or near 3 February, Catholics may receive a traditional blessing invoking St Blaise's intercession against ailments of the throat and other illnesses. In the historical Roman Ritual a priest blesses candles specifically for this blessing and applies two crossed candles while praying; the modern Book of Blessings provides different candle and ministerial provisions.",
+      "custom_class": "TRADITIONAL_ROMAN_PRACTICE",
+      "period_label": "Pre-1962 Roman Ritual witness → current practice in distinct ritual forms",
+      "decision": "KEEP — SOT-07 EXTENSION 2026-10-20",
+      "publication_state": "PUBLISHED",
+      "owners": [
+        "Calendar",
+        "Learn"
+      ],
+      "calendar_trigger_hint": "03/02, St Blaise commemoration in 1962 Roman calendar; Calendar owns calculation and precedence",
+      "confidence": "HIGH",
+      "guardrail": "Voluntary, not a Mass or a third-class feast in the ordinary 1962 calendar, not a promise of healing, and no app-provided or lay-invented priestly ceremony. The historical St Blaise candle blessing and modern Candlemas-candle provision must not be equated. Availability varies by parish."
     }
   ],
   "attestations": [
@@ -1460,6 +1477,25 @@
       ],
       "evidence_note": "French bishops describe taking blessed branches home to adorn crosses; the Vatican Directory §139 also describes domestic keeping of Palm Sunday foliage.",
       "map_policy": "AREA_CONTEXT",
+      "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:BLSS-001:ROMAN",
+      "custom_id": "BLSS-001",
+      "geo_area_id": "geo:world",
+      "place_id": null,
+      "place_name_hint": null,
+      "geographic_precision": "GLOBAL",
+      "period_label": "Pre-1962 ritual witnesses and modern rite; observance local, not universal in every parish",
+      "strength": "STRONG",
+      "source_ids": [
+        "ROMR-BLAISE-1956",
+        "SCHOLA-BLAISE-LATIN",
+        "BOOK-BLESSINGS-BLAISE",
+        "ORDO-BLAISE-1962"
+      ],
+      "evidence_note": "A documented Roman ritual sacramental; global area marks broad Roman-rite status, not evidence that a particular parish or locality offers the blessing. The old and new ritual rules differ.",
+      "map_policy": "NOT_MAPPED",
       "confidence": "HIGH"
     }
   ]
