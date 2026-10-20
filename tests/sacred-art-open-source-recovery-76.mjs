@@ -21,10 +21,16 @@ assert.equal(queue.counts.STATION_EXACTNESS,12);
 assert.equal(queue.counts.DISCOVER_EXACT_ORIGINAL,23);
 assert.equal(queue.counts.PER_IMAGE_RIGHTS,4);
 assert.equal(queue.records.reduce((n,x)=>n+Number(x.lane==="LICENSE_BLOCKED"),0),16);
-assert.equal(queue.records.filter(x=>x.status==="HOLD_WRONG_STATION_OBJECT_URL").length,12);
+assert.equal(queue.records.filter(x=>x.status==="HOLD_WRONG_STATION_OBJECT_URL").length,3);
 assert(queue.records.filter(x=>x.status==="HOLD_WRONG_STATION_OBJECT_URL")
  .every(x=>x.sourceUrl.endsWith("via-crucis-jesus-is-taken-down-from-the-cross/")),
  "Wrong Station XIII link must never be presented as matching another Station");
+assert.equal(queue.records.filter(x=>x.status==="HOLD_EXACT_OBJECT_LINKED_PHOTO_RIGHTS_UNVERIFIED").length,9);
+assert.equal(queue.stationObjectProgress.officialExactLinks,9);
+const stations=queue.records.filter(x=>x.lane==="STATION_EXACTNESS");
+assert.equal(stations.length,12);
+assert.equal(new Set(stations.filter(x=>x.sourceEvidence?.exactStation).map(x=>x.sourceUrl)).size,9);
+assert(stations.every(x=>!x.sourceEvidence||x.sourceEvidence.imageRights==="UNVERIFIED"));
 for(const row of queue.records) {
  assert(!rejected.has(row.artworkId),"Rejected original entered queue");
  assert(approved.has(row.artworkId)||legacy.has(row.artworkId),
@@ -35,4 +41,4 @@ for(const row of queue.records) {
 assert(queue.policy.noPradoImagesOrMirrors&&queue.policy.noPaidLicences&&queue.policy.noMuseumContact);
 assert(queue.policy.doNotUseNC_NDForCommercialApp);
 assert.deepEqual(load("data/calendar/sacred-art-certified-media.v1.json").media,[]);
-console.log("PASS: 76 non-Prado source tasks in 50 + 26 batches; 16 rights blocks; 12 mismatched Station links; no publication");
+console.log("PASS: 76 non-Prado source tasks in 50 + 26 batches; 16 rights blocks; 9 Stations corrected; 3 wrong links still held; no publication");
