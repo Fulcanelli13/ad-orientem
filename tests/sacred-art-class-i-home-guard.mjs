@@ -6,13 +6,25 @@ import {
   releasedClassIArtworkMarkup, safeLegacyHomeArtMarkup
 } from "../src/home/sacred-art-selection.js";
 
-assert.equal(APPROVED_CLASS_I_2026.length,18);
-assert.equal(new Set(APPROVED_CLASS_I_2026.map(x=>x.date)).size,18);
+assert.equal(APPROVED_CLASS_I_2026.length,20);
+assert.equal(new Set(APPROVED_CLASS_I_2026.map(x=>x.date)).size,20);
 assert.ok(APPROVED_CLASS_I_2026.every(x=>x.artworkId&&x.principalId&&x.sourcePath));
 assert.equal(Object.keys(RELEASED_SACRED_ART_MASTERS).length,0,
   "Uninspected art masters must not be published automatically");
 assert.equal(approvedClassIEntry("2026-03-25").artworkId,
   "ART-hilippe-de-hampaigne-he-nnunciation");
+assert.equal(approvedClassIEntry("2026-04-03").artworkId,
+  "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-12-eath-on-the-ross",
+  "Good Friday must use the selected San Polo Station XII, not the old Lance Thrust");
+assert.equal(approvedClassIEntry("2026-05-14").artworkId,"met-436835",
+  "Ascension must use the selected Kulmbach painting, not the old Wolffort alternate");
+assert.equal(approvedClassIEntry("2026-05-27").artworkId,
+  "ART-hilippe-de-hampaigne-a-etite-ne",
+  "Pentecost Ember Wednesday uses selected Louvre INV 1125, not a John 6 literal illustration");
+assert.equal(approvedClassIEntry("2026-06-04").artworkId,"met-438434",
+  "Corpus Christi uses the selected Ingres painting, not the older Last Supper");
+assert.equal(approvedClassIEntry("2026-05-27").relation,"FEAST_EUCHARIST");
+assert.equal(approvedClassIEntry("2026-06-04").relation,"FEAST_EUCHARIST");
 assert.equal(approvedClassIEntry("2026-04-02").relation,"FEAST_EUCHARIST",
   "Holy Thursday's Last Supper is not literal John 13 foot washing");
 assert.equal(approvedClassIEntry("2026-05-24").relation,"FEAST_EVENT",
@@ -80,7 +92,9 @@ assert.match(releasedClassIArtworkMarkup(approved),/data-ao-approved-artwork-id/
 // The historical v43 selector includes images by permanently excluded artists.
 // Fail closed even if the donor HTML hides its artist or file ID.
 const donor='<div class="aoPhase1HomeArt"><img src="historic.jpg"></div>';
-for(const path of ["Sancti/03-25","Tempora/Pasc7-0",
+for(const path of ["Tempora/Quad6-5","Tempora/Pasc0-5",
+  "Tempora/Pasc5-4","Tempora/Pasc6-6","Tempora/Pasc7-3",
+  "Tempora/Pent01-4","Sancti/03-25","Tempora/Pasc7-0",
   "Tempora/Pent01-0","Tempora/Pent01-0r","Tempora/Pent09-0"])
   assert.equal(safeLegacyHomeArtMarkup({resolution:{proper:{data:{sourcePath:path}}}},donor),"",
     "Excluded legacy selector artwork resurfaced for "+path);
