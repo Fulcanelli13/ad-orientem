@@ -77,6 +77,28 @@ try{
    assert.equal(measures.status,"ready","Cannot certify an empty/loading basemap at "+width);
    await page.screenshot({path:resolve(out,"explore-"+width+"-overview.png"),fullPage:false});
 
+   // D is a same-map journey folio: no new page and no manufactured route
+   // lines. Exercise a historical source-owned 3-stage pilgrimage.
+   await page.locator("#ao-find-modular-root [data-explore-journey-open]").click();
+   const journey=page.locator("#ao-find-modular-root [data-explore-journey-panel]");
+   await journey.waitFor({state:"visible"});
+   assert.equal(await journey.locator("[data-explore-journey-select]").count(),20,
+     "Only the 20 documented route IDs may be treated as journeys");
+   const route=journey.locator('[data-explore-journey-select="route:FR:paris-chartres-pentecost"]');
+   await route.click();
+   await page.waitForFunction(()=>document.querySelector("#ao-find-modular-root .aoJourneyDetail h3")
+      ?.textContent?.includes("Saint-Sulpice"),null,{timeout:15000});
+   assert.ok(await journey.locator(".aoJourneyEvidence a[href^='https://']").count()>0,
+     "D must link to original publisher evidence");
+   assert.equal(await journey.locator(".aoJourneyAnchors li").count(),2,
+     "D must not manufacture intermediate route coordinates from source stage count");
+   await page.waitForTimeout(700);
+   await page.screenshot({path:resolve(out,"explore-"+width+"-journey-chartres.png"),fullPage:false});
+   await journey.locator('[data-explore-journey-destination="place:FR:chartres-notre-dame"]').click();
+   await page.locator("#ao-find-modular-root .aoHeritagePreview").waitFor({state:"visible"});
+   assert.equal(await journey.count(),0,"Discovering destination returns to the C editorial folio");
+   await page.locator("#ao-find-modular-root .aoHeritagePreview button[data-find-close-place]").click();
+
    const search=page.locator("#ao-find-modular-root .aoHeritageSurface [data-find-query]");
    await search.fill("Lourdes");
    const result=page.locator("#ao-find-modular-root .aoHeritageSearchResults [data-explore-open-place]").first();
