@@ -250,6 +250,11 @@ try{
    const lavalFull=page.locator('#ao-find-modular-root .aoExplorePlaceSheet[data-explore-place-owner="place:MU:pere-laval-sainte-croix"]');
    await lavalFull.waitFor({state:"visible",timeout:12000});
    assert.equal(await lavalFull.locator("[data-explore-place-journey]").count(),2);
+   const reverseList=lavalFull.locator("[data-explore-place-journeys]");
+   await reverseList.scrollIntoViewIfNeeded();
+   const visibleRouteRows=await reverseList.locator("[data-explore-place-journey]").evaluateAll(rows=>
+     rows.every(row=>{const box=row.getBoundingClientRect();return box.height>=44&&box.top<innerHeight&&box.bottom>0;}));
+   assert.ok(visibleRouteRows,"Both documented Père Laval pilgrimage choices need visible, usable 44px targets");
    await page.screenshot({path:resolve(out,"explore-"+width+"-pere-laval-two-pilgrimages.png"),fullPage:false});
    await lavalFull.locator('[data-explore-place-journey="route:MU:pere-laval-saint-joseph"]').click();
    await journey.waitFor({state:"visible",timeout:12000});
