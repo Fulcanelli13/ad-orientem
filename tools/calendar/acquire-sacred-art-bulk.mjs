@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 /** Source-only image acquisition in 50-record shards. Never publishes media. */
 import assert from "node:assert/strict";
+import {hasPradoProvenance,commonsMetadataHasPradoProvenance,PRADO_SOURCE_HOLD} from "./sacred-art-source-policy.mjs";
 import {readFileSync} from "node:fs";
 import {mkdir,writeFile} from "node:fs/promises";
 import {createHash} from "node:crypto";
@@ -31,6 +32,7 @@ export function commonsLicenseUsable(name,copyrightedFlag){
 export const BATCH_SIZE=50;
 export function makeBatches(rows=INTAKE.works){return Array.from({length:Math.ceil(rows.length/BATCH_SIZE)},(_,i)=>rows.slice(i*BATCH_SIZE,(i+1)*BATCH_SIZE));}
 export function sourceGate(row){
+ if(row.sourcePolicy?.status===PRADO_SOURCE_HOLD||hasPradoProvenance(row))return PRADO_SOURCE_HOLD;
  if(rejected.has(row.id)||row.reviewGate==="EXCLUDED")return "HOLD_REJECTED";
  const newApproval=approved.has(row.id)&&row.reviewGate==="APPROVED";
  const retainedFive=retainedFives.has(row.id)&&row.reviewGate==="LEGACY_FIVE_PRESERVED";
@@ -126,6 +128,7 @@ async function commonsSource(row){
  const page=(await (await request(q.toString())).json())?.query?.pages?.[0];
  assert(page&&!page.missing&&tidy(titleKey(page.title))===tidy(titleKey(raw)),"Commons file mismatch");
  const info=page.imageinfo?.[0];
+ if(commonsMetadataHasPradoProvenance(info?.extmetadata))throw Error("HOLD_PRADO_SOURCE_POLICY: Commons metadata identifies Prado provenance");
  assert(info&&["image/jpeg","image/png"].includes(info.mime),"Unsupported Commons format");
  const lic=untag(info.extmetadata?.LicenseShortName?.value);
  const licurl=untag(info.extmetadata?.LicenseUrl?.value);
@@ -155,6 +158,7 @@ export async function runBatch(index){
      catalogTitle:row.title,catalogArtist:row.artist,originalSourcePage:row.sourceUrl,
      curatorAuthority:row.reviewGate==="LEGACY_FIVE_PRESERVED"?"W64_PREVIOUS_FIVE_RETAINED":"OCT17_CURRENT_APPROVAL",
      reviewSourceImageKey:row.preferredImageKey,sourceClaimsAreNotRightsEvidence:true,
+     sourcePolicy:row.sourcePolicy??null,
      imageStaged:false,productionCertified:false,calendarPublished:false,cropReviewed:false,phoneQaApproved:false};
    if(!["MET","COMMONS","CLEVELAND"].includes(gate)){results.push({...evidence,status:gate});continue;}
    try{
@@ -173,7 +177,7 @@ export async function runBatch(index){
        legalReuseIndependentlyCertified:false};
      await writeFile(join(folder,filename+".json"),JSON.stringify(item,null,2)+"\n");
      results.push(item);
-   }catch(e){results.push({...evidence,status:"HOLD_SOURCE_CHECK",reason:String(e.message||e).slice(0,350)});}
+   }catch(e){const reason=String(e.message||e);results.push({...evidence,status:reason.includes(PRADO_SOURCE_HOLD)?PRADO_SOURCE_HOLD:"HOLD_SOURCE_CHECK",reason:reason.slice(0,350)});}
    await wait(350);
  }
  const staged=results.filter(x=>x.imageStaged).length,held=results.length-staged;
