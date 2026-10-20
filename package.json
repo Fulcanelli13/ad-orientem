@@ -57,7 +57,7 @@
     "test:gloria-credo-faithful": "node tests/gloria-credo-faithful.mjs",
     "test:mass-complete-icon-atlas": "node tests/mass-complete-icon-atlas.mjs",
     "test:mass-icon-preliminary": "node tests/mass-icon-preliminary-assignments.mjs",
-    "test:reader-icons": "node tests/reader-icons.mjs",
+    "test:reader-icons": "node tests/reader-icons.mjs && npm run test:reader-reviewed-actions",
     "test:reader-transients": "node tests/reader-transients.mjs && node tests/reader-live-exact-cues.mjs",
     "test:reader-live-pre-gospel": "node tests/reader-live-pre-gospel.mjs",
     "test:reader-form-state": "node tests/reader-form-state-parity.mjs",
@@ -264,7 +264,8 @@
     "test:mass-ps113-editorial": "node tests/mass-2026-10-18-ps113-alleluia-english.mjs",
     "test:mass-icon-necessity": "node tests/mass-icon-necessity-policy.mjs",
     "test:mass-icon-source": "node tests/mass-icon-generation-provenance.mjs && npm run test:mass-icon-originals && node tests/mass-icon-originals-schumacher1920.mjs && node tests/mass-icon-source-acquisition-p3.mjs",
-    "test:mass-icon-originals": "node tests/mass-icon-originals-leclerc1661.mjs"
+    "test:mass-icon-originals": "node tests/mass-icon-originals-leclerc1661.mjs",
+    "test:reader-reviewed-actions": "node tests/reader-reviewed-action-icons.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.55.0"
