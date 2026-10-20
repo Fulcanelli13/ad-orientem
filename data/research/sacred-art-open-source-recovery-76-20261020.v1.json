@@ -107,8 +107,31 @@
       "hasReviewPreview": true,
       "lane": "DISCOVER_EXACT_ORIGINAL",
       "priority": 1,
-      "status": "RESEARCH_NO_OBJECT_SOURCE",
-      "next": "Locate the approved physical original and a legally reusable photographic file; do not substitute another painting"
+      "status": "HOLD_TWO_AUTHENTIC_MURILLO_SAINT_ISIDORE_ORIGINALS",
+      "next": "First identify which Cathedral Murillo Saint Isidore the curator-approved preview depicts (1655 main sacristy versus 1668 chapter house). Do not auto-switch painter, work or historical painting identity. After comparison, verify photo rights and mobile composition.",
+      "objectVariants": [
+        {
+          "artist": "Bartolomé Esteban Murillo",
+          "date": 1655,
+          "location": "Sacristía Mayor, Seville Cathedral",
+          "officialObject": "https://www.catedraldesevilla.es/en/obras/san-isidoro-2/",
+          "eligiblePhotograph": "https://commons.wikimedia.org/wiki/File:San_Isidoro_de_Sevilla,_Bartolomé_Esteban_Murillo.jpg",
+          "photoDeclaredRights": "CC BY-SA 4.0",
+          "photographer": "Jl FilpoC",
+          "photoWidth": 2276,
+          "photoHeight": 2664
+        },
+        {
+          "artist": "Bartolomé Esteban Murillo",
+          "date": 1668,
+          "location": "Sala Capitular, Seville Cathedral",
+          "officialObject": "https://www.catedraldesevilla.es/en/obras/san-isidoro/",
+          "eligiblePhotograph": null,
+          "photoDeclaredRights": null
+        }
+      ],
+      "frozenArtworkVisualIdentityMatched": false,
+      "photoAcquisitionAllowed": false
     },
     {
       "artworkId": "ART-ean-ouvenet-aising-of-azarus",
