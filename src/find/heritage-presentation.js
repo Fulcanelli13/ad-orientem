@@ -155,7 +155,7 @@ export function renderHeritageToString(vm,{placeSheet,detailSheet,itemPreview,jo
   html+='<button type="button" class="aoTimeMassLaunch'+(vm.timeMass?' active':'')+
     '" data-explore-time-mass-toggle aria-pressed="'+String(Boolean(vm.timeMass))+'">'+
     L(vm.language,"Time & Mass","Temps & Messes")+'</button>';
-  html+='<button type="button" data-heritage-category="ALL"' aria-pressed="'+String(all)+'" class="'+(all?"active":"")+'">'+L(vm.language,"All places","Tous les lieux")+'</button>';
+  html+='<button type="button" data-heritage-category="ALL" aria-pressed="'+String(all)+'" class="'+(all?"active":"")+'">'+L(vm.language,"All places","Tous les lieux")+'</button>';
   for(const key of Object.keys(CATEGORY_LABELS))html+='<button type="button" data-heritage-category="'+key+'" data-category="'+key+'" class="'+(!vm.journeyOpen&&active.length===1&&active.includes(key)?"active":"")+'" aria-pressed="'+String(!vm.journeyOpen&&active.length===1&&active.includes(key))+'">'+esc(label(vm.language,key))+'</button>';
   html+='</nav>';
   html+='<p class="aoHeritageLocationStatus" data-heritage-location-status role="status" aria-live="polite" hidden></p>';
