@@ -1,6 +1,6 @@
 {
   "schema": "ao-mass-artwork-canonical-reconciliation-v1",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "generatedDate": "2026-10-20",
   "scope": "Mass-specific V4.6 donor bank, Mass-relevant core bank roles, modern 19 October candidate studies, reviewed/posture SVGs; excludes unrelated UI/module art",
   "releaseStatus": "RESEARCH_REVIEW_ONLY_NOT_LIVE",
@@ -3539,7 +3539,7 @@
         }
       ],
       "flags": [
-        "STAGED_REVIEW_ONLY_NOT_RUNTIME_ACTIVE"
+        "MAPPED_ON_DRAFT_BRANCH_NOT_MAIN"
       ],
       "auditTrail": [
         {
@@ -3751,7 +3751,7 @@
         }
       ],
       "flags": [
-        "STAGED_REVIEW_ONLY_NOT_RUNTIME_ACTIVE"
+        "MAPPED_ON_DRAFT_BRANCH_NOT_MAIN"
       ],
       "auditTrail": [
         {
@@ -3794,9 +3794,17 @@
       "sourceDecisionRefs": [
         "AO.ICONBANK.SURVEY.B08"
       ],
-      "semanticUses": [],
+      "semanticUses": [
+        {
+          "cueId": "AO.SM.C0248",
+          "action": "WASHES / PURIFIES",
+          "readerPresentationAlias": "review_priest_purify_fingers",
+          "note": "Post-Communion finger ablution",
+          "onlyReviewBranch": true
+        }
+      ],
       "flags": [
-        "STAGED_REVIEW_ONLY_NOT_RUNTIME_ACTIVE"
+        "MAPPED_ON_DRAFT_BRANCH_NOT_MAIN"
       ],
       "auditTrail": [
         {
@@ -3810,7 +3818,12 @@
         }
       ],
       "status": "APPROVED_VISUAL",
-      "sourceSha256": "b241d6eb22540b4079bdf06c0881bb3fc3ac805e151f34231d191a99bfce2055"
+      "sourceSha256": "b241d6eb22540b4079bdf06c0881bb3fc3ac805e151f34231d191a99bfce2055",
+      "runtimeReviewBinding": {
+        "alias": "review_priest_purify_fingers",
+        "sourceCueId": "AO.SM.C0248",
+        "status": "BRANCH_ONLY_NOT_RELEASED"
+      }
     },
     {
       "id": "AO.ICON.STUDY.20261019.ao_purify_chalice",
@@ -3826,9 +3839,17 @@
       "sourceDecisionRefs": [
         "AO.ICONBANK.SURVEY.B08"
       ],
-      "semanticUses": [],
+      "semanticUses": [
+        {
+          "cueId": "AO.SM.C0247",
+          "action": "WASHES / PURIFIES",
+          "readerPresentationAlias": "review_priest_purify_chalice",
+          "note": "First post-Communion ablution",
+          "onlyReviewBranch": true
+        }
+      ],
       "flags": [
-        "STAGED_REVIEW_ONLY_NOT_RUNTIME_ACTIVE"
+        "MAPPED_ON_DRAFT_BRANCH_NOT_MAIN"
       ],
       "auditTrail": [
         {
@@ -3842,7 +3863,12 @@
         }
       ],
       "status": "APPROVED_VISUAL",
-      "sourceSha256": "b009bd4f82f59f33e49be3379bbe65bbe436dcdc40971bd1a2c9c5a4c34360b0"
+      "sourceSha256": "b009bd4f82f59f33e49be3379bbe65bbe436dcdc40971bd1a2c9c5a4c34360b0",
+      "runtimeReviewBinding": {
+        "alias": "review_priest_purify_chalice",
+        "sourceCueId": "AO.SM.C0247",
+        "status": "BRANCH_ONLY_NOT_RELEASED"
+      }
     },
     {
       "id": "AO.ICON.STUDY.20261019.ao_place_on_altar",
@@ -4009,9 +4035,9 @@
       "id": "AO.ICON.STUDY.20261019.ea_priest_communion_host",
       "family": "modern-20261019",
       "key": "ea_priest_communion_host",
-      "repoContentSha": null,
-      "hashType": null,
-      "verifiedIn": null,
+      "repoContentSha": "f6abfdc771be3503b7e9ca5b413564fd2493a921",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "review/20261019-mass-icon-sections",
       "paths": [
         "assets/approved/mass-priest-communion/ea_priest_communion_host.svg"
       ],
@@ -4019,10 +4045,16 @@
       "sourceDecisionRefs": [
         "USER_ACCEPTANCE_20261019"
       ],
-      "semanticUses": [],
+      "semanticUses": [
+        {
+          "cueId": "AO.SM.C0232",
+          "action": "RECEIVES HOST",
+          "readerPresentationAlias": "review_priest_receive_host",
+          "onlyReviewBranch": true
+        }
+      ],
       "flags": [
-        "EXISTS_ONLY_IN_UNMERGED_PR_1460",
-        "DECISION_NOT_RECONCILED_YET"
+        "MAPPED_ON_DRAFT_BRANCH_NOT_MAIN"
       ],
       "auditTrail": [
         {
@@ -4032,15 +4064,20 @@
           "comment": "Accepted with the chalice Communion pair; exact SVG retained in unmerged PR #1460."
         }
       ],
-      "status": "APPROVED_VISUAL"
+      "status": "APPROVED_VISUAL",
+      "runtimeReviewBinding": {
+        "alias": "review_priest_receive_host",
+        "sourceCueId": "AO.SM.C0232",
+        "status": "BRANCH_ONLY_NOT_RELEASED"
+      }
     },
     {
       "id": "AO.ICON.STUDY.20261019.ea_priest_communion_chalice",
       "family": "modern-20261019",
       "key": "ea_priest_communion_chalice",
-      "repoContentSha": null,
-      "hashType": null,
-      "verifiedIn": null,
+      "repoContentSha": "454674cb090de139ffaa20faa45fdd187ffc21a4",
+      "hashType": "git-blob-sha1",
+      "verifiedIn": "review/20261019-mass-icon-sections",
       "paths": [
         "assets/approved/mass-priest-communion/ea_priest_communion_chalice.svg"
       ],
@@ -4049,9 +4086,7 @@
         "AO.ICONBANK.FINAL_COMPARISON.01"
       ],
       "semanticUses": [],
-      "flags": [
-        "EXISTS_ONLY_IN_UNMERGED_PR_1460"
-      ],
+      "flags": [],
       "auditTrail": [
         {
           "phase": "AO.ICONBANK.FINAL_COMPARISON.01",
@@ -4088,7 +4123,7 @@
         }
       ],
       "flags": [
-        "STAGED_REVIEW_ONLY_NOT_RUNTIME_ACTIVE"
+        "MAPPED_ON_DRAFT_BRANCH_NOT_MAIN"
       ],
       "auditTrail": [
         {
@@ -4133,7 +4168,7 @@
         }
       ],
       "flags": [
-        "STAGED_REVIEW_ONLY_NOT_RUNTIME_ACTIVE"
+        "MAPPED_ON_DRAFT_BRANCH_NOT_MAIN"
       ],
       "auditTrail": [
         {
@@ -4752,12 +4787,17 @@
   ],
   "notes": [
     "Corrected explicit prior approvals for priest opening Sign of Cross and Host Communion which automatic matching missed.",
-    "Thirteen 19 October accepted modern SVG masters are now verified by exact Git blob SHA and staged under assets/review/mass-icon-candidates/recovered-20261020/."
+    "Thirteen 19 October accepted modern SVG masters are now verified by exact Git blob SHA and staged under assets/review/mass-icon-candidates/recovered-20261020/.",
+    "PR #1460 approved Host and chalice Communion originals are now present on the icon review branch with identical Git blob checksums.",
+    "Host reception and the two post-Communion ablutions now resolve through explicit reviewed aliases on the draft branch. Offertory Lavabo remains text-only.",
+    "The dedicated priest-genuflection artwork remains unapproved; source cue IDs and exact design requirements recorded separately."
   ],
   "reviewBranchRemediation": {
     "source": "data/presentation/mass-icon-runtime-binding-audit-20261020.v1.json",
     "date": "2026-10-20",
-    "bindings": 4,
-    "hiddenWrongArt": 4
+    "bindings": 7,
+    "hiddenWrongArt": 5,
+    "sourceCueScopedPurification": true,
+    "preservedSideBySideCommunionVariant": true
   }
 }
