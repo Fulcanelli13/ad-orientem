@@ -39,7 +39,7 @@ assert.deepEqual(result.counts,{
   pilgrimages:240,
   routes:20,
   temporalLinks:77,
-  sources:515,
+  sources:515+readJson("../data/geography/research/sacred-geography-r89-first-coverage-release.v1.json").published_new.length*2,
 });
 assert.deepEqual([...result.unresolvedCalendarBindings],[]);
 for(const link of corpus.temporalLinks){
