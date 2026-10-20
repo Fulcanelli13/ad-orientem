@@ -214,7 +214,31 @@ try{
   assert.equal(massPrepareAvailable,true,"shared module registry unavailable for Around-Mass handoff");
 
   await page.locator("#aoPray435930 [data-p435930-handoff='mass.prepare']").click();
-  await page.waitForFunction(()=>!document.getElementById("aoPray435930")?.classList?.contains("open"),null,{timeout:5000});
+  // The source-owned Before Mass prayers may reuse the one PRAY folio,
+  // rather than dismiss and reopen it. Require a certified destination:
+  // either the old modal closes or the traditional reader owns mass.prepare.
+  await page.waitForFunction(()=> 
+    document.getElementById("aoPray435930")?.classList?.contains("open") &&
+    document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="traditional-pray" &&
+    globalThis.AO_TRADITIONAL_PRAY_V381?.state?.()?.route==="mass.prepare",
+    null,{timeout:10000});
+  const handoffPresentation=await page.evaluate(()=>({
+    prayerOpen:document.getElementById("aoPray435930")?.classList?.contains("open")??false,
+    prayerView:document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView??null,
+    canonicalPrayer:globalThis.AO_TRADITIONAL_PRAY_V381?.state?.()?.route??null,
+    moduleTitle:globalThis.AO_MODULES?.get?.("mass.prepare")?.title??null,
+    legacyOpen:document.getElementById("aoPrayerBookRoot")?.classList?.contains("open")??false,
+  }));
+  if(handoffPresentation.prayerOpen){
+    assert.equal(handoffPresentation.prayerView,"traditional-pray",
+      "Before Mass handoff must not leave the First Friday folio active");
+    assert.equal(handoffPresentation.canonicalPrayer,"mass.prepare",
+      "In-place handoff did not open canonical Before Mass prayers");
+    assert.match(handoffPresentation.moduleTitle||"",/Before Mass/,
+      "In-place handoff is not owned by the source-registered module");
+    assert.equal(handoffPresentation.legacyOpen,false,
+      "Before Mass must not show both modular and legacy Prayer readers");
+  }
   const handoffState=await page.evaluate(()=>({
     route:globalThis.AO_RUNTIME_V8?.store?.getState?.()?.route??null,
     nativeReader:Boolean(document.getElementById("ao-r17-native-reader-preview")?.isConnected),
@@ -224,7 +248,17 @@ try{
   assert.equal(handoffState.nativeReader,false,"Before Mass handoff mounted R17");
   assert.equal(handoffState.nativeRuntime,false,"Before Mass handoff started native Mass runtime");
 
-  await page.evaluate(()=>globalThis.AO_V37_SHELL?.openDomain?.("pray"));
+  // When the canonical preparation opens inside PRAY, take its real Back
+  // control before using the shell's Prayer return. This exercises the same
+  // user navigation instead of expecting an embedded reader to self-dismiss.
+  if(handoffPresentation.prayerOpen){
+    const beforeMassBack=page.locator("#aoPray435930 [data-tp381-back]");
+    assert.equal(await beforeMassBack.count(),1,
+      "Canonical Before Mass reader has no way back to its caller");
+    await beforeMassBack.click();
+  }
+  // The canonical Back must restore the initiating First Friday folio itself.
+  // Do not simulate a separate shell navigation that users never requested.
   await page.waitForFunction(()=>
     document.getElementById("aoPray435930")?.classList?.contains("open") &&
     document.querySelector("#aoPray435930 .aoP435930Mount")?.dataset?.aoPrayView==="firstFriday" &&

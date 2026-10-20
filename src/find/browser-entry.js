@@ -10,6 +10,7 @@ import {
 } from "./explore-projection.js";
 import { buildExploreViewModel, renderExploreToString } from "./explore-presentation.js";
 import { HERITAGE_STYLE } from "./heritage-style.js";
+import { EXPLORE_ATLAS_LAYOUT_STYLE } from "./explore-atlas-layout-style.js";
 import { SAINTS_SHEET_CSS } from "./saints-presentation.js";
 import { projectSaintCatalogueItems } from "./saints-catalogue.js";
 import { projectSaintSourceIndexItems } from "./saints-source-index.js";
@@ -21,6 +22,7 @@ import { buildCustomsAtlasFacets, filterCustomsAtlasItems } from "./customs-atla
 import { groupTraditionsForBrowse, countCanonicalTraditions } from "./traditions-browse.js";
 import { HERITAGE_CATEGORIES, projectHeritagePlaces, heritageCustomCards, nearbyHeritagePlaces } from "./heritage-map.js";
 import { buildExplorePlaceProfiles } from "./place-profiles.js";
+import { buildPilgrimageJourneyCatalogue,selectedPilgrimageJourney,journeysForCanonicalPlace } from "./pilgrimage-journey.js";
 
 const VERSION="explore-v1";
 const ROOT_ID="ao-find-modular-root";
@@ -114,7 +116,7 @@ function installStyle(win){
     "@media(max-width:520px){.aoExploreLensTabs{grid-template-columns:repeat(3,minmax(0,1fr))}.aoFindMap{height:calc(100vh - 320px);min-height:360px}}",
     "\n/* Compact map-first TLM controls: search and List/Map stay visible while scrolling. */\n.aoExploreSurface:has(.aoExploreTlmFilters) .aoExploreSectionNav{margin-bottom:2px;padding:4px 0}\n.aoExploreSurface:has(.aoExploreTlmFilters) .aoExploreSectionSwitcher>summary{min-height:38px}\n.aoExploreSurface .aoTlmToolbar{position:sticky;top:76px;z-index:4;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:8px;padding:7px 14px;background:rgba(8,12,18,.97);border-bottom:1px solid #28404e;box-shadow:0 4px 12px #0005}\n.aoTlmToolbar .aoFindSearch{padding:0;min-width:0}\n.aoTlmToolbar .aoFindSearch input{height:46px;min-height:46px;padding:9px 13px;border:1px solid #365467;color:#eef7ff;background:#14202c;border-radius:10px;font:500 15px/1.2 var(--ao-font-ui,system-ui,sans-serif)}\n.aoTlmToolbar .aoFindViewTabs{display:flex;gap:5px;padding:0}\n.aoTlmToolbar .aoFindViewTabs button{min-height:46px;min-width:58px;border-radius:9px}\n.aoTlmToolbar .aoFindViewTabs button.active{background:#143a49;color:#e6faff;border-color:#25d5fc}\n.aoExploreSurface .aoExploreTlmFilters{padding:7px 14px 4px}\n.aoExploreTlmFilters .aoExploreQuickFilters{display:flex;flex-wrap:nowrap;gap:6px;align-items:center;overflow-x:auto;white-space:nowrap;padding:0 0 5px;scrollbar-width:thin}\n.aoExploreTlmFilters .aoExploreQuickFilters button{flex:none;min-height:38px;padding:8px 11px;border-radius:9px}\n.aoExploreTlmFilters .aoExploreQuickFilters button.active{background:#173e4c;color:#edfbff;border-color:#00dffc}\n.aoTlmProviderStrip{display:flex;align-items:center;gap:9px;min-width:0;padding:1px 0 5px}\n.aoTlmProviderStrip .aoExploreFilterLabel{flex:none}\n.aoTlmProviderStrip .aoFindAffiliations{display:flex;align-items:center;gap:6px;overflow-x:auto;white-space:nowrap;scrollbar-width:thin}\n.aoTlmProviderStrip button{display:inline-flex;align-items:center;justify-content:center;gap:5px;min-height:42px;padding:5px 10px;flex:none;border-radius:9px}\n.aoTlmProviderStrip button img{width:25px;height:25px;object-fit:contain;filter:drop-shadow(0 0 3px #00dbff55)}\n.aoTlmProviderStrip button[data-find-affiliation=SSPX] img{filter:brightness(0) invert(1) drop-shadow(0 0 4px #347cffb3)}\n.aoTlmProviderStrip button.active{background:#173e4c;color:#edfbff;border-color:#00dffc}\n.aoExploreSurface .aoPreliminaryDirectoryNotice{display:block;margin:1px 0 4px;padding:0;color:#a5bed2;background:none;border:0;font:500 11px/1.5 var(--ao-font-ui,system-ui,sans-serif)}\n.aoPreliminaryDirectoryNotice>summary{display:list-item;list-style:disclosure-closed inside;min-height:26px;cursor:pointer;color:#9fd7e4;padding:5px 0}\n.aoPreliminaryDirectoryNotice[open]>summary{list-style:disclosure-open inside}\n.aoPreliminaryDirectoryNotice p{margin:2px 0 5px;padding:9px 12px;border:1px solid #314755;background:#111c28;border-radius:8px;color:#b8c9d8;font:12px/1.4 var(--ao-font-ui,system-ui,sans-serif)}\n.aoExploreSurface:has(.aoExploreTlmFilters) .aoFindResultMeta{padding-top:5px;padding-bottom:8px}\n.aoExploreSurface:has(.aoExploreTlmFilters) .aoFindBody[data-find-view=map]{padding:0 9px 7px}\n.aoExploreSurface:has(.aoExploreTlmFilters) .aoFindBody[data-find-view=map] .aoFindMap{margin:0;width:100%;box-sizing:border-box;height:clamp(430px,74dvh,860px);min-height:0;border:1px solid #304858;border-radius:11px}\n.aoExploreSurface .aoFindExternalSource{display:block;margin:5px 14px 18px;padding:0 10px;border:1px solid #293b48;background:#0d1721;border-radius:10px}\n.aoExploreSurface .aoFindExternalSource summary{display:list-item;cursor:pointer;padding:12px 5px;min-height:24px;color:#a8d5e5;font:600 12px var(--ao-font-ui,system-ui,sans-serif)}\n.aoExploreSurface .aoFindExternalSource>div{margin:8px 0}\n.aoExploreSurface .aoFindExternalSource a{margin:4px 7px 10px 0;display:inline-flex}\n.aoExploreMapReset{position:absolute;z-index:3;top:11px;left:11px;min-height:42px;max-width:190px;padding:8px 12px;display:flex;align-items:center;gap:7px;background:rgba(10,21,32,.95);color:#ebfaff;border:1px solid #39b3d7;border-radius:9px;font:600 12px/1.2 var(--ao-font-ui,system-ui,sans-serif);box-shadow:0 4px 16px #0009;cursor:pointer}\n.aoExploreMapReset:focus-visible{outline:2px solid #00e5ff;outline-offset:3px}\n@media(max-width:600px){\n.aoExploreSurface .aoTlmToolbar{top:69px;padding:6px 9px;gap:6px}\n.aoTlmToolbar .aoFindSearch input{min-height:44px;height:44px;font-size:16px}\n.aoTlmToolbar .aoFindViewTabs button{min-height:44px;min-width:49px;padding:7px 9px}\n.aoExploreSurface .aoExploreTlmFilters{padding:6px 9px 4px}\n.aoTlmProviderStrip{display:block}\n.aoTlmProviderStrip .aoExploreFilterLabel{display:block;padding:0 0 2px}\n.aoExploreSurface:has(.aoExploreTlmFilters) .aoFindBody[data-find-view=map] .aoFindMap{height:max(410px,63dvh)}\n.aoExploreMapReset{top:9px;left:9px;min-height:44px}\n}",
     "@media(max-width:600px){\n.aoExploreSurface:not(.aoHeritageSurface) .aoFindHeader{grid-template-columns:44px minmax(0,1fr) 44px;gap:8px;padding:9px 10px}\n.aoExploreSurface:not(.aoHeritageSurface) .aoFindHeader>span{display:none}\n.aoExploreSurface:not(.aoHeritageSurface) .aoFindHeader h1{font-size:clamp(17px,4.5vw,21px);line-height:1.03;margin:2px 0 0;overflow-wrap:normal}\n}\n@media(max-width:355px){\n.aoExploreSurface:not(.aoHeritageSurface) .aoFindHeader small{display:none}\n.aoExploreSurface:not(.aoHeritageSurface) .aoFindHeader h1{font-size:18px;line-height:1.06}\n.aoExploreSurface:not(.aoHeritageSurface) .aoFindHeader{padding-block:7px;min-height:54px}\n}",
-  ].join("")+HERITAGE_STYLE+SAINTS_SHEET_CSS;
+  ].join("")+HERITAGE_STYLE+SAINTS_SHEET_CSS+EXPLORE_ATLAS_LAYOUT_STYLE;
   win.document.head?.append?.(style);
 }
 
@@ -135,6 +137,7 @@ export function createFindOwner(win=globalThis){
   let lastMapView=null,lastMapLens=null;
   // Ephemeral ranked results only. Device location is never stored or persisted.
   let nearbyResults=null;
+  let journeyPreviousCategories=null;
   const queryByLens=new Map();
   const scrollGuard=createScrollTapGuard(win?.document,{
     contains:target=>Boolean(getRoot(win)?.contains?.(target)),
@@ -153,6 +156,7 @@ export function createFindOwner(win=globalThis){
     massType:"ANY",
     heritageCategories:[...HERITAGE_CATEGORIES],
     highlightCustomId:null,
+    journeyOpen:false,journeySelectedId:null,
     expandPlace:false,
     expandDetail:false,
     atlasFamily:"ANY",
@@ -391,6 +395,10 @@ export function createFindOwner(win=globalThis){
     const customCards=state.lens==="heritage"
       ?heritageCustomCards(canonical,{enabled:state.heritageCategories.includes("traditions")&&state.heritageCategories.length<HERITAGE_CATEGORIES.length,query:state.query}):[];
     const placeProfiles=preliminaryMode?[]:buildExplorePlaceProfiles(data,projection,{today:localTodayIso()});
+    const journeys=preliminaryMode?[]:buildPilgrimageJourneyCatalogue(
+      projection?.byLens?.pilgrimages,data?.shrines?.sources,
+      data?.shrines?.routeStageEvidence,data?.shrines?.routeGeometryReview,
+      data?.shrines?.routeStageSiteLinks,data?.geography?.places);
     const featuredPlaces=placeProfiles.filter(p=>p.editorial_feature&&p.map_publishable&&p.sources.length)
       .sort((a,b)=>a.editorial_feature.ordinal-b.editorial_feature.ordinal);
     const vm=buildExploreViewModel({
@@ -411,6 +419,9 @@ export function createFindOwner(win=globalThis){
       selectedOverride,
       displayLimit:state.displayLimit,
       placeProfiles,
+      journeyOpen:state.lens==="heritage"&&state.journeyOpen,
+      journeys,
+      journeySelectedId:state.journeySelectedId,
       selectedPlaceId:state.selectedPlaceId,
       expandPlace:state.expandPlace,
       expandDetail:state.expandDetail,
@@ -423,6 +434,13 @@ export function createFindOwner(win=globalThis){
       staged.innerHTML=rendered;
       const nextSheet=staged.querySelector(".aoFindSheetBackdrop");
       const surface=node.querySelector(".aoFindSurface");
+      // A selection-only update preserves the same MapLibre canvas. It must
+      // nevertheless reconcile the search result overlay: otherwise the
+      // original suggestions remain visible behind the editorial folio.
+      const mapBody=surface.querySelector(".aoHeritageBody");
+      const nextSearch=staged.querySelector(".aoHeritageSearchResults");
+      mapBody?.querySelector(".aoHeritageSearchResults")?.remove();
+      if(nextSearch&&mapBody)mapBody.append(nextSearch);
       surface.querySelectorAll(".aoFindSheetBackdrop").forEach(sheet=>sheet.remove());
       if(nextSheet)surface.append(nextSheet);
       node.dataset.aoFindLoadState="ready";
@@ -452,13 +470,20 @@ export function createFindOwner(win=globalThis){
       const scroller=node.querySelector?.(".aoFindSurface");
       if(scroller)scroller.scrollTop=searchFocus.scroll;
     }
+    // Repainting preserves the MapLibre canvas but replaces the route rail.
+    // Keep the chosen D card in view rather than resetting the carousel to 01.
+    if(state.journeyOpen){
+      node.querySelector?.(".aoJourneyRoutes button.active")?.scrollIntoView?.({
+        behavior:"instant",block:"nearest",inline:"center",
+      });
+    }
     node.dataset.open=openState?"true":"false";
     node.dataset.aoFindLoadState="ready";
     node.dataset.exploreLens=state.lens;
     if(mapHandle&&state.view==="map"){
       lastMapView=mapViewport(mapHandle.map);lastMapLens=state.lens;
     }
-    if(reuseMap)return true;
+    if(reuseMap){syncJourneyMarkers();return true;}
     mapHandle?.destroy?.();mapHandle=null;
     if(openState&&state.view==="map"){
       const mapNode=node.querySelector?.("[data-find-map]");
@@ -523,6 +548,7 @@ export function createFindOwner(win=globalThis){
           showMapRecovery(true);return true;
         }
         mapHandle=nextHandle;
+        syncJourneyMarkers();
       }catch(error){
         if(importTimer!==undefined)win.clearTimeout?.(importTimer);
         // A blocked CDN or failed module import must show the existing
@@ -617,6 +643,87 @@ export function createFindOwner(win=globalThis){
     return true;
   }
 
+  function journeyCatalogue(){
+    if(!projection||!dataset)return [];
+    return buildPilgrimageJourneyCatalogue(
+      projection.byLens?.pilgrimages,dataset.shrines?.sources,
+      dataset.shrines?.routeStageEvidence,dataset.shrines?.routeGeometryReview,
+      dataset.shrines?.routeStageSiteLinks,dataset.geography?.places);
+  }
+
+  function focusJourneyStage(stageId,{fromMap=false}={}){
+    if(!state.journeyOpen||!mapHandle?.map)return false;
+    const active=selectedPilgrimageJourney(journeyCatalogue(),state.journeySelectedId);
+    const stage=active?.namedStages?.find(s=>s.id===stageId);
+    const geo=stage?.siteAnchor;
+    if(!geo)return false;
+    const map=mapHandle.map,phone=Number(win?.innerWidth||0)<800;
+    const target={center:[geo.lng,geo.lat],
+      // Holywell's church and well are both known, but collapse into one
+      // symbol at regional zoom. Focus an actual stage at local-site scale.
+      zoom:Math.max(14.8,Number(map.getZoom?.())||0),
+      offset:phone?[0,-125]:[-175,0]};
+    if(win.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches)
+      map.jumpTo?.(target);
+    else map.easeTo?.({...target,duration:460});
+    const root=getRoot(win);
+    root?.querySelectorAll?.("[data-explore-journey-stage-focus]").forEach(button=>{
+      button.setAttribute("aria-pressed",String(button.dataset.exploreJourneyStageFocus===stageId));
+    });
+    if(fromMap){
+      const row=[...(root?.querySelectorAll?.("[data-journey-named-stage]")||[])]
+        .find(element=>element.dataset.journeyNamedStage===stageId);
+      row?.scrollIntoView?.({behavior:"smooth",block:"nearest",inline:"nearest"});
+    }
+    return true;
+  }
+
+  function openJourneyStagePlace(stageId){
+    if(!state.journeyOpen||state.lens!=="heritage"||!projection||!dataset)return false;
+    const active=selectedPilgrimageJourney(journeyCatalogue(),state.journeySelectedId);
+    const stage=active?.namedStages?.find(row=>row.id===stageId);
+    const placeId=stage?.siteAnchor?.placeId;
+    // A sourced map anchor is not enough unless the existing Place profile
+    // can be opened by the same canonical identity. No fallback to a nearby
+    // sanctuary, reverse-geocoded result, or separate external page.
+    if(!placeId||!dataset.geography?.places?.some(p=>p.place_id===placeId))return false;
+    focusJourneyStage(stageId,{fromMap:true});
+    state.selectedPlaceId=placeId;
+    state.selectedId=null;
+    state.expandPlace=false;
+    state.expandDetail=false;
+    // Preserve both the MapLibre canvas and the currently selected Journey
+    // rail under a normal C Place sheet. Closing it returns to this itinerary.
+    void paint({selectionOnly:true});
+    return true;
+  }
+
+  function syncJourneyMarkers(){
+    if(!mapHandle?.setJourneyStageAnchors)return;
+    const active=state.journeyOpen&&state.lens==="heritage"
+      ?selectedPilgrimageJourney(journeyCatalogue(),state.journeySelectedId):null;
+    mapHandle.setJourneyStageAnchors(active?.stageSiteAnchors??[],
+      stageId=>openJourneyStagePlace(stageId));
+  }
+
+  function focusJourneyDestination(){
+    if(!projection||!dataset||!mapHandle?.map)return false;
+    const active=selectedPilgrimageJourney(journeyCatalogue(),state.journeySelectedId);
+    // The Walsingham 2026 Priory endpoint differs from the canonical Catholic
+    // shrine. It has no surveyed stage coordinate. Center the broader related
+    // shrine AREA for context without labelling that marker the route endpoint.
+    const geo=active?.destinationGeo??active?.relatedShrineGeo;
+    if(!geo)return false;
+    const map=mapHandle.map,phone=Number(win?.innerWidth||0)<800;
+    const zoomFloor=active?.destinationGeo?8.5:7.0;
+    const target={center:[geo.lng,geo.lat],zoom:Math.max(zoomFloor,Number(map.getZoom?.())||0),
+      offset:phone?[0,-125]:[-175,0]};
+    if(win.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches)
+      map.jumpTo?.(target);
+    else map.easeTo?.({...target,duration:450});
+    return true;
+  }
+
   function setFilter(key,value){
     const previousLens=state.lens;
     if(key==="view")state.view=value==="map"?"map":"list";
@@ -626,6 +733,7 @@ export function createFindOwner(win=globalThis){
         state.query=queryByLens.get(value)??"";
       }
       state.lens=value;state.calendarKey=null;nearbyResults=null;
+      if(value!=="heritage"){state.journeyOpen=false;journeyPreviousCategories=null;}
       if(value==="saints")state.view="list";
       else if(value==="heritage"||value==="traditions"||value==="tlm")state.view="map";
     }else if(key==="saintScope"&&["profiles","historical","later","doctors"].includes(value)&&
@@ -925,6 +1033,7 @@ export function createFindOwner(win=globalThis){
     if(worldButton&&state.lens==="heritage"){
       event.preventDefault?.();
       state.query="";state.heritageCategories=[...HERITAGE_CATEGORIES];
+      state.journeyOpen=false;journeyPreviousCategories=null;
       state.highlightCustomId=null;state.selectedId=null;
       state.selectedPlaceId=null;state.expandPlace=false;state.expandDetail=false;
       nearbyResults=null;
@@ -964,6 +1073,27 @@ export function createFindOwner(win=globalThis){
     if(target?.closest?.("[data-explore-sheet-toggle]")){
       event.preventDefault?.();state.expandPlace=true;void paint({selectionOnly:true});return;
     }
+    const placeJourney=target?.closest?.("[data-explore-place-journey]");
+    if(placeJourney&&state.lens==="heritage"&&state.selectedPlaceId){
+      event.preventDefault?.();
+      const placeId=state.selectedPlaceId;
+      const routeId=placeJourney.dataset.explorePlaceJourney;
+      const candidates=journeysForCanonicalPlace(journeyCatalogue(),placeId);
+      if(!candidates.some(candidate=>candidate.routeId===routeId))return;
+      if(!state.journeyOpen)journeyPreviousCategories=[...state.heritageCategories];
+      state.journeyOpen=true;
+      state.journeySelectedId=routeId;
+      state.heritageCategories=["pilgrimages"];
+      state.query="";state.selectedPlaceId=null;state.selectedId=null;
+      state.expandPlace=false;state.expandDetail=false;nearbyResults=null;
+      // A single shared MapLibre atlas: switch C -> D without remounting it.
+      // Do not snap to the related Walsingham shrine as a Priory terminus.
+      void paint();return;
+    }
+    if(target?.closest?.("[data-explore-place-journey-list]")&&state.selectedPlaceId){
+      event.preventDefault?.();state.expandPlace=true;
+      void paint({selectionOnly:true});return;
+    }
     if(target?.closest?.("[data-explore-expand-place]")){
       event.preventDefault?.();state.expandPlace=true;void paint({selectionOnly:true});return;
     }
@@ -976,9 +1106,60 @@ export function createFindOwner(win=globalThis){
     if(target?.closest?.("[data-explore-collapse-detail]")){
       event.preventDefault?.();state.expandDetail=false;void paint({selectionOnly:true});return;
     }
+    const openJourney=target?.closest?.("[data-explore-journey-open]");
+    if(openJourney&&state.lens==="heritage"){
+      event.preventDefault?.();
+      if(!state.journeyOpen){
+        journeyPreviousCategories=[...state.heritageCategories];
+        state.journeyOpen=true;state.heritageCategories=["pilgrimages"];
+        state.query="";state.selectedPlaceId=null;state.selectedId=null;
+        state.expandPlace=false;nearbyResults=null;
+      }
+      void paint();return;
+    }
+    if(target?.closest?.("[data-explore-journey-close]")&&state.lens==="heritage"){
+      event.preventDefault?.();state.journeyOpen=false;
+      state.heritageCategories=journeyPreviousCategories??[...HERITAGE_CATEGORIES];
+      journeyPreviousCategories=null;void paint();return;
+    }
+    const journeySelect=target?.closest?.("[data-explore-journey-select]");
+    if(journeySelect&&state.journeyOpen){
+      event.preventDefault?.();
+      state.journeySelectedId=journeySelect.dataset.exploreJourneySelect;
+      focusJourneyDestination();
+      void paint();return;
+    }
+    const stagePlace=target?.closest?.("[data-explore-journey-stage-place]");
+    if(stagePlace&&state.journeyOpen){
+      event.preventDefault?.();
+      openJourneyStagePlace(stagePlace.dataset.exploreJourneyStagePlace);return;
+    }
+    const stageFocus=target?.closest?.("[data-explore-journey-stage-focus]");
+    if(stageFocus&&state.journeyOpen){
+      event.preventDefault?.();
+      focusJourneyStage(stageFocus.dataset.exploreJourneyStageFocus);return;
+    }
+    if(target?.closest?.("[data-explore-journey-focus]")&&state.journeyOpen){
+      event.preventDefault?.();focusJourneyDestination();return;
+    }
+    const journeyDestination=target?.closest?.("[data-explore-journey-destination]");
+    if(journeyDestination&&state.journeyOpen){
+      event.preventDefault?.();
+      const placeId=journeyDestination.dataset.exploreJourneyDestination||null;
+      if(!placeId||!dataset?.geography?.places?.some(p=>p.place_id===placeId))return;
+      state.selectedPlaceId=placeId;
+      state.selectedId=null;state.expandPlace=false;state.expandDetail=false;
+      // Destination/related shrine uses the same existing C folio as an
+      // individually linked stage: return to D without resetting its map,
+      // filter or selected route (including Walsingham's Priory exception).
+      void paint({selectionOnly:true});return;
+    }
     const heritageCategory=target?.closest?.("[data-heritage-category]");
     if(heritageCategory&&state.lens==="heritage"){
       event.preventDefault?.();
+      // Changing ordinary map subjects exits the D journey folio without
+      // preserving an obsolete route filter over an unrelated map category.
+      state.journeyOpen=false;journeyPreviousCategories=null;
       const value=heritageCategory.dataset.heritageCategory;
       if(value==="ALL")state.heritageCategories=[...HERITAGE_CATEGORIES];
       else if(HERITAGE_CATEGORIES.includes(value)){
@@ -1043,6 +1224,23 @@ export function createFindOwner(win=globalThis){
       event.preventDefault?.();event.stopPropagation?.();
       state.selectedPlaceId=openPlace.dataset.exploreOpenPlace||null;
       state.selectedId=null;state.expandPlace=false;state.expandDetail=false;
+      // Search selection should reveal the actual geographical context, not
+      // leave a worldwide zoom behind the editorial Place folio. Reuse the
+      // already published source coordinates, never infer a new entrance.
+      const focused=filtered().find(item=>item?.place_id===state.selectedPlaceId
+        &&item?.map_publishable&&Number.isFinite(Number(item?.geo?.lat))
+        &&Number.isFinite(Number(item?.geo?.lng)));
+      const map=mapHandle?.map;
+      if(map&&focused){
+        const mobile=Number(win.innerWidth)||map.getContainer?.()?.clientWidth||0;
+        const offset=mobile<800?[0,-110]:[-155,0];
+        const target={
+          center:[Number(focused.geo.lng),Number(focused.geo.lat)],
+          zoom:Math.max(9,Number(map.getZoom?.())||0),
+          offset,duration:win.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches?0:460,
+        };
+        map.easeTo?.(target);
+      }
       void paint({selectionOnly:true});return;
     }
     const placeItem=target?.closest?.("[data-explore-place-item]");

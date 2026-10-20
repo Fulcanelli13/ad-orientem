@@ -1,6 +1,7 @@
 import { resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 import { MASS_EMBLEM_GROUPS, massInstitutionEmblem } from "./institution-emblems.js";
 import { renderHeritageToString, compactHeritagePlaceSheet, sacredPlaceSynopsis, placeTypeLabel } from "./heritage-presentation.js";
+import { renderPilgrimageJourneyPanel, journeysForCanonicalPlace } from "./pilgrimage-journey.js";
 import { renderSaintPlaceSheet,renderSaintSourceIndexSheet } from "./saints-presentation.js";
 const esc=value=>String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
 const uiIcon=id=>{const url=resolveCanonicalAssetUrl(id);return url?`<span data-ao-asset-id="${esc(id)}" aria-hidden="true" style="display:inline-block;width:18px;height:18px;background:currentColor;-webkit-mask:url('${esc(url)}') center/contain no-repeat;mask:url('${esc(url)}') center/contain no-repeat"></span>`:"";};
@@ -151,9 +152,9 @@ function illustratedGuideHtml(profile,language){
 function placeSheet(vm){
   const profile=vm.selectedPlace;if(!profile)return "";
   let html='<div class="aoFindSheetBackdrop" data-find-close-place><section class="aoFindSheet aoExplorePlaceSheet'+(profile.editorial_feature?' aoExplorePlaceEditorial':'')+'" role="dialog" aria-modal="true" data-explore-place-owner="'+esc(profile.place_id)+'">';
-  html+='<header><div><small>'+(profile.editorial_feature?esc(L(vm.language,"IN FOCUS","À DÉCOUVRIR"))+' · ':"")+esc(placeTypeLabel(vm.language,profile.place_type))+'</small><h2>'+esc(profile.name||"")+'</h2>';
+  html+='<header><div><small>'+(vm.journeyOpen?esc(L(vm.language,"PILGRIMAGE PLACE","LIEU DE PÈLERINAGE"))+' · ':(profile.editorial_feature?esc(L(vm.language,"IN FOCUS","À DÉCOUVRIR"))+' · ':""))+esc(placeTypeLabel(vm.language,profile.place_type))+'</small><h2>'+esc(profile.name||"")+'</h2>';
   if(profile.address_label)html+='<p>'+esc(profile.address_label)+'</p>';
-  html+='</div><button type="button" data-find-close-place aria-label="'+esc(L(vm.language,"Close","Fermer"))+'">'+uiIcon("ao-ui-close")+'</button></header>';
+  html+='</div><button type="button" data-find-close-place aria-label="'+esc(vm.journeyOpen?L(vm.language,"Return to pilgrimage journey","Retour au parcours de pèlerinage"):L(vm.language,"Close","Fermer"))+'">'+uiIcon("ao-ui-close")+'</button></header>';
 
   html+='<div class="aoExploreFullBack"><button type="button" data-explore-collapse-place>'+esc(L(vm.language,"← Back to place preview","← Retour à l’aperçu"))+'</button></div>';
   if(arr(profile.aliases).length)html+='<p class="aoExploreLead">'+esc(profile.aliases.join(" · "))+'</p>';
@@ -162,6 +163,28 @@ function placeSheet(vm){
     html+='<figcaption>'+esc(profile.media.credit)+' · <a href="'+esc(profile.media.source_url)+'" target="_blank" rel="noopener noreferrer">'+L(vm.language,"Original source","Source originale")+'</a> · <a href="'+esc(profile.media.license_url)+'" target="_blank" rel="noopener noreferrer">'+esc(profile.media.license)+'</a> · '+esc(vm.language==="fr"?profile.media.changes_fr:profile.media.changes_en)+'</figcaption></figure>';
   }
   if(profile.geo?.indicative_only)html+='<p class="aoExploreLead">'+esc(L(vm.language,"Indicative map pin only — nearby reference point, not the shrine entrance.","Repère cartographique indicatif — point de référence à proximité, et non entrée du sanctuaire.")+(profile.geo.reference_point_name?" · "+profile.geo.reference_point_name:""))+"</p>";
+
+  // Reciprocal navigation is restricted to independently documented canonical
+  // journey identities. It is not generated from nearby pins or name matching.
+  if(arr(vm.placeJourneys).length){
+    html+='<section class="aoExplorePlaceGroup aoExplorePlaceJourneys" data-explore-place-journeys>'+
+      '<h3>'+esc(L(vm.language,"Documented journeys associated with this place",
+        "Parcours attestés associés à ce lieu"))+'</h3>';
+    for(const journey of vm.placeJourneys){
+      const detail=journey.relation==="RELATED_SHRINE_NOT_TERMINUS"
+        ?L(vm.language,"Related Catholic shrine — NOT the pilgrimage terminus for this edition",
+          "Sanctuaire catholique associé — PAS le terminus de cette édition")
+        :journey.relation==="NAMED_STAGE"
+        ?L(vm.language,"Published stage "+journey.ordinal,"Étape attestée "+journey.ordinal)
+        :L(vm.language,"Linked pilgrimage destination place","Lieu de destination associé");
+      html+='<button type="button" class="aoExplorePlaceJourneyRow" data-explore-place-journey="'+esc(journey.routeId)+'">'+
+        '<strong>'+esc(journey.name)+'</strong>'+
+        '<small>'+esc(detail)+'</small><span aria-hidden="true">→</span></button>';
+    }
+    html+='<p>'+esc(L(vm.language,
+      "Published pilgrimage records; not live route navigation or current access information.",
+      "Parcours documentés ; ni navigation GPS ni informations d’accès en temps réel."))+'</p></section>';
+  }
 
   // Reader-first: only source-owned text and already linked devotions appear.
   // Chapter shortcuts scroll this Place sheet, never leave the application.
@@ -447,12 +470,15 @@ function tlmFilters(vm){
   const f=vm.filters??{},aff=arr(f.affiliations);
   if(Object.hasOwn(f,"directoryGroup")){
     let html='<section class="aoFindFilters aoExploreTlmFilters" aria-label="'+esc(L(vm.language,"Mass venue filters","Filtres des lieux de messe"))+'">';
+    if(vm.view==="map")html+='<details class="aoAtlasTlmExtra"><summary>'+esc(L(vm.language,"Filters","Filtres"))+'</summary>';
     html+='<div class="aoExploreQuickFilters"><span class="aoExploreFilterLabel">'+esc(L(vm.language,"Show","Afficher"))+'</span>';
     html+=pill("directoryGroup","ALL",L(vm.language,"All locations","Tous les lieux"),f.directoryGroup);
     html+=pill("directoryGroup","ROME",L(vm.language,"Rome-grouped listings","Fiches classées Rome"),f.directoryGroup);
     html+=pill("directoryGroup","SSPX","SSPX",f.directoryGroup);
     html+=pill("directoryGroup","UNKNOWN",L(vm.language,"Unclassified","Non classés"),f.directoryGroup);
-    html+='</div><div class="aoTlmProviderStrip" role="group" aria-label="'+esc(L(vm.language,"Filter by source-reported institute","Filtrer par institut déclaré"))+'">';
+    html+='</div>';
+    if(vm.view==="map")html+='</details>';
+    html+='<div class="aoTlmProviderStrip" role="group" aria-label="'+esc(L(vm.language,"Filter by source-reported institute","Filtrer par institut déclaré"))+'">';
     html+='<span class="aoExploreFilterLabel">'+esc(L(vm.language,"Institute","Institut"))+'</span><div class="aoFindAffiliations">';
     for(const id of ["DIOCESAN","FSSP","ICKSP","IBP","SSPX","OTHER"]){
       const emblem=massInstitutionEmblem(id);
@@ -505,10 +531,14 @@ export function buildExploreViewModel({
   featuredPlaces=[],
   nearby=[],
   displayLimit=120,
+  journeyOpen=false,
+  journeys=[],
+  journeySelectedId=null,
 }={}){
   const list=arr(items);
   const selected=list.find(item=>item?.item_id===selectedId)??selectedOverride??null;
   const selectedPlace=arr(placeProfiles).find(profile=>profile?.place_id===selectedPlaceId)??null;
+  const placeJourneys=selectedPlace?journeysForCanonicalPlace(journeys,selectedPlace.place_id):Object.freeze([]);
   const mapped=list.filter(item=>item?.map_publishable).length;
   const addressOnly=list.filter(item=>!item?.map_publishable&&item?.address).length;
   return Object.freeze({
@@ -521,9 +551,13 @@ export function buildExploreViewModel({
     unavailableProviders:arr(unavailableProviders),
     view,
     filters,
+    journeyOpen:Boolean(journeyOpen),
+    journeys:Object.freeze(arr(journeys)),
+    journeySelectedId,
     saintsRelease,
     selected,
     selectedPlace,
+    placeJourneys,
     expandPlace:Boolean(expandPlace),
     expandDetail:Boolean(expandDetail),
     customCards:arr(customCards),
@@ -536,7 +570,10 @@ export function buildExploreViewModel({
 }
 
 export function renderExploreToString(vm){
-  if(vm.lens==="heritage")return renderHeritageToString(vm,{placeSheet,detailSheet,itemPreview:compactExploreItemSheet});
+  if(vm.lens==="heritage")return renderHeritageToString(vm,{
+    placeSheet,detailSheet,itemPreview:compactExploreItemSheet,
+    journeyPanel:renderPilgrimageJourneyPanel,
+  });
   const f=vm.filters??{},loaded=vm.lens==="tlm"&&vm.loadedProviders.length?vm.loadedProviders.join(" · ").toUpperCase():String(vm.lens==="saints"?vm.items.length:(vm.counts?.[vm.lens]??vm.items.length));
   let html='<section class="aoFindSurface aoExploreSurface" data-ao-find-owner="AO_FIND_APP_V1" data-ao-explore-owner="EXPLORE_V1">';
   html+='<header class="aoFindHeader"><button type="button" data-find-close aria-label="'+esc(L(vm.language,"Back","Retour"))+'">'+uiIcon("ao-ui-back")+'</button><div><small>AD ORIENTEM · EXPLORE</small><h1>'+esc(vm.lens==="tlm"?L(vm.language,"Traditional Mass","Messe traditionnelle"):lensLabel(vm.language,vm.lens))+'</h1></div><button type="button" data-find-glossary aria-label="'+esc(L(vm.language,"Terms and definitions","Termes et définitions"))+'">?</button><span>'+esc(loaded)+'</span></header>';
@@ -626,14 +663,14 @@ export function renderExploreToString(vm){
     )+'</span></div></div>';
     if(["apparitions","relics"].includes(vm.lens))html+='<p class="aoExploreSacredCaution">'+esc(vm.lens==="apparitions"?L(vm.language,"Historical accounts and ecclesiastical recognition are not identical to an authenticated supernatural event.","Les récits historiques et leur accueil ecclésial ne prouvent pas, à eux seuls, l’origine surnaturelle des phénomènes."):L(vm.language,"These pins identify reported custody or veneration, not independent authentication of any relic.","Ces repères indiquent un lieu de conservation ou de vénération, sans authentification indépendante des reliques."))+'</p>';
     if(vm.lens==="tlm"&&vm.mapped){
-      html+='<div class="aoMapLegend" role="note" aria-label="'+esc(L(vm.language,"Map legend","Légende de la carte"))+'">'
+      html+='<details class="aoMapLegend" aria-label="'+esc(L(vm.language,"Map legend","Légende de la carte"))+'"><summary>'+esc(L(vm.language,"Map symbols","Symboles de la carte"))+'</summary>'
         +'<span class="aoMapLegendLabel">'+esc(Object.hasOwn(f,"directoryGroup")?L(vm.language,"Source affiliation","Affiliation selon les sources"):L(vm.language,"Celebrated by","Célébrée par"))+'</span>'
         +massLegendItem("FSSP","FSSP")+massLegendItem("ICKSP","ICKSP")
         +massLegendItem("SSPX","SSPX")+massLegendItem("IBP","IBP")
         +massLegendItem("DIOCESAN",L(vm.language,"Diocesan","Diocésain"))
         +massLegendItem("OTHER",L(vm.language,"Other / unknown","Autre / inconnu"))
         +'<small>'+esc(Object.hasOwn(f,"directoryGroup")?L(vm.language,"All pins provisional; exact entrances and Mass times are not verified.","Tous les repères sont provisoires ; entrées exactes et horaires des messes non vérifiés."):L(vm.language,"Approximate points use a softer outline. Address-only venues remain available in List.","Les lieux à position approximative sont atténués. Les adresses sans coordonnées fiables restent en liste."))+'</small>'
-        +massEmblemCredits(vm.language)+'</div>';
+        +massEmblemCredits(vm.language)+'</details>';
     }
   }else if(vm.items.length){
     const visible=vm.items.slice(0,vm.displayLimit);

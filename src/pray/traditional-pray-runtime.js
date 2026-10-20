@@ -35,6 +35,8 @@ const ROUTES=Object.freeze({
   "pray.communion_treasury":Object.freeze({id:"pray.communion_treasury",type:"module",domain:"pray",category:"eucharistic",title:"Traditional Communion Prayers"}),
   "pray.good_death":Object.freeze({id:"pray.good_death",type:"module",domain:"pray",category:"traditional-devotion",title:"Preparation for a Good Death"}),
   "pray.dying_companion":Object.freeze({id:"pray.dying_companion",type:"module",domain:"pray",category:"pastoral-care",title:"Dying Companion"}),
+  "mass.prepare":Object.freeze({id:"mass.prepare",type:"module",domain:"pray",category:"eucharistic",title:"Before Mass Prayers"}),
+  "mass.thanksgiving":Object.freeze({id:"mass.thanksgiving",type:"module",domain:"pray",category:"eucharistic",title:"Thanksgiving After Mass"}),
 });
 
 const esc=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
@@ -43,7 +45,9 @@ const nl=v=>esc(v).replace(/\n/g,"<br>");
 const prayerParagraphs=v=>String(v??"").split(/\n\s*\n/).filter(x=>x.trim())
   .map(x=>'<p class="aoTP381TextParagraph">'+nl(x)+'</p>').join("");
 const data=()=>globalThis.AO_PRAY_CANONICAL_DATA_V435930||{prayers:{}};
-const isFr=()=>globalThis.AO_RUNTIME_V8?.store?.getState?.()?.language==="fr"||String(document.documentElement.lang||"").toLowerCase().startsWith("fr");
+const isFr=()=>String(S?.route??"").startsWith("mass.")&&["en","fr"].includes(OPEN_OPTS?.language)
+  ? OPEN_OPTS.language==="fr"
+  : globalThis.AO_RUNTIME_V8?.store?.getState?.()?.language==="fr"||String(document.documentElement.lang||"").toLowerCase().startsWith("fr");
 const L=(en,fr)=>isFr()?(fr||en):en;
 const mount=()=>document.querySelector("#aoPray435930 .aoP435930Mount");
 const uiIcon=id=>{const url=resolveCanonicalAssetUrl(id);return url?`<span class="aoP435930UiIcon" data-ao-asset-id="${esc(id)}" aria-hidden="true" style="display:inline-block;width:18px;height:18px;background:currentColor;-webkit-mask:url('${esc(url)}') center/contain no-repeat;mask:url('${esc(url)}') center/contain no-repeat"></span>`:"";};
@@ -94,8 +98,8 @@ function prayerRows(rows){
   return `<div class="aoTP381PrayerList">${rows.map(([id,title,note])=>`<button type="button" ${id.includes(".")?`data-tp381-route="${esc(id)}"`:`data-tp381-prayer="${esc(id)}"`}><span><b>${esc(title)}</b><small>${esc(note)}</small></span><i aria-hidden="true">→</i></button>`).join("")}</div>`;
 }
 
-let BASE_OPEN=null,BASE_CLOSE=null,OPEN_OPTS={},OPEN_RECEIPT=null;
-let S={litanyMode:"full",litanyStep:0,mealStep:0,route:"pray.morning_evening",screen:"module",daypart:"morning",hymn:"te_deum",hymnLang:null,prayerId:null,sacredHeart:"litany",communion:"before",communionStep:0,goodDeathStep:0,dying:"now",dailyMode:"guided",dailyStep:0,examenStep:0,returnToDaily:false};
+let BASE_OPEN=null,BASE_CLOSE=null,OPEN_OPTS={},OPEN_RECEIPT=null,MASS_HANDOFF_BUSY=false;
+let S={litanyMode:"full",litanyStep:0,mealStep:0,route:"pray.morning_evening",screen:"module",daypart:"morning",hymn:"te_deum",hymnLang:null,prayerId:null,sacredHeart:"litany",communion:"before",communionStep:0,goodDeathStep:0,dying:"now",dailyMode:"guided",dailyStep:0,examenStep:0,returnToDaily:false,massStep:0,massDepth:"brief"};
 
 function guidedCardFrame({id,title,step,total,body,onStep="daily",complete=false,returnButton=""}){
  const label=guidedStepLabel(step,total,isFr()?"fr":"en");
@@ -273,6 +277,53 @@ const COMMUNION_AFTER=Object.freeze([
   ["afterBonaventure","St Bonaventure","Saint Bonaventure"],
   ["enEgo","En ego","En ego"]
 ]);
+
+/*
+ * The Mass Folio is a selection and routing surface, not another prayer book.
+ * Both lengths read existing canonical Prayer corpus and communion-treasury
+ * witnesses. The full sequence is simply a longer set of the same texts.
+ */
+function massFolioPrayerStages(){
+  const before=S.route==="mass.prepare";
+  const all=before?COMMUNION_BEFORE:COMMUNION_AFTER;
+  if(S.massDepth==="full")return all;
+  return before?[all[0],all[1],all[4]]:[all[0]];
+}
+function renderMassFolioPrayers(){
+  const before=S.route==="mass.prepare";
+  const stages=massFolioPrayerStages();
+  const step=Math.max(0,Math.min(stages.length-1,Number(S.massStep)||0));
+  const [id,titleEn,titleFr]=stages[step];
+  const corpus=COMMUNION_TREASURY_V383;
+  const prayer=data().prayers?.[id]
+    ?prayerCard(id,{focusParagraphs:true})
+    :sourcedPrayerCard(corpus[id],L(corpus[id]?.title||titleEn,corpus[id]?.titleFr||titleFr),{focusParagraphs:true});
+  const title=before?L("Preparation before Mass","Préparation avant la messe"):
+    L("Thanksgiving after Mass","Action de grâces après la messe");
+  const note=before
+    ?L("Pray at your own pace. You may proceed to the selected Mass at any moment.",
+      "Priez à votre rythme. Vous pouvez rejoindre à tout moment la messe sélectionnée.")
+    :L("These are private prayers of thanksgiving, not part of the Mass rite.",
+      "Ces prières personnelles d’action de grâces ne font pas partie du rite de la messe.");
+  const finish=before?'<button type="button" data-tp381-mass-continue>'+
+    esc(L("Proceed to Mass","Passer à la messe"))+'</button>':
+    '<button type="button" data-tp381-mass-finish>'+esc(L("Finish","Terminer"))+'</button>';
+  const secondary=before?'<button type="button" data-tp381-mass-cancel>'+
+    esc(L("Back to Mass choices","Retour aux choix de la messe"))+'</button>':"";
+  const prev=step>0?'<button type="button" data-tp381-mass-step="'+(step-1)+'">'+
+    esc(L("Previous prayer","Prière précédente"))+'</button>':"";
+  const next=step<stages.length-1?'<button type="button" data-tp381-mass-step="'+(step+1)+'">'+
+    esc(L("Next prayer","Prière suivante"))+'</button>':"";
+  return head(title)+'<main class="aoP435930Body aoTP381DonorBody aoMassFolioPrayerBody">'+
+    '<p class="aoTP381Intro">'+esc(note)+'</p>'+
+    '<section class="aoDevoCard" data-ao-devo-card="mass-'+(before?"before":"after")+'-'+esc(id)+'">'+
+    '<div class="aoDevoCardScroll" role="region" aria-label="'+esc(L(titleEn,titleFr))+'">'+prayer+'</div></section>'+
+    '<nav class="aoTP381GuideNav aoMassFolioPrayerNav" aria-label="'+esc(L("Prayer sequence","Suite de prières"))+'">'+
+    '<small class="aoTP381GuideCount">'+(step+1)+' / '+stages.length+'</small>'+prev+next+finish+secondary+'</nav>'+
+    '<p data-tp381-mass-error role="alert" hidden></p>'+
+    '</main>';
+}
+
 function communionStages(){return S.communion==="after"?COMMUNION_AFTER:COMMUNION_BEFORE}
 function renderCommunionTreasury(){
   const d=COMMUNION_TREASURY_V383,tab=S.communion==="after"?"after":"before";
@@ -406,7 +457,7 @@ function render(){
   // A route change or Full Text mode must not inherit another reader’s stage owner.
   delete m.dataset.aoTraditionalDualAxis;
   m.dataset.aoTraditionalPrayRoute=S.route;
-  m.innerHTML=S.screen==="prayer"?renderPrayer():S.route==="pray.sacred_hymns"?renderHymns():S.route==="pray.holy_name_litany"?renderHolyName():S.route==="pray.nightly_examen"?renderNightlyExamen():S.route==="pray.meal_prayers"?renderMealPrayers():S.route==="pray.sacred_heart"?renderSacredHeart():S.route==="pray.communion_treasury"?renderCommunionTreasury():S.route==="pray.good_death"?renderGoodDeath():S.route==="pray.dying_companion"?renderDyingCompanion():renderMorningEvening();
+  m.innerHTML=S.screen==="prayer"?renderPrayer():S.route==="mass.prepare"||S.route==="mass.thanksgiving"?renderMassFolioPrayers():S.route==="pray.sacred_hymns"?renderHymns():S.route==="pray.holy_name_litany"?renderHolyName():S.route==="pray.nightly_examen"?renderNightlyExamen():S.route==="pray.meal_prayers"?renderMealPrayers():S.route==="pray.sacred_heart"?renderSacredHeart():S.route==="pray.communion_treasury"?renderCommunionTreasury():S.route==="pray.good_death"?renderGoodDeath():S.route==="pray.dying_companion"?renderDyingCompanion():renderMorningEvening();
   if(S.screen==="module"&&["pray.morning_evening","pray.nightly_examen"].includes(S.route)){
     const daily=S.route==="pray.morning_evening";
     const rows=daily?guidedDailyCards(S.daypart):NIGHTLY_EXAMEN_CARDS;
@@ -504,7 +555,10 @@ function render(){
 function open(route,opts={}){
   if(!ROUTES[route])return false;
   OPEN_RECEIPT=captureObservedModuleOrigin(window,"pray");
-  OPEN_OPTS={...opts};S={...S,route,screen:"module",prayerId:null,guidedFromList:false,
+  OPEN_OPTS={...opts};MASS_HANDOFF_BUSY=false;
+  S={...S,route,screen:"module",prayerId:null,guidedFromList:false,
+    ...(route==="mass.prepare"||route==="mass.thanksgiving"
+      ?{massStep:0,massDepth:opts.depth==="full"?"full":"brief"}:{}),
     ...(route==="pray.morning_evening"?{dailyMode:"guided",dailyStep:0,returnToDaily:false}:{})
    ,...(route==="pray.nightly_examen"?{examenStep:0,returnToDaily:false}:{}),
     ...(route==="pray.dying_companion"?{dying:"now"}:{}),
@@ -518,6 +572,11 @@ function open(route,opts={}){
   render();return true;
 }
 function back(){
+  if(S.route==="mass.prepare"){
+    BASE_CLOSE({silent:true});
+    const receipt=OPEN_OPTS.returnPrayerSnapshot;
+    return receipt?Boolean(window.AO_PRAY_V435930?.restoreHandoff?.(receipt)):true;
+  }
   if(S.screen==="prayer"){S.screen="module";S.prayerId=null;return render()}
   if(S.route==="pray.nightly_examen"&&S.returnToDaily){S.route="pray.morning_evening";S.returnToDaily=false;return render()}
   // The list is a Back target only after the visitor actually switched from
@@ -545,11 +604,39 @@ function goHome(){
 }
 function handleClick(e){
   const b=e.target.closest?.("button,[data-tp381-flip]");if(!b||!root()?.classList.contains("open"))return;
-  if(!b.matches("[data-tp381-back],[data-tp381-home],[data-tp381-open],[data-tp381-daypart],[data-tp381-hymn],[data-tp381-hymn-lang],[data-tp381-prayer],[data-tp381-route],[data-tp381-heart],[data-tp381-communion],[data-tp381-dying],[data-tp381-dying-step],[data-tp381-flip],[data-tp381-glossary],[data-tp381-daily-mode],[data-tp381-daily-step],[data-tp381-daily-overview],[data-tp381-daily-examen],[data-tp381-examen-step],[data-tp381-examen-return],[data-tp381-examen-overview],[data-tp381-litany-mode],[data-tp381-litany-step]"))return;
+  if(!b.matches("[data-tp381-back],[data-tp381-home],[data-tp381-open],[data-tp381-daypart],[data-tp381-hymn],[data-tp381-hymn-lang],[data-tp381-prayer],[data-tp381-route],[data-tp381-heart],[data-tp381-communion],[data-tp381-dying],[data-tp381-dying-step],[data-tp381-flip],[data-tp381-glossary],[data-tp381-daily-mode],[data-tp381-daily-step],[data-tp381-daily-overview],[data-tp381-daily-examen],[data-tp381-examen-step],[data-tp381-examen-return],[data-tp381-examen-overview],[data-tp381-litany-mode],[data-tp381-litany-step],[data-tp381-mass-step],[data-tp381-mass-continue],[data-tp381-mass-cancel],[data-tp381-mass-finish]"))return;
   e.preventDefault();e.stopImmediatePropagation();
   if(b.matches("[data-tp381-back]"))return back();
   if(b.matches("[data-tp381-home]"))return goHome();
   if(b.matches("[data-tp381-glossary]")){const g=window?.AO_GLOSSARY_V1;if(typeof g?.openTerms==="function")void g.openTerms(glossaryTermsForState(),{origin:"pray"});return;}
+  if(b.hasAttribute("data-tp381-mass-step")){
+    const number=Number(b.dataset.tp381MassStep);
+    if(Number.isInteger(number)&&number>=0&&number<massFolioPrayerStages().length){
+      S.massStep=number;return render();
+    }
+    return;
+  }
+  if(b.hasAttribute("data-tp381-mass-cancel")){BASE_CLOSE({silent:true});return;}
+  if(b.hasAttribute("data-tp381-mass-finish"))return goHome();
+  if(b.hasAttribute("data-tp381-mass-continue")){
+    if(MASS_HANDOFF_BUSY)return;
+    MASS_HANDOFF_BUSY=true;
+    const action=OPEN_OPTS?.onContinue;
+    Promise.resolve().then(()=>{
+      if(typeof action!=="function")throw Error("MASS_START_NOT_AVAILABLE");
+      return action();
+    }).then(result=>{
+      if(result===false||result?.ok===false)throw Error("MASS_START_NOT_AVAILABLE");
+      BASE_CLOSE({silent:true});
+    }).catch(error=>{
+      const notice=mount()?.querySelector("[data-tp381-mass-error]");
+      if(notice){notice.hidden=false;notice.textContent=L(
+        "Could not start Mass. Return to Mass choices and check the selected Proper.",
+        "Impossible d’ouvrir la messe. Vérifiez le propre sélectionné dans la préparation.");}
+      try{window?.console?.error?.(error)}catch{}
+    }).finally(()=>{MASS_HANDOFF_BUSY=false});
+    return;
+  }
   if(b.dataset.tp381Open)return open(b.dataset.tp381Open,{trigger:b});
   if(b.dataset.tp381Daypart){S.daypart=b.dataset.tp381Daypart==="evening"?"evening":"morning";S.dailyStep=0;return render()}
    if(b.dataset.tp381DailyMode){
@@ -629,7 +716,7 @@ function extendRegistry(){
     get(id){return ROUTES[id]||prior.get?.(id)||null},
     resolve(id){if(ROUTES[id])return {ok:true,input:String(id),id,defaults:{},chain:[id],definition:ROUTES[id]};return prior.resolve?.(id)},
     async open(id,opts={}){if(ROUTES[id])return {ok:open(id,opts),input:String(id),canonicalId:id,type:"module",domain:"pray",options:opts,aliasChain:[id],error:null};return prior.open?.(id,opts)},
-    list(filter={}){const xs=[...(prior.list?.(filter)||[])].filter(x=>!ROUTES[x?.id]);if((!filter.type||filter.type==="module")&&(!filter.domain||String(filter.domain).toLowerCase()==="pray"))xs.push(...Object.values(ROUTES));return xs}
+    list(filter={}){const xs=[...(prior.list?.(filter)||[])].filter(x=>!ROUTES[x?.id]);if((!filter.type||filter.type==="module")&&(!filter.domain||String(filter.domain).toLowerCase()==="pray"))xs.push(...Object.values(ROUTES).filter(x=>!x.id.startsWith("mass.")));return xs}
   };
   window.AO_MODULES=wrapper;window.AO_MODULE_REGISTRY_V36=wrapper;
 }

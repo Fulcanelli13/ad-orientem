@@ -1,6 +1,11 @@
 import { isApproximateDirectoryGeo, isMapPublishableGeo } from "./geo-provenance.js";
 import { attachExploreMapStatus } from "./map-status.js";
 import { registerMassInstitutionImages, massInstitutionEmblem } from "./institution-emblems.js";
+import { installMassMapEmblemOverlays } from "./institution-map-overlay.js";
+import {
+  registerExploreCategoryMedallions,exploreCategoryMedallionExpression,
+  EXPLORE_MEDALLION_ID_PREFIX,
+} from "./explore-map-medallions.js";
 import { MASS_CLUSTER_GROUPS,CLUSTER_PAGE_SIZE,exploreClusterProperties,
   exploreClusterMajorityExpression,clusterPageBounds } from "./cluster-presentation.js";
 const MAPLIBRE_MODULE="https://unpkg.com/maplibre-gl@^6.13.0/dist/maplibre-gl.mjs";
@@ -169,7 +174,7 @@ export function exploreMapFeatures(items){
         ...(typeof item.atlas_label==="string"&&item.atlas_label.trim()&&item.atlas_label_basis==="existing_settlement_anchor"
          ?{atlas_label:item.atlas_label.trim()}:{}),
         precision:String(g.precision??"unknown"),
-        approximate:Boolean(g.approximate),
+        approximate:Boolean(g.approximate||g.indicative_only),
         indicative_only:Boolean(g.indicative_only),
         provider_group:item?.lens==="tlm"?massMapProviderGroup(item?.community_id):"OTHER",
       },
@@ -192,60 +197,32 @@ export function exploreDistinctPointChoices(features){
   }
   return choices;
 }
-// Draw one compact rectangular cluster badge, avoiding generic gold bubbles.
-// The text and its composition label are a separate MapLibre symbol.
-// A category-coloured badge is never an invented percentage chart: only exact
-// source-derived dominant affiliations receive the institute's electric outline.
+// A quiet circular bubble, not a geometric dashboard counter.
+// Affiliation accents are source-derived; clusters never impersonate a venue.
 export const EXPLORE_CLUSTER_BADGE_COLORS=Object.freeze({
-  ...MASS_MAP_GROUP_COLORS,MIXED:"#22D6F7",PLACES:"#FFBF2E",
+  ...MASS_MAP_GROUP_COLORS,MIXED:"#C4AB78",PLACES:"#C4AB78",
 });
-// Compact cartographic cluster glyphs, not rectangular dashboard counters.
-// Institute identity remains on individual venue emblems; a cluster is only
-// a group/zoom affordance. Colour comes from source-reported affiliation.
 export function registerExploreClusterBadge(map,win=globalThis){
   if(!win?.document?.createElement||!map?.addImage)return false;
   const canvas=win.document.createElement("canvas");
-  // 84px physical at pixelRatio 2 = 42px on screen (old rectangle was 88px).
-  canvas.width=84;canvas.height=84;
+  canvas.width=96;canvas.height=96; // 48 CSS px at pixelRatio 2
   const ctx=canvas.getContext?.("2d");
   if(!ctx)return false;
   try{
-    for(const [group,color] of Object.entries(EXPLORE_CLUSTER_BADGE_COLORS)){
-      ctx.clearRect(0,0,84,84);
-      const cx=42,cy=42,r=31;
-      // A slim hexagonal outline reads as a map glyph, not as a popup card.
-      const vertices=Array.from({length:6},(_,i)=>{
-        const angle=Math.PI/3*i-Math.PI/6;
-        return [cx+r*Math.cos(angle),cy+r*Math.sin(angle)];
-      });
-      ctx.beginPath();
-      vertices.forEach(([x,y],i)=>i?ctx.lineTo(x,y):ctx.moveTo(x,y));
-      ctx.closePath();
-      ctx.fillStyle="#0B1725";
-      ctx.fill();
-      ctx.lineWidth=2.4;
-      ctx.strokeStyle=color;
-      ctx.stroke();
-      if(group==="MIXED"){
-        // Multicolour side ticks indicate distinct affiliations, never made-up
-        // percentages. Real breakdown is obtained on opening the cluster.
-        const groups=["FSSP","ICKSP","SSPX","DIOCESAN","IBP","OTHER"];
-        ctx.lineWidth=3.2;
-        for(let i=0;i<6;i++){
-          const p=vertices[i],q=vertices[(i+1)%6];
-          const from=0.28,to=0.72;
-          ctx.beginPath();
-          ctx.moveTo(p[0]+(q[0]-p[0])*from,p[1]+(q[1]-p[1])*from);
-          ctx.lineTo(p[0]+(q[0]-p[0])*to,p[1]+(q[1]-p[1])*to);
-          ctx.strokeStyle=MASS_MAP_GROUP_COLORS[groups[i]];
-          ctx.stroke();
-        }
+    for(const group of Object.keys(EXPLORE_CLUSTER_BADGE_COLORS)){
+      ctx.clearRect(0,0,96,96);
+      ctx.beginPath();ctx.arc(48,48,37,0,Math.PI*2);
+      ctx.fillStyle="#10212C";ctx.fill();
+      ctx.lineWidth=4;ctx.strokeStyle="#CAB17C";ctx.stroke();
+      if(group!=="MIXED"&&group!=="PLACES"&&group!=="OTHER"){
+        ctx.beginPath();ctx.arc(48,48,37,-Math.PI/2-0.18,-Math.PI/2+0.18);
+        ctx.lineWidth=6;ctx.strokeStyle=EXPLORE_CLUSTER_BADGE_COLORS[group];ctx.stroke();
       }
       const id="ao-explore-cluster-badge-"+group;
-      if(!map.hasImage?.(id))map.addImage(id,ctx.getImageData(0,0,84,84),{pixelRatio:2});
+      if(!map.hasImage?.(id))map.addImage(id,ctx.getImageData(0,0,96,96),{pixelRatio:2});
     }
     return true;
-  }catch{return false}
+  }catch{return false;}
 }
 function explorePlaceChoicePopup({win,map,maplibre,coordinates,choices,onSelect,
   total=choices.length,fetchMore=null,initialOffset=choices.length}){
@@ -407,6 +384,7 @@ export async function mountExploreMap(container,items,{
   map.addControl?.(new maplibre.NavigationControl({showCompass:false}),"top-right");
   if(maplibre.FullscreenControl)map.addControl?.(new maplibre.FullscreenControl({pseudo:true}),"top-right");
   const visualStatus=attachExploreMapStatus(container,map,{win});
+  let emblemOverlays=null;
   if(features.some(feature=>feature.properties?.lens==="tlm")){
     const reset=win.document.createElement("button");
     reset.type="button";reset.className="aoExploreMapReset";
@@ -429,26 +407,22 @@ export async function mountExploreMap(container,items,{
       cluster:true,clusterMaxZoom:12,clusterRadius:52,
       clusterProperties:exploreClusterProperties()});
     const clusterBadgeReady=registerExploreClusterBadge(map,win);
-    // Invisible hit surface stays >=48px. Visible hexagon stays a fixed 42px:
-    // population does not inflate markers into big obstructive boxes.
+    const categoryEmblemsReady=!styleOverride&&registerExploreCategoryMedallions(map,win);
+    // The ~50px cluster hit surface and scalable circular bubble are separate.
     map.addLayer({id:prefix+"-cluster-halo",type:"circle",source:sourceId,filter:["has","point_count"],
-      paint:{"circle-radius":25,"circle-color":"#09131f",
-        "circle-stroke-color":"#22D6F7",
-        "circle-stroke-opacity":clusterBadgeReady?0:0.6,
-        "circle-stroke-width":clusterBadgeReady?0:1.5,
-        "circle-opacity":clusterBadgeReady?0.005:0.88}});
+      paint:{"circle-radius":25,"circle-color":"#10212C",
+        "circle-stroke-color":"#CAB17C","circle-stroke-opacity":clusterBadgeReady?0:0.9,
+        "circle-stroke-width":clusterBadgeReady?0:2,"circle-opacity":clusterBadgeReady?0.005:0.92}});
     map.addLayer({id:prefix+"-clusters",type:"circle",source:sourceId,filter:["has","point_count"],
-      paint:{"circle-radius":24,"circle-color":"#142432",
-        "circle-opacity":clusterBadgeReady?0.005:0.96}});
+      paint:{"circle-radius":24,"circle-color":"#10212C",
+        "circle-opacity":clusterBadgeReady?0.005:0.94}});
     map.addLayer({id:prefix+"-cluster-count",type:"symbol",source:sourceId,filter:["has","point_count"],
       layout:{"text-field":["get","point_count_abbreviated"],"text-size":12,
         "visibility":clusterBadgeReady?"none":"visible"},
-      paint:{"text-color":"#F1FAFF"}});
+      paint:{"text-color":"#F0DEB5"}});
     if(clusterBadgeReady){
       const majority=exploreClusterMajorityExpression(group=>group);
       const countSum=["+",...MASS_CLUSTER_GROUPS.map(group=>["get","mass_"+group.toLowerCase()])];
-      // Every branch must return a string: an untyped null invalidates the
-      // entire MapLibre symbol layer and conceals all clustering badges.
       const clusterKind=["case",[">",countSum,0],majority,"PLACES"];
       map.addLayer({id:prefix+"-cluster-badges",type:"symbol",source:sourceId,
         filter:["has","point_count"],
@@ -457,18 +431,53 @@ export async function mountExploreMap(container,items,{
           "text-field":["get","point_count_abbreviated"],
           "text-size":12,"text-anchor":"center",
           "text-allow-overlap":true,"text-ignore-placement":true},
-        paint:{"text-color":"#EBF8FF","text-halo-color":"#0B1521","text-halo-width":0.5}});
+        paint:{"text-color":"#F0DEB5","text-halo-color":"#10212C","text-halo-width":0.5}});
     }
-    map.addLayer({id:prefix+"-points",type:"circle",source:sourceId,filter:["!",["has","point_count"]],
-      paint:{"circle-radius":["case",["get","approximate"],6,
-          ["==",["get","lens"],"heritage"],
-          ["match",["get","place_type"],"cathedral",11,"basilica",10,"shrine",9,8],
-          8],
-        "circle-color":["case",["==",["get","lens"],"heritage"],HERITAGE_POINT_COLOR,POINT_COLOR],
-        "circle-opacity":["case",["get","approximate"],0.65,0.97],
-        "circle-stroke-width":["case",["get","approximate"],1.6,2.2],
-        "circle-stroke-color":["case",["==",["get","lens"],"tlm"],POINT_COLOR,
-          ["case",["get","approximate"],"#17212d","#f0e7d4"]]}});
+    // Every physical location gets one large ivory bubble. The circle
+    // preserves a large hit target when a symbol image is unavailable.
+    const pointPaint=styleOverride?{
+      // The Bible Atlas is a separate map owner: settlement anchors are not
+      // silently represented as churches or shrines.
+      "circle-radius":["case",["get","approximate"],6,
+        ["==",["get","lens"],"heritage"],
+        ["match",["get","place_type"],"cathedral",11,"basilica",10,"shrine",9,8],8],
+      "circle-color":["case",["==",["get","lens"],"heritage"],HERITAGE_POINT_COLOR,POINT_COLOR],
+      "circle-opacity":["case",["get","approximate"],0.65,0.97],
+      "circle-stroke-width":["case",["get","approximate"],1.6,2.2],
+      "circle-stroke-color":["case",["==",["get","lens"],"tlm"],POINT_COLOR,
+        ["case",["get","approximate"],"#17212d","#f0e7d4"]]
+    }:{
+      "circle-radius":22,
+      "circle-color":["case",["get","approximate"],"#D4D8D2","#EBE2D1"],
+      "circle-opacity":["case",["get","approximate"],0.78,0.97],
+      "circle-stroke-width":2,
+      "circle-stroke-color":["case",["get","approximate"],"#82928B","#B99C6B"]
+    };
+    map.addLayer({id:prefix+"-points",type:"circle",source:sourceId,
+      filter:["!",["has","point_count"]],paint:pointPaint});
+    const categoryLayer=prefix+"-category-medallions";
+    if(categoryEmblemsReady){
+      map.addLayer({id:categoryLayer,type:"symbol",source:sourceId,
+        filter:["!",["has","point_count"]],
+        layout:{"icon-image":["concat",EXPLORE_MEDALLION_ID_PREFIX,
+          exploreCategoryMedallionExpression(),
+          ["case",["get","approximate"],"-indicative",""]],
+          "icon-size":1,"icon-allow-overlap":true,"icon-ignore-placement":true}});
+    }
+    // Selected place gets an understated halo outside the emblem itself.
+    // It never creates a second point or changes the shared Place ID.
+    const selectedLayer=prefix+"-selected-point";
+    if(!styleOverride)map.addLayer({id:selectedLayer,type:"circle",source:sourceId,
+      filter:["all",["!",["has","point_count"]],["==",["get","item_id"],"__none__"]],
+      paint:{"circle-radius":27,"circle-color":"#000000","circle-opacity":0,
+        "circle-stroke-color":"#D6BA82","circle-stroke-width":3,
+        "circle-stroke-opacity":0.78}});
+    const selectMapPlace=id=>{
+      if(!styleOverride&&map.getLayer?.(selectedLayer))
+        map.setFilter(selectedLayer,["all",["!",["has","point_count"]],
+          ["==",["get","item_id"],String(id)]]);
+      onSelect(id);
+    };
     // Editorial hierarchy is derived only from canonical physical site type.
     // This does not assert ecclesiastical prominence or authenticated status.
     // Labels emerge only after zooming into an area; collisions stay hidden.
@@ -493,33 +502,36 @@ export async function mountExploreMap(container,items,{
         paint:{"text-color":"#efe0b8","text-halo-color":"#142631",
           "text-halo-width":2,"text-halo-blur":0.35}});
     }
-    // Real affiliation insignia appear only for classified TLM venues.
-    // Progressive loading keeps every existing pin usable when a source blocks CORS.
+    // Real source-attributed logos replace the category icon inside the
+    // SAME bubble. A failed SVG fetch leaves an interactive church symbol.
     if(features.some(feature=>feature.properties?.lens==="tlm")){
       const loadedGroups=new Set();
+      // Cross-origin SVGs sometimes render in toolbar <img> but cannot be
+      // copied into MapLibre canvas sprites. Show the SAME real emblems
+      // using bounded, pointer-transparent DOM overlays at visible pins.
+      emblemOverlays=installMassMapEmblemOverlays(map,maplibre,{
+        // A fetched sprite does not count as a usable logo unless its layer
+        // actually exists. MapLibre may reject a symbol expression even after
+        // canvas registration succeeds.
+        win,hasSprite:group=>loadedGroups.has(group)
+          &&Boolean(map.getLayer?.(prefix+"-institution-emblems")),
+      });
       const refreshEmblems=()=>{
         if(!map.getSource?.(sourceId)||!loadedGroups.size)return;
         const withEmblem=["all",["==",["get","lens"],"tlm"],
           ["in",["get","provider_group"],["literal",[...loadedGroups]]]];
-        map.setPaintProperty(prefix+"-points","circle-radius",
-          ["case",withEmblem,19,["case",["get","approximate"],6,
-            ["==",["get","lens"],"heritage"],
-            ["match",["get","place_type"],"cathedral",11,"basilica",10,"shrine",9,8],8]]);
-        // An emblem takes the central canvas; neon stroke remains the key to
-        // recognition for low-resolution or colour-blind map readers.
-        map.setPaintProperty(prefix+"-points","circle-color",
-          ["case",withEmblem,"#0B1521",
-            ["==",["get","lens"],"heritage"],HERITAGE_POINT_COLOR,POINT_COLOR]);
+        if(categoryEmblemsReady&&map.getLayer?.(categoryLayer))
+          map.setFilter(categoryLayer,["all",["!",["has","point_count"]],["!",withEmblem]]);
         const layer=prefix+"-institution-emblems",
           filter=["all",["!",["has","point_count"]],withEmblem];
-        if(map.getLayer?.(layer)){map.setFilter(layer,filter);return}
+        if(map.getLayer?.(layer)){map.setFilter(layer,filter);return;}
         map.addLayer({id:layer,type:"symbol",source:sourceId,filter,
           layout:{"icon-image":["concat","ao-mass-institution-",["get","provider_group"]],
-            "icon-size":0.9,"icon-allow-overlap":true,"icon-ignore-placement":true}});
+            "icon-size":0.86,"icon-allow-overlap":true,"icon-ignore-placement":true}});
       };
       void registerMassInstitutionImages(map,{win,onRegistered:group=>{
         loadedGroups.add(group);
-        try{refreshEmblems()}catch(error){
+        try{refreshEmblems();emblemOverlays?.refresh()}catch(error){
           console.warn("Explore affiliation emblem presentation failed",error);
         }
       }}).catch(()=>{});
@@ -539,8 +551,8 @@ export async function mountExploreMap(container,items,{
       const choices=exploreDistinctPointChoices(nearby?.length?nearby:event.features);
       if(explorePlaceChoicePopup({win,map,maplibre,
         coordinates:event.lngLat??event.features?.[0]?.geometry?.coordinates,
-        choices,onSelect}))return;
-      onSelect(id);
+        choices,onSelect:selectMapPlace}))return;
+      selectMapPlace(id);
     });
     map.on("click",prefix+"-clusters",async event=>{
       const feature=event.features?.[0],clusterId=feature?.properties?.cluster_id,
@@ -568,8 +580,8 @@ export async function mountExploreMap(container,items,{
           return exploreDistinctPointChoices(await source.getClusterLeaves(clusterId,page.limit,page.offset));
         };
         if(!explorePlaceChoicePopup({win,map,maplibre,coordinates:coords,
-          choices,total,fetchMore,initialOffset:first.nextOffset,onSelect})
-          &&choices.length===1)onSelect(choices[0].item_id);
+          choices,total,fetchMore,initialOffset:first.nextOffset,onSelect:selectMapPlace})
+          &&choices.length===1)selectMapPlace(choices[0].item_id);
       }catch(error){
         // Keep the map interactive when a provider's cluster API is unavailable.
         console.warn("Explore cluster selection failed",error);
@@ -580,14 +592,51 @@ export async function mountExploreMap(container,items,{
       map.on("mouseleave",layer,()=>{map.getCanvas().style.cursor=""});
     }
   });
+  const journeySiteMarkers=[];
+  const clearJourneySiteMarkers=()=>{
+    while(journeySiteMarkers.length){
+      try{journeySiteMarkers.pop().remove()}catch{}
+    }
+  };
   return Object.freeze({map,
+    // Overlay exact canonical sacred-place points only. These medallions
+    // identify named places, not line geometry or geocoded pilgrimage stages.
+    setJourneyStageAnchors(anchors=[],onActivate=()=>{}){
+      clearJourneySiteMarkers();
+      if(!maplibre?.Marker||!win?.document?.createElement)return 0;
+      const distinct=new Set();
+      for(const stage of (Array.isArray(anchors)?anchors:[]).slice(0,25)){
+        const id=String(stage?.id??"");
+        const lng=Number(stage?.lng),lat=Number(stage?.lat),number=Number(stage?.ordinal);
+        if(!id||distinct.has(id)||!Number.isFinite(lng)||!Number.isFinite(lat)
+          ||Math.abs(lng)>180||Math.abs(lat)>90||!Number.isInteger(number)
+          ||number<1||number>99||!stage?.sourceUrl||!stage?.placeId)continue;
+        distinct.add(id);
+        const medallion=win.document.createElement("button");
+        medallion.type="button";medallion.className="aoJourneyMapStageMarker";
+        medallion.textContent=String(number);
+        medallion.dataset.journeyMapStage=id;
+        medallion.setAttribute("aria-label",String(stage.name||stage.label||"Pilgrimage site"));
+        medallion.title=String(stage.name||stage.label||"Pilgrimage site");
+        medallion.addEventListener("click",event=>{
+          event.preventDefault();event.stopPropagation();
+          onActivate(id);
+        });
+        try{
+          const marker=new maplibre.Marker({element:medallion,anchor:"center"})
+            .setLngLat([lng,lat]).addTo(map);
+          journeySiteMarkers.push(marker);
+        }catch{}
+      }
+      return journeySiteMarkers.length;
+    },
     updateItems(nextItems){
       features=exploreMapFeatures(nextItems);
       const source=map.getSource?.("ao-explore-items");
       source?.setData?.({type:"FeatureCollection",features});
     },
     mapStatus:()=>visualStatus.status(),
-    destroy(){visualStatus.dispose();try{map.remove()}catch{}}
+    destroy(){clearJourneySiteMarkers();emblemOverlays?.dispose();visualStatus.dispose();try{map.remove()}catch{}}
   });
 }
 

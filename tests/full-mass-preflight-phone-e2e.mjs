@@ -145,6 +145,11 @@ try{
  assert.deepEqual(await page.evaluate(()=>{
    const x=__full.selectionFor(__legacyMass());return {before:x.beforeMass,after:x.afterMass};
  }),{before:"prepare",after:"thanksgiving"});
+ await page.locator("[data-folio-before][value=full]").check();
+ await page.locator("[data-folio-after][value=full]").check();
+ assert.deepEqual(await page.evaluate(()=>{
+   const x=__full.selectionFor(__legacyMass());return {before:x.beforeMass,after:x.afterMass};
+ }),{before:"full",after:"full"},"Both full prayer lengths remain session-specific");
  await page.locator("[data-folio-open-prayer='before']").click();
  await page.waitForFunction(()=>globalThis.__openedPrayer==="mass.prepare");
  await page.locator("[data-full-mass-rites] summary").click();

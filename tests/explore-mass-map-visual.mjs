@@ -156,7 +156,20 @@ try{
     assert.equal(data.allDefault,true,config.name+": first visit filtered venues");
     assert.equal(data.visibleAffiliations,6,config.name+": institute controls missing");
     assert.ok(data.emblemFilterCount>=5,config.name+": authentic icons absent from filter row");
-    assert.equal(data.stickyToolbar,"sticky",config.name+": map search isn't persistent");
+    // The legacy stacked directory used a sticky toolbar. The approved
+    // map-first Explore layout deliberately floats it absolutely above the
+    // canvas; either is persistent, provided the floating search is visible
+    // immediately below the header and remains inside the map viewport.
+    assert.ok(["sticky","absolute"].includes(data.stickyToolbar),
+      config.name+": map search lost its persistent positioning");
+    if(data.stickyToolbar==="absolute"){
+      assert.ok(data.toolbar&&data.header&&data.map&&data.search
+        &&data.toolbar.y>=data.header.bottom-2
+        &&data.toolbar.y<=data.header.bottom+30
+        &&data.toolbar.bottom<data.map.bottom
+        &&data.search.right<=data.viewportWidth+1,
+        config.name+": map-first floating search must remain in the visible top map area: "+JSON.stringify(data));
+    }
     assert.equal(data.sourceLinksBelowMap,true,config.name+": external links crowd the map");
     assert.ok(data.map&&data.search,config.name+": map or search missing");
     assert.ok(data.map.width>=config.width-45,config.name+": map too narrow");
