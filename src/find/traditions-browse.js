@@ -45,7 +45,7 @@ export function groupTraditionsForBrowse(items,{includeNovenaContext=false}={}){
       kind:"CANONICAL_CUSTOM",
       eyebrow:"CUSTOM · "+clean(custom.family).toUpperCase(),
       status:first.status,
-      title:custom.name,
+      title:guide?.title_en??custom.name,
       title_fr:guide?.title_fr??null,
       subtitle:clean(custom.family),
       summary:guide?.description_en??custom.canonical_statement,
