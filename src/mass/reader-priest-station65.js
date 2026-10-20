@@ -26,6 +26,9 @@ function locationAt(n,observedEventId){
   // The priest's independent Communion-antiphon event, MC-END-010, must be
   // observed. A Schola cue or a swipe through text cannot assert this transfer.
   if(n===249||n===250)return observedEventId==="MC-END-010"?"EPISTLE_SIDE":null;
+  // A proper Last Gospel may require a new Missal transfer. Do not assert
+  // the ordinary book location without resolving that conditional branch.
+  if(n>=267)return null;
   return "EPISTLE_SIDE";
 }
 const supplementPosition=Object.freeze({
