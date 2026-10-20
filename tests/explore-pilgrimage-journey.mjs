@@ -13,6 +13,25 @@ const evidence=JSON.parse(readFileSync(new URL("../data/shrines/route-stage-evid
 assert.equal(evidence.schema,"AO_PILGRIMAGE_STAGE_EVIDENCE_V1");
 const geometry=JSON.parse(readFileSync(new URL("../data/shrines/route-geometry-review-20261020.v1.json",import.meta.url),"utf8"));
 assert.equal(geometry.schema,"AO_PILGRIMAGE_GEOMETRY_REVIEW_V1");
+const siteLinks=JSON.parse(readFileSync(new URL("../data/shrines/route-stage-canonical-site-links-20261020.v1.json",import.meta.url),"utf8"));
+assert.equal(siteLinks.schema,"AO_PILGRIMAGE_STAGE_CANONICAL_SITE_LINKS_V1");
+assert.equal(siteLinks.links.length,15);
+const originalStages=new Map(evidence.routes.flatMap(r=>r.waypoints.map(s=>[s.waypoint_id,s])));
+const originalPlaces=new Map(geography.places.map(p=>[p.place_id,p]));
+for(const link of siteLinks.links){
+ const stage=originalStages.get(link.stage_id),place=originalPlaces.get(link.canonical_place_id);
+ assert.ok(stage&&place,"Stage and site crosswalk must have two canonical owners");
+ assert.equal(link.original_stage_name,stage.name_en);
+ assert.equal(link.canonical_location_name,place.name.official);
+ assert.equal(place.geo?.precision,link.locator_precision);
+ assert.ok(place.mappable&&place.geo?.source_url);
+ assert.equal(link.coordinate_source,"CANONICAL_GEOGRAPHY_ONLY");
+ assert.ok(Number.isFinite(place.geo.lat)&&Number.isFinite(place.geo.lng));
+}
+assert.ok(!siteLinks.links.some(link=>link.stage_id.startsWith("route:GB:ely-walsingham-lms")),
+ "2026 Walsingham Priory cannot inherit Catholic shrine coordinates");
+assert.ok(!siteLinks.links.some(link=>link.stage_id==="route:FR:paray-pilgrim-path#stage-4"),
+ "La Colombière chapel cannot inherit Paray sanctuary centroid");
 assert.equal(geometry.reviewed_routes.length,20);
 assert.equal(new Set(geometry.reviewed_routes.map(r=>r.route_id)).size,20);
 assert.deepEqual(
@@ -28,7 +47,7 @@ const projected=projectPilgrimageItems({
  routes:seed.routes,temporalLinks:seed.temporalLinks,
  places:geography.places,sources:registry.sources,
 });
-const journeys=buildPilgrimageJourneyCatalogue(projected,registry.sources,evidence.routes,geometry.reviewed_routes);
+const journeys=buildPilgrimageJourneyCatalogue(projected,registry.sources,evidence.routes,geometry.reviewed_routes,siteLinks.links,geography.places);
 assert.equal(evidence.routes.length,17,"Official-stage evidence now covers 17 itinerary identities");
 assert.equal(evidence.routes.reduce((n,r)=>n+r.waypoints.length,0),64);
 const canonicalRoutes=new Map(seed.routes.map(row=>[row.route_id,row]));
@@ -48,6 +67,19 @@ for(const entry of evidence.routes){
 }
 assert.equal(journeys.reduce((n,r)=>n+r.namedStages.length,0),64);
 assert.equal(journeys.filter(r=>r.namedStages.length>0).length,17);
+assert.equal(journeys.reduce((n,j)=>n+j.stageSiteAnchors.length,0),15);
+assert.equal(journeys.filter(j=>j.stageSiteAnchors.length>0).length,13);
+const holywell=journeys.find(j=>j.id==="route:GB:holywell-church-to-well");
+assert.equal(holywell.stageSiteAnchors.length,2);
+assert.equal(holywell.stageSiteAnchors[0].placeId,"place:GB:holywell-st-winefride-church");
+assert.equal(holywell.stageSiteAnchors[1].placeId,"place:GB:holywell-st-winefride");
+assert.ok(holywell.stageSiteAnchors[1].approximate);
+const holywellHtml=renderPilgrimageJourneyPanel({routes:journeys,selectedId:holywell.id});
+assert.equal((holywellHtml.match(/data-explore-journey-stage-focus=/g)||[]).length,2);
+const saintLouis=journeys.find(j=>j.id==="route:MU:pere-laval-saint-louis");
+assert.equal(saintLouis.stageSiteAnchors[0].placeId,"place:MU:saint-louis-cathedral-port-louis");
+assert.equal(saintLouis.stageSiteAnchors[1].placeId,"place:MU:pere-laval-sainte-croix");
+assert.ok(journeys.every(j=>j.routeGeometry===null&&j.mappedStages.length===0&&j.stops.length===0));
 assert.ok(journeys.every(j=>j.mappedStages.length===0),
  "Named stages are not navigable geographic stops");
 assert.equal(seed.pilgrimages.length,240,"Do not confuse source destinations with mapped routes");
@@ -158,4 +190,4 @@ const poisoned=buildPilgrimageJourneyCatalogue([
 assert.equal(poisoned.length,1);
 assert.equal(poisoned[0].destinationGeo,null,"Null coordinate must not become a fabricated map point");
 assert.equal(poisoned[0].sources.length,0,"Do not fabricate source URLs");
-console.log("PASS D journey catalogue: 240 pilgrimages, 20 routes, 64 named stages on 17 routes, zero fabricated geolocation, EN/FR + organizer sources");
+console.log("PASS D journey + site-anchor crosswalk: 240 pilgrimages, 20 routes, 64 named stages on 17 routes, zero fabricated geolocation, EN/FR + organizer sources");
