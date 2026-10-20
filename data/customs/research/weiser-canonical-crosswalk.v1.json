@@ -1,6 +1,6 @@
 {
   "schema": "AO_WEISER_CANONICAL_CROSSWALK_V1",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "as_of": "2026-10-20",
   "status": "RESEARCH_ONLY_PROVISIONAL_GROUPS_NOT_MERGED",
   "source_inventory": "data/customs/research/weiser-handbook-inventory.v0.json",
@@ -14,7 +14,8 @@
     "Canonical owner IDs represent candidate/enrichment links, not released changes; PR #1516 is still draft.",
     "Independent witness register coverage is limited to its explicitly enumerated entries; no inference from neighbouring records.",
     "One canonical custom may have several regional attestations; Calendar is the exclusive date owner, Saints owns biography, Pray owns prayers, Mass owns rites.",
-    "Do not copy Weiser's book text; preserve locator, make original independent editorial paraphrases only after source and scope checks."
+    "Do not copy Weiser's book text; preserve locator, make original independent editorial paraphrases only after source and scope checks.",
+    "Closely related but nonidentical historical celebrations are listed only as related families, never as same-practice dedup candidates."
   ],
   "audit": {
     "input_observations": 568,
@@ -36,10 +37,10 @@
       "ARCHIVE": 117,
       "BLOCKED": 34
     },
-    "same_practice_groups": 16,
-    "observations_in_same_practice_review_groups": 37,
-    "related_family_groups": 26,
-    "observations_in_related_families": 191,
+    "same_practice_groups": 14,
+    "observations_in_same_practice_review_groups": 33,
+    "related_family_groups": 28,
+    "observations_in_related_families": 195,
     "existing_custom_link_candidates": 16,
     "independent_corroboration_overlap": 12,
     "publication_releases": 0
@@ -215,30 +216,6 @@
       ],
       "relation": "SAME_PRACTICE_WITH_REGIONAL_VARIANTS",
       "editorial_note": "Core bonfire practice; exclude magical claims and keep Breton maritime variant separate.",
-      "decision": "REVIEW_NOT_MERGED",
-      "licence": "FACTUAL_LOCATOR_ONLY"
-    },
-    {
-      "id": "M015",
-      "title": "Christmas Nativity pilgrimage drama",
-      "observation_ids": [
-        "WEI58-07-008",
-        "WEI58-10-004"
-      ],
-      "relation": "RELATED_LOCAL_FORMS_NOT_CONFIRMED_IDENTICAL",
-      "editorial_note": "Polish Kolednicy and szopka house drama may overlap; do not collapse before locality check.",
-      "decision": "REVIEW_NOT_MERGED",
-      "licence": "FACTUAL_LOCATOR_ONLY"
-    },
-    {
-      "id": "M016",
-      "title": "Good Friday voluntary silence",
-      "observation_ids": [
-        "WEI58-15-030",
-        "WEI58-14-001"
-      ],
-      "relation": "RELATED_PENITENCE_NOT_CONFIRMED_IDENTICAL",
-      "editorial_note": "General Lent and Good Friday observance are not the same custom; explicit manual review.",
       "decision": "REVIEW_NOT_MERGED",
       "licence": "FACTUAL_LOCATOR_ONLY"
     }
@@ -658,6 +635,26 @@
       ],
       "editorial_note": "Different Marian feasts/localities; independent grape blessings still need a witness.",
       "decision": "REFERENCE_ONLY_NO_COLLAPSE"
+    },
+    {
+      "id": "R027",
+      "title": "Christmas Nativity pilgrimage drama",
+      "observation_ids": [
+        "WEI58-07-008",
+        "WEI58-10-004"
+      ],
+      "editorial_note": "Polish Kolednicy and szopka house drama may overlap; do not collapse before locality check.",
+      "decision": "REFERENCE_ONLY_NO_COLLAPSE_UNVERIFIED_IDENTITY"
+    },
+    {
+      "id": "R028",
+      "title": "Good Friday voluntary silence",
+      "observation_ids": [
+        "WEI58-15-030",
+        "WEI58-14-001"
+      ],
+      "editorial_note": "General Lent and Good Friday observance are not the same custom; explicit manual review.",
+      "decision": "REFERENCE_ONLY_NO_COLLAPSE_UNVERIFIED_IDENTITY"
     }
   ],
   "records": [
@@ -1813,8 +1810,10 @@
       "source_title": "Polish Kolednicy Christmas star and Nativity drama rounds",
       "action": "INDEPENDENT_WITNESS_AND_CANONICAL_ID_REVIEW",
       "priority": "P1",
-      "provisional_same_practice_group": "M015",
-      "related_families": [],
+      "provisional_same_practice_group": null,
+      "related_families": [
+        "R027"
+      ],
       "proposed_existing_custom_id": null,
       "owner_link_status": "UNASSIGNED_OR_NON_CUSTOM_OWNER",
       "independent_witness": "NOT_IN_BATCH01_INDEPENDENT_REGISTER",
@@ -2655,8 +2654,10 @@
       "source_title": "Polish szopka and children's nativity dramatizations",
       "action": "PLACE_PERIOD_AND_CUSTOM_VERIFICATION",
       "priority": "P2",
-      "provisional_same_practice_group": "M015",
-      "related_families": [],
+      "provisional_same_practice_group": null,
+      "related_families": [
+        "R027"
+      ],
       "proposed_existing_custom_id": null,
       "owner_link_status": "UNASSIGNED_OR_NON_CUSTOM_OWNER",
       "independent_witness": "NOT_IN_BATCH01_INDEPENDENT_REGISTER",
@@ -3749,8 +3750,10 @@
       "source_title": "Lenten prayer fasting and penance",
       "action": "CHECK_EXISTING_PRESENTATION",
       "priority": "OWNER_PARITY",
-      "provisional_same_practice_group": "M016",
-      "related_families": [],
+      "provisional_same_practice_group": null,
+      "related_families": [
+        "R028"
+      ],
       "proposed_existing_custom_id": null,
       "owner_link_status": "UNASSIGNED_OR_NON_CUSTOM_OWNER",
       "independent_witness": "NOT_IN_BATCH01_INDEPENDENT_REGISTER",
@@ -4707,8 +4710,10 @@
       "source_title": "Good Friday voluntary silence and minimal food",
       "action": "INDEPENDENT_WITNESS_AND_CANONICAL_ID_REVIEW",
       "priority": "P1",
-      "provisional_same_practice_group": "M016",
-      "related_families": [],
+      "provisional_same_practice_group": null,
+      "related_families": [
+        "R028"
+      ],
       "proposed_existing_custom_id": null,
       "owner_link_status": "UNASSIGNED_OR_NON_CUSTOM_OWNER",
       "independent_witness": "NOT_IN_BATCH01_INDEPENDENT_REGISTER",
