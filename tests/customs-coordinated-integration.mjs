@@ -7,16 +7,16 @@ const atlas=read("../data/customs/customs-atlas-seed.v1.json");
 const registry=read("../data/customs/source-registry.v1.json");
 const ext=read("../data/customs/sot07-extensions.v1.json");
 const neg=read("../data/customs/negative-knowledge.v1.json");
-assert.equal(atlas.customs.length,27);
-assert.equal(atlas.attestations.length,86);
-assert.equal(registry.sources.length,96);
-assert.equal(ext.extensions.length,11);
+assert.equal(atlas.customs.length,33);
+assert.equal(atlas.attestations.length,92);
+assert.equal(registry.sources.length,102);
+assert.equal(ext.extensions.length,17);
 assert.equal(neg.entries.length,7);
 const ids=new Set(atlas.customs.map(c=>c.custom_id)),src=new Set(registry.sources.map(s=>s.id));
-assert.equal(ids.size,27);
-assert.equal(new Set(registry.sources.map(s=>s.id)).size,96);
-assert.equal(new Set(atlas.attestations.map(a=>a.attestation_id)).size,86);
-assert.equal(new Set(ext.extensions.map(e=>e.custom_id)).size,11);
+assert.equal(ids.size,33);
+assert.equal(new Set(registry.sources.map(s=>s.id)).size,102);
+assert.equal(new Set(atlas.attestations.map(a=>a.attestation_id)).size,92);
+assert.equal(new Set(ext.extensions.map(e=>e.custom_id)).size,17);
 const seven=["NDAY-001","PATR-001","MARI-001","SJOS-001","SANT-001","SCHR-001","SNIC-001"];
 const three=["BLSS-002","BLSS-003","BLSS-004"];
 for(const id of [...seven,...three]){
@@ -51,4 +51,4 @@ for(const year of [2026,2027,2030]){
  assert.equal(v384Events(`${year}-08-15`).filter(e=>e.key==="assumption-marian-procession").length,0,"Marian procession is context without duplicate date notice");
  assert.equal(v384Events(`${year}-11-02`).filter(e=>e.key==="holy-souls").length,1,"only one All Souls date card");
 }
-console.log("PASS coordinated customs union: 27 canonical, 86 attestations, 96 sources, 11 extensions, 10 new IDs, existing DEAD-003 enrichment, 6 bilingual dated notices, one Holy Saturday card.");
+console.log("PASS coordinated customs union + P0 six: 33 canonical, 92 attestations, 102 sources, 17 extensions, original 10 release IDs intact, DEAD-003 enrichment and Holy Saturday unchanged.");
