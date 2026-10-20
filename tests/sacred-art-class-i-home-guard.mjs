@@ -92,9 +92,15 @@ assert.match(releasedClassIArtworkMarkup(approved),/data-ao-approved-artwork-id/
 // The historical v43 selector includes images by permanently excluded artists.
 // Fail closed even if the donor HTML hides its artist or file ID.
 const donor='<div class="aoPhase1HomeArt"><img src="historic.jpg"></div>';
-for(const path of ["Tempora/Quad6-5","Tempora/Pasc0-5",
-  "Tempora/Pasc5-4","Tempora/Pasc6-6","Tempora/Pasc7-3",
-  "Tempora/Pent01-4","Sancti/03-25","Tempora/Pasc7-0",
+for(const date of ["2026-04-03","2026-04-10","2026-05-14",
+  "2026-05-23","2026-05-27","2026-06-04"])
+  assert.equal(safeLegacyHomeArtMarkup({selectedDate:date,
+    resolution:{proper:{data:{sourcePath:"Tempora/Pasc5-4"}}}},donor),"",
+    "Old image must not replace a newly selected 2026 artwork on "+date);
+assert.equal(safeLegacyHomeArtMarkup({selectedDate:"2027-05-06",
+  resolution:{proper:{data:{sourcePath:"Tempora/Pasc5-4"}}}},donor),donor,
+  "A 2026 editorial override must not blank another year's art");
+for(const path of ["Sancti/03-25","Tempora/Pasc7-0",
   "Tempora/Pent01-0","Tempora/Pent01-0r","Tempora/Pent09-0"])
   assert.equal(safeLegacyHomeArtMarkup({resolution:{proper:{data:{sourcePath:path}}}},donor),"",
     "Excluded legacy selector artwork resurfaced for "+path);
