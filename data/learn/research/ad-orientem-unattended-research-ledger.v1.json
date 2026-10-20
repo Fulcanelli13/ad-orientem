@@ -188,6 +188,48 @@
         "CHA-CSE-CSE110"
       ],
       "status": "SOURCE_MATCHED_PENDING_BIOETHICAL_AND_BILINGUAL_CERTIFICATION"
+    },
+    {
+      "batch": "B12",
+      "kb": "SPX",
+      "path": "data/learn/research/pius-x-unattended-b12-il-fermo-source-deltas-20261021.v1.json",
+      "commit": "b8ecfa040fb8693703779e0141e8587670f17ae5",
+      "families": 2,
+      "answerUnits": 4,
+      "ids": [
+        "SPX-EXP-026",
+        "SPX-EXP-027"
+      ],
+      "status": "SOURCE_MATCHED_HISTORICAL_AND_BILINGUAL_REVIEW_PENDING"
+    },
+    {
+      "batch": "B13",
+      "kb": "SPX",
+      "path": "data/learn/research/pius-x-unattended-b13-pascendi-attribution-20261021.v1.json",
+      "commit": "0588d91d68a966296143716989d843fd58300543",
+      "families": 1,
+      "answerUnits": 2,
+      "ids": [
+        "SPX-PILOT-07"
+      ],
+      "status": "SOURCE_MATCHED_THEOLOGICAL_VOICE_AND_BILINGUAL_REVIEW_PENDING"
+    },
+    {
+      "batch": "B14",
+      "kb": "SPX",
+      "path": "data/learn/research/pius-x-unattended-b14-biography-provenance-20261021.v1.json",
+      "commit": "52bb3d2ef6922d65ad018ccd8280e9e35cabeaa8",
+      "families": 6,
+      "answerUnits": 12,
+      "ids": [
+        "SPX-EXP-003",
+        "SPX-EXP-004",
+        "SPX-EXP-005",
+        "SPX-EXP-006",
+        "SPX-EXP-007",
+        "SPX-EXP-008"
+      ],
+      "status": "SECONDARY_BIOGRAPHY_MATCHED_HISTORY_AND_TRANSLATION_REVIEW_PENDING"
     }
   ],
   "blocked": [
@@ -209,13 +251,13 @@
     }
   ],
   "active": {
-    "batch": "B12",
-    "task": "Select remaining first-release St Pius X documentary claims after evidence reconciliation; skip already completed IDs and mirror aliases."
+    "batch": "B15",
+    "task": "Chanoine existing natural-law source disputes; choose precise claims with accessible primary evidence."
   },
   "next": [
-    "Remaining first-release SPX families excluding completed pilot/expansion aliases",
-    "Chanoine CSE reproductive ethics beyond CSE101/104/110 with precise existing source questions",
-    "Missing original English 360 asset remains blocked; do not reconstruct"
+    "CSE016/018 Donum veritatis exact authority and theological difficulty distinctions",
+    "Other source-specific specialist questions with accessible original sources",
+    "First-release SPX papal authenticity questions; no repeated full-corpus audit"
   ],
   "deduplication": "(kb, canonical familyId, turn, claim, source locator); retain duplicated conversation contexts, synchronize approved answer variants",
   "approvalsChanged": 0,
