@@ -25,7 +25,7 @@ function locationAt(n,observedEventId){
   if(n<249)return "GOSPEL_SIDE";
   // The priest's independent Communion-antiphon event, MC-END-010, must be
   // observed. A Schola cue or a swipe through text cannot assert this transfer.
-  if(n===249||n===250)return observedEventId==="MC-END-010"?"EPISTLE_SIDE":null;
+  if(n===249||n===250)return ["MC-END-010","MC-OBS-PC-TURN"].includes(observedEventId)?"EPISTLE_SIDE":null;
   // A proper Last Gospel may require a new Missal transfer. Do not assert
   // the ordinary book location without resolving that conditional branch.
   if(n>=267)return null;
@@ -35,6 +35,18 @@ const supplementPosition=Object.freeze({
  label:"AT EPISTLE-SIDE MISSAL",station:"ALTAR_EPISTLE_MISSAL",
  facing:"MISSAL",routeId:null,owner:"RITUS_XI_1_OBSERVED_MC_END_010",
  cueId:"AO.SM.C0249",persistent:true,
+});
+const waterPreparationPosition=Object.freeze({
+ label:"AT EPISTLE-SIDE CHALICE PREPARATION",
+ station:"ALTAR_EPISTLE_MISSAL",facing:"MISSAL",routeId:null,
+ owner:"RITUS_VII_4_WATER_AND_CHALICE_PREPARATION",
+ cueId:"AO.SM.C0112",persistent:true,
+});
+const returnToCentrePosition=Object.freeze({
+ label:"AT CENTRE AFTER COMMUNION ANTIPHON",
+ station:"ALTAR_CENTER",facing:"PEOPLE",routeId:null,
+ owner:"MC_OBS_PC_TURN_INDEPENDENTLY_OBSERVED",
+ cueId:"AO.SM.C0250",persistent:true,
 });
 const solemnGospelPosition=Object.freeze({
  label:"AT EPISTLE SIDE",station:"ALTAR_EPISTLE_SIDE",
@@ -55,10 +67,23 @@ export function projectCurated65PriestStation({
   const missalLocation=locationAt(n,observedPriestEventId);
   let position=sourcePosition;
   let reason="SOURCE_49_TRANSITIONS_PERSISTENT";
-  if(n===249||n===250){
+  if(n===112){
+    // Water/chalice preparation is at the Epistle side regardless of
+    // whether the water-blessing cross is omitted in a Requiem.
+    position=waterPreparationPosition;
+    reason="RITUS_VII_4_BOOK_AND_STATION_DISTINCT_FROM_WATER_CROSS";
+  }else if(n===249){
     position=observedPriestEventId==="MC-END-010"?supplementPosition:UNKNOWN;
     reason=observedPriestEventId==="MC-END-010"
       ?"RITUS_XI_1_INDEPENDENTLY_OBSERVED":"COMMUNION_ANTIPHON_OBSERVATION_PENDING";
+  }else if(n===250){
+    position=observedPriestEventId==="MC-OBS-PC-TURN"?returnToCentrePosition:
+      observedPriestEventId==="MC-END-010"?supplementPosition:UNKNOWN;
+    reason=observedPriestEventId==="MC-OBS-PC-TURN"
+      ?"PRIEST_RETURN_TO_CENTRE_INDEPENDENTLY_OBSERVED":
+      observedPriestEventId==="MC-END-010"
+      ?"PRIEST_ANTIPHON_AT_EPISTLE_OBSERVED":
+      "PRIEST_RETURN_TO_CENTRE_OBSERVATION_PENDING";
   }else if(form==="SOLEMN"&&n>=75&&n<=78){
     // Subdeacon delivers Epistle; no automatic placement of the celebrant.
     position=UNKNOWN;reason="SOLEMN_EPISTLE_SUBDEACON_ACTOR_GUARD";
