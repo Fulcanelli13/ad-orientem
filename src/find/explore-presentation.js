@@ -1,7 +1,7 @@
 import { resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 import { MASS_EMBLEM_GROUPS, massInstitutionEmblem } from "./institution-emblems.js";
 import { renderHeritageToString, compactHeritagePlaceSheet, sacredPlaceSynopsis, placeTypeLabel } from "./heritage-presentation.js";
-import { renderPilgrimageJourneyPanel } from "./pilgrimage-journey.js";
+import { renderPilgrimageJourneyPanel, journeysForCanonicalPlace } from "./pilgrimage-journey.js";
 import { renderSaintPlaceSheet,renderSaintSourceIndexSheet } from "./saints-presentation.js";
 const esc=value=>String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
 const uiIcon=id=>{const url=resolveCanonicalAssetUrl(id);return url?`<span data-ao-asset-id="${esc(id)}" aria-hidden="true" style="display:inline-block;width:18px;height:18px;background:currentColor;-webkit-mask:url('${esc(url)}') center/contain no-repeat;mask:url('${esc(url)}') center/contain no-repeat"></span>`:"";};
@@ -516,6 +516,7 @@ export function buildExploreViewModel({
   const list=arr(items);
   const selected=list.find(item=>item?.item_id===selectedId)??selectedOverride??null;
   const selectedPlace=arr(placeProfiles).find(profile=>profile?.place_id===selectedPlaceId)??null;
+  const placeJourneys=selectedPlace?journeysForCanonicalPlace(journeys,selectedPlace.place_id):Object.freeze([]);
   const mapped=list.filter(item=>item?.map_publishable).length;
   const addressOnly=list.filter(item=>!item?.map_publishable&&item?.address).length;
   return Object.freeze({
@@ -534,6 +535,7 @@ export function buildExploreViewModel({
     saintsRelease,
     selected,
     selectedPlace,
+    placeJourneys,
     expandPlace:Boolean(expandPlace),
     expandDetail:Boolean(expandDetail),
     customCards:arr(customCards),
