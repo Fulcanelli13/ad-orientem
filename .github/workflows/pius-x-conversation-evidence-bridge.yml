@@ -42,6 +42,9 @@ on:
       - 'data/learn/research/pius-x-sacraments-100family-200turn-source-screen-20261020.v1.json'
       - 'data/learn/research/pius-x-100questions-20-conversation-paths-20261020.v1.json'
       - 'data/learn/research/pius-x-31family-62turn-italian-review-20261020.v1.json'
+      - 'data/learn/research/pius-x-20path-bilingual-choice-navigation-20261020.v1.json'
+      - 'data/learn/research/pius-x-23more-46turn-italian-review-20261020.v1.json'
+      - 'tests/pius-x-bilingual-dialogue-choices.mjs'
       - 'tests/pius-x-20path-consolidation.mjs'
       - 'tests/pius-x-sacraments-100family-source-screen.mjs'
       - 'tests/pius-x-26turn-source-evidence.mjs'
@@ -74,6 +77,7 @@ jobs:
       - run: node tests/pius-x-26turn-source-evidence.mjs
       - run: node tests/pius-x-sacraments-100family-source-screen.mjs
       - run: node tests/pius-x-20path-consolidation.mjs
+      - run: node tests/pius-x-bilingual-dialogue-choices.mjs
       - run: node tests/pius-x-ten-conversation-content-pilot.mjs
       - run: node tests/pius-x-batch50-content-acceptance.mjs
       - run: node tests/pius-x-batch2-production-acceptance.mjs
