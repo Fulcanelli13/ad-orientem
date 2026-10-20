@@ -13,7 +13,9 @@ const TRADITIONAL=[
   ["pray.sacred_heart","Sacred Heart of Jesus","sacred-heart"],
   ["pray.communion_treasury","Traditional Communion Prayers","eucharistic"],
   ["pray.good_death","Preparation for a Good Death","traditional-devotion"],
-  ["pray.dying_companion","Dying Companion","pastoral-care"]
+  ["pray.dying_companion","Dying Companion","pastoral-care"],
+  ["mass.prepare","Before Mass Prayers","eucharistic"],
+  ["mass.thanksgiving","Thanksgiving After Mass","eucharistic"]
 ];
 const PROVISIONAL=Object.freeze(Object.fromEntries([
   ...TRADITIONAL,
