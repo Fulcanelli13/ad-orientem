@@ -1,0 +1,502 @@
+{
+  "schema": "ao.catena.editorial-challenge.v1",
+  "edition": "Oxford/Newman 1841–45",
+  "status": "assistant-curated source locator candidates; independent theological relevance review pending",
+  "design": "Blind challenge relative to existing 11-item benchmark. Do not silently select or alter references based on ranking output.",
+  "positives": [
+    {
+      "id": "MARK_BAPTISM",
+      "passage": "Mark 1:11",
+      "pericope": "catena.mark.1.9",
+      "question": "Why was Christ baptized by John?",
+      "sourceOrdinal": 3,
+      "father": "Bede",
+      "evidence": "He was baptized",
+      "reviewStatus": "source-locator check required"
+    },
+    {
+      "id": "MARK_FISHERS",
+      "passage": "Mark 1:17",
+      "pericope": "catena.mark.1.16",
+      "question": "What does fishing for men mean?",
+      "sourceOrdinal": 3,
+      "father": "Remigius",
+      "evidence": "net of holy preaching",
+      "reviewStatus": "source-locator check required"
+    },
+    {
+      "id": "MARK_FOLLOW",
+      "passage": "Mark 1:20",
+      "pericope": "catena.mark.1.16",
+      "question": "Why follow the Lord without delay?",
+      "sourceOrdinal": 5,
+      "father": "Theophylact",
+      "evidence": "at once follow the Lord",
+      "reviewStatus": "source-locator check required"
+    },
+    {
+      "id": "MARK_STORM",
+      "passage": "Mark 4:39",
+      "pericope": "catena.mark.4.35",
+      "question": "Why did Christ allow the disciples to fear the storm?",
+      "sourceOrdinal": 4,
+      "father": "Theophylact",
+      "evidence": "experience His power",
+      "reviewStatus": "source-locator check required"
+    },
+    {
+      "id": "MARK_CHILDREN",
+      "passage": "Mark 10:14",
+      "pericope": "catena.mark.10.13",
+      "question": "Why should we be like little children?",
+      "sourceOrdinal": 4,
+      "father": "Chrysostom",
+      "evidence": "mind of a child is pure",
+      "reviewStatus": "source-locator check required"
+    },
+    {
+      "id": "MARK_SERVICE",
+      "passage": "Mark 10:44",
+      "pericope": "catena.mark.10.41",
+      "question": "Why must the greatest become servant of all?",
+      "sourceOrdinal": 2,
+      "father": "Bede",
+      "evidence": "who is servant of all",
+      "reviewStatus": "source-locator check required"
+    },
+    {
+      "id": "MARK_EUCHARIST",
+      "passage": "Mark 14:22",
+      "pericope": "catena.mark.14.22",
+      "question": "Is the bread only a figure of Christ's body?",
+      "sourceOrdinal": 4,
+      "father": "Theophylact",
+      "evidence": "not a mere figure",
+      "reviewStatus": "source-locator check required"
+    },
+    {
+      "id": "MARK_FORSKEN",
+      "passage": "Mark 15:34",
+      "pericope": "catena.mark.15.33",
+      "question": "Why does the Lord speak as one forsaken on the cross?",
+      "sourceOrdinal": 6,
+      "father": "Theophylact",
+      "evidence": "as man crucified",
+      "reviewStatus": "source-locator check required"
+    },
+    {
+      "id": "MARK_RESURRECTION",
+      "passage": "Mark 16:6",
+      "pericope": "catena.mark.16.1",
+      "question": "Why was the day of resurrection joyful?",
+      "sourceOrdinal": 1,
+      "father": "Pseudo-Jerome",
+      "evidence": "Lord rises in triumph",
+      "reviewStatus": "source-locator check required"
+    },
+    {
+      "id": "MARK_LOVE",
+      "passage": "Mark 12:30",
+      "pericope": "catena.mark.12.28",
+      "question": "How does loving God relate to loving His creature?",
+      "sourceOrdinal": 5,
+      "father": "Theophylact",
+      "evidence": "he who loves God, loves also His creature",
+      "reviewStatus": "source-locator check required"
+    },
+    {
+      "id": "MATTHEW_TRINITY",
+      "passage": "Matthew 3:17",
+      "pericope": "catena.matthew.3.17",
+      "question": "How is the Trinity shown at Jesus' baptism?",
+      "sourceOrdinal": 3,
+      "father": "Jerome",
+      "evidence": "mystery of the Trinity",
+      "reviewStatus": "source-locator check required"
+    },
+    {
+      "id": "MATTHEW_HUMILITY",
+      "passage": "Matthew 4:4",
+      "pericope": "catena.matthew.4.3",
+      "question": "How did Christ overcome the devil's temptation?",
+      "sourceOrdinal": 7,
+      "father": "Jerome",
+      "evidence": "vanquish by humility",
+      "reviewStatus": "source-locator check required"
+    },
+    {
+      "id": "MATTHEW_LEVI",
+      "passage": "Matthew 9:9",
+      "pericope": "catena.matthew.9.9",
+      "question": "Why did Jesus call a tax collector?",
+      "sourceOrdinal": 4,
+      "father": "Chrysostom",
+      "evidence": "rescued him from the midst of evil",
+      "reviewStatus": "source-locator check required"
+    },
+    {
+      "id": "MATTHEW_REST",
+      "passage": "Matthew 11:28",
+      "pericope": "catena.matthew.11.28",
+      "question": "Who are those burdened whom Christ calls to rest?",
+      "sourceOrdinal": 3,
+      "father": "Hilary",
+      "evidence": "burdened with the sins of this world",
+      "reviewStatus": "source-locator check required"
+    },
+    {
+      "id": "MATTHEW_TREASURE",
+      "passage": "Matthew 13:44",
+      "pericope": "catena.matthew.13.44",
+      "question": "What does the hidden treasure signify?",
+      "sourceOrdinal": 4,
+      "father": "Gregory",
+      "evidence": "treasure hidden in the field is the desire of heaven",
+      "reviewStatus": "source-locator check required"
+    },
+    {
+      "id": "MATTHEW_FORGIVE",
+      "passage": "Matthew 18:22",
+      "pericope": "catena.matthew.18.21",
+      "question": "How often must a brother be forgiven?",
+      "sourceOrdinal": 4,
+      "father": "Chrysostom",
+      "evidence": "Until seventy times seven",
+      "reviewStatus": "source-locator check required"
+    },
+    {
+      "id": "MATTHEW_RICH",
+      "passage": "Matthew 19:21",
+      "pericope": "catena.matthew.19.16",
+      "question": "Why did the rich young man struggle to follow Christ?",
+      "sourceOrdinal": 3,
+      "father": "Chrysostom",
+      "evidence": "lover of money",
+      "reviewStatus": "source-locator check required"
+    },
+    {
+      "id": "MATTHEW_TEMPLE",
+      "passage": "Matthew 21:13",
+      "pericope": "catena.matthew.21.10",
+      "question": "Why did Jesus expel the merchants from the temple?",
+      "sourceOrdinal": 7,
+      "father": "Jerome",
+      "evidence": "cast out all them that sold and bought",
+      "reviewStatus": "source-locator check required"
+    },
+    {
+      "id": "MATTHEW_VAIN",
+      "passage": "Matthew 23:12",
+      "pericope": "catena.matthew.23.5",
+      "question": "Why did Christ condemn the Pharisees' vain glory?",
+      "sourceOrdinal": 1,
+      "father": "Chrysostom",
+      "evidence": "their vain-glory",
+      "reviewStatus": "source-locator check required"
+    },
+    {
+      "id": "LUKE_PARDON",
+      "passage": "Luke 5:20",
+      "pericope": "catena.luke.5.17",
+      "question": "Why did Jesus forgive the paralytic before healing him?",
+      "sourceOrdinal": 3,
+      "father": "Bede",
+      "evidence": "first loosens the chains of his sins",
+      "reviewStatus": "source-locator check required"
+    },
+    {
+      "id": "LUKE_ENEMIES",
+      "passage": "Luke 6:36",
+      "pericope": "catena.luke.6.32",
+      "question": "Why must Christians love their enemies?",
+      "sourceOrdinal": 1,
+      "father": "Chrysostom",
+      "evidence": "must love our enemies",
+      "reviewStatus": "source-locator check required"
+    },
+    {
+      "id": "LUKE_SOWER",
+      "passage": "Luke 8:15",
+      "pericope": "catena.luke.8.4",
+      "question": "Who is the sower of the parable?",
+      "sourceOrdinal": 4,
+      "father": "Bede",
+      "evidence": "The sower we can conceive to be none other but the Son of God",
+      "reviewStatus": "source-locator check required"
+    },
+    {
+      "id": "LUKE_NEIGHBOR",
+      "passage": "Luke 10:33",
+      "pericope": "catena.luke.10.29",
+      "question": "Who is our neighbor in the Good Samaritan story?",
+      "sourceOrdinal": 3,
+      "father": "Theophylact",
+      "evidence": "our Saviour defines a neighbour",
+      "reviewStatus": "source-locator check required"
+    },
+    {
+      "id": "LUKE_MARY",
+      "passage": "Luke 10:42",
+      "pericope": "catena.luke.10.38",
+      "question": "Why did Mary sit at Jesus' feet?",
+      "sourceOrdinal": 4,
+      "father": "Chrysostom",
+      "evidence": "at His feet",
+      "reviewStatus": "source-locator check required"
+    },
+    {
+      "id": "LUKE_FLOCK",
+      "passage": "Luke 12:32",
+      "pericope": "catena.luke.12.32",
+      "question": "What does Jesus mean by little flock?",
+      "sourceOrdinal": 2,
+      "father": "Theophylact",
+      "evidence": "By the little flock",
+      "reviewStatus": "source-locator check required"
+    },
+    {
+      "id": "LUKE_PRIDE",
+      "passage": "Luke 18:13",
+      "pericope": "catena.luke.18.9",
+      "question": "How did the Pharisee's posture show pride?",
+      "sourceOrdinal": 4,
+      "father": "Theophylact",
+      "evidence": "haughty temper",
+      "reviewStatus": "source-locator check required"
+    },
+    {
+      "id": "LUKE_CONSECRATION",
+      "passage": "Luke 22:19",
+      "pericope": "catena.luke.22.19",
+      "question": "What happens to bread when consecrated?",
+      "sourceOrdinal": 2,
+      "father": "Gregory of Nyssa",
+      "evidence": "bread before the consecration is common bread",
+      "reviewStatus": "source-locator check required"
+    },
+    {
+      "id": "LUKE_CROSS",
+      "passage": "Luke 23:34",
+      "pericope": "catena.luke.23.34",
+      "question": "Why did Christ pray for his persecutors on the cross?",
+      "sourceOrdinal": 1,
+      "father": "Chrysostom",
+      "evidence": "Pray for them that persecute you",
+      "reviewStatus": "source-locator check required"
+    },
+    {
+      "id": "LUKE_EMMAUS",
+      "passage": "Luke 24:32",
+      "pericope": "catena.luke.24.25",
+      "question": "How did Moses and the Prophets speak of Christ?",
+      "sourceOrdinal": 4,
+      "father": "Bede",
+      "evidence": "Moses and the Prophets spoke of Christ",
+      "reviewStatus": "source-locator check required"
+    },
+    {
+      "id": "JOHN_LIFE_BREAD",
+      "passage": "John 6:35",
+      "pericope": "catena.john.6.35",
+      "question": "Why does Christ call himself the bread of life?",
+      "sourceOrdinal": 2,
+      "father": "Theophylact",
+      "evidence": "bread of life",
+      "reviewStatus": "source-locator check required"
+    },
+    {
+      "id": "JOHN_LIGHT",
+      "passage": "John 8:12",
+      "pericope": "catena.john.8.12",
+      "question": "What does light of the world mean?",
+      "sourceOrdinal": 2,
+      "father": "Bede",
+      "evidence": "Light of the world",
+      "reviewStatus": "source-locator check required"
+    },
+    {
+      "id": "JOHN_SHEPHERD",
+      "passage": "John 10:11",
+      "pericope": "catena.john.10.11",
+      "question": "Why does the good Shepherd lay down his life?",
+      "sourceOrdinal": 2,
+      "father": "Gregory",
+      "evidence": "The good Shepherd giveth His life",
+      "reviewStatus": "source-locator check required"
+    },
+    {
+      "id": "JOHN_GRAIN",
+      "passage": "John 12:24",
+      "pericope": "catena.john.12.20",
+      "question": "How does the grain of wheat signify Christ's death?",
+      "sourceOrdinal": 6,
+      "father": "Bede",
+      "evidence": "by dying, He might rise again",
+      "reviewStatus": "source-locator check required"
+    },
+    {
+      "id": "JOHN_WAY",
+      "passage": "John 14:6",
+      "pericope": "catena.john.14.5",
+      "question": "What does Christ mean by I am the way and the truth?",
+      "sourceOrdinal": 3,
+      "father": "Augustine",
+      "evidence": "I am the way",
+      "reviewStatus": "source-locator check required"
+    },
+    {
+      "id": "JOHN_SPIRIT",
+      "passage": "John 14:26",
+      "pericope": "catena.john.14.22",
+      "question": "Is the Holy Spirit excluded when Father and Son dwell in the soul?",
+      "sourceOrdinal": 5,
+      "father": "Augustine",
+      "evidence": "Holy Spirit excluded",
+      "reviewStatus": "source-locator check required"
+    },
+    {
+      "id": "JOHN_VINE",
+      "passage": "John 15:5",
+      "pericope": "catena.john.15.4",
+      "question": "Why can the branches do nothing without Christ?",
+      "sourceOrdinal": 4,
+      "father": "Augustine",
+      "evidence": "without Me ye can do nothing",
+      "reviewStatus": "source-locator check required"
+    },
+    {
+      "id": "JOHN_LOVE",
+      "passage": "John 15:12",
+      "pericope": "catena.john.15.12",
+      "question": "Why does Jesus command love for one another?",
+      "sourceOrdinal": 3,
+      "father": "Augustine",
+      "evidence": "Where then love is",
+      "reviewStatus": "source-locator check required"
+    },
+    {
+      "id": "JOHN_PETER",
+      "passage": "John 21:17",
+      "pericope": "catena.john.21.15",
+      "question": "How did the resurrection change Peter after his denial?",
+      "sourceOrdinal": 4,
+      "father": "Augustine",
+      "evidence": "implanted love in his heart",
+      "reviewStatus": "source-locator check required"
+    }
+  ],
+  "negatives": [
+    {
+      "id": "MARK_SMARTPHONE",
+      "passage": "Mark 1:17",
+      "pericope": "catena.mark.1.16",
+      "question": "Did Peter keep his contacts on a smartphone?",
+      "expected": "no-attributed-response"
+    },
+    {
+      "id": "MARK_FOOTBALL",
+      "passage": "Mark 10:14",
+      "pericope": "catena.mark.10.13",
+      "question": "Which football team did these children support?",
+      "expected": "no-attributed-response"
+    },
+    {
+      "id": "MARK_MARKETING",
+      "passage": "Mark 4:39",
+      "pericope": "catena.mark.4.35",
+      "question": "Did Jesus use digital weather radar during the storm?",
+      "expected": "no-attributed-response"
+    },
+    {
+      "id": "MARK_EXCHANGE",
+      "passage": "Mark 14:22",
+      "pericope": "catena.mark.14.22",
+      "question": "Did the Last Supper serve cryptocurrency?",
+      "expected": "no-attributed-response"
+    },
+    {
+      "id": "MATTHEW_ASTRONAUT",
+      "passage": "Matthew 3:17",
+      "pericope": "catena.matthew.3.17",
+      "question": "Did the Holy Spirit travel in a spaceship?",
+      "expected": "no-attributed-response"
+    },
+    {
+      "id": "MATTHEW_PROGRAM",
+      "passage": "Matthew 9:9",
+      "pericope": "catena.matthew.9.9",
+      "question": "Was Matthew using accounting software?",
+      "expected": "no-attributed-response"
+    },
+    {
+      "id": "MATTHEW_MARKET",
+      "passage": "Matthew 21:13",
+      "pericope": "catena.matthew.21.10",
+      "question": "What was the temple merchants' quarterly stock price?",
+      "expected": "no-attributed-response"
+    },
+    {
+      "id": "MATTHEW_WEB",
+      "passage": "Matthew 16:18",
+      "pericope": "catena.matthew.16.13",
+      "question": "Did Peter start a website?",
+      "expected": "no-attributed-response"
+    },
+    {
+      "id": "LUKE_PHONE",
+      "passage": "Luke 10:33",
+      "pericope": "catena.luke.10.29",
+      "question": "Did the Good Samaritan carry a mobile phone?",
+      "expected": "no-attributed-response"
+    },
+    {
+      "id": "LUKE_CURRENCY",
+      "passage": "Luke 19:10",
+      "pericope": "catena.luke.19.1",
+      "question": "Did Zacchaeus trade bitcoin?",
+      "expected": "no-attributed-response"
+    },
+    {
+      "id": "LUKE_VIDEO",
+      "passage": "Luke 24:32",
+      "pericope": "catena.luke.24.25",
+      "question": "Were the Emmaus travelers watching online videos?",
+      "expected": "no-attributed-response"
+    },
+    {
+      "id": "LUKE_TECH",
+      "passage": "Luke 22:19",
+      "pericope": "catena.luke.22.19",
+      "question": "What was the WiFi password at the Last Supper?",
+      "expected": "no-attributed-response"
+    },
+    {
+      "id": "JOHN_PLANE",
+      "passage": "John 14:6",
+      "pericope": "catena.john.14.5",
+      "question": "Could Thomas fly an airplane?",
+      "expected": "no-attributed-response"
+    },
+    {
+      "id": "JOHN_ASTRONAUT",
+      "passage": "John 10:11",
+      "pericope": "catena.john.10.11",
+      "question": "Was the good shepherd an astronaut?",
+      "expected": "no-attributed-response"
+    },
+    {
+      "id": "JOHN_SOCIAL",
+      "passage": "John 21:17",
+      "pericope": "catena.john.21.15",
+      "question": "How many followers did Peter have on Instagram?",
+      "expected": "no-attributed-response"
+    },
+    {
+      "id": "JOHN_QUANTUM",
+      "passage": "John 8:12",
+      "pericope": "catena.john.8.12",
+      "question": "Did Jesus explain quantum entanglement?",
+      "expected": "no-attributed-response"
+    }
+  ]
+}
