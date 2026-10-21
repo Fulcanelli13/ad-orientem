@@ -115,6 +115,10 @@ export function retrieveCatenaMessages(rows,query,{limit=3,excludeIds=null}={}){
    for(const phrase of phrases)if(normalizedSource.includes(" "+phrase.value+" "))
     phraseScore+=phrase.points;
    score+=Math.min(30,phraseScore);
+   // A concise source segment with the same literal question phrase is
+   // often a more useful entry point than a distant occurrence in a long
+   // theological passage. Modest boost; never a fabricated relevance grade.
+   if(phraseScore>=6&&r.text.length<=260)score+=3;
    return {r,i,matched,score,phraseScore};
  }).filter(x=>terms.length===0||x.matched>=Math.min(2,terms.length)||
    (x.matched>=1&&x.phraseScore>=6));
