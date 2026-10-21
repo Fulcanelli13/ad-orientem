@@ -48,6 +48,12 @@
     "license_notes": {
       "douay": "Upstream claims CC0 for transcribed historical Douay marginal reference addresses; retain original provenance",
       "na27": "Upstream labels authored links uncopyrightable facts; theological classifications and accuracy not endorsed here"
+    },
+    "historical_witness": {
+      "repository": "janvier-s/original-douay-rheims",
+      "commit": "d82b2852d55a2ab8f0e57311ee42acde25740781",
+      "path": "bible/tagged/ecclesiasticus.json",
+      "note": "Original-print marginal text retained; modern reference coordinates may have chapter-boundary shifts."
     }
   },
   "columns": [
@@ -74,9 +80,10 @@
   "normalization": {
     "book_ids": "Upstream 73-book spine identifiers, not automatically mapped to Ad Orientem book registry",
     "source_scope": "verse",
-    "chapter_target_rule": "For target_scope=chapter, raw_to_address of BOOK.N.1 is an upstream chapter anchor and MUST be normalized as BOOK.N, not interpreted as verse 1.",
+    "chapter_target_rule": "When target_scope=chapter, preserve raw_to_address and compare the chapter number against the original printed marginal reference before resolving; BOOK.N.1 is often an upstream chapter anchor, NOT a verified verse-1 reference. Do not discard target suffixes at edition boundaries.",
     "no_autopublish": true,
-    "unreviewed_weight_rule": "Weights are preserved opaque upstream metadata; not theological confidence scores."
+    "unreviewed_weight_rule": "Weights are preserved opaque upstream metadata; not theological confidence scores.",
+    "chapter_target_exception_rule": "Four records have chapter scope but non-.1 target addresses, apparently at historical/modern versification boundaries. Hold for edition-specific adjudication; never silently coerce to chapter or verse."
   },
   "audit": {
     "books": 7,
@@ -89,7 +96,37 @@
     "chapter_scoped": 232,
     "verse_scoped": 333,
     "deduplication": "unique(from_verse,raw_to_address,target_scope,source_key)",
-    "candidate_certified_count": 0
+    "candidate_certified_count": 0,
+    "chapter_anchor_exceptions": [
+      {
+        "from": "SIR.7.4",
+        "raw_to_address": "ECC.6.12",
+        "historical_margin": "Eccl. 7.",
+        "witness": "original-douay-rheims:bible/tagged/ecclesiasticus.json",
+        "status": "versification_mapping_review"
+      },
+      {
+        "from": "SIR.11.9",
+        "raw_to_address": "DEU.13.2",
+        "historical_margin": "Deu. 13.",
+        "witness": "original-douay-rheims:bible/tagged/ecclesiasticus.json",
+        "status": "versification_mapping_review"
+      },
+      {
+        "from": "SIR.29.13",
+        "raw_to_address": "EXO.21.37",
+        "historical_margin": "Exo. 22. Deu. 14.",
+        "witness": "original-douay-rheims:bible/tagged/ecclesiasticus.json",
+        "status": "versification_mapping_review"
+      },
+      {
+        "from": "SIR.49.13",
+        "raw_to_address": "HAG.1.15",
+        "historical_margin": "Agge. 2.",
+        "witness": "original-douay-rheims:bible/tagged/ecclesiasticus.json",
+        "status": "versification_mapping_review"
+      }
+    ]
   },
   "rows": [
     [
