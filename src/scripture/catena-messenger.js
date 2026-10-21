@@ -20,16 +20,56 @@ export function indexCatenaMessages(pericopes){
  }
  return Object.freeze(result);
 }
-export function retrieveCatenaMessages(rows,query,{limit=3}={}){
- const terms=tokens(query);
- if(!terms.length||!Array.isArray(rows))return [];
- return rows.map((r,i)=>{
+export function retrieveCatenaMessages(rows,query,{limit=3,excludeIds=null}={}){
+ if(!Array.isArray(rows)||!rows.length)return [];
+ const q=String(query||"").toLowerCase();
+ // An explicitly named Father is a source filter, not content to be
+ // mistaken for a theological search keyword.
+ const mentioned=[...new Set(rows.map(r=>r.father))].filter(f=>
+   f.length>=4&&q.includes(f.toLowerCase()));
+ const terms=tokens(query).filter(t=>!mentioned.some(f=>f.toLowerCase().includes(t)));
+ if(!terms.length&&!mentioned.length)return [];
+ const preferred=mentioned.length?rows.filter(r=>mentioned.includes(r.father)):rows;
+ const scored=preferred.map((r,i)=>{
    const hay=String(r.text||"").toLowerCase();
-   let score=0;
-   for(const t of terms)if(hay.includes(t))score+=t.length>=8?3:2;
-   return {r,i,score};
- }).filter(x=>x.score>0).sort((a,b)=>b.score-a.score||a.i-b.i)
- .slice(0,Math.max(1,Math.min(5,limit))).map(x=>x.r);
+   let score=0,matched=0;
+   for(const term of terms){
+     const match=hay.includes(term);
+     if(match){
+       matched++;
+       score+=term.length>=8?4:3;
+       if(new RegExp("(^|[^a-z])"+term+"([^a-z]|$)").test(hay))score+=1;
+     }
+   }
+   if(terms.length>1&&hay.includes(terms.join(" ")))score+=5;
+   return {r,i,matched,score};
+ }).filter(x=>terms.length===0||x.matched>=Math.min(2,terms.length));
+ scored.sort((a,b)=>{
+   const aSeen=excludeIds?.has?.(a.r.id)?1:0;
+   const bSeen=excludeIds?.has?.(b.r.id)?1:0;
+   return aSeen-bSeen||b.score-a.score||b.matched-a.matched||a.i-b.i;
+ });
+ const capped=Math.max(1,Math.min(5,limit)),picked=[],authors=new Set();
+ // Relevant voices first, with an opportunity for different Fathers to
+ // contribute before repeating one voice.
+ for(const x of scored){
+   if(picked.length>=capped)break;
+   if(!authors.has(x.r.father)){picked.push(x.r);authors.add(x.r.father)}
+ }
+ for(const x of scored){
+   if(picked.length>=capped)break;
+   if(!picked.includes(x.r))picked.push(x.r);
+ }
+ return picked;
+}
+export function suggestCatenaTopics(rows,{limit=4}={}){
+ const candidates=["Word","Beginning","Father","Creation","Eternal",
+   "Kingdom","Faith","Mercy","Grace","Love","Prayer","Resurrection",
+   "Baptism","Forgiveness","Bread","Spirit","Wisdom","Flesh","Glory",
+   "Law","Heaven","Judgment","Life","Truth","Sin"];
+ const corpus=(Array.isArray(rows)?rows:[]).map(x=>String(x.text||"").toLowerCase()).join(" ");
+ return candidates.filter(term=>new RegExp("(^|[^a-z])"+term.toLowerCase()+"(s|al|ity)?([^a-z]|$)").test(corpus))
+  .slice(0,Math.max(0,Math.min(6,limit)));
 }
 const element=(d,tag,cls,text)=>{
  const e=d.createElement(tag);if(cls)e.className=cls;if(text!==undefined)e.textContent=text;return e;
@@ -69,6 +109,9 @@ function installStyle(d){
  ".aoCatenaMUser{align-self:flex-end;max-width:83%;padding:11px 14px;background:#463725;border:1px solid #997b50;border-radius:14px 14px 3px 14px;font:16px/1.5 var(--ao-font-liturgical,Georgia,serif);color:#fff0d5;overflow-wrap:anywhere}",
  ".aoCatenaMNotice{align-self:center;max-width:95%;padding:10px 13px;border:1px solid #6c563a;border-radius:9px;color:#d0bfa6;text-align:center;font:13px/1.5 var(--ao-font-ui,Georgia,serif)}",
  ".aoCatenaMFooter{background:#101c27;border-top:1px solid #67563d;padding:12px}",
+ ".aoCatenaMTopics{display:flex;flex-wrap:wrap;align-items:center;gap:7px;margin:0 0 12px}",
+ ".aoCatenaMTopics>span{font:12px var(--ao-font-ui,Georgia,serif);color:#b5a38a}",
+ ".aoScriptureLibrary .aoCatenaMTopics button{min-height:40px;background:#172633;color:#e3c598;border:1px solid #68573e;border-radius:22px;padding:8px 10px;font:500 13px var(--ao-font-ui,Georgia,serif)}",
  ".aoCatenaMActions{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:12px}",
  ".aoScriptureLibrary .aoCatenaMActions button{min-height:44px;background:transparent;border:1px solid #967954;color:#e5c895;font:500 13px var(--ao-font-ui,Georgia,serif)}",
  ".aoCatenaMForm{display:flex;gap:7px}",
@@ -93,12 +136,12 @@ export function mountCatenaMessenger(host,pericopes,{language="en"}={}){
   element(d,"p",null,rows.length+" original excerpts · "+new Set(rows.map(r=>r.father)).size+" attributed authors · "+pericopes.map(p=>p.citation).join("; ")));
  const authors=element(d,"nav","aoCatenaMAuthors");authors.setAttribute("aria-label","Select an attributed Father");
  const feed=element(d,"div","aoCatenaMFeed");feed.setAttribute("role","log");feed.setAttribute("aria-label","Patristic source extracts");
- const foot=element(d,"div","aoCatenaMFooter"),acts=element(d,"div","aoCatenaMActions"),form=element(d,"form","aoCatenaMForm");
+ const foot=element(d,"div","aoCatenaMFooter"),topics=element(d,"div","aoCatenaMTopics"),acts=element(d,"div","aoCatenaMActions"),form=element(d,"form","aoCatenaMForm");
  const input=element(d,"input");
  input.type="search";input.maxLength=240;input.placeholder="Ask about the passage…";input.setAttribute("aria-label","Find the Fathers' words");
  const send=element(d,"button",null,"Find excerpts");send.type="submit";
  form.append(input,send);
- foot.append(acts,form,element(d,"p","aoCatenaMDisclaimer","Messages reproduce the Oxford/Newman Catena extracts. Questions search the actual words in this passage; no AI answer is generated. Historical author labels remain as supplied by the source."));
+ foot.append(topics,acts,form,element(d,"p","aoCatenaMDisclaimer","Messages reproduce the Oxford/Newman Catena extracts. Questions search the actual words in this passage; no AI answer is generated. Historical author labels remain as supplied by the source."));
  shell.append(head,authors,feed,foot);host.append(shell);
  const seen=new Set();let lastFather=null;
  function note(s){const e=element(d,"p","aoCatenaMNotice",s);e.setAttribute("role","status");feed.append(e)}
@@ -142,13 +185,20 @@ export function mountCatenaMessenger(host,pericopes,{language="en"}={}){
   const next=rows.find(r=>r.father!==lastFather&&!seen.has(r.id));
   if(next)message(next);else note("No further extracts from another attributed author remain.");
  }));
- form.addEventListener("submit",event=>{
-  event.preventDefault();const query=input.value.trim();if(!query)return;
-  feed.append(element(d,"div","aoCatenaMUser",query));input.value="";
-  const hits=retrieveCatenaMessages(rows,query,{limit:4});
+ function ask(query,display=query){
+  if(!query.trim())return;
+  feed.append(element(d,"div","aoCatenaMUser",display));
+  const hits=retrieveCatenaMessages(rows,query,{limit:4,excludeIds:seen});
   if(!hits.length){note("No matching source wording was found for this passage. Nothing has been invented.");return}
   let fresh=0;for(const r of hits)if(message(r))fresh++;
   if(!fresh)note("The matching extracts are already present earlier in the conversation.");
+ }
+ topics.append(element(d,"span",null,"Find passages on:"));
+ for(const subject of suggestCatenaTopics(rows)){
+  topics.append(action(d,subject,()=>ask(subject,"Find source extracts mentioning “"+subject+"”")));
+ }
+ form.addEventListener("submit",event=>{
+  event.preventDefault();const query=input.value.trim();input.value="";ask(query);
  });
  message(rows[0]);const second=rows.find(r=>r.father!==rows[0].father);if(second)message(second);
  return Object.freeze({element:shell,total:rows.length});
