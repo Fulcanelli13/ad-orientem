@@ -22,6 +22,12 @@ Seven older *spotlight title strings* differ literally from current calendar tit
 
 The resolver's Gospel reference metadata was not exposed in the tested `gospel.ref/reference/citation` fields (0/102): previous Sunday painting-to-Gospel relation claims consequently remain **research assertions**, not independently source-verified scene assignments. Do not automatically publish those 32 scene hypotheses. An exact identity comparison against the October 13 rating ledger matched only one older Sunday painting lead, Juan de Flandes's *The Temptation of Christ* on February 22, rated **3**, which is still not a release permission or definitive user hero choice.
 
+## Recovered exact physical artwork identities from historic choices
+
+All **44 earlier user-chosen subject artwork IDs** now resolve to an actual artist, title, museum and original object URL in the existing 281-work research catalogue. **38** of those old subject choices have a catalogued CC0 **source claim**; **6** have other or qualified source-rights labels. Neither label automatically certifies a packaged photograph for the app. The four archived subject choices involving a now-excluded artist style are preserved for provenance but held out of new recommendations.
+
+This resolves artwork identity for historical subject choices rather than merely copying IDs; the Class I table below now displays actual paintings where recovered. It does **not** turn historical Christmas, Easter octave or saint-subject choices into newly approved date-specific user heroes.
+
 ## Meaning of statuses
 
 - `LOCKED_EXACT`: later curator selection for this exact 2026 day, artist/title fixed.
@@ -43,21 +49,21 @@ The resolver's Gospel reference metadata was not exposed in the tested `gospel.r
 | 2026-02-01 | SCENE_RESEARCH | Rembrandt van Rijn — Parable of the Laborers in the Vineyard | 2 |
 | 2026-02-08 | SCENE_RESEARCH | Pieter Bruegel the Elder — Landscape with the Parable of the Sower | 1 |
 | 2026-02-15 | SCENE_RESEARCH | Lucas van Leyden — Healing of the Blind Man of Jericho (Triptych) | 1 |
-| 2026-02-22 | SCENE_RESEARCH | Juan de Flandes — The Temptation of Christ | 1 |
-| 2026-03-01 | SCENE_RESEARCH | Raphael — Transfiguration | 1 |
-| 2026-03-08 | SCENE_RESEARCH | James Tissot — Jesus Heals a Mute Possessed Man | 1 |
-| 2026-03-15 | UNASSIGNED | — | 0 |
-| 2026-03-22 | UNASSIGNED | — | 0 |
-| 2026-03-29 | LOCKED_EXACT | Anthony van Dyck — The Entry of Christ into Jerusalem | 2 |
-| 2026-04-05 | SCENE_RESEARCH | Jan and/or Hubert van Eyck — The Three Marys at the Tomb | 1 |
-| 2026-04-12 | SCENE_RESEARCH | Caravaggio — The Incredulity of Saint Thomas | 1 |
+| 2026-02-22 | I Sunday of Lent | RESEARCH | Juan de Flandes — The Temptation of Christ; Jacopo Tintoretto (Jacopo Robusti) — The Miracle of the Loaves and Fishes |
+| 2026-03-01 | II Sunday of Lent | RESEARCH | Juan de Flandes — The Temptation of Christ; Jacopo Tintoretto (Jacopo Robusti) — The Miracle of the Loaves and Fishes |
+| 2026-03-08 | III Sunday of Lent | RESEARCH | Juan de Flandes — The Temptation of Christ; Jacopo Tintoretto (Jacopo Robusti) — The Miracle of the Loaves and Fishes |
+| 2026-03-15 | IV Sunday of Lent | RESEARCH | Juan de Flandes — The Temptation of Christ; Jacopo Tintoretto (Jacopo Robusti) — The Miracle of the Loaves and Fishes |
+| 2026-03-22 | Passion Sunday | RESEARCH | Scipione Pulzone — The Lamentation; Moretto da Brescia — The Entombment |
+| 2026-03-29 | Palm Sunday | LOCKED_EXACT | Anthony van Dyck — The Entry of Christ into Jerusalem |
+| 2026-04-05 | Easter Sunday | PRIOR_SUBJECT_SELECTION | Johann König — The Resurrection of Christ |
+| 2026-04-12 | Low Sunday | PRIOR_SUBJECT_SELECTION | Johann König — The Resurrection of Christ |
 | 2026-04-19 | UNASSIGNED | — | 0 |
 | 2026-04-26 | UNASSIGNED | — | 0 |
 | 2026-05-03 | UNASSIGNED | — | 0 |
 | 2026-05-10 | UNASSIGNED | — | 0 |
 | 2026-05-17 | UNASSIGNED | — | 0 |
-| 2026-05-24 | LOCKED_EXACT | Jean II Restout — Pentecost | 0 |
-| 2026-05-31 | UNASSIGNED | — | 0 |
+| 2026-05-24 | Pentecost Sunday | LOCKED_EXACT | Jean II Restout — Pentecost |
+| 2026-05-31 | Trinity Sunday | PRIOR_SUBJECT_SELECTION | Laurent Girardin — The Trinity |
 | 2026-06-07 | SCENE_RESEARCH | Cornelis Droochsloot — The Parable of the Great Supper | 1 |
 | 2026-06-14 | SCENE_RESEARCH | Workshop of Leopold Layer — Christ tells the Pharisees the Parable of the Lost Sheep | 1 |
 | 2026-06-21 | UNASSIGNED | — | 0 |
@@ -78,74 +84,74 @@ The resolver's Gospel reference metadata was not exposed in the tested `gospel.r
 | 2026-10-04 | SCENE_RESEARCH | Andrei Mironov — Parable of the Wedding Feast | 1 |
 | 2026-10-11 | SCENE_RESEARCH | Unknown Indian Mughal painter — Jesus Heals the Nobleman's Son in Capernaum | 1 |
 | 2026-10-18 | SCENE_RESEARCH | Claude Vignon — Parable of the Unforgiving Servant | 1 |
-| 2026-10-25 | LOCKED_EXACT | Ambrosius Benson — Salvator Mundi | 1 |
-| 2026-11-01 | LOCKED_EXACT | Carlo Saraceni — Paradise | 1 |
+| 2026-10-25 | Christ the King | LOCKED_EXACT | Ambrosius Benson — Salvator Mundi |
+| 2026-11-01 | All Saints | LOCKED_EXACT | Carlo Saraceni — Paradise |
 | 2026-11-08 | SCENE_RESEARCH | Lucas Gassel — The Parable of the Wheat and the Tares | 1 |
 | 2026-11-15 | UNASSIGNED | — | 0 |
 | 2026-11-22 | UNASSIGNED | — | 0 |
-| 2026-11-29 | LOCKED_EXACT | John Martin — The Great Day of His Wrath | 0 |
-| 2026-12-06 | SCENE_RESEARCH | Victor Meirelles — Saint John the Baptist in Prison | 1 |
-| 2026-12-13 | SCENE_RESEARCH | Mattia Preti — Saint John the Baptist Preaching | 1 |
-| 2026-12-20 | UNASSIGNED | — | 0 |
+| 2026-11-29 | I Sunday of Advent | LOCKED_EXACT | John Martin — The Great Day of His Wrath |
+| 2026-12-06 | II Sunday of Advent | RESEARCH | Luca Giordano — The Annunciation; Philippe de Champaigne — The Annunciation |
+| 2026-12-13 | III Sunday of Advent | RESEARCH | Luca Giordano — The Annunciation; Philippe de Champaigne — The Annunciation |
+| 2026-12-20 | IV Sunday of Advent | RESEARCH | Luca Giordano — The Annunciation; Philippe de Champaigne — The Annunciation |
 | 2026-12-27 | UNASSIGNED | — | 0 |
 
 ## B. All 53 Class I dates
 
 | 2026 date | Recorded observed title | Editorial status | Existing artist or artwork ID |
 |---|---|---|---|
-| 2026-01-01 | Octave Day of Christmas | PRIOR_SUBJECT_SELECTION | cma-143784 |
-| 2026-01-06 | Epiphany of the Lord | PRIOR_SUBJECT_SELECTION | met-436984 |
-| 2026-02-18 | Ash Wednesday | RESEARCH | nga-50726, met-437821 |
+| 2026-01-01 | Octave Day of Christmas | PRIOR_SUBJECT_SELECTION | Carlo Dolci — Adoration of the Shepherds |
+| 2026-01-06 | Epiphany of the Lord | PRIOR_SUBJECT_SELECTION | Quinten Massys — The Adoration of the Magi |
+| 2026-02-18 | Ash Wednesday | RESEARCH | Juan de Flandes — The Temptation of Christ; Jacopo Tintoretto (Jacopo Robusti) — The Miracle of the Loaves and Fishes |
 | 2026-02-22 | I Sunday of Lent | RESEARCH | nga-50726, met-437821 |
 | 2026-03-01 | II Sunday of Lent | RESEARCH | nga-50726, met-437821 |
 | 2026-03-08 | III Sunday of Lent | RESEARCH | nga-50726, met-437821 |
 | 2026-03-15 | IV Sunday of Lent | RESEARCH | nga-50726, met-437821 |
 | 2026-03-19 | St. Joseph, Spouse of the Bl. Virgin Mary | RESEARCH | — |
 | 2026-03-22 | Passion Sunday | RESEARCH | met-437342, met-437156, met-437986 |
-| 2026-03-25 | Annunciation of the Blessed Virgin Mary | PRIOR_SUBJECT_SELECTION | met-438724 |
+| 2026-03-25 | Annunciation of the Blessed Virgin Mary | PRIOR_SUBJECT_SELECTION | Philippe de Champaigne — The Annunciation |
 | 2026-03-29 | Palm Sunday | LOCKED_EXACT | Anthony van Dyck — The Entry of Christ into Jerusalem |
-| 2026-03-30 | Feria II of Holy Week | RESEARCH | met-437342, met-437156, met-437986 |
-| 2026-03-31 | Feria III of Holy Week | RESEARCH | met-437342, met-437156, met-437986 |
-| 2026-04-01 | Feria IV of Holy Week | RESEARCH | met-437342, met-437156, met-437986 |
+| 2026-03-30 | Feria II of Holy Week | RESEARCH | Scipione Pulzone — The Lamentation; Moretto da Brescia — The Entombment |
+| 2026-03-31 | Feria III of Holy Week | RESEARCH | Scipione Pulzone — The Lamentation; Moretto da Brescia — The Entombment |
+| 2026-04-01 | Feria IV of Holy Week | RESEARCH | Scipione Pulzone — The Lamentation; Moretto da Brescia — The Entombment |
 | 2026-04-02 | Holy Thursday | LOCKED_EXACT | Ugolino da Siena — Last Supper |
-| 2026-04-03 | Good Friday | PRIOR_SUBJECT_SELECTION | met-459087 |
-| 2026-04-04 | Holy Saturday | PRIOR_SUBJECT_SELECTION | met-437156 |
+| 2026-04-03 | Good Friday | PRIOR_SUBJECT_SELECTION | Pedro Orrente — The Crucifixion; Scipione Pulzone — The Lamentation |
+| 2026-04-04 | Holy Saturday | PRIOR_SUBJECT_SELECTION | Moretto da Brescia — The Entombment |
 | 2026-04-05 | Easter Sunday | PRIOR_SUBJECT_SELECTION | cma-78982 |
-| 2026-04-06 | Monday in the Octave of Easter | PRIOR_SUBJECT_SELECTION | cma-78982 |
-| 2026-04-07 | Tuesday in the Octave of Easter | PRIOR_SUBJECT_SELECTION | cma-78982 |
-| 2026-04-08 | Wednesday in the Octave of Easter | PRIOR_SUBJECT_SELECTION | cma-78982 |
-| 2026-04-09 | Thursday in the Octave of Easter | PRIOR_SUBJECT_SELECTION | cma-78982 |
-| 2026-04-10 | Friday in the Octave of Easter | PRIOR_SUBJECT_SELECTION | cma-78982 |
-| 2026-04-11 | Saturday in the Octave of Easter | PRIOR_SUBJECT_SELECTION | cma-78982 |
+| 2026-04-06 | Monday in the Octave of Easter | PRIOR_SUBJECT_SELECTION | Johann König — The Resurrection of Christ |
+| 2026-04-07 | Tuesday in the Octave of Easter | PRIOR_SUBJECT_SELECTION | Johann König — The Resurrection of Christ |
+| 2026-04-08 | Wednesday in the Octave of Easter | PRIOR_SUBJECT_SELECTION | Johann König — The Resurrection of Christ |
+| 2026-04-09 | Thursday in the Octave of Easter | PRIOR_SUBJECT_SELECTION | Johann König — The Resurrection of Christ |
+| 2026-04-10 | Friday in the Octave of Easter | PRIOR_SUBJECT_SELECTION | Johann König — The Resurrection of Christ |
+| 2026-04-11 | Saturday in the Octave of Easter | PRIOR_SUBJECT_SELECTION | Johann König — The Resurrection of Christ |
 | 2026-04-12 | Low Sunday | PRIOR_SUBJECT_SELECTION | cma-78982 |
 | 2026-05-01 | St. Joseph the Workman | GAP | — |
-| 2026-05-14 | Ascension of the Lord | PRIOR_SUBJECT_SELECTION | met-436835 |
+| 2026-05-14 | Ascension of the Lord | PRIOR_SUBJECT_SELECTION | Hans Süss von Kulmbach — The Ascension of Christ |
 | 2026-05-23 | Vigil of Pentecost | LOCKED_EXACT | Juan Bautista Maíno — The Pentecost |
 | 2026-05-24 | Pentecost Sunday | LOCKED_EXACT | Jean II Restout — Pentecost |
-| 2026-05-25 | Monday after Pentecost | PRIOR_SUBJECT_SELECTION | commons-baroncelli-pentecost |
-| 2026-05-26 | Tuesday after Pentecost | PRIOR_SUBJECT_SELECTION | commons-baroncelli-pentecost |
+| 2026-05-25 | Monday after Pentecost | PRIOR_SUBJECT_SELECTION | Master of the Baroncelli Portraits — Pentecost |
+| 2026-05-26 | Tuesday after Pentecost | PRIOR_SUBJECT_SELECTION | Master of the Baroncelli Portraits — Pentecost |
 | 2026-05-27 | Ember Wednesday of Pentecost | LOCKED_EXACT | Philippe de Champaigne — La Petite Cène |
-| 2026-05-28 | Thursday after Pentecost | PRIOR_SUBJECT_SELECTION | commons-baroncelli-pentecost |
-| 2026-05-29 | Ember Friday of Pentecost | PRIOR_SUBJECT_SELECTION | commons-baroncelli-pentecost |
-| 2026-05-30 | Ember Saturday of Pentecost | PRIOR_SUBJECT_SELECTION | commons-baroncelli-pentecost |
+| 2026-05-28 | Thursday after Pentecost | PRIOR_SUBJECT_SELECTION | Master of the Baroncelli Portraits — Pentecost |
+| 2026-05-29 | Ember Friday of Pentecost | PRIOR_SUBJECT_SELECTION | Master of the Baroncelli Portraits — Pentecost |
+| 2026-05-30 | Ember Saturday of Pentecost | PRIOR_SUBJECT_SELECTION | Master of the Baroncelli Portraits — Pentecost |
 | 2026-05-31 | Trinity Sunday | PRIOR_SUBJECT_SELECTION | cma-136507 |
-| 2026-06-04 | Corpus Christi | RESEARCH | met-438434 |
+| 2026-06-04 | Corpus Christi | RESEARCH | Jean Auguste Dominique Ingres — The Virgin Adoring the Host |
 | 2026-06-12 | Sacred Heart of Jesus | LOCKED_EXACT | Juan Patricio Morlete Ruiz — The Heart of Jesus |
-| 2026-06-24 | Nativity of St. John the Baptist | PRIOR_SUBJECT_SELECTION | met-437738 |
-| 2026-06-29 | Sts. Peter & Paul | PRIOR_SUBJECT_SELECTION | met-441971 |
-| 2026-07-01 | The Precious Blood of Our Lord Jesus Christ | RESEARCH | met-652416, met-437342 |
-| 2026-08-15 | Assumption of the Blessed Virgin Mary | PRIOR_SUBJECT_SELECTION | nga-46131 |
-| 2026-09-29 | Dedication of St. Michael the Archangel | RESEARCH | met-437729 |
+| 2026-06-24 | Nativity of St. John the Baptist | PRIOR_SUBJECT_SELECTION | Spanish Catalan Painter — The Beheading of Saint John the Baptist |
+| 2026-06-29 | Sts. Peter & Paul | PRIOR_SUBJECT_SELECTION | Jusepe de Ribera — The Tears of Saint Peter |
+| 2026-07-01 | The Precious Blood of Our Lord Jesus Christ | RESEARCH | Pedro Orrente — The Crucifixion; Scipione Pulzone — The Lamentation |
+| 2026-08-15 | Assumption of the Blessed Virgin Mary | PRIOR_SUBJECT_SELECTION | Anonymous painter (probably Rubens workshop; NGA) — The Assumption of the Virgin |
+| 2026-09-29 | Dedication of St. Michael the Archangel | RESEARCH | Ignacio de Ries — Saint Michael the Archangel |
 | 2026-10-25 | Christ the King | LOCKED_EXACT | Ambrosius Benson — Salvator Mundi |
 | 2026-11-01 | All Saints | LOCKED_EXACT | Carlo Saraceni — Paradise |
 | 2026-11-02 | Commemoration of All Souls | LOCKED_EXACT | Ludovico Carracci — An Angel Frees the Souls of Purgatory |
 | 2026-11-29 | I Sunday of Advent | LOCKED_EXACT | John Martin — The Great Day of His Wrath |
 | 2026-12-06 | II Sunday of Advent | RESEARCH | met-436502, met-438724 |
-| 2026-12-08 | Immaculate Conception of the Blessed Virgin Mary | PRIOR_SUBJECT_SELECTION | cma-135659 |
+| 2026-12-08 | Immaculate Conception of the Blessed Virgin Mary | PRIOR_SUBJECT_SELECTION | Bartolomé Esteban Murillo — The Immaculate Conception |
 | 2026-12-13 | III Sunday of Advent | RESEARCH | met-436502, met-438724 |
 | 2026-12-20 | IV Sunday of Advent | RESEARCH | met-436502, met-438724 |
-| 2026-12-24 | Vigil of Christmas | RESEARCH | cma-143784, cma-143644, nga-46185 |
-| 2026-12-25 | The Nativity of Our Lord | PRIOR_SUBJECT_SELECTION | cma-143784 |
+| 2026-12-24 | Vigil of Christmas | RESEARCH | Carlo Dolci — Adoration of the Shepherds; Bernardo Cavallino — Adoration of the Shepherds |
+| 2026-12-25 | The Nativity of Our Lord | PRIOR_SUBJECT_SELECTION | Carlo Dolci — Adoration of the Shepherds |
 
 ## C. 17 additional major-feast highlights
 
