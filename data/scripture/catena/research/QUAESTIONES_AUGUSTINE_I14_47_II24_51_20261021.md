@@ -59,3 +59,15 @@ Note: tests verify repo parity and source classification **within the curated re
 ## Next source mining
 
 Complete systematic Eusebius *ad Stephanum / ad Marinum* problems and then harvest further original Augustinian interrogatives within the **longer** sections, without relabelling biblical speakers and hypothetical objectors. Only then connect candidate natural-language suggestions into the draft Messenger interface via a separate, source-verified approval gate.
+
+## Subsequent reconciliation — complete 98-section numbering coverage
+
+After the I.14–47 / II.24–51 extension, the work's remaining **Book II.2** (Peter's boat / miraculous catch, Luke 5:1–11) and **Book II.4** (paralytic lowered through the roof, Luke 5:17–26) were both read in the original Latin and joined to **three** pre-existing verbatim Augustine Catena fragments.
+
+- See [augustine-quaestiones-missing-sections.v1.json](augustine-quaestiones-missing-sections.v1.json), two research-only records.
+- [augustine-quaestiones-numbering-coverage.v1.json](augustine-quaestiones-numbering-coverage.v1.json) reconciles all section-owning files, without duplicating any answer texts.
+- The three section-owning registers cover 94 unique loci; four additional Augustine loci from the initial primary-work pilot (II.1, II.3, II.5, II.6) bring the **unique** total to **98**; initial I.7 is intentionally duplicated in that pilot but counted only once.
+- Entire **Book I.1–47 and Book II.1–51** now have a **source-based numbered section locator**.
+- `tests/scripture-catena-augustine-coverage.mjs` enforces coverage, detects unwanted overlaps, and verifies intentional pilot duplicates.
+
+This is a full *navigation/index skeleton* for the two-book treatise, not a complete independent Father translation, no claim of 98 original posed questions or 98 context-verified answer spans. Mining internal question subsections and second-source review continue separately.
