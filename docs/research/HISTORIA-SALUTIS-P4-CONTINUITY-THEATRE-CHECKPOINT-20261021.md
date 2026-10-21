@@ -135,3 +135,21 @@ The lab's English/French source synopses are copied from the **existing research
 - Real Chromium acceptance establishes browser functionality for the **four tested states**, not an accepted 37-movement production route, rights certification or a historical-geography sign-off.
 
 Next source batch: DELIVERANCE (scene indices 25–37); afterwards WILDERNESS and COVENANT. Keep actor/place evidence anchored to installed Catholic texts and preserve each scene's original matching status.
+
+
+## P4 next Exodus and Sinai witness cohorts — 21 October 2026
+
+The source audit now covers **49 of 183 scenes (indices 0–48, four complete source chapter batches)**, with no changes to canonical event IDs, UI, readings, artwork or coordinates:
+
+| Chapter batch | Scene indices | Rows desk-triaged | Witness basis | Remaining caution |
+|---|---:|---:|---|---|
+| PATRIARCHS | 0–24 | 25 | Genesis CPDV and Douay | Explicitly unlocated birthplace of Isaac, unsupported Mamre and traditional-site assumptions |
+| DELIVERANCE | 25–37 | 13 | Exodus CPDV and Douay | Goshen and Rameses often not named within the selected passage; no precise Exodus journey or sea-crossing pin |
+| WILDERNESS | 38–42 | 5 | Exodus CPDV, Douay and Crampon | Marah, Elim, Rephidim, wilderness sites not established by modern coordinates |
+| COVENANT | 43–48 | 6 | Exodus CPDV, Douay and Crampon | Jebel Musa is traditional/contested; edition-safe handling of Exodus 40 mandatory |
+
+**High-priority versification mismatch:** original scene \`biblical:scene:moses:048\` cites **Exodus 40:1–38**, matching the **38 numbered verses** in the installed French Crampon witness. The installed **Douay–Rheims Challoner and CPDV** witnesses instead have **36 numbered verses**. Thus a request for English \`Exodus 40:37–38\` would be invalid, not evidence that the English texts lack narrative closure. The canonical Bible overlay must use witness-specific coordinate ranges and must never manufacture or numerically align these verses. All three source files remain uncollated against named printed editions. See \`data/research/historia-p4-wilderness-sinai-witness-desk-audit.v1.json\`, especially row 48.
+
+The second source batch is \`data/research/historia-p4-deliverance-witness-desk-audit.v1.json\` (13 scenes); the third is \`data/research/historia-p4-wilderness-sinai-witness-desk-audit.v1.json\` (11 scenes). All rows preserve their source scene key, original Atlas-candidate keys and original match classification. \`tests/historia-p4-theatre-citation-contract.mjs\` now locks the 49 desk-triage rows and the 36/38 English/French boundary. **Geographic or publication approvals: 0.**
+
+**Remaining 134 scene rows** begin with WANDERINGS (scene indices 49–56) followed by INCARNATION, MINISTRY, PASSION, RISEN and the apostolic batches. Carry forward the established chronology and witness conventions. Do not promote the scene research into production from citation overlap alone.
