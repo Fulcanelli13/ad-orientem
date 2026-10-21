@@ -25,7 +25,7 @@
     "movements": 37,
     "essentialUnits": 93,
     "briefEditorialContextNotes": 29,
-    "sourceBridgeCandidates": 17,
+    "sourceBridgeCandidates": 16,
     "independentlyReadAndApproved": false
   },
   "displayRules": {
@@ -1974,30 +1974,6 @@
           "publicationApproved": false
         },
         {
-          "kind": "SOURCE_BRIDGE_CANDIDATE",
-          "id": "HS-P3-CF-18",
-          "reference": "Matthew 27:3–10",
-          "purpose": "Judas's response occupies the omitted verses before the selected appearance before Pilate; one optional Matthew reading, not interwoven with John.",
-          "sourceEdition": "cpdv-2009",
-          "comparisonEdition": "dr-challoner",
-          "status": "UNAPPROVED_SOURCE_COORDINATE_REFERENCE",
-          "editorialOwnerId": "HS-P3-CF-18",
-          "p3SourceOwnership": "NEW_INDEPENDENT_SCRIPTURE_SOURCE_BRIDGE_NOT_ORIGINAL_V18_ESSENTIAL",
-          "sourceWitnessBlobSha": {
-            "dr-challoner": "004832d16a49ceca579d674adf94dac9d3902234",
-            "cpdv-2009": "d22f2d5f715731aa3e8fb8c05470f7a01489205e",
-            "crampon-1923": "a73aecf7e76be1657b578390c23007b0cfa4981c"
-          },
-          "sourceWitnessPresence": "THREE_UNCOLLATED_RESEARCH_WITNESSES",
-          "sourceTextFabricationForbidden": true,
-          "researchReadthroughPriority": "P2_OPTIONAL_JUDAS_ACCOUNT",
-          "printedEditionCollationPending": true,
-          "fullOralReadthroughPending": true,
-          "publicationApproved": false,
-          "geographicApproval": false,
-          "proposedScriptureNotAccepted": true
-        },
-        {
           "kind": "SCRIPTURE",
           "id": "H63-02",
           "sourceV18": "Matthew 27:1–26",
@@ -2901,20 +2877,13 @@
       }
     ],
     "originalSourceBridgeCandidatesPreserved": 10,
-    "revisedTotalSourceBridgeCandidates": 17,
+    "revisedTotalSourceBridgeCandidates": 16,
     "printedTextCollationRequired": true,
     "newIndependentSourceBridgesFromBatch": [
       {
         "id": "HS-P3-CF-17",
         "movementId": "HS-M20",
         "ref": "John 1:29–34",
-        "sourceOwner": "P3_INDEPENDENT_RESEARCH_BRIDGE",
-        "publicationApproved": false
-      },
-      {
-        "id": "HS-P3-CF-18",
-        "movementId": "HS-M27",
-        "ref": "Matthew 27:3–10",
         "sourceOwner": "P3_INDEPENDENT_RESEARCH_BRIDGE",
         "publicationApproved": false
       },
@@ -2947,6 +2916,15 @@
         "publicationApproved": false
       }
     ],
-    "researchBatchStatus": "MULTI_MOVEMENT_SOURCE_ADJUDICATION_DRAFT_ONLY"
+    "researchBatchStatus": "MULTI_MOVEMENT_SOURCE_ADJUDICATION_DRAFT_ONLY",
+    "editorialHolds": [
+      {
+        "movementId": "HS-M27",
+        "reference": "Matthew 27:3–10",
+        "state": "UNPLACED_OPTIONAL_SOURCE_REVIEW",
+        "reason": "Cannot insert before or after a single original H63-02 unit spanning Matthew 27:1–2 and 27:11–26 without breaking Matthew chapter order. A future editor may create explicitly source-owned in-unit interleaving only if approved.",
+        "publicationApproved": false
+      }
+    ]
   }
 }
