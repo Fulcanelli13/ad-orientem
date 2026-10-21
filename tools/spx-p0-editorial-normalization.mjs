@@ -95,7 +95,7 @@ export function applyPiusEditorialReview(chapters,overlay){
   }
   expansions++;
  }
- assert(expansions===18);
+ assert(expansions===34);
  return {papalNodes,voiceChanges,unchangedNodes,expandedOpenings:expansions,
   unexpandedOpenings:chapters.length-expansions};
 }
