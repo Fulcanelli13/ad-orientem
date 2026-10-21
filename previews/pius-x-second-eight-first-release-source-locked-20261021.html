@@ -3,7 +3,7 @@
 :root{color-scheme:dark;--ink:#e9dfcf;--muted:#b8b1a4;--gold:#ccb386;--line:#48433b;--base:#080c12}
 *{box-sizing:border-box}html{scroll-behavior:auto}body{background:var(--base);color:var(--ink);margin:0;font-family:Georgia,serif}
 button,select,textarea{font:inherit}button{cursor:pointer}button:focus-visible,select:focus-visible,textarea:focus-visible,a:focus-visible{outline:2px solid #f1d48f;outline-offset:3px}
-header{background:#101721;border-bottom:1px solid var(--line);padding:15px clamp(12px,3vw,42px);display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+header{position:relative;z-index:20;background:#101721;border-bottom:1px solid var(--line);padding:15px clamp(12px,3vw,42px);display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .brand{letter-spacing:.08em;font-variant:small-caps;color:#eee2cc;font-size:20px}.brand small{display:block;font:10px/1.4 system-ui,sans-serif;letter-spacing:.14em;color:#b9a88b;text-transform:uppercase}
 .tools{display:flex;gap:8px;flex-wrap:wrap}.tools select,.tools button{padding:9px 11px;border:1px solid #675d51;color:#ddd3c2;background:#19202a;border-radius:4px;font:12px system-ui,sans-serif}
 main{max-width:1260px;margin:0 auto;padding:15px}
@@ -35,7 +35,7 @@ details p{color:#c7bfaf}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style></head><body>
 <header><div class="brand">Ad Orientem · Saint Pius X<small>First-release dialogue · second eight · review</small></div>
-<div class="tools"><select id="chapters" aria-label="Choose dialogue chapter"></select><button id="lang">FR</button><button id="sourceToggle" aria-expanded="false">Source</button><button id="exportTop">Export ratings</button></div></header>
+<div class="tools"><button id="back">Back</button><select id="chapters" aria-label="Choose dialogue chapter"></select><button id="lang">FR</button><button id="sourceToggle" aria-expanded="false">Source</button><button id="exportTop">Export ratings</button></div></header>
 <main><div class="disclosure">Eight source-bounded editorial dialogue reconstructions, not recorded speech of Pius X. Historical style, doctrine and EN/FR translations remain subject to approval; this is not the published app.</div>
 <section id="stage" class="stage" aria-label="Visual novel review">
 <div class="arch"></div><div class="stage-note" id="stageNote">SOURCE-BOUNDED DIALOGUE · EDITORIAL</div>
@@ -43,7 +43,7 @@ details p{color:#c7bfaf}
 <div class="sprite-fallback" id="spriteFallback">The character artwork is unavailable in this standalone preview.</div>
 <div class="dialogue"><div class="who" id="who">St Pius X · educational reconstruction</div><div class="question" id="question" aria-live="polite"></div><div id="answer" class="answer" aria-live="polite"></div>
 <div class="actions" id="actions"></div><div class="source" id="sourceLine"></div></div></section>
-<div class="underbar"><div id="position">1 / 3 · editorial reading</div><div><button id="back">Back</button> <button id="reset">Restart</button> <button id="reviewToggle" aria-controls="review">Review this dialogue</button></div></div>
+<div class="underbar"><div id="position">1 / 3 · editorial reading</div><div><button id="reset">Restart</button> <button id="reviewToggle" aria-controls="review">Review this dialogue</button></div></div>
 <details id="evidence"><summary>Original source, exact passage and editorial limits</summary><div id="sourceFull"></div></details>
 <details id="review"><summary>Evaluate the conversation</summary><p>Ratings remain in this page until exported; no data is sent to a server.</p><div class="review">
 <label>Pacing<select id="pace"><option value="">Unrated</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></label>
