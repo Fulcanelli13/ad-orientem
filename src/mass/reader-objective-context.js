@@ -18,7 +18,7 @@ export const READER_OBJECTIVE_CONTEXT_ROWS=Object.freeze([
 
 const byBlock=new Map(READER_OBJECTIVE_CONTEXT_ROWS.map(row=>[row.blockId,row]));
 const knownForms=new Set(["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]);
-const sourceCue=id=>/^AO\\.SM\\.C\\d{4}$/.test(String(id??""));
+const sourceCue=id=>/^AO\.SM\.C\d{4}$/.test(String(id??""));
 
 // The canonical cue (not card number, inferred time or Schola playback) owns
 // the chosen block. Return null if a split/conditional/exceptional card does
