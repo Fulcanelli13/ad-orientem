@@ -126,6 +126,14 @@ The 42 possible distinct practices are a **research shortlist**, not a count of 
 
 See `first-pass-260-reconciliation.v1.json` and the three chapter-grouped `identity-triage` files. Every row keeps its original Weiser locator, geography, existing priority and evidence status.
 
+## Normalized calendar associations — all 42 identities
+
+`normalized-temporal-context.v0.json` now assigns **30 date-, feast-, month- or season-associated** customs and **12 local, household, personal or historical/undated** occasions. The 30 include the four provisional customs; the older 38-record projection was 26 seasonal/year and 12 Catholic Life.
+
+Every row explicitly distinguishes a source-related date from a liturgical obligation, calendar precedence, or announced local event. Easter, Advent and Corpus Christi continue to use the Calendar's own day resolution. Name days require the actual personally selected patron; patronal feasts and pilgrimages require local information. No automatic processions, ministerial blessings, alerts, feast ranks, or transferred-date claims were added.
+
+Special cases: Rogations have composite Major and Minor contexts, Las Posadas is regionally described as 16–24 December, Irish Christmas candles as the Christmas Eve/Christmas night span, and St John Baptist bonfires as a local eve custom around 23 June. Dates of related devotional activities remain qualified and may differ by place.
+
 ## First independent source closure — six geographically bounded customs
 
 Evidence beyond Weiser was checked for six of the 42 candidate observations. **These are attested local historical or continuing practices, not publication decisions.** The file `independent-sources-batch01.v1.json` preserves exact evidence, limits, locality and date semantics.
