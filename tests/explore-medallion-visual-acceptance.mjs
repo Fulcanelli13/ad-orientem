@@ -215,6 +215,24 @@ try{
    await graph.waitFor({state:"detached",timeout:10000});
    await page.locator("#ao-find-modular-root [data-mapcn-discover-rail]").waitFor({state:"visible"});
    assert.equal(await page.locator(".aoHeritageSurface .aoFindMap canvas.maplibregl-canvas").count(),1);
+   // P5: custom CTA must open a grouped canonical custom, not a bare
+   // geographic attestation. Verify this at all three accepted viewport sizes.
+   await page.locator("#ao-find-modular-root button[data-network-toggle]").click();
+   await graph.waitFor({state:"visible"});
+   await graph.locator("select[data-network-kind]").selectOption("custom");
+   const customCta=graph.locator(".aoNetworkCurrent [data-network-open-custom]");
+   await customCta.waitFor({state:"visible"});
+   const canonicalId=await customCta.getAttribute("data-network-open-custom");
+   await customCta.click();
+   const folio=page.locator('#ao-find-modular-root .aoExploreTraditionSheet[data-explore-custom-id="'+canonicalId+'"]');
+   await folio.waitFor({state:"visible",timeout:12000});
+   assert.ok(await folio.locator("a[href^='https://']").count()>0,
+     "Canonical custom handoff must preserve independently cited publishers");
+   assert.equal(await graph.count(),0);
+   await page.screenshot({path:resolve(out,"explore-"+width+"-network-custom-folio.png"),fullPage:false});
+   assert.equal(await page.evaluate(()=>globalThis.AO_FIND_APP_V1.open({lens:"heritage"})),true);
+   await page.locator("#ao-find-modular-root [data-mapcn-discover-rail]").waitFor({state:"visible"});
+   assert.equal(await page.locator(".aoHeritageSurface .aoFindMap canvas.maplibregl-canvas").count(),1);
    // D is a same-map journey folio: no new page and no manufactured route
    // lines. Exercise a historical source-owned 3-stage pilgrimage.
    await page.locator("#ao-find-modular-root [data-explore-journey-open]").click();
