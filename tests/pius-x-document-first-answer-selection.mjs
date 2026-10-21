@@ -18,7 +18,7 @@ const {createSharedQuestionRouter}=await import(pathToFileURL(resolve(root+'src/
 const {createHybridQuestionRouter}=await import(pathToFileURL(resolve(root+'src/learn/living-church-hybrid-question-router.js')).href);
 assert.equal(catalog.topics.length,186);
 assert.equal(pointers.records.length,12);
-assert.equal(registry.expectedRouterCommit,'b5dd7272e503236cab3635081d93469e6a3ebc34');
+assert.equal(registry.expectedRouterCommit,'d25651b7b77ea5331bfc8485717cb00bb0047811');
 const engines={
  shared:createSharedQuestionRouter(catalog,{historicalPointers:pointers}),
  hybrid:createHybridQuestionRouter(catalog,symbols,{historicalPointers:pointers})
