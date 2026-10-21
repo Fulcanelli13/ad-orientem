@@ -290,7 +290,7 @@ export function mountScriptureLibrary(root,{
            if(!area.isConnected||!commentaryVisible||lang!=="en")return;
            status.remove();
            if(!nodes.length)area.append(element("p","No source fragment matches these exact verses.","aoScriptureCommentaryDisclosure"));
-           if(nodes.length)mountCatenaMessenger(area,nodes,{language:lang});
+           if(nodes.length)mountCatenaMessenger(area,nodes,{language:lang,fetcher:fetchCommentary});
          }).catch(()=>{if(area.isConnected)status.textContent="Source unavailable; no commentary has been invented.";});
        }else if(isCatenaGospel(location)&&lang==="fr"){
          area.append(element("p","Le commentaire patristique français n’est pas encore intégré. Aucun texte anglais n’est substitué.","aoScriptureCommentaryDisclosure"));
