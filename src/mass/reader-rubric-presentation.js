@@ -11,11 +11,18 @@ const IDENTITY=Object.freeze({
   en:"The priest makes a sign of the Cross with the paten, places the Host on the corporal and sets the paten aside.",
   fr:"Le prêtre trace un signe de croix avec la patène, dépose l’Hostie sur le corporal et met la patène de côté."}),
  "AO.SM.C0117":frozen({ids:frozen(["AO.RUB.C0117.01","AO.RUB.C0117.02"]),
-  en:"The priest raises his eyes and hands, then joins his hands.",
-  fr:"Le prêtre élève les yeux et les mains, puis joint les mains."}),
+  // The source bracket also records the priest standing erect; do not erase it.
+  en:"The priest stands erect, raises his eyes and hands, then joins his hands.",
+  fr:"Le prêtre se redresse, élève les yeux et les mains, puis joint les mains."}),
+ "AO.SM.C0115":frozen({ids:frozen(["AO.RUB.C0115.01","AO.RUB.C0115.02","AO.RUB.C0115.03"]),
+  en:"The priest makes a sign of the Cross with the chalice, places it on the altar and covers it.",
+  fr:"Le prêtre trace un signe de croix avec le calice, le pose sur l’autel et le recouvre."}),
  "AO.SM.C0174":frozen({ids:frozen(["AO.RUB.C0174.01","AO.RUB.C0174.02","AO.RUB.C0174.04","AO.RUB.C0174.05"]),
   en:"The priest genuflects, elevates the Sacred Host, replaces It upon the corporal and genuflects again.",
   fr:"Le prêtre fait la génuflexion, élève la sainte Hostie, la repose sur le corporal et fait de nouveau la génuflexion."}),
+ "AO.SM.C0181":frozen({ids:frozen(["AO.RUB.C0181.01","AO.RUB.C0181.02","AO.RUB.C0181.04","AO.RUB.C0181.05"]),
+  en:"The priest genuflects, elevates the chalice, replaces and covers it, then genuflects again.",
+  fr:"Le prêtre fait la génuflexion, élève le calice, le repose et le recouvre, puis fait de nouveau la génuflexion."}),
  "AO.SM.C0262":frozen({ids:frozen(["AO.RUB.C0262.01","AO.RUB.C0262.02"]),
   en:"The priest kisses the altar and rises facing it.",
   fr:"Le prêtre baise l’autel et se redresse face à lui."}),
@@ -54,7 +61,8 @@ function result(cue,rule,language){
 }
 /**
  * Some source-only RUBRIC rows contain an action *list*, not printed liturgical
- * Latin. Reformulate only five fully witnessed sequences as short Missal prose.
+ * Latin. Reformulate only the seven explicitly witnessed sequences as short
+ * Missal prose; withhold mixed-role Solemn chalice sequences.
  * No additional gesture or meaning is inferred.
  */
 export function conciseMissalSourceRubric(paragraph,{form,language="en"}={}){
@@ -62,6 +70,11 @@ export function conciseMissalSourceRubric(paragraph,{form,language="en"}={}){
      !Array.isArray(paragraph.sourceCueIds)||paragraph.sourceCueIds.length!==1)
      return null;
   const cue=paragraph.sourceCueIds[0],rule=IDENTITY[cue];
+  // In Solemn Mass the chalice covering rubric can belong to the deacon.
+  // The generic priest event is explicitly withheld in the certified bridge.
+  // Fall back to the existing source witness rather than rewriting the role.
+  if(String(form).toUpperCase()==="SOLEMN"&&
+     (cue==="AO.SM.C0115"||cue==="AO.SM.C0181"))return null;
   if(!rule||!approved(paragraph.publishedMissalRubrics,cue,rule.ids))return null;
   return result(cue,rule,language);
 }
