@@ -174,6 +174,11 @@ try{
    assert.ok(Number(await network.locator(".aoNetworkMetrics strong").nth(1).textContent())>0,
       "P5 requires real sourced connections, not decorative demo edges");
    assert.ok(await network.locator("svg .aoSacredNetworkEdge").count()>0);
+   const graphExtent=await network.locator(".aoSacredNetworkGraphScroll").evaluate(el=>{
+     const r=el.getBoundingClientRect();const s=el.querySelector("svg")?.getBoundingClientRect();
+     return {containerHeight:r.height,svgHeight:s?.height||0,scrollHeight:el.scrollHeight};});
+   assert.ok(graphExtent.containerHeight>=260&&graphExtent.svgHeight>=260,
+     "Semantic network graphic must not collapse in a flex scroller: "+JSON.stringify(graphExtent));
    assert.ok(await network.locator(".aoNetworkEdgeCard a[href^='https://']").count()>0);
    assert.equal(await page.locator(".aoHeritageSurface .aoFindMap canvas.maplibregl-canvas").count(),1);
    const netBox=await network.evaluate(el=>{const r=el.getBoundingClientRect();

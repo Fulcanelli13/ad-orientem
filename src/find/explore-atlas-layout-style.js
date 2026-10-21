@@ -1012,6 +1012,7 @@ export const EXPLORE_ATLAS_LAYOUT_STYLE = `
  color:#ebd9b9;font-size:23px;cursor:pointer}
 .aoSacredNetworkBody{overflow:auto;overscroll-behavior:contain;min-height:0;
  flex:1;display:flex;flex-direction:column;padding:14px 15px 21px;scrollbar-color:#807154 #15242e}
+.aoSacredNetworkBody > *{flex-shrink:0}
 .aoSacredNetworkIntro{order:0}
 .aoNetworkSelected{order:1}
 .aoSacredNetworkGraphScroll{order:2}
