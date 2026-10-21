@@ -1,0 +1,467 @@
+{
+  "schema": "ao.historia.p4.literary-seam-review-queue.v1",
+  "date": "2026-10-21",
+  "status": "ISSUE_TRIAGE_ONLY_NOT_A_VERSE_BY_VERSE_ORAL_READ",
+  "source": {
+    "path": "data/research/historia-salutis-v18-continuous-reading-proof.v1.json",
+    "branch": "research/historia-p4-continuity-theatre-20261021",
+    "blobSha": "7548fc8c80daa5d7c6bb85e1bb2277fbac862e81"
+  },
+  "notes": [
+    "Preserves current P3 verse selections; suggestions must not silently add biblical text.",
+    "Witness edition collation and oral read-through remain open for every movement.",
+    "Gospel accounts and Catholic/Challoner/Crampon verse numbering must not be silently harmonised.",
+    "Editorial context is not represented as Scripture in the theatre."
+  ],
+  "counts": {
+    "targetMovements": 18,
+    "issueCount": 35,
+    "oralApproved": 0,
+    "publicationApproved": 0
+  },
+  "movements": [
+    {
+      "movementId": "HS-M20",
+      "title": "The Forerunner and first disciples",
+      "scriptureSpans": [
+        "Matthew 3:1–6",
+        "Matthew 3:11–17",
+        "Mark 1:14–15",
+        "John 1:35–51"
+      ],
+      "heldSourceBridges": [],
+      "editorialContextUnitIds": [
+        "H51-02"
+      ],
+      "reviewFindings": [
+        "Matthew 3:1–6 to 3:11–17 omits 3:7–10; test Johannine preparation and baptism handoff without invented summary.",
+        "Matthew 4:1–11 remains context-only. Verify narrative transition to Mark 1:14–15 and John 1:35–51; do not turn omissions into a synthetic chronology."
+      ],
+      "literaryDeskState": "NO_MOVEMENT_LEVEL_DESK_PASS",
+      "needsCatholicWitnessSequentialRead": true,
+      "parallelAccountCollationAccepted": false,
+      "sourceOmissionSufficiencySignedOff": false,
+      "readAloudAccepted": false,
+      "publicationApproved": false,
+      "decision": "HOLD_PENDING_VERSE_BY_VERSE_REVIEW"
+    },
+    {
+      "movementId": "HS-M21",
+      "title": "The Kingdom in Christ's teaching and signs",
+      "scriptureSpans": [
+        "Matthew 5:1–12",
+        "Matthew 6:9–15"
+      ],
+      "heldSourceBridges": [],
+      "editorialContextUnitIds": [
+        "H54-02"
+      ],
+      "reviewFindings": [
+        "M21 title promises teaching and signs, but Mark 2:1–12 is currently editorial context, not selected biblical reading. Test truthfulness of title and necessity of one narrated sign.",
+        "Retain full Beatitudes and Lord's Prayer according to the present locks; check whether Matthew 6:9–15 begins sufficiently for readers."
+      ],
+      "literaryDeskState": "NO_MOVEMENT_LEVEL_DESK_PASS",
+      "needsCatholicWitnessSequentialRead": true,
+      "parallelAccountCollationAccepted": false,
+      "sourceOmissionSufficiencySignedOff": false,
+      "readAloudAccepted": false,
+      "publicationApproved": false,
+      "decision": "HOLD_PENDING_VERSE_BY_VERSE_REVIEW"
+    },
+    {
+      "movementId": "HS-M22",
+      "title": "Christ the Bread of Life",
+      "scriptureSpans": [
+        "John 6:26–35",
+        "John 6:47–59"
+      ],
+      "heldSourceBridges": [],
+      "editorialContextUnitIds": [
+        "H56-01"
+      ],
+      "reviewFindings": [
+        "John 6:1–15 (loaves) is context-only, while the Bread of Life discourse begins at John 6:26. Review whether the sign must be Scripture or an explicitly labelled editorial lead-in.",
+        "Check John 6:35 to 6:47 gap for omitted objection and agency; no automatic insertion."
+      ],
+      "literaryDeskState": "NO_MOVEMENT_LEVEL_DESK_PASS",
+      "needsCatholicWitnessSequentialRead": true,
+      "parallelAccountCollationAccepted": false,
+      "sourceOmissionSufficiencySignedOff": false,
+      "readAloudAccepted": false,
+      "publicationApproved": false,
+      "decision": "HOLD_PENDING_VERSE_BY_VERSE_REVIEW"
+    },
+    {
+      "movementId": "HS-M23",
+      "title": "Peter's confession and the Transfiguration",
+      "scriptureSpans": [
+        "Matthew 16:13–28",
+        "Matthew 17:1–9"
+      ],
+      "heldSourceBridges": [],
+      "editorialContextUnitIds": [],
+      "reviewFindings": [
+        "Matthew 16:13–28 precedes 17:1–9; assess the six-day transition and the omission of 17:10–13.",
+        "Keep Peter's confession, Passion prediction and Transfiguration distinct in visual staging."
+      ],
+      "literaryDeskState": "NO_MOVEMENT_LEVEL_DESK_PASS",
+      "needsCatholicWitnessSequentialRead": true,
+      "parallelAccountCollationAccepted": false,
+      "sourceOmissionSufficiencySignedOff": false,
+      "readAloudAccepted": false,
+      "publicationApproved": false,
+      "decision": "HOLD_PENDING_VERSE_BY_VERSE_REVIEW"
+    },
+    {
+      "movementId": "HS-M24",
+      "title": "The approach to Jerusalem",
+      "scriptureSpans": [
+        "John 11:1–7",
+        "John 11:14–17",
+        "John 11:20–27",
+        "John 11:32–35",
+        "John 11:38–44"
+      ],
+      "heldSourceBridges": [
+        {
+          "id": "HS-CF-05",
+          "reference": "John 11:45–53"
+        }
+      ],
+      "editorialContextUnitIds": [],
+      "reviewFindings": [
+        "John 11:1–44 has multiple selected discontinuous ranges; read every seam for agency and causal continuity.",
+        "John 11:45–53 plot against Christ remains HS-CF-05 candidate; determine whether the Passover approach needs this Scripture bridge."
+      ],
+      "literaryDeskState": "NO_MOVEMENT_LEVEL_DESK_PASS",
+      "needsCatholicWitnessSequentialRead": true,
+      "parallelAccountCollationAccepted": false,
+      "sourceOmissionSufficiencySignedOff": false,
+      "readAloudAccepted": false,
+      "publicationApproved": false,
+      "decision": "HOLD_PENDING_VERSE_BY_VERSE_REVIEW"
+    },
+    {
+      "movementId": "HS-M25",
+      "title": "The King's entry into Jerusalem",
+      "scriptureSpans": [
+        "Matthew 21:1–11"
+      ],
+      "heldSourceBridges": [],
+      "editorialContextUnitIds": [],
+      "reviewFindings": [
+        "Matthew 21:1–11 supplies the royal entry. Test segue to Last Supper without assuming an exact chronology or inventing Holy Week dialogue."
+      ],
+      "literaryDeskState": "NO_MOVEMENT_LEVEL_DESK_PASS",
+      "needsCatholicWitnessSequentialRead": true,
+      "parallelAccountCollationAccepted": false,
+      "sourceOmissionSufficiencySignedOff": false,
+      "readAloudAccepted": false,
+      "publicationApproved": false,
+      "decision": "HOLD_PENDING_VERSE_BY_VERSE_REVIEW"
+    },
+    {
+      "movementId": "HS-M26",
+      "title": "The Last Supper and Christ's final teaching",
+      "scriptureSpans": [
+        "Luke 22:7–20"
+      ],
+      "heldSourceBridges": [
+        {
+          "id": "HS-CF-09",
+          "reference": "John 14:16–17"
+        }
+      ],
+      "editorialContextUnitIds": [],
+      "reviewFindings": [
+        "Luke 22:7–20 selected for Eucharistic institution. John 14:16–17 is HS-CF-09 proposed bridge, not an approved interleaved Gospel speech.",
+        "Keep New Covenant theological relation distinct from historical-place certainty and separate evangelist voice."
+      ],
+      "literaryDeskState": "NO_MOVEMENT_LEVEL_DESK_PASS",
+      "needsCatholicWitnessSequentialRead": true,
+      "parallelAccountCollationAccepted": false,
+      "sourceOmissionSufficiencySignedOff": false,
+      "readAloudAccepted": false,
+      "publicationApproved": false,
+      "decision": "HOLD_PENDING_VERSE_BY_VERSE_REVIEW"
+    },
+    {
+      "movementId": "HS-M27",
+      "title": "Gethsemane, betrayal and trial",
+      "scriptureSpans": [
+        "Matthew 26:36–46",
+        "Matthew 26:47–56",
+        "Matthew 26:57–75",
+        "Matthew 27:1–2",
+        "Matthew 27:11–26"
+      ],
+      "heldSourceBridges": [],
+      "editorialContextUnitIds": [
+        "H63-04"
+      ],
+      "reviewFindings": [
+        "Matthew 26:36–75 and 27:1–2,11–26 jump between interrogation phases. Check omitted setup, interrogators and Pilate scene agency.",
+        "John 19:1–16 is editorial-context-only, not automatically stitched into Matthew; preserve distinct Gospel accounts."
+      ],
+      "literaryDeskState": "NO_MOVEMENT_LEVEL_DESK_PASS",
+      "needsCatholicWitnessSequentialRead": true,
+      "parallelAccountCollationAccepted": false,
+      "sourceOmissionSufficiencySignedOff": false,
+      "readAloudAccepted": false,
+      "publicationApproved": false,
+      "decision": "HOLD_PENDING_VERSE_BY_VERSE_REVIEW"
+    },
+    {
+      "movementId": "HS-M28",
+      "title": "The sacrifice on Calvary",
+      "scriptureSpans": [
+        "John 19:17–30"
+      ],
+      "heldSourceBridges": [
+        {
+          "id": "HS-CF-06",
+          "reference": "John 19:38–42"
+        }
+      ],
+      "editorialContextUnitIds": [],
+      "reviewFindings": [
+        "John 19:17–30 ends with death; John 19:38–42 burial remains HS-CF-06, to test before reading the empty tomb.",
+        "Crucifixion must remain Scripture-led and not be presented as a geocoded exact event site simply because traditional sites have coordinates."
+      ],
+      "literaryDeskState": "NO_MOVEMENT_LEVEL_DESK_PASS",
+      "needsCatholicWitnessSequentialRead": true,
+      "parallelAccountCollationAccepted": false,
+      "sourceOmissionSufficiencySignedOff": false,
+      "readAloudAccepted": false,
+      "publicationApproved": false,
+      "decision": "HOLD_PENDING_VERSE_BY_VERSE_REVIEW"
+    },
+    {
+      "movementId": "HS-M29",
+      "title": "The risen Lord and his witnesses",
+      "scriptureSpans": [
+        "John 20:1–3",
+        "John 20:6–9",
+        "John 20:11–18",
+        "John 20:19–29"
+      ],
+      "heldSourceBridges": [],
+      "editorialContextUnitIds": [
+        "H65-03"
+      ],
+      "reviewFindings": [
+        "John 20:1–3,6–9,11–18 has gaps at 20:4–5 and 20:10; check who sees and who returns.",
+        "Luke 24:13–35 Emmaus remains context-only, not part of selected continuous reading; check whether Resurrection witness coverage remains sufficient."
+      ],
+      "literaryDeskState": "NO_MOVEMENT_LEVEL_DESK_PASS",
+      "needsCatholicWitnessSequentialRead": true,
+      "parallelAccountCollationAccepted": false,
+      "sourceOmissionSufficiencySignedOff": false,
+      "readAloudAccepted": false,
+      "publicationApproved": false,
+      "decision": "HOLD_PENDING_VERSE_BY_VERSE_REVIEW"
+    },
+    {
+      "movementId": "HS-M30",
+      "title": "The Ascension and promised mission",
+      "scriptureSpans": [
+        "Acts 1:6–12"
+      ],
+      "heldSourceBridges": [
+        {
+          "id": "HS-CF-07",
+          "reference": "Acts 1:3–5"
+        }
+      ],
+      "editorialContextUnitIds": [],
+      "reviewFindings": [
+        "Acts 1:3–5 is HS-CF-07 bridge; check that Acts 1:6–12 does not open mid-conversation without adequate context.",
+        "Map the Ascension site, if at all, as traditional/regionally qualified rather than certain."
+      ],
+      "literaryDeskState": "NO_MOVEMENT_LEVEL_DESK_PASS",
+      "needsCatholicWitnessSequentialRead": true,
+      "parallelAccountCollationAccepted": false,
+      "sourceOmissionSufficiencySignedOff": false,
+      "readAloudAccepted": false,
+      "publicationApproved": false,
+      "decision": "HOLD_PENDING_VERSE_BY_VERSE_REVIEW"
+    },
+    {
+      "movementId": "HS-M31",
+      "title": "Pentecost and the first Church",
+      "scriptureSpans": [
+        "Acts 2:1–8",
+        "Acts 2:11–18",
+        "Acts 2:21",
+        "Acts 2:37–41",
+        "Acts 2:42–47",
+        "Acts 7:54–59"
+      ],
+      "heldSourceBridges": [
+        {
+          "id": "HS-CF-08",
+          "reference": "Acts 7:51–53"
+        }
+      ],
+      "editorialContextUnitIds": [],
+      "reviewFindings": [
+        "Acts 2 selection omits several intervening verses; verify Pentecost, Peter's speech and response remain coherent.",
+        "Acts 7:51–53 HS-CF-08 precedes Stephen's martyrdom at 7:54–59; compare Challoner versus Crampon Acts 7:59–60 numbering before wording claims."
+      ],
+      "literaryDeskState": "NO_MOVEMENT_LEVEL_DESK_PASS",
+      "needsCatholicWitnessSequentialRead": true,
+      "parallelAccountCollationAccepted": false,
+      "sourceOmissionSufficiencySignedOff": false,
+      "readAloudAccepted": false,
+      "publicationApproved": false,
+      "decision": "HOLD_PENDING_VERSE_BY_VERSE_REVIEW"
+    },
+    {
+      "movementId": "HS-M32",
+      "title": "Saul and the Gospel to the Gentiles",
+      "scriptureSpans": [
+        "Acts 9:1–11",
+        "Acts 9:17–22",
+        "Acts 10:1–6",
+        "Acts 10:9–16",
+        "Acts 10:19–20",
+        "Acts 10:24",
+        "Acts 10:28–29",
+        "Acts 10:33–48"
+      ],
+      "heldSourceBridges": [],
+      "editorialContextUnitIds": [],
+      "reviewFindings": [
+        "Acts 9:1–11 and 9:17–22 omit Ananias narrative details; ensure who acts and Saul's baptism are not left unintelligible.",
+        "Acts 10 is highly discontinuous; verify Cornelius's summons, Peter's vision, meeting and Holy Ghost descending with no false geography or harmonization."
+      ],
+      "literaryDeskState": "NO_MOVEMENT_LEVEL_DESK_PASS",
+      "needsCatholicWitnessSequentialRead": true,
+      "parallelAccountCollationAccepted": false,
+      "sourceOmissionSufficiencySignedOff": false,
+      "readAloudAccepted": false,
+      "publicationApproved": false,
+      "decision": "HOLD_PENDING_VERSE_BY_VERSE_REVIEW"
+    },
+    {
+      "movementId": "HS-M33",
+      "title": "Antioch, apostolic missions and the Council",
+      "scriptureSpans": [
+        "Acts 11:19–26",
+        "Acts 13:1–5",
+        "Acts 15:1–2",
+        "Acts 15:5–11",
+        "Acts 15:13–20",
+        "Acts 15:22–29"
+      ],
+      "heldSourceBridges": [],
+      "editorialContextUnitIds": [],
+      "reviewFindings": [
+        "Acts 11, 13 and 15 form large time jumps; ensure Council of Jerusalem is not presented as directly following initial Antioch commission without any intervening mission.",
+        "Keep apostolic journeys optional/canonical Atlas destinations, not a speculative exact route through every modern point."
+      ],
+      "literaryDeskState": "NO_MOVEMENT_LEVEL_DESK_PASS",
+      "needsCatholicWitnessSequentialRead": true,
+      "parallelAccountCollationAccepted": false,
+      "sourceOmissionSufficiencySignedOff": false,
+      "readAloudAccepted": false,
+      "publicationApproved": false,
+      "decision": "HOLD_PENDING_VERSE_BY_VERSE_REVIEW"
+    },
+    {
+      "movementId": "HS-M34",
+      "title": "The Gospel proclaimed in Rome",
+      "scriptureSpans": [
+        "Acts 28:23–31"
+      ],
+      "heldSourceBridges": [
+        {
+          "id": "HS-CF-10",
+          "reference": "Acts 19:21"
+        },
+        {
+          "id": "HS-CF-11",
+          "reference": "Acts 28:16"
+        }
+      ],
+      "editorialContextUnitIds": [],
+      "reviewFindings": [
+        "Acts 19:21 and 28:16 are HS-CF-10 and HS-CF-11; test whether Rome intention and arrival are indispensable to Acts 28:23–31.",
+        "Rome city context may be mapped using canonical Atlas authority, without adding an invented archaeological path."
+      ],
+      "literaryDeskState": "NO_MOVEMENT_LEVEL_DESK_PASS",
+      "needsCatholicWitnessSequentialRead": true,
+      "parallelAccountCollationAccepted": false,
+      "sourceOmissionSufficiencySignedOff": false,
+      "readAloudAccepted": false,
+      "publicationApproved": false,
+      "decision": "HOLD_PENDING_VERSE_BY_VERSE_REVIEW"
+    },
+    {
+      "movementId": "HS-M35",
+      "title": "Christ and the Lamb in heavenly vision",
+      "scriptureSpans": [
+        "Revelation 5:1–14"
+      ],
+      "heldSourceBridges": [],
+      "editorialContextUnitIds": [
+        "H75-01"
+      ],
+      "reviewFindings": [
+        "Revelation 4 heavenly throne is editorial context-only; Revelation 5 Lamb is selected. Check whether the vision begins with adequate scriptural setting.",
+        "Apocalyptic vision must switch away from the terrestrial geographical map."
+      ],
+      "literaryDeskState": "NO_MOVEMENT_LEVEL_DESK_PASS",
+      "needsCatholicWitnessSequentialRead": true,
+      "parallelAccountCollationAccepted": false,
+      "sourceOmissionSufficiencySignedOff": false,
+      "readAloudAccepted": false,
+      "publicationApproved": false,
+      "decision": "HOLD_PENDING_VERSE_BY_VERSE_REVIEW"
+    },
+    {
+      "movementId": "HS-M36",
+      "title": "The final conflict and judgment",
+      "scriptureSpans": [
+        "Revelation 19:11–21",
+        "Revelation 20:1–15"
+      ],
+      "heldSourceBridges": [],
+      "editorialContextUnitIds": [
+        "H76-03"
+      ],
+      "reviewFindings": [
+        "Revelation 12 is editorial context-only and Revelation 19–20 selected; check whether the final conflict and judgment are intelligible without falsifying visionary sequence.",
+        "Treat figures, times and places as apocalyptic vision, not dateable events on a modern route."
+      ],
+      "literaryDeskState": "NO_MOVEMENT_LEVEL_DESK_PASS",
+      "needsCatholicWitnessSequentialRead": true,
+      "parallelAccountCollationAccepted": false,
+      "sourceOmissionSufficiencySignedOff": false,
+      "readAloudAccepted": false,
+      "publicationApproved": false,
+      "decision": "HOLD_PENDING_VERSE_BY_VERSE_REVIEW"
+    },
+    {
+      "movementId": "HS-M37",
+      "title": "The New Creation",
+      "scriptureSpans": [
+        "Revelation 21:1–7",
+        "Revelation 22:1–5"
+      ],
+      "heldSourceBridges": [],
+      "editorialContextUnitIds": [],
+      "reviewFindings": [
+        "Revelation 21:1–7 and 22:1–5 are selected, but the broader canonical book continues; ensure theatre ending does not falsely assert these are the last verses.",
+        "Preserve the New Creation's visionary genre, including no terrestrial coordinates."
+      ],
+      "literaryDeskState": "NO_MOVEMENT_LEVEL_DESK_PASS",
+      "needsCatholicWitnessSequentialRead": true,
+      "parallelAccountCollationAccepted": false,
+      "sourceOmissionSufficiencySignedOff": false,
+      "readAloudAccepted": false,
+      "publicationApproved": false,
+      "decision": "HOLD_PENDING_VERSE_BY_VERSE_REVIEW"
+    }
+  ]
+}
