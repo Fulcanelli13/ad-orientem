@@ -12,7 +12,8 @@
     "The 1910 Quam singulari source is a dicastery decree reprint with papal approval, not Pius X first-person writing.",
     "Salzano manuscript/editorial question numbering is transcription-specific; do not call it definitive printed pagination.",
     "The 1905 fasting and historic ecclesiastical discipline must never be stated as current Church law.",
-    "Question routing does not certify theological sufficiency or app publication; each link is source-navigation-only."
+    "Question routing does not certify theological sufficiency or app publication; each link is source-navigation-only.",
+    "SPX-PILOT-13 and SPX-PILOT-14 are additional passage-specific documentary destinations. They do not replace SPX-PILOT-08 (adult catechesis §§15,24–25) or SPX-PILOT-01 (papal accession §§1–4). Their separate research provenance is the PR #1458 three-question benchmark."
   ],
   "records": [
     {
@@ -113,6 +114,26 @@
       "witnessClassification": "PAPALLY_APPROVED_DICASTERY_DECREE_REPRINT",
       "sourceAttestation": "PASSAGE_SCREEN_ONLY_NOT_ORIGINAL_FACSIMILE_COLLATED",
       "researchSource": "https://github.com/Fulcanelli13/ad-orientem/blob/formation/1457-pius-x-conversation-evidence/data/learn/research/pius-x-proof-of-answerability-12case-20261019.v1.json",
+      "approvedReply": false
+    },
+    {
+      "id": "SPX-PILOT-13",
+      "sourceResearchId": "SPX.UNSCRIPTED.ACERBO.01",
+      "originalDocumentUrl": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html",
+      "sourceLocator": "Acerbo nimis §§12–14",
+      "witnessClassification": "PAPAL_AUTHORED_ENCYCLICAL",
+      "sourceAttestation": "PASSAGE_SCREEN_ONLY_NOT_ORIGINAL_FACSIMILE_COLLATED",
+      "researchSource": "https://github.com/Fulcanelli13/ad-orientem/blob/formation/1457-pius-x-conversation-evidence/data/learn/research/pius-x-document-first-unscripted-bilingual-probes-20261021.v1.json",
+      "approvedReply": false
+    },
+    {
+      "id": "SPX-PILOT-14",
+      "sourceResearchId": "SPX.UNSCRIPTED.ESUPREMI.01",
+      "originalDocumentUrl": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+      "sourceLocator": "E supremi §13",
+      "witnessClassification": "PAPAL_AUTHORED_ENCYCLICAL",
+      "sourceAttestation": "PASSAGE_SCREEN_ONLY_NOT_ORIGINAL_FACSIMILE_COLLATED",
+      "researchSource": "https://github.com/Fulcanelli13/ad-orientem/blob/formation/1457-pius-x-conversation-evidence/data/learn/research/pius-x-document-first-unscripted-bilingual-probes-20261021.v1.json",
       "approvedReply": false
     }
   ]
