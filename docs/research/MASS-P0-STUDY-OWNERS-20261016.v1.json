@@ -1,0 +1,482 @@
+{
+  "schema": "AO_MASS_P0_STUDY_OWNER_CROSSWALK_V1",
+  "status": "OWNER_ID_RECONCILIATION_NOT_MANUSCRIPT_APPROVAL",
+  "provenance": {
+    "mainCommit": "7d88a0f193d947565259d8a41ed3c53aa38d1980",
+    "formationBlobSha": "797bf3321338cf44e3d28a908f0148543f97fb81",
+    "mysteryResearchOwnerPr": 1193
+  },
+  "summary": {
+    "formationStages": 8,
+    "mysteryLiturgicalOwners": 39,
+    "mysteryWithFormationLink": 39,
+    "mysteryUnpublished": 39,
+    "formationalStageIdentityMappedToMysteryOwnerCount": 39,
+    "mysteryManuscriptsApprovedForPublication": 0
+  },
+  "formation": [
+    {
+      "stageId": "MF01",
+      "canonicalOwner": "data/learn/mass-formation-campion.v1.json",
+      "label": "The shape of the Mass",
+      "stageContentAuthority": "EXISTING_PUBLISHED_FORMATION",
+      "mappedMysteryOwnerIds": [
+        "AO.CARD.001",
+        "AO.CARD.002",
+        "AO.CARD.003",
+        "AO.CARD.004",
+        "AO.CARD.005",
+        "AO.CARD.006",
+        "AO.CARD.007",
+        "AO.CARD.008",
+        "AO.CARD.009"
+      ],
+      "studyContentMergeAllowed": false
+    },
+    {
+      "stageId": "MF02",
+      "canonicalOwner": "data/learn/mass-formation-campion.v1.json",
+      "label": "The body at prayer",
+      "stageContentAuthority": "EXISTING_PUBLISHED_FORMATION",
+      "mappedMysteryOwnerIds": [],
+      "studyContentMergeAllowed": false
+    },
+    {
+      "stageId": "MF03",
+      "canonicalOwner": "data/learn/mass-formation-campion.v1.json",
+      "label": "The Offertory and your offering",
+      "stageContentAuthority": "EXISTING_PUBLISHED_FORMATION",
+      "mappedMysteryOwnerIds": [
+        "AO.CARD.010",
+        "AO.CARD.011"
+      ],
+      "studyContentMergeAllowed": false
+    },
+    {
+      "stageId": "MF04",
+      "canonicalOwner": "data/learn/mass-formation-campion.v1.json",
+      "label": "Inside the Roman Canon",
+      "stageContentAuthority": "EXISTING_PUBLISHED_FORMATION",
+      "mappedMysteryOwnerIds": [
+        "AO.CARD.012",
+        "AO.CARD.013",
+        "AO.CANON.01",
+        "AO.CANON.02",
+        "AO.CANON.03",
+        "AO.CANON.04",
+        "AO.CANON.05"
+      ],
+      "studyContentMergeAllowed": false
+    },
+    {
+      "stageId": "MF05",
+      "canonicalOwner": "data/learn/mass-formation-campion.v1.json",
+      "label": "What changes at the Consecration",
+      "stageContentAuthority": "EXISTING_PUBLISHED_FORMATION",
+      "mappedMysteryOwnerIds": [
+        "AO.CANON.06",
+        "AO.CANON.07"
+      ],
+      "studyContentMergeAllowed": false
+    },
+    {
+      "stageId": "MF06",
+      "canonicalOwner": "data/learn/mass-formation-campion.v1.json",
+      "label": "Is the Mass another Calvary?",
+      "stageContentAuthority": "EXISTING_PUBLISHED_FORMATION",
+      "mappedMysteryOwnerIds": [
+        "AO.CANON.08",
+        "AO.CANON.09",
+        "AO.CANON.10",
+        "AO.CANON.11",
+        "AO.CANON.12",
+        "AO.CANON.13",
+        "AO.CANON.14"
+      ],
+      "studyContentMergeAllowed": false
+    },
+    {
+      "stageId": "MF07",
+      "canonicalOwner": "data/learn/mass-formation-campion.v1.json",
+      "label": "Why the priest must receive",
+      "stageContentAuthority": "EXISTING_PUBLISHED_FORMATION",
+      "mappedMysteryOwnerIds": [
+        "AO.CARD.019",
+        "AO.CARD.020",
+        "AO.CARD.021",
+        "AO.CARD.022",
+        "AO.CARD.023",
+        "AO.CARD.024",
+        "AO.CARD.025"
+      ],
+      "studyContentMergeAllowed": false
+    },
+    {
+      "stageId": "MF08",
+      "canonicalOwner": "data/learn/mass-formation-campion.v1.json",
+      "label": "Thanksgiving and being sent",
+      "stageContentAuthority": "EXISTING_PUBLISHED_FORMATION",
+      "mappedMysteryOwnerIds": [
+        "AO.CARD.026",
+        "AO.CARD.027",
+        "AO.CARD.028",
+        "AO.CARD.029",
+        "AO.CARD.030"
+      ],
+      "studyContentMergeAllowed": false
+    }
+  ],
+  "mystery": [
+    {
+      "ownerId": "AO.CARD.001",
+      "formationChapter": "MF01",
+      "editorialState": "NOT_APPROVED",
+      "sourceOwner": "PR #1193 / Mystery of the Mass",
+      "sourcePublicationAllowed": false,
+      "originalManuscriptRetained": true,
+      "reconciliationState": "FORMATION_ID_LINKED_NOT_CONTENT_CERTIFIED"
+    },
+    {
+      "ownerId": "AO.CARD.002",
+      "formationChapter": "MF01",
+      "editorialState": "NOT_APPROVED",
+      "sourceOwner": "PR #1193 / Mystery of the Mass",
+      "sourcePublicationAllowed": false,
+      "originalManuscriptRetained": true,
+      "reconciliationState": "FORMATION_ID_LINKED_NOT_CONTENT_CERTIFIED"
+    },
+    {
+      "ownerId": "AO.CARD.003",
+      "formationChapter": "MF01",
+      "editorialState": "NOT_APPROVED",
+      "sourceOwner": "PR #1193 / Mystery of the Mass",
+      "sourcePublicationAllowed": false,
+      "originalManuscriptRetained": true,
+      "reconciliationState": "FORMATION_ID_LINKED_NOT_CONTENT_CERTIFIED"
+    },
+    {
+      "ownerId": "AO.CARD.004",
+      "formationChapter": "MF01",
+      "editorialState": "NOT_APPROVED",
+      "sourceOwner": "PR #1193 / Mystery of the Mass",
+      "sourcePublicationAllowed": false,
+      "originalManuscriptRetained": true,
+      "reconciliationState": "FORMATION_ID_LINKED_NOT_CONTENT_CERTIFIED"
+    },
+    {
+      "ownerId": "AO.CARD.005",
+      "formationChapter": "MF01",
+      "editorialState": "NOT_APPROVED",
+      "sourceOwner": "PR #1193 / Mystery of the Mass",
+      "sourcePublicationAllowed": false,
+      "originalManuscriptRetained": true,
+      "reconciliationState": "FORMATION_ID_LINKED_NOT_CONTENT_CERTIFIED"
+    },
+    {
+      "ownerId": "AO.CARD.006",
+      "formationChapter": "MF01",
+      "editorialState": "NOT_APPROVED",
+      "sourceOwner": "PR #1193 / Mystery of the Mass",
+      "sourcePublicationAllowed": false,
+      "originalManuscriptRetained": true,
+      "reconciliationState": "FORMATION_ID_LINKED_NOT_CONTENT_CERTIFIED"
+    },
+    {
+      "ownerId": "AO.CARD.007",
+      "formationChapter": "MF01",
+      "editorialState": "NOT_APPROVED",
+      "sourceOwner": "PR #1193 / Mystery of the Mass",
+      "sourcePublicationAllowed": false,
+      "originalManuscriptRetained": true,
+      "reconciliationState": "FORMATION_ID_LINKED_NOT_CONTENT_CERTIFIED"
+    },
+    {
+      "ownerId": "AO.CARD.008",
+      "formationChapter": "MF01",
+      "editorialState": "NOT_APPROVED",
+      "sourceOwner": "PR #1193 / Mystery of the Mass",
+      "sourcePublicationAllowed": false,
+      "originalManuscriptRetained": true,
+      "reconciliationState": "FORMATION_ID_LINKED_NOT_CONTENT_CERTIFIED"
+    },
+    {
+      "ownerId": "AO.CARD.009",
+      "formationChapter": "MF01",
+      "editorialState": "NOT_APPROVED",
+      "sourceOwner": "PR #1193 / Mystery of the Mass",
+      "sourcePublicationAllowed": false,
+      "originalManuscriptRetained": true,
+      "reconciliationState": "FORMATION_ID_LINKED_NOT_CONTENT_CERTIFIED"
+    },
+    {
+      "ownerId": "AO.CARD.010",
+      "formationChapter": "MF03",
+      "editorialState": "NOT_APPROVED",
+      "sourceOwner": "PR #1193 / Mystery of the Mass",
+      "sourcePublicationAllowed": false,
+      "originalManuscriptRetained": true,
+      "reconciliationState": "FORMATION_ID_LINKED_NOT_CONTENT_CERTIFIED"
+    },
+    {
+      "ownerId": "AO.CARD.011",
+      "formationChapter": "MF03",
+      "editorialState": "NOT_APPROVED",
+      "sourceOwner": "PR #1193 / Mystery of the Mass",
+      "sourcePublicationAllowed": false,
+      "originalManuscriptRetained": true,
+      "reconciliationState": "FORMATION_ID_LINKED_NOT_CONTENT_CERTIFIED"
+    },
+    {
+      "ownerId": "AO.CARD.012",
+      "formationChapter": "MF04",
+      "editorialState": "NOT_APPROVED",
+      "sourceOwner": "PR #1193 / Mystery of the Mass",
+      "sourcePublicationAllowed": false,
+      "originalManuscriptRetained": true,
+      "reconciliationState": "FORMATION_ID_LINKED_NOT_CONTENT_CERTIFIED"
+    },
+    {
+      "ownerId": "AO.CARD.013",
+      "formationChapter": "MF04",
+      "editorialState": "NOT_APPROVED",
+      "sourceOwner": "PR #1193 / Mystery of the Mass",
+      "sourcePublicationAllowed": false,
+      "originalManuscriptRetained": true,
+      "reconciliationState": "FORMATION_ID_LINKED_NOT_CONTENT_CERTIFIED"
+    },
+    {
+      "ownerId": "AO.CANON.01",
+      "formationChapter": "MF04",
+      "editorialState": "NOT_APPROVED",
+      "sourceOwner": "PR #1193 / Mystery of the Mass",
+      "sourcePublicationAllowed": false,
+      "originalManuscriptRetained": true,
+      "reconciliationState": "FORMATION_ID_LINKED_NOT_CONTENT_CERTIFIED"
+    },
+    {
+      "ownerId": "AO.CANON.02",
+      "formationChapter": "MF04",
+      "editorialState": "NOT_APPROVED",
+      "sourceOwner": "PR #1193 / Mystery of the Mass",
+      "sourcePublicationAllowed": false,
+      "originalManuscriptRetained": true,
+      "reconciliationState": "FORMATION_ID_LINKED_NOT_CONTENT_CERTIFIED"
+    },
+    {
+      "ownerId": "AO.CANON.03",
+      "formationChapter": "MF04",
+      "editorialState": "NOT_APPROVED",
+      "sourceOwner": "PR #1193 / Mystery of the Mass",
+      "sourcePublicationAllowed": false,
+      "originalManuscriptRetained": true,
+      "reconciliationState": "FORMATION_ID_LINKED_NOT_CONTENT_CERTIFIED"
+    },
+    {
+      "ownerId": "AO.CANON.04",
+      "formationChapter": "MF04",
+      "editorialState": "NOT_APPROVED",
+      "sourceOwner": "PR #1193 / Mystery of the Mass",
+      "sourcePublicationAllowed": false,
+      "originalManuscriptRetained": true,
+      "reconciliationState": "FORMATION_ID_LINKED_NOT_CONTENT_CERTIFIED"
+    },
+    {
+      "ownerId": "AO.CANON.05",
+      "formationChapter": "MF04",
+      "editorialState": "NOT_APPROVED",
+      "sourceOwner": "PR #1193 / Mystery of the Mass",
+      "sourcePublicationAllowed": false,
+      "originalManuscriptRetained": true,
+      "reconciliationState": "FORMATION_ID_LINKED_NOT_CONTENT_CERTIFIED"
+    },
+    {
+      "ownerId": "AO.CANON.06",
+      "formationChapter": "MF05",
+      "editorialState": "NOT_APPROVED",
+      "sourceOwner": "PR #1193 / Mystery of the Mass",
+      "sourcePublicationAllowed": false,
+      "originalManuscriptRetained": true,
+      "reconciliationState": "FORMATION_ID_LINKED_NOT_CONTENT_CERTIFIED"
+    },
+    {
+      "ownerId": "AO.CANON.07",
+      "formationChapter": "MF05",
+      "editorialState": "NOT_APPROVED",
+      "sourceOwner": "PR #1193 / Mystery of the Mass",
+      "sourcePublicationAllowed": false,
+      "originalManuscriptRetained": true,
+      "reconciliationState": "FORMATION_ID_LINKED_NOT_CONTENT_CERTIFIED"
+    },
+    {
+      "ownerId": "AO.CANON.08",
+      "formationChapter": "MF06",
+      "editorialState": "NOT_APPROVED",
+      "sourceOwner": "PR #1193 / Mystery of the Mass",
+      "sourcePublicationAllowed": false,
+      "originalManuscriptRetained": true,
+      "reconciliationState": "FORMATION_ID_LINKED_NOT_CONTENT_CERTIFIED"
+    },
+    {
+      "ownerId": "AO.CANON.09",
+      "formationChapter": "MF06",
+      "editorialState": "NOT_APPROVED",
+      "sourceOwner": "PR #1193 / Mystery of the Mass",
+      "sourcePublicationAllowed": false,
+      "originalManuscriptRetained": true,
+      "reconciliationState": "FORMATION_ID_LINKED_NOT_CONTENT_CERTIFIED"
+    },
+    {
+      "ownerId": "AO.CANON.10",
+      "formationChapter": "MF06",
+      "editorialState": "NOT_APPROVED",
+      "sourceOwner": "PR #1193 / Mystery of the Mass",
+      "sourcePublicationAllowed": false,
+      "originalManuscriptRetained": true,
+      "reconciliationState": "FORMATION_ID_LINKED_NOT_CONTENT_CERTIFIED"
+    },
+    {
+      "ownerId": "AO.CANON.11",
+      "formationChapter": "MF06",
+      "editorialState": "NOT_APPROVED",
+      "sourceOwner": "PR #1193 / Mystery of the Mass",
+      "sourcePublicationAllowed": false,
+      "originalManuscriptRetained": true,
+      "reconciliationState": "FORMATION_ID_LINKED_NOT_CONTENT_CERTIFIED"
+    },
+    {
+      "ownerId": "AO.CANON.12",
+      "formationChapter": "MF06",
+      "editorialState": "NOT_APPROVED",
+      "sourceOwner": "PR #1193 / Mystery of the Mass",
+      "sourcePublicationAllowed": false,
+      "originalManuscriptRetained": true,
+      "reconciliationState": "FORMATION_ID_LINKED_NOT_CONTENT_CERTIFIED"
+    },
+    {
+      "ownerId": "AO.CANON.13",
+      "formationChapter": "MF06",
+      "editorialState": "NOT_APPROVED",
+      "sourceOwner": "PR #1193 / Mystery of the Mass",
+      "sourcePublicationAllowed": false,
+      "originalManuscriptRetained": true,
+      "reconciliationState": "FORMATION_ID_LINKED_NOT_CONTENT_CERTIFIED"
+    },
+    {
+      "ownerId": "AO.CANON.14",
+      "formationChapter": "MF06",
+      "editorialState": "NOT_APPROVED",
+      "sourceOwner": "PR #1193 / Mystery of the Mass",
+      "sourcePublicationAllowed": false,
+      "originalManuscriptRetained": true,
+      "reconciliationState": "FORMATION_ID_LINKED_NOT_CONTENT_CERTIFIED"
+    },
+    {
+      "ownerId": "AO.CARD.019",
+      "formationChapter": "MF07",
+      "editorialState": "NOT_APPROVED",
+      "sourceOwner": "PR #1193 / Mystery of the Mass",
+      "sourcePublicationAllowed": false,
+      "originalManuscriptRetained": true,
+      "reconciliationState": "FORMATION_ID_LINKED_NOT_CONTENT_CERTIFIED"
+    },
+    {
+      "ownerId": "AO.CARD.020",
+      "formationChapter": "MF07",
+      "editorialState": "NOT_APPROVED",
+      "sourceOwner": "PR #1193 / Mystery of the Mass",
+      "sourcePublicationAllowed": false,
+      "originalManuscriptRetained": true,
+      "reconciliationState": "FORMATION_ID_LINKED_NOT_CONTENT_CERTIFIED"
+    },
+    {
+      "ownerId": "AO.CARD.021",
+      "formationChapter": "MF07",
+      "editorialState": "NOT_APPROVED",
+      "sourceOwner": "PR #1193 / Mystery of the Mass",
+      "sourcePublicationAllowed": false,
+      "originalManuscriptRetained": true,
+      "reconciliationState": "FORMATION_ID_LINKED_NOT_CONTENT_CERTIFIED"
+    },
+    {
+      "ownerId": "AO.CARD.022",
+      "formationChapter": "MF07",
+      "editorialState": "NOT_APPROVED",
+      "sourceOwner": "PR #1193 / Mystery of the Mass",
+      "sourcePublicationAllowed": false,
+      "originalManuscriptRetained": true,
+      "reconciliationState": "FORMATION_ID_LINKED_NOT_CONTENT_CERTIFIED"
+    },
+    {
+      "ownerId": "AO.CARD.023",
+      "formationChapter": "MF07",
+      "editorialState": "NOT_APPROVED",
+      "sourceOwner": "PR #1193 / Mystery of the Mass",
+      "sourcePublicationAllowed": false,
+      "originalManuscriptRetained": true,
+      "reconciliationState": "FORMATION_ID_LINKED_NOT_CONTENT_CERTIFIED"
+    },
+    {
+      "ownerId": "AO.CARD.024",
+      "formationChapter": "MF07",
+      "editorialState": "NOT_APPROVED",
+      "sourceOwner": "PR #1193 / Mystery of the Mass",
+      "sourcePublicationAllowed": false,
+      "originalManuscriptRetained": true,
+      "reconciliationState": "FORMATION_ID_LINKED_NOT_CONTENT_CERTIFIED"
+    },
+    {
+      "ownerId": "AO.CARD.025",
+      "formationChapter": "MF07",
+      "editorialState": "NOT_APPROVED",
+      "sourceOwner": "PR #1193 / Mystery of the Mass",
+      "sourcePublicationAllowed": false,
+      "originalManuscriptRetained": true,
+      "reconciliationState": "FORMATION_ID_LINKED_NOT_CONTENT_CERTIFIED"
+    },
+    {
+      "ownerId": "AO.CARD.026",
+      "formationChapter": "MF08",
+      "editorialState": "NOT_APPROVED",
+      "sourceOwner": "PR #1193 / Mystery of the Mass",
+      "sourcePublicationAllowed": false,
+      "originalManuscriptRetained": true,
+      "reconciliationState": "FORMATION_ID_LINKED_NOT_CONTENT_CERTIFIED"
+    },
+    {
+      "ownerId": "AO.CARD.027",
+      "formationChapter": "MF08",
+      "editorialState": "NOT_APPROVED",
+      "sourceOwner": "PR #1193 / Mystery of the Mass",
+      "sourcePublicationAllowed": false,
+      "originalManuscriptRetained": true,
+      "reconciliationState": "FORMATION_ID_LINKED_NOT_CONTENT_CERTIFIED"
+    },
+    {
+      "ownerId": "AO.CARD.028",
+      "formationChapter": "MF08",
+      "editorialState": "NOT_APPROVED",
+      "sourceOwner": "PR #1193 / Mystery of the Mass",
+      "sourcePublicationAllowed": false,
+      "originalManuscriptRetained": true,
+      "reconciliationState": "FORMATION_ID_LINKED_NOT_CONTENT_CERTIFIED"
+    },
+    {
+      "ownerId": "AO.CARD.029",
+      "formationChapter": "MF08",
+      "editorialState": "NOT_APPROVED",
+      "sourceOwner": "PR #1193 / Mystery of the Mass",
+      "sourcePublicationAllowed": false,
+      "originalManuscriptRetained": true,
+      "reconciliationState": "FORMATION_ID_LINKED_NOT_CONTENT_CERTIFIED"
+    },
+    {
+      "ownerId": "AO.CARD.030",
+      "formationChapter": "MF08",
+      "editorialState": "NOT_APPROVED",
+      "sourceOwner": "PR #1193 / Mystery of the Mass",
+      "sourcePublicationAllowed": false,
+      "originalManuscriptRetained": true,
+      "reconciliationState": "FORMATION_ID_LINKED_NOT_CONTENT_CERTIFIED"
+    }
+  ]
+}
