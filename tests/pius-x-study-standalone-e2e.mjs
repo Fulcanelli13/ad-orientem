@@ -16,6 +16,20 @@ assert.equal(data.status,'REVIEW_ONLY_UNAPPROVED_ADAPTED_DIALOGUE');
 assert.equal(data.docs.length,3);
 assert.deepEqual(data.docs.map(d=>d.turns.length),[11,10,13]);
 const turns=data.docs.flatMap(d=>d.turns);
+const linksMatch=html.match(/const relatedIds=(\{[^\n]+\});\nfunction nextChoices/);
+assert(linksMatch,'all related passages must be curated rather than random next records');
+const relatedIds=JSON.parse(linksMatch[1]);
+const ownDoc=new Map(turns.map(t=>[t.id,t.id.split('.T')[0]]));
+assert.equal(Object.keys(relatedIds).length,34,'all dialogue topics require curated continuations');
+for(const [id,rel] of Object.entries(relatedIds)){
+ assert(ownDoc.has(id),'nonexistent source-turn owner');
+ assert.equal(rel.length,3);
+ assert.equal(new Set(rel).size,rel.length);
+ for(const other of rel){
+  assert.notEqual(id,other);
+  assert.equal(ownDoc.get(other),ownDoc.get(id),'related source context cannot silently cross documents');
+ }
+}
 assert.equal(turns.length,34);
 assert.equal(turns.reduce((n,t)=>n+t.segments.length,0),68);
 for(const d of data.docs){
@@ -54,11 +68,16 @@ try{
   imagesDecoded++;
   await page.locator('#folioContent [data-open="SPX.BENCH.E_SUPREMI.T1"]').click();
   assert.match(await page.locator('.dialog-title').innerText(),/purpose did you set/i);
-  await page.locator('[data-next="1"]').click();
+  assert.equal(await page.locator('.dialogue').count(),2,'show the WHOLE existing answer without requiring Continue');
   assert.match(await page.locator('.dialogue').last().innerText(),/We denied|We.*design/i);
+  await page.locator('[data-next="1"]').click();
+  assert.equal(await page.locator('.related-passage').count(),2,'additional context must be separate from the primary reply');
+  assert.match(await page.locator('.related-passage .context-question').first().innerText(),/lead people/i);
+  assert.equal(await page.locator('.related-passage .related-copy').count(),4);
   await page.locator('[data-source="1"]').click();
   assert.equal(await page.locator('#citation').isVisible(),true);
   assert.match(await page.locator('#citation .cite-name').innerText(),/E supremi/);
+  assert.equal(await page.locator('#citation .cite-row').count(),2,'source drawer must cite both displayed reply claims');
   assert(await page.locator('#citation a[href*="vatican.va"]').count()>=1);
   await page.locator('[data-close="1"]').click();
   await page.locator('#langBtn').click();
