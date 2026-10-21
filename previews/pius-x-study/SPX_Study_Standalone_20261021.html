@@ -17,6 +17,7 @@ main{height:calc(100dvh - 74px);display:grid;grid-template-columns:minmax(235px,
 @media(max-width:1050px){main{grid-template-columns:230px minmax(0,1fr)}#library{padding:18px 11px 18px 14px}.folio-shell{left:25px;width:min(640px,70vw)}#portrait{right:-8vw;max-width:60vw}}
 @media(max-width:720px){header{height:67px;padding:10px 13px;gap:10px}.mark{width:28px;height:34px}.brand{font-size:9px;letter-spacing:.17em}.brand small{font-size:10px}.status{display:none}.head-actions{gap:5px}.head-actions button{padding:8px;font-size:10px}.menu-btn{display:inline-block}main{height:calc(100dvh - 67px);display:block}#library{position:absolute;z-index:15;top:0;bottom:0;left:0;width:min(85vw,325px);transform:translateX(-105%);transition:transform .22s;box-shadow:14px 0 40px #000b}#library[data-open=true]{transform:translateX(0)}#stage{height:100%}#study{background-position:64% center}#shadow{background:linear-gradient(0deg,#080b11 0%,rgba(8,11,17,.84) 30%,rgba(8,11,17,.2) 80%),linear-gradient(90deg,rgba(8,11,17,.48),rgba(8,11,17,.08))}#portrait{height:76vh;max-height:700px;right:-20vw;bottom:17vh;max-width:95vw;opacity:.92}.doc-breadcrumb{left:18px;top:18px;font-size:9px;max-width:75%}.folio-shell{left:11px;right:11px;bottom:16px;width:auto;max-height:72dvh}.folio{min-height:230px;max-height:72dvh}.folio-inner{padding:20px 20px 17px}.dialog-title{font-size:26px}.visitor-line{font-size:14px}.dialogue{font-size:19px;line-height:1.55}.search-form{flex-direction:column}#citation{inset:4px 4px 4px 4px;width:auto;padding:20px}.review-watermark{right:10px;bottom:5px;font-size:8px}}
 @media(max-height:620px){.folio-shell{bottom:9px}.folio{min-height:170px;max-height:77dvh}#portrait{bottom:-15vh}.dialog-title{font-size:24px}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+.related-passage{border-left:2px solid #796548;background:#0c1219b8;padding:12px 16px;margin-top:13px}.related-passage .context-question{font:15px/1.38 var(--serif);color:#dbcbac;margin:4px 0 11px}.related-passage .related-copy{font:14px/1.55 var(--serif);color:#d4c8b5;margin:0 0 9px}.related-passage button{border:0;background:none;color:#ddc18c;text-decoration:underline;padding:7px 0;font:11px var(--sans)}
 </style></head>
 <body><div id="app">
 <div id="study" aria-hidden="true"></div><div id="shadow" aria-hidden="true"></div><div class="grain" aria-hidden="true"></div><img id="portrait" alt="" aria-hidden="true">
@@ -89,25 +90,36 @@ function welcomeHTML(){
  "<div class='actions'><button class='primary' data-open='SPX.BENCH.E_SUPREMI.T1'>"+tr().begin+"</button><button class='secondary' data-view='browse'>"+tr().explore+"</button></div>"+
  "<p class='discreet-note'>"+tr().review+"</p>";
 }
+const relatedIds={"SPX.BENCH.ACERBO.T1":["SPX.BENCH.ACERBO.T2","SPX.BENCH.ACERBO.T5","SPX.BENCH.ACERBO.T6"],"SPX.BENCH.ACERBO.T2":["SPX.BENCH.ACERBO.T5","SPX.BENCH.ACERBO.T11","SPX.BENCH.ACERBO.T3"],"SPX.BENCH.ACERBO.T3":["SPX.BENCH.ACERBO.T4","SPX.BENCH.ACERBO.T7","SPX.BENCH.ACERBO.T8"],"SPX.BENCH.ACERBO.T4":["SPX.BENCH.ACERBO.T9","SPX.BENCH.ACERBO.T7","SPX.BENCH.ACERBO.T6"],"SPX.BENCH.ACERBO.T5":["SPX.BENCH.ACERBO.T11","SPX.BENCH.ACERBO.T4","SPX.BENCH.ACERBO.T2"],"SPX.BENCH.ACERBO.T6":["SPX.BENCH.ACERBO.T9","SPX.BENCH.ACERBO.T10","SPX.BENCH.ACERBO.T3"],"SPX.BENCH.ACERBO.T7":["SPX.BENCH.ACERBO.T3","SPX.BENCH.ACERBO.T8","SPX.BENCH.ACERBO.T9"],"SPX.BENCH.ACERBO.T8":["SPX.BENCH.ACERBO.T9","SPX.BENCH.ACERBO.T10","SPX.BENCH.ACERBO.T3"],"SPX.BENCH.ACERBO.T9":["SPX.BENCH.ACERBO.T4","SPX.BENCH.ACERBO.T6","SPX.BENCH.ACERBO.T8"],"SPX.BENCH.ACERBO.T10":["SPX.BENCH.ACERBO.T6","SPX.BENCH.ACERBO.T8","SPX.BENCH.ACERBO.T9"],"SPX.BENCH.ACERBO.T11":["SPX.BENCH.ACERBO.T2","SPX.BENCH.ACERBO.T5","SPX.BENCH.ACERBO.T4"],"SPX.BENCH.E_SUPREMI.T1":["SPX.BENCH.E_SUPREMI.T5","SPX.BENCH.E_SUPREMI.T8","SPX.BENCH.E_SUPREMI.T9"],"SPX.BENCH.E_SUPREMI.T2":["SPX.BENCH.E_SUPREMI.T3","SPX.BENCH.E_SUPREMI.T6","SPX.BENCH.E_SUPREMI.T7"],"SPX.BENCH.E_SUPREMI.T3":["SPX.BENCH.E_SUPREMI.T6","SPX.BENCH.E_SUPREMI.T7","SPX.BENCH.E_SUPREMI.T4"],"SPX.BENCH.E_SUPREMI.T4":["SPX.BENCH.E_SUPREMI.T7","SPX.BENCH.E_SUPREMI.T3","SPX.BENCH.E_SUPREMI.T6"],"SPX.BENCH.E_SUPREMI.T5":["SPX.BENCH.E_SUPREMI.T8","SPX.BENCH.E_SUPREMI.T9","SPX.BENCH.E_SUPREMI.T1"],"SPX.BENCH.E_SUPREMI.T6":["SPX.BENCH.E_SUPREMI.T3","SPX.BENCH.E_SUPREMI.T7","SPX.BENCH.E_SUPREMI.T2"],"SPX.BENCH.E_SUPREMI.T7":["SPX.BENCH.E_SUPREMI.T2","SPX.BENCH.E_SUPREMI.T3","SPX.BENCH.E_SUPREMI.T4"],"SPX.BENCH.E_SUPREMI.T8":["SPX.BENCH.E_SUPREMI.T9","SPX.BENCH.E_SUPREMI.T5","SPX.BENCH.E_SUPREMI.T1"],"SPX.BENCH.E_SUPREMI.T9":["SPX.BENCH.E_SUPREMI.T8","SPX.BENCH.E_SUPREMI.T5","SPX.BENCH.E_SUPREMI.T1"],"SPX.BENCH.E_SUPREMI.T10":["SPX.BENCH.E_SUPREMI.T5","SPX.BENCH.E_SUPREMI.T8","SPX.BENCH.E_SUPREMI.T1"],"SPX.BENCH.HAERENT.T1":["SPX.BENCH.HAERENT.T2","SPX.BENCH.HAERENT.T5","SPX.BENCH.HAERENT.T7"],"SPX.BENCH.HAERENT.T2":["SPX.BENCH.HAERENT.T3","SPX.BENCH.HAERENT.T4","SPX.BENCH.HAERENT.T7"],"SPX.BENCH.HAERENT.T3":["SPX.BENCH.HAERENT.T2","SPX.BENCH.HAERENT.T7","SPX.BENCH.HAERENT.T8"],"SPX.BENCH.HAERENT.T4":["SPX.BENCH.HAERENT.T7","SPX.BENCH.HAERENT.T9","SPX.BENCH.HAERENT.T8"],"SPX.BENCH.HAERENT.T5":["SPX.BENCH.HAERENT.T2","SPX.BENCH.HAERENT.T6","SPX.BENCH.HAERENT.T1"],"SPX.BENCH.HAERENT.T6":["SPX.BENCH.HAERENT.T5","SPX.BENCH.HAERENT.T9","SPX.BENCH.HAERENT.T2"],"SPX.BENCH.HAERENT.T7":["SPX.BENCH.HAERENT.T8","SPX.BENCH.HAERENT.T12","SPX.BENCH.HAERENT.T9"],"SPX.BENCH.HAERENT.T8":["SPX.BENCH.HAERENT.T7","SPX.BENCH.HAERENT.T9","SPX.BENCH.HAERENT.T10"],"SPX.BENCH.HAERENT.T9":["SPX.BENCH.HAERENT.T7","SPX.BENCH.HAERENT.T10","SPX.BENCH.HAERENT.T13"],"SPX.BENCH.HAERENT.T10":["SPX.BENCH.HAERENT.T9","SPX.BENCH.HAERENT.T11","SPX.BENCH.HAERENT.T13"],"SPX.BENCH.HAERENT.T11":["SPX.BENCH.HAERENT.T13","SPX.BENCH.HAERENT.T10","SPX.BENCH.HAERENT.T1"],"SPX.BENCH.HAERENT.T12":["SPX.BENCH.HAERENT.T7","SPX.BENCH.HAERENT.T8","SPX.BENCH.HAERENT.T4"],"SPX.BENCH.HAERENT.T13":["SPX.BENCH.HAERENT.T9","SPX.BENCH.HAERENT.T10","SPX.BENCH.HAERENT.T11"]};
 function nextChoices(current){
- const same=current.doc.turns;let i=same.findIndex(t=>t.id===current.turn.id);let candidates=[];
- if(i+1<same.length)candidates.push({doc:current.doc,turn:same[i+1]});
- if(i+2<same.length)candidates.push({doc:current.doc,turn:same[i+2]});
- if(candidates.length<3){
-   for(const d of data.docs){if(d.id===current.doc.id)continue;
-    let pick=d.turns.find(t=>!state.history.some(h=>h.turn===t.id));
-    if(pick)candidates.push({doc:d,turn:pick});if(candidates.length>=3)break;}
- }
- return candidates.slice(0,3);
+ return (relatedIds[current.turn.id]||[]).map(byId).filter(r=>r&&r.doc.id===current.doc.id);
+}
+function contextHTML(record){
+ const related=nextChoices(record).slice(0,2);
+ const heading=state.language==="fr"?"Passages voisins du même document":"Related passages from the same document";
+ const note=state.language==="fr"?"Ces passages répondent à d’autres questions ; ils ne sont pas la suite inventée de cette réponse.":"These passages address other questions. They are not an invented continuation of this answer.";
+ return "<p class='eyebrow' style='margin-top:22px'>"+heading+"</p><p class='discreet-note'>"+note+"</p>"+
+ related.map(r=>"<article class='related-passage'><p class='source-pill' style='text-align:left'>"+fmt(r.doc.title)+" · "+fmt(citationLoci(r))+"</p>"+
+ "<p class='context-question'>"+fmt(r.turn.question[state.language])+"</p>"+
+ r.turn.segments.map(seg=>"<p class='related-copy'>"+fmt(seg[state.language])+"</p>").join("")+
+ "<button type='button' data-open='"+safe(r.turn.id)+"'>"+
+ (state.language==="fr"?"Ouvrir cette question":"Open this question")+" →</button></article>").join("");
 }
 function dialogueHTML(record){
- const t=record.turn,at=state.segment,seg=t.segments[at],done=at>=t.segments.length-1;
+ const t=record.turn,expanded=state.segment===1;
+ const allClaims=[...new Set(t.segments.flatMap(seg=>seg.claims.map(c=>c.id)))];
  let s="<div class='dialog-head'><span class='character-name'>"+tr().speaker+"</span><span class='source-pill'>"+fmt(record.doc.title)+" · "+fmt(citationLoci(record))+"</span></div>"+
  "<p class='eyebrow'>"+tr().question+"</p><h2 class='dialog-title'>"+fmt(t.question[state.language])+"</h2>"+
- "<p class='editor-label'>"+tr().review+"</p>"+answerSegment(seg)+
- "<div class='sourcebar'><span class='progress'>"+(at+1)+" / "+t.segments.length+" · "+fmt(seg.claims.map(c=>c.id).join(", "))+"</span><button id='sourceButton' data-source='1'>"+tr().sources+" ↗</button></div>";
- if(!done)s+="<div class='actions'><button class='primary' data-next='1'>"+tr().next+" →</button><button class='quiet' data-search='1'>"+tr().another+"</button></div>";
- else s+="<p class='eyebrow' style='margin-top:23px'>"+tr().choices+"</p><div class='choices'>"+nextChoices(record).map(r=>keyChoice(r)).join("")+"</div><div class='actions'><button class='secondary' data-search='1'>"+tr().another+"</button>"+(state.history.length?"<button class='quiet' data-back='1'>"+tr().back+"</button>":"")+"</div>";
+ "<p class='editor-label'>"+tr().review+"</p>"+
+ t.segments.map(answerSegment).join("")+
+ "<div class='sourcebar'><span class='progress'>"+fmt(allClaims.join(", "))+"</span><button id='sourceButton' data-source='1'>"+tr().sources+" ↗</button></div>";
+ if(expanded)s+=contextHTML(record);
+ s+="<div class='actions'><button class='"+(expanded?"secondary":"primary")+"' data-next='1'>"+
+ (expanded?(state.language==="fr"?"Masquer les passages associés":"Hide related passages"):(state.language==="fr"?"Lire les passages associés":"Read related passages"))+
+ "</button><button class='quiet' data-search='1'>"+tr().another+"</button></div>";
+ s+="<p class='eyebrow' style='margin-top:23px'>"+tr().choices+"</p><div class='choices'>"+
+ nextChoices(record).map(r=>keyChoice(r)).join("")+"</div>";
+ if(state.history.length)s+="<div class='actions'><button class='quiet' data-back='1'>"+tr().back+"</button></div>";
  return s;
 }
 function score(query,record){
@@ -147,8 +159,9 @@ function browseHTML(){
  "<p class='discreet-note'>"+tr().review+"</p>";
 }
 function sourceHTML(record){
- const selected=record.turn.segments[state.segment];
- const cite=selected.claims.map(c=>"<div class='cite-row'><div class='id'>"+fmt(c.id)+" · "+fmt(c.locus)+"</div><p>"+fmt(c.meaning)+"</p></div>").join("");
+ const selected=record.turn.segments;
+ const distinctClaims=[...new Map(selected.flatMap(seg=>seg.claims).map(c=>[c.id,c])).values()];
+ const cite=distinctClaims.map(c=>"<div class='cite-row'><div class='id'>"+fmt(c.id)+" · "+fmt(c.locus)+"</div><p>"+fmt(c.meaning)+"</p></div>").join("");
  const urls=Object.entries(record.doc.urls).map(([lang,url])=>"<a target='_blank' rel='noopener noreferrer' href='"+safe(url)+"'>"+fmt(lang.toUpperCase())+" ↗</a>").join("");
  return "<div class='cite-top'><span class='eyebrow'>"+tr().sourceLabel+"</span><button type='button' data-close='1'>"+tr().hide+" ×</button></div>"+
  "<h2 class='cite-name'>"+fmt(record.doc.title)+"</h2>"+
@@ -182,7 +195,7 @@ document.addEventListener("click",e=>{
  if(t.dataset.open){openTurn(t.dataset.open);return;}
  if(t.dataset.doc){state.doc=t.dataset.doc;view("browse");return;}
  if(t.dataset.view){view(t.dataset.view);return;}
- if(t.dataset.next){let r=now();if(r){state.segment=Math.min(state.segment+1,r.turn.segments.length-1);render();}return;}
+ if(t.dataset.next){if(now()){state.segment=state.segment===1?0:1;render();}return;}
  if(t.dataset.source){state.citation=true;render();$("citation").querySelector("button")?.focus();return;}
  if(t.dataset.close){state.citation=false;render();$("sourceButton")?.focus();return;}
  if(t.dataset.back){const v=state.history.pop();if(v){state.turn=v.turn;state.segment=v.segment;state.view="dialogue";state.doc=now().doc.id;render();}return;}
@@ -191,8 +204,8 @@ document.addEventListener("submit",e=>{if(e.target.id!=="askForm")return;e.preve
 document.addEventListener("keydown",e=>{
  if(e.key==="Escape"){if(state.citation){state.citation=false;render();}else if(state.mobileMenu){state.mobileMenu=false;render();}return;}
  if(e.target.closest("input,textarea,button,a"))return;
- if(e.key==="ArrowRight"&&state.view==="dialogue"){const r=now();if(r&&state.segment<r.turn.segments.length-1){state.segment++;render();}}
- if(e.key==="ArrowLeft"&&state.view==="dialogue"&&state.segment>0){state.segment--;render();}
+ if(e.key==="ArrowRight"&&state.view==="dialogue"&&state.segment===0){state.segment=1;render();}
+ if(e.key==="ArrowLeft"&&state.view==="dialogue"&&state.segment===1){state.segment=0;render();}
 });
 render();
 })();
