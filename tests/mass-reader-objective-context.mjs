@@ -44,6 +44,13 @@ assert.ok(domSource.includes('data-role="objective-context" hidden aria-live="of
 assert.ok(domSource.includes('const showContext=mode==="LIVE"&&'));
 assert.ok(domSource.includes('copy?.owner==="MASS_READER_OBJECTIVE_CONTEXT_V1"'));
 assert.ok(domSource.includes('setChannel(root,"priest-position",showContext?current.priestPosition:null)'));
+assert.ok(domSource.includes('data-icon-slot="priest-position-rail"'));
+assert.ok(domSource.includes('applyIcon(root,"priest-position-rail",showContext'));
+assert.ok(domSource.includes('setText(root,"priest-position-rail",priestStationLabel(showContext'));
+assert.equal((domSource.match(/data-icon-slot="priest-position"/g)||[]).length,1,
+  "The original top priest icon and contextual rail must never share a slot");
+assert.ok(domSource.includes('rightRail?.dataset.visible==="true"'),
+  "LIVE rubrics may disappear only with an actually visible rail action");
 assert.ok(domSource.includes('["MISSAL","SIMPLE","LIVE"]'));
 assert.ok(!nativeSource.includes("pray.communion_treasury"));
 console.log("PASS: Objective LIVE ribbon copy, source block/cue ownership, EN/FR, guarded rails, no devotional suggestions and SIMPLE/Missal compatibility.");
