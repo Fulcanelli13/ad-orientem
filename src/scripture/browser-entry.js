@@ -7,6 +7,7 @@ import {scriptureSegmentContext} from "./segments.js";
 import {buildThematicPilots} from "./historia-thematic-collections.js";
 import {expandedThematicResearchCollections} from "./historia-thematic-expansion.js";
 import {segmentedThematicResearchCollections} from "./historia-thematic-composite.js";
+import {applyThematicBoundaryAudit} from "./historia-thematic-boundaries.js";
 export const SCRIPTURE_BROWSER_VERSION="ao-scripture-library-v1";
 export function installScriptureBrowserOwner(win=globalThis){
  if(win.AO_SCRIPTURE_APP_V1)return win.AO_SCRIPTURE_APP_V1;
@@ -44,10 +45,13 @@ export function installScriptureBrowserOwner(win=globalThis){
    const preflight=await win.fetch("/data/research/historia-salutis-thematic-collections-expansion-preflight-20261021.v1.json",{cache:"no-store"});
    if(!preflight?.ok)throw new Error("Historia second-batch preflight unavailable");
    const inventory=await preflight.json();
-   if(!thematicSegmented)return expandedThematicResearchCollections(inventory,groups);
+   const audited=await win.fetch("/data/research/historia-salutis-thematic-batch2-boundary-audit-20261021.v1.json",{cache:"no-store"});
+   if(!audited?.ok)throw new Error("Historia source-window review unavailable");
+   const review=await audited.json();
+   if(!thematicSegmented)return applyThematicBoundaryAudit(expandedThematicResearchCollections(inventory,groups),review);
    const segments=await win.fetch("/data/research/historia-salutis-thematic-composite-segments-20261021.v1.json",{cache:"no-store"});
    if(!segments?.ok)throw new Error("Historia segmented source evidence unavailable");
-   return segmentedThematicResearchCollections(await segments.json(),inventory,groups);
+   return applyThematicBoundaryAudit(segmentedThematicResearchCollections(await segments.json(),inventory,groups),review);
   })();
   try{return thematicCache=await thematicInflight;}
   finally{thematicInflight=null;}
