@@ -63,5 +63,5 @@ for(let n=14;n<=47;n++)assert.ok(seen.has(`aug-qev-i-${String(n).padStart(2,"0")
 for(let n=24;n<=51;n++)assert.ok(seen.has(`aug-qev-ii-${String(n).padStart(2,"0")}`));
 assert.deepEqual(count,{qualifiedSameWork:55,quarantinedCitationConflicts:7,total:62,sectionRecords:62});
 assert.deepEqual(doc.catenaLinkCounts,count);
-assert.equal(doc.records.filter(r=>r.originalQuestionKind.startsWith("original_authorial")).length,10);
+assert.equal(doc.records.filter(r=>r.originalQuestionKind.startsWith("original_authorial")).length,12);
 console.log("PASS: 62 numbered Augustinian sections, 55 Catena topic/label links, 7 citation-number conflicts quarantined");
