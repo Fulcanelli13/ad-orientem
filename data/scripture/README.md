@@ -176,3 +176,23 @@ evidence, and proposed release criteria, see
 exemplars in the diagnostic set; never silently rewrite test targets to
 inflate an automated score. No fictional speeches, new translations or
 second Catena registry may be introduced through this process.
+
+
+### Provisional full-excerpt assessment of the seven competing-answer cases
+
+A case-by-case reading of the complete original Catena segments, exact fragment
+IDs and source links is recorded in
+\`data/scripture/catena/EDITORIAL_SEVEN_ALTERNATIVES_2026-10-21.md\`.
+The prior four-message alternatives for seven *missing nominated sources*
+contain at least one **provisionally direct** original excerpt in six cases;
+the Luke 18 question about the Pharisee's physical posture is the clear
+question-specific miss. Across the 27 displayed excerpts in this subset,
+the preliminary editor-assist ratings are 10 direct, 9 related and 8 weak.
+This is **not independently adjudicated**; it is not a replacement for the
+fixed 23/38 exact-reference recall score, and the named original challenge
+targets remain unchanged.
+
+The seven full-text assessments explicitly distinguish literal reading,
+allegorical commentary, historical-author labels, and a warning against
+generalizing one patristic interpretation of the paralytic's condition.
+Release still requires source-critical checks and independent editorial review.
