@@ -16,16 +16,16 @@
     {
       "place_id": "place:FR:sanctuaire-notre-dame-de-laghet",
       "name": "Notre-Dame de Laghet",
-      "commons_title": "File:Monastery Notre-Dame de Laghet (top).jpg",
-      "credit": "Tangopaso",
-      "license": "PUBLIC_DOMAIN",
-      "license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
-      "original_sha1": "ca5679af50acfbaa2d89915841ad4c197cffdca4",
-      "subject": "Bell tower of the actual Notre-Dame de Laghet monastery; not a broad generic French church",
-      "alt_en": "Bell tower of the Notre-Dame de Laghet monastery",
-      "alt_fr": "Clocher du monastère de Notre-Dame de Laghet",
-      "review_note": "Source explicitly releases original image into public domain worldwide; image shows tower, not full sanctuary. Evaluate composition for site-hero use.",
-      "source_url": "https://commons.wikimedia.org/wiki/File%3AMonastery_Notre-Dame_de_Laghet_(top).jpg",
+      "commons_title": "File:Notre dame de Laghet.jpg",
+      "credit": "Frantz-Samy",
+      "license": "CC-BY-SA-3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "original_sha1": null,
+      "subject": "Full view of the actual Notre-Dame de Laghet sanctuary at La Trinité, not generic monastery detail",
+      "alt_en": "Exterior view of the Sanctuary of Our Lady of Laghet near Nice",
+      "alt_fr": "Vue extérieure du sanctuaire Notre-Dame de Laghet près de Nice",
+      "review_note": "Original self-published CC BY-SA 3.0 / GFDL multi-licence; photograph depicts complete sanctuary. Requires full visual crop review and older licence allowance.",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Notre_dame_de_Laghet.jpg",
       "status": "SOURCE_IDENTIFIED_STAGING_ONLY",
       "render_in_app": false,
       "reviewed_original_page": "2026-10-21"
@@ -106,5 +106,22 @@
       "note": "Official Solas Bhríde website and travel sites show the actual centre, but no photo was verified under a reusable licence. Nearby Saint Brigid's Well, Cathedral or the Black Abbey would be wrong physical subjects.",
       "official_source": "https://solasbhride.ie/development/"
     }
-  ]
+  ],
+  "alternative_held_source": {
+    "place_id": "place:FR:sanctuaire-notre-dame-de-laghet",
+    "name": "Notre-Dame de Laghet",
+    "commons_title": "File:Monastery Notre-Dame de Laghet (top).jpg",
+    "credit": "Tangopaso",
+    "license": "PUBLIC_DOMAIN",
+    "license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "original_sha1": "ca5679af50acfbaa2d89915841ad4c197cffdca4",
+    "subject": "Bell tower of the actual Notre-Dame de Laghet monastery; not a broad generic French church",
+    "alt_en": "Bell tower of the Notre-Dame de Laghet monastery",
+    "alt_fr": "Clocher du monastère de Notre-Dame de Laghet",
+    "review_note": "Contact sheet verified public-domain photo but composition showed only steeple, not recognizable sanctuary grounds.",
+    "source_url": "https://commons.wikimedia.org/wiki/File%3AMonastery_Notre-Dame_de_Laghet_(top).jpg",
+    "status": "VISUALLY_REJECTED_FOR_HERO_TOO_TIGHT_ON_STEEPLE",
+    "render_in_app": false,
+    "reviewed_original_page": "2026-10-21"
+  }
 }
