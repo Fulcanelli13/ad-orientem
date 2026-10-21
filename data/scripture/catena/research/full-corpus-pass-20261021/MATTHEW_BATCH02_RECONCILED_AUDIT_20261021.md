@@ -36,7 +36,7 @@ The merged **86-pointer research coverage and four disputes** are recorded in [m
 
 **Distinct theological arguments, Matthew 24:36.** Jerome and Hilary both answer in their own way an Arian inference about Christ's knowledge of judgment day; do not collapse their distinct lines into a fabricated quote.
 
-**Other significant leads:** Jerome on Joseph's genealogy and the brethren of the Lord; Augustine on the Beelzebub accusation, divine will and Jerusalem; Chrysostom on Sabbath healing, the prodigal? (not in this batch), miracles and the rich youth; Damascene on the prayer of the incarnate Christ; Ambrose on Eucharistic consecration; Jerome on altered testimony at Christ's trial. The doctrinally sensitive material requires source-translation and theological review before any end-user release.
+**Other significant leads:** Jerome on Joseph's genealogy and the brethren of the Lord; Augustine on the Beelzebub accusation, divine will and Jerusalem; Chrysostom on Sabbath healing, miracles and the rich youth; Damascene on the prayer of the incarnate Christ; Ambrose on Eucharistic consecration; Jerome on altered testimony at Christ's trial. The doctrinally sensitive material requires source-translation and theological review before any end-user release.
 
 ## No claims beyond evidence
 
