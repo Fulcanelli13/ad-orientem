@@ -105,6 +105,9 @@ on:
       - 'previews/pius-x-second-eight-first-release-source-locked-20261021.html'
       - 'tests/pius-x-first-release-second-eight-static.mjs'
       - 'tests/pius-x-first-release-second-eight-browser.mjs'
+      - 'data/learn/research/pius-x-document-first-three-benchmark-source-map-20261021.v1.json'
+      - 'docs/research/PIUS-X-DOCUMENT-FIRST-CONVERSATION-EDITORIAL-STANDARD-20261021.md'
+      - 'tests/pius-x-document-first-three-benchmark-source-map.mjs'
       - 'tests/pius-x-depth12-visual-novel-browser.mjs'
       - 'tests/pius-x-first20-personal-and-papal-source-edits.mjs'
       - 'previews/visible-mass-3d/pius-x-batch-release-editorial-review.html'
@@ -471,6 +474,8 @@ jobs:
         run: node tests/pius-x-first-release-eight-static.mjs
       - name: Validate second eight source-tethered first-release conversations
         run: node tests/pius-x-first-release-second-eight-static.mjs
+      - name: Validate source-first three-document bilingual benchmark and papal-context safeguards
+        run: node tests/pius-x-document-first-three-benchmark-source-map.mjs
       - name: Verify corpus ownership and the 130-candidate first-release shortlist
         run: node tests/pius-x-full810-balanced130-corpus.mjs
       - name: Test first twenty revised papal teaching and biography replies against original owners
