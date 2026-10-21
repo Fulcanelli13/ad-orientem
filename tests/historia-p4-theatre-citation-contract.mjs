@@ -9,6 +9,7 @@ const wilderness=read("../data/research/historia-p4-wilderness-sinai-witness-des
 const wanderings=read("../data/research/historia-p4-wanderings-three-witness-desk-audit.v1.json");
 const incarnation=read("../data/research/historia-p4-incarnation-three-witness-desk-audit.v1.json");
 const ministry=read("../data/research/historia-p4-public-ministry-three-witness-desk-audit.v1.json");
+const passionRisen=read("../data/research/historia-p4-passion-risen-three-witness-desk-audit.v1.json");
 const html=readFileSync(new URL("../labs/historia-salutis-theatre-p4.html",import.meta.url),"utf8");
 const C=crosswalk.counts;
 assert.equal(crosswalk.status,"RESEARCH_ONLY_SOURCE_OVERLAP_NOT_IDENTITY_NOT_APPROVED");
@@ -187,6 +188,31 @@ for(const n of [89,108,110]){
  const x=ministry.reviewedRows.find(v=>v.originalIndex===n);
  assert.ok(x?.editorialAction?.startsWith("NO_")||x?.editorialAction?.includes("PARABLE"),"Unlocatable parable must not get historical incident pin");
 }
+assert.equal(passionRisen.reviewedRows.length,23);
+assert.equal(passionRisen.counts.passion,16);
+assert.equal(passionRisen.counts.risen,7);
+assert.equal(passionRisen.counts.spanPresenceAcrossThree,23);
+assert.equal(passionRisen.counts.coordinatesCertified,0);
+assert.equal(passionRisen.counts.publicationApproved,0);
+const allPassionRisen=[...fullEvidence,...passionRisen.reviewedRows.map(x=>x.originalIndex)];
+assert.equal(allPassionRisen.length,139);
+assert.equal(new Set(allPassionRisen).size,139);
+for(const [j,x] of passionRisen.reviewedRows.entries()){
+ assert.equal(x.originalIndex,115+j);
+ assert.ok(sceneIds.has(x.sceneKey));
+ assert.equal(x.exactModernCoordinatesCertified,false);
+ assert.equal(x.personIdentitiesCertified,false);
+ assert.equal(x.gospelParallelIdentityCertified,false);
+ assert.equal(x.readAloudApproved,false);
+ assert.equal(x.publicationApproved,false);
+ assert.equal(x.witnessSpan.allRequestedNumberedVersesPresent,true);
+ assert.equal(x.witnessSpan.douayChallonerEntries,x.witnessSpan.cpdv2009Entries);
+ assert.equal(x.witnessSpan.douayChallonerEntries,x.witnessSpan.crampon1923Entries);
+}
+assert.equal(passionRisen.guards.john20Overlap.relationship,"SELECTED_PASSAGE_OVERLAP_NOT_TWO_RESURRECTIONS");
+assert.equal(passionRisen.reviewedRows.find(x=>x.originalIndex===128).geographicAction,"NO_ANCIENT_STREET_TRACE");
+assert.equal(passionRisen.reviewedRows.find(x=>x.originalIndex===135).geographicAction,"EMMAUS_REGION_DISPUTED_NO_EXACT_ROUTE");
+assert.equal(passionRisen.reviewedRows.find(x=>x.originalIndex===133).geographicAction,"NO_CERTIFIED_APPEARANCE_ROOM");
 for(const token of ["maplibregl.Map","prefers-reduced-motion","ATLAS_GEO.cenacle","ATLAS_GEO.transfiguration","HS-M37","sourceBridgeCandidates"]) {
  if(token==="sourceBridgeCandidates") continue;
  assert.ok(html.includes(token),"Theatre lab missing "+token);
@@ -194,4 +220,4 @@ for(const token of ["maplibregl.Map","prefers-reduced-motion","ATLAS_GEO.cenacle
 assert.ok(html.includes("No cinematic-scene identity exists"));
 assert.ok(html.includes("No painting imported"));
 assert.ok(!html.includes("<script type=\"module\" src=\"../src/"),"Research lab must not import production modules");
-console.log("PASS: Historia P4 crosswalk, 183-row evidence queue, 18 seam holds, 116 source-reviewed scenes and four-state theatre laboratory source contracts");
+console.log("PASS: Historia P4 crosswalk, 183-row evidence queue, 18 seam holds, 139 source-reviewed scenes and four-state theatre laboratory source contracts");
