@@ -42,7 +42,7 @@ details p{color:#c7bfaf}
 <div class="sprite-fallback" id="spriteFallback">The character artwork is unavailable in this standalone preview.</div>
 <div class="dialogue"><div class="who" id="who">St Pius X · educational reconstruction</div><div class="question" id="question" aria-live="polite"></div><div id="answer" class="answer" aria-live="polite"></div>
 <div class="actions" id="actions"></div><div class="source" id="sourceLine"></div></div></section>
-<div class="underbar"><div id="position">1 / 3 · editorial reading</div><div><button id="back">Back</button> <button id="reset">Restart</button></div></div>
+<div class="underbar"><div id="position">1 / 3 · editorial reading</div><div><button id="back">Back</button> <button id="reset">Restart</button> <button id="reviewToggle" aria-controls="review">Review this dialogue</button></div></div>
 <details id="evidence"><summary>Original source, exact passage and editorial limits</summary><div id="sourceFull"></div></details>
 <details id="review"><summary>Evaluate the conversation</summary><p>Ratings remain in this page until exported; no data is sent to a server.</p><div class="review">
 <label>Pacing<select id="pace"><option value="">Unrated</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></label>
@@ -89,6 +89,12 @@ $('lang').addEventListener('click',()=>{locale=locale==='en'?'fr':'en';render()}
 $('sourceToggle').addEventListener('click',()=>{$('evidence').open=!$('evidence').open;$('sourceToggle').setAttribute('aria-expanded',String($('evidence').open))});
 $('back').addEventListener('click',()=>{if(history.length){state=history.pop();render()}});
 $('reset').addEventListener('click',()=>{history=[];state={chapter:state.chapter,turn:0};render()});
+$('reviewToggle').addEventListener('click',()=>{
+ $('evidence').open=false;
+ $('sourceToggle').setAttribute('aria-expanded','false');
+ $('review').open=true;
+ $('review').scrollIntoView({behavior:'instant',block:'start'});
+});
 function capture(){ratings[chapters[state.chapter].id]={pacing:$('pace').value,voice:$('voice').value,clarity:$('clarity').value,notes:$('notes').value};}
 $('record').addEventListener('click',()=>{capture();$('record').textContent=labels[locale].recorded});
 $('export').addEventListener('click',()=>{capture();const content=JSON.stringify({schema:'AO_SPX_P1_EIGHT_SOURCE_LOCKED_REVIEW_RATINGS_V1',sourceSchema:db.schema,ratings},null,2);
