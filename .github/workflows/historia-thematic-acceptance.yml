@@ -1,0 +1,60 @@
+name: Historia thematic research acceptance
+on:
+  push:
+    branches:
+      - research/historia-thematic-episodes-20261021
+    paths:
+      - '.github/workflows/historia-thematic-acceptance.yml'
+      - 'src/scripture/**'
+      - 'data/research/historia-salutis-thematic-*.json'
+      - 'data/research/historia-salutis-thematic-*.md'
+      - 'research/historia-thematic-*'
+      - 'prototypes/historia-salutis-p3-continuous-reader-20261021.html'
+      - 'tests/historia-thematic-*.mjs'
+  pull_request:
+    paths:
+      - '.github/workflows/historia-thematic-acceptance.yml'
+      - 'src/scripture/**'
+      - 'data/research/historia-salutis-thematic-*'
+      - 'tests/historia-thematic-*.mjs'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  node-contracts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Static and source-parity contract tests
+        run: |
+          node --check src/scripture/historia-thematic-collections.js
+          node --check src/scripture/browser-entry.js
+          node --check src/scripture/library.js
+          node --check tests/historia-thematic-phone-e2e.mjs
+          node tests/historia-thematic-collections.mjs
+          node tests/historia-thematic-inapp-bridge.mjs
+          node tests/historia-thematic-reciprocal-navigation.mjs
+  browser:
+    needs: node-contracts
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install existing app dependencies
+        run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Real phone-size Chromium Scripture / covenant / return acceptance
+        run: node tests/historia-thematic-phone-e2e.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: historia-thematic-phone-review
+          path: test-output/historia-thematic/*.png
+          if-no-files-found: warn
