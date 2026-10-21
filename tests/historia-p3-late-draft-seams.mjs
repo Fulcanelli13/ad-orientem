@@ -25,7 +25,7 @@ assert.equal(proof.stage,"REAL_VERSE_READ_THROUGH_PROOF_NOT_APPROVED");
 assert.equal(proof.totals.movements,37);
 assert.equal(proof.totals.essentialUnits,93);
 assert.equal(proof.totals.briefEditorialContextNotes,29);
-assert.equal(proof.totals.sourceBridgeCandidates,17);
+assert.equal(proof.totals.sourceBridgeCandidates,16);
 assert.equal(proof.totals.independentlyReadAndApproved,false);
 const meta=proof.p4LateMovementDraft;
 assert.equal(meta.status,"SOURCE_BACKED_EDITS_APPLIED_ON_P3_DRAFT_NOT_APPROVED");
@@ -34,9 +34,9 @@ assert.equal(meta.finishedSequentialOralReading,false);
 assert.equal(meta.printedTextCollationRequired,true);
 assert.equal(meta.publicationApproved,false);
 assert.equal(meta.originalSourceBridgeCandidatesPreserved,10);
-assert.equal(meta.revisedTotalSourceBridgeCandidates,17);
+assert.equal(meta.revisedTotalSourceBridgeCandidates,16);
 assert.equal(meta.additionalOriginalUnitVerseInsertions,19);
-assert.equal(meta.newIndependentSourceBridgesFromBatch.length,6);
+assert.equal(meta.newIndependentSourceBridgesFromBatch.length,5);
 assert.deepEqual(proof.movements.map(m=>m.id),Array.from({length:37},(_,i)=>"HS-M"+String(i+1).padStart(2,"0")));
 for(const id of ["HS-M20","HS-M21","HS-M22","HS-M24","HS-M26","HS-M27","HS-M29","HS-M31","HS-M32","HS-M33","HS-M34","HS-M35","HS-M36","HS-M37"])
  assert.ok(meta.editedMovementIds.includes(id),"Research edited-movement record missing "+id);
@@ -80,12 +80,11 @@ const newBridgeDefinitions=[
  ["HS-P3-CF-14","HS-M35","Revelation 4:1–2"],
  ["HS-P3-CF-15","HS-M37","Revelation 21:9–10"],
  ["HS-P3-CF-16","HS-M37","Revelation 22:20–21"],
- ["HS-P3-CF-17","HS-M20","John 1:29–34"],
- ["HS-P3-CF-18","HS-M27","Matthew 27:3–10"]
+ ["HS-P3-CF-17","HS-M20","John 1:29–34"]
 ];
 const bridges=proof.movements.flatMap(m=>m.beats.filter(b=>b.kind==="SOURCE_BRIDGE_CANDIDATE").map(b=>({...b,movementId:m.id})));
-assert.equal(bridges.length,17);
-assert.equal(new Set(bridges.map(x=>x.id)).size,17);
+assert.equal(bridges.length,16);
+assert.equal(new Set(bridges.map(x=>x.id)).size,16);
 assert.deepEqual(bridges.filter(x=>originalBridgeIds.includes(x.id)).map(x=>x.id).sort(),originalBridgeIds.sort());
 for(const [id,mid,r] of newBridgeDefinitions){
  const b=getBeat(mid,id);
