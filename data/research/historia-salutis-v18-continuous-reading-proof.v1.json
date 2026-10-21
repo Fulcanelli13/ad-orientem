@@ -1185,7 +1185,19 @@
           "edition": "cpdv-2009",
           "policy": "PROPOSED_CURATED_TRIM",
           "hasPartialVerseHold": false,
-          "publicationApproved": false
+          "publicationApproved": false,
+          "beforeScriptureConnectorCandidate": {
+            "id": "HS-P3-EC-03",
+            "text": "In Bethlehem, Ruth gleaned in the fields of Boaz, a kinsman of Naomi's deceased husband, who treated her kindly. After a nearer kinsman relinquished his claim, Boaz could take Ruth as his wife.",
+            "sourceReferences": [
+              "Ruth 2:1–13",
+              "Ruth 4:1–12"
+            ],
+            "status": "SOURCE_BACKED_EDITORIAL_CAUSAL_TRIAL_NOT_APPROVED",
+            "accepted": false,
+            "publicationApproved": false,
+            "notPartOfOriginal29ContextUnits": true
+          }
         },
         {
           "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
@@ -1282,7 +1294,18 @@
           "policy": "LITERARY_CONTINUITY_EXPANSION",
           "hasPartialVerseHold": false,
           "publicationApproved": false,
-          "editorialReason": "Without verses 4–9 the Lord's instruction to Jesse and Samuel's examination of the elder sons are missing before verse 10. Preserve the complete chosen-king episode, replacing the earlier provisional 1Samuel 16:1–3 source bridge."
+          "editorialReason": "Without verses 4–9 the Lord's instruction to Jesse and Samuel's examination of the elder sons are missing before verse 10. Preserve the complete chosen-king episode, replacing the earlier provisional 1Samuel 16:1–3 source bridge.",
+          "beforeScriptureConnectorCandidate": {
+            "id": "HS-P3-EC-04",
+            "text": "Saul had disobeyed the Lord's command. Samuel rebuked him, declaring that obedience was better than sacrifice, and that the Lord had rejected him as king.",
+            "sourceReferences": [
+              "1Samuel 15:10–23"
+            ],
+            "status": "SOURCE_BACKED_EDITORIAL_CAUSAL_TRIAL_NOT_APPROVED",
+            "accepted": false,
+            "publicationApproved": false,
+            "notPartOfOriginal29ContextUnits": true
+          }
         },
         {
           "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
@@ -1416,7 +1439,18 @@
           "policy": "PROPOSED_CURATED_TRIM",
           "hasPartialVerseHold": false,
           "publicationApproved": false,
-          "editorialReason": "Preserve the Temple-construction event but omit numerical dimensions from this introductory narrative unit; the Temple's consecration is already narrated in the next original passage."
+          "editorialReason": "Preserve the Temple-construction event but omit numerical dimensions from this introductory narrative unit; the Temple's consecration is already narrated in the next original passage.",
+          "beforeScriptureConnectorCandidate": {
+            "id": "HS-P3-EC-05",
+            "text": "After David's death, his son Solomon succeeded him as king.",
+            "sourceReferences": [
+              "1Kings 2:10–12"
+            ],
+            "status": "SOURCE_BACKED_EDITORIAL_CAUSAL_TRIAL_NOT_APPROVED",
+            "accepted": false,
+            "publicationApproved": false,
+            "notPartOfOriginal29ContextUnits": true
+          }
         },
         {
           "kind": "SCRIPTURE",
@@ -2664,7 +2698,19 @@
           "edition": "cpdv-2009",
           "policy": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
           "hasPartialVerseHold": false,
-          "publicationApproved": false
+          "publicationApproved": false,
+          "afterSelectedReadthroughTrial": {
+            "status": "PASSION_SOURCE_CONTINUITY_AND_DOCTRINAL_WITNESS_RESEARCH_ONLY",
+            "refs": [
+              "John 19:31–37"
+            ],
+            "sourceReference": "John 19:31–37",
+            "reason": "After Christ's death, John attests the unbroken bones, piercing of His side, blood and water, eyewitness testimony, and fulfilment of Scripture. This joins 19:30 to the burial trial 19:38–42.",
+            "accepted": false,
+            "publicationApproved": false,
+            "originalUnitRefsUnmodified": true,
+            "printedCatholicEditionCollationPending": true
+          }
         },
         {
           "kind": "SOURCE_BRIDGE_CANDIDATE",
@@ -3088,7 +3134,18 @@
             "fullLiteraryReadAloudPending": true,
             "accepted": false,
             "publicationApproved": false,
-            "originalHeldReference": "Acts 7:51–53"
+            "originalHeldReference": "Acts 7:51–53",
+            "editorialPreface": {
+              "id": "HS-P3-EC-06",
+              "text": "Stephen, one of the seven chosen to serve the growing Church, worked wonders and was brought before the council amid accusations. In his defence he recalled God's dealings with the patriarchs and Moses before addressing his hearers.",
+              "sourceReferences": [
+                "Acts 6:5–15",
+                "Acts 7:1–50"
+              ],
+              "status": "SOURCE_BACKED_EDITORIAL_CAUSAL_TRIAL_NOT_APPROVED",
+              "accepted": false,
+              "publicationApproved": false
+            }
           }
         },
         {
@@ -3543,7 +3600,19 @@
             "fullLiteraryReadAloudPending": true,
             "accepted": false,
             "publicationApproved": false,
-            "originalHeldReference": "Acts 28:16"
+            "originalHeldReference": "Acts 28:16",
+            "editorialPreface": {
+              "id": "HS-P3-EC-07",
+              "text": "After further journeys, Paul was seized in Jerusalem. He appealed to Caesar and was sent to Italy as a prisoner.",
+              "sourceReferences": [
+                "Acts 21:27–36",
+                "Acts 25:10–12",
+                "Acts 27:1"
+              ],
+              "status": "SOURCE_BACKED_EDITORIAL_CAUSAL_TRIAL_NOT_APPROVED",
+              "accepted": false,
+              "publicationApproved": false
+            }
           }
         },
         {
@@ -3922,10 +3991,10 @@
           "readthroughTrial": {
             "status": "SOURCE_CHECKED_FOR_CONTINUOUS_READING_UNAPPROVED",
             "refs": [
-              "Revelation 21:9–10"
+              "Revelation 21:9–11"
             ],
             "tier": "ESSENTIAL",
-            "rationale": "The interpreting angel introduces the city and is the antecedent of 'he showed me' in Revelation 22:1. Visions are not mapped as chronological earthly events.",
+            "rationale": "The interpreting angel introduces the city and is the antecedent of 'he showed me' in Revelation 22:1. Visions are not mapped as chronological earthly events. Verse 11 completes the suspended visual description introduced at verse 10 in the Douay and French witnesses.",
             "printedCatholicEditionCollationPending": true,
             "fullLiteraryReadAloudPending": true,
             "accepted": false,
@@ -4050,7 +4119,11 @@
     "heldCandidatesStillNotApproved": 16,
     "additionalSourceTrialFirstborn": "Exodus 12:29–30",
     "josephNarrativeConnector": "HS-P3-EC-02",
-    "readingTrialsAccepted": 0
+    "readingTrialsAccepted": 0,
+    "additionalReadthroughConnectorCandidates": 7,
+    "passTwoNewEditorialConnectors": 5,
+    "romanPassionTrial": "John 19:31–37",
+    "newJerusalemSuspendedSentenceRepair": "Revelation 21:9–11"
   },
   "historicallyProposedBridgeStatus": {
     "sourceCandidatesInDeskRegistry": 11,
