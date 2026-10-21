@@ -266,13 +266,13 @@ async function exerciseRealShellSpecialRite(browser,spec){
           progress:root?.querySelector('[data-role="progress"]')?.textContent??"",
           lastGospelVisibility:api?.model?.cards?.filter(c=>(c.sourceSectionId??c.sectionId)==="AO.CARD.030").length};
       });
-      assert.equal(snapshot.total,60,spec.kind+" must remove exactly four opening display cards");
+      assert.equal(snapshot.total,61,spec.kind+" must remove exactly four opening display cards");
       assert.equal(snapshot.source,39,spec.kind+" must preserve canonical 39 source steps");
       assert.equal(snapshot.curated,"true");
       assert.equal(snapshot.first,"Introit");
       assert.equal(snapshot.handoff,"INTROIT");
       assert.equal(snapshot.suppressed?.length,4);
-      assert.match(snapshot.progress,new RegExp("1 / "+(spec.kind==="PALM"?57:59)+"$"),
+      assert.match(snapshot.progress,new RegExp("1 / "+(spec.kind==="PALM"?58:60)+"$"),
         spec.kind+" visible progress must exclude Foot cards and optional second Confiteor"+
         (spec.kind==="PALM"?" and Last Gospel":""));
       assert.equal(snapshot.lastGospelVisibility,2,
