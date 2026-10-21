@@ -5,6 +5,23 @@
  */
 import {catenaRelatedTopic,catenaTopicEvidence,retrieveCatenaRelatedMessages} from "./catena-related-vocabulary.js";
 export const LIVING_CATENA_SCHEMA="ao.catena.messenger.v1";
+// Mixed authorship recorded in the Catena research audit. These two
+// boundaries are display metadata only: the canonical source is untouched.
+const KNOWN_MIXED_OWNERS=Object.freeze({
+ "catena.matthew.26.26:12":Object.freeze({father:"Lanfranc",length:530,at:215}),
+ "catena.matthew.27.45:1":Object.freeze({father:"Origen",length:1239,at:726})
+});
+export function catenaOwnerUnits(row){
+ if(!row||typeof row.id!=="string"||typeof row.text!=="string"||
+   typeof row.father!=="string")return null;
+ const owner=KNOWN_MIXED_OWNERS[row.id];
+ if(!owner)return [{father:row.father,originalWords:row.text}];
+ if(row.father!==owner.father||row.text.length!==owner.length||
+    row.text.indexOf("PSEUDO-DIONYSIUS.")!==owner.at)
+   return null; // Fail closed rather than putting another author in one bubble.
+ return [{father:owner.father,originalWords:row.text.slice(0,owner.at)},
+         {father:"Pseudo-Dionysius",originalWords:row.text.slice(owner.at)}];
+}
 const STOP=new Set("a an and are as at be been but by can could did do does for from had has have how i in is it its may me my of on or our shall should so that the the their them there these this those to was were what when where which who why will with would you your about passage say says".split(" "));
 export const catenaSearchTerms=q=>[...new Set((String(q||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().match(/[a-z]{4,}/g)||[]).filter(x=>!STOP.has(x)))];
 const tokens=catenaSearchTerms;
@@ -248,6 +265,13 @@ function installStyle(d){
  ".aoCatenaMAvatar{flex:0 0 38px;width:38px;height:38px;border-radius:50%;border:1px solid #aa8552;background:#303739;display:grid;place-items:center;color:#ead0a6;font:600 15px Georgia}",
  ".aoCatenaMBody{flex:1;min-width:0}",
  ".aoCatenaMRelated,.aoCatenaMEvidence{font:500 11px/1.5 var(--ao-font-ui,Georgia,serif);color:#c7b9a1;margin:0 0 5px!important}",
+ ".aoCatenaMResearch{margin:6px 0 10px;padding:12px;border:1px solid #7a6646;border-radius:9px;background:#1b2229}",
+ ".aoCatenaMResearch h5{color:#edd3a7;font:500 16px Georgia,serif;margin:0 0 5px}",
+ ".aoCatenaMResearch p{color:#c8bba8;font:12px/1.55 var(--ao-font-ui,Georgia,serif);margin:3px 0 9px!important}",
+ ".aoScriptureLibrary .aoCatenaMResearch button{display:block;text-align:left;width:100%;min-height:44px;background:#111d29;border:1px solid #6c5b40;padding:9px 12px;color:#f0dfc3;margin:7px 0;border-radius:7px;font:14px/1.4 Georgia,serif}",
+ ".aoCatenaMResearchOwner{border-top:1px solid #726248;padding-top:10px;margin-top:10px}",
+ ".aoCatenaMResearchOwner:first-child{border-top:0;padding-top:0;margin-top:0}",
+ ".aoCatenaMResearchBadge{color:#e3c28a;font:500 11px/1.4 var(--ao-font-ui,Georgia,serif);letter-spacing:.03em}",
  ".aoCatenaMElsewhere{font:600 11px/1.5 var(--ao-font-ui,Georgia,serif);color:#d6ae70;margin:0 0 5px!important;letter-spacing:.035em}",
  ".aoCatenaMName{color:#e9c68e;font:600 13px var(--ao-font-ui,Georgia,serif);margin:0 0 5px!important}",
  ".aoCatenaMBubble{border:1px solid #41505b;background:#1a2834;padding:13px;border-radius:4px 14px 14px 14px;color:#efe6d9;white-space:pre-wrap;overflow-wrap:anywhere;font:17px/1.65 var(--ao-font-liturgical,Georgia,serif)}",
@@ -272,7 +296,7 @@ function installStyle(d){
  ].join("\n");
  (d.head||d.documentElement).append(s);
 }
-export function mountCatenaMessenger(host,pericopes,{language="en",fetcher=globalThis.fetch?.bind(globalThis),cacheStorage=globalThis.caches,cryptoProvider=globalThis.crypto}={}){
+export function mountCatenaMessenger(host,pericopes,{language="en",fetcher=globalThis.fetch?.bind(globalThis),cacheStorage=globalThis.caches,cryptoProvider=globalThis.crypto,editorialResearchEnabled=false}={}){
  if(!host?.ownerDocument||language!=="en")return null;
  const d=host.ownerDocument,rows=indexCatenaMessages(pericopes);
  if(!rows.length)return null;
@@ -287,11 +311,15 @@ export function mountCatenaMessenger(host,pericopes,{language="en",fetcher=globa
  const authors=element(d,"nav","aoCatenaMAuthors");authors.setAttribute("aria-label","Select an attributed Father");
  const feed=element(d,"div","aoCatenaMFeed");feed.setAttribute("role","log");feed.setAttribute("aria-label","Patristic source extracts");
  const foot=element(d,"div","aoCatenaMFooter"),topics=element(d,"div","aoCatenaMTopics"),acts=element(d,"div","aoCatenaMActions"),form=element(d,"form","aoCatenaMForm");
+ const researchPanel=element(d,"section","aoCatenaMResearch");
+ researchPanel.hidden=true;researchPanel.setAttribute("aria-label","Unapproved editorial research questions");
  const input=element(d,"input");
  input.type="search";input.maxLength=240;input.placeholder="Ask about the passage…";input.setAttribute("aria-label","Find the Fathers' words");
  const send=element(d,"button",null,"Find excerpts");send.type="submit";
  form.append(input,send);
- foot.append(topics,acts,form,element(d,"p","aoCatenaMDisclaimer","All Father messages reproduce the Oxford/Newman Catena extracts. Search labels show exact wording, shared words or related vocabulary; none certifies that an excerpt answers the question. No AI speech. Author labels follow the historical source."));
+ foot.append(topics,editorialResearchEnabled?researchPanel:element(d,"span"),acts,form,
+  element(d,"p","aoCatenaMDisclaimer",
+   "All displayed commentaries reproduce Oxford/Newman Catena excerpts. The printed author labels are historically inherited, not critically authenticated. Editorial research questions (when enabled) are NOT quotations or approved answers. No AI Father speech."));
  shell.append(head,authors,feed,foot);host.append(shell);
  const seen=new Set();let lastFather=null,lastQuestion="",searching=false;
  const wider=action(d,"Search all four Gospels",()=>{if(lastQuestion)void searchElsewhere(lastQuestion)});
@@ -310,11 +338,15 @@ export function mountCatenaMessenger(host,pericopes,{language="en",fetcher=globa
  }
  function message(r){
   if(!r||seen.has(r.id))return false;
+  const ownerUnits=catenaOwnerUnits(r);
+  if(!ownerUnits){note("Mixed source attribution boundary failed validation; unverified excerpt withheld.");return false;}
   seen.add(r.id);lastFather=r.father;
   const article=element(d,"article","aoCatenaMRow");article.dataset.catenaFragmentId=r.id;
   const av=element(d,"div","aoCatenaMAvatar",r.father.slice(0,1).toUpperCase());av.setAttribute("aria-hidden","true");
   const body=element(d,"div","aoCatenaMBody"),bubble=element(d,"div","aoCatenaMBubble");
   if(r.fromAnotherPassage)body.append(element(d,"p","aoCatenaMElsewhere","FROM ANOTHER PASSAGE · "+r.reference));
+  if(r.editorialResearchLead)body.append(element(d,"p","aoCatenaMResearchBadge",
+   "EDITORIAL SOURCE LEAD · NOT A VERIFIED ANSWER · ORIGINAL EXCERPT"));
   if(r.relatedSourceEvidence)body.append(element(d,"p","aoCatenaMRelated","RELATED SOURCE WORDING · “"+r.relatedSourceEvidence.sourcePhrase+"” · Not a direct answer"));
   else if(r.sourceMatchEvidence){
    const evidence=r.sourceMatchEvidence;
@@ -325,13 +357,20 @@ export function mountCatenaMessenger(host,pericopes,{language="en",fetcher=globa
    context.dataset.catenaMatch=evidence.kind;
    body.append(context);
   }
-  body.append(element(d,"p","aoCatenaMName",r.father));
-  const excerpt=opening(r.text);bubble.append(element(d,"p",null,excerpt));
-  if(excerpt!==r.text){
-   const details=element(d,"details","aoCatenaMComplete");
-   details.append(element(d,"summary",null,"Read complete, unabridged extract"),
-                  element(d,"p",null,r.text));
-   bubble.append(details);
+  body.append(element(d,"p","aoCatenaMName",
+   ownerUnits.length>1?"MULTIPLE PRINTED ATTRIBUTIONS":("Catena attribution: "+r.father)));
+  for(const unit of ownerUnits){
+   const ownerBlock=element(d,"section",ownerUnits.length>1?"aoCatenaMResearchOwner":null);
+   if(ownerUnits.length>1)ownerBlock.append(element(d,"p","aoCatenaMName","Attributed in the Catena: "+unit.father));
+   const excerpt=opening(unit.originalWords);
+   ownerBlock.append(element(d,"p",null,excerpt));
+   if(excerpt!==unit.originalWords){
+    const details=element(d,"details","aoCatenaMComplete");
+    details.append(element(d,"summary",null,"Read complete, unabridged extract"),
+                   element(d,"p",null,unit.originalWords));
+    ownerBlock.append(details);
+   }
+   bubble.append(ownerBlock);
   }
   const meta=element(d,"div","aoCatenaMMeta");
   meta.append(d.createTextNode(r.citation+" · Extract "+r.ordinal+" · "));
@@ -340,6 +379,72 @@ export function mountCatenaMessenger(host,pericopes,{language="en",fetcher=globa
   source.dataset.scriptureCommentarySource="verified";meta.append(source);
   body.append(bubble,meta);article.append(av,body);feed.append(article);renderAuthors();
   return true;
+ }
+ if(editorialResearchEnabled){
+  const browse=action(d,"Browse research questions",()=>{void toggleEditorialResearch()});
+  acts.append(browse);
+  let registryPromise=null,researchOpen=false;
+  async function getRegistry(){
+   if(!registryPromise)registryPromise=import("./catena-editorial-routes.js").then(mod=>
+    mod.loadCatenaEditorialRoutes({fetcher}).then(registry=>({mod,registry}))
+   ).catch(error=>{registryPromise=null;throw error});
+   return registryPromise;
+  }
+  async function toggleEditorialResearch(){
+   researchOpen=!researchOpen;
+   browse.setAttribute("aria-expanded",String(researchOpen));
+   researchPanel.hidden=!researchOpen;
+   if(!researchOpen)return;
+   researchPanel.replaceChildren(element(d,"p",null,"Loading source-linked research questions…"));
+   try{
+    const {mod,registry}=await getRegistry();
+    if(!researchOpen||!shell.isConnected)return;
+    const query=lastQuestion||"";
+    const found=mod.discoverCatenaEditorialRoutes(registry,query,{
+     currentPericopeIds:pericopes.map(p=>p.id),limit:10
+    });
+    researchPanel.replaceChildren(element(d,"h5",null,"Original sources to investigate"));
+    researchPanel.append(element(d,"p",null,
+     "Modern editorial questions — all unapproved. Select to inspect the Fathers' original words, never a combined answer."));
+    if(!found.length){
+     researchPanel.append(element(d,"p",null,
+      "No contextual-review questions for this selection. Ask a shorter Matthew question or use the original full-corpus search."));
+    }
+    for(const route of found){
+     const btn=action(d,route.question+(route.kind==="comparison"?" · compare sources":""),()=>{void showEditorialRoute(mod,registry,route)});
+     btn.dataset.catenaResearchQuestion=route.id;
+     researchPanel.append(btn);
+    }
+   }catch{
+    if(researchOpen&&shell.isConnected){
+     researchPanel.replaceChildren(element(d,"p",null,
+      "Editorial question registry unavailable; original Messenger search remains available."));
+    }
+   }
+  }
+  async function showEditorialRoute(mod,registry,route){
+   const busy=element(d,"p","aoCatenaMNotice","Checking original source excerpt and attribution…");
+   feed.append(busy);
+   try{
+    const found=await mod.retrieveCatenaEditorialPassages(registry,route,{fetcher,cacheStorage,cryptoProvider});
+    if(!shell.isConnected)return;
+    busy.remove();
+    feed.append(element(d,"div","aoCatenaMUser",route.question));
+    note("Editorial navigation only · These excerpts may illuminate the question but have NOT received human approval. Distinct Father interpretations remain separate.");
+    if(route.caution)note("Comparison context: "+route.caution);
+    let added=0;
+    for(const r of found){
+     const other=!pericopes.some(p=>p.id===r.pericopeId);
+     if(message({...r,fromAnotherPassage:other,reference:r.citation}))added++;
+    }
+    if(!added)note("Relevant original excerpts are already shown, or have been withheld because source ownership could not be verified.");
+   }catch{
+    if(shell.isConnected){
+     busy.remove();
+     note("Could not verify all original excerpts for that research route. No attributed answer was substituted.");
+    }
+   }
+  }
  }
  acts.append(action(d,"Continue reading",()=>{
   const next=rows.find(r=>!seen.has(r.id));

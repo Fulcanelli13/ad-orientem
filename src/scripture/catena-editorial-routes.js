@@ -89,7 +89,7 @@ export function discoverCatenaEditorialRoutes(registry,query="",{currentPericope
  const verseWanted=parsed.ref&&new Set(Array.from({length:parsed.ref.last-parsed.ref.first+1},
   (_,i)=>"matthew/"+parsed.ref.chapter+"/"+(parsed.ref.first+i)));
  const current=new Set(currentPericopeIds);
- const remaining=parsed.remainder;
+ const remaining=parsed.remainder.replace(/[?!.,;:]+/g," ").trim();
  if(!verseWanted&&!remaining.trim()&&!current.size)return [];
  function eligible(p){
   const r=registry.byPointer.get(p);if(!r)return false;
