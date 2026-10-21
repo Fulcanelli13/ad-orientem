@@ -167,6 +167,30 @@ try{
  assert.equal(await manuscript.locator('[data-historia-context-link="hist-omitted-093"]').count(),0);
  results.push("Judith: no unsupported chronology link");
 
+ // Separately opted-in second-batch catalogue, still research-only.
+ const expanded=await context.newPage();
+ expanded.on("pageerror",e=>errors.push(String(e.message)));
+ await expanded.goto(base+
+  "/index.html?ao_historia_collections=1&ao_historia_batch2=1#hist-omitted-104",
+  {waitUntil:"domcontentloaded",timeout:90000});
+ await expanded.waitForFunction(()=>{
+  const state=globalThis.AO_SCRIPTURE_APP_V1?.status?.().reader;
+  return state?.thematicEpisodeId==="hist-omitted-104" &&
+   state?.passage?.book==="Luke" && state?.passage?.chapter===1 &&
+   state?.passage?.verseStart===46;
+ },null,{timeout:65000});
+ const catalogue=expanded.locator("#ao-scripture-overlay");
+ assert.equal(await catalogue.locator("[data-historia-episode]").count(),60);
+ assert.equal(await catalogue.locator(".aoHistoriaGroup").count(),4);
+ assert.equal(await catalogue.locator('[data-historia-context-link="hist-omitted-104"]').count(),0,
+  "Staged Magnificat must not inherit an Atlas/P3 identity without adjudication");
+ await catalogue.locator(".aoScriptureVerse").first().waitFor({timeout:25000});
+ assert.match(await catalogue.locator("[data-historia-active-episode]").innerText(),
+  /Staged supplementary Scripture:.*not yet verified/s);
+ results.push("opt-in batch two: 60 canonical-source readings across four groups, no fabricated contextual anchor");
+ await expanded.screenshot({path:resolve(output,"batch2-magnificat-390.png"),animations:"disabled"});
+ await expanded.close();
+
  assert.deepEqual(errors.filter(s=>/ReferenceError|SyntaxError|TypeError/.test(s)),[],
   "Browser runtime failures: "+errors.join(" | "));
  await original.close();await manuscript.close();await page.close();
