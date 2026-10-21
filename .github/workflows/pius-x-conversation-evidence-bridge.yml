@@ -112,6 +112,9 @@ on:
       - 'data/learn/research/pius-x-document-first-remaining-haerent-20261021.v1.json'
       - 'data/learn/research/pius-x-document-first-34-editorial-corrections-20261021.v1.json'
       - 'data/learn/research/pius-x-document-first-unscripted-bilingual-probes-20261021.v1.json'
+      - 'data/learn/research/pius-x-document-first-router-to-claims-20261021.v1.json'
+      - 'tools/formation/pius-x-document-first-answer-selector.mjs'
+      - 'tests/pius-x-document-first-answer-selection.mjs'
       - 'tests/pius-x-document-first-unscripted-router-6.mjs'
       - 'tools/formation/build-pius-x-three-document-full-benchmark.mjs'
       - 'tests/pius-x-document-first-full-34-source-map.mjs'
@@ -464,6 +467,50 @@ jobs:
         with:
           name: SPX-40-Answer-Bilingual-Editorial-Batch
           path: artifacts/pius-x-release-review/SPX_40_Answer_Editorial_Batch_Review.html
+          if-no-files-found: warn
+          retention-days: 30
+
+  pius-x-document-first-answer-selection:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Reuse exact approved research-only shared router owner, not a new matcher
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch --no-tags --depth=1 origin 'b5dd7272e503236cab3635081d93469e6a3ebc34'
+          test "$(git rev-parse FETCH_HEAD)" = 'b5dd7272e503236cab3635081d93469e6a3ebc34'
+          for file in \
+            src/learn/living-church-shared-question-router.js \
+            src/learn/living-church-hybrid-question-router.js \
+            src/learn/living-church-historical-focus.js \
+            src/learn/living-church-personal-verdict-gate.js \
+            src/learn/living-church-liturgical-source-scope.js \
+            src/learn/living-church-pius-x-source-concepts.js \
+            src/learn/living-church-contemporary-discipline-scope.js \
+            data/learn/living-church-shared-question-routing-pilot.v1.json \
+            data/learn/living-church-symbolic-concepts.v1.json \
+            data/learn/living-church-pius-x-historical-passage-pointers.v1.json
+          do
+            dest="research-out/pr1443-pius-x-document-first-router/$file"
+            mkdir -p "$(dirname "$dest")"
+            git show "FETCH_HEAD:$file" > "$dest"
+          done
+      - name: Build unchanged source-owner 12 plus 22 bilingual corpus derivative
+        run: node tools/formation/build-pius-x-three-document-full-benchmark.mjs
+      - name: Verify exact source-to-claim selection, bilingual parity and negative cases
+        run: node tests/pius-x-document-first-answer-selection.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: SPX-Three-Document-Review-Only-Answer-Selection
+          path: research-out/pius-x-document-first-answer-selection.v1.json
           if-no-files-found: warn
           retention-days: 30
 
