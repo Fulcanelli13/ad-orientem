@@ -87,6 +87,16 @@ The identity registry now separately evaluates each documented Atlas event again
 
 A simulated DOM exercise of the actual `mountScriptureLibrary` implementation passed **10 interaction assertions**, including the Prodigal Son deep link, source-coordinate context link, Tobit chapter paging, the absence of a Judith chronology link, Esther's edition lock, and exit on ordinary Bible navigation. This is **not** equivalent to running Playwright in a genuine browser. The Node test sources have been committed, and a real browser end-to-end check is still mandatory before merge or release.
 
+## Expansion beyond 19 pilots — source-index preflight
+
+The full omission inventory is now accountably processed without changing the 54-chapter P3 proposal or adding a second Scripture-text store. Of 217 source inventory entries, 19 remain the active research pilots; 191 additional entries have single-book Catholic Scripture coordinates accepted by the existing reference parser; 7 remain **manual segmentation holds**. A duplicated Revelation 13 span represents two proposed entries but only one underlying chapter; the records cannot silently become two independent Scripture copies.
+
+The next editorial candidate batch contains **41 readings**: 21 further Miracles of Our Lord, 17 Parables and Teachings, and 3 biblical canticles. The shared adapter `src/scripture/historia-thematic-expansion.js` produces source-coordinate reading plans, checks exact Catholic book and chapter limits and requires the first 19 pilots remain intact. All these new entries are **research staged, not live**. They have no promoted Atlas event identities, no invented chronological chapters, and no copied Bible text. The other 150 single-book entries remain staged for later collection-by-collection review.
+
+The seven manual holds are Hagar/Ishmael (two Genesis passages), David sparing Saul (two references), Jeremiah's imprisonment (noncontiguous chapters), Greek Esther additions (edition-specific versification), hidden life at Nazareth (discontinuous verses), the last-things discourse (Matthew and Mark), and the trials of Job (noncontiguous chapters). No malformed segments are silently widened or assigned a different canonical Bible verse.
+
+Registry: `data/research/historia-salutis-thematic-collections-expansion-preflight-20261021.v1.json`. Tests: `tests/historia-thematic-expansion-preflight.mjs` and `tests/historia-thematic-expansion-adapter.mjs`. The 41-entry adapter has passed a direct in-process evaluation against the branch's registry, but Node/Playwright workflow confirmation is still outstanding.
+
 ## Main manuscript protection
 
 - The 54-chapter research proposal at data/research/historia-salutis-p3-provisional-reading-chapter-consolidation-20261021.v2.json is unchanged.
