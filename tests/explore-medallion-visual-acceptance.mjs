@@ -215,6 +215,34 @@ try{
    await graph.waitFor({state:"detached",timeout:10000});
    await page.locator("#ao-find-modular-root [data-mapcn-discover-rail]").waitFor({state:"visible"});
    assert.equal(await page.locator(".aoHeritageSurface .aoFindMap canvas.maplibregl-canvas").count(),1);
+   // P6: existing five-surface owner must open exactly the canonical custom,
+   // including valid 3-letter IDs used by the published customs registry.
+   await page.locator("#ao-find-modular-root button[data-network-toggle]").click();
+   await graph.waitFor({state:"visible"});
+   await graph.locator("select[data-network-kind]").selectOption("custom");
+   const customCta=graph.locator(".aoNetworkCurrent [data-network-open-custom]");
+   await customCta.waitFor({state:"visible"});
+   const ctaId=await customCta.getAttribute("data-network-open-custom");
+   assert.ok(/^[A-Z]{3,4}-[0-9]{3}$/.test(ctaId||""),"CTA must use an existing canonical ID");
+   await customCta.click();
+   const customFolio=page.locator('#ao-find-modular-root .aoExploreTraditionSheet[data-explore-custom-id="'+ctaId+'"]');
+   await customFolio.waitFor({state:"visible",timeout:12000});
+   assert.ok(await customFolio.locator("a[href^='https://']").count()>0,
+     "Existing custom detail must retain independently cited publishers");
+   assert.equal(await graph.count(),0,"Network must close before opening canonical customs folio");
+   const direct=await page.evaluate(()=>globalThis.AO_FIND_APP_V1.open({
+      lens:"traditions",customId:"DEV-010",expandDetail:true}));
+   assert.equal(direct,true,"Valid 3-letter published customs must open by exact Calendar link");
+   await page.locator('#ao-find-modular-root .aoExploreTraditionSheet[data-explore-custom-id="DEV-010"]').waitFor({state:"visible"});
+   const rejected=await page.evaluate(()=>globalThis.AO_FIND_APP_V1.open({
+      lens:"traditions",customId:"DEV-999"}));
+   assert.equal(rejected,false,"Missing customs must not mint profiles");
+   assert.equal(await page.locator('#ao-find-modular-root .aoExploreTraditionSheet[data-explore-custom-id="DEV-010"]').count(),1);
+   const returned=await page.evaluate(()=>globalThis.AO_FIND_APP_V1.open({lens:"heritage"}));
+   assert.equal(returned,true,"Canonical Explore owner must restore Discover");
+   await page.locator("#ao-find-modular-root [data-mapcn-discover-rail]").waitFor({state:"visible"});
+   assert.equal(await page.locator(".aoHeritageSurface .aoFindMap canvas.maplibregl-canvas").count(),1,
+     "Cross-surface folio handoff must restore a single MapLibre canvas");
    // D is a same-map journey folio: no new page and no manufactured route
    // lines. Exercise a historical source-owned 3-stage pilgrimage.
    await page.locator("#ao-find-modular-root [data-explore-journey-open]").click();
