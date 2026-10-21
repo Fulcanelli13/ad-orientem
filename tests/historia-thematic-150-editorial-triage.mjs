@@ -75,7 +75,7 @@ for(const [suffix,references] of Object.entries(proposals)){
   }
  }
 }
-for(const episode of original.flatMap(g=>g.episodes).filter(e=>!(e.id in proposals))){
+for(const episode of original.flatMap(g=>g.episodes).filter(e=>!(e.id.slice(-3) in proposals))){
  assert.strictEqual(byId.get(episode.id),episode,
   'No unrelated historical/main/Scripture episode should be overwritten');
 }
