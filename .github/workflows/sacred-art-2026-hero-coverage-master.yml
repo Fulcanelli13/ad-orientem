@@ -1,0 +1,25 @@
+name: 2026 Sacred Art Hero Coverage Master
+on:
+  push:
+    branches: [fix/approved-feast-heroes-main-20261021]
+    paths:
+      - data/calendar/sacred-art-2026-hero-assignment-master-20261021.v1.json
+      - tests/sacred-art-2026-hero-assignment-master.mjs
+      - .github/workflows/sacred-art-2026-hero-coverage-master.yml
+  pull_request:
+    branches: [main]
+    paths:
+      - data/calendar/sacred-art-2026-hero-assignment-master-20261021.v1.json
+      - tests/sacred-art-2026-hero-assignment-master.mjs
+      - .github/workflows/sacred-art-2026-hero-coverage-master.yml
+permissions:
+  contents: read
+jobs:
+  hero-master-coverage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: node tests/sacred-art-2026-hero-assignment-master.mjs
