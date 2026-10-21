@@ -803,4 +803,5 @@ await import("./historia-continuous-proof.mjs");
 await import("./historia-p3-late-draft-seams.mjs");
 await import("./historia-p3-three-witness-reading-preflight.mjs");
 await import("./historia-p3-three-edition-corpus.mjs");
+await import("./historia-p3-bridge-source-order.mjs");
 console.log("Shared source mining, Esther spans and editorial review contracts passed");
