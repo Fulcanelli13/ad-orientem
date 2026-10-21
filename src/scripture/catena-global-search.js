@@ -5,7 +5,7 @@
  * has fetched and integrity-validated its actual source chapter pack.
  */
 import {CATENA_LOCAL_BASE,CATENA_SOURCE_COMMIT,loadCatenaForPassage} from "./catena-inline.js";
-import {catenaSearchTerms,indexCatenaMessages,retrieveCatenaMessages} from "./catena-messenger.js";
+import {catenaSearchTerms,catenaQuestionHasSufficientEvidence,indexCatenaMessages,retrieveCatenaMessages} from "./catena-messenger.js";
 import {catenaRelatedTopic,catenaTopicEvidence,retrieveCatenaRelatedMessages} from "./catena-related-vocabulary.js";
 export const CATENA_GLOBAL_SCHEMA="ao.catena.gospel-lexicon.v1";
 export const CATENA_LEXICON_BASE=CATENA_LOCAL_BASE+"lexicon/";
@@ -75,7 +75,7 @@ export function rankCatenaPassages(indexes,query,{
  currentPericopeIds=[],limit=20
 }={}){
  const terms=catenaSearchTerms(query);
- if(!terms.length)return [];
+ if(!terms.length||!catenaQuestionHasSufficientEvidence(query))return [];
  const banned=new Set(currentPericopeIds);
  const valid=indexes.filter(x=>x&&CENSUS[x.gospel]);
  const total=valid.reduce((n,x)=>n+x.pericopes.length,0);
@@ -149,7 +149,8 @@ export async function searchCatenaAcrossGospels(question,{
  limit=3
 }={}){
  const terms=catenaSearchTerms(question);
- if(!terms.length)return {results:[],unavailable:[],searched:0};
+ if(!terms.length||!catenaQuestionHasSufficientEvidence(question))
+  return {results:[],unavailable:[],searched:0};
  const bookNames=Object.keys(CENSUS);
  const loaded=await Promise.all(bookNames.map(async g=>{
   try{return {g,index:await loadCatenaGospelLexicon(g,{fetcher,cacheStorage})}}
