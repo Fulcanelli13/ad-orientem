@@ -4,6 +4,7 @@ import { loadScriptureBook } from "./pack-loader.js";
 import {loadScriptureWitness,hasScriptureWitness} from "./witness-loader.js";
 import { parseScriptureContext } from "./context.js";
 import {scriptureSegmentContext} from "./segments.js";
+import {buildThematicPilots} from "./historia-thematic-collections.js";
 export const SCRIPTURE_BROWSER_VERSION="ao-scripture-library-v1";
 export function installScriptureBrowserOwner(win=globalThis){
  if(win.AO_SCRIPTURE_APP_V1)return win.AO_SCRIPTURE_APP_V1;
@@ -12,6 +13,22 @@ export function installScriptureBrowserOwner(win=globalThis){
  let reader=null,previousFocus=null,previousOverflow=null,onCloseReturn=null,journey=null;
  const loaded=new Map();
  const inflight=new Set();
+ // Only available on an explicitly opted-in research URL, not public app routes.
+ const thematicEnabled=new URLSearchParams(win.location?.search||"").get("ao_historia_collections")==="1";
+ let thematicCache=null,thematicInflight=null;
+ async function loadThematic(){
+  if(!thematicEnabled)return null;
+  if(thematicCache)return thematicCache;
+  if(thematicInflight)return thematicInflight;
+  if(typeof win.fetch!=="function")throw new Error("No thematic source transport");
+  thematicInflight=(async()=>{
+   const response=await win.fetch("/data/research/historia-salutis-thematic-episode-reconciliation-20261021.v2.json",{cache:"no-store"});
+   if(!response?.ok)throw new Error("Historia thematic registry unavailable");
+   return buildThematicPilots(await response.json());
+  })();
+  try{return thematicCache=await thematicInflight;}
+  finally{thematicInflight=null;}
+ }
  function overlay(){
    if(!doc?.createElement)return null;
    let root=doc.getElementById("ao-scripture-overlay");
@@ -198,7 +215,7 @@ export function installScriptureBrowserOwner(win=globalThis){
    }
    return false;
  }
- function open({passage=null,language=null,context=null,onCloseReturn:restoreOnClose=null}={}){
+ function open({passage=null,language=null,context=null,onCloseReturn:restoreOnClose=null,thematicCatalogue=null,initialThematicEpisodeId=null}={}){
    const node=overlay();if(!node||journey)return false;
    installScriptureStyles(doc);
    if(!reader){previousFocus=doc.activeElement;previousOverflow=doc.body?.style?.overflow??"";}
@@ -207,6 +224,7 @@ export function installScriptureBrowserOwner(win=globalThis){
    const current=language||win.AO_RUNTIME_V8?.store?.getState?.()?.language||"en";
    reader=mountScriptureLibrary(node,{
      passage,context,language:current==="fr"?"fr":"en",storage:win.localStorage,
+     thematicCatalogue:thematicCatalogue??thematicCache,initialThematicEpisodeId,
      records:[...loaded.values()].flat(),
      onClose:close,
      canOpenRelatedObject,
@@ -232,6 +250,12 @@ export function installScriptureBrowserOwner(win=globalThis){
      openExternal:(url)=>win.open?.(url,"_blank","noopener,noreferrer")
    });
    node.hidden=false;
+   if(thematicEnabled&&!thematicCatalogue&&!thematicCache){
+    const mounted=reader;
+    void loadThematic().then(groups=>{
+     if(groups&&reader===mounted)mounted.setThematicCatalogue(groups);
+    }).catch(error=>win.console?.warn?.("Historia collections unavailable",error));
+   }
    if(doc.body)doc.body.style.overflow="hidden";
    node.querySelector?.("[data-scripture-close]")?.focus?.();
    return true;
@@ -295,7 +319,18 @@ export function installScriptureBrowserOwner(win=globalThis){
  };
  doc?.addEventListener?.("click",click,true);
  doc?.addEventListener?.("keydown",key);
- const api=Object.freeze({version:SCRIPTURE_BROWSER_VERSION,open,openContext,openSegments,close,
+ async function openThematicEpisode(id){
+  if(!thematicEnabled || typeof id!=="string" || !/^hist-omitted-\d{3}$/.test(id))return false;
+  if(win.AO_APP_SHELL_V1?.getActive?.() &&
+     win.AO_APP_SHELL_V1.getActive()!=="home")return false;
+  try{
+   const groups=await loadThematic();
+   if(!groups?.some(g=>g.episodes.some(ep=>ep.id===id)))return false;
+   if(reader&&!journey)return reader.setThematicCatalogue(groups,id);
+   return open({thematicCatalogue:groups,initialThematicEpisodeId:id});
+  }catch(error){win.console?.warn?.("Historia episode unavailable",error);return false;}
+ }
+ const api=Object.freeze({version:SCRIPTURE_BROWSER_VERSION,open,openContext,openSegments,openThematicEpisode,close,
    status:()=>Object.freeze({installed:true,open:Boolean(reader&&!journey),suspended:Boolean(journey),reader:reader?.status?.()??null})});
  win.AO_SCRIPTURE_APP_V1=api;
  win.AO_SCRIPTURE_CONTEXT_V1=Object.freeze({version:"scripture-context-v1",open:openContext,openSegments,parse:parseScriptureContext});
