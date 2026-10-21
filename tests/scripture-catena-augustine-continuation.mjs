@@ -45,10 +45,10 @@ for(const r of doc.records){
     assert.equal(link.attributionAsInCatena,"Augustine");
     assert.equal(link.catenaCitation,p.citation);
     assert.ok(s.text.startsWith(link.sourceTextAnchor),"canonical text altered");
-    const note=(s.text.match(/^\\(([^)]{1,100})\\)/)||[])[1];
+    const note=(s.text.match(/^\(([^)]{1,100})\)/)||[])[1];
     assert.equal(note,link.sourceLabelAsPrinted);
-    assert.match(note,/Quæst|Qu\\. Ev|Qu\\. in Ev/i,"non-Quaestiones source label");
-    assert.ok(!/Quæst\\. in Matt\\./i.test(note),"Do not merge different Augustine work");
+    assert.match(note,/Quæst|Qu\. Ev|Qu\. in Ev/i,"non-Quaestiones source label");
+    assert.ok(!/Quæst\. in Matt\./i.test(note),"Do not merge different Augustine work");
     assert.ok(p.verse_keys.some(v=>r.scriptureKeys.includes(v)),"linked unrelated Scripture");
     assert.equal(link.sourceVerseOverlap,true);
     if(link.linkClass==="related_topic_source_number_conflict__review_required")count.quarantinedCitationConflicts++;
