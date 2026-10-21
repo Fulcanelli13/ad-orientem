@@ -34,6 +34,7 @@ function pluralFrench(s){
   [/\bje combattais\b/gi,'Nous combattions'],
   [/\bje proposais\b/gi,'Nous proposions'],
   [/\bj['’]appelais\b/gi,'Nous appelions'],
+  [/\bj['’]évoquais\b/gi,'Nous évoquions'],
   [/\bj['’]indiquais\b/gi,'Nous indiquions'],
   [/\bj['’]insistais\b/gi,'Nous insistions'],
   [/\bje\b/gi,'Nous'],
