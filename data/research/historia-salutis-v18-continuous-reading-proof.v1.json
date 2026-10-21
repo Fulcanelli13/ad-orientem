@@ -25,7 +25,7 @@
     "movements": 37,
     "essentialUnits": 93,
     "briefEditorialContextNotes": 29,
-    "sourceBridgeCandidates": 11,
+    "sourceBridgeCandidates": 17,
     "independentlyReadAndApproved": false
   },
   "displayRules": {
@@ -1563,6 +1563,29 @@
           "publicationApproved": false
         },
         {
+          "kind": "SOURCE_BRIDGE_CANDIDATE",
+          "id": "HS-P3-CF-17",
+          "reference": "John 1:29–34",
+          "purpose": "The Baptist's testimony sets up John's 'next day' first-disciples scene; the baptism narrated by Matthew is not repeated as a new baptism.",
+          "sourceEdition": "cpdv-2009",
+          "comparisonEdition": "dr-challoner",
+          "status": "UNAPPROVED_SOURCE_COORDINATE_REFERENCE",
+          "editorialOwnerId": "HS-P3-CF-17",
+          "p3SourceOwnership": "NEW_INDEPENDENT_SCRIPTURE_SOURCE_BRIDGE_NOT_ORIGINAL_V18_ESSENTIAL",
+          "sourceWitnessBlobSha": {
+            "dr-challoner": "a146e78ec89ad15d3df29a49462c8373e9dee3f8",
+            "cpdv-2009": "5c0f7929ec052ae1aa92c583219087bb25c32655",
+            "crampon-1923": "0f49d89ad2fb1754ef966305caf70f2a3b2b7790"
+          },
+          "sourceWitnessPresence": "THREE_UNCOLLATED_RESEARCH_WITNESSES",
+          "sourceTextFabricationForbidden": true,
+          "researchReadthroughPriority": "P1_SOURCE_TESTIMONY",
+          "printedEditionCollationPending": true,
+          "fullOralReadthroughPending": true,
+          "publicationApproved": false,
+          "geographicApproval": false
+        },
+        {
           "kind": "SCRIPTURE",
           "id": "H52-01",
           "sourceV18": "John 1:35–51",
@@ -1667,6 +1690,7 @@
           "scene": "The Bread of Life discourse",
           "refs": [
             "John 6:26–35",
+            "John 6:36–40",
             "John 6:41–46",
             "John 6:47–59"
           ],
@@ -1678,11 +1702,34 @@
             "status": "SOURCE_RESTORED_RESEARCH_PROPOSAL_NOT_APPROVED",
             "priorCuratedRefs": [
               "John 6:26–35",
+              "John 6:41–46",
               "John 6:47–59"
             ],
-            "reasonId": "HS-M22-CONTINUITY-20261021",
+            "reasonId": "HS-M22-H56-02-CONTINUITY-BATCH-20261021",
+            "explanation": "Restore the Father's will and the Son raising believers on the last day before the objections at verse 41.",
+            "sourceWitnessSha": {
+              "dr-challoner": "a146e78ec89ad15d3df29a49462c8373e9dee3f8",
+              "cpdv-2009": "5c0f7929ec052ae1aa92c583219087bb25c32655",
+              "crampon-1923": "0f49d89ad2fb1754ef966305caf70f2a3b2b7790"
+            },
             "printingAndOralSignOffPending": true,
             "retainsOriginalUnitId": true
+          },
+          "semanticEditionAlignment": {
+            "kind": "CAPERNAUM_LOCATION_VERSE_SHIFT",
+            "sceneNarrativeStartsAt": "John 6:26",
+            "spanFromCurrentSelection": [
+              "John 6:26–59"
+            ],
+            "synagogueSentenceVerse": {
+              "dr-challoner": "John 6:60",
+              "cpdv-2009": "John 6:60",
+              "crampon-1923": "John 6:59"
+            },
+            "doNotAssertEnglishVerse59ContainsLocation": true,
+            "noBlindNumericAlignment": true,
+            "printedEditionCollationPending": true,
+            "publicationApproved": false
           }
         }
       ],
@@ -1777,7 +1824,21 @@
           "purpose": "The final miracle itself does not explain the decision to put Jesus to death; the explicit plot follows in John 11:45–53",
           "sourceEdition": "cpdv-2009",
           "comparisonEdition": "dr-challoner",
-          "status": "UNAPPROVED_SOURCE_COORDINATE_REFERENCE"
+          "status": "UNAPPROVED_SOURCE_COORDINATE_REFERENCE",
+          "researchCuration": {
+            "sourceReadingPriority": "P1_OPTIONAL_SOURCE_CAUSAL_LINK",
+            "editorialSourceOwnerId": "HS-CF-05",
+            "researchRecommendation": "Proposed post-Lazarus decision-to-kill connection; keep separate from the Lazarus miracle.",
+            "originalBridgeOwnershipRetained": true,
+            "sourceWitnessesPresent": [
+              "dr-challoner",
+              "cpdv-2009",
+              "crampon-1923"
+            ],
+            "printedEditionCollationPending": true,
+            "continuousOralReadingApproved": false,
+            "publicationApproved": false
+          }
         }
       ],
       "requiredMeaningOnly": "Only Scripture beats are presented as biblical text; context and source candidates are visibly editorial.",
@@ -1813,9 +1874,9 @@
     },
     {
       "id": "HS-M26",
-      "title": "The Last Supper and Christ's final teaching",
+      "title": "The Last Supper",
       "sequence": 26,
-      "purpose": "The Eucharist and new covenant at the Supper; Christ's promise of the Father's house and union with him",
+      "purpose": "Christ celebrates the Pasch and institutes the Eucharist in Luke's own witness; a separate Johannine promise of the Spirit remains an unapproved companion passage.",
       "originalResearchChapterIds": [
         "H60",
         "H61"
@@ -1841,7 +1902,21 @@
           "purpose": "Jesus promises the Spirit of Truth before Pentecost; this can replace compulsory extended farewell-discourse reading",
           "sourceEdition": "cpdv-2009",
           "comparisonEdition": "dr-challoner",
-          "status": "UNAPPROVED_SOURCE_COORDINATE_REFERENCE"
+          "status": "UNAPPROVED_SOURCE_COORDINATE_REFERENCE",
+          "researchCuration": {
+            "sourceReadingPriority": "P2_OPTIONAL_JOHANNINE_PARALLEL",
+            "editorialSourceOwnerId": "HS-CF-09",
+            "researchRecommendation": "Separate Gospel source, not dialogue inserted into Luke 22.",
+            "originalBridgeOwnershipRetained": true,
+            "sourceWitnessesPresent": [
+              "dr-challoner",
+              "cpdv-2009",
+              "crampon-1923"
+            ],
+            "printedEditionCollationPending": true,
+            "continuousOralReadingApproved": false,
+            "publicationApproved": false
+          }
         }
       ],
       "requiredMeaningOnly": "Only Scripture beats are presented as biblical text; context and source candidates are visibly editorial.",
@@ -1896,6 +1971,29 @@
           "policy": "ORIGINAL_V18_SCOPE_RETAINED_PENDING_INDIVIDUAL_LITERARY_CHECK",
           "hasPartialVerseHold": false,
           "publicationApproved": false
+        },
+        {
+          "kind": "SOURCE_BRIDGE_CANDIDATE",
+          "id": "HS-P3-CF-18",
+          "reference": "Matthew 27:3–10",
+          "purpose": "Judas's response occupies the omitted verses before the selected appearance before Pilate; one optional Matthew reading, not interwoven with John.",
+          "sourceEdition": "cpdv-2009",
+          "comparisonEdition": "dr-challoner",
+          "status": "UNAPPROVED_SOURCE_COORDINATE_REFERENCE",
+          "editorialOwnerId": "HS-P3-CF-18",
+          "p3SourceOwnership": "NEW_INDEPENDENT_SCRIPTURE_SOURCE_BRIDGE_NOT_ORIGINAL_V18_ESSENTIAL",
+          "sourceWitnessBlobSha": {
+            "dr-challoner": "004832d16a49ceca579d674adf94dac9d3902234",
+            "cpdv-2009": "d22f2d5f715731aa3e8fb8c05470f7a01489205e",
+            "crampon-1923": "a73aecf7e76be1657b578390c23007b0cfa4981c"
+          },
+          "sourceWitnessPresence": "THREE_UNCOLLATED_RESEARCH_WITNESSES",
+          "sourceTextFabricationForbidden": true,
+          "researchReadthroughPriority": "P2_OPTIONAL_JUDAS_ACCOUNT",
+          "printedEditionCollationPending": true,
+          "fullOralReadthroughPending": true,
+          "publicationApproved": false,
+          "geographicApproval": false
         },
         {
           "kind": "SCRIPTURE",
@@ -1967,7 +2065,16 @@
             "finalSourcePrintingApproval": false,
             "continuousOralReadingApproved": false,
             "publicationApproved": false,
-            "evidence": "P4 source audit confirms verse presence in Douay, CPDV and Crampon; modern precise tomb placement not certified"
+            "evidence": "P4 source audit confirms verse presence in Douay, CPDV and Crampon; modern precise tomb placement not certified",
+            "sourceReadingPriority": "P0_ESSENTIAL_INTERMOVEMENT_BRIDGE",
+            "editorialSourceOwnerId": "HS-CF-06",
+            "researchRecommendation": "The burial by Joseph and Nicodemus is necessary for a self-explanatory death-to-empty-tomb story.",
+            "sourceWitnessesPresent": [
+              "dr-challoner",
+              "cpdv-2009",
+              "crampon-1923"
+            ],
+            "printedEditionCollationPending": true
           }
         }
       ],
@@ -2054,7 +2161,21 @@
           "purpose": "The risen Christ appeared over forty days and instructed the apostles concerning the Spirit before Acts 1:6–12 opens mid-conversation",
           "sourceEdition": "cpdv-2009",
           "comparisonEdition": "dr-challoner",
-          "status": "UNAPPROVED_SOURCE_COORDINATE_REFERENCE"
+          "status": "UNAPPROVED_SOURCE_COORDINATE_REFERENCE",
+          "researchCuration": {
+            "sourceReadingPriority": "P1_OPENING_SOURCE_BRIDGE",
+            "editorialSourceOwnerId": "HS-CF-07",
+            "researchRecommendation": "The forty-day appearances and promise precede the Ascension dialogue.",
+            "originalBridgeOwnershipRetained": true,
+            "sourceWitnessesPresent": [
+              "dr-challoner",
+              "cpdv-2009",
+              "crampon-1923"
+            ],
+            "printedEditionCollationPending": true,
+            "continuousOralReadingApproved": false,
+            "publicationApproved": false
+          }
         },
         {
           "kind": "SCRIPTURE",
@@ -2134,7 +2255,21 @@
           "purpose": "Acts 7:54 begins with the crowd's anger at words not yet included; the preceding accusation is essential context",
           "sourceEdition": "cpdv-2009",
           "comparisonEdition": "dr-challoner",
-          "status": "UNAPPROVED_SOURCE_COORDINATE_REFERENCE"
+          "status": "UNAPPROVED_SOURCE_COORDINATE_REFERENCE",
+          "researchCuration": {
+            "sourceReadingPriority": "P0_STEVE_RESPONSIVE_SOURCE_BRIDGE",
+            "editorialSourceOwnerId": "HS-CF-08",
+            "researchRecommendation": "Stephen's admonition at Acts 7:51–53 explains anger at Acts 7:54.",
+            "originalBridgeOwnershipRetained": true,
+            "sourceWitnessesPresent": [
+              "dr-challoner",
+              "cpdv-2009",
+              "crampon-1923"
+            ],
+            "printedEditionCollationPending": true,
+            "continuousOralReadingApproved": false,
+            "publicationApproved": false
+          }
         },
         {
           "kind": "SCRIPTURE",
@@ -2147,7 +2282,38 @@
           "edition": "cpdv-2009",
           "policy": "EDITION_AWARE_REFERENCE_CORRECTION",
           "hasPartialVerseHold": false,
-          "publicationApproved": false
+          "publicationApproved": false,
+          "semanticEditionAlignment": {
+            "kind": "SAME_CLOSING_SEMANTIC_DIFFERENT_VERSE_END",
+            "englishBaseRefs": [
+              "Acts 7:54–59"
+            ],
+            "selectedReferencesByEdition": {
+              "dr-challoner": [
+                "Acts 7:54–59"
+              ],
+              "cpdv-2009": [
+                "Acts 7:54–59"
+              ],
+              "crampon-1923": [
+                "Acts 7:54–60"
+              ]
+            },
+            "lastPrayerAndDeathByEdition": {
+              "dr-challoner": "Acts 7:59",
+              "cpdv-2009": "Acts 7:59",
+              "crampon-1923": "Acts 7:60"
+            },
+            "noBlindNumericAlignment": true,
+            "originalV18SourceReference": "Acts 7:54–60",
+            "editionWitnessSha": {
+              "dr-challoner": "790769859646ecd4ca6b45f6b61b9ecaec1da826",
+              "cpdv-2009": "5eaaa125d14538d00305e49624196b55033da41d",
+              "crampon-1923": "25fde9eaaff3412445430f4ae1fa87b0c6aae244"
+            },
+            "printedEditionCollationPending": true,
+            "publicationApproved": false
+          }
         }
       ],
       "requiredMeaningOnly": "Only Scripture beats are presented as biblical text; context and source candidates are visibly editorial.",
@@ -2210,6 +2376,7 @@
             "Acts 10:7–8",
             "Acts 10:9–16",
             "Acts 10:19–20",
+            "Acts 10:21–23",
             "Acts 10:24",
             "Acts 10:28–29",
             "Acts 10:30–32",
@@ -2223,14 +2390,21 @@
             "status": "SOURCE_RESTORED_RESEARCH_PROPOSAL_NOT_APPROVED",
             "priorCuratedRefs": [
               "Acts 10:1–6",
+              "Acts 10:7–8",
               "Acts 10:9–16",
               "Acts 10:19–20",
               "Acts 10:24",
               "Acts 10:28–29",
+              "Acts 10:30–32",
               "Acts 10:33–48"
             ],
-            "reasonId": "HS-M32-H70-01-ACTOR-AGENCY-20261021",
-            "explanation": "Cornelius dispatches messengers and explains his summons; retains cross-location provenance",
+            "reasonId": "HS-M32-H70-01-CONTINUITY-BATCH-20261021",
+            "explanation": "Peter actually receives Cornelius's emissaries and travels from Joppa to Caesarea, without a fabricated route.",
+            "sourceWitnessSha": {
+              "dr-challoner": "790769859646ecd4ca6b45f6b61b9ecaec1da826",
+              "cpdv-2009": "5eaaa125d14538d00305e49624196b55033da41d",
+              "crampon-1923": "25fde9eaaff3412445430f4ae1fa87b0c6aae244"
+            },
             "printingAndOralSignOffPending": true,
             "retainsOriginalUnitId": true
           }
@@ -2306,13 +2480,32 @@
           "refs": [
             "Acts 15:1–2",
             "Acts 15:5–11",
+            "Acts 15:12",
             "Acts 15:13–20",
             "Acts 15:22–29"
           ],
           "edition": "cpdv-2009",
           "policy": "PROPOSED_CURATED_TRIM",
           "hasPartialVerseHold": false,
-          "publicationApproved": false
+          "publicationApproved": false,
+          "researchRevision": {
+            "status": "SOURCE_RESTORED_RESEARCH_PROPOSAL_NOT_APPROVED",
+            "priorCuratedRefs": [
+              "Acts 15:1–2",
+              "Acts 15:5–11",
+              "Acts 15:13–20",
+              "Acts 15:22–29"
+            ],
+            "reasonId": "HS-M33-H72-01-CONTINUITY-BATCH-20261021",
+            "explanation": "The assembly hears Barnabas and Paul recount signs among the Gentiles before James addresses the council.",
+            "sourceWitnessSha": {
+              "dr-challoner": "790769859646ecd4ca6b45f6b61b9ecaec1da826",
+              "cpdv-2009": "5eaaa125d14538d00305e49624196b55033da41d",
+              "crampon-1923": "25fde9eaaff3412445430f4ae1fa87b0c6aae244"
+            },
+            "printingAndOralSignOffPending": true,
+            "retainsOriginalUnitId": true
+          }
         }
       ],
       "requiredMeaningOnly": "Only Scripture beats are presented as biblical text; context and source candidates are visibly editorial.",
@@ -2335,7 +2528,21 @@
           "purpose": "Paul's expressed intention to see Rome supplies a short missionary-journey hinge without requiring the Philippi jailer or shipwreck",
           "sourceEdition": "cpdv-2009",
           "comparisonEdition": "dr-challoner",
-          "status": "UNAPPROVED_SOURCE_COORDINATE_REFERENCE"
+          "status": "UNAPPROVED_SOURCE_COORDINATE_REFERENCE",
+          "researchCuration": {
+            "sourceReadingPriority": "P2_OPTIONAL_LONG_RANGE_HINGE",
+            "editorialSourceOwnerId": "HS-CF-10",
+            "researchRecommendation": "Paul's distant Rome intention is optional and must not be treated as a continuous first-century route.",
+            "originalBridgeOwnershipRetained": true,
+            "sourceWitnessesPresent": [
+              "dr-challoner",
+              "cpdv-2009",
+              "crampon-1923"
+            ],
+            "printedEditionCollationPending": true,
+            "continuousOralReadingApproved": false,
+            "publicationApproved": false
+          }
         },
         {
           "kind": "SOURCE_BRIDGE_CANDIDATE",
@@ -2344,7 +2551,44 @@
           "purpose": "Paul actually arrives in Rome before the final proclamation pericope opens at Acts 28:23",
           "sourceEdition": "cpdv-2009",
           "comparisonEdition": "dr-challoner",
-          "status": "UNAPPROVED_SOURCE_COORDINATE_REFERENCE"
+          "status": "UNAPPROVED_SOURCE_COORDINATE_REFERENCE",
+          "researchCuration": {
+            "sourceReadingPriority": "P1_ROME_ARRIVAL",
+            "editorialSourceOwnerId": "HS-CF-11",
+            "researchRecommendation": "Acts 28:16 supplies Paul's Roman arrival before his testimony to gathered leaders.",
+            "originalBridgeOwnershipRetained": true,
+            "sourceWitnessesPresent": [
+              "dr-challoner",
+              "cpdv-2009",
+              "crampon-1923"
+            ],
+            "printedEditionCollationPending": true,
+            "continuousOralReadingApproved": false,
+            "publicationApproved": false
+          }
+        },
+        {
+          "kind": "SOURCE_BRIDGE_CANDIDATE",
+          "id": "HS-P3-CF-13",
+          "reference": "Acts 28:17–22",
+          "purpose": "The leaders' meeting and appointed day make Paul's proclamation in Acts 28:23–31 intelligible; no invented Roman meeting room.",
+          "sourceEdition": "cpdv-2009",
+          "comparisonEdition": "dr-challoner",
+          "status": "UNAPPROVED_SOURCE_COORDINATE_REFERENCE",
+          "editorialOwnerId": "HS-P3-CF-13",
+          "p3SourceOwnership": "NEW_INDEPENDENT_SCRIPTURE_SOURCE_BRIDGE_NOT_ORIGINAL_V18_ESSENTIAL",
+          "sourceWitnessBlobSha": {
+            "dr-challoner": "790769859646ecd4ca6b45f6b61b9ecaec1da826",
+            "cpdv-2009": "5eaaa125d14538d00305e49624196b55033da41d",
+            "crampon-1923": "25fde9eaaff3412445430f4ae1fa87b0c6aae244"
+          },
+          "sourceWitnessPresence": "THREE_UNCOLLATED_RESEARCH_WITNESSES",
+          "sourceTextFabricationForbidden": true,
+          "researchReadthroughPriority": "P1_AUDIENCE_RECONSTRUCTION",
+          "printedEditionCollationPending": true,
+          "fullOralReadthroughPending": true,
+          "publicationApproved": false,
+          "geographicApproval": false
         },
         {
           "kind": "SCRIPTURE",
@@ -2383,6 +2627,29 @@
           "publicationApproved": false
         },
         {
+          "kind": "SOURCE_BRIDGE_CANDIDATE",
+          "id": "HS-P3-CF-14",
+          "reference": "Revelation 4:1–2",
+          "purpose": "The open heaven and throne establish who is seated before the Lamb is shown in Revelation 5; heavenly vision, never terrestrial map.",
+          "sourceEdition": "cpdv-2009",
+          "comparisonEdition": "dr-challoner",
+          "status": "UNAPPROVED_SOURCE_COORDINATE_REFERENCE",
+          "editorialOwnerId": "HS-P3-CF-14",
+          "p3SourceOwnership": "NEW_INDEPENDENT_SCRIPTURE_SOURCE_BRIDGE_NOT_ORIGINAL_V18_ESSENTIAL",
+          "sourceWitnessBlobSha": {
+            "dr-challoner": "1fb2ff7f04f8ab798f892c4fb6174e39ce9f8075",
+            "cpdv-2009": "facbe04cd3626f862044884ad3aa68c4a09ddb51",
+            "crampon-1923": "ff790a5e9ad1e7a3eacf6bdfbf164ed15a7383a7"
+          },
+          "sourceWitnessPresence": "THREE_UNCOLLATED_RESEARCH_WITNESSES",
+          "sourceTextFabricationForbidden": true,
+          "researchReadthroughPriority": "P1_HEAVENLY_VISION_ANTECEDENT",
+          "printedEditionCollationPending": true,
+          "fullOralReadthroughPending": true,
+          "publicationApproved": false,
+          "geographicApproval": false
+        },
+        {
           "kind": "SCRIPTURE",
           "id": "H75-02",
           "sourceV18": "Revelation 5:1–14",
@@ -2398,7 +2665,13 @@
       ],
       "requiredMeaningOnly": "Only Scripture beats are presented as biblical text; context and source candidates are visibly editorial.",
       "readAloudAccepted": false,
-      "readyForPublication": false
+      "readyForPublication": false,
+      "genreRules": {
+        "literaryGenre": "APOCALYPTIC_VISION",
+        "modernEarthCoordinatesApproved": false,
+        "throneCannotBeGeocoded": true,
+        "publicationApproved": false
+      }
     },
     {
       "id": "HS-M36",
@@ -2447,7 +2720,14 @@
       ],
       "requiredMeaningOnly": "Only Scripture beats are presented as biblical text; context and source candidates are visibly editorial.",
       "readAloudAccepted": false,
-      "readyForPublication": false
+      "readyForPublication": false,
+      "genreRules": {
+        "literaryGenre": "APOCALYPTIC_VISION",
+        "modernEarthCoordinatesApproved": false,
+        "chronologicalLiteralismForbidden": true,
+        "originalSelectedVersesRetained": true,
+        "publicationApproved": false
+      }
     },
     {
       "id": "HS-M37",
@@ -2472,6 +2752,29 @@
           "publicationApproved": false
         },
         {
+          "kind": "SOURCE_BRIDGE_CANDIDATE",
+          "id": "HS-P3-CF-15",
+          "reference": "Revelation 21:9–10",
+          "purpose": "The angel showing the Bride and heavenly Jerusalem provides the subject for 'he showed me' in Revelation 22:1.",
+          "sourceEdition": "cpdv-2009",
+          "comparisonEdition": "dr-challoner",
+          "status": "UNAPPROVED_SOURCE_COORDINATE_REFERENCE",
+          "editorialOwnerId": "HS-P3-CF-15",
+          "p3SourceOwnership": "NEW_INDEPENDENT_SCRIPTURE_SOURCE_BRIDGE_NOT_ORIGINAL_V18_ESSENTIAL",
+          "sourceWitnessBlobSha": {
+            "dr-challoner": "1fb2ff7f04f8ab798f892c4fb6174e39ce9f8075",
+            "cpdv-2009": "facbe04cd3626f862044884ad3aa68c4a09ddb51",
+            "crampon-1923": "ff790a5e9ad1e7a3eacf6bdfbf164ed15a7383a7"
+          },
+          "sourceWitnessPresence": "THREE_UNCOLLATED_RESEARCH_WITNESSES",
+          "sourceTextFabricationForbidden": true,
+          "researchReadthroughPriority": "P0_NEW_JERUSALEM_ANGEL_ANCHOR",
+          "printedEditionCollationPending": true,
+          "fullOralReadthroughPending": true,
+          "publicationApproved": false,
+          "geographicApproval": false
+        },
+        {
           "kind": "SCRIPTURE",
           "id": "H78-02",
           "sourceV18": "22:1–5",
@@ -2483,11 +2786,42 @@
           "policy": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
           "hasPartialVerseHold": false,
           "publicationApproved": false
+        },
+        {
+          "kind": "SOURCE_BRIDGE_CANDIDATE",
+          "id": "HS-P3-CF-16",
+          "reference": "Revelation 22:20–21",
+          "purpose": "The book's final response and blessing can conclude the selected vision without falsely presenting 22:5 as the canonical final verse.",
+          "sourceEdition": "cpdv-2009",
+          "comparisonEdition": "dr-challoner",
+          "status": "UNAPPROVED_SOURCE_COORDINATE_REFERENCE",
+          "editorialOwnerId": "HS-P3-CF-16",
+          "p3SourceOwnership": "NEW_INDEPENDENT_SCRIPTURE_SOURCE_BRIDGE_NOT_ORIGINAL_V18_ESSENTIAL",
+          "sourceWitnessBlobSha": {
+            "dr-challoner": "1fb2ff7f04f8ab798f892c4fb6174e39ce9f8075",
+            "cpdv-2009": "facbe04cd3626f862044884ad3aa68c4a09ddb51",
+            "crampon-1923": "ff790a5e9ad1e7a3eacf6bdfbf164ed15a7383a7"
+          },
+          "sourceWitnessPresence": "THREE_UNCOLLATED_RESEARCH_WITNESSES",
+          "sourceTextFabricationForbidden": true,
+          "researchReadthroughPriority": "P1_CANONICAL_BOOK_CLOSURE",
+          "printedEditionCollationPending": true,
+          "fullOralReadthroughPending": true,
+          "publicationApproved": false,
+          "geographicApproval": false
         }
       ],
       "requiredMeaningOnly": "Only Scripture beats are presented as biblical text; context and source candidates are visibly editorial.",
       "readAloudAccepted": false,
-      "readyForPublication": false
+      "readyForPublication": false,
+      "genreRules": {
+        "literaryGenre": "NEW_CREATION_VISION",
+        "modernEarthCoordinatesApproved": false,
+        "bookEndsAt": "Revelation 22:21",
+        "selectedResearchEnding": "Revelation 22:5",
+        "appendedEpilogueStillUnapproved": true,
+        "publicationApproved": false
+      }
     }
   ],
   "literaryReviewProgress": {
@@ -2526,7 +2860,13 @@
       "HS-M29",
       "HS-M31",
       "HS-M32",
-      "HS-M33"
+      "HS-M33",
+      "HS-M26",
+      "HS-M27",
+      "HS-M34",
+      "HS-M35",
+      "HS-M36",
+      "HS-M37"
     ],
     "originalEssentialUnitIdsPreserved": true,
     "essentialUnitsStill93": true,
@@ -2535,7 +2875,7 @@
     "finishedCatholicPrintCollation": false,
     "finishedSequentialOralReading": false,
     "publicationApproved": false,
-    "additionalOriginalUnitVerseInsertions": 10,
+    "additionalOriginalUnitVerseInsertions": 19,
     "independentlyOwnedBridgeDrafts": [
       {
         "id": "HS-CF-06",
@@ -2555,7 +2895,52 @@
       }
     ],
     "originalSourceBridgeCandidatesPreserved": 10,
-    "revisedTotalSourceBridgeCandidates": 11,
-    "printedTextCollationRequired": true
+    "revisedTotalSourceBridgeCandidates": 17,
+    "printedTextCollationRequired": true,
+    "newIndependentSourceBridgesFromBatch": [
+      {
+        "id": "HS-P3-CF-17",
+        "movementId": "HS-M20",
+        "ref": "John 1:29–34",
+        "sourceOwner": "P3_INDEPENDENT_RESEARCH_BRIDGE",
+        "publicationApproved": false
+      },
+      {
+        "id": "HS-P3-CF-18",
+        "movementId": "HS-M27",
+        "ref": "Matthew 27:3–10",
+        "sourceOwner": "P3_INDEPENDENT_RESEARCH_BRIDGE",
+        "publicationApproved": false
+      },
+      {
+        "id": "HS-P3-CF-13",
+        "movementId": "HS-M34",
+        "ref": "Acts 28:17–22",
+        "sourceOwner": "P3_INDEPENDENT_RESEARCH_BRIDGE",
+        "publicationApproved": false
+      },
+      {
+        "id": "HS-P3-CF-14",
+        "movementId": "HS-M35",
+        "ref": "Revelation 4:1–2",
+        "sourceOwner": "P3_INDEPENDENT_RESEARCH_BRIDGE",
+        "publicationApproved": false
+      },
+      {
+        "id": "HS-P3-CF-15",
+        "movementId": "HS-M37",
+        "ref": "Revelation 21:9–10",
+        "sourceOwner": "P3_INDEPENDENT_RESEARCH_BRIDGE",
+        "publicationApproved": false
+      },
+      {
+        "id": "HS-P3-CF-16",
+        "movementId": "HS-M37",
+        "ref": "Revelation 22:20–21",
+        "sourceOwner": "P3_INDEPENDENT_RESEARCH_BRIDGE",
+        "publicationApproved": false
+      }
+    ],
+    "researchBatchStatus": "MULTI_MOVEMENT_SOURCE_ADJUDICATION_DRAFT_ONLY"
   }
 }
