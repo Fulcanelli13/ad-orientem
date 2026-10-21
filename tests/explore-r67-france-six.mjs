@@ -85,7 +85,7 @@ for(const guide of r67.guides){
   assert.ok(html.includes(guide.official_url));
   const snippet=guide.sections[0].paragraphs[0][lang].slice(0,65).replace(/[&<>"\']/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","\'":"&#039;"}[ch]));
   assert.ok(html.includes(snippet),"Source paragraph not rendered for "+guide.place_id+" / "+lang);
-  if(approved.has(guide.place_id))assert.ok(html.includes("aoExplorePlaceMedia"));
+  if(currentlyApproved)assert.ok(html.includes("aoExplorePlaceMedia"));
   else assert.ok(!html.includes("aoExplorePlaceMedia"),"Unapproved hero was published");
  }
 }
