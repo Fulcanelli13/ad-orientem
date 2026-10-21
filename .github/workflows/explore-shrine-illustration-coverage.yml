@@ -1,0 +1,22 @@
+name: Explore Shrine and Pilgrimage Editorial Coverage
+on:
+  pull_request:
+    paths:
+      - "data/shrines/**"
+      - "data/geography/approved-place-media.v1.json"
+      - "data/geography/approved-place-gallery.v1.json"
+      - "data/explore/sacred-phenomena-seed.v1.json"
+      - "src/find/explore-data-service.js"
+      - "tests/shrine-marian-editorial-inventory-contract.mjs"
+      - ".github/workflows/explore-shrine-illustration-coverage.yml"
+  workflow_dispatch:
+jobs:
+  canonical-inventory-and-approved-photos:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Audit full shrine-pilgrimage inventory and publishable illustrated guide joins
+        run: node tests/shrine-marian-editorial-inventory-contract.mjs
