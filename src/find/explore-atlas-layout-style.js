@@ -987,4 +987,124 @@ export const EXPLORE_ATLAS_LAYOUT_STYLE = `
  .aoHeritageSurface:has(.aoAtlasCoveragePanel) .aoHeritageMapHint{display:none}
 }
 
+
+/* P5 MapCN Logistics Network-inspired explicit relationship graph.
+   Topology is conceptual and source-linked. No route geometry is drawn. */
+.aoHeritageSurface .aoSacredNetworkLaunch.active{
+ border-color:rgba(214,185,126,.85);background:#423c2f;color:#f0dfb9
+}
+.aoHeritageSurface .aoSacredNetworkPanel{
+ position:absolute;z-index:16;top:184px;bottom:13px;left:17px;
+ width:min(545px,calc(100% - 34px));min-height:0;
+ display:flex;flex-direction:column;background:#0d1823fa;color:#e8dece;
+ border:1px solid rgba(199,174,125,.50);border-radius:12px;
+ box-shadow:0 18px 44px #000a;overflow:hidden
+}
+.aoSacredNetworkHeader{flex:none;display:flex;align-items:center;
+ justify-content:space-between;gap:15px;padding:14px 17px;
+ background:#14232c;border-bottom:1px solid #a58b5845}
+.aoSacredNetworkHeader small{display:block;font:600 10px/1.3 var(--ao-font-ui,system-ui,sans-serif);
+ letter-spacing:.13em;color:#c4ac7b}
+.aoSacredNetworkHeader h2{margin:5px 0 0;font:500 29px/1 var(--ao-font-display,Georgia,serif);
+ color:#f0e3cd}
+.aoSacredNetworkHeader>button{flex:none;width:44px;height:44px;
+ border-radius:50%;background:#1d2c37;border:1px solid #c0a67272;
+ color:#ebd9b9;font-size:23px;cursor:pointer}
+.aoSacredNetworkBody{overflow:auto;overscroll-behavior:contain;min-height:0;
+ flex:1;padding:14px 15px 21px;scrollbar-color:#807154 #15242e}
+.aoSacredNetworkIntro>p{font:12px/1.5 var(--ao-font-ui,system-ui,sans-serif);
+ color:#b5beb9;margin:0 0 10px}
+.aoNetworkMetrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.aoNetworkMetrics>div{min-width:0;border:1px solid #9a855951;border-radius:7px;
+ padding:10px 8px;background:#1d3039}
+.aoNetworkMetrics strong{display:block;font:500 27px/1.1 var(--ao-font-display,Georgia,serif);
+ color:#e4ce9f}
+.aoNetworkMetrics span{display:block;font:10px/1.3 var(--ao-font-ui,system-ui,sans-serif);
+ color:#bac4bf}
+.aoNetworkSearch{margin:12px 0}
+.aoNetworkSearch label{display:grid;gap:6px;color:#c6b38e;text-transform:uppercase;
+ letter-spacing:.065em;font:600 10px/1.3 var(--ao-font-ui,system-ui,sans-serif)}
+.aoNetworkSearch input{width:100%;box-sizing:border-box;min-height:44px;
+ border:1px solid #ab956b7a;border-radius:7px;background:#101e28;color:#eae1d1;
+ padding:10px 12px;font:12px var(--ao-font-ui,system-ui,sans-serif)}
+.aoNetworkCandidates{display:flex;flex-wrap:nowrap;gap:6px;overflow:auto;
+ padding:10px 0;scrollbar-color:#756547 transparent}
+.aoNetworkCandidates button{flex:0 0 auto;max-width:185px;min-height:47px;
+ text-align:left;display:grid;align-content:center;gap:3px;
+ padding:7px 10px;border-radius:7px;border:1px solid #9a89665c;
+ color:#e6d9c3;background:#192c37;cursor:pointer}
+.aoNetworkCandidates button[aria-pressed=true]{border-color:#d1b77e;background:#3a3b34}
+.aoNetworkCandidates small{font:600 9px var(--ao-font-ui,system-ui,sans-serif);
+ color:#c6ad7f}
+.aoNetworkCandidates span{font:12px/1.3 var(--ao-font-ui,system-ui,sans-serif);
+ white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.aoNetworkFilter{display:flex;overflow:auto;gap:5px;padding:3px 0 13px;
+ scrollbar-color:#756547 transparent}
+.aoNetworkFilter button{flex:0 0 auto;min-height:40px;border-radius:999px;
+ border:1px solid #a88b5e63;padding:7px 12px;background:#182a34;
+ color:#d7c39d;font:600 11px var(--ao-font-ui,system-ui,sans-serif);
+ cursor:pointer}
+.aoNetworkFilter button[aria-pressed=true]{background:#b99e71;color:#111b23}
+.aoNetworkSelected{display:flex;gap:5px;flex-wrap:wrap;align-items:center;
+ padding:12px;background:#1c2b35;border:1px solid #ab93605b;border-radius:8px}
+.aoNetworkSelected>span{color:#d5b98b;letter-spacing:.12em;
+ font:600 10px var(--ao-font-ui,system-ui,sans-serif)}
+.aoNetworkSelected h3{flex-basis:100%;font:500 24px/1.08 var(--ao-font-display,Georgia,serif);
+ color:#f1e3c9;margin:4px 0}
+.aoNetworkSelected p{font:12px/1.4 var(--ao-font-ui,system-ui,sans-serif);color:#bec4bd}
+.aoNetworkSelected button{padding:8px 10px;min-height:40px;background:#283b44;
+ border:1px solid #b29867;color:#e5d1a9;border-radius:7px;
+ font:600 11px var(--ao-font-ui,system-ui,sans-serif)}
+.aoSacredNetworkGraphScroll{margin:12px 0;overflow:auto;
+ border-radius:8px;border:1px solid #9d86514b;background:
+ radial-gradient(ellipse at center,#24353d 0%,#0e1a24 78%);
+ scrollbar-color:#7e6b4d transparent}
+.aoSacredNetworkGraph{display:block;width:690px;height:365px;max-width:none}
+.aoSacredNetworkEdge{fill:none;stroke:#c6a86d;stroke-opacity:.58;stroke-width:1.65;
+ stroke-dasharray:5 5}
+.aoSacredNetworkCore{fill:#243c44;stroke:#dec189;stroke-width:2.2}
+.aoSacredNetworkSatellite circle{fill:#22333c;stroke:#bea676;stroke-width:1.8}
+.aoSacredNetworkSatellite.aoNetwork-PERSON circle{stroke:#918e87;stroke-dasharray:2 3}
+.aoNetworkGlyph{text-anchor:middle;fill:#e2c992;font:19px Georgia,serif}
+.aoNetworkCaption{text-anchor:middle;fill:#e6dcc8;font:11px var(--ao-font-ui,system-ui,sans-serif)}
+.aoNetworkCoreType{text-anchor:middle;fill:#d5bf97;letter-spacing:.12em;
+ font:600 10px var(--ao-font-ui,system-ui,sans-serif)}
+.aoNetworkCoreLabel{text-anchor:middle;fill:#f0e2c7;
+ font:500 15px Georgia,serif}
+.aoNetworkCoreCount{text-anchor:middle;fill:#c5d0c8;
+ font:10px var(--ao-font-ui,system-ui,sans-serif)}
+.aoNetworkEvidence h3{font:500 21px var(--ao-font-display,Georgia,serif);
+ margin:12px 0;color:#f0dfc4}
+.aoNetworkEdgeCard{padding:11px 12px;margin:7px 0;border:1px solid #987e4b4f;
+ border-radius:7px;background:#182a34}
+.aoNetworkEdgeCard small{display:block;color:#c2a87e;font:600 10px/1.3
+ var(--ao-font-ui,system-ui,sans-serif);text-transform:uppercase;letter-spacing:.05em}
+.aoNetworkEdgeCard button{display:block;text-align:left;width:100%;border:0;
+ background:transparent;color:#f0e4ce;min-height:41px;padding:6px 0;
+ font:500 17px/1.2 var(--ao-font-display,Georgia,serif);cursor:pointer}
+.aoNetworkEdgeCard p{font:12px/1.45 var(--ao-font-ui,system-ui,sans-serif);
+ color:#b8c1bb;margin:5px 0}
+.aoNetworkEdgeCard .aoNetworkAttribution{color:#dac29a}
+.aoNetworkEdgeCard a{display:inline-block;margin-top:9px;color:#e0c28d;
+ text-underline-offset:2px;font:600 11px var(--ao-font-ui,system-ui,sans-serif)}
+.aoNetworkMore{width:100%;min-height:44px;border:1px solid #9f8a60;
+ border-radius:7px;background:#273640;color:#e5cda1;
+ font:600 12px var(--ao-font-ui,system-ui,sans-serif)}
+.aoSacredNetworkPanel footer{padding:13px 0;margin-top:12px;
+ border-top:1px solid #a7905d4a;font:11px/1.55 var(--ao-font-ui,system-ui,sans-serif);
+ color:#b4bcb8}
+.aoSacredNetworkPanel button:focus-visible,.aoSacredNetworkPanel input:focus-visible,
+.aoSacredNetworkPanel a:focus-visible{outline:2px solid #ecd1a0;outline-offset:2px}
+.aoHeritageSurface:has(.aoFindSheetBackdrop) .aoSacredNetworkPanel{visibility:hidden;pointer-events:none}
+@media(max-width:799px){
+ .aoHeritageSurface .aoSacredNetworkPanel{top:auto;bottom:0;left:0;right:0;
+ width:100%;height:min(72dvh,610px);border-radius:16px 16px 0 0;border-left:0;border-right:0}
+ .aoSacredNetworkHeader{padding:10px 12px}
+ .aoSacredNetworkHeader h2{font-size:23px}
+ .aoSacredNetworkBody{padding:10px 12px 15px}
+ .aoNetworkMetrics strong{font-size:22px}
+ .aoSacredNetworkGraph{width:580px;height:307px}
+ .aoHeritageSurface:has(.aoSacredNetworkPanel) .aoHeritageMapHint{display:none}
+}
+
 `;
