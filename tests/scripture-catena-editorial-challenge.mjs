@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
-import {indexCatenaMessages,retrieveCatenaMessages,catenaQuestionHasUnsupportedContext} from "../src/scripture/catena-messenger.js";
+import {indexCatenaMessages,retrieveCatenaQuestionMatches,catenaHasExactSourcePhrase} from "../src/scripture/catena-messenger.js";
 import {catenaRelatedTopic,retrieveCatenaRelatedMessages} from "../src/scripture/catena-related-vocabulary.js";
 
 const fixture=JSON.parse(readFileSync(
@@ -23,11 +23,14 @@ function rowsFor(id){
  }]);
 }
 function retrieve(rows,question){
- if(catenaQuestionHasUnsupportedContext(question,rows))return [];
- const topic=catenaRelatedTopic(question);
- const related=topic?retrieveCatenaRelatedMessages(rows,question,{limit:4}):[];
- return related.length?related.map(x=>x.row):retrieveCatenaMessages(rows,question,{limit:4});
+ return retrieveCatenaQuestionMatches(rows,question,{limit:4});
 }
+const spirit=rowsFor("catena.john.14.22");
+assert.equal(catenaHasExactSourcePhrase(spirit,
+  "Is the Holy Spirit excluded when Father and Son dwell in the soul?"),true);
+assert.ok(retrieve(spirit,"Is the Holy Spirit excluded when Father and Son dwell in the soul?")
+  .some(r=>r.ordinal===5&&r.father==="Augustine"),
+  "An exact phrase in a canonical Father's extract must outrank generic topical matches");
 const ids=new Set(),byGospel=new Map();
 const misses=[];
 let topFour=0;
