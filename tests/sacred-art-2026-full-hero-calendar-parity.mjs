@@ -74,7 +74,8 @@ try{
    date:x.date,nominalTitle:x.title,observedPrincipalId:map.get(x.date)?.observedPrincipalId||null,
    actualPrincipalTitle:map.get(x.date)?.observedTitle||null,
    sameTitleAsNominal:x.title===map.get(x.date)?.observedTitle,
-   requiresSecondaryFeastVisibilityReview:x.title!==map.get(x.date)?.observedTitle
+   actualObservedRank:map.get(x.date)?.observedRank??null,
+   requiresTitleAliasReconciliation:x.title!==map.get(x.date)?.observedTitle
  }));
  const locked=rows.filter(x=>x.lockedDatePainting).map(x=>({
    date:x.date,painting:x.lockedDatePainting.title,artist:x.lockedDatePainting.artist,
@@ -86,7 +87,7 @@ try{
    counts:{uniqueDates:rows.length,successfullyResolved:actual.filter(x=>x.status==="ready"&&x.returnedDate===x.date&&x.observedPrincipalId).length,
      sundayRows:sunday.length,classIDates:classI.length,classIPrincipalMatches:classI.filter(x=>x.matched).length,
      classIPrincipalMismatches:classI.filter(x=>!x.matched).length,
-     spotlightRows:extras.length,spotlightsNotIdenticalToPrincipal:extras.filter(x=>!x.sameTitleAsNominal).length,
+     spotlightRows:extras.length,spotlightTitleAliasesToReview:extras.filter(x=>!x.sameTitleAsNominal).length,
      lockedUserPaintings:locked.length,lockedClassIPrincipalMatches:locked.filter(x=>x.principalMatch).length,
      appImagesReleased:0,photoRightsApprovedByThisAudit:0},
    observedDates:actual,classIAudit:classI,sundayAudit:sunday,supplementarySpotlightAudit:extras,
@@ -94,8 +95,9 @@ try{
  await mkdir(out,{recursive:true});
  await writeFile(resolve(out,"2026-hero-102-dayresolver-proof.json"),JSON.stringify(result,null,2)+"\n");
  console.log("HERO_YEAR_SUMMARY "+JSON.stringify(result.counts));
+ for(const x of actual)console.log("HERO_YEAR_OBSERVED "+JSON.stringify(x));
  for(const x of classI.filter(x=>!x.matched))console.log("HERO_CLASS_I_MISMATCH "+JSON.stringify(x));
- for(const x of extras.filter(x=>!x.sameTitleAsNominal))console.log("HERO_SUPPLEMENTARY_NON_PRINCIPAL "+JSON.stringify(x));
+ for(const x of extras.filter(x=>!x.sameTitleAsNominal))console.log("HERO_SUPPLEMENTARY_TITLE_ALIAS "+JSON.stringify(x));
  assert.equal(result.counts.successfullyResolved,102,"All target dates must resolve, otherwise remain on hold");
  assert.equal(result.counts.lockedClassIPrincipalMatches,10,"All exact curator-approved dates must retain correct canonical principal");
  assert.equal(result.counts.classIPrincipalMismatches,0,"Old Class I principal registry differs from actual resolver; reconcile before release");
