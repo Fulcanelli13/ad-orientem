@@ -9,26 +9,28 @@
     "no_publication": true,
     "no_canonical_ids_created": true
   },
-  "source_method": "Public institutional, diocesan, official community and current local reports; cite only explicitly supported details. Weiser remains a historical locator, never independent corroboration.",
+  "source_method": "Web-verified public parish, government, heritage and local reporting pages checked 21 Oct 2026; titles and claim scopes corrected; no app publishing.",
   "records": [
     {
       "weiser_id": "WEI58-05-010",
       "english_name": "Herbergsuche — local Advent lodging-search devotion",
       "french_name": "Herbergsuche — dévotion locale de l'hospitalité pendant l'Avent",
-      "claim": "Vienna's Kaiserebersdorf parish documents nine days of voluntary Advent household gatherings, 15–23 December, with prayer, Scripture and the lodging-search song.",
+      "claim": "The Roman Catholic parish of Großpetersdorf documents a house-to-house Advent tradition in which an image or statue of Mary passes from family to family with prayers. Local Advent calendars and parish programmes vary.",
       "geo": "Kaiserebersdorf, Vienna, Austria",
-      "calendar": "Parish programme, 15–23 December in the cited account; not universal Advent scheduling",
+      "calendar": "Advent; individual parish house-visit itinerary, not a universal fixed nine-day programme",
       "evidence_status": "DIRECT_DIOCESAN_LOCAL_WITNESS",
       "sources": [
         {
-          "issuer": "Archdiocese of Vienna",
-          "url": "https://www.erzdioezese-wien.at/portal/archiv/article/70347.html",
-          "supports": "Eight house groups, historical nine-day model, locally variable practice"
+          "id": "AT-PARISH-HERBERGSUCHE",
+          "issuer": "Roman Catholic Parish Großpetersdorf, Austria",
+          "url": "https://www.pfarre-grosspetersdorf.at/pfarre/1131/aktuelles/article/12277.html",
+          "supports": "House-to-house passage of Marian image or statue, household devotion, connection with Mary and Joseph seeking lodging",
+          "limit": "2023 parish witness; does not prove every German-speaking parish celebrates on the same dates."
         }
       ],
       "limits": [
-        "Not the Mexican Las Posadas: shared lodging theme is not identical local custom.",
-        "Parish schedule in 2018 is not automatically the current or 1962 universal calendar."
+        "The local Austrian house-visit devotion is not identical to Mexican Las Posadas.",
+        "Neither a universal 15–23 December date range nor a fixed nine-day requirement is substantiated by this parish witness."
       ],
       "identity_status": "DISTINCT_PRACTICE_CANDIDATE_REQUIRES_CROSS_MODULE_DUPLICATE_GATE",
       "user_facing_status": "NOT_RELEASED",
@@ -39,20 +41,24 @@
       "weiser_id": "WEI58-07-007",
       "english_name": "La guignolée — French Canadian Christmas alms collection",
       "french_name": "La guignolée — quête caritative canadienne-française de Noël",
-      "claim": "Quebec's cultural heritage registry attributes the organized 1860s doorstep Christmas food collection to the Catholic Society of St Vincent de Paul; the society's continuing local programme independently records the tradition.",
+      "claim": "The Québec cultural heritage register independently identifies guignolée charitable food collections initiated by the Society of St Vincent de Paul in the early 1860s. The Montréal Society's current page confirms continued local Christmas-season campaigns.",
       "geo": "Québec, Canada",
       "calendar": "Christmas-season charity drive; actual annual dates locally announced",
       "evidence_status": "DIRECT_CIVIC_HERITAGE_AND_ORGANIZER_WITNESSES",
       "sources": [
         {
-          "issuer": "Québec Ministry of Culture / Répertoire du patrimoine culturel",
-          "url": "https://www.patrimoine-culturel.gouv.qc.ca/detail.do?id=234696&methode=consulter&type=bien",
-          "supports": "Catholic St Vincent de Paul origins in 1860s; food donations and singing; continuing charitable adaptation"
+          "id": "QC-HERITAGE-GUIGNOLEE",
+          "issuer": "Québec Répertoire du patrimoine culturel — La guignolée",
+          "url": "https://www.patrimoine-culturel.gouv.qc.ca/rpcq/detail.do?id=234696&methode=consulter&type=bien",
+          "supports": "Charitable Catholic origins in early 1860s and historical door-to-door donation collection",
+          "limit": "Museum artifact account: does not specify universal current parish practice."
         },
         {
-          "issuer": "Society of St Vincent de Paul, Montréal",
-          "url": "https://ssvp-mtl.org/en/128/guignolee",
-          "supports": "Organized Christmas charity campaign and continuing guignolée"
+          "id": "SSVP-GUIGNOLEE-2026",
+          "issuer": "Société de Saint-Vincent de Paul de Montréal",
+          "url": "https://ssvp-mtl.org/fr/guignolee",
+          "supports": "2026 official organizer account of ongoing guignolée and local December collection",
+          "limit": "Modern collection may include non-Catholic participants and is not a universal liturgical act."
         }
       ],
       "limits": [
@@ -68,15 +74,17 @@
       "weiser_id": "WEI58-07-008",
       "english_name": "Polish kolędnicy — Christmas visiting carollers",
       "french_name": "Kolędnicy polonais — quêteurs et chanteurs de Noël",
-      "claim": "Poland's Ministry of Culture documents regional carolling groups, their house visits, songs and gifts, including region-specific costumes and dramatic forms.",
+      "claim": "Poland's official educational portal describes kolędnicy who visit households, sing carols and sometimes stage Nativity or Herod plays, preserving a distinction between religious singing and wider folk theatre.",
       "geo": "Poland (regional variants)",
       "calendar": "Christmas cycle; dates and troupe forms differ across regions",
       "evidence_status": "DIRECT_NATIONAL_HERITAGE_WITNESS",
       "sources": [
         {
-          "issuer": "Polish Ministry of Culture and National Heritage",
-          "url": "https://www.gov.pl/web/kultura/nowy-wpis-na-krajowej-liscie-niematerialnego-dziedzictwa-kulturowego",
-          "supports": "House-to-house singing, gifts and regional custom variants"
+          "id": "PL-ZPE-KOLEDNICI",
+          "issuer": "Polish government educational portal ZPE — Polskie obyczaje bożonarodzeniowe",
+          "url": "https://zpe.gov.pl/a/polskie-obyczaje-bozonarodzeniowe-koleda-pastoralka-kolednicy-i-koledowanie/DWQhHa9xN",
+          "supports": "Definition of Christmas house-to-house carollers, performances and greetings",
+          "limit": "Educational/ethnographic description, not certification of a specifically Roman Catholic ritual or date."
         }
       ],
       "limits": [
@@ -92,15 +100,17 @@
       "weiser_id": "WEI58-08-019",
       "english_name": "St Barbara branches — Barbarazweige",
       "french_name": "Rameaux de sainte Barbe — Barbarazweige",
-      "claim": "The Diocese of Linz specifically places fruit-tree branches on St Barbara's 4 December observance, kept in water in hope of flowering at Christmas.",
+      "claim": "The Archdiocese of Vienna documents branches cut from cherry or apple trees and placed in water on St Barbara's 4 December observance, sometimes flowering by Christmas.",
       "geo": "Austria and Central European households",
       "calendar": "Traditional observance 4 December; voluntary domestic symbolism, not a Mass rite",
       "evidence_status": "DIRECT_DIOCESAN_EXPLANATION",
       "sources": [
         {
-          "issuer": "Diocese of Linz",
-          "url": "https://www.dioezese-linz.at/advent",
-          "supports": "St Barbara, 4 December, traditional Christmas-flowering branches"
+          "id": "AT-VIENNA-BARBARA",
+          "issuer": "Archdiocese of Vienna — St Barbara, 4 December",
+          "url": "https://www.erzdioezese-wien.at/heilige-barbara",
+          "supports": "Exact 4 December domestic branch custom, winter flowering and association with the saint's legend",
+          "limit": "Blooming is not guaranteed and the legend is not established biography."
         }
       ],
       "limits": [
@@ -133,8 +143,9 @@
         }
       ],
       "limits": [
-        "The government overview supports procession, independent reporting supports running in specific localities.",
-        "No procession may be created by the date alone in the 1962 Mass reader."
+        "The Malta government source confirms a Resurrection procession in Gozo, not the act of running the statue.",
+        "Times of Malta documents actual statue runs in specific localities, notably Senglea and the Three Cities; the practice is not identical in every parish.",
+        "Do not use the local celebration to infer any action within the 1962 Mass."
       ],
       "identity_status": "DISTINCT_PRACTICE_CANDIDATE_REQUIRES_CROSS_MODULE_DUPLICATE_GATE",
       "user_facing_status": "NOT_RELEASED",
@@ -145,30 +156,42 @@
       "weiser_id": "WEI58-24-007",
       "english_name": "Faradda di li Candareri — Sassari's Marian offering procession",
       "french_name": "Faradda di li Candareri — procession votive mariale de Sassari",
-      "claim": "The Sardinian regional heritage portal and the official festival record independently identify the Assumption-eve 14 August procession carrying large wooden symbolic candles in Sassari.",
+      "claim": "Sassari's municipal programme confirms its annual 14 August guild procession carrying decorated wooden votive candles to Santa Maria di Betlem, and Italy's Ministry of Culture registers the Faradda as a distinct local August Marian heritage tradition.",
       "geo": "Sassari, Sardinia, Italy",
       "calendar": "14 August local procession associated with Assumption, not a universal Marian vigil rite",
       "evidence_status": "DIRECT_REGIONAL_HERITAGE_AND_LOCAL_ORGANIZER",
       "sources": [
         {
-          "issuer": "SardegnaCultura (Sardinian regional heritage)",
-          "url": "https://www.sardegnacultura.it/en/articles/la-faradda-dei-candelieri-a-sassari",
-          "supports": "14 August Marian procession, votive origin and guild structures"
+          "id": "IT-SASSARI-FARADDA-2026",
+          "issuer": "Comune di Sassari, Faradda 2026",
+          "url": "https://www.comune.sassari.it/it/novita/notizia/Candelieri-2026-segui-tutti-gli-aggiornamenti/",
+          "supports": "Local event, 14 August in 2026, procession to Santa Maria di Betlem",
+          "limit": "Specific 2026 local programme, not a transferable liturgical calendar event."
         },
         {
-          "issuer": "Comune di Sassari festival portal",
-          "url": "https://candelierisassari.it/en/home-en/",
-          "supports": "Annual public processional custom and distinct local context"
+          "id": "IT-MIC-FARADDA",
+          "issuer": "Italian Ministry of Culture heritage registry",
+          "url": "https://idese.cultura.gov.it/en/place/discesa-dei-candelieri-la-faradda/",
+          "supports": "Annual 14 August Marian votive procession and history",
+          "limit": "Medieval origin narratives require separate documentary analysis."
         }
       ],
       "limits": [
-        "Festival's local procession is not the generic Roman Assumption procession.",
-        "Festival website gives conflicting counts of wooden candle structures; do not publish a count until reconciled."
+        "It is a Sassari-specific votive procession, not a universal Assumption rite.",
+        "Do not fix the number of candelieri from older contradictory museum descriptions; the 2026 municipal festival site describes thirteen.",
+        "The feast date does not imply a procession in any other parish."
       ],
       "identity_status": "DISTINCT_PRACTICE_CANDIDATE_REQUIRES_CROSS_MODULE_DUPLICATE_GATE",
       "user_facing_status": "NOT_RELEASED",
       "source_claim_bounded": true,
       "original_weiser_observation_retained": true
     }
+  ],
+  "corrections_20261021": [
+    "Replaced uncorroborated generic Austrian Herbergsuche date claim with an actual Roman Catholic parish witness.",
+    "Replaced the incorrect national-ministry kolędnicy page with a Polish state educational source discussing house-to-house carollers.",
+    "Updated the Québec guignolée organizer URL and exact heritage evidence.",
+    "Updated St Barbara's branches to the diocesan saint page.",
+    "Updated Sassari's procession to current civic programme and national heritage registry."
   ]
 }
