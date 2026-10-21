@@ -949,6 +949,7 @@ function yearSurface(selected,r){
       </div>
     </section>
     `:""}
+    <div class="aoCalHybridHeading" style="margin:18px 0"><button type="button" class="aoCalV2TextLink" data-cal-customs-open>${esc(L("Explore customs throughout the year","Découvrir les coutumes au fil de l’année"))} →</button></div>
     ${embedded&&!embeddedHomeYear?renderYearJourney({year:y,selectedDate:selected,focusedPeriodId:focusedYearPeriodId,fr:fr(),formatDate:displayDate,dailyColours:daily}):""}
   `;
 }
