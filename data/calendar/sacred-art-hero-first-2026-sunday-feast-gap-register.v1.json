@@ -3,7 +3,7 @@
   "asOf": "2026-10-21",
   "year": 2026,
   "ownerPR": 887,
-  "status": "RESEARCH_ONLY_COVERAGE_AUDIT_NOT_FRONTEND_OR_HUMAN_SELECTION",
+  "status": "RESEARCH_COVERAGE_GRID_RECONCILED_WITH_LATER_USER_DATE_SELECTIONS_NOT_PRODUCTION_CERTIFICATION",
   "governingPriority": [
     "P0_HOME_HERO_MASTERPIECES_FIRST",
     "P1_EVERY_MAJOR_FEAST_AND_EVERY_SUNDAY_EXPLICITLY_COVERED",
@@ -15,7 +15,8 @@
     "All original human score/rejection files retained",
     "All historical selected subject artworks remain immutable",
     "Class-I selections approved on May23 Pentecost Vigil and May27 Ember Wednesday must be preserved",
-    "No El Greco or Fra Angelico reintroduction"
+    "No El Greco or Fra Angelico reintroduction",
+    "Later Oct19 user date-specific selections take precedence over Oct13 old mobile visual research labels; no artwork approved for app solely by this update"
   ],
   "counts": {
     "sundays2026": 52,
@@ -40,7 +41,10 @@
     "SundayGospelOriginalResearchDates": 29,
     "SundayGospelResearchRows": 32,
     "unresolvedExactSundayScene": "2026-07-05 Mark 8:1–9 feeding of FOUR thousand (not five thousand)",
-    "verifiedHomepagePublishedCountFromTheseFiles": 0
+    "verifiedHomepagePublishedCountFromTheseFiles": 0,
+    "existingEditorialSelectionsRecoveredForPriorSixFalseGaps": 6,
+    "approvedDateAssignmentsReconciledFromLaterUserSessions": 10,
+    "legacyClassIPhoneVisualCoverageIsPreOctober19Snapshot": true
   },
   "coverageSemantics": {
     "sourceLink": "Institutional/thematic research only, never published",
@@ -54,39 +58,111 @@
   "heroPriorityTargets": [
     {
       "topic": "Holy Thursday / Institution of Eucharist",
-      "priority": "P0_CRITICAL",
-      "baseline": "NO_SUITABLE_PHONE_HERO_IDENTIFIED",
-      "action": "Prioritize user-selected Champaigne La Petite Cène, prove exact original and rights; consider alternative great Baroque Last Supper"
+      "priority": "P0_RELEASE_AUDIT_EXISTING_SELECTION",
+      "baseline": "EDITORIAL_SELECTION_ALREADY_APPROVED_LATER_THAN_OLD_MOBILE_AUDIT",
+      "action": "Do not seek replacement or re-rate. Reconcile selected physical object and already acquired photo against rights/mobile/frontend release gates; preserve approved original, including alternatives where previously selected.",
+      "historicalBaseline": "NO_SUITABLE_PHONE_HERO_IDENTIFIED",
+      "artisticChoiceStatus": "SELECTED_DO_NOT_RESELECT",
+      "approvedDateAssignments": [
+        {
+          "date": "2026-04-02",
+          "artist": "Ugolino da Siena",
+          "title": "Last Supper",
+          "approval": "USER_APPROVED_FOR_DATE"
+        }
+      ]
     },
     {
       "topic": "Pentecost including May23 Vigil and Octave",
-      "priority": "P0_CRITICAL",
-      "baseline": "NO_SUITABLE_PHONE_HERO_IDENTIFIED",
-      "action": "Honor newer user-approved May 23 Maíno, previously Restout approved; distinguish Vigil, Sunday, May27 Eucharistic Ember Wednesday associations"
+      "priority": "P0_RELEASE_AUDIT_EXISTING_SELECTION",
+      "baseline": "EDITORIAL_SELECTION_ALREADY_APPROVED_LATER_THAN_OLD_MOBILE_AUDIT",
+      "action": "Do not seek replacement or re-rate. Reconcile selected physical object and already acquired photo against rights/mobile/frontend release gates; preserve approved original, including alternatives where previously selected.",
+      "historicalBaseline": "NO_SUITABLE_PHONE_HERO_IDENTIFIED",
+      "artisticChoiceStatus": "SELECTED_DO_NOT_RESELECT",
+      "approvedDateAssignments": [
+        {
+          "date": "2026-05-23",
+          "artist": "Juan Bautista Maíno",
+          "title": "The Pentecost",
+          "approval": "USER_APPROVED_FOR_DATE"
+        },
+        {
+          "date": "2026-05-24",
+          "artist": "Jean II Restout",
+          "title": "Pentecost",
+          "approval": "USER_APPROVED_ARTWORK_FOR_FEAST"
+        },
+        {
+          "date": "2026-05-27",
+          "artist": "Philippe de Champaigne",
+          "title": "La Petite Cène",
+          "approval": "USER_APPROVED_FOR_DATE"
+        }
+      ]
     },
     {
       "topic": "Palm Sunday / Entry into Jerusalem",
-      "priority": "P0_CRITICAL",
-      "baseline": "NO_SUITABLE_PHONE_HERO_IDENTIFIED",
-      "action": "Replace inadequate early-style source lead by exceptional whole-painting alternative; keep Passion Gospel and procession subjects distinct"
+      "priority": "P0_RELEASE_AUDIT_EXISTING_SELECTION",
+      "baseline": "EDITORIAL_SELECTION_ALREADY_APPROVED_LATER_THAN_OLD_MOBILE_AUDIT",
+      "action": "Do not seek replacement or re-rate. Reconcile selected physical object and already acquired photo against rights/mobile/frontend release gates; preserve approved original, including alternatives where previously selected.",
+      "historicalBaseline": "NO_SUITABLE_PHONE_HERO_IDENTIFIED",
+      "artisticChoiceStatus": "SELECTED_DO_NOT_RESELECT",
+      "approvedDateAssignments": [
+        {
+          "date": "2026-03-29",
+          "artist": "Anthony van Dyck",
+          "title": "The Entry of Christ into Jerusalem",
+          "approval": "USER_APPROVED_FOR_DATE"
+        }
+      ]
     },
     {
       "topic": "Sacred Heart",
-      "priority": "P0_CRITICAL",
-      "baseline": "NO_SUITABLE_PHONE_HERO_IDENTIFIED",
-      "action": "Select strong authentic Catholic iconography and clear photo rights; no generic Christ portrait mislabelled"
+      "priority": "P0_RELEASE_AUDIT_EXISTING_SELECTION",
+      "baseline": "EDITORIAL_SELECTION_ALREADY_APPROVED_LATER_THAN_OLD_MOBILE_AUDIT",
+      "action": "Do not seek replacement or re-rate. Reconcile selected physical object and already acquired photo against rights/mobile/frontend release gates; preserve approved original, including alternatives where previously selected.",
+      "historicalBaseline": "NO_SUITABLE_PHONE_HERO_IDENTIFIED",
+      "artisticChoiceStatus": "SELECTED_DO_NOT_RESELECT",
+      "approvedDateAssignments": [
+        {
+          "date": "2026-06-12",
+          "artist": "Juan Patricio Morlete Ruiz",
+          "title": "The Heart of Jesus",
+          "approval": "USER_APPROVED_FOR_FEAST"
+        }
+      ]
     },
     {
       "topic": "All Saints",
-      "priority": "P0_CRITICAL",
-      "baseline": "NO_SUITABLE_PHONE_HERO_IDENTIFIED",
-      "action": "Inspect Rubens or equivalent magnificent assembly; distinguish from Last Judgment and All Souls"
+      "priority": "P0_RELEASE_AUDIT_EXISTING_SELECTION",
+      "baseline": "EDITORIAL_SELECTION_ALREADY_APPROVED_LATER_THAN_OLD_MOBILE_AUDIT",
+      "action": "Do not seek replacement or re-rate. Reconcile selected physical object and already acquired photo against rights/mobile/frontend release gates; preserve approved original, including alternatives where previously selected.",
+      "historicalBaseline": "NO_SUITABLE_PHONE_HERO_IDENTIFIED",
+      "artisticChoiceStatus": "SELECTED_DO_NOT_RESELECT",
+      "approvedDateAssignments": [
+        {
+          "date": "2026-11-01",
+          "artist": "Carlo Saraceni",
+          "title": "Paradise",
+          "approval": "USER_APPROVED_FOR_DATE"
+        }
+      ]
     },
     {
       "topic": "Christ the King",
-      "priority": "P0_CRITICAL",
-      "baseline": "NO_SUITABLE_PHONE_HERO_IDENTIFIED",
-      "action": "Seek genuinely great regal Christ or properly captioned kingship context; not generic Last Judgment falsely named Christ the King"
+      "priority": "P0_RELEASE_AUDIT_EXISTING_SELECTION",
+      "baseline": "EDITORIAL_SELECTION_ALREADY_APPROVED_LATER_THAN_OLD_MOBILE_AUDIT",
+      "action": "Do not seek replacement or re-rate. Reconcile selected physical object and already acquired photo against rights/mobile/frontend release gates; preserve approved original, including alternatives where previously selected.",
+      "historicalBaseline": "NO_SUITABLE_PHONE_HERO_IDENTIFIED",
+      "artisticChoiceStatus": "SELECTED_DO_NOT_RESELECT",
+      "approvedDateAssignments": [
+        {
+          "date": "2026-10-25",
+          "artist": "Ambrosius Benson",
+          "title": "Salvator Mundi",
+          "approval": "USER_APPROVED_FOR_DATE"
+        }
+      ]
     },
     {
       "topic": "Easter / Resurrection",
@@ -614,16 +690,23 @@
       ],
       "contextualReuseResearch": [],
       "sourceLeadCount": 2,
-      "artworkAssignedForHomepage": null,
+      "artworkAssignedForHomepage": "USER_EDITORIALLY_SELECTED_SOURCE_REPRODUCTION_UNVERIFIED",
       "actualVisibleProductionHeroVerified": false,
-      "editorialNextStep": "CONFIRM_MOBILE_MASTERPIECE_FOR_CLASS_I",
+      "editorialNextStep": "RESOLVE_EXISTING_SELECTED_ARTWORK_ID_IMAGE_AND_PRODUCTION_STATUS_NO_NEW_SELECTION",
       "fallbacksAllowed": [
         "SAME_FEAST_SUBJECT",
         "GOSPEL_SCENE",
         "TRUTHFUL_SEASONAL_IMAGE",
         "PREVIOUS_APPROVED_HERO_IF_SEASONALLY_COMPATIBLE"
       ],
-      "noFalseAttribution": true
+      "noFalseAttribution": true,
+      "currentEditorialSelection": {
+        "artist": "Anthony van Dyck",
+        "title": "The Entry of Christ into Jerusalem",
+        "approval": "USER_APPROVED_FOR_DATE",
+        "approvalEvidence": "Explicit 2026-10-19 date-specific user selection",
+        "technicalRelease": "NOT_VERIFIED"
+      }
     },
     {
       "date2026": "2026-04-05",
@@ -822,16 +905,23 @@
       "candidateResearch": [],
       "contextualReuseResearch": [],
       "sourceLeadCount": 0,
-      "artworkAssignedForHomepage": null,
+      "artworkAssignedForHomepage": "USER_EDITORIALLY_SELECTED_SOURCE_REPRODUCTION_UNVERIFIED",
       "actualVisibleProductionHeroVerified": false,
-      "editorialNextStep": "CONFIRM_MOBILE_MASTERPIECE_FOR_CLASS_I",
+      "editorialNextStep": "RESOLVE_EXISTING_SELECTED_ARTWORK_ID_IMAGE_AND_PRODUCTION_STATUS_NO_NEW_SELECTION",
       "fallbacksAllowed": [
         "SAME_FEAST_SUBJECT",
         "GOSPEL_SCENE",
         "TRUTHFUL_SEASONAL_IMAGE",
         "PREVIOUS_APPROVED_HERO_IF_SEASONALLY_COMPATIBLE"
       ],
-      "noFalseAttribution": true
+      "noFalseAttribution": true,
+      "currentEditorialSelection": {
+        "artist": "Jean II Restout",
+        "title": "Pentecost",
+        "approval": "USER_APPROVED_ARTWORK_FOR_FEAST",
+        "approvalEvidence": "2026-10-17 final decision freeze confirms artwork rating 5 locked; 2026-10-19 user confirms approved Pentecost painting",
+        "technicalRelease": "NOT_VERIFIED"
+      }
     },
     {
       "date2026": "2026-05-31",
@@ -1415,16 +1505,23 @@
       ],
       "contextualReuseResearch": [],
       "sourceLeadCount": 1,
-      "artworkAssignedForHomepage": null,
+      "artworkAssignedForHomepage": "USER_EDITORIALLY_SELECTED_SOURCE_REPRODUCTION_UNVERIFIED",
       "actualVisibleProductionHeroVerified": false,
-      "editorialNextStep": "CONFIRM_MOBILE_MASTERPIECE_FOR_CLASS_I",
+      "editorialNextStep": "RESOLVE_EXISTING_SELECTED_ARTWORK_ID_IMAGE_AND_PRODUCTION_STATUS_NO_NEW_SELECTION",
       "fallbacksAllowed": [
         "SAME_FEAST_SUBJECT",
         "GOSPEL_SCENE",
         "TRUTHFUL_SEASONAL_IMAGE",
         "PREVIOUS_APPROVED_HERO_IF_SEASONALLY_COMPATIBLE"
       ],
-      "noFalseAttribution": true
+      "noFalseAttribution": true,
+      "currentEditorialSelection": {
+        "artist": "Ambrosius Benson",
+        "title": "Salvator Mundi",
+        "approval": "USER_APPROVED_FOR_DATE",
+        "approvalEvidence": "Explicit 2026-10-19 date-specific user selection",
+        "technicalRelease": "NOT_VERIFIED"
+      }
     },
     {
       "date2026": "2026-11-01",
@@ -1444,16 +1541,23 @@
       ],
       "contextualReuseResearch": [],
       "sourceLeadCount": 1,
-      "artworkAssignedForHomepage": null,
+      "artworkAssignedForHomepage": "USER_EDITORIALLY_SELECTED_SOURCE_REPRODUCTION_UNVERIFIED",
       "actualVisibleProductionHeroVerified": false,
-      "editorialNextStep": "CONFIRM_MOBILE_MASTERPIECE_FOR_CLASS_I",
+      "editorialNextStep": "RESOLVE_EXISTING_SELECTED_ARTWORK_ID_IMAGE_AND_PRODUCTION_STATUS_NO_NEW_SELECTION",
       "fallbacksAllowed": [
         "SAME_FEAST_SUBJECT",
         "GOSPEL_SCENE",
         "TRUTHFUL_SEASONAL_IMAGE",
         "PREVIOUS_APPROVED_HERO_IF_SEASONALLY_COMPATIBLE"
       ],
-      "noFalseAttribution": true
+      "noFalseAttribution": true,
+      "currentEditorialSelection": {
+        "artist": "Carlo Saraceni",
+        "title": "Paradise",
+        "approval": "USER_APPROVED_FOR_DATE",
+        "approvalEvidence": "Explicit 2026-10-19 date-specific user selection",
+        "technicalRelease": "NOT_VERIFIED"
+      }
     },
     {
       "date2026": "2026-11-08",
@@ -1536,16 +1640,23 @@
       "candidateResearch": [],
       "contextualReuseResearch": [],
       "sourceLeadCount": 0,
-      "artworkAssignedForHomepage": null,
+      "artworkAssignedForHomepage": "USER_EDITORIALLY_SELECTED_SOURCE_REPRODUCTION_UNVERIFIED",
       "actualVisibleProductionHeroVerified": false,
-      "editorialNextStep": "CONFIRM_MOBILE_MASTERPIECE_FOR_CLASS_I",
+      "editorialNextStep": "RESOLVE_EXISTING_SELECTED_ARTWORK_ID_IMAGE_AND_PRODUCTION_STATUS_NO_NEW_SELECTION",
       "fallbacksAllowed": [
         "SAME_FEAST_SUBJECT",
         "GOSPEL_SCENE",
         "TRUTHFUL_SEASONAL_IMAGE",
         "PREVIOUS_APPROVED_HERO_IF_SEASONALLY_COMPATIBLE"
       ],
-      "noFalseAttribution": true
+      "noFalseAttribution": true,
+      "currentEditorialSelection": {
+        "artist": "John Martin",
+        "title": "The Great Day of His Wrath",
+        "approval": "USER_APPROVED_FOR_DATE",
+        "approvalEvidence": "Explicit 2026-10-19 date-specific user selection",
+        "technicalRelease": "NOT_VERIFIED"
+      }
     },
     {
       "date2026": "2026-12-06",
@@ -1816,15 +1927,28 @@
       "observedPrincipalId": "tempora:Quad6-0r:1:rv",
       "observedTitle": "Palm Sunday",
       "heroTheme": "palm-sunday",
-      "previousResearchVisualStatus": "NO_SUITABLE_PHONE_HERO_IDENTIFIED",
+      "previousResearchVisualStatus": "NO_SUITABLE_PHONE_HERO_IDENTIFIED [HISTORICAL_PRE_OCT19_SELECTION]",
       "existingArtworkIds": [
         "kress-k2017"
       ],
       "exactSourceLinkCount": 1,
-      "approvedHomeHero": null,
+      "approvedHomeHero": {
+        "artist": "Anthony van Dyck",
+        "title": "The Entry of Christ into Jerusalem",
+        "approval": "USER_APPROVED_FOR_DATE",
+        "imageRelease": "NOT_VERIFIED"
+      },
       "sourceImageReleaseVerified": false,
       "mobileWholePaintingAccepted": false,
-      "plannedReusePermitted": true
+      "plannedReusePermitted": true,
+      "currentEditorialSelection": {
+        "artist": "Anthony van Dyck",
+        "title": "The Entry of Christ into Jerusalem",
+        "approval": "USER_APPROVED_FOR_DATE",
+        "approvalEvidence": "Explicit 2026-10-19 date-specific user selection",
+        "technicalRelease": "NOT_VERIFIED"
+      },
+      "historicalResearchVisualStatus": "NO_SUITABLE_PHONE_HERO_IDENTIFIED"
     },
     {
       "date2026": "2026-03-30",
@@ -1882,16 +2006,29 @@
       "observedPrincipalId": "tempora:Quad6-4r:1:w",
       "observedTitle": "Holy Thursday",
       "heroTheme": "holy-thursday",
-      "previousResearchVisualStatus": "NO_SUITABLE_PHONE_HERO_IDENTIFIED",
+      "previousResearchVisualStatus": "NO_SUITABLE_PHONE_HERO_IDENTIFIED [HISTORICAL_PRE_OCT19_SELECTION]",
       "existingArtworkIds": [
         "nga-12130",
         "met-459131"
       ],
       "exactSourceLinkCount": 0,
-      "approvedHomeHero": null,
+      "approvedHomeHero": {
+        "artist": "Ugolino da Siena",
+        "title": "Last Supper",
+        "approval": "USER_APPROVED_FOR_DATE",
+        "imageRelease": "NOT_VERIFIED"
+      },
       "sourceImageReleaseVerified": false,
       "mobileWholePaintingAccepted": false,
-      "plannedReusePermitted": true
+      "plannedReusePermitted": true,
+      "currentEditorialSelection": {
+        "artist": "Ugolino da Siena",
+        "title": "Last Supper",
+        "approval": "USER_APPROVED_FOR_DATE",
+        "approvalEvidence": "Explicit 2026-10-19 date-specific five-star approval",
+        "technicalRelease": "NOT_VERIFIED"
+      },
+      "historicalResearchVisualStatus": "NO_SUITABLE_PHONE_HERO_IDENTIFIED"
     },
     {
       "date2026": "2026-04-03",
@@ -2081,34 +2218,60 @@
       "observedPrincipalId": "tempora:Pasc6-6:1:r",
       "observedTitle": "Vigil of Pentecost",
       "heroTheme": "ascension",
-      "previousResearchVisualStatus": "NO_SUITABLE_PHONE_HERO_IDENTIFIED",
+      "previousResearchVisualStatus": "NO_SUITABLE_PHONE_HERO_IDENTIFIED [HISTORICAL_PRE_OCT19_SELECTION]",
       "existingArtworkIds": [
         "commons-debray-pentecost",
         "commons-multscher-pentecost",
         "commons-baroncelli-pentecost"
       ],
       "exactSourceLinkCount": 0,
-      "approvedHomeHero": null,
+      "approvedHomeHero": {
+        "artist": "Juan Bautista Maíno",
+        "title": "The Pentecost",
+        "approval": "USER_APPROVED_FOR_DATE",
+        "imageRelease": "NOT_VERIFIED"
+      },
       "sourceImageReleaseVerified": false,
       "mobileWholePaintingAccepted": false,
-      "plannedReusePermitted": true
+      "plannedReusePermitted": true,
+      "currentEditorialSelection": {
+        "artist": "Juan Bautista Maíno",
+        "title": "The Pentecost",
+        "approval": "USER_APPROVED_FOR_DATE",
+        "approvalEvidence": "2026-10-19 named Vigil image choice",
+        "technicalRelease": "NOT_VERIFIED"
+      },
+      "historicalResearchVisualStatus": "NO_SUITABLE_PHONE_HERO_IDENTIFIED"
     },
     {
       "date2026": "2026-05-24",
       "observedPrincipalId": "tempora:Pasc7-0:1:r",
       "observedTitle": "Pentecost Sunday",
       "heroTheme": "pentecost",
-      "previousResearchVisualStatus": "NO_SUITABLE_PHONE_HERO_IDENTIFIED",
+      "previousResearchVisualStatus": "NO_SUITABLE_PHONE_HERO_IDENTIFIED [HISTORICAL_PRE_OCT19_SELECTION]",
       "existingArtworkIds": [
         "commons-debray-pentecost",
         "commons-multscher-pentecost",
         "commons-baroncelli-pentecost"
       ],
       "exactSourceLinkCount": 1,
-      "approvedHomeHero": null,
+      "approvedHomeHero": {
+        "artist": "Jean II Restout",
+        "title": "Pentecost",
+        "approval": "USER_APPROVED_ARTWORK_FOR_FEAST",
+        "imageRelease": "NOT_VERIFIED"
+      },
       "sourceImageReleaseVerified": false,
       "mobileWholePaintingAccepted": false,
-      "plannedReusePermitted": true
+      "plannedReusePermitted": true,
+      "currentEditorialSelection": {
+        "artist": "Jean II Restout",
+        "title": "Pentecost",
+        "approval": "USER_APPROVED_ARTWORK_FOR_FEAST",
+        "approvalEvidence": "2026-10-17 final decision freeze confirms artwork rating 5 locked; 2026-10-19 user confirms approved Pentecost painting",
+        "technicalRelease": "NOT_VERIFIED"
+      },
+      "historicalResearchVisualStatus": "NO_SUITABLE_PHONE_HERO_IDENTIFIED"
     },
     {
       "date2026": "2026-05-25",
@@ -2149,17 +2312,30 @@
       "observedPrincipalId": "tempora:Pasc7-3:1:r",
       "observedTitle": "Ember Wednesday of Pentecost",
       "heroTheme": "pentecost",
-      "previousResearchVisualStatus": "NO_SUITABLE_PHONE_HERO_IDENTIFIED",
+      "previousResearchVisualStatus": "NO_SUITABLE_PHONE_HERO_IDENTIFIED [HISTORICAL_PRE_OCT19_SELECTION]",
       "existingArtworkIds": [
         "commons-debray-pentecost",
         "commons-multscher-pentecost",
         "commons-baroncelli-pentecost"
       ],
       "exactSourceLinkCount": 0,
-      "approvedHomeHero": null,
+      "approvedHomeHero": {
+        "artist": "Philippe de Champaigne",
+        "title": "La Petite Cène",
+        "approval": "USER_APPROVED_FOR_DATE",
+        "imageRelease": "NOT_VERIFIED"
+      },
       "sourceImageReleaseVerified": false,
       "mobileWholePaintingAccepted": false,
-      "plannedReusePermitted": true
+      "plannedReusePermitted": true,
+      "currentEditorialSelection": {
+        "artist": "Philippe de Champaigne",
+        "title": "La Petite Cène",
+        "approval": "USER_APPROVED_FOR_DATE",
+        "approvalEvidence": "User 2026-10-19 selection of Eucharistic thematic art for Ember Wednesday",
+        "technicalRelease": "NOT_VERIFIED"
+      },
+      "historicalResearchVisualStatus": "NO_SUITABLE_PHONE_HERO_IDENTIFIED"
     },
     {
       "date2026": "2026-05-28",
@@ -2247,15 +2423,28 @@
       "observedPrincipalId": "tempora:Pent02-5:1:w",
       "observedTitle": "Sacred Heart of Jesus",
       "heroTheme": "sacred-heart",
-      "previousResearchVisualStatus": "NO_SUITABLE_PHONE_HERO_IDENTIFIED",
+      "previousResearchVisualStatus": "NO_SUITABLE_PHONE_HERO_IDENTIFIED [HISTORICAL_PRE_OCT19_SELECTION]",
       "existingArtworkIds": [
         "commons-morlete-sacred-heart-1759"
       ],
       "exactSourceLinkCount": 2,
-      "approvedHomeHero": null,
+      "approvedHomeHero": {
+        "artist": "Juan Patricio Morlete Ruiz",
+        "title": "The Heart of Jesus",
+        "approval": "USER_APPROVED_FOR_FEAST",
+        "imageRelease": "NOT_VERIFIED"
+      },
       "sourceImageReleaseVerified": false,
       "mobileWholePaintingAccepted": false,
-      "plannedReusePermitted": true
+      "plannedReusePermitted": true,
+      "currentEditorialSelection": {
+        "artist": "Juan Patricio Morlete Ruiz",
+        "title": "The Heart of Jesus",
+        "approval": "USER_APPROVED_FOR_FEAST",
+        "approvalEvidence": "2026-10-17 final curator file: 5, locked, perfect_theme; 2026-10-19 user reaffirmation",
+        "technicalRelease": "NOT_VERIFIED"
+      },
+      "historicalResearchVisualStatus": "NO_SUITABLE_PHONE_HERO_IDENTIFIED"
     },
     {
       "date2026": "2026-06-24",
@@ -2339,61 +2528,113 @@
       "observedPrincipalId": "sancti:10-DU:1:w",
       "observedTitle": "Christ the King",
       "heroTheme": "christ-king",
-      "previousResearchVisualStatus": "NO_SUITABLE_PHONE_HERO_IDENTIFIED",
+      "previousResearchVisualStatus": "NO_SUITABLE_PHONE_HERO_IDENTIFIED [HISTORICAL_PRE_OCT19_SELECTION]",
       "existingArtworkIds": [
         "met-436794"
       ],
       "exactSourceLinkCount": 0,
-      "approvedHomeHero": null,
+      "approvedHomeHero": {
+        "artist": "Ambrosius Benson",
+        "title": "Salvator Mundi",
+        "approval": "USER_APPROVED_FOR_DATE",
+        "imageRelease": "NOT_VERIFIED"
+      },
       "sourceImageReleaseVerified": false,
       "mobileWholePaintingAccepted": false,
-      "plannedReusePermitted": true
+      "plannedReusePermitted": true,
+      "currentEditorialSelection": {
+        "artist": "Ambrosius Benson",
+        "title": "Salvator Mundi",
+        "approval": "USER_APPROVED_FOR_DATE",
+        "approvalEvidence": "Explicit 2026-10-19 date-specific user selection",
+        "technicalRelease": "NOT_VERIFIED"
+      },
+      "historicalResearchVisualStatus": "NO_SUITABLE_PHONE_HERO_IDENTIFIED"
     },
     {
       "date2026": "2026-11-01",
       "observedPrincipalId": "sancti:11-01:1:w",
       "observedTitle": "All Saints",
       "heroTheme": "all-saints",
-      "previousResearchVisualStatus": "NO_SUITABLE_PHONE_HERO_IDENTIFIED",
+      "previousResearchVisualStatus": "NO_SUITABLE_PHONE_HERO_IDENTIFIED [HISTORICAL_PRE_OCT19_SELECTION]",
       "existingArtworkIds": [
         "met-437743"
       ],
       "exactSourceLinkCount": 1,
-      "approvedHomeHero": null,
+      "approvedHomeHero": {
+        "artist": "Carlo Saraceni",
+        "title": "Paradise",
+        "approval": "USER_APPROVED_FOR_DATE",
+        "imageRelease": "NOT_VERIFIED"
+      },
       "sourceImageReleaseVerified": false,
       "mobileWholePaintingAccepted": false,
-      "plannedReusePermitted": true
+      "plannedReusePermitted": true,
+      "currentEditorialSelection": {
+        "artist": "Carlo Saraceni",
+        "title": "Paradise",
+        "approval": "USER_APPROVED_FOR_DATE",
+        "approvalEvidence": "Explicit 2026-10-19 date-specific user selection",
+        "technicalRelease": "NOT_VERIFIED"
+      },
+      "historicalResearchVisualStatus": "NO_SUITABLE_PHONE_HERO_IDENTIFIED"
     },
     {
       "date2026": "2026-11-02",
       "observedPrincipalId": "sancti:11-02m1:1:b",
       "observedTitle": "Commemoration of All Souls",
       "heroTheme": "all-souls",
-      "previousResearchVisualStatus": "EXISTING_PAINTING_ONLY_CONDITIONAL",
+      "previousResearchVisualStatus": "EXISTING_PAINTING_ONLY_CONDITIONAL [HISTORICAL_PRE_OCT19_SELECTION]",
       "existingArtworkIds": [
         "met-437542"
       ],
       "exactSourceLinkCount": 1,
-      "approvedHomeHero": null,
+      "approvedHomeHero": {
+        "artist": "Ludovico Carracci",
+        "title": "An Angel Frees the Souls of Purgatory",
+        "approval": "USER_APPROVED_FOR_DATE",
+        "imageRelease": "NOT_VERIFIED"
+      },
       "sourceImageReleaseVerified": false,
       "mobileWholePaintingAccepted": false,
-      "plannedReusePermitted": true
+      "plannedReusePermitted": true,
+      "currentEditorialSelection": {
+        "artist": "Ludovico Carracci",
+        "title": "An Angel Frees the Souls of Purgatory",
+        "approval": "USER_APPROVED_FOR_DATE",
+        "approvalEvidence": "Explicit 2026-10-19 date-specific user selection",
+        "technicalRelease": "NOT_VERIFIED"
+      },
+      "historicalResearchVisualStatus": "EXISTING_PAINTING_ONLY_CONDITIONAL"
     },
     {
       "date2026": "2026-11-29",
       "observedPrincipalId": "tempora:Adv1-0:1:v",
       "observedTitle": "I Sunday of Advent",
       "heroTheme": "advent",
-      "previousResearchVisualStatus": "STRONG_EXISTING_APPROPRIATE",
+      "previousResearchVisualStatus": "STRONG_EXISTING_APPROPRIATE [HISTORICAL_PRE_OCT19_SELECTION]",
       "existingArtworkIds": [
         "met-436502",
         "met-438724"
       ],
       "exactSourceLinkCount": 0,
-      "approvedHomeHero": null,
+      "approvedHomeHero": {
+        "artist": "John Martin",
+        "title": "The Great Day of His Wrath",
+        "approval": "USER_APPROVED_FOR_DATE",
+        "imageRelease": "NOT_VERIFIED"
+      },
       "sourceImageReleaseVerified": false,
       "mobileWholePaintingAccepted": false,
-      "plannedReusePermitted": true
+      "plannedReusePermitted": true,
+      "currentEditorialSelection": {
+        "artist": "John Martin",
+        "title": "The Great Day of His Wrath",
+        "approval": "USER_APPROVED_FOR_DATE",
+        "approvalEvidence": "Explicit 2026-10-19 date-specific user selection",
+        "technicalRelease": "NOT_VERIFIED"
+      },
+      "historicalResearchVisualStatus": "STRONG_EXISTING_APPROPRIATE"
     },
     {
       "date2026": "2026-12-06",
@@ -2639,13 +2880,24 @@
     "data/calendar/sacred-art-sunday-gospel-paintings-open-sources-20261017.v1.json",
     "data/calendar/sacred-art-sunday-gospel-open-paintings-phase2-20261017.v1.json",
     "data/calendar/sacred-art-sunday-gospel-open-paintings-phase3-20261017.v1.json",
-    "data/calendar/sacred-art-masterpiece-anchor-wave-20261012.v1.json"
+    "data/calendar/sacred-art-masterpiece-anchor-wave-20261012.v1.json",
+    "data/calendar/sacred-art-recovered-date-specific-approvals-20261019.v1.json"
   ],
   "acceptance": [
     "Exact-year inventory: 52/52 Sundays and 53/53 Class I observed principals individually mapped (not just file rows).",
-    "Top hero collection approximately 20-25 high-quality works with at least one approved source+image, clear correct feast/Gospel caption, phone visual gate and rights clearance.",
+    "Top hero collection approximately 20-25 high-quality works with at least one approved source+image, clear correct feast/Gospel caption, phone visual gate and rights clearance. Reuse already selected sources and never demand that the user reselect them; only acquisition, usage-rights and mobile/app wiring remain.",
     "Every listed Sunday and major feast has a signed-off visible hero or documented appropriate art carry-over; no generic placeholding or false exact Gospel claim.",
     "Seasonal and major Class-II overrides computed from canonical 1962 DayResolver for 2026 and other supported years, not hardcoded date list.",
     "No production gate claimed merely because research links exist; production mapping and tests verify actual visible Home result."
-  ]
+  ],
+  "correction20261021": {
+    "type": "CRITICAL_SOURCE_AUTHORITY_ERRATUM",
+    "problem": "Oct 13 six no-phone-hero statuses were wrongly presented as if no painting had been chosen. Later user choices dated October 19 explicitly fill all six",
+    "source": "data/calendar/sacred-art-recovered-date-specific-approvals-20261019.v1.json",
+    "nowIdentifiedUserApprovedFeastThemes": 6,
+    "nowRecordedUserApprovedSpecificDateAssignments": 10,
+    "verifiedAssetReleaseForTheseDates": 0,
+    "legacyResearchScreenRetainedForHistoricalAudit": true,
+    "rule": "Prioritize existing selections and image/rights/frontend readiness; no new curation without an actual missing editorial decision"
+  }
 }
