@@ -27,7 +27,8 @@ assert(owner.includes('loadThematic()') && owner.includes('buildThematicPilots')
 assert(owner.includes('openThematicEpisode,close'));
 assert(owner.includes('thematicCatalogue:thematicCatalogue??thematicCache,initialThematicEpisodeId,'));
 assert(bible.includes('openThematicEpisode(id){return selectThematic(id);}'));
-assert(bible.includes('setThematicCatalogue(groups,id=null)'));
+assert(bible.includes('setThematicCatalogue(groups,id=null,links=null)'));
+assert(owner.includes('thematicLinks=mapping;'), 'The source identity registry must be checked before enabling cross-module links');
 assert(bible.includes('positionThematic();draw()'));
 assert(bible.includes('thematicEpisode.plan.book==="Esther"'));
 assert(bible.includes('data') && bible.includes('nav.dataset.historiaCollections="RESEARCH_NOT_PUBLISHED"'));
