@@ -2833,6 +2833,17 @@ export async function mountNativeReaderPreview({
       progress:current ? visibleProgress(current) : null,
       guide:null,
       ...state,
+      // Card navigation has no observed cue; scrolling later resolves one.
+      // Recompute contextual ribbon copy on every cue-only update or it
+      // remains null (or stale) even while the LIVE action rails advance.
+      objectiveContext:String(readerModel?.presentationMode??"").toUpperCase()==="LIVE"
+        ? projectReaderObjectiveContext(current,{
+            cueId:state.nativeCueId,
+            form:ready.prepared?.session?.resolvedMass?.form,
+            language:ready.prepared?.readerPreferences?.language??"en",
+            sourceBlocks:ready.data?.sungCorpus?.blocks,
+          })
+        :null,
       organPermission:project1962ReaderOrganNote({
         massCard:current,resolvedMass:prepared?.session?.resolvedMass,
       }),
