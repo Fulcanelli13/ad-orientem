@@ -42,7 +42,7 @@ for(const caseFile of fixture.positives){
  assert.ok(source,"Original commentary segment missing: "+caseFile.id);
  assert.equal(source.father,caseFile.father,"Original Father-attribution drift: "+caseFile.id);
  assert.ok(source.text.includes(caseFile.evidence),"Verbatim evidence missing: "+caseFile.id);
- assert.ok(record.verse_keys.some(k=>k===gospel+"/"+caseFile.passage.split(" ")[1]),
+ assert.ok(record.verse_keys.some(k=>k===gospel+"/"+caseFile.passage.split(" ")[1].replace(":","/")),
   "Target Bible verse not covered by pericope: "+caseFile.id);
  const results=retrieve(rows,caseFile.question);
  const found=results.some(x=>x.id===source.id);
