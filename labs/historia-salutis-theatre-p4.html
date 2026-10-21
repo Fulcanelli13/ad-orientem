@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>Historia Salutis — Theatre laboratory</title>
+<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@5.0.0/dist/maplibre-gl.css">
+<style>
+:root{--ink:#080c12;--panel:#0c1420;--gold:#c6aa79;--line:#8c76543d;--text:#e8dfcf;--muted:#b7ad9c}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ink);color:var(--text);font:15px/1.55 Georgia,"Times New Roman",serif}
+button{color:inherit;font:inherit;cursor:pointer}
+button:focus-visible,a:focus-visible{outline:2px solid #e4c68c;outline-offset:3px}
+button:disabled{opacity:.35;cursor:not-allowed}
+.shell{min-height:100dvh;display:grid;grid-template-rows:auto 1fr auto}
+.top{height:72px;display:flex;justify-content:space-between;align-items:center;padding:0 clamp(16px,3vw,52px);border-bottom:1px solid var(--line);background:#090e15;gap:12px}
+.brand{display:flex;flex-direction:column;line-height:1.1}
+.kicker,.tiny{font:600 10px/1.35 system-ui,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+.brand strong{font-size:25px;letter-spacing:.035em;font-weight:400}
+.top-controls{display:flex;gap:9px;align-items:center}
+.ghost{background:transparent;border:1px solid #bba47a50;border-radius:6px;min-width:40px;min-height:40px;padding:6px 12px;font:500 12px system-ui,sans-serif}
+.ghost[aria-pressed=true]{background:#bd9d6033;border-color:#c6aa79;color:#f8e7bf}
+.theatre{display:grid;grid-template-columns:86px minmax(0,1fr) minmax(350px,480px);min-height:0;min-height:calc(100dvh - 132px)}
+.rail{background:#0a1019;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:10px;align-items:center;padding:22px 7px}
+.rail button{width:62px;min-height:64px;border:1px solid transparent;border-radius:5px;background:transparent;color:#afa494}
+.rail button[aria-current=step]{border-color:var(--gold);color:#f4e5c6;background:#b59d6d1a}
+.rail b{display:block;font:500 21px Georgia,serif}.rail small{display:block;font:9px system-ui,sans-serif;text-transform:uppercase;letter-spacing:.13em}
+.stage{position:relative;isolation:isolate;overflow:hidden;min-height:490px;background:radial-gradient(ellipse at 50% 36%,#23303a 0,#0b1724 48%,#080d14 86%)}
+.stage::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(90deg,#080c12d5 0,transparent 20%,transparent 78%,#080c12a0 100%),linear-gradient(0deg,#080c12 0,transparent 30%,transparent 80%,#080c1240 100%)}
+#map{position:absolute;inset:0;opacity:.86;transition:opacity .5s}
+#map[hidden]{display:none}
+.map-fallback{position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at 55% 45%,#243d4a 0%,#11202c 34%,#090f18 74%)}
+.map-fallback:before{content:"";position:absolute;inset:9%;border:1px solid #a5987240;border-radius:48% 30% 53% 26%;transform:rotate(-24deg);box-shadow:0 0 0 85px #181d2340,0 0 0 135px #a5987210}
+.vision{position:absolute;inset:0;display:none;place-items:center;overflow:hidden;background:radial-gradient(ellipse at 50% 40%,#6d654251 0,#272b2b 22%,#101720 51%,#070b12 78%)}
+.vision.show{display:grid}
+.vision:before{content:"";width:min(62vw,340px);height:min(62vw,340px);border:1px solid #d2c38c51;border-radius:50%;box-shadow:0 0 0 35px #b5a2710a,0 0 0 75px #b5a27110,0 0 100px #d3bd7547}
+.vision-mark{position:absolute;color:#e6d6ad;font:400 clamp(52px,8vw,130px) Georgia,serif;text-shadow:0 0 35px #d5c18950}
+.stage-label{position:absolute;z-index:3;top:28px;left:32px;max-width:min(380px,70%);padding:10px 14px;border-left:2px solid var(--gold);background:#080e17b8}
+.stage-label strong{display:block;font:500 14px system-ui,sans-serif;margin-top:4px}
+.stage-label span{display:block;font:11px/1.45 system-ui,sans-serif;color:#c2b4a0;margin-top:5px}
+.stage-bottom{position:absolute;z-index:3;left:30px;right:30px;bottom:28px;display:flex;align-items:flex-end;justify-content:space-between;gap:16px}
+.stage-bottom p{max-width:460px;margin:0;color:#cdb98e;font:italic 17px/1.45 Georgia,serif}
+.stage-bottom small{max-width:220px;color:#b6ad9f;font:10px/1.5 system-ui,sans-serif;text-align:right}
+.folio{border-left:1px solid var(--line);background:linear-gradient(125deg,#101b27,#0c131d 56%,#0a1119);padding:clamp(28px,3.5vw,56px) clamp(22px,3vw,48px);display:flex;flex-direction:column;min-width:0}
+.section-index{font:600 11px/1.5 system-ui,sans-serif;letter-spacing:.18em;color:var(--gold);text-transform:uppercase}
+h1{font-size:clamp(34px,3.5vw,50px);font-weight:400;line-height:1.12;margin:26px 0 12px}
+.verse{font:13px/1.6 system-ui,sans-serif;color:var(--gold);margin:4px 0 27px}
+.rule{height:1px;background:linear-gradient(90deg,var(--gold),transparent);margin:4px 0 26px}
+.story{font:18px/1.65 Georgia,serif;margin:0 0 18px;color:#e4dacb}
+.note{font:13px/1.62 system-ui,sans-serif;color:#c1b6a7;margin:7px 0 20px}
+.meta{display:grid;gap:10px;margin-top:14px}
+.meta div{padding:12px 0;border-top:1px solid var(--line)}
+.meta small{font:600 9px/1.5 system-ui,sans-serif;text-transform:uppercase;letter-spacing:.13em;color:var(--gold)}
+.meta p{margin:5px 0 0;font:12px/1.6 system-ui,sans-serif;color:#d2c4b0}
+.navigation{display:flex;justify-content:space-between;gap:12px;margin-top:auto;padding-top:22px}
+.navigation button{min-height:44px;flex:1;border:1px solid #a68b5c73;border-radius:4px;background:#ad926320;font:600 12px system-ui,sans-serif;letter-spacing:.06em}
+.footer{border-top:1px solid var(--line);background:#080d14;min-height:60px;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:12px clamp(16px,3vw,52px);color:#b7aa94;font:11px/1.55 system-ui,sans-serif}
+.footer strong{color:#e2d3b5;font-weight:500}
+a{color:#e2c992}
+@media(max-width:980px){.theatre{grid-template-columns:68px minmax(0,1fr);grid-template-rows:minmax(330px,49dvh) auto}.rail{grid-row:1 / 3}.folio{grid-column:2;border-left:0;border-top:1px solid var(--line);min-height:470px}.rail button{width:52px}.stage-label{left:18px;top:18px}.stage-bottom{left:18px;right:18px;bottom:17px}}
+@media(max-width:520px){.top{height:64px;padding:0 13px}.brand strong{font-size:19px}.top .kicker{font-size:8px}.top-controls .ghost{padding:7px;min-width:38px}.top-controls .lab-label{display:none}.theatre{grid-template-columns:52px minmax(0,1fr);grid-template-rows:minmax(280px,43dvh) auto}.rail{padding:16px 3px}.rail button{width:44px;min-height:56px}.rail b{font-size:18px}.rail small{font-size:8px}.folio{padding:24px 22px}.folio h1{font-size:34px;margin-top:20px}.stage-bottom p{font-size:13px}.stage-bottom small{display:none}.stage-label{padding:8px 10px;max-width:86%}.stage-label strong{font-size:12px}.footer{font-size:9px;flex-direction:column;align-items:flex-start}}
+@media(prefers-reduced-motion:reduce){#map{transition:none}*{scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="shell">
+<header class="top"><div class="brand"><span class="kicker">AD ORIENTEM · SCRIPTURE LAB</span><strong>Historia Salutis</strong></div><div class="top-controls"><span class="tiny lab-label">Theatre study · not published</span><button class="ghost" id="lang" aria-label="Switch language">FR</button></div></header>
+<main class="theatre">
+<nav class="rail" aria-label="Scenes"><button data-scene="0" aria-current="step"><b>I</b><small>Jordan</small></button><button data-scene="1"><b>II</b><small>Glory</small></button><button data-scene="2"><b>III</b><small>Covenant</small></button><button data-scene="3"><b>IV</b><small>Vision</small></button></nav>
+<section class="stage" aria-label="Map or visionary stage"><div class="map-fallback" aria-hidden="true"></div><div id="map" aria-label="MapLibre regional background"></div><div class="vision" id="vision" aria-hidden="true"><span class="vision-mark">✠</span></div>
+<div class="stage-label"><div class="tiny" id="stage-kind"></div><strong id="stage-place"></strong><span id="stage-caveat"></span></div>
+<div class="stage-bottom"><p id="stage-poem"></p><small id="stage-credit"></small></div>
+</section>
+<article class="folio" aria-live="polite"><div class="section-index" id="movement"></div><h1 id="scene-title"></h1><div class="verse" id="reading"></div><div class="rule"></div><p class="story" id="synopsis"></p><p class="note" id="note"></p>
+<div class="meta"><div><small id="primary-label"></small><p id="primary-value"></p></div><div><small id="link-label"></small><p id="link-value"></p></div><div><small id="art-label"></small><p id="art-value"></p></div></div>
+<div class="navigation"><button id="prev"></button><button id="next"></button></div>
+</article>
+</main>
+<footer class="footer"><div><strong>Editorial preview.</strong> Narrative copy is from the existing theatre study; canonical Scripture text is not duplicated here.</div><div><a href="https://github.com/Fulcanelli13/ad-orientem/blob/research/historia-p4-continuity-theatre-20261021/data/research/historia-p4-movement-theatre-citation-crosswalk.v1.json" target="_blank" rel="noopener">View provenance crosswalk</a></div></footer>
+</div>
+<script src="https://unpkg.com/maplibre-gl@5.0.0/dist/maplibre-gl.js" defer></script>
+<script defer>
+(function(){
+"use strict";
+const scenes=[
+ {id:"HS-M20",key:"biblical:scene:christ:069",title:["The Baptism in the Jordan","Le Baptême dans le Jourdain"],ref:"Matthew 3:13–17",source:"Matthew 3:13–17",about:["John baptises Jesus in the Jordan. The river is known; the precise crossing-bank identification remains debated.","Jean baptise Jésus dans le Jourdain. Le fleuve est connu ; la localisation exacte des berges reste discutée."],place:["Jordan valley · regional context","Vallée du Jourdain · région"],caveat:["Regional camera only. No event pin or identification of the precise baptismal bank.","Vue régionale seulement. Aucun repère ne prétend identifier la rive exacte."],type:["REGIONAL CAMERA","VUE RÉGIONALE"],tag:["The river is known; the precise place is not.","Le fleuve est connu ; le lieu exact ne l'est pas."],location:[35.52,31.97],zoom:8.1,atlas:"regional-camera-only",link:["Matthew 3:13–17 · original scene 069","Matthieu 3,13–17 · scène 069"],note:["The larger HS-M20 selection also includes the Forerunner and first disciples. This preview shows one research scene, not the whole movement.","Le mouvement HS-M20 comprend également le Précurseur et les premiers disciples. Cette étude montre une scène, non tout le mouvement."]},
+ {id:"HS-M23",key:"biblical:scene:christ:104",title:["The Transfiguration","La Transfiguration"],ref:"Matthew 17:1–9",source:"Matthew 17:1–9",about:["On a high mountain Jesus reveals His glory to Peter, James and John. Mount Tabor is the traditional identification.","Sur une haute montagne Jésus révèle sa gloire à Pierre, Jacques et Jean. Le mont Thabor est l’identification traditionnelle."],place:["Mount Tabor · traditional identification","Mont Thabor · identification traditionnelle"],caveat:["Atlas traditional-site anchor, not identification of the biblical mountain as a proven historical fact.","Repère traditionnel de l’Atlas : il ne prouve pas l’identification de la montagne biblique."],type:["TRADITIONAL IDENTIFICATION","IDENTIFICATION TRADITIONNELLE"],tag:["A tradition is not a geographical certainty.","Une tradition n'est pas une certitude géographique."],location:[35.39242,32.68627],zoom:10.3,atlas:"ATLAS_GEO.transfiguration",link:["Matthew 17:1–9 · original scene 104","Matthieu 17,1–9 · scène 104"],note:["The canonical Atlas retains Tabor only as a traditional-site identification. No new coordinate has been certified.","L’Atlas conserve le Thabor comme identification traditionnelle. Aucune nouvelle coordonnée n'est certifiée."]},
+ {id:"HS-M26",key:"biblical:scene:christ:119",title:["The Last Supper","La Cène"],ref:"Luke 22:7–20",source:"Luke 22:14–20",about:["At the Last Supper Christ institutes the Eucharist. The exact room is not identifiable with certainty.","À la Cène, le Christ institue l’Eucharistie. La pièce exacte ne peut être établie avec certitude."],place:["Jerusalem · city context","Jérusalem · repère urbain"],caveat:["Canonical Jerusalem city-level anchor; not an authenticated room or interior.","Repère urbain canonique de Jérusalem, et non salle ou intérieur authentifié."],type:["CITY CONTEXT","CONTEXTE URBAIN"],tag:["The new covenant in Christ.","La Nouvelle Alliance dans le Christ."],location:[35.234167,31.776667],zoom:11.2,atlas:"ATLAS_GEO.cenacle",link:["Luke 22:20 · cv:new-covenant-christ","Luc 22,20 · cv:new-covenant-christ"],note:["John 14:16–17 remains a proposed source bridge (HS-CF-09); it is not silently appended to this scene.","Jean 14,16–17 reste un passage proposé (HS-CF-09) ; il n'est pas ajouté à cette scène."]},
+ {id:"HS-M37",key:null,title:["The New Jerusalem","La Jérusalem nouvelle"],ref:"Revelation 21:1–7 · 22:1–5",source:"Revelation 21:1–7; Revelation 22:1–5",about:["Visionary Scripture: the new heaven and new earth, the river and the tree of life. This is not a mapped location or a future terrestrial itinerary.","Écriture visionnaire : le ciel nouveau et la terre nouvelle, le fleuve et l’arbre de vie. Il ne s’agit pas d’un lieu cartographié ni d’un itinéraire terrestre futur."],place:["Visionary scene · no terrestrial coordinate","Scène visionnaire · sans coordonnées terrestres"],caveat:["Map intentionally absent. No cinematic-scene identity exists for this movement in the 183-scene study.","Carte volontairement absente. Cette partie n'a pas d'identité de scène dans les 183 scènes étudiées."],type:["VISION · NO MAP","VISION · SANS CARTE"],tag:["Behold, I make all things new. · Revelation 21:5","Voici que je fais toutes choses nouvelles. · Apocalypse 21,5"],location:null,zoom:null,atlas:null,link:["HS-M37 · no 183-scene match","HS-M37 · sans correspondance parmi les 183 scènes"],note:["The phrase shown over the stage is a short scriptural cue for visual rhythm, not a publication-approved canonical edition transcription.","La courte formule au-dessus de la scène sert de repère visuel ; ce n'est pas une transcription biblique éditorialement approuvée."]}
+];
+let index=0,lang="en",map=null,attempted=false;
+const el=id=>document.getElementById(id);
+const tr=(en,fr)=>lang==="fr"?fr:en;
+function initMap(){
+ if(attempted||!window.maplibregl)return;
+ attempted=true;
+ try{
+  map=new maplibregl.Map({container:"map",style:"https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json",center:scenes[0].location,zoom:scenes[0].zoom,attributionControl:true,interactive:true});
+  map.on("error",()=>{el("stage-credit").textContent=tr("Network basemap unavailable; location claims remain unchanged.","Fond de carte indisponible ; aucune identification n'est modifiée.")});
+ }catch(_){map=null}
+}
+function show(i){
+ index=Math.max(0,Math.min(i,scenes.length-1));
+ const s=scenes[index],f=lang==="fr"?1:0;
+ document.documentElement.lang=lang;
+ el("lang").textContent=lang==="en"?"FR":"EN";
+ el("movement").textContent=tr("Movement","Mouvement")+" "+s.id+" · "+tr("Theatre research","Recherche théâtrale");
+ el("scene-title").textContent=s.title[f];
+ el("reading").textContent=s.ref;
+ el("synopsis").textContent=s.about[f];
+ el("note").textContent=s.note[f];
+ el("stage-kind").textContent=s.type[f];
+ el("stage-place").textContent=s.place[f];
+ el("stage-caveat").textContent=s.caveat[f];
+ el("stage-poem").textContent=s.tag[f];
+ el("stage-credit").textContent=s.location?tr("Map camera only · no new event coordinate","Caméra uniquement · aucune nouvelle coordonnée"):tr("No terrestrial map","Aucune carte terrestre");
+ el("primary-label").textContent=tr("Scripture source","Source scripturaire");
+ el("primary-value").textContent=s.source;
+ el("link-label").textContent=tr("Crosswalk relationship","Relation du registre");
+ el("link-value").textContent=s.link[f];
+ el("art-label").textContent=tr("Sacred art","Art sacré");
+ el("art-value").textContent=tr("No painting imported: existing sacred-art approval and rights gates are preserved.","Aucune peinture importée : validations artistiques et droits réservés.");
+ el("prev").textContent=tr("← Previous","← Précédent");
+ el("next").textContent=tr("Next →","Suivant →");
+ el("prev").disabled=index===0;el("next").disabled=index===scenes.length-1;
+ document.querySelectorAll("[data-scene]").forEach(b=>{if(+b.dataset.scene===index)b.setAttribute("aria-current","step");else b.removeAttribute("aria-current")});
+ el("vision").classList.toggle("show",!s.location);
+ el("vision").setAttribute("aria-hidden",s.location?"true":"false");
+ el("map").hidden=!s.location;
+ if(s.location){initMap();if(map){map.resize();if(window.matchMedia("(prefers-reduced-motion: reduce)").matches){map.jumpTo({center:s.location,zoom:s.zoom})}else{map.flyTo({center:s.location,zoom:s.zoom,duration:1150,essential:false})}}}
+}
+document.querySelectorAll("[data-scene]").forEach(b=>b.addEventListener("click",()=>show(+b.dataset.scene)));
+el("prev").addEventListener("click",()=>show(index-1));
+el("next").addEventListener("click",()=>show(index+1));
+el("lang").addEventListener("click",()=>{lang=lang==="en"?"fr":"en";show(index)});
+document.addEventListener("keydown",e=>{if(e.target.closest("button,input,textarea,select"))return;if(e.key==="ArrowRight")show(index+1);if(e.key==="ArrowLeft")show(index-1)});
+show(0);
+window.addEventListener("load",()=>{if(index!==3)initMap();if(map)map.resize()});
+})();
+</script>
+</body></html>
