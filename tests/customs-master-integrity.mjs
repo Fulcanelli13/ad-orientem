@@ -14,6 +14,9 @@ const bounded3=load("independent-sources-batch03.v1.json");
 const bounded4=load("independent-sources-batch04.v1.json");
 const holds17=load("unverified-candidate-exact-claim-holds.v1.json");
 const identityRecs=load("witnessed-identity-recommendations.v1.json");
+const staged14=load("proposed-identity-additions.v1.json");
+const working56=load("working-master.v1.json");
+const routed23=load("ritual-and-source-ownership-23.v1.json");
 const candidateBoard=load("candidate-source-decision-board.v1.json");
 
 
@@ -160,6 +163,37 @@ assert.deepEqual(new Set(identityRecs.records.map(x=>x.weiser_id)),boundedIDs);
 assert.equal(identityRecs.scope.recommendations.DISTINCT_IDENTITY_PROPOSAL,14);
 assert.equal(identityRecs.scope.new_ids_allocated,0);
 assert.equal(identityRecs.scope.app_publications,0);
+assert.equal(staged14.schema,"AO_CUSTOMS_PROPOSED_14_DISTINCT_IDENTITIES_V1");
+assert.equal(staged14.records.length,14);
+assert.equal(new Set(staged14.records.map(x=>x.id)).size,14);
+assert.equal(staged14.numbers.new_published,0);
+assert.ok(staged14.records.every(x=>x.identity_state==="PROPOSED_NEW_DISTINCT_IDENTITY_NONPUBLISHED"&&
+  x.publication_enabled===false&&x.identity_approved===false&&x.artwork===null));
+assert.ok(staged14.records.every(x=>x.independent_sources.length>0&&x.independent_sources.every(s=>/^https:\/\//.test(s.url))));
+assert.deepEqual(new Set(staged14.records.flatMap(x=>x.original_observation_ids)),
+  new Set(identityRecs.records.filter(x=>x.editorial_recommendation==="DISTINCT_IDENTITY_PROPOSAL").map(x=>x.weiser_id)));
+assert.ok(staged14.records.every(x=>x.calendar.calendar_dayresolver_only===true&&x.calendar.infer_automatic_procession===false&&x.calendar.infer_automatic_mass_action===false));
+assert.equal(working56.schema,"AO_CUSTOMS_WORKING_MASTER_56_V1");
+assert.equal(working56.records.length,56);
+assert.equal(new Set(working56.records.map(x=>x.id)).size,56);
+assert.equal(working56.distribution.canonical_main_unchanged,38);
+assert.equal(working56.distribution.older_P2_provisional,4);
+assert.equal(working56.distribution.new_source_bounded_proposals,14);
+assert.equal(working56.distribution.new_publications,0);
+assert.ok(working56.records.every(x=>x.name_en&&x.name_fr&&x.description_en&&x.description_fr&&
+  x.history_en&&x.history_fr&&x.meaning_en&&x.meaning_fr&&x.practice_en&&x.practice_fr&&
+  x.caution_en&&x.caution_fr&&x.calendar&&x.do_not_auto_publish===true));
+assert.deepEqual(new Set(working56.records.map(x=>x.id)),
+  new Set([...rows.map(x=>x.id),...staged14.records.map(x=>x.id)]));
+assert.equal(routed23.schema,"AO_CUSTOMS_MASTER_23_RITUAL_AND_SOURCE_OWNERSHIP_V1");
+assert.equal(routed23.records.length,23);
+assert.equal(new Set(routed23.records.map(x=>x.weiser_id)).size,23);
+assert.equal(routed23.summary.app_publications,0);
+assert.equal(routed23.summary.canonical_new_ids,0);
+assert.ok(routed23.records.every(x=>x.research_only===true&&x.publishable_rite_text===false&&
+  x.ministerial_action_inferred===false&&x.local_event_scheduled===false&&x.canonical_id_created===false));
+assert.ok(routed23.records.every(x=>x.independent_refs.every(s=>/^https:\/\//.test(s.url)&&s.constraint)));
+
 assert.ok(identityRecs.records.every(x=>x.canonical_id===null&&x.distinct_canonical_decision==="PENDING_HUMAN_APPROVAL"&&!x.published));
 
 
