@@ -15,16 +15,28 @@ export function installScriptureBrowserOwner(win=globalThis){
  const inflight=new Set();
  // Only available on an explicitly opted-in research URL, not public app routes.
  const thematicEnabled=new URLSearchParams(win.location?.search||"").get("ao_historia_collections")==="1";
- let thematicCache=null,thematicInflight=null;
+ let thematicCache=null,thematicInflight=null,thematicLinks=null;
  async function loadThematic(){
   if(!thematicEnabled)return null;
   if(thematicCache)return thematicCache;
   if(thematicInflight)return thematicInflight;
   if(typeof win.fetch!=="function")throw new Error("No thematic source transport");
   thematicInflight=(async()=>{
-   const response=await win.fetch("/data/research/historia-salutis-thematic-episode-reconciliation-20261021.v2.json",{cache:"no-store"});
-   if(!response?.ok)throw new Error("Historia thematic registry unavailable");
-   return buildThematicPilots(await response.json());
+   const [response,links]=await Promise.all([
+    win.fetch("/data/research/historia-salutis-thematic-episode-reconciliation-20261021.v2.json",{cache:"no-store"}),
+    win.fetch("/data/research/historia-salutis-thematic-identity-covenant-context-20261021.v1.json",{cache:"no-store"})
+   ]);
+   if(!response?.ok || !links?.ok)throw new Error("Historia thematic research sources unavailable");
+   const groups=buildThematicPilots(await response.json());
+   const mapping=await links.json();
+   if(mapping?.schema!=="AO_HISTORIA_THEMATIC_IDENTITY_AND_COVENANT_CONTEXT_V1" ||
+      mapping?.status!=="RESEARCH_SCOPED_LINKS_NOT_PUBLICATION" ||
+      !Array.isArray(mapping.entries)||mapping.entries.length!==19 ||
+      mapping.entries.some(e=>!groups.some(g=>g.episodes.some(p=>p.id===e.episodeId&&p.reference===e.reference))) ||
+      new Set(mapping.entries.map(e=>e.episodeId)).size!==19)
+     throw new Error("Mismatched thematic episode identity evidence");
+   thematicLinks=mapping;
+   return groups;
   })();
   try{return thematicCache=await thematicInflight;}
   finally{thematicInflight=null;}
@@ -224,7 +236,7 @@ export function installScriptureBrowserOwner(win=globalThis){
    const current=language||win.AO_RUNTIME_V8?.store?.getState?.()?.language||"en";
    reader=mountScriptureLibrary(node,{
      passage,context,language:current==="fr"?"fr":"en",storage:win.localStorage,
-     thematicCatalogue:thematicCatalogue??thematicCache,initialThematicEpisodeId,
+     thematicCatalogue:thematicCatalogue??thematicCache,initialThematicEpisodeId,thematicLinks,
      records:[...loaded.values()].flat(),
      onClose:close,
      canOpenRelatedObject,
@@ -253,7 +265,7 @@ export function installScriptureBrowserOwner(win=globalThis){
    if(thematicEnabled&&!thematicCatalogue&&!thematicCache){
     const mounted=reader;
     void loadThematic().then(groups=>{
-     if(groups&&reader===mounted)mounted.setThematicCatalogue(groups);
+     if(groups&&reader===mounted)mounted.setThematicCatalogue(groups,null,thematicLinks);
     }).catch(error=>win.console?.warn?.("Historia collections unavailable",error));
    }
    if(doc.body)doc.body.style.overflow="hidden";
@@ -326,7 +338,7 @@ export function installScriptureBrowserOwner(win=globalThis){
   try{
    const groups=await loadThematic();
    if(!groups?.some(g=>g.episodes.some(ep=>ep.id===id)))return false;
-   if(reader&&!journey)return reader.setThematicCatalogue(groups,id);
+   if(reader&&!journey)return reader.setThematicCatalogue(groups,id,thematicLinks);
    return open({thematicCatalogue:groups,initialThematicEpisodeId:id});
   }catch(error){win.console?.warn?.("Historia episode unavailable",error);return false;}
  }
