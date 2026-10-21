@@ -224,9 +224,9 @@ try{
    await customCta.waitFor({state:"visible"});
    const canonicalId=await customCta.getAttribute("data-network-open-custom");
    await customCta.click();
-   const folio=page.locator('#ao-find-modular-root .aoExploreTraditionSheet[data-explore-custom-id="'+canonicalId+'"]');
-   await folio.waitFor({state:"visible",timeout:12000});
-   assert.ok(await folio.locator("a[href^='https://']").count()>0,
+   const networkCustomFolio=page.locator('#ao-find-modular-root .aoExploreTraditionSheet[data-explore-custom-id="'+canonicalId+'"]');
+   await networkCustomFolio.waitFor({state:"visible",timeout:12000});
+   assert.ok(await networkCustomFolio.locator("a[href^='https://']").count()>0,
      "Canonical custom handoff must preserve independently cited publishers");
    assert.equal(await graph.count(),0);
    await page.screenshot({path:resolve(out,"explore-"+width+"-network-custom-folio.png"),fullPage:false});
