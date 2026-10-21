@@ -1,0 +1,268 @@
+{
+  "schema": "AO_CUSTOMS_TEMPORAL_PROJECTION_V1",
+  "version": "2026-10-21",
+  "policy": "Calendar owns real feast resolution, transfers and special-day state. Here fixed month/day tags are source-associated custom contexts, not 1962 liturgical schedule or local event announcements. Movable entries never compute dates here.",
+  "groups": [
+    "advent",
+    "christmas",
+    "epiphany",
+    "february",
+    "march",
+    "holy-week",
+    "easter",
+    "eastertide",
+    "may",
+    "june",
+    "corpus-christi",
+    "sacred-heart",
+    "july",
+    "august",
+    "november",
+    "life"
+  ],
+  "records": [
+    {
+      "custom_id": "DOM-002",
+      "group": "life",
+      "kind": "undated",
+      "calendar_hint": null
+    },
+    {
+      "custom_id": "DOM-006",
+      "group": "sacred-heart",
+      "kind": "season",
+      "calendar_hint": "Sacred Heart season / family use"
+    },
+    {
+      "custom_id": "DOM-007",
+      "group": "life",
+      "kind": "undated",
+      "calendar_hint": null
+    },
+    {
+      "custom_id": "LIFE-002",
+      "group": "life",
+      "kind": "occasion",
+      "calendar_hint": null
+    },
+    {
+      "custom_id": "DEV-001",
+      "group": "may",
+      "kind": "season",
+      "calendar_hint": "May"
+    },
+    {
+      "custom_id": "DEV-006",
+      "group": "life",
+      "kind": "occasion",
+      "calendar_hint": null
+    },
+    {
+      "custom_id": "DEV-007",
+      "group": "life",
+      "kind": "occasion",
+      "calendar_hint": null
+    },
+    {
+      "custom_id": "DEV-009",
+      "group": "life",
+      "kind": "undated",
+      "calendar_hint": null
+    },
+    {
+      "custom_id": "DEV-010",
+      "group": "life",
+      "kind": "undated",
+      "calendar_hint": null
+    },
+    {
+      "custom_id": "DEAD-001",
+      "group": "november",
+      "kind": "occasion",
+      "calendar_hint": "02/11; November; anniversaries"
+    },
+    {
+      "custom_id": "DEAD-003",
+      "group": "november",
+      "kind": "fixed",
+      "month_day": "11-02",
+      "calendar_hint": "02/11"
+    },
+    {
+      "custom_id": "BELL-004",
+      "group": "life",
+      "kind": "occasion",
+      "calendar_hint": null
+    },
+    {
+      "custom_id": "FOOD-001",
+      "group": "life",
+      "kind": "undated",
+      "calendar_hint": null
+    },
+    {
+      "custom_id": "DOM-003",
+      "group": "life",
+      "kind": "undated",
+      "calendar_hint": null
+    },
+    {
+      "custom_id": "DOM-011",
+      "group": "february",
+      "kind": "fixed",
+      "month_day": "02-02",
+      "calendar_hint": "02/02 — Candlemas (date owned by Calendar)"
+    },
+    {
+      "custom_id": "DOM-013",
+      "group": "holy-week",
+      "kind": "movable",
+      "calendar_hint": "Palm Sunday (calculated by Calendar)"
+    },
+    {
+      "custom_id": "BLSS-001",
+      "group": "february",
+      "kind": "fixed",
+      "month_day": "02-03",
+      "calendar_hint": "03/02, St Blaise commemoration in 1962 Roman calendar; Calendar owns calculation and precedence"
+    },
+    {
+      "custom_id": "NDAY-001",
+      "group": "life",
+      "kind": "occasion",
+      "calendar_hint": null
+    },
+    {
+      "custom_id": "PATR-001",
+      "group": "life",
+      "kind": "occasion",
+      "calendar_hint": null
+    },
+    {
+      "custom_id": "MARI-001",
+      "group": "august",
+      "kind": "fixed",
+      "month_day": "08-15",
+      "calendar_hint": "15/08 — Assumption; regional context, never automatic ritual"
+    },
+    {
+      "custom_id": "SJOS-001",
+      "group": "march",
+      "kind": "fixed",
+      "month_day": "03-19",
+      "calendar_hint": "19/03 — St Joseph feast; optional local family and parish practice"
+    },
+    {
+      "custom_id": "SANT-001",
+      "group": "june",
+      "kind": "fixed",
+      "month_day": "06-13",
+      "calendar_hint": "13/06 — St Anthony of Padua; charity can be practised on any day"
+    },
+    {
+      "custom_id": "SCHR-001",
+      "group": "july",
+      "kind": "fixed",
+      "month_day": "07-25",
+      "calendar_hint": "25/07 — St Christopher commemoration; parish event date may differ"
+    },
+    {
+      "custom_id": "SNIC-001",
+      "group": "christmas",
+      "kind": "fixed",
+      "month_day": "12-06",
+      "calendar_hint": "06/12 — St Nicholas; regional household custom"
+    },
+    {
+      "custom_id": "BLSS-002",
+      "group": "august",
+      "kind": "fixed",
+      "month_day": "08-15",
+      "calendar_hint": "15 August, Assumption; date and Mass rank owned by Calendar"
+    },
+    {
+      "custom_id": "BLSS-003",
+      "group": "christmas",
+      "kind": "fixed",
+      "month_day": "12-27",
+      "calendar_hint": "27 December, feast of St John the Apostle and Evangelist in 1962 Roman calendar"
+    },
+    {
+      "custom_id": "BLSS-004",
+      "group": "holy-week",
+      "kind": "movable",
+      "calendar_hint": "Holy Saturday (calculated from 1962 Easter by Calendar), with domestic use on Easter Sunday"
+    },
+    {
+      "custom_id": "ADVT-001",
+      "group": "advent",
+      "kind": "movable",
+      "calendar_hint": "First Sunday of Advent; date owned by Calendar, no feast added"
+    },
+    {
+      "custom_id": "ADVT-002",
+      "group": "advent",
+      "kind": "season",
+      "calendar_hint": "Advent household preparation; Calendar owns liturgical dates"
+    },
+    {
+      "custom_id": "ADVT-003",
+      "group": "christmas",
+      "kind": "range",
+      "month_day": "12-16",
+      "end_month_day": "12-24",
+      "calendar_hint": "16–24 December in communities that actually celebrate Posadas"
+    },
+    {
+      "custom_id": "XMAS-001",
+      "group": "christmas",
+      "kind": "fixed",
+      "month_day": "12-24",
+      "calendar_hint": "24 December as customary domestic vigil, distinct from Mass"
+    },
+    {
+      "custom_id": "HTHU-001",
+      "group": "holy-week",
+      "kind": "movable",
+      "calendar_hint": "Holy Thursday, calculated from Easter by Calendar; locally open repositories only"
+    },
+    {
+      "custom_id": "ROGA-001",
+      "group": "eastertide",
+      "kind": "movable",
+      "calendar_hint": "Major Rogation 25 April and the three Minor Rogation days before Ascension; Calendar owns calculation"
+    },
+    {
+      "custom_id": "EPIP-001",
+      "group": "epiphany",
+      "kind": "fixed",
+      "month_day": "01-06",
+      "calendar_hint": "6 January, as a regional practice; visits must be locally announced"
+    },
+    {
+      "custom_id": "EPIP-002",
+      "group": "epiphany",
+      "kind": "fixed",
+      "month_day": "01-06",
+      "calendar_hint": "6 January in the 1962 calendar; household celebration date may differ"
+    },
+    {
+      "custom_id": "CORP-001",
+      "group": "corpus-christi",
+      "kind": "movable",
+      "calendar_hint": "Corpus Christi where a real procession is celebrated locally"
+    },
+    {
+      "custom_id": "EAST-001",
+      "group": "easter",
+      "kind": "movable",
+      "calendar_hint": "Easter Monday calculated by Calendar; regional voluntary practice"
+    },
+    {
+      "custom_id": "MARI-002",
+      "group": "may",
+      "kind": "season",
+      "calendar_hint": "May or another suitable gardening season; linked to DEV-001"
+    }
+  ]
+}
