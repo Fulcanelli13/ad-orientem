@@ -5,6 +5,7 @@ on:
     paths:
       - 'data/scripture/correspondences/**'
       - 'tests/scripture-biblical-correspondences-registry.mjs'
+      - 'tests/scripture-correspondences-bulk-discovery.mjs'
       - 'docs/research/BIBLICAL-CORRESPONDENCES-SOURCE-RECONCILIATION-20261021.md'
       - '.github/workflows/biblical-correspondences-research.yml'
   push:
@@ -12,6 +13,7 @@ on:
     paths:
       - 'data/scripture/correspondences/**'
       - 'tests/scripture-biblical-correspondences-registry.mjs'
+      - 'tests/scripture-correspondences-bulk-discovery.mjs'
       - '.github/workflows/biblical-correspondences-research.yml'
   workflow_dispatch:
 
@@ -27,3 +29,4 @@ jobs:
         with:
           node-version: '22'
       - run: node tests/scripture-biblical-correspondences-registry.mjs
+      - run: node tests/scripture-correspondences-bulk-discovery.mjs
