@@ -2698,6 +2698,9 @@ export async function mountNativeReaderPreview({
   }
 
   function switchPresentationMode(nextMode){
+    // Annexed rites are source-owned controllers. A display-mode change must
+    // repaint their existing paragraph geometry, not jump to a Mass card.
+    const riteScroll=host.querySelector?.(".ao-prayer-card")?.scrollTop??0;
     // Mode switch invalidates the curated independent-event adapter.
     observedCuratedPriestEvent=null;
     chaliceObservationState.reset();
@@ -2750,6 +2753,32 @@ export async function mountNativeReaderPreview({
         focusCueAtReaderLine(desiredCue);
         root.dataset.r17NativeCue=desiredCue;
         queue();
+      }
+    }else{
+      // Reproject exactly the same source card after MISSAL/SIMPLE/LIVE
+      // changes. Leave the rite controller index, conditional choices,
+      // procession handoff, and source Latin untouched.
+      const project= inGenericProcession?showGenericProcession
+        : inHolyThursdayPost?showHolyThursdayPost
+        : inCorpusChristi?showCorpusChristi
+        : inRequiemAbsolution?showRequiemAbsolution
+        : inRogations?showRogations
+        : inCandlemas?showCandlemas
+        : inPalm?showPalm
+        : inAsh?showAsh
+        : inAsperges?showAsperges
+        : null;
+      if(project){
+        const oldRite=globalThis.AO_R17_NATIVE_READER_STATE?.cardId??null;
+        const source=project();
+        if(oldRite!==null&&source?.card?.id!==undefined &&
+            String(source.card.id)!==String(oldRite)){
+          throw new Error("MODE_SWITCH_MOVED_RITE_SOURCE_CARD");
+        }
+        const scroll=host.querySelector?.(".ao-prayer-card");
+        if(scroll)scroll.scrollTop=Math.min(riteScroll,
+          Math.max(0,scroll.scrollHeight-scroll.clientHeight));
+        root.dataset.r17SpecialModeRefreshed=rebuilt.mode;
       }
     }
     return Object.freeze({

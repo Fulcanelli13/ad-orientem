@@ -890,7 +890,6 @@ button.ao-schola-control{cursor:pointer}
   --ao-missal-column-gap:clamp(16px,3.4vw,48px);
 }
 .ao-reader-shell[data-mode="MISSAL"] .ao-schola-dock,
-.ao-reader-shell[data-mode="MISSAL"] .ao-progress-track,
 .ao-reader-shell[data-mode="MISSAL"] .ao-reader-progress,
 .ao-reader-shell[data-mode="MISSAL"] .ao-cinematic,
 .ao-reader-shell[data-mode="MISSAL"] .ao-faithful-paragraph-icons{display:none!important}
@@ -1543,6 +1542,16 @@ export function projectCertifiedSolemnMinisterRubric(value){
   });
 }
 
+/** Source-only stage progress: never infer a percentage from an unnumbered rite. */
+export function parseReaderProgress(value){
+  const match=String(value??"").match(/(\d+)\s*\/\s*(\d+)/);
+  if(!match)return null;
+  const current=Number(match[1]),total=Number(match[2]);
+  if(!Number.isSafeInteger(current)||!Number.isSafeInteger(total)||
+      total<1||current<1||current>total)return null;
+  return Object.freeze({current,total,percent:current/total*100});
+}
+
 export function normalizeReaderMoment(moment = {}, previous = {}) {
   if (!moment || typeof moment !== "object") throw new TypeError("Reader moment must be an object");
   const momentTitle=String(moment.cardTitle ?? moment.sectionTitle ?? previous.cardTitle ?? "");
@@ -1816,7 +1825,7 @@ export function buildReaderShellMarkup(prepared = {}) {
       <span class="ao-priest-action-badge" data-role="priest-action-badge" data-active="false" data-major="false" aria-hidden="true"><span class="ao-icon-mask" data-icon-slot="priest-action-top" hidden></span></span>
     </div>
   </div>
-  <div class="ao-progress-track" aria-hidden="true"><span data-role="progress-track"></span></div>
+  <div class="ao-progress-track" data-role="reader-progressbar" role="progressbar" aria-label="Card progression" aria-valuemin="0" hidden><span data-role="progress-track"></span></div>
 
   <div class="ao-section-menu" data-role="section-menu" hidden></div>
   <aside class="ao-mass-prefs" data-role="mass-preferences" data-open="false" aria-label="Mass preferences">
@@ -2212,10 +2221,21 @@ export function createReaderDomAdapter({
 
   function syncProgress(){
     const track=root.querySelector('[data-role="progress-track"]');
-    if(!track)return;
-    const match=String(current?.progress??"").match(/(\d+)\s*\/\s*(\d+)/);
-    const pct=match ? Math.max(0,Math.min(100,(Number(match[1])/Math.max(1,Number(match[2])))*100)) : 0;
-    track.style.width=pct+"%";
+    const bar=root.querySelector('[data-role="reader-progressbar"]');
+    if(!track||!bar)return;
+    const data=parseReaderProgress(current?.progress);
+    bar.hidden=!data;
+    if(!data){
+      track.style.width="0%";
+      bar.removeAttribute("aria-valuenow");
+      bar.removeAttribute("aria-valuemax");
+      bar.removeAttribute("aria-valuetext");
+      return;
+    }
+    track.style.width=data.percent+"%";
+    bar.setAttribute("aria-valuenow",String(data.current));
+    bar.setAttribute("aria-valuemax",String(data.total));
+    bar.setAttribute("aria-valuetext",data.current+" of "+data.total);
   }
 
   function displayBell(nextBell){
