@@ -1,0 +1,950 @@
+{
+  "schema": "ao.historia.p4.m25-m37-literary-seam-adjudication.v1",
+  "date": "2026-10-21",
+  "status": "SOURCE_ANCHORED_PROPOSED_EDITORIAL_DECISIONS_NOT_APPLIED",
+  "provenance": {
+    "proof": {
+      "path": "data/research/historia-salutis-v18-continuous-reading-proof.v1.json",
+      "ref": "research/historia-p4-continuity-theatre-20261021",
+      "sha": "7548fc8c80daa5d7c6bb85e1bb2277fbac862e81"
+    },
+    "queue": {
+      "path": "data/research/historia-p4-m20-m37-literary-review-queue.v1.json",
+      "ref": "research/historia-p4-continuity-theatre-20261021",
+      "sha": "e0a7d99744b8572c4160f3e0ff118f5b1bc5c657"
+    },
+    "witnessFiles": [
+      {
+        "path": "data/scripture/witness/dr-challoner/Matthew.json",
+        "book": "Matthew",
+        "edition": "dr-challoner",
+        "sha": "004832d16a49ceca579d674adf94dac9d3902234",
+        "status": "UNCOLLATED_SOURCE_WITNESS"
+      },
+      {
+        "path": "data/scripture/witness/cpdv-2009/Matthew.json",
+        "book": "Matthew",
+        "edition": "cpdv-2009",
+        "sha": "d22f2d5f715731aa3e8fb8c05470f7a01489205e",
+        "status": "UNCOLLATED_SOURCE_WITNESS"
+      },
+      {
+        "path": "data/scripture/witness/crampon-1923/Matthew.json",
+        "book": "Matthew",
+        "edition": "crampon-1923",
+        "sha": "a73aecf7e76be1657b578390c23007b0cfa4981c",
+        "status": "UNCOLLATED_SOURCE_WITNESS"
+      },
+      {
+        "path": "data/scripture/witness/dr-challoner/Luke.json",
+        "book": "Luke",
+        "edition": "dr-challoner",
+        "sha": "96b5a5d845c58359094814dc9317557fe4853bf0",
+        "status": "UNCOLLATED_SOURCE_WITNESS"
+      },
+      {
+        "path": "data/scripture/witness/cpdv-2009/Luke.json",
+        "book": "Luke",
+        "edition": "cpdv-2009",
+        "sha": "c12aa39604852cd65e90ebbc00e0db989b2f46a8",
+        "status": "UNCOLLATED_SOURCE_WITNESS"
+      },
+      {
+        "path": "data/scripture/witness/crampon-1923/Luke.json",
+        "book": "Luke",
+        "edition": "crampon-1923",
+        "sha": "4c8e3535c2200e3c4173cec16a198b8618d0fd4e",
+        "status": "UNCOLLATED_SOURCE_WITNESS"
+      },
+      {
+        "path": "data/scripture/witness/dr-challoner/John.json",
+        "book": "John",
+        "edition": "dr-challoner",
+        "sha": "a146e78ec89ad15d3df29a49462c8373e9dee3f8",
+        "status": "UNCOLLATED_SOURCE_WITNESS"
+      },
+      {
+        "path": "data/scripture/witness/cpdv-2009/John.json",
+        "book": "John",
+        "edition": "cpdv-2009",
+        "sha": "5c0f7929ec052ae1aa92c583219087bb25c32655",
+        "status": "UNCOLLATED_SOURCE_WITNESS"
+      },
+      {
+        "path": "data/scripture/witness/crampon-1923/John.json",
+        "book": "John",
+        "edition": "crampon-1923",
+        "sha": "0f49d89ad2fb1754ef966305caf70f2a3b2b7790",
+        "status": "UNCOLLATED_SOURCE_WITNESS"
+      },
+      {
+        "path": "data/scripture/witness/dr-challoner/Acts.json",
+        "book": "Acts",
+        "edition": "dr-challoner",
+        "sha": "790769859646ecd4ca6b45f6b61b9ecaec1da826",
+        "status": "UNCOLLATED_SOURCE_WITNESS"
+      },
+      {
+        "path": "data/scripture/witness/cpdv-2009/Acts.json",
+        "book": "Acts",
+        "edition": "cpdv-2009",
+        "sha": "5eaaa125d14538d00305e49624196b55033da41d",
+        "status": "UNCOLLATED_SOURCE_WITNESS"
+      },
+      {
+        "path": "data/scripture/witness/crampon-1923/Acts.json",
+        "book": "Acts",
+        "edition": "crampon-1923",
+        "sha": "25fde9eaaff3412445430f4ae1fa87b0c6aae244",
+        "status": "UNCOLLATED_SOURCE_WITNESS"
+      },
+      {
+        "path": "data/scripture/witness/dr-challoner/Revelation.json",
+        "book": "Revelation",
+        "edition": "dr-challoner",
+        "sha": "1fb2ff7f04f8ab798f892c4fb6174e39ce9f8075",
+        "status": "UNCOLLATED_SOURCE_WITNESS"
+      },
+      {
+        "path": "data/scripture/witness/cpdv-2009/Revelation.json",
+        "book": "Revelation",
+        "edition": "cpdv-2009",
+        "sha": "facbe04cd3626f862044884ad3aa68c4a09ddb51",
+        "status": "UNCOLLATED_SOURCE_WITNESS"
+      },
+      {
+        "path": "data/scripture/witness/crampon-1923/Revelation.json",
+        "book": "Revelation",
+        "edition": "crampon-1923",
+        "sha": "ff790a5e9ad1e7a3eacf6bdfbf164ed15a7383a7",
+        "status": "UNCOLLATED_SOURCE_WITNESS"
+      }
+    ]
+  },
+  "controls": {
+    "publishedChanges": 0,
+    "appliedNarrativeReorderings": 0,
+    "appliedScriptureBridges": 0,
+    "sourceTextFabricationForbidden": true,
+    "sourceSpecificVerseNumberingRequired": true,
+    "gospelHarmonisationUnapproved": true,
+    "apocalypticCoordinatesForbidden": true,
+    "printedEditionCollationPending": true,
+    "oralReadingPending": true,
+    "allHeldBridgeOwnersPreserved": true
+  },
+  "counts": {
+    "movementRows": 13,
+    "highPriorityP0Rows": 6,
+    "originalP3SourceSelectionChanges": 0,
+    "originalSceneKeysChanged": 0
+  },
+  "movements": [
+    {
+      "issueId": "HS-P4-M25-ENTRY_TO_SUPPER_GAP",
+      "movementId": "HS-M25",
+      "selectedScriptureReferences": [
+        "Matthew 21:1–11"
+      ],
+      "originalHeldBridgeCandidates": [],
+      "priority": "P2_EDITORIAL_TRANSITION",
+      "sourceFinding": "Matthew 21:1–11 depicts the royal entry; next movement begins at Luke 22:7 with preparation of the Pasch. Days and intervening controversies are not selected, so the theatre must label the passage jump and cannot imply that the supper immediately followed the procession.",
+      "anchorEvidence": {
+        "Matthew 21:1–11": {
+          "editionVerseEntries": {
+            "dr-challoner": 11,
+            "cpdv-2009": 11,
+            "crampon-1923": 11
+          },
+          "presentInAllThree": true
+        },
+        "Luke 22:7–8": {
+          "editionVerseEntries": {
+            "dr-challoner": 2,
+            "cpdv-2009": 2,
+            "crampon-1923": 2
+          },
+          "presentInAllThree": true
+        }
+      },
+      "proposedAdditionalSelectedScripture": [],
+      "proposalStatus": "RESEARCH_RECOMMENDATION_NOT_APPLIED",
+      "recommendedNextDecision": "SHOW_CITATION_CHAPTER_TRANSITION_WITHOUT_INVENTED_TIMELINE",
+      "riskIfNotAddressed": "A visual single-day continuation would falsify chronology.",
+      "linkedOptionalSceneKeys": [
+        "biblical:scene:christ:115",
+        "biblical:scene:christ:119"
+      ],
+      "actorAndParallelAccountsApproved": false,
+      "oralReadingSignedOff": false,
+      "productionGate": "HOLD",
+      "originalP3Unmodified": true
+    },
+    {
+      "issueId": "HS-P4-M26-FINAL_TEACHING_TITLE_GOSPEL_BRIDGE",
+      "movementId": "HS-M26",
+      "selectedScriptureReferences": [
+        "Luke 22:7–20"
+      ],
+      "originalHeldBridgeCandidates": [
+        {
+          "id": "HS-CF-09",
+          "reference": "John 14:16–17"
+        }
+      ],
+      "priority": "P1_SCOPE_AND_GOSPEL_PROVENANCE",
+      "sourceFinding": "Luke 22:7–20 provides preparation, Supper and Eucharistic institution; it does not include the final teaching promised by the current title. John 14:16–17 is a held source bridge from a distinct Gospel discourse and cannot be smuggled into Luke's account.",
+      "anchorEvidence": {
+        "Luke 22:7–20": {
+          "editionVerseEntries": {
+            "dr-challoner": 14,
+            "cpdv-2009": 14,
+            "crampon-1923": 14
+          },
+          "presentInAllThree": true
+        },
+        "John 14:16–17": {
+          "editionVerseEntries": {
+            "dr-challoner": 2,
+            "cpdv-2009": 2,
+            "crampon-1923": 2
+          },
+          "presentInAllThree": true
+        }
+      },
+      "proposedAdditionalSelectedScripture": [
+        "John 14:16–17"
+      ],
+      "proposalStatus": "RESEARCH_RECOMMENDATION_NOT_APPLIED",
+      "recommendedNextDecision": "EITHER_RETITLE_TO_LAST_SUPPER_OR_ADD_DISTINCT_LABELED_JOHANNINE_SEGMENT_AFTER_EDITORIAL_SELECTION",
+      "riskIfNotAddressed": "A composite invented continuous Gospel speech would obscure provenance.",
+      "linkedOptionalSceneKeys": [
+        "biblical:scene:christ:119",
+        "biblical:scene:christ:120",
+        "biblical:scene:christ:121"
+      ],
+      "existingBridgeDisposition": "HOLD_HS_CF_09",
+      "actorAndParallelAccountsApproved": false,
+      "oralReadingSignedOff": false,
+      "productionGate": "HOLD",
+      "originalP3Unmodified": true
+    },
+    {
+      "issueId": "HS-P4-M27-MATTHEW_TRIAL_JUMP",
+      "movementId": "HS-M27",
+      "selectedScriptureReferences": [
+        "Matthew 26:36–46",
+        "Matthew 26:47–56",
+        "Matthew 26:57–75",
+        "Matthew 27:1–2",
+        "Matthew 27:11–26"
+      ],
+      "originalHeldBridgeCandidates": [],
+      "priority": "P1_CONTINUITY_AND_GOSPEL_PROVENANCE",
+      "sourceFinding": "After Matthew 27:1–2, the selected text jumps to 27:11–26. Matthew 27:3–10 supplies Judas's response and the intervening plot, but the selected 27:11 still plainly names Jesus standing before the governor; the gap is an editorial omission, not a license to add John 19 as the same narrative.",
+      "anchorEvidence": {
+        "Matthew 27:1–2": {
+          "editionVerseEntries": {
+            "dr-challoner": 2,
+            "cpdv-2009": 2,
+            "crampon-1923": 2
+          },
+          "presentInAllThree": true
+        },
+        "Matthew 27:3–10": {
+          "editionVerseEntries": {
+            "dr-challoner": 8,
+            "cpdv-2009": 8,
+            "crampon-1923": 8
+          },
+          "presentInAllThree": true
+        },
+        "Matthew 27:11–26": {
+          "editionVerseEntries": {
+            "dr-challoner": 16,
+            "cpdv-2009": 16,
+            "crampon-1923": 16
+          },
+          "presentInAllThree": true
+        }
+      },
+      "proposedAdditionalSelectedScripture": [
+        "Matthew 27:3–10"
+      ],
+      "proposalStatus": "RESEARCH_RECOMMENDATION_NOT_APPLIED",
+      "recommendedNextDecision": "KEEP_MATTHEW_TRIAL_SELECTION_BUT_DISCLOSE_SCRIPTURE_OMISSION_AND_TEST_OPTIONAL_JUDAS_PASSAGE",
+      "riskIfNotAddressed": "Interleaving Gospel trials or depicting unselected scenes as verses.",
+      "linkedOptionalSceneKeys": [
+        "biblical:scene:christ:123",
+        "biblical:scene:christ:124",
+        "biblical:scene:christ:125",
+        "biblical:scene:christ:126",
+        "biblical:scene:christ:127"
+      ],
+      "actorAndParallelAccountsApproved": false,
+      "oralReadingSignedOff": false,
+      "productionGate": "HOLD",
+      "originalP3Unmodified": true
+    },
+    {
+      "issueId": "HS-P4-M28-DEATH_TO_BURIAL",
+      "movementId": "HS-M28",
+      "selectedScriptureReferences": [
+        "John 19:17–30"
+      ],
+      "originalHeldBridgeCandidates": [
+        {
+          "id": "HS-CF-06",
+          "reference": "John 19:38–42"
+        }
+      ],
+      "priority": "P0_BURIAL_BEFORE_EMPTY_TOMB",
+      "sourceFinding": "John 19:17–30 ends with the death of Christ. Movement M29 begins with Mary finding the empty tomb in John 20:1. The held John 19:38–42 burial account explains Joseph of Arimathea, the new tomb and placing the body there; it is the strongest minimal source-backed bridge and is already a separate researched scene.",
+      "anchorEvidence": {
+        "John 19:30": {
+          "editionVerseEntries": {
+            "dr-challoner": 1,
+            "cpdv-2009": 1,
+            "crampon-1923": 1
+          },
+          "presentInAllThree": true
+        },
+        "John 19:38–42": {
+          "editionVerseEntries": {
+            "dr-challoner": 5,
+            "cpdv-2009": 5,
+            "crampon-1923": 5
+          },
+          "presentInAllThree": true
+        },
+        "John 20:1": {
+          "editionVerseEntries": {
+            "dr-challoner": 1,
+            "cpdv-2009": 1,
+            "crampon-1923": 1
+          },
+          "presentInAllThree": true
+        }
+      },
+      "proposedAdditionalSelectedScripture": [
+        "John 19:38–42"
+      ],
+      "proposalStatus": "RESEARCH_RECOMMENDATION_NOT_APPLIED",
+      "recommendedNextDecision": "PRIORITIZE_EDITORIAL_REVIEW_OF_THE_FULL_BURIAL_ACCOUNT_AS_INTERMOVEMENT_SOURCE_BRIDGE",
+      "riskIfNotAddressed": "An unexplained transition from death on the cross to an empty tomb.",
+      "linkedOptionalSceneKeys": [
+        "biblical:scene:christ:129",
+        "biblical:scene:christ:130",
+        "biblical:scene:christ:131"
+      ],
+      "existingBridgeDisposition": "HOLD_HS_CF_06",
+      "actorAndParallelAccountsApproved": false,
+      "oralReadingSignedOff": false,
+      "productionGate": "HOLD",
+      "originalP3Unmodified": true
+    },
+    {
+      "issueId": "HS-P4-M29-JOHN20_TOMB_ACTOR_TRANSITIONS",
+      "movementId": "HS-M29",
+      "selectedScriptureReferences": [
+        "John 20:1–3",
+        "John 20:6–9",
+        "John 20:11–18",
+        "John 20:19–29"
+      ],
+      "originalHeldBridgeCandidates": [],
+      "priority": "P0_RESURRECTION_ACTOR_CONTINUITY",
+      "sourceFinding": "John 20:3 jumps to 20:6, omitting verses 4–5 where the other disciple outruns Peter and waits at the tomb. John 20:9 jumps to 20:11, omitting verse 10 where the two disciples depart. Those omissions remove stage directions and leave Mary's reappearance less clear.",
+      "anchorEvidence": {
+        "John 20:3": {
+          "editionVerseEntries": {
+            "dr-challoner": 1,
+            "cpdv-2009": 1,
+            "crampon-1923": 1
+          },
+          "presentInAllThree": true
+        },
+        "John 20:4–5": {
+          "editionVerseEntries": {
+            "dr-challoner": 2,
+            "cpdv-2009": 2,
+            "crampon-1923": 2
+          },
+          "presentInAllThree": true
+        },
+        "John 20:6–9": {
+          "editionVerseEntries": {
+            "dr-challoner": 4,
+            "cpdv-2009": 4,
+            "crampon-1923": 4
+          },
+          "presentInAllThree": true
+        },
+        "John 20:10": {
+          "editionVerseEntries": {
+            "dr-challoner": 1,
+            "cpdv-2009": 1,
+            "crampon-1923": 1
+          },
+          "presentInAllThree": true
+        },
+        "John 20:11": {
+          "editionVerseEntries": {
+            "dr-challoner": 1,
+            "cpdv-2009": 1,
+            "crampon-1923": 1
+          },
+          "presentInAllThree": true
+        }
+      },
+      "proposedAdditionalSelectedScripture": [
+        "John 20:4–5",
+        "John 20:10"
+      ],
+      "proposalStatus": "RESEARCH_RECOMMENDATION_NOT_APPLIED",
+      "recommendedNextDecision": "REVIEW_RESTORING_ONLY_THREE_VERSES_TO_KEEP_THE_TWO_DISCIPLES_AND_MARY_SPATIALLY_CLEAR",
+      "riskIfNotAddressed": "Ambiguous actor positions and apparent duplication of tomb scenes.",
+      "linkedOptionalSceneKeys": [
+        "biblical:scene:christ:131",
+        "biblical:scene:christ:132",
+        "biblical:scene:christ:133",
+        "biblical:scene:christ:134"
+      ],
+      "actorAndParallelAccountsApproved": false,
+      "oralReadingSignedOff": false,
+      "productionGate": "HOLD",
+      "originalP3Unmodified": true
+    },
+    {
+      "issueId": "HS-P4-M30-ASCENSION_SPEECH_CONTEXT",
+      "movementId": "HS-M30",
+      "selectedScriptureReferences": [
+        "Acts 1:6–12"
+      ],
+      "originalHeldBridgeCandidates": [
+        {
+          "id": "HS-CF-07",
+          "reference": "Acts 1:3–5"
+        }
+      ],
+      "priority": "P1_OPENING_AGENCY",
+      "sourceFinding": "Acts 1:6 begins 'They therefore who were come together asked him'; Acts 1:3–5 establishes Christ's appearances, his instructions to wait in Jerusalem, and the promised Holy Ghost. The currently held candidate adds this context directly from Acts, without an invented summary.",
+      "anchorEvidence": {
+        "Acts 1:3–5": {
+          "editionVerseEntries": {
+            "dr-challoner": 3,
+            "cpdv-2009": 3,
+            "crampon-1923": 3
+          },
+          "presentInAllThree": true
+        },
+        "Acts 1:6–12": {
+          "editionVerseEntries": {
+            "dr-challoner": 7,
+            "cpdv-2009": 7,
+            "crampon-1923": 7
+          },
+          "presentInAllThree": true
+        }
+      },
+      "proposedAdditionalSelectedScripture": [
+        "Acts 1:3–5"
+      ],
+      "proposalStatus": "RESEARCH_RECOMMENDATION_NOT_APPLIED",
+      "recommendedNextDecision": "PRIORITIZE_BRIDGE_REVIEW_AS_A_THREE_VERSE_SOURCE_LED_OPENING",
+      "riskIfNotAddressed": "The first question lacks the preceding promise and forty-day setting.",
+      "linkedOptionalSceneKeys": [
+        "biblical:scene:christ:137"
+      ],
+      "existingBridgeDisposition": "HOLD_HS_CF_07",
+      "actorAndParallelAccountsApproved": false,
+      "oralReadingSignedOff": false,
+      "productionGate": "HOLD",
+      "originalP3Unmodified": true
+    },
+    {
+      "issueId": "HS-P4-M31-PENTECOST_AND_STEVE_VERSIFICATION",
+      "movementId": "HS-M31",
+      "selectedScriptureReferences": [
+        "Acts 2:1–8",
+        "Acts 2:11–18",
+        "Acts 2:21",
+        "Acts 2:37–41",
+        "Acts 2:42–47",
+        "Acts 7:54–59"
+      ],
+      "originalHeldBridgeCandidates": [
+        {
+          "id": "HS-CF-08",
+          "reference": "Acts 7:51–53"
+        }
+      ],
+      "priority": "P0_PETER_SPEECH_AND_STEVE_EDITIONS",
+      "sourceFinding": "Acts 2:21 jumps straight to 2:37 although 2:22–36 contains Peter's preaching about Christ and why the hearers respond. A compact candidate is 2:22–24 plus 2:32–36, to evaluate doctrinal completeness. Acts 7:54–59 concludes Stephen's martyrdom in the installed English witnesses, while Crampon's final prayer and falling asleep are verse 7:60: do not simply assume 7:59 aligns bilingually.",
+      "anchorEvidence": {
+        "Acts 2:21": {
+          "editionVerseEntries": {
+            "dr-challoner": 1,
+            "cpdv-2009": 1,
+            "crampon-1923": 1
+          },
+          "presentInAllThree": true
+        },
+        "Acts 2:22–24": {
+          "editionVerseEntries": {
+            "dr-challoner": 3,
+            "cpdv-2009": 3,
+            "crampon-1923": 3
+          },
+          "presentInAllThree": true
+        },
+        "Acts 2:32–36": {
+          "editionVerseEntries": {
+            "dr-challoner": 5,
+            "cpdv-2009": 5,
+            "crampon-1923": 5
+          },
+          "presentInAllThree": true
+        },
+        "Acts 2:37": {
+          "editionVerseEntries": {
+            "dr-challoner": 1,
+            "cpdv-2009": 1,
+            "crampon-1923": 1
+          },
+          "presentInAllThree": true
+        },
+        "Acts 7:51–53": {
+          "editionVerseEntries": {
+            "dr-challoner": 3,
+            "cpdv-2009": 3,
+            "crampon-1923": 3
+          },
+          "presentInAllThree": true
+        },
+        "Acts 7:54–59": {
+          "editionVerseEntries": {
+            "dr-challoner": 6,
+            "cpdv-2009": 6,
+            "crampon-1923": 6
+          },
+          "presentInAllThree": true
+        }
+      },
+      "proposedAdditionalSelectedScripture": [
+        "Acts 2:22–24",
+        "Acts 2:32–36",
+        "Acts 7:51–53"
+      ],
+      "proposalStatus": "RESEARCH_RECOMMENDATION_NOT_APPLIED",
+      "recommendedNextDecision": "REVIEW_PETERS_UNBROKEN_KERYGMA_AND_DEFINE_EDITION_AWARE_STEVE_FINAL_BEAT",
+      "riskIfNotAddressed": "Peter's conversion appeal has no preaching, and French final martyrdom words could vanish.",
+      "linkedOptionalSceneKeys": [
+        "biblical:scene:paul:182"
+      ],
+      "existingBridgeDisposition": "HOLD_HS_CF_08_FOR_STEVE_SPEECH",
+      "crossEditionSemanticAnchor": {
+        "label": "Stephen's forgiveness prayer and falling asleep",
+        "verseByEdition": {
+          "dr-challoner": "Acts 7:59",
+          "cpdv-2009": "Acts 7:59",
+          "crampon-1923": "Acts 7:60"
+        }
+      },
+      "actorAndParallelAccountsApproved": false,
+      "oralReadingSignedOff": false,
+      "productionGate": "HOLD",
+      "originalP3Unmodified": true
+    },
+    {
+      "issueId": "HS-P4-M32-SAUL_ANANIAS_CORNELIUS_AGENCY",
+      "movementId": "HS-M32",
+      "selectedScriptureReferences": [
+        "Acts 9:1–11",
+        "Acts 9:17–22",
+        "Acts 10:1–6",
+        "Acts 10:9–16",
+        "Acts 10:19–20",
+        "Acts 10:24",
+        "Acts 10:28–29",
+        "Acts 10:33–48"
+      ],
+      "originalHeldBridgeCandidates": [],
+      "priority": "P0_AGENT_IDENTITY_AND_GENTILE_RECEPTION",
+      "sourceFinding": "Acts 9:11 jumps to 9:17, suppressing the Lord's explanation of Saul's election in 9:15–16. Acts 10:6 jumps to 10:9, omitting the actual dispatch of Cornelius's messengers (10:7–8); later 10:29 jumps to 10:33, omitting Cornelius speaking (10:30–32). Selected verses 10:24→28 also skip Cornelius's greeting, but this may be economical if stage directions remain clear.",
+      "anchorEvidence": {
+        "Acts 9:11": {
+          "editionVerseEntries": {
+            "dr-challoner": 1,
+            "cpdv-2009": 1,
+            "crampon-1923": 1
+          },
+          "presentInAllThree": true
+        },
+        "Acts 9:15–16": {
+          "editionVerseEntries": {
+            "dr-challoner": 2,
+            "cpdv-2009": 2,
+            "crampon-1923": 2
+          },
+          "presentInAllThree": true
+        },
+        "Acts 9:17–18": {
+          "editionVerseEntries": {
+            "dr-challoner": 2,
+            "cpdv-2009": 2,
+            "crampon-1923": 2
+          },
+          "presentInAllThree": true
+        },
+        "Acts 10:6": {
+          "editionVerseEntries": {
+            "dr-challoner": 1,
+            "cpdv-2009": 1,
+            "crampon-1923": 1
+          },
+          "presentInAllThree": true
+        },
+        "Acts 10:7–8": {
+          "editionVerseEntries": {
+            "dr-challoner": 2,
+            "cpdv-2009": 2,
+            "crampon-1923": 2
+          },
+          "presentInAllThree": true
+        },
+        "Acts 10:9": {
+          "editionVerseEntries": {
+            "dr-challoner": 1,
+            "cpdv-2009": 1,
+            "crampon-1923": 1
+          },
+          "presentInAllThree": true
+        },
+        "Acts 10:29": {
+          "editionVerseEntries": {
+            "dr-challoner": 1,
+            "cpdv-2009": 1,
+            "crampon-1923": 1
+          },
+          "presentInAllThree": true
+        },
+        "Acts 10:30–32": {
+          "editionVerseEntries": {
+            "dr-challoner": 3,
+            "cpdv-2009": 3,
+            "crampon-1923": 3
+          },
+          "presentInAllThree": true
+        },
+        "Acts 10:33": {
+          "editionVerseEntries": {
+            "dr-challoner": 1,
+            "cpdv-2009": 1,
+            "crampon-1923": 1
+          },
+          "presentInAllThree": true
+        }
+      },
+      "proposedAdditionalSelectedScripture": [
+        "Acts 9:15–16",
+        "Acts 10:7–8",
+        "Acts 10:30–32"
+      ],
+      "proposalStatus": "RESEARCH_RECOMMENDATION_NOT_APPLIED",
+      "recommendedNextDecision": "MINIMAL_AGENCY_BRIDGES_FOR_ANANIAS_SAUL_AND_CORNELIUS_WITH_TWO_LOCATIONS_KEPT_DISTINCT",
+      "riskIfNotAddressed": "Disappearing messengers, unattributed reply and loss of Saul's named commission.",
+      "linkedOptionalSceneKeys": [
+        "biblical:scene:paul:138",
+        "biblical:scene:paul:139",
+        "biblical:scene:paul:140"
+      ],
+      "actorAndParallelAccountsApproved": false,
+      "oralReadingSignedOff": false,
+      "productionGate": "HOLD",
+      "originalP3Unmodified": true
+    },
+    {
+      "issueId": "HS-P4-M33-ANTIOCH_TO_COUNCIL_UNSHOWN_MISSION",
+      "movementId": "HS-M33",
+      "selectedScriptureReferences": [
+        "Acts 11:19–26",
+        "Acts 13:1–5",
+        "Acts 15:1–2",
+        "Acts 15:5–11",
+        "Acts 15:13–20",
+        "Acts 15:22–29"
+      ],
+      "originalHeldBridgeCandidates": [],
+      "priority": "P0_CAUSAL_MISSION_CHAIN",
+      "sourceFinding": "Acts 13:1–5 shows the departure via Seleucia to Salamis; Acts 15:1–2 jumps immediately to a Jerusalem Council dispute. Acts 14:26–27 supplies the return to Antioch and the report of the Gentile mission, an economical direct-Scripture link before the controversy.",
+      "anchorEvidence": {
+        "Acts 13:1–5": {
+          "editionVerseEntries": {
+            "dr-challoner": 5,
+            "cpdv-2009": 5,
+            "crampon-1923": 5
+          },
+          "presentInAllThree": true
+        },
+        "Acts 13:6–12": {
+          "editionVerseEntries": {
+            "dr-challoner": 7,
+            "cpdv-2009": 7,
+            "crampon-1923": 7
+          },
+          "presentInAllThree": true
+        },
+        "Acts 14:26–27": {
+          "editionVerseEntries": {
+            "dr-challoner": 2,
+            "cpdv-2009": 2,
+            "crampon-1923": 2
+          },
+          "presentInAllThree": true
+        },
+        "Acts 15:1–2": {
+          "editionVerseEntries": {
+            "dr-challoner": 2,
+            "cpdv-2009": 2,
+            "crampon-1923": 2
+          },
+          "presentInAllThree": true
+        }
+      },
+      "proposedAdditionalSelectedScripture": [
+        "Acts 14:26–27"
+      ],
+      "proposalStatus": "RESEARCH_RECOMMENDATION_NOT_APPLIED",
+      "recommendedNextDecision": "EVALUATE_RETURN_AND_GENTILE_REPORT_BRIDGE_BEFORE_THE_COUNCIL; OPTIONAL_MISSIONS_REMAIN_IN_ATLAS",
+      "riskIfNotAddressed": "The conciliar dispute appears without an apostolic mission having taken place.",
+      "linkedOptionalSceneKeys": [
+        "biblical:scene:paul:143",
+        "biblical:scene:paul:146",
+        "biblical:scene:paul:151",
+        "biblical:scene:paul:152"
+      ],
+      "actorAndParallelAccountsApproved": false,
+      "oralReadingSignedOff": false,
+      "productionGate": "HOLD",
+      "originalP3Unmodified": true
+    },
+    {
+      "issueId": "HS-P4-M34-ROME_ARRIVAL_MISSING_AUDIENCE",
+      "movementId": "HS-M34",
+      "selectedScriptureReferences": [
+        "Acts 28:23–31"
+      ],
+      "originalHeldBridgeCandidates": [
+        {
+          "id": "HS-CF-10",
+          "reference": "Acts 19:21"
+        },
+        {
+          "id": "HS-CF-11",
+          "reference": "Acts 28:16"
+        }
+      ],
+      "priority": "P1_OPENING_ACTOR_LOCATION",
+      "sourceFinding": "Acts 28:23 assumes a previously appointed date and visiting hearers at Paul's lodging. Acts 28:16 places Paul at Rome, but Acts 28:17–22 introduces the Jewish audience and appointment; candidate 19:21 is a distant intention, not essential for the immediate dialogue.",
+      "anchorEvidence": {
+        "Acts 19:21": {
+          "editionVerseEntries": {
+            "dr-challoner": 1,
+            "cpdv-2009": 1,
+            "crampon-1923": 1
+          },
+          "presentInAllThree": true
+        },
+        "Acts 28:16": {
+          "editionVerseEntries": {
+            "dr-challoner": 1,
+            "cpdv-2009": 1,
+            "crampon-1923": 1
+          },
+          "presentInAllThree": true
+        },
+        "Acts 28:17–22": {
+          "editionVerseEntries": {
+            "dr-challoner": 6,
+            "cpdv-2009": 6,
+            "crampon-1923": 6
+          },
+          "presentInAllThree": true
+        },
+        "Acts 28:23–31": {
+          "editionVerseEntries": {
+            "dr-challoner": 9,
+            "cpdv-2009": 9,
+            "crampon-1923": 9
+          },
+          "presentInAllThree": true
+        }
+      },
+      "proposedAdditionalSelectedScripture": [
+        "Acts 28:16–22"
+      ],
+      "proposalStatus": "RESEARCH_RECOMMENDATION_NOT_APPLIED",
+      "recommendedNextDecision": "PRIORITIZE_ARRIVAL_AND_AUDIENCE_SEQUENCE_28_16_TO_22_BEFORE_PROCLAMATION",
+      "riskIfNotAddressed": "Invisible audience, unexplained appointment and unlocated speech.",
+      "linkedOptionalSceneKeys": [
+        "biblical:scene:paul:180"
+      ],
+      "existingBridgeDisposition": "HOLD_HS_CF_11_PLUS_NEW_LOCAL_INTRO_CANDIDATE; HS_CF_10_OPTIONAL",
+      "actorAndParallelAccountsApproved": false,
+      "oralReadingSignedOff": false,
+      "productionGate": "HOLD",
+      "originalP3Unmodified": true
+    },
+    {
+      "issueId": "HS-P4-M35-THRONE_BEFORE_LAMB",
+      "movementId": "HS-M35",
+      "selectedScriptureReferences": [
+        "Revelation 5:1–14"
+      ],
+      "originalHeldBridgeCandidates": [],
+      "priority": "P1_VISUAL_ANAPHORA",
+      "sourceFinding": "Revelation 5:1 refers to 'him that sat on the throne' without Revelation 4's establishment of the heavenly throne. Revelation 4:1–2 supplies a direct source-led gateway, while preserving Revelation 4's remainder as optional context.",
+      "anchorEvidence": {
+        "Revelation 4:1–2": {
+          "editionVerseEntries": {
+            "dr-challoner": 2,
+            "cpdv-2009": 2,
+            "crampon-1923": 2
+          },
+          "presentInAllThree": true
+        },
+        "Revelation 5:1–14": {
+          "editionVerseEntries": {
+            "dr-challoner": 14,
+            "cpdv-2009": 14,
+            "crampon-1923": 14
+          },
+          "presentInAllThree": true
+        }
+      },
+      "proposedAdditionalSelectedScripture": [
+        "Revelation 4:1–2"
+      ],
+      "proposalStatus": "RESEARCH_RECOMMENDATION_NOT_APPLIED",
+      "recommendedNextDecision": "REVIEW_TWO_VERSE_HEAVENLY_VISION_INTRO_WITH_NO_EARTH_COORDINATE",
+      "riskIfNotAddressed": "An unidentified speaker/throne and misreading visionary scenery as geography.",
+      "linkedOptionalSceneKeys": [],
+      "actorAndParallelAccountsApproved": false,
+      "oralReadingSignedOff": false,
+      "productionGate": "HOLD",
+      "originalP3Unmodified": true
+    },
+    {
+      "issueId": "HS-P4-M36-REVELATION_FINAL_VISION_GENRE",
+      "movementId": "HS-M36",
+      "selectedScriptureReferences": [
+        "Revelation 19:11–21",
+        "Revelation 20:1–15"
+      ],
+      "originalHeldBridgeCandidates": [],
+      "priority": "P2_APOCALYPTIC_VISUAL_INTEGRITY",
+      "sourceFinding": "Revelation 19:11 starts a new heavenly vision and Revelation 20:1 another vision. The selected passages can remain self-standing; Revelation 12 is prior literary context, not permission to splice its visionary conflict into Revelation 19 as chronological news.",
+      "anchorEvidence": {
+        "Revelation 12:1–17": {
+          "editionVerseEntries": {
+            "dr-challoner": 17,
+            "cpdv-2009": 17,
+            "crampon-1923": 17
+          },
+          "presentInAllThree": true
+        },
+        "Revelation 19:11–21": {
+          "editionVerseEntries": {
+            "dr-challoner": 11,
+            "cpdv-2009": 11,
+            "crampon-1923": 11
+          },
+          "presentInAllThree": true
+        },
+        "Revelation 20:1–15": {
+          "editionVerseEntries": {
+            "dr-challoner": 15,
+            "cpdv-2009": 15,
+            "crampon-1923": 15
+          },
+          "presentInAllThree": true
+        }
+      },
+      "proposedAdditionalSelectedScripture": [],
+      "proposalStatus": "RESEARCH_RECOMMENDATION_NOT_APPLIED",
+      "recommendedNextDecision": "KEEP_CURRENT_BIBLICAL_SEQUENCES; LABEL_THE_EPISODIC_VISIONS_AND_AVOID_EARTH_TIME_GEOCODING",
+      "riskIfNotAddressed": "Artificial chronology, invented material battle locations and misread apocalyptic symbols.",
+      "linkedOptionalSceneKeys": [],
+      "actorAndParallelAccountsApproved": false,
+      "oralReadingSignedOff": false,
+      "productionGate": "HOLD",
+      "originalP3Unmodified": true
+    },
+    {
+      "issueId": "HS-P4-M37-NEW_JERUSALEM_GUIDE_AND_CLOSURE",
+      "movementId": "HS-M37",
+      "selectedScriptureReferences": [
+        "Revelation 21:1–7",
+        "Revelation 22:1–5"
+      ],
+      "originalHeldBridgeCandidates": [],
+      "priority": "P0_VISION_ANAPHORA_AND_CANON_CLOSURE",
+      "sourceFinding": "Revelation 21:1–7 jumps to 22:1 ('he showed me') but omits Revelation 21:9–10, which introduces the angel and shows the bride/city. The theatre must not treat 22:5 as the end of Revelation, since 22:6–21 includes its epilogue and 'Come, Lord Jesus' at 22:20.",
+      "anchorEvidence": {
+        "Revelation 21:1–7": {
+          "editionVerseEntries": {
+            "dr-challoner": 7,
+            "cpdv-2009": 7,
+            "crampon-1923": 7
+          },
+          "presentInAllThree": true
+        },
+        "Revelation 21:9–10": {
+          "editionVerseEntries": {
+            "dr-challoner": 2,
+            "cpdv-2009": 2,
+            "crampon-1923": 2
+          },
+          "presentInAllThree": true
+        },
+        "Revelation 21:22–27": {
+          "editionVerseEntries": {
+            "dr-challoner": 6,
+            "cpdv-2009": 6,
+            "crampon-1923": 6
+          },
+          "presentInAllThree": true
+        },
+        "Revelation 22:1–5": {
+          "editionVerseEntries": {
+            "dr-challoner": 5,
+            "cpdv-2009": 5,
+            "crampon-1923": 5
+          },
+          "presentInAllThree": true
+        },
+        "Revelation 22:20–21": {
+          "editionVerseEntries": {
+            "dr-challoner": 2,
+            "cpdv-2009": 2,
+            "crampon-1923": 2
+          },
+          "presentInAllThree": true
+        }
+      },
+      "proposedAdditionalSelectedScripture": [
+        "Revelation 21:9–10",
+        "Revelation 22:20–21"
+      ],
+      "proposalStatus": "RESEARCH_RECOMMENDATION_NOT_APPLIED",
+      "recommendedNextDecision": "REVIEW_SOURCE_BRIDGE_TO_NEW_JERUSALEM_AND_OPTIONAL_TRUE_BOOK_EPILOGUE; SHOW_A_SELECTIVE_ELLIPSIS_IF_NOT_SELECTED",
+      "riskIfNotAddressed": "Pronoun without angel antecedent and false last-verse conclusion.",
+      "linkedOptionalSceneKeys": [],
+      "actorAndParallelAccountsApproved": false,
+      "oralReadingSignedOff": false,
+      "productionGate": "HOLD",
+      "originalP3Unmodified": true
+    }
+  ]
+}
