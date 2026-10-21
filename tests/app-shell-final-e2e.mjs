@@ -239,7 +239,7 @@ async function exerciseRealShellSpecialRite(browser,spec){
     await tapNext();
     await page.waitForFunction(()=>{
       const card=globalThis.AO_R17_NATIVE_READER_PREVIEW?.getCurrentCard?.();
-      // The 63/64 presentation keeps AO.CARD.001 as its source owner;
+      // The curated 65-card structure keeps AO.CARD.001 as its source owner;
       // split prayer cards have independent display IDs by design.
       return (card?.sourceSectionId??card?.sectionId)==="AO.CARD.001";
     },null,{timeout:5000});
@@ -249,8 +249,8 @@ async function exerciseRealShellSpecialRite(browser,spec){
         source:globalThis.AO_R17_NATIVE_READER_PREVIEW?.sourceModel?.totalCards,
         curated:document.getElementById("ao-r17-native-reader-preview")?.dataset.r17CuratedReview,
       }));
-      assert.deepEqual(readerIdentity,{total:64,source:39,curated:"true"},
-        "real-shell Asperges must return to curated 63/64 cards without changing 39 original Mass source steps");
+      assert.deepEqual(readerIdentity,{total:65,source:39,curated:"true"},
+        "real-shell Asperges must retain the 65-card source structure (64 ordinarily visible) and 39 original Mass source steps");
     }
     if(["PALM","ASH","CANDLEMAS","ROGATIONS"].includes(spec.kind)){
       assert.equal(setup.massEntry,"INTROIT",
