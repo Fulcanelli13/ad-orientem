@@ -16,9 +16,9 @@ const pointers=load(root+'data/learn/living-church-pius-x-historical-passage-poi
 const symbols=load(root+'data/learn/living-church-symbolic-concepts.v1.json');
 const {createSharedQuestionRouter}=await import(pathToFileURL(resolve(root+'src/learn/living-church-shared-question-router.js')).href);
 const {createHybridQuestionRouter}=await import(pathToFileURL(resolve(root+'src/learn/living-church-hybrid-question-router.js')).href);
-assert.equal(catalog.topics.length,186);
-assert.equal(pointers.records.length,12);
-assert.equal(registry.expectedRouterCommit,'d25651b7b77ea5331bfc8485717cb00bb0047811');
+assert.equal(catalog.topics.length,197);
+assert.equal(pointers.records.length,23);
+assert.equal(registry.expectedRouterCommit,'0339883dc3d1ecfc16f07fd35b68469df206337b');
 const engines={
  shared:createSharedQuestionRouter(catalog,{historicalPointers:pointers}),
  hybrid:createHybridQuestionRouter(catalog,symbols,{historicalPointers:pointers})
@@ -59,7 +59,8 @@ const rows=[],report={schema:'AO_SPX_DOCUMENT_FIRST_SOURCE_BOUND_12_BILINGUAL_CA
  observations:[]};
 for(const [engineName,router] of Object.entries(engines)){
  const selector=createPiusDocumentFirstReviewSelector({router,benchmark,registry,pointers});
- assert.deepEqual(selector.linkedSources,['SPX-PILOT-13','SPX-PILOT-14','SPX-PILOT-09']);
+ assert.equal(selector.linkedSources.length,16);
+ assert.deepEqual(selector.linkedSources.slice(0,3),['SPX-PILOT-13','SPX-PILOT-14','SPX-PILOT-09']);
  for(const entry of [...primary,...alternates]){
   const twins=[];
   for(const lang of ['en','fr']){
