@@ -19,22 +19,25 @@ function makeOwner(win=globalThis){
   const state={tab:"year",archive:false,q:"",triage:"",chapter:0,limit:60,custom:null,research:null};
   const FR=()=>win?.AO_RUNTIME_V8?.store?.getState?.()?.language==="fr";
   const L=(en,fr)=>FR()?fr:en;
+  const FAMILY_FR=Object.freeze({"Home & family":"Maison et famille","Sacred Heart":"Sacré-Cœur","Life events":"Étapes de la vie","Marian domestic devotion":"Dévotion mariale au foyer","Pilgrimage":"Pèlerinage","Sacred objects":"Objets de dévotion","Death & Holy Souls":"Défunts et âmes du purgatoire","Sacred time & bells":"Temps sacrés et cloches","Food & sacramentals":"Aliments et sacramentaux","Sacramentals":"Sacramentaux","Saints & sacramental blessings":"Saints et bénédictions","Saints & patronal feasts":"Saints et fêtes patronales","Marian feasts":"Fêtes mariales","Saints & charity":"Saints et charité","Marian feast-day sacramentals":"Sacramentaux des fêtes mariales","Easter domestic customs":"Coutumes familiales de Pâques","Advent household customs":"Coutumes de l'Avent au foyer","Advent community customs":"Coutumes communautaires de l'Avent","Christmas household customs":"Coutumes familiales de Noël","Holy Week lay devotions":"Dévotions de la Semaine sainte","Rogation household customs":"Coutumes familiales des Rogations","Epiphany charity":"Charité de l'Épiphanie","Epiphany household":"Épiphanie au foyer","Corpus Christi regional decorations":"Décors régionaux de la Fête-Dieu","Eastertide regional devotional walks":"Marches régionales du temps pascal","Marian household customs":"Coutumes mariales au foyer"});
+  const familyLabel=value=>FR()?FAMILY_FR[value]||value:value;
+  const dateHint=c=>FR()?c.temporal.calendar_hint_fr||c.temporal.calendar_hint:c.temporal.calendar_hint;
   const title=c=>FR()&&c.title_fr?c.title_fr:c.title_en;
   const desc=c=>FR()&&c.description_fr?c.description_fr:c.description_en;
   const sources=c=>c.sources.filter(s=>/^https:\/\//.test(s.url||""));
   const header=()=>'<header class="aoCustHead"><span class="aoCustEyebrow">AD ORIENTEM · '+E(L("Catholic life","Vie catholique"))+'</span><button class="aoCustClose" data-cust-close>'+E(L("Close","Fermer"))+'</button></header>';
   function card(c){
-    return '<button class="aoCustCard" data-cust-id="'+E(c.id)+'"><span class="aoCustSmall">'+E(c.publication_state==="CONTEXT_ONLY"?L("Historical or regional context","Contexte historique ou régional"):c.family)+'</span><strong>'+E(title(c))+'</strong><span class="aoCustSummary">'+E(c.temporal.calendar_hint||c.description_en)+'</span></button>';
+    return '<button class="aoCustCard" data-cust-id="'+E(c.id)+'"><span class="aoCustSmall">'+E(c.publication_state==="CONTEXT_ONLY"?L("Historical or regional context","Contexte historique ou régional"):familyLabel(c.family))+'</span><strong>'+E(title(c))+'</strong><span class="aoCustSummary">'+E(dateHint(c)||desc(c))+'</span></button>';
   }
   function article(c){
     const segments=[
-      [L("When","Quand"),FR()?c.temporal.calendar_hint_fr||c.temporal.calendar_hint:c.temporal.calendar_hint],
+      [L("When","Quand"),dateHint(c)],
       [L("Meaning","Sens"),FR()?c.meaning_fr||c.meaning_en:c.meaning_en],
       [L("Optional observance","Pratique facultative"),FR()?c.how_fr||c.how_en:c.how_en],
       [L("Historical and pastoral context","Contexte historique et pastoral"),FR()?c.caution_fr||c.guardrail:c.guardrail]
     ];
     let html='<button class="aoCustBack" data-cust-back>'+E(L("← Return to collection","← Retour à la collection"))+'</button>'+
-      '<p class="aoCustEyebrow">'+E(c.family)+'</p><h1 class="aoCustTitle">'+E(title(c))+'</h1>'+
+      '<p class="aoCustEyebrow">'+E(familyLabel(c.family))+'</p><h1 class="aoCustTitle">'+E(title(c))+'</h1>'+
       '<p class="aoCustIntro">'+E(desc(c))+'</p>';
     if(c.publication_state==="CONTEXT_ONLY")html+='<div class="aoCustNotice">'+E(L("Regional or historical context only; not a universal custom.","Contexte régional ou historique ; ce n’est pas une coutume universelle."))+'</div>';
     html+='<div class="aoCustArticle">';
@@ -75,7 +78,7 @@ function makeOwner(win=globalThis){
     const rows=selectCustoms(library,{view:"life",query:state.q});
     const families=[...new Set(rows.map(x=>x.family))];
     return '<p class="aoCustIntro">'+E(L("Undated customs, household traditions, personal milestones and pilgrimages.","Coutumes non datées, traditions familiales, événements personnels et pèlerinages."))+'</p>'+
-      families.map(f=>'<section class="aoCustGroup"><h2>'+E(f)+'</h2><div class="aoCustCards">'+rows.filter(x=>x.family===f).map(card).join("")+'</div></section>').join("");
+      families.map(f=>'<section class="aoCustGroup"><h2>'+E(familyLabel(f))+'</h2><div class="aoCustCards">'+rows.filter(x=>x.family===f).map(card).join("")+'</div></section>').join("");
   }
   function collectionPage(){
     let html='<p class="aoCustIntro">'+library.stats.canonical+' '+E(L("canonical records including ","fiches canoniques dont "))+library.contextOnly+' '+E(L("context-only entries.","fiches contextuelles."))+'</p>'+
