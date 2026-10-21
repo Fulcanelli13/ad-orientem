@@ -34,8 +34,8 @@ assert.deepEqual([...new Set(ledger.apparitionSites.map(x=>x.apparition_id))].so
  phenomena.apparitions.map(x=>x.id).sort());
 assert.equal(ledger.summary.marianShrines,118);
 assert.equal(ledger.summary.shrineGuides,25);
-assert.equal(ledger.summary.shrineApprovedHero,19);
-assert.equal(ledger.summary.shrineGuideAndHero,19);
+assert.equal(ledger.summary.shrineApprovedHero,24);
+assert.equal(ledger.summary.shrineGuideAndHero,24);
 assert.equal(ledger.summary.marianGuides,14);
 assert.equal(allGuides.length,25);
 assert.equal(new Set(allGuides.map(x=>x.place_id)).size,25,"No duplicate Place guide ownership");
@@ -98,4 +98,4 @@ assert.match(loader,/safeArray\(illustratedGlobalSaintsR1\?\.guides\)/);
 assert.ok(ledger.shrines.every(s=>s.place_verified&&s.geo_available&&s.source_count>0));
 assert.ok(ledger.pilgrimages.every(p=>p.source_count>0&&
  (!p.destination_shrine_id||shrineIds.has(p.destination_shrine_id))));
-console.log("PASS: 257 shrines, 118 Marian, 240 pilgrimages, 20 routes, 33 apparition records, 25 detailed guides; all 18 previously approved local site photographs have complete bilingual guides (7 Marian and 4 Saints guides newly added).");
+console.log("PASS: 257 shrines, 118 Marian, 240 pilgrimages, 20 routes, 33 apparition records, 25 detailed guides; all 24 approved local site photographs have complete bilingual guides (7 Marian and 4 Saints guides newly added).");

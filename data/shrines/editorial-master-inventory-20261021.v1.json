@@ -32,16 +32,16 @@
     "christologicalShrines": 30,
     "otherShrines": 3,
     "shrineGuides": 25,
-    "shrineApprovedHero": 19,
-    "shrineGuideAndHero": 19,
+    "shrineApprovedHero": 24,
+    "shrineGuideAndHero": 24,
     "marianGuides": 14,
-    "marianApprovedHero": 12,
+    "marianApprovedHero": 14,
     "pilgrimages": 240,
     "destinationPilgrimages": 207,
     "annualPilgrimages": 33,
     "routes": 20,
     "apparitions": 33,
-    "approvedSitePhotos": 19
+    "approvedSitePhotos": 24
   },
   "shrines": [
     {
@@ -83,15 +83,15 @@
       "intro_en": true,
       "intro_fr": true,
       "detailed_guide": "PUBLISHED",
-      "hero_media": "MISSING_APPROVED",
-      "hero_asset_path": null,
+      "hero_media": "APPROVED_LOCAL",
+      "hero_asset_path": "assets/approved/place-media/FR-sanctuaire-notre-dame-de-laghet.webp",
       "approved_gallery_count": 0,
       "pilgrimage_ids": [
         "pilgrimage:FR:laghet-destination",
         "pilgrimage:FR:laghet-paillon-deanery"
       ],
       "apparition_ids": [],
-      "next_editorial_action": "FIND_AND_LICENSE_EXACT_SITE_PHOTO"
+      "next_editorial_action": "QA_RELEASED_FOLIO"
     },
     {
       "shrine_id": "shrine:FR:paray-sacred-heart",
@@ -207,14 +207,14 @@
       "intro_en": true,
       "intro_fr": true,
       "detailed_guide": "PUBLISHED",
-      "hero_media": "MISSING_APPROVED",
-      "hero_asset_path": null,
+      "hero_media": "APPROVED_LOCAL",
+      "hero_asset_path": "assets/approved/place-media/IE-lough-derg-station-island.webp",
       "approved_gallery_count": 0,
       "pilgrimage_ids": [
         "pilgrimage:IE:lough-derg-three-day"
       ],
       "apparition_ids": [],
-      "next_editorial_action": "FIND_AND_LICENSE_EXACT_SITE_PHOTO"
+      "next_editorial_action": "QA_RELEASED_FOLIO"
     },
     {
       "shrine_id": "shrine:MU:pere-laval",
@@ -4260,12 +4260,12 @@
       "intro_en": true,
       "intro_fr": true,
       "detailed_guide": "PUBLISHED",
-      "hero_media": "MISSING_APPROVED",
-      "hero_asset_path": null,
+      "hero_media": "APPROVED_LOCAL",
+      "hero_asset_path": "assets/approved/place-media/FR-sanctuary-of-our-lady-of-rocamadour.webp",
       "approved_gallery_count": 0,
       "pilgrimage_ids": [],
       "apparition_ids": [],
-      "next_editorial_action": "FIND_AND_LICENSE_EXACT_SITE_PHOTO"
+      "next_editorial_action": "QA_RELEASED_FOLIO"
     },
     {
       "shrine_id": "shrine:ES:santa-maria-de-montserrat-abbey",
@@ -5039,14 +5039,14 @@
       "intro_en": true,
       "intro_fr": true,
       "detailed_guide": "PUBLISHED",
-      "hero_media": "MISSING_APPROVED",
-      "hero_asset_path": null,
+      "hero_media": "APPROVED_LOCAL",
+      "hero_asset_path": "assets/approved/place-media/IE-croagh-patrick-murrisk-pilgrimage-base.webp",
       "approved_gallery_count": 0,
       "pilgrimage_ids": [
         "pilgrimage:IE:croagh-patrick-reek-sunday"
       ],
       "apparition_ids": [],
-      "next_editorial_action": "FIND_AND_LICENSE_EXACT_SITE_PHOTO"
+      "next_editorial_action": "QA_RELEASED_FOLIO"
     },
     {
       "shrine_id": "shrine:IE:st-oliver-plunkett-drogheda",
@@ -5062,14 +5062,14 @@
       "intro_en": true,
       "intro_fr": true,
       "detailed_guide": "PUBLISHED",
-      "hero_media": "MISSING_APPROVED",
-      "hero_asset_path": null,
+      "hero_media": "APPROVED_LOCAL",
+      "hero_asset_path": "assets/approved/place-media/IE-st-peters-oliver-plunkett-drogheda.webp",
       "approved_gallery_count": 0,
       "pilgrimage_ids": [
         "pilgrimage:IE:st-oliver-plunkett-drogheda"
       ],
       "apparition_ids": [],
-      "next_editorial_action": "FIND_AND_LICENSE_EXACT_SITE_PHOTO"
+      "next_editorial_action": "QA_RELEASED_FOLIO"
     },
     {
       "shrine_id": "shrine:IE:solas-bhride-kildare",
@@ -5979,7 +5979,7 @@
       "route_ids": [],
       "source_count": 2,
       "narrative": "DESTINATION_GUIDE_PUBLISHED",
-      "destination_hero": "NO_APPROVED_DESTINATION_PHOTO",
+      "destination_hero": "APPROVED_LOCAL",
       "canonical_temporal_links": []
     },
     {
@@ -5993,7 +5993,7 @@
       ],
       "source_count": 1,
       "narrative": "DESTINATION_GUIDE_PUBLISHED",
-      "destination_hero": "NO_APPROVED_DESTINATION_PHOTO",
+      "destination_hero": "APPROVED_LOCAL",
       "canonical_temporal_links": [
         "temporal:laghet:paillon-pentecost-monday"
       ]
@@ -6093,7 +6093,7 @@
       "route_ids": [],
       "source_count": 2,
       "narrative": "DESTINATION_GUIDE_PUBLISHED",
-      "destination_hero": "NO_APPROVED_DESTINATION_PHOTO",
+      "destination_hero": "APPROVED_LOCAL",
       "canonical_temporal_links": [
         "temporal:lough-derg:three-day-season"
       ]
@@ -8629,7 +8629,7 @@
       "route_ids": [],
       "source_count": 3,
       "narrative": "DESTINATION_GUIDE_PUBLISHED",
-      "destination_hero": "NO_APPROVED_DESTINATION_PHOTO",
+      "destination_hero": "APPROVED_LOCAL",
       "canonical_temporal_links": []
     },
     {
@@ -8641,7 +8641,7 @@
       "route_ids": [],
       "source_count": 3,
       "narrative": "DESTINATION_GUIDE_PUBLISHED",
-      "destination_hero": "NO_APPROVED_DESTINATION_PHOTO",
+      "destination_hero": "APPROVED_LOCAL",
       "canonical_temporal_links": []
     },
     {
