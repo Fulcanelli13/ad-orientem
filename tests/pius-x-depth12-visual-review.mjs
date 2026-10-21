@@ -4,16 +4,19 @@ import {readFileSync} from 'node:fs';
 const readJson=p=>JSON.parse(readFileSync(p,'utf8'));
 const base='previews/';
 const fixture=readJson(base+'pius-x-depth12-source-owned-review-fixture-20261021.json');
-const voice=readJson(base+'pius-x-three-voice-pacing-review-candidates-20261021.json');
+const voice=readJson(base+'pius-x-three-voice-source-tethered-v2-20261021.json');
 const html=readFileSync(base+'pius-x-12scene-visual-novel-editorial-review-20261021.html','utf8');
 const flow=readJson('data/learn/research/pius-x-12chapter-dependent-dialogue-flow-20261021.v1.json');
 assert.equal(fixture.meta.reviewOnly,true);
 assert.equal(fixture.meta.scenes,12);
 assert.equal(fixture.meta.paths,36);
 assert.equal(fixture.scenes.length,12);
-assert.equal(voice.publication,'UNAPPROVED_EXPERIMENTAL_DIALOGUE_NOT_PAPAL_QUOTATION');
-assert.equal(voice.count.stageSegments,9);
-assert.equal(voice.count.approvedHistoricalQuotations,0);
+assert.equal(voice.publication,'NOT_APPROVED_NOT_PUBLISHED');
+assert.equal(voice.reviewState.runtimeImportAllowed,false);
+assert.equal(voice.reviewState.independentTheologicalReviewerApproved,false);
+assert.equal(voice.counts.segments,9);
+assert.equal(voice.counts.localizedSegments,18);
+assert.equal(voice.sourceEvidenceScope.exactQuotationCount,0);
 assert.equal(voice.candidates.length,3);
 const known=new Set();
 for(const s of fixture.scenes){
@@ -39,7 +42,14 @@ for(const c of voice.candidates){
  assert(known.has(c.chapterId));
  const corresponding=fixture.scenes.find(x=>x.id===c.chapterId);
  assert(c.routeIndex>=0 && c.routeIndex<corresponding.paths.length);
- assert.equal(c.specificSourceClaimApproval,false);
+ assert.equal(c.source.sourceVerifiedToDisplayedText,true);
+ assert.equal(c.historicalQuote,false);
+ assert.equal(c.evidence.length,3);
+ for(const evidence of c.evidence){
+  assert(evidence.claimIds.length>0);
+  if(evidence.segment!=='deep'||c.chapterId!=='SPX-023')assert(evidence.sourceLocators.length>0);
+ }
+ assert.equal(c.source.url,corresponding.source.url);
  for(const segment of ['opening','follow','deep']){
   for(const loc of ['en','fr']){
    assert(c[segment].q[loc].length>10);
