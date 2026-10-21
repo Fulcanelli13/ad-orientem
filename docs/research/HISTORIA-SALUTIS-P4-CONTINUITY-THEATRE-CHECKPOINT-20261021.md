@@ -192,3 +192,25 @@ Three-way matching passage availability is not translation-level collation, appr
 ### Next bounded step
 
 Review MINISTRY as original-source rows 69–114, prioritising Jesus' public teaching and high-impact event/location claims, then PASSION and RISEN. Continue M20–M37 literary seam reviews independently; no acceptance flags may be set solely because scene citation coordinates are present.
+
+
+## P4 Public Ministry desk audit — 21 October 2026
+
+A complete 46-row source desk audit has been committed as \`data/research/historia-p4-public-ministry-three-witness-desk-audit.v1.json\`, covering original source indices **69–114** with stable \`biblical:scene:christ:*\` keys. All 46 reference spans return verse entries in each of the three installed, uncollated Catholic witness files (Douay–Rheims Challoner, CPDV and Crampon), with **one source-reference end-boundary mismatch** and **two editorially material versification/alignment flags**. Source witness blob SHAs are pinned in the artifact; no printed-edition/translation certification is claimed.
+
+**Coverage rises to 116 distinct scenes of 183 (63.4%)**: original indices 0–114 plus 181 (Holy Innocents). Other 67 source scene rows remain unreviewed at this desk-audit depth. No geocoding or publication changes have been authorised.
+
+### Specific documented issues
+
+- **Mark 4 storm**: source study scene 090 uses \`Mark 4:35–41\`, whereas the current three imported witnesses each contain six numbered entries 4:35–40, with the concluding question in 4:40. A request for 4:41 against these witnesses must not yield fabricated text. Printed edition verification remains open, and the imported witness transcription might have an edition-specific boundary difference.
+- **Bread of Life**: scene 097 uses \`John 6:22–59\`, but the statement locating the teaching in the Capernaum synagogue is **6:60 in installed Douay and CPDV**, **6:59 in installed Crampon**. The full source reference has equal count of numbered entries but *not* verse-by-verse semantic identity across editions. No silent alignment or invented site location.
+- **Ordering**: source-list scene 095 (walking on water, Matthew 14:22–33) precedes scene 096 (multiplication, John 6:1–15), though **Matthew 14:13–21 precedes Matthew 14:22–33** and John 6 has a similar within-Gospel feeding-then-lake transition. This is a **review flag**, not permission to merge two evangelists' narratives or automatically reorder canonical Atlas events; a within-witness evidence-adjudicated movement ordering is required.
+- **Distinct signs**: scene 096 (five thousand) and scene 100 (four thousand) are separate narrated miracles, not versions of one event. Scene 097 is a discourse, not simply a caption for a meal.
+- **Separate women and anointings**: Luke 7:36–50 describes an **unnamed** woman and a Pharisee host. John 12:1–8 names Mary and Bethany. Do not automatically identify the two women or merge the episodes from the location alone. If a traditional interpretation is presented, distinguish it transparently from the literary source and canonical identity.
+- **Parables**: scene 089 (Sower), 108 (Good Samaritan), and 110 (Prodigal Son) cannot be represented as pinpointed historical incidents, even if their settings contain recognizable places.
+- **Restricted precise geography**: Cana and Bethsaida identification disputed; Caesarea Philippi is a district, not a precise grotto; Mount Tabor is a *traditional* Transfiguration location, not named in Matthew 17; Temple scenes have Jerusalem/city context, not a surviving first-century room point; Tabgha is a traditional site for the loaves; the Baptist's execution fortress is not named in Mark 6; Lazarus' tomb identification needs independent attestation.
+- **Multiple places/persons**: John's Cana official's child is ill at Capernaum, distinct from where the official petitions Christ; Mark 5:21–43 interleaves the woman healed on the journey and Jairus' daughter; Mark 5:1 eastern shore readings require named-edition and synoptic variant review. John 10's Good Shepherd discourse does not warrant a sheepfold map coordinate.
+
+Every row preserves the original scene↔Atlas candidate classification; its actor list is an **uncertified source review hint**, never a canonical genealogy or impersonation. All 46 indicate zero historical-coordinate approvals and zero publication acceptances. Literary read-aloud review for P3 M20–M37 remains open.
+
+\`tests/historia-p4-theatre-citation-contract.mjs\` now enforces the **116 unique audited IDs**, both edition-specific warnings, the 095/096 ordering hold, parable geolocation rules and all non-publication controls. Continue with PASSION (115–130) and RISEN (131–137); compare distinct Gospel accounts before attaching cinematics or sacred art. MapLibre laboratory remains four-scene only; 46 desk-audited records are not yet runtime scenes.
