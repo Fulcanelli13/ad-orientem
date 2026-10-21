@@ -53,7 +53,15 @@ function makeOwner(win=globalThis){
     if(c.attestations.length)html+='<section><details class="aoCustEvidenceDetails"><summary>'+E(L("Further source observations","Autres témoignages des sources"))+
       ' · '+c.attestations.length+'</summary><p class="aoCustSmall">'+E(L("Original editorial evidence notes in English; each observation is limited to its cited locality and period.","Notes éditoriales originales en anglais ; chaque témoignage ne concerne que les lieux et périodes attestés."))+'</p><ul>'+
       c.attestations.map(a=>'<li>'+E([a.period_label,a.evidence_note].filter(Boolean).join(" · "))+'</li>').join("")+'</ul></details></section>';
-    if(sources(c).length)html+='<section><h2>'+E(L("Independent sources","Sources indépendantes"))+'</h2><ul>'+sources(c).map(s=>'<li><a href="'+E(s.url)+'" target="_blank" rel="noopener noreferrer">'+E(s.title||s.id)+'</a></li>').join("")+'</ul></section>';
+    if(sources(c).length){
+      const all=sources(c),link=s=>'<li><a href="'+E(s.url)+'" target="_blank" rel="noopener noreferrer">'+E(s.title||s.id)+'</a></li>';
+      html+='<section><h2>'+E(L("Independent sources","Sources indépendantes"))+'</h2><ul>'+
+        all.slice(0,5).map(link).join("")+'</ul>';
+      if(all.length>5)html+='<details class="aoCustEvidenceDetails"><summary>'+
+        E(L("Additional references","Autres références"))+' · '+(all.length-5)+'</summary><ul>'+
+        all.slice(5).map(link).join("")+'</ul></details>';
+      html+='</section>';
+    }
     return html+'</div>';
   }
   function researchArticle(r){
