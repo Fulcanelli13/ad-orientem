@@ -60,7 +60,7 @@ for(const scene of d.scenes){
   }
  }
 }
-assert.equal(secondary.length,5);
+assert.equal(secondary.length,6);
 assert.equal(readFileSync('docs/research/PIUS-X-DOCUMENT-FIRST-CONVERSATION-EDITORIAL-STANDARD-20261021.md','utf8').includes('No interpretive conclusions'),true);
 assert(!d.scenes.some(s=>s.turns.some(t=>t.review.final===true)));
-console.log('PASS SPX source-first: 3 documents, 12 turns, 26 EN/FR aligned segments, 5 attributed secondary authorities, historic audience, explicit source loci, 0 release approvals.');
+console.log('PASS SPX source-first: 3 documents, 12 turns, 26 EN/FR aligned segments, 6 attributed secondary authorities, historic audience, explicit source loci, 0 release approvals.');
