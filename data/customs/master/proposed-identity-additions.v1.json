@@ -7,7 +7,9 @@
     "earlier_provisional_P2": 4,
     "new_distinct_nonapproved": 14,
     "working_identities_after_proposals": 56,
-    "new_published": 0
+    "new_published": 0,
+    "editorially_accepted_for_research_master": 14,
+    "app_published": 0
   },
   "policy": [
     "Namespaced provisional identifiers are stable research keys, not approved canonical publication IDs.",
@@ -18,8 +20,8 @@
   "records": [
     {
       "id": "CUST-ADVT-HERBERGSUCHE",
-      "identity_state": "PROPOSED_NEW_DISTINCT_IDENTITY_NONPUBLISHED",
-      "editorial_release_status": "DRAFT_VERIFICATION_REQUIRED",
+      "identity_state": "EDITORIALLY_ACCEPTED_FOR_RESEARCH_MASTER_NOT_APP",
+      "editorial_release_status": "MASTER_SCOPE_ACCEPTED_APP_PUBLICATION_BLOCKED",
       "custom_scope": "REGIONAL_CATHOLIC_DEVOTION",
       "family": "ADVENT_HOSPITALITY",
       "geography": {
@@ -89,12 +91,15 @@
       ],
       "artwork": null,
       "publication_enabled": false,
-      "identity_approved": false
+      "identity_approved": true,
+      "editorial_class": "ATTESTED_LOCAL_CATHOLIC_DEVOTION",
+      "editorial_home": "Calendar/Customs",
+      "research_approval_date": "2026-10-21"
     },
     {
       "id": "CUST-XMAS-POLISH-HAY",
-      "identity_state": "PROPOSED_NEW_DISTINCT_IDENTITY_NONPUBLISHED",
-      "editorial_release_status": "DRAFT_VERIFICATION_REQUIRED",
+      "identity_state": "EDITORIALLY_ACCEPTED_FOR_RESEARCH_MASTER_NOT_APP",
+      "editorial_release_status": "MASTER_SCOPE_ACCEPTED_APP_PUBLICATION_BLOCKED",
       "custom_scope": "REGIONAL_CATHOLIC_HOUSEHOLD",
       "family": "POLISH_CHRISTMAS_EVE",
       "geography": {
@@ -171,12 +176,15 @@
       ],
       "artwork": null,
       "publication_enabled": false,
-      "identity_approved": false
+      "identity_approved": true,
+      "editorial_class": "ATTESTED_REGIONAL_CHRISTIAN_FOLK",
+      "editorial_home": "Customs/Calendar",
+      "research_approval_date": "2026-10-21"
     },
     {
       "id": "CUST-XMAS-KASHUBIAN-ANIMAL-CARE",
-      "identity_state": "PROPOSED_NEW_DISTINCT_IDENTITY_NONPUBLISHED",
-      "editorial_release_status": "DRAFT_VERIFICATION_REQUIRED",
+      "identity_state": "EDITORIALLY_ACCEPTED_FOR_RESEARCH_MASTER_NOT_APP",
+      "editorial_release_status": "MASTER_SCOPE_ACCEPTED_APP_PUBLICATION_BLOCKED",
       "custom_scope": "HISTORICAL_REGIONAL_FOLK",
       "family": "CHRISTMAS_CREATION_CARE",
       "geography": {
@@ -252,12 +260,15 @@
       ],
       "artwork": null,
       "publication_enabled": false,
-      "identity_approved": false
+      "identity_approved": true,
+      "editorial_class": "ATTESTED_CULTURAL_FEAST_HERITAGE",
+      "editorial_home": "Customs/Historical",
+      "research_approval_date": "2026-10-21"
     },
     {
       "id": "CUST-XMAS-QUEBEC-GUIGNOLEE",
-      "identity_state": "PROPOSED_NEW_DISTINCT_IDENTITY_NONPUBLISHED",
-      "editorial_release_status": "DRAFT_VERIFICATION_REQUIRED",
+      "identity_state": "EDITORIALLY_ACCEPTED_FOR_RESEARCH_MASTER_NOT_APP",
+      "editorial_release_status": "MASTER_SCOPE_ACCEPTED_APP_PUBLICATION_BLOCKED",
       "custom_scope": "REGIONAL_CATHOLIC_CHARITY_ORIGIN",
       "family": "CHRISTMAS_CHARITY",
       "geography": {
@@ -331,12 +342,15 @@
       ],
       "artwork": null,
       "publication_enabled": false,
-      "identity_approved": false
+      "identity_approved": true,
+      "editorial_class": "ATTESTED_LOCAL_CATHOLIC_DEVOTION",
+      "editorial_home": "Customs/Charity",
+      "research_approval_date": "2026-10-21"
     },
     {
       "id": "CUST-XMAS-POLISH-KOLEDNICI",
-      "identity_state": "PROPOSED_NEW_DISTINCT_IDENTITY_NONPUBLISHED",
-      "editorial_release_status": "DRAFT_VERIFICATION_REQUIRED",
+      "identity_state": "EDITORIALLY_ACCEPTED_FOR_RESEARCH_MASTER_NOT_APP",
+      "editorial_release_status": "MASTER_SCOPE_ACCEPTED_APP_PUBLICATION_BLOCKED",
       "custom_scope": "REGIONAL_RELIGIOUS_FOLK",
       "family": "NATIVITY_HOUSE_VISITS",
       "geography": {
@@ -406,12 +420,15 @@
       ],
       "artwork": null,
       "publication_enabled": false,
-      "identity_approved": false
+      "identity_approved": true,
+      "editorial_class": "ATTESTED_REGIONAL_CHRISTIAN_FOLK",
+      "editorial_home": "Customs/Calendar",
+      "research_approval_date": "2026-10-21"
     },
     {
       "id": "CUST-XMAS-HUNGARIAN-BETLEHEMEZES",
-      "identity_state": "PROPOSED_NEW_DISTINCT_IDENTITY_NONPUBLISHED",
-      "editorial_release_status": "DRAFT_VERIFICATION_REQUIRED",
+      "identity_state": "EDITORIALLY_ACCEPTED_FOR_RESEARCH_MASTER_NOT_APP",
+      "editorial_release_status": "MASTER_SCOPE_ACCEPTED_APP_PUBLICATION_BLOCKED",
       "custom_scope": "REGIONAL_RELIGIOUS_FOLK",
       "family": "NATIVITY_HOUSE_VISITS",
       "geography": {
@@ -488,12 +505,15 @@
       ],
       "artwork": null,
       "publication_enabled": false,
-      "identity_approved": false
+      "identity_approved": true,
+      "editorial_class": "ATTESTED_REGIONAL_CHRISTIAN_FOLK",
+      "editorial_home": "Customs/Calendar",
+      "research_approval_date": "2026-10-21"
     },
     {
       "id": "CUST-BARBARA-BRANCHES",
-      "identity_state": "PROPOSED_NEW_DISTINCT_IDENTITY_NONPUBLISHED",
-      "editorial_release_status": "DRAFT_VERIFICATION_REQUIRED",
+      "identity_state": "EDITORIALLY_ACCEPTED_FOR_RESEARCH_MASTER_NOT_APP",
+      "editorial_release_status": "MASTER_SCOPE_ACCEPTED_APP_PUBLICATION_BLOCKED",
       "custom_scope": "REGIONAL_SAINT_HOUSEHOLD",
       "family": "SAINT_FEAST_CUSTOMS",
       "geography": {
@@ -560,12 +580,15 @@
       ],
       "artwork": null,
       "publication_enabled": false,
-      "identity_approved": false
+      "identity_approved": true,
+      "editorial_class": "ATTESTED_LOCAL_CATHOLIC_DEVOTION",
+      "editorial_home": "Customs/Saints",
+      "research_approval_date": "2026-10-21"
     },
     {
       "id": "CUST-XMAS-PROVENCAL-PAIN-CALENDAL",
-      "identity_state": "PROPOSED_NEW_DISTINCT_IDENTITY_NONPUBLISHED",
-      "editorial_release_status": "DRAFT_VERIFICATION_REQUIRED",
+      "identity_state": "EDITORIALLY_ACCEPTED_FOR_RESEARCH_MASTER_NOT_APP",
+      "editorial_release_status": "MASTER_SCOPE_ACCEPTED_APP_PUBLICATION_BLOCKED",
       "custom_scope": "REGIONAL_FRENCH_CATHOLIC_HOUSEHOLD",
       "family": "PROVENCAL_CHRISTMAS_TABLE",
       "geography": {
@@ -642,12 +665,15 @@
       ],
       "artwork": null,
       "publication_enabled": false,
-      "identity_approved": false
+      "identity_approved": true,
+      "editorial_class": "ATTESTED_REGIONAL_CHRISTIAN_FOLK",
+      "editorial_home": "Customs/Calendar",
+      "research_approval_date": "2026-10-21"
     },
     {
       "id": "CUST-EPIPHANY-SPANISH-MAGI-GIFTS",
-      "identity_state": "PROPOSED_NEW_DISTINCT_IDENTITY_NONPUBLISHED",
-      "editorial_release_status": "DRAFT_VERIFICATION_REQUIRED",
+      "identity_state": "EDITORIALLY_ACCEPTED_FOR_RESEARCH_MASTER_NOT_APP",
+      "editorial_release_status": "MASTER_SCOPE_ACCEPTED_APP_PUBLICATION_BLOCKED",
       "custom_scope": "REGIONAL_CULTURAL_CHRISTIAN_HOUSEHOLD",
       "family": "EPIPHANY_GIFTS",
       "geography": {
@@ -724,12 +750,15 @@
       ],
       "artwork": null,
       "publication_enabled": false,
-      "identity_approved": false
+      "identity_approved": true,
+      "editorial_class": "ATTESTED_CULTURAL_FEAST_HERITAGE",
+      "editorial_home": "Customs/Historical",
+      "research_approval_date": "2026-10-21"
     },
     {
       "id": "CUST-EASTER-MALTESE-IRXOXT",
-      "identity_state": "PROPOSED_NEW_DISTINCT_IDENTITY_NONPUBLISHED",
-      "editorial_release_status": "DRAFT_VERIFICATION_REQUIRED",
+      "identity_state": "EDITORIALLY_ACCEPTED_FOR_RESEARCH_MASTER_NOT_APP",
+      "editorial_release_status": "MASTER_SCOPE_ACCEPTED_APP_PUBLICATION_BLOCKED",
       "custom_scope": "LOCAL_CATHOLIC_PROCESSION",
       "family": "REGIONAL_EASTER_PUBLIC_DEVOTION",
       "geography": {
@@ -805,12 +834,15 @@
       ],
       "artwork": null,
       "publication_enabled": false,
-      "identity_approved": false
+      "identity_approved": true,
+      "editorial_class": "ATTESTED_LOCAL_CATHOLIC_DEVOTION",
+      "editorial_home": "Customs/Explore",
+      "research_approval_date": "2026-10-21"
     },
     {
       "id": "CUST-PENTECOST-POLISH-GREENERY",
-      "identity_state": "PROPOSED_NEW_DISTINCT_IDENTITY_NONPUBLISHED",
-      "editorial_release_status": "DRAFT_VERIFICATION_REQUIRED",
+      "identity_state": "EDITORIALLY_ACCEPTED_FOR_RESEARCH_MASTER_NOT_APP",
+      "editorial_release_status": "MASTER_SCOPE_ACCEPTED_APP_PUBLICATION_BLOCKED",
       "custom_scope": "REGIONAL_CATHOLIC_HOUSEHOLD",
       "family": "PENTECOST_HOME_CUSTOMS",
       "geography": {
@@ -886,12 +918,15 @@
       ],
       "artwork": null,
       "publication_enabled": false,
-      "identity_approved": false
+      "identity_approved": true,
+      "editorial_class": "ATTESTED_REGIONAL_CHRISTIAN_FOLK",
+      "editorial_home": "Customs/Calendar",
+      "research_approval_date": "2026-10-21"
     },
     {
       "id": "CUST-ASSUMPTION-TIVOLI-INCHINATA",
-      "identity_state": "PROPOSED_NEW_DISTINCT_IDENTITY_NONPUBLISHED",
-      "editorial_release_status": "DRAFT_VERIFICATION_REQUIRED",
+      "identity_state": "EDITORIALLY_ACCEPTED_FOR_RESEARCH_MASTER_NOT_APP",
+      "editorial_release_status": "MASTER_SCOPE_ACCEPTED_APP_PUBLICATION_BLOCKED",
       "custom_scope": "LOCAL_CATHOLIC_PROCESSION",
       "family": "ITALIAN_ASSUMPTION_LOCAL",
       "geography": {
@@ -967,12 +1002,15 @@
       ],
       "artwork": null,
       "publication_enabled": false,
-      "identity_approved": false
+      "identity_approved": true,
+      "editorial_class": "ATTESTED_LOCAL_CATHOLIC_DEVOTION",
+      "editorial_home": "Customs/Explore",
+      "research_approval_date": "2026-10-21"
     },
     {
       "id": "CUST-ASSUMPTION-SASSARI-CANDELIERI",
-      "identity_state": "PROPOSED_NEW_DISTINCT_IDENTITY_NONPUBLISHED",
-      "editorial_release_status": "DRAFT_VERIFICATION_REQUIRED",
+      "identity_state": "EDITORIALLY_ACCEPTED_FOR_RESEARCH_MASTER_NOT_APP",
+      "editorial_release_status": "MASTER_SCOPE_ACCEPTED_APP_PUBLICATION_BLOCKED",
       "custom_scope": "LOCAL_CATHOLIC_PROCESSION",
       "family": "ITALIAN_ASSUMPTION_LOCAL",
       "geography": {
@@ -1049,12 +1087,15 @@
       ],
       "artwork": null,
       "publication_enabled": false,
-      "identity_approved": false
+      "identity_approved": true,
+      "editorial_class": "ATTESTED_LOCAL_CATHOLIC_DEVOTION",
+      "editorial_home": "Customs/Explore",
+      "research_approval_date": "2026-10-21"
     },
     {
       "id": "CUST-MARIAN-BAVARIAN-FRAUENDREISSIGER",
-      "identity_state": "PROPOSED_NEW_DISTINCT_IDENTITY_NONPUBLISHED",
-      "editorial_release_status": "DRAFT_VERIFICATION_REQUIRED",
+      "identity_state": "EDITORIALLY_ACCEPTED_FOR_RESEARCH_MASTER_NOT_APP",
+      "editorial_release_status": "MASTER_SCOPE_ACCEPTED_APP_PUBLICATION_BLOCKED",
       "custom_scope": "LOCAL_CATHOLIC_SHRINE_DEVOTION",
       "family": "ASSUMPTION_MARIAN_SHRINE",
       "geography": {
@@ -1132,7 +1173,10 @@
       ],
       "artwork": null,
       "publication_enabled": false,
-      "identity_approved": false
+      "identity_approved": true,
+      "editorial_class": "ATTESTED_LOCAL_CATHOLIC_DEVOTION",
+      "editorial_home": "Customs/Shrines",
+      "research_approval_date": "2026-10-21"
     }
   ]
 }
