@@ -17,6 +17,7 @@ const identityRecs=load("witnessed-identity-recommendations.v1.json");
 const staged14=load("proposed-identity-additions.v1.json");
 const working56=load("working-master.v1.json");
 const routed23=load("ritual-and-source-ownership-23.v1.json");
+const readiness=load("master-readiness-audit.v1.json");
 const candidateBoard=load("candidate-source-decision-board.v1.json");
 
 
@@ -193,6 +194,24 @@ assert.equal(routed23.summary.canonical_new_ids,0);
 assert.ok(routed23.records.every(x=>x.research_only===true&&x.publishable_rite_text===false&&
   x.ministerial_action_inferred===false&&x.local_event_scheduled===false&&x.canonical_id_created===false));
 assert.ok(routed23.records.every(x=>x.independent_refs.every(s=>/^https:\/\//.test(s.url)&&s.constraint)));
+assert.equal(readiness.schema,"AO_CUSTOMS_MASTER_EDITORIAL_READINESS_V1");
+assert.equal(readiness.snapshot.working_identities,56);
+assert.equal(readiness.snapshot.bilingual_complete_working_profiles,56);
+assert.equal(readiness.snapshot.new_source_bounded_proposed_ids,14);
+assert.equal(readiness.snapshot.historic_weiser_observations,568);
+assert.equal(readiness.snapshot.source_bounded_observations,25);
+assert.equal(readiness.snapshot.exact_or_partial_hold_observations,17);
+assert.equal(readiness.snapshot.additional_ritual_and_source_cases,23);
+assert.equal(readiness.snapshot.regional_related_variants_preliminarily_routed,39);
+assert.equal(readiness.snapshot.proposed_links_to_existing_id_first_pass,41);
+assert.equal(readiness.snapshot.new_publications_this_branch,0);
+assert.equal(readiness.release_decision.approved_final_comprehensive_master,false);
+assert.equal(readiness.release_decision.approved_ui_or_module_build,false);
+assert.equal(readiness.completeness.working_bilingual_core_fields,"CLOSED_56_OF_56");
+assert.ok(staged14.records.every(x=>x.calendar.display_hint_fr&&
+  x.provenance.source_file?.startsWith("independent-sources-batch")));
+assert.ok(working56.records.filter(x=>x.master_version==="V1_PROPOSED_RESEARCH_ONLY")
+  .every(x=>x.calendar.hint_fr&&x.calendar_audit.display_hint_fr));
 
 assert.ok(identityRecs.records.every(x=>x.canonical_id===null&&x.distinct_canonical_decision==="PENDING_HUMAN_APPROVAL"&&!x.published));
 
