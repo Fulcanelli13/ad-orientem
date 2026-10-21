@@ -78,19 +78,26 @@ export function retrieveCatenaMessages(rows,query,{limit=3,excludeIds=null}={}){
    for(const phrase of phrases)if(normalizedSource.includes(" "+phrase.value+" "))
     phraseScore+=phrase.points;
    score+=Math.min(30,phraseScore);
-   return {r,i,matched,score};
- }).filter(x=>terms.length===0||x.matched>=Math.min(2,terms.length));
+   return {r,i,matched,score,phraseScore};
+ }).filter(x=>terms.length===0||x.matched>=Math.min(2,terms.length)||
+   (x.matched>=1&&x.phraseScore>=6));
  scored.sort((a,b)=>{
    const aSeen=excludeIds?.has?.(a.r.id)?1:0;
    const bSeen=excludeIds?.has?.(b.r.id)?1:0;
    return aSeen-bSeen||b.score-a.score||b.matched-a.matched||a.i-b.i;
  });
  const capped=Math.max(1,Math.min(5,limit)),picked=[],authors=new Set();
- // Relevant voices first, with an opportunity for different Fathers to
- // contribute before repeating one voice.
+ // Keep the two strongest original quotations before diversifying voices;
+ // otherwise an author-based rotation can bury the only precise answer.
+ for(const x of scored.slice(0,Math.min(2,capped))){
+  picked.push(x.r);authors.add(x.r.father);
+ }
+ // After the strongest evidence, give distinct authors a chance.
  for(const x of scored){
    if(picked.length>=capped)break;
-   if(!authors.has(x.r.father)){picked.push(x.r);authors.add(x.r.father)}
+   if(!picked.includes(x.r)&&!authors.has(x.r.father)){
+    picked.push(x.r);authors.add(x.r.father)
+   }
  }
  for(const x of scored){
    if(picked.length>=capped)break;
