@@ -2,7 +2,7 @@
 
 **Editorial review draft, not approved historical speech and not published in the avatar.**
 
-This is a readable companion to [the 17-chapter conversation database](../data/learn/research/pius-x-first17-branching-dialogue-graph-20261021.v1.json). It extends **17 existing primary openings** into **51 question/answer nodes**, of which **34 follow-up pairs (68 English/French answer drafts)** are newly written. Opening answers are reused from the existing content owner, not independently regenerated.
+This is a readable companion to [the 17-chapter conversation database](../../data/learn/research/pius-x-first17-branching-dialogue-graph-20261021.v1.json). It extends **17 existing primary openings** into **51 question/answer nodes**, of which **34 follow-up pairs (68 English/French answer drafts)** are newly written. Opening answers are reused from the existing content owner, not independently regenerated.
 
 **Presentation:** nine historical/biographical chapters are narrator/source-panel material, not invented papal memoirs; eight source-backed papal chapters are clearly identified as *educational reconstructions*, not verbatim recorded speech. The original-language source URL and section are accessible throughout. Two follow-up choices are available after each opening; automatic linear progression is not required. Chanoine handoff is opt-in only.
 
