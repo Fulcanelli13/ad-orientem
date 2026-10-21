@@ -1564,11 +1564,11 @@
         },
         {
           "kind": "SCRIPTURE",
-          "id": "H51-03",
-          "sourceV18": "Mark 1:14–15",
-          "scene": "Christ begins proclaiming the Kingdom",
+          "id": "H52-01",
+          "sourceV18": "John 1:35–51",
+          "scene": "The first disciples recognise and follow Christ",
           "refs": [
-            "Mark 1:14–15"
+            "John 1:35–51"
           ],
           "edition": "cpdv-2009",
           "policy": "ORIGINAL_V18_SCOPE_RETAINED_PENDING_INDIVIDUAL_LITERARY_CHECK",
@@ -1577,11 +1577,11 @@
         },
         {
           "kind": "SCRIPTURE",
-          "id": "H52-01",
-          "sourceV18": "John 1:35–51",
-          "scene": "The first disciples recognise and follow Christ",
+          "id": "H51-03",
+          "sourceV18": "Mark 1:14–15",
+          "scene": "Christ begins proclaiming the Kingdom",
           "refs": [
-            "John 1:35–51"
+            "Mark 1:14–15"
           ],
           "edition": "cpdv-2009",
           "policy": "ORIGINAL_V18_SCOPE_RETAINED_PENDING_INDIVIDUAL_LITERARY_CHECK",
@@ -1595,9 +1595,9 @@
     },
     {
       "id": "HS-M21",
-      "title": "The Kingdom in Christ's teaching and signs",
+      "title": "The Kingdom in Christ's teaching",
       "sequence": 21,
-      "purpose": "The Beatitudes, prayer and forgiveness reveal the Kingdom; use one representative healing, not serial miracle anthologies",
+      "purpose": "The Beatitudes, the Lord's Prayer and the call to forgiveness reveal the Kingdom; a representative healing remains clearly labelled contextual rather than selected Scripture.",
       "originalResearchChapterIds": [
         "H53",
         "H54",
@@ -1667,12 +1667,23 @@
           "scene": "The Bread of Life discourse",
           "refs": [
             "John 6:26–35",
+            "John 6:41–46",
             "John 6:47–59"
           ],
           "edition": "cpdv-2009",
           "policy": "PROPOSED_CURATED_TRIM",
           "hasPartialVerseHold": false,
-          "publicationApproved": false
+          "publicationApproved": false,
+          "researchRevision": {
+            "status": "SOURCE_RESTORED_RESEARCH_PROPOSAL_NOT_APPROVED",
+            "priorCuratedRefs": [
+              "John 6:26–35",
+              "John 6:47–59"
+            ],
+            "reasonId": "HS-M22-CONTINUITY-20261021",
+            "printingAndOralSignOffPending": true,
+            "retainsOriginalUnitId": true
+          }
         }
       ],
       "requiredMeaningOnly": "Only Scripture beats are presented as biblical text; context and source candidates are visibly editorial.",
@@ -1737,13 +1748,27 @@
             "John 11:1–7",
             "John 11:14–17",
             "John 11:20–27",
+            "John 11:28–31",
             "John 11:32–35",
             "John 11:38–44"
           ],
           "edition": "cpdv-2009",
           "policy": "PROPOSED_CURATED_TRIM",
           "hasPartialVerseHold": false,
-          "publicationApproved": false
+          "publicationApproved": false,
+          "researchRevision": {
+            "status": "SOURCE_RESTORED_RESEARCH_PROPOSAL_NOT_APPROVED",
+            "priorCuratedRefs": [
+              "John 11:1–7",
+              "John 11:14–17",
+              "John 11:20–27",
+              "John 11:32–35",
+              "John 11:38–44"
+            ],
+            "reasonId": "HS-M24-CONTINUITY-20261021",
+            "printingAndOralSignOffPending": true,
+            "retainsOriginalUnitId": true
+          }
         },
         {
           "kind": "SOURCE_BRIDGE_CANDIDATE",
@@ -1951,13 +1976,26 @@
           "scene": "The empty tomb and encounter with Magdalene",
           "refs": [
             "John 20:1–3",
+            "John 20:4–5",
             "John 20:6–9",
+            "John 20:10",
             "John 20:11–18"
           ],
           "edition": "cpdv-2009",
           "policy": "PROPOSED_CURATED_TRIM",
           "hasPartialVerseHold": false,
-          "publicationApproved": false
+          "publicationApproved": false,
+          "researchRevision": {
+            "status": "SOURCE_RESTORED_RESEARCH_PROPOSAL_NOT_APPROVED",
+            "priorCuratedRefs": [
+              "John 20:1–3",
+              "John 20:6–9",
+              "John 20:11–18"
+            ],
+            "reasonId": "HS-M29-CONTINUITY-20261021",
+            "printingAndOralSignOffPending": true,
+            "retainsOriginalUnitId": true
+          }
         },
         {
           "kind": "SCRIPTURE",
@@ -2040,12 +2078,26 @@
             "Acts 2:1–8",
             "Acts 2:11–18",
             "Acts 2:21",
+            "Acts 2:22–24",
+            "Acts 2:32–36",
             "Acts 2:37–41"
           ],
           "edition": "cpdv-2009",
           "policy": "PROPOSED_CURATED_TRIM",
           "hasPartialVerseHold": false,
-          "publicationApproved": false
+          "publicationApproved": false,
+          "researchRevision": {
+            "status": "SOURCE_RESTORED_RESEARCH_PROPOSAL_NOT_APPROVED",
+            "priorCuratedRefs": [
+              "Acts 2:1–8",
+              "Acts 2:11–18",
+              "Acts 2:21",
+              "Acts 2:37–41"
+            ],
+            "reasonId": "HS-M31-CONTINUITY-20261021",
+            "printingAndOralSignOffPending": true,
+            "retainsOriginalUnitId": true
+          }
         },
         {
           "kind": "SCRIPTURE",
@@ -2381,5 +2433,29 @@
       "HS-CF-04"
     ],
     "preservedHistory": true
+  },
+  "p4LateMovementDraft": {
+    "status": "SOURCE_BACKED_EDITS_APPLIED_ON_P3_DRAFT_NOT_APPROVED",
+    "sourceReviewBranch": "research/historia-p4-continuity-theatre-20261021",
+    "sourceReviewFiles": [
+      "data/research/historia-p4-m20-m24-literary-seam-adjudication.v1.json",
+      "data/research/historia-p4-m25-m37-literary-seam-adjudication.v1.json",
+      "data/research/historia-p4-late-movement-bridge-verse-budget.v1.json"
+    ],
+    "editedMovementIds": [
+      "HS-M20",
+      "HS-M21",
+      "HS-M22",
+      "HS-M24",
+      "HS-M29",
+      "HS-M31"
+    ],
+    "originalEssentialUnitIdsPreserved": true,
+    "essentialUnitsStill93": true,
+    "originalContextUnitIdsPreserved": true,
+    "sourceBridgeCandidateDecisionsStillHeld": true,
+    "finishedCatholicPrintCollation": false,
+    "finishedSequentialOralReading": false,
+    "publicationApproved": false
   }
 }
