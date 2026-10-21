@@ -52,6 +52,24 @@ try{
  assert.equal(await page.locator("#episode-index > li > button").count(),7);
  await page.locator("#collections button").filter({hasText:"Miracles of Our Lord"}).click();
  assert.equal(await page.locator("#episode-index > li > button").count(),6);
+ await page.screenshot({path:resolve(output,"before-storm-tap-390.png"),animations:"disabled"});
+ const hitGeometry=await page.evaluate(()=>{
+  const btn=[...document.querySelectorAll("#episode-index > li > button")]
+   .find(x=>x.textContent.includes("Calming of the storm"));
+  const list=document.querySelector("#episode-index");
+  const parent=document.querySelector(".hist-index");
+  const header=document.querySelector(".hist-header");
+  const rect=el=>el?.getBoundingClientRect().toJSON();
+  const b=btn.getBoundingClientRect();
+  const hit=document.elementFromPoint(b.x+b.width/2,b.y+b.height/2);
+  return {target:rect(btn),list:rect(list),index:rect(parent),header:rect(header),
+   windowScroll:{x:scrollX,y:scrollY,innerWidth,innerHeight},
+   listScroll:{left:list.scrollLeft,width:list.scrollWidth,clientWidth:list.clientWidth},
+   hitTarget:{tag:hit?.tagName,text:hit?.textContent?.slice(0,90)},
+   computed:{listDisplay:getComputedStyle(list).display,indexDisplay:getComputedStyle(parent).display,
+    rootScrollBehavior:getComputedStyle(document.documentElement).scrollBehavior}};
+ });
+ console.log("HISTORIA_CLICK_GEOMETRY",JSON.stringify(hitGeometry));
  await page.locator("#episode-index > li > button").filter({hasText:"Calming of the storm"}).click();
  await page.locator("#episode-reading .verse").first().waitFor({timeout:30000});
  assert.equal(await page.locator("#episode-reading .verse").count(),7);
