@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import {parseOfficialMapJson,assertOfficialMapPage,eligibleMapPlaces,
-  matchOfficialMapPlaces} from "../tools/directory/acquire-sspx-official-map-geo.mjs";
+  matchOfficialMapPlaces,stageAllOfficialMapPinEvidence} from "../tools/directory/acquire-sspx-official-map-geo.mjs";
 import {isMapPublishableGeo} from "../src/find/geo-provenance.js";
 const raw={total:942,limit:1000,offset:0,items:[
   {crmId:"OPE-001",slug:"chapelle-st-pie-x",url:"/en/places/chapelle-st-pie-x",
@@ -45,4 +45,25 @@ const two={provider:"SSPX_OTHER",filename:"other.v1.json",records:[
 match=matchOfficialMapPlaces([one,two],raw.items);
 assert.equal(match.matched.length,0);
 assert.ok(match.holds.some(h=>h.reason==="OFFICIAL_CRM_MATCHES_MULTIPLE_RESEARCH_VENUES"));
+
+const staged=stageAllOfficialMapPinEvidence([
+  {...raw.items[0],alsoKinds:[]},
+  {...raw.items[1],alsoKinds:[]},
+  {...raw.items[2],alsoKinds:[]},
+  {...raw.items[3],alsoKinds:[],weekdayMass:true},
+  {...raw.items[4],alsoKinds:[]},
+  {crmId:"OPE-006",slug:"priory-with-chapel",url:"/en/places/priory-with-chapel",
+   name:"Shared chapel and priory",kind:"priory",alsoKinds:["chapel"],
+   relationship:"affiliated",community:"Independent Community",city:"Nice",
+   countryCode:"FR",lat:43.8,lng:7.25,sundayMass:true}
+]);
+assert.equal(staged.features.length,5,"Five coordinate-bearing CRM identities retained");
+assert.equal(staged.holds.length,1,"Null coordinates held, not coerced to (0,0)");
+assert.equal(staged.features.find(x=>x.properties.crm_id==="OPE-003").properties.relationship,"friend");
+assert.notEqual(staged.features.find(x=>x.properties.crm_id==="OPE-003").properties.affiliation_label,"SSPX");
+assert.equal(staged.features.find(x=>x.properties.crm_id==="OPE-002").properties.eligibility,"HOLD_NON_MASS_FACILITY");
+assert.equal(staged.features.find(x=>x.properties.crm_id==="OPE-006").properties.eligibility,"PROVISIONAL_SITE_CANDIDATE");
+assert.equal(staged.features.find(x=>x.properties.crm_id==="OPE-001").properties.source_url,
+  "https://map.fsspx.org/en/places/chapelle-st-pie-x");
+
 console.log("SSPX official CRM geolocation matcher: PASS — name/country/site gate, duplicate CRM hold");

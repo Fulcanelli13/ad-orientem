@@ -1,0 +1,33 @@
+name: Directory R49 Unresolved Una Cum Source Matches
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/directory-r49-lmd-crossmatch.yml"
+      - "tools/directory/crossmatch-lmd-una-cum-r49.mjs"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  acquire:
+    name: Crossmatch LMD countries shard ${{ matrix.shard }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Crossmatch site-level map links against 206 unresolved sources
+        run: node tools/directory/crossmatch-lmd-una-cum-r49.mjs --shard=${{ matrix.shard }}
+      - name: Preserve source geocode evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: r49-lmd-source-crossmatch-${{ matrix.shard }}
+          path: ${{ runner.temp }}/r49-lmd-source-crossmatch-${{ matrix.shard }}/
+          retention-days: 30
+          if-no-files-found: warn

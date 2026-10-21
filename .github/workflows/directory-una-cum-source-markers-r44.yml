@@ -1,0 +1,29 @@
+name: Una Cum Source Venue Marker Recovery R44
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-venue-coordinates:
+    name: Recover source venue markers shard ${{ matrix.shard }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 17
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Recover linked venue map coordinates without city-centre pins
+        run: node tools/directory/recover-una-cum-public-venue-markers-r44.mjs --shard=${{ matrix.shard }} --shards=3
+      - name: Upload original source-coordinate evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: r44-source-marker-shard-${{ matrix.shard }}
+          path: ${{ runner.temp }}/r44-source-venue-recovery-shard-${{ matrix.shard }}/
+          retention-days: 30
+          if-no-files-found: warn
