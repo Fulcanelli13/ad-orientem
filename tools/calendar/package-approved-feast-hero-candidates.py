@@ -135,7 +135,13 @@ def main():
         is_met = item["metadataAccess"] == "MET_API_VERIFIED_PD_FLAG"
         row = {
             "date": item["date"], "artist": item["artist"], "title": item["title"],
-            "occasion": next(x["date"] for x in editorial if x["date"] == item["date"]),
+            "occasion": {
+                "2026-03-29":"Palm Sunday","2026-04-02":"Holy Thursday",
+                "2026-05-23":"Pentecost Vigil","2026-05-24":"Pentecost",
+                "2026-05-27":"Pentecost Ember Wednesday","2026-06-12":"Sacred Heart",
+                "2026-10-25":"Christ the King","2026-11-01":"All Saints",
+                "2026-11-02":"All Souls","2026-11-29":"First Sunday of Advent"
+            }[item["date"]],
             "iconographyRelationship": user_item["notes"],
             "editorialSelectionPreserved": True,
             "sourcePhotoPage": item["photoPage"],
