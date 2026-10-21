@@ -33,6 +33,17 @@ const alternates=[
  {doc:'ESUPREMI',en:'Why should charity avoid harsh reproach?',fr:'Pourquoi la charité évite-t-elle les reproches sévères ?',source:'SPX-PILOT-14',plan:'ESUPREMI_SEVERE_REPROOF',claims:['E03']},
  {doc:'HAERENT',en:'Can habit weaken meditation for priests?',fr:'L’habitude affaiblit-elle la méditation d’un curé ?',source:'SPX-PILOT-09',plan:'HAERENT_HABIT_FERVOUR',claims:['H19','H18']}
 ];
+const contextualFollowups=[
+ {source:'SPX-PILOT-13',topic:'pius.historical_spx_pilot_13',
+  en:'And how did you compare the homily?',fr:'Et pourquoi cette différence pour l’homélie ?',
+  plan:'ACERBO_HOMILY_CATECHESIS',claims:['A05','A06']},
+ {source:'SPX-PILOT-14',topic:'pius.historical_spx_pilot_14',
+  en:'And what of reproof?',fr:'Et les reproches ?',
+  plan:'ESUPREMI_SEVERE_REPROOF',claims:['E03']},
+ {source:'SPX-PILOT-09',topic:'pius.historical_spx_pilot_09',
+  en:'And can habit weaken meditation?',fr:'Et si l’habitude remplaçait la méditation ?',
+  plan:'HAERENT_HABIT_FERVOUR',claims:['H19','H18']}
+];
 const negative=[
  ['en','May I pray privately during Mass while the priest celebrates?'],
  ['en','Was my last sin mortal?'],
@@ -44,7 +55,7 @@ const negative=[
 const rows=[],report={schema:'AO_SPX_DOCUMENT_FIRST_SOURCE_BOUND_12_BILINGUAL_CANDIDATES_V1',
  status:'EXECUTED_EDITORIAL_REVIEW_ONLY_NOT_PUBLICATION_APPROVED',
  owner:'PR #1458',routerOwner:'PR #1443',pinnedRouterCommit:registry.expectedRouterCommit,
- methodology:'12 EN/FR questions (six source intents in each language) using exact authoritative source navigation, both routing engines, plus six negative challenges. No generated papal speech and no independently fresh user sample.',
+ methodology:'18 EN/FR questions (six independent intents and three explicitly confirmed elliptical followups in each language) using exact source navigation, both routing engines, plus six negative challenges. No generated papal speech and no independently fresh user sample.',
  observations:[]};
 for(const [engineName,router] of Object.entries(engines)){
  const selector=createPiusDocumentFirstReviewSelector({router,benchmark,registry,pointers});
@@ -80,6 +91,33 @@ for(const [engineName,router] of Object.entries(engines)){
     'English/French must use the same canonical source segments');
   assert.deepEqual(twins[0].claimIds,twins[1].claimIds);
  }
+ for(const entry of contextualFollowups){
+  const pair=[];
+  for(const language of ['en','fr']){
+   const q=entry[language],context={activeTopicId:entry.topic,confirmedActiveTopicId:entry.topic};
+   const result=selector.evaluate(q,{language,confirmed:true,context});
+   assert.equal(result.kind,'editorial_candidate',engineName+': follow-up '+q+': '+JSON.stringify(result));
+   assert.equal(result.sourceRef,entry.source);
+   assert.equal(result.selectionPlan,entry.plan);
+   assert.deepEqual(result.claimIds,entry.claims);
+   assert.equal(result.contextualSelection,true);
+   assert.equal(result.answerText,null);
+   assert.equal(result.approvedReply,false);
+   pair.push(result);
+   rows.push({engine:engineName,language,question:q,
+    sourceRef:result.sourceRef,sourceLocator:result.sourceLocator,
+    selectionPlan:result.selectionPlan,claimIds:result.claimIds,
+    segmentIds:result.segments.map(s=>s.segmentId),
+    adaptation:result.displayAdaptation,contextualFollowup:true,approvedReply:false});
+   // Without an explicitly confirmed prior topic, the same elliptical phrase
+   // is not allowed to bootstrap source ownership.
+   const unconfirmed=selector.evaluate(q,{language,confirmed:true,
+    context:{activeTopicId:entry.topic}});
+   assert.notEqual(unconfirmed.kind,'editorial_candidate',
+     'unconfirmed previous guess falsely licensed a documentary followup: '+q);
+  }
+  assert.deepEqual(pair[0].segments.map(s=>s.segmentId),pair[1].segments.map(s=>s.segmentId));
+ }
  for(const [lang,q] of negative){
   const r=selector.evaluate(q,{language:lang,confirmed:true});
   assert.notEqual(r.kind,'editorial_candidate','Negative question falsely selected papal speech: '+q);
@@ -92,7 +130,7 @@ for(const [engineName,router] of Object.entries(engines)){
  });
  assert.equal(noPointer.evaluate(original.en,{language:'en',confirmed:true}).kind,'no_review_answer');
 }
-const expected=Object.keys(engines).length*(primary.length+alternates.length)*2;
+const expected=Object.keys(engines).length*(primary.length+alternates.length+contextualFollowups.length)*2;
 assert.equal(rows.length,expected);
 const registryClone=structuredClone(registry);
 registryClone.entries[0].selectionPlans[0].claimIds=['A01'];
@@ -112,7 +150,7 @@ assert.equal(forgedSelector.evaluate('Charity towards opponents',{confirmed:true
 report.observations=rows;
 report.counts={correctSourceBoundCandidates:rows.length,incorrectSourceOrClaim:0,
  refusedNegativePrompts:negative.length*Object.keys(engines).length,
- preservedLanguagePairings:(primary.length+alternates.length)*Object.keys(engines).length,
+ preservedLanguagePairings:(primary.length+alternates.length+contextualFollowups.length)*Object.keys(engines).length,
  publicationApprovals:0};
 mkdirSync('research-out',{recursive:true});
 writeFileSync('research-out/pius-x-document-first-answer-selection.v1.json',JSON.stringify(report,null,2)+'\n');
