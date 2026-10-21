@@ -39,6 +39,30 @@ Opening the HTML as file:// is not supported because the source registry and Scr
 
 Source coverage was independently inspected against repository witnesses: 19/19 Challoner readings (36 chapter views), 18/18 CPDV readings (31 views), and 18/18 Crampon readings (31 views); Esther is excluded from the latter two by policy. This is a data coverage check only. The Node/DOM/browser interactions have not been executed by this research operation; a runtime smoke test remains required before review acceptance.
 
+
+## In-app Scripture integration (guarded research URL)
+
+The three collections are now optionally available **inside the existing canonical Scripture library**, not in an additional production Bible reader. On a checkout of this branch served over HTTP, open:
+
+    http://localhost:8000/index.html?ao_historia_collections=1
+
+Open the app's existing Scripture reader from Home. The **Biblical collections · research** disclosure lists all 19 entries; selecting an entry opens its exact verse coordinates in the same reader and uses its existing text, source-edition picker, gap warnings, and commentary tools. Tobias, Judith, and Esther have bounded previous/next *episode chapter* navigation above the normal reader.
+
+A research script can open a specific entry, when the canonical shell is on Home:
+
+    await window.AO_SCRIPTURE_APP_V1.openThematicEpisode('hist-omitted-159')
+
+This entrypoint is intentionally unavailable without the URL flag, and keeps all production navigation labels untouched. A selected collection episode is **not** assigned a new Atlas canonical event ID: that evidence still requires individual episode-identity adjudication. Manual change of the Bible book, chapter, bookmarks or search drops the supplementary-episode selection. This is not a published replacement for Historia Salutis.
+
+Safety: Esther uses Douay–Rheims/Challoner-only source coordinates, and the research overlay prevents changing it to an unverified edition/verse map. Other editions remain visibly labelled as uncollated source witnesses. Standard in-app source gaps such as Crampon Mark 4:41 are already disclosed by the Scripture reader.
+
+Run these tests from the repository root:
+
+    node tests/historia-thematic-collections.mjs
+    node tests/historia-thematic-inapp-bridge.mjs
+
+The implementation and new regression scripts have been checked for syntax and repository source-coordinates here, but a real Node + browser smoke-test has **not** run in this session. That remains the merge/release gate.
+
 ## Main manuscript protection
 
 - The 54-chapter research proposal at data/research/historia-salutis-p3-provisional-reading-chapter-consolidation-20261021.v2.json is unchanged.
