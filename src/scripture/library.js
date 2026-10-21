@@ -282,6 +282,20 @@ export function mountScriptureLibrary(root,{
         :"CPDV chapter 14 has unrelated material; only Challoner is enabled for this prayer.",
         "aoScriptureNotice"));
      }
+     if(thematicEpisode.editorialWindowReviewedNotCertified&&
+        (thematicEpisode.sourceReviewDisposition!=="RETAIN_REFERENCED_PASSAGE"||
+         thematicEpisode.sourceReviewWarnings?.length)){
+      const disclosure=element("p",null,"aoScriptureNotice");
+      disclosure.dataset.historiaBoundaryReview="";
+      disclosure.textContent=lang==="fr"?
+        "Contrôle éditorial de la référence (non homologué) : "+(thematicEpisode.segmentationNote||""):
+        "Scripture-range editorial review (not publication certification): "+(thematicEpisode.segmentationNote||"");
+      active.append(disclosure);
+      if(thematicEpisode.originalInventoryReference!==thematicEpisode.reference){
+       active.append(element("p",(lang==="fr"?"Référence originale de l'inventaire : ":"Original omission-inventory range: ")+
+        thematicEpisode.originalInventoryReference,"aoScriptureNotice"));
+      }
+     }
      if(linked?.atlasIdentity){
       const a=linked.atlasIdentity;
       const exact=a.relation!=="PASSAGE_CONTAINED_IN_COMPOSITE_TEACHING_ATLAS_RECORD";
