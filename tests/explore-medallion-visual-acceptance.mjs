@@ -198,6 +198,12 @@ try{
    // On phones the result rail is intentionally hidden: selecting the facet
    // focuses its first sourced record and exposes the canonical custom CTA.
    await graph.locator("[data-network-open-custom]").first().waitFor({state:"visible"});
+   const customSearch=graph.locator("input[data-network-search]");
+   await customSearch.fill("Ex-votos");
+   await page.waitForFunction(()=>document.querySelector(
+     "#ao-find-modular-root .aoNetworkCurrent h3")?.textContent==="Ex-votos",null,{timeout:8000});
+   await customSearch.fill("");
+   await graph.locator("[data-network-open-custom]").first().waitFor({state:"visible"});
    assert.ok(await graph.locator("a[href^='https://']").count()>0);
    await page.screenshot({path:resolve(out,"explore-"+width+"-network-custom.png"),fullPage:false});
    await graph.locator("select[data-network-kind]").selectOption("person");
