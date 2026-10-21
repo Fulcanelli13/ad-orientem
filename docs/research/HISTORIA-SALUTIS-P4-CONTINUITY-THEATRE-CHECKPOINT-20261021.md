@@ -214,3 +214,25 @@ A complete 46-row source desk audit has been committed as \`data/research/histor
 Every row preserves the original scene↔Atlas candidate classification; its actor list is an **uncertified source review hint**, never a canonical genealogy or impersonation. All 46 indicate zero historical-coordinate approvals and zero publication acceptances. Literary read-aloud review for P3 M20–M37 remains open.
 
 \`tests/historia-p4-theatre-citation-contract.mjs\` now enforces the **116 unique audited IDs**, both edition-specific warnings, the 095/096 ordering hold, parable geolocation rules and all non-publication controls. Continue with PASSION (115–130) and RISEN (131–137); compare distinct Gospel accounts before attaching cinematics or sacred art. MapLibre laboratory remains four-scene only; 46 desk-audited records are not yet runtime scenes.
+
+
+## P4 Passion and Resurrection scene audit — 21 October 2026
+
+Added \`data/research/historia-p4-passion-risen-three-witness-desk-audit.v1.json\`, completing **23 additional original-source scene rows**, indices **115–137**, comprising **16 PASSION** and **7 RISEN** scenes. Matthew, Mark, Luke, John and Acts selected passage references were found with the complete requested numbered verse ranges in the installed, *uncollated* Douay–Rheims Challoner, CPDV and Crampon witnesses. This is passage-presence verification, **not** proof of their translation fidelity to a printed edition.
+
+The work now covers **139 unique records out of 183 (76.0%)**: scene indices 0–137 and 181. Remaining **44** comprise apostles and mission/source-led journeys (indices 138–180 and appended index 182 Pentecost). The base research collection still owns the scenes; the current P4 branch only stores overlays/audits.
+
+Source-critical findings include:
+
+- **Temple cleansing:** Mark 11:15–19 (scene 117) and John 2:13–22 (scene 074) must not be automatically merged or split into distinct historical events. Preserve evangelist provenance for adjudication.
+- **Cenacle:** scenes 119–122 and 133–134 may use Jerusalem/Upper-Room **traditional** contextualization; no passage certifies an extant modern room as the exact site of all six acts or discourses. John 17:1–26 itself does not name a modern room.
+- **Gethsemane:** Matthew 26:36 names Gethsemane, but exact prayer stones, surviving garden trees and an arrest point remain unproven from the biblical text.
+- **Trial, Calvary and burial:** the text names the praetorium and Golgotha. A modern archaeological identification or street-by-street Via Dolorosa route remains independently uncertain. The Holy Sepulchre is a venerable **traditional** association, not GIS certainty derived from John 19.
+- **Resurrection:** John 20:1–18 (scene 131) *contains* the Peter/Beloved Disciple episode John 20:3–10 (scene 132). They can be separate dramatic beats, never two distinct empty tomb/resurrection events in the canonical knowledge registry.
+- **Appearance to the disciples and St Thomas:** John 20:19–29 gives no authenticated modern Cenacle room, and the latter appearance is distinct in time.
+- **Emmaus:** Luke 24:13–35 names Emmaus, but competing modern identifications mean no certified village point or physical walking route.
+- **Ascension:** Acts 1:12 refers to the Mount of Olives, without identifying the specific contemporary chapel/stone footprint.
+
+\`tests/historia-p4-theatre-citation-contract.mjs\` now fail-closes on **139 unique scene indexes**, 23 three-witness passage records, and original Gospel/scene identity safety flags. No literary acceptances, geocodes, art, Scriptures, source rewriting, or production interfaces have been published. The source/test browser CI is handled by \`.github/workflows/historia-p4-theatre-review.yml\` on this research branch.
+
+**Next execution:** complete indices 138–180 and 182, retaining source order and the independent appended Pentecost source record, then address 37-movement literary acceptance and source/art runtime integration separately.
