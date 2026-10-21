@@ -761,7 +761,8 @@ try{
     "loaded v1.80 priest-action registry does not expose the Host elevation action at AO.SM.C0174: "+JSON.stringify(elevationState));
   assert.equal(elevationState.projectedAction,"ELEVATES HOST",
     "native state projection dropped the Host elevation action after cue resolution");
-  assert.equal(elevationState.projectedActionIconKey,"priest_elevation","Host elevation lost the reviewed v1.80 art");
+  assert.equal(elevationState.projectedActionIconKey,"canon:priest.action.elevate_host",
+    "Host elevation must use its approved canonical action meaning (same reviewed v1.80 asset)");
   assert.equal(elevationState.cinematicKind,"ELEVATION");
   // The later source-first cinematic deliberately replaces the old opaque
   // full-screen blackout with one rail-owned icon in MEASURED EMPTY SPACE.
@@ -885,6 +886,7 @@ try{
       gestureActive:document.querySelector("#ao-r17-native-reader-preview [data-channel='gesture']")?.dataset?.active??null,
       postureActive:document.querySelector("#ao-r17-native-reader-preview [data-channel='posture']")?.dataset?.active??null,
       gestureIconHidden:document.querySelector("#ao-r17-native-reader-preview [data-icon-slot='gesture']")?.hidden??null,
+      gestureIconKey:globalThis.AO_R17_NATIVE_READER_STATE?.gestureIconKey??null,
       postureIconHidden:document.querySelector("#ao-r17-native-reader-preview [data-icon-slot='posture']")?.hidden??null,
       scholaSharedActive:document.querySelector("#ao-r17-native-reader-preview [data-channel='schola-shared']")?.dataset?.active??null,
       scholaSharedIconHidden:document.querySelector("#ao-r17-native-reader-preview [data-icon-slot='schola-shared']")?.hidden??null,
@@ -921,7 +923,10 @@ try{
   assert.equal(gloriaBow.leftRail,"true","active Gloria gesture did not reveal the faithful cue rail");
   assert.equal(gloriaBow.gestureActive,"true");
   assert.equal(gloriaBow.postureActive,"true");
-  assert.equal(gloriaBow.gestureIconHidden,true,"rejected Gloria head-bow art returned to faithful rail");
+  assert.equal(gloriaBow.gestureIconKey,"canon:faithful.gesture.bow_head",
+    "The source-owned Gloria Holy Name bow must use the approved canonical gesture");
+  assert.equal(gloriaBow.gestureIconHidden,false,
+    "The approved canonical bow icon must be visible on the faithful rail");
   const faithfulGloriaIcons=await page.evaluate(()=>{
     const r=document.querySelector("#ao-r17-native-reader-preview");
     const rows=[...r.querySelectorAll(".ao-reader-paragraph[data-faithful-row-id]")];
@@ -930,7 +935,8 @@ try{
   });
   assert.ok(faithfulGloriaIcons.count>=1 && faithfulGloriaIcons.eachHasPosture,
     "each visible Gloria paragraph requires its own faithful posture icon");
-  assert.notEqual(faithfulGloriaIcons.current,false,"rejected head-bow art returned inside faithful paragraph");
+  assert.equal(faithfulGloriaIcons.current,false,
+    "The approved canonical bow must appear with its exact source paragraph");
   // An actual tap on the faithful pictogram, not the priest icon, owns
   // the local posture/gesture picker. Saving must not rebuild the card.
   const gloriaInline=page.locator(
@@ -950,14 +956,16 @@ try{
   assert.match(await page.evaluate(()=>localStorage.getItem("ao-mass-customary-v1")??""),/AO.SM.C0061/,
     "faithful paragraph icon customization was not saved");
   await faithfulPicker.locator("[data-faithful-picker-gesture]").selectOption("DEFAULT");
-  // Default head-bow has no approved artwork: remove a user-inserted gesture
-  // pictogram, but do not discard source cue, paragraph, or posture control.
-  await page.waitForFunction(()=>
-    !document.querySelector("#ao-r17-native-reader-preview .ao-reader-paragraph[data-cue-id='AO.SM.C0061'] [data-faithful-field='gesture']"),
-    null,{timeout:7000});
+  // Reset returns to the source-owned Holy Name bow. The October canonical
+  // set approves this pictogram; it must be restored rather than suppressed.
+  await page.waitForFunction(()=>{
+    const node=document.querySelector("#ao-r17-native-reader-preview .ao-reader-paragraph[data-cue-id='AO.SM.C0061'] [data-faithful-field='gesture']");
+    const art=node?.querySelector(".ao-icon-mask");
+    return Boolean(node&&art&&!art.hidden);
+  },null,{timeout:7000});
   assert.equal(await page.locator(
     "#ao-r17-native-reader-preview .ao-reader-paragraph[data-cue-id='AO.SM.C0061'] [data-faithful-field='posture']").count(),1,
-    "resetting a rejected bow depiction removed the essential faithful posture button");
+    "resetting to the canonical bow removed the essential faithful posture button");
   await faithfulPicker.locator("[data-faithful-picker-posture]").selectOption("DEFAULT");
   await faithfulPicker.locator("[data-faithful-picker-close]").click();
   assert.equal(await faithfulPicker.isVisible(),false,"faithful picker did not close");
@@ -976,8 +984,10 @@ try{
       image:art?.style.backgroundImage??"",mask:art?.style.maskImage??""};
   });
   assert.equal(priestBowArt.active,"true","Gloria source priest bow action is missing from the rail");
+  // The approved October registry has faithful bow art, but the priest
+  // head-bow remains intentionally text-only without a certified asset.
   assert.equal(priestBowArt.hidden,true,
-    "rejected priest BOWS HEAD image returned although exact source action remains");
+    "priest head-bow must remain text-only until exact priest artwork is approved");
   assert.equal(gloriaBow.scholaSharedActive,"true","shared Gloria text lost the v1.76 right-rail Schola indicator");
   assert.equal(gloriaBow.scholaSharedIconHidden,false,"shared Gloria text has no visible Schola pictogram");
   // The central Gloria remains the only Latin lyric surface; the compact
