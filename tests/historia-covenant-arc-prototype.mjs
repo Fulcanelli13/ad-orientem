@@ -70,7 +70,7 @@ assert.equal(newData.chapters[9].phaseType,"fulfilment");
 const hIdx=newBlocks.findIndex(x=>x.owner==="H52"),nextBack=newBlocks.slice(hIdx+1).findIndex(x=>x.owner==="H51");
 assert.ok(hIdx>=0 && nextBack>=0,"Preserve H52->H51 Mark/John source-order exception, do not force naive sorting");
 assert.ok(arcHtml.includes("COVENANTAL ARC "));
-assert.ok(arcHtml.includes("chapter-"+sub.id));
+assert.ok(arcHtml.includes('heading.id="chapter-"+sub.id'));
 assert.ok(arcHtml.includes("54 provisional reading chapters"));
 assert.ok(arcHtml.includes("no Scripture has been invented"));
 assert.ok(arcHtml.includes('CHAPTER "+sub.id.slice(1)+" / 54'));
