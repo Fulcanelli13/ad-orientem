@@ -135,6 +135,8 @@ try{
   assert.equal(exported.ratings['SPX-023'].voice,'3');
   assert.equal(exported.ratings['SPX-023'].clarity,'5');
   assert.equal(exported.ratings['SPX-023'].notes,'The source and performer must remain separate.');
+  await page.locator('#closeReview').click();
+  assert.equal(await page.locator('#review').isVisible(),false);
 
   await page.locator('#sceneSelect').selectOption('SPX-032');
   await page.locator('#voiceButton').click();
