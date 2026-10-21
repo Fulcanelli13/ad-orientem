@@ -62,7 +62,8 @@ for (const edition of HISTORIA_EDITIONS) {
   assert.ok(manuscript.includes("## 37 · The New Creation"));
   assert.ok(manuscript.includes("⟦HELD source bridge:"));
   assert.ok(manuscript.includes("Editorial connector · source:"));
-  assert.ok(!manuscript.includes("APPROVED FOR PUBLICATION"));
+  assert.ok(manuscript.includes("**RESEARCH TEXT PROOF — NOT APPROVED FOR PUBLICATION**"));
+  assert.ok(!manuscript.includes("**APPROVED FOR PUBLICATION**"));
   if(edition==="dr-challoner"){
     const committed=readFileSync(new URL("../data/research/historia-salutis-p3-assembled-dr-challoner.v1.md",import.meta.url),"utf8");
     assert.equal(committed,manuscript,"Committed research manuscript must exactly reproduce from source owners");
