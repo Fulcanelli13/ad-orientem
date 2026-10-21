@@ -52,3 +52,39 @@ census, attribution, source metadata, exact match against Gospel verse keys,
 and no remote-runtime dependency. **Do not confuse this commentary source
 approval with approval to reproduce the Bible translations**: the latter remain
 disabled pending their separate canonical edition and textual audits.
+
+
+## Living Catena conversation (source-faithful v1)
+
+The Scripture overlay's English **Commentary** tab now displays a Messenger-like
+thread drawn directly from the existing source-pinned Catena packs. This is a
+reading interface, **not** a simulation of a conversation that the Fathers
+actually had. It does not synthesize, paraphrase or translate patristic speech.
+
+- Each Father-attributed message keeps the **exact** source fragment, attributed
+  author label, pericope citation, ordinal and link to the original Catena
+  source. A long message begins with a literal prefix and is explicitly
+  expandable to its complete unabridged extract.
+- **Continue reading** reveals the next as-yet-unshown Catena excerpt in source
+  order. **Another Father** reveals an as-yet-unshown excerpt bearing a different
+  original author label. The author chips select further available fragments
+  attributed to that author within the same selected passage.
+- The message composer uses **conservative lexical matching only**, against
+  the already-loaded original fragments for the selected Gospel pericope(s).
+  It does not yet implement semantic question answering or retrieval across
+  unrelated verses. An unsupported query visibly returns no match, never
+  fabricated words or a misleading patristic reply.
+- Bible text remains owned by the established Scripture reader and by its
+  separately governed editions; commentary does not impersonate Scripture.
+- French remains unavailable until the French patristic extracts and their
+  alignment/provenance have passed independent review. English is never
+  silently substituted into the French interface.
+- The display honors the corpus's historical attribution labels, including
+  qualified authorship. It does not claim every label is modern scholarly
+  consensus. Source links point to the Catena compilation, not necessarily
+  the critical edition of an individual patristic work.
+- No Mass, Historia Salutis, or other caller needs a second Catena registry.
+
+Regression: \`node tests/scripture-catena-messenger.mjs\`.
+The existing comprehensive integrity test remains
+\`node tests/scripture-catena-corpus.mjs\`.
