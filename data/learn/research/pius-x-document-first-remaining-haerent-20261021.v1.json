@@ -1,0 +1,500 @@
+{
+  "schema": "AO_SPX_DOCUMENT_FIRST_REMAINING_HAERENT_SOURCE_MAP_V1",
+  "asOf": "2026-10-21",
+  "status": "UNAPPROVED_CONTEXTUAL_ADAPTATIONS",
+  "sourceBase": "data/learn/research/pius-x-document-first-three-benchmark-source-map-20261021.v1.json",
+  "source": "https://www.vatican.va/content/pius-x/it/apost_exhortations/documents/hf_p-x_exh_19080804_haerent-animo.html",
+  "referenceOriginalLanguage": "it/la",
+  "claims": {
+    "H11": {
+      "doc": "HAERENT",
+      "locus": "§3",
+      "meaning": "Holiness must accompany the doctrine preached by a priest; Christ did first, then taught."
+    },
+    "H12": {
+      "doc": "HAERENT",
+      "locus": "§4",
+      "meaning": "Priestly ministry is exercised in the name of Christ; priests are ministers of his mysteries."
+    },
+    "H13": {
+      "doc": "HAERENT",
+      "locus": "§11",
+      "meaning": "God gives growth; natural talent and activity are not sufficient for saving souls."
+    },
+    "H14": {
+      "doc": "HAERENT",
+      "locus": "§12",
+      "meaning": "Pius X values studies but warns they cannot replace the priest's holiness."
+    },
+    "H15": {
+      "doc": "HAERENT",
+      "locus": "§12",
+      "meaning": "He cites the Curé of Ars as a near-contemporary example of holy priestly fruitfulness."
+    },
+    "H16": {
+      "doc": "HAERENT",
+      "locus": "§14",
+      "meaning": "In the exhortation he warns priests against the habit of prayer without inner attention."
+    },
+    "H17": {
+      "doc": "HAERENT",
+      "locus": "§15",
+      "meaning": "He presents daily meditation as indispensable for priests and cites St Bernard to Eugenius III."
+    },
+    "H18": {
+      "doc": "HAERENT",
+      "locus": "§16",
+      "meaning": "Routine can cool priestly attention to sacred duties and increase need for meditation."
+    },
+    "H19": {
+      "doc": "HAERENT",
+      "locus": "§17",
+      "meaning": "He describes progressive erosion of priestly fervour despite continuation of external duties."
+    },
+    "H20": {
+      "doc": "HAERENT",
+      "locus": "§18",
+      "meaning": "Excessive activity offered as reason to omit meditation is condemned."
+    },
+    "H21": {
+      "doc": "HAERENT",
+      "locus": "§20",
+      "meaning": "He cites St Charles Borromeo's examples: sacraments, Mass, psalms and souls."
+    },
+    "H22": {
+      "doc": "HAERENT",
+      "locus": "§21",
+      "meaning": "He urges priests to meditate on Jesus Christ and conform holy conduct to priestly authority."
+    },
+    "H23": {
+      "doc": "HAERENT",
+      "locus": "§22",
+      "meaning": "Daily meditation ought to be joined with spiritual reading, particularly Scripture."
+    },
+    "H24": {
+      "doc": "HAERENT",
+      "locus": "§22",
+      "meaning": "St Jerome is cited: learn what you must teach."
+    },
+    "H25": {
+      "doc": "HAERENT",
+      "locus": "§23",
+      "meaning": "Good spiritual books are likened to faithful friends, offering correction without flattery."
+    },
+    "H26": {
+      "doc": "HAERENT",
+      "locus": "§25",
+      "meaning": "Examination of conscience helps priests to see whether meditation and reading are put into practice."
+    },
+    "H27": {
+      "doc": "HAERENT",
+      "locus": "§25",
+      "meaning": "St John Chrysostom and St Bernard are cited in favor of regular examination."
+    },
+    "H28": {
+      "doc": "HAERENT",
+      "locus": "§26",
+      "meaning": "Pius X contrasts careful worldly accounting with neglect of soul examination."
+    },
+    "H29": {
+      "doc": "HAERENT",
+      "locus": "§27",
+      "meaning": "Frequently examining thoughts, words and actions helps the Christian resist wrongdoing."
+    },
+    "H30": {
+      "doc": "HAERENT",
+      "locus": "§37",
+      "meaning": "Pius X prays for sanctification of priests using Christ's prayer to the Father."
+    },
+    "H31": {
+      "doc": "HAERENT",
+      "locus": "§37",
+      "meaning": "He acknowledges laypeople offering prayer and sacrifice for clergy, and petitions virtues for priests."
+    },
+    "H32": {
+      "doc": "HAERENT",
+      "locus": "§34",
+      "meaning": "He commends annual retreats where possible and shorter monthly recollection under episcopal guidelines."
+    },
+    "H33": {
+      "doc": "HAERENT",
+      "locus": "§35",
+      "meaning": "He recommends mutual priestly support and collaboration regulated by the bishop."
+    },
+    "H34": {
+      "doc": "HAERENT",
+      "locus": "§36",
+      "meaning": "He encouraged such an association while a bishop and experienced its usefulness."
+    }
+  },
+  "records": [
+    {
+      "id": "SPX.BENCH.HAERENT.T5",
+      "sourceId": "HAERENT",
+      "choiceType": "CORE",
+      "visitor": {
+        "en": "Why must a priest's personal life agree with his teaching?",
+        "fr": "Pourquoi la vie du prêtre doit-elle être conforme à son enseignement ?"
+      },
+      "segments": [
+        {
+          "id": "SPX.BENCH.HAERENT.T5.S1",
+          "claimIds": [
+            "H11"
+          ],
+          "kind": "SOURCE_BOUNDED_ADAPTATION",
+          "en": "In Haerent animo We recalled that the priest, called to teach souls, must first set them an example; Christ Himself acted before He taught.",
+          "fr": "Dans Haerent animo, Nous rappelions que le prêtre, chargé d'instruire les âmes, doit d'abord leur donner l'exemple ; le Christ Lui-même a agi avant d'enseigner.",
+          "secondaryAuthority": null
+        },
+        {
+          "id": "SPX.BENCH.HAERENT.T5.S2",
+          "claimIds": [
+            "H12"
+          ],
+          "kind": "SOURCE_BOUNDED_ADAPTATION",
+          "en": "The priest acts not in his own name but as a minister of Christ and a dispenser of His mysteries.",
+          "fr": "Le prêtre n'agit pas en son propre nom, mais comme ministre du Christ et dispensateur de ses mystères.",
+          "secondaryAuthority": null
+        }
+      ],
+      "review": {
+        "claimToLocus": "INTERNAL_PRELIMINARY_PASS",
+        "english": false,
+        "french": false,
+        "context": false,
+        "authority": false,
+        "final": false
+      },
+      "editorialQualification": null
+    },
+    {
+      "id": "SPX.BENCH.HAERENT.T6",
+      "sourceId": "HAERENT",
+      "choiceType": "CORE",
+      "visitor": {
+        "en": "Were learning and practical ability also valuable in a priest?",
+        "fr": "La science et les qualités pratiques étaient-elles aussi utiles au prêtre ?"
+      },
+      "segments": [
+        {
+          "id": "SPX.BENCH.HAERENT.T6.S1",
+          "claimIds": [
+            "H13"
+          ],
+          "kind": "SOURCE_BOUNDED_ADAPTATION",
+          "en": "We recalled the words of St Paul: one man plants and another waters, but God gives the increase.",
+          "fr": "Nous rappelions les paroles de saint Paul : l'un plante et l'autre arrose, mais Dieu donne l'accroissement.",
+          "secondaryAuthority": "St Paul — 1 Corinthians 3:7"
+        },
+        {
+          "id": "SPX.BENCH.HAERENT.T6.S2",
+          "claimIds": [
+            "H14",
+            "H15"
+          ],
+          "kind": "SOURCE_BOUNDED_ADAPTATION",
+          "en": "We did encourage learning in the clergy; yet We insisted that it could not replace holiness, and pointed to the blessed Curé of Ars as an example of what a holy priest can accomplish.",
+          "fr": "Nous encouragions la science du clergé ; mais Nous insistions pour qu'elle ne remplaçât point la sainteté, et Nous citions le bienheureux Curé d'Ars pour montrer ce qu'un prêtre saint peut accomplir.",
+          "secondaryAuthority": null
+        }
+      ],
+      "review": {
+        "claimToLocus": "INTERNAL_PRELIMINARY_PASS",
+        "english": false,
+        "french": false,
+        "context": false,
+        "authority": false,
+        "final": false
+      },
+      "editorialQualification": null
+    },
+    {
+      "id": "SPX.BENCH.HAERENT.T7",
+      "sourceId": "HAERENT",
+      "choiceType": "CORE",
+      "visitor": {
+        "en": "What if a priest says he has too many duties to meditate?",
+        "fr": "Si le prêtre affirme être trop occupé pour méditer ?"
+      },
+      "segments": [
+        {
+          "id": "SPX.BENCH.HAERENT.T7.S1",
+          "claimIds": [
+            "H17"
+          ],
+          "kind": "SOURCE_BOUNDED_ADAPTATION",
+          "en": "We insisted in Haerent animo that priests reserve time daily for meditation, and recalled how St Bernard had urged even Pope Eugenius III not to abandon it amid grave responsibilities.",
+          "fr": "Nous insistions dans Haerent animo pour que les prêtres réservassent chaque jour du temps à la méditation, et rappelions que saint Bernard pressait même le pape Eugène III de ne point l'abandonner au milieu des charges les plus graves.",
+          "secondaryAuthority": "St Bernard addressing Eugenius III (quoted by Pius X)"
+        },
+        {
+          "id": "SPX.BENCH.HAERENT.T7.S2",
+          "claimIds": [
+            "H18",
+            "H20"
+          ],
+          "kind": "SOURCE_BOUNDED_ADAPTATION",
+          "en": "Habit can weaken reverence even in sacred duties; We therefore did not accept constant outward activity as an excuse for neglecting meditation.",
+          "fr": "L'habitude peut affaiblir la révérence jusque dans les fonctions sacrées ; Nous n'admettions donc point l'activité extérieure continuelle comme excuse à l'abandon de la méditation.",
+          "secondaryAuthority": null
+        }
+      ],
+      "review": {
+        "claimToLocus": "INTERNAL_PRELIMINARY_PASS",
+        "english": false,
+        "french": false,
+        "context": false,
+        "authority": false,
+        "final": false
+      },
+      "editorialQualification": null
+    },
+    {
+      "id": "SPX.BENCH.HAERENT.T8",
+      "sourceId": "HAERENT",
+      "choiceType": "CORE",
+      "visitor": {
+        "en": "How can prayer guide the duties of a parish priest?",
+        "fr": "Comment la prière peut-elle guider les devoirs d'un curé ?"
+      },
+      "segments": [
+        {
+          "id": "SPX.BENCH.HAERENT.T8.S1",
+          "claimIds": [
+            "H21"
+          ],
+          "kind": "SOURCE_BOUNDED_ADAPTATION",
+          "en": "We cited St Charles Borromeo: when the priest administers sacraments, let him ponder what he does; when he celebrates Mass, the sacrifice; and when he guides souls, the Blood that redeemed them.",
+          "fr": "Nous citions saint Charles Borromée : lorsqu'un prêtre administre les sacrements, qu'il médite sur ses actes ; à la messe, sur le sacrifice ; lorsqu'il guide les âmes, sur le Sang qui les a rachetées.",
+          "secondaryAuthority": "St Charles Borromeo — pastoral exhortation quoted by Pius X"
+        },
+        {
+          "id": "SPX.BENCH.HAERENT.T8.S2",
+          "claimIds": [
+            "H22"
+          ],
+          "kind": "SOURCE_BOUNDED_ADAPTATION",
+          "en": "And We urged priests to meditate upon Christ's life: if they share in His authority, ought they not imitate His holy works?",
+          "fr": "Et Nous pressions les prêtres de méditer la vie du Christ : s'ils participent à Son autorité, ne doivent-ils pas imiter aussi Ses œuvres saintes ?",
+          "secondaryAuthority": null
+        }
+      ],
+      "review": {
+        "claimToLocus": "INTERNAL_PRELIMINARY_PASS",
+        "english": false,
+        "french": false,
+        "context": false,
+        "authority": false,
+        "final": false
+      },
+      "editorialQualification": null
+    },
+    {
+      "id": "SPX.BENCH.HAERENT.T9",
+      "sourceId": "HAERENT",
+      "choiceType": "CORE",
+      "visitor": {
+        "en": "Why should a priest read spiritual books when he already prays?",
+        "fr": "Pourquoi un prêtre doit-il lire des livres spirituels s'il prie déjà ?"
+      },
+      "segments": [
+        {
+          "id": "SPX.BENCH.HAERENT.T9.S1",
+          "claimIds": [
+            "H23",
+            "H24"
+          ],
+          "kind": "SOURCE_BOUNDED_ADAPTATION",
+          "en": "We urged priests to add spiritual reading, especially the Scriptures, to meditation; We recalled St Jerome's counsel to learn what one must teach.",
+          "fr": "Nous exhortions les prêtres à joindre la lecture spirituelle, surtout la Sainte Écriture, à la méditation ; Nous rappelions le conseil de saint Jérôme d'apprendre ce que l'on doit enseigner.",
+          "secondaryAuthority": "St Jerome to Nepotian, cited by Pius X"
+        },
+        {
+          "id": "SPX.BENCH.HAERENT.T9.S2",
+          "claimIds": [
+            "H25"
+          ],
+          "kind": "SOURCE_BOUNDED_ADAPTATION",
+          "en": "We compared good spiritual books to faithful friends: they warn us of neglected duties, awaken conscience and counsel without selfish interest.",
+          "fr": "Nous comparions les bons livres spirituels à de fidèles amis : ils rappellent les devoirs négligés, réveillent la conscience et conseillent sans intérêt personnel.",
+          "secondaryAuthority": null
+        }
+      ],
+      "review": {
+        "claimToLocus": "INTERNAL_PRELIMINARY_PASS",
+        "english": false,
+        "french": false,
+        "context": false,
+        "authority": false,
+        "final": false
+      },
+      "editorialQualification": null
+    },
+    {
+      "id": "SPX.BENCH.HAERENT.T10",
+      "sourceId": "HAERENT",
+      "choiceType": "CORE",
+      "visitor": {
+        "en": "How can a priest know whether meditation is changing his conduct?",
+        "fr": "Comment un prêtre peut-il savoir si sa méditation change sa conduite ?"
+      },
+      "segments": [
+        {
+          "id": "SPX.BENCH.HAERENT.T10.S1",
+          "claimIds": [
+            "H26",
+            "H27"
+          ],
+          "kind": "SOURCE_BOUNDED_ADAPTATION",
+          "en": "In Haerent animo We also recommended daily examination of conscience, recalling the counsel of St John Chrysostom and St Bernard.",
+          "fr": "Dans Haerent animo, Nous recommandions aussi l'examen quotidien de conscience, en rappelant les conseils de saint Jean Chrysostome et de saint Bernard.",
+          "secondaryAuthority": "St John Chrysostom and St Bernard, both cited by Pius X"
+        },
+        {
+          "id": "SPX.BENCH.HAERENT.T10.S2",
+          "claimIds": [
+            "H28",
+            "H29"
+          ],
+          "kind": "SOURCE_BOUNDED_ADAPTATION",
+          "en": "Men carefully account for worldly losses and gains; We urged priests to watch their own thoughts, words and actions with no less diligence.",
+          "fr": "Les hommes tiennent soigneusement compte de leurs pertes et de leurs gains matériels ; Nous exhortions les prêtres à surveiller avec non moins d'application leurs pensées, paroles et actions.",
+          "secondaryAuthority": null
+        }
+      ],
+      "review": {
+        "claimToLocus": "INTERNAL_PRELIMINARY_PASS",
+        "english": false,
+        "french": false,
+        "context": false,
+        "authority": false,
+        "final": false
+      },
+      "editorialQualification": null
+    },
+    {
+      "id": "SPX.BENCH.HAERENT.T11",
+      "sourceId": "HAERENT",
+      "choiceType": "CORE",
+      "visitor": {
+        "en": "What was your concluding prayer for the clergy?",
+        "fr": "Quelle était votre prière finale pour le clergé ?"
+      },
+      "segments": [
+        {
+          "id": "SPX.BENCH.HAERENT.T11.S1",
+          "claimIds": [
+            "H30"
+          ],
+          "kind": "SOURCE_BOUNDED_ADAPTATION",
+          "en": "At the close of Haerent animo, We raised to the Father Our Lord's petition that His ministers be sanctified.",
+          "fr": "À la fin de Haerent animo, Nous élevions vers le Père la supplication de Notre-Seigneur demandant la sanctification de Ses ministres.",
+          "secondaryAuthority": null
+        },
+        {
+          "id": "SPX.BENCH.HAERENT.T11.S2",
+          "claimIds": [
+            "H31"
+          ],
+          "kind": "SOURCE_BOUNDED_ADAPTATION",
+          "en": "We were consoled by faithful souls praying and offering sacrifices for priests, and We implored from Christ's Sacred Heart grace, charity and every virtue for the clergy.",
+          "fr": "Nous trouvions consolation auprès des fidèles qui priaient et offraient des sacrifices pour les prêtres, et Nous implorions du Sacré-Cœur du Christ la grâce, la charité et toutes les vertus pour le clergé.",
+          "secondaryAuthority": null
+        }
+      ],
+      "review": {
+        "claimToLocus": "INTERNAL_PRELIMINARY_PASS",
+        "english": false,
+        "french": false,
+        "context": false,
+        "authority": false,
+        "final": false
+      },
+      "editorialQualification": null
+    },
+    {
+      "id": "SPX.BENCH.HAERENT.T12",
+      "sourceId": "HAERENT",
+      "choiceType": "OPTIONAL_BRANCH",
+      "visitor": {
+        "en": "Can a priest lose his first fervour while still performing his duties?",
+        "fr": "Un prêtre peut-il perdre sa ferveur première tout en exerçant son ministère ?"
+      },
+      "segments": [
+        {
+          "id": "SPX.BENCH.HAERENT.T12.S1",
+          "claimIds": [
+            "H19"
+          ],
+          "kind": "SOURCE_BOUNDED_ADAPTATION",
+          "en": "We warned that priests might continue the sacred offices while the fervour and reverence of their earlier ministry gradually grew cold.",
+          "fr": "Nous avertissions que des prêtres pouvaient continuer les fonctions sacrées tandis que leur première ferveur et leur révérence se refroidissaient peu à peu.",
+          "secondaryAuthority": null
+        },
+        {
+          "id": "SPX.BENCH.HAERENT.T12.S2",
+          "claimIds": [
+            "H18"
+          ],
+          "kind": "SOURCE_BOUNDED_ADAPTATION",
+          "en": "That is one reason We insisted on returning each day to contemplation of heavenly things rather than permitting habit to obscure them.",
+          "fr": "C'est pourquoi Nous insistions pour revenir chaque jour à la contemplation des choses célestes, au lieu de laisser l'habitude les obscurcir.",
+          "secondaryAuthority": null
+        }
+      ],
+      "review": {
+        "claimToLocus": "INTERNAL_PRELIMINARY_PASS",
+        "english": false,
+        "french": false,
+        "context": false,
+        "authority": false,
+        "final": false
+      },
+      "editorialQualification": null
+    },
+    {
+      "id": "SPX.BENCH.HAERENT.T13",
+      "sourceId": "HAERENT",
+      "choiceType": "OPTIONAL_BRANCH",
+      "visitor": {
+        "en": "What practical help, beyond daily prayer, did you advise priests to seek?",
+        "fr": "Quels soutiens pratiques recommandiez-vous aux prêtres au-delà de la prière quotidienne ?"
+      },
+      "segments": [
+        {
+          "id": "SPX.BENCH.HAERENT.T13.S1",
+          "claimIds": [
+            "H32"
+          ],
+          "kind": "SOURCE_BOUNDED_ADAPTATION",
+          "en": "We recommended spiritual exercises, annually where possible, and shorter monthly recollection according to the provisions of bishops.",
+          "fr": "Nous recommandions les exercices spirituels, chaque année si possible, et de plus courtes récollections mensuelles, selon les dispositions des évêques.",
+          "secondaryAuthority": null
+        },
+        {
+          "id": "SPX.BENCH.HAERENT.T13.S2",
+          "claimIds": [
+            "H33",
+            "H34"
+          ],
+          "kind": "SOURCE_BOUNDED_ADAPTATION",
+          "en": "We encouraged priestly associations for mutual support under episcopal authority; We had Ourselves promoted such an association during Our episcopate and found it helpful.",
+          "fr": "Nous encouragions les associations sacerdotales d'entraide sous l'autorité des évêques ; Nous en avions Nous-mêmes soutenu une durant Notre épiscopat et en avions constaté l'utilité.",
+          "secondaryAuthority": null
+        }
+      ],
+      "review": {
+        "claimToLocus": "INTERNAL_PRELIMINARY_PASS",
+        "english": false,
+        "french": false,
+        "context": false,
+        "authority": false,
+        "final": false
+      },
+      "editorialQualification": "Historical recommendations for clergy, not a requirement of the lay visitor."
+    }
+  ],
+  "releaseApproval": false,
+  "notVerbatimQuotes": true
+}
