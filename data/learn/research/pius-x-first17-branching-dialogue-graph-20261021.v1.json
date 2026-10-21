@@ -1,0 +1,1924 @@
+{
+  "schema": "AO_SPX_SOURCE_OWNED_FIRST17_BRANCHING_DIALOGUES_V1",
+  "date": "2026-10-21",
+  "status": "BILINGUAL_DIALOGUE_AUTHORING_DRAFT_NOT_RUNTIME_CERTIFIED",
+  "intent": "Complete practical visitor question/answer turn graphs by reusing the previously authored and source-screened 17 canonical opening responses and writing 34 additional bilingual follow-up question/answer pairs. Not source acquisition.",
+  "sourceOwner": "data/learn/research/pius-x-first20-personal-and-papal-source-corrected-dialogue-20261020.v1.json",
+  "ownerPr": 1458,
+  "styleOwnerPr": 1419,
+  "routerOwnerPr": 1443,
+  "counts": {
+    "distinctCanonicalSceneEntries": 17,
+    "biographyScenesWithoutPapalSpeech": 9,
+    "papalSourceBoundCharacterScenes": 8,
+    "openingAnswerReferencesToPriorDraft": 17,
+    "newFollowupQuestionAnswerPairs": 34,
+    "completeDraftTurnNodes": 51,
+    "newLocalizedFollowupAnswerDrafts": 68,
+    "priorAliasesExcluded": 3,
+    "certifiedHistoricalSpeech": 0,
+    "published": 0
+  },
+  "runtimeRules": [
+    "On selecting entry OPEN, look up sourceOwnerRecordId in sourceOwner, display its proposedDraft.en/fr and question from this file; never overwrite or claim certified quotation.",
+    "Every chapter opens as a question and offers two explicit follow-up choices, not automatically stepping through all Q&As.",
+    "Use editorial history panels without a Pius X speaking sprite for nine later-biography chapters. Personal recollection cannot be inferred from a third-party biography.",
+    "The eight papal chapters are historically grounded reconstructed dialogue, never verbatim spoken testimony; period voice owner must independently review.",
+    "Followups with source limits should not be delivered as papal first-person verdicts on modern people.",
+    "Neither source references nor approval metadata appear as papal speech; they belong in source panels.",
+    "Historical rules are not presented as current canon law.",
+    "Chanoine only by visitor opt-in with exact topic/source and context preserved; no free-floating generation or invented Denzinger numbers.",
+    "Existing 65-card Mass reader, Canon, source bank, period style bank, and five approved portraits unchanged.",
+    "No live UI/API integration; this is a content graph for review."
+  ],
+  "aliasRouting": [
+    {
+      "alias": "SPX-EXP-010",
+      "canonical": "SPX-PILOT-01",
+      "reason": "Same papal election event"
+    },
+    {
+      "alias": "SPX-012",
+      "canonical": "SPX-PILOT-08",
+      "reason": "Same adult catechesis intent"
+    },
+    {
+      "alias": "SPX-EXP-045",
+      "canonical": "SPX-PILOT-09",
+      "reason": "Same priest meditation intent"
+    }
+  ],
+  "episodes": [
+    {
+      "id": "AO.SPX.DIALOGUE.SPX_EXP_001",
+      "sourceSeedId": "SPX-EXP-001",
+      "sceneTitle": {
+        "en": "Family and childhood",
+        "fr": "Famille et enfance"
+      },
+      "source": {
+        "title": "Museo San Pio X — Riese biography",
+        "url": "https://www.museosanpiox.it/vita-di-san-pio-x/i-sarto-dal-quattrocento-allottocento/",
+        "locus": "Parents and childhood; family setting",
+        "genre": "SECONDARY_BIOGRAPHICAL_NARRATION"
+      },
+      "portraitPose": null,
+      "openingReusedFrom": "SPX-EXP-001",
+      "authenticDirectQuotation": false,
+      "editorialLimits": [
+        "DO_NOT_INVENT_CHILDHOOD_MEMORIES",
+        "BIOGRAPHY_FAMILY_COUNT_SOURCE_DIFFERENCE"
+      ],
+      "turns": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_001.OPEN",
+          "kind": "opening",
+          "question": {
+            "en": "What was Giuseppe Sarto's family life in Riese like?",
+            "fr": "Comment était la vie familiale de Giuseppe Sarto à Riese ?"
+          },
+          "answer": {
+            "type": "REFERENCE_EXISTING_APPROVED_OWNER_DRAFT_NOT_DUPLICATED",
+            "researchOwnerPath": "data/learn/research/pius-x-first20-personal-and-papal-source-corrected-dialogue-20261020.v1.json",
+            "researchOwnerRecordId": "SPX-EXP-001",
+            "localeFields": [
+              "proposedDraft.en",
+              "proposedDraft.fr"
+            ]
+          },
+          "speakerMode": "EDITORIAL_HISTORICAL_NARRATION_NO_SPRITE",
+          "sourceIds": [
+            "SPX-EXP-001"
+          ],
+          "nextChoices": [
+            "AO.SPX.DIALOGUE.SPX_EXP_001.FOLLOW_1",
+            "AO.SPX.DIALOGUE.SPX_EXP_001.FOLLOW_2"
+          ]
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_001.FOLLOW_1",
+          "kind": "followup",
+          "question": {
+            "en": "Was his family wealthy or influential?",
+            "fr": "Sa famille était-elle riche ou influente ?"
+          },
+          "answer": {
+            "en": "His parents supported a large household through ordinary work. The surviving biographical evidence points to a modest domestic setting, not to a childhood of public rank or privilege.",
+            "fr": "Ses parents faisaient vivre une famille nombreuse par leur travail. Les témoignages biographiques décrivent un foyer modeste, non une enfance dans un milieu de rang ou de privilège.",
+            "status": "UNAPPROVED_SOURCE_BOUND_EDITORIAL_DIALOGUE"
+          },
+          "speakerMode": "EDITORIAL_HISTORICAL_NARRATION_NO_SPRITE",
+          "sourceIds": [
+            "SPX-EXP-001"
+          ],
+          "nextChoices": [
+            "AO.SPX.DIALOGUE.SPX_EXP_001.FOLLOW_2"
+          ],
+          "returnToOpening": true
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_001.FOLLOW_2",
+          "kind": "followup",
+          "question": {
+            "en": "Does the account tell us what his parents said to him about faith?",
+            "fr": "Connaît-on les paroles de ses parents sur la foi ?"
+          },
+          "answer": {
+            "en": "It describes the household's Catholic life, but does not give us a reliable transcript of such conversations. The family history can be told without inventing words for his parents or for the young Giuseppe.",
+            "fr": "La biographie évoque la vie catholique du foyer, mais ne transmet pas de conversation authentifiée à ce sujet. Nous pouvons raconter cette histoire sans prêter des paroles aux parents ni au jeune Giuseppe.",
+            "status": "UNAPPROVED_SOURCE_BOUND_EDITORIAL_DIALOGUE"
+          },
+          "speakerMode": "EDITORIAL_HISTORICAL_NARRATION_NO_SPRITE",
+          "sourceIds": [
+            "SPX-EXP-001"
+          ],
+          "nextChoices": [],
+          "returnToOpening": true
+        }
+      ],
+      "links": {
+        "returnToTopicMenu": true,
+        "chanoine": {
+          "offered": true,
+          "onlyOnVisitorConsent": true,
+          "topicSourceMustBeVerified": true,
+          "passConversationTrail": true,
+          "neverGenerateUnverifiedAnswer": true
+        },
+        "sourcePanel": {
+          "availableOnEveryTurn": true,
+          "url": "https://www.museosanpiox.it/vita-di-san-pio-x/i-sarto-dal-quattrocento-allottocento/",
+          "locus": "Parents and childhood; family setting"
+        }
+      },
+      "approvals": {
+        "sourceDetail": false,
+        "historicalVoice": false,
+        "english": false,
+        "french": false,
+        "theology": false,
+        "production": false
+      }
+    },
+    {
+      "id": "AO.SPX.DIALOGUE.SPX_EXP_002",
+      "sourceSeedId": "SPX-EXP-002",
+      "sceneTitle": {
+        "en": "Family and vocation",
+        "fr": "Famille et vocation"
+      },
+      "source": {
+        "title": "Museo San Pio X — Riese biography",
+        "url": "https://www.museosanpiox.it/vita-di-san-pio-x/i-sarto-dal-quattrocento-allottocento/",
+        "locus": "Infanzia e giovinezza; death of father 1852",
+        "genre": "SECONDARY_BIOGRAPHICAL_NARRATION"
+      },
+      "portraitPose": null,
+      "openingReusedFrom": "SPX-EXP-002",
+      "authenticDirectQuotation": false,
+      "editorialLimits": [
+        "LATER_SECONDARY_ACCOUNT_NOT_DIRECT_PAPAL_TESTIMONY"
+      ],
+      "turns": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_002.OPEN",
+          "kind": "opening",
+          "question": {
+            "en": "How did his mother help his vocation?",
+            "fr": "Comment sa mère soutint-elle sa vocation ?"
+          },
+          "answer": {
+            "type": "REFERENCE_EXISTING_APPROVED_OWNER_DRAFT_NOT_DUPLICATED",
+            "researchOwnerPath": "data/learn/research/pius-x-first20-personal-and-papal-source-corrected-dialogue-20261020.v1.json",
+            "researchOwnerRecordId": "SPX-EXP-002",
+            "localeFields": [
+              "proposedDraft.en",
+              "proposedDraft.fr"
+            ]
+          },
+          "speakerMode": "EDITORIAL_HISTORICAL_NARRATION_NO_SPRITE",
+          "sourceIds": [
+            "SPX-EXP-002"
+          ],
+          "nextChoices": [
+            "AO.SPX.DIALOGUE.SPX_EXP_002.FOLLOW_1",
+            "AO.SPX.DIALOGUE.SPX_EXP_002.FOLLOW_2"
+          ]
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_002.FOLLOW_1",
+          "kind": "followup",
+          "question": {
+            "en": "Did his father's death put an end to his studies?",
+            "fr": "La mort de son père a-t-elle interrompu ses études ?"
+          },
+          "answer": {
+            "en": "According to the later biographical account, it did not. His mother favoured the continuation of his path toward the priesthood, despite the family's difficult circumstances.",
+            "fr": "Selon le récit biographique postérieur, non. Malgré la situation difficile de la famille, sa mère favorisa la poursuite du chemin vers le sacerdoce.",
+            "status": "UNAPPROVED_SOURCE_BOUND_EDITORIAL_DIALOGUE"
+          },
+          "speakerMode": "EDITORIAL_HISTORICAL_NARRATION_NO_SPRITE",
+          "sourceIds": [
+            "SPX-EXP-002"
+          ],
+          "nextChoices": [
+            "AO.SPX.DIALOGUE.SPX_EXP_002.FOLLOW_2"
+          ],
+          "returnToOpening": true
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_002.FOLLOW_2",
+          "kind": "followup",
+          "question": {
+            "en": "Did he leave behind his own account of that family decision?",
+            "fr": "A-t-il lui-même raconté cette décision familiale ?"
+          },
+          "answer": {
+            "en": "Not in the witness used here. The decision is reported by later biographers, so we can describe what they record but not recreate a private exchange or assert precisely how he felt.",
+            "fr": "Pas dans le témoignage retenu ici. Le fait est rapporté par des biographes postérieurs : nous pouvons en exposer le récit, mais non reconstituer un entretien privé ni affirmer exactement ses sentiments.",
+            "status": "UNAPPROVED_SOURCE_BOUND_EDITORIAL_DIALOGUE"
+          },
+          "speakerMode": "EDITORIAL_HISTORICAL_NARRATION_NO_SPRITE",
+          "sourceIds": [
+            "SPX-EXP-002"
+          ],
+          "nextChoices": [],
+          "returnToOpening": true
+        }
+      ],
+      "links": {
+        "returnToTopicMenu": true,
+        "chanoine": {
+          "offered": true,
+          "onlyOnVisitorConsent": true,
+          "topicSourceMustBeVerified": true,
+          "passConversationTrail": true,
+          "neverGenerateUnverifiedAnswer": true
+        },
+        "sourcePanel": {
+          "availableOnEveryTurn": true,
+          "url": "https://www.museosanpiox.it/vita-di-san-pio-x/i-sarto-dal-quattrocento-allottocento/",
+          "locus": "Infanzia e giovinezza; death of father 1852"
+        }
+      },
+      "approvals": {
+        "sourceDetail": false,
+        "historicalVoice": false,
+        "english": false,
+        "french": false,
+        "theology": false,
+        "production": false
+      }
+    },
+    {
+      "id": "AO.SPX.DIALOGUE.SPX_EXP_003",
+      "sourceSeedId": "SPX-EXP-003",
+      "sceneTitle": {
+        "en": "The young vocation",
+        "fr": "La vocation naissante"
+      },
+      "source": {
+        "title": "Museo San Pio X — Riese biography",
+        "url": "https://www.museosanpiox.it/vita-di-san-pio-x/i-sarto-dal-quattrocento-allottocento/",
+        "locus": "L'infanzia e l'adolescenza; Le Cendrole",
+        "genre": "SECONDARY_BIOGRAPHICAL_NARRATION"
+      },
+      "portraitPose": null,
+      "openingReusedFrom": "SPX-EXP-003",
+      "authenticDirectQuotation": false,
+      "editorialLimits": [
+        "REPORTS_EARLY_VOCATION_WITHOUT_IMAGINING_VISION"
+      ],
+      "turns": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_003.OPEN",
+          "kind": "opening",
+          "question": {
+            "en": "What drew young Giuseppe Sarto to the priesthood?",
+            "fr": "Qu'est-ce qui attira le jeune Giuseppe Sarto vers le sacerdoce ?"
+          },
+          "answer": {
+            "type": "REFERENCE_EXISTING_APPROVED_OWNER_DRAFT_NOT_DUPLICATED",
+            "researchOwnerPath": "data/learn/research/pius-x-first20-personal-and-papal-source-corrected-dialogue-20261020.v1.json",
+            "researchOwnerRecordId": "SPX-EXP-003",
+            "localeFields": [
+              "proposedDraft.en",
+              "proposedDraft.fr"
+            ]
+          },
+          "speakerMode": "EDITORIAL_HISTORICAL_NARRATION_NO_SPRITE",
+          "sourceIds": [
+            "SPX-EXP-003"
+          ],
+          "nextChoices": [
+            "AO.SPX.DIALOGUE.SPX_EXP_003.FOLLOW_1",
+            "AO.SPX.DIALOGUE.SPX_EXP_003.FOLLOW_2"
+          ]
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_003.FOLLOW_1",
+          "kind": "followup",
+          "question": {
+            "en": "Where did young Giuseppe go to pray?",
+            "fr": "Où le jeune Giuseppe allait-il prier ?"
+          },
+          "answer": {
+            "en": "The museum biography mentions the Marian sanctuary of the Cendrole near Riese. That concrete place belongs in the account of his youth; a vision or extraordinary private revelation does not appear in this evidence.",
+            "fr": "La biographie du musée mentionne le sanctuaire marial des Cendrole, près de Riese. Ce lieu concret appartient au récit de sa jeunesse ; la source ne rapporte ni vision ni révélation privée extraordinaire.",
+            "status": "UNAPPROVED_SOURCE_BOUND_EDITORIAL_DIALOGUE"
+          },
+          "speakerMode": "EDITORIAL_HISTORICAL_NARRATION_NO_SPRITE",
+          "sourceIds": [
+            "SPX-EXP-003"
+          ],
+          "nextChoices": [
+            "AO.SPX.DIALOGUE.SPX_EXP_003.FOLLOW_2"
+          ],
+          "returnToOpening": true
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_003.FOLLOW_2",
+          "kind": "followup",
+          "question": {
+            "en": "Who helped him prepare for his vocation?",
+            "fr": "Qui l'a aidé à préparer sa vocation ?"
+          },
+          "answer": {
+            "en": "The biographical account credits local parish priests with encouraging his studies, including Latin. It supports a story of instruction and encouragement, rather than a single dramatic moment of decision.",
+            "fr": "Le récit biographique attribue à des prêtres de la paroisse un rôle d'encouragement dans ses études, notamment du latin. Il permet d'évoquer un apprentissage soutenu, non une scène unique de décision dramatique.",
+            "status": "UNAPPROVED_SOURCE_BOUND_EDITORIAL_DIALOGUE"
+          },
+          "speakerMode": "EDITORIAL_HISTORICAL_NARRATION_NO_SPRITE",
+          "sourceIds": [
+            "SPX-EXP-003"
+          ],
+          "nextChoices": [],
+          "returnToOpening": true
+        }
+      ],
+      "links": {
+        "returnToTopicMenu": true,
+        "chanoine": {
+          "offered": true,
+          "onlyOnVisitorConsent": true,
+          "topicSourceMustBeVerified": true,
+          "passConversationTrail": true,
+          "neverGenerateUnverifiedAnswer": true
+        },
+        "sourcePanel": {
+          "availableOnEveryTurn": true,
+          "url": "https://www.museosanpiox.it/vita-di-san-pio-x/i-sarto-dal-quattrocento-allottocento/",
+          "locus": "L'infanzia e l'adolescenza; Le Cendrole"
+        }
+      },
+      "approvals": {
+        "sourceDetail": false,
+        "historicalVoice": false,
+        "english": false,
+        "french": false,
+        "theology": false,
+        "production": false
+      }
+    },
+    {
+      "id": "AO.SPX.DIALOGUE.SPX_EXP_004",
+      "sourceSeedId": "SPX-EXP-004",
+      "sceneTitle": {
+        "en": "Padua seminary",
+        "fr": "Le séminaire de Padoue"
+      },
+      "source": {
+        "title": "Museo San Pio X — Riese biography",
+        "url": "https://www.museosanpiox.it/vita-di-san-pio-x/i-sarto-dal-quattrocento-allottocento/",
+        "locus": "Nel seminario di Padova (1850–1858)",
+        "genre": "SECONDARY_BIOGRAPHICAL_NARRATION"
+      },
+      "portraitPose": null,
+      "openingReusedFrom": "SPX-EXP-004",
+      "authenticDirectQuotation": false,
+      "editorialLimits": [
+        "BIOGRAPHY_FACTS_NOT_PRIVATE_MEMOIRS"
+      ],
+      "turns": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_004.OPEN",
+          "kind": "opening",
+          "question": {
+            "en": "What was his seminary life like?",
+            "fr": "Comment se déroula sa vie au séminaire ?"
+          },
+          "answer": {
+            "type": "REFERENCE_EXISTING_APPROVED_OWNER_DRAFT_NOT_DUPLICATED",
+            "researchOwnerPath": "data/learn/research/pius-x-first20-personal-and-papal-source-corrected-dialogue-20261020.v1.json",
+            "researchOwnerRecordId": "SPX-EXP-004",
+            "localeFields": [
+              "proposedDraft.en",
+              "proposedDraft.fr"
+            ]
+          },
+          "speakerMode": "EDITORIAL_HISTORICAL_NARRATION_NO_SPRITE",
+          "sourceIds": [
+            "SPX-EXP-004"
+          ],
+          "nextChoices": [
+            "AO.SPX.DIALOGUE.SPX_EXP_004.FOLLOW_1",
+            "AO.SPX.DIALOGUE.SPX_EXP_004.FOLLOW_2"
+          ]
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_004.FOLLOW_1",
+          "kind": "followup",
+          "question": {
+            "en": "Where did his formal priestly preparation take place?",
+            "fr": "Où s'est déroulée sa formation sacerdotale ?"
+          },
+          "answer": {
+            "en": "After studying at Castelfranco, Giuseppe entered the seminary at Padua. His preparation there preceded his ordination in 1858; the dates and institutions are better attested than a retrospective account of his feelings.",
+            "fr": "Après ses études à Castelfranco, Giuseppe entra au séminaire de Padoue. Cette formation précéda son ordination en 1858 ; les dates et les établissements sont mieux attestés qu'un récit rétrospectif de ses sentiments.",
+            "status": "UNAPPROVED_SOURCE_BOUND_EDITORIAL_DIALOGUE"
+          },
+          "speakerMode": "EDITORIAL_HISTORICAL_NARRATION_NO_SPRITE",
+          "sourceIds": [
+            "SPX-EXP-004"
+          ],
+          "nextChoices": [
+            "AO.SPX.DIALOGUE.SPX_EXP_004.FOLLOW_2"
+          ],
+          "returnToOpening": true
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_004.FOLLOW_2",
+          "kind": "followup",
+          "question": {
+            "en": "Did his interest in sacred music begin only after he became Pope?",
+            "fr": "Son intérêt pour la musique sacrée date-t-il seulement de son pontificat ?"
+          },
+          "answer": {
+            "en": "No. The biographical account already notes his interest in sacred music during his studies. That gives historical continuity to his later concerns, though it does not prove that he foresaw his future papal legislation.",
+            "fr": "Non. La biographie signale déjà cet intérêt pendant ses études. Cela éclaire la continuité de ses préoccupations, sans prouver qu'il prévoyait les prescriptions de son futur pontificat.",
+            "status": "UNAPPROVED_SOURCE_BOUND_EDITORIAL_DIALOGUE"
+          },
+          "speakerMode": "EDITORIAL_HISTORICAL_NARRATION_NO_SPRITE",
+          "sourceIds": [
+            "SPX-EXP-004"
+          ],
+          "nextChoices": [],
+          "returnToOpening": true
+        }
+      ],
+      "links": {
+        "returnToTopicMenu": true,
+        "chanoine": {
+          "offered": true,
+          "onlyOnVisitorConsent": true,
+          "topicSourceMustBeVerified": true,
+          "passConversationTrail": true,
+          "neverGenerateUnverifiedAnswer": true
+        },
+        "sourcePanel": {
+          "availableOnEveryTurn": true,
+          "url": "https://www.museosanpiox.it/vita-di-san-pio-x/i-sarto-dal-quattrocento-allottocento/",
+          "locus": "Nel seminario di Padova (1850–1858)"
+        }
+      },
+      "approvals": {
+        "sourceDetail": false,
+        "historicalVoice": false,
+        "english": false,
+        "french": false,
+        "theology": false,
+        "production": false
+      }
+    },
+    {
+      "id": "AO.SPX.DIALOGUE.SPX_EXP_005",
+      "sourceSeedId": "SPX-EXP-005",
+      "sceneTitle": {
+        "en": "Tombolo curate",
+        "fr": "Vicaire à Tombolo"
+      },
+      "source": {
+        "title": "Riese papal biography",
+        "url": "https://www.papapiox.it/biografia/",
+        "locus": "I primi incarichi; Tombolo, 1858–1867",
+        "genre": "SECONDARY_BIOGRAPHICAL_NARRATION"
+      },
+      "portraitPose": null,
+      "openingReusedFrom": "SPX-EXP-005",
+      "authenticDirectQuotation": false,
+      "editorialLimits": [
+        "HISTORICAL_OFFICE_FACT_NOT_SUBJECTIVE_LESSON"
+      ],
+      "turns": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_005.OPEN",
+          "kind": "opening",
+          "question": {
+            "en": "What were his first years as a priest like?",
+            "fr": "Comment se déroulèrent ses premières années de prêtre ?"
+          },
+          "answer": {
+            "type": "REFERENCE_EXISTING_APPROVED_OWNER_DRAFT_NOT_DUPLICATED",
+            "researchOwnerPath": "data/learn/research/pius-x-first20-personal-and-papal-source-corrected-dialogue-20261020.v1.json",
+            "researchOwnerRecordId": "SPX-EXP-005",
+            "localeFields": [
+              "proposedDraft.en",
+              "proposedDraft.fr"
+            ]
+          },
+          "speakerMode": "EDITORIAL_HISTORICAL_NARRATION_NO_SPRITE",
+          "sourceIds": [
+            "SPX-EXP-005"
+          ],
+          "nextChoices": [
+            "AO.SPX.DIALOGUE.SPX_EXP_005.FOLLOW_1",
+            "AO.SPX.DIALOGUE.SPX_EXP_005.FOLLOW_2"
+          ]
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_005.FOLLOW_1",
+          "kind": "followup",
+          "question": {
+            "en": "What was his first assignment after ordination?",
+            "fr": "Quel fut son premier ministère après l'ordination ?"
+          },
+          "answer": {
+            "en": "He served as a curate in Tombolo from 1858 to 1867. These years place him first in ordinary parish ministry, long before his episcopal and papal responsibilities.",
+            "fr": "Il fut vicaire à Tombolo de 1858 à 1867. Ces années le situent d'abord dans le ministère paroissial ordinaire, bien avant ses responsabilités épiscopales et pontificales.",
+            "status": "UNAPPROVED_SOURCE_BOUND_EDITORIAL_DIALOGUE"
+          },
+          "speakerMode": "EDITORIAL_HISTORICAL_NARRATION_NO_SPRITE",
+          "sourceIds": [
+            "SPX-EXP-005"
+          ],
+          "nextChoices": [
+            "AO.SPX.DIALOGUE.SPX_EXP_005.FOLLOW_2"
+          ],
+          "returnToOpening": true
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_005.FOLLOW_2",
+          "kind": "followup",
+          "question": {
+            "en": "Can he tell us exactly what a particular parishioner taught him?",
+            "fr": "Peut-il raconter exactement la leçon reçue d'un paroissien ?"
+          },
+          "answer": {
+            "en": "Not on this documentary basis. We can speak about nine years of parish service, but a remembered encounter or personal lesson needs an identifiable contemporary testimony before it becomes dialogue.",
+            "fr": "Pas sur cette seule base documentaire. Nous pouvons évoquer neuf années de ministère paroissial ; une rencontre et sa leçon personnelle exigeraient un témoignage contemporain identifiable.",
+            "status": "UNAPPROVED_SOURCE_BOUND_EDITORIAL_DIALOGUE"
+          },
+          "speakerMode": "EDITORIAL_HISTORICAL_NARRATION_NO_SPRITE",
+          "sourceIds": [
+            "SPX-EXP-005"
+          ],
+          "nextChoices": [],
+          "returnToOpening": true
+        }
+      ],
+      "links": {
+        "returnToTopicMenu": true,
+        "chanoine": {
+          "offered": true,
+          "onlyOnVisitorConsent": true,
+          "topicSourceMustBeVerified": true,
+          "passConversationTrail": true,
+          "neverGenerateUnverifiedAnswer": true
+        },
+        "sourcePanel": {
+          "availableOnEveryTurn": true,
+          "url": "https://www.papapiox.it/biografia/",
+          "locus": "I primi incarichi; Tombolo, 1858–1867"
+        }
+      },
+      "approvals": {
+        "sourceDetail": false,
+        "historicalVoice": false,
+        "english": false,
+        "french": false,
+        "theology": false,
+        "production": false
+      }
+    },
+    {
+      "id": "AO.SPX.DIALOGUE.SPX_EXP_006",
+      "sourceSeedId": "SPX-EXP-006",
+      "sceneTitle": {
+        "en": "Parish priest at Salzano",
+        "fr": "Curé à Salzano"
+      },
+      "source": {
+        "title": "Riese papal biography",
+        "url": "https://www.papapiox.it/biografia/",
+        "locus": "I primi incarichi; Salzano from 1867",
+        "genre": "SECONDARY_BIOGRAPHICAL_NARRATION"
+      },
+      "portraitPose": null,
+      "openingReusedFrom": "SPX-EXP-006",
+      "authenticDirectQuotation": false,
+      "editorialLimits": [
+        "PARISH_ACTIVITY_DOCUMENTED_PRIVATE_WORDS_UNKNOWN"
+      ],
+      "turns": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_006.OPEN",
+          "kind": "opening",
+          "question": {
+            "en": "What did Giuseppe Sarto do at Salzano?",
+            "fr": "Qu'a fait Giuseppe Sarto à Salzano ?"
+          },
+          "answer": {
+            "type": "REFERENCE_EXISTING_APPROVED_OWNER_DRAFT_NOT_DUPLICATED",
+            "researchOwnerPath": "data/learn/research/pius-x-first20-personal-and-papal-source-corrected-dialogue-20261020.v1.json",
+            "researchOwnerRecordId": "SPX-EXP-006",
+            "localeFields": [
+              "proposedDraft.en",
+              "proposedDraft.fr"
+            ]
+          },
+          "speakerMode": "EDITORIAL_HISTORICAL_NARRATION_NO_SPRITE",
+          "sourceIds": [
+            "SPX-EXP-006"
+          ],
+          "nextChoices": [
+            "AO.SPX.DIALOGUE.SPX_EXP_006.FOLLOW_1",
+            "AO.SPX.DIALOGUE.SPX_EXP_006.FOLLOW_2"
+          ]
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_006.FOLLOW_1",
+          "kind": "followup",
+          "question": {
+            "en": "Was catechetical teaching part of his work before Rome?",
+            "fr": "L'enseignement du catéchisme faisait-il déjà partie de son travail avant Rome ?"
+          },
+          "answer": {
+            "en": "Yes, his surviving catechetical work from the Salzano period is evidence of sustained concern for teaching Christian doctrine. The written material is evidence of an instructional project, not a verbatim parish conversation.",
+            "fr": "Oui. Le travail catéchétique conservé de la période de Salzano témoigne de son souci d'enseigner la doctrine chrétienne. Il s'agit d'un texte pédagogique, non d'une conversation paroissiale transcrite mot pour mot.",
+            "status": "UNAPPROVED_SOURCE_BOUND_EDITORIAL_DIALOGUE"
+          },
+          "speakerMode": "EDITORIAL_HISTORICAL_NARRATION_NO_SPRITE",
+          "sourceIds": [
+            "SPX-EXP-006"
+          ],
+          "nextChoices": [
+            "AO.SPX.DIALOGUE.SPX_EXP_006.FOLLOW_2"
+          ],
+          "returnToOpening": true
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_006.FOLLOW_2",
+          "kind": "followup",
+          "question": {
+            "en": "Can the Salzano Catechism be presented as everything he personally said to his flock?",
+            "fr": "Peut-on présenter le Catéchisme de Salzano comme ses paroles prononcées devant les fidèles ?"
+          },
+          "answer": {
+            "en": "No. It is a distinct written witness, transmitted through an editorial transcription. Its answers can inform a source-grounded explanation, but should never be passed off as recorded spontaneous speech.",
+            "fr": "Non. C'est un témoignage écrit distinct, transmis par une transcription éditoriale. Ses réponses peuvent éclairer une explication fondée sur les sources, non être présentées comme des paroles improvisées et enregistrées.",
+            "status": "UNAPPROVED_SOURCE_BOUND_EDITORIAL_DIALOGUE"
+          },
+          "speakerMode": "EDITORIAL_HISTORICAL_NARRATION_NO_SPRITE",
+          "sourceIds": [
+            "SPX-EXP-006"
+          ],
+          "nextChoices": [],
+          "returnToOpening": true
+        }
+      ],
+      "links": {
+        "returnToTopicMenu": true,
+        "chanoine": {
+          "offered": true,
+          "onlyOnVisitorConsent": true,
+          "topicSourceMustBeVerified": true,
+          "passConversationTrail": true,
+          "neverGenerateUnverifiedAnswer": true
+        },
+        "sourcePanel": {
+          "availableOnEveryTurn": true,
+          "url": "https://www.papapiox.it/biografia/",
+          "locus": "I primi incarichi; Salzano from 1867"
+        }
+      },
+      "approvals": {
+        "sourceDetail": false,
+        "historicalVoice": false,
+        "english": false,
+        "french": false,
+        "theology": false,
+        "production": false
+      }
+    },
+    {
+      "id": "AO.SPX.DIALOGUE.SPX_EXP_007",
+      "sourceSeedId": "SPX-EXP-007",
+      "sceneTitle": {
+        "en": "Treviso diocesan service",
+        "fr": "Au service du diocèse de Trévise"
+      },
+      "source": {
+        "title": "Riese papal biography",
+        "url": "https://www.papapiox.it/biografia/",
+        "locus": "Treviso offices 1875",
+        "genre": "SECONDARY_BIOGRAPHICAL_NARRATION"
+      },
+      "portraitPose": null,
+      "openingReusedFrom": "SPX-EXP-007",
+      "authenticDirectQuotation": false,
+      "editorialLimits": [
+        "DO_NOT_INFER_PRIVATE_PASTORAL_REACTION"
+      ],
+      "turns": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_007.OPEN",
+          "kind": "opening",
+          "question": {
+            "en": "What responsibilities did he hold in Treviso?",
+            "fr": "Quelles responsabilités exerça-t-il à Trévise ?"
+          },
+          "answer": {
+            "type": "REFERENCE_EXISTING_APPROVED_OWNER_DRAFT_NOT_DUPLICATED",
+            "researchOwnerPath": "data/learn/research/pius-x-first20-personal-and-papal-source-corrected-dialogue-20261020.v1.json",
+            "researchOwnerRecordId": "SPX-EXP-007",
+            "localeFields": [
+              "proposedDraft.en",
+              "proposedDraft.fr"
+            ]
+          },
+          "speakerMode": "EDITORIAL_HISTORICAL_NARRATION_NO_SPRITE",
+          "sourceIds": [
+            "SPX-EXP-007"
+          ],
+          "nextChoices": [
+            "AO.SPX.DIALOGUE.SPX_EXP_007.FOLLOW_1",
+            "AO.SPX.DIALOGUE.SPX_EXP_007.FOLLOW_2"
+          ]
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_007.FOLLOW_1",
+          "kind": "followup",
+          "question": {
+            "en": "Was Giuseppe Sarto already Bishop of Treviso?",
+            "fr": "Giuseppe Sarto était-il déjà évêque de Trévise ?"
+          },
+          "answer": {
+            "en": "No. His Treviso responsibilities included chancery administration, seminary spiritual direction and the cathedral chapter. They did not make him the diocesan bishop.",
+            "fr": "Non. À Trévise, il exerça des responsabilités à la chancellerie, auprès du séminaire et au chapitre cathédral, sans être l'évêque du diocèse.",
+            "status": "UNAPPROVED_SOURCE_BOUND_EDITORIAL_DIALOGUE"
+          },
+          "speakerMode": "EDITORIAL_HISTORICAL_NARRATION_NO_SPRITE",
+          "sourceIds": [
+            "SPX-EXP-007"
+          ],
+          "nextChoices": [
+            "AO.SPX.DIALOGUE.SPX_EXP_007.FOLLOW_2"
+          ],
+          "returnToOpening": true
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_007.FOLLOW_2",
+          "kind": "followup",
+          "question": {
+            "en": "Did he ever take responsibility for the diocese during that period?",
+            "fr": "A-t-il pourtant assumé la conduite du diocèse à cette époque ?"
+          },
+          "answer": {
+            "en": "The biographical account records that he administered the diocese during a vacancy of the episcopal see. We should distinguish that administrative responsibility from an episcopal appointment.",
+            "fr": "La biographie rapporte qu'il administra le diocèse pendant une vacance du siège épiscopal. Cette responsabilité administrative doit être distinguée d'une nomination comme évêque.",
+            "status": "UNAPPROVED_SOURCE_BOUND_EDITORIAL_DIALOGUE"
+          },
+          "speakerMode": "EDITORIAL_HISTORICAL_NARRATION_NO_SPRITE",
+          "sourceIds": [
+            "SPX-EXP-007"
+          ],
+          "nextChoices": [],
+          "returnToOpening": true
+        }
+      ],
+      "links": {
+        "returnToTopicMenu": true,
+        "chanoine": {
+          "offered": true,
+          "onlyOnVisitorConsent": true,
+          "topicSourceMustBeVerified": true,
+          "passConversationTrail": true,
+          "neverGenerateUnverifiedAnswer": true
+        },
+        "sourcePanel": {
+          "availableOnEveryTurn": true,
+          "url": "https://www.papapiox.it/biografia/",
+          "locus": "Treviso offices 1875"
+        }
+      },
+      "approvals": {
+        "sourceDetail": false,
+        "historicalVoice": false,
+        "english": false,
+        "french": false,
+        "theology": false,
+        "production": false
+      }
+    },
+    {
+      "id": "AO.SPX.DIALOGUE.SPX_EXP_008",
+      "sourceSeedId": "SPX-EXP-008",
+      "sceneTitle": {
+        "en": "Bishop of Mantua",
+        "fr": "Évêque de Mantoue"
+      },
+      "source": {
+        "title": "Riese papal biography",
+        "url": "https://www.papapiox.it/biografia/",
+        "locus": "Vescovo di Mantova, 1884",
+        "genre": "SECONDARY_BIOGRAPHICAL_NARRATION"
+      },
+      "portraitPose": null,
+      "openingReusedFrom": "SPX-EXP-008",
+      "authenticDirectQuotation": false,
+      "editorialLimits": [
+        "BIOGRAPHICAL_ASSESSMENT_NOT_DOCUMENTED_PRIVATE_DIALOGUE"
+      ],
+      "turns": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_008.OPEN",
+          "kind": "opening",
+          "question": {
+            "en": "How did he serve as Bishop of Mantua?",
+            "fr": "Comment exerça-t-il sa charge d'évêque de Mantoue ?"
+          },
+          "answer": {
+            "type": "REFERENCE_EXISTING_APPROVED_OWNER_DRAFT_NOT_DUPLICATED",
+            "researchOwnerPath": "data/learn/research/pius-x-first20-personal-and-papal-source-corrected-dialogue-20261020.v1.json",
+            "researchOwnerRecordId": "SPX-EXP-008",
+            "localeFields": [
+              "proposedDraft.en",
+              "proposedDraft.fr"
+            ]
+          },
+          "speakerMode": "EDITORIAL_HISTORICAL_NARRATION_NO_SPRITE",
+          "sourceIds": [
+            "SPX-EXP-008"
+          ],
+          "nextChoices": [
+            "AO.SPX.DIALOGUE.SPX_EXP_008.FOLLOW_1",
+            "AO.SPX.DIALOGUE.SPX_EXP_008.FOLLOW_2"
+          ]
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_008.FOLLOW_1",
+          "kind": "followup",
+          "question": {
+            "en": "What kind of work is documented from his time in Mantua?",
+            "fr": "Quel travail est attesté pendant son épiscopat à Mantoue ?"
+          },
+          "answer": {
+            "en": "The biographies emphasise pastoral renewal amid difficult ecclesiastical and civil conditions. They give an outline of his responsibilities and priorities, but not a license to invent confrontations or private speeches.",
+            "fr": "Les biographies insistent sur le renouveau pastoral dans des circonstances ecclésiastiques et civiles difficiles. Elles éclairent ses responsabilités et ses priorités, sans autoriser l'invention d'affrontements ou de discours privés.",
+            "status": "UNAPPROVED_SOURCE_BOUND_EDITORIAL_DIALOGUE"
+          },
+          "speakerMode": "EDITORIAL_HISTORICAL_NARRATION_NO_SPRITE",
+          "sourceIds": [
+            "SPX-EXP-008"
+          ],
+          "nextChoices": [
+            "AO.SPX.DIALOGUE.SPX_EXP_008.FOLLOW_2"
+          ],
+          "returnToOpening": true
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_008.FOLLOW_2",
+          "kind": "followup",
+          "question": {
+            "en": "Can we reconstruct an argument with one of his opponents there?",
+            "fr": "Peut-on reconstituer une dispute avec l'un de ses opposants ?"
+          },
+          "answer": {
+            "en": "Only if an independent, identifiable contemporary account records it. The general biographical judgement that he combined firmness with charity does not establish anyone's precise words in such a dispute.",
+            "fr": "Seulement si un témoignage contemporain identifiable la rapporte. Le jugement biographique général selon lequel il unissait fermeté et charité ne donne pas les paroles précises d'un tel échange.",
+            "status": "UNAPPROVED_SOURCE_BOUND_EDITORIAL_DIALOGUE"
+          },
+          "speakerMode": "EDITORIAL_HISTORICAL_NARRATION_NO_SPRITE",
+          "sourceIds": [
+            "SPX-EXP-008"
+          ],
+          "nextChoices": [],
+          "returnToOpening": true
+        }
+      ],
+      "links": {
+        "returnToTopicMenu": true,
+        "chanoine": {
+          "offered": true,
+          "onlyOnVisitorConsent": true,
+          "topicSourceMustBeVerified": true,
+          "passConversationTrail": true,
+          "neverGenerateUnverifiedAnswer": true
+        },
+        "sourcePanel": {
+          "availableOnEveryTurn": true,
+          "url": "https://www.papapiox.it/biografia/",
+          "locus": "Vescovo di Mantova, 1884"
+        }
+      },
+      "approvals": {
+        "sourceDetail": false,
+        "historicalVoice": false,
+        "english": false,
+        "french": false,
+        "theology": false,
+        "production": false
+      }
+    },
+    {
+      "id": "AO.SPX.DIALOGUE.SPX_EXP_009",
+      "sourceSeedId": "SPX-EXP-009",
+      "sceneTitle": {
+        "en": "Patriarch of Venice",
+        "fr": "Patriarche de Venise"
+      },
+      "source": {
+        "title": "Riese papal biography",
+        "url": "https://www.papapiox.it/biografia/",
+        "locus": "Cardinal and Patriarch of Venice, 1893–1894",
+        "genre": "SECONDARY_BIOGRAPHICAL_NARRATION"
+      },
+      "portraitPose": null,
+      "openingReusedFrom": "SPX-EXP-009",
+      "authenticDirectQuotation": false,
+      "editorialLimits": [
+        "DATED_GOVERNMENTAL_ENTRY_DELAY_NOT_PSYCHOLOGICAL_MOTIVE"
+      ],
+      "turns": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_009.OPEN",
+          "kind": "opening",
+          "question": {
+            "en": "What happened when he became Patriarch of Venice?",
+            "fr": "Que se passa-t-il lorsqu'il devint patriarche de Venise ?"
+          },
+          "answer": {
+            "type": "REFERENCE_EXISTING_APPROVED_OWNER_DRAFT_NOT_DUPLICATED",
+            "researchOwnerPath": "data/learn/research/pius-x-first20-personal-and-papal-source-corrected-dialogue-20261020.v1.json",
+            "researchOwnerRecordId": "SPX-EXP-009",
+            "localeFields": [
+              "proposedDraft.en",
+              "proposedDraft.fr"
+            ]
+          },
+          "speakerMode": "EDITORIAL_HISTORICAL_NARRATION_NO_SPRITE",
+          "sourceIds": [
+            "SPX-EXP-009"
+          ],
+          "nextChoices": [
+            "AO.SPX.DIALOGUE.SPX_EXP_009.FOLLOW_1",
+            "AO.SPX.DIALOGUE.SPX_EXP_009.FOLLOW_2"
+          ]
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_009.FOLLOW_1",
+          "kind": "followup",
+          "question": {
+            "en": "Why did he not enter the see of Venice immediately in 1893?",
+            "fr": "Pourquoi n'est-il pas entré aussitôt à Venise en 1893 ?"
+          },
+          "answer": {
+            "en": "His appointment met a delay connected with governmental authorisation. Consequently the formal entry took place in late 1894; it would be misleading to turn that administrative history into an invented private motive.",
+            "fr": "Sa nomination se heurta à un retard lié à l'autorisation gouvernementale. Son entrée officielle eut donc lieu à la fin de 1894 ; il serait trompeur d'inventer une motivation intime à partir de cette histoire administrative.",
+            "status": "UNAPPROVED_SOURCE_BOUND_EDITORIAL_DIALOGUE"
+          },
+          "speakerMode": "EDITORIAL_HISTORICAL_NARRATION_NO_SPRITE",
+          "sourceIds": [
+            "SPX-EXP-009"
+          ],
+          "nextChoices": [
+            "AO.SPX.DIALOGUE.SPX_EXP_009.FOLLOW_2"
+          ],
+          "returnToOpening": true
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_009.FOLLOW_2",
+          "kind": "followup",
+          "question": {
+            "en": "Does his later papal programme tell us exactly what he privately planned in Venice?",
+            "fr": "Son programme pontifical révèle-t-il exactement ses projets intimes à Venise ?"
+          },
+          "answer": {
+            "en": "No. His later published programme and his earlier documented pastoral work can be compared, but they are not a diary of unrecorded intentions at the time of his Venetian appointment.",
+            "fr": "Non. On peut comparer son programme public ultérieur à son ministère antérieur, mais ce n'est pas un journal des intentions privées qui auraient précédé sa nomination à Venise.",
+            "status": "UNAPPROVED_SOURCE_BOUND_EDITORIAL_DIALOGUE"
+          },
+          "speakerMode": "EDITORIAL_HISTORICAL_NARRATION_NO_SPRITE",
+          "sourceIds": [
+            "SPX-EXP-009"
+          ],
+          "nextChoices": [],
+          "returnToOpening": true
+        }
+      ],
+      "links": {
+        "returnToTopicMenu": true,
+        "chanoine": {
+          "offered": true,
+          "onlyOnVisitorConsent": true,
+          "topicSourceMustBeVerified": true,
+          "passConversationTrail": true,
+          "neverGenerateUnverifiedAnswer": true
+        },
+        "sourcePanel": {
+          "availableOnEveryTurn": true,
+          "url": "https://www.papapiox.it/biografia/",
+          "locus": "Cardinal and Patriarch of Venice, 1893–1894"
+        }
+      },
+      "approvals": {
+        "sourceDetail": false,
+        "historicalVoice": false,
+        "english": false,
+        "french": false,
+        "theology": false,
+        "production": false
+      }
+    },
+    {
+      "id": "AO.SPX.DIALOGUE.SPX_PILOT_01",
+      "sourceSeedId": "SPX-PILOT-01",
+      "sceneTitle": {
+        "en": "The burden of the papacy",
+        "fr": "Le poids du pontificat"
+      },
+      "source": {
+        "title": "E supremi",
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+        "locus": "Opening and §§1–4",
+        "genre": "OFFICIAL_PAPAL_DOCUMENT"
+      },
+      "portraitPose": "thoughtful",
+      "openingReusedFrom": "SPX-PILOT-01",
+      "authenticDirectQuotation": false,
+      "editorialLimits": [
+        "AUTHOR_FIRST_PERSON_IN_PUBLISHED_LETTER_NOT_CONCLAVE_TRANSCRIPT"
+      ],
+      "turns": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_PILOT_01.OPEN",
+          "kind": "opening",
+          "question": {
+            "en": "Did you welcome your election as Pope?",
+            "fr": "Avez-vous accueilli volontiers votre élection comme pape ?"
+          },
+          "answer": {
+            "type": "REFERENCE_EXISTING_APPROVED_OWNER_DRAFT_NOT_DUPLICATED",
+            "researchOwnerPath": "data/learn/research/pius-x-first20-personal-and-papal-source-corrected-dialogue-20261020.v1.json",
+            "researchOwnerRecordId": "SPX-PILOT-01",
+            "localeFields": [
+              "proposedDraft.en",
+              "proposedDraft.fr"
+            ]
+          },
+          "speakerMode": "PIUS_X_SOURCE_BOUNDED_EDUCATIONAL_RECONSTRUCTION",
+          "sourceIds": [
+            "SPX-PILOT-01"
+          ],
+          "nextChoices": [
+            "AO.SPX.DIALOGUE.SPX_PILOT_01.FOLLOW_1",
+            "AO.SPX.DIALOGUE.SPX_PILOT_01.FOLLOW_2"
+          ]
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_PILOT_01.FOLLOW_1",
+          "kind": "followup",
+          "question": {
+            "en": "What made the responsibility so grave to you?",
+            "fr": "Pourquoi cette charge vous paraissait-elle si redoutable ?"
+          },
+          "answer": {
+            "en": "In my first encyclical I spoke of my weakness before the burden of the pontificate, especially after so great a predecessor. The answer I gave was to seek strength from God rather than pretend that the charge was light.",
+            "fr": "Dans ma première encyclique, j'ai évoqué ma faiblesse devant le poids du pontificat, surtout après un si grand prédécesseur. Je répondais à cette crainte en cherchant la force auprès de Dieu plutôt qu'en feignant que la charge fût légère.",
+            "status": "UNAPPROVED_SOURCE_BOUND_EDITORIAL_DIALOGUE"
+          },
+          "speakerMode": "PIUS_X_SOURCE_BOUNDED_EDUCATIONAL_RECONSTRUCTION",
+          "sourceIds": [
+            "SPX-PILOT-01"
+          ],
+          "nextChoices": [
+            "AO.SPX.DIALOGUE.SPX_PILOT_01.FOLLOW_2"
+          ],
+          "returnToOpening": true
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_PILOT_01.FOLLOW_2",
+          "kind": "followup",
+          "question": {
+            "en": "What did you intend to do once you accepted?",
+            "fr": "Que vouliez-vous accomplir après avoir accepté ?"
+          },
+          "answer": {
+            "en": "I placed before my pontificate one governing purpose: to restore all things in Christ. In that programme, bringing souls to Christ and through Christ to God was not a separate task from the government of the Church.",
+            "fr": "Je donnai à mon pontificat un dessein principal : tout restaurer dans le Christ. Dans ce programme, conduire les âmes au Christ et, par Lui, à Dieu ne se séparait pas du gouvernement de l'Église.",
+            "status": "UNAPPROVED_SOURCE_BOUND_EDITORIAL_DIALOGUE"
+          },
+          "speakerMode": "PIUS_X_SOURCE_BOUNDED_EDUCATIONAL_RECONSTRUCTION",
+          "sourceIds": [
+            "SPX-PILOT-01"
+          ],
+          "nextChoices": [],
+          "returnToOpening": true
+        }
+      ],
+      "links": {
+        "returnToTopicMenu": true,
+        "chanoine": {
+          "offered": true,
+          "onlyOnVisitorConsent": true,
+          "topicSourceMustBeVerified": true,
+          "passConversationTrail": true,
+          "neverGenerateUnverifiedAnswer": true
+        },
+        "sourcePanel": {
+          "availableOnEveryTurn": true,
+          "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+          "locus": "Opening and §§1–4"
+        }
+      },
+      "approvals": {
+        "sourceDetail": false,
+        "historicalVoice": false,
+        "english": false,
+        "french": false,
+        "theology": false,
+        "production": false
+      }
+    },
+    {
+      "id": "AO.SPX.DIALOGUE.SPX_PILOT_07",
+      "sourceSeedId": "SPX-PILOT-07",
+      "sceneTitle": {
+        "en": "The Modernist controversy",
+        "fr": "La controverse moderniste"
+      },
+      "source": {
+        "title": "Pascendi dominici gregis",
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+        "locus": "Pascendi §§5–8, 11–13, 26 and 39",
+        "genre": "OFFICIAL_PAPAL_DOCUMENT"
+      },
+      "portraitPose": "grave",
+      "openingReusedFrom": "SPX-PILOT-07",
+      "authenticDirectQuotation": false,
+      "editorialLimits": [
+        "HISTORICAL_POLEMIC_ABOUT_SPECIFIC_SYSTEM_NOT_MODERN_LABEL_FOR_PEOPLE"
+      ],
+      "turns": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_PILOT_07.OPEN",
+          "kind": "opening",
+          "question": {
+            "en": "What did you mean by Modernism?",
+            "fr": "Qu'entendiez-vous par modernisme ?"
+          },
+          "answer": {
+            "type": "REFERENCE_EXISTING_APPROVED_OWNER_DRAFT_NOT_DUPLICATED",
+            "researchOwnerPath": "data/learn/research/pius-x-first20-personal-and-papal-source-corrected-dialogue-20261020.v1.json",
+            "researchOwnerRecordId": "SPX-PILOT-07",
+            "localeFields": [
+              "proposedDraft.en",
+              "proposedDraft.fr"
+            ]
+          },
+          "speakerMode": "PIUS_X_SOURCE_BOUNDED_EDUCATIONAL_RECONSTRUCTION",
+          "sourceIds": [
+            "SPX-PILOT-07"
+          ],
+          "nextChoices": [
+            "AO.SPX.DIALOGUE.SPX_PILOT_07.FOLLOW_1",
+            "AO.SPX.DIALOGUE.SPX_PILOT_07.FOLLOW_2"
+          ]
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_PILOT_07.FOLLOW_1",
+          "kind": "followup",
+          "question": {
+            "en": "Why did you describe Modernism as a connected system?",
+            "fr": "Pourquoi avez-vous décrit le modernisme comme un système ?"
+          },
+          "answer": {
+            "en": "In Pascendi I examined related claims about the limits of reason, the origin of faith in religious sentiment and the changeability of dogmatic formulas. Their consequences reinforced one another; I was not merely collecting unrelated errors.",
+            "fr": "Dans Pascendi, j'ai examiné des thèses liées entre elles sur les limites de la raison, l'origine de la foi dans le sentiment religieux et la variabilité des formules dogmatiques. Leurs conséquences se renforçaient mutuellement ; il ne s'agissait pas d'une liste d'erreurs sans rapport.",
+            "status": "UNAPPROVED_SOURCE_BOUND_EDITORIAL_DIALOGUE"
+          },
+          "speakerMode": "PIUS_X_SOURCE_BOUNDED_EDUCATIONAL_RECONSTRUCTION",
+          "sourceIds": [
+            "SPX-PILOT-07"
+          ],
+          "nextChoices": [
+            "AO.SPX.DIALOGUE.SPX_PILOT_07.FOLLOW_2"
+          ],
+          "returnToOpening": true
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_PILOT_07.FOLLOW_2",
+          "kind": "followup",
+          "question": {
+            "en": "Does that mean you have judged every present-day scholar called a Modernist?",
+            "fr": "Cela signifie-t-il que vous jugez tout chercheur actuel qualifié de moderniste ?"
+          },
+          "answer": {
+            "en": "The encyclical analyses a doctrinal system and the duties of Church authorities in my time. It cannot, by itself, establish the intentions or culpability of a named person living in another period; that requires evidence and competent judgement.",
+            "fr": "L'encyclique examine un système doctrinal et les devoirs des autorités ecclésiastiques de mon temps. Elle n'établit pas à elle seule les intentions ni la culpabilité d'une personne nommée à une autre époque ; cela exige des faits et un jugement compétent.",
+            "status": "UNAPPROVED_SOURCE_BOUND_EDITORIAL_DIALOGUE"
+          },
+          "speakerMode": "PIUS_X_SOURCE_BOUNDED_EDUCATIONAL_RECONSTRUCTION",
+          "sourceIds": [
+            "SPX-PILOT-07"
+          ],
+          "nextChoices": [],
+          "returnToOpening": true
+        }
+      ],
+      "links": {
+        "returnToTopicMenu": true,
+        "chanoine": {
+          "offered": true,
+          "onlyOnVisitorConsent": true,
+          "topicSourceMustBeVerified": true,
+          "passConversationTrail": true,
+          "neverGenerateUnverifiedAnswer": true
+        },
+        "sourcePanel": {
+          "availableOnEveryTurn": true,
+          "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+          "locus": "Pascendi §§5–8, 11–13, 26 and 39"
+        }
+      },
+      "approvals": {
+        "sourceDetail": false,
+        "historicalVoice": false,
+        "english": false,
+        "french": false,
+        "theology": false,
+        "production": false
+      }
+    },
+    {
+      "id": "AO.SPX.DIALOGUE.SPX_PILOT_08",
+      "sourceSeedId": "SPX-PILOT-08",
+      "sceneTitle": {
+        "en": "Teaching the faith",
+        "fr": "Enseigner la foi"
+      },
+      "source": {
+        "title": "Acerbo nimis",
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html",
+        "locus": "Acerbo nimis §§16–17 and 24–26",
+        "genre": "OFFICIAL_PAPAL_DOCUMENT"
+      },
+      "portraitPose": "explaining",
+      "openingReusedFrom": "SPX-PILOT-08",
+      "authenticDirectQuotation": false,
+      "editorialLimits": [
+        "1905_PASTORAL_PRESCRIPTIONS_HISTORICAL_NOT_CURRENT_DIocesan_RULES"
+      ],
+      "turns": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_PILOT_08.OPEN",
+          "kind": "opening",
+          "question": {
+            "en": "Why did you insist on teaching the Catechism to adults?",
+            "fr": "Pourquoi teniez-vous tant à l'enseignement du catéchisme aux adultes ?"
+          },
+          "answer": {
+            "type": "REFERENCE_EXISTING_APPROVED_OWNER_DRAFT_NOT_DUPLICATED",
+            "researchOwnerPath": "data/learn/research/pius-x-first20-personal-and-papal-source-corrected-dialogue-20261020.v1.json",
+            "researchOwnerRecordId": "SPX-PILOT-08",
+            "localeFields": [
+              "proposedDraft.en",
+              "proposedDraft.fr"
+            ]
+          },
+          "speakerMode": "PIUS_X_SOURCE_BOUNDED_EDUCATIONAL_RECONSTRUCTION",
+          "sourceIds": [
+            "SPX-PILOT-08"
+          ],
+          "nextChoices": [
+            "AO.SPX.DIALOGUE.SPX_PILOT_08.FOLLOW_1",
+            "AO.SPX.DIALOGUE.SPX_PILOT_08.FOLLOW_2"
+          ]
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_PILOT_08.FOLLOW_1",
+          "kind": "followup",
+          "question": {
+            "en": "Why was an ordinary Sunday sermon not enough?",
+            "fr": "Pourquoi le sermon du dimanche ne suffisait-il pas ?"
+          },
+          "answer": {
+            "en": "In Acerbo nimis I distinguished a sermon from systematic instruction in the elements of Christian doctrine. The faithful needed explanations addressed to what they did not yet know, not merely exhortations presuming that knowledge.",
+            "fr": "Dans Acerbo nimis, j'ai distingué le sermon de l'instruction suivie sur les éléments de la doctrine chrétienne. Les fidèles avaient besoin d'explications adaptées à ce qu'ils ignoraient encore, non de simples exhortations supposant ces connaissances déjà acquises.",
+            "status": "UNAPPROVED_SOURCE_BOUND_EDITORIAL_DIALOGUE"
+          },
+          "speakerMode": "PIUS_X_SOURCE_BOUNDED_EDUCATIONAL_RECONSTRUCTION",
+          "sourceIds": [
+            "SPX-PILOT-08"
+          ],
+          "nextChoices": [
+            "AO.SPX.DIALOGUE.SPX_PILOT_08.FOLLOW_2"
+          ],
+          "returnToOpening": true
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_PILOT_08.FOLLOW_2",
+          "kind": "followup",
+          "question": {
+            "en": "Must a catechist speak differently to adults and children?",
+            "fr": "Le catéchiste doit-il s'adresser autrement aux adultes et aux enfants ?"
+          },
+          "answer": {
+            "en": "The manner of explanation should suit the hearers, but neither age excuses ignorance nor simplicity excuses poor preparation. I insisted on serious teaching for adults as well as for the young.",
+            "fr": "La manière d'expliquer doit convenir aux auditeurs, mais l'âge n'excuse pas l'ignorance et la simplicité ne dispense pas de préparer ses leçons. J'ai demandé une instruction sérieuse pour les adultes comme pour les enfants.",
+            "status": "UNAPPROVED_SOURCE_BOUND_EDITORIAL_DIALOGUE"
+          },
+          "speakerMode": "PIUS_X_SOURCE_BOUNDED_EDUCATIONAL_RECONSTRUCTION",
+          "sourceIds": [
+            "SPX-PILOT-08"
+          ],
+          "nextChoices": [],
+          "returnToOpening": true
+        }
+      ],
+      "links": {
+        "returnToTopicMenu": true,
+        "chanoine": {
+          "offered": true,
+          "onlyOnVisitorConsent": true,
+          "topicSourceMustBeVerified": true,
+          "passConversationTrail": true,
+          "neverGenerateUnverifiedAnswer": true
+        },
+        "sourcePanel": {
+          "availableOnEveryTurn": true,
+          "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html",
+          "locus": "Acerbo nimis §§16–17 and 24–26"
+        }
+      },
+      "approvals": {
+        "sourceDetail": false,
+        "historicalVoice": false,
+        "english": false,
+        "french": false,
+        "theology": false,
+        "production": false
+      }
+    },
+    {
+      "id": "AO.SPX.DIALOGUE.SPX_PILOT_09",
+      "sourceSeedId": "SPX-PILOT-09",
+      "sceneTitle": {
+        "en": "The inner life of the priest",
+        "fr": "La vie intérieure du prêtre"
+      },
+      "source": {
+        "title": "Haerent animo",
+        "url": "https://www.vatican.va/content/pius-x/it/apost_exhortations/documents/hf_p-x_exh_19080804_haerent-animo.html",
+        "locus": "Haerent animo §§15–20",
+        "genre": "OFFICIAL_PAPAL_DOCUMENT"
+      },
+      "portraitPose": "thoughtful",
+      "openingReusedFrom": "SPX-PILOT-09",
+      "authenticDirectQuotation": false,
+      "editorialLimits": [
+        "PRIEST_SPECIFIC_EXHORTATION_NOT_UNIVERSAL_PERSONAL_RULE"
+      ],
+      "turns": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_PILOT_09.OPEN",
+          "kind": "opening",
+          "question": {
+            "en": "Can a priest's work replace his prayer?",
+            "fr": "Le ministère d'un prêtre peut-il remplacer sa prière ?"
+          },
+          "answer": {
+            "type": "REFERENCE_EXISTING_APPROVED_OWNER_DRAFT_NOT_DUPLICATED",
+            "researchOwnerPath": "data/learn/research/pius-x-first20-personal-and-papal-source-corrected-dialogue-20261020.v1.json",
+            "researchOwnerRecordId": "SPX-PILOT-09",
+            "localeFields": [
+              "proposedDraft.en",
+              "proposedDraft.fr"
+            ]
+          },
+          "speakerMode": "PIUS_X_SOURCE_BOUNDED_EDUCATIONAL_RECONSTRUCTION",
+          "sourceIds": [
+            "SPX-PILOT-09"
+          ],
+          "nextChoices": [
+            "AO.SPX.DIALOGUE.SPX_PILOT_09.FOLLOW_1",
+            "AO.SPX.DIALOGUE.SPX_PILOT_09.FOLLOW_2"
+          ]
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_PILOT_09.FOLLOW_1",
+          "kind": "followup",
+          "question": {
+            "en": "Can good pastoral work replace meditation when a priest is very busy?",
+            "fr": "Les bonnes œuvres pastorales peuvent-elles remplacer la méditation d'un prêtre très occupé ?"
+          },
+          "answer": {
+            "en": "In Haerent animo I warned that sacred work itself may become an excuse for omitting prayer. The priest's interior life ought to sustain his ministry; activity alone does not make that interior work unnecessary.",
+            "fr": "Dans Haerent animo, j'ai averti que les œuvres sacrées elles-mêmes pouvaient servir de prétexte pour omettre la prière. La vie intérieure doit soutenir le ministère ; l'activité ne la rend pas superflue.",
+            "status": "UNAPPROVED_SOURCE_BOUND_EDITORIAL_DIALOGUE"
+          },
+          "speakerMode": "PIUS_X_SOURCE_BOUNDED_EDUCATIONAL_RECONSTRUCTION",
+          "sourceIds": [
+            "SPX-PILOT-09"
+          ],
+          "nextChoices": [
+            "AO.SPX.DIALOGUE.SPX_PILOT_09.FOLLOW_2"
+          ],
+          "returnToOpening": true
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_PILOT_09.FOLLOW_2",
+          "kind": "followup",
+          "question": {
+            "en": "Were those instructions addressed to every Catholic in precisely the same form?",
+            "fr": "Ces prescriptions s'adressaient-elles sous la même forme à tous les catholiques ?"
+          },
+          "answer": {
+            "en": "I addressed that exhortation expressly to priests and to the obligations of their ministry. A lay Christian may draw spiritual profit from it, but the text should not be turned into an invented universal rule or judgement of a particular soul.",
+            "fr": "Cette exhortation s'adressait expressément aux prêtres et aux obligations de leur ministère. Un laïc peut en tirer profit, mais il ne faut pas la transformer en règle universelle inventée ni en jugement sur une âme particulière.",
+            "status": "UNAPPROVED_SOURCE_BOUND_EDITORIAL_DIALOGUE"
+          },
+          "speakerMode": "PIUS_X_SOURCE_BOUNDED_EDUCATIONAL_RECONSTRUCTION",
+          "sourceIds": [
+            "SPX-PILOT-09"
+          ],
+          "nextChoices": [],
+          "returnToOpening": true
+        }
+      ],
+      "links": {
+        "returnToTopicMenu": true,
+        "chanoine": {
+          "offered": true,
+          "onlyOnVisitorConsent": true,
+          "topicSourceMustBeVerified": true,
+          "passConversationTrail": true,
+          "neverGenerateUnverifiedAnswer": true
+        },
+        "sourcePanel": {
+          "availableOnEveryTurn": true,
+          "url": "https://www.vatican.va/content/pius-x/it/apost_exhortations/documents/hf_p-x_exh_19080804_haerent-animo.html",
+          "locus": "Haerent animo §§15–20"
+        }
+      },
+      "approvals": {
+        "sourceDetail": false,
+        "historicalVoice": false,
+        "english": false,
+        "french": false,
+        "theology": false,
+        "production": false
+      }
+    },
+    {
+      "id": "AO.SPX.DIALOGUE.SPX_EXP_021",
+      "sourceSeedId": "SPX-EXP-021",
+      "sceneTitle": {
+        "en": "Restoring all things in Christ",
+        "fr": "Tout restaurer dans le Christ"
+      },
+      "source": {
+        "title": "E supremi",
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+        "locus": "E supremi §§4 and 8–9",
+        "genre": "OFFICIAL_PAPAL_DOCUMENT"
+      },
+      "portraitPose": "explaining",
+      "openingReusedFrom": "SPX-EXP-021",
+      "authenticDirectQuotation": false,
+      "editorialLimits": [
+        "DOCUMENT_PROGRAM_NOT_GENERAL_WARRANT_FOR_EVERY_MODERN_REFORM"
+      ],
+      "turns": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_021.OPEN",
+          "kind": "opening",
+          "question": {
+            "en": "What did you mean by restoring all things in Christ?",
+            "fr": "Que vouliez-vous dire par « tout restaurer dans le Christ » ?"
+          },
+          "answer": {
+            "type": "REFERENCE_EXISTING_APPROVED_OWNER_DRAFT_NOT_DUPLICATED",
+            "researchOwnerPath": "data/learn/research/pius-x-first20-personal-and-papal-source-corrected-dialogue-20261020.v1.json",
+            "researchOwnerRecordId": "SPX-EXP-021",
+            "localeFields": [
+              "proposedDraft.en",
+              "proposedDraft.fr"
+            ]
+          },
+          "speakerMode": "PIUS_X_SOURCE_BOUNDED_EDUCATIONAL_RECONSTRUCTION",
+          "sourceIds": [
+            "SPX-EXP-021"
+          ],
+          "nextChoices": [
+            "AO.SPX.DIALOGUE.SPX_EXP_021.FOLLOW_1",
+            "AO.SPX.DIALOGUE.SPX_EXP_021.FOLLOW_2"
+          ]
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_021.FOLLOW_1",
+          "kind": "followup",
+          "question": {
+            "en": "Does restoring all things in Christ mean simply changing institutions?",
+            "fr": "Tout restaurer dans le Christ signifie-t-il simplement réorganiser les institutions ?"
+          },
+          "answer": {
+            "en": "In E supremi the governing purpose is the return of men to God through Jesus Christ. External arrangements are not the final object; the restoration I described concerns faith and the Christian life themselves.",
+            "fr": "Dans E supremi, le dessein principal est le retour des hommes à Dieu par Jésus-Christ. Les dispositions extérieures ne sont pas la fin dernière ; la restauration que j'évoquais touche la foi et la vie chrétienne elles-mêmes.",
+            "status": "UNAPPROVED_SOURCE_BOUND_EDITORIAL_DIALOGUE"
+          },
+          "speakerMode": "PIUS_X_SOURCE_BOUNDED_EDUCATIONAL_RECONSTRUCTION",
+          "sourceIds": [
+            "SPX-EXP-021"
+          ],
+          "nextChoices": [
+            "AO.SPX.DIALOGUE.SPX_EXP_021.FOLLOW_2"
+          ],
+          "returnToOpening": true
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_021.FOLLOW_2",
+          "kind": "followup",
+          "question": {
+            "en": "Could that programme justify abandoning doctrines already received?",
+            "fr": "Ce programme autoriserait-il l'abandon des doctrines reçues ?"
+          },
+          "answer": {
+            "en": "No. The programme was to lead souls back to Christ and the faith entrusted to the Church, not to replace that faith with a new religion. To invoke my words for an unrelated reform would require evidence beyond the slogan.",
+            "fr": "Non. Il s'agissait de ramener les âmes au Christ et à la foi confiée à l'Église, non de remplacer celle-ci par une religion nouvelle. On ne peut invoquer ces paroles pour une réforme étrangère à leur sens sans autre preuve.",
+            "status": "UNAPPROVED_SOURCE_BOUND_EDITORIAL_DIALOGUE"
+          },
+          "speakerMode": "PIUS_X_SOURCE_BOUNDED_EDUCATIONAL_RECONSTRUCTION",
+          "sourceIds": [
+            "SPX-EXP-021"
+          ],
+          "nextChoices": [],
+          "returnToOpening": true
+        }
+      ],
+      "links": {
+        "returnToTopicMenu": true,
+        "chanoine": {
+          "offered": true,
+          "onlyOnVisitorConsent": true,
+          "topicSourceMustBeVerified": true,
+          "passConversationTrail": true,
+          "neverGenerateUnverifiedAnswer": true
+        },
+        "sourcePanel": {
+          "availableOnEveryTurn": true,
+          "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+          "locus": "E supremi §§4 and 8–9"
+        }
+      },
+      "approvals": {
+        "sourceDetail": false,
+        "historicalVoice": false,
+        "english": false,
+        "french": false,
+        "theology": false,
+        "production": false
+      }
+    },
+    {
+      "id": "AO.SPX.DIALOGUE.SPX_EXP_026",
+      "sourceSeedId": "SPX-EXP-026",
+      "sceneTitle": {
+        "en": "Bishops and lay initiative",
+        "fr": "Évêques et initiative des laïcs"
+      },
+      "source": {
+        "title": "Il fermo proposito",
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_11061905_il-fermo-proposito.html",
+        "locus": "Il fermo proposito §§20–22",
+        "genre": "OFFICIAL_PAPAL_DOCUMENT"
+      },
+      "portraitPose": "explaining",
+      "openingReusedFrom": "SPX-EXP-026",
+      "authenticDirectQuotation": false,
+      "editorialLimits": [
+        "HISTORICAL_ITALIAN_CATHOLIC_ACTION_CONTEXT_NOT_BLANKET_CONTEMPORARY_LAW"
+      ],
+      "turns": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_026.OPEN",
+          "kind": "opening",
+          "question": {
+            "en": "What role should bishops have in Catholic lay associations?",
+            "fr": "Quel rôle les évêques doivent-ils jouer auprès des associations de laïcs catholiques ?"
+          },
+          "answer": {
+            "type": "REFERENCE_EXISTING_APPROVED_OWNER_DRAFT_NOT_DUPLICATED",
+            "researchOwnerPath": "data/learn/research/pius-x-first20-personal-and-papal-source-corrected-dialogue-20261020.v1.json",
+            "researchOwnerRecordId": "SPX-EXP-026",
+            "localeFields": [
+              "proposedDraft.en",
+              "proposedDraft.fr"
+            ]
+          },
+          "speakerMode": "PIUS_X_SOURCE_BOUNDED_EDUCATIONAL_RECONSTRUCTION",
+          "sourceIds": [
+            "SPX-EXP-026"
+          ],
+          "nextChoices": [
+            "AO.SPX.DIALOGUE.SPX_EXP_026.FOLLOW_1",
+            "AO.SPX.DIALOGUE.SPX_EXP_026.FOLLOW_2"
+          ]
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_026.FOLLOW_1",
+          "kind": "followup",
+          "question": {
+            "en": "Must bishops personally decide every practical detail of a lay association?",
+            "fr": "Les évêques doivent-ils décider chaque détail pratique d'une association de laïcs ?"
+          },
+          "answer": {
+            "en": "In Il fermo proposito I distinguished fidelity to ecclesiastical direction from the practical freedom proper to works in temporal and social affairs. Responsible action by lay Catholics has its own proper place.",
+            "fr": "Dans Il fermo proposito, j'ai distingué la fidélité à la direction ecclésiastique de la liberté pratique nécessaire aux œuvres temporelles et sociales. L'initiative responsable des laïcs a sa place propre.",
+            "status": "UNAPPROVED_SOURCE_BOUND_EDITORIAL_DIALOGUE"
+          },
+          "speakerMode": "PIUS_X_SOURCE_BOUNDED_EDUCATIONAL_RECONSTRUCTION",
+          "sourceIds": [
+            "SPX-EXP-026"
+          ],
+          "nextChoices": [
+            "AO.SPX.DIALOGUE.SPX_EXP_026.FOLLOW_2"
+          ],
+          "returnToOpening": true
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_026.FOLLOW_2",
+          "kind": "followup",
+          "question": {
+            "en": "May an association ignore the faith because it deals with social questions?",
+            "fr": "Une association peut-elle écarter la foi parce qu'elle traite de questions sociales ?"
+          },
+          "answer": {
+            "en": "No. The document joins social initiative to Christian principles and the Church's spiritual guidance. The freedom needed in practical affairs is not a release from the faith that animates those works.",
+            "fr": "Non. Le document unit l'initiative sociale aux principes chrétiens et à la conduite spirituelle de l'Église. La liberté nécessaire dans les affaires pratiques ne dispense pas de la foi qui anime ces œuvres.",
+            "status": "UNAPPROVED_SOURCE_BOUND_EDITORIAL_DIALOGUE"
+          },
+          "speakerMode": "PIUS_X_SOURCE_BOUNDED_EDUCATIONAL_RECONSTRUCTION",
+          "sourceIds": [
+            "SPX-EXP-026"
+          ],
+          "nextChoices": [],
+          "returnToOpening": true
+        }
+      ],
+      "links": {
+        "returnToTopicMenu": true,
+        "chanoine": {
+          "offered": true,
+          "onlyOnVisitorConsent": true,
+          "topicSourceMustBeVerified": true,
+          "passConversationTrail": true,
+          "neverGenerateUnverifiedAnswer": true
+        },
+        "sourcePanel": {
+          "availableOnEveryTurn": true,
+          "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_11061905_il-fermo-proposito.html",
+          "locus": "Il fermo proposito §§20–22"
+        }
+      },
+      "approvals": {
+        "sourceDetail": false,
+        "historicalVoice": false,
+        "english": false,
+        "french": false,
+        "theology": false,
+        "production": false
+      }
+    },
+    {
+      "id": "AO.SPX.DIALOGUE.SPX_EXP_027",
+      "sourceSeedId": "SPX-EXP-027",
+      "sceneTitle": {
+        "en": "Charity and Catholic action",
+        "fr": "Charité et action catholique"
+      },
+      "source": {
+        "title": "Il fermo proposito",
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_11061905_il-fermo-proposito.html",
+        "locus": "Il fermo proposito §§7–13",
+        "genre": "OFFICIAL_PAPAL_DOCUMENT"
+      },
+      "portraitPose": "welcoming",
+      "openingReusedFrom": "SPX-EXP-027",
+      "authenticDirectQuotation": false,
+      "editorialLimits": [
+        "IL_FERMO_SPECIFIC_SOCIAL_PROGRAM_HISTORICAL"
+      ],
+      "turns": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_027.OPEN",
+          "kind": "opening",
+          "question": {
+            "en": "How can ordinary Catholics serve the Church's mission?",
+            "fr": "Comment les simples fidèles peuvent-ils servir la mission de l'Église ?"
+          },
+          "answer": {
+            "type": "REFERENCE_EXISTING_APPROVED_OWNER_DRAFT_NOT_DUPLICATED",
+            "researchOwnerPath": "data/learn/research/pius-x-first20-personal-and-papal-source-corrected-dialogue-20261020.v1.json",
+            "researchOwnerRecordId": "SPX-EXP-027",
+            "localeFields": [
+              "proposedDraft.en",
+              "proposedDraft.fr"
+            ]
+          },
+          "speakerMode": "PIUS_X_SOURCE_BOUNDED_EDUCATIONAL_RECONSTRUCTION",
+          "sourceIds": [
+            "SPX-EXP-027"
+          ],
+          "nextChoices": [
+            "AO.SPX.DIALOGUE.SPX_EXP_027.FOLLOW_1",
+            "AO.SPX.DIALOGUE.SPX_EXP_027.FOLLOW_2"
+          ]
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_027.FOLLOW_1",
+          "kind": "followup",
+          "question": {
+            "en": "Did you think the laity should remain passive in the face of poverty?",
+            "fr": "Pensiez-vous que les laïcs devaient rester passifs devant la pauvreté ?"
+          },
+          "answer": {
+            "en": "No. In Il fermo proposito I encouraged organised works of charity, formation and social assistance. Zeal was to be intelligent and disciplined, and directed especially toward real needs rather than mere declarations.",
+            "fr": "Non. Dans Il fermo proposito, j'ai encouragé les œuvres organisées de charité, de formation et d'assistance sociale. Le zèle devait être éclairé et discipliné, tourné vers les besoins réels plutôt que vers de simples déclarations.",
+            "status": "UNAPPROVED_SOURCE_BOUND_EDITORIAL_DIALOGUE"
+          },
+          "speakerMode": "PIUS_X_SOURCE_BOUNDED_EDUCATIONAL_RECONSTRUCTION",
+          "sourceIds": [
+            "SPX-EXP-027"
+          ],
+          "nextChoices": [
+            "AO.SPX.DIALOGUE.SPX_EXP_027.FOLLOW_2"
+          ],
+          "returnToOpening": true
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_027.FOLLOW_2",
+          "kind": "followup",
+          "question": {
+            "en": "Are social works a substitute for the Church's supernatural mission?",
+            "fr": "Les œuvres sociales remplacent-elles la mission surnaturelle de l'Église ?"
+          },
+          "answer": {
+            "en": "The encyclical presents charitable and social activity within Christian apostolate, not as a replacement for faith and worship. The relief of need should proceed from sound Christian principles.",
+            "fr": "L'encyclique place l'action charitable et sociale dans l'apostolat chrétien, non à la place de la foi et du culte. Le secours apporté aux besoins doit découler de principes chrétiens solides.",
+            "status": "UNAPPROVED_SOURCE_BOUND_EDITORIAL_DIALOGUE"
+          },
+          "speakerMode": "PIUS_X_SOURCE_BOUNDED_EDUCATIONAL_RECONSTRUCTION",
+          "sourceIds": [
+            "SPX-EXP-027"
+          ],
+          "nextChoices": [],
+          "returnToOpening": true
+        }
+      ],
+      "links": {
+        "returnToTopicMenu": true,
+        "chanoine": {
+          "offered": true,
+          "onlyOnVisitorConsent": true,
+          "topicSourceMustBeVerified": true,
+          "passConversationTrail": true,
+          "neverGenerateUnverifiedAnswer": true
+        },
+        "sourcePanel": {
+          "availableOnEveryTurn": true,
+          "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_11061905_il-fermo-proposito.html",
+          "locus": "Il fermo proposito §§7–13"
+        }
+      },
+      "approvals": {
+        "sourceDetail": false,
+        "historicalVoice": false,
+        "english": false,
+        "french": false,
+        "theology": false,
+        "production": false
+      }
+    },
+    {
+      "id": "AO.SPX.DIALOGUE.SPX_EXP_043",
+      "sourceSeedId": "SPX-EXP-043",
+      "sceneTitle": {
+        "en": "Teaching adults carefully",
+        "fr": "Enseigner les adultes avec soin"
+      },
+      "source": {
+        "title": "Acerbo nimis",
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html",
+        "locus": "Acerbo nimis §§24–26",
+        "genre": "OFFICIAL_PAPAL_DOCUMENT"
+      },
+      "portraitPose": "explaining",
+      "openingReusedFrom": "SPX-EXP-043",
+      "authenticDirectQuotation": false,
+      "editorialLimits": [
+        "PREPARE_CATECHESIS_NOT_IMPROVISE_RICH_PERSONAL_COUNSEL"
+      ],
+      "turns": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_043.OPEN",
+          "kind": "opening",
+          "question": {
+            "en": "How should a priest teach adults with little religious knowledge?",
+            "fr": "Comment un prêtre devrait-il instruire des adultes peu formés à la religion ?"
+          },
+          "answer": {
+            "type": "REFERENCE_EXISTING_APPROVED_OWNER_DRAFT_NOT_DUPLICATED",
+            "researchOwnerPath": "data/learn/research/pius-x-first20-personal-and-papal-source-corrected-dialogue-20261020.v1.json",
+            "researchOwnerRecordId": "SPX-EXP-043",
+            "localeFields": [
+              "proposedDraft.en",
+              "proposedDraft.fr"
+            ]
+          },
+          "speakerMode": "PIUS_X_SOURCE_BOUNDED_EDUCATIONAL_RECONSTRUCTION",
+          "sourceIds": [
+            "SPX-EXP-043"
+          ],
+          "nextChoices": [
+            "AO.SPX.DIALOGUE.SPX_EXP_043.FOLLOW_1",
+            "AO.SPX.DIALOGUE.SPX_EXP_043.FOLLOW_2"
+          ]
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_043.FOLLOW_1",
+          "kind": "followup",
+          "question": {
+            "en": "Does explaining simply mean teaching less carefully?",
+            "fr": "Expliquer simplement signifie-t-il enseigner avec moins de soin ?"
+          },
+          "answer": {
+            "en": "Quite the contrary. In Acerbo nimis I insisted that instruction for the less informed requires greater care in preparation. Clarity is the fruit of diligent teaching, not of indifference to doctrine.",
+            "fr": "Bien au contraire. Dans Acerbo nimis, j'ai insisté pour que l'instruction des personnes moins formées soit préparée avec davantage de soin. La clarté procède d'un enseignement diligent, non de l'indifférence à la doctrine.",
+            "status": "UNAPPROVED_SOURCE_BOUND_EDITORIAL_DIALOGUE"
+          },
+          "speakerMode": "PIUS_X_SOURCE_BOUNDED_EDUCATIONAL_RECONSTRUCTION",
+          "sourceIds": [
+            "SPX-EXP-043"
+          ],
+          "nextChoices": [
+            "AO.SPX.DIALOGUE.SPX_EXP_043.FOLLOW_2"
+          ],
+          "returnToOpening": true
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_043.FOLLOW_2",
+          "kind": "followup",
+          "question": {
+            "en": "What should a priest consider about the adults before him?",
+            "fr": "À quoi un prêtre doit-il être attentif lorsqu'il instruit des adultes ?"
+          },
+          "answer": {
+            "en": "He should adapt his explanations to their understanding and teach what they genuinely need to learn. The practical point of my instruction was that adults, no less than children, require patient and systematic catechesis.",
+            "fr": "Il doit adapter ses explications à leur intelligence et enseigner ce qu'ils ont réellement besoin d'apprendre. Je voulais rappeler que les adultes, autant que les enfants, ont besoin d'une catéchèse patiente et suivie.",
+            "status": "UNAPPROVED_SOURCE_BOUND_EDITORIAL_DIALOGUE"
+          },
+          "speakerMode": "PIUS_X_SOURCE_BOUNDED_EDUCATIONAL_RECONSTRUCTION",
+          "sourceIds": [
+            "SPX-EXP-043"
+          ],
+          "nextChoices": [],
+          "returnToOpening": true
+        }
+      ],
+      "links": {
+        "returnToTopicMenu": true,
+        "chanoine": {
+          "offered": true,
+          "onlyOnVisitorConsent": true,
+          "topicSourceMustBeVerified": true,
+          "passConversationTrail": true,
+          "neverGenerateUnverifiedAnswer": true
+        },
+        "sourcePanel": {
+          "availableOnEveryTurn": true,
+          "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html",
+          "locus": "Acerbo nimis §§24–26"
+        }
+      },
+      "approvals": {
+        "sourceDetail": false,
+        "historicalVoice": false,
+        "english": false,
+        "french": false,
+        "theology": false,
+        "production": false
+      }
+    }
+  ]
+}
