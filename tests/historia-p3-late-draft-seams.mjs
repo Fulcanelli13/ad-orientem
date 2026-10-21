@@ -47,10 +47,10 @@ const expansions=[
  {mid:"HS-M22",id:"H56-02",before:["John 6:26–35","John 6:47–59"],after:["John 6:26–35","John 6:36–40","John 6:41–46","John 6:47–59"],lastBefore:["John 6:26–35","John 6:41–46","John 6:47–59"],extra:11},
  {mid:"HS-M24",id:"H58-04",before:["John 11:1–7","John 11:14–17","John 11:20–27","John 11:32–35","John 11:38–44"],after:["John 11:1–7","John 11:14–17","John 11:20–27","John 11:28–31","John 11:32–35","John 11:38–44"],extra:4},
  {mid:"HS-M29",id:"H65-01",before:["John 20:1–3","John 20:6–9","John 20:11–18"],after:["John 20:1–3","John 20:4–5","John 20:6–9","John 20:10","John 20:11–18"],extra:3},
- {mid:"HS-M31",id:"H67-01",before:["Acts 2:1–8","Acts 2:11–18","Acts 2:21","Acts 2:37–41"],after:["Acts 2:1–8","Acts 2:11–18","Acts 2:21","Acts 2:22–24","Acts 2:32–36","Acts 2:37–41"],extra:8},
+ {mid:"HS-M31",id:"H67-01",before:["Acts 2:1–8","Acts 2:11–18","Acts 2:21","Acts 2:37–41"],after:["Acts 2:1–10","Acts 2:11–18","Acts 2:21","Acts 2:22–24","Acts 2:32–36","Acts 2:37–41"],extra:10},
  {mid:"HS-M32",id:"H69-01",before:["Acts 9:1–11","Acts 9:17–22"],after:["Acts 9:1–11","Acts 9:12–16","Acts 9:17–22"],extra:5},
  {mid:"HS-M32",id:"H70-01",before:["Acts 10:1–6","Acts 10:9–16","Acts 10:19–20","Acts 10:24","Acts 10:28–29","Acts 10:33–48"],lastBefore:["Acts 10:1–6","Acts 10:7–8","Acts 10:9–16","Acts 10:19–20","Acts 10:24","Acts 10:28–29","Acts 10:30–32","Acts 10:33–48"],after:["Acts 10:1–6","Acts 10:7–8","Acts 10:9–16","Acts 10:19–20","Acts 10:21–23","Acts 10:24","Acts 10:28–29","Acts 10:30–32","Acts 10:33–48"],extra:8},
- {mid:"HS-M33",id:"H72-01",before:["Acts 15:1–2","Acts 15:5–11","Acts 15:13–20","Acts 15:22–29"],after:["Acts 15:1–2","Acts 15:5–11","Acts 15:12","Acts 15:13–20","Acts 15:22–29"],extra:1}
+ {mid:"HS-M33",id:"H72-01",before:["Acts 15:1–2","Acts 15:5–11","Acts 15:13–20","Acts 15:22–29"],after:["Acts 15:1–2","Acts 15:4–11","Acts 15:12","Acts 15:13–20","Acts 15:22–29"],extra:2}
 ];
 let delta=0;
 for(const e of expansions){
@@ -69,7 +69,16 @@ for(const e of expansions){
  }
  delta+=e.extra;
 }
-assert.equal(delta,40,"The large draft batch must stay within the 40-verse budget");
+assert.equal(delta,43,"Original 40-verse continuity batch plus 3 later source-seam restorations");
+for(const [mid,bid,inserted] of [["HS-M31","H67-01",["Acts 2:9","Acts 2:10"]],["HS-M33","H72-01",["Acts 15:4"]]]){
+ const r=getBeat(mid,bid).subsequentLiterarySeamRepair;
+ assert.equal(r.status,"RESEARCH_SOURCE_COORDINATE_REPAIRED_NOT_APPROVED");
+ assert.deepEqual(r.restoredSourceVerses,inserted);
+ assert.equal(r.threeWitnessLocationsChecked,true);
+ assert.equal(r.publicationApproved,false);
+}
+assert.equal(proof.literaryReviewProgress.movementsDeskExamined,37);
+assert.equal(proof.literaryReviewProgress.fullSequentialReadthroughComplete,false);
 assert.equal(getBeat("HS-M32","H69-01").researchRevision.sourceWitnessTextFlags[0].status,"PRINTED_EDITION_COLLATION_REQUIRED_NO_AUTO_CORRECTION");
 assert.match(verse("Acts","cpdv-2009",9,12),/Paul saw/);
 assert.match(verse("Acts","dr-challoner",9,12),/he saw a man/);
@@ -180,4 +189,4 @@ for(const m of proof.movements){
 const html=readFileSync(new URL("../previews/scripture-mining-workbench-20261017.html",import.meta.url),"utf8");
 assert.ok(html.includes('id="historiaProofBridges" type="checkbox" checked'),"Readthrough includes unapproved source options clearly labelled");
 assert.ok(html.includes("Unapproved source-bridge candidate"),"Candidate provenance must remain visible");
-console.log("PASS Historia P3 broad source-adjudication: 37 movements/93 A/29 context, +40 verses in A, 10 original+7 P3-owned bridge candidates, Stephen/French and visionary holds");
+console.log("PASS Historia P3 broad source-adjudication: 37 movements/93 A/29 context, +43 verses in A across two research seam passes, 10 original+6 P3-owned bridge candidates, Stephen/French and visionary holds");
