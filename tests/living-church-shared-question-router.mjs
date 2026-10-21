@@ -23,7 +23,7 @@ const byEN=new Map(en.entries.map(x=>[x.q,x]));
 const byIT=new Map(it.entries.map(x=>[x.q,x]));
 assert.equal(registry.schema,"AO_LIVING_CHURCH_SHARED_QUESTION_ROUTING_PILOT_V1");
 assert.equal(registry.state,"RESEARCH_ONLY_NOT_IN_APP");
-assert.equal(registry.pilotLimits.topics,186);
+assert.equal(registry.pilotLimits.topics,197);
 assert.equal(registry.pilotLimits.approvedConversationalAnswers,0);
 assert.equal(registry.policy.canGenerateNewDoctrinalAnswer,false);
 assert.equal(registry.policy.canGeneratePastoralConclusion,false);
@@ -31,8 +31,8 @@ assert.equal(registry.policy.answerTextIncluded,false);
 assert.equal(registry.policy.historicalSpeechClaim,false);
 assert.equal(registry.policy.explicitUserAcceptanceRequired,true);
 assert.equal(registry.pilotLimits.maxTransfersPerQuestion,1);
-assert.equal(registry.topics.length,186);
-assert.equal(registry.pilotLimits.sourceNavigableTopics,96);
+assert.equal(registry.topics.length,197);
+assert.equal(registry.pilotLimits.sourceNavigableTopics,107);
 assert.equal(registry.pilotLimits.newGuideMomentsIndexed,18);
 assert.equal(registry.pilotLimits.totalCanonGuideTopics,28);
 assert.equal(registry.topics.filter(t=>t.category==="canon_guide_existing_moment").length,18);
@@ -43,7 +43,7 @@ assert.equal(registry.pilotLimits.sourceGapTopics,90);
 assert.equal(registry.policy.referralRequiresExactRelevantSource,true);
 assert.equal(registry.policy.genericRouteIsNotEvidence,true);
 assert.deepEqual(Object.fromEntries(["pius-x","canon","sacristan"].map(k=>[k,registry.topics.filter(x=>x.character===k).length])),
- {"pius-x":35,canon:116,sacristan:35});
+ {"pius-x":46,canon:116,sacristan:35});
 const topics=new Set();
 for(const topic of registry.topics){
  assert.ok(!topics.has(topic.id),"duplicate "+topic.id);topics.add(topic.id);
@@ -83,7 +83,10 @@ for(const topic of registry.topics){
    assert.equal(pointer.approvedReply,false);
    const originalOwner=historicalPointers.researchOwner.fixture;
    const documentFirstOwner="https://github.com/Fulcanelli13/ad-orientem/blob/formation/1457-pius-x-conversation-evidence/data/learn/research/pius-x-document-first-unscripted-bilingual-probes-20261021.v1.json";
-   assert.equal(pointer.researchSource,["SPX-PILOT-13","SPX-PILOT-14"].includes(pointer.id)?documentFirstOwner:originalOwner,
+   const next11Owner="https://github.com/Fulcanelli13/ad-orientem/blob/formation/1457-pius-x-conversation-evidence/data/learn/research/pius-x-next11-frozen-english-french-question-probes-20261021.v1.json";
+   const idNumber=Number(pointer.id.slice(-2));
+   const expectedOwner=idNumber>=15?next11Owner:(idNumber>=13?documentFirstOwner:originalOwner);
+   assert.equal(pointer.researchSource,expectedOwner,
      "Historical research provenance must be exact: "+pointer.id);
   }else throw Error("Unrecognised source owner "+source.owner);
  }
@@ -127,7 +130,7 @@ for(const t of canonCrisis){
 for(const a of registry.ambiguities)for(const id of a.candidates)assert.ok(topics.has(id));
 const router=createSharedQuestionRouter(registry);
 assert.equal(router.version,SHARED_QUESTION_ROUTER_VERSION);
-assert.equal(router.topicCount,186);
+assert.equal(router.topicCount,197);
 const match=(q,options={})=>router.match(q,options);
 let r=match("Why does the priest raise the Host?");
 assert.equal(r.kind,"clarify");assert.equal(r.ambiguityId,"host_raised");
@@ -255,19 +258,19 @@ assert.throws(()=>createSharedQuestionRouter(clone),/Topic falsely claims eviden
 for(const c of ["pius-x","canon","sacristan"]){
  const src=router.listTopics({character:c});assert.ok(src.length>0);assert.ok(src.every(x=>x.approvedReply===false&&!x.answerText));
 }
-console.log("PASS Living Church shared routing: 186 topics, 96 source-nav registry entries, 90 held topics; 28 Canon Guide moment links, 60 unpublished apologetics and 25 Church Crisis studies held");
+console.log("PASS Living Church shared routing: 197 topics, 107 source-nav registry entries, 90 held topics; 28 Canon Guide moment links, 60 unpublished apologetics and 25 Church Crisis studies held");
 
 
 assert.equal(historicalPointers.schema,"AO_LIVING_CHURCH_PIUS_X_HISTORICAL_PASSAGE_POINTERS_V1");
-assert.equal(historicalPointers.records.length,12);
+assert.equal(historicalPointers.records.length,23);
 const newPius=registry.topics.filter(t=>t.id.startsWith("pius.historical_spx_pilot_"));
-assert.equal(newPius.length,14);
-assert.equal(newPius.filter(t=>t.coverage==="SOURCE_NAVIGATION_ONLY").length,12);
+assert.equal(newPius.length,25);
+assert.equal(newPius.filter(t=>t.coverage==="SOURCE_NAVIGATION_ONLY").length,23);
 assert.equal(newPius.filter(t=>t.coverage==="SOURCE_GAP").length,2);
-assert.deepEqual(newPius.map(t=>t.id),Array.from({length:14},(_,i)=>"pius.historical_spx_pilot_"+String(i+1).padStart(2,"0")));
+assert.deepEqual(newPius.map(t=>t.id),Array.from({length:25},(_,i)=>"pius.historical_spx_pilot_"+String(i+1).padStart(2,"0")));
 for(const t of newPius){
  assert.equal(t.approvedReply,false);
- assert.equal(t.sourceBridgeOwner,"PR1458_EXTERNAL_DOCUMENTARY_POINTERS_RESEARCH_ONLY");
+ assert.equal(t.sourceBridgeOwner,Number(t.id.slice(-2))>=15?"PR1458_FROZEN_NEXT11_DOCUMENTARY_SOURCE_POINTERS_RESEARCH_ONLY":"PR1458_EXTERNAL_DOCUMENTARY_POINTERS_RESEARCH_ONLY");
  if(t.coverage==="SOURCE_GAP")assert.equal(t.sourceRefs.length,0);
  else assert.equal(t.sourceRefs[0].ref,"SPX-PILOT-"+t.id.slice(-2));
 }
