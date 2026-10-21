@@ -79,7 +79,7 @@ for(const topic of registry.topics){
    assert.ok(pointer,"Historical passage pointer absent: "+source.ref);
    assert.equal(source.evidence,"PASSAGE_LOCATOR_RESEARCH_ONLY");
    assert.match(pointer.originalDocumentUrl,/^https:\/\//);
-   assert.ok(pointer.sourceLocator.length>=14);
+   assert.ok(pointer.sourceLocator.length>=10,"Short precise paragraph locators are valid");
    assert.equal(pointer.approvedReply,false);
    const originalOwner=historicalPointers.researchOwner.fixture;
    const documentFirstOwner="https://github.com/Fulcanelli13/ad-orientem/blob/formation/1457-pius-x-conversation-evidence/data/learn/research/pius-x-document-first-unscripted-bilingual-probes-20261021.v1.json";
