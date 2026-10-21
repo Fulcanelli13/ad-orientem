@@ -52,3 +52,38 @@ export function stagedThematicBatch2(preflight,existingPilotCollections){
   throw new Error('Invalid second-batch category counts');
  return Object.freeze(output);
 }
+
+
+/**
+ * Opt-in research catalogue: 19 existing pilots plus 41 staged source readings.
+ * Returns source coordinates, never Scripture wording or Atlas identities.
+ * Not imported by the app unless the explicit batch-two research flag is on.
+ */
+export function expandedThematicResearchCollections(preflight,pilotCollections){
+ const staged=stagedThematicBatch2(preflight,pilotCollections);
+ const additions=new Map(staged.map(c=>[c.id,c]));
+ const ordered=[...pilotCollections.map(c=>c.id),'biblical_prayers_and_canticles'];
+ if(ordered.join('|')!==
+  'great_biblical_narratives|miracles_of_christ|parables_and_teachings|biblical_prayers_and_canticles')
+  throw new Error('Unexpected research collection navigation order');
+ const collections=ordered.map(id=>{
+  const original=pilotCollections.find(c=>c.id===id);
+  const incoming=additions.get(id);
+  const episodes=[...(original?.episodes||[]),...(incoming?.episodes||[])];
+  episodes.sort((a,b)=>Number(a.id.slice(-3))-Number(b.id.slice(-3)));
+  return Object.freeze({
+   id,
+   title:original?.title||'Biblical Prayers and Canticles',
+   stage:'OPT_IN_RESEARCH_ONLY_NOT_PUBLISHED',
+   episodes:Object.freeze(episodes)
+  });
+ });
+ const counts=collections.map(c=>c.episodes.length).join(',');
+ if(counts!=='7,27,23,3')throw new Error('Research expansion distribution changed: '+counts);
+ const all=collections.flatMap(c=>c.episodes);
+ if(all.length!==60||new Set(all.map(x=>x.id)).size!==60)
+  throw new Error('Duplicate Scripture reading identity in expansion');
+ if(all.filter(x=>x.publicationStatus==='RESEARCH_STAGED_NOT_LIVE').length!==41)
+  throw new Error('Unapproved research readings were promoted unexpectedly');
+ return Object.freeze(collections);
+}
