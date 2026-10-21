@@ -4,7 +4,7 @@ import {assembleHistoriaReading,historiaAssemblyMarkdown,historiaReadableMarkdow
 
 const read=path=>JSON.parse(readFileSync(new URL("../"+path,import.meta.url),"utf8"));
 const proof=read("data/research/historia-salutis-v18-continuous-reading-proof.v1.json");
-const expected={movements:37,scriptureBeats:93,scriptureSpans:166,editorialConnectorProposals:39,originalContextUnits:29,additionalCausalSeams:10,heldSourceCandidates:16,stillUnselectedBridgeCandidates:7,bridgeReadingTrials:9,readingTrialSpans:12,exactVerseRailSections:220,sourceSpansWithProposedRailSplits:18,readableResearchProjectedSourceSpans:2,readableResearchSourceVerseOmissions:6,trialVerseEntries:54,published:0};
+const expected={movements:37,scriptureBeats:93,scriptureSpans:166,editorialConnectorProposals:41,originalContextUnits:29,additionalCausalSeams:12,heldSourceCandidates:16,stillUnselectedBridgeCandidates:7,bridgeReadingTrials:9,readingTrialSpans:12,exactVerseRailSections:220,sourceSpansWithProposedRailSplits:18,readableResearchProjectedSourceSpans:2,readableResearchSourceVerseOmissions:6,trialVerseEntries:54,published:0};
 for (const edition of HISTORIA_EDITIONS) {
   const witnessCache=new Map();
   const getWitness=book=>{
@@ -47,7 +47,7 @@ for (const edition of HISTORIA_EDITIONS) {
         }
       } else if(segment.kind==="EDITORIAL_CONNECTOR_PROPOSAL"){
         if(segment.additionalCausalSeam){
-          assert.ok(["HS-P3-EC-01","HS-P3-EC-02","HS-P3-EC-03","HS-P3-EC-04","HS-P3-EC-05","HS-P3-EC-06","HS-P3-EC-07","HS-P3-EC-08","HS-P3-EC-09","HS-P3-EC-10"].includes(segment.candidateId));
+          assert.ok(["HS-P3-EC-01","HS-P3-EC-02","HS-P3-EC-03","HS-P3-EC-04","HS-P3-EC-05","HS-P3-EC-06","HS-P3-EC-07","HS-P3-EC-08","HS-P3-EC-09","HS-P3-EC-10","HS-P3-EC-11","HS-P3-EC-12"].includes(segment.candidateId));
           const candidate=original.beforeScriptureConnectorCandidate||original.readthroughTrial?.editorialPreface;
           assert.ok(candidate);
           assert.ok(["SCRIPTURE","SOURCE_BRIDGE_CANDIDATE"].includes(original.kind));
@@ -234,6 +234,9 @@ for (const edition of HISTORIA_EDITIONS) {
     assert.equal((readable.match(/\*2Samuel 5:6–7\*/g)||[]).length,1);
     assert.ok(!readable.includes("And he made him go up into his second chariot"));
     assert.ok(readable.includes("The Lord had made known to Samuel"));
+    assert.ok(readable.includes("Among the descendants of Sem was Abram"));
+    assert.ok(readable.includes("On Patmos, John received the revelation"));
+    assert.ok(readable.includes("John the Baptist began preaching repentance"));
   }else if(edition==="crampon-1923"){
     assert.throws(()=>historiaReadableMarkdown(output),/untranslated English drafts/);
   }else{
@@ -242,4 +245,4 @@ for (const edition of HISTORIA_EDITIONS) {
     assert.ok(readable.includes("*Genesis 41:33–41*"));
   }
 }
-console.log("PASS Historia annotated source assembly: 37 movements, 93 A units, 166 original + 12 provisional source spans, 29 original + 10 causal editorial connectors, 16 held candidates (9 tested/7 not included); 220 verse-traceable rail sections from 18 proposed semantic splits; all three witnesses; no publication approval");
+console.log("PASS Historia annotated source assembly: 37 movements, 93 A units, 166 original + 12 provisional source spans, 29 original + 12 causal editorial connectors, 16 held candidates (9 tested/7 not included); 220 verse-traceable rail sections from 18 proposed semantic splits; all three witnesses; no publication approval");
