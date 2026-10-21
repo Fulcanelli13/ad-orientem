@@ -253,6 +253,7 @@ try{
     const parent=document.querySelector(".ao-reader-stage");
     const top= document.querySelector('.ao-state-cell[data-side="faithful"]');
     const left=document.querySelector(".ao-rail-left");
+    const posture=left?.querySelector('[data-channel="posture"]');
     const right=document.querySelector(".ao-rail-right");
     const position=right?.querySelector('[data-channel="priest-position"]');
     return {
@@ -261,6 +262,8 @@ try{
       ribbonHeight:box?.parentElement?.getBoundingClientRect().height??0,
       oldTopDisplay:top?getComputedStyle(top).display:null,
       leftVisible:left?.dataset.visible??null,
+      postureDisplay:posture?getComputedStyle(posture).display:null,
+      postureIconHidden:posture?.querySelector('[data-icon-slot="posture"]')?.hidden??true,
       rightVisible:right?.dataset.visible??null,
       positionActive:position?.dataset.active??null,
       positionLabel:position?.querySelector('[data-role="priest-position-rail"]')?.textContent??null,
@@ -273,6 +276,10 @@ try{
     "LIVE explanation did not replace the duplicate top YOU/PRIEST cells");
   assert.equal(objectiveVisual.leftVisible,"true",
     "The faithful posture must remain visible in the left rail");
+  assert.equal(objectiveVisual.postureDisplay,"grid",
+    "Context ribbon hid the actual faithful posture tile via legacy LIVE CSS");
+  assert.equal(objectiveVisual.postureIconHidden,false,
+    "Kneeling icon is not rendered in its restored rail tile");
   assert.equal(objectiveVisual.rightVisible,"true",
     "Priest actions and position must remain on the right rail");
   assert.equal(objectiveVisual.positionActive,"true",
