@@ -1,0 +1,87 @@
+{
+  "schema": "AO_CUSTOMS_INDEPENDENT_SOURCE_CLOSURE_B04_V1",
+  "as_of": "2026-10-21",
+  "status": "HISTORICALLY_WITNESSED_BILINGUAL_EDITORIAL_DRAFT_NO_RELEASE",
+  "audit": {
+    "batch_records": 2,
+    "independent_witnesses": 3,
+    "cumulative_bounded": 25,
+    "still_unverified": 17,
+    "new_canonical_ids": 0,
+    "publication_approvals": 0
+  },
+  "policy": [
+    "Historical material culture and folk housework do not prescribe liturgical actions.",
+    "Do not assign universal origins from a local museum witness.",
+    "Do not publish folk magic as doctrine."
+  ],
+  "records": [
+    {
+      "weiser_id": "WEI58-08-002",
+      "title_en": "Large Alpine Nativity scenes and Tyrolean crèche making",
+      "title_fr": "Les grandes crèches alpines et l’art des crèches tyroliennes",
+      "calendar_context": "Advent/Christmas preparation and household display; local forms vary",
+      "geography": "Tyrol, Austria, independently documented; not all Alpine regions",
+      "history_en": "Tyrol's ethnographic museum documents Christmas cribs in churches from Innsbruck in 1608 and their later spread into rural homes during the nineteenth century. Large scenic works could occupy a considerable part of a family room. The museum preserves both baroque and later Alpine landscapes; exact first origins of every local type differ.",
+      "history_fr": "Le musée ethnographique du Tyrol atteste des crèches dans les églises d’Innsbruck dès 1608, puis leur diffusion dans les maisons rurales au XIXe siècle. De grandes mises en scène pouvaient occuper une partie notable de la pièce familiale. Le musée conserve des paysages de la Nativité baroques et alpins, sans établir une origine unique pour chaque forme.",
+      "meaning_en": "The Nativity represented in the family home or church as an aid to contemplation.",
+      "meaning_fr": "La Nativité représentée dans le foyer ou l’église comme support de contemplation.",
+      "practice_en": "Families may prepare or contemplate a traditional crib; artistic construction and the exact date are voluntary.",
+      "practice_fr": "Les familles peuvent préparer ou contempler une crèche traditionnelle ; sa construction et sa date demeurent libres.",
+      "qualification_en": "Do not conflate Tyrolean cribs with Polish itinerant szopka theatre, or imply that large museum pieces were common in every family.",
+      "qualification_fr": "Ne pas confondre les crèches du Tyrol avec le théâtre ambulant polonais de la szopka ni prétendre que chaque famille possédait de grandes pièces.",
+      "identity_recommendation": "HISTORIC_NATIVITY_DISPLAY_VARIANT_OF_LARGER_CRIB_FAMILY_NO_AUTO_ID",
+      "sources": [
+        {
+          "id": "AT-TYROL-MUSEUM-CRIB-HISTORY",
+          "issuer": "Tyrol State Museums, Weihnachtswunder exhibition",
+          "url": "https://www.tiroler-landesmuseen.at/ausstellung/weihnachtswunder/",
+          "supports": "1608 Innsbruck church crib, evolution to private Tyrolean rural cribs, historical dimensions and chronology",
+          "limit": "Museum interpretation of Tyrol, not proof of all Alpine households."
+        },
+        {
+          "id": "AT-TYROL-MUSEUM-PERMANENT",
+          "issuer": "Tyrol State Museums, Volkskunstmuseum permanent collections",
+          "url": "https://www.tiroler-landesmuseen.at/ausstellung/dauerausstellungen-im-volkskunstmuseum/",
+          "supports": "More than twenty preserved cribs, sacred narratives, evolving local landscape and historical display",
+          "limit": "Collections are not a universal ritual template."
+        }
+      ],
+      "bilingual_status": "ORIGINAL_DRAFT_EN_FR",
+      "source_claim_bounded": true,
+      "editorial_approved": false,
+      "identity_approved": false,
+      "publication_enabled": false
+    },
+    {
+      "weiser_id": "WEI58-15-002",
+      "title_en": "Holy Week cleaning and Easter household preparation in Poland",
+      "title_fr": "Le grand nettoyage de la Semaine sainte et la préparation de Pâques en Pologne",
+      "calendar_context": "Holy Week before Easter, movable; primarily household seasonal preparation",
+      "geography": "Historical Polish village households, including Radom region",
+      "history_en": "The Museum of the Radom Village describes thorough Holy Week household cleaning from Monday onwards, including washing, airing bedding and whitewashing walls as Easter approached. This combined practical spring cleaning and religiously coloured folk symbolism. Accounts of ill fortune following neglected chores are historical beliefs, not Catholic moral law.",
+      "history_fr": "Le Musée du village de Radom décrit le nettoyage approfondi des foyers à partir du lundi de la Semaine sainte : lavage, aération de la literie et blanchiment des murs avant Pâques. Ce travail pratique de printemps s’accompagnait de symboles populaires liés à la fête. Les mauvais présages attachés aux travaux négligés relèvent des croyances anciennes, non de la loi morale catholique.",
+      "meaning_en": "Ordinary household preparation can accompany personal preparation for the Paschal feast.",
+      "meaning_fr": "La préparation matérielle du foyer peut accompagner la préparation personnelle à la fête pascale.",
+      "practice_en": "Families may prepare their home for Easter, without inventing a ritual requirement or superseding participation in Holy Week liturgy.",
+      "practice_fr": "Les familles peuvent préparer leur maison pour Pâques, sans obligation rituelle nouvelle ni substitution aux offices de la Semaine sainte.",
+      "qualification_en": "Regional historical custom only; no supernatural misfortune is guaranteed for failing to clean.",
+      "qualification_fr": "Coutume historique régionale ; aucun malheur surnaturel n’est promis à ceux qui ne font pas le ménage.",
+      "identity_recommendation": "SEASONAL_HOUSEHOLD_CULTURAL_HISTORY_CONTEXT_NOT_RITUAL",
+      "sources": [
+        {
+          "id": "PL-RADOM-MUSEUM-HOLYWEEK",
+          "issuer": "Museum of the Radom Village, Wielki Tydzień",
+          "url": "https://www.muzeum-radom.pl/wydarzenia/wielki-tydzien/2946",
+          "supports": "Holy Week spring cleaning, preparing buildings and bedding before Easter, non-liturgical symbolic beliefs",
+          "limit": "Local ethnographic customs, not fasting regulations or ecclesiastical duties."
+        }
+      ],
+      "bilingual_status": "ORIGINAL_DRAFT_EN_FR",
+      "source_claim_bounded": true,
+      "editorial_approved": false,
+      "identity_approved": false,
+      "publication_enabled": false
+    }
+  ]
+}
