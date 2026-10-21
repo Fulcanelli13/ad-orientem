@@ -4,7 +4,7 @@ import { insertChantPhraseBreaks } from "./reader-chant-line-layout.js";
 import { missalSourceRubricCopy } from "./reader-missal-book-rubrics.js";
 import { normalizePresentationMode } from "./session-engine.js";
 import { resolveMassLiturgicalTheme, massThemeCssVariables } from "./reader-liturgical-theme.js";
-import { R17_DONOR_PNG_ICON_KEYS } from "./reader-icon-bank.js";
+import { R17_DONOR_PNG_ICON_KEYS, R17_FROZEN_ACTIVE_ICON_ASSETS } from "./reader-icon-bank.js";
 import { exactIconBackedRubric } from "./reader-icon-backed-rubrics.js";
 
 export const SCHOLA_SPEEDS=Object.freeze([0.25,0.35,0.45,0.60,0.80,1.00]);
@@ -2054,6 +2054,12 @@ export function createDonorRichMaskLoader(fetchAsset=globalThis.fetch?.bind(glob
 }
 
 const loadDonorRichMask=createDonorRichMaskLoader();
+// A canonical alias (e.g. "canon:faithful.posture.stand") can point at the same
+// donor wrapper file as a donor key, so the unwrap decision follows the file.
+const DONOR_PNG_WRAPPER_URLS=new Set(R17_DONOR_PNG_ICON_KEYS.map(k=>R17_FROZEN_ACTIVE_ICON_ASSETS[k]).filter(Boolean));
+export function isDonorPngWrapper(id,src){
+  return R17_DONOR_PNG_ICON_KEYS.includes(id) || DONOR_PNG_WRAPPER_URLS.has(String(src??""));
+}
 
 function applyIconNode(el,key,iconResolver){
   if(!el)return;
@@ -2078,7 +2084,7 @@ function applyIconNode(el,key,iconResolver){
     el.style.maskImage=cssUrl(uri);
     el.style.webkitMaskImage=cssUrl(uri);
   };
-  if(!R17_DONOR_PNG_ICON_KEYS.includes(id)){
+  if(!isDonorPngWrapper(id,src)){
     showMask(src);
     return;
   }

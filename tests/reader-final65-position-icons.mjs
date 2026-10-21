@@ -43,72 +43,77 @@ for(const row of cross.rows.filter(x=>x.lane==="priest_voice")){
 const icon=(cueId,state={})=>iconKeysForReaderState({
  form:"MISSA_CANTATA_SIMPLE",...state,cueId,curated65FinalArt:true,
 });
-for(const [cue,expected] of [
- ["AO.SM.C0110","priest_elevate_host_rich"],
- ["AO.SM.C0114","priest_elevate_chalice_rich"],
- ["AO.SM.C0174","priest_elevation"],
- ["AO.SM.C0222","breast_strike"],
- ["AO.SM.C0246","priest_rail_after_rich"],
+// 21 Oct 2026 canonical set: the source label at the cue decides; the priest's
+// breast strike has no vested art (the lay figure is not reused for the priest),
+// and Communion of the faithful is shown by the rail position + faithful lane.
+for(const [cue,label,expected] of [
+ ["AO.SM.C0110","OFFERS HOST","canon:priest.action.offer_host"],
+ ["AO.SM.C0114","OFFERS CHALICE","canon:priest.action.offer_chalice"],
+ ["AO.SM.C0174","ELEVATES HOST","canon:priest.action.elevate_host"],
+ ["AO.SM.C0222","STRIKES BREAST",null],
+ ["AO.SM.C0246","GIVES COMMUNION",null],
 ]){
- assert.equal(icon(cue,{priestAction:{cueId:cue,label:"SOURCE_ACTION"}}).priestActionIconKey,
+ assert.equal(icon(cue,{priestAction:{cueId:cue,label}}).priestActionIconKey,
   expected,"Priest action mismatch "+cue);
 }
-for(const [cue,exactKey] of [
- ["AO.SM.C0181","final_ao_elevation_chalice"],
- ["AO.SM.C0216","final_ea_priest_fraction_host"],
- ["AO.SM.C0221","final_ea_priest_commingling"],
- ["AO.SM.C0232","final_ea_priest_communion_host_original"],
- ["AO.SM.C0234","final_ea_priest_communion_chalice_original"],
- ["AO.SM.C0247","final_ao_purify_fingers"],
- ["AO.SM.C0248","final_ao_purify_chalice"],
+for(const [cue,label,exactKey] of [
+ ["AO.SM.C0181","ELEVATES CHALICE","canon:priest.action.elevate_chalice"],
+ ["AO.SM.C0216","BREAKS HOST","canon:priest.action.fraction"],
+ ["AO.SM.C0221","PLACES PARTICLE","canon:priest.action.commingling"],
+ ["AO.SM.C0232","RECEIVES HOST","canon:priest.action.receive_host"],
+ ["AO.SM.C0234","RECEIVES CHALICE","canon:priest.action.receive_chalice"],
+ // Quod ore sumpsimus = first ablution (chalice); Corpus tuum = ablution of the fingers.
+ ["AO.SM.C0247","WASHES / PURIFIES","canon:priest.action.purify_chalice"],
+ ["AO.SM.C0248","WASHES / PURIFIES","canon:priest.action.purify_fingers"],
 ]){
- assert.equal(icon(cue,{priestAction:{cueId:cue,label:"SOURCE_ACTION"}}).priestActionIconKey,exactKey,
+ assert.equal(icon(cue,{priestAction:{cueId:cue,label}}).priestActionIconKey,exactKey,
   "Approved exact-source original no longer reached "+cue);
 }
 for(const [cueId,action,expected] of [
- ["AO.SM.C0068","SIGNS HIMSELF","final_ao_sign_of_cross_vector"],
- ["AO.SM.C0079","PROFOUND BOW","final_ao_adoration"],
- ["AO.SM.C0104","SIGNS HIMSELF","final_ao_sign_of_cross_vector"],
- ["AO.SM.C0262","KISSES ALTAR","priest_kiss_altar_rich"],
+ ["AO.SM.C0068","SIGNS HIMSELF","canon:priest.action.sign_of_cross"],
+ ["AO.SM.C0079","PROFOUND BOW","canon:priest.action.profound_bow"],
+ ["AO.SM.C0104","SIGNS HIMSELF","canon:priest.action.sign_of_cross"],
+ ["AO.SM.C0262","KISSES ALTAR","canon:priest.action.kiss_altar"],
 ]){
  assert.equal(icon(cueId,{priestAction:{cueId,label:action}}).priestActionIconKey,expected,
   "Exact 1962 rubric action must use user's approved artwork: "+cueId);
  assert.equal(icon(cueId,{priestAction:{cueId,label:"UNRELATED ACTION"}}).priestActionIconKey,null,
   "A generic source cue cannot substitute an unrelated action image: "+cueId);
 }
-assert.equal(icon("AO.SM.C0055",{gesture:{cueId:"AO.SM.C0055",action:"Bow head"}}).gestureIconKey,"bow");
-assert.equal(icon("AO.SM.C0072",{priestPosition:{station:"ALTAR_EPISTLE_MISSAL"}}).priestPositionIconKey,"priest_gospel_rich");
-assert.equal(icon("AO.SM.C0144",{priestPosition:{station:"ALTAR_CENTER",missalLocation:"GOSPEL_SIDE"}}).priestPositionIconKey,"priest_centre_hands_rich");
-assert.equal(icon("AO.SM.C0086",{priestPosition:{station:"ALTAR_GOSPEL_MISSAL"}}).priestPositionIconKey,"priest_epistle_rich");
-assert.equal(icon("AO.SM.C0001",{priestPosition:{station:"FOOT_CENTER"}}).priestPositionIconKey,null,
-  "User vetoed Foot Centre pictogram: text-only, never ref_112206 or old rejected art");
-assert.equal(icon("AO.SM.C0001",{priestPosition:{station:"FOOT_CENTER",facing:"PEOPLE"}}).priestPositionIconKey,null,
-  "Facing-people cannot override Foot Centre artwork veto");
+assert.equal(icon("AO.SM.C0055",{gesture:{cueId:"AO.SM.C0055",owner:"GESTURE_MATRIX_SOT",iconKey:"head_bow",label:"Bow head"}}).gestureIconKey,"canon:faithful.gesture.bow_head");
+assert.equal(icon("AO.SM.C0072",{priestPosition:{station:"ALTAR_EPISTLE_MISSAL"}}).priestPositionIconKey,"canon:priest.position.epistle_side");
+assert.equal(icon("AO.SM.C0144",{priestPosition:{station:"ALTAR_CENTER",missalLocation:"GOSPEL_SIDE"}}).priestPositionIconKey,"canon:priest.position.centre");
+assert.equal(icon("AO.SM.C0086",{priestPosition:{station:"ALTAR_GOSPEL_MISSAL"}}).priestPositionIconKey,"canon:priest.position.gospel_side");
+// 21 Oct 2026: the user chose ref_112206 for the foot of the altar, replacing the 20 Oct text-only decision.
+assert.equal(icon("AO.SM.C0001",{priestPosition:{station:"FOOT_CENTER"}}).priestPositionIconKey,"canon:priest.position.foot",
+  "Foot of the altar uses the user's 21 Oct choice");
+assert.equal(icon("AO.SM.C0001",{priestPosition:{station:"FOOT_CENTER",facing:"PEOPLE"}}).priestPositionIconKey,"canon:priest.position.foot",
+  "Facing-people cannot override the Foot station");
 assert.equal(icon("AO.SM.C0265",{priestAction:{cueId:"AO.SM.C0265",label:"BLESSES PEOPLE"}}).priestActionIconKey,null,
   "Final blessing must not use Indulgentiam artwork");
-assert.equal(icon("AO.SM.C0144",{priestVoice:{cueId:"AO.SM.C0144",voice:"SUNG / CLEAR"}}).priestVoiceIconKey,"final_ao_chant",
+assert.equal(icon("AO.SM.C0144",{priestVoice:{cueId:"AO.SM.C0144",voice:"SUNG / CLEAR"}}).priestVoiceIconKey,"canon:priest.voice.chant",
   "Preface sung by priest requires user-approved Chant artwork, not audible-speech pictogram");
-assert.equal(icon("AO.SM.C0053",{priestVoice:{cueId:"AO.SM.C0053",voice:"SUNG / PUBLIC"}}).priestVoiceIconKey,"final_ao_chant");
-assert.equal(icon("AO.SM.C0259",{priestVoice:{cueId:"AO.SM.C0259",voice:"SUNG / PUBLIC"}}).priestVoiceIconKey,"final_ao_chant");
-assert.equal(icon("AO.SM.C0130",{priestVoice:{cueId:"AO.SM.C0130",voice:"AUDIBLE / ELEVATED"}}).priestVoiceIconKey,"priest_audible",
+assert.equal(icon("AO.SM.C0053",{priestVoice:{cueId:"AO.SM.C0053",voice:"SUNG / PUBLIC"}}).priestVoiceIconKey,"canon:priest.voice.chant");
+assert.equal(icon("AO.SM.C0259",{priestVoice:{cueId:"AO.SM.C0259",voice:"SUNG / PUBLIC"}}).priestVoiceIconKey,"canon:priest.voice.chant");
+assert.equal(icon("AO.SM.C0130",{priestVoice:{cueId:"AO.SM.C0130",voice:"AUDIBLE / ELEVATED"}}).priestVoiceIconKey,"canon:priest.voice.aloud",
   "Orate fratres is spoken and must not show Chant icon");
-assert.equal(icon("AO.SM.C0109",{priestVoice:{cueId:"AO.SM.C0109",voice:"SECRET OFFERTORY"}}).priestVoiceIconKey,"final_ao_pray_audible",
+assert.equal(icon("AO.SM.C0109",{priestVoice:{cueId:"AO.SM.C0109",voice:"SECRET OFFERTORY"}}).priestVoiceIconKey,"canon:priest.voice.low",
   "Priest's Offertory antiphon recitation is not Schola chant");
 for(const id of ["AO.SM.C0075","AO.SM.C0082","AO.SM.C0086"]){
  assert.equal(icon(id,{form:"SOLEMN",priestVoice:{cueId:id,voice:"SUNG / CLEAR"}}).priestVoiceIconKey,null,
  "Celebrant chant icon must not be displayed for deacon/subdeacon: "+id);
 }
-assert.equal(icon("AO.SM.C0075",{priestVoice:{cueId:"AO.SM.C0075",voice:"SUNG / CLEAR"}}).priestVoiceIconKey,"final_ao_chant");
+assert.equal(icon("AO.SM.C0075",{priestVoice:{cueId:"AO.SM.C0075",voice:"SUNG / CLEAR"}}).priestVoiceIconKey,"canon:priest.voice.chant");
 assert.deepEqual(ULTRA_MASTER_PRIEST_CHANT_CUE_ADDITIONS,
  ["AO.SM.C0073","AO.SM.C0142","AO.SM.C0209","AO.SM.C0254"]);
 assert.deepEqual(SCHOLA_NOT_PRIEST_CHANT_CUES,
  ["AO.SM.C0054","AO.SM.C0090"]);
 for(const id of ULTRA_MASTER_PRIEST_CHANT_CUE_ADDITIONS){
- assert.equal(icon(id).priestVoiceIconKey,"final_ao_chant",
+ assert.equal(icon(id).priestVoiceIconKey,"canon:priest.voice.chant",
   "Ultra Master sung celebrant moment missing Chant pictogram: "+id);
- assert.equal(icon(id,{form:"SOLEMN"}).priestVoiceIconKey,"final_ao_chant",
+ assert.equal(icon(id,{form:"SOLEMN"}).priestVoiceIconKey,"canon:priest.voice.chant",
   "Properly priest-owned sung moment lost in Solemn Mass: "+id);
- assert.notEqual(icon(id,{form:"LOW"}).priestVoiceIconKey,"final_ao_chant",
+ assert.notEqual(icon(id,{form:"LOW"}).priestVoiceIconKey,"canon:priest.voice.chant",
   "Low Mass must not show a Chant pictogram: "+id);
 }
 for(const id of SCHOLA_NOT_PRIEST_CHANT_CUES){
@@ -122,17 +127,17 @@ assert.equal(icon("AO.SM.C0210",{priestVoice:{cueId:"AO.SM.C0209",voice:"SUNG / 
 assert.equal(icon("AO.SM.C0144",{priestVoice:{cueId:"AO.SM.C0139",voice:"SUNG / CLEAR"}}).priestVoiceIconKey,null,
  "Stale priest chanting event cannot outlive its own cue");
 
-assert.equal(icon("AO.SM.C0053",{form:"LOW",priestVoice:{cueId:"AO.SM.C0053",voice:"SUNG / PUBLIC"}}).priestVoiceIconKey,null,
- "Final 65 Sung resolver cannot leak priest Chant into Low Mass");
-assert.equal(iconKeysForReaderState({priestVoice:{value:"CHANTED"}}).priestVoiceIconKey,"priest_audible",
+assert.equal(icon("AO.SM.C0053",{form:"LOW",priestVoice:{cueId:"AO.SM.C0053",voice:"SUNG / PUBLIC"}}).priestVoiceIconKey,"canon:priest.voice.aloud",
+ "Low Mass never shows Chant: a sung token resolves to the priest speaking aloud");
+assert.equal(iconKeysForReaderState({priestVoice:{value:"CHANTED"}}).priestVoiceIconKey,"canon:priest.voice.aloud",
  "Non-curated/Low reader audible fallback must never be the priest Chant icon");
-assert.equal(icon("AO.SM.C0001",{priestVoice:{cueId:"AO.SM.C0001",voice:"LOW VOICE"}}).priestVoiceIconKey,"final_ao_pray_audible",
+assert.equal(icon("AO.SM.C0001",{priestVoice:{cueId:"AO.SM.C0001",voice:"LOW VOICE"}}).priestVoiceIconKey,"canon:priest.voice.low",
   "Low voice must not be incorrectly described as silent");
-assert.equal(icon("AO.SM.C0174",{priestVoice:{cueId:"AO.SM.C0174",voice:"SILENT"}}).priestVoiceIconKey,"final_ao_pray_silent");
-assert.equal(icon("AO.SM.C0265",{priestPosition:{station:"ALTAR_CENTER",facing:"PEOPLE"}}).priestPositionIconKey,"final_new_priest_facing",
+assert.equal(icon("AO.SM.C0174",{priestVoice:{cueId:"AO.SM.C0174",voice:"SILENT"}}).priestVoiceIconKey,"canon:priest.voice.silent");
+assert.equal(icon("AO.SM.C0265",{priestPosition:{station:"ALTAR_CENTER",facing:"PEOPLE"}}).priestPositionIconKey,"canon:priest.position.facing_people",
   "Approved hands-joined priest-facing-congregation original missing");
-assert.equal(icon("AO.SM.C0265",{response:{cueId:"AO.SM.C0265"}}).responseIconKey,"final_response");
-assert.equal(icon("AO.SM.C0144",{schola:{cueId:"AO.SM.C0144"}}).scholaIconKey,"final_schola");
+assert.equal(icon("AO.SM.C0265",{response:{cueId:"AO.SM.C0265"}}).responseIconKey,"canon:response.people");
+assert.equal(icon("AO.SM.C0144",{schola:{cueId:"AO.SM.C0144"}}).scholaIconKey,"canon:schola.sings");
 assert.equal(ultraVoice.items.length,34);
 assert.deepEqual(ultraVoice.counts,{
  PRIEST:27,SCHOLA:2,MINISTER_RESPONSE:4,MIXED_PUBLIC_INVITATION_THEN_PRIEST_PRIVATE:1
@@ -142,15 +147,15 @@ for(const witness of ultraVoice.items){
  const event={priestVoice:{cueId,voice:witness.ultraMasterVoice}};
  const actual=icon(cueId,event).priestVoiceIconKey;
  if(witness.owner==="PRIEST"){
-  assert.equal(actual,"final_ao_chant",
+  assert.equal(actual,"canon:priest.voice.chant",
    "Ultra Master sung celebrant missed priest Chant at "+cueId);
   assert.notEqual(icon(cueId,{...event,form:"LOW"}).priestVoiceIconKey,
-   "final_ao_chant","Low Mass wrongly uses Chant at "+cueId);
+   "canon:priest.voice.chant","Low Mass wrongly uses Chant at "+cueId);
  }else if(witness.owner==="SCHOLA"||witness.owner==="MINISTER_RESPONSE"){
-  assert.notEqual(actual,"final_ao_chant",
+  assert.notEqual(actual,"canon:priest.voice.chant",
    "Schola/server sung source spuriously marked as priest Chant: "+cueId);
  }else if(witness.owner==="MIXED_PUBLIC_INVITATION_THEN_PRIEST_PRIVATE"){
-  assert.equal(actual,"final_ao_pray_audible",
+  assert.equal(actual,"canon:priest.voice.low",
    "Mixed Offertory invitation must not be held as chant through priest's silent prayer");
  }
 }
