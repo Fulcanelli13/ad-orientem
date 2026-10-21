@@ -83,6 +83,49 @@ function railSectionsFor(ref, verses, partitions) {
   return groups;
 }
 
+
+/**
+ * A reading-only abridgment can omit whole verses but must never alter
+ * their wording, order, owner, or the underlying canonical selection.
+ */
+function provisionalReadableSource(ref, verses, beat, getIndex, edition) {
+  const option=beat.literaryEconomyOption;
+  const decision=option?.readingDecision;
+  if(!decision || !option.sourceReferencesUnderReview?.includes(ref))return null;
+  if(decision.publicationApproved!==false || decision.editorialLiteraryApproval!==false ||
+     decision.originalSourceSelectionPreserved!==true ||
+     option.publicationApproved!==false || option.appliedToDefaultReading!==false)
+     throw new Error("Unsafe Historia reading-only economy decision for "+beat.id);
+  if(decision.decision==="RETAIN_FULL_IN_RESEARCH_READING")return null;
+  if(decision.decision!=="USE_SHORTENED_PASSAGES_IN_RESEARCH_READING_ONLY" ||
+     !Array.isArray(decision.projectedReferences) || !decision.projectedReferences.length)
+     throw new Error("Unknown/empty Historia reading-only decision "+beat.id);
+  const units=[],sourceKeys=new Map(verses.map((v,i)=>[v.chapter+":"+v.verse,i]));
+  let previous=-1;
+  for(const sourceRef of decision.projectedReferences){
+    const parsed=parseHistoriaSpan(sourceRef);
+    if(parsed.book!==parseHistoriaSpan(ref).book)throw new Error("Abridgment crossed Bible books");
+    const cut=actualVerses(parsed,getIndex(parsed.book),edition);
+    for(const v of cut){
+      const index=sourceKeys.get(v.chapter+":"+v.verse);
+      if(index===undefined||index<=previous||verses[index].text!==v.text)
+        throw new Error("Abridgment is not a strict unmodified source subsequence: "+sourceRef);
+      previous=index;
+    }
+    units.push({reference:sourceRef,verses:cut,text:cut.map(v=>v.text).join(" ")});
+  }
+  const included=units.flatMap(u=>u.verses);
+  if(!included.length||included.length>=verses.length)
+    throw new Error("Reading-only projection must be a real subset for "+ref);
+  const includedKeys=new Set(included.map(v=>v.chapter+":"+v.verse));
+  return {
+    status:"PROVISIONAL_SOURCE_SUBSELECTION_NOT_APPROVED",
+    originalReference:ref,sections:units,
+    omittedVerseReferences:verses.filter(v=>!includedKeys.has(v.chapter+":"+v.verse)).map(v=>v.reference),
+    selectedForPublication:false,editorialLiteraryApproval:false,publicationApproved:false
+  };
+}
+
 function gapBetween(previous, next) {
   if (!previous || previous.book !== next.book) return null;
   if (next.fromChapter < previous.toChapter ||
@@ -198,6 +241,7 @@ export function assembleHistoriaReading(proof, edition, getWitness) {
           sourceStatus: "UNCOLLATED_SOURCE_WITNESS", verses,
           text: verses.map(v => v.text).join(" "),
           railSections:railSectionsFor(ref,verses,beat.railSegmentationTrial?.byOriginalReference?.[ref]),
+          readableResearchProjection:provisionalReadableSource(ref,verses,beat,getIndex,edition),
           railSubdivisionAccepted:false,accepted: false, publicationApproved: false
         });
         previous = parsed;
@@ -230,6 +274,8 @@ export function assembleHistoriaReading(proof, edition, getWitness) {
       readingTrialSpans: segments.filter(s=>s.kind==="SCRIPTURE_READING_TRIAL_NOT_APPROVED").length,
       exactVerseRailSections: segments.filter(s=>s.railSections).reduce((n,s)=>n+s.railSections.length,0),
       sourceSpansWithProposedRailSplits: segments.filter(s=>s.kind==="SCRIPTURE_EXACT_WITNESS"&&s.railSections.length>1).length,
+      readableResearchProjectedSourceSpans:segments.filter(s=>s.readableResearchProjection).length,
+      readableResearchSourceVerseOmissions:segments.filter(s=>s.readableResearchProjection).reduce((n,s)=>n+s.readableResearchProjection.omittedVerseReferences.length,0),
       trialVerseEntries: segments.filter(s=>s.kind==="SCRIPTURE_READING_TRIAL_NOT_APPROVED").reduce((n,s)=>n+s.verses.length,0),
       published: 0
     }
@@ -277,4 +323,67 @@ export function historiaAssemblyMarkdown(assembly) {
     }
   }
   return lines.join("\n") + "\n";
+}
+
+/**
+ * Calm, source-traceable continuous research reading derived from the SAME
+ * authoritative v18 proof. Only this projection considers the two provisional
+ * economical sub-selections; the annotated source edition remains untouched.
+ *
+ * Unapproved source bridges are not injected silently: their trial passages
+ * are accounted for in each movement's collapsed research/source audit.
+ */
+export function historiaReadableMarkdown(assembly) {
+  if (assembly.edition==="crampon-1923")
+    throw new Error("Do not render a fully French clean Historia reader while editorial connectors remain untranslated English drafts");
+  if (!["dr-challoner","cpdv-2009"].includes(assembly.edition))
+    throw new Error("Unsupported clean Historia reader edition "+assembly.edition);
+  const lines=[
+    "# Historia Salutis — continuous reading · research preview",
+    "",
+    "**UNAPPROVED RESEARCH READING — NOT FOR PUBLICATION**",
+    "",
+    "Scripture is quoted verbatim from the existing uncollated "+assembly.edition+" witness. ",
+    "Italic passages are *editorial connecting prose*, never Scripture. Their exact supporting source coordinates are recorded in collapsed movement notes.",
+    "This provisional reading contains unapproved Scripture bridges; seven optional bridge candidates are not inserted. Two shorter verse selections affect this reading preview only: the canonical P3 proof remains intact.",
+    "",
+  ];
+  for(const movement of assembly.movements){
+    lines.push("## "+String(movement.sequence).padStart(2,"0")+" · "+movement.title,"");
+    const notes=[];
+    let e=0;
+    for(const segment of movement.segments){
+      if(segment.kind==="EDITORIAL_CONNECTOR_PROPOSAL"){
+        e++;
+        lines.push("*"+asText(segment.text)+"*  [e"+e+"]","");
+        notes.push("- e"+e+" — **Editorial, not Scripture** · "+segment.sourceReferences.join("; ")+
+          " · approval pending");
+      }else if(segment.kind==="SCRIPTURE_EXACT_WITNESS"||
+               segment.kind==="SCRIPTURE_READING_TRIAL_NOT_APPROVED"){
+        const subs=segment.readableResearchProjection?.sections||[{
+          reference:segment.reference,text:segment.text
+        }];
+        for(const a of subs){
+          lines.push("*"+a.reference+"*","",asText(a.text),"");
+        }
+        if(segment.readableResearchProjection){
+          const r=segment.readableResearchProjection;
+          notes.push("- **Reading-only abridgment** · original "+r.originalReference+
+            " · shortened to "+r.sections.map(u=>u.reference).join("; ")+
+            " · omitted whole verses: "+r.omittedVerseReferences.join(", ")+
+            " · canonical selected source unchanged");
+        }
+        if(segment.kind==="SCRIPTURE_READING_TRIAL_NOT_APPROVED"){
+          notes.push("- **Unapproved Scripture bridge** · "+segment.reference+" · witnessed but not approved");
+        }
+      }else if(segment.kind==="HELD_SOURCE_CANDIDATE"){
+        notes.push("- **Held, not inserted** · "+segment.reference);
+      }else throw new Error("Unknown readable segment "+segment.kind);
+    }
+    if(notes.length){
+      lines.push("<details>","<summary>References and editorial audit · "+notes.length+" notes</summary>","",
+        ...notes,"","</details>","");
+    }
+  }
+  return lines.join("\n")+"\n";
 }
