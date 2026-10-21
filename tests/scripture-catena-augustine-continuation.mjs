@@ -34,7 +34,15 @@ for(const r of doc.records){
   assert.ok(r.readerQuestion.endsWith("?"));
   assert.ok(!Object.prototype.hasOwnProperty.call(r,"answer"),"No new Father words allowed");
   assert.ok(r.scriptureKeys.length);
-  for(const k of r.scriptureKeys)assert.ok(allVerses.has(k),"noncanonical Scripture locator: "+k);
+  for(const k of r.scriptureKeys){
+    if(!allVerses.has(k)){
+      assert.equal(r.sourceLocator,"I.20","Unexpected Scripture key missing from Catena");
+      assert.equal(k,"matthew/16/2");
+      assert.equal(r.originalScriptureReference,"Matthew 16:2–3");
+      assert.equal(r.sourceVerseMappingStatus,"primary_latin_scripture_location_unindexed_in_existing_catena_pericopes");
+      assert.equal(r.catenaLinks.length,0,"No synthetic Catena passage for weather signs");
+    }
+  }
   if(r.originalQuestionKind==="original_authorial_question_within_section")assert.ok(r.originalQuestionAnchor);
   else assert.equal(r.originalQuestionKind,"numbered_exegetical_treatment_not_verbatim_question");
   for(const link of r.catenaLinks){
