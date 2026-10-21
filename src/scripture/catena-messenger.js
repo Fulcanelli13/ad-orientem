@@ -439,7 +439,7 @@ export function mountCatenaMessenger(host,pericopes,{language="en",fetcher=globa
     if(!shell.isConnected)return;
     busy.remove();
     feed.append(element(d,"div","aoCatenaMUser",route.question));
-    note("Editorial navigation only · These excerpts may illuminate the question but have NOT received human approval. Distinct Father interpretations remain separate.");
+    note("EDITORIAL SOURCE LEAD · HUMAN APPROVAL PENDING · These original excerpts may illuminate the question but are not verified standalone answers. Distinct Father interpretations remain separate.");
     if(route.caution)note("Comparison context: "+route.caution);
     for(const ptr of route.sourcePointers){
      const item=review.byPointer.get(ptr);
