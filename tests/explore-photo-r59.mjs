@@ -59,7 +59,14 @@ for(const c of batch.candidates){
   else assert.fail("Unreviewed licence "+c.expected_license);
 }
 assert.deepEqual([four,three,two],[8,1,1]);
-assert.equal(published.items.length,18);
+assert.equal(published.items.length,24,
+ "Eight original R59 approved replacements plus six separate, independently certified shrine photographs");
+const historical=new Set([
+ ...old.approved.map(x=>x.place_id),...r59Review.approved.map(x=>x.place_id)
+]);
+assert.equal(historical.size,18,"The R58/R59 release must retain its original eighteen unique site photos");
+assert.equal(published.items.filter(x=>historical.has(x.place_id)).length,18,
+ "Later shrine photography must not replace or erase original R58/R59 approvals");
 assert.deepEqual(batch.candidates.filter(p=>p.expected_license!=="CC-BY-SA-4.0").map(p=>p.place_id).sort(),[
 "place:GB:walsingham-catholic-shrine","place:MU:pere-laval-sainte-croix"
 ]);
