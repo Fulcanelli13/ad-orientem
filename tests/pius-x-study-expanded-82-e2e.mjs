@@ -11,7 +11,23 @@ assert(mark);
 const d=JSON.parse(mark[1]);
 assert.equal(d.counts.chapters,82);
 assert.equal(d.counts.allNodes,327);
+assert.equal(d.counts.editorialReview.expandedOpenings,18);
+assert.equal(d.counts.editorialReview.unexpandedOpenings,64);
+assert.equal(d.counts.sourceClassCounts.BIOGRAPHICAL_NARRATOR,9);
 assert.equal(d.approvals.publishing,false);
+const fullDrafts=d.chapters.filter(c=>c.nodes[0].editorialDepth==='ENRICHED_OPENING_UNAPPROVED');
+assert.equal(fullDrafts.length,18);
+for(const c of fullDrafts){
+ assert(c.nodes[0].originalDraft?.en&&c.nodes[0].originalDraft?.fr);
+ assert(c.nodes[0].a.en.split(/\s+/).length>=90);
+ assert(c.nodes[0].a.fr.split(/\s+/).length>=90);
+}
+for(const c of d.chapters.filter(c=>c.sourceClass==='PAPAL_DOCUMENT_ADAPTATION')){
+ for(const n of c.nodes){
+  assert(!/\b(I|my|me|mine|myself)\b/.test(n.a.en),'singular English papal voice '+n.id);
+  assert(!/\bje\b|j[’']|\b(mon|ma|mes|moi)\b/i.test(n.a.fr),'singular French papal voice '+n.id);
+ }
+}
 const chapters=d.chapters;
 assert.equal(new Set(chapters.map(c=>c.id)).size,82);
 assert.equal(chapters.flatMap(c=>c.nodes).filter(n=>n.parentId).length,36);
@@ -43,9 +59,17 @@ try{
   assert.equal(await p.locator('.spxc-choice').count(),3);
   await p.locator('.spxc-choice').first().click();
   assert.equal(await p.locator('.spxc-turn').count(),2);
+  await p.locator('.spxc-choice').last().click();
+  assert.equal(await p.locator('.spxc-turn').count(),2,'alternative followup must replace rather than append an unrelated branch');
+  assert.equal(await p.locator('#spxc-portrait').isVisible(),false,'catechetical text must not impersonate the Pope');
   await p.locator('[data-spxc-source]').last().click();
   assert.equal(await p.locator('.spxc-cite').isVisible(),true);
   await p.locator('.spxc-cite-close').click();
+  if(width===390)await p.locator('#spxc-menu').click();
+  await p.locator('[data-spxc-open="SPX-EXP-015"]').first().click();
+  assert.match(await p.locator('.spxc-voice').first().innerText(),/incomplete|incomplète/i);
+  assert.doesNotMatch(await p.locator('.spxc-voice').first().innerText(),/biography|biographie/i);
+  assert.equal(await p.locator('#spxc-portrait').isVisible(),false);
   if(width===390)await p.locator('#spxc-menu').click();
   await p.locator('[data-spxc-open="SPX-009"]').first().click();
   await p.locator('.spxc-choice').first().click();
