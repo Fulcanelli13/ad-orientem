@@ -4,7 +4,7 @@ import {assembleHistoriaReading,historiaAssemblyMarkdown,HISTORIA_EDITIONS,parse
 
 const read=path=>JSON.parse(readFileSync(new URL("../"+path,import.meta.url),"utf8"));
 const proof=read("data/research/historia-salutis-v18-continuous-reading-proof.v1.json");
-const expected={movements:37,scriptureBeats:93,scriptureSpans:166,editorialConnectorProposals:36,originalContextUnits:29,additionalCausalSeams:7,heldSourceCandidates:16,stillUnselectedBridgeCandidates:7,bridgeReadingTrials:9,readingTrialSpans:12,trialVerseEntries:54,published:0};
+const expected={movements:37,scriptureBeats:93,scriptureSpans:166,editorialConnectorProposals:39,originalContextUnits:29,additionalCausalSeams:10,heldSourceCandidates:16,stillUnselectedBridgeCandidates:7,bridgeReadingTrials:9,readingTrialSpans:12,trialVerseEntries:54,published:0};
 for (const edition of HISTORIA_EDITIONS) {
   const witnessCache=new Map();
   const getWitness=book=>{
@@ -41,7 +41,7 @@ for (const edition of HISTORIA_EDITIONS) {
         }
       } else if(segment.kind==="EDITORIAL_CONNECTOR_PROPOSAL"){
         if(segment.additionalCausalSeam){
-          assert.ok(["HS-P3-EC-01","HS-P3-EC-02","HS-P3-EC-03","HS-P3-EC-04","HS-P3-EC-05","HS-P3-EC-06","HS-P3-EC-07"].includes(segment.candidateId));
+          assert.ok(["HS-P3-EC-01","HS-P3-EC-02","HS-P3-EC-03","HS-P3-EC-04","HS-P3-EC-05","HS-P3-EC-06","HS-P3-EC-07","HS-P3-EC-08","HS-P3-EC-09","HS-P3-EC-10"].includes(segment.candidateId));
           const candidate=original.beforeScriptureConnectorCandidate||original.readthroughTrial?.editorialPreface;
           assert.ok(candidate);
           assert.ok(["SCRIPTURE","SOURCE_BRIDGE_CANDIDATE"].includes(original.kind));
@@ -102,6 +102,17 @@ for (const edition of HISTORIA_EDITIONS) {
     assert.ok(m.segments.some(s=>s.candidateId===candidateId&&s.publicationApproved===false));
   }
   assert.ok(output.movements.find(m=>m.id==="HS-M06").segments.some(s=>s.candidateId==="HS-P3-EC-02"));
+  for(const [movement,candidateId] of [["HS-M18","HS-P3-EC-08"],["HS-M20","HS-P3-EC-09"],["HS-M33","HS-P3-EC-10"]]){
+    assert.ok(output.movements.find(m=>m.id===movement).segments.some(s=>s.candidateId===candidateId&&s.accepted===false));
+  }
+  const david=output.movements.find(m=>m.id==="HS-M13");
+  const saulDeath=david.segments.find(s=>s.ownerUnitId==="H31-04");
+  assert.equal(saulDeath.text,"Saul and his sons died in battle against the Philistines.");
+  assert.ok(!saulDeath.text.includes("anointed"));
+  const bread=output.movements.find(m=>m.id==="HS-M22");
+  const breadIntro=bread.segments.find(s=>s.ownerUnitId==="H56-01");
+  assert.ok(breadIntro.text.includes("Capharnaum"));
+  assert.deepEqual(breadIntro.sourceReferences,["John 6:1–15","John 6:22–25"]);
   const stephen=m31.segments.find(s=>s.ownerUnitId==="H68-04"&&s.kind==="SCRIPTURE_EXACT_WITNESS");
   assert.equal(stephen.reference,edition==="crampon-1923"?"Acts 7:54–60":"Acts 7:54–59");
   const manuscript=historiaAssemblyMarkdown(output);
@@ -122,4 +133,4 @@ for (const edition of HISTORIA_EDITIONS) {
     assert.equal(committed,manuscript,"Committed research manuscript must exactly reproduce from source owners");
   }
 }
-console.log("PASS Historia annotated source assembly: 37 movements, 93 A units, 166 original + 12 provisional source spans, 29 original + 7 causal editorial connectors, 16 held candidates (9 tested/7 not included); all three witnesses; no publication approval");
+console.log("PASS Historia annotated source assembly: 37 movements, 93 A units, 166 original + 12 provisional source spans, 29 original + 10 causal editorial connectors, 16 held candidates (9 tested/7 not included); all three witnesses; no publication approval");
