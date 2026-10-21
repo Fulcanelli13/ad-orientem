@@ -52,7 +52,13 @@ for(const [engineName,engine] of Object.entries(engines)){
   const question=record[language],r=engine.match(question,{language,currentCharacter:'pius-x'});
   assert.equal(r.answerText,null);
   const unsafe=isSource(r)&&r.documentNavigation?.sourceRef?.startsWith('SPX-PILOT-');
-  if(unsafe)stats.negativeUnsafe++;else stats.negativeSafe++;
+  if(unsafe){
+   stats.negativeUnsafe++;
+   console.log('PIUS_CONCEPT_PROSPECTIVE_NEGATIVE_UNSAFE '+JSON.stringify({
+    engine:engineName,caseId:record.id,language,question,
+    decision:r.kind,sourceRef:r.documentNavigation?.sourceRef,
+    basis:r.matchEvidence?.basis||null}));
+  }else stats.negativeSafe++;
   result.observations.push({engine:engineName,language,question,
    caseId:record.id,negative:true,decision:r.kind,reason:r.reason||null,
    actualRef:r.documentNavigation?.sourceRef||null,safe:!unsafe});
