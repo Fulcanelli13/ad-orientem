@@ -1087,14 +1087,17 @@ button.ao-schola-control{cursor:pointer}
 }
 .ao-reader-shell[data-mode="LIVE"] .ao-live-rubric-action[hidden],
 .ao-reader-shell[data-mode="LIVE"] .ao-live-inline-rubrics[hidden]{display:none!important}
+/* Maintain current prayer at full emphasis, but ensure precise nearby rubrics
+   remain readable rather than accumulating two dimming layers (paragraph +
+   inline annotation). No cue/event visibility or observation state changes. */
 .ao-reader-shell[data-mode="LIVE"] .ao-reader-paragraph:not([data-active="true"])
-  .ao-live-inline-rubrics{opacity:.63}
+  .ao-live-inline-rubrics{opacity:.93}
 .ao-reader-shell[data-mode="LIVE"] .ao-live-inline-rubrics .ao-missal-ceremonial-state-detail
   summary{cursor:pointer;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:3px}
 .ao-reader-shell[data-mode="LIVE"] .ao-live-inline-rubrics .ao-missal-ceremonial-state-detail
   p{margin:5px 0;font:italic 400 12px/1.45 var(--ao-missal-face,Georgia,serif)}
 
-.ao-reader-shell[data-mode="LIVE"] .ao-prayer-body:has(.ao-reader-paragraph[data-active="true"]) .ao-reader-paragraph[data-kind="RUBRIC"]:not([data-active="true"]){opacity:.30}
+.ao-reader-shell[data-mode="LIVE"] .ao-prayer-body:has(.ao-reader-paragraph[data-active="true"]) .ao-reader-paragraph[data-kind="RUBRIC"]:not([data-active="true"]){opacity:.64}
 
 /* Keep full-sized edge targets, but let prayer text rather than arrows own
    the resting state. Touch-focus/keyboard and edge-handoff remain salient. */
@@ -1159,7 +1162,7 @@ button.ao-schola-control{cursor:pointer}
 #ao-r17-native-reader-preview .ao-reader-shell[data-mode="LIVE"]
   .ao-reader-paragraph[data-reading-position="distant"]{opacity:.32}
 #ao-r17-native-reader-preview .ao-reader-shell[data-mode="LIVE"]
-  .ao-reader-paragraph[data-reading-position="rubric"]{opacity:.40}
+  .ao-reader-paragraph[data-reading-position="rubric"]{opacity:.64}
 #ao-r17-native-reader-preview .ao-reader-shell[data-mode="LIVE"]
   .ao-reader-paragraph[data-reading-position="previous"]{opacity:.55}
 #ao-r17-native-reader-preview .ao-reader-shell[data-mode="LIVE"]
@@ -1172,7 +1175,7 @@ button.ao-schola-control{cursor:pointer}
 /* Preserve a visible floor for instructions that do not participate in
    reading focus, without giving them false source-event ownership. */
 #ao-r17-native-reader-preview .ao-reader-shell[data-mode="LIVE"]
-  .ao-reader-paragraph[data-kind="RUBRIC"]:not([data-reading-position="current"]){opacity:.40}
+  .ao-reader-paragraph[data-kind="RUBRIC"]:not([data-reading-position="current"]){opacity:.64}
 
 /* The persistent Schola panel may be resized/hidden, but it must not lie
    across prayer rows in the visual scroll window. Reserve real viewport
