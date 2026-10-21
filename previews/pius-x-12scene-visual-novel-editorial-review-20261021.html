@@ -15,6 +15,8 @@ main{width:min(1320px,100%);padding:18px clamp(10px,2vw,22px) 32px;margin:auto}
 .sprite{position:absolute;right:5%;bottom:3%;height:86%;width:45%;object-fit:contain;object-position:bottom;filter:drop-shadow(-14px 18px 26px #000a);z-index:1}
 .spriteFailed{position:absolute;right:5%;bottom:20%;width:36%;text-align:center;color:#bcae96;font:12px/1.5 system-ui,sans-serif;display:none;z-index:1}
 .gallery.no-sprite .spriteFailed{display:block}
+.gallery.editorial-boundary .sprite,.gallery.editorial-boundary .spriteFailed{visibility:hidden!important;display:none!important}
+.gallery.editorial-boundary .studyArch{opacity:.3}
 .eyebrow{position:absolute;top:22px;left:31px;right:22px;z-index:3;display:flex;justify-content:space-between;gap:16px;align-items:start;font:11px/1.35 system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#d3ba89}
 .eyebrow .chapter{font-size:11px;color:#c6bbae;letter-spacing:.04em;text-align:right}
 .script{position:absolute;left:0;bottom:0;width:72%;max-height:80%;z-index:2;padding:68px clamp(18px,3.4vw,49px) 40px;background:linear-gradient(0deg,#080c12 15%,rgba(8,12,18,.96) 72%,transparent 100%);display:flex;flex-direction:column;justify-content:flex-end}
@@ -96,7 +98,9 @@ txt("speaker",mode==="OUT_OF_CHARACTER_EDITORIAL_BOUNDARY_NOT_PIUS_SPEECH"?(lang
 }
 if(state.step==="notice"){q="";a=L().unavailable;progress="—";pose="thoughtful"}
  if(state.step==="chanoine"){q="";a=L().chanoine;progress="—";pose="thoughtful"}
- txt("visitor",q);txt("reply",a);txt("progress",progress);
+ if(state.step==="topics"){q="";a=L().begin;progress="—";pose="neutral";}
+txt("visitor",q);txt("reply",a);txt("progress",progress);
+el("gallery").classList.toggle("editorial-boundary",Boolean(voiceMode && trial && state.step==="deep" && trial.speakerPolicy.deep==="OUT_OF_CHARACTER_EDITORIAL_BOUNDARY_NOT_PIUS_SPEECH"));
  txt("sourceScope",L().source+" · "+s.source.locus);
  el("sourceLink").href=s.source.url;el("sourceLink").textContent=s.source.url;txt("sourceGenre",s.source.genre+" · "+s.source.locus);
  const name=["neutral","welcoming","explaining","thoughtful","grave"].includes(pose)?pose:"neutral";
@@ -105,9 +109,14 @@ if(state.step==="notice"){q="";a=L().unavailable;progress="—";pose="thoughtful
  el("gallery").classList.remove("no-sprite");
  el("stageActions").replaceChildren();
  if(state.step==="opening"){
-   s.paths.forEach((x,i)=>add(x.q[lang],()=>move({scene:state.scene,step:"follow",route:i})));
+   const compare=voiceMode?voiceById.get(s.id):null;
+   s.paths.forEach((x,i)=>{
+     const label=compare&&compare.routeIndex===i?compare.follow.q[lang]:x.q[lang];
+     add(label,()=>move({scene:state.scene,step:"follow",route:i}));
+   });
  }else if(state.step==="follow"){
-   add(p.deepQ[lang],()=>move({scene:state.scene,step:"deep",route:state.route}));
+   const compare=voiceMode?voiceById.get(s.id):null;
+   add(compare&&compare.routeIndex===state.route?compare.deep.q[lang]:p.deepQ[lang],()=>move({scene:state.scene,step:"deep",route:state.route}));
    add(L().another,()=>move({scene:state.scene,step:"opening",route:null}));
  }else if(state.step==="deep"){
    add(L().another,()=>move({scene:state.scene,step:"opening",route:null}));
@@ -116,8 +125,11 @@ if(state.step==="notice"){q="";a=L().unavailable;progress="—";pose="thoughtful
      if(link)chooseScene(link.id);
      else move({scene:state.scene,step:"notice",route:state.route});
    });
-   add(L().topics,()=>el("sceneSelect").focus());
+   add(L().topics,()=>move({scene:state.scene,step:"topics",route:null}));
    add(lang==="fr"?"Vérifier un renvoi au Chanoine":"Check Chanoine referral",()=>move({scene:state.scene,step:"chanoine",route:state.route}));
+ }else if(state.step==="topics"){
+   scenes.forEach(other=>add(other.title[lang],()=>chooseScene(other.id)));
+   add(L().another,()=>move({scene:state.scene,step:"opening",route:null}));
  }else{add(L().another,()=>move({scene:state.scene,step:"opening",route:null}));}
  txt("stateTrail",[s.id,state.step,state.route===null?"":"F"+(state.route+1)].filter(Boolean).join(" · ")+(lang==="fr"?" · Non publié":" · Unpublished"));
  el("evidence").classList.toggle("show",evidence);
