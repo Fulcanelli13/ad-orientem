@@ -10,6 +10,7 @@ on:
   pull_request:
     paths:
       - scripts/scripture-catena-first-pass.mjs
+      - tests/scripture-catena-first-pass.mjs
       - data/scripture/catena/research/full-corpus-pass-20261021/**
       - .github/workflows/living-catena-corpus-pass.yml
 
@@ -27,6 +28,8 @@ jobs:
           node-version: "22"
       - name: Inventory every Catena excerpt and build review batches
         run: node scripts/scripture-catena-first-pass.mjs
+      - name: Verify complete coverage, source text identity and review queue uniqueness
+        run: node tests/scripture-catena-first-pass.mjs
       - name: Persist generated research index on dedicated branch
         if: github.event_name == 'push'
         shell: bash
