@@ -7,6 +7,7 @@ import { conciseMissalSourceRubric, conciseMissalInlineSequence,
 import { normalizePresentationMode } from "./session-engine.js";
 import { resolveMassLiturgicalTheme, massThemeCssVariables } from "./reader-liturgical-theme.js";
 import { R17_DONOR_PNG_ICON_KEYS } from "./reader-icon-bank.js";
+import { R17_ICON_KEYS } from "./reader-icons.js";
 
 export const SCHOLA_SPEEDS=Object.freeze([0.25,0.35,0.45,0.60,0.80,1.00]);
 export const DEFAULT_SCHOLA_SPEED=0.45;
@@ -3351,7 +3352,15 @@ export function createReaderDomAdapter({
     applyIcon(root,"priest-position",mode==="MISSAL" ? (current.missalRubric?.priestPosition?.iconKey??current.priestPositionIconKey) : current.priestPositionIconKey,iconResolver);
     applyIcon(root,"posture-top",current.postureIconKey,iconResolver);
     applyIcon(root,"faithful-gesture-top",mode==="MISSAL"?(current.missalRubric?.faithfulGesture?.iconKey??current.gestureIconKey):null,iconResolver);
-    applyIcon(root,"posture",current.postureIconKey,iconResolver);
+    // Existing reviewed posture artwork is valid for exact, source-owned
+    // KNEEL/STAND/SIT/GENUFLECT labels. This only fills an absent LIVE rail
+    // icon while context replaces the top owner; unfamiliar/local labels
+    // retain readable text instead of acquiring guessed artwork.
+    const exactPosture=String(textValue(current.posture)??"").trim().toUpperCase();
+    const contextualPostureIcon=showContext&&
+      Object.prototype.hasOwnProperty.call(R17_ICON_KEYS.posture,exactPosture)
+      ? R17_ICON_KEYS.posture[exactPosture] : null;
+    applyIcon(root,"posture",current.postureIconKey??contextualPostureIcon,iconResolver);
     applyIcon(root,"posture-change",postureChangeVisible ? (current.postureChangeIconKey??current.postureIconKey) : null,iconResolver);
     applyIcon(root,"attention",current.attentionIconKey??current.attention?.iconKey,iconResolver);
     applyIcon(root,"gesture",current.gestureIconKey,iconResolver);
