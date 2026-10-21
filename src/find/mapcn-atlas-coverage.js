@@ -96,6 +96,9 @@ export function renderAtlasCoveragePanel({coverage,mode="heatmap",language="en",
        "Densité des lieux cartographiés, non de la population catholique, de l’assistance à la messe ou de la dévotion. Un repère par lieu connu.")
     :L("Counts of source-associated mapped locations by country; zero means not represented in this catalogue, not no Catholic life. Boundaries are Natural Earth generalisations.",
        "Nombre de lieux cartographiés associés aux pays par les sources ; zéro signifie absent de ce catalogue, non absence de vie catholique. Frontières simplifiées Natural Earth."))+'</p>';
+  const selected=coverage.countries.find(c=>c.code===coverage.selectedCountry);
+  if(selected)s+='<p class="aoAtlasSelectedCountry">'+L("Selected country","Pays sélectionné")+
+    ' · '+E(selected.name)+' · '+selected.count+'</p>';
   if(mode==="heatmap")s+='<div class="aoAtlasCoverageLegend"><i></i><span>'+
     L("Fewer mapped points","Moins de repères")+' → '+L("More mapped points","Plus de repères")+'</span></div>';
   if(mode==="countries"){

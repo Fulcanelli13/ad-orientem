@@ -1,3 +1,4 @@
+import {attachAtlasCoverageLayers} from "./mapcn-atlas-controller.js";
 import { isApproximateDirectoryGeo, isMapPublishableGeo } from "./geo-provenance.js";
 import { attachExploreMapStatus } from "./map-status.js";
 import { registerMassInstitutionImages, massInstitutionEmblem } from "./institution-emblems.js";
@@ -346,7 +347,7 @@ export function mapViewport(map){
 }
 export async function mountExploreMap(container,items,{
   win=globalThis,onSelect=()=>{},initialViewport=null,allowEmpty=false,
-  styleOverride=null,
+  styleOverride=null,atlasCoverage=null,atlasMode="places",onAtlasCountry=()=>{},
 }={}){
   let features=exploreMapFeatures(items);
   if(!container||(!features.length&&!allowEmpty)||!win?.document)return null;
@@ -592,6 +593,9 @@ export async function mountExploreMap(container,items,{
       map.on("mouseleave",layer,()=>{map.getCanvas().style.cursor=""});
     }
   });
+  const atlasLayers=!styleOverride&&atlasCoverage
+    ?attachAtlasCoverageLayers(map,{win,coverage:atlasCoverage,onCountrySelect:onAtlasCountry}):null;
+  if(atlasLayers)atlasLayers.setMode(atlasMode,atlasCoverage);
   const journeySiteMarkers=[];
   const clearJourneySiteMarkers=()=>{
     while(journeySiteMarkers.length){
@@ -599,6 +603,9 @@ export async function mountExploreMap(container,items,{
     }
   };
   return Object.freeze({map,
+    setAtlasOverlay(mode,coverage){return atlasLayers?.setMode(mode,coverage)??false},
+    focusAtlasCountry(code){return atlasLayers?.focusCountry(code)??false},
+    atlasStatus(){return atlasLayers?.status()??null},
     // Overlay exact canonical sacred-place points only. These medallions
     // identify named places, not line geometry or geocoded pilgrimage stages.
     setJourneyStageAnchors(anchors=[],onActivate=()=>{}){
@@ -636,7 +643,7 @@ export async function mountExploreMap(container,items,{
       source?.setData?.({type:"FeatureCollection",features});
     },
     mapStatus:()=>visualStatus.status(),
-    destroy(){clearJourneySiteMarkers();emblemOverlays?.dispose();visualStatus.dispose();try{map.remove()}catch{}}
+    destroy(){atlasLayers?.destroy();clearJourneySiteMarkers();emblemOverlays?.dispose();visualStatus.dispose();try{map.remove()}catch{}}
   });
 }
 
