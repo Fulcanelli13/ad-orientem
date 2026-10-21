@@ -885,6 +885,15 @@ button.ao-schola-control{cursor:pointer}
    priest voice. Keep the corresponding DOM nodes for cue ownership/tests. */
 .ao-reader-shell[data-mode="LIVE"] .ao-rail-left .ao-rail-item[data-channel="posture"],
 .ao-reader-shell[data-mode="LIVE"] .ao-priest-action-badge{display:none}
+/* When the section meaning occupies ribbon two, the posture is not there.
+   Restore its existing left-rail icon, with no duplicate in other modes. */
+.ao-reader-shell[data-mode="LIVE"][data-objective-context="true"]
+.ao-rail-left .ao-rail-item[data-channel="posture"][data-active="true"]{display:grid!important}
+.ao-reader-shell[data-mode="LIVE"][data-objective-context="true"]
+.ao-rail-left .ao-rail-item[data-channel="posture"]:has(.ao-icon-mask[hidden]) .ao-rail-copy{
+  display:block!important;max-width:49px;font:600 8px/1.2 var(--ao-font-ui,system-ui,sans-serif);
+  color:#e9dfcb;text-align:center;overflow-wrap:anywhere
+}
 
 /* Dedicated bilingual book view. This is intentionally scoped to
  * MISSAL, leaving LIVE gesture/cue and SIMPLE narration untouched. */
@@ -1932,7 +1941,7 @@ export function buildReaderShellMarkup(prepared = {}) {
   </aside>
   <div class="ao-reader-stage" data-left-rail="true" data-right-rail="true">
     <aside class="ao-rail ao-rail-left" data-visible="true" aria-label="Faithful cues">
-      <div class="ao-rail-item" data-channel="posture" data-active="true"><span class="ao-icon-mask" data-icon-slot="posture" hidden></span><span class="ao-rail-copy" aria-hidden="true">—</span></div>
+      <div class="ao-rail-item" data-channel="posture" data-active="true"><span class="ao-icon-mask" data-icon-slot="posture" hidden></span><span class="ao-rail-copy" data-role="posture-left" aria-hidden="true">—</span></div>
       <div class="ao-rail-item" data-channel="posture-change" data-active="false" aria-label="Change posture"><span class="ao-icon-mask" data-icon-slot="posture-change" hidden></span></div>
       <div class="ao-rail-item" data-channel="attention" data-active="false" aria-label="Listen to priest"><span class="ao-icon-mask" data-icon-slot="attention" hidden></span></div>
       <div class="ao-rail-item" data-channel="gesture" data-active="false"><span class="ao-icon-mask" data-icon-slot="gesture" hidden></span><span class="ao-rail-copy" data-role="gesture">—</span></div>
@@ -3308,6 +3317,7 @@ export function createReaderDomAdapter({
     }
 
     setChannel(root,"posture",current.posture);
+    setText(root,"posture-left",current.posture);
     // Canonical R17 cue projection already distinguishes a true posture
     // transition from a repeated source marker (e.g. Collect STAND after
     // Gloria STAND). The DOM only guards against a conflicting local profile;
