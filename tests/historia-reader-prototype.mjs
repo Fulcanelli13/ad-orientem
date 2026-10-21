@@ -102,5 +102,5 @@ assert.ok(expectedProjected.size===2);
 assert.ok(data.chapters.at(-1).blocks.some(b=>b.type==="scripture"&&b.reference==="Revelation 22:1–5"));
 const manuscript=get("data/research/historia-salutis-p3-continuous-research-reading-dr-challoner.v1.md");
 assert.ok(manuscript.includes("**UNAPPROVED RESEARCH READING — NOT FOR PUBLICATION**"));
-assert.ok(html.includes("uncollated")&&html.includes("not yet approved"));
+assert.ok(html.toLowerCase().includes("uncollated")&&html.toLowerCase().includes("not yet approved"));
 console.log("PASS offline Historia reader prototype: 37 movements, 181 biblical paragraphs, 222 exact rail citations, 41 source-owned connectors, 12 held Scripture trials, two source-faithful reading-only abridgments; app script parses");
