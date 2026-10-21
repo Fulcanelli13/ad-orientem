@@ -6,6 +6,9 @@ const rows=identities.records,obs=observations.records,edit=editorial.editorial_
 const triage=[load("identity-triage-ch01-12.v0.json"),load("identity-triage-ch13-19.v0.json"),load("identity-triage-ch20-28.v0.json")];
 const firstPass=load("first-pass-260-reconciliation.v1.json");
 const triaged=triage.flatMap(x=>x.rows);
+const overlap=load("possible-distinct-candidate-overlap.v1.json");
+const bounded=load("independent-sources-batch01.v1.json");
+
 
 const unique=items=>new Set(items).size===items.length;
 const sum=obj=>Object.values(obj).reduce((n,x)=>n+x,0);
@@ -71,6 +74,19 @@ assert.deepEqual(bins,{
 assert.equal(firstPass.governance.new_canonical_ids_issued,0);
 assert.equal(firstPass.governance.app_publications_authorized,0);
 assert.equal(firstPass.governance.source_witnesses_added,0);
+assert.equal(overlap.schema,"AO_CUSTOMS_MASTER_42_POSSIBLE_DISTINCT_DUPLICATE_REVIEW_V1");
+assert.equal(overlap.groups.length,8);
+assert.equal(overlap.scope.potential_distinct_observations,42);
+assert.equal(overlap.scope.within_provisional_overlap_review+overlap.scope.unclustered_for_direct_source_review,42);
+assert.equal(bounded.schema,"AO_CUSTOMS_INDEPENDENT_SOURCE_CLOSURE_B01_V1");
+assert.equal(bounded.records.length,6);
+assert.equal(bounded.scope.source_witnesses,9);
+const distinctIDs=new Set(firstPass.distinct_custom_candidates.map(x=>x.weiser_id));
+assert.ok(bounded.records.every(x=>distinctIDs.has(x.weiser_id)&&x.source_claim_bounded&&
+  x.user_facing_status==="NOT_RELEASED"&&x.sources.every(s=>/^https:\/\//.test(s.url))));
+assert.ok(bounded.records.every(x=>x.identity_status==="DISTINCT_PRACTICE_CANDIDATE_REQUIRES_CROSS_MODULE_DUPLICATE_GATE"));
+assert.equal(bounded.scope.no_canonical_ids_created,true);
+
 assert.equal(queue.summary.remaining_without_provisional_disposition,0);
 assert.equal(queue.summary.identity_or_variant_review,286);
 assert.equal(queue.summary.previously_decided_other_owner_or_context_within_286,26);
