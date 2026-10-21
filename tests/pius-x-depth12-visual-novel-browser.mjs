@@ -57,6 +57,18 @@ try{
   assert.match(await page.locator('#speaker').innerText(),/EDITORIAL SOURCE READING/);
   assert.match(await page.locator('#visitor').innerText(),/friendship with God/);
   assert.equal(await page.locator('#stageActions button').count(),3);
+  const stageGeometry=await page.evaluate(()=>{
+    const ids=['gallery','script','visitor','reply','stageActions'];
+    const items=Object.fromEntries(ids.map(id=>{
+      const e=document.getElementById(id),r=e.getBoundingClientRect(),cs=getComputedStyle(e);
+      return [id,{x:r.x,y:r.y,w:r.width,h:r.height,scrollTop:e.scrollTop,scrollHeight:e.scrollHeight,overflow:cs.overflow,position:cs.position,zIndex:cs.zIndex}];
+    }));
+    const b=document.querySelector('#stageActions button'),r=b.getBoundingClientRect();
+    const top=document.elementFromPoint(r.x+r.width/2,r.y+r.height/2);
+    return {viewport:{w:window.innerWidth,h:window.innerHeight},button:{x:r.x,y:r.y,w:r.width,h:r.height},top:{tag:top?.tagName,id:top?.id,css:top?.className},items};
+  });
+  console.log('SPX_STAGED_GEOMETRY '+vp.width+' '+JSON.stringify(stageGeometry));
+  await page.screenshot({path:resolve(artefacts,'before-click-'+vp.width+'.png'),fullPage:true});
   await page.locator('#stageActions button').first().click();
   assert.match(await page.locator('#stateTrail').innerText(),/follow/);
   await page.locator('#stageActions button').first().click();
