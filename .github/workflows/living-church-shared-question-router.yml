@@ -28,6 +28,7 @@ on:
       - tests/living-church-historical-document-navigation.mjs
       - tests/living-church-pius-x-three-document-route-parity.mjs
       - tests/living-church-pius-x-next11-independent-route-probes.mjs
+      - tests/living-church-pius-x-prospective-concept-probes.mjs
       - tests/living-church-pius-x-fresh-bilingual-diagnostic.mjs
       - tests/living-church-personal-verdict-safety.mjs
       - tests/living-church-liturgical-source-scope.mjs
@@ -63,6 +64,7 @@ on:
       - tests/living-church-historical-document-navigation.mjs
       - tests/living-church-pius-x-three-document-route-parity.mjs
       - tests/living-church-pius-x-next11-independent-route-probes.mjs
+      - tests/living-church-pius-x-prospective-concept-probes.mjs
       - tests/living-church-pius-x-fresh-bilingual-diagnostic.mjs
       - tests/living-church-personal-verdict-safety.mjs
       - tests/living-church-liturgical-source-scope.mjs
@@ -96,6 +98,16 @@ jobs:
             mkdir -p "$(dirname "$dest")"
             git show "FETCH_HEAD:$file" > "$dest"
           done
+      - name: Stage pre-expansion bilingual prospective editorial questions from content owner
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch --no-tags --depth=1 origin 'cffd128a5b37a784ddfc461e59fb306304b0a2d3'
+          test "$(git rev-parse FETCH_HEAD)" = 'cffd128a5b37a784ddfc461e59fb306304b0a2d3'
+          file='data/learn/research/pius-x-prospective-bilingual-concept-probes-20261021.v1.json'
+          dest="research-out/pr1458-prospective-concept-fixture/$file"
+          mkdir -p "$(dirname "$dest")"
+          git show "FETCH_HEAD:$file" > "$dest"
       - name: Validate all topic links and question/referral scenarios
         run: |
           node --check src/learn/living-church-shared-question-router.js
@@ -111,6 +123,7 @@ jobs:
           node tests/living-church-historical-document-navigation.mjs
           node tests/living-church-pius-x-three-document-route-parity.mjs
           node tests/living-church-pius-x-next11-independent-route-probes.mjs
+          node tests/living-church-pius-x-prospective-concept-probes.mjs
           node tests/living-church-personal-verdict-safety.mjs
           node tests/living-church-liturgical-source-scope.mjs
           node tests/living-church-pius-x-doctrinal-concept-regression.mjs
@@ -135,6 +148,14 @@ jobs:
         with:
           name: pius-x-next11-source-routing-observations
           path: research-out/living-church-pius-x-next11-probe-observations.v1.json
+          if-no-files-found: warn
+          retention-days: 30
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pius-x-prospective-bilingual-concept-evaluation
+          path: research-out/pius-x-prospective-bilingual-concept-first-run.v1.json
           if-no-files-found: warn
           retention-days: 30
 
