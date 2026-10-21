@@ -155,6 +155,12 @@ body.historiaProofFocus #historiaAudit>h3,body.historiaProofFocus #historiaAudit
   </label>
   <label class="checklabel"><input id="historiaProofBridges" type="checkbox" checked>
    Include held source-bridge proposals</label>
+  <label>Bridge review scope
+   <select id="historiaProofBridgeFilter">
+    <option value="all">All 16 held research passages</option>
+    <option value="p0">P0 continuity passages only (unapproved)</option>
+   </select>
+  </label>
  </div>
  <p id="historiaProofStatus" class="auditStatus" role="status"></p>
  <div id="historiaProofText"></div>
@@ -318,6 +324,7 @@ function moveHistoriaProof(n){
  const next=Math.min(all.length-1,Math.max(0,current+n));
  if(next!==current){$("historiaProofMovement").value=all[next].id;void showHistoriaMovement();}
 }
+const isPriorityHistoriaBridge=beat=>String(beat.researchReadthroughPriority||beat.researchCuration?.sourceReadingPriority||"").startsWith("P0");
 const historiaEditionName=edition=>({
  "cpdv-2009":"CPDV (uncollated)",
  "dr-challoner":"Douay–Rheims Challoner (uncollated)",
@@ -330,6 +337,7 @@ async function showHistoriaMovement(){
  const host=$("historiaProofText");host.replaceChildren();
  const token=++historiaProofToken;
  const edition=$("historiaProofEdition").value,showBridges=$("historiaProofBridges").checked;
+ const highPriorityBridgesOnly=$("historiaProofBridgeFilter").value==="p0";
  $("historiaProofPrev").disabled=m.sequence===1;
  $("historiaProofNext").disabled=m.sequence===all.movements.length;
  $("historiaProofStatus").textContent="Loading exact "+historiaEditionName(edition)+" Scripture · research only…";
@@ -348,7 +356,7 @@ async function showHistoriaMovement(){
      make("p",beat.explanation));
     host.append(note);previous=null;continue;
    }
-   if(beat.kind==="SOURCE_BRIDGE_CANDIDATE"&&!showBridges){previous=null;continue;}
+   if(beat.kind==="SOURCE_BRIDGE_CANDIDATE"&&(!showBridges||(highPriorityBridgesOnly&&!isPriorityHistoriaBridge(beat)))){previous=null;continue;}
    const bridge=beat.kind==="SOURCE_BRIDGE_CANDIDATE";
    const section=make("article",undefined,bridge?"proofSourceBridge":"proofBeat");
    if(bridge){section.append(make("div","Unapproved source-bridge candidate · "+beat.reference,"caption"),
@@ -404,6 +412,7 @@ $("historiaProofNext").addEventListener("click",()=>moveHistoriaProof(1));
 $("historiaProofMovement").addEventListener("change",()=>void showHistoriaMovement());
 $("historiaProofEdition").addEventListener("change",()=>void showHistoriaMovement());
 $("historiaProofBridges").addEventListener("change",()=>void showHistoriaMovement());
+$("historiaProofBridgeFilter").addEventListener("change",()=>void showHistoriaMovement());
 
 const omission=(before,after)=>{
  if(!before||!after)return null;
