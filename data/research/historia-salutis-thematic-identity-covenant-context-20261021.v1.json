@@ -1,0 +1,533 @@
+{
+  "schema": "AO_HISTORIA_THEMATIC_IDENTITY_AND_COVENANT_CONTEXT_V1",
+  "status": "RESEARCH_SCOPED_LINKS_NOT_PUBLICATION",
+  "date": "2026-10-21",
+  "sources": {
+    "pilotRegistry": {
+      "path": "data/research/historia-salutis-thematic-episode-reconciliation-20261021.v2.json",
+      "blobSha": "878acb2ae3230dbf290b19bd1917c9323814a373"
+    },
+    "atlas": {
+      "path": "data/explore/bible-places-compact.v1.json",
+      "blobSha": "1fd7f9b58d3b3773ac6004633a079caa046b8cdc"
+    },
+    "proposedReader": {
+      "path": "data/research/historia-salutis-p3-provisional-reading-chapter-consolidation-20261021.v2.json",
+      "blobSha": "f41f6d5358e5460193785bddf90852d566200e63"
+    },
+    "movementManuscript": {
+      "path": "data/research/historia-salutis-v18-continuous-reading-proof.v1.json",
+      "blobSha": "cbc5be02da7cd54af5da1f998f9c6c343772bab5"
+    }
+  },
+  "policy": {
+    "doNotPromoteAtlasPlaceEventsToCanonicalEpisodeId": true,
+    "noIdentityFromVerseOverlapAlone": true,
+    "teachingRecordDoesNotMakeParableGeographicalEvent": true,
+    "compositeAtlasRecordIsNotIndividualEvent": true,
+    "doNotPromoteContextualMovementToQuotation": true,
+    "mainReaderChapterProposalUnaffected": true,
+    "judithNoInventedChronology": true,
+    "notPublished": true
+  },
+  "totals": {
+    "pilotEpisodes": 19,
+    "sameNamedMiracleRecords": 6,
+    "sameNamedTeachingRecords": 3,
+    "withinCompositeAtlasRecords": 2,
+    "noAtlasIndividualRecord": 8,
+    "contextualMovementAnchors": 18,
+    "unplaced": 1
+  },
+  "entries": [
+    {
+      "episodeId": "hist-omitted-001",
+      "reference": "Genesis 4:1–16",
+      "atlasIdentity": null,
+      "atlasStatus": "NO_MATCHING_INDIVIDUAL_ATLAS_RECORD_OBSERVED",
+      "covenantalContext": {
+        "provisionalReaderChapterId": "R02",
+        "provisionalReaderChapterTitle": "The Fall and the First Promise",
+        "sourceMovementId": "HS-M02",
+        "sourceMovementNumber": 2,
+        "sourceMovementTitle": "The Fall and the First Promise",
+        "relation": "NEAREST_COVENANT_CONTEXT_NOT_EPISODE_QUOTATION",
+        "sourceSelectedForEpisode": false,
+        "publicationApproved": false
+      },
+      "routing": {
+        "returnToEpisodeId": "hist-omitted-001",
+        "openAs": "RESEARCH_ONLY",
+        "crossModuleAuthoredLink": false
+      }
+    },
+    {
+      "episodeId": "hist-omitted-006",
+      "reference": "Genesis 14:18–20",
+      "atlasIdentity": null,
+      "atlasStatus": "NO_MATCHING_INDIVIDUAL_ATLAS_RECORD_OBSERVED",
+      "covenantalContext": {
+        "provisionalReaderChapterId": "R06",
+        "provisionalReaderChapterTitle": "The Covenant with Abraham",
+        "sourceMovementId": "HS-M04",
+        "sourceMovementNumber": 4,
+        "sourceMovementTitle": "Abraham called into covenant",
+        "relation": "NEAREST_COVENANT_CONTEXT_NOT_EPISODE_QUOTATION",
+        "sourceSelectedForEpisode": false,
+        "publicationApproved": false
+      },
+      "routing": {
+        "returnToEpisodeId": "hist-omitted-006",
+        "openAs": "RESEARCH_ONLY",
+        "crossModuleAuthoredLink": false
+      }
+    },
+    {
+      "episodeId": "hist-omitted-054",
+      "reference": "1 Samuel 17",
+      "atlasIdentity": null,
+      "atlasStatus": "NO_MATCHING_INDIVIDUAL_ATLAS_RECORD_OBSERVED",
+      "covenantalContext": {
+        "provisionalReaderChapterId": "R20",
+        "provisionalReaderChapterTitle": "David Is Chosen and Tested",
+        "sourceMovementId": "HS-M13",
+        "sourceMovementNumber": 13,
+        "sourceMovementTitle": "David and the enduring royal promise",
+        "relation": "NEAREST_COVENANT_CONTEXT_NOT_EPISODE_QUOTATION",
+        "sourceSelectedForEpisode": false,
+        "publicationApproved": false
+      },
+      "routing": {
+        "returnToEpisodeId": "hist-omitted-054",
+        "openAs": "RESEARCH_ONLY",
+        "crossModuleAuthoredLink": false
+      }
+    },
+    {
+      "episodeId": "hist-omitted-087",
+      "reference": "Daniel 6",
+      "atlasIdentity": null,
+      "atlasStatus": "NO_MATCHING_INDIVIDUAL_ATLAS_RECORD_OBSERVED",
+      "covenantalContext": {
+        "provisionalReaderChapterId": "R28",
+        "provisionalReaderChapterTitle": "Jerusalem Falls and the Exile",
+        "sourceMovementId": "HS-M16",
+        "sourceMovementNumber": 16,
+        "sourceMovementTitle": "Judah's fall and the promise of a New Covenant",
+        "relation": "NEAREST_COVENANT_CONTEXT_NOT_EPISODE_QUOTATION",
+        "sourceSelectedForEpisode": false,
+        "publicationApproved": false
+      },
+      "routing": {
+        "returnToEpisodeId": "hist-omitted-087",
+        "openAs": "RESEARCH_ONLY",
+        "crossModuleAuthoredLink": false
+      }
+    },
+    {
+      "episodeId": "hist-omitted-092",
+      "reference": "Tobit 4–12",
+      "atlasIdentity": null,
+      "atlasStatus": "NO_MATCHING_INDIVIDUAL_ATLAS_RECORD_OBSERVED",
+      "covenantalContext": {
+        "provisionalReaderChapterId": "R26",
+        "provisionalReaderChapterTitle": "The Fall of Israel",
+        "sourceMovementId": "HS-M15",
+        "sourceMovementNumber": 15,
+        "sourceMovementTitle": "Prophetic warning and Israel's judgment",
+        "relation": "NEAREST_COVENANT_CONTEXT_NOT_EPISODE_QUOTATION",
+        "sourceSelectedForEpisode": false,
+        "publicationApproved": false
+      },
+      "routing": {
+        "returnToEpisodeId": "hist-omitted-092",
+        "openAs": "RESEARCH_ONLY",
+        "crossModuleAuthoredLink": false
+      }
+    },
+    {
+      "episodeId": "hist-omitted-093",
+      "reference": "Judith 8–13",
+      "atlasIdentity": null,
+      "atlasStatus": "NO_MATCHING_INDIVIDUAL_ATLAS_RECORD_OBSERVED",
+      "covenantalContext": null,
+      "routing": {
+        "returnToEpisodeId": "hist-omitted-093",
+        "openAs": "RESEARCH_ONLY",
+        "crossModuleAuthoredLink": false
+      }
+    },
+    {
+      "episodeId": "hist-omitted-094",
+      "reference": "Esther 4–8",
+      "atlasIdentity": null,
+      "atlasStatus": "NO_MATCHING_INDIVIDUAL_ATLAS_RECORD_OBSERVED",
+      "covenantalContext": {
+        "provisionalReaderChapterId": "R29",
+        "provisionalReaderChapterTitle": "Restoration and Expectation of the Messiah",
+        "sourceMovementId": "HS-M17",
+        "sourceMovementNumber": 17,
+        "sourceMovementTitle": "Restoration and the expectation of Christ",
+        "relation": "NEAREST_COVENANT_CONTEXT_NOT_EPISODE_QUOTATION",
+        "sourceSelectedForEpisode": false,
+        "publicationApproved": false
+      },
+      "routing": {
+        "returnToEpisodeId": "hist-omitted-094",
+        "openAs": "RESEARCH_ONLY",
+        "crossModuleAuthoredLink": false
+      }
+    },
+    {
+      "episodeId": "hist-omitted-116",
+      "reference": "John 2:1–11",
+      "atlasIdentity": {
+        "atlasPlaceId": "cana",
+        "atlasEventId": "cana-e1",
+        "atlasEventTitle": "The wedding at Cana",
+        "atlasSourceReference": "John 2:1–11",
+        "relation": "SAME_NAMED_SCRIPTURAL_MIRACLE_ATLAS_RECORD",
+        "confirmedCanonicalEpisodeId": null,
+        "geolocationVerifiedForThisEpisode": false,
+        "scopeCaveat": "Matched named biblical passage, not an independently certified canonical episode ID"
+      },
+      "atlasStatus": "SAME_NAMED_SCRIPTURAL_MIRACLE_ATLAS_RECORD",
+      "covenantalContext": {
+        "provisionalReaderChapterId": "R35",
+        "provisionalReaderChapterTitle": "The Kingdom: Teaching, Signs and Encounters",
+        "sourceMovementId": "HS-M21",
+        "sourceMovementNumber": 21,
+        "sourceMovementTitle": "The Kingdom in Christ's teaching",
+        "relation": "NEAREST_COVENANT_CONTEXT_NOT_EPISODE_QUOTATION",
+        "sourceSelectedForEpisode": false,
+        "publicationApproved": false
+      },
+      "routing": {
+        "returnToEpisodeId": "hist-omitted-116",
+        "openAs": "RESEARCH_ONLY",
+        "crossModuleAuthoredLink": false
+      }
+    },
+    {
+      "episodeId": "hist-omitted-131",
+      "reference": "Luke 7:11–17",
+      "atlasIdentity": {
+        "atlasPlaceId": "nain",
+        "atlasEventId": "nain-e1",
+        "atlasEventTitle": "The raising of the widow's son",
+        "atlasSourceReference": "Luke 7:11–17",
+        "relation": "SAME_NAMED_SCRIPTURAL_MIRACLE_ATLAS_RECORD",
+        "confirmedCanonicalEpisodeId": null,
+        "geolocationVerifiedForThisEpisode": false,
+        "scopeCaveat": "Matched named biblical passage, not an independently certified canonical episode ID"
+      },
+      "atlasStatus": "SAME_NAMED_SCRIPTURAL_MIRACLE_ATLAS_RECORD",
+      "covenantalContext": {
+        "provisionalReaderChapterId": "R35",
+        "provisionalReaderChapterTitle": "The Kingdom: Teaching, Signs and Encounters",
+        "sourceMovementId": "HS-M21",
+        "sourceMovementNumber": 21,
+        "sourceMovementTitle": "The Kingdom in Christ's teaching",
+        "relation": "NEAREST_COVENANT_CONTEXT_NOT_EPISODE_QUOTATION",
+        "sourceSelectedForEpisode": false,
+        "publicationApproved": false
+      },
+      "routing": {
+        "returnToEpisodeId": "hist-omitted-131",
+        "openAs": "RESEARCH_ONLY",
+        "crossModuleAuthoredLink": false
+      }
+    },
+    {
+      "episodeId": "hist-omitted-132",
+      "reference": "Mark 4:35–41",
+      "atlasIdentity": {
+        "atlasPlaceId": "galilee-sea",
+        "atlasEventId": "galilee-sea-e2",
+        "atlasEventTitle": "Jesus calms the storm",
+        "atlasSourceReference": "Mark 4:35–41",
+        "relation": "SAME_NAMED_SCRIPTURAL_MIRACLE_ATLAS_RECORD",
+        "confirmedCanonicalEpisodeId": null,
+        "geolocationVerifiedForThisEpisode": false,
+        "scopeCaveat": "Matched named biblical passage, not an independently certified canonical episode ID"
+      },
+      "atlasStatus": "SAME_NAMED_SCRIPTURAL_MIRACLE_ATLAS_RECORD",
+      "covenantalContext": {
+        "provisionalReaderChapterId": "R35",
+        "provisionalReaderChapterTitle": "The Kingdom: Teaching, Signs and Encounters",
+        "sourceMovementId": "HS-M21",
+        "sourceMovementNumber": 21,
+        "sourceMovementTitle": "The Kingdom in Christ's teaching",
+        "relation": "NEAREST_COVENANT_CONTEXT_NOT_EPISODE_QUOTATION",
+        "sourceSelectedForEpisode": false,
+        "publicationApproved": false
+      },
+      "routing": {
+        "returnToEpisodeId": "hist-omitted-132",
+        "openAs": "RESEARCH_ONLY",
+        "crossModuleAuthoredLink": false
+      }
+    },
+    {
+      "episodeId": "hist-omitted-135",
+      "reference": "Mark 5:35–43",
+      "atlasIdentity": {
+        "atlasPlaceId": "capernaum",
+        "atlasEventId": "capernaum-miracle-15",
+        "atlasEventTitle": "Raising of Jairus's daughter",
+        "atlasSourceReference": "Mark 5:35–43",
+        "relation": "SAME_NAMED_SCRIPTURAL_MIRACLE_ATLAS_RECORD",
+        "confirmedCanonicalEpisodeId": null,
+        "geolocationVerifiedForThisEpisode": false,
+        "scopeCaveat": "Matched named biblical passage, not an independently certified canonical episode ID"
+      },
+      "atlasStatus": "SAME_NAMED_SCRIPTURAL_MIRACLE_ATLAS_RECORD",
+      "covenantalContext": {
+        "provisionalReaderChapterId": "R35",
+        "provisionalReaderChapterTitle": "The Kingdom: Teaching, Signs and Encounters",
+        "sourceMovementId": "HS-M21",
+        "sourceMovementNumber": 21,
+        "sourceMovementTitle": "The Kingdom in Christ's teaching",
+        "relation": "NEAREST_COVENANT_CONTEXT_NOT_EPISODE_QUOTATION",
+        "sourceSelectedForEpisode": false,
+        "publicationApproved": false
+      },
+      "routing": {
+        "returnToEpisodeId": "hist-omitted-135",
+        "openAs": "RESEARCH_ONLY",
+        "crossModuleAuthoredLink": false
+      }
+    },
+    {
+      "episodeId": "hist-omitted-137",
+      "reference": "Matthew 14:22–33",
+      "atlasIdentity": {
+        "atlasPlaceId": "galilee-sea",
+        "atlasEventId": "galilee-sea-e3",
+        "atlasEventTitle": "Jesus walks upon the water",
+        "atlasSourceReference": "Matthew 14:22–33",
+        "relation": "SAME_NAMED_SCRIPTURAL_MIRACLE_ATLAS_RECORD",
+        "confirmedCanonicalEpisodeId": null,
+        "geolocationVerifiedForThisEpisode": false,
+        "scopeCaveat": "Matched named biblical passage, not an independently certified canonical episode ID"
+      },
+      "atlasStatus": "SAME_NAMED_SCRIPTURAL_MIRACLE_ATLAS_RECORD",
+      "covenantalContext": {
+        "provisionalReaderChapterId": "R35",
+        "provisionalReaderChapterTitle": "The Kingdom: Teaching, Signs and Encounters",
+        "sourceMovementId": "HS-M21",
+        "sourceMovementNumber": 21,
+        "sourceMovementTitle": "The Kingdom in Christ's teaching",
+        "relation": "NEAREST_COVENANT_CONTEXT_NOT_EPISODE_QUOTATION",
+        "sourceSelectedForEpisode": false,
+        "publicationApproved": false
+      },
+      "routing": {
+        "returnToEpisodeId": "hist-omitted-137",
+        "openAs": "RESEARCH_ONLY",
+        "crossModuleAuthoredLink": false
+      }
+    },
+    {
+      "episodeId": "hist-omitted-144",
+      "reference": "John 9:1–12",
+      "atlasIdentity": {
+        "atlasPlaceId": "siloam",
+        "atlasEventId": "siloam-miracle-26",
+        "atlasEventTitle": "Healing of the man born blind at Siloam",
+        "atlasSourceReference": "John 9:1–12",
+        "relation": "SAME_NAMED_SCRIPTURAL_MIRACLE_ATLAS_RECORD",
+        "confirmedCanonicalEpisodeId": null,
+        "geolocationVerifiedForThisEpisode": false,
+        "scopeCaveat": "Matched named biblical passage, not an independently certified canonical episode ID"
+      },
+      "atlasStatus": "SAME_NAMED_SCRIPTURAL_MIRACLE_ATLAS_RECORD",
+      "covenantalContext": {
+        "provisionalReaderChapterId": "R35",
+        "provisionalReaderChapterTitle": "The Kingdom: Teaching, Signs and Encounters",
+        "sourceMovementId": "HS-M21",
+        "sourceMovementNumber": 21,
+        "sourceMovementTitle": "The Kingdom in Christ's teaching",
+        "relation": "NEAREST_COVENANT_CONTEXT_NOT_EPISODE_QUOTATION",
+        "sourceSelectedForEpisode": false,
+        "publicationApproved": false
+      },
+      "routing": {
+        "returnToEpisodeId": "hist-omitted-144",
+        "openAs": "RESEARCH_ONLY",
+        "crossModuleAuthoredLink": false
+      }
+    },
+    {
+      "episodeId": "hist-omitted-149",
+      "reference": "Matthew 13:1–23",
+      "atlasIdentity": null,
+      "atlasStatus": "NO_MATCHING_INDIVIDUAL_ATLAS_RECORD_OBSERVED",
+      "covenantalContext": {
+        "provisionalReaderChapterId": "R35",
+        "provisionalReaderChapterTitle": "The Kingdom: Teaching, Signs and Encounters",
+        "sourceMovementId": "HS-M21",
+        "sourceMovementNumber": 21,
+        "sourceMovementTitle": "The Kingdom in Christ's teaching",
+        "relation": "NEAREST_COVENANT_CONTEXT_NOT_EPISODE_QUOTATION",
+        "sourceSelectedForEpisode": false,
+        "publicationApproved": false
+      },
+      "routing": {
+        "returnToEpisodeId": "hist-omitted-149",
+        "openAs": "RESEARCH_ONLY",
+        "crossModuleAuthoredLink": false
+      }
+    },
+    {
+      "episodeId": "hist-omitted-154",
+      "reference": "Luke 10:25–37",
+      "atlasIdentity": {
+        "atlasPlaceId": "judean-perean-region",
+        "atlasEventId": "judean-perean-region-additional-056",
+        "atlasEventTitle": "Parable of the Good Samaritan",
+        "atlasSourceReference": "Luke 10:25–37",
+        "relation": "SAME_NAMED_SCRIPTURAL_TEACHING_ATLAS_RECORD",
+        "confirmedCanonicalEpisodeId": null,
+        "geolocationVerifiedForThisEpisode": false,
+        "scopeCaveat": "Matched named biblical passage, not an independently certified canonical episode ID"
+      },
+      "atlasStatus": "SAME_NAMED_SCRIPTURAL_TEACHING_ATLAS_RECORD",
+      "covenantalContext": {
+        "provisionalReaderChapterId": "R38",
+        "provisionalReaderChapterTitle": "The Road to Jerusalem",
+        "sourceMovementId": "HS-M24",
+        "sourceMovementNumber": 24,
+        "sourceMovementTitle": "The approach to Jerusalem",
+        "relation": "NEAREST_COVENANT_CONTEXT_NOT_EPISODE_QUOTATION",
+        "sourceSelectedForEpisode": false,
+        "publicationApproved": false
+      },
+      "routing": {
+        "returnToEpisodeId": "hist-omitted-154",
+        "openAs": "RESEARCH_ONLY",
+        "crossModuleAuthoredLink": false
+      }
+    },
+    {
+      "episodeId": "hist-omitted-159",
+      "reference": "Luke 15:11–32",
+      "atlasIdentity": {
+        "atlasPlaceId": "judean-perean-region",
+        "atlasEventId": "judean-perean-region-additional-061",
+        "atlasEventTitle": "Parable of the prodigal son",
+        "atlasSourceReference": "Luke 15:11–32",
+        "relation": "SAME_NAMED_SCRIPTURAL_TEACHING_ATLAS_RECORD",
+        "confirmedCanonicalEpisodeId": null,
+        "geolocationVerifiedForThisEpisode": false,
+        "scopeCaveat": "Matched named biblical passage, not an independently certified canonical episode ID"
+      },
+      "atlasStatus": "SAME_NAMED_SCRIPTURAL_TEACHING_ATLAS_RECORD",
+      "covenantalContext": {
+        "provisionalReaderChapterId": "R38",
+        "provisionalReaderChapterTitle": "The Road to Jerusalem",
+        "sourceMovementId": "HS-M24",
+        "sourceMovementNumber": 24,
+        "sourceMovementTitle": "The approach to Jerusalem",
+        "relation": "NEAREST_COVENANT_CONTEXT_NOT_EPISODE_QUOTATION",
+        "sourceSelectedForEpisode": false,
+        "publicationApproved": false
+      },
+      "routing": {
+        "returnToEpisodeId": "hist-omitted-159",
+        "openAs": "RESEARCH_ONLY",
+        "crossModuleAuthoredLink": false
+      }
+    },
+    {
+      "episodeId": "hist-omitted-161",
+      "reference": "Luke 18:9–14",
+      "atlasIdentity": {
+        "atlasPlaceId": "judean-perean-region",
+        "atlasEventId": "judean-perean-region-additional-063",
+        "atlasEventTitle": "Parable of the Pharisee and the publican",
+        "atlasSourceReference": "Luke 18:9–14",
+        "relation": "SAME_NAMED_SCRIPTURAL_TEACHING_ATLAS_RECORD",
+        "confirmedCanonicalEpisodeId": null,
+        "geolocationVerifiedForThisEpisode": false,
+        "scopeCaveat": "Matched named biblical passage, not an independently certified canonical episode ID"
+      },
+      "atlasStatus": "SAME_NAMED_SCRIPTURAL_TEACHING_ATLAS_RECORD",
+      "covenantalContext": {
+        "provisionalReaderChapterId": "R38",
+        "provisionalReaderChapterTitle": "The Road to Jerusalem",
+        "sourceMovementId": "HS-M24",
+        "sourceMovementNumber": 24,
+        "sourceMovementTitle": "The approach to Jerusalem",
+        "relation": "NEAREST_COVENANT_CONTEXT_NOT_EPISODE_QUOTATION",
+        "sourceSelectedForEpisode": false,
+        "publicationApproved": false
+      },
+      "routing": {
+        "returnToEpisodeId": "hist-omitted-161",
+        "openAs": "RESEARCH_ONLY",
+        "crossModuleAuthoredLink": false
+      }
+    },
+    {
+      "episodeId": "hist-omitted-164",
+      "reference": "Matthew 25:1–13",
+      "atlasIdentity": {
+        "atlasPlaceId": "olives",
+        "atlasEventId": "olives-additional-069",
+        "atlasEventTitle": "Parables and warnings in the eschatological discourse",
+        "atlasSourceReference": "Matthew 25:1–30",
+        "relation": "PASSAGE_CONTAINED_IN_COMPOSITE_TEACHING_ATLAS_RECORD",
+        "confirmedCanonicalEpisodeId": null,
+        "geolocationVerifiedForThisEpisode": false,
+        "scopeCaveat": "Composite Atlas attestation only; this particular parable is not the entire parent Atlas record"
+      },
+      "atlasStatus": "PASSAGE_CONTAINED_IN_COMPOSITE_TEACHING_ATLAS_RECORD",
+      "covenantalContext": {
+        "provisionalReaderChapterId": "R39",
+        "provisionalReaderChapterTitle": "Christ Enters Jerusalem",
+        "sourceMovementId": "HS-M25",
+        "sourceMovementNumber": 25,
+        "sourceMovementTitle": "The King's entry into Jerusalem",
+        "relation": "NEAREST_COVENANT_CONTEXT_NOT_EPISODE_QUOTATION",
+        "sourceSelectedForEpisode": false,
+        "publicationApproved": false
+      },
+      "routing": {
+        "returnToEpisodeId": "hist-omitted-164",
+        "openAs": "RESEARCH_ONLY",
+        "crossModuleAuthoredLink": false
+      }
+    },
+    {
+      "episodeId": "hist-omitted-165",
+      "reference": "Matthew 25:14–30",
+      "atlasIdentity": {
+        "atlasPlaceId": "olives",
+        "atlasEventId": "olives-additional-069",
+        "atlasEventTitle": "Parables and warnings in the eschatological discourse",
+        "atlasSourceReference": "Matthew 25:1–30",
+        "relation": "PASSAGE_CONTAINED_IN_COMPOSITE_TEACHING_ATLAS_RECORD",
+        "confirmedCanonicalEpisodeId": null,
+        "geolocationVerifiedForThisEpisode": false,
+        "scopeCaveat": "Composite Atlas attestation only; this particular parable is not the entire parent Atlas record"
+      },
+      "atlasStatus": "PASSAGE_CONTAINED_IN_COMPOSITE_TEACHING_ATLAS_RECORD",
+      "covenantalContext": {
+        "provisionalReaderChapterId": "R39",
+        "provisionalReaderChapterTitle": "Christ Enters Jerusalem",
+        "sourceMovementId": "HS-M25",
+        "sourceMovementNumber": 25,
+        "sourceMovementTitle": "The King's entry into Jerusalem",
+        "relation": "NEAREST_COVENANT_CONTEXT_NOT_EPISODE_QUOTATION",
+        "sourceSelectedForEpisode": false,
+        "publicationApproved": false
+      },
+      "routing": {
+        "returnToEpisodeId": "hist-omitted-165",
+        "openAs": "RESEARCH_ONLY",
+        "crossModuleAuthoredLink": false
+      }
+    }
+  ]
+}
