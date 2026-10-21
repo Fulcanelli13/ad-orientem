@@ -806,3 +806,235 @@ And the day of the unleavened bread came, on which it was necessary that the pas
 
 *⟦HELD source bridge: John 14:16–17 · not selected or approved⟧*
 
+## 27 · Gethsemane, betrayal and trial
+
+**⟦Matthew 26:36–46⟧**
+
+Then Jesus came with them into a country place which is called Gethsemani. And he said to his disciples: Sit you here, till I go yonder and pray. And taking with him Peter and the two sons of Zebedee, he began to grow sorrowful and to be sad. Then he saith to them: My soul is sorrowful even unto death. Stay you here and watch with me. And going a little further, he fell upon his face, praying and saying: My Father, if it be possible, let this chalice pass from me. Nevertheless, not as I will but as thou wilt. And he cometh to his disciples and findeth them asleep. And he saith to Peter: What? Could you not watch one hour with me? Watch ye: and pray that ye enter not into temptation. The spirit indeed is willing, but the flesh weak. Again the second time, he went and prayed, saying: My Father, if this chalice may not pass away, but I must drink it, thy will be done. And he cometh again and findeth them sleeping: for their eyes were heavy. And leaving them, he went again: and he prayed the third time, saying the selfsame word. Then he cometh to his disciples and said to them: Sleep ye now and take your rest. Behold the hour is at hand: and the Son of man shall be betrayed into the hands of sinners. Rise: let us go. Behold he is at hand that will betray me.
+
+**⟦Matthew 26:47–56⟧**
+
+As he yet spoke, behold Judas, one of the twelve, came, and with him a great multitude with swords and clubs, sent from the chief priests and the ancients of the people. And he that betrayed him gave them a sign, saying: Whomsoever I shall kiss, that is he. Hold him fast. And forthwith coming to Jesus, he said: Hail, Rabbi. And he kissed him. And Jesus said to him: Friend, whereto art thou come? Then they came up and laid hands on Jesus and held him. And behold one of them that were with Jesus, stretching forth his hand, drew out his sword: and striking the servant of the high priest, cut off his ear. Then Jesus saith to him: Put up again thy sword into its place: for all that take the sword shall perish with the sword. Thinkest thou that I cannot ask my Father, and he will give me presently more than twelve legions of angels? How then shall the scriptures be fulfilled, that so it must be done? In that same hour, Jesus said to the multitudes: You are come out, as it were to a robber, with swords and clubs to apprehend me. I sat daily with you, teaching in the temple: and you laid not hands on me. Now all this was done that the scriptures of the prophets might be fulfilled. Then the disciples, all leaving him, fled.
+
+**⟦Matthew 26:57–75⟧**
+
+But they holding Jesus led him to Caiphas the high priest, where the scribes and the ancients were assembled. And Peter followed him afar off, even to the court of the high priest, And going in, he sat with the servants, that he might see the end. And the chief priests and the whole council sought false witness against Jesus, that they might put him to death. And they found not, whereas many false witnesses had come in. And last of all there came two false witnesses: And they said: This man said, I am able to destroy the temple of God and after three days to rebuild it. And the high priest rising up, said to him: Answerest thou nothing to the things which these witness against thee? But Jesus held his peace. And the high priest said to him: I adjure thee by the living God, that thou tell us if thou be the Christ the Son of God. Jesus saith to him: Thou hast said it. Nevertheless I say to you, hereafter you shall see the Son of man sitting on the right hand of the power of God and coming in the clouds of heaven. Then the high priest rent his garments, saying: He hath blasphemed: What further need have we of witnesses? Behold, now you have heard the blasphemy. What think you? But they answering, said: He is guilty of death. Then did they spit in his face and buffeted him. And others struck his face with the palms of their hands, Saying: Prophesy unto us, O Christ. Who is he that struck thee? But Peter sat without in the court. And there came to him a servant maid, saying: Thou also wast with Jesus the Galilean. But he denied before them all, saying: I know not what thou sayest. And as he went out of the gate, another maid saw him; and she saith to them that were there: This man also was with Jesus of Nazareth. And again he denied with an oath: I know not the man. And after a little while, they came that stood by and said to Peter: Surely thou also art one of them. For even thy speech doth discover thee. Then he began to curse and to swear that he knew not the man. And immediately the cock crew. And Peter remembered the word of Jesus which he had said: Before the cock crow, thou wilt deny me thrice. And going forth, he wept bitterly.
+
+**⟦Matthew 27:1–2⟧**
+
+And when morning was come, all the chief priests and ancients of the people took counsel against Jesus, that they might put him to death. And they brought him bound and delivered him to Pontius Pilate the governor.
+
+**⟦Matthew 27:11–26⟧**
+
+And Jesus stood before the governor, and the governor asked him, saying: Art thou the king of the Jews? Jesus saith to him: Thou sayest it. And when he was accused by the chief priests and ancients, he answered nothing. Then Pilate saith to him: Dost not thou hear how great testimonies they allege against thee? And he answered him to never a word, so that the governor wondered exceedingly. Now upon the solemn day the governor was accustomed to release to the people one prisoner, whom they would. And he had then a notorious prisoner that was called Barabbas. They therefore being gathered together, Pilate said: Whom will you that I release to You: Barabbas, or Jesus that is called Christ? For he knew that for envy they had delivered him. And as he was sitting in the place of judgment, his wife sent to him, saying: Have thou nothing to do with that just man; for I have suffered many things this day in a dream because of him. But the chief priests and ancients persuaded the people that they should ask Barabbas and make Jesus away. And the governor answering, said to them: Whether will you of the two to be released unto you? But they said: Barabbas. Pilate saith to them: What shall I do then with Jesus that is called Christ? They say all: Let him be crucified. The governor said to them: Why, what evil hath he done? But they cried out the more, saying: Let him be crucified. And Pilate seeing that he prevailed nothing, but that rather a tumult was made, taking water washed his hands before the people, saying: I am innocent of the blood of this just man. Look you to it. And the whole people answering, said: His blood be upon us and upon our children. Then he released to them Barabbas: and having scourged Jesus, delivered him unto them to be crucified.
+
+*⟦Editorial connector · source: John 19:1–16 · NOT APPROVED⟧*
+
+*Carry scourging and crowning as a clearly attributed Johannine witness without conflating it with Matthew's separate Pilate scene.*
+
+<details><summary>Unselected same-book source seams (research audit)</summary>
+
+- OMITTED_VERSES: Matthew 27:3–10
+
+</details>
+
+## 28 · The sacrifice on Calvary
+
+**⟦John 19:17–30⟧**
+
+And bearing his own cross, he went forth to the place which is called Calvary, but in Hebrew Golgotha. Where they crucified him, and with him two others, one on each side, and Jesus in the midst. And Pilate wrote a title also: and he put it upon the cross. And the writing was: JESUS OF NAZARETH, THE KING OF THE JEWS. This title therefore many of the Jews did read: because the place where Jesus was crucified was nigh to the city. And it was written in Hebrew, in Greek, and in Latin. Then the chief priests of the Jews said to Pilate: Write not: The King of the Jews. But that he said: I am the King of the Jews. Pilate answered: What I have written, I have written. The soldiers therefore, when they had crucified him, took his garments, (and they made four parts, to every soldier a part) and also his coat. Now the coat was without seam, woven from the top throughout. They said then one to another: Let us not cut it but let us cast lots for it, whose it shall be; that the scripture might be fulfilled, saying: They have parted my garments among them, and upon my vesture they have cast lots. And the soldiers indeed did these things. Now there stood by the cross of Jesus, his mother and his mother’s sister, Mary of Cleophas, and Mary Magdalen. When Jesus therefore had seen his mother and the disciple standing whom he loved, he saith to his mother: Woman, behold thy son. After that, he saith to the disciple: Behold thy mother. And from that hour, the disciple took her to his own. Afterwards, Jesus knowing that all things were now accomplished, that the scripture might be fulfilled, said: I thirst. Now there was a vessel set there, full of vinegar. And they, putting a sponge full of vinegar about hyssop, put it to his mouth. Jesus therefore, when he had taken the vinegar, said: It is consummated. And bowing his head, he gave up the ghost.
+
+*⟦HELD source bridge: John 19:38–42 · not selected or approved⟧*
+
+## 29 · The risen Lord and his witnesses
+
+**⟦John 20:1–3⟧**
+
+And on the first day of the week, Mary Magdalen cometh early, when it was yet dark, unto the sepulchre: and she saw the stone taken away from the sepulchre. She ran therefore and cometh to Simon Peter and to the other disciple whom Jesus loved and saith to them: They have taken away the Lord out of the sepulchre: and we know not where they have laid him. Peter therefore went out, and that other disciple: and they came to the sepulchre.
+
+**⟦John 20:4–5⟧**
+
+And they both ran together: and that other disciple did outrun Peter and came first to the sepulchre. And when he stooped down, he saw the linen cloths lying: but yet he went not in.
+
+**⟦John 20:6–9⟧**
+
+Then cometh Simon Peter, following him, and went into the sepulchre: and saw the linen cloths lying, And the napkin that had been about his head, not lying with the linen cloths, but apart, wrapped up into one place. Then that other disciple also went in, who came first to the sepulchre: and he saw and believed. For as yet they knew not the scripture, that he must rise again from the dead.
+
+**⟦John 20:10⟧**
+
+The disciples therefore departed again to their home.
+
+**⟦John 20:11–18⟧**
+
+But Mary stood at the sepulchre without, weeping. Now as she was weeping, she stooped down and looked into the sepulchre, And she saw two angels in white, sitting, one at the head, and one at the feet, where the body of Jesus had been laid. They say to her: Woman, why weepest thou? She saith to them: Because they have taken away my Lord: and I know not where they have laid him. When she had thus said, she turned herself back and saw Jesus standing: and she knew not that it was Jesus. Jesus saith to her: Woman, why weepest thou? Whom seekest thou? She, thinking that it was the gardener, saith to him: Sir, if thou hast taken him hence, tell me where thou hast laid him: and I will take him away. Jesus saith to her: Mary. She turning, saith to him: Rabboni (which is to say, Master). Jesus saith to her: Do not touch me: for I am not yet ascended to my Father. But go to my brethren and say to them: I ascend to my Father and to your Father, to my God and to your God. Mary Magdalen cometh and telleth the disciples: I have seen the Lord; and these things he said to me.
+
+**⟦John 20:19–29⟧**
+
+Now when it was late the same day, the first of the week, and the doors were shut, where the disciples were gathered together, for fear of the Jews, Jesus came and stood in the midst and said to them: Peace be to you. And when he had said this, he shewed them his hands and his side. The disciples therefore were glad, when they saw the Lord. He said therefore to them again: Peace be to you. As the Father hath sent me, I also send you. When he had said this, he breathed on them; and he said to them: Receive ye the Holy Ghost. Whose sins you shall forgive, they are forgiven them: and whose sins you shall retain, they are retained. Now Thomas, one of the twelve, who is called Didymus, was not with them when Jesus came. The other disciples therefore said to him: We have seen the Lord. But he said to them: Except I shall see in his hands the print of the nails and put my finger into the place of the nails and put my hand into his side, I will not believe. And after eight days, again his disciples were within, and Thomas with them. Jesus cometh, the doors being shut, and stood in the midst and said: Peace be to you. Then he said to Thomas: Put in thy finger hither and see my hands. And bring hither thy hand and put it into my side. And be not faithless, but believing. Thomas answered and said to him: My Lord and my God. Jesus saith to him: Because thou hast seen me, Thomas, thou hast believed: blessed are they that have not seen and have believed.
+
+*⟦Editorial connector · source: Luke 24:13–35 · NOT APPROVED⟧*
+
+*Emmaus may supply the key scriptural interpretation that the Messiah had to suffer; do not require the complete walk dialogue.*
+
+## 30 · The Ascension and promised mission
+
+*⟦HELD source bridge: Acts 1:3–5 · not selected or approved⟧*
+
+**⟦Acts 1:6–12⟧**
+
+They therefore who were come together, asked him, saying: Lord, wilt thou at this time restore again the kingdom of Israel? But he said to them: It is not for you to know the times or moments, which the Father hath put in his own power: But you shall receive the power of the Holy Ghost coming upon you, and you shall be witnesses unto me in Jerusalem, and in all Judea, and Samaria, and even to the uttermost part of the earth. And when he had said these things, while they looked on, he was raised up: and a cloud received him out of their sight. And while they were beholding him going up to heaven, behold two men stood by them in white garments. Who also said: Ye men of Galilee, why stand you looking up to heaven? This Jesus who is taken up from you into heaven, shall so come as you have seen him going into heaven. Then they returned to Jerusalem from the mount that is called Olivet, which is nigh Jerusalem, within a sabbath day’s journey.
+
+## 31 · Pentecost and the first Church
+
+**⟦Acts 2:1–10⟧**
+
+And when the days of the Pentecost were accomplished, they were all together in one place: And suddenly there came a sound from heaven, as of a mighty wind coming: and it filled the whole house where they were sitting. And there appeared to them parted tongues, as it were of fire: and it sat upon every one of them. And they were all filled with the Holy Ghost: and they began to speak with divers tongues, according as the Holy Ghost gave them to speak. Now there were dwelling at Jerusalem, Jews, devout men, out of every nation under heaven. And when this was noised abroad, the multitude came together, and were confounded in mind, because that every man heard them speak in his own tongue. And they were all amazed, and wondered, saying: Behold, are not all these that speak Galileans? And how have we heard, every man our own tongue wherein we were born? Parthians and Medes and Elamites and inhabitants of Mesopotamia, Judea, and Cappadocia, Pontus and Asia, Phrygia and Pamphylia, Egypt and the parts of Libya about Cyrene, and strangers of Rome,
+
+**⟦Acts 2:11–18⟧**
+
+Jews also, and proselytes, Cretes, and Arabians: we have heard them speak in our own tongues the wonderful works of God. And they were all astonished, and wondered, saying one to another: What meaneth this? But others mocking, said: These men are full of new wine. But Peter standing up with the eleven, lifted up his voice, and spoke to them: Ye men of Judea, and all you that dwell in Jerusalem, be this known to you and with your ears receive my words. For these are not drunk, as you suppose, seeing it is but the third hour of the day: But this is that which was spoken of by the prophet Joel: And it shall come to pass, in the last days, (saith the Lord), I will pour out of my Spirit upon all flesh: and your sons and your daughters shall prophesy: and your young men shall see visions, and your old men shall dream dreams. And upon my servants indeed and upon my handmaids will I pour out in those days of my spirit: and they shall prophesy.
+
+**⟦Acts 2:21⟧**
+
+And it shall come to pass, that whosoever shall call upon the name of the Lord shall be saved.
+
+**⟦Acts 2:22–24⟧**
+
+Ye men of Israel, hear these words: Jesus of Nazareth, a man approved of God among you by miracles and wonders and signs, which God did by him, in the midst of you, as you also know: This same being delivered up, by the determinate counsel and foreknowledge of God, you by the hands of wicked men have crucified and slain. Whom God hath raised up, having loosed the sorrows of hell, as it was impossible that he should be holden by it.
+
+**⟦Acts 2:32–36⟧**
+
+This Jesus hath God raised again, whereof all we are witnesses. Being exalted therefore by the right hand of God and having received of the Father the promise of the Holy Ghost, he hath poured forth this which you see and hear. For David ascended not into heaven; but he himself said: The Lord said to my Lord: Sit thou on my right hand, Until I make thy enemies thy footstool. Therefore let all the house of Israel know most certainly that God hath made both Lord and Christ, this same Jesus, whom you have crucified.
+
+**⟦Acts 2:37–41⟧**
+
+Now when they had heard these things, they had compunction in their heart and said to Peter and to the rest of the apostles: What shall we do, men and brethren? But Peter said to them: Do penance: and be baptized every one of you in the name of Jesus Christ, for the remission of your sins. And you shall receive the gift of the Holy Ghost. For the promise is to you and to your children and to all that are far off, whomsoever the Lord our God shall call. And with very many other words did he testify and exhort them, saying: Save yourselves from this perverse generation. They therefore that received his word were baptized: and there were added in that day about three thousand souls.
+
+**⟦Acts 2:42–47⟧**
+
+And they were persevering in the doctrine of the apostles and in the communication of the breaking of bread and in prayers. And fear came upon every soul. Many wonders also and signs were done by the apostles in Jerusalem: and there was great fear in all. And all they that believed were together and had all things common. Their possessions and goods they sold and divided them to all, according as every one had need. And continuing daily with one accord in the temple and breaking bread from house to house, they took their meat with gladness and simplicity of heart: Praising God and having favour with all the people. And the Lord increased daily together such as should be saved.
+
+*⟦HELD source bridge: Acts 7:51–53 · not selected or approved⟧*
+
+**⟦Acts 7:54–59⟧**
+
+Now hearing these things, they were cut to the heart: and they gnashed with their teeth at him. But he, being full of the Holy Ghost, looking up steadfastly to heaven, saw the glory of God and Jesus standing on the right hand of God. And he said: Behold, I see the heavens opened and the Son of man standing on the right hand of God. And they, crying out with a loud voice, stopped their ears and with one accord ran violently upon him. And casting him forth without the city, they stoned him. And the witnesses laid down their garments at the feet of a young man, whose name was Saul. And they stoned Stephen, invoking and saying: Lord Jesus, receive my spirit. And falling on his knees, he cried with a loud voice, saying: Lord, lay not this sin to their charge. And when he had said this, he fell asleep in the Lord. And Saul was consenting to his death.
+
+<details><summary>Unselected same-book source seams (research audit)</summary>
+
+- OMITTED_VERSES: Acts 2:19–20
+- OMITTED_VERSES: Acts 2:25–31
+- INTERVENING_CHAPTERS: Acts 3–6
+
+</details>
+
+## 32 · Saul and the Gospel to the Gentiles
+
+**⟦Acts 9:1–11⟧**
+
+And Saul, as yet breathing out threatenings and slaughter against the disciples of the Lord, went to the high priest And asked of him letters to Damascus, to the synagogues: that if he found any men and women of this way, he might bring them bound to Jerusalem. And as he went on his journey, it came to pass that he drew nigh to Damascus. And suddenly a light from heaven shined round about him. And falling on the ground, he heard a voice saying to him: Saul, Saul, why persecutest thou me? Who said: Who art thou, Lord? And he: I am Jesus whom thou persecutest. It is hard for thee to kick against the goad. And he, trembling and astonished, said: Lord, what wilt thou have me to do? And the Lord said to him: Arise and go into the city; and there it shall be told thee what thou must do. Now the men who went in company with him stood amazed, hearing indeed a voice but seeing no man. And Saul arose from the ground: and when his eyes were opened, he saw nothing. But they, leading him by the hands, brought him to Damascus. And he was there three days without sight: and he did neither eat nor drink. Now there was a certain disciple at Damascus, named Ananias. And the Lord said to him in a vision: Ananias, And he said: Behold I am here, Lord. And the Lord said to him: Arise and go into the street that is called Strait and seek in the house of Judas, one named Saul of Tarsus. For behold he prayeth.
+
+**⟦Acts 9:12–16⟧**
+
+(And he saw a man named Ananias coming in and putting his hands upon him, that he might receive his sight.) But Ananias answered: Lord, I have heard by many of this man, how much evil he hath done to thy saints in Jerusalem. And here he hath authority from the chief priests to bind all that invoke thy name. And the Lord said to him: Go thy way: for this man is to me a vessel of election, to carry my name before the Gentiles and kings and the children of Israel. For I will shew him how great things he must suffer for my name’s sake.
+
+**⟦Acts 9:17–22⟧**
+
+And Ananias went his way and entered into the house. And laying his hands upon him, he said: Brother Saul, the Lord Jesus hath sent me, he that appeared to thee in the way as thou camest, that thou mayest receive thy sight and be filled with the Holy Ghost. And immediately there fell from his eyes as it were scales: and he received his sight. And rising up, he was baptized. And when he had taken meat, he was strengthened. And he was with the disciples that were at Damascus, for some days. And immediately he preached Jesus in the synagogues, that he is the son of God. And all that heard him were astonished and said: Is not this he who persecuted in Jerusalem those that called upon this name and came hither for that intent, that he might carry them bound to the chief priests? But Saul increased much more in strength and confounded the Jews who dwelt at Damascus, affirming that this is the Christ.
+
+**⟦Acts 10:1–6⟧**
+
+And there was a certain man in Cæsarea, named Cornelius, a centurion of that which is called the Italian band: A religious man, and fearing God with all his house, giving much alms to the people and always praying to God. This man saw in a vision manifestly, about the ninth hour of the day, an angel of God coming in unto him and saying to him: Cornelius. And he, beholding him, being seized with fear, said: What is it, Lord? And he said to him: Thy prayers and thy alms are ascended for a memorial in the sight of God. And now send men to Joppe: and call hither one Simon, who is surnamed Peter. He lodgeth with one Simon a tanner, whose house is by the sea side. He will tell thee what thou must do.
+
+**⟦Acts 10:7–8⟧**
+
+And when the angel who spoke to him was departed, he called two of his household servants and a soldier who feared the Lord, of them that were under him. To whom when he had related all, he sent them to Joppe.
+
+**⟦Acts 10:9–16⟧**
+
+And on the next day, whilst they were going on their journey and drawing nigh to the city, Peter went up to the higher parts of the house to pray, about the sixth hour. And being hungry, he was desirous to taste somewhat. And as they were preparing, there came upon him an ecstasy of mind. And he saw the heaven opened and a certain vessel descending, as it were a great linen sheet let down by the four corners from heaven to the earth: Wherein were all manner of four-footed beasts and creeping things of the earth and fowls of the air. And there came a voice to him: Arise, Peter. Kill and eat. But Peter said: Far be it from me. For I never did eat any thing that is common and unclean. And the voice spoke to him again the second time: That which God hath cleansed, do not thou call common. And this was done thrice. And presently the vessel was taken up into heaven.
+
+**⟦Acts 10:19–20⟧**
+
+And as Peter was thinking of the vision, the Spirit said to him: Behold three men seek thee. Arise, therefore: get thee down and go with them, doubting nothing: for I have sent them.
+
+**⟦Acts 10:21–23⟧**
+
+Then Peter, going down to the men, said: Behold, I am he whom you seek. What is the cause for which you are come? Who said: Cornelius, a centurion, a just man and one that feareth God, and having good testimony from all the nation of the Jews, received an answer of an holy angel, to send for thee into his house And to hear words of thee. Then bringing them in, he lodged them. And the day following, he arose and went with them: and some of the brethren from Joppe accompanied him.
+
+**⟦Acts 10:24⟧**
+
+And the morrow after, he entered into Cæsarea. And Cornelius waited for them, having called together his kinsmen and special friends.
+
+**⟦Acts 10:28–29⟧**
+
+And he said to them: you know how abominable it is for a man that is a Jew to keep company or to come unto one of another nation: but God hath shewed to me, to call no man common or unclean. For which cause, making no doubt, I came when I was sent for. I ask, therefore, for what cause you have sent for me?
+
+**⟦Acts 10:30–32⟧**
+
+And Cornelius said: Four days ago, unto this hour, I was praying in my house, at the ninth hour and behold a man stood before me in white apparel and said: Cornelius, thy prayer is heard and thy alms are had in remembrance in the sight of God. Send therefore to Joppe: and call hither Simon, who is surnamed Peter. He lodgeth in the house of Simon a tanner, by the sea side.
+
+**⟦Acts 10:33–48⟧**
+
+Immediately therefore I sent to thee: and thou hast done well in coming. Now, therefore, all we are present in thy sight to hear all things whatsoever are commanded thee by the Lord. And Peter opening his mouth, said: in very deed I perceive that God is not a respecter of persons. But in every nation, he that feareth him and worketh justice is acceptable to him. God sent the word to the children of Israel, preaching peace by Jesus Christ (He is Lord of all). You know the word which hath been published through all Judea: for it began from Galilee, after the baptism which John preached. Jesus of Nazareth: how God anointed him with the Holy Ghost and with power, who went about doing good and healing all that were oppressed by the devil, for God was with him. And we are witnesses of all things that he did in the land of the Jews and in Jerusalem: whom they killed, hanging him upon a tree. Him God raised up the third day and gave him to be made manifest, Not to all the people, but to witnesses preordained by God, even to us, who did eat and drink with him, after he arose again from the dead. And he commanded us to preach to the people and to testify that it is he who was appointed by God to be judge of the living and of the dead. To him all the prophets give testimony, that by his name all receive remission of sins, who believe in him. While Peter was yet speaking these words, the Holy Ghost fell on all them that heard the word. And the faithful of the circumcision, who came with Peter, were astonished for that the grace of the Holy Ghost was poured out upon the Gentiles also. For they heard them speaking with tongues and magnifying God. Then Peter answered: Can any man forbid water, that these should not be baptized, who have received the Holy Ghost, as well as we? And he commanded them to be baptized in the name of the Lord Jesus Christ. Then they desired him to tarry with them some days.
+
+<details><summary>Unselected same-book source seams (research audit)</summary>
+
+- OMITTED_VERSES: Acts 10:17–18
+- OMITTED_VERSES: Acts 10:25–27
+
+</details>
+
+## 33 · Antioch, apostolic missions and the Council
+
+**⟦Acts 11:19–26⟧**
+
+Now they who had been dispersed by the persecution that arose on occasion of Stephen went about as far as Phenice and Cyprus and Antioch, speaking the word to none, but to the Jews only. But some of them were men of Cyprus and Cyrene, who, when they were entered into Antioch, spoke also to the Greeks, preaching the Lord Jesus. And the hand of he Lord was with them: and a great number believing, were converted to the Lord. And the tidings came to the ears of the church that was at Jerusalem, touching these things: and they sent Barnabas as far as Antioch. Who, when he was come and had seen the grace of God, rejoiced. And he exhorted them all with purpose of heart to continue in the Lord. For he was a good man and full of the Holy Ghost and of faith. And a great multitude was added to the Lord. And Barnabas went to Tarsus to seek Saul: whom, when he had found, he brought to Antioch. And they conversed there in the church a whole year: and they taught a great multitude, so that at Antioch the disciples were first named Christians.
+
+**⟦Acts 13:1–5⟧**
+
+Now there were in the church which was at Antioch prophets and doctors, among whom was Barnabas and Simon who was called Niger, and Lucius of Cyrene and Manahen who was the foster brother of Herod the tetrarch, and Saul. And as they were ministering to the Lord and fasting, the Holy Ghost said to them: Separate me Saul and Barnabas, for the work whereunto I have taken them. Then they fasting and praying and imposing their hands upon them, sent them away. So they, being sent by the Holy Ghost, went to Seleucia: and from thence they sailed to Cyprus. And when they were come to Salamina, they preached the word of God in the synagogues of the Jews. And they had John also in the ministry.
+
+*⟦HELD source bridge: Acts 14:26–27 · not selected or approved⟧*
+
+**⟦Acts 15:1–2⟧**
+
+And some, coming down from Judea, taught the brethren: That, except you be circumcised after the manner of Moses, you cannot be saved. And when Paul and Barnabas had no small contest with them, they determined that Paul and Barnabas and certain others of the other side should go up to the apostles and priests to Jerusalem, about this question.
+
+**⟦Acts 15:4–11⟧**
+
+And when they were come to Jerusalem, they were received by the church and by the apostles and ancients, declaring how great things God had done with them. But there arose of the sect of the Pharisees some that believed, saying: They must be circumcised and be commanded to observe the law of Moses. And the apostles and ancients assembled to consider of this matter. And when there had been much disputing, Peter, rising up, said to them: Men, brethren, you know that in former days God made choice among us, that by my mouth the Gentiles should hear the word of the gospel and believe. And God, who knoweth the hearts, gave testimony, giving unto them the Holy Ghost, as well as to us: And put no difference between us and them, purifying their hearts by faith. Now therefore, why tempt you God to put a yoke upon the necks of the disciples which neither our fathers nor we have been able to bear? But by the grace of the Lord Jesus Christ, we believe to be saved, in like manner as they also.
+
+**⟦Acts 15:12⟧**
+
+And all the multitude held their peace: and they heard Barnabas and Paul telling what great signs and wonders God had wrought among the Gentiles by them.
+
+**⟦Acts 15:13–20⟧**
+
+And after they had held their peace, James answered, saying: Men, brethren, hear me. Simon hath related how God first visited to take of the Gentiles, a people to his name. And to this agree the words of the prophets, as it is written: After these things I will return and will rebuild the tabernacle of David, which is fallen down: and the ruins thereof I will rebuild. And I will set it up: That the residue of men may seek after the Lord, and all nations upon whom my name is invoked, saith the Lord, who doth these things. To the Lord was his own work known from the beginning of the world. For which cause I judge that they who from among the Gentiles are converted to God are not to be disquieted: But that we write unto them, that they refrain themselves from the pollutions of idols and from fornication and from things strangled and from blood.
+
+**⟦Acts 15:22–29⟧**
+
+Then it pleased the apostles and ancients, with the whole church, to choose men of their own company and to send to Antioch with Paul and Barnabas, namely, Judas, who was surnamed Barsabas, and Silas, chief men among the brethren. Writing by their hands: The apostles and ancients, brethren, to the brethren of the Gentiles that are at Antioch and in Syria and Cilicia, greeting. Forasmuch as we have heard that some going out from us have troubled you with words, subverting your souls, to whom we gave no commandment: It hath seemed good to us, being assembled together, to choose out men and to send them unto you, with our well beloved Barnabas and Paul: Men that have given their lives for the name of our Lord Jesus Christ. We have sent therefore Judas and Silas, who themselves also will, by word of mouth, tell you the same things. For it hath seemed good to the Holy Ghost and to us to lay no further burden upon you than these necessary things: That you abstain from things sacrificed to idols and from blood and from things strangled and from fornication: from which things keeping yourselves, you shall do well. Fare ye well.
+
+<details><summary>Unselected same-book source seams (research audit)</summary>
+
+- INTERVENING_CHAPTERS: Acts 12–12
+- INTERVENING_CHAPTERS: Acts 14–14
+- OMITTED_VERSES: Acts 15:3–3
+- OMITTED_VERSES: Acts 15:21–21
+
+</details>
+
+## 34 · The Gospel proclaimed in Rome
+
+*⟦HELD source bridge: Acts 19:21 · not selected or approved⟧*
+
+*⟦HELD source bridge: Acts 28:16 · not selected or approved⟧*
+
+*⟦HELD source bridge: Acts 28:17–22 · not selected or approved⟧*
+
+**⟦Acts 28:23–31⟧**
+
+And when they had appointed him a day, there came very many to him unto his lodgings. To whom he expounded, testifying the kingdom of God and persuading them concerning Jesus, out of the law of Moses and the prophets, from morning until evening. And some believed the things that were said: but some believed not. And when they agreed not among themselves, they departed, Paul speaking this one word: Well did the Holy Ghost speak to our fathers by Isaias the prophet, Saying: Go to this people and say to them: With the ear you shall hear and shall not understand: and seeing you shall see and shall not perceive. For the heart of this people is grown gross, and with their ears have they heard heavily and their eyes they have shut, lest perhaps they should see with their eyes and hear with their ears and understand with their heart and should be converted: and I should heal them. Be it known therefore to you that this salvation of God is sent to the Gentiles: and they will hear it. And when he had said these things, the Jews went out from him, having much reasoning among themselves. And he remained two whole years in his own hired lodging: and he received all that came in to him, Preaching the kingdom of God and teaching the things which concern the Lord Jesus Christ, with all confidence, without prohibition.
+
