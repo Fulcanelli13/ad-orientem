@@ -1,0 +1,1953 @@
+{
+  "schema": "ao.catena.augustine-quaestiones-continuation.v1",
+  "date": "2026-10-21",
+  "corpusRef": "data/scripture/catena/manifest.v1.json",
+  "priorSequentialIndex": "data/scripture/catena/research/augustine-quaestiones-sequential-index.v1.json",
+  "sourceRef": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+  "sourceTranslationStatus": "Original Latin short anchors + modern editorial question navigation only; no independent English patristic answers",
+  "editorialPrinciples": [
+    "Do not turn a quoted biblical question into a question Augustine authored.",
+    "Keep section count separate from number of explicit original questions.",
+    "Original Latin anchoring from displayed source is not critical-edition textual certification.",
+    "Do not join distinct Augustinian works simply because Catena calls both Quaestiones."
+  ],
+  "coverage": [
+    {
+      "book": "I",
+      "from": 14,
+      "to": 47,
+      "count": 34
+    },
+    {
+      "book": "II",
+      "from": 24,
+      "to": 51,
+      "count": 28
+    }
+  ],
+  "records": [
+    {
+      "id": "aug-qev-i-14",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 14,
+      "sourceLocator": "I.14",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum#QE_001_014_014",
+      "latinAnchor": "Quod dixerunt Iudei",
+      "scriptureKeys": [
+        "matthew/13/54"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "How does Augustine distinguish Christ's wisdom from his mighty works?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-i-15",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 15,
+      "sourceLocator": "I.15",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum#QE_001_015_015",
+      "latinAnchor": "Quod dixerunt discipuli fantasma",
+      "scriptureKeys": [
+        "matthew/14/26"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "What does the disciples' fear on the water signify?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [
+        {
+          "pericopeId": "catena.matthew.14.22",
+          "sourceOrdinal": 37,
+          "sourceFragmentId": "catena.matthew.14.22:36",
+          "attributionAsInCatena": "Augustine",
+          "catenaCitation": "Catena Aurea, Matthew 14:22-33",
+          "sourceLabelAsPrinted": "Quæst. Ev. i. 15.",
+          "sourceTextAnchor": "(Quæst. Ev. i. 15.) Or; That the disciples here say, It is a phantasm, figures those who yielding to",
+          "linkClass": "cited_ancient_work_and_topic_checked__critical_source_unverified",
+          "sourceVerseOverlap": true
+        },
+        {
+          "pericopeId": "catena.matthew.14.22",
+          "sourceOrdinal": 45,
+          "sourceFragmentId": "catena.matthew.14.22:44",
+          "attributionAsInCatena": "Augustine",
+          "catenaCitation": "Catena Aurea, Matthew 14:22-33",
+          "sourceLabelAsPrinted": "Quæst. Ev. i. 15.",
+          "sourceTextAnchor": "(Quæst. Ev. i. 15.) For it is here conveyed to us that His glory will then be made manifest, seeing ",
+          "linkClass": "cited_ancient_work_and_topic_checked__critical_source_unverified",
+          "sourceVerseOverlap": true
+        }
+      ],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-i-16",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 16,
+      "sourceLocator": "I.16",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum#QE_001_016_016",
+      "latinAnchor": "Munus quodcumque est ex me",
+      "scriptureKeys": [
+        "matthew/15/5"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "What is the significance of the gift invoked to avoid supporting parents?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [
+        {
+          "pericopeId": "catena.matthew.15.1",
+          "sourceOrdinal": 23,
+          "sourceFragmentId": "catena.matthew.15.1:22",
+          "attributionAsInCatena": "Augustine",
+          "catenaCitation": "Catena Aurea, Matthew 15:1-6",
+          "sourceLabelAsPrinted": "Quæst. Ev. i. 16.",
+          "sourceTextAnchor": "(Quæst. Ev. i. 16.) Otherwise; The gift whatsoever thou offerest on my account, shall profit thee; t",
+          "linkClass": "cited_ancient_work_and_topic_checked__critical_source_unverified",
+          "sourceVerseOverlap": true
+        }
+      ],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-i-17",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 17,
+      "sourceLocator": "I.17",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum#QE_001_017_017",
+      "latinAnchor": "Omnis plantatio quam non plantavit",
+      "scriptureKeys": [
+        "matthew/15/13"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "What does the plant not planted by the Father signify?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-i-18",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 18,
+      "sourceLocator": "I.18",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum#QE_001_018_018",
+      "latinAnchor": "Quod et puerum centurionis",
+      "scriptureKeys": [
+        "matthew/15/22"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "Why are the Gentiles healed by Christ's word without his visiting their houses?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [
+        {
+          "pericopeId": "catena.matthew.15.21",
+          "sourceOrdinal": 31,
+          "sourceFragmentId": "catena.matthew.15.21:30",
+          "attributionAsInCatena": "Augustine",
+          "catenaCitation": "Catena Aurea, Matthew 15:21-28",
+          "sourceLabelAsPrinted": "Quæst. Ev. i. 18.",
+          "sourceTextAnchor": "(Quæst. Ev. i. 18.) And that to heal the Centurion’s servant, and the daughter of this Chananæan wom",
+          "linkClass": "cited_ancient_work_and_topic_checked__critical_source_unverified",
+          "sourceVerseOverlap": true
+        }
+      ],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-i-19",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 19,
+      "sourceLocator": "I.19",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum#QE_001_019_019",
+      "latinAnchor": "Quod turbae obtulerunt Domino",
+      "scriptureKeys": [
+        "matthew/15/30"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "How does Augustine interpret the disabilities of the healed crowd?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-i-20",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 20,
+      "sourceLocator": "I.20",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum#QE_001_020_020",
+      "latinAnchor": "Quod dixit Dominus: Facto vespere",
+      "scriptureKeys": [
+        "matthew/16/2"
+      ],
+      "scriptureKeyEvidence": "Author discusses weather signs in Matthew 16:2–3, but current pinned Catena has no chapter-16 pericope for verses 1–4. This is an absence from Catena indexing, not an assertion about the Bible text.",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "How does Augustine interpret the signs of the weather?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending",
+      "originalScriptureReference": "Matthew 16:2–3",
+      "sourceVerseMappingStatus": "primary_latin_scripture_location_unindexed_in_existing_catena_pericopes"
+    },
+    {
+      "id": "aug-qev-i-21",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 21,
+      "sourceLocator": "I.21",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum#QE_001_021_021",
+      "latinAnchor": "Quod dixit Dominus: Helias",
+      "scriptureKeys": [
+        "matthew/17/11"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "What does Elijah's restoration signify?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [
+        {
+          "pericopeId": "catena.matthew.17.10",
+          "sourceOrdinal": 3,
+          "sourceFragmentId": "catena.matthew.17.10:2",
+          "attributionAsInCatena": "Augustine",
+          "catenaCitation": "Catena Aurea, Matthew 17:10-13",
+          "sourceLabelAsPrinted": "Quæst. Ev. i. 21.",
+          "sourceTextAnchor": "(Quæst. Ev. i. 21.) Or; He shall restore all things, that is those whom the persecution of Antichris",
+          "linkClass": "cited_ancient_work_and_topic_checked__critical_source_unverified",
+          "sourceVerseOverlap": true
+        }
+      ],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-i-22",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 22,
+      "sourceLocator": "I.22",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum#QE_001_022_022",
+      "latinAnchor": "Quod dixit: Saepe cadit",
+      "scriptureKeys": [
+        "matthew/17/15"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "What does the boy's falling into fire and water signify?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [
+        {
+          "pericopeId": "catena.matthew.17.14",
+          "sourceOrdinal": 13,
+          "sourceFragmentId": "catena.matthew.17.14:12",
+          "attributionAsInCatena": "Augustine",
+          "catenaCitation": "Catena Aurea, Matthew 17:14-18",
+          "sourceLabelAsPrinted": "Quæst. Ev. i. 22.",
+          "sourceTextAnchor": "(Quæst. Ev. i. 22.) Or the fire pertains to anger, which aims upwards, water to the lusts of the fle",
+          "linkClass": "cited_ancient_work_and_topic_checked__critical_source_unverified",
+          "sourceVerseOverlap": true
+        }
+      ],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-i-23",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 23,
+      "sourceLocator": "I.23",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum#QE_001_023_023",
+      "latinAnchor": "Quod dixit: Ergo liberi",
+      "scriptureKeys": [
+        "matthew/17/26"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "What does the freedom of the sons signify?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [
+        {
+          "pericopeId": "catena.matthew.17.24",
+          "sourceOrdinal": 12,
+          "sourceFragmentId": "catena.matthew.17.24:11",
+          "attributionAsInCatena": "Augustine",
+          "catenaCitation": "Catena Aurea, Matthew 17:24-27",
+          "sourceLabelAsPrinted": "Quæst. Ev. i. 23.",
+          "sourceTextAnchor": "(Quæst. Ev. i. 23.) For, saith He, in every kingdom the children are free, that is, not under tax. M",
+          "linkClass": "cited_ancient_work_and_topic_checked__critical_source_unverified",
+          "sourceVerseOverlap": true
+        }
+      ],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-i-24",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 24,
+      "sourceLocator": "I.24",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum#QE_001_024_024",
+      "latinAnchor": "Quod Dominus dicit: Qui autem scandalizaverit",
+      "scriptureKeys": [
+        "matthew/18/6"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "What warning does the millstone signify?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [
+        {
+          "pericopeId": "catena.matthew.18.1",
+          "sourceOrdinal": 20,
+          "sourceFragmentId": "catena.matthew.18.1:19",
+          "attributionAsInCatena": "Augustine",
+          "catenaCitation": "Catena Aurea, Matthew 18:1-6",
+          "sourceLabelAsPrinted": "Quæst. Ev. i. 24",
+          "sourceTextAnchor": "(Quæst. Ev. i. 24) Otherwise; Whoso offendeth one of these little ones, that is so humble as He woul",
+          "linkClass": "cited_ancient_work_and_topic_checked__critical_source_unverified",
+          "sourceVerseOverlap": true
+        }
+      ],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-i-25",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 25,
+      "sourceLocator": "I.25",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum#QE_001_025_025",
+      "latinAnchor": "Quod oblatus est domino debitor",
+      "scriptureKeys": [
+        "matthew/18/24"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "What does the debtor of ten thousand talents signify?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [
+        {
+          "pericopeId": "catena.matthew.18.23",
+          "sourceOrdinal": 11,
+          "sourceFragmentId": "catena.matthew.18.23:10",
+          "attributionAsInCatena": "Augustine",
+          "catenaCitation": "Catena Aurea, Matthew 18:23-35",
+          "sourceLabelAsPrinted": "Quæst. Ev. i. 25.",
+          "sourceTextAnchor": "(Quæst. Ev. i. 25.) This signifies that the transgressor of the decalogue deserves punishment for hi",
+          "linkClass": "cited_ancient_work_and_topic_checked__critical_source_unverified",
+          "sourceVerseOverlap": true
+        },
+        {
+          "pericopeId": "catena.matthew.18.23",
+          "sourceOrdinal": 24,
+          "sourceFragmentId": "catena.matthew.18.23:23",
+          "attributionAsInCatena": "Augustine",
+          "catenaCitation": "Catena Aurea, Matthew 18:23-35",
+          "sourceLabelAsPrinted": "Quæst. Ev. i. 25.",
+          "sourceTextAnchor": "(Quæst. Ev. i. 25.) That is, he nourished such thoughts towards him that he sought his punishment. B",
+          "linkClass": "cited_ancient_work_and_topic_checked__critical_source_unverified",
+          "sourceVerseOverlap": true
+        },
+        {
+          "pericopeId": "catena.matthew.18.23",
+          "sourceOrdinal": 27,
+          "sourceFragmentId": "catena.matthew.18.23:26",
+          "attributionAsInCatena": "Augustine",
+          "catenaCitation": "Catena Aurea, Matthew 18:23-35",
+          "sourceLabelAsPrinted": "Quæst. Ev. i. 25.",
+          "sourceTextAnchor": "(Quæst. Ev. i. 25.) By the fellow-servants is understood the Church, which binds one and looses anot",
+          "linkClass": "cited_ancient_work_and_topic_checked__critical_source_unverified",
+          "sourceVerseOverlap": true
+        }
+      ],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-i-26",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 26,
+      "sourceLocator": "I.26",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum#QE_001_026_026",
+      "latinAnchor": "Quod ait Dominus divitem non intrare",
+      "scriptureKeys": [
+        "matthew/19/24"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "Does Christ's warning concerning riches include people who merely desire them?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [
+        {
+          "pericopeId": "catena.matthew.19.23",
+          "sourceOrdinal": 14,
+          "sourceFragmentId": "catena.matthew.19.23:13",
+          "attributionAsInCatena": "Augustine",
+          "catenaCitation": "Catena Aurea, Matthew 19:23-26",
+          "sourceLabelAsPrinted": "Quæst. Ev. 1, 26.",
+          "sourceTextAnchor": "(Quæst. Ev. 1, 26.) Whereas the rich are few in comparison of the multitude of the poor, we must sup",
+          "linkClass": "cited_ancient_work_and_topic_checked__critical_source_unverified",
+          "sourceVerseOverlap": true
+        }
+      ],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-i-27",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 27,
+      "sourceLocator": "I.27",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum#QE_001_027_027",
+      "latinAnchor": "Quod Dominus seorsum se duobus",
+      "scriptureKeys": [
+        "matthew/20/17"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "What does Augustine say of Christ privately announcing his Passion?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-i-28",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 28,
+      "sourceLocator": "I.28",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum#QE_001_028_028",
+      "latinAnchor": "Ab Iericho egreditur Dominus",
+      "scriptureKeys": [
+        "matthew/20/30"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "What do the two blind men near Jericho signify?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [
+        {
+          "pericopeId": "catena.matthew.20.29",
+          "sourceOrdinal": 19,
+          "sourceFragmentId": "catena.matthew.20.29:18",
+          "attributionAsInCatena": "Augustine",
+          "catenaCitation": "Catena Aurea, Matthew 20:29-34",
+          "sourceLabelAsPrinted": "Quæst. Ev. i. 28.",
+          "sourceTextAnchor": "(Quæst. Ev. i. 28.) Otherwise; The two blind men sitting by the wayside, denote certain of both nati",
+          "linkClass": "cited_ancient_work_and_topic_checked__critical_source_unverified",
+          "sourceVerseOverlap": true
+        },
+        {
+          "pericopeId": "catena.matthew.20.29",
+          "sourceOrdinal": 21,
+          "sourceFragmentId": "catena.matthew.20.29:20",
+          "attributionAsInCatena": "Augustine",
+          "catenaCitation": "Catena Aurea, Matthew 20:29-34",
+          "sourceLabelAsPrinted": "Quæst. Ev. ii. 28.",
+          "sourceTextAnchor": "(Quæst. Ev. ii. 28.) Jesus therefore, the same who said, To him that knocketh it shall be opened, he",
+          "linkClass": "related_topic_source_number_conflict__review_required",
+          "sourceVerseOverlap": true
+        }
+      ],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-i-29",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 29,
+      "sourceLocator": "I.29",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum#QE_001_029_029",
+      "latinAnchor": "Quod Dominus dicit discipulis: Dicetis",
+      "scriptureKeys": [
+        "matthew/21/21"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "What does the mountain cast into the sea signify?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [
+        {
+          "pericopeId": "catena.matthew.21.17",
+          "sourceOrdinal": 26,
+          "sourceFragmentId": "catena.matthew.21.17:25",
+          "attributionAsInCatena": "Augustine",
+          "catenaCitation": "Catena Aurea, Matthew 21:17-22",
+          "sourceLabelAsPrinted": "Quæst. Ev. i. 29.",
+          "sourceTextAnchor": "(Quæst. Ev. i. 29.) Or, this is to be said by each servant of God in his own case respecting the mou",
+          "linkClass": "cited_ancient_work_and_topic_checked__critical_source_unverified",
+          "sourceVerseOverlap": true
+        }
+      ],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-i-30",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 30,
+      "sourceLocator": "I.30",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum#QE_001_030_030",
+      "latinAnchor": "Quod Dominus dicit: Et qui ceciderit",
+      "scriptureKeys": [
+        "matthew/21/44"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "What is the distinction between falling on the stone and having it fall upon one?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [
+        {
+          "pericopeId": "catena.matthew.21.33",
+          "sourceOrdinal": 58,
+          "sourceFragmentId": "catena.matthew.21.33:57",
+          "attributionAsInCatena": "Augustine",
+          "catenaCitation": "Catena Aurea, Matthew 21:33-44",
+          "sourceLabelAsPrinted": "Quæst. Ev. i. 30.",
+          "sourceTextAnchor": "(Quæst. Ev. i. 30.) Or, Those that fall upon Him, are those that despise and afflict Him. These do n",
+          "linkClass": "cited_ancient_work_and_topic_checked__critical_source_unverified",
+          "sourceVerseOverlap": true
+        }
+      ],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-i-31",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 31,
+      "sourceLocator": "I.31",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum#QE_001_031_031",
+      "latinAnchor": "Quod dixit Dominus: Simile est regnum",
+      "scriptureKeys": [
+        "matthew/22/2"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "What is signified by the king's wedding feast?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-i-32",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 32,
+      "sourceLocator": "I.32",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum#QE_001_032_032",
+      "latinAnchor": "Quod Sadducei dicunt Domino: Fuerunt",
+      "scriptureKeys": [
+        "matthew/22/25"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "How does Augustine interpret the Sadducees' seven brothers?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [
+        {
+          "pericopeId": "catena.matthew.22.23",
+          "sourceOrdinal": 11,
+          "sourceFragmentId": "catena.matthew.22.23:10",
+          "attributionAsInCatena": "Augustine",
+          "catenaCitation": "Catena Aurea, Matthew 22:23-33",
+          "sourceLabelAsPrinted": "Quæst. Ev. i, 32.",
+          "sourceTextAnchor": "(Quæst. Ev. i, 32.) Mystically; by these seven brethren are understood the wicked, who could not bri",
+          "linkClass": "cited_ancient_work_and_topic_checked__critical_source_unverified",
+          "sourceVerseOverlap": true
+        }
+      ],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-i-33",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 33,
+      "sourceLocator": "I.33",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum#QE_001_033_033",
+      "latinAnchor": "Quod Dominus dixit: In his duobus",
+      "scriptureKeys": [
+        "matthew/22/40"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "Why does all the law hang upon the two commandments?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [
+        {
+          "pericopeId": "catena.matthew.22.34",
+          "sourceOrdinal": 19,
+          "sourceFragmentId": "catena.matthew.22.34:18",
+          "attributionAsInCatena": "Augustine",
+          "catenaCitation": "Catena Aurea, Matthew 22:34-40",
+          "sourceLabelAsPrinted": "Quæst. Ev. i. 33.",
+          "sourceTextAnchor": "(Quæst. Ev. i. 33.) Hang, that is, refer thither as their end.",
+          "linkClass": "cited_ancient_work_and_topic_checked__critical_source_unverified",
+          "sourceVerseOverlap": true
+        }
+      ],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-i-34",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 34,
+      "sourceLocator": "I.34",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum#QE_001_034_034",
+      "latinAnchor": "Quod Dominus dixit: Quid enim maius",
+      "scriptureKeys": [
+        "matthew/23/17"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "What do temple, altar, gold, and offering signify?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [
+        {
+          "pericopeId": "catena.matthew.23.16",
+          "sourceOrdinal": 9,
+          "sourceFragmentId": "catena.matthew.23.16:8",
+          "attributionAsInCatena": "Augustine",
+          "catenaCitation": "Catena Aurea, Matthew 23:16-22",
+          "sourceLabelAsPrinted": "Quæst. Ev. i. 34.",
+          "sourceTextAnchor": "(Quæst. Ev. i. 34.) The temple and altar we may also understand of Christ Himself; the gold and the ",
+          "linkClass": "cited_ancient_work_and_topic_checked__critical_source_unverified",
+          "sourceVerseOverlap": true
+        }
+      ],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-i-35",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 35,
+      "sourceLocator": "I.35",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum#QE_001_035_035",
+      "latinAnchor": "Quod Dominus dixit: Excolantes culicem",
+      "scriptureKeys": [
+        "matthew/23/24"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "What does straining out the gnat and swallowing the camel signify?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-i-36",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 36,
+      "sourceLocator": "I.36",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum#QE_001_036_036",
+      "latinAnchor": "Quod dixit Dominus ad Ierusalem",
+      "scriptureKeys": [
+        "matthew/23/37"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "Why does Christ liken himself to a hen gathering her chicks?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [
+        {
+          "pericopeId": "catena.matthew.23.37",
+          "sourceOrdinal": 5,
+          "sourceFragmentId": "catena.matthew.23.37:4",
+          "attributionAsInCatena": "Augustine",
+          "catenaCitation": "Catena Aurea, Matthew 23:37-39",
+          "sourceLabelAsPrinted": "Quæst. Ev. i. 36.",
+          "sourceTextAnchor": "(Quæst. Ev. i. 36.) This species has the greatest affection for its brood, insomuch that when they a",
+          "linkClass": "cited_ancient_work_and_topic_checked__critical_source_unverified",
+          "sourceVerseOverlap": true
+        }
+      ],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-i-37",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 37,
+      "sourceLocator": "I.37",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum#QE_001_037_037",
+      "latinAnchor": "Quod Dominus dixit: Orate ne fiat",
+      "scriptureKeys": [
+        "matthew/24/20"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "What does a flight in winter or on the Sabbath mean?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [
+        {
+          "pericopeId": "catena.matthew.24.15",
+          "sourceOrdinal": 25,
+          "sourceFragmentId": "catena.matthew.24.15:24",
+          "attributionAsInCatena": "Augustine",
+          "catenaCitation": "Catena Aurea, Matthew 24:15-22",
+          "sourceLabelAsPrinted": "Quæst. Ev. I. 37.",
+          "sourceTextAnchor": "(Quæst. Ev. I. 37.) That no one be found in that day in either joy or sorrow for temporal things.",
+          "linkClass": "cited_ancient_work_and_topic_checked__critical_source_unverified",
+          "sourceVerseOverlap": true
+        }
+      ],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-i-38",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 38,
+      "sourceLocator": "I.38",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum#QE_001_038_038",
+      "latinAnchor": "Quod Dominus dixit: Sicut enim fulgur",
+      "scriptureKeys": [
+        "matthew/24/27"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "How does Augustine interpret lightning from east to west?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [
+        {
+          "pericopeId": "catena.matthew.24.23",
+          "sourceOrdinal": 22,
+          "sourceFragmentId": "catena.matthew.24.23:21",
+          "attributionAsInCatena": "Augustine",
+          "catenaCitation": "Catena Aurea, Matthew 24:23-28",
+          "sourceLabelAsPrinted": "Quæst. Ev. i. 38.",
+          "sourceTextAnchor": "(Quæst. Ev. i. 38.) By the east and west, He signifies the whole world, throughout which the Church ",
+          "linkClass": "cited_ancient_work_and_topic_checked__critical_source_unverified",
+          "sourceVerseOverlap": true
+        }
+      ],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-i-39",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 39,
+      "sourceLocator": "I.39",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum#QE_001_039_039",
+      "latinAnchor": "Quod Dominus dixit: Ab arbore autem",
+      "scriptureKeys": [
+        "matthew/24/32"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "What does the fig tree signify?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [
+        {
+          "pericopeId": "catena.matthew.24.32",
+          "sourceOrdinal": 9,
+          "sourceFragmentId": "catena.matthew.24.32:8",
+          "attributionAsInCatena": "Augustine",
+          "catenaCitation": "Catena Aurea, Matthew 24:32-35",
+          "sourceLabelAsPrinted": "Quæst. Ev. i. 39.",
+          "sourceTextAnchor": "(Quæst. Ev. i. 39.) Or, by the fig tree understand the human race, by reason of the temptations of t",
+          "linkClass": "cited_ancient_work_and_topic_checked__critical_source_unverified",
+          "sourceVerseOverlap": true
+        }
+      ],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-i-40",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 40,
+      "sourceLocator": "I.40",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum#QE_001_040_040",
+      "latinAnchor": "Quod Dominus de Iuda dixit",
+      "scriptureKeys": [
+        "matthew/26/24"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "original_authorial_question_within_section",
+      "originalQuestionAnchor": "utrum in hanc vitam, ut usitate locutus sit?",
+      "readerQuestion": "In what sense could it be better for Judas not to have been born?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [
+        {
+          "pericopeId": "catena.matthew.26.20",
+          "sourceOrdinal": 19,
+          "sourceFragmentId": "catena.matthew.26.20:18",
+          "attributionAsInCatena": "Augustine",
+          "catenaCitation": "Catena Aurea, Matthew 26:20-25",
+          "sourceLabelAsPrinted": "Quæst. Ev. i. 40.",
+          "sourceTextAnchor": "(Quæst. Ev. i. 40.) And if it be contended that there is a life before this life, that will prove th",
+          "linkClass": "cited_ancient_work_and_topic_checked__critical_source_unverified",
+          "sourceVerseOverlap": true
+        }
+      ],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-i-41",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 41,
+      "sourceLocator": "I.41",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum#QE_001_041_041",
+      "latinAnchor": "Quod Dominus triginta argenteis venditus",
+      "scriptureKeys": [
+        "matthew/26/15"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "What meaning does Augustine give to the thirty pieces of silver?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [
+        {
+          "pericopeId": "catena.matthew.26.14",
+          "sourceOrdinal": 13,
+          "sourceFragmentId": "catena.matthew.26.14:12",
+          "attributionAsInCatena": "Augustine",
+          "catenaCitation": "Catena Aurea, Matthew 26:14-16",
+          "sourceLabelAsPrinted": "Quæst. Ev. i. 41",
+          "sourceTextAnchor": "(Quæst. Ev. i. 41) That the Lord was sold for thirty pieces of silver by Judas, denotes the unrighte",
+          "linkClass": "cited_ancient_work_and_topic_checked__critical_source_unverified",
+          "sourceVerseOverlap": true
+        }
+      ],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-i-42",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 42,
+      "sourceLocator": "I.42",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum#QE_001_042_042",
+      "latinAnchor": "Quod Dominus dicit: Ubi fuerit corpus",
+      "scriptureKeys": [
+        "matthew/24/28"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "What do the body and the eagles signify?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-i-43",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 43,
+      "sourceLocator": "I.43",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum#QE_001_043_043",
+      "latinAnchor": "Quod Dominus dicit sub tempus passionis",
+      "scriptureKeys": [
+        "matthew/26/29"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "What does the promised new wine signify?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [
+        {
+          "pericopeId": "catena.matthew.26.27",
+          "sourceOrdinal": 18,
+          "sourceFragmentId": "catena.matthew.26.27:17",
+          "attributionAsInCatena": "Augustine",
+          "catenaCitation": "Catena Aurea, Matthew 26:27-29",
+          "sourceLabelAsPrinted": "Quæst. Ev. i. 43.",
+          "sourceTextAnchor": "(Quæst. Ev. i. 43.) Or otherwise; When He says, I shall drink it new with you, He gives us to unders",
+          "linkClass": "cited_ancient_work_and_topic_checked__critical_source_unverified",
+          "sourceVerseOverlap": true
+        }
+      ],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-i-44",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 44,
+      "sourceLocator": "I.44",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum#QE_001_044_044",
+      "latinAnchor": "Quod dictum est: Expuerunt in faciem",
+      "scriptureKeys": [
+        "matthew/26/67"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "How does Augustine interpret those who spat in Christ's face?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [
+        {
+          "pericopeId": "catena.matthew.26.59",
+          "sourceOrdinal": 20,
+          "sourceFragmentId": "catena.matthew.26.59:19",
+          "attributionAsInCatena": "Augustine",
+          "catenaCitation": "Catena Aurea, Matthew 26:59-68",
+          "sourceLabelAsPrinted": "Quæst. Ev. i. 44.",
+          "sourceTextAnchor": "(Quæst. Ev. i. 44.) That, they did spit in his face, signifies those who reject His proffered grace.",
+          "linkClass": "cited_ancient_work_and_topic_checked__critical_source_unverified",
+          "sourceVerseOverlap": true
+        }
+      ],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-i-45",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 45,
+      "sourceLocator": "I.45",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum#QE_001_045_045",
+      "latinAnchor": "Quod Petrus necdum solidatus in fide",
+      "scriptureKeys": [
+        "matthew/26/75"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "How does Augustine interpret Peter's three denials?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [
+        {
+          "pericopeId": "catena.matthew.26.69",
+          "sourceOrdinal": 19,
+          "sourceFragmentId": "catena.matthew.26.69:18",
+          "attributionAsInCatena": "Augustine",
+          "catenaCitation": "Catena Aurea, Matthew 26:69-75",
+          "sourceLabelAsPrinted": "Quæst. Ev. i. 45.",
+          "sourceTextAnchor": "(Quæst. Ev. i. 45.) Also Peter thrice denied, because heretical error concerning Christ is limited t",
+          "linkClass": "cited_ancient_work_and_topic_checked__critical_source_unverified",
+          "sourceVerseOverlap": true
+        }
+      ],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-i-46",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 46,
+      "sourceLocator": "I.46",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum#QE_001_046_046",
+      "latinAnchor": "Quod ad passionem euntem Dominum",
+      "scriptureKeys": [
+        "matthew/26/58"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "Why does Peter follow Christ from afar?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [
+        {
+          "pericopeId": "catena.matthew.26.55",
+          "sourceOrdinal": 16,
+          "sourceFragmentId": "catena.matthew.26.55:15",
+          "attributionAsInCatena": "Augustine",
+          "catenaCitation": "Catena Aurea, Matthew 26:55-58",
+          "sourceLabelAsPrinted": "Quæst. Ev. i. 46.",
+          "sourceTextAnchor": "(Quæst. Ev. i. 46.) And also that the Church should follow, i. e. imitate, the Lord’s Passion, but w",
+          "linkClass": "cited_ancient_work_and_topic_checked__critical_source_unverified",
+          "sourceVerseOverlap": true
+        }
+      ],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-i-47",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 47,
+      "sourceLocator": "I.47",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum#QE_001_047_047",
+      "latinAnchor": "Sicut tentatio cupiditatis trina",
+      "scriptureKeys": [
+        "matthew/26/44"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "Why does Augustine associate Christ's three prayers with three kinds of temptation?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [
+        {
+          "pericopeId": "catena.matthew.26.39",
+          "sourceOrdinal": 26,
+          "sourceFragmentId": "catena.matthew.26.39:25",
+          "attributionAsInCatena": "Augustine",
+          "catenaCitation": "Catena Aurea, Matthew 26:39-44",
+          "sourceLabelAsPrinted": "Quæst. Ev. i. 47.",
+          "sourceTextAnchor": "(Quæst. Ev. i. 47.) Nor is that an absurd interpretation which makes Our Lord pray thrice because of",
+          "linkClass": "cited_ancient_work_and_topic_checked__critical_source_unverified",
+          "sourceVerseOverlap": true
+        }
+      ],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-ii-24",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 24,
+      "sourceLocator": "II.24",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "latinAnchor": "Quod Dominus dicit discipulis: Anima",
+      "scriptureKeys": [
+        "luke/12/23"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "What does the comparison of life and food teach?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-ii-25",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 25,
+      "sourceLocator": "II.25",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "latinAnchor": "Quod Dominus dicit: Sint lumbi",
+      "scriptureKeys": [
+        "luke/12/35"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "What do girded loins and burning lamps signify?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [
+        {
+          "pericopeId": "catena.luke.12.35",
+          "sourceOrdinal": 5,
+          "sourceFragmentId": "catena.luke.12.35:4",
+          "attributionAsInCatena": "Augustine",
+          "catenaCitation": "Catena Aurea, Luke 12:35-40",
+          "sourceLabelAsPrinted": "de Qu. Ev. lib. ii. q. 25.",
+          "sourceTextAnchor": "(de Qu. Ev. lib. ii. q. 25.) Or, He teaches us also to gird our loins for the sake of keeping oursel",
+          "linkClass": "cited_ancient_work_and_topic_checked__critical_source_unverified",
+          "sourceVerseOverlap": true
+        }
+      ],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-ii-26",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 26,
+      "sourceLocator": "II.26",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "latinAnchor": "Quod Dominus dixit Petro: Quis putas",
+      "scriptureKeys": [
+        "luke/12/42"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "What does the faithful steward's measured provision mean?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [
+        {
+          "pericopeId": "catena.luke.12.41",
+          "sourceOrdinal": 8,
+          "sourceFragmentId": "catena.luke.12.41:7",
+          "attributionAsInCatena": "Augustine",
+          "catenaCitation": "Catena Aurea, Luke 12:41-46",
+          "sourceLabelAsPrinted": "de Qu. Ev. l. ii. c. 26.",
+          "sourceTextAnchor": "(de Qu. Ev. l. ii. c. 26.) Now he says portion, because of suiting His measure to the capacity of hi",
+          "linkClass": "cited_ancient_work_and_topic_checked__critical_source_unverified",
+          "sourceVerseOverlap": true
+        }
+      ],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-ii-27",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 27,
+      "sourceLocator": "II.27",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "latinAnchor": "Quod Dominus dixit: Cum videritis nubem",
+      "scriptureKeys": [
+        "luke/12/54"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "What does the cloud from the west signify?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-ii-28",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 28,
+      "sourceLocator": "II.28",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "latinAnchor": "Quod Dominus dixit: Si enim quod minimum",
+      "scriptureKeys": [
+        "luke/12/26"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "Why is increasing bodily stature called the least thing?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [
+        {
+          "pericopeId": "catena.luke.12.24",
+          "sourceOrdinal": 10,
+          "sourceFragmentId": "catena.luke.12.24:9",
+          "attributionAsInCatena": "Augustine",
+          "catenaCitation": "Catena Aurea, Luke 12:24-26",
+          "sourceLabelAsPrinted": "de Qu. Ev. l. ii. qu. 28.",
+          "sourceTextAnchor": "(de Qu. Ev. l. ii. qu. 28.) But in speaking concerning increasing the stature of the body, He refers",
+          "linkClass": "cited_ancient_work_and_topic_checked__critical_source_unverified",
+          "sourceVerseOverlap": true
+        }
+      ],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-ii-29",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 29,
+      "sourceLocator": "II.29",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "latinAnchor": "Cum diceret discipulis non debere",
+      "scriptureKeys": [
+        "luke/12/29",
+        "luke/14/2"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "Why is anxiety over necessities linked to pride?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [
+        {
+          "pericopeId": "catena.luke.14.1",
+          "sourceOrdinal": 9,
+          "sourceFragmentId": "catena.luke.14.1:8",
+          "attributionAsInCatena": "Augustine",
+          "catenaCitation": "Catena Aurea, Luke 14:1-6",
+          "sourceLabelAsPrinted": "de Quæst. Evan. lib. 2. cap. 29.",
+          "sourceTextAnchor": "(de Quæst. Evan. lib. 2. cap. 29.) Now He has aptly compared the dropsical man to an animal which ha",
+          "linkClass": "cited_ancient_work_and_topic_checked__critical_source_unverified",
+          "sourceVerseOverlap": true
+        }
+      ],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-ii-30",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 30,
+      "sourceLocator": "II.30",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "latinAnchor": "Quod de civitate adducit invitatos",
+      "scriptureKeys": [
+        "luke/14/21"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "What do the guests brought from streets and hedges signify?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-ii-31",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 31,
+      "sourceLocator": "II.31",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "latinAnchor": "Sumptus ad turrem aedificandam",
+      "scriptureKeys": [
+        "luke/14/28"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "What do the tower and the king preparing for war signify?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-ii-32",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 32,
+      "sourceLocator": "II.32",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "latinAnchor": "Salem infatuatum apostatam",
+      "scriptureKeys": [
+        "luke/15/4",
+        "luke/15/8"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "What do the lost sheep and the ninety-nine signify?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [
+        {
+          "pericopeId": "catena.luke.15.1",
+          "sourceOrdinal": 9,
+          "sourceFragmentId": "catena.luke.15.1:8",
+          "attributionAsInCatena": "Augustine",
+          "catenaCitation": "Catena Aurea, Luke 15:1-7",
+          "sourceLabelAsPrinted": "de Quæst. Ev. lib. 2. qu. 32.",
+          "sourceTextAnchor": "(de Quæst. Ev. lib. 2. qu. 32.) Or He spoke of those ninety and nine whom He left in the wilderness,",
+          "linkClass": "cited_ancient_work_and_topic_checked__critical_source_unverified",
+          "sourceVerseOverlap": true
+        },
+        {
+          "pericopeId": "catena.luke.15.8",
+          "sourceOrdinal": 3,
+          "sourceFragmentId": "catena.luke.15.8:2",
+          "attributionAsInCatena": "Augustine",
+          "catenaCitation": "Catena Aurea, Luke 15:8-10",
+          "sourceLabelAsPrinted": "de Quæst. Ev. lib. 2. qu. 33.",
+          "sourceTextAnchor": "(de Quæst. Ev. lib. 2. qu. 33.) Or by the nine pieces of silver, as by the ninety and nine sheep, He",
+          "linkClass": "related_topic_source_number_conflict__review_required",
+          "sourceVerseOverlap": true
+        }
+      ],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-ii-33",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 33,
+      "sourceLocator": "II.33",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "latinAnchor": "Homo habens duos filios",
+      "scriptureKeys": [
+        "luke/15/11",
+        "luke/15/17"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "original_authorial_question_within_section",
+      "originalQuestionAnchor": "Quis est ergo haedus quem numquam accepit ad epulandum?",
+      "readerQuestion": "How does Augustine interpret the prodigal son and his elder brother?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [
+        {
+          "pericopeId": "catena.luke.15.11",
+          "sourceOrdinal": 4,
+          "sourceFragmentId": "catena.luke.15.11:3",
+          "attributionAsInCatena": "Augustine",
+          "catenaCitation": "Catena Aurea, Luke 15:11-16",
+          "sourceLabelAsPrinted": "de Quæst. Ev. l. ii. qu. 33.",
+          "sourceTextAnchor": "(de Quæst. Ev. l. ii. qu. 33.) This man then having two sons is understood to be God having two nati",
+          "linkClass": "cited_ancient_work_and_topic_checked__critical_source_unverified",
+          "sourceVerseOverlap": true
+        },
+        {
+          "pericopeId": "catena.luke.15.11",
+          "sourceOrdinal": 9,
+          "sourceFragmentId": "catena.luke.15.11:8",
+          "attributionAsInCatena": "Augustine",
+          "catenaCitation": "Catena Aurea, Luke 15:11-16",
+          "sourceLabelAsPrinted": "de Quæst. Ev. lib. ii. qu. 33.",
+          "sourceTextAnchor": "(de Quæst. Ev. lib. ii. qu. 33.) But that which is said to have taken place not many days after, nam",
+          "linkClass": "cited_ancient_work_and_topic_checked__critical_source_unverified",
+          "sourceVerseOverlap": true
+        },
+        {
+          "pericopeId": "catena.luke.15.17",
+          "sourceOrdinal": 3,
+          "sourceFragmentId": "catena.luke.15.17:2",
+          "attributionAsInCatena": "Augustine",
+          "catenaCitation": "Catena Aurea, Luke 15:17-24",
+          "sourceLabelAsPrinted": "de Quæst. Ev. lib. ii. qu. 33.",
+          "sourceTextAnchor": "(de Quæst. Ev. lib. ii. qu. 33.) But he returned to himself, when from those things which without un",
+          "linkClass": "cited_ancient_work_and_topic_checked__critical_source_unverified",
+          "sourceVerseOverlap": true
+        },
+        {
+          "pericopeId": "catena.luke.15.17",
+          "sourceOrdinal": 12,
+          "sourceFragmentId": "catena.luke.15.17:11",
+          "attributionAsInCatena": "Augustine",
+          "catenaCitation": "Catena Aurea, Luke 15:17-24",
+          "sourceLabelAsPrinted": "de Quæst. Evan. l. ii. qu. 33.",
+          "sourceTextAnchor": "(de Quæst. Evan. l. ii. qu. 33.) But whether was this sin against heaven, the same as that which is ",
+          "linkClass": "cited_ancient_work_and_topic_checked__critical_source_unverified",
+          "sourceVerseOverlap": true
+        },
+        {
+          "pericopeId": "catena.luke.15.17",
+          "sourceOrdinal": 26,
+          "sourceFragmentId": "catena.luke.15.17:25",
+          "attributionAsInCatena": "Augustine",
+          "catenaCitation": "Catena Aurea, Luke 15:17-24",
+          "sourceLabelAsPrinted": "de Quæst. Ev. l. ii. q. 33.",
+          "sourceTextAnchor": "(de Quæst. Ev. l. ii. q. 33.) Or the best robe is the dignity which Adam lost; the servants who brin",
+          "linkClass": "cited_ancient_work_and_topic_checked__critical_source_unverified",
+          "sourceVerseOverlap": true
+        }
+      ],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-ii-34",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 34,
+      "sourceLocator": "II.34",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "latinAnchor": "In villico quem Dominus eiciebat",
+      "scriptureKeys": [
+        "luke/16/1",
+        "luke/16/8"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "What may and may not be imitated in the dishonest steward?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [
+        {
+          "pericopeId": "catena.luke.16.1",
+          "sourceOrdinal": 8,
+          "sourceFragmentId": "catena.luke.16.1:7",
+          "attributionAsInCatena": "Augustine",
+          "catenaCitation": "Catena Aurea, Luke 16:1-7",
+          "sourceLabelAsPrinted": "de Qu. Ev. l. ii. qu. 34.",
+          "sourceTextAnchor": "(de Qu. Ev. l. ii. qu. 34.) Or because out of the hundred measures of oil, he caused fifty to be wri",
+          "linkClass": "cited_ancient_work_and_topic_checked__critical_source_unverified",
+          "sourceVerseOverlap": true
+        },
+        {
+          "pericopeId": "catena.luke.16.8",
+          "sourceOrdinal": 9,
+          "sourceFragmentId": "catena.luke.16.8:8",
+          "attributionAsInCatena": "Augustine",
+          "catenaCitation": "Catena Aurea, Luke 16:8-13",
+          "sourceLabelAsPrinted": "de Quæst. Ev. l. ii. q. 34.",
+          "sourceTextAnchor": "(de Quæst. Ev. l. ii. q. 34.) Or the riches of unrighteousness are so called, because they are not r",
+          "linkClass": "cited_ancient_work_and_topic_checked__critical_source_unverified",
+          "sourceVerseOverlap": true
+        },
+        {
+          "pericopeId": "catena.luke.16.8",
+          "sourceOrdinal": 15,
+          "sourceFragmentId": "catena.luke.16.8:14",
+          "attributionAsInCatena": "Augustine",
+          "catenaCitation": "Catena Aurea, Luke 16:8-13",
+          "sourceLabelAsPrinted": "de Quæst. Ev. l. ii. q. 34.",
+          "sourceTextAnchor": "(de Quæst. Ev. l. ii. q. 34.) We must not then understand those by whom we wish to be received into ",
+          "linkClass": "cited_ancient_work_and_topic_checked__critical_source_unverified",
+          "sourceVerseOverlap": true
+        }
+      ],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-ii-35",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 35,
+      "sourceLocator": "II.35",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "latinAnchor": "Quod dicit: Si in alieno fideles",
+      "scriptureKeys": [
+        "luke/16/12"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "Why are earthly possessions described as another's property?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-ii-36",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 36,
+      "sourceLocator": "II.36",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "latinAnchor": "Quod ait: Aut unum odiet",
+      "scriptureKeys": [
+        "luke/16/13"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "How does Augustine interpret the two masters?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [
+        {
+          "pericopeId": "catena.luke.16.8",
+          "sourceOrdinal": 22,
+          "sourceFragmentId": "catena.luke.16.8:21",
+          "attributionAsInCatena": "Augustine",
+          "catenaCitation": "Catena Aurea, Luke 16:8-13",
+          "sourceLabelAsPrinted": "de Qu. Ev. lib. ii. q. 36.",
+          "sourceTextAnchor": "(de Qu. Ev. lib. ii. q. 36.) But these things were not spoken indifferently or at random. For no one",
+          "linkClass": "cited_ancient_work_and_topic_checked__critical_source_unverified",
+          "sourceVerseOverlap": true
+        }
+      ],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-ii-37",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 37,
+      "sourceLocator": "II.37",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "latinAnchor": "Regnum caelorum vim patitur",
+      "scriptureKeys": [
+        "luke/16/16"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "What is the force by which the kingdom is taken?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [
+        {
+          "pericopeId": "catena.luke.16.14",
+          "sourceOrdinal": 11,
+          "sourceFragmentId": "catena.luke.16.14:10",
+          "attributionAsInCatena": "Augustine",
+          "catenaCitation": "Catena Aurea, Luke 16:14-18",
+          "sourceLabelAsPrinted": "de Quæst. Ev. l. ii. q. 87.",
+          "sourceTextAnchor": "(de Quæst. Ev. l. ii. q. 87.) They also do violence to the kingdom of heaven, in that they not only ",
+          "linkClass": "related_topic_source_number_conflict__review_required",
+          "sourceVerseOverlap": true
+        }
+      ],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-ii-38",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 38,
+      "sourceLocator": "II.38",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "latinAnchor": "Homo quidam erat dives",
+      "scriptureKeys": [
+        "luke/16/19",
+        "luke/16/22",
+        "luke/16/27"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "original_authorial_question_within_section",
+      "originalQuestionAnchor": "Quamquam illa receptio utrum statim post istam vitam fiat",
+      "readerQuestion": "What interpretations does Augustine give of the rich man and Lazarus?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [
+        {
+          "pericopeId": "catena.luke.16.22",
+          "sourceOrdinal": 25,
+          "sourceFragmentId": "catena.luke.16.22:24",
+          "attributionAsInCatena": "Augustine",
+          "catenaCitation": "Catena Aurea, Luke 16:22-26",
+          "sourceLabelAsPrinted": "Quæst. Ev. Lib. ii. qu. 38.",
+          "sourceTextAnchor": "(Quæst. Ev. Lib. ii. qu. 38.) All this then is said to Him because he chose the happiness of the wor",
+          "linkClass": "cited_ancient_work_and_topic_checked__critical_source_unverified",
+          "sourceVerseOverlap": true
+        },
+        {
+          "pericopeId": "catena.luke.16.27",
+          "sourceOrdinal": 14,
+          "sourceFragmentId": "catena.luke.16.27:13",
+          "attributionAsInCatena": "Augustine",
+          "catenaCitation": "Catena Aurea, Luke 16:27-31",
+          "sourceLabelAsPrinted": "Quæst. Ev. ii. qu. 38.",
+          "sourceTextAnchor": "(Quæst. Ev. ii. qu. 38.) But these things may be so taken in allegory, that by the rich man we under",
+          "linkClass": "cited_ancient_work_and_topic_checked__critical_source_unverified",
+          "sourceVerseOverlap": true
+        },
+        {
+          "pericopeId": "catena.luke.16.27",
+          "sourceOrdinal": 18,
+          "sourceFragmentId": "catena.luke.16.27:17",
+          "attributionAsInCatena": "Augustine",
+          "catenaCitation": "Catena Aurea, Luke 16:27-31",
+          "sourceLabelAsPrinted": "Quæst. Ev. lib. ii. qu. 39.",
+          "sourceTextAnchor": "(Quæst. Ev. lib. ii. qu. 39.) By the five brothers whom he says he has in his father’s house, he mea",
+          "linkClass": "related_topic_source_number_conflict__review_required",
+          "sourceVerseOverlap": true
+        }
+      ],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-ii-39",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 39,
+      "sourceLocator": "II.39",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "latinAnchor": "Quod dixerunt discipuli: Domine, auge",
+      "scriptureKeys": [
+        "luke/17/5",
+        "luke/17/7"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "original_authorial_question_within_section",
+      "originalQuestionAnchor": "Quid haec pertineant ad id quod dictum est",
+      "readerQuestion": "How does service relate to Christ's reply about increasing faith?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [
+        {
+          "pericopeId": "catena.luke.17.5",
+          "sourceOrdinal": 3,
+          "sourceFragmentId": "catena.luke.17.5:2",
+          "attributionAsInCatena": "Augustine",
+          "catenaCitation": "Catena Aurea, Luke 17:5-6",
+          "sourceLabelAsPrinted": "de Quæst. Ev. lib. 2. qu. 39.",
+          "sourceTextAnchor": "(de Quæst. Ev. lib. 2. qu. 39.) We may indeed understand that they asked for the increase of that fa",
+          "linkClass": "cited_ancient_work_and_topic_checked__critical_source_unverified",
+          "sourceVerseOverlap": true
+        },
+        {
+          "pericopeId": "catena.luke.17.7",
+          "sourceOrdinal": 2,
+          "sourceFragmentId": "catena.luke.17.7:1",
+          "attributionAsInCatena": "Augustine",
+          "catenaCitation": "Catena Aurea, Luke 17:7-10",
+          "sourceLabelAsPrinted": "de Quæst. Ev. l. 2. qu. 39.",
+          "sourceTextAnchor": "(de Quæst. Ev. l. 2. qu. 39.) Or else; To the many who understand not this faith in the truth alread",
+          "linkClass": "cited_ancient_work_and_topic_checked__critical_source_unverified",
+          "sourceVerseOverlap": true
+        }
+      ],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-ii-40",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 40,
+      "sourceLocator": "II.40",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "latinAnchor": "In decem leprosis quos Dominus",
+      "scriptureKeys": [
+        "luke/17/12"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "original_authorial_question_within_section",
+      "originalQuestionAnchor": "cur ad sacerdotes eos miserit",
+      "readerQuestion": "Why were the ten lepers sent to the priests before being cleansed?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [
+        {
+          "pericopeId": "catena.luke.17.11",
+          "sourceOrdinal": 15,
+          "sourceFragmentId": "catena.luke.17.11:14",
+          "attributionAsInCatena": "Augustine",
+          "catenaCitation": "Catena Aurea, Luke 17:11-19",
+          "sourceLabelAsPrinted": "de Quæst. Ev. l. ii. qu. 40.",
+          "sourceTextAnchor": "(de Quæst. Ev. l. ii. qu. 40.) The lepers may be taken mystically for those who, having no knowledge",
+          "linkClass": "cited_ancient_work_and_topic_checked__critical_source_unverified",
+          "sourceVerseOverlap": true
+        }
+      ],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-ii-41",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 41,
+      "sourceLocator": "II.41",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "latinAnchor": "Quid est quod dicit Dominus: Qui fuerit",
+      "scriptureKeys": [
+        "luke/17/31"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "original_authorial_question_within_section",
+      "originalQuestionAnchor": "Quid est quod dicit Dominus: Qui fuerit in tecto",
+      "readerQuestion": "Why must a person on the housetop not descend for possessions?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-ii-42",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 42,
+      "sourceLocator": "II.42",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "latinAnchor": "Quid est quod dictum est: Similiter",
+      "scriptureKeys": [
+        "luke/17/31"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "original_authorial_question_within_section",
+      "originalQuestionAnchor": "Quid est quod dictum est: Similiter et qui in agro fuerit",
+      "readerQuestion": "Why must the person in the field not return?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-ii-43",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 43,
+      "sourceLocator": "II.43",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "latinAnchor": "Quid significavit uxor Loth",
+      "scriptureKeys": [
+        "luke/17/32"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "original_authorial_question_within_section",
+      "originalQuestionAnchor": "Quid significavit uxor Loth?",
+      "readerQuestion": "What did Lot's wife signify?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-ii-44",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 44,
+      "sourceLocator": "II.44",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "latinAnchor": "Qui sunt in illa nocte duo in lecto",
+      "scriptureKeys": [
+        "luke/17/34"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "original_authorial_question_within_section",
+      "originalQuestionAnchor": "Qui sunt in illa nocte duo in lecto",
+      "readerQuestion": "Who are those taken and those left?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [
+        {
+          "pericopeId": "catena.luke.17.34",
+          "sourceOrdinal": 3,
+          "sourceFragmentId": "catena.luke.17.34:2",
+          "attributionAsInCatena": "Augustine",
+          "catenaCitation": "Catena Aurea, Luke 17:34-37",
+          "sourceLabelAsPrinted": "de Qu. Ev. lib. ii. qu. 41.",
+          "sourceTextAnchor": "(de Qu. Ev. lib. ii. qu. 41.) Or He says, in that night, meaning in that tribulation.",
+          "linkClass": "related_topic_source_number_conflict__review_required",
+          "sourceVerseOverlap": true
+        }
+      ],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-ii-45",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 45,
+      "sourceLocator": "II.45",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "latinAnchor": "Quid est quod ad semper orandum",
+      "scriptureKeys": [
+        "luke/18/1"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "original_authorial_question_within_section",
+      "originalQuestionAnchor": "Quid est quod ad semper orandum",
+      "readerQuestion": "Why did Christ choose the unjust judge to teach perseverance in prayer?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-ii-46",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 46,
+      "sourceLocator": "II.46",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "latinAnchor": "Homo quidam nobilis abiit",
+      "scriptureKeys": [
+        "luke/19/12"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "What do the nobleman and his entrusted pounds signify?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [
+        {
+          "pericopeId": "catena.luke.19.11",
+          "sourceOrdinal": 5,
+          "sourceFragmentId": "catena.luke.19.11:4",
+          "attributionAsInCatena": "Augustine",
+          "catenaCitation": "Catena Aurea, Luke 19:11-27",
+          "sourceLabelAsPrinted": "de Qu. Ev. lib. ii. qu. 40.",
+          "sourceTextAnchor": "(de Qu. Ev. lib. ii. qu. 40.) Or the far country is the Gentile Church, extending to the uttermost p",
+          "linkClass": "related_topic_source_number_conflict__review_required",
+          "sourceVerseOverlap": true
+        },
+        {
+          "pericopeId": "catena.luke.19.11",
+          "sourceOrdinal": 25,
+          "sourceFragmentId": "catena.luke.19.11:24",
+          "attributionAsInCatena": "Augustine",
+          "catenaCitation": "Catena Aurea, Luke 19:11-27",
+          "sourceLabelAsPrinted": "de Quæst. Evan. lib. ii. qu. 46.",
+          "sourceTextAnchor": "(de Quæst. Evan. lib. ii. qu. 46.) Or else; That one of those who well employed their money gained t",
+          "linkClass": "cited_ancient_work_and_topic_checked__critical_source_unverified",
+          "sourceVerseOverlap": true
+        },
+        {
+          "pericopeId": "catena.luke.19.11",
+          "sourceOrdinal": 32,
+          "sourceFragmentId": "catena.luke.19.11:31",
+          "attributionAsInCatena": "Augustine",
+          "catenaCitation": "Catena Aurea, Luke 19:11-27",
+          "sourceLabelAsPrinted": "de Quæst. Ev. l. ii. qu. 46.",
+          "sourceTextAnchor": "(de Quæst. Ev. l. ii. qu. 46.) Signifying thereby that both he will lose the gift of God, who having",
+          "linkClass": "cited_ancient_work_and_topic_checked__critical_source_unverified",
+          "sourceVerseOverlap": true
+        }
+      ],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-ii-47",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 47,
+      "sourceLocator": "II.47",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "latinAnchor": "Quid est quod ait: Facilius est camelum",
+      "scriptureKeys": [
+        "luke/18/25"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "original_authorial_question_within_section",
+      "originalQuestionAnchor": "Quid est quod ait: Facilius est camelum",
+      "readerQuestion": "Why does Christ compare the rich man's entry to a camel passing through a needle?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [
+        {
+          "pericopeId": "catena.luke.18.24",
+          "sourceOrdinal": 5,
+          "sourceFragmentId": "catena.luke.18.24:4",
+          "attributionAsInCatena": "Augustine",
+          "catenaCitation": "Catena Aurea, Luke 18:24-30",
+          "sourceLabelAsPrinted": "de Quæst Evang. lib. ii. c. 42.",
+          "sourceTextAnchor": "(de Quæst Evang. lib. ii. c. 42.) The name of “rich” he here gives to one who covets temporal things",
+          "linkClass": "related_topic_source_number_conflict__review_required",
+          "sourceVerseOverlap": true
+        }
+      ],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-ii-48",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 48,
+      "sourceLocator": "II.48",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "latinAnchor": "Possemus de propinquantibus ad Iericho",
+      "scriptureKeys": [
+        "luke/18/35",
+        "luke/19/45"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "How does Augustine reconcile the blind men near Jericho in different Gospels?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [
+        {
+          "pericopeId": "catena.luke.18.35",
+          "sourceOrdinal": 14,
+          "sourceFragmentId": "catena.luke.18.35:13",
+          "attributionAsInCatena": "Augustine",
+          "catenaCitation": "Catena Aurea, Luke 18:35-43",
+          "sourceLabelAsPrinted": "de Quæst. Ev. l. ii. qu. 48.",
+          "sourceTextAnchor": "(de Quæst. Ev. l. ii. qu. 48.) If we interpret Jericho to mean the moon, and therefore death, our Lo",
+          "linkClass": "cited_ancient_work_and_topic_checked__critical_source_unverified",
+          "sourceVerseOverlap": true
+        },
+        {
+          "pericopeId": "catena.luke.19.45",
+          "sourceOrdinal": 6,
+          "sourceFragmentId": "catena.luke.19.45:5",
+          "attributionAsInCatena": "Augustine",
+          "catenaCitation": "Catena Aurea, Luke 19:45-48",
+          "sourceLabelAsPrinted": "de Qu. Ev. lib. ii. qu. 48.",
+          "sourceTextAnchor": "(de Qu. Ev. lib. ii. qu. 48.) Now mystically, you must understand by the temple Christ Himself, as m",
+          "linkClass": "cited_ancient_work_and_topic_checked__critical_source_unverified",
+          "sourceVerseOverlap": true
+        }
+      ],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-ii-49",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 49,
+      "sourceLocator": "II.49",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "latinAnchor": "Ad id quod dixit: Non enim ultra",
+      "scriptureKeys": [
+        "luke/20/36"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "Why does marriage cease in the resurrection?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [
+        {
+          "pericopeId": "catena.luke.20.27",
+          "sourceOrdinal": 9,
+          "sourceFragmentId": "catena.luke.20.27:8",
+          "attributionAsInCatena": "Augustine",
+          "catenaCitation": "Catena Aurea, Luke 20:27-40",
+          "sourceLabelAsPrinted": "de Quæst. Ev. l. ii. cap. 49.",
+          "sourceTextAnchor": "(de Quæst. Ev. l. ii. cap. 49.) For marriages are for the sake of children, children for succession,",
+          "linkClass": "cited_ancient_work_and_topic_checked__critical_source_unverified",
+          "sourceVerseOverlap": true
+        }
+      ],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-ii-50",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 50,
+      "sourceLocator": "II.50",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "latinAnchor": "Quod dixit Dominus discipulis: Orate ne intretis",
+      "scriptureKeys": [
+        "luke/22/40"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "What does the stone's throw in Gethsemane signify?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [
+        {
+          "pericopeId": "catena.luke.22.39",
+          "sourceOrdinal": 8,
+          "sourceFragmentId": "catena.luke.22.39:7",
+          "attributionAsInCatena": "Augustine",
+          "catenaCitation": "Catena Aurea, Luke 22:39-42",
+          "sourceLabelAsPrinted": "de Qu. Evang. lib. ii. qu. 50.",
+          "sourceTextAnchor": "(de Qu. Evang. lib. ii. qu. 50.) He was torn from them about a stone’s cast, as though He would typi",
+          "linkClass": "cited_ancient_work_and_topic_checked__critical_source_unverified",
+          "sourceVerseOverlap": true
+        }
+      ],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-ii-51",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 51,
+      "sourceLocator": "II.51",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "latinAnchor": "Quod scriptum est de Domino: Finxit se",
+      "scriptureKeys": [
+        "luke/24/28"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "original_authorial_question_within_section",
+      "originalQuestionAnchor": "Quid ergo significat quod se ire longius Dominus finxit",
+      "readerQuestion": "Why did Christ appear to intend to travel farther on the road to Emmaus?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [
+        {
+          "pericopeId": "catena.luke.24.25",
+          "sourceOrdinal": 6,
+          "sourceFragmentId": "catena.luke.24.25:5",
+          "attributionAsInCatena": "Augustine",
+          "catenaCitation": "Catena Aurea, Luke 24:25-35",
+          "sourceLabelAsPrinted": "de Qu. Ev. lib. ii. c. 51.",
+          "sourceTextAnchor": "(de Qu. Ev. lib. ii. c. 51.) Now this relates not to falsehood. For not every thing we feign is a fa",
+          "linkClass": "cited_ancient_work_and_topic_checked__critical_source_unverified",
+          "sourceVerseOverlap": true
+        }
+      ],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    }
+  ],
+  "catenaLinkPolicy": "Only canonical Augustine segments referring to Quaestiones Evangeliorum, with topic and Scripture verification. Other writings (Quaestiones in Matthaeum, Eighty-three Questions) must never be automatically conflated. Conflicting historical citation numbers are visibly quarantined.",
+  "catenaLinkCounts": {
+    "qualifiedSameWork": 55,
+    "quarantinedCitationConflicts": 7,
+    "total": 62,
+    "sectionRecords": 62
+  },
+  "originalQuestionEvidenceExtract": "data/scripture/catena/research/augustine-original-question-spans.v1.json"
+}

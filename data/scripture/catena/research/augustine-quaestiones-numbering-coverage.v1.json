@@ -1,0 +1,60 @@
+{
+  "schema": "ao.catena.augustine-quaestiones-numbering-coverage.v1",
+  "created": "2026-10-21",
+  "status": "numbered_source_section_locator_complete__human_source_and_theological_review_pending",
+  "work": "Augustine, Quaestiones Evangeliorum",
+  "sourceUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+  "expectedBooks": [
+    {
+      "book": "I",
+      "range": "1–47",
+      "sectionCount": 47,
+      "about": "Matthew"
+    },
+    {
+      "book": "II",
+      "range": "1–51",
+      "sectionCount": 51,
+      "about": "Luke"
+    }
+  ],
+  "distinctNumberedSectionCoverage": 98,
+  "sourceFiles": [
+    {
+      "path": "data/scripture/catena/research/augustine-quaestiones-sequential-index.v1.json",
+      "scope": "I.1–13, II.7–23",
+      "distinctSections": 30
+    },
+    {
+      "path": "data/scripture/catena/research/augustine-quaestiones-continuation.v1.json",
+      "scope": "I.14–47, II.24–51",
+      "distinctSections": 62
+    },
+    {
+      "path": "data/scripture/catena/research/augustine-quaestiones-missing-sections.v1.json",
+      "scope": "II.2, II.4",
+      "distinctSections": 2
+    },
+    {
+      "path": "data/scripture/catena/research/quaestiones-primary-source-crosswalk.v1.json",
+      "scope": "Additional II.1, II.3, II.5, II.6; I.7 preexisting duplicate",
+      "distinctNewAugustineSections": 4
+    }
+  ],
+  "authorialQuestionEvidence": "data/scripture/catena/research/augustine-original-question-spans.v1.json",
+  "countsMeaning": "Numbered section navigation locators, NOT 98 original authorial questions, NOT 98 human-vetted translations, NOT 98 ready-to-publish answers.",
+  "criticalReleaseExclusions": [
+    "All new Father dialogue publication blocked",
+    "An original numbered topic is not necessarily a question actually spoken by Augustine",
+    "Original Latin source and historical English Catena can disagree on labels, edition and question numbers",
+    "Unlinked biblical locations must not receive invented Catena excerpts",
+    "No second-hand modern English translation may be treated as a verified original without review"
+  ],
+  "tests": [
+    "tests/scripture-catena-original-questions.mjs",
+    "tests/scripture-catena-augustine-sequential.mjs",
+    "tests/scripture-catena-augustine-continuation.mjs",
+    "tests/scripture-catena-augustine-original-spans.mjs",
+    "tests/scripture-catena-augustine-coverage.mjs"
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "schema": "ao.catena.eusebius-marinus-supplement-problem-index.v1",
+  "created": "2026-10-21",
+  "status": "research_only_no_father_dialogue_publication",
+  "sourceWork": "Supplementa ad quaestiones ad Marinum",
+  "attributedAuthor": "Eusebius of Caesarea",
+  "originalLanguage": "Greek",
+  "textualWitnessStatus": "transmitted_supplement__authenticity_and_edition_unreviewed",
+  "translationPolicy": "Use source-language short verification anchors. Online modern English is for comprehension only; do not republish, generate Eusebius speech, or bypass rights/edition review.",
+  "relationToCanonicalCatena": "independent_external_witness_not_a_copied_catena_excerpt",
+  "entries": [
+    {
+      "id": "eusebius-marinus-supp-04",
+      "workLocator": "Supplement IV",
+      "issueKind": "author_or_abridger_formulates_apparent_discrepancy",
+      "questionerAttribution": "transmitted_authorial_treatment_not_verified_correspondent_quote",
+      "sourceGreekAnchor": "Τὸ δὲ πῶς δύο παρὰ τὸν Ἰωάννην μαθητῶν",
+      "editorialQuestion": "Why does John describe two disciples visiting the tomb, while Luke mentions Peter alone?",
+      "scriptureKeys": [
+        "john/20/3",
+        "luke/24/12"
+      ],
+      "primarySourceUrl": "https://catholiclibrary.org/library/view?chunk.id=00000007&docId=%2FFathers-Synchronized-EN%2FEusebius_Caesariensis__Supplementa_ad_quaestiones_ad_Marinum.en.html",
+      "sourceContextNote": "The treatment distinguishes Peter's visits to the tomb rather than asserting that both accounts necessarily describe the identical visit. Keep all described visits and alternatives in context."
+    },
+    {
+      "id": "eusebius-marinus-supp-05",
+      "workLocator": "Supplement V",
+      "issueKind": "author_or_abridger_raises_hypothetical_question",
+      "questionerAttribution": "hypothetical_in_text_not_marinus_quote",
+      "sourceGreekAnchor": "Ἔτι ζητήσειεν ἄν τις πῶς",
+      "editorialQuestion": "Why do the Evangelists describe different numbers and locations of angels at the empty tomb?",
+      "scriptureKeys": [
+        "matthew/28/2",
+        "mark/16/5",
+        "luke/24/4",
+        "john/20/12"
+      ],
+      "primarySourceUrl": "https://catholiclibrary.org/library/view?chunk.id=00000007&docId=%2FFathers-Synchronized-EN%2FEusebius_Caesariensis__Supplementa_ad_quaestiones_ad_Marinum.en.html",
+      "sourceContextNote": "The Greek witness offers alternatives involving different appearances and arrangements. Do not present one hypothesis as a uniquely established fact. The online text has a conspicuous pagination/OCR intrusion beside Matthew that must not be treated as a Scripture verse."
+    },
+    {
+      "id": "eusebius-marinus-supp-11",
+      "workLocator": "Supplement XI",
+      "issueKind": "author_or_abridger_raises_hypothetical_question",
+      "questionerAttribution": "hypothetical_in_text_not_marinus_quote",
+      "sourceGreekAnchor": "Φαίη δ' ἄν τις, πῶς ὁ μὲν Ματθαῖος",
+      "editorialQuestion": "How can John's third resurrection appearance by the Sea of Galilee be reconciled with Matthew's mountain appearance?",
+      "scriptureKeys": [
+        "matthew/28/16",
+        "john/21/1",
+        "john/21/14"
+      ],
+      "primarySourceUrl": "https://catholiclibrary.org/library/view?chunk.id=00000019&docId=%2FFathers-Synchronized-EN%2FEusebius_Caesariensis__Supplementa_ad_quaestiones_ad_Marinum.en.html",
+      "sourceContextNote": "The account distinguishes the appearance to seven by the sea from another appearance to the eleven on the mountain; do not force the two Gospel scenes into one."
+    }
+  ]
+}

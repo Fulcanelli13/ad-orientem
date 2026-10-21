@@ -1,0 +1,990 @@
+{
+  "schema": "ao.catena.augustine-quaestiones-sequential-index.v1",
+  "created": "2026-10-21",
+  "status": "research_only_never_render_as_published_dialogue",
+  "sourceWork": "Augustine, Quaestiones Evangeliorum",
+  "primaryLatinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+  "sourceWorkCoverage": [
+    {
+      "book": "I",
+      "sections": [
+        1,
+        13
+      ],
+      "count": 13
+    },
+    {
+      "book": "II",
+      "sections": [
+        7,
+        23
+      ],
+      "count": 17
+    }
+  ],
+  "canonicalCatenaManifest": "data/scripture/catena/manifest.v1.json",
+  "existingPrimaryWorkCrosswalk": "data/scripture/catena/research/quaestiones-primary-source-crosswalk.v1.json",
+  "integrationPolicy": "Do not synthesize Augustine replies or relabel editorial prompts as historical verbatim queries. Canonical Catena excerpts remain the only text source; the external Latin source is a locator, not a licensed independent English answer corpus.",
+  "metrics": {
+    "sections": 30,
+    "catenaMatchedLinks": 30,
+    "numberedCitationConflicts": 1
+  },
+  "entries": [
+    {
+      "id": "aug-qev-i-01",
+      "author": "Augustine of Hippo",
+      "work": "Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 1,
+      "sectionLocator": "I.1",
+      "scriptureKeys": [
+        "matthew/11/27"
+      ],
+      "primaryLanguage": "Latin",
+      "primaryLatinSectionAnchor": "Cum diceret: Nemo novit Filium nisi Pater",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "historicalProblemClassification": "author_discusses_problem_not_a_verbatim_interrogative",
+      "editorialReaderQuestion": "Why does Christ say that only the Father knows the Son?",
+      "editorialQuestionAuthorship": "modern_navigational_wording_not_augustine_quotation",
+      "catenaLinks": [
+        {
+          "sourceFragmentId": "catena.matthew.11.27:11",
+          "pericopeId": "catena.matthew.11.27",
+          "sourceOrdinal": 12,
+          "attributionAsInCompilation": "Augustine",
+          "originalCatenaCitation": "Catena Aurea, Matthew 11:27",
+          "sourceCitationAsInCatena": "Quæst. Ev. i. 1.",
+          "sourceTextEvidenceAnchor": "(Quæst. Ev. i. 1.) When He said, None knoweth the Son but the Father, He did not add, And he to",
+          "relation": "same_work_explicitly_cited_in_catena",
+          "sourceMatchStatus": "canonical_text_checked__independent_edition_unreviewed"
+        }
+      ],
+      "existingPrimaryCrosswalkId": null,
+      "releaseStatus": "research_only_pending_independent_editional_and_theological_review"
+    },
+    {
+      "id": "aug-qev-i-02",
+      "author": "Augustine of Hippo",
+      "work": "Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 2,
+      "sectionLocator": "I.2",
+      "scriptureKeys": [
+        "matthew/12/1"
+      ],
+      "primaryLanguage": "Latin",
+      "primaryLatinSectionAnchor": "Quod discipuli Domini coeperunt vellere spicas",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "historicalProblemClassification": "author_discusses_problem_not_a_verbatim_interrogative",
+      "editorialReaderQuestion": "What spiritual sense does Augustine find in plucking the ears of grain?",
+      "editorialQuestionAuthorship": "modern_navigational_wording_not_augustine_quotation",
+      "catenaLinks": [
+        {
+          "sourceFragmentId": "catena.matthew.12.1:21",
+          "pericopeId": "catena.matthew.12.1",
+          "sourceOrdinal": 22,
+          "attributionAsInCompilation": "Augustine",
+          "originalCatenaCitation": "Catena Aurea, Matthew 12:1-8",
+          "sourceCitationAsInCatena": "Quæst. Ev. i. 2.",
+          "sourceTextEvidenceAnchor": "(Quæst. Ev. i. 2.) But no man passes into the body of Christ, until he has been stripped of his",
+          "relation": "same_work_explicitly_cited_in_catena",
+          "sourceMatchStatus": "canonical_text_checked__independent_edition_unreviewed"
+        }
+      ],
+      "existingPrimaryCrosswalkId": null,
+      "releaseStatus": "research_only_pending_independent_editional_and_theological_review"
+    },
+    {
+      "id": "aug-qev-i-03",
+      "author": "Augustine of Hippo",
+      "work": "Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 3,
+      "sectionLocator": "I.3",
+      "scriptureKeys": [
+        "matthew/12/20"
+      ],
+      "primaryLanguage": "Latin",
+      "primaryLatinSectionAnchor": "In lino fumigante notandum",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "historicalProblemClassification": "author_discusses_problem_not_a_verbatim_interrogative",
+      "editorialReaderQuestion": "What does the smoking flax signify?",
+      "editorialQuestionAuthorship": "modern_navigational_wording_not_augustine_quotation",
+      "catenaLinks": [
+        {
+          "sourceFragmentId": "catena.matthew.12.14:22",
+          "pericopeId": "catena.matthew.12.14",
+          "sourceOrdinal": 23,
+          "attributionAsInCompilation": "Augustine",
+          "originalCatenaCitation": "Catena Aurea, Matthew 12:14-21",
+          "sourceCitationAsInCatena": "Quæst. Ev. i. 3.",
+          "sourceTextEvidenceAnchor": "(Quæst. Ev. i. 3.) In the smoking flax it is observed, that when the flame is out it causes a s",
+          "relation": "same_work_explicitly_cited_in_catena",
+          "sourceMatchStatus": "canonical_text_checked__independent_edition_unreviewed"
+        }
+      ],
+      "existingPrimaryCrosswalkId": null,
+      "releaseStatus": "research_only_pending_independent_editional_and_theological_review"
+    },
+    {
+      "id": "aug-qev-i-04",
+      "author": "Augustine of Hippo",
+      "work": "Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 4,
+      "sectionLocator": "I.4",
+      "scriptureKeys": [
+        "matthew/12/22"
+      ],
+      "primaryLanguage": "Latin",
+      "primaryLatinSectionAnchor": "Tunc oblatus est ei daemonium habens caecus et mutus",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "historicalProblemClassification": "author_discusses_problem_not_a_verbatim_interrogative",
+      "editorialReaderQuestion": "How does Augustine interpret the blind and mute demoniac?",
+      "editorialQuestionAuthorship": "modern_navigational_wording_not_augustine_quotation",
+      "catenaLinks": [
+        {
+          "sourceFragmentId": "catena.matthew.12.22:5",
+          "pericopeId": "catena.matthew.12.22",
+          "sourceOrdinal": 6,
+          "attributionAsInCompilation": "Augustine",
+          "originalCatenaCitation": "Catena Aurea, Matthew 12:22-24",
+          "sourceCitationAsInCatena": "Quæst. Ev. i. 4.",
+          "sourceTextEvidenceAnchor": "(Quæst. Ev. i. 4.) For he that believes not, is truly dæmoniac, blind, and dumb; and he that ha",
+          "relation": "same_work_explicitly_cited_in_catena",
+          "sourceMatchStatus": "canonical_text_checked__independent_edition_unreviewed"
+        }
+      ],
+      "existingPrimaryCrosswalkId": null,
+      "releaseStatus": "research_only_pending_independent_editional_and_theological_review"
+    },
+    {
+      "id": "aug-qev-i-05",
+      "author": "Augustine of Hippo",
+      "work": "Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 5,
+      "sectionLocator": "I.5",
+      "scriptureKeys": [
+        "matthew/12/28"
+      ],
+      "primaryLanguage": "Latin",
+      "primaryLatinSectionAnchor": "Quod dixit: Et si ego in Beelzebub eicio daemones",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "historicalProblemClassification": "author_discusses_problem_not_a_verbatim_interrogative",
+      "editorialReaderQuestion": "What does Christ's answer concerning Beelzebub mean?",
+      "editorialQuestionAuthorship": "modern_navigational_wording_not_augustine_quotation",
+      "catenaLinks": [
+        {
+          "sourceFragmentId": "catena.matthew.12.27:8",
+          "pericopeId": "catena.matthew.12.27",
+          "sourceOrdinal": 9,
+          "attributionAsInCompilation": "Augustine",
+          "originalCatenaCitation": "Catena Aurea, Matthew 12:27-28",
+          "sourceCitationAsInCatena": "Quæst. Ev. i. 5.",
+          "sourceTextEvidenceAnchor": "(Quæst. Ev. i. 5.) Whence the sense might be this, If I by Beelzebub vast out dæmons, then, acc",
+          "relation": "same_work_explicitly_cited_in_catena",
+          "sourceMatchStatus": "canonical_text_checked__independent_edition_unreviewed"
+        }
+      ],
+      "existingPrimaryCrosswalkId": null,
+      "releaseStatus": "research_only_pending_independent_editional_and_theological_review"
+    },
+    {
+      "id": "aug-qev-i-06",
+      "author": "Augustine of Hippo",
+      "work": "Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 6,
+      "sectionLocator": "I.6",
+      "scriptureKeys": [
+        "matthew/12/34"
+      ],
+      "primaryLanguage": "Latin",
+      "primaryLatinSectionAnchor": "Progenies viperarum eos dicit",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "historicalProblemClassification": "author_discusses_problem_not_a_verbatim_interrogative",
+      "editorialReaderQuestion": "Why are the opponents called a brood of vipers?",
+      "editorialQuestionAuthorship": "modern_navigational_wording_not_augustine_quotation",
+      "catenaLinks": [],
+      "existingPrimaryCrosswalkId": null,
+      "releaseStatus": "research_only_pending_independent_editional_and_theological_review"
+    },
+    {
+      "id": "aug-qev-i-07",
+      "author": "Augustine of Hippo",
+      "work": "Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 7,
+      "sectionLocator": "I.7",
+      "scriptureKeys": [
+        "matthew/12/40"
+      ],
+      "primaryLanguage": "Latin",
+      "primaryLatinSectionAnchor": "Sicut enim fuit Ionas in ventre ceti tribus diebus",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "historicalProblemClassification": "author_discusses_problem_not_a_verbatim_interrogative",
+      "editorialReaderQuestion": "How does Augustine account for three days and nights?",
+      "editorialQuestionAuthorship": "modern_navigational_wording_not_augustine_quotation",
+      "catenaLinks": [],
+      "existingPrimaryCrosswalkId": "aqe-1-07",
+      "releaseStatus": "research_only_pending_independent_editional_and_theological_review"
+    },
+    {
+      "id": "aug-qev-i-08",
+      "author": "Augustine of Hippo",
+      "work": "Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 8,
+      "sectionLocator": "I.8",
+      "scriptureKeys": [
+        "matthew/12/43"
+      ],
+      "primaryLanguage": "Latin",
+      "primaryLatinSectionAnchor": "Cum spiritus immundus exierit ab homine",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "historicalProblemClassification": "author_discusses_problem_not_a_verbatim_interrogative",
+      "editorialReaderQuestion": "What does the return of the unclean spirit signify?",
+      "editorialQuestionAuthorship": "modern_navigational_wording_not_augustine_quotation",
+      "catenaLinks": [
+        {
+          "sourceFragmentId": "catena.matthew.12.43:10",
+          "pericopeId": "catena.matthew.12.43",
+          "sourceOrdinal": 11,
+          "attributionAsInCompilation": "Augustine",
+          "originalCatenaCitation": "Catena Aurea, Matthew 12:43-45",
+          "sourceCitationAsInCatena": "Quæst. Ev. i. 8.",
+          "sourceTextEvidenceAnchor": "(Quæst. Ev. i. 8.) So that in these words the Lord signifies that some shall so believe, as not",
+          "relation": "same_work_explicitly_cited_in_catena",
+          "sourceMatchStatus": "canonical_text_checked__independent_edition_unreviewed"
+        }
+      ],
+      "existingPrimaryCrosswalkId": null,
+      "releaseStatus": "research_only_pending_independent_editional_and_theological_review"
+    },
+    {
+      "id": "aug-qev-i-09",
+      "author": "Augustine of Hippo",
+      "work": "Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 9,
+      "sectionLocator": "I.9",
+      "scriptureKeys": [
+        "matthew/13/23"
+      ],
+      "primaryLanguage": "Latin",
+      "primaryLatinSectionAnchor": "Quod dicit: Aliud centesimum, aliud sexagesimum",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "historicalProblemClassification": "author_discusses_problem_not_a_verbatim_interrogative",
+      "editorialReaderQuestion": "How does Augustine read the thirtyfold, sixtyfold and hundredfold fruit?",
+      "editorialQuestionAuthorship": "modern_navigational_wording_not_augustine_quotation",
+      "catenaLinks": [
+        {
+          "sourceFragmentId": "catena.matthew.13.18:11",
+          "pericopeId": "catena.matthew.13.18",
+          "sourceOrdinal": 12,
+          "attributionAsInCompilation": "Augustine",
+          "originalCatenaCitation": "Catena Aurea, Matthew 13:18-23",
+          "sourceCitationAsInCatena": "Quæst. Ev. i. 9.",
+          "sourceTextEvidenceAnchor": "(Quæst. Ev. i. 9.) Otherwise; There is fruit an hundred-fold of the martyrs because of their sa",
+          "relation": "same_work_explicitly_cited_in_catena",
+          "sourceMatchStatus": "canonical_text_checked__independent_edition_unreviewed"
+        }
+      ],
+      "existingPrimaryCrosswalkId": null,
+      "releaseStatus": "research_only_pending_independent_editional_and_theological_review"
+    },
+    {
+      "id": "aug-qev-i-10",
+      "author": "Augustine of Hippo",
+      "work": "Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 10,
+      "sectionLocator": "I.10",
+      "scriptureKeys": [
+        "matthew/13/40"
+      ],
+      "primaryLanguage": "Latin",
+      "primaryLatinSectionAnchor": "Omnis immunditia in segete zizania dicuntur",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "historicalProblemClassification": "author_discusses_problem_not_a_verbatim_interrogative",
+      "editorialReaderQuestion": "What does the separation of the tares signify?",
+      "editorialQuestionAuthorship": "modern_navigational_wording_not_augustine_quotation",
+      "catenaLinks": [
+        {
+          "sourceFragmentId": "catena.matthew.13.36:8",
+          "pericopeId": "catena.matthew.13.36",
+          "sourceOrdinal": 9,
+          "attributionAsInCompilation": "Augustine",
+          "originalCatenaCitation": "Catena Aurea, Matthew 13:36-43",
+          "sourceCitationAsInCatena": "Quæst. Ev. i. 10.",
+          "sourceTextEvidenceAnchor": "(Quæst. Ev. i. 10.) For all weeds among corn are called tares. It follows, The enemy who sowed ",
+          "relation": "same_work_explicitly_cited_in_catena",
+          "sourceMatchStatus": "canonical_text_checked__independent_edition_unreviewed"
+        },
+        {
+          "sourceFragmentId": "catena.matthew.13.36:12",
+          "pericopeId": "catena.matthew.13.36",
+          "sourceOrdinal": 13,
+          "attributionAsInCompilation": "Augustine",
+          "originalCatenaCitation": "Catena Aurea, Matthew 13:36-43",
+          "sourceCitationAsInCatena": "Quæst. Ev. i. 10.",
+          "sourceTextEvidenceAnchor": "(Quæst. Ev. i. 10.) That the tares are first separated, signifies that by tribulation the wicke",
+          "relation": "same_work_explicitly_cited_in_catena",
+          "sourceMatchStatus": "canonical_text_checked__independent_edition_unreviewed"
+        }
+      ],
+      "existingPrimaryCrosswalkId": null,
+      "releaseStatus": "research_only_pending_independent_editional_and_theological_review"
+    },
+    {
+      "id": "aug-qev-i-11",
+      "author": "Augustine of Hippo",
+      "work": "Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 11,
+      "sectionLocator": "I.11",
+      "scriptureKeys": [
+        "matthew/13/31"
+      ],
+      "primaryLanguage": "Latin",
+      "primaryLatinSectionAnchor": "Granum sinapis ad fervorem fidei",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "historicalProblemClassification": "author_discusses_problem_not_a_verbatim_interrogative",
+      "editorialReaderQuestion": "Why is faith compared to a mustard seed?",
+      "editorialQuestionAuthorship": "modern_navigational_wording_not_augustine_quotation",
+      "catenaLinks": [
+        {
+          "sourceFragmentId": "catena.matthew.13.31:2",
+          "pericopeId": "catena.matthew.13.31",
+          "sourceOrdinal": 3,
+          "attributionAsInCompilation": "Augustine",
+          "originalCatenaCitation": "Catena Aurea, Matthew 13:31-32",
+          "sourceCitationAsInCatena": "Quæst. in Ev. i. 11.",
+          "sourceTextEvidenceAnchor": "(Quæst. in Ev. i. 11.) A grain of mustard seed may allude to the warmth of faith, or to its pro",
+          "relation": "same_work_explicitly_cited_in_catena",
+          "sourceMatchStatus": "canonical_text_checked__independent_edition_unreviewed"
+        }
+      ],
+      "existingPrimaryCrosswalkId": null,
+      "releaseStatus": "research_only_pending_independent_editional_and_theological_review"
+    },
+    {
+      "id": "aug-qev-i-12",
+      "author": "Augustine of Hippo",
+      "work": "Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 12,
+      "sectionLocator": "I.12",
+      "scriptureKeys": [
+        "matthew/13/33"
+      ],
+      "primaryLanguage": "Latin",
+      "primaryLatinSectionAnchor": "Fermentum quod accepit mulier et abscondit",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "historicalProblemClassification": "author_discusses_problem_not_a_verbatim_interrogative",
+      "editorialReaderQuestion": "What do the leaven, woman and three measures signify?",
+      "editorialQuestionAuthorship": "modern_navigational_wording_not_augustine_quotation",
+      "catenaLinks": [
+        {
+          "sourceFragmentId": "catena.matthew.13.33:2",
+          "pericopeId": "catena.matthew.13.33",
+          "sourceOrdinal": 3,
+          "attributionAsInCompilation": "Augustine",
+          "originalCatenaCitation": "Catena Aurea, Matthew 13:33",
+          "sourceCitationAsInCatena": "Quæst. Ev. i. 12.",
+          "sourceTextEvidenceAnchor": "(Quæst. Ev. i. 12.) Or, The leaven signifies love, because it causes activity and fermentation;",
+          "relation": "same_work_explicitly_cited_in_catena",
+          "sourceMatchStatus": "canonical_text_checked__independent_edition_unreviewed"
+        }
+      ],
+      "existingPrimaryCrosswalkId": null,
+      "releaseStatus": "research_only_pending_independent_editional_and_theological_review"
+    },
+    {
+      "id": "aug-qev-i-13",
+      "author": "Augustine of Hippo",
+      "work": "Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 13,
+      "sectionLocator": "I.13",
+      "scriptureKeys": [
+        "matthew/13/44"
+      ],
+      "primaryLanguage": "Latin",
+      "primaryLatinSectionAnchor": "Thesaurum in agro absconditum dixit",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "historicalProblemClassification": "author_discusses_problem_not_a_verbatim_interrogative",
+      "editorialReaderQuestion": "What does the treasure hidden in the field signify?",
+      "editorialQuestionAuthorship": "modern_navigational_wording_not_augustine_quotation",
+      "catenaLinks": [
+        {
+          "sourceFragmentId": "catena.matthew.13.44:5",
+          "pericopeId": "catena.matthew.13.44",
+          "sourceOrdinal": 6,
+          "attributionAsInCompilation": "Augustine",
+          "originalCatenaCitation": "Catena Aurea, Matthew 13:44",
+          "sourceCitationAsInCatena": "Quæst. in Ev. i. 13.",
+          "sourceTextEvidenceAnchor": "(Quæst. in Ev. i. 13.) Or, He speaks of the two testaments in the Church, which, when any hath ",
+          "relation": "same_work_explicitly_cited_in_catena",
+          "sourceMatchStatus": "canonical_text_checked__independent_edition_unreviewed"
+        }
+      ],
+      "existingPrimaryCrosswalkId": null,
+      "releaseStatus": "research_only_pending_independent_editional_and_theological_review"
+    },
+    {
+      "id": "aug-qev-ii-07",
+      "author": "Augustine of Hippo",
+      "work": "Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 7,
+      "sectionLocator": "II.7",
+      "scriptureKeys": [
+        "luke/6/9"
+      ],
+      "primaryLanguage": "Latin",
+      "primaryLatinSectionAnchor": "quaeritur, cum corpus curaverit, quare sic interrogaverit",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "historicalProblemClassification": "author_explicitly_raises_exegetical_problem",
+      "editorialReaderQuestion": "Why does Christ speak of saving a soul while healing a man's hand?",
+      "editorialQuestionAuthorship": "modern_navigational_wording_not_augustine_quotation",
+      "catenaLinks": [],
+      "existingPrimaryCrosswalkId": null,
+      "releaseStatus": "research_only_pending_independent_editional_and_theological_review"
+    },
+    {
+      "id": "aug-qev-ii-08",
+      "author": "Augustine of Hippo",
+      "work": "Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 8,
+      "sectionLocator": "II.8",
+      "scriptureKeys": [
+        "luke/6/38"
+      ],
+      "primaryLanguage": "Latin",
+      "primaryLatinSectionAnchor": "Quod Dominus dicit: Date et dabitur vobis",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "historicalProblemClassification": "author_discusses_problem_not_a_verbatim_interrogative",
+      "editorialReaderQuestion": "Who gives the overflowing measure Christ promises?",
+      "editorialQuestionAuthorship": "modern_navigational_wording_not_augustine_quotation",
+      "catenaLinks": [
+        {
+          "sourceFragmentId": "catena.luke.6.37:8",
+          "pericopeId": "catena.luke.6.37",
+          "sourceOrdinal": 9,
+          "attributionAsInCompilation": "Augustine",
+          "originalCatenaCitation": "Catena Aurea, Luke 6:37-38",
+          "sourceCitationAsInCatena": "de Qu. Ev. l. ii. q. 8.",
+          "sourceTextEvidenceAnchor": "(de Qu. Ev. l. ii. q. 8.) But he says, shall they give, (Mat. 10:42.) because through the merit",
+          "relation": "same_work_explicitly_cited_in_catena",
+          "sourceMatchStatus": "canonical_text_checked__independent_edition_unreviewed"
+        }
+      ],
+      "existingPrimaryCrosswalkId": null,
+      "releaseStatus": "research_only_pending_independent_editional_and_theological_review"
+    },
+    {
+      "id": "aug-qev-ii-09",
+      "author": "Augustine of Hippo",
+      "work": "Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 9,
+      "sectionLocator": "II.9",
+      "scriptureKeys": [
+        "luke/6/39"
+      ],
+      "primaryLanguage": "Latin",
+      "primaryLatinSectionAnchor": "Quod Dominus dicit: Numquid potest caecus caecum ducere",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "historicalProblemClassification": "author_discusses_problem_not_a_verbatim_interrogative",
+      "editorialReaderQuestion": "How does the blind leading the blind relate to the preceding teaching?",
+      "editorialQuestionAuthorship": "modern_navigational_wording_not_augustine_quotation",
+      "catenaLinks": [
+        {
+          "sourceFragmentId": "catena.luke.6.39:3",
+          "pericopeId": "catena.luke.6.39",
+          "sourceOrdinal": 4,
+          "attributionAsInCompilation": "Augustine",
+          "originalCatenaCitation": "Catena Aurea, Luke 6:39-42",
+          "sourceCitationAsInCatena": "de Qu. Ev. l. ii. q. 9.",
+          "sourceTextEvidenceAnchor": "(de Qu. Ev. l. ii. q. 9.) Or, He has added the words, Can the blind, lead the blind, in order t",
+          "relation": "same_work_explicitly_cited_in_catena",
+          "sourceMatchStatus": "canonical_text_checked__independent_edition_unreviewed"
+        }
+      ],
+      "existingPrimaryCrosswalkId": null,
+      "releaseStatus": "research_only_pending_independent_editional_and_theological_review"
+    },
+    {
+      "id": "aug-qev-ii-10",
+      "author": "Augustine of Hippo",
+      "work": "Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 10,
+      "sectionLocator": "II.10",
+      "scriptureKeys": [
+        "luke/6/48"
+      ],
+      "primaryLanguage": "Latin",
+      "primaryLatinSectionAnchor": "Omnis qui venit ad me et audit sermones meos",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "historicalProblemClassification": "author_discusses_problem_not_a_verbatim_interrogative",
+      "editorialReaderQuestion": "What does digging deep and building on rock signify?",
+      "editorialQuestionAuthorship": "modern_navigational_wording_not_augustine_quotation",
+      "catenaLinks": [],
+      "existingPrimaryCrosswalkId": null,
+      "releaseStatus": "research_only_pending_independent_editional_and_theological_review"
+    },
+    {
+      "id": "aug-qev-ii-11",
+      "author": "Augustine of Hippo",
+      "work": "Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 11,
+      "sectionLocator": "II.11",
+      "scriptureKeys": [
+        "luke/7/32",
+        "matthew/11/17"
+      ],
+      "primaryLanguage": "Latin",
+      "primaryLatinSectionAnchor": "De pueris sedentibus in foro et ad invicem clamantibus",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "historicalProblemClassification": "author_discusses_problem_not_a_verbatim_interrogative",
+      "editorialReaderQuestion": "Why did people respond neither to John's austerity nor Christ's table fellowship?",
+      "editorialQuestionAuthorship": "modern_navigational_wording_not_augustine_quotation",
+      "catenaLinks": [
+        {
+          "sourceFragmentId": "catena.luke.7.29:9",
+          "pericopeId": "catena.luke.7.29",
+          "sourceOrdinal": 10,
+          "attributionAsInCompilation": "Augustine",
+          "originalCatenaCitation": "Catena Aurea, Luke 7:29-35",
+          "sourceCitationAsInCatena": "de Quæst. Ev. l. ii. q. 11.",
+          "sourceTextEvidenceAnchor": "(de Quæst. Ev. l. ii. q. 11.) Now these words have reference to John and Christ. For when he sa",
+          "relation": "same_work_explicitly_cited_in_catena",
+          "sourceMatchStatus": "canonical_text_checked__independent_edition_unreviewed"
+        },
+        {
+          "sourceFragmentId": "catena.matthew.11.16:15",
+          "pericopeId": "catena.matthew.11.16",
+          "sourceOrdinal": 16,
+          "attributionAsInCompilation": "Augustine",
+          "originalCatenaCitation": "Catena Aurea, Matthew 11:16-19",
+          "sourceCitationAsInCatena": "Quæst. Ev. ii. 11.",
+          "sourceTextEvidenceAnchor": "(Quæst. Ev. ii. 11.) Or, Wisdom is justified of her children, because the holy Apostles underst",
+          "relation": "same_work_explicitly_cited_in_catena",
+          "sourceMatchStatus": "canonical_text_checked__independent_edition_unreviewed"
+        }
+      ],
+      "existingPrimaryCrosswalkId": null,
+      "releaseStatus": "research_only_pending_independent_editional_and_theological_review"
+    },
+    {
+      "id": "aug-qev-ii-12",
+      "author": "Augustine of Hippo",
+      "work": "Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 12,
+      "sectionLocator": "II.12",
+      "scriptureKeys": [
+        "luke/8/16"
+      ],
+      "primaryLanguage": "Latin",
+      "primaryLatinSectionAnchor": "Nemo autem lucernam accendens operit eam vase",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "historicalProblemClassification": "author_discusses_problem_not_a_verbatim_interrogative",
+      "editorialReaderQuestion": "What does the lamp concealed under a vessel represent?",
+      "editorialQuestionAuthorship": "modern_navigational_wording_not_augustine_quotation",
+      "catenaLinks": [
+        {
+          "sourceFragmentId": "catena.luke.8.16:2",
+          "pericopeId": "catena.luke.8.16",
+          "sourceOrdinal": 3,
+          "attributionAsInCompilation": "Augustine",
+          "originalCatenaCitation": "Catena Aurea, Luke 8:16-18",
+          "sourceCitationAsInCatena": "de Quæst. Ev. lib. ii. q. 12.",
+          "sourceTextEvidenceAnchor": "(de Quæst. Ev. lib. ii. q. 12.) Or else in these words He typically sets forth the boldness of ",
+          "relation": "same_work_explicitly_cited_in_catena",
+          "sourceMatchStatus": "canonical_text_checked__independent_edition_unreviewed"
+        }
+      ],
+      "existingPrimaryCrosswalkId": null,
+      "releaseStatus": "research_only_pending_independent_editional_and_theological_review"
+    },
+    {
+      "id": "aug-qev-ii-13",
+      "author": "Augustine of Hippo",
+      "work": "Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 13,
+      "sectionLocator": "II.13",
+      "scriptureKeys": [
+        "luke/8/27"
+      ],
+      "primaryLanguage": "Latin",
+      "primaryLatinSectionAnchor": "Quod in regione Gerasenorum curavit Dominus",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "historicalProblemClassification": "author_discusses_problem_not_a_verbatim_interrogative",
+      "editorialReaderQuestion": "What spiritual meanings does Augustine see in the Gerasene demoniac?",
+      "editorialQuestionAuthorship": "modern_navigational_wording_not_augustine_quotation",
+      "catenaLinks": [
+        {
+          "sourceFragmentId": "catena.luke.8.26:30",
+          "pericopeId": "catena.luke.8.26",
+          "sourceOrdinal": 31,
+          "attributionAsInCompilation": "Augustine",
+          "originalCatenaCitation": "Catena Aurea, Luke 8:26-39",
+          "sourceCitationAsInCatena": "de Quæst. Ev. l. ii. q. 13.",
+          "sourceTextEvidenceAnchor": "(de Quæst. Ev. l. ii. q. 13.) He abode in no house, that is, he had no rest in his conscience; ",
+          "relation": "same_work_explicitly_cited_in_catena",
+          "sourceMatchStatus": "canonical_text_checked__independent_edition_unreviewed"
+        },
+        {
+          "sourceFragmentId": "catena.luke.8.26:35",
+          "pericopeId": "catena.luke.8.26",
+          "sourceOrdinal": 36,
+          "attributionAsInCompilation": "Augustine",
+          "originalCatenaCitation": "Catena Aurea, Luke 8:26-39",
+          "sourceCitationAsInCatena": "de Qu. Evan. l. ii. q. 13.",
+          "sourceTextEvidenceAnchor": "(de Qu. Evan. l. ii. q. 13.) Or, by the herdsmen of the swine flying and telling these things, ",
+          "relation": "same_work_explicitly_cited_in_catena",
+          "sourceMatchStatus": "canonical_text_checked__independent_edition_unreviewed"
+        }
+      ],
+      "existingPrimaryCrosswalkId": null,
+      "releaseStatus": "research_only_pending_independent_editional_and_theological_review"
+    },
+    {
+      "id": "aug-qev-ii-14",
+      "author": "Augustine of Hippo",
+      "work": "Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 14,
+      "sectionLocator": "II.14",
+      "scriptureKeys": [
+        "luke/10/1"
+      ],
+      "primaryLanguage": "Latin",
+      "primaryLatinSectionAnchor": "Sicut viginti quattuor horis totus orbis peragitur",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "historicalProblemClassification": "author_discusses_problem_not_a_verbatim_interrogative",
+      "editorialReaderQuestion": "Why were the disciples sent in pairs, and what does their number signify?",
+      "editorialQuestionAuthorship": "modern_navigational_wording_not_augustine_quotation",
+      "catenaLinks": [
+        {
+          "sourceFragmentId": "catena.luke.10.1:2",
+          "pericopeId": "catena.luke.10.1",
+          "sourceOrdinal": 3,
+          "attributionAsInCompilation": "Augustine",
+          "originalCatenaCitation": "Catena Aurea, Luke 10:1-2",
+          "sourceCitationAsInCatena": "de Quæst. Ev. 1. ii. q. 14.",
+          "sourceTextEvidenceAnchor": "(de Quæst. Ev. 1. ii. q. 14.) As also in twenty-four hours the whole world moves round and rece",
+          "relation": "same_work_explicitly_cited_in_catena",
+          "sourceMatchStatus": "canonical_text_checked__independent_edition_unreviewed"
+        }
+      ],
+      "existingPrimaryCrosswalkId": null,
+      "releaseStatus": "research_only_pending_independent_editional_and_theological_review"
+    },
+    {
+      "id": "aug-qev-ii-15",
+      "author": "Augustine of Hippo",
+      "work": "Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 15,
+      "sectionLocator": "II.15",
+      "scriptureKeys": [
+        "luke/11/35"
+      ],
+      "primaryLanguage": "Latin",
+      "primaryLatinSectionAnchor": "Si quod lumen est in te tenebrae sunt",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "historicalProblemClassification": "author_discusses_problem_not_a_verbatim_interrogative",
+      "editorialReaderQuestion": "What does Christ mean when the light within becomes darkness?",
+      "editorialQuestionAuthorship": "modern_navigational_wording_not_augustine_quotation",
+      "catenaLinks": [],
+      "existingPrimaryCrosswalkId": null,
+      "releaseStatus": "research_only_pending_independent_editional_and_theological_review"
+    },
+    {
+      "id": "aug-qev-ii-16",
+      "author": "Augustine of Hippo",
+      "work": "Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 16,
+      "sectionLocator": "II.16",
+      "scriptureKeys": [
+        "luke/11/39"
+      ],
+      "primaryLanguage": "Latin",
+      "primaryLatinSectionAnchor": "Nunc vos, Pharisei, quod deforis est calicis",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "historicalProblemClassification": "author_discusses_problem_not_a_verbatim_interrogative",
+      "editorialReaderQuestion": "What is the significance of the rebuke about the outside of the cup?",
+      "editorialQuestionAuthorship": "modern_navigational_wording_not_augustine_quotation",
+      "catenaLinks": [],
+      "existingPrimaryCrosswalkId": null,
+      "releaseStatus": "research_only_pending_independent_editional_and_theological_review"
+    },
+    {
+      "id": "aug-qev-ii-17",
+      "author": "Augustine of Hippo",
+      "work": "Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 17,
+      "sectionLocator": "II.17",
+      "scriptureKeys": [
+        "luke/11/20"
+      ],
+      "primaryLanguage": "Latin",
+      "primaryLatinSectionAnchor": "Ideo dicitur Spiritus Sanctus digitus Dei",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "historicalProblemClassification": "author_discusses_problem_not_a_verbatim_interrogative",
+      "editorialReaderQuestion": "Why is the Holy Spirit called the finger of God?",
+      "editorialQuestionAuthorship": "modern_navigational_wording_not_augustine_quotation",
+      "catenaLinks": [
+        {
+          "sourceFragmentId": "catena.luke.11.17:11",
+          "pericopeId": "catena.luke.11.17",
+          "sourceOrdinal": 12,
+          "attributionAsInCompilation": "Augustine",
+          "originalCatenaCitation": "Catena Aurea, Luke 11:17-20",
+          "sourceCitationAsInCatena": "de Quæst. Ev. l. ii. qu. 17.",
+          "sourceTextEvidenceAnchor": "(de Quæst. Ev. l. ii. qu. 17.) Now the Holy Spirit is called the finger of God, because of the ",
+          "relation": "same_work_explicitly_cited_in_catena",
+          "sourceMatchStatus": "canonical_text_checked__independent_edition_unreviewed"
+        }
+      ],
+      "existingPrimaryCrosswalkId": null,
+      "releaseStatus": "research_only_pending_independent_editional_and_theological_review"
+    },
+    {
+      "id": "aug-qev-ii-18",
+      "author": "Augustine of Hippo",
+      "work": "Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 18,
+      "sectionLocator": "II.18",
+      "scriptureKeys": [
+        "luke/5/33"
+      ],
+      "primaryLanguage": "Latin",
+      "primaryLatinSectionAnchor": "Ieiunium aut in tribulatione est aut in gaudio",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "historicalProblemClassification": "author_discusses_problem_not_a_verbatim_interrogative",
+      "editorialReaderQuestion": "Why do Christ's disciples not fast while the bridegroom is with them?",
+      "editorialQuestionAuthorship": "modern_navigational_wording_not_augustine_quotation",
+      "catenaLinks": [
+        {
+          "sourceFragmentId": "catena.luke.5.33:2",
+          "pericopeId": "catena.luke.5.33",
+          "sourceOrdinal": 3,
+          "attributionAsInCompilation": "Augustine",
+          "originalCatenaCitation": "Catena Aurea, Luke 5:33-39",
+          "sourceCitationAsInCatena": "de Qu. Ev. l. ii. q. 18.",
+          "sourceTextEvidenceAnchor": "(de Qu. Ev. l. ii. q. 18.) Now there are two fasts, one is in tribulation, to propitiate God fo",
+          "relation": "same_work_explicitly_cited_in_catena",
+          "sourceMatchStatus": "canonical_text_checked__independent_edition_unreviewed"
+        },
+        {
+          "sourceFragmentId": "catena.luke.5.33:7",
+          "pericopeId": "catena.luke.5.33",
+          "sourceOrdinal": 8,
+          "attributionAsInCompilation": "Augustine",
+          "originalCatenaCitation": "Catena Aurea, Luke 5:33-39",
+          "sourceCitationAsInCatena": "de Qu. Ev. ii. qu. 18.",
+          "sourceTextEvidenceAnchor": "(de Qu. Ev. ii. qu. 18.) As if He said, Then shall they be desolate, and in sorrow and lamentat",
+          "relation": "same_work_explicitly_cited_in_catena",
+          "sourceMatchStatus": "canonical_text_checked__independent_edition_unreviewed"
+        }
+      ],
+      "existingPrimaryCrosswalkId": null,
+      "releaseStatus": "research_only_pending_independent_editional_and_theological_review"
+    },
+    {
+      "id": "aug-qev-ii-19",
+      "author": "Augustine of Hippo",
+      "work": "Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 19,
+      "sectionLocator": "II.19",
+      "scriptureKeys": [
+        "luke/10/30"
+      ],
+      "primaryLanguage": "Latin",
+      "primaryLatinSectionAnchor": "Homo quidam descendebat ab Ierusalem in Iericho",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "historicalProblemClassification": "author_discusses_problem_not_a_verbatim_interrogative",
+      "editorialReaderQuestion": "How does Augustine interpret the figures in the Good Samaritan?",
+      "editorialQuestionAuthorship": "modern_navigational_wording_not_augustine_quotation",
+      "catenaLinks": [
+        {
+          "sourceFragmentId": "catena.luke.10.29:32",
+          "pericopeId": "catena.luke.10.29",
+          "sourceOrdinal": 33,
+          "attributionAsInCompilation": "Augustine",
+          "originalCatenaCitation": "Catena Aurea, Luke 10:29-37",
+          "sourceCitationAsInCatena": "Quæst. Ev. ii. 19.",
+          "sourceTextEvidenceAnchor": "(Quæst. Ev. ii. 19.) The binding up of wounds is the checking of sins; oil is the consolation o",
+          "relation": "same_work_explicitly_cited_in_catena",
+          "sourceMatchStatus": "canonical_text_checked__independent_edition_unreviewed"
+        },
+        {
+          "sourceFragmentId": "catena.luke.10.29:37",
+          "pericopeId": "catena.luke.10.29",
+          "sourceOrdinal": 38,
+          "attributionAsInCompilation": "Augustine",
+          "originalCatenaCitation": "Catena Aurea, Luke 10:29-37",
+          "sourceCitationAsInCatena": "de Quæst. Ev. ii. q. 19.",
+          "sourceTextEvidenceAnchor": "(de Quæst. Ev. ii. q. 19.) His beast is our flesh, in which He has condescended to come to us. ",
+          "relation": "same_work_explicitly_cited_in_catena",
+          "sourceMatchStatus": "canonical_text_checked__independent_edition_unreviewed"
+        }
+      ],
+      "existingPrimaryCrosswalkId": null,
+      "releaseStatus": "research_only_pending_independent_editional_and_theological_review"
+    },
+    {
+      "id": "aug-qev-ii-20",
+      "author": "Augustine of Hippo",
+      "work": "Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 20,
+      "sectionLocator": "II.20",
+      "scriptureKeys": [
+        "luke/10/38"
+      ],
+      "primaryLanguage": "Latin",
+      "primaryLatinSectionAnchor": "Quod Martha excepit illum in domum suam",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "historicalProblemClassification": "author_discusses_problem_not_a_verbatim_interrogative",
+      "editorialReaderQuestion": "What do Martha and Mary signify in Augustine's interpretation?",
+      "editorialQuestionAuthorship": "modern_navigational_wording_not_augustine_quotation",
+      "catenaLinks": [
+        {
+          "sourceFragmentId": "catena.luke.10.38:14",
+          "pericopeId": "catena.luke.10.38",
+          "sourceOrdinal": 15,
+          "attributionAsInCompilation": "Augustine",
+          "originalCatenaCitation": "Catena Aurea, Luke 10:38-42",
+          "sourceCitationAsInCatena": "de Qu. Evang. l. ii. q. 30.",
+          "sourceTextEvidenceAnchor": "(de Qu. Evang. l. ii. q. 30.) Now mystically, by Martha’s receiving our Lord into her house is ",
+          "relation": "same_work_probable_with_numbered_section_conflict",
+          "sourceMatchStatus": "section_number_disagreement_do_not_certify"
+        }
+      ],
+      "existingPrimaryCrosswalkId": null,
+      "releaseStatus": "research_only_pending_independent_editional_and_theological_review"
+    },
+    {
+      "id": "aug-qev-ii-21",
+      "author": "Augustine of Hippo",
+      "work": "Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 21,
+      "sectionLocator": "II.21",
+      "scriptureKeys": [
+        "luke/11/5"
+      ],
+      "primaryLanguage": "Latin",
+      "primaryLatinSectionAnchor": "Amicus ad quem venitur media nocte",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "historicalProblemClassification": "author_discusses_problem_not_a_verbatim_interrogative",
+      "editorialReaderQuestion": "What do the three loaves requested at midnight signify?",
+      "editorialQuestionAuthorship": "modern_navigational_wording_not_augustine_quotation",
+      "catenaLinks": [
+        {
+          "sourceFragmentId": "catena.luke.11.5:7",
+          "pericopeId": "catena.luke.11.5",
+          "sourceOrdinal": 8,
+          "attributionAsInCompilation": "Augustine",
+          "originalCatenaCitation": "Catena Aurea, Luke 11:5-8",
+          "sourceCitationAsInCatena": "Qu. Ev. l. ii. qu. 21.",
+          "sourceTextEvidenceAnchor": "(Qu. Ev. l. ii. qu. 21.) The time then referred to is that of the famine of the word, when the ",
+          "relation": "same_work_explicitly_cited_in_catena",
+          "sourceMatchStatus": "canonical_text_checked__independent_edition_unreviewed"
+        },
+        {
+          "sourceFragmentId": "catena.luke.11.5:10",
+          "pericopeId": "catena.luke.11.5",
+          "sourceOrdinal": 11,
+          "attributionAsInCompilation": "Augustine",
+          "originalCatenaCitation": "Catena Aurea, Luke 11:5-8",
+          "sourceCitationAsInCatena": "de Quæst. Ev. lib. ii. qu. 21.",
+          "sourceTextEvidenceAnchor": "(de Quæst. Ev. lib. ii. qu. 21.) Or else, the friend to whom the visit is made at midnight, for",
+          "relation": "same_work_explicitly_cited_in_catena",
+          "sourceMatchStatus": "canonical_text_checked__independent_edition_unreviewed"
+        }
+      ],
+      "existingPrimaryCrosswalkId": null,
+      "releaseStatus": "research_only_pending_independent_editional_and_theological_review"
+    },
+    {
+      "id": "aug-qev-ii-22",
+      "author": "Augustine of Hippo",
+      "work": "Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 22,
+      "sectionLocator": "II.22",
+      "scriptureKeys": [
+        "luke/11/11"
+      ],
+      "primaryLanguage": "Latin",
+      "primaryLatinSectionAnchor": "De pane et pisce et ovo",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "historicalProblemClassification": "author_discusses_problem_not_a_verbatim_interrogative",
+      "editorialReaderQuestion": "What do bread, fish and egg signify in Christ's teaching on prayer?",
+      "editorialQuestionAuthorship": "modern_navigational_wording_not_augustine_quotation",
+      "catenaLinks": [
+        {
+          "sourceFragmentId": "catena.luke.11.9:11",
+          "pericopeId": "catena.luke.11.9",
+          "sourceOrdinal": 12,
+          "attributionAsInCompilation": "Augustine",
+          "originalCatenaCitation": "Catena Aurea, Luke 11:9-13",
+          "sourceCitationAsInCatena": "de Quæst. Ev. lib. ii. qu. 22.",
+          "sourceTextEvidenceAnchor": "(de Quæst. Ev. lib. ii. qu. 22.) Or by the bread is meant charity, because we have a greater de",
+          "relation": "same_work_explicitly_cited_in_catena",
+          "sourceMatchStatus": "canonical_text_checked__independent_edition_unreviewed"
+        }
+      ],
+      "existingPrimaryCrosswalkId": null,
+      "releaseStatus": "research_only_pending_independent_editional_and_theological_review"
+    },
+    {
+      "id": "aug-qev-ii-23",
+      "author": "Augustine of Hippo",
+      "work": "Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 23,
+      "sectionLocator": "II.23",
+      "scriptureKeys": [
+        "luke/11/52"
+      ],
+      "primaryLanguage": "Latin",
+      "primaryLatinSectionAnchor": "De eo quod dicit Dominus scribis vel doctoribus Iudeorum",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "historicalProblemClassification": "author_discusses_problem_not_a_verbatim_interrogative",
+      "editorialReaderQuestion": "What is the key of knowledge taken away by the lawyers?",
+      "editorialQuestionAuthorship": "modern_navigational_wording_not_augustine_quotation",
+      "catenaLinks": [
+        {
+          "sourceFragmentId": "catena.luke.11.45:22",
+          "pericopeId": "catena.luke.11.45",
+          "sourceOrdinal": 23,
+          "attributionAsInCompilation": "Augustine",
+          "originalCatenaCitation": "Catena Aurea, Luke 11:45-54",
+          "sourceCitationAsInCatena": "de qu. Ev. l. ii. q. 23.",
+          "sourceTextEvidenceAnchor": "(de qu. Ev. l. ii. q. 23.) But the key of knowledge is also the humility of Christ, which they ",
+          "relation": "same_work_explicitly_cited_in_catena",
+          "sourceMatchStatus": "canonical_text_checked__independent_edition_unreviewed"
+        }
+      ],
+      "existingPrimaryCrosswalkId": null,
+      "releaseStatus": "research_only_pending_independent_editional_and_theological_review"
+    }
+  ]
+}

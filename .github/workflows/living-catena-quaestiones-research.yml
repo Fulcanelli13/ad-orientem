@@ -1,0 +1,53 @@
+name: Living Catena Quaestiones research integrity
+
+on:
+  push:
+    branches:
+      - research/living-catena-quaestiones-crosswalk-20261021
+  pull_request:
+    paths:
+      - "data/scripture/catena/research/**"
+      - "tests/scripture-catena-original-questions.mjs"
+      - "tests/scripture-catena-quaestiones-crosswalk.mjs"
+      - "tests/scripture-catena-augustine-sequential.mjs"
+      - "tests/scripture-catena-eusebius-supplement.mjs"
+      - "tests/scripture-catena-eusebius-epitome.mjs"
+      - "tests/scripture-catena-eusebius-marinus-solutions.mjs"
+      - "tests/scripture-catena-eusebius-stephanus-solutions.mjs"
+      - "tests/scripture-catena-augustine-continuation.mjs"
+      - "tests/scripture-catena-augustine-original-spans.mjs"
+      - "tests/scripture-catena-augustine-coverage.mjs"
+      - ".github/workflows/living-catena-quaestiones-research.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Verify original questions from existing Catena
+        run: node tests/scripture-catena-original-questions.mjs
+      - name: Verify Augustine-Eusebius primary source crosswalk
+        run: node tests/scripture-catena-quaestiones-crosswalk.mjs
+      - name: Verify sequential Augustine source links
+        run: node tests/scripture-catena-augustine-sequential.mjs
+      - name: Verify 62-section Augustine continuation and printed-citation quarantine
+        run: node tests/scripture-catena-augustine-continuation.mjs
+      - name: Distinguish Augustine authored questions from quoted biblical voices
+        run: node tests/scripture-catena-augustine-original-spans.mjs
+      - name: Verify full Augustine I.1–47 and II.1–51 numerical section coverage
+        run: node tests/scripture-catena-augustine-coverage.mjs
+      - name: Verify full Eusebius 16 + 4 epitome crosswalk
+        run: node tests/scripture-catena-eusebius-epitome.mjs
+      - name: Verify 18 Marinus argument spans and witness boundaries
+        run: node tests/scripture-catena-eusebius-marinus-solutions.mjs
+      - name: Verify Stephanus I–IV branches and Africanus attribution
+        run: node tests/scripture-catena-eusebius-stephanus-solutions.mjs
+      - name: Verify Eusebius supplement verse mappings
+        run: node tests/scripture-catena-eusebius-supplement.mjs

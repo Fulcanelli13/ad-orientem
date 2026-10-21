@@ -1,0 +1,217 @@
+{
+  "schema": "ao.catena.primary-quaestiones-crosswalk.v1",
+  "created": "2026-10-21",
+  "status": "research_only_not_publication_approved",
+  "inheritsExistingSeed": "data/scripture/catena/research/patristic-questions-seed.v1.json",
+  "canonicalCorpus": "data/scripture/catena/manifest.v1.json",
+  "scope": "Direct primary-work chapter/section review of Augustine and Eusebius, cross-referenced against existing Oxford/Newman Catena source segments; not a complete mining census",
+  "originDistinction": [
+    "author_explicit_raised_question",
+    "author_treated_problem_no_verbatim_question",
+    "author_presented_problem_and_reply",
+    "historical_correspondent_question_as_reported_by_author"
+  ],
+  "sourceAnchorPolicy": "Source-language short anchors for verification, not complete author answers. Editorial natural questions are never attributed as verbatim Father speech.",
+  "englishTranslationPolicy": "No new independently publishable English translation created; existing Catena quotes remain owned by canonical corpus. External Greek translation rights and accuracy are not cleared.",
+  "verification": "Primary online Greek/Latin text and specified canonical Catena fragment were manually inspected; independent critical edition, second-reader, doctrinal and licensing approvals remain outstanding.",
+  "records": [
+    {
+      "id": "aqe-2-01",
+      "author": "Augustine of Hippo",
+      "work": "Quaestiones Evangeliorum",
+      "locator": "II.1",
+      "questionOrigin": "author_treated_problem_no_verbatim_question",
+      "originalLanguage": "Latin",
+      "sourceAnchor": "Quod Zacharias orans pro populo audit ab angelo",
+      "readerFacingQuestionEditorial": "Why was Zacharias told that his prayer was heard?",
+      "scriptureKeys": [
+        "luke/1/13"
+      ],
+      "primaryTextUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "catenaMatches": [
+        {
+          "pericopeId": "catena.luke.1.11",
+          "ordinal": 12,
+          "attributionAsInCatena": "Augustine",
+          "sourceTextAnchor": "Now here we must first consider",
+          "relation": "quoted_same_ancient_work_in_catena"
+        }
+      ],
+      "observations": [
+        "Latin work II.1; Catena excerpt's parenthetical citation reads 'l. i. q. l.' and conflicts with consulted Latin placement; preserve conflict pending independent editorial verification.",
+        "The Latin source treats his prayer on behalf of the people, not necessarily an explicit literal question spoken by Augustine."
+      ]
+    },
+    {
+      "id": "aqe-2-03",
+      "author": "Augustine of Hippo",
+      "work": "Quaestiones Evangeliorum",
+      "locator": "II.3",
+      "questionOrigin": "author_treated_problem_no_verbatim_question",
+      "originalLanguage": "Latin",
+      "sourceAnchor": "hic videtur approbare sacrificium",
+      "readerFacingQuestionEditorial": "Why did Jesus command the healed leper to offer the Mosaic sacrifice?",
+      "scriptureKeys": [
+        "luke/5/14"
+      ],
+      "primaryTextUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "catenaMatches": [
+        {
+          "pericopeId": "catena.luke.5.12",
+          "ordinal": 15,
+          "attributionAsInCatena": "Augustine",
+          "sourceTextAnchor": "He seems here to approve of the sacrifice",
+          "relation": "quoted_same_ancient_work_in_catena"
+        }
+      ],
+      "observations": [
+        "Latin II.3 gives a reason by distinguishing typological Mosaic sacrifices from Christ's sacrifice.",
+        "Do not treat the modern reader question as Augustine's verbatim Latin wording."
+      ]
+    },
+    {
+      "id": "aqe-2-05",
+      "author": "Augustine of Hippo",
+      "work": "Quaestiones Evangeliorum",
+      "locator": "II.5",
+      "questionOrigin": "author_explicit_raised_question",
+      "originalLanguage": "Latin",
+      "sourceAnchor": "quomodo potuerit duos patres habere Ioseph",
+      "readerFacingQuestionEditorial": "How could Joseph have two fathers in Matthew and Luke?",
+      "scriptureKeys": [
+        "luke/3/23",
+        "matthew/1/16"
+      ],
+      "primaryTextUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "catenaMatches": [
+        {
+          "pericopeId": "catena.luke.3.23",
+          "ordinal": 12,
+          "attributionAsInCatena": "Augustine",
+          "sourceTextAnchor": "Or there occur three reasons",
+          "relation": "quoted_same_ancient_work_in_catena"
+        },
+        {
+          "pericopeId": "catena.matthew.1.16",
+          "ordinal": 4,
+          "attributionAsInCatena": "Augustine",
+          "sourceTextAnchor": "He is more properly called his son",
+          "relation": "thematically_related_different_augustine_work"
+        }
+      ],
+      "observations": [
+        "In II.5 Augustine discusses alternatives; his Latin later calls the levirate alternative weaker (illa videtur infirma quam secundo loco posuimus).",
+        "The Catena passage from De Consensu Evangelistarum in Matthew 1:16 is a distinct Augustine work, not a duplicate excerpt from Quaestiones.",
+        "Do not convert alternatives into a single claim that Augustine conclusively settled the historical genealogy."
+      ]
+    },
+    {
+      "id": "aqe-2-06",
+      "author": "Augustine of Hippo",
+      "work": "Quaestiones Evangeliorum",
+      "locator": "II.6.1",
+      "questionOrigin": "author_explicit_raised_question",
+      "originalLanguage": "Latin",
+      "sourceAnchor": "Quid sibi velit quod septuaginta septem personae",
+      "readerFacingQuestionEditorial": "What does the number seventy-seven mean in Luke's genealogy?",
+      "scriptureKeys": [
+        "luke/3/23",
+        "luke/3/38"
+      ],
+      "primaryTextUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "catenaMatches": [
+        {
+          "pericopeId": "catena.luke.3.23",
+          "ordinal": 39,
+          "attributionAsInCatena": "Augustine",
+          "sourceTextAnchor": "But most fitly with regard to our baptized Lord",
+          "relation": "quoted_same_ancient_work_in_catena"
+        }
+      ],
+      "observations": [
+        "The Latin starts the numbered question II.6 with an explicit inquiry; Catena explicitly cites Quæst. Ev. lib. ii. qu. 6.",
+        "This is Augustine's theological reading of the number, not an arithmetical proof that all count variants use the same method."
+      ]
+    },
+    {
+      "id": "aqe-1-07",
+      "author": "Augustine of Hippo",
+      "work": "Quaestiones Evangeliorum",
+      "locator": "I.7",
+      "questionOrigin": "author_treated_problem_no_verbatim_question",
+      "originalLanguage": "Latin",
+      "sourceAnchor": "Sicut enim fuit Ionas in ventre ceti",
+      "readerFacingQuestionEditorial": "How can the three days and three nights of the burial be understood?",
+      "scriptureKeys": [
+        "matthew/12/40"
+      ],
+      "primaryTextUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "catenaMatches": [
+        {
+          "pericopeId": "catena.matthew.12.38",
+          "ordinal": 9,
+          "attributionAsInCatena": "Augustine",
+          "sourceTextAnchor": "Some, not knowing the Scripture manner",
+          "relation": "thematically_related_different_augustine_work"
+        }
+      ],
+      "observations": [
+        "Latin I.7 supplies a part-for-whole temporal reckoning for Matthew 12:40.",
+        "The linked Catena Augustine selection is from De Consensu Evangelistarum, so it must not be labelled a direct Quaestiones excerpt.",
+        "The Catena source ordinal of the related excerpt is checked by the validation script, not a claim of identical source work."
+      ]
+    },
+    {
+      "id": "eusebius-stephanus-3",
+      "author": "Eusebius of Caesarea",
+      "work": "Quaestiones evangelicae ad Stephanum (supplementary witness)",
+      "locator": "Question III, supplement section b",
+      "questionOrigin": "author_presented_problem_and_reply",
+      "originalLanguage": "Greek",
+      "sourceAnchor": "Τί δὴ οὖν εἰς τὸ προταθὲν τοῦτο πρόβλημα",
+      "readerFacingQuestionEditorial": "Why do Matthew and Luke trace Joseph through different ancestors?",
+      "scriptureKeys": [
+        "matthew/1/16",
+        "luke/3/23"
+      ],
+      "primaryTextUrl": "https://catholiclibrary.org/library/view?chunk.id=00000003&docId=%2FFathers-Synchronized-EN%2FEusebius_Caesariensis__Supplementa_ad_quaestiones_ad_Stephanum.en.html",
+      "catenaMatches": [
+        {
+          "pericopeId": "catena.luke.3.23",
+          "ordinal": 10,
+          "attributionAsInCatena": "Eusebius",
+          "sourceTextAnchor": "Let us then more carefully explain",
+          "relation": "probable_parallel_pending_line_by_line_alignment"
+        }
+      ],
+      "observations": [
+        "The Greek supplement presents the genealogy difference as an articulated problem, and contains Eusebius's response; the modern English translation on the host has not been cleared for reuse.",
+        "Catena's Eusebius extract on Luke 3:23 is a strong thematic/textual parallel; direct edition-level identity is not certified.",
+        "The Catena's Eusebius Hist. Eccles. I.7 genealogical narrative often transmits Julius Africanus. Preserve embedded author/voice; do not call Africanus's quoted solution Eusebius's independently authored answer."
+      ]
+    },
+    {
+      "id": "eusebius-marinus-1",
+      "author": "Eusebius of Caesarea",
+      "work": "Quaestiones evangelicae ad Marinum",
+      "locator": "Question I, solution sections 1–2",
+      "questionOrigin": "historical_correspondent_question_as_reported_by_author",
+      "questioner": "Marinus",
+      "originalLanguage": "Greek",
+      "sourceAnchor": "Ἠρώτας δὲ τὸ πρῶτον· Αʹ. Πῶς παρὰ μὲν τῷ Ματθαίῳ",
+      "readerFacingQuestionEditorial": "How can the resurrection timing in Matthew and Mark be reconciled?",
+      "scriptureKeys": [
+        "matthew/28/1",
+        "mark/16/9"
+      ],
+      "primaryTextUrl": "https://catholiclibrary.org/library/view?chunk.id=00000003&docId=%2FFathers-Synchronized-EN%2FEusebius_Caesariensis__Quaestiones_evangelicae_ad_Marinum.en.html",
+      "catenaMatches": [],
+      "observations": [
+        "The question is introduced as Marinus's, not as an original interrogative posed by Eusebius himself.",
+        "Eusebius discusses more than one solution, including a hypothetical textual exclusion and an alternative punctuation reading; one solution alone must not be presented as his unqualified judgement.",
+        "No directly matched Catena Eusebius excerpt was identified for these two Gospel pericopes; the external text should be indexed as a separate source, not backfilled into an existing Father bubble.",
+        "The Greek/English text displayed by Catholic Library may involve modern edition/translation rights; no wholesale copying or automated publication."
+      ]
+    }
+  ]
+}

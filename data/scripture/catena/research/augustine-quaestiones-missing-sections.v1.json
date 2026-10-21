@@ -1,0 +1,78 @@
+{
+  "schema": "ao.catena.augustine-quaestiones-missing-sections.v1",
+  "date": "2026-10-21",
+  "status": "research_only",
+  "target": "Close numbering gaps in combined Augustine Book I §§1–47 and Book II §§1–51 index",
+  "sourceWitness": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+  "relationToMainRegisters": [
+    "data/scripture/catena/research/augustine-quaestiones-sequential-index.v1.json",
+    "data/scripture/catena/research/quaestiones-primary-source-crosswalk.v1.json",
+    "data/scripture/catena/research/augustine-quaestiones-continuation.v1.json"
+  ],
+  "publicationPolicy": "Modern editorial questions remain separate; full answers must come from verified original texts, never generated Augustinian speech.",
+  "records": [
+    {
+      "id": "aug-qev-ii-02",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 2,
+      "sourceLocator": "II.2",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "latinAnchor": "Quod Dominus de navicula docet turbas",
+      "scriptureKeys": [
+        "luke/5/3",
+        "luke/5/8"
+      ],
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "What does Christ teaching the crowds from Peter's boat signify?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [
+        {
+          "pericopeId": "catena.luke.5.1",
+          "sourceOrdinal": 10,
+          "sourceFragmentId": "catena.luke.5.1:9",
+          "sourceTextAnchor": "(de Quæst. Ev. 1. 2. c. 2.) From which ship He taught",
+          "attributionAsInCatena": "Augustine",
+          "linkClass": "cited_ancient_work_and_topic_checked__critical_source_unverified"
+        },
+        {
+          "pericopeId": "catena.luke.5.8",
+          "sourceOrdinal": 10,
+          "sourceFragmentId": "catena.luke.5.8:9",
+          "sourceTextAnchor": "(de Quæst. Ev. lib. ii. c. 2.) Or, Peter speaks",
+          "attributionAsInCatena": "Augustine",
+          "linkClass": "cited_ancient_work_and_topic_checked__critical_source_unverified"
+        }
+      ],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-ii-04",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 4,
+      "sourceLocator": "II.4",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "latinAnchor": "De paralytico potest intellegi animam dissolutam membris",
+      "scriptureKeys": [
+        "luke/5/18"
+      ],
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "What does Augustine discern in the paralytic lowered through the roof?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [
+        {
+          "pericopeId": "catena.luke.5.17",
+          "sourceOrdinal": 20,
+          "sourceFragmentId": "catena.luke.5.17:19",
+          "sourceTextAnchor": "(l. ii. qu. 4.) With respect to the sick of the palsy",
+          "attributionAsInCatena": "Augustine",
+          "linkClass": "cited_ancient_work_and_topic_checked__critical_source_unverified"
+        }
+      ],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    }
+  ]
+}
