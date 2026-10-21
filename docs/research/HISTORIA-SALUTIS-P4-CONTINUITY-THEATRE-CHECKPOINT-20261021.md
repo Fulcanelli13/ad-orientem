@@ -153,3 +153,42 @@ The source audit now covers **49 of 183 scenes (indices 0–48, four complete so
 The second source batch is \`data/research/historia-p4-deliverance-witness-desk-audit.v1.json\` (13 scenes); the third is \`data/research/historia-p4-wilderness-sinai-witness-desk-audit.v1.json\` (11 scenes). All rows preserve their source scene key, original Atlas-candidate keys and original match classification. \`tests/historia-p4-theatre-citation-contract.mjs\` now locks the 49 desk-triage rows and the 36/38 English/French boundary. **Geographic or publication approvals: 0.**
 
 **Remaining 134 scene rows** begin with WANDERINGS (scene indices 49–56) followed by INCARNATION, MINISTRY, PASSION, RISEN and the apostolic batches. Carry forward the established chronology and witness conventions. Do not promote the scene research into production from citation overlap alone.
+
+
+## P4 Wanderings and Incarnation evidence cohorts — 21 October 2026
+
+### Research files committed
+
+- \`data/research/historia-p4-wanderings-three-witness-desk-audit.v1.json\`: **8** WANDERINGS scene rows (49–56). Numbers, Deuteronomy and Joshua reference spans were checked for passage presence in installed Douay–Rheims Challoner, CPDV and Crampon source witnesses. The unusually long Balaam citation (Numbers 22:1–24:25) contains 96 verse entries in each of the three consulted witnesses; this count is not an approved editorial length.
+- \`data/research/historia-p4-incarnation-three-witness-desk-audit.v1.json\`: **all 13** INCARNATION scene rows (57–68 and appended index **181**, Holy Innocents). Luke and Matthew passage spans were checked for reference presence in the three uncollated Catholic witnesses. The inherited chronology and the out-of-sequence \`sceneKey\` for 181 remain intact.
+- \`tests/historia-p4-theatre-citation-contract.mjs\` now enforces **70 unique reviewed scene IDs** (0–68, plus 181), nonpublication and no-pin gates, the original Exodus 40 36/38 edition discrepancy, Mt 2:16–18 index-181 coverage, and the source-only Ein Karem and Circumcision limits.
+
+### Scene-evidence coverage
+
+| Batch | Original indices | Audited |
+|---|---|---:|
+| PATRIARCHS | 0–24 | 25 |
+| DELIVERANCE | 25–37 | 13 |
+| WILDERNESS | 38–42 | 5 |
+| COVENANT | 43–48 | 6 |
+| WANDERINGS | 49–56 | 8 |
+| INCARNATION | 57–68 and 181 | 13 |
+| **Total** | **70 distinct source rows** | **70/183 (38.3%)** |
+
+The remaining **113** begin with MINISTRY (69–114), PASSION (115–130), RISEN (131–137), APOSTLES (138–142 and 182), and apostolic missions (143–180). The source indexes are *not* simple story order: 181 is the Holy Innocents in the INCARNATION chapter; 182 is Pentecost in APOSTLES.
+
+### Key provenance and geography findings
+
+1. **Moses' unknown burial site:** Deuteronomy 34:6 explicitly prevents creating a tomb pin. Nebo/Pisgah is named biblically; a modern viewing platform or grave identification is a distinct claim.
+2. **Canaan reconnaissance:** Numbers 13:27 names Paran/Kadesh in the source witness, but does not settle a modern Kadesh-Barnea coordinate. Joshua 3 places the crossing in the Jordan/Jericho context without specifying a modern ford.
+3. **Nazareth/Annunciation:** Luke 1:26 names Nazareth, not the precise Annunciation dwelling. Matthew 1:18–25 does not itself identify Nazareth as the site of Joseph's dream.
+4. **Visitation / John the Baptist's birth:** Luke 1:39 names the hill country and a city of Judah, not Ein Karem. Luke 1:57–80 does not name the modern birth site. Treat Ein Karem strictly as a traditional location.
+5. **Nativity, Circumcision, Magi:** Luke 2:4–7 names Bethlehem, but not a confirmed modern sanctuary spot. Luke 2:21 alone has **no stated ceremony location**. Matthew 2:1–12 names Bethlehem and a house (2:11), not a certified contemporary structure. Keep the evangelists' separate staging and chronology.
+6. **Flight, return and hidden years:** Egypt in Matthew 2:13–15 is an unlocated region with no endorsed journey itinerary; Matthew 2:19–23 does name eventual residence at Nazareth. Luke 2:39–52 spans Nazareth and Jerusalem and must not collapse into a single location or be automatically harmonised with Matthew's flight.
+7. **Holy Innocents:** Matthew 2:16–18 names Bethlehem and its district, not individual victims' locations or a precise historical massacre date. The app must not invent victim pins, grave locations or individual biographies.
+
+Three-way matching passage availability is not translation-level collation, approval of an abridged literary sequence, a theological review or a map-point certification. All 70 scene records preserve the original scene sources and Atlas-candidate status; **approved coordinates added: zero; published changes: zero**.
+
+### Next bounded step
+
+Review MINISTRY as original-source rows 69–114, prioritising Jesus' public teaching and high-impact event/location claims, then PASSION and RISEN. Continue M20–M37 literary seam reviews independently; no acceptance flags may be set solely because scene citation coordinates are present.
