@@ -24,7 +24,7 @@ const expected=new Map([
 ["2026-03-29","Anthony van Dyck"],
 ["2026-04-02","Ugolino da Siena"],
 ["2026-05-23","Juan Bautista Maíno"],
-["2026-05-24","Jean Restout"],
+["2026-05-24","Jean II Restout"],
 ["2026-05-27","Philippe de Champaigne"],
 ["2026-06-12","Juan Patricio Morlete Ruiz"],
 ["2026-10-25","Ambrosius Benson"],
