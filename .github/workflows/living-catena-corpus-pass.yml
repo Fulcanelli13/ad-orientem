@@ -12,6 +12,7 @@ on:
       - scripts/scripture-catena-first-pass.mjs
       - tests/scripture-catena-first-pass.mjs
       - tests/scripture-catena-matthew-batch-one.mjs
+      - tests/scripture-catena-matthew-batch-two.mjs
       - data/scripture/catena/research/full-corpus-pass-20261021/**
       - .github/workflows/living-catena-corpus-pass.yml
 
@@ -33,6 +34,8 @@ jobs:
         run: node tests/scripture-catena-first-pass.mjs
       - name: Verify the 300-item Matthew review and 26 source-grounded spot reviews
         run: node tests/scripture-catena-matthew-batch-one.mjs
+      - name: Verify second 300 Matthew excerpts and 47 source-level reviews
+        run: node tests/scripture-catena-matthew-batch-two.mjs
       - name: Ensure generated index is up to date for PR
         run: |
           git diff --exit-code -- data/scripture/catena/research/full-corpus-pass-20261021/
