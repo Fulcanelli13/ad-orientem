@@ -1,0 +1,4710 @@
+{
+  "schema": "AO_HISTORIA_THEMATIC_REMAINDER_EDITORIAL_RESEARCH_V1",
+  "date": "2026-10-21",
+  "status": "REFERENCE_AND_GENRE_REVIEW_NOT_PUBLICATION_OR_VERSE_COLLATION",
+  "source": {
+    "preflight": "data/research/historia-salutis-thematic-collections-expansion-preflight-20261021.v1.json",
+    "sha": "55482922068adf7f9222a01384c297f76958e540"
+  },
+  "policies": {
+    "onlyExistingCatholicWitnessWords": true,
+    "keepAllOriginalInventoryRanges": true,
+    "neverWriteVerseTextInRegistry": true,
+    "visionsNotAutomaticallyDatedHistory": true,
+    "noMainNarrativeRestorationPromoted": true,
+    "doNotInferAtlasIdentity": true,
+    "longTechnicalNarrativesRequireExplicitLengthDisclosure": true,
+    "overlapsReuseOriginalSourceRows": true,
+    "questionableSourceBoundsRequireFurtherReview": true
+  },
+  "totals": {
+    "newRecords": 150,
+    "primaryCollections": 6,
+    "byCollection": {
+      "great_biblical_narratives": 75,
+      "prophets_and_their_lives": 12,
+      "visions_and_revelations": 13,
+      "life_of_christ": 25,
+      "encounters_with_christ": 8,
+      "apostolic_church": 17
+    },
+    "correctedReferenceWindows": 4,
+    "sourceParts": 152,
+    "visionRecords": 13,
+    "longTechnicalOrSequenceHold": 3,
+    "selectedMainReadingPromotions": 0,
+    "explicitAtlasIdentities": 0
+  },
+  "entries": [
+    {
+      "id": "hist-omitted-002",
+      "title": "Enoch's life and departure",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Genesis 5:21–24",
+      "sourceParts": [
+        {
+          "reference": "Genesis 5:21–24",
+          "order": 1,
+          "book": "Genesis",
+          "firstChapter": 5,
+          "lastChapter": 5,
+          "firstVerse": 21,
+          "lastVerse": 24,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Genesis 5:21–24",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-003",
+      "title": "The corruption preceding the Flood",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Genesis 6:5–8",
+      "sourceParts": [
+        {
+          "reference": "Genesis 6:5–8",
+          "order": 1,
+          "book": "Genesis",
+          "firstChapter": 6,
+          "lastChapter": 6,
+          "firstVerse": 5,
+          "lastVerse": 8,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Genesis 6:5–8",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-004",
+      "title": "The Tower of Babel",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Genesis 11:1–9",
+      "sourceParts": [
+        {
+          "reference": "Genesis 11:1–9",
+          "order": 1,
+          "book": "Genesis",
+          "firstChapter": 11,
+          "lastChapter": 11,
+          "firstVerse": 1,
+          "lastVerse": 9,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Genesis 11:1–9",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-005",
+      "title": "Abraham rescues Lot",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Genesis 14:1–17",
+      "sourceParts": [
+        {
+          "reference": "Genesis 14:1–17",
+          "order": 1,
+          "book": "Genesis",
+          "firstChapter": 14,
+          "lastChapter": 14,
+          "firstVerse": 1,
+          "lastVerse": 17,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Genesis 14:1–17",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-008",
+      "title": "Abraham intercedes for Sodom",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Genesis 18:16–33",
+      "sourceParts": [
+        {
+          "reference": "Genesis 18:16–33",
+          "order": 1,
+          "book": "Genesis",
+          "firstChapter": 18,
+          "lastChapter": 18,
+          "firstVerse": 16,
+          "lastVerse": 33,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Genesis 18:16–33",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-009",
+      "title": "Destruction of Sodom and Gomorrah",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Genesis 19",
+      "sourceParts": [
+        {
+          "reference": "Genesis 19",
+          "order": 1,
+          "book": "Genesis",
+          "firstChapter": 19,
+          "lastChapter": 19,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Genesis 19",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-010",
+      "title": "Lot's escape",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Genesis 19:15–29",
+      "sourceParts": [
+        {
+          "reference": "Genesis 19:15–29",
+          "order": 1,
+          "book": "Genesis",
+          "firstChapter": 19,
+          "lastChapter": 19,
+          "firstVerse": 15,
+          "lastVerse": 29,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Genesis 19:15–29",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-011",
+      "title": "Abraham's servant finds Rebecca",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Genesis 24",
+      "sourceParts": [
+        {
+          "reference": "Genesis 24",
+          "order": 1,
+          "book": "Genesis",
+          "firstChapter": 24,
+          "lastChapter": 24,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Genesis 24",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-012",
+      "title": "Jacob purchases Esau's birthright",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Genesis 25:29–34",
+      "sourceParts": [
+        {
+          "reference": "Genesis 25:29–34",
+          "order": 1,
+          "book": "Genesis",
+          "firstChapter": 25,
+          "lastChapter": 25,
+          "firstVerse": 29,
+          "lastVerse": 34,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Genesis 25:29–34",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-013",
+      "title": "Jacob receives Isaac's blessing",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Genesis 27",
+      "sourceParts": [
+        {
+          "reference": "Genesis 27",
+          "order": 1,
+          "book": "Genesis",
+          "firstChapter": 27,
+          "lastChapter": 27,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Genesis 27",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-014",
+      "title": "Jacob's dream of the ladder",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Genesis 28:10–22",
+      "sourceParts": [
+        {
+          "reference": "Genesis 28:10–22",
+          "order": 1,
+          "book": "Genesis",
+          "firstChapter": 28,
+          "lastChapter": 28,
+          "firstVerse": 10,
+          "lastVerse": 22,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Genesis 28:10–22",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-015",
+      "title": "Jacob's reconciliation with Esau",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Genesis 33",
+      "sourceParts": [
+        {
+          "reference": "Genesis 33",
+          "order": 1,
+          "book": "Genesis",
+          "firstChapter": 33,
+          "lastChapter": 33,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Genesis 33",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-016",
+      "title": "Dinah and the events at Shechem",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Genesis 34",
+      "sourceParts": [
+        {
+          "reference": "Genesis 34",
+          "order": 1,
+          "book": "Genesis",
+          "firstChapter": 34,
+          "lastChapter": 34,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Genesis 34",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-017",
+      "title": "Joseph and Potiphar's wife",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Genesis 39",
+      "sourceParts": [
+        {
+          "reference": "Genesis 39",
+          "order": 1,
+          "book": "Genesis",
+          "firstChapter": 39,
+          "lastChapter": 39,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Genesis 39",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-018",
+      "title": "Judah and Tamar",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Genesis 38",
+      "sourceParts": [
+        {
+          "reference": "Genesis 38",
+          "order": 1,
+          "book": "Genesis",
+          "firstChapter": 38,
+          "lastChapter": 38,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Genesis 38",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-019",
+      "title": "Joseph tests his brothers",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Genesis 42–44",
+      "sourceParts": [
+        {
+          "reference": "Genesis 42–44",
+          "order": 1,
+          "book": "Genesis",
+          "firstChapter": 42,
+          "lastChapter": 44,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Genesis 42–44",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-020",
+      "title": "Judah pleads for Benjamin",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Genesis 44:18–34",
+      "sourceParts": [
+        {
+          "reference": "Genesis 44:18–34",
+          "order": 1,
+          "book": "Genesis",
+          "firstChapter": 44,
+          "lastChapter": 44,
+          "firstVerse": 18,
+          "lastVerse": 34,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Genesis 44:18–34",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-021",
+      "title": "Jacob blesses his sons",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Genesis 49",
+      "sourceParts": [
+        {
+          "reference": "Genesis 49",
+          "order": 1,
+          "book": "Genesis",
+          "firstChapter": 49,
+          "lastChapter": 49,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Genesis 49",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-022",
+      "title": "Deaths of Jacob and Joseph",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Genesis 49–50",
+      "sourceParts": [
+        {
+          "reference": "Genesis 49–50",
+          "order": 1,
+          "book": "Genesis",
+          "firstChapter": 49,
+          "lastChapter": 50,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Genesis 49–50",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-023",
+      "title": "The Hebrew midwives resist Pharaoh",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Exodus 1:15–21",
+      "sourceParts": [
+        {
+          "reference": "Exodus 1:15–21",
+          "order": 1,
+          "book": "Exodus",
+          "firstChapter": 1,
+          "lastChapter": 1,
+          "firstVerse": 15,
+          "lastVerse": 21,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Exodus 1:15–21",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-024",
+      "title": "Moses' birth and rescue from the Nile",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Exodus 2:1–10",
+      "sourceParts": [
+        {
+          "reference": "Exodus 2:1–10",
+          "order": 1,
+          "book": "Exodus",
+          "firstChapter": 2,
+          "lastChapter": 2,
+          "firstVerse": 1,
+          "lastVerse": 10,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Exodus 2:1–10",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-025",
+      "title": "Moses flees to Midian",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Exodus 2:11–22",
+      "sourceParts": [
+        {
+          "reference": "Exodus 2:11–22",
+          "order": 1,
+          "book": "Exodus",
+          "firstChapter": 2,
+          "lastChapter": 2,
+          "firstVerse": 11,
+          "lastVerse": 22,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Exodus 2:11–22",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-026",
+      "title": "Individual confrontations during the ten plagues",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Exodus 7–11",
+      "sourceParts": [
+        {
+          "reference": "Exodus 7–11",
+          "order": 1,
+          "book": "Exodus",
+          "firstChapter": 7,
+          "lastChapter": 11,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Exodus 7–11",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "LONG_COMPLEX_SEQUENCE",
+      "editorialNote": "Five Exodus chapters contain multiple separate confrontations; read chapter by chapter and do not conflate individual plagues into one episode.",
+      "scopeWarnings": [
+        "LONG_SOURCE_CHAPTER_RANGE_REQUIRES_EDITORIAL_LIMIT_REVIEW",
+        "LONG_COMPLEX_SEQUENCE"
+      ],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-027",
+      "title": "Manna from heaven",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Exodus 16",
+      "sourceParts": [
+        {
+          "reference": "Exodus 16",
+          "order": 1,
+          "book": "Exodus",
+          "firstChapter": 16,
+          "lastChapter": 16,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Exodus 16",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-028",
+      "title": "Water from the rock",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Exodus 17:1–7",
+      "sourceParts": [
+        {
+          "reference": "Exodus 17:1–7",
+          "order": 1,
+          "book": "Exodus",
+          "firstChapter": 17,
+          "lastChapter": 17,
+          "firstVerse": 1,
+          "lastVerse": 7,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Exodus 17:1–7",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-029",
+      "title": "Battle against Amalek",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Exodus 17:8–16",
+      "sourceParts": [
+        {
+          "reference": "Exodus 17:8–16",
+          "order": 1,
+          "book": "Exodus",
+          "firstChapter": 17,
+          "lastChapter": 17,
+          "firstVerse": 8,
+          "lastVerse": 16,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Exodus 17:8–16",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-030",
+      "title": "Jethro advises Moses",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Exodus 18",
+      "sourceParts": [
+        {
+          "reference": "Exodus 18",
+          "order": 1,
+          "book": "Exodus",
+          "firstChapter": 18,
+          "lastChapter": 18,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Exodus 18",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-031",
+      "title": "The golden calf and Moses' intercession",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Exodus 32–34",
+      "sourceParts": [
+        {
+          "reference": "Exodus 32–34",
+          "order": 1,
+          "book": "Exodus",
+          "firstChapter": 32,
+          "lastChapter": 34,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Exodus 32–34",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-032",
+      "title": "Construction and consecration of the Tabernacle",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Exodus 35–40",
+      "sourceParts": [
+        {
+          "reference": "Exodus 35–40",
+          "order": 1,
+          "book": "Exodus",
+          "firstChapter": 35,
+          "lastChapter": 40,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Exodus 35–40",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "LONG_TECHNICAL_CONSTRUCTION_ACCOUNT",
+      "editorialNote": "Exodus 35–40 includes detailed fabrication, appointment and erection of the Tabernacle; do not advertise every verse as a compact episode.",
+      "scopeWarnings": [
+        "LONG_SOURCE_CHAPTER_RANGE_REQUIRES_EDITORIAL_LIMIT_REVIEW",
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED",
+        "LONG_TECHNICAL_CONSTRUCTION_ACCOUNT"
+      ],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-033",
+      "title": "The seventy elders",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Numbers 11:16–30",
+      "sourceParts": [
+        {
+          "reference": "Numbers 11:16–30",
+          "order": 1,
+          "book": "Numbers",
+          "firstChapter": 11,
+          "lastChapter": 11,
+          "firstVerse": 16,
+          "lastVerse": 30,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Numbers 11:16–30",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-034",
+      "title": "Miriam and Aaron speak against Moses",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Numbers 12",
+      "sourceParts": [
+        {
+          "reference": "Numbers 12",
+          "order": 1,
+          "book": "Numbers",
+          "firstChapter": 12,
+          "lastChapter": 12,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Numbers 12",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-035",
+      "title": "The twelve spies",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Numbers 13–14",
+      "sourceParts": [
+        {
+          "reference": "Numbers 13–14",
+          "order": 1,
+          "book": "Numbers",
+          "firstChapter": 13,
+          "lastChapter": 14,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Numbers 13–14",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-036",
+      "title": "Korah's rebellion",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Numbers 16",
+      "sourceParts": [
+        {
+          "reference": "Numbers 16",
+          "order": 1,
+          "book": "Numbers",
+          "firstChapter": 16,
+          "lastChapter": 16,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Numbers 16",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-037",
+      "title": "Aaron's rod",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Numbers 17",
+      "sourceParts": [
+        {
+          "reference": "Numbers 17",
+          "order": 1,
+          "book": "Numbers",
+          "firstChapter": 17,
+          "lastChapter": 17,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Numbers 17",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-038",
+      "title": "Moses strikes the rock",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Numbers 20:1–13",
+      "sourceParts": [
+        {
+          "reference": "Numbers 20:1–13",
+          "order": 1,
+          "book": "Numbers",
+          "firstChapter": 20,
+          "lastChapter": 20,
+          "firstVerse": 1,
+          "lastVerse": 13,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Numbers 20:1–13",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-039",
+      "title": "The bronze serpent",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Numbers 21:4–9",
+      "sourceParts": [
+        {
+          "reference": "Numbers 21:4–9",
+          "order": 1,
+          "book": "Numbers",
+          "firstChapter": 21,
+          "lastChapter": 21,
+          "firstVerse": 4,
+          "lastVerse": 9,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Numbers 21:4–9",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-040",
+      "title": "Balaam and Balak",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Numbers 22–24",
+      "sourceParts": [
+        {
+          "reference": "Numbers 22–24",
+          "order": 1,
+          "book": "Numbers",
+          "firstChapter": 22,
+          "lastChapter": 24,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Numbers 22–24",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-041",
+      "title": "Crossing the Jordan",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Joshua 3",
+      "sourceParts": [
+        {
+          "reference": "Joshua 3",
+          "order": 1,
+          "book": "Joshua",
+          "firstChapter": 3,
+          "lastChapter": 3,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Joshua 3",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-042",
+      "title": "The fall of Jericho",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Joshua 6",
+      "sourceParts": [
+        {
+          "reference": "Joshua 6",
+          "order": 1,
+          "book": "Joshua",
+          "firstChapter": 6,
+          "lastChapter": 6,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Joshua 6",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-043",
+      "title": "Achan's sin and the defeat at Ai",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Joshua 7",
+      "sourceParts": [
+        {
+          "reference": "Joshua 7",
+          "order": 1,
+          "book": "Joshua",
+          "firstChapter": 7,
+          "lastChapter": 7,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Joshua 7",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-044",
+      "title": "Joshua's farewell and covenant renewal",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Joshua 23–24",
+      "sourceParts": [
+        {
+          "reference": "Joshua 23–24",
+          "order": 1,
+          "book": "Joshua",
+          "firstChapter": 23,
+          "lastChapter": 24,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Joshua 23–24",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-045",
+      "title": "Deborah and Barak",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Judges 4–5",
+      "sourceParts": [
+        {
+          "reference": "Judges 4–5",
+          "order": 1,
+          "book": "Judges",
+          "firstChapter": 4,
+          "lastChapter": 5,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Judges 4–5",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-046",
+      "title": "Gideon's call and victory",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Judges 6–8",
+      "sourceParts": [
+        {
+          "reference": "Judges 6–8",
+          "order": 1,
+          "book": "Judges",
+          "firstChapter": 6,
+          "lastChapter": 8,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Judges 6–8",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-047",
+      "title": "Jephthah",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Judges 11",
+      "sourceParts": [
+        {
+          "reference": "Judges 11",
+          "order": 1,
+          "book": "Judges",
+          "firstChapter": 11,
+          "lastChapter": 11,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Judges 11",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-048",
+      "title": "Samson's birth and exploits",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Judges 13–16",
+      "sourceParts": [
+        {
+          "reference": "Judges 13–16",
+          "order": 1,
+          "book": "Judges",
+          "firstChapter": 13,
+          "lastChapter": 16,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Judges 13–16",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-049",
+      "title": "Samson and Delilah",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Judges 16",
+      "sourceParts": [
+        {
+          "reference": "Judges 16",
+          "order": 1,
+          "book": "Judges",
+          "firstChapter": 16,
+          "lastChapter": 16,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Judges 16",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-050",
+      "title": "Hannah's prayer and Samuel's birth",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "1 Samuel 1–2",
+      "sourceParts": [
+        {
+          "reference": "1 Samuel 1–2",
+          "order": 1,
+          "book": "1Samuel",
+          "firstChapter": 1,
+          "lastChapter": 2,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "1 Samuel 1–2",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-051",
+      "title": "The calling of Samuel",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "1 Samuel 3",
+      "sourceParts": [
+        {
+          "reference": "1 Samuel 3",
+          "order": 1,
+          "book": "1Samuel",
+          "firstChapter": 3,
+          "lastChapter": 3,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "1 Samuel 3",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-052",
+      "title": "Capture and return of the Ark",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "1 Samuel 4–6",
+      "sourceParts": [
+        {
+          "reference": "1 Samuel 4–6",
+          "order": 1,
+          "book": "1Samuel",
+          "firstChapter": 4,
+          "lastChapter": 6,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "1 Samuel 4–6",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-053",
+      "title": "Saul's disobedience and rejection",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "1 Samuel 15",
+      "sourceParts": [
+        {
+          "reference": "1 Samuel 15",
+          "order": 1,
+          "book": "1Samuel",
+          "firstChapter": 15,
+          "lastChapter": 15,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "1 Samuel 15",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-055",
+      "title": "David and Jonathan's friendship",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "1 Samuel 18–20",
+      "sourceParts": [
+        {
+          "reference": "1 Samuel 18–20",
+          "order": 1,
+          "book": "1Samuel",
+          "firstChapter": 18,
+          "lastChapter": 20,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "1 Samuel 18–20",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-057",
+      "title": "David and Abigail",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "1 Samuel 25",
+      "sourceParts": [
+        {
+          "reference": "1 Samuel 25",
+          "order": 1,
+          "book": "1Samuel",
+          "firstChapter": 25,
+          "lastChapter": 25,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "1 Samuel 25",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-058",
+      "title": "Saul and the woman of Endor",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "1 Samuel 28",
+      "sourceParts": [
+        {
+          "reference": "1 Samuel 28",
+          "order": 1,
+          "book": "1Samuel",
+          "firstChapter": 28,
+          "lastChapter": 28,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "1 Samuel 28",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-059",
+      "title": "David and Bathsheba",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "2 Samuel 11–12",
+      "sourceParts": [
+        {
+          "reference": "2 Samuel 11–12",
+          "order": 1,
+          "book": "2Samuel",
+          "firstChapter": 11,
+          "lastChapter": 12,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "2 Samuel 11–12",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-060",
+      "title": "Absalom's rebellion",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "2 Samuel 15–18",
+      "sourceParts": [
+        {
+          "reference": "2 Samuel 15–18",
+          "order": 1,
+          "book": "2Samuel",
+          "firstChapter": 15,
+          "lastChapter": 18,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "2 Samuel 15–18",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-061",
+      "title": "Solomon judges between two women",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "1 Kings 3:16–28",
+      "sourceParts": [
+        {
+          "reference": "1 Kings 3:16–28",
+          "order": 1,
+          "book": "1Kings",
+          "firstChapter": 3,
+          "lastChapter": 3,
+          "firstVerse": 16,
+          "lastVerse": 28,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "1 Kings 3:16–28",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-062",
+      "title": "Queen of Sheba visits Solomon",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "1 Kings 10",
+      "sourceParts": [
+        {
+          "reference": "1 Kings 10",
+          "order": 1,
+          "book": "1Kings",
+          "firstChapter": 10,
+          "lastChapter": 10,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "1 Kings 10",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-063",
+      "title": "Solomon's apostasy",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "1 Kings 11",
+      "sourceParts": [
+        {
+          "reference": "1 Kings 11",
+          "order": 1,
+          "book": "1Kings",
+          "firstChapter": 11,
+          "lastChapter": 11,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "1 Kings 11",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-064",
+      "title": "Elijah and the widow of Sarepta",
+      "primaryCollectionId": "prophets_and_their_lives",
+      "originalInventoryReference": "1 Kings 17",
+      "sourceParts": [
+        {
+          "reference": "1 Kings 17",
+          "order": 1,
+          "book": "1Kings",
+          "firstChapter": 17,
+          "lastChapter": 17,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "1 Kings 17",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "PROPHETIC_NARRATIVES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-065",
+      "title": "Elijah raises the widow's son",
+      "primaryCollectionId": "prophets_and_their_lives",
+      "originalInventoryReference": "1 Kings 17:17–24",
+      "sourceParts": [
+        {
+          "reference": "1 Kings 17:17–24",
+          "order": 1,
+          "book": "1Kings",
+          "firstChapter": 17,
+          "lastChapter": 17,
+          "firstVerse": 17,
+          "lastVerse": 24,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "1 Kings 17:17–24",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "PROPHETIC_NARRATIVES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-066",
+      "title": "Elijah confronts the prophets of Baal",
+      "primaryCollectionId": "prophets_and_their_lives",
+      "originalInventoryReference": "1 Kings 18",
+      "sourceParts": [
+        {
+          "reference": "1 Kings 18",
+          "order": 1,
+          "book": "1Kings",
+          "firstChapter": 18,
+          "lastChapter": 18,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "1 Kings 18",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "literaryFamily": "PROPHETIC_NARRATIVES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-067",
+      "title": "Elijah encounters God at Horeb",
+      "primaryCollectionId": "prophets_and_their_lives",
+      "originalInventoryReference": "1 Kings 19",
+      "sourceParts": [
+        {
+          "reference": "1 Kings 19",
+          "order": 1,
+          "book": "1Kings",
+          "firstChapter": 19,
+          "lastChapter": 19,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "1 Kings 19",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "PROPHETIC_NARRATIVES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-068",
+      "title": "Elijah is taken up to heaven",
+      "primaryCollectionId": "prophets_and_their_lives",
+      "originalInventoryReference": "2 Kings 2",
+      "sourceParts": [
+        {
+          "reference": "2 Kings 2",
+          "order": 1,
+          "book": "2Kings",
+          "firstChapter": 2,
+          "lastChapter": 2,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "2 Kings 2",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "PROPHETIC_NARRATIVES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-069",
+      "title": "Elisha multiplies the widow's oil",
+      "primaryCollectionId": "prophets_and_their_lives",
+      "originalInventoryReference": "2 Kings 4:1–7",
+      "sourceParts": [
+        {
+          "reference": "2 Kings 4:1–7",
+          "order": 1,
+          "book": "2Kings",
+          "firstChapter": 4,
+          "lastChapter": 4,
+          "firstVerse": 1,
+          "lastVerse": 7,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "2 Kings 4:1–7",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "PROPHETIC_NARRATIVES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-070",
+      "title": "Elisha raises the Shunammite's son",
+      "primaryCollectionId": "prophets_and_their_lives",
+      "originalInventoryReference": "2 Kings 4:8–37",
+      "sourceParts": [
+        {
+          "reference": "2 Kings 4:8–37",
+          "order": 1,
+          "book": "2Kings",
+          "firstChapter": 4,
+          "lastChapter": 4,
+          "firstVerse": 8,
+          "lastVerse": 37,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "2 Kings 4:8–37",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "PROPHETIC_NARRATIVES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-071",
+      "title": "Naaman is healed of leprosy",
+      "primaryCollectionId": "prophets_and_their_lives",
+      "originalInventoryReference": "2 Kings 5",
+      "sourceParts": [
+        {
+          "reference": "2 Kings 5",
+          "order": 1,
+          "book": "2Kings",
+          "firstChapter": 5,
+          "lastChapter": 5,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "2 Kings 5",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "PROPHETIC_NARRATIVES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-072",
+      "title": "Isaiah's call and vision of God's holiness",
+      "primaryCollectionId": "prophets_and_their_lives",
+      "originalInventoryReference": "Isaiah 6",
+      "sourceParts": [
+        {
+          "reference": "Isaiah 6",
+          "order": 1,
+          "book": "Isaiah",
+          "firstChapter": 6,
+          "lastChapter": 6,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Isaiah 6",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "literaryFamily": "PROPHETIC_NARRATIVES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-073",
+      "title": "Hezekiah and the Assyrian invasion",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "2 Kings 18–19",
+      "sourceParts": [
+        {
+          "reference": "2 Kings 18–19",
+          "order": 1,
+          "book": "2Kings",
+          "firstChapter": 18,
+          "lastChapter": 19,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "2 Kings 18–19",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-074",
+      "title": "Josiah discovers the Book of the Law",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "2 Kings 22",
+      "sourceParts": [
+        {
+          "reference": "2 Kings 22",
+          "order": 1,
+          "book": "2Kings",
+          "firstChapter": 22,
+          "lastChapter": 22,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "2 Kings 22",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-075",
+      "title": "Josiah renews the covenant",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "2 Kings 23",
+      "sourceParts": [
+        {
+          "reference": "2 Kings 23",
+          "order": 1,
+          "book": "2Kings",
+          "firstChapter": 23,
+          "lastChapter": 23,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "2 Kings 23",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-076",
+      "title": "Jeremiah's Temple sermon",
+      "primaryCollectionId": "prophets_and_their_lives",
+      "originalInventoryReference": "Jeremiah 7",
+      "sourceParts": [
+        {
+          "reference": "Jeremiah 7",
+          "order": 1,
+          "book": "Jeremiah",
+          "firstChapter": 7,
+          "lastChapter": 7,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Jeremiah 7",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "PROPHETIC_NARRATIVES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-078",
+      "title": "Jeremiah purchases a field",
+      "primaryCollectionId": "prophets_and_their_lives",
+      "originalInventoryReference": "Jeremiah 32",
+      "sourceParts": [
+        {
+          "reference": "Jeremiah 32",
+          "order": 1,
+          "book": "Jeremiah",
+          "firstChapter": 32,
+          "lastChapter": 32,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Jeremiah 32",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "PROPHETIC_NARRATIVES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-079",
+      "title": "Ezekiel's vision of God's glory",
+      "primaryCollectionId": "visions_and_revelations",
+      "originalInventoryReference": "Ezekiel 1",
+      "sourceParts": [
+        {
+          "reference": "Ezekiel 1",
+          "order": 1,
+          "book": "Ezekiel",
+          "firstChapter": 1,
+          "lastChapter": 1,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Ezekiel 1",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "VISIONARY_OR_PROPHETIC_MATERIAL",
+      "chronologyStatus": "NOT_FIXED_DATED_SEQUENCE",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-080",
+      "title": "Ezekiel's valley of dry bones",
+      "primaryCollectionId": "visions_and_revelations",
+      "originalInventoryReference": "Ezekiel 37",
+      "sourceParts": [
+        {
+          "reference": "Ezekiel 37",
+          "order": 1,
+          "book": "Ezekiel",
+          "firstChapter": 37,
+          "lastChapter": 37,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Ezekiel 37",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "literaryFamily": "VISIONARY_OR_PROPHETIC_MATERIAL",
+      "chronologyStatus": "NOT_FIXED_DATED_SEQUENCE",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-081",
+      "title": "Jonah and Nineveh",
+      "primaryCollectionId": "prophets_and_their_lives",
+      "originalInventoryReference": "Jonah 1–4",
+      "sourceParts": [
+        {
+          "reference": "Jonah 1–4",
+          "order": 1,
+          "book": "Jonah",
+          "firstChapter": 1,
+          "lastChapter": 4,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Jonah 1–4",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "PROPHETIC_NARRATIVES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-082",
+      "title": "Daniel and his companions at Babylon's court",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Daniel 1",
+      "sourceParts": [
+        {
+          "reference": "Daniel 1",
+          "order": 1,
+          "book": "Daniel",
+          "firstChapter": 1,
+          "lastChapter": 1,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Daniel 1",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [
+        "EDITION_OR_GENRE_SAFEGUARD"
+      ],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-083",
+      "title": "Nebuchadnezzar's dream",
+      "primaryCollectionId": "visions_and_revelations",
+      "originalInventoryReference": "Daniel 2",
+      "sourceParts": [
+        {
+          "reference": "Daniel 2",
+          "order": 1,
+          "book": "Daniel",
+          "firstChapter": 2,
+          "lastChapter": 2,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Daniel 2",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [
+        "EDITION_OR_GENRE_SAFEGUARD"
+      ],
+      "literaryFamily": "VISIONARY_OR_PROPHETIC_MATERIAL",
+      "chronologyStatus": "NOT_FIXED_DATED_SEQUENCE",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-084",
+      "title": "The three young men in the fiery furnace",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Daniel 3",
+      "sourceParts": [
+        {
+          "reference": "Daniel 3",
+          "order": 1,
+          "book": "Daniel",
+          "firstChapter": 3,
+          "lastChapter": 3,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Daniel 3",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [
+        "EDITION_OR_GENRE_SAFEGUARD",
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-085",
+      "title": "Nebuchadnezzar's humiliation",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Daniel 4",
+      "sourceParts": [
+        {
+          "reference": "Daniel 4",
+          "order": 1,
+          "book": "Daniel",
+          "firstChapter": 4,
+          "lastChapter": 4,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Daniel 4",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [
+        "EDITION_OR_GENRE_SAFEGUARD"
+      ],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-086",
+      "title": "Belshazzar's feast and the writing on the wall",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Daniel 5",
+      "sourceParts": [
+        {
+          "reference": "Daniel 5",
+          "order": 1,
+          "book": "Daniel",
+          "firstChapter": 5,
+          "lastChapter": 5,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Daniel 5",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [
+        "EDITION_OR_GENRE_SAFEGUARD"
+      ],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-088",
+      "title": "Susanna's vindication",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Daniel 13",
+      "sourceParts": [
+        {
+          "reference": "Daniel 13",
+          "order": 1,
+          "book": "Daniel",
+          "firstChapter": 13,
+          "lastChapter": 13,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Daniel 13",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [
+        "EDITION_OR_GENRE_SAFEGUARD"
+      ],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-089",
+      "title": "Daniel and Bel",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Daniel 14:1–22",
+      "sourceParts": [
+        {
+          "reference": "Daniel 14:1–22",
+          "order": 1,
+          "book": "Daniel",
+          "firstChapter": 14,
+          "lastChapter": 14,
+          "firstVerse": 1,
+          "lastVerse": 22,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Daniel 14:1–22",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [
+        "EDITION_OR_GENRE_SAFEGUARD"
+      ],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-090",
+      "title": "Daniel and the dragon",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Daniel 14:23–42",
+      "sourceParts": [
+        {
+          "reference": "Daniel 14:23–42",
+          "order": 1,
+          "book": "Daniel",
+          "firstChapter": 14,
+          "lastChapter": 14,
+          "firstVerse": 23,
+          "lastVerse": 42,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Daniel 14:23–42",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [
+        "EDITION_OR_GENRE_SAFEGUARD"
+      ],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-091",
+      "title": "Tobit's trials and blindness",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Tobit 1–3",
+      "sourceParts": [
+        {
+          "reference": "Tobit 1–3",
+          "order": 1,
+          "book": "Tobit",
+          "firstChapter": 1,
+          "lastChapter": 3,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Tobit 1–3",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-096",
+      "title": "Ezra publicly reads the Law",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Nehemiah 8",
+      "sourceParts": [
+        {
+          "reference": "Nehemiah 8",
+          "order": 1,
+          "book": "Nehemiah",
+          "firstChapter": 8,
+          "lastChapter": 8,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Nehemiah 8",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-097",
+      "title": "Nehemiah rebuilds Jerusalem's walls",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Nehemiah 2–6",
+      "sourceParts": [
+        {
+          "reference": "Nehemiah 2–6",
+          "order": 1,
+          "book": "Nehemiah",
+          "firstChapter": 2,
+          "lastChapter": 6,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Nehemiah 2–6",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "LONG_REBUILDING_ACCOUNT",
+      "editorialNote": "Nehemiah 2–6 spans multiple events and participants, not one dramatic scene.",
+      "scopeWarnings": [
+        "LONG_SOURCE_CHAPTER_RANGE_REQUIRES_EDITORIAL_LIMIT_REVIEW",
+        "LONG_REBUILDING_ACCOUNT"
+      ],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-098",
+      "title": "Martyrdom of Eleazar",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "2 Maccabees 6:18–31",
+      "sourceParts": [
+        {
+          "reference": "2 Maccabees 6:18–31",
+          "order": 1,
+          "book": "2Maccabees",
+          "firstChapter": 6,
+          "lastChapter": 6,
+          "firstVerse": 18,
+          "lastVerse": 31,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "2 Maccabees 6:18–31",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-099",
+      "title": "Martyrdom of the seven brothers and their mother",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "2 Maccabees 7",
+      "sourceParts": [
+        {
+          "reference": "2 Maccabees 7",
+          "order": 1,
+          "book": "2Maccabees",
+          "firstChapter": 7,
+          "lastChapter": 7,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "2 Maccabees 7",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-100",
+      "title": "Judas Maccabeus purifies and rededicates the Temple",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "1 Maccabees 4",
+      "sourceParts": [
+        {
+          "reference": "1 Maccabees 4",
+          "order": 1,
+          "book": "1Maccabees",
+          "firstChapter": 4,
+          "lastChapter": 4,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "1 Maccabees 4",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-101",
+      "title": "Prayer and sacrifice for the dead",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "2 Maccabees 12:38–46",
+      "sourceParts": [
+        {
+          "reference": "2 Maccabees 12:38–46",
+          "order": 1,
+          "book": "2Maccabees",
+          "firstChapter": 12,
+          "lastChapter": 12,
+          "firstVerse": 38,
+          "lastVerse": 46,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "2 Maccabees 12:38–46",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-102",
+      "title": "Zachary and the angel Gabriel",
+      "primaryCollectionId": "life_of_christ",
+      "originalInventoryReference": "Luke 1:5–25",
+      "sourceParts": [
+        {
+          "reference": "Luke 1:5–25",
+          "order": 1,
+          "book": "Luke",
+          "firstChapter": 1,
+          "lastChapter": 1,
+          "firstVerse": 5,
+          "lastVerse": 25,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Luke 1:5–25",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-103",
+      "title": "The Visitation",
+      "primaryCollectionId": "life_of_christ",
+      "originalInventoryReference": "Luke 1:39–56",
+      "sourceParts": [
+        {
+          "reference": "Luke 1:39–56",
+          "order": 1,
+          "book": "Luke",
+          "firstChapter": 1,
+          "lastChapter": 1,
+          "firstVerse": 39,
+          "lastVerse": 56,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Luke 1:39–56",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SCRIPTURE_OVERLAP_DISTINCT_THEMATIC_VIEW",
+      "editorialNote": "Visitation Luke 1:39–56 contains the Magnificat also indexed separately. Both point to the same witness verse records.",
+      "scopeWarnings": [
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED",
+        "SCRIPTURE_OVERLAP_DISTINCT_THEMATIC_VIEW"
+      ],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-105",
+      "title": "Birth of St John the Baptist",
+      "primaryCollectionId": "life_of_christ",
+      "originalInventoryReference": "Luke 1:57–66",
+      "sourceParts": [
+        {
+          "reference": "Luke 1:57–66",
+          "order": 1,
+          "book": "Luke",
+          "firstChapter": 1,
+          "lastChapter": 1,
+          "firstVerse": 57,
+          "lastVerse": 66,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Luke 1:57–66",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-107",
+      "title": "Circumcision and naming of Jesus",
+      "primaryCollectionId": "life_of_christ",
+      "originalInventoryReference": "Luke 2:21",
+      "sourceParts": [
+        {
+          "reference": "Luke 2:21",
+          "order": 1,
+          "book": "Luke",
+          "firstChapter": 2,
+          "lastChapter": 2,
+          "firstVerse": 21,
+          "lastVerse": 21,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Luke 2:21",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-108",
+      "title": "Presentation of Jesus in the Temple",
+      "primaryCollectionId": "life_of_christ",
+      "originalInventoryReference": "Luke 2:22–38",
+      "sourceParts": [
+        {
+          "reference": "Luke 2:22–38",
+          "order": 1,
+          "book": "Luke",
+          "firstChapter": 2,
+          "lastChapter": 2,
+          "firstVerse": 22,
+          "lastVerse": 38,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Luke 2:22–38",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-110",
+      "title": "Massacre of the Holy Innocents",
+      "primaryCollectionId": "life_of_christ",
+      "originalInventoryReference": "Matthew 2:16–18",
+      "sourceParts": [
+        {
+          "reference": "Matthew 2:16–18",
+          "order": 1,
+          "book": "Matthew",
+          "firstChapter": 2,
+          "lastChapter": 2,
+          "firstVerse": 16,
+          "lastVerse": 18,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Matthew 2:16–18",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-111",
+      "title": "Flight into Egypt",
+      "primaryCollectionId": "life_of_christ",
+      "originalInventoryReference": "Matthew 2:13–15",
+      "sourceParts": [
+        {
+          "reference": "Matthew 2:13–15",
+          "order": 1,
+          "book": "Matthew",
+          "firstChapter": 2,
+          "lastChapter": 2,
+          "firstVerse": 13,
+          "lastVerse": 15,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Matthew 2:13–15",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-112",
+      "title": "Return from Egypt",
+      "primaryCollectionId": "life_of_christ",
+      "originalInventoryReference": "Matthew 2:19–23",
+      "sourceParts": [
+        {
+          "reference": "Matthew 2:19–23",
+          "order": 1,
+          "book": "Matthew",
+          "firstChapter": 2,
+          "lastChapter": 2,
+          "firstVerse": 19,
+          "lastVerse": 23,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Matthew 2:19–23",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-113",
+      "title": "Twelve-year-old Jesus among the doctors in the Temple",
+      "primaryCollectionId": "life_of_christ",
+      "originalInventoryReference": "Luke 2:41–52",
+      "sourceParts": [
+        {
+          "reference": "Luke 2:41–52",
+          "order": 1,
+          "book": "Luke",
+          "firstChapter": 2,
+          "lastChapter": 2,
+          "firstVerse": 41,
+          "lastVerse": 52,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Luke 2:41–52",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "INTERVENING_SCENE_ALREADY_SEGMENTED",
+      "editorialNote": "Luke 2:41–52 includes the Finding in the Temple and return to Nazareth; distinguish from the hidden-life index.",
+      "scopeWarnings": [
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED",
+        "INTERVENING_SCENE_ALREADY_SEGMENTED"
+      ],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-115",
+      "title": "Forty days and temptations in the wilderness",
+      "primaryCollectionId": "life_of_christ",
+      "originalInventoryReference": "Matthew 4:1–11",
+      "sourceParts": [
+        {
+          "reference": "Matthew 4:1–11",
+          "order": 1,
+          "book": "Matthew",
+          "firstChapter": 4,
+          "lastChapter": 4,
+          "firstVerse": 1,
+          "lastVerse": 11,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Matthew 4:1–11",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-117",
+      "title": "Jesus cleanses the Temple",
+      "primaryCollectionId": "life_of_christ",
+      "originalInventoryReference": "John 2:13–22",
+      "sourceParts": [
+        {
+          "reference": "John 2:13–22",
+          "order": 1,
+          "book": "John",
+          "firstChapter": 2,
+          "lastChapter": 2,
+          "firstVerse": 13,
+          "lastVerse": 22,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "John 2:13–22",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-118",
+      "title": "Nicodemus visits Jesus at night",
+      "primaryCollectionId": "encounters_with_christ",
+      "originalInventoryReference": "John 3:1–21",
+      "sourceParts": [
+        {
+          "reference": "John 3:1–21",
+          "order": 1,
+          "book": "John",
+          "firstChapter": 3,
+          "lastChapter": 3,
+          "firstVerse": 1,
+          "lastVerse": 21,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "John 3:1–21",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-119",
+      "title": "Conversation with the Samaritan woman",
+      "primaryCollectionId": "encounters_with_christ",
+      "originalInventoryReference": "John 4:4–26",
+      "sourceParts": [
+        {
+          "reference": "John 4:4–26",
+          "order": 1,
+          "book": "John",
+          "firstChapter": 4,
+          "lastChapter": 4,
+          "firstVerse": 4,
+          "lastVerse": 26,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "John 4:4–26",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-121",
+      "title": "Calling of Matthew/Levi",
+      "primaryCollectionId": "encounters_with_christ",
+      "originalInventoryReference": "Mark 2:13–17",
+      "sourceParts": [
+        {
+          "reference": "Mark 2:13–17",
+          "order": 1,
+          "book": "Mark",
+          "firstChapter": 2,
+          "lastChapter": 2,
+          "firstVerse": 13,
+          "lastVerse": 17,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Mark 2:13–17",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-122",
+      "title": "Formal appointment of the Twelve",
+      "primaryCollectionId": "life_of_christ",
+      "originalInventoryReference": "Luke 6:12–16",
+      "sourceParts": [
+        {
+          "reference": "Luke 6:12–16",
+          "order": 1,
+          "book": "Luke",
+          "firstChapter": 6,
+          "lastChapter": 6,
+          "firstVerse": 12,
+          "lastVerse": 16,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Luke 6:12–16",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-123",
+      "title": "Rejection of Jesus at Nazareth",
+      "primaryCollectionId": "life_of_christ",
+      "originalInventoryReference": "Luke 4:16–30",
+      "sourceParts": [
+        {
+          "reference": "Luke 4:16–30",
+          "order": 1,
+          "book": "Luke",
+          "firstChapter": 4,
+          "lastChapter": 4,
+          "firstVerse": 16,
+          "lastVerse": 30,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Luke 4:16–30",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-124",
+      "title": "Mission of the Twelve",
+      "primaryCollectionId": "life_of_christ",
+      "originalInventoryReference": "Matthew 10",
+      "sourceParts": [
+        {
+          "reference": "Matthew 10",
+          "order": 1,
+          "book": "Matthew",
+          "firstChapter": 10,
+          "lastChapter": 10,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Matthew 10",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-125",
+      "title": "Mission of the seventy-two disciples",
+      "primaryCollectionId": "life_of_christ",
+      "originalInventoryReference": "Luke 10:1–20",
+      "sourceParts": [
+        {
+          "reference": "Luke 10:1–20",
+          "order": 1,
+          "book": "Luke",
+          "firstChapter": 10,
+          "lastChapter": 10,
+          "firstVerse": 1,
+          "lastVerse": 20,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Luke 10:1–20",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-155",
+      "title": "Mary and Martha",
+      "primaryCollectionId": "encounters_with_christ",
+      "originalInventoryReference": "Luke 10:38–42",
+      "sourceParts": [
+        {
+          "reference": "Luke 10:38–42",
+          "order": 1,
+          "book": "Luke",
+          "firstChapter": 10,
+          "lastChapter": 10,
+          "firstVerse": 38,
+          "lastVerse": 42,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Luke 10:38–42",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-167",
+      "title": "Zacchaeus",
+      "primaryCollectionId": "encounters_with_christ",
+      "originalInventoryReference": "Luke 19:1–10",
+      "sourceParts": [
+        {
+          "reference": "Luke 19:1–10",
+          "order": 1,
+          "book": "Luke",
+          "firstChapter": 19,
+          "lastChapter": 19,
+          "firstVerse": 1,
+          "lastVerse": 10,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Luke 19:1–10",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-168",
+      "title": "Jesus and the sinful woman",
+      "primaryCollectionId": "encounters_with_christ",
+      "originalInventoryReference": "Luke 7:36–50",
+      "sourceParts": [
+        {
+          "reference": "Luke 7:36–50",
+          "order": 1,
+          "book": "Luke",
+          "firstChapter": 7,
+          "lastChapter": 7,
+          "firstVerse": 36,
+          "lastVerse": 50,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Luke 7:36–50",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-170",
+      "title": "The anointing at Bethany",
+      "primaryCollectionId": "encounters_with_christ",
+      "originalInventoryReference": "John 12:1–8",
+      "sourceParts": [
+        {
+          "reference": "John 12:1–8",
+          "order": 1,
+          "book": "John",
+          "firstChapter": 12,
+          "lastChapter": 12,
+          "firstVerse": 1,
+          "lastVerse": 8,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "John 12:1–8",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-174",
+      "title": "Washing of the Apostles' feet",
+      "primaryCollectionId": "life_of_christ",
+      "originalInventoryReference": "John 13:1–17",
+      "sourceParts": [
+        {
+          "reference": "John 13:1–17",
+          "order": 1,
+          "book": "John",
+          "firstChapter": 13,
+          "lastChapter": 13,
+          "firstVerse": 1,
+          "lastVerse": 17,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "John 13:1–17",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-179",
+      "title": "Jesus before Herod Antipas",
+      "primaryCollectionId": "life_of_christ",
+      "originalInventoryReference": "Luke 23:6–12",
+      "sourceParts": [
+        {
+          "reference": "Luke 23:6–12",
+          "order": 1,
+          "book": "Luke",
+          "firstChapter": 23,
+          "lastChapter": 23,
+          "firstVerse": 6,
+          "lastVerse": 12,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Luke 23:6–12",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-180",
+      "title": "Simon of Cyrene and the women of Jerusalem",
+      "primaryCollectionId": "life_of_christ",
+      "originalInventoryReference": "Luke 23:26–31",
+      "sourceParts": [
+        {
+          "reference": "Luke 23:26–31",
+          "order": 1,
+          "book": "Luke",
+          "firstChapter": 23,
+          "lastChapter": 23,
+          "firstVerse": 26,
+          "lastVerse": 31,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Luke 23:26–31",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-181",
+      "title": "The good thief",
+      "primaryCollectionId": "life_of_christ",
+      "originalInventoryReference": "Luke 23:39–43",
+      "sourceParts": [
+        {
+          "reference": "Luke 23:39–43",
+          "order": 1,
+          "book": "Luke",
+          "firstChapter": 23,
+          "lastChapter": 23,
+          "firstVerse": 39,
+          "lastVerse": 43,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Luke 23:39–43",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-182",
+      "title": "The guards at the tomb",
+      "primaryCollectionId": "life_of_christ",
+      "originalInventoryReference": "Matthew 27:62–66",
+      "sourceParts": [
+        {
+          "reference": "Matthew 27:62–66",
+          "order": 1,
+          "book": "Matthew",
+          "firstChapter": 27,
+          "lastChapter": 27,
+          "firstVerse": 62,
+          "lastVerse": 66,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Matthew 27:62–66",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-183",
+      "title": "Angel's announcement to the women",
+      "primaryCollectionId": "life_of_christ",
+      "originalInventoryReference": "Matthew 28:1–10",
+      "sourceParts": [
+        {
+          "reference": "Matthew 28:1–10",
+          "order": 1,
+          "book": "Matthew",
+          "firstChapter": 28,
+          "lastChapter": 28,
+          "firstVerse": 1,
+          "lastVerse": 10,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Matthew 28:1–10",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "RESURRECTION_ACCOUNTS_DISTINCT_CANONICAL_WITNESS",
+      "editorialNote": "Keep Matthew's women-at-tomb testimony distinct from other Gospel accounts.",
+      "scopeWarnings": [
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED",
+        "RESURRECTION_ACCOUNTS_DISTINCT_CANONICAL_WITNESS"
+      ],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-184",
+      "title": "Road to Emmaus",
+      "primaryCollectionId": "life_of_christ",
+      "originalInventoryReference": "Luke 24:13–35",
+      "sourceParts": [
+        {
+          "reference": "Luke 24:13–35",
+          "order": 1,
+          "book": "Luke",
+          "firstChapter": 24,
+          "lastChapter": 24,
+          "firstVerse": 13,
+          "lastVerse": 35,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Luke 24:13–35",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-185",
+      "title": "Jesus eats before the Apostles",
+      "primaryCollectionId": "life_of_christ",
+      "originalInventoryReference": "Luke 24:36–43",
+      "sourceParts": [
+        {
+          "reference": "Luke 24:36–43",
+          "order": 1,
+          "book": "Luke",
+          "firstChapter": 24,
+          "lastChapter": 24,
+          "firstVerse": 36,
+          "lastVerse": 43,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Luke 24:36–43",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-186",
+      "title": "Appearance beside the Sea of Galilee",
+      "primaryCollectionId": "life_of_christ",
+      "originalInventoryReference": "John 21:1–14",
+      "sourceParts": [
+        {
+          "reference": "John 21:1–14",
+          "order": 1,
+          "book": "John",
+          "firstChapter": 21,
+          "lastChapter": 21,
+          "firstVerse": 1,
+          "lastVerse": 14,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "John 21:1–14",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SCENE_CONTAINS_SEPARATELY_INDEXED_MIRACLE",
+      "editorialNote": "John 21:1–14 includes the miraculous catch already separately indexed in John 21:4–11.",
+      "scopeWarnings": [
+        "SCENE_CONTAINS_SEPARATELY_INDEXED_MIRACLE"
+      ],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-188",
+      "title": "Jesus asks Peter three times whether he loves Him",
+      "primaryCollectionId": "encounters_with_christ",
+      "originalInventoryReference": "John 21:15–19",
+      "sourceParts": [
+        {
+          "reference": "John 21:15–19",
+          "order": 1,
+          "book": "John",
+          "firstChapter": 21,
+          "lastChapter": 21,
+          "firstVerse": 15,
+          "lastVerse": 19,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "John 21:15–19",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-189",
+      "title": "Great Commission in Galilee",
+      "primaryCollectionId": "life_of_christ",
+      "originalInventoryReference": "Matthew 28:16–20",
+      "sourceParts": [
+        {
+          "reference": "Matthew 28:16–20",
+          "order": 1,
+          "book": "Matthew",
+          "firstChapter": 28,
+          "lastChapter": 28,
+          "firstVerse": 16,
+          "lastVerse": 20,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Matthew 28:16–20",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-190",
+      "title": "Election of Matthias",
+      "primaryCollectionId": "apostolic_church",
+      "originalInventoryReference": "Acts 1:15–26",
+      "sourceParts": [
+        {
+          "reference": "Acts 1:15–26",
+          "order": 1,
+          "book": "Acts",
+          "firstChapter": 1,
+          "lastChapter": 1,
+          "firstVerse": 15,
+          "lastVerse": 26,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Acts 1:15–26",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-191",
+      "title": "Peter heals the lame man",
+      "primaryCollectionId": "apostolic_church",
+      "originalInventoryReference": "Acts 3:1–10",
+      "sourceParts": [
+        {
+          "reference": "Acts 3:1–10",
+          "order": 1,
+          "book": "Acts",
+          "firstChapter": 3,
+          "lastChapter": 3,
+          "firstVerse": 1,
+          "lastVerse": 10,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Acts 3:1–10",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-192",
+      "title": "Ananias and Sapphira",
+      "primaryCollectionId": "apostolic_church",
+      "originalInventoryReference": "Acts 5:1–11",
+      "sourceParts": [
+        {
+          "reference": "Acts 5:1–11",
+          "order": 1,
+          "book": "Acts",
+          "firstChapter": 5,
+          "lastChapter": 5,
+          "firstVerse": 1,
+          "lastVerse": 11,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Acts 5:1–11",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-193",
+      "title": "Philip baptises the Ethiopian official",
+      "primaryCollectionId": "apostolic_church",
+      "originalInventoryReference": "Acts 8:26–40",
+      "sourceParts": [
+        {
+          "reference": "Acts 8:26–40",
+          "order": 1,
+          "book": "Acts",
+          "firstChapter": 8,
+          "lastChapter": 8,
+          "firstVerse": 26,
+          "lastVerse": 40,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Acts 8:26–40",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-194",
+      "title": "Peter raises Tabitha (Dorcas)",
+      "primaryCollectionId": "apostolic_church",
+      "originalInventoryReference": "Acts 9:36–43",
+      "sourceParts": [
+        {
+          "reference": "Acts 9:36–43",
+          "order": 1,
+          "book": "Acts",
+          "firstChapter": 9,
+          "lastChapter": 9,
+          "firstVerse": 36,
+          "lastVerse": 43,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Acts 9:36–43",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-195",
+      "title": "Peter is released from prison",
+      "primaryCollectionId": "apostolic_church",
+      "originalInventoryReference": "Acts 12:1–19",
+      "sourceParts": [
+        {
+          "reference": "Acts 12:1–19",
+          "order": 1,
+          "book": "Acts",
+          "firstChapter": 12,
+          "lastChapter": 12,
+          "firstVerse": 1,
+          "lastVerse": 19,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Acts 12:1–19",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-196",
+      "title": "Martyrdom of James, brother of John",
+      "primaryCollectionId": "apostolic_church",
+      "originalInventoryReference": "Acts 12:1–2",
+      "sourceParts": [
+        {
+          "reference": "Acts 12:1–2",
+          "order": 1,
+          "book": "Acts",
+          "firstChapter": 12,
+          "lastChapter": 12,
+          "firstVerse": 1,
+          "lastVerse": 2,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Acts 12:1–2",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SCRIPTURE_RANGE_WITH_PARENT_EPISODE_OVERLAP",
+      "editorialNote": "Acts 12:1–2 is contained within Peter's imprisonment narrative index Acts 12:1–19. Do not present it as the same event.",
+      "scopeWarnings": [
+        "SCRIPTURE_RANGE_WITH_PARENT_EPISODE_OVERLAP"
+      ],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-197",
+      "title": "Paul heals a man at Lystra",
+      "primaryCollectionId": "apostolic_church",
+      "originalInventoryReference": "Acts 14:8–18",
+      "sourceParts": [
+        {
+          "reference": "Acts 14:8–18",
+          "order": 1,
+          "book": "Acts",
+          "firstChapter": 14,
+          "lastChapter": 14,
+          "firstVerse": 8,
+          "lastVerse": 18,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Acts 14:8–18",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-198",
+      "title": "Paul meets Lydia",
+      "primaryCollectionId": "apostolic_church",
+      "originalInventoryReference": "Acts 16:11–15",
+      "sourceParts": [
+        {
+          "reference": "Acts 16:11–15",
+          "order": 1,
+          "book": "Acts",
+          "firstChapter": 16,
+          "lastChapter": 16,
+          "firstVerse": 11,
+          "lastVerse": 15,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Acts 16:11–15",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-199",
+      "title": "Paul and Silas are imprisoned at Philippi",
+      "primaryCollectionId": "apostolic_church",
+      "originalInventoryReference": "Acts 16:16–40",
+      "sourceParts": [
+        {
+          "reference": "Acts 16:16–40",
+          "order": 1,
+          "book": "Acts",
+          "firstChapter": 16,
+          "lastChapter": 16,
+          "firstVerse": 16,
+          "lastVerse": 40,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Acts 16:16–40",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-200",
+      "title": "Paul preaches in Thessalonica",
+      "primaryCollectionId": "apostolic_church",
+      "originalInventoryReference": "Acts 17:1–9",
+      "sourceParts": [
+        {
+          "reference": "Acts 17:1–9",
+          "order": 1,
+          "book": "Acts",
+          "firstChapter": 17,
+          "lastChapter": 17,
+          "firstVerse": 1,
+          "lastVerse": 9,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Acts 17:1–9",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-201",
+      "title": "Paul addresses the Areopagus at Athens",
+      "primaryCollectionId": "apostolic_church",
+      "originalInventoryReference": "Acts 17:16–34",
+      "sourceParts": [
+        {
+          "reference": "Acts 17:16–34",
+          "order": 1,
+          "book": "Acts",
+          "firstChapter": 17,
+          "lastChapter": 17,
+          "firstVerse": 16,
+          "lastVerse": 34,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Acts 17:16–34",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-202",
+      "title": "Paul's ministry at Ephesus",
+      "primaryCollectionId": "apostolic_church",
+      "originalInventoryReference": "Acts 19:1–20",
+      "sourceParts": [
+        {
+          "reference": "Acts 19:1–20",
+          "order": 1,
+          "book": "Acts",
+          "firstChapter": 19,
+          "lastChapter": 19,
+          "firstVerse": 1,
+          "lastVerse": 20,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Acts 19:1–20",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-203",
+      "title": "Eutychus at Troas",
+      "primaryCollectionId": "apostolic_church",
+      "originalInventoryReference": "Acts 20:7–12",
+      "sourceParts": [
+        {
+          "reference": "Acts 20:7–12",
+          "order": 1,
+          "book": "Acts",
+          "firstChapter": 20,
+          "lastChapter": 20,
+          "firstVerse": 7,
+          "lastVerse": 12,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Acts 20:7–12",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-204",
+      "title": "Paul's farewell to the elders at Miletus",
+      "primaryCollectionId": "apostolic_church",
+      "originalInventoryReference": "Acts 20:17–38",
+      "sourceParts": [
+        {
+          "reference": "Acts 20:17–38",
+          "order": 1,
+          "book": "Acts",
+          "firstChapter": 20,
+          "lastChapter": 20,
+          "firstVerse": 17,
+          "lastVerse": 38,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Acts 20:17–38",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-205",
+      "title": "Paul's shipwreck",
+      "primaryCollectionId": "apostolic_church",
+      "originalInventoryReference": "Acts 27:13–44",
+      "sourceParts": [
+        {
+          "reference": "Acts 27:13–44",
+          "order": 1,
+          "book": "Acts",
+          "firstChapter": 27,
+          "lastChapter": 27,
+          "firstVerse": 13,
+          "lastVerse": 44,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Acts 27:13–44",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-206",
+      "title": "Paul on Malta",
+      "primaryCollectionId": "apostolic_church",
+      "originalInventoryReference": "Acts 28:1–10",
+      "sourceParts": [
+        {
+          "reference": "Acts 28:1–10",
+          "order": 1,
+          "book": "Acts",
+          "firstChapter": 28,
+          "lastChapter": 28,
+          "firstVerse": 1,
+          "lastVerse": 10,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Acts 28:1–10",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [],
+      "literaryFamily": "SCRIPTURE_EPISODES",
+      "chronologyStatus": "UNVERIFIED_NOT_ASSIGNED",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-207",
+      "title": "John sees the risen Christ on Patmos",
+      "primaryCollectionId": "visions_and_revelations",
+      "originalInventoryReference": "Revelation 1:9–20",
+      "sourceParts": [
+        {
+          "reference": "Revelation 1:9–20",
+          "order": 1,
+          "book": "Revelation",
+          "firstChapter": 1,
+          "lastChapter": 1,
+          "firstVerse": 9,
+          "lastVerse": 20,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Revelation 1:9–20",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "VISION_NOT_EARTHLY_CHRONOLOGY",
+      "editorialNote": "Patmos revelation is introduced with a historical visionary witness, not a date-ordered future chronicle.",
+      "scopeWarnings": [
+        "EDITION_OR_GENRE_SAFEGUARD",
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED",
+        "VISION_NOT_EARTHLY_CHRONOLOGY"
+      ],
+      "literaryFamily": "VISIONARY_OR_PROPHETIC_MATERIAL",
+      "chronologyStatus": "NOT_FIXED_DATED_SEQUENCE",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-208",
+      "title": "Messages to the seven churches",
+      "primaryCollectionId": "visions_and_revelations",
+      "originalInventoryReference": "Revelation 2–3",
+      "sourceParts": [
+        {
+          "reference": "Revelation 2–3",
+          "order": 1,
+          "book": "Revelation",
+          "firstChapter": 2,
+          "lastChapter": 3,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Revelation 2–3",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "MESSAGES_TO_SEVEN_CHURCHES",
+      "editorialNote": "These are prophetic addresses within Revelation, not seven autonomous historical plots.",
+      "scopeWarnings": [
+        "EDITION_OR_GENRE_SAFEGUARD",
+        "MESSAGES_TO_SEVEN_CHURCHES"
+      ],
+      "literaryFamily": "VISIONARY_OR_PROPHETIC_MATERIAL",
+      "chronologyStatus": "NOT_FIXED_DATED_SEQUENCE",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-209",
+      "title": "The heavenly throne and twenty-four elders",
+      "primaryCollectionId": "visions_and_revelations",
+      "originalInventoryReference": "Revelation 4",
+      "sourceParts": [
+        {
+          "reference": "Revelation 4",
+          "order": 1,
+          "book": "Revelation",
+          "firstChapter": 4,
+          "lastChapter": 4,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Revelation 4",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "SOURCE_WINDOW_RETAINED_PROVISIONALLY",
+      "editorialNote": null,
+      "scopeWarnings": [
+        "EDITION_OR_GENRE_SAFEGUARD",
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "literaryFamily": "VISIONARY_OR_PROPHETIC_MATERIAL",
+      "chronologyStatus": "NOT_FIXED_DATED_SEQUENCE",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-210",
+      "title": "Opening of the seven seals",
+      "primaryCollectionId": "visions_and_revelations",
+      "originalInventoryReference": "Revelation 6–8",
+      "sourceParts": [
+        {
+          "reference": "Revelation 6–7",
+          "order": 1,
+          "book": "Revelation",
+          "firstChapter": 6,
+          "lastChapter": 7,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        },
+        {
+          "reference": "Revelation 8:1–5",
+          "order": 2,
+          "book": "Revelation",
+          "firstChapter": 8,
+          "lastChapter": 8,
+          "firstVerse": 1,
+          "lastVerse": 5,
+          "scope": "SAME_VISION_SEQUENCE_DISTINCT_CHAPTER_BOUNDARY"
+        }
+      ],
+      "proposedSourceReference": "Revelation 6–7; Revelation 8:1–5",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "COMPOSITE_SEALS_SEVENTH_SEAL_BOUNDARY",
+      "editorialNote": "The seventh seal opens at Revelation 8:1; verse 8:6 initiates the trumpet sequence. Preserve the boundary rather than presenting trumpet descriptions as part of the seals.",
+      "scopeWarnings": [
+        "EDITION_OR_GENRE_SAFEGUARD",
+        "COMPOSITE_SEALS_SEVENTH_SEAL_BOUNDARY"
+      ],
+      "literaryFamily": "VISIONARY_OR_PROPHETIC_MATERIAL",
+      "chronologyStatus": "NOT_FIXED_DATED_SEQUENCE",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-211",
+      "title": "The seven trumpets",
+      "primaryCollectionId": "visions_and_revelations",
+      "originalInventoryReference": "Revelation 8–11",
+      "sourceParts": [
+        {
+          "reference": "Revelation 8:6–13",
+          "order": 1,
+          "book": "Revelation",
+          "firstChapter": 8,
+          "lastChapter": 8,
+          "firstVerse": 6,
+          "lastVerse": 13,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        },
+        {
+          "reference": "Revelation 9–11",
+          "order": 2,
+          "book": "Revelation",
+          "firstChapter": 9,
+          "lastChapter": 11,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "CONTINUATION_NOT_A_SINGLE_SCENE"
+        }
+      ],
+      "proposedSourceReference": "Revelation 8:6–13; Revelation 9–11",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "TRUMPET_START_EXCLUDES_SEVENTH_SEAL",
+      "editorialNote": "The trumpet sequence starts at Revelation 8:6; Revelation 8:1–5 belongs to the seventh seal. Chapters 9–11 contain interludes and later trumpet material; no claim of uniform action on every verse.",
+      "scopeWarnings": [
+        "EDITION_OR_GENRE_SAFEGUARD",
+        "TRUMPET_START_EXCLUDES_SEVENTH_SEAL"
+      ],
+      "literaryFamily": "VISIONARY_OR_PROPHETIC_MATERIAL",
+      "chronologyStatus": "NOT_FIXED_DATED_SEQUENCE",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-212",
+      "title": "The woman clothed with the sun and the dragon",
+      "primaryCollectionId": "visions_and_revelations",
+      "originalInventoryReference": "Revelation 12",
+      "sourceParts": [
+        {
+          "reference": "Revelation 12",
+          "order": 1,
+          "book": "Revelation",
+          "firstChapter": 12,
+          "lastChapter": 12,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Revelation 12",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "APOCALYPTIC_IMAGE_NOT_DATED_EARTHLY_EVENT",
+      "editorialNote": "The woman, sun and dragon are visionary images; do not turn a patristic reading into a literal contemporary event.",
+      "scopeWarnings": [
+        "EDITION_OR_GENRE_SAFEGUARD",
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED",
+        "APOCALYPTIC_IMAGE_NOT_DATED_EARTHLY_EVENT"
+      ],
+      "literaryFamily": "VISIONARY_OR_PROPHETIC_MATERIAL",
+      "chronologyStatus": "NOT_FIXED_DATED_SEQUENCE",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-213",
+      "title": "The beast from the sea",
+      "primaryCollectionId": "visions_and_revelations",
+      "originalInventoryReference": "Revelation 13",
+      "sourceParts": [
+        {
+          "reference": "Revelation 13:1–10",
+          "order": 1,
+          "book": "Revelation",
+          "firstChapter": 13,
+          "lastChapter": 13,
+          "firstVerse": 1,
+          "lastVerse": 10,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Revelation 13:1–10",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "DISTINCT_VISION_WITH_SHARED_CHAPTER",
+      "editorialNote": "The beast coming from the sea is described in 13:1–10; chapter 13:11 begins the distinct beast from the earth. These are two reading views over one chapter, not two versions of the Scripture text.",
+      "scopeWarnings": [
+        "EDITION_OR_GENRE_SAFEGUARD",
+        "DUPLICATED_OR_SHARED_REFERENCE_WITH_hist-omitted-214",
+        "DISTINCT_VISION_WITH_SHARED_CHAPTER"
+      ],
+      "literaryFamily": "VISIONARY_OR_PROPHETIC_MATERIAL",
+      "chronologyStatus": "NOT_FIXED_DATED_SEQUENCE",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-214",
+      "title": "The beast from the earth",
+      "primaryCollectionId": "visions_and_revelations",
+      "originalInventoryReference": "Revelation 13",
+      "sourceParts": [
+        {
+          "reference": "Revelation 13:11–18",
+          "order": 1,
+          "book": "Revelation",
+          "firstChapter": 13,
+          "lastChapter": 13,
+          "firstVerse": 11,
+          "lastVerse": 18,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Revelation 13:11–18",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "DISTINCT_VISION_WITH_SHARED_CHAPTER",
+      "editorialNote": "The beast from the earth first appears at Revelation 13:11, not 13:1. Keep its source verses separate from the sea beast.",
+      "scopeWarnings": [
+        "EDITION_OR_GENRE_SAFEGUARD",
+        "DUPLICATED_OR_SHARED_REFERENCE_WITH_hist-omitted-213",
+        "DISTINCT_VISION_WITH_SHARED_CHAPTER"
+      ],
+      "literaryFamily": "VISIONARY_OR_PROPHETIC_MATERIAL",
+      "chronologyStatus": "NOT_FIXED_DATED_SEQUENCE",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-215",
+      "title": "The seven last plagues",
+      "primaryCollectionId": "visions_and_revelations",
+      "originalInventoryReference": "Revelation 15–16",
+      "sourceParts": [
+        {
+          "reference": "Revelation 15–16",
+          "order": 1,
+          "book": "Revelation",
+          "firstChapter": 15,
+          "lastChapter": 16,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Revelation 15–16",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "APOCALYPTIC_VISION_SEQUENCE",
+      "editorialNote": "The last plagues are visionary scenes, not a dated earthly itinerary.",
+      "scopeWarnings": [
+        "EDITION_OR_GENRE_SAFEGUARD",
+        "APOCALYPTIC_VISION_SEQUENCE"
+      ],
+      "literaryFamily": "VISIONARY_OR_PROPHETIC_MATERIAL",
+      "chronologyStatus": "NOT_FIXED_DATED_SEQUENCE",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    },
+    {
+      "id": "hist-omitted-216",
+      "title": "The fall of Babylon",
+      "primaryCollectionId": "visions_and_revelations",
+      "originalInventoryReference": "Revelation 17–18",
+      "sourceParts": [
+        {
+          "reference": "Revelation 17–18",
+          "order": 1,
+          "book": "Revelation",
+          "firstChapter": 17,
+          "lastChapter": 18,
+          "firstVerse": null,
+          "lastVerse": null,
+          "scope": "PRIMARY_SOURCE_PASSAGE"
+        }
+      ],
+      "proposedSourceReference": "Revelation 17–18",
+      "reviewStatus": "REFERENCE_AND_GENRE_REVIEW_RESEARCH_ONLY",
+      "reasonCode": "APOCALYPTIC_SYMBOLIC_JUDGMENT",
+      "editorialNote": "Babylon's fall in Revelation is an apocalyptic image and must not automatically become a historical dated city event.",
+      "scopeWarnings": [
+        "EDITION_OR_GENRE_SAFEGUARD",
+        "APOCALYPTIC_SYMBOLIC_JUDGMENT"
+      ],
+      "literaryFamily": "VISIONARY_OR_PROPHETIC_MATERIAL",
+      "chronologyStatus": "NOT_FIXED_DATED_SEQUENCE",
+      "atlasIdentity": null,
+      "canonicalEpisodeId": null,
+      "approvedCovenantalContext": null,
+      "publishApproved": false,
+      "reusedWitnessTextOnly": true
+    }
+  ]
+}
