@@ -11,6 +11,7 @@ on:
       - "tests/scripture-catena-quaestiones-crosswalk.mjs"
       - "tests/scripture-catena-augustine-sequential.mjs"
       - "tests/scripture-catena-eusebius-supplement.mjs"
+      - "tests/scripture-catena-augustine-continuation.mjs"
       - ".github/workflows/living-catena-quaestiones-research.yml"
 
 permissions:
@@ -31,5 +32,7 @@ jobs:
         run: node tests/scripture-catena-quaestiones-crosswalk.mjs
       - name: Verify sequential Augustine source links
         run: node tests/scripture-catena-augustine-sequential.mjs
+      - name: Verify 62-section Augustine continuation and printed-citation quarantine
+        run: node tests/scripture-catena-augustine-continuation.mjs
       - name: Verify Eusebius supplement verse mappings
         run: node tests/scripture-catena-eusebius-supplement.mjs
