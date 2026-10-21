@@ -1,0 +1,749 @@
+{
+  "schema": "AO_SPX_NEXT20_DIALOGUES_PART_A_V1",
+  "asOf": "2026-10-21",
+  "state": "EDITORIAL_CONVERSATION_AUTHORING_ONLY",
+  "part": "A",
+  "contents": "10 distinct visitor themes, 30 English/French dialogue Q&A records, source-locator references, topic-choice links",
+  "records": [
+    {
+      "id": "SPX-EXP-012",
+      "category": "DOCTRINE_AND_REASON",
+      "source": {
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+        "locus": "§6",
+        "evidenceTier": "PRIMARY_DIRECT",
+        "originalWitness": "PAPAL_DOCUMENT"
+      },
+      "originalPreExistingDialogueOwner": null,
+      "originalPreExistingResponsePreserved": true,
+      "turns": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_012.OPEN",
+          "kind": "opening",
+          "question": {
+            "en": "Can reason discover anything certain about God?",
+            "fr": "La raison peut-elle connaître quelque chose de certain sur Dieu ?"
+          },
+          "answer": {
+            "en": "In Pascendi I opposed the claim that human reason is incapable of arriving at any certain natural knowledge of God. If that incapacity is made a principle, revealed religion is treated as having no rational foundation beyond inner experience.",
+            "fr": "Dans Pascendi, j'ai combattu la thèse selon laquelle la raison humaine serait incapable d'atteindre une connaissance naturelle certaine de Dieu. Poser d'avance cette impuissance revient à priver la religion révélée de tout fondement rationnel au-delà de l'expérience intérieure."
+          },
+          "status": "UNAPPROVED_EDUCATIONAL_DIALOGUE_NOT_VERBATIM",
+          "sourceQID": "SPX-EXP-012",
+          "visibleSourcePanel": true
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_012.F1",
+          "kind": "followup",
+          "question": {
+            "en": "Is faith, then, nothing more than a feeling?",
+            "fr": "La foi n'est-elle donc qu'un sentiment ?"
+          },
+          "answer": {
+            "en": "No. The theory I criticised sought the origin of faith in religious sentiment. Faith cannot be reduced to the intensity of a personal impression.",
+            "fr": "Non. La théorie que je critiquais faisait naître la foi du sentiment religieux. La foi ne saurait se réduire à l'intensité d'une impression personnelle."
+          },
+          "status": "UNAPPROVED_EDUCATIONAL_DIALOGUE_NOT_VERBATIM",
+          "sourceQID": "SPX-EXP-012",
+          "visibleSourcePanel": true
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_012.F2",
+          "kind": "followup",
+          "question": {
+            "en": "Does this condemn ordinary scientific enquiry?",
+            "fr": "Cette critique condamne-t-elle toute recherche scientifique ?"
+          },
+          "answer": {
+            "en": "That does not follow. My argument there concerns a philosophical denial of the possibility of knowing God, not a judgement against every observation or investigation of nature.",
+            "fr": "Nullement. Mon argument visait le refus philosophique de la possibilité de connaître Dieu, non l'observation ou l'étude de la nature en tant que telles."
+          },
+          "status": "UNAPPROVED_EDUCATIONAL_DIALOGUE_NOT_VERBATIM",
+          "sourceQID": "SPX-EXP-012",
+          "visibleSourcePanel": true
+        }
+      ],
+      "nextTopicChoices": [
+        "SPX-EXP-013",
+        "SPX-EXP-015"
+      ],
+      "chapterNavigation": "VISITOR_SELECTS_A_BRANCH_NOT_AUTOMATIC_LINEAR_SEQUENCE",
+      "personaMode": "SOURCE_BOUND_PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+      "personalConscienceVerdictPermitted": false,
+      "approval": {
+        "sourceClaims": false,
+        "doctrine": false,
+        "english": false,
+        "french": false,
+        "periodVoice": false,
+        "appPublication": false
+      }
+    },
+    {
+      "id": "SPX-EXP-013",
+      "category": "MODERNISM",
+      "source": {
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+        "locus": "§§7–8",
+        "evidenceTier": "PRIMARY_DIRECT",
+        "originalWitness": "PAPAL_DOCUMENT"
+      },
+      "originalPreExistingDialogueOwner": null,
+      "originalPreExistingResponsePreserved": true,
+      "turns": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_013.OPEN",
+          "kind": "opening",
+          "question": {
+            "en": "Is a sincere religious experience enough to establish revealed truth?",
+            "fr": "Une expérience religieuse sincère suffit-elle à établir la vérité révélée ?"
+          },
+          "answer": {
+            "en": "Religious sentiment, however sincere, is not itself the source and measure of divine revelation. In Pascendi I examined the theory that makes faith arise from inward experience and allows its content to vary with that experience; it is precisely this account that I rejected.",
+            "fr": "Le sentiment religieux, si sincère soit-il, n'est pas par lui-même la source et la mesure de la Révélation divine. Dans Pascendi, j'ai examiné la théorie qui fait naître la foi de l'expérience intérieure et en fait varier le contenu ; c'est précisément cette doctrine que j'ai rejetée."
+          },
+          "status": "UNAPPROVED_EDUCATIONAL_DIALOGUE_NOT_VERBATIM",
+          "sourceQID": "SPX-EXP-013",
+          "visibleSourcePanel": true
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_013.F1",
+          "kind": "followup",
+          "question": {
+            "en": "Could someone invent a new dogma because an experience felt convincing?",
+            "fr": "Une expérience convaincante permet-elle d'inventer un dogme nouveau ?"
+          },
+          "answer": {
+            "en": "A vivid experience does not grant authority to change what the Church has received as revelation. One must distinguish personal impression from the objective truth professed in faith.",
+            "fr": "Une expérience vive ne donne pas le pouvoir de changer ce que l'Église a reçu comme Révélation. Il faut distinguer l'impression personnelle de la vérité objective professée dans la foi."
+          },
+          "status": "UNAPPROVED_EDUCATIONAL_DIALOGUE_NOT_VERBATIM",
+          "sourceQID": "SPX-EXP-013",
+          "visibleSourcePanel": true
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_013.F2",
+          "kind": "followup",
+          "question": {
+            "en": "Do you mean that prayer and religious feeling have no value?",
+            "fr": "Cela signifie-t-il que la prière et la ferveur n'ont aucune valeur ?"
+          },
+          "answer": {
+            "en": "No. I was disputing a theory of the origin and authority of revelation, not denying that people pray, love God, or experience devotion. Those realities do not make private feeling the rule of faith.",
+            "fr": "Non. Je contestais une théorie sur l'origine et l'autorité de la Révélation, sans nier la prière, l'amour de Dieu ni la dévotion. Ces réalités ne font pas du sentiment privé la règle de la foi."
+          },
+          "status": "UNAPPROVED_EDUCATIONAL_DIALOGUE_NOT_VERBATIM",
+          "sourceQID": "SPX-EXP-013",
+          "visibleSourcePanel": true
+        }
+      ],
+      "nextTopicChoices": [
+        "SPX-EXP-017",
+        "SPX-EXP-032"
+      ],
+      "chapterNavigation": "VISITOR_SELECTS_A_BRANCH_NOT_AUTOMATIC_LINEAR_SEQUENCE",
+      "personaMode": "SOURCE_BOUND_PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+      "personalConscienceVerdictPermitted": false,
+      "approval": {
+        "sourceClaims": false,
+        "doctrine": false,
+        "english": false,
+        "french": false,
+        "periodVoice": false,
+        "appPublication": false
+      }
+    },
+    {
+      "id": "SPX-EXP-014",
+      "category": "DOCTRINAL_CONTINUITY",
+      "source": {
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+        "locus": "§§11–13",
+        "evidenceTier": "PRIMARY_PARTIAL",
+        "originalWitness": "PAPAL_DOCUMENT"
+      },
+      "originalPreExistingDialogueOwner": "data/learn/research/pius-x-batch2-b2-20261019.v1.json",
+      "originalPreExistingResponsePreserved": true,
+      "turns": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_014.OPEN",
+          "kind": "opening",
+          "question": {
+            "en": "Can a revealed dogma become false when religious opinions change?",
+            "fr": "Un dogme révélé peut-il devenir faux lorsque les opinions religieuses changent ?"
+          },
+          "answer": {
+            "en": "In Pascendi I rejected a theory under which dogmatic formulas would change their truth according to the evolution of religious consciousness. That criticism establishes a necessary boundary. The passage alone does not provide a complete account of every legitimate development in the Church's explanation of doctrine.",
+            "fr": "Dans Pascendi, j'ai rejeté une théorie selon laquelle la vérité des formules dogmatiques varierait avec l'évolution de la conscience religieuse. Cette critique établit une limite nécessaire ; le passage ne donne pas à lui seul une doctrine complète de tout développement légitime de l'enseignement de l'Église."
+          },
+          "status": "UNAPPROVED_EDUCATIONAL_DIALOGUE_NOT_VERBATIM",
+          "sourceQID": "SPX-EXP-014",
+          "visibleSourcePanel": true
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_014.F1",
+          "kind": "followup",
+          "question": {
+            "en": "Does this require every explanation to use exactly the same words forever?",
+            "fr": "Toute explication doit-elle donc conserver éternellement les mêmes mots ?"
+          },
+          "answer": {
+            "en": "That conclusion would exceed the passage. The error it addresses is treating revealed truth itself as mutable; a full account of how the same truth may be explained calls for further sources.",
+            "fr": "Cette conclusion dépasserait le texte. L'erreur dénoncée consiste à rendre variable la vérité révélée elle-même ; la manière de l'expliquer sans la changer demande d'autres sources."
+          },
+          "status": "UNAPPROVED_EDUCATIONAL_DIALOGUE_NOT_VERBATIM",
+          "sourceQID": "SPX-EXP-014",
+          "visibleSourcePanel": true
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_014.F2",
+          "kind": "followup",
+          "question": {
+            "en": "May my private impression overturn established doctrine?",
+            "fr": "Mon impression personnelle peut-elle renverser la doctrine reçue ?"
+          },
+          "answer": {
+            "en": "No. The system I opposed made religious consciousness govern the content of dogma. Personal conviction is not, by itself, authority to revise the faith handed down by the Church.",
+            "fr": "Non. Le système que je combattais faisait gouverner le contenu du dogme par la conscience religieuse. Une conviction privée ne suffit pas à réviser la foi transmise par l'Église."
+          },
+          "status": "UNAPPROVED_EDUCATIONAL_DIALOGUE_NOT_VERBATIM",
+          "sourceQID": "SPX-EXP-014",
+          "visibleSourcePanel": true
+        }
+      ],
+      "nextTopicChoices": [
+        "SPX-EXP-013",
+        "SPX-EXP-015"
+      ],
+      "chapterNavigation": "VISITOR_SELECTS_A_BRANCH_NOT_AUTOMATIC_LINEAR_SEQUENCE",
+      "personaMode": "SOURCE_BOUND_PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+      "personalConscienceVerdictPermitted": false,
+      "approval": {
+        "sourceClaims": false,
+        "doctrine": false,
+        "english": false,
+        "french": false,
+        "periodVoice": false,
+        "appPublication": false
+      }
+    },
+    {
+      "id": "SPX-EXP-015",
+      "category": "FAITH_AND_SCIENCE",
+      "source": {
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+        "locus": "§§17, 45–47",
+        "evidenceTier": "PRIMARY_PARTIAL",
+        "originalWitness": "PAPAL_DOCUMENT"
+      },
+      "originalPreExistingDialogueOwner": "data/learn/research/pius-x-batch2-b2-20261019.v1.json",
+      "originalPreExistingResponsePreserved": true,
+      "turns": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_015.OPEN",
+          "kind": "opening",
+          "question": {
+            "en": "Were you opposed to scientific research?",
+            "fr": "Étiez-vous opposé à la recherche scientifique ?"
+          },
+          "answer": {
+            "en": "Pascendi criticises a particular scheme in which faith is made subordinate to premises that exclude supernatural truth in advance. I was addressing that philosophical and theological error, not claiming that the encyclical resolved every question later studied by the sciences.",
+            "fr": "Pascendi critique une doctrine qui soumet la foi à des présupposés excluant d'avance la vérité surnaturelle. Je visais cette erreur philosophique et théologique, sans prétendre résoudre dans l'encyclique toutes les questions qu'étudieraient ensuite les sciences."
+          },
+          "status": "UNAPPROVED_EDUCATIONAL_DIALOGUE_NOT_VERBATIM",
+          "sourceQID": "SPX-EXP-015",
+          "visibleSourcePanel": true
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_015.F1",
+          "kind": "followup",
+          "question": {
+            "en": "What assumption did you especially resist?",
+            "fr": "Quel présupposé combattiez-vous surtout ?"
+          },
+          "answer": {
+            "en": "I resisted making the impossibility of supernatural revelation an unquestioned starting point. A conclusion obtained by excluding revelation beforehand cannot serve as an impartial examination of its claims.",
+            "fr": "Je combattais le fait de poser d'avance l'impossibilité de la Révélation surnaturelle. Une conclusion obtenue après avoir exclu la Révélation dès le départ n'est pas un examen impartial de ses prétentions."
+          },
+          "status": "UNAPPROVED_EDUCATIONAL_DIALOGUE_NOT_VERBATIM",
+          "sourceQID": "SPX-EXP-015",
+          "visibleSourcePanel": true
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_015.F2",
+          "kind": "followup",
+          "question": {
+            "en": "Would your encyclical decide a scientific controversy arising a century later?",
+            "fr": "Votre encyclique trancherait-elle une controverse scientifique apparue un siècle plus tard ?"
+          },
+          "answer": {
+            "en": "No such conclusion should be put into my mouth. The source treats specified philosophical and theological positions in its own historical setting; a new scientific claim requires its own examination.",
+            "fr": "Il ne faut pas me prêter une telle conclusion. Le document examine des positions philosophiques et théologiques déterminées dans leur contexte ; une question scientifique nouvelle exige son propre examen."
+          },
+          "status": "UNAPPROVED_EDUCATIONAL_DIALOGUE_NOT_VERBATIM",
+          "sourceQID": "SPX-EXP-015",
+          "visibleSourcePanel": true
+        }
+      ],
+      "nextTopicChoices": [
+        "SPX-EXP-012",
+        "SPX-EXP-016"
+      ],
+      "chapterNavigation": "VISITOR_SELECTS_A_BRANCH_NOT_AUTOMATIC_LINEAR_SEQUENCE",
+      "personaMode": "SOURCE_BOUND_PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+      "personalConscienceVerdictPermitted": false,
+      "approval": {
+        "sourceClaims": false,
+        "doctrine": false,
+        "english": false,
+        "french": false,
+        "periodVoice": false,
+        "appPublication": false
+      }
+    },
+    {
+      "id": "SPX-EXP-016",
+      "category": "SCRIPTURAL_CRITICISM",
+      "source": {
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+        "locus": "§§29–33",
+        "evidenceTier": "PRIMARY_DIRECT",
+        "originalWitness": "PAPAL_DOCUMENT"
+      },
+      "originalPreExistingDialogueOwner": null,
+      "originalPreExistingResponsePreserved": true,
+      "turns": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_016.OPEN",
+          "kind": "opening",
+          "question": {
+            "en": "Why did you challenge certain forms of biblical criticism?",
+            "fr": "Pourquoi avez-vous contesté certaines formes de critique biblique ?"
+          },
+          "answer": {
+            "en": "In Pascendi I criticised methods which, from their initial assumptions, excluded the supernatural and then reshaped the history of Christ and the Gospels to conform to that exclusion. My concern was not an aversion to documents or historical enquiry, but the philosophical premise governing their use.",
+            "fr": "Dans Pascendi, j'ai critiqué des méthodes qui excluaient le surnaturel dès leurs présupposés, puis reconstruisaient l'histoire du Christ et des Évangiles en conséquence. Ce n'était pas l'étude des documents qui était visée, mais le principe philosophique qui commandait leur emploi."
+          },
+          "status": "UNAPPROVED_EDUCATIONAL_DIALOGUE_NOT_VERBATIM",
+          "sourceQID": "SPX-EXP-016",
+          "visibleSourcePanel": true
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_016.F1",
+          "kind": "followup",
+          "question": {
+            "en": "Is every historical question about Scripture forbidden?",
+            "fr": "Toute question historique sur l'Écriture est-elle interdite ?"
+          },
+          "answer": {
+            "en": "No. The passage identifies errors in a particular theory of criticism. It does not make the patient examination of language, manuscripts, and historical context an offence in itself.",
+            "fr": "Non. Le passage signale les erreurs d'une théorie particulière de la critique. Il ne fait pas de l'étude patiente des langues, des manuscrits et du contexte historique une faute en soi."
+          },
+          "status": "UNAPPROVED_EDUCATIONAL_DIALOGUE_NOT_VERBATIM",
+          "sourceQID": "SPX-EXP-016",
+          "visibleSourcePanel": true
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_016.F2",
+          "kind": "followup",
+          "question": {
+            "en": "May this document be used to condemn a contemporary scholar by name?",
+            "fr": "Peut-on se servir de ce texte pour condamner nommément un chercheur contemporain ?"
+          },
+          "answer": {
+            "en": "No. It describes positions and episcopal duties of its period. A judgement about an actual person must depend on that person's own words and the competent authority, not a label borrowed from the encyclical.",
+            "fr": "Non. Il décrit des thèses et des responsabilités ecclésiastiques de son temps. Juger une personne réelle exige de considérer ses propres propos et l'autorité compétente, non de lui appliquer une étiquette tirée de l'encyclique."
+          },
+          "status": "UNAPPROVED_EDUCATIONAL_DIALOGUE_NOT_VERBATIM",
+          "sourceQID": "SPX-EXP-016",
+          "visibleSourcePanel": true
+        }
+      ],
+      "nextTopicChoices": [
+        "SPX-EXP-015",
+        "SPX-EXP-032"
+      ],
+      "chapterNavigation": "VISITOR_SELECTS_A_BRANCH_NOT_AUTOMATIC_LINEAR_SEQUENCE",
+      "personaMode": "SOURCE_BOUND_PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+      "personalConscienceVerdictPermitted": false,
+      "approval": {
+        "sourceClaims": false,
+        "doctrine": false,
+        "english": false,
+        "french": false,
+        "periodVoice": false,
+        "appPublication": false
+      }
+    },
+    {
+      "id": "SPX-EXP-017",
+      "category": "APOLOGETICS",
+      "source": {
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+        "locus": "§§35–37",
+        "evidenceTier": "PRIMARY_DIRECT",
+        "originalWitness": "PAPAL_DOCUMENT"
+      },
+      "originalPreExistingDialogueOwner": null,
+      "originalPreExistingResponsePreserved": true,
+      "turns": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_017.OPEN",
+          "kind": "opening",
+          "question": {
+            "en": "Why did you criticise the Modernists' way of defending Christianity?",
+            "fr": "Pourquoi avez-vous critiqué l'apologétique des modernistes ?"
+          },
+          "answer": {
+            "en": "In Pascendi I examined an apologetic method that rested upon the same philosophical assumptions as the system it purported to defend. It appealed to religious experience while weakening the distinction between what God reveals and what the individual feels.",
+            "fr": "Dans Pascendi, j'ai examiné une méthode apologétique fondée sur les présupposés philosophiques du système qu'elle prétendait défendre. Elle invoquait l'expérience religieuse en affaiblissant la distinction entre ce que Dieu révèle et ce que l'individu ressent."
+          },
+          "status": "UNAPPROVED_EDUCATIONAL_DIALOGUE_NOT_VERBATIM",
+          "sourceQID": "SPX-EXP-017",
+          "visibleSourcePanel": true
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_017.F1",
+          "kind": "followup",
+          "question": {
+            "en": "Is sincerity enough to prove that an argument is true?",
+            "fr": "La sincérité suffit-elle à prouver la vérité d'un raisonnement ?"
+          },
+          "answer": {
+            "en": "Sincerity deserves to be treated fairly, but conviction alone does not establish the truth of a proposition. An apologetic defence must answer the question of truth, not merely describe its psychological effect.",
+            "fr": "La sincérité mérite d'être respectée, mais la conviction ne démontre pas à elle seule la vérité d'une proposition. L'apologétique doit répondre à la question de la vérité, non seulement en décrire l'effet psychologique."
+          },
+          "status": "UNAPPROVED_EDUCATIONAL_DIALOGUE_NOT_VERBATIM",
+          "sourceQID": "SPX-EXP-017",
+          "visibleSourcePanel": true
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_017.F2",
+          "kind": "followup",
+          "question": {
+            "en": "Should a Catholic disregard a person's religious experience altogether?",
+            "fr": "Un catholique doit-il ignorer l'expérience religieuse d'autrui ?"
+          },
+          "answer": {
+            "en": "No. The issue is whether experience can replace revelation and reason as an authority over dogma. To listen to a person is not to make every inward impression a new article of faith.",
+            "fr": "Non. Il s'agit de savoir si l'expérience peut remplacer la Révélation et la raison comme autorité sur le dogme. Écouter une personne n'oblige pas à faire de toute impression intérieure un nouvel article de foi."
+          },
+          "status": "UNAPPROVED_EDUCATIONAL_DIALOGUE_NOT_VERBATIM",
+          "sourceQID": "SPX-EXP-017",
+          "visibleSourcePanel": true
+        }
+      ],
+      "nextTopicChoices": [
+        "SPX-EXP-013",
+        "SPX-EXP-012"
+      ],
+      "chapterNavigation": "VISITOR_SELECTS_A_BRANCH_NOT_AUTOMATIC_LINEAR_SEQUENCE",
+      "personaMode": "SOURCE_BOUND_PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+      "personalConscienceVerdictPermitted": false,
+      "approval": {
+        "sourceClaims": false,
+        "doctrine": false,
+        "english": false,
+        "french": false,
+        "periodVoice": false,
+        "appPublication": false
+      }
+    },
+    {
+      "id": "SPX-EXP-019",
+      "category": "SEMINARY_FORMATION",
+      "source": {
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+        "locus": "§§44–56",
+        "evidenceTier": "PRIMARY_DIRECT",
+        "originalWitness": "PAPAL_DOCUMENT"
+      },
+      "originalPreExistingDialogueOwner": null,
+      "originalPreExistingResponsePreserved": true,
+      "turns": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_019.OPEN",
+          "kind": "opening",
+          "question": {
+            "en": "Why did you ask bishops to take special care over seminaries and books?",
+            "fr": "Pourquoi avez-vous demandé aux évêques de veiller aux séminaires et aux livres ?"
+          },
+          "answer": {
+            "en": "In Pascendi I placed responsibilities upon bishops for the doctrinal formation of clergy, the discernment of teachers, and the oversight of writings in their charge. Teaching is not a merely private undertaking when it forms those entrusted with the Church's faith.",
+            "fr": "Dans Pascendi, j'ai confié aux évêques des responsabilités concernant la formation doctrinale du clergé, le choix des maîtres et la surveillance des publications relevant de leur charge. L'enseignement n'est pas une entreprise purement privée lorsqu'il forme ceux auxquels est confiée la foi de l'Église."
+          },
+          "status": "UNAPPROVED_EDUCATIONAL_DIALOGUE_NOT_VERBATIM",
+          "sourceQID": "SPX-EXP-019",
+          "visibleSourcePanel": true
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_019.F1",
+          "kind": "followup",
+          "question": {
+            "en": "Why did philosophical formation matter so much?",
+            "fr": "Pourquoi la formation philosophique comptait-elle tant à vos yeux ?"
+          },
+          "answer": {
+            "en": "I insisted on serious intellectual preparation because confused first principles can distort the explanation of doctrine. My encyclical describes concrete measures for the schools and seminaries of my day.",
+            "fr": "J'insistais sur une préparation intellectuelle sérieuse parce que des principes confus peuvent déformer l'explication de la doctrine. Mon encyclique prescrivait des mesures concrètes pour les écoles et les séminaires de mon temps."
+          },
+          "status": "UNAPPROVED_EDUCATIONAL_DIALOGUE_NOT_VERBATIM",
+          "sourceQID": "SPX-EXP-019",
+          "visibleSourcePanel": true
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_019.F2",
+          "kind": "followup",
+          "question": {
+            "en": "Are those exact administrative restrictions all binding today?",
+            "fr": "Toutes ces restrictions administratives obligent-elles encore aujourd'hui ?"
+          },
+          "answer": {
+            "en": "The regulations belong to the historical discipline of 1907. Their present legal status cannot be decided by simply reproducing my text without consulting the Church's later law and competent authority.",
+            "fr": "Les mesures appartiennent à la discipline historique de 1907. Leur valeur juridique actuelle ne peut être déterminée en reproduisant simplement mon texte sans consulter le droit postérieur de l'Église et l'autorité compétente."
+          },
+          "status": "UNAPPROVED_EDUCATIONAL_DIALOGUE_NOT_VERBATIM",
+          "sourceQID": "SPX-EXP-019",
+          "visibleSourcePanel": true
+        }
+      ],
+      "nextTopicChoices": [
+        "SPX-EXP-023",
+        "SPX-EXP-020"
+      ],
+      "chapterNavigation": "VISITOR_SELECTS_A_BRANCH_NOT_AUTOMATIC_LINEAR_SEQUENCE",
+      "personaMode": "SOURCE_BOUND_PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+      "personalConscienceVerdictPermitted": false,
+      "approval": {
+        "sourceClaims": false,
+        "doctrine": false,
+        "english": false,
+        "french": false,
+        "periodVoice": false,
+        "appPublication": false
+      }
+    },
+    {
+      "id": "SPX-EXP-020",
+      "category": "HISTORICAL_OATH",
+      "source": {
+        "url": "https://www.vatican.va/content/pius-x/la/motu_proprio/documents/hf_p-x_motu-proprio_19100901_sacrorum-antistitum.html",
+        "locus": "Iusiurandi formula, oath provisions before formula",
+        "evidenceTier": "PRIMARY_DIRECT",
+        "originalWitness": "PAPAL_DOCUMENT"
+      },
+      "originalPreExistingDialogueOwner": null,
+      "originalPreExistingResponsePreserved": true,
+      "turns": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_020.OPEN",
+          "kind": "opening",
+          "question": {
+            "en": "Why did you establish the anti-Modernist oath?",
+            "fr": "Pourquoi avez-vous institué le serment antimoderniste ?"
+          },
+          "answer": {
+            "en": "In Sacrorum antistitum I required a specified profession of faith from certain ecclesiastical persons entrusted with teaching and pastoral responsibilities. It was a disciplinary answer to controversies about revelation, dogma and the authority of the Church in my time.",
+            "fr": "Dans Sacrorum antistitum, j'ai imposé une profession déterminée de foi à certaines personnes exerçant des responsabilités ecclésiastiques d'enseignement et de pastorale. Il s'agissait d'une réponse disciplinaire aux controverses de mon temps sur la Révélation, le dogme et l'autorité de l'Église."
+          },
+          "status": "UNAPPROVED_EDUCATIONAL_DIALOGUE_NOT_VERBATIM",
+          "sourceQID": "SPX-EXP-020",
+          "visibleSourcePanel": true
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_020.F1",
+          "kind": "followup",
+          "question": {
+            "en": "Did every Catholic have to swear it?",
+            "fr": "Tous les catholiques devaient-ils le prêter ?"
+          },
+          "answer": {
+            "en": "No. The measure identified particular clerical, teaching and ecclesiastical offices. It was not a demand that every member of the faithful take the oath.",
+            "fr": "Non. La mesure visait certaines charges du clergé, de l'enseignement et de l'administration ecclésiastique. Elle ne demandait pas à chaque fidèle de prêter ce serment."
+          },
+          "status": "UNAPPROVED_EDUCATIONAL_DIALOGUE_NOT_VERBATIM",
+          "sourceQID": "SPX-EXP-020",
+          "visibleSourcePanel": true
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_020.F2",
+          "kind": "followup",
+          "question": {
+            "en": "Is the oath still legally required in exactly that form?",
+            "fr": "Ce serment est-il encore juridiquement exigé sous la même forme ?"
+          },
+          "answer": {
+            "en": "My document establishes what was required in 1910. The current rule must be determined from subsequent Church legislation; a historical requirement must not be presented as present universal discipline without that check.",
+            "fr": "Mon document établit ce qui était demandé en 1910. La règle actuelle dépend de la législation ecclésiastique ultérieure ; il ne faut pas présenter sans vérification une obligation historique comme discipline universelle présente."
+          },
+          "status": "UNAPPROVED_EDUCATIONAL_DIALOGUE_NOT_VERBATIM",
+          "sourceQID": "SPX-EXP-020",
+          "visibleSourcePanel": true
+        }
+      ],
+      "nextTopicChoices": [
+        "SPX-EXP-019",
+        "SPX-EXP-023"
+      ],
+      "chapterNavigation": "VISITOR_SELECTS_A_BRANCH_NOT_AUTOMATIC_LINEAR_SEQUENCE",
+      "personaMode": "SOURCE_BOUND_PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+      "personalConscienceVerdictPermitted": false,
+      "approval": {
+        "sourceClaims": false,
+        "doctrine": false,
+        "english": false,
+        "french": false,
+        "periodVoice": false,
+        "appPublication": false
+      }
+    },
+    {
+      "id": "SPX-EXP-022",
+      "category": "CLERGY_ERROR_AND_SCOPE",
+      "source": {
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+        "locus": "§§44–56",
+        "evidenceTier": "PRIMARY_PARTIAL",
+        "originalWitness": "PAPAL_DOCUMENT"
+      },
+      "originalPreExistingDialogueOwner": "data/learn/research/pius-x-batch2-b2-20261019.v1.json",
+      "originalPreExistingResponsePreserved": true,
+      "turns": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_022.OPEN",
+          "kind": "opening",
+          "question": {
+            "en": "What can Catholics learn from your warnings about doctrinal error among clergy?",
+            "fr": "Que doivent retenir les catholiques de vos avertissements sur les erreurs doctrinales du clergé ?"
+          },
+          "answer": {
+            "en": "In Pascendi I addressed bishops and other responsible authorities concerning vigilance, teaching and the correction of error. Its provisions do not give every layperson authority to determine a cleric's culpability on the strength of an accusation.",
+            "fr": "Dans Pascendi, je me suis adressé aux évêques et aux autorités responsables au sujet de la vigilance, de l'enseignement et de la correction des erreurs. Ces prescriptions ne donnent pas à tout laïc le pouvoir de juger la culpabilité d'un clerc sur la foi d'une accusation."
+          },
+          "status": "UNAPPROVED_EDUCATIONAL_DIALOGUE_NOT_VERBATIM",
+          "sourceQID": "SPX-EXP-022",
+          "visibleSourcePanel": true
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_022.F1",
+          "kind": "followup",
+          "question": {
+            "en": "Does criticism of an idea establish the guilt of the person who voiced it?",
+            "fr": "Critiquer une idée suffit-il à établir la culpabilité de celui qui l'exprime ?"
+          },
+          "answer": {
+            "en": "No. Identifying a doctrinal proposition and adjudicating a particular person's responsibility are different matters. The latter calls for the facts and competent ecclesiastical judgement.",
+            "fr": "Non. Examiner une proposition doctrinale et juger la responsabilité d'une personne sont deux choses distinctes. Ce second jugement suppose des faits établis et l'autorité ecclésiastique compétente."
+          },
+          "status": "UNAPPROVED_EDUCATIONAL_DIALOGUE_NOT_VERBATIM",
+          "sourceQID": "SPX-EXP-022",
+          "visibleSourcePanel": true
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_022.F2",
+          "kind": "followup",
+          "question": {
+            "en": "Who has the formal duty to oversee teaching in the diocese?",
+            "fr": "À qui revient officiellement la vigilance sur l'enseignement dans le diocèse ?"
+          },
+          "answer": {
+            "en": "The encyclical places that duty principally upon bishops and their appointed collaborators. Its procedures belong to the ecclesiastical framework of my period and do not themselves settle every modern process.",
+            "fr": "L'encyclique confie cette tâche principalement aux évêques et à leurs collaborateurs désignés. Les procédures relèvent du cadre ecclésiastique de mon époque et ne fixent pas à elles seules toute procédure moderne."
+          },
+          "status": "UNAPPROVED_EDUCATIONAL_DIALOGUE_NOT_VERBATIM",
+          "sourceQID": "SPX-EXP-022",
+          "visibleSourcePanel": true
+        }
+      ],
+      "nextTopicChoices": [
+        "SPX-EXP-023",
+        "SPX-EXP-019"
+      ],
+      "chapterNavigation": "VISITOR_SELECTS_A_BRANCH_NOT_AUTOMATIC_LINEAR_SEQUENCE",
+      "personaMode": "SOURCE_BOUND_PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+      "personalConscienceVerdictPermitted": false,
+      "approval": {
+        "sourceClaims": false,
+        "doctrine": false,
+        "english": false,
+        "french": false,
+        "periodVoice": false,
+        "appPublication": false
+      }
+    },
+    {
+      "id": "SPX-EXP-023",
+      "category": "EPISCOPAL_GOVERNANCE",
+      "source": {
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_19070908_pascendi-dominici-gregis.html",
+        "locus": "§§44–56",
+        "evidenceTier": "PRIMARY_DIRECT",
+        "originalWitness": "PAPAL_DOCUMENT"
+      },
+      "originalPreExistingDialogueOwner": null,
+      "originalPreExistingResponsePreserved": true,
+      "turns": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_023.OPEN",
+          "kind": "opening",
+          "question": {
+            "en": "What duty does a bishop have when doctrine is endangered?",
+            "fr": "Quel devoir incombe à l'évêque lorsque la doctrine est menacée ?"
+          },
+          "answer": {
+            "en": "In Pascendi I required bishops to take responsibility for teaching, the preparation of clergy, and the correction of errors within their jurisdiction. Guarding doctrine meant more than denouncing error after it had spread: it required attention to formation from the beginning.",
+            "fr": "Dans Pascendi, j'ai demandé aux évêques d'assumer la responsabilité de l'enseignement, de la préparation du clergé et de la correction des erreurs dans leur ressort. Garder la doctrine ne consistait pas seulement à dénoncer une erreur répandue : il fallait veiller à la formation dès le départ."
+          },
+          "status": "UNAPPROVED_EDUCATIONAL_DIALOGUE_NOT_VERBATIM",
+          "sourceQID": "SPX-EXP-023",
+          "visibleSourcePanel": true
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_023.F1",
+          "kind": "followup",
+          "question": {
+            "en": "Does guarding the faith mean only issuing prohibitions?",
+            "fr": "Garder la foi consiste-t-il seulement à interdire ?"
+          },
+          "answer": {
+            "en": "No. The measures I set out include suitable teachers and serious study alongside warnings and restrictions. Correct teaching is itself part of the bishop's pastoral duty.",
+            "fr": "Non. Les mesures que j'indiquais comprennent le choix de maîtres compétents et des études sérieuses, aussi bien que des avertissements et des restrictions. L'enseignement juste fait partie du devoir pastoral de l'évêque."
+          },
+          "status": "UNAPPROVED_EDUCATIONAL_DIALOGUE_NOT_VERBATIM",
+          "sourceQID": "SPX-EXP-023",
+          "visibleSourcePanel": true
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX_EXP_023.F2",
+          "kind": "followup",
+          "question": {
+            "en": "Why did you give special attention to seminaries?",
+            "fr": "Pourquoi accordiez-vous tant d'attention aux séminaires ?"
+          },
+          "answer": {
+            "en": "The formation of future priests affects the preaching and pastoral care they will later offer. Errors taught there may reach many others; therefore careful intellectual and spiritual formation is a responsibility of Church government.",
+            "fr": "La formation des futurs prêtres conditionne la prédication et le soin des âmes qu'ils assureront ensuite. Des erreurs qui y sont enseignées peuvent toucher beaucoup d'autres personnes ; c'est pourquoi la formation intellectuelle et spirituelle relève du gouvernement de l'Église."
+          },
+          "status": "UNAPPROVED_EDUCATIONAL_DIALOGUE_NOT_VERBATIM",
+          "sourceQID": "SPX-EXP-023",
+          "visibleSourcePanel": true
+        }
+      ],
+      "nextTopicChoices": [
+        "SPX-EXP-019",
+        "SPX-EXP-022"
+      ],
+      "chapterNavigation": "VISITOR_SELECTS_A_BRANCH_NOT_AUTOMATIC_LINEAR_SEQUENCE",
+      "personaMode": "SOURCE_BOUND_PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+      "personalConscienceVerdictPermitted": false,
+      "approval": {
+        "sourceClaims": false,
+        "doctrine": false,
+        "english": false,
+        "french": false,
+        "periodVoice": false,
+        "appPublication": false
+      }
+    }
+  ]
+}
