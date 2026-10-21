@@ -38,6 +38,7 @@ jobs:
           node tests/historia-thematic-collections.mjs
           node tests/historia-thematic-inapp-bridge.mjs
           node tests/historia-thematic-reciprocal-navigation.mjs
+          node tests/historia-thematic-expansion-preflight.mjs
   browser:
     needs: node-contracts
     runs-on: ubuntu-latest
