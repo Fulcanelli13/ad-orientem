@@ -848,7 +848,7 @@ await import("./explore-first-load-recovery.mjs");
 
 const mediaRegistry=readJson("data/geography/approved-place-media.v1.json");
 assert.equal(mediaRegistry.schema,"AO_APPROVED_PLACE_MEDIA_V1");
-assert.equal(mediaRegistry.items.length,24,"All twenty-four independently approved physical-site photographs should be published");
+assert.equal(mediaRegistry.items.length,31,"All twenty-four independently approved physical-site photographs should be published");
 const mediaFixture={
   place_id:"place:FR:lourdes",status:"APPROVED",asset_path:"assets/places/lourdes.webp",
   source_url:"https://example.org/photograph",credit:"Photographer Name",license:"CC-BY-4.0",

@@ -33,16 +33,16 @@
     "christologicalShrines": 30,
     "otherShrines": 3,
     "shrineGuides": 33,
-    "shrineApprovedHero": 24,
-    "shrineGuideAndHero": 24,
+    "shrineApprovedHero": 31,
+    "shrineGuideAndHero": 31,
     "marianGuides": 22,
-    "marianApprovedHero": 14,
+    "marianApprovedHero": 21,
     "pilgrimages": 240,
     "destinationPilgrimages": 207,
     "annualPilgrimages": 33,
     "routes": 20,
     "apparitions": 33,
-    "approvedSitePhotos": 24
+    "approvedSitePhotos": 31
   },
   "shrines": [
     {
@@ -301,14 +301,14 @@
       "intro_en": true,
       "intro_fr": true,
       "detailed_guide": "PUBLISHED",
-      "hero_media": "MISSING_APPROVED",
-      "hero_asset_path": null,
+      "hero_media": "APPROVED_LOCAL",
+      "hero_asset_path": "assets/approved/place-media/AT-mariazell-basilica.webp",
       "approved_gallery_count": 0,
       "pilgrimage_ids": [
         "pilgrimage:AT:mariazell-destination"
       ],
       "apparition_ids": [],
-      "next_editorial_action": "FIND_AND_LICENSE_EXACT_SITE_PHOTO"
+      "next_editorial_action": "QA_RELEASED_FOLIO"
     },
     {
       "shrine_id": "shrine:AT:maria-taferl-sorrowful-mother",
@@ -394,8 +394,8 @@
       "intro_en": true,
       "intro_fr": true,
       "detailed_guide": "PUBLISHED",
-      "hero_media": "MISSING_APPROVED",
-      "hero_asset_path": null,
+      "hero_media": "APPROVED_LOCAL",
+      "hero_asset_path": "assets/approved/place-media/US-champion-shrine.webp",
       "approved_gallery_count": 0,
       "pilgrimage_ids": [
         "pilgrimage:US:champion-destination",
@@ -405,7 +405,7 @@
       "apparition_ids": [
         "apparition:US:champion"
       ],
-      "next_editorial_action": "FIND_AND_LICENSE_EXACT_SITE_PHOTO"
+      "next_editorial_action": "QA_RELEASED_FOLIO"
     },
     {
       "shrine_id": "shrine:US:guadalupe-la-crosse",
@@ -607,14 +607,14 @@
       "intro_en": true,
       "intro_fr": true,
       "detailed_guide": "PUBLISHED",
-      "hero_media": "MISSING_APPROVED",
-      "hero_asset_path": null,
+      "hero_media": "APPROVED_LOCAL",
+      "hero_asset_path": "assets/approved/place-media/PL-kalwaria-zebrzydowska.webp",
       "approved_gallery_count": 0,
       "pilgrimage_ids": [
         "pilgrimage:PL:kalwaria-destination"
       ],
       "apparition_ids": [],
-      "next_editorial_action": "FIND_AND_LICENSE_EXACT_SITE_PHOTO"
+      "next_editorial_action": "QA_RELEASED_FOLIO"
     },
     {
       "shrine_id": "shrine:GB:walsingham-our-lady",
@@ -630,15 +630,15 @@
       "intro_en": true,
       "intro_fr": true,
       "detailed_guide": "PUBLISHED",
-      "hero_media": "MISSING_APPROVED",
-      "hero_asset_path": null,
+      "hero_media": "APPROVED_LOCAL",
+      "hero_asset_path": "assets/approved/place-media/GB-walsingham-catholic-shrine.webp",
       "approved_gallery_count": 0,
       "pilgrimage_ids": [
         "pilgrimage:GB:walsingham-destination",
         "pilgrimage:GB:walsingham-lms"
       ],
       "apparition_ids": [],
-      "next_editorial_action": "FIND_AND_LICENSE_EXACT_SITE_PHOTO"
+      "next_editorial_action": "QA_RELEASED_FOLIO"
     },
     {
       "shrine_id": "shrine:GB:holywell-st-winefride",
@@ -958,14 +958,14 @@
       "intro_en": true,
       "intro_fr": true,
       "detailed_guide": "PUBLISHED",
-      "hero_media": "MISSING_APPROVED",
-      "hero_asset_path": null,
+      "hero_media": "APPROVED_LOCAL",
+      "hero_asset_path": "assets/approved/place-media/CO-las-lajas-ipiales.webp",
       "approved_gallery_count": 0,
       "pilgrimage_ids": [
         "pilgrimage:CO:las-lajas-destination"
       ],
       "apparition_ids": [],
-      "next_editorial_action": "FIND_AND_LICENSE_EXACT_SITE_PHOTO"
+      "next_editorial_action": "QA_RELEASED_FOLIO"
     },
     {
       "shrine_id": "shrine:CO:chiquinquira",
@@ -4408,12 +4408,12 @@
       "intro_en": true,
       "intro_fr": true,
       "detailed_guide": "PUBLISHED",
-      "hero_media": "MISSING_APPROVED",
-      "hero_asset_path": null,
+      "hero_media": "APPROVED_LOCAL",
+      "hero_asset_path": "assets/approved/place-media/IN-basilica-of-our-lady-of-good-health-vailankanni.webp",
       "approved_gallery_count": 0,
       "pilgrimage_ids": [],
       "apparition_ids": [],
-      "next_editorial_action": "FIND_AND_LICENSE_EXACT_SITE_PHOTO"
+      "next_editorial_action": "QA_RELEASED_FOLIO"
     },
     {
       "shrine_id": "shrine:IN:basilica-of-our-lady-of-lourdes-poondi",
@@ -4765,12 +4765,12 @@
       "intro_en": true,
       "intro_fr": true,
       "detailed_guide": "PUBLISHED",
-      "hero_media": "MISSING_APPROVED",
-      "hero_asset_path": null,
+      "hero_media": "APPROVED_LOCAL",
+      "hero_asset_path": "assets/approved/place-media/HR-national-shrine-of-our-lady-of-marija-bistrica.webp",
       "approved_gallery_count": 0,
       "pilgrimage_ids": [],
       "apparition_ids": [],
-      "next_editorial_action": "FIND_AND_LICENSE_EXACT_SITE_PHOTO"
+      "next_editorial_action": "QA_RELEASED_FOLIO"
     },
     {
       "shrine_id": "shrine:IL:church-of-the-primacy-of-saint-peter-tabgha",
@@ -6165,7 +6165,7 @@
       "route_ids": [],
       "source_count": 2,
       "narrative": "DESTINATION_GUIDE_PUBLISHED",
-      "destination_hero": "NO_APPROVED_DESTINATION_PHOTO",
+      "destination_hero": "APPROVED_LOCAL",
       "canonical_temporal_links": [
         "temporal:mariazell:pilgrimage-season"
       ]
@@ -6231,7 +6231,7 @@
       "route_ids": [],
       "source_count": 1,
       "narrative": "DESTINATION_GUIDE_PUBLISHED",
-      "destination_hero": "NO_APPROVED_DESTINATION_PHOTO",
+      "destination_hero": "APPROVED_LOCAL",
       "canonical_temporal_links": []
     },
     {
@@ -6243,7 +6243,7 @@
       "route_ids": [],
       "source_count": 1,
       "narrative": "DESTINATION_GUIDE_PUBLISHED",
-      "destination_hero": "NO_APPROVED_DESTINATION_PHOTO",
+      "destination_hero": "APPROVED_LOCAL",
       "canonical_temporal_links": [
         "temporal:champion:solemnity"
       ]
@@ -6259,7 +6259,7 @@
       ],
       "source_count": 1,
       "narrative": "DESTINATION_GUIDE_PUBLISHED",
-      "destination_hero": "NO_APPROVED_DESTINATION_PHOTO",
+      "destination_hero": "APPROVED_LOCAL",
       "canonical_temporal_links": [
         "temporal:champion:walk-to-mary"
       ]
@@ -6411,7 +6411,7 @@
       "route_ids": [],
       "source_count": 2,
       "narrative": "DESTINATION_GUIDE_PUBLISHED",
-      "destination_hero": "NO_APPROVED_DESTINATION_PHOTO",
+      "destination_hero": "APPROVED_LOCAL",
       "canonical_temporal_links": [
         "temporal:kalwaria:assumption"
       ]
@@ -6425,7 +6425,7 @@
       "route_ids": [],
       "source_count": 2,
       "narrative": "DESTINATION_GUIDE_PUBLISHED",
-      "destination_hero": "NO_APPROVED_DESTINATION_PHOTO",
+      "destination_hero": "APPROVED_LOCAL",
       "canonical_temporal_links": [
         "temporal:walsingham:our-lady-feast"
       ]
@@ -6441,7 +6441,7 @@
       ],
       "source_count": 2,
       "narrative": "DESTINATION_GUIDE_PUBLISHED",
-      "destination_hero": "NO_APPROVED_DESTINATION_PHOTO",
+      "destination_hero": "APPROVED_LOCAL",
       "canonical_temporal_links": [
         "temporal:walsingham:lms-walk"
       ]
@@ -6683,7 +6683,7 @@
       "route_ids": [],
       "source_count": 2,
       "narrative": "DESTINATION_GUIDE_PUBLISHED",
-      "destination_hero": "NO_APPROVED_DESTINATION_PHOTO",
+      "destination_hero": "APPROVED_LOCAL",
       "canonical_temporal_links": [
         "temporal:las-lajas:sep15"
       ]

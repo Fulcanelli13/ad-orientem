@@ -113,7 +113,7 @@ try{
   assert.deepEqual(errors,[],"Browser JavaScript errors at "+width);
   await context.close();
  }
- console.log("PASS: 25 real Place folios × 2 phone widths: 17 existing photo-backed and eight new bilingual-source guides without borrowed artwork.");
+ console.log("PASS: 25 real Place folios × 2 phone widths: 17 existing photos and seven newly approved site photos; Banneux holds its photograph.");
 }finally{
  if(browser)await browser.close();
  await new Promise(done=>server.close(done));

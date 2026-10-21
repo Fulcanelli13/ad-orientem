@@ -36,8 +36,8 @@ assert.deepEqual([...new Set(ledger.apparitionSites.map(x=>x.apparition_id))].so
  phenomena.apparitions.map(x=>x.id).sort());
 assert.equal(ledger.summary.marianShrines,118);
 assert.equal(ledger.summary.shrineGuides,33);
-assert.equal(ledger.summary.shrineApprovedHero,24);
-assert.equal(images.items.length,24,"Approved photo registry count must match source ledger");
+assert.equal(ledger.summary.shrineApprovedHero,31);
+assert.equal(images.items.length,31,"Approved photo registry count must match source ledger");
 for(const item of images.items){
  assert.ok(item.status==="APPROVED"&&item.rights_verified&&item.subject_verified&&item.crop_reviewed);
  assert.ok(/^https:\/\//.test(item.source_url)&&/^https:\/\//.test(item.license_url));
@@ -48,7 +48,7 @@ for(const item of images.items){
  assert.equal(actual,item.derivative_sha256,"Approved photo derivative was changed: "+item.place_id);
 }
 
-assert.equal(ledger.summary.shrineGuideAndHero,24);
+assert.equal(ledger.summary.shrineGuideAndHero,31);
 assert.equal(ledger.summary.marianGuides,22);
 assert.equal(allGuides.length,33);
 assert.equal(new Set(allGuides.map(x=>x.place_id)).size,33,"No duplicate Place guide ownership");
@@ -106,8 +106,8 @@ for(const g of [...newGuides.guides,...newSaintGuides.guides]){
 for(const g of globalMarianB2.guides){
  assert.ok(knownPlaces.has(g.place_id)&&g.publication==="PUBLISHED");
  assert.equal(g.image_policy,"USE_APPROVED_PLACE_MEDIA_ONLY");
- assert.equal(imageByPlace.has(g.place_id),false,
-   "Research-only photograph must not be treated as approved for "+g.place_id);
+ assert.equal(imageByPlace.has(g.place_id),g.place_id!=="place:BE:banneux",
+   "Seven photographed sanctuaries and one genuine Banneux photo hold expected");
  const shr=canonical.shrines.filter(x=>x.place_id===g.place_id);
  assert.equal(shr.length,1,"Marian guide must join exactly one existing shrine");
  assert.equal(shr[0].shrine_kind,"MARIAN");
@@ -136,4 +136,4 @@ assert.match(loader,/safeArray\(illustratedGlobalSaintsR1\?\.guides\)/);
 assert.ok(ledger.shrines.every(s=>s.place_verified&&s.geo_available&&s.source_count>0));
 assert.ok(ledger.pilgrimages.every(p=>p.source_count>0&&
  (!p.destination_shrine_id||shrineIds.has(p.destination_shrine_id))));
-console.log("PASS: 257 shrines, 118 Marian, 240 pilgrimages, 20 routes, 33 apparition records, 33 detailed guides; all 24 approved local site photographs have complete bilingual guides (7 Marian and 4 Saints guides newly added).");
+console.log("PASS: 257 shrines, 118 Marian, 240 pilgrimages, 20 routes, 33 apparition records, 33 detailed guides; all 31 approved local site photographs have complete bilingual guides (7 Marian and 4 Saints guides newly added).");
