@@ -150,6 +150,7 @@ body.historiaProofFocus #historiaAudit>h3,body.historiaProofFocus #historiaAudit
    <select id="historiaProofEdition">
     <option value="cpdv-2009">Catholic Public Domain Version</option>
     <option value="dr-challoner">Douay–Rheims · Challoner</option>
+    <option value="crampon-1923">Crampon 1923 · Français (source non collationnée)</option>
    </select>
   </label>
   <label class="checklabel"><input id="historiaProofBridges" type="checkbox" checked>
@@ -295,7 +296,7 @@ async function initializeHistoriaProof(){
   new Option(String(m.sequence).padStart(2,"0")+" · "+m.title,m.id));
  const wanted=params.get("movement");
  if(wanted&&data.movements.some(m=>m.id===wanted))$("historiaProofMovement").value=wanted;
- if(params.get("proofEdition")==="dr-challoner")$("historiaProofEdition").value="dr-challoner";
+ if(["dr-challoner","crampon-1923"].includes(params.get("proofEdition")))$("historiaProofEdition").value=params.get("proofEdition");
  return data;
 }
 async function toggleHistoriaProof(visible){
@@ -317,6 +318,11 @@ function moveHistoriaProof(n){
  const next=Math.min(all.length-1,Math.max(0,current+n));
  if(next!==current){$("historiaProofMovement").value=all[next].id;void showHistoriaMovement();}
 }
+const historiaEditionName=edition=>({
+ "cpdv-2009":"CPDV (uncollated)",
+ "dr-challoner":"Douay–Rheims Challoner (uncollated)",
+ "crampon-1923":"Crampon 1923 (français non collationné)"
+}[edition]||"Unidentified Bible witness");
 async function showHistoriaMovement(){
  const all=await initializeHistoriaProof();
  const m=all.movements.find(x=>x.id===$("historiaProofMovement").value);
@@ -326,7 +332,7 @@ async function showHistoriaMovement(){
  const edition=$("historiaProofEdition").value,showBridges=$("historiaProofBridges").checked;
  $("historiaProofPrev").disabled=m.sequence===1;
  $("historiaProofNext").disabled=m.sequence===all.movements.length;
- $("historiaProofStatus").textContent="Loading exact "+(edition==="cpdv-2009"?"CPDV":"Douay–Rheims")+" Scripture · research only…";
+ $("historiaProofStatus").textContent="Loading exact "+historiaEditionName(edition)+" Scripture · research only…";
  const url=new URL(location.href);url.searchParams.set("movement",m.id);url.searchParams.set("module","historia");
  url.searchParams.set("proofEdition",edition);
  history.replaceState(null,"",url.pathname+url.search);
@@ -352,7 +358,13 @@ async function showHistoriaMovement(){
     if(beat.hasPartialVerseHold)section.append(make("p",
       "Partial-verse edition hold: this witness displays the complete verse; the original editorial source specifies only part of it.","proofGap"));
    }
-   const references=bridge?[beat.reference]:beat.refs;
+   if(beat.semanticEditionAlignment?.kind==="SAME_CLOSING_SEMANTIC_DIFFERENT_VERSE_END"){
+    section.append(make("p","Edition boundary: St Stephen's final prayer and death are numbered Acts 7:59 in Douay/CPDV and Acts 7:60 in French Crampon; this is the same narrated martyrdom, not a second event.","proofGap"));
+   }
+   if(beat.semanticEditionAlignment?.kind==="CAPERNAUM_LOCATION_VERSE_SHIFT"){
+    section.append(make("p","Source alignment: the Capernaum synagogue sentence is John 6:60 in Douay/CPDV and John 6:59 in Crampon. Verse numbers are not interchangeable across these witnesses.","proofGap"));
+   }
+   const references=bridge?[beat.reference]:(beat.semanticEditionAlignment?.selectedReferencesByEdition?.[edition]||beat.refs);
    for(const reference of references){
     const parsed=parseScriptureContext(reference);
     if(!parsed)throw Error("Unknown Catholic Bible coordinate "+reference);
@@ -378,7 +390,7 @@ async function showHistoriaMovement(){
    host.append(section);
   }
   $("historiaProofStatus").textContent=rendered+" source verses displayed, "+
-    held+" proposed source bridge(s) visible · "+(edition==="cpdv-2009"?"CPDV":"Douay–Rheims")+
+    held+" proposed source bridge(s) visible · "+historiaEditionName(edition)+
     " · Never approved; omissions and contextual text are signposted.";
  }catch(error){
   if(token===historiaProofToken)$("historiaProofStatus").textContent=
