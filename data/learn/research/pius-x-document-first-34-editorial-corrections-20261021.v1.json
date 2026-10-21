@@ -1,0 +1,86 @@
+{
+  "schema": "AO_SPX_DOCUMENT_FIRST_34_EDITORIAL_CORRECTIONS_V1",
+  "date": "2026-10-21",
+  "status": "SOURCE_TETHERED_EDITORIAL_PROPOSALS_UNAPPROVED",
+  "governance": "Preserve the 12-turn baseline and 22 remaining source records byte-for-byte. Apply only to generated 34-turn derivative after pre-existing source-order repairs. These four changes have not received independent source, translation, theology, voice or publication approval.",
+  "primaryTexts": {
+    "ACERBO": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html",
+    "HAERENT": "https://www.vatican.va/content/pius-x/it/apost_exhortations/documents/hf_p-x_exh_19080804_haerent-animo.html"
+  },
+  "claimMeaningOverrides": {
+    "A18": {
+      "old": "The prescribed instructional cycle covers Creed, Sacraments, commandments, prayer and Church precepts.",
+      "new": "Pius X prescribed in 1905 a four-to-five-year adult catechesis cycle based on the Catechism of the Council of Trent: Apostles' Creed, Sacraments, Ten Commandments, Lord's Prayer, Precepts of the Church."
+    },
+    "H31": {
+      "old": "He acknowledges laypeople offering prayer and sacrifice for clergy, and petitions virtues for priests.",
+      "new": "Faithful people joined Pius X's prayers for priests; especially generous souls in cloisters and the world offered themselves to God for clergy; he implored grace, charity and all virtue from Christ's Sacred Heart."
+    }
+  },
+  "edits": [
+    {
+      "turnId": "SPX.BENCH.ACERBO.T3",
+      "segmentId": "SPX.BENCH.ACERBO.T3.S2",
+      "sourceLocus": "§12",
+      "reason": "Attribute the homily bread/catechesis milk analogy explicitly to Pius X's own exposition, rather than ambiguously to Benedict XIV.",
+      "before": {
+        "en": "The former is like bread for adults, the latter like milk for little children; the one must not be treated as a substitute for the other.",
+        "fr": "Le premier est comme le pain destiné aux adultes, le second comme le lait donné aux petits enfants ; l'un ne doit pas remplacer l'autre."
+      },
+      "after": {
+        "en": "We illustrated this by comparing the Gospel homily to bread for adults and elementary catechesis to milk for little children. One cannot take the place of the other.",
+        "fr": "Nous l’illustrions en comparant l’homélie sur l’Évangile au pain des adultes et l’enseignement élémentaire du catéchisme au lait des petits enfants. L’un ne saurait tenir lieu de l’autre."
+      }
+    },
+    {
+      "turnId": "SPX.BENCH.ACERBO.T7",
+      "segmentId": "SPX.BENCH.ACERBO.T7.S2",
+      "sourceLocus": "§14",
+      "reason": "Restore the concrete qualification: an ornate sermon may be applauded yet fail to touch the hearers' hearts; avoid broader editorial language about conversion.",
+      "before": {
+        "en": "But We held that such preaching presupposes the foundation laid by catechesis; applause is not itself the conversion of a heart.",
+        "fr": "Mais Nous rappelions que cette prédication suppose le fondement posé par le catéchisme ; les applaudissements ne prouvent pas que les cœurs aient changé."
+      },
+      "after": {
+        "en": "But We insisted that such preaching presupposes the foundation laid by catechesis. Even an ornate sermon applauded by a crowd may leave its hearers’ hearts untouched.",
+        "fr": "Mais Nous rappelions que cette prédication suppose le fondement posé par le catéchisme. Même un sermon brillant, applaudi par la foule, peut ne pas toucher le cœur de ses auditeurs."
+      }
+    },
+    {
+      "turnId": "SPX.BENCH.ACERBO.T8",
+      "segmentId": "SPX.BENCH.ACERBO.T8.S2",
+      "sourceLocus": "§24",
+      "reason": "Restore Roman Catechism base, the precise Lord's Prayer, and the historically prescribed four-to-five-year course; do not present historical legislation as modern law.",
+      "before": {
+        "en": "We specified the Creed, the Sacraments, the Commandments, prayer and the Church's precepts as the course of instruction.",
+        "fr": "Nous prescrivions un enseignement suivi du Credo, des Sacrements, des Commandements, de la prière et des préceptes de l'Église."
+      },
+      "after": {
+        "en": "We prescribed instruction based on the Catechism of the Council of Trent, covering the Apostles’ Creed, the Sacraments, the Ten Commandments, the Lord’s Prayer and the Precepts of the Church over four or five years.",
+        "fr": "Nous prescrivions un enseignement fondé sur le Catéchisme du concile de Trente, traitant, sur quatre ou cinq années, du Symbole des Apôtres, des Sacrements, des dix Commandements, de l’Oraison dominicale et des préceptes de l’Église."
+      }
+    },
+    {
+      "turnId": "SPX.BENCH.HAERENT.T11",
+      "segmentId": "SPX.BENCH.HAERENT.T11.S2",
+      "sourceLocus": "§37",
+      "reason": "Distinguish the ordinary faithful joining in prayer from souls offering themselves to God as enduring spiritual offerings; generic offering of sacrifices is not the precise source sense.",
+      "before": {
+        "en": "We were consoled by faithful souls praying and offering sacrifices for priests, and We implored from Christ's Sacred Heart grace, charity and every virtue for the clergy.",
+        "fr": "Nous trouvions consolation auprès des fidèles qui priaient et offraient des sacrifices pour les prêtres, et Nous implorions du Sacré-Cœur du Christ la grâce, la charité et toutes les vertus pour le clergé."
+      },
+      "after": {
+        "en": "We rejoiced that faithful people joined Our prayer, and that generous souls, in cloisters and in the world, offered themselves to God for the clergy. From Christ’s Sacred Heart We implored grace, charity and every virtue for priests.",
+        "fr": "Nous Nous réjouissions que des fidèles s’unissent à Notre prière, et que des âmes généreuses, dans les cloîtres comme dans le monde, s’offrent elles-mêmes à Dieu pour le clergé. Du Sacré-Cœur du Christ, Nous implorions pour les prêtres la grâce, la charité et toutes les vertus."
+      }
+    }
+  ],
+  "review": {
+    "primarySourceComparison": "EDITORIAL_PASSAGE_SCREEN",
+    "translationEN": false,
+    "translationFR": false,
+    "theology": false,
+    "periodVoice": false,
+    "production": false
+  }
+}
