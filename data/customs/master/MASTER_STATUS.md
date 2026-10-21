@@ -2,6 +2,32 @@
 
 > **Working inventory, not a final comprehensive register or an app publication.** This repository branch is data-only. Freeze UI, artwork and module architecture decisions until the master identity and calendar gates are complete.
 
+## Current consolidated research inventory — v1
+
+**56 distinct working identity records** are now maintained in `working-master.v1.json`: **38 canonical identities already on main**, **4 older P2 provisional customs**, and **14 source-backed, namespaced, nonpublishing new proposals**. Every one of the 56 has bilingual name, description, historical context, spiritual meaning, optional practice, pastoral qualification, source provenance and a qualified calendar context. This is the *research inventory*, not 56 live published customs.
+
+| Proposed research identity | English name | Related date / feast (not an event booking) |
+|---|---|---|
+| `CUST-ADVT-HERBERGSUCHE` | Herbergsuche — local Advent lodging-search devotion | Advent; individual parish house-visit itinerary, not a universal fixed nine-day programme |
+| `CUST-XMAS-POLISH-HAY` | Christmas Eve hay beneath the tablecloth | 12-24 |
+| `CUST-XMAS-KASHUBIAN-ANIMAL-CARE` | Christmas Eve care for livestock and birds | 12-24 |
+| `CUST-XMAS-QUEBEC-GUIGNOLEE` | La guignolée — French Canadian Christmas alms collection | Christmas-season charity drive; actual annual dates locally announced |
+| `CUST-XMAS-POLISH-KOLEDNICI` | Polish kolędnicy — Christmas visiting carollers | Christmas cycle; dates and troupe forms differ across regions |
+| `CUST-XMAS-HUNGARIAN-BETLEHEMEZES` | Hungarian betlehemezés Nativity visiting plays | Christmas season, local dates |
+| `CUST-BARBARA-BRANCHES` | St Barbara branches — Barbarazweige | 12-04 |
+| `CUST-XMAS-PROVENCAL-PAIN-CALENDAL` | Provençal Christmas pain calendal and the poor person's portion | 12-24 |
+| `CUST-EPIPHANY-SPANISH-MAGI-GIFTS` | Three Kings gifts left in children's shoes | 01-05/01-06 |
+| `CUST-EASTER-MALTESE-IRXOXT` | L-Irxoxt — Maltese running procession with the Risen Christ | Easter Sunday, only parishes with actual announced procession |
+| `CUST-PENTECOST-POLISH-GREENERY` | Pentecost greenery decorating Polish homes | Pentecost, movable feast resolved by Calendar |
+| `CUST-ASSUMPTION-TIVOLI-INCHINATA` | Tivoli's Inchinata procession | 08-14/08-15 |
+| `CUST-ASSUMPTION-SASSARI-CANDELIERI` | Faradda di li Candareri — Sassari's Marian offering procession | 08-14 |
+| `CUST-MARIAN-BAVARIAN-FRAUENDREISSIGER` | Frauendreißiger — thirty days of Marian devotion | 08-15/09-14 |
+
+**Ritual and source ownership:** `ritual-and-source-ownership-23.v1.json` now routes all **23** remaining blessing/source observations. Its historical Roman Ritual index references distinguish the existence of a rite *genre* from any claim that a given local date or formula was used. The Polish Corpus Christi herbal-wreath custom has independent ethnographic evidence, but no unverified formula is approved for display.
+
+**Evidence and release:** among 42 possibly distinct Weiser observations, 25 have bounded independent witnesses, 17 retain exact or partial source holds, and 14 of the 25 have been staged as separate working identities. Eleven sourced observations remain nested variants, cultural context, or blessing-sensitive matters. None of these additions is live. The 39 related/regional observation variants and 41 proposed links to existing identities require final parity and editorial checks.
+
+---
 ## Source-of-truth hierarchy
 
 - **38 existing canonical records** are owned by `data/customs/customs-atlas-seed.v1.json` on `main`. Their identity and publication states are retained unchanged (35 published, 3 context-only).
@@ -16,19 +42,20 @@
 |---|---:|---|
 | Canonical identities | 38 | Present on main; not necessarily complete descriptions for every future module use |
 | Provisional distinct additions | 4 | Historical / regional P2 candidates, not publication-approved |
-| Current working identity entries | **42** | Baseline **only**, not final universe |
+| Earlier v0 baseline | **42** | Historical baseline, 38 + 4 |
+| Current v1 working identities | **56** | 38 + 4 + 14 staged nonpublishing |
 | Weiser observations inventoried | **568** | All 28 chapters indexed |
 | Explicit observation-to-master links | **50** | Identity association for editorial review only |
 | Unlinked observations | **518** | **Not** 518 missing customs |
 | Existing/other-owner parity to reconcile | **81** | Mostly liturgy/Calendar/Pray/Saints, avoid duplication |
 | Identity/variant observations awaiting review | **286** | 145 regional, 92 candidate, 49 enrichment |
 | Already assigned to other owner/regional context/ritual hold in the 54-draft pass | **26** | Subset of 286, not new customs |
-| Awaiting their first explicit 54-draft owner decision | **260** | Subset of 286; next identification pass |
+| Originally without 54-draft owner decision | **260** | All now assigned preliminary dispositions; editorial/source gates remain open |
 | Historical reference only | **117** | Research/archive, not current practice claims |
 | Excluded observations | **34** | Never auto-publish |
 | Independent-source P1 holds | **84** | 38 no exact match + 46 partial/indirect; overlaps the book counts |
 
-## Working identity inventory
+## Earlier v0 canonical / provisional identity baseline (42 records)
 
 | ID | Name (English) | Temporal association (source context only) | State |
 |---|---|---|---|
@@ -122,7 +149,7 @@
 | Source or ministerial-ritual hold | 23 |
 | **Total** | **260** |
 
-The 42 possible distinct practices are a **research shortlist**, not a count of new customs. Fifteen currently lack an exact independent match in P1 research, fourteen have only partial/indirect corroboration, and thirteen have not received the P1 source gate. None has been published. The 23 further source/ritual holds are a separate queue; they are not presumed false, but cannot support pastoral instructions.
+The 42 possible distinct practices are a **research shortlist**, not 42 new canonical customs. **25** have bounded independent sources, **17** remain source-gated, and **14** have been staged as research identities. The separate **23** ritual/source observations have owner dispositions but no cleared ritual publication. Nothing new is live.
 
 See `first-pass-260-reconciliation.v1.json` and the three chapter-grouped `identity-triage` files. Every row keeps its original Weiser locator, geography, existing priority and evidence status.
 
@@ -167,7 +194,7 @@ Editorial distinctions now explicit:
 
 **The source triage is complete, not the master release:** `unverified-candidate-exact-claim-holds.v1.json` protects 17 uncorroborated or partial claims, each with a specific reason and reopening condition. `witnessed-identity-recommendations.v1.json` records 25 independently witnessed observations, including **14 proposed distinct identities**, three regional variants, four cultural-context records, a gift-bell component, a broader crèche-history item, an Eastern Catholic context and a rite-sensitive household wreath. The 14 identity proposals remain unapproved; actual final identity count will depend on deduplication and editorial decisions.
 
-**Next gate:** verify whether the proposed distinct customs deserve canonical IDs, examine the 23 other ritual/source holds, consolidate geographic/seasonal categories and run the full final editorial acceptance. Do not force low-value or unverified customs into the live app.
+**Next gate:** evaluate the 14 staged identities for formal inclusion, reconcile the 39 regional variants and 41 potential existing-ID links, and complete final editorial and ritual-release acceptance. The 23 source/ritual observations have owner dispositions, not formula authorization.
 
 ## Source-closure waves 3 and 4
 
@@ -185,14 +212,14 @@ Special cases: Rogations have composite Major and Minor contexts, Las Posadas is
 
 ## First independent source closure — six geographically bounded customs
 
-Evidence beyond Weiser was checked for six of the 42 candidate observations. **These are attested local historical or continuing practices, not publication decisions.** The file `independent-sources-batch01.v1.json` preserves exact evidence, limits, locality and date semantics.
+The first independent-source wave checked six of the 42 candidate observations. **These are attested local historical or continuing practices, not publication decisions.** The file `independent-sources-batch01.v1.json` preserves exact evidence, limits, locality and date semantics.
 
 | Weiser locator | Custom | Corroboration type |
 |---|---|---|
-| `WEI58-05-010` | Austrian Advent Herbergsuche | Vienna archdiocesan report, household groups |
+| `WEI58-05-010` | Austrian Advent Herbergsuche | Großpetersdorf Catholic parish household witness |
 | `WEI58-07-007` | Québec guignolée Christmas charity | Provincial heritage register and St Vincent de Paul |
-| `WEI58-07-008` | Polish kolędnicy home visits | Polish Ministry of Culture |
-| `WEI58-08-019` | St Barbara's December branches | Diocese of Linz |
+| `WEI58-07-008` | Polish kolędnicy home visits | Polish government educational portal |
+| `WEI58-08-019` | St Barbara's December branches | Archdiocese of Vienna |
 | `WEI58-16-020` | Maltese Easter L-Irxoxt procession and statue run | Malta public administration and contemporary local reporting |
 | `WEI58-24-007` | Sassari's Assumption-eve Candelieri procession | Sardinian regional heritage authority and official festival site |
 
@@ -202,10 +229,10 @@ Eight candidate family-overlap reviews, comprising 19 possible distinct observat
 
 ## Editorial decisions that remain open
 
-1. **Continue source-adjudicating the 42 possible distinct practices** (six now have bounded independent support) and **the 23 source/ritual holds**. Reconcile the 41 proposed existing identity matches, verify regional versus religious scope of the 39 variants, and keep cultural/historical references separate. All 260 have a provisional disposition; source and final identity review remains open. Resolve to an existing custom, a distinct provisional custom, another owner, regional context, or justified hold.
+1. **Review the 14 source-backed staged identity proposals for final acceptance**, without implying they are universal Roman rites. The 25 source-backed observations are fully routed and 17 retain exact claim holds. The 23 separate ritual/source observations are assigned owners. Work remains on 39 regional variants and 41 potential existing-identity links.
 2. **Separate dates rigorously:** fixed historical custom day, movable feast relationship, observed 1962 feast precedence, family occasion, and actual local programme are different fields; the Calendar resolver owns observed feast dates.
 3. **Preserve geography and historical scope:** never turn an Irish household witness, German festival custom, French local blessing, Polish food custom or folklore into universal Roman practice.
-4. **Resolve the 84 P1 independent-source holds** where worthwhile without manufacturing an attestation. Weiser alone is a bibliographic pointer, not current-practice certification.
+4. **Prioritise unresolved source claims that materially change identity decisions**. The older 84 P1 source evidence gaps overlap the 568 historical observations and should not be counted as additional missing customs.
 5. **Editorially approve the now-field-complete 38 bilingual canonical profiles** and their independent source citations, then run a complete release audit. The 27 historical folios and the other editorial additions remain drafts until this approval.
 6. Only **after data closure** review information architecture: Through the Year, Catholic Life, searchable historical archive, Calendar/Pray/Saints links. UI and art on PR #1530 remain on hold.
 
@@ -218,6 +245,10 @@ Eight candidate family-overlap reviews, comprising 19 possible distinct observat
 - Preserve the current Mass, Calendar, LIVE reader and all prior research branches as separate authorities.
 
 ## Machine-readable files
+
+- `working-master.v1.json` — 56 EN/FR working identities, with source and calendar flags.
+- `proposed-identity-additions.v1.json` — 14 separate source-backed research IDs, nonpublished.
+- `ritual-and-source-ownership-23.v1.json` — 23 routed blessing/source holds, no formula release.
 
 - `identities.v0.json` — 42 English/French working identities with calendar fields, sources and provenance.
 - `weiser-observations.v0.json` — 568 immutable source locators, original triage and review status.
