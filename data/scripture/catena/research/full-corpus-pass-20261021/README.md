@@ -42,3 +42,20 @@ The immediate second pass is **300 original excerpts per batch**, beginning with
 The scan is **complete as an exhaustive lexical/source-pointer pass**, not as a semantically complete questionnaire or a publication-ready conversational corpus. Zero exact-normalized duplicate groups under the script's strict text normalization is not proof of no thematic duplication. A count of unmatched keywords reflects lexicon limits, not an absence of theological content.
 
 Keep the St Pius X avatar and existing Living Catena Messenger work untouched. Import from Augustine/Eusebius or other external authors **only after** this original Catena coverage audit identifies a significant missing passage or argument.
+
+## First 300-excerpt review stage (Matthew)
+
+The first queue is **300 original Matthew excerpt pointers**, all selected by priority because they include at least one question mark. It has **not** been misreported as 300 semantically approved exchanges.
+
+- `matthew-batch-01-300-question-triage.v1.json`: checks all **300** source pointers against exact original paragraph length, author label, Scripture pericope and question-mark offsets; retains a short surrounding question context and an expressly provisional voice-classification category. **208 ambiguous, 36 possible reported/scriptural voices, 7 explicitly framed objections, 44 potential exegetical author questions, 5 additional possible scriptural/reported voices.** This is source-based machine triage, not final speaker determination.
+- `matthew-batch-01-curated-spot-review.v1.json`: **26 AI-assisted semantic spot reviews** inspecting actual excerpt arguments, including **24 passages with a relevant explanation in the same Catena excerpt and two context-incomplete passages**. No independent human second-reader approval has occurred. Reader-friendly questions are modern editorial navigation, never historical quotes.
+- Four prospective cross-excerpt comparisons distinguish related arguments from falsely constructed consensus.
+- `tests/scripture-catena-matthew-batch-one.mjs` enforces the 300 original source pointers and 26 higher-level spot reviews. As always, the original Father text is dereferenced from the canonical Catena; no second answer corpus is generated.
+
+## Via Patrum feature benchmark — important change in strategy
+
+A substantial part of our intended functionality **already exists publicly** at https://viapatrum.org/: **Ask the Fathers** returns source-linked passages to natural questions, **Topics** organizes witnesses and **Timeline** presents 100 dated, debated historical questions. Its separate **Scripture** view links works to Gospel verses. The site's own methodology documents AI-assisted Greek/Latin translations and checking, but they are not human line-by-line certified critical editions.
+
+See [VIA_PATRUM_FEATURE_BENCHMARK_20261021.md](VIA_PATRUM_FEATURE_BENCHMARK_20261021.md) for capabilities, source and editorial comparisons and differences from our Catena.
+
+**Policy:** borrow the conceptual retrieval/taxonomy lessons, use Via Patrum as a research **reference** and link where appropriate, but do not copy its new copyrighted English translation or assume the same Catena excerpt is present merely because a Gospel verse matches. Stop duplicating its broad generic patristic inventory. Continue only our source-specific Catena voice/context review and selectively fill independently demonstrated gaps.
