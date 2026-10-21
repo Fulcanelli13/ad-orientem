@@ -416,5 +416,57 @@
       "textIssues": [],
       "foreignAnswersExcluded": true
     }
-  ]
+  ],
+  "excludedExamples": [
+    {
+      "pericopeId": "catena.mark.8.27",
+      "sourceOrdinal": 2,
+      "attributionAsInCompilation": "Bede",
+      "originalQuestionExact": "Whom do men say that I am?",
+      "reason": "quoted_gospel_question_asked_by_Christ_not_commentary_author"
+    },
+    {
+      "pericopeId": "catena.mark.16.1",
+      "sourceOrdinal": 10,
+      "attributionAsInCompilation": "Bede",
+      "originalQuestionExact": "Who shall roll us away the stone from the door of the sepulchre?",
+      "reason": "quoted_gospel_question_asked_by_the_women_not_commentary_author"
+    },
+    {
+      "pericopeId": "catena.luke.6.32",
+      "sourceOrdinal": 6,
+      "attributionAsInCompilation": "Basil",
+      "originalQuestionExact": "How shall I get my living?",
+      "reason": "hypothetical_interlocutor_in_the_commentary_not_Fathers_personal_question"
+    },
+    {
+      "pericopeId": "catena.luke.10.38",
+      "sourceOrdinal": 11,
+      "attributionAsInCompilation": "Augustine",
+      "originalQuestionExact": "Must we think that blame was cast upon the service of Martha, who was engaged in the cares of hospitality, and rejoiced in having so great a guest?",
+      "reason": "discussion_continues_across_a_separate_Catena_fragment_needs_cross_fragment_source_review"
+    },
+    {
+      "pericopeId": "catena.matthew.18.21",
+      "sourceOrdinal": 1,
+      "attributionAsInCompilation": "Jerome",
+      "originalQuestionExact": "Lord, how oft shall my brother sin against me, and I forgive him?",
+      "reason": "quoted_gospel_question_asked_by_Peter_not_commentary_author"
+    },
+    {
+      "pericopeId": "catena.john.14.22",
+      "sourceOrdinal": 1,
+      "attributionAsInCompilation": "Augustine",
+      "originalQuestionExact": "Lord, how is it that Thou wilt manifest Thyself unto us, and not unto the world?",
+      "reason": "quoted_gospel_question_asked_by_Judas_not_commentary_author"
+    },
+    {
+      "pericopeId": "catena.john.10.11",
+      "sourceOrdinal": 12,
+      "attributionAsInCompilation": "Augustine",
+      "originalQuestionExact": "But if the Apostles were shepherds, not hirelings, why did they flee in persecution?",
+      "reason": "answer_not_present_in_same_excerpt_requires_contiguous_source_check"
+    }
+  ],
+  "excludedExamplesStatus": "Selected illustrative false-positive controls, not an exhaustive rejected-question list"
 }
