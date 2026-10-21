@@ -74,7 +74,10 @@ try{
  assert.ok(hitGeometry.listScroll.clientWidth <= 390, 'Horizontal catalogue must scroll inside its own viewport: '+JSON.stringify(hitGeometry));
  await page.locator("#episode-index > li > button").filter({hasText:"Calming of the storm"}).click();
  await page.locator("#episode-reading .verse").first().waitFor({timeout:30000});
- assert.equal(await page.locator("#episode-reading .verse").count(),7);
+ assert.equal(await page.locator("#episode-reading .verse").count(),6);
+ await page.locator("#episode-reading .source-gap").waitFor({timeout:30000});
+ assert.match(await page.locator("#episode-reading .source-gap").innerText(),/41/,
+  "The uncollated CPDV transcription must explicitly disclose missing Mark 4:41");
  await page.locator("#episode-reading select").selectOption("crampon-1923");
  await page.locator("#episode-reading .verse").first().waitFor({timeout:30000});
  await page.locator("#episode-reading .source-gap").waitFor({timeout:30000});
