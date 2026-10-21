@@ -6,6 +6,8 @@ const seam=read("../data/research/historia-p4-m20-m37-literary-review-queue.v1.j
 const patriarchs=read("../data/research/historia-p4-patriarchs-witness-desk-audit.v1.json");
 const deliverance=read("../data/research/historia-p4-deliverance-witness-desk-audit.v1.json");
 const wilderness=read("../data/research/historia-p4-wilderness-sinai-witness-desk-audit.v1.json");
+const wanderings=read("../data/research/historia-p4-wanderings-three-witness-desk-audit.v1.json");
+const incarnation=read("../data/research/historia-p4-incarnation-three-witness-desk-audit.v1.json");
 const html=readFileSync(new URL("../labs/historia-salutis-theatre-p4.html",import.meta.url),"utf8");
 const C=crosswalk.counts;
 assert.equal(crosswalk.status,"RESEARCH_ONLY_SOURCE_OVERLAP_NOT_IDENTITY_NOT_APPROVED");
@@ -112,6 +114,42 @@ assert.equal(tabernacle.witnessSpanChecks.crampon1923Entries,38);
 assert.equal(tabernacle.witnessSpanChecks.editionReferenceMismatch,true);
 assert.equal(wilderness.controls.exodus40.automaticVerseAlignmentForbidden,true);
 assert.equal(wilderness.controls.exodus40.doNotFabricateVerses37Or38,true);
+assert.equal(wanderings.reviewedRows.length,8);
+assert.deepEqual([wanderings.counts.firstIndex,wanderings.counts.lastIndex],[49,56]);
+assert.equal(wanderings.counts.versePresenceAllThree,8);
+assert.equal(wanderings.counts.approvedGeocodes,0);
+for(const [i,x] of wanderings.reviewedRows.entries()){
+ assert.equal(x.index,i+49);
+ assert.ok(sceneIds.has(x.sceneKey));
+ assert.equal(x.productionApproved,false);
+ assert.equal(x.siteCoordinatesApproved,false);
+ assert.equal(x.witnessSpanChecks.spanPresenceVerified,true);
+ for(const ed of ["douayChallonerEntries","cpdv2009Entries","crampon1923Entries"])assert.ok(x.witnessSpanChecks[ed]>0);
+}
+const mosesBurial=wanderings.reviewedRows.find(x=>x.index===55);
+assert.equal(mosesBurial.geographicalAction,"TRADITIONAL_MOUNTAIN_ONLY_NEVER_TOMB_PIN");
+assert.equal(incarnation.reviewedRows.length,13);
+assert.deepEqual(incarnation.counts.indices,[57,58,59,60,61,62,63,64,65,66,67,68,181]);
+assert.equal(incarnation.counts.exactModernSiteApprovals,0);
+assert.equal(incarnation.counts.versesAvailableInThreeWitnesses,13);
+const allAudited=[...patriarchs.reviewedRows.map(x=>x.index),...deliverance.reviewedRows.map(x=>x.index),...wilderness.reviewedRows.map(x=>x.index),...wanderings.reviewedRows.map(x=>x.index),...incarnation.reviewedRows.map(x=>x.originalIndex)];
+assert.equal(allAudited.length,70);
+assert.equal(new Set(allAudited).size,70,"No scene can be counted twice across desk audits");
+assert.deepEqual(allAudited.slice(0,69),Array.from({length:69},(_,i)=>i));
+assert.equal(allAudited.at(-1),181);
+for(const x of incarnation.reviewedRows){
+ assert.ok(sceneIds.has(x.sceneKey));
+ assert.equal(x.scenePublicationApproved,false);
+ assert.equal(x.preciseCoordinatesApproved,false);
+ assert.equal(x.witnessSpanChecks.spanPresenceVerified,true);
+ assert.equal(x.witnessSpanChecks.douayChallonerEntries,x.witnessSpanChecks.cpdv2009Entries);
+ assert.equal(x.witnessSpanChecks.douayChallonerEntries,x.witnessSpanChecks.crampon1923Entries);
+}
+const holyInnocents=incarnation.reviewedRows.find(x=>x.originalIndex===181);
+assert.equal(holyInnocents.scriptureReference,"Matthew 2:16–18");
+assert.equal(holyInnocents.geographicalAction,"NO_SPECIFIC_VICTIM_PINS_OR_DATATION");
+assert.equal(incarnation.reviewedRows.find(x=>x.originalIndex===62).geographicalAction,"NO_SANCTUARY_CIRCUMCISION_PIN");
+assert.equal(incarnation.reviewedRows.find(x=>x.originalIndex===59).geographicalAction,"HILL_COUNTRY_REGION_ONLY_EIN_KAREM_TRADITION");
 for(const token of ["maplibregl.Map","prefers-reduced-motion","ATLAS_GEO.cenacle","ATLAS_GEO.transfiguration","HS-M37","sourceBridgeCandidates"]) {
  if(token==="sourceBridgeCandidates") continue;
  assert.ok(html.includes(token),"Theatre lab missing "+token);
@@ -119,4 +157,4 @@ for(const token of ["maplibregl.Map","prefers-reduced-motion","ATLAS_GEO.cenacle
 assert.ok(html.includes("No cinematic-scene identity exists"));
 assert.ok(html.includes("No painting imported"));
 assert.ok(!html.includes("<script type=\"module\" src=\"../src/"),"Research lab must not import production modules");
-console.log("PASS: Historia P4 crosswalk, 183-row evidence queue, 18 seam holds, 49 Genesis/Exodus witnesses and four-state theatre laboratory source contracts");
+console.log("PASS: Historia P4 crosswalk, 183-row evidence queue, 18 seam holds, 70 source-reviewed scenes and four-state theatre laboratory source contracts");
