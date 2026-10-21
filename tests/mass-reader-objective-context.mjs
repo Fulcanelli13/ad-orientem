@@ -20,7 +20,7 @@ for(const row of READER_OBJECTIVE_CONTEXT_ROWS){
     const result=projectReaderObjectiveContext({
       blocks:[{blockId:row.blockId,firstParagraphIndex:0,paragraphCount:1}],
       paragraphs:[{sourceCueIds:[cueId]}]},
-      {cueId,form:"LOW",language});
+      {cueId,form:"LOW",language,sourceBlocks:sung.blocks});
     assert.equal(result.blockId,row.blockId);
     assert.equal(result.owner,READER_OBJECTIVE_CONTEXT_OWNER);
     assert.equal(result.observedNow,false);
@@ -30,21 +30,24 @@ for(const row of READER_OBJECTIVE_CONTEXT_ROWS){
 }
 const block={blocks:[{blockId:"AO.SM.B047",firstParagraphIndex:0,paragraphCount:1}],
  paragraphs:[{sourceCueIds:["AO.SM.C0150"]}]};
-assert.equal(projectReaderObjectiveContext(block,{cueId:"AO.SM.C0151",form:"LOW"}),null);
-assert.equal(projectReaderObjectiveContext(block,{cueId:"AO.SM.C0150",form:"GOOD_FRIDAY"}),null);
-assert.equal(projectReaderObjectiveContext({blocks:[],paragraphs:[]},{cueId:"AO.SM.C0150",form:"LOW"}),null);
+assert.equal(projectReaderObjectiveContext(block,{cueId:"AO.SM.C0151",form:"LOW",sourceBlocks:sung.blocks}),null);
+assert.equal(projectReaderObjectiveContext(block,{cueId:"AO.SM.C0150",form:"GOOD_FRIDAY",sourceBlocks:sung.blocks}),null);
+assert.equal(projectReaderObjectiveContext({blocks:[],paragraphs:[]},{cueId:"AO.SM.C0150",form:"LOW",sourceBlocks:sung.blocks}),null);
 // Selected Propers are grounded by sourceAnchorCueId, not their display ID.
 const proper={blocks:[{blockId:"AO.SM.B026",firstParagraphIndex:0,paragraphCount:1}],
  paragraphs:[{id:"PROPER.GOSPEL",sourceCueIds:[],sourceAnchorCueId:"AO.SM.C0086"}]};
 assert.equal(projectReaderObjectiveContext(proper,{
- cueId:"AO.SM.C0086",form:"MISSA_CANTATA_INCENSE",language:"fr"
+ cueId:"AO.SM.C0086",form:"MISSA_CANTATA_INCENSE",language:"fr",sourceBlocks:sung.blocks
 }).blockId,"AO.SM.B026");
 assert.equal(projectReaderObjectiveContext(proper,{
- cueId:"AO.SM.C0087",form:"MISSA_CANTATA_INCENSE",language:"fr"
+ cueId:"AO.SM.C0086",form:"MISSA_CANTATA_INCENSE",language:"fr"
+}),null,"Without the canonical block witness the ribbon must fail closed");
+assert.equal(projectReaderObjectiveContext(proper,{
+ cueId:"AO.SM.C0087",form:"MISSA_CANTATA_INCENSE",language:"fr",sourceBlocks:sung.blocks
 }),null,"A nearby cue without an attested Proper anchor must fail closed");
 assert.equal(projectReaderObjectiveContext({...proper,blocks:[{
  blockId:"AO.SM.B088",firstParagraphIndex:0,paragraphCount:1}]},{
- cueId:"AO.SM.C0086",form:"MISSA_CANTATA_INCENSE",language:"fr"
+ cueId:"AO.SM.C0086",form:"MISSA_CANTATA_INCENSE",language:"fr",sourceBlocks:sung.blocks
 }),null,"A Gospel anchor is not evidence of Postcommunion content");
 // Integration guards: no competing Guide, no prayer suggestions and no
 // premature retirement of SIMPLE; retain all existing Missal ownership.
