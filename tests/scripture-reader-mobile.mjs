@@ -317,7 +317,7 @@ try{
   await dialog.locator("[data-catena-messenger]").waitFor({state:"visible",timeout:15000});
   const scriptureAnchor=dialog.locator(".aoCatenaScriptureAnchor");
   await scriptureAnchor.waitFor({state:"visible",timeout:15000});
-  assert.match(await scriptureAnchor.locator("summary").innerText(),/Luke 1:28/,
+  assert.match(await scriptureAnchor.locator(":scope > summary").innerText(),/Luke 1:28/,
     "Selected Scripture must remain visibly anchored above the Fathers");
   assert.equal(await scriptureAnchor.locator(".aoScriptureVerse").count(),1,
     "Pinned biblical text must reuse the same selected verse and not invent extra verses");
