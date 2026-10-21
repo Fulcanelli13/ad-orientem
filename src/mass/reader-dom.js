@@ -1827,7 +1827,7 @@ export function buildReaderShellMarkup(prepared = {}) {
   <div class="ao-state-ribbon" aria-live="polite">
     <span class="ao-state-source" data-role="canon-source-summary">CANON · RITUS SERVANDUS (1962)</span>
     <div class="ao-reader-objective-context" data-role="objective-context" hidden aria-live="off">
-      <small>About this part of Mass</small>
+      <small data-role="objective-context-kicker">About this part of Mass</small>
       <span data-role="objective-context-text"></span>
     </div>
     <div class="ao-state-cell" data-side="faithful" data-channel="posture" data-faithful-icon-open role="button" tabindex="0" aria-label="Customize current faithful posture or gesture">
@@ -3193,6 +3193,9 @@ export function createReaderDomAdapter({
     }
     const contextText=root.querySelector('[data-role="objective-context-text"]');
     if(contextText)contextText.textContent=showContext?copy.text:"";
+    const contextKicker=root.querySelector('[data-role="objective-context-kicker"]');
+    if(contextKicker)contextKicker.textContent=showContext&&copy.language==="fr"
+      ?"CE MOMENT DE LA MESSE":"ABOUT THIS PART OF MASS";
     const musicNote=root.querySelector('[data-role="rite-music"]');
     if(musicNote){
       const metadata=current.riteMusic?.musicStatus==="EXPECTED_NOT_OBSERVED"
