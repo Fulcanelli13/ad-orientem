@@ -17,7 +17,9 @@
       "ATTESTED_LOCAL_CATHOLIC_DEVOTION": 7,
       "ATTESTED_REGIONAL_CHRISTIAN_FOLK": 5,
       "ATTESTED_CULTURAL_FEAST_HERITAGE": 2
-    }
+    },
+    "earlier_P2_research_accepted": 4,
+    "total_research_identities_editorially_classified": 18
   },
   "date_governance": {
     "date_resolver_is_1962_calendar": true,
@@ -3256,7 +3258,7 @@
       ],
       "editorial_status": "INDEPENDENT_EVIDENCE_REVIEWED_BUT_PUBLICATION_NOT_APPROVED",
       "do_not_auto_publish": true,
-      "master_version": "V1_RETAINED_FROM_CANONICAL_BASELINE",
+      "master_version": "V1_RETAINED_P2_RESEARCH_ACCEPTED_NO_PUBLICATION",
       "calendar_audit": {
         "custom_id": "CANDIDATE-STPATRICK-RIBBON",
         "identity_status": "PROVISIONAL_P2_NOT_CANONICAL",
@@ -3272,7 +3274,11 @@
         "feast_rank_assumed": false,
         "pastoral_time_limit_en": "Historical Irish craft, not an automatic Lenten dispensation or saint feast rank.",
         "publication_status": "PROVISIONAL_MASTER_DATE_CLASSIFICATION_NOT_CALENDAR_UPDATE"
-      }
+      },
+      "research_identity_acceptance": "ACCEPTED_IN_MASTER_WITH_GEOGRAPHY_AND_HERITAGE_QUALIFICATION",
+      "research_identity_category": "HISTORICAL_IRISH_CATHOLIC_SAINT_CUSTOM",
+      "research_cross_module_owner": "Customs/Saints",
+      "research_editorial_reason": "National Museum of Ireland and Galway City Museum document historical 17 March home-made crosses; no claim that this is universally current."
     },
     {
       "id": "CANDIDATE-IRISH-CHRISTMAS-CANDLE",
@@ -3332,7 +3338,7 @@
       ],
       "editorial_status": "INDEPENDENT_EVIDENCE_REVIEWED_BUT_PUBLICATION_NOT_APPROVED",
       "do_not_auto_publish": true,
-      "master_version": "V1_RETAINED_FROM_CANONICAL_BASELINE",
+      "master_version": "V1_RETAINED_P2_RESEARCH_ACCEPTED_NO_PUBLICATION",
       "calendar_audit": {
         "custom_id": "CANDIDATE-IRISH-CHRISTMAS-CANDLE",
         "identity_status": "PROVISIONAL_P2_NOT_CANONICAL",
@@ -3348,7 +3354,11 @@
         "feast_rank_assumed": false,
         "pastoral_time_limit_en": "Household Christmas candle timing varies locally; no belief in guaranteed blessings.",
         "publication_status": "PROVISIONAL_MASTER_DATE_CLASSIFICATION_NOT_CALENDAR_UPDATE"
-      }
+      },
+      "research_identity_acceptance": "ACCEPTED_IN_MASTER_WITH_GEOGRAPHY_AND_HERITAGE_QUALIFICATION",
+      "research_identity_category": "IRISH_CATHOLIC_HOUSEHOLD_HISTORY",
+      "research_cross_module_owner": "Customs/Calendar",
+      "research_editorial_reason": "Irish Folklore Collection and National Museum of Ireland support domestic Christmas candles; ghost stories and guaranteed blessings remain folklore."
     },
     {
       "id": "CANDIDATE-STJOHN-BONFIRE",
@@ -3408,7 +3418,7 @@
       ],
       "editorial_status": "INDEPENDENT_EVIDENCE_REVIEWED_BUT_PUBLICATION_NOT_APPROVED",
       "do_not_auto_publish": true,
-      "master_version": "V1_RETAINED_FROM_CANONICAL_BASELINE",
+      "master_version": "V1_RETAINED_P2_RESEARCH_ACCEPTED_NO_PUBLICATION",
       "calendar_audit": {
         "custom_id": "CANDIDATE-STJOHN-BONFIRE",
         "identity_status": "PROVISIONAL_P2_NOT_CANONICAL",
@@ -3424,7 +3434,11 @@
         "feast_rank_assumed": false,
         "pastoral_time_limit_en": "Local St John Baptist eve festivities; no mandatory bonfire, unsafe fire ritual or parish event inferred.",
         "publication_status": "PROVISIONAL_MASTER_DATE_CLASSIFICATION_NOT_CALENDAR_UPDATE"
-      }
+      },
+      "research_identity_acceptance": "ACCEPTED_IN_MASTER_WITH_GEOGRAPHY_AND_HERITAGE_QUALIFICATION",
+      "research_identity_category": "LOCAL_CATHOLIC_PARISH_CELEBRATION",
+      "research_cross_module_owner": "Customs/Calendar",
+      "research_editorial_reason": "Regional heritage inventory and a 2026 diocese programme document a local religious procession/fire; the event is locally announced, not automatically 23 or 24 June."
     },
     {
       "id": "CANDIDATE-EASTER-EGG-CRAFT",
@@ -3459,8 +3473,8 @@
       },
       "source_ids": [
         "UNESCO-PYSANKA-02134",
-        "SMITHSONIAN-EGG-DESIGNS-2021",
-        "RADOM-PISANKI-TECHNIQUES"
+        "RADOM-PISANKI-TECHNIQUES",
+        "SMITHSONIAN-NMAH-PISANKA-EGG"
       ],
       "sources": [
         {
@@ -3469,9 +3483,9 @@
           "url": "https://ich.unesco.org/en/RL/pysanka-ukrainian-tradition-and-art-of-decorating-eggs-02134"
         },
         {
-          "id": "SMITHSONIAN-EGG-DESIGNS-2021",
-          "title": "Smithsonian Institution",
-          "url": "https://www.si.edu/stories/designing-easter-eggs"
+          "id": "SMITHSONIAN-NMAH-PISANKA-EGG",
+          "title": "Smithsonian National Museum of American History — Pisanka Decorated Easter Egg",
+          "url": "https://americanhistory.si.edu/collections/object/nmah_1175123"
         },
         {
           "id": "RADOM-PISANKI-TECHNIQUES",
@@ -3490,7 +3504,7 @@
       ],
       "editorial_status": "INDEPENDENT_EVIDENCE_REVIEWED_BUT_PUBLICATION_NOT_APPROVED",
       "do_not_auto_publish": true,
-      "master_version": "V1_RETAINED_FROM_CANONICAL_BASELINE",
+      "master_version": "V1_RETAINED_P2_RESEARCH_ACCEPTED_NO_PUBLICATION",
       "calendar_audit": {
         "custom_id": "CANDIDATE-EASTER-EGG-CRAFT",
         "identity_status": "PROVISIONAL_P2_NOT_CANONICAL",
@@ -3506,7 +3520,12 @@
         "feast_rank_assumed": false,
         "pastoral_time_limit_en": "Regional decorating traditions and preparation days vary; not the Easter-food blessing.",
         "publication_status": "PROVISIONAL_MASTER_DATE_CLASSIFICATION_NOT_CALENDAR_UPDATE"
-      }
+      },
+      "research_identity_acceptance": "ACCEPTED_IN_MASTER_WITH_GEOGRAPHY_AND_HERITAGE_QUALIFICATION",
+      "research_identity_category": "CROSS_CONFESSIONAL_CHRISTIAN_HERITAGE",
+      "research_cross_module_owner": "Customs/Historical",
+      "research_editorial_reason": "Polish pisanki and Ukrainian pysanky have regional Christian and cultural contexts; decorating eggs is not their priestly blessing or a supernatural protective formula.",
+      "source_repair_note": "Replaced Smithsonian 404 with verified Smithsonian museum object; UNESCO heritage listing remains an indexed official source, though web page may require JavaScript verification."
     },
     {
       "id": "CUST-ADVT-HERBERGSUCHE",
