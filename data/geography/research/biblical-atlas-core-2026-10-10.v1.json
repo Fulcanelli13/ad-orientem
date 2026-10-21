@@ -1,0 +1,4017 @@
+{
+  "schema": "AO_BIBLICAL_ATLAS_CURATED_CORE_V1",
+  "as_of": "2026-10-10",
+  "scope": "INITIAL_CURATED_EDUCATIONAL_RESEARCH_CORE_NOT_EXHAUSTIVE",
+  "entry_count": 90,
+  "canonical_books_target": 73,
+  "base_corpus_scope": "DOUAY_RHEIMS_CATHOLIC_CANON_WITH_IN_APP_CPDV_AND_CRAMPON_WITNESSES; FULL_EDITIONS_UNDER_PARALLEL_REVIEW",
+  "rights": "No scripture text reproduced. Verse coordinates are human-curated annotations and NOT yet machine validated against the current in-app edition versification.",
+  "figures_index_target": "Scripture entities must distinguish distinct people with same name; figures are discovery labels not canonical person IDs",
+  "historical_period_note": "Do not infer a literal numerical year for patriarchal or Exodus narratives; biblical narrative age, historian proposed date, and commemorative liturgical year are three distinct fields. A date range is omitted in this initial evidence layer.",
+  "geolocation_note": "Ancient mentions and modern physical Places are distinct; ambiguous names and symbolic sites get zero map pins; do not place a site's arbitrary region centroid as a precise spot.",
+  "source_integration": [
+    "src/scripture/library.js",
+    "src/scripture/browser-entry.js",
+    "data/scripture/witness/README.md",
+    "data/geography/seed-registry.v1.json"
+  ],
+  "authors_note": "Event summaries are brief newly written descriptions. Bible references are only provisional and may require Douay/Crampon/CPDV versification crosswalks.",
+  "records": [
+    {
+      "row_id": "BA-CORE-001",
+      "biblical_name": "Eden",
+      "biblical_period": "PRIMEVAL",
+      "location_type": "UNKNOWN_REGION",
+      "passage_refs": [
+        {
+          "display": "Genesis 2:8-14",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Genesis",
+            "chapter": 2,
+            "verseStart": 8,
+            "verseEnd": 14
+          }
+        }
+      ],
+      "figures": [
+        "Adam",
+        "Eve"
+      ],
+      "summary_en": "The garden is associated with humanity's beginnings and the rivers of the Genesis narrative.",
+      "historic_location_status": "UNKNOWN_NO_POINT",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "PRIMEVAL",
+        "broad_period_note": "BIBLICAL_PRIMEVAL_NO_NUMERIC_DATE",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "ANCIENT_SCRIPTURAL_NAME_LOCATION_UNKNOWN"
+    },
+    {
+      "row_id": "BA-CORE-002",
+      "biblical_name": "Ararat",
+      "biblical_period": "PRIMEVAL",
+      "location_type": "MOUNTAIN_REGION",
+      "passage_refs": [
+        {
+          "display": "Genesis 8:4",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Genesis",
+            "chapter": 8,
+            "verseStart": 4,
+            "verseEnd": 4
+          }
+        }
+      ],
+      "figures": [
+        "Noah"
+      ],
+      "summary_en": "The ark comes to rest in the mountains of Ararat, a region rather than a named summit.",
+      "historic_location_status": "REGION_NO_EXACT_SITE",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "PRIMEVAL",
+        "broad_period_note": "BIBLICAL_PRIMEVAL_NO_NUMERIC_DATE",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-003",
+      "biblical_name": "Babel / Shinar",
+      "biblical_period": "PRIMEVAL",
+      "location_type": "ANCIENT_REGION",
+      "passage_refs": [
+        {
+          "display": "Genesis 11:1-9",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Genesis",
+            "chapter": 11,
+            "verseStart": 1,
+            "verseEnd": 9
+          }
+        }
+      ],
+      "figures": [
+        "Noah's descendants"
+      ],
+      "summary_en": "The tower and confusion of languages are placed in the land of Shinar.",
+      "historic_location_status": "REGION_DISPUTED",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "PRIMEVAL",
+        "broad_period_note": "BIBLICAL_PRIMEVAL_NO_NUMERIC_DATE",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-004",
+      "biblical_name": "Ur of the Chaldees",
+      "biblical_period": "PATRIARCHS",
+      "location_type": "ANCIENT_CITY",
+      "passage_refs": [
+        {
+          "display": "Genesis 11:28",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Genesis",
+            "chapter": 11,
+            "verseStart": 28,
+            "verseEnd": 28
+          }
+        },
+        {
+          "display": "Genesis 11:31",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Genesis",
+            "chapter": 11,
+            "verseStart": 31,
+            "verseEnd": 31
+          }
+        }
+      ],
+      "figures": [
+        "Abraham",
+        "Terah"
+      ],
+      "summary_en": "Abraham's family departs Ur toward Haran and Canaan.",
+      "historic_location_status": "SCHOLARLY_PROPOSED",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "PATRIARCHS",
+        "broad_period_note": "ANCIENT_SECOND_MILLENNIUM_BCE_TRADITIONS_CHRONOLOGY_CONTESTED",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-005",
+      "biblical_name": "Haran",
+      "biblical_period": "PATRIARCHS",
+      "location_type": "ANCIENT_CITY",
+      "passage_refs": [
+        {
+          "display": "Genesis 11:31-32",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Genesis",
+            "chapter": 11,
+            "verseStart": 31,
+            "verseEnd": 32
+          }
+        },
+        {
+          "display": "Genesis 12:4",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Genesis",
+            "chapter": 12,
+            "verseStart": 4,
+            "verseEnd": 4
+          }
+        }
+      ],
+      "figures": [
+        "Abraham",
+        "Sarah",
+        "Lot"
+      ],
+      "summary_en": "Abraham departs from Haran in response to the divine call.",
+      "historic_location_status": "LIKELY",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "PATRIARCHS",
+        "broad_period_note": "ANCIENT_SECOND_MILLENNIUM_BCE_TRADITIONS_CHRONOLOGY_CONTESTED",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-006",
+      "biblical_name": "Shechem",
+      "biblical_period": "PATRIARCHS",
+      "location_type": "ANCIENT_CITY",
+      "passage_refs": [
+        {
+          "display": "Genesis 12:6-7",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Genesis",
+            "chapter": 12,
+            "verseStart": 6,
+            "verseEnd": 7
+          }
+        },
+        {
+          "display": "Joshua 24:1",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Joshua",
+            "chapter": 24,
+            "verseStart": 1,
+            "verseEnd": 1
+          }
+        }
+      ],
+      "figures": [
+        "Abraham",
+        "Joshua"
+      ],
+      "summary_en": "Abraham reaches the oak of More; later Joshua renews the covenant at Shechem.",
+      "historic_location_status": "LIKELY",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "PATRIARCHS",
+        "broad_period_note": "ANCIENT_SECOND_MILLENNIUM_BCE_TRADITIONS_CHRONOLOGY_CONTESTED",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-007",
+      "biblical_name": "Bethel / Luz",
+      "biblical_period": "PATRIARCHS",
+      "location_type": "ANCIENT_CITY",
+      "passage_refs": [
+        {
+          "display": "Genesis 28:10-19",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Genesis",
+            "chapter": 28,
+            "verseStart": 10,
+            "verseEnd": 19
+          }
+        }
+      ],
+      "figures": [
+        "Jacob"
+      ],
+      "summary_en": "Jacob's dream of the ladder and his naming of Bethel are set here.",
+      "historic_location_status": "PROPOSED",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "PATRIARCHS",
+        "broad_period_note": "ANCIENT_SECOND_MILLENNIUM_BCE_TRADITIONS_CHRONOLOGY_CONTESTED",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-008",
+      "biblical_name": "Hebron / Mamre",
+      "biblical_period": "PATRIARCHS",
+      "location_type": "CITY_REGION",
+      "passage_refs": [
+        {
+          "display": "Genesis 18:1-2",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Genesis",
+            "chapter": 18,
+            "verseStart": 1,
+            "verseEnd": 2
+          }
+        },
+        {
+          "display": "Genesis 23:19",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Genesis",
+            "chapter": 23,
+            "verseStart": 19,
+            "verseEnd": 19
+          }
+        }
+      ],
+      "figures": [
+        "Abraham",
+        "Sarah"
+      ],
+      "summary_en": "The visitors meet Abraham near Mamre; Sarah is buried in the region of Hebron.",
+      "historic_location_status": "LIKELY",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "PATRIARCHS",
+        "broad_period_note": "ANCIENT_SECOND_MILLENNIUM_BCE_TRADITIONS_CHRONOLOGY_CONTESTED",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-009",
+      "biblical_name": "Beersheba",
+      "biblical_period": "PATRIARCHS",
+      "location_type": "ANCIENT_CITY",
+      "passage_refs": [
+        {
+          "display": "Genesis 21:25-34",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Genesis",
+            "chapter": 21,
+            "verseStart": 25,
+            "verseEnd": 34
+          }
+        },
+        {
+          "display": "Genesis 26:23-33",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Genesis",
+            "chapter": 26,
+            "verseStart": 23,
+            "verseEnd": 33
+          }
+        }
+      ],
+      "figures": [
+        "Abraham",
+        "Isaac"
+      ],
+      "summary_en": "The patriarchs dig wells and make agreements near Beersheba.",
+      "historic_location_status": "LIKELY",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "PATRIARCHS",
+        "broad_period_note": "ANCIENT_SECOND_MILLENNIUM_BCE_TRADITIONS_CHRONOLOGY_CONTESTED",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-010",
+      "biblical_name": "Mount Moriah",
+      "biblical_period": "PATRIARCHS",
+      "location_type": "BIBLICAL_MOUNTAIN",
+      "passage_refs": [
+        {
+          "display": "Genesis 22:2",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Genesis",
+            "chapter": 22,
+            "verseStart": 2,
+            "verseEnd": 2
+          }
+        },
+        {
+          "display": "2 Chronicles 3:1",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "2Chronicles",
+            "chapter": 3,
+            "verseStart": 1,
+            "verseEnd": 1
+          }
+        }
+      ],
+      "figures": [
+        "Abraham",
+        "Isaac",
+        "Solomon"
+      ],
+      "summary_en": "The sacrifice-of-Isaac narrative names Moriah; Chronicles associates Moriah with the Temple.",
+      "historic_location_status": "TRADITIONAL_IDENTIFICATION",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "PATRIARCHS",
+        "broad_period_note": "ANCIENT_SECOND_MILLENNIUM_BCE_TRADITIONS_CHRONOLOGY_CONTESTED",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "MORIAH_TERMS_EARLY_GENESIS_REGION_AND_LATER_TEMPLE_ASSOCIATION"
+    },
+    {
+      "row_id": "BA-CORE-011",
+      "biblical_name": "Sodom",
+      "biblical_period": "PATRIARCHS",
+      "location_type": "ANCIENT_CITY",
+      "passage_refs": [
+        {
+          "display": "Genesis 19:1-29",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Genesis",
+            "chapter": 19,
+            "verseStart": 1,
+            "verseEnd": 29
+          }
+        }
+      ],
+      "figures": [
+        "Lot"
+      ],
+      "summary_en": "Lot's escape and the destruction of Sodom are narrated here.",
+      "historic_location_status": "DISPUTED_NO_POINT",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "PATRIARCHS",
+        "broad_period_note": "ANCIENT_SECOND_MILLENNIUM_BCE_TRADITIONS_CHRONOLOGY_CONTESTED",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-012",
+      "biblical_name": "Gomorrah",
+      "biblical_period": "PATRIARCHS",
+      "location_type": "ANCIENT_CITY",
+      "passage_refs": [
+        {
+          "display": "Genesis 19:24-29",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Genesis",
+            "chapter": 19,
+            "verseStart": 24,
+            "verseEnd": 29
+          }
+        }
+      ],
+      "figures": [
+        "Lot"
+      ],
+      "summary_en": "Gomorrah is named with Sodom in the judgment narrative.",
+      "historic_location_status": "DISPUTED_NO_POINT",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "PATRIARCHS",
+        "broad_period_note": "ANCIENT_SECOND_MILLENNIUM_BCE_TRADITIONS_CHRONOLOGY_CONTESTED",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-013",
+      "biblical_name": "Egypt",
+      "biblical_period": "PATRIARCHS_EXODUS",
+      "location_type": "COUNTRY_REGION",
+      "passage_refs": [
+        {
+          "display": "Genesis 37:28",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Genesis",
+            "chapter": 37,
+            "verseStart": 28,
+            "verseEnd": 28
+          }
+        },
+        {
+          "display": "Exodus 1:8-14",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Exodus",
+            "chapter": 1,
+            "verseStart": 8,
+            "verseEnd": 14
+          }
+        }
+      ],
+      "figures": [
+        "Joseph",
+        "Moses"
+      ],
+      "summary_en": "Joseph is taken into Egypt and the Israelites later suffer enslavement there.",
+      "historic_location_status": "KNOWN_REGION_NOT_SITE",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "PATRIARCHS_EXODUS",
+        "broad_period_note": "BRIDGES_PATRIARCHS_EXODUS_NO_SINGLE_YEAR",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-014",
+      "biblical_name": "Goshen",
+      "biblical_period": "PATRIARCHS_EXODUS",
+      "location_type": "ANCIENT_REGION",
+      "passage_refs": [
+        {
+          "display": "Genesis 47:6",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Genesis",
+            "chapter": 47,
+            "verseStart": 6,
+            "verseEnd": 6
+          }
+        },
+        {
+          "display": "Exodus 8:22",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Exodus",
+            "chapter": 8,
+            "verseStart": 22,
+            "verseEnd": 22
+          }
+        }
+      ],
+      "figures": [
+        "Joseph",
+        "Jacob",
+        "Moses"
+      ],
+      "summary_en": "Jacob's household settles in Goshen, later distinguished during the plagues.",
+      "historic_location_status": "REGION_PROPOSED",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "PATRIARCHS_EXODUS",
+        "broad_period_note": "BRIDGES_PATRIARCHS_EXODUS_NO_SINGLE_YEAR",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-015",
+      "biblical_name": "Pithom",
+      "biblical_period": "EXODUS",
+      "location_type": "ANCIENT_CITY",
+      "passage_refs": [
+        {
+          "display": "Exodus 1:11",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Exodus",
+            "chapter": 1,
+            "verseStart": 11,
+            "verseEnd": 11
+          }
+        }
+      ],
+      "figures": [
+        "Moses",
+        "Israelites"
+      ],
+      "summary_en": "The Israelites build a store-city named Pithom during forced labour.",
+      "historic_location_status": "PROPOSED",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "EXODUS",
+        "broad_period_note": "EXODUS_DATE_HISTORICALLY_CONTESTED",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-016",
+      "biblical_name": "Raamses",
+      "biblical_period": "EXODUS",
+      "location_type": "ANCIENT_CITY",
+      "passage_refs": [
+        {
+          "display": "Exodus 1:11",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Exodus",
+            "chapter": 1,
+            "verseStart": 11,
+            "verseEnd": 11
+          }
+        },
+        {
+          "display": "Exodus 12:37",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Exodus",
+            "chapter": 12,
+            "verseStart": 37,
+            "verseEnd": 37
+          }
+        }
+      ],
+      "figures": [
+        "Moses",
+        "Israelites"
+      ],
+      "summary_en": "One of the named store-cities and a departure point in the Exodus narrative.",
+      "historic_location_status": "PROPOSED",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "EXODUS",
+        "broad_period_note": "EXODUS_DATE_HISTORICALLY_CONTESTED",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-017",
+      "biblical_name": "Pi-hahiroth",
+      "biblical_period": "EXODUS",
+      "location_type": "CAMP_SITE",
+      "passage_refs": [
+        {
+          "display": "Exodus 14:1-2",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Exodus",
+            "chapter": 14,
+            "verseStart": 1,
+            "verseEnd": 2
+          }
+        }
+      ],
+      "figures": [
+        "Moses",
+        "Israelites"
+      ],
+      "summary_en": "The sea-crossing camp is placed near Pi-hahiroth.",
+      "historic_location_status": "DISPUTED_NO_POINT",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "EXODUS",
+        "broad_period_note": "EXODUS_DATE_HISTORICALLY_CONTESTED",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-018",
+      "biblical_name": "Marah",
+      "biblical_period": "EXODUS",
+      "location_type": "WILDERNESS_SITE",
+      "passage_refs": [
+        {
+          "display": "Exodus 15:22-25",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Exodus",
+            "chapter": 15,
+            "verseStart": 22,
+            "verseEnd": 25
+          }
+        }
+      ],
+      "figures": [
+        "Moses",
+        "Israelites"
+      ],
+      "summary_en": "The Israelites encounter bitter water which becomes drinkable.",
+      "historic_location_status": "DISPUTED_NO_POINT",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "EXODUS",
+        "broad_period_note": "EXODUS_DATE_HISTORICALLY_CONTESTED",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-019",
+      "biblical_name": "Elim",
+      "biblical_period": "EXODUS",
+      "location_type": "WILDERNESS_SITE",
+      "passage_refs": [
+        {
+          "display": "Exodus 15:27",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Exodus",
+            "chapter": 15,
+            "verseStart": 27,
+            "verseEnd": 27
+          }
+        }
+      ],
+      "figures": [
+        "Moses",
+        "Israelites"
+      ],
+      "summary_en": "The narrative describes twelve springs and seventy palms at Elim.",
+      "historic_location_status": "DISPUTED_NO_POINT",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "EXODUS",
+        "broad_period_note": "EXODUS_DATE_HISTORICALLY_CONTESTED",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-020",
+      "biblical_name": "Mount Sinai / Horeb",
+      "biblical_period": "EXODUS",
+      "location_type": "BIBLICAL_MOUNTAIN",
+      "passage_refs": [
+        {
+          "display": "Exodus 19:1-20",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Exodus",
+            "chapter": 19,
+            "verseStart": 1,
+            "verseEnd": 20
+          }
+        },
+        {
+          "display": "1 Kings 19:8-13",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "1Kings",
+            "chapter": 19,
+            "verseStart": 8,
+            "verseEnd": 13
+          }
+        }
+      ],
+      "figures": [
+        "Moses",
+        "Elijah"
+      ],
+      "summary_en": "The giving of the Law and Elijah's later encounter with God are linked to Sinai or Horeb.",
+      "historic_location_status": "COMPETING_TRADITIONAL_SITES",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "EXODUS",
+        "broad_period_note": "EXODUS_DATE_HISTORICALLY_CONTESTED",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "EXPLICIT_BIBLICAL_MOUNTAIN_MULTIPLE_MODERN_TRADITIONS"
+    },
+    {
+      "row_id": "BA-CORE-021",
+      "biblical_name": "Kadesh-barnea",
+      "biblical_period": "WILDERNESS",
+      "location_type": "CAMP_REGION",
+      "passage_refs": [
+        {
+          "display": "Numbers 13:26",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Numbers",
+            "chapter": 13,
+            "verseStart": 26,
+            "verseEnd": 26
+          }
+        },
+        {
+          "display": "Numbers 20:1",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Numbers",
+            "chapter": 20,
+            "verseStart": 1,
+            "verseEnd": 1
+          }
+        }
+      ],
+      "figures": [
+        "Moses",
+        "Miriam"
+      ],
+      "summary_en": "The spies return and Miriam dies during the wilderness period.",
+      "historic_location_status": "REGION_PROPOSED",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "WILDERNESS",
+        "broad_period_note": "EXODUS_AND_WILDERNESS_CHRONOLOGY_CONTESTED",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-022",
+      "biblical_name": "Mount Hor",
+      "biblical_period": "WILDERNESS",
+      "location_type": "BIBLICAL_MOUNTAIN",
+      "passage_refs": [
+        {
+          "display": "Numbers 20:22-29",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Numbers",
+            "chapter": 20,
+            "verseStart": 22,
+            "verseEnd": 29
+          }
+        }
+      ],
+      "figures": [
+        "Aaron",
+        "Moses"
+      ],
+      "summary_en": "Aaron dies on Mount Hor according to the wilderness narrative.",
+      "historic_location_status": "TRADITIONAL_PROPOSED",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "WILDERNESS",
+        "broad_period_note": "EXODUS_AND_WILDERNESS_CHRONOLOGY_CONTESTED",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-023",
+      "biblical_name": "Mount Nebo",
+      "biblical_period": "WILDERNESS",
+      "location_type": "BIBLICAL_MOUNTAIN",
+      "passage_refs": [
+        {
+          "display": "Deuteronomy 34:1-6",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Deuteronomy",
+            "chapter": 34,
+            "verseStart": 1,
+            "verseEnd": 6
+          }
+        }
+      ],
+      "figures": [
+        "Moses"
+      ],
+      "summary_en": "Moses sees the Promised Land; his burial place remains unknown.",
+      "historic_location_status": "TRADITIONAL_MEMORIAL_NOT_GRAVE",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "WILDERNESS",
+        "broad_period_note": "EXODUS_AND_WILDERNESS_CHRONOLOGY_CONTESTED",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-024",
+      "biblical_name": "Jordan River",
+      "biblical_period": "CONQUEST_TO_GOSPELS",
+      "location_type": "RIVER",
+      "passage_refs": [
+        {
+          "display": "Joshua 3:14-17",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Joshua",
+            "chapter": 3,
+            "verseStart": 14,
+            "verseEnd": 17
+          }
+        },
+        {
+          "display": "Mark 1:9-11",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Mark",
+            "chapter": 1,
+            "verseStart": 9,
+            "verseEnd": 11
+          }
+        }
+      ],
+      "figures": [
+        "Joshua",
+        "Jesus",
+        "John the Baptist"
+      ],
+      "summary_en": "Joshua's crossing and Christ's Baptism belong to different places and periods along the river.",
+      "historic_location_status": "RIVER_NO_SINGLE_POINT",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "CONQUEST_TO_GOSPELS",
+        "broad_period_note": "MULTI_PERIOD",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-025",
+      "biblical_name": "Jericho",
+      "biblical_period": "CONQUEST_TO_GOSPELS",
+      "location_type": "CITY",
+      "passage_refs": [
+        {
+          "display": "Joshua 6:1-20",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Joshua",
+            "chapter": 6,
+            "verseStart": 1,
+            "verseEnd": 20
+          }
+        },
+        {
+          "display": "Luke 19:1-10",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Luke",
+            "chapter": 19,
+            "verseStart": 1,
+            "verseEnd": 10
+          }
+        }
+      ],
+      "figures": [
+        "Joshua",
+        "Zacchaeus",
+        "Jesus"
+      ],
+      "summary_en": "Jericho's walls fall in Joshua; Christ later meets Zacchaeus in Jericho.",
+      "historic_location_status": "ANCIENT_MODERN_DISTINCTION",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "CONQUEST_TO_GOSPELS",
+        "broad_period_note": "MULTI_PERIOD",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-026",
+      "biblical_name": "Gilgal",
+      "biblical_period": "CONQUEST",
+      "location_type": "CAMP_SANCTUARY",
+      "passage_refs": [
+        {
+          "display": "Joshua 4:19-24",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Joshua",
+            "chapter": 4,
+            "verseStart": 19,
+            "verseEnd": 24
+          }
+        }
+      ],
+      "figures": [
+        "Joshua",
+        "Israelites"
+      ],
+      "summary_en": "Stones commemorating the passage over the Jordan are set at Gilgal.",
+      "historic_location_status": "DISPUTED_NO_POINT",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "CONQUEST",
+        "broad_period_note": "EARLY_ISRAEL_DATE_UNCERTAIN",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-027",
+      "biblical_name": "Gibeon",
+      "biblical_period": "CONQUEST",
+      "location_type": "ANCIENT_CITY",
+      "passage_refs": [
+        {
+          "display": "Joshua 10:1-13",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Joshua",
+            "chapter": 10,
+            "verseStart": 1,
+            "verseEnd": 13
+          }
+        }
+      ],
+      "figures": [
+        "Joshua"
+      ],
+      "summary_en": "Joshua's victory and the famous sun-and-moon narrative concern Gibeon.",
+      "historic_location_status": "LIKELY",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "CONQUEST",
+        "broad_period_note": "EARLY_ISRAEL_DATE_UNCERTAIN",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-028",
+      "biblical_name": "Shiloh",
+      "biblical_period": "JUDGES",
+      "location_type": "SANCTUARY_SETTLEMENT",
+      "passage_refs": [
+        {
+          "display": "Joshua 18:1",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Joshua",
+            "chapter": 18,
+            "verseStart": 1,
+            "verseEnd": 1
+          }
+        },
+        {
+          "display": "1 Samuel 1:3-20",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "1Samuel",
+            "chapter": 1,
+            "verseStart": 3,
+            "verseEnd": 20
+          }
+        }
+      ],
+      "figures": [
+        "Hannah",
+        "Eli",
+        "Samuel"
+      ],
+      "summary_en": "The tabernacle is set up and Hannah prays for a son at the sanctuary.",
+      "historic_location_status": "LIKELY",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "JUDGES",
+        "broad_period_note": "EARLY_ISRAEL_DATE_UNCERTAIN",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-029",
+      "biblical_name": "Bethlehem",
+      "biblical_period": "JUDGES_TO_GOSPELS",
+      "location_type": "CITY",
+      "passage_refs": [
+        {
+          "display": "Ruth 1:1-2",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Ruth",
+            "chapter": 1,
+            "verseStart": 1,
+            "verseEnd": 2
+          }
+        },
+        {
+          "display": "Luke 2:4-7",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Luke",
+            "chapter": 2,
+            "verseStart": 4,
+            "verseEnd": 7
+          }
+        }
+      ],
+      "figures": [
+        "Ruth",
+        "Boaz",
+        "David",
+        "Jesus",
+        "Mary",
+        "Joseph"
+      ],
+      "summary_en": "Ruth's story and the birth of Christ are both associated with Bethlehem.",
+      "historic_location_status": "KNOWN_MODERN_CITY",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING",
+        "PARENT_MONUMENT_LINK_PROVISIONAL_NOT_BIBLICAL_PLACE_IDENTITY"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "JUDGES_TO_GOSPELS",
+        "broad_period_note": "MULTI_PERIOD",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING",
+      "associated_monument_place_ids": [
+        "place:PS:nativity-bethlehem"
+      ],
+      "modern_monument_relation": "NAMED_ANCIENT_TOWN_WITHIN_WHICH_NATIVITY_CHURCH_REMAINS"
+    },
+    {
+      "row_id": "BA-CORE-030",
+      "biblical_name": "Ramah",
+      "biblical_period": "MONARCHY",
+      "location_type": "ANCIENT_TOWN",
+      "passage_refs": [
+        {
+          "display": "1 Samuel 7:15-17",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "1Samuel",
+            "chapter": 7,
+            "verseStart": 15,
+            "verseEnd": 17
+          }
+        }
+      ],
+      "figures": [
+        "Samuel"
+      ],
+      "summary_en": "Samuel returns to Ramah and ministers as judge.",
+      "historic_location_status": "MULTIPLE_SAME_NAME_SITES",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "MONARCHY",
+        "broad_period_note": "CIRCA_1000_TO_600_BCE_CONTEXT_NOT_INDIVIDUAL_EVENT_DATE",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-031",
+      "biblical_name": "Gibeah",
+      "biblical_period": "MONARCHY",
+      "location_type": "ANCIENT_TOWN",
+      "passage_refs": [
+        {
+          "display": "1 Samuel 10:26",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "1Samuel",
+            "chapter": 10,
+            "verseStart": 26,
+            "verseEnd": 26
+          }
+        },
+        {
+          "display": "1 Samuel 11:4",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "1Samuel",
+            "chapter": 11,
+            "verseStart": 4,
+            "verseEnd": 4
+          }
+        }
+      ],
+      "figures": [
+        "Saul"
+      ],
+      "summary_en": "Saul returns to Gibeah and receives news of the threat to Jabesh.",
+      "historic_location_status": "MULTIPLE_POSSIBLE_SITES",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "MONARCHY",
+        "broad_period_note": "CIRCA_1000_TO_600_BCE_CONTEXT_NOT_INDIVIDUAL_EVENT_DATE",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-032",
+      "biblical_name": "Jabesh-gilead",
+      "biblical_period": "MONARCHY",
+      "location_type": "ANCIENT_CITY",
+      "passage_refs": [
+        {
+          "display": "1 Samuel 11:1-11",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "1Samuel",
+            "chapter": 11,
+            "verseStart": 1,
+            "verseEnd": 11
+          }
+        }
+      ],
+      "figures": [
+        "Saul"
+      ],
+      "summary_en": "Saul rallies Israel to relieve besieged Jabesh-gilead.",
+      "historic_location_status": "PROPOSED",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "MONARCHY",
+        "broad_period_note": "CIRCA_1000_TO_600_BCE_CONTEXT_NOT_INDIVIDUAL_EVENT_DATE",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-033",
+      "biblical_name": "Mount Gilboa",
+      "biblical_period": "MONARCHY",
+      "location_type": "MOUNTAIN",
+      "passage_refs": [
+        {
+          "display": "1 Samuel 31:1-6",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "1Samuel",
+            "chapter": 31,
+            "verseStart": 1,
+            "verseEnd": 6
+          }
+        }
+      ],
+      "figures": [
+        "Saul",
+        "Jonathan"
+      ],
+      "summary_en": "Saul and Jonathan die after the battle on Mount Gilboa.",
+      "historic_location_status": "LIKELY_REGION",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "MONARCHY",
+        "broad_period_note": "CIRCA_1000_TO_600_BCE_CONTEXT_NOT_INDIVIDUAL_EVENT_DATE",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-034",
+      "biblical_name": "Ziklag",
+      "biblical_period": "MONARCHY",
+      "location_type": "ANCIENT_CITY",
+      "passage_refs": [
+        {
+          "display": "1 Samuel 30:1-8",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "1Samuel",
+            "chapter": 30,
+            "verseStart": 1,
+            "verseEnd": 8
+          }
+        }
+      ],
+      "figures": [
+        "David"
+      ],
+      "summary_en": "David returns to find Ziklag raided and pursues the Amalekites.",
+      "historic_location_status": "DISPUTED_SITE",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "MONARCHY",
+        "broad_period_note": "CIRCA_1000_TO_600_BCE_CONTEXT_NOT_INDIVIDUAL_EVENT_DATE",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-035",
+      "biblical_name": "Jerusalem / Zion",
+      "biblical_period": "MONARCHY_TO_GOSPELS",
+      "location_type": "CITY",
+      "passage_refs": [
+        {
+          "display": "2 Samuel 5:6-10",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "2Samuel",
+            "chapter": 5,
+            "verseStart": 6,
+            "verseEnd": 10
+          }
+        },
+        {
+          "display": "Luke 19:28-44",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Luke",
+            "chapter": 19,
+            "verseStart": 28,
+            "verseEnd": 44
+          }
+        }
+      ],
+      "figures": [
+        "David",
+        "Solomon",
+        "Jesus"
+      ],
+      "summary_en": "David takes Jerusalem; later the city becomes central to Christ's Passion.",
+      "historic_location_status": "KNOWN_CITY_MULTIPLE_EVENT_SITES",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "MONARCHY_TO_GOSPELS",
+        "broad_period_note": "MULTI_PERIOD",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-036",
+      "biblical_name": "Mount Zion",
+      "biblical_period": "MONARCHY_TO_GOSPELS",
+      "location_type": "MOUNTAIN_HILL",
+      "passage_refs": [
+        {
+          "display": "2 Samuel 5:7",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "2Samuel",
+            "chapter": 5,
+            "verseStart": 7,
+            "verseEnd": 7
+          }
+        },
+        {
+          "display": "Acts 2:1-4",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Acts",
+            "chapter": 2,
+            "verseStart": 1,
+            "verseEnd": 4
+          }
+        }
+      ],
+      "figures": [
+        "David",
+        "Apostles"
+      ],
+      "summary_en": "The name Zion shifts in historical usage; the Pentecost event does not establish exact Upper Room coordinates.",
+      "historic_location_status": "HISTORICAL_TOPOGRAPHY_VARIES",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "MONARCHY_TO_GOSPELS",
+        "broad_period_note": "MULTI_PERIOD",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-037",
+      "biblical_name": "Mount Carmel",
+      "biblical_period": "PROPHETS",
+      "location_type": "MOUNTAIN_REGION",
+      "passage_refs": [
+        {
+          "display": "1 Kings 18:19-39",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "1Kings",
+            "chapter": 18,
+            "verseStart": 19,
+            "verseEnd": 39
+          }
+        }
+      ],
+      "figures": [
+        "Elijah"
+      ],
+      "summary_en": "Elijah confronts the prophets of Baal on Carmel.",
+      "historic_location_status": "REGION_KNOWN_ALTAR_LOCATION_UNKNOWN",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "PROPHETS",
+        "broad_period_note": "CIRCA_900_TO_700_BCE_CONTEXT_ONLY",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-038",
+      "biblical_name": "Zarephath / Sarepta",
+      "biblical_period": "PROPHETS",
+      "location_type": "ANCIENT_CITY",
+      "passage_refs": [
+        {
+          "display": "1 Kings 17:8-24",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "1Kings",
+            "chapter": 17,
+            "verseStart": 8,
+            "verseEnd": 24
+          }
+        }
+      ],
+      "figures": [
+        "Elijah",
+        "Widow of Zarephath"
+      ],
+      "summary_en": "Elijah is sustained by a widow and her son is restored to life.",
+      "historic_location_status": "LIKELY",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "PROPHETS",
+        "broad_period_note": "CIRCA_900_TO_700_BCE_CONTEXT_ONLY",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-039",
+      "biblical_name": "Samaria",
+      "biblical_period": "MONARCHY_PROPHETS",
+      "location_type": "ANCIENT_CAPITAL",
+      "passage_refs": [
+        {
+          "display": "1 Kings 16:24",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "1Kings",
+            "chapter": 16,
+            "verseStart": 24,
+            "verseEnd": 24
+          }
+        },
+        {
+          "display": "2 Kings 17:5-6",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "2Kings",
+            "chapter": 17,
+            "verseStart": 5,
+            "verseEnd": 6
+          }
+        }
+      ],
+      "figures": [
+        "Omri",
+        "Elisha"
+      ],
+      "summary_en": "The northern kingdom's capital is built and later captured by Assyria.",
+      "historic_location_status": "LIKELY",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "MONARCHY_PROPHETS",
+        "broad_period_note": "CIRCA_900_TO_700_BCE_CONTEXT_ONLY",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-040",
+      "biblical_name": "Jezreel",
+      "biblical_period": "MONARCHY_PROPHETS",
+      "location_type": "ANCIENT_CITY",
+      "passage_refs": [
+        {
+          "display": "1 Kings 21:1-19",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "1Kings",
+            "chapter": 21,
+            "verseStart": 1,
+            "verseEnd": 19
+          }
+        }
+      ],
+      "figures": [
+        "Ahab",
+        "Jezebel",
+        "Naboth",
+        "Elijah"
+      ],
+      "summary_en": "Naboth's vineyard and Elijah's condemnation of injustice are set near Jezreel.",
+      "historic_location_status": "LIKELY",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "MONARCHY_PROPHETS",
+        "broad_period_note": "CIRCA_900_TO_700_BCE_CONTEXT_ONLY",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-041",
+      "biblical_name": "Mount Tabor",
+      "biblical_period": "JUDGES_TO_GOSPELS",
+      "location_type": "MOUNTAIN",
+      "passage_refs": [
+        {
+          "display": "Judges 4:6-15",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Judges",
+            "chapter": 4,
+            "verseStart": 6,
+            "verseEnd": 15
+          }
+        },
+        {
+          "display": "Matthew 17:1-8",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Matthew",
+            "chapter": 17,
+            "verseStart": 1,
+            "verseEnd": 8
+          }
+        }
+      ],
+      "figures": [
+        "Deborah",
+        "Barak",
+        "Jesus",
+        "Peter",
+        "James",
+        "John"
+      ],
+      "summary_en": "Barak assembles at Tabor; a later Christian tradition places the Transfiguration there.",
+      "historic_location_status": "EVENT_LOCATION_TRADITION_NOT_SCRIPTURALLY_NAMED",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "JUDGES_TO_GOSPELS",
+        "broad_period_note": "MULTI_PERIOD",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "MIXED_EXPLICIT_IN_JUDGES_TRADITIONAL_FOR_TRANSFIGURATION"
+    },
+    {
+      "row_id": "BA-CORE-042",
+      "biblical_name": "Lachish",
+      "biblical_period": "JUDAH",
+      "location_type": "ANCIENT_CITY",
+      "passage_refs": [
+        {
+          "display": "2 Kings 18:14-17",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "2Kings",
+            "chapter": 18,
+            "verseStart": 14,
+            "verseEnd": 17
+          }
+        }
+      ],
+      "figures": [
+        "Hezekiah",
+        "Sennacherib"
+      ],
+      "summary_en": "Assyrian forces operate from Lachish during Hezekiah's reign.",
+      "historic_location_status": "ARCHAEOLOGICALLY_ATTESTED",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "JUDAH",
+        "broad_period_note": "CIRCA_700_BCE_CONTEXT_ONLY",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-043",
+      "biblical_name": "Babylon",
+      "biblical_period": "EXILE",
+      "location_type": "ANCIENT_CITY",
+      "passage_refs": [
+        {
+          "display": "2 Kings 25:1-12",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "2Kings",
+            "chapter": 25,
+            "verseStart": 1,
+            "verseEnd": 12
+          }
+        },
+        {
+          "display": "Daniel 1:1-6",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Daniel",
+            "chapter": 1,
+            "verseStart": 1,
+            "verseEnd": 6
+          }
+        }
+      ],
+      "figures": [
+        "Nebuchadnezzar",
+        "Daniel"
+      ],
+      "summary_en": "Judah's deportations and Daniel's early court setting are associated with Babylon.",
+      "historic_location_status": "ARCHAEOLOGICALLY_ATTESTED",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "EXILE",
+        "broad_period_note": "CIRCA_600_TO_500_BCE_CONTEXT_ONLY",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-044",
+      "biblical_name": "River Chebar",
+      "biblical_period": "EXILE",
+      "location_type": "CANAL_RIVER",
+      "passage_refs": [
+        {
+          "display": "Ezekiel 1:1-3",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Ezekiel",
+            "chapter": 1,
+            "verseStart": 1,
+            "verseEnd": 3
+          }
+        }
+      ],
+      "figures": [
+        "Ezekiel"
+      ],
+      "summary_en": "Ezekiel describes his vision while among the exiles by the Chebar.",
+      "historic_location_status": "CANAL_LOCATION_PROPOSED",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "EXILE",
+        "broad_period_note": "CIRCA_600_TO_500_BCE_CONTEXT_ONLY",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-045",
+      "biblical_name": "Susa / Shushan",
+      "biblical_period": "EXILE_PERSIA",
+      "location_type": "ANCIENT_CITY",
+      "passage_refs": [
+        {
+          "display": "Esther 1:2",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Esther",
+            "chapter": 1,
+            "verseStart": 2,
+            "verseEnd": 2
+          }
+        },
+        {
+          "display": "Nehemiah 1:1",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Nehemiah",
+            "chapter": 1,
+            "verseStart": 1,
+            "verseEnd": 1
+          }
+        }
+      ],
+      "figures": [
+        "Esther",
+        "Nehemiah"
+      ],
+      "summary_en": "Persian royal court and Nehemiah's service are located at Susa.",
+      "historic_location_status": "ARCHAEOLOGICALLY_ATTESTED",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "EXILE_PERSIA",
+        "broad_period_note": "CIRCA_500_TO_300_BCE_CONTEXT_ONLY",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-046",
+      "biblical_name": "Nineveh",
+      "biblical_period": "ASSYRIA_DEUTEROCANON",
+      "location_type": "ANCIENT_CITY",
+      "passage_refs": [
+        {
+          "display": "Jonah 3:1-10",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Jonah",
+            "chapter": 3,
+            "verseStart": 1,
+            "verseEnd": 10
+          }
+        },
+        {
+          "display": "Tobit 1:10",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Tobit",
+            "chapter": 1,
+            "verseStart": 10,
+            "verseEnd": 10
+          }
+        }
+      ],
+      "figures": [
+        "Jonah",
+        "Tobit"
+      ],
+      "summary_en": "Jonah preaches repentance there; Tobit also lives in Nineveh in exile.",
+      "historic_location_status": "ARCHAEOLOGICALLY_ATTESTED",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "ASSYRIA_DEUTEROCANON",
+        "broad_period_note": "MULTI_PERIOD_JONAH_AND_TOBIT_NARRATIVE_DATE_UNCERTAIN",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-047",
+      "biblical_name": "Ecbatana",
+      "biblical_period": "DEUTEROCANON",
+      "location_type": "ANCIENT_CITY",
+      "passage_refs": [
+        {
+          "display": "Tobit 3:7",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Tobit",
+            "chapter": 3,
+            "verseStart": 7,
+            "verseEnd": 7
+          }
+        }
+      ],
+      "figures": [
+        "Sarah daughter of Raguel",
+        "Tobias"
+      ],
+      "summary_en": "Sarah lives in Ecbatana and Tobias later journeys there.",
+      "historic_location_status": "LIKELY",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "DEUTEROCANON",
+        "broad_period_note": "NARRATIVE_ERA_VARYING",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-048",
+      "biblical_name": "Rages / Rhages",
+      "biblical_period": "DEUTEROCANON",
+      "location_type": "ANCIENT_CITY",
+      "passage_refs": [
+        {
+          "display": "Tobit 1:14",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Tobit",
+            "chapter": 1,
+            "verseStart": 14,
+            "verseEnd": 14
+          }
+        }
+      ],
+      "figures": [
+        "Tobit",
+        "Tobias",
+        "Raphael"
+      ],
+      "summary_en": "Tobit deposits money with Gabael in Media and sends Tobias on his journey.",
+      "historic_location_status": "PROPOSED",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "DEUTEROCANON",
+        "broad_period_note": "NARRATIVE_ERA_VARYING",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-049",
+      "biblical_name": "Bethulia",
+      "biblical_period": "DEUTEROCANON",
+      "location_type": "ANCIENT_CITY",
+      "passage_refs": [
+        {
+          "display": "Judith 7:1-7",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Judith",
+            "chapter": 7,
+            "verseStart": 1,
+            "verseEnd": 7
+          }
+        }
+      ],
+      "figures": [
+        "Judith",
+        "Ozias"
+      ],
+      "summary_en": "Judith's home town resists Holofernes' siege.",
+      "historic_location_status": "UNKNOWN_NO_CONFIDENT_SITE",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "DEUTEROCANON",
+        "broad_period_note": "NARRATIVE_ERA_VARYING",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-050",
+      "biblical_name": "Modiin / Modein",
+      "biblical_period": "MACCABEES",
+      "location_type": "ANCIENT_TOWN",
+      "passage_refs": [
+        {
+          "display": "1 Maccabees 2:1-5",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "1Maccabees",
+            "chapter": 2,
+            "verseStart": 1,
+            "verseEnd": 5
+          }
+        }
+      ],
+      "figures": [
+        "Mattathias",
+        "Judas Maccabeus"
+      ],
+      "summary_en": "Mattathias and his family come from Modein at the start of the revolt.",
+      "historic_location_status": "PROPOSED",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "MACCABEES",
+        "broad_period_note": "CIRCA_170_TO_130_BCE",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-051",
+      "biblical_name": "Emmaus of the Maccabees",
+      "biblical_period": "MACCABEES",
+      "location_type": "ANCIENT_CITY",
+      "passage_refs": [
+        {
+          "display": "1 Maccabees 3:40",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "1Maccabees",
+            "chapter": 3,
+            "verseStart": 40,
+            "verseEnd": 40
+          }
+        },
+        {
+          "display": "1 Maccabees 4:3-15",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "1Maccabees",
+            "chapter": 4,
+            "verseStart": 3,
+            "verseEnd": 15
+          }
+        }
+      ],
+      "figures": [
+        "Judas Maccabeus"
+      ],
+      "summary_en": "Judas' forces defeat the expedition encamped near Emmaus.",
+      "historic_location_status": "ANCIENT_SITE_DISTINCT_FROM_NT_IDENTIFICATION",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "MACCABEES",
+        "broad_period_note": "CIRCA_170_TO_130_BCE",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "DISTINCT_TEXTUAL_EVENT_FROM_GOSPEL_EMMAUS_LOCATION_MAY_OVERLAP"
+    },
+    {
+      "row_id": "BA-CORE-052",
+      "biblical_name": "Jerusalem Temple",
+      "biblical_period": "MONARCHY_TO_GOSPELS",
+      "location_type": "TEMPLE_COMPLEX",
+      "passage_refs": [
+        {
+          "display": "1 Kings 8:1-11",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "1Kings",
+            "chapter": 8,
+            "verseStart": 1,
+            "verseEnd": 11
+          }
+        },
+        {
+          "display": "2 Maccabees 3:1-3",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "2Maccabees",
+            "chapter": 3,
+            "verseStart": 1,
+            "verseEnd": 3
+          }
+        },
+        {
+          "display": "Luke 2:22-38",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Luke",
+            "chapter": 2,
+            "verseStart": 22,
+            "verseEnd": 38
+          }
+        }
+      ],
+      "figures": [
+        "Solomon",
+        "Onias",
+        "Simeon",
+        "Anna",
+        "Mary",
+        "Joseph",
+        "Jesus"
+      ],
+      "summary_en": "Successive Temple phases frame Solomon's dedication, later desecrations and Christ's Presentation.",
+      "historic_location_status": "ANCIENT_STRUCTURE_DESTROYED_NOT_MODERN_SHRINE",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "MONARCHY_TO_GOSPELS",
+        "broad_period_note": "MULTI_PERIOD",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-053",
+      "biblical_name": "Bethany",
+      "biblical_period": "GOSPELS",
+      "location_type": "VILLAGE",
+      "passage_refs": [
+        {
+          "display": "John 11:1-44",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "John",
+            "chapter": 11,
+            "verseStart": 1,
+            "verseEnd": 44
+          }
+        }
+      ],
+      "figures": [
+        "Jesus",
+        "Martha",
+        "Mary",
+        "Lazarus"
+      ],
+      "summary_en": "Christ raises Lazarus; the traditional tomb and Franciscan church are related but distinct features.",
+      "historic_location_status": "KNOWN_VILLAGE_TRADITIONAL_TOMB",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "GOSPELS",
+        "broad_period_note": "LIFE_OF_CHRIST_CIRCA_6_BCE_TO_33_CE_EVENT_SPECIFIC_DATE_UNKNOWN",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-054",
+      "biblical_name": "Nazareth",
+      "biblical_period": "GOSPELS",
+      "location_type": "CITY",
+      "passage_refs": [
+        {
+          "display": "Luke 1:26-38",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Luke",
+            "chapter": 1,
+            "verseStart": 26,
+            "verseEnd": 38
+          }
+        },
+        {
+          "display": "Luke 4:16-30",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Luke",
+            "chapter": 4,
+            "verseStart": 16,
+            "verseEnd": 30
+          }
+        }
+      ],
+      "figures": [
+        "Mary",
+        "Jesus",
+        "Gabriel"
+      ],
+      "summary_en": "The Annunciation and Christ's synagogue reading take place in Nazareth.",
+      "historic_location_status": "KNOWN_CITY_TRADITIONAL_SUBSITES",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "GOSPELS",
+        "broad_period_note": "LIFE_OF_CHRIST_CIRCA_6_BCE_TO_33_CE_EVENT_SPECIFIC_DATE_UNKNOWN",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-055",
+      "biblical_name": "Ein Karem / hill country of Judah",
+      "biblical_period": "GOSPELS",
+      "location_type": "VILLAGE_TRADITION",
+      "passage_refs": [
+        {
+          "display": "Luke 1:39-45",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Luke",
+            "chapter": 1,
+            "verseStart": 39,
+            "verseEnd": 45
+          }
+        },
+        {
+          "display": "Luke 1:57-66",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Luke",
+            "chapter": 1,
+            "verseStart": 57,
+            "verseEnd": 66
+          }
+        }
+      ],
+      "figures": [
+        "Mary",
+        "Elizabeth",
+        "Zechariah",
+        "John the Baptist"
+      ],
+      "summary_en": "Mary visits Elizabeth and John the Baptist is born in the Judean hill country; the exact village is traditional.",
+      "historic_location_status": "TRADITIONAL_LOCATION_SCRIPTURE_UNNAMED",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "GOSPELS",
+        "broad_period_note": "LIFE_OF_CHRIST_CIRCA_6_BCE_TO_33_CE_EVENT_SPECIFIC_DATE_UNKNOWN",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "TRADITIONAL_PLACE_IDENTIFICATION_TEXT_NAMES_REGION_ONLY"
+    },
+    {
+      "row_id": "BA-CORE-056",
+      "biblical_name": "Sea of Galilee / Lake Gennesaret",
+      "biblical_period": "GOSPELS",
+      "location_type": "LAKE",
+      "passage_refs": [
+        {
+          "display": "Mark 1:16-20",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Mark",
+            "chapter": 1,
+            "verseStart": 16,
+            "verseEnd": 20
+          }
+        },
+        {
+          "display": "Luke 5:1-11",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Luke",
+            "chapter": 5,
+            "verseStart": 1,
+            "verseEnd": 11
+          }
+        }
+      ],
+      "figures": [
+        "Jesus",
+        "Peter",
+        "Andrew",
+        "James",
+        "John"
+      ],
+      "summary_en": "Christ calls fishermen and directs the miraculous catch near the lake.",
+      "historic_location_status": "WATER_BODY_GEOMETRY_NOT_POINT",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "GOSPELS",
+        "broad_period_note": "LIFE_OF_CHRIST_CIRCA_6_BCE_TO_33_CE_EVENT_SPECIFIC_DATE_UNKNOWN",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-057",
+      "biblical_name": "Capernaum",
+      "biblical_period": "GOSPELS",
+      "location_type": "TOWN",
+      "passage_refs": [
+        {
+          "display": "Mark 1:21-28",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Mark",
+            "chapter": 1,
+            "verseStart": 21,
+            "verseEnd": 28
+          }
+        },
+        {
+          "display": "Matthew 9:1-8",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Matthew",
+            "chapter": 9,
+            "verseStart": 1,
+            "verseEnd": 8
+          }
+        }
+      ],
+      "figures": [
+        "Jesus",
+        "Peter"
+      ],
+      "summary_en": "Christ teaches, heals and works from his Galilean ministry base.",
+      "historic_location_status": "ARCHAEOLOGICAL_TOWN_AND_CHURCH_DISTINCT",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "GOSPELS",
+        "broad_period_note": "LIFE_OF_CHRIST_CIRCA_6_BCE_TO_33_CE_EVENT_SPECIFIC_DATE_UNKNOWN",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-058",
+      "biblical_name": "Bethsaida",
+      "biblical_period": "GOSPELS",
+      "location_type": "TOWN",
+      "passage_refs": [
+        {
+          "display": "John 1:44",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "John",
+            "chapter": 1,
+            "verseStart": 44,
+            "verseEnd": 44
+          }
+        },
+        {
+          "display": "Mark 8:22-26",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Mark",
+            "chapter": 8,
+            "verseStart": 22,
+            "verseEnd": 26
+          }
+        }
+      ],
+      "figures": [
+        "Peter",
+        "Andrew",
+        "Philip",
+        "Jesus"
+      ],
+      "summary_en": "The home town of several Apostles is associated with a healing narrative.",
+      "historic_location_status": "MULTIPLE_SITE_PROPOSALS",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "GOSPELS",
+        "broad_period_note": "LIFE_OF_CHRIST_CIRCA_6_BCE_TO_33_CE_EVENT_SPECIFIC_DATE_UNKNOWN",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-059",
+      "biblical_name": "Chorazin",
+      "biblical_period": "GOSPELS",
+      "location_type": "TOWN",
+      "passage_refs": [
+        {
+          "display": "Matthew 11:20-24",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Matthew",
+            "chapter": 11,
+            "verseStart": 20,
+            "verseEnd": 24
+          }
+        }
+      ],
+      "figures": [
+        "Jesus"
+      ],
+      "summary_en": "Christ rebukes the town for not responding to his miracles.",
+      "historic_location_status": "LIKELY",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "GOSPELS",
+        "broad_period_note": "LIFE_OF_CHRIST_CIRCA_6_BCE_TO_33_CE_EVENT_SPECIFIC_DATE_UNKNOWN",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-060",
+      "biblical_name": "Cana of Galilee",
+      "biblical_period": "GOSPELS",
+      "location_type": "VILLAGE",
+      "passage_refs": [
+        {
+          "display": "John 2:1-11",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "John",
+            "chapter": 2,
+            "verseStart": 1,
+            "verseEnd": 11
+          }
+        }
+      ],
+      "figures": [
+        "Jesus",
+        "Mary",
+        "Disciples"
+      ],
+      "summary_en": "Christ turns water into wine at a wedding; modern identification remains disputed.",
+      "historic_location_status": "COMPETING_MODERN_IDENTIFICATIONS",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "GOSPELS",
+        "broad_period_note": "LIFE_OF_CHRIST_CIRCA_6_BCE_TO_33_CE_EVENT_SPECIFIC_DATE_UNKNOWN",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-061",
+      "biblical_name": "Nain",
+      "biblical_period": "GOSPELS",
+      "location_type": "VILLAGE",
+      "passage_refs": [
+        {
+          "display": "Luke 7:11-17",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Luke",
+            "chapter": 7,
+            "verseStart": 11,
+            "verseEnd": 17
+          }
+        }
+      ],
+      "figures": [
+        "Jesus",
+        "Widow of Nain"
+      ],
+      "summary_en": "Christ raises the widow's son near the gate of Nain.",
+      "historic_location_status": "LIKELY_TOWN_SITE",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "GOSPELS",
+        "broad_period_note": "LIFE_OF_CHRIST_CIRCA_6_BCE_TO_33_CE_EVENT_SPECIFIC_DATE_UNKNOWN",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-062",
+      "biblical_name": "Mount of Beatitudes",
+      "biblical_period": "GOSPELS",
+      "location_type": "LANDSCAPE_TRADITION",
+      "passage_refs": [
+        {
+          "display": "Matthew 5:1-12",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Matthew",
+            "chapter": 5,
+            "verseStart": 1,
+            "verseEnd": 12
+          }
+        }
+      ],
+      "figures": [
+        "Jesus",
+        "Disciples"
+      ],
+      "summary_en": "The Sermon on the Mount occurs on a mountain; its present pilgrimage site is a later local tradition.",
+      "historic_location_status": "UNKNOWN_EXACT_SERMON_LOCATION",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "GOSPELS",
+        "broad_period_note": "LIFE_OF_CHRIST_CIRCA_6_BCE_TO_33_CE_EVENT_SPECIFIC_DATE_UNKNOWN",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "TRADITIONAL_PLACE_IDENTIFICATION_SCRIPTURE_DOES_NOT_NAME_HILL"
+    },
+    {
+      "row_id": "BA-CORE-063",
+      "biblical_name": "Caesarea Philippi / Banias",
+      "biblical_period": "GOSPELS",
+      "location_type": "ANCIENT_CITY",
+      "passage_refs": [
+        {
+          "display": "Matthew 16:13-20",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Matthew",
+            "chapter": 16,
+            "verseStart": 13,
+            "verseEnd": 20
+          }
+        }
+      ],
+      "figures": [
+        "Jesus",
+        "Peter"
+      ],
+      "summary_en": "Peter confesses that Jesus is the Christ in the district of Caesarea Philippi.",
+      "historic_location_status": "KNOWN_REGION",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "GOSPELS",
+        "broad_period_note": "LIFE_OF_CHRIST_CIRCA_6_BCE_TO_33_CE_EVENT_SPECIFIC_DATE_UNKNOWN",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-064",
+      "biblical_name": "Samaria / Sychar and Jacob's Well",
+      "biblical_period": "GOSPELS",
+      "location_type": "WELL_SETTLEMENT",
+      "passage_refs": [
+        {
+          "display": "John 4:4-26",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "John",
+            "chapter": 4,
+            "verseStart": 4,
+            "verseEnd": 26
+          }
+        }
+      ],
+      "figures": [
+        "Jesus",
+        "Samaritan woman"
+      ],
+      "summary_en": "Jesus speaks with the Samaritan woman at Jacob's well.",
+      "historic_location_status": "TRADITIONAL_WELL_WITH_SITE_CUSTODY",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "GOSPELS",
+        "broad_period_note": "LIFE_OF_CHRIST_CIRCA_6_BCE_TO_33_CE_EVENT_SPECIFIC_DATE_UNKNOWN",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-065",
+      "biblical_name": "Jericho of Jesus' time",
+      "biblical_period": "GOSPELS",
+      "location_type": "TOWN_REGION",
+      "passage_refs": [
+        {
+          "display": "Luke 18:35-43",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Luke",
+            "chapter": 18,
+            "verseStart": 35,
+            "verseEnd": 43
+          }
+        },
+        {
+          "display": "Luke 19:1-10",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Luke",
+            "chapter": 19,
+            "verseStart": 1,
+            "verseEnd": 10
+          }
+        }
+      ],
+      "figures": [
+        "Jesus",
+        "Bartimaeus",
+        "Zacchaeus"
+      ],
+      "summary_en": "Christ heals a blind man near Jericho and encounters Zacchaeus.",
+      "historic_location_status": "TOWN_PHYSICAL_PHASES_DIFFER",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "GOSPELS",
+        "broad_period_note": "LIFE_OF_CHRIST_CIRCA_6_BCE_TO_33_CE_EVENT_SPECIFIC_DATE_UNKNOWN",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-066",
+      "biblical_name": "Mount of Olives",
+      "biblical_period": "GOSPELS_ACTS",
+      "location_type": "MOUNTAIN_REGION",
+      "passage_refs": [
+        {
+          "display": "Luke 19:37-44",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Luke",
+            "chapter": 19,
+            "verseStart": 37,
+            "verseEnd": 44
+          }
+        },
+        {
+          "display": "Acts 1:9-12",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Acts",
+            "chapter": 1,
+            "verseStart": 9,
+            "verseEnd": 12
+          }
+        }
+      ],
+      "figures": [
+        "Jesus",
+        "Apostles"
+      ],
+      "summary_en": "Christ enters Jerusalem from the Mount of Olives area; Acts associates the Ascension with it.",
+      "historic_location_status": "REGION_MULTIPLE_CHURCHES",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "GOSPELS_ACTS",
+        "broad_period_note": "GOSPELS_AND_EARLY_APOSTOLIC_PERIOD",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "BIBLICAL_REGION_NOT_ONE_EVENT_PIN"
+    },
+    {
+      "row_id": "BA-CORE-067",
+      "biblical_name": "Bethphage",
+      "biblical_period": "GOSPELS",
+      "location_type": "VILLAGE",
+      "passage_refs": [
+        {
+          "display": "Matthew 21:1-11",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Matthew",
+            "chapter": 21,
+            "verseStart": 1,
+            "verseEnd": 11
+          }
+        }
+      ],
+      "figures": [
+        "Jesus",
+        "Apostles"
+      ],
+      "summary_en": "The Palm Sunday entry begins near Bethphage on the Mount of Olives.",
+      "historic_location_status": "TRADITIONAL_LOCATION",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "GOSPELS",
+        "broad_period_note": "LIFE_OF_CHRIST_CIRCA_6_BCE_TO_33_CE_EVENT_SPECIFIC_DATE_UNKNOWN",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-068",
+      "biblical_name": "Gethsemane",
+      "biblical_period": "GOSPELS",
+      "location_type": "GARDEN",
+      "passage_refs": [
+        {
+          "display": "Matthew 26:36-46",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Matthew",
+            "chapter": 26,
+            "verseStart": 36,
+            "verseEnd": 46
+          }
+        }
+      ],
+      "figures": [
+        "Jesus",
+        "Peter",
+        "James",
+        "John"
+      ],
+      "summary_en": "Christ prays before his arrest in a garden called Gethsemane.",
+      "historic_location_status": "TRADITIONAL_GARDEN_COMPLEX",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "GOSPELS",
+        "broad_period_note": "LIFE_OF_CHRIST_CIRCA_6_BCE_TO_33_CE_EVENT_SPECIFIC_DATE_UNKNOWN",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-069",
+      "biblical_name": "Golgotha / Calvary",
+      "biblical_period": "GOSPELS",
+      "location_type": "EXECUTION_SITE",
+      "passage_refs": [
+        {
+          "display": "John 19:17-30",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "John",
+            "chapter": 19,
+            "verseStart": 17,
+            "verseEnd": 30
+          }
+        }
+      ],
+      "figures": [
+        "Jesus",
+        "Mary",
+        "John"
+      ],
+      "summary_en": "The Crucifixion takes place at Golgotha, incorporated into the Holy Sepulchre complex.",
+      "historic_location_status": "HOLY_SEPULCHRE_SUBSITE",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING",
+        "PARENT_MONUMENT_LINK_PROVISIONAL_NOT_BIBLICAL_PLACE_IDENTITY"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "GOSPELS",
+        "broad_period_note": "LIFE_OF_CHRIST_CIRCA_6_BCE_TO_33_CE_EVENT_SPECIFIC_DATE_UNKNOWN",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING",
+      "associated_monument_place_ids": [
+        "place:PS:holy-sepulchre-jerusalem"
+      ],
+      "modern_monument_relation": "SUBFEATURE_OF_EXISTING_HOLY_SEPULCHRE_COMPLEX"
+    },
+    {
+      "row_id": "BA-CORE-070",
+      "biblical_name": "Tomb of Christ",
+      "biblical_period": "GOSPELS",
+      "location_type": "ROCK_HEWN_TOMB",
+      "passage_refs": [
+        {
+          "display": "John 19:38-42",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "John",
+            "chapter": 19,
+            "verseStart": 38,
+            "verseEnd": 42
+          }
+        },
+        {
+          "display": "John 20:1-18",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "John",
+            "chapter": 20,
+            "verseStart": 1,
+            "verseEnd": 18
+          }
+        }
+      ],
+      "figures": [
+        "Jesus",
+        "Mary Magdalene",
+        "Joseph of Arimathea"
+      ],
+      "summary_en": "Christ is buried and the empty tomb is discovered after the Resurrection.",
+      "historic_location_status": "HOLY_SEPULCHRE_SUBSITE",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING",
+        "PARENT_MONUMENT_LINK_PROVISIONAL_NOT_BIBLICAL_PLACE_IDENTITY"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "GOSPELS",
+        "broad_period_note": "LIFE_OF_CHRIST_CIRCA_6_BCE_TO_33_CE_EVENT_SPECIFIC_DATE_UNKNOWN",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "EXPLICIT_BURIAL_STRUCTURE_NOT_BIBLICAL_PROPER_NAME",
+      "associated_monument_place_ids": [
+        "place:PS:holy-sepulchre-jerusalem"
+      ],
+      "modern_monument_relation": "SUBFEATURE_OF_EXISTING_HOLY_SEPULCHRE_COMPLEX"
+    },
+    {
+      "row_id": "BA-CORE-071",
+      "biblical_name": "Emmaus of Luke",
+      "biblical_period": "GOSPELS",
+      "location_type": "VILLAGE",
+      "passage_refs": [
+        {
+          "display": "Luke 24:13-35",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Luke",
+            "chapter": 24,
+            "verseStart": 13,
+            "verseEnd": 35
+          }
+        }
+      ],
+      "figures": [
+        "Jesus",
+        "Cleopas"
+      ],
+      "summary_en": "The risen Christ joins two disciples on the way to Emmaus.",
+      "historic_location_status": "COMPETING_MODERN_IDENTIFICATIONS",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "GOSPELS",
+        "broad_period_note": "LIFE_OF_CHRIST_CIRCA_6_BCE_TO_33_CE_EVENT_SPECIFIC_DATE_UNKNOWN",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-072",
+      "biblical_name": "Cenacle / Upper Room",
+      "biblical_period": "GOSPELS_ACTS",
+      "location_type": "ROOM_TRADITION",
+      "passage_refs": [
+        {
+          "display": "Luke 22:7-20",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Luke",
+            "chapter": 22,
+            "verseStart": 7,
+            "verseEnd": 20
+          }
+        },
+        {
+          "display": "Acts 2:1-4",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Acts",
+            "chapter": 2,
+            "verseStart": 1,
+            "verseEnd": 4
+          }
+        }
+      ],
+      "figures": [
+        "Jesus",
+        "Apostles",
+        "Mary"
+      ],
+      "summary_en": "The Last Supper occurs in an upper room; Pentecost is associated in tradition with the Jerusalem community.",
+      "historic_location_status": "UPPER_ROOM_BUILDING_TRADITION_NOT_CERTAIN",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "GOSPELS_ACTS",
+        "broad_period_note": "GOSPELS_AND_EARLY_APOSTOLIC_PERIOD",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "GENERIC_ROOM_IN_SCRIPTURE_TRADITIONAL_SITE_LOCATION"
+    },
+    {
+      "row_id": "BA-CORE-073",
+      "biblical_name": "Damascus",
+      "biblical_period": "APOSTOLIC",
+      "location_type": "CITY",
+      "passage_refs": [
+        {
+          "display": "Acts 9:1-22",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Acts",
+            "chapter": 9,
+            "verseStart": 1,
+            "verseEnd": 22
+          }
+        }
+      ],
+      "figures": [
+        "Paul",
+        "Ananias"
+      ],
+      "summary_en": "Saul encounters Christ on the road and is baptized in Damascus.",
+      "historic_location_status": "KNOWN_CITY_ROAD_EVENT_NOT_POINT",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "APOSTOLIC",
+        "broad_period_note": "CIRCA_30_TO_65_CE",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-074",
+      "biblical_name": "Antioch in Syria",
+      "biblical_period": "APOSTOLIC",
+      "location_type": "ANCIENT_CITY",
+      "passage_refs": [
+        {
+          "display": "Acts 11:19-26",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Acts",
+            "chapter": 11,
+            "verseStart": 19,
+            "verseEnd": 26
+          }
+        },
+        {
+          "display": "Acts 13:1-3",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Acts",
+            "chapter": 13,
+            "verseStart": 1,
+            "verseEnd": 3
+          }
+        }
+      ],
+      "figures": [
+        "Paul",
+        "Barnabas",
+        "Peter"
+      ],
+      "summary_en": "The disciples first receive the name Christians here and missionaries depart from the church.",
+      "historic_location_status": "KNOWN_ANCIENT_CITY",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "APOSTOLIC",
+        "broad_period_note": "CIRCA_30_TO_65_CE",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-075",
+      "biblical_name": "Joppa / Jaffa",
+      "biblical_period": "APOSTOLIC",
+      "location_type": "PORT_CITY",
+      "passage_refs": [
+        {
+          "display": "Acts 9:36-43",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Acts",
+            "chapter": 9,
+            "verseStart": 36,
+            "verseEnd": 43
+          }
+        },
+        {
+          "display": "Acts 10:5-8",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Acts",
+            "chapter": 10,
+            "verseStart": 5,
+            "verseEnd": 8
+          }
+        }
+      ],
+      "figures": [
+        "Peter",
+        "Tabitha",
+        "Cornelius"
+      ],
+      "summary_en": "Peter raises Tabitha and receives messengers from Cornelius.",
+      "historic_location_status": "KNOWN_CITY",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "APOSTOLIC",
+        "broad_period_note": "CIRCA_30_TO_65_CE",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-076",
+      "biblical_name": "Caesarea Maritima",
+      "biblical_period": "APOSTOLIC",
+      "location_type": "ANCIENT_CITY",
+      "passage_refs": [
+        {
+          "display": "Acts 10:1-48",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Acts",
+            "chapter": 10,
+            "verseStart": 1,
+            "verseEnd": 48
+          }
+        },
+        {
+          "display": "Acts 25:1-12",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Acts",
+            "chapter": 25,
+            "verseStart": 1,
+            "verseEnd": 12
+          }
+        }
+      ],
+      "figures": [
+        "Peter",
+        "Cornelius",
+        "Paul"
+      ],
+      "summary_en": "Cornelius welcomes Peter and Paul later appears before Roman officials.",
+      "historic_location_status": "ARCHAEOLOGICAL_CITY",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "APOSTOLIC",
+        "broad_period_note": "CIRCA_30_TO_65_CE",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-077",
+      "biblical_name": "Lystra",
+      "biblical_period": "APOSTOLIC",
+      "location_type": "ANCIENT_CITY",
+      "passage_refs": [
+        {
+          "display": "Acts 14:8-20",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Acts",
+            "chapter": 14,
+            "verseStart": 8,
+            "verseEnd": 20
+          }
+        }
+      ],
+      "figures": [
+        "Paul",
+        "Barnabas"
+      ],
+      "summary_en": "Paul heals a man and then suffers violence in Lystra.",
+      "historic_location_status": "PROPOSED_SITE",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "APOSTOLIC",
+        "broad_period_note": "CIRCA_30_TO_65_CE",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-078",
+      "biblical_name": "Philippi",
+      "biblical_period": "APOSTOLIC",
+      "location_type": "ANCIENT_CITY",
+      "passage_refs": [
+        {
+          "display": "Acts 16:11-40",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Acts",
+            "chapter": 16,
+            "verseStart": 11,
+            "verseEnd": 40
+          }
+        }
+      ],
+      "figures": [
+        "Paul",
+        "Silas",
+        "Lydia"
+      ],
+      "summary_en": "Lydia is baptized and Paul and Silas are imprisoned at Philippi.",
+      "historic_location_status": "ARCHAEOLOGICALLY_ATTESTED",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "APOSTOLIC",
+        "broad_period_note": "CIRCA_30_TO_65_CE",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-079",
+      "biblical_name": "Thessalonica",
+      "biblical_period": "APOSTOLIC",
+      "location_type": "ANCIENT_CITY",
+      "passage_refs": [
+        {
+          "display": "Acts 17:1-9",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Acts",
+            "chapter": 17,
+            "verseStart": 1,
+            "verseEnd": 9
+          }
+        }
+      ],
+      "figures": [
+        "Paul",
+        "Jason"
+      ],
+      "summary_en": "Paul preaches in the synagogue and opposition arises.",
+      "historic_location_status": "KNOWN_MODERN_CITY",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "APOSTOLIC",
+        "broad_period_note": "CIRCA_30_TO_65_CE",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-080",
+      "biblical_name": "Berea",
+      "biblical_period": "APOSTOLIC",
+      "location_type": "ANCIENT_CITY",
+      "passage_refs": [
+        {
+          "display": "Acts 17:10-15",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Acts",
+            "chapter": 17,
+            "verseStart": 10,
+            "verseEnd": 15
+          }
+        }
+      ],
+      "figures": [
+        "Paul",
+        "Silas"
+      ],
+      "summary_en": "Hearers search the Scriptures to test Paul's preaching.",
+      "historic_location_status": "KNOWN_MODERN_CITY",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "APOSTOLIC",
+        "broad_period_note": "CIRCA_30_TO_65_CE",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-081",
+      "biblical_name": "Athens / Areopagus",
+      "biblical_period": "APOSTOLIC",
+      "location_type": "CITY_AND_HILL",
+      "passage_refs": [
+        {
+          "display": "Acts 17:16-34",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Acts",
+            "chapter": 17,
+            "verseStart": 16,
+            "verseEnd": 34
+          }
+        }
+      ],
+      "figures": [
+        "Paul",
+        "Dionysius",
+        "Damaris"
+      ],
+      "summary_en": "Paul proclaims the unknown God before Athenians at the Areopagus.",
+      "historic_location_status": "KNOWN_CITY_HILL_SUBSITE",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "APOSTOLIC",
+        "broad_period_note": "CIRCA_30_TO_65_CE",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-082",
+      "biblical_name": "Corinth",
+      "biblical_period": "APOSTOLIC",
+      "location_type": "ANCIENT_CITY",
+      "passage_refs": [
+        {
+          "display": "Acts 18:1-18",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Acts",
+            "chapter": 18,
+            "verseStart": 1,
+            "verseEnd": 18
+          }
+        }
+      ],
+      "figures": [
+        "Paul",
+        "Aquila",
+        "Priscilla"
+      ],
+      "summary_en": "Paul works and teaches in Corinth; the Gallio hearing anchors the chronology.",
+      "historic_location_status": "ARCHAEOLOGICALLY_ATTESTED",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "APOSTOLIC",
+        "broad_period_note": "CIRCA_30_TO_65_CE",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-083",
+      "biblical_name": "Ephesus",
+      "biblical_period": "APOSTOLIC",
+      "location_type": "ANCIENT_CITY",
+      "passage_refs": [
+        {
+          "display": "Acts 19:1-41",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Acts",
+            "chapter": 19,
+            "verseStart": 1,
+            "verseEnd": 41
+          }
+        }
+      ],
+      "figures": [
+        "Paul",
+        "Disciples"
+      ],
+      "summary_en": "Paul teaches at Ephesus and a riot arises around Artemis worship.",
+      "historic_location_status": "ARCHAEOLOGICALLY_ATTESTED",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "APOSTOLIC",
+        "broad_period_note": "CIRCA_30_TO_65_CE",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-084",
+      "biblical_name": "Troas",
+      "biblical_period": "APOSTOLIC",
+      "location_type": "PORT_CITY",
+      "passage_refs": [
+        {
+          "display": "Acts 20:5-12",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Acts",
+            "chapter": 20,
+            "verseStart": 5,
+            "verseEnd": 12
+          }
+        }
+      ],
+      "figures": [
+        "Paul",
+        "Eutychus"
+      ],
+      "summary_en": "Paul raises Eutychus after a fall during a nighttime gathering.",
+      "historic_location_status": "LIKELY",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "APOSTOLIC",
+        "broad_period_note": "CIRCA_30_TO_65_CE",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-085",
+      "biblical_name": "Miletus",
+      "biblical_period": "APOSTOLIC",
+      "location_type": "ANCIENT_CITY",
+      "passage_refs": [
+        {
+          "display": "Acts 20:17-38",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Acts",
+            "chapter": 20,
+            "verseStart": 17,
+            "verseEnd": 38
+          }
+        }
+      ],
+      "figures": [
+        "Paul",
+        "Ephesian elders"
+      ],
+      "summary_en": "Paul delivers his farewell discourse to the elders of Ephesus.",
+      "historic_location_status": "ARCHAEOLOGICALLY_ATTESTED",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "APOSTOLIC",
+        "broad_period_note": "CIRCA_30_TO_65_CE",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-086",
+      "biblical_name": "Tyre",
+      "biblical_period": "APOSTOLIC",
+      "location_type": "PORT_CITY",
+      "passage_refs": [
+        {
+          "display": "Acts 21:3-6",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Acts",
+            "chapter": 21,
+            "verseStart": 3,
+            "verseEnd": 6
+          }
+        }
+      ],
+      "figures": [
+        "Paul",
+        "Disciples"
+      ],
+      "summary_en": "Paul meets disciples and prays with them on the shore.",
+      "historic_location_status": "KNOWN_CITY",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "APOSTOLIC",
+        "broad_period_note": "CIRCA_30_TO_65_CE",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-087",
+      "biblical_name": "Malta / Melita",
+      "biblical_period": "APOSTOLIC",
+      "location_type": "ISLAND",
+      "passage_refs": [
+        {
+          "display": "Acts 28:1-10",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Acts",
+            "chapter": 28,
+            "verseStart": 1,
+            "verseEnd": 10
+          }
+        }
+      ],
+      "figures": [
+        "Paul",
+        "Publius"
+      ],
+      "summary_en": "Paul survives shipwreck and ministers on the island.",
+      "historic_location_status": "KNOWN_ISLAND_WRECK_SITE_UNCERTAIN",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "APOSTOLIC",
+        "broad_period_note": "CIRCA_30_TO_65_CE",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-088",
+      "biblical_name": "Rome",
+      "biblical_period": "APOSTOLIC",
+      "location_type": "CITY",
+      "passage_refs": [
+        {
+          "display": "Acts 28:16-31",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Acts",
+            "chapter": 28,
+            "verseStart": 16,
+            "verseEnd": 31
+          }
+        }
+      ],
+      "figures": [
+        "Paul"
+      ],
+      "summary_en": "Paul arrives under custody and preaches in Rome.",
+      "historic_location_status": "KNOWN_CITY",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "APOSTOLIC",
+        "broad_period_note": "CIRCA_30_TO_65_CE",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-089",
+      "biblical_name": "Patmos",
+      "biblical_period": "APOCALYPTIC",
+      "location_type": "ISLAND",
+      "passage_refs": [
+        {
+          "display": "Revelation 1:9",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Revelation",
+            "chapter": 1,
+            "verseStart": 9,
+            "verseEnd": 9
+          }
+        }
+      ],
+      "figures": [
+        "John the Apostle"
+      ],
+      "summary_en": "John describes receiving his revelation while on Patmos.",
+      "historic_location_status": "KNOWN_ISLAND_SPECIFIC_CAVE_TRADITION",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "APOCALYPTIC",
+        "broad_period_note": "COMPOSITION_DATE_DEBATED_AND_VISION_NOT_EARTHLY_EVENT",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "SCRIPTURE_PLACE_NAME_OR_REGION_IN_REFERENCE_REVIEW_PENDING"
+    },
+    {
+      "row_id": "BA-CORE-090",
+      "biblical_name": "New Jerusalem",
+      "biblical_period": "APOCALYPTIC",
+      "location_type": "VISIONARY_CITY",
+      "passage_refs": [
+        {
+          "display": "Revelation 21:1-27",
+          "reference_state": "BOOK_CHAPTER_RANGE_VALIDATED_VERSE_CONTENT_PENDING",
+          "canonical_passage": {
+            "book": "Revelation",
+            "chapter": 21,
+            "verseStart": 1,
+            "verseEnd": 27
+          }
+        }
+      ],
+      "figures": [
+        "John the Apostle"
+      ],
+      "summary_en": "The vision of the heavenly Jerusalem is theological and cannot be mapped as a present earthly site.",
+      "historic_location_status": "SYMBOLIC_NO_EARTHLY_PIN",
+      "proposed_present_geo": null,
+      "shared_place_id": null,
+      "source_evidence": [
+        "BIBLICAL_REFERENCE_PRIMARY",
+        "GEOLOCATION_REVIEW_PENDING"
+      ],
+      "runtime_visibility": "RESEARCH_ONLY_NOT_SHIPPED",
+      "chronology": {
+        "era_key": "APOCALYPTIC",
+        "broad_period_note": "COMPOSITION_DATE_DEBATED_AND_VISION_NOT_EARTHLY_EVENT",
+        "event_year": null,
+        "dating_method": "NOT_YET_SOURCED_INDEPENDENTLY",
+        "qualifier": "No exact year asserted"
+      },
+      "naming_evidence": "VISIONARY_SYMBOLIC_NO_EARTHLY_LOCATION"
+    }
+  ],
+  "reference_validation": {
+    "as_of": "2026-10-10",
+    "canon": "src/scripture/canon.js",
+    "chapter_limits": "src/scripture/chapter-counts.js",
+    "eligible_73_book_count": 73,
+    "distinct_books_represented": 27,
+    "reference_coordinates_validated": 128,
+    "reference_coordinates_unresolved": 0,
+    "validation_scope": "Canonical book, chapter ceiling, numeric verse range only; verse text, edition numbering and historical event/source relationship NOT independently reviewed",
+    "observed_by_book": {
+      "Genesis": 18,
+      "Joshua": 6,
+      "2Chronicles": 1,
+      "Exodus": 9,
+      "1Kings": 6,
+      "Numbers": 3,
+      "Deuteronomy": 1,
+      "Mark": 4,
+      "Luke": 15,
+      "1Samuel": 7,
+      "Ruth": 1,
+      "2Samuel": 2,
+      "Acts": 22,
+      "2Kings": 3,
+      "Judges": 1,
+      "Matthew": 7,
+      "Daniel": 1,
+      "Ezekiel": 1,
+      "Esther": 1,
+      "Nehemiah": 1,
+      "Jonah": 1,
+      "Tobit": 3,
+      "Judith": 1,
+      "1Maccabees": 3,
+      "2Maccabees": 1,
+      "John": 7,
+      "Revelation": 2
+    }
+  },
+  "catholic_deuterocanonical_integrity": {
+    "detected_books": [
+      "Tobit",
+      "Judith",
+      "1Maccabees",
+      "2Maccabees"
+    ],
+    "still_to_source": [
+      "Wisdom",
+      "Sirach",
+      "Baruch",
+      "2Maccabees"
+    ],
+    "note": "A book can lack explicit geographic mentions, but every occurrence must be audited; initial curated seed is not Catholic-canon exhaustive."
+  },
+  "geographic_identities_are_separate_from_biblical_mentions": true,
+  "modern_monument_crosswalk_policy": "Ancient place sense is NEVER the same record as an archaeological monument or sanctuary; any existing shared Place ID is a related later physical site (monument/chapel/complex) with typed relation, not equality.",
+  "editorial_status": "QUARANTINED_REFERENCE_SCENARIOS_SUPERSEDED_BY_EXISTING_OPEN_DATA_ADOPTION",
+  "production_import_allowed": false,
+  "master_gazetteer_allowed": false,
+  "upstream_precedence": "OpenBible.info ancient.jsonl + modern.jsonl + STEPBible TIPNR proper names/verse references, with Catholic 73-book delta; this 90-entry hand-created pilot is never to be used as master site census or baseline completeness.",
+  "pilot_utility": "Human-readable example event/story cases only, to evaluate field design and UI links after canonical upstream join. Each passage/event/location relationship still needs source verification.",
+  "denominator_warning": "90 manually sampled cases are NOT 90 unique ancient places, not 90 map pins, not 37 percent of biblical geography; 27 of 73 books have one or more sampled references only.",
+  "ancient_identity_matches_complete": false
+}

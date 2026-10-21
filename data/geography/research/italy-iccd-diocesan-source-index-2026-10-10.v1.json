@@ -1,0 +1,369 @@
+{
+  "schema": "EXPLORE_ITALY_ICCD_CENSUS_COVERAGE_V1",
+  "as_of": "2026-10-10",
+  "source_id": "IT_ICCD_CENSUS",
+  "source_url": "https://iccd.cultura.gov.it/it/progetti/5382/censimento-dei-santuari-italiani",
+  "project_status": "IN_PROGRESS_SINCE_2022",
+  "scope": "ICCD/PAMI cataloging of Italian canon-law-recognized sanctuaries, not all Catholic chapels or historical Marian place-names",
+  "official_linked_diocesan_or_eparchial_lists": 33,
+  "listed_districts": [
+    {
+      "id": "ICCD-DIO-01",
+      "region": "Piemonte",
+      "diocese": "Diocesi di Aosta",
+      "listed_in_official_census_index": true,
+      "source": "https://iccd.cultura.gov.it/it/progetti/5382/censimento-dei-santuari-italiani",
+      "list_pdf_reviewed": false,
+      "entries_extracted": null,
+      "physical_place_crosswalk": "NOT_STARTED"
+    },
+    {
+      "id": "ICCD-DIO-02",
+      "region": "Piemonte",
+      "diocese": "Diocesi di Cuneo-Fossano",
+      "listed_in_official_census_index": true,
+      "source": "https://iccd.cultura.gov.it/it/progetti/5382/censimento-dei-santuari-italiani",
+      "list_pdf_reviewed": false,
+      "entries_extracted": null,
+      "physical_place_crosswalk": "NOT_STARTED"
+    },
+    {
+      "id": "ICCD-DIO-03",
+      "region": "Piemonte",
+      "diocese": "Diocesi di Biella",
+      "listed_in_official_census_index": true,
+      "source": "https://iccd.cultura.gov.it/it/progetti/5382/censimento-dei-santuari-italiani",
+      "list_pdf_reviewed": false,
+      "entries_extracted": null,
+      "physical_place_crosswalk": "NOT_STARTED"
+    },
+    {
+      "id": "ICCD-DIO-04",
+      "region": "Piemonte",
+      "diocese": "Diocesi di Novara",
+      "listed_in_official_census_index": true,
+      "source": "https://iccd.cultura.gov.it/it/progetti/5382/censimento-dei-santuari-italiani",
+      "list_pdf_reviewed": false,
+      "entries_extracted": null,
+      "physical_place_crosswalk": "NOT_STARTED"
+    },
+    {
+      "id": "ICCD-DIO-05",
+      "region": "Triveneto",
+      "diocese": "Diocesi di Trieste",
+      "listed_in_official_census_index": true,
+      "source": "https://iccd.cultura.gov.it/it/progetti/5382/censimento-dei-santuari-italiani",
+      "list_pdf_reviewed": false,
+      "entries_extracted": null,
+      "physical_place_crosswalk": "NOT_STARTED"
+    },
+    {
+      "id": "ICCD-DIO-06",
+      "region": "Triveneto",
+      "diocese": "Diocesi di Bolzano-Bressanone",
+      "listed_in_official_census_index": true,
+      "source": "https://iccd.cultura.gov.it/it/progetti/5382/censimento-dei-santuari-italiani",
+      "list_pdf_reviewed": false,
+      "entries_extracted": null,
+      "physical_place_crosswalk": "NOT_STARTED"
+    },
+    {
+      "id": "ICCD-DIO-07",
+      "region": "Abruzzo Molise",
+      "diocese": "Arcidiocesi metropolitana di L'Aquila",
+      "listed_in_official_census_index": true,
+      "source": "https://iccd.cultura.gov.it/it/progetti/5382/censimento-dei-santuari-italiani",
+      "list_pdf_reviewed": false,
+      "entries_extracted": null,
+      "physical_place_crosswalk": "NOT_STARTED"
+    },
+    {
+      "id": "ICCD-DIO-08",
+      "region": "Abruzzo Molise",
+      "diocese": "Diocesi di Teramo-Atri",
+      "listed_in_official_census_index": true,
+      "source": "https://iccd.cultura.gov.it/it/progetti/5382/censimento-dei-santuari-italiani",
+      "list_pdf_reviewed": false,
+      "entries_extracted": null,
+      "physical_place_crosswalk": "NOT_STARTED"
+    },
+    {
+      "id": "ICCD-DIO-09",
+      "region": "Lazio",
+      "diocese": "Diocesi Suburbicaria di Albano",
+      "listed_in_official_census_index": true,
+      "source": "https://iccd.cultura.gov.it/it/progetti/5382/censimento-dei-santuari-italiani",
+      "list_pdf_reviewed": false,
+      "entries_extracted": null,
+      "physical_place_crosswalk": "NOT_STARTED"
+    },
+    {
+      "id": "ICCD-DIO-10",
+      "region": "Lazio",
+      "diocese": "Diocesi di Sabina",
+      "listed_in_official_census_index": true,
+      "source": "https://iccd.cultura.gov.it/it/progetti/5382/censimento-dei-santuari-italiani",
+      "list_pdf_reviewed": false,
+      "entries_extracted": null,
+      "physical_place_crosswalk": "NOT_STARTED"
+    },
+    {
+      "id": "ICCD-DIO-11",
+      "region": "Lazio",
+      "diocese": "Diocesi di Sora-Cassino-Aquino-Pontecorvo",
+      "listed_in_official_census_index": true,
+      "source": "https://iccd.cultura.gov.it/it/progetti/5382/censimento-dei-santuari-italiani",
+      "list_pdf_reviewed": false,
+      "entries_extracted": null,
+      "physical_place_crosswalk": "NOT_STARTED"
+    },
+    {
+      "id": "ICCD-DIO-12",
+      "region": "Campania",
+      "diocese": "Arcidiocesi di Amalfi-Cava de' Tirreni",
+      "listed_in_official_census_index": true,
+      "source": "https://iccd.cultura.gov.it/it/progetti/5382/censimento-dei-santuari-italiani",
+      "list_pdf_reviewed": false,
+      "entries_extracted": null,
+      "physical_place_crosswalk": "NOT_STARTED"
+    },
+    {
+      "id": "ICCD-DIO-13",
+      "region": "Campania",
+      "diocese": "Arcidiocesi di Sant'Angelo dei Lombardi-Conza-Nusco-Bisaccia",
+      "listed_in_official_census_index": true,
+      "source": "https://iccd.cultura.gov.it/it/progetti/5382/censimento-dei-santuari-italiani",
+      "list_pdf_reviewed": false,
+      "entries_extracted": null,
+      "physical_place_crosswalk": "NOT_STARTED"
+    },
+    {
+      "id": "ICCD-DIO-14",
+      "region": "Campania",
+      "diocese": "Diocesi di Cerreto Sannita-Telese-Sant'Agata De' Goti",
+      "listed_in_official_census_index": true,
+      "source": "https://iccd.cultura.gov.it/it/progetti/5382/censimento-dei-santuari-italiani",
+      "list_pdf_reviewed": false,
+      "entries_extracted": null,
+      "physical_place_crosswalk": "NOT_STARTED"
+    },
+    {
+      "id": "ICCD-DIO-15",
+      "region": "Calabria",
+      "diocese": "Arcidiocesi metropolitana di Catanzaro-Squillace",
+      "listed_in_official_census_index": true,
+      "source": "https://iccd.cultura.gov.it/it/progetti/5382/censimento-dei-santuari-italiani",
+      "list_pdf_reviewed": false,
+      "entries_extracted": null,
+      "physical_place_crosswalk": "NOT_STARTED"
+    },
+    {
+      "id": "ICCD-DIO-16",
+      "region": "Calabria",
+      "diocese": "Arcidiocesi di Cosenza-Bisignano",
+      "listed_in_official_census_index": true,
+      "source": "https://iccd.cultura.gov.it/it/progetti/5382/censimento-dei-santuari-italiani",
+      "list_pdf_reviewed": false,
+      "entries_extracted": null,
+      "physical_place_crosswalk": "NOT_STARTED"
+    },
+    {
+      "id": "ICCD-DIO-17",
+      "region": "Calabria",
+      "diocese": "Arcidiocesi di Rossano-Cariati",
+      "listed_in_official_census_index": true,
+      "source": "https://iccd.cultura.gov.it/it/progetti/5382/censimento-dei-santuari-italiani",
+      "list_pdf_reviewed": false,
+      "entries_extracted": null,
+      "physical_place_crosswalk": "NOT_STARTED"
+    },
+    {
+      "id": "ICCD-DIO-18",
+      "region": "Calabria",
+      "diocese": "Diocesi di Locri-Gerace",
+      "listed_in_official_census_index": true,
+      "source": "https://iccd.cultura.gov.it/it/progetti/5382/censimento-dei-santuari-italiani",
+      "list_pdf_reviewed": false,
+      "entries_extracted": null,
+      "physical_place_crosswalk": "NOT_STARTED"
+    },
+    {
+      "id": "ICCD-DIO-19",
+      "region": "Calabria",
+      "diocese": "Eparchia di Lungro",
+      "listed_in_official_census_index": true,
+      "source": "https://iccd.cultura.gov.it/it/progetti/5382/censimento-dei-santuari-italiani",
+      "list_pdf_reviewed": false,
+      "entries_extracted": null,
+      "physical_place_crosswalk": "NOT_STARTED"
+    },
+    {
+      "id": "ICCD-DIO-20",
+      "region": "Calabria",
+      "diocese": "Diocesi di San Marco Argentano-Scalea",
+      "listed_in_official_census_index": true,
+      "source": "https://iccd.cultura.gov.it/it/progetti/5382/censimento-dei-santuari-italiani",
+      "list_pdf_reviewed": false,
+      "entries_extracted": null,
+      "physical_place_crosswalk": "NOT_STARTED"
+    },
+    {
+      "id": "ICCD-DIO-21",
+      "region": "Calabria",
+      "diocese": "Diocesi di Cassano all'Jonio",
+      "listed_in_official_census_index": true,
+      "source": "https://iccd.cultura.gov.it/it/progetti/5382/censimento-dei-santuari-italiani",
+      "list_pdf_reviewed": false,
+      "entries_extracted": null,
+      "physical_place_crosswalk": "NOT_STARTED"
+    },
+    {
+      "id": "ICCD-DIO-22",
+      "region": "Puglia",
+      "diocese": "Diocesi di Conversano-Monopoli",
+      "listed_in_official_census_index": true,
+      "source": "https://iccd.cultura.gov.it/it/progetti/5382/censimento-dei-santuari-italiani",
+      "list_pdf_reviewed": false,
+      "entries_extracted": null,
+      "physical_place_crosswalk": "NOT_STARTED"
+    },
+    {
+      "id": "ICCD-DIO-23",
+      "region": "Puglia",
+      "diocese": "Arcidiocesi di Brindisi-Ostuni",
+      "listed_in_official_census_index": true,
+      "source": "https://iccd.cultura.gov.it/it/progetti/5382/censimento-dei-santuari-italiani",
+      "list_pdf_reviewed": false,
+      "entries_extracted": null,
+      "physical_place_crosswalk": "NOT_STARTED"
+    },
+    {
+      "id": "ICCD-DIO-24",
+      "region": "Puglia",
+      "diocese": "Diocesi di Oria",
+      "listed_in_official_census_index": true,
+      "source": "https://iccd.cultura.gov.it/it/progetti/5382/censimento-dei-santuari-italiani",
+      "list_pdf_reviewed": false,
+      "entries_extracted": null,
+      "physical_place_crosswalk": "NOT_STARTED"
+    },
+    {
+      "id": "ICCD-DIO-25",
+      "region": "Basilicata",
+      "diocese": "Arcidiocesi di Matera-Irsina",
+      "listed_in_official_census_index": true,
+      "source": "https://iccd.cultura.gov.it/it/progetti/5382/censimento-dei-santuari-italiani",
+      "list_pdf_reviewed": false,
+      "entries_extracted": null,
+      "physical_place_crosswalk": "NOT_STARTED"
+    },
+    {
+      "id": "ICCD-DIO-26",
+      "region": "Basilicata",
+      "diocese": "Arcidiocesi di Potenza-Muro Lucano-Marsico Nuovo",
+      "listed_in_official_census_index": true,
+      "source": "https://iccd.cultura.gov.it/it/progetti/5382/censimento-dei-santuari-italiani",
+      "list_pdf_reviewed": false,
+      "entries_extracted": null,
+      "physical_place_crosswalk": "NOT_STARTED"
+    },
+    {
+      "id": "ICCD-DIO-27",
+      "region": "Basilicata",
+      "diocese": "Diocesi di Tricarico",
+      "listed_in_official_census_index": true,
+      "source": "https://iccd.cultura.gov.it/it/progetti/5382/censimento-dei-santuari-italiani",
+      "list_pdf_reviewed": false,
+      "entries_extracted": null,
+      "physical_place_crosswalk": "NOT_STARTED"
+    },
+    {
+      "id": "ICCD-DIO-28",
+      "region": "Basilicata",
+      "diocese": "Diocesi di Tursi-Lagonegro",
+      "listed_in_official_census_index": true,
+      "source": "https://iccd.cultura.gov.it/it/progetti/5382/censimento-dei-santuari-italiani",
+      "list_pdf_reviewed": false,
+      "entries_extracted": null,
+      "physical_place_crosswalk": "NOT_STARTED"
+    },
+    {
+      "id": "ICCD-DIO-29",
+      "region": "Sicilia",
+      "diocese": "Arcidiocesi di Messina",
+      "listed_in_official_census_index": true,
+      "source": "https://iccd.cultura.gov.it/it/progetti/5382/censimento-dei-santuari-italiani",
+      "list_pdf_reviewed": false,
+      "entries_extracted": null,
+      "physical_place_crosswalk": "NOT_STARTED"
+    },
+    {
+      "id": "ICCD-DIO-30",
+      "region": "Sicilia",
+      "diocese": "Diocesi di Cefalù",
+      "listed_in_official_census_index": true,
+      "source": "https://iccd.cultura.gov.it/it/progetti/5382/censimento-dei-santuari-italiani",
+      "list_pdf_reviewed": false,
+      "entries_extracted": null,
+      "physical_place_crosswalk": "NOT_STARTED"
+    },
+    {
+      "id": "ICCD-DIO-31",
+      "region": "Sicilia",
+      "diocese": "Diocesi di Trapani",
+      "listed_in_official_census_index": true,
+      "source": "https://iccd.cultura.gov.it/it/progetti/5382/censimento-dei-santuari-italiani",
+      "list_pdf_reviewed": false,
+      "entries_extracted": null,
+      "physical_place_crosswalk": "NOT_STARTED"
+    },
+    {
+      "id": "ICCD-DIO-32",
+      "region": "Sicilia",
+      "diocese": "Diocesi di Caltagirone",
+      "listed_in_official_census_index": true,
+      "source": "https://iccd.cultura.gov.it/it/progetti/5382/censimento-dei-santuari-italiani",
+      "list_pdf_reviewed": false,
+      "entries_extracted": null,
+      "physical_place_crosswalk": "NOT_STARTED"
+    },
+    {
+      "id": "ICCD-DIO-33",
+      "region": "Sardegna",
+      "diocese": "Arcidiocesi di Sassari",
+      "listed_in_official_census_index": true,
+      "source": "https://iccd.cultura.gov.it/it/progetti/5382/censimento-dei-santuari-italiani",
+      "list_pdf_reviewed": false,
+      "entries_extracted": null,
+      "physical_place_crosswalk": "NOT_STARTED"
+    }
+  ],
+  "monograph": {
+    "date_of_census": "2025-12-31",
+    "publisher": "Libreria Editrice Vaticana",
+    "author_project": "Prof. Giustina Aceto; ICCD / Marianum / PAMI cooperation",
+    "provinces": [
+      {
+        "region": "Basilicata",
+        "count": 31
+      },
+      {
+        "region": "Calabria",
+        "count": 162
+      }
+    ],
+    "combined_mentioned_sanctuaries": 193,
+    "notice": "These 193 catalogued sanctuaries are a two-region historical census benchmark. They cannot be treated as 193 new Place IDs or the denominator of all Italian sanctuaries; full volume not extracted.",
+    "reference_url": "https://iccd.cultura.gov.it/it/progetti/5382/censimento-dei-santuari-italiani"
+  },
+  "unrepresented_regions_on_index": [
+    "Liguria",
+    "Lombardia",
+    "Emilia Romagna",
+    "Toscana",
+    "Marche",
+    "Umbria"
+  ],
+  "status": "LINKED_DIOCESAN_LISTS_IDENTIFIED_NOT_TRANSCRIBED",
+  "notes": "Main census page links documents/PDFs per ecclesiastical district and a FEC separate compilation. Documents are not yet inspected; keep source index coverage separate from record completeness."
+}

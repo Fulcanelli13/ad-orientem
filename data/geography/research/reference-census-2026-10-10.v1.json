@@ -1,0 +1,1228 @@
+{
+  "schema": "EXPLORE_REFERENCE_CENSUS_RESEARCH_V1",
+  "version": "1.0.0",
+  "as_of": "2026-10-10",
+  "canonical_issue": "https://github.com/Fulcanelli13/ad-orientem/issues/665",
+  "scope": "RESEARCH_ONLY_NO_RELEASE_NO_CANONICAL_PLACE_MUTATION",
+  "baseline": {
+    "github_branch": "main",
+    "canonical_geography_path": "data/geography/seed-registry.v1.json",
+    "canonical_place_count": 182,
+    "verified_seed_sha": "069c6cac66cfded1187269b3dc0b93ea6c6c96d6",
+    "note": "Europe wave-7 merged to main; prior 187/22/165 figures are historical only. Our European refs (Italy 15 research site cases, Ireland three) have a separate handoff crosswalk and MUST NOT be added to Europe's 232 site-lead denominator. Global bibliography owns sources; the European pipeline owns site identities.",
+    "europe_historical_five_wave": {
+      "leads": 187,
+      "matched": 22,
+      "unmatched": 165,
+      "as_of": "2026-10-10",
+      "status": "SUPERSEDED_SNAPSHOT"
+    },
+    "europe_current_seven_wave": {
+      "leads": 232,
+      "matched": 22,
+      "unmatched": 210,
+      "sources": 175,
+      "category_associations": 227,
+      "source_file": "data/explore/europe-acquisition.seven-wave-coverage.review.v1.json",
+      "source_pr": "https://github.com/Fulcanelli13/ad-orientem/pull/919",
+      "owner": "EUROPE_COUNTRY_ACQUISITION",
+      "site_completeness": "UNCERTIFIED_ALL_47"
+    }
+  },
+  "rules": [
+    "Reference-index review is not full-source extraction or site certification.",
+    "Do not infer canonical Place identity from a name, proximity, country or Marian title; reconcile exact physical complex and aliases.",
+    "Shrine juridical status, local pilgrimage importance, historic activity, and reported apparition recognition are independent fields.",
+    "Do not infer relic authenticity from custody, do not collapse temporary touring relics into permanent pins.",
+    "A pilgrimage route/event belongs to the existing shrines-pilgrimages owner and its stops must link to Place IDs.",
+    "A custom requires a specific historical witness and geographic scope; for French domestic customs impose the French Catholic relevance gate.",
+    "A bibliography-only source is not claim-level evidence for a candidate until passage/page can be checked.",
+    "Do not bulk copy protected books; inspect licensed material or accessible excerpts and record bibliographic pointers.",
+    "Publication requires original authority, accessible source passage, editorial importance gate, explicit Place bridge and map/phone acceptance."
+  ],
+  "sources": [
+    {
+      "id": "FR_LETOURNEAU_2019",
+      "continent": "Europe",
+      "geo_scope": "France",
+      "subjects": [
+        "SHRINE",
+        "PILGRIMAGE"
+      ],
+      "title": "Guide des sanctuaires mariaux de France — Dominique Le Tourneau",
+      "authority": "PUBLISHER_BIBLIOGRAPHY",
+      "url": "https://www.editionsartege.fr/product/117073/guide-des-sanctuaires-mariaux-de-france/",
+      "access": "CATALOGUE_ONLY",
+      "note": "Publisher states nearly 2,900 active Marian devotional places, arranged by department. Full entries not accessed; book not transcribed."
+    },
+    {
+      "id": "FR_VINCENT_2005",
+      "continent": "Europe",
+      "geo_scope": "France",
+      "subjects": [
+        "SHRINE",
+        "PILGRIMAGE"
+      ],
+      "title": "Pour un inventaire des sanctuaires et lieux de pèlerinage chrétiens en France — Catherine Vincent",
+      "authority": "ACADEMIC_METHOD",
+      "url": "https://www.persee.fr/doc/rhef_0048-7988_2005_num_91_227_4229",
+      "access": "ARTICLE_ACCESSIBLE",
+      "note": "Documented CNRS-related inventory methodology; not a present-day country-wide denominator."
+    },
+    {
+      "id": "IT_ICCD_CENSUS",
+      "continent": "Europe",
+      "geo_scope": "Italy",
+      "subjects": [
+        "SHRINE",
+        "PILGRIMAGE"
+      ],
+      "title": "Censimento dei santuari italiani",
+      "authority": "STATE_HERITAGE_CENSUS",
+      "url": "https://iccd.cultura.gov.it/it/progetti/5382/censimento-dei-santuari-italiani",
+      "access": "INDEX_ACCESSIBLE",
+      "note": "Italian Ministry of Culture/ICCD, diocesan-area lists under continuing updates; do not imply nationwide closure.",
+      "extracted_index": "data/geography/research/italy-iccd-diocesan-source-index-2026-10-10.v1.json"
+    },
+    {
+      "id": "IT_TORINO_CONSOLATA_2026",
+      "continent": "Europe",
+      "geo_scope": "Italy",
+      "subjects": [
+        "SHRINE",
+        "PILGRIMAGE",
+        "CUSTOM"
+      ],
+      "title": "Festa della Consolata, patrona della Diocesi: tutte le celebrazioni",
+      "authority": "DIOCESAN_DIRECT",
+      "url": "https://www.diocesi.torino.it/site/festa-della-consolata-patrona-della-diocesi-programma-delle-celebrazioni/",
+      "access": "PAGE_ACCESSIBLE",
+      "note": "Diocese explicitly identifies Santuario della Beata Vergine Consolata, Torino, Marian patronal devotion and pilgrimages."
+    },
+    {
+      "id": "GB_CBCEW_PILGRIMAGE",
+      "continent": "Europe",
+      "geo_scope": "United Kingdom",
+      "subjects": [
+        "PILGRIMAGE",
+        "ROUTE"
+      ],
+      "title": "Catholic Bishops' Conference of England and Wales — Pilgrimage",
+      "authority": "EPISCOPAL_ROUTE_INDEX",
+      "url": "https://www.cbcew.org.uk/pilgrimage/",
+      "access": "INDEX_ACCESSIBLE",
+      "note": "Diocesan Pilgrim Ways, destination shrines, mapped routes; not every historic Catholic sanctuary."
+    },
+    {
+      "id": "GLOBAL_GUMPPENBERG_ATLAS",
+      "continent": "Global",
+      "geo_scope": "Historic Christian world",
+      "subjects": [
+        "MARIAN",
+        "IMAGE",
+        "SHRINE"
+      ],
+      "title": "Wilhelm Gumppenberg, Atlas Marianus (1657–1659), research on Dubrovnik examples",
+      "authority": "HISTORICAL_BIBLIOGRAPHY",
+      "url": "https://hrcak.srce.hr/en/clanak/12006",
+      "access": "RESEARCH_ARTICLE_ACCESSIBLE",
+      "note": "Academic study reports over 1,200 historical Marian shrines; 17th-century evidence is not evidence of current activity or approval."
+    },
+    {
+      "id": "GLOBAL_LAURENTIN",
+      "continent": "Global",
+      "geo_scope": "Global",
+      "subjects": [
+        "APPARITION",
+        "CLAIM"
+      ],
+      "title": "Dictionnaire des apparitions de la Vierge Marie — René Laurentin & Patrick Sbalchiero",
+      "authority": "PUBLISHER_BIBLIOGRAPHY",
+      "url": "https://www.fayard.fr/livre/dictionnaire-des-apparitions-de-la-vierge-9782213671321/",
+      "access": "CATALOGUE_ONLY",
+      "note": "Publisher says >2,400 reported apparition accounts; none is automatically an approved apparition or an individual mapped site."
+    },
+    {
+      "id": "FR_SEBILLOT_FOLKLORE",
+      "continent": "Europe",
+      "geo_scope": "France / French-speaking traditions",
+      "subjects": [
+        "CUSTOM",
+        "TRADITION"
+      ],
+      "title": "Paul Sébillot, Le folk-lore de la France (1904–1907), four volumes",
+      "authority": "NATIONAL_LIBRARY_BIBLIOGRAPHY",
+      "url": "https://catalogue.bnf.fr/ark%3A/12148/cb34087386n",
+      "access": "CATALOGUE_AND_DIGITAL_LINKS",
+      "note": "BNF catalogue links digitised volumes; discern religious vs secular customs and attest a French Catholic context before admission."
+    },
+    {
+      "id": "NA_CCCB_NATIONAL",
+      "continent": "North America",
+      "geo_scope": "Canada",
+      "subjects": [
+        "SHRINE",
+        "PILGRIMAGE",
+        "RELIC"
+      ],
+      "title": "Canada's National Shrines — Canadian Conference of Catholic Bishops",
+      "authority": "EPISCOPAL_INVENTORY",
+      "url": "https://www.cccb.ca/the-catholic-church-in-canada/canadas-national-shrines/",
+      "access": "INDEX_ACCESSIBLE",
+      "note": "Six official national shrines enumerated on accessible page.",
+      "extracted_index": "data/geography/research/canada-national-shrines-2026-10-10.v1.json"
+    },
+    {
+      "id": "NA_NASPA_US",
+      "continent": "North America",
+      "geo_scope": "United States",
+      "subjects": [
+        "SHRINE",
+        "PILGRIMAGE"
+      ],
+      "title": "National Shrines List — National Association of Shrine and Pilgrimage Apostolate",
+      "authority": "SHRINE_ASSOCIATION_INDEX",
+      "url": "https://www.catholicshrines.org/national-shrines",
+      "access": "INDEX_ACCESSIBLE",
+      "note": "Association list of national shrines; check each site's individual designation and present status before publishing.",
+      "extracted_index": "data/geography/research/naspa-us-national-shrines-2026-10-10.v1.json"
+    },
+    {
+      "id": "NA_USCCB_HERITAGE",
+      "continent": "North America",
+      "geo_scope": "United States",
+      "subjects": [
+        "SHRINE",
+        "PILGRIMAGE"
+      ],
+      "title": "USCCB Sites of Catholic Heritage in the U.S.A.",
+      "authority": "EPISCOPAL_SELECTIVE_INDEX",
+      "url": "https://www.usccb.org/sites-catholic-heritage-usa",
+      "access": "INDEX_ACCESSIBLE",
+      "note": "Curated Catholic heritage and pilgrimage sites; does not enumerate every shrine."
+    },
+    {
+      "id": "SA_IPHAN_HERITAGE",
+      "continent": "South America",
+      "geo_scope": "Brazil",
+      "subjects": [
+        "SACRED",
+        "SITE",
+        "IMAGE",
+        "RELIC"
+      ],
+      "title": "IPHAN — Patrimônio Material and protected-cultural-properties inventories",
+      "authority": "STATE_HERITAGE_INDEX",
+      "url": "https://www.gov.br/iphan/pt-br/patrimonio-cultural/patrimonio-material",
+      "access": "INDEX_ACCESSIBLE",
+      "note": "National built-heritage material, not exclusively Catholic; crosswalk religious monuments only."
+    },
+    {
+      "id": "SA_IPHAN_ES",
+      "continent": "South America",
+      "geo_scope": "Brazil",
+      "subjects": [
+        "SHRINE",
+        "PILGRIMAGE"
+      ],
+      "title": "IPHAN Espírito Santo — Patrimônio Material",
+      "authority": "STATE_HERITAGE_CASE_INDEX",
+      "url": "https://www.gov.br/iphan/pt-br/superintendencias/espirito-santo/patrimonio-material",
+      "access": "PAGE_ACCESSIBLE",
+      "note": "Names Convento e Igreja de Nossa Senhora da Penha, Vila Velha, among old sanctuaries; location-specific witness."
+    },
+    {
+      "id": "SA_CNBB_2026_SURVEY",
+      "continent": "South America",
+      "geo_scope": "Brazil",
+      "subjects": [
+        "SACRED",
+        "SITE"
+      ],
+      "title": "CNBB — levantamento sobre patrimônio cultural religioso católico (17 August 2026)",
+      "authority": "EPISCOPAL_CENSUS_IN_PROGRESS",
+      "url": "https://www.cnbb.org.br/levantamento-sobre-patrimonio-cultural-religioso-catolico/",
+      "access": "ANNOUNCEMENT_ONLY",
+      "note": "Consultation launched; not a finished publicly extractable inventory."
+    },
+    {
+      "id": "AS_MALOLOS_SHRINES",
+      "continent": "Asia",
+      "geo_scope": "Philippines",
+      "subjects": [
+        "SHRINE",
+        "PILGRIMAGE"
+      ],
+      "title": "Diocese of Malolos — Shrines and Pilgrimage Sites",
+      "authority": "DIOCESAN_DIRECT_INDEX",
+      "url": "https://dioceseofmalolos.ph/shrines-and-pilgrimage-sites/",
+      "access": "INDEX_ACCESSIBLE",
+      "note": "Four national shrines and multiple diocesan shrines listed with named locality and designation dates; diocese-limited.",
+      "extracted_index": "data/geography/research/malolos-shrines-2026-10-10.v1.json"
+    },
+    {
+      "id": "AS_VAILANKANNI_VATICAN",
+      "continent": "Asia",
+      "geo_scope": "India",
+      "subjects": [
+        "SHRINE",
+        "PILGRIMAGE"
+      ],
+      "title": "Vatican News — Vailankanni Shrine and August 2024 DDF correspondence",
+      "authority": "HOLY_SEE_REPORT",
+      "url": "https://www.vaticannews.va/en/vatican-city/news/2024-08/ddf-support-india-vailankanni-marian-shrine.html",
+      "access": "PAGE_ACCESSIBLE",
+      "note": "Confirms Sanctuary of Our Lady of Good Health in Tamil Nadu and active Marian pilgrimage; keep apparition claims separate."
+    },
+    {
+      "id": "AF_AMECEA_SUBUKIA",
+      "continent": "Africa",
+      "geo_scope": "Kenya",
+      "subjects": [
+        "SHRINE",
+        "PILGRIMAGE"
+      ],
+      "title": "AMECEA — Kenya national pilgrimage to Marian Shrine in Subukia",
+      "authority": "REGIONAL_EPISCOPAL_REPORT",
+      "url": "https://communications.amecea.org/index.php/2026/09/25/kenya-kccb-dedicates-october-3rd-to-national-prayer-for-peaceful-cohesion/",
+      "access": "PAGE_ACCESSIBLE",
+      "note": "Names Marian Shrine Subukia, Nakuru Diocese, national annual pilgrimage."
+    },
+    {
+      "id": "AF_SECAM_CONFERENCES",
+      "continent": "Africa",
+      "geo_scope": "Africa and Madagascar",
+      "subjects": [
+        "SOURCE",
+        "DISCOVERY"
+      ],
+      "title": "SECAM — Regional Episcopal Conferences",
+      "authority": "REGIONAL_EPISCOPAL_DIRECTORY",
+      "url": "https://secam.org/regional-episcopal-conferences/",
+      "access": "DIRECTORY_ACCESSIBLE",
+      "note": "Source-routing index to regional/national episcopal bodies, not a shrine census."
+    },
+    {
+      "id": "OC_AU_PILGRIMS_2025",
+      "continent": "Oceania",
+      "geo_scope": "Australia",
+      "subjects": [
+        "PILGRIMAGE",
+        "SITE"
+      ],
+      "title": "Australian Catholic Jubilee Pilgrims of Hope — All Sites",
+      "authority": "EPISCOPAL_PILGRIMAGE_INDEX",
+      "url": "https://pilgrimsofhope.catholic.org.au/all/",
+      "access": "INDEX_ACCESSIBLE",
+      "note": "117 Jubilee pilgrimage sites, eight paginated pages; a time-bounded programme, not all sacred sites historically.",
+      "extracted_index": "data/geography/research/australia-jubilee-2025-sites-2026-10-10.v1.json"
+    },
+    {
+      "id": "OC_NZ_NATIONAL",
+      "continent": "Oceania",
+      "geo_scope": "New Zealand",
+      "subjects": [
+        "SHRINE",
+        "PILGRIMAGE"
+      ],
+      "title": "New Zealand Catholic Bishops Conference — St Mary of the Angels national Marian shrine",
+      "authority": "EPISCOPAL_DIRECT",
+      "url": "https://www.catholic.org.nz/news/media-releases/smoa-dedication-mass",
+      "access": "PAGE_ACCESSIBLE",
+      "note": "Official bishops' announcement of 14 August 2022 national Marian shrine dedication."
+    },
+    {
+      "id": "GLOBAL_GCATHOLIC",
+      "continent": "Global",
+      "geo_scope": "Global",
+      "subjects": [
+        "SHRINE"
+      ],
+      "title": "GCatholic — International and National Shrines",
+      "authority": "SECONDARY_CROSS_CHECK",
+      "url": "https://gcatholic.org/churches/shrine",
+      "access": "INDEX_ACCESSIBLE",
+      "note": "Useful for world-wide national/international designation discovery, not accepted as canonical authority without ecclesiastical corroboration."
+    },
+    {
+      "id": "GLOBAL_NORMS",
+      "continent": "Global",
+      "geo_scope": "Global",
+      "subjects": [
+        "EDITORIAL",
+        "GATE"
+      ],
+      "title": "USCCB Norms for Designation of National Shrines",
+      "authority": "EPISCOPAL_NORM",
+      "url": "https://www.usccb.org/committees/divine-worship/policies/norms-for-national-shrines",
+      "access": "NORM_ACCESSIBLE",
+      "note": "Distinguishes canonically designated shrines from mere dedication and private pilgrimage."
+    },
+    {
+      "id": "AS_PH_ACSP_2024_CENSUS",
+      "continent": "Asia",
+      "geo_scope": "Philippines",
+      "subjects": [
+        "SHRINE",
+        "PILGRIMAGE"
+      ],
+      "title": "Association of Catholic Shrines and Pilgrimages Philippines: official member census (2024)",
+      "authority": "SHRINE_ASSOCIATION_CENSUS",
+      "url": "https://philippineshrines.org/2025/01/28/acsp-official-shrine-members/",
+      "access": "REPORT_ACCESSIBLE",
+      "note": "Association states 305 shrines and 257 enrolled members in 2024; reported geographical subtotals add to 296; 2025 association report not equal present unique-physical-site denominator."
+    },
+    {
+      "id": "AS_PH_ACSP_NORTH",
+      "continent": "Asia",
+      "geo_scope": "Philippines",
+      "subjects": [
+        "SHRINE",
+        "PILGRIMAGE"
+      ],
+      "title": "ACSP Northern and Central Luzon directory",
+      "authority": "SHRINE_ASSOCIATION_LIVE_INDEX",
+      "url": "https://philippineshrines.org/northern-central-luzon/",
+      "access": "INDEX_ACCESSIBLE",
+      "note": "Named shrines with designation dates, dioceses and membership labels; page has repeated Iba records. 16 selected priority rows acquired.",
+      "extracted_index": "data/geography/research/philippines-acsp-priority-2026-10-10.v1.json"
+    },
+    {
+      "id": "AS_PH_ACSP_NCR",
+      "continent": "Asia",
+      "geo_scope": "Philippines",
+      "subjects": [
+        "SHRINE",
+        "PILGRIMAGE"
+      ],
+      "title": "ACSP NCR and Southern Luzon directory",
+      "authority": "SHRINE_ASSOCIATION_LIVE_INDEX",
+      "url": "https://philippineshrines.org/national-capital-region-and-southern-luzon/",
+      "access": "INDEX_ACCESSIBLE",
+      "note": "Named shrine rows; Saint Martha at Pateros listed under two authority headings. 25 selected priority rows acquired.",
+      "extracted_index": "data/geography/research/philippines-acsp-priority-2026-10-10.v1.json"
+    },
+    {
+      "id": "AS_PH_ACSP_VISAYAS",
+      "continent": "Asia",
+      "geo_scope": "Philippines",
+      "subjects": [
+        "SHRINE",
+        "PILGRIMAGE"
+      ],
+      "title": "ACSP Visayas directory",
+      "authority": "SHRINE_ASSOCIATION_LIVE_INDEX",
+      "url": "https://philippineshrines.org/visayas/",
+      "access": "INDEX_ACCESSIBLE",
+      "note": "Cebu Our Lady of Lourdes repeat; 20 selected priority rows acquired.",
+      "extracted_index": "data/geography/research/philippines-acsp-priority-2026-10-10.v1.json"
+    },
+    {
+      "id": "AS_PH_ACSP_MINDANAO",
+      "continent": "Asia",
+      "geo_scope": "Philippines",
+      "subjects": [
+        "SHRINE",
+        "PILGRIMAGE"
+      ],
+      "title": "ACSP Mindanao directory",
+      "authority": "SHRINE_ASSOCIATION_LIVE_INDEX",
+      "url": "https://philippineshrines.org/mindanao/",
+      "access": "INDEX_ACCESSIBLE",
+      "note": "Five publicly listed shrines on page; all five recorded.",
+      "extracted_index": "data/geography/research/philippines-acsp-priority-2026-10-10.v1.json"
+    },
+    {
+      "id": "SA_CH_EPISCOPAL_2025",
+      "continent": "South America",
+      "geo_scope": "Chile",
+      "subjects": [
+        "SHRINE",
+        "PILGRIMAGE"
+      ],
+      "title": "Episcopal Conference of Chile — El peregrinar su sentido y finalidad (2025)",
+      "authority": "EPISCOPAL_ILLUSTRATED_INDEX",
+      "url": "https://www.iglesia.cl/48774-el-peregrinar-su-sentido-y-finalidad.html",
+      "access": "MAP_AND_PDF_ACCESSIBLE",
+      "note": "15 named shrines visible on 2025 illustrated map; geographic and church identity require detailed index.",
+      "extracted_index": "data/geography/research/chile-episcopal-shrines-map-2026-10-10.v1.json"
+    },
+    {
+      "id": "SA_CH_EPISCOPAL_SEARCH",
+      "continent": "South America",
+      "geo_scope": "Chile",
+      "subjects": [
+        "SHRINE",
+        "CUSTOM",
+        "PILGRIMAGE"
+      ],
+      "title": "Chilean bishops' searchable shrine directory and historic festivals catalogues",
+      "authority": "EPISCOPAL_DATABASE_INDEX",
+      "url": "https://www.iglesia.cl/santuarios.php",
+      "access": "SEARCH_UI_ACCESSIBLE",
+      "note": "Directory accepts name/city/feast searches. Old episcopal area page references full list of shrine feast days and an inventory, but source download file not acquired."
+    },
+    {
+      "id": "EU_IE_EPISCOPAL_2025",
+      "continent": "Europe",
+      "geo_scope": "Ireland",
+      "subjects": [
+        "PILGRIMAGE",
+        "SHRINE"
+      ],
+      "title": "Irish Catholic Bishops' Conference Jubilee 2025 national pilgrimage destinations",
+      "authority": "EPISCOPAL_NAMED_INDEX",
+      "url": "https://www.catholicbishops.ie/2025/03/12/statement-of-the-spring-2025-general-meeting-of-the-irish-catholic-bishops-conference/",
+      "access": "THREE_SITE_INDEX_ACCESSIBLE",
+      "note": "Three designated 2025 sites, Croagh Patrick absent from 182 Place seed; Knock and Lough Derg known.",
+      "extracted_index": "data/geography/research/ireland-2025-national-pilgrimage-2026-10-10.v1.json"
+    },
+    {
+      "id": "IT_PAMI_SANCTUARY",
+      "continent": "Europe",
+      "geo_scope": "Italy / Global",
+      "subjects": [
+        "SHRINE"
+      ],
+      "title": "Pontificia Academia Mariana Internationalis — censimento santuari and world Marian map",
+      "authority": "PONTIFICAL_RESEARCH_INVENTORY",
+      "url": "https://www.pami.info/santuari-censimento/",
+      "access": "INDEX_AND_MAP_ACCESSIBLE",
+      "note": "Worldwide Marian map and Italian sanctuary cataloguing with official ICCD links, currently updating. Map content not extracted."
+    },
+    {
+      "id": "SA_CH_EPISCOPAL_CUSTOM",
+      "continent": "South America",
+      "geo_scope": "Chile",
+      "subjects": [
+        "CUSTOM"
+      ],
+      "title": "Conferencia Episcopal de Chile — popular piety customs/fiestas and Canto a lo Divino",
+      "authority": "EPISCOPAL_CULTURAL_INDEX",
+      "url": "https://www.iglesia.cl/area_eclesial.php",
+      "access": "INDEX_ACCESSIBLE",
+      "note": "Festival catalogue, dates, popular devotions, canta a lo divino and Cuasimodo; Latin American customs distinct from French relevance-gated domestic customs."
+    },
+    {
+      "id": "AF_ZM_LUSAKA_DIOCESAN",
+      "continent": "Africa",
+      "geo_scope": "Zambia / Lusaka",
+      "subjects": [
+        "SHRINE",
+        "PILGRIMAGE"
+      ],
+      "title": "Lusaka Archdiocese – annual pilgrimage to Marian Shrine of Our Lady of Lusaka",
+      "authority": "ARCHDIOCESE_DIRECT",
+      "url": "https://lusakaarchdiocese.org/adl-2025-marian-pilgrimage/",
+      "access": "PAGE_ACCESSIBLE",
+      "note": "Named diocesan sanctuary and repeated pilgrimages; physical footprint/pin still unconfirmed",
+      "extracted_index": "data/geography/research/african-episcopal-priority-2026-10-10.v1.json"
+    },
+    {
+      "id": "AF_GH_CBCG_DIRECTORY",
+      "continent": "Africa",
+      "geo_scope": "Ghana",
+      "subjects": [
+        "SOURCE_DISCOVERY"
+      ],
+      "title": "Ghana Catholic Bishops' Conference – national diocesan directory",
+      "authority": "EPISCOPAL_DIRECTORY",
+      "url": "https://www.cbcgha.org/national-directory/",
+      "access": "DIRECTORY_ACCESSIBLE",
+      "note": "Source-routing across Ghanaian dioceses; no shrine corpus extracted and no completed country inventory claimed."
+    },
+    {
+      "id": "IT_PAMI_OPPIDO",
+      "continent": "Europe",
+      "geo_scope": "Italy – Diocese of Oppido Mamertina-Palmi",
+      "subjects": [
+        "SHRINE",
+        "PILGRIMAGE",
+        "CUSTOM"
+      ],
+      "title": "PAMI – I santuari della Diocesi di Oppido Mamertina-Palmi",
+      "authority": "PONTIFICAL_RESEARCH_DIOCESAN_INVENTORY",
+      "url": "https://www.pami.info/news/i-santuari-della-diocesi-di-oppido-mamertina-palmi/",
+      "access": "FULL_ARTICLE_ACCESSIBLE",
+      "note": "11 named diocesan shrines with linked individual ICCD MODI catalogue codes. Customs/site linked only; images not licensed.",
+      "extracted_index": "data/geography/research/pami-italy-rwanda-diocesan-cases-2026-10-10.v1.json"
+    },
+    {
+      "id": "IT_PAMI_TRICARICO",
+      "continent": "Europe",
+      "geo_scope": "Italy – Diocese of Tricarico",
+      "subjects": [
+        "SHRINE",
+        "PILGRIMAGE"
+      ],
+      "title": "PAMI – I Santuari della Diocesi di Tricarico",
+      "authority": "PONTIFICAL_RESEARCH_DIOCESAN_INVENTORY",
+      "url": "https://www.pami.info/santuari/i-santuari-della-diocesi-di-tricarico/",
+      "access": "FULL_ARTICLE_ACCESSIBLE",
+      "note": "Two named diocesan shrines; site-specific URLs and dates. Not all Italian census.",
+      "extracted_index": "data/geography/research/pami-italy-rwanda-diocesan-cases-2026-10-10.v1.json"
+    },
+    {
+      "id": "AF_RW_PAMI_RUHENGERI",
+      "continent": "Africa",
+      "geo_scope": "Rwanda – Ruhengeri Diocese",
+      "subjects": [
+        "SHRINE",
+        "PILGRIMAGE"
+      ],
+      "title": "PAMI – Sanctuaire Notre Dame de Fatima Ruhengeri",
+      "authority": "PONTIFICAL_RESEARCH_DIOCESAN_CASE",
+      "url": "https://www.pami.info/santuari/sanctuaire-notre-dame-de-fatima-ruhengeri/",
+      "access": "FULL_ARTICLE_ACCESSIBLE",
+      "note": "Site name/locality and 20 May 2017 diocesan sanctuary designation independently stated.",
+      "extracted_index": "data/geography/research/pami-italy-rwanda-diocesan-cases-2026-10-10.v1.json"
+    },
+    {
+      "id": "IT_ICCD_AOSTA_FICHE",
+      "continent": "Europe",
+      "geo_scope": "Italy – Introd, Valle d'Aosta",
+      "subjects": [
+        "SHRINE",
+        "RELIC"
+      ],
+      "title": "ICCD MODI source fiche – Santuario San Giovanni Paolo II, Les Combes",
+      "authority": "PONTIFICAL_RESEARCH_ORIGINAL_FICHE",
+      "url": "https://www.pami.info/censimento_santuari/schede/Santuario_San_Giovanni_Paolo_II_Aosta.pdf",
+      "access": "PDF_22_PAGES_REVIEWED_KEY_PAGES",
+      "note": "Primary fiche with physical site, approximate published WGS84 coordinate, feast and relic movement. Explicit source copyright authorization required: metadata only, do not reproduce text/photos.",
+      "extracted_index": "data/geography/research/italy-iccd-validated-records-2026-10-10.v1.json"
+    },
+    {
+      "id": "SA_CH_EPISCOPAL_HISTORICAL_ARCHIVE",
+      "continent": "South America",
+      "geo_scope": "Chile – national episcopal sanctuary and feast research archives",
+      "subjects": [
+        "SHRINE",
+        "PILGRIMAGE",
+        "CUSTOM"
+      ],
+      "title": "Conferencia Episcopal de Chile – Catastro de Santuarios and lists of santuarios y sus fiestas",
+      "authority": "EPISCOPAL_ARCHIVAL_CATALOGUE",
+      "url": "https://www.iglesia.cl/area_eclesial.php",
+      "access": "LINKED_ARCHIVAL_INDEX_ONLY",
+      "note": "Historical archive advertises full sanctuary and feast PDF and Excel, plus sanctuary census in DOC/ZIP. Download links could not be opened with available web interface and are NOT transcribed."
+    },
+    {
+      "id": "WIKI_GLOBAL_PILGRIMAGES",
+      "continent": "Global",
+      "geo_scope": "Worldwide",
+      "subjects": [
+        "RESEARCH_PROVENANCE"
+      ],
+      "title": "WIKI GLOBAL PILGRIMAGES",
+      "authority": "SECONDARY_WIKIPEDIA_DISCOVERY",
+      "url": "https://en.wikipedia.org/wiki/List_of_Christian_pilgrimage_sites",
+      "access": "ORIGINAL_PAGE_OPENED",
+      "note": "Cross-confessional selection not complete"
+    },
+    {
+      "id": "WIKI_ABRAHAMIC_BURIALS",
+      "continent": "Global",
+      "geo_scope": "Worldwide",
+      "subjects": [
+        "RESEARCH_PROVENANCE"
+      ],
+      "title": "WIKI ABRAHAMIC BURIALS",
+      "authority": "SECONDARY_WIKIPEDIA_DISCOVERY",
+      "url": "https://en.wikipedia.org/wiki/List_of_burial_places_of_Abrahamic_figures",
+      "access": "ORIGINAL_PAGE_OPENED",
+      "note": "Conflicting burial/traditions, not relic evidence"
+    },
+    {
+      "id": "WIKI_MARIAN_APPARITIONS",
+      "continent": "Global",
+      "geo_scope": "Worldwide",
+      "subjects": [
+        "RESEARCH_PROVENANCE"
+      ],
+      "title": "WIKI MARIAN APPARITIONS",
+      "authority": "SECONDARY_WIKIPEDIA_DISCOVERY",
+      "url": "https://en.wikipedia.org/wiki/List_of_Marian_apparitions",
+      "access": "ORIGINAL_PAGE_OPENED",
+      "note": "Requires original episcopal/DDF judgments"
+    },
+    {
+      "id": "WIKI_HOLY_LAND_SITES",
+      "continent": "Global",
+      "geo_scope": "Middle East",
+      "subjects": [
+        "RESEARCH_PROVENANCE"
+      ],
+      "title": "WIKI HOLY LAND SITES",
+      "authority": "SECONDARY_WIKIPEDIA_DISCOVERY",
+      "url": "https://en.wikipedia.org/wiki/List_of_Christian_holy_places_in_the_Holy_Land",
+      "access": "ORIGINAL_PAGE_OPENED",
+      "note": "Cross-confessional rival site identifications"
+    },
+    {
+      "id": "WIKI_CHRISTIAN_PILGRIMAGE_CATEGORY",
+      "continent": "Global",
+      "geo_scope": "Worldwide",
+      "subjects": [
+        "RESEARCH_PROVENANCE"
+      ],
+      "title": "WIKI CHRISTIAN PILGRIMAGE CATEGORY",
+      "authority": "SECONDARY_WIKIPEDIA_DISCOVERY",
+      "url": "https://en.wikipedia.org/wiki/Category:Christian_pilgrimage_sites",
+      "access": "ORIGINAL_PAGE_OPENED",
+      "note": "19 top-level page titles, not complete worldwide inventory"
+    },
+    {
+      "id": "HOLY_LAND_CUSTODIA_DIRECTORY",
+      "continent": "Global",
+      "geo_scope": "Holy Land",
+      "subjects": [
+        "RESEARCH_PROVENANCE"
+      ],
+      "title": "HOLY LAND CUSTODIA DIRECTORY",
+      "authority": "ORIGINAL_CHURCH_CUSTODIAN",
+      "url": "https://www.custodia.org/en/santuari/",
+      "access": "ORIGINAL_PAGE_OPENED",
+      "note": "27 displayed named sanctuary/map items; two already published Places directly named"
+    },
+    {
+      "id": "VATICAN_DDF_ALLEGED_2024",
+      "continent": "Global",
+      "geo_scope": "Worldwide",
+      "subjects": [
+        "RESEARCH_PROVENANCE"
+      ],
+      "title": "VATICAN DDF ALLEGED 2024",
+      "authority": "HOLY_SEE_NORMS",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_ddf_doc_20240517_norme-fenomeni-soprannaturali_en.html",
+      "access": "ORIGINAL_PAGE_OPENED",
+      "note": "Pastoral permission for devotion is not supernatural authentication"
+    },
+    {
+      "id": "FR_QUERRIEN_DIOCESE",
+      "continent": "Europe",
+      "geo_scope": "France Brittany Querrien",
+      "title": "Diocese of Saint-Brieuc–Tréguier official Querrien sanctuary history",
+      "authority": "ORIGINAL_LOCAL_DIOCESE",
+      "url": "https://saintbrieuc-treguier.catholique.fr/le-diocese/le-sanctuaire/",
+      "subjects": [
+        "APPARITION",
+        "SHRINE",
+        "SACRED_WELL"
+      ],
+      "access": "PAGE_REVIEWED",
+      "note": "Diocese explicitly reports Bishop Denis de La Barde verified apparition in Sep 1652, canonical diocesan shrine in 2002. Original 1652 decree not acquired."
+    },
+    {
+      "id": "IN_THANJAVUR_VELANKANNI",
+      "continent": "Asia",
+      "geo_scope": "India Tamil Nadu",
+      "title": "Diocese of Thanjavur original history of Vailankanni Marian shrine",
+      "authority": "ORIGINAL_LOCAL_DIOCESE",
+      "url": "https://tanjorediocese.org/front/history",
+      "subjects": [
+        "APPARITION_TRADITION",
+        "SHRINE"
+      ],
+      "access": "PAGE_REVIEWED",
+      "note": "Local ordinary describes original Marian apparition tales as oral tradition with no surviving original historical record. Catholic basilica/shrine status is distinct from apparition approval."
+    },
+    {
+      "id": "PS_UNESCO_HEBRON",
+      "continent": "Asia",
+      "geo_scope": "Hebron/Al-Khalil",
+      "title": "UNESCO World Heritage Centre — Hebron old town and Tomb of Patriarchs compound",
+      "authority": "UNESCO_WORLD_HERITAGE",
+      "url": "https://whc.unesco.org/en/list/1565/",
+      "subjects": [
+        "BIBLICAL_BURIAL",
+        "HISTORIC_PILGRIMAGE"
+      ],
+      "access": "PAGE_REVIEWED",
+      "note": "Supports actual historic complex and multifaith traditional association, not body identification or relic authenticity."
+    },
+    {
+      "id": "JO_SBF_NEB0_ARCHEOLOGY",
+      "continent": "Asia",
+      "geo_scope": "Jordan Mount Nebo",
+      "title": "Studium Biblicum Franciscanum publication index — Mount Nebo new archaeological excavations",
+      "authority": "FRANCISCAN_ARCHAEOLOGICAL_INSTITUTE",
+      "url": "https://sbf.custodia.org/en/publications/collectio-maior/mount-nebo-new-archaeological-excavations-i",
+      "subjects": [
+        "BIBLICAL_MEMORIAL",
+        "ARCHAEOLOGY"
+      ],
+      "access": "BOOK_CATALOGUE_ONLY",
+      "note": "Archaeology monograph catalogue supports memorial study; the full scholarly monograph is not reproduced or acquired."
+    },
+    {
+      "id": "PS_CUSTODIA_TOMB_MARY_STATUS_QUO",
+      "continent": "Asia",
+      "geo_scope": "Jerusalem Gethsemane",
+      "title": "Franciscan Custody Assumption procession and Tomb of Mary status quo",
+      "authority": "ORIGINAL_SITE_CUSTODIAN",
+      "url": "https://www.custodia.org/en/news/in-the-footsteps-of-mary-jerusalem-gathers-around-the-assumption-to-rediscover-its-vocation/",
+      "subjects": [
+        "BIBLICAL_BURIAL_TRADITION",
+        "SITE_CUSTODY"
+      ],
+      "access": "PAGE_REVIEWED",
+      "note": "Greek Orthodox and Armenian Tomb of Mary custody reported; Franciscan Assumption procession access, not general custody/relic authentication."
+    }
+  ],
+  "initial_source_derived_leads": [
+    {
+      "research_id": "IT_TORINO_CONSOLATA",
+      "country": "IT",
+      "continent": "Europe",
+      "source_name": "Santuario della Beata Vergine Consolata",
+      "locality": "Torino, Piemonte",
+      "kind": "MARIAN_SHRINE",
+      "source_id": "IT_TORINO_CONSOLATA_2026",
+      "evidence": "DIOCESAN_SOURCE",
+      "place_id": null,
+      "published": false,
+      "seed_crosswalk": "NO_EXACT_NAME_MATCH_IN_182_PLACE_SEED",
+      "reconciliation_status": "PENDING_CANONICAL_ID_AND_LEAD_DEDUP"
+    },
+    {
+      "research_id": "NA_CANADA_HERMITAGE",
+      "country": "CA",
+      "continent": "North America",
+      "source_name": "Ermitage Saint-Antoine",
+      "locality": "Lac-Bouchette, Québec",
+      "kind": "SHRINE",
+      "source_id": "NA_CCCB_NATIONAL",
+      "evidence": "NATIONAL_SHRINE_LIST",
+      "place_id": null,
+      "published": false,
+      "seed_crosswalk": "NO_EXACT_NAME_MATCH_IN_182_PLACE_SEED",
+      "reconciliation_status": "PENDING_CANONICAL_ID_AND_LEAD_DEDUP",
+      "bounded_index_entry_id": "CCCB-CA-05"
+    },
+    {
+      "research_id": "NA_CANADA_VELYCHKOVSKY",
+      "country": "CA",
+      "continent": "North America",
+      "source_name": "Bishop Velychkovsky Martyr's Shrine",
+      "locality": "Winnipeg, Manitoba",
+      "kind": "RELIC_SHRINE",
+      "source_id": "NA_CCCB_NATIONAL",
+      "evidence": "NATIONAL_SHRINE_LIST",
+      "place_id": null,
+      "published": false,
+      "seed_crosswalk": "NO_EXACT_NAME_MATCH_IN_182_PLACE_SEED",
+      "reconciliation_status": "PENDING_CANONICAL_ID_AND_LEAD_DEDUP",
+      "bounded_index_entry_id": "CCCB-CA-06"
+    },
+    {
+      "research_id": "NA_US_THERESE_JUNEAU",
+      "country": "US",
+      "continent": "North America",
+      "source_name": "National Shrine of Saint Therese",
+      "locality": "Juneau, Alaska",
+      "kind": "SHRINE",
+      "source_id": "NA_NASPA_US",
+      "evidence": "NATIONAL_SHRINE_LIST",
+      "place_id": null,
+      "published": false,
+      "seed_crosswalk": "NO_EXACT_NAME_MATCH_IN_182_PLACE_SEED",
+      "reconciliation_status": "PENDING_CANONICAL_ID_AND_LEAD_DEDUP",
+      "bounded_index_entry_id": "NASPA-US-001"
+    },
+    {
+      "research_id": "NA_US_IMMACULATE_DC",
+      "country": "US",
+      "continent": "North America",
+      "source_name": "Basilica of the National Shrine of the Immaculate Conception",
+      "locality": "Washington, DC",
+      "kind": "MARIAN_SHRINE",
+      "source_id": "NA_NASPA_US",
+      "evidence": "NATIONAL_SHRINE_LIST",
+      "place_id": null,
+      "published": false,
+      "seed_crosswalk": "NO_EXACT_NAME_MATCH_IN_182_PLACE_SEED",
+      "reconciliation_status": "PENDING_CANONICAL_ID_AND_LEAD_DEDUP",
+      "bounded_index_entry_id": "NASPA-US-006"
+    },
+    {
+      "research_id": "SA_BR_BOM_JESUS_CONGONHAS",
+      "country": "BR",
+      "continent": "South America",
+      "source_name": "Santuário do Bom Jesus de Matosinhos",
+      "locality": "Congonhas, Minas Gerais",
+      "kind": "CHRISTOLOGICAL_SHRINE",
+      "source_id": "SA_IPHAN_HERITAGE",
+      "evidence": "STATE_HERITAGE_WITNESS",
+      "place_id": null,
+      "published": false,
+      "seed_crosswalk": "NO_EXACT_NAME_MATCH_IN_182_PLACE_SEED",
+      "reconciliation_status": "PENDING_CANONICAL_ID_AND_LEAD_DEDUP"
+    },
+    {
+      "research_id": "SA_BR_CONVENTO_PENHA",
+      "country": "BR",
+      "continent": "South America",
+      "source_name": "Convento e Igreja de Nossa Senhora da Penha",
+      "locality": "Vila Velha, Espírito Santo",
+      "kind": "MARIAN_SHRINE",
+      "source_id": "SA_IPHAN_ES",
+      "evidence": "STATE_HERITAGE_WITNESS",
+      "place_id": null,
+      "published": false,
+      "seed_crosswalk": "NO_EXACT_NAME_MATCH_IN_182_PLACE_SEED",
+      "reconciliation_status": "PENDING_CANONICAL_ID_AND_LEAD_DEDUP"
+    },
+    {
+      "research_id": "AS_PH_FATIMA_VALENZUELA",
+      "country": "PH",
+      "continent": "Asia",
+      "source_name": "Parish of the National Shrine of Our Lady of Fatima",
+      "locality": "Marulas, Valenzuela City",
+      "kind": "MARIAN_SHRINE",
+      "source_id": "AS_MALOLOS_SHRINES",
+      "evidence": "DIOCESAN_SHRINE_DESIGNATION",
+      "place_id": null,
+      "published": false,
+      "seed_crosswalk": "NO_EXACT_NAME_MATCH_IN_182_PLACE_SEED",
+      "reconciliation_status": "PENDING_CANONICAL_ID_AND_LEAD_DEDUP",
+      "bounded_index_entry_id": "MALOLOS-PH-03"
+    },
+    {
+      "research_id": "AS_PH_ST_ANNE_HAGONOY",
+      "country": "PH",
+      "continent": "Asia",
+      "source_name": "National Shrine and Parish of St. Anne",
+      "locality": "Poblacion, Hagonoy, Bulacan",
+      "kind": "SAINT_SHRINE",
+      "source_id": "AS_MALOLOS_SHRINES",
+      "evidence": "DIOCESAN_SHRINE_DESIGNATION",
+      "place_id": null,
+      "published": false,
+      "seed_crosswalk": "NO_EXACT_NAME_MATCH_IN_182_PLACE_SEED",
+      "reconciliation_status": "PENDING_CANONICAL_ID_AND_LEAD_DEDUP",
+      "bounded_index_entry_id": "MALOLOS-PH-04"
+    },
+    {
+      "research_id": "AS_PH_DIVINE_MERCY_MARILAO",
+      "country": "PH",
+      "continent": "Asia",
+      "source_name": "National Shrine and Parish of the Divine Mercy",
+      "locality": "Sta. Rosa I, Marilao, Bulacan",
+      "kind": "CHRISTOLOGICAL_SHRINE",
+      "source_id": "AS_MALOLOS_SHRINES",
+      "evidence": "DIOCESAN_SHRINE_DESIGNATION",
+      "place_id": null,
+      "published": false,
+      "seed_crosswalk": "NO_EXACT_NAME_MATCH_IN_182_PLACE_SEED",
+      "reconciliation_status": "PENDING_CANONICAL_ID_AND_LEAD_DEDUP",
+      "bounded_index_entry_id": "MALOLOS-PH-05"
+    },
+    {
+      "research_id": "AS_PH_SALAMBAO_OBANDO",
+      "country": "PH",
+      "continent": "Asia",
+      "source_name": "National Shrine of Nuestra Señora de la Inmaculada Concepcion de Salambao — San Pascual Baylon Parish",
+      "locality": "Pag-asa, Obando, Bulacan",
+      "kind": "MARIAN_SHRINE",
+      "source_id": "AS_MALOLOS_SHRINES",
+      "evidence": "DIOCESAN_SHRINE_DESIGNATION",
+      "place_id": null,
+      "published": false,
+      "seed_crosswalk": "NO_EXACT_NAME_MATCH_IN_182_PLACE_SEED",
+      "reconciliation_status": "PENDING_CANONICAL_ID_AND_LEAD_DEDUP",
+      "bounded_index_entry_id": "MALOLOS-PH-06"
+    },
+    {
+      "research_id": "AS_IN_VAILANKANNI",
+      "country": "IN",
+      "continent": "Asia",
+      "source_name": "Sanctuary of Our Lady of Good Health",
+      "locality": "Vailankanni, Tamil Nadu",
+      "kind": "MARIAN_SHRINE",
+      "source_id": "AS_VAILANKANNI_VATICAN",
+      "evidence": "HOLY_SEE_REPORT",
+      "place_id": null,
+      "published": false,
+      "seed_crosswalk": "NO_EXACT_NAME_MATCH_IN_182_PLACE_SEED",
+      "reconciliation_status": "PENDING_CANONICAL_ID_AND_LEAD_DEDUP"
+    },
+    {
+      "research_id": "AF_KE_SUBUKIA",
+      "country": "KE",
+      "continent": "Africa",
+      "source_name": "Subukia National Marian Shrine",
+      "locality": "Subukia, Nakuru Diocese",
+      "kind": "MARIAN_SHRINE",
+      "source_id": "AF_AMECEA_SUBUKIA",
+      "evidence": "EPISCOPAL_REPORT",
+      "place_id": null,
+      "published": false,
+      "seed_crosswalk": "NO_EXACT_NAME_MATCH_IN_182_PLACE_SEED",
+      "reconciliation_status": "PENDING_CANONICAL_ID_AND_LEAD_DEDUP"
+    },
+    {
+      "research_id": "OC_AU_BATHURST_IMMACULATE",
+      "country": "AU",
+      "continent": "Oceania",
+      "source_name": "Diocesan Shrine of Our Lady of the Immaculate Conception",
+      "locality": "Diocese of Bathurst, New South Wales",
+      "kind": "MARIAN_SHRINE",
+      "source_id": "OC_AU_PILGRIMS_2025",
+      "evidence": "EPISCOPAL_PILGRIMAGE_DIRECTORY",
+      "place_id": null,
+      "published": false,
+      "seed_crosswalk": "NO_EXACT_NAME_MATCH_IN_182_PLACE_SEED",
+      "reconciliation_status": "PENDING_CANONICAL_ID_AND_LEAD_DEDUP",
+      "bounded_index_entry_id": "AU-JUBILEE25-005"
+    },
+    {
+      "research_id": "OC_AU_LUTANA_VICTORIES",
+      "country": "AU",
+      "continent": "Oceania",
+      "source_name": "Diocesan Shrine of Our Lady of Victories",
+      "locality": "Lutana, Tasmania",
+      "kind": "MARIAN_SHRINE",
+      "source_id": "OC_AU_PILGRIMS_2025",
+      "evidence": "EPISCOPAL_PILGRIMAGE_DIRECTORY",
+      "place_id": null,
+      "published": false,
+      "seed_crosswalk": "NO_EXACT_NAME_MATCH_IN_182_PLACE_SEED",
+      "reconciliation_status": "PENDING_CANONICAL_ID_AND_LEAD_DEDUP",
+      "bounded_index_entry_id": "AU-JUBILEE25-006"
+    },
+    {
+      "research_id": "OC_NZ_STMARY_ANGELS",
+      "country": "NZ",
+      "continent": "Oceania",
+      "source_name": "St Mary of the Angels — National Shrine to Mary, Mother of God, Assumed into Heaven",
+      "locality": "Wellington",
+      "kind": "MARIAN_SHRINE",
+      "source_id": "OC_NZ_NATIONAL",
+      "evidence": "EPISCOPAL_DEDICATION",
+      "place_id": null,
+      "published": false,
+      "seed_crosswalk": "NO_EXACT_NAME_MATCH_IN_182_PLACE_SEED",
+      "reconciliation_status": "PENDING_CANONICAL_ID_AND_LEAD_DEDUP"
+    }
+  ],
+  "acquisition_checkpoint": {
+    "batch": "2026-10-10-BATCH-2",
+    "official_or_shrine_association_bounded_indexes": [
+      {
+        "source_id": "NA_NASPA_US",
+        "listed_entries": 72,
+        "transcribed": 72,
+        "exact_name_or_location_based_seed_link_proposals": 10,
+        "possible_internal_duplicates": true
+      },
+      {
+        "source_id": "OC_AU_PILGRIMS_2025",
+        "listed_entries": 117,
+        "transcribed": 117,
+        "seed_equivalence_penrose_park": 1,
+        "jubilee_year": "2025",
+        "note": "117 designated sites, not 117 independently significant shrines"
+      },
+      {
+        "source_id": "NA_CCCB_NATIONAL",
+        "listed_entries": 6,
+        "transcribed": 6,
+        "preexisting_seed_place_candidates": 4
+      },
+      {
+        "source_id": "AS_MALOLOS_SHRINES",
+        "listed_entries": 16,
+        "transcribed": 16,
+        "breakdown": "2 minor basilicas; 4 national shrines; 10 diocesan shrines"
+      }
+    ],
+    "source_index_entries_transcribed": 211,
+    "italy_iccd_diocesan_list_links_catalogued": 33,
+    "italy_regional_monograph_sanctuaries_2025_12_31": {
+      "basilicata": 31,
+      "calabria": 162
+    },
+    "published_new_places": 0,
+    "source_screening_status": "INDEX_TRANSCRIPTION_COMPLETE_IN_4_BOUNDED_LISTS; PHYSICAL_IDENTITY_AND_RELEASE_ELIGIBILITY_UNRESOLVED",
+    "source_extraction_not_worldwide_completeness": true
+  },
+  "acquisition_checkpoint_batch3": {
+    "added_source_references": 12,
+    "total_source_references": 34,
+    "selected_philippine_shrine_rows": 66,
+    "philippine_directories": "Four live regional ACSP pages; selective 66 significant or representative rows, not complete transcription of 305 reported shrines",
+    "reported_philippine_shrine_total_2024": 305,
+    "regional_subtotals_sum": 296,
+    "reported_unique_sites": "NOT_VERIFIED_SOURCE_INTERNAL_INCONSISTENCY",
+    "chilean_bishops_map_rows": 15,
+    "chilean_comprehensive_shrine_catalogue": "DISCOVERED_BUT_NOT_EXTRACTED",
+    "ireland_three_site_episcopal_list": 3,
+    "ireland_seed_missing": "Croagh Patrick",
+    "indexed_source_rows_combined_before_entity_dedup": 297,
+    "published_new_places": 0,
+    "original_16_source_derived_leads_all_held": true,
+    "african_crosschecks": {
+      "zambia_our_lady_lusaka": 1,
+      "kenya_subukia_recorroborated": 1,
+      "kenya_subukia_is_preexisting_research_lead": true,
+      "ghana_bishops_directory_routing_only": true
+    }
+  },
+  "acquisition_checkpoint_batch4": {
+    "batch": "2026-10-10-BATCH-4",
+    "philippines_current_regional_source_entries": {
+      "northern_central_luzon": 77,
+      "ncr_southern_luzon": 129,
+      "visayas": 55,
+      "mindanao": 5,
+      "total": 266,
+      "source_repeat_exact_name_and_locality": 3,
+      "source_repeat_additional_probable": 1
+    },
+    "philippines_source_paths": [
+      "data/geography/research/philippines-acsp-north-complete-2026-10-10.v1.json",
+      "data/geography/research/philippines-acsp-ncr-southern-complete-2026-10-10.v1.json",
+      "data/geography/research/philippines-acsp-visayas-index-2026-10-10.v1.json",
+      "data/geography/research/philippines-acsp-mindanao-complete-2026-10-10.v1.json",
+      "data/geography/research/philippines-acsp-unified-crosswalk-2026-10-10.v1.json"
+    ],
+    "previous_ph_priority_rows_superseded_in_index_counts": 66,
+    "previous_ph_priority_crosswalk": {
+      "total": 66,
+      "exact_unique_title": 56,
+      "repeated_title": 2,
+      "alias_title": 8,
+      "all_physical_ids_verified": false
+    },
+    "malolos_crosswalk_rows": 16,
+    "italy_pami_named_diocesan_site_cases": 13,
+    "rwanda_pami_named_site_cases": 1,
+    "italy_primary_iccd_pami_fiche_full_individual_records": 1,
+    "italy_pami_site_cases_total": 14,
+    "deduplicated_replacement_accounting": {
+      "previous_source_index_rows": 297,
+      "replace_selected_ph_priority_rows": -66,
+      "replace_with_full_ph_region_rows": 266,
+      "add_pami_cases": 14,
+      "add_primary_italy_fiche": 1,
+      "resulting_source_rows_across_distinct_source_lists": 512,
+      "unique_physical_places": "UNDETERMINED_SOURCE_OVERLAP",
+      "canonical_new_places": 0
+    },
+    "chile_downloadable_archival_catalogue": "DISCOVERED_NOT_EXTRACTED",
+    "italy_diocesan_pdf_lists": 33,
+    "italy_detailed_fiches_reviewed": 1,
+    "total_bibliography_sources": 39,
+    "safety": "RESEARCH_ONLY_NOT_PUBLISHED",
+    "cross_pipeline_handoff": "data/geography/research/europe-seven-wave-handoff-2026-10-10.v1.json",
+    "european_additional_unique_sites_approved": 0
+  },
+  "acquisition_checkpoint_batch5": {
+    "batch": "2026-10-10-THEMATIC-HERITAGE",
+    "owner": "THEMATIC_FEATURE_SOURCE_CLASSIFICATION_NOT_EUROPE_PLACE_CANDIDATES",
+    "source_file": "data/geography/research/thematic-sacred-heritage-2026-10-10.v1.json",
+    "review_doc": "docs/research/EXPLORE-THEMATIC-SACRED-HERITAGE-2026-10-10.md",
+    "feature_rows": 38,
+    "feature_categories": {
+      "BLACK_MADONNA": 6,
+      "DEVOTIONAL_WELL": 14,
+      "SACRED_LANDSCAPE": 10,
+      "SACRED_CAVE": 4,
+      "EX_VOTO": 3,
+      "VENERATED_RELIQUARY_IMAGE": 1
+    },
+    "distinct_feature_source_urls": 25,
+    "existing_published_place_context_rows": 8,
+    "existing_europe_site_research_context_rows": 8,
+    "unresolved_parent_context_rows": 22,
+    "finite_corpus_source_coverage": [
+      {
+        "source": "UNESCO nine Sacri Monti components",
+        "screened": 9,
+        "total": 9
+      },
+      {
+        "source": "Brittany Cléden-Cap-Sizun dedicated fountains",
+        "screened": 5,
+        "total": 5
+      },
+      {
+        "source": "Brittany Confort-Meilars dedicated fountains",
+        "screened": 2,
+        "total": 2
+      },
+      {
+        "source": "Pont-Croix individual devotional fountains in collective index",
+        "screened": 2,
+        "total": 2
+      }
+    ],
+    "source_list_rows_preexisting": 512,
+    "thematic_row_count_not_added_to_512": true,
+    "net_new_european_site_identity_candidates": 0,
+    "published_new_places": 0,
+    "status": "RESEARCH_ONLY_SOURCE_HANDOFF_NO_MAP_PIN"
+  },
+  "acquisition_checkpoint_batch6": {
+    "batch": "2026-10-10-FIVE-USER-WIKIPEDIA-LINKS",
+    "source_pages_user_provided": 5,
+    "original_custodian_catalogues_added": 1,
+    "holy_see_norms_added": 1,
+    "raw_research_observations_new": 93,
+    "breakdown": {
+      "holy_land_franciscan_original": 27,
+      "wikipedia_category_top_level": 19,
+      "wikipedia_holy_land_concepts_selected": 17,
+      "wikipedia_burials_selected": 7,
+      "wikipedia_apparitions_selected": 12,
+      "wikipedia_pilgrimage_selected": 11
+    },
+    "primary_custodia_proposed_existing_places": 2,
+    "existing_apparition_phenomena_links": 7,
+    "source_registry_new_total": 46,
+    "secondary_source_pages_not_original_authentication": true,
+    "previous_gross_site_source_rows": 512,
+    "previous_thematic_feature_rows": 38,
+    "net_new_unique_canonical_places": 0,
+    "existing_canonical_places": 182,
+    "existing_phenomena_claims": 32,
+    "europe_seven_wave_research_leads": 232,
+    "created_files": [
+      "data/geography/research/user-five-wikipedia-source-routing-2026-10-10.v1.json",
+      "data/geography/research/holy-land-custodia-sanctuary-index-2026-10-10.v1.json",
+      "data/geography/research/wikipedia-pilgrimage-category-names-2026-10-10.v1.json",
+      "data/geography/research/wikipedia-burial-attributions-2026-10-10.v1.json",
+      "data/geography/research/wikipedia-apparition-source-comparison-2026-10-10.v1.json",
+      "data/geography/research/wikipedia-world-pilgrimage-overlap-2026-10-10.v1.json",
+      "data/geography/research/wikipedia-holy-land-concepts-2026-10-10.v1.json"
+    ],
+    "audit_doc": "docs/research/EXPLORE-USER-FIVE-WIKIPEDIA-LISTS-2026-10-10.md",
+    "review_stage": "SECONDARY_INDEX_GATE_PLUS_ORIGINAL_CUSTODY_HOLY_LAND_MAP_INDEX_NOT_FULL_SITE_IDENTITY"
+  },
+  "acquisition_checkpoint_batch7": {
+    "batch": "2026-10-10-ORIGINAL_HOLY_LAND_SITE_AND_CLAIM_RECONCILIATION",
+    "full_visible_custodia_directory_entries": 27,
+    "resolved_individual_custodian_or_franciscan_source_links": 27,
+    "direct_named_sanctuary_pages": 26,
+    "franciscan_convent_feast_alternate_for_inaccessible_listing": 1,
+    "site_title_and_original_page_resolved": 27,
+    "selected_site_content_reviewed": 27,
+    "remaining_site_text_to_audit": 0,
+    "explicit_site_fact_classifications": 27,
+    "burial_claims_with_original_institutional_source_checks": 5,
+    "querrien_historic_episcopal_approval_evidence": 1,
+    "velankanni_ordinary_oral_tradition_and_shrine_distinction": 1,
+    "marian_missing_cases_still_awaiting_primary_authentication": [
+      "Lezajsk",
+      "Cimbres Pesqueira",
+      "Quito Buen Suceso"
+    ],
+    "nonpublication_hold": true,
+    "no_new_canonical_places": true,
+    "total_global_source_registry_entries": 51,
+    "source_rights_note": "The Custody explicitly forbids third-party text/image reproduction without consent; source URLs and terse factual metadata only.",
+    "additional_source_index_entries_are_not_automatically_unique_sites": true,
+    "fact_review_depth_note": "All 27 have one or more source-specific facts; 18 had detailed original-site pages opened, 9 additional focused open or page-index/source search; NOT exhaustive text/archaeology certification"
+  }
+}

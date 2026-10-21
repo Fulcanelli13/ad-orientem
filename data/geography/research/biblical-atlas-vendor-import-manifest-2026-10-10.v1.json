@@ -1,0 +1,274 @@
+{
+  "schema": "BIBLICAL_ATLAS_VENDOR_ACQUISITION_MANIFEST_V1",
+  "created_at": "2026-10-10",
+  "status": "RESEARCH_IMPORTED_NOT_APP_PUBLISHED",
+  "owner_issue": "https://github.com/Fulcanelli13/ad-orientem/issues/665",
+  "pr": "https://github.com/Fulcanelli13/ad-orientem/pull/923",
+  "upstreams": [
+    {
+      "id": "openbible",
+      "repo": "https://github.com/openbibleinfo/Bible-Geocoding-Data",
+      "commit": "7eb18a5ee62f27b9b93bd6689ea272d76dd23b8f",
+      "license": "CC BY 4.0 core, ODbL where OpenStreetMap data contributed; independent image licensing",
+      "files": {
+        "ancient": {
+          "path": "data/ancient.jsonl",
+          "git_blob_sha": "b127b4446c6f4ba36ec62dde290c752afeb51bf3",
+          "size_bytes": 11550193,
+          "rows": 1342
+        },
+        "modern": {
+          "path": "data/modern.jsonl",
+          "git_blob_sha": "9da83575127fc5aa1dab7aff61e01d4bc5ac9fdc",
+          "size_bytes": 3224520,
+          "rows": 1596
+        },
+        "source": {
+          "path": "data/source.jsonl",
+          "git_blob_sha": "da2267ee47a3f2efc824d8746b56281a5227f564",
+          "size_bytes": 225544,
+          "rows": 442
+        },
+        "geometry": {
+          "path": "data/geometry.jsonl",
+          "git_blob_sha": "4947ca07ce7ff9f0ca9a407c611e7c4221523b1b",
+          "size_bytes": 155985,
+          "rows": 588
+        }
+      },
+      "transform": "ancient and modern projected to compact research-only JSONL; source and geometry retained as source JSONL with normalized line endings; large raw ancient+modern originals are not copied into app; upstream commit+blob pointers preserve lossless provenance."
+    },
+    {
+      "id": "stepbible",
+      "repo": "https://github.com/STEPBible/STEPBible-Data",
+      "commit": "aca7d691414e00b0d669157d98bfd68195e64e1e",
+      "license": "CC BY 4.0 per README and original TIPNR header, attribution and modifications notice mandatory",
+      "files": {
+        "tipnr": {
+          "path": "Proper Nouns/TIPNR - Translators Individualised Proper Names with all References - STEPBible.org CC BY.txt",
+          "git_blob_sha": "a2536b12c920de8c7322f0a322b1fc1d25b7161f",
+          "size_bytes": 8178282
+        }
+      },
+      "role": "Primary upstream to re-evaluate on future updates; current normalized person/place JSON derived from PTA's older 2024 conversion, not exact current master TIPNR. No false claim of current-version TIPNR sync."
+    },
+    {
+      "id": "pta_tipnr_adapter",
+      "repo": "https://github.com/PatristicTextArchive/tipnr_data",
+      "commit": "6d359501643edfd9520d3a26fc77b6bd9d599cae",
+      "upstream_tipnr_snapshot": "b83a3cf1224af5cf72606d86d6be1789adc69541",
+      "license_basis": "Original STEPBible TIPNR CC BY 4.0; review derivative annotations/copyright separately",
+      "files": {
+        "places": {
+          "path": "tipnr_places.json",
+          "git_blob_sha": "c4050c7f646e52f8f7f920ffcba30a25d00edbfa",
+          "rows": 1016
+        },
+        "persons": {
+          "path": "tipnr_persons.json",
+          "git_blob_sha": "cafbc93fe47053cccef1903d9863c319fdef7d75",
+          "rows": 3232
+        }
+      },
+      "transform": "Structural names, Hebrew/Greek name forms, Strong IDs, biblical reference strings, cross-links and relation IDs only. Excludes vendor-generated long/short biographical prose, photograph IDs and unreviewed independent PTA coordinates."
+    }
+  ],
+  "imported_files": [
+    {
+      "dataset": "openbible_ancient",
+      "path": "data/geography/research/vendor/openbible/ancient-01.jsonl",
+      "rows": 275
+    },
+    {
+      "dataset": "openbible_ancient",
+      "path": "data/geography/research/vendor/openbible/ancient-02.jsonl",
+      "rows": 275
+    },
+    {
+      "dataset": "openbible_ancient",
+      "path": "data/geography/research/vendor/openbible/ancient-03.jsonl",
+      "rows": 275
+    },
+    {
+      "dataset": "openbible_ancient",
+      "path": "data/geography/research/vendor/openbible/ancient-04.jsonl",
+      "rows": 275
+    },
+    {
+      "dataset": "openbible_ancient",
+      "path": "data/geography/research/vendor/openbible/ancient-05.jsonl",
+      "rows": 242
+    },
+    {
+      "dataset": "openbible_modern",
+      "path": "data/geography/research/vendor/openbible/modern-01.jsonl",
+      "rows": 300
+    },
+    {
+      "dataset": "openbible_modern",
+      "path": "data/geography/research/vendor/openbible/modern-02.jsonl",
+      "rows": 300
+    },
+    {
+      "dataset": "openbible_modern",
+      "path": "data/geography/research/vendor/openbible/modern-03.jsonl",
+      "rows": 300
+    },
+    {
+      "dataset": "openbible_modern",
+      "path": "data/geography/research/vendor/openbible/modern-04.jsonl",
+      "rows": 300
+    },
+    {
+      "dataset": "openbible_modern",
+      "path": "data/geography/research/vendor/openbible/modern-05.jsonl",
+      "rows": 300
+    },
+    {
+      "dataset": "openbible_modern",
+      "path": "data/geography/research/vendor/openbible/modern-06.jsonl",
+      "rows": 96
+    },
+    {
+      "dataset": "openbible_sources",
+      "path": "data/geography/research/vendor/openbible/source.jsonl",
+      "rows": 442
+    },
+    {
+      "dataset": "openbible_geometry",
+      "path": "data/geography/research/vendor/openbible/geometry.jsonl",
+      "rows": 588
+    },
+    {
+      "dataset": "tipnr_places",
+      "path": "data/geography/research/vendor/stepbible/places-01.jsonl",
+      "rows": 260
+    },
+    {
+      "dataset": "tipnr_places",
+      "path": "data/geography/research/vendor/stepbible/places-02.jsonl",
+      "rows": 260
+    },
+    {
+      "dataset": "tipnr_places",
+      "path": "data/geography/research/vendor/stepbible/places-03.jsonl",
+      "rows": 260
+    },
+    {
+      "dataset": "tipnr_places",
+      "path": "data/geography/research/vendor/stepbible/places-04.jsonl",
+      "rows": 236
+    },
+    {
+      "dataset": "tipnr_persons",
+      "path": "data/geography/research/vendor/stepbible/persons-01.jsonl",
+      "rows": 375
+    },
+    {
+      "dataset": "tipnr_persons",
+      "path": "data/geography/research/vendor/stepbible/persons-02.jsonl",
+      "rows": 375
+    },
+    {
+      "dataset": "tipnr_persons",
+      "path": "data/geography/research/vendor/stepbible/persons-03.jsonl",
+      "rows": 375
+    },
+    {
+      "dataset": "tipnr_persons",
+      "path": "data/geography/research/vendor/stepbible/persons-04.jsonl",
+      "rows": 375
+    },
+    {
+      "dataset": "tipnr_persons",
+      "path": "data/geography/research/vendor/stepbible/persons-05.jsonl",
+      "rows": 375
+    },
+    {
+      "dataset": "tipnr_persons",
+      "path": "data/geography/research/vendor/stepbible/persons-06.jsonl",
+      "rows": 375
+    },
+    {
+      "dataset": "tipnr_persons",
+      "path": "data/geography/research/vendor/stepbible/persons-07.jsonl",
+      "rows": 375
+    },
+    {
+      "dataset": "tipnr_persons",
+      "path": "data/geography/research/vendor/stepbible/persons-08.jsonl",
+      "rows": 375
+    },
+    {
+      "dataset": "tipnr_persons",
+      "path": "data/geography/research/vendor/stepbible/persons-09.jsonl",
+      "rows": 232
+    }
+  ],
+  "file_count": 26,
+  "counts": {
+    "openbible_ancient": 1342,
+    "openbible_modern": 1596,
+    "openbible_sources": 442,
+    "openbible_geometry": 588,
+    "tipnr_places": 1016,
+    "tipnr_persons": 3232,
+    "openbible_verse_place_mentions": 8742,
+    "openbible_distinct_verse_addresses": 5616,
+    "openbible_usx_books_with_mentions": 61,
+    "step_place_forms": 1643,
+    "step_person_forms": 4127,
+    "step_duplicate_person_ids": 1,
+    "step_unique_person_ids": 3231
+  },
+  "crosswalk": {
+    "file": "data/geography/research/biblical-atlas-step-openbible-crosswalk-2026-10-10.v1.json",
+    "name_and_verse_candidate": 899,
+    "multiple_candidates": 69,
+    "no_name_candidate": 44,
+    "name_only_candidate": 4,
+    "source_places_total": 1016
+  },
+  "canon_map": {
+    "file": "data/geography/research/biblical-atlas-book-code-map-2026-10-10.v1.json",
+    "native_canon_books": 73,
+    "source_books_with_mentioned_places": 61,
+    "unrepresented_book_canon_ids": [
+      "Tobit",
+      "Judith",
+      "1Maccabees",
+      "2Maccabees",
+      "Wisdom",
+      "Sirach",
+      "Baruch",
+      "Philemon",
+      "James",
+      "1John",
+      "2John",
+      "3John"
+    ],
+    "greek_additions_still_pending": [
+      "Esther",
+      "Daniel"
+    ]
+  },
+  "integrity_checks": {
+    "sharded_ancient_unique": 1342,
+    "sharded_modern_unique": 1596,
+    "sharded_step_place_unique": 1016,
+    "step_duplicate_person_id": "Malchijah_Ezr.10.25",
+    "openbible_ancient_to_modern_orphans": 0,
+    "openbible_modern_to_ancient_orphans": 0,
+    "all_1016_crosswalk_rows_unpublished": true,
+    "validation_method": "Fresh read from GitHub research branch of normalized shards, parsed and foreign keys checked; no CI or phone acceptance claimed"
+  },
+  "rights_and_release_holds": [
+    "Maintain visible attribution to OpenBible.info, STEPBible and PatristicTextArchive in shipped assets; inspect CC BY 4.0 obligations.",
+    "Audit ODbL database-use obligations before bundling coordinate/OSM geometry fields in a commercial app.",
+    "Don't redistribute copyright-protected images or vendor-generated narrative descriptions without an independent license.",
+    "PTA adapter derives from older 2024 STEP snapshot; discrepancies from current STEP TIPNR require a recorded diff before user-facing biographies.",
+    "Do not create 1,342 new geographical pins. Biblical place identities are not current physical ecclesiastical Places.",
+    "Human-checked Catholic 73-book/deuterocanonical verse supplement required; source uses mainly 66-book USX numbering.",
+    "No generated routes, historical exact-year claims, miracle adjudications or user-facing atlas details approved."
+  ]
+}

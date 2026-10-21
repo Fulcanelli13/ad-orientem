@@ -1,0 +1,53 @@
+{
+  "schema": "EXPLORE_ITALY_ICCD_SOURCE_RECORD_EVIDENCE_V1",
+  "as_of": "2026-10-10",
+  "source_id": "IT_PAMI_SANCTUARY",
+  "source_url": "https://www.pami.info/censimento_santuari/schede/Santuario_San_Giovanni_Paolo_II_Aosta.pdf",
+  "source_format": "PDF",
+  "source_pages": 22,
+  "original_rights_notice": "The PDF states that copying/distribution of the research materials requires author and shrine permission. Store short factual identification/location and citation only, not reproductions, photographs or source text.",
+  "sites": [
+    {
+      "evidence_id": "ICCD_MODI_8396884055071",
+      "name": "Santuario diocesano di San Giovanni Paolo II",
+      "former_identity": "Cappella di San Lorenzo martire",
+      "country": "IT",
+      "region": "Valle d'Aosta",
+      "province": "AO",
+      "comune": "Introd",
+      "locality": "Les Combes",
+      "ecclesiastical_area": "Diocesi di Aosta",
+      "legal_shrine_status": "DIOCESAN_SHRINE",
+      "established": "2016-06-22",
+      "type": "SAINT_SHRINE",
+      "source_georeference": {
+        "longitude": 7.177543,
+        "latitude": 45.671873,
+        "source_page": 4,
+        "source_precision": "APPROXIMATE_FROM_MAP_NO_ONSITE_SURVEY",
+        "import_as_canonical_pin": false
+      },
+      "reported_relic": {
+        "object": "lock of hair of Saint John Paul II",
+        "permanent_custody": "Wartime/winter seasonal custody described in the parish museum, not consistently the shrine",
+        "relic_authentication": "NOT_ESTABLISHED_FROM_CUSTODY",
+        "source_page": 3,
+        "source_note": "PDF indicates moving the relic for May and October feasts; avoid permanent custody/pin assertion."
+      },
+      "calendared_local_devotions": [
+        "18 May",
+        "22 October"
+      ],
+      "source_page_evidence": {
+        "official_identity": 1,
+        "shrine_establishment": 3,
+        "source_latitude_longitude": 4
+      },
+      "map_state": "UNPUBLISHED",
+      "existing_seed_place_id": null,
+      "editorial_status": "SOURCE_SUPPORTED_IDENTITY_MAP_PUBLISH_PENDING_SIGNIFICANCE_AND_SITE_DUPLICATION",
+      "source_excerpt_reproduction": "NOT_LICENSED"
+    }
+  ],
+  "notes": "First granular record from a full individual ICCD/PAMI MODI fiche, rather than diocesan filename index. No map runtime updated."
+}
