@@ -42,7 +42,7 @@ function validatedRecord(record,editionId) {
  */
 export function mountScriptureLibrary(root,{
  language="en",openExternal=url=>window.open(url,"_blank","noopener,noreferrer"),
- storage=globalThis.localStorage,records=[],onClose=()=>{},onNeedBook=()=>{},onOpenRelatedObject=null,canOpenRelatedObject=()=>false,fetchCommentary=globalThis.fetch?.bind(globalThis),passage=null,context=null,thematicCatalogue=null,initialThematicEpisodeId=null
+ storage=globalThis.localStorage,records=[],onClose=()=>{},onNeedBook=()=>{},onOpenRelatedObject=null,canOpenRelatedObject=()=>false,fetchCommentary=globalThis.fetch?.bind(globalThis),passage=null,context=null,thematicCatalogue=null,initialThematicEpisodeId=null,thematicLinks=null
 }={}){
  if(!root||typeof root.replaceChildren!=="function")throw new TypeError("Scripture root required");
  if(!Array.isArray(records))throw new TypeError("Scripture records array required");
@@ -68,6 +68,7 @@ export function mountScriptureLibrary(root,{
  const editionLocations=new Map([[editionId,location]]);
  // Research-only collection navigation; the shared reader retains ownership.
  let thematicGroups=thematicCatalogue,thematicEpisode=null,thematicGroup=null;
+ let thematicIdentityLinks=thematicLinks;
  let thematicPage=0,thematicOpen=Boolean(initialThematicEpisodeId),thematicReturn=null;
  function findThematic(id){
   for(const group of (Array.isArray(thematicGroups)?thematicGroups:[])){
@@ -228,6 +229,43 @@ export function mountScriptureLibrary(root,{
      if(thematicEpisode.plan.book==="Esther")
       active.append(element("p",lang==="fr"?"Numérotation Challoner uniquement."
        :"Challoner coordinates only; other editions require a verified Catholic crosswalk.","aoScriptureNotice"));
+     // Evidence-gated context, never an exact source placement or invented Atlas pin.
+     const linked=thematicIdentityLinks?.entries?.find(e=>e.episodeId===thematicEpisode.id);
+     if(linked?.covenantalContext){
+      const c=linked.covenantalContext;
+      active.append(element("p",(lang==="fr"?"Contexte de l'Histoire du Salut (non inclus dans la lecture) : "
+       :"Nearest covenantal context (episode not included in the main reading): ")+
+       c.provisionalReaderChapterId+" · "+c.provisionalReaderChapterTitle+
+       " / "+c.sourceMovementId,"aoScriptureNotice"));
+      const sourceNumber=c.sourceMovementNumber;
+      if(Number.isSafeInteger(sourceNumber)&&sourceNumber>=1&&sourceNumber<=37&&
+         /^hist-omitted-\d{3}$/.test(thematicEpisode.id)){
+       const a=element("a",lang==="fr"
+        ?"Ouvrir le contexte de l'Histoire du Salut ↗"
+        :"Read this covenantal movement in Historia Salutis ↗");
+       const dest=new URL("/prototypes/historia-salutis-p3-continuous-reader-20261021.html",
+          root.ownerDocument?.defaultView?.location?.href||"http://localhost/");
+       dest.searchParams.set("hs_context",c.sourceMovementId);
+       dest.searchParams.set("episode",thematicEpisode.id);
+       a.href=dest.pathname+dest.search;
+       a.target="_blank";a.rel="noopener noreferrer";
+       a.dataset.historiaContextLink=thematicEpisode.id;
+       active.append(a);
+      }
+     }else{
+      active.append(element("p",lang==="fr"
+       ?"Aucun placement chronologique précis et défendable pour ce récit."
+       :"No defensible precise chronological placement for this episode.","aoScriptureNotice"));
+     }
+     if(linked?.atlasIdentity){
+      const a=linked.atlasIdentity;
+      const exact=a.relation!=="PASSAGE_CONTAINED_IN_COMPOSITE_TEACHING_ATLAS_RECORD";
+      active.append(element("p",(lang==="fr"?"Lien dans l'Atlas biblique : ":"Biblical Atlas evidence: ")+
+       a.atlasEventTitle+" · "+a.atlasSourceReference+
+       (exact?" · "+(lang==="fr"?"même événement ou enseignement décrit":"matching named event or teaching")
+       :" · "+(lang==="fr"?"contenu dans une notice groupée":"contained in a composite record")),
+       "aoScriptureNotice"));
+     }
      const back=element("button",lang==="fr"?"Retour à la lecture précédente":"Return to previous Bible passage");
      back.type="button";back.dataset.historiaExit="";
      back.addEventListener("click",()=>{exitThematic(true);draw();});
@@ -639,11 +677,11 @@ export function mountScriptureLibrary(root,{
  draw();
  if(initialThematicEpisodeId&&thematicGroups)selectThematic(initialThematicEpisodeId);
  return Object.freeze({
-   setThematicCatalogue(groups,id=null){
+   setThematicCatalogue(groups,id=null,links=null){
     if(!Array.isArray(groups)||groups.length!==3||
       groups.reduce((n,g)=>n+(g.episodes?.length||0),0)!==19)
       throw new Error("Invalid thematic research catalogue");
-    thematicGroups=groups;if(id)return selectThematic(id);draw();return true;
+    thematicGroups=groups;thematicIdentityLinks=links;if(id)return selectThematic(id);draw();return true;
    },
    openThematicEpisode(id){return selectThematic(id);},
    setLanguage(next){if(!L[next])throw new Error("Unsupported language");if(thematicEpisode?.plan.book==="Esther"&&next!=="en")return false;moveEdition(next==="en"?prefs.englishEdition():DEFAULT_SCRIPTURE_EDITION[next]);lang=next;prefs.setLanguage(lang);if(thematicEpisode)positionThematic();draw();return true;},
