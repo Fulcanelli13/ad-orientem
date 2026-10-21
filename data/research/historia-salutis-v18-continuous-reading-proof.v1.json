@@ -235,6 +235,20 @@
             "editorialDecisionFinal": false,
             "selectionChanged": false,
             "publicationApproved": false
+          },
+          "readthroughTrial": {
+            "status": "SOURCE_CHECKED_FOR_CONTINUOUS_READING_UNAPPROVED",
+            "refs": [
+              "Genesis 6:9–14",
+              "Genesis 6:17–22"
+            ],
+            "tier": "ESSENTIAL",
+            "rationale": "Noah's character, creation of the ark, covenant, preservation of animals and obedience all precede Genesis 7. Omit only architectural measurements in 6:15–16 for the research trial.",
+            "printedCatholicEditionCollationPending": true,
+            "fullLiteraryReadAloudPending": true,
+            "accepted": false,
+            "publicationApproved": false,
+            "originalHeldReference": "Genesis 6:9–22"
           }
         },
         {
@@ -600,6 +614,30 @@
             "editorialDecisionFinal": false,
             "selectionChanged": false,
             "publicationApproved": false
+          },
+          "readthroughTrial": {
+            "status": "SOURCE_CHECKED_FOR_CONTINUOUS_READING_UNAPPROVED",
+            "refs": [
+              "Genesis 39:19–21"
+            ],
+            "tier": "ESSENTIAL",
+            "rationale": "Genesis 39:19 names the master's reaction, correcting the pronoun/agent defect in isolated 39:20–21; a source-backed connector supplies Egyptian sale and the false accusation.",
+            "printedCatholicEditionCollationPending": true,
+            "fullLiteraryReadAloudPending": true,
+            "accepted": false,
+            "publicationApproved": false,
+            "originalHeldReference": "Genesis 39:20–21",
+            "editorialPreface": {
+              "id": "HS-P3-EC-02",
+              "text": "In Egypt, Joseph was bought by Potiphar, an officer of Pharaoh. Joseph resisted the advances of his master's wife, but she falsely accused him before her husband.",
+              "sourceReferences": [
+                "Genesis 39:1",
+                "Genesis 39:7–19"
+              ],
+              "status": "SOURCE_BACKED_EDITORIAL_RESEARCH_ONLY",
+              "accepted": false,
+              "publicationApproved": false
+            }
           }
         },
         {
@@ -801,7 +839,18 @@
           "edition": "cpdv-2009",
           "policy": "PROPOSED_CURATED_TRIM",
           "hasPartialVerseHold": false,
-          "publicationApproved": false
+          "publicationApproved": false,
+          "afterSelectedReadthroughTrial": {
+            "status": "CRITICAL_FIRSTBORN_CAUSAL_BRIDGE_RESEARCH_ONLY",
+            "refs": [
+              "Exodus 12:29–30"
+            ],
+            "reason": "The source records the death of the Egyptian firstborn, causally linking the Passover to Pharaoh's command to leave in 12:31. The former continuous reading omitted this event.",
+            "sourceReference": "Exodus 12:29–30",
+            "accepted": false,
+            "publicationApproved": false,
+            "originalUnitRefsUnmodified": true
+          }
         }
       ],
       "requiredMeaningOnly": "Only Scripture beats are presented as biblical text; context and source candidates are visibly editorial.",
@@ -2338,6 +2387,19 @@
             "editorialDecisionFinal": false,
             "selectionChanged": false,
             "publicationApproved": false
+          },
+          "readthroughTrial": {
+            "status": "SOURCE_CHECKED_FOR_CONTINUOUS_READING_UNAPPROVED",
+            "refs": [
+              "John 11:45–53"
+            ],
+            "tier": "HIGH",
+            "rationale": "The reaction to Lazarus includes Caiaphas's words and John's theological explanation of Christ's death; the decision to seek Jesus' death is a causal antecedent to the Passion.",
+            "printedCatholicEditionCollationPending": true,
+            "fullLiteraryReadAloudPending": true,
+            "accepted": false,
+            "publicationApproved": false,
+            "originalHeldReference": "John 11:45–53"
           }
         }
       ],
@@ -2667,6 +2729,19 @@
             "editorialDecisionFinal": false,
             "selectionChanged": false,
             "publicationApproved": false
+          },
+          "readthroughTrial": {
+            "status": "SOURCE_CHECKED_FOR_CONTINUOUS_READING_UNAPPROVED",
+            "refs": [
+              "John 19:38–42"
+            ],
+            "tier": "ESSENTIAL",
+            "rationale": "Joseph and Nicodemus' burial of Christ gives the empty tomb its antecedent; the separate blood-and-water passage 19:31–37 must receive its own liturgical/theological review, not be silently eliminated.",
+            "printedCatholicEditionCollationPending": true,
+            "fullLiteraryReadAloudPending": true,
+            "accepted": false,
+            "publicationApproved": false,
+            "originalHeldReference": "John 19:38–42"
           }
         }
       ],
@@ -2830,6 +2905,19 @@
             "editorialDecisionFinal": false,
             "selectionChanged": false,
             "publicationApproved": false
+          },
+          "readthroughTrial": {
+            "status": "SOURCE_CHECKED_FOR_CONTINUOUS_READING_UNAPPROVED",
+            "refs": [
+              "Acts 1:3–5"
+            ],
+            "tier": "ESSENTIAL",
+            "rationale": "The forty days, Kingdom teaching and promise of the Holy Ghost make the Ascension opening and Pentecost intelligible.",
+            "printedCatholicEditionCollationPending": true,
+            "fullLiteraryReadAloudPending": true,
+            "accepted": false,
+            "publicationApproved": false,
+            "originalHeldReference": "Acts 1:3–5"
           }
         },
         {
@@ -2988,6 +3076,19 @@
             "editorialDecisionFinal": false,
             "selectionChanged": false,
             "publicationApproved": false
+          },
+          "readthroughTrial": {
+            "status": "SOURCE_CHECKED_FOR_CONTINUOUS_READING_UNAPPROVED",
+            "refs": [
+              "Acts 7:51–53"
+            ],
+            "tier": "ESSENTIAL",
+            "rationale": "Stephen's accusation directly occasions Acts 7:54; retain local witness-specific martydom endings Acts 7:54–59 (English) and 7:54–60 (Crampon).",
+            "printedCatholicEditionCollationPending": true,
+            "fullLiteraryReadAloudPending": true,
+            "accepted": false,
+            "publicationApproved": false,
+            "originalHeldReference": "Acts 7:51–53"
           }
         },
         {
@@ -3430,6 +3531,19 @@
             "editorialDecisionFinal": false,
             "selectionChanged": false,
             "publicationApproved": false
+          },
+          "readthroughTrial": {
+            "status": "SOURCE_CHECKED_FOR_CONTINUOUS_READING_UNAPPROVED",
+            "refs": [
+              "Acts 28:16"
+            ],
+            "tier": "ESSENTIAL",
+            "rationale": "Paul's actual arrival in Rome is documented, not inferred from earlier missionary intention.",
+            "printedCatholicEditionCollationPending": true,
+            "fullLiteraryReadAloudPending": true,
+            "accepted": false,
+            "publicationApproved": false,
+            "originalHeldReference": "Acts 28:16"
           }
         },
         {
@@ -3486,6 +3600,19 @@
             "editorialDecisionFinal": false,
             "selectionChanged": false,
             "publicationApproved": false
+          },
+          "readthroughTrial": {
+            "status": "SOURCE_CHECKED_FOR_CONTINUOUS_READING_UNAPPROVED",
+            "refs": [
+              "Acts 28:17–22"
+            ],
+            "tier": "ESSENTIAL",
+            "rationale": "The meeting with Rome's Jewish leaders, discussion of the hope of Israel and request for a further hearing supply the antecedent of Acts 28:23.",
+            "printedCatholicEditionCollationPending": true,
+            "fullLiteraryReadAloudPending": true,
+            "accepted": false,
+            "publicationApproved": false,
+            "originalHeldReference": "Acts 28:17–22"
           }
         },
         {
@@ -3791,6 +3918,19 @@
             "editorialDecisionFinal": false,
             "selectionChanged": false,
             "publicationApproved": false
+          },
+          "readthroughTrial": {
+            "status": "SOURCE_CHECKED_FOR_CONTINUOUS_READING_UNAPPROVED",
+            "refs": [
+              "Revelation 21:9–10"
+            ],
+            "tier": "ESSENTIAL",
+            "rationale": "The interpreting angel introduces the city and is the antecedent of 'he showed me' in Revelation 22:1. Visions are not mapped as chronological earthly events.",
+            "printedCatholicEditionCollationPending": true,
+            "fullLiteraryReadAloudPending": true,
+            "accepted": false,
+            "publicationApproved": false,
+            "originalHeldReference": "Revelation 21:9–10"
           }
         },
         {
@@ -3905,7 +4045,12 @@
     "literarySourceSeamsReviewed": 37,
     "connectorDraftsProposed": 29,
     "newlyFlaggedEditorialSaulSeam": 1,
-    "bridgeNecessityTriageCompleted": 16
+    "bridgeNecessityTriageCompleted": 16,
+    "essentialBridgeReadingTrials": 9,
+    "heldCandidatesStillNotApproved": 16,
+    "additionalSourceTrialFirstborn": "Exodus 12:29–30",
+    "josephNarrativeConnector": "HS-P3-EC-02",
+    "readingTrialsAccepted": 0
   },
   "historicallyProposedBridgeStatus": {
     "sourceCandidatesInDeskRegistry": 11,
