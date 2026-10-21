@@ -11,12 +11,12 @@ assert(mark);
 const d=JSON.parse(mark[1]);
 assert.equal(d.counts.chapters,82);
 assert.equal(d.counts.allNodes,327);
-assert.equal(d.counts.editorialReview.expandedOpenings,18);
-assert.equal(d.counts.editorialReview.unexpandedOpenings,64);
+assert.equal(d.counts.editorialReview.expandedOpenings,34);
+assert.equal(d.counts.editorialReview.unexpandedOpenings,48);
 assert.equal(d.counts.sourceClassCounts.BIOGRAPHICAL_NARRATOR,9);
 assert.equal(d.approvals.publishing,false);
 const fullDrafts=d.chapters.filter(c=>c.nodes[0].editorialDepth==='ENRICHED_OPENING_UNAPPROVED');
-assert.equal(fullDrafts.length,18);
+assert.equal(fullDrafts.length,34);
 for(const c of fullDrafts){
  assert(c.nodes[0].originalDraft?.en&&c.nodes[0].originalDraft?.fr);
  assert(c.nodes[0].a.en.split(/\s+/).length>=90);
