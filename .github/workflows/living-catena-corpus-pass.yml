@@ -42,4 +42,5 @@ jobs:
         if: github.event_name == 'pull_request'
         run: |
           git diff --exit-code -- data/scripture/catena/research/full-corpus-pass-20261021/
+          test -z "$(git status --porcelain -- data/scripture/catena/research/full-corpus-pass-20261021/)"
           test -f data/scripture/catena/research/full-corpus-pass-20261021/summary.v1.json
