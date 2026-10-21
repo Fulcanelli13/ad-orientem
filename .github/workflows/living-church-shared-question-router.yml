@@ -26,6 +26,7 @@ on:
       - tests/living-church-hybrid-question-router.mjs
       - tests/living-church-shared-question-router.mjs
       - tests/living-church-historical-document-navigation.mjs
+      - tests/living-church-pius-x-three-document-route-parity.mjs
       - tests/living-church-pius-x-fresh-bilingual-diagnostic.mjs
       - tests/living-church-personal-verdict-safety.mjs
       - tests/living-church-liturgical-source-scope.mjs
@@ -59,6 +60,7 @@ on:
       - tests/living-church-hybrid-question-router.mjs
       - tests/living-church-shared-question-router.mjs
       - tests/living-church-historical-document-navigation.mjs
+      - tests/living-church-pius-x-three-document-route-parity.mjs
       - tests/living-church-pius-x-fresh-bilingual-diagnostic.mjs
       - tests/living-church-personal-verdict-safety.mjs
       - tests/living-church-liturgical-source-scope.mjs
@@ -91,6 +93,7 @@ jobs:
           node --check src/learn/living-church-evaluation-gate.js
           node tests/living-church-shared-question-router.mjs
           node tests/living-church-historical-document-navigation.mjs
+          node tests/living-church-pius-x-three-document-route-parity.mjs
           node tests/living-church-personal-verdict-safety.mjs
           node tests/living-church-liturgical-source-scope.mjs
           node tests/living-church-pius-x-doctrinal-concept-regression.mjs
