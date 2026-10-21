@@ -81,7 +81,11 @@ export function assembleHistoriaReading(proof, edition, getWitness) {
       if (beat.kind === "EDITORIAL_CONTEXT_NOT_BIBLE") {
         segments.push({
           kind: "EDITORIAL_CONNECTOR_PROPOSAL", anchor: movement.id + ":" + beat.id,
-          ownerUnitId: beat.id, text: beat.explanation, sourceReference: beat.sourceReference,
+          ownerUnitId: beat.id,
+          text: beat.editorialReadingCandidate?.text || beat.explanation,
+          sourceReference: beat.sourceReference,
+          sourceReferences: beat.editorialReadingCandidate?.sourceReferences || [beat.sourceReference],
+          originalDeskText: beat.explanation, editorialCopyStatus: beat.editorialReadingCandidate?.status || "ORIGINAL_DESK_TEXT_NOT_APPROVED",
           editionIndependent: true, accepted: false, publicationApproved: false
         });
         continue;
@@ -95,6 +99,17 @@ export function assembleHistoriaReading(proof, edition, getWitness) {
         continue;
       }
       if (beat.kind !== "SCRIPTURE") throw new Error("Unknown Historia beat kind " + beat.kind);
+      if (beat.beforeScriptureConnectorCandidate) {
+        const c=beat.beforeScriptureConnectorCandidate;
+        if (c.publicationApproved!==false || c.accepted!==false) throw new Error("Prematurely accepted Historia connector "+c.id);
+        segments.push({
+          kind:"EDITORIAL_CONNECTOR_PROPOSAL",anchor:movement.id+":"+c.id,
+          ownerUnitId:beat.id,candidateId:c.id,text:c.text,
+          sourceReference:c.sourceReferences.join("; "),sourceReferences:c.sourceReferences,
+          additionalCausalSeam:true,originalDeskText:null,editorialCopyStatus:c.status,
+          editionIndependent:true,accepted:false,publicationApproved:false
+        });
+      }
       const references = beat.semanticEditionAlignment?.selectedReferencesByEdition?.[edition] || beat.refs;
       for (const [position, ref] of references.entries()) {
         const parsed = parseHistoriaSpan(ref);
@@ -128,6 +143,8 @@ export function assembleHistoriaReading(proof, edition, getWitness) {
       scriptureBeats: new Set(segments.filter(s => s.kind === "SCRIPTURE_EXACT_WITNESS").map(s => s.ownerUnitId)).size,
       scriptureSpans: segments.filter(s => s.kind === "SCRIPTURE_EXACT_WITNESS").length,
       editorialConnectorProposals: segments.filter(s => s.kind === "EDITORIAL_CONNECTOR_PROPOSAL").length,
+      originalContextUnits: segments.filter(s => s.kind === "EDITORIAL_CONNECTOR_PROPOSAL" && !s.additionalCausalSeam).length,
+      additionalCausalSeams: segments.filter(s => s.kind === "EDITORIAL_CONNECTOR_PROPOSAL" && s.additionalCausalSeam).length,
       heldSourceCandidates: segments.filter(s => s.kind === "HELD_SOURCE_CANDIDATE").length,
       published: 0
     }
@@ -157,7 +174,7 @@ export function historiaAssemblyMarkdown(assembly) {
       if (s.kind === "SCRIPTURE_EXACT_WITNESS") {
         lines.push("**⟦" + s.reference + "⟧**", "", asText(s.text), "");
       } else if (s.kind === "EDITORIAL_CONNECTOR_PROPOSAL") {
-        lines.push("*⟦Editorial connector · source: " + s.sourceReference + " · NOT APPROVED⟧*", "",
+        lines.push("*⟦Editorial connector · source: " + (s.sourceReferences?.join("; ") || s.sourceReference) + " · NOT APPROVED⟧*", "",
           "*" + asText(s.text) + "*", "");
       } else {
         lines.push("*⟦HELD source bridge: " + s.reference + " · not selected or approved⟧*", "");
