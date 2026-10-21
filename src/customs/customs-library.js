@@ -20,7 +20,7 @@ export const CUSTOMS_YEAR_GROUPS=Object.freeze([
 const A=value=>Array.isArray(value)?value:[];
 const S=value=>String(value??"").trim();
 const unique=rows=>[...new Set(rows)];
-export function createCustomsLibrary({customs,temporal,archive,sources,p0,p1,frCopy}={}){
+export function createCustomsLibrary({customs,temporal,archive,sources,p0,p1,frCopy,historical}={}){
   if(customs?.schema==null||temporal?.schema!=="AO_CUSTOMS_TEMPORAL_PROJECTION_V1"||
      archive?.schema!=="AO_CUSTOMS_WEISER_REFERENCE_INDEX_V1")throw Error("Customs corpus incomplete");
   const customRows=A(customs.customs),timeRows=A(temporal.records),researchRows=A(archive.records);
@@ -33,6 +33,19 @@ export function createCustomsLibrary({customs,temporal,archive,sources,p0,p1,frC
   const srcById=new Map(A(sources?.sources).map(x=>[x.id,x]));
   const guidanceById=new Map([...A(p0?.entries),...A(p1?.entries)].map(x=>[x.custom_id,x]));
   const frenchById=new Map(A(frCopy?.entries).map(x=>[x.custom_id,x]));
+  const historyRows=A(historical?.entries);
+  const historyById=new Map(historyRows.map(x=>[x.custom_id,x]));
+  if(historical?.schema!=="AO_CUSTOMS_HISTORICAL_FOLIOS_V1"||
+     historyRows.length!==27||historyById.size!==27)
+    throw Error("27 source-bounded historical folios are required");
+  for(const h of historyRows){
+    if(!ids.includes(h.custom_id)||!S(h.history_en)||!S(h.history_fr))
+      throw Error("Historical folio without canonical identity or both languages");
+    const attestedIds=new Set(A(customs.attestations).filter(a=>a.custom_id===h.custom_id).flatMap(a=>A(a.source_ids)));
+    if(!A(h.source_ids).length||A(h.source_ids).some(id=>!attestedIds.has(id)||!srcById.has(id)))
+      throw Error("Historical folio source not attached to canonical record: "+h.custom_id);
+  }
+
   const attestationsById=new Map();
   for(const att of A(customs.attestations)){
     const id=S(att.custom_id);
@@ -41,12 +54,12 @@ export function createCustomsLibrary({customs,temporal,archive,sources,p0,p1,frC
     attestationsById.get(id).push(att);
   }
   const items=customRows.map(c=>{
-    const id=c.custom_id,guidance=guidanceById.get(id)||null,french=frenchById.get(id)||null;
+    const id=c.custom_id,guidance=guidanceById.get(id)||null,french=frenchById.get(id)||null,hist=historyById.get(id)||null;
     const attestations=attestationsById.get(id)||[];
     const citations=unique([...attestations.flatMap(a=>A(a.source_ids)),...A(guidance?.source_ids)])
       .map(sourceId=>srcById.get(sourceId)).filter(Boolean);
     return Object.freeze({
-      ...c, id, guidance,temporal:timeById.get(id),
+      ...c, id, guidance,temporal:timeById.get(id),history:hist,
       attestations:Object.freeze(attestations),sources:Object.freeze(citations),
       title_en:S(guidance?.title_en)||S(c.name),
       title_fr:S(guidance?.title_fr)||S(french?.title_fr)||null,
