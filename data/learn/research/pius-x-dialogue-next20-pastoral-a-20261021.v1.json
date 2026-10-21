@@ -1,0 +1,645 @@
+{
+  "schema": "AO_SPX_DIALOGUE_NEXT20_PASTORAL_A_V1",
+  "date": "2026-10-21",
+  "status": "UNAPPROVED_AUTHORED_DIALOGUE",
+  "records": [
+    {
+      "id": "SPX-009",
+      "originalOwner": {
+        "path": "data/learn/research/pius-x-batch50-part-c-20261019.v1.json",
+        "id": "SPX-009",
+        "availableFields": [
+          "question",
+          "turns[0]",
+          "turns[1]"
+        ]
+      },
+      "originalQuestion": {
+        "en": "What does friendship with God mean?",
+        "fr": "Que signifie être véritablement ami de Dieu ?"
+      },
+      "source": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+        "locus": "Salzano Q369–371",
+        "genre": "PREPAPAL_MANUSCRIPT_EDITORIAL_TRANSCRIPTION",
+        "support": "DIRECT_PASSAGE_SUPPORT_WAVE1"
+      },
+      "newChoices": [
+        {
+          "id": "SPX.AUTHOR.20261021.SPX-009.F2",
+          "q": {
+            "en": "If I obey the commandments outwardly, what more is asked?",
+            "fr": "Si j'observe extérieurement les commandements, que faut-il de plus ?"
+          },
+          "a": {
+            "en": "The Salzano instruction distinguishes outward compliance from genuine friendship with God. It directs attention to the love and grace that animate obedience, rather than treating a respectable appearance as the whole Christian life.",
+            "fr": "L'instruction de Salzano distingue l'observance extérieure de la véritable amitié avec Dieu. Elle rapporte l'obéissance à la charité et à la grâce, au lieu de considérer une apparence respectable comme toute la vie chrétienne."
+          },
+          "sourceId": "SPX-009",
+          "approved": false
+        },
+        {
+          "id": "SPX.AUTHOR.20261021.SPX-009.F3",
+          "q": {
+            "en": "Can good conduct be separated from love of God?",
+            "fr": "Peut-on séparer une bonne conduite de l'amour de Dieu ?"
+          },
+          "a": {
+            "en": "The catechetical argument joins Christian conduct to a living relationship with God. The external deed matters, but its spiritual character cannot be reduced to what observers can see.",
+            "fr": "L'argument catéchétique unit la conduite chrétienne à une relation vivante avec Dieu. L'acte extérieur compte, mais sa valeur spirituelle ne se réduit pas à ce que les autres peuvent constater."
+          },
+          "sourceId": "SPX-009",
+          "approved": false
+        }
+      ],
+      "speaker": "SOURCE_BOUNDED_EDUCATIONAL_RECONSTRUCTION_NOT_QUOTE",
+      "choicePolicy": "TWO_NEW_OPTIONAL_FOLLOWUPS_PLUS_EXISTING_F1",
+      "chanoine": {
+        "optInOnly": true,
+        "exactSourceRequired": true
+      },
+      "release": {
+        "source": false,
+        "theology": false,
+        "translation": false,
+        "voice": false,
+        "runtime": false
+      }
+    },
+    {
+      "id": "SPX-010",
+      "originalOwner": {
+        "path": "data/learn/research/pius-x-batch50-part-c-20261019.v1.json",
+        "id": "SPX-010",
+        "availableFields": [
+          "question",
+          "turns[0]",
+          "turns[1]"
+        ]
+      },
+      "originalQuestion": {
+        "en": "Why did Peter repent while Judas despaired?",
+        "fr": "Pourquoi saint Pierre s'est-il repenti tandis que Judas a désespéré ?"
+      },
+      "source": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+        "locus": "Salzano Q198–200",
+        "genre": "PREPAPAL_MANUSCRIPT_EDITORIAL_TRANSCRIPTION",
+        "support": "DIRECT_PASSAGE_SUPPORT_WAVE1"
+      },
+      "newChoices": [
+        {
+          "id": "SPX.AUTHOR.20261021.SPX-010.F2",
+          "q": {
+            "en": "What distinguishes Peter's sorrow from Judas's despair?",
+            "fr": "Qu'est-ce qui distingue la douleur de Pierre du désespoir de Judas ?"
+          },
+          "a": {
+            "en": "The Salzano account sets Peter's repentant tears against the despair of Judas. The contrast is not that one betrayal was harmless, but that repentance turns toward mercy instead of treating forgiveness as impossible.",
+            "fr": "Le récit de Salzano oppose les larmes repentantes de Pierre au désespoir de Judas. La différence n'est pas qu'une trahison serait sans gravité, mais que le repentir se tourne vers la miséricorde au lieu de tenir le pardon pour impossible."
+          },
+          "sourceId": "SPX-010",
+          "approved": false
+        },
+        {
+          "id": "SPX.AUTHOR.20261021.SPX-010.F3",
+          "q": {
+            "en": "What might a Christian learn after a grave failure?",
+            "fr": "Que peut apprendre un chrétien après une faute grave ?"
+          },
+          "a": {
+            "en": "The example warns against both excusing wrongdoing and surrendering to despair. It invites a return to God in repentance; it cannot reveal the final condition of a particular person's soul.",
+            "fr": "Cet exemple met en garde aussi bien contre l'excuse de la faute que contre l'abandon au désespoir. Il invite au retour vers Dieu dans le repentir, sans révéler l'état final de l'âme d'une personne particulière."
+          },
+          "sourceId": "SPX-010",
+          "approved": false
+        }
+      ],
+      "speaker": "SOURCE_BOUNDED_EDUCATIONAL_RECONSTRUCTION_NOT_QUOTE",
+      "choicePolicy": "TWO_NEW_OPTIONAL_FOLLOWUPS_PLUS_EXISTING_F1",
+      "chanoine": {
+        "optInOnly": true,
+        "exactSourceRequired": true
+      },
+      "release": {
+        "source": false,
+        "theology": false,
+        "translation": false,
+        "voice": false,
+        "runtime": false
+      }
+    },
+    {
+      "id": "SPX-023",
+      "originalOwner": {
+        "path": "data/learn/research/pius-x-batch50-part-c-20261019.v1.json",
+        "id": "SPX-023",
+        "availableFields": [
+          "question",
+          "turns[0]",
+          "turns[1]"
+        ]
+      },
+      "originalQuestion": {
+        "en": "What is spiritual Communion?",
+        "fr": "Qu'est-ce que la communion spirituelle ?"
+      },
+      "source": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+        "locus": "Salzano Q476–481",
+        "genre": "PREPAPAL_MANUSCRIPT_EDITORIAL_TRANSCRIPTION",
+        "support": "DIRECT_PASSAGE_SUPPORT_WAVE1"
+      },
+      "newChoices": [
+        {
+          "id": "SPX.AUTHOR.20261021.SPX-023.F2",
+          "q": {
+            "en": "What is the difference between desiring Communion and receiving it?",
+            "fr": "Quelle différence entre désirer communier et recevoir la communion ?"
+          },
+          "a": {
+            "en": "The Salzano Catechism calls spiritual Communion an act of desire united to Christ, whereas sacramental Communion involves receiving the Eucharist itself. Both relate to Christ, but they are not the same act.",
+            "fr": "Le Catéchisme de Salzano présente la communion spirituelle comme un acte de désir tourné vers le Christ, tandis que la communion sacramentelle consiste à recevoir réellement l'Eucharistie. Les deux sont rapportées au Christ, mais ne constituent pas le même acte."
+          },
+          "sourceId": "SPX-023",
+          "approved": false
+        },
+        {
+          "id": "SPX.AUTHOR.20261021.SPX-023.F3",
+          "q": {
+            "en": "Is spiritual Communion meaningless when I cannot approach the altar?",
+            "fr": "La communion spirituelle est-elle sans valeur quand je ne peux approcher de l'autel ?"
+          },
+          "a": {
+            "en": "No. The catechetical distinction gives desire and prayer a real place while refusing to equate them with sacramental reception. The absence of reception does not make the desire to be united to Christ pointless.",
+            "fr": "Non. La distinction catéchétique reconnaît la place du désir et de la prière sans les confondre avec la réception sacramentelle. Ne pas recevoir le sacrement ne rend pas vaine l'aspiration à l'union avec le Christ."
+          },
+          "sourceId": "SPX-023",
+          "approved": false
+        }
+      ],
+      "speaker": "SOURCE_BOUNDED_EDUCATIONAL_RECONSTRUCTION_NOT_QUOTE",
+      "choicePolicy": "TWO_NEW_OPTIONAL_FOLLOWUPS_PLUS_EXISTING_F1",
+      "chanoine": {
+        "optInOnly": true,
+        "exactSourceRequired": true
+      },
+      "release": {
+        "source": false,
+        "theology": false,
+        "translation": false,
+        "voice": false,
+        "runtime": false
+      }
+    },
+    {
+      "id": "SPX-024",
+      "originalOwner": {
+        "path": "data/learn/research/pius-x-batch50-part-c-20261019.v1.json",
+        "id": "SPX-024",
+        "availableFields": [
+          "question",
+          "turns[0]",
+          "turns[1]"
+        ]
+      },
+      "originalQuestion": {
+        "en": "Why receive Viaticum near death?",
+        "fr": "Pourquoi recevoir le viatique à l'approche de la mort ?"
+      },
+      "source": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+        "locus": "Salzano Q493–497",
+        "genre": "PREPAPAL_MANUSCRIPT_EDITORIAL_TRANSCRIPTION",
+        "support": "DIRECT_PASSAGE_SUPPORT_WAVE1"
+      },
+      "newChoices": [
+        {
+          "id": "SPX.AUTHOR.20261021.SPX-024.F2",
+          "q": {
+            "en": "Why call the Eucharist a provision for the final passage?",
+            "fr": "Pourquoi appeler l'Eucharistie une provision pour le dernier passage ?"
+          },
+          "a": {
+            "en": "The Salzano account explains the name Viaticum in relation to the Christian's journey from earthly life toward eternity. The Eucharist is received as spiritual sustenance at a particularly serious passage.",
+            "fr": "Le récit de Salzano explique le nom de viatique par le voyage du chrétien de la vie terrestre vers l'éternité. L'Eucharistie est reçue comme nourriture spirituelle au moment de ce passage particulièrement grave."
+          },
+          "sourceId": "SPX-024",
+          "approved": false
+        },
+        {
+          "id": "SPX.AUTHOR.20261021.SPX-024.F3",
+          "q": {
+            "en": "Does Viaticum replace the other care owed to a dying person?",
+            "fr": "Le viatique remplace-t-il les autres soins dus à un mourant ?"
+          },
+          "a": {
+            "en": "No such conclusion follows from the catechetical meaning of Viaticum. Sacramental assistance belongs alongside the care, presence and practical help owed to the seriously ill.",
+            "fr": "Rien de tel ne découle du sens catéchétique du viatique. Le secours sacramentel accompagne les soins, la présence et l'aide pratique dus à la personne gravement malade."
+          },
+          "sourceId": "SPX-024",
+          "approved": false
+        }
+      ],
+      "speaker": "SOURCE_BOUNDED_EDUCATIONAL_RECONSTRUCTION_NOT_QUOTE",
+      "choicePolicy": "TWO_NEW_OPTIONAL_FOLLOWUPS_PLUS_EXISTING_F1",
+      "chanoine": {
+        "optInOnly": true,
+        "exactSourceRequired": true
+      },
+      "release": {
+        "source": false,
+        "theology": false,
+        "translation": false,
+        "voice": false,
+        "runtime": false
+      }
+    },
+    {
+      "id": "SPX-027",
+      "originalOwner": {
+        "path": "data/learn/research/pius-x-batch50-part-c-20261019.v1.json",
+        "id": "SPX-027",
+        "availableFields": [
+          "question",
+          "turns[0]",
+          "turns[1]"
+        ]
+      },
+      "originalQuestion": {
+        "en": "Can prayers assist deceased loved ones?",
+        "fr": "La prière peut-elle aider nos défunts ?"
+      },
+      "source": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+        "locus": "Salzano Q272–279",
+        "genre": "PREPAPAL_MANUSCRIPT_EDITORIAL_TRANSCRIPTION",
+        "support": "DIRECT_PASSAGE_SUPPORT_WAVE1"
+      },
+      "newChoices": [
+        {
+          "id": "SPX.AUTHOR.20261021.SPX-027.F2",
+          "q": {
+            "en": "Why pray for the departed if they are no longer among us?",
+            "fr": "Pourquoi prier pour les défunts puisqu'ils ne sont plus parmi nous ?"
+          },
+          "a": {
+            "en": "The Salzano teaching joins Christians on earth with the faithful departed in the communion of saints. Prayer for the dead expresses that charity is not extinguished by death, while their state remains entrusted to God.",
+            "fr": "L'enseignement de Salzano unit les chrétiens de la terre aux fidèles défunts dans la communion des saints. La prière exprime une charité que la mort n'éteint pas, tandis que leur état demeure confié à Dieu."
+          },
+          "sourceId": "SPX-027",
+          "approved": false
+        },
+        {
+          "id": "SPX.AUTHOR.20261021.SPX-027.F3",
+          "q": {
+            "en": "Can I know that a particular prayer has released one soul from Purgatory?",
+            "fr": "Puis-je savoir qu'une prière précise a délivré une âme du purgatoire ?"
+          },
+          "a": {
+            "en": "The catechetical doctrine commends prayer and suffrage; it does not grant the reader knowledge of God's hidden judgement in an individual case. The prayer remains an act of hope and charity.",
+            "fr": "La doctrine catéchétique recommande la prière et les suffrages ; elle ne donne pas au lecteur connaissance du jugement caché de Dieu dans un cas particulier. La prière demeure un acte d'espérance et de charité."
+          },
+          "sourceId": "SPX-027",
+          "approved": false
+        }
+      ],
+      "speaker": "SOURCE_BOUNDED_EDUCATIONAL_RECONSTRUCTION_NOT_QUOTE",
+      "choicePolicy": "TWO_NEW_OPTIONAL_FOLLOWUPS_PLUS_EXISTING_F1",
+      "chanoine": {
+        "optInOnly": true,
+        "exactSourceRequired": true
+      },
+      "release": {
+        "source": false,
+        "theology": false,
+        "translation": false,
+        "voice": false,
+        "runtime": false
+      }
+    },
+    {
+      "id": "SPX-029",
+      "originalOwner": {
+        "path": "data/learn/research/pius-x-batch50-part-c-20261019.v1.json",
+        "id": "SPX-029",
+        "availableFields": [
+          "question",
+          "turns[0]",
+          "turns[1]"
+        ]
+      },
+      "originalQuestion": {
+        "en": "Is charity more than giving money?",
+        "fr": "La charité chrétienne est-elle plus que l'aumône ?"
+      },
+      "source": {
+        "url": "https://www.vatican.va/content/pius-x/it/encyclicals/documents/hf_p-x_enc_11061905_il-fermo-proposito.html",
+        "locus": "Il fermo proposito §3",
+        "genre": "AUTHORED_PAPAL_TEXT",
+        "support": "DIRECT_PASSAGE_SUPPORT_WAVE1"
+      },
+      "newChoices": [
+        {
+          "id": "SPX.AUTHOR.20261021.SPX-029.F2",
+          "q": {
+            "en": "What kinds of help belong to Christian charity?",
+            "fr": "Quelles formes d'aide appartiennent à la charité chrétienne ?"
+          },
+          "a": {
+            "en": "Il fermo proposito presents a Catholic apostolate embracing works of mercy, instruction and social care. Relief of bodily need and attention to spiritual welfare are both proper concerns, not rival definitions of charity.",
+            "fr": "Il fermo proposito présente un apostolat catholique comprenant les œuvres de miséricorde, l'instruction et le soin des besoins sociaux. Secourir la misère matérielle et veiller au bien spirituel ne sont pas deux définitions opposées de la charité."
+          },
+          "sourceId": "SPX-029",
+          "approved": false
+        },
+        {
+          "id": "SPX.AUTHOR.20261021.SPX-029.F3",
+          "q": {
+            "en": "Must I belong to a large association before doing any good?",
+            "fr": "Dois-je appartenir à une grande association avant de pouvoir faire le bien ?"
+          },
+          "a": {
+            "en": "The document values organised action, but its charitable principle does not make every act of mercy depend upon membership in an association. One should not turn a historical programme into a prohibition of ordinary personal generosity.",
+            "fr": "Le document estime l'action organisée, mais le principe de charité ne fait pas dépendre chaque œuvre de miséricorde d'une association. Il ne faut pas transformer un programme historique en interdiction de la générosité personnelle."
+          },
+          "sourceId": "SPX-029",
+          "approved": false
+        }
+      ],
+      "speaker": "SOURCE_BOUNDED_EDUCATIONAL_RECONSTRUCTION_NOT_QUOTE",
+      "choicePolicy": "TWO_NEW_OPTIONAL_FOLLOWUPS_PLUS_EXISTING_F1",
+      "chanoine": {
+        "optInOnly": true,
+        "exactSourceRequired": true
+      },
+      "release": {
+        "source": false,
+        "theology": false,
+        "translation": false,
+        "voice": false,
+        "runtime": false
+      }
+    },
+    {
+      "id": "SPX-032",
+      "originalOwner": {
+        "path": "data/learn/research/pius-x-batch50-part-c-20261019.v1.json",
+        "id": "SPX-032",
+        "availableFields": [
+          "question",
+          "turns[0]",
+          "turns[1]"
+        ]
+      },
+      "originalQuestion": {
+        "en": "How should I correct someone without bitterness?",
+        "fr": "Comment corriger une personne sans amertume ?"
+      },
+      "source": {
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+        "locus": "E supremi §13",
+        "genre": "AUTHORED_PAPAL_TEXT",
+        "support": "DIRECT_PASSAGE_SUPPORT_WAVE1"
+      },
+      "newChoices": [
+        {
+          "id": "SPX.AUTHOR.20261021.SPX-032.F2",
+          "q": {
+            "en": "How can a firm correction still be charitable?",
+            "fr": "Comment une correction ferme peut-elle demeurer charitable ?"
+          },
+          "a": {
+            "en": "The counsel in E supremi is to seek the hearer's good rather than the satisfaction of defeating an opponent. Truth should be presented without surrendering it, but with patience for the person who has to receive it.",
+            "fr": "Le conseil d'E supremi vise le bien de celui qui écoute plutôt que la satisfaction de vaincre un adversaire. La vérité doit être présentée sans être abandonnée, mais avec patience envers celui qui doit l'entendre."
+          },
+          "sourceId": "SPX-032",
+          "approved": false
+        },
+        {
+          "id": "SPX.AUTHOR.20261021.SPX-032.F3",
+          "q": {
+            "en": "What if the person refuses to accept my explanation?",
+            "fr": "Que faire si la personne refuse mon explication ?"
+          },
+          "a": {
+            "en": "The passage concerns the manner and purpose of teaching; it does not give private authority to coerce assent or pronounce on hidden motives. A failed conversation need not justify bitterness or contempt.",
+            "fr": "Le passage concerne la manière et la fin de l'enseignement ; il n'accorde pas d'autorité privée pour contraindre l'assentiment ni juger les intentions cachées. Une conversation infructueuse ne justifie ni l'amertume ni le mépris."
+          },
+          "sourceId": "SPX-032",
+          "approved": false
+        }
+      ],
+      "speaker": "SOURCE_BOUNDED_EDUCATIONAL_RECONSTRUCTION_NOT_QUOTE",
+      "choicePolicy": "TWO_NEW_OPTIONAL_FOLLOWUPS_PLUS_EXISTING_F1",
+      "chanoine": {
+        "optInOnly": true,
+        "exactSourceRequired": true
+      },
+      "release": {
+        "source": false,
+        "theology": false,
+        "translation": false,
+        "voice": false,
+        "runtime": false
+      }
+    },
+    {
+      "id": "SPX-034",
+      "originalOwner": {
+        "path": "data/learn/research/pius-x-batch50-part-c-20261019.v1.json",
+        "id": "SPX-034",
+        "availableFields": [
+          "question",
+          "turns[0]",
+          "turns[1]"
+        ]
+      },
+      "originalQuestion": {
+        "en": "How should I meditate on Christ?",
+        "fr": "Comment méditer sur le Christ ?"
+      },
+      "source": {
+        "url": "https://www.vatican.va/content/pius-x/it/apost_exhortations/documents/hf_p-x_exh_19080804_haerent-animo.html",
+        "locus": "Haerent animo §21",
+        "genre": "AUTHORED_PAPAL_TEXT_PRIESTS",
+        "support": "DIRECT_PASSAGE_SUPPORT_WAVE1"
+      },
+      "newChoices": [
+        {
+          "id": "SPX.AUTHOR.20261021.SPX-034.F2",
+          "q": {
+            "en": "Why meditate on Christ rather than merely study principles?",
+            "fr": "Pourquoi méditer le Christ plutôt que seulement étudier des principes ?"
+          },
+          "a": {
+            "en": "Haerent animo urges priests to contemplate the life of the Lord as a pattern for their own ministry. The purpose is not knowledge without consequence: contemplation should inform the conduct of the one who serves Him.",
+            "fr": "Haerent animo invite les prêtres à contempler la vie du Seigneur comme modèle de leur ministère. Il ne s'agit pas d'acquérir un savoir sans conséquence : la contemplation doit éclairer la conduite de celui qui Le sert."
+          },
+          "sourceId": "SPX-034",
+          "approved": false
+        },
+        {
+          "id": "SPX.AUTHOR.20261021.SPX-034.F3",
+          "q": {
+            "en": "Does this exhortation prescribe one identical method of meditation for everyone?",
+            "fr": "Cette exhortation impose-t-elle une méthode identique de méditation à tous ?"
+          },
+          "a": {
+            "en": "No. Its immediate audience is the clergy and its subject priestly holiness. Others may learn from its principles, but it should not be presented as a detailed universal method imposed on every lay person.",
+            "fr": "Non. Elle s'adresse immédiatement au clergé et concerne la sainteté sacerdotale. D'autres peuvent en retenir les principes, mais elle ne constitue pas une méthode détaillée imposée à tous les laïcs."
+          },
+          "sourceId": "SPX-034",
+          "approved": false
+        }
+      ],
+      "speaker": "SOURCE_BOUNDED_EDUCATIONAL_RECONSTRUCTION_NOT_QUOTE",
+      "choicePolicy": "TWO_NEW_OPTIONAL_FOLLOWUPS_PLUS_EXISTING_F1",
+      "chanoine": {
+        "optInOnly": true,
+        "exactSourceRequired": true
+      },
+      "release": {
+        "source": false,
+        "theology": false,
+        "translation": false,
+        "voice": false,
+        "runtime": false
+      }
+    },
+    {
+      "id": "SPX-035",
+      "originalOwner": {
+        "path": "data/learn/research/pius-x-batch50-part-c-20261019.v1.json",
+        "id": "SPX-035",
+        "availableFields": [
+          "question",
+          "turns[0]",
+          "turns[1]"
+        ]
+      },
+      "originalQuestion": {
+        "en": "Why read Scripture and spiritual books regularly?",
+        "fr": "Pourquoi lire l'Écriture et des livres spirituels régulièrement ?"
+      },
+      "source": {
+        "url": "https://www.vatican.va/content/pius-x/it/apost_exhortations/documents/hf_p-x_exh_19080804_haerent-animo.html",
+        "locus": "Haerent animo §§22–24",
+        "genre": "AUTHORED_PAPAL_TEXT_PRIESTS",
+        "support": "DIRECT_PASSAGE_SUPPORT_WAVE1"
+      },
+      "newChoices": [
+        {
+          "id": "SPX.AUTHOR.20261021.SPX-035.F2",
+          "q": {
+            "en": "How can spiritual reading assist a priest's prayer?",
+            "fr": "Comment la lecture spirituelle peut-elle aider la prière du prêtre ?"
+          },
+          "a": {
+            "en": "In Haerent animo, reading supports recollection and gives the mind material for meditation and conduct. It is not meant to replace prayer with the mere accumulation of learned religious expressions.",
+            "fr": "Dans Haerent animo, la lecture soutient le recueillement et fournit à l'esprit une matière pour la méditation et la conduite. Elle ne vise pas à remplacer la prière par la simple accumulation d'expressions savantes."
+          },
+          "sourceId": "SPX-035",
+          "approved": false
+        },
+        {
+          "id": "SPX.AUTHOR.20261021.SPX-035.F3",
+          "q": {
+            "en": "Is every book labelled religious therefore suitable?",
+            "fr": "Tout livre qualifié de religieux convient-il donc ?"
+          },
+          "a": {
+            "en": "No. The exhortation speaks of sound spiritual reading and discernment. The character of the material matters, as does whether it truly nourishes holiness rather than curiosity alone.",
+            "fr": "Non. L'exhortation parle d'une lecture spirituelle saine et discernée. Le caractère des textes importe, ainsi que leur capacité à nourrir réellement la sainteté plutôt que la seule curiosité."
+          },
+          "sourceId": "SPX-035",
+          "approved": false
+        }
+      ],
+      "speaker": "SOURCE_BOUNDED_EDUCATIONAL_RECONSTRUCTION_NOT_QUOTE",
+      "choicePolicy": "TWO_NEW_OPTIONAL_FOLLOWUPS_PLUS_EXISTING_F1",
+      "chanoine": {
+        "optInOnly": true,
+        "exactSourceRequired": true
+      },
+      "release": {
+        "source": false,
+        "theology": false,
+        "translation": false,
+        "voice": false,
+        "runtime": false
+      }
+    },
+    {
+      "id": "SPX-036",
+      "originalOwner": {
+        "path": "data/learn/research/pius-x-batch50-part-c-20261019.v1.json",
+        "id": "SPX-036",
+        "availableFields": [
+          "question",
+          "turns[0]",
+          "turns[1]"
+        ]
+      },
+      "originalQuestion": {
+        "en": "Why examine my conscience each evening?",
+        "fr": "Pourquoi examiner sa conscience chaque soir ?"
+      },
+      "source": {
+        "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-di-don-giuseppe-sarto-arciprete-di-salzano/",
+        "locus": "Salzano Q548–549",
+        "genre": "PREPAPAL_MANUSCRIPT_EDITORIAL_TRANSCRIPTION",
+        "support": "DIRECT_PASSAGE_SUPPORT_WAVE1"
+      },
+      "newChoices": [
+        {
+          "id": "SPX.AUTHOR.20261021.SPX-036.F2",
+          "q": {
+            "en": "How is a short evening review different from preparation for Confession?",
+            "fr": "En quoi un bref examen du soir diffère-t-il de la préparation à la confession ?"
+          },
+          "a": {
+            "en": "The Salzano counsel asks for a recollection of ordinary events and conduct during the day. Examination before Confession serves the sacrament and may cover a longer period; the two practices are related but need not be treated as identical.",
+            "fr": "Le conseil de Salzano invite à reprendre les événements et la conduite de la journée. L'examen avant la confession sert le sacrement et peut embrasser une période plus longue ; les deux pratiques sont liées sans être identiques."
+          },
+          "sourceId": "SPX-036",
+          "approved": false
+        },
+        {
+          "id": "SPX.AUTHOR.20261021.SPX-036.F3",
+          "q": {
+            "en": "What should I remember when reviewing the day?",
+            "fr": "De quoi faut-il se souvenir en revoyant sa journée ?"
+          },
+          "a": {
+            "en": "The catechetical instruction gives concrete points of recollection: where one went, whom one met and what one did. Such attention helps avoid a vague judgment based solely upon the day's changing mood.",
+            "fr": "L'instruction catéchétique propose des repères concrets : les lieux où l'on s'est rendu, les personnes rencontrées et les actes accomplis. Cette attention évite un jugement vague fondé seulement sur l'humeur du jour."
+          },
+          "sourceId": "SPX-036",
+          "approved": false
+        }
+      ],
+      "speaker": "SOURCE_BOUNDED_EDUCATIONAL_RECONSTRUCTION_NOT_QUOTE",
+      "choicePolicy": "TWO_NEW_OPTIONAL_FOLLOWUPS_PLUS_EXISTING_F1",
+      "chanoine": {
+        "optInOnly": true,
+        "exactSourceRequired": true
+      },
+      "release": {
+        "source": false,
+        "theology": false,
+        "translation": false,
+        "voice": false,
+        "runtime": false
+      }
+    }
+  ],
+  "counts": {
+    "chapters": 10,
+    "reusedOpeningAndFollowupTurns": 20,
+    "newFollowupTurns": 20,
+    "totalTurnNodes": 40,
+    "newLocalizedResponses": 40
+  },
+  "note": "Research is closed: preserve earlier authoring, mine no new sources, don't claim these are historical spoken words."
+}
