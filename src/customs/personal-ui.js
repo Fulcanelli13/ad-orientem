@@ -55,7 +55,7 @@ function field(doc,parent,labelText,name,tag="input",opts=null,wide=false){
  label.append(input);parent.append(label);
  return {label,input};
 }
-export function openMyCustoms({win=globalThis,language="en"}={}){
+export function openMyCustoms({win=globalThis,language="en",onChange=null}={}){
  const doc=win?.document;if(!doc?.body)return false;
  const fr=language==="fr",t=TEXT[fr?"fr":"en"];
  let storage=null;try{storage=win.localStorage}catch{}
@@ -105,7 +105,7 @@ export function openMyCustoms({win=globalThis,language="en"}={}){
    });
    del.addEventListener("click",()=>{
      if(typeof win.confirm==="function"&&!win.confirm(t.confirm))return;
-     try{store.remove(item.id);editing=null;error=""}catch(err){error=String(err.message||err)}
+     try{store.remove(item.id);onChange?.();editing=null;error=""}catch(err){error=String(err.message||err)}
      render();
    });
    actions.append(edit,del);card.append(actions);
@@ -173,7 +173,7 @@ export function openMyCustoms({win=globalThis,language="en"}={}){
        note:note.input.value,schedule};
      try{
        if(editing)store.update(editing,entry);else store.add(entry);
-       editing=null;error="";render();
+       onChange?.();editing=null;error="";render();
      }catch(err){error=String(err?.message||t.error);notice.textContent=error;notice.hidden=false}
    });
    wrap.append(formTitle,form,node(doc,"p",t.disclaimer,"myc-info"));
