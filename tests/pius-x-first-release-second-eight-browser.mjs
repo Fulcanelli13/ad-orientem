@@ -52,7 +52,9 @@ try{
   assert.match(await page.locator('#question').innerText(),/already baptized/);
   await page.locator('#actions button').first().click();
   assert.match(await page.locator('#question').innerText(),/Who confers/);
-  await page.locator('#back').click();
+  assert.equal(await page.locator('#back').isEnabled(),true,'after moving forward Back must remain enabled');
+  await page.locator('#back').scrollIntoViewIfNeeded();
+  await page.locator('#back').click({timeout:12000});
   await page.locator('#lang').click();
   assert.match(await page.locator('#question').innerText(),/déjà baptisé/);
   await page.locator('#lang').click();
