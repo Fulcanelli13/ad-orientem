@@ -129,6 +129,14 @@ try{
      await page.screenshot({path:resolve(output,"calendar-custom-month-"+lang+"-"+width+".png"),
        fullPage:true,animations:"disabled"});
      await cal.locator('[data-cal-pick-date="2026-11-02"]').click();
+     await page.waitForFunction(()=>globalThis.AO_RUNTIME_V8?.store?.getState?.()?.resolution?.date==="2026-11-02",
+       null,{timeout:15000});
+     // The Home-embedded month remains in picker mode after date selection.
+     // Enter the existing selected-day Calendar via its real Home control.
+     await page.locator(".aoTodayV2Tabs [data-home-calendar-today]").click();
+     await page.locator('[data-home-calendar-view="day"]').first().click();
+     await page.waitForFunction(()=>document.getElementById("ao-calendar-modular-root")?.dataset.aoCalendarView==="day",
+       null,{timeout:15000});
      const dayCustom=cal.locator('.aoCalCustomsBlock [data-cal-custom-id="DEAD-001"]');
      await dayCustom.waitFor({state:"visible",timeout:10000}).catch(async err=>{
        console.log("CALENDAR_CUSTOM_DAY_DIAGNOSTIC",JSON.stringify(await page.evaluate(()=>{
