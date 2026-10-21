@@ -21,7 +21,7 @@ Opening the HTML as file:// is not supported because the source registry and Scr
 - English default follows the existing app preference: CPDV 2009. Challoner can be selected, as can French Crampon. All three remain uncollated, not final editions.
 - Esther 4–8 uses Challoner alone, because Esther's Catholic chapter and additions schemes are not safely interchangeable across sources. This restriction also applies to deep links.
 - Long readings (Tobit 4–12, Judith 8–13, Esther 4–8) are paged one source chapter at a time; each chapter is displayed in original witness order with visible verse numbers.
-- A missing transcription slot is displayed as a source-gap warning, not silently filled. Crampon Mark 4:41 is missing from the pinned source and will be marked.
+- A missing transcription slot is displayed as a source-gap warning, not silently filled. Mark 4:41 is missing from all three pinned uncollated source witnesses and must be visibly marked in all three.
 - Nearest Historia Salutis chapter is an explicit context link, never a claim that an omitted episode is actually part of the 54-chapter Scripture selection. Judith has no fixed historical chapter placement.
 - Atlas links are displayed only as existing cross-reference IDs, not assumed geographic pins or identical canonical episodes.
 - The entry page is deliberately not wired into live app navigation; publication, canonical episode-ID reconciliation, and Scripture source collation remain separate gates.
@@ -37,7 +37,7 @@ Opening the HTML as file:// is not supported because the source registry and Scr
 - Full linked registry: data/research/historia-salutis-thematic-episode-reconciliation-20261021.v2.json
 - Test: node tests/historia-thematic-collections.mjs
 
-Source coverage was independently inspected against repository witnesses: 19/19 Challoner readings (36 chapter views), 18/18 CPDV readings (31 views), and 18/18 Crampon readings (31 views); Esther is excluded from the latter two by policy. This is a data coverage check only. The Node/DOM/browser interactions have not been executed by this research operation; a runtime smoke test remains required before review acceptance.
+Source coverage was independently inspected against repository witnesses: 19/19 Challoner readings (36 chapter views), 18/18 CPDV readings (31 views), and 18/18 Crampon readings (31 views); Esther is excluded from the latter two by policy. This is a data coverage check only. The Node source-contract suite was executed successfully in GitHub Actions on 21 October 2026; a real Chromium phone acceptance run has exposed and helped correct mobile width and transcription-gap issues. Confirm the latest complete workflow result before approval.
 
 
 ## In-app Scripture integration (guarded research URL)
@@ -54,7 +54,7 @@ A research script can open a specific entry, when the canonical shell is on Home
 
 This entrypoint is intentionally unavailable without the URL flag, and keeps all production navigation labels untouched. A selected collection episode is **not** assigned a new Atlas canonical event ID: that evidence still requires individual episode-identity adjudication. Manual change of the Bible book, chapter, bookmarks or search drops the supplementary-episode selection. This is not a published replacement for Historia Salutis.
 
-Safety: Esther uses Douay–Rheims/Challoner-only source coordinates, and the research overlay prevents changing it to an unverified edition/verse map. Other editions remain visibly labelled as uncollated source witnesses. Standard in-app source gaps such as Crampon Mark 4:41 are already disclosed by the Scripture reader.
+Safety: Esther uses Douay–Rheims/Challoner-only source coordinates, and the research overlay prevents changing it to an unverified edition/verse map. Other editions remain visibly labelled as uncollated source witnesses. The in-app Scripture gap registry now explicitly discloses Mark 4:41 in Challoner, CPDV and Crampon; no missing verse text has been fabricated.
 
 Run these tests from the repository root:
 
@@ -78,7 +78,7 @@ Within the in-app Scripture collection reader (research URL opt-in), open a pilo
 
 These are research-only links; the published home, Mass and Scripture navigation remain unchanged when the opt-in flag is absent. The source identity crosswalk is data/research/historia-salutis-thematic-identity-covenant-context-20261021.v1.json, and its regression is tests/historia-thematic-reciprocal-navigation.mjs.
 
-**Validation actually performed:** independent matching of all 19 records against the repository Atlas and the 54-chapter/37-movement research owners (6 exact miracle, 3 exact teaching, 2 composite, 8 unlinked, 18 contextual movements, 1 chronology hold); syntax checks passed for the modified JS modules and original manuscript prototype; 11 static reciprocal-link contract checks passed. **Not performed:** full Node project tests and a real headless/mobile browser round-trip. The repository could not be cloned into this execution container (network DNS unavailable). These remain explicit acceptance gates.
+**Validation:** independent matching of all 19 records against repository Atlas/P3 owners (6 exact miracle, 3 exact teaching, 2 composite, 8 unlinked, 18 contextual movements, 1 chronology hold); syntax and reciprocal-link contracts passed; Node source-contract CI passed. Actual headless Chromium on GitHub Actions exposed mobile width and incomplete Mark 4:41 source records, for which regressions are now committed. Full app-wide `npm test` and the final successful browser round-trip remain separate acceptance gates.
 
 
 ### Atlas live-route gate
