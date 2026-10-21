@@ -531,6 +531,7 @@ export function mountScriptureLibrary(root,{
          const read=element("button",lang==="fr"?"Lire ce passage cité":"Read this cited passage");
          read.type="button";read.dataset.scriptureReadLinkedObject=hit.id;
          read.addEventListener("click",()=>{
+           exitThematic();
            relatedTrail.push({
              location,context,contextDepth,commentaryVisible,relatedExpanded,
              segmentSet,activeSegmentIndex,browseExpanded,scrollTop:root.scrollTop
@@ -645,7 +646,7 @@ export function mountScriptureLibrary(root,{
     thematicGroups=groups;if(id)return selectThematic(id);draw();return true;
    },
    openThematicEpisode(id){return selectThematic(id);},
-   setLanguage(next){if(!L[next])throw new Error("Unsupported language");moveEdition(next==="en"?prefs.englishEdition():DEFAULT_SCRIPTURE_EDITION[next]);lang=next;prefs.setLanguage(lang);draw();},
+   setLanguage(next){if(!L[next])throw new Error("Unsupported language");if(thematicEpisode?.plan.book==="Esther"&&next!=="en")return false;moveEdition(next==="en"?prefs.englishEdition():DEFAULT_SCRIPTURE_EDITION[next]);lang=next;prefs.setLanguage(lang);if(thematicEpisode)positionThematic();draw();return true;},
    setPassage(next){exitThematic();leaveSourceSegments();context=null;location=scripturePassage(next);draw();},
    setRecords(next){
       if(!Array.isArray(next))throw new TypeError("Scripture records array required");
