@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { legacyReaderStateSnapshot, prepareNativeReaderPreview, resolveGestureProjection, resolveCueOwnedChannels, createCardTransitionTransientGuard, palmGospelFocusedRow } from "../src/mass/reader-native-preview.js";
+import { READER_OBJECTIVE_CONTEXT_ROWS, projectReaderObjectiveContext } from "../src/mass/reader-objective-context.js";
 
 const load=(path)=>JSON.parse(readFileSync(new URL(path,import.meta.url),"utf8"));
 const data={
@@ -77,6 +78,29 @@ assert.equal(liveReady.model.structureOwner,"SOURCE_FIRST_LIVE");
 assert.equal(liveReady.presentationModel.totalCards,48);
 assert.equal(liveReady.presentationModel.structureOwner,"SOURCE_FIRST_LIVE_PRODUCT_48");
 assert.equal(liveReady.presentationModel.sourceModelTotalCards,39);
+
+// Test the actual frozen 48-card presentation rather than only synthetic
+// one-paragraph examples. Context is source-cue owned, not card-number owned.
+for(const row of READER_OBJECTIVE_CONTEXT_ROWS){
+  const sourceBlock=data.sungCorpus.blocks.find(b=>b.Block_ID===row.blockId);
+  assert.ok(sourceBlock,"Unknown canonical section "+row.blockId);
+  const cue=sourceBlock.units[0].cue_id;
+  const matching=liveReady.presentationModel.cards.filter(card=>
+    card.blocks?.some(block=>block.blockId===row.blockId));
+  assert.ok(matching.length,"Missing source block in real LIVE cards: "+row.blockId);
+  const active=matching.map(card=>projectReaderObjectiveContext(card,{
+    cueId:cue,form:"MISSA_CANTATA_INCENSE",language:"fr",
+  })).find(Boolean);
+  assert.ok(active,"Actual LIVE card cannot project context for "+row.blockId+"/"+cue);
+  assert.equal(active.blockId,row.blockId);
+  assert.equal(active.language,"fr");
+  assert.equal(active.cueId,cue);
+  assert.equal(active.observedNow,false);
+  assert.equal(projectReaderObjectiveContext(matching[0],{
+    cueId:"AO.SM.C9999",form:"MISSA_CANTATA_INCENSE",language:"fr",
+  }),null,"Context leaked onto an unrelated cue");
+}
+
 assert.equal(liveReady.presentationModel.historicalV183IdentityClaim,false);
 assert.equal(liveReady.presentationModel.sourceAuthorityModel,liveReady.model);
 const curatedReady=await prepareNativeReaderPreview({
