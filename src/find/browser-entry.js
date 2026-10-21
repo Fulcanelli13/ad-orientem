@@ -634,7 +634,9 @@ export function createFindOwner(win=globalThis){
     // A Calendar handoff can select only an existing, source-backed canonical
     // custom. The route payload alone cannot mint a practice or map pin.
     const customId=options?.lens==="traditions"&&typeof options?.customId==="string"?options.customId:null;
-    if(options?.customId!=null&&(!customId||! /^[A-Z]{4}-[0-9]{3}$/.test(customId)))return false;
+    // Canonical published membership is the authority. Valid IDs have both
+    // 3- and 4-letter families (DEV-010, DOM-006, ADVT-001, ...).
+    if(options?.customId!=null&&!customId)return false;
     if(customId){
       try{await ensureData()}catch{return false;}
       if(!projection?.byLens?.traditions?.some(item=>
@@ -643,7 +645,19 @@ export function createFindOwner(win=globalThis){
     try{win?.AO_LEARN_APP_V1?.close?.()}catch{}
     try{win?.AO_PRAY_APP_V1?.close?.()}catch{}
     try{win?.AO_CALENDAR_APP_V1?.close?.({surface:"find"})}catch{}
-    if(options?.lens==="heritage"||EXPLORE_LENSES.includes(options?.lens))state.lens=options.lens;
+    const requestedLens=options?.lens==="heritage"||EXPLORE_LENSES.includes(options?.lens)
+      ?options.lens:null;
+    if(requestedLens&&requestedLens!==state.lens){
+      // Changing owners must not leave a stale folio, custom highlight, route,
+      // or network state over another surface. Search values stay per-lens.
+      state.selectedId=null;state.selectedPlaceId=null;state.highlightCustomId=null;
+      state.journeyOpen=false;journeyPreviousCategories=null;
+      state.networkOpen=false;state.networkFocus="";state.networkKind="all";
+      state.atlasCountry=null;state.expandDetail=false;state.expandPlace=false;
+      nearbyResults=null;
+      lastMapView=null;lastMapLens=null;
+    }
+    if(requestedLens)state.lens=requestedLens;
     if(state.lens==="heritage"){
       state.view="map";
       state.timeMassOpen=options?.timeMass===true;
