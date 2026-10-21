@@ -39,3 +39,36 @@ The test uses six distinct standalone question intents, each in EN and FR, plus 
 This is a bounded feasibility demonstration of **3 source topics and 6 curated selections**, not a general conversational model covering all 34 exchanges, 82 authored dialogue chapters or 810 research families. The probes were authored and inspected during development; passage accuracy and French style need independent historical, theological and linguistic review. It does not measure natural conversation with real visitors.
 
 **Next admissible step:** widen claim-level indexing across the remaining already-audited historical topics, then evaluate genuinely independent visitor questions with explicit no-match, clarification, source fidelity and persona QA. Import into the stage only after owner and publishing approvals; never upgrade an unapproved adaptation to original papal speech.
+
+
+## Expansion: 11 additional passage topics (21 October 2026)
+
+Following the initial three-topic acceptance, the existing PR #1443 routing owner now indexes 197 total research topics with **23 original-document passage locators** (11 new locators, no replacement of the original 12). The separate PR #1458 read-only selector now has **16 source-topic entries and 23 bounded response selection plans**, including two pre-existing documentary source pointers SPX-PILOT-01 and SPX-PILOT-08.
+
+### New original passage clusters
+
+| Source | Selected topics and text locations |
+| --- | --- |
+| *Acerbo nimis* | Religious ignorance §§1–2; pastors' teaching duty §§7–9; catechist preparation §§25–26; baptismal faith §16 |
+| *E supremi* | Religious education for restoration §12; lay apostolate and concrete works §14 |
+| *Haerent animo* | Active ministry versus personal holiness §§8–10; spiritual reading §§22–23; examination of conscience §§25–27; exercises and mutual support §§34–36; concluding prayer §37 |
+
+The original `SPX-PILOT-01` supports the *E supremi* §4 pontifical-programme selection, and `SPX-PILOT-08` supports *Acerbo nimis* §24 adult instruction. This reuses the verified source-navigation owner instead of creating new duplicate topics.
+
+The separate frozen editorial question files, committed before this extension's first evaluation, are:
+- `data/learn/research/pius-x-next11-frozen-english-french-question-probes-20261021.v1.json` (44 catalog formulations and eight negative contrasts)
+- `data/learn/research/pius-x-next11-pre-evaluation-paraphrase-pairs-20261021.v1.json` (22 off-catalog formulations)
+
+### Executed results
+
+**Existing PR #1443 router:** [successful full suite, run 39646042533](https://github.com/Fulcanelli13/ad-orientem/actions/runs/39646042533). For EACH shared/hybrid engine, 39/44 catalog formulations and 7/22 off-catalog variants mapped to the exact original paragraph; the remaining cases abstained without **any wrong original-source assignments**. Eight negative EN/FR cases per engine were refused. Prior Pius X source-concept and liturgical/personal-verdict regression controls also passed.
+
+**PR #1458 answer selection:** [successful source-to-claims job, run 39646468849](https://github.com/Fulcanelli13/ad-orientem/actions/runs/39646468849). For EACH shared/hybrid engine, the new 11 topics yielded **39 editorial source-bound candidates from 44 catalog questions** and **7 from 22 frozen off-catalog paraphrases**; no wrong-source/claim candidates, no unsafe negatives, **18 English/French aligned pairs**, zero published replies. The original 36-case bounded-answer integration also passed.
+
+These figures are not additive estimates of independent accuracy. The test wording was editor-authored; the 22 rephrasings are a pre-evaluation editorial set, not independent users. Current generalization is **insufficient for an autonomous conversational release**.
+
+### Remaining work, prioritized
+
+First, improve **precision-preserving natural-language recognition**, not authoring more papal dialogue: expand the source-owned two-facet concept vocabulary from real attested passage wording, include French inflections, and keep explicit clarification or abstention for overlapping passages. Reassess against genuinely new questions rather than reusing an inspected probe as a new holdout.
+
+Second, complete independent source, EN/FR, theological, addressee and period-voice approval before moving the already-curated reply segments into the fixed-sprite visual-novel runtime. Never present adapted phrases as verbatim quotations, and do not apply early-1900s clerical legislation as present universal discipline.
