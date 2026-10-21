@@ -14,6 +14,14 @@ This document is derived from the companion [structured master](../data/calendar
 - Class I: **30 dates have historical human-selected subject art**, including dates later locked in the ten. Other Class I dates have unselected research leads; **1 old-reconciliation gap on May 1 (St Joseph the Workman)**, which may have relevant prior St Joseph subject art but no verified exact St Joseph the Workman artwork.
 - All **zero-cost, no-contact** rules apply; no email, museum negotiation, paid licensing, or substitute painting for locked date assignments. Sources require their own photograph reuse proof and human acceptance.
 
+## Verified liturgical observations (production 1962 resolver)
+
+The [full-year browser run](https://github.com/Fulcanelli13/ad-orientem/actions/runs/39577372645) **resolved all 102 unique 2026 target dates** against the actual production DayResolver, with **53/53 Class I principal IDs** and **10/10 protected approved principal IDs** matched. The entire observed-date proof is permanently preserved in [102 observed dates](../data/calendar/sacred-art-2026-102-observed-days-production-evidence.v1.json) and attached to this master. All 102 dates returned a ready Proper. This confirms their 1962 observance, not the visual artworks.
+
+Seven older *spotlight title strings* differ literally from current calendar titles but refer to the actual observed dates; examples include Holy Name of Jesus and Holy Family. They are **not assumed to be suppressed feasts**. Their actual principal IDs and titles, rather than earlier suggested descriptions, are the authority.
+
+The resolver's Gospel reference metadata was not exposed in the tested `gospel.ref/reference/citation` fields (0/102): previous Sunday painting-to-Gospel relation claims consequently remain **research assertions**, not independently source-verified scene assignments. Do not automatically publish those 32 scene hypotheses. An exact identity comparison against the October 13 rating ledger matched only one older Sunday painting lead, Juan de Flandes's *The Temptation of Christ* on February 22, rated **3**, which is still not a release permission or definitive user hero choice.
+
 ## Meaning of statuses
 
 - `LOCKED_EXACT`: later curator selection for this exact 2026 day, artist/title fixed.
@@ -22,7 +30,7 @@ This document is derived from the companion [structured master](../data/calendar
 - `RESEARCH`: general candidate IDs, some contextual/thematic; not approved.
 - `UNASSIGNED` / `GAP`: no reconcilable exact approval in historic data. Do not imply that no useful artwork exists in the broader library.
 
-**Key rule:** The first column is a *civil date*, not a guarantee that a named optional feast is principal in the 1962 Roman calendar. A separate actual DayResolver test must verify observed principal and rank on all 102 unique dates.
+**Key rule:** The first column is a *civil date*. **Actual production 1962 DayResolver principal IDs and titles have now been verified for 102/102 unique dates.** Named optional feast headings remain separate from observed principal identity and must use the attached runtime values.
 
 ## A. All 52 Sundays
 
@@ -167,7 +175,7 @@ Editorial *possibilities* only. These may be superseded by Sunday/Class I princi
 
 **First:** recover/preserve every exact date-specific painting approval already frozen (ten on release PR #1532; 40/40 real Home+Calendar simulated visual checks completed). 
 
-**Second:** use 1962 production DayResolver to verify all 102 target dates, especially the 17 optional spotlight observances; check actual Gospel scene before an old Sunday lead can become a recommendation. Avoid treating date overlap as different artworks required.
+**Second:** 1962 production DayResolver verification is **complete (102/102)**. Next check the exact appointed Gospel scene before an old Sunday lead becomes a recommendation. Avoid treating date overlap as different artworks required.
 
 **Third:** map the **25 unlocked Class I dates with older human subject selections** to actual paintings and institutional free image sources before opening new painting research. Distinguish 'depicts appointed Gospel' from 'liturgically appropriate seasonal theme'. 
 
