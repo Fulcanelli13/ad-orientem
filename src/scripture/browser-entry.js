@@ -346,6 +346,22 @@ export function installScriptureBrowserOwner(win=globalThis){
    status:()=>Object.freeze({installed:true,open:Boolean(reader&&!journey),suspended:Boolean(journey),reader:reader?.status?.()??null})});
  win.AO_SCRIPTURE_APP_V1=api;
  win.AO_SCRIPTURE_CONTEXT_V1=Object.freeze({version:"scripture-context-v1",open:openContext,openSegments,parse:parseScriptureContext});
+ // A return link from the research covenantal manuscript may deep-link only
+ // to a known inventory ID and only when the explicit research gate is active.
+ // The standard app has no new default navigation or background fetch.
+ if(thematicEnabled){
+  const bootReturn=()=>{
+   const id=decodeURIComponent(String(win.location?.hash||"").replace(/^#/,""));
+   if(/^hist-omitted-\d{3}$/.test(id)){
+    void openThematicEpisode(id).then(ok=>{
+     if(!ok)win.console?.warn?.("The supplementary reading could not be restored");
+    });
+   }
+  };
+  if(doc?.readyState==="complete")win.queueMicrotask?.(bootReturn);
+  else win.addEventListener?.("load",bootReturn,{once:true});
+ }
+
  return api;
 }
 if(typeof window!=="undefined"&&typeof document!=="undefined")installScriptureBrowserOwner(window);
