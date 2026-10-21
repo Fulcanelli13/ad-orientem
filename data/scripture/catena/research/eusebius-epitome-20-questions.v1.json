@@ -203,6 +203,11 @@
       "sourceAccess": {
         "browserUrl": "https://catholiclibrary.org/library/browse/title/e",
         "englishMetadataUrl": "https://www.roger-pearse.com/weblog/2015/12/12/eusebius-of-caesarea-gospel-problems-and-solutions-now-online-in-english/"
+      },
+      "quotedAuthority": {
+        "historicalName": "Julius Africanus",
+        "relation": "material_transmitted_in_eusebian_collection",
+        "instruction": "Never render an unqualified Eusebius speech bubble for Africanus quotation; require segment-by-segment attribution."
       }
     },
     {
@@ -763,8 +768,13 @@
           "candidateReview": "not_reviewed"
         }
       ],
-      "solutionResearchStatus": "question_resolution_not_yet_verified",
-      "solutionStructuralNotes": [],
+      "solutionResearchStatus": "partial_online_source_observed__full_greek_edition_review_pending",
+      "solutionStructuralNotes": [
+        "Transmitted discussion offers more than one conditional reconstruction rather than a single certain chronology.",
+        "One approach distinguishes the reported visits or intervals of Mary Magdalene at the tomb.",
+        "A different approach differentiates women sharing Mary/Magdalene-related names, with a scribal-name hypothesis discussed rather than historically proved.",
+        "All are historical Eusebian explanatory proposals; do not treat a conjectural scribal error or two Magdalenes as a doctrinal or historical fact."
+      ],
       "greekExactQuestionSourceQuote": null,
       "sourceLanguageTextStatus": "not_transcribed__no_unverified_greek_reconstruction",
       "answerLocation": "epitome_section__no_imported_english_answer",
@@ -772,7 +782,9 @@
       "sourceAccess": {
         "browserUrl": "https://catholiclibrary.org/library/view?chunk.id=00000003&docId=%2FFathers-Synchronized-EN%2FEusebius_Caesariensis__Quaestiones_evangelicae_ad_Marinum.en.html",
         "englishMetadataUrl": "https://www.roger-pearse.com/weblog/2015/12/12/eusebius-of-caesarea-gospel-problems-and-solutions-now-online-in-english/"
-      }
+      },
+      "solutionSourceObserved": "Catholic Library, To Marinus II online text; question-numbered section with different-women and different-visits proposals.",
+      "solutionConfidence": "partial_source_read__not_independently_checked_greek"
     },
     {
       "id": "eusebius-marinus-03",
@@ -876,7 +888,9 @@
       "sourceAccess": {
         "browserUrl": "https://catholiclibrary.org/library/view?chunk.id=00000003&docId=%2FFathers-Synchronized-EN%2FEusebius_Caesariensis__Quaestiones_evangelicae_ad_Marinum.en.html",
         "englishMetadataUrl": "https://www.roger-pearse.com/weblog/2015/12/12/eusebius-of-caesarea-gospel-problems-and-solutions-now-online-in-english/"
-      }
+      },
+      "relatedSupplementId": "eusebius-marinus-supp-05",
+      "relatedSupplementRelation": "independent_greek_catena_supplement_on_angel_accounts__do_not_merge_into_epitome_IV_unreviewed"
     }
   ]
 }
