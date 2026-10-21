@@ -1,0 +1,1210 @@
+/* Editorial staging from the 56-record research master, not published article copy.
+ * The 24 underlying custom identities are PUBLISHED in canonical SOT-07,
+ * but expanded bilingual wording in this projection requires acceptance.
+ * PR must remain draft until wording/source checks are signed off.
+ * Not imported as new identities into the 1962 calendar.
+ */
+export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
+  {
+    "id": "DOM-002",
+    "title": {
+      "en": "Domestic holy-water font / bénitier de chevet",
+      "fr": "Bénitier domestique ou de chevet"
+    },
+    "description": {
+      "en": "A bedside or domestic bénitier holding blessed water is a documented French Catholic domestic object and devotional custom.",
+      "fr": "Le bénitier domestique contenant de l'eau bénite, notamment placé près du lit, est un objet et une coutume de dévotion attestés dans les foyers catholiques français."
+    },
+    "history": {
+      "en": "Mucem's museum objects preserve French household holy-water fonts, including bedside examples. These historical objects attest an established domestic use, without proving a universally prescribed arrangement.",
+      "fr": "Les collections du Mucem conservent des bénitiers domestiques français, notamment des objets de chevet. Ces témoins matériels attestent un usage de la maison catholique, sans établir une disposition prescrite universellement."
+    },
+    "meaning": {
+      "en": "Keeping blessed water readily available recalls Baptism and encourages simple prayer at home.",
+      "fr": "Garder de l’eau bénite à portée de main rappelle le baptême et favorise la prière dans le foyer."
+    },
+    "practice": {
+      "en": "A family may keep a clean holy-water vessel and use already blessed water reverently; no special placement is required.",
+      "fr": "Une famille peut conserver un bénitier propre et employer respectueusement de l’eau déjà bénite, sans emplacement prescrit."
+    },
+    "caution": {
+      "en": "Present as a historical/traditional domestic practice, not a requirement.",
+      "fr": "Présenter cette pratique comme une coutume domestique traditionnelle et historique, non comme une obligation."
+    },
+    "occasion": {
+      "en": "Family or local occasion",
+      "fr": "Occasion familiale ou locale"
+    },
+    "scope": {
+      "en": "geo:country:FR",
+      "fr": "geo:country:FR"
+    },
+    "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
+    "sources": [
+      {
+        "id": "MUCEM-BENITIER",
+        "title": "Mucem collection — bénitier de chevet",
+        "url": "https://mucem.org/les-collections-du-mucem/explorez-les-collections/?keyword=b%C3%A9nitier+de+chevet"
+      }
+    ]
+  },
+  {
+    "id": "DOM-006",
+    "title": {
+      "en": "Family consecration to the Sacred Heart",
+      "fr": "Consécration de la famille au Sacré-Cœur"
+    },
+    "description": {
+      "en": "Family consecration to the Sacred Heart is a well-attested French devotional practice centered on Paray-le-Monial and may be presented as a voluntary devotion.",
+      "fr": "La consécration familiale au Sacré-Cœur est une dévotion française bien attestée, liée notamment à Paray-le-Monial. Elle demeure une pratique facultative."
+    },
+    "history": {
+      "en": "The Paray-le-Monial sanctuary documents family consecration to the Sacred Heart as a continuing voluntary devotion. Its witness connects the household's commitment with a response to Christ's love rather than a separate liturgical rite.",
+      "fr": "Le sanctuaire de Paray-le-Monial présente la consécration familiale au Sacré-Cœur comme une dévotion volontaire encore vivante. Il l'inscrit dans la réponse du foyer à l'amour du Christ, non dans un rite liturgique distinct."
+    },
+    "meaning": {
+      "en": "The household is entrusted to the love and mercy of the Sacred Heart of Jesus.",
+      "fr": "Le foyer est confié à l’amour et à la miséricorde du Sacré-Cœur de Jésus."
+    },
+    "practice": {
+      "en": "A family may freely make an approved consecration prayer and renew it privately; a formal parish celebration is arranged with its priest.",
+      "fr": "Une famille peut réciter librement une prière de consécration reconnue et la renouveler en privé ; une célébration paroissiale se prépare avec le prêtre."
+    },
+    "caution": {
+      "en": "Keep distinct from the liturgy and from priestly house blessing.",
+      "fr": "Ne pas confondre cette dévotion avec la liturgie ni avec la bénédiction sacerdotale d'une maison."
+    },
+    "occasion": {
+      "en": "Sacred Heart season / family use",
+      "fr": "Temps du Sacré-Cœur ; pratique familiale facultative"
+    },
+    "scope": {
+      "en": "geo:culture:french-catholic-world · geo:country:FR",
+      "fr": "geo:culture:french-catholic-world · geo:country:FR"
+    },
+    "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
+    "sources": [
+      {
+        "id": "PARAY-CONSECRATION",
+        "title": "La consécration au Sacré-Cœur",
+        "url": "https://sacrecoeur-paray.org/consecration-sacre-coeur/"
+      }
+    ]
+  },
+  {
+    "id": "DOM-007",
+    "title": {
+      "en": "Intronement of a Sacred Heart image in the home",
+      "fr": "Intronisation du Sacré-Cœur dans la maison"
+    },
+    "description": {
+      "en": "The enthronement/intronisation of the Sacred Heart image is a documented French family devotion. It is not universal liturgical law.",
+      "fr": "L'intronisation d'une image du Sacré-Cœur dans le foyer est une dévotion familiale française documentée ; elle ne relève pas d'une obligation liturgique universelle."
+    },
+    "history": {
+      "en": "The sanctuary at Paray-le-Monial describes enthroning an image of the Sacred Heart within family life. This testimony concerns domestic veneration and prayer; it does not establish a compulsory liturgical blessing.",
+      "fr": "Le sanctuaire de Paray-le-Monial décrit l'intronisation d'une image du Sacré-Cœur dans la vie familiale. Ce témoignage concerne la vénération et la prière domestiques, sans établir de bénédiction liturgique obligatoire."
+    },
+    "meaning": {
+      "en": "An image of the Sacred Heart becomes a visible reminder that the family wishes to live under Christ's kingship.",
+      "fr": "L’image du Sacré-Cœur rappelle visiblement le désir de la famille de vivre sous la royauté du Christ."
+    },
+    "practice": {
+      "en": "Where the devotion is kept, a family may place an appropriate image prominently and pray together; a liturgical blessing belongs to the authorized minister.",
+      "fr": "Là où la dévotion est pratiquée, la famille peut disposer dignement une image et prier ensemble ; une bénédiction liturgique relève du ministre habilité."
+    },
+    "caution": {
+      "en": "Any blessing of the image remains ministerial where required.",
+      "fr": "Toute bénédiction de l'image doit être confiée au ministre compétent lorsqu'elle lui est réservée."
+    },
+    "occasion": {
+      "en": "Family or local occasion",
+      "fr": "Occasion familiale ou locale"
+    },
+    "scope": {
+      "en": "geo:culture:french-catholic-world · geo:country:FR",
+      "fr": "geo:culture:french-catholic-world · geo:country:FR"
+    },
+    "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
+    "sources": [
+      {
+        "id": "PARAY-INTRONISATION",
+        "title": "Introniser le Sacré-Coeur dans les familles",
+        "url": "https://sacrecoeur-paray.org/prier/introniser-le-sacre-coeur/"
+      }
+    ]
+  },
+  {
+    "id": "LIFE-002",
+    "title": {
+      "en": "Relevailles / blessing after childbirth",
+      "fr": "Relevailles : bénédiction après la naissance"
+    },
+    "description": {
+      "en": "Relevailles are a voluntary thanksgiving/blessing after childbirth. They are not a purification from ritual impurity and no mandatory forty-day waiting period should be taught.",
+      "fr": "Les relevailles sont une action de grâce et une bénédiction facultatives après un accouchement. Elles ne supposent aucune impureté rituelle de la mère et n'imposent pas une attente de quarante jours."
+    },
+    "history": {
+      "en": "The older Roman Ritual and a traditional French transcription attest a blessing of thanksgiving after childbirth. The historical rite must not be interpreted as purifying a mother's moral or ritual impurity or as requiring a forty-day delay.",
+      "fr": "L'ancien Rituel romain et une transcription traditionnelle française attestent une bénédiction d'action de grâce après l'accouchement. Ce rite historique ne signifie pas que la mère doive être purifiée d'une impureté morale ou rituelle, ni qu'un délai de quarante jours s'impose."
+    },
+    "meaning": {
+      "en": "This traditional blessing gives thanks for motherhood and asks God's help for the mother and family.",
+      "fr": "Cette bénédiction traditionnelle rend grâce pour la maternité et implore l’aide de Dieu pour la mère et sa famille."
+    },
+    "practice": {
+      "en": "The mother may request the appropriate traditional church blessing from a priest where offered; it is never a penalty, exclusion or prerequisite for returning to church.",
+      "fr": "La mère peut demander au prêtre la bénédiction traditionnelle là où elle est proposée ; il ne s’agit ni d’une punition ni d’une condition pour rentrer dans l’église."
+    },
+    "caution": {
+      "en": "Preserve the anti-misconception note prominently.",
+      "fr": "Ne pas présenter les relevailles comme une purification d'une impureté ou comme une obligation après quarante jours."
+    },
+    "occasion": {
+      "en": "Family or local occasion",
+      "fr": "Occasion familiale ou locale"
+    },
+    "scope": {
+      "en": "geo:country:FR",
+      "fr": "geo:country:FR"
+    },
+    "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
+    "sources": [
+      {
+        "id": "RIT-1878",
+        "title": "Rituale Romanum Pauli V...",
+        "url": "https://objects.library.uu.nl/download/1874-315174/fulltext"
+      },
+      {
+        "id": "SCHOLA-RELEVAILLES",
+        "title": "Bénédiction des relevailles",
+        "url": "https://schola-sainte-cecile.com/2015/02/02/benediction-des-relevailles/"
+      }
+    ]
+  },
+  {
+    "id": "DEV-001",
+    "title": {
+      "en": "May as the month of Mary",
+      "fr": "Le mois de Marie en mai"
+    },
+    "description": {
+      "en": "The month of May has a long-standing Catholic Marian devotional association and strong French-world attestation. It is devotional custom, not part of the formal liturgical calendar structure.",
+      "fr": "Depuis longtemps, le mois de mai est associé à la dévotion mariale dans le catholicisme, notamment dans le monde catholique français. Il s'agit d'une coutume de piété, non d'une division du calendrier liturgique."
+    },
+    "history": {
+      "en": "An account from the French bishops traces May devotion and its expression in parishes and homes. This is a Marian devotional association in the Christian year, not an additional season in the Roman liturgical calendar.",
+      "fr": "Une présentation de l'épiscopat français retrace la dévotion de mai et ses expressions dans les paroisses et les foyers. Cette association mariale au fil de l'année chrétienne ne constitue pas un temps supplémentaire du calendrier liturgique romain."
+    },
+    "meaning": {
+      "en": "The month of May invites a more attentive honour of the Blessed Virgin and imitation of her fidelity to Christ.",
+      "fr": "Le mois de mai invite à honorer plus particulièrement la Sainte Vierge et à imiter sa fidélité au Christ."
+    },
+    "practice": {
+      "en": "Families may add the Rosary, a Marian hymn or flowers near a dignified image, without creating a new obligation.",
+      "fr": "Les familles peuvent ajouter le chapelet, un chant marial ou des fleurs près d’une image digne, sans en faire une obligation."
+    },
+    "caution": {
+      "en": "Calendar points to the practice; devotional modules own prayer content.",
+      "fr": "Le Calendrier situe la coutume dans l'année ; les modules de prière restent responsables des textes de dévotion."
+    },
+    "occasion": {
+      "en": "May",
+      "fr": "Mois de mai"
+    },
+    "scope": {
+      "en": "geo:country:FR",
+      "fr": "geo:country:FR"
+    },
+    "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
+    "sources": [
+      {
+        "id": "ECF-MAY",
+        "title": "Pourquoi dit-on que le mois de mai est le mois de Marie ?",
+        "url": "https://eglise.catholique.fr/approfondir-sa-foi/connaitre-et-aimer-dieu/marie/499023-mois-de-marie-coutume-recente/"
+      }
+    ]
+  },
+  {
+    "id": "DEV-006",
+    "title": {
+      "en": "Pilgrimage to a shrine or holy place",
+      "fr": "Pèlerinage à un sanctuaire ou lieu saint"
+    },
+    "description": {
+      "en": "Pilgrimage is a legitimate personal or collective act of Catholic piety. It is commendable and optional, not a universal obligation.",
+      "fr": "Le pèlerinage, individuel ou collectif, est un acte légitime de piété catholique, recommandé mais facultatif. Il ne constitue pas une obligation universelle."
+    },
+    "history": {
+      "en": "The Church's Directory on Popular Piety treats pilgrimage as a longstanding prayerful journey to a sacred place. Other registry sources document particular walking pilgrimages and organised visits to shrines, each with its own locality and programme.",
+      "fr": "Le Directoire sur la piété populaire reconnaît le pèlerinage comme un chemin de prière vers un lieu saint. D'autres sources du registre attestent des pèlerinages à pied et des visites organisées de sanctuaires, chacun avec son histoire locale et son programme."
+    },
+    "meaning": {
+      "en": "A pilgrimage expresses conversion of heart, penance, gratitude and prayer at a place associated with the faith.",
+      "fr": "Le pèlerinage exprime la conversion du cœur, la pénitence, la reconnaissance et la prière dans un lieu lié à la foi."
+    },
+    "practice": {
+      "en": "Visit a recognized shrine when feasible, consult its actual hours and devotions, and pray; neither a journey nor a special benefit is guaranteed.",
+      "fr": "Se rendre si possible à un sanctuaire reconnu, consulter ses horaires et dévotions réels, puis prier ; aucun déplacement ni bienfait particulier n’est garanti."
+    },
+    "caution": {
+      "en": "Do not turn local pilgrimage calendars into universal app law.",
+      "fr": "Ne pas transformer les calendriers locaux de pèlerinages en prescriptions universelles."
+    },
+    "occasion": {
+      "en": "Family or local occasion",
+      "fr": "Occasion familiale ou locale"
+    },
+    "scope": {
+      "en": "geo:world · geo:country:FR · geo:country:BE · geo:country:US · geo:country:DE",
+      "fr": "geo:world · geo:country:FR · geo:country:BE · geo:country:US · geo:country:DE"
+    },
+    "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
+    "sources": [
+      {
+        "id": "DPP-2001",
+        "title": "Directory on Popular Piety and the Liturgy",
+        "url": "https://www.vatican.va/content/dam/wss/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html"
+      },
+      {
+        "id": "ECF-PILGRIMAGE",
+        "title": "Pèlerinages et sanctuaires en questions",
+        "url": "https://eglise.catholique.fr/approfondir-sa-foi/la-celebration-de-la-foi/les-pelerinages/372388-pelerinages-et-sanctuaires-en-questions/"
+      },
+      {
+        "id": "BEAURAING-PILGRIMAGE-CUSTOM",
+        "title": "Sanctuaire Notre-Dame de Beauraing",
+        "url": "https://sanctuairedebeauraing.be/"
+      },
+      {
+        "id": "NEUMANN-PILGRIMAGE-CUSTOM",
+        "title": "Pilgrimages and Retreats — National Shrine of St. John Neumann",
+        "url": "https://www.stjohnneumann.org/pilgrimagesandretreats"
+      },
+      {
+        "id": "CZESTOCHOWA-US-WALK-CUSTOM",
+        "title": "Pilgrimage — American Czestochowa",
+        "url": "https://czestochowa.us/en/ministries/6-pilgrimage"
+      },
+      {
+        "id": "SETON-SEA-SERVICES-CUSTOM",
+        "title": "Annual Pilgrimage and Mass for the Sea Services",
+        "url": "https://setonshrine.org/press-release-the-national-shrine-of-saint-elizabeth-ann-seton-hosts-annual-pilgrimage-and-mass-for-the-sea-services/"
+      },
+      {
+        "id": "BERMONT-PILGRIMAGE-CUSTOM",
+        "title": "Chapelle Notre-Dame de Bermont",
+        "url": "https://www.nd-bermont.fr/"
+      },
+      {
+        "id": "PELLEVOISIN-ANNUAL-CUSTOM",
+        "title": "Le pèlerinage annuel",
+        "url": "https://www.pellevoisin.net/activites-du-sanctuaire-2/le-pelerinage-annuel/"
+      },
+      {
+        "id": "RUE-DU-BAC-PILGRIMAGE-CUSTOM",
+        "title": "Organiser un pèlerinage à la rue du Bac",
+        "url": "https://www.chapellenotredamedelamedaillemiraculeuse.com/faire-pelerinage/contact/"
+      },
+      {
+        "id": "WIGRATZBAD-PILGRIMAGE-CUSTOM",
+        "title": "Gebetsstätte Maria vom Sieg Wigratzbad",
+        "url": "https://www.gebetsstaette.de/"
+      },
+      {
+        "id": "BETTBRUNN-PILGRIMAGE-CUSTOM",
+        "title": "Die Hostienwallfahrt von Bettbrunn",
+        "url": "https://bistum-regensburg.de/news/die-hostienwallfahrt-von-bettbrunn"
+      },
+      {
+        "id": "AURIESVILLE-RESTORATION-CUSTOM",
+        "title": "Pilgrimage for Restoration",
+        "url": "https://pilgrimage-for-restoration.org/"
+      },
+      {
+        "id": "LITCHFIELD-LOURDES-PILGRIMAGE-CUSTOM",
+        "title": "Lourdes in Litchfield",
+        "url": "https://www.shrinect.org/"
+      }
+    ]
+  },
+  {
+    "id": "DEV-009",
+    "title": {
+      "en": "Ex-votos",
+      "fr": "Ex-voto"
+    },
+    "description": {
+      "en": "Ex-votos are documented French Catholic offerings of thanksgiving/testimony at shrines. They should be explained as expressions of gratitude, not magical transactions.",
+      "fr": "Les ex-voto sont des offrandes de reconnaissance ou des témoignages de gratitude attestés dans les sanctuaires catholiques français. Ils ne constituent pas un échange magique."
+    },
+    "history": {
+      "en": "The sanctuary of Notre-Dame de Laghet preserves an ex-voto collection, while Altötting documents its own votive tablets. These material offerings witness thanksgiving and the memory of prayers; they do not establish a magical exchange.",
+      "fr": "Le sanctuaire Notre-Dame de Laghet conserve des ex-voto, tandis qu'Altötting documente ses tableaux votifs. Ces offrandes matérielles témoignent de la reconnaissance et de la mémoire des prières ; elles n'établissent aucun échange magique."
+    },
+    "meaning": {
+      "en": "An ex-voto expresses gratitude for a grace or aid attributed to God's providence.",
+      "fr": "Un ex-voto exprime la reconnaissance pour une grâce ou une aide rapportée à la providence de Dieu."
+    },
+    "practice": {
+      "en": "An offering may be made only according to the shrine's rules, without portraying unverified miracles or expecting a favour in return.",
+      "fr": "Une offrande peut être déposée selon les règles du sanctuaire, sans présenter des miracles non vérifiés ni attendre une faveur en échange."
+    },
+    "caution": {
+      "en": "Avoid superstition framing.",
+      "fr": "Les présenter comme des expressions de reconnaissance, et non comme des transactions superstitieuses."
+    },
+    "occasion": {
+      "en": "Family or local occasion",
+      "fr": "Occasion familiale ou locale"
+    },
+    "scope": {
+      "en": "geo:country:FR · geo:country:DE",
+      "fr": "geo:country:FR · geo:country:DE"
+    },
+    "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
+    "sources": [
+      {
+        "id": "LAGHET-EXVOTO",
+        "title": "Ex-voto",
+        "url": "https://sanctuaire-laghet.fr/ex-votos/"
+      },
+      {
+        "id": "ALTOETTING-EXVOTO",
+        "title": "Pilgrimage Site — votive tablets at the Gnadenkapelle",
+        "url": "https://www.altoetting.de/en/tourism-altoetting/pilgrimage/pilgrimage-site/"
+      }
+    ]
+  },
+  {
+    "id": "DEV-010",
+    "title": {
+      "en": "Votive candle at a shrine",
+      "fr": "Cierge votif au sanctuaire"
+    },
+    "description": {
+      "en": "Lighting a votive candle at a shrine is a documented devotional act; the flame symbolizes and prolongs prayer rather than functioning magically.",
+      "fr": "Allumer un cierge votif dans un sanctuaire est un acte de dévotion documenté ; sa flamme symbolise la prière et en prolonge l'expression, sans effet magique."
+    },
+    "history": {
+      "en": "The Lourdes sanctuary presents the burning candle as an extension of prayer. Other shrines document their own candle chapels and offerings, which remain local devotional arrangements rather than purchases of spiritual effects.",
+      "fr": "Le sanctuaire de Lourdes présente le cierge allumé comme le prolongement de la prière. D'autres sanctuaires documentent leurs chapelles de cierges et leurs offrandes, qui sont des usages dévotionnels locaux et non l'achat d'effets spirituels."
+    },
+    "meaning": {
+      "en": "The light of a votive candle can symbolize continued prayer and trust in Christ.",
+      "fr": "La lumière d’un cierge votif peut symboliser la prière persévérante et la confiance dans le Christ."
+    },
+    "practice": {
+      "en": "Light a candle at a shrine or church where permitted and accompany it with prayer; observe fire and building safety rules.",
+      "fr": "Allumer un cierge là où cela est permis, l’accompagner d’une prière et respecter les règles de sécurité du lieu."
+    },
+    "caution": {
+      "en": "Do not imply payment purchases spiritual effects.",
+      "fr": "Ne pas laisser croire que l'achat d'un cierge procure automatiquement une grâce."
+    },
+    "occasion": {
+      "en": "Family or local occasion",
+      "fr": "Occasion familiale ou locale"
+    },
+    "scope": {
+      "en": "geo:country:FR · geo:country:AT · geo:country:US · geo:country:CA · geo:country:DE",
+      "fr": "geo:country:FR · geo:country:AT · geo:country:US · geo:country:CA · geo:country:DE"
+    },
+    "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
+    "sources": [
+      {
+        "id": "LOURDES-CANDLES",
+        "title": "Les Cierges",
+        "url": "https://www.lourdes-france.com/pelerin-dun-jour/les-cierges/"
+      },
+      {
+        "id": "MARIAZELL-VOTIVE-CANDLES",
+        "title": "Gottesdienstordnung — Opferlichter",
+        "url": "https://www.basilika-mariazell.at/site/de/info/gottesdienste"
+      },
+      {
+        "id": "GUADALUPE-VOTIVE-CANDLES",
+        "title": "Pilgrimage Experience — Votive Candle Chapel",
+        "url": "https://guadalupeshrine.org/pilgrimage-experience/"
+      },
+      {
+        "id": "NDC-VOTIVE-CANDLE",
+        "title": "Neuvaine de l’Assomption — lampion de neuvaine",
+        "url": "https://www.sanctuaire-ndc.ca/boutique/"
+      },
+      {
+        "id": "MIRACULOUS-MEDAL-CANDLE-CUSTOM",
+        "title": "Visit the Basilica Shrine — candle offerings",
+        "url": "https://miraculousmedal.org/visit-us/"
+      },
+      {
+        "id": "PONTMAIN-CANDLE-CUSTOM",
+        "title": "Offrir un cierge à Notre-Dame",
+        "url": "https://sanctuaire-pontmain.fr/offrir-un-cierge-a-notre-dame-de-pontmain/"
+      },
+      {
+        "id": "BETTBRUNN-VOTIVE-CANDLES-CUSTOM",
+        "title": "Wallfahrtskirche St. Salvator in Bettbrunn",
+        "url": "https://en.naturpark-altmuehltal.de/sehenswertes/wallfahrtskirche_st_salvator_i-103/"
+      }
+    ]
+  },
+  {
+    "id": "DEAD-001",
+    "title": {
+      "en": "Prayerful cemetery visit",
+      "fr": "Visite au cimetière et prière pour les défunts"
+    },
+    "description": {
+      "en": "Visiting a cemetery to pray for the dead is an established Catholic devotional practice and strongly French-attested.",
+      "fr": "Se rendre au cimetière pour prier pour les défunts est une pratique catholique établie, particulièrement bien attestée dans le monde français."
+    },
+    "history": {
+      "en": "Church guidance recognizes cemetery visits joined to prayer for the dead. French bishops also relate this practice to the November commemoration, without limiting all intercessory visits to a single date.",
+      "fr": "Les textes de l'Église reconnaissent les visites au cimetière accompagnées de prière pour les défunts. L'épiscopat français rattache également cette pratique à la commémoration de novembre, sans limiter toute prière d'intercession à un seul jour."
+    },
+    "meaning": {
+      "en": "Caring for graves expresses remembrance of the departed and hope in the Resurrection.",
+      "fr": "Prendre soin des tombes exprime le souvenir des défunts et l’espérance de la Résurrection."
+    },
+    "practice": {
+      "en": "A cemetery visit may include simple prayer for the departed and respectful tending of a grave; no particular local custom is mandatory.",
+      "fr": "Une visite au cimetière peut comprendre une prière pour les défunts et l’entretien respectueux d’une tombe ; aucun usage local particulier n’est imposé."
+    },
+    "caution": {
+      "en": "Explain as prayer and bonds with the dead, not superstitious obligation.",
+      "fr": "Souligner la prière pour les défunts et les liens de charité, sans en faire une obligation superstitieuse."
+    },
+    "occasion": {
+      "en": "02/11; November; anniversaries",
+      "fr": "2 novembre, mois de novembre ou anniversaire personnel"
+    },
+    "scope": {
+      "en": "geo:world · geo:country:FR",
+      "fr": "geo:world · geo:country:FR"
+    },
+    "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
+    "sources": [
+      {
+        "id": "DPP-2001",
+        "title": "Directory on Popular Piety and the Liturgy",
+        "url": "https://www.vatican.va/content/dam/wss/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html"
+      },
+      {
+        "id": "ECF-DEAD",
+        "title": "Que commémore-t-on le jour de prière des défunts ?",
+        "url": "https://eglise.catholique.fr/approfondir-sa-foi/la-celebration-de-la-foi/les-grandes-fetes-chretiennes/toussaint/429069-jour-priere-defunts/"
+      }
+    ]
+  },
+  {
+    "id": "DEAD-003",
+    "title": {
+      "en": "Prayer for the dead on 2 November",
+      "fr": "Prière pour les défunts le 2 novembre"
+    },
+    "description": {
+      "en": "2 November is a privileged day of prayer for the faithful departed; cemetery visits are common but the core is prayer for the dead.",
+      "fr": "Le 2 novembre est un jour particulièrement consacré à la prière pour les fidèles défunts. Les visites au cimetière sont fréquentes, mais la prière pour les morts en constitue le cœur."
+    },
+    "history": {
+      "en": "The commemoration of all the faithful departed has its own liturgical observance on 2 November. Polish wypominki lists offer a documented regional expression of naming departed persons in parish prayer, not a replacement for that observance.",
+      "fr": "La commémoration de tous les fidèles défunts possède sa célébration liturgique propre le 2 novembre. Les listes polonaises de wypominki sont une expression régionale attestée de la prière paroissiale pour des défunts nommés, non un remplacement de la célébration."
+    },
+    "meaning": {
+      "en": "Prayer for the dead seeks God's mercy for the faithful departed, especially on All Souls.",
+      "fr": "La prière pour les morts demande la miséricorde de Dieu pour les fidèles défunts, particulièrement à la Commémoraison des défunts."
+    },
+    "practice": {
+      "en": "Pray for the faithful departed, attend Mass if available, or offer a personal intention; do not infer a special local rite or indulgence automatically.",
+      "fr": "Prier pour les fidèles défunts, assister à la messe si possible ou offrir une intention personnelle ; ne pas présumer automatiquement d’un rite local ou d’une indulgence."
+    },
+    "caution": {
+      "en": "Calendar owns the date; Pray owns prayer texts.",
+      "fr": "Le Calendrier fixe le jour ; les textes de prière relèvent du module Prier."
+    },
+    "occasion": {
+      "en": "02/11",
+      "fr": "2 novembre"
+    },
+    "scope": {
+      "en": "geo:country:FR · geo:country:PL",
+      "fr": "geo:country:FR · geo:country:PL"
+    },
+    "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
+    "sources": [
+      {
+        "id": "ECF-DEAD",
+        "title": "Que commémore-t-on le jour de prière des défunts ?",
+        "url": "https://eglise.catholique.fr/approfondir-sa-foi/la-celebration-de-la-foi/les-grandes-fetes-chretiennes/toussaint/429069-jour-priere-defunts/"
+      },
+      {
+        "id": "DPP-2001",
+        "title": "Directory on Popular Piety and the Liturgy",
+        "url": "https://www.vatican.va/content/dam/wss/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html"
+      },
+      {
+        "id": "MONTLIGEON-DEAD-CUSTOM",
+        "title": "Les pèlerinages du Ciel",
+        "url": "https://montligeon.org/les-pelerinages-du-ciel/"
+      },
+      {
+        "id": "POLAND-WYPOMINKI-2025",
+        "title": "Wypominki 2025",
+        "url": "https://parafiaboernerowo.pl/wypominki-2025/"
+      }
+    ]
+  },
+  {
+    "id": "DOM-003",
+    "title": {
+      "en": "Using holy water at home",
+      "fr": "Usage de l'eau bénite à la maison"
+    },
+    "description": {
+      "en": "Keeping and using genuinely blessed holy water in the home is a traditional Catholic sacramental practice. French domestic bénitiers attest the custom; the blessing of the water itself is distinct from a layperson’s personal devotional use.",
+      "fr": "Conserver et utiliser à la maison de l'eau véritablement bénite est un usage traditionnel des sacramentaux. Les bénitiers français attestent la pratique ; la bénédiction de l'eau reste distincte de son usage personnel par les fidèles."
+    },
+    "history": {
+      "en": "French domestic bénitiers provide material evidence for keeping holy water at home. The historical Roman Ritual separately witnesses the blessing of the water; private devotional use does not confer a right to perform reserved blessings.",
+      "fr": "Les bénitiers français témoignent matériellement de la présence de l'eau bénite dans les foyers. L'ancien Rituel romain atteste séparément sa bénédiction ; l'usage personnel de l'eau bénite ne confère pas le droit d'accomplir des bénédictions réservées."
+    },
+    "meaning": {
+      "en": "Holy water is a sacramental sign associated with Baptism and prayer for God's protection.",
+      "fr": "L’eau bénite est un sacramental associé au baptême et à la prière demandant la protection de Dieu."
+    },
+    "practice": {
+      "en": "Use water that has truly been blessed for reverent prayer, such as making the Sign of the Cross; it is not a substitute for the sacraments.",
+      "fr": "Employer avec respect de l’eau réellement bénite, par exemple en faisant le signe de croix ; elle ne remplace pas les sacrements."
+    },
+    "caution": {
+      "en": "Using holy water is voluntary and is not a substitute for sacramental worship; do not reproduce or claim to perform reserved blessings. Keep distinct from DOM-002, which documents the vessel.",
+      "fr": "Usage facultatif, qui ne remplace pas les sacrements ; ne pas simuler une bénédiction réservée à un ministre. Distinguer l'usage de l'eau et le bénitier lui-même."
+    },
+    "occasion": {
+      "en": "Family or local occasion",
+      "fr": "Occasion familiale ou locale"
+    },
+    "scope": {
+      "en": "geo:country:FR",
+      "fr": "geo:country:FR"
+    },
+    "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
+    "sources": [
+      {
+        "id": "MUCEM-BENITIER",
+        "title": "Mucem collection — bénitier de chevet",
+        "url": "https://mucem.org/les-collections-du-mucem/explorez-les-collections/?keyword=b%C3%A9nitier+de+chevet"
+      },
+      {
+        "id": "RIT-WELLER",
+        "title": "The Roman Ritual, vol. III: The Blessings",
+        "url": "https://www.ewtn.com/catholicism/library/roman-ritual-index-11884"
+      }
+    ]
+  },
+  {
+    "id": "DOM-011",
+    "title": {
+      "en": "Keeping blessed Candlemas candles at home",
+      "fr": "Conserver les cierges bénits de la Chandeleur"
+    },
+    "description": {
+      "en": "Catholic families have traditionally taken blessed candles home after the Candlemas liturgy. Their light recalls Christ, light for the nations; their devotional use is neither compulsory nor a guarantee of physical protection.",
+      "fr": "Les familles catholiques emportaient traditionnellement chez elles des cierges bénits à la Chandeleur. Leur lumière rappelle le Christ, lumière des nations ; leur emploi demeure facultatif et ne garantit aucune protection matérielle."
+    },
+    "history": {
+      "en": "A French liturgical reference records the domestic keeping of blessed Candlemas candles and their occasional traditional use near the dying. Both are devotional uses following the church blessing, not required household ceremonies.",
+      "fr": "Une référence liturgique française signale la conservation domestique des cierges bénits de la Chandeleur et leur emploi traditionnel occasionnel auprès des mourants. Il s'agit d'usages dévotionnels après la bénédiction à l'église, non de cérémonies familiales requises."
+    },
+    "meaning": {
+      "en": "A blessed Candlemas candle recalls Christ, the light of the nations, presented in the Temple.",
+      "fr": "Le cierge béni de la Chandeleur rappelle le Christ, lumière des nations, présenté au Temple."
+    },
+    "practice": {
+      "en": "Keep a candle already blessed by a priest where suitable, and use it in prayer with appropriate safety precautions.",
+      "fr": "Conserver convenablement un cierge déjà béni par un prêtre et l’utiliser pour prier en respectant les précautions de sécurité."
+    },
+    "caution": {
+      "en": "The 1962 Candlemas reader owns the liturgical blessing and procession; no home ritual is mandated. Historical use near the dying is contextual, never an obligation.",
+      "fr": "La bénédiction et la procession appartiennent à la liturgie de la Chandeleur. Aucun rite domestique n'est obligatoire."
+    },
+    "occasion": {
+      "en": "02/02 — Candlemas (date owned by Calendar)",
+      "fr": "2 février — Chandeleur ; date fixée par le Calendrier"
+    },
+    "scope": {
+      "en": "geo:country:FR",
+      "fr": "geo:country:FR"
+    },
+    "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
+    "sources": [
+      {
+        "id": "ECF-CHANDLEUR-HOME",
+        "title": "Chandeleur — Liturgie & Sacrements (Catholic liturgical lexicon)",
+        "url": "https://liturgie.catholique.fr/lexique/chandeleur/"
+      }
+    ]
+  },
+  {
+    "id": "DOM-013",
+    "title": {
+      "en": "Keeping blessed Palm Sunday branches at home",
+      "fr": "Conserver les rameaux bénits du dimanche des Rameaux"
+    },
+    "description": {
+      "en": "The faithful traditionally take blessed Palm Sunday branches home, including to adorn domestic crucifixes as a sign of trust in Christ crucified. This follows, rather than replaces, participation in the Palm Sunday liturgy.",
+      "fr": "Les fidèles conservent traditionnellement chez eux les rameaux bénits, parfois près d'un crucifix, comme signe de confiance envers le Christ crucifié. Cet usage suit la liturgie des Rameaux sans la remplacer."
+    },
+    "history": {
+      "en": "The Church's Directory and French episcopal teaching document blessed Palm Sunday branches kept at home, sometimes near a crucifix. They are signs of faith in Christ's victory, not talismans or substitutes for participation in the Palm Sunday liturgy.",
+      "fr": "Le Directoire de l'Église et les explications de l'épiscopat français attestent les rameaux bénits conservés à la maison, parfois près d'un crucifix. Ce sont des signes de foi dans la victoire du Christ, non des talismans ni des substituts à la liturgie des Rameaux."
+    },
+    "meaning": {
+      "en": "A blessed Palm Sunday branch recalls Christ's royal entry into Jerusalem and his approaching Passion.",
+      "fr": "Un rameau béni des Rameaux rappelle l’entrée royale du Christ à Jérusalem et sa Passion prochaine."
+    },
+    "practice": {
+      "en": "Keep a branch actually blessed during the local Palm Sunday rites and dispose of it respectfully when no longer used.",
+      "fr": "Conserver un rameau réellement béni pendant les cérémonies locales des Rameaux et s’en défaire respectueusement lorsqu’il n’est plus utilisé."
+    },
+    "caution": {
+      "en": "Blessed branches are not talismans; branches and regional plant species vary. The Palm Sunday reader retains exclusive ownership of ceremonial mechanics.",
+      "fr": "Les rameaux ne sont pas des talismans ; les espèces végétales varient selon les régions. Les gestes liturgiques appartiennent au missel."
+    },
+    "occasion": {
+      "en": "Palm Sunday (calculated by Calendar)",
+      "fr": "Dimanche des Rameaux ; date calculée par le Calendrier"
+    },
+    "scope": {
+      "en": "geo:country:FR",
+      "fr": "geo:country:FR"
+    },
+    "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
+    "sources": [
+      {
+        "id": "ECF-RAMEAUX-HOME",
+        "title": "Qu’est-ce que le Dimanche des rameaux ?",
+        "url": "https://eglise.catholique.fr/approfondir-sa-foi/la-celebration-de-la-foi/les-grandes-fetes-chretiennes/paques-et-la-semaine-sainte/369510-le-dimanche-des-rameaux/"
+      },
+      {
+        "id": "DPP-2001",
+        "title": "Directory on Popular Piety and the Liturgy",
+        "url": "https://www.vatican.va/content/dam/wss/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html"
+      }
+    ]
+  },
+  {
+    "id": "BLSS-001",
+    "title": {
+      "en": "St Blaise — blessing of throats",
+      "fr": "Saint Blaise : bénédiction des gorges"
+    },
+    "description": {
+      "en": "On or near 3 February, Catholics may receive a traditional blessing invoking St Blaise's intercession against ailments of the throat and other illnesses. In the historical Roman Ritual a priest blesses candles specifically for this blessing and applies two crossed candles while praying; the modern Book of Blessings provides different candle and ministerial provisions.",
+      "fr": "Autour du 3 février, les catholiques peuvent recevoir une bénédiction traditionnelle demandant l'intercession de saint Blaise contre les maux de gorge et d'autres maladies. L'ancien Rituel romain prévoit une bénédiction et un usage spécifiques de cierges croisés ; les dispositions du rituel actuel sont différentes."
+    },
+    "history": {
+      "en": "Historical Roman Ritual witnesses describe the St Blaise blessing of throats with crossed candles. The later Book of Blessings has different provisions; neither witness establishes a compulsory Mass rite or guarantees recovery from illness.",
+      "fr": "Des témoins de l'ancien Rituel romain décrivent la bénédiction des gorges de saint Blaise avec des cierges croisés. Le Livre des bénédictions plus récent prévoit d'autres dispositions ; aucun ne crée un rite obligatoire de la messe ni ne garantit la guérison."
+    },
+    "meaning": {
+      "en": "The blessing of throats invokes God's help through the intercession of St Blaise.",
+      "fr": "La bénédiction des gorges invoque l’aide de Dieu par l’intercession de saint Blaise."
+    },
+    "practice": {
+      "en": "Receive the customary blessing from an authorized minister where it is offered; the app cannot perform a blessing or promise a cure.",
+      "fr": "Recevoir la bénédiction d’un ministre habilité là où elle est proposée ; l’application ne bénit pas et ne promet aucune guérison."
+    },
+    "caution": {
+      "en": "Voluntary, not a Mass or a third-class feast in the ordinary 1962 calendar, not a promise of healing, and no app-provided or lay-invented priestly ceremony. The historical St Blaise candle blessing and modern Candlemas-candle provision must not be equated. Availability varies by parish.",
+      "fr": "Pratique facultative, sans promesse de guérison ni cérémonie à inventer par les laïcs. Ne pas confondre les prescriptions de l'ancien Rituel romain et du livre moderne des bénédictions."
+    },
+    "occasion": {
+      "en": "03/02, St Blaise commemoration in 1962 Roman calendar; Calendar owns calculation and precedence",
+      "fr": "3 février — commémoraison de saint Blaise dans le calendrier romain de 1962 ; préséance réglée par le Calendrier"
+    },
+    "scope": {
+      "en": "geo:world",
+      "fr": "geo:world"
+    },
+    "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
+    "sources": [
+      {
+        "id": "ROMR-BLAISE-1956",
+        "title": "The Rural Life Prayerbook — blessing of candles on St Blaise (Roman Ritual)",
+        "url": "https://www.ewtn.com/catholicism/library/rural-life-prayerbook-11881"
+      },
+      {
+        "id": "SCHOLA-BLAISE-LATIN",
+        "title": "Bénédictions de saint Blaise contre les maux de gorge — Rituale Romanum Latin/French",
+        "url": "https://schola-sainte-cecile.com/2013/02/02/benedictions-de-saint-blaise-contre-les-maux-de-gorge/"
+      },
+      {
+        "id": "BOOK-BLESSINGS-BLAISE",
+        "title": "Book of Blessings §§1625–1650 — blessing of throats",
+        "url": "https://www.catholicculture.org/culture/liturgicalyear/prayers/view.cfm?id=733"
+      },
+      {
+        "id": "ORDO-BLAISE-1962",
+        "title": "1962 Ordo — St Blaise 3 February 2026",
+        "url": "https://1962ordo.today/day/feria-11-3-2-3-2/"
+      }
+    ]
+  },
+  {
+    "id": "NDAY-001",
+    "title": {
+      "en": "Baptismal patron's name day",
+      "fr": "Fête du saint patron de baptême"
+    },
+    "description": {
+      "en": "Families may commemorate a person's baptismal patron on that saint's feast with prayer, the saint's life and a modest family meal, optionally attending Mass; this is a voluntary domestic celebration, not an additional liturgical feast.",
+      "fr": "Une famille peut célébrer la fête du saint patron de baptême d'une personne par la prière, la lecture de sa vie et un repas modeste, éventuellement avec l'assistance à la messe. Il s'agit d'une coutume familiale facultative."
+    },
+    "history": {
+      "en": "A Catholic household handbook published in 1962 documents family celebration of a baptismal patron's feast. The occasion follows a personally identified patron and traditional feast; it creates no additional universal liturgical date.",
+      "fr": "Un manuel catholique pour les familles, publié en 1962, atteste la fête familiale du patron de baptême. Cette occasion suppose un patron personnellement identifié et sa fête traditionnelle ; elle n'ajoute aucune date universelle au calendrier liturgique."
+    },
+    "meaning": {
+      "en": "Honouring one's baptismal patron encourages imitation of the saint and gratitude for Christian life.",
+      "fr": "Célébrer son patron de baptême encourage l’imitation du saint et la reconnaissance pour la vie chrétienne."
+    },
+    "practice": {
+      "en": "Identify the real patron and traditional feast, pray and read the saint's life, and mark the day modestly as desired.",
+      "fr": "Identifier son véritable patron et sa fête traditionnelle, prier, lire sa vie et marquer modestement la journée selon son souhait."
+    },
+    "caution": {
+      "en": "Only display after a user chooses a patron and the relevant traditional saint feast. Never infer a patron from a first name, invent an obligation, or create a second feast.",
+      "fr": "Ne jamais déduire le patron du seul prénom ; la date doit être liée au saint effectivement choisi et à sa fête traditionnelle."
+    },
+    "occasion": {
+      "en": "Family or local occasion",
+      "fr": "Occasion familiale ou locale"
+    },
+    "scope": {
+      "en": "geo:country:US",
+      "fr": "geo:country:US"
+    },
+    "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
+    "sources": [
+      {
+        "id": "EWTN-MCLOUGHLIN-NAMEDAY",
+        "title": "My Nameday—Come for Dessert (1962)",
+        "url": "https://www.ewtn.com/catholicism/library/my-namedaycome-for-desert-10465"
+      }
+    ]
+  },
+  {
+    "id": "PATR-001",
+    "title": {
+      "en": "French fête patronale / village patronal celebration",
+      "fr": "Fête patronale d'un village ou d'une paroisse"
+    },
+    "description": {
+      "en": "A French local church or village may observe its own patronal feast with Mass, procession and communal festivities; the particular date and form belong to the local place and are not universally scheduled.",
+      "fr": "Une église ou une communauté villageoise française peut fêter son saint patron par une messe, une procession et des réjouissances communes. La date et les formes sont propres au lieu."
+    },
+    "history": {
+      "en": "A French report on Chantelle documents a local patronal celebration. The witness demonstrates that some communities preserve these feast customs; it does not define the form, date or status of every patronal celebration in France.",
+      "fr": "Un reportage français sur Chantelle documente une fête patronale locale. Ce témoignage montre que certaines communautés conservent ces usages, sans déterminer la forme, la date ou le statut de toutes les fêtes patronales françaises."
+    },
+    "meaning": {
+      "en": "The patronal feast recalls a parish or village's heavenly protector and builds Christian community.",
+      "fr": "La fête patronale rappelle le protecteur céleste d’une paroisse ou d’un village et fortifie la communauté chrétienne."
+    },
+    "practice": {
+      "en": "Consult the actual parish patron and programme, attend Mass or announced celebrations if possible; festival dates do not automatically control the 1962 liturgical observance.",
+      "fr": "Consulter le patron et le programme réels de la paroisse, assister si possible à la messe ou aux célébrations annoncées ; la date civile ne fixe pas automatiquement l’observance liturgique de 1962."
+    },
+    "caution": {
+      "en": "The documented Chantelle celebration after Ascension does not establish a national date, a 1962 Mass rank or automatic procession.",
+      "fr": "Un exemple documenté ne fixe ni une date nationale, ni un rang liturgique universel, ni une procession automatique."
+    },
+    "occasion": {
+      "en": "Family or local occasion",
+      "fr": "Occasion familiale ou locale"
+    },
+    "scope": {
+      "en": "geo:country:FR",
+      "fr": "geo:country:FR"
+    },
+    "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
+    "sources": [
+      {
+        "id": "ECF-CHANTELLE-PATRONAL",
+        "title": "À la rencontre des bénédictines de l'abbaye de Chantelle",
+        "url": "https://eglise.catholique.fr/conference-des-eveques-de-france/guide-de-leglise/dioceses/a-decouverte-dioceses-de-france/diocese-de-moulins/493837-abbaye-de-chantelle/"
+      }
+    ]
+  },
+  {
+    "id": "MARI-001",
+    "title": {
+      "en": "French Assumption Marian processions",
+      "fr": "Processions mariales de l'Assomption en France"
+    },
+    "description": {
+      "en": "In documented French localities the Assumption is celebrated with public Marian processions, sometimes carrying a statue of Our Lady. Participation is voluntary and dependent on an actual locally announced event.",
+      "fr": "Dans certaines localités françaises documentées, l'Assomption est accompagnée d'une procession mariale publique, parfois avec une statue de la Vierge. La participation est libre et dépend d'une célébration locale réellement annoncée."
+    },
+    "history": {
+      "en": "The Diocese of Paris documented specific Marian processions at Notre-Dame for the 2026 Assumption celebrations. The source confirms a named local event, not an automatic procession at every church on 15 August.",
+      "fr": "Le diocèse de Paris a annoncé des processions mariales particulières à Notre-Dame lors de l'Assomption 2026. La source atteste une célébration locale nommée, non une procession automatique dans toutes les églises le 15 août."
+    },
+    "meaning": {
+      "en": "The Assumption procession manifests local public devotion to the Blessed Virgin and confidence in her heavenly glory.",
+      "fr": "La procession de l’Assomption manifeste la dévotion publique locale envers la Vierge et la confiance en sa gloire céleste."
+    },
+    "practice": {
+      "en": "Attend only an actual local or diocesan Marian procession; no procession or route is presumed simply because it is 15 August.",
+      "fr": "Participer uniquement à une procession mariale réellement annoncée ; le 15 août ne suffit pas à supposer une procession ou un parcours."
+    },
+    "caution": {
+      "en": "The feast date is not a procession flag. Existing Mass and ceremonial reader remains exclusively responsible for an explicitly selected local rite.",
+      "fr": "La date de l'Assomption ne déclenche pas automatiquement une procession dans l'application."
+    },
+    "occasion": {
+      "en": "15/08 — Assumption; regional context, never automatic ritual",
+      "fr": "15 août — Assomption ; procession régionale seulement si annoncée"
+    },
+    "scope": {
+      "en": "geo:country:FR",
+      "fr": "geo:country:FR"
+    },
+    "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
+    "sources": [
+      {
+        "id": "DIOCESE-PARIS-ASSOMPTION-2026",
+        "title": "Fête de l'Assomption à Notre-Dame de Paris 2026",
+        "url": "https://dioceseparis.fr/fete-de-l-assomption-a-notre-dame-68561.html"
+      }
+    ]
+  },
+  {
+    "id": "SJOS-001",
+    "title": {
+      "en": "St Joseph's table and gifts to the poor",
+      "fr": "Table de saint Joseph et partage avec les pauvres"
+    },
+    "description": {
+      "en": "The Sicilian-rooted St Joseph table is a charitable feast custom involving a display or sharing of food and support for people in need, with documented modern parish celebrations around 19 March.",
+      "fr": "Issue d'une tradition sicilienne, la table de saint Joseph associe nourriture exposée ou partagée et aide aux personnes démunies ; des paroisses la pratiquent encore autour du 19 mars."
+    },
+    "history": {
+      "en": "A diocesan 2026 St Joseph altar documents charitable sharing linked to the saint's feast. This contemporary example belongs to a tradition with Sicilian roots, but its local food and arrangements are not universal requirements.",
+      "fr": "Un autel de saint Joseph annoncé par un diocèse en 2026 témoigne d'un partage charitable lié à la fête du saint. Cet exemple contemporain appartient à une tradition d'origine sicilienne, mais ses aliments et son organisation ne sont pas des exigences universelles."
+    },
+    "meaning": {
+      "en": "A St Joseph table and charitable giving recall his care for the Holy Family and support for the poor.",
+      "fr": "La table de saint Joseph et les dons charitables rappellent sa sollicitude envers la Sainte Famille et les pauvres."
+    },
+    "practice": {
+      "en": "Where this Sicilian-derived tradition is observed, families may share food or contribute to a verified charity; no universal table arrangement is required.",
+      "fr": "Là où cet usage d’origine sicilienne existe, les familles peuvent partager des aliments ou soutenir une œuvre reconnue ; aucune disposition de table n’est universellement prescrite."
+    },
+    "caution": {
+      "en": "A domestic St Joseph table is not the celebration of a Mass or a lay-performed priestly blessing. Do not present specific pastries, miracle accounts or dates of transferred Masses as established.",
+      "fr": "Une table domestique de saint Joseph n'est ni une messe ni une bénédiction sacerdotale improvisée par les laïcs."
+    },
+    "occasion": {
+      "en": "19/03 — St Joseph feast; optional local family and parish practice",
+      "fr": "19 mars — saint Joseph ; pratique familiale ou paroissiale facultative"
+    },
+    "scope": {
+      "en": "geo:country:US",
+      "fr": "geo:country:US"
+    },
+    "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
+    "sources": [
+      {
+        "id": "BR-DIOCESE-STJOSEPH-2026",
+        "title": "St Joseph Cathedral St Joseph Altar",
+        "url": "https://www.diobr.org/news/st-joseph-cathedral-st-joseph-altar-1"
+      }
+    ]
+  },
+  {
+    "id": "SANT-001",
+    "title": {
+      "en": "St Anthony's Bread / Pain des pauvres",
+      "fr": "Pain de saint Antoine, ou pain des pauvres"
+    },
+    "description": {
+      "en": "The Franciscan charitable practice of St Anthony's Bread supports people in need; its French revival is associated with Louise Bouffier of Toulon in 1890. Families may honour the saint with voluntary almsgiving.",
+      "fr": "Cette œuvre de charité franciscaine vient en aide aux personnes démunies. Son renouveau français est associé à Louise Bouffier, à Toulon, en 1890. Les familles peuvent honorer le saint par une aumône libre."
+    },
+    "history": {
+      "en": "Franciscan accounts associate St Anthony's Bread with assistance to the poor and a French revival at Toulon in 1890. This supports the history of almsgiving, not an obligation to donate or a claim that money purchases a miracle.",
+      "fr": "Des sources franciscaines associent le Pain de saint Antoine à l'aide aux pauvres et à un renouveau français à Toulon en 1890. Elles attestent l'histoire de l'aumône, non une obligation de donner ni l'idée que l'argent achèterait un miracle."
+    },
+    "meaning": {
+      "en": "St Anthony's Bread encourages charity toward the poor under the saint's patronage.",
+      "fr": "Le Pain de saint Antoine encourage la charité envers les pauvres sous le patronage du saint."
+    },
+    "practice": {
+      "en": "Give food or support to an established charitable work in the saint's honour; do not turn historical alms into a promised miraculous exchange.",
+      "fr": "Donner des aliments ou soutenir une œuvre caritative reconnue en l’honneur du saint ; ne pas transformer l’aumône historique en échange miraculeux garanti."
+    },
+    "caution": {
+      "en": "Almsgiving is not a payment for favours, fundraising functionality, or a guarantee of a miracle. No contact or money spending is required by the app.",
+      "fr": "L'aumône n'achète ni faveur ni miracle ; l'application ne demande ni don d'argent ni contact extérieur."
+    },
+    "occasion": {
+      "en": "13/06 — St Anthony of Padua; charity can be practised on any day",
+      "fr": "13 juin — saint Antoine de Padoue ; la charité se pratique toute l'année"
+    },
+    "scope": {
+      "en": "geo:country:FR",
+      "fr": "geo:country:FR"
+    },
+    "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
+    "sources": [
+      {
+        "id": "ERMITAGE-ANTHONY-POOR-BREAD",
+        "title": "Le Pain des pauvres",
+        "url": "https://st-antoine.org/fr/sanctuaire/faire-un-don/loeuvre-du-pain-des-pauvres/"
+      }
+    ]
+  },
+  {
+    "id": "SCHR-001",
+    "title": {
+      "en": "St Christopher — vehicles and travellers' blessing",
+      "fr": "Saint Christophe : bénédiction des véhicules et voyageurs"
+    },
+    "description": {
+      "en": "Some French parishes celebrate St Christopher and arrange a ministerial blessing of drivers, travellers and vehicles near 25 July; one 2026 parish example took place on 19 July.",
+      "fr": "Certaines paroisses françaises célèbrent saint Christophe et organisent une bénédiction des conducteurs, voyageurs et véhicules autour du 25 juillet ; la date effective peut varier localement."
+    },
+    "history": {
+      "en": "A diocesan announcement from Laval documents a real local vehicle blessing around St Christopher's feast in 2026. Such ministerial blessings depend on actual parish arrangements and are neither universal nor guarantees against accidents.",
+      "fr": "Une annonce du diocèse de Laval documente une bénédiction locale de véhicules autour de la fête de saint Christophe en 2026. Ces bénédictions ministérielles dépendent des dispositions paroissiales réelles ; elles ne sont ni universelles ni des garanties contre les accidents."
+    },
+    "meaning": {
+      "en": "Asking God's blessing on travellers expresses trust in providence and the duty to travel responsibly.",
+      "fr": "Demander la bénédiction divine des voyageurs exprime la confiance dans la providence et le devoir de prudence."
+    },
+    "practice": {
+      "en": "A priest may bless vehicles or travellers where that rite is offered; proper driving and maintenance remain essential.",
+      "fr": "Un prêtre peut bénir les véhicules ou voyageurs là où le rite est proposé ; la prudence et l’entretien restent indispensables."
+    },
+    "caution": {
+      "en": "Optional and only if arranged locally; no guarantee of physical safety, no invented lay blessing formula, no universal parish offering.",
+      "fr": "Facultatif et dépendant d'une célébration locale ; aucune promesse de sécurité, formule laïque inventée ni offre universelle."
+    },
+    "occasion": {
+      "en": "25/07 — St Christopher commemoration; parish event date may differ",
+      "fr": "25 juillet — saint Christophe ; la date paroissiale peut différer"
+    },
+    "scope": {
+      "en": "geo:country:FR",
+      "fr": "geo:country:FR"
+    },
+    "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
+    "sources": [
+      {
+        "id": "DIOCESE-LAVAL-CHRISTOPHER-2026",
+        "title": "Bénédiction des voitures à St Christophe",
+        "url": "https://paroisse.diocesedelaval.fr/benediction-des-voitures-a-st-christophe/"
+      }
+    ]
+  },
+  {
+    "id": "SNIC-001",
+    "title": {
+      "en": "St Nicholas's visit and small gifts to children",
+      "fr": "Saint Nicolas : visite et petits cadeaux aux enfants"
+    },
+    "description": {
+      "en": "In parts of Alsace and Lorraine, families and communities mark St Nicholas's 6 December feast with a costumed visitor, treats or modest gifts, and stories that can lead children toward the saint's Christian charity.",
+      "fr": "En Alsace et en Lorraine, familles et communautés marquent parfois le 6 décembre par la visite d'un personnage costumé, des friandises ou de petits cadeaux. La coutume peut rappeler aux enfants la charité chrétienne du saint."
+    },
+    "history": {
+      "en": "A Strasbourg diocesan account describes Alsatian St Nicholas gifts and visits for children. It distinguishes local traditions and folklore from the historical bishop, without making gift-giving a prescribed religious obligation.",
+      "fr": "Une présentation du diocèse de Strasbourg décrit les cadeaux et visites de saint Nicolas aux enfants en Alsace. Elle distingue les traditions locales et le folklore de l'évêque historique, sans faire des cadeaux une obligation religieuse prescrite."
+    },
+    "meaning": {
+      "en": "St Nicholas's visit recalls the bishop's charity and encourages discreet generosity to children.",
+      "fr": "La visite de saint Nicolas rappelle la charité de l’évêque et invite à la générosité envers les enfants."
+    },
+    "practice": {
+      "en": "Where customary, a family or parish may give modest gifts while telling the saint's story; distinguish the historical saint from later folklore.",
+      "fr": "Là où existe cette coutume, une famille ou paroisse peut offrir de petits cadeaux en racontant la vie du saint ; distinguer le personnage historique du folklore ultérieur."
+    },
+    "caution": {
+      "en": "The historical biography of Nicholas must be distinguished from later folklore. Exclude threatening costumed helpers and claims that gifts are liturgically required.",
+      "fr": "Distinguer la vie historique du saint des traditions folkloriques ultérieures ; ne pas présenter les cadeaux comme une obligation liturgique."
+    },
+    "occasion": {
+      "en": "06/12 — St Nicholas; regional household custom",
+      "fr": "6 décembre — saint Nicolas ; coutume familiale régionale"
+    },
+    "scope": {
+      "en": "geo:country:FR",
+      "fr": "geo:country:FR"
+    },
+    "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
+    "sources": [
+      {
+        "id": "STRASBOURG-SAINT-NICOLAS-2022",
+        "title": "6 décembre : Fête de Saint-Nicolas",
+        "url": "https://www.alsace.catholique.fr/actualites/dossiers-thematiques/418575-6-decembre-fete-de-saint-nicolas/"
+      }
+    ]
+  },
+  {
+    "id": "BLSS-002",
+    "title": {
+      "en": "Assumption — blessing of herbs, flowers and fruits",
+      "fr": "Assomption : bénédiction des herbes, fleurs et fruits"
+    },
+    "description": {
+      "en": "In parts of Catholic Europe, especially historically Germanic regions, herbs, flowers and the fruits of the earth are brought for a priestly blessing on the Assumption of the Blessed Virgin Mary (15 August). The Roman Ritual includes an appropriate traditional blessing, while local provision varies.",
+      "fr": "Dans certaines régions de l'Europe catholique, surtout de tradition germanique, des herbes, fleurs et fruits sont apportés à un prêtre pour être bénis lors de l'Assomption, le 15 août. Une bénédiction traditionnelle figure au Rituel romain ; la pratique locale varie."
+    },
+    "history": {
+      "en": "The Church's Directory situates the Assumption blessing of herbs particularly in Germanic regions. A historical Roman Ritual form and a documented parish example provide distinct evidence for a priestly, optional practice.",
+      "fr": "Le Directoire de l'Église situe notamment dans les régions germaniques la bénédiction des herbes de l'Assomption. Une forme de l'ancien Rituel romain et un exemple paroissial documenté fournissent des témoignages distincts de cette pratique sacerdotale facultative."
+    },
+    "meaning": {
+      "en": "The Assumption herb blessing associates thanksgiving for creation with honour to the Blessed Virgin.",
+      "fr": "La bénédiction des herbes à l’Assomption associe la reconnaissance pour la création à l’honneur rendu à la Sainte Vierge."
+    },
+    "practice": {
+      "en": "Bring an appropriate bouquet where a priest publicly offers the local blessing; do not assume an automatically available rite.",
+      "fr": "Apporter un bouquet adapté là où un prêtre propose publiquement la bénédiction locale ; ne pas présumer de la disponibilité automatique du rite."
+    },
+    "caution": {
+      "en": "Do not present as mandatory, universal, a guarantee of healing, or a magical protection. No Mass/ceremonial mechanics or ministerial blessing formula in lay guidance. Availability depends on local clergy.",
+      "fr": "Ni obligatoire ni universelle : pas de promesse de guérison ou de protection magique. Ne pas inventer de formule de bénédiction."
+    },
+    "occasion": {
+      "en": "15 August, Assumption; date and Mass rank owned by Calendar",
+      "fr": "15 août — Assomption ; date et rang de la messe fixés par le Calendrier"
+    },
+    "scope": {
+      "en": "geo:world",
+      "fr": "geo:world"
+    },
+    "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
+    "sources": [
+      {
+        "id": "DPP-ASSUMPTION-HERBS-181",
+        "title": "Directory on Popular Piety and the Liturgy, section 181",
+        "url": "https://www.vatican.va/content/dam/wss/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html"
+      },
+      {
+        "id": "RIT-ASSUMPTION-WELLER",
+        "title": "Roman Ritual: Blessing of Fruits and Herbs on the Assumption",
+        "url": "https://www.catholicculture.org/culture/liturgicalyear/prayers/view.cfm?id=1132"
+      },
+      {
+        "id": "PARISH-ASSUMPTION-HERBS-NEWTON",
+        "title": "Blessing of Herbs and First-Fruits on the Assumption of Our Lady",
+        "url": "https://www.maryimmaculateoflourdesnewtonma.org/blessing-of-herbs-and-first-fruits-on-the-assumption-of-our-lady"
+      }
+    ]
+  },
+  {
+    "id": "BLSS-003",
+    "title": {
+      "en": "St John the Evangelist — blessing of wine",
+      "fr": "Saint Jean l'Évangéliste : bénédiction du vin"
+    },
+    "description": {
+      "en": "A documented traditional Catholic custom on 27 December is to bring wine to be blessed by a priest in honour of St John the Evangelist. This custom is preserved in historical Roman Ritual material and local Catholic practice; the associated account of poisoned wine is traditional legend, not a proven historical episode.",
+      "fr": "Une coutume catholique traditionnelle du 27 décembre consiste à apporter du vin pour qu'un prêtre le bénisse en l'honneur de saint Jean l'Évangéliste. Elle est attestée dans l'ancien Rituel romain ; le récit du vin empoisonné relève de la légende."
+    },
+    "history": {
+      "en": "Historical ritual transcriptions and independent parish witnesses describe wine brought for priestly blessing on St John's feast, 27 December. The poisoned-wine account remains legend; the blessed wine is not the Precious Blood or a remedy.",
+      "fr": "Des transcriptions rituelles historiques et des témoignages paroissiaux indépendants décrivent le vin apporté pour être béni par un prêtre le 27 décembre, fête de saint Jean. Le récit du vin empoisonné demeure légendaire ; le vin béni n'est ni le Précieux Sang ni un remède."
+    },
+    "meaning": {
+      "en": "The blessing of St John's wine recalls charity and the apostle's faithfulness to Christ.",
+      "fr": "La bénédiction du vin de saint Jean rappelle la charité et la fidélité de l’apôtre au Christ."
+    },
+    "practice": {
+      "en": "The blessing belongs to a qualified priest where offered; this record does not supply a lay substitute or instruct anyone to drink wine.",
+      "fr": "La bénédiction revient à un prêtre habilité là où elle existe ; cette notice n’en donne pas de substitut laïc et n’ordonne pas de boire du vin."
+    },
+    "caution": {
+      "en": "No implication that wine is the Precious Blood, automatic protection, universal parish availability, medical treatment, compulsory drinking or an invitation to drink alcohol. Blessing is ministerial.",
+      "fr": "Ne pas confondre ce vin avec le Précieux Sang ; aucune protection garantie, prescription médicale ou obligation de boire. Bénédiction réservée au ministre compétent."
+    },
+    "occasion": {
+      "en": "27 December, feast of St John the Apostle and Evangelist in 1962 Roman calendar",
+      "fr": "27 décembre — saint Jean, apôtre et évangéliste, dans le calendrier romain de 1962"
+    },
+    "scope": {
+      "en": "geo:world",
+      "fr": "geo:world"
+    },
+    "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
+    "sources": [
+      {
+        "id": "RIT-STJOHN-WINE-1962-TRANSCRIPTION",
+        "title": "Traditional Blessing of Wine on St John the Evangelist's Feast",
+        "url": "https://materdeiparish.com/2016/12/blessing-wine-feast-st-john-tuesday-december-27th/"
+      },
+      {
+        "id": "UK-PARISH-STJOHN-WINE",
+        "title": "St John the Evangelist — Patron Saint (traditional wine blessing)",
+        "url": "https://stjohnstadworth.org.uk/our-parish/patron-saint/"
+      }
+    ]
+  },
+  {
+    "id": "BLSS-004",
+    "title": {
+      "en": "Holy Saturday — blessing of Easter foods",
+      "fr": "Samedi saint : bénédiction des aliments de Pâques"
+    },
+    "description": {
+      "en": "In several Catholic regional traditions, especially Polish and other Central/Eastern European households, families bring eggs, bread and other Easter foods to be blessed by an authorised minister, often on Holy Saturday. The foods are subsequently shared at Easter; the historical Roman Ritual includes blessings of lamb, eggs and bread.",
+      "fr": "Dans plusieurs traditions catholiques régionales, notamment polonaises et centre-européennes, des familles apportent des œufs, du pain et d'autres aliments pascals à un ministre autorisé pour qu'il les bénisse, souvent le Samedi saint. Ces aliments sont ensuite partagés à Pâques."
+    },
+    "history": {
+      "en": "The Roman Ritual contains historical blessings for certain Easter foods; a modern diocesan source documents Holy Saturday basket blessing, particularly in Slavic-rooted communities. Local provisions and basket contents vary, and this practice does not displace the Easter Vigil.",
+      "fr": "L'ancien Rituel romain contient des bénédictions de certains aliments de Pâques ; une source diocésaine récente atteste la bénédiction des paniers du Samedi saint, notamment dans les communautés de tradition slave. Les dispositions et le contenu varient localement, sans supplanter la Vigile pascale."
+    },
+    "meaning": {
+      "en": "The blessing of Easter foods connects domestic celebration with thanksgiving for the Resurrection.",
+      "fr": "La bénédiction des aliments de Pâques relie la fête familiale à l’action de grâce pour la Résurrection."
+    },
+    "practice": {
+      "en": "Where the parish offers the traditional regional blessing, bring suitable foods for a priest to bless; keep it distinct from the Easter Vigil liturgy.",
+      "fr": "Là où la paroisse propose la bénédiction régionale traditionnelle, apporter des aliments adaptés au prêtre ; distinguer cet usage de la liturgie de la Vigile pascale."
+    },
+    "caution": {
+      "en": "No obligation, no universal standard basket contents or Holy Saturday schedule. Distinguish a minister's ritual blessing from family prayer before the Easter meal and do not displace the Easter Vigil.",
+      "fr": "Aucune obligation ni contenu de panier universel ; distinguer bénédiction ministérielle et prière familiale, sans supplanter la Vigile pascale."
+    },
+    "occasion": {
+      "en": "Holy Saturday (calculated from 1962 Easter by Calendar), with domestic use on Easter Sunday",
+      "fr": "Samedi saint, calculé par le Calendrier ; partage domestique des aliments à Pâques"
+    },
+    "scope": {
+      "en": "geo:world",
+      "fr": "geo:world"
+    },
+    "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
+    "sources": [
+      {
+        "id": "RIT-EASTER-FOOD-WELLER",
+        "title": "Easter Blessing of Food — Roman Ritual, Volume III",
+        "url": "https://www.catholicculture.org/culture/liturgicalyear/prayers/view.cfm?id=1028"
+      },
+      {
+        "id": "US-DIOCESE-EASTER-BASKETS",
+        "title": "The Blessing of Easter Baskets: Tradition, Symbolism and Holy Saturday Schedules",
+        "url": "https://www.norwichdiocese.org/Stay-Informed/All-Diocesan-Articles/articleType/ArticleView/articleId/25953/The-Blessing-of-Easter-Baskets-Tradition-Symbolism-and-Holy-Saturday-Schedules"
+      },
+      {
+        "id": "DPP-2001",
+        "title": "Directory on Popular Piety and the Liturgy",
+        "url": "https://www.vatican.va/content/dam/wss/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html"
+      }
+    ]
+  }
+];
