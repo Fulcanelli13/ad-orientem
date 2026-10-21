@@ -70,6 +70,7 @@ const calendar=readFileSync(new URL("src/calendar/calendar-runtime.js",root),"ut
 const pray=readFileSync(new URL("src/pray/presentation-runtime.js",root),"utf8");
 const ui=readFileSync(new URL("src/customs/personal-ui.js",root),"utf8");
 assert.match(calendar,/calendarPersonalContext\(selected\)/,"Calendar personal items are date-contextual");
+assert.match(calendar,/data-cal-personal-reading/,"Personal prayer body must be readable from selected Calendar day");
 assert.match(calendar,/data-cal-my-customs-open/);
 assert.match(pray,/data-p435930-my-customs/);
 assert.match(ui,/onChange\?\.\(\)/);
