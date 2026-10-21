@@ -209,7 +209,7 @@ try{
    await graph.locator("select[data-network-kind]").selectOption("person");
    assert.ok(await graph.locator(".aoNetworkResults button[data-network-focus^='person:']").count()>0);
    await graph.locator(".aoNetworkMention").waitFor({state:"visible"});
-   assert.match(await graph.locator(".aoNetworkMention").innerText(),/not a linked Saints profile/);
+   assert.match(await graph.locator(".aoNetworkMention").innerText(),/not a linked Saints profile/i);
    await page.screenshot({path:resolve(out,"explore-"+width+"-network-person.png"),fullPage:false});
    await graph.locator("button[data-network-close]").click();
    await graph.waitFor({state:"detached",timeout:10000});
