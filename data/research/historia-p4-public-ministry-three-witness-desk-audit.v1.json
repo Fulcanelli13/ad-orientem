@@ -1,0 +1,1848 @@
+{
+  "schema": "ao.historia.p4.public-ministry-three-witness-desk-audit.v1",
+  "date": "2026-10-21",
+  "status": "RESEARCH_ONLY_46_OF_183_NO_PUBLICATION_OR_LOCATION_APPROVAL",
+  "sources": {
+    "scene": {
+      "path": "data/explore/biblical-cinematic-studies-review.v1.json",
+      "branch": "feature/biblical-atlas-current-main-convergence-20261012",
+      "pr": 1069,
+      "blobSha": "d937288862abab192e1d584f0e663a3eebb46611"
+    },
+    "witnesses": [
+      {
+        "path": "data/scripture/witness/dr-challoner/Matthew.json",
+        "edition": "dr-challoner",
+        "book": "Matthew",
+        "sourceStatus": "UNCOLLATED_SOURCE_WITNESS",
+        "blobSha": "004832d16a49ceca579d674adf94dac9d3902234"
+      },
+      {
+        "path": "data/scripture/witness/cpdv-2009/Matthew.json",
+        "edition": "cpdv-2009",
+        "book": "Matthew",
+        "sourceStatus": "UNCOLLATED_SOURCE_WITNESS",
+        "blobSha": "d22f2d5f715731aa3e8fb8c05470f7a01489205e"
+      },
+      {
+        "path": "data/scripture/witness/crampon-1923/Matthew.json",
+        "edition": "crampon-1923",
+        "book": "Matthew",
+        "sourceStatus": "UNCOLLATED_SOURCE_WITNESS",
+        "blobSha": "a73aecf7e76be1657b578390c23007b0cfa4981c"
+      },
+      {
+        "path": "data/scripture/witness/dr-challoner/Mark.json",
+        "edition": "dr-challoner",
+        "book": "Mark",
+        "sourceStatus": "UNCOLLATED_SOURCE_WITNESS",
+        "blobSha": "e6e381cd25e5ab238a28602d8395da39adcce80d"
+      },
+      {
+        "path": "data/scripture/witness/cpdv-2009/Mark.json",
+        "edition": "cpdv-2009",
+        "book": "Mark",
+        "sourceStatus": "UNCOLLATED_SOURCE_WITNESS",
+        "blobSha": "7c81eedf9ddbe1888a3bd9901c1169d4bc0e6958"
+      },
+      {
+        "path": "data/scripture/witness/crampon-1923/Mark.json",
+        "edition": "crampon-1923",
+        "book": "Mark",
+        "sourceStatus": "UNCOLLATED_SOURCE_WITNESS",
+        "blobSha": "93c05664335f1d851ef0288fcd12a4015d380742"
+      },
+      {
+        "path": "data/scripture/witness/dr-challoner/Luke.json",
+        "edition": "dr-challoner",
+        "book": "Luke",
+        "sourceStatus": "UNCOLLATED_SOURCE_WITNESS",
+        "blobSha": "96b5a5d845c58359094814dc9317557fe4853bf0"
+      },
+      {
+        "path": "data/scripture/witness/cpdv-2009/Luke.json",
+        "edition": "cpdv-2009",
+        "book": "Luke",
+        "sourceStatus": "UNCOLLATED_SOURCE_WITNESS",
+        "blobSha": "c12aa39604852cd65e90ebbc00e0db989b2f46a8"
+      },
+      {
+        "path": "data/scripture/witness/crampon-1923/Luke.json",
+        "edition": "crampon-1923",
+        "book": "Luke",
+        "sourceStatus": "UNCOLLATED_SOURCE_WITNESS",
+        "blobSha": "4c8e3535c2200e3c4173cec16a198b8618d0fd4e"
+      },
+      {
+        "path": "data/scripture/witness/dr-challoner/John.json",
+        "edition": "dr-challoner",
+        "book": "John",
+        "sourceStatus": "UNCOLLATED_SOURCE_WITNESS",
+        "blobSha": "a146e78ec89ad15d3df29a49462c8373e9dee3f8"
+      },
+      {
+        "path": "data/scripture/witness/cpdv-2009/John.json",
+        "edition": "cpdv-2009",
+        "book": "John",
+        "sourceStatus": "UNCOLLATED_SOURCE_WITNESS",
+        "blobSha": "5c0f7929ec052ae1aa92c583219087bb25c32655"
+      },
+      {
+        "path": "data/scripture/witness/crampon-1923/John.json",
+        "edition": "crampon-1923",
+        "book": "John",
+        "sourceStatus": "UNCOLLATED_SOURCE_WITNESS",
+        "blobSha": "0f49d89ad2fb1754ef966305caf70f2a3b2b7790"
+      }
+    ]
+  },
+  "rules": [
+    "Gospel passage coordinates are verified for presence in installed Douay, CPDV and Crampon research witness files, not against named printed editions.",
+    "One known range extension is Mark 4:35–41 (6 available numbered entries, through Mark 4:40); no synthetic 4:41. Printed witness collation required.",
+    "Synoptic parallels are only editorial candidate relationships and never silently merged. Different named Gospel persons are not resolved by speculation.",
+    "Parables have no historical incident pins; traditional sites and cities never certify exact scenes.",
+    "The order of Matthew 14 feeding before walking on the water is a source-derived review candidate, not a cross-Gospel identity adjudication.",
+    "No new Scripture prose, genealogies, events, artwork, coordinates, or publication approvals generated."
+  ],
+  "counts": {
+    "chapter": "MINISTRY",
+    "firstIndex": 69,
+    "lastIndex": 114,
+    "reviewedSceneRows": 46,
+    "corpus": 183,
+    "requestedRangesWithIdenticalThreeWitnessCounts": 46,
+    "nominalRangeBoundaryDiscrepancies": 1,
+    "historicalCoordinatesApproved": 0,
+    "publicationApproved": 0,
+    "chronologyReviewFlags": 1,
+    "all46FullPrintedEditionCollationsComplete": 0
+  },
+  "highPriority": {
+    "mark4Storm": {
+      "sceneKey": "biblical:scene:christ:090",
+      "reference": "Mark 4:35–41",
+      "lastAvailableSourceVerse": "Mark 4:40",
+      "threeImportedWitnessesEachHave": 6,
+      "doNotInventVerse41": true
+    },
+    "feedingBeforeWalking": {
+      "firstSceneKey": "biblical:scene:christ:096",
+      "laterSceneKey": "biblical:scene:christ:095",
+      "withinMatthewEvidence": "Matthew 14:13–21 precedes Matthew 14:22–33",
+      "withinJohnEvidence": "John 6:1–15 precedes John 6:16–21",
+      "proposedReview": "REVIEW_SOURCE_ORDER_NOT_AUTO_REORDER",
+      "gospelParallelIdentityApproved": false
+    },
+    "parableSceneIndices": [
+      89,
+      108,
+      110
+    ]
+  },
+  "reviewedRows": [
+    {
+      "sceneKey": "biblical:scene:christ:069",
+      "originalIndex": 69,
+      "originalChapter": "MINISTRY",
+      "title": "The Baptism in the Jordan",
+      "scriptureReference": "Matthew 3:13–17",
+      "gospelWitness": "Matthew",
+      "existingLocationClaim": "Jordan valley · regional context",
+      "existingSceneAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEventKeys": [
+        {
+          "eventKey": "biblical:event:jordan-baptism-e1",
+          "originalStatus": "EXACT_REFERENCE"
+        }
+      ],
+      "sourceSpan": {
+        "douayChallonerEntries": 5,
+        "cpdv2009Entries": 5,
+        "crampon1923Entries": 5,
+        "quotedRangeNominalVerseCount": 5,
+        "hasExactRequestedEndVerse": true,
+        "witnessTextsUncollated": true
+      },
+      "provisionalActorsForSourceReview": [
+        "Jesus",
+        "John the Baptist"
+      ],
+      "actorIdentitiesCertified": false,
+      "locationEvidenceClass": "JORDAN_RIVER_BAPTISM_BANK_UNIDENTIFIED",
+      "editorialFinding": "Matthew 3:13-17 locates the Baptism in the Jordan, but does not establish the precise bank or a modern baptismal site.",
+      "editorialAction": "REGIONAL_JORDAN_CAMERA_ONLY",
+      "exactHistoricalCoordinatesApproved": false,
+      "synopticEpisodeIdentitiesMerged": false,
+      "verseBoundaryEditoriallyAccepted": false,
+      "readAloudAccepted": false,
+      "publicationApproved": false,
+      "reviewStage": "PASSAGE_COVERAGE_AND_SOURCE_QUALIFICATION_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:070",
+      "originalIndex": 70,
+      "originalChapter": "MINISTRY",
+      "title": "The forty-day fast",
+      "scriptureReference": "Matthew 4:1–11",
+      "gospelWitness": "Matthew",
+      "existingLocationClaim": "Judean wilderness · regional context",
+      "existingSceneAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEventKeys": [
+        {
+          "eventKey": "biblical:event:judean-wilderness-e1",
+          "originalStatus": "EXACT_REFERENCE"
+        }
+      ],
+      "sourceSpan": {
+        "douayChallonerEntries": 11,
+        "cpdv2009Entries": 11,
+        "crampon1923Entries": 11,
+        "quotedRangeNominalVerseCount": 11,
+        "hasExactRequestedEndVerse": true,
+        "witnessTextsUncollated": true
+      },
+      "provisionalActorsForSourceReview": [
+        "Jesus",
+        "devil"
+      ],
+      "actorIdentitiesCertified": false,
+      "locationEvidenceClass": "WILDERNESS_TEMPTATION_SITE_UNIDENTIFIED",
+      "editorialFinding": "Matthew 4:1-11 says the wilderness and describes temptations without certifying a particular modern cliff, summit or monastery.",
+      "editorialAction": "NO_TEMPTATION_SITE_PIN",
+      "exactHistoricalCoordinatesApproved": false,
+      "synopticEpisodeIdentitiesMerged": false,
+      "verseBoundaryEditoriallyAccepted": false,
+      "readAloudAccepted": false,
+      "publicationApproved": false,
+      "reviewStage": "PASSAGE_COVERAGE_AND_SOURCE_QUALIFICATION_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:071",
+      "originalIndex": 71,
+      "originalChapter": "MINISTRY",
+      "title": "Behold the Lamb of God",
+      "scriptureReference": "John 1:29–34",
+      "gospelWitness": "John",
+      "existingLocationClaim": "Jordan Valley · exact baptism site disputed",
+      "existingSceneAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEventKeys": [],
+      "sourceSpan": {
+        "douayChallonerEntries": 6,
+        "cpdv2009Entries": 6,
+        "crampon1923Entries": 6,
+        "quotedRangeNominalVerseCount": 6,
+        "hasExactRequestedEndVerse": true,
+        "witnessTextsUncollated": true
+      },
+      "provisionalActorsForSourceReview": [
+        "John the Baptist",
+        "Jesus"
+      ],
+      "actorIdentitiesCertified": false,
+      "locationEvidenceClass": "JOHN_WITNESS_NOT_SECOND_BAPTISM",
+      "editorialFinding": "John 1:29-34 presents the Baptist's testimony, not a new event of baptism at a separate point. Do not duplicate Matthew's Baptism or attach the same precise site by inference.",
+      "editorialAction": "SEPARATE_TESTIMONY_BEAT",
+      "exactHistoricalCoordinatesApproved": false,
+      "synopticEpisodeIdentitiesMerged": false,
+      "verseBoundaryEditoriallyAccepted": false,
+      "readAloudAccepted": false,
+      "publicationApproved": false,
+      "reviewStage": "PASSAGE_COVERAGE_AND_SOURCE_QUALIFICATION_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:072",
+      "originalIndex": 72,
+      "originalChapter": "MINISTRY",
+      "title": "The first disciples follow Jesus",
+      "scriptureReference": "John 1:35–51",
+      "gospelWitness": "John",
+      "existingLocationClaim": "Jordan Valley · exact baptism site disputed",
+      "existingSceneAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEventKeys": [
+        {
+          "eventKey": "biblical:event:jordan-east-bank-additional-008",
+          "originalStatus": "EXACT_REFERENCE"
+        }
+      ],
+      "sourceSpan": {
+        "douayChallonerEntries": 17,
+        "cpdv2009Entries": 17,
+        "crampon1923Entries": 17,
+        "quotedRangeNominalVerseCount": 17,
+        "hasExactRequestedEndVerse": true,
+        "witnessTextsUncollated": true
+      },
+      "provisionalActorsForSourceReview": [
+        "John the Baptist",
+        "Jesus",
+        "Andrew",
+        "Simon Peter",
+        "Philip",
+        "Nathanael"
+      ],
+      "actorIdentitiesCertified": false,
+      "locationEvidenceClass": "FIRST_DISCIPLES_JORDAN_REGIONAL",
+      "editorialFinding": "John 1:35-51 follows witness and disciples; a regional association with the Jordan does not locate every encounter, especially later Philip and Nathanael scenes.",
+      "editorialAction": "MULTIPLE_ENCOUNTERS_NO_SINGLE_PIN",
+      "exactHistoricalCoordinatesApproved": false,
+      "synopticEpisodeIdentitiesMerged": false,
+      "verseBoundaryEditoriallyAccepted": false,
+      "readAloudAccepted": false,
+      "publicationApproved": false,
+      "reviewStage": "PASSAGE_COVERAGE_AND_SOURCE_QUALIFICATION_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:073",
+      "originalIndex": 73,
+      "originalChapter": "MINISTRY",
+      "title": "The wedding at Cana",
+      "scriptureReference": "John 2:1–11",
+      "gospelWitness": "John",
+      "existingLocationClaim": "Galilee · location disputed",
+      "existingSceneAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEventKeys": [
+        {
+          "eventKey": "biblical:event:cana-e1",
+          "originalStatus": "EXACT_REFERENCE"
+        }
+      ],
+      "sourceSpan": {
+        "douayChallonerEntries": 11,
+        "cpdv2009Entries": 11,
+        "crampon1923Entries": 11,
+        "quotedRangeNominalVerseCount": 11,
+        "hasExactRequestedEndVerse": true,
+        "witnessTextsUncollated": true
+      },
+      "provisionalActorsForSourceReview": [
+        "Jesus",
+        "Mary",
+        "disciples",
+        "servants"
+      ],
+      "actorIdentitiesCertified": false,
+      "locationEvidenceClass": "CANA_BIBLICAL_TOWN_MODERN_SITE_CONTESTED",
+      "editorialFinding": "John 2:1 identifies Cana of Galilee but does not authenticate any modern wedding church or archaeological Cana claimant.",
+      "editorialAction": "CANA_REGION_ONLY",
+      "exactHistoricalCoordinatesApproved": false,
+      "synopticEpisodeIdentitiesMerged": false,
+      "verseBoundaryEditoriallyAccepted": false,
+      "readAloudAccepted": false,
+      "publicationApproved": false,
+      "reviewStage": "PASSAGE_COVERAGE_AND_SOURCE_QUALIFICATION_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:074",
+      "originalIndex": 74,
+      "originalChapter": "MINISTRY",
+      "title": "Jesus cleanses the Temple (John 2)",
+      "scriptureReference": "John 2:13–22",
+      "gospelWitness": "John",
+      "existingLocationClaim": "Jerusalem · Temple Mount context",
+      "existingSceneAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEventKeys": [
+        {
+          "eventKey": "biblical:event:jerusalem-temple-e3",
+          "originalStatus": "EXACT_REFERENCE"
+        }
+      ],
+      "sourceSpan": {
+        "douayChallonerEntries": 10,
+        "cpdv2009Entries": 10,
+        "crampon1923Entries": 10,
+        "quotedRangeNominalVerseCount": 10,
+        "hasExactRequestedEndVerse": true,
+        "witnessTextsUncollated": true
+      },
+      "provisionalActorsForSourceReview": [
+        "Jesus",
+        "merchants",
+        "moneychangers",
+        "disciples"
+      ],
+      "actorIdentitiesCertified": false,
+      "locationEvidenceClass": "TEMPLE_JERUSALEM_CITY_CONTEXT",
+      "editorialFinding": "John 2:13-22 describes Jerusalem's Temple, but not a reconstructible surviving exact court coordinate. Keep John's narrated cleansing distinct from the Synoptic presentation pending parallel source adjudication.",
+      "editorialAction": "TEMPLE_CONTEXT_NO_EXACT_COURT",
+      "exactHistoricalCoordinatesApproved": false,
+      "synopticEpisodeIdentitiesMerged": false,
+      "verseBoundaryEditoriallyAccepted": false,
+      "readAloudAccepted": false,
+      "publicationApproved": false,
+      "reviewStage": "PASSAGE_COVERAGE_AND_SOURCE_QUALIFICATION_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:075",
+      "originalIndex": 75,
+      "originalChapter": "MINISTRY",
+      "title": "Nicodemus comes by night",
+      "scriptureReference": "John 3:1–21",
+      "gospelWitness": "John",
+      "existingLocationClaim": "Jerusalem · ancient city context",
+      "existingSceneAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEventKeys": [],
+      "sourceSpan": {
+        "douayChallonerEntries": 21,
+        "cpdv2009Entries": 21,
+        "crampon1923Entries": 21,
+        "quotedRangeNominalVerseCount": 21,
+        "hasExactRequestedEndVerse": true,
+        "witnessTextsUncollated": true
+      },
+      "provisionalActorsForSourceReview": [
+        "Jesus",
+        "Nicodemus"
+      ],
+      "actorIdentitiesCertified": false,
+      "locationEvidenceClass": "NICODEMUS_MEETING_LOCATION_UNSPECIFIED",
+      "editorialFinding": "John 3:1-21 does not name a house or city for the night encounter. Jerusalem comes from the preceding narrative setting (John 2:23), not the selected span.",
+      "editorialAction": "NO_NICODEMUS_ROOM_PIN",
+      "exactHistoricalCoordinatesApproved": false,
+      "synopticEpisodeIdentitiesMerged": false,
+      "verseBoundaryEditoriallyAccepted": false,
+      "readAloudAccepted": false,
+      "publicationApproved": false,
+      "reviewStage": "PASSAGE_COVERAGE_AND_SOURCE_QUALIFICATION_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:076",
+      "originalIndex": 76,
+      "originalChapter": "MINISTRY",
+      "title": "The Samaritan woman",
+      "scriptureReference": "John 4:4–26",
+      "gospelWitness": "John",
+      "existingLocationClaim": "Samaria / Sychar region · approximate",
+      "existingSceneAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEventKeys": [
+        {
+          "eventKey": "biblical:event:sychar-e1",
+          "originalStatus": "EXACT_REFERENCE"
+        }
+      ],
+      "sourceSpan": {
+        "douayChallonerEntries": 23,
+        "cpdv2009Entries": 23,
+        "crampon1923Entries": 23,
+        "quotedRangeNominalVerseCount": 23,
+        "hasExactRequestedEndVerse": true,
+        "witnessTextsUncollated": true
+      },
+      "provisionalActorsForSourceReview": [
+        "Jesus",
+        "Samaritan woman",
+        "disciples"
+      ],
+      "actorIdentitiesCertified": false,
+      "locationEvidenceClass": "SYCHAR_NAMED_WELL_MODERN_IDENTIFICATION_REVIEW",
+      "editorialFinding": "John 4:5-6 names Sychar and Jacob's well; a modern pilgrimage site is a separate identification requiring archaeological and traditional evidence.",
+      "editorialAction": "BIBLICAL_SYCHAR_CONTEXT_ONLY",
+      "exactHistoricalCoordinatesApproved": false,
+      "synopticEpisodeIdentitiesMerged": false,
+      "verseBoundaryEditoriallyAccepted": false,
+      "readAloudAccepted": false,
+      "publicationApproved": false,
+      "reviewStage": "PASSAGE_COVERAGE_AND_SOURCE_QUALIFICATION_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:077",
+      "originalIndex": 77,
+      "originalChapter": "MINISTRY",
+      "title": "The royal official’s son is healed",
+      "scriptureReference": "John 4:46–54",
+      "gospelWitness": "John",
+      "existingLocationClaim": "Cana · Galilean region, village disputed",
+      "existingSceneAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEventKeys": [
+        {
+          "eventKey": "biblical:event:cana-miracle-02",
+          "originalStatus": "EXACT_REFERENCE"
+        }
+      ],
+      "sourceSpan": {
+        "douayChallonerEntries": 9,
+        "cpdv2009Entries": 9,
+        "crampon1923Entries": 9,
+        "quotedRangeNominalVerseCount": 9,
+        "hasExactRequestedEndVerse": true,
+        "witnessTextsUncollated": true
+      },
+      "provisionalActorsForSourceReview": [
+        "Jesus",
+        "royal official",
+        "official's son"
+      ],
+      "actorIdentitiesCertified": false,
+      "locationEvidenceClass": "CANA_VERSUS_CAPERNAUM_PERSONNEL_DISTINCTION",
+      "editorialFinding": "John 4:46 names Cana as the location of the request and Capernaum as the location of the sick child. Do not collapse the dialogue and remote healing into one Capernaum point.",
+      "editorialAction": "TWO_LOCATIONS_NO_CONFLATED_PIN",
+      "exactHistoricalCoordinatesApproved": false,
+      "synopticEpisodeIdentitiesMerged": false,
+      "verseBoundaryEditoriallyAccepted": false,
+      "readAloudAccepted": false,
+      "publicationApproved": false,
+      "reviewStage": "PASSAGE_COVERAGE_AND_SOURCE_QUALIFICATION_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:078",
+      "originalIndex": 78,
+      "originalChapter": "MINISTRY",
+      "title": "Capernaum, the synagogue",
+      "scriptureReference": "Mark 1:21–28",
+      "gospelWitness": "Mark",
+      "existingLocationClaim": "Capernaum · archaeological settlement",
+      "existingSceneAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEventKeys": [
+        {
+          "eventKey": "biblical:event:capernaum-e1",
+          "originalStatus": "EXACT_REFERENCE"
+        }
+      ],
+      "sourceSpan": {
+        "douayChallonerEntries": 8,
+        "cpdv2009Entries": 8,
+        "crampon1923Entries": 8,
+        "quotedRangeNominalVerseCount": 8,
+        "hasExactRequestedEndVerse": true,
+        "witnessTextsUncollated": true
+      },
+      "provisionalActorsForSourceReview": [
+        "Jesus",
+        "hearers",
+        "man with unclean spirit"
+      ],
+      "actorIdentitiesCertified": false,
+      "locationEvidenceClass": "CAPERNAUM_SYNAGOGUE_BUILDING_UNVERIFIED",
+      "editorialFinding": "Mark 1:21 names Capernaum and a synagogue but does not identify an excavated synagogue building as the exact first-century interior.",
+      "editorialAction": "CAPERNAUM_CITY_CONTEXT_ONLY",
+      "exactHistoricalCoordinatesApproved": false,
+      "synopticEpisodeIdentitiesMerged": false,
+      "verseBoundaryEditoriallyAccepted": false,
+      "readAloudAccepted": false,
+      "publicationApproved": false,
+      "reviewStage": "PASSAGE_COVERAGE_AND_SOURCE_QUALIFICATION_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:079",
+      "originalIndex": 79,
+      "originalChapter": "MINISTRY",
+      "title": "Peter’s mother-in-law healed",
+      "scriptureReference": "Mark 1:29–31",
+      "gospelWitness": "Mark",
+      "existingLocationClaim": "Capernaum · archaeological settlement",
+      "existingSceneAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEventKeys": [
+        {
+          "eventKey": "biblical:event:capernaum-miracle-04",
+          "originalStatus": "EXACT_REFERENCE"
+        }
+      ],
+      "sourceSpan": {
+        "douayChallonerEntries": 3,
+        "cpdv2009Entries": 3,
+        "crampon1923Entries": 3,
+        "quotedRangeNominalVerseCount": 3,
+        "hasExactRequestedEndVerse": true,
+        "witnessTextsUncollated": true
+      },
+      "provisionalActorsForSourceReview": [
+        "Jesus",
+        "Simon Peter",
+        "Andrew",
+        "Simon's mother-in-law"
+      ],
+      "actorIdentitiesCertified": false,
+      "locationEvidenceClass": "SIMONS_HOUSE_UNVERIFIED",
+      "editorialFinding": "Mark 1:29 identifies the house of Simon and Andrew immediately after the synagogue event; a particular modern house reconstruction remains interpretive.",
+      "editorialAction": "CAPERNAUM_HOUSE_NOT_CERTIFIED",
+      "exactHistoricalCoordinatesApproved": false,
+      "synopticEpisodeIdentitiesMerged": false,
+      "verseBoundaryEditoriallyAccepted": false,
+      "readAloudAccepted": false,
+      "publicationApproved": false,
+      "reviewStage": "PASSAGE_COVERAGE_AND_SOURCE_QUALIFICATION_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:080",
+      "originalIndex": 80,
+      "originalChapter": "MINISTRY",
+      "title": "A paralytic lowered through the roof",
+      "scriptureReference": "Mark 2:1–12",
+      "gospelWitness": "Mark",
+      "existingLocationClaim": "Capernaum · archaeological settlement",
+      "existingSceneAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEventKeys": [
+        {
+          "eventKey": "biblical:event:capernaum-e2",
+          "originalStatus": "EXACT_REFERENCE"
+        }
+      ],
+      "sourceSpan": {
+        "douayChallonerEntries": 12,
+        "cpdv2009Entries": 12,
+        "crampon1923Entries": 12,
+        "quotedRangeNominalVerseCount": 12,
+        "hasExactRequestedEndVerse": true,
+        "witnessTextsUncollated": true
+      },
+      "provisionalActorsForSourceReview": [
+        "Jesus",
+        "paralytic",
+        "four bearers",
+        "scribes"
+      ],
+      "actorIdentitiesCertified": false,
+      "locationEvidenceClass": "PARALYTIC_HOUSE_UNVERIFIED",
+      "editorialFinding": "Mark 2:1 places Jesus at Capernaum; the roof and house cannot be assigned to an excavated room or distinct modern dwelling.",
+      "editorialAction": "CAPERNAUM_CITY_ONLY_NO_HOUSE_PIN",
+      "exactHistoricalCoordinatesApproved": false,
+      "synopticEpisodeIdentitiesMerged": false,
+      "verseBoundaryEditoriallyAccepted": false,
+      "readAloudAccepted": false,
+      "publicationApproved": false,
+      "reviewStage": "PASSAGE_COVERAGE_AND_SOURCE_QUALIFICATION_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:081",
+      "originalIndex": 81,
+      "originalChapter": "MINISTRY",
+      "title": "The centurion’s faith",
+      "scriptureReference": "Matthew 8:5–13",
+      "gospelWitness": "Matthew",
+      "existingLocationClaim": "Capernaum · archaeological settlement",
+      "existingSceneAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEventKeys": [],
+      "sourceSpan": {
+        "douayChallonerEntries": 9,
+        "cpdv2009Entries": 9,
+        "crampon1923Entries": 9,
+        "quotedRangeNominalVerseCount": 9,
+        "hasExactRequestedEndVerse": true,
+        "witnessTextsUncollated": true
+      },
+      "provisionalActorsForSourceReview": [
+        "Jesus",
+        "centurion",
+        "servant"
+      ],
+      "actorIdentitiesCertified": false,
+      "locationEvidenceClass": "CENTURION_ACCOUNT_GOSPEL_PARALLEL_HELD",
+      "editorialFinding": "Matthew 8:5 places the centurion's approach at Capernaum; Luke 7:1-10 is a distinct witness with different narrative intermediaries. Do not create fabricated merged dialogue.",
+      "editorialAction": "CAPERNAUM_CONTEXT_GOSPEL_PARALLEL_REVIEW",
+      "exactHistoricalCoordinatesApproved": false,
+      "synopticEpisodeIdentitiesMerged": false,
+      "verseBoundaryEditoriallyAccepted": false,
+      "readAloudAccepted": false,
+      "publicationApproved": false,
+      "reviewStage": "PASSAGE_COVERAGE_AND_SOURCE_QUALIFICATION_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:082",
+      "originalIndex": 82,
+      "originalChapter": "MINISTRY",
+      "title": "Levi leaves the tax booth",
+      "scriptureReference": "Mark 2:13–17",
+      "gospelWitness": "Mark",
+      "existingLocationClaim": "Capernaum · archaeological settlement",
+      "existingSceneAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEventKeys": [],
+      "sourceSpan": {
+        "douayChallonerEntries": 5,
+        "cpdv2009Entries": 5,
+        "crampon1923Entries": 5,
+        "quotedRangeNominalVerseCount": 5,
+        "hasExactRequestedEndVerse": true,
+        "witnessTextsUncollated": true
+      },
+      "provisionalActorsForSourceReview": [
+        "Jesus",
+        "Levi",
+        "tax collectors",
+        "scribes"
+      ],
+      "actorIdentitiesCertified": false,
+      "locationEvidenceClass": "LEVI_TAX_BOOTH_NOT_IDENTIFIED",
+      "editorialFinding": "Mark 2:13-17 describes the lakeside tax booth and a meal, without certifying an identifiable building or proving identity links across Gospel naming by location alone.",
+      "editorialAction": "NO_EXACT_TAX_BOOTH_PIN",
+      "exactHistoricalCoordinatesApproved": false,
+      "synopticEpisodeIdentitiesMerged": false,
+      "verseBoundaryEditoriallyAccepted": false,
+      "readAloudAccepted": false,
+      "publicationApproved": false,
+      "reviewStage": "PASSAGE_COVERAGE_AND_SOURCE_QUALIFICATION_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:083",
+      "originalIndex": 83,
+      "originalChapter": "MINISTRY",
+      "title": "The call of the fishermen",
+      "scriptureReference": "Luke 5:1–11",
+      "gospelWitness": "Luke",
+      "existingLocationClaim": "Sea of Galilee · shore region",
+      "existingSceneAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEventKeys": [],
+      "sourceSpan": {
+        "douayChallonerEntries": 11,
+        "cpdv2009Entries": 11,
+        "crampon1923Entries": 11,
+        "quotedRangeNominalVerseCount": 11,
+        "hasExactRequestedEndVerse": true,
+        "witnessTextsUncollated": true
+      },
+      "provisionalActorsForSourceReview": [
+        "Jesus",
+        "Simon Peter",
+        "James",
+        "John"
+      ],
+      "actorIdentitiesCertified": false,
+      "locationEvidenceClass": "LUKE_FISHERMEN_SHORE_NOT_CERTIFIED",
+      "editorialFinding": "Luke 5:1 names the lake of Gennesaret and a particular catch; no precise boat position or shore segment is established. Distinguish Luke's narrated call from Mark 1:16-20 unless editorially compared.",
+      "editorialAction": "LAKE_REGION_ONLY_NO_SYNOPTIC_COLLAPSE",
+      "exactHistoricalCoordinatesApproved": false,
+      "synopticEpisodeIdentitiesMerged": false,
+      "verseBoundaryEditoriallyAccepted": false,
+      "readAloudAccepted": false,
+      "publicationApproved": false,
+      "reviewStage": "PASSAGE_COVERAGE_AND_SOURCE_QUALIFICATION_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:084",
+      "originalIndex": 84,
+      "originalChapter": "MINISTRY",
+      "title": "The Twelve are chosen",
+      "scriptureReference": "Luke 6:12–16",
+      "gospelWitness": "Luke",
+      "existingLocationClaim": "Galilee · no specific town",
+      "existingSceneAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEventKeys": [
+        {
+          "eventKey": "biblical:event:beatitudes-additional-021",
+          "originalStatus": "EXACT_REFERENCE"
+        }
+      ],
+      "sourceSpan": {
+        "douayChallonerEntries": 5,
+        "cpdv2009Entries": 5,
+        "crampon1923Entries": 5,
+        "quotedRangeNominalVerseCount": 5,
+        "hasExactRequestedEndVerse": true,
+        "witnessTextsUncollated": true
+      },
+      "provisionalActorsForSourceReview": [
+        "Jesus",
+        "twelve apostles"
+      ],
+      "actorIdentitiesCertified": false,
+      "locationEvidenceClass": "TWELVE_APPOINTMENT_MOUNTAIN_UNNAMED",
+      "editorialFinding": "Luke 6:12 describes a mountain without naming which one or a settlement. Apostle identities in the source list need canonical-person review independently.",
+      "editorialAction": "NO_APOSTLE_MOUNTAIN_PIN",
+      "exactHistoricalCoordinatesApproved": false,
+      "synopticEpisodeIdentitiesMerged": false,
+      "verseBoundaryEditoriallyAccepted": false,
+      "readAloudAccepted": false,
+      "publicationApproved": false,
+      "reviewStage": "PASSAGE_COVERAGE_AND_SOURCE_QUALIFICATION_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:085",
+      "originalIndex": 85,
+      "originalChapter": "MINISTRY",
+      "title": "The Sermon on the Mount",
+      "scriptureReference": "Matthew 5:1–12",
+      "gospelWitness": "Matthew",
+      "existingLocationClaim": "Galilean hills · traditional association",
+      "existingSceneAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEventKeys": [],
+      "sourceSpan": {
+        "douayChallonerEntries": 12,
+        "cpdv2009Entries": 12,
+        "crampon1923Entries": 12,
+        "quotedRangeNominalVerseCount": 12,
+        "hasExactRequestedEndVerse": true,
+        "witnessTextsUncollated": true
+      },
+      "provisionalActorsForSourceReview": [
+        "Jesus",
+        "disciples",
+        "crowd"
+      ],
+      "actorIdentitiesCertified": false,
+      "locationEvidenceClass": "SERMON_MOUNTAIN_NOT_TOURIST_SITE",
+      "editorialFinding": "Matthew 5:1-12 says mountain, not a named modern hill. A Mount of Beatitudes church site is traditional rather than an event coordinate.",
+      "editorialAction": "TRADITIONAL_MOUNTAIN_ONLY",
+      "exactHistoricalCoordinatesApproved": false,
+      "synopticEpisodeIdentitiesMerged": false,
+      "verseBoundaryEditoriallyAccepted": false,
+      "readAloudAccepted": false,
+      "publicationApproved": false,
+      "reviewStage": "PASSAGE_COVERAGE_AND_SOURCE_QUALIFICATION_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:086",
+      "originalIndex": 86,
+      "originalChapter": "MINISTRY",
+      "title": "The Lord’s Prayer",
+      "scriptureReference": "Matthew 6:5–15",
+      "gospelWitness": "Matthew",
+      "existingLocationClaim": "Galilee · no specific town",
+      "existingSceneAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEventKeys": [],
+      "sourceSpan": {
+        "douayChallonerEntries": 11,
+        "cpdv2009Entries": 11,
+        "crampon1923Entries": 11,
+        "quotedRangeNominalVerseCount": 11,
+        "hasExactRequestedEndVerse": true,
+        "witnessTextsUncollated": true
+      },
+      "provisionalActorsForSourceReview": [
+        "Jesus",
+        "disciples"
+      ],
+      "actorIdentitiesCertified": false,
+      "locationEvidenceClass": "LORDS_PRAYER_AS_SERMON_BEAT",
+      "editorialFinding": "Matthew 6:5-15 belongs to the Sermon context; a repeated Lord's Prayer scene must not be presented as a second invented geographical occasion. Luke 11's prayer has a distinct Gospel setting.",
+      "editorialAction": "NO_NEW_PRAYER_PIN",
+      "exactHistoricalCoordinatesApproved": false,
+      "synopticEpisodeIdentitiesMerged": false,
+      "verseBoundaryEditoriallyAccepted": false,
+      "readAloudAccepted": false,
+      "publicationApproved": false,
+      "reviewStage": "PASSAGE_COVERAGE_AND_SOURCE_QUALIFICATION_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:087",
+      "originalIndex": 87,
+      "originalChapter": "MINISTRY",
+      "title": "The widow’s son at Nain",
+      "scriptureReference": "Luke 7:11–17",
+      "gospelWitness": "Luke",
+      "existingLocationClaim": "Nain · settlement",
+      "existingSceneAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEventKeys": [
+        {
+          "eventKey": "biblical:event:nain-e1",
+          "originalStatus": "EXACT_REFERENCE"
+        }
+      ],
+      "sourceSpan": {
+        "douayChallonerEntries": 7,
+        "cpdv2009Entries": 7,
+        "crampon1923Entries": 7,
+        "quotedRangeNominalVerseCount": 7,
+        "hasExactRequestedEndVerse": true,
+        "witnessTextsUncollated": true
+      },
+      "provisionalActorsForSourceReview": [
+        "Jesus",
+        "widow",
+        "young son",
+        "townspeople"
+      ],
+      "actorIdentitiesCertified": false,
+      "locationEvidenceClass": "NAIN_SETTLEMENT_NO_GATE_COORDINATE",
+      "editorialFinding": "Luke 7:11-17 names Nain and its gate, but no exact surviving ancient gate or funeral location is established.",
+      "editorialAction": "NAIN_TOWN_CONTEXT_ONLY",
+      "exactHistoricalCoordinatesApproved": false,
+      "synopticEpisodeIdentitiesMerged": false,
+      "verseBoundaryEditoriallyAccepted": false,
+      "readAloudAccepted": false,
+      "publicationApproved": false,
+      "reviewStage": "PASSAGE_COVERAGE_AND_SOURCE_QUALIFICATION_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:088",
+      "originalIndex": 88,
+      "originalChapter": "MINISTRY",
+      "title": "The sinful woman anoints his feet",
+      "scriptureReference": "Luke 7:36–50",
+      "gospelWitness": "Luke",
+      "existingLocationClaim": "Galilee · no specific town",
+      "existingSceneAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEventKeys": [],
+      "sourceSpan": {
+        "douayChallonerEntries": 15,
+        "cpdv2009Entries": 15,
+        "crampon1923Entries": 15,
+        "quotedRangeNominalVerseCount": 15,
+        "hasExactRequestedEndVerse": true,
+        "witnessTextsUncollated": true
+      },
+      "provisionalActorsForSourceReview": [
+        "Jesus",
+        "unnamed woman",
+        "Simon the Pharisee"
+      ],
+      "actorIdentitiesCertified": false,
+      "locationEvidenceClass": "SINFUL_WOMAN_NOT_NAMED",
+      "editorialFinding": "Luke 7:36-50 does not give a town or name the woman. Do not identify her as Mary Magdalene, Mary of Bethany or John 12's anointer without separately attested interpretation.",
+      "editorialAction": "NO_WOMAN_IDENTITY_MERGE_NO_PIN",
+      "exactHistoricalCoordinatesApproved": false,
+      "synopticEpisodeIdentitiesMerged": false,
+      "verseBoundaryEditoriallyAccepted": false,
+      "readAloudAccepted": false,
+      "publicationApproved": false,
+      "reviewStage": "PASSAGE_COVERAGE_AND_SOURCE_QUALIFICATION_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:089",
+      "originalIndex": 89,
+      "originalChapter": "MINISTRY",
+      "title": "The parable of the sower",
+      "scriptureReference": "Mark 4:1–20",
+      "gospelWitness": "Mark",
+      "existingLocationClaim": "Sea of Galilee · lake region",
+      "existingSceneAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEventKeys": [],
+      "sourceSpan": {
+        "douayChallonerEntries": 20,
+        "cpdv2009Entries": 20,
+        "crampon1923Entries": 20,
+        "quotedRangeNominalVerseCount": 20,
+        "hasExactRequestedEndVerse": true,
+        "witnessTextsUncollated": true
+      },
+      "provisionalActorsForSourceReview": [
+        "Jesus",
+        "disciples",
+        "hearers"
+      ],
+      "actorIdentitiesCertified": false,
+      "locationEvidenceClass": "SOWER_PARABLE_NOT_HISTORICAL_FIELD",
+      "editorialFinding": "Mark 4:1-20 has lake and boat context, but the sower's field is parabolic, not a surveyed historical farm.",
+      "editorialAction": "LAKE_CAMERA_ONLY_NO_PARABLE_FIELD",
+      "exactHistoricalCoordinatesApproved": false,
+      "synopticEpisodeIdentitiesMerged": false,
+      "verseBoundaryEditoriallyAccepted": false,
+      "readAloudAccepted": false,
+      "publicationApproved": false,
+      "reviewStage": "PASSAGE_COVERAGE_AND_SOURCE_QUALIFICATION_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:090",
+      "originalIndex": 90,
+      "originalChapter": "MINISTRY",
+      "title": "The storm is calmed",
+      "scriptureReference": "Mark 4:35–41",
+      "gospelWitness": "Mark",
+      "existingLocationClaim": "Sea of Galilee · water region",
+      "existingSceneAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEventKeys": [
+        {
+          "eventKey": "biblical:event:galilee-sea-e2",
+          "originalStatus": "EXACT_REFERENCE"
+        }
+      ],
+      "sourceSpan": {
+        "douayChallonerEntries": 6,
+        "cpdv2009Entries": 6,
+        "crampon1923Entries": 6,
+        "quotedRangeNominalVerseCount": 7,
+        "hasExactRequestedEndVerse": false,
+        "witnessTextsUncollated": true
+      },
+      "provisionalActorsForSourceReview": [
+        "Jesus",
+        "disciples"
+      ],
+      "actorIdentitiesCertified": false,
+      "locationEvidenceClass": "STORM_MARK_4_VERSE_BOUNDARY_ISSUE",
+      "editorialFinding": "The imported three Catholic source transcriptions each number Mark 4 only through verse 40 and include the disciples' question in verse 40; scene's Mark 4:35-41 reference exceeds those imports. A printed-edition boundary collation is required; do not invent verse 41.",
+      "editorialAction": "EDITION_SAFE_MARK_4_35_TO_40_REVIEW",
+      "exactHistoricalCoordinatesApproved": false,
+      "synopticEpisodeIdentitiesMerged": false,
+      "verseBoundaryEditoriallyAccepted": false,
+      "readAloudAccepted": false,
+      "publicationApproved": false,
+      "reviewStage": "PASSAGE_COVERAGE_AND_SOURCE_QUALIFICATION_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:091",
+      "originalIndex": 91,
+      "originalChapter": "MINISTRY",
+      "title": "The Gerasene demoniac",
+      "scriptureReference": "Mark 5:1–20",
+      "gospelWitness": "Mark",
+      "existingLocationClaim": "Eastern Galilean shore · identification debated",
+      "existingSceneAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEventKeys": [],
+      "sourceSpan": {
+        "douayChallonerEntries": 20,
+        "cpdv2009Entries": 20,
+        "crampon1923Entries": 20,
+        "quotedRangeNominalVerseCount": 20,
+        "hasExactRequestedEndVerse": true,
+        "witnessTextsUncollated": true
+      },
+      "provisionalActorsForSourceReview": [
+        "Jesus",
+        "man with unclean spirit",
+        "herdsmen"
+      ],
+      "actorIdentitiesCertified": false,
+      "locationEvidenceClass": "GERASENE_SHORE_VARIANTS",
+      "editorialFinding": "Mark 5:1 locates the event in the country of the Gerasens in the installed Douay witness. Gerasene/Gadarene and modern eastern-shore site identification require synoptic/edition review.",
+      "editorialAction": "EASTERN_SHORE_ONLY_NO_SITE_PIN",
+      "exactHistoricalCoordinatesApproved": false,
+      "synopticEpisodeIdentitiesMerged": false,
+      "verseBoundaryEditoriallyAccepted": false,
+      "readAloudAccepted": false,
+      "publicationApproved": false,
+      "reviewStage": "PASSAGE_COVERAGE_AND_SOURCE_QUALIFICATION_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:092",
+      "originalIndex": 92,
+      "originalChapter": "MINISTRY",
+      "title": "Jairus’s daughter raised",
+      "scriptureReference": "Mark 5:21–43",
+      "gospelWitness": "Mark",
+      "existingLocationClaim": "Capernaum · archaeological settlement",
+      "existingSceneAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEventKeys": [],
+      "sourceSpan": {
+        "douayChallonerEntries": 23,
+        "cpdv2009Entries": 23,
+        "crampon1923Entries": 23,
+        "quotedRangeNominalVerseCount": 23,
+        "hasExactRequestedEndVerse": true,
+        "witnessTextsUncollated": true
+      },
+      "provisionalActorsForSourceReview": [
+        "Jesus",
+        "Jairus",
+        "Jairus's daughter",
+        "woman healed"
+      ],
+      "actorIdentitiesCertified": false,
+      "locationEvidenceClass": "JAIRUS_HOUSE_LAKE_CONTEXT",
+      "editorialFinding": "Mark 5:21-43 spans a crowd and a house, and intercalates the haemorrhaging woman's healing. The scene should not collapse two encounters or assert a Capernaum house address absent in the span.",
+      "editorialAction": "MULTI_EVENT_NO_CERTIFIED_HOUSE",
+      "exactHistoricalCoordinatesApproved": false,
+      "synopticEpisodeIdentitiesMerged": false,
+      "verseBoundaryEditoriallyAccepted": false,
+      "readAloudAccepted": false,
+      "publicationApproved": false,
+      "reviewStage": "PASSAGE_COVERAGE_AND_SOURCE_QUALIFICATION_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:093",
+      "originalIndex": 93,
+      "originalChapter": "MINISTRY",
+      "title": "The Twelve sent to preach",
+      "scriptureReference": "Matthew 10:1–15",
+      "gospelWitness": "Matthew",
+      "existingLocationClaim": "Galilee · no specific town",
+      "existingSceneAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEventKeys": [],
+      "sourceSpan": {
+        "douayChallonerEntries": 15,
+        "cpdv2009Entries": 15,
+        "crampon1923Entries": 15,
+        "quotedRangeNominalVerseCount": 15,
+        "hasExactRequestedEndVerse": true,
+        "witnessTextsUncollated": true
+      },
+      "provisionalActorsForSourceReview": [
+        "Jesus",
+        "Twelve"
+      ],
+      "actorIdentitiesCertified": false,
+      "locationEvidenceClass": "APOSTLE_MISSION_NO_SINGLE_LOCATION",
+      "editorialFinding": "Matthew 10:1-15 commissions the Twelve and gives directions for unnamed destinations; it is not a geocodable continuous tour.",
+      "editorialAction": "NO_MISSION_ROUTE_FABRICATION",
+      "exactHistoricalCoordinatesApproved": false,
+      "synopticEpisodeIdentitiesMerged": false,
+      "verseBoundaryEditoriallyAccepted": false,
+      "readAloudAccepted": false,
+      "publicationApproved": false,
+      "reviewStage": "PASSAGE_COVERAGE_AND_SOURCE_QUALIFICATION_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:094",
+      "originalIndex": 94,
+      "originalChapter": "MINISTRY",
+      "title": "The beheading of John the Baptist",
+      "scriptureReference": "Mark 6:17–29",
+      "gospelWitness": "Mark",
+      "existingLocationClaim": "Location not established",
+      "existingSceneAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEventKeys": [],
+      "sourceSpan": {
+        "douayChallonerEntries": 13,
+        "cpdv2009Entries": 13,
+        "crampon1923Entries": 13,
+        "quotedRangeNominalVerseCount": 13,
+        "hasExactRequestedEndVerse": true,
+        "witnessTextsUncollated": true
+      },
+      "provisionalActorsForSourceReview": [
+        "John the Baptist",
+        "Herod",
+        "Herodias",
+        "daughter"
+      ],
+      "actorIdentitiesCertified": false,
+      "locationEvidenceClass": "BAPTIST_MARTYRDOM_PLACE_UNNAMED",
+      "editorialFinding": "Mark 6:17-29 describes imprisonment and execution but names no fortress. Machaerus is a later historical association requiring explicit external witness and cannot be a Bible-text coordinate.",
+      "editorialAction": "KEEP_NO_EXECUTION_PIN",
+      "exactHistoricalCoordinatesApproved": false,
+      "synopticEpisodeIdentitiesMerged": false,
+      "verseBoundaryEditoriallyAccepted": false,
+      "readAloudAccepted": false,
+      "publicationApproved": false,
+      "reviewStage": "PASSAGE_COVERAGE_AND_SOURCE_QUALIFICATION_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:095",
+      "originalIndex": 95,
+      "originalChapter": "MINISTRY",
+      "title": "Jesus walks upon the water",
+      "scriptureReference": "Matthew 14:22–33",
+      "gospelWitness": "Matthew",
+      "existingLocationClaim": "Sea of Galilee · lake region",
+      "existingSceneAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEventKeys": [
+        {
+          "eventKey": "biblical:event:galilee-sea-e3",
+          "originalStatus": "EXACT_REFERENCE"
+        }
+      ],
+      "sourceSpan": {
+        "douayChallonerEntries": 12,
+        "cpdv2009Entries": 12,
+        "crampon1923Entries": 12,
+        "quotedRangeNominalVerseCount": 12,
+        "hasExactRequestedEndVerse": true,
+        "witnessTextsUncollated": true
+      },
+      "provisionalActorsForSourceReview": [
+        "Jesus",
+        "Peter",
+        "disciples"
+      ],
+      "actorIdentitiesCertified": false,
+      "locationEvidenceClass": "MATTHEW_WALKING_ON_WATER_SEQUENCING",
+      "editorialFinding": "Matthew 14:22-33 follows Matthew 14:13-21 (feeding five thousand); the current source list places this walking-on-water scene before scene 096 loaves. Flag editorial order for review, not a premature cross-Gospel identity join.",
+      "editorialAction": "SOURCE_ORDER_REVIEW_LOAVES_BEFORE_WALKING",
+      "exactHistoricalCoordinatesApproved": false,
+      "synopticEpisodeIdentitiesMerged": false,
+      "verseBoundaryEditoriallyAccepted": false,
+      "readAloudAccepted": false,
+      "publicationApproved": false,
+      "reviewStage": "PASSAGE_COVERAGE_AND_SOURCE_QUALIFICATION_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:096",
+      "originalIndex": 96,
+      "originalChapter": "MINISTRY",
+      "title": "The multiplication of loaves",
+      "scriptureReference": "John 6:1–15",
+      "gospelWitness": "John",
+      "existingLocationClaim": "Tabgha · traditional shore",
+      "existingSceneAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEventKeys": [
+        {
+          "eventKey": "biblical:event:tabgha-e1",
+          "originalStatus": "EXACT_REFERENCE"
+        }
+      ],
+      "sourceSpan": {
+        "douayChallonerEntries": 15,
+        "cpdv2009Entries": 15,
+        "crampon1923Entries": 15,
+        "quotedRangeNominalVerseCount": 15,
+        "hasExactRequestedEndVerse": true,
+        "witnessTextsUncollated": true
+      },
+      "provisionalActorsForSourceReview": [
+        "Jesus",
+        "disciples",
+        "crowd"
+      ],
+      "actorIdentitiesCertified": false,
+      "locationEvidenceClass": "JOHN_LOAVES_SHORE_UNNAMED",
+      "editorialFinding": "John 6:1-15 identifies the Galilean sea setting but not Tabgha as the actual multiplication site; traditional shore association must not become a precise event coordinate.",
+      "editorialAction": "GALILEE_LAKE_REGION_TABGHA_TRADITION",
+      "exactHistoricalCoordinatesApproved": false,
+      "synopticEpisodeIdentitiesMerged": false,
+      "verseBoundaryEditoriallyAccepted": false,
+      "readAloudAccepted": false,
+      "publicationApproved": false,
+      "reviewStage": "PASSAGE_COVERAGE_AND_SOURCE_QUALIFICATION_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:097",
+      "originalIndex": 97,
+      "originalChapter": "MINISTRY",
+      "title": "The Bread of Life discourse",
+      "scriptureReference": "John 6:22–59",
+      "gospelWitness": "John",
+      "existingLocationClaim": "Capernaum · archaeological settlement",
+      "existingSceneAtlasMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "originalCandidateAtlasEventKeys": [
+        {
+          "eventKey": "biblical:event:capernaum-e3",
+          "originalStatus": "PASSAGE_OVERLAP_REVIEW_ONLY"
+        }
+      ],
+      "sourceSpan": {
+        "douayChallonerEntries": 38,
+        "cpdv2009Entries": 38,
+        "crampon1923Entries": 38,
+        "quotedRangeNominalVerseCount": 38,
+        "hasExactRequestedEndVerse": true,
+        "witnessTextsUncollated": true
+      },
+      "provisionalActorsForSourceReview": [
+        "Jesus",
+        "crowd",
+        "disciples"
+      ],
+      "actorIdentitiesCertified": false,
+      "locationEvidenceClass": "BREAD_DISCOURSE_CAPERNAUM_VERSE_59_OUTSIDE_SPAN",
+      "editorialFinding": "John 6:22-59 describes the Bread of Life teaching, but John 6:59 (synagogue at Capernaum in many printings) appears as verse 58 in the installed Douay numbering; confirm printed edition before claiming an exact synagogue verse/site.",
+      "editorialAction": "EDITION_SPECIFIC_JOHN_6_CONTEXT_CHECK",
+      "exactHistoricalCoordinatesApproved": false,
+      "synopticEpisodeIdentitiesMerged": false,
+      "verseBoundaryEditoriallyAccepted": false,
+      "readAloudAccepted": false,
+      "publicationApproved": false,
+      "reviewStage": "PASSAGE_COVERAGE_AND_SOURCE_QUALIFICATION_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:098",
+      "originalIndex": 98,
+      "originalChapter": "MINISTRY",
+      "title": "The Syrophoenician woman",
+      "scriptureReference": "Mark 7:24–30",
+      "gospelWitness": "Mark",
+      "existingLocationClaim": "Tyre · historical city",
+      "existingSceneAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEventKeys": [],
+      "sourceSpan": {
+        "douayChallonerEntries": 7,
+        "cpdv2009Entries": 7,
+        "crampon1923Entries": 7,
+        "quotedRangeNominalVerseCount": 7,
+        "hasExactRequestedEndVerse": true,
+        "witnessTextsUncollated": true
+      },
+      "provisionalActorsForSourceReview": [
+        "Jesus",
+        "Syrophoenician woman",
+        "daughter"
+      ],
+      "actorIdentitiesCertified": false,
+      "locationEvidenceClass": "TYRE_DISTRICT_NOT_EXACT_HOUSE",
+      "editorialFinding": "Mark 7:24-30 places the episode in the territory of Tyre, not a certified city house or excavated location. Preserve the unnamed daughter's separate identity.",
+      "editorialAction": "TYRE_DISTRICT_ONLY",
+      "exactHistoricalCoordinatesApproved": false,
+      "synopticEpisodeIdentitiesMerged": false,
+      "verseBoundaryEditoriallyAccepted": false,
+      "readAloudAccepted": false,
+      "publicationApproved": false,
+      "reviewStage": "PASSAGE_COVERAGE_AND_SOURCE_QUALIFICATION_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:099",
+      "originalIndex": 99,
+      "originalChapter": "MINISTRY",
+      "title": "The deaf man healed",
+      "scriptureReference": "Mark 7:31–37",
+      "gospelWitness": "Mark",
+      "existingLocationClaim": "Sea of Galilee · lake region",
+      "existingSceneAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEventKeys": [],
+      "sourceSpan": {
+        "douayChallonerEntries": 7,
+        "cpdv2009Entries": 7,
+        "crampon1923Entries": 7,
+        "quotedRangeNominalVerseCount": 7,
+        "hasExactRequestedEndVerse": true,
+        "witnessTextsUncollated": true
+      },
+      "provisionalActorsForSourceReview": [
+        "Jesus",
+        "deaf man",
+        "crowd"
+      ],
+      "actorIdentitiesCertified": false,
+      "locationEvidenceClass": "DECAPOLIS_LAKE_REGION",
+      "editorialFinding": "Mark 7:31-37 takes place after travel by Sidon toward the Sea of Galilee through Decapolis; no exact lakefront site is named.",
+      "editorialAction": "DECAPOLIS_REGION_ONLY",
+      "exactHistoricalCoordinatesApproved": false,
+      "synopticEpisodeIdentitiesMerged": false,
+      "verseBoundaryEditoriallyAccepted": false,
+      "readAloudAccepted": false,
+      "publicationApproved": false,
+      "reviewStage": "PASSAGE_COVERAGE_AND_SOURCE_QUALIFICATION_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:100",
+      "originalIndex": 100,
+      "originalChapter": "MINISTRY",
+      "title": "The feeding of four thousand",
+      "scriptureReference": "Matthew 15:32–39",
+      "gospelWitness": "Matthew",
+      "existingLocationClaim": "Sea of Galilee · lake region",
+      "existingSceneAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEventKeys": [],
+      "sourceSpan": {
+        "douayChallonerEntries": 8,
+        "cpdv2009Entries": 8,
+        "crampon1923Entries": 8,
+        "quotedRangeNominalVerseCount": 8,
+        "hasExactRequestedEndVerse": true,
+        "witnessTextsUncollated": true
+      },
+      "provisionalActorsForSourceReview": [
+        "Jesus",
+        "disciples",
+        "crowd"
+      ],
+      "actorIdentitiesCertified": false,
+      "locationEvidenceClass": "FOUR_THOUSAND_DISTINCT_SIGN",
+      "editorialFinding": "Matthew 15:32-39 records feeding four thousand, distinct in Matthew from the earlier five thousand; do not merge scene 100 with 096, regardless of shared bread imagery.",
+      "editorialAction": "SEPARATE_FOUR_THOUSAND_EVENT",
+      "exactHistoricalCoordinatesApproved": false,
+      "synopticEpisodeIdentitiesMerged": false,
+      "verseBoundaryEditoriallyAccepted": false,
+      "readAloudAccepted": false,
+      "publicationApproved": false,
+      "reviewStage": "PASSAGE_COVERAGE_AND_SOURCE_QUALIFICATION_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:101",
+      "originalIndex": 101,
+      "originalChapter": "MINISTRY",
+      "title": "The blind man of Bethsaida",
+      "scriptureReference": "Mark 8:22–26",
+      "gospelWitness": "Mark",
+      "existingLocationClaim": "Bethsaida · competing site identifications",
+      "existingSceneAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEventKeys": [
+        {
+          "eventKey": "biblical:event:bethsaida-miracle-25",
+          "originalStatus": "EXACT_REFERENCE"
+        }
+      ],
+      "sourceSpan": {
+        "douayChallonerEntries": 5,
+        "cpdv2009Entries": 5,
+        "crampon1923Entries": 5,
+        "quotedRangeNominalVerseCount": 5,
+        "hasExactRequestedEndVerse": true,
+        "witnessTextsUncollated": true
+      },
+      "provisionalActorsForSourceReview": [
+        "Jesus",
+        "blind man"
+      ],
+      "actorIdentitiesCertified": false,
+      "locationEvidenceClass": "BETHSAIDA_SITE_DISPUTED",
+      "editorialFinding": "Mark 8:22 names Bethsaida and places the healing outside the village. Modern candidate sites compete, and the precise healing place is not established.",
+      "editorialAction": "BETHSAIDA_TOWN_ONLY_NO_EXACT_SITE",
+      "exactHistoricalCoordinatesApproved": false,
+      "synopticEpisodeIdentitiesMerged": false,
+      "verseBoundaryEditoriallyAccepted": false,
+      "readAloudAccepted": false,
+      "publicationApproved": false,
+      "reviewStage": "PASSAGE_COVERAGE_AND_SOURCE_QUALIFICATION_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:102",
+      "originalIndex": 102,
+      "originalChapter": "MINISTRY",
+      "title": "Peter’s confession",
+      "scriptureReference": "Matthew 16:13–20",
+      "gospelWitness": "Matthew",
+      "existingLocationClaim": "Caesarea Philippi / Banias",
+      "existingSceneAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEventKeys": [
+        {
+          "eventKey": "biblical:event:caesarea-philippi-e1",
+          "originalStatus": "EXACT_REFERENCE"
+        }
+      ],
+      "sourceSpan": {
+        "douayChallonerEntries": 8,
+        "cpdv2009Entries": 8,
+        "crampon1923Entries": 8,
+        "quotedRangeNominalVerseCount": 8,
+        "hasExactRequestedEndVerse": true,
+        "witnessTextsUncollated": true
+      },
+      "provisionalActorsForSourceReview": [
+        "Jesus",
+        "Peter",
+        "disciples"
+      ],
+      "actorIdentitiesCertified": false,
+      "locationEvidenceClass": "CAESAREA_PHILIPPI_DISTRICT",
+      "editorialFinding": "Matthew 16:13 says the district/quarters of Caesarea Philippi, not an exact cave or grotto for Peter's confession. Banias is a regional modern correspondence only.",
+      "editorialAction": "CAESAREA_DISTRICT_NO_GROTTO_PIN",
+      "exactHistoricalCoordinatesApproved": false,
+      "synopticEpisodeIdentitiesMerged": false,
+      "verseBoundaryEditoriallyAccepted": false,
+      "readAloudAccepted": false,
+      "publicationApproved": false,
+      "reviewStage": "PASSAGE_COVERAGE_AND_SOURCE_QUALIFICATION_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:103",
+      "originalIndex": 103,
+      "originalChapter": "MINISTRY",
+      "title": "First prediction of the Passion",
+      "scriptureReference": "Matthew 16:21–28",
+      "gospelWitness": "Matthew",
+      "existingLocationClaim": "Caesarea Philippi / Banias · city context",
+      "existingSceneAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEventKeys": [
+        {
+          "eventKey": "biblical:event:caesarea-philippi-additional-044",
+          "originalStatus": "EXACT_REFERENCE"
+        }
+      ],
+      "sourceSpan": {
+        "douayChallonerEntries": 8,
+        "cpdv2009Entries": 8,
+        "crampon1923Entries": 8,
+        "quotedRangeNominalVerseCount": 8,
+        "hasExactRequestedEndVerse": true,
+        "witnessTextsUncollated": true
+      },
+      "provisionalActorsForSourceReview": [
+        "Jesus",
+        "disciples",
+        "Peter"
+      ],
+      "actorIdentitiesCertified": false,
+      "locationEvidenceClass": "FIRST_PASSION_PREDICTION_CONTEXT",
+      "editorialFinding": "Matthew 16:21-28 follows the confession but does not repeat Caesarea Philippi; do not invent a new location or depict the Passion prediction as the Passion event itself.",
+      "editorialAction": "CONTEXT_INHERITED_NO_NEW_PIN",
+      "exactHistoricalCoordinatesApproved": false,
+      "synopticEpisodeIdentitiesMerged": false,
+      "verseBoundaryEditoriallyAccepted": false,
+      "readAloudAccepted": false,
+      "publicationApproved": false,
+      "reviewStage": "PASSAGE_COVERAGE_AND_SOURCE_QUALIFICATION_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:104",
+      "originalIndex": 104,
+      "originalChapter": "MINISTRY",
+      "title": "The Transfiguration",
+      "scriptureReference": "Matthew 17:1–9",
+      "gospelWitness": "Matthew",
+      "existingLocationClaim": "Mount Tabor · traditional identification",
+      "existingSceneAtlasMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "originalCandidateAtlasEventKeys": [
+        {
+          "eventKey": "biblical:event:transfiguration-e1",
+          "originalStatus": "PASSAGE_OVERLAP_REVIEW_ONLY"
+        },
+        {
+          "eventKey": "biblical:event:transfiguration-additional-045",
+          "originalStatus": "PASSAGE_OVERLAP_REVIEW_ONLY"
+        }
+      ],
+      "sourceSpan": {
+        "douayChallonerEntries": 9,
+        "cpdv2009Entries": 9,
+        "crampon1923Entries": 9,
+        "quotedRangeNominalVerseCount": 9,
+        "hasExactRequestedEndVerse": true,
+        "witnessTextsUncollated": true
+      },
+      "provisionalActorsForSourceReview": [
+        "Jesus",
+        "Peter",
+        "James",
+        "John",
+        "Moses",
+        "Elijah"
+      ],
+      "actorIdentitiesCertified": false,
+      "locationEvidenceClass": "TRANSFIGURATION_MOUNTAIN_UNNAMED",
+      "editorialFinding": "Matthew 17:1-9 says a high mountain but does not name Tabor. The map may show traditional Tabor with explicit status, not an authenticated biblical coordinate.",
+      "editorialAction": "TRADITIONAL_TABOR_ONLY",
+      "exactHistoricalCoordinatesApproved": false,
+      "synopticEpisodeIdentitiesMerged": false,
+      "verseBoundaryEditoriallyAccepted": false,
+      "readAloudAccepted": false,
+      "publicationApproved": false,
+      "reviewStage": "PASSAGE_COVERAGE_AND_SOURCE_QUALIFICATION_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:105",
+      "originalIndex": 105,
+      "originalChapter": "MINISTRY",
+      "title": "The possessed boy healed",
+      "scriptureReference": "Mark 9:14–29",
+      "gospelWitness": "Mark",
+      "existingLocationClaim": "Galilee · no specific town",
+      "existingSceneAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEventKeys": [],
+      "sourceSpan": {
+        "douayChallonerEntries": 16,
+        "cpdv2009Entries": 16,
+        "crampon1923Entries": 16,
+        "quotedRangeNominalVerseCount": 16,
+        "hasExactRequestedEndVerse": true,
+        "witnessTextsUncollated": true
+      },
+      "provisionalActorsForSourceReview": [
+        "Jesus",
+        "disciples",
+        "father",
+        "possessed boy"
+      ],
+      "actorIdentitiesCertified": false,
+      "locationEvidenceClass": "BOY_HEALED_AFTER_DESCENT",
+      "editorialFinding": "Mark 9:14-29 follows descent from the mountain but does not name a town or identify a modern site.",
+      "editorialAction": "NO_EXORCISM_SITE_PIN",
+      "exactHistoricalCoordinatesApproved": false,
+      "synopticEpisodeIdentitiesMerged": false,
+      "verseBoundaryEditoriallyAccepted": false,
+      "readAloudAccepted": false,
+      "publicationApproved": false,
+      "reviewStage": "PASSAGE_COVERAGE_AND_SOURCE_QUALIFICATION_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:106",
+      "originalIndex": 106,
+      "originalChapter": "MINISTRY",
+      "title": "The man born blind at Siloam",
+      "scriptureReference": "John 9:1–12",
+      "gospelWitness": "John",
+      "existingLocationClaim": "Pool of Siloam · archaeological context",
+      "existingSceneAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEventKeys": [
+        {
+          "eventKey": "biblical:event:siloam-miracle-26",
+          "originalStatus": "EXACT_REFERENCE"
+        }
+      ],
+      "sourceSpan": {
+        "douayChallonerEntries": 12,
+        "cpdv2009Entries": 12,
+        "crampon1923Entries": 12,
+        "quotedRangeNominalVerseCount": 12,
+        "hasExactRequestedEndVerse": true,
+        "witnessTextsUncollated": true
+      },
+      "provisionalActorsForSourceReview": [
+        "Jesus",
+        "man born blind",
+        "disciples",
+        "neighbours"
+      ],
+      "actorIdentitiesCertified": false,
+      "locationEvidenceClass": "SILOAM_POOL_BIBLICAL_NOT_EXACT_EVENT_SPOT",
+      "editorialFinding": "John 9:1-12 names the pool of Siloam where the man washed, not the exact place Jesus first encountered or an incontrovertible excavated point for the entire healing.",
+      "editorialAction": "BIBLICAL_POOL_CONTEXT_ONLY",
+      "exactHistoricalCoordinatesApproved": false,
+      "synopticEpisodeIdentitiesMerged": false,
+      "verseBoundaryEditoriallyAccepted": false,
+      "readAloudAccepted": false,
+      "publicationApproved": false,
+      "reviewStage": "PASSAGE_COVERAGE_AND_SOURCE_QUALIFICATION_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:107",
+      "originalIndex": 107,
+      "originalChapter": "MINISTRY",
+      "title": "The Good Shepherd",
+      "scriptureReference": "John 10:1–21",
+      "gospelWitness": "John",
+      "existingLocationClaim": "Jerusalem · ancient city context",
+      "existingSceneAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEventKeys": [],
+      "sourceSpan": {
+        "douayChallonerEntries": 21,
+        "cpdv2009Entries": 21,
+        "crampon1923Entries": 21,
+        "quotedRangeNominalVerseCount": 21,
+        "hasExactRequestedEndVerse": true,
+        "witnessTextsUncollated": true
+      },
+      "provisionalActorsForSourceReview": [
+        "Jesus",
+        "Pharisees",
+        "listeners"
+      ],
+      "actorIdentitiesCertified": false,
+      "locationEvidenceClass": "GOOD_SHEPHERD_TEACHING_NOT_COORDINATE",
+      "editorialFinding": "John 10:1-21 records a figure of speech/discourse without naming Jerusalem in the selected passage; verse 22 begins a different festival setting. No sheepfold field or specific address exists to map.",
+      "editorialAction": "DISCOURSE_NO_SHEEPFOLD_PIN",
+      "exactHistoricalCoordinatesApproved": false,
+      "synopticEpisodeIdentitiesMerged": false,
+      "verseBoundaryEditoriallyAccepted": false,
+      "readAloudAccepted": false,
+      "publicationApproved": false,
+      "reviewStage": "PASSAGE_COVERAGE_AND_SOURCE_QUALIFICATION_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:108",
+      "originalIndex": 108,
+      "originalChapter": "MINISTRY",
+      "title": "The Good Samaritan",
+      "scriptureReference": "Luke 10:25–37",
+      "gospelWitness": "Luke",
+      "existingLocationClaim": "Location not established",
+      "existingSceneAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEventKeys": [],
+      "sourceSpan": {
+        "douayChallonerEntries": 13,
+        "cpdv2009Entries": 13,
+        "crampon1923Entries": 13,
+        "quotedRangeNominalVerseCount": 13,
+        "hasExactRequestedEndVerse": true,
+        "witnessTextsUncollated": true
+      },
+      "provisionalActorsForSourceReview": [
+        "Jesus",
+        "questioner",
+        "parable characters"
+      ],
+      "actorIdentitiesCertified": false,
+      "locationEvidenceClass": "GOOD_SAMARITAN_PARABLE_ROUTE_FICTIONAL",
+      "editorialFinding": "Luke 10:25-37 gives the Jerusalem-to-Jericho road as the setting inside a parable, not the actual location of a documented injured traveller.",
+      "editorialAction": "NO_PARABLE_INCIDENT_PIN",
+      "exactHistoricalCoordinatesApproved": false,
+      "synopticEpisodeIdentitiesMerged": false,
+      "verseBoundaryEditoriallyAccepted": false,
+      "readAloudAccepted": false,
+      "publicationApproved": false,
+      "reviewStage": "PASSAGE_COVERAGE_AND_SOURCE_QUALIFICATION_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:109",
+      "originalIndex": 109,
+      "originalChapter": "MINISTRY",
+      "title": "Martha and Mary",
+      "scriptureReference": "Luke 10:38–42",
+      "gospelWitness": "Luke",
+      "existingLocationClaim": "Bethany / al-Eizariya · traditional identification",
+      "existingSceneAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEventKeys": [
+        {
+          "eventKey": "biblical:event:bethany-additional-057",
+          "originalStatus": "EXACT_REFERENCE"
+        }
+      ],
+      "sourceSpan": {
+        "douayChallonerEntries": 5,
+        "cpdv2009Entries": 5,
+        "crampon1923Entries": 5,
+        "quotedRangeNominalVerseCount": 5,
+        "hasExactRequestedEndVerse": true,
+        "witnessTextsUncollated": true
+      },
+      "provisionalActorsForSourceReview": [
+        "Jesus",
+        "Martha",
+        "Mary"
+      ],
+      "actorIdentitiesCertified": false,
+      "locationEvidenceClass": "MARTHA_MARY_VILLAGE_NOT_NAMED",
+      "editorialFinding": "Luke 10:38 describes an unnamed village and Martha's house. Bethany is supplied by other tradition/Gospel material, not by Luke's selected text.",
+      "editorialAction": "BETHANY_TRADITION_ONLY_NO_HOUSE_PIN",
+      "exactHistoricalCoordinatesApproved": false,
+      "synopticEpisodeIdentitiesMerged": false,
+      "verseBoundaryEditoriallyAccepted": false,
+      "readAloudAccepted": false,
+      "publicationApproved": false,
+      "reviewStage": "PASSAGE_COVERAGE_AND_SOURCE_QUALIFICATION_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:110",
+      "originalIndex": 110,
+      "originalChapter": "MINISTRY",
+      "title": "The prodigal son",
+      "scriptureReference": "Luke 15:11–32",
+      "gospelWitness": "Luke",
+      "existingLocationClaim": "Location not established",
+      "existingSceneAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEventKeys": [],
+      "sourceSpan": {
+        "douayChallonerEntries": 22,
+        "cpdv2009Entries": 22,
+        "crampon1923Entries": 22,
+        "quotedRangeNominalVerseCount": 22,
+        "hasExactRequestedEndVerse": true,
+        "witnessTextsUncollated": true
+      },
+      "provisionalActorsForSourceReview": [
+        "Jesus",
+        "father and two sons within parable"
+      ],
+      "actorIdentitiesCertified": false,
+      "locationEvidenceClass": "PRODIGAL_SON_PARABLE_NOT_PERSON_GENEALOGY",
+      "editorialFinding": "Luke 15:11-32 is a parable without a historically identifiable town, father, vineyard, pigs' field or biographical persons.",
+      "editorialAction": "NO_FICTIVE_PARABLE_PINS",
+      "exactHistoricalCoordinatesApproved": false,
+      "synopticEpisodeIdentitiesMerged": false,
+      "verseBoundaryEditoriallyAccepted": false,
+      "readAloudAccepted": false,
+      "publicationApproved": false,
+      "reviewStage": "PASSAGE_COVERAGE_AND_SOURCE_QUALIFICATION_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:111",
+      "originalIndex": 111,
+      "originalChapter": "MINISTRY",
+      "title": "Ten lepers cleansed",
+      "scriptureReference": "Luke 17:11–19",
+      "gospelWitness": "Luke",
+      "existingLocationClaim": "Samaria · regional context",
+      "existingSceneAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEventKeys": [],
+      "sourceSpan": {
+        "douayChallonerEntries": 9,
+        "cpdv2009Entries": 9,
+        "crampon1923Entries": 9,
+        "quotedRangeNominalVerseCount": 9,
+        "hasExactRequestedEndVerse": true,
+        "witnessTextsUncollated": true
+      },
+      "provisionalActorsForSourceReview": [
+        "Jesus",
+        "ten lepers",
+        "Samaritan man"
+      ],
+      "actorIdentitiesCertified": false,
+      "locationEvidenceClass": "TEN_LEPERS_SAMARIA_GALILEE_BORDER",
+      "editorialFinding": "Luke 17:11 places the journey between Samaria and Galilee and 17:12 an unnamed village, not a specific town or leper station.",
+      "editorialAction": "REGION_BORDER_CONTEXT_ONLY",
+      "exactHistoricalCoordinatesApproved": false,
+      "synopticEpisodeIdentitiesMerged": false,
+      "verseBoundaryEditoriallyAccepted": false,
+      "readAloudAccepted": false,
+      "publicationApproved": false,
+      "reviewStage": "PASSAGE_COVERAGE_AND_SOURCE_QUALIFICATION_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:112",
+      "originalIndex": 112,
+      "originalChapter": "MINISTRY",
+      "title": "Zacchaeus of Jericho",
+      "scriptureReference": "Luke 19:1–10",
+      "gospelWitness": "Luke",
+      "existingLocationClaim": "Jericho · settlement region",
+      "existingSceneAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEventKeys": [
+        {
+          "eventKey": "biblical:event:jericho-e2",
+          "originalStatus": "EXACT_REFERENCE"
+        }
+      ],
+      "sourceSpan": {
+        "douayChallonerEntries": 10,
+        "cpdv2009Entries": 10,
+        "crampon1923Entries": 10,
+        "quotedRangeNominalVerseCount": 10,
+        "hasExactRequestedEndVerse": true,
+        "witnessTextsUncollated": true
+      },
+      "provisionalActorsForSourceReview": [
+        "Jesus",
+        "Zacchaeus",
+        "crowd"
+      ],
+      "actorIdentitiesCertified": false,
+      "locationEvidenceClass": "JERICHO_TREE_UNIDENTIFIED",
+      "editorialFinding": "Luke 19:1 names Jericho, but the particular sycamore tree or house is not authenticated by Luke 19:1-10.",
+      "editorialAction": "JERICHO_CITY_ONLY_NO_TREE_PIN",
+      "exactHistoricalCoordinatesApproved": false,
+      "synopticEpisodeIdentitiesMerged": false,
+      "verseBoundaryEditoriallyAccepted": false,
+      "readAloudAccepted": false,
+      "publicationApproved": false,
+      "reviewStage": "PASSAGE_COVERAGE_AND_SOURCE_QUALIFICATION_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:113",
+      "originalIndex": 113,
+      "originalChapter": "MINISTRY",
+      "title": "Lazarus is raised",
+      "scriptureReference": "John 11:1–44",
+      "gospelWitness": "John",
+      "existingLocationClaim": "Bethany · traditional village",
+      "existingSceneAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEventKeys": [
+        {
+          "eventKey": "biblical:event:bethany-e1",
+          "originalStatus": "EXACT_REFERENCE"
+        }
+      ],
+      "sourceSpan": {
+        "douayChallonerEntries": 44,
+        "cpdv2009Entries": 44,
+        "crampon1923Entries": 44,
+        "quotedRangeNominalVerseCount": 44,
+        "hasExactRequestedEndVerse": true,
+        "witnessTextsUncollated": true
+      },
+      "provisionalActorsForSourceReview": [
+        "Jesus",
+        "Lazarus",
+        "Martha",
+        "Mary",
+        "mourners"
+      ],
+      "actorIdentitiesCertified": false,
+      "locationEvidenceClass": "BETHANY_LAZARUS_TOMB_UNVERIFIED",
+      "editorialFinding": "John 11:1 names Bethany as Lazarus' village. The cave/tomb visited today is a traditional identification, not independently proved from the passage; preserve the plot leading to resurrection.",
+      "editorialAction": "BETHANY_VILLAGE_ONLY_TOMB_TRADITION",
+      "exactHistoricalCoordinatesApproved": false,
+      "synopticEpisodeIdentitiesMerged": false,
+      "verseBoundaryEditoriallyAccepted": false,
+      "readAloudAccepted": false,
+      "publicationApproved": false,
+      "reviewStage": "PASSAGE_COVERAGE_AND_SOURCE_QUALIFICATION_ONLY"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:114",
+      "originalIndex": 114,
+      "originalChapter": "MINISTRY",
+      "title": "The anointing at Bethany",
+      "scriptureReference": "John 12:1–8",
+      "gospelWitness": "John",
+      "existingLocationClaim": "Bethany / al-Eizariya · traditional identification",
+      "existingSceneAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEventKeys": [
+        {
+          "eventKey": "biblical:event:bethany-e2",
+          "originalStatus": "EXACT_REFERENCE"
+        }
+      ],
+      "sourceSpan": {
+        "douayChallonerEntries": 8,
+        "cpdv2009Entries": 8,
+        "crampon1923Entries": 8,
+        "quotedRangeNominalVerseCount": 8,
+        "hasExactRequestedEndVerse": true,
+        "witnessTextsUncollated": true
+      },
+      "provisionalActorsForSourceReview": [
+        "Jesus",
+        "Mary of Bethany",
+        "Martha",
+        "Lazarus",
+        "Judas"
+      ],
+      "actorIdentitiesCertified": false,
+      "locationEvidenceClass": "JOHN_12_MARY_ANOINTING_DISTINCT_FROM_LUKE_7",
+      "editorialFinding": "John 12:1-8 explicitly names Bethany and Mary the sister of Lazarus; distinguish this from Luke 7's unnamed woman and other Gospel anointing accounts until independently adjudicated.",
+      "editorialAction": "BETHANY_TOWN_ONLY_NO_IDENTITY_MERGE",
+      "exactHistoricalCoordinatesApproved": false,
+      "synopticEpisodeIdentitiesMerged": false,
+      "verseBoundaryEditoriallyAccepted": false,
+      "readAloudAccepted": false,
+      "publicationApproved": false,
+      "reviewStage": "PASSAGE_COVERAGE_AND_SOURCE_QUALIFICATION_ONLY"
+    }
+  ]
+}
