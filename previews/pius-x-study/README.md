@@ -10,11 +10,29 @@ Enter through the first *E supremi* question. The **complete two-segment editori
 
 The UI follows the approved dark fixed-sprite visual-novel format: text in a staged folio, rather than messenger chat bubbles. This prototype is a standalone review artifact **not** a replacement or merge of the existing three-guide Living Church experience, Mass reader or native 433-question Catechism.
 
+
+## Expanded P0 editorial prototype — 22 October 2026 review stage
+
+The original single-file 34-question study remains unchanged as a source-verified benchmark demo. A **separate generated HTML artifact** now reconciles the canonical original research owner's **82 chapters, 291 normal question-and-answer nodes and 36 parent-dependent continuations**. It can be built with:
+
+`node tools/build-pius-x-expanded-standalone.mjs`
+
+This produces `artifacts/pius-x-study-expanded/SPX_Study_Expanded_82.html`, a fully offline HTML. The CI workflow also runs `node tests/pius-x-study-expanded-82-e2e.mjs` in Chromium at desktop and phone widths and uploads the HTML plus screenshots in the downloadable workflow artifact.
+
+P0 content and source corrections are deliberately isolated from the original research owners:
+
+- `spx-p0-enriched-openings.v1.json` contains **34 substantial EN/FR opening-answer editorial drafts** (each at least 90 words in each language). They cover priority papal encyclicals, priestly and lay apostolate, sacramental catechesis and select biographical questions. Their exact original 34 research-draft openings remain accessible for side-by-side comparison. **48 openings still have the original shorter material.**
+- `tools/spx-p0-editorial-normalization.mjs` applies a non-authoritative We/Nous editorial-voice correction **only to source-attributed papal-document adaptations**. The earlier 44 first-person singular records were reconciled in the generated review artifact. The Unicode-aware French matching expressly protects words such as *âmes* and *système*.
+- The builder classifies all **82 original chapters** as papal-document adaptation, catechetical reconstruction, biographical narrator or an editorial source-scope hold. Papally approved catechisms are never silently treated as Pius X's personal spoken words. **Nineteen chapters** retain partial/special-evidence notices; partial evidence is **not called biography**.
+- Selecting a different first-level follow-up now **replaces the previous branch**, instead of appending independent alternatives into a fictitious continuous exchange. Dependent continuations are shown only under their actual parent turn.
+
+The source panel links to the historical witness and prints its locator, but **does not yet contain exact, independently collated source quotations for every expanded claim**. These long-form answers are source-bounded editorial reconstructions, *not* verified quotations, independent translations or historical papal speech. They must not be made public until original-witness collation, doctrinal, period-voice, EN/FR and release reviews pass. No source-owner answer text was overwritten. The prototype does not provide open-ended AI chat or adjudicate individual spiritual states or current canon law.
+
 ## Fidelity and editorial holds
 
 The content comes from the source owner's 12+22=34 completed claim-mapped turns **after** its two source-order repairs and four source-fidelity overlays. There are exactly **68 bilingual response segments**, each retaining original editorial claim IDs and Vatican citations. Nothing is paraphrased anew by this prototype. The interface labels speech **adapted editorial dialogue, not verbatim quotations**. Claims were subject to internal review only; historic/source, period voice, translations, theology and publication certification remain pending. *Haerent animo* has no original Vatican English or French translation attested in the source master; its EN/FR are unapproved editorial translations. The instructions from 1903–1908 are not presented as current universal canon law.
 
-**Substantive limitation (observed 21 October 2026):** the 34 complete English answers contain only **33–57 words each** (median **43 words**), and each original visible segment had a median of **22 words**. This is a source-mapped conversational skeleton, not a satisfying full response corpus. The UI corrections remove artificial truncation and connect related source passages but do **not** turn these brief summaries into full historically substantiated answers. The larger parallel 82-chapter / 327-node editorial conversation library still needs carefully source-verified reconciliation into a separate fuller conversational build. No historical dialogue has been silently lengthened or falsely approved.
+**Substantive limitation (observed 21 October 2026):** the 34 complete English answers contain only **33–57 words each** (median **43 words**), and each original visible segment had a median of **22 words**. This is a source-mapped conversational skeleton, not a satisfying full response corpus. The UI corrections remove artificial truncation and connect related source passages but do **not** turn these brief summaries into full historically substantiated answers. The original 34-turn UI still stands alone; the larger 82-chapter corpus is now available through a separately generated review-only HTML, with its unapproved status and remaining short drafts explicit. No historical dialogue has been silently lengthened or falsely approved.
 
 This is **not** an autonomous LLM or semantic retrieval engine: free-text searches rank documented question headings and current source claim glosses for navigation only. No external network or secret API key is hidden inside the HTML. A broader conversation will require an approved retrieval/model integration later; unknown questions are held.
 
