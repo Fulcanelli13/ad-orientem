@@ -94,6 +94,7 @@ on:
       - 'previews/pius-x-three-voice-source-tethered-v2-20261021.json'
       - 'docs/research/PIUS-X-FIRST3-SOURCE-TETHERED-VOICE-20261021.md'
       - 'tests/pius-x-three-voice-source-tethered-v2.mjs'
+      - 'tools/formation/build-pius-x-first-release-dialogue-review-queue.mjs'
       - 'tests/pius-x-depth12-visual-novel-browser.mjs'
       - 'tests/pius-x-first20-personal-and-papal-source-edits.mjs'
       - 'previews/visible-mass-3d/pius-x-batch-release-editorial-review.html'
@@ -436,6 +437,8 @@ jobs:
           node-version: '22'
       - name: Reconcile all 810 original St Pius X draft families
         run: node tools/formation/build-pius-x-810-corpus-release-selection.mjs
+      - name: Reconcile first-release 130 with existing 82 authored dialogue chapters
+        run: node tools/formation/build-pius-x-first-release-dialogue-review-queue.mjs
       - name: Verify corpus ownership and the 130-candidate first-release shortlist
         run: node tests/pius-x-full810-balanced130-corpus.mjs
       - name: Test first twenty revised papal teaching and biography replies against original owners
