@@ -60,7 +60,7 @@ def download(url: str, max_bytes: int = MAX_BYTES):
         except (requests.RequestException, ValueError) as e:
             errors.append(str(e)[:150])
             if attempt < 2:
-                time.sleep(1 + attempt * 2)
+                time.sleep([5, 15][attempt]) # Wikimedia occasionally rate-limits sequential originals
     raise RuntimeError("Download failed: " + "; ".join(errors[-2:]))
 
 
@@ -199,6 +199,7 @@ def main():
                       "productionReleaseApproved": False}
             print("HERO_HOLD", entry["date"], result["reason"], flush=True)
         records.append(result)
+        time.sleep(2) # polite pacing avoids Commons HTTP 429
     for w, h in [(320, 390), (390, 470)]:
         draw_contact(records, w, h)
     stats = {"attempted": 10,
