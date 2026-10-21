@@ -15,7 +15,8 @@
       "john": 10
     },
     "questionCandidates": 41,
-    "externalCandidateLinks": 8
+    "externalCandidateLinks": 11,
+    "verifiedHistoricalTopicToVerseLinks": 3
   },
   "passages": [
     {
@@ -276,6 +277,18 @@
           "originalQuestion": "What is Baptism?",
           "recordUrl": "https://github.com/OpenChristianData/open-christian-data/blob/main/data/catechisms/baltimore-catechism-no-1.json",
           "relationship": "topic_candidate_unreviewed_against_patristic_segment",
+          "isFatherQuotation": false
+        },
+        {
+          "kind": "historical_topic_to_verse",
+          "externalTopic": "BAPTISM",
+          "originalIndex": "Nave's Topical Bible",
+          "originalAspect": "General references",
+          "originalReference": "Mark 1:4,5,8-10",
+          "matchedVerse": "Mark 1:9",
+          "sourceRecordUrl": "https://github.com/neuu-org/bible-topics-dataset/blob/main/data/01_parsed/B/baptism.json",
+          "licenseOfDerivative": "CC BY 4.0",
+          "relationship": "external_topic_to_verse_verified__no_Father_answer_link_approved",
           "isFatherQuotation": false
         }
       ]
@@ -791,6 +804,18 @@
           "recordUrl": "https://github.com/OpenChristianData/open-christian-data/blob/main/data/catechisms/baltimore-catechism-no-1.json",
           "relationship": "topic_candidate_unreviewed_against_patristic_segment",
           "isFatherQuotation": false
+        },
+        {
+          "kind": "historical_topic_to_verse",
+          "externalTopic": "GRACE",
+          "originalIndex": "Torrey's New Topical Textbook",
+          "originalAspect": "Christ was full of",
+          "originalReference": "John 1:14",
+          "matchedVerse": "John 1:14",
+          "sourceRecordUrl": "https://github.com/neuu-org/bible-topics-dataset/blob/main/data/01_parsed/G/grace.json",
+          "licenseOfDerivative": "CC BY 4.0",
+          "relationship": "external_topic_to_verse_verified__no_Father_answer_link_approved",
+          "isFatherQuotation": false
         }
       ]
     },
@@ -814,7 +839,20 @@
           "status": "original_segment_phrase_previously_source_checked__question_relevance_not_certified"
         }
       ],
-      "externalCandidateLinks": []
+      "externalCandidateLinks": [
+        {
+          "kind": "historical_topic_to_verse",
+          "externalTopic": "BREAD",
+          "originalIndex": "Torrey's New Topical Textbook",
+          "originalAspect": "Illustrative: Of Christ",
+          "originalReference": "John 6:33-35",
+          "matchedVerse": "John 6:35",
+          "sourceRecordUrl": "https://github.com/neuu-org/bible-topics-dataset/blob/main/data/01_parsed/B/bread.json",
+          "licenseOfDerivative": "CC BY 4.0",
+          "relationship": "external_topic_to_verse_verified__no_Father_answer_link_approved",
+          "isFatherQuotation": false
+        }
+      ]
     },
     {
       "pericopeId": "catena.john.8.12",
