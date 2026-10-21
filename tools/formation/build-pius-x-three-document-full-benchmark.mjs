@@ -40,7 +40,7 @@ const sequences={
  HAERENT:{core:['T1','T5','T2','T3','T6','T4','T7','T8','T9','T10','T11'],optional:['T12','T13'],branchAnchor:{T12:'T7',T13:'T11'}}
 };
 const scenes=baseline.scenes.map(s=>{
- const seq=sequences[s.sourceId];const prefix='SPX.BENCH.'+s.sourceId+'.';
+ const seq=sequences[s.sourceId];const prefix=s.id+'.';
  const ids=[...seq.core,...seq.optional].map(x=>prefix+x);
  assert.equal(new Set(ids).size,ids.length);
  const turns=ids.map((id,i)=>{
