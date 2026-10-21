@@ -1,0 +1,1691 @@
+{
+  "schema": "AO_P1_ADDITIONAL_COMMONS_PRODUCTION_RESOLVER_AUDIT_V1",
+  "asOf": "2026-10-16",
+  "witnessRunUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38907782296",
+  "producer": "tests/calendar-p1-live-1962-source-discovery.mjs via AO_RUNTIME_V8.resolver.properResolver.resolveSource",
+  "status": "17_DIRECT_4_SOURCE_COMPOSED_7_PARTIAL_3_AMBIGUOUS",
+  "coreSections": [
+    "Introitus",
+    "Oratio",
+    "Lectio",
+    "Graduale",
+    "Evangelium",
+    "Offertorium",
+    "Secreta",
+    "Communio",
+    "Postcommunio"
+  ],
+  "sourceCandidateCount": 28,
+  "directTrilingualNineSectionCount": 17,
+  "partialSourceCount": 11,
+  "sourceEntries": [
+    {
+      "researchId": "p1:index:1962:apostles",
+      "sourcePath": "Commune/C1",
+      "inAppResolverReached": true,
+      "byLanguage": {
+        "la": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Oratio"
+          ],
+          "missingSections": [
+            "Introitus",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ]
+        },
+        "en": {
+          "status": "RESOLVED",
+          "presentSections": [],
+          "missingSections": [
+            "Introitus",
+            "Oratio",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ]
+        },
+        "fr": {
+          "status": "RESOLVED",
+          "presentSections": [],
+          "missingSections": [
+            "Introitus",
+            "Oratio",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ]
+        }
+      },
+      "directNineSectionTrilingual": false,
+      "sourceStatus": "PARTIAL_OR_INHERITED_SOURCE_RECONCILIATION_REQUIRED",
+      "approvedForNewSaintMass": false,
+      "canonical1962PrintedFamilyCertified": false,
+      "readOnlyMissalRoute": null
+    },
+    {
+      "researchId": "p1:index:1962:feasts_of_the_blessed_virgin_mary",
+      "sourcePath": "Commune/C11",
+      "inAppResolverReached": true,
+      "byLanguage": {
+        "la": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Introitus",
+            "Oratio",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ],
+          "missingSections": []
+        },
+        "en": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Introitus",
+            "Oratio",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ],
+          "missingSections": []
+        },
+        "fr": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Introitus",
+            "Oratio",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ],
+          "missingSections": []
+        }
+      },
+      "directNineSectionTrilingual": true,
+      "sourceStatus": "TRILINGUAL_NINE_SECTION_SOURCE_DIRECT",
+      "approvedForNewSaintMass": false,
+      "canonical1962PrintedFamilyCertified": false,
+      "readOnlyMissalRoute": null
+    },
+    {
+      "researchId": "p1:index:1962:several_bishops_and_confessors",
+      "sourcePath": "Commune/C4c",
+      "inAppResolverReached": true,
+      "byLanguage": {
+        "la": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Oratio"
+          ],
+          "missingSections": [
+            "Introitus",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ]
+        },
+        "en": {
+          "status": "RESOLVED",
+          "presentSections": [],
+          "missingSections": [
+            "Introitus",
+            "Oratio",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ]
+        },
+        "fr": {
+          "status": "RESOLVED",
+          "presentSections": [],
+          "missingSections": [
+            "Introitus",
+            "Oratio",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ]
+        }
+      },
+      "directNineSectionTrilingual": false,
+      "sourceStatus": "PARTIAL_OR_INHERITED_SOURCE_RECONCILIATION_REQUIRED",
+      "approvedForNewSaintMass": false,
+      "canonical1962PrintedFamilyCertified": false,
+      "readOnlyMissalRoute": null
+    },
+    {
+      "researchId": "p1:index:1962:several_bishops_and_martyrs",
+      "sourcePath": "Commune/C3",
+      "inAppResolverReached": true,
+      "byLanguage": {
+        "la": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Introitus",
+            "Oratio",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ],
+          "missingSections": []
+        },
+        "en": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Introitus",
+            "Oratio",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ],
+          "missingSections": []
+        },
+        "fr": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Introitus",
+            "Oratio",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ],
+          "missingSections": []
+        }
+      },
+      "directNineSectionTrilingual": true,
+      "sourceStatus": "TRILINGUAL_NINE_SECTION_SOURCE_DIRECT",
+      "approvedForNewSaintMass": false,
+      "canonical1962PrintedFamilyCertified": false,
+      "readOnlyMissalRoute": null
+    },
+    {
+      "researchId": "p1:index:1962:several_confessors_not_bishops",
+      "sourcePath": "Commune/C5c",
+      "inAppResolverReached": true,
+      "byLanguage": {
+        "la": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Oratio"
+          ],
+          "missingSections": [
+            "Introitus",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ]
+        },
+        "en": {
+          "status": "RESOLVED",
+          "presentSections": [],
+          "missingSections": [
+            "Introitus",
+            "Oratio",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ]
+        },
+        "fr": {
+          "status": "RESOLVED",
+          "presentSections": [],
+          "missingSections": [
+            "Introitus",
+            "Oratio",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ]
+        }
+      },
+      "directNineSectionTrilingual": false,
+      "sourceStatus": "PARTIAL_OR_INHERITED_SOURCE_RECONCILIATION_REQUIRED",
+      "approvedForNewSaintMass": false,
+      "canonical1962PrintedFamilyCertified": false,
+      "readOnlyMissalRoute": null
+    },
+    {
+      "researchId": "p1:index:1962:several_female_martyrs_not_virgins",
+      "sourcePath": "Commune/C7b",
+      "inAppResolverReached": true,
+      "byLanguage": {
+        "la": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Oratio",
+            "Secreta",
+            "Postcommunio"
+          ],
+          "missingSections": [
+            "Introitus",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Communio"
+          ]
+        },
+        "en": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Oratio",
+            "Secreta",
+            "Postcommunio"
+          ],
+          "missingSections": [
+            "Introitus",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Communio"
+          ]
+        },
+        "fr": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Oratio",
+            "Secreta",
+            "Postcommunio"
+          ],
+          "missingSections": [
+            "Introitus",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Communio"
+          ]
+        }
+      },
+      "directNineSectionTrilingual": false,
+      "sourceStatus": "PARTIAL_OR_INHERITED_SOURCE_RECONCILIATION_REQUIRED",
+      "approvedForNewSaintMass": false,
+      "canonical1962PrintedFamilyCertified": false,
+      "readOnlyMissalRoute": null
+    },
+    {
+      "researchId": "p1:index:1962:several_martyrs",
+      "sourcePath": "Commune/C3a",
+      "inAppResolverReached": true,
+      "byLanguage": {
+        "la": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Introitus",
+            "Oratio",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ],
+          "missingSections": []
+        },
+        "en": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Introitus",
+            "Oratio",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ],
+          "missingSections": []
+        },
+        "fr": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Introitus",
+            "Oratio",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ],
+          "missingSections": []
+        }
+      },
+      "directNineSectionTrilingual": true,
+      "sourceStatus": "TRILINGUAL_NINE_SECTION_SOURCE_DIRECT",
+      "approvedForNewSaintMass": false,
+      "canonical1962PrintedFamilyCertified": false,
+      "readOnlyMissalRoute": null
+    },
+    {
+      "researchId": "p1:index:1962:several_martyrs_eastertide",
+      "sourcePath": "Commune/C3p",
+      "inAppResolverReached": true,
+      "byLanguage": {
+        "la": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Introitus",
+            "Oratio",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ],
+          "missingSections": []
+        },
+        "en": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Introitus",
+            "Oratio",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ],
+          "missingSections": []
+        },
+        "fr": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Oratio",
+            "Secreta",
+            "Postcommunio"
+          ],
+          "missingSections": [
+            "Introitus",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Communio"
+          ]
+        }
+      },
+      "directNineSectionTrilingual": false,
+      "sourceStatus": "PARTIAL_OR_INHERITED_SOURCE_RECONCILIATION_REQUIRED",
+      "approvedForNewSaintMass": false,
+      "canonical1962PrintedFamilyCertified": false,
+      "readOnlyMissalRoute": null
+    },
+    {
+      "researchId": "p1:index:1962:several_martyrs_eastertide_ii",
+      "sourcePath": "Commune/C3ap",
+      "inAppResolverReached": true,
+      "byLanguage": {
+        "la": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Oratio",
+            "Secreta",
+            "Postcommunio"
+          ],
+          "missingSections": [
+            "Introitus",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Communio"
+          ]
+        },
+        "en": {
+          "status": "RESOLVED",
+          "presentSections": [],
+          "missingSections": [
+            "Introitus",
+            "Oratio",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ]
+        },
+        "fr": {
+          "status": "RESOLVED",
+          "presentSections": [],
+          "missingSections": [
+            "Introitus",
+            "Oratio",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ]
+        }
+      },
+      "directNineSectionTrilingual": false,
+      "sourceStatus": "PARTIAL_OR_INHERITED_SOURCE_RECONCILIATION_REQUIRED",
+      "approvedForNewSaintMass": false,
+      "canonical1962PrintedFamilyCertified": false,
+      "readOnlyMissalRoute": null,
+      "sourceRecoveryStatus": "PARTIAL_RECOVERY_VERIFIED",
+      "recoveredLanguageSections": 18,
+      "recoveredSourceEvidence": "data/calendar/p1-partial-common-source-recovery.v1.json",
+      "completeViaReadOnlyInheritedSourceMap": false,
+      "recoveredReadOnlySectionsOnly": true
+    },
+    {
+      "researchId": "p1:index:1962:several_martyrs_second_mass",
+      "sourcePath": "Commune/C3a-1",
+      "inAppResolverReached": true,
+      "byLanguage": {
+        "la": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Introitus",
+            "Oratio",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ],
+          "missingSections": []
+        },
+        "en": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Introitus",
+            "Oratio",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ],
+          "missingSections": []
+        },
+        "fr": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Introitus",
+            "Oratio",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ],
+          "missingSections": []
+        }
+      },
+      "directNineSectionTrilingual": true,
+      "sourceStatus": "TRILINGUAL_NINE_SECTION_SOURCE_DIRECT",
+      "approvedForNewSaintMass": false,
+      "canonical1962PrintedFamilyCertified": false,
+      "readOnlyMissalRoute": null
+    },
+    {
+      "researchId": "p1:index:1962:several_popes_and_confessors",
+      "sourcePath": "Commune/C4b",
+      "inAppResolverReached": true,
+      "byLanguage": {
+        "la": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Introitus",
+            "Oratio",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ],
+          "missingSections": []
+        },
+        "en": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Introitus",
+            "Oratio",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ],
+          "missingSections": []
+        },
+        "fr": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Introitus",
+            "Oratio",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ],
+          "missingSections": []
+        }
+      },
+      "directNineSectionTrilingual": true,
+      "sourceStatus": "TRILINGUAL_NINE_SECTION_SOURCE_DIRECT",
+      "approvedForNewSaintMass": false,
+      "canonical1962PrintedFamilyCertified": false,
+      "readOnlyMissalRoute": null
+    },
+    {
+      "researchId": "p1:index:1962:several_popes_and_martyrs",
+      "sourcePath": "Commune/C3b",
+      "inAppResolverReached": true,
+      "byLanguage": {
+        "la": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Introitus",
+            "Oratio",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ],
+          "missingSections": []
+        },
+        "en": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Oratio"
+          ],
+          "missingSections": [
+            "Introitus",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ]
+        },
+        "fr": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Oratio"
+          ],
+          "missingSections": [
+            "Introitus",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ]
+        }
+      },
+      "directNineSectionTrilingual": false,
+      "sourceStatus": "PARTIAL_OR_INHERITED_SOURCE_RECONCILIATION_REQUIRED",
+      "approvedForNewSaintMass": false,
+      "canonical1962PrintedFamilyCertified": false,
+      "readOnlyMissalRoute": null,
+      "completeViaReadOnlyInheritedSourceMap": true,
+      "composedNineSectionTrilingual": true,
+      "sourceCompositionStatus": "SOURCE_COMPOSITION_VERIFIED",
+      "sourceCompositionModule": "src/calendar/p1-papal-martyr-source-composition.js",
+      "sourceCompositionProofUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38930425274",
+      "inheritedBorrowedSectionCount": 16,
+      "uniqueVariantCollectRetained": true,
+      "sourceDonor": "Commune/C4b"
+    },
+    {
+      "researchId": "p1:index:1962:several_virgins_and_martyrs",
+      "sourcePath": "Commune/C6b",
+      "inAppResolverReached": true,
+      "byLanguage": {
+        "la": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Introitus",
+            "Oratio",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ],
+          "missingSections": []
+        },
+        "en": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Introitus",
+            "Oratio",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ],
+          "missingSections": []
+        },
+        "fr": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Introitus",
+            "Oratio",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ],
+          "missingSections": []
+        }
+      },
+      "directNineSectionTrilingual": true,
+      "sourceStatus": "TRILINGUAL_NINE_SECTION_SOURCE_DIRECT",
+      "approvedForNewSaintMass": false,
+      "canonical1962PrintedFamilyCertified": false,
+      "readOnlyMissalRoute": null
+    },
+    {
+      "researchId": "p1:index:1962:virgins",
+      "sourcePath": "Commune/C6a",
+      "inAppResolverReached": true,
+      "byLanguage": {
+        "la": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Introitus",
+            "Oratio",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ],
+          "missingSections": []
+        },
+        "en": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Introitus",
+            "Oratio",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ],
+          "missingSections": []
+        },
+        "fr": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Introitus",
+            "Oratio",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ],
+          "missingSections": []
+        }
+      },
+      "directNineSectionTrilingual": true,
+      "sourceStatus": "TRILINGUAL_NINE_SECTION_SOURCE_DIRECT",
+      "approvedForNewSaintMass": false,
+      "canonical1962PrintedFamilyCertified": false,
+      "readOnlyMissalRoute": null
+    },
+    {
+      "researchId": "p1:index:1962:virgins_second_mass",
+      "sourcePath": "Commune/C6a-1",
+      "inAppResolverReached": true,
+      "byLanguage": {
+        "la": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Introitus",
+            "Oratio",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ],
+          "missingSections": []
+        },
+        "en": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Introitus",
+            "Oratio",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ],
+          "missingSections": []
+        },
+        "fr": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Introitus",
+            "Oratio",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ],
+          "missingSections": []
+        }
+      },
+      "directNineSectionTrilingual": true,
+      "sourceStatus": "TRILINGUAL_NINE_SECTION_SOURCE_DIRECT",
+      "approvedForNewSaintMass": false,
+      "canonical1962PrintedFamilyCertified": false,
+      "readOnlyMissalRoute": null
+    },
+    {
+      "researchId": "p1:index:1962:bishop_and_martyr",
+      "sourcePath": "Commune/C2",
+      "inAppResolverReached": true,
+      "byLanguage": {
+        "la": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Introitus",
+            "Oratio",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ],
+          "missingSections": []
+        },
+        "en": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Introitus",
+            "Oratio",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ],
+          "missingSections": []
+        },
+        "fr": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Introitus",
+            "Oratio",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ],
+          "missingSections": []
+        }
+      },
+      "directNineSectionTrilingual": true,
+      "sourceStatus": "TRILINGUAL_NINE_SECTION_SOURCE_DIRECT",
+      "approvedForNewSaintMass": false,
+      "canonical1962PrintedFamilyCertified": false,
+      "readOnlyMissalRoute": null
+    },
+    {
+      "researchId": "p1:index:1962:bishop_and_martyr_second_mass",
+      "sourcePath": "Commune/C2-1",
+      "inAppResolverReached": true,
+      "byLanguage": {
+        "la": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Introitus",
+            "Oratio",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ],
+          "missingSections": []
+        },
+        "en": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Introitus",
+            "Oratio",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ],
+          "missingSections": []
+        },
+        "fr": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Introitus",
+            "Oratio",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ],
+          "missingSections": []
+        }
+      },
+      "directNineSectionTrilingual": true,
+      "sourceStatus": "TRILINGUAL_NINE_SECTION_SOURCE_DIRECT",
+      "approvedForNewSaintMass": false,
+      "canonical1962PrintedFamilyCertified": false,
+      "readOnlyMissalRoute": null
+    },
+    {
+      "researchId": "p1:index:1962:female_martyr_not_a_virgin",
+      "sourcePath": "Commune/C7",
+      "inAppResolverReached": true,
+      "byLanguage": {
+        "la": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Introitus",
+            "Oratio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ],
+          "missingSections": [
+            "Lectio"
+          ]
+        },
+        "en": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Oratio",
+            "Graduale",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ],
+          "missingSections": [
+            "Introitus",
+            "Lectio",
+            "Evangelium",
+            "Offertorium"
+          ]
+        },
+        "fr": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Oratio",
+            "Graduale",
+            "Secreta",
+            "Postcommunio"
+          ],
+          "missingSections": [
+            "Introitus",
+            "Lectio",
+            "Evangelium",
+            "Offertorium",
+            "Communio"
+          ]
+        }
+      },
+      "directNineSectionTrilingual": false,
+      "sourceStatus": "PARTIAL_OR_INHERITED_SOURCE_RECONCILIATION_REQUIRED",
+      "approvedForNewSaintMass": false,
+      "canonical1962PrintedFamilyCertified": false,
+      "readOnlyMissalRoute": null,
+      "sourceRecoveryStatus": "PARTIAL_RECOVERY_VERIFIED",
+      "recoveredLanguageSections": 7,
+      "recoveredSourceEvidence": "data/calendar/p1-partial-common-source-recovery.v1.json",
+      "completeViaReadOnlyInheritedSourceMap": true,
+      "recoveredReadOnlySectionsOnly": true,
+      "sourceCompositionStatus": "SOURCE_COMPOSITION_VERIFIED",
+      "composedNineSectionTrilingual": true,
+      "sourceCompositionProofUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38928218867",
+      "lessonOwner": "Commune/C6",
+      "inheritedBorrowedSectionCount": 10
+    },
+    {
+      "researchId": "p1:index:1962:holy_woman_neither_virgin_nor_martyr",
+      "sourcePath": "Commune/C7a",
+      "inAppResolverReached": true,
+      "byLanguage": {
+        "la": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Introitus",
+            "Oratio",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ],
+          "missingSections": []
+        },
+        "en": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Introitus",
+            "Oratio",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ],
+          "missingSections": []
+        },
+        "fr": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Introitus",
+            "Oratio",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ],
+          "missingSections": []
+        }
+      },
+      "directNineSectionTrilingual": true,
+      "sourceStatus": "TRILINGUAL_NINE_SECTION_SOURCE_DIRECT",
+      "approvedForNewSaintMass": false,
+      "canonical1962PrintedFamilyCertified": false,
+      "readOnlyMissalRoute": null
+    },
+    {
+      "researchId": "p1:index:1962:martyr",
+      "sourcePath": "Commune/C2a",
+      "inAppResolverReached": true,
+      "byLanguage": {
+        "la": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Introitus",
+            "Oratio",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ],
+          "missingSections": []
+        },
+        "en": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Introitus",
+            "Oratio",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ],
+          "missingSections": []
+        },
+        "fr": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Introitus",
+            "Oratio",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ],
+          "missingSections": []
+        }
+      },
+      "directNineSectionTrilingual": true,
+      "sourceStatus": "TRILINGUAL_NINE_SECTION_SOURCE_DIRECT",
+      "approvedForNewSaintMass": false,
+      "canonical1962PrintedFamilyCertified": false,
+      "readOnlyMissalRoute": null
+    },
+    {
+      "researchId": "p1:index:1962:martyr_eastertide",
+      "sourcePath": "Commune/C2p",
+      "inAppResolverReached": true,
+      "byLanguage": {
+        "la": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Introitus",
+            "Oratio",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ],
+          "missingSections": []
+        },
+        "en": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Introitus",
+            "Oratio",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ],
+          "missingSections": []
+        },
+        "fr": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Introitus",
+            "Oratio",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ],
+          "missingSections": []
+        }
+      },
+      "directNineSectionTrilingual": true,
+      "sourceStatus": "TRILINGUAL_NINE_SECTION_SOURCE_DIRECT",
+      "approvedForNewSaintMass": false,
+      "canonical1962PrintedFamilyCertified": false,
+      "readOnlyMissalRoute": null
+    },
+    {
+      "researchId": "p1:index:1962:martyr_eastertide_ii",
+      "sourcePath": "Commune/C2ap",
+      "inAppResolverReached": true,
+      "byLanguage": {
+        "la": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Oratio",
+            "Secreta",
+            "Postcommunio"
+          ],
+          "missingSections": [
+            "Introitus",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Communio"
+          ]
+        },
+        "en": {
+          "status": "RESOLVED",
+          "presentSections": [],
+          "missingSections": [
+            "Introitus",
+            "Oratio",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ]
+        },
+        "fr": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Oratio"
+          ],
+          "missingSections": [
+            "Introitus",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ]
+        }
+      },
+      "directNineSectionTrilingual": false,
+      "sourceStatus": "PARTIAL_OR_INHERITED_SOURCE_RECONCILIATION_REQUIRED",
+      "approvedForNewSaintMass": false,
+      "canonical1962PrintedFamilyCertified": false,
+      "readOnlyMissalRoute": null,
+      "sourceCompositionStatus": "SOURCE_COMPOSITION_VERIFIED",
+      "sourceCompositionProofUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38916464900",
+      "sourceCompositionModule": "src/calendar/p1-paschal-alternate-source-composition.js",
+      "completeViaReadOnlyInheritedSourceMap": true,
+      "composedNineSectionTrilingual": true,
+      "baseMassSource": "Commune/C2p",
+      "alternativeOrationSource": "Commune/C2a",
+      "inheritedBorrowedSectionCount": 23,
+      "verifiedLanguages": [
+        "la",
+        "en",
+        "fr"
+      ],
+      "distinctPrinted1962MassCertified": false
+    },
+    {
+      "researchId": "p1:index:1962:martyr_second_mass",
+      "sourcePath": "Commune/C2a-1",
+      "inAppResolverReached": true,
+      "byLanguage": {
+        "la": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Introitus",
+            "Oratio",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ],
+          "missingSections": []
+        },
+        "en": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Introitus",
+            "Oratio",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ],
+          "missingSections": []
+        },
+        "fr": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Introitus",
+            "Oratio",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ],
+          "missingSections": []
+        }
+      },
+      "directNineSectionTrilingual": true,
+      "sourceStatus": "TRILINGUAL_NINE_SECTION_SOURCE_DIRECT",
+      "approvedForNewSaintMass": false,
+      "canonical1962PrintedFamilyCertified": false,
+      "readOnlyMissalRoute": null
+    },
+    {
+      "researchId": "p1:index:1962:pope_and_martyr",
+      "sourcePath": "Commune/C2b",
+      "inAppResolverReached": true,
+      "byLanguage": {
+        "la": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Introitus",
+            "Oratio",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ],
+          "missingSections": []
+        },
+        "en": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Oratio"
+          ],
+          "missingSections": [
+            "Introitus",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ]
+        },
+        "fr": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Oratio"
+          ],
+          "missingSections": [
+            "Introitus",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ]
+        }
+      },
+      "directNineSectionTrilingual": false,
+      "sourceStatus": "PARTIAL_OR_INHERITED_SOURCE_RECONCILIATION_REQUIRED",
+      "approvedForNewSaintMass": false,
+      "canonical1962PrintedFamilyCertified": false,
+      "readOnlyMissalRoute": null,
+      "completeViaReadOnlyInheritedSourceMap": true,
+      "composedNineSectionTrilingual": true,
+      "sourceCompositionStatus": "SOURCE_COMPOSITION_VERIFIED",
+      "sourceCompositionModule": "src/calendar/p1-papal-martyr-source-composition.js",
+      "sourceCompositionProofUrl": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38930425274",
+      "inheritedBorrowedSectionCount": 16,
+      "uniqueVariantCollectRetained": true,
+      "sourceDonor": "Commune/C4b"
+    },
+    {
+      "researchId": "p1:index:1962:virgin_and_martyr",
+      "sourcePath": "Commune/C6",
+      "inAppResolverReached": true,
+      "byLanguage": {
+        "la": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Introitus",
+            "Oratio",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ],
+          "missingSections": []
+        },
+        "en": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Introitus",
+            "Oratio",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ],
+          "missingSections": []
+        },
+        "fr": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Introitus",
+            "Oratio",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ],
+          "missingSections": []
+        }
+      },
+      "directNineSectionTrilingual": true,
+      "sourceStatus": "TRILINGUAL_NINE_SECTION_SOURCE_DIRECT",
+      "approvedForNewSaintMass": false,
+      "canonical1962PrintedFamilyCertified": false,
+      "readOnlyMissalRoute": null
+    },
+    {
+      "researchId": "p1:index:1962:virgin_and_martyr_second_mass",
+      "sourcePath": "Commune/C6-1",
+      "inAppResolverReached": true,
+      "byLanguage": {
+        "la": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Introitus",
+            "Oratio",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ],
+          "missingSections": []
+        },
+        "en": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Introitus",
+            "Oratio",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ],
+          "missingSections": []
+        },
+        "fr": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Introitus",
+            "Oratio",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ],
+          "missingSections": []
+        }
+      },
+      "directNineSectionTrilingual": true,
+      "sourceStatus": "TRILINGUAL_NINE_SECTION_SOURCE_DIRECT",
+      "approvedForNewSaintMass": false,
+      "canonical1962PrintedFamilyCertified": false,
+      "readOnlyMissalRoute": null
+    },
+    {
+      "researchId": "p1:index:1962:dedication_of_a_church",
+      "sourcePath": "Commune/C8",
+      "inAppResolverReached": true,
+      "byLanguage": {
+        "la": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Introitus",
+            "Oratio",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ],
+          "missingSections": []
+        },
+        "en": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Introitus",
+            "Oratio",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ],
+          "missingSections": []
+        },
+        "fr": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Introitus",
+            "Oratio",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ],
+          "missingSections": []
+        }
+      },
+      "directNineSectionTrilingual": true,
+      "sourceStatus": "TRILINGUAL_NINE_SECTION_SOURCE_DIRECT",
+      "approvedForNewSaintMass": false,
+      "canonical1962PrintedFamilyCertified": false,
+      "readOnlyMissalRoute": null
+    },
+    {
+      "researchId": "p1:index:1962:vigil_of_an_apostle",
+      "sourcePath": "Commune/C1v",
+      "inAppResolverReached": true,
+      "byLanguage": {
+        "la": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Introitus",
+            "Oratio",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ],
+          "missingSections": []
+        },
+        "en": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Introitus",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ],
+          "missingSections": [
+            "Oratio"
+          ]
+        },
+        "fr": {
+          "status": "RESOLVED",
+          "presentSections": [
+            "Introitus",
+            "Lectio",
+            "Graduale",
+            "Evangelium",
+            "Offertorium",
+            "Secreta",
+            "Communio",
+            "Postcommunio"
+          ],
+          "missingSections": [
+            "Oratio"
+          ]
+        }
+      },
+      "directNineSectionTrilingual": false,
+      "sourceStatus": "PARTIAL_OR_INHERITED_SOURCE_RECONCILIATION_REQUIRED",
+      "approvedForNewSaintMass": false,
+      "canonical1962PrintedFamilyCertified": false,
+      "readOnlyMissalRoute": null
+    }
+  ],
+  "interpretation": "C-codes inherit one another; missing sections need exact canonical owner resolution, not publication as separate full Masses. A direct 9-section audit is not full-1962 edition certification or an authorization to celebrate optional saints.",
+  "routing": "NONE_EXTERNAL_OR_INTERNAL_UNTIL_READER_OWNS_READ_ONLY_SURFACE",
+  "massSelectionMutation": false,
+  "sourceComposedNineSectionCount": 4,
+  "completeAfterCompositionCount": 21,
+  "partialsAfterCompositionCount": 7,
+  "partialSourceReconciliationsVerified": 2,
+  "verifiedAdditionalPartialLanguageSections": 25
+}

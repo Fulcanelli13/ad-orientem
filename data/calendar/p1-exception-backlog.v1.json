@@ -1,0 +1,364 @@
+{
+  "schema": "AO_P1_TRADITIONAL_LITURGY_EXCEPTION_BACKLOG_V1",
+  "asOf": "2026-10-16",
+  "openCount": 22,
+  "items": [
+    {
+      "id": "P1-E01",
+      "code": "PRIMARY_1962_COMMONS_COLLATION",
+      "kind": "SOURCE_HOLD",
+      "status": "OPEN",
+      "nextAction": "First reconcile the existing in-app Missal's Common/Proper coverage, source IDs, variant identity and 11 source-owned components; use printed missal/external witnesses only to verify canonical app text, not as a second navigation or parallel publication corpus.",
+      "blocksRuntimeApproval": true,
+      "partialProgress": {
+        "asOf": "2026-10-16",
+        "evidenceFile": "data/calendar/p1-1962-missal-facsimile-collation.v1.json",
+        "finding": "Facsimile images of four printed Common families were visually inspected (Doctorum, Confessor Pontiff, Confessor non Pontiff, Abbots); this verifies headings and variants, not complete 1962 edition text or other families.",
+        "releaseGateStillOpen": true
+      },
+      "actualAppMapping": {
+        "verifiedSourcePaths": 7,
+        "unmappedInternetIndexRows": 31,
+        "fullyTrilingualDirectSevenSections": 6,
+        "doctorNonPontiffNeedsInheritedVernacular": true,
+        "evidence": "data/calendar/p1-canonical-common-source-crosswalk.v1.json",
+        "originalMissalTextEditionCertified": false,
+        "sharedDoctorInheritanceCertifiedAtSourceLevel": true,
+        "appCommonSourceCandidateChecksInFlight": 28,
+        "printEditionCertified": false
+      }
+    },
+    {
+      "id": "P1-E02",
+      "code": "NEWMAN_LEONARDI_THREE_ORATIONS",
+      "kind": "TEXT_HOLD",
+      "status": "OPEN",
+      "nextAction": "Resolve the 1962 Leonardi Collect/Secret/Postcommunion as exact source-owned orations in the app Missal (sourcePath, row id, conclusion), compare with original textual sources; never link users to scanned book folios.",
+      "blocksRuntimeApproval": true,
+      "partialProgress": {
+        "asOf": "2026-10-16",
+        "evidenceFile": "data/calendar/p1-1962-missal-facsimile-collation.v1.json",
+        "finding": "Collect p.696, Secret p.697 and Postcommunion p.698 all directly located in scanned printed-page images; independent typical-edition provenance, exact text normalization, conclusions and reproduction rights pending.",
+        "releaseGateStillOpen": true
+      }
+    },
+    {
+      "id": "P1-E03",
+      "code": "OCTOBER_9_DIONYSIUS_TRIO",
+      "kind": "TEXT_HOLD",
+      "status": "OPEN",
+      "nextAction": "Resolve three historic martyrs' commemoration prayers as distinct app-Missal anchors with exact oration row IDs and correct ordering; page image metadata remains internal citation evidence.",
+      "blocksRuntimeApproval": true,
+      "partialProgress": {
+        "asOf": "2026-10-16",
+        "evidenceFile": "data/calendar/p1-1962-missal-facsimile-collation.v1.json",
+        "finding": "Commemorative Collect p.696-697, Secret p.697, Postcommunion p.698 directly located in printed images; same provenance, transcription and legal-order holds.",
+        "releaseGateStillOpen": true
+      }
+    },
+    {
+      "id": "P1-E04",
+      "code": "SUNG_MASS_SECTION4_VS_111A",
+      "kind": "LEGAL_HOLD",
+      "status": "OPEN",
+      "nextAction": "Resolve 2020 required ordinary commemoration versus 1960 nonconventual Sung privileged-only restriction.",
+      "blocksRuntimeApproval": true
+    },
+    {
+      "id": "P1-E05",
+      "code": "NEWMAN_PROPER_AND_SUPPLEMENT",
+      "kind": "SOURCE_HOLD",
+      "status": "OPEN",
+      "nextAction": "Exhaustively search printed 1962 pro aliquibus locis and Holy See-approved traditional supplement.",
+      "blocksRuntimeApproval": true
+    },
+    {
+      "id": "P1-E06",
+      "code": "ST_KEVIN_ACTUAL_FORMULARY",
+      "kind": "LOCAL_UNKNOWN",
+      "status": "OPEN",
+      "nextAction": "Obtain Mass booklet or celebrant documentation; newsletter is only prospective announcement.",
+      "blocksRuntimeApproval": true
+    },
+    {
+      "id": "P1-E07",
+      "code": "ST_KEVIN_ORATORIAN_CALENDAR",
+      "kind": "JURISDICTION_HOLD",
+      "status": "OPEN",
+      "nextAction": "Verify house-specific Oratorian rank, superior authorization and historical dates.",
+      "blocksRuntimeApproval": true
+    },
+    {
+      "id": "P1-E08",
+      "code": "AD_LIBITUM_COMMEMORATION_SOURCE",
+      "kind": "LEGAL_HOLD",
+      "status": "OPEN",
+      "nextAction": "Every §6 optional commemoration requires exact traditional date-specific Proper or Supplement.",
+      "blocksRuntimeApproval": true
+    },
+    {
+      "id": "P1-E09",
+      "code": "COMMONS_VARIANTS_AND_IDS",
+      "kind": "IDENTITY_HOLD",
+      "status": "OPEN",
+      "nextAction": "Review and certify six editorial French sections against Latin C3p and independent historical French witnesses, then amend the existing canonical C3p source (C3ap inherits it). Review the English C1v second Collect against its different Latin and the proper first/second/Evangelist rubrics before correcting existing source. Do not count as complete until actually imported and tested.",
+      "blocksRuntimeApproval": true,
+      "partialProgress": {
+        "asOf": "2026-10-16",
+        "appSourceMapped": 7,
+        "sourceVariantsFound": [
+          "Commune/C4",
+          "Commune/C4-1",
+          "Commune/C4a",
+          "Commune/C5",
+          "Commune/C5-1",
+          "Commune/C5a",
+          "Commune/C5b"
+        ],
+        "sourceCrosswalk": "data/calendar/p1-canonical-common-source-crosswalk.v1.json",
+        "historicalPrintDoctorFamilyShared": true,
+        "technicalBlocker": "C5a non-bishop Doctor 1962 source in app returns Latin core but English/French directly expose ONLY Secreta and Postcommunio; shared C4a sections must be resolved with verified source inheritance.",
+        "fullTrilingualDirectSevenCore": 6,
+        "notAutomaticallyNewman": true,
+        "verifiedDoctorC5aSourceComposition": true,
+        "sharedLatinSections": 9,
+        "translatedSharedSectionsRecovered": 18,
+        "nonPontiffSecretAndPostcommunionPreserved": true,
+        "evidenceRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38907380467",
+        "sourceModule": "src/calendar/p1-doctor-common-inheritance.js",
+        "furtherCommonCandidates": 28,
+        "ambiguousUnmatchedIndexRows": 3,
+        "sourcePathsWithCompleteValidatedCore": 28,
+        "sourcePathCandidatesRequiringInheritance": 7,
+        "bulkAppSourceWitness": "data/calendar/p1-additional-common-app-audit.v1.json",
+        "paschalC2apCompletedFromSource": true,
+        "paschalC2apSourceOwner": "src/calendar/p1-paschal-alternate-source-composition.js",
+        "exactDonorPartialMatches": 18,
+        "donorEvidence": "data/calendar/p1-partial-common-donor-evidence.v1.json",
+        "verifiedPartialCompositions": 2,
+        "verifiedPartialSectionLanguageReferences": 25,
+        "partialRecoveryEvidence": "data/calendar/p1-partial-common-source-recovery.v1.json",
+        "c3apMissingFrench": [
+          "Introitus",
+          "Lectio",
+          "Graduale",
+          "Evangelium",
+          "Offertorium",
+          "Communio"
+        ],
+        "c7MissingAllLanguages": [
+          "Lectio"
+        ],
+        "remainingUncompletedSources": 10,
+        "sourceComplete": 25,
+        "originalC7SourceLessonRecovered": true,
+        "originalC7SourceLessonOwner": "Commune/C6",
+        "incompleteVigilCollectVariantAudit": "data/calendar/p1-apostle-vigil-oration-variant-audit.v1.json",
+        "originalC3pFrenchTextAbsent": true,
+        "twoPapalMartyrSharedC4bComplete": true,
+        "sourceProof": "data/calendar/p1-papal-martyr-source-proof.v1.json",
+        "fourSourceOfficeVariantsNotIndependentMissa": true,
+        "conditionalFrenchCandidateDraftSections": 6,
+        "originalFrenchSourceMissing": true,
+        "independentHistoricalFrenchWitnessFound": true,
+        "editorialTranslationDraft": "docs/research/P1-PASCHAL-MARTYRS-FRENCH-EDITORIAL-CANDIDATES-20261016.md",
+        "apostolicVigilSecondEnglishCollectDraft": "docs/research/P1-APOSTLES-VIGIL-SECOND-COLLECT-ENGLISH-20261016.md",
+        "secondEnglishVigilCollectSourceDuplicateConfirmed": true
+      }
+    },
+    {
+      "id": "P1-E10",
+      "code": "LATER_DOCTOR_DECLARATIONS",
+      "kind": "SOURCE_HOLD",
+      "status": "OPEN",
+      "nextAction": "Check if any genuinely authorized prayer change; title alone never triggers one.",
+      "blocksRuntimeApproval": true
+    },
+    {
+      "id": "P1-E11",
+      "code": "PARTICULAR_CALENDAR_AUTHORITY",
+      "kind": "LEGAL_HOLD",
+      "status": "OPEN",
+      "nextAction": "Obtain actual diocese, title, patron, Oratorian, institute, and dates of local decrees.",
+      "blocksRuntimeApproval": true
+    },
+    {
+      "id": "P1-E12",
+      "code": "P2_LITURGICAL_DATE_DEPENDENCY",
+      "kind": "DEPENDENCY",
+      "status": "OPEN",
+      "nextAction": "Wait for P2 verified universal/particular dates and effective history.",
+      "blocksRuntimeApproval": true
+    },
+    {
+      "id": "P1-E13",
+      "code": "LOW_SUNG_CONVENTUAL_VARIANTS",
+      "kind": "LEGAL_HOLD",
+      "status": "OPEN",
+      "nextAction": "Interpret each form against existing 1960 rules and 2020 decree.",
+      "blocksRuntimeApproval": true
+    },
+    {
+      "id": "P1-E14",
+      "code": "PASCHAL_ALLELUIA_TRACT",
+      "kind": "TEXT_HOLD",
+      "status": "OPEN",
+      "nextAction": "Verify seasonal chants and variant texts and alternatives.",
+      "blocksRuntimeApproval": true,
+      "partialProgress": {
+        "paschalAlternateC2apMassSourceProven": "Commune/C2p",
+        "differentThreeOrationsFrom": "Commune/C2a",
+        "languageCoverageAfterComposition": [
+          "la",
+          "en",
+          "fr"
+        ],
+        "sourceTextReadyNotLiturgicallyAuthorized": true
+      }
+    },
+    {
+      "id": "P1-E15",
+      "code": "ORIGINAL_RUBRIC_PAGE_CITATIONS",
+      "kind": "SOURCE_HOLD",
+      "status": "OPEN",
+      "nextAction": "Original Latin RG 106-115 and RGMR 434-438 now verified in Vatican AAS 52 (1960) printed pp.615-616,671; still collate all other cited RG/RGMR provisions against original AAS and full 1962 edition.",
+      "blocksRuntimeApproval": true,
+      "partialResolution": {
+        "verifiedParts": [
+          "RG106-115",
+          "RGMR434-438"
+        ],
+        "sourceUrl": "https://www.vatican.va/archive/aas/documents/AAS-52-1960-ocr.pdf",
+        "verifiedAt": "2026-10-16"
+      }
+    },
+    {
+      "id": "P1-E16",
+      "code": "COPYRIGHT_AND_TRANSLATION_PROVENANCE",
+      "kind": "RIGHTS_HOLD",
+      "status": "OPEN",
+      "nextAction": "Review the canonical in-app Missal's Latin/EN/FR provenance and publishing rights. No external facsimile photos or newly scraped text will be bundled or used for user-facing navigation.",
+      "blocksRuntimeApproval": true
+    },
+    {
+      "id": "P1-E17",
+      "code": "PADRE_PIO_VOTIVE_SEPARATE_REVIEW",
+      "kind": "LEGAL_HOLD",
+      "status": "OPEN",
+      "nextAction": "Do not treat blocked festive Mass as general prohibition or permission for votive Mass.",
+      "blocksRuntimeApproval": true
+    },
+    {
+      "id": "P1-E18",
+      "code": "NEWMAN_HISTORIC_COMMEMORATIONS_ORDER",
+      "kind": "LEGAL_HOLD",
+      "status": "OPEN",
+      "nextAction": "Resolve two historic subjects under 2020 §4 and RG111(a,d)/113.",
+      "blocksRuntimeApproval": true
+    },
+    {
+      "id": "P1-E19",
+      "code": "FORMULARY_COMPONENT_VARIANTS",
+      "kind": "SOURCE_HOLD",
+      "status": "OPEN",
+      "nextAction": "SSPX digital 9-Oct-2026 Ordo heading Leonardi displays generic multiple Martyrs Mass (Sapiéntiam Sanctórum) rather than Leonardi Proper (In sermónibus Dómini) in two corroborating 1962-claiming sources; identify why and collate original 1962 print; also resolve any seasonal/variant mismatches.",
+      "blocksRuntimeApproval": true,
+      "discrepantSourceUrl": "https://ordo.fsspx.org/day/2026-10-09?celebration=403&lang=en&mode=liturgical",
+      "partialProgress": {
+        "asOf": "2026-10-16",
+        "evidenceFile": "data/calendar/p1-1962-missal-facsimile-collation.v1.json",
+        "finding": "Printed p.698 introduces the separate Dionysius group commemorative Mass with Sapientiam sanctorum; SSPX Ordo celebration=403 may select that commemoration. Do not label source error without verifying its selected observance.",
+        "releaseGateStillOpen": true
+      }
+    },
+    {
+      "id": "P1-E20",
+      "code": "CALENDAR_FORMULARY_CROSSWALK_APPROVAL",
+      "kind": "DEPENDENCY",
+      "status": "OPEN",
+      "nextAction": "P0 must resolve canonical IDs by source records, not overwrite existing files.",
+      "blocksRuntimeApproval": true
+    },
+    {
+      "id": "P1-E21",
+      "code": "POST2020_LEGISLATION_2021_2023_AUTHORITY",
+      "kind": "LEGAL_AND_JURISDICTION_HOLD",
+      "status": "OPEN",
+      "nextAction": "Check applicability and harmonization of 2020 Cum sanctissima with 2021 Traditionis custodes arts2-8, 2021 Responsa and 2023 reserved-dispensations rescript; identify current territorial, priest, venue and institutional permission for each proposed optional Mass; do not presume all 2020 rules abrogated or automatically valid.",
+      "sources": [
+        "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2021/07/16/210716b.html",
+        "https://press.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20211204_responsa-ad-dubia-tradizionis-custodes_en.html",
+        "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2023/02/21/230221a.html"
+      ],
+      "blocksRuntimeApproval": true
+    },
+    {
+      "id": "P1-E22",
+      "code": "INTERNAL_CANONICAL_MISSAL_ANCHOR_RESOLUTION",
+      "kind": "INTERNAL_SOURCE_ID_AND_READER_DEEPLINK_HOLD",
+      "status": "OPEN",
+      "nextAction": "Integrate exact six source-verified paragraph IDs into P0's read-only Missal deep-link API; keep historic prayer reference independent of whether commemoration is actually recited at any Mass form. Generalize after validating other Commons and genuine modern-saint Formulary IDs.",
+      "referenceContract": "data/calendar/p1-internal-missal-navigation.v1.json",
+      "blocksRuntimeApproval": true,
+      "partialProgress": {
+        "asOf": "2026-10-16",
+        "status": "SIX_OF_SIX_HISTORICAL_9_OCT_READ_ONLY_PARAGRAPHS_VERIFIED_BY_ACTUAL_PRODUCTION_RESOLVER",
+        "evidence": "data/calendar/p1-live-resolver-source-crosswalk.v1.json",
+        "verifiedCanonicalPath": "Sancti/10-09",
+        "verifiedCommemorationPath": "Sancti/10-09t",
+        "verifiedCommemorationId": "sancti:10-09t:4:r",
+        "verifiedParagraphs": [
+          "COLLECT_SET.1",
+          "SECRET_SET.1",
+          "POSTCOMMUNION_SET.1",
+          "COLLECT_SET.2",
+          "SECRET_SET.2",
+          "POSTCOMMUNION_SET.2"
+        ],
+        "remaining": "P0/reader to implement navigable READ_ONLY Missal paragraph target without touching active Mass or confounding reference with liturgical recitation"
+      }
+    }
+  ],
+  "printImageFindingsCount": 5,
+  "priorityNow": [
+    "INTERNAL_CANONICAL_MISSAL_ANCHOR_RESOLUTION_ROUTER_ONLY",
+    "COMMON_DOCTORUM_CANONICAL_APP_SOURCE_LOOKUP",
+    "PRIMARY_1962_COMMONS_COLLATION",
+    "SUNG_MASS_SECTION4_VS_111A"
+  ],
+  "productScopeCorrection": "P1 resolves existing Ad Orientem source references; no PDF viewer, external Missal navigation, reproduced facsimile assets or second Mass-text corpus.",
+  "appCommonSourceProgress": {
+    "canonicalAppSourceComplete": 28,
+    "originalSevenComplete": 7,
+    "newDirectComplete": 17,
+    "partialAppSourceCandidates": 7,
+    "ambiguousWebVariants": 3,
+    "totalIndexRows": 38,
+    "doctorC5aSourceInheritanceVerified": true,
+    "sharedDoctorComponents": 9,
+    "sharedENFRSectionsRecovered": 18,
+    "reviewGateOpen": true,
+    "paschalAlternativeC2apSourceVerified": true,
+    "paschalAlternativeBaseOwner": "Commune/C2p",
+    "paschalAlternativeOrationOwner": "Commune/C2a",
+    "paschalAlternativeBorrowedLanguageSections": 23,
+    "partialSourceCompositionsValidated": 2,
+    "recoveredSourceLanguageSectionLinks": 25,
+    "allUserFacingRoutesExternal": false,
+    "c7ExplicitC6LessonVerified": true,
+    "c7LectureOriginal": "Eccli 51:1-8; 51:12",
+    "c7RejectedC6Alternate": "Eccli 51:13-17",
+    "c1vNamedCollectVariantsFound": 3,
+    "c1vEnglishSecondCollectUnderEditorialHold": true,
+    "c3pFrenchSourceMissingSixMassSections": true,
+    "appPapalMartyrSourceCompositionVerified": 2,
+    "papalMartyrC4bSharedSectionReferences": 32,
+    "nonStandaloneOfficeOrDerivedSourceFiles": 4,
+    "sourceStructures": "data/calendar/p1-office-versus-mass-source-structure.v1.json",
+    "editorialFrenchDraftsPrepared": 6,
+    "originalCommonSourcesImportedFromDrafts": 0,
+    "englishCollectSourceCorrectionsDrafted": 1,
+    "englishCollectSourceCorrectionsImported": 0,
+    "reviewHoldsStillOpen": 22
+  }
+}

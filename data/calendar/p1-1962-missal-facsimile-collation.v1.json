@@ -1,0 +1,310 @@
+{
+  "schema": "AO_P1_1962_MISSAL_FACSIMILE_VISUAL_COLLATION_V1",
+  "asOf": "2026-10-16",
+  "status": "PRIMARY_APPEARING_1962_FACSIMILE_PAGE_IMAGES_VISUALLY_READ_PROVENANCE_AND_FULL_TEXT_APPROVAL_PENDING",
+  "editionSources": [
+    {
+      "id": "CMAA_SCAN",
+      "publisher": "Church Music Association of America",
+      "catalogUrl": "https://musicasacra.com/2007/10/missale-romanum-1962/",
+      "downloadUrl": "https://media.musicasacra.com/pdf/missale62.pdf",
+      "downloadStatus": "PDF_TOO_LARGE_FOR_WEB_TOOL_DIRECT_RETRIEVAL_82MB",
+      "independentPageCompare": false
+    },
+    {
+      "id": "PROPRIA_TYPICAL_SCAN",
+      "catalogUrl": "https://propria.org/additional/",
+      "sampleUrl": "https://propria.org/wp-content/uploads/2019/12/sample-pages-from-propria.org-missale-romanum-1962.pdf",
+      "sampleVisuallyVerified": true,
+      "sampleContainsThesePages": false
+    },
+    {
+      "id": "THIRD_PARTY_COLOR_PAGE_IMAGES",
+      "indexUrl": "https://www.ourladyisgod.com/Missale-Romanum-1962-color-scans-0751-0775.php",
+      "kind": "PHOTOGRAPHIC_MISSAL_PAGE_IMAGES_NOT_A_RECOMMENDED_LITURGICAL_AUTHORITY",
+      "provenanceUnverified": true,
+      "editorialWarning": "Host's non-Missal theological claims are irrelevant, not endorsed, and must not be promoted as Catholic authority; direct-page sources only as photographic evidence. Never publish these photos without rights clearance."
+    }
+  ],
+  "october9": {
+    "subject": "Original traditional 9 October Mass and commemoration",
+    "folioRange": [
+      "696",
+      "697",
+      "698",
+      "699"
+    ],
+    "scanRange": [
+      773,
+      774,
+      775,
+      776
+    ],
+    "fourthPageUse": "Printed (699) begins standalone Dionysius/Rusticus/Eleutherius commemoration Mass; never mistake it for main Leonardi Proper",
+    "prayers": [
+      {
+        "trioId": "oration-trio:1962:john-leonardi:10-09",
+        "subject": "Sanctus Ioannes Leonardi",
+        "missalPlace": "Festa Octobris Die 9",
+        "collect": {
+          "printedFolio": "696",
+          "scanIndex": 773,
+          "facsimileUrl": "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0773.jpg",
+          "position": "left lower: Oratio",
+          "incipitWitness": "Deus, qui beatum Ioannem",
+          "verifiedFromPageImage": true,
+          "exactFullLatinTranscriptionCertified": false
+        },
+        "secret": {
+          "printedFolio": "697",
+          "scanIndex": 774,
+          "facsimileUrl": "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0774.jpg",
+          "position": "right middle: Secreta",
+          "incipitWitness": "Suscipe, Domine, oblationem mundam",
+          "verifiedFromPageImage": true,
+          "exactFullLatinTranscriptionCertified": false
+        },
+        "postcommunion": {
+          "printedFolio": "698",
+          "scanIndex": 775,
+          "facsimileUrl": "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0775.jpg",
+          "position": "left upper: Postcommunio",
+          "incipitWitness": "Pretiosi Corporis, et Sanguinis tui",
+          "verifiedFromPageImage": true,
+          "exactFullLatinTranscriptionCertified": false
+        }
+      },
+      {
+        "trioId": "oration-trio:1962:denis-rusticus-eleutherius:10-09",
+        "subject": "Ss. Dionysius Episcopus, Rusticus et Eleutherius Martyres",
+        "missalPlace": "Festa Octobris Die 9, commemoratio",
+        "collect": {
+          "printedFolio": "696–697",
+          "scanIndex": 773,
+          "facsimileUrl": "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0773.jpg",
+          "position": "left lower: Et fit commemoratio ... Oratio",
+          "incipitWitness": "Deus, qui hodierna die beatum Dionysium",
+          "verifiedFromPageImage": true,
+          "exactFullLatinTranscriptionCertified": false
+        },
+        "secret": {
+          "printedFolio": "697",
+          "scanIndex": 774,
+          "facsimileUrl": "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0774.jpg",
+          "position": "right lower: Pro Ss Martyribus Secreta",
+          "incipitWitness": "Oblata tibi, Domine, munera",
+          "verifiedFromPageImage": true,
+          "exactFullLatinTranscriptionCertified": false
+        },
+        "postcommunion": {
+          "printedFolio": "698",
+          "scanIndex": 775,
+          "facsimileUrl": "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0775.jpg",
+          "position": "left lower: Pro Ss Martyribus Postcommunio",
+          "incipitWitness": "Sumptis, Domine, sacramentis",
+          "verifiedFromPageImage": true,
+          "exactFullLatinTranscriptionCertified": false
+        }
+      }
+    ],
+    "principalMassMarkers": {
+      "introit": "In sermonibus Domini opera eius",
+      "epistle": "2 Corinthians 4:1-6, 15-18",
+      "gospel": "Luke 10:1-9",
+      "offertory": "Christi factus sum ego minister",
+      "communion": "Quae mihi fuerunt lucra"
+    },
+    "legalObservation": "The three commemorative orations are positioned after corresponding Leonardi prayers; do not merge the proper Mass of the martyrs into Leonardi Mass.",
+    "printedTextFullyNormalized": false,
+    "scannedImages": [
+      "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0773.jpg",
+      "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0774.jpg",
+      "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0775.jpg",
+      "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0776.jpg"
+    ]
+  },
+  "commonFamilies": [
+    {
+      "printFamilyId": "commune-print:doctorum",
+      "printedTitle": "COMMUNE DOCTORUM",
+      "scans": [
+        {
+          "scanIndex": 846,
+          "printedPage": "(23)",
+          "facsimileUrl": "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0846.jpg",
+          "visuallyInspected": true
+        },
+        {
+          "scanIndex": 847,
+          "printedPage": "(24)",
+          "facsimileUrl": "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0847.jpg",
+          "visuallyInspected": true
+        },
+        {
+          "scanIndex": 848,
+          "printedPage": "(25)",
+          "facsimileUrl": "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0848.jpg",
+          "visuallyInspected": true
+        }
+      ],
+      "editionAttribution": "1962_MISSALE_ROMANUM_SCANNED_FACSIMILE_ASSIGNED_BY_WEB_HOST_NOT_INDEPENDENTLY_PROVEN",
+      "printStructureStatus": "HEADINGS_VARIANTS_AND_SELECT_INCIPITS_VISUALLY_CONFIRMED",
+      "fullLatinVerified": false,
+      "kind": "ONE_PRINT_FAMILY_TWO_ORATION_VARIANTS",
+      "secondaryAliasIds": [
+        "commune:1962:doctor_pontiff",
+        "commune:1962:doctor_non_pontiff"
+      ],
+      "sharedMassContents": {
+        "introitIncipit": "In medio Ecclesiae aperuit os eius",
+        "collectIncipit": "Deus, qui populo tuo aeternae salutis",
+        "epistle": "2 Timotheum 4:1-8",
+        "gospel": "Matthaeus 5:13-19",
+        "offertoryIncipit": "Iustus ut palma florebit",
+        "communionIncipit": "Fidelis servus et prudens"
+      },
+      "variantOrations": [
+        {
+          "variant": "DOCTOR_PONTIFF",
+          "secretIncipit": "Sancti N. Pontificis tui atque Doctoris",
+          "postcommunionIncipit": "Ut nobis, Domine, tua sacrificia",
+          "printedRefs": [
+            "(24)"
+          ]
+        },
+        {
+          "variant": "DOCTOR_NON_PONTIFF",
+          "secretIncipit": "Sancti N. Confessoris tui atque Doctoris",
+          "postcommunionIncipit": "Ut nobis, Domine, tua sacrificia",
+          "printedRefs": [
+            "(24)"
+          ]
+        }
+      ],
+      "importantCorrection": "Online index contains two separate entries; printed 1962 heading is one Common, with explicit pontiff/non-pontiff differences in Secret and Postcommunion, not two independent whole-Mass families."
+    },
+    {
+      "printFamilyId": "commune-print:confessor-pontiff",
+      "printedTitle": "COMMUNE CONFESSORIS PONTIFICIS",
+      "scans": [
+        {
+          "scanIndex": 843,
+          "printedPage": "(20)",
+          "facsimileUrl": "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0843.jpg",
+          "visuallyInspected": true
+        },
+        {
+          "scanIndex": 844,
+          "printedPage": "(21)",
+          "facsimileUrl": "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0844.jpg",
+          "visuallyInspected": true
+        },
+        {
+          "scanIndex": 845,
+          "printedPage": "(22)",
+          "facsimileUrl": "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0845.jpg",
+          "visuallyInspected": true
+        },
+        {
+          "scanIndex": 846,
+          "printedPage": "(23)",
+          "facsimileUrl": "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0846.jpg",
+          "visuallyInspected": true
+        }
+      ],
+      "editionAttribution": "1962_MISSALE_ROMANUM_SCANNED_FACSIMILE_ASSIGNED_BY_WEB_HOST_NOT_INDEPENDENTLY_PROVEN",
+      "printStructureStatus": "HEADINGS_VARIANTS_AND_SELECT_INCIPITS_VISUALLY_CONFIRMED",
+      "fullLatinVerified": false,
+      "kind": "PRINTED_ALTERA_MISSA",
+      "firstMassIncipit": "Statuit ei Dominus testamentum pacis",
+      "secondMassIncipit": "Sacerdotes tui, Domine",
+      "variantRefs": [
+        "I PRO CONFESSORE PONTIFICE",
+        "II PRO CONFESSORE PONTIFICE Altera Missa"
+      ]
+    },
+    {
+      "printFamilyId": "commune-print:confessor-non-pontiff",
+      "printedTitle": "COMMUNE CONFESSORIS NON PONTIFICIS",
+      "scans": [
+        {
+          "scanIndex": 848,
+          "printedPage": "(25)",
+          "facsimileUrl": "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0848.jpg",
+          "visuallyInspected": true
+        },
+        {
+          "scanIndex": 849,
+          "printedPage": "(26)",
+          "facsimileUrl": "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0849.jpg",
+          "visuallyInspected": true
+        },
+        {
+          "scanIndex": 850,
+          "printedPage": "(27)",
+          "facsimileUrl": "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0850.jpg",
+          "visuallyInspected": true
+        }
+      ],
+      "editionAttribution": "1962_MISSALE_ROMANUM_SCANNED_FACSIMILE_ASSIGNED_BY_WEB_HOST_NOT_INDEPENDENTLY_PROVEN",
+      "printStructureStatus": "HEADINGS_VARIANTS_AND_SELECT_INCIPITS_VISUALLY_CONFIRMED",
+      "fullLatinVerified": false,
+      "kind": "PRINTED_ALTERA_MISSA",
+      "secondaryAliasIds": [
+        "commune:1962:confessor_non_pontiff"
+      ],
+      "firstMassIncipit": "Os iusti meditabitur sapientiam",
+      "secondMassIncipit": "Iustus ut palma florebit",
+      "variantRefs": [
+        "I PRO CONFESSORE NON PONTIFICE",
+        "II PRO CONFESSORE NON PONTIFICE Altera Missa"
+      ]
+    },
+    {
+      "printFamilyId": "commune-print:abbatum",
+      "printedTitle": "COMMUNE ABBATUM",
+      "scans": [
+        {
+          "scanIndex": 851,
+          "printedPage": "(28)",
+          "facsimileUrl": "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0851.jpg",
+          "visuallyInspected": true
+        },
+        {
+          "scanIndex": 852,
+          "printedPage": "(29)",
+          "facsimileUrl": "https://www.ourladyisgod.com/images/eBooks/Missale-Romanum-1962-color/Missale-Romanum-1962-Roman-Missal-color-0852.jpg",
+          "visuallyInspected": true
+        }
+      ],
+      "editionAttribution": "1962_MISSALE_ROMANUM_SCANNED_FACSIMILE_ASSIGNED_BY_WEB_HOST_NOT_INDEPENDENTLY_PROVEN",
+      "printStructureStatus": "HEADINGS_VARIANTS_AND_SELECT_INCIPITS_VISUALLY_CONFIRMED",
+      "fullLatinVerified": false,
+      "kind": "PRINTED_SINGLE_FAMILY",
+      "mainCollectIncipit": "Intercessio nos, quaesumus, Domine, beati N. Abbatis",
+      "specializedCategory": "ABBOT",
+      "explicitNPlaceholder": true
+    }
+  ],
+  "distinctCommonPrintedFamiliesVisuallyReviewed": 4,
+  "uniqueImageScansVisuallyInspected": [
+    773,
+    774,
+    775,
+    776,
+    843,
+    844,
+    845,
+    846,
+    847,
+    848,
+    849,
+    850,
+    851,
+    852
+  ],
+  "sourceIdentityCorrection": "Commune Doctorum must be represented as one print family with two oration variants, while preserving historical two secondary index IDs as aliases. Number of secondary web pages is not number of printed Common families.",
+  "reuseRestriction": "No automatic form choice; no import of Latin text; no new canonical saint; no Mass-reader change; prior copied online texts remain uncited as edition-certified.",
+  "independentPhysicalEditionCertification": false,
+  "rightsCleared": false
+}

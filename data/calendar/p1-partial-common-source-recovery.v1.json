@@ -1,0 +1,115 @@
+{
+  "schema": "AO_P1_PARTIAL_COMMON_SOURCE_RECOVERY_V1",
+  "asOf": "2026-10-16",
+  "evidenceRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38928218867",
+  "sourceMethod": "Actual unmodified AO_RUNTIME_V8 ProperResolver resolveSource, research-only composed maps; no source text copied",
+  "sourceCode": "src/calendar/p1-partial-common-source-reconciliation.js",
+  "status": "C7_SOURCE_COMPLETE_C3AP_PARTIAL_SOURCE_RECOVERY",
+  "cases": [
+    {
+      "target": "Commune/C3ap",
+      "kind": "PASCHAL_SEVERAL_MARTYRS_ALTERNATE_ORATIONS",
+      "owners": {
+        "baseMass": "Commune/C3p",
+        "alternativeOrations": "Commune/C3a"
+      },
+      "borrowedLanguageSections": {
+        "la": [
+          "Introitus",
+          "Lectio",
+          "Graduale",
+          "Evangelium",
+          "Offertorium",
+          "Communio"
+        ],
+        "en": [
+          "Introitus",
+          "Lectio",
+          "Graduale",
+          "Evangelium",
+          "Offertorium",
+          "Communio",
+          "Oratio",
+          "Secreta",
+          "Postcommunio"
+        ],
+        "fr": [
+          "Oratio",
+          "Secreta",
+          "Postcommunio"
+        ]
+      },
+      "borrowedCount": 18,
+      "missingAfterRecovery": {
+        "la": [],
+        "en": [],
+        "fr": [
+          "Introitus",
+          "Lectio",
+          "Graduale",
+          "Evangelium",
+          "Offertorium",
+          "Communio"
+        ]
+      },
+      "sourceCompleteness": "PARTIAL_FRENCH_MASS_TEXT_6_SECTIONS_UNRESOLVED",
+      "sourceProof": "DECLARED_C3P_MASS_PARENT_EXACT_C3A_ALTERNATE_LATIN_ORATIONS"
+    },
+    {
+      "target": "Commune/C7",
+      "kind": "NONVIRGIN_FEMALE_MARTYR",
+      "owners": {
+        "sharedSource": "Commune/C6-1",
+        "originalLessonSource": "Commune/C6"
+      },
+      "borrowedLanguageSections": {
+        "la": [
+          "Lectio"
+        ],
+        "en": [
+          "Introitus",
+          "Evangelium",
+          "Offertorium",
+          "Lectio"
+        ],
+        "fr": [
+          "Introitus",
+          "Evangelium",
+          "Offertorium",
+          "Communio",
+          "Lectio"
+        ]
+      },
+      "borrowedCount": 10,
+      "missingAfterRecovery": {
+        "la": [],
+        "en": [],
+        "fr": []
+      },
+      "sourceCompleteness": "SOURCE_COMPOSITION_COMPLETE_NINE_CORE_SECTIONS_LAT_EN_FR",
+      "sourceProof": "DECLARED_C6_ORIGINAL_LESSON_AND_SEVEN_OTHER_LATIN_PARITY_MATCHED_C6_1_TRANSLATIONS",
+      "note": "C7's existing English Communion is preserved; it is not replaced with C6-1's different existing English text.",
+      "lessonSourceDistinction": {
+        "canonicalParent": "Commune/C6",
+        "scripture": "Eccli 51:1-8; 51:12",
+        "rejectedVariant": "Commune/C6-1",
+        "rejectedScripture": "Eccli 51:13-17",
+        "reason": "Different readings; only explicit inherited C6 owner is permitted"
+      },
+      "proofRun": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/38928218867"
+    }
+  ],
+  "overall": {
+    "borrowedLanguageSections": 28,
+    "completeAdditionalCommonCount": 1,
+    "remainingPartialCommons": 9,
+    "completeAppCommonCount": 26,
+    "externalMissalLinkCount": 0
+  },
+  "releaseGates": {
+    "sourceTextPublicationApproved": false,
+    "optionalSaintMassApproved": false,
+    "readOnlyReaderRouterImplemented": false,
+    "readerCodeModified": false
+  }
+}

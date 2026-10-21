@@ -1,0 +1,213 @@
+{
+  "schema": "AO_P1_REFERENCE_CASES_V1",
+  "asOf": "2026-10-16",
+  "runtimeMassMutation": false,
+  "cases": [
+    {
+      "id": "P1-NEWMAN-2026",
+      "saintId": "saint.john-henry-newman",
+      "date": "2026-10-09",
+      "universalDateWitness": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2026/02/03/260203a.html",
+      "principal1962Id": "sancti:10-09:3:w",
+      "principal1962Title": "St John Leonardi",
+      "principal1962Rank": "III",
+      "existing1962Commemoration": "Ss Dionysius, Rusticus and Eleutherius, Martyrs",
+      "traditionalWitness": "https://missale.online/kalender/en/2026-10-09",
+      "protected70": false,
+      "formularyCandidates": [
+        "commune:1962:doctor_non_pontiff",
+        "commune:1962:confessor_non_pontiff"
+      ],
+      "properOrSupplement1962": "UNVERIFIED",
+      "selectedFormularyId": null,
+      "omittedLeonardiTrio": "oration-trio:1962:john-leonardi:10-09",
+      "otherHistoricCommemorationTrio": "oration-trio:1962:denis-rusticus-eleutherius:10-09",
+      "orationsSourceStatus": "SIX_FORMULARY_ORATIONS_LOCATED_IN_PRINTED_1962_CLAIMED_FACSIMILE_PAGES_696_698; INDEPENDENT_PROVENANCE_AND_EXACT_TRANSCRIPTION_PENDING",
+      "sungMassRule": "CUM_SANCTISSIMA_4_VERSUS_RG_111A_UNRESOLVED",
+      "chaplaincyEvidence": {
+        "name": "St Kevin's Dublin Latin Mass Chaplaincy",
+        "url": "https://static1.squarespace.com/static/5fc7d9f84168c7185c8793de/t/6abd27217199117f41002de4/1790781217379/2026%2BOctober%2BNews.pdf",
+        "sourceType": "FIRST_PARTY_NEWSLETTER",
+        "sourcePage": 1,
+        "eventsAnnounced": [
+          "08:00 Mass",
+          "19:00 High Mass in Newman's honour",
+          "first-class relic blessings"
+        ],
+        "venueContext": "ORATORIAN",
+        "actualFormulary": "UNKNOWN",
+        "actualLiturgicalOrations": "UNKNOWN",
+        "originalMissalProperAuthority": "UNKNOWN"
+      },
+      "status": "NOT_CERTIFIED_NO_MASS_SELECTION",
+      "sourceAuditPath": "data/calendar/p1-primary-latin-and-oct9-source-audit.v1.json",
+      "historicalMassSecondaryWitnesses": [
+        "https://missale.online/kalender/en/2026-10-09",
+        "https://www.missalemeum.com/en/calendar/2026-10-09"
+      ],
+      "inconsistentSecondaryDisplay": "https://ordo.fsspx.org/day/2026-10-09?celebration=403&lang=en&mode=liturgical",
+      "inconsistentSecondaryDisplayStatus": "ONLINE_SELECTED_CELEBRATION_MARTYRS_TEXT_MATCHES_SEPARATE_DIONYSIUS_COMMEMORATION_PRINTED_ON_698; NOT_EVIDENCE_FOR_MAIN_LEONARDI_PROPER",
+      "actualMissingInformation": [
+        "Celebrant or chaplaincy's Mass booklet or usage",
+        "Competent interpretation of 2020 mandatory commemoration at nonconventual Sung Mass",
+        "Independent edition provenance, transcription accuracy, reproduction rights and contextual application of printed 1962 Leonardi/Dionysius texts",
+        "Whether approved traditional particular Proper or 2020 Supplement exists for Newman",
+        "Oratorian institutional/particular liturgical permissions"
+      ],
+      "rubricalEvidence": {
+        "primaryLatinAAS": "https://www.vatican.va/archive/aas/documents/AAS-52-1960-ocr.pdf",
+        "firstClassNonconventualSungLimit": "RG 108, 109, 111(a); RGMR 434(a)",
+        "newerLaw": "Cum sanctissima §4 and final non-obstante clause",
+        "status": "APPLICABILITY_DISPUTE_HELD"
+      },
+      "facsOriginalMissalPrintRefs": {
+        "yearClaimed": 1962,
+        "october9FolioRange": "696–699",
+        "images": [
+          773,
+          774,
+          775,
+          776
+        ],
+        "sourceFile": "data/calendar/p1-1962-missal-facsimile-collation.v1.json",
+        "latinTextPublished": false,
+        "rightsCleared": false
+      },
+      "doctorCommonPrintIdentity": {
+        "printedFamily": "Commune Doctorum",
+        "pages": [
+          "(23)",
+          "(24)"
+        ],
+        "variant": "DOCTOR_NON_PONTIFF",
+        "distinctMassFromDoctorPontiff": false,
+        "alternativeOrationClauses": true,
+        "actualCelebrantSelection": null
+      },
+      "printedMissalPageImageRole": "PROVENANCE_ONLY_NOT_LINK_DESTINATION",
+      "internalMissalTargets": {
+        "newmanFormulary": {
+          "canonicalFormularyId": "commune:1962:doctor_non_pontiff",
+          "printedFamilyId": "commune-print:doctorum",
+          "sourcePath": null,
+          "status": "AWAIT_INTERNAL_SOURCE_AND_PERMISSION"
+        },
+        "historicalLeonardiPrayerAnchors": [
+          "p1:missal:leonardi:collect",
+          "p1:missal:leonardi:secret",
+          "p1:missal:leonardi:postcommunion"
+        ],
+        "historicMartyrsCommemorationAnchors": [
+          "p1:missal:dionysius-rusticus-eleutherius:collect",
+          "p1:missal:dionysius-rusticus-eleutherius:secret",
+          "p1:missal:dionysius-rusticus-eleutherius:postcommunion"
+        ]
+      },
+      "actualAppSourceWitness": {
+        "date": "2026-10-09",
+        "historicMainId": "sancti:10-09:3:w",
+        "historicSourcePath": "Sancti/10-09",
+        "historicCommemorationId": "sancti:10-09t:4:r",
+        "historicCommemorationSourcePath": "Sancti/10-09t",
+        "commemorativeOrationRows": {
+          "collects": 2,
+          "secrets": 2,
+          "postcommunions": 2
+        },
+        "textLanguages": [
+          "lat",
+          "en",
+          "fr"
+        ],
+        "newmanCommonSourcePath": null,
+        "authority": "ACTUAL_AO_PRODUCTION_RESOLVER_BROWSER_2026_10_16",
+        "evidenceFile": "data/calendar/p1-live-resolver-source-crosswalk.v1.json",
+        "runtimeAutomaticMassSelection": false,
+        "nonBishopDoctorSourcePath": "Commune/C5a",
+        "sourceCompositionVerified": true,
+        "formularyApproved": false
+      },
+      "doctorCommonInheritedSourceStatus": "C5A_9_SHARED_LATIN_PARITY_VERIFIED_18_EN_FR_SHARED_COMPONENTS_RECOVERED_2_NONPONTIFF_ORATIONS_UNCHANGED"
+    },
+    {
+      "id": "P1-PIO-2026",
+      "saintId": "saint.pio-pietrelcina",
+      "date": "2026-09-23",
+      "traditionalPrincipalId": "tempora:Pent17-3:2:v",
+      "traditionalDay": "SEPTEMBER_EMBER_WEDNESDAY",
+      "rank": "II",
+      "ordoSource": "https://ordo.fsspx.org/day/2026-09-23?lang=en&mode=liturgical",
+      "legalSource": "RG precedence table 18; Cum sanctissima §§1-2",
+      "optionalFestiveMassStatus": "BLOCKED_ON_THIS_DAY",
+      "votiveMass": "INDEPENDENT_RUBRICAL_REVIEW_REQUIRED",
+      "selectedFormularyId": null,
+      "actualAppSourceWitness": {
+        "date": "2026-09-23",
+        "historicMainId": "tempora:093-3:2:v",
+        "historicSourcePath": "Tempora/093-3",
+        "historicCommemorationId": "sancti:09-23:3:r",
+        "historicCommemorationSourcePath": "Sancti/09-23",
+        "note": "Verified 1962 source: September Ember Wednesday II class and St Linus commemoration, not Padre Pio's new celebration.",
+        "authority": "ACTUAL_AO_PRODUCTION_RESOLVER_BROWSER_2026_10_16",
+        "evidenceFile": "data/calendar/p1-live-resolver-source-crosswalk.v1.json",
+        "runtimeAutomaticMassSelection": false
+      }
+    },
+    {
+      "id": "P1-THERESE-DOCTOR",
+      "saintId": "saint.therese-lisieux",
+      "traditionalFeastId": "sancti:10-03:3:w",
+      "declarationDate": "1997-10-19",
+      "primaryWitness": "https://www.vatican.va/content/john-paul-ii/en/apost_letters/1997/documents/hf_jp-ii_apl_19101997_divini-amoris.html",
+      "protected70": true,
+      "effect": "TITLE_ONLY_NO_AUTOMATIC_1962_PROPER_REPLACEMENT",
+      "actualAppSourceWitness": {
+        "date": "2026-10-03",
+        "historicMainId": "sancti:10-03:3:w",
+        "historicSourcePath": "Sancti/10-03",
+        "commemorativeOrationRows": {
+          "collects": 1,
+          "secrets": 1,
+          "postcommunions": 1
+        },
+        "textLanguages": [
+          "lat",
+          "en",
+          "fr"
+        ],
+        "authority": "ACTUAL_AO_PRODUCTION_RESOLVER_BROWSER_2026_10_16",
+        "evidenceFile": "data/calendar/p1-live-resolver-source-crosswalk.v1.json",
+        "runtimeAutomaticMassSelection": false
+      }
+    },
+    {
+      "id": "P1-TERESA-DOCTOR",
+      "saintId": "saint.teresa-avila",
+      "traditionalFeastId": "sancti:10-15:3:w",
+      "declarationDate": "1970-09-27",
+      "primaryWitness": "https://www.vatican.va/content/paul-vi/en/apost_letters/documents/hf_p-vi_apl_19700927_multiformis-sapientia.html",
+      "protected70": true,
+      "effect": "TITLE_ONLY_NO_AUTOMATIC_1962_PROPER_REPLACEMENT",
+      "actualAppSourceWitness": {
+        "date": "2026-10-15",
+        "historicMainId": "sancti:10-15:3:w",
+        "historicSourcePath": "Sancti/10-15",
+        "commemorativeOrationRows": {
+          "collects": 1,
+          "secrets": 1,
+          "postcommunions": 1
+        },
+        "textLanguages": [
+          "lat",
+          "en",
+          "fr"
+        ],
+        "authority": "ACTUAL_AO_PRODUCTION_RESOLVER_BROWSER_2026_10_16",
+        "evidenceFile": "data/calendar/p1-live-resolver-source-crosswalk.v1.json",
+        "runtimeAutomaticMassSelection": false
+      }
+    }
+  ],
+  "userFacingMissalLinks": "APP_INTERNAL_DEEP_LINKS_ONLY",
+  "liveAppSourceWitnessPath": "data/calendar/p1-live-resolver-source-crosswalk.v1.json"
+}
