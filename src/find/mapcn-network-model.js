@@ -192,7 +192,14 @@ export function networkFocus(graph,{focus="",search="",kind="all",limit=14}={}){
  const ranked=eligible.filter(n=>!phrase||(n.name+" "+n.detail).toLocaleLowerCase().includes(phrase))
    .sort((a,b)=>(graph.neighbors.get(b.key)?.length||0)-(graph.neighbors.get(a.key)?.length||0)
      ||a.name.localeCompare(b.name));
- const current=graph.byKey.get(focus)||ranked[0]||graph.nodes[0]||null;
+ // Search and facets must constrain the actual focused node, including when
+ // the desktop result rail is hidden on phones. Never show an unrelated item
+ // for a zero-match search or retain stale focus from another category.
+ const selected=graph.byKey.get(focus);
+ const eligibleSelected=selected&&eligible.includes(selected)&&
+   (!phrase||(selected.name+" "+selected.detail).toLocaleLowerCase().includes(phrase));
+ const current=(eligibleSelected?selected:null)||ranked[0]||
+   (kind==="all"&&!phrase?graph.nodes[0]:null);
  const links=current?list(graph.neighbors.get(current.key)):[];
  const dedup=new Set();
  const relations=links.filter(x=>{
