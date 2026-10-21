@@ -8,6 +8,7 @@ import {buildThematicPilots} from "./historia-thematic-collections.js";
 import {expandedThematicResearchCollections} from "./historia-thematic-expansion.js";
 import {segmentedThematicResearchCollections} from "./historia-thematic-composite.js";
 import {applyThematicBoundaryAudit} from "./historia-thematic-boundaries.js";
+import {all217ThematicResearchCollections} from "./historia-thematic-remaining.js";
 export const SCRIPTURE_BROWSER_VERSION="ao-scripture-library-v1";
 export function installScriptureBrowserOwner(win=globalThis){
  if(win.AO_SCRIPTURE_APP_V1)return win.AO_SCRIPTURE_APP_V1;
@@ -20,6 +21,7 @@ export function installScriptureBrowserOwner(win=globalThis){
  const thematicEnabled=new URLSearchParams(win.location?.search||"").get("ao_historia_collections")==="1";
  const thematicBatch2=thematicEnabled && new URLSearchParams(win.location?.search||"").get("ao_historia_batch2")==="1";
  const thematicSegmented=thematicBatch2 && new URLSearchParams(win.location?.search||"").get("ao_historia_segmented")==="1";
+ const thematicAll217=thematicSegmented && new URLSearchParams(win.location?.search||"").get("ao_historia_all")==="1";
  let thematicCache=null,thematicInflight=null,thematicLinks=null;
  async function loadThematic(){
   if(!thematicEnabled)return null;
@@ -32,7 +34,8 @@ export function installScriptureBrowserOwner(win=globalThis){
     win.fetch("/data/research/historia-salutis-thematic-identity-covenant-context-20261021.v1.json",{cache:"no-store"})
    ]);
    if(!response?.ok || !links?.ok)throw new Error("Historia thematic research sources unavailable");
-   const groups=buildThematicPilots(await response.json());
+   const originalRegistry=await response.json();
+   const groups=buildThematicPilots(originalRegistry);
    const mapping=await links.json();
    if(mapping?.schema!=="AO_HISTORIA_THEMATIC_IDENTITY_AND_COVENANT_CONTEXT_V1" ||
       mapping?.status!=="RESEARCH_SCOPED_LINKS_NOT_PUBLICATION" ||
@@ -51,7 +54,13 @@ export function installScriptureBrowserOwner(win=globalThis){
    if(!thematicSegmented)return applyThematicBoundaryAudit(expandedThematicResearchCollections(inventory,groups),review);
    const segments=await win.fetch("/data/research/historia-salutis-thematic-composite-segments-20261021.v1.json",{cache:"no-store"});
    if(!segments?.ok)throw new Error("Historia segmented source evidence unavailable");
-   return applyThematicBoundaryAudit(segmentedThematicResearchCollections(await segments.json(),inventory,groups),review);
+   const segmentedSource=await segments.json();
+   if(!thematicAll217)
+    return applyThematicBoundaryAudit(segmentedThematicResearchCollections(segmentedSource,inventory,groups),review);
+   const next=await win.fetch("/data/research/historia-salutis-thematic-remainder-research-20261021.v1.json",{cache:"no-store"});
+   if(!next?.ok)throw new Error("Historia full research inventory unavailable");
+   return all217ThematicResearchCollections(
+    await next.json(),review,segmentedSource,inventory,groups,originalRegistry.collectionTitles);
   })();
   try{return thematicCache=await thematicInflight;}
   finally{thematicInflight=null;}
