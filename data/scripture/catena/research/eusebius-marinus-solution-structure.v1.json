@@ -1,0 +1,302 @@
+{
+  "schema": "ao.catena.eusebius-marinus-solution-structure.v1",
+  "created": "2026-10-21",
+  "status": "research_only_no_user_facing_answers",
+  "parentIndex": "data/scripture/catena/research/eusebius-epitome-20-questions.v1.json",
+  "relatedSupplement": "data/scripture/catena/research/eusebius-marinus-supplement-problem-index.v1.json",
+  "sourceWitness": "Greek epitome of Quaestiones ad Marinum transmitted in Vatican Pal. gr. 220; online synchronized Greek/modern English consulted for passage navigation, not as licensed English response bank",
+  "sourceEditionReview": "critical Greek text/folio collation pending; 2010 text and translation may be freely read online but rights remain retained",
+  "sourceReferenceUrls": [
+    "https://catholiclibrary.org/library/view?chunk.id=00000003&docId=%2FFathers-Synchronized-EN%2FEusebius_Caesariensis__Quaestiones_evangelicae_ad_Marinum.en.html",
+    "https://catholiclibrary.org/library/view?chunk.id=00000009&docId=%2FFathers-Synchronized-EN%2FEusebius_Caesariensis__Quaestiones_evangelicae_ad_Marinum.en.html",
+    "https://catholiclibrary.org/library/view?chunk.id=00000011&docId=%2FFathers-Synchronized-EN%2FEusebius_Caesariensis__Quaestiones_evangelicae_ad_Marinum.en.html",
+    "https://catholiclibrary.org/library/view?chunk.id=00000007&docId=%2FFathers-Synchronized-EN%2FEusebius_Caesariensis__Supplementa_ad_quaestiones_ad_Marinum.en.html",
+    "https://www.roger-pearse.com/weblog/wp-content/uploads/2015/12/Eusebius_Gospel_problems_and_solutions_2010.pdf"
+  ],
+  "criticalPrinciples": [
+    "Question formulations of Marinus are distinct from Eusebius's reply and from remarks given to hypothetical interpreters.",
+    "Each hypothetical solution is a separate branch; never join mutually exclusive conjectures into one factual history.",
+    "Extract Greek passages with edition/rights clearance before any translated Father dialogue; analytical descriptions are editorial research metadata only.",
+    "To Marinus IV has a distinct textual-boundary problem: a possibly different epitomator and IV.5–6 material from another question.",
+    "Supplement V has an alternative angels chronology; do not merge it invisibly with epitome IV.",
+    "Mark longer-ending textual remarks are witnessed ancient argumentation, not a directive to excise Mark from the app or a Catholic doctrinal verdict."
+  ],
+  "quantities": {
+    "questions": 4,
+    "argumentRecords": 18,
+    "withProvisionalFullLogic": 3,
+    "requiresBoundaryReview": 1
+  },
+  "records": [
+    {
+      "questionId": "eusebius-marinus-01",
+      "sourceWork": "Quaestiones ad Marinum, abridged selection",
+      "argumentStatus": "source_argument_structure_extracted_pending_Greek_span_and_rights_review",
+      "editorialUse": "scholarly_internal_locator_only__NOT_user_facing_Father_paraphrase",
+      "sourceTranslationPolicy": "Do not publish the modern English analytical description as Eusebius's speech. Preserve original source wording in an approved, rights-reviewed translation before Messenger publication.",
+      "spans": [
+        {
+          "id": "M1-A",
+          "locator": "I.1",
+          "role": "source_witness_problem",
+          "analyticalDescription": "Manuscripts cited as ending Mark at 16:8; speaker framed as a hypothetical critic who sets aside the longer passage.",
+          "status": "editorial_research_only_not_a_historical_quote",
+          "bibleKey": "mark/16/8",
+          "shortGreekVerificationAnchor": "Τούτου διττὴ ἂν εἴη ἡ λύσις",
+          "shortGreekAnchorValidation": "observed_in_online_Greek_excerpts_or_secondary_source__not_manuscript_collated",
+          "logicalStatus": "conditional_alternative_not_eusebius_definitive_textual_verdict",
+          "sourceUrl": "https://catholiclibrary.org/library/view?chunk.id=00000003&docId=%2FFathers-Synchronized-EN%2FEusebius_Caesariensis__Quaestiones_evangelicae_ad_Marinum.en.html",
+          "sourceLocatorConfidence": "section_or_chunk_observed"
+        },
+        {
+          "id": "M1-B",
+          "locator": "I.1",
+          "role": "alternative_reader_position",
+          "analyticalDescription": "A second interpreter declines to reject the longer ending and regards both manuscript readings as receivable for argument.",
+          "status": "editorial_research_only_not_a_historical_quote",
+          "bibleKey": "mark/16/9",
+          "shortGreekVerificationAnchor": "Ἄλλος δέ τις οὐδ' ὁτιοῦν τολμῶν",
+          "shortGreekAnchorValidation": "observed_in_online_Greek_excerpts_or_secondary_source__not_manuscript_collated",
+          "logicalStatus": "hypothetical_second_interpreter",
+          "sourceUrl": "https://catholiclibrary.org/library/view?chunk.id=00000003&docId=%2FFathers-Synchronized-EN%2FEusebius_Caesariensis__Quaestiones_evangelicae_ad_Marinum.en.html",
+          "sourceLocatorConfidence": "section_or_chunk_observed"
+        },
+        {
+          "id": "M1-C",
+          "locator": "I.2",
+          "role": "reading_pause_exegetical_resolution",
+          "analyticalDescription": "Under the assumption that Mark 16:9 is retained, place a sense-stop after 'having risen' and attach the early-morning modifier to Christ's appearance to Magdalene.",
+          "status": "editorial_research_only_not_a_historical_quote",
+          "bibleKey": "mark/16/9",
+          "shortGreekVerificationAnchor": "μετὰ διαστολῆς ἀναγνωσόμεθα",
+          "shortGreekAnchorValidation": "observed_in_online_Greek_excerpts_or_secondary_source__not_manuscript_collated",
+          "logicalStatus": "conditional_on_retention_of_Mark_16_9",
+          "sourceUrl": "https://catholiclibrary.org/library/view?chunk.id=00000003&docId=%2FFathers-Synchronized-EN%2FEusebius_Caesariensis__Quaestiones_evangelicae_ad_Marinum.en.html",
+          "sourceLocatorConfidence": "section_or_chunk_observed"
+        },
+        {
+          "id": "M1-D",
+          "locator": "I.2",
+          "role": "scriptural_comparison",
+          "analyticalDescription": "Distinguish the event of the Resurrection mentioned in Matthew from the later appearance to Mary discussed with Mark and John.",
+          "status": "editorial_research_only_not_a_historical_quote",
+          "bibleKey": "matthew/28/1",
+          "shortGreekVerificationAnchor": "καιροὺς δύο",
+          "shortGreekAnchorValidation": "observed_in_online_Greek_excerpts_or_secondary_source__not_manuscript_collated",
+          "logicalStatus": "harmonization_according_to_transmitted_author",
+          "sourceUrl": "https://catholiclibrary.org/library/view?chunk.id=00000003&docId=%2FFathers-Synchronized-EN%2FEusebius_Caesariensis__Quaestiones_evangelicae_ad_Marinum.en.html",
+          "sourceLocatorConfidence": "section_or_chunk_observed"
+        }
+      ]
+    },
+    {
+      "questionId": "eusebius-marinus-02",
+      "sourceWork": "Quaestiones ad Marinum, abridged selection",
+      "argumentStatus": "source_argument_structure_extracted_pending_Greek_span_and_rights_review",
+      "editorialUse": "scholarly_internal_locator_only__NOT_user_facing_Father_paraphrase",
+      "sourceTranslationPolicy": "Do not publish the modern English analytical description as Eusebius's speech. Preserve original source wording in an approved, rights-reviewed translation before Messenger publication.",
+      "spans": [
+        {
+          "id": "M2-A",
+          "locator": "II.1–3",
+          "role": "lexical_time_reconciliation",
+          "analyticalDescription": "Treat Matthew's 'late on the Sabbath' as a period pointing toward the dawn of the first day, to address the apparent chronological mismatch with John.",
+          "status": "editorial_research_only_not_a_historical_quote",
+          "bibleKey": "matthew/28/1",
+          "shortGreekVerificationAnchor": null,
+          "shortGreekAnchorValidation": "not_captured",
+          "logicalStatus": "witness_observed_via_scholarly_secondary_discussion__original_section_span_needs_review",
+          "sourceUrl": null,
+          "sourceLocatorConfidence": "needs_folio_or_edition_alignment"
+        },
+        {
+          "id": "M2-B",
+          "locator": "II.4–5",
+          "role": "same_person_repeated_visits",
+          "analyticalDescription": "Treat the evangelists as recounting successive phases of Mary's visits and appearances; the ordering is an argued possibility.",
+          "status": "editorial_research_only_not_a_historical_quote",
+          "bibleKey": "john/20/11",
+          "shortGreekVerificationAnchor": null,
+          "shortGreekAnchorValidation": "not_captured",
+          "logicalStatus": "interpretative_sequence_not_historical_fact",
+          "sourceUrl": "https://catholiclibrary.org/library/view?chunk.id=00000009&docId=%2FFathers-Synchronized-EN%2FEusebius_Caesariensis__Quaestiones_evangelicae_ad_Marinum.en.html",
+          "sourceLocatorConfidence": "section_or_chunk_observed"
+        },
+        {
+          "id": "M2-C",
+          "locator": "II.6–7",
+          "role": "alternative_person_identification",
+          "analyticalDescription": "Another explanation distinguishes different women named Mary in the tomb reports, instead of insisting every event involves the same Mary.",
+          "status": "editorial_research_only_not_a_historical_quote",
+          "bibleKey": "matthew/28/1",
+          "shortGreekVerificationAnchor": null,
+          "shortGreekAnchorValidation": "not_captured",
+          "logicalStatus": "explicit_counterfactual_option",
+          "sourceUrl": "https://catholiclibrary.org/library/view?chunk.id=00000009&docId=%2FFathers-Synchronized-EN%2FEusebius_Caesariensis__Quaestiones_evangelicae_ad_Marinum.en.html",
+          "sourceLocatorConfidence": "section_or_chunk_observed"
+        },
+        {
+          "id": "M2-D",
+          "locator": "II.8–9",
+          "role": "copyist_name_hypothesis",
+          "analyticalDescription": "The manuscript-transmitted argument considers the possibility of a surname introduced by a scribe; this is a conjectural explanation rather than a demonstrated corruption.",
+          "status": "editorial_research_only_not_a_historical_quote",
+          "bibleKey": "john/20/11",
+          "shortGreekVerificationAnchor": "τὸ τῆς Μαγδαληνῆς ἐπώνυμον",
+          "shortGreekAnchorValidation": "observed_in_online_Greek_excerpts_or_secondary_source__not_manuscript_collated",
+          "logicalStatus": "hypothetical_scribal_error_not_verified_textual_fact",
+          "sourceUrl": "https://catholiclibrary.org/library/view?chunk.id=00000009&docId=%2FFathers-Synchronized-EN%2FEusebius_Caesariensis__Quaestiones_evangelicae_ad_Marinum.en.html",
+          "sourceLocatorConfidence": "section_or_chunk_observed"
+        },
+        {
+          "id": "M2-E",
+          "locator": "II.9",
+          "role": "preferred_alternative_within_its_context",
+          "analyticalDescription": "The transmitted text expresses a preference for avoiding scribal-error allegations, proposing two women called Magdalene; do not assert that this actually happened.",
+          "status": "editorial_research_only_not_a_historical_quote",
+          "bibleKey": "matthew/28/1",
+          "shortGreekVerificationAnchor": "κάλλιον δὲ τὸ μὴ δὲ σφάλμα",
+          "shortGreekAnchorValidation": "observed_in_online_Greek_excerpts_or_secondary_source__not_manuscript_collated",
+          "logicalStatus": "authorial_preference_within_hypothetical_family",
+          "sourceUrl": "https://catholiclibrary.org/library/view?chunk.id=00000009&docId=%2FFathers-Synchronized-EN%2FEusebius_Caesariensis__Quaestiones_evangelicae_ad_Marinum.en.html",
+          "sourceLocatorConfidence": "section_or_chunk_observed"
+        }
+      ]
+    },
+    {
+      "questionId": "eusebius-marinus-03",
+      "sourceWork": "Quaestiones ad Marinum, abridged selection",
+      "argumentStatus": "source_argument_structure_extracted_pending_Greek_span_and_rights_review",
+      "editorialUse": "scholarly_internal_locator_only__NOT_user_facing_Father_paraphrase",
+      "sourceTranslationPolicy": "Do not publish the modern English analytical description as Eusebius's speech. Preserve original source wording in an approved, rights-reviewed translation before Messenger publication.",
+      "spans": [
+        {
+          "id": "M3-A",
+          "locator": "III.1",
+          "role": "conditional_shared_identity",
+          "analyticalDescription": "Assume the Mary in Matthew and John is one person, who goes to the tomb more than once.",
+          "status": "editorial_research_only_not_a_historical_quote",
+          "bibleKey": "john/20/11",
+          "shortGreekVerificationAnchor": "Εἰ μὲν οὖν μία καὶ ἡ αὐτὴ εἴη Μαρία",
+          "shortGreekAnchorValidation": "observed_in_online_Greek_excerpts_or_secondary_source__not_manuscript_collated",
+          "logicalStatus": "if_same_Mary_is_posited",
+          "sourceUrl": "https://catholiclibrary.org/library/view?chunk.id=00000011&docId=%2FFathers-Synchronized-EN%2FEusebius_Caesariensis__Quaestiones_evangelicae_ad_Marinum.en.html",
+          "sourceLocatorConfidence": "section_or_chunk_observed"
+        },
+        {
+          "id": "M3-B",
+          "locator": "III.1",
+          "role": "event_sequence",
+          "analyticalDescription": "Distinguish Mary's departure to the apostles, return to the tomb, and encounter with the angels and Christ in John.",
+          "status": "editorial_research_only_not_a_historical_quote",
+          "bibleKey": "john/20/12",
+          "shortGreekVerificationAnchor": "ἐπανῄει δεύτερον",
+          "shortGreekAnchorValidation": "observed_in_online_Greek_excerpts_or_secondary_source__not_manuscript_collated",
+          "logicalStatus": "part_of_hypothetical_same_Mary_chronology",
+          "sourceUrl": "https://catholiclibrary.org/library/view?chunk.id=00000011&docId=%2FFathers-Synchronized-EN%2FEusebius_Caesariensis__Quaestiones_evangelicae_ad_Marinum.en.html",
+          "sourceLocatorConfidence": "section_or_chunk_observed"
+        },
+        {
+          "id": "M3-C",
+          "locator": "III.2",
+          "role": "spiritual_recognition_exegesis",
+          "analyticalDescription": "Interpret Christ's prohibition on touching as related to Mary's still-low understanding of his risen divinity at that encounter.",
+          "status": "editorial_research_only_not_a_historical_quote",
+          "bibleKey": "john/20/17",
+          "shortGreekVerificationAnchor": "Μή μου ἅπτου",
+          "shortGreekAnchorValidation": "observed_in_online_Greek_excerpts_or_secondary_source__not_manuscript_collated",
+          "logicalStatus": "theological_interpretation_historically_attributed_not_official_doctrine",
+          "sourceUrl": "https://catholiclibrary.org/library/view?chunk.id=00000011&docId=%2FFathers-Synchronized-EN%2FEusebius_Caesariensis__Quaestiones_evangelicae_ad_Marinum.en.html",
+          "sourceLocatorConfidence": "section_or_chunk_observed"
+        },
+        {
+          "id": "M3-D",
+          "locator": "III.3",
+          "role": "later_encounter_reconciliation",
+          "analyticalDescription": "In the proposed later Matthean encounter Mary has moved from weeping to rejoicing and worship and is allowed to hold Christ's feet.",
+          "status": "editorial_research_only_not_a_historical_quote",
+          "bibleKey": "matthew/28/9",
+          "shortGreekVerificationAnchor": "ἐκράτησαν αὐτοῦ τοὺς πόδας",
+          "shortGreekAnchorValidation": "observed_in_online_Greek_excerpts_or_secondary_source__not_manuscript_collated",
+          "logicalStatus": "dependent_on_ordering_of_the_scenes",
+          "sourceUrl": "https://catholiclibrary.org/library/view?chunk.id=00000011&docId=%2FFathers-Synchronized-EN%2FEusebius_Caesariensis__Quaestiones_evangelicae_ad_Marinum.en.html",
+          "sourceLocatorConfidence": "section_or_chunk_observed"
+        },
+        {
+          "id": "M3-E",
+          "locator": "III.3 and following",
+          "role": "dependency_on_Marinus_II",
+          "analyticalDescription": "This reconstruction presupposes one of the alternative time/identity readings developed in the preceding question.",
+          "status": "editorial_research_only_not_a_historical_quote",
+          "bibleKey": "matthew/28/1",
+          "shortGreekVerificationAnchor": null,
+          "shortGreekAnchorValidation": "not_captured",
+          "logicalStatus": "cannot_render_independently_without_Marinus_II_context",
+          "sourceUrl": null,
+          "sourceLocatorConfidence": "needs_folio_or_edition_alignment"
+        }
+      ]
+    },
+    {
+      "questionId": "eusebius-marinus-04",
+      "sourceWork": "Quaestiones ad Marinum, abridged selection",
+      "argumentStatus": "partially_recovered_editorially_mixed",
+      "editorialUse": "scholarly_internal_locator_only__NOT_user_facing_Father_paraphrase",
+      "sourceTranslationPolicy": "Do not publish the modern English analytical description as Eusebius's speech. Preserve original source wording in an approved, rights-reviewed translation before Messenger publication.",
+      "spans": [
+        {
+          "id": "M4-A",
+          "locator": "IV.1",
+          "role": "distinct_angel_encounters",
+          "analyticalDescription": "Distinguish one angel outside on Matthew's stone from two inside the tomb in John; the account changes if times, witnesses, and locations differ.",
+          "status": "editorial_research_only_not_a_historical_quote",
+          "bibleKey": "matthew/28/2",
+          "shortGreekVerificationAnchor": null,
+          "shortGreekAnchorValidation": "not_captured",
+          "logicalStatus": "partially_verified_source_and_editorial_secondary_description",
+          "sourceUrl": null,
+          "sourceLocatorConfidence": "needs_folio_or_edition_alignment"
+        },
+        {
+          "id": "M4-B",
+          "locator": "IV.2–4",
+          "role": "additional_angel_and_appearance_comparisons",
+          "analyticalDescription": "More comparisons of Luke's men and Mark's young man are transmitted, but full per-paragraph verification is not yet complete.",
+          "status": "editorial_research_only_not_a_historical_quote",
+          "bibleKey": "mark/16/5",
+          "shortGreekVerificationAnchor": null,
+          "shortGreekAnchorValidation": "not_captured",
+          "logicalStatus": "insufficient_exact_Greek_alignment__not_ready",
+          "sourceUrl": null,
+          "sourceLocatorConfidence": "needs_folio_or_edition_alignment"
+        },
+        {
+          "id": "M4-C",
+          "locator": "IV.5–6",
+          "role": "possible_orphaned_other_question_answer",
+          "analyticalDescription": "Modern editorial notes flag IV.5–6 as likely belonging to an otherwise unpreserved question and IV.2 onward as stylistically different.",
+          "status": "editorial_research_only_not_a_historical_quote",
+          "bibleKey": "luke/24/4",
+          "shortGreekVerificationAnchor": null,
+          "shortGreekAnchorValidation": "not_captured",
+          "logicalStatus": "textual_boundary_quarantine__possible_other_epitomator_or_excerpt",
+          "sourceUrl": null,
+          "sourceLocatorConfidence": "needs_folio_or_edition_alignment"
+        },
+        {
+          "id": "M4-D",
+          "locator": "cross-witness",
+          "role": "opposed_sequence_in_supplement",
+          "analyticalDescription": "An independent Greek supplement on angels orders John's narrative before Matthew's, while the printed IV.1 epitome can place Matthew first; preserve the contradiction between witnesses.",
+          "status": "editorial_research_only_not_a_historical_quote",
+          "bibleKey": "john/20/12",
+          "shortGreekVerificationAnchor": "ἡγοῦμαι γὰρ προηγεῖσθαι",
+          "shortGreekAnchorValidation": "observed_in_online_Greek_excerpts_or_secondary_source__not_manuscript_collated",
+          "logicalStatus": "separate_witness_not_replace_or_merge",
+          "sourceUrl": "https://catholiclibrary.org/library/view?chunk.id=00000007&docId=%2FFathers-Synchronized-EN%2FEusebius_Caesariensis__Supplementa_ad_quaestiones_ad_Marinum.en.html",
+          "sourceLocatorConfidence": "section_or_chunk_observed"
+        }
+      ]
+    }
+  ]
+}
