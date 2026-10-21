@@ -116,9 +116,26 @@ const collectFiles=(dir)=>{
 
 const activeRoot=path.join(root,"assets/active");
 const massV46Root=path.join(activeRoot,"mass-v46");
+// User-approved Mass originals form an independently checksum-frozen bank.
+// They are NOT promoted into the 117-item global V4.1.1 canonical registry.
+const massFinalRoot=path.join(activeRoot,"mass-final");
+const approvedMass=JSON.parse(fs.readFileSync(path.join(root,
+ "data/presentation/mass-final-approved-originals-20261020.v1.json"),"utf8"));
+assert.equal(approvedMass.files.length,68);
+const knownMassFiles=new Map(approvedMass.files.map(x=>[x.path,x]));
+const physicalMassFiles=collectFiles(massFinalRoot).filter(file=>/\.(png|svg)$/i.test(file));
+assert.equal(physicalMassFiles.length,68,"New unreviewed Mass source entered exact-original bank");
+for(const file of physicalMassFiles){
+ const rel=path.relative(root,file).split(path.sep).join("/");
+ const record=knownMassFiles.get(rel);
+ assert.ok(record,"Unlisted original in user-approved Mass bank: "+rel);
+ assert.equal(createHash("sha256").update(fs.readFileSync(file)).digest("hex"),
+  record.sourceHash,"Final user-approved Mass original was modified: "+rel);
+}
 const externalized=collectFiles(activeRoot).filter(file=>
   /\.(png|svg|jpg|jpeg|webp)$/i.test(file) &&
-  !file.startsWith(massV46Root+path.sep)
+  !file.startsWith(massV46Root+path.sep) &&
+  !file.startsWith(massFinalRoot+path.sep)
 );
 for(const file of externalized){
   const assetId=path.basename(file).replace(/\.[^.]+$/,"");
@@ -158,4 +175,4 @@ for(const [readerKey,url] of Object.entries(R17_FROZEN_ACTIVE_ICON_ASSETS)){
 }
 
 
-console.log("asset bank contract: PASS — global V4.1.1 remains frozen; Mass v4.6 is separately manifest-certified with 67 exact donor wrappers.");
+console.log("asset bank contract: PASS — global V4.1.1 remains frozen; Mass v4.6 has 67 exact donor wrappers and user-approved final Mass bank has 68 SHA256-locked originals.");

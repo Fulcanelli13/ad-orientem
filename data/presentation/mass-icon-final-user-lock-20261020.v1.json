@@ -1,0 +1,2539 @@
+{
+  "schema": "ao-mass-final-icon-user-lock-v1",
+  "date": "2026-10-20T15:41:30.221Z",
+  "originalSchema": "ao-mass-icon-final-selection-v2",
+  "sourceBankTotal": 182,
+  "immutableAssetIDs": true,
+  "acceptedCount": 136,
+  "previouslyExcludedExactArtwork": [
+    "priest_ascending",
+    "priest_at_altar",
+    "priest_silent",
+    "frozen_you",
+    "v46_epistle",
+    "frozen_sedilia",
+    "ea_corpus_christi_procession",
+    "ea_holy_thursday_mandatum",
+    "ea_palm_sunday_distribution",
+    "ea_priest_purifies_chalice",
+    "ea_priest_purifies_fingers",
+    "ea_requiem_absolution"
+  ],
+  "permanentlyRejectedExactArtwork": [
+    {
+      "id": "priest_foot",
+      "originalName": "Priest Foot",
+      "sourceHash": "d4ffcc0e4c76c2a48c5abdf1f1df31adf6ebc253efa603cce6942e0c8929714d"
+    },
+    {
+      "id": "priest_facing_legacy",
+      "originalName": "Priest Facing Legacy",
+      "sourceHash": "c8719a1f06dc22f809ff44e9b7f376f65f45a4b66f16e655241f1e8fa1715444"
+    },
+    {
+      "id": "v46_communion",
+      "originalName": "V4.6 · Communion",
+      "sourceHash": null
+    },
+    {
+      "id": "v46_gospel",
+      "originalName": "V4.6 · Gospel",
+      "sourceHash": null
+    },
+    {
+      "id": "v46_incense",
+      "originalName": "V4.6 · Incense",
+      "sourceHash": null
+    },
+    {
+      "id": "v46_priest_ascending",
+      "originalName": "V4.6 · Priest Ascending",
+      "sourceHash": null
+    },
+    {
+      "id": "v46_priest_centre",
+      "originalName": "V4.6 · Priest Centre",
+      "sourceHash": null
+    },
+    {
+      "id": "v46_priest_facing_people_rich",
+      "originalName": "V4.6 · Priest Facing People Rich",
+      "sourceHash": null
+    },
+    {
+      "id": "v46_priest_foot",
+      "originalName": "V4.6 · Priest Foot",
+      "sourceHash": null
+    },
+    {
+      "id": "v46_priest_foot_rich",
+      "originalName": "V4.6 · Priest Foot Rich",
+      "sourceHash": null
+    },
+    {
+      "id": "v46_priest_incense_altar",
+      "originalName": "V4.6 · Priest Incense Altar",
+      "sourceHash": null
+    },
+    {
+      "id": "v46_priest_incense_people",
+      "originalName": "V4.6 · Priest Incense People",
+      "sourceHash": null
+    },
+    {
+      "id": "v46_priest_rail",
+      "originalName": "V4.6 · Priest Rail",
+      "sourceHash": null
+    },
+    {
+      "id": "v46_priest_silent",
+      "originalName": "V4.6 · Priest Silent",
+      "sourceHash": null
+    },
+    {
+      "id": "v46_priest_turn_people_move_rich",
+      "originalName": "V4.6 · Priest Turn People Move Rich",
+      "sourceHash": null
+    },
+    {
+      "id": "v46_priest_turn_people_rich",
+      "originalName": "V4.6 · Priest Turn People Rich",
+      "sourceHash": null
+    },
+    {
+      "id": "legacy_priest_centre",
+      "originalName": "Earlier bank · Priest Centre",
+      "sourceHash": null
+    },
+    {
+      "id": "legacy_priest_silent",
+      "originalName": "Earlier bank · Priest Silent",
+      "sourceHash": null
+    },
+    {
+      "id": "legacy_genuflect",
+      "originalName": "Earlier bank · Genuflect",
+      "sourceHash": null
+    },
+    {
+      "id": "legacy_kneel",
+      "originalName": "Earlier bank · Kneel",
+      "sourceHash": null
+    },
+    {
+      "id": "legacy_priest_ascending_steps",
+      "originalName": "Earlier bank · Priest Ascending Steps",
+      "sourceHash": null
+    },
+    {
+      "id": "legacy_priest_foot_altar",
+      "originalName": "Earlier bank · Priest Foot Altar",
+      "sourceHash": null
+    },
+    {
+      "id": "ao_communion_give_host",
+      "originalName": "Communion Give Host",
+      "sourceHash": "ca2db54a0adfc5af0875d9f770d457041e62424056ed036b579003f44fb4c172"
+    },
+    {
+      "id": "ao_communion_give_chalice",
+      "originalName": "Communion Give Chalice",
+      "sourceHash": "89b8ebb2fb2b15aa24b3531a35d904de0e78896c6cd033afceb91c2875463a5d"
+    },
+    {
+      "id": "ao_at_epistle_side",
+      "originalName": "At Epistle Side",
+      "sourceHash": "e05830a5a81ce062debbcce5c22e6db8dbe9fe18ebdf13280cec0706d5126a6b"
+    },
+    {
+      "id": "ao_at_gospel_side",
+      "originalName": "At Gospel Side",
+      "sourceHash": "6901fb46c747c08f3df76ae7e6d4d57d1d88f688db9c802f2d94aacceca2f547"
+    },
+    {
+      "id": "ea_ash_wednesday_imposition",
+      "originalName": "Ash Wednesday Imposition",
+      "sourceHash": "43d6515c3b8960f21464b88ca8fc52a3db0538919899fa669d08e553e6aa4a2e"
+    },
+    {
+      "id": "ea_candlemas_distribution",
+      "originalName": "Candlemas Distribution",
+      "sourceHash": "486258d7b87d33a583a569d54710863af65b863900deb72a1d91b619e135de64"
+    },
+    {
+      "id": "ea_good_friday_veneration",
+      "originalName": "Good Friday Veneration",
+      "sourceHash": "ee7ea81a50a8dca624d9efa43be8c279851eb8040fadd4f282112e452f29fe63"
+    },
+    {
+      "id": "ea_easter_vigil_new_fire",
+      "originalName": "Easter Vigil New Fire",
+      "sourceHash": "644ce64a6ee6a8462edfc2820374e687570e76931446cf60af7610fb52da7674"
+    },
+    {
+      "id": "study_priest_foot",
+      "originalName": "Priest at foot of altar",
+      "sourceHash": "652259c10d865843c57d86ae5fdd43b016fb1f472dd11a8347f6dab90365bbfc"
+    }
+  ],
+  "historicalReview": {
+    "date": "2026-10-19",
+    "totalReviewedDecisions": 110,
+    "decisionCounts": {
+      "repurpose": 28,
+      "reject": 9,
+      "accept": 73
+    },
+    "decisions": {
+      "mass:priest_epistle_rich": {
+        "status": "repurpose",
+        "target": "Gosepel side"
+      },
+      "mass:priest_gospel_rich": {
+        "status": "repurpose",
+        "target": "epistle side"
+      },
+      "bank:ACTOR.PRIEST.GOSPEL_SIDE": {
+        "status": "reject"
+      },
+      "bank:ACTOR.PRIEST.EPISTLE_SIDE": {
+        "status": "reject"
+      },
+      "proposal:priest-epistle-side": {
+        "status": "reject"
+      },
+      "proposal:priest-gospel-side": {
+        "status": "reject"
+      },
+      "mass:epistle": {
+        "status": "reject"
+      },
+      "mass:genuflect": {
+        "status": "accept"
+      },
+      "mass:bow": {
+        "status": "repurpose",
+        "target": "use for priest's bow"
+      },
+      "mass:kneel": {
+        "status": "accept"
+      },
+      "mass:stand": {
+        "status": "accept"
+      },
+      "mass:profound_bow": {
+        "status": "accept"
+      },
+      "mass:cross": {
+        "status": "accept"
+      },
+      "mass:gospel_crosses": {
+        "status": "accept"
+      },
+      "mass:hands_joined": {
+        "status": "accept"
+      },
+      "mass:breast_strike": {
+        "status": "accept"
+      },
+      "mass:head_bow": {
+        "status": "reject"
+      },
+      "mass:schola": {
+        "status": "accept",
+        "note": "in the app this icon appears very small... i don't know what's the issue"
+      },
+      "mass:bells": {
+        "status": "accept"
+      },
+      "mass:response": {
+        "status": "accept"
+      },
+      "mass:faithful": {
+        "status": "accept"
+      },
+      "mass:priest_audible": {
+        "status": "accept"
+      },
+      "mass:listen": {
+        "status": "accept"
+      },
+      "mass:priest_chair": {
+        "status": "accept"
+      },
+      "mass:priest_sedilia": {
+        "status": "accept"
+      },
+      "mass:preaching": {
+        "status": "accept"
+      },
+      "mass:chalice_elevation": {
+        "status": "repurpose",
+        "target": "the icon is showing host elevation"
+      },
+      "mass:priest_elevation": {
+        "status": "repurpose",
+        "target": "icon shows host elevation"
+      },
+      "ui:ao-ui-search": {
+        "status": "accept"
+      },
+      "ui:ao-ui-previous": {
+        "status": "accept"
+      },
+      "ui:ao-ui-next": {
+        "status": "accept"
+      },
+      "ui:ao-ui-info": {
+        "status": "accept"
+      },
+      "ui:ao-ui-external": {
+        "status": "accept"
+      },
+      "ui:ao-ui-expand": {
+        "status": "accept"
+      },
+      "ui:ao-ui-close": {
+        "status": "accept"
+      },
+      "ui:ao-ui-check": {
+        "status": "accept"
+      },
+      "ui:ao-ui-back": {
+        "status": "accept"
+      },
+      "proposal:priest-eyes-hands-raised": {
+        "status": "reject"
+      },
+      "proposal:priest-hands-over-oblations": {
+        "status": "reject"
+      },
+      "approved:finger-ablutions-post-communion": {
+        "status": "accept"
+      },
+      "bank:CUE.LOOK": {
+        "status": "accept"
+      },
+      "bank:CUE.RESPONSE": {
+        "status": "accept"
+      },
+      "bank:NAV.GLOBAL.SETTINGS": {
+        "status": "accept"
+      },
+      "bank:NAV.GLOBAL.HOME": {
+        "status": "accept"
+      },
+      "bank:NAV.GLOBAL.CALENDAR": {
+        "status": "accept"
+      },
+      "bank:NAV.GLOBAL.MASS": {
+        "status": "accept"
+      },
+      "bank:NAV.GLOBAL.PRAY": {
+        "status": "accept"
+      },
+      "bank:NAV.GLOBAL.LEARN": {
+        "status": "accept"
+      },
+      "bank:UI.SEARCH": {
+        "status": "accept"
+      },
+      "bank:UI.PREVIOUS": {
+        "status": "accept"
+      },
+      "bank:UI.NEXT": {
+        "status": "accept"
+      },
+      "bank:UI.EXPAND": {
+        "status": "accept"
+      },
+      "bank:UI.CLOSE": {
+        "status": "accept"
+      },
+      "bank:UI.CHECK": {
+        "status": "accept"
+      },
+      "bank:UI.EXTERNAL": {
+        "status": "accept"
+      },
+      "bank:UI.INFO": {
+        "status": "accept"
+      },
+      "bank:UI.BACK": {
+        "status": "accept"
+      },
+      "bank:MODULE.SACRED_HEART": {
+        "status": "accept"
+      },
+      "bank:MODULE.ROSARY": {
+        "status": "accept"
+      },
+      "bank:MODULE.STATIONS": {
+        "status": "accept"
+      },
+      "bank:GESTURE.BREAST_STRIKE": {
+        "status": "accept"
+      },
+      "bank:GESTURE.HANDS_JOINED": {
+        "status": "accept"
+      },
+      "bank:GESTURE.PROFOUND_BOW": {
+        "status": "accept"
+      },
+      "bank:MODULE.CONFESSION": {
+        "status": "accept"
+      },
+      "bank:MODULE.ANGELUS": {
+        "status": "accept"
+      },
+      "bank:MODULE.ADORATION": {
+        "status": "accept"
+      },
+      "bank:SOUND.PRIEST.AUDIBLE": {
+        "status": "accept"
+      },
+      "bank:SOUND.SCHOLA": {
+        "status": "accept"
+      },
+      "mass:priest_blessing_rich": {
+        "status": "accept"
+      },
+      "mass:priest_ascending_rich": {
+        "status": "accept"
+      },
+      "mass:priest_ambo_rich": {
+        "status": "accept"
+      },
+      "mass:priest_procession_rich": {
+        "status": "accept"
+      },
+      "mass:priest_kiss_altar_rich": {
+        "status": "accept"
+      },
+      "mass:priest_profound_bow_rich": {
+        "status": "repurpose",
+        "target": "this is priest kissing the altat"
+      },
+      "mass:priest_incense_altar_rich": {
+        "status": "accept"
+      },
+      "mass:priest_rail_after_rich": {
+        "status": "accept",
+        "target": "this is priest giving communion to the faithful"
+      },
+      "mass:priest_communion_rich": {
+        "status": "repurpose",
+        "target": "this is not the priest's communion"
+      },
+      "mass:priest_rail_rich": {
+        "status": "repurpose"
+      },
+      "mass:priest_sedilia_rising_rich": {
+        "status": "accept"
+      },
+      "mass:priest_sedilia_rich": {
+        "status": "accept"
+      },
+      "mass:priest_centre_arms_rich": {
+        "status": "accept"
+      },
+      "mass:priest_centre_hands_rich": {
+        "status": "accept"
+      },
+      "mass:priest_elevate_chalice_rich": {
+        "status": "accept"
+      },
+      "bank:POSTURE.SIT": {
+        "status": "accept",
+        "note": "better than the other sit"
+      },
+      "bank:POSTURE.BOW": {
+        "status": "accept",
+        "note": "use for faithful bow (distinct from priest's bow)"
+      },
+      "bank:GESTURE.HEAD_BOW": {
+        "status": "reject"
+      },
+      "mass:priest_sedilia_standing_rich": {
+        "status": "repurpose"
+      },
+      "bank:POSTURE.STAND": {
+        "status": "accept",
+        "note": "if cropped properly this is the better stand icon"
+      },
+      "mass:fraction": {
+        "status": "repurpose"
+      },
+      "mass:commingling": {
+        "status": "repurpose"
+      },
+      "mass:priest_genuflect": {
+        "status": "repurpose"
+      },
+      "mass:communion": {
+        "status": "repurpose"
+      },
+      "mass:priest_incense_people": {
+        "status": "repurpose"
+      },
+      "mass:priest_incense_altar": {
+        "status": "repurpose"
+      },
+      "mass:priest_foot": {
+        "status": "repurpose"
+      },
+      "mass:priest_facing_people": {
+        "status": "repurpose"
+      },
+      "mass:priest_rail": {
+        "status": "repurpose"
+      },
+      "mass:priest_ascending": {
+        "status": "repurpose"
+      },
+      "mass:priest_centre": {
+        "status": "repurpose"
+      },
+      "mass:priest_return_altar_rich": {
+        "status": "repurpose"
+      },
+      "mass:priest_turn_people_rich": {
+        "status": "repurpose"
+      },
+      "mass:priest_facing_people_rich": {
+        "status": "repurpose"
+      },
+      "mass:priest_incense_people_rich": {
+        "status": "accept",
+        "note": "actually the priest does not technically incense people. its the servant who does"
+      },
+      "mass:priest_foot_rich": {
+        "status": "repurpose"
+      },
+      "mass:priest_turn_altar_move_rich": {
+        "status": "repurpose"
+      },
+      "mass:priest_turn_people_move_rich": {
+        "status": "repurpose"
+      },
+      "bank:ACTOR.PRIEST.CENTRE_AD_ORIENTEM": {
+        "status": "repurpose"
+      },
+      "bank:ACTOR.PRIEST.FACING_PEOPLE": {
+        "status": "repurpose"
+      },
+      "bank:POSTURE.KNEEL": {
+        "status": "accept",
+        "note": "better icon if cropper properly"
+      },
+      "bank:POSTURE.GENUFLECT": {
+        "status": "accept",
+        "note": "better icon if cropped properly"
+      }
+    }
+  },
+  "items": [
+    {
+      "id": "stand",
+      "name": "Stand",
+      "status": "approved",
+      "rejected": false,
+      "category": "Faithful posture & gestures",
+      "sourceHash": "9b1a252e2cee33fbe7e54aaed93da22e579fd51401c8a87c38fa1b4d9c8dcafd",
+      "physicalSourceId": "Frozen V4 HTML — v4-stand",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "sit",
+      "name": "Faithful Sit",
+      "status": "approved",
+      "rejected": false,
+      "category": "Faithful posture & gestures",
+      "sourceHash": "161eb1c501ebc661b9b987234cb41ac6df587562dd4f586e694401c7f8db5203",
+      "physicalSourceId": "Frozen V4 HTML — v4-sit",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "kneel",
+      "name": "Kneel",
+      "status": "approved",
+      "rejected": false,
+      "category": "Faithful posture & gestures",
+      "sourceHash": "c456ed9f23c7df59b28fae4d3a6d794c080d5f6dabe6839b08c2bedab8e883b0",
+      "physicalSourceId": "Frozen V4 HTML — v4-kneel",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "faithful_genuflect",
+      "name": "Faithful Genuflect",
+      "status": "approved",
+      "rejected": false,
+      "category": "Faithful posture & gestures",
+      "sourceHash": "d8921a6308ecef60bafda42779b5ca9608266c5ff48b81173fab42ef08ea8235",
+      "physicalSourceId": "Frozen V4 HTML — v4-genuflect",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "bow",
+      "name": "Faithful Bow",
+      "status": "approved",
+      "rejected": false,
+      "category": "Faithful posture & gestures",
+      "sourceHash": "5792564037b4b3e898dfbf8b7d79a2a57cf55bf2a9046a5068e4e7b96d6dc979",
+      "physicalSourceId": "Frozen V4 HTML — v4-bow",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "profound_bow",
+      "name": "Faithful Bow",
+      "status": "approved",
+      "rejected": false,
+      "category": "Faithful posture & gestures",
+      "sourceHash": "d9144dae59d37181b75c0e28ee867b97223aab08452736435246aa698a646b38",
+      "physicalSourceId": "Frozen V4 HTML — v4-profound",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "breast_strike",
+      "name": "Breast strike",
+      "status": "approved",
+      "rejected": false,
+      "category": "Faithful posture & gestures",
+      "sourceHash": "3d349d55bd9fef9e539e138711c5e88e04ebafcd8b76e62491e84a313b5726a4",
+      "physicalSourceId": "Frozen V4 HTML — v4-breast",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "hands_joined",
+      "name": "Hands Joined",
+      "status": "approved",
+      "rejected": false,
+      "category": "Faithful posture & gestures",
+      "sourceHash": "a985cd5b1172b25511daf9ca9090f13abe6c49cab62c0a6bd5795b9ad5bee2a3",
+      "physicalSourceId": "Frozen V4 HTML — v4-hands",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "response",
+      "name": "Response",
+      "status": "approved",
+      "rejected": false,
+      "category": "Voice, responses & bells",
+      "sourceHash": "3978922cf1edf3fffab062c8de5d3eb6ac016af292a8a1428116e997aecd50dd",
+      "physicalSourceId": "Frozen V4 HTML — v4-response",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "listen",
+      "name": "Look",
+      "status": "approved",
+      "rejected": false,
+      "category": "Voice, responses & bells",
+      "sourceHash": "83e61016ad49e3962aae19066a557efa754726cbe7b905d5bbfa0bdd23812667",
+      "physicalSourceId": "Frozen V4 HTML — v4-look",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "priest_audible",
+      "name": "Priest Audible",
+      "status": "approved",
+      "rejected": false,
+      "category": "Voice, responses & bells",
+      "sourceHash": "44b6d5fdc831a11f4ed5870f2fed01c5f4ebf0ad75dea1f0557c59f716187652",
+      "physicalSourceId": "Frozen V4 HTML — v4-audible",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "schola",
+      "name": "Schola sings",
+      "status": "approved",
+      "rejected": false,
+      "category": "Voice, responses & bells",
+      "sourceHash": "98877d39eeda393b131e29ad4700ad7efba7a799da58038d5ad04509d1cbf278",
+      "physicalSourceId": "Frozen V4 HTML — v4-schola",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "priest_foot",
+      "name": "Priest Foot",
+      "status": "reject",
+      "rejected": true,
+      "category": "Priest positions & orientation",
+      "sourceHash": "d4ffcc0e4c76c2a48c5abdf1f1df31adf6ebc253efa603cce6942e0c8929714d",
+      "physicalSourceId": "Frozen V4 HTML — v4-foot",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "priest_rail",
+      "name": "Priest offers hands to kiss",
+      "status": "approved",
+      "rejected": false,
+      "category": "Priest positions & orientation",
+      "sourceHash": "7e1e16dbf729e59e5aa17e3a3c4939247e6108910ab2701ba55aa56733e486e1",
+      "physicalSourceId": "Frozen V4 HTML — v4-rail",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "priest_facing_legacy",
+      "name": "Priest Facing Legacy",
+      "status": "reject",
+      "rejected": true,
+      "category": "Priest positions & orientation",
+      "sourceHash": "c8719a1f06dc22f809ff44e9b7f376f65f45a4b66f16e655241f1e8fa1715444",
+      "physicalSourceId": "Frozen V4 HTML — v4-people",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "ao_at_altar_centre",
+      "name": "At Altar Centre",
+      "status": "approved",
+      "rejected": false,
+      "category": "Priest positions & orientation",
+      "sourceHash": "c3a91d2b1c2fdaf89a39a656b1bbe6526f8cc7c85987e07dccf841b4ce319213",
+      "physicalSourceId": "PR #1485 · recovered original SVG master · ao_at_altar_centre.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/review/mass-icon-candidates/recovered-20261020/ao_at_altar_centre.svg",
+      "note": null
+    },
+    {
+      "id": "ao_blessing",
+      "name": "Priest indulgence",
+      "status": "approved",
+      "rejected": false,
+      "category": "Priest actions & sacred vessels",
+      "sourceHash": "7b9666029a140671ff254325f527cb251e8d381e01601ab47de446a963c38953",
+      "physicalSourceId": "PR #1485 · recovered original SVG master · ao_blessing.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/review/mass-icon-candidates/recovered-20261020/ao_blessing.svg",
+      "note": null
+    },
+    {
+      "id": "ao_chant",
+      "name": "Chant",
+      "status": "approved",
+      "rejected": false,
+      "category": "Voice, responses & bells",
+      "sourceHash": "e2247df3cdddf4abbebc5f334ae42eb35a7deb072ef4d863ca715c6b956f1980",
+      "physicalSourceId": "PR #1485 · recovered original SVG master · ao_chant.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/review/mass-icon-candidates/recovered-20261020/ao_chant.svg",
+      "note": null
+    },
+    {
+      "id": "ao_drink_chalice",
+      "name": "priest Drink Chalice",
+      "status": "approved",
+      "rejected": false,
+      "category": "Priest actions & sacred vessels",
+      "sourceHash": "91b7c5ca554826cd81f75afca2572a6e43a22c12cb6c0ce25b6b37d8d42d245a",
+      "physicalSourceId": "PR #1485 · recovered original SVG master · ao_drink_chalice.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/review/mass-icon-candidates/recovered-20261020/ao_drink_chalice.svg",
+      "note": null
+    },
+    {
+      "id": "ao_elevation_chalice",
+      "name": "Elevation Chalice",
+      "status": "approved",
+      "rejected": false,
+      "category": "Priest actions & sacred vessels",
+      "sourceHash": "b0916c29748ca983200424db968cc5b9110a3ed2bcf610be8a3a4f7976f28d08",
+      "physicalSourceId": "PR #1485 · recovered original SVG master · ao_elevation_chalice.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/review/mass-icon-candidates/recovered-20261020/ao_elevation_chalice.svg",
+      "note": null
+    },
+    {
+      "id": "ao_incensation",
+      "name": "Priest blessing incense",
+      "status": "approved",
+      "rejected": false,
+      "category": "Priest actions & sacred vessels",
+      "sourceHash": "5c8f30bffad11e645816c82154a92e8b5cc54b5a94c3c62e2921a11251ff34f6",
+      "physicalSourceId": "PR #1485 · recovered original SVG master · ao_incensation.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/review/mass-icon-candidates/recovered-20261020/ao_incensation.svg",
+      "note": null
+    },
+    {
+      "id": "ao_place_on_altar",
+      "name": "Place On Altar",
+      "status": "approved",
+      "rejected": false,
+      "category": "Priest actions & sacred vessels",
+      "sourceHash": "38ad2c6f3cb317052b58116435def64664d6e206b5e1572828ab215733e62db4",
+      "physicalSourceId": "PR #1485 · recovered original SVG master · ao_place_on_altar.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/review/mass-icon-candidates/recovered-20261020/ao_place_on_altar.svg",
+      "note": null
+    },
+    {
+      "id": "ao_pray_audible",
+      "name": "Priest speaks low voice",
+      "status": "approved",
+      "rejected": false,
+      "category": "Voice, responses & bells",
+      "sourceHash": "9362d110c0609af2e8404a31669224e27eed460f8bc804276f0c738239c0bdb2",
+      "physicalSourceId": "PR #1485 · recovered original SVG master · ao_pray_audible.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/review/mass-icon-candidates/recovered-20261020/ao_pray_audible.svg",
+      "note": null
+    },
+    {
+      "id": "ao_pray_silent",
+      "name": "Priest Silent",
+      "status": "approved",
+      "rejected": false,
+      "category": "Voice, responses & bells",
+      "sourceHash": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21",
+      "physicalSourceId": "PR #1485 · recovered original SVG master · ao_pray_silent.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/review/mass-icon-candidates/recovered-20261020/ao_pray_silent.svg",
+      "note": null
+    },
+    {
+      "id": "ao_purify_chalice",
+      "name": "Priest purify Chalice",
+      "status": "approved",
+      "rejected": false,
+      "category": "Priest actions & sacred vessels",
+      "sourceHash": "b009bd4f82f59f33e49be3379bbe65bbe436dcdc40971bd1a2c9c5a4c34360b0",
+      "physicalSourceId": "PR #1485 · recovered original SVG master · ao_purify_chalice.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/review/mass-icon-candidates/recovered-20261020/ao_purify_chalice.svg",
+      "note": null
+    },
+    {
+      "id": "ao_purify_fingers",
+      "name": "Priest purify Fingers",
+      "status": "approved",
+      "rejected": false,
+      "category": "Priest actions & sacred vessels",
+      "sourceHash": "b241d6eb22540b4079bdf06c0881bb3fc3ac805e151f34231d191a99bfce2055",
+      "physicalSourceId": "PR #1485 · recovered original SVG master · ao_purify_fingers.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/review/mass-icon-candidates/recovered-20261020/ao_purify_fingers.svg",
+      "note": null
+    },
+    {
+      "id": "ea_priest_commingling",
+      "name": "Priest Commingling",
+      "status": "approved",
+      "rejected": false,
+      "category": "Priest actions & sacred vessels",
+      "sourceHash": "143e4d0c3199193a25177a6d6a77735a935e16c2b72387c5dbe35ecbca88a4fa",
+      "physicalSourceId": "PR #1485 · recovered original SVG master · ea_priest_commingling.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/review/mass-icon-candidates/recovered-20261020/ea_priest_commingling.svg",
+      "note": null
+    },
+    {
+      "id": "ea_priest_fraction_host",
+      "name": "Priest Fraction Host",
+      "status": "approved",
+      "rejected": false,
+      "category": "Priest actions & sacred vessels",
+      "sourceHash": "435debc00320983e57c2b923510d7c28228721ea9417c1eca988365ceda113f5",
+      "physicalSourceId": "PR #1485 · recovered original SVG master · ea_priest_fraction_host.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/review/mass-icon-candidates/recovered-20261020/ea_priest_fraction_host.svg",
+      "note": null
+    },
+    {
+      "id": "sign_of_cross",
+      "name": "Sign Of Cross Priest",
+      "status": "approved",
+      "rejected": false,
+      "category": "Faithful posture & gestures",
+      "sourceHash": "dfa23aee9e3386b90f14b3af8153738797bd5861d14ed52856b8da6444e5de23",
+      "physicalSourceId": "Exact GitHub SVG-derived 96px preview from verified prior comparison",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "priest_communion_host_preview",
+      "name": "Priest Communion Host",
+      "status": "approved",
+      "rejected": false,
+      "category": "Priest actions & sacred vessels",
+      "sourceHash": "8fcda5f770711eb58365d9ca2f14cbf4707e1d1e416deaf7aefa3471b30f5fc9",
+      "physicalSourceId": "Exact GitHub SVG-derived 96px preview from verified prior comparison",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "new_priest_genuflect",
+      "name": "Priest genuflect",
+      "status": "approved",
+      "rejected": false,
+      "category": "Faithful posture & gestures",
+      "sourceHash": "9cb630b261f4ae9986510bcf5dd69715c37d0a7b1bdf8577b324510d08c8bc15",
+      "physicalSourceId": "User-selected study 2026-10-20 · kneeling_priest_in_prayer_silhouette.png",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "new_priest_facing",
+      "name": "Facing congregation, hands joined",
+      "status": "approved",
+      "rejected": false,
+      "category": "Priest positions & orientation",
+      "sourceHash": "fff61fe9f31403dc7f2a956576b148b1cd4fe88e71a3c1dababb8db5abc193b1",
+      "physicalSourceId": "User-selected study 2026-10-20 · praying_priest_silhouette_icon.png",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "priest_epistle",
+      "name": "Priest at Gospel side",
+      "status": "repurposed",
+      "rejected": false,
+      "category": "Priest positions & orientation",
+      "sourceHash": null,
+      "physicalSourceId": "PR #1485 · assets/active/mass-v46/priest_epistle_rich.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/priest_epistle_rich.svg",
+      "note": null
+    },
+    {
+      "id": "priest_gospel",
+      "name": "Priest at Epistle side",
+      "status": "repurposed",
+      "rejected": false,
+      "category": "Priest positions & orientation",
+      "sourceHash": null,
+      "physicalSourceId": "PR #1485 · assets/active/mass-v46/priest_gospel_rich.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/priest_gospel_rich.svg",
+      "note": null
+    },
+    {
+      "id": "priest_elevate_host",
+      "name": "Host elevation — donor",
+      "status": "replaced",
+      "rejected": false,
+      "category": "Priest actions & sacred vessels",
+      "sourceHash": null,
+      "physicalSourceId": "PR #1485 · assets/active/mass-v46/priest_elevate_host_rich.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/priest_elevate_host_rich.svg",
+      "note": null
+    },
+    {
+      "id": "priest_elevate_chalice",
+      "name": "priest offers Chalice",
+      "status": "approved",
+      "rejected": false,
+      "category": "Priest actions & sacred vessels",
+      "sourceHash": null,
+      "physicalSourceId": "PR #1485 · assets/active/mass-v46/priest_elevate_chalice_rich.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/priest_elevate_chalice_rich.svg",
+      "note": null
+    },
+    {
+      "id": "priest_blessing_donor",
+      "name": "Priest indulgence",
+      "status": "approved",
+      "rejected": false,
+      "category": "Priest actions & sacred vessels",
+      "sourceHash": null,
+      "physicalSourceId": "PR #1485 · assets/active/mass-v46/priest_blessing_rich.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/priest_blessing_rich.svg",
+      "note": null
+    },
+    {
+      "id": "priest_kisses_altar",
+      "name": "Priest kisses altar — donor",
+      "status": "approved",
+      "rejected": false,
+      "category": "Priest actions & sacred vessels",
+      "sourceHash": null,
+      "physicalSourceId": "PR #1485 · assets/active/mass-v46/priest_kiss_altar_rich.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/priest_kiss_altar_rich.svg",
+      "note": null
+    },
+    {
+      "id": "priest_sedilia",
+      "name": "Priest at sedilia",
+      "status": "approved",
+      "rejected": false,
+      "category": "Priest positions & orientation",
+      "sourceHash": null,
+      "physicalSourceId": "PR #1485 · assets/active/mass-v46/priest_sedilia_rich.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/priest_sedilia_rich.svg",
+      "note": null
+    },
+    {
+      "id": "priest_procession",
+      "name": "Priest procession",
+      "status": "approved",
+      "rejected": false,
+      "category": "Special rites & processions",
+      "sourceHash": null,
+      "physicalSourceId": "PR #1485 · assets/active/mass-v46/priest_procession_rich.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/priest_procession_rich.svg",
+      "note": null
+    },
+    {
+      "id": "priest_incense_people",
+      "name": "Incenses people — donor",
+      "status": "approved",
+      "rejected": false,
+      "category": "Priest actions & sacred vessels",
+      "sourceHash": null,
+      "physicalSourceId": "PR #1485 · assets/active/mass-v46/priest_incense_people_rich.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/priest_incense_people_rich.svg",
+      "note": null
+    },
+    {
+      "id": "priest_rail_after",
+      "name": "faithful Communion",
+      "status": "approved",
+      "rejected": false,
+      "category": "Priest positions & orientation",
+      "sourceHash": null,
+      "physicalSourceId": "PR #1485 · assets/active/mass-v46/priest_rail_after_rich.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/priest_rail_after_rich.svg",
+      "note": null
+    },
+    {
+      "id": "bells",
+      "name": "Altar bells",
+      "status": "approved",
+      "rejected": false,
+      "category": "Voice, responses & bells",
+      "sourceHash": null,
+      "physicalSourceId": "PR #1485 · assets/active/mass-v46/bells.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/bells.svg",
+      "note": null
+    },
+    {
+      "id": "ref_112201",
+      "name": "priest center of the altar (preface, secret)",
+      "status": "approved",
+      "rejected": false,
+      "category": "Historical studies & source references",
+      "sourceHash": "9d00b3a6069383ee1786808f289d98e482b2ef04ee0ac0ea06ad4c32e5096f71",
+      "physicalSourceId": "User supplied original · image-gen-1(20261019-112201)(1).png",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "ref_112206",
+      "name": "priest at the foot of altar",
+      "status": "approved",
+      "rejected": false,
+      "category": "Historical studies & source references",
+      "sourceHash": "bd6788d97eb1fe953cc00308e52aa15e3060f7633129a49313d804fa79198551",
+      "physicalSourceId": "User supplied original · image-gen-2(20261019-112206)(1).png",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "ref_112210",
+      "name": "ascending altar steps",
+      "status": "approved",
+      "rejected": false,
+      "category": "Historical studies & source references",
+      "sourceHash": "b2bfaa429b99af7799c971a21c332aaac29bb8b453b74002a7ac358f7b022937",
+      "physicalSourceId": "User supplied original · image-gen-3(20261019-112210)(1).png",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "ref_112216",
+      "name": "priest epistle side",
+      "status": "approved",
+      "rejected": false,
+      "category": "Historical studies & source references",
+      "sourceHash": "36539d222b8506f89579fcc5fc12b11220e5272d55129ac4165ce6405366d85f",
+      "physicalSourceId": "User supplied original · image-gen-4(20261019-112216)(1).png",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "ref_112222",
+      "name": "priest gospel side",
+      "status": "approved",
+      "rejected": false,
+      "category": "Historical studies & source references",
+      "sourceHash": "fc04156e9829c9618437e23fd5712292a900daa36d33ff161c505161c53e5b46",
+      "physicalSourceId": "User supplied original · image-gen-5(20261019-112222)(1).png",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "ref_112228",
+      "name": "Original reference · facing congregation, orans",
+      "status": "reference",
+      "rejected": false,
+      "category": "Historical studies & source references",
+      "sourceHash": "9e1ec1e5eefab7f657f68bd3c50f3a209efb80274897afacfaa69951f1283387",
+      "physicalSourceId": "User supplied original · image-gen-6(20261019-112228)(1).png",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "ref_113836",
+      "name": "priest kisses altar",
+      "status": "approved",
+      "rejected": false,
+      "category": "Historical studies & source references",
+      "sourceHash": "d4f2f7dbcec39b9cf4df3175e042c3ffe40a0a96d802e8d709a0b971695ed016",
+      "physicalSourceId": "User supplied original · image-gen-1(20261019-113836)(1).png",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "ref_113841",
+      "name": "Original reference · priest in orans pose",
+      "status": "reference",
+      "rejected": false,
+      "category": "Historical studies & source references",
+      "sourceHash": "41471ebd5751b3698a483cece242f7ff61778becd966506d4d4665ac2d0d93ab",
+      "physicalSourceId": "User supplied original · image-gen-2(20261019-113841)(1).png",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "ref_113846",
+      "name": "priest sprinkling",
+      "status": "approved",
+      "rejected": false,
+      "category": "Historical studies & source references",
+      "sourceHash": "6cd06162131ed5c2276e487a0058ea8e7c8e8c986d35f072b3da532b9f54d227",
+      "physicalSourceId": "User supplied original · image-gen-3(20261019-113846)(1).png",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "ref_113851",
+      "name": "priest carrying monstrance",
+      "status": "approved",
+      "rejected": false,
+      "category": "Historical studies & source references",
+      "sourceHash": "f35f261dbe8bfdb997985fc8922ae95538aca4696fbaf991dcf3dca48780478a",
+      "physicalSourceId": "User supplied original · image-gen-4(20261019-113851)(1).png",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "ref_124320",
+      "name": "Ash Wednesday imposition",
+      "status": "approved",
+      "rejected": false,
+      "category": "Historical studies & source references",
+      "sourceHash": "e573e491c131868260741ac083bfcb9e7ae9d52d4d12d7df5f866eeaa4c2a8fa",
+      "physicalSourceId": "User supplied original · image-gen-1(20261019-124320)(1).png",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "ref_124325",
+      "name": "Candlemas candle distribution",
+      "status": "approved",
+      "rejected": false,
+      "category": "Historical studies & source references",
+      "sourceHash": "8527475354f891ba0ab56dfdf5db631b1d385ea8c57b61cb7a3a73d5050440ef",
+      "physicalSourceId": "User supplied original · image-gen-2(20261019-124325) (1).png",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "ref_124329",
+      "name": "Good Friday cross veneration",
+      "status": "approved",
+      "rejected": false,
+      "category": "Historical studies & source references",
+      "sourceHash": "9ed44b5a9024e876a1dcaf4872c560bce26531aa20b8451423e729c7c9a2d3ca",
+      "physicalSourceId": "User supplied original · image-gen-3(20261019-124329)(1).png",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "ref_124334",
+      "name": "Easter Vigil fire blessing",
+      "status": "approved",
+      "rejected": false,
+      "category": "Historical studies & source references",
+      "sourceHash": "e29d263bace345933f0ba54e68f8b922bbb61c50b6e0d8817cf611298f0a26d7",
+      "physicalSourceId": "User supplied original · image-gen-4(20261019-124334)(1).png",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "v46_bells",
+      "name": "Bells",
+      "status": "approved",
+      "rejected": false,
+      "category": "Voice, responses & bells",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/mass-v46/bells.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/bells.svg",
+      "note": null
+    },
+    {
+      "id": "v46_blessing",
+      "name": "V4.6 · Blessing",
+      "status": "unreviewed",
+      "rejected": false,
+      "category": "Priest actions & sacred vessels",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/mass-v46/blessing.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/blessing.svg",
+      "note": null
+    },
+    {
+      "id": "v46_bow",
+      "name": "Faithful Bow",
+      "status": "repurposed",
+      "rejected": false,
+      "category": "Faithful posture & gestures",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/mass-v46/bow.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/bow.svg",
+      "note": null
+    },
+    {
+      "id": "v46_breast_strike",
+      "name": "Breast Strike",
+      "status": "approved",
+      "rejected": false,
+      "category": "Faithful posture & gestures",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/mass-v46/breast_strike.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/breast_strike.svg",
+      "note": null
+    },
+    {
+      "id": "v46_canon",
+      "name": "Canon",
+      "status": "approved",
+      "rejected": false,
+      "category": "Voice, responses & bells",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/mass-v46/canon.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/canon.svg",
+      "note": null
+    },
+    {
+      "id": "v46_chalice_elevation",
+      "name": "Host Elevation",
+      "status": "repurposed",
+      "rejected": false,
+      "category": "Priest actions & sacred vessels",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/mass-v46/chalice_elevation.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/chalice_elevation.svg",
+      "note": null
+    },
+    {
+      "id": "v46_commingling",
+      "name": "V4.6 · Commingling",
+      "status": "repurposed",
+      "rejected": false,
+      "category": "Priest actions & sacred vessels",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/mass-v46/commingling.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/commingling.svg",
+      "note": null
+    },
+    {
+      "id": "v46_communion",
+      "name": "V4.6 · Communion",
+      "status": "reject",
+      "rejected": true,
+      "category": "Priest actions & sacred vessels",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/mass-v46/communion.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/communion.svg",
+      "note": null
+    },
+    {
+      "id": "v46_cross",
+      "name": "Faithful sign of Cross",
+      "status": "approved",
+      "rejected": false,
+      "category": "Faithful posture & gestures",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/mass-v46/cross.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/cross.svg",
+      "note": null
+    },
+    {
+      "id": "v46_faithful",
+      "name": "Schola silent",
+      "status": "approved",
+      "rejected": false,
+      "category": "Faithful posture & gestures",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/mass-v46/faithful.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/faithful.svg",
+      "note": null
+    },
+    {
+      "id": "v46_fraction",
+      "name": "servant/minister communion",
+      "status": "repurposed",
+      "rejected": false,
+      "category": "Priest actions & sacred vessels",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/mass-v46/fraction.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/fraction.svg",
+      "note": null
+    },
+    {
+      "id": "v46_genuflect",
+      "name": "Faithful Genuflect",
+      "status": "repurposed",
+      "rejected": false,
+      "category": "Faithful posture & gestures",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/mass-v46/genuflect.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/genuflect.svg",
+      "note": null
+    },
+    {
+      "id": "v46_gospel",
+      "name": "V4.6 · Gospel",
+      "status": "reject",
+      "rejected": true,
+      "category": "Priest positions & orientation",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/mass-v46/gospel.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/gospel.svg",
+      "note": null
+    },
+    {
+      "id": "v46_gospel_crosses",
+      "name": "Faithful sign of cross",
+      "status": "approved",
+      "rejected": false,
+      "category": "Priest positions & orientation",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/mass-v46/gospel_crosses.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/gospel_crosses.svg",
+      "note": null
+    },
+    {
+      "id": "v46_hands_joined",
+      "name": "Hands Joined",
+      "status": "approved",
+      "rejected": false,
+      "category": "Faithful posture & gestures",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/mass-v46/hands_joined.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/hands_joined.svg",
+      "note": null
+    },
+    {
+      "id": "v46_incense",
+      "name": "V4.6 · Incense",
+      "status": "reject",
+      "rejected": true,
+      "category": "Priest actions & sacred vessels",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/mass-v46/incense.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/incense.svg",
+      "note": null
+    },
+    {
+      "id": "v46_kneel",
+      "name": "Kneel",
+      "status": "approved",
+      "rejected": false,
+      "category": "Faithful posture & gestures",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/mass-v46/kneel.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/kneel.svg",
+      "note": null
+    },
+    {
+      "id": "v46_lavabo",
+      "name": "servant pours water",
+      "status": "approved",
+      "rejected": false,
+      "category": "Priest actions & sacred vessels",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/mass-v46/lavabo.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/lavabo.svg",
+      "note": null
+    },
+    {
+      "id": "v46_listen",
+      "name": "Listen",
+      "status": "approved",
+      "rejected": false,
+      "category": "Voice, responses & bells",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/mass-v46/listen.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/listen.svg",
+      "note": null
+    },
+    {
+      "id": "v46_preaching",
+      "name": "Preaching",
+      "status": "approved",
+      "rejected": false,
+      "category": "Other retained iconography",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/mass-v46/preaching.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/preaching.svg",
+      "note": null
+    },
+    {
+      "id": "v46_priest_ambo_rich",
+      "name": "Ambo side Sermon",
+      "status": "approved",
+      "rejected": false,
+      "category": "Priest positions & orientation",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/mass-v46/priest_ambo_rich.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/priest_ambo_rich.svg",
+      "note": null
+    },
+    {
+      "id": "v46_priest_ascending",
+      "name": "V4.6 · Priest Ascending",
+      "status": "reject",
+      "rejected": true,
+      "category": "Faithful posture & gestures",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/mass-v46/priest_ascending.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/priest_ascending.svg",
+      "note": null
+    },
+    {
+      "id": "v46_priest_ascending_rich",
+      "name": "Priest Ascending",
+      "status": "approved",
+      "rejected": false,
+      "category": "Faithful posture & gestures",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/mass-v46/priest_ascending_rich.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/priest_ascending_rich.svg",
+      "note": null
+    },
+    {
+      "id": "v46_priest_audible",
+      "name": "Priest Audible",
+      "status": "approved",
+      "rejected": false,
+      "category": "Voice, responses & bells",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/mass-v46/priest_audible.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/priest_audible.svg",
+      "note": null
+    },
+    {
+      "id": "v46_priest_blessing_rich",
+      "name": "Priest indulgentiam",
+      "status": "approved",
+      "rejected": false,
+      "category": "Priest actions & sacred vessels",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/mass-v46/priest_blessing_rich.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/priest_blessing_rich.svg",
+      "note": null
+    },
+    {
+      "id": "v46_priest_centre",
+      "name": "V4.6 · Priest Centre",
+      "status": "reject",
+      "rejected": true,
+      "category": "Priest positions & orientation",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/mass-v46/priest_centre.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/priest_centre.svg",
+      "note": null
+    },
+    {
+      "id": "v46_priest_centre_arms_rich",
+      "name": "Priest Centre Arms facing people",
+      "status": "approved",
+      "rejected": false,
+      "category": "Priest positions & orientation",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/mass-v46/priest_centre_arms_rich.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/priest_centre_arms_rich.svg",
+      "note": null
+    },
+    {
+      "id": "v46_priest_centre_hands_rich",
+      "name": "Priest Centre of the altar",
+      "status": "approved",
+      "rejected": false,
+      "category": "Priest positions & orientation",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/mass-v46/priest_centre_hands_rich.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/priest_centre_hands_rich.svg",
+      "note": null
+    },
+    {
+      "id": "v46_priest_centre_rich",
+      "name": "V4.6 · Priest Centre Rich",
+      "status": "approved",
+      "rejected": false,
+      "category": "Priest positions & orientation",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/mass-v46/priest_centre_rich.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/priest_centre_rich.svg",
+      "note": null
+    },
+    {
+      "id": "v46_priest_chair",
+      "name": "Priest sit",
+      "status": "approved",
+      "rejected": false,
+      "category": "Priest positions & orientation",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/mass-v46/priest_chair.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/priest_chair.svg",
+      "note": null
+    },
+    {
+      "id": "v46_priest_communion_rich",
+      "name": "Priest offers hands to kiss at communion railch",
+      "status": "approved",
+      "rejected": false,
+      "category": "Priest actions & sacred vessels",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/mass-v46/priest_communion_rich.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/priest_communion_rich.svg",
+      "note": null
+    },
+    {
+      "id": "v46_priest_elevate_chalice_rich",
+      "name": "Priest offers Chalice",
+      "status": "approved",
+      "rejected": false,
+      "category": "Priest actions & sacred vessels",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/mass-v46/priest_elevate_chalice_rich.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/priest_elevate_chalice_rich.svg",
+      "note": null
+    },
+    {
+      "id": "v46_priest_elevate_host_rich",
+      "name": "Priest offers Host",
+      "status": "approved",
+      "rejected": false,
+      "category": "Priest actions & sacred vessels",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/mass-v46/priest_elevate_host_rich.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/priest_elevate_host_rich.svg",
+      "note": null
+    },
+    {
+      "id": "v46_priest_elevation",
+      "name": "Host Elevation",
+      "status": "repurposed",
+      "rejected": false,
+      "category": "Priest actions & sacred vessels",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/mass-v46/priest_elevation.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/priest_elevation.svg",
+      "note": null
+    },
+    {
+      "id": "v46_priest_epistle_rich",
+      "name": "Gospel side",
+      "status": "repurposed",
+      "rejected": false,
+      "category": "Priest positions & orientation",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/mass-v46/priest_epistle_rich.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/priest_epistle_rich.svg",
+      "note": null
+    },
+    {
+      "id": "v46_priest_facing_people",
+      "name": "Priest Facing People raising hand",
+      "status": "repurposed",
+      "rejected": false,
+      "category": "Priest positions & orientation",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/mass-v46/priest_facing_people.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/priest_facing_people.svg",
+      "note": null
+    },
+    {
+      "id": "v46_priest_facing_people_rich",
+      "name": "V4.6 · Priest Facing People Rich",
+      "status": "reject",
+      "rejected": true,
+      "category": "Priest positions & orientation",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/mass-v46/priest_facing_people_rich.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/priest_facing_people_rich.svg",
+      "note": null
+    },
+    {
+      "id": "v46_priest_foot",
+      "name": "V4.6 · Priest Foot",
+      "status": "reject",
+      "rejected": true,
+      "category": "Priest positions & orientation",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/mass-v46/priest_foot.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/priest_foot.svg",
+      "note": null
+    },
+    {
+      "id": "v46_priest_foot_rich",
+      "name": "V4.6 · Priest Foot Rich",
+      "status": "reject",
+      "rejected": true,
+      "category": "Priest positions & orientation",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/mass-v46/priest_foot_rich.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/priest_foot_rich.svg",
+      "note": null
+    },
+    {
+      "id": "v46_priest_genuflect",
+      "name": "Faithful Genuflect",
+      "status": "repurposed",
+      "rejected": false,
+      "category": "Faithful posture & gestures",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/mass-v46/priest_genuflect.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/priest_genuflect.svg",
+      "note": null
+    },
+    {
+      "id": "v46_priest_gospel_rich",
+      "name": "Epistle side",
+      "status": "repurposed",
+      "rejected": false,
+      "category": "Priest positions & orientation",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/mass-v46/priest_gospel_rich.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/priest_gospel_rich.svg",
+      "note": null
+    },
+    {
+      "id": "v46_priest_incense_altar",
+      "name": "V4.6 · Priest Incense Altar",
+      "status": "reject",
+      "rejected": true,
+      "category": "Priest actions & sacred vessels",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/mass-v46/priest_incense_altar.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/priest_incense_altar.svg",
+      "note": null
+    },
+    {
+      "id": "v46_priest_incense_altar_rich",
+      "name": "Priest Incense Altar",
+      "status": "approved",
+      "rejected": false,
+      "category": "Priest actions & sacred vessels",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/mass-v46/priest_incense_altar_rich.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/priest_incense_altar_rich.svg",
+      "note": null
+    },
+    {
+      "id": "v46_priest_incense_people",
+      "name": "V4.6 · Priest Incense People",
+      "status": "reject",
+      "rejected": true,
+      "category": "Priest actions & sacred vessels",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/mass-v46/priest_incense_people.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/priest_incense_people.svg",
+      "note": null
+    },
+    {
+      "id": "v46_priest_incense_people_rich",
+      "name": "Incense of faithful",
+      "status": "approved",
+      "rejected": false,
+      "category": "Priest actions & sacred vessels",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/mass-v46/priest_incense_people_rich.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/priest_incense_people_rich.svg",
+      "note": null
+    },
+    {
+      "id": "v46_priest_kiss_altar_rich",
+      "name": "Priest Kiss Altar",
+      "status": "approved",
+      "rejected": false,
+      "category": "Priest actions & sacred vessels",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/mass-v46/priest_kiss_altar_rich.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/priest_kiss_altar_rich.svg",
+      "note": null
+    },
+    {
+      "id": "v46_priest_procession_rich",
+      "name": "Procession (begining, end of mass)",
+      "status": "approved",
+      "rejected": false,
+      "category": "Special rites & processions",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/mass-v46/priest_procession_rich.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/priest_procession_rich.svg",
+      "note": null
+    },
+    {
+      "id": "v46_priest_profound_bow_rich",
+      "name": "Priest kisses altar",
+      "status": "repurposed",
+      "rejected": false,
+      "category": "Faithful posture & gestures",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/mass-v46/priest_profound_bow_rich.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/priest_profound_bow_rich.svg",
+      "note": null
+    },
+    {
+      "id": "v46_priest_rail",
+      "name": "V4.6 · Priest Rail",
+      "status": "reject",
+      "rejected": true,
+      "category": "Priest positions & orientation",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/mass-v46/priest_rail.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/priest_rail.svg",
+      "note": null
+    },
+    {
+      "id": "v46_priest_rail_after_rich",
+      "name": "Faithful communion",
+      "status": "approved",
+      "rejected": false,
+      "category": "Priest positions & orientation",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/mass-v46/priest_rail_after_rich.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/priest_rail_after_rich.svg",
+      "note": null
+    },
+    {
+      "id": "v46_priest_rail_rich",
+      "name": "Priest offers hands to kiss",
+      "status": "approved",
+      "rejected": false,
+      "category": "Priest positions & orientation",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/mass-v46/priest_rail_rich.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/priest_rail_rich.svg",
+      "note": null
+    },
+    {
+      "id": "v46_priest_sedilia",
+      "name": "V4.6 · Priest Sedilia",
+      "status": "replaced",
+      "rejected": false,
+      "category": "Priest positions & orientation",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/mass-v46/priest_sedilia.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/priest_sedilia.svg",
+      "note": null
+    },
+    {
+      "id": "v46_priest_sedilia_rich",
+      "name": "Priest Sedilia Rich",
+      "status": "approved",
+      "rejected": false,
+      "category": "Priest positions & orientation",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/mass-v46/priest_sedilia_rich.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/priest_sedilia_rich.svg",
+      "note": null
+    },
+    {
+      "id": "v46_priest_sedilia_rising_rich",
+      "name": "V4.6 · Priest Sedilia Rising Rich",
+      "status": "replaced",
+      "rejected": false,
+      "category": "Priest positions & orientation",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/mass-v46/priest_sedilia_rising_rich.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/priest_sedilia_rising_rich.svg",
+      "note": null
+    },
+    {
+      "id": "v46_priest_sedilia_standing_rich",
+      "name": "Priest Sedilia Standing",
+      "status": "approved",
+      "rejected": false,
+      "category": "Priest positions & orientation",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/mass-v46/priest_sedilia_standing_rich.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/priest_sedilia_standing_rich.svg",
+      "note": null
+    },
+    {
+      "id": "v46_priest_silent",
+      "name": "V4.6 · Priest Silent",
+      "status": "reject",
+      "rejected": true,
+      "category": "Voice, responses & bells",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/mass-v46/priest_silent.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/priest_silent.svg",
+      "note": null
+    },
+    {
+      "id": "v46_priest_turn_people_move_rich",
+      "name": "V4.6 · Priest Turn People Move Rich",
+      "status": "reject",
+      "rejected": true,
+      "category": "Priest positions & orientation",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/mass-v46/priest_turn_people_move_rich.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/priest_turn_people_move_rich.svg",
+      "note": null
+    },
+    {
+      "id": "v46_priest_turn_people_rich",
+      "name": "V4.6 · Priest Turn People Rich",
+      "status": "reject",
+      "rejected": true,
+      "category": "Priest positions & orientation",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/mass-v46/priest_turn_people_rich.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/priest_turn_people_rich.svg",
+      "note": null
+    },
+    {
+      "id": "v46_profound_bow",
+      "name": "faithful Bow",
+      "status": "repurposed",
+      "rejected": false,
+      "category": "Faithful posture & gestures",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/mass-v46/profound_bow.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/profound_bow.svg",
+      "note": null
+    },
+    {
+      "id": "v46_response",
+      "name": "Response",
+      "status": "approved",
+      "rejected": false,
+      "category": "Voice, responses & bells",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/mass-v46/response.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/response.svg",
+      "note": null
+    },
+    {
+      "id": "v46_schola",
+      "name": "Schola Sing",
+      "status": "approved",
+      "rejected": false,
+      "category": "Voice, responses & bells",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/mass-v46/schola.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/schola.svg",
+      "note": null
+    },
+    {
+      "id": "v46_sit",
+      "name": "faithful Sit",
+      "status": "approved",
+      "rejected": false,
+      "category": "Faithful posture & gestures",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/mass-v46/sit.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/sit.svg",
+      "note": null
+    },
+    {
+      "id": "v46_stand",
+      "name": "faithful Stand",
+      "status": "approved",
+      "rejected": false,
+      "category": "Faithful posture & gestures",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/mass-v46/stand.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/mass-v46/stand.svg",
+      "note": null
+    },
+    {
+      "id": "legacy_priest_centre",
+      "name": "Earlier bank · Priest Centre",
+      "status": "reject",
+      "rejected": true,
+      "category": "Priest positions & orientation",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/live-actors/ao-live-priest-centre.png",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/live-actors/ao-live-priest-centre.png",
+      "note": null
+    },
+    {
+      "id": "legacy_priest_facing_people",
+      "name": "Facing People raised arms",
+      "status": "repurposed",
+      "rejected": false,
+      "category": "Priest positions & orientation",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/live-actors/ao-live-priest-facing-people.png",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/live-actors/ao-live-priest-facing-people.png",
+      "note": null
+    },
+    {
+      "id": "legacy_priest_audible",
+      "name": "Priest Audible",
+      "status": "approved",
+      "rejected": false,
+      "category": "Voice, responses & bells",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/live-audio/ao-live-priest-audible.png",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/live-audio/ao-live-priest-audible.png",
+      "note": null
+    },
+    {
+      "id": "legacy_priest_silent",
+      "name": "Earlier bank · Priest Silent",
+      "status": "reject",
+      "rejected": true,
+      "category": "Voice, responses & bells",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/live-audio/ao-live-priest-silent.png",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/live-audio/ao-live-priest-silent.png",
+      "note": null
+    },
+    {
+      "id": "legacy_schola",
+      "name": "Schola sings",
+      "status": "approved",
+      "rejected": false,
+      "category": "Voice, responses & bells",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/live-audio/ao-live-schola.png",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/live-audio/ao-live-schola.png",
+      "note": null
+    },
+    {
+      "id": "legacy_breast_strike",
+      "name": "Breast Strike",
+      "status": "approved",
+      "rejected": false,
+      "category": "Faithful posture & gestures",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/live-gesture/ao-live-breast-strike.png",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/live-gesture/ao-live-breast-strike.png",
+      "note": null
+    },
+    {
+      "id": "legacy_hands_joined",
+      "name": "Hands Joined",
+      "status": "approved",
+      "rejected": false,
+      "category": "Faithful posture & gestures",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/live-gesture/ao-live-hands-joined.png",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/live-gesture/ao-live-hands-joined.png",
+      "note": null
+    },
+    {
+      "id": "legacy_profound_bow",
+      "name": "Faithful Bow",
+      "status": "approved",
+      "rejected": false,
+      "category": "Faithful posture & gestures",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/live-gesture/ao-live-profound-bow.png",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/live-gesture/ao-live-profound-bow.png",
+      "note": null
+    },
+    {
+      "id": "legacy_bow",
+      "name": "Earlier bank · Bow",
+      "status": "approved",
+      "rejected": false,
+      "category": "Faithful posture & gestures",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/live-posture/ao-live-bow.png",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/live-posture/ao-live-bow.png",
+      "note": null
+    },
+    {
+      "id": "legacy_genuflect",
+      "name": "Earlier bank · Genuflect",
+      "status": "reject",
+      "rejected": true,
+      "category": "Faithful posture & gestures",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/live-posture/ao-live-genuflect.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/live-posture/ao-live-genuflect.svg",
+      "note": null
+    },
+    {
+      "id": "legacy_kneel",
+      "name": "Earlier bank · Kneel",
+      "status": "reject",
+      "rejected": true,
+      "category": "Faithful posture & gestures",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/live-posture/ao-live-kneel.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/live-posture/ao-live-kneel.svg",
+      "note": null
+    },
+    {
+      "id": "legacy_sit",
+      "name": "Faithful Sit",
+      "status": "approved",
+      "rejected": false,
+      "category": "Faithful posture & gestures",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/live-posture/ao-live-sit.png",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/live-posture/ao-live-sit.png",
+      "note": null
+    },
+    {
+      "id": "legacy_stand",
+      "name": "Earlier bank · Stand",
+      "status": "approved",
+      "rejected": false,
+      "category": "Faithful posture & gestures",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/live-posture/ao-live-stand.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/live-posture/ao-live-stand.svg",
+      "note": null
+    },
+    {
+      "id": "legacy_look",
+      "name": "Look",
+      "status": "approved",
+      "rejected": false,
+      "category": "Other retained iconography",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/live-cue/ao-live-look.png",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/live-cue/ao-live-look.png",
+      "note": null
+    },
+    {
+      "id": "legacy_response",
+      "name": "Response",
+      "status": "approved",
+      "rejected": false,
+      "category": "Voice, responses & bells",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/live-cue/ao-live-response.png",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/live-cue/ao-live-response.png",
+      "note": null
+    },
+    {
+      "id": "legacy_priest_ascending_steps",
+      "name": "Earlier bank · Priest Ascending Steps",
+      "status": "reject",
+      "rejected": true,
+      "category": "Priest positions & orientation",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/live-priest-position/ao-live-priest-ascending-steps.png",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/live-priest-position/ao-live-priest-ascending-steps.png",
+      "note": null
+    },
+    {
+      "id": "legacy_priest_communion_rail",
+      "name": "Priest offerring hands to kiss",
+      "status": "approved",
+      "rejected": false,
+      "category": "Priest positions & orientation",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/live-priest-position/ao-live-priest-communion-rail.png",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/live-priest-position/ao-live-priest-communion-rail.png",
+      "note": null
+    },
+    {
+      "id": "legacy_priest_foot_altar",
+      "name": "Earlier bank · Priest Foot Altar",
+      "status": "reject",
+      "rejected": true,
+      "category": "Priest positions & orientation",
+      "sourceHash": null,
+      "physicalSourceId": "assets/active/live-priest-position/ao-live-priest-foot-altar.png",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/active/live-priest-position/ao-live-priest-foot-altar.png",
+      "note": null
+    },
+    {
+      "id": "ao_adoration",
+      "name": "Priest bow Adoration",
+      "status": "approved",
+      "rejected": false,
+      "category": "Priest actions & sacred vessels",
+      "sourceHash": "9bcc104667cbb8b863513fe0c1b8fc8ec849c6341305bbbdf4d0c42b6d4ffe63",
+      "physicalSourceId": "assets/review/mass-icon-candidates/ao-adoration-20261019.svg",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "ao_sign_of_cross_vector",
+      "name": "Sign of the Cross Priest",
+      "status": "approved",
+      "rejected": false,
+      "category": "Faithful posture & gestures",
+      "sourceHash": "13d1f4519de76e67e8f6b269cba4ca2166deff38eb494236dfe237d66e94939a",
+      "physicalSourceId": "assets/review/mass-icon-candidates/ao-sign-of-cross-20261019.svg",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "ea_priest_communion_host_original",
+      "name": "Priest Communion Host",
+      "status": "approved",
+      "rejected": false,
+      "category": "Priest actions & sacred vessels",
+      "sourceHash": "bf3cd28d3aa565f7122d7b9c4dd0c74793c60ccdd2b1de086e6a9a86839f4b5e",
+      "physicalSourceId": "assets/approved/mass-priest-communion/ea_priest_communion_host.svg",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "ea_priest_communion_chalice_original",
+      "name": "Priest Communion Chalice",
+      "status": "approved",
+      "rejected": false,
+      "category": "Priest actions & sacred vessels",
+      "sourceHash": "e0cbda7f6a20e763dcda40681ca5dadbb11150023edcbe10aacd128c46bee701",
+      "physicalSourceId": "assets/approved/mass-priest-communion/ea_priest_communion_chalice.svg",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "finger_ablutions_post_communion",
+      "name": "Finger Ablutions Post Communion",
+      "status": "unreviewed",
+      "rejected": false,
+      "category": "Priest actions & sacred vessels",
+      "sourceHash": null,
+      "physicalSourceId": "assets/approved/mass/finger-ablutions-post-communion.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/approved/mass/finger-ablutions-post-communion.svg",
+      "note": null
+    },
+    {
+      "id": "finger_contact_post_consecration",
+      "name": "Finger Contact Post Consecration",
+      "status": "unreviewed",
+      "rejected": false,
+      "category": "Priest actions & sacred vessels",
+      "sourceHash": null,
+      "physicalSourceId": "assets/approved/mass/finger-contact-post-consecration.svg",
+      "sourceUrl": "https://raw.githubusercontent.com/Fulcanelli13/ad-orientem/aab1b8135c52a7ef22bc79b3b08fe21795b924c2/assets/approved/mass/finger-contact-post-consecration.svg",
+      "note": null
+    },
+    {
+      "id": "frozen_epistle",
+      "name": "Priest collect",
+      "status": "approved",
+      "rejected": false,
+      "category": "Priest positions & orientation",
+      "sourceHash": "c27a58d196d0d4b7881f603a17cba1a60d67bbb7836e657e58d4da39779ee59f",
+      "physicalSourceId": "Original bytes from frozen V4 prototype CSS variable --v4-epistle",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "frozen_gospel",
+      "name": "Priest · Gospel side",
+      "status": "unreviewed",
+      "rejected": false,
+      "category": "Priest positions & orientation",
+      "sourceHash": "b872eb38a778cf2be8764a6b0bfa4733a84c4d87a0e002dab1f04f22ee014fcf",
+      "physicalSourceId": "Original bytes from frozen V4 prototype CSS variable --v4-gospel",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "frozen_people",
+      "name": "Priest raised arms facing the people",
+      "status": "approved",
+      "rejected": false,
+      "category": "Priest positions & orientation",
+      "sourceHash": "ec6dccb0194dd1201cecd9d6ec781255d97ca1861b061c84950655cc37b011d8",
+      "physicalSourceId": "Original bytes from frozen V4 prototype CSS variable --v4-people",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "frozen_low",
+      "name": "Priest audible",
+      "status": "approved",
+      "rejected": false,
+      "category": "Voice, responses & bells",
+      "sourceHash": "f3e08e9a206346149baa19c31d94afb1f5fa7217c4b33e0d8cebc5814c1e55e1",
+      "physicalSourceId": "Original bytes from frozen V4 prototype CSS variable --v4-low",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "frozen_scholarest",
+      "name": "Schola rest",
+      "status": "approved",
+      "rejected": false,
+      "category": "Voice, responses & bells",
+      "sourceHash": "987c837ef83d14726783c6696cfb71a87de9528a2c3b00fa5de6a34ded640753",
+      "physicalSourceId": "Original bytes from frozen V4 prototype CSS variable --v4-scholarest",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "frozen_hear",
+      "name": "Listen",
+      "status": "approved",
+      "rejected": false,
+      "category": "Voice, responses & bells",
+      "sourceHash": "41946cfe034c4d17579a00595ab543a501f7019e0f4b1cd553de627effad3ced",
+      "physicalSourceId": "Original bytes from frozen V4 prototype CSS variable --v4-hear",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "ao_elevation_host",
+      "name": "Elevation Host",
+      "status": "reserve",
+      "rejected": false,
+      "category": "Priest actions & sacred vessels",
+      "sourceHash": "39d5083d36ea0632580d856ec49ed007b7f64a8558f0b70217fb6ffd58577a9a",
+      "physicalSourceId": "Ultra_Master_Review_2026-10-19.html#icons/ao_elevation_host",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "ao_read",
+      "name": "Read",
+      "status": "replaced",
+      "rejected": false,
+      "category": "Priest actions & sacred vessels",
+      "sourceHash": "995ce1345b0da710ff57f9b184a2b1ecc04cc9a7bedc4e92551de3ae6e20021f",
+      "physicalSourceId": "Ultra_Master_Review_2026-10-19.html#icons/ao_read",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "ao_communion_give_host",
+      "name": "Communion Give Host",
+      "status": "reject",
+      "rejected": true,
+      "category": "Priest actions & sacred vessels",
+      "sourceHash": "ca2db54a0adfc5af0875d9f770d457041e62424056ed036b579003f44fb4c172",
+      "physicalSourceId": "Ultra_Master_Review_2026-10-19.html#icons/ao_communion_give_host",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "ao_communion_give_chalice",
+      "name": "Communion Give Chalice",
+      "status": "reject",
+      "rejected": true,
+      "category": "Priest actions & sacred vessels",
+      "sourceHash": "89b8ebb2fb2b15aa24b3531a35d904de0e78896c6cd033afceb91c2875463a5d",
+      "physicalSourceId": "Ultra_Master_Review_2026-10-19.html#icons/ao_communion_give_chalice",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "ao_receive_host",
+      "name": "Receive Host",
+      "status": "reserve",
+      "rejected": false,
+      "category": "Priest actions & sacred vessels",
+      "sourceHash": "d51ee393d53168cbcef087a6e069a86c1260b5a84d71ce26d1a4a217d7a51d29",
+      "physicalSourceId": "Ultra_Master_Review_2026-10-19.html#icons/ao_receive_host",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "ao_turn_to_people",
+      "name": "priest facing altar raising hand",
+      "status": "repurposed",
+      "rejected": false,
+      "category": "Priest positions & orientation",
+      "sourceHash": "e231044c4f75b92bf156faf0a14c5a983f2f62257d85e5f0b7e21a9fa54d1625",
+      "physicalSourceId": "Ultra_Master_Review_2026-10-19.html#icons/ao_turn_to_people",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "ao_at_epistle_side",
+      "name": "At Epistle Side",
+      "status": "reject",
+      "rejected": true,
+      "category": "Priest positions & orientation",
+      "sourceHash": "e05830a5a81ce062debbcce5c22e6db8dbe9fe18ebdf13280cec0706d5126a6b",
+      "physicalSourceId": "Ultra_Master_Review_2026-10-19.html#icons/ao_at_epistle_side",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "ao_at_gospel_side",
+      "name": "At Gospel Side",
+      "status": "reject",
+      "rejected": true,
+      "category": "Priest positions & orientation",
+      "sourceHash": "6901fb46c747c08f3df76ae7e6d4d57d1d88f688db9c802f2d94aacceca2f547",
+      "physicalSourceId": "Ultra_Master_Review_2026-10-19.html#icons/ao_at_gospel_side",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "ea_ash_wednesday_imposition",
+      "name": "Ash Wednesday Imposition",
+      "status": "reject",
+      "rejected": true,
+      "category": "Special rites & processions",
+      "sourceHash": "43d6515c3b8960f21464b88ca8fc52a3db0538919899fa669d08e553e6aa4a2e",
+      "physicalSourceId": "Ultra_Master_Review_2026-10-19.html#icons/ea_ash_wednesday_imposition",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "ea_candlemas_distribution",
+      "name": "Candlemas Distribution",
+      "status": "reject",
+      "rejected": true,
+      "category": "Special rites & processions",
+      "sourceHash": "486258d7b87d33a583a569d54710863af65b863900deb72a1d91b619e135de64",
+      "physicalSourceId": "Ultra_Master_Review_2026-10-19.html#icons/ea_candlemas_distribution",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "ea_good_friday_veneration",
+      "name": "Good Friday Veneration",
+      "status": "reject",
+      "rejected": true,
+      "category": "Special rites & processions",
+      "sourceHash": "ee7ea81a50a8dca624d9efa43be8c279851eb8040fadd4f282112e452f29fe63",
+      "physicalSourceId": "Ultra_Master_Review_2026-10-19.html#icons/ea_good_friday_veneration",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "ea_easter_vigil_new_fire",
+      "name": "Easter Vigil New Fire",
+      "status": "reject",
+      "rejected": true,
+      "category": "Special rites & processions",
+      "sourceHash": "644ce64a6ee6a8462edfc2820374e687570e76931446cf60af7610fb52da7674",
+      "physicalSourceId": "Ultra_Master_Review_2026-10-19.html#icons/ea_easter_vigil_new_fire",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "ea_priest_communion_host",
+      "name": "Priest communion (receives the Host)",
+      "status": "approved",
+      "rejected": false,
+      "category": "Priest actions & sacred vessels",
+      "sourceHash": "bf3cd28d3aa565f7122d7b9c4dd0c74793c60ccdd2b1de086e6a9a86839f4b5e",
+      "physicalSourceId": "ea_priest_communion_host · Ad_Orientem_Mass_Icon_Ultra_Master_Review_2026-10-19.html",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "ea_priest_communion_chalice",
+      "name": "Priest receives the Chalice (precious blood)",
+      "status": "approved",
+      "rejected": false,
+      "category": "Priest actions & sacred vessels",
+      "sourceHash": "e0cbda7f6a20e763dcda40681ca5dadbb11150023edcbe10aacd128c46bee701",
+      "physicalSourceId": "ea_priest_communion_chalice · Ad_Orientem_Mass_Icon_Ultra_Master_Review_2026-10-19.html",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "ao_sign_of_cross",
+      "name": "Priest Sign of the Cross",
+      "status": "approved",
+      "rejected": false,
+      "category": "Faithful posture & gestures",
+      "sourceHash": "13d1f4519de76e67e8f6b269cba4ca2166deff38eb494236dfe237d66e94939a",
+      "physicalSourceId": "ao_sign_of_cross · Ad_Orientem_Mass_Icon_Ultra_Master_Review_2026-10-19.html",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "review_posture_stand",
+      "name": "Faithful Stand",
+      "status": "approved",
+      "rejected": false,
+      "category": "Faithful posture & gestures",
+      "sourceHash": "e5e393a6650da8e544edf9374428c2a34835f705994878aa94992e7a75dc1312",
+      "physicalSourceId": "review_posture_stand · Ad_Orientem_Mass_Icon_Ultra_Master_Review_2026-10-19.html",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "review_posture_kneel",
+      "name": "Faithful Kneel",
+      "status": "approved",
+      "rejected": false,
+      "category": "Faithful posture & gestures",
+      "sourceHash": "7985d016fcebcf8ac4a9eec6d81814059bd0d0eb340b66df46a2f3a462078d28",
+      "physicalSourceId": "review_posture_kneel · Ad_Orientem_Mass_Icon_Ultra_Master_Review_2026-10-19.html",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "review_posture_genuflect",
+      "name": "Faithful Genuflect",
+      "status": "approved",
+      "rejected": false,
+      "category": "Faithful posture & gestures",
+      "sourceHash": "5f5e00a077ce7255e9692c50d8d5bfafe834306f435b4d87cb2c7b85b5000952",
+      "physicalSourceId": "review_posture_genuflect · Ad_Orientem_Mass_Icon_Ultra_Master_Review_2026-10-19.html",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "study_priest_ascending",
+      "name": "Priest ascending altar steps",
+      "status": "approved",
+      "rejected": false,
+      "category": "Historical studies & source references",
+      "sourceHash": "ecf70ef7c444b5d9fd4f05ace75a22d13ca5edb31b1be664bb3f50f6fd179e65",
+      "physicalSourceId": "study_priest_ascending · Ad_Orientem_Mass_Icon_Ultra_Master_Review_2026-10-19.html",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "study_priest_centre",
+      "name": "Priest at epistle side (collect)",
+      "status": "approved",
+      "rejected": false,
+      "category": "Historical studies & source references",
+      "sourceHash": "31b341754220bd637dacd45d0dee91f6000b451aec36ece6c048f97ddb1147c8",
+      "physicalSourceId": "study_priest_centre · Ad_Orientem_Mass_Icon_Ultra_Master_Review_2026-10-19.html",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "study_priest_foot",
+      "name": "Priest at foot of altar",
+      "status": "reject",
+      "rejected": true,
+      "category": "Historical studies & source references",
+      "sourceHash": "652259c10d865843c57d86ae5fdd43b016fb1f472dd11a8347f6dab90365bbfc",
+      "physicalSourceId": "study_priest_foot · Ad_Orientem_Mass_Icon_Ultra_Master_Review_2026-10-19.html",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "study_priest_bless",
+      "name": "Priest blessing",
+      "status": "study",
+      "rejected": false,
+      "category": "Historical studies & source references",
+      "sourceHash": "2a8c7541be7a66055a12b700967fb8272ddc2029d12dc7b36c8445a9d26e7175",
+      "physicalSourceId": "study_priest_bless · Ad_Orientem_Mass_Icon_Ultra_Master_Review_2026-10-19.html",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "study_priest_gospel",
+      "name": "Priest at Gospel side",
+      "status": "approved",
+      "rejected": false,
+      "category": "Historical studies & source references",
+      "sourceHash": "2d25c0d11e66875841cca3f4034076488ea4b2129df5b4e6b8c1f0709d2cfa54",
+      "physicalSourceId": "study_priest_gospel · Ad_Orientem_Mass_Icon_Ultra_Master_Review_2026-10-19.html",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "study_priest_epistle",
+      "name": "Priest at foot of the altar",
+      "status": "approved",
+      "rejected": false,
+      "category": "Historical studies & source references",
+      "sourceHash": "afefa067a336cc4e66b48f1d2c5d33166ac50fb54d15361132917152a89dcfd0",
+      "physicalSourceId": "study_priest_epistle · Ad_Orientem_Mass_Icon_Ultra_Master_Review_2026-10-19.html",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "study_kiss_altar",
+      "name": "Priest kisses altar",
+      "status": "approved",
+      "rejected": false,
+      "category": "Historical studies & source references",
+      "sourceHash": "8f907fb65886e51bd4559a7fe63b1272a2028eed1218e17f94f6cdcd0699dff0",
+      "physicalSourceId": "study_kiss_altar · Ad_Orientem_Mass_Icon_Ultra_Master_Review_2026-10-19.html",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "study_orans",
+      "name": "Priest praying, hands extended",
+      "status": "study",
+      "rejected": false,
+      "category": "Historical studies & source references",
+      "sourceHash": "91c87228316e52583535d5f8b37c919778e1955af48e15ae322adc40b1772369",
+      "physicalSourceId": "study_orans · Ad_Orientem_Mass_Icon_Ultra_Master_Review_2026-10-19.html",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "study_asperges",
+      "name": "Priest sprinkling",
+      "status": "approved",
+      "rejected": false,
+      "category": "Historical studies & source references",
+      "sourceHash": "0d70e1097f8d715e5c0fc3275f9765ab7214002f3201e0d520ae32573dbfea37",
+      "physicalSourceId": "study_asperges · Ad_Orientem_Mass_Icon_Ultra_Master_Review_2026-10-19.html",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "study_monstrance",
+      "name": "Priest carries Blessed Sacrament",
+      "status": "approved",
+      "rejected": false,
+      "category": "Historical studies & source references",
+      "sourceHash": "93feb308e98d5094d38051d81cedfda043c6a3d8b12f3bd096a4bfbe5af8e2dd",
+      "physicalSourceId": "study_monstrance · Ad_Orientem_Mass_Icon_Ultra_Master_Review_2026-10-19.html",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "study_ash_v3",
+      "name": "Ash Wednesday",
+      "status": "approved",
+      "rejected": false,
+      "category": "Historical studies & source references",
+      "sourceHash": "aeaed6d21b4becab5c1e0f9f70f665f32266996c9874580db18ebf898df2ea4e",
+      "physicalSourceId": "study_ash_v3 · Ad_Orientem_Mass_Icon_Ultra_Master_Review_2026-10-19.html",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "study_candle_v3",
+      "name": "Candlemas",
+      "status": "approved",
+      "rejected": false,
+      "category": "Historical studies & source references",
+      "sourceHash": "bbec34b48e95cecb133c242717c81f5230d1a0434bc89e27bccbadcd6a8d135d",
+      "physicalSourceId": "study_candle_v3 · Ad_Orientem_Mass_Icon_Ultra_Master_Review_2026-10-19.html",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "study_goodfriday_v3",
+      "name": "Good Friday cross veneration",
+      "status": "approved",
+      "rejected": false,
+      "category": "Historical studies & source references",
+      "sourceHash": "a1111ec7af65bd32dc64b04dc048f6f0c46ba4827f29e2366b5c33e4fc8ab565",
+      "physicalSourceId": "study_goodfriday_v3 · Ad_Orientem_Mass_Icon_Ultra_Master_Review_2026-10-19.html",
+      "sourceUrl": null,
+      "note": null
+    },
+    {
+      "id": "study_fire_v3",
+      "name": "Easter Vigil · simplified",
+      "status": "study",
+      "rejected": false,
+      "category": "Historical studies & source references",
+      "sourceHash": "f4f7a197c5cda1e2b62fcc814296a9b9c87f6daafdcac488fd70fbc51dc1f51a",
+      "physicalSourceId": "study_fire_v3 · Ad_Orientem_Mass_Icon_Ultra_Master_Review_2026-10-19.html",
+      "sourceUrl": null,
+      "note": null
+    }
+  ]
+}

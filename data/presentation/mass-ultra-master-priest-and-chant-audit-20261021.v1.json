@@ -1,0 +1,113 @@
+{
+  "schema": "ao-ultra-master-1962-priest-station-signature-v1",
+  "date": "2026-10-21",
+  "provenance": {
+    "workbook": "Ad_Orientem_Ultra_Master_Mass_Music_Reconciled_2026-10-19.xlsx",
+    "primaryTab": "09 PRIEST EVENTS 279",
+    "crosscheckTabs": [
+      "02 SOURCE CUE 279 MASTER",
+      "19 LEGACY ORDER 275",
+      "37 MUSIC LITURGICAL TIMELINE",
+      "39 SCHOLA RUNTIME CROSSWALK"
+    ],
+    "distinction": "The former 275-row legacy text map is not an alternate 279-row priest station timeline. Do not treat these as the same granularity.",
+    "order": "AO.SM.C0001 through AO.SM.C0279 by numeric cue ID",
+    "sourceRole": "Research/reconciliation witness only; live 1962 rubric and form actor controllers remain authoritative"
+  },
+  "symbols": {
+    "F": "FOOT_CENTER",
+    "^": "ALTAR_STEPS_ASCENDING",
+    "A": "ALTAR_CENTER",
+    "E": "ALTAR_EPISTLE_MISSAL",
+    "G": "ALTAR_GOSPEL_MISSAL",
+    "e": "ALTAR_EPISTLE_SIDE",
+    "T": "ROUTE_CONTROLLED",
+    "?": "PRIEST_TRACK_ASYNC",
+    "D": "SEDILIA",
+    "R": "COMMUNION_RAIL"
+  },
+  "positionSignature": "FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF^AAATEEEEEEEEEEEAAAAAAAAAAAAAAAAAAAEEEEE??AAAGGGGGGGAAAAAAAAAAAAAAAAAAAAAAAEEAAAAAAAATeeeeeAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARAA??AAEEEEAAAAAAAAAAGGGGGGGGGDADA",
+  "sourceTransitionsVerified": 49,
+  "allowedSourceToDefaultDifferences": [
+    {
+      "cueId": "AO.SM.C0041",
+      "reason": "Conditional entrance incensation route not active without incense"
+    },
+    {
+      "cueId": "AO.SM.C0122",
+      "reason": "Conditional Offertory incensation route not active without incense"
+    },
+    {
+      "cueId": "AO.SM.C0123",
+      "reason": "Conditional Epistle-side incensation return not active without incense"
+    },
+    {
+      "cueId": "AO.SM.C0124",
+      "reason": "Conditional minister incenses priest, not active without incense"
+    },
+    {
+      "cueId": "AO.SM.C0249",
+      "reason": "Source ASYNC; Ritus-backed Epistle-side return requires independently observed MC-END-010"
+    },
+    {
+      "cueId": "AO.SM.C0250",
+      "reason": "Adjacent Schola clock must not assert priest return without independent observation"
+    },
+    {
+      "cueId": "AO.SM.C0276",
+      "reason": "Gloria sedilia transition conditional on sedilia and local ceremony"
+    },
+    {
+      "cueId": "AO.SM.C0278",
+      "reason": "Credo sedilia transition conditional on sedilia and local ceremony"
+    }
+  ],
+  "voiceAudit": {
+    "namedApprovedAsset": {
+      "id": "ao_chant",
+      "userName": "Chant"
+    },
+    "additionalSourceOwnedPriestChantCues": [
+      "AO.SM.C0073",
+      "AO.SM.C0142",
+      "AO.SM.C0209",
+      "AO.SM.C0254"
+    ],
+    "notPriestChantWithoutIndependentObservation": [
+      "AO.SM.C0054",
+      "AO.SM.C0090"
+    ],
+    "avoidResponseCueChant": [
+      "AO.SM.C0074",
+      "AO.SM.C0076",
+      "AO.SM.C0087",
+      "AO.SM.C0255"
+    ],
+    "lowMassPolicy": "No Chant image; spoken public passages show approved Priest Audible; private/secret voice retains its separately approved icon.",
+    "sourceNotes": "Ultra Master tab 09 voice rows and source clocks in reader-text-sung.v1.json; tab 39 music event ownership for Gloria/Credo."
+  },
+  "displayRubricPolicy": {
+    "iconFirst": [
+      "EXACT_APPROVED_FAITHFUL_POSTURE",
+      "EXACT_APPROVED_GESTURE",
+      "EXACT_APPROVED_PRIEST_POSITION",
+      "EXACT_APPROVED_PRIEST_ACTION",
+      "SOURCE_OWNED_PRIEST_CHANT_OR_SPEECH"
+    ],
+    "maySuppressVisibleProseOnlyWhen": [
+      "Exact illustrated action and actor match the cue",
+      "No temporal/calendar/form exception needs explanation",
+      "No historical/rubrical nuance is lost"
+    ],
+    "mustRetainProse": [
+      "Foot Centre after artwork veto",
+      "Unknown independently observed priest station",
+      "Conditional posture or ceremonial actor",
+      "Epistle/Gospel station side when illustration is ambiguous",
+      "Proper-versus-ordinary Last Gospel",
+      "Consecration and other critical cue text",
+      "Full rubric accessible through Guide/Missal"
+    ],
+    "existingUiRule": "The current reader DOM already hides rubrics consisting solely of a posture state in LIVE, but retains them in MISSAL; the right rail preserves aria-label/title for icon-only cues."
+  }
+}

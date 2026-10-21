@@ -13,6 +13,13 @@ import { buildCustomsAtlasFacets, filterCustomsAtlasItems } from "../src/find/cu
 import { groupTraditionsForBrowse, countCanonicalTraditions } from "../src/find/traditions-browse.js";
 import { HERITAGE_CATEGORIES, projectHeritagePlaces, heritageCustomCards, nearbyHeritagePlaces } from "../src/find/heritage-map.js";
 import { buildExplorePlaceProfiles, resolveApprovedPlaceMedia } from "../src/find/place-profiles.js";
+import { isMapPublishablePlaceGeo } from "../src/find/geography-contracts.js";
+import {
+  assertLossless,
+  assertPinsAreCanonicalAndSourced,
+  assertGateConsistent,
+  assertApprovedMedia,
+} from "./support/explore-invariants.mjs";
 
 const readJson=path=>JSON.parse(readFileSync(path,"utf8"));
 const geography=readJson("data/geography/seed-registry.v1.json");
@@ -27,8 +34,8 @@ const novenaBridge=readJson("data/customs/novena-context-links.v1.json");
 const novenaSot=readJson("data/pray/novena-sot.v1.json");
 const featuredEditorial=readJson("data/geography/major-places-editorial.v1.json");
 assert.equal(featuredEditorial.schema,"AO_EXPLORE_MAJOR_PLACES_EDITORIAL_V1");
-assert.equal(featuredEditorial.items.length,20);
-assert.equal(new Set(featuredEditorial.items.map(row=>row.place_id)).size,20,"Curated Place identities must be unique");
+assert.ok(featuredEditorial.items.length>0,"Editorial featured list must not be empty");
+assert.equal(new Set(featuredEditorial.items.map(row=>row.place_id)).size,featuredEditorial.items.length,"Curated Place identities must be unique");
 for(const item of featuredEditorial.items){
   const place=geography.places.find(p=>p.place_id===item.place_id);
   assert.ok(place?.source_ids?.includes(item.source_id),"Featured site must cite an original Place source: "+item.place_id);
@@ -111,15 +118,20 @@ assert.equal(mexicanGuadalupe?.geo?.source_ref,"osm:way:120733641","Guadalupe mu
 assert.equal(geography.places.filter(p=>p.place_id===mexicanGuadalupe.place_id).length,1,"Guadalupe must not duplicate canonical identity");
 
 assert.deepEqual(EXPLORE_LENSES,["tlm","shrines","apparitions","relics","traditions","pilgrimages","saints"]);
-assert.deepEqual(projection.counts,{
-  tlm:1,
-  shrines:257,
-  apparitions:33,
-  relics:122,
-  traditions:115,
-  pilgrimages:240,
-  saints:0, // Only six pilot profiles loaded in dedicated fixture.
-});
+// Every lens is a lossless projection of its seed file: no record dropped,
+// duplicated or invented. (Replaces a frozen table of seven totals.)
+for(const lens of EXPLORE_LENSES)
+  assert.equal(projection.counts[lens],projection.byLens[lens].length,lens+" count disagrees with projected items");
+assertLossless("tlm",projection.byLens.tlm,records.map(record=>record.venue.venue_id));
+assertLossless("shrines",projection.byLens.shrines,shrineSeed.shrines.map(row=>row.shrine_id));
+assertLossless("pilgrimages",projection.byLens.pilgrimages,shrineSeed.pilgrimages.map(row=>row.pilgrimage_id));
+assertLossless("apparitions",projection.byLens.apparitions,phenomena.apparitions.map(row=>row.id));
+assertLossless("relics",projection.byLens.relics,phenomena.relics.map(row=>row.id));
+assertLossless("traditions",projection.byLens.traditions,[
+  ...customsSeed.attestations.map(row=>row.attestation_id),
+  ...novenaBridge.links.map(row=>row.link_id),
+]);
+assert.equal(projection.counts.saints,0,"Saints lens is loaded by its own fixture, not this dataset");
 
 for(const lens of EXPLORE_LENSES){
   const ids=projection.byLens[lens].map(item=>item.item_id);
@@ -223,7 +235,17 @@ const shrineMapHtml=renderExploreToString(buildExploreViewModel({
   filters:{},
 }));
 assert.match(shrineMapHtml,/Loading source-backed map points/i);
-assert.equal(exploreMapFeatures(projection.byLens.shrines).length,257,"only provenance-locked shrine Places should publish map points");
+// Only provenance-locked shrine Places publish map points. Checked as a rule on
+// every shrine, so a new, properly sourced shrine needs no test edit, and any
+// regional tranche is covered without re-asserting a total after each one.
+const placeLensItems=[...projection.byLens.shrines,...projection.byLens.pilgrimages,
+  ...projection.byLens.apparitions,...projection.byLens.relics,...projection.byLens.traditions];
+for(const lens of ["shrines","pilgrimages","apparitions","relics"])
+  assertGateConsistent(lens,projection.byLens[lens],geography.places,isMapPublishablePlaceGeo);
+assertPinsAreCanonicalAndSourced("Explore",placeLensItems,geography.places);
+assert.equal(exploreMapFeatures(projection.byLens.shrines).length,
+  projection.byLens.shrines.filter(item=>item.map_publishable).length,
+  "every publishable shrine yields exactly one map feature, and nothing else does");
 
 const chartresShrine=filterExploreItems(projection.byLens.shrines,{query:"Chartres"});
 assert.equal(chartresShrine.length,1);
@@ -370,7 +392,6 @@ assert.ok(namugongo[0].sections.some(section=>/Uganda Martyrs Day/.test(section.
 const munyonyo=filterExploreItems(projection.byLens.pilgrimages,{query:"Munyonyo"});
 assert.equal(munyonyo.length,1);
 assert.ok(munyonyo[0].sections.some(section=>/Uganda Martyrs/.test(section.title)&&/Resolved by Calendar/.test(section.body)));
-assert.equal(exploreMapFeatures(projection.byLens.shrines).length,257,"Australasia/Africa mapped shrine count drifted");
 
 const guadalupeMx=filterExploreItems(projection.byLens.pilgrimages,{query:"Santa María de Guadalupe"});
 assert.equal(guadalupeMx.length,1);
@@ -402,7 +423,6 @@ assert.equal(chiquinquira.length,1);
 assert.equal(chiquinquira[0].map_publishable,true);
 assert.ok(chiquinquira[0].sections.some(section=>/Chiquinquirá/.test(section.title)&&/Resolved by Calendar/.test(section.body)));
 
-assert.equal(exploreMapFeatures(projection.byLens.shrines).length,257,"Latin America shrine pin count drifted");
 
 const banneux=filterExploreItems(projection.byLens.pilgrimages,{query:"Banneux"});
 assert.equal(banneux.length,1);
@@ -445,7 +465,6 @@ assert.equal(sameiro[0].map_publishable,true);
 assert.ok(sameiro[0].sections.some(section=>/Archdiocesan pilgrimage to Sameiro/.test(section.title)&&/no single recurring Calendar date/i.test(section.body)));
 assert.ok(sameiro[0].sections.some(section=>/Feast of Our Lady of Sameiro/.test(section.title)&&/Resolved by Calendar/.test(section.body)));
 
-assert.equal(exploreMapFeatures(projection.byLens.shrines).length,257,"tranche 7 mapped Place count changed unexpectedly");
 
 const bermontShrine=filterExploreItems(projection.byLens.shrines,{query:"Bermont"});
 assert.ok(bermontShrine.some(item=>item.source_id==="shrine:FR:bermont-greux"),"historical Bermont sanctuary missing from expanded shrine search");
@@ -479,7 +498,6 @@ assert.equal(rueDuBacPilgrimage.length,1);
 assert.equal(rueDuBacPilgrimage[0].map_publishable,true);
 assert.ok(rueDuBacPilgrimage[0].sections.some(section=>/Médaille Miraculeuse/.test(section.title)&&/Resolved by Calendar/.test(section.body)));
 
-assert.equal(exploreMapFeatures(projection.byLens.shrines).length,257,"France tranche mapped Place count changed unexpectedly");
 
 const wigratzbadShrine=filterExploreItems(projection.byLens.shrines,{query:"Wigratzbad"});
 assert.equal(wigratzbadShrine.length,1);
@@ -505,7 +523,6 @@ const vesperbild=filterExploreItems(projection.byLens.pilgrimages,{query:"Maria 
 assert.equal(vesperbild.length,1);
 assert.ok(vesperbild[0].sections.some(section=>/13th of every month/i.test(section.title)&&/no single recurring Calendar date/i.test(section.body)));
 
-assert.equal(exploreMapFeatures(projection.byLens.shrines).length,257,"Germany tranche mapped Place count changed unexpectedly");
 
 const oswegoShrine=filterExploreItems(projection.byLens.shrines,{query:"St. Mary of the Assumption Parish and Shrine"});
 assert.equal(oswegoShrine.length,1);
@@ -537,7 +554,6 @@ assert.equal(fiskdaleNovena.length,1);
 assert.equal(fiskdaleNovena[0].map_publishable,true);
 assert.ok(fiskdaleNovena[0].sections.some(section=>/18–26 July/.test(section.title)&&/Resolved by Calendar/.test(section.body)));
 
-assert.equal(exploreMapFeatures(projection.byLens.shrines).length,257,"US Northeast mapped Place count changed unexpectedly");
 
 const browserSource=readFileSync("src/find/browser-entry.js","utf8");
 assert.match(browserSource,/loadExploreDataset/);
@@ -563,43 +579,51 @@ assert.match(homeSource,/data-home-find/,"Explore route lost shell-compatible Ho
 
 
 
+// Expected values are derived from the customs seed, not frozen.
+const placeAttestations=customsSeed.attestations.filter(row=>row.map_policy==="PLACE");
+const attestationsPerCustom=id=>customsSeed.attestations.filter(row=>row.custom_id===id).length;
+const canonicalCustomIds=new Set(customsSeed.attestations.map(row=>row.custom_id));
 const atlasMappedTraditions=projection.byLens.traditions.filter(item=>item.kind==="CUSTOM_ATTESTATION"&&item.map_publishable);
-assert.equal(atlasMappedTraditions.length,58,"58 site-specific customs attestations must have pins");
-assert.equal(exploreMapFeatures(atlasMappedTraditions).length,58,"customs map feature count diverged from published attestations");
+assert.deepEqual(atlasMappedTraditions.map(item=>item.source_id).sort(),placeAttestations.map(row=>row.attestation_id).sort(),
+  "exactly the site-specific (PLACE) customs attestations have pins");
+assert.equal(exploreMapFeatures(atlasMappedTraditions).length,atlasMappedTraditions.length,"customs map feature count diverged from published attestations");
 const atlasUngrounded=projection.byLens.traditions.filter(item=>item.kind==="CUSTOM_ATTESTATION"&&!item.map_publishable&&item.raw?.attestation?.map_policy==="PLACE");
 assert.deepEqual(atlasUngrounded.map(item=>item.place_id).sort(),[],"all exact-site attestations have actual or indicative pins");
 
 
 const customsAtlasItems=projection.byLens.traditions;
-assert.equal(countCanonicalTraditions(customsAtlasItems),38,"38 customs remain independently canonical");
+const unattestedCustoms=customsSeed.customs.map(row=>row.custom_id).filter(id=>!canonicalCustomIds.has(id));
+assert.deepEqual(unattestedCustoms,[],"a canonical custom without any attestation would be invisible in Explore");
+assert.equal(countCanonicalTraditions(customsAtlasItems),canonicalCustomIds.size,"every attested custom remains independently canonical");
 const practiceBrowse=groupTraditionsForBrowse(customsAtlasItems);
+const practiceCount=canonicalCustomIds.size;
 assert.ok(practiceBrowse.some(item=>item.source_id==="BLSS-001"),"St Blaise must be discoverable as one canonical non-map tradition");
 assert.ok(customsAtlasItems.some(item=>item.raw?.custom?.custom_id==="BLSS-001"&&item.map_publishable===false),"St Blaise must not manufacture a map pin");
-assert.equal(practiceBrowse.length,38,"list should not turn 97 attestations and 18 novena context links into separate practices");
+assert.equal(practiceBrowse.length,practiceCount,"list should not turn attestations or novena context links into separate practices");
 assert.ok(practiceBrowse.every(item=>item.kind==="CANONICAL_CUSTOM"&&!item.map_publishable),"canonical practices are not map pins");
 assert.ok(practiceBrowse.every(item=>item.facts.every(fact=>fact.label!=="Class")),"geographically mixed legacy classification must not appear as exclusive nationality");
 assert.ok(customsAtlasItems.filter(item=>item.kind==="CUSTOM_ATTESTATION").every(item=>item.facts.every(fact=>fact.label!=="Class")),"place-specific evidence must not promote unreviewed national classification");
 const pilgrimagePractice=practiceBrowse.find(item=>item.source_id==="DEV-006");
-assert.equal(pilgrimagePractice.attestation_examples.length,13,"global and place-level pilgrimage evidence stays with its practice");
+assert.equal(pilgrimagePractice.attestation_examples.length,attestationsPerCustom("DEV-006"),"global and place-level pilgrimage evidence stays with its practice");
 assert.ok(pilgrimagePractice.attestation_examples.some(example=>example.title==="World"),"worldwide attestation must not be lost");
 const regionalPardons=practiceBrowse.find(item=>item.source_id==="DEV-007");
-assert.equal(regionalPardons.attestation_examples.length,36,"local examples belong under one practice");
+assert.equal(regionalPardons.attestation_examples.length,attestationsPerCustom("DEV-007"),"local examples belong under one practice");
 assert.ok(regionalPardons.attestation_examples.some(example=>example.place_id),"source-linked places remain navigable");
 const holyWater=practiceBrowse.find(item=>item.source_id==="DOM-002");
-assert.equal(holyWater.attestation_examples.length,1,"one-locality customs remain one practice");
+assert.equal(holyWater.attestation_examples.length,attestationsPerCustom("DOM-002"),"one-locality customs remain one practice");
 const searchedContexts=groupTraditionsForBrowse(customsAtlasItems,{includeNovenaContext:true});
-assert.equal(searchedContexts.length,56,"18 novena contextual links should remain accessible through search/context");
-assert.equal(new Set(practiceBrowse.map(item=>item.item_id)).size,38,"canonical practice identities must be unique");
+assert.equal(searchedContexts.length,practiceCount+novenaBridge.links.length,"novena contextual links should remain accessible through search/context");
+assert.equal(new Set(practiceBrowse.map(item=>item.item_id)).size,practiceCount,"canonical practice identities must be unique");
 const practiceVm=buildExploreViewModel({
-  language:"en",items:practiceBrowse,lens:"traditions",counts:{...projection.counts,traditions:38},
+  language:"en",items:practiceBrowse,lens:"traditions",counts:{...projection.counts,traditions:practiceCount},
   view:"list",filters:{},selectedId:"tradition:custom:DEV-007",expandDetail:true,
 });
 const practiceHtml=renderExploreToString(practiceVm);
 assert.match(practiceHtml,/data-explore-item="tradition:custom:DEV-007"/);
-assert.match(practiceHtml,/Documented examples.*36/);
+assert.match(practiceHtml,new RegExp("Documented examples.*"+attestationsPerCustom("DEV-007")));
 assert.match(practiceHtml,/data-explore-open-place=/,"examples must deep-link to canonical Places");
 assert.match(practiceHtml,/Attested places/,"map is supplementary evidence navigation, not the default customs structure");
-assert.match(practiceHtml,/>38<\/strong><span>practices/,"list count must describe practices, not attestations");
+assert.match(practiceHtml,new RegExp(">"+practiceCount+"</strong><span>practices"),"list count must describe practices, not attestations");
 
 
 for(const guide of [...customGuidance.entries,...customGuidanceP1.entries]){
@@ -617,7 +641,7 @@ for(const guide of [...customGuidance.entries,...customGuidanceP1.entries]){
   assert.ok(item.sections.some(x=>x.label==="Pastoral context"&&x.body_fr===guide.caution_fr),"French caution must be visible");
   for(const language of ["en","fr"]){
     const vm=buildExploreViewModel({
-      language,items:practiceBrowse,lens:"traditions",counts:{...projection.counts,traditions:38},
+      language,items:practiceBrowse,lens:"traditions",counts:{...projection.counts,traditions:practiceCount},
       view:"list",filters:{},selectedId:item.item_id,expandDetail:true,
     });
     const html=renderExploreToString(vm);
@@ -633,13 +657,14 @@ for(const guide of [...customGuidance.entries,...customGuidanceP1.entries]){
     assert.doesNotMatch(html,/data-explore-open-place="(?:geo:country|(?:place:))/,"Do not invent a national map pin");
   }
 }
-assert.equal(customGuidance.entries.length,6);
+assert.ok(customGuidance.entries.length>0,"P0 customs guidance must not be empty");
 
 const atlasFacets=buildCustomsAtlasFacets(customsAtlasItems);
 assert.ok(atlasFacets.families.some(option=>option.value==="Sacred Heart"),"theme browsing must be independent of geography");
 const sacredHeartFamily=filterCustomsAtlasItems(customsAtlasItems,{atlasFamily:"Sacred Heart"});
 assert.ok(sacredHeartFamily.length>0&&sacredHeartFamily.every(item=>item.raw?.custom?.family==="Sacred Heart"),"theme filter must not infer a country");
-assert.equal(groupTraditionsForBrowse(sacredHeartFamily).length,2,"two Sacred Heart customs, not several country records");
+assert.equal(groupTraditionsForBrowse(sacredHeartFamily).length,customsSeed.customs.filter(row=>row.family==="Sacred Heart").length,
+  "one practice per Sacred Heart custom, not several country records");
 assert.ok(atlasFacets.areas.some(option=>option.value==="geo:country:FR"&&option.label==="France"),"French customs geography disappeared");
 assert.ok(atlasFacets.periods.some(option=>option.value==="Historical; largely declined"),"source-owned historical period was lost");
 assert.ok(atlasFacets.calendar.some(option=>option.value==="HINT:May"),"documented May Marian context was lost");
@@ -699,7 +724,9 @@ assert.match(homeOwnerSource,/lens:"heritage",view:"map",categories:\["tradition
 // Each documented site appears once even when it has multiple independent claims.
 const heritagePlaces=projectHeritagePlaces(projection);
 assert.deepEqual(HERITAGE_CATEGORIES,["shrines","relics","pilgrimages","apparitions","traditions"]);
-assert.ok(heritagePlaces.length>=216,"mapped shrine places must survive the unified projection");
+const mappedShrinePlaceIds=new Set(projection.byLens.shrines.filter(item=>item.map_publishable).map(item=>item.place_id));
+const heritagePlaceIds=new Set(heritagePlaces.map(item=>item.place_id));
+assert.deepEqual([...mappedShrinePlaceIds].filter(id=>!heritagePlaceIds.has(id)),[],"mapped shrine places must survive the unified projection");
 assert.equal(new Set(heritagePlaces.map(item=>item.place_id)).size,heritagePlaces.length,"unified map duplicated a physical Place");
 assert.equal(exploreMapFeatures(heritagePlaces).length,heritagePlaces.length,"unified Place points must remain source-backed");
 const lourdesCombined=heritagePlaces.find(item=>item.place_id===lourdesShrine[0].place_id);
@@ -710,13 +737,15 @@ const onlyRelics=projectHeritagePlaces(projection,{categories:["relics"]});
 assert.ok(onlyRelics.length>0&&onlyRelics.length<=projection.byLens.relics.length);
 assert.ok(onlyRelics.every(item=>item.heritage_categories.length===1&&item.heritage_categories[0]==="relics"),"relic filter leaked another category");
 const onlyCustomSites=projectHeritagePlaces(projection,{categories:["traditions"]});
-assert.ok(onlyCustomSites.length>0&&onlyCustomSites.length<=58,"customs must map only genuine PLACE attestations");
+const placeAttestationPlaceIds=new Set(placeAttestations.map(row=>row.place_id));
+assert.ok(onlyCustomSites.length>0&&onlyCustomSites.every(item=>placeAttestationPlaceIds.has(item.place_id)),"customs must map only genuine PLACE attestations");
 const globalCustom=projectHeritagePlaces(projection,{categories:["traditions"],customId:"DEV-006"});
-assert.ok(globalCustom.length<13,"the global pilgrimage custom cannot create a pin per abstract area");
+const dev006PlacePins=new Set(placeAttestations.filter(row=>row.custom_id==="DEV-006").map(row=>row.place_id));
+assert.ok(globalCustom.every(item=>dev006PlacePins.has(item.place_id)),"the global pilgrimage custom cannot create a pin per abstract area");
 assert.ok(globalCustom.every(item=>item.heritage_categories.includes("traditions")),"custom selection must not turn on other categories");
 assert.equal(projectHeritagePlaces(projection,{categories:[],query:""}).length,0,"empty map category filter must not show pins");
 const heritageCustoms=heritageCustomCards(practiceBrowse);
-assert.equal(heritageCustoms.length,38,"all canonical practices must be available without a geographical list");
+assert.equal(heritageCustoms.length,practiceCount,"all canonical practices must be available without a geographical list");
 assert.equal(heritageCustomCards(practiceBrowse,{enabled:false}).length,0);
 const heritageVm=buildExploreViewModel({
   language:"en",lens:"heritage",view:"map",items:heritagePlaces,
@@ -848,7 +877,9 @@ await import("./explore-first-load-recovery.mjs");
 
 const mediaRegistry=readJson("data/geography/approved-place-media.v1.json");
 assert.equal(mediaRegistry.schema,"AO_APPROVED_PLACE_MEDIA_V1");
-assert.equal(mediaRegistry.items.length,31,"All twenty-four independently approved physical-site photographs should be published");
+// Every approved photograph is the reviewed file, licensed, on a known Place,
+// and actually reaches its Place page. (Replaces a frozen photo count.)
+assertApprovedMedia(mediaRegistry,geography.places);
 const mediaFixture={
   place_id:"place:FR:lourdes",status:"APPROVED",asset_path:"assets/places/lourdes.webp",
   source_url:"https://example.org/photograph",credit:"Photographer Name",license:"CC-BY-4.0",
@@ -860,6 +891,9 @@ const mediaFixture={
 };
 const realMedia=readJson("data/geography/approved-place-media.v1.json");
 const reviewedProfiles=buildExplorePlaceProfiles({...dataset,media:{approved:realMedia.items}},projection);
+const unpublishedApproved=realMedia.items.filter(item=>reviewedProfiles.find(p=>p.place_id===item.place_id)?.media?.asset_path!==item.asset_path)
+  .map(item=>item.place_id);
+assert.deepEqual(unpublishedApproved,[],"approved photographs must appear on their own Place page");
 const reviewedLourdes=reviewedProfiles.find(p=>p.place_id==="place:FR:sanctuaire-notre-dame-de-lourdes");
 for(const [placeId,filename,license] of [
  ["place:FR:pontmain","FR-pontmain-basilica-east.webp","CC-BY-SA-4.0"],

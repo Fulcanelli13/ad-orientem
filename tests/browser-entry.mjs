@@ -1,3 +1,4 @@
+import { CANONICAL_ICON_ASSETS } from "../src/mass/reader-canonical-icons.js";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import {
@@ -17,6 +18,7 @@ import {
   openReaderScriptureContext,
 } from "../src/mass/browser-entry.js";
 import { auditHostIconBank, R17_FROZEN_ACTIVE_ICON_KEYS, R17_FROZEN_EXCLUDED_ICON_KEYS } from "../src/mass/reader-icons.js";
+import { R17_FINAL_APPROVED_MASS_ASSETS } from "../src/mass/reader-final-approved-assets.js";
 
 assert.equal(mapLegacyFollowMode("missal"), "MISSAL");
 assert.equal(mapLegacyFollowMode("read"), "MISSAL");
@@ -43,9 +45,20 @@ for(const name of [
   assert.ok(String(productionIcons[name]??"").startsWith("file:"),
     "19 October user-approved posture overlay missing from native production host: "+name);
 }
+assert.equal(Object.keys(R17_FINAL_APPROVED_MASS_ASSETS).length,68,
+  "Final approved originals must remain in their separately certified 68-item bank");
 assert.equal(Object.keys(productionIcons).length,
-  R17_FROZEN_ACTIVE_ICON_KEYS.length+5,
-  "reviewed icon overlay must contain exactly five aliases beyond donor masters");
+  R17_FROZEN_ACTIVE_ICON_KEYS.length+5+68+Object.keys(CANONICAL_ICON_ASSETS).length,
+  "Host must expose donor masters, five posture aliases, 68 approved originals and the canonical 21 Oct set");
+for(const [key,url] of Object.entries(CANONICAL_ICON_ASSETS)){
+  assert.ok(key.startsWith("canon:"),"Canonical icon overwrote another bank key: "+key);
+  assert.equal(productionIcons[key],url,"Canonical icon missing from the production host: "+key);
+}
+for(const [key,url] of Object.entries(R17_FINAL_APPROVED_MASS_ASSETS)){
+  assert.ok(key.startsWith("final_"),"Approved original overwrote a frozen donor key: "+key);
+  assert.equal(productionIcons[key],url,"Exact approved Mass original missing: "+key);
+  assert.match(url,/assets\/active\/mass-final\//,"Approved Mass original escaped its separate bank");
+}
 assert.deepEqual(productionAudit.required,[...R17_FROZEN_ACTIVE_ICON_KEYS]);
 assert.deepEqual(productionAudit.excluded,[...R17_FROZEN_EXCLUDED_ICON_KEYS]);
 assert.match(productionIcons.stand,/assets\/active\/mass-v46\/stand\.svg$/);
