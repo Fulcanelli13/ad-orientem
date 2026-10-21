@@ -5,6 +5,7 @@ const identities=load("identities.v0.json"),observations=load("weiser-observatio
 const rows=identities.records,obs=observations.records,edit=editorial.editorial_cards,proposals=editorial.candidate_proposals;
 const triage=[load("identity-triage-ch01-12.v0.json"),load("identity-triage-ch13-19.v0.json"),load("identity-triage-ch20-28.v0.json")];
 const firstPass=load("first-pass-260-reconciliation.v1.json");
+const dates=load("normalized-temporal-context.v0.json");
 const triaged=triage.flatMap(x=>x.rows);
 const overlap=load("possible-distinct-candidate-overlap.v1.json");
 const bounded=load("independent-sources-batch01.v1.json");
@@ -86,6 +87,18 @@ assert.ok(bounded.records.every(x=>distinctIDs.has(x.weiser_id)&&x.source_claim_
   x.user_facing_status==="NOT_RELEASED"&&x.sources.every(s=>/^https:\/\//.test(s.url))));
 assert.ok(bounded.records.every(x=>x.identity_status==="DISTINCT_PRACTICE_CANDIDATE_REQUIRES_CROSS_MODULE_DUPLICATE_GATE"));
 assert.equal(bounded.scope.no_canonical_ids_created,true);
+assert.equal(dates.schema,"AO_CUSTOMS_MASTER_NORMALIZED_TEMPORAL_42_V0");
+assert.equal(dates.records.length,42);
+assert.equal(dates.counts.dated_or_seasonal,30);
+assert.equal(dates.counts.personal_local_undated,12);
+assert.deepEqual(new Set(dates.records.map(x=>x.custom_id)),new Set(rows.map(x=>x.id)));
+assert.ok(dates.records.every(x=>x.date_resolver_owns_observed_1962_day===true&&
+  x.notification_or_procession_automatically_enabled===false&&
+  x.feast_rank_assumed===false));
+assert.equal(dates.records.find(x=>x.custom_id==="ROGA-001").temporal_type,"COMPOSITE");
+assert.equal(dates.records.find(x=>x.custom_id==="CORP-001").local_event_required,true);
+assert.equal(dates.records.find(x=>x.custom_id==="CANDIDATE-STJOHN-BONFIRE").normalized_rule,"06-23");
+
 
 assert.equal(queue.summary.remaining_without_provisional_disposition,0);
 assert.equal(queue.summary.identity_or_variant_review,286);
