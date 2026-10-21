@@ -1,0 +1,774 @@
+{
+  "schema": "ao.historia.p4.patriarch-scene-witness-desk-audit.v1",
+  "date": "2026-10-21",
+  "status": "25_OF_183_DESK_TRIAGED_NO_GEOCODE_OR_PUBLICATION_APPROVAL",
+  "provenance": {
+    "sceneSource": {
+      "path": "data/explore/biblical-cinematic-studies-review.v1.json",
+      "branch": "feature/biblical-atlas-current-main-convergence-20261012",
+      "sha": "d937288862abab192e1d584f0e663a3eebb46611"
+    },
+    "douayWitness": {
+      "path": "data/scripture/witness/dr-challoner/Genesis.json",
+      "sha": "ea1cceb2867b9b92d236a86af87d8880e1b2baf1",
+      "status": "UNCOLLATED_SOURCE_WITNESS"
+    },
+    "cpdvWitness": {
+      "path": "data/scripture/witness/cpdv-2009/Genesis.json",
+      "sha": "f51b19ae0a41419b592e9e0b58fcdfd2d3cdd135",
+      "status": "UNCOLLATED_SOURCE_WITNESS"
+    }
+  },
+  "rules": [
+    "Passage coordinates/verse presence in two uncollated Catholic source witnesses checked; printed-edition collation and full literary approval not asserted.",
+    "Scene synopses remain owned by #1069, canonical event IDs remain owned by main/P0; no source edits or guessed coordinates.",
+    "Actor annotations are desk identification from the cited passage or clearly identified local passage context, not a new canonical genealogy.",
+    "A place named in Scripture is not proof of a particular modern ruin, building or event pin.",
+    "Historical routes are not inferred from schematic Atlas lines.",
+    "Synoptic chronology is not addressed in this patriarch batch.",
+    "Scriptural exegesis, definitive historical geography and publication still need review."
+  ],
+  "counts": {
+    "sceneBatch": "PATRIARCHS",
+    "rows": 25,
+    "firstIndex": 0,
+    "lastIndex": 24,
+    "totalSceneCorpus": 183,
+    "rowsWithVersePresenceBothWitnesses": 25,
+    "rowsApprovedForGeocoding": 0,
+    "rowsPublished": 0,
+    "criticalLocationCorrections": 1
+  },
+  "reviewedRows": [
+    {
+      "sceneKey": "biblical:scene:abraham:000",
+      "index": 0,
+      "title": "The call of Abram",
+      "scriptureReference": "Genesis 12:1–5",
+      "existingLocationClaim": "Haran · upper Mesopotamia",
+      "existingMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "originalAtlasCandidateKeys": [
+        "biblical:passage:genesis-12-1-9"
+      ],
+      "witnessSpanChecks": {
+        "douayChallonerVerseEntries": 5,
+        "cpdv2009VerseEntries": 5,
+        "coordinatePresenceVerified": true,
+        "textualIdentityBetweenEditionsNotCertified": true
+      },
+      "sourceDescribedActors": [
+        "Abram",
+        "Lot",
+        "Sarai"
+      ],
+      "actorIdentificationsAreCitedTextOrLocalNarrativeContextNotNewGenealogy": true,
+      "locationEvidenceClass": "BIBLICAL_DEPARTURE_CITY_NOT_CALL_SITE",
+      "preciseSiteSupportedByCitedText": false,
+      "reviewFinding": "Haran is named as the point of departure in Genesis 12:4–5; the exact location where the call of 12:1 was spoken is not identified.",
+      "geographicalAction": "HOLD_PRECISE_CALL_POINT",
+      "definitiveModernCoordinatesApproved": false,
+      "identifiedModernSiteApproved": false,
+      "publicationApproval": false,
+      "editorialStatus": "SOURCE_WITNESS_DESK_TRIAGE_NOT_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:001",
+      "index": 1,
+      "title": "The covenant begins with a departure",
+      "scriptureReference": "Genesis 12:4–5",
+      "existingLocationClaim": "Haran · historical settlement",
+      "existingMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "originalAtlasCandidateKeys": [
+        "biblical:passage:genesis-12-1-9"
+      ],
+      "witnessSpanChecks": {
+        "douayChallonerVerseEntries": 2,
+        "cpdv2009VerseEntries": 2,
+        "coordinatePresenceVerified": true,
+        "textualIdentityBetweenEditionsNotCertified": true
+      },
+      "sourceDescribedActors": [
+        "Abram",
+        "Lot",
+        "Sarai"
+      ],
+      "actorIdentificationsAreCitedTextOrLocalNarrativeContextNotNewGenealogy": true,
+      "locationEvidenceClass": "NAMED_DEPARTURE_CITY_ONLY",
+      "preciseSiteSupportedByCitedText": false,
+      "reviewFinding": "Departure from Haran is explicit. This scene is a subsidiary beat of the same departure as scene 000, not a second geographically separate covenant event.",
+      "geographicalAction": "KEEP_AS_BEAT_NOT_SECOND_EVENT",
+      "definitiveModernCoordinatesApproved": false,
+      "identifiedModernSiteApproved": false,
+      "publicationApproval": false,
+      "editorialStatus": "SOURCE_WITNESS_DESK_TRIAGE_NOT_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:002",
+      "index": 2,
+      "title": "The journey toward Canaan",
+      "scriptureReference": "Genesis 12:5–6",
+      "existingLocationClaim": "Syrian–Levantine corridor",
+      "existingMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "originalAtlasCandidateKeys": [
+        "biblical:passage:genesis-12-1-9"
+      ],
+      "witnessSpanChecks": {
+        "douayChallonerVerseEntries": 2,
+        "cpdv2009VerseEntries": 2,
+        "coordinatePresenceVerified": true,
+        "textualIdentityBetweenEditionsNotCertified": true
+      },
+      "sourceDescribedActors": [
+        "Abram",
+        "Sarai",
+        "Lot"
+      ],
+      "actorIdentificationsAreCitedTextOrLocalNarrativeContextNotNewGenealogy": true,
+      "locationEvidenceClass": "REGIONAL_JOURNEY_NO_ROUTE",
+      "preciseSiteSupportedByCitedText": false,
+      "reviewFinding": "Genesis 12:5–6 names Canaan and Shechem but does not attest a specific ancient track or road; no route geometry may be inferred.",
+      "geographicalAction": "NO_ROUTE_LINE_AS_HISTORICAL_FACT",
+      "definitiveModernCoordinatesApproved": false,
+      "identifiedModernSiteApproved": false,
+      "publicationApproval": false,
+      "editorialStatus": "SOURCE_WITNESS_DESK_TRIAGE_NOT_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:003",
+      "index": 3,
+      "title": "The altar at Shechem",
+      "scriptureReference": "Genesis 12:6–7",
+      "existingLocationClaim": "Shechem · city context",
+      "existingMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "originalAtlasCandidateKeys": [
+        "biblical:passage:genesis-12-1-9"
+      ],
+      "witnessSpanChecks": {
+        "douayChallonerVerseEntries": 2,
+        "cpdv2009VerseEntries": 2,
+        "coordinatePresenceVerified": true,
+        "textualIdentityBetweenEditionsNotCertified": true
+      },
+      "sourceDescribedActors": [
+        "Abram"
+      ],
+      "actorIdentificationsAreCitedTextOrLocalNarrativeContextNotNewGenealogy": true,
+      "locationEvidenceClass": "NAMED_SETTLEMENT_ALTAR_UNLOCATED",
+      "preciseSiteSupportedByCitedText": false,
+      "reviewFinding": "Shechem/Sichem is named by Genesis 12:6; the precise altar footprint in 12:7 is not identified.",
+      "geographicalAction": "CITY_CONTEXT_ONLY",
+      "definitiveModernCoordinatesApproved": false,
+      "identifiedModernSiteApproved": false,
+      "publicationApproval": false,
+      "editorialStatus": "SOURCE_WITNESS_DESK_TRIAGE_NOT_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:004",
+      "index": 4,
+      "title": "The promise of the land",
+      "scriptureReference": "Genesis 12:7",
+      "existingLocationClaim": "Shechem · historical city region",
+      "existingMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "originalAtlasCandidateKeys": [
+        "biblical:passage:genesis-12-1-9"
+      ],
+      "witnessSpanChecks": {
+        "douayChallonerVerseEntries": 1,
+        "cpdv2009VerseEntries": 1,
+        "coordinatePresenceVerified": true,
+        "textualIdentityBetweenEditionsNotCertified": true
+      },
+      "sourceDescribedActors": [
+        "Abram"
+      ],
+      "actorIdentificationsAreCitedTextOrLocalNarrativeContextNotNewGenealogy": true,
+      "locationEvidenceClass": "LOCATION_IN_PRECEDING_VERSE_ONLY",
+      "preciseSiteSupportedByCitedText": false,
+      "reviewFinding": "Genesis 12:7 alone does not name Shechem; the reference needs preceding 12:6 for that geographical context.",
+      "geographicalAction": "REQUIRES_CONTEXTUAL_VERSE_12_6",
+      "definitiveModernCoordinatesApproved": false,
+      "identifiedModernSiteApproved": false,
+      "publicationApproval": false,
+      "editorialStatus": "SOURCE_WITNESS_DESK_TRIAGE_NOT_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:005",
+      "index": 5,
+      "title": "Between Bethel and Ai",
+      "scriptureReference": "Genesis 12:8",
+      "existingLocationClaim": "Bethel region · proposed identification",
+      "existingMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "originalAtlasCandidateKeys": [
+        "biblical:passage:genesis-12-1-9"
+      ],
+      "witnessSpanChecks": {
+        "douayChallonerVerseEntries": 1,
+        "cpdv2009VerseEntries": 1,
+        "coordinatePresenceVerified": true,
+        "textualIdentityBetweenEditionsNotCertified": true
+      },
+      "sourceDescribedActors": [],
+      "actorIdentificationsAreCitedTextOrLocalNarrativeContextNotNewGenealogy": true,
+      "locationEvidenceClass": "RELATIONAL_PLACEMENT_NOT_PIN",
+      "preciseSiteSupportedByCitedText": false,
+      "reviewFinding": "Genesis 12:8 places the camp between Bethel and Ai; no precise camp or altar location follows from the text or proposed site identifications.",
+      "geographicalAction": "REGION_ONLY_PROPOSED_BETHEL",
+      "definitiveModernCoordinatesApproved": false,
+      "identifiedModernSiteApproved": false,
+      "publicationApproval": false,
+      "editorialStatus": "SOURCE_WITNESS_DESK_TRIAGE_NOT_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:006",
+      "index": 6,
+      "title": "A famine, a journey into Egypt",
+      "scriptureReference": "Genesis 12:10–20",
+      "existingLocationClaim": "Egypt · regional focus",
+      "existingMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalAtlasCandidateKeys": [],
+      "witnessSpanChecks": {
+        "douayChallonerVerseEntries": 11,
+        "cpdv2009VerseEntries": 11,
+        "coordinatePresenceVerified": true,
+        "textualIdentityBetweenEditionsNotCertified": true
+      },
+      "sourceDescribedActors": [
+        "Abram",
+        "Sarai",
+        "Pharaoh"
+      ],
+      "actorIdentificationsAreCitedTextOrLocalNarrativeContextNotNewGenealogy": true,
+      "locationEvidenceClass": "REGION_ONLY",
+      "preciseSiteSupportedByCitedText": false,
+      "reviewFinding": "Egypt is scripturally named as destination in 12:10; Pharaoh's palace or precise itinerary cannot be identified from these verses.",
+      "geographicalAction": "REGIONAL_CAMERA_ONLY",
+      "definitiveModernCoordinatesApproved": false,
+      "identifiedModernSiteApproved": false,
+      "publicationApproval": false,
+      "editorialStatus": "SOURCE_WITNESS_DESK_TRIAGE_NOT_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:007",
+      "index": 7,
+      "title": "The return to Canaan",
+      "scriptureReference": "Genesis 13:1–4",
+      "existingLocationClaim": "Bethel region",
+      "existingMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalAtlasCandidateKeys": [],
+      "witnessSpanChecks": {
+        "douayChallonerVerseEntries": 4,
+        "cpdv2009VerseEntries": 4,
+        "coordinatePresenceVerified": true,
+        "textualIdentityBetweenEditionsNotCertified": true
+      },
+      "sourceDescribedActors": [
+        "Abram",
+        "Lot"
+      ],
+      "actorIdentificationsAreCitedTextOrLocalNarrativeContextNotNewGenealogy": true,
+      "locationEvidenceClass": "REGIONAL_JOURNEY_NO_ROUTE",
+      "preciseSiteSupportedByCitedText": false,
+      "reviewFinding": "Genesis 13:1–4 describes the return from Egypt via the south to the vicinity of Bethel and Ai, not an identifiable ancient road.",
+      "geographicalAction": "NO_PRECISE_ROUTE",
+      "definitiveModernCoordinatesApproved": false,
+      "identifiedModernSiteApproved": false,
+      "publicationApproval": false,
+      "editorialStatus": "SOURCE_WITNESS_DESK_TRIAGE_NOT_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:008",
+      "index": 8,
+      "title": "Abram and Lot separate",
+      "scriptureReference": "Genesis 13:5–13",
+      "existingLocationClaim": "Bethel · proposed location",
+      "existingMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalAtlasCandidateKeys": [],
+      "witnessSpanChecks": {
+        "douayChallonerVerseEntries": 9,
+        "cpdv2009VerseEntries": 9,
+        "coordinatePresenceVerified": true,
+        "textualIdentityBetweenEditionsNotCertified": true
+      },
+      "sourceDescribedActors": [
+        "Abram",
+        "Lot"
+      ],
+      "actorIdentificationsAreCitedTextOrLocalNarrativeContextNotNewGenealogy": true,
+      "locationEvidenceClass": "PREVIOUS_CHAPTER_CONTEXT_NOT_DIRECT_LOCATION",
+      "preciseSiteSupportedByCitedText": false,
+      "reviewFinding": "Lot and Abram separate in Genesis 13:5–13; the source does not repeat the Bethel place-name within the selected passage. The location is inherited from 13:3.",
+      "geographicalAction": "LOCATION_NOTE_ONLY",
+      "definitiveModernCoordinatesApproved": false,
+      "identifiedModernSiteApproved": false,
+      "publicationApproval": false,
+      "editorialStatus": "SOURCE_WITNESS_DESK_TRIAGE_NOT_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:009",
+      "index": 9,
+      "title": "Lot moves toward Sodom",
+      "scriptureReference": "Genesis 13:10–13",
+      "existingLocationClaim": "Dead Sea basin · site unidentified",
+      "existingMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalAtlasCandidateKeys": [],
+      "witnessSpanChecks": {
+        "douayChallonerVerseEntries": 4,
+        "cpdv2009VerseEntries": 4,
+        "coordinatePresenceVerified": true,
+        "textualIdentityBetweenEditionsNotCertified": true
+      },
+      "sourceDescribedActors": [
+        "Abram",
+        "Lot"
+      ],
+      "actorIdentificationsAreCitedTextOrLocalNarrativeContextNotNewGenealogy": true,
+      "locationEvidenceClass": "BIBLICAL_CITY_MODERN_SITE_UNIDENTIFIED",
+      "preciseSiteSupportedByCitedText": false,
+      "reviewFinding": "Genesis 13:10–13 describes the Jordan plain and Sodom, whose modern archaeological location is not established by the cited text.",
+      "geographicalAction": "NO_SODOM_COORDINATE",
+      "definitiveModernCoordinatesApproved": false,
+      "identifiedModernSiteApproved": false,
+      "publicationApproval": false,
+      "editorialStatus": "SOURCE_WITNESS_DESK_TRIAGE_NOT_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:010",
+      "index": 10,
+      "title": "The oaks of Mamre",
+      "scriptureReference": "Genesis 13:14–18",
+      "existingLocationClaim": "Hebron / Mamre · traditional association",
+      "existingMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalAtlasCandidateKeys": [],
+      "witnessSpanChecks": {
+        "douayChallonerVerseEntries": 5,
+        "cpdv2009VerseEntries": 5,
+        "coordinatePresenceVerified": true,
+        "textualIdentityBetweenEditionsNotCertified": true
+      },
+      "sourceDescribedActors": [
+        "Abram",
+        "Lot"
+      ],
+      "actorIdentificationsAreCitedTextOrLocalNarrativeContextNotNewGenealogy": true,
+      "locationEvidenceClass": "NAMED_HEBRON_MAMRE_TRADITIONAL_SITE",
+      "preciseSiteSupportedByCitedText": false,
+      "reviewFinding": "Genesis 13:18 places Abram at the vale of Mamre in Hebron; modern monument identification is a separate, traditional claim.",
+      "geographicalAction": "REGIONAL_ONLY_NOT_MONUMENT",
+      "definitiveModernCoordinatesApproved": false,
+      "identifiedModernSiteApproved": false,
+      "publicationApproval": false,
+      "editorialStatus": "SOURCE_WITNESS_DESK_TRIAGE_NOT_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:011",
+      "index": 11,
+      "title": "Abram rescues Lot",
+      "scriptureReference": "Genesis 14:13–16",
+      "existingLocationClaim": "Hebron · city context",
+      "existingMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalAtlasCandidateKeys": [],
+      "witnessSpanChecks": {
+        "douayChallonerVerseEntries": 4,
+        "cpdv2009VerseEntries": 4,
+        "coordinatePresenceVerified": true,
+        "textualIdentityBetweenEditionsNotCertified": true
+      },
+      "sourceDescribedActors": [
+        "Abram",
+        "Lot",
+        "Mamre",
+        "Eshcol",
+        "Aner"
+      ],
+      "actorIdentificationsAreCitedTextOrLocalNarrativeContextNotNewGenealogy": true,
+      "locationEvidenceClass": "MULTIPLE_BIBLICAL_PLACES_NO_SINGLE_EVENT_POINT",
+      "preciseSiteSupportedByCitedText": false,
+      "reviewFinding": "Genesis 14:13–16 spans Mamre, a pursuit to Dan and Hoba near Damascus; Hebron is not the site of the entire rescue encounter.",
+      "geographicalAction": "NO_SINGLE_RESCUE_PIN",
+      "definitiveModernCoordinatesApproved": false,
+      "identifiedModernSiteApproved": false,
+      "publicationApproval": false,
+      "editorialStatus": "SOURCE_WITNESS_DESK_TRIAGE_NOT_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:012",
+      "index": 12,
+      "title": "Melchizedek, king of Salem",
+      "scriptureReference": "Genesis 14:17–20",
+      "existingLocationClaim": "Jerusalem · traditional identification of Salem",
+      "existingMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "originalAtlasCandidateKeys": [
+        "biblical:passage:genesis-14-18-20"
+      ],
+      "witnessSpanChecks": {
+        "douayChallonerVerseEntries": 4,
+        "cpdv2009VerseEntries": 4,
+        "coordinatePresenceVerified": true,
+        "textualIdentityBetweenEditionsNotCertified": true
+      },
+      "sourceDescribedActors": [
+        "Abram",
+        "Melchizedek",
+        "King of Sodom"
+      ],
+      "actorIdentificationsAreCitedTextOrLocalNarrativeContextNotNewGenealogy": true,
+      "locationEvidenceClass": "BIBLICAL_SALEM_TRADITIONAL_JERUSALEM_ASSOCIATION",
+      "preciseSiteSupportedByCitedText": false,
+      "reviewFinding": "Genesis 14:17–20 names the king of Salem, but the meeting occurs in the valley of Save in 14:17. Identifying Salem as modern Jerusalem must be labelled tradition rather than an exact event spot.",
+      "geographicalAction": "NO_JERUSALEM_EVENT_PIN",
+      "definitiveModernCoordinatesApproved": false,
+      "identifiedModernSiteApproved": false,
+      "publicationApproval": false,
+      "editorialStatus": "SOURCE_WITNESS_DESK_TRIAGE_NOT_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:013",
+      "index": 13,
+      "title": "The promise beneath the stars",
+      "scriptureReference": "Genesis 15:1–6",
+      "existingLocationClaim": "Canaan hill country · illustrative focus",
+      "existingMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "originalAtlasCandidateKeys": [
+        "biblical:passage:genesis-15-1-21"
+      ],
+      "witnessSpanChecks": {
+        "douayChallonerVerseEntries": 6,
+        "cpdv2009VerseEntries": 6,
+        "coordinatePresenceVerified": true,
+        "textualIdentityBetweenEditionsNotCertified": true
+      },
+      "sourceDescribedActors": [
+        "Abram",
+        "Eliezer"
+      ],
+      "actorIdentificationsAreCitedTextOrLocalNarrativeContextNotNewGenealogy": true,
+      "locationEvidenceClass": "UNLOCATED_EVENT",
+      "preciseSiteSupportedByCitedText": false,
+      "reviewFinding": "Genesis 15:1–6 does not locate the star-promise in an identifiable hill-country site; any background landscape is illustrative.",
+      "geographicalAction": "NO_PIN",
+      "definitiveModernCoordinatesApproved": false,
+      "identifiedModernSiteApproved": false,
+      "publicationApproval": false,
+      "editorialStatus": "SOURCE_WITNESS_DESK_TRIAGE_NOT_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:014",
+      "index": 14,
+      "title": "The covenant is sealed",
+      "scriptureReference": "Genesis 15:7–21",
+      "existingLocationClaim": "Mamre · traditional locality",
+      "existingMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "originalAtlasCandidateKeys": [
+        "biblical:passage:genesis-15-1-21"
+      ],
+      "witnessSpanChecks": {
+        "douayChallonerVerseEntries": 15,
+        "cpdv2009VerseEntries": 15,
+        "coordinatePresenceVerified": true,
+        "textualIdentityBetweenEditionsNotCertified": true
+      },
+      "sourceDescribedActors": [
+        "Abram"
+      ],
+      "actorIdentificationsAreCitedTextOrLocalNarrativeContextNotNewGenealogy": true,
+      "locationEvidenceClass": "UNLOCATED_EVENT_WITH_PRIOR_ORIGIN_MENTION",
+      "preciseSiteSupportedByCitedText": false,
+      "reviewFinding": "Genesis 15:7–21 mentions Abram's departure from Ur, but does not identify Mamre as the place of covenant-making.",
+      "geographicalAction": "REMOVE_MAMRE_AS_CERTAIN_CONTEXT",
+      "definitiveModernCoordinatesApproved": false,
+      "identifiedModernSiteApproved": false,
+      "publicationApproval": false,
+      "editorialStatus": "SOURCE_WITNESS_DESK_TRIAGE_NOT_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:015",
+      "index": 15,
+      "title": "The birth of Ishmael",
+      "scriptureReference": "Genesis 16:1–16",
+      "existingLocationClaim": "Mamre · traditional locality",
+      "existingMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalAtlasCandidateKeys": [],
+      "witnessSpanChecks": {
+        "douayChallonerVerseEntries": 16,
+        "cpdv2009VerseEntries": 16,
+        "coordinatePresenceVerified": true,
+        "textualIdentityBetweenEditionsNotCertified": true
+      },
+      "sourceDescribedActors": [
+        "Abram",
+        "Sarai",
+        "Hagar",
+        "Ishmael"
+      ],
+      "actorIdentificationsAreCitedTextOrLocalNarrativeContextNotNewGenealogy": true,
+      "locationEvidenceClass": "MULTIPLE_CONTEXTS_BIRTHPLACE_UNLOCATED",
+      "preciseSiteSupportedByCitedText": false,
+      "reviewFinding": "Genesis 16:1–16 covers Sarai, Hagar and Ishmael and names a wilderness spring; the scene label Mamre is not established as the birthplace by this text.",
+      "geographicalAction": "NO_MAMRE_BIRTH_PIN",
+      "definitiveModernCoordinatesApproved": false,
+      "identifiedModernSiteApproved": false,
+      "publicationApproval": false,
+      "editorialStatus": "SOURCE_WITNESS_DESK_TRIAGE_NOT_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:016",
+      "index": 16,
+      "title": "Abraham receives a new name",
+      "scriptureReference": "Genesis 17:1–14",
+      "existingLocationClaim": "Mamre · traditional locality",
+      "existingMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalAtlasCandidateKeys": [],
+      "witnessSpanChecks": {
+        "douayChallonerVerseEntries": 14,
+        "cpdv2009VerseEntries": 14,
+        "coordinatePresenceVerified": true,
+        "textualIdentityBetweenEditionsNotCertified": true
+      },
+      "sourceDescribedActors": [
+        "Abraham"
+      ],
+      "actorIdentificationsAreCitedTextOrLocalNarrativeContextNotNewGenealogy": true,
+      "locationEvidenceClass": "UNLOCATED_EVENT",
+      "preciseSiteSupportedByCitedText": false,
+      "reviewFinding": "Genesis 17:1–14 narrates the name and covenant but does not name Mamre as its location.",
+      "geographicalAction": "NO_MAMRE_NAME_CHANGE_PIN",
+      "definitiveModernCoordinatesApproved": false,
+      "identifiedModernSiteApproved": false,
+      "publicationApproval": false,
+      "editorialStatus": "SOURCE_WITNESS_DESK_TRIAGE_NOT_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:017",
+      "index": 17,
+      "title": "Three visitors at Mamre",
+      "scriptureReference": "Genesis 18:1–15",
+      "existingLocationClaim": "Mamre · traditional area",
+      "existingMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "originalAtlasCandidateKeys": [
+        "biblical:passage:genesis-18-1-8"
+      ],
+      "witnessSpanChecks": {
+        "douayChallonerVerseEntries": 15,
+        "cpdv2009VerseEntries": 15,
+        "coordinatePresenceVerified": true,
+        "textualIdentityBetweenEditionsNotCertified": true
+      },
+      "sourceDescribedActors": [
+        "Abraham",
+        "Sarah"
+      ],
+      "actorIdentificationsAreCitedTextOrLocalNarrativeContextNotNewGenealogy": true,
+      "locationEvidenceClass": "BIBLICALLY_NAMED_MAMRE_TRADITIONAL_SITE",
+      "preciseSiteSupportedByCitedText": false,
+      "reviewFinding": "Genesis 18:1 explicitly locates the encounter at Mamre; a specific modern structure/altar identification is not proved by the text.",
+      "geographicalAction": "TRADITIONAL_AREA_ONLY",
+      "definitiveModernCoordinatesApproved": false,
+      "identifiedModernSiteApproved": false,
+      "publicationApproval": false,
+      "editorialStatus": "SOURCE_WITNESS_DESK_TRIAGE_NOT_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:018",
+      "index": 18,
+      "title": "Abraham intercedes for Sodom",
+      "scriptureReference": "Genesis 18:16–33",
+      "existingLocationClaim": "Mamre · traditional locality",
+      "existingMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalAtlasCandidateKeys": [],
+      "witnessSpanChecks": {
+        "douayChallonerVerseEntries": 18,
+        "cpdv2009VerseEntries": 18,
+        "coordinatePresenceVerified": true,
+        "textualIdentityBetweenEditionsNotCertified": true
+      },
+      "sourceDescribedActors": [
+        "Abraham"
+      ],
+      "actorIdentificationsAreCitedTextOrLocalNarrativeContextNotNewGenealogy": true,
+      "locationEvidenceClass": "CONTEXT_ONLY_LOCATION",
+      "preciseSiteSupportedByCitedText": false,
+      "reviewFinding": "Genesis 18:16–33 speaks of the visitors turning toward Sodom and Abraham's intercession; Mamre is prior narrative context at 18:1, not an event point identified in the selected verse span.",
+      "geographicalAction": "NO_INTERCESSION_PIN",
+      "definitiveModernCoordinatesApproved": false,
+      "identifiedModernSiteApproved": false,
+      "publicationApproval": false,
+      "editorialStatus": "SOURCE_WITNESS_DESK_TRIAGE_NOT_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:019",
+      "index": 19,
+      "title": "The destruction of Sodom",
+      "scriptureReference": "Genesis 19:1–29",
+      "existingLocationClaim": "Dead Sea basin · site unidentified",
+      "existingMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalAtlasCandidateKeys": [],
+      "witnessSpanChecks": {
+        "douayChallonerVerseEntries": 29,
+        "cpdv2009VerseEntries": 29,
+        "coordinatePresenceVerified": true,
+        "textualIdentityBetweenEditionsNotCertified": true
+      },
+      "sourceDescribedActors": [
+        "Lot",
+        "Abraham"
+      ],
+      "actorIdentificationsAreCitedTextOrLocalNarrativeContextNotNewGenealogy": true,
+      "locationEvidenceClass": "BIBLICAL_CITY_MODERN_SITE_UNIDENTIFIED",
+      "preciseSiteSupportedByCitedText": false,
+      "reviewFinding": "Genesis 19:1–29 names Sodom and the neighbouring cities; biblical naming is not certification of modern ruins or coordinates.",
+      "geographicalAction": "NO_SODOM_COORDINATE",
+      "definitiveModernCoordinatesApproved": false,
+      "identifiedModernSiteApproved": false,
+      "publicationApproval": false,
+      "editorialStatus": "SOURCE_WITNESS_DESK_TRIAGE_NOT_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:020",
+      "index": 20,
+      "title": "Abraham and Abimelech",
+      "scriptureReference": "Genesis 20:1–18",
+      "existingLocationClaim": "Gerar · location debated in the Negev",
+      "existingMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalAtlasCandidateKeys": [],
+      "witnessSpanChecks": {
+        "douayChallonerVerseEntries": 18,
+        "cpdv2009VerseEntries": 18,
+        "coordinatePresenceVerified": true,
+        "textualIdentityBetweenEditionsNotCertified": true
+      },
+      "sourceDescribedActors": [
+        "Abraham",
+        "Sarah",
+        "Abimelech"
+      ],
+      "actorIdentificationsAreCitedTextOrLocalNarrativeContextNotNewGenealogy": true,
+      "locationEvidenceClass": "BIBLICAL_GERAR_DISPUTED_MODERN_SITE",
+      "preciseSiteSupportedByCitedText": false,
+      "reviewFinding": "Genesis 20:1 names Gerar/Gerara; the proposed modern identification is not established by these verses.",
+      "geographicalAction": "DISPUTED_SETTLEMENT_CONTEXT",
+      "definitiveModernCoordinatesApproved": false,
+      "identifiedModernSiteApproved": false,
+      "publicationApproval": false,
+      "editorialStatus": "SOURCE_WITNESS_DESK_TRIAGE_NOT_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:021",
+      "index": 21,
+      "title": "The birth of Isaac",
+      "scriptureReference": "Genesis 21:1–7",
+      "existingLocationClaim": "Beersheba · city context",
+      "existingMatchStatus": "EXACT_REFERENCE",
+      "originalAtlasCandidateKeys": [
+        "biblical:passage:genesis-21-1-7"
+      ],
+      "witnessSpanChecks": {
+        "douayChallonerVerseEntries": 7,
+        "cpdv2009VerseEntries": 7,
+        "coordinatePresenceVerified": true,
+        "textualIdentityBetweenEditionsNotCertified": true
+      },
+      "sourceDescribedActors": [
+        "Abraham",
+        "Sarah",
+        "Isaac"
+      ],
+      "actorIdentificationsAreCitedTextOrLocalNarrativeContextNotNewGenealogy": true,
+      "locationEvidenceClass": "UNLOCATED_EVENT",
+      "preciseSiteSupportedByCitedText": false,
+      "reviewFinding": "Genesis 21:1–7 describes Isaac's birth but names no town. Beersheba is introduced later in Genesis 21 and cannot be represented as a birth-site coordinate.",
+      "geographicalAction": "CORRECTION_REQUIRED_NO_BEERSHEBA_BIRTH_PIN",
+      "definitiveModernCoordinatesApproved": false,
+      "identifiedModernSiteApproved": false,
+      "publicationApproval": false,
+      "editorialStatus": "SOURCE_WITNESS_DESK_TRIAGE_NOT_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:022",
+      "index": 22,
+      "title": "A well at Beersheba",
+      "scriptureReference": "Genesis 21:22–34",
+      "existingLocationClaim": "Beersheba · city context",
+      "existingMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalAtlasCandidateKeys": [],
+      "witnessSpanChecks": {
+        "douayChallonerVerseEntries": 13,
+        "cpdv2009VerseEntries": 13,
+        "coordinatePresenceVerified": true,
+        "textualIdentityBetweenEditionsNotCertified": true
+      },
+      "sourceDescribedActors": [
+        "Abraham",
+        "Abimelech",
+        "Phicol"
+      ],
+      "actorIdentificationsAreCitedTextOrLocalNarrativeContextNotNewGenealogy": true,
+      "locationEvidenceClass": "NAMED_BEERSHEBA_WELL_UNLOCATED",
+      "preciseSiteSupportedByCitedText": false,
+      "reviewFinding": "Genesis 21:22–34 names Beersheba/Bersabee and the well; city-context mapping is permissible but not a certified well footprint.",
+      "geographicalAction": "CITY_CONTEXT_ONLY",
+      "definitiveModernCoordinatesApproved": false,
+      "identifiedModernSiteApproved": false,
+      "publicationApproval": false,
+      "editorialStatus": "SOURCE_WITNESS_DESK_TRIAGE_NOT_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:023",
+      "index": 23,
+      "title": "The sacrifice of Isaac",
+      "scriptureReference": "Genesis 22:1–19",
+      "existingLocationClaim": "Moriah · traditionally associated region",
+      "existingMatchStatus": "EXACT_REFERENCE",
+      "originalAtlasCandidateKeys": [
+        "biblical:passage:genesis-22-1-19"
+      ],
+      "witnessSpanChecks": {
+        "douayChallonerVerseEntries": 19,
+        "cpdv2009VerseEntries": 19,
+        "coordinatePresenceVerified": true,
+        "textualIdentityBetweenEditionsNotCertified": true
+      },
+      "sourceDescribedActors": [
+        "Abraham",
+        "Isaac"
+      ],
+      "actorIdentificationsAreCitedTextOrLocalNarrativeContextNotNewGenealogy": true,
+      "locationEvidenceClass": "NAMED_REGION_EDITION_LABEL_REQUIRES_COLLATION",
+      "preciseSiteSupportedByCitedText": false,
+      "reviewFinding": "Genesis 22:2 in both installed Catholic English witnesses says 'land of vision' and an unspecified mountain. Moriah/Jerusalem is not a geocoded event location established by this selected passage.",
+      "geographicalAction": "TRADITION_ONLY_NO_EXACT_PIN",
+      "definitiveModernCoordinatesApproved": false,
+      "identifiedModernSiteApproved": false,
+      "publicationApproval": false,
+      "editorialStatus": "SOURCE_WITNESS_DESK_TRIAGE_NOT_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:024",
+      "index": 24,
+      "title": "The burial at Machpelah",
+      "scriptureReference": "Genesis 23:1–20",
+      "existingLocationClaim": "Hebron · traditional site",
+      "existingMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalAtlasCandidateKeys": [],
+      "witnessSpanChecks": {
+        "douayChallonerVerseEntries": 20,
+        "cpdv2009VerseEntries": 20,
+        "coordinatePresenceVerified": true,
+        "textualIdentityBetweenEditionsNotCertified": true
+      },
+      "sourceDescribedActors": [
+        "Abraham",
+        "Sarah",
+        "Ephron"
+      ],
+      "actorIdentificationsAreCitedTextOrLocalNarrativeContextNotNewGenealogy": true,
+      "locationEvidenceClass": "NAMED_HEBRON_TRADITIONAL_CAVE",
+      "preciseSiteSupportedByCitedText": false,
+      "reviewFinding": "Genesis 23:2 and 23:19 name Hebron/Mamre and the field/cave burial. Exact modern monumental identification remains a separate tradition.",
+      "geographicalAction": "CITY_CONTEXT_TRADITIONAL_CAVE_ONLY",
+      "definitiveModernCoordinatesApproved": false,
+      "identifiedModernSiteApproved": false,
+      "publicationApproval": false,
+      "editorialStatus": "SOURCE_WITNESS_DESK_TRIAGE_NOT_PRINT_COLLATION"
+    }
+  ]
+}
