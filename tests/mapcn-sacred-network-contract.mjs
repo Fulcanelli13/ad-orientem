@@ -70,6 +70,7 @@ test("Sourced person is a mention, never a canonical Saints identity",()=>{
  assert.ok(person.attributionOnly);
  assert.match(person.id,/^person-mention:/);
  assert.equal(g.nodes.some(n=>n.id==="saint:bernadette"),false);
+ assert.equal(g.nodes[0].type,"PLACE","Network must open on a canonical physical place");
 });
 test("Calendar is only semantic contextual association; no computed feast date",()=>{
  const g=buildSacredRelationshipNetwork(dataset());

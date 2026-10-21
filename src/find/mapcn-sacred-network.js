@@ -129,7 +129,11 @@ export function buildSacredRelationshipNetwork(data={}){
   for(const id of nodes.keys())if(!linked.has(id))nodes.delete(id);
   const degree=new Map([...nodes.keys()].map(id=>[id,0]));
   for(const e of edges.values()){degree.set(e.from,(degree.get(e.from)||0)+1);degree.set(e.to,(degree.get(e.to)||0)+1);}
-  const ordered=[...nodes.values()].sort((a,b)=>(degree.get(b.id)||0)-(degree.get(a.id)||0)||
+  // An actual sacred PLACE is the most helpful initial root. Generic custom
+  // records may have many attestations but should not own the first screen.
+  const ordered=[...nodes.values()].sort((a,b)=>
+    Number(b.type==="PLACE")-Number(a.type==="PLACE")||
+    (degree.get(b.id)||0)-(degree.get(a.id)||0)||
     a.label.localeCompare(b.label));
   return Object.freeze({nodes:Object.freeze(ordered),edges:Object.freeze([...edges.values()]),
     totalNodes:nodes.size,totalEdges:edges.size,

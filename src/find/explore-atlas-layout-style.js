@@ -995,7 +995,7 @@ export const EXPLORE_ATLAS_LAYOUT_STYLE = `
 }
 .aoHeritageSurface .aoSacredNetworkPanel{
  position:absolute;z-index:16;top:184px;bottom:13px;left:17px;
- width:min(545px,calc(100% - 34px));min-height:0;
+ width:min(735px,calc(100% - 34px));min-height:0;
  display:flex;flex-direction:column;background:#0d1823fa;color:#e8dece;
  border:1px solid rgba(199,174,125,.50);border-radius:12px;
  box-shadow:0 18px 44px #000a;overflow:hidden
@@ -1011,7 +1011,14 @@ export const EXPLORE_ATLAS_LAYOUT_STYLE = `
  border-radius:50%;background:#1d2c37;border:1px solid #c0a67272;
  color:#ebd9b9;font-size:23px;cursor:pointer}
 .aoSacredNetworkBody{overflow:auto;overscroll-behavior:contain;min-height:0;
- flex:1;padding:14px 15px 21px;scrollbar-color:#807154 #15242e}
+ flex:1;display:flex;flex-direction:column;padding:14px 15px 21px;scrollbar-color:#807154 #15242e}
+.aoSacredNetworkIntro{order:0}
+.aoNetworkSelected{order:1}
+.aoSacredNetworkGraphScroll{order:2}
+.aoNetworkSearch{order:3}
+.aoNetworkFilter{order:4}
+.aoNetworkEvidence{order:5}
+.aoSacredNetworkPanel footer{order:6}
 .aoSacredNetworkIntro>p{font:12px/1.5 var(--ao-font-ui,system-ui,sans-serif);
  color:#b5beb9;margin:0 0 10px}
 .aoNetworkMetrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
