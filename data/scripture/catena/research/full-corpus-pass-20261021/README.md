@@ -2,7 +2,7 @@
 
 **Source of truth:** `data/scripture/catena/manifest.v1.json` and the four existing `data/scripture/catena/{gospel}.json` packs. The pinned historical source is the Oxford/Newman *Catena Aurea* provider. **Research-only; not published to Messenger.**
 
-The deterministic scanner `scripts/scripture-catena-first-pass.mjs` enumerates every canonical source excerpt and writes the four compact indexes plus `summary.v1.json`. GitHub Actions runs the same scanner, verifies counts against the existing corpus manifest, and persists the generated research files to this branch. Never edit the canonical fragments to match an index.
+The deterministic scanner `scripts/scripture-catena-first-pass.mjs` enumerates every canonical source excerpt and writes the four compact indexes plus `summary.v1.json`. The generated indexes are committed to this research branch. GitHub Actions reruns the same scanner with **read-only permissions**, verifies counts against the existing corpus manifest and requires the generated files to match the committed versions exactly. Never edit the canonical fragments to match an index.
 
 ## Coverage and actual findings
 
