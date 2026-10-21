@@ -354,15 +354,15 @@ async function showHistoriaMovement(){
     const note=make("aside",undefined,"proofContext");
     note.append(make("span","Editorial context · not Scripture","caption"),
      make("p",beat.explanation));
-    host.append(note);previous=null;continue;
+    host.append(note);continue;
    }
-   if(beat.kind==="SOURCE_BRIDGE_CANDIDATE"&&(!showBridges||(highPriorityBridgesOnly&&!isPriorityHistoriaBridge(beat)))){previous=null;continue;}
+   if(beat.kind==="SOURCE_BRIDGE_CANDIDATE"&&(!showBridges||(highPriorityBridgesOnly&&!isPriorityHistoriaBridge(beat))))continue;
    const bridge=beat.kind==="SOURCE_BRIDGE_CANDIDATE";
    const section=make("article",undefined,bridge?"proofSourceBridge":"proofBeat");
    if(bridge){section.append(make("div","Unapproved source-bridge candidate · "+beat.reference,"caption"),
      make("p",beat.purpose));held++;}
    else{
-    section.append(make("h4",beat.scene));
+    section.append(make("span","Selected Scripture · research proof · not publication-approved","caption"),make("h4",beat.scene));
     if(beat.hasPartialVerseHold)section.append(make("p",
       "Partial-verse edition hold: this witness displays the complete verse; the original editorial source specifies only part of it.","proofGap"));
    }
@@ -390,6 +390,7 @@ async function showHistoriaMovement(){
     section.append(make("div",reference,"proofCitation"));
     for(const v of rows){
      const line=make("p",undefined,"proofVerse");
+     line.lang=edition==="crampon-1923"?"fr":"en";
      line.append(make("span",v.chapter+":"+v.verseStart,"verse"),make("span",v.text));
      section.append(line);
     }
