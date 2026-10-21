@@ -1,0 +1,707 @@
+{
+  "schema": "AO_ILLUSTRATED_PLACE_GUIDES_V1",
+  "version": "1.0.0",
+  "reviewed_on": "2026-10-21",
+  "scope": "First seven worldwide Marian destinations with already-approved exact Place photography; narrative tied to original institutional sources.",
+  "source_policy": "Every paragraph, stop, chronology and programme contains its own institutional/public authority HTTPS source. Traditions and miracle reports are explicitly qualified.",
+  "media_policy": "USE_APPROVED_PLACE_MEDIA_ONLY: hero images resolved exclusively by canonical place_id from data/geography/approved-place-media.v1.json; no unlicensed source photographs, no unrelated sacred art.",
+  "guides": [
+    {
+      "place_id": "place:PT:fatima-sanctuary",
+      "publication": "PUBLISHED",
+      "language_policy": "BILINGUAL_SOURCE_FIRST",
+      "official_url": "https://www.fatima.pt/en/",
+      "region_en": "Fátima · Santarém · Portugal",
+      "region_fr": "Fátima · Santarém · Portugal",
+      "subtitle_en": "The Cova da Iria, the shepherd children and a pilgrimage devoted to the Rosary.",
+      "subtitle_fr": "La Cova da Iria, les petits bergers et un pèlerinage consacré au Rosaire.",
+      "image_policy": "USE_APPROVED_PLACE_MEDIA_ONLY",
+      "gallery": [],
+      "sections": [
+        {
+          "id": "testimony",
+          "title_en": "The events of 1917",
+          "title_fr": "Les événements de 1917",
+          "paragraphs": [
+            {
+              "en": "The sanctuary stands at Cova da Iria, where Lúcia de Jesus, Francisco Marto and Jacinta Marto described encounters with Our Lady in 1917. The shrine presents the Rosary, conversion and prayer as central to its founding testimony, rather than treating the site merely as a historical monument.",
+              "fr": "Le sanctuaire se trouve à la Cova da Iria, où Lúcia de Jesus, Francisco et Jacinta Marto rapportèrent des rencontres avec Notre-Dame en 1917. Le sanctuaire présente le Rosaire, la conversion et la prière au cœur de ce témoignage fondateur, plutôt que de réduire le lieu à un monument historique.",
+              "source_url": "https://www.fatima.pt/en/pages/identity-and-mission"
+            }
+          ]
+        },
+        {
+          "id": "sanctuary",
+          "title_en": "The Chapel and the basilicas",
+          "title_fr": "La chapelle et les basiliques",
+          "paragraphs": [
+            {
+              "en": "The Chapel of the Apparitions was built in 1919 at the place remembered in the children's accounts. The larger sanctuary subsequently developed around it; the Basilica of Our Lady of the Rosary was dedicated in 1953. The chapel and basilicas belong to one pilgrimage complex, not separately invented destinations.",
+              "fr": "La chapelle des Apparitions fut construite en 1919 à l'endroit conservé dans le récit des enfants. Le sanctuaire s'est ensuite développé autour d'elle ; la basilique Notre-Dame-du-Rosaire fut consacrée en 1953. La chapelle et les basiliques appartiennent à un même ensemble de pèlerinage et ne constituent pas des destinations artificiellement distinctes.",
+              "source_url": "https://www.fatima.pt/en/pages/places-of-cult-and-prayer"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "A place of prayer and pilgrimage",
+          "title_fr": "Un lieu de prière et de pèlerinage",
+          "paragraphs": [
+            {
+              "en": "Pilgrims come for prayer at the Chapel, the Rosary and the sacramental life of the sanctuary. The anniversary pilgrimages recall the events of 1917, but their programmes and service times must be checked directly for the date of a visit.",
+              "fr": "Les pèlerins viennent prier à la chapelle, réciter le Rosaire et participer à la vie sacramentelle du sanctuaire. Les pèlerinages anniversaires rappellent les événements de 1917, mais les programmes et horaires doivent être vérifiés directement pour la date du séjour.",
+              "source_url": "https://www.fatima.pt/en/pages/identity-and-mission"
+            }
+          ]
+        }
+      ],
+      "stops": [
+        {
+          "id": "chapel",
+          "name_en": "Chapel of the Apparitions",
+          "name_fr": "Chapelle des Apparitions",
+          "description_en": "Small chapel preserving the original focus of the 1917 pilgrimage testimony.",
+          "description_fr": "Petite chapelle qui conserve le lieu central du témoignage de 1917.",
+          "source_url": "https://www.papa2017.fatima.pt/en/pages/chapel-of-the-apparitions"
+        },
+        {
+          "id": "rosary-basilica",
+          "name_en": "Basilica of Our Lady of the Rosary",
+          "name_fr": "Basilique Notre-Dame-du-Rosaire",
+          "description_en": "Principal historic basilica of the modern sanctuary.",
+          "description_fr": "Basilique historique principale du sanctuaire moderne.",
+          "source_url": "https://www.fatima.pt/en/pages/places-of-cult-and-prayer"
+        },
+        {
+          "id": "prayer-area",
+          "name_en": "Prayer Area",
+          "name_fr": "Esplanade de prière",
+          "description_en": "Shared space connecting the sanctuaries' devotional buildings.",
+          "description_fr": "Espace commun reliant les édifices de pèlerinage.",
+          "source_url": "https://www.fatima.pt/en/pages/places-of-cult-and-prayer"
+        }
+      ],
+      "chronology": [
+        {
+          "when": "1917",
+          "when_kind": "HISTORICAL_YEAR",
+          "title_en": "Reported Marian apparitions",
+          "title_fr": "Apparitions mariales rapportées",
+          "source_url": "https://www.fatima.pt/en/pages/identity-and-mission"
+        },
+        {
+          "when": "1919",
+          "when_kind": "HISTORICAL_YEAR",
+          "title_en": "Chapel of the Apparitions erected",
+          "title_fr": "Construction de la chapelle des Apparitions",
+          "source_url": "https://www.papa2017.fatima.pt/en/pages/chapel-of-the-apparitions"
+        },
+        {
+          "when": "1953",
+          "when_kind": "HISTORICAL_YEAR",
+          "title_en": "Basilica of Our Lady of the Rosary dedicated",
+          "title_fr": "Consécration de la basilique Notre-Dame-du-Rosaire",
+          "source_url": "https://www.fatima.pt/en/pages/places-of-cult-and-prayer"
+        }
+      ],
+      "programmes": [
+        {
+          "id": "fatima-first",
+          "label_en": "Anniversary of the first apparition",
+          "label_fr": "Anniversaire de la première apparition",
+          "month_day": "05-13",
+          "date_kind": "HISTORICAL_ANNIVERSARY_NOT_LIVE_SCHEDULE",
+          "details_en": "Historical commemoration; verify the current year's anniversary programme.",
+          "details_fr": "Commémoration historique ; vérifier le programme de l'année.",
+          "source_url": "https://www.fatima.pt/en/pages/identity-and-mission"
+        }
+      ],
+      "visit": {
+        "en": "Check the official sanctuary for current liturgies, processions and pilgrim arrangements. Historical anniversary dates do not certify any live Mass time.",
+        "fr": "Consulter le sanctuaire pour les célébrations, processions et modalités d'accueil. Une date anniversaire ne garantit aucun horaire de messe.",
+        "source_url": "https://www.fatima.pt/en/pages/identity-and-mission"
+      }
+    },
+    {
+      "place_id": "place:IT:loreto-santa-casa",
+      "publication": "PUBLISHED",
+      "language_policy": "BILINGUAL_SOURCE_FIRST",
+      "official_url": "https://www.santuarioloreto.va/en/",
+      "region_en": "Loreto · Marche · Italy",
+      "region_fr": "Lorette · Marches · Italie",
+      "subtitle_en": "The Holy House, the Annunciation tradition and the great Marian basilica.",
+      "subtitle_fr": "La Sainte Maison, la tradition de l'Annonciation et la grande basilique mariale.",
+      "image_policy": "USE_APPROVED_PLACE_MEDIA_ONLY",
+      "gallery": [],
+      "sections": [
+        {
+          "id": "tradition",
+          "title_en": "The Holy House and the Annunciation",
+          "title_fr": "La Sainte Maison et l'Annonciation",
+          "paragraphs": [
+            {
+              "en": "The sanctuary preserves three walls traditionally identified with the house associated with the Blessed Virgin at Nazareth. Accounts of their arrival in Loreto include the devotional tradition of angelic translation and a separate historical explanation involving transport from the eastern Mediterranean; these traditions must not be presented as independently established archaeology.",
+              "fr": "Le sanctuaire conserve trois murs traditionnellement identifiés à la demeure liée à la Sainte Vierge à Nazareth. Les récits de leur arrivée à Lorette comprennent la tradition pieuse d'une translation angélique ainsi qu'une explication historique liée à un transport depuis la Méditerranée orientale ; ces traditions ne doivent pas être présentées comme des faits archéologiques indépendamment établis.",
+              "source_url": "https://www.santuarioloreto.va/en/storia/la-santa-casa-da-nazareth-a-loreto.html"
+            }
+          ]
+        },
+        {
+          "id": "buildings",
+          "title_en": "A basilica around the House",
+          "title_fr": "Une basilique autour de la Maison",
+          "paragraphs": [
+            {
+              "en": "Work on the basilica began in 1469 and the monumental church was completed during the sixteenth century. Pilgrims enter a great architectural complex whose interior centres on the much smaller Holy House, keeping the Marian domestic setting distinct from the later Renaissance sanctuary.",
+              "fr": "Les travaux de la basilique commencèrent en 1469 et l'église monumentale fut achevée au XVIe siècle. Les pèlerins pénètrent dans un vaste ensemble architectural centré sur la bien plus petite Sainte Maison ; le cadre domestique marial demeure distinct du sanctuaire de la Renaissance.",
+              "source_url": "https://www.santuarioloreto.va/en/storia/la-basilica-e-il-palazzo-apostolico.html"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Prayer at the Holy House",
+          "title_fr": "Prière dans la Sainte Maison",
+          "paragraphs": [
+            {
+              "en": "The sanctuary invites pilgrims to contemplate Mary's assent at the Annunciation and to pray for families and vocations. The feast of Our Lady of Loreto and the local Venuta observance are documented in December; do not turn that custom into an assumed celebration at every Catholic church.",
+              "fr": "Le sanctuaire invite les pèlerins à méditer le consentement de Marie lors de l'Annonciation et à prier pour les familles et les vocations. La fête de Notre-Dame de Lorette et la tradition locale de la Venuta sont documentées en décembre ; il ne faut pas supposer que cette coutume est observée dans chaque église catholique.",
+              "source_url": "https://www.santuarioloreto.va/en/storia/la-santa-casa-da-nazareth-a-loreto.html"
+            }
+          ]
+        }
+      ],
+      "stops": [
+        {
+          "id": "holy-house",
+          "name_en": "The Holy House",
+          "name_fr": "La Sainte Maison",
+          "description_en": "The small structure at the centre of the sanctuary's Marian tradition.",
+          "description_fr": "Petit édifice au centre de la tradition mariale du sanctuaire.",
+          "source_url": "https://www.santuarioloreto.va/en/storia/la-santa-casa-da-nazareth-a-loreto.html"
+        },
+        {
+          "id": "basilica",
+          "name_en": "Basilica of the Holy House",
+          "name_fr": "Basilique de la Sainte Maison",
+          "description_en": "Renaissance pilgrimage church built around the House.",
+          "description_fr": "Église de pèlerinage de la Renaissance élevée autour de la Maison.",
+          "source_url": "https://www.santuarioloreto.va/en/storia/la-basilica-e-il-palazzo-apostolico.html"
+        }
+      ],
+      "chronology": [
+        {
+          "when": "1469",
+          "when_kind": "HISTORICAL_YEAR",
+          "title_en": "Basilica construction begins",
+          "title_fr": "Début de la construction de la basilique",
+          "source_url": "https://www.santuarioloreto.va/en/storia/la-basilica-e-il-palazzo-apostolico.html"
+        },
+        {
+          "when": "1587",
+          "when_kind": "HISTORICAL_YEAR",
+          "title_en": "Completion of the monumental basilica",
+          "title_fr": "Achèvement de la basilique monumentale",
+          "source_url": "https://www.santuarioloreto.va/en/storia/la-basilica-e-il-palazzo-apostolico.html"
+        }
+      ],
+      "programmes": [
+        {
+          "id": "loreto-december",
+          "label_en": "Our Lady of Loreto",
+          "label_fr": "Notre-Dame de Lorette",
+          "month_day": "12-10",
+          "date_kind": "HISTORICAL_ANNIVERSARY_NOT_LIVE_SCHEDULE",
+          "details_en": "The December observance is a local pilgrimage context, not a live timetable.",
+          "details_fr": "La fête de décembre relève de la tradition du sanctuaire et ne constitue pas un horaire actuel.",
+          "source_url": "https://www.santuarioloreto.va/it/venuta-e-b-v-di-loreto.html"
+        }
+      ],
+      "visit": {
+        "en": "Consult the pontifical sanctuary for access, Masses and the current Venuta programme.",
+        "fr": "Consulter le sanctuaire pontifical pour les accès, messes et le programme actuel de la Venuta.",
+        "source_url": "https://www.santuarioloreto.va/it/venuta-e-b-v-di-loreto.html"
+      }
+    },
+    {
+      "place_id": "place:DE:altoetting-gnadenkapelle",
+      "publication": "PUBLISHED",
+      "language_policy": "BILINGUAL_SOURCE_FIRST",
+      "official_url": "https://www.altoetting.de/en/tourism-altoetting/pilgrimage/pilgrimage-site/",
+      "region_en": "Altötting · Bavaria · Germany",
+      "region_fr": "Altötting · Bavière · Allemagne",
+      "subtitle_en": "The Black Madonna, the Chapel of Grace and centuries of votive pilgrimage.",
+      "subtitle_fr": "La Vierge noire, la chapelle des Grâces et des siècles de pèlerinages votifs.",
+      "image_policy": "USE_APPROVED_PLACE_MEDIA_ONLY",
+      "gallery": [],
+      "sections": [
+        {
+          "id": "image",
+          "title_en": "The Black Madonna and the pilgrimage",
+          "title_fr": "La Vierge noire et le pèlerinage",
+          "paragraphs": [
+            {
+              "en": "A medieval wooden image of the Mother of God with the Child has been venerated in the Chapel of Grace since the fourteenth century. Reports of favours in the late fifteenth century helped make this Bavarian chapel a major Marian pilgrimage destination.",
+              "fr": "Une statue médiévale en bois de la Vierge à l'Enfant est vénérée dans la chapelle des Grâces depuis le XIVe siècle. Les récits de faveurs à la fin du XVe siècle contribuèrent à faire de cette chapelle bavaroise un grand lieu de pèlerinage marial.",
+              "source_url": "https://www.altoetting.de/en/tourism-altoetting/pilgrimage/pilgrimage-site/"
+            }
+          ]
+        },
+        {
+          "id": "exvotos",
+          "title_en": "Votive testimony",
+          "title_fr": "Les témoignages votifs",
+          "paragraphs": [
+            {
+              "en": "The covered walkway around the octagonal chapel preserves more than two thousand votive tablets associated with pilgrims' thanks and petitions. Such tablets are material evidence of devotional continuity; their presence does not independently verify each reported miracle.",
+              "fr": "Le passage couvert autour de la chapelle octogonale conserve plus de deux mille ex-voto liés aux actions de grâce et aux demandes des pèlerins. Ces objets témoignent matériellement de la continuité dévotionnelle ; ils ne prouvent pas indépendamment chacun des miracles rapportés.",
+              "source_url": "https://www.altoetting.de/en/tourism-altoetting/pilgrimage/pilgrimage-site/"
+            }
+          ]
+        },
+        {
+          "id": "pilgrims",
+          "title_en": "Pilgrimage and prayer",
+          "title_fr": "Pèlerinage et prière",
+          "paragraphs": [
+            {
+              "en": "The Chapel of Grace remains the devotional destination for groups who travel to Altötting. The official pilgrimage office describes the Rosary, hymn singing and Mass among the customary practices, while dates and specific arrangements remain subject to the current programme.",
+              "fr": "La chapelle des Grâces demeure le but des groupes se rendant à Altötting. L'office officiel du pèlerinage mentionne le Rosaire, les chants religieux et la messe parmi les pratiques habituelles, tandis que les dates et modalités particulières dépendent du programme actuel.",
+              "source_url": "https://www.altoetting.de/en/tourism-altoetting/pilgrimage/pilgrimage-site/"
+            }
+          ]
+        }
+      ],
+      "stops": [
+        {
+          "id": "chapel",
+          "name_en": "Gnadenkapelle — Chapel of Grace",
+          "name_fr": "Gnadenkapelle — chapelle des Grâces",
+          "description_en": "Octagonal chapel containing the revered Marian image.",
+          "description_fr": "Chapelle octogonale abritant l'image mariale vénérée.",
+          "source_url": "https://www.altoetting.de/en/tourism-altoetting/explore-and-experience/churches-in-altoetting/"
+        },
+        {
+          "id": "tablets",
+          "name_en": "Votive walkway",
+          "name_fr": "Passage des ex-voto",
+          "description_en": "Walkway with the site's large collection of votive tablets.",
+          "description_fr": "Passage présentant une importante collection d'ex-voto.",
+          "source_url": "https://www.altoetting.de/en/tourism-altoetting/pilgrimage/pilgrimage-site/"
+        }
+      ],
+      "chronology": [
+        {
+          "when": "14th century",
+          "when_kind": "HISTORICAL_PERIOD",
+          "title_en": "Marian image present at Altötting",
+          "title_fr": "Présence de la statue mariale à Altötting",
+          "source_url": "https://www.altoetting.de/en/tourism-altoetting/pilgrimage/pilgrimage-site/"
+        },
+        {
+          "when": "15th century",
+          "when_kind": "HISTORICAL_PERIOD",
+          "title_en": "Reports of favours and growth of pilgrimage",
+          "title_fr": "Récits de faveurs et développement du pèlerinage",
+          "source_url": "https://www.altoetting.de/en/tourism-altoetting/pilgrimage/pilgrimage-site/"
+        }
+      ],
+      "programmes": [],
+      "visit": {
+        "en": "Check the current pilgrim office information for chapel access, group registration and ceremonies.",
+        "fr": "Consulter l'office des pèlerinages pour l'accès à la chapelle, l'accueil des groupes et les célébrations.",
+        "source_url": "https://www.altoetting.de/en/tourism-altoetting/pilgrimage/pilgrimage-site/"
+      }
+    },
+    {
+      "place_id": "place:PL:jasna-gora",
+      "publication": "PUBLISHED",
+      "language_policy": "BILINGUAL_SOURCE_FIRST",
+      "official_url": "https://en.jasnagora.pl/",
+      "region_en": "Częstochowa · Silesia · Poland",
+      "region_fr": "Częstochowa · Silésie · Pologne",
+      "subtitle_en": "The Pauline monastery, the Black Madonna icon and Poland's great walking pilgrimages.",
+      "subtitle_fr": "Le monastère paulinien, l'icône de la Vierge noire et les grands pèlerinages à pied de Pologne.",
+      "image_policy": "USE_APPROVED_PLACE_MEDIA_ONLY",
+      "gallery": [],
+      "sections": [
+        {
+          "id": "origins",
+          "title_en": "A Pauline Marian sanctuary",
+          "title_fr": "Un sanctuaire marial paulinien",
+          "paragraphs": [
+            {
+              "en": "The Paulines arrived at Częstochowa in 1382, and the icon of the Mother of God was present by 1384 according to the monastery's chronology. The medieval chapel and its image became the devotional centre of a sanctuary with a long national and ecclesiastical history.",
+              "fr": "Les Paulins s'établirent à Częstochowa en 1382 et l'icône de la Mère de Dieu y était présente en 1384 selon la chronologie monastique. La chapelle médiévale et son image devinrent le centre dévotionnel d'un sanctuaire à la longue histoire nationale et ecclésiale.",
+              "source_url": "https://en.jasnagora.pl/z-historii-jasnej-g%C3%B3ry/"
+            }
+          ]
+        },
+        {
+          "id": "chapel",
+          "title_en": "The icon and the chapel",
+          "title_fr": "L'icône et la chapelle",
+          "paragraphs": [
+            {
+              "en": "The chapel of the revered image was constructed in its surviving Gothic form in the fifteenth century. The icon is the specific focus of prayer: it should not be confused with an ordinary view of the monastery's exterior, however impressive the wider architectural complex.",
+              "fr": "La chapelle de l'image vénérée fut construite dans sa forme gothique encore conservée au XVe siècle. L'icône est l'objet central de la prière : elle ne se confond pas avec une simple vue extérieure du monastère, malgré l'importance de l'ensemble architectural.",
+              "source_url": "https://en.jasnagora.pl/z-historii-jasnej-g%C3%B3ry/"
+            }
+          ]
+        },
+        {
+          "id": "walking",
+          "title_en": "An enduring walking-pilgrimage tradition",
+          "title_fr": "La tradition des pèlerinages à pied",
+          "paragraphs": [
+            {
+              "en": "Organised walking pilgrimages converge on Jasna Góra, particularly in August. The shrine publishes changing arrangements for celebrations and access to the image chapel; visitors should check them directly rather than relying on an annual date as a guaranteed schedule.",
+              "fr": "Des pèlerinages organisés à pied convergent vers Jasna Góra, particulièrement en août. Le sanctuaire publie des modalités variables pour les célébrations et l'accès à la chapelle de l'icône ; les visiteurs doivent les vérifier plutôt que de considérer une date annuelle comme un horaire garanti.",
+              "source_url": "https://en.jci.jasnagora.pl/aktualno%C5%9Bci/jasna-g%C3%B3ra-in-august/"
+            }
+          ]
+        }
+      ],
+      "stops": [
+        {
+          "id": "icon-chapel",
+          "name_en": "Chapel of the Miraculous Icon",
+          "name_fr": "Chapelle de l'icône vénérée",
+          "description_en": "Historic chapel housing Our Lady of Częstochowa.",
+          "description_fr": "Chapelle historique abritant Notre-Dame de Częstochowa.",
+          "source_url": "https://en.jasnagora.pl/z-historii-jasnej-g%C3%B3ry/"
+        },
+        {
+          "id": "basilica",
+          "name_en": "The monastery and basilica",
+          "name_fr": "Le monastère et la basilique",
+          "description_en": "Larger Pauline sanctuary complex around the chapel.",
+          "description_fr": "Ensemble monastique paulinien entourant la chapelle.",
+          "source_url": "https://en.jci.jasnagora.pl/aktualno%C5%9Bci/jasna-g%C3%B3ra-in-august/"
+        }
+      ],
+      "chronology": [
+        {
+          "when": "1382",
+          "when_kind": "HISTORICAL_YEAR",
+          "title_en": "Foundation of the Pauline community",
+          "title_fr": "Fondation de la communauté paulinienne",
+          "source_url": "https://en.jasnagora.pl/z-historii-jasnej-g%C3%B3ry/"
+        },
+        {
+          "when": "1384",
+          "when_kind": "HISTORICAL_YEAR",
+          "title_en": "Marian icon recorded at Jasna Góra",
+          "title_fr": "Icône mariale mentionnée à Jasna Góra",
+          "source_url": "https://en.jasnagora.pl/z-historii-jasnej-g%C3%B3ry/"
+        }
+      ],
+      "programmes": [
+        {
+          "id": "jasna-feast",
+          "label_en": "Our Lady of Częstochowa",
+          "label_fr": "Notre-Dame de Częstochowa",
+          "month_day": "08-26",
+          "date_kind": "HISTORICAL_ANNIVERSARY_NOT_LIVE_SCHEDULE",
+          "details_en": "The 26 August pilgrimage observance must be checked against the current year's programme.",
+          "details_fr": "Le pèlerinage du 26 août doit être vérifié dans le programme de l'année.",
+          "source_url": "https://news.jasnagora.pl/aktualno%C5%9Bci-2026/uroczysto%C5%9B%C4%87-matki-bo%C5%BCej-cz%C4%99stochowskiej-program/"
+        }
+      ],
+      "visit": {
+        "en": "In peak pilgrimage periods, Mass locations and access can change. Consult the official sanctuary daily notices.",
+        "fr": "En période de forte affluence, les lieux des messes et l'accès peuvent varier. Consulter les annonces quotidiennes du sanctuaire.",
+        "source_url": "https://en.jci.jasnagora.pl/aktualno%C5%9Bci/jasna-g%C3%B3ra-in-august/"
+      }
+    },
+    {
+      "place_id": "place:IT:pompei-rosary-shrine",
+      "publication": "PUBLISHED",
+      "language_policy": "BILINGUAL_SOURCE_FIRST",
+      "official_url": "https://www.santuario.it/",
+      "region_en": "Pompei · Campania · Italy",
+      "region_fr": "Pompéi · Campanie · Italie",
+      "subtitle_en": "Saint Bartolo Longo, the Rosary shrine and the traditional Supplica.",
+      "subtitle_fr": "Saint Bartolo Longo, le sanctuaire du Rosaire et la Supplica traditionnelle.",
+      "image_policy": "USE_APPROVED_PLACE_MEDIA_ONLY",
+      "gallery": [],
+      "sections": [
+        {
+          "id": "founding",
+          "title_en": "Bartolo Longo and the Rosary",
+          "title_fr": "Bartolo Longo et le Rosaire",
+          "paragraphs": [
+            {
+              "en": "The shrine developed through the apostolate of Bartolo Longo, whose work joined the prayer of the Rosary to catechesis and concrete works of charity. The sanctuary recalls his initiatives for disadvantaged children as part of its origins, alongside veneration of Our Lady of the Rosary.",
+              "fr": "Le sanctuaire s'est développé grâce à l'apostolat de Bartolo Longo, qui associa la prière du Rosaire à la catéchèse et aux œuvres concrètes de charité. Le sanctuaire rappelle ses initiatives en faveur des enfants défavorisés parmi ses origines, parallèlement à la vénération de Notre-Dame du Rosaire.",
+              "source_url": "https://www.santuario.it/home/san-bartolo-longo.html"
+            }
+          ]
+        },
+        {
+          "id": "basilica",
+          "title_en": "The basilica and the Marian image",
+          "title_fr": "La basilique et l'image mariale",
+          "paragraphs": [
+            {
+              "en": "The large basilica gives architectural form to the Rosary devotion that shaped modern Pompei. Its dome and decoration recount Marian and Dominican themes, while the sanctuary itself remains distinct from the ancient Roman archaeological site nearby.",
+              "fr": "La grande basilique donne une expression architecturale à la dévotion du Rosaire qui façonna la Pompéi moderne. Sa coupole et son décor évoquent des thèmes marials et dominicains ; le sanctuaire demeure distinct du site archéologique romain voisin.",
+              "source_url": "https://www.santuario.it/santuario/storia-e-arte.html"
+            }
+          ]
+        },
+        {
+          "id": "supplica",
+          "title_en": "The Supplica",
+          "title_fr": "La Supplica",
+          "paragraphs": [
+            {
+              "en": "Bartolo Longo composed the Supplica to Our Lady of the Rosary in 1883. The sanctuary solemnly recites it on 8 May and the first Sunday of October, attracting pilgrims to common prayer; these dates are shrine observances and should not be confused with automatically generated 1962 liturgical feasts.",
+              "fr": "Bartolo Longo composa la Supplica à Notre-Dame du Rosaire en 1883. Le sanctuaire la récite solennellement le 8 mai et le premier dimanche d'octobre, rassemblant les pèlerins dans la prière commune ; ces dates sont des observances du sanctuaire et ne doivent pas être confondues avec des fêtes automatiquement tirées du calendrier de 1962.",
+              "source_url": "https://www.santuario.it/?catid=21&id=37&view=article"
+            }
+          ]
+        }
+      ],
+      "stops": [
+        {
+          "id": "basilica",
+          "name_en": "Pontifical Shrine Basilica",
+          "name_fr": "Basilique du sanctuaire pontifical",
+          "description_en": "Principal pilgrimage church dedicated to Our Lady of the Rosary.",
+          "description_fr": "Église principale du pèlerinage dédiée à Notre-Dame du Rosaire.",
+          "source_url": "https://www.santuario.it/santuario/storia-e-arte.html"
+        },
+        {
+          "id": "supplica",
+          "name_en": "Shrine forecourt",
+          "name_fr": "Parvis du sanctuaire",
+          "description_en": "Common gathering place for the solemn public Supplica.",
+          "description_fr": "Lieu de rassemblement pour la Supplica solennelle.",
+          "source_url": "https://www.santuario.it/?catid=21&id=37&view=article"
+        }
+      ],
+      "chronology": [
+        {
+          "when": "1883",
+          "when_kind": "HISTORICAL_YEAR",
+          "title_en": "Bartolo Longo composes the Supplica",
+          "title_fr": "Bartolo Longo compose la Supplica",
+          "source_url": "https://www.santuario.it/?catid=21&id=37&view=article"
+        }
+      ],
+      "programmes": [
+        {
+          "id": "pom-may",
+          "label_en": "May Supplica",
+          "label_fr": "Supplica de mai",
+          "month_day": "05-08",
+          "date_kind": "HISTORICAL_ANNIVERSARY_NOT_LIVE_SCHEDULE",
+          "details_en": "Annual Rosary devotion; current service times require verification.",
+          "details_fr": "Dévotion annuelle du Rosaire ; vérifier les horaires actuels.",
+          "source_url": "https://www.santuario.it/?catid=21&id=37&view=article"
+        }
+      ],
+      "visit": {
+        "en": "Check the official shrine for the current Rosary, Supplica and liturgical schedule.",
+        "fr": "Consulter le sanctuaire pour le Rosaire, la Supplica et le calendrier liturgique actuels.",
+        "source_url": "https://www.santuario.it/?catid=21&id=37&view=article"
+      }
+    },
+    {
+      "place_id": "place:MX:basilica-guadalupe-mexico-city",
+      "publication": "PUBLISHED",
+      "language_policy": "BILINGUAL_SOURCE_FIRST",
+      "official_url": "https://virgendeguadalupe.org.mx/",
+      "region_en": "Tepeyac · Mexico City · Mexico",
+      "region_fr": "Tepeyac · Mexico · Mexique",
+      "subtitle_en": "The shrine of the Guadalupan image, Juan Diego and the historic Tepeyac sanctuary.",
+      "subtitle_fr": "Le sanctuaire de l'image guadalupéenne, Juan Diego et l'ensemble historique du Tepeyac.",
+      "image_policy": "USE_APPROVED_PLACE_MEDIA_ONLY",
+      "gallery": [],
+      "sections": [
+        {
+          "id": "tradition",
+          "title_en": "The Guadalupan devotional tradition",
+          "title_fr": "La tradition de Notre-Dame de Guadalupe",
+          "paragraphs": [
+            {
+              "en": "The basilica at Tepeyac is centred on the venerated image of Our Lady of Guadalupe, associated in Catholic tradition with Saint Juan Diego. The shrine preserves this devotion in a complex of churches and chapels; the account of the apparition must be distinguished from the architectural history of those buildings.",
+              "fr": "La basilique du Tepeyac est centrée sur l'image vénérée de Notre-Dame de Guadalupe, associée dans la tradition catholique à saint Juan Diego. Le sanctuaire conserve cette dévotion au sein d'un ensemble d'églises et de chapelles ; le récit de l'apparition doit être distingué de l'histoire architecturale des édifices.",
+              "source_url": "https://virgendeguadalupe.org.mx/horarios/"
+            }
+          ]
+        },
+        {
+          "id": "buildings",
+          "title_en": "The old and new basilicas",
+          "title_fr": "L'ancienne et la nouvelle basiliques",
+          "paragraphs": [
+            {
+              "en": "The new basilica was inaugurated in 1976 beside the older sanctuary, which remains a distinct historic building. The image is now displayed in the newer church. Other Tepeyac chapels belong to the larger complex, but their separate geography should not be merged into one invented room or route.",
+              "fr": "La nouvelle basilique fut inaugurée en 1976 auprès de l'ancien sanctuaire, qui demeure un édifice historique distinct. L'image est aujourd'hui présentée dans la nouvelle église. D'autres chapelles du Tepeyac font partie du vaste ensemble, mais il ne faut pas fusionner leurs positions en une salle ou un parcours imaginaire.",
+              "source_url": "https://mexicocity.cdmx.gob.mx/venues/new-basilica-santa-maria-de-guadalupe/?lang=en"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "Prayer and the December pilgrimage",
+          "title_fr": "La prière et le pèlerinage de décembre",
+          "paragraphs": [
+            {
+              "en": "Devotees gather around the sacred image for prayer, Mass and the principal Guadalupan celebrations in December. The basilica publishes visitor guidance and actual service schedules separately; the date of the feast is not itself a guarantee of any particular opening or liturgical hour.",
+              "fr": "Les fidèles se rassemblent autour de l'image sacrée pour la prière, la messe et les grandes célébrations guadalupéennes en décembre. La basilique publie séparément ses conseils aux visiteurs et ses horaires ; la date de la fête ne garantit à elle seule aucune ouverture ni aucun horaire liturgique.",
+              "source_url": "https://virgendeguadalupe.org.mx/horarios/"
+            }
+          ]
+        }
+      ],
+      "stops": [
+        {
+          "id": "new-basilica",
+          "name_en": "New Basilica of Guadalupe",
+          "name_fr": "Nouvelle basilique de Guadalupe",
+          "description_en": "Church opened in 1976, now housing the venerated image.",
+          "description_fr": "Église ouverte en 1976, abritant désormais l'image vénérée.",
+          "source_url": "https://virgendeguadalupe.org.mx/horarios/"
+        },
+        {
+          "id": "old-basilica",
+          "name_en": "Historic Basilica — Cristo Rey",
+          "name_fr": "Ancienne basilique — Cristo Rey",
+          "description_en": "Older pilgrimage church, maintained as a distinct building.",
+          "description_fr": "Église historique conservée comme un édifice distinct.",
+          "source_url": "https://mexicocity.cdmx.gob.mx/venues/new-basilica-santa-maria-de-guadalupe/?lang=en"
+        }
+      ],
+      "chronology": [
+        {
+          "when": "1976",
+          "when_kind": "HISTORICAL_YEAR",
+          "title_en": "New Basilica inaugurated",
+          "title_fr": "Inauguration de la nouvelle basilique",
+          "source_url": "https://www.inah.gob.mx/foto-del-dia/la-villa-de-guadalupe-arquitectura-y-devocion-a-traves-del-tiempo"
+        }
+      ],
+      "programmes": [
+        {
+          "id": "guad-feast",
+          "label_en": "Our Lady of Guadalupe",
+          "label_fr": "Notre-Dame de Guadalupe",
+          "month_day": "12-12",
+          "date_kind": "HISTORICAL_ANNIVERSARY_NOT_LIVE_SCHEDULE",
+          "details_en": "Principal patronal observance; verify the year-specific programme.",
+          "details_fr": "Grande célébration patronale ; vérifier le programme de l'année.",
+          "source_url": "https://virgendeguadalupe.org.mx/sacristia/"
+        }
+      ],
+      "visit": {
+        "en": "Consult the basilica for chapel access, liturgical times and December crowd arrangements.",
+        "fr": "Consulter la basilique pour l'accès aux chapelles, les horaires des offices et les modalités de décembre.",
+        "source_url": "https://virgendeguadalupe.org.mx/horarios/"
+      }
+    },
+    {
+      "place_id": "place:BR:aparecida-national-shrine",
+      "publication": "PUBLISHED",
+      "language_policy": "BILINGUAL_SOURCE_FIRST",
+      "official_url": "https://www.a12.com/santuario/",
+      "region_en": "Aparecida · São Paulo · Brazil",
+      "region_fr": "Aparecida · São Paulo · Brésil",
+      "subtitle_en": "The image recovered from the Paraíba River and Brazil's national Marian sanctuary.",
+      "subtitle_fr": "L'image retrouvée dans le Paraíba et le sanctuaire marial national du Brésil.",
+      "image_policy": "USE_APPROVED_PLACE_MEDIA_ONLY",
+      "gallery": [],
+      "sections": [
+        {
+          "id": "image",
+          "title_en": "The account of 1717",
+          "title_fr": "Le récit de 1717",
+          "paragraphs": [
+            {
+              "en": "The sanctuary's history relates that fishermen recovered a small broken Marian image from the Paraíba River in 1717. Devotion developed around the statue and the fishermen's testimony; miraculous elements should be presented as the shrine's traditional account, not independently adjudicated events.",
+              "fr": "Selon l'histoire présentée par le sanctuaire, des pêcheurs retrouvèrent une petite statue mariale brisée dans le fleuve Paraíba en 1717. La dévotion grandit autour de l'image et du témoignage des pêcheurs ; les éléments miraculeux doivent être présentés comme le récit traditionnel du sanctuaire et non comme des faits indépendamment établis.",
+              "source_url": "https://www.a12.com/santuario/historia-de-nossa-senhora-aparecida-1717"
+            }
+          ]
+        },
+        {
+          "id": "national",
+          "title_en": "A national basilica for pilgrims",
+          "title_fr": "Une basilique nationale pour les pèlerins",
+          "paragraphs": [
+            {
+              "en": "The modern basilica was developed to welcome the growing pilgrimage to Our Lady Aparecida. John Paul II visited the sanctuary in 1980 and granted it the title of minor basilica. This larger building is not the same physical place as the river site where the image was found.",
+              "fr": "La basilique moderne fut développée pour accueillir le pèlerinage croissant à Notre-Dame d'Aparecida. Jean-Paul II visita le sanctuaire en 1980 et lui accorda le titre de basilique mineure. Ce vaste édifice n'est pas le même lieu physique que le site fluvial de la découverte de l'image.",
+              "source_url": "https://www.a12.com/santuario/historia-de-nossa-senhora-aparecida-1900"
+            }
+          ]
+        },
+        {
+          "id": "pilgrimage",
+          "title_en": "The river and the pilgrimage",
+          "title_fr": "Le fleuve et le pèlerinage",
+          "paragraphs": [
+            {
+              "en": "The sanctuary also maintains Porto Itaguaçu as a distinct destination recalling the finding of the image, alongside the basilica complex. Pilgrims come for Marian prayer and the national patronal celebrations; the shrine publishes the October novena programme for the year concerned.",
+              "fr": "Le sanctuaire entretient également Porto Itaguaçu comme lieu distinct rappelant la découverte de l'image, en plus de la basilique. Les pèlerins viennent pour la prière mariale et les célébrations de la patronne du pays ; le sanctuaire publie le programme de la neuvaine d'octobre pour chaque année.",
+              "source_url": "https://www.a12.com/santuario/noticias/santuario-de-aparecida-oficialmente-reabre-o-porto-itaguacu"
+            }
+          ]
+        }
+      ],
+      "stops": [
+        {
+          "id": "basilica",
+          "name_en": "National Shrine Basilica",
+          "name_fr": "Basilique du sanctuaire national",
+          "description_en": "Main church for today's national Marian pilgrimage.",
+          "description_fr": "Église principale du pèlerinage marial national actuel.",
+          "source_url": "https://www.a12.com/santuario/historia-de-nossa-senhora-aparecida-1900"
+        },
+        {
+          "id": "porto",
+          "name_en": "Porto Itaguaçu",
+          "name_fr": "Porto Itaguaçu",
+          "description_en": "Separate river site associated with the finding of the statue.",
+          "description_fr": "Lieu fluvial distinct associé à la découverte de la statue.",
+          "source_url": "https://www.a12.com/santuario/noticias/santuario-de-aparecida-oficialmente-reabre-o-porto-itaguacu"
+        }
+      ],
+      "chronology": [
+        {
+          "when": "1717",
+          "when_kind": "HISTORICAL_YEAR",
+          "title_en": "Finding of the image, according to the shrine tradition",
+          "title_fr": "Découverte de l'image selon la tradition du sanctuaire",
+          "source_url": "https://www.a12.com/santuario/historia-de-nossa-senhora-aparecida-1717"
+        },
+        {
+          "when": "1980",
+          "when_kind": "HISTORICAL_YEAR",
+          "title_en": "John Paul II visits and grants minor-basilica status",
+          "title_fr": "Visite de Jean-Paul II et titre de basilique mineure",
+          "source_url": "https://www.a12.com/santuario/historia-de-nossa-senhora-aparecida-1900"
+        }
+      ],
+      "programmes": [
+        {
+          "id": "apa-oct",
+          "label_en": "Our Lady Aparecida",
+          "label_fr": "Notre-Dame d'Aparecida",
+          "month_day": "10-12",
+          "date_kind": "HISTORICAL_ANNIVERSARY_NOT_LIVE_SCHEDULE",
+          "details_en": "National patronal date; verify the current novena and procession schedule.",
+          "details_fr": "Date patronale nationale ; vérifier les horaires de la neuvaine et de la procession.",
+          "source_url": "https://www.a12.com/santuario/festa-da-padroeira"
+        }
+      ],
+      "visit": {
+        "en": "Consult the official shrine for the pilgrimage programme. The basilica and Porto Itaguaçu require distinct visits.",
+        "fr": "Consulter le programme officiel du sanctuaire. La basilique et Porto Itaguaçu se visitent séparément.",
+        "source_url": "https://www.a12.com/santuario/festa-da-padroeira"
+      }
+    }
+  ]
+}
