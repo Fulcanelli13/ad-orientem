@@ -1,0 +1,385 @@
+{
+  "schema": "AO_SACRED_ART_HERO_IMPLEMENTATION_STATIC_AUDIT_20261021_V1",
+  "created": "2026-10-21",
+  "branch": "platform/885-sacred-art-candidates",
+  "authority": "User approvals on 2026-10-19 outrank Oct12 generated research app crosswalk",
+  "scope": "Static source comparison of main and draft Sacred Art research branch, not a browser/device or network image loading test",
+  "sourceRefs": {
+    "userApprovalLedger": "data/calendar/sacred-art-recovered-date-specific-approvals-20261019.v1.json",
+    "researchCalendar": "src/calendar/sacred-art-2026-curation.js",
+    "researchBridge": "src/calendar/sacred-art-liturgical-bridge.js",
+    "researchReleasePredicate": "src/calendar/sacred-art-selection.js",
+    "mainHome": "src/home/presentation.js",
+    "mainLegacyOverlays": "index.html (AO_PHASE1_ART and v42.7–v42.10 overlay chains)",
+    "oldAcquisitionQueue": "data/calendar/sacred-art-selected-originals-acquisition-queue-20261013.v1.json",
+    "oldGallery": "data/calendar/sacred-art-review-uploads/20261016-unified-review-embedded-data.v1.json"
+  },
+  "branchSafety": {
+    "comparison": "main...platform/885-sacred-art-candidates",
+    "githubResult": "diverged",
+    "ahead": 906,
+    "behind": 1583,
+    "warning": "NEVER_MERGE_OR_CHERRY_PICK_OLD_HOME_PRESENTATION_WHOLESALE; integrate only a scoped feature onto current main with regression checks"
+  },
+  "counts": {
+    "userApprovedDatesReviewed": 10,
+    "matchingOldGenerated2026Crosswalk": 1,
+    "noSelectedSubjectInOldGeneratedCrosswalk": 6,
+    "differentArtworkInOldGeneratedCrosswalk": 3,
+    "mainExplicitDifferenceForHolyThursday": 1,
+    "shippedLocalFullPaintingMastersUnderAssetsSacredArtMain": 0,
+    "shippedLocalFullPaintingMastersUnderAssetsSacredArtResearch": 0,
+    "verifiedReleasedExactApprovedImages": 0
+  },
+  "criticalBlockers": [
+    {
+      "severity": "P0",
+      "id": "STALE_GENERATED_ASSIGNMENTS",
+      "description": "9/10 2026 date-specific approved editorial art choices are absent or different in generated Oct12 research crosswalk",
+      "fix": "Add a strongly sourced immutable Oct19+ date-specific approval override after DayResolver principal validation; do not rewrite prior user scores or ratings"
+    },
+    {
+      "severity": "P0",
+      "id": "LEGACY_RUNTIME_MISMATCH",
+      "description": "Current main Home renders using AO_PHASE1_ART.homeMarkup(), while research branch uses a separate selectReleasedHomeArtwork with fallback to AO_PHASE1_ART; no evidence Oct19 date choices are in current Home engine",
+      "fix": "Integrate only the new verified art mapping into current main's today hero island; avoid promoting stale research Home module over 1583-behind main"
+    },
+    {
+      "severity": "P0",
+      "id": "HARD_CODED_CC0_US_MUSEUM_SOURCE_ALLOWLIST",
+      "description": "Research eligibleSacredArtwork accepts CC0 works only from Met/AIC/NGA/Cleveland; would exclude approved Louvre/Prado/Commons and church collection artwork regardless of appropriate independently verified licence",
+      "fix": "Separate exact object identity and exact photograph licence from museum name; allow compatible verified rights and provenance per selected original, never relax without evidence"
+    },
+    {
+      "severity": "P0",
+      "id": "INAPPROPRIATE_MINIMUM_2500_PIXELS",
+      "description": "Research release gate hard-requires image longest side >=2500px, contradicting approved mobile-first visual evaluation standard",
+      "fix": "Replace arbitrary hard print-size threshold with empirical phone readability/whole-surface and minimum deployable quality checks"
+    },
+    {
+      "severity": "P0",
+      "id": "NO_LOCAL_PRODUCTION_MASTER_PATHS",
+      "description": "Neither main nor research Git tree contains files at required assets/sacred-art/*. Available remote Commons URLs/research workflow zip artifacts are NOT packaged production assets",
+      "fix": "Reconcile source byte proofs from existing Github Actions artifacts, licence and mobile acceptance, then add production art files on current main through a scoped PR"
+    },
+    {
+      "severity": "P1",
+      "id": "EXACT_SOURCE_PHOTOS_NOT_CERTIFIED",
+      "description": "Restout and Champaigne have Louvre original pages but source image masters missing in Oct13 selected queue; Morlete has Commons SHA file but no app publication approval",
+      "fix": "Use existing object page and SHA image leads before requesting new art; rights/photo QA per selected exact image"
+    }
+  ],
+  "rows": [
+    {
+      "date2026": "2026-03-29",
+      "feast": "Palm Sunday",
+      "userApproved": {
+        "artist": "Anthony van Dyck",
+        "painting": "The Entry of Christ into Jerusalem",
+        "status": "EXPLICIT_USER_DATE_SELECTION_PROTECTED",
+        "linkedAuthority": "data/calendar/sacred-art-recovered-date-specific-approvals-20261019.v1.json"
+      },
+      "research2026Crosswalk": {
+        "file": "src/calendar/sacred-art-2026-curation.js",
+        "comparison": "NO_SELECTED_SUBJECT",
+        "oldSelection": null,
+        "sourceCommitEra": "2026-10-12_GENERATED_PRE_LATER_APPROVAL"
+      },
+      "currentMainLegacyRuntime": {
+        "source": "src/home/presentation.js and index.html",
+        "status": "NO_ART_ASSIGNED_IN_RESEARCH_BRIDGE",
+        "validationScope": "STATIC_SOURCE_INSPECTION_NOT_BROWSER_EXECUTION"
+      },
+      "photoEvidence": {
+        "state": "EXACT_SELECTED_REPRODUCTION_NOT_VERIFIED_IN_THIS_AUDIT"
+      },
+      "shippedFullMasterInAssetsSacredArt": false,
+      "shippedMasterSearchScope": "Git tree paths on main and research branch; does not rule out runtime external URLs or CI artifact archives",
+      "licensingReleased": false,
+      "mobileUserFacingVerified": false,
+      "homeVisibleOnDateVerified": false,
+      "releaseVerdict": "NOT_CERTIFIED_NO_USER_RESELECTION"
+    },
+    {
+      "date2026": "2026-04-02",
+      "feast": "Holy Thursday",
+      "userApproved": {
+        "artist": "Ugolino da Siena",
+        "painting": "Last Supper",
+        "status": "EXPLICIT_USER_DATE_SELECTION_PROTECTED",
+        "linkedAuthority": "data/calendar/sacred-art-recovered-date-specific-approvals-20261019.v1.json"
+      },
+      "research2026Crosswalk": {
+        "file": "src/calendar/sacred-art-2026-curation.js",
+        "comparison": "DIFFERENT_PAINTING",
+        "oldSelection": "Philippe de Champaigne — La Petite Cène",
+        "sourceCommitEra": "2026-10-12_GENERATED_PRE_LATER_APPROVAL"
+      },
+      "currentMainLegacyRuntime": {
+        "source": "src/home/presentation.js and index.html",
+        "status": "MAIN_LEGACY_EXPLICIT_TINTORETTO_FOOTWASHING",
+        "validationScope": "STATIC_SOURCE_INSPECTION_NOT_BROWSER_EXECUTION"
+      },
+      "photoEvidence": {
+        "state": "EXACT_SELECTED_REPRODUCTION_NOT_VERIFIED_IN_THIS_AUDIT"
+      },
+      "shippedFullMasterInAssetsSacredArt": false,
+      "shippedMasterSearchScope": "Git tree paths on main and research branch; does not rule out runtime external URLs or CI artifact archives",
+      "licensingReleased": false,
+      "mobileUserFacingVerified": false,
+      "homeVisibleOnDateVerified": false,
+      "releaseVerdict": "NOT_CERTIFIED_NO_USER_RESELECTION"
+    },
+    {
+      "date2026": "2026-05-23",
+      "feast": "Pentecost Vigil",
+      "userApproved": {
+        "artist": "Juan Bautista Maíno",
+        "painting": "The Pentecost",
+        "status": "EXPLICIT_USER_DATE_SELECTION_PROTECTED",
+        "linkedAuthority": "data/calendar/sacred-art-recovered-date-specific-approvals-20261019.v1.json"
+      },
+      "research2026Crosswalk": {
+        "file": "src/calendar/sacred-art-2026-curation.js",
+        "comparison": "DIFFERENT_PAINTING",
+        "oldSelection": "Artus Wolffort — Ascension (Antwerp Rosary cycle)",
+        "sourceCommitEra": "2026-10-12_GENERATED_PRE_LATER_APPROVAL"
+      },
+      "currentMainLegacyRuntime": {
+        "source": "src/home/presentation.js and index.html",
+        "status": "UNKNOWN_MAIN_LEGACY_ASSIGNMENT",
+        "validationScope": "STATIC_SOURCE_INSPECTION_NOT_BROWSER_EXECUTION"
+      },
+      "photoEvidence": {
+        "state": "EXACT_SELECTED_REPRODUCTION_NOT_VERIFIED_IN_THIS_AUDIT"
+      },
+      "shippedFullMasterInAssetsSacredArt": false,
+      "shippedMasterSearchScope": "Git tree paths on main and research branch; does not rule out runtime external URLs or CI artifact archives",
+      "licensingReleased": false,
+      "mobileUserFacingVerified": false,
+      "homeVisibleOnDateVerified": false,
+      "releaseVerdict": "NOT_CERTIFIED_NO_USER_RESELECTION"
+    },
+    {
+      "date2026": "2026-05-24",
+      "feast": "Pentecost Sunday",
+      "userApproved": {
+        "artist": "Jean II Restout",
+        "painting": "Pentecost",
+        "status": "EXPLICIT_USER_DATE_SELECTION_PROTECTED",
+        "linkedAuthority": "data/calendar/sacred-art-recovered-date-specific-approvals-20261019.v1.json"
+      },
+      "research2026Crosswalk": {
+        "file": "src/calendar/sacred-art-2026-curation.js",
+        "comparison": "EDITORIAL_MATCH",
+        "oldSelection": "Jean Restout — Pentecost",
+        "sourceCommitEra": "2026-10-12_GENERATED_PRE_LATER_APPROVAL"
+      },
+      "currentMainLegacyRuntime": {
+        "source": "src/home/presentation.js and index.html",
+        "status": "RELEASE_UNVERIFIED",
+        "validationScope": "STATIC_SOURCE_INSPECTION_NOT_BROWSER_EXECUTION"
+      },
+      "photoEvidence": {
+        "sourcePage": "https://collections.louvre.fr/en/ark:/53355/cl010062538",
+        "state": "OFFICIAL_OBJECT_PAGE_KNOWN_PRIOR_ACQUISITION_QUEUE_MASTER_MISSING_20261013"
+      },
+      "shippedFullMasterInAssetsSacredArt": false,
+      "shippedMasterSearchScope": "Git tree paths on main and research branch; does not rule out runtime external URLs or CI artifact archives",
+      "licensingReleased": false,
+      "mobileUserFacingVerified": false,
+      "homeVisibleOnDateVerified": false,
+      "releaseVerdict": "NOT_CERTIFIED_NO_USER_RESELECTION"
+    },
+    {
+      "date2026": "2026-05-27",
+      "feast": "Pentecost Ember Wednesday",
+      "userApproved": {
+        "artist": "Philippe de Champaigne",
+        "painting": "La Petite Cène",
+        "status": "EXPLICIT_USER_DATE_SELECTION_PROTECTED",
+        "linkedAuthority": "data/calendar/sacred-art-recovered-date-specific-approvals-20261019.v1.json"
+      },
+      "research2026Crosswalk": {
+        "file": "src/calendar/sacred-art-2026-curation.js",
+        "comparison": "DIFFERENT_PAINTING",
+        "oldSelection": "Jean Restout — Pentecost",
+        "sourceCommitEra": "2026-10-12_GENERATED_PRE_LATER_APPROVAL"
+      },
+      "currentMainLegacyRuntime": {
+        "source": "src/home/presentation.js and index.html",
+        "status": "UNKNOWN_MAIN_LEGACY_ASSIGNMENT",
+        "validationScope": "STATIC_SOURCE_INSPECTION_NOT_BROWSER_EXECUTION"
+      },
+      "photoEvidence": {
+        "sourcePage": "https://collections.louvre.fr/en/ark:/53355/cl010062076",
+        "state": "OFFICIAL_OBJECT_PAGE_KNOWN_PRIOR_ACQUISITION_QUEUE_MASTER_MISSING_20261013"
+      },
+      "shippedFullMasterInAssetsSacredArt": false,
+      "shippedMasterSearchScope": "Git tree paths on main and research branch; does not rule out runtime external URLs or CI artifact archives",
+      "licensingReleased": false,
+      "mobileUserFacingVerified": false,
+      "homeVisibleOnDateVerified": false,
+      "releaseVerdict": "NOT_CERTIFIED_NO_USER_RESELECTION"
+    },
+    {
+      "date2026": "2026-06-12",
+      "feast": "Sacred Heart",
+      "userApproved": {
+        "artist": "Juan Patricio Morlete Ruiz",
+        "painting": "The Heart of Jesus",
+        "status": "EXPLICIT_USER_DATE_SELECTION_PROTECTED",
+        "linkedAuthority": "data/calendar/sacred-art-recovered-date-specific-approvals-20261019.v1.json"
+      },
+      "research2026Crosswalk": {
+        "file": "src/calendar/sacred-art-2026-curation.js",
+        "comparison": "NO_SELECTED_SUBJECT",
+        "oldSelection": null,
+        "sourceCommitEra": "2026-10-12_GENERATED_PRE_LATER_APPROVAL"
+      },
+      "currentMainLegacyRuntime": {
+        "source": "src/home/presentation.js and index.html",
+        "status": "UNKNOWN_MAIN_LEGACY_ASSIGNMENT",
+        "validationScope": "STATIC_SOURCE_INSPECTION_NOT_BROWSER_EXECUTION"
+      },
+      "photoEvidence": {
+        "sourcePage": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg",
+        "state": "EXACT_COMMONS_SOURCE_WITH_PRIOR_SHA_AND_2345x3045_PHOTO_METADATA_RESEARCH_ONLY"
+      },
+      "shippedFullMasterInAssetsSacredArt": false,
+      "shippedMasterSearchScope": "Git tree paths on main and research branch; does not rule out runtime external URLs or CI artifact archives",
+      "licensingReleased": false,
+      "mobileUserFacingVerified": false,
+      "homeVisibleOnDateVerified": false,
+      "releaseVerdict": "NOT_CERTIFIED_NO_USER_RESELECTION"
+    },
+    {
+      "date2026": "2026-10-25",
+      "feast": "Christ the King",
+      "userApproved": {
+        "artist": "Ambrosius Benson",
+        "painting": "Salvator Mundi",
+        "status": "EXPLICIT_USER_DATE_SELECTION_PROTECTED",
+        "linkedAuthority": "data/calendar/sacred-art-recovered-date-specific-approvals-20261019.v1.json"
+      },
+      "research2026Crosswalk": {
+        "file": "src/calendar/sacred-art-2026-curation.js",
+        "comparison": "NO_SELECTED_SUBJECT",
+        "oldSelection": null,
+        "sourceCommitEra": "2026-10-12_GENERATED_PRE_LATER_APPROVAL"
+      },
+      "currentMainLegacyRuntime": {
+        "source": "src/home/presentation.js and index.html",
+        "status": "UNKNOWN_MAIN_LEGACY_ASSIGNMENT",
+        "validationScope": "STATIC_SOURCE_INSPECTION_NOT_BROWSER_EXECUTION"
+      },
+      "photoEvidence": {
+        "state": "EXACT_SELECTED_REPRODUCTION_NOT_VERIFIED_IN_THIS_AUDIT"
+      },
+      "shippedFullMasterInAssetsSacredArt": false,
+      "shippedMasterSearchScope": "Git tree paths on main and research branch; does not rule out runtime external URLs or CI artifact archives",
+      "licensingReleased": false,
+      "mobileUserFacingVerified": false,
+      "homeVisibleOnDateVerified": false,
+      "releaseVerdict": "NOT_CERTIFIED_NO_USER_RESELECTION"
+    },
+    {
+      "date2026": "2026-11-01",
+      "feast": "All Saints",
+      "userApproved": {
+        "artist": "Carlo Saraceni",
+        "painting": "Paradise",
+        "status": "EXPLICIT_USER_DATE_SELECTION_PROTECTED",
+        "linkedAuthority": "data/calendar/sacred-art-recovered-date-specific-approvals-20261019.v1.json"
+      },
+      "research2026Crosswalk": {
+        "file": "src/calendar/sacred-art-2026-curation.js",
+        "comparison": "NO_SELECTED_SUBJECT",
+        "oldSelection": null,
+        "sourceCommitEra": "2026-10-12_GENERATED_PRE_LATER_APPROVAL"
+      },
+      "currentMainLegacyRuntime": {
+        "source": "src/home/presentation.js and index.html",
+        "status": "UNKNOWN_MAIN_LEGACY_ASSIGNMENT",
+        "validationScope": "STATIC_SOURCE_INSPECTION_NOT_BROWSER_EXECUTION"
+      },
+      "photoEvidence": {
+        "state": "EXACT_SELECTED_REPRODUCTION_NOT_VERIFIED_IN_THIS_AUDIT"
+      },
+      "shippedFullMasterInAssetsSacredArt": false,
+      "shippedMasterSearchScope": "Git tree paths on main and research branch; does not rule out runtime external URLs or CI artifact archives",
+      "licensingReleased": false,
+      "mobileUserFacingVerified": false,
+      "homeVisibleOnDateVerified": false,
+      "releaseVerdict": "NOT_CERTIFIED_NO_USER_RESELECTION"
+    },
+    {
+      "date2026": "2026-11-02",
+      "feast": "All Souls",
+      "userApproved": {
+        "artist": "Ludovico Carracci",
+        "painting": "An Angel Frees the Souls of Purgatory",
+        "status": "EXPLICIT_USER_DATE_SELECTION_PROTECTED",
+        "linkedAuthority": "data/calendar/sacred-art-recovered-date-specific-approvals-20261019.v1.json"
+      },
+      "research2026Crosswalk": {
+        "file": "src/calendar/sacred-art-2026-curation.js",
+        "comparison": "NO_SELECTED_SUBJECT",
+        "oldSelection": null,
+        "sourceCommitEra": "2026-10-12_GENERATED_PRE_LATER_APPROVAL"
+      },
+      "currentMainLegacyRuntime": {
+        "source": "src/home/presentation.js and index.html",
+        "status": "MAIN_LEGACY_ALIASES_ALL_SOULS_AO067_IDENTITY_NOT_CHECKED",
+        "validationScope": "STATIC_SOURCE_INSPECTION_NOT_BROWSER_EXECUTION"
+      },
+      "photoEvidence": {
+        "state": "EXACT_SELECTED_REPRODUCTION_NOT_VERIFIED_IN_THIS_AUDIT"
+      },
+      "shippedFullMasterInAssetsSacredArt": false,
+      "shippedMasterSearchScope": "Git tree paths on main and research branch; does not rule out runtime external URLs or CI artifact archives",
+      "licensingReleased": false,
+      "mobileUserFacingVerified": false,
+      "homeVisibleOnDateVerified": false,
+      "releaseVerdict": "NOT_CERTIFIED_NO_USER_RESELECTION"
+    },
+    {
+      "date2026": "2026-11-29",
+      "feast": "Advent I",
+      "userApproved": {
+        "artist": "John Martin",
+        "painting": "The Great Day of His Wrath",
+        "status": "EXPLICIT_USER_DATE_SELECTION_PROTECTED",
+        "linkedAuthority": "data/calendar/sacred-art-recovered-date-specific-approvals-20261019.v1.json"
+      },
+      "research2026Crosswalk": {
+        "file": "src/calendar/sacred-art-2026-curation.js",
+        "comparison": "NO_SELECTED_SUBJECT",
+        "oldSelection": null,
+        "sourceCommitEra": "2026-10-12_GENERATED_PRE_LATER_APPROVAL"
+      },
+      "currentMainLegacyRuntime": {
+        "source": "src/home/presentation.js and index.html",
+        "status": "UNKNOWN_MAIN_LEGACY_ASSIGNMENT",
+        "validationScope": "STATIC_SOURCE_INSPECTION_NOT_BROWSER_EXECUTION"
+      },
+      "photoEvidence": {
+        "state": "EXACT_SELECTED_REPRODUCTION_NOT_VERIFIED_IN_THIS_AUDIT"
+      },
+      "shippedFullMasterInAssetsSacredArt": false,
+      "shippedMasterSearchScope": "Git tree paths on main and research branch; does not rule out runtime external URLs or CI artifact archives",
+      "licensingReleased": false,
+      "mobileUserFacingVerified": false,
+      "homeVisibleOnDateVerified": false,
+      "releaseVerdict": "NOT_CERTIFIED_NO_USER_RESELECTION"
+    }
+  ],
+  "acceptance": [
+    "Exact 10/10 user-approved date-specific painting IDs map to canonical physical original and later calendar DayResolver principal ID",
+    "Selected image source local or approved offline asset manifest; tested on 320/390px phone full-surface",
+    "Photo licence separately verified, no Louvre/Prado/Commons blanket rejection, no unsupported grants",
+    "Main current Home shows approved image on appropriate dates; screenshots verified per date",
+    "All 52 Sundays and major feasts audited for actual visual assignment separately; no new art search for already approved works"
+  ],
+  "noMutations": "No runtime or image asset changes in this audit; no selection/rating overrides."
+}
