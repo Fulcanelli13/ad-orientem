@@ -67,7 +67,7 @@ try{
  assert.equal(await p.locator("#scene-title").textContent(),"La Jérusalem nouvelle");
  assert.equal(await p.locator("#map").isVisible(),false);
  assert.equal(await p.locator("#vision.show").isVisible(),true);
- assert.match(await p.locator("#stage-caveat").textContent(),/aucune/i);
+ assert.match(await p.locator("#stage-caveat").textContent(),/Carte volontairement absente/i);
  assert.equal(await p.locator("#next").isDisabled(),true);
  await p.locator("#prev").click();
  assert.equal(await p.locator("#scene-title").textContent(),"La Cène");
