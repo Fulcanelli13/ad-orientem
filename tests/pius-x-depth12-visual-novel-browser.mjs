@@ -60,7 +60,7 @@ try{
   const stageGeometry=await page.evaluate(()=>{
     const ids=['gallery','script','visitor','reply','stageActions'];
     const items=Object.fromEntries(ids.map(id=>{
-      const e=document.getElementById(id),r=e.getBoundingClientRect(),cs=getComputedStyle(e);
+      const e=id==='script'?document.querySelector('.script'):document.getElementById(id),r=e.getBoundingClientRect(),cs=getComputedStyle(e);
       return [id,{x:r.x,y:r.y,w:r.width,h:r.height,scrollTop:e.scrollTop,scrollHeight:e.scrollHeight,overflow:cs.overflow,position:cs.position,zIndex:cs.zIndex}];
     }));
     const b=document.querySelector('#stageActions button'),r=b.getBoundingClientRect();
