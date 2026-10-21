@@ -93,4 +93,31 @@ for(const m of proof.movements)for(const b of m.beats.filter(x=>x.kind==="SOURCE
  assert.equal(b.status,"UNAPPROVED_SOURCE_COORDINATE_REFERENCE");
  assert.equal(b.publicationApproved??false,false);
 }
+const semanticAnchorExamples=[
+ ["John",6,40,/will of my Father/i,/will of my Father/i,/volonté de mon Père/i],
+ ["John",6,44,/Father.*draw him/i,/Father.*drawn him/i,/Père.*attire/i],
+ ["John",11,28,/sister Mary/i,/sister Mary/i,/Marie, sa sœur/i],
+ ["John",19,42,/laid Jesus/i,/placed Jesus/i,/déposèrent Jésus/i],
+ ["John",20,10,/disciples.*departed/i,/disciples went away/i,/disciples.*retournèrent/i],
+ ["Acts",2,36,/Lord and Christ/i,/Lord and Christ/i,/Seigneur et Christ/i],
+ ["Acts",9,15,/vessel of election/i,/instrument chosen/i,/instrument que j'ai choisi/i],
+ ["Acts",10,8,/sent them to Joppe/i,/sent them to Joppa/i,/envoya à Joppé/i],
+ ["Acts",14,26,/door of faith/i,/door of faith/i,/porte de la foi/i],
+ ["Acts",15,12,/Barnabas and Paul/i,/Barnabas and Paul/i,/Barnabé et Paul/i],
+ ["Acts",28,17,/chief of the Jews/i,/leaders of the Jews/i,/principaux d'entre les Juifs/i],
+ ["Revelation",4,2,/throne/i,/throne/i,/trône/i],
+ ["Revelation",21,9,/seven angels/i,/seven Angels/i,/sept anges/i],
+ ["Revelation",22,20,/Come, Lord Jesus/i,/Come, Lord Jesus/i,/Venez, Seigneur Jésus/i]
+];
+for(const [book,ch,v,...patterns] of semanticAnchorExamples){
+ for(const [idx,edition] of editions.entries()){
+  const text=bookWitness(book,edition).get(ch+":"+v);
+  assert.ok(text,"Missing source anchor "+edition+" "+book+" "+ch+":"+v);
+  assert.match(text,patterns[idx],"Source semantic anchor changed; review "+edition+" "+book+" "+ch+":"+v);
+ }
+}
+assert.match(bookWitness("Acts","dr-challoner").get("7:59"),/lay not this sin/i);
+assert.match(bookWitness("Acts","cpdv-2009").get("7:59"),/do not hold this sin/i);
+assert.match(bookWitness("Acts","crampon-1923").get("7:60"),/ne leur imputez pas ce péché/i);
+assert.match(bookWitness("Acts","cpdv-2009").get("9:12"),/Paul saw/i);
 console.log("PASS P3 three-edition corpus: "+counters.sourceRefs+" source ranges (166 selected + 16 held), "+counters.checkedVerseSelections+" cross-edition verse displays, "+counters.books.size+" biblical books, 37 movements; edition-only Stephen and John 6 provenance preserved.");
