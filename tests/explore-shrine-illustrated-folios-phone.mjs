@@ -68,7 +68,19 @@ try{
    const guide=full.locator(".aoExploreIllustratedGuide");
    assert.equal(await guide.count(),1,g.place_id+" lacks the detailed guide");
    assert.ok(await guide.locator(".aoExploreStoryEvidence a[href^='https://']").count()>=3,g.place_id+" lacks original sources");
-   const overflow=await full.evaluate(el=>({content:el.scrollWidth,frame:el.clientWidth}));
+   const overflow=await full.evaluate(el=>{
+    const parent=el.getBoundingClientRect();
+    const offenders=[...el.querySelectorAll("*")].flatMap(child=>{
+      const rect=child.getBoundingClientRect();
+      if(rect.right<=parent.right+2&&rect.left>=parent.left-2)return [];
+      return [{selector:child.tagName.toLowerCase()+"."+
+        String(child.className||"").replace(/\\s+/g,".").slice(0,75),
+        right:Math.round(rect.right-parent.right),
+        left:Math.round(rect.left-parent.left),
+        text:String(child.textContent||"").slice(0,70)}];
+    }).slice(0,10);
+    return {content:el.scrollWidth,frame:el.clientWidth,offenders};
+   });
    assert.ok(overflow.content<=overflow.frame+2,g.place_id+" horizontal overflow "+JSON.stringify(overflow));
    if([0,3,6,8,10].includes(index)){
     const safe=g.place_id.replace(/[^a-z0-9]+/gi,"-");
