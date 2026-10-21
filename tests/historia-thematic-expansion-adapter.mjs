@@ -21,7 +21,7 @@ assert(proposed.flatMap(g=>g.episodes).every(e=>
 assert.equal(phase2.manualSegmentationHolds.length,7);
 assert.equal(phase2.totals.allAccountedFor,217);
 const invalid=structuredClone(phase2);
-invalid.stagedEntries[0].publicationStatus='PUBLISHED';
+invalid.stagedEntries.find(e=>e.nextBatch==='BATCH_2_MIRACLES_PARABLES_CANTICLES').publicationStatus='PUBLISHED';
 assert.throws(()=>stagedThematicBatch2(invalid,pilot));
 assert.throws(()=>stagedThematicBatch2(phase2,[]));
 console.log('PASS Historia source-only 41-entry expansion adapter; original 19 pilots unchanged, seven composites withheld.');
