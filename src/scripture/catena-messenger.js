@@ -70,6 +70,12 @@ export function retrieveCatenaMessages(rows,query,{limit=3,excludeIds=null}={}){
  if(!catenaRelatedTopic(query)&&terms.some(t=>t.length>=8&&
    !rows.some(r=>String(r?.text||"").toLowerCase().includes(t))))return [];
  const preferred=mentioned.length?rows.filter(r=>mentioned.includes(r.father)):rows;
+ // Distinctive words in the current original passage matter more than
+ // generic vocabulary. Document frequency is computed only over authenticated
+ // extracts already loaded for this pericope; no authored answer bank.
+ const frequency=new Map(terms.map(term=>[term,
+  preferred.filter(row=>String(row.text||"").toLowerCase().includes(term)).length]));
+ const rarityWeight=term=>5*Math.log((preferred.length+1)/(frequency.get(term)+1));
  // Original-source phrase agreement is stronger than isolated token overlap.
  // Keep ordinary stopwords inside phrases: "Our Father"/"My Father" or
  // "to himself" are meaningful when the user asks about those expressions.
@@ -92,6 +98,7 @@ export function retrieveCatenaMessages(rows,query,{limit=3,excludeIds=null}={}){
        matched++;
        score+=term.length>=8?4:3;
        if(new RegExp("(^|[^a-z])"+term+"([^a-z]|$)").test(hay))score+=1;
+      score+=rarityWeight(term);
      }
    }
    if(terms.length>1&&hay.includes(terms.join(" ")))score+=5;
