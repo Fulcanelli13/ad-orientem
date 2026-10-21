@@ -239,6 +239,54 @@ try{
   const elevationState=await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getNativeEventState());
   assert.equal(elevationState?.nativeCueId,"AO.SM.C0174");
   assert.equal(elevationState?.bell?.label,"ELEVATION BELL","Host elevation action cue lost its bell state");
+  // Regression: the section explanation must follow scroll-to-cue updates.
+  // Static card navigation itself has no attested LIVE cue and must not
+  // preempt the precise ceremonial rubric or the existing action rails.
+  await page.waitForFunction(()=>{
+    const shell=document.querySelector("[data-ao-reader-shell]");
+    const explanation=document.querySelector('[data-role="objective-context"]');
+    return shell?.dataset.objectiveContext==="true" &&
+      explanation&&!explanation.hidden&&explanation.dataset.blockId==="AO.SM.B052";
+  },null,{timeout:5000});
+  const objectiveVisual=await page.evaluate(()=>{
+    const box=document.querySelector('[data-role="objective-context"]');
+    const parent=document.querySelector(".ao-reader-stage");
+    const top= document.querySelector('.ao-state-cell[data-side="faithful"]');
+    const left=document.querySelector(".ao-rail-left");
+    const right=document.querySelector(".ao-rail-right");
+    const position=right?.querySelector('[data-channel="priest-position"]');
+    return {
+      context:box?.textContent??"",
+      contextHeight:box?.getBoundingClientRect().height??0,
+      ribbonHeight:box?.parentElement?.getBoundingClientRect().height??0,
+      oldTopDisplay:top?getComputedStyle(top).display:null,
+      leftVisible:left?.dataset.visible??null,
+      rightVisible:right?.dataset.visible??null,
+      positionActive:position?.dataset.active??null,
+      positionLabel:position?.querySelector('[data-role="priest-position-rail"]')?.textContent??null,
+      viewportOverflow:document.documentElement.scrollWidth-innerWidth,
+    };
+  });
+  assert.match(objectiveVisual.context,/Host|Sacred Host/,
+    "The context must explain the Consecration, not another Mass section");
+  assert.equal(objectiveVisual.oldTopDisplay,"none",
+    "LIVE explanation did not replace the duplicate top YOU/PRIEST cells");
+  assert.equal(objectiveVisual.leftVisible,"true",
+    "The faithful posture must remain visible in the left rail");
+  assert.equal(objectiveVisual.rightVisible,"true",
+    "Priest actions and position must remain on the right rail");
+  assert.equal(objectiveVisual.positionActive,"true",
+    "Context ribbon displaced the priest's active station");
+  assert.ok(objectiveVisual.ribbonHeight<=90,
+    "Explanatory ribbon expanded excessively on a narrow phone");
+  assert.ok(objectiveVisual.viewportOverflow<=1,
+    "Context ribbon created horizontal phone overflow");
+  await mkdir(resolve(repoRoot,"artifacts/live-cinematics"),{recursive:true});
+  await page.screenshot({
+    path:resolve(repoRoot,"artifacts/live-cinematics/context-host-390-en.png"),
+    fullPage:false,
+  });
+
 
   async function tapMode(mode){
     const prefs=page.locator('[data-reader-preferences]');
