@@ -87,3 +87,4 @@ const report={
 mkdirSync('research-out',{recursive:true});
 writeFileSync('research-out/pius-x-document-first-unscripted-router-6.v1.json',JSON.stringify(report,null,2)+'\n');
 console.log('SPX_UNSCRIPTED_DOCUMENT_ROUTER '+JSON.stringify(byEngine));
+for(const r of observations)console.log('SPX_UNSCRIPTED_DOCUMENT_ROUTE_DETAIL '+JSON.stringify({engine:r.engine,caseId:r.caseId,language:r.language,disposition:r.disposition,sourceRef:r.sourceRef,sourceLocator:r.sourceLocator}));
