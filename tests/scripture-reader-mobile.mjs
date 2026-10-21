@@ -315,6 +315,14 @@ try{
  assert.equal(await dialog.locator("[data-scripture-witness-unreviewed='dr-challoner']").count(),1);
  await dialog.locator("[data-scripture-context-depth='commentary']").click();
   await dialog.locator("[data-catena-messenger]").waitFor({state:"visible",timeout:15000});
+  const scriptureAnchor=dialog.locator(".aoCatenaScriptureAnchor");
+  await scriptureAnchor.waitFor({state:"visible",timeout:15000});
+  assert.match(await scriptureAnchor.locator("summary").innerText(),/Luke 1:28/,
+    "Selected Scripture must remain visibly anchored above the Fathers");
+  assert.equal(await scriptureAnchor.locator(".aoScriptureVerse").count(),1,
+    "Pinned biblical text must reuse the same selected verse and not invent extra verses");
+  assert.equal(await scriptureAnchor.locator("[data-scripture-witness-unreviewed='dr-challoner']").count(),1,
+    "Uncollated source witness status must remain visible alongside the Catena");
   const catenaRows=dialog.locator(".aoCatenaMRow");
   await catenaRows.first().waitFor({state:"visible",timeout:15000});
   assert.ok(await catenaRows.count()>=2,
