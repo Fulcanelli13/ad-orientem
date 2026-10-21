@@ -302,3 +302,33 @@ Next P4 sequence: move from **coverage** to **adjudication** by prioritising the
 **Safety contracts:** all five references can now resolve to an explicit source-specific research slice, rather than being incorrectly labeled missing Bible text. There is **no full inter-edition semantic mapping, named printed-edition certification or permission to synthesize or silently copy Scripture**. The M20–M24 findings are recommendations only: movement beat order, titles and verse units have not been changed. The existing 35-question M20–M37 queue remains the authoritative review backlog. The research data and \`tests/historia-p4-scripture-adjudication.mjs\` verify all five edition slices and the source cues for these five continuity decisions; the P4 GitHub Actions source job runs that new check alongside the existing source-contract and Chromium browser jobs.
 
 Next: complete the M25–M37 high-priority literary and scene-identity reviews, then seek explicit source-owner approval to apply selected necessary beat order/verse changes with diff and witness provenance. Only after that should the 37-movement MapLibre/story folio be expanded using approved Scripture and art. **No new production integration is authorized by this checkpoint.**
+
+
+## P4 M25–M37 seam recommendations and Scripture economy — 21 October 2026
+
+The last 13 late movements now have a complete source-anchored **desk adjudication** in \`data/research/historia-p4-m25-m37-literary-seam-adjudication.v1.json\`. Together with the earlier \`...m20-m24-literary-seam-adjudication.v1.json\`, all **18 movements M20–M37** have an individually described issue/decision proposal. This *does not* constitute oral acceptance or an authorized P3 scripture-selection change. Source witnesses for Matthew, Luke, John, Acts and Revelation were consulted directly in the three installed Catholic research transcriptions; source Git SHAs are retained.
+
+Priority issues:
+
+- **M28→M29, burial:** John 19:17–30 ends at the Cross and M29 opens John 20 with an empty tomb. Held \`HS-CF-06\`, **John 19:38–42**, is the least invasive already-identified burial witness for review; no new Gospel narration.
+- **M29, tomb blocking:** Existing jumps from John 20:3→6 and 20:9→11 omit **20:4–5** (the other disciple's arrival) and **20:10** (the disciples depart); propose 3 Scripture verses for actor continuity, not duplicated Resurrection events.
+- **M31, Pentecost and martyrdom:** Acts 2:21→37 omits Peter's explicit kerygma 2:22–36. Proposed economical desk option is **2:22–24 and 2:32–36** (eight verses), alongside held \`HS-CF-08\` Acts 7:51–53. Crucial **edition semantic split**: Stephen's final prayer and death are in **Acts 7:59** in installed Douay/CPDV, but **7:60** in Crampon. They must not be silently linked by the same verse number.
+- **M32, Saul, Ananias, Cornelius:** Candidate Acts 9:15–16 preserves Saul's appointed mission; Acts 10:7–8 explains messengers travelling from Caesarea to Peter; 10:30–32 gives Cornelius's response to Peter's question. Actor coherence and verse-economy still await an actual selected-text read-aloud.
+- **M33, Gentile mission:** Candidate Acts 14:26–27 (edition-safe current witness coordinates) is the concise apostolic return and Gentile report between missionary departure and the Jerusalem Council. Existing scene records, especially Cyprus/Derbe, remain optional source-linked theatre, not geocoded route fabrication.
+- **M37, New Jerusalem:** Revelation 22:1 uses an antecedent absent from the selected Rev 21:1–7. Candidate Rev 21:9–10 names the angel showing the holy city. Candidate Rev 22:20–21 would preserve the actual final biblical ending if the theatre elects to conclude the *book*, rather than simply the selected vision. All Revelation staging stays non-terrestrial.
+- **M25/M36:** No additional Scripture required for their currently selected direct narrative/vision; short accurately labelled transitions or visual genre treatment may suffice.
+- **M26/M27/M30/M34/M35:** Other decisions concern the Supper/final-teaching title and held Johannine promise, Judas/Pilate omission, Ascension prior promise, Paul's Rome audience/arrival, and heavenly-throne antecedent. Each remains a held option with source provenance.
+
+The separate \`data/research/historia-p4-late-movement-bridge-verse-budget.v1.json\` compares **18 M20–M37 movements** against imported **Douay** source verse coordinates, deduplicating overlapping selected passages:
+
+| Audit-only budget | Numbered Douay verse entries |
+|---|---:|
+| Currently selected | 444 |
+| Increment if every listed *optional* source bridge were accepted | +69 |
+| All-candidate hypothetical | 513 |
+
+These are **unique verse-entry counts**, not reading time/word count, not printed-edition collation, and not gospel-by-gospel bilingual equivalence. Proposed additions are **15.5%** of the baseline, which argues for selective editorial decisions rather than treating all candidate material as mandatory. M20's order-only correction, M21 retitle and M23 three visual beats add zero verses. Two counted source-numbering areas (M22 John 6 and M31 Acts 7) have explicit **edition semantic matching holds**.
+
+The standalone \`tests/historia-p4-m25-m37-source-seams.mjs\` verifies all 18 desk records, original P3 verse ownership, held candidate state, Douay source anchors, Martyr Stephen's 59/60 split and the +69 verse arithmetic. The same P4 research-branch GitHub workflow runs it with the existing P4 source contracts and browser laboratory. CI status is determined by the run itself; this checkpoint does **not** imply publication readiness.
+
+**Editorial next gate:** decide *one by one* which high-priority source bridges are necessary for a continuous self-explanatory Catholic Scripture presentation; collate exact printed English/French texts and read them sequentially. Only then prepare minimal changes through the existing P3 owner (#1345); retain the 37-movement IDs, independent canonical Atlas event ownership, and never fork the scene census.
