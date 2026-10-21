@@ -18,6 +18,9 @@ const approve={
 const inspected=validateCatenaReviewDecision(a,approve);
 assert.equal(inspected.disposition,"approve");assert.equal(inspected.publicationEligibility,"blocked_research_only");
 assert.equal(inspected.humanApprovalRequiresSeparateRepositoryImport,true);
+const rechecked=validateCatenaReviewDecision(a,inspected);
+assert.equal(rechecked.disposition,"approve","Saving and re-exporting an attested approval must preserve its checklist");
+assert.equal(CATENA_REVIEW_CHECKS.every(k=>rechecked.verifiedChecklist[k]),true);
 assert.throws(()=>validateCatenaReviewDecision(a,{...approve,checks:{...approve.checks,speaker:false}}),/CHECKLIST_INCOMPLETE/);
 assert.throws(()=>validateCatenaReviewDecision(a,{...approve,sourceSHA256:"unverified"}),/SOURCE_ATTESTATION_REQUIRED/);
 assert.throws(()=>validateCatenaReviewDecision(a,{...approve,originalWorkReference:""}),/SOURCE_ATTESTATION_REQUIRED/);
@@ -33,6 +36,11 @@ const record=buildCatenaReviewExport(data.records,new Map([[a.sourcePointer,appr
 assert.equal(record.schema,CATENA_REVIEW_EXPORT_SCHEMA);
 assert.deepEqual(record.counts,{pending:28,approve:1,revise:0,hold:1,reject:0});
 assert.equal(record.records.length,30);
+const reexport=buildCatenaReviewExport(data.records,
+ new Map([[a.sourcePointer,inspected],[other.sourcePointer,hold]]),
+ {sourceResearchCommit:data.sourceResearchCommit});
+assert.deepEqual(reexport.counts,record.counts,
+ "Locally saved normalized decisions must survive export validation");
 assert.ok(record.records.every(x=>x.publicationEligibility==="blocked_research_only"));
 assert.ok(record.noVerbatimSourceTextCopied);
 assert.equal(JSON.stringify(record).includes("originalWords"),false);

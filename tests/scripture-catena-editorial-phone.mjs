@@ -55,7 +55,32 @@ try{
  assert.match(await split.innerText(),/Pseudo-Dionysius/);
  assert.match(await split.innerText(),/Origen/);
  assert.equal(await split.locator(".aoCatenaMName").first().innerText(),"MULTIPLE PRINTED ATTRIBUTIONS");
- assert.deepEqual(errors,[],"Messenger integration browser runtime errors");
+ // Editor-facing workbench: the 22/8 review queue remains outside the public app.
+ const editorUrl="http://127.0.0.1:4201/previews/living-catena-editorial-workbench-20261021.html";
+ await page.goto(editorUrl,{waitUntil:"domcontentloaded",timeout:60000});
+ await page.locator("#candidateList .candidate").first().waitFor({state:"visible",timeout:25000});
+ assert.equal(await page.locator("#candidateList .candidate").count(),22);
+ await page.locator(".source .body").first().waitFor({state:"visible",timeout:20000});
+ assert.ok((await page.locator(".source .body").first().innerText()).length>50);
+ await page.locator('[data-filter="escalated"]').click();
+ assert.equal(await page.locator("#candidateList .candidate").count(),8);
+ assert.equal(await page.locator("#review-disposition option[value='approve']").count(),0,
+  "An escalated source cannot receive an approval proposal");
+ await page.locator('[data-filter="ready"]').click();
+ await page.locator(".source .body").first().waitFor({state:"visible",timeout:25000});
+ assert.equal(await page.locator("#candidateList .candidate").count(),22);
+ await page.locator("#review-reviewer").fill("Source editor");
+ await page.locator("#review-editorialReason").fill("The original source still requires contextual verification by an independent editor.");
+ await page.locator("#review-disposition").selectOption("hold");
+ await page.locator('#reviewForm button[type="submit"]').click();
+ assert.match(await page.locator("#decisionStatus").innerText(),/stored locally/i);
+ const sourceDraft=await page.evaluate(()=>JSON.parse(localStorage.getItem("ao-catena-matthew-human-review-local-draft-v1")));
+ assert.ok(Object.values(sourceDraft.decisions).some(x=>x.disposition==="hold"));
+ const downloadPromise=page.waitForEvent("download");
+ await page.locator("#download").click();
+ const download=await downloadPromise;
+ assert.equal(download.suggestedFilename(),"catena-matthew-editorial-review-export.json");
+ assert.deepEqual(errors,[],"Messenger and editorial workbench browser runtime errors");
  console.log("PASS: opt-in research question Messenger phone flow, source labels, author boundary and no overflow");
 }finally{
  await browser?.close?.();

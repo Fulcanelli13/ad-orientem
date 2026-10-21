@@ -27,7 +27,8 @@ export function validateCatenaReviewDecision(candidate,decision){
   throw Error("CATENA_REVIEW_ATTRIBUTION_OR_REASON_REQUIRED");
  const originalWorkReference=String(decision.originalWorkReference||"").trim();
  const sourceDigest=String(decision.sourceSHA256||"").toLowerCase();
- const checks=Object.fromEntries(CATENA_REVIEW_CHECKS.map(k=>[k,decision.checks?.[k]===true]));
+ const attested=decision.checks||decision.verifiedChecklist||{};
+ const checks=Object.fromEntries(CATENA_REVIEW_CHECKS.map(k=>[k,attested[k]===true]));
  if(decision.disposition==="approve"){
   if(!isCatenaReviewRouteEligible(candidate))
    throw Error("CATENA_REVIEW_ESCALATED_CANDIDATE_CANNOT_BE_APPROVED");
@@ -52,8 +53,7 @@ export function validateCatenaReviewDecision(candidate,decision){
 }
 export function buildCatenaReviewExport(records,decisions,{sourceResearchCommit}={}){
  if(!Array.isArray(records)||records.length!==30||
-   typeof sourceResearchCommit!=="string"||!HASH.test(sourceResearchCommit.toLowerCase().padEnd(64,"0"))&&
-    !/^[a-f0-9]{40}$/.test(sourceResearchCommit))
+   typeof sourceResearchCommit!=="string"||!/^[a-f0-9]{40}$/.test(sourceResearchCommit))
   throw Error("CATENA_REVIEW_SOURCE_REVISION_INVALID");
  const by=new Map(records.map(r=>[r.sourcePointer,r]));
  if(by.size!==30)throw Error("CATENA_REVIEW_DUPLICATE_SOURCE");
