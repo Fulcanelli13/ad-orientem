@@ -236,6 +236,25 @@ export const FINAL_65_PRIEST_POSITION_ICON_KEYS=Object.freeze({
 });
 const POSTURES=Object.freeze({"STAND":"final_review_posture_stand","SIT":"final_sit","KNEEL":"final_review_posture_kneel","GENUFLECT":"final_review_posture_genuflect"});
 function token(v){return String(v??"").trim().toUpperCase().replace(/[ -]+/g,"_");}
+// Ultra Master 19 Oct 2026, tabs 09 PRIEST EVENTS 279 and 37/39 music:
+// these *priest-owned* sung moments are absent from the 126-entry sparse
+// voice transition registry. They are not Schola or server response cues.
+// Keep user asset name "Chant" untouched; use the immutable approved SVG.
+export const ULTRA_MASTER_PRIEST_CHANT_CUE_ADDITIONS=Object.freeze([
+ "AO.SM.C0073", // Collect Proper (priest reads/chants at Epistle-side Missal)
+ "AO.SM.C0142", // Deo nostro — priest's sung Gratias agamus conclusion
+ "AO.SM.C0209", // Entire sung Pater noster, not just its opening
+ "AO.SM.C0254", // Postcommunion Proper chanted by the priest
+]);
+// Both are SCHOLA_PUBLIC text, continuing a priest's short intonation.
+// An unobserved priest must NOT acquire a chant icon from the choir's line.
+export const SCHOLA_NOT_PRIEST_CHANT_CUES=Object.freeze([
+ "AO.SM.C0054", // Gloria: "Deo" owned by the Schola
+ "AO.SM.C0090", // Credo: "in unum Deum" owned by the Schola
+]);
+const ULTRA_PRIEST_CHANT=new Set(ULTRA_MASTER_PRIEST_CHANT_CUE_ADDITIONS);
+const SCHOLA_NO_PRIEST_CHANT=new Set(SCHOLA_NOT_PRIEST_CHANT_CUES);
+
 export function finalCurated65IconKeys(state={}){
  const currentCue=String(state.cueId??"");
  const station=token(state.priestPosition?.station??state.priestPosition?.value);
@@ -251,10 +270,14 @@ export function finalCurated65IconKeys(state={}){
  // public text advances. Those minister actors have independent cues.
  const sungMinisterReading=form==="SOLEMN" &&
    ((number>=75&&number<=78)||(number>=82&&number<=88));
- const candidateVoice=state.priestVoice?FINAL_65_CUE_ICON_KEYS.priestVoice[voiceCue]??null:null;
- const priestVoiceKey=candidateVoice==="final_ao_chant"
-   ? (inSung&&!sungMinisterReading?candidateVoice:null)
-   : candidateVoice;
+ // A priest's voice cue is event-scoped: never persist the previous
+ // chant into a server reply, a Schola phrase, or a silent priest action.
+ const currentOwnedVoice=voiceCue===currentCue && state.priestVoice!=null;
+ const candidateVoice=currentOwnedVoice?FINAL_65_CUE_ICON_KEYS.priestVoice[voiceCue]??null:null;
+ const sourceConfirmedChant=inSung&&!sungMinisterReading&&ULTRA_PRIEST_CHANT.has(currentCue);
+ const priestVoiceKey=SCHOLA_NO_PRIEST_CHANT.has(currentCue)?null:
+   sourceConfirmedChant?"final_ao_chant":
+   candidateVoice==="final_ao_chant"?(inSung&&!sungMinisterReading?candidateVoice:null):candidateVoice;
  const posture=token(state.posture?.value??state.posture?.label);
  const facesPeople=facing==="PEOPLE"||facing==="PEOPLE_DURING_TURN";
  return Object.freeze({
