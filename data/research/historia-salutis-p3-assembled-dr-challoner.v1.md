@@ -443,6 +443,10 @@ And the Lord raised up judges, to deliver them from the hands of those that oppr
 
 *Ruth, a widowed woman of Moab, would not abandon her mother-in-law Naomi. She went with her to Bethlehem and made Naomi's people and God her own.*
 
+*⟦Editorial connector · source: Ruth 2:1–13; Ruth 4:1–12 · NOT APPROVED⟧*
+
+*In Bethlehem, Ruth gleaned in the fields of Boaz, a kinsman of Naomi's deceased husband, who treated her kindly. After a nearer kinsman relinquished his claim, Boaz could take Ruth as his wife.*
+
 **⟦Ruth 4:13⟧**
 
 Booz therefore took Ruth, and married her: and went in unto her, and the Lord gave her to conceive, and to bear a son.
@@ -480,6 +484,10 @@ And Samuel took a little vial of oil, and poured it upon his head, and kissed hi
 </details>
 
 ## 13 · David and the enduring royal promise
+
+*⟦Editorial connector · source: 1Samuel 15:10–23 · NOT APPROVED⟧*
+
+*Saul had disobeyed the Lord's command. Samuel rebuked him, declaring that obedience was better than sacrifice, and that the Lord had rejected him as king.*
 
 **⟦1Samuel 16:1–13⟧**
 
@@ -521,6 +529,10 @@ And it came to pass when the king sat in his house, and the Lord had given him r
 *⟦Editorial connector · source: 2Samuel 11:1–17; 2Samuel 12:1–13 · NOT APPROVED⟧*
 
 *David sinned grievously in his dealings with Bathsheba and her husband Uriah. When the prophet Nathan reproved him, David confessed his sin to the Lord.*
+
+*⟦Editorial connector · source: 1Kings 2:10–12 · NOT APPROVED⟧*
+
+*After David's death, his son Solomon succeeded him as king.*
 
 **⟦1Kings 6:1⟧**
 
@@ -868,15 +880,13 @@ And Jesus stood before the governor, and the governor asked him, saying: Art tho
 
 And bearing his own cross, he went forth to the place which is called Calvary, but in Hebrew Golgotha. Where they crucified him, and with him two others, one on each side, and Jesus in the midst. And Pilate wrote a title also: and he put it upon the cross. And the writing was: JESUS OF NAZARETH, THE KING OF THE JEWS. This title therefore many of the Jews did read: because the place where Jesus was crucified was nigh to the city. And it was written in Hebrew, in Greek, and in Latin. Then the chief priests of the Jews said to Pilate: Write not: The King of the Jews. But that he said: I am the King of the Jews. Pilate answered: What I have written, I have written. The soldiers therefore, when they had crucified him, took his garments, (and they made four parts, to every soldier a part) and also his coat. Now the coat was without seam, woven from the top throughout. They said then one to another: Let us not cut it but let us cast lots for it, whose it shall be; that the scripture might be fulfilled, saying: They have parted my garments among them, and upon my vesture they have cast lots. And the soldiers indeed did these things. Now there stood by the cross of Jesus, his mother and his mother’s sister, Mary of Cleophas, and Mary Magdalen. When Jesus therefore had seen his mother and the disciple standing whom he loved, he saith to his mother: Woman, behold thy son. After that, he saith to the disciple: Behold thy mother. And from that hour, the disciple took her to his own. Afterwards, Jesus knowing that all things were now accomplished, that the scripture might be fulfilled, said: I thirst. Now there was a vessel set there, full of vinegar. And they, putting a sponge full of vinegar about hyssop, put it to his mouth. Jesus therefore, when he had taken the vinegar, said: It is consummated. And bowing his head, he gave up the ghost.
 
+**⟦TRIAL SCRIPTURE · John 19:31–37 · NOT APPROVED⟧**
+
+Then the Jews (because it was the parasceve), that the bodies might not remain upon the cross on the sabbath day (for that was a great sabbath day), besought Pilate that their legs might be broken: and that they might be taken away. The soldiers therefore came: and they broke the legs of the first, and of the other that was crucified with him. But after they were come to Jesus, when they saw that he was already dead, they did not break his legs. But one of the soldiers with a spear opened his side: and immediately there came out blood and water. And he that saw it hath given testimony: and his testimony is true. And he knoweth that he saith true: that you also may believe. For these things were done that the scripture might be fulfilled: You shall not break a bone of him. And again another scripture saith: They shall look on him whom they pierced.
+
 **⟦TRIAL SCRIPTURE · John 19:38–42 · NOT APPROVED⟧**
 
 And after these things, Joseph of Arimathea (because he was a disciple of Jesus, but secretly for fear of the Jews), besought Pilate that he might take away the body of Jesus. And Pilate gave leave. He came therefore and took away the body of Jesus. And Nicodemus also came (he who at the first came to Jesus by night), bringing a mixture of myrrh and aloes, about an hundred pound weight. They took therefore the body of Jesus and bound it in linen cloths, with the spices, as the manner of the Jews is to bury. Now there was in the place where he was crucified a garden: and in the garden a new sepulchre, wherein no man yet had been laid. There, therefore, because of the parasceve of the Jews, they laid Jesus: because the sepulchre was nigh at hand.
-
-<details><summary>Unselected same-book source seams (research audit)</summary>
-
-- OMITTED_VERSES: John 19:31–37
-
-</details>
 
 ## 29 · The risen Lord and his witnesses
 
@@ -947,6 +957,10 @@ Now when they had heard these things, they had compunction in their heart and sa
 **⟦Acts 2:42–47⟧**
 
 And they were persevering in the doctrine of the apostles and in the communication of the breaking of bread and in prayers. And fear came upon every soul. Many wonders also and signs were done by the apostles in Jerusalem: and there was great fear in all. And all they that believed were together and had all things common. Their possessions and goods they sold and divided them to all, according as every one had need. And continuing daily with one accord in the temple and breaking bread from house to house, they took their meat with gladness and simplicity of heart: Praising God and having favour with all the people. And the Lord increased daily together such as should be saved.
+
+*⟦Editorial connector · source: Acts 6:5–15; Acts 7:1–50 · NOT APPROVED⟧*
+
+*Stephen, one of the seven chosen to serve the growing Church, worked wonders and was brought before the council amid accusations. In his defence he recalled God's dealings with the patriarchs and Moses before addressing his hearers.*
 
 **⟦TRIAL SCRIPTURE · Acts 7:51–53 · NOT APPROVED⟧**
 
@@ -1066,6 +1080,10 @@ Then it pleased the apostles and ancients, with the whole church, to choose men 
 
 *⟦HELD source bridge: Acts 19:21 · not selected or approved⟧*
 
+*⟦Editorial connector · source: Acts 21:27–36; Acts 25:10–12; Acts 27:1 · NOT APPROVED⟧*
+
+*After further journeys, Paul was seized in Jerusalem. He appealed to Caesar and was sent to Italy as a prisoner.*
+
 **⟦TRIAL SCRIPTURE · Acts 28:16 · NOT APPROVED⟧**
 
 And when we were come to Rome, Paul was suffered to dwell by himself, with a soldier that kept him.
@@ -1110,9 +1128,9 @@ And I saw an angel coming down from heaven, having the key of the bottomless pit
 
 And I saw a new heaven and a new earth. For the first heaven and the first earth was gone: and the sea is now no more. And I, John, saw the holy city, the new Jerusalem, coming down out of heaven from God, prepared as a bride adorned for her husband. And I heard a great voice from the throne, saying: Behold the tabernacle of God with men: and he will dwell with them. And they shall be his people: and God himself with them shall be their God. And God shall wipe away all tears from their eyes: and death shall be no more. Nor mourning, nor crying, nor sorrow shall be any more, for the former things are passed away. And he that sat on the throne, said: Behold, I make all things new. And he said to me: Write. For these words are most faithful and true. And he said to me: It is done. I am Alpha and Omega: the Beginning and the End. To him that thirsteth, I will give of the fountain of the water of life, freely. He that shall overcome shall possess these things. And I will be his God: and he shall be my son.
 
-**⟦TRIAL SCRIPTURE · Revelation 21:9–10 · NOT APPROVED⟧**
+**⟦TRIAL SCRIPTURE · Revelation 21:9–11 · NOT APPROVED⟧**
 
-And there came one of the seven angels, who had the vials full of the seven last plagues, and spoke with me, saying: Come and I will shew thee the bride, the wife of the Lamb. And he took me up in spirit to a great and high mountain: and he shewed me the holy city Jerusalem, coming down out of heaven from God,
+And there came one of the seven angels, who had the vials full of the seven last plagues, and spoke with me, saying: Come and I will shew thee the bride, the wife of the Lamb. And he took me up in spirit to a great and high mountain: and he shewed me the holy city Jerusalem, coming down out of heaven from God, Having the glory of God, and the light thereof was like to a precious stone, as to the jasper stone even as crystal.
 
 **⟦Revelation 22:1–5⟧**
 
