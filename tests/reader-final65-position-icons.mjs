@@ -8,6 +8,7 @@ import {iconKeysForReaderState} from "../src/mass/reader-icons.js";
 const read=p=>JSON.parse(readFileSync(new URL(p,import.meta.url),"utf8"));
 const lock=read("../data/presentation/mass-icon-final-user-lock-20261020.v1.json");
 const cross=read("../data/presentation/mass-icon-final-cue-crosswalk-20261020.v1.json");
+const ultraVoice=read("../data/presentation/mass-ultra-master-voice-audit-20261021.v1.json");
 const bank=new Map(lock.items.map(x=>[x.id,x]));
 const rows=new Map(cross.rows.map(x=>[x.lane+"|"+x.cueId,x]));
 const bindings=[
@@ -121,6 +122,27 @@ assert.equal(icon("AO.SM.C0265",{priestPosition:{station:"ALTAR_CENTER",facing:"
   "Approved hands-joined priest-facing-congregation original missing");
 assert.equal(icon("AO.SM.C0265",{response:{cueId:"AO.SM.C0265"}}).responseIconKey,"final_response");
 assert.equal(icon("AO.SM.C0144",{schola:{cueId:"AO.SM.C0144"}}).scholaIconKey,"final_schola");
+assert.equal(ultraVoice.items.length,34);
+assert.deepEqual(ultraVoice.counts,{
+ PRIEST:27,SCHOLA:2,MINISTER_RESPONSE:4,MIXED_PUBLIC_INVITATION_THEN_PRIEST_PRIVATE:1
+});
+for(const witness of ultraVoice.items){
+ const cueId=witness.cueId;
+ const event={priestVoice:{cueId,voice:witness.ultraMasterVoice}};
+ const actual=icon(cueId,event).priestVoiceIconKey;
+ if(witness.owner==="PRIEST"){
+  assert.equal(actual,"final_ao_chant",
+   "Ultra Master sung celebrant missed priest Chant at "+cueId);
+  assert.notEqual(icon(cueId,{...event,form:"LOW"}).priestVoiceIconKey,
+   "final_ao_chant","Low Mass wrongly uses Chant at "+cueId);
+ }else if(witness.owner==="SCHOLA"||witness.owner==="MINISTER_RESPONSE"){
+  assert.notEqual(actual,"final_ao_chant",
+   "Schola/server sung source spuriously marked as priest Chant: "+cueId);
+ }else if(witness.owner==="MIXED_PUBLIC_INVITATION_THEN_PRIEST_PRIVATE"){
+  assert.equal(actual,"final_ao_pray_audible",
+   "Mixed Offertory invitation must not be held as chant through priest's silent prayer");
+ }
+}
 const station=(cueId,sourcePosition,form="MISSA_CANTATA_SIMPLE",observedPriestEventId=null)=>projectCurated65PriestStation({
  enabled:true,cueId,sourcePosition,form,observedPriestEventId,
 });
