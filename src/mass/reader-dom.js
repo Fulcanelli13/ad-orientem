@@ -1364,6 +1364,28 @@ button.ao-schola-control{cursor:pointer}
 .ao-reader-shell:not([data-mode="MISSAL"]) .ao-missal-gesture-icon{display:none}
 .ao-reader-shell[data-mode="MISSAL"] .ao-missal-state-detail[hidden]{display:none}
 .ao-reader-shell[data-mode="MISSAL"] .ao-prayer-title{display:none}
+
+/* Restrained source-cued meaning in LIVE, never an inherited Guide panel. */
+.ao-reader-objective-context[hidden]{display:none!important}
+.ao-reader-shell[data-mode="LIVE"][data-objective-context="true"] .ao-state-ribbon{
+  grid-template-columns:minmax(0,1fr)!important;height:64px;min-height:64px;
+}
+.ao-reader-shell[data-mode="LIVE"][data-objective-context="true"] .ao-state-cell{display:none!important}
+.ao-reader-shell[data-mode="LIVE"][data-objective-context="true"] .ao-state-source{display:none!important}
+.ao-reader-shell[data-mode="LIVE"][data-objective-context="true"] .ao-reader-objective-context{
+  grid-column:1/-1;min-width:0;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:3px;padding:5px 12px;
+  text-align:center;color:var(--ao-text-primary,#e8e2d5);
+}
+.ao-reader-objective-context small{
+  display:block;font:600 8px/1.1 var(--ao-font-ui,system-ui,sans-serif);
+  letter-spacing:.08em;text-transform:uppercase;color:var(--ao-mass-accent-text)
+}
+.ao-reader-objective-context [data-role="objective-context-text"]{
+  font:italic 400 clamp(11px,2.3vw,13px)/1.27 var(--ao-missal-face,Georgia,serif);
+  display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;
+  overflow:hidden;max-width:75ch;
+}
 `;
 
 function esc(value){
@@ -1665,6 +1687,9 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
       Object.freeze([...(moment.missalHeadings??[])]),
     missalRubric:moment.cardUpdate===false ? (previous.missalRubric??null) :
       (moment.missalRubric??null),
+    objectiveContext:Object.prototype.hasOwnProperty.call(moment,"objectiveContext")
+      ? (moment.objectiveContext??null)
+      : moment.cardUpdate===false?(previous.objectiveContext??null):null,
     progress:moment.progress == null ? previous.progress ?? null : String(moment.progress),
     customary:moment.customary??(moment.cardUpdate===false?previous.customary:null),
     paragraphCues:moment.paragraphCues??(moment.cardUpdate===false?previous.paragraphCues:Object.freeze({})),
@@ -1801,6 +1826,10 @@ export function buildReaderShellMarkup(prepared = {}) {
 
   <div class="ao-state-ribbon" aria-live="polite">
     <span class="ao-state-source" data-role="canon-source-summary">CANON · RITUS SERVANDUS (1962)</span>
+    <div class="ao-reader-objective-context" data-role="objective-context" hidden aria-live="off">
+      <small>About this part of Mass</small>
+      <span data-role="objective-context-text"></span>
+    </div>
     <div class="ao-state-cell" data-side="faithful" data-channel="posture" data-faithful-icon-open role="button" tabindex="0" aria-label="Customize current faithful posture or gesture">
       <span class="ao-icon-mask" data-icon-slot="posture-top" hidden></span>
       <span class="ao-icon-mask ao-missal-gesture-icon" data-icon-slot="faithful-gesture-top" hidden aria-hidden="true"></span>
@@ -1911,7 +1940,8 @@ export function buildReaderShellMarkup(prepared = {}) {
     </main>
 
     <aside class="ao-rail ao-rail-right" data-visible="true" aria-label="Priest, ministers, bell, and shared Schola cues">
-      <div class="ao-rail-item" data-channel="priest-voice" data-active="false"><span class="ao-icon-mask" data-icon-slot="priest-voice" hidden></span><span class="ao-rail-copy" data-role="priest-voice">—</span></div>
+      <div class="ao-rail-item" data-channel="priest-position" data-active="false"><span class="ao-icon-mask" data-icon-slot="priest-position" hidden></span><span class="ao-rail-copy" data-role="priest-position-rail">—</span></div>
+       <div class="ao-rail-item" data-channel="priest-voice" data-active="false"><span class="ao-icon-mask" data-icon-slot="priest-voice" hidden></span><span class="ao-rail-copy" data-role="priest-voice">—</span></div>
       <div class="ao-rail-item" data-channel="priest-action" data-active="false"><span class="ao-icon-mask" data-icon-slot="priest-action" hidden></span><span class="ao-rail-copy" data-role="priest-action">—</span></div>
       <div class="ao-rail-item" data-channel="sacred-minister" data-active="false" aria-hidden="true"><span class="ao-rail-copy" data-role="sacred-minister">—</span></div>
       <div class="ao-rail-item" data-channel="bell" data-active="false"><span class="ao-icon-mask ao-bell-icon" data-icon-slot="bell" hidden aria-hidden="true"></span><span class="ao-rail-copy" data-role="bell">—</span></div>
@@ -1994,8 +2024,10 @@ function syncRailVisibility(root){
   const right=root.querySelector(".ao-rail-right");
   // The left persistent posture is already owned by the top ribbon; only
   // transient faithful cues count when deciding if the left rail exists.
+  const contextActive=live&&shell?.dataset?.objectiveContext==="true";
   const hasVisibleCue=rail=>Boolean(rail?.querySelector?.(
-    '.ao-rail-item[data-active="true"]:not([data-channel="posture"])'
+    contextActive?'.ao-rail-item[data-active="true"]':
+      '.ao-rail-item[data-active="true"]:not([data-channel="posture"])'
   ));
   const leftActive=live&&hasVisibleCue(left),rightActive=live&&hasVisibleCue(right);
   if(left)left.dataset.visible=String(leftActive);
@@ -3145,6 +3177,22 @@ export function createReaderDomAdapter({
       if(active)button.setAttribute("aria-current","true");else button.removeAttribute?.("aria-current");
     }
     setText(root,"card-title",current.cardTitle);
+    const shellContext=root.querySelector("[data-ao-reader-shell]");
+    const copy=current.objectiveContext;
+    const showContext=mode==="LIVE"&&
+      copy?.owner==="MASS_READER_OBJECTIVE_CONTEXT_V1"&&
+      copy?.status==="SOURCE_GROUNDED_EDITORIAL_SHORT"&&
+      copy?.cueId===current.nativeCueId&&
+      /^AO\.SM\.B\d{3}$/.test(String(copy.blockId??""))&&
+      typeof copy.text==="string"&&copy.text.length>0;
+    if(shellContext)shellContext.dataset.objectiveContext=String(showContext);
+    const contextNode=root.querySelector('[data-role="objective-context"]');
+    if(contextNode){
+      contextNode.hidden=!showContext;
+      contextNode.dataset.blockId=showContext?copy.blockId:"";
+    }
+    const contextText=root.querySelector('[data-role="objective-context-text"]');
+    if(contextText)contextText.textContent=showContext?copy.text:"";
     const musicNote=root.querySelector('[data-role="rite-music"]');
     if(musicNote){
       const metadata=current.riteMusic?.musicStatus==="EXPECTED_NOT_OBSERVED"
@@ -3265,6 +3313,7 @@ export function createReaderDomAdapter({
     setChannel(root,"response",current.response);
     setChannel(root,"bell",visibleBell);
     setChannel(root,"priest-voice",current.priestVoice);
+    setChannel(root,"priest-position",current.priestPosition);
     setChannel(root,"schola-shared",current.scholaShared ? current.schola : null);
     setChannel(root,"schola",current.scholaVisible ? current.schola : null);
     syncScholaChrome();
