@@ -130,6 +130,29 @@ Three further entries have *literary or scope cautions*, without introducing int
 
 Source-only implementations: `src/scripture/historia-thematic-composite.js` and `src/scripture/historia-thematic-boundaries.js`. Regressions: `tests/historia-thematic-composite.mjs`, `tests/historia-thematic-editorial-boundaries.mjs`, and the expanded phone browser journey in `tests/historia-thematic-phone-e2e.mjs`. None of these changes alters the existing 54-chapter P3 manuscript, 37 original source movements or Scripture witness text files.
 
+## Complete classified corpus: 217 source-linked research readings (21 October 2026)
+
+The source-coordinate research catalogue now incorporates all 217 previously classified omissions across **nine thematic collections**. This is not a new textual version of Scripture, not an in-place revision of the 54-chapter covenantal narration, and not publication approval. The source words remain entirely in the existing Catholic witness loader. Prior 19/60/67 reading preview modes remain available unchanged.
+
+**Fourth opt-in only — full catalogue:**
+
+    http://localhost:8000/index.html?ao_historia_collections=1&ao_historia_batch2=1&ao_historia_segmented=1&ao_historia_all=1
+
+The collections contain Great Biblical Narratives (86), Prophets and Their Lives (13), Life of Christ (26), Miracles of Our Lord (27), Parables and Teachings (24), Encounters with Christ (8), The Apostolic Church (17), Visions and Revelations (13), and Biblical Prayers and Canticles (3). **Total: 217.**
+
+The final 150 additions were source-audited as *research reading scopes*, preserving the original inventory citation for every entry. The audit is `data/research/historia-salutis-thematic-remainder-research-20261021.v1.json`; the source-only adapter is `src/scripture/historia-thematic-remaining.js`.
+
+Four essential apocalyptic scope refinements preserve Scripture's own account boundaries:
+
+- Revelation 13:1–10: beast from the sea; Revelation 13:11–18: beast from the earth. These retain distinct editorial questions but use the **same underlying chapter witness file**, never copied verses.
+- Revelation 6–7 plus 8:1–5: the seven seals. Revelation 8:6–13 and 9–11: the trumpet sequence. The seventh seal and the first trumpet are not artificially merged.
+- Apocalypse scenes remain *visions*, not entries placed on a fabricated chronological earth timeline.
+- The broader readings Exodus 7–11, Exodus 35–40, and Nehemiah 2–6 preserve original extended chapters with explicit scope warnings; they are not falsely labelled as economical abridgments.
+
+**Executed acceptance:** GitHub Actions [39667920041](https://github.com/Fulcanelli13/ad-orientem/actions/runs/39667920041) passed both Node source-contracts and real Chromium phone-size browser end-to-end tests. Across the **150 new readings**, the source test compared **13,533 original witness verse records** in **603 chapter reading views**, spanning **72 book/edition source files**, without any undisclosed requested verse gaps. The browser test verified 217 entries / nine groups, Revelations 13's distinct ranges, a separate Acts episode, and six-chapter Exodus navigation. It also reran prior modes' 19/60/67 safeguards and manuscript return paths. Preview screenshots are attached as workflow artifacts.
+
+**Remaining editorial gates:** verify fine-grained labels and source bounds for the 150 against scholarly source editions and the Church's genre conventions; collate historical printed Bible editions; adjudicate exact Atlas episode identities and covenantal contexts individually; make publication and app-shell navigation decisions explicitly. A pass at *source-row parity* does not certify the original witness files or approve all editorial classifications.
+
 ## Main manuscript protection
 
 - The 54-chapter research proposal at data/research/historia-salutis-p3-provisional-reading-chapter-consolidation-20261021.v2.json is unchanged.
