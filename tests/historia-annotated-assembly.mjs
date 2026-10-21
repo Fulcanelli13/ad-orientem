@@ -156,7 +156,7 @@ for (const edition of HISTORIA_EDITIONS) {
       return word;
     });
   }).join(" ");
-  const wordCount=t=>t?t.split(/\\s+/).length:0;
+  const wordCount=t=>t?t.split(/\s+/).length:0;
   for(const trial of economyCases){
     const b=proof.movements.find(m=>m.id===trial.mid).beats.find(b=>b.id===trial.id);
     assert.ok(b);
