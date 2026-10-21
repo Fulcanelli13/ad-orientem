@@ -84,7 +84,7 @@ function render(){
  txt("chapterLabel",s.id+" · "+s.title[lang]);
 const trial=voiceFor(s);
 el("voiceButton").hidden=!trial;
-el("voiceButton").textContent=voiceMode?(lang==="en"?"Original source draft":"Texte source initial"):(lang==="en"?"Compare voice draft":"Comparer la voix");
+el("voiceButton").textContent=voiceMode?(lang==="en"?"Original editorial draft":"Version éditoriale initiale"):(lang==="en"?"Compare voice draft":"Comparer la voix");
 txt("speaker",lang==="en"?"EDITORIAL SOURCE READING · NOT PAPAL SPEECH":"LECTURE ÉDITORIALE · PAS UNE PAROLE PONTIFICALE");
  const p=s.paths[state.route??0];let q=s.opening.q[lang],a=s.opening.a[lang],pose=s.pose,progress="1 / 3";
  if(state.step==="follow"){q=p.q[lang];a=p.a[lang];progress="2 / 3"}
