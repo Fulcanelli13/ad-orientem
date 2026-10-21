@@ -25,7 +25,7 @@ for(const c of fullDrafts){
 for(const c of d.chapters.filter(c=>c.sourceClass==='PAPAL_DOCUMENT_ADAPTATION')){
  for(const n of c.nodes){
   assert(!/\b(I|my|me|mine|myself)\b/.test(n.a.en),'singular English papal voice '+n.id);
-  assert(!/\bje\b|j[’']|\b(mon|ma|mes|moi)\b/i.test(n.a.fr),'singular French papal voice '+n.id);
+  assert(!/(?<![\p{L}\p{N}])(?:je|mon|ma|mes|moi|me)(?![\p{L}\p{N}])|(?<![\p{L}\p{N}])j[’']/iu.test(n.a.fr),'singular French papal voice '+n.id);
  }
 }
 const chapters=d.chapters;
