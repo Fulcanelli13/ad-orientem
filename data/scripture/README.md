@@ -71,6 +71,9 @@ actually had. It does not synthesize, paraphrase or translate patristic speech.
   attributed to that author within the same selected passage.
 - The message composer uses **conservative lexical matching only**, against
   the already-loaded original fragments for the selected Gospel pericope(s).
+  Named-Father queries filter by the exact source attribution; ties prefer
+  previously unseen extracts and a range of attested voices. Suggested topic
+  chips are displayed only when those words occur in the indexed source text.
   It does not yet implement semantic question answering or retrieval across
   unrelated verses. An unsupported query visibly returns no match, never
   fabricated words or a misleading patristic reply.
