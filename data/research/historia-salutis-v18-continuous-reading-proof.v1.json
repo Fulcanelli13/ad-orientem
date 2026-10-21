@@ -25,7 +25,7 @@
     "movements": 37,
     "essentialUnits": 93,
     "briefEditorialContextNotes": 29,
-    "sourceBridgeCandidates": 10,
+    "sourceBridgeCandidates": 11,
     "independentlyReadAndApproved": false
   },
   "displayRules": {
@@ -1953,7 +1953,22 @@
           "purpose": "Jesus is placed in a tomb before the next selected text begins with the empty tomb; burial is part of the death-resurrection sequence",
           "sourceEdition": "cpdv-2009",
           "comparisonEdition": "dr-challoner",
-          "status": "UNAPPROVED_SOURCE_COORDINATE_REFERENCE"
+          "status": "UNAPPROVED_SOURCE_COORDINATE_REFERENCE",
+          "researchCuration": {
+            "editorialOwnerId": "HS-CF-06",
+            "recommendedUse": "DIRECT_SCRIPTURE_BRIDGE_FROM_CRUCIFIXION_TO_EMPTY_TOMB",
+            "scriptureReferences": [
+              "John 19:38–42"
+            ],
+            "independentPassageIdentity": true,
+            "originalBridgeOwnershipRetained": true,
+            "researchReadthroughPriority": "P0",
+            "showOnlyWhenResearchBridgeToggleOn": true,
+            "finalSourcePrintingApproval": false,
+            "continuousOralReadingApproved": false,
+            "publicationApproved": false,
+            "evidence": "P4 source audit confirms verse presence in Douay, CPDV and Crampon; modern precise tomb placement not certified"
+          }
         }
       ],
       "requiredMeaningOnly": "Only Scripture beats are presented as biblical text; context and source candidates are visibly editorial.",
@@ -2156,12 +2171,24 @@
           "scene": "Saul encounters Christ and becomes his witness",
           "refs": [
             "Acts 9:1–11",
+            "Acts 9:12–16",
             "Acts 9:17–22"
           ],
           "edition": "cpdv-2009",
           "policy": "PROPOSED_CURATED_TRIM",
           "hasPartialVerseHold": false,
-          "publicationApproved": false
+          "publicationApproved": false,
+          "researchRevision": {
+            "status": "SOURCE_RESTORED_RESEARCH_PROPOSAL_NOT_APPROVED",
+            "priorCuratedRefs": [
+              "Acts 9:1–11",
+              "Acts 9:17–22"
+            ],
+            "reasonId": "HS-M32-H69-01-ACTOR-AGENCY-20261021",
+            "explanation": "Saul's vision, Ananias' objection and the Lord's commission; contiguous original v18 unit",
+            "printingAndOralSignOffPending": true,
+            "retainsOriginalUnitId": true
+          }
         },
         {
           "kind": "SCRIPTURE",
@@ -2170,16 +2197,33 @@
           "scene": "Cornelius receives the Gospel and the Holy Ghost",
           "refs": [
             "Acts 10:1–6",
+            "Acts 10:7–8",
             "Acts 10:9–16",
             "Acts 10:19–20",
             "Acts 10:24",
             "Acts 10:28–29",
+            "Acts 10:30–32",
             "Acts 10:33–48"
           ],
           "edition": "cpdv-2009",
           "policy": "PROPOSED_CURATED_TRIM",
           "hasPartialVerseHold": false,
-          "publicationApproved": false
+          "publicationApproved": false,
+          "researchRevision": {
+            "status": "SOURCE_RESTORED_RESEARCH_PROPOSAL_NOT_APPROVED",
+            "priorCuratedRefs": [
+              "Acts 10:1–6",
+              "Acts 10:9–16",
+              "Acts 10:19–20",
+              "Acts 10:24",
+              "Acts 10:28–29",
+              "Acts 10:33–48"
+            ],
+            "reasonId": "HS-M32-H70-01-ACTOR-AGENCY-20261021",
+            "explanation": "Cornelius dispatches messengers and explains his summons; retains cross-location provenance",
+            "printingAndOralSignOffPending": true,
+            "retainsOriginalUnitId": true
+          }
         }
       ],
       "requiredMeaningOnly": "Only Scripture beats are presented as biblical text; context and source candidates are visibly editorial.",
@@ -2221,6 +2265,28 @@
           "policy": "PROPOSED_CURATED_TRIM",
           "hasPartialVerseHold": false,
           "publicationApproved": false
+        },
+        {
+          "kind": "SOURCE_BRIDGE_CANDIDATE",
+          "id": "HS-P3-CF-12",
+          "reference": "Acts 14:26–27",
+          "purpose": "Paul and Barnabas return to Antioch and recount the opening of faith to the Gentiles; the Council then responds to the Gentile question. Only selected Scripture is proposed, never a fictive travel route.",
+          "sourceEdition": "cpdv-2009",
+          "comparisonEdition": "dr-challoner",
+          "status": "UNAPPROVED_SOURCE_COORDINATE_REFERENCE",
+          "p3SourceOwnership": "NEW_INDEPENDENT_SCRIPTURE_SOURCE_BRIDGE_NOT_ORIGINAL_V18_ESSENTIAL",
+          "editorialOwnerId": "HS-P3-CF-12",
+          "linkedAdjacentOriginalEssentialIds": [
+            "H71-02",
+            "H72-01"
+          ],
+          "selectionScope": "TWO_VERSE_GENTILE_MISSION_CAUSAL_BRIDGE",
+          "researchReadthroughPriority": "P0",
+          "proposedScriptureNotAccepted": true,
+          "printedEditionCollationPending": true,
+          "fullOralReadthroughPending": true,
+          "publicationApproved": false,
+          "geographicApproval": false
         },
         {
           "kind": "SCRIPTURE",
@@ -2448,7 +2514,9 @@
       "HS-M22",
       "HS-M24",
       "HS-M29",
-      "HS-M31"
+      "HS-M31",
+      "HS-M32",
+      "HS-M33"
     ],
     "originalEssentialUnitIdsPreserved": true,
     "essentialUnitsStill93": true,
@@ -2456,6 +2524,28 @@
     "sourceBridgeCandidateDecisionsStillHeld": true,
     "finishedCatholicPrintCollation": false,
     "finishedSequentialOralReading": false,
-    "publicationApproved": false
+    "publicationApproved": false,
+    "additionalOriginalUnitVerseInsertions": 10,
+    "independentlyOwnedBridgeDrafts": [
+      {
+        "id": "HS-CF-06",
+        "references": [
+          "John 19:38–42"
+        ],
+        "owner": "EXISTING_P3_HELD_BRIDGE",
+        "status": "CURATED_READTHROUGH_PROPOSAL_ONLY"
+      },
+      {
+        "id": "HS-P3-CF-12",
+        "references": [
+          "Acts 14:26–27"
+        ],
+        "owner": "NEW_P3_INDEPENDENT_BRIDGE",
+        "status": "CURATED_READTHROUGH_PROPOSAL_ONLY"
+      }
+    ],
+    "originalSourceBridgeCandidatesPreserved": 10,
+    "revisedTotalSourceBridgeCandidates": 11,
+    "printedTextAlignmentRequiresSourceEdits": false
   }
 }
