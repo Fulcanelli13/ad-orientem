@@ -15,6 +15,8 @@ Read the [Latin text of Augustine's *Quaestiones Evangeliorum*](https://la.wikis
 
 These figures are **different measures** (sections versus excerpt links). Do not call this “62 Augustine answers”.
 
+**Additional source-coverage exception:** Augustine Book I.20 discusses the signs of the sky in Matthew 16:2–3. The primary Scripture locator is preserved as Matthew 16:2–3, but the existing Catena Gospel index has no pericope covering Matthew 16:1–4. Consequently, I.20 has **no fabricated Catena excerpt**: it remains linked to the Latin original with a typed `primary_latin_scripture_location_unindexed_in_existing_catena_pericopes` status. This is a missing **Catena pericope**, not a claim that the biblical verses do not exist.
+
 **Explicit authorial questions extracted:** [augustine-original-question-spans.v1.json](augustine-original-question-spans.v1.json) adds **17 actual Latin authorial interrogative/indirect problem spans across 12 sections**, preserving subordinate alternatives and distinguishing incomplete verbatim prefixes. It also includes five specific *exclusions*: a question spoken by a Jewish crowd, a question spoken by the disciples, Christ's question about stewardship, Christ's question to Saul, and a hypothetical objector whom Augustine describes while discussing the pounds. None may be put into Augustine's mouth.
 
 ## Seven quarantined Catena citation-number mismatches
