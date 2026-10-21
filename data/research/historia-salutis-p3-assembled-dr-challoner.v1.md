@@ -654,3 +654,155 @@ And the children of Israel of the captivity kept the phase, on the fourteenth da
 
 And in the sixth month, the angel Gabriel was sent from God into a city of Galilee, called Nazareth, To a virgin espoused to a man whose name was Joseph, of the house of David: and the virgin’s name was Mary. And the angel being come in, said unto her: Hail, full of grace, the Lord is with thee: blessed art thou among women. Who having heard, was troubled at his saying and thought with herself what manner of salutation this should be. And the angel said to her: Fear not, Mary, for thou hast found grace with God. Behold thou shalt conceive in thy womb and shalt bring forth a son: and thou shalt call his name Jesus. He shall be great and shall be called the Son of the Most High. And the Lord God shall give unto him the throne of David his father: and he shall reign in the house of Jacob for ever. And of his kingdom there shall be no end. And Mary said to the angel: How shall this be done, because I know not man? And the angel answering, said to her: The Holy Ghost shall come upon thee and the power of the Most High shall overshadow thee. And therefore also the Holy which shall be born of thee shall be called the Son of God. And behold thy cousin Elizabeth, she also hath conceived a son in her old age: and this is the sixth month with her that is called barren. Because no word shall be impossible with God. And Mary said: Behold the handmaid of the Lord: be it done to me according to thy word. And the angel departed from her.
 
+## 19 · The birth of the Saviour
+
+*⟦Editorial connector · source: Luke 1:39–56 · NOT APPROVED⟧*
+
+*Mary visited Elizabeth, whose child leapt at her greeting, and praised the Lord for his mercy and promises to Israel in the Magnificat (Luke 1:39–56).*
+
+**⟦Matthew 1:18–25⟧**
+
+Now the generation of Christ was in this wise. When as his mother Mary was espoused to Joseph, before they came together, she was found with child, of the Holy Ghost. Whereupon Joseph her husband, being a just man, and not willing publicly to expose her, was minded to put her away privately. But while he thought on these things, behold the Angel of the Lord appeared to him in his sleep, saying: Joseph, son of David, fear not to take unto thee Mary thy wife, for that which is conceived in her, is of the Holy Ghost. And she shall bring forth a son: and thou shalt call his name Jesus. For he shall save his people from their sins. Now all this was done that it might be fulfilled which the Lord spoke by the prophet, saying: Behold a virgin shall be with child, and bring forth a son, and they shall call his name Emmanuel, which being interpreted is, God with us. And Joseph rising up from sleep, did as the angel of the Lord had commanded him, and took unto him his wife. And he knew her not till she brought forth her first born son: and he called his name Jesus.
+
+**⟦Luke 2:1–20⟧**
+
+And it came to pass that in those days there went out a decree from Caesar Augustus that the whole world should be enrolled. This enrolling was first made by Cyrinus, the governor of Syria. And all went to be enrolled, every one into his own city. And Joseph also went up from Galilee, out of the city of Nazareth, into Judea, to the city of David, which is called Bethlehem: because he was of the house and family of David. To be enrolled with Mary his espoused wife, who was with child. And it came to pass that when they were there, her days were accomplished that she should be delivered. And she brought forth her first born son and wrapped him up in swaddling clothes and laid him in a manger: because there was no room for them in the inn. And there were in the same country shepherds watching and keeping the night watches over their flock. And behold an angel of the Lord stood by them and the brightness of God shone round about them: and they feared with a great fear. And the angel said to them: Fear not; for, behold, I bring you good tidings of great joy that shall be to all the people: For, this day is born to you a Saviour, who is Christ the Lord, in the city of David. And this shall be a sign unto you. You shall find the infant wrapped in swaddling clothes and laid in a manger. And suddenly there was with the angel a multitude of the heavenly army, praising God and saying: Glory to God in the highest: and on earth peace to men of good will. And it came to pass, after the angels departed from them into heaven, the shepherds said one to another: Let us go over to Bethlehem and let us see this word that is come to pass, which the Lord hath shewed to us. And they came with haste: and they found Mary and Joseph, and the infant lying in the manger. And seeing, they understood of the word that had been spoken to them concerning this child. And all that heard wondered: and at those things that were told them by the shepherds. But Mary kept all these words, pondering them in her heart. And the shepherds returned, glorifying and praising God for all the things they had heard and seen, as it was told unto them.
+
+*⟦Editorial connector · source: Luke 2:22–38 · NOT APPROVED⟧*
+
+*Mary and Joseph presented Jesus in the Temple, where Simeon recognised the promised salvation, a light to the Gentiles (Luke 2:22–32).*
+
+**⟦Matthew 2:1–12⟧**
+
+When Jesus therefore was born in Bethlehem of Juda, in the days of king Herod, behold, there came wise men from the East to Jerusalem, Saying: Where is he that is born king of the Jews? For we have seen his star in the East, and are come to adore him. And king Herod hearing this, was troubled, and all Jerusalem with him. And assembling together all the chief priests and the scribes of the people, he inquired of them where Christ should be born. But they said to him: In Bethlehem of Juda. For so it is written by the prophet: And thou Bethlehem the land of Juda art not the least among the princes of Juda: for out of thee shall come forth the captain that shall rule my people Israel. Then Herod, privately calling the wise men learned diligently of them the time of the star which appeared to them; And sending them into Bethlehem, said: Go and diligently inquire after the child, and when you have found him, bring me word again, that I also may come and adore him. Who having heard the king, went their way; and behold the star which they had seen in the East, went before them, until it came and stood over where the child was. And seeing the star they rejoiced with exceeding great joy. And entering into the house, they found the child with Mary his mother, and falling down they adored him: and opening their treasures, they offered him gifts; gold, frankincense, and myrrh. And having received an answer in sleep that they should not return to Herod, they went back another way into their country.
+
+*⟦Editorial connector · source: Matthew 2:13–23 · NOT APPROVED⟧*
+
+*Warned that Herod threatened the child, Joseph took Jesus and Mary into Egypt. After Herod's death, the family returned and settled in Nazareth (Matthew 2:13–23).*
+
+## 20 · The Forerunner and first disciples
+
+**⟦Matthew 3:1–6⟧**
+
+And in those days cometh John the Baptist preaching in the desert of Judea. And saying: Do penance: for the kingdom of heaven is at hand. For this is he that was spoken of by Isaias the prophet, saying: A voice of one crying in the desert, Prepare ye the way of the Lord, make straight his paths. And the same John had his garment of camel’s hair, and a leathern girdle about his loins: and his meat was locusts and wild honey. Then went out to him Jerusalem and all Judea, and all the country about Jordan: And were baptized by him in the Jordan, confessing their sins.
+
+**⟦Matthew 3:11–17⟧**
+
+I indeed baptize you in water unto penance, but he that shall come after me, is mightier than I, whose shoes I am not worthy to bear: he shall baptize you in the Holy Ghost and fire. Whose fan is in his hand, and he will thoroughly cleanse his floor and gather his wheat into the barn; but the chaff he will burn with unquenchable fire. Then cometh Jesus from Galilee to the Jordan, unto John, to be baptized by him. But John stayed him, saying: I ought to be baptized by thee, and comest thou to me? And Jesus answering, said to him: Suffer it to be so now. For so it becometh us to fulfil all justice. Then he suffered him. And Jesus being baptized, forthwith came out of the water: and lo, the heavens were opened to him: and he saw the Spirit of God descending as a dove, and coming upon him. And behold a voice from heaven saying: This is my beloved Son, in whom I am well pleased.
+
+*⟦Editorial connector · source: Matthew 4:1–11 · NOT APPROVED⟧*
+
+*Christ's temptation may be mentioned briefly as the transition into his public ministry.*
+
+*⟦HELD source bridge: John 1:29–34 · not selected or approved⟧*
+
+**⟦John 1:35–51⟧**
+
+The next day again John stood and two of his disciples. And beholding Jesus walking, he saith: Behold the Lamb of God. And the two disciples heard him speak: and they followed Jesus. And Jesus turning and seeing them following him, saith to them: What seek you? Who said to him: Rabbi (which is to say, being interpreted, Master), where dwellest thou? He saith to them: Come and see. They came and saw where he abode: and they stayed with him that day. Now it was about the tenth hour. And Andrew, the brother of Simon Peter, was one of the two who had heard of John and followed him. He findeth first his brother Simon and saith to him: We have found the Messias, which is, being interpreted, the Christ. And he brought him to Jesus. And Jesus looking upon him, said: Thou art Simon the son of Jona. Thou shalt be called Cephas, which is interpreted Peter. On the following day, he would go forth into Galilee: and he findeth Philip, And Jesus saith to him: follow me. Now Philip was of Bethsaida, the city of Andrew and Peter. Philip findeth Nathanael and saith to him: We have found him of whom Moses, in the law and the prophets did write, Jesus the son of Joseph of Nazareth. And Nathanael said to him: Can any thing of good come from Nazareth? Philip saith to him: Come and see. Jesus saw Nathanael coming to him and he saith of him: Behold an Israelite indeed, in whom there is no guile. Nathanael saith to him: Whence knowest thou me? Jesus answered and said to him: Before that Philip called thee, when thou wast under the fig tree, I saw thee. Nathanael answered him and said: Rabbi: Thou art the Son of God. Thou art the King of Israel. Jesus answered and said to him: Because I said unto thee, I saw thee under the fig tree, thou believest: greater things than these shalt thou see. And he saith to him: Amen, amen, I say to you, you shall see the heaven opened and the angels of God ascending and descending upon the Son of man.
+
+**⟦Mark 1:14–15⟧**
+
+And after that John was delivered up, Jesus came into Galilee, preaching the gospel of the kingdom of God, And saying: The time is accomplished and the kingdom of God is at hand. Repent and believe the gospel:
+
+<details><summary>Unselected same-book source seams (research audit)</summary>
+
+- OMITTED_VERSES: Matthew 3:7–10
+
+</details>
+
+## 21 · The Kingdom in Christ's teaching
+
+**⟦Matthew 5:1–12⟧**
+
+And seeing the multitudes, he went up into a mountain, and when he was set down, his disciples came unto him. And opening his mouth he taught them, saying: Blessed are the poor in spirit: for theirs is the kingdom of heaven. Blessed are the meek: for they shall possess the land. Blessed are they that mourn: for they shall be comforted. Blessed are they that hunger and thirst after justice: for they shall have their fill. Blessed are the merciful: for they shall obtain mercy. Blessed are the clean of heart: for they shall see God. Blessed are the peacemakers: for they shall be called the children of God. Blessed are they that suffer persecution for justice’ sake: for theirs is the kingdom of heaven. Blessed are ye when they shall revile you, and persecute you, and speak all that is evil against you, untruly, for my sake: Be glad and rejoice for your reward is very great in heaven. For so they persecuted the prophets that were before you.
+
+**⟦Matthew 6:9–15⟧**
+
+Thus therefore shall you pray: Our Father who art in heaven, hallowed be thy name. Thy kingdom come. Thy will be done on earth as it is in heaven. Give us this day our supersubstantial bread. And forgive us our debts, as we also forgive our debtors. And lead us not into temptation. But deliver us from evil. Amen. For if you will forgive men their offences, your heavenly Father will forgive you also your offences. But if you will not forgive men, neither will your Father forgive you your offences.
+
+*⟦Editorial connector · source: Mark 2:1–12 · NOT APPROVED⟧*
+
+*A representative forgiveness/healing sign demonstrates authority; this one remains the only nominated main-narrative miracle from H54.*
+
+## 22 · Christ the Bread of Life
+
+*⟦Editorial connector · source: John 6:1–15 · NOT APPROVED⟧*
+
+*Introduce the loaves once as the setting for Jesus' subsequent Bread of Life declaration; do not repeat H54-04.*
+
+**⟦John 6:26–35⟧**
+
+Jesus answered them and said: Amen, amen, I say to you, you seek me, not because you have seen miracles, but because you did eat of the loaves and were filled. Labour not for the meat which perisheth, but for that which endureth unto life everlasting, which the Son of man will give you. For him hath God, the Father, sealed. They said therefore unto him: What shall we do, that we may work the works of God? Jesus answered and said to them: This is the work of God, that you believe in him whom he hath sent. They said therefore to him: What sign therefore dost thou shew that we may see and may believe thee? What dost thou work? Our fathers did eat manna in the desert, as it is written: He gave them bread from heaven to eat. Then Jesus said to them: Amen, amen, I say to you; Moses gave you not bread from heaven, but my Father giveth you the true bread from heaven. For the bread of God is that which cometh down from heaven and giveth life to the world. They said therefore unto him: Lord, give us always this bread. And Jesus said to them: I am the bread of life. He that cometh to me shall not hunger: and he that believeth in me shall never thirst.
+
+**⟦John 6:36–40⟧**
+
+But I said unto you that you also have seen me, and you believe not. All that the Father giveth to me shall come to me: and him that cometh to me, I will not cast out. Because I came down from heaven, not to do my own will but the will of him that sent me. Now this is the will of the Father who sent me: that of all that he hath given me, I should lose nothing; but should raise it up again in the last day. And this is the will of my Father that sent me: that every one who seeth the Son and believeth in him may have life everlasting. And I will raise him up in the last day.
+
+**⟦John 6:41–46⟧**
+
+The Jews therefore murmured at him, because he had said: I am the living bread which came down from heaven. And they said: Is not this Jesus, the son of Joseph, whose father and mother we know? How then saith he: I came down from heaven? Jesus therefore answered and said to them: Murmur not among yourselves. No man can come to me, except the Father, who hath sent me, draw him. And I will raise him up in the last day. It is written in the prophets: And they shall all be taught of God. Every one that hath heard of the Father and hath learned cometh to me. Not that any man hath seen the Father: but he who is of God, he hath seen the Father.
+
+**⟦John 6:47–59⟧**
+
+Amen, amen, I say unto you: He that believeth in me hath everlasting life. I am the bread of life. Your fathers did eat manna in the desert: and are dead. This is the bread which cometh down from heaven: that if any man eat of it, he may not die. I am the living bread which came down from heaven. If any man eat of this bread, he shall live for ever: and the bread that I will give is my flesh, for the life of the world. The Jews therefore strove among themselves, saying: How can this man give us his flesh to eat? Then Jesus said to them: Amen, amen, I say unto you: except you eat the flesh of the Son of man and drink his blood, you shall not have life in you. He that eateth my flesh and drinketh my blood hath everlasting life: and I will raise him up in the last day. For my flesh is meat indeed: and my blood is drink indeed. He that eateth my flesh and drinketh my blood abideth in me: and I in him. As the living Father hath sent me and I live by the Father: so he that eateth me, the same also shall live by me. This is the bread that came down from heaven. Not as your fathers did eat manna and are dead. He that eateth this bread shall live for ever.
+
+## 23 · Peter's confession and the Transfiguration
+
+**⟦Matthew 16:13–28⟧**
+
+And Jesus came into the quarters of Cesarea Philippi: and he asked his disciples, saying: Whom do men say that the Son of man is? But they said: Some John the Baptist, and other some Elias, and others Jeremias, or one of the prophets. Jesus saith to them: But whom do you say that I am? Simon Peter answered and said: Thou art Christ, the Son of the living God. And Jesus answering said to him: Blessed art thou, Simon Bar-Jona: because flesh and blood hath not revealed it to thee, but my Father who is in heaven. And I say to thee: That thou art Peter; and upon this rock I will build my church, and the gates of hell shall not prevail against it. And I will give to thee the keys of the kingdom of heaven. And whatsoever thou shalt bind upon earth, it shall be bound also in heaven: and whatsoever thou shalt loose on earth, it shall be loosed also in heaven. Then he commanded his disciples, that they should tell no one that he was Jesus the Christ. From that time Jesus began to shew to his disciples, that he must go to Jerusalem, and suffer many things from the ancients and scribes and chief priests, and be put to death, and the third day rise again. And Peter taking him, began to rebuke him, saying: Lord, be it far from thee, this shall not be unto thee. Who turning, said to Peter: Go behind me, Satan, thou art a scandal unto me: because thou savourest not the things that are of God, but the things that are of men. Then Jesus said to his disciples: If any man will come after me, let him deny himself, and take up his cross, and follow me. For he that will save his life, shall lose it: and he that shall lose his life for my sake, shall find it. For what doth it profit a man, if he gain the whole world and suffer the loss of his own soul? Or what exchange shall a man give for his soul? For the Son of man shall come in the glory of his Father with his angels: and then will he render to every man according to his works. Amen I say to you, there are some of them that stand here, that shall not taste death, till they see the Son of man coming in his kingdom.
+
+**⟦Matthew 17:1–9⟧**
+
+And after six days Jesus taketh unto him Peter and James, and John his brother, and bringeth them up into a high mountain apart: And he was transfigured before them. And his face did shine as the sun: and his garments became white as snow. And behold there appeared to them Moses and Elias talking with him. And Peter answering, said to Jesus: Lord, it is good for us to be here: if thou wilt, let us make here three tabernacles, one for thee, and one for Moses, and one for Elias. And as he was yet speaking, behold a bright cloud overshadowed them. And lo a voice out of the cloud, saying: This is my beloved Son, in whom I am well pleased: hear ye him. And the disciples hearing fell upon their face, and were very much afraid. And Jesus came and touched them: and said to them: Arise, and fear not. And they lifting up their eyes, saw no one, but only Jesus. And as they came down from the mountain, Jesus charged them, saying: Tell the vision to no man, till the Son of man be risen from the dead.
+
+## 24 · The approach to Jerusalem
+
+**⟦John 11:1–7⟧**
+
+Now there was a certain man sick, named Lazarus, of Bethania, of the town of Mary and of Martha her sister. (And Mary was she that anointed the Lord with ointment and wiped his feet with her hair: whose brother Lazarus was sick.) His sisters therefore sent to him, saying: Lord, behold, he whom thou lovest is sick. And Jesus hearing it, said to them: This sickness is not unto death, but for the glory of God: that the Son of God may be glorified by it. Now Jesus loved Martha and her sister Mary and Lazarus. When he had heard therefore that he was sick, he still remained in the same place two days. Then after that, he said to his disciples: Let us go into Judea again.
+
+**⟦John 11:14–17⟧**
+
+Then therefore Jesus said to them plainly: Lazarus is dead. And I am glad, for your sakes; that I was not there, that you may believe. But, let us go to him. Thomas therefore, who is called Didymus, said to his fellow disciples: Let us also go, that we may die with him. Jesus therefore came: and found that he had been four days already in the grave.
+
+**⟦John 11:20–27⟧**
+
+Martha therefore, as soon as she heard that Jesus was come, went to meet him: but Mary sat at home. Martha therefore said to Jesus: Lord, if thou hadst been here, my brother had not died. But now also I know that whatsoever thou wilt ask of God, God will give it thee. Jesus saith to her: Thy brother shall rise again. Martha saith to him: I know that he shall rise again, in the resurrection at the last day. Jesus said to her: I am the resurrection and the life: he that believeth in me, although he be dead, shall live: And every one that liveth and believeth in me shall not die for ever. Believest thou this? She saith to him: Yea, Lord, I have believed that thou art Christ, the Son of the living God, who art come into this world.
+
+**⟦John 11:28–31⟧**
+
+And when she had said these things, she went and called her sister Mary secretly, saying: The master is come and calleth for thee. She, as soon as she heard this, riseth quickly and cometh to him. For Jesus was not yet come into the town: but he was still in that place where Martha had met him. The Jews therefore, who were with her in the house and comforted her, when they saw Mary, that she rose up speedily and went out, followed her, saying: She goeth to the grave to weep there.
+
+**⟦John 11:32–35⟧**
+
+When Mary therefore was come where Jesus was, seeing him, she fell down at his feet and saith to him. Lord, if thou hadst been here, my brother had not died. Jesus, therefore, when he saw her weeping, and the Jews that were come with her weeping, groaned in the spirit and troubled himself, And said: Where have you laid him? They say to him: Lord, come and see. And Jesus wept.
+
+**⟦John 11:38–44⟧**
+
+Jesus therefore again groaning in himself, cometh to the sepulchre. Now it was a cave; and a stone was laid over it. Jesus saith: Take away the stone. Martha, the sister of him that was dead, saith to him: Lord, by this time he stinketh, for he is now of four days. Jesus saith to her: Did not I say to thee that if thou believe, thou shalt see the glory of God? They took therefore the stone away. And Jesus lifting up his eyes, said: Father, I give thee thanks that thou hast heard me. And I knew that thou hearest me always: but because of the people who stand about have I said it, that they may believe that thou hast sent me. When he had said these things, he cried with a loud voice: Lazarus, come forth. And presently he that had been dead came forth, bound feet and hands with winding bands. And his face was bound about with a napkin. Jesus said to them: Loose him and let him go.
+
+*⟦HELD source bridge: John 11:45–53 · not selected or approved⟧*
+
+<details><summary>Unselected same-book source seams (research audit)</summary>
+
+- OMITTED_VERSES: John 11:8–13
+- OMITTED_VERSES: John 11:18–19
+- OMITTED_VERSES: John 11:36–37
+
+</details>
+
+## 25 · The King's entry into Jerusalem
+
+**⟦Matthew 21:1–11⟧**
+
+And when they drew nigh to Jerusalem and were come to Bethphage, unto mount Olivet, then Jesus sent two disciples, Saying to them: Go ye into the village that is over against you: and immediately you shall find an ass tied and a colt with her. Loose them and bring them to me. And if any man shall say anything to you, say ye that the Lord hath need of them. And forthwith he will let them go. Now all this was done that it might be fulfilled which was spoken by the prophet, saying: Tell ye the daughter of Sion: Behold thy king cometh to thee, meek and sitting upon an ass and a colt, the foal of her that is used to the yoke. And the disciples going, did as Jesus commanded them. And they brought the ass and the colt and laid their garments upon them and made him sit thereon. And a very great multitude spread their garments in the way: and others cut boughs from the trees and strewed them in the way. And the multitudes that went before and that followed cried, saying: Hosanna to the son of David: Blessed is he that cometh in the name of the Lord: Hosanna in the highest. And when he was come into Jerusalem, the whole city was moved, saying: Who is this? And the people said: This is Jesus, the prophet from Nazareth of Galilee.
+
+## 26 · The Last Supper
+
+**⟦Luke 22:7–20⟧**
+
+And the day of the unleavened bread came, on which it was necessary that the pasch should be killed. And he sent Peter and John, saying: Go, and prepare for us the pasch, that we may eat. But they said: Where wilt thou that we prepare? And he said to them: Behold, as you go into the city, there shall meet you a man carrying a pitcher of water: follow him into the house where he entereth in. And you shall say to the goodman of the house: The master saith to thee: Where is the guest chamber, where I may eat the pasch with my disciples? And he will shew you a large dining room, furnished. And there prepare. And they going, found as he had said to them and made ready the pasch. And when the hour was come, he sat down: and the twelve apostles with him. And he said to them: With desire I have desired to eat this pasch with you, before I suffer. For I say to you that from this time I will not eat it, till it be fulfilled in the kingdom of God. And having taken the chalice, he gave thanks and said: Take and divide it among you. For I say to you that I will not drink of the fruit of the vine, till the kingdom of God come. And taking bread, he gave thanks and brake and gave to them, saying: This is my body, which is given for you. Do this for a commemoration of me. In like manner, the chalice also, after he had supped, saying: This is the chalice, the new testament in my blood, which shall be shed for you.
+
+*⟦HELD source bridge: John 14:16–17 · not selected or approved⟧*
+
