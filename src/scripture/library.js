@@ -266,6 +266,40 @@ export function mountScriptureLibrary(root,{
        :" · "+(lang==="fr"?"contenu dans une notice groupée":"contained in a composite record")),
        "aoScriptureNotice"));
      }
+     if(linked?.atlasRuntimeNavigation?.status==="EVENT_PRESENT_IN_ATLAS_151_SEQUENCE" &&
+        /^biblical:event:[a-z0-9-]+$/.test(linked.atlasRuntimeNavigation.eventKey)){
+      const record=Object.freeze({
+       id:"historia-atlas-"+thematicEpisode.id,
+       target:Object.freeze({type:"atlas",eventKey:linked.atlasRuntimeNavigation.eventKey})
+      });
+      if(typeof canOpenRelatedObject==="function"&&canOpenRelatedObject(record)&&
+         typeof onOpenRelatedObject==="function"){
+       const visit=element("button",lang==="fr"
+        ?"Voir l'événement cité dans l'Atlas biblique"
+        :"Open this referenced event in the Biblical Atlas");
+       visit.type="button";visit.dataset.scriptureOpenRelatedObject=record.id;
+       visit.dataset.historiaAtlasEvent=linked.atlasRuntimeNavigation.eventKey;
+       visit.addEventListener("click",async()=>{
+        visit.disabled=true;
+        let accepted=false;
+        try{accepted=(await onOpenRelatedObject(record))===true;}catch(error){
+         globalThis.console?.error?.("Historia Atlas navigation failed",error);
+        }
+        visit.disabled=false;
+        if(!accepted&&visit.isConnected){
+         let warning=active.querySelector("[data-historia-atlas-error]");
+         if(!warning){
+          warning=element("p",null,"aoScriptureNotice");
+          warning.dataset.historiaAtlasError="";active.append(warning);
+         }
+         warning.textContent=lang==="fr"
+          ?"Ce jalon de l'Atlas n'est pas disponible. La lecture biblique est conservée."
+          :"That Atlas milestone could not open. Your Scripture reading is unchanged.";
+        }
+       });
+       active.append(visit);
+      }
+     }
      const back=element("button",lang==="fr"?"Retour à la lecture précédente":"Return to previous Bible passage");
      back.type="button";back.dataset.historiaExit="";
      back.addEventListener("click",()=>{exitThematic(true);draw();});
