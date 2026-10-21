@@ -188,6 +188,32 @@ try{
  assert.match(await catalogue.locator("[data-historia-active-episode]").innerText(),
   /Staged supplementary Scripture:.*not yet verified/s);
  results.push("opt-in batch two: 60 canonical-source readings across four groups, no fabricated contextual anchor");
+ // Audited boundaries: title, exact source fragments and editorial context.
+ assert.equal(await expanded.evaluate(()=>
+  globalThis.AO_SCRIPTURE_APP_V1.openThematicEpisode("hist-omitted-142")),true);
+ await expanded.waitForFunction(()=>{
+  const s=globalThis.AO_SCRIPTURE_APP_V1.status().reader;
+  return s?.passage?.book==="Mark" && s.passage.chapter===9 &&
+   s.passage.verseStart===14&&s.passage.verseEnd===28;
+ });
+ assert.match(await catalogue.locator("[data-historia-boundary-review]").innerText(),/Mark 9:29/);
+ assert.equal(await expanded.evaluate(()=>
+  globalThis.AO_SCRIPTURE_APP_V1.openThematicEpisode("hist-omitted-150")),true);
+ await expanded.waitForFunction(()=>globalThis.AO_SCRIPTURE_APP_V1.status().reader?.passage?.verseStart===24);
+ await catalogue.locator("[data-historia-next]").click();
+ await expanded.waitForFunction(()=>globalThis.AO_SCRIPTURE_APP_V1.status().reader?.passage?.verseStart===36);
+ assert.match(await catalogue.locator("[data-historia-boundary-review]").innerText(),/Matthew 13:36/);
+ assert.equal(await expanded.evaluate(()=>
+  globalThis.AO_SCRIPTURE_APP_V1.openThematicEpisode("hist-omitted-171")),true);
+ await expanded.waitForFunction(()=>globalThis.AO_SCRIPTURE_APP_V1.status().reader?.passage?.verseStart===12);
+ await catalogue.locator("[data-historia-next]").click();
+ await expanded.waitForFunction(()=>globalThis.AO_SCRIPTURE_APP_V1.status().reader?.passage?.verseStart===20);
+ assert.equal(await expanded.evaluate(()=>
+  globalThis.AO_SCRIPTURE_APP_V1.openThematicEpisode("hist-omitted-172")),true);
+ await expanded.waitForFunction(()=>globalThis.AO_SCRIPTURE_APP_V1.status().reader?.passage?.verseStart===23);
+ assert.match(await catalogue.locator("[data-historia-active-episode]").innerText(),/Debates and denunciations/);
+ results.push("audited boundary: Mark 9:14–28, split wheat explanation, two fig-tree actions, Matthew authorities without triumphal entry");
+
  await expanded.screenshot({path:resolve(output,"batch2-magnificat-390.png"),animations:"disabled"});
  await expanded.close();
 
