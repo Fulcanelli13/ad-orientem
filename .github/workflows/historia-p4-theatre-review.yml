@@ -23,8 +23,10 @@ jobs:
       - run: node --check tests/historia-p4-theatre-citation-contract.mjs
       - run: node --check tests/historia-p4-theatre-phone.mjs
       - run: node --check tests/historia-p4-scripture-adjudication.mjs
+      - run: node --check tests/historia-p4-m25-m37-source-seams.mjs
       - run: node tests/historia-p4-theatre-citation-contract.mjs
       - run: node tests/historia-p4-scripture-adjudication.mjs
+      - run: node tests/historia-p4-m25-m37-source-seams.mjs
   browser:
     needs: source
     runs-on: ubuntu-latest
