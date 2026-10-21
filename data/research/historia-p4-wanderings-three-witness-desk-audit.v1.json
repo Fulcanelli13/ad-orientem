@@ -1,0 +1,329 @@
+{
+  "schema": "ao.historia.p4.wanderings-three-witness-desk-audit.v1",
+  "date": "2026-10-21",
+  "status": "RESEARCH_ONLY_DESK_TRIAGE_NO_PUBLICATION",
+  "source": {
+    "scene": {
+      "path": "data/explore/biblical-cinematic-studies-review.v1.json",
+      "branch": "feature/biblical-atlas-current-main-convergence-20261012",
+      "blobSha": "d937288862abab192e1d584f0e663a3eebb46611"
+    },
+    "witnesses": [
+      {
+        "path": "data/scripture/witness/dr-challoner/Numbers.json",
+        "edition": "dr-challoner",
+        "blobSha": "47e8fc542254ad4b4c7fc2538d5b58982db5bb5c",
+        "sourceStatus": "UNCOLLATED_SOURCE_WITNESS"
+      },
+      {
+        "path": "data/scripture/witness/cpdv-2009/Numbers.json",
+        "edition": "cpdv-2009",
+        "blobSha": "4200d17215c0181e2316a8761d539ddc126cd8ae",
+        "sourceStatus": "UNCOLLATED_SOURCE_WITNESS"
+      },
+      {
+        "path": "data/scripture/witness/crampon-1923/Numbers.json",
+        "edition": "crampon-1923",
+        "blobSha": "eb61e07f910e45283d7bcc08b7c3bc9a404e718f",
+        "sourceStatus": "UNCOLLATED_SOURCE_WITNESS"
+      },
+      {
+        "path": "data/scripture/witness/dr-challoner/Deuteronomy.json",
+        "edition": "dr-challoner",
+        "blobSha": "02468330f4cc5bd79ef7ef4703df996f8af3fd38",
+        "sourceStatus": "UNCOLLATED_SOURCE_WITNESS"
+      },
+      {
+        "path": "data/scripture/witness/cpdv-2009/Deuteronomy.json",
+        "edition": "cpdv-2009",
+        "blobSha": "d5eef43c6af271eaae8fcf7efa5ea6d3d47aca04",
+        "sourceStatus": "UNCOLLATED_SOURCE_WITNESS"
+      },
+      {
+        "path": "data/scripture/witness/crampon-1923/Deuteronomy.json",
+        "edition": "crampon-1923",
+        "blobSha": "ddd26d44a8c1d96a0bd67f337e310a46c67fb9ce",
+        "sourceStatus": "UNCOLLATED_SOURCE_WITNESS"
+      },
+      {
+        "path": "data/scripture/witness/dr-challoner/Joshua.json",
+        "edition": "dr-challoner",
+        "blobSha": "a2c14c095cb82c2c991e2c0a8b6131cc718d619d",
+        "sourceStatus": "UNCOLLATED_SOURCE_WITNESS"
+      },
+      {
+        "path": "data/scripture/witness/cpdv-2009/Joshua.json",
+        "edition": "cpdv-2009",
+        "blobSha": "e30ce1ff9f72fcbe3fbbd3b0a91547369df19488",
+        "sourceStatus": "UNCOLLATED_SOURCE_WITNESS"
+      },
+      {
+        "path": "data/scripture/witness/crampon-1923/Joshua.json",
+        "edition": "crampon-1923",
+        "blobSha": "08286a3278906b4e411e771f261d950832d818d2",
+        "sourceStatus": "UNCOLLATED_SOURCE_WITNESS"
+      }
+    ]
+  },
+  "rules": [
+    "Selected verse coordinate presence verified in CPDV, Douay and Crampon; three uncollated sources do not prove wording identity or print accuracy.",
+    "Exact historical sites and ancient routes require separate attestations.",
+    "No new Atlas events or coordinates; source statuses preserved.",
+    "Source-described actors are provisional pointers; no canonical identity joins.",
+    "Moses' burial location explicitly unknown (Deuteronomy 34:6)."
+  ],
+  "counts": {
+    "sceneBatch": "WANDERINGS",
+    "firstIndex": 49,
+    "lastIndex": 56,
+    "rows": 8,
+    "corpusTotal": 183,
+    "versePresenceAllThree": 8,
+    "approvedGeocodes": 0,
+    "approvedPublication": 0
+  },
+  "reviewedRows": [
+    {
+      "sceneKey": "biblical:scene:moses:049",
+      "index": 49,
+      "originalChapter": "WANDERINGS",
+      "title": "Departure from Sinai",
+      "scriptureReference": "Numbers 10:11–36",
+      "existingLocationClaim": "Sinai wilderness · broad uncertain region",
+      "existingMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalAtlasCandidateKeys": [],
+      "witnessSpanChecks": {
+        "douayChallonerEntries": 26,
+        "cpdv2009Entries": 26,
+        "crampon1923Entries": 26,
+        "spanPresenceVerified": true,
+        "verseNumberCorrespondenceNotCertified": true
+      },
+      "identifiedActorsForSourceReview": [
+        "Moses",
+        "Israelites"
+      ],
+      "actorIdentityPublicationApproved": false,
+      "locationEvidenceClass": "BIBLICAL_SINAI_REGION_ROUTE_NOT_SURVEYED",
+      "reviewFinding": "Numbers 10:11–12 records departure from Sinai and entry toward the wilderness of Paran; it does not establish a historical march line or surveyed encampment.",
+      "geographicalAction": "REGION_ONLY_NO_ROUTE",
+      "siteCoordinatesApproved": false,
+      "productionApproved": false,
+      "editorialStatus": "THREE_UNCOLLATED_WITNESSES_DESK_TRIAGED_NOT_FINAL"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:050",
+      "index": 50,
+      "originalChapter": "WANDERINGS",
+      "title": "The twelve spies",
+      "scriptureReference": "Numbers 13:1–33",
+      "existingLocationClaim": "Kadesh-Barnea · identification debated",
+      "existingMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalAtlasCandidateKeys": [],
+      "witnessSpanChecks": {
+        "douayChallonerEntries": 33,
+        "cpdv2009Entries": 33,
+        "crampon1923Entries": 33,
+        "spanPresenceVerified": true,
+        "verseNumberCorrespondenceNotCertified": true
+      },
+      "identifiedActorsForSourceReview": [
+        "Moses",
+        "Aaron",
+        "Joshua",
+        "Caleb",
+        "Israelite spies"
+      ],
+      "actorIdentityPublicationApproved": false,
+      "locationEvidenceClass": "BIBLICAL_KADESH_CONTEXT_MODERN_ID_DISPUTED",
+      "reviewFinding": "Numbers 13:27 identifies the return camp as Paran/Kadesh in the source witness; this biblical place designation does not verify a modern Kadesh-Barnea coordinate. Individual scouts must only be linked where the passage actually names them.",
+      "geographicalAction": "BIBLICAL_SITE_ONLY_NO_MODERN_PIN",
+      "siteCoordinatesApproved": false,
+      "productionApproved": false,
+      "editorialStatus": "THREE_UNCOLLATED_WITNESSES_DESK_TRIAGED_NOT_FINAL"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:051",
+      "index": 51,
+      "originalChapter": "WANDERINGS",
+      "title": "Forty years in the wilderness",
+      "scriptureReference": "Numbers 14:1–38",
+      "existingLocationClaim": "Kadesh-Barnea · identification debated",
+      "existingMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalAtlasCandidateKeys": [],
+      "witnessSpanChecks": {
+        "douayChallonerEntries": 38,
+        "cpdv2009Entries": 38,
+        "crampon1923Entries": 38,
+        "spanPresenceVerified": true,
+        "verseNumberCorrespondenceNotCertified": true
+      },
+      "identifiedActorsForSourceReview": [
+        "Moses",
+        "Aaron",
+        "Joshua",
+        "Caleb",
+        "Israelites"
+      ],
+      "actorIdentityPublicationApproved": false,
+      "locationEvidenceClass": "BIBLICAL_WILDERNESS_JUDGMENT_NOT_ONE_LONG_EVENT_PIN",
+      "reviewFinding": "Numbers 14:33–34 is the divine sentence of forty years, not a detailed record of forty years at one camp. The existing Kadesh setting is narrative context and cannot mark all forty years geographically.",
+      "geographicalAction": "NO_SINGLE_FORTY_YEAR_LOCATION",
+      "siteCoordinatesApproved": false,
+      "productionApproved": false,
+      "editorialStatus": "THREE_UNCOLLATED_WITNESSES_DESK_TRIAGED_NOT_FINAL"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:052",
+      "index": 52,
+      "originalChapter": "WANDERINGS",
+      "title": "The bronze serpent",
+      "scriptureReference": "Numbers 21:4–9",
+      "existingLocationClaim": "Edom region · approximate",
+      "existingMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalAtlasCandidateKeys": [],
+      "witnessSpanChecks": {
+        "douayChallonerEntries": 6,
+        "cpdv2009Entries": 6,
+        "crampon1923Entries": 6,
+        "spanPresenceVerified": true,
+        "verseNumberCorrespondenceNotCertified": true
+      },
+      "identifiedActorsForSourceReview": [
+        "Moses",
+        "Israelites"
+      ],
+      "actorIdentityPublicationApproved": false,
+      "locationEvidenceClass": "EDOM_BYPASS_BIBLICAL_REGION_ROUTE_UNCONFIRMED",
+      "reviewFinding": "Numbers 21:4 explicitly describes bypassing Edom from Mount Hor toward the sea route. No precise serpent episode pin or modern itinerary follows from this verse.",
+      "geographicalAction": "REGION_ONLY_NO_SERPENT_PIN",
+      "siteCoordinatesApproved": false,
+      "productionApproved": false,
+      "editorialStatus": "THREE_UNCOLLATED_WITNESSES_DESK_TRIAGED_NOT_FINAL"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:053",
+      "index": 53,
+      "originalChapter": "WANDERINGS",
+      "title": "Balaam and Balak",
+      "scriptureReference": "Numbers 22:1–24:25",
+      "existingLocationClaim": "Plains of Moab · Jordan Valley context",
+      "existingMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalAtlasCandidateKeys": [],
+      "witnessSpanChecks": {
+        "douayChallonerEntries": 96,
+        "cpdv2009Entries": 96,
+        "crampon1923Entries": 96,
+        "spanPresenceVerified": true,
+        "verseNumberCorrespondenceNotCertified": true
+      },
+      "identifiedActorsForSourceReview": [
+        "Balaam",
+        "Balak",
+        "Israelites"
+      ],
+      "actorIdentityPublicationApproved": false,
+      "locationEvidenceClass": "MULTIPLE_SCENES_MOAB_BALAAM_ROUTE_UNVERIFIED",
+      "reviewFinding": "Numbers 22:1 situates Israel opposite Jericho in the plains of Moab, but chapters 22–24 include separate movements and encounter locations. One Moab point cannot stand for every event.",
+      "geographicalAction": "NO_UNIFIED_BALAAM_ROUTE_OR_POINT",
+      "siteCoordinatesApproved": false,
+      "productionApproved": false,
+      "editorialStatus": "THREE_UNCOLLATED_WITNESSES_DESK_TRIAGED_NOT_FINAL"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:054",
+      "index": 54,
+      "originalChapter": "WANDERINGS",
+      "title": "Moses addresses Israel",
+      "scriptureReference": "Deuteronomy 6:4–25",
+      "existingLocationClaim": "Plains of Moab · Jordan Valley context",
+      "existingMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalAtlasCandidateKeys": [],
+      "witnessSpanChecks": {
+        "douayChallonerEntries": 22,
+        "cpdv2009Entries": 22,
+        "crampon1923Entries": 22,
+        "spanPresenceVerified": true,
+        "verseNumberCorrespondenceNotCertified": true
+      },
+      "identifiedActorsForSourceReview": [
+        "Moses",
+        "Israelites"
+      ],
+      "actorIdentityPublicationApproved": false,
+      "locationEvidenceClass": "MOAB_ADDRESS_CONTEXT_OUTSIDE_SELECTED_SHEMA",
+      "reviewFinding": "Deuteronomy 6:4–25 is Moses' address and commands, without a place-name in those verses. The plains of Moab derive from the larger Deuteronomy frame, not from this selected passage.",
+      "geographicalAction": "LABEL_CONTEXT_NOT_EXACT_SPEECH_SPOT",
+      "siteCoordinatesApproved": false,
+      "productionApproved": false,
+      "editorialStatus": "THREE_UNCOLLATED_WITNESSES_DESK_TRIAGED_NOT_FINAL"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:055",
+      "index": 55,
+      "originalChapter": "WANDERINGS",
+      "title": "The view from Mount Nebo",
+      "scriptureReference": "Deuteronomy 34:1–8",
+      "existingLocationClaim": "Mount Nebo · traditional location",
+      "existingMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "originalAtlasCandidateKeys": [
+        {
+          "eventKey": "biblical:passage:deuteronomy-34-1-6",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY"
+        }
+      ],
+      "witnessSpanChecks": {
+        "douayChallonerEntries": 8,
+        "cpdv2009Entries": 8,
+        "crampon1923Entries": 8,
+        "spanPresenceVerified": true,
+        "verseNumberCorrespondenceNotCertified": true
+      },
+      "identifiedActorsForSourceReview": [
+        "Moses",
+        "Israelites"
+      ],
+      "actorIdentityPublicationApproved": false,
+      "locationEvidenceClass": "BIBLICAL_NEBO_PISGA_TRADITIONAL_SUMMIT_UNKNOWN_BURIAL",
+      "reviewFinding": "Deuteronomy 34:1 names Nebo/Pisgah opposite Jericho. The particular modern lookout is a traditional location; 34:6 explicitly states that the grave of Moses was unknown.",
+      "geographicalAction": "TRADITIONAL_MOUNTAIN_ONLY_NEVER_TOMB_PIN",
+      "siteCoordinatesApproved": false,
+      "productionApproved": false,
+      "editorialStatus": "THREE_UNCOLLATED_WITNESSES_DESK_TRIAGED_NOT_FINAL"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:056",
+      "index": 56,
+      "originalChapter": "WANDERINGS",
+      "title": "Joshua leads the crossing",
+      "scriptureReference": "Joshua 3:1–17",
+      "existingLocationClaim": "Jericho · settlement region",
+      "existingMatchStatus": "EXACT_REFERENCE",
+      "originalAtlasCandidateKeys": [
+        {
+          "eventKey": "biblical:passage:joshua-3-1-17",
+          "relation": "EXACT_REFERENCE"
+        }
+      ],
+      "witnessSpanChecks": {
+        "douayChallonerEntries": 17,
+        "cpdv2009Entries": 17,
+        "crampon1923Entries": 17,
+        "spanPresenceVerified": true,
+        "verseNumberCorrespondenceNotCertified": true
+      },
+      "identifiedActorsForSourceReview": [
+        "Joshua",
+        "Israelites",
+        "priests carrying the Ark"
+      ],
+      "actorIdentityPublicationApproved": false,
+      "locationEvidenceClass": "BIBLICAL_JORDAN_CROSSING_JERICHO_REGION_NO_SPOT",
+      "reviewFinding": "Joshua 3:1 and 3:14–17 identify departure from Shittim, crossing the Jordan, and the Jericho region. The source does not locate a modern ford, archaeological riverbank or route.",
+      "geographicalAction": "RIVER_REGION_ONLY_NO_SPECIFIC_FORD",
+      "siteCoordinatesApproved": false,
+      "productionApproved": false,
+      "editorialStatus": "THREE_UNCOLLATED_WITNESSES_DESK_TRIAGED_NOT_FINAL"
+    }
+  ]
+}
