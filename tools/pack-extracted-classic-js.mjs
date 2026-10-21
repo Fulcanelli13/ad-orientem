@@ -20,11 +20,24 @@ if(verify){
  const payload=readFileSync(report.pack.file,"utf8");
  if(hash(payload)!==report.pack.sha)throw Error("Packed JavaScript changed");
  if(!html.includes('src="./'+report.pack.file+'"'))throw Error("Packed classic JS was unlinked");
- for(const item of report.pack.entries){
+ const ordered=[...report.pack.entries].sort((a,b)=>a.position-b.position);
+ const functions=[];
+ for(const item of ordered){
   if(!html.includes("globalThis.AO_INLINE_PACK_V1["+item.position+"].call(globalThis)"))throw Error("Missing preserved parser position "+item.position);
   if(!existsSync(item.source))throw Error("Missing original extracted IIFE "+item.source);
+  // A post-pack edit must live in a recorded revision file, never only
+  // inside the bundle; otherwise a rebuild would silently discard it.
+  const owner=item.revisedSource??item.source;
+  if(!existsSync(owner))throw Error("Missing revised IIFE source "+owner);
+  const source=readFileSync(owner,"utf8");
+  if(len(source)!==(item.revisedSource?item.revisedBytes:item.originalBytes))throw Error("Pack source byte size drifted: "+owner);
+  functions.push("function(){\n"+source+"\n}");
  }
- console.log("PASS packed parser-order scripts, "+report.pack.entries.length+" single-loader functions");
+ const rebuilt="/* Certified parser-order IIFEs; execution occurs at original script tags. */\n"+
+ "globalThis.AO_INLINE_PACK_V1=Object.freeze([\n"+functions.join(",\n")+"\n]);\n";
+ if(rebuilt!==payload)throw Error("Packed JavaScript is not reproducible from its recorded sources; record post-pack edits as revisedSource");
+ const revised=ordered.filter(x=>x.revisedSource).length;
+ console.log("PASS packed parser-order scripts, "+report.pack.entries.length+" single-loader functions, byte-reproducible from sources ("+revised+" recorded revision"+(revised===1?"":"s")+")");
  process.exit(0);
 }
 if(apply&&report.pack){
