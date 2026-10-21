@@ -14,14 +14,15 @@ const registry=load('data/learn/research/pius-x-document-first-router-to-claims-
 const catalog=load(root+'data/learn/living-church-shared-question-routing-pilot.v1.json');
 const pointers=load(root+'data/learn/living-church-pius-x-historical-passage-pointers.v1.json');
 const symbols=load(root+'data/learn/living-church-symbolic-concepts.v1.json');
+const concepts=load(root+'data/learn/living-church-pius-x-source-concept-facets.v1.json');
 const {createSharedQuestionRouter}=await import(pathToFileURL(resolve(root+'src/learn/living-church-shared-question-router.js')).href);
 const {createHybridQuestionRouter}=await import(pathToFileURL(resolve(root+'src/learn/living-church-hybrid-question-router.js')).href);
 assert.equal(catalog.topics.length,197);
 assert.equal(pointers.records.length,23);
-assert.equal(registry.expectedRouterCommit,'0339883dc3d1ecfc16f07fd35b68469df206337b');
+assert.equal(registry.expectedRouterCommit,'433e0b515b4800593a18b1d8594efec3f9936eaa');
 const engines={
- shared:createSharedQuestionRouter(catalog,{historicalPointers:pointers}),
- hybrid:createHybridQuestionRouter(catalog,symbols,{historicalPointers:pointers})
+ shared:createSharedQuestionRouter(catalog,{historicalPointers:pointers,sourceConceptRegistry:concepts}),
+ hybrid:createHybridQuestionRouter(catalog,symbols,{historicalPointers:pointers,sourceConceptRegistry:concepts})
 };
 const primary=[
  {doc:'ACERBO',en:'Can an excellent preacher neglect the catechism?',fr:'Un excellent prédicateur peut-il négliger le catéchisme ?',source:'SPX-PILOT-13',plan:'ACERBO_PREACHING_FOUNDATION',claims:['A15','A16']},
