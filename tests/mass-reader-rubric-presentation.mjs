@@ -41,4 +41,19 @@ assert.equal(liveActionCoveredByIcon(covered[1],{cueId:"AO.SM.C0232",priestActio
 assert.equal(liveActionCoveredByIcon(covered[1],{cueId:"AO.SM.C0234",priestAction:{cueId:"AO.SM.C0232",label:"RECEIVES HOST"},iconKey:"communion",iconResolved:true}),false,"Stale cue must not suppress");
 assert.equal(conciseMissalSourceRubric(mk("AO.SM.C0174","LOW","en","TEXT"),{form:"LOW"}),null);
 assert.equal(conciseMissalInlineSequence(covered,{form:"GOOD_FRIDAY"}),null);
-console.log("PASS: exact-source short Missal sequences, EN/FR, four Mass forms, LIVE icon coverage fail-open and draft guards");
+// Integration must use the concise treatment ONLY in Missal; do not
+// rewrite canonical prayer text or erase words when LIVE has no icon.
+const dom=readFileSync(new URL("../src/mass/reader-dom.js",import.meta.url),"utf8");
+assert.match(dom,/mode==="MISSAL"\?conciseMissalInlineSequence\(shortRubrics/);
+assert.match(dom,/const conciseSource=bookRubric \? conciseMissalSourceRubric\(p/);
+assert.match(dom,/shortAction:typeof event\.shortAction==="string"\?event\.shortAction:null/);
+assert.match(dom,/liveActionCoveredByIcon\(event,/);
+assert.match(dom,/iconNode&&!iconNode\.hidden&&iconKey/);
+assert.match(dom,/for\(const note of root\.querySelectorAll\?\.\("\.ao-live-inline-rubrics"\)/);
+assert.match(dom,/mode==="MISSAL"\|\|mode==="LIVE"/);
+assert.match(dom,/source\.href=event\.sourceUrl/);
+assert.doesNotMatch(dom,/data-prayer-suggestion|optional-private-prayer/);
+const native=readFileSync(new URL("../src/mass/reader-native-preview.js",import.meta.url),"utf8");
+assert.match(native,/withCertifiedSolemnMissalMinisters/);
+assert.match(native,/withPublishedMissalParagraphRubrics/);
+console.log("PASS: exact-source short Missal sequences, EN/FR, four Mass forms, LIVE icon coverage fail-open, no devotional additions and draft guards");
