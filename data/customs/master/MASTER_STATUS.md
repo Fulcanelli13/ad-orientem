@@ -126,6 +126,22 @@ The 42 possible distinct practices are a **research shortlist**, not a count of 
 
 See `first-pass-260-reconciliation.v1.json` and the three chapter-grouped `identity-triage` files. Every row keeps its original Weiser locator, geography, existing priority and evidence status.
 
+## Canonical 38 — bilingual editorial field parity now complete
+
+**All 38 canonical identities** (35 published and 3 context-only on existing main) now have **English and French**: title, description, historical context, spiritual meaning, bounded suggested practice and pastoral qualification. The 27 shorter canonical articles received explicit meaning/practice fields; the 11 older detailed guides received bilingual historical paragraphs with **26 independent source-witness citations** preserved from the previous P0/P1 evidence closure.
+
+These are working original editorial drafts, **not a new approval to publish**. Ministerial blessings and actual liturgical ceremonies continue to require a priest and correct Roman Ritual authority. The three CONTEXT_ONLY customs retain their limited historical status; no artificial devotional instructions are issued for them.
+
+| Core editorial coverage | Completed |
+|---|---:|
+| Canonical descriptions, EN/FR | 38/38 |
+| Historical paragraphs, EN/FR | 38/38 |
+| Spiritual meaning, EN/FR | 38/38 |
+| Practical guidance, EN/FR | 38/38 |
+| Publication approvals issued by this master | **0** |
+
+The four additional provisional P2 customs remain separately documented, and 42 further source-observation candidates are still adjudicated in their own review ledger. Do **not** add 42 to the canonical count.
+
 ## Candidate source and bilingual editorial closure — 15 of 42
 
 The previously undifferentiated **42 possible distinct customs** now have a single `candidate-source-decision-board.v1.json` with independent source status, cross-module identity links, provisional date context and editorial state. These 42 observations are **not 42 new canonical customs**.
@@ -182,7 +198,7 @@ Eight candidate family-overlap reviews, comprising 19 possible distinct observat
 2. **Separate dates rigorously:** fixed historical custom day, movable feast relationship, observed 1962 feast precedence, family occasion, and actual local programme are different fields; the Calendar resolver owns observed feast dates.
 3. **Preserve geography and historical scope:** never turn an Irish household witness, German festival custom, French local blessing, Polish food custom or folklore into universal Roman practice.
 4. **Resolve the 84 P1 independent-source holds** where worthwhile without manufacturing an attestation. Weiser alone is a bibliographic pointer, not current-practice certification.
-5. **Consolidate final English/French descriptions and independent citations** for approved identities, then run a complete coverage audit. The supplementary 27 historical texts are currently draft editorial material.
+5. **Editorially approve the now-field-complete 38 bilingual canonical profiles** and their independent source citations, then run a complete release audit. The 27 historical folios and the other editorial additions remain drafts until this approval.
 6. Only **after data closure** review information architecture: Through the Year, Catholic Life, searchable historical archive, Calendar/Pray/Saints links. UI and art on PR #1530 remain on hold.
 
 ## Rules
