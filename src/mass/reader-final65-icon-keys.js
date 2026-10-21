@@ -255,6 +255,15 @@ export const SCHOLA_NOT_PRIEST_CHANT_CUES=Object.freeze([
 const ULTRA_PRIEST_CHANT=new Set(ULTRA_MASTER_PRIEST_CHANT_CUE_ADDITIONS);
 const SCHOLA_NO_PRIEST_CHANT=new Set(SCHOLA_NOT_PRIEST_CHANT_CUES);
 
+// Source-certified additions from 1962 LIVE rubric event registry. These
+// gestures are exact source moments absent from the sparse priest-action lane.
+// The extra aliases never override a distinct named action at the same cue.
+export const EXACT_PRIEST_RUBRIC_ACTION_ICON_KEYS=Object.freeze({
+  "AO.SM.C0068":Object.freeze({action:"SIGNS HIMSELF",key:"final_ao_sign_of_cross_vector"}),
+  "AO.SM.C0079":Object.freeze({action:"PROFOUND BOW",key:"final_ao_adoration"}),
+  "AO.SM.C0104":Object.freeze({action:"SIGNS HIMSELF",key:"final_ao_sign_of_cross_vector"}),
+  "AO.SM.C0262":Object.freeze({action:"KISSES ALTAR",key:"priest_kiss_altar_rich"}),
+});
 export function finalCurated65IconKeys(state={}){
  const currentCue=String(state.cueId??"");
  const station=token(state.priestPosition?.station??state.priestPosition?.value);
@@ -278,6 +287,10 @@ export function finalCurated65IconKeys(state={}){
  const priestVoiceKey=SCHOLA_NO_PRIEST_CHANT.has(currentCue)?null:
    sourceConfirmedChant?"final_ao_chant":
    candidateVoice==="final_ao_chant"?(inSung&&!sungMinisterReading?candidateVoice:null):candidateVoice;
+ const sourceAction=String(state.priestAction?.label??state.priestAction?.action??"").trim().toUpperCase();
+ const rubricAction=EXACT_PRIEST_RUBRIC_ACTION_ICON_KEYS[currentCue];
+ const approvedRubricKey=rubricAction&&actionCue===currentCue&&sourceAction===rubricAction.action
+   ?rubricAction.key:null;
  const posture=token(state.posture?.value??state.posture?.label);
  const facesPeople=facing==="PEOPLE"||facing==="PEOPLE_DURING_TURN";
  return Object.freeze({
@@ -287,7 +300,7 @@ export function finalCurated65IconKeys(state={}){
   priestVoiceIconKey:priestVoiceKey,
   scholaIconKey:state.schola?"final_schola":null,
   priestPositionIconKey:station==="FOOT_CENTER"?null:(facesPeople?"final_new_priest_facing":FINAL_65_PRIEST_POSITION_ICON_KEYS[station]??null),
-  priestActionIconKey:state.priestAction?FINAL_65_CUE_ICON_KEYS.priestAction[actionCue]??null:null,
+  priestActionIconKey:state.priestAction?(FINAL_65_CUE_ICON_KEYS.priestAction[actionCue]??approvedRubricKey??null):null,
   bellIconKey:state.bell?"bells":null,
  });
 }
