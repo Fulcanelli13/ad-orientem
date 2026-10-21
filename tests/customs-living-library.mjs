@@ -16,6 +16,11 @@ const data={
 };
 const library=createCustomsLibrary(data);
 assert.equal(library.stats.canonical,38,"38 current canonical IDs retained");
+assert.equal(data.temporal.records.filter(x=>x.calendar_hint).length,26,"exactly 26 dated seasonal notices");
+assert.equal(data.temporal.records.filter(x=>x.calendar_hint).every(x=>x.calendar_hint_fr),true,
+  "every dated seasonal notice must be bilingual");
+assert.equal(data.historical.entries.length,27,"historical folio parity");
+
 assert.equal(data.historical.entries.length,27,"27 historical research-bound folios required");
 assert.equal(library.items.filter(c=>c.history).length,27,"all shorter customs get detailed historical context");
 assert.equal(library.items.filter(c=>c.history).every(c=>
