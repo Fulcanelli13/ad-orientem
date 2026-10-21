@@ -1497,8 +1497,8 @@
         "luke/16/27"
       ],
       "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
-      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
-      "originalQuestionAnchor": null,
+      "originalQuestionKind": "original_authorial_question_within_section",
+      "originalQuestionAnchor": "Quamquam illa receptio utrum statim post istam vitam fiat",
       "readerQuestion": "What interpretations does Augustine give of the rich man and Lazarus?",
       "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
       "catenaLinks": [
@@ -1551,8 +1551,8 @@
         "luke/17/7"
       ],
       "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
-      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
-      "originalQuestionAnchor": null,
+      "originalQuestionKind": "original_authorial_question_within_section",
+      "originalQuestionAnchor": "Quid haec pertineant ad id quod dictum est",
       "readerQuestion": "How does service relate to Christ's reply about increasing faith?",
       "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
       "catenaLinks": [
@@ -1946,5 +1946,6 @@
     "quarantinedCitationConflicts": 7,
     "total": 62,
     "sectionRecords": 62
-  }
+  },
+  "originalQuestionEvidenceExtract": "data/scripture/catena/research/augustine-original-question-spans.v1.json"
 }
