@@ -97,6 +97,10 @@ Thus also said God to Noe, and to his sons with him: Behold I will establish my 
 
 *⟦HELD source bridge: Genesis 11:26–31 · not selected or approved⟧*
 
+*⟦Editorial connector · source: Genesis 11:10–31; Genesis 12:1 · NOT APPROVED⟧*
+
+*Among the descendants of Sem was Abram, whom the Lord called to leave his father's house.*
+
 **⟦Genesis 12:1–9⟧**
 
 And the Lord said to Abram: Go forth out of thy country, and from thy kindred, and out of thy father’s house, and come into the land which I shall shew thee. And I will make of thee a great nation, and I will bless thee, and magnify thy name, and thou shalt be blessed. I will bless them that bless thee, and curse them that curse thee, and IN THEE shall all the kindreds of the earth be blessed. So Abram went out as the Lord had commanded him, and Lot went with him: Abram was seventy-five years old when he went forth from Haran. And he took Sarai his wife, and Lot his brother’s son, and all the substance which they had gathered, and the souls which they had gotten in Haran: and they went out to go into the land of Chanaan. And when they were come into it, Abram passed through the country unto the place of Sichem, as far as the noble vale: now the Chanaanite was at that time in the land. And the Lord appeared to Abram, and said to him: To thy seed will I give this land. And he built there an altar to the Lord, who had appeared to him. And passing on from thence to a mountain, that was on the east side of Bethel, he there pitched his tent, having Bethel on the west, and Hai on the east: he built there also an altar to the Lord, and called upon his name. And Abram went forward, going and proceeding on to the south.
@@ -583,9 +587,9 @@ And the king answered the people roughly, leaving the counsel of the old men, wh
 
 ## 15 · Prophetic warning and Israel's judgment
 
-*⟦Editorial connector · source: 1Kings 18:20–39; Isaiah 7:10–17; Isaiah 9:1–6; Isaiah 11:1–10; Isaiah 52:13–53:12 · NOT APPROVED⟧*
+*⟦Editorial connector · source: 1Kings 18:20–39; Isaiah 7:1–17; Isaiah 9:1–6; Isaiah 11:1–10; Isaiah 52:13–53:12 · NOT APPROVED⟧*
 
-*As Israel strayed from the worship of the Lord, Elijah confronted the prophets of Baal. The prophetic books also preserve promises that would reach beyond the calamities of the kingdoms.*
+*As Israel strayed from the Lord, Elijah confronted the prophets of Baal. Later, in Judah, Isaiah spoke the Lord's promise to King Achaz and proclaimed the coming of a righteous ruler and suffering servant.*
 
 **⟦Isaiah 7:10–17⟧**
 
@@ -708,7 +712,7 @@ And it came to pass that in those days there went out a decree from Caesar Augus
 
 *⟦Editorial connector · source: Luke 2:22–38 · NOT APPROVED⟧*
 
-*Mary and Joseph brought the child Jesus to the Temple. There Simeon blessed God, recognising in Him the salvation prepared for all peoples.*
+*Luke also recounts how Mary and Joseph presented Jesus in the Temple, where Simeon blessed God and recognised in Him the salvation prepared for all peoples.*
 
 **⟦Matthew 2:1–12⟧**
 
@@ -719,6 +723,10 @@ When Jesus therefore was born in Bethlehem of Juda, in the days of king Herod, b
 *When Herod sought the child's life, Joseph took Jesus and Mary into Egypt. After Herod's death, they returned and made their home in Nazareth.*
 
 ## 20 · The Forerunner and first disciples
+
+*⟦Editorial connector · source: Luke 2:51–52; Luke 3:1–3; Matthew 3:1–3 · NOT APPROVED⟧*
+
+*Jesus grew up in Nazareth. In later years, John the Baptist began preaching repentance in the wilderness of Judea.*
 
 **⟦Matthew 3:1–6⟧**
 
@@ -1110,9 +1118,9 @@ And when they had appointed him a day, there came very many to him unto his lodg
 
 ## 35 · Christ and the Lamb in heavenly vision
 
-*⟦Editorial connector · source: Revelation 4:1–11 · NOT APPROVED⟧*
+*⟦Editorial connector · source: Revelation 1:9–11; Revelation 4:1–11 · NOT APPROVED⟧*
 
-*John also beheld a throne in heaven, with living creatures and elders worshipping the One seated upon it.*
+*The account now turns from the apostolic mission to the visions recorded by John. On Patmos, John received the revelation; later in the vision he beheld a throne in heaven, with living creatures and elders worshipping the One seated upon it.*
 
 *⟦HELD source bridge: Revelation 4:1–2 · not selected or approved⟧*
 
