@@ -5,7 +5,7 @@
 Witness: dr-challoner (uncollated; verify against the intended printed edition).
 All Scripture wording below comes directly from that edition's existing source witness.
 Each reference preceding a paragraph is its future vertical-rail anchor; the complete per-verse rail is in the machine assembly.
-Italic connectors are editorial proposals, not Bible quotations. Held passages are visibly unresolved and never inserted as Scripture.
+Italic connectors are editorial proposals, not Bible quotations. Trial Scripture is exact witness text provisionally inserted for research reading ONLY; selection, printed collation, literary acceptance and publication remain unapproved.
 
 ## 01 · Creation and the human vocation
 
@@ -53,7 +53,13 @@ And the Lord God said to the serpent: Because thou hast done this thing, thou ar
 
 *The generations after Adam continued through Seth, and from his line came Noah.*
 
-*⟦HELD source bridge: Genesis 6:9–22 · not selected or approved⟧*
+**⟦TRIAL SCRIPTURE · Genesis 6:9–14 · NOT APPROVED⟧**
+
+These are the generations of Noe: Noe was a just and perfect man in his generations, he walked with God. And he begot three sons, Sem, Cham, and Japheth. And the earth was corrupted before God, and was filled with iniquity. And when God had seen that the earth was corrupted (for all flesh had corrupted its way upon the earth), He said to Noe: The end of all flesh is come before me, the earth is filled with iniquity through them, and I will destroy them with the earth. Make thee an ark of timber planks: thou shalt make little rooms in the ark, and thou shalt pitch it within and without.
+
+**⟦TRIAL SCRIPTURE · Genesis 6:17–22 · NOT APPROVED⟧**
+
+Behold, I will bring the waters of a great flood upon the earth, to destroy all flesh, wherein is the breath of life under heaven. All things that are in the earth shall be consumed. And I will establish my covenant with thee, and thou shalt enter into the ark, thou and thy sons, and thy wife, and the wives of thy sons with thee. And of every living creature of all flesh, thou shalt bring two of a sort into the ark, that they may live with thee: of the male sex, and the female. Of fowls according to their kind, and of beasts in their kind, and of every thing that creepeth on the earth according to its kind: two of every sort shall go in with thee, that they may live. Thou shalt take unto thee of all food that may be eaten, and thou shalt lay it up with thee: and it shall be food for thee and them. And Noe did all things which God commanded him.
 
 **⟦Genesis 7:1–5⟧**
 
@@ -81,6 +87,7 @@ Thus also said God to Noe, and to his sons with him: Behold I will establish my 
 
 <details><summary>Unselected same-book source seams (research audit)</summary>
 
+- OMITTED_VERSES: Genesis 6:15–16
 - OMITTED_VERSES: Genesis 7:6–16
 - OMITTED_VERSES: Genesis 8:13–14
 
@@ -175,7 +182,13 @@ And when they saw him afar off, before he came nigh them, they thought to kill h
 
 And Juda said to his brethren: What will it profit us to kill our brother, and conceal his blood? It is better that he be sold to the Ismaelites, and that our hands be not defiled: for he is our brother and our flesh. His brethren agreed to his words. And when the Madianite merchants passed by, they drew him out of the pit, and sold him to the Ismaelites, for twenty pieces of silver: and they led him into Egypt.
 
-*⟦HELD source bridge: Genesis 39:20–21 · not selected or approved⟧*
+*⟦Editorial connector · source: Genesis 39:1; Genesis 39:7–19 · NOT APPROVED⟧*
+
+*In Egypt, Joseph was bought by Potiphar, an officer of Pharaoh. Joseph resisted the advances of his master's wife, but she falsely accused him before her husband.*
+
+**⟦TRIAL SCRIPTURE · Genesis 39:19–21 · NOT APPROVED⟧**
+
+His master hearing these things, and giving too much credit to his wife’s words, was very angry, And cast Joseph into the prison, where the king’s prisoners were kept, and he was there shut up. But the Lord was with Joseph, and having mercy upon him gave him favour in the sight of the chief keeper of the prison:
 
 **⟦Genesis 41:14–16⟧**
 
@@ -206,7 +219,8 @@ And Israel taking his journey, with all that he had, came to the well of the oat
 - OMITTED_VERSES: Genesis 37:5–11
 - OMITTED_VERSES: Genesis 37:15–17
 - OMITTED_VERSES: Genesis 37:25–25
-- INTERVENING_CHAPTERS: Genesis 38–40
+- INTERVENING_CHAPTERS: Genesis 38–38
+- INTERVENING_CHAPTERS: Genesis 40–40
 - OMITTED_VERSES: Genesis 41:17–24
 - OMITTED_VERSES: Genesis 41:31–32
 - INTERVENING_CHAPTERS: Genesis 42–44
@@ -281,6 +295,10 @@ And Moses called all the ancients of the children of Israel, and said to them: G
 **⟦Exodus 12:27–28⟧**
 
 You shall say to them: It is the victim of the passage of the Lord, when he passed over the houses of the children of Israel in Egypt, striking the Egyptians, and saving our houses. And the people bowing themselves, adored. And the children of Israel going forth, did as the Lord had commanded Moses and Aaron.
+
+**⟦TRIAL SCRIPTURE · Exodus 12:29–30 · NOT APPROVED⟧**
+
+And it came to pass at midnight, the Lord slew every firstborn in the land of Egypt, from the firstborn of Pharao, who sat on his throne, unto the firstborn of the captive woman that was in the prison, and all the firstborn of cattle. And Pharao arose in the night, and all his servants, and all Egypt: and there arose a great cry in Egypt; for there was not a house wherein there lay not one dead.
 
 <details><summary>Unselected same-book source seams (research audit)</summary>
 
@@ -786,7 +804,9 @@ When Mary therefore was come where Jesus was, seeing him, she fell down at his f
 
 Jesus therefore again groaning in himself, cometh to the sepulchre. Now it was a cave; and a stone was laid over it. Jesus saith: Take away the stone. Martha, the sister of him that was dead, saith to him: Lord, by this time he stinketh, for he is now of four days. Jesus saith to her: Did not I say to thee that if thou believe, thou shalt see the glory of God? They took therefore the stone away. And Jesus lifting up his eyes, said: Father, I give thee thanks that thou hast heard me. And I knew that thou hearest me always: but because of the people who stand about have I said it, that they may believe that thou hast sent me. When he had said these things, he cried with a loud voice: Lazarus, come forth. And presently he that had been dead came forth, bound feet and hands with winding bands. And his face was bound about with a napkin. Jesus said to them: Loose him and let him go.
 
-*⟦HELD source bridge: John 11:45–53 · not selected or approved⟧*
+**⟦TRIAL SCRIPTURE · John 11:45–53 · NOT APPROVED⟧**
+
+Many therefore of the Jews, who were come to Mary and Martha and had seen the things that Jesus did, believed in him. But some of them went to the Pharisees and told them the things that Jesus had done. The chief priests, therefore, and the Pharisees gathered a council and said: What do we, for this man doth many miracles? If we let him alone so, all will believe in him; and the Romans will come, and take away our place and nation. But one of them, named Caiphas, being the high priest that year, said to them: You know nothing. Neither do you consider that it is expedient for you that one man should die for the people and that the whole nation perish not. And this he spoke not of himself: but being the high priest of that year, he prophesied that Jesus should die for the nation. And not only for the nation, but to gather together in one the children of God that were dispersed. From that day therefore they devised to put him to death.
 
 <details><summary>Unselected same-book source seams (research audit)</summary>
 
@@ -848,7 +868,15 @@ And Jesus stood before the governor, and the governor asked him, saying: Art tho
 
 And bearing his own cross, he went forth to the place which is called Calvary, but in Hebrew Golgotha. Where they crucified him, and with him two others, one on each side, and Jesus in the midst. And Pilate wrote a title also: and he put it upon the cross. And the writing was: JESUS OF NAZARETH, THE KING OF THE JEWS. This title therefore many of the Jews did read: because the place where Jesus was crucified was nigh to the city. And it was written in Hebrew, in Greek, and in Latin. Then the chief priests of the Jews said to Pilate: Write not: The King of the Jews. But that he said: I am the King of the Jews. Pilate answered: What I have written, I have written. The soldiers therefore, when they had crucified him, took his garments, (and they made four parts, to every soldier a part) and also his coat. Now the coat was without seam, woven from the top throughout. They said then one to another: Let us not cut it but let us cast lots for it, whose it shall be; that the scripture might be fulfilled, saying: They have parted my garments among them, and upon my vesture they have cast lots. And the soldiers indeed did these things. Now there stood by the cross of Jesus, his mother and his mother’s sister, Mary of Cleophas, and Mary Magdalen. When Jesus therefore had seen his mother and the disciple standing whom he loved, he saith to his mother: Woman, behold thy son. After that, he saith to the disciple: Behold thy mother. And from that hour, the disciple took her to his own. Afterwards, Jesus knowing that all things were now accomplished, that the scripture might be fulfilled, said: I thirst. Now there was a vessel set there, full of vinegar. And they, putting a sponge full of vinegar about hyssop, put it to his mouth. Jesus therefore, when he had taken the vinegar, said: It is consummated. And bowing his head, he gave up the ghost.
 
-*⟦HELD source bridge: John 19:38–42 · not selected or approved⟧*
+**⟦TRIAL SCRIPTURE · John 19:38–42 · NOT APPROVED⟧**
+
+And after these things, Joseph of Arimathea (because he was a disciple of Jesus, but secretly for fear of the Jews), besought Pilate that he might take away the body of Jesus. And Pilate gave leave. He came therefore and took away the body of Jesus. And Nicodemus also came (he who at the first came to Jesus by night), bringing a mixture of myrrh and aloes, about an hundred pound weight. They took therefore the body of Jesus and bound it in linen cloths, with the spices, as the manner of the Jews is to bury. Now there was in the place where he was crucified a garden: and in the garden a new sepulchre, wherein no man yet had been laid. There, therefore, because of the parasceve of the Jews, they laid Jesus: because the sepulchre was nigh at hand.
+
+<details><summary>Unselected same-book source seams (research audit)</summary>
+
+- OMITTED_VERSES: John 19:31–37
+
+</details>
 
 ## 29 · The risen Lord and his witnesses
 
@@ -882,7 +910,9 @@ Now when it was late the same day, the first of the week, and the doors were shu
 
 ## 30 · The Ascension and promised mission
 
-*⟦HELD source bridge: Acts 1:3–5 · not selected or approved⟧*
+**⟦TRIAL SCRIPTURE · Acts 1:3–5 · NOT APPROVED⟧**
+
+To whom also he shewed himself alive after his passion, by many proofs, for forty days appearing to them, and speaking of the kingdom of God. And eating together with them, he commanded them, that they should not depart from Jerusalem, but should wait for the promise of the Father, which you have heard (saith he) by my mouth. For John indeed baptized with water: but you shall be baptized with the Holy Ghost, not many days hence.
 
 **⟦Acts 1:6–12⟧**
 
@@ -918,7 +948,9 @@ Now when they had heard these things, they had compunction in their heart and sa
 
 And they were persevering in the doctrine of the apostles and in the communication of the breaking of bread and in prayers. And fear came upon every soul. Many wonders also and signs were done by the apostles in Jerusalem: and there was great fear in all. And all they that believed were together and had all things common. Their possessions and goods they sold and divided them to all, according as every one had need. And continuing daily with one accord in the temple and breaking bread from house to house, they took their meat with gladness and simplicity of heart: Praising God and having favour with all the people. And the Lord increased daily together such as should be saved.
 
-*⟦HELD source bridge: Acts 7:51–53 · not selected or approved⟧*
+**⟦TRIAL SCRIPTURE · Acts 7:51–53 · NOT APPROVED⟧**
+
+You stiffnecked and uncircumcised in heart and ears, you always resist the Holy Ghost. As your fathers did, so do you also. Which of the prophets have not your fathers persecuted? And they have slain them who foretold of the coming of the Just One: of whom you have been now the betrayers and murderers. Who have received the law by the disposition of angels and have not kept it.
 
 **⟦Acts 7:54–59⟧**
 
@@ -1034,9 +1066,13 @@ Then it pleased the apostles and ancients, with the whole church, to choose men 
 
 *⟦HELD source bridge: Acts 19:21 · not selected or approved⟧*
 
-*⟦HELD source bridge: Acts 28:16 · not selected or approved⟧*
+**⟦TRIAL SCRIPTURE · Acts 28:16 · NOT APPROVED⟧**
 
-*⟦HELD source bridge: Acts 28:17–22 · not selected or approved⟧*
+And when we were come to Rome, Paul was suffered to dwell by himself, with a soldier that kept him.
+
+**⟦TRIAL SCRIPTURE · Acts 28:17–22 · NOT APPROVED⟧**
+
+And after the third day, he called together the chief of the Jews. And when they were assembled, he said to them: Men, brethren, I, having done nothing against the people or the custom of our fathers, was delivered prisoner from Jerusalem into the hands of the Romans. Who, when they had examined me, would have released me, for that there was no cause of death in me. But the Jews contradicting it, I was constrained to appeal unto Caesar: not that I had anything to accuse my nation of. For this cause therefore I desired to see you and to speak to you. Because that for the hope of Israel, I am bound with this chain. But they said to him: We neither received letters concerning thee from Judea: neither did any of the brethren that came hither relate or speak any evil of thee. But we desire to hear of thee what thou thinkest: for as concerning this sect, we know that it is every where contradicted.
 
 **⟦Acts 28:23–31⟧**
 
@@ -1074,11 +1110,19 @@ And I saw an angel coming down from heaven, having the key of the bottomless pit
 
 And I saw a new heaven and a new earth. For the first heaven and the first earth was gone: and the sea is now no more. And I, John, saw the holy city, the new Jerusalem, coming down out of heaven from God, prepared as a bride adorned for her husband. And I heard a great voice from the throne, saying: Behold the tabernacle of God with men: and he will dwell with them. And they shall be his people: and God himself with them shall be their God. And God shall wipe away all tears from their eyes: and death shall be no more. Nor mourning, nor crying, nor sorrow shall be any more, for the former things are passed away. And he that sat on the throne, said: Behold, I make all things new. And he said to me: Write. For these words are most faithful and true. And he said to me: It is done. I am Alpha and Omega: the Beginning and the End. To him that thirsteth, I will give of the fountain of the water of life, freely. He that shall overcome shall possess these things. And I will be his God: and he shall be my son.
 
-*⟦HELD source bridge: Revelation 21:9–10 · not selected or approved⟧*
+**⟦TRIAL SCRIPTURE · Revelation 21:9–10 · NOT APPROVED⟧**
+
+And there came one of the seven angels, who had the vials full of the seven last plagues, and spoke with me, saying: Come and I will shew thee the bride, the wife of the Lamb. And he took me up in spirit to a great and high mountain: and he shewed me the holy city Jerusalem, coming down out of heaven from God,
 
 **⟦Revelation 22:1–5⟧**
 
 And he shewed me a river of water of life, clear as crystal, proceeding from the throne of God and of the Lamb. In the midst of the street thereof, and on both sides of the river, was the tree of life, bearing twelve fruits, yielding its fruits every month: and the leaves of the tree for the healing of the nations. And there shall be no curse any more: but the throne of God and of the Lamb shall be in it. And his servants shall serve him. And they shall see his face: and his name shall be on their foreheads. And night shall be no more. And they shall not need the light of the lamp, nor the light of the sun, because the Lord God shall enlighten them. And they shall reign for ever and ever.
 
 *⟦HELD source bridge: Revelation 22:20–21 · not selected or approved⟧*
+
+<details><summary>Unselected same-book source seams (research audit)</summary>
+
+- OMITTED_VERSES: Revelation 21:8–8
+
+</details>
 
