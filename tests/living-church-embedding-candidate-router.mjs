@@ -10,7 +10,7 @@ const fallback=await noModel.match("I cannot explain which unrecognised abstract
 assert.equal(fallback.answerText,null);
 assert.equal(fallback.embeddingStatus,"INDEX_OR_MODEL_MISSING");
 const topics=catalog.topics.map(x=>x.id),N=topics.length;
-assert.equal(N,184);
+assert.equal(N,186);
 const basis=(i)=>Array.from({length:N},(_,j)=>i===j?1:0);
 const model={id:"test-synthetic-dim-"+N,immutableRevision:"synthetic-fixture-not-real-20261019",
  dimensions:N,languages:["en","fr"]};
@@ -27,7 +27,7 @@ const embedQuery=async(question,{language,modelId,immutableRevision})=>{
 };
 const router=createEmbeddingCandidateRouter({catalog,conceptRegistry:concepts,index,embedQuery});
 assert.equal(router.status,"SYNTHETIC_TEST_ONLY");
-assert.equal(router.topicCount,184);
+assert.equal(router.topicCount,186);
 assert.equal(router.modelId,model.id);
 assert.equal(queryCount,0);
 let result=await router.match("What is the square on top of the chalice?",{language:"en"});
@@ -105,4 +105,4 @@ assert.equal(remoteCalls,1);
 assert.throws(()=>createEmbeddingCandidateRouter({
  catalog,conceptRegistry:concepts,index:{...remoteIndex,model:{...remoteIndex.model,dimensions:12}},embedQuery
 }),/Actual model metadata and dimensionality required/);
-console.log("PASS embedding adapter: 184-topic/2-language synthetic-index plumbing only; no real model, no doctrinal answer, remote consent required");
+console.log("PASS embedding adapter: 186-topic/2-language synthetic-index plumbing only; no real model, no doctrinal answer, remote consent required");
