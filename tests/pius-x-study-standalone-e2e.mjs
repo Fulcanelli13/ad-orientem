@@ -78,7 +78,7 @@ try{
    assert.equal(await page.locator('#library').getAttribute('data-open'),'true');
    await page.locator('[data-doc="HAERENT"]').click();
    assert.match(await page.locator('.dialog-title').innerText(),/Haerent animo/i);
-   await page.locator('[data-open="SPX.BENCH.HAERENT.T7"]').first().click();
+   await page.locator('#folioContent [data-open="SPX.BENCH.HAERENT.T7"]').click();
    assert.equal(await page.locator('#portrait').evaluate(e=>e.complete&&e.naturalWidth>0),true);
   }
   await page.screenshot({path:'artifacts/pius-x-study-review/'+(width===390?'mobile':'desktop')+'.png',fullPage:true});
