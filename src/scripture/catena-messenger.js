@@ -48,6 +48,19 @@ export function retrieveCatenaMessages(rows,query,{limit=3,excludeIds=null}={}){
  const terms=tokens(query).filter(t=>!mentioned.some(f=>f.toLowerCase().includes(t)));
  if(!terms.length&&!mentioned.length)return [];
  const preferred=mentioned.length?rows.filter(r=>mentioned.includes(r.father)):rows;
+ // Original-source phrase agreement is stronger than isolated token overlap.
+ // Keep ordinary stopwords inside phrases: "Our Father"/"My Father" or
+ // "to himself" are meaningful when the user asks about those expressions.
+ const rawWords=(q.match(/[a-z]+/g)||[]);
+ const phrases=[];
+ for(const size of [3,2])for(let n=0;n+size<=rawWords.length;n++){
+  const parts=rawWords.slice(n,n+size);
+  if(parts.some(word=>terms.includes(word))){
+   const phrase=parts.join(" ");
+   if(!phrases.some(row=>row.value===phrase))
+    phrases.push({value:phrase,points:size===3?10:6});
+  }
+ }
  const scored=preferred.map((r,i)=>{
    const hay=String(r.text||"").toLowerCase();
    let score=0,matched=0;
@@ -60,6 +73,11 @@ export function retrieveCatenaMessages(rows,query,{limit=3,excludeIds=null}={}){
      }
    }
    if(terms.length>1&&hay.includes(terms.join(" ")))score+=5;
+   const normalizedSource=" "+hay.replace(/[^a-z]+/g," ").replace(/\\s+/g," ").trim()+" ";
+   let phraseScore=0;
+   for(const phrase of phrases)if(normalizedSource.includes(" "+phrase.value+" "))
+    phraseScore+=phrase.points;
+   score+=Math.min(30,phraseScore);
    return {r,i,matched,score};
  }).filter(x=>terms.length===0||x.matched>=Math.min(2,terms.length));
  scored.sort((a,b)=>{
