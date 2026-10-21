@@ -198,4 +198,16 @@ export const TODAY_V2_CSS = String.raw`/* Today v2 / uploaded 10 Oct sacred fron
  .aoTodayV2CalendarGlance .aoTodayV2Event{padding-inline:9px}
  .aoTodayV2CalendarGlance .aoTodayV2Event strong{font-size:16px}
 }
+/* Hero artwork credit: reserve its band so the day title never sits on top of
+   it, and let the LITURGICAL DAY kicker span the desktop grid instead of
+   taking the artwork's column. */
+.aoTodayV2Frontispiece>.aoLiturgicalDayKicker{grid-column:1/-1}
+.aoTodayV2Art{--ao-hero-credit-h:0px}
+.aoTodayV2Art:has(.aoProperArt figcaption){--ao-hero-credit-h:64px}
+.aoTodayV2Art .aoProperArt{display:flex;flex-direction:column;height:100%;margin:0}
+.aoTodayV2Frontispiece .aoTodayV2Art .aoProperArt .aoProperArtMedia{flex:1 1 auto;min-height:0;max-height:none;overflow:hidden}
+.aoTodayV2Frontispiece .aoTodayV2Art .aoProperArt img{height:100%;max-height:none}
+.aoTodayV2Art .aoProperArt figcaption{flex:0 0 var(--ao-hero-credit-h);box-sizing:border-box;overflow:hidden;align-items:center}
+.aoTodayV2Art:has(.aoProperArt figcaption):after{bottom:var(--ao-hero-credit-h)}
+.aoTodayV2Art:has(.aoProperArt figcaption) .aoTodayV2ArtOverlay{bottom:calc(var(--ao-hero-credit-h) + 10px)}
 `;

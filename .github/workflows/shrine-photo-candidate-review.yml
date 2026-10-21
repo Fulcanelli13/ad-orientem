@@ -1,0 +1,30 @@
+name: Shrine photo source review (no app publication)
+on:
+  pull_request:
+    paths:
+      - "data/geography/research/shrine-seven-photo-recovery-20261021.v1.json"
+      - "scripts/stage_shrine_photo_candidates.py"
+      - ".github/workflows/shrine-photo-candidate-review.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  review-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install --disable-pip-version-check pillow
+      - name: Validate Wikimedia originals, stage WebP previews and contact sheet
+        run: python scripts/stage_shrine_photo_candidates.py
+      - name: Upload non-published photograph candidates and provenance
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: shrine-photo-candidates-unapproved
+          path: artifacts/shrine-photo-source-review/
+          if-no-files-found: warn
+          retention-days: 30

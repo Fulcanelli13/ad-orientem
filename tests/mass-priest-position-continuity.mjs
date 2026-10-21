@@ -1,0 +1,165 @@
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+const read=file=>JSON.parse(readFileSync(new URL(file,import.meta.url),'utf8'));
+const original=read('../data/presentation/reader-priest-positions.v1.json');
+const source=read('../data/presentation/reader-text-sung.v1.json');
+const expanded=read('../data/presentation/mass-priest-position-continuity-20261020.v1.json');
+const lock=read('../data/presentation/mass-icon-final-user-lock-20261020.v1.json');
+const byId=new Map(lock.items.map(x=>[x.id,x]));
+const sourceUnits=source.blocks.flatMap(b=>b.units??[]);
+assert.equal(source.blocks.length,96);
+assert.equal(sourceUnits.length,280);
+assert.equal(sourceUnits.filter(x=>/^AO\.SM\.C\d{4}$/.test(x.cue_id)).length,279);
+assert.equal(sourceUnits.filter(x=>x.cue_id==='AO.SM.B096.SYN').length,1);
+assert.equal(new Set(sourceUnits.map(x=>x.cue_id)).size,280);
+assert.equal(original.items.length,49);
+for(const item of expanded.cues.filter(x=>x.defaultTrack.station==='FOOT_CENTER')){
+ assert.equal(item.defaultTrack.proposedIconAssetId,null,
+  'User-vetoed Foot Centre image must not survive in persistent station projection');
+ assert.equal(item.defaultTrack.proposedIconExactUserName,null);
+}
+assert.equal(expanded.cues[0].defaultTrack.station,'FOOT_CENTER',
+ 'Correct liturgical station text must survive icon suppression');
+
+assert.equal(expanded.cues.length,280);
+assert.equal(expanded.invariants.totalSungSourceCueRows,279);
+assert.equal(expanded.invariants.syntheticPauseRecords,1);
+assert.equal(expanded.blocks.length,96);
+assert.equal(expanded.sourceTransitions.length,49);
+assert.deepEqual(expanded.cues.map(x=>x.cueId),sourceUnits.map(x=>x.cue_id),
+ 'Station projection has reordered or removed source units');
+assert.deepEqual(
+ expanded.sourceTransitions.map(({cueId,station,facing,routeId,condition})=>({cueId,station,facing,routeId,condition})).sort((a,b)=>a.cueId.localeCompare(b.cueId)),
+ original.items.map(({cueId,station,facing,routeId,condition})=>({cueId,station,facing,routeId,condition})).sort((a,b)=>a.cueId.localeCompare(b.cueId)),
+ 'Original sourced station event changed');
+const cue=id=>expanded.cues.find(c=>c.cueId==='AO.SM.'+id);
+const sermon=expanded.cues.find(x=>x.cueId==='AO.SM.B096.SYN');
+const i=expanded.cues.indexOf(sermon);
+assert.equal(expanded.cues[i-1].cueId,'AO.SM.C0088');
+assert.equal(expanded.cues[i+1].cueId,'AO.SM.C0089');
+assert.equal(sermon.missal.location,'GOSPEL_SIDE');
+assert.equal(sermon.defaultTrack.station,null);
+assert.equal(sermon.defaultTrack.renderPolicy,'SERMON_POSITION_ONLY_IF_INDEPENDENTLY_OBSERVED');
+const expected={
+ C0042:'ALTAR_EPISTLE_MISSAL',
+ C0072:'ALTAR_EPISTLE_MISSAL',
+ C0109:'ALTAR_CENTER',
+ C0113:'ALTAR_EPISTLE_MISSAL',
+ C0114:'ALTAR_CENTER',
+ C0125:'ALTAR_EPISTLE_SIDE',
+ C0128:'ALTAR_CENTER',
+ C0134:'ALTAR_CENTER',
+ C0144:'ALTAR_CENTER',
+ C0253:'ALTAR_EPISTLE_MISSAL'
+};
+for(const [id,station] of Object.entries(expected))
+ assert.equal(cue(id)?.defaultTrack.station,station,
+  '1962 position error: '+id+' should be '+station);
+for(const [a,b] of [['C0107','C0109'],['C0131','C0134'],['C0134','C0144']]){
+ assert.equal(cue(a)?.defaultTrack.station,cue(b)?.defaultTrack.station,
+  'Station unexpectedly changed between events '+a+' and '+b);
+}
+const routeCues=expanded.cues.filter(c=>c.defaultTrack.status==='MOVING_ALONG_AUTHORIZED_ROUTE');
+const asyncCues=expanded.cues.filter(c=>c.defaultTrack.status==='AWAIT_INDEPENDENT_OBSERVATION');
+// Both incensation routes are conditional; the default non-incense reference
+// track must not assert movement. Preserve the source routes in the registry.
+assert.ok(expanded.sourceTransitions.some(x=>x.station==='ROUTE_CONTROLLED'),
+  'Sourced incensation routes were removed');
+assert.equal(routeCues.length,0,
+  'Optional incense procession was invented in the default non-incense track');
+assert.ok(asyncCues.length>0,'An asynchronous priest state was falsely treated as visible');
+for(const row of [...routeCues,...asyncCues]){
+ assert.equal(row.defaultTrack.proposedIconAssetId,null,
+  'Unknown/in-motion priest state must not draw stationary icon at '+row.cueId);
+}
+for(const row of expanded.cues){
+ assert.equal(row.liveObservationRule,'REFERENCE_CEREMONIAL_SEQUENCE_NOT_PROOF_OF_ACTUAL_PRIEST_POSITION');
+ const id=row.defaultTrack.proposedIconAssetId;
+ if(!id)continue;
+ const a=byId.get(id);
+ assert.ok(a&&(a.status==='approved'||a.status==='repurposed')&&!a.rejected,
+  'Rejected/unapproved priest station art at '+row.cueId);
+ assert.equal(row.defaultTrack.proposedIconExactUserName,a.name,
+  'Final user name changed for '+id);
+}
+for(const sourceRow of original.items.filter(x=>x.condition))
+ assert.ok(expanded.sourceTransitions.some(x=>x.cueId===sourceRow.cueId && x.condition===sourceRow.condition && !x.inDefaultSimpleChantTrack),
+  'Conditional transition silently became universal '+sourceRow.cueId);
+for(const block of expanded.blocks){
+ const rows=expanded.cues.filter(c=>c.blockId===block.blockId);
+ assert.ok(rows.length,'Source block lost '+block.blockId);
+ assert.equal(block.firstCue,rows[0].cueId);
+ assert.equal(block.lastCue,rows.at(-1).cueId);
+}
+
+assert.equal(expanded.missalPositionTransitions.length,3);
+assert.deepEqual(expanded.missalPositionTransitions.map(x=>x.cueId),
+ ['AO.SM.C0001','AO.SM.C0081','AO.SM.C0249']);
+const cases=[
+ ['C0072','ALTAR_EPISTLE_MISSAL','EPISTLE_SIDE'],
+ ['C0109','ALTAR_CENTER','GOSPEL_SIDE'],
+ ['C0112','ALTAR_EPISTLE_MISSAL','GOSPEL_SIDE'],
+ ['C0113','ALTAR_EPISTLE_MISSAL','GOSPEL_SIDE'],
+ ['C0114','ALTAR_CENTER','GOSPEL_SIDE'],
+ ['C0125','ALTAR_EPISTLE_SIDE','GOSPEL_SIDE'],
+ ['C0134','ALTAR_CENTER','GOSPEL_SIDE'],
+ ['C0144','ALTAR_CENTER','GOSPEL_SIDE'],
+ ['C0249','ALTAR_EPISTLE_MISSAL','EPISTLE_SIDE'],
+ ['C0250','ALTAR_EPISTLE_MISSAL','EPISTLE_SIDE'],
+ ['C0253','ALTAR_EPISTLE_MISSAL','EPISTLE_SIDE']
+];
+for(const [id,priest,book] of cases){
+ const x=cue(id);
+ assert.equal(x?.defaultTrack.station,priest,'Incorrect priest station at '+id);
+ assert.equal(x?.missal.location,book,'Incorrect Missal location at '+id);
+ assert.equal(x?.missal.stationDistinctFromBook,true,'Missal is not priest station at '+id);
+}
+for(const id of ['C0249','C0250']){
+ assert.equal(cue(id)?.defaultTrack.renderPolicy,
+   'SHOW_ONLY_AFTER_INDEPENDENT_MC_END_010_PRIEST_EVENT',
+   'Reader scrolling falsely triggered priest return to Epistle side '+id);
+ assert.equal(cue(id)?.missal.observationGate,'MC-END-010');
+}
+assert.equal(expanded.formActorExceptions.length,3);
+assert.ok(expanded.formActorExceptions.some(x=>x.form==='SOLEMN'&&x.cueId==='AO.SM.C0086'&&x.liturgicalActor==='DEACON'&&x.priestPosition==='ALTAR_EPISTLE_SIDE'),
+ 'Solemn Gospel is sung by deacon, not by celebrant at Gospel-side missal');
+
+assert.ok(expanded.conditionalPositionOverlays.some(x=>
+ x.cueId==='AO.SM.C0250' && x.when==='MC-OBS-PC-TURN_EXPLICITLY_OBSERVED' &&
+ x.station==='ALTAR_CENTER' && x.missalPosition==='EPISTLE_SIDE'),
+ 'Observed priest return to centre and Epistle-side Missal must remain independent');
+assert.ok(expanded.supplementaryRitusPositionTransitions.some(x=>
+ x.cueId==='AO.SM.C0112' && x.station==='ALTAR_EPISTLE_MISSAL'),
+ 'Requiem water-cross omission may not erase Epistle-side chalice position');
+assert.equal(expanded.conditionalBookOverlays.length,2);
+assert.ok(expanded.conditionalBookOverlays.some(x=>x.condition==='PROPER_LAST_GOSPEL_APPOINTED'&&x.station==='GOSPEL_SIDE'));
+assert.equal(cue('C0267').missal.location,'EPISTLE_SIDE',
+  'Ordinary Last Gospel should not activate proper Last Gospel Missal transfer');
+
+// Ultra Master 19 October 2026: compare every one of 279 per-cue priest
+// stations, preserving the eight *documented* form/observation differences.
+const masterAudit=read('../data/presentation/mass-ultra-master-priest-and-chant-audit-20261021.v1.json');
+assert.equal(masterAudit.positionSignature.length,279);
+assert.equal(masterAudit.sourceTransitionsVerified,original.items.length);
+const stationSymbol=Object.fromEntries(
+ Object.entries(masterAudit.symbols).map(([symbol,station])=>[station,symbol]));
+const byCue=new Map(expanded.cues
+ .filter(x=>/^AO\.SM\.C\d{4}$/.test(x.cueId))
+ .map(x=>[Number(x.cueId.slice(-4)),x]));
+const actualExceptions=[];
+for(let n=1;n<=279;n++){
+ const cue=byCue.get(n);
+ assert.ok(cue,'Missing Ultra Master source cue C'+String(n).padStart(4,'0'));
+ const station=cue.defaultTrack?.station;
+ const observed=station===null?'?':stationSymbol[station];
+ const required=masterAudit.positionSignature[n-1];
+ assert.ok(observed,'Unrecognized priest station '+station);
+ if(observed!==required)actualExceptions.push(cue.cueId);
+}
+assert.deepEqual(actualExceptions.sort(),
+ masterAudit.allowedSourceToDefaultDifferences.map(x=>x.cueId).sort(),
+ 'Unexpected source station drift or missing conditional/priest-observation boundary');
+assert.ok(masterAudit.allowedSourceToDefaultDifferences.every(x=>x.reason.length>15),
+ 'Every master-to-default positional exception needs a ceremonial explanation');
+
+console.log('1962 source priest-station continuity: 280/280 sung cues, 96/96 source blocks, 49/49 transitions; no art/position overrides.');

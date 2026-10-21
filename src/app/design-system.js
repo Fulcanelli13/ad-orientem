@@ -40,6 +40,8 @@ const CSS=`
   --ao-type-action-primary:17px;
   --ao-type-action-secondary:16px;
   --ao-type-speaker-weight:650;
+  /* Tab-bar labels. Earlier per-breakpoint rules shrank them to 7.4-9 px. */
+  --ao-type-nav:12px;
 
   /*
    * Shared elevation vocabulary. These retain the migration-safe high range
@@ -81,6 +83,18 @@ const CSS=`
 #ao-global-ribbon{
   font-family:var(--ao-font-display);
   z-index:var(--ao-z-global-nav)!important;
+}
+#ao-global-ribbon .aoGlobalRibbonBtn{
+  font-size:var(--ao-type-nav)!important;
+  letter-spacing:0;
+}
+#ao-global-ribbon .aoGlobalRibbonBtn:not(.active){
+  color:var(--ao-text-muted);
+}
+
+.homeScreen .homeUtilityButton{
+  min-width:var(--ao-control-h);
+  min-height:var(--ao-control-h);
 }
 
 .aoCalModTop button,

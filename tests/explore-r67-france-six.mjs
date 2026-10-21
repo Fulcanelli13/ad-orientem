@@ -71,7 +71,9 @@ assert.equal(profiles.filter(p=>p.illustrated_guide).length,14);
 for(const guide of r67.guides){
  const profile=profiles.find(p=>p.place_id===guide.place_id);
  assert.ok(profile?.illustrated_guide);
- assert.equal(Boolean(profile.media),approved.has(guide.place_id));
+ const currentlyApproved=media.items.some(row=>row.place_id===guide.place_id&&row.status==="APPROVED");
+ assert.equal(Boolean(profile.media),currentlyApproved,
+   "Current folio must render exact approved photo without rewriting historical R67 storyboards");
  for(const lang of ["en","fr"]){
   const html=renderExploreToString(buildExploreViewModel({
    language:lang,lens:"heritage",view:"map",items:proj.byLens.shrines,
@@ -83,7 +85,7 @@ for(const guide of r67.guides){
   assert.ok(html.includes(guide.official_url));
   const snippet=guide.sections[0].paragraphs[0][lang].slice(0,65).replace(/[&<>"\']/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","\'":"&#039;"}[ch]));
   assert.ok(html.includes(snippet),"Source paragraph not rendered for "+guide.place_id+" / "+lang);
-  if(approved.has(guide.place_id))assert.ok(html.includes("aoExplorePlaceMedia"));
+  if(currentlyApproved)assert.ok(html.includes("aoExplorePlaceMedia"));
   else assert.ok(!html.includes("aoExplorePlaceMedia"),"Unapproved hero was published");
  }
 }
