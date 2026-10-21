@@ -101,6 +101,27 @@ for(const [id,anchor] of Object.entries(movementMap)){
 assert(!Object.hasOwn(embedded,'hist-omitted-093'));
 assert.equal(new URLSearchParams('?ao_historia_collections=0').get('ao_historia_collections'),'0');
 
+// A documented Atlas row is not necessarily one of the 151 live Atlas stops.
+const liveAtlas=text('src/find/bible-atlas.js');
+const navigable=cross.entries.filter(e=>e.atlasRuntimeNavigation?.eventKey);
+const documentedUnroutable=cross.entries.filter(e=>e.atlasIdentity&&!e.atlasRuntimeNavigation?.eventKey);
+assert.equal(navigable.length,4);
+assert.equal(documentedUnroutable.length,7);
+assert.equal(cross.totals.atlasRuntimeNavigable,4);
+assert.equal(cross.totals.atlasDocumentedNonRoutable,7);
+for(const entry of navigable){
+ const a=entry.atlasIdentity;
+ assert.equal(entry.atlasRuntimeNavigation.eventKey,'biblical:event:'+a.atlasEventId);
+ assert(liveAtlas.includes('"'+a.atlasEventId+'"'));
+}
+for(const entry of documentedUnroutable){
+ assert(!liveAtlas.includes('"'+entry.atlasIdentity.atlasEventId+'"'));
+ assert.equal(entry.atlasRuntimeNavigation.status,'ATLAS_RECORD_NOT_IN_151_SEQUENCE');
+}
+assert(library.includes('linked?.atlasRuntimeNavigation?.status==="EVENT_PRESENT_IN_ATLAS_151_SEQUENCE"'));
+assert(library.includes('visit.dataset.scriptureOpenRelatedObject=record.id'));
+assert(library.includes('onOpenRelatedObject(record)'));
+
 const originalWitness='data/scripture/witness/dr-challoner/John.json';
 const a=json(originalWitness);
 assert.equal(a.sourceStatus,'UNCOLLATED_SOURCE_WITNESS');
