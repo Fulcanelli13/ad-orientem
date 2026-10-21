@@ -13,6 +13,7 @@ on:
       - "tests/scripture-catena-eusebius-supplement.mjs"
       - "tests/scripture-catena-eusebius-epitome.mjs"
       - "tests/scripture-catena-eusebius-marinus-solutions.mjs"
+      - "tests/scripture-catena-eusebius-stephanus-solutions.mjs"
       - "tests/scripture-catena-augustine-continuation.mjs"
       - "tests/scripture-catena-augustine-original-spans.mjs"
       - "tests/scripture-catena-augustine-coverage.mjs"
@@ -46,5 +47,7 @@ jobs:
         run: node tests/scripture-catena-eusebius-epitome.mjs
       - name: Verify 18 Marinus argument spans and witness boundaries
         run: node tests/scripture-catena-eusebius-marinus-solutions.mjs
+      - name: Verify Stephanus I–IV branches and Africanus attribution
+        run: node tests/scripture-catena-eusebius-stephanus-solutions.mjs
       - name: Verify Eusebius supplement verse mappings
         run: node tests/scripture-catena-eusebius-supplement.mjs
