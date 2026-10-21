@@ -192,6 +192,18 @@ try{
    await graph.waitFor({state:"visible",timeout:10000});
    await graph.locator("select[data-network-kind]").selectOption("place");
    assert.equal(await graph.locator("select[data-network-kind]").inputValue(),"place");
+   // Provenance-bound custom and attributed-name facets at 320, 390 and 1440.
+   await graph.locator("select[data-network-kind]").selectOption("custom");
+   assert.ok(await graph.locator(".aoNetworkResults button[data-network-focus^='custom:']").count()>0);
+   await graph.locator(".aoNetworkResults button[data-network-focus='custom:DEV-010']").click();
+   await graph.locator('[data-network-open-custom="DEV-010"]').first().waitFor({state:"visible"});
+   assert.ok(await graph.locator("a[href^='https://']").count()>0);
+   await page.screenshot({path:resolve(out,"explore-"+width+"-network-custom.png"),fullPage:false});
+   await graph.locator("select[data-network-kind]").selectOption("person");
+   assert.ok(await graph.locator(".aoNetworkResults button[data-network-focus^='person:']").count()>0);
+   await graph.locator(".aoNetworkResults button[data-network-focus^='person:']").first().click();
+   assert.match(await graph.locator(".aoNetworkMention").innerText(),/not a linked Saints profile/);
+   await page.screenshot({path:resolve(out,"explore-"+width+"-network-person.png"),fullPage:false});
    await graph.locator("button[data-network-close]").click();
    await graph.waitFor({state:"detached",timeout:10000});
    await page.locator("#ao-find-modular-root [data-mapcn-discover-rail]").waitFor({state:"visible"});
