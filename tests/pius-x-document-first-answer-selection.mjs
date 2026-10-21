@@ -118,6 +118,14 @@ for(const [engineName,router] of Object.entries(engines)){
   }
   assert.deepEqual(pair[0].segments.map(s=>s.segmentId),pair[1].segments.map(s=>s.segmentId));
  }
+ const exactAuthored='can an eloquent sermon take the place of the catechism';
+ const exactResult=router.match(exactAuthored,{language:'en',currentCharacter:'pius-x'});
+ assert.equal(exactResult.kind,'source_navigation');
+ assert.equal(exactResult.requiresQuestionConfirmation,false);
+ const stillNeedsConfirmation=selector.evaluate(exactAuthored,{language:'en'});
+ assert.equal(stillNeedsConfirmation.kind,'confirm_source',
+  'matching an authored catalog phrase is not consent to unapproved papal speech');
+ assert.equal(stillNeedsConfirmation.answerText,null);
  for(const [lang,q] of negative){
   const r=selector.evaluate(q,{language:lang,confirmed:true});
   assert.notEqual(r.kind,'editorial_candidate','Negative question falsely selected papal speech: '+q);
