@@ -68,7 +68,6 @@ try{
     return {viewport:{w:window.innerWidth,h:window.innerHeight},button:{x:r.x,y:r.y,w:r.width,h:r.height},top:{tag:top?.tagName,id:top?.id,css:top?.className},items};
   });
   console.log('SPX_STAGED_GEOMETRY '+vp.width+' '+JSON.stringify(stageGeometry));
-  await page.screenshot({path:resolve(artefacts,'before-click-'+vp.width+'.png'),fullPage:true});
   await page.locator('#stageActions button').first().click();
   assert.match(await page.locator('#stateTrail').innerText(),/follow/);
   await page.locator('#stageActions button').first().click();
