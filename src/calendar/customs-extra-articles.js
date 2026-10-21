@@ -36,8 +36,8 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "fr": "Occasion familiale ou locale"
     },
     "scope": {
-      "en": "geo:country:FR",
-      "fr": "geo:country:FR"
+      "en": "France",
+      "fr": "France"
     },
     "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
     "sources": [
@@ -79,8 +79,8 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "fr": "Temps du Sacré-Cœur ; pratique familiale facultative"
     },
     "scope": {
-      "en": "geo:culture:french-catholic-world · geo:country:FR",
-      "fr": "geo:culture:french-catholic-world · geo:country:FR"
+      "en": "French Catholic tradition · France",
+      "fr": "Tradition catholique française · France"
     },
     "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
     "sources": [
@@ -122,8 +122,8 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "fr": "Occasion familiale ou locale"
     },
     "scope": {
-      "en": "geo:culture:french-catholic-world · geo:country:FR",
-      "fr": "geo:culture:french-catholic-world · geo:country:FR"
+      "en": "French Catholic tradition · France",
+      "fr": "Tradition catholique française · France"
     },
     "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
     "sources": [
@@ -165,8 +165,8 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "fr": "Occasion familiale ou locale"
     },
     "scope": {
-      "en": "geo:country:FR",
-      "fr": "geo:country:FR"
+      "en": "France",
+      "fr": "France"
     },
     "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
     "sources": [
@@ -213,8 +213,8 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "fr": "Mois de mai"
     },
     "scope": {
-      "en": "geo:country:FR",
-      "fr": "geo:country:FR"
+      "en": "France",
+      "fr": "France"
     },
     "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
     "sources": [
@@ -256,8 +256,8 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "fr": "Occasion familiale ou locale"
     },
     "scope": {
-      "en": "geo:world · geo:country:FR · geo:country:BE · geo:country:US · geo:country:DE",
-      "fr": "geo:world · geo:country:FR · geo:country:BE · geo:country:US · geo:country:DE"
+      "en": "International devotional practice · France · Belgium · United States · Germany",
+      "fr": "Pratique dévotionnelle internationale · France · Belgique · États-Unis · Allemagne"
     },
     "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
     "sources": [
@@ -359,8 +359,8 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "fr": "Occasion familiale ou locale"
     },
     "scope": {
-      "en": "geo:country:FR · geo:country:DE",
-      "fr": "geo:country:FR · geo:country:DE"
+      "en": "France · Germany",
+      "fr": "France · Allemagne"
     },
     "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
     "sources": [
@@ -407,8 +407,8 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "fr": "Occasion familiale ou locale"
     },
     "scope": {
-      "en": "geo:country:FR · geo:country:AT · geo:country:US · geo:country:CA · geo:country:DE",
-      "fr": "geo:country:FR · geo:country:AT · geo:country:US · geo:country:CA · geo:country:DE"
+      "en": "France · Austria · United States · Canada · Germany",
+      "fr": "France · Autriche · États-Unis · Canada · Allemagne"
     },
     "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
     "sources": [
@@ -480,8 +480,8 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "fr": "2 novembre, mois de novembre ou anniversaire personnel"
     },
     "scope": {
-      "en": "geo:world · geo:country:FR",
-      "fr": "geo:world · geo:country:FR"
+      "en": "International devotional practice · France",
+      "fr": "Pratique dévotionnelle internationale · France"
     },
     "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
     "sources": [
@@ -528,8 +528,8 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "fr": "2 novembre"
     },
     "scope": {
-      "en": "geo:country:FR · geo:country:PL",
-      "fr": "geo:country:FR · geo:country:PL"
+      "en": "France · Poland",
+      "fr": "France · Pologne"
     },
     "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
     "sources": [
@@ -586,8 +586,8 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "fr": "Occasion familiale ou locale"
     },
     "scope": {
-      "en": "geo:country:FR",
-      "fr": "geo:country:FR"
+      "en": "France",
+      "fr": "France"
     },
     "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
     "sources": [
@@ -634,8 +634,8 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "fr": "2 février — Chandeleur ; date fixée par le Calendrier"
     },
     "scope": {
-      "en": "geo:country:FR",
-      "fr": "geo:country:FR"
+      "en": "France",
+      "fr": "France"
     },
     "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
     "sources": [
@@ -677,8 +677,8 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "fr": "Dimanche des Rameaux ; date calculée par le Calendrier"
     },
     "scope": {
-      "en": "geo:country:FR",
-      "fr": "geo:country:FR"
+      "en": "France",
+      "fr": "France"
     },
     "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
     "sources": [
@@ -725,8 +725,8 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "fr": "3 février — commémoraison de saint Blaise dans le calendrier romain de 1962 ; préséance réglée par le Calendrier"
     },
     "scope": {
-      "en": "geo:world",
-      "fr": "geo:world"
+      "en": "International devotional practice",
+      "fr": "Pratique dévotionnelle internationale"
     },
     "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
     "sources": [
@@ -783,8 +783,8 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "fr": "Occasion familiale ou locale"
     },
     "scope": {
-      "en": "geo:country:US",
-      "fr": "geo:country:US"
+      "en": "United States",
+      "fr": "États-Unis"
     },
     "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
     "sources": [
@@ -826,8 +826,8 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "fr": "Occasion familiale ou locale"
     },
     "scope": {
-      "en": "geo:country:FR",
-      "fr": "geo:country:FR"
+      "en": "France",
+      "fr": "France"
     },
     "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
     "sources": [
@@ -869,8 +869,8 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "fr": "15 août — Assomption ; procession régionale seulement si annoncée"
     },
     "scope": {
-      "en": "geo:country:FR",
-      "fr": "geo:country:FR"
+      "en": "France",
+      "fr": "France"
     },
     "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
     "sources": [
@@ -912,8 +912,8 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "fr": "19 mars — saint Joseph ; pratique familiale ou paroissiale facultative"
     },
     "scope": {
-      "en": "geo:country:US",
-      "fr": "geo:country:US"
+      "en": "United States",
+      "fr": "États-Unis"
     },
     "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
     "sources": [
@@ -955,8 +955,8 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "fr": "13 juin — saint Antoine de Padoue ; la charité se pratique toute l'année"
     },
     "scope": {
-      "en": "geo:country:FR",
-      "fr": "geo:country:FR"
+      "en": "France",
+      "fr": "France"
     },
     "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
     "sources": [
@@ -998,8 +998,8 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "fr": "25 juillet — saint Christophe ; la date paroissiale peut différer"
     },
     "scope": {
-      "en": "geo:country:FR",
-      "fr": "geo:country:FR"
+      "en": "France",
+      "fr": "France"
     },
     "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
     "sources": [
@@ -1041,8 +1041,8 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "fr": "6 décembre — saint Nicolas ; coutume familiale régionale"
     },
     "scope": {
-      "en": "geo:country:FR",
-      "fr": "geo:country:FR"
+      "en": "France",
+      "fr": "France"
     },
     "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
     "sources": [
@@ -1084,8 +1084,8 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "fr": "15 août — Assomption ; date et rang de la messe fixés par le Calendrier"
     },
     "scope": {
-      "en": "geo:world",
-      "fr": "geo:world"
+      "en": "International devotional practice",
+      "fr": "Pratique dévotionnelle internationale"
     },
     "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
     "sources": [
@@ -1137,8 +1137,8 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "fr": "27 décembre — saint Jean, apôtre et évangéliste, dans le calendrier romain de 1962"
     },
     "scope": {
-      "en": "geo:world",
-      "fr": "geo:world"
+      "en": "International devotional practice",
+      "fr": "Pratique dévotionnelle internationale"
     },
     "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
     "sources": [
@@ -1185,8 +1185,8 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "fr": "Samedi saint, calculé par le Calendrier ; partage domestique des aliments à Pâques"
     },
     "scope": {
-      "en": "geo:world",
-      "fr": "geo:world"
+      "en": "International devotional practice",
+      "fr": "Pratique dévotionnelle internationale"
     },
     "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
     "sources": [
