@@ -99,6 +99,14 @@ for (const edition of HISTORIA_EDITIONS) {
   assert.deepEqual(sixDays.railSections.map(s=>s.reference),["Genesis 1:1–5","Genesis 1:6–8","Genesis 1:9–13","Genesis 1:14–19","Genesis 1:20–23","Genesis 1:24–25","Genesis 1:26–31"]);
   const cross=output.movements.find(m=>m.id==="HS-M28");
   assert.deepEqual(cross.segments.find(s=>s.reference==="John 19:17–30").railSections.map(s=>s.reference),["John 19:17–22","John 19:23–27","John 19:28–30"]);
+  const easter=output.movements.find(m=>m.id==="HS-M29");
+  const emmaus=easter.segments.find(s=>s.ownerUnitId==="H65-03");
+  const evening=easter.segments.find(s=>s.ownerUnitId==="H65-02");
+  assert.ok(easter.segments.indexOf(emmaus)>easter.segments.findIndex(s=>s.ownerUnitId==="H65-01"));
+  assert.ok(easter.segments.indexOf(emmaus)<easter.segments.indexOf(evening),"Emmaus belongs before the Apostles and Thomas appearances");
+  assert.ok(emmaus.text.includes("same Easter day"));
+  const laterEpoch=output.movements.find(m=>m.id==="HS-M18");
+  assert.ok(laterEpoch.segments.some(s=>s.candidateId==="HS-P3-EC-08"&&s.text.includes("Herod king of Judea")));
   const m31=output.movements.find(m=>m.id==="HS-M31");
   assert.ok(m31.segments.some(s=>s.reference==="Acts 2:1–10"));
   assert.ok(output.movements.find(m=>m.id==="HS-M33").segments.some(s=>s.reference==="Acts 15:4–11"));
@@ -131,6 +139,44 @@ for (const edition of HISTORIA_EDITIONS) {
   assert.deepEqual(breadIntro.sourceReferences,["John 6:1–15","John 6:22–25"]);
   const stephen=m31.segments.find(s=>s.ownerUnitId==="H68-04"&&s.kind==="SCRIPTURE_EXACT_WITNESS");
   assert.equal(stephen.reference,edition==="crampon-1923"?"Acts 7:54–60":"Acts 7:54–59");
+  const economyCases=[
+    {mid:"HS-M12",id:"H29-04",book:"1Samuel",from:["1Samuel 10:1–8"],to:["1Samuel 10:1"],saved:{"dr-challoner":279,"cpdv-2009":299,"crampon-1923":238}},
+    {mid:"HS-M06",id:"H16-03",book:"Genesis",from:["Genesis 41:33–45"],to:["Genesis 41:33–41","Genesis 41:45"],saved:{"dr-challoner":94,"cpdv-2009":100,"crampon-1923":88}},
+    {mid:"HS-M13",id:"H32-02",book:"2Samuel",from:["2Samuel 5:1–10"],to:["2Samuel 5:1–3","2Samuel 5:6–7","2Samuel 5:9–10"],saved:{"dr-challoner":98,"cpdv-2009":105,"crampon-1923":82}},
+    {mid:"HS-M32",id:"H70-01",book:"Acts",from:["Acts 10:30–32"],to:[],saved:{"dr-challoner":73,"cpdv-2009":81,"crampon-1923":81}}
+  ];
+  let sumWordSavings=0;
+  const readOption=refs=>refs.flatMap(ref=>{
+    const a=parseHistoriaSpan(ref);
+    assert.equal(a.fromChapter,a.toChapter);
+    const source=new Map(getWitness(a.book).verses.map(([c,v,t])=>[c+":"+v,t]));
+    return Array.from({length:a.toVerse-a.fromVerse+1},(_,i)=>{
+      const word=source.get(a.fromChapter+":"+(a.fromVerse+i));
+      assert.ok(word,"Missing economy candidate source verse "+ref);
+      return word;
+    });
+  }).join(" ");
+  const wordCount=t=>t?t.split(/\\s+/).length:0;
+  for(const trial of economyCases){
+    const b=proof.movements.find(m=>m.id===trial.mid).beats.find(b=>b.id===trial.id);
+    assert.ok(b);
+    const opt=b.literaryEconomyOption;
+    assert.deepEqual(opt.sourceReferencesUnderReview,trial.from);
+    assert.deepEqual(opt.substituteReferences,trial.to);
+    assert.equal(opt.bookWitnessSourceCoordinatesVerified,true);
+    assert.equal(opt.appliedToDefaultReading,false);
+    assert.equal(opt.optionWasAppliedToMainResearchManuscript,false);
+    assert.equal(opt.publicationApproved,false);
+    assert.equal(opt.sourceVerseComparison.sourceBook,trial.book);
+    const original=readOption(trial.from),short=readOption(trial.to);
+    const diff=wordCount(original)-wordCount(short);
+    assert.equal(diff,trial.saved[edition],"Witness-based source economy mismatch "+trial.id+" "+edition);
+    assert.equal(diff,opt.sourceVerseComparison.approximateWordsSavedByEdition[edition]);
+    sumWordSavings+=diff;
+    const current=output.movements.find(m=>m.id===trial.mid).segments.filter(s=>s.ownerUnitId===trial.id&&s.kind==="SCRIPTURE_EXACT_WITNESS");
+    for(const ref of trial.from)assert.ok(current.some(s=>s.reference===ref),"Original passage must remain in default reading");
+  }
+  assert.equal(sumWordSavings,edition==="dr-challoner"?544:edition==="cpdv-2009"?585:489);
   const manuscript=historiaAssemblyMarkdown(output);
   assert.ok(manuscript.includes("## 37 · The New Creation"));
   assert.ok(manuscript.includes("⟦HELD source bridge:"));
