@@ -58,7 +58,7 @@ const flagLegend={
  O:"Potential objector or hypothetical voice",
  D:"Potential dependence on preceding discourse",
  R:"Abbreviated editorial citation/reference (not exact original work proof)",
- C:"Compilation/pseudo-author label: independent authorship review required",
+ C:"Collective gloss or pseudo-author label: source attribution review required",
  L:"Long excerpt over 1800 characters; may contain several arguments",
  S:"Short excerpt below 65 characters; may depend on preceding fragment",
  U:"No lexical topic matched",
@@ -83,12 +83,12 @@ for(const b of manifest.books){
    const seg=p.segments[i],text=seg.text||"",father=seg.father||"Unknown";
    const t=topics.filter(x=>x[1].test(text)).map(x=>x[0]);
    const qm=(text.match(/\?/g)||[]).length,flags=[];
-   if(qm){flags.push("Q");qRows++;qMarks++;totalQuestionRows++;totalQuestionMarks+=qm}
+   if(qm){flags.push("Q");qRows++;qMarks+=qm;totalQuestionRows++;totalQuestionMarks+=qm}
    if(/(?:“[^”]{1,220}”|'[^']{1,140}'|(?:saith|said|says|asked|spoke|replied|answered)\b)/i.test(text))flags.push("V");
    if(/\b(?:but they say|some may say|some one will say|object(?:ed|ion)|against this|one might ask|imagined interlocutor)\b/i.test(text))flags.push("O");
    if(/\b(?:otherwise|as (?:we|was) said above|as before|see above|ubi sup|ibid|it follows|he adds|above mentioned)\b/i.test(text))flags.push("D");
    if(/^\((?:ubi sup|ibid|non occ)/i.test(text))flags.push("R");
-   if(/^(?:Pseudo-|Gloss|The Council|Theophylact|Rabanus|Alcuin)/i.test(father))flags.push("C");
+   if(/^(?:Pseudo-|Gloss|The Council)/i.test(father))flags.push("C");
    if(text.length>1800)flags.push("L");
    if(text.length<65)flags.push("S");
    if(!t.length){flags.push("U");totalTopicless++}
