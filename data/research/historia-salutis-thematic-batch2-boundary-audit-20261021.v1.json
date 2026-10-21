@@ -1,0 +1,1652 @@
+{
+  "schema": "AO_HISTORIA_THEMATIC_BATCH2_EDITORIAL_BOUNDARY_AUDIT_V1",
+  "date": "2026-10-21",
+  "status": "RESEARCH_SOURCE_BOUNDARY_REVIEW_NOT_EDITORIAL_APPROVAL",
+  "source": {
+    "preflightPath": "data/research/historia-salutis-thematic-collections-expansion-preflight-20261021.v1.json",
+    "preflightSha": "55482922068adf7f9222a01384c297f76958e540",
+    "reviewWitnesses": [
+      {
+        "edition": "dr-challoner",
+        "book": "Luke",
+        "sha": "96b5a5d845c58359094814dc9317557fe4853bf0"
+      },
+      {
+        "edition": "dr-challoner",
+        "book": "John",
+        "sha": "a146e78ec89ad15d3df29a49462c8373e9dee3f8"
+      },
+      {
+        "edition": "dr-challoner",
+        "book": "Mark",
+        "sha": "e6e381cd25e5ab238a28602d8395da39adcce80d"
+      },
+      {
+        "edition": "dr-challoner",
+        "book": "Matthew",
+        "sha": "004832d16a49ceca579d674adf94dac9d3902234"
+      }
+    ]
+  },
+  "policies": {
+    "noScriptureTextDuplicated": true,
+    "proposeOriginalVerseWordsOnly": true,
+    "neverConflateSeparateGospelScenes": true,
+    "keepOriginalInventoryCitations": true,
+    "noDefaultMainReaderChanges": true,
+    "warningsNotPublishedAsDoctrine": true
+  },
+  "totals": {
+    "entries": 41,
+    "refinedBoundaries": 4,
+    "genreOrMixedDiscourseCautions": 3,
+    "unchangedSourceWindows": 37,
+    "sourceParts": 45,
+    "originalInventoryRangePreserved": 41
+  },
+  "entries": [
+    {
+      "id": "hist-omitted-104",
+      "originalInventoryReference": "Luke 1:46–55",
+      "primaryCollectionId": "biblical_prayers_and_canticles",
+      "status": "RESEARCH_WINDOW_SCREENED_NOT_PUBLICATION_APPROVED",
+      "readerTitle": "The Magnificat",
+      "readerParts": [
+        {
+          "reference": "Luke 1:46–55",
+          "partIndex": 0,
+          "relationToPrevious": "ORIGINAL_EPISODE_START"
+        }
+      ],
+      "boundaryDisposition": "RETAIN_REFERENCED_PASSAGE",
+      "sourceCheck": [
+        {
+          "reference": "Luke 1:46–55",
+          "firstVerseCoordinates": [
+            1,
+            46
+          ],
+          "lastVerseCoordinates": [
+            1,
+            55
+          ],
+          "sourceWitness": "dr-challoner",
+          "sourceWordsEmbedded": false
+        }
+      ],
+      "cautionFlags": [],
+      "editorialNote": null,
+      "proposedMainNarrativePromotion": false,
+      "canonicalAtlasIdentity": null,
+      "canonicalCovenantChapterId": null,
+      "originalRestorationDisposition": "M2_conditional_restoration_review",
+      "sourceWitnessPublicationCertified": false
+    },
+    {
+      "id": "hist-omitted-106",
+      "originalInventoryReference": "Luke 1:67–79",
+      "primaryCollectionId": "biblical_prayers_and_canticles",
+      "status": "RESEARCH_WINDOW_SCREENED_NOT_PUBLICATION_APPROVED",
+      "readerTitle": "Benedictus of Zachary",
+      "readerParts": [
+        {
+          "reference": "Luke 1:67–79",
+          "partIndex": 0,
+          "relationToPrevious": "ORIGINAL_EPISODE_START"
+        }
+      ],
+      "boundaryDisposition": "RETAIN_REFERENCED_PASSAGE",
+      "sourceCheck": [
+        {
+          "reference": "Luke 1:67–79",
+          "firstVerseCoordinates": [
+            1,
+            67
+          ],
+          "lastVerseCoordinates": [
+            1,
+            79
+          ],
+          "sourceWitness": "dr-challoner",
+          "sourceWordsEmbedded": false
+        }
+      ],
+      "cautionFlags": [],
+      "editorialNote": null,
+      "proposedMainNarrativePromotion": false,
+      "canonicalAtlasIdentity": null,
+      "canonicalCovenantChapterId": null,
+      "originalRestorationDisposition": "S_supplementary_scripture_episode",
+      "sourceWitnessPublicationCertified": false
+    },
+    {
+      "id": "hist-omitted-109",
+      "originalInventoryReference": "Luke 2:29–32",
+      "primaryCollectionId": "biblical_prayers_and_canticles",
+      "status": "RESEARCH_WINDOW_SCREENED_NOT_PUBLICATION_APPROVED",
+      "readerTitle": "Simeon's Nunc dimittis",
+      "readerParts": [
+        {
+          "reference": "Luke 2:29–32",
+          "partIndex": 0,
+          "relationToPrevious": "ORIGINAL_EPISODE_START"
+        }
+      ],
+      "boundaryDisposition": "RETAIN_REFERENCED_PASSAGE",
+      "sourceCheck": [
+        {
+          "reference": "Luke 2:29–32",
+          "firstVerseCoordinates": [
+            2,
+            29
+          ],
+          "lastVerseCoordinates": [
+            2,
+            32
+          ],
+          "sourceWitness": "dr-challoner",
+          "sourceWordsEmbedded": false
+        }
+      ],
+      "cautionFlags": [],
+      "editorialNote": null,
+      "proposedMainNarrativePromotion": false,
+      "canonicalAtlasIdentity": null,
+      "canonicalCovenantChapterId": null,
+      "originalRestorationDisposition": "M2_conditional_restoration_review",
+      "sourceWitnessPublicationCertified": false
+    },
+    {
+      "id": "hist-omitted-120",
+      "originalInventoryReference": "Luke 5:1–11",
+      "primaryCollectionId": "miracles_of_christ",
+      "status": "RESEARCH_WINDOW_SCREENED_NOT_PUBLICATION_APPROVED",
+      "readerTitle": "Miraculous catch of fish",
+      "readerParts": [
+        {
+          "reference": "Luke 5:1–11",
+          "partIndex": 0,
+          "relationToPrevious": "ORIGINAL_EPISODE_START"
+        }
+      ],
+      "boundaryDisposition": "RETAIN_REFERENCED_PASSAGE",
+      "sourceCheck": [
+        {
+          "reference": "Luke 5:1–11",
+          "firstVerseCoordinates": [
+            5,
+            1
+          ],
+          "lastVerseCoordinates": [
+            5,
+            11
+          ],
+          "sourceWitness": "dr-challoner",
+          "sourceWordsEmbedded": false
+        }
+      ],
+      "cautionFlags": [],
+      "editorialNote": null,
+      "proposedMainNarrativePromotion": false,
+      "canonicalAtlasIdentity": null,
+      "canonicalCovenantChapterId": null,
+      "originalRestorationDisposition": "S_supplementary_scripture_episode",
+      "sourceWitnessPublicationCertified": false
+    },
+    {
+      "id": "hist-omitted-126",
+      "originalInventoryReference": "John 4:46–54",
+      "primaryCollectionId": "miracles_of_christ",
+      "status": "RESEARCH_WINDOW_SCREENED_NOT_PUBLICATION_APPROVED",
+      "readerTitle": "Healing of the royal official's son",
+      "readerParts": [
+        {
+          "reference": "John 4:46–54",
+          "partIndex": 0,
+          "relationToPrevious": "ORIGINAL_EPISODE_START"
+        }
+      ],
+      "boundaryDisposition": "RETAIN_REFERENCED_PASSAGE",
+      "sourceCheck": [
+        {
+          "reference": "John 4:46–54",
+          "firstVerseCoordinates": [
+            4,
+            46
+          ],
+          "lastVerseCoordinates": [
+            4,
+            54
+          ],
+          "sourceWitness": "dr-challoner",
+          "sourceWordsEmbedded": false
+        }
+      ],
+      "cautionFlags": [],
+      "editorialNote": null,
+      "proposedMainNarrativePromotion": false,
+      "canonicalAtlasIdentity": null,
+      "canonicalCovenantChapterId": null,
+      "originalRestorationDisposition": "S_supplementary_scripture_episode",
+      "sourceWitnessPublicationCertified": false
+    },
+    {
+      "id": "hist-omitted-127",
+      "originalInventoryReference": "Mark 1:29–31",
+      "primaryCollectionId": "miracles_of_christ",
+      "status": "RESEARCH_WINDOW_SCREENED_NOT_PUBLICATION_APPROVED",
+      "readerTitle": "Healing of Peter's mother-in-law",
+      "readerParts": [
+        {
+          "reference": "Mark 1:29–31",
+          "partIndex": 0,
+          "relationToPrevious": "ORIGINAL_EPISODE_START"
+        }
+      ],
+      "boundaryDisposition": "RETAIN_REFERENCED_PASSAGE",
+      "sourceCheck": [
+        {
+          "reference": "Mark 1:29–31",
+          "firstVerseCoordinates": [
+            1,
+            29
+          ],
+          "lastVerseCoordinates": [
+            1,
+            31
+          ],
+          "sourceWitness": "dr-challoner",
+          "sourceWordsEmbedded": false
+        }
+      ],
+      "cautionFlags": [],
+      "editorialNote": null,
+      "proposedMainNarrativePromotion": false,
+      "canonicalAtlasIdentity": null,
+      "canonicalCovenantChapterId": null,
+      "originalRestorationDisposition": "S_supplementary_scripture_episode",
+      "sourceWitnessPublicationCertified": false
+    },
+    {
+      "id": "hist-omitted-128",
+      "originalInventoryReference": "Mark 2:1–12",
+      "primaryCollectionId": "miracles_of_christ",
+      "status": "RESEARCH_WINDOW_SCREENED_NOT_PUBLICATION_APPROVED",
+      "readerTitle": "Healing of the paralytic",
+      "readerParts": [
+        {
+          "reference": "Mark 2:1–12",
+          "partIndex": 0,
+          "relationToPrevious": "ORIGINAL_EPISODE_START"
+        }
+      ],
+      "boundaryDisposition": "RETAIN_REFERENCED_PASSAGE",
+      "sourceCheck": [
+        {
+          "reference": "Mark 2:1–12",
+          "firstVerseCoordinates": [
+            2,
+            1
+          ],
+          "lastVerseCoordinates": [
+            2,
+            12
+          ],
+          "sourceWitness": "dr-challoner",
+          "sourceWordsEmbedded": false
+        }
+      ],
+      "cautionFlags": [],
+      "editorialNote": null,
+      "proposedMainNarrativePromotion": false,
+      "canonicalAtlasIdentity": null,
+      "canonicalCovenantChapterId": null,
+      "originalRestorationDisposition": "S_supplementary_scripture_episode",
+      "sourceWitnessPublicationCertified": false
+    },
+    {
+      "id": "hist-omitted-129",
+      "originalInventoryReference": "Mark 1:40–45",
+      "primaryCollectionId": "miracles_of_christ",
+      "status": "RESEARCH_WINDOW_SCREENED_NOT_PUBLICATION_APPROVED",
+      "readerTitle": "Cleansing of a leper",
+      "readerParts": [
+        {
+          "reference": "Mark 1:40–45",
+          "partIndex": 0,
+          "relationToPrevious": "ORIGINAL_EPISODE_START"
+        }
+      ],
+      "boundaryDisposition": "RETAIN_REFERENCED_PASSAGE",
+      "sourceCheck": [
+        {
+          "reference": "Mark 1:40–45",
+          "firstVerseCoordinates": [
+            1,
+            40
+          ],
+          "lastVerseCoordinates": [
+            1,
+            45
+          ],
+          "sourceWitness": "dr-challoner",
+          "sourceWordsEmbedded": false
+        }
+      ],
+      "cautionFlags": [],
+      "editorialNote": null,
+      "proposedMainNarrativePromotion": false,
+      "canonicalAtlasIdentity": null,
+      "canonicalCovenantChapterId": null,
+      "originalRestorationDisposition": "S_supplementary_scripture_episode",
+      "sourceWitnessPublicationCertified": false
+    },
+    {
+      "id": "hist-omitted-130",
+      "originalInventoryReference": "Matthew 8:5–13",
+      "primaryCollectionId": "miracles_of_christ",
+      "status": "RESEARCH_WINDOW_SCREENED_NOT_PUBLICATION_APPROVED",
+      "readerTitle": "Healing of the centurion's servant",
+      "readerParts": [
+        {
+          "reference": "Matthew 8:5–13",
+          "partIndex": 0,
+          "relationToPrevious": "ORIGINAL_EPISODE_START"
+        }
+      ],
+      "boundaryDisposition": "RETAIN_REFERENCED_PASSAGE",
+      "sourceCheck": [
+        {
+          "reference": "Matthew 8:5–13",
+          "firstVerseCoordinates": [
+            8,
+            5
+          ],
+          "lastVerseCoordinates": [
+            8,
+            13
+          ],
+          "sourceWitness": "dr-challoner",
+          "sourceWordsEmbedded": false
+        }
+      ],
+      "cautionFlags": [],
+      "editorialNote": null,
+      "proposedMainNarrativePromotion": false,
+      "canonicalAtlasIdentity": null,
+      "canonicalCovenantChapterId": null,
+      "originalRestorationDisposition": "S_supplementary_scripture_episode",
+      "sourceWitnessPublicationCertified": false
+    },
+    {
+      "id": "hist-omitted-133",
+      "originalInventoryReference": "Mark 5:1–20",
+      "primaryCollectionId": "miracles_of_christ",
+      "status": "RESEARCH_WINDOW_SCREENED_NOT_PUBLICATION_APPROVED",
+      "readerTitle": "Gerasene demoniac",
+      "readerParts": [
+        {
+          "reference": "Mark 5:1–20",
+          "partIndex": 0,
+          "relationToPrevious": "ORIGINAL_EPISODE_START"
+        }
+      ],
+      "boundaryDisposition": "RETAIN_REFERENCED_PASSAGE",
+      "sourceCheck": [
+        {
+          "reference": "Mark 5:1–20",
+          "firstVerseCoordinates": [
+            5,
+            1
+          ],
+          "lastVerseCoordinates": [
+            5,
+            20
+          ],
+          "sourceWitness": "dr-challoner",
+          "sourceWordsEmbedded": false
+        }
+      ],
+      "cautionFlags": [],
+      "editorialNote": null,
+      "proposedMainNarrativePromotion": false,
+      "canonicalAtlasIdentity": null,
+      "canonicalCovenantChapterId": null,
+      "originalRestorationDisposition": "S_supplementary_scripture_episode",
+      "sourceWitnessPublicationCertified": false
+    },
+    {
+      "id": "hist-omitted-134",
+      "originalInventoryReference": "Mark 5:25–34",
+      "primaryCollectionId": "miracles_of_christ",
+      "status": "RESEARCH_WINDOW_SCREENED_NOT_PUBLICATION_APPROVED",
+      "readerTitle": "Woman with the haemorrhage",
+      "readerParts": [
+        {
+          "reference": "Mark 5:25–34",
+          "partIndex": 0,
+          "relationToPrevious": "ORIGINAL_EPISODE_START"
+        }
+      ],
+      "boundaryDisposition": "RETAIN_REFERENCED_PASSAGE",
+      "sourceCheck": [
+        {
+          "reference": "Mark 5:25–34",
+          "firstVerseCoordinates": [
+            5,
+            25
+          ],
+          "lastVerseCoordinates": [
+            5,
+            34
+          ],
+          "sourceWitness": "dr-challoner",
+          "sourceWordsEmbedded": false
+        }
+      ],
+      "cautionFlags": [],
+      "editorialNote": null,
+      "proposedMainNarrativePromotion": false,
+      "canonicalAtlasIdentity": null,
+      "canonicalCovenantChapterId": null,
+      "originalRestorationDisposition": "S_supplementary_scripture_episode",
+      "sourceWitnessPublicationCertified": false
+    },
+    {
+      "id": "hist-omitted-136",
+      "originalInventoryReference": "John 6:1–15",
+      "primaryCollectionId": "miracles_of_christ",
+      "status": "RESEARCH_WINDOW_SCREENED_NOT_PUBLICATION_APPROVED",
+      "readerTitle": "Feeding of the five thousand",
+      "readerParts": [
+        {
+          "reference": "John 6:1–15",
+          "partIndex": 0,
+          "relationToPrevious": "ORIGINAL_EPISODE_START"
+        }
+      ],
+      "boundaryDisposition": "RETAIN_REFERENCED_PASSAGE",
+      "sourceCheck": [
+        {
+          "reference": "John 6:1–15",
+          "firstVerseCoordinates": [
+            6,
+            1
+          ],
+          "lastVerseCoordinates": [
+            6,
+            15
+          ],
+          "sourceWitness": "dr-challoner",
+          "sourceWordsEmbedded": false
+        }
+      ],
+      "cautionFlags": [],
+      "editorialNote": null,
+      "proposedMainNarrativePromotion": false,
+      "canonicalAtlasIdentity": null,
+      "canonicalCovenantChapterId": null,
+      "originalRestorationDisposition": "M1_core_restoration_review",
+      "sourceWitnessPublicationCertified": false
+    },
+    {
+      "id": "hist-omitted-138",
+      "originalInventoryReference": "Matthew 15:32–39",
+      "primaryCollectionId": "miracles_of_christ",
+      "status": "RESEARCH_WINDOW_SCREENED_NOT_PUBLICATION_APPROVED",
+      "readerTitle": "Feeding of the four thousand",
+      "readerParts": [
+        {
+          "reference": "Matthew 15:32–39",
+          "partIndex": 0,
+          "relationToPrevious": "ORIGINAL_EPISODE_START"
+        }
+      ],
+      "boundaryDisposition": "RETAIN_REFERENCED_PASSAGE",
+      "sourceCheck": [
+        {
+          "reference": "Matthew 15:32–39",
+          "firstVerseCoordinates": [
+            15,
+            32
+          ],
+          "lastVerseCoordinates": [
+            15,
+            39
+          ],
+          "sourceWitness": "dr-challoner",
+          "sourceWordsEmbedded": false
+        }
+      ],
+      "cautionFlags": [],
+      "editorialNote": null,
+      "proposedMainNarrativePromotion": false,
+      "canonicalAtlasIdentity": null,
+      "canonicalCovenantChapterId": null,
+      "originalRestorationDisposition": "S_supplementary_scripture_episode",
+      "sourceWitnessPublicationCertified": false
+    },
+    {
+      "id": "hist-omitted-139",
+      "originalInventoryReference": "Mark 7:24–30",
+      "primaryCollectionId": "miracles_of_christ",
+      "status": "RESEARCH_WINDOW_SCREENED_NOT_PUBLICATION_APPROVED",
+      "readerTitle": "Syrophoenician woman's daughter",
+      "readerParts": [
+        {
+          "reference": "Mark 7:24–30",
+          "partIndex": 0,
+          "relationToPrevious": "ORIGINAL_EPISODE_START"
+        }
+      ],
+      "boundaryDisposition": "RETAIN_REFERENCED_PASSAGE",
+      "sourceCheck": [
+        {
+          "reference": "Mark 7:24–30",
+          "firstVerseCoordinates": [
+            7,
+            24
+          ],
+          "lastVerseCoordinates": [
+            7,
+            30
+          ],
+          "sourceWitness": "dr-challoner",
+          "sourceWordsEmbedded": false
+        }
+      ],
+      "cautionFlags": [],
+      "editorialNote": null,
+      "proposedMainNarrativePromotion": false,
+      "canonicalAtlasIdentity": null,
+      "canonicalCovenantChapterId": null,
+      "originalRestorationDisposition": "S_supplementary_scripture_episode",
+      "sourceWitnessPublicationCertified": false
+    },
+    {
+      "id": "hist-omitted-140",
+      "originalInventoryReference": "Mark 7:31–37",
+      "primaryCollectionId": "miracles_of_christ",
+      "status": "RESEARCH_WINDOW_SCREENED_NOT_PUBLICATION_APPROVED",
+      "readerTitle": "Deaf man with a speech impediment",
+      "readerParts": [
+        {
+          "reference": "Mark 7:31–37",
+          "partIndex": 0,
+          "relationToPrevious": "ORIGINAL_EPISODE_START"
+        }
+      ],
+      "boundaryDisposition": "RETAIN_REFERENCED_PASSAGE",
+      "sourceCheck": [
+        {
+          "reference": "Mark 7:31–37",
+          "firstVerseCoordinates": [
+            7,
+            31
+          ],
+          "lastVerseCoordinates": [
+            7,
+            37
+          ],
+          "sourceWitness": "dr-challoner",
+          "sourceWordsEmbedded": false
+        }
+      ],
+      "cautionFlags": [],
+      "editorialNote": null,
+      "proposedMainNarrativePromotion": false,
+      "canonicalAtlasIdentity": null,
+      "canonicalCovenantChapterId": null,
+      "originalRestorationDisposition": "S_supplementary_scripture_episode",
+      "sourceWitnessPublicationCertified": false
+    },
+    {
+      "id": "hist-omitted-141",
+      "originalInventoryReference": "Mark 8:22–26",
+      "primaryCollectionId": "miracles_of_christ",
+      "status": "RESEARCH_WINDOW_SCREENED_NOT_PUBLICATION_APPROVED",
+      "readerTitle": "Blind man at Bethsaida",
+      "readerParts": [
+        {
+          "reference": "Mark 8:22–26",
+          "partIndex": 0,
+          "relationToPrevious": "ORIGINAL_EPISODE_START"
+        }
+      ],
+      "boundaryDisposition": "RETAIN_REFERENCED_PASSAGE",
+      "sourceCheck": [
+        {
+          "reference": "Mark 8:22–26",
+          "firstVerseCoordinates": [
+            8,
+            22
+          ],
+          "lastVerseCoordinates": [
+            8,
+            26
+          ],
+          "sourceWitness": "dr-challoner",
+          "sourceWordsEmbedded": false
+        }
+      ],
+      "cautionFlags": [],
+      "editorialNote": null,
+      "proposedMainNarrativePromotion": false,
+      "canonicalAtlasIdentity": null,
+      "canonicalCovenantChapterId": null,
+      "originalRestorationDisposition": "S_supplementary_scripture_episode",
+      "sourceWitnessPublicationCertified": false
+    },
+    {
+      "id": "hist-omitted-142",
+      "originalInventoryReference": "Mark 9:14–29",
+      "primaryCollectionId": "miracles_of_christ",
+      "status": "RESEARCH_WINDOW_SCREENED_NOT_PUBLICATION_APPROVED",
+      "readerTitle": "Boy possessed by an unclean spirit",
+      "readerParts": [
+        {
+          "reference": "Mark 9:14–28",
+          "partIndex": 0,
+          "relationToPrevious": "ORIGINAL_EPISODE_START"
+        }
+      ],
+      "boundaryDisposition": "REFINE_SOURCE_BOUNDARY",
+      "sourceCheck": [
+        {
+          "reference": "Mark 9:14–28",
+          "firstVerseCoordinates": [
+            9,
+            14
+          ],
+          "lastVerseCoordinates": [
+            9,
+            28
+          ],
+          "sourceWitness": "dr-challoner",
+          "sourceWordsEmbedded": false
+        }
+      ],
+      "cautionFlags": [
+        "REFINE_SOURCE_BOUNDARY"
+      ],
+      "editorialNote": "Mark 9:29 starts the onward journey through Galilee in all three pinned witnesses; the healing and explanation end at verse 28.",
+      "proposedMainNarrativePromotion": false,
+      "canonicalAtlasIdentity": null,
+      "canonicalCovenantChapterId": null,
+      "originalRestorationDisposition": "S_supplementary_scripture_episode",
+      "sourceWitnessPublicationCertified": false
+    },
+    {
+      "id": "hist-omitted-143",
+      "originalInventoryReference": "John 5:1–15",
+      "primaryCollectionId": "miracles_of_christ",
+      "status": "RESEARCH_WINDOW_SCREENED_NOT_PUBLICATION_APPROVED",
+      "readerTitle": "Healing at Bethesda",
+      "readerParts": [
+        {
+          "reference": "John 5:1–15",
+          "partIndex": 0,
+          "relationToPrevious": "ORIGINAL_EPISODE_START"
+        }
+      ],
+      "boundaryDisposition": "RETAIN_REFERENCED_PASSAGE",
+      "sourceCheck": [
+        {
+          "reference": "John 5:1–15",
+          "firstVerseCoordinates": [
+            5,
+            1
+          ],
+          "lastVerseCoordinates": [
+            5,
+            15
+          ],
+          "sourceWitness": "dr-challoner",
+          "sourceWordsEmbedded": false
+        }
+      ],
+      "cautionFlags": [],
+      "editorialNote": null,
+      "proposedMainNarrativePromotion": false,
+      "canonicalAtlasIdentity": null,
+      "canonicalCovenantChapterId": null,
+      "originalRestorationDisposition": "S_supplementary_scripture_episode",
+      "sourceWitnessPublicationCertified": false
+    },
+    {
+      "id": "hist-omitted-145",
+      "originalInventoryReference": "Luke 13:10–17",
+      "primaryCollectionId": "miracles_of_christ",
+      "status": "RESEARCH_WINDOW_SCREENED_NOT_PUBLICATION_APPROVED",
+      "readerTitle": "Woman bent double",
+      "readerParts": [
+        {
+          "reference": "Luke 13:10–17",
+          "partIndex": 0,
+          "relationToPrevious": "ORIGINAL_EPISODE_START"
+        }
+      ],
+      "boundaryDisposition": "RETAIN_REFERENCED_PASSAGE",
+      "sourceCheck": [
+        {
+          "reference": "Luke 13:10–17",
+          "firstVerseCoordinates": [
+            13,
+            10
+          ],
+          "lastVerseCoordinates": [
+            13,
+            17
+          ],
+          "sourceWitness": "dr-challoner",
+          "sourceWordsEmbedded": false
+        }
+      ],
+      "cautionFlags": [],
+      "editorialNote": null,
+      "proposedMainNarrativePromotion": false,
+      "canonicalAtlasIdentity": null,
+      "canonicalCovenantChapterId": null,
+      "originalRestorationDisposition": "S_supplementary_scripture_episode",
+      "sourceWitnessPublicationCertified": false
+    },
+    {
+      "id": "hist-omitted-146",
+      "originalInventoryReference": "Luke 14:1–6",
+      "primaryCollectionId": "miracles_of_christ",
+      "status": "RESEARCH_WINDOW_SCREENED_NOT_PUBLICATION_APPROVED",
+      "readerTitle": "Man with dropsy",
+      "readerParts": [
+        {
+          "reference": "Luke 14:1–6",
+          "partIndex": 0,
+          "relationToPrevious": "ORIGINAL_EPISODE_START"
+        }
+      ],
+      "boundaryDisposition": "RETAIN_REFERENCED_PASSAGE",
+      "sourceCheck": [
+        {
+          "reference": "Luke 14:1–6",
+          "firstVerseCoordinates": [
+            14,
+            1
+          ],
+          "lastVerseCoordinates": [
+            14,
+            6
+          ],
+          "sourceWitness": "dr-challoner",
+          "sourceWordsEmbedded": false
+        }
+      ],
+      "cautionFlags": [],
+      "editorialNote": null,
+      "proposedMainNarrativePromotion": false,
+      "canonicalAtlasIdentity": null,
+      "canonicalCovenantChapterId": null,
+      "originalRestorationDisposition": "S_supplementary_scripture_episode",
+      "sourceWitnessPublicationCertified": false
+    },
+    {
+      "id": "hist-omitted-147",
+      "originalInventoryReference": "Luke 17:11–19",
+      "primaryCollectionId": "miracles_of_christ",
+      "status": "RESEARCH_WINDOW_SCREENED_NOT_PUBLICATION_APPROVED",
+      "readerTitle": "Cleansing of the ten lepers",
+      "readerParts": [
+        {
+          "reference": "Luke 17:11–19",
+          "partIndex": 0,
+          "relationToPrevious": "ORIGINAL_EPISODE_START"
+        }
+      ],
+      "boundaryDisposition": "RETAIN_REFERENCED_PASSAGE",
+      "sourceCheck": [
+        {
+          "reference": "Luke 17:11–19",
+          "firstVerseCoordinates": [
+            17,
+            11
+          ],
+          "lastVerseCoordinates": [
+            17,
+            19
+          ],
+          "sourceWitness": "dr-challoner",
+          "sourceWordsEmbedded": false
+        }
+      ],
+      "cautionFlags": [],
+      "editorialNote": null,
+      "proposedMainNarrativePromotion": false,
+      "canonicalAtlasIdentity": null,
+      "canonicalCovenantChapterId": null,
+      "originalRestorationDisposition": "S_supplementary_scripture_episode",
+      "sourceWitnessPublicationCertified": false
+    },
+    {
+      "id": "hist-omitted-148",
+      "originalInventoryReference": "Luke 18:35–43",
+      "primaryCollectionId": "miracles_of_christ",
+      "status": "RESEARCH_WINDOW_SCREENED_NOT_PUBLICATION_APPROVED",
+      "readerTitle": "Healing of the blind man near Jericho",
+      "readerParts": [
+        {
+          "reference": "Luke 18:35–43",
+          "partIndex": 0,
+          "relationToPrevious": "ORIGINAL_EPISODE_START"
+        }
+      ],
+      "boundaryDisposition": "RETAIN_REFERENCED_PASSAGE",
+      "sourceCheck": [
+        {
+          "reference": "Luke 18:35–43",
+          "firstVerseCoordinates": [
+            18,
+            35
+          ],
+          "lastVerseCoordinates": [
+            18,
+            43
+          ],
+          "sourceWitness": "dr-challoner",
+          "sourceWordsEmbedded": false
+        }
+      ],
+      "cautionFlags": [],
+      "editorialNote": null,
+      "proposedMainNarrativePromotion": false,
+      "canonicalAtlasIdentity": null,
+      "canonicalCovenantChapterId": null,
+      "originalRestorationDisposition": "S_supplementary_scripture_episode",
+      "sourceWitnessPublicationCertified": false
+    },
+    {
+      "id": "hist-omitted-150",
+      "originalInventoryReference": "Matthew 13:24–30",
+      "primaryCollectionId": "parables_and_teachings",
+      "status": "RESEARCH_WINDOW_SCREENED_NOT_PUBLICATION_APPROVED",
+      "readerTitle": "The wheat and the tares",
+      "readerParts": [
+        {
+          "reference": "Matthew 13:24–30",
+          "partIndex": 0,
+          "relationToPrevious": "ORIGINAL_EPISODE_START"
+        },
+        {
+          "reference": "Matthew 13:36–43",
+          "partIndex": 1,
+          "relationToPrevious": "SEPARATE_SCRIPTURAL_EXPLANATION"
+        }
+      ],
+      "boundaryDisposition": "DISTINCT_COMPANION_EXPLANATION",
+      "sourceCheck": [
+        {
+          "reference": "Matthew 13:24–30",
+          "firstVerseCoordinates": [
+            13,
+            24
+          ],
+          "lastVerseCoordinates": [
+            13,
+            30
+          ],
+          "sourceWitness": "dr-challoner",
+          "sourceWordsEmbedded": false
+        },
+        {
+          "reference": "Matthew 13:36–43",
+          "firstVerseCoordinates": [
+            13,
+            36
+          ],
+          "lastVerseCoordinates": [
+            13,
+            43
+          ],
+          "sourceWitness": "dr-challoner",
+          "sourceWordsEmbedded": false
+        }
+      ],
+      "cautionFlags": [
+        "DISTINCT_COMPANION_EXPLANATION"
+      ],
+      "editorialNote": "Matthew 13:36–43 contains Christ's explanation of the wheat and tares; Matthew 13:31–35 is different intervening teaching.",
+      "proposedMainNarrativePromotion": false,
+      "canonicalAtlasIdentity": null,
+      "canonicalCovenantChapterId": null,
+      "originalRestorationDisposition": "S_supplementary_scripture_episode",
+      "sourceWitnessPublicationCertified": false
+    },
+    {
+      "id": "hist-omitted-151",
+      "originalInventoryReference": "Matthew 13:31–32",
+      "primaryCollectionId": "parables_and_teachings",
+      "status": "RESEARCH_WINDOW_SCREENED_NOT_PUBLICATION_APPROVED",
+      "readerTitle": "The mustard seed",
+      "readerParts": [
+        {
+          "reference": "Matthew 13:31–32",
+          "partIndex": 0,
+          "relationToPrevious": "ORIGINAL_EPISODE_START"
+        }
+      ],
+      "boundaryDisposition": "RETAIN_REFERENCED_PASSAGE",
+      "sourceCheck": [
+        {
+          "reference": "Matthew 13:31–32",
+          "firstVerseCoordinates": [
+            13,
+            31
+          ],
+          "lastVerseCoordinates": [
+            13,
+            32
+          ],
+          "sourceWitness": "dr-challoner",
+          "sourceWordsEmbedded": false
+        }
+      ],
+      "cautionFlags": [],
+      "editorialNote": null,
+      "proposedMainNarrativePromotion": false,
+      "canonicalAtlasIdentity": null,
+      "canonicalCovenantChapterId": null,
+      "originalRestorationDisposition": "S_supplementary_scripture_episode",
+      "sourceWitnessPublicationCertified": false
+    },
+    {
+      "id": "hist-omitted-152",
+      "originalInventoryReference": "Matthew 13:44",
+      "primaryCollectionId": "parables_and_teachings",
+      "status": "RESEARCH_WINDOW_SCREENED_NOT_PUBLICATION_APPROVED",
+      "readerTitle": "The hidden treasure",
+      "readerParts": [
+        {
+          "reference": "Matthew 13:44",
+          "partIndex": 0,
+          "relationToPrevious": "ORIGINAL_EPISODE_START"
+        }
+      ],
+      "boundaryDisposition": "RETAIN_REFERENCED_PASSAGE",
+      "sourceCheck": [
+        {
+          "reference": "Matthew 13:44",
+          "firstVerseCoordinates": [
+            13,
+            44
+          ],
+          "lastVerseCoordinates": [
+            13,
+            44
+          ],
+          "sourceWitness": "dr-challoner",
+          "sourceWordsEmbedded": false
+        }
+      ],
+      "cautionFlags": [],
+      "editorialNote": null,
+      "proposedMainNarrativePromotion": false,
+      "canonicalAtlasIdentity": null,
+      "canonicalCovenantChapterId": null,
+      "originalRestorationDisposition": "S_supplementary_scripture_episode",
+      "sourceWitnessPublicationCertified": false
+    },
+    {
+      "id": "hist-omitted-153",
+      "originalInventoryReference": "Matthew 13:45–46",
+      "primaryCollectionId": "parables_and_teachings",
+      "status": "RESEARCH_WINDOW_SCREENED_NOT_PUBLICATION_APPROVED",
+      "readerTitle": "The pearl of great price",
+      "readerParts": [
+        {
+          "reference": "Matthew 13:45–46",
+          "partIndex": 0,
+          "relationToPrevious": "ORIGINAL_EPISODE_START"
+        }
+      ],
+      "boundaryDisposition": "RETAIN_REFERENCED_PASSAGE",
+      "sourceCheck": [
+        {
+          "reference": "Matthew 13:45–46",
+          "firstVerseCoordinates": [
+            13,
+            45
+          ],
+          "lastVerseCoordinates": [
+            13,
+            46
+          ],
+          "sourceWitness": "dr-challoner",
+          "sourceWordsEmbedded": false
+        }
+      ],
+      "cautionFlags": [],
+      "editorialNote": null,
+      "proposedMainNarrativePromotion": false,
+      "canonicalAtlasIdentity": null,
+      "canonicalCovenantChapterId": null,
+      "originalRestorationDisposition": "S_supplementary_scripture_episode",
+      "sourceWitnessPublicationCertified": false
+    },
+    {
+      "id": "hist-omitted-156",
+      "originalInventoryReference": "Luke 12:16–21",
+      "primaryCollectionId": "parables_and_teachings",
+      "status": "RESEARCH_WINDOW_SCREENED_NOT_PUBLICATION_APPROVED",
+      "readerTitle": "The rich fool",
+      "readerParts": [
+        {
+          "reference": "Luke 12:16–21",
+          "partIndex": 0,
+          "relationToPrevious": "ORIGINAL_EPISODE_START"
+        }
+      ],
+      "boundaryDisposition": "RETAIN_REFERENCED_PASSAGE",
+      "sourceCheck": [
+        {
+          "reference": "Luke 12:16–21",
+          "firstVerseCoordinates": [
+            12,
+            16
+          ],
+          "lastVerseCoordinates": [
+            12,
+            21
+          ],
+          "sourceWitness": "dr-challoner",
+          "sourceWordsEmbedded": false
+        }
+      ],
+      "cautionFlags": [],
+      "editorialNote": null,
+      "proposedMainNarrativePromotion": false,
+      "canonicalAtlasIdentity": null,
+      "canonicalCovenantChapterId": null,
+      "originalRestorationDisposition": "S_supplementary_scripture_episode",
+      "sourceWitnessPublicationCertified": false
+    },
+    {
+      "id": "hist-omitted-157",
+      "originalInventoryReference": "Luke 15:1–7",
+      "primaryCollectionId": "parables_and_teachings",
+      "status": "RESEARCH_WINDOW_SCREENED_NOT_PUBLICATION_APPROVED",
+      "readerTitle": "The lost sheep",
+      "readerParts": [
+        {
+          "reference": "Luke 15:1–7",
+          "partIndex": 0,
+          "relationToPrevious": "ORIGINAL_EPISODE_START"
+        }
+      ],
+      "boundaryDisposition": "RETAIN_REFERENCED_PASSAGE",
+      "sourceCheck": [
+        {
+          "reference": "Luke 15:1–7",
+          "firstVerseCoordinates": [
+            15,
+            1
+          ],
+          "lastVerseCoordinates": [
+            15,
+            7
+          ],
+          "sourceWitness": "dr-challoner",
+          "sourceWordsEmbedded": false
+        }
+      ],
+      "cautionFlags": [],
+      "editorialNote": null,
+      "proposedMainNarrativePromotion": false,
+      "canonicalAtlasIdentity": null,
+      "canonicalCovenantChapterId": null,
+      "originalRestorationDisposition": "S_supplementary_scripture_episode",
+      "sourceWitnessPublicationCertified": false
+    },
+    {
+      "id": "hist-omitted-158",
+      "originalInventoryReference": "Luke 15:8–10",
+      "primaryCollectionId": "parables_and_teachings",
+      "status": "RESEARCH_WINDOW_SCREENED_NOT_PUBLICATION_APPROVED",
+      "readerTitle": "The lost coin",
+      "readerParts": [
+        {
+          "reference": "Luke 15:8–10",
+          "partIndex": 0,
+          "relationToPrevious": "ORIGINAL_EPISODE_START"
+        }
+      ],
+      "boundaryDisposition": "RETAIN_REFERENCED_PASSAGE",
+      "sourceCheck": [
+        {
+          "reference": "Luke 15:8–10",
+          "firstVerseCoordinates": [
+            15,
+            8
+          ],
+          "lastVerseCoordinates": [
+            15,
+            10
+          ],
+          "sourceWitness": "dr-challoner",
+          "sourceWordsEmbedded": false
+        }
+      ],
+      "cautionFlags": [],
+      "editorialNote": null,
+      "proposedMainNarrativePromotion": false,
+      "canonicalAtlasIdentity": null,
+      "canonicalCovenantChapterId": null,
+      "originalRestorationDisposition": "S_supplementary_scripture_episode",
+      "sourceWitnessPublicationCertified": false
+    },
+    {
+      "id": "hist-omitted-160",
+      "originalInventoryReference": "Luke 16:19–31",
+      "primaryCollectionId": "parables_and_teachings",
+      "status": "RESEARCH_WINDOW_SCREENED_NOT_PUBLICATION_APPROVED",
+      "readerTitle": "The rich man and Lazarus",
+      "readerParts": [
+        {
+          "reference": "Luke 16:19–31",
+          "partIndex": 0,
+          "relationToPrevious": "ORIGINAL_EPISODE_START"
+        }
+      ],
+      "boundaryDisposition": "RETAIN_REFERENCED_PASSAGE",
+      "sourceCheck": [
+        {
+          "reference": "Luke 16:19–31",
+          "firstVerseCoordinates": [
+            16,
+            19
+          ],
+          "lastVerseCoordinates": [
+            16,
+            31
+          ],
+          "sourceWitness": "dr-challoner",
+          "sourceWordsEmbedded": false
+        }
+      ],
+      "cautionFlags": [
+        "LITERARY_FORM_NOT_HISTORICAL_IDENTITY"
+      ],
+      "editorialNote": "Read the rich man and Lazarus only in Luke's terms: no confident inference about the historical identity of the characters.",
+      "proposedMainNarrativePromotion": false,
+      "canonicalAtlasIdentity": null,
+      "canonicalCovenantChapterId": null,
+      "originalRestorationDisposition": "S_supplementary_scripture_episode",
+      "sourceWitnessPublicationCertified": false
+    },
+    {
+      "id": "hist-omitted-162",
+      "originalInventoryReference": "Matthew 20:1–16",
+      "primaryCollectionId": "parables_and_teachings",
+      "status": "RESEARCH_WINDOW_SCREENED_NOT_PUBLICATION_APPROVED",
+      "readerTitle": "The labourers in the vineyard",
+      "readerParts": [
+        {
+          "reference": "Matthew 20:1–16",
+          "partIndex": 0,
+          "relationToPrevious": "ORIGINAL_EPISODE_START"
+        }
+      ],
+      "boundaryDisposition": "RETAIN_REFERENCED_PASSAGE",
+      "sourceCheck": [
+        {
+          "reference": "Matthew 20:1–16",
+          "firstVerseCoordinates": [
+            20,
+            1
+          ],
+          "lastVerseCoordinates": [
+            20,
+            16
+          ],
+          "sourceWitness": "dr-challoner",
+          "sourceWordsEmbedded": false
+        }
+      ],
+      "cautionFlags": [],
+      "editorialNote": null,
+      "proposedMainNarrativePromotion": false,
+      "canonicalAtlasIdentity": null,
+      "canonicalCovenantChapterId": null,
+      "originalRestorationDisposition": "S_supplementary_scripture_episode",
+      "sourceWitnessPublicationCertified": false
+    },
+    {
+      "id": "hist-omitted-163",
+      "originalInventoryReference": "Matthew 22:1–14",
+      "primaryCollectionId": "parables_and_teachings",
+      "status": "RESEARCH_WINDOW_SCREENED_NOT_PUBLICATION_APPROVED",
+      "readerTitle": "The wedding banquet",
+      "readerParts": [
+        {
+          "reference": "Matthew 22:1–14",
+          "partIndex": 0,
+          "relationToPrevious": "ORIGINAL_EPISODE_START"
+        }
+      ],
+      "boundaryDisposition": "RETAIN_REFERENCED_PASSAGE",
+      "sourceCheck": [
+        {
+          "reference": "Matthew 22:1–14",
+          "firstVerseCoordinates": [
+            22,
+            1
+          ],
+          "lastVerseCoordinates": [
+            22,
+            14
+          ],
+          "sourceWitness": "dr-challoner",
+          "sourceWordsEmbedded": false
+        }
+      ],
+      "cautionFlags": [],
+      "editorialNote": null,
+      "proposedMainNarrativePromotion": false,
+      "canonicalAtlasIdentity": null,
+      "canonicalCovenantChapterId": null,
+      "originalRestorationDisposition": "S_supplementary_scripture_episode",
+      "sourceWitnessPublicationCertified": false
+    },
+    {
+      "id": "hist-omitted-166",
+      "originalInventoryReference": "Matthew 25:31–46",
+      "primaryCollectionId": "parables_and_teachings",
+      "status": "RESEARCH_WINDOW_SCREENED_NOT_PUBLICATION_APPROVED",
+      "readerTitle": "The last judgment: sheep and goats",
+      "readerParts": [
+        {
+          "reference": "Matthew 25:31–46",
+          "partIndex": 0,
+          "relationToPrevious": "ORIGINAL_EPISODE_START"
+        }
+      ],
+      "boundaryDisposition": "RETAIN_REFERENCED_PASSAGE",
+      "sourceCheck": [
+        {
+          "reference": "Matthew 25:31–46",
+          "firstVerseCoordinates": [
+            25,
+            31
+          ],
+          "lastVerseCoordinates": [
+            25,
+            46
+          ],
+          "sourceWitness": "dr-challoner",
+          "sourceWordsEmbedded": false
+        }
+      ],
+      "cautionFlags": [
+        "ESCHATOLOGICAL_TEACHING_NOT_ORDINARY_PLOT_PARABLE"
+      ],
+      "editorialNote": "The Last Judgment is presented as future; do not date it as a narrated past earthly event.",
+      "proposedMainNarrativePromotion": false,
+      "canonicalAtlasIdentity": null,
+      "canonicalCovenantChapterId": null,
+      "originalRestorationDisposition": "M2_conditional_restoration_review",
+      "sourceWitnessPublicationCertified": false
+    },
+    {
+      "id": "hist-omitted-169",
+      "originalInventoryReference": "John 10:1–21",
+      "primaryCollectionId": "parables_and_teachings",
+      "status": "RESEARCH_WINDOW_SCREENED_NOT_PUBLICATION_APPROVED",
+      "readerTitle": "The Good Shepherd discourse",
+      "readerParts": [
+        {
+          "reference": "John 10:1–21",
+          "partIndex": 0,
+          "relationToPrevious": "ORIGINAL_EPISODE_START"
+        }
+      ],
+      "boundaryDisposition": "RETAIN_REFERENCED_PASSAGE",
+      "sourceCheck": [
+        {
+          "reference": "John 10:1–21",
+          "firstVerseCoordinates": [
+            10,
+            1
+          ],
+          "lastVerseCoordinates": [
+            10,
+            21
+          ],
+          "sourceWitness": "dr-challoner",
+          "sourceWordsEmbedded": false
+        }
+      ],
+      "cautionFlags": [],
+      "editorialNote": null,
+      "proposedMainNarrativePromotion": false,
+      "canonicalAtlasIdentity": null,
+      "canonicalCovenantChapterId": null,
+      "originalRestorationDisposition": "M2_conditional_restoration_review",
+      "sourceWitnessPublicationCertified": false
+    },
+    {
+      "id": "hist-omitted-171",
+      "originalInventoryReference": "Mark 11:12–21",
+      "primaryCollectionId": "miracles_of_christ",
+      "status": "RESEARCH_WINDOW_SCREENED_NOT_PUBLICATION_APPROVED",
+      "readerTitle": "The withered fig tree",
+      "readerParts": [
+        {
+          "reference": "Mark 11:12–14",
+          "partIndex": 0,
+          "relationToPrevious": "ORIGINAL_EPISODE_START"
+        },
+        {
+          "reference": "Mark 11:20–21",
+          "partIndex": 1,
+          "relationToPrevious": "DISCONTINUOUS_COMPANION_SOURCE_SEGMENT"
+        }
+      ],
+      "boundaryDisposition": "SPLIT_INTERRUPTED_NARRATIVE",
+      "sourceCheck": [
+        {
+          "reference": "Mark 11:12–14",
+          "firstVerseCoordinates": [
+            11,
+            12
+          ],
+          "lastVerseCoordinates": [
+            11,
+            14
+          ],
+          "sourceWitness": "dr-challoner",
+          "sourceWordsEmbedded": false
+        },
+        {
+          "reference": "Mark 11:20–21",
+          "firstVerseCoordinates": [
+            11,
+            20
+          ],
+          "lastVerseCoordinates": [
+            11,
+            21
+          ],
+          "sourceWitness": "dr-challoner",
+          "sourceWordsEmbedded": false
+        }
+      ],
+      "cautionFlags": [
+        "SPLIT_INTERRUPTED_NARRATIVE"
+      ],
+      "editorialNote": "The cleansing of the Temple (Mark 11:15–19) intervenes between the fig-tree action and recognition of its withering.",
+      "proposedMainNarrativePromotion": false,
+      "canonicalAtlasIdentity": null,
+      "canonicalCovenantChapterId": null,
+      "originalRestorationDisposition": "S_supplementary_scripture_episode",
+      "sourceWitnessPublicationCertified": false
+    },
+    {
+      "id": "hist-omitted-172",
+      "originalInventoryReference": "Matthew 21–23",
+      "primaryCollectionId": "parables_and_teachings",
+      "status": "RESEARCH_WINDOW_SCREENED_NOT_PUBLICATION_APPROVED",
+      "readerTitle": "Debates and denunciations involving the authorities",
+      "readerParts": [
+        {
+          "reference": "Matthew 21:23–27",
+          "partIndex": 0,
+          "relationToPrevious": "ORIGINAL_EPISODE_START"
+        },
+        {
+          "reference": "Matthew 22:15–46",
+          "partIndex": 1,
+          "relationToPrevious": "DISCONTINUOUS_COMPANION_SOURCE_SEGMENT"
+        },
+        {
+          "reference": "Matthew 23:1–39",
+          "partIndex": 2,
+          "relationToPrevious": "DISCONTINUOUS_COMPANION_SOURCE_SEGMENT"
+        }
+      ],
+      "boundaryDisposition": "REMOVE_UNRELATED_ENTRIES",
+      "sourceCheck": [
+        {
+          "reference": "Matthew 21:23–27",
+          "firstVerseCoordinates": [
+            21,
+            23
+          ],
+          "lastVerseCoordinates": [
+            21,
+            27
+          ],
+          "sourceWitness": "dr-challoner",
+          "sourceWordsEmbedded": false
+        },
+        {
+          "reference": "Matthew 22:15–46",
+          "firstVerseCoordinates": [
+            22,
+            15
+          ],
+          "lastVerseCoordinates": [
+            22,
+            46
+          ],
+          "sourceWitness": "dr-challoner",
+          "sourceWordsEmbedded": false
+        },
+        {
+          "reference": "Matthew 23:1–39",
+          "firstVerseCoordinates": [
+            23,
+            1
+          ],
+          "lastVerseCoordinates": [
+            23,
+            39
+          ],
+          "sourceWitness": "dr-challoner",
+          "sourceWordsEmbedded": false
+        }
+      ],
+      "cautionFlags": [
+        "REMOVE_UNRELATED_ENTRIES"
+      ],
+      "editorialNote": "Matthew 21:1–22 includes the Jerusalem entry and Temple actions; Matthew 22:1–14 is a separate indexed wedding parable. Matthew 23 is a public denunciation, not another question-and-answer debate.",
+      "proposedMainNarrativePromotion": false,
+      "canonicalAtlasIdentity": null,
+      "canonicalCovenantChapterId": null,
+      "originalRestorationDisposition": "S_supplementary_scripture_episode",
+      "sourceWitnessPublicationCertified": false
+    },
+    {
+      "id": "hist-omitted-175",
+      "originalInventoryReference": "John 13:34–35",
+      "primaryCollectionId": "parables_and_teachings",
+      "status": "RESEARCH_WINDOW_SCREENED_NOT_PUBLICATION_APPROVED",
+      "readerTitle": "New commandment of charity",
+      "readerParts": [
+        {
+          "reference": "John 13:34–35",
+          "partIndex": 0,
+          "relationToPrevious": "ORIGINAL_EPISODE_START"
+        }
+      ],
+      "boundaryDisposition": "RETAIN_REFERENCED_PASSAGE",
+      "sourceCheck": [
+        {
+          "reference": "John 13:34–35",
+          "firstVerseCoordinates": [
+            13,
+            34
+          ],
+          "lastVerseCoordinates": [
+            13,
+            35
+          ],
+          "sourceWitness": "dr-challoner",
+          "sourceWordsEmbedded": false
+        }
+      ],
+      "cautionFlags": [],
+      "editorialNote": null,
+      "proposedMainNarrativePromotion": false,
+      "canonicalAtlasIdentity": null,
+      "canonicalCovenantChapterId": null,
+      "originalRestorationDisposition": "M1_core_restoration_review",
+      "sourceWitnessPublicationCertified": false
+    },
+    {
+      "id": "hist-omitted-176",
+      "originalInventoryReference": "John 14:15–26",
+      "primaryCollectionId": "parables_and_teachings",
+      "status": "RESEARCH_WINDOW_SCREENED_NOT_PUBLICATION_APPROVED",
+      "readerTitle": "Christ promises the Paraclete",
+      "readerParts": [
+        {
+          "reference": "John 14:15–26",
+          "partIndex": 0,
+          "relationToPrevious": "ORIGINAL_EPISODE_START"
+        }
+      ],
+      "boundaryDisposition": "RETAIN_REFERENCED_PASSAGE",
+      "sourceCheck": [
+        {
+          "reference": "John 14:15–26",
+          "firstVerseCoordinates": [
+            14,
+            15
+          ],
+          "lastVerseCoordinates": [
+            14,
+            26
+          ],
+          "sourceWitness": "dr-challoner",
+          "sourceWordsEmbedded": false
+        }
+      ],
+      "cautionFlags": [],
+      "editorialNote": null,
+      "proposedMainNarrativePromotion": false,
+      "canonicalAtlasIdentity": null,
+      "canonicalCovenantChapterId": null,
+      "originalRestorationDisposition": "M1_core_restoration_review",
+      "sourceWitnessPublicationCertified": false
+    },
+    {
+      "id": "hist-omitted-177",
+      "originalInventoryReference": "John 15",
+      "primaryCollectionId": "parables_and_teachings",
+      "status": "RESEARCH_WINDOW_SCREENED_NOT_PUBLICATION_APPROVED",
+      "readerTitle": "The vine and branches discourse",
+      "readerParts": [
+        {
+          "reference": "John 15",
+          "partIndex": 0,
+          "relationToPrevious": "ORIGINAL_EPISODE_START"
+        }
+      ],
+      "boundaryDisposition": "RETAIN_REFERENCED_PASSAGE",
+      "sourceCheck": [
+        {
+          "reference": "John 15",
+          "firstVerseCoordinates": [
+            15,
+            1
+          ],
+          "lastVerseCoordinates": [
+            15,
+            27
+          ],
+          "sourceWitness": "dr-challoner",
+          "sourceWordsEmbedded": false
+        }
+      ],
+      "cautionFlags": [
+        "MULTI_THEME_DISCOURSE"
+      ],
+      "editorialNote": "John 15 also includes the hatred of the world and the testimony of the Spirit, not only the vine image.",
+      "proposedMainNarrativePromotion": false,
+      "canonicalAtlasIdentity": null,
+      "canonicalCovenantChapterId": null,
+      "originalRestorationDisposition": "M2_conditional_restoration_review",
+      "sourceWitnessPublicationCertified": false
+    },
+    {
+      "id": "hist-omitted-178",
+      "originalInventoryReference": "John 17",
+      "primaryCollectionId": "parables_and_teachings",
+      "status": "RESEARCH_WINDOW_SCREENED_NOT_PUBLICATION_APPROVED",
+      "readerTitle": "Christ's priestly prayer",
+      "readerParts": [
+        {
+          "reference": "John 17",
+          "partIndex": 0,
+          "relationToPrevious": "ORIGINAL_EPISODE_START"
+        }
+      ],
+      "boundaryDisposition": "RETAIN_REFERENCED_PASSAGE",
+      "sourceCheck": [
+        {
+          "reference": "John 17",
+          "firstVerseCoordinates": [
+            17,
+            1
+          ],
+          "lastVerseCoordinates": [
+            17,
+            26
+          ],
+          "sourceWitness": "dr-challoner",
+          "sourceWordsEmbedded": false
+        }
+      ],
+      "cautionFlags": [],
+      "editorialNote": null,
+      "proposedMainNarrativePromotion": false,
+      "canonicalAtlasIdentity": null,
+      "canonicalCovenantChapterId": null,
+      "originalRestorationDisposition": "M1_core_restoration_review",
+      "sourceWitnessPublicationCertified": false
+    },
+    {
+      "id": "hist-omitted-187",
+      "originalInventoryReference": "John 21:4–11",
+      "primaryCollectionId": "miracles_of_christ",
+      "status": "RESEARCH_WINDOW_SCREENED_NOT_PUBLICATION_APPROVED",
+      "readerTitle": "Second miraculous catch of fish",
+      "readerParts": [
+        {
+          "reference": "John 21:4–11",
+          "partIndex": 0,
+          "relationToPrevious": "ORIGINAL_EPISODE_START"
+        }
+      ],
+      "boundaryDisposition": "RETAIN_REFERENCED_PASSAGE",
+      "sourceCheck": [
+        {
+          "reference": "John 21:4–11",
+          "firstVerseCoordinates": [
+            21,
+            4
+          ],
+          "lastVerseCoordinates": [
+            21,
+            11
+          ],
+          "sourceWitness": "dr-challoner",
+          "sourceWordsEmbedded": false
+        }
+      ],
+      "cautionFlags": [],
+      "editorialNote": null,
+      "proposedMainNarrativePromotion": false,
+      "canonicalAtlasIdentity": null,
+      "canonicalCovenantChapterId": null,
+      "originalRestorationDisposition": "S_supplementary_scripture_episode",
+      "sourceWitnessPublicationCertified": false
+    }
+  ]
+}
