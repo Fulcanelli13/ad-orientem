@@ -83,23 +83,23 @@ try{
   assert.equal(await mode.isVisible(),true);
   await mode.click();
   assert.match(await page.locator('#speaker').innerText(),/EXPERIMENTAL VOICE/);
-  assert.match(await page.locator('#reply').innerText(),/Peter fell grievously/);
-  await page.getByRole('button',{name:/Was Peter.s betrayal less serious/}).click();
-  assert.match(await page.locator('#visitor').innerText(),/Was Peter.s betrayal less serious/);
-  assert.match(await page.locator('#reply').innerText(),/Repentance does not make betrayal a small matter/);
-  await page.getByRole('button',{name:/What keeps sorrow for sin/}).click();
-  assert.match(await page.locator('#visitor').innerText(),/What keeps sorrow for sin/);
-  assert.match(await page.locator('#reply').innerText(),/impossibility of pardon/);
+  assert.match(await page.locator('#reply').innerText(),/Peter denied that he knew Our Lord/);
+  await page.getByRole('button',{name:/But did Judas not acknowledge his fault/}).click();
+  assert.match(await page.locator('#visitor').innerText(),/But did Judas not acknowledge his fault/);
+  assert.match(await page.locator('#reply').innerText(),/He returned the money and confessed/);
+  await page.getByRole('button',{name:/And what did Peter do after his denial/}).click();
+  assert.match(await page.locator('#visitor').innerText(),/And what did Peter do after his denial/);
+  assert.match(await page.locator('#reply').innerText(),/wept for his sin and received pardon/);
 
   await page.locator('#langButton').click();
-  assert.match(await page.locator('#visitor').innerText(),/empêche la douleur/);
-  assert.match(await page.locator('#reply').innerText(),/miséricorde/);
+  assert.match(await page.locator('#visitor').innerText(),/après son reniement/);
+  assert.match(await page.locator('#reply').innerText(),/reçut le pardon/);
   await page.locator('#langButton').click();
 
   await page.locator('#sceneSelect').selectOption('SPX-023');
   assert.match(await page.locator('#speaker').innerText(),/EXPERIMENTAL VOICE/);
-  await page.getByRole('button',{name:/Is spiritual Communion without value/}).click();
-  await page.getByRole('button',{name:/Can you tell whether I ought to receive Communion today/}).click();
+  await page.getByRole('button',{name:/If I do not receive the sacrament/}).click();
+  await page.getByRole('button',{name:/Can you decide whether I should receive Holy Communion today/}).click();
   assert.match(await page.locator('#speaker').innerText(),/EDITORIAL SOURCE BOUNDARY/);
   assert.equal(await page.locator('#gallery').evaluate(x=>x.classList.contains('editorial-boundary')),true);
   assert.equal(await page.locator('#sprite').isVisible(),false,'Pius cannot appear to utter editorial sacramental disclaimer');
