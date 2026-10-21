@@ -9,6 +9,7 @@ import {expandedThematicResearchCollections} from "./historia-thematic-expansion
 import {segmentedThematicResearchCollections} from "./historia-thematic-composite.js";
 import {applyThematicBoundaryAudit} from "./historia-thematic-boundaries.js";
 import {all217ThematicResearchCollections} from "./historia-thematic-remaining.js";
+import {apply150EditorialTriage} from "./historia-thematic-editorial-triage.js";
 export const SCRIPTURE_BROWSER_VERSION="ao-scripture-library-v1";
 export function installScriptureBrowserOwner(win=globalThis){
  if(win.AO_SCRIPTURE_APP_V1)return win.AO_SCRIPTURE_APP_V1;
@@ -59,8 +60,11 @@ export function installScriptureBrowserOwner(win=globalThis){
     return applyThematicBoundaryAudit(segmentedThematicResearchCollections(segmentedSource,inventory,groups),review);
    const next=await win.fetch("/data/research/historia-salutis-thematic-remainder-research-20261021.v1.json",{cache:"no-store"});
    if(!next?.ok)throw new Error("Historia full research inventory unavailable");
-   return all217ThematicResearchCollections(
+   const expanded=all217ThematicResearchCollections(
     await next.json(),review,segmentedSource,inventory,groups,originalRegistry.collectionTitles);
+   const reviewed=await win.fetch("/data/research/historia-salutis-thematic-150-editorial-queue-20261021.v1.json",{cache:"no-store"});
+   if(!reviewed?.ok)throw new Error("Historia 150-entry source-boundary audit unavailable");
+   return apply150EditorialTriage(expanded,await reviewed.json());
   })();
   try{return thematicCache=await thematicInflight;}
   finally{thematicInflight=null;}
