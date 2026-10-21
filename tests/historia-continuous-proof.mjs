@@ -108,7 +108,7 @@ assert.equal(proof.p4LateMovementDraft.revisedTotalSourceBridgeCandidates,17);
 assert.equal(proof.movements.find(x=>x.id==="HS-M34").beats.some(x=>x.id==="H73-02"),false,
  "Philippi jail conversion may not become an obligatory story");
 assert.deepEqual(proof.movements.find(x=>x.id==="HS-M34").beats.map(x=>x.id),
- ["HS-CF-10","HS-CF-11","H73-07"]);
+ ["HS-CF-10","HS-CF-11","HS-P3-CF-13","H73-07"]);
 assert.ok(proof.movements.find(x=>x.id==="HS-M24").beats.find(x=>x.id==="HS-CF-05"));
 assert.ok(proof.movements.find(x=>x.id==="HS-M28").beats.find(x=>x.id==="HS-CF-06"));
 assert.equal(proof.movements.find(x=>x.id==="HS-M10").beats.find(x=>x.id==="H22-02").refs[0],"Exodus 20:1–17");
