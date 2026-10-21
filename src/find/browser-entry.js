@@ -66,6 +66,7 @@ function installStyle(win){
     ".aoExploreLensTabs button small{font-size:var(--ao-type-ui-xs,11px);color:#817765}.aoExploreLensTabs button.active{background:#d9c59a;color:#080c12;border-color:#d9c59a}.aoExploreLensTabs button.active small{color:#493f30}",
     ".aoCustomsAtlasPanel{margin:12px 16px 6px;padding:17px;border:1px solid rgba(217,197,154,.22);border-radius:16px;background:linear-gradient(145deg,rgba(217,197,154,.06),rgba(10,18,27,.6))}",
     ".aoCustomsAtlasHeading{display:flex;align-items:end;justify-content:space-between;gap:14px}.aoCustomsAtlasHeading small{font:650 10px/1.25 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.12em;color:#bba47a}.aoCustomsAtlasHeading h2{margin:5px 0 0;font:600 25px/1.1 var(--ao-font-display,Georgia,serif);color:#eadfcb}.aoCustomsAtlasHeading p{max-width:390px;margin:0;color:#ad9f8c;font:13px/1.45 var(--ao-font-ui,system-ui,sans-serif)}",
+    ".aoCustomsLibraryLaunch{display:block;width:100%;margin:15px 0 6px;min-height:48px;text-align:left;padding:12px 14px;border:1px solid rgba(217,197,154,.55);border-radius:9px;background:#27301f;color:#f4e5c9;font:600 14px/1.4 var(--ao-font-ui,system-ui,sans-serif)}.aoCustomsLibraryLaunch:hover{background:#313d2c}.aoCustomsLibraryLaunch:focus-visible{outline:2px solid #d9c59a;outline-offset:3px}",
     ".aoCustomsAtlasTopics{margin-top:14px;max-width:440px}.aoCustomsAtlasDiscovery{margin-top:12px;padding-top:10px;border-top:1px solid rgba(217,197,154,.14)}.aoCustomsAtlasDiscovery>summary{cursor:pointer;min-height:36px;color:#d9c59a;font:650 12px/1.3 var(--ao-font-ui,system-ui,sans-serif);display:list-item;list-style-position:inside}.aoCustomsAtlasDiscovery>summary:focus-visible{outline:2px solid #d9c59a;outline-offset:2px}",
     ".aoCustomsAtlasFacets{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin-top:16px}.aoAtlasSelect{display:grid;gap:6px;min-width:0}.aoAtlasSelect span{font:650 11px/1.25 var(--ao-font-ui,system-ui,sans-serif);color:#c6b18b}.aoAtlasSelect select{width:100%;min-width:0;min-height:44px;box-sizing:border-box;border:1px solid rgba(217,197,154,.24);border-radius:10px;background:#101a24;color:#efe7d4;padding:10px 26px 10px 10px;font:13px var(--ao-font-ui,system-ui,sans-serif)}.aoAtlasSelect select:focus-visible,.aoCustomsAtlasFoot button:focus-visible{outline:2px solid #d9c59a;outline-offset:2px}",
     ".aoCustomsAtlasFoot{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:12px}.aoCustomsAtlasFoot span{color:#978d7e;font:11px/1.45 var(--ao-font-ui,system-ui,sans-serif)}.aoCustomsAtlasFoot button{flex:none;border:1px solid rgba(217,197,154,.28);border-radius:999px;background:transparent;color:#e6d4b4;padding:9px 11px;cursor:pointer;font:650 11px var(--ao-font-ui,system-ui,sans-serif)}",
@@ -972,6 +973,21 @@ export function createFindOwner(win=globalThis){
   function onClick(event){
     if(!openState)return;
     const target=event?.target;
+    const customsLibrary=target?.closest?.("[data-explore-customs-library]");
+    if(customsLibrary&&state.lens==="traditions"){
+      event.preventDefault?.();
+      if(customsLibrary.disabled)return;
+      customsLibrary.disabled=true;
+      void import("../customs/customs-browser.js")
+        .then(({installCustomsBrowserOwner})=>installCustomsBrowserOwner(win).open({view:"all"}))
+        .then(ok=>{if(!ok)throw Error("CUSTOMS_LIBRARY_UNAVAILABLE");})
+        .catch(error=>{
+          console.error("Customs library unavailable",error);
+          actionError(language(win)==="fr"?"Bibliothèque des coutumes indisponible.":"Customs library unavailable.");
+        })
+        .finally(()=>{if(customsLibrary.isConnected)customsLibrary.disabled=false;});
+      return;
+    }
     // A category/detail Back tap returns to the parent map; only Back from
     // Sacred Geography itself exits the Explore domain.
     // The swipe guard runs in capture phase before this handler.
