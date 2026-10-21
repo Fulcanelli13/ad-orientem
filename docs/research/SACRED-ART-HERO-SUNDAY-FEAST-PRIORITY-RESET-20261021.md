@@ -2,9 +2,32 @@
 
 **Governing correction by user, 21 Oct 2026.** This document supersedes collection-expansion priorities in W101 and W102; historical art, source identities, photo proofs, user approvals, and refusals are retained without modification. Scope is **Ad Orientem homepage imagery and 1962 liturgical coverage**, not a general museum-art survey.
 
+## Correction — six “missing” themes were already selected (21 October, after recovery of October 19 decisions)
+
+**The earlier section calling Holy Thursday, Pentecost, Palm Sunday, Sacred Heart, All Saints and Christ the King “missing suitable heroes” was incorrect as a statement of HUMAN ARTWORK SELECTION.** It described a 13 October phone-visual source-audit status, not the later date-specific user approvals. **Never ask the user to select these again** or replace them on research grounds. Preserve all previously approved original art.
+
+| Actual occasion | Already selected, approved painting | Remaining technical work |
+|---|---|---|
+| 29 Mar, Palm Sunday | **Anthony van Dyck — The Entry of Christ into Jerusalem** | Original identity/approved photo, whole-surface mobile view, app mapping |
+| 2 Apr, Holy Thursday | **Ugolino da Siena — Last Supper** (5/5) | Image photo and app release verification |
+| 23 May Pentecost Vigil | **Juan Bautista Maíno — The Pentecost** | Anticipatory theme (not literal Vigil readings), image/photo release check |
+| 24 May Pentecost Sunday | **Jean II Restout — Pentecost** (5/5 locked) | Exact identity, approved photo and app mapping |
+| 27 May Pentecost Ember Wednesday | **Philippe de Champaigne — La Petite Cène** | Eucharistic thematic association (John 6), not literal depiction; photo release |
+| 12 Jun, Sacred Heart | **Juan Patricio Morlete Ruiz — The Heart of Jesus** (5/5 locked, perfect theme) | Reproduction and UI image check; **Van Dyck's The Lance Thrust** also approved as related Passion art |
+| 25 Oct, Christ the King | **Ambrosius Benson — Salvator Mundi** | Object/photo and homepage date mapping |
+| 1 Nov, All Saints | **Carlo Saraceni — Paradise** | Object/photo and homepage date mapping |
+| 2 Nov, All Souls | **Ludovico Carracci — An Angel Frees the Souls of Purgatory** | Source/photo and date mapping |
+| 29 Nov, Advent I | **John Martin — The Great Day of His Wrath** | Eschatological thematic link, source/photo and date mapping |
+
+**Source authority:** user's date-specific approval conversations of 19 October 2026, not older 13 October gap matrices. Earlier approvals include Restout's Pentecost and other alternates and must remain protected; unselected alternatives are *not rejected*. The 17 October exported artwork decision freeze explicitly locks Restout and Morlete as five-star accepted originals. Later specific feast assignments do not themselves verify licensed photo files or deployed homepage assets.
+
+[Source-authority reconciliation of the ten approved dates](../../data/calendar/sacred-art-recovered-date-specific-approvals-20261019.v1.json).
+
+**Corrected priority:** P0 is **complete production readiness and actual visible deployment of these already selected artworks** (photo identity, image rights, full painting, mobile test, DayResolver join), then identify which of the remaining feast dates and Sundays truly lack an EDITORIAL SELECTION. Do not source replacement art for the six without an explicit new user request.
+
 ## Non-negotiable acquisition order
 
-1. **P0 — Permanent hero-quality core**: approximately **20–25 exceptional old-master devotional paintings** as a flexible editorial target, with first emphasis on major feasts/seasons. Reconcile and reuse earlier approved works rather than seeking alternatives for everything. A selected painting for Rosary/Bible is **not automatically approved as a homepage hero**.
+1. **P0 — Release the already approved hero artwork**: the date-specific decisions above are binding. Audit actual original-photo readiness, licensing and app integration, and only search new hero art for feast themes proven to lack selections. The ~20–25 masterpiece collection is a flexible quality target, not a request to reconsider approved works.
 2. **P1 — Every major feast and Sunday**: ensure all **52 Sundays in 2026** and **53 actual Class I dates** have an **explicit, truthful art assignment** when published, plus significant Class II feasts (Candlemas, Holy Family, Baptism, Visitation, Transfiguration, Holy Cross, Seven Sorrows, Holy Rosary, relevant Apostle/evangelist and patrons) based on the actual 1962 DayResolver and jurisdiction-specific observance. This is a **coverage guarantee**, not a quota for 52 different artworks or 365 unique images.
 3. **P2 — Release gates, concurrent with P0/P1**: exact physical original IDs; excellent painting quality at 320–390 px, whole painted surface preserved; photo licensing per specific reproduction; approved presentation and attribution; date-sensitive app integration and browser screenshots. Do not postpone image acquisition until every research slot is filled.
 4. **P3 — Paused**: routine saint portraits, Doctors, additional Old Testament arcs, W101/W102 expansion, broad Historia Salutis acquisition and additional two-alternatives-per-person quotas. Resume only after hero and major feast/Sunday acceptance.
@@ -17,18 +40,13 @@
 - Sunday 5 July 2026: Mark 8:1–9 **feeding of four thousand** is not the feeding of five thousand. Keep only contextual reuse until exact scene is demonstrated.
 - A working **52-row Sunday grid** and **53-row Class I date grid**, as well as **17 major non-Class-I spotlights**, now exists in `data/calendar/sacred-art-hero-first-2026-sunday-feast-gap-register.v1.json`. The Sunday grid is a **to-do ledger**, not evidence that 52 actual paintings have been mapped or released. Rows for non-Class-I Sundays deliberately await 1962 DayResolver output.
 
-## Immediate hero acquisition order — resolve these six weak themes first
+## Six previously audited themes — NO ARTWORK RESELECTION
 
-| Priority | Theme | Primary working path / previously researched lead |
-|---|---|---|
-| 1 | **Holy Thursday / Last Supper** | Confirm exact Louvre Champaigne *La Petite Cène* selected for Eucharistic biblical use; check image source, displayed full surface, app photographic rights and visual impact |
-| 2 | **Pentecost** | Preserve approved 23 May 2026 **Juan Bautista Maíno, *Pentecost***, previous Jean II Restout and Le Sueur options; distinct 27 May Champaigne *La Petite Cène* remains Eucharistic thematic editorial art and is **not** a depiction of Pentecost |
-| 3 | **Palm Sunday** | Current Bartolomé work flagged aesthetically weak; shortlist stronger triumphal-entry compositions; keep procession art distinct from sung Passion Gospel and Holy Thursday |
-| 4 | **Sacred Heart** | Source attractive authentic Catholic Sacred Heart artwork; no generic Christ portrait relabelled as Sacred Heart; independently confirm actual photograph licence |
-| 5 | **All Saints** | Review Rubens Boijmans *All Saints* (object 1738 OK) and superior alternatives; do not substitute *Last Judgment* or *All Souls* as exact visual subject |
-| 6 | **Christ the King** | Review credible royal Christ subject with suitable composition; Last Judgment can be theological context only and must bear truthful caption |
+The old 13 October matrix assigned six entries the visual research label `NO_SUITABLE_PHONE_HERO_IDENTIFIED`. **After accounting for the explicit user approvals on 19 October, that old label is obsolete as a selection-gap claim.** See the corrected table above. It can still indicate that a rights-cleared phone reproduction or deployed source image was not verified by that 13 October research pass.
 
-**Immediately after six:** Easter/Resurrection, Ascension, Epiphany, Assumption, Good Friday, Trinity and Corpus Christi conditional/rights checks; then Christmas, Annunciation, Immaculate Conception, St Joseph, Michael and Peter/Paul already stronger in source screen. Keep **approved** originals protected and preserve their object IDs.
+Priority order for the six is now **technical reconciliation of the selected images**, not new acquisition/curation. Use `artworkSelected=true`, `sourcePhotoValidated=?`, `commercialUseCleared=?`, `phoneWholePaintingAccepted=?`, `visibleInApp=?` as separate properties. None may silently unset `artworkSelected`.
+
+**Other principal feasts and Sundays** remain part of the audit. Review the 52 Sunday rows and 53 Class I observed dates, but mark a missing selection only after checking all newer user decision sources, including post-17-October approvals. Preserve the distinct 23 May Vigil and 27 May Ember Wednesday art, the unrelated Gospel scene semantics and correct 1962 day precedence.
 
 ## Sunday rule
 
