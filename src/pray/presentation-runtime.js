@@ -630,6 +630,13 @@ function prayFamilyItem(item){
  const attr=owner==='external'?`data-p435930-external="${esc(route)}"`:`data-p435930-own="${esc(route)}"`;
  return `<button type="button" class="aoP435930ModuleCard" ${attr}>${moduleIcon(route)}<small class="aoP435930ModuleKind">${esc(route.startsWith('programme.')?L('DEVOTION','DÉVOTION'):L('PRAYER','PRIÈRE'))}</small><b>${esc(title)}</b><span class="aoP435930ModuleDescription">${esc(description)}</span><i aria-hidden="true">${assetIcon('ao-ui-next')}</i></button>`;
 }
+function myCustomsDoor(){
+ const name=L('My Customs & Prayers','Mes coutumes et prières');
+ const desc=L('Your own household customs, personal prayers and chosen dates.','Vos coutumes familiales, prières personnelles et dates choisies.');
+ return '<button type="button" class="aoP435930ModuleCard" data-p435930-my-customs>'
+  +moduleIcon('pray.library')+'<small class="aoP435930ModuleKind">'+esc(L('PERSONAL','PERSONNEL'))+'</small>'
+  +'<b>'+esc(name)+'</b><span class="aoP435930ModuleDescription">'+esc(desc)+'</span></button>';
+}
 function renderPrayHome(){
  const families=prayFamilies();
  const door=id=>prayFamilyDoor(id,families[id]);
@@ -640,7 +647,7 @@ function renderPrayHome(){
   <section class="aoP435930RootFeatured" aria-label="${esc(L('Begin with daily prayer','Commencer par la prière quotidienne'))}">${door('daily')}</section>
   ${group('Before the Blessed Sacrament','Devant le Saint-Sacrement',door('eucharistic'))}
   ${group('Penance and the Passion','Pénitence et Passion',door('penance')+door('passion'))}
-  ${group('Devotions and prayers','Dévotions et prières',door('devotions')+door('library'))}
+  ${group('Devotions and prayers','Dévotions et prières',door('devotions')+door('library')+myCustomsDoor())}
   ${group('Rosary and chaplets','Rosaire et chapelets',
     door('chaplets')+prayFamilyItem(['own','pray.divine_mercy',L('Chaplet of Divine Mercy','Chapelet de la Divine Miséricorde'),L('Open the chaplet directly','Ouvrir directement le chapelet')]))}
  </main>`;
@@ -2471,6 +2478,14 @@ async function openExternalFamilyRoute(button,route,returnFamily){
  return false;
 }
 function onClick(e){
+ const myCustoms=e.target.closest?.('[data-p435930-my-customs]');
+ if(myCustoms){
+   e.preventDefault();
+   void import('../customs/personal-ui.js').then(module=>module.openMyCustoms({language:isFr()?'fr':'en'}))
+     .catch(error=>console.error('My Customs & Prayers unavailable',error));
+   return;
+ }
+
  // Explicit native-details toggle: iOS/Chromium touch and keyboard share one
  // source-disclosure action; cancel the default to prevent a double toggle.
  const sourceSummary=e.target.closest?.('details.aoP435930Source > summary');
