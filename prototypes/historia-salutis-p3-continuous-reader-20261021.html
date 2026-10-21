@@ -295,6 +295,32 @@ document.addEventListener("keydown",function(e){
  if(e.key==="/"&&!e.metaKey&&!e.ctrlKey){e.preventDefault();open("searchPanel");return;}
  if(e.key==="["||e.key==="]"){fontSize(e.key==="["?-1:1);return;}
 });
+// Reciprocal entry from a supplementary reading. A context is NOT that reading.
+(function(){
+ var expected={"hist-omitted-001":"HS-M02","hist-omitted-006":"HS-M04","hist-omitted-054":"HS-M13","hist-omitted-087":"HS-M16","hist-omitted-092":"HS-M15","hist-omitted-094":"HS-M17","hist-omitted-116":"HS-M21","hist-omitted-131":"HS-M21","hist-omitted-132":"HS-M21","hist-omitted-135":"HS-M21","hist-omitted-137":"HS-M21","hist-omitted-144":"HS-M21","hist-omitted-149":"HS-M21","hist-omitted-154":"HS-M24","hist-omitted-159":"HS-M24","hist-omitted-161":"HS-M24","hist-omitted-164":"HS-M25","hist-omitted-165":"HS-M25"};
+ var params=new URLSearchParams(window.location.search);
+ var episode=params.get("episode"),anchor=params.get("hs_context");
+ if(!episode || !Object.prototype.hasOwnProperty.call(expected,episode) ||
+    expected[episode]!==anchor || !/^HS-M(?:0[1-9]|[12][0-9]|3[0-7])$/.test(anchor))return;
+ var number=Number(anchor.slice(4)),target=$("movement-"+number);
+ if(!target)return;
+ var notice=el("aside","historia-source-bridge");
+ notice.id="historia-source-bridge";notice.setAttribute("role","note");
+ notice.style.cssText="max-width:1100px;margin:13px auto;padding:15px 20px;border:1px solid rgba(199,174,109,.34);border-left:3px solid #c7ae6d;background:#151d27;color:#e6dcc7;font:14px/1.55 Georgia,serif";
+ notice.appendChild(el("strong",null,"Nearest covenantal context · research"));
+ notice.appendChild(el("p",null,
+  "This movement is a contextual anchor for supplementary Scripture reading "+episode+
+  ". The omitted biblical episode is not claimed to occur within this manuscript movement."));
+ var back=el("a",null,"← Return to supplementary Bible reading");
+ var url=new URL("../index.html",window.location.href);
+ url.searchParams.set("ao_historia_collections","1");
+ url.hash=episode;
+ back.href=url.pathname+url.search+url.hash;
+ back.style.cssText="color:#e3c78d;text-underline-offset:3px";
+ notice.appendChild(back);
+ document.body.insertBefore(notice,document.querySelector(".fine-progress")||reading);
+ window.requestAnimationFrame(function(){target.scrollIntoView({behavior:"auto",block:"start"});});
+})();
 window.requestAnimationFrame(update);
 })();
 </script>
