@@ -158,7 +158,7 @@ try{
      assert.ok(await dayCustom.locator(".aoCalCustomArticleContent a[href^='https://']").count()>0,
        "Day article must show the actual attributed sources");
      const catalogue=cal.locator(".aoCalCustomCatalogue");
-     await catalogue.locator("summary").click();
+     await catalogue.locator(":scope > summary").click();
      assert.equal(await catalogue.locator(".aoCalCustomCatalogueItems [data-cal-custom-item]").count(),35,
        "The existing Day catalogue must expose 35 published canonical customs");
      const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth);
