@@ -167,6 +167,35 @@ try{
    await atlas.waitFor({state:"detached",timeout:15000});
    await page.locator("#ao-find-modular-root [data-mapcn-discover-rail]").waitFor({state:"visible"});
    assert.equal(await page.locator(".aoHeritageSurface .aoFindMap canvas.maplibregl-canvas").count(),1);
+   // P5 · provenance-bound relationship graph, never a second map.
+   await page.locator("#ao-find-modular-root button[data-network-toggle]").click();
+   const graph=page.locator("#ao-find-modular-root [data-network-panel]");
+   await graph.waitFor({state:"visible",timeout:20000});
+   assert.ok(Number(await graph.locator(".aoNetworkStats strong").first().textContent())>0,
+      "Real canonical relationship nodes should be present");
+   assert.ok(await graph.locator("a[href^='https://']").count()>0,
+      "Network edges must expose original source links");
+   assert.ok(await graph.locator(".aoNetworkSvgItem").count()>0,
+      "The graph must render selectable relationship nodes");
+   assert.equal(await page.locator(".aoHeritageSurface .aoFindMap canvas.maplibregl-canvas").count(),1,
+      "P5 must preserve the existing MapLibre map");
+   const graphFit=await graph.evaluate(el=>{
+     const b=el.getBoundingClientRect();
+     return {top:b.top,bottom:b.bottom,height:b.height,width:b.width,vh:innerHeight};
+   });
+   assert.ok(graphFit.top>=0&&graphFit.bottom<=graphFit.vh+1&&graphFit.height>230,
+      "The network must stay within the available viewport: "+JSON.stringify(graphFit));
+   await page.screenshot({path:resolve(out,"explore-"+width+"-network.png"),fullPage:false});
+   const node=graph.locator(".aoNetworkSvgItem").first();
+   await node.focus();
+   await page.keyboard.press("Enter");
+   await graph.waitFor({state:"visible",timeout:10000});
+   await graph.locator("select[data-network-kind]").selectOption("place");
+   assert.equal(await graph.locator("select[data-network-kind]").inputValue(),"place");
+   await graph.locator("button[data-network-close]").click();
+   await graph.waitFor({state:"detached",timeout:10000});
+   await page.locator("#ao-find-modular-root [data-mapcn-discover-rail]").waitFor({state:"visible"});
+   assert.equal(await page.locator(".aoHeritageSurface .aoFindMap canvas.maplibregl-canvas").count(),1);
    // D is a same-map journey folio: no new page and no manufactured route
    // lines. Exercise a historical source-owned 3-stage pilgrimage.
    await page.locator("#ao-find-modular-root [data-explore-journey-open]").click();
