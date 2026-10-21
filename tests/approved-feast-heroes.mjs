@@ -116,10 +116,12 @@ assert.equal(resolveApprovedFeastHero(choice.date,choice.observedPrincipalId,reg
 // Current-main integration tests: do NOT overlay the older research presentation.
 const home=fs.readFileSync(new URL("../src/home/presentation.js",import.meta.url),"utf8");
 const calendar=fs.readFileSync(new URL("../src/calendar/calendar-runtime.js",import.meta.url),"utf8");
+const styles=fs.readFileSync(new URL("../src/home/today-v2-styles.js",import.meta.url),"utf8");
 assert.match(home,/approvedFeastHeroForResolvedDay\(state\.selectedDate,observed\)/);
 assert.match(home,/resolveApprovedFeastHero\(/);
 assert.match(home,/AO_PHASE1_ART\?\.homeMarkup/); // historical illustration preserved for other dates
 assert.match(home,/else if\(!editorialChoice\)/);  // no substitution where a user selection is waiting
 assert.match(calendar,/renderApprovedFeastHero\(resolveApprovedFeastHero\(/);
+assert.match(styles,/\.aoTodayV2Art \.aoApprovedFeastHero>img\{[^}]*object-fit:contain!important/);
 
 console.log("Approved feast heroes: 10/10 date and artist choices; fail-closed rights, crop, source, principal and render checks PASS");
