@@ -53,7 +53,7 @@ for (const group of ubs.groups) {
   assert.ok(group.length>=2);
   for (const [address,tradition,marks] of group) {
     entries++;
-    assert.match(address, /^[1-3]?[A-Z]{2,3} \d+:\d+(?:-\d+)?$/);
+    assert.match(address, /^[1-3]?[A-Z]{2,3} \d+:\d+(?:-\d+)?(?:,\d+(?:-\d+)?)*$/);
     assert.ok(["HEB","GRK"].includes(tradition));
     assert.match(marks,/^[0-8]+$/);
   }
