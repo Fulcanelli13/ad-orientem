@@ -12,7 +12,7 @@ const geo=read("data/geography/seed-registry.v1.json"),seed=read("data/shrines/s
  media=read("data/geography/approved-place-media.v1.json"),featured=read("data/geography/major-places-editorial.v1.json");
 assert.deepEqual([geo.places.length,seed.shrines.length,seed.pilgrimages.length,sources.sources.length],[347,257,240,621]);
 assert.equal(seed.routes.length,20);assert.equal(seed.temporalLinks.length,77);
-assert.equal(featured.items.length,20);assert.equal(media.items.length,18);
+assert.equal(featured.items.length,20);assert.equal(media.items.length,24,"New photos extend the original published set");
 assert.equal(assertShrinesPilgrimagesRegistry({shrines:seed.shrines,pilgrimages:seed.pilgrimages,routes:seed.routes,
  temporalLinks:seed.temporalLinks,sources:sources.sources,places:geo.places}).pass,true);
 assert.equal(guideData.guides.length,5);
@@ -66,7 +66,12 @@ assert.equal(profiles.filter(p=>p.illustrated_guide).length,5);
 for(const row of recordSet){
  const profile=explorePlaceProfile(profiles,row.id);
  assert.ok(profile.map_publishable);assert.equal(profile.illustrated_guide.place_id,row.id);
- assert.equal(profile.media,null,"No unlicensed Irish image must appear");
+ if(row.key==="brigid"){
+  assert.equal(profile.media,null,"The real Solas Bríde Centre still lacks an exact licensed image");
+ }else{
+  assert.equal(profile.media?.asset_path,"assets/approved/place-media/"+row.id.replace("place:","").replaceAll(":","-")+".webp",
+   "Only the exact, reviewed Irish shrine photograph should appear");
+ }
  assert.ok(profile.story_chapters.some(x=>x.kind==="ORIGIN"));
  assert.ok(profile.story_chapters.some(x=>x.kind==="PILGRIMAGE"));
  const projected=projection.byLens.shrines.find(item=>item.place_id===row.id);
