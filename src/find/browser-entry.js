@@ -1181,7 +1181,9 @@ export function createFindOwner(win=globalThis){
       queryByLens.set("heritage",state.query);
       state.lens="traditions";state.view="list";state.query="";
       state.networkOpen=false;state.networkFocus="";state.selectedPlaceId=null;
-      state.selectedId=canonical.item_id;state.expandPlace=false;state.expandDetail=false;
+      // Grouped canonical custom folios use tradition:custom:<custom_id>,
+      // never an individual attestation item's source-specific identity.
+      state.selectedId="tradition:custom:"+id;state.expandPlace=false;state.expandDetail=false;
       state.displayLimit=24;state.highlightCustomId=null;
       lastMapView=null;lastMapLens=null;nearbyResults=null;
       void paint();return;
