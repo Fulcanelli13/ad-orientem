@@ -340,6 +340,16 @@ try{
   const catenaWidth=await dialog.locator(".aoCatenaMessenger").evaluate(el=>({scroll:el.scrollWidth,client:el.clientWidth}));
   assert.ok(catenaWidth.scroll<=catenaWidth.client+2,
     "Catena message feed must not overflow the phone: "+JSON.stringify(catenaWidth));
+  await dialog.locator(".aoCatenaMForm input").fill("angel");
+  await dialog.locator(".aoCatenaMForm button").click();
+  const searchAll=dialog.getByRole("button",{name:"Search all four Gospels"});
+  await searchAll.click();
+  await dialog.locator(".aoCatenaMElsewhere").first().waitFor({state:"visible",timeout:30000});
+  assert.match(await dialog.locator(".aoCatenaMElsewhere").first().innerText(),
+    /FROM ANOTHER PASSAGE · Catena Aurea, /,
+    "Elsewhere messages must disclose that their source is not the pinned passage");
+  assert.ok(await dialog.locator(".aoCatenaMMeta a[href^='https://www.ecatholic2000.com/']").count()>=2,
+    "Original public source links must survive cross-Gospel retrieval");
  await dialog.locator("[data-scripture-close]").click();
  // Source-witnessed divided reading opens in the same overlay. The two
  // chapters are separate; omitted verses are never silently restored.
