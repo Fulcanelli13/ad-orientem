@@ -63,6 +63,23 @@ Run these tests from the repository root:
 
 The implementation and new regression scripts have been checked for syntax and repository source-coordinates here, but a real Node + browser smoke-test has **not** run in this session. That remains the merge/release gate.
 
+
+## Evidence-gated reciprocal Historia navigation (2026-10-21)
+
+A second, read-only identity crosswalk now links all 19 pilot episodes to the Atlas and to the **existing 37-movement P3 research manuscript**. The 54-chapter covenantal proposal is preserved as a separate chapter owner: an R chapter can map to one movement without claiming that a supplementary episode's biblical words are selected in that movement.
+
+- Six miracles have individually named Atlas MIRACLE records with matching title/passage.
+- Three parables have individually named Atlas teaching records with matching passages (the Atlas categorizes these as LIFE_EVENT; this must **not** be interpreted as the story's fictional characters being historical people or places).
+- The Ten Virgins and the Talents are subsets of one broader Matthew 25:1–30 Atlas teaching record, so both are **composite inclusions**, not identical individual Atlas events.
+- Eight episodes lack matching individual Atlas records; no IDs or geographic sites were manufactured.
+- Eighteen episodes have a *nearest covenantal context* in the research manuscript. Judith remains without a fixed chronological destination.
+
+Within the in-app Scripture collection reader (research URL opt-in), open a pilot episode and follow **Read this covenantal movement in Historia Salutis**. It opens the source's original P3 continuous manuscript prototype, scrolls to the validated movement, and displays a prominent disclosure that the supplementary passage is **not included** in that movement. **Return to supplementary Bible reading** links back to index.html?ao_historia_collections=1#hist-omitted-XYZ; the research-only Scripture owner restores the identified episode on page load. Invalid or mismatched movement/episode query pairs do not activate the bridge.
+
+These are research-only links; the published home, Mass and Scripture navigation remain unchanged when the opt-in flag is absent. The source identity crosswalk is data/research/historia-salutis-thematic-identity-covenant-context-20261021.v1.json, and its regression is tests/historia-thematic-reciprocal-navigation.mjs.
+
+**Validation actually performed:** independent matching of all 19 records against the repository Atlas and the 54-chapter/37-movement research owners (6 exact miracle, 3 exact teaching, 2 composite, 8 unlinked, 18 contextual movements, 1 chronology hold); syntax checks passed for the modified JS modules and original manuscript prototype; 11 static reciprocal-link contract checks passed. **Not performed:** full Node project tests and a real headless/mobile browser round-trip. The repository could not be cloned into this execution container (network DNS unavailable). These remain explicit acceptance gates.
+
 ## Main manuscript protection
 
 - The 54-chapter research proposal at data/research/historia-salutis-p3-provisional-reading-chapter-consolidation-20261021.v2.json is unchanged.
