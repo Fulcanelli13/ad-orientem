@@ -67,6 +67,19 @@ export function installScriptureStyles(doc=globalThis.document){
  .aoScriptureVerseNumber{display:inline-block;min-width:2em;vertical-align:baseline;opacity:.82}
  .aoScriptureActions{border-top:1px solid rgba(205,182,135,.16);padding-top:12px}
  .aoScriptureLibrary .aoScriptureActions button{padding:7px 10px;background:transparent;border-color:rgba(205,182,135,.32);font:500 12px/1.4 system-ui,sans-serif}
+ .aoScriptureThematic{border-block:1px solid rgba(201,172,111,.28);margin:17px 0;padding:12px 0}
+ .aoScriptureThematic>summary{color:#e2cc9d;font:500 16px/1.5 Georgia,"Garamond",serif;cursor:pointer;padding:9px 0}
+ .aoHistoriaGroups{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));margin:12px 0}
+ .aoHistoriaGroup{background:#111b24;padding:12px;border:1px solid rgba(201,172,111,.16);border-radius:8px}
+ .aoHistoriaGroup h3{font:500 16px/1.4 Georgia,"Garamond",serif;color:#ebdbba;margin:0 0 12px}
+ .aoScriptureLibrary .aoHistoriaGroup button{display:block;width:100%;text-align:left;margin:5px 0;font:13px/1.4 system-ui,sans-serif;border-radius:5px;background:#18222e}
+ .aoScriptureLibrary .aoHistoriaGroup button[aria-pressed="true"]{background:#3c3429;border-color:#b9a278}
+ .aoHistoriaSelected{border-left:2px solid #aa956c;background:#121b26;padding:12px 15px;margin:13px 0}
+ .aoHistoriaSelected h3{font:400 23px/1.35 Georgia,"Garamond",serif;margin:0 0 6px;color:#eddfc5}
+ .aoHistoriaPager{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:9px;margin:13px 0}
+ .aoHistoriaPager span{font:12px/1.5 system-ui,sans-serif;color:#cabd9f}
+ .aoScriptureLibrary .aoHistoriaPager button{font:12px/1.3 system-ui,sans-serif;padding:10px 12px;min-height:40px}
+ .aoScriptureLibrary [data-historia-exit]{font:12px/1.4 system-ui,sans-serif;margin:7px 0}
  .aoScriptureBrowse,.aoScriptureSearch,.aoScriptureBookmarks,.aoScriptureRosary{padding:10px 0;border-bottom:1px solid rgba(205,182,135,.17);margin:0}
  .aoScriptureLibrary .aoScriptureBrowse summary,.aoScriptureLibrary .aoScriptureSearch summary,.aoScriptureLibrary .aoScriptureBookmarks summary,.aoScriptureLibrary .aoScriptureRosary summary{color:#cfc2ac;font:500 14px/1.5 system-ui,sans-serif;padding:7px 0}
  .aoScriptureNav{grid-template-columns:repeat(3,minmax(0,1fr));margin:12px 0}
