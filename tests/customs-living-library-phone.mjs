@@ -63,6 +63,14 @@ try{
     assert.ok(details.includes(language==="fr"?"Assomption : bénédiction des herbes":"Assumption — blessing of herbs"),"language-specific title missing");
     assert.match(details,language==="fr"?/Ni obligatoire ni universelle/i:/Do not present as mandatory/i,"pastoral qualification missing");
     assert.ok(await page.locator(".aoCustArticle a[href^='https://']").count()>=1,"canonical source links missing");
+    const historical=page.locator(".aoCustHistorical");
+    assert.equal(await historical.count(),1,"Assumption historical witness missing");
+    assert.match(await historical.textContent(),language==="fr"?/régions germaniques/i:/Germanic regions/i,
+      "historical account not localized or not attributed");
+    assert.ok(await page.locator(".aoCustHistorical a[href^='https://']").count()>=1,
+      "historical witness lacks independently inspectable source links");
+    if(language==="fr")assert.ok(!(await rootLocator.textContent()).includes("15 August, Assumption"),
+      "French article retained its English-only calendar hint");
     await page.screenshot({path:resolve(capture,"assumption-"+language+"-"+width+".png"),fullPage:false});
     await page.locator("[data-cust-back]").click();
     await page.locator("[data-cust-archive]").click();
