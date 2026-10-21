@@ -5,6 +5,7 @@ const desk=read("../data/research/historia-p4-m25-m37-literary-seam-adjudication
 const proof=read("../data/research/historia-salutis-v18-continuous-reading-proof.v1.json");
 const queue=read("../data/research/historia-p4-m20-m37-literary-review-queue.v1.json");
 const early=read("../data/research/historia-p4-m20-m24-literary-seam-adjudication.v1.json");
+const budget=read("../data/research/historia-p4-late-movement-bridge-verse-budget.v1.json");
 const editions=["dr-challoner","cpdv-2009","crampon-1923"];
 const books=["Matthew","Luke","John","Acts","Revelation"];
 const bib={};
@@ -94,4 +95,23 @@ assert.equal(byId.get("HS-M36").proposedAdditionalSelectedScripture.length,0);
 assert.equal(byId.get("HS-M37").proposedAdditionalSelectedScripture.includes("Revelation 21:9–10"),true);
 assert.match(verse("Revelation","dr-challoner",21,9),/angels/i);
 assert.match(verse("Revelation","dr-challoner",22,20),/Come, Lord Jesus/);
+assert.equal(budget.status,"UNAPPROVED_EDITORIAL_DRY_RUN_DO_NOT_PUBLISH");
+assert.equal(budget.totals.movements,18);
+assert.equal(budget.totals.originalSelectedVerseEntries,444);
+assert.equal(budget.totals.candidateAdditionalVerseEntries,69);
+assert.equal(budget.totals.ifAllAcceptedVerseEntries,513);
+assert.equal(budget.totals.movementsWithProposedScripture,13);
+assert.equal(budget.policy.budgetFromSingleDouayWitnessOnly,true);
+assert.equal(budget.policy.everyBridgeUnapproved,true);
+assert.equal(budget.policy.automaticallyApplyAllOptionalBridges,false);
+assert.deepEqual(budget.movements.map(x=>x.movementId),Array.from({length:18},(_,i)=>"HS-M"+(20+i)));
+for(const entry of budget.movements){
+ assert.equal(entry.proposalAccepted,false);
+ assert.equal(entry.sourceOwnerEdited,false);
+ assert.equal(entry.douayWitnessVerseBudget.alreadySelected+entry.douayWitnessVerseBudget.additionalIfAccepted,entry.douayWitnessVerseBudget.proposedTotal);
+ const late=desk.movements.find(x=>x.movementId===entry.movementId);
+ if(late)assert.deepEqual(entry.optionalCandidateRanges,late.proposedAdditionalSelectedScripture);
+}
+assert.deepEqual(budget.movements.find(x=>x.movementId==="HS-M29").optionalCandidateRanges,["John 20:4–5","John 20:10"]);
+assert.equal(budget.movements.find(x=>x.movementId==="HS-M31").douayWitnessVerseBudget.additionalIfAccepted,11);
 console.log("PASS: all 18 late movements source-audited, M25–M37 held recommendations, Stephen edition-safe verse and Resurrection agency preserved");
