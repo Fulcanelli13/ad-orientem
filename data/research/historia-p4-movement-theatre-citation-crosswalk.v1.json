@@ -1,0 +1,5618 @@
+{
+  "schema": "ao.historia.p4.theatre-citation-crosswalk.v1",
+  "date": "2026-10-21",
+  "status": "RESEARCH_ONLY_SOURCE_OVERLAP_NOT_IDENTITY_NOT_APPROVED",
+  "authority": {
+    "movementSource": {
+      "path": "data/research/historia-salutis-v18-continuous-reading-proof.v1.json",
+      "branch": "research/historia-p4-continuity-theatre-20261021",
+      "blobSha": "7548fc8c80daa5d7c6bb85e1bb2277fbac862e81"
+    },
+    "sceneSource": {
+      "path": "data/explore/biblical-cinematic-studies-review.v1.json",
+      "branch": "feature/biblical-atlas-current-main-convergence-20261012",
+      "pr": 1069,
+      "blobSha": "d937288862abab192e1d584f0e663a3eebb46611"
+    },
+    "canonicalAtlasCrosswalk": {
+      "path": "data/explore/historia-salutis-p0-master-crosswalk.v1.json",
+      "branch": "research/historia-salutis-p0-matrix-20261016",
+      "pr": 1310,
+      "blobSha": "704f490ca2af370bbaf4cb418ed787537b662060"
+    }
+  },
+  "policy": {
+    "joins": "ONE_BOOK_AND_INTERSECTING_SELECTED_BIBLICAL_VERSE_RANGES_ONLY",
+    "selectedSourceOnly": true,
+    "sourceBridgesRemainHeld": true,
+    "indexPositionNeverUsedAsIdentity": true,
+    "p0ReadingChapterNotMatchedToP3MovementByOrdinal": true,
+    "canonicalAtlasOwnershipUnchanged": true,
+    "gospelParallelsUnharmonized": true,
+    "sceneToAtlasCandidateRetainsOriginalStatus": true,
+    "allUnmatchedRetained": true,
+    "createsNoOriginalContent": true,
+    "createsNoCoordinates": true,
+    "artworkRightsUnchanged": true,
+    "notForPublication": true
+  },
+  "counts": {
+    "movements": 37,
+    "scenes": 183,
+    "atlasEvents": 151,
+    "movementsWithSceneCitationOverlap": 24,
+    "movementsWithoutSceneCitationOverlap": 13,
+    "scenesWithMovementCitationOverlap": 57,
+    "scenesWithoutMovementCitationOverlap": 126,
+    "totalMovementSceneCitationLinks": 57,
+    "totalMovementP0AtlasCitationLinks": 60,
+    "sceneAtlasStatuses": {
+      "cinematicScenes": 183,
+      "cinematicChapters": 14,
+      "canonicalTimeline": 151,
+      "EXACT_REFERENCE": 67,
+      "PASSAGE_OVERLAP_REVIEW_ONLY": 29,
+      "NO_DIRECT_PASSAGE_MATCH": 87
+    },
+    "sceneLocationRowAuditsApproved": 0
+  },
+  "unlinkedMovements": [
+    "HS-M01",
+    "HS-M02",
+    "HS-M03",
+    "HS-M06",
+    "HS-M12",
+    "HS-M13",
+    "HS-M14",
+    "HS-M15",
+    "HS-M16",
+    "HS-M17",
+    "HS-M35",
+    "HS-M36",
+    "HS-M37"
+  ],
+  "sceneAuditQueue": [
+    {
+      "sceneKey": "biblical:scene:abraham:000",
+      "originalIndex": 0,
+      "originalChapter": "PATRIARCHS",
+      "scriptureReference": "Genesis 12:1–5",
+      "originalAtlasMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:passage:genesis-12-1-9",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [
+        {
+          "movementId": "HS-M04",
+          "citationRelation": "SCENE_OR_EVENT_CONTAINED_IN_SELECTED_PASSAGE"
+        }
+      ],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:001",
+      "originalIndex": 1,
+      "originalChapter": "PATRIARCHS",
+      "scriptureReference": "Genesis 12:4–5",
+      "originalAtlasMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:passage:genesis-12-1-9",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [
+        {
+          "movementId": "HS-M04",
+          "citationRelation": "SCENE_OR_EVENT_CONTAINED_IN_SELECTED_PASSAGE"
+        }
+      ],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:002",
+      "originalIndex": 2,
+      "originalChapter": "PATRIARCHS",
+      "scriptureReference": "Genesis 12:5–6",
+      "originalAtlasMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:passage:genesis-12-1-9",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [
+        {
+          "movementId": "HS-M04",
+          "citationRelation": "SCENE_OR_EVENT_CONTAINED_IN_SELECTED_PASSAGE"
+        }
+      ],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:003",
+      "originalIndex": 3,
+      "originalChapter": "PATRIARCHS",
+      "scriptureReference": "Genesis 12:6–7",
+      "originalAtlasMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:passage:genesis-12-1-9",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [
+        {
+          "movementId": "HS-M04",
+          "citationRelation": "SCENE_OR_EVENT_CONTAINED_IN_SELECTED_PASSAGE"
+        }
+      ],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:004",
+      "originalIndex": 4,
+      "originalChapter": "PATRIARCHS",
+      "scriptureReference": "Genesis 12:7",
+      "originalAtlasMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:passage:genesis-12-1-9",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [
+        {
+          "movementId": "HS-M04",
+          "citationRelation": "SCENE_OR_EVENT_CONTAINED_IN_SELECTED_PASSAGE"
+        }
+      ],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:005",
+      "originalIndex": 5,
+      "originalChapter": "PATRIARCHS",
+      "scriptureReference": "Genesis 12:8",
+      "originalAtlasMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:passage:genesis-12-1-9",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [
+        {
+          "movementId": "HS-M04",
+          "citationRelation": "SCENE_OR_EVENT_CONTAINED_IN_SELECTED_PASSAGE"
+        }
+      ],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:006",
+      "originalIndex": 6,
+      "originalChapter": "PATRIARCHS",
+      "scriptureReference": "Genesis 12:10–20",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:007",
+      "originalIndex": 7,
+      "originalChapter": "PATRIARCHS",
+      "scriptureReference": "Genesis 13:1–4",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:008",
+      "originalIndex": 8,
+      "originalChapter": "PATRIARCHS",
+      "scriptureReference": "Genesis 13:5–13",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:009",
+      "originalIndex": 9,
+      "originalChapter": "PATRIARCHS",
+      "scriptureReference": "Genesis 13:10–13",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:010",
+      "originalIndex": 10,
+      "originalChapter": "PATRIARCHS",
+      "scriptureReference": "Genesis 13:14–18",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:011",
+      "originalIndex": 11,
+      "originalChapter": "PATRIARCHS",
+      "scriptureReference": "Genesis 14:13–16",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:012",
+      "originalIndex": 12,
+      "originalChapter": "PATRIARCHS",
+      "scriptureReference": "Genesis 14:17–20",
+      "originalAtlasMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:passage:genesis-14-18-20",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:013",
+      "originalIndex": 13,
+      "originalChapter": "PATRIARCHS",
+      "scriptureReference": "Genesis 15:1–6",
+      "originalAtlasMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:passage:genesis-15-1-21",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [
+        {
+          "movementId": "HS-M04",
+          "citationRelation": "IDENTICAL_CITATION_SPAN"
+        }
+      ],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:014",
+      "originalIndex": 14,
+      "originalChapter": "PATRIARCHS",
+      "scriptureReference": "Genesis 15:7–21",
+      "originalAtlasMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:passage:genesis-15-1-21",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [
+        {
+          "movementId": "HS-M04",
+          "citationRelation": "SELECTED_PASSAGE_CONTAINED_IN_SCENE_OR_EVENT"
+        }
+      ],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:015",
+      "originalIndex": 15,
+      "originalChapter": "PATRIARCHS",
+      "scriptureReference": "Genesis 16:1–16",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:016",
+      "originalIndex": 16,
+      "originalChapter": "PATRIARCHS",
+      "scriptureReference": "Genesis 17:1–14",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [
+        {
+          "movementId": "HS-M04",
+          "citationRelation": "SELECTED_PASSAGE_CONTAINED_IN_SCENE_OR_EVENT"
+        }
+      ],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:017",
+      "originalIndex": 17,
+      "originalChapter": "PATRIARCHS",
+      "scriptureReference": "Genesis 18:1–15",
+      "originalAtlasMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:passage:genesis-18-1-8",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:018",
+      "originalIndex": 18,
+      "originalChapter": "PATRIARCHS",
+      "scriptureReference": "Genesis 18:16–33",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:019",
+      "originalIndex": 19,
+      "originalChapter": "PATRIARCHS",
+      "scriptureReference": "Genesis 19:1–29",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:020",
+      "originalIndex": 20,
+      "originalChapter": "PATRIARCHS",
+      "scriptureReference": "Genesis 20:1–18",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:021",
+      "originalIndex": 21,
+      "originalChapter": "PATRIARCHS",
+      "scriptureReference": "Genesis 21:1–7",
+      "originalAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:passage:genesis-21-1-7",
+          "relation": "EXACT_REFERENCE",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [
+        {
+          "movementId": "HS-M05",
+          "citationRelation": "IDENTICAL_CITATION_SPAN"
+        }
+      ],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:022",
+      "originalIndex": 22,
+      "originalChapter": "PATRIARCHS",
+      "scriptureReference": "Genesis 21:22–34",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:023",
+      "originalIndex": 23,
+      "originalChapter": "PATRIARCHS",
+      "scriptureReference": "Genesis 22:1–19",
+      "originalAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:passage:genesis-22-1-19",
+          "relation": "EXACT_REFERENCE",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [
+        {
+          "movementId": "HS-M05",
+          "citationRelation": "IDENTICAL_CITATION_SPAN"
+        }
+      ],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:abraham:024",
+      "originalIndex": 24,
+      "originalChapter": "PATRIARCHS",
+      "scriptureReference": "Genesis 23:1–20",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:moses:025",
+      "originalIndex": 25,
+      "originalChapter": "DELIVERANCE",
+      "scriptureReference": "Exodus 1:8–22",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [
+        {
+          "movementId": "HS-M07",
+          "citationRelation": "SELECTED_PASSAGE_CONTAINED_IN_SCENE_OR_EVENT"
+        }
+      ],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:moses:026",
+      "originalIndex": 26,
+      "originalChapter": "DELIVERANCE",
+      "scriptureReference": "Exodus 2:1–10",
+      "originalAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:passage:exodus-2-1-10",
+          "relation": "EXACT_REFERENCE",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:moses:027",
+      "originalIndex": 27,
+      "originalChapter": "DELIVERANCE",
+      "scriptureReference": "Exodus 2:11–22",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:moses:028",
+      "originalIndex": 28,
+      "originalChapter": "DELIVERANCE",
+      "scriptureReference": "Exodus 3:1–15",
+      "originalAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:passage:exodus-3-1-15",
+          "relation": "EXACT_REFERENCE",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [
+        {
+          "movementId": "HS-M07",
+          "citationRelation": "SELECTED_PASSAGE_CONTAINED_IN_SCENE_OR_EVENT"
+        }
+      ],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:moses:029",
+      "originalIndex": 29,
+      "originalChapter": "DELIVERANCE",
+      "scriptureReference": "Exodus 4:18–31",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:moses:030",
+      "originalIndex": 30,
+      "originalChapter": "DELIVERANCE",
+      "scriptureReference": "Exodus 5:1–23",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:moses:031",
+      "originalIndex": 31,
+      "originalChapter": "DELIVERANCE",
+      "scriptureReference": "Exodus 7:8–13",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:moses:032",
+      "originalIndex": 32,
+      "originalChapter": "DELIVERANCE",
+      "scriptureReference": "Exodus 7:14–25",
+      "originalAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:passage:exodus-7-14-25",
+          "relation": "EXACT_REFERENCE",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [
+        {
+          "movementId": "HS-M08",
+          "citationRelation": "SELECTED_PASSAGE_CONTAINED_IN_SCENE_OR_EVENT"
+        }
+      ],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:moses:033",
+      "originalIndex": 33,
+      "originalChapter": "DELIVERANCE",
+      "scriptureReference": "Exodus 12:1–28",
+      "originalAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:passage:exodus-12-1-28",
+          "relation": "EXACT_REFERENCE",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [
+        {
+          "movementId": "HS-M08",
+          "citationRelation": "SELECTED_PASSAGE_CONTAINED_IN_SCENE_OR_EVENT"
+        }
+      ],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:moses:034",
+      "originalIndex": 34,
+      "originalChapter": "DELIVERANCE",
+      "scriptureReference": "Exodus 12:31–42",
+      "originalAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:passage:exodus-12-31-42",
+          "relation": "EXACT_REFERENCE",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [
+        {
+          "movementId": "HS-M09",
+          "citationRelation": "SELECTED_PASSAGE_CONTAINED_IN_SCENE_OR_EVENT"
+        }
+      ],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:moses:035",
+      "originalIndex": 35,
+      "originalChapter": "DELIVERANCE",
+      "scriptureReference": "Exodus 13:17–22",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:moses:036",
+      "originalIndex": 36,
+      "originalChapter": "DELIVERANCE",
+      "scriptureReference": "Exodus 14:15–31",
+      "originalAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:passage:exodus-14-15-31",
+          "relation": "EXACT_REFERENCE",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [
+        {
+          "movementId": "HS-M09",
+          "citationRelation": "SELECTED_PASSAGE_CONTAINED_IN_SCENE_OR_EVENT"
+        }
+      ],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:moses:037",
+      "originalIndex": 37,
+      "originalChapter": "DELIVERANCE",
+      "scriptureReference": "Exodus 15:1–21",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:moses:038",
+      "originalIndex": 38,
+      "originalChapter": "WILDERNESS",
+      "scriptureReference": "Exodus 15:22–27",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:moses:039",
+      "originalIndex": 39,
+      "originalChapter": "WILDERNESS",
+      "scriptureReference": "Exodus 16:1–36",
+      "originalAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:passage:exodus-16-1-36",
+          "relation": "EXACT_REFERENCE",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:moses:040",
+      "originalIndex": 40,
+      "originalChapter": "WILDERNESS",
+      "scriptureReference": "Exodus 17:1–7",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:moses:041",
+      "originalIndex": 41,
+      "originalChapter": "WILDERNESS",
+      "scriptureReference": "Exodus 17:8–16",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:moses:042",
+      "originalIndex": 42,
+      "originalChapter": "WILDERNESS",
+      "scriptureReference": "Exodus 18:13–27",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:moses:043",
+      "originalIndex": 43,
+      "originalChapter": "COVENANT",
+      "scriptureReference": "Exodus 19:1–15",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [
+        {
+          "movementId": "HS-M10",
+          "citationRelation": "SELECTED_PASSAGE_CONTAINED_IN_SCENE_OR_EVENT"
+        }
+      ],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:moses:044",
+      "originalIndex": 44,
+      "originalChapter": "COVENANT",
+      "scriptureReference": "Exodus 20:1–17",
+      "originalAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:passage:exodus-20-1-17",
+          "relation": "EXACT_REFERENCE",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [
+        {
+          "movementId": "HS-M10",
+          "citationRelation": "IDENTICAL_CITATION_SPAN"
+        }
+      ],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:moses:045",
+      "originalIndex": 45,
+      "originalChapter": "COVENANT",
+      "scriptureReference": "Exodus 24:1–18",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [
+        {
+          "movementId": "HS-M10",
+          "citationRelation": "SELECTED_PASSAGE_CONTAINED_IN_SCENE_OR_EVENT"
+        }
+      ],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:moses:046",
+      "originalIndex": 46,
+      "originalChapter": "COVENANT",
+      "scriptureReference": "Exodus 32:1–35",
+      "originalAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:passage:exodus-32-1-35",
+          "relation": "EXACT_REFERENCE",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [
+        {
+          "movementId": "HS-M10",
+          "citationRelation": "SELECTED_PASSAGE_CONTAINED_IN_SCENE_OR_EVENT"
+        }
+      ],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:moses:047",
+      "originalIndex": 47,
+      "originalChapter": "COVENANT",
+      "scriptureReference": "Exodus 34:1–35",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:moses:048",
+      "originalIndex": 48,
+      "originalChapter": "COVENANT",
+      "scriptureReference": "Exodus 40:1–38",
+      "originalAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:passage:exodus-40-1-38",
+          "relation": "EXACT_REFERENCE",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:moses:049",
+      "originalIndex": 49,
+      "originalChapter": "WANDERINGS",
+      "scriptureReference": "Numbers 10:11–36",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:moses:050",
+      "originalIndex": 50,
+      "originalChapter": "WANDERINGS",
+      "scriptureReference": "Numbers 13:1–33",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:moses:051",
+      "originalIndex": 51,
+      "originalChapter": "WANDERINGS",
+      "scriptureReference": "Numbers 14:1–38",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:moses:052",
+      "originalIndex": 52,
+      "originalChapter": "WANDERINGS",
+      "scriptureReference": "Numbers 21:4–9",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:moses:053",
+      "originalIndex": 53,
+      "originalChapter": "WANDERINGS",
+      "scriptureReference": "Numbers 22:1–24:25",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:moses:054",
+      "originalIndex": 54,
+      "originalChapter": "WANDERINGS",
+      "scriptureReference": "Deuteronomy 6:4–25",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:moses:055",
+      "originalIndex": 55,
+      "originalChapter": "WANDERINGS",
+      "scriptureReference": "Deuteronomy 34:1–8",
+      "originalAtlasMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:passage:deuteronomy-34-1-6",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [
+        {
+          "movementId": "HS-M11",
+          "citationRelation": "SELECTED_PASSAGE_CONTAINED_IN_SCENE_OR_EVENT"
+        }
+      ],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:moses:056",
+      "originalIndex": 56,
+      "originalChapter": "WANDERINGS",
+      "scriptureReference": "Joshua 3:1–17",
+      "originalAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:passage:joshua-3-1-17",
+          "relation": "EXACT_REFERENCE",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [
+        {
+          "movementId": "HS-M11",
+          "citationRelation": "SELECTED_PASSAGE_CONTAINED_IN_SCENE_OR_EVENT"
+        }
+      ],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:057",
+      "originalIndex": 57,
+      "originalChapter": "INCARNATION",
+      "scriptureReference": "Luke 1:26–38",
+      "originalAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:event:nazareth-e1",
+          "relation": "EXACT_REFERENCE",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [
+        {
+          "movementId": "HS-M18",
+          "citationRelation": "IDENTICAL_CITATION_SPAN"
+        }
+      ],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:058",
+      "originalIndex": 58,
+      "originalChapter": "INCARNATION",
+      "scriptureReference": "Matthew 1:18–25",
+      "originalAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:event:nazareth-additional-001",
+          "relation": "EXACT_REFERENCE",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [
+        {
+          "movementId": "HS-M19",
+          "citationRelation": "IDENTICAL_CITATION_SPAN"
+        }
+      ],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:059",
+      "originalIndex": 59,
+      "originalChapter": "INCARNATION",
+      "scriptureReference": "Luke 1:39–56",
+      "originalAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:event:ein-karem-e1",
+          "relation": "EXACT_REFERENCE",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:060",
+      "originalIndex": 60,
+      "originalChapter": "INCARNATION",
+      "scriptureReference": "Luke 1:57–80",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:061",
+      "originalIndex": 61,
+      "originalChapter": "INCARNATION",
+      "scriptureReference": "Luke 2:1–20",
+      "originalAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:event:bethlehem-e1",
+          "relation": "EXACT_REFERENCE",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [
+        {
+          "movementId": "HS-M19",
+          "citationRelation": "IDENTICAL_CITATION_SPAN"
+        }
+      ],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:062",
+      "originalIndex": 62,
+      "originalChapter": "INCARNATION",
+      "scriptureReference": "Luke 2:21",
+      "originalAtlasMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:event:bethlehem-additional-002",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:063",
+      "originalIndex": 63,
+      "originalChapter": "INCARNATION",
+      "scriptureReference": "Matthew 2:1–12",
+      "originalAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:event:bethlehem-e2",
+          "relation": "EXACT_REFERENCE",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [
+        {
+          "movementId": "HS-M19",
+          "citationRelation": "IDENTICAL_CITATION_SPAN"
+        }
+      ],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:064",
+      "originalIndex": 64,
+      "originalChapter": "INCARNATION",
+      "scriptureReference": "Luke 2:22–38",
+      "originalAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:event:jerusalem-temple-e1",
+          "relation": "EXACT_REFERENCE",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:065",
+      "originalIndex": 65,
+      "originalChapter": "INCARNATION",
+      "scriptureReference": "Matthew 2:13–15",
+      "originalAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:event:egypt-e1",
+          "relation": "EXACT_REFERENCE",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:066",
+      "originalIndex": 66,
+      "originalChapter": "INCARNATION",
+      "scriptureReference": "Matthew 2:19–23",
+      "originalAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:event:egypt-e2",
+          "relation": "EXACT_REFERENCE",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:067",
+      "originalIndex": 67,
+      "originalChapter": "INCARNATION",
+      "scriptureReference": "Luke 2:39–52",
+      "originalAtlasMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:event:jerusalem-temple-e2",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "p0EventExists": true
+        },
+        {
+          "eventKey": "biblical:event:nazareth-additional-006",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:068",
+      "originalIndex": 68,
+      "originalChapter": "INCARNATION",
+      "scriptureReference": "Luke 2:41–52",
+      "originalAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:event:jerusalem-temple-e2",
+          "relation": "EXACT_REFERENCE",
+          "p0EventExists": true
+        },
+        {
+          "eventKey": "biblical:event:nazareth-additional-006",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:069",
+      "originalIndex": 69,
+      "originalChapter": "MINISTRY",
+      "scriptureReference": "Matthew 3:13–17",
+      "originalAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:event:jordan-baptism-e1",
+          "relation": "EXACT_REFERENCE",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [
+        {
+          "movementId": "HS-M20",
+          "citationRelation": "SCENE_OR_EVENT_CONTAINED_IN_SELECTED_PASSAGE"
+        }
+      ],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:070",
+      "originalIndex": 70,
+      "originalChapter": "MINISTRY",
+      "scriptureReference": "Matthew 4:1–11",
+      "originalAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:event:judean-wilderness-e1",
+          "relation": "EXACT_REFERENCE",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:071",
+      "originalIndex": 71,
+      "originalChapter": "MINISTRY",
+      "scriptureReference": "John 1:29–34",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:072",
+      "originalIndex": 72,
+      "originalChapter": "MINISTRY",
+      "scriptureReference": "John 1:35–51",
+      "originalAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:event:jordan-east-bank-additional-008",
+          "relation": "EXACT_REFERENCE",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [
+        {
+          "movementId": "HS-M20",
+          "citationRelation": "IDENTICAL_CITATION_SPAN"
+        }
+      ],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:073",
+      "originalIndex": 73,
+      "originalChapter": "MINISTRY",
+      "scriptureReference": "John 2:1–11",
+      "originalAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:event:cana-e1",
+          "relation": "EXACT_REFERENCE",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:074",
+      "originalIndex": 74,
+      "originalChapter": "MINISTRY",
+      "scriptureReference": "John 2:13–22",
+      "originalAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:event:jerusalem-temple-e3",
+          "relation": "EXACT_REFERENCE",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:075",
+      "originalIndex": 75,
+      "originalChapter": "MINISTRY",
+      "scriptureReference": "John 3:1–21",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:076",
+      "originalIndex": 76,
+      "originalChapter": "MINISTRY",
+      "scriptureReference": "John 4:4–26",
+      "originalAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:event:sychar-e1",
+          "relation": "EXACT_REFERENCE",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:077",
+      "originalIndex": 77,
+      "originalChapter": "MINISTRY",
+      "scriptureReference": "John 4:46–54",
+      "originalAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:event:cana-miracle-02",
+          "relation": "EXACT_REFERENCE",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:078",
+      "originalIndex": 78,
+      "originalChapter": "MINISTRY",
+      "scriptureReference": "Mark 1:21–28",
+      "originalAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:event:capernaum-e1",
+          "relation": "EXACT_REFERENCE",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:079",
+      "originalIndex": 79,
+      "originalChapter": "MINISTRY",
+      "scriptureReference": "Mark 1:29–31",
+      "originalAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:event:capernaum-miracle-04",
+          "relation": "EXACT_REFERENCE",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:080",
+      "originalIndex": 80,
+      "originalChapter": "MINISTRY",
+      "scriptureReference": "Mark 2:1–12",
+      "originalAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:event:capernaum-e2",
+          "relation": "EXACT_REFERENCE",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:081",
+      "originalIndex": 81,
+      "originalChapter": "MINISTRY",
+      "scriptureReference": "Matthew 8:5–13",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:082",
+      "originalIndex": 82,
+      "originalChapter": "MINISTRY",
+      "scriptureReference": "Mark 2:13–17",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:083",
+      "originalIndex": 83,
+      "originalChapter": "MINISTRY",
+      "scriptureReference": "Luke 5:1–11",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:084",
+      "originalIndex": 84,
+      "originalChapter": "MINISTRY",
+      "scriptureReference": "Luke 6:12–16",
+      "originalAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:event:beatitudes-additional-021",
+          "relation": "EXACT_REFERENCE",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:085",
+      "originalIndex": 85,
+      "originalChapter": "MINISTRY",
+      "scriptureReference": "Matthew 5:1–12",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [
+        {
+          "movementId": "HS-M21",
+          "citationRelation": "IDENTICAL_CITATION_SPAN"
+        }
+      ],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:086",
+      "originalIndex": 86,
+      "originalChapter": "MINISTRY",
+      "scriptureReference": "Matthew 6:5–15",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [
+        {
+          "movementId": "HS-M21",
+          "citationRelation": "SELECTED_PASSAGE_CONTAINED_IN_SCENE_OR_EVENT"
+        }
+      ],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:087",
+      "originalIndex": 87,
+      "originalChapter": "MINISTRY",
+      "scriptureReference": "Luke 7:11–17",
+      "originalAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:event:nain-e1",
+          "relation": "EXACT_REFERENCE",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:088",
+      "originalIndex": 88,
+      "originalChapter": "MINISTRY",
+      "scriptureReference": "Luke 7:36–50",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:089",
+      "originalIndex": 89,
+      "originalChapter": "MINISTRY",
+      "scriptureReference": "Mark 4:1–20",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:090",
+      "originalIndex": 90,
+      "originalChapter": "MINISTRY",
+      "scriptureReference": "Mark 4:35–41",
+      "originalAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:event:galilee-sea-e2",
+          "relation": "EXACT_REFERENCE",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:091",
+      "originalIndex": 91,
+      "originalChapter": "MINISTRY",
+      "scriptureReference": "Mark 5:1–20",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:092",
+      "originalIndex": 92,
+      "originalChapter": "MINISTRY",
+      "scriptureReference": "Mark 5:21–43",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:093",
+      "originalIndex": 93,
+      "originalChapter": "MINISTRY",
+      "scriptureReference": "Matthew 10:1–15",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:094",
+      "originalIndex": 94,
+      "originalChapter": "MINISTRY",
+      "scriptureReference": "Mark 6:17–29",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:095",
+      "originalIndex": 95,
+      "originalChapter": "MINISTRY",
+      "scriptureReference": "Matthew 14:22–33",
+      "originalAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:event:galilee-sea-e3",
+          "relation": "EXACT_REFERENCE",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:096",
+      "originalIndex": 96,
+      "originalChapter": "MINISTRY",
+      "scriptureReference": "John 6:1–15",
+      "originalAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:event:tabgha-e1",
+          "relation": "EXACT_REFERENCE",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:097",
+      "originalIndex": 97,
+      "originalChapter": "MINISTRY",
+      "scriptureReference": "John 6:22–59",
+      "originalAtlasMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:event:capernaum-e3",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [
+        {
+          "movementId": "HS-M22",
+          "citationRelation": "SELECTED_PASSAGE_CONTAINED_IN_SCENE_OR_EVENT"
+        }
+      ],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:098",
+      "originalIndex": 98,
+      "originalChapter": "MINISTRY",
+      "scriptureReference": "Mark 7:24–30",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:099",
+      "originalIndex": 99,
+      "originalChapter": "MINISTRY",
+      "scriptureReference": "Mark 7:31–37",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:100",
+      "originalIndex": 100,
+      "originalChapter": "MINISTRY",
+      "scriptureReference": "Matthew 15:32–39",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:101",
+      "originalIndex": 101,
+      "originalChapter": "MINISTRY",
+      "scriptureReference": "Mark 8:22–26",
+      "originalAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:event:bethsaida-miracle-25",
+          "relation": "EXACT_REFERENCE",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:102",
+      "originalIndex": 102,
+      "originalChapter": "MINISTRY",
+      "scriptureReference": "Matthew 16:13–20",
+      "originalAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:event:caesarea-philippi-e1",
+          "relation": "EXACT_REFERENCE",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [
+        {
+          "movementId": "HS-M23",
+          "citationRelation": "SCENE_OR_EVENT_CONTAINED_IN_SELECTED_PASSAGE"
+        }
+      ],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:103",
+      "originalIndex": 103,
+      "originalChapter": "MINISTRY",
+      "scriptureReference": "Matthew 16:21–28",
+      "originalAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:event:caesarea-philippi-additional-044",
+          "relation": "EXACT_REFERENCE",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [
+        {
+          "movementId": "HS-M23",
+          "citationRelation": "SCENE_OR_EVENT_CONTAINED_IN_SELECTED_PASSAGE"
+        }
+      ],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:104",
+      "originalIndex": 104,
+      "originalChapter": "MINISTRY",
+      "scriptureReference": "Matthew 17:1–9",
+      "originalAtlasMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:event:transfiguration-e1",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "p0EventExists": true
+        },
+        {
+          "eventKey": "biblical:event:transfiguration-additional-045",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [
+        {
+          "movementId": "HS-M23",
+          "citationRelation": "IDENTICAL_CITATION_SPAN"
+        }
+      ],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:105",
+      "originalIndex": 105,
+      "originalChapter": "MINISTRY",
+      "scriptureReference": "Mark 9:14–29",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:106",
+      "originalIndex": 106,
+      "originalChapter": "MINISTRY",
+      "scriptureReference": "John 9:1–12",
+      "originalAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:event:siloam-miracle-26",
+          "relation": "EXACT_REFERENCE",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:107",
+      "originalIndex": 107,
+      "originalChapter": "MINISTRY",
+      "scriptureReference": "John 10:1–21",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:108",
+      "originalIndex": 108,
+      "originalChapter": "MINISTRY",
+      "scriptureReference": "Luke 10:25–37",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:109",
+      "originalIndex": 109,
+      "originalChapter": "MINISTRY",
+      "scriptureReference": "Luke 10:38–42",
+      "originalAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:event:bethany-additional-057",
+          "relation": "EXACT_REFERENCE",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:110",
+      "originalIndex": 110,
+      "originalChapter": "MINISTRY",
+      "scriptureReference": "Luke 15:11–32",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:111",
+      "originalIndex": 111,
+      "originalChapter": "MINISTRY",
+      "scriptureReference": "Luke 17:11–19",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:112",
+      "originalIndex": 112,
+      "originalChapter": "MINISTRY",
+      "scriptureReference": "Luke 19:1–10",
+      "originalAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:event:jericho-e2",
+          "relation": "EXACT_REFERENCE",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:113",
+      "originalIndex": 113,
+      "originalChapter": "MINISTRY",
+      "scriptureReference": "John 11:1–44",
+      "originalAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:event:bethany-e1",
+          "relation": "EXACT_REFERENCE",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [
+        {
+          "movementId": "HS-M24",
+          "citationRelation": "SELECTED_PASSAGE_CONTAINED_IN_SCENE_OR_EVENT"
+        }
+      ],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:114",
+      "originalIndex": 114,
+      "originalChapter": "MINISTRY",
+      "scriptureReference": "John 12:1–8",
+      "originalAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:event:bethany-e2",
+          "relation": "EXACT_REFERENCE",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:115",
+      "originalIndex": 115,
+      "originalChapter": "PASSION",
+      "scriptureReference": "Matthew 21:1–11",
+      "originalAtlasMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:event:bethphage-e1",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [
+        {
+          "movementId": "HS-M25",
+          "citationRelation": "IDENTICAL_CITATION_SPAN"
+        }
+      ],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:116",
+      "originalIndex": 116,
+      "originalChapter": "PASSION",
+      "scriptureReference": "Luke 19:41–44",
+      "originalAtlasMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:event:olives-e1",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:117",
+      "originalIndex": 117,
+      "originalChapter": "PASSION",
+      "scriptureReference": "Mark 11:15–19",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:118",
+      "originalIndex": 118,
+      "originalChapter": "PASSION",
+      "scriptureReference": "Mark 13:1–37",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:119",
+      "originalIndex": 119,
+      "originalChapter": "PASSION",
+      "scriptureReference": "Luke 22:14–20",
+      "originalAtlasMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:event:cenacle-e1",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [
+        {
+          "movementId": "HS-M26",
+          "citationRelation": "SCENE_OR_EVENT_CONTAINED_IN_SELECTED_PASSAGE"
+        }
+      ],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:120",
+      "originalIndex": 120,
+      "originalChapter": "PASSION",
+      "scriptureReference": "John 13:1–17",
+      "originalAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:event:cenacle-e2",
+          "relation": "EXACT_REFERENCE",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:121",
+      "originalIndex": 121,
+      "originalChapter": "PASSION",
+      "scriptureReference": "John 13:31–35",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:122",
+      "originalIndex": 122,
+      "originalChapter": "PASSION",
+      "scriptureReference": "John 17:1–26",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:123",
+      "originalIndex": 123,
+      "originalChapter": "PASSION",
+      "scriptureReference": "Matthew 26:36–46",
+      "originalAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:event:gethsemane-e1",
+          "relation": "EXACT_REFERENCE",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [
+        {
+          "movementId": "HS-M27",
+          "citationRelation": "IDENTICAL_CITATION_SPAN"
+        }
+      ],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:124",
+      "originalIndex": 124,
+      "originalChapter": "PASSION",
+      "scriptureReference": "Matthew 26:47–56",
+      "originalAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:event:gethsemane-e2",
+          "relation": "EXACT_REFERENCE",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [
+        {
+          "movementId": "HS-M27",
+          "citationRelation": "IDENTICAL_CITATION_SPAN"
+        }
+      ],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:125",
+      "originalIndex": 125,
+      "originalChapter": "PASSION",
+      "scriptureReference": "Luke 22:54–62",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:126",
+      "originalIndex": 126,
+      "originalChapter": "PASSION",
+      "scriptureReference": "John 18:28–40",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:127",
+      "originalIndex": 127,
+      "originalChapter": "PASSION",
+      "scriptureReference": "John 19:1–16",
+      "originalAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:event:jerusalem-trial-e3",
+          "relation": "EXACT_REFERENCE",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:128",
+      "originalIndex": 128,
+      "originalChapter": "PASSION",
+      "scriptureReference": "Luke 23:26–32",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:129",
+      "originalIndex": 129,
+      "originalChapter": "PASSION",
+      "scriptureReference": "John 19:17–30",
+      "originalAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:event:golgotha-e2",
+          "relation": "EXACT_REFERENCE",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [
+        {
+          "movementId": "HS-M28",
+          "citationRelation": "IDENTICAL_CITATION_SPAN"
+        }
+      ],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:130",
+      "originalIndex": 130,
+      "originalChapter": "PASSION",
+      "scriptureReference": "John 19:38–42",
+      "originalAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:event:christ-tomb-e1",
+          "relation": "EXACT_REFERENCE",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:131",
+      "originalIndex": 131,
+      "originalChapter": "RISEN",
+      "scriptureReference": "John 20:1–18",
+      "originalAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:event:christ-tomb-e2",
+          "relation": "EXACT_REFERENCE",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [
+        {
+          "movementId": "HS-M29",
+          "citationRelation": "SELECTED_PASSAGE_CONTAINED_IN_SCENE_OR_EVENT"
+        }
+      ],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:132",
+      "originalIndex": 132,
+      "originalChapter": "RISEN",
+      "scriptureReference": "John 20:3–10",
+      "originalAtlasMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:event:christ-tomb-e2",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [
+        {
+          "movementId": "HS-M29",
+          "citationRelation": "SELECTED_PASSAGE_CONTAINED_IN_SCENE_OR_EVENT"
+        }
+      ],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:133",
+      "originalIndex": 133,
+      "originalChapter": "RISEN",
+      "scriptureReference": "John 20:19–23",
+      "originalAtlasMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:event:cenacle-e3",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [
+        {
+          "movementId": "HS-M29",
+          "citationRelation": "SCENE_OR_EVENT_CONTAINED_IN_SELECTED_PASSAGE"
+        }
+      ],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:134",
+      "originalIndex": 134,
+      "originalChapter": "RISEN",
+      "scriptureReference": "John 20:24–29",
+      "originalAtlasMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:event:cenacle-e3",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [
+        {
+          "movementId": "HS-M29",
+          "citationRelation": "SCENE_OR_EVENT_CONTAINED_IN_SELECTED_PASSAGE"
+        }
+      ],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:135",
+      "originalIndex": 135,
+      "originalChapter": "RISEN",
+      "scriptureReference": "Luke 24:13–35",
+      "originalAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:event:emmaus-e1",
+          "relation": "EXACT_REFERENCE",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:136",
+      "originalIndex": 136,
+      "originalChapter": "RISEN",
+      "scriptureReference": "John 21:15–19",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:137",
+      "originalIndex": 137,
+      "originalChapter": "RISEN",
+      "scriptureReference": "Acts 1:6–12",
+      "originalAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:event:olives-e3",
+          "relation": "EXACT_REFERENCE",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [
+        {
+          "movementId": "HS-M30",
+          "citationRelation": "IDENTICAL_CITATION_SPAN"
+        }
+      ],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:138",
+      "originalIndex": 138,
+      "originalChapter": "APOSTLES",
+      "scriptureReference": "Acts 9:1–9",
+      "originalAtlasMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:passage:acts-9-1-22",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [
+        {
+          "movementId": "HS-M32",
+          "citationRelation": "SCENE_OR_EVENT_CONTAINED_IN_SELECTED_PASSAGE"
+        }
+      ],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:139",
+      "originalIndex": 139,
+      "originalChapter": "APOSTLES",
+      "scriptureReference": "Acts 9:10–19",
+      "originalAtlasMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:passage:acts-9-1-22",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [
+        {
+          "movementId": "HS-M32",
+          "citationRelation": "PARTIAL_CITATION_OVERLAP_REVIEW_ONLY"
+        }
+      ],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:140",
+      "originalIndex": 140,
+      "originalChapter": "APOSTLES",
+      "scriptureReference": "Acts 9:20–25",
+      "originalAtlasMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:passage:acts-9-1-22",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [
+        {
+          "movementId": "HS-M32",
+          "citationRelation": "PARTIAL_CITATION_OVERLAP_REVIEW_ONLY"
+        }
+      ],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:141",
+      "originalIndex": 141,
+      "originalChapter": "APOSTLES",
+      "scriptureReference": "Acts 9:26–30",
+      "originalAtlasMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:passage:acts-9-29-30",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:142",
+      "originalIndex": 142,
+      "originalChapter": "APOSTLES",
+      "scriptureReference": "Acts 11:19–26",
+      "originalAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:passage:acts-11-19-26",
+          "relation": "EXACT_REFERENCE",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [
+        {
+          "movementId": "HS-M33",
+          "citationRelation": "IDENTICAL_CITATION_SPAN"
+        }
+      ],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:143",
+      "originalIndex": 143,
+      "originalChapter": "FIRST_MISSION",
+      "scriptureReference": "Acts 13:1–3",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [
+        {
+          "movementId": "HS-M33",
+          "citationRelation": "SCENE_OR_EVENT_CONTAINED_IN_SELECTED_PASSAGE"
+        }
+      ],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:144",
+      "originalIndex": 144,
+      "originalChapter": "FIRST_MISSION",
+      "scriptureReference": "Acts 13:4",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [
+        {
+          "movementId": "HS-M33",
+          "citationRelation": "SCENE_OR_EVENT_CONTAINED_IN_SELECTED_PASSAGE"
+        }
+      ],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:145",
+      "originalIndex": 145,
+      "originalChapter": "FIRST_MISSION",
+      "scriptureReference": "Acts 13:5",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [
+        {
+          "movementId": "HS-M33",
+          "citationRelation": "SCENE_OR_EVENT_CONTAINED_IN_SELECTED_PASSAGE"
+        }
+      ],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:146",
+      "originalIndex": 146,
+      "originalChapter": "FIRST_MISSION",
+      "scriptureReference": "Acts 13:4–12",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [
+        {
+          "movementId": "HS-M33",
+          "citationRelation": "PARTIAL_CITATION_OVERLAP_REVIEW_ONLY"
+        }
+      ],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:147",
+      "originalIndex": 147,
+      "originalChapter": "FIRST_MISSION",
+      "scriptureReference": "Acts 13:13–14",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:148",
+      "originalIndex": 148,
+      "originalChapter": "FIRST_MISSION",
+      "scriptureReference": "Acts 13:14–43",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:149",
+      "originalIndex": 149,
+      "originalChapter": "FIRST_MISSION",
+      "scriptureReference": "Acts 14:1–7",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:150",
+      "originalIndex": 150,
+      "originalChapter": "FIRST_MISSION",
+      "scriptureReference": "Acts 14:8–20",
+      "originalAtlasMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:passage:acts-14-8-18",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:151",
+      "originalIndex": 151,
+      "originalChapter": "FIRST_MISSION",
+      "scriptureReference": "Acts 14:20–28",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:152",
+      "originalIndex": 152,
+      "originalChapter": "FIRST_MISSION",
+      "scriptureReference": "Acts 15:1–29",
+      "originalAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:passage:acts-15-1-29",
+          "relation": "EXACT_REFERENCE",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [
+        {
+          "movementId": "HS-M33",
+          "citationRelation": "SELECTED_PASSAGE_CONTAINED_IN_SCENE_OR_EVENT"
+        }
+      ],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:153",
+      "originalIndex": 153,
+      "originalChapter": "SECOND_MISSION",
+      "scriptureReference": "Acts 15:36–41",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:154",
+      "originalIndex": 154,
+      "originalChapter": "SECOND_MISSION",
+      "scriptureReference": "Acts 16:1–5",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:155",
+      "originalIndex": 155,
+      "originalChapter": "SECOND_MISSION",
+      "scriptureReference": "Acts 16:6–10",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:156",
+      "originalIndex": 156,
+      "originalChapter": "SECOND_MISSION",
+      "scriptureReference": "Acts 16:8–12",
+      "originalAtlasMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:passage:acts-16-11-15",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:157",
+      "originalIndex": 157,
+      "originalChapter": "SECOND_MISSION",
+      "scriptureReference": "Acts 16:11–12",
+      "originalAtlasMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:passage:acts-16-11-15",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:158",
+      "originalIndex": 158,
+      "originalChapter": "SECOND_MISSION",
+      "scriptureReference": "Acts 16:11–15",
+      "originalAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:passage:acts-16-11-15",
+          "relation": "EXACT_REFERENCE",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:159",
+      "originalIndex": 159,
+      "originalChapter": "SECOND_MISSION",
+      "scriptureReference": "Acts 16:16–40",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:160",
+      "originalIndex": 160,
+      "originalChapter": "SECOND_MISSION",
+      "scriptureReference": "Acts 17:1–9",
+      "originalAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:passage:acts-17-1-9",
+          "relation": "EXACT_REFERENCE",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:161",
+      "originalIndex": 161,
+      "originalChapter": "SECOND_MISSION",
+      "scriptureReference": "Acts 17:10–15",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:162",
+      "originalIndex": 162,
+      "originalChapter": "SECOND_MISSION",
+      "scriptureReference": "Acts 17:16–34",
+      "originalAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:passage:acts-17-16-34",
+          "relation": "EXACT_REFERENCE",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:163",
+      "originalIndex": 163,
+      "originalChapter": "SECOND_MISSION",
+      "scriptureReference": "Acts 18:1–18",
+      "originalAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:passage:acts-18-1-18",
+          "relation": "EXACT_REFERENCE",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:164",
+      "originalIndex": 164,
+      "originalChapter": "THIRD_MISSION",
+      "scriptureReference": "Acts 18:18–23",
+      "originalAtlasMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:passage:acts-18-1-18",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:165",
+      "originalIndex": 165,
+      "originalChapter": "THIRD_MISSION",
+      "scriptureReference": "Acts 18:23",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:166",
+      "originalIndex": 166,
+      "originalChapter": "THIRD_MISSION",
+      "scriptureReference": "Acts 19:1–20",
+      "originalAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:passage:acts-19-1-20",
+          "relation": "EXACT_REFERENCE",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:167",
+      "originalIndex": 167,
+      "originalChapter": "THIRD_MISSION",
+      "scriptureReference": "Acts 19:23–41",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:168",
+      "originalIndex": 168,
+      "originalChapter": "THIRD_MISSION",
+      "scriptureReference": "Acts 20:7–12",
+      "originalAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:passage:acts-20-7-12",
+          "relation": "EXACT_REFERENCE",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:169",
+      "originalIndex": 169,
+      "originalChapter": "THIRD_MISSION",
+      "scriptureReference": "Acts 20:17–38",
+      "originalAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:passage:acts-20-17-38",
+          "relation": "EXACT_REFERENCE",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:170",
+      "originalIndex": 170,
+      "originalChapter": "TO_ROME",
+      "scriptureReference": "Acts 21:1–6",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:171",
+      "originalIndex": 171,
+      "originalChapter": "TO_ROME",
+      "scriptureReference": "Acts 21:8–14",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:172",
+      "originalIndex": 172,
+      "originalChapter": "TO_ROME",
+      "scriptureReference": "Acts 21:27–36",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:173",
+      "originalIndex": 173,
+      "originalChapter": "TO_ROME",
+      "scriptureReference": "Acts 24:1–27",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:174",
+      "originalIndex": 174,
+      "originalChapter": "TO_ROME",
+      "scriptureReference": "Acts 25:1–12",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:175",
+      "originalIndex": 175,
+      "originalChapter": "TO_ROME",
+      "scriptureReference": "Acts 27:1–12",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:176",
+      "originalIndex": 176,
+      "originalChapter": "TO_ROME",
+      "scriptureReference": "Acts 27:13–44",
+      "originalAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:passage:acts-27-13-44",
+          "relation": "EXACT_REFERENCE",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:177",
+      "originalIndex": 177,
+      "originalChapter": "TO_ROME",
+      "scriptureReference": "Acts 28:1–10",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:178",
+      "originalIndex": 178,
+      "originalChapter": "TO_ROME",
+      "scriptureReference": "Acts 28:11–14",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:179",
+      "originalIndex": 179,
+      "originalChapter": "TO_ROME",
+      "scriptureReference": "Acts 28:13–14",
+      "originalAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasEvents": [],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:180",
+      "originalIndex": 180,
+      "originalChapter": "TO_ROME",
+      "scriptureReference": "Acts 28:16–31",
+      "originalAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:passage:acts-28-16-31",
+          "relation": "EXACT_REFERENCE",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [
+        {
+          "movementId": "HS-M34",
+          "citationRelation": "SELECTED_PASSAGE_CONTAINED_IN_SCENE_OR_EVENT"
+        }
+      ],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:christ:181",
+      "originalIndex": 181,
+      "originalChapter": "INCARNATION",
+      "scriptureReference": "Matthew 2:16–18",
+      "originalAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:event:bethlehem-additional-003",
+          "relation": "EXACT_REFERENCE",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    },
+    {
+      "sceneKey": "biblical:scene:paul:182",
+      "originalIndex": 182,
+      "originalChapter": "APOSTLES",
+      "scriptureReference": "Acts 2:1–41",
+      "originalAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasEvents": [
+        {
+          "eventKey": "biblical:passage:acts-2-1-41",
+          "relation": "EXACT_REFERENCE",
+          "p0EventExists": true
+        }
+      ],
+      "movementCitationLinks": [
+        {
+          "movementId": "HS-M31",
+          "citationRelation": "SELECTED_PASSAGE_CONTAINED_IN_SCENE_OR_EVENT"
+        }
+      ],
+      "sourceSceneHasLocationText": true,
+      "chronologyAndTextActorsAudit": "NOT_REVIEWED",
+      "locationEvidenceClass": "NOT_REVIEWED",
+      "historicalGeographyCitationsVerified": false,
+      "coordinatesImported": false,
+      "approvedForStorytelling": false
+    }
+  ],
+  "movements": [
+    {
+      "movementId": "HS-M01",
+      "sequence": 1,
+      "title": "Creation and the human vocation",
+      "selectedScriptureBeats": [
+        {
+          "beatId": "H01-01",
+          "references": [
+            "Genesis 1:1–31"
+          ]
+        },
+        {
+          "beatId": "H01-02",
+          "references": [
+            "Genesis 2:1–3"
+          ]
+        },
+        {
+          "beatId": "H02-01",
+          "references": [
+            "Genesis 2:7–9"
+          ]
+        },
+        {
+          "beatId": "H02-02",
+          "references": [
+            "Genesis 2:15–18",
+            "Genesis 2:21–25"
+          ]
+        }
+      ],
+      "sourceBridgeCandidates": [],
+      "sceneCitationLinks": [],
+      "p0AtlasCitationLinks": [
+        {
+          "eventKey": "biblical:passage:genesis-1-1-31",
+          "citationRelation": "IDENTICAL_CITATION_SPAN",
+          "originalAtlasReference": "Genesis 1:1–31",
+          "p0ArcId": "historia-arc:creation-first-promise"
+        }
+      ],
+      "sourceReviewStatus": "EXACT_SCRIPTURE_READ_AND_SCENE_SEAMS_TRIAGED_NOT_ORAL_SIGNOFF",
+      "oralAccepted": false,
+      "publicationApproved": false
+    },
+    {
+      "movementId": "HS-M02",
+      "sequence": 2,
+      "title": "The Fall and the First Promise",
+      "selectedScriptureBeats": [
+        {
+          "beatId": "H03-01",
+          "references": [
+            "Genesis 3:1–13"
+          ]
+        },
+        {
+          "beatId": "H04-01",
+          "references": [
+            "Genesis 3:14–24"
+          ]
+        }
+      ],
+      "sourceBridgeCandidates": [],
+      "sceneCitationLinks": [],
+      "p0AtlasCitationLinks": [
+        {
+          "eventKey": "biblical:passage:genesis-3-1-24",
+          "citationRelation": "SELECTED_PASSAGE_CONTAINED_IN_SCENE_OR_EVENT",
+          "originalAtlasReference": "Genesis 3:1–24",
+          "p0ArcId": "historia-arc:creation-first-promise"
+        }
+      ],
+      "sourceReviewStatus": "EXACT_SCRIPTURE_READ_AND_SCENE_SEAMS_TRIAGED_NOT_ORAL_SIGNOFF",
+      "oralAccepted": false,
+      "publicationApproved": false
+    },
+    {
+      "movementId": "HS-M03",
+      "sequence": 3,
+      "title": "Noah, the covenant and the peoples",
+      "selectedScriptureBeats": [
+        {
+          "beatId": "H07-02",
+          "references": [
+            "Genesis 7:1–5",
+            "Genesis 7:17–23"
+          ]
+        },
+        {
+          "beatId": "H07-03",
+          "references": [
+            "Genesis 8:6–12",
+            "Genesis 8:15–22"
+          ]
+        },
+        {
+          "beatId": "H08-01",
+          "references": [
+            "Genesis 9:8–17"
+          ]
+        }
+      ],
+      "sourceBridgeCandidates": [
+        {
+          "candidateId": "HS-CF-01",
+          "reference": "Genesis 6:9–22",
+          "approval": "HOLD"
+        }
+      ],
+      "sceneCitationLinks": [],
+      "p0AtlasCitationLinks": [
+        {
+          "eventKey": "biblical:passage:genesis-7-1-24",
+          "citationRelation": "SELECTED_PASSAGE_CONTAINED_IN_SCENE_OR_EVENT",
+          "originalAtlasReference": "Genesis 7:1–24",
+          "p0ArcId": "historia-arc:noah-nations"
+        },
+        {
+          "eventKey": "biblical:passage:genesis-9-8-17",
+          "citationRelation": "IDENTICAL_CITATION_SPAN",
+          "originalAtlasReference": "Genesis 9:8–17",
+          "p0ArcId": "historia-arc:noah-nations"
+        }
+      ],
+      "sourceReviewStatus": "EXACT_SCRIPTURE_READ_AND_SCENE_SEAMS_TRIAGED_NOT_ORAL_SIGNOFF",
+      "oralAccepted": false,
+      "publicationApproved": false
+    },
+    {
+      "movementId": "HS-M04",
+      "sequence": 4,
+      "title": "Abraham called into covenant",
+      "selectedScriptureBeats": [
+        {
+          "beatId": "H10-01",
+          "references": [
+            "Genesis 12:1–9"
+          ]
+        },
+        {
+          "beatId": "H11-02",
+          "references": [
+            "Genesis 15:1–6",
+            "Genesis 15:9–10",
+            "Genesis 15:13–14",
+            "Genesis 15:17–18"
+          ]
+        },
+        {
+          "beatId": "H11-03",
+          "references": [
+            "Genesis 17:1–11"
+          ]
+        }
+      ],
+      "sourceBridgeCandidates": [
+        {
+          "candidateId": "HS-CF-02",
+          "reference": "Genesis 11:26–31",
+          "approval": "HOLD"
+        }
+      ],
+      "sceneCitationLinks": [
+        {
+          "sceneKey": "biblical:scene:abraham:000",
+          "reference": "Genesis 12:1–5",
+          "citationRelation": "SCENE_OR_EVENT_CONTAINED_IN_SELECTED_PASSAGE",
+          "sourceSceneAtlasMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY"
+        },
+        {
+          "sceneKey": "biblical:scene:abraham:001",
+          "reference": "Genesis 12:4–5",
+          "citationRelation": "SCENE_OR_EVENT_CONTAINED_IN_SELECTED_PASSAGE",
+          "sourceSceneAtlasMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY"
+        },
+        {
+          "sceneKey": "biblical:scene:abraham:002",
+          "reference": "Genesis 12:5–6",
+          "citationRelation": "SCENE_OR_EVENT_CONTAINED_IN_SELECTED_PASSAGE",
+          "sourceSceneAtlasMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY"
+        },
+        {
+          "sceneKey": "biblical:scene:abraham:003",
+          "reference": "Genesis 12:6–7",
+          "citationRelation": "SCENE_OR_EVENT_CONTAINED_IN_SELECTED_PASSAGE",
+          "sourceSceneAtlasMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY"
+        },
+        {
+          "sceneKey": "biblical:scene:abraham:004",
+          "reference": "Genesis 12:7",
+          "citationRelation": "SCENE_OR_EVENT_CONTAINED_IN_SELECTED_PASSAGE",
+          "sourceSceneAtlasMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY"
+        },
+        {
+          "sceneKey": "biblical:scene:abraham:005",
+          "reference": "Genesis 12:8",
+          "citationRelation": "SCENE_OR_EVENT_CONTAINED_IN_SELECTED_PASSAGE",
+          "sourceSceneAtlasMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY"
+        },
+        {
+          "sceneKey": "biblical:scene:abraham:013",
+          "reference": "Genesis 15:1–6",
+          "citationRelation": "IDENTICAL_CITATION_SPAN",
+          "sourceSceneAtlasMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY"
+        },
+        {
+          "sceneKey": "biblical:scene:abraham:014",
+          "reference": "Genesis 15:7–21",
+          "citationRelation": "SELECTED_PASSAGE_CONTAINED_IN_SCENE_OR_EVENT",
+          "sourceSceneAtlasMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY"
+        },
+        {
+          "sceneKey": "biblical:scene:abraham:016",
+          "reference": "Genesis 17:1–14",
+          "citationRelation": "SELECTED_PASSAGE_CONTAINED_IN_SCENE_OR_EVENT",
+          "sourceSceneAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH"
+        }
+      ],
+      "p0AtlasCitationLinks": [
+        {
+          "eventKey": "biblical:passage:genesis-12-1-9",
+          "citationRelation": "IDENTICAL_CITATION_SPAN",
+          "originalAtlasReference": "Genesis 12:1–9",
+          "p0ArcId": "historia-arc:abraham-patriarchs"
+        },
+        {
+          "eventKey": "biblical:passage:genesis-15-1-21",
+          "citationRelation": "SELECTED_PASSAGE_CONTAINED_IN_SCENE_OR_EVENT",
+          "originalAtlasReference": "Genesis 15:1–21",
+          "p0ArcId": "historia-arc:abraham-patriarchs"
+        }
+      ],
+      "sourceReviewStatus": "EXACT_SCRIPTURE_READ_AND_SCENE_SEAMS_TRIAGED_NOT_ORAL_SIGNOFF",
+      "oralAccepted": false,
+      "publicationApproved": false
+    },
+    {
+      "movementId": "HS-M05",
+      "sequence": 5,
+      "title": "Isaac, Jacob and Israel",
+      "selectedScriptureBeats": [
+        {
+          "beatId": "H12-02",
+          "references": [
+            "Genesis 21:1–7"
+          ]
+        },
+        {
+          "beatId": "H13-01",
+          "references": [
+            "Genesis 22:1–19"
+          ]
+        },
+        {
+          "beatId": "H15-02",
+          "references": [
+            "Genesis 32:22–32"
+          ]
+        },
+        {
+          "beatId": "H15-03",
+          "references": [
+            "Genesis 35:9–15"
+          ]
+        }
+      ],
+      "sourceBridgeCandidates": [],
+      "sceneCitationLinks": [
+        {
+          "sceneKey": "biblical:scene:abraham:021",
+          "reference": "Genesis 21:1–7",
+          "citationRelation": "IDENTICAL_CITATION_SPAN",
+          "sourceSceneAtlasMatchStatus": "EXACT_REFERENCE"
+        },
+        {
+          "sceneKey": "biblical:scene:abraham:023",
+          "reference": "Genesis 22:1–19",
+          "citationRelation": "IDENTICAL_CITATION_SPAN",
+          "sourceSceneAtlasMatchStatus": "EXACT_REFERENCE"
+        }
+      ],
+      "p0AtlasCitationLinks": [
+        {
+          "eventKey": "biblical:passage:genesis-21-1-7",
+          "citationRelation": "IDENTICAL_CITATION_SPAN",
+          "originalAtlasReference": "Genesis 21:1–7",
+          "p0ArcId": "historia-arc:abraham-patriarchs"
+        },
+        {
+          "eventKey": "biblical:passage:genesis-22-1-19",
+          "citationRelation": "IDENTICAL_CITATION_SPAN",
+          "originalAtlasReference": "Genesis 22:1–19",
+          "p0ArcId": "historia-arc:abraham-patriarchs"
+        },
+        {
+          "eventKey": "biblical:passage:genesis-32-24-32",
+          "citationRelation": "SCENE_OR_EVENT_CONTAINED_IN_SELECTED_PASSAGE",
+          "originalAtlasReference": "Genesis 32:24–32",
+          "p0ArcId": "historia-arc:abraham-patriarchs"
+        }
+      ],
+      "sourceReviewStatus": "EXACT_SCRIPTURE_READ_AND_SCENE_SEAMS_TRIAGED_NOT_ORAL_SIGNOFF",
+      "oralAccepted": false,
+      "publicationApproved": false
+    },
+    {
+      "movementId": "HS-M06",
+      "sequence": 6,
+      "title": "Joseph and the descent into Egypt",
+      "selectedScriptureBeats": [
+        {
+          "beatId": "H16-01",
+          "references": [
+            "Genesis 37:3–4",
+            "Genesis 37:12–14",
+            "Genesis 37:18–24",
+            "Genesis 37:26–28"
+          ]
+        },
+        {
+          "beatId": "H16-03",
+          "references": [
+            "Genesis 41:14–16",
+            "Genesis 41:25–30",
+            "Genesis 41:33–45"
+          ]
+        },
+        {
+          "beatId": "H16-04",
+          "references": [
+            "Genesis 45:1–11",
+            "Genesis 45:14–15"
+          ]
+        },
+        {
+          "beatId": "H16-05",
+          "references": [
+            "Genesis 46:1–7"
+          ]
+        }
+      ],
+      "sourceBridgeCandidates": [
+        {
+          "candidateId": "HS-CF-03",
+          "reference": "Genesis 39:20–21",
+          "approval": "HOLD"
+        }
+      ],
+      "sceneCitationLinks": [],
+      "p0AtlasCitationLinks": [
+        {
+          "eventKey": "biblical:passage:genesis-37-18-36",
+          "citationRelation": "SELECTED_PASSAGE_CONTAINED_IN_SCENE_OR_EVENT",
+          "originalAtlasReference": "Genesis 37:18–36",
+          "p0ArcId": "historia-arc:abraham-patriarchs"
+        },
+        {
+          "eventKey": "biblical:passage:genesis-41-37-45",
+          "citationRelation": "SCENE_OR_EVENT_CONTAINED_IN_SELECTED_PASSAGE",
+          "originalAtlasReference": "Genesis 41:37–45",
+          "p0ArcId": "historia-arc:abraham-patriarchs"
+        },
+        {
+          "eventKey": "biblical:passage:genesis-46-1-7",
+          "citationRelation": "IDENTICAL_CITATION_SPAN",
+          "originalAtlasReference": "Genesis 46:1–7",
+          "p0ArcId": "historia-arc:abraham-patriarchs"
+        }
+      ],
+      "sourceReviewStatus": "EXACT_SCRIPTURE_READ_AND_SCENE_SEAMS_TRIAGED_NOT_ORAL_SIGNOFF",
+      "oralAccepted": false,
+      "publicationApproved": false
+    },
+    {
+      "movementId": "HS-M07",
+      "sequence": 7,
+      "title": "Bondage and the calling of Moses",
+      "selectedScriptureBeats": [
+        {
+          "beatId": "H17-01",
+          "references": [
+            "Exodus 1:7–14",
+            "Exodus 1:22"
+          ]
+        },
+        {
+          "beatId": "H18-01",
+          "references": [
+            "Exodus 3:1–8",
+            "Exodus 3:10–15"
+          ]
+        }
+      ],
+      "sourceBridgeCandidates": [],
+      "sceneCitationLinks": [
+        {
+          "sceneKey": "biblical:scene:moses:025",
+          "reference": "Exodus 1:8–22",
+          "citationRelation": "SELECTED_PASSAGE_CONTAINED_IN_SCENE_OR_EVENT",
+          "sourceSceneAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH"
+        },
+        {
+          "sceneKey": "biblical:scene:moses:028",
+          "reference": "Exodus 3:1–15",
+          "citationRelation": "SELECTED_PASSAGE_CONTAINED_IN_SCENE_OR_EVENT",
+          "sourceSceneAtlasMatchStatus": "EXACT_REFERENCE"
+        }
+      ],
+      "p0AtlasCitationLinks": [
+        {
+          "eventKey": "biblical:passage:exodus-3-1-15",
+          "citationRelation": "SELECTED_PASSAGE_CONTAINED_IN_SCENE_OR_EVENT",
+          "originalAtlasReference": "Exodus 3:1–15",
+          "p0ArcId": "historia-arc:exodus-sinai"
+        }
+      ],
+      "sourceReviewStatus": "EXACT_SCRIPTURE_READ_AND_SCENE_SEAMS_TRIAGED_NOT_ORAL_SIGNOFF",
+      "oralAccepted": false,
+      "publicationApproved": false
+    },
+    {
+      "movementId": "HS-M08",
+      "sequence": 8,
+      "title": "Plagues and the first Passover",
+      "selectedScriptureBeats": [
+        {
+          "beatId": "H19-01",
+          "references": [
+            "Exodus 7:14–17",
+            "Exodus 7:20–21"
+          ]
+        },
+        {
+          "beatId": "H19-05",
+          "references": [
+            "Exodus 11:4–8"
+          ]
+        },
+        {
+          "beatId": "H20-01",
+          "references": [
+            "Exodus 12:1–3",
+            "Exodus 12:5–8",
+            "Exodus 12:11–14",
+            "Exodus 12:21–23",
+            "Exodus 12:27–28"
+          ]
+        }
+      ],
+      "sourceBridgeCandidates": [],
+      "sceneCitationLinks": [
+        {
+          "sceneKey": "biblical:scene:moses:032",
+          "reference": "Exodus 7:14–25",
+          "citationRelation": "SELECTED_PASSAGE_CONTAINED_IN_SCENE_OR_EVENT",
+          "sourceSceneAtlasMatchStatus": "EXACT_REFERENCE"
+        },
+        {
+          "sceneKey": "biblical:scene:moses:033",
+          "reference": "Exodus 12:1–28",
+          "citationRelation": "SELECTED_PASSAGE_CONTAINED_IN_SCENE_OR_EVENT",
+          "sourceSceneAtlasMatchStatus": "EXACT_REFERENCE"
+        }
+      ],
+      "p0AtlasCitationLinks": [
+        {
+          "eventKey": "biblical:passage:exodus-7-14-25",
+          "citationRelation": "SELECTED_PASSAGE_CONTAINED_IN_SCENE_OR_EVENT",
+          "originalAtlasReference": "Exodus 7:14–25",
+          "p0ArcId": "historia-arc:exodus-sinai"
+        },
+        {
+          "eventKey": "biblical:passage:exodus-12-1-28",
+          "citationRelation": "SELECTED_PASSAGE_CONTAINED_IN_SCENE_OR_EVENT",
+          "originalAtlasReference": "Exodus 12:1–28",
+          "p0ArcId": "historia-arc:exodus-sinai"
+        }
+      ],
+      "sourceReviewStatus": "EXACT_SCRIPTURE_READ_AND_SCENE_SEAMS_TRIAGED_NOT_ORAL_SIGNOFF",
+      "oralAccepted": false,
+      "publicationApproved": false
+    },
+    {
+      "movementId": "HS-M09",
+      "sequence": 9,
+      "title": "Exodus through the sea",
+      "selectedScriptureBeats": [
+        {
+          "beatId": "H21-01",
+          "references": [
+            "Exodus 12:31–33",
+            "Exodus 12:37–42"
+          ]
+        },
+        {
+          "beatId": "H21-03",
+          "references": [
+            "Exodus 14:5–10",
+            "Exodus 14:13–16",
+            "Exodus 14:19–23",
+            "Exodus 14:26–31"
+          ]
+        }
+      ],
+      "sourceBridgeCandidates": [],
+      "sceneCitationLinks": [
+        {
+          "sceneKey": "biblical:scene:moses:034",
+          "reference": "Exodus 12:31–42",
+          "citationRelation": "SELECTED_PASSAGE_CONTAINED_IN_SCENE_OR_EVENT",
+          "sourceSceneAtlasMatchStatus": "EXACT_REFERENCE"
+        },
+        {
+          "sceneKey": "biblical:scene:moses:036",
+          "reference": "Exodus 14:15–31",
+          "citationRelation": "SELECTED_PASSAGE_CONTAINED_IN_SCENE_OR_EVENT",
+          "sourceSceneAtlasMatchStatus": "EXACT_REFERENCE"
+        }
+      ],
+      "p0AtlasCitationLinks": [
+        {
+          "eventKey": "biblical:passage:exodus-12-31-42",
+          "citationRelation": "SELECTED_PASSAGE_CONTAINED_IN_SCENE_OR_EVENT",
+          "originalAtlasReference": "Exodus 12:31–42",
+          "p0ArcId": "historia-arc:exodus-sinai"
+        },
+        {
+          "eventKey": "biblical:passage:exodus-14-15-31",
+          "citationRelation": "SELECTED_PASSAGE_CONTAINED_IN_SCENE_OR_EVENT",
+          "originalAtlasReference": "Exodus 14:15–31",
+          "p0ArcId": "historia-arc:exodus-sinai"
+        }
+      ],
+      "sourceReviewStatus": "EXACT_SCRIPTURE_READ_AND_SCENE_SEAMS_TRIAGED_NOT_ORAL_SIGNOFF",
+      "oralAccepted": false,
+      "publicationApproved": false
+    },
+    {
+      "movementId": "HS-M10",
+      "sequence": 10,
+      "title": "Sinai: covenant and unfaithfulness",
+      "selectedScriptureBeats": [
+        {
+          "beatId": "H22-01",
+          "references": [
+            "Exodus 19:1–8"
+          ]
+        },
+        {
+          "beatId": "H22-02",
+          "references": [
+            "Exodus 20:1–17"
+          ]
+        },
+        {
+          "beatId": "H22-03",
+          "references": [
+            "Exodus 24:3–8"
+          ]
+        },
+        {
+          "beatId": "H23-01",
+          "references": [
+            "Exodus 32:1–4",
+            "Exodus 32:7–14",
+            "Exodus 32:19–20",
+            "Exodus 32:30–34"
+          ]
+        }
+      ],
+      "sourceBridgeCandidates": [],
+      "sceneCitationLinks": [
+        {
+          "sceneKey": "biblical:scene:moses:043",
+          "reference": "Exodus 19:1–15",
+          "citationRelation": "SELECTED_PASSAGE_CONTAINED_IN_SCENE_OR_EVENT",
+          "sourceSceneAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH"
+        },
+        {
+          "sceneKey": "biblical:scene:moses:044",
+          "reference": "Exodus 20:1–17",
+          "citationRelation": "IDENTICAL_CITATION_SPAN",
+          "sourceSceneAtlasMatchStatus": "EXACT_REFERENCE"
+        },
+        {
+          "sceneKey": "biblical:scene:moses:045",
+          "reference": "Exodus 24:1–18",
+          "citationRelation": "SELECTED_PASSAGE_CONTAINED_IN_SCENE_OR_EVENT",
+          "sourceSceneAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH"
+        },
+        {
+          "sceneKey": "biblical:scene:moses:046",
+          "reference": "Exodus 32:1–35",
+          "citationRelation": "SELECTED_PASSAGE_CONTAINED_IN_SCENE_OR_EVENT",
+          "sourceSceneAtlasMatchStatus": "EXACT_REFERENCE"
+        }
+      ],
+      "p0AtlasCitationLinks": [
+        {
+          "eventKey": "biblical:passage:exodus-20-1-17",
+          "citationRelation": "IDENTICAL_CITATION_SPAN",
+          "originalAtlasReference": "Exodus 20:1–17",
+          "p0ArcId": "historia-arc:exodus-sinai"
+        },
+        {
+          "eventKey": "biblical:passage:exodus-32-1-35",
+          "citationRelation": "SELECTED_PASSAGE_CONTAINED_IN_SCENE_OR_EVENT",
+          "originalAtlasReference": "Exodus 32:1–35",
+          "p0ArcId": "historia-arc:exodus-sinai"
+        }
+      ],
+      "sourceReviewStatus": "EXACT_CP_DOUAY_WORDING_AND_SOURCE_SEAMS_TRIAGED_NOT_ORAL_SIGNOFF",
+      "oralAccepted": false,
+      "publicationApproved": false
+    },
+    {
+      "movementId": "HS-M11",
+      "sequence": 11,
+      "title": "Israel enters the promised land",
+      "selectedScriptureBeats": [
+        {
+          "beatId": "H24-03",
+          "references": [
+            "Deuteronomy 34:1–7",
+            "Deuteronomy 34:9–12"
+          ]
+        },
+        {
+          "beatId": "H25-01",
+          "references": [
+            "Joshua 3:7–8",
+            "Joshua 3:13–17"
+          ]
+        },
+        {
+          "beatId": "H26-01",
+          "references": [
+            "Judges 2:6–12",
+            "Judges 2:16–19"
+          ]
+        }
+      ],
+      "sourceBridgeCandidates": [],
+      "sceneCitationLinks": [
+        {
+          "sceneKey": "biblical:scene:moses:055",
+          "reference": "Deuteronomy 34:1–8",
+          "citationRelation": "SELECTED_PASSAGE_CONTAINED_IN_SCENE_OR_EVENT",
+          "sourceSceneAtlasMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY"
+        },
+        {
+          "sceneKey": "biblical:scene:moses:056",
+          "reference": "Joshua 3:1–17",
+          "citationRelation": "SELECTED_PASSAGE_CONTAINED_IN_SCENE_OR_EVENT",
+          "sourceSceneAtlasMatchStatus": "EXACT_REFERENCE"
+        }
+      ],
+      "p0AtlasCitationLinks": [
+        {
+          "eventKey": "biblical:passage:deuteronomy-34-1-6",
+          "citationRelation": "SCENE_OR_EVENT_CONTAINED_IN_SELECTED_PASSAGE",
+          "originalAtlasReference": "Deuteronomy 34:1–6",
+          "p0ArcId": "historia-arc:land-first-kings"
+        },
+        {
+          "eventKey": "biblical:passage:joshua-3-1-17",
+          "citationRelation": "SELECTED_PASSAGE_CONTAINED_IN_SCENE_OR_EVENT",
+          "originalAtlasReference": "Joshua 3:1–17",
+          "p0ArcId": "historia-arc:land-first-kings"
+        }
+      ],
+      "sourceReviewStatus": "EXACT_CP_DOUAY_WORDING_AND_SOURCE_SEAMS_TRIAGED_NOT_ORAL_SIGNOFF",
+      "oralAccepted": false,
+      "publicationApproved": false
+    },
+    {
+      "movementId": "HS-M12",
+      "sequence": 12,
+      "title": "From Ruth to Samuel and Saul",
+      "selectedScriptureBeats": [
+        {
+          "beatId": "H28-04",
+          "references": [
+            "Ruth 4:13",
+            "Ruth 4:17–22"
+          ]
+        },
+        {
+          "beatId": "H29-03",
+          "references": [
+            "1Samuel 8:4–8",
+            "1Samuel 8:19–22"
+          ]
+        },
+        {
+          "beatId": "H29-04",
+          "references": [
+            "1Samuel 10:1–8"
+          ]
+        }
+      ],
+      "sourceBridgeCandidates": [],
+      "sceneCitationLinks": [],
+      "p0AtlasCitationLinks": [
+        {
+          "eventKey": "biblical:passage:1samuel-10-1-8",
+          "citationRelation": "IDENTICAL_CITATION_SPAN",
+          "originalAtlasReference": "1Samuel 10:1–8",
+          "p0ArcId": "historia-arc:land-first-kings"
+        }
+      ],
+      "sourceReviewStatus": "EXACT_CP_DOUAY_WORDING_AND_SOURCE_SEAMS_TRIAGED_NOT_ORAL_SIGNOFF",
+      "oralAccepted": false,
+      "publicationApproved": false
+    },
+    {
+      "movementId": "HS-M13",
+      "sequence": 13,
+      "title": "David and the enduring royal promise",
+      "selectedScriptureBeats": [
+        {
+          "beatId": "H30-01",
+          "references": [
+            "1Samuel 16:1–13"
+          ]
+        },
+        {
+          "beatId": "H32-01",
+          "references": [
+            "2Samuel 2:1–4"
+          ]
+        },
+        {
+          "beatId": "H32-02",
+          "references": [
+            "2Samuel 5:1–10"
+          ]
+        },
+        {
+          "beatId": "H32-03",
+          "references": [
+            "2Samuel 6:12–15",
+            "2Samuel 6:17–19"
+          ]
+        },
+        {
+          "beatId": "H33-01",
+          "references": [
+            "2Samuel 7:1–16"
+          ]
+        }
+      ],
+      "sourceBridgeCandidates": [],
+      "sceneCitationLinks": [],
+      "p0AtlasCitationLinks": [
+        {
+          "eventKey": "biblical:passage:2samuel-2-1-4",
+          "citationRelation": "IDENTICAL_CITATION_SPAN",
+          "originalAtlasReference": "2Samuel 2:1–4",
+          "p0ArcId": "historia-arc:davidic-kingdom"
+        },
+        {
+          "eventKey": "biblical:passage:2samuel-5-6-10",
+          "citationRelation": "SCENE_OR_EVENT_CONTAINED_IN_SELECTED_PASSAGE",
+          "originalAtlasReference": "2Samuel 5:6–10",
+          "p0ArcId": "historia-arc:davidic-kingdom"
+        }
+      ],
+      "sourceReviewStatus": "EXACT_CP_DOUAY_WORDING_AND_SOURCE_SEAMS_TRIAGED_NOT_ORAL_SIGNOFF",
+      "oralAccepted": false,
+      "publicationApproved": false
+    },
+    {
+      "movementId": "HS-M14",
+      "sequence": 14,
+      "title": "The Temple and the divided kingdom",
+      "selectedScriptureBeats": [
+        {
+          "beatId": "H35-02",
+          "references": [
+            "1Kings 6:1"
+          ]
+        },
+        {
+          "beatId": "H35-03",
+          "references": [
+            "1Kings 8:1–6",
+            "1Kings 8:10–13",
+            "1Kings 8:22–23",
+            "1Kings 8:27–30"
+          ]
+        },
+        {
+          "beatId": "H36-01",
+          "references": [
+            "1Kings 11:29–32"
+          ]
+        },
+        {
+          "beatId": "H36-02",
+          "references": [
+            "1Kings 12:1–5",
+            "1Kings 12:13–20"
+          ]
+        }
+      ],
+      "sourceBridgeCandidates": [],
+      "sceneCitationLinks": [],
+      "p0AtlasCitationLinks": [
+        {
+          "eventKey": "biblical:passage:1kings-8-1-66",
+          "citationRelation": "SELECTED_PASSAGE_CONTAINED_IN_SCENE_OR_EVENT",
+          "originalAtlasReference": "1Kings 8:1–66",
+          "p0ArcId": "historia-arc:davidic-kingdom"
+        },
+        {
+          "eventKey": "biblical:passage:1kings-12-1-24",
+          "citationRelation": "SELECTED_PASSAGE_CONTAINED_IN_SCENE_OR_EVENT",
+          "originalAtlasReference": "1Kings 12:1–24",
+          "p0ArcId": "historia-arc:davidic-kingdom"
+        }
+      ],
+      "sourceReviewStatus": "EXACT_CP_DOUAY_WORDING_AND_SOURCE_SEAMS_TRIAGED_NOT_ORAL_SIGNOFF",
+      "oralAccepted": false,
+      "publicationApproved": false
+    },
+    {
+      "movementId": "HS-M15",
+      "sequence": 15,
+      "title": "Prophetic warning and Israel's judgment",
+      "selectedScriptureBeats": [
+        {
+          "beatId": "H38-02",
+          "references": [
+            "Isaiah 7:10–17"
+          ]
+        },
+        {
+          "beatId": "H38-03",
+          "references": [
+            "Isaiah 9:1–6"
+          ]
+        },
+        {
+          "beatId": "H38-04",
+          "references": [
+            "Isaiah 11:1–10"
+          ]
+        },
+        {
+          "beatId": "H38-05",
+          "references": [
+            "Isaiah 52:13–15",
+            "Isaiah 53:1–12"
+          ]
+        },
+        {
+          "beatId": "H39-01",
+          "references": [
+            "2Kings 17:3–8",
+            "2Kings 17:13–18"
+          ]
+        }
+      ],
+      "sourceBridgeCandidates": [],
+      "sceneCitationLinks": [],
+      "p0AtlasCitationLinks": [
+        {
+          "eventKey": "biblical:passage:2kings-17-1-18",
+          "citationRelation": "SELECTED_PASSAGE_CONTAINED_IN_SCENE_OR_EVENT",
+          "originalAtlasReference": "2Kings 17:1–18",
+          "p0ArcId": "historia-arc:prophets-exile-return"
+        }
+      ],
+      "sourceReviewStatus": "EXACT_CP_DOUAY_WORDING_AND_SOURCE_SEAMS_TRIAGED_NOT_ORAL_SIGNOFF",
+      "oralAccepted": false,
+      "publicationApproved": false
+    },
+    {
+      "movementId": "HS-M16",
+      "sequence": 16,
+      "title": "Judah's fall and the promise of a New Covenant",
+      "selectedScriptureBeats": [
+        {
+          "beatId": "H40-01",
+          "references": [
+            "Jeremiah 31:31–34"
+          ]
+        },
+        {
+          "beatId": "H41-01",
+          "references": [
+            "2Kings 25:1–5",
+            "2Kings 25:8–12"
+          ]
+        },
+        {
+          "beatId": "H41-02",
+          "references": [
+            "2Kings 25:18–21"
+          ]
+        }
+      ],
+      "sourceBridgeCandidates": [],
+      "sceneCitationLinks": [],
+      "p0AtlasCitationLinks": [
+        {
+          "eventKey": "biblical:passage:2kings-25-1-12",
+          "citationRelation": "SELECTED_PASSAGE_CONTAINED_IN_SCENE_OR_EVENT",
+          "originalAtlasReference": "2Kings 25:1–12",
+          "p0ArcId": "historia-arc:prophets-exile-return"
+        },
+        {
+          "eventKey": "biblical:passage:2kings-25-8-12",
+          "citationRelation": "IDENTICAL_CITATION_SPAN",
+          "originalAtlasReference": "2Kings 25:8–12",
+          "p0ArcId": "historia-arc:prophets-exile-return"
+        }
+      ],
+      "sourceReviewStatus": "EXACT_CP_DOUAY_WORDING_AND_SOURCE_SEAMS_TRIAGED_NOT_ORAL_SIGNOFF",
+      "oralAccepted": false,
+      "publicationApproved": false
+    },
+    {
+      "movementId": "HS-M17",
+      "sequence": 17,
+      "title": "Restoration and the expectation of Christ",
+      "selectedScriptureBeats": [
+        {
+          "beatId": "H43-01",
+          "references": [
+            "Ezra 1:1–6"
+          ]
+        },
+        {
+          "beatId": "H43-02",
+          "references": [
+            "Ezra 6:14–16",
+            "Ezra 6:19–22"
+          ]
+        }
+      ],
+      "sourceBridgeCandidates": [],
+      "sceneCitationLinks": [],
+      "p0AtlasCitationLinks": [
+        {
+          "eventKey": "biblical:passage:ezra-1-1-11",
+          "citationRelation": "SELECTED_PASSAGE_CONTAINED_IN_SCENE_OR_EVENT",
+          "originalAtlasReference": "Ezra 1:1–11",
+          "p0ArcId": "historia-arc:prophets-exile-return"
+        },
+        {
+          "eventKey": "biblical:passage:ezra-6-13-22",
+          "citationRelation": "SELECTED_PASSAGE_CONTAINED_IN_SCENE_OR_EVENT",
+          "originalAtlasReference": "Ezra 6:13–22",
+          "p0ArcId": "historia-arc:prophets-exile-return"
+        }
+      ],
+      "sourceReviewStatus": "EXACT_CP_DOUAY_WORDING_AND_SOURCE_SEAMS_TRIAGED_NOT_ORAL_SIGNOFF",
+      "oralAccepted": false,
+      "publicationApproved": false
+    },
+    {
+      "movementId": "HS-M18",
+      "sequence": 18,
+      "title": "The generations and the Annunciation",
+      "selectedScriptureBeats": [
+        {
+          "beatId": "H46-01",
+          "references": [
+            "Luke 1:26–38"
+          ]
+        }
+      ],
+      "sourceBridgeCandidates": [],
+      "sceneCitationLinks": [
+        {
+          "sceneKey": "biblical:scene:christ:057",
+          "reference": "Luke 1:26–38",
+          "citationRelation": "IDENTICAL_CITATION_SPAN",
+          "sourceSceneAtlasMatchStatus": "EXACT_REFERENCE"
+        }
+      ],
+      "p0AtlasCitationLinks": [
+        {
+          "eventKey": "biblical:event:nazareth-e1",
+          "citationRelation": "IDENTICAL_CITATION_SPAN",
+          "originalAtlasReference": "Luke 1:26–38",
+          "p0ArcId": "historia-arc:incarnation"
+        }
+      ],
+      "sourceReviewStatus": "EXACT_CP_DOUAY_WORDING_AND_SOURCE_SEAMS_TRIAGED_NOT_ORAL_SIGNOFF",
+      "oralAccepted": false,
+      "publicationApproved": false
+    },
+    {
+      "movementId": "HS-M19",
+      "sequence": 19,
+      "title": "The birth of the Saviour",
+      "selectedScriptureBeats": [
+        {
+          "beatId": "H47-02",
+          "references": [
+            "Matthew 1:18–25"
+          ]
+        },
+        {
+          "beatId": "H48-01",
+          "references": [
+            "Luke 2:1–20"
+          ]
+        },
+        {
+          "beatId": "H49-02",
+          "references": [
+            "Matthew 2:1–12"
+          ]
+        }
+      ],
+      "sourceBridgeCandidates": [],
+      "sceneCitationLinks": [
+        {
+          "sceneKey": "biblical:scene:christ:058",
+          "reference": "Matthew 1:18–25",
+          "citationRelation": "IDENTICAL_CITATION_SPAN",
+          "sourceSceneAtlasMatchStatus": "EXACT_REFERENCE"
+        },
+        {
+          "sceneKey": "biblical:scene:christ:061",
+          "reference": "Luke 2:1–20",
+          "citationRelation": "IDENTICAL_CITATION_SPAN",
+          "sourceSceneAtlasMatchStatus": "EXACT_REFERENCE"
+        },
+        {
+          "sceneKey": "biblical:scene:christ:063",
+          "reference": "Matthew 2:1–12",
+          "citationRelation": "IDENTICAL_CITATION_SPAN",
+          "sourceSceneAtlasMatchStatus": "EXACT_REFERENCE"
+        }
+      ],
+      "p0AtlasCitationLinks": [
+        {
+          "eventKey": "biblical:event:nazareth-additional-001",
+          "citationRelation": "IDENTICAL_CITATION_SPAN",
+          "originalAtlasReference": "Matthew 1:18–25",
+          "p0ArcId": "historia-arc:incarnation"
+        },
+        {
+          "eventKey": "biblical:event:bethlehem-e1",
+          "citationRelation": "IDENTICAL_CITATION_SPAN",
+          "originalAtlasReference": "Luke 2:1–20",
+          "p0ArcId": "historia-arc:incarnation"
+        },
+        {
+          "eventKey": "biblical:event:bethlehem-e2",
+          "citationRelation": "IDENTICAL_CITATION_SPAN",
+          "originalAtlasReference": "Matthew 2:1–12",
+          "p0ArcId": "historia-arc:incarnation"
+        }
+      ],
+      "sourceReviewStatus": "EXACT_CP_DOUAY_WORDING_AND_SOURCE_SEAMS_TRIAGED_NOT_ORAL_SIGNOFF",
+      "oralAccepted": false,
+      "publicationApproved": false
+    },
+    {
+      "movementId": "HS-M20",
+      "sequence": 20,
+      "title": "The Forerunner and first disciples",
+      "selectedScriptureBeats": [
+        {
+          "beatId": "H51-01",
+          "references": [
+            "Matthew 3:1–6",
+            "Matthew 3:11–17"
+          ]
+        },
+        {
+          "beatId": "H51-03",
+          "references": [
+            "Mark 1:14–15"
+          ]
+        },
+        {
+          "beatId": "H52-01",
+          "references": [
+            "John 1:35–51"
+          ]
+        }
+      ],
+      "sourceBridgeCandidates": [],
+      "sceneCitationLinks": [
+        {
+          "sceneKey": "biblical:scene:christ:069",
+          "reference": "Matthew 3:13–17",
+          "citationRelation": "SCENE_OR_EVENT_CONTAINED_IN_SELECTED_PASSAGE",
+          "sourceSceneAtlasMatchStatus": "EXACT_REFERENCE"
+        },
+        {
+          "sceneKey": "biblical:scene:christ:072",
+          "reference": "John 1:35–51",
+          "citationRelation": "IDENTICAL_CITATION_SPAN",
+          "sourceSceneAtlasMatchStatus": "EXACT_REFERENCE"
+        }
+      ],
+      "p0AtlasCitationLinks": [
+        {
+          "eventKey": "biblical:event:jordan-baptism-e1",
+          "citationRelation": "SCENE_OR_EVENT_CONTAINED_IN_SELECTED_PASSAGE",
+          "originalAtlasReference": "Matthew 3:13–17",
+          "p0ArcId": "historia-arc:public-ministry"
+        },
+        {
+          "eventKey": "biblical:event:jordan-east-bank-additional-008",
+          "citationRelation": "IDENTICAL_CITATION_SPAN",
+          "originalAtlasReference": "John 1:35–51",
+          "p0ArcId": "historia-arc:public-ministry"
+        }
+      ],
+      "sourceReviewStatus": "NO_MOVEMENT_LEVEL_LITERARY_DESK_PASS",
+      "oralAccepted": false,
+      "publicationApproved": false
+    },
+    {
+      "movementId": "HS-M21",
+      "sequence": 21,
+      "title": "The Kingdom in Christ's teaching and signs",
+      "selectedScriptureBeats": [
+        {
+          "beatId": "H53-01",
+          "references": [
+            "Matthew 5:1–12"
+          ]
+        },
+        {
+          "beatId": "H53-02",
+          "references": [
+            "Matthew 6:9–15"
+          ]
+        }
+      ],
+      "sourceBridgeCandidates": [],
+      "sceneCitationLinks": [
+        {
+          "sceneKey": "biblical:scene:christ:085",
+          "reference": "Matthew 5:1–12",
+          "citationRelation": "IDENTICAL_CITATION_SPAN",
+          "sourceSceneAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH"
+        },
+        {
+          "sceneKey": "biblical:scene:christ:086",
+          "reference": "Matthew 6:5–15",
+          "citationRelation": "SELECTED_PASSAGE_CONTAINED_IN_SCENE_OR_EVENT",
+          "sourceSceneAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH"
+        }
+      ],
+      "p0AtlasCitationLinks": [],
+      "sourceReviewStatus": "NO_MOVEMENT_LEVEL_LITERARY_DESK_PASS",
+      "oralAccepted": false,
+      "publicationApproved": false
+    },
+    {
+      "movementId": "HS-M22",
+      "sequence": 22,
+      "title": "Christ the Bread of Life",
+      "selectedScriptureBeats": [
+        {
+          "beatId": "H56-02",
+          "references": [
+            "John 6:26–35",
+            "John 6:47–59"
+          ]
+        }
+      ],
+      "sourceBridgeCandidates": [],
+      "sceneCitationLinks": [
+        {
+          "sceneKey": "biblical:scene:christ:097",
+          "reference": "John 6:22–59",
+          "citationRelation": "SELECTED_PASSAGE_CONTAINED_IN_SCENE_OR_EVENT",
+          "sourceSceneAtlasMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY"
+        }
+      ],
+      "p0AtlasCitationLinks": [
+        {
+          "eventKey": "biblical:event:capernaum-e3",
+          "citationRelation": "SELECTED_PASSAGE_CONTAINED_IN_SCENE_OR_EVENT",
+          "originalAtlasReference": "John 6:24–59",
+          "p0ArcId": "historia-arc:public-ministry"
+        }
+      ],
+      "sourceReviewStatus": "NO_MOVEMENT_LEVEL_LITERARY_DESK_PASS",
+      "oralAccepted": false,
+      "publicationApproved": false
+    },
+    {
+      "movementId": "HS-M23",
+      "sequence": 23,
+      "title": "Peter's confession and the Transfiguration",
+      "selectedScriptureBeats": [
+        {
+          "beatId": "H57-01",
+          "references": [
+            "Matthew 16:13–28"
+          ]
+        },
+        {
+          "beatId": "H57-02",
+          "references": [
+            "Matthew 17:1–9"
+          ]
+        }
+      ],
+      "sourceBridgeCandidates": [],
+      "sceneCitationLinks": [
+        {
+          "sceneKey": "biblical:scene:christ:102",
+          "reference": "Matthew 16:13–20",
+          "citationRelation": "SCENE_OR_EVENT_CONTAINED_IN_SELECTED_PASSAGE",
+          "sourceSceneAtlasMatchStatus": "EXACT_REFERENCE"
+        },
+        {
+          "sceneKey": "biblical:scene:christ:103",
+          "reference": "Matthew 16:21–28",
+          "citationRelation": "SCENE_OR_EVENT_CONTAINED_IN_SELECTED_PASSAGE",
+          "sourceSceneAtlasMatchStatus": "EXACT_REFERENCE"
+        },
+        {
+          "sceneKey": "biblical:scene:christ:104",
+          "reference": "Matthew 17:1–9",
+          "citationRelation": "IDENTICAL_CITATION_SPAN",
+          "sourceSceneAtlasMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY"
+        }
+      ],
+      "p0AtlasCitationLinks": [
+        {
+          "eventKey": "biblical:event:caesarea-philippi-e1",
+          "citationRelation": "SCENE_OR_EVENT_CONTAINED_IN_SELECTED_PASSAGE",
+          "originalAtlasReference": "Matthew 16:13–20",
+          "p0ArcId": "historia-arc:public-ministry"
+        },
+        {
+          "eventKey": "biblical:event:caesarea-philippi-additional-044",
+          "citationRelation": "SCENE_OR_EVENT_CONTAINED_IN_SELECTED_PASSAGE",
+          "originalAtlasReference": "Matthew 16:21–28",
+          "p0ArcId": "historia-arc:public-ministry"
+        },
+        {
+          "eventKey": "biblical:event:transfiguration-e1",
+          "citationRelation": "SCENE_OR_EVENT_CONTAINED_IN_SELECTED_PASSAGE",
+          "originalAtlasReference": "Matthew 17:1–8",
+          "p0ArcId": "historia-arc:public-ministry"
+        },
+        {
+          "eventKey": "biblical:event:transfiguration-additional-045",
+          "citationRelation": "PARTIAL_CITATION_OVERLAP_REVIEW_ONLY",
+          "originalAtlasReference": "Matthew 17:9–13",
+          "p0ArcId": "historia-arc:public-ministry"
+        }
+      ],
+      "sourceReviewStatus": "NO_MOVEMENT_LEVEL_LITERARY_DESK_PASS",
+      "oralAccepted": false,
+      "publicationApproved": false
+    },
+    {
+      "movementId": "HS-M24",
+      "sequence": 24,
+      "title": "The approach to Jerusalem",
+      "selectedScriptureBeats": [
+        {
+          "beatId": "H58-04",
+          "references": [
+            "John 11:1–7",
+            "John 11:14–17",
+            "John 11:20–27",
+            "John 11:32–35",
+            "John 11:38–44"
+          ]
+        }
+      ],
+      "sourceBridgeCandidates": [
+        {
+          "candidateId": "HS-CF-05",
+          "reference": "John 11:45–53",
+          "approval": "HOLD"
+        }
+      ],
+      "sceneCitationLinks": [
+        {
+          "sceneKey": "biblical:scene:christ:113",
+          "reference": "John 11:1–44",
+          "citationRelation": "SELECTED_PASSAGE_CONTAINED_IN_SCENE_OR_EVENT",
+          "sourceSceneAtlasMatchStatus": "EXACT_REFERENCE"
+        }
+      ],
+      "p0AtlasCitationLinks": [
+        {
+          "eventKey": "biblical:event:bethany-e1",
+          "citationRelation": "SELECTED_PASSAGE_CONTAINED_IN_SCENE_OR_EVENT",
+          "originalAtlasReference": "John 11:1–44",
+          "p0ArcId": "historia-arc:public-ministry"
+        }
+      ],
+      "sourceReviewStatus": "NO_MOVEMENT_LEVEL_LITERARY_DESK_PASS",
+      "oralAccepted": false,
+      "publicationApproved": false
+    },
+    {
+      "movementId": "HS-M25",
+      "sequence": 25,
+      "title": "The King's entry into Jerusalem",
+      "selectedScriptureBeats": [
+        {
+          "beatId": "H59-01",
+          "references": [
+            "Matthew 21:1–11"
+          ]
+        }
+      ],
+      "sourceBridgeCandidates": [],
+      "sceneCitationLinks": [
+        {
+          "sceneKey": "biblical:scene:christ:115",
+          "reference": "Matthew 21:1–11",
+          "citationRelation": "IDENTICAL_CITATION_SPAN",
+          "sourceSceneAtlasMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY"
+        }
+      ],
+      "p0AtlasCitationLinks": [
+        {
+          "eventKey": "biblical:event:bethphage-e1",
+          "citationRelation": "SCENE_OR_EVENT_CONTAINED_IN_SELECTED_PASSAGE",
+          "originalAtlasReference": "Matthew 21:1–7",
+          "p0ArcId": "historia-arc:paschal-mystery"
+        }
+      ],
+      "sourceReviewStatus": "NO_MOVEMENT_LEVEL_LITERARY_DESK_PASS",
+      "oralAccepted": false,
+      "publicationApproved": false
+    },
+    {
+      "movementId": "HS-M26",
+      "sequence": 26,
+      "title": "The Last Supper and Christ's final teaching",
+      "selectedScriptureBeats": [
+        {
+          "beatId": "H60-01",
+          "references": [
+            "Luke 22:7–20"
+          ]
+        }
+      ],
+      "sourceBridgeCandidates": [
+        {
+          "candidateId": "HS-CF-09",
+          "reference": "John 14:16–17",
+          "approval": "HOLD"
+        }
+      ],
+      "sceneCitationLinks": [
+        {
+          "sceneKey": "biblical:scene:christ:119",
+          "reference": "Luke 22:14–20",
+          "citationRelation": "SCENE_OR_EVENT_CONTAINED_IN_SELECTED_PASSAGE",
+          "sourceSceneAtlasMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY"
+        }
+      ],
+      "p0AtlasCitationLinks": [
+        {
+          "eventKey": "biblical:event:cenacle-e1",
+          "citationRelation": "IDENTICAL_CITATION_SPAN",
+          "originalAtlasReference": "Luke 22:7–20",
+          "p0ArcId": "historia-arc:paschal-mystery"
+        }
+      ],
+      "sourceReviewStatus": "NO_MOVEMENT_LEVEL_LITERARY_DESK_PASS",
+      "oralAccepted": false,
+      "publicationApproved": false
+    },
+    {
+      "movementId": "HS-M27",
+      "sequence": 27,
+      "title": "Gethsemane, betrayal and trial",
+      "selectedScriptureBeats": [
+        {
+          "beatId": "H62-01",
+          "references": [
+            "Matthew 26:36–46"
+          ]
+        },
+        {
+          "beatId": "H62-02",
+          "references": [
+            "Matthew 26:47–56"
+          ]
+        },
+        {
+          "beatId": "H63-01",
+          "references": [
+            "Matthew 26:57–75"
+          ]
+        },
+        {
+          "beatId": "H63-02",
+          "references": [
+            "Matthew 27:1–2",
+            "Matthew 27:11–26"
+          ]
+        }
+      ],
+      "sourceBridgeCandidates": [],
+      "sceneCitationLinks": [
+        {
+          "sceneKey": "biblical:scene:christ:123",
+          "reference": "Matthew 26:36–46",
+          "citationRelation": "IDENTICAL_CITATION_SPAN",
+          "sourceSceneAtlasMatchStatus": "EXACT_REFERENCE"
+        },
+        {
+          "sceneKey": "biblical:scene:christ:124",
+          "reference": "Matthew 26:47–56",
+          "citationRelation": "IDENTICAL_CITATION_SPAN",
+          "sourceSceneAtlasMatchStatus": "EXACT_REFERENCE"
+        }
+      ],
+      "p0AtlasCitationLinks": [
+        {
+          "eventKey": "biblical:event:gethsemane-e1",
+          "citationRelation": "IDENTICAL_CITATION_SPAN",
+          "originalAtlasReference": "Matthew 26:36–46",
+          "p0ArcId": "historia-arc:paschal-mystery"
+        },
+        {
+          "eventKey": "biblical:event:gethsemane-e2",
+          "citationRelation": "IDENTICAL_CITATION_SPAN",
+          "originalAtlasReference": "Matthew 26:47–56",
+          "p0ArcId": "historia-arc:paschal-mystery"
+        },
+        {
+          "eventKey": "biblical:event:jerusalem-trial-e2",
+          "citationRelation": "IDENTICAL_CITATION_SPAN",
+          "originalAtlasReference": "Matthew 27:11–26",
+          "p0ArcId": "historia-arc:paschal-mystery"
+        }
+      ],
+      "sourceReviewStatus": "NO_MOVEMENT_LEVEL_LITERARY_DESK_PASS",
+      "oralAccepted": false,
+      "publicationApproved": false
+    },
+    {
+      "movementId": "HS-M28",
+      "sequence": 28,
+      "title": "The sacrifice on Calvary",
+      "selectedScriptureBeats": [
+        {
+          "beatId": "H64-01",
+          "references": [
+            "John 19:17–30"
+          ]
+        }
+      ],
+      "sourceBridgeCandidates": [
+        {
+          "candidateId": "HS-CF-06",
+          "reference": "John 19:38–42",
+          "approval": "HOLD"
+        }
+      ],
+      "sceneCitationLinks": [
+        {
+          "sceneKey": "biblical:scene:christ:129",
+          "reference": "John 19:17–30",
+          "citationRelation": "IDENTICAL_CITATION_SPAN",
+          "sourceSceneAtlasMatchStatus": "EXACT_REFERENCE"
+        }
+      ],
+      "p0AtlasCitationLinks": [
+        {
+          "eventKey": "biblical:event:golgotha-e2",
+          "citationRelation": "IDENTICAL_CITATION_SPAN",
+          "originalAtlasReference": "John 19:17–30",
+          "p0ArcId": "historia-arc:paschal-mystery"
+        }
+      ],
+      "sourceReviewStatus": "NO_MOVEMENT_LEVEL_LITERARY_DESK_PASS",
+      "oralAccepted": false,
+      "publicationApproved": false
+    },
+    {
+      "movementId": "HS-M29",
+      "sequence": 29,
+      "title": "The risen Lord and his witnesses",
+      "selectedScriptureBeats": [
+        {
+          "beatId": "H65-01",
+          "references": [
+            "John 20:1–3",
+            "John 20:6–9",
+            "John 20:11–18"
+          ]
+        },
+        {
+          "beatId": "H65-02",
+          "references": [
+            "John 20:19–29"
+          ]
+        }
+      ],
+      "sourceBridgeCandidates": [],
+      "sceneCitationLinks": [
+        {
+          "sceneKey": "biblical:scene:christ:131",
+          "reference": "John 20:1–18",
+          "citationRelation": "SELECTED_PASSAGE_CONTAINED_IN_SCENE_OR_EVENT",
+          "sourceSceneAtlasMatchStatus": "EXACT_REFERENCE"
+        },
+        {
+          "sceneKey": "biblical:scene:christ:132",
+          "reference": "John 20:3–10",
+          "citationRelation": "SELECTED_PASSAGE_CONTAINED_IN_SCENE_OR_EVENT",
+          "sourceSceneAtlasMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY"
+        },
+        {
+          "sceneKey": "biblical:scene:christ:133",
+          "reference": "John 20:19–23",
+          "citationRelation": "SCENE_OR_EVENT_CONTAINED_IN_SELECTED_PASSAGE",
+          "sourceSceneAtlasMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY"
+        },
+        {
+          "sceneKey": "biblical:scene:christ:134",
+          "reference": "John 20:24–29",
+          "citationRelation": "SCENE_OR_EVENT_CONTAINED_IN_SELECTED_PASSAGE",
+          "sourceSceneAtlasMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY"
+        }
+      ],
+      "p0AtlasCitationLinks": [
+        {
+          "eventKey": "biblical:event:christ-tomb-e2",
+          "citationRelation": "SELECTED_PASSAGE_CONTAINED_IN_SCENE_OR_EVENT",
+          "originalAtlasReference": "John 20:1–18",
+          "p0ArcId": "historia-arc:paschal-mystery"
+        },
+        {
+          "eventKey": "biblical:event:cenacle-e3",
+          "citationRelation": "IDENTICAL_CITATION_SPAN",
+          "originalAtlasReference": "John 20:19–29",
+          "p0ArcId": "historia-arc:paschal-mystery"
+        }
+      ],
+      "sourceReviewStatus": "NO_MOVEMENT_LEVEL_LITERARY_DESK_PASS",
+      "oralAccepted": false,
+      "publicationApproved": false
+    },
+    {
+      "movementId": "HS-M30",
+      "sequence": 30,
+      "title": "The Ascension and promised mission",
+      "selectedScriptureBeats": [
+        {
+          "beatId": "H66-01",
+          "references": [
+            "Acts 1:6–12"
+          ]
+        }
+      ],
+      "sourceBridgeCandidates": [
+        {
+          "candidateId": "HS-CF-07",
+          "reference": "Acts 1:3–5",
+          "approval": "HOLD"
+        }
+      ],
+      "sceneCitationLinks": [
+        {
+          "sceneKey": "biblical:scene:christ:137",
+          "reference": "Acts 1:6–12",
+          "citationRelation": "IDENTICAL_CITATION_SPAN",
+          "sourceSceneAtlasMatchStatus": "EXACT_REFERENCE"
+        }
+      ],
+      "p0AtlasCitationLinks": [
+        {
+          "eventKey": "biblical:event:olives-e3",
+          "citationRelation": "IDENTICAL_CITATION_SPAN",
+          "originalAtlasReference": "Acts 1:6–12",
+          "p0ArcId": "historia-arc:paschal-mystery"
+        }
+      ],
+      "sourceReviewStatus": "NO_MOVEMENT_LEVEL_LITERARY_DESK_PASS",
+      "oralAccepted": false,
+      "publicationApproved": false
+    },
+    {
+      "movementId": "HS-M31",
+      "sequence": 31,
+      "title": "Pentecost and the first Church",
+      "selectedScriptureBeats": [
+        {
+          "beatId": "H67-01",
+          "references": [
+            "Acts 2:1–8",
+            "Acts 2:11–18",
+            "Acts 2:21",
+            "Acts 2:37–41"
+          ]
+        },
+        {
+          "beatId": "H68-01",
+          "references": [
+            "Acts 2:42–47"
+          ]
+        },
+        {
+          "beatId": "H68-04",
+          "references": [
+            "Acts 7:54–59"
+          ]
+        }
+      ],
+      "sourceBridgeCandidates": [
+        {
+          "candidateId": "HS-CF-08",
+          "reference": "Acts 7:51–53",
+          "approval": "HOLD"
+        }
+      ],
+      "sceneCitationLinks": [
+        {
+          "sceneKey": "biblical:scene:paul:182",
+          "reference": "Acts 2:1–41",
+          "citationRelation": "SELECTED_PASSAGE_CONTAINED_IN_SCENE_OR_EVENT",
+          "sourceSceneAtlasMatchStatus": "EXACT_REFERENCE"
+        }
+      ],
+      "p0AtlasCitationLinks": [
+        {
+          "eventKey": "biblical:passage:acts-2-1-41",
+          "citationRelation": "SELECTED_PASSAGE_CONTAINED_IN_SCENE_OR_EVENT",
+          "originalAtlasReference": "Acts 2:1–41",
+          "p0ArcId": "historia-arc:apostolic-church"
+        },
+        {
+          "eventKey": "biblical:passage:acts-7-54-60",
+          "citationRelation": "SELECTED_PASSAGE_CONTAINED_IN_SCENE_OR_EVENT",
+          "originalAtlasReference": "Acts 7:54–60",
+          "p0ArcId": "historia-arc:apostolic-church"
+        }
+      ],
+      "sourceReviewStatus": "NO_MOVEMENT_LEVEL_LITERARY_DESK_PASS",
+      "oralAccepted": false,
+      "publicationApproved": false
+    },
+    {
+      "movementId": "HS-M32",
+      "sequence": 32,
+      "title": "Saul and the Gospel to the Gentiles",
+      "selectedScriptureBeats": [
+        {
+          "beatId": "H69-01",
+          "references": [
+            "Acts 9:1–11",
+            "Acts 9:17–22"
+          ]
+        },
+        {
+          "beatId": "H70-01",
+          "references": [
+            "Acts 10:1–6",
+            "Acts 10:9–16",
+            "Acts 10:19–20",
+            "Acts 10:24",
+            "Acts 10:28–29",
+            "Acts 10:33–48"
+          ]
+        }
+      ],
+      "sourceBridgeCandidates": [],
+      "sceneCitationLinks": [
+        {
+          "sceneKey": "biblical:scene:paul:138",
+          "reference": "Acts 9:1–9",
+          "citationRelation": "SCENE_OR_EVENT_CONTAINED_IN_SELECTED_PASSAGE",
+          "sourceSceneAtlasMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY"
+        },
+        {
+          "sceneKey": "biblical:scene:paul:139",
+          "reference": "Acts 9:10–19",
+          "citationRelation": "PARTIAL_CITATION_OVERLAP_REVIEW_ONLY",
+          "sourceSceneAtlasMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY"
+        },
+        {
+          "sceneKey": "biblical:scene:paul:140",
+          "reference": "Acts 9:20–25",
+          "citationRelation": "PARTIAL_CITATION_OVERLAP_REVIEW_ONLY",
+          "sourceSceneAtlasMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY"
+        }
+      ],
+      "p0AtlasCitationLinks": [
+        {
+          "eventKey": "biblical:passage:acts-9-1-22",
+          "citationRelation": "SELECTED_PASSAGE_CONTAINED_IN_SCENE_OR_EVENT",
+          "originalAtlasReference": "Acts 9:1–22",
+          "p0ArcId": "historia-arc:apostolic-church"
+        },
+        {
+          "eventKey": "biblical:passage:acts-10-1-48",
+          "citationRelation": "SELECTED_PASSAGE_CONTAINED_IN_SCENE_OR_EVENT",
+          "originalAtlasReference": "Acts 10:1–48",
+          "p0ArcId": "historia-arc:apostolic-church"
+        }
+      ],
+      "sourceReviewStatus": "NO_MOVEMENT_LEVEL_LITERARY_DESK_PASS",
+      "oralAccepted": false,
+      "publicationApproved": false
+    },
+    {
+      "movementId": "HS-M33",
+      "sequence": 33,
+      "title": "Antioch, apostolic missions and the Council",
+      "selectedScriptureBeats": [
+        {
+          "beatId": "H71-01",
+          "references": [
+            "Acts 11:19–26"
+          ]
+        },
+        {
+          "beatId": "H71-02",
+          "references": [
+            "Acts 13:1–5"
+          ]
+        },
+        {
+          "beatId": "H72-01",
+          "references": [
+            "Acts 15:1–2",
+            "Acts 15:5–11",
+            "Acts 15:13–20",
+            "Acts 15:22–29"
+          ]
+        }
+      ],
+      "sourceBridgeCandidates": [],
+      "sceneCitationLinks": [
+        {
+          "sceneKey": "biblical:scene:paul:142",
+          "reference": "Acts 11:19–26",
+          "citationRelation": "IDENTICAL_CITATION_SPAN",
+          "sourceSceneAtlasMatchStatus": "EXACT_REFERENCE"
+        },
+        {
+          "sceneKey": "biblical:scene:paul:143",
+          "reference": "Acts 13:1–3",
+          "citationRelation": "SCENE_OR_EVENT_CONTAINED_IN_SELECTED_PASSAGE",
+          "sourceSceneAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH"
+        },
+        {
+          "sceneKey": "biblical:scene:paul:144",
+          "reference": "Acts 13:4",
+          "citationRelation": "SCENE_OR_EVENT_CONTAINED_IN_SELECTED_PASSAGE",
+          "sourceSceneAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH"
+        },
+        {
+          "sceneKey": "biblical:scene:paul:145",
+          "reference": "Acts 13:5",
+          "citationRelation": "SCENE_OR_EVENT_CONTAINED_IN_SELECTED_PASSAGE",
+          "sourceSceneAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH"
+        },
+        {
+          "sceneKey": "biblical:scene:paul:146",
+          "reference": "Acts 13:4–12",
+          "citationRelation": "PARTIAL_CITATION_OVERLAP_REVIEW_ONLY",
+          "sourceSceneAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH"
+        },
+        {
+          "sceneKey": "biblical:scene:paul:152",
+          "reference": "Acts 15:1–29",
+          "citationRelation": "SELECTED_PASSAGE_CONTAINED_IN_SCENE_OR_EVENT",
+          "sourceSceneAtlasMatchStatus": "EXACT_REFERENCE"
+        }
+      ],
+      "p0AtlasCitationLinks": [
+        {
+          "eventKey": "biblical:passage:acts-11-19-26",
+          "citationRelation": "IDENTICAL_CITATION_SPAN",
+          "originalAtlasReference": "Acts 11:19–26",
+          "p0ArcId": "historia-arc:apostolic-church"
+        },
+        {
+          "eventKey": "biblical:passage:acts-15-1-29",
+          "citationRelation": "SELECTED_PASSAGE_CONTAINED_IN_SCENE_OR_EVENT",
+          "originalAtlasReference": "Acts 15:1–29",
+          "p0ArcId": "historia-arc:apostolic-church"
+        }
+      ],
+      "sourceReviewStatus": "NO_MOVEMENT_LEVEL_LITERARY_DESK_PASS",
+      "oralAccepted": false,
+      "publicationApproved": false
+    },
+    {
+      "movementId": "HS-M34",
+      "sequence": 34,
+      "title": "The Gospel proclaimed in Rome",
+      "selectedScriptureBeats": [
+        {
+          "beatId": "H73-07",
+          "references": [
+            "Acts 28:23–31"
+          ]
+        }
+      ],
+      "sourceBridgeCandidates": [
+        {
+          "candidateId": "HS-CF-10",
+          "reference": "Acts 19:21",
+          "approval": "HOLD"
+        },
+        {
+          "candidateId": "HS-CF-11",
+          "reference": "Acts 28:16",
+          "approval": "HOLD"
+        }
+      ],
+      "sceneCitationLinks": [
+        {
+          "sceneKey": "biblical:scene:paul:180",
+          "reference": "Acts 28:16–31",
+          "citationRelation": "SELECTED_PASSAGE_CONTAINED_IN_SCENE_OR_EVENT",
+          "sourceSceneAtlasMatchStatus": "EXACT_REFERENCE"
+        }
+      ],
+      "p0AtlasCitationLinks": [
+        {
+          "eventKey": "biblical:passage:acts-28-16-31",
+          "citationRelation": "SELECTED_PASSAGE_CONTAINED_IN_SCENE_OR_EVENT",
+          "originalAtlasReference": "Acts 28:16–31",
+          "p0ArcId": "historia-arc:apostolic-church"
+        }
+      ],
+      "sourceReviewStatus": "NO_MOVEMENT_LEVEL_LITERARY_DESK_PASS",
+      "oralAccepted": false,
+      "publicationApproved": false
+    },
+    {
+      "movementId": "HS-M35",
+      "sequence": 35,
+      "title": "Christ and the Lamb in heavenly vision",
+      "selectedScriptureBeats": [
+        {
+          "beatId": "H75-02",
+          "references": [
+            "Revelation 5:1–14"
+          ]
+        }
+      ],
+      "sourceBridgeCandidates": [],
+      "sceneCitationLinks": [],
+      "p0AtlasCitationLinks": [],
+      "sourceReviewStatus": "NO_MOVEMENT_LEVEL_LITERARY_DESK_PASS",
+      "oralAccepted": false,
+      "publicationApproved": false
+    },
+    {
+      "movementId": "HS-M36",
+      "sequence": 36,
+      "title": "The final conflict and judgment",
+      "selectedScriptureBeats": [
+        {
+          "beatId": "H77-01",
+          "references": [
+            "Revelation 19:11–21"
+          ]
+        },
+        {
+          "beatId": "H77-02",
+          "references": [
+            "Revelation 20:1–15"
+          ]
+        }
+      ],
+      "sourceBridgeCandidates": [],
+      "sceneCitationLinks": [],
+      "p0AtlasCitationLinks": [],
+      "sourceReviewStatus": "NO_MOVEMENT_LEVEL_LITERARY_DESK_PASS",
+      "oralAccepted": false,
+      "publicationApproved": false
+    },
+    {
+      "movementId": "HS-M37",
+      "sequence": 37,
+      "title": "The New Creation",
+      "selectedScriptureBeats": [
+        {
+          "beatId": "H78-01",
+          "references": [
+            "Revelation 21:1–7"
+          ]
+        },
+        {
+          "beatId": "H78-02",
+          "references": [
+            "Revelation 22:1–5"
+          ]
+        }
+      ],
+      "sourceBridgeCandidates": [],
+      "sceneCitationLinks": [],
+      "p0AtlasCitationLinks": [
+        {
+          "eventKey": "biblical:passage:revelation-21-1-27",
+          "citationRelation": "SELECTED_PASSAGE_CONTAINED_IN_SCENE_OR_EVENT",
+          "originalAtlasReference": "Revelation 21:1–27",
+          "p0ArcId": "historia-arc:consummation"
+        }
+      ],
+      "sourceReviewStatus": "NO_MOVEMENT_LEVEL_LITERARY_DESK_PASS",
+      "oralAccepted": false,
+      "publicationApproved": false
+    }
+  ]
+}
