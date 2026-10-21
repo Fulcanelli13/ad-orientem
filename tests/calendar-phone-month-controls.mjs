@@ -130,7 +130,20 @@ try{
        fullPage:true,animations:"disabled"});
      await cal.locator('[data-cal-pick-date="2026-11-02"]').click();
      const dayCustom=cal.locator('.aoCalCustomsBlock [data-cal-custom-id="DEAD-001"]');
-     await dayCustom.waitFor({state:"visible",timeout:15000});
+     await dayCustom.waitFor({state:"visible",timeout:10000}).catch(async err=>{
+       console.log("CALENDAR_CUSTOM_DAY_DIAGNOSTIC",JSON.stringify(await page.evaluate(()=>{
+         const root=document.getElementById("ao-calendar-modular-root"),store=globalThis.AO_RUNTIME_V8?.store?.getState?.();
+         return {selectedDate:store?.selectedDate,resolvedDate:store?.resolution?.date,
+           resolving:store?.resolving,resolutionStatus:store?.resolution?.status,
+           calendarView:root?.dataset.aoCalendarView,rootVisible:!!root?.getClientRects().length,
+           practiceCount:root?.querySelectorAll(".aoCalCustomsBlock").length,
+           title:root?.querySelector(".aoCalV2Hero h2")?.textContent,
+           emptyText:root?.querySelector(".aoCalModEmpty")?.textContent?.trim().slice(0,350),
+           body:root?.querySelector("[data-cal-body]")?.textContent?.trim().slice(0,400)};
+       })));
+       await page.screenshot({path:resolve(output,"calendar-custom-day-diagnostic-"+lang+"-"+width+".png"),fullPage:true});
+       throw err;
+     });
      assert.equal(await cal.locator('.aoCalCustomsBlock [data-cal-custom-id="DEAD-003"]').count(),1,
        "All Souls must retain all its published day-specific customs");
      await dayCustom.locator("summary").click();
