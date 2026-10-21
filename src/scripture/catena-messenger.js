@@ -95,7 +95,7 @@ export function retrieveCatenaMessages(rows,query,{limit=3,excludeIds=null}={}){
      }
    }
    if(terms.length>1&&hay.includes(terms.join(" ")))score+=5;
-   const normalizedSource=" "+hay.replace(/[^a-z]+/g," ").replace(/\\s+/g," ").trim()+" ";
+   const normalizedSource=" "+hay.replace(/[^a-z]+/g," ").replace(/ +/g," ").trim()+" ";
    let phraseScore=0;
    for(const phrase of phrases)if(normalizedSource.includes(" "+phrase.value+" "))
     phraseScore+=phrase.points;
