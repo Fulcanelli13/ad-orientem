@@ -209,6 +209,18 @@ try{
   });
   assert.equal(wordsFocus.cue,"AO.SM.C0173",
     "pre-elevation words cue has no phone focus territory: "+JSON.stringify(wordsFocus));
+  const voiceEvidence=await page.evaluate(()=>{
+    const node=document.querySelector('.ao-rail-right [data-channel="priest-voice"]');
+    const copy=node?.querySelector('[data-role="priest-voice"]');
+    return {active:node?.dataset.active,voiceFallback:node?.dataset.voiceTextFallback,
+      text:copy?.textContent??"",display:copy?getComputedStyle(copy).display:null};
+  });
+  if(voiceEvidence.active==="true"){
+    assert.equal(voiceEvidence.voiceFallback,"true",
+      "Consecration voice tile must not rely on the unpainted icon");
+    assert.ok(voiceEvidence.display!=="none"&&voiceEvidence.text.trim()!=="—",
+      "Consecration words lost the priest's audible/silent source cue");
+  }
   assert.equal(await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getNativeEventState()?.bell??null),null,
     "Host elevation bell fires on the words cue before the action cue");
 
