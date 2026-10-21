@@ -126,6 +126,31 @@ The 42 possible distinct practices are a **research shortlist**, not a count of 
 
 See `first-pass-260-reconciliation.v1.json` and the three chapter-grouped `identity-triage` files. Every row keeps its original Weiser locator, geography, existing priority and evidence status.
 
+## Candidate source and bilingual editorial closure — 15 of 42
+
+The previously undifferentiated **42 possible distinct customs** now have a single `candidate-source-decision-board.v1.json` with independent source status, cross-module identity links, provisional date context and editorial state. These 42 observations are **not 42 new canonical customs**.
+
+| Review population | Count |
+|---|---:|
+| Potential distinct source observations | 42 |
+| With bounded independent-source evidence and EN/FR editorial drafts | **15** |
+| Still requiring adequate independent evidence | **27** |
+| Independently documented source witnesses across both batches | 27 |
+| Newly published or canonical records | **0** |
+
+Nine additional histories, meanings, practice descriptions and cautions (English/French) are in `independent-sources-batch02.v1.json`. The six previously corroborated customs also now have complete bilingual drafts, and `independent-sources-batch01.v1.json` has corrected URLs and narrowed source claims.
+
+Editorial distinctions now explicit:
+
+- Austrian Marian-image relay and dramatic Herbergsuche are related local Advent practices, **not** automatically merged or equated with Mexican Las Posadas.
+- Polish kolędnicy and a travelling szopka puppet theatre can overlap, but the UNESCO **Kraków architectural szopka craft is a separate subject**.
+- Ukrainian didukh is witnessed within Ukrainian Catholic/ethnographic contexts, not universally prescribed in the Latin rite; ancestral-spirit interpretations are treated as folklore, not doctrine.
+- German Advent picture calendars and Acadian Mi-Carême mask visits are cross-confessional or cultural histories, not 1962 Roman liturgical practices.
+- The Provençal pain calendal, Spanish Magi gifts, Tivoli Inchinata, Sassari Faradda and Bavarian Frauendreißiger have independently bounded geography and date contexts.
+- Local Marian procession, household custom and priestly blessing remain distinct actions; source-based dates never trigger events automatically.
+
+**Next gate:** review the 27 without sufficient independent corroboration, and adjudicate the 15 source-backed customs as distinct identities, variants of existing customs or contextual heritage before allocating canonical IDs or publishing.
+
 ## Normalized calendar associations — all 42 identities
 
 `normalized-temporal-context.v0.json` now assigns **30 date-, feast-, month- or season-associated** customs and **12 local, household, personal or historical/undated** occasions. The 30 include the four provisional customs; the older 38-record projection was 26 seasonal/year and 12 Catholic Life.
