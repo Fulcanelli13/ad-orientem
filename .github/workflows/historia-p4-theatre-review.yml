@@ -1,0 +1,43 @@
+name: Historia Salutis P4 research theatre
+on:
+  push:
+    branches:
+      - research/historia-p4-continuity-theatre-20261021
+    paths:
+      - "labs/historia-salutis-theatre-p4.html"
+      - "data/research/historia-p4-*"
+      - "tests/historia-p4-*"
+      - ".github/workflows/historia-p4-theatre-review.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node --check tests/historia-p4-theatre-citation-contract.mjs
+      - run: node --check tests/historia-p4-theatre-phone.mjs
+      - run: node tests/historia-p4-theatre-citation-contract.mjs
+  browser:
+    needs: source
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - run: node tests/historia-p4-theatre-phone.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: historia-p4-theatre-browser-review
+          path: test-output/historia-theatre-p4/*.png
+          if-no-files-found: warn
