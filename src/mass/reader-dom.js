@@ -891,7 +891,7 @@ button.ao-schola-control{cursor:pointer}
 .ao-rail-left .ao-rail-item[data-channel="posture"][data-active="true"]{display:grid!important}
 .ao-reader-shell[data-mode="LIVE"][data-objective-context="true"]
 .ao-rail-left .ao-rail-item[data-channel="posture"]:has(.ao-icon-mask[hidden]) .ao-rail-copy{
-  display:block!important;max-width:49px;font:600 8px/1.2 var(--ao-font-ui,system-ui,sans-serif);
+  display:block!important;max-width:49px;font:600 10px/1.2 var(--ao-font-ui,system-ui,sans-serif);
   color:#e9dfcb;text-align:center;overflow-wrap:anywhere
 }
 
@@ -3317,7 +3317,7 @@ export function createReaderDomAdapter({
     }
 
     setChannel(root,"posture",current.posture);
-    setText(root,"posture-left",current.posture);
+    setText(root,"posture-left",textValue(current.posture));
     // Canonical R17 cue projection already distinguishes a true posture
     // transition from a repeated source marker (e.g. Collect STAND after
     // Gloria STAND). The DOM only guards against a conflicting local profile;
