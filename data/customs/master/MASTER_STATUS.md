@@ -108,9 +108,27 @@
 | 27 | 35 | 18 |
 | 28 | 27 | 11 |
 
+## The 260-observation first-pass review
+
+**All 260 previously lacking a 54-card editorial owner decision now have an explicit provisional disposition.** This does not certify the practices as distinct customs or validate their historical claims.
+
+| Editorial first-pass disposition | Observations |
+|---|---:|
+| Potential distinct custom — independent source and duplicate-identity gate | 42 |
+| Link to an existing canonical/provisional identity for review | 41 |
+| Other module's responsibility (Calendar, Mass, Saints, Pray, Shrines, Learn) | 56 |
+| Regional variant or related practice, not yet merged | 39 |
+| Historical, cultural or folklore reference only | 59 |
+| Source or ministerial-ritual hold | 23 |
+| **Total** | **260** |
+
+The 42 possible distinct practices are a **research shortlist**, not a count of new customs. Fifteen currently lack an exact independent match in P1 research, fourteen have only partial/indirect corroboration, and thirteen have not received the P1 source gate. None has been published. The 23 further source/ritual holds are a separate queue; they are not presumed false, but cannot support pastoral instructions.
+
+See `first-pass-260-reconciliation.v1.json` and the three chapter-grouped `identity-triage` files. Every row keeps its original Weiser locator, geography, existing priority and evidence status.
+
 ## Editorial decisions that remain open
 
-1. **Adjudicate the 260 not-yet-assigned identity/variant observations** while preserving the 26 already routed to other-module content, regional history or ritual/source holds. Start with the explicit P0/P1 entries and families where duplication or ministerial-rite confusion is likely. Resolve to an existing custom, a distinct provisional custom, another owner, regional context, or justified hold.
+1. **Source-adjudicate the 42 possible distinct practices** and **the 23 source/ritual holds**. Reconcile the 41 proposed existing identity matches, verify regional versus religious scope of the 39 variants, and keep cultural/historical references separate. All 260 have a provisional disposition; source and final identity review remains open. Resolve to an existing custom, a distinct provisional custom, another owner, regional context, or justified hold.
 2. **Separate dates rigorously:** fixed historical custom day, movable feast relationship, observed 1962 feast precedence, family occasion, and actual local programme are different fields; the Calendar resolver owns observed feast dates.
 3. **Preserve geography and historical scope:** never turn an Irish household witness, German festival custom, French local blessing, Polish food custom or folklore into universal Roman practice.
 4. **Resolve the 84 P1 independent-source holds** where worthwhile without manufacturing an attestation. Weiser alone is a bibliographic pointer, not current-practice certification.
