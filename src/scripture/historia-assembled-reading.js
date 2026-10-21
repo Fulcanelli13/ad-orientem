@@ -143,7 +143,8 @@ export function assembleHistoriaReading(proof, edition, getWitness) {
           sourceReference: beat.sourceReference,
           sourceReferences: beat.editorialReadingCandidate?.sourceReferences || [beat.sourceReference],
           originalDeskText: beat.explanation, editorialCopyStatus: beat.editorialReadingCandidate?.status || "ORIGINAL_DESK_TEXT_NOT_APPROVED",
-          editionIndependent: true, accepted: false, publicationApproved: false
+          editorialSourceLanguage:"en", requiresEditorialLocalization:edition==="crampon-1923",
+          editionIndependent: false, accepted: false, publicationApproved: false
         });
         continue;
       }
@@ -158,7 +159,8 @@ export function assembleHistoriaReading(proof, edition, getWitness) {
               ownerUnitId:beat.id,candidateId:c.id,text:c.text,
               sourceReference:c.sourceReferences.join("; "),sourceReferences:c.sourceReferences,
               additionalCausalSeam:true,originalDeskText:null,editorialCopyStatus:c.status,
-              editionIndependent:true,accepted:false,publicationApproved:false
+              editorialSourceLanguage:"en",requiresEditorialLocalization:edition==="crampon-1923",
+              editionIndependent:false,accepted:false,publicationApproved:false
             });
           }
           appendReadingTrial(beat,beat.readthroughTrial,"HELD_BRIDGE_RESEARCH_TRIAL");
@@ -180,7 +182,8 @@ export function assembleHistoriaReading(proof, edition, getWitness) {
           ownerUnitId:beat.id,candidateId:c.id,text:c.text,
           sourceReference:c.sourceReferences.join("; "),sourceReferences:c.sourceReferences,
           additionalCausalSeam:true,originalDeskText:null,editorialCopyStatus:c.status,
-          editionIndependent:true,accepted:false,publicationApproved:false
+          editorialSourceLanguage:"en",requiresEditorialLocalization:edition==="crampon-1923",
+          editionIndependent:false,accepted:false,publicationApproved:false
         });
       }
       const references = beat.semanticEditionAlignment?.selectedReferencesByEdition?.[edition] || beat.refs;
@@ -248,6 +251,7 @@ export function historiaAssemblyMarkdown(assembly) {
     "All Scripture wording below comes directly from that edition's existing source witness.",
     "Each reference preceding a paragraph is its future vertical-rail anchor; the complete per-verse rail is in the machine assembly.",
     "Italic connectors are editorial proposals, not Bible quotations. Trial Scripture is exact witness text provisionally inserted for research reading ONLY; selection, printed collation, literary acceptance and publication remain unapproved.",
+    ...(assembly.edition==="crampon-1923"?["ATTENTION: Les raccords éditoriaux sont encore des brouillons en anglais et doivent être rédigés et vérifiés en français. Le texte biblique est tiré du témoin Crampon."]:[]),
     ""
   ];
   for (const movement of assembly.movements) {
