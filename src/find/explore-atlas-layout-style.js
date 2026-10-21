@@ -1081,6 +1081,7 @@ export const EXPLORE_ATLAS_LAYOUT_STYLE = `
 .aoNetworkPanel button:focus-visible,.aoNetworkPanel input:focus-visible,
 .aoNetworkPanel select:focus-visible,.aoNetworkPanel a:focus-visible,
 .aoNetworkSvgItem:focus-visible{outline:2px solid #ddc18c;outline-offset:2px}
+.aoHeritageSurface:has(.aoFindSheetBackdrop[data-find-close-place]) .aoNetworkPanel{visibility:hidden;pointer-events:none}
 @media(max-width:799px){
  .aoNetworkHeader{padding:7px 11px;min-height:49px}
  .aoNetworkHeader h2{font-size:22px}
