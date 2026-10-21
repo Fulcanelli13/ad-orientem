@@ -601,6 +601,10 @@ Every chapter has a question, a source-grounded answer in English and French, an
 ---
 
 ## 17. How should children be prepared for Holy Communion?
+
+**Additional source for the age/admission distinction:** [*Quam singulari* (1910), disciplinary rules 1–4, papally approved Congregation decree](https://www.catholicculture.org/culture/library/view.cfm?recnum=5170). The decree is not a personally authored encyclical.
+
+
 *SPX-EXP-042 · Part B · PRIMARY_PARTIAL · [Original document, §§19–23](https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html)*
 
 **Opening question and answer**
