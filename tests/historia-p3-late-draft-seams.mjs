@@ -122,6 +122,54 @@ for(const id of ["HS-M35","HS-M36","HS-M37"]){
  assert.equal(v.publicationApproved,false);
 }
 assert.equal(get("HS-M37").genreRules.appendedEpilogueStillUnapproved,true);
+
+assert.equal(meta.allSourceBridgeCoordinatesTriaged,true);
+assert.equal(meta.sourceBridgeCandidateCount,16);
+assert.equal(meta.optionalPassageRawVerseEntries,66);
+assert.equal(meta.allBridgePrintedEditionsPending,true);
+assert.equal(meta.allBridgePublicationApprovals,0);
+let bridgeEntries=0;
+for(const b of bridges){
+ const c=b.completeSourceDeskReview;
+ assert.equal(c.status,"COORDINATES_SOURCE_PRESENT_EDITORIAL_DECISION_PENDING");
+ assert.equal(c.exactPassage,b.reference);
+ assert.equal(c.sourceTextCopiedIntoRegistry,false);
+ assert.equal(c.printedEditionVerified,false);
+ assert.equal(c.oralReadAloudAccepted,false);
+ assert.equal(c.publicationApproved,false);
+ assert.equal(c.noImplicitCanonicalEventOrPlaceIdentity,true);
+ assert.ok(c.role&&c.editorialRationale);
+ const match=b.reference.match(/^(Genesis|John|Acts|Revelation) (\d+):(\d+)(?:–(\d+))?$/);
+ assert.ok(match,"Unrecognized source-bridge Bible ref "+b.reference);
+ const entries=+(match[4]||match[3])-(+match[3])+1;
+ for(const ed of editions){
+  assert.equal(c.sourceEditions[ed].verseEntries,entries);
+  assert.match(c.sourceEditions[ed].blobSha,/^[a-f0-9]{40}$/);
+  ids([b.reference],ed);
+ }
+ bridgeEntries+=entries;
+}
+assert.equal(bridgeEntries,66);
+for(const m of proof.movements.filter(x=>x.sequence>=20)){
+ let previous=null;
+ for(const b of m.beats){
+  if(b.kind==="EDITORIAL_CONTEXT_NOT_BIBLE")continue;
+  const references=b.kind==="SOURCE_BRIDGE_CANDIDATE"?[b.reference]:b.refs;
+  for(const r of references){
+   const found=r.match(/^([1-3]?[A-Za-z]+)\s+(\d+):(\d+)(?:–(?:(\d+):)?(\d+))?$/);
+   assert.ok(found,"Unparseable movement source range "+r);
+   const here={book:found[1],startCh:+found[2],startV:+found[3],endCh:+(found[4]||found[2]),endV:+(found[5]||found[3])};
+   if(previous&&previous.book===here.book){
+    assert.ok(here.startCh>previous.endCh||(here.startCh===previous.endCh&&here.startV>previous.endV),
+      "Chronological source inversion/duplicate within "+m.id+": "+previous.endCh+":"+previous.endV+" -> "+r);
+   }
+   previous=here;
+  }
+ }
+}
+assert.ok(meta.editorialHolds.some(x=>x.movementId==="HS-M27"&&x.reference==="Matthew 27:3–10"&&x.publicationApproved===false));
+assert.equal(get("HS-M27").beats.some(x=>x.id==="HS-P3-CF-18"),false);
+
 assert.equal(proof.movements.reduce((n,m)=>n+m.beats.filter(b=>b.kind==="SCRIPTURE").length,0),93);
 assert.equal(proof.movements.reduce((n,m)=>n+m.beats.filter(b=>b.kind==="EDITORIAL_CONTEXT_NOT_BIBLE").length,0),29);
 for(const m of proof.movements){
