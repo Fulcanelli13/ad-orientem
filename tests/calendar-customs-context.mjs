@@ -32,7 +32,7 @@ for(const year of [2026,2027,2030]){
 assert.deepEqual(calendarCustomSeasonalMonthEntries("2026-05").map(x=>x.id),["DEV-001","MARI-002"]);
 assert.deepEqual(calendarCustomSeasonalMonthEntries("2026-12").map(x=>x.id),["ADVT-001","ADVT-002"]);
 assert.deepEqual(calendarCustomSeasonalMonthEntries("2026-06").map(x=>x.id),["DOM-006"]);
-assert.deepEqual(calendarCustomSeasonalMonthEntries("2026-11").map(x=>x.id),["DEAD-001"]);
+assert.deepEqual(calendarCustomSeasonalMonthEntries("2026-11").map(x=>x.id),["DEAD-001","ADVT-001","ADVT-002"]);
 assert.deepEqual(calendarCustomSeasonalMonthEntries("2026-08"),[]);
 assert.deepEqual(calendarCustomRecommendations("invalid"),[]);
 const runtime=readFileSync(new URL("../src/calendar/calendar-runtime.js",import.meta.url),"utf8");
