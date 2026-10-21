@@ -21,10 +21,13 @@ export const EXACT_ICON_BACKED_LIVE_RUBRICS=Object.freeze({
     assetId:"ea_priest_communion_chalice_original",action:"RECEIVES CHALICE",actor:"PRIEST",
   }),
 });
-export function exactIconBackedRubric(rubricId,{mode=null,cueId=null,priestActionIconKey=null,iconResolved=false}={}){
+export function exactIconBackedRubric(rubricId,{mode=null,cueId=null,priestActionIconKey=null,iconResolved=false,priestActionLabel=null}={}){
   if(mode!=="LIVE"||!iconResolved)return null;
   const record=EXACT_ICON_BACKED_LIVE_RUBRICS[String(rubricId??"")];
   if(!record||record.cueId!==cueId||record.iconKey!==priestActionIconKey)return null;
+  // A source cue may have several subactions (both elevations do). The
+  // named phase must agree, not merely the cue number and artwork file.
+  if(String(priestActionLabel??"").trim().toUpperCase()!==record.action)return null;
   return record;
 }
 // 53 others deliberately remain textual. Do NOT flatten complex C0174 /
