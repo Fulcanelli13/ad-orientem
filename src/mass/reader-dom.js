@@ -1382,6 +1382,28 @@ function textValue(value){
   return String(value);
 }
 
+// Priest stations arrive as source codes (FOOT_CENTER, ALTAR_CENTER...).
+// The reader shows words; unknown codes at least lose their underscores.
+const PRIEST_STATION_LABELS=Object.freeze({
+  FOOT_CENTER:["Foot of the altar","Au bas de l’autel"],
+  ALTAR_STEPS_ASCENDING:["Going up to the altar","Monte à l’autel"],
+  ALTAR_CENTER:["Centre of the altar","Milieu de l’autel"],
+  ALTAR_EPISTLE_SIDE:["Epistle side","Côté de l’Épître"],
+  ALTAR_EPISTLE_MISSAL:["Missal, Epistle side","Missel, côté de l’Épître"],
+  ALTAR_GOSPEL_MISSAL:["Missal, Gospel side","Missel, côté de l’Évangile"],
+  COMMUNION_RAIL:["Communion rail","Table de communion"],
+  SEDILIA:["At the sedilia","À la banquette"],
+});
+function priestStationLabel(value,root){
+  const text=textValue(value);
+  if(typeof text!=="string")return text;
+  const trimmed=text.trim();
+  const pair=PRIEST_STATION_LABELS[trimmed.toUpperCase().replace(/\s+/g,"_")];
+  if(!pair)return /^[A-Z0-9]+(?:[_ ][A-Z0-9]+)+$/.test(trimmed)?trimmed.replaceAll("_"," "):text;
+  const lang=String(root?.ownerDocument?.documentElement?.lang??"en").toLowerCase();
+  return lang.startsWith("fr")?pair[1]:pair[0];
+}
+
 function persist(next, previous){
   return next === undefined ? previous ?? null : next;
 }
@@ -1819,7 +1841,7 @@ export function buildReaderShellMarkup(prepared = {}) {
         <option value="SIT">Sit</option>
         <option value="KNEEL">Kneel</option>
       </select></label>
-      <small data-customary-cue-note>Choose a source cue; fixed postures cannot be overridden.</small>
+      <small data-customary-cue-note>Open a passage of the Mass to set a local posture.</small>
       <label>Confiteor before Communion<select data-reader-customary="secondConfiteor" aria-label="Optional local Confiteor before Communion">
         <option value="false">1962 Missal — omitted before Communion</option>
         <option value="true">Observed local custom — include Confiteor, Misereatur and Indulgentiam</option>
@@ -3159,7 +3181,7 @@ export function createReaderDomAdapter({
       applyIcon(root,"priest-quiet-offertory",quiet?.iconKey??null,iconResolver);
     }
     setText(root,"progress",current.progress);
-    setText(root,"priest-position",textValue(mode==="MISSAL" ? (current.missalRubric?.priestPosition??current.priestPosition) : current.priestPosition));
+    setText(root,"priest-position",priestStationLabel(mode==="MISSAL" ? (current.missalRubric?.priestPosition??current.priestPosition) : current.priestPosition,root));
     setText(root,"priest-action",textValue(current.priestAction));
     setText(root,"sacred-minister",textValue(current.sacredMinister));
     setText(root,"posture",textValue(current.posture));
@@ -3195,14 +3217,14 @@ export function createReaderDomAdapter({
       const note=root.querySelector("[data-customary-cue-note]");
       if(note)note.textContent=current.customary.cueId
         ? current.customary.localPostureEditable
-          ? "Applies only to "+current.customary.cueId
-          : "Fixed source cue: local overrides unavailable."
-        : "Select an exact Mass cue before setting a local posture.";
+          ? "Applies only to the passage on screen."
+          : "This passage has a fixed posture."
+        : "Open a passage of the Mass to set a local posture.";
     }else{
       const select=root.querySelector('[data-reader-customary="localPosture"]');
       if(select)select.disabled=true;
       const note=root.querySelector("[data-customary-cue-note]");
-      if(note)note.textContent="Local choices apply to source-backed Mass cues.";
+      if(note)note.textContent="Local postures apply to individual passages of the Mass.";
     }
     const titleNode=root.querySelector('[data-role="card-title"]');
     // One prayer name on one surface: use the legible top-ribbon heading.

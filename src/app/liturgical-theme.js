@@ -25,6 +25,25 @@ export function resolveAppLiturgicalTheme(state){
   });
 }
 
+const LIGHT_INK="#eef0ef";
+function luminance(hex){
+  const m=/^#?([0-9a-f]{6})$/i.exec(String(hex??""));
+  if(!m)return null;
+  const [r,g,b]=[0,2,4].map(i=>{const v=parseInt(m[1].slice(i,i+2),16)/255;return v<=0.03928?v/12.92:((v+0.055)/1.055)**2.4;});
+  return 0.2126*r+0.7152*g+0.0722*b;
+}
+export function contrastRatio(a,b){
+  const x=luminance(a),y=luminance(b);
+  if(x==null||y==null)return null;
+  return (Math.max(x,y)+0.05)/(Math.min(x,y)+0.05);
+}
+// Text drawn ON the accent (primary buttons). Dark ink suits light accents;
+// the charcoal Black accent needs light ink to stay readable (WCAG AA 4.5:1).
+export function liturgicalInk(tokens){
+  const accent=tokens?.accent??NEUTRAL.accent,dark=tokens?.bg??NEUTRAL.bg;
+  return (contrastRatio(LIGHT_INK,accent)??0)>(contrastRatio(dark,accent)??0)?LIGHT_INK:dark;
+}
+
 export function appThemeCssValues(theme){
   const tokens=theme?.tokens??NEUTRAL;
   const accent=tokens.accent??NEUTRAL.accent;
@@ -40,6 +59,7 @@ export function appThemeCssValues(theme){
     "--liturgical-border":`color-mix(in srgb, ${accent} 38%, transparent)`,
     "--liturgical-soft":`color-mix(in srgb, ${accent} 9%, transparent)`,
     "--ao-liturgical-accent-text":tokens.accentText??NEUTRAL.accentText,
+    "--liturgical-ink":liturgicalInk(tokens),
   });
 }
 
