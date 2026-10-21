@@ -22,6 +22,8 @@
 | Unlinked observations | **518** | **Not** 518 missing customs |
 | Existing/other-owner parity to reconcile | **81** | Mostly liturgy/Calendar/Pray/Saints, avoid duplication |
 | Identity/variant observations awaiting review | **286** | 145 regional, 92 candidate, 49 enrichment |
+| Already assigned to other owner/regional context/ritual hold in the 54-draft pass | **26** | Subset of 286, not new customs |
+| Awaiting their first explicit 54-draft owner decision | **260** | Subset of 286; next identification pass |
 | Historical reference only | **117** | Research/archive, not current practice claims |
 | Excluded observations | **34** | Never auto-publish |
 | Independent-source P1 holds | **84** | 38 no exact match + 46 partial/indirect; overlaps the book counts |
@@ -108,7 +110,7 @@
 
 ## Editorial decisions that remain open
 
-1. **Work through the 286 identity/variant queue**, starting with the explicit P0/P1 entries and source families where duplicates/ministerial rite confusion is likely. Resolve to an existing custom, a distinct provisional custom, another owner, regional context, or justified hold.
+1. **Adjudicate the 260 not-yet-assigned identity/variant observations** while preserving the 26 already routed to other-module content, regional history or ritual/source holds. Start with the explicit P0/P1 entries and families where duplication or ministerial-rite confusion is likely. Resolve to an existing custom, a distinct provisional custom, another owner, regional context, or justified hold.
 2. **Separate dates rigorously:** fixed historical custom day, movable feast relationship, observed 1962 feast precedence, family occasion, and actual local programme are different fields; the Calendar resolver owns observed feast dates.
 3. **Preserve geography and historical scope:** never turn an Irish household witness, German festival custom, French local blessing, Polish food custom or folklore into universal Roman practice.
 4. **Resolve the 84 P1 independent-source holds** where worthwhile without manufacturing an attestation. Weiser alone is a bibliographic pointer, not current-practice certification.
