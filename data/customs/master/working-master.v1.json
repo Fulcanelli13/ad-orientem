@@ -3524,7 +3524,7 @@
         "kind": "PARISH_LOCAL_ADVENT",
         "group": "ADVENT",
         "hint_en": "Advent; individual parish house-visit itinerary, not a universal fixed nine-day programme",
-        "hint_fr": null,
+        "hint_fr": "Avent — programme paroissial local, sans dates universelles",
         "raw_fixed_or_range": null,
         "date_authority": "CALENDAR_DAY_RESOLVER_ONLY"
       },
@@ -3537,7 +3537,8 @@
         "local_event_required": true,
         "infer_automatic_mass_action": false,
         "infer_automatic_procession": false,
-        "feast_precedence_assumed": false
+        "feast_precedence_assumed": false,
+        "display_hint_fr": "Avent — programme paroissial local, sans dates universelles"
       },
       "geography": {
         "source_bound_area": "Austria, regional Catholic parishes",
@@ -3589,7 +3590,7 @@
         "kind": "FIXED_DAY_CONTEXT",
         "group": "CHRISTMAS_EVE",
         "hint_en": "24 December, Christmas Eve in Polish households",
-        "hint_fr": null,
+        "hint_fr": "24 décembre — veille de Noël (coutume domestique polonaise)",
         "raw_fixed_or_range": "12-24",
         "date_authority": "CALENDAR_DAY_RESOLVER_ONLY"
       },
@@ -3602,7 +3603,8 @@
         "local_event_required": false,
         "infer_automatic_mass_action": false,
         "infer_automatic_procession": false,
-        "feast_precedence_assumed": false
+        "feast_precedence_assumed": false,
+        "display_hint_fr": "24 décembre — veille de Noël (coutume domestique polonaise)"
       },
       "geography": {
         "source_bound_area": "Poland",
@@ -3662,7 +3664,7 @@
         "kind": "FIXED_DAY_CONTEXT",
         "group": "CHRISTMAS_EVE",
         "hint_en": "24 December, locality-bound family observance",
-        "hint_fr": null,
+        "hint_fr": "24 décembre — veille de Noël (usage rural régional)",
         "raw_fixed_or_range": "12-24",
         "date_authority": "CALENDAR_DAY_RESOLVER_ONLY"
       },
@@ -3675,7 +3677,8 @@
         "local_event_required": false,
         "infer_automatic_mass_action": false,
         "infer_automatic_procession": false,
-        "feast_precedence_assumed": false
+        "feast_precedence_assumed": false,
+        "display_hint_fr": "24 décembre — veille de Noël (usage rural régional)"
       },
       "geography": {
         "source_bound_area": "Kashubia, Poland",
@@ -3734,7 +3737,7 @@
         "kind": "CHRISTMAS_SEASON_LOCAL_CAMPAIGN",
         "group": "CHRISTMASTIDE",
         "hint_en": "Christmas-season charity drive; actual annual dates locally announced",
-        "hint_fr": null,
+        "hint_fr": "Temps de Noël — dates des collectes annoncées localement",
         "raw_fixed_or_range": null,
         "date_authority": "CALENDAR_DAY_RESOLVER_ONLY"
       },
@@ -3747,7 +3750,8 @@
         "local_event_required": true,
         "infer_automatic_mass_action": false,
         "infer_automatic_procession": false,
-        "feast_precedence_assumed": false
+        "feast_precedence_assumed": false,
+        "display_hint_fr": "Temps de Noël — dates des collectes annoncées localement"
       },
       "geography": {
         "source_bound_area": "Québec, Canada",
@@ -3804,7 +3808,7 @@
         "kind": "CHRISTMAS_SEASON_LOCAL",
         "group": "CHRISTMASTIDE",
         "hint_en": "Christmas cycle; dates and troupe forms differ across regions",
-        "hint_fr": null,
+        "hint_fr": "Temps de Noël — visites et chants selon la région",
         "raw_fixed_or_range": null,
         "date_authority": "CALENDAR_DAY_RESOLVER_ONLY"
       },
@@ -3817,7 +3821,8 @@
         "local_event_required": true,
         "infer_automatic_mass_action": false,
         "infer_automatic_procession": false,
-        "feast_precedence_assumed": false
+        "feast_precedence_assumed": false,
+        "display_hint_fr": "Temps de Noël — visites et chants selon la région"
       },
       "geography": {
         "source_bound_area": "Poland",
@@ -3869,7 +3874,7 @@
         "kind": "CHRISTMAS_SEASON_LOCAL",
         "group": "CHRISTMASTIDE",
         "hint_en": "Christmas season, local dates",
-        "hint_fr": null,
+        "hint_fr": "Temps de Noël — représentations locales de la Nativité",
         "raw_fixed_or_range": null,
         "date_authority": "CALENDAR_DAY_RESOLVER_ONLY"
       },
@@ -3882,7 +3887,8 @@
         "local_event_required": true,
         "infer_automatic_mass_action": false,
         "infer_automatic_procession": false,
-        "feast_precedence_assumed": false
+        "feast_precedence_assumed": false,
+        "display_hint_fr": "Temps de Noël — représentations locales de la Nativité"
       },
       "geography": {
         "source_bound_area": "Hungary",
@@ -3934,7 +3940,7 @@
         "kind": "FIXED_DAY_CONTEXT",
         "group": "SAINT_BARBARA",
         "hint_en": "Traditional observance 4 December; voluntary domestic symbolism, not a Mass rite",
-        "hint_fr": null,
+        "hint_fr": "4 décembre — fête traditionnelle de sainte Barbe",
         "raw_fixed_or_range": "12-04",
         "date_authority": "CALENDAR_DAY_RESOLVER_ONLY"
       },
@@ -3947,7 +3953,8 @@
         "local_event_required": false,
         "infer_automatic_mass_action": false,
         "infer_automatic_procession": false,
-        "feast_precedence_assumed": false
+        "feast_precedence_assumed": false,
+        "display_hint_fr": "4 décembre — fête traditionnelle de sainte Barbe"
       },
       "geography": {
         "source_bound_area": "Austria and some Central European communities",
@@ -3996,7 +4003,7 @@
         "kind": "FIXED_DAY_CONTEXT",
         "group": "CHRISTMAS_EVE",
         "hint_en": "24 December, traditional Provençal Gros Souper; local family observance",
-        "hint_fr": null,
+        "hint_fr": "24 décembre — gros souper provençal",
         "raw_fixed_or_range": "12-24",
         "date_authority": "CALENDAR_DAY_RESOLVER_ONLY"
       },
@@ -4009,7 +4016,8 @@
         "local_event_required": false,
         "infer_automatic_mass_action": false,
         "infer_automatic_procession": false,
-        "feast_precedence_assumed": false
+        "feast_precedence_assumed": false,
+        "display_hint_fr": "24 décembre — gros souper provençal"
       },
       "geography": {
         "source_bound_area": "Provence, France",
@@ -4069,7 +4077,7 @@
         "kind": "FIXED_NIGHT_SPAN",
         "group": "EPIPHANY",
         "hint_en": "Evening of 5 January into 6 January; Spanish household custom",
-        "hint_fr": null,
+        "hint_fr": "Soir du 5 au 6 janvier — cadeaux des Rois mages",
         "raw_fixed_or_range": "01-05/01-06",
         "date_authority": "CALENDAR_DAY_RESOLVER_ONLY"
       },
@@ -4082,7 +4090,8 @@
         "local_event_required": false,
         "infer_automatic_mass_action": false,
         "infer_automatic_procession": false,
-        "feast_precedence_assumed": false
+        "feast_precedence_assumed": false,
+        "display_hint_fr": "Soir du 5 au 6 janvier — cadeaux des Rois mages"
       },
       "geography": {
         "source_bound_area": "Spain, regional Spanish-speaking extensions not automatically assumed",
@@ -4142,7 +4151,7 @@
         "kind": "MOVABLE_FEAST_LOCAL_EVENT",
         "group": "EASTER_SUNDAY",
         "hint_en": "Easter Sunday, only parishes with actual announced procession",
-        "hint_fr": null,
+        "hint_fr": "Dimanche de Pâques — seulement là où la procession est annoncée",
         "raw_fixed_or_range": null,
         "date_authority": "CALENDAR_DAY_RESOLVER_ONLY"
       },
@@ -4155,7 +4164,8 @@
         "local_event_required": true,
         "infer_automatic_mass_action": false,
         "infer_automatic_procession": false,
-        "feast_precedence_assumed": false
+        "feast_precedence_assumed": false,
+        "display_hint_fr": "Dimanche de Pâques — seulement là où la procession est annoncée"
       },
       "geography": {
         "source_bound_area": "Named parishes in Malta and Gozo",
@@ -4214,7 +4224,7 @@
         "kind": "MOVABLE_FEAST_CONTEXT",
         "group": "PENTECOST",
         "hint_en": "Pentecost, movable feast resolved by Calendar",
-        "hint_fr": null,
+        "hint_fr": "Pentecôte — date mobile calculée par le calendrier",
         "raw_fixed_or_range": null,
         "date_authority": "CALENDAR_DAY_RESOLVER_ONLY"
       },
@@ -4227,7 +4237,8 @@
         "local_event_required": false,
         "infer_automatic_mass_action": false,
         "infer_automatic_procession": false,
-        "feast_precedence_assumed": false
+        "feast_precedence_assumed": false,
+        "display_hint_fr": "Pentecôte — date mobile calculée par le calendrier"
       },
       "geography": {
         "source_bound_area": "Poland, documented near Kraków",
@@ -4286,7 +4297,7 @@
         "kind": "LOCAL_FIXED_DAY_SPAN",
         "group": "ASSUMPTION",
         "hint_en": "Evening 14 August and morning 15 August; Tivoli local Assumption observance",
-        "hint_fr": null,
+        "hint_fr": "14–15 août — procession locale de Tivoli",
         "raw_fixed_or_range": "08-14/08-15",
         "date_authority": "CALENDAR_DAY_RESOLVER_ONLY"
       },
@@ -4299,7 +4310,8 @@
         "local_event_required": true,
         "infer_automatic_mass_action": false,
         "infer_automatic_procession": false,
-        "feast_precedence_assumed": false
+        "feast_precedence_assumed": false,
+        "display_hint_fr": "14–15 août — procession locale de Tivoli"
       },
       "geography": {
         "source_bound_area": "Tivoli, Lazio, Italy",
@@ -4358,7 +4370,7 @@
         "kind": "LOCAL_FIXED_DAY_CONTEXT",
         "group": "ASSUMPTION",
         "hint_en": "14 August local procession associated with Assumption, not a universal Marian vigil rite",
-        "hint_fr": null,
+        "hint_fr": "14 août — procession locale de Sassari",
         "raw_fixed_or_range": "08-14",
         "date_authority": "CALENDAR_DAY_RESOLVER_ONLY"
       },
@@ -4371,7 +4383,8 @@
         "local_event_required": true,
         "infer_automatic_mass_action": false,
         "infer_automatic_procession": false,
-        "feast_precedence_assumed": false
+        "feast_precedence_assumed": false,
+        "display_hint_fr": "14 août — procession locale de Sassari"
       },
       "geography": {
         "source_bound_area": "Sassari, Sardinia, Italy",
@@ -4431,7 +4444,7 @@
         "kind": "LOCAL_FIXED_RANGE_CONTEXT",
         "group": "ASSUMPTION_TO_HOLY_CROSS",
         "hint_en": "15 August–14 September in cited Bavarian diocesan and pilgrimage accounts",
-        "hint_fr": null,
+        "hint_fr": "Du 15 août au 14 septembre — programme de sanctuaire bavarois",
         "raw_fixed_or_range": "08-15/09-14",
         "date_authority": "CALENDAR_DAY_RESOLVER_ONLY"
       },
@@ -4444,7 +4457,8 @@
         "local_event_required": true,
         "infer_automatic_mass_action": false,
         "infer_automatic_procession": false,
-        "feast_precedence_assumed": false
+        "feast_precedence_assumed": false,
+        "display_hint_fr": "Du 15 août au 14 septembre — programme de sanctuaire bavarois"
       },
       "geography": {
         "source_bound_area": "Bavaria, Germany; named pilgrimage churches",
