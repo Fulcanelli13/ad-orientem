@@ -494,3 +494,163 @@ And it came to pass when the king sat in his house, and the Lord had given him r
 
 </details>
 
+## 14 · The Temple and the divided kingdom
+
+*⟦Editorial connector · source: 2 Samuel 11:1–5, 14–17 · NOT APPROVED⟧*
+
+*David sinned grievously against Bathsheba and Uriah. Nathan confronted him, and David acknowledged his sin before the Lord (2 Samuel 11–12).*
+
+**⟦1Kings 6:1⟧**
+
+And it came to pass in the four hundred and eightieth year after the children of Israel came out of the land of Egypt, in the fourth year of the reign of Solomon over Israel, in the month Zio, (the same is the second month) he began to build a house to the Lord.
+
+**⟦1Kings 8:1–6⟧**
+
+Then all the ancients of Israel, with the princes of the tribes, and the heads of the families of the children of Israel, were assembled to king Solomon, in Jerusalem: that they might carry the ark of the covenant of the Lord, out of the city of David, that is, out of Sion. And all Israel assembled themselves to king Solomon, on the festival day, in the month of Ethanim, the same is the seventh month. And all the ancients of Israel came, and the priests took up the ark, And carried the ark of the Lord, and the tabernacle of the covenant, and all the vessels of the sanctuary, that were in the tabernacle: and the priests and the Levites carried them. And king Solomon, and all the multitude of Israel, that were assembled unto him, went with him before the ark, and they sacrificed sheep and oxen, that could not be counted or numbered. And the priests brought in the ark of the covenant of the Lord into its place, into the oracle of the temple, into the holy of holies, under the wings of the cherubims.
+
+**⟦1Kings 8:10–13⟧**
+
+And it came to pass, when the priests were come out of the sanctuary, that a cloud filled the house of the Lord, And the priests could not stand to minister because of the cloud: for the glory of the Lord had filled the house of the Lord. Then Solomon said: The Lord said that he would dwell in a cloud. Building, I have built a house for thy dwelling, to be thy most firm throne for ever.
+
+**⟦1Kings 8:22–23⟧**
+
+And Solomon stood before the altar of the Lord, in the sight of the assembly of Israel, and spread forth his hands towards heaven, And said: Lord God of Israel, there is no God like thee, in heaven above, or on the earth beneath: who keepest covenant and mercy with thy servants, that have walked before thee with all their heart:
+
+**⟦1Kings 8:27–30⟧**
+
+Is it then to be thought that God should indeed dwell upon earth? for if heaven, and the heavens of heavens, cannot contain thee, how much less this house which I have built? But have regard to the prayer of thy servant, and to his supplications, O Lord, my God: hear the hymn and the prayer, which thy servant prayeth before thee this day: That thy eyes may be open upon this house, night and day: upon the house of which thou hast said: My name shall be there: that thou mayst hearken to the prayer which thy servant prayeth, in this place to thee: That thou mayst hearken to the supplication of thy servant, and of thy people Israel, whatsoever they shall pray for in this place, and hear them in the place of thy dwelling in heaven; and when thou hearest, shew them mercy.
+
+*⟦Editorial connector · source: 1 Kings 11:1–13 · NOT APPROVED⟧*
+
+*Solomon subsequently turned to foreign gods, and the Lord announced that the kingdom would be torn apart after him, though a portion would remain for David's sake (1 Kings 11:1–13).*
+
+**⟦1Kings 11:29–32⟧**
+
+So it came to pass at that time, that Jeroboam went out of Jerusalem, and the prophet Ahias, the Silonite, clad with a new garment, found him in the way: and they two were alone in the field. And Ahias taking his new garment, wherewith he was clad, divided it into twelve parts: And he said to Jeroboam: Take to thee ten pieces: for thus saith the Lord, the God of Israel: Behold, I will rend the kingdom out of the hand of Solomon, and will give thee ten tribes. But one tribe shall remain to him for the sake of my servant, David, and Jerusalem, the city which I have chosen out of all the tribes of Israel:
+
+**⟦1Kings 12:1–5⟧**
+
+And Roboam went to Sichem: for thither were all Israel come together to make him king. But Jeroboam, the son of Nabat, who was yet in Egypt, a fugitive from the face of king Solomon, hearing of his death, returned out of Egypt. And they sent and called him: and Jeroboam came, and all the multitude of Israel, and they spoke to Roboam, saying: Thy father laid a grievous yoke upon us: now, therefore, do thou take off a little of the grievous service of thy father, and of his most heavy yoke, which he put upon us, and we will serve thee. And he said to them: Go till the third day, and come to me again. And when the people was gone,
+
+**⟦1Kings 12:13–20⟧**
+
+And the king answered the people roughly, leaving the counsel of the old men, which they had given him, And he spoke to them according to the counsel of the young men, saying: My father made your yoke heavy, but I will add to your yoke: My father beat you with whips, but I will beat you with scorpions. And the king condescended not to the people: for the Lord was turned away from him, to make good his word, which he had spoken in the hand of Ahias, the Silonite, to Jeroboam, the son of Nabat. Then the people, seeing that the king would not hearken to them, answered him, saying: What portion have we in David? or what inheritance in the son of Isai? Go home to thy dwellings, O Israel: now, David, look to thy own house. So Israel departed to their dwellings. But as for all the children of Israel that dwelt in the cities of Juda, Roboam reigned over them. Then king Roboam sent Aduram, who was over the tribute: and all Israel stoned him, and he died. Wherefore king Roboam made haste to get him up into his chariot, and he fled to Jerusalem: And Israel revolted from the house of David, unto this day. And it came to pass when all Israel heard that Jeroboam was come again, that they gathered an assembly, and sent and called him, and made him king over all Israel, and there was none that followed the house of David but the tribe of Juda only.
+
+<details><summary>Unselected same-book source seams (research audit)</summary>
+
+- INTERVENING_CHAPTERS: 1Kings 7–7
+- OMITTED_VERSES: 1Kings 8:7–9
+- OMITTED_VERSES: 1Kings 8:14–21
+- OMITTED_VERSES: 1Kings 8:24–26
+- INTERVENING_CHAPTERS: 1Kings 9–10
+- OMITTED_VERSES: 1Kings 12:6–12
+
+</details>
+
+## 15 · Prophetic warning and Israel's judgment
+
+*⟦Editorial connector · source: 1 Kings 18:20–39 · NOT APPROVED⟧*
+
+*Elijah opposed the worship of Baal during Israel's apostasy (1 Kings 18). The following oracles of Isaiah are distinct prophetic witnesses to God's promises, not episodes occurring in one continuous scene (Isaiah 7; 9; 11; 52–53).*
+
+**⟦Isaiah 7:10–17⟧**
+
+And the Lord spoke again to Achaz, saying: Ask thee a sign of the Lord thy God, either unto the depth of hell, or unto the height above. And Achaz said: I will not ask, and I will not tempt the Lord. And he said: Hear ye therefore, O house of David: Is it a small thing for you to be grievous to men, that you are grievous to my God also? Therefore the Lord himself shall give you a sign. Behold a virgin shall conceive, and bear a son and his name shall be called Emmanuel. He shall eat butter and honey, that he may know to refuse the evil, and to choose the good. For before the child know to refuse the evil and to choose the good, the land which thou abhorrest shall be forsaken of the face of her two kings. The Lord shall bring upon thee, and upon thy people, and upon the house of thy father, days that have not come since the time of the separation of Ephraim from Juda with the king of the Assyrians.
+
+**⟦Isaiah 9:1–6⟧**
+
+At the first time the land of Zabulon, and the land of Nephtali was lightly touched: and at the last the way of the sea beyond the Jordan of the Galilee of the Gentiles was heavily loaded. The people that walked in darkness, have seen a great light: to them that dwelt in the region of the shadow of death, light is risen. Thou hast multiplied the nation, and hast not increased the joy. They shall rejoice before thee, as they that rejoice in the harvest, as conquerors rejoice after taking a prey, when they divide the spoils. For the yoke of their burden, and the rod of their shoulder, and the sceptre of their oppressor thou hast overcome, as in the day of Madian. For every violent taking of spoils, with tumult, and garment mingled with blood, shall be burnt, and be fuel for the fire. For a CHILD IS BORN to us, and a son is given to us, and the government is upon his shoulder: and his name shall be called Wonderful, Counsellor, God the Mighty, the Father of the world to come, the Prince of Peace.
+
+**⟦Isaiah 11:1–10⟧**
+
+And there shall come forth a rod out of the root of Jesse, and a flower shall rise up out of his root. And the spirit of the Lord shall rest upon him: the spirit of wisdom, and of understanding, the spirit of counsel, and of fortitude, the spirit of knowledge, and of godliness. And he shall be filled with the spirit of the fear of the Lord, He shall not judge according to the sight of the eyes, nor reprove according to the hearing of the ears. But he shall judge the poor with justice, and shall reprove with equity for the meek of the earth: and he shall strike the earth with the rod of his mouth, and with the breath of his lips he shall slay the wicked. And justice shall be the girdle of his loins: and faith the girdle of his reins. The wolf shall dwell with the lamb: and the leopard shall lie down with the kid: the calf and the lion, and the sheep shall abide together, and a little child shall lead them. The calf and the bear shall feed: their young ones shall rest together: and the lion shall eat straw like the ox. And the sucking child shall play on the hole of the asp: and the weaned child shall thrust his hand into the den of the basilisk. They shall not hurt, nor shall they kill in all my holy mountain, for the earth is filled with the knowledge of the Lord, as the covering waters of the sea. In that day the root of Jesse, who standeth for an ensign of the people, him the Gentiles shall beseech, and his sepulchre shall be glorious.
+
+**⟦Isaiah 52:13–15⟧**
+
+Behold my servant shall understand, he shall be exalted, and extolled, and shall be exceeding high. As many have been astonished at thee, so shall his visage be inglorious among men, and his form among the sons of men. He shall sprinkle many nations, kings shall shut their mouth at him: for they to whom it was not told of him, have seen: and they that heard not, have beheld.
+
+**⟦Isaiah 53:1–12⟧**
+
+Who hath believed our report? and to whom is the arm of the Lord revealed? And he shall grow up as a tender plant before him, and as a root out of a thirsty ground: there is no beauty in him, nor comeliness: and we have seen him, and there was no sightliness, that we should be desirous of him: Despised, and the most abject of men, a man of sorrows, and acquainted with infirmity: and his look was as it were hidden and despised, whereupon we esteemed him not. Surely he hath borne our infirmities and carried our sorrows: and we have thought him as it were a leper, and as one struck by God and afflicted. But he was wounded for our iniquities, he was bruised for our sins: the chastisement of our peace was upon him, and by his bruises we are healed. All we like sheep have gone astray, every one hath turned aside into his own way: and the Lord hath laid on him the iniquity of us all. He was offered because it was his own will, and he opened not his mouth: he shall be led as a sheep to the slaughter, and shall be dumb as a lamb before his shearer, and he shall not open his mouth. He was taken away from distress, and from judgment: who shall declare his generation? because he is cut off out of the land of the living: for the wickedness of my people have I struck him. And he shall give the ungodly for his burial, and the rich for his death: because he hath done no iniquity, neither was there deceit in his mouth. And the Lord was pleased to bruise him in infirmity: if he shall lay down his life for sin, he shall see a longlived seed, and the will of the Lord shall be prosperous in his hand. Because his soul hath laboured, he shall see and be filled: by his knowledge shall this my just servant justify many, and he shall bear their iniquities. Therefore will I distribute to him very many, and he shall divide the spoils of the strong, because he hath delivered his soul unto death, and was reputed with the wicked: and he hath borne the sins of many, and hath prayed for the transgressors.
+
+**⟦2Kings 17:3–8⟧**
+
+Against him came up Salmanasar, king of the Assyrians; and Osee became his servant, and paid him tribute. And when the king of the Assyrians found that Osee, endeavouring to rebel, had sent messengers to Sua, the king of Egypt, that he might not pay tribute to the king of the Assyrians, as he had done every year, he besieged him, bound him, and cast him into prison. And he went through all the land: and going up to Samaria, he besieged it three years. And in the ninth year of Osee, the king of the Assyrians took Samaria, and carried Israel away to Assyria: and he placed them in Hala, and Habor, by the river of Gozan, in the cities of the Medes. For so it was that the children of Israel had sinned against the Lord, their God, who brought them out of the land of Egypt, from under the hand of Pharao, king of Egypt; and they worshipped strange gods. And they walked according to the way of the nations which the Lord had destroyed in the sight of the children of Israel, and of the kings of Israel: because they had done in like manner.
+
+**⟦2Kings 17:13–18⟧**
+
+And the Lord testified to them in Israel, and in Juda, by the hand of all the prophets and seers, saying: Return from your wicked ways, and keep my precepts, and ceremonies, according to all the law which I commanded your fathers: and as I have sent to you in the hand of my servants the prophets. And they hearkened not, but hardened their necks like to the neck of their fathers, who would not obey the Lord, their God. And they rejected his ordinances, and the covenant that he made with their fathers, and the testimonies which he testified against them: and they followed vanities, and acted vainly: and they followed the nations that were round about them, concerning which the Lord had commanded them that they should not do as they did. And they forsook all the precepts of the Lord, their God: and made to themselves two molten calves, and groves, and adored all the host of heaven: and they served Baal, And consecrated their sons, and their daughters, through fire: and they gave themselves to divinations, and soothsayings: and they delivered themselves up to do evil before the Lord, to provoke him. And the Lord was very angry with Israel, and removed them from his sight, and there remained only the tribe of Juda.
+
+<details><summary>Unselected same-book source seams (research audit)</summary>
+
+- INTERVENING_CHAPTERS: Isaiah 8–8
+- INTERVENING_CHAPTERS: Isaiah 10–10
+- INTERVENING_CHAPTERS: Isaiah 12–51
+- OMITTED_VERSES: 2Kings 17:9–12
+
+</details>
+
+## 16 · Judah's fall and the promise of a New Covenant
+
+**⟦Jeremiah 31:31–34⟧**
+
+Behold the days shall come, saith the Lord, and I will make a new covenant with the house of Israel, and with the house of Juda: Not according to the covenant which I made with their fathers, in the day that I took them by the hand to bring them out of the land of Egypt, the covenant which they made void, and I had dominion over them, saith the Lord. But this shall be the covenant that I will make with the house of Israel, after those days, saith the Lord: I will give my law in their bowels, and I will write it in their heart: and I will be their God, and they shall be my people. And they shall teach no more every man his neighbour, and every man his brother, saying: Know the Lord: for all shall know me from the least of them even to the greatest, saith the Lord: for I will forgive their iniquity, and I will remember their sin no more.
+
+**⟦2Kings 25:1–5⟧**
+
+And it came to pass in the ninth year of his reign, in the tenth month, the tenth day of the month, that Nabuchodonosor, king of Babylon, came, he and all his army, against Jerusalem: and they surrounded it: and raised works round about it. And the city was shut up and besieged till the eleventh year of king Sedecias, The ninth day of the month: and a famine prevailed in the city, and there was no bread for the people of the land. And a breach was made into the city: and all the men of war fled in the night between the two walls by the king’s garden (now the Chaldees besieged the city round about), and Sedecias fled by the way that leadeth to the plains of the wilderness. And the army of the Chaldees pursued after the king, and overtook him in the plains of Jericho: and all the warriors that were with him were scattered, and left him:
+
+**⟦2Kings 25:8–12⟧**
+
+In the fifth month, the seventh day of the month, the same is the nineteenth year of the king of Babylon, came Nabuzardan, commander of the army, a servant of the king of Babylon, into Jerusalem. And he burnt the house of the Lord, and the king’s house, and the houses of Jerusalem, and every house he burnt with fire. And all the army of the Chaldees, which was with the commander of the troops, broke down the walls of Jerusalem round about. And Nabuzardan, the commander of the army, carried away the rest of the people, that remained in the city, and the fugitives, that had gone over to the king of Babylon, and the remnant of the common people. But of the poor of the land he left some dressers of vines and husbandmen.
+
+**⟦2Kings 25:18–21⟧**
+
+And the general of the army took Seraias, the chief priest, and Sophonias, the second priest, and three doorkeepers: And out of the city one eunuch, who was captain over the men of war: and five men of them who had stood before the king, whom he found in the city, and Sopher, the captain of the army, who exercised the young soldiers of the people of the land: and threescore men of the common people, who were found in the city: These Nabuzardan, the general of the army, took away, and carried them to the king of Babylon, to Reblatha. And the king of Babylon smote them, and slew them at Reblatha, in the land of Emath: so Juda was carried away out of their land.
+
+<details><summary>Unselected same-book source seams (research audit)</summary>
+
+- OMITTED_VERSES: 2Kings 25:6–7
+- OMITTED_VERSES: 2Kings 25:13–17
+
+</details>
+
+## 17 · Restoration and the expectation of Christ
+
+**⟦Ezra 1:1–6⟧**
+
+In the first year of Cyrus king of the Persians, that the word of the Lord by the mouth of Jeremias might be fulfilled, the Lord stirred up the spirit of Cyrus king of the Persians: and he made a proclamation throughout all his kingdom, and in writing also, saying: Thus saith Cyrus king of the Persians: The Lord the God of heaven hath given to me all the kingdoms of the earth, and he hath charged me to build him a house in Jerusalem, which is in Judea. Who is there among you of all his people? His God be with him. Let him go up to Jerusalem, which is in Judea, and build the house of the Lord the God of Israel: he is the God that is in Jerusalem. And let all the rest in all places wheresoever they dwell, help him every man from his place, with silver and gold, and goods, and cattle, besides that which they offer freely to the temple of God, which is in Jerusalem. Then rose up the chief of the fathers of Juda and Benjamin, and the priests, and Levites, and every one whose spirit God had raised up, to go up to build the temple of the Lord, which was in Jerusalem. And all they that were round about, helped their hands with vessels of silver, and gold, with goods, and with beasts, and with furniture, besides what they had offered on their own accord.
+
+**⟦Ezra 6:14–16⟧**
+
+And the ancients of the Jews built, and prospered according to the prophecy of Aggeus the prophet, and of Zacharias the son of Addo: and they built and finished, by the commandment of the God of Israel, and by the commandment of Cyrus, and Darius, and Artaxerxes kings of the Persians. And they were finishing this house of God, until the third day of the month of Adar, which was in the sixth year of the reign of king Darius. And the children of Israel, the priests and the Levites, and the rest of the children of the captivity kept the dedication of the house of God with joy.
+
+**⟦Ezra 6:19–22⟧**
+
+And the children of Israel of the captivity kept the phase, on the fourteenth day of the first month. For all the priests and the Levites were purified as one man: all were clean to kill the phase for all the children of the captivity, and for their brethren the priests, and themselves. And the children of Israel that were returned from captivity, and all that had separated themselves from the filthiness of the nations of the earth to them, to seek the Lord the God of Israel, did eat. And they kept the feast of unleavened bread seven days with joy, for the Lord had made them joyful, and had turned the heart of the king of Assyria to them, that he should help their hands in the work of the house of the Lord the God of Israel.
+
+*⟦Editorial connector · source: Nehemiah 8:1–12 · NOT APPROVED⟧*
+
+*After the return, Ezra publicly proclaimed the Law and the community renewed its worship of the Lord (Nehemiah 8:1–8).*
+
+*⟦Editorial connector · source: 1 Maccabees 2:15–28 · NOT APPROVED⟧*
+
+*In later generations, foreign rulers pressured the Jewish people to forsake their law. Mattathias resisted enforced idolatry, beginning the Maccabean struggle (1 Maccabees 2:15–28).*
+
+*⟦Editorial connector · source: 2 Maccabees 7:1–42 · NOT APPROVED⟧*
+
+*The martyrs under persecution witnessed to Israel's hope in the resurrection, even in the face of death (2 Maccabees 7).*
+
+<details><summary>Unselected same-book source seams (research audit)</summary>
+
+- INTERVENING_CHAPTERS: Ezra 2–5
+- OMITTED_VERSES: Ezra 6:17–18
+
+</details>
+
+## 18 · The generations and the Annunciation
+
+**⟦Luke 1:26–38⟧**
+
+And in the sixth month, the angel Gabriel was sent from God into a city of Galilee, called Nazareth, To a virgin espoused to a man whose name was Joseph, of the house of David: and the virgin’s name was Mary. And the angel being come in, said unto her: Hail, full of grace, the Lord is with thee: blessed art thou among women. Who having heard, was troubled at his saying and thought with herself what manner of salutation this should be. And the angel said to her: Fear not, Mary, for thou hast found grace with God. Behold thou shalt conceive in thy womb and shalt bring forth a son: and thou shalt call his name Jesus. He shall be great and shall be called the Son of the Most High. And the Lord God shall give unto him the throne of David his father: and he shall reign in the house of Jacob for ever. And of his kingdom there shall be no end. And Mary said to the angel: How shall this be done, because I know not man? And the angel answering, said to her: The Holy Ghost shall come upon thee and the power of the Most High shall overshadow thee. And therefore also the Holy which shall be born of thee shall be called the Son of God. And behold thy cousin Elizabeth, she also hath conceived a son in her old age: and this is the sixth month with her that is called barren. Because no word shall be impossible with God. And Mary said: Behold the handmaid of the Lord: be it done to me according to thy word. And the angel departed from her.
+
