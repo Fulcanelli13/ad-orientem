@@ -20,7 +20,7 @@ export const CUSTOMS_YEAR_GROUPS=Object.freeze([
 const A=value=>Array.isArray(value)?value:[];
 const S=value=>String(value??"").trim();
 const unique=rows=>[...new Set(rows)];
-export function createCustomsLibrary({customs,temporal,archive,sources,p0,p1}={}){
+export function createCustomsLibrary({customs,temporal,archive,sources,p0,p1,frCopy}={}){
   if(customs?.schema==null||temporal?.schema!=="AO_CUSTOMS_TEMPORAL_PROJECTION_V1"||
      archive?.schema!=="AO_CUSTOMS_WEISER_REFERENCE_INDEX_V1")throw Error("Customs corpus incomplete");
   const customRows=A(customs.customs),timeRows=A(temporal.records),researchRows=A(archive.records);
@@ -32,6 +32,7 @@ export function createCustomsLibrary({customs,temporal,archive,sources,p0,p1}={}
   const timeById=new Map(timeRows.map(x=>[x.custom_id,x]));
   const srcById=new Map(A(sources?.sources).map(x=>[x.id,x]));
   const guidanceById=new Map([...A(p0?.entries),...A(p1?.entries)].map(x=>[x.custom_id,x]));
+  const frenchById=new Map(A(frCopy?.entries).map(x=>[x.custom_id,x]));
   const attestationsById=new Map();
   for(const att of A(customs.attestations)){
     const id=S(att.custom_id);
@@ -40,7 +41,7 @@ export function createCustomsLibrary({customs,temporal,archive,sources,p0,p1}={}
     attestationsById.get(id).push(att);
   }
   const items=customRows.map(c=>{
-    const id=c.custom_id,guidance=guidanceById.get(id)||null;
+    const id=c.custom_id,guidance=guidanceById.get(id)||null,french=frenchById.get(id)||null;
     const attestations=attestationsById.get(id)||[];
     const citations=unique([...attestations.flatMap(a=>A(a.source_ids)),...A(guidance?.source_ids)])
       .map(sourceId=>srcById.get(sourceId)).filter(Boolean);
@@ -48,12 +49,12 @@ export function createCustomsLibrary({customs,temporal,archive,sources,p0,p1}={}
       ...c, id, guidance,temporal:timeById.get(id),
       attestations:Object.freeze(attestations),sources:Object.freeze(citations),
       title_en:S(guidance?.title_en)||S(c.name),
-      title_fr:S(guidance?.title_fr)||null,
+      title_fr:S(guidance?.title_fr)||S(french?.title_fr)||null,
       description_en:S(guidance?.description_en)||S(c.canonical_statement),
-      description_fr:S(guidance?.description_fr)||null,
+      description_fr:S(guidance?.description_fr)||S(french?.description_fr)||null,
       meaning_en:S(guidance?.meaning_en)||null,meaning_fr:S(guidance?.meaning_fr)||null,
       how_en:S(guidance?.how_en)||null,how_fr:S(guidance?.how_fr)||null,
-      caution_fr:S(guidance?.caution_fr)||null
+      caution_fr:S(guidance?.caution_fr)||S(french?.caution_fr)||null
     });
   });
   const byId=new Map(items.map(x=>[x.id,x]));
