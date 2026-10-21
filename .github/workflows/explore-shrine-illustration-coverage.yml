@@ -8,6 +8,7 @@ on:
       - "data/explore/sacred-phenomena-seed.v1.json"
       - "src/find/explore-data-service.js"
       - "tests/shrine-marian-editorial-inventory-contract.mjs"
+      - "tests/explore-shrine-illustrated-folios-phone.mjs"
       - ".github/workflows/explore-shrine-illustration-coverage.yml"
   workflow_dispatch:
 jobs:
@@ -20,3 +21,22 @@ jobs:
           node-version: "22"
       - name: Audit full shrine-pilgrimage inventory and publishable illustrated guide joins
         run: node tests/shrine-marian-editorial-inventory-contract.mjs
+  actual-phone-folios:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm ci --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Confirm eleven actual illustrated shrine pages at 320 and 390
+        run: node tests/explore-shrine-illustrated-folios-phone.mjs
+      - name: Upload review screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: shrine-folios-320-390-review
+          path: artifacts/shrine-folios
+          if-no-files-found: ignore
