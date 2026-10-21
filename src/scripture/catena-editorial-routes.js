@@ -5,6 +5,16 @@
  */
 import {loadCatenaForPassage,CATENA_SOURCE_COMMIT} from "./catena-inline.js";
 export const CATENA_EDITORIAL_ROUTE_URL=new URL("../../data/scripture/catena/editorial-matthew-routes.v1.json",import.meta.url).href;
+export const CATENA_EDITORIAL_REVIEW_URL=new URL("../../data/scripture/catena/editorial-matthew-first-30-review.v1.json",import.meta.url).href;
+const REVIEW_CLASSES=Object.freeze({
+ direct:"Source supports editorial question; still unapproved",
+ direct_with_caution:"Source needs interpretation or speaker qualification",
+ context_dependency:"Requires surrounding commentary; not a standalone answer",
+ question_revision_needed:"Modern editorial question overstates the source",
+ source_work_or_doctrine_check:"Original-work, doctrinal or philological review required",
+ historical_claim_disclosure:"Historical/geographic assertion is unverified"
+});
+export const catenaEditorialReviewLabel=value=>REVIEW_CLASSES[value]||"Further editorial review needed";
 const SKIP=new Set("a an and are as at be by can did do does for from had has have how in into is it its of on or our should that the their them this those to was were what when where which who why will with would about mean meaning called between through".split(" "));
 function words(value){
  const text=String(value||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
@@ -58,6 +68,44 @@ export function validateCatenaEditorialRoutes(data){
    throw new Error("CATENA_EDITORIAL_GROUP_INVALID");
  }
  return Object.freeze({data,byPointer:seen});
+}
+export function validateCatenaEditorialReview(value,registry){
+ if(!registry?.byPointer||value?.schema!=="ao.catena.matthew-first-30-app-preview-review.v1"||
+  value.sourceResearchCommit!=="31e758596cb66cb43c6f40ad4ef5f41e0381e69a"||
+  value.status!=="AI_context_only_no_human_approval"||
+  value.reviewCount!==30||value.records?.length!==30)
+  throw new Error("CATENA_EDITORIAL_CONTEXT_REVIEW_INVALID");
+ const examined=new Map();
+ for(const r of value.records){
+  const source=registry.byPointer.get(r.sourcePointer);
+  if(!source||examined.has(r.sourcePointer)||
+   r.inheritedFatherLabel!==source.inheritedFatherLabel||
+   r.sourceCharacterCount!==source.sourceCharacterCount||
+   !source.modernReaderQuestions.includes(r.originalReaderQuestion)||
+   !Number.isInteger(r.rank)||r.rank<1||r.rank>30||
+   !Object.hasOwn(REVIEW_CLASSES,r.AIContextAssessment)||
+   r.contextualWarning?.length<45||r.originalSourceEvidencePhrase?.length<12||
+   !Array.isArray(r.requiredContextPointers)||
+   r.historicalQuestionOfFather!==false||
+   r.humanApproved!==false||r.publicationEligibility!=="blocked_research_only")
+   throw new Error("CATENA_EDITORIAL_CONTEXT_REVIEW_RECORD_INVALID");
+  examined.set(r.sourcePointer,r);
+ }
+ if(new Set(value.records.map(r=>r.rank)).size!==30)
+  throw new Error("CATENA_EDITORIAL_CONTEXT_REVIEW_DUPLICATE_RANK");
+ return Object.freeze({byPointer:examined,records:value.records});
+}
+let reviewPromise;
+export async function loadCatenaEditorialReview(registry,{fetcher=globalThis.fetch?.bind(globalThis)}={}){
+ if(typeof fetcher!=="function")throw new Error("CATENA_EDITORIAL_CONTEXT_TRANSPORT_UNAVAILABLE");
+ if(!reviewPromise){
+  reviewPromise=(async()=>{
+   const response=await fetcher(CATENA_EDITORIAL_REVIEW_URL,{cache:"force-cache"});
+   if(!response?.ok)throw new Error("CATENA_EDITORIAL_CONTEXT_UNAVAILABLE");
+   return validateCatenaEditorialReview(await response.json(),registry);
+  })().catch(e=>{reviewPromise=null;throw e});
+ }
+ return reviewPromise;
 }
 let routePromise;
 export async function loadCatenaEditorialRoutes({fetcher=globalThis.fetch?.bind(globalThis)}={}){

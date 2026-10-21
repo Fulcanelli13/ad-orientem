@@ -347,6 +347,8 @@ export function mountCatenaMessenger(host,pericopes,{language="en",fetcher=globa
   if(r.fromAnotherPassage)body.append(element(d,"p","aoCatenaMElsewhere","FROM ANOTHER PASSAGE · "+r.reference));
   if(r.editorialResearchLead)body.append(element(d,"p","aoCatenaMResearchBadge",
    "EDITORIAL SOURCE LEAD · NOT A VERIFIED ANSWER · ORIGINAL EXCERPT"));
+  if(r.editorialContextReview)body.append(element(d,"p","aoCatenaMEvidence",
+   "AI SOURCE REVIEW · "+r.editorialContextReview.reviewLabel+" · HUMAN APPROVAL PENDING"));
   if(r.relatedSourceEvidence)body.append(element(d,"p","aoCatenaMRelated","RELATED SOURCE WORDING · “"+r.relatedSourceEvidence.sourcePhrase+"” · Not a direct answer"));
   else if(r.sourceMatchEvidence){
    const evidence=r.sourceMatchEvidence;
@@ -385,9 +387,11 @@ export function mountCatenaMessenger(host,pericopes,{language="en",fetcher=globa
   acts.append(browse);
   let registryPromise=null,researchOpen=false;
   async function getRegistry(){
-   if(!registryPromise)registryPromise=import("./catena-editorial-routes.js").then(mod=>
-    mod.loadCatenaEditorialRoutes({fetcher}).then(registry=>({mod,registry}))
-   ).catch(error=>{registryPromise=null;throw error});
+   if(!registryPromise)registryPromise=import("./catena-editorial-routes.js").then(async mod=>{
+    const registry=await mod.loadCatenaEditorialRoutes({fetcher});
+    const review=await mod.loadCatenaEditorialReview(registry,{fetcher});
+    return {mod,registry,review};
+   }).catch(error=>{registryPromise=null;throw error});
    return registryPromise;
   }
   async function toggleEditorialResearch(){
@@ -397,7 +401,7 @@ export function mountCatenaMessenger(host,pericopes,{language="en",fetcher=globa
    if(!researchOpen)return;
    researchPanel.replaceChildren(element(d,"p",null,"Loading source-linked research questions…"));
    try{
-    const {mod,registry}=await getRegistry();
+    const {mod,registry,review}=await getRegistry();
     if(!researchOpen||!shell.isConnected)return;
     const query=lastQuestion||"";
     const found=mod.discoverCatenaEditorialRoutes(registry,query,{
@@ -411,8 +415,13 @@ export function mountCatenaMessenger(host,pericopes,{language="en",fetcher=globa
       "No contextual-review questions for this selection. Ask a shorter Matthew question or use the original full-corpus search."));
     }
     for(const route of found){
-     const btn=action(d,route.question+(route.kind==="comparison"?" · compare sources":""),()=>{void showEditorialRoute(mod,registry,route)});
+     const contextual=route.sourcePointers.map(p=>review.byPointer.get(p)).filter(Boolean);
+     const needs=contextual.some(x=>x.AIContextAssessment!=="direct");
+     const btn=action(d,route.question+
+      (route.kind==="comparison"?" · compare sources":"")+
+      (needs?" · context check required":""),()=>{void showEditorialRoute(mod,registry,review,route)});
      btn.dataset.catenaResearchQuestion=route.id;
+     btn.dataset.catenaResearchReview=needs?"caution":"not-yet-assessed";
      researchPanel.append(btn);
     }
    }catch{
@@ -422,7 +431,7 @@ export function mountCatenaMessenger(host,pericopes,{language="en",fetcher=globa
     }
    }
   }
-  async function showEditorialRoute(mod,registry,route){
+  async function showEditorialRoute(mod,registry,review,route){
    const busy=element(d,"p","aoCatenaMNotice","Checking original source excerpt and attribution…");
    feed.append(busy);
    try{
@@ -432,10 +441,17 @@ export function mountCatenaMessenger(host,pericopes,{language="en",fetcher=globa
     feed.append(element(d,"div","aoCatenaMUser",route.question));
     note("Editorial navigation only · These excerpts may illuminate the question but have NOT received human approval. Distinct Father interpretations remain separate.");
     if(route.caution)note("Comparison context: "+route.caution);
+    for(const ptr of route.sourcePointers){
+     const item=review.byPointer.get(ptr);
+     if(item)note("AI context review · "+item.inheritedFatherLabel+" · "+ptr+" · "+
+      mod.catenaEditorialReviewLabel(item.AIContextAssessment)+". "+item.contextualWarning);
+    }
     let added=0;
     for(const r of found){
      const other=!pericopes.some(p=>p.id===r.pericopeId);
-     if(message({...r,fromAnotherPassage:other,reference:r.citation}))added++;
+     const item=review.byPointer.get(r.id);
+     const disclaimer=item?{reviewLabel:mod.catenaEditorialReviewLabel(item.AIContextAssessment)}:null;
+     if(message({...r,editorialContextReview:disclaimer,fromAnotherPassage:other,reference:r.citation}))added++;
     }
     if(!added)note("Relevant original excerpts are already shown, or have been withheld because source ownership could not be verified.");
    }catch{

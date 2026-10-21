@@ -4,7 +4,8 @@ import {webcrypto} from "node:crypto";
 import {selectCatenaPericopes,loadCatenaForPassage} from "../src/scripture/catena-inline.js";
 import {catenaOwnerUnits,mountCatenaMessenger} from "../src/scripture/catena-messenger.js";
 import {validateCatenaEditorialRoutes,discoverCatenaEditorialRoutes,
- parseMatthewEditorialReference,retrieveCatenaEditorialPassages} from "../src/scripture/catena-editorial-routes.js";
+ parseMatthewEditorialReference,retrieveCatenaEditorialPassages,
+ validateCatenaEditorialReview,catenaEditorialReviewLabel} from "../src/scripture/catena-editorial-routes.js";
 const raw=JSON.parse(readFileSync("data/scripture/catena/editorial-matthew-routes.v1.json","utf8"));
 const catalogue=validateCatenaEditorialRoutes(raw);
 assert.equal(catalogue.byPointer.size,192);
@@ -55,6 +56,29 @@ for(const excerpt of actual){
  assert.ok(excerpt.editorialResearchLead);
  assert.ok(excerpt.sourceUrl.startsWith("https://www.ecatholic2000.com/"));
 }
+
+const review=JSON.parse(readFileSync("data/scripture/catena/editorial-matthew-first-30-review.v1.json","utf8"));
+const validated=validateCatenaEditorialReview(review,catalogue);
+assert.equal(validated.records.length,30);
+assert.equal(validated.byPointer.size,30);
+for(const item of validated.records){
+ const section=pericopes.get(item.sourcePointer.split(":")[0]);
+ const segment=section?.segments[Number(item.sourcePointer.split(":")[1])];
+ assert.ok(segment);
+ assert.ok(segment.text.includes(item.originalSourceEvidencePhrase));
+ assert.equal(segment.father,item.inheritedFatherLabel);
+ assert.equal(segment.text.length,item.sourceCharacterCount);
+ assert.equal(item.publicationEligibility,"blocked_research_only");
+ assert.equal(item.humanApproved,false);
+ for(const pointer of item.requiredContextPointers){
+  const s=pericopes.get(pointer.split(":")[0]);
+  assert.ok(s?.segments?.[Number(pointer.split(":")[1])]);
+ }
+}
+assert.equal(validated.records.filter(x=>x.AIContextAssessment==="context_dependency").length,3);
+assert.match(catenaEditorialReviewLabel("context_dependency"),/not a standalone answer/);
+assert.throws(()=>validateCatenaEditorialReview({...review,reviewCount:31},catalogue),/CATENA_EDITORIAL_CONTEXT_REVIEW_INVALID/);
+
 const mixedPointers=["catena.matthew.26.26:12","catena.matthew.27.45:1"];
 for(const ptr of mixedPointers){
  const colon=ptr.lastIndexOf(":"),section=pericopes.get(ptr.slice(0,colon)),s=section.segments[Number(ptr.slice(colon+1))];

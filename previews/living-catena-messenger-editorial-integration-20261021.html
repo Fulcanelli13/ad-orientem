@@ -18,7 +18,9 @@ import {loadCatenaForPassage} from "../src/scripture/catena-inline.js";
 import {mountCatenaMessenger} from "../src/scripture/catena-messenger.js";
 const host=document.getElementById("mount");
 try{
- const previewPassage=new URLSearchParams(location.search).get("passage")==="27:45"?{chapter:27,verse:45}:{chapter:6,verse:11};
+ const selection=new URLSearchParams(location.search).get("passage");
+ const previewPassage=selection==="27:45"?{chapter:27,verse:45}:
+  selection==="11:28"?{chapter:11,verse:28}:{chapter:6,verse:11};
  const sections=await loadCatenaForPassage({book:"Matthew",chapter:previewPassage.chapter,verseStart:previewPassage.verse,verseEnd:previewPassage.verse});
  host.replaceChildren();
  if(!sections.length)throw Error("No source passage returned");

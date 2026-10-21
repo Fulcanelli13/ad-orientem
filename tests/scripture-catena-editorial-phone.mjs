@@ -40,6 +40,14 @@ try{
  assert.ok(await page.locator(".aoCatenaMMeta a[href^='https://www.ecatholic2000.com/']").count()>=2);
  const overflow=await page.locator(".aoCatenaMessenger").evaluate(e=>e.scrollWidth-e.clientWidth);
  assert.ok(overflow<=2,"Messenger phone panel overflows horizontally by "+overflow);
+ await page.goto(url+"?passage=11:28",{waitUntil:"domcontentloaded",timeout:60000});
+ await page.locator(".aoCatenaMessenger").waitFor({state:"visible",timeout:20000});
+ await page.getByRole("button",{name:"Browse research questions"}).click();
+ await page.locator('[data-catena-research-question="catena.matthew.11.28:1"]').waitFor({state:"visible",timeout:20000});
+ await page.locator('[data-catena-research-question="catena.matthew.11.28:1"]').click();
+ await page.locator(".aoCatenaMFeed .aoCatenaMNotice").last().waitFor({state:"visible",timeout:25000});
+ assert.match(await page.locator(".aoCatenaMFeed").innerText(),/not a standalone answer/i);
+ assert.match(await page.locator(".aoCatenaMFeed").innerText(),/HUMAN APPROVAL PENDING/);
  await page.goto(url+"?passage=27:45",{waitUntil:"domcontentloaded",timeout:60000});
  await page.locator('[data-catena-fragment-id="catena.matthew.27.45:1"]').waitFor({state:"visible",timeout:20000});
  const split=page.locator('[data-catena-fragment-id="catena.matthew.27.45:1"]');
