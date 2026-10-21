@@ -87,5 +87,33 @@ for(const v of Object.values(result.reviewGates))assert(v===false);
 const out='artifacts/pius-x-complete-corpus/';
 await mkdir(resolve(root,out),{recursive:true});
 await writeFile(resolve(root,out+'SPX_Three_Document_Full_34_Turn_Claim_Map.json'),JSON.stringify(result,null,2)+'\n');
+const markdown=[
+'# St Pius X — complete 34-exchange source-first bilingual editorial review',
+'',
+'**Unapproved adaptation.** This is NOT a historic transcript, independently verified translation, or release-authorized app content. Dialogue may adjust voice and audience without inventing a conclusion. Each substantive sentence is tied to an underlying claim and source.',
+'',
+'Core: '+result.counts.core+' exchanges; optional: '+result.counts.optional+'; source-bound speech segments: '+result.counts.segments+'.',
+''];
+for(const sc of scenes){
+ const src=result.sources[sc.sourceId];
+ markdown.push('## '+src.title,'','Original audience: '+src.originalAudience+'. <'+Object.values(src.comparisons)[0]+'>','');
+ for(const t of sc.turns){
+  markdown.push('### '+(t.choiceType==='OPTIONAL_BRANCH'?'Optional branch — ':'')+t.visitor.en,
+   '','**Visitor (EN):** '+t.visitor.en,'','**Pius X (EN, adapted):** '+t.segments.map(x=>x.en).join(' '),
+   '','**Visiteur (FR) :** '+t.visitor.fr,'','**Pie X (FR, adaptation) :** '+t.segments.map(x=>x.fr).join(' '),'',
+   '**Reference:** *'+src.title+'*, '+t.sourceLoci.join(', ')+'. '+Object.entries(src.comparisons).map(([l,u])=>l.toUpperCase()+': '+u).join(' | '),'',
+   '**Per-segment claim anchors:**');
+  for(const segment of t.segments){
+   const refs=segment.claimIds.map(id=>id+' ('+result.claims[id].locus+')').join(', ');
+   markdown.push('- '+refs+(segment.secondaryAuthority?' — earlier authority: '+segment.secondaryAuthority:''));
+  }
+  if(t.editorialQualification)markdown.push('','**Out-of-character qualification:** '+t.editorialQualification);
+  markdown.push('','**Editorial approval:** pending source, context, EN, FR, voice, theological and production review.','');
+ }
+}
+markdown.push('## Source-order corrections',
+  ...result.exceptions.map(x=>'- '+x.id+': '+x.description),
+  '','Do not publish without independent passage-level bilingual and theological review.','');
+await writeFile(resolve(root,out+'SPX_Three_Document_Full_34_EN_FR_Review.md'),markdown.join('\n')+'\n');
 const summary={counts:result.counts,byDocument:scenes.map(s=>({doc:s.sourceId,core:s.coreTurnIds.length,optional:s.optionalTurnIds.length,segments:s.turns.reduce((n,t)=>n+t.segments.length,0)})),exceptions};
 console.log('SPX_FULL_BENCHMARK '+JSON.stringify(summary));
