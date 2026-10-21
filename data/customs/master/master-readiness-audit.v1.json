@@ -1,7 +1,7 @@
 {
   "schema": "AO_CUSTOMS_MASTER_EDITORIAL_READINESS_V1",
   "date": "2026-10-21",
-  "status": "RESEARCH_CONSOLIDATED_FINAL_EDITORIAL_ACCEPTANCE_NOT_COMPLETE",
+  "status": "COMPLETE_INVENTORY_AND_OWNER_REVIEW_FINAL_EDITORIAL_SOURCE_ACCEPTANCE_OPEN",
   "snapshot": {
     "main_canonical_ids": 38,
     "earlier_provisional_P2_ids": 4,
@@ -17,7 +17,9 @@
     "proposed_links_to_existing_id_first_pass": 41,
     "other_module_owner_first_pass": 56,
     "main_canonical_publication_status_unchanged": true,
-    "new_publications_this_branch": 0
+    "new_publications_this_branch": 0,
+    "existing_owner_and_regional_relations_reviewed": 80,
+    "explicit_wrong_owner_relations_corrected": 3
   },
   "completeness": {
     "source_observation_inventory": "CLOSED_568_OF_568",
@@ -26,12 +28,13 @@
     "source_ritual_owner_routes": "CLOSED_23_OF_23_NOT_FORMULA_APPROVAL",
     "working_bilingual_core_fields": "CLOSED_56_OF_56",
     "proposed_identity_editorial_approval": "OPEN_14_PROPOSALS_NOT_CANONICAL",
-    "regional_variant_release_adjudication": "OPEN_39_FIRST_PASS_GROUPS",
-    "existing_owner_evidence_reconciliation": "OPEN_41_FIRST_PASS_LINKS",
+    "regional_variant_release_adjudication": "PROVISIONAL_OWNER_REVIEW_39_OF_39_DONE_SOURCE_ACCEPTANCE_OPEN",
+    "existing_owner_evidence_reconciliation": "PROVISIONAL_OWNER_REVIEW_41_OF_41_DONE_SOURCE_ACCEPTANCE_OPEN",
     "local_ritual_1962_formulary_permissions": "OPEN_IF_PRIestly_RITE_IS_TO_BE_PUBLISHED",
     "documented_source_gaps": "17_HELD_NOT_MANUFACTURED",
     "image_artwork_selection": "OUT_OF_SCOPE_UNTIL_MASTER_ACCEPTANCE",
-    "module_navigation_visual_design": "OUT_OF_SCOPE_UNTIL_MASTER_ACCEPTANCE"
+    "module_navigation_visual_design": "OUT_OF_SCOPE_UNTIL_MASTER_ACCEPTANCE",
+    "relationship_owner_review": "80_OF_80_EXPLICIT_DISPOSITIONS_NOT_FINAL_PUBLICATION"
   },
   "release_decision": {
     "approved_final_comprehensive_master": false,
@@ -40,10 +43,9 @@
     "approved_new_sacred_art_publishing": false
   },
   "next_review_order": [
-    "Reconcile the 41 proposed existing identity links and 39 regional practice variants against the 56 working identities without increasing IDs for mere observation or folklore.",
-    "Accept or reject the 14 source-backed nonpublishing identity proposals, preserving exact locality and date context.",
-    "Run source-by-source editorial review on 56 bilingual profiles, including provenance, status and period-specific caution; keep 17 unsupported claims as holds.",
-    "Only if publishing a priestly rite, verify the actual 1962 Rituale formula and ministerial authority; otherwise present a historical explanation only.",
-    "After master sign-off, decide Through-the-Year and Catholic-Life module presentation, Calendar/Saints/Prayers links and locally grounded artwork."
+    "Decide the publication category and final identity status of the 14 source-bounded proposed customs, preserving regional versions as local subtypes rather than universal rites.",
+    "Perform final evidence/source acceptance only for the 80 reviewed links and regional variants selected for visible module content. Keep unverified items as historical research without further redundant loops.",
+    "Review publication language and exact links in the 56 bilingual working profiles, preserving 17 source holds and historical Weller 1964 versus precise 1962 ritual uncertainty.",
+    "Approve final historical master and only then decide calendar display, Catholic Life, devotional and archival presentation and artwork reuse."
   ]
 }
