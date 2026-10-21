@@ -108,7 +108,8 @@ export function createPiusDocumentFirstReviewSelector({router,benchmark,registry
    ||routing.documentNavigation.approvedReply!==false
    ||routing.approvedReply!==false||routing.answerText!==null)
     return stop('source_mismatch',{reason:'CANONICAL_ROUTER_RESULT_MISMATCH'});
-  if(routing.requiresQuestionConfirmation!==false&&!confirmed)
+  // Even an exact catalog phrase does not authorize an unreviewed character line.
+  if(!confirmed)
    return stop('confirm_source',{topicId:entry.topicId,sourceRef:ref,
     sourceTitle:benchmark.sources[entry.document].title,sourceLocator:entry.locator,
     needsConfirmation:true});
