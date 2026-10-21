@@ -1,6 +1,6 @@
 
 /* Review-only expanded St Pius X conversations; inherited dark sacred study */
-#spxc-launch{white-space:nowrap;border-color:#b7995a!important;color:#ecd19e!important}
+#spxc-launch{position:fixed;bottom:22px;right:22px;z-index:40;white-space:nowrap;background:#17191d!important;border:1px solid #b7995a!important;color:#ecd19e!important;box-shadow:0 12px 30px #000a;padding:13px 18px!important;min-height:46px}
 #spxc-overlay[hidden],#spxc-portrait[hidden]{display:none!important}
 #spxc-overlay{--spxc-gold:#c7ab74;position:fixed;inset:0;z-index:999;isolation:isolate;color:#eae1d0;background:#090e16;font-family:Palatino,"Palatino Linotype",Georgia,serif}
 #spxc-overlay *{box-sizing:border-box}
