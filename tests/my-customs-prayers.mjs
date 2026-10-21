@@ -53,7 +53,7 @@ assert.throws(()=>normalizeMyCustomSchedule({kind:"season",season:"invented-time
 assert.ok(MY_CUSTOMS_SEASONS.includes("passion"));
 const palm=v384Dates(2027).palm;
 assert.equal(myCustomMatchesDate({schedule:{kind:"season",season:"passion"}},palm),true);
-const leap=store.add({origin:"personal",kind:"prayer",title:"Leap day",schedule:{kind:"annual",mmdd:"02-29"}});
+const leap=fresh.add({origin:"personal",kind:"prayer",title:"Leap day",schedule:{kind:"annual",mmdd:"02-29"}});
 assert.equal(myCustomMatchesDate(leap,"2028-02-29"),true);
 assert.equal(myCustomMatchesDate(leap,"2027-02-28"),false);
 assert.equal(myCustomMatchesDate(leap,"2027-02-29"),false);
