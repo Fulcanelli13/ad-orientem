@@ -56,3 +56,32 @@ A usable relationship must separately record:
 See [external-pilot-40-pericopes.v1.json](external-pilot-40-pericopes.v1.json), a **research-only** register covering **10 distinct passages in each Gospel**, with 41 source-checkable existing editorial questions and eight external candidate links. The questions already present in Ad Orientem's original test fixtures are **not misrepresented** as externally mined question records. External linkages are deliberately labelled candidate/unreviewed.
 
 This is Phase 1 inventory and pilot selection, **not** a completed source-mining or independently approved question database. The next implementation gate is to extend the now-demonstrated Nave/Torrey record-level matching to an actually reviewed three-way crosswalk from source question → source-verified subject/verse → genuine patristic excerpt. No paid access or rights-holder contact is part of this route.
+
+
+## Original patristic questions — first completed selective source pass
+
+[Source-derived question seed](patristic-questions-seed.v1.json) and
+[findings/method](ORIGINAL_QUESTIONS_FINDINGS_2026-10-21.md).
+
+- Scanned attributed commentary in the **40 distinct pilot pericopes**:
+  **173 interrogative punctuation instances**, **not** 173 author questions.
+- Retained **27** original questions with exact *same-fragment* answer
+  evidence, covering **14** distinct pericopes (Matthew 8, Mark 1, Luke 3,
+  John 15 questions). Verified **27/27** directly from the authoritative
+  Catena **chapter packs**, including original segment ordinal, original
+  English question and subsequent answer-evidence phrase.
+- Rejected/segregated **seven** source-verified false-positive examples:
+  Gospel questions quoted by Fathers, a simulated interlocutor, and questions
+  requiring cross-fragment context. Exclusion does not mean their theology
+  is incorrect or that no author asks the question elsewhere.
+- Included a [standalone validator](../../../../tests/scripture-catena-original-questions.mjs)
+  for later CI integration; no claim it has been run on this branch.
+- Original question phrasing is an **Oxford/Newman Catena English witness**.
+  Underlying critical-edition author attribution, exact earlier-language
+  question, appropriateness for modern user-facing suggestions, and
+  theological relationship grades are **not** independently approved.
+
+An *original Father-attributed question* is a valuable research anchor.
+It is **not equivalent** to a Catholic catechism question, a topical heading
+from Nave or Torrey, a hypothetical objection, or a question spoken by a
+biblical character. Preserve those distinct origins in all subsequent joins.
