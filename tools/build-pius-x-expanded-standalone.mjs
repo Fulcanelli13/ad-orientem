@@ -72,7 +72,7 @@ for(const c of chapters){
 assert.equal(Object.values(sourceClassCounts).reduce((a,b)=>a+b,0),82);
 assert.equal(sourceClassCounts.BIOGRAPHICAL_NARRATOR,9);
 const editorialReview=applyPiusEditorialReview(chapters,load('spx-p0-enriched-openings.v1.json'));
-assert(editorialReview.expandedOpenings===18);
+assert(editorialReview.expandedOpenings===34);
 const payload={
  version:'SPX_82_CHAPTER_327_NODE_UNAPPROVED_LIBRARY_V1',
  counts:{chapters:82,regularNodes:291,dependentNodes:36,allNodes:327,
