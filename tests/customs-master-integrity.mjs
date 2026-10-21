@@ -18,6 +18,7 @@ const staged14=load("proposed-identity-additions.v1.json");
 const working56=load("working-master.v1.json");
 const routed23=load("ritual-and-source-ownership-23.v1.json");
 const readiness=load("master-readiness-audit.v1.json");
+const relation80=load("relation-review-80.v1.json");
 const candidateBoard=load("candidate-source-decision-board.v1.json");
 
 
@@ -212,6 +213,25 @@ assert.ok(staged14.records.every(x=>x.calendar.display_hint_fr&&
   x.provenance.source_file?.startsWith("independent-sources-batch")));
 assert.ok(working56.records.filter(x=>x.master_version==="V1_PROPOSED_RESEARCH_ONLY")
   .every(x=>x.calendar.hint_fr&&x.calendar_audit.display_hint_fr));
+assert.equal(relation80.schema,"AO_CUSTOMS_MASTER_RECONCILE_80_LINKS_VARIANTS_V1");
+assert.equal(relation80.existing_identity_links.length,41);
+assert.equal(relation80.regional_variants.length,39);
+assert.equal(relation80.scope.total,80);
+assert.equal(relation80.scope.identity_corrections_reject_wrong_owner,3);
+assert.equal(relation80.scope.new_canonical_ids,0);
+assert.equal(relation80.scope.publication_changes,0);
+assert.ok(relation80.existing_identity_links.every(x=>x.weiser_id&&x.resolution&&x.new_canonical_id===null));
+assert.ok(relation80.regional_variants.every(x=>x.weiser_id&&x.resolution&&x.new_canonical_id===null&&x.auto_publication===false));
+const relIds=[...relation80.existing_identity_links,...relation80.regional_variants].map(x=>x.weiser_id);
+assert.equal(new Set(relIds).size,80);
+assert.deepEqual(new Set(relation80.existing_identity_links.map(x=>x.weiser_id)),
+ new Set(triaged.filter(x=>x.provisional_disposition==="LINK_TO_KNOWN_IDENTITY_FOR_REVIEW").map(x=>x.weiser_id)));
+assert.deepEqual(new Set(relation80.regional_variants.map(x=>x.weiser_id)),
+ new Set(triaged.filter(x=>x.provisional_disposition==="REGIONAL_VARIANT_OR_RELATED_PRACTICE").map(x=>x.weiser_id)));
+assert.equal(readiness.snapshot.existing_owner_and_regional_relations_reviewed,80);
+assert.equal(readiness.snapshot.explicit_wrong_owner_relations_corrected,3);
+assert.equal(readiness.completeness.relationship_owner_review,"80_OF_80_EXPLICIT_DISPOSITIONS_NOT_FINAL_PUBLICATION");
+
 
 assert.ok(identityRecs.records.every(x=>x.canonical_id===null&&x.distinct_canonical_decision==="PENDING_HUMAN_APPROVAL"&&!x.published));
 
