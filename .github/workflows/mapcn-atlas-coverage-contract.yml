@@ -1,0 +1,26 @@
+name: Explore MapCN Atlas Layer Contracts
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "src/find/mapcn-atlas-*"
+      - "src/find/map-runtime.js"
+      - "src/find/browser-entry.js"
+      - "src/find/heritage-presentation.js"
+      - "src/find/explore-presentation.js"
+      - "src/find/explore-atlas-layout-style.js"
+      - "tests/mapcn-atlas-coverage-contract.mjs"
+      - ".github/workflows/mapcn-atlas-coverage-contract.yml"
+jobs:
+  contracts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: node --check src/find/mapcn-atlas-controller.js
+      - run: node --check src/find/mapcn-atlas-coverage.js
+      - run: node --check src/find/browser-entry.js
+      - run: node --check src/find/heritage-presentation.js
+      - run: node --test tests/mapcn-atlas-coverage-contract.mjs

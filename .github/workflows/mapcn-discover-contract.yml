@@ -1,0 +1,20 @@
+name: MapCN Discover integration contracts
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "src/find/mapcn-discover-rail.js"
+      - "src/find/heritage-presentation.js"
+      - "src/find/explore-atlas-layout-style.js"
+      - "src/find/browser-entry.js"
+      - "tests/mapcn-discover-contract.mjs"
+      - ".github/workflows/mapcn-discover-contract.yml"
+jobs:
+  contracts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: node --test tests/mapcn-discover-contract.mjs

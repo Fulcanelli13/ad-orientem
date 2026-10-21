@@ -4,6 +4,7 @@ import {
   APP_LITURGICAL_THEME_VERSION,
   resolveAppLiturgicalTheme,
   appThemeCssValues,
+  contrastRatio,
   installAppLiturgicalTheme,
 } from "../src/app/liturgical-theme.js";
 import { MASS_LITURGICAL_PALETTES, resolveMassLiturgicalTheme } from "../src/mass/reader-liturgical-theme.js";
@@ -20,6 +21,12 @@ assert.equal(appThemeCssValues(white)["--liturgical"],"#eff0ed","liturgical whit
 assert.equal(appThemeCssValues(white)["--bg"],MASS_LITURGICAL_PALETTES.WHITE.bg);
 assert.equal(resolveAppLiturgicalTheme(day("black")).key,"BLACK");
 assert.equal(appThemeCssValues(resolveAppLiturgicalTheme(day("black")))["--liturgical"],"#50545c");
+// Text on the accent (Today's primary button) must meet WCAG AA in every palette,
+// including the charcoal Black of All Souls and Requiem days.
+for(const [key,tokens] of Object.entries(MASS_LITURGICAL_PALETTES)){
+  const values=appThemeCssValues({key,tokens});
+  assert.ok(contrastRatio(values["--liturgical-ink"],values["--liturgical"])>=4.5,key+" primary-button text is below 4.5:1");
+}
 assert.equal(resolveAppLiturgicalTheme(day("green")).key,"GREEN");
 assert.equal(resolveAppLiturgicalTheme(day("red")).key,"RED");
 assert.equal(resolveAppLiturgicalTheme(day("purple")).key,"VIOLET");

@@ -91,6 +91,11 @@ const admittedAfterSnapshot=[
   ["SANT-001","att:SANT-001:FR","NOT_MAPPED"],
   ["SCHR-001","att:SCHR-001:FR","NOT_MAPPED"],
   ["SNIC-001","att:SNIC-001:FR","NOT_MAPPED"],
+  ["EPIP-001","att:EPIP-001:DE","NOT_MAPPED"],
+  ["EPIP-002","att:EPIP-002:FR","NOT_MAPPED"],
+  ["CORP-001","att:CORP-001:PL","NOT_MAPPED"],
+  ["EAST-001","att:EAST-001:DE","NOT_MAPPED"],
+  ["MARI-002","att:MARI-002:US","NOT_MAPPED"],
 ];
 for(const [customId,attestationId,policy] of admittedAfterSnapshot){
   const custom=C.customs.find(x=>x.custom_id===customId);

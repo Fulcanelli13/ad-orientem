@@ -29,6 +29,7 @@ export const EXPLORE_DATA_URLS=Object.freeze({
   customs:moduleUrl("../../data/customs/customs-atlas-seed.v1.json"),
   customSources:moduleUrl("../../data/customs/source-registry.v1.json"),
   customGuidance:moduleUrl("../../data/customs/customs-p0-guidance-en-fr.v1.json"),
+  customGuidanceP1:moduleUrl("../../data/customs/customs-p1-guidance-en-fr.v1.json"),
   shrines:moduleUrl("../../data/shrines/shrines-pilgrimages-seed.v1.json"),
   sacredPhenomena:moduleUrl("../../data/explore/sacred-phenomena-seed.v1.json"),
   shrineSources:moduleUrl("../../data/shrines/source-registry.v1.json"),
@@ -43,16 +44,20 @@ export const EXPLORE_DATA_URLS=Object.freeze({
   illustratedPlaceGuides:moduleUrl("../../data/shrines/illustrated-place-guides-ireland.v1.json"),
   illustratedFrenchGuides:moduleUrl("../../data/shrines/illustrated-place-guides-france.v1.json"),
   illustratedFrenchR67:moduleUrl("../../data/shrines/illustrated-place-guides-france-r67.v1.json"),
+  illustratedWorldMarianR1:moduleUrl("../../data/shrines/illustrated-place-guides-world-marian-r1.v1.json"),
+  illustratedGlobalSaintsR1:moduleUrl("../../data/shrines/illustrated-place-guides-global-saints-r1.v1.json"),
+  illustratedGlobalMarianB2:moduleUrl("../../data/shrines/illustrated-place-guides-global-marian-b2.v1.json"),
 });
 
 export async function loadExploreDataset({fetchImpl=fetch,saintsChannel=ACTIVE_SAINTS_CHANNEL}={}){
   const research=isResearchSaintsChannel(saintsChannel);
-  const [directory,geography,customs,customSources,customGuidance,shrines,shrineSources,novenaBridge,novenaSot,sacredPhenomena,relatedPlaces,approvedPlaceMedia,approvedPlaceGallery,majorPlaceEditorial,illustratedPlaceGuides,illustratedFrenchGuides,illustratedFrenchR67,biblePlaces,saintsPilot,saintsCalendarBridge,saintsDoctors,saintsVocations,saintsOwnerIndex,routeStageEvidence,routeGeometryReview,routeStageSiteLinks]=await Promise.all([
+  const [directory,geography,customs,customSources,customGuidance,customGuidanceP1,shrines,shrineSources,novenaBridge,novenaSot,sacredPhenomena,relatedPlaces,approvedPlaceMedia,approvedPlaceGallery,majorPlaceEditorial,illustratedPlaceGuides,illustratedFrenchGuides,illustratedFrenchR67,illustratedWorldMarianR1,illustratedGlobalSaintsR1,illustratedGlobalMarianB2,biblePlaces,saintsPilot,saintsCalendarBridge,saintsDoctors,saintsVocations,saintsOwnerIndex,routeStageEvidence,routeGeometryReview,routeStageSiteLinks]=await Promise.all([
     loadDirectoryDataset({fetchImpl}),
     fetchJson(EXPLORE_DATA_URLS.geography,{fetchImpl}),
     fetchJson(EXPLORE_DATA_URLS.customs,{fetchImpl}),
     fetchJson(EXPLORE_DATA_URLS.customSources,{fetchImpl}),
     fetchJson(EXPLORE_DATA_URLS.customGuidance,{fetchImpl,optional:true}),
+    fetchJson(EXPLORE_DATA_URLS.customGuidanceP1,{fetchImpl,optional:true}),
     fetchJson(EXPLORE_DATA_URLS.shrines,{fetchImpl}),
     fetchJson(EXPLORE_DATA_URLS.shrineSources,{fetchImpl}),
     fetchJson(EXPLORE_DATA_URLS.novenaBridge,{fetchImpl}),
@@ -65,6 +70,9 @@ export async function loadExploreDataset({fetchImpl=fetch,saintsChannel=ACTIVE_S
     fetchJson(EXPLORE_DATA_URLS.illustratedPlaceGuides,{fetchImpl,optional:true}),
     fetchJson(EXPLORE_DATA_URLS.illustratedFrenchGuides,{fetchImpl,optional:true}),
     fetchJson(EXPLORE_DATA_URLS.illustratedFrenchR67,{fetchImpl,optional:true}),
+    fetchJson(EXPLORE_DATA_URLS.illustratedWorldMarianR1,{fetchImpl,optional:true}),
+    fetchJson(EXPLORE_DATA_URLS.illustratedGlobalSaintsR1,{fetchImpl,optional:true}),
+    fetchJson(EXPLORE_DATA_URLS.illustratedGlobalMarianB2,{fetchImpl,optional:true}),
     fetchJson(EXPLORE_DATA_URLS.biblePlaces,{fetchImpl,optional:true}),
     fetchJson(EXPLORE_DATA_URLS.saintsPilot,{fetchImpl,optional:true}),
     fetchJson(EXPLORE_DATA_URLS.saintsCalendarBridge,{fetchImpl,optional:true}),
@@ -93,7 +101,10 @@ export async function loadExploreDataset({fetchImpl=fetch,saintsChannel=ACTIVE_S
       customs:safeArray(customs?.customs),
       attestations:safeArray(customs?.attestations),
       sources:safeArray(customSources?.sources),
-      guidance:customGuidance?.schema==="AO_CUSTOMS_P0_GUIDANCE_EN_FR_V1" && customGuidance?.publication==="DRAFT_ONLY" ? safeArray(customGuidance.entries) : [],
+      guidance:[
+        ...(customGuidance?.schema==="AO_CUSTOMS_P0_GUIDANCE_EN_FR_V1"&&customGuidance?.publication==="DRAFT_ONLY"?safeArray(customGuidance.entries):[]),
+        ...(customGuidanceP1?.schema==="AO_CUSTOMS_P1_GUIDANCE_EN_FR_V1"&&customGuidanceP1?.publication==="DRAFT_ONLY"?safeArray(customGuidanceP1.entries):[]),
+      ],
     }),
     sacredPhenomena:Object.freeze({apparitions:safeArray(sacredPhenomena?.apparitions),relics:safeArray(sacredPhenomena?.relics),norms:sacredPhenomena?.norms??null}),
     shrines:Object.freeze({
@@ -115,7 +126,7 @@ export async function loadExploreDataset({fetchImpl=fetch,saintsChannel=ACTIVE_S
     }),
     editorial:Object.freeze({
       featured:majorPlaceEditorial?.schema==="AO_EXPLORE_MAJOR_PLACES_EDITORIAL_V1"?safeArray(majorPlaceEditorial?.items):[],
-      placeGuides:[...((illustratedPlaceGuides?.schema==="AO_ILLUSTRATED_PLACE_GUIDES_V1")?safeArray(illustratedPlaceGuides?.guides):[]),...((illustratedFrenchGuides?.schema==="AO_ILLUSTRATED_PLACE_GUIDES_V1")?safeArray(illustratedFrenchGuides?.guides):[]),...((illustratedFrenchR67?.schema==="AO_ILLUSTRATED_PLACE_GUIDES_V1")?safeArray(illustratedFrenchR67?.guides):[])].filter(row=>row?.publication==="PUBLISHED"),
+      placeGuides:[...((illustratedPlaceGuides?.schema==="AO_ILLUSTRATED_PLACE_GUIDES_V1")?safeArray(illustratedPlaceGuides?.guides):[]),...((illustratedFrenchGuides?.schema==="AO_ILLUSTRATED_PLACE_GUIDES_V1")?safeArray(illustratedFrenchGuides?.guides):[]),...((illustratedFrenchR67?.schema==="AO_ILLUSTRATED_PLACE_GUIDES_V1")?safeArray(illustratedFrenchR67?.guides):[]),...((illustratedWorldMarianR1?.schema==="AO_ILLUSTRATED_PLACE_GUIDES_V1")?safeArray(illustratedWorldMarianR1?.guides):[]),...((illustratedGlobalSaintsR1?.schema==="AO_ILLUSTRATED_PLACE_GUIDES_V1")?safeArray(illustratedGlobalSaintsR1?.guides):[]),...((illustratedGlobalMarianB2?.schema==="AO_ILLUSTRATED_PLACE_GUIDES_V1")?safeArray(illustratedGlobalMarianB2?.guides):[])].filter(row=>row?.publication==="PUBLISHED"),
     }),
     novenas:Object.freeze({
       records:safeArray(novenaSot?.novenas),

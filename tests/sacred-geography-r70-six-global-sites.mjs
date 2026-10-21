@@ -21,7 +21,7 @@ assert.equal(new Set(newSites.map(x=>x.id)).size,6);
 assert.deepEqual(new Set(newSites.map(x=>x.country)),new Set(["SG","MA","CA","ZM"]));
 assert.equal(new Set(seed.shrines.map(x=>x.place_id)).size,257);
 assert.equal(new Set(geo.places.map(x=>x.place_id)).size,geo.places.length);
-assert.equal(hero.items.length,18);
+assert.equal(hero.items.length,31,"New source-certified shrine images do not change the six original R70 coverage sites");
 assert.equal(gallery.items.length,6);
 assert.equal(illustrated.length,14);
 assert.equal(board.candidates.length,750);

@@ -292,7 +292,11 @@ async function exerciseRealShellSpecialRite(browser,spec){
       assert.equal(switchback.missal,"MISSAL");
       assert.equal(switchback.live,"LIVE");
       assert.equal(switchback.source,39);
-      assert.equal(switchback.model,60,
+      // The pre-mode-switch curated projection has 61 structurally retained
+      // cards (65 minus four suppressed Foot cards); Palm further hides the
+      // Last Gospel in the *visible* itinerary, not in the audit model.
+      // A mode round-trip must preserve that exact source-owned projection.
+      assert.equal(switchback.model,snapshot.total,
         spec.kind+" must not reintroduce omitted Foot prayers when switching modes");
       assert.equal(switchback.first,"Introit");
       assert.equal(switchback.current,"Introit");
