@@ -47,6 +47,42 @@ function actualVerses(range, index, edition) {
   return output;
 }
 
+/**
+ * Translate a source-owned long citation into exact, consecutive rail ranges.
+ * Every verse from the original selected span appears once, unchanged. These
+ * are presentation anchors, never a secondary Scripture selection.
+ */
+function railSectionsFor(ref, verses, partitions) {
+  const refs=partitions || [ref];
+  const base=parseHistoriaSpan(ref);
+  const groups=[];
+  let at=0;
+  for (const sectionRef of refs) {
+    const span=parseHistoriaSpan(sectionRef);
+    if(span.book!==base.book)throw new Error("Rail book mismatch "+ref+" / "+sectionRef);
+    const group=[];
+    while(at<verses.length) {
+      const v=verses[at];
+      if(v.chapter>span.toChapter||(v.chapter===span.toChapter&&v.verse>span.toVerse))break;
+      const inRange=v.chapter>span.fromChapter||(v.chapter===span.fromChapter&&v.verse>=span.fromVerse);
+      if(!inRange)throw new Error("Discontinuous rail segmentation "+ref+" / "+sectionRef+" at "+v.reference);
+      group.push(v);
+      at++;
+    }
+    if(!group.length||group[0].chapter!==span.fromChapter||group[0].verse!==span.fromVerse||
+       group.at(-1).chapter!==span.toChapter||group.at(-1).verse!==span.toVerse)
+      throw new Error("Rail segment does not match selected verse coordinates: "+sectionRef);
+    groups.push({reference:sectionRef,anchorVerseStart:group[0].reference,
+      anchorVerseEnd:group.at(-1).reference,verseCount:group.length,
+      text:group.map(v=>v.text).join(" "),reviewStatus:partitions?"RAIL_SPLIT_TRIAL_NOT_ACCEPTED":"SOURCE_REFERENCE_UNMODIFIED"});
+  }
+  if(at!==verses.length || groups.flatMap(g=>g.text.split(" ")).length!==verses.map(v=>v.text).join(" ").split(" ").length)
+    throw new Error("Rail segmentation failed full-text parity "+ref);
+  if(groups.map(g=>g.text).join(" ")!==verses.map(v=>v.text).join(" "))
+    throw new Error("Rail segmentation changed Scripture "+ref);
+  return groups;
+}
+
 function gapBetween(previous, next) {
   if (!previous || previous.book !== next.book) return null;
   if (next.fromChapter < previous.toChapter ||
@@ -92,6 +128,7 @@ export function assembleHistoriaReading(proof, edition, getWitness) {
           originalCandidateReference:trial.originalHeldReference||trial.sourceReference||null,
           sourceStatus:"UNCOLLATED_SOURCE_WITNESS",verses,
           text:verses.map(v=>v.text).join(" "),
+          railSections:railSectionsFor(ref,verses),
           selectedForPublication:false,accepted:false,publicationApproved:false
         });
         previous=parsed;
@@ -157,7 +194,8 @@ export function assembleHistoriaReading(proof, edition, getWitness) {
           ownerUnitId: beat.id, scene: beat.scene, reference: ref, edition,
           sourceStatus: "UNCOLLATED_SOURCE_WITNESS", verses,
           text: verses.map(v => v.text).join(" "),
-          accepted: false, publicationApproved: false
+          railSections:railSectionsFor(ref,verses,beat.railSegmentationTrial?.byOriginalReference?.[ref]),
+          railSubdivisionAccepted:false,accepted: false, publicationApproved: false
         });
         previous = parsed;
       }
@@ -187,6 +225,8 @@ export function assembleHistoriaReading(proof, edition, getWitness) {
       stillUnselectedBridgeCandidates: segments.filter(s=>s.kind==="HELD_SOURCE_CANDIDATE").length,
       bridgeReadingTrials: new Set(segments.filter(s=>s.kind==="SCRIPTURE_READING_TRIAL_NOT_APPROVED"&&s.trialType==="HELD_BRIDGE_RESEARCH_TRIAL").map(s=>s.ownerUnitId)).size,
       readingTrialSpans: segments.filter(s=>s.kind==="SCRIPTURE_READING_TRIAL_NOT_APPROVED").length,
+      exactVerseRailSections: segments.filter(s=>s.railSections).reduce((n,s)=>n+s.railSections.length,0),
+      sourceSpansWithProposedRailSplits: segments.filter(s=>s.kind==="SCRIPTURE_EXACT_WITNESS"&&s.railSections.length>1).length,
       trialVerseEntries: segments.filter(s=>s.kind==="SCRIPTURE_READING_TRIAL_NOT_APPROVED").reduce((n,s)=>n+s.verses.length,0),
       published: 0
     }
