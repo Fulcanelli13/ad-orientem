@@ -10,11 +10,29 @@ const oldHtml=read("prototypes/historia-salutis-p3-continuous-reader-20261021.ht
 const arcHtml=read("prototypes/historia-salutis-covenant-arcs-20261021.html");
 const old=jsonData(oldHtml),newData=jsonData(arcHtml);
 const recon=JSON.parse(read("data/research/historia-salutis-p3-covenant-arc-chapter-reconciliation-20261021.v1.json"));
+const consolidation=JSON.parse(read("data/research/historia-salutis-p3-provisional-reading-chapter-consolidation-20261021.v2.json"));
 assert.equal(old.chapters.length,37);
 assert.equal(newData.acts.length,4);
 assert.equal(newData.chapters.length,12);
 assert.equal(newData.covenants.length,7);
 assert.equal(newData.chapters.flatMap(a=>a.outlines).length,78);
+assert.equal(consolidation.readingChapters.length,54);
+assert.equal(consolidation.readingChapters.flatMap(c=>c.originalChapterIds).length,78);
+assert.equal(newData.chapters.flatMap(a=>a.readingChapters).length,54);
+assert.deepEqual(newData.chapters.flatMap(a=>a.readingChapters).map(x=>x.id),consolidation.readingChapters.map(x=>x.id));
+assert.equal(consolidation.readingChapters.every(g=>g.mainReadingSourceParagraphs>0),true);
+assert.equal(consolidation.totals.sourceWordsRemoved,0);
+assert.equal(consolidation.totals.fewerMajorChapterStops,24);
+const groupedByH=new Map(consolidation.readingChapters.flatMap(g=>g.originalChapterIds.map(id=>[id,g])));
+for(const arc of newData.chapters){
+ const ordered=arc.blocks.map(x=>x.readingChapterId).filter((x,i,items)=>i===0||x!==items[i-1]);
+ assert.deepEqual(ordered,arc.readingChapters.map(g=>g.id),"Every reading chapter must be contiguous and source-ordered "+arc.n);
+ for(const b of arc.blocks){
+  const g=groupedByH.get(b.owner);
+  assert.ok(g&&g.arcNumber===arc.n);
+  assert.equal(b.readingChapterId,g.id);
+ }
+}
 assert.deepEqual(newData.acts.map(x=>x.title),["The Promise","The People of the Covenant","The Fulfilment","The Church and Consummation"]);
 assert.deepEqual(newData.chapters.map(x=>x.title),recon.arcs.map(x=>x.title_en));
 assert.deepEqual(newData.chapters.map(x=>x.act),recon.arcs.map(x=>x.act));
@@ -52,6 +70,9 @@ assert.equal(newData.chapters[9].phaseType,"fulfilment");
 const hIdx=newBlocks.findIndex(x=>x.owner==="H52"),nextBack=newBlocks.slice(hIdx+1).findIndex(x=>x.owner==="H51");
 assert.ok(hIdx>=0 && nextBack>=0,"Preserve H52->H51 Mark/John source-order exception, do not force naive sorting");
 assert.ok(arcHtml.includes("COVENANTAL ARC "));
+assert.ok(arcHtml.includes("chapter-"+sub.id));
+assert.ok(arcHtml.includes("54 provisional reading chapters"));
+assert.ok(arcHtml.includes("no Scripture has been invented"));
 assert.ok(arcHtml.includes("PROPOSED CHAPTER "));
 assert.ok(arcHtml.includes("Twelve covenant-led narrative arcs"));
 assert.ok(arcHtml.includes("not yet instituted"));
