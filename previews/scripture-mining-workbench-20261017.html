@@ -65,6 +65,7 @@ aside .panel+.panel{margin-top:15px}.checklabel{display:flex;align-items:center;
 .proofSourceBridge{border-style:dashed}
 .proofGap{font:12px/1.5 system-ui,sans-serif;color:#bd9a86;margin:12px 0}
 .proofMovementSeam{border-top:1px dashed #657280;padding-top:10px;margin:12px 0 18px}
+.proofStatusNote{font:12px/1.5 system-ui,sans-serif;color:#a8a8aa;margin:0 0 14px}
 body.historiaProofFocus main{max-width:890px}
 body.historiaProofFocus header.top{display:none}
 body.historiaProofFocus .layout{display:block;margin-top:0}
@@ -348,6 +349,7 @@ async function showHistoriaMovement(){
  history.replaceState(null,"",url.pathname+url.search);
  host.append(make("h2",m.title,"proofHeading"),
   make("p","Movement "+m.sequence+" of "+all.movements.length+" · "+m.purpose,"proofLead"));
+ host.append(make("p","Scripture selections are unapproved research. Dashed sections show optional, separately sourced passages; original texts are uncollated.","proofStatusNote"));
  if(m.sequence>1){
   const seam=inspectHistoriaReadingBoundary(all.movements[m.sequence-2],m);
   if(seam&&(seam.significantOmission||explicitHistoriaBurialHold(seam)||seam.kind==="SAME_BOOK_BACKTRACK_OR_OVERLAP")){
@@ -379,7 +381,7 @@ async function showHistoriaMovement(){
    if(bridge){section.append(make("div","Unapproved source-bridge candidate · "+beat.reference,"caption"),
      make("p",beat.purpose));held++;}
    else{
-    section.append(make("span","Selected Scripture · research proof · not publication-approved","caption"),make("h4",beat.scene));
+    section.append(make("h4",beat.scene));
     if(beat.hasPartialVerseHold)section.append(make("p",
       "Partial-verse edition hold: this witness displays the complete verse; the original editorial source specifies only part of it.","proofGap"));
    }
