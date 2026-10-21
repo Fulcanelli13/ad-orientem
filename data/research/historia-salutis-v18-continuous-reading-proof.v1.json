@@ -1317,16 +1317,17 @@
           "researchSourceReference": "1 Samuel 31:1–13",
           "editorialTextApproved": false,
           "editorialReadingCandidate": {
-            "text": "Saul fell in battle against the Philistines. After his death, David sought the Lord's guidance and went to Hebron, where the men of Judah anointed him king.",
+            "text": "Saul and his sons died in battle against the Philistines.",
             "sourceReferences": [
-              "1Samuel 31:1–13",
-              "2Samuel 2:1–4"
+              "1Samuel 31:1–13"
             ],
             "status": "PROPOSED_SOURCE_BACKED_CONTINUITY_COPY_NOT_APPROVED",
             "preservesOriginalDeskCopy": true,
             "printedEditionCollationPending": true,
             "finalLiteraryAcceptance": false,
-            "publicationApproved": false
+            "publicationApproved": false,
+            "previousTextForAudit": "Saul fell in battle against the Philistines. After his death, David sought the Lord's guidance and went to Hebron, where the men of Judah anointed him king.",
+            "literaryEconomyReason": "Removed the anticipatory retelling of 2 Samuel 2:1–4, which is directly quoted in the following Scripture span. Do not repeat David's journey and anointing as editorial prose."
           }
         },
         {
@@ -1839,7 +1840,20 @@
           "edition": "cpdv-2009",
           "policy": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
           "hasPartialVerseHold": false,
-          "publicationApproved": false
+          "publicationApproved": false,
+          "beforeScriptureConnectorCandidate": {
+            "id": "HS-P3-EC-08",
+            "text": "The priest Zachary and his wife Elizabeth, who had been barren, were expecting a son after the angel's promise. In the sixth month of her pregnancy, another announcement followed.",
+            "sourceReferences": [
+              "Luke 1:5–25",
+              "Luke 1:26",
+              "Luke 1:36"
+            ],
+            "status": "SOURCE_BACKED_ANTECEDENT_COPY_NOT_APPROVED",
+            "accepted": false,
+            "publicationApproved": false,
+            "notPartOfOriginal29ContextUnits": true
+          }
         }
       ],
       "requiredMeaningOnly": "Only Scripture beats are presented as biblical text; context and source candidates are visibly editorial.",
@@ -2087,7 +2101,18 @@
           "edition": "cpdv-2009",
           "policy": "ORIGINAL_V18_SCOPE_RETAINED_PENDING_INDIVIDUAL_LITERARY_CHECK",
           "hasPartialVerseHold": false,
-          "publicationApproved": false
+          "publicationApproved": false,
+          "beforeScriptureConnectorCandidate": {
+            "id": "HS-P3-EC-09",
+            "text": "John the Baptist had also identified Jesus as the Lamb of God and testified that He was the Son of God.",
+            "sourceReferences": [
+              "John 1:29–34"
+            ],
+            "status": "SOURCE_BACKED_BAPTIST_TESTIMONY_COPY_NOT_APPROVED",
+            "accepted": false,
+            "publicationApproved": false,
+            "notPartOfOriginal29ContextUnits": true
+          }
         },
         {
           "kind": "SCRIPTURE",
@@ -2205,15 +2230,18 @@
           "sourceReference": "John 6:1–15",
           "publicationApproved": false,
           "editorialReadingCandidate": {
-            "text": "Before this discourse, Jesus fed a multitude with five barley loaves and two fishes.",
+            "text": "Jesus fed a multitude with five barley loaves and two fishes. The next day, the people crossed the sea to Capharnaum in search of Him.",
             "sourceReferences": [
-              "John 6:1–15"
+              "John 6:1–15",
+              "John 6:22–25"
             ],
             "status": "PROPOSED_SOURCE_BACKED_CONTINUITY_COPY_NOT_APPROVED",
             "preservesOriginalDeskCopy": true,
             "printedEditionCollationPending": true,
             "finalLiteraryAcceptance": false,
-            "publicationApproved": false
+            "publicationApproved": false,
+            "previousTextForAudit": "Before this discourse, Jesus fed a multitude with five barley loaves and two fishes.",
+            "literaryEconomyReason": "The prior connector supplied loaves but omitted the seeking crowd, leaving John 6:26 beginning in mid-conversation."
           }
         },
         {
@@ -3453,6 +3481,17 @@
             "printedEditionCollationPending": true,
             "oralReadAloudAccepted": false,
             "publicationApproved": false
+          },
+          "beforeScriptureConnectorCandidate": {
+            "id": "HS-P3-EC-10",
+            "text": "After Paul and Barnabas had preached among the Gentiles, they returned to Antioch and told the Church what God had accomplished through them.",
+            "sourceReferences": [
+              "Acts 14:21–27"
+            ],
+            "status": "SOURCE_BACKED_GENTILE_COUNCIL_CAUSAL_COPY_NOT_APPROVED",
+            "accepted": false,
+            "publicationApproved": false,
+            "notPartOfOriginal29ContextUnits": true
           }
         }
       ],
@@ -4123,7 +4162,45 @@
     "additionalReadthroughConnectorCandidates": 7,
     "passTwoNewEditorialConnectors": 5,
     "romanPassionTrial": "John 19:31–37",
-    "newJerusalemSuspendedSentenceRepair": "Revelation 21:9–11"
+    "newJerusalemSuspendedSentenceRepair": "Revelation 21:9–11",
+    "literaryEconomyPass2": {
+      "status": "SOURCE_AWARE_PROVISIONAL_READING_ONLY",
+      "sourceManuscriptProfile": "approximately 30000 quoted Scripture words plus under 1000 editorial words in dr-challoner",
+      "duplicateConnectorsRemoved": 1,
+      "antecedentConnectorsAdded": 3,
+      "existingConnectorNarrativeRepairs": 1,
+      "originalScriptureVerseCuts": 0,
+      "newSourceBridgesPromotedToApproved": 0,
+      "theologicalLocksPreserved": true,
+      "noFinalAcceptance": true,
+      "fixedIssues": [
+        {
+          "movement": "HS-M13",
+          "kind": "DUPLICATE_PARAPHRASE_OF_NEXT_VERSE",
+          "id": "H31-04"
+        },
+        {
+          "movement": "HS-M18",
+          "kind": "UNEXPLAINED_SIXTH_MONTH_AND_ELIZABETH",
+          "id": "HS-P3-EC-08"
+        },
+        {
+          "movement": "HS-M20",
+          "kind": "JOHN_BAPTIST_PREVIOUS_DAY_ANTECEDENT",
+          "id": "HS-P3-EC-09"
+        },
+        {
+          "movement": "HS-M22",
+          "kind": "UNEXPLAINED_CROWD_REPLY",
+          "id": "H56-01"
+        },
+        {
+          "movement": "HS-M33",
+          "kind": "GENTILE_MISSION_TO_COUNCIL_CAUSAL_LINK",
+          "id": "HS-P3-EC-10"
+        }
+      ]
+    }
   },
   "historicallyProposedBridgeStatus": {
     "sourceCandidatesInDeskRegistry": 11,
