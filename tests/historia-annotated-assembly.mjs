@@ -1,0 +1,71 @@
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+import {assembleHistoriaReading,historiaAssemblyMarkdown,HISTORIA_EDITIONS,parseHistoriaSpan} from "../src/scripture/historia-assembled-reading.js";
+
+const read=path=>JSON.parse(readFileSync(new URL("../"+path,import.meta.url),"utf8"));
+const proof=read("data/research/historia-salutis-v18-continuous-reading-proof.v1.json");
+const expected={movements:37,scriptureBeats:93,scriptureSpans:166,editorialConnectorProposals:29,heldSourceCandidates:16,published:0};
+for (const edition of HISTORIA_EDITIONS) {
+  const witnessCache=new Map();
+  const getWitness=book=>{
+    if(!witnessCache.has(book))witnessCache.set(book,read("data/scripture/witness/"+edition+"/"+book+".json"));
+    return witnessCache.get(book);
+  };
+  const output=assembleHistoriaReading(proof,edition,getWitness);
+  assert.equal(output.stage,"RESEARCH_TEXT_ASSEMBLY_NOT_APPROVED");
+  assert.deepEqual(output.totals,expected);
+  assert.equal(output.movements.length,37);
+  assert.equal(output.movements.every(m=>m.accepted===false&&m.publicationApproved===false),true);
+  for(const movement of output.movements){
+    const sourceMovement=proof.movements.find(m=>m.id===movement.id);
+    assert.ok(sourceMovement);
+    for(const segment of movement.segments){
+      assert.equal(segment.publicationApproved,false);
+      const original=sourceMovement.beats.find(b=>b.id===segment.ownerUnitId);
+      assert.ok(original,"Unowned source segment "+segment.anchor);
+      if(segment.kind==="SCRIPTURE_EXACT_WITNESS"){
+        assert.equal(original.kind,"SCRIPTURE");
+        const sources=original.semanticEditionAlignment?.selectedReferencesByEdition?.[edition]||original.refs;
+        assert.ok(sources.includes(segment.reference));
+        const parsed=parseHistoriaSpan(segment.reference);
+        assert.equal(segment.verses[0].chapter,parsed.fromChapter);
+        assert.equal(segment.verses[0].verse,parsed.fromVerse);
+        assert.equal(segment.verses.at(-1).chapter,parsed.toChapter);
+        assert.equal(segment.verses.at(-1).verse,parsed.toVerse);
+        assert.equal(segment.text,segment.verses.map(v=>v.text).join(" "));
+        assert.equal(segment.sourceStatus,"UNCOLLATED_SOURCE_WITNESS");
+        const lookup=new Map(getWitness(parsed.book).verses.map(([c,v,t])=>[c+":"+v,t]));
+        for(const v of segment.verses){
+          assert.equal(v.text,lookup.get(v.chapter+":"+v.verse));
+          assert.equal(v.reference,parsed.book+" "+v.chapter+":"+v.verse);
+        }
+      } else if(segment.kind==="EDITORIAL_CONNECTOR_PROPOSAL"){
+        assert.equal(original.kind,"EDITORIAL_CONTEXT_NOT_BIBLE");
+        assert.equal(segment.text,original.explanation);
+        assert.equal(segment.sourceReference,original.sourceReference);
+        assert.equal(segment.accepted,false);
+      } else {
+        assert.equal(segment.kind,"HELD_SOURCE_CANDIDATE");
+        assert.equal(original.kind,"SOURCE_BRIDGE_CANDIDATE");
+        assert.equal(segment.text,null);
+        assert.equal(segment.selected,false);
+      }
+    }
+  }
+  const m31=output.movements.find(m=>m.id==="HS-M31");
+  assert.ok(m31.segments.some(s=>s.reference==="Acts 2:1–10"));
+  assert.ok(output.movements.find(m=>m.id==="HS-M33").segments.some(s=>s.reference==="Acts 15:4–11"));
+  assert.ok(output.movements.find(m=>m.id==="HS-M34").segments.some(s=>s.kind==="HELD_SOURCE_CANDIDATE"&&s.reference==="Acts 28:17–22"));
+  const stephen=m31.segments.find(s=>s.ownerUnitId==="H68-04"&&s.kind==="SCRIPTURE_EXACT_WITNESS");
+  assert.equal(stephen.reference,edition==="crampon-1923"?"Acts 7:54–60":"Acts 7:54–59");
+  const manuscript=historiaAssemblyMarkdown(output);
+  assert.ok(manuscript.includes("## 37 · The New Creation"));
+  assert.ok(manuscript.includes("⟦HELD source bridge:"));
+  assert.ok(manuscript.includes("Editorial connector · source:"));
+  assert.ok(!manuscript.includes("APPROVED FOR PUBLICATION"));
+  if(edition==="dr-challoner"){
+    const committed=readFileSync(new URL("../data/research/historia-salutis-p3-assembled-dr-challoner.v1.md",import.meta.url),"utf8");
+    assert.equal(committed,manuscript,"Committed research manuscript must exactly reproduce from source owners");
+  }
+}
+console.log("PASS Historia annotated source assembly: 37 movements, 93 A units, 166 selected spans, 29 non-biblical editorial connectors, 16 held bridges; all three witnesses; immutable verse provenance; no publication approval");
