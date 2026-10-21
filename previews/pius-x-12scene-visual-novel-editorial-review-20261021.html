@@ -31,7 +31,7 @@ main{width:min(1320px,100%);padding:18px clamp(10px,2vw,22px) 32px;margin:auto}
 .meta button{background:none;border:0;color:#d4bd91;text-decoration:underline;padding:0}
 .foot{position:relative;z-index:20;margin-top:13px;padding:10px 0;display:flex;gap:8px;justify-content:space-between;align-items:center;flex-wrap:wrap;background:#080c12;font:11px/1.5 system-ui,sans-serif;color:#9fa0a5}
 .foot button,.foot a{border:1px solid #45494f;padding:9px 12px;background:transparent;color:#c8b796;border-radius:3px;text-decoration:none}
-.review{margin-top:15px;border:1px solid #3e4349;padding:14px 18px 16px;background:#101823;font:12px/1.6 system-ui,sans-serif;color:#ddd2c0}
+.review{position:fixed;inset:clamp(12px,5vh,54px) clamp(10px,7vw,120px);z-index:2000;overflow-y:auto;max-width:900px;margin:auto;border:1px solid #8c7957;border-radius:5px;padding:19px 22px 25px;background:#101823;box-shadow:0 0 0 100vmax rgba(3,6,12,.88),0 20px 50px #000b;font:12px/1.6 system-ui,sans-serif;color:#ddd2c0}
 .review h2{margin:0 0 10px;font:normal 21px Georgia,serif;color:#e3d0a9}.review p{margin:5px 0 10px}
 .review-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;max-width:700px}
 .review label{display:flex;flex-direction:column;gap:6px}.review select,.review textarea{background:#151d27;border:1px solid #60616a;color:#ece5d7;border-radius:3px;padding:10px;font-size:12px}
@@ -64,7 +64,7 @@ main{width:min(1320px,100%);padding:18px clamp(10px,2vw,22px) 32px;margin:auto}
 <div class="script" role="region" aria-label="Dialogue"><div class="nameline"><span id="speaker">St Pius X · educational reconstruction</span><span id="progress"></span></div><div class="visitor" id="visitor" aria-live="polite"></div><div class="reply" id="reply" aria-live="polite"></div><div class="stageActions" id="stageActions"></div><div class="meta"><span id="sourceScope"></span><button id="inlineEvidence">Read source</button></div></div>
 </section>
 <div class="foot"><span id="stateTrail">Review is memory-only. No messages are saved.</span></div>
-<section class="review" id="review" hidden><h2>Review this conversation</h2><p>Mark the scene's pacing, period voice and clarity. Your notes stay in the page until you export; the app collects nothing.</p>
+<section class="review" id="review" role="dialog" aria-label="Editorial conversation review" aria-modal="true" hidden><button id="closeReview" type="button">Close review</button><h2>Review this conversation</h2><p>Mark the scene's pacing, period voice and clarity. Your notes stay in the page until you export; the app collects nothing.</p>
 <div class="review-grid"><label>Pacing<select id="ratePace"><option value="">Unrated</option><option value="1">1 · poor</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5 · strong</option></select></label><label>Historical voice<select id="rateVoice"><option value="">Unrated</option><option value="1">1 · poor</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5 · strong</option></select></label><label>Clarity<select id="rateClarity"><option value="">Unrated</option><option value="1">1 · poor</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5 · strong</option></select></label></div>
 <textarea id="notes" placeholder="What felt repetitive, mechanical or out of character?" aria-label="Editorial notes"></textarea><button id="saveRating">Record rating</button> <button id="exportRating">Export ratings JSON</button><div class="evidence" id="evidence"><strong>Original source:</strong> <a id="sourceLink" target="_blank" rel="noopener noreferrer"></a><p id="sourceGenre"></p><p>Source reading preserves the prior unpublished editorial answers. Where available, “Compare voice draft” shows a separate early-1900s Catholic prose proposal for three paths; it is not a quotation, certification, or replacement of the source owner. Personal sacramental judgements remain an out-of-character editorial note.</p></div>
 </section></main>
@@ -155,9 +155,10 @@ el("sprite").onerror=()=>el("gallery").classList.add("no-sprite");
 el("sceneSelect").addEventListener("change",e=>{const i=scenes.findIndex(s=>s.id===e.target.value);if(i>=0)move({scene:i,step:"opening",route:null})});
 el("langButton").addEventListener("click",()=>{lang=lang==="en"?"fr":"en";doc.documentElement.lang=lang;render()});
 el("voiceButton").addEventListener("click",()=>{voiceMode=!voiceMode;render()});
-function toggleEvidence(){evidence=!evidence;el("review").hidden=false;render();if(evidence)el("evidence").scrollIntoView({behavior:"smooth",block:"nearest"})}
+function toggleEvidence(){evidence=!evidence;el("review").hidden=false;render();if(evidence)el("evidence").scrollIntoView({behavior:"auto",block:"nearest"})}
 el("evidenceButton").addEventListener("click",toggleEvidence);el("inlineEvidence").addEventListener("click",toggleEvidence);
-el("reviewButton").addEventListener("click",()=>{el("review").hidden=!el("review").hidden;if(!el("review").hidden)el("review").scrollIntoView({behavior:"smooth"})});
+el("reviewButton").addEventListener("click",()=>{el("review").hidden=false;el("closeReview").focus()});
+el("closeReview").addEventListener("click",()=>{el("review").hidden=true;el("reviewButton").focus()});
 el("backButton").addEventListener("click",()=>{if(history.length){state=history.pop();render()}});
 el("resetButton").addEventListener("click",()=>{history=[];state={scene:state.scene,step:"opening",route:null};render()});
 el("saveRating").addEventListener("click",()=>{ratings[scene().id]={pacing:el("ratePace").value,voice:el("rateVoice").value,clarity:el("rateClarity").value,notes:el("notes").value};el("saveRating").textContent=L().recorded});
