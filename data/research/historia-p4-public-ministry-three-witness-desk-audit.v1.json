@@ -102,7 +102,8 @@
     "Synoptic parallels are only editorial candidate relationships and never silently merged. Different named Gospel persons are not resolved by speculation.",
     "Parables have no historical incident pins; traditional sites and cities never certify exact scenes.",
     "The order of Matthew 14 feeding before walking on the water is a source-derived review candidate, not a cross-Gospel identity adjudication.",
-    "No new Scripture prose, genealogies, events, artwork, coordinates, or publication approvals generated."
+    "No new Scripture prose, genealogies, events, artwork, coordinates, or publication approvals generated.",
+    "The Capernaum synagogue sentence occurs at John 6:60 in installed Douay/CPDV but at John 6:59 in installed Crampon; the original John 6:22-59 scene selection cannot claim one-to-one multilingual verse parity."
   ],
   "counts": {
     "chapter": "MINISTRY",
@@ -115,7 +116,8 @@
     "historicalCoordinatesApproved": 0,
     "publicationApproved": 0,
     "chronologyReviewFlags": 1,
-    "all46FullPrintedEditionCollationsComplete": 0
+    "all46FullPrintedEditionCollationsComplete": 0,
+    "editionSpecificSemanticVerseAlignmentFlags": 2
   },
   "highPriority": {
     "mark4Storm": {
@@ -137,7 +139,16 @@
       89,
       108,
       110
-    ]
+    ],
+    "john6Synagogue": {
+      "sceneKey": "biblical:scene:christ:097",
+      "sceneReference": "John 6:22–59",
+      "duayChallonerSynagogueVerse": "John 6:60",
+      "cpdvSynagogueVerse": "John 6:60",
+      "cramponSynagogueVerse": "John 6:59",
+      "editionSpecificAlignmentRequired": true,
+      "printCollationPending": true
+    }
   },
   "reviewedRows": [
     {
@@ -1201,8 +1212,8 @@
       ],
       "actorIdentitiesCertified": false,
       "locationEvidenceClass": "BREAD_DISCOURSE_CAPERNAUM_VERSE_59_OUTSIDE_SPAN",
-      "editorialFinding": "John 6:22-59 describes the Bread of Life teaching, but John 6:59 (synagogue at Capernaum in many printings) appears as verse 58 in the installed Douay numbering; confirm printed edition before claiming an exact synagogue verse/site.",
-      "editorialAction": "EDITION_SPECIFIC_JOHN_6_CONTEXT_CHECK",
+      "editorialFinding": "John 6:22–59 is the Bread of Life discourse span, but the location statement about teaching in the Capernaum synagogue falls at John 6:60 in the installed Douay and CPDV witnesses, versus John 6:59 in Crampon. Do not silently align the 59th verse across editions or certify a first-century synagogue structure.",
+      "editorialAction": "EDITION_SPECIFIC_JOHN_6_59_60_AND_CAPERNAUM_CONTEXT",
       "exactHistoricalCoordinatesApproved": false,
       "synopticEpisodeIdentitiesMerged": false,
       "verseBoundaryEditoriallyAccepted": false,
