@@ -711,7 +711,23 @@
           "policy": "LITERARY_CONTINUITY_EXPANSION",
           "hasPartialVerseHold": false,
           "publicationApproved": false,
-          "editorialReason": "Pharaoh's approval at 41:37 called the counsel good without any counsel in the selected verses. Restore Joseph's interpretation of seven years of plenty and famine and his recommendation to store grain (41:25–30,33–36)."
+          "editorialReason": "Pharaoh's approval at 41:37 called the counsel good without any counsel in the selected verses. Restore Joseph's interpretation of seven years of plenty and famine and his recommendation to store grain (41:25–30,33–36).",
+          "literaryEconomyOption": {
+            "status": "PROPOSED_SUBSTITUTE_SPANS_NOT_SELECTED_OR_APPROVED",
+            "sourceReferencesUnderReview": [
+              "Genesis 41:33–45"
+            ],
+            "substituteReferences": [
+              "Genesis 41:33–41",
+              "Genesis 41:45"
+            ],
+            "reason": "Retain Joseph's advice, Pharaoh's acceptance, appointment and Joseph's new name and marriage. Omit duplicate ceremonial investiture in 41:42–44 in the short main narrative.",
+            "theologicalAndNarrativeRisk": "Verse 45's 'saviour of the world' designation is important for typological review and must not be silently dropped.",
+            "appliedToDefaultReading": false,
+            "bookWitnessSourceCoordinatesVerified": false,
+            "finalLiteraryAcceptance": false,
+            "publicationApproved": false
+          }
         },
         {
           "kind": "SCRIPTURE",
@@ -1327,6 +1343,21 @@
             "accepted": false,
             "publicationApproved": false,
             "notPartOfOriginal29ContextUnits": true
+          },
+          "literaryEconomyOption": {
+            "status": "PROPOSED_SUBSTITUTE_SPANS_NOT_SELECTED_OR_APPROVED",
+            "sourceReferencesUnderReview": [
+              "1Samuel 10:1–8"
+            ],
+            "substituteReferences": [
+              "1Samuel 10:1"
+            ],
+            "reason": "Saul's anointing is the causal event; the itinerary of three later signs and Galgal instruction are not necessary for the continuous kingship line. Keep Saul's name in the already sourced editorial preface.",
+            "theologicalAndNarrativeRisk": "Saul's receipt of the Spirit in 10:6 is a meaningful loss; make full 10:1–8 accessible through reference expansion.",
+            "appliedToDefaultReading": false,
+            "bookWitnessSourceCoordinatesVerified": false,
+            "finalLiteraryAcceptance": false,
+            "publicationApproved": false
           }
         }
       ],
@@ -1449,6 +1480,23 @@
                 "2Samuel 5:6–10"
               ]
             }
+          },
+          "literaryEconomyOption": {
+            "status": "PROPOSED_SUBSTITUTE_SPANS_NOT_SELECTED_OR_APPROVED",
+            "sourceReferencesUnderReview": [
+              "2Samuel 5:1–10"
+            ],
+            "substituteReferences": [
+              "2Samuel 5:1–3",
+              "2Samuel 5:6–7",
+              "2Samuel 5:9–10"
+            ],
+            "reason": "Retain David's recognition by all tribes and the taking and establishment of Jerusalem; omit the duration summary in 5:4–5 and the military proverbial detail of 5:8.",
+            "theologicalAndNarrativeRisk": "Regnal chronology in 5:4–5 is historically relevant; retain via full-source navigation.",
+            "appliedToDefaultReading": false,
+            "bookWitnessSourceCoordinatesVerified": false,
+            "finalLiteraryAcceptance": false,
+            "publicationApproved": false
           }
         },
         {
@@ -1965,7 +2013,7 @@
           "publicationApproved": false,
           "beforeScriptureConnectorCandidate": {
             "id": "HS-P3-EC-08",
-            "text": "The priest Zachary and his wife Elizabeth, who had been barren, were expecting a son after the angel's promise. In the sixth month of her pregnancy, another announcement followed.",
+            "text": "Generations after the return from exile, in the days of Herod king of Judea, the priest Zachary and his wife Elizabeth, once barren, were expecting a son following an angel's promise. In the sixth month of her pregnancy, another announcement followed.",
             "sourceReferences": [
               "Luke 1:5–25",
               "Luke 1:26",
@@ -1974,7 +2022,9 @@
             "status": "SOURCE_BACKED_ANTECEDENT_COPY_NOT_APPROVED",
             "accepted": false,
             "publicationApproved": false,
-            "notPartOfOriginal29ContextUnits": true
+            "notPartOfOriginal29ContextUnits": true,
+            "previousTextForAudit": "The priest Zachary and his wife Elizabeth, who had been barren, were expecting a son after the angel's promise. In the sixth month of her pregnancy, another announcement followed.",
+            "literaryEconomyReason": "Adds attested period setting (Herod in Luke 1:5) between the later Jewish restoration narrative and the Incarnation; no unsupported calendrical year or chronology."
           }
         }
       ],
@@ -3071,6 +3121,27 @@
           }
         },
         {
+          "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
+          "id": "H65-03",
+          "label": "The road to Emmaus",
+          "explanation": "Emmaus may supply the key scriptural interpretation that the Messiah had to suffer; do not require the complete walk dialogue.",
+          "sourceReference": "Luke 24:13–35",
+          "publicationApproved": false,
+          "editorialReadingCandidate": {
+            "text": "On that same Easter day, Luke records that the risen Christ accompanied two disciples to Emmaus and opened the Scriptures to them. Towards evening they recognised Him in the breaking of bread and returned to Jerusalem.",
+            "sourceReferences": [
+              "Luke 24:13–35"
+            ],
+            "status": "PROPOSED_SOURCE_BACKED_CONTINUITY_COPY_NOT_APPROVED",
+            "preservesOriginalDeskCopy": true,
+            "printedEditionCollationPending": true,
+            "finalLiteraryAcceptance": false,
+            "publicationApproved": false,
+            "previousTextForAudit": "Luke separately records that the risen Christ accompanied two disciples on the road to Emmaus and opened the Scriptures to them, showing that the Christ had to suffer and enter into His glory.",
+            "literaryEconomyReason": "Placed Emmaus on the Resurrection day between John's encounter with Magdalene and the evening appearance to the Apostles; John 20:26 places Thomas eight days later. The two Gospels remain distinct witnesses, not merged speech."
+          }
+        },
+        {
           "kind": "SCRIPTURE",
           "id": "H65-02",
           "sourceV18": "John 20:19–29",
@@ -3082,25 +3153,6 @@
           "policy": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
           "hasPartialVerseHold": false,
           "publicationApproved": false
-        },
-        {
-          "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
-          "id": "H65-03",
-          "label": "The road to Emmaus",
-          "explanation": "Emmaus may supply the key scriptural interpretation that the Messiah had to suffer; do not require the complete walk dialogue.",
-          "sourceReference": "Luke 24:13–35",
-          "publicationApproved": false,
-          "editorialReadingCandidate": {
-            "text": "Luke separately records that the risen Christ accompanied two disciples on the road to Emmaus and opened the Scriptures to them, showing that the Christ had to suffer and enter into His glory.",
-            "sourceReferences": [
-              "Luke 24:13–35"
-            ],
-            "status": "PROPOSED_SOURCE_BACKED_CONTINUITY_COPY_NOT_APPROVED",
-            "preservesOriginalDeskCopy": true,
-            "printedEditionCollationPending": true,
-            "finalLiteraryAcceptance": false,
-            "publicationApproved": false
-          }
         }
       ],
       "requiredMeaningOnly": "Only Scripture beats are presented as biblical text; context and source candidates are visibly editorial.",
@@ -3535,6 +3587,19 @@
                 "Acts 10:44–48"
               ]
             }
+          },
+          "literaryEconomyOption": {
+            "status": "PROPOSED_SUBSTITUTE_SPANS_NOT_SELECTED_OR_APPROVED",
+            "sourceReferencesUnderReview": [
+              "Acts 10:30–32"
+            ],
+            "substituteReferences": [],
+            "reason": "Cornelius retells the angel's instructions already given directly in Acts 10:1–8. The next line (10:33) restates that he sent for Peter and invites him to speak.",
+            "theologicalAndNarrativeRisk": "This creates a question-answer seam from 10:29 to 10:33; retain only if judged intelligible in the full sequential reading, otherwise preserve these three verses.",
+            "appliedToDefaultReading": false,
+            "bookWitnessSourceCoordinatesVerified": false,
+            "finalLiteraryAcceptance": false,
+            "publicationApproved": false
           }
         }
       ],
@@ -4448,6 +4513,32 @@
       "sourceTextModified": false,
       "userAccepted": false,
       "publicationApproved": false
+    },
+    "sequentialNarrativeEconomyPass3": {
+      "status": "FULL_MOVEMENT_ORDER_DESK_INSPECTION_NOT_UNINTERRUPTED_ORAL_ACCEPTANCE",
+      "movementsInspected": 37,
+      "sourceSpansReviewed": 178,
+      "majorChronologyRepairs": 1,
+      "crossEpochContextRepairs": 1,
+      "unapprovedEconomyAlternatives": 4,
+      "originalScriptureSelectedSpanChanges": 0,
+      "originalScriptureVerseCuts": 0,
+      "originalHeldBridgeStatusChanges": 0,
+      "pendingSequentialOralReading": true,
+      "publicationApproved": false,
+      "explicitProtections": [
+        "Genesis 1 Creation and Genesis 2 Sabbath",
+        "Genesis 22 testing of Abraham",
+        "Exodus 20 Decalogue",
+        "2 Samuel 7 Davidic covenant",
+        "Isaiah 7/9/11/52–53 messianic prophecies",
+        "Luke 1 Annunciation",
+        "Luke 22 institution",
+        "John 6 Bread of Life",
+        "John 19 full Passion and side-piercing",
+        "Acts 2 Pentecost",
+        "Revelation 5 Lamb and Revelation 20 judgment"
+      ]
     }
   },
   "historicallyProposedBridgeStatus": {
