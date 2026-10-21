@@ -1131,7 +1131,7 @@ export function createFindOwner(win=globalThis){
         void paint();return;
       }
     }
-    const atlasButton=target?.closest?.("[data-atlas-mode]");
+    const atlasButton=target?.closest?.("button[data-atlas-mode]");
     if(atlasButton&&state.lens==="heritage"){
       event.preventDefault?.();
       const mode=atlasButton.dataset.atlasMode;
