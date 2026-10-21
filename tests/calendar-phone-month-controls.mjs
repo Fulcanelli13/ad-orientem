@@ -118,6 +118,33 @@ try{
       document.querySelector(".aoTodayV2CalendarInline .aoCalV2YearHeading h2")?.textContent!==previous,
      original,{timeout:10000});
    assert.equal(await cal.locator("[data-cal-pick-date]").count(),42);
+   // Inspect actual published Calendar customs, not only the shell/month grid.
+   // The first month shift from October 2026 lands in November.
+   if((width===320&&lang==="en")||(width===390&&lang==="fr")){
+     const monthCustom=cal.locator('.aoCalCustomMonthContext [data-cal-custom-id="DEAD-001"]');
+     await monthCustom.waitFor({state:"visible",timeout:15000});
+     await monthCustom.locator("summary").click();
+     assert.ok(await monthCustom.locator(".aoCalCustomArticleContent a[href^='https://']").count()>0,
+       "November canonical custom must expose its actual source links in Month");
+     await page.screenshot({path:resolve(output,"calendar-custom-month-"+lang+"-"+width+".png"),
+       fullPage:true,animations:"disabled"});
+     await cal.locator('[data-cal-pick-date="2026-11-02"]').click();
+     const dayCustom=cal.locator('.aoCalCustomsBlock [data-cal-custom-id="DEAD-001"]');
+     await dayCustom.waitFor({state:"visible",timeout:15000});
+     assert.equal(await cal.locator('.aoCalCustomsBlock [data-cal-custom-id="DEAD-003"]').count(),1,
+       "All Souls must retain all its published day-specific customs");
+     await dayCustom.locator("summary").click();
+     assert.ok(await dayCustom.locator(".aoCalCustomArticleContent a[href^='https://']").count()>0,
+       "Day article must show the actual attributed sources");
+     const catalogue=cal.locator(".aoCalCustomCatalogue");
+     await catalogue.locator("summary").click();
+     assert.equal(await catalogue.locator(".aoCalCustomCatalogueItems [data-cal-custom-item]").count(),35,
+       "The existing Day catalogue must expose 35 published canonical customs");
+     const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth);
+     assert.ok(overflow<=1,"Customs Calendar introduces phone horizontal overflow: "+overflow);
+     await page.screenshot({path:resolve(output,"calendar-custom-day-"+lang+"-"+width+".png"),
+       fullPage:true,animations:"disabled"});
+   }
    assert.equal(errors.length,0,"Calendar runtime errors: "+errors.slice(0,3).join("; "));
    console.log("PASS "+width+"px "+lang+": three in-grid filters, 44px controls, 42 days, month navigation");
   }finally{await page.close();}
