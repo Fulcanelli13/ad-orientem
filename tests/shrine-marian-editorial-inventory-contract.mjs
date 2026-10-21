@@ -34,13 +34,20 @@ assert.deepEqual([...new Set(ledger.apparitionSites.map(x=>x.apparition_id))].so
  phenomena.apparitions.map(x=>x.id).sort());
 assert.equal(ledger.summary.marianShrines,118);
 assert.equal(ledger.summary.shrineGuides,25);
-assert.equal(ledger.summary.shrineApprovedHero,18);
-assert.equal(ledger.summary.shrineGuideAndHero,18);
+assert.equal(ledger.summary.shrineApprovedHero,19);
+assert.equal(ledger.summary.shrineGuideAndHero,19);
 assert.equal(ledger.summary.marianGuides,14);
 assert.equal(allGuides.length,25);
 assert.equal(new Set(allGuides.map(x=>x.place_id)).size,25,"No duplicate Place guide ownership");
 assert.equal(newGuides.guides.length,7);
 assert.equal(newSaintGuides.guides.length,4);
+const pontmain=imageByPlace.get("place:FR:pontmain");
+assert.equal(pontmain?.asset_path,"assets/approved/place-media/FR-pontmain-basilica-east.webp");
+const gallery=JSON.parse(readFileSync(new URL("../data/geography/approved-place-gallery.v1.json",import.meta.url),"utf8"));
+const original=gallery.items.find(x=>x.media_id==="pontmain-east-facade-2016");
+assert.equal(pontmain?.derivative_sha256,original?.derivative_sha256,
+ "Pontmain hero must reuse the exact approved gallery photograph, no new rights inference");
+
 const expected=["place:PT:fatima-sanctuary","place:IT:loreto-santa-casa",
  "place:DE:altoetting-gnadenkapelle","place:PL:jasna-gora",
  "place:IT:pompei-rosary-shrine","place:MX:basilica-guadalupe-mexico-city",
@@ -91,4 +98,4 @@ assert.match(loader,/safeArray\(illustratedGlobalSaintsR1\?\.guides\)/);
 assert.ok(ledger.shrines.every(s=>s.place_verified&&s.geo_available&&s.source_count>0));
 assert.ok(ledger.pilgrimages.every(p=>p.source_count>0&&
  (!p.destination_shrine_id||shrineIds.has(p.destination_shrine_id))));
-console.log("PASS: 257 shrines, 118 Marian, 240 pilgrimages, 20 routes, 33 apparition records, 25 detailed guides; all 18 approved local site photographs have complete bilingual guides (7 Marian and 4 Saints guides newly added).");
+console.log("PASS: 257 shrines, 118 Marian, 240 pilgrimages, 20 routes, 33 apparition records, 25 detailed guides; all 18 previously approved local site photographs have complete bilingual guides (7 Marian and 4 Saints guides newly added).");
