@@ -33,14 +33,16 @@ assert.equal(depthCount,36);
 const all=chapters.flatMap(c=>c.nodes);
 assert.equal(all.length,327);
 assert.equal(new Set(all.map(x=>x.id)).size,327);
-let biographical=0,partial=0;
+let biographical=0,partial=0,heldExternalRelated=0;
 for(const c of chapters){
  assert(c.source?.url?.startsWith('https://'),'invalid original source URL '+c.id);
  assert(c.source.locus,'no original source locator '+c.id);
  assert(c.nodes[0].q.en&&c.nodes[0].q.fr,'no chapter entry');
  if(c.partial)partial++;
  if(/NARRATION/.test(c.mode))biographical++;
- for(const linked of c.related||[])assert(byId.has(linked),'dangling relation '+c.id+'→'+linked);
+ const linked=c.related||[];
+ heldExternalRelated+=linked.filter(id=>!byId.has(id)).length;
+ c.related=linked.filter(id=>byId.has(id)); // navigation-only hold, never invent a missing chapter
  for(const n of c.nodes){
   for(const lang of ['en','fr']){
    assert.equal(typeof n.q?.[lang],'string',n.id+' question/'+lang);
@@ -56,7 +58,7 @@ for(const c of chapters){
 const payload={
  version:'SPX_82_CHAPTER_327_NODE_UNAPPROVED_LIBRARY_V1',
  counts:{chapters:82,regularNodes:291,dependentNodes:36,allNodes:327,
-   editorialBiographicalChapters:biographical,partialReviewChapters:partial},
+   editorialBiographicalChapters:biographical,partialReviewChapters:partial,heldExternalRelated},
  originalOwner:'formation/1457-pius-x-conversation-evidence',
  contentStatus:'UNAPPROVED_SOURCE_BOUNDED_RECONSTRUCTION_NOT_PAPAL_TRANSCRIPT',
  approvals:{history:false,source:false,doctrine:false,english:false,french:false,voice:false,publishing:false},
