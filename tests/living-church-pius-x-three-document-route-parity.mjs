@@ -12,8 +12,8 @@ const catalog=read("data/learn/living-church-shared-question-routing-pilot.v1.js
 const symbols=read("data/learn/living-church-symbolic-concepts.v1.json");
 const pointers=read("data/learn/living-church-pius-x-historical-passage-pointers.v1.json");
 const pointerMap=new Map(pointers.records.map(x=>[x.id,x]));
-assert.equal(catalog.topics.length,186);
-assert.equal(pointers.records.length,12);
+assert.equal(catalog.topics.length,197);
+assert.equal(pointers.records.length,23);
 for(const [id,locator,urlTail] of [
  ["SPX-PILOT-13","Acerbo nimis §§12–14","acerbo-nimis.html"],
  ["SPX-PILOT-14","E supremi §13","e-supremi.html"],
