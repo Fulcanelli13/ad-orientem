@@ -84,6 +84,8 @@ Thus also said God to Noe, and to his sons with him: Behold I will establish my 
 
 ## 04 · Abraham called into covenant
 
+*Among the descendants of Sem was Abram, whom the Lord called to leave his father's house.*  [e1]
+
 *Genesis 12:1–9*
 
 And the Lord said to Abram: Go forth out of thy country, and from thy kindred, and out of thy father’s house, and come into the land which I shall shew thee. And I will make of thee a great nation, and I will bless thee, and magnify thy name, and thou shalt be blessed. I will bless them that bless thee, and curse them that curse thee, and IN THEE shall all the kindreds of the earth be blessed. So Abram went out as the Lord had commanded him, and Lot went with him: Abram was seventy-five years old when he went forth from Haran. And he took Sarai his wife, and Lot his brother’s son, and all the substance which they had gathered, and the souls which they had gotten in Haran: and they went out to go into the land of Chanaan. And when they were come into it, Abram passed through the country unto the place of Sichem, as far as the noble vale: now the Chanaanite was at that time in the land. And the Lord appeared to Abram, and said to him: To thy seed will I give this land. And he built there an altar to the Lord, who had appeared to him. And passing on from thence to a mountain, that was on the east side of Bethel, he there pitched his tent, having Bethel on the west, and Hai on the east: he built there also an altar to the Lord, and called upon his name. And Abram went forward, going and proceeding on to the south.
@@ -109,9 +111,10 @@ And when the sun was set, there arose a dark mist, and there appeared a smoking 
 And after he began to be ninety and nine years old, the Lord appeared to him: and said unto him: I am the Almighty God: walk before me, and be perfect. And I will make my covenant between me and thee: and I will multiply thee exceedingly. Abram fell flat on his face. And God said to him: I am, and my covenant is with thee, and thou shalt be a father of many nations. Neither shall thy name be called any more Abram: but thou shalt be called Abraham: because I have made thee a father of many nations. And I will make thee increase exceedingly, and I will make nations of thee, and kings shall come out of thee. And I will establish my covenant between me and thee, and between thy seed after thee in their generations, by a perpetual covenant: to be a God to thee, and to thy seed after thee. And I will give to thee, and to thy seed, the land of thy sojournment, all the land of Chanaan, for a perpetual possession, and I will be their God. Again God said to Abraham: And thou therefore shalt keep my covenant, and thy seed after thee in their generations. This is my covenant which you shall observe between me and you, and thy seed after thee: All the male-kind of you shall be circumcised. And you shall circumcise the flesh of your foreskin, that it may be for a sign of the covenant between me and you.
 
 <details>
-<summary>References and editorial audit · 1 notes</summary>
+<summary>References and editorial audit · 2 notes</summary>
 
 - **Held, not inserted** · Genesis 11:26–31
+- e1 — **Editorial, not Scripture** · Genesis 11:10–31; Genesis 12:1 · approval pending
 
 </details>
 
@@ -531,7 +534,7 @@ And the king answered the people roughly, leaving the counsel of the old men, wh
 
 ## 15 · Prophetic warning and Israel's judgment
 
-*As Israel strayed from the worship of the Lord, Elijah confronted the prophets of Baal. The prophetic books also preserve promises that would reach beyond the calamities of the kingdoms.*  [e1]
+*As Israel strayed from the Lord, Elijah confronted the prophets of Baal. Later, in Judah, Isaiah spoke the Lord's promise to King Achaz and proclaimed the coming of a righteous ruler and suffering servant.*  [e1]
 
 *Isaiah 7:10–17*
 
@@ -564,7 +567,7 @@ And the Lord testified to them in Israel, and in Juda, by the hand of all the pr
 <details>
 <summary>References and editorial audit · 1 notes</summary>
 
-- e1 — **Editorial, not Scripture** · 1Kings 18:20–39; Isaiah 7:10–17; Isaiah 9:1–6; Isaiah 11:1–10; Isaiah 52:13–53:12 · approval pending
+- e1 — **Editorial, not Scripture** · 1Kings 18:20–39; Isaiah 7:1–17; Isaiah 9:1–6; Isaiah 11:1–10; Isaiah 52:13–53:12 · approval pending
 
 </details>
 
@@ -642,7 +645,7 @@ Now the generation of Christ was in this wise. When as his mother Mary was espou
 
 And it came to pass that in those days there went out a decree from Caesar Augustus that the whole world should be enrolled. This enrolling was first made by Cyrinus, the governor of Syria. And all went to be enrolled, every one into his own city. And Joseph also went up from Galilee, out of the city of Nazareth, into Judea, to the city of David, which is called Bethlehem: because he was of the house and family of David. To be enrolled with Mary his espoused wife, who was with child. And it came to pass that when they were there, her days were accomplished that she should be delivered. And she brought forth her first born son and wrapped him up in swaddling clothes and laid him in a manger: because there was no room for them in the inn. And there were in the same country shepherds watching and keeping the night watches over their flock. And behold an angel of the Lord stood by them and the brightness of God shone round about them: and they feared with a great fear. And the angel said to them: Fear not; for, behold, I bring you good tidings of great joy that shall be to all the people: For, this day is born to you a Saviour, who is Christ the Lord, in the city of David. And this shall be a sign unto you. You shall find the infant wrapped in swaddling clothes and laid in a manger. And suddenly there was with the angel a multitude of the heavenly army, praising God and saying: Glory to God in the highest: and on earth peace to men of good will. And it came to pass, after the angels departed from them into heaven, the shepherds said one to another: Let us go over to Bethlehem and let us see this word that is come to pass, which the Lord hath shewed to us. And they came with haste: and they found Mary and Joseph, and the infant lying in the manger. And seeing, they understood of the word that had been spoken to them concerning this child. And all that heard wondered: and at those things that were told them by the shepherds. But Mary kept all these words, pondering them in her heart. And the shepherds returned, glorifying and praising God for all the things they had heard and seen, as it was told unto them.
 
-*Mary and Joseph brought the child Jesus to the Temple. There Simeon blessed God, recognising in Him the salvation prepared for all peoples.*  [e2]
+*Luke also recounts how Mary and Joseph presented Jesus in the Temple, where Simeon blessed God and recognised in Him the salvation prepared for all peoples.*  [e2]
 
 *Matthew 2:1–12*
 
@@ -661,6 +664,8 @@ When Jesus therefore was born in Bethlehem of Juda, in the days of king Herod, b
 
 ## 20 · The Forerunner and first disciples
 
+*Jesus grew up in Nazareth. In later years, John the Baptist began preaching repentance in the wilderness of Judea.*  [e1]
+
 *Matthew 3:1–6*
 
 And in those days cometh John the Baptist preaching in the desert of Judea. And saying: Do penance: for the kingdom of heaven is at hand. For this is he that was spoken of by Isaias the prophet, saying: A voice of one crying in the desert, Prepare ye the way of the Lord, make straight his paths. And the same John had his garment of camel’s hair, and a leathern girdle about his loins: and his meat was locusts and wild honey. Then went out to him Jerusalem and all Judea, and all the country about Jordan: And were baptized by him in the Jordan, confessing their sins.
@@ -669,9 +674,9 @@ And in those days cometh John the Baptist preaching in the desert of Judea. And 
 
 I indeed baptize you in water unto penance, but he that shall come after me, is mightier than I, whose shoes I am not worthy to bear: he shall baptize you in the Holy Ghost and fire. Whose fan is in his hand, and he will thoroughly cleanse his floor and gather his wheat into the barn; but the chaff he will burn with unquenchable fire. Then cometh Jesus from Galilee to the Jordan, unto John, to be baptized by him. But John stayed him, saying: I ought to be baptized by thee, and comest thou to me? And Jesus answering, said to him: Suffer it to be so now. For so it becometh us to fulfil all justice. Then he suffered him. And Jesus being baptized, forthwith came out of the water: and lo, the heavens were opened to him: and he saw the Spirit of God descending as a dove, and coming upon him. And behold a voice from heaven saying: This is my beloved Son, in whom I am well pleased.
 
-*After His baptism, Jesus was led by the Spirit into the wilderness, where He resisted the temptations of the devil.*  [e1]
+*After His baptism, Jesus was led by the Spirit into the wilderness, where He resisted the temptations of the devil.*  [e2]
 
-*John the Baptist had also identified Jesus as the Lamb of God and testified that He was the Son of God.*  [e2]
+*John the Baptist had also identified Jesus as the Lamb of God and testified that He was the Son of God.*  [e3]
 
 *John 1:35–51*
 
@@ -682,11 +687,12 @@ The next day again John stood and two of his disciples. And beholding Jesus walk
 And after that John was delivered up, Jesus came into Galilee, preaching the gospel of the kingdom of God, And saying: The time is accomplished and the kingdom of God is at hand. Repent and believe the gospel:
 
 <details>
-<summary>References and editorial audit · 3 notes</summary>
+<summary>References and editorial audit · 4 notes</summary>
 
-- e1 — **Editorial, not Scripture** · Matthew 4:1–11 · approval pending
+- e1 — **Editorial, not Scripture** · Luke 2:51–52; Luke 3:1–3; Matthew 3:1–3 · approval pending
+- e2 — **Editorial, not Scripture** · Matthew 4:1–11 · approval pending
 - **Held, not inserted** · John 1:29–34
-- e2 — **Editorial, not Scripture** · John 1:29–34 · approval pending
+- e3 — **Editorial, not Scripture** · John 1:29–34 · approval pending
 
 </details>
 
@@ -1073,7 +1079,7 @@ And when they had appointed him a day, there came very many to him unto his lodg
 
 ## 35 · Christ and the Lamb in heavenly vision
 
-*John also beheld a throne in heaven, with living creatures and elders worshipping the One seated upon it.*  [e1]
+*The account now turns from the apostolic mission to the visions recorded by John. On Patmos, John received the revelation; later in the vision he beheld a throne in heaven, with living creatures and elders worshipping the One seated upon it.*  [e1]
 
 *Revelation 5:1–14*
 
@@ -1082,7 +1088,7 @@ And I saw, in the right hand of him that sat on the throne, a book, written with
 <details>
 <summary>References and editorial audit · 2 notes</summary>
 
-- e1 — **Editorial, not Scripture** · Revelation 4:1–11 · approval pending
+- e1 — **Editorial, not Scripture** · Revelation 1:9–11; Revelation 4:1–11 · approval pending
 - **Held, not inserted** · Revelation 4:1–2
 
 </details>
