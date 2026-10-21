@@ -124,3 +124,28 @@ results notice rather than fabricated texts. The French source alignment
 continues to be withheld.
 
 Regression: \`node tests/scripture-catena-global-search.mjs\`.
+
+
+### Related wording (bounded editorial research aids)
+
+Six explicitly curated vocabulary groups provide a *candidate-finding*
+fallback for Word/Logos, the Son before creation, Incarnation/Word made flesh,
+Holy Spirit/Holy Ghost, Resurrection/risen from the dead, and
+remission/forgiveness of sins. The approved patterns live in
+\`src/scripture/catena-related-vocabulary.js\` and are covered by
+\`tests/scripture-catena-related-vocabulary.mjs\`.
+
+These pairs are **not** doctrinally interchangeable terms in every context.
+They are editorial prompts to find passages worth reading. The system only
+offers a related-phrase result if the **unchanged original Catena fragment**
+contains one of the explicitly approved evidence expressions. The Messenger
+then labels the literal source phrase **RELATED SOURCE WORDING · Not a direct
+answer**, and still displays the entire original extract and source reference.
+Search results are not speeches authored in a Father's name, endorsed
+theological conclusions, or automatically verified interpretations. Exact
+source results remain available; unsupported queries do not invent answers.
+
+This is deliberately small and audit-friendly: expanding to further topics
+requires separate review of matching phrases, source scope and false-positive
+cases. It is not a general-purpose theological AI or an unrestricted synonym
+database.
