@@ -1,0 +1,882 @@
+{
+  "schema": "ao.catena.eusebius-epitome-questions.v1",
+  "created": "2026-10-21",
+  "status": "research_index_only__no_published_answers",
+  "sourceWork": "Quaestiones evangelicae ad Stephanum et ad Marinum (CPG 3470)",
+  "manuscriptWitness": "Vatican, BAV, Palatinus graecus 220, fols. 61r–96r; manuscript dated first half of tenth century",
+  "editionReliability": "The full original work is lost; 16 + 4 abridged divisions and catena fragments survive. Excerpt titles are preserved as modern editorial issue paraphrases, never as verbatim historical correspondent questions.",
+  "sourceReferences": {
+    "manuscriptCatalogue": "https://digi.ub.uni-heidelberg.de/de/bpd/beschreibungen/bav_pal_gr_220.html",
+    "modernBookDescription": "https://www.roger-pearse.com/weblog/2015/12/12/eusebius-of-caesarea-gospel-problems-and-solutions-now-online-in-english/"
+  },
+  "copyrightPolicy": "Do not bulk reproduce the 2010 English translation or the 2008 Greek critical edition. The modern book is offered freely online but copyright remains with individual rightsholders. Use bibliographic metadata and short verification anchors only.",
+  "counts": {
+    "stephanus": 16,
+    "marinus": 4,
+    "total": 20
+  },
+  "provenancePolicy": [
+    "Question headings derived from scholarly epitome inventories do not prove original authorship or precise ancient phrasing.",
+    "To Stephanus IV contains material associated with Julius Africanus; keep Africanus as the quoted source rather than attribute all words to Eusebius.",
+    "Verse-to-Catena pericope links are navigation only. Even if an excerpt bears Eusebius's label, do not assert it is a quote of this exact work without text/edition proof.",
+    "Do not merge 16 + 4 abridged divisions with supplements as additional original numbered questions.",
+    "No doctrinal harmonization is artificially generated and no author's speech may be invented."
+  ],
+  "records": [
+    {
+      "id": "eusebius-stephanus-01",
+      "authorAsTraditionallyAttributed": "Eusebius of Caesarea",
+      "recipient": "stephanus",
+      "questionNumberInEpitome": 1,
+      "epitomeDivisionId": "St.1",
+      "originalComposition": "lost_full_work",
+      "preservedWitness": "abridged_selection_in_Vat_Pal_gr_220",
+      "witnessFolia": "61r–88r (collection level)",
+      "manuscriptCatalogueUrl": "https://digi.ub.uni-heidelberg.de/de/bpd/beschreibungen/bav_pal_gr_220.html",
+      "sourceEditionFamily": "Mai / PG22; Zamagni 2008 Greek critical text; Pearse/Miller et al. 2010 bilingual edition",
+      "sourcePageLocator": "epitome numbered question 1",
+      "readerQuestionModern": "Why the Evangelists give Joseph's ancestry rather than Mary's?",
+      "readerQuestionAuthorship": "modern_editorial_formulation_not_greek_verbatim",
+      "historicalQuestionSpeaker": "question_in_abridged_stephanus_or_marinus_collection__not_independently_verified_as_recipient_verbatim",
+      "topicalTag": "genealogy_virgin_birth",
+      "biblicalReferences": [
+        "matthew/1/16",
+        "luke/3/23"
+      ],
+      "canonicalCatenaLocationCandidates": [
+        {
+          "pericopeId": "catena.matthew.1.16",
+          "association": "scripture-location-only__not_eusebius_same_work_proof",
+          "sourceTextOwner": "canonical-catena-reader",
+          "candidateReview": "not_reviewed"
+        },
+        {
+          "pericopeId": "catena.luke.3.23",
+          "association": "scripture-location-only__not_eusebius_same_work_proof",
+          "sourceTextOwner": "canonical-catena-reader",
+          "candidateReview": "not_reviewed"
+        }
+      ],
+      "solutionResearchStatus": "question_resolution_not_yet_verified",
+      "solutionStructuralNotes": [],
+      "greekExactQuestionSourceQuote": null,
+      "sourceLanguageTextStatus": "not_transcribed__no_unverified_greek_reconstruction",
+      "answerLocation": "epitome_section__no_imported_english_answer",
+      "publicationStatus": "research_only__not_a_verified_published_father_reply",
+      "sourceAccess": {
+        "browserUrl": "https://catholiclibrary.org/library/browse/title/e",
+        "englishMetadataUrl": "https://www.roger-pearse.com/weblog/2015/12/12/eusebius-of-caesarea-gospel-problems-and-solutions-now-online-in-english/"
+      }
+    },
+    {
+      "id": "eusebius-stephanus-02",
+      "authorAsTraditionallyAttributed": "Eusebius of Caesarea",
+      "recipient": "stephanus",
+      "questionNumberInEpitome": 2,
+      "epitomeDivisionId": "St.2",
+      "originalComposition": "lost_full_work",
+      "preservedWitness": "abridged_selection_in_Vat_Pal_gr_220",
+      "witnessFolia": "61r–88r (collection level)",
+      "manuscriptCatalogueUrl": "https://digi.ub.uni-heidelberg.de/de/bpd/beschreibungen/bav_pal_gr_220.html",
+      "sourceEditionFamily": "Mai / PG22; Zamagni 2008 Greek critical text; Pearse/Miller et al. 2010 bilingual edition",
+      "sourcePageLocator": "epitome numbered question 2",
+      "readerQuestionModern": "Why Matthew traces down from Abraham while Luke ascends to Adam and God?",
+      "readerQuestionAuthorship": "modern_editorial_formulation_not_greek_verbatim",
+      "historicalQuestionSpeaker": "question_in_abridged_stephanus_or_marinus_collection__not_independently_verified_as_recipient_verbatim",
+      "topicalTag": "genealogy_direction",
+      "biblicalReferences": [
+        "matthew/1/1",
+        "luke/3/38"
+      ],
+      "canonicalCatenaLocationCandidates": [
+        {
+          "pericopeId": "catena.matthew.1.1",
+          "association": "scripture-location-only__not_eusebius_same_work_proof",
+          "sourceTextOwner": "canonical-catena-reader",
+          "candidateReview": "not_reviewed"
+        },
+        {
+          "pericopeId": "catena.luke.3.23",
+          "association": "scripture-location-only__not_eusebius_same_work_proof",
+          "sourceTextOwner": "canonical-catena-reader",
+          "candidateReview": "not_reviewed"
+        }
+      ],
+      "solutionResearchStatus": "question_resolution_not_yet_verified",
+      "solutionStructuralNotes": [],
+      "greekExactQuestionSourceQuote": null,
+      "sourceLanguageTextStatus": "not_transcribed__no_unverified_greek_reconstruction",
+      "answerLocation": "epitome_section__no_imported_english_answer",
+      "publicationStatus": "research_only__not_a_verified_published_father_reply",
+      "sourceAccess": {
+        "browserUrl": "https://catholiclibrary.org/library/browse/title/e",
+        "englishMetadataUrl": "https://www.roger-pearse.com/weblog/2015/12/12/eusebius-of-caesarea-gospel-problems-and-solutions-now-online-in-english/"
+      }
+    },
+    {
+      "id": "eusebius-stephanus-03",
+      "authorAsTraditionallyAttributed": "Eusebius of Caesarea",
+      "recipient": "stephanus",
+      "questionNumberInEpitome": 3,
+      "epitomeDivisionId": "St.3",
+      "originalComposition": "lost_full_work",
+      "preservedWitness": "abridged_selection_in_Vat_Pal_gr_220",
+      "witnessFolia": "61r–88r (collection level)",
+      "manuscriptCatalogueUrl": "https://digi.ub.uni-heidelberg.de/de/bpd/beschreibungen/bav_pal_gr_220.html",
+      "sourceEditionFamily": "Mai / PG22; Zamagni 2008 Greek critical text; Pearse/Miller et al. 2010 bilingual edition",
+      "sourcePageLocator": "epitome numbered question 3",
+      "readerQuestionModern": "How Solomon's and Nathan's lines to Joseph differ?",
+      "readerQuestionAuthorship": "modern_editorial_formulation_not_greek_verbatim",
+      "historicalQuestionSpeaker": "question_in_abridged_stephanus_or_marinus_collection__not_independently_verified_as_recipient_verbatim",
+      "topicalTag": "genealogy_lineage",
+      "biblicalReferences": [
+        "matthew/1/16",
+        "luke/3/23"
+      ],
+      "canonicalCatenaLocationCandidates": [
+        {
+          "pericopeId": "catena.matthew.1.16",
+          "association": "scripture-location-only__not_eusebius_same_work_proof",
+          "sourceTextOwner": "canonical-catena-reader",
+          "candidateReview": "not_reviewed"
+        },
+        {
+          "pericopeId": "catena.luke.3.23",
+          "association": "scripture-location-only__not_eusebius_same_work_proof",
+          "sourceTextOwner": "canonical-catena-reader",
+          "candidateReview": "not_reviewed"
+        }
+      ],
+      "solutionResearchStatus": "question_resolution_not_yet_verified",
+      "solutionStructuralNotes": [],
+      "greekExactQuestionSourceQuote": null,
+      "sourceLanguageTextStatus": "not_transcribed__no_unverified_greek_reconstruction",
+      "answerLocation": "epitome_section__no_imported_english_answer",
+      "publicationStatus": "research_only__not_a_verified_published_father_reply",
+      "sourceAccess": {
+        "browserUrl": "https://catholiclibrary.org/library/browse/title/e",
+        "englishMetadataUrl": "https://www.roger-pearse.com/weblog/2015/12/12/eusebius-of-caesarea-gospel-problems-and-solutions-now-online-in-english/"
+      }
+    },
+    {
+      "id": "eusebius-stephanus-04",
+      "authorAsTraditionallyAttributed": "Eusebius of Caesarea",
+      "recipient": "stephanus",
+      "questionNumberInEpitome": 4,
+      "epitomeDivisionId": "St.4",
+      "originalComposition": "lost_full_work",
+      "preservedWitness": "abridged_selection_in_Vat_Pal_gr_220",
+      "witnessFolia": "61r–88r (collection level)",
+      "manuscriptCatalogueUrl": "https://digi.ub.uni-heidelberg.de/de/bpd/beschreibungen/bav_pal_gr_220.html",
+      "sourceEditionFamily": "Mai / PG22; Zamagni 2008 Greek critical text; Pearse/Miller et al. 2010 bilingual edition",
+      "sourcePageLocator": "epitome numbered question 4",
+      "readerQuestionModern": "Africanus's treatment of the two genealogies?",
+      "readerQuestionAuthorship": "modern_editorial_formulation_not_greek_verbatim",
+      "historicalQuestionSpeaker": "question_in_abridged_stephanus_or_marinus_collection__not_independently_verified_as_recipient_verbatim",
+      "topicalTag": "quoted_africanus_genealogy",
+      "biblicalReferences": [
+        "matthew/1/16",
+        "luke/3/23"
+      ],
+      "canonicalCatenaLocationCandidates": [
+        {
+          "pericopeId": "catena.matthew.1.16",
+          "association": "scripture-location-only__not_eusebius_same_work_proof",
+          "sourceTextOwner": "canonical-catena-reader",
+          "candidateReview": "not_reviewed"
+        },
+        {
+          "pericopeId": "catena.luke.3.23",
+          "association": "scripture-location-only__not_eusebius_same_work_proof",
+          "sourceTextOwner": "canonical-catena-reader",
+          "candidateReview": "not_reviewed"
+        }
+      ],
+      "solutionResearchStatus": "quotation_transmitted_not_eusebius_own_unmediated_solution",
+      "solutionStructuralNotes": [
+        "The transmission is explicitly marked as material from Julius Africanus. Preserve a distinct original quotation voice under Eusebius's compilation."
+      ],
+      "greekExactQuestionSourceQuote": null,
+      "sourceLanguageTextStatus": "not_transcribed__no_unverified_greek_reconstruction",
+      "answerLocation": "epitome_section__no_imported_english_answer",
+      "publicationStatus": "research_only__not_a_verified_published_father_reply",
+      "sourceAccess": {
+        "browserUrl": "https://catholiclibrary.org/library/browse/title/e",
+        "englishMetadataUrl": "https://www.roger-pearse.com/weblog/2015/12/12/eusebius-of-caesarea-gospel-problems-and-solutions-now-online-in-english/"
+      }
+    },
+    {
+      "id": "eusebius-stephanus-05",
+      "authorAsTraditionallyAttributed": "Eusebius of Caesarea",
+      "recipient": "stephanus",
+      "questionNumberInEpitome": 5,
+      "epitomeDivisionId": "St.5",
+      "originalComposition": "lost_full_work",
+      "preservedWitness": "abridged_selection_in_Vat_Pal_gr_220",
+      "witnessFolia": "61r–88r (collection level)",
+      "manuscriptCatalogueUrl": "https://digi.ub.uni-heidelberg.de/de/bpd/beschreibungen/bav_pal_gr_220.html",
+      "sourceEditionFamily": "Mai / PG22; Zamagni 2008 Greek critical text; Pearse/Miller et al. 2010 bilingual edition",
+      "sourcePageLocator": "epitome numbered question 5",
+      "readerQuestionModern": "Why Matthew names David before Abraham?",
+      "readerQuestionAuthorship": "modern_editorial_formulation_not_greek_verbatim",
+      "historicalQuestionSpeaker": "question_in_abridged_stephanus_or_marinus_collection__not_independently_verified_as_recipient_verbatim",
+      "topicalTag": "genealogy_title_order",
+      "biblicalReferences": [
+        "matthew/1/1"
+      ],
+      "canonicalCatenaLocationCandidates": [
+        {
+          "pericopeId": "catena.matthew.1.1",
+          "association": "scripture-location-only__not_eusebius_same_work_proof",
+          "sourceTextOwner": "canonical-catena-reader",
+          "candidateReview": "not_reviewed"
+        }
+      ],
+      "solutionResearchStatus": "question_resolution_not_yet_verified",
+      "solutionStructuralNotes": [],
+      "greekExactQuestionSourceQuote": null,
+      "sourceLanguageTextStatus": "not_transcribed__no_unverified_greek_reconstruction",
+      "answerLocation": "epitome_section__no_imported_english_answer",
+      "publicationStatus": "research_only__not_a_verified_published_father_reply",
+      "sourceAccess": {
+        "browserUrl": "https://catholiclibrary.org/library/browse/title/e",
+        "englishMetadataUrl": "https://www.roger-pearse.com/weblog/2015/12/12/eusebius-of-caesarea-gospel-problems-and-solutions-now-online-in-english/"
+      }
+    },
+    {
+      "id": "eusebius-stephanus-06",
+      "authorAsTraditionallyAttributed": "Eusebius of Caesarea",
+      "recipient": "stephanus",
+      "questionNumberInEpitome": 6,
+      "epitomeDivisionId": "St.6",
+      "originalComposition": "lost_full_work",
+      "preservedWitness": "abridged_selection_in_Vat_Pal_gr_220",
+      "witnessFolia": "61r–88r (collection level)",
+      "manuscriptCatalogueUrl": "https://digi.ub.uni-heidelberg.de/de/bpd/beschreibungen/bav_pal_gr_220.html",
+      "sourceEditionFamily": "Mai / PG22; Zamagni 2008 Greek critical text; Pearse/Miller et al. 2010 bilingual edition",
+      "sourcePageLocator": "epitome numbered question 6",
+      "readerQuestionModern": "Why Matthew begins with Abraham rather than earlier patriarchs?",
+      "readerQuestionAuthorship": "modern_editorial_formulation_not_greek_verbatim",
+      "historicalQuestionSpeaker": "question_in_abridged_stephanus_or_marinus_collection__not_independently_verified_as_recipient_verbatim",
+      "topicalTag": "genealogy_abraham_start",
+      "biblicalReferences": [
+        "matthew/1/1"
+      ],
+      "canonicalCatenaLocationCandidates": [
+        {
+          "pericopeId": "catena.matthew.1.1",
+          "association": "scripture-location-only__not_eusebius_same_work_proof",
+          "sourceTextOwner": "canonical-catena-reader",
+          "candidateReview": "not_reviewed"
+        }
+      ],
+      "solutionResearchStatus": "question_resolution_not_yet_verified",
+      "solutionStructuralNotes": [],
+      "greekExactQuestionSourceQuote": null,
+      "sourceLanguageTextStatus": "not_transcribed__no_unverified_greek_reconstruction",
+      "answerLocation": "epitome_section__no_imported_english_answer",
+      "publicationStatus": "research_only__not_a_verified_published_father_reply",
+      "sourceAccess": {
+        "browserUrl": "https://catholiclibrary.org/library/browse/title/e",
+        "englishMetadataUrl": "https://www.roger-pearse.com/weblog/2015/12/12/eusebius-of-caesarea-gospel-problems-and-solutions-now-online-in-english/"
+      }
+    },
+    {
+      "id": "eusebius-stephanus-07",
+      "authorAsTraditionallyAttributed": "Eusebius of Caesarea",
+      "recipient": "stephanus",
+      "questionNumberInEpitome": 7,
+      "epitomeDivisionId": "St.7",
+      "originalComposition": "lost_full_work",
+      "preservedWitness": "abridged_selection_in_Vat_Pal_gr_220",
+      "witnessFolia": "61r–88r (collection level)",
+      "manuscriptCatalogueUrl": "https://digi.ub.uni-heidelberg.de/de/bpd/beschreibungen/bav_pal_gr_220.html",
+      "sourceEditionFamily": "Mai / PG22; Zamagni 2008 Greek critical text; Pearse/Miller et al. 2010 bilingual edition",
+      "sourcePageLocator": "epitome numbered question 7",
+      "readerQuestionModern": "Why Tamar appears among Christ's ancestors?",
+      "readerQuestionAuthorship": "modern_editorial_formulation_not_greek_verbatim",
+      "historicalQuestionSpeaker": "question_in_abridged_stephanus_or_marinus_collection__not_independently_verified_as_recipient_verbatim",
+      "topicalTag": "genealogy_tamar",
+      "biblicalReferences": [
+        "matthew/1/3"
+      ],
+      "canonicalCatenaLocationCandidates": [
+        {
+          "pericopeId": "catena.matthew.1.3",
+          "association": "scripture-location-only__not_eusebius_same_work_proof",
+          "sourceTextOwner": "canonical-catena-reader",
+          "candidateReview": "not_reviewed"
+        }
+      ],
+      "solutionResearchStatus": "question_resolution_not_yet_verified",
+      "solutionStructuralNotes": [],
+      "greekExactQuestionSourceQuote": null,
+      "sourceLanguageTextStatus": "not_transcribed__no_unverified_greek_reconstruction",
+      "answerLocation": "epitome_section__no_imported_english_answer",
+      "publicationStatus": "research_only__not_a_verified_published_father_reply",
+      "sourceAccess": {
+        "browserUrl": "https://catholiclibrary.org/library/browse/title/e",
+        "englishMetadataUrl": "https://www.roger-pearse.com/weblog/2015/12/12/eusebius-of-caesarea-gospel-problems-and-solutions-now-online-in-english/"
+      }
+    },
+    {
+      "id": "eusebius-stephanus-08",
+      "authorAsTraditionallyAttributed": "Eusebius of Caesarea",
+      "recipient": "stephanus",
+      "questionNumberInEpitome": 8,
+      "epitomeDivisionId": "St.8",
+      "originalComposition": "lost_full_work",
+      "preservedWitness": "abridged_selection_in_Vat_Pal_gr_220",
+      "witnessFolia": "61r–88r (collection level)",
+      "manuscriptCatalogueUrl": "https://digi.ub.uni-heidelberg.de/de/bpd/beschreibungen/bav_pal_gr_220.html",
+      "sourceEditionFamily": "Mai / PG22; Zamagni 2008 Greek critical text; Pearse/Miller et al. 2010 bilingual edition",
+      "sourcePageLocator": "epitome numbered question 8",
+      "readerQuestionModern": "Why Matthew includes Uriah's wife?",
+      "readerQuestionAuthorship": "modern_editorial_formulation_not_greek_verbatim",
+      "historicalQuestionSpeaker": "question_in_abridged_stephanus_or_marinus_collection__not_independently_verified_as_recipient_verbatim",
+      "topicalTag": "genealogy_bathsheba",
+      "biblicalReferences": [
+        "matthew/1/6"
+      ],
+      "canonicalCatenaLocationCandidates": [
+        {
+          "pericopeId": "catena.matthew.1.3",
+          "association": "scripture-location-only__not_eusebius_same_work_proof",
+          "sourceTextOwner": "canonical-catena-reader",
+          "candidateReview": "not_reviewed"
+        },
+        {
+          "pericopeId": "catena.matthew.1.6",
+          "association": "scripture-location-only__not_eusebius_same_work_proof",
+          "sourceTextOwner": "canonical-catena-reader",
+          "candidateReview": "not_reviewed"
+        }
+      ],
+      "solutionResearchStatus": "question_resolution_not_yet_verified",
+      "solutionStructuralNotes": [],
+      "greekExactQuestionSourceQuote": null,
+      "sourceLanguageTextStatus": "not_transcribed__no_unverified_greek_reconstruction",
+      "answerLocation": "epitome_section__no_imported_english_answer",
+      "publicationStatus": "research_only__not_a_verified_published_father_reply",
+      "sourceAccess": {
+        "browserUrl": "https://catholiclibrary.org/library/browse/title/e",
+        "englishMetadataUrl": "https://www.roger-pearse.com/weblog/2015/12/12/eusebius-of-caesarea-gospel-problems-and-solutions-now-online-in-english/"
+      }
+    },
+    {
+      "id": "eusebius-stephanus-09",
+      "authorAsTraditionallyAttributed": "Eusebius of Caesarea",
+      "recipient": "stephanus",
+      "questionNumberInEpitome": 9,
+      "epitomeDivisionId": "St.9",
+      "originalComposition": "lost_full_work",
+      "preservedWitness": "abridged_selection_in_Vat_Pal_gr_220",
+      "witnessFolia": "61r–88r (collection level)",
+      "manuscriptCatalogueUrl": "https://digi.ub.uni-heidelberg.de/de/bpd/beschreibungen/bav_pal_gr_220.html",
+      "sourceEditionFamily": "Mai / PG22; Zamagni 2008 Greek critical text; Pearse/Miller et al. 2010 bilingual edition",
+      "sourcePageLocator": "epitome numbered question 9",
+      "readerQuestionModern": "Why Ruth is named in the genealogy?",
+      "readerQuestionAuthorship": "modern_editorial_formulation_not_greek_verbatim",
+      "historicalQuestionSpeaker": "question_in_abridged_stephanus_or_marinus_collection__not_independently_verified_as_recipient_verbatim",
+      "topicalTag": "genealogy_ruth",
+      "biblicalReferences": [
+        "matthew/1/5"
+      ],
+      "canonicalCatenaLocationCandidates": [
+        {
+          "pericopeId": "catena.matthew.1.3",
+          "association": "scripture-location-only__not_eusebius_same_work_proof",
+          "sourceTextOwner": "canonical-catena-reader",
+          "candidateReview": "not_reviewed"
+        }
+      ],
+      "solutionResearchStatus": "question_resolution_not_yet_verified",
+      "solutionStructuralNotes": [],
+      "greekExactQuestionSourceQuote": null,
+      "sourceLanguageTextStatus": "not_transcribed__no_unverified_greek_reconstruction",
+      "answerLocation": "epitome_section__no_imported_english_answer",
+      "publicationStatus": "research_only__not_a_verified_published_father_reply",
+      "sourceAccess": {
+        "browserUrl": "https://catholiclibrary.org/library/browse/title/e",
+        "englishMetadataUrl": "https://www.roger-pearse.com/weblog/2015/12/12/eusebius-of-caesarea-gospel-problems-and-solutions-now-online-in-english/"
+      }
+    },
+    {
+      "id": "eusebius-stephanus-10",
+      "authorAsTraditionallyAttributed": "Eusebius of Caesarea",
+      "recipient": "stephanus",
+      "questionNumberInEpitome": 10,
+      "epitomeDivisionId": "St.10",
+      "originalComposition": "lost_full_work",
+      "preservedWitness": "abridged_selection_in_Vat_Pal_gr_220",
+      "witnessFolia": "61r–88r (collection level)",
+      "manuscriptCatalogueUrl": "https://digi.ub.uni-heidelberg.de/de/bpd/beschreibungen/bav_pal_gr_220.html",
+      "sourceEditionFamily": "Mai / PG22; Zamagni 2008 Greek critical text; Pearse/Miller et al. 2010 bilingual edition",
+      "sourcePageLocator": "epitome numbered question 10",
+      "readerQuestionModern": "The names Jehoiakim and Jeconiah in Matthew's genealogy?",
+      "readerQuestionAuthorship": "modern_editorial_formulation_not_greek_verbatim",
+      "historicalQuestionSpeaker": "question_in_abridged_stephanus_or_marinus_collection__not_independently_verified_as_recipient_verbatim",
+      "topicalTag": "genealogy_jeconiah_names",
+      "biblicalReferences": [
+        "matthew/1/11"
+      ],
+      "canonicalCatenaLocationCandidates": [
+        {
+          "pericopeId": "catena.matthew.1.8",
+          "association": "scripture-location-only__not_eusebius_same_work_proof",
+          "sourceTextOwner": "canonical-catena-reader",
+          "candidateReview": "not_reviewed"
+        }
+      ],
+      "solutionResearchStatus": "question_resolution_not_yet_verified",
+      "solutionStructuralNotes": [],
+      "greekExactQuestionSourceQuote": null,
+      "sourceLanguageTextStatus": "not_transcribed__no_unverified_greek_reconstruction",
+      "answerLocation": "epitome_section__no_imported_english_answer",
+      "publicationStatus": "research_only__not_a_verified_published_father_reply",
+      "sourceAccess": {
+        "browserUrl": "https://catholiclibrary.org/library/browse/title/e",
+        "englishMetadataUrl": "https://www.roger-pearse.com/weblog/2015/12/12/eusebius-of-caesarea-gospel-problems-and-solutions-now-online-in-english/"
+      }
+    },
+    {
+      "id": "eusebius-stephanus-11",
+      "authorAsTraditionallyAttributed": "Eusebius of Caesarea",
+      "recipient": "stephanus",
+      "questionNumberInEpitome": 11,
+      "epitomeDivisionId": "St.11",
+      "originalComposition": "lost_full_work",
+      "preservedWitness": "abridged_selection_in_Vat_Pal_gr_220",
+      "witnessFolia": "61r–88r (collection level)",
+      "manuscriptCatalogueUrl": "https://digi.ub.uni-heidelberg.de/de/bpd/beschreibungen/bav_pal_gr_220.html",
+      "sourceEditionFamily": "Mai / PG22; Zamagni 2008 Greek critical text; Pearse/Miller et al. 2010 bilingual edition",
+      "sourcePageLocator": "epitome numbered question 11",
+      "readerQuestionModern": "Why Matthew divides the generations into three groups?",
+      "readerQuestionAuthorship": "modern_editorial_formulation_not_greek_verbatim",
+      "historicalQuestionSpeaker": "question_in_abridged_stephanus_or_marinus_collection__not_independently_verified_as_recipient_verbatim",
+      "topicalTag": "genealogy_three_fourteens",
+      "biblicalReferences": [
+        "matthew/1/17"
+      ],
+      "canonicalCatenaLocationCandidates": [
+        {
+          "pericopeId": "catena.matthew.1.17",
+          "association": "scripture-location-only__not_eusebius_same_work_proof",
+          "sourceTextOwner": "canonical-catena-reader",
+          "candidateReview": "not_reviewed"
+        }
+      ],
+      "solutionResearchStatus": "question_resolution_not_yet_verified",
+      "solutionStructuralNotes": [],
+      "greekExactQuestionSourceQuote": null,
+      "sourceLanguageTextStatus": "not_transcribed__no_unverified_greek_reconstruction",
+      "answerLocation": "epitome_section__no_imported_english_answer",
+      "publicationStatus": "research_only__not_a_verified_published_father_reply",
+      "sourceAccess": {
+        "browserUrl": "https://catholiclibrary.org/library/browse/title/e",
+        "englishMetadataUrl": "https://www.roger-pearse.com/weblog/2015/12/12/eusebius-of-caesarea-gospel-problems-and-solutions-now-online-in-english/"
+      }
+    },
+    {
+      "id": "eusebius-stephanus-12",
+      "authorAsTraditionallyAttributed": "Eusebius of Caesarea",
+      "recipient": "stephanus",
+      "questionNumberInEpitome": 12,
+      "epitomeDivisionId": "St.12",
+      "originalComposition": "lost_full_work",
+      "preservedWitness": "abridged_selection_in_Vat_Pal_gr_220",
+      "witnessFolia": "61r–88r (collection level)",
+      "manuscriptCatalogueUrl": "https://digi.ub.uni-heidelberg.de/de/bpd/beschreibungen/bav_pal_gr_220.html",
+      "sourceEditionFamily": "Mai / PG22; Zamagni 2008 Greek critical text; Pearse/Miller et al. 2010 bilingual edition",
+      "sourcePageLocator": "epitome numbered question 12",
+      "readerQuestionModern": "Why the kings from David to the exile are counted as fourteen generations?",
+      "readerQuestionAuthorship": "modern_editorial_formulation_not_greek_verbatim",
+      "historicalQuestionSpeaker": "question_in_abridged_stephanus_or_marinus_collection__not_independently_verified_as_recipient_verbatim",
+      "topicalTag": "genealogy_kings_count",
+      "biblicalReferences": [
+        "matthew/1/17"
+      ],
+      "canonicalCatenaLocationCandidates": [
+        {
+          "pericopeId": "catena.matthew.1.17",
+          "association": "scripture-location-only__not_eusebius_same_work_proof",
+          "sourceTextOwner": "canonical-catena-reader",
+          "candidateReview": "not_reviewed"
+        }
+      ],
+      "solutionResearchStatus": "question_resolution_not_yet_verified",
+      "solutionStructuralNotes": [],
+      "greekExactQuestionSourceQuote": null,
+      "sourceLanguageTextStatus": "not_transcribed__no_unverified_greek_reconstruction",
+      "answerLocation": "epitome_section__no_imported_english_answer",
+      "publicationStatus": "research_only__not_a_verified_published_father_reply",
+      "sourceAccess": {
+        "browserUrl": "https://catholiclibrary.org/library/browse/title/e",
+        "englishMetadataUrl": "https://www.roger-pearse.com/weblog/2015/12/12/eusebius-of-caesarea-gospel-problems-and-solutions-now-online-in-english/"
+      }
+    },
+    {
+      "id": "eusebius-stephanus-13",
+      "authorAsTraditionallyAttributed": "Eusebius of Caesarea",
+      "recipient": "stephanus",
+      "questionNumberInEpitome": 13,
+      "epitomeDivisionId": "St.13",
+      "originalComposition": "lost_full_work",
+      "preservedWitness": "abridged_selection_in_Vat_Pal_gr_220",
+      "witnessFolia": "61r–88r (collection level)",
+      "manuscriptCatalogueUrl": "https://digi.ub.uni-heidelberg.de/de/bpd/beschreibungen/bav_pal_gr_220.html",
+      "sourceEditionFamily": "Mai / PG22; Zamagni 2008 Greek critical text; Pearse/Miller et al. 2010 bilingual edition",
+      "sourcePageLocator": "epitome numbered question 13",
+      "readerQuestionModern": "Why the lineage after Jeconiah is also counted as fourteen generations?",
+      "readerQuestionAuthorship": "modern_editorial_formulation_not_greek_verbatim",
+      "historicalQuestionSpeaker": "question_in_abridged_stephanus_or_marinus_collection__not_independently_verified_as_recipient_verbatim",
+      "topicalTag": "genealogy_postexilic_count",
+      "biblicalReferences": [
+        "matthew/1/17"
+      ],
+      "canonicalCatenaLocationCandidates": [
+        {
+          "pericopeId": "catena.matthew.1.17",
+          "association": "scripture-location-only__not_eusebius_same_work_proof",
+          "sourceTextOwner": "canonical-catena-reader",
+          "candidateReview": "not_reviewed"
+        }
+      ],
+      "solutionResearchStatus": "question_resolution_not_yet_verified",
+      "solutionStructuralNotes": [],
+      "greekExactQuestionSourceQuote": null,
+      "sourceLanguageTextStatus": "not_transcribed__no_unverified_greek_reconstruction",
+      "answerLocation": "epitome_section__no_imported_english_answer",
+      "publicationStatus": "research_only__not_a_verified_published_father_reply",
+      "sourceAccess": {
+        "browserUrl": "https://catholiclibrary.org/library/browse/title/e",
+        "englishMetadataUrl": "https://www.roger-pearse.com/weblog/2015/12/12/eusebius-of-caesarea-gospel-problems-and-solutions-now-online-in-english/"
+      }
+    },
+    {
+      "id": "eusebius-stephanus-14",
+      "authorAsTraditionallyAttributed": "Eusebius of Caesarea",
+      "recipient": "stephanus",
+      "questionNumberInEpitome": 14,
+      "epitomeDivisionId": "St.14",
+      "originalComposition": "lost_full_work",
+      "preservedWitness": "abridged_selection_in_Vat_Pal_gr_220",
+      "witnessFolia": "61r–88r (collection level)",
+      "manuscriptCatalogueUrl": "https://digi.ub.uni-heidelberg.de/de/bpd/beschreibungen/bav_pal_gr_220.html",
+      "sourceEditionFamily": "Mai / PG22; Zamagni 2008 Greek critical text; Pearse/Miller et al. 2010 bilingual edition",
+      "sourcePageLocator": "epitome numbered question 14",
+      "readerQuestionModern": "Why Jesus was considered the carpenter's son?",
+      "readerQuestionAuthorship": "modern_editorial_formulation_not_greek_verbatim",
+      "historicalQuestionSpeaker": "question_in_abridged_stephanus_or_marinus_collection__not_independently_verified_as_recipient_verbatim",
+      "topicalTag": "jesus_social_parentage",
+      "biblicalReferences": [
+        "matthew/13/55"
+      ],
+      "canonicalCatenaLocationCandidates": [
+        {
+          "pericopeId": "catena.matthew.13.53",
+          "association": "scripture-location-only__not_eusebius_same_work_proof",
+          "sourceTextOwner": "canonical-catena-reader",
+          "candidateReview": "not_reviewed"
+        }
+      ],
+      "solutionResearchStatus": "question_resolution_not_yet_verified",
+      "solutionStructuralNotes": [],
+      "greekExactQuestionSourceQuote": null,
+      "sourceLanguageTextStatus": "not_transcribed__no_unverified_greek_reconstruction",
+      "answerLocation": "epitome_section__no_imported_english_answer",
+      "publicationStatus": "research_only__not_a_verified_published_father_reply",
+      "sourceAccess": {
+        "browserUrl": "https://catholiclibrary.org/library/browse/title/e",
+        "englishMetadataUrl": "https://www.roger-pearse.com/weblog/2015/12/12/eusebius-of-caesarea-gospel-problems-and-solutions-now-online-in-english/"
+      }
+    },
+    {
+      "id": "eusebius-stephanus-15",
+      "authorAsTraditionallyAttributed": "Eusebius of Caesarea",
+      "recipient": "stephanus",
+      "questionNumberInEpitome": 15,
+      "epitomeDivisionId": "St.15",
+      "originalComposition": "lost_full_work",
+      "preservedWitness": "abridged_selection_in_Vat_Pal_gr_220",
+      "witnessFolia": "61r–88r (collection level)",
+      "manuscriptCatalogueUrl": "https://digi.ub.uni-heidelberg.de/de/bpd/beschreibungen/bav_pal_gr_220.html",
+      "sourceEditionFamily": "Mai / PG22; Zamagni 2008 Greek critical text; Pearse/Miller et al. 2010 bilingual edition",
+      "sourcePageLocator": "epitome numbered question 15",
+      "readerQuestionModern": "What it means for Jesus to reign on David's throne?",
+      "readerQuestionAuthorship": "modern_editorial_formulation_not_greek_verbatim",
+      "historicalQuestionSpeaker": "question_in_abridged_stephanus_or_marinus_collection__not_independently_verified_as_recipient_verbatim",
+      "topicalTag": "davidic_throne",
+      "biblicalReferences": [
+        "luke/1/32"
+      ],
+      "canonicalCatenaLocationCandidates": [
+        {
+          "pericopeId": "catena.luke.1.30",
+          "association": "scripture-location-only__not_eusebius_same_work_proof",
+          "sourceTextOwner": "canonical-catena-reader",
+          "candidateReview": "not_reviewed"
+        }
+      ],
+      "solutionResearchStatus": "question_resolution_not_yet_verified",
+      "solutionStructuralNotes": [],
+      "greekExactQuestionSourceQuote": null,
+      "sourceLanguageTextStatus": "not_transcribed__no_unverified_greek_reconstruction",
+      "answerLocation": "epitome_section__no_imported_english_answer",
+      "publicationStatus": "research_only__not_a_verified_published_father_reply",
+      "sourceAccess": {
+        "browserUrl": "https://catholiclibrary.org/library/browse/title/e",
+        "englishMetadataUrl": "https://www.roger-pearse.com/weblog/2015/12/12/eusebius-of-caesarea-gospel-problems-and-solutions-now-online-in-english/"
+      }
+    },
+    {
+      "id": "eusebius-stephanus-16",
+      "authorAsTraditionallyAttributed": "Eusebius of Caesarea",
+      "recipient": "stephanus",
+      "questionNumberInEpitome": 16,
+      "epitomeDivisionId": "St.16",
+      "originalComposition": "lost_full_work",
+      "preservedWitness": "abridged_selection_in_Vat_Pal_gr_220",
+      "witnessFolia": "61r–88r (collection level)",
+      "manuscriptCatalogueUrl": "https://digi.ub.uni-heidelberg.de/de/bpd/beschreibungen/bav_pal_gr_220.html",
+      "sourceEditionFamily": "Mai / PG22; Zamagni 2008 Greek critical text; Pearse/Miller et al. 2010 bilingual edition",
+      "sourcePageLocator": "epitome numbered question 16",
+      "readerQuestionModern": "Reconciling the family's journey to Egypt with Luke's Jerusalem and Nazareth account?",
+      "readerQuestionAuthorship": "modern_editorial_formulation_not_greek_verbatim",
+      "historicalQuestionSpeaker": "question_in_abridged_stephanus_or_marinus_collection__not_independently_verified_as_recipient_verbatim",
+      "topicalTag": "infancy_journeys",
+      "biblicalReferences": [
+        "matthew/2/13",
+        "luke/2/22",
+        "luke/2/39"
+      ],
+      "canonicalCatenaLocationCandidates": [
+        {
+          "pericopeId": "catena.matthew.2.13",
+          "association": "scripture-location-only__not_eusebius_same_work_proof",
+          "sourceTextOwner": "canonical-catena-reader",
+          "candidateReview": "not_reviewed"
+        },
+        {
+          "pericopeId": "catena.luke.2.22",
+          "association": "scripture-location-only__not_eusebius_same_work_proof",
+          "sourceTextOwner": "canonical-catena-reader",
+          "candidateReview": "not_reviewed"
+        },
+        {
+          "pericopeId": "catena.luke.2.39",
+          "association": "scripture-location-only__not_eusebius_same_work_proof",
+          "sourceTextOwner": "canonical-catena-reader",
+          "candidateReview": "not_reviewed"
+        }
+      ],
+      "solutionResearchStatus": "question_resolution_not_yet_verified",
+      "solutionStructuralNotes": [],
+      "greekExactQuestionSourceQuote": null,
+      "sourceLanguageTextStatus": "not_transcribed__no_unverified_greek_reconstruction",
+      "answerLocation": "epitome_section__no_imported_english_answer",
+      "publicationStatus": "research_only__not_a_verified_published_father_reply",
+      "sourceAccess": {
+        "browserUrl": "https://catholiclibrary.org/library/browse/title/e",
+        "englishMetadataUrl": "https://www.roger-pearse.com/weblog/2015/12/12/eusebius-of-caesarea-gospel-problems-and-solutions-now-online-in-english/"
+      }
+    },
+    {
+      "id": "eusebius-marinus-01",
+      "authorAsTraditionallyAttributed": "Eusebius of Caesarea",
+      "recipient": "marinus",
+      "questionNumberInEpitome": 1,
+      "epitomeDivisionId": "Ma.1",
+      "originalComposition": "lost_full_work",
+      "preservedWitness": "abridged_selection_in_Vat_Pal_gr_220",
+      "witnessFolia": "88r–89r",
+      "manuscriptCatalogueUrl": "https://digi.ub.uni-heidelberg.de/de/bpd/beschreibungen/bav_pal_gr_220.html",
+      "sourceEditionFamily": "Mai / PG22; Zamagni 2008 Greek critical text; Pearse/Miller et al. 2010 bilingual edition",
+      "sourcePageLocator": "epitome numbered question 1",
+      "readerQuestionModern": "Reconciling Matthew's and Mark's apparent resurrection timing?",
+      "readerQuestionAuthorship": "modern_editorial_formulation_not_greek_verbatim",
+      "historicalQuestionSpeaker": "Marinus_as_addressed_by_eusebius",
+      "topicalTag": "resurrection_timing",
+      "biblicalReferences": [
+        "matthew/28/1",
+        "mark/16/9"
+      ],
+      "canonicalCatenaLocationCandidates": [
+        {
+          "pericopeId": "catena.matthew.28.1",
+          "association": "scripture-location-only__not_eusebius_same_work_proof",
+          "sourceTextOwner": "canonical-catena-reader",
+          "candidateReview": "not_reviewed"
+        },
+        {
+          "pericopeId": "catena.mark.16.9",
+          "association": "scripture-location-only__not_eusebius_same_work_proof",
+          "sourceTextOwner": "canonical-catena-reader",
+          "candidateReview": "not_reviewed"
+        }
+      ],
+      "solutionResearchStatus": "two_hypothetical_paths_observed",
+      "solutionStructuralNotes": [
+        "Transmitted epitome discusses two approaches: one hypothetical exclusion of a contested Mark passage, and another retaining the passage with a punctuation distinction.",
+        "These are alternative treatments, not an endorsement of removing Scripture or an independently demonstrated chronology."
+      ],
+      "greekExactQuestionSourceQuote": "Ἠρώτας δὲ τὸ πρῶτον· Αʹ. Πῶς παρὰ μὲν τῷ Ματθαίῳ ὀψὲ Σαββάτων",
+      "sourceLanguageTextStatus": "short_greek_opening_anchor_checked_in_abridgement__incomplete_quote",
+      "answerLocation": "epitome_section__no_imported_english_answer",
+      "publicationStatus": "research_only__not_a_verified_published_father_reply",
+      "sourceAccess": {
+        "browserUrl": "https://catholiclibrary.org/library/view?chunk.id=00000003&docId=%2FFathers-Synchronized-EN%2FEusebius_Caesariensis__Quaestiones_evangelicae_ad_Marinum.en.html",
+        "englishMetadataUrl": "https://www.roger-pearse.com/weblog/2015/12/12/eusebius-of-caesarea-gospel-problems-and-solutions-now-online-in-english/"
+      }
+    },
+    {
+      "id": "eusebius-marinus-02",
+      "authorAsTraditionallyAttributed": "Eusebius of Caesarea",
+      "recipient": "marinus",
+      "questionNumberInEpitome": 2,
+      "epitomeDivisionId": "Ma.2",
+      "originalComposition": "lost_full_work",
+      "preservedWitness": "abridged_selection_in_Vat_Pal_gr_220",
+      "witnessFolia": "89r–92r",
+      "manuscriptCatalogueUrl": "https://digi.ub.uni-heidelberg.de/de/bpd/beschreibungen/bav_pal_gr_220.html",
+      "sourceEditionFamily": "Mai / PG22; Zamagni 2008 Greek critical text; Pearse/Miller et al. 2010 bilingual edition",
+      "sourcePageLocator": "epitome numbered question 2",
+      "readerQuestionModern": "Mary Magdalene at the tomb in Matthew and John on different stated days?",
+      "readerQuestionAuthorship": "modern_editorial_formulation_not_greek_verbatim",
+      "historicalQuestionSpeaker": "question_in_abridged_stephanus_or_marinus_collection__not_independently_verified_as_recipient_verbatim",
+      "topicalTag": "mary_tomb_timing",
+      "biblicalReferences": [
+        "matthew/28/1",
+        "john/20/11"
+      ],
+      "canonicalCatenaLocationCandidates": [
+        {
+          "pericopeId": "catena.matthew.28.1",
+          "association": "scripture-location-only__not_eusebius_same_work_proof",
+          "sourceTextOwner": "canonical-catena-reader",
+          "candidateReview": "not_reviewed"
+        },
+        {
+          "pericopeId": "catena.john.20.10",
+          "association": "scripture-location-only__not_eusebius_same_work_proof",
+          "sourceTextOwner": "canonical-catena-reader",
+          "candidateReview": "not_reviewed"
+        }
+      ],
+      "solutionResearchStatus": "question_resolution_not_yet_verified",
+      "solutionStructuralNotes": [],
+      "greekExactQuestionSourceQuote": null,
+      "sourceLanguageTextStatus": "not_transcribed__no_unverified_greek_reconstruction",
+      "answerLocation": "epitome_section__no_imported_english_answer",
+      "publicationStatus": "research_only__not_a_verified_published_father_reply",
+      "sourceAccess": {
+        "browserUrl": "https://catholiclibrary.org/library/view?chunk.id=00000003&docId=%2FFathers-Synchronized-EN%2FEusebius_Caesariensis__Quaestiones_evangelicae_ad_Marinum.en.html",
+        "englishMetadataUrl": "https://www.roger-pearse.com/weblog/2015/12/12/eusebius-of-caesarea-gospel-problems-and-solutions-now-online-in-english/"
+      }
+    },
+    {
+      "id": "eusebius-marinus-03",
+      "authorAsTraditionallyAttributed": "Eusebius of Caesarea",
+      "recipient": "marinus",
+      "questionNumberInEpitome": 3,
+      "epitomeDivisionId": "Ma.3",
+      "originalComposition": "lost_full_work",
+      "preservedWitness": "abridged_selection_in_Vat_Pal_gr_220",
+      "witnessFolia": "92r–94r",
+      "manuscriptCatalogueUrl": "https://digi.ub.uni-heidelberg.de/de/bpd/beschreibungen/bav_pal_gr_220.html",
+      "sourceEditionFamily": "Mai / PG22; Zamagni 2008 Greek critical text; Pearse/Miller et al. 2010 bilingual edition",
+      "sourcePageLocator": "epitome numbered question 3",
+      "readerQuestionModern": "Magdalene touching Jesus' feet versus the command not to touch him?",
+      "readerQuestionAuthorship": "modern_editorial_formulation_not_greek_verbatim",
+      "historicalQuestionSpeaker": "question_in_abridged_stephanus_or_marinus_collection__not_independently_verified_as_recipient_verbatim",
+      "topicalTag": "mary_touch_contrast",
+      "biblicalReferences": [
+        "matthew/28/9",
+        "john/20/17"
+      ],
+      "canonicalCatenaLocationCandidates": [
+        {
+          "pericopeId": "catena.matthew.28.8",
+          "association": "scripture-location-only__not_eusebius_same_work_proof",
+          "sourceTextOwner": "canonical-catena-reader",
+          "candidateReview": "not_reviewed"
+        },
+        {
+          "pericopeId": "catena.john.20.10",
+          "association": "scripture-location-only__not_eusebius_same_work_proof",
+          "sourceTextOwner": "canonical-catena-reader",
+          "candidateReview": "not_reviewed"
+        }
+      ],
+      "solutionResearchStatus": "question_resolution_not_yet_verified",
+      "solutionStructuralNotes": [],
+      "greekExactQuestionSourceQuote": null,
+      "sourceLanguageTextStatus": "not_transcribed__no_unverified_greek_reconstruction",
+      "answerLocation": "epitome_section__no_imported_english_answer",
+      "publicationStatus": "research_only__not_a_verified_published_father_reply",
+      "sourceAccess": {
+        "browserUrl": "https://catholiclibrary.org/library/view?chunk.id=00000003&docId=%2FFathers-Synchronized-EN%2FEusebius_Caesariensis__Quaestiones_evangelicae_ad_Marinum.en.html",
+        "englishMetadataUrl": "https://www.roger-pearse.com/weblog/2015/12/12/eusebius-of-caesarea-gospel-problems-and-solutions-now-online-in-english/"
+      }
+    },
+    {
+      "id": "eusebius-marinus-04",
+      "authorAsTraditionallyAttributed": "Eusebius of Caesarea",
+      "recipient": "marinus",
+      "questionNumberInEpitome": 4,
+      "epitomeDivisionId": "Ma.4",
+      "originalComposition": "lost_full_work",
+      "preservedWitness": "abridged_selection_in_Vat_Pal_gr_220",
+      "witnessFolia": "94r–96r",
+      "manuscriptCatalogueUrl": "https://digi.ub.uni-heidelberg.de/de/bpd/beschreibungen/bav_pal_gr_220.html",
+      "sourceEditionFamily": "Mai / PG22; Zamagni 2008 Greek critical text; Pearse/Miller et al. 2010 bilingual edition",
+      "sourcePageLocator": "epitome numbered question 4",
+      "readerQuestionModern": "The Gospel accounts of one or two angels and different tomb locations?",
+      "readerQuestionAuthorship": "modern_editorial_formulation_not_greek_verbatim",
+      "historicalQuestionSpeaker": "question_in_abridged_stephanus_or_marinus_collection__not_independently_verified_as_recipient_verbatim",
+      "topicalTag": "empty_tomb_angels",
+      "biblicalReferences": [
+        "matthew/28/2",
+        "mark/16/5",
+        "luke/24/4",
+        "john/20/12"
+      ],
+      "canonicalCatenaLocationCandidates": [
+        {
+          "pericopeId": "catena.matthew.28.1",
+          "association": "scripture-location-only__not_eusebius_same_work_proof",
+          "sourceTextOwner": "canonical-catena-reader",
+          "candidateReview": "not_reviewed"
+        },
+        {
+          "pericopeId": "catena.mark.16.1",
+          "association": "scripture-location-only__not_eusebius_same_work_proof",
+          "sourceTextOwner": "canonical-catena-reader",
+          "candidateReview": "not_reviewed"
+        },
+        {
+          "pericopeId": "catena.luke.24.1",
+          "association": "scripture-location-only__not_eusebius_same_work_proof",
+          "sourceTextOwner": "canonical-catena-reader",
+          "candidateReview": "not_reviewed"
+        },
+        {
+          "pericopeId": "catena.john.20.10",
+          "association": "scripture-location-only__not_eusebius_same_work_proof",
+          "sourceTextOwner": "canonical-catena-reader",
+          "candidateReview": "not_reviewed"
+        }
+      ],
+      "solutionResearchStatus": "question_resolution_not_yet_verified",
+      "solutionStructuralNotes": [],
+      "greekExactQuestionSourceQuote": null,
+      "sourceLanguageTextStatus": "not_transcribed__no_unverified_greek_reconstruction",
+      "answerLocation": "epitome_section__no_imported_english_answer",
+      "publicationStatus": "research_only__not_a_verified_published_father_reply",
+      "sourceAccess": {
+        "browserUrl": "https://catholiclibrary.org/library/view?chunk.id=00000003&docId=%2FFathers-Synchronized-EN%2FEusebius_Caesariensis__Quaestiones_evangelicae_ad_Marinum.en.html",
+        "englishMetadataUrl": "https://www.roger-pearse.com/weblog/2015/12/12/eusebius-of-caesarea-gospel-problems-and-solutions-now-online-in-english/"
+      }
+    }
+  ]
+}
