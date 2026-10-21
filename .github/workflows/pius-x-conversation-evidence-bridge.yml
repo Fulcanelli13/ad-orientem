@@ -100,6 +100,11 @@ on:
       - 'previews/pius-x-eight-first-release-source-locked-20261021.html'
       - 'tests/pius-x-first-release-eight-static.mjs'
       - 'tests/pius-x-first-release-eight-browser.mjs'
+      - 'data/learn/research/pius-x-first-release-second-eight-source-locked-20261021.v1.json'
+      - 'docs/research/PIUS-X-SECOND-EIGHT-FIRST-RELEASE-TRANSCRIPTS-20261021.md'
+      - 'previews/pius-x-second-eight-first-release-source-locked-20261021.html'
+      - 'tests/pius-x-first-release-second-eight-static.mjs'
+      - 'tests/pius-x-first-release-second-eight-browser.mjs'
       - 'tests/pius-x-depth12-visual-novel-browser.mjs'
       - 'tests/pius-x-first20-personal-and-papal-source-edits.mjs'
       - 'previews/visible-mass-3d/pius-x-batch-release-editorial-review.html'
@@ -364,6 +369,8 @@ jobs:
         run: node tests/pius-x-depth12-visual-novel-browser.mjs
       - name: Exercise eight source-locked first-release scenes in Chromium
         run: node tests/pius-x-first-release-eight-browser.mjs
+      - name: Exercise second eight first-release source-locked scenes in Chromium
+        run: node tests/pius-x-first-release-second-eight-browser.mjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -376,6 +383,13 @@ jobs:
         with:
           name: pius-x-first-release-eight-phone-desktop-review
           path: artifacts/pius-x-first-release-eight-browser/
+          if-no-files-found: warn
+          retention-days: 14
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pius-x-second-eight-phone-desktop-review
+          path: artifacts/pius-x-second-eight-browser/
           if-no-files-found: warn
           retention-days: 14
       - name: Build portable 40-answer editorial review batch
@@ -455,6 +469,8 @@ jobs:
         run: node tools/formation/build-pius-x-first-release-dialogue-review-queue.mjs
       - name: Validate eight new source-tethered first-release conversations against 130-owner shortlist
         run: node tests/pius-x-first-release-eight-static.mjs
+      - name: Validate second eight source-tethered first-release conversations
+        run: node tests/pius-x-first-release-second-eight-static.mjs
       - name: Verify corpus ownership and the 130-candidate first-release shortlist
         run: node tests/pius-x-full810-balanced130-corpus.mjs
       - name: Test first twenty revised papal teaching and biography replies against original owners
