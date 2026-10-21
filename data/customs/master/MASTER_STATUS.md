@@ -126,9 +126,26 @@ The 42 possible distinct practices are a **research shortlist**, not a count of 
 
 See `first-pass-260-reconciliation.v1.json` and the three chapter-grouped `identity-triage` files. Every row keeps its original Weiser locator, geography, existing priority and evidence status.
 
+## First independent source closure — six geographically bounded customs
+
+Evidence beyond Weiser was checked for six of the 42 candidate observations. **These are attested local historical or continuing practices, not publication decisions.** The file `independent-sources-batch01.v1.json` preserves exact evidence, limits, locality and date semantics.
+
+| Weiser locator | Custom | Corroboration type |
+|---|---|---|
+| `WEI58-05-010` | Austrian Advent Herbergsuche | Vienna archdiocesan report, household groups |
+| `WEI58-07-007` | Québec guignolée Christmas charity | Provincial heritage register and St Vincent de Paul |
+| `WEI58-07-008` | Polish kolędnicy home visits | Polish Ministry of Culture |
+| `WEI58-08-019` | St Barbara's December branches | Diocese of Linz |
+| `WEI58-16-020` | Maltese Easter L-Irxoxt procession and statue run | Malta public administration and contemporary local reporting |
+| `WEI58-24-007` | Sassari's Assumption-eve Candelieri procession | Sardinian regional heritage authority and official festival site |
+
+Six records have **nine named source witnesses**. They are still gated against duplicate custom identity, strict 1962 liturgical ownership, localized date qualification and final bilingual publication copy. No automatic feast or ministerial action was added.
+
+Eight candidate family-overlap reviews, comprising 19 possible distinct observations, are documented separately in `possible-distinct-candidate-overlap.v1.json`; these are not eight canonical customs or an automatic collapse of identities.
+
 ## Editorial decisions that remain open
 
-1. **Source-adjudicate the 42 possible distinct practices** and **the 23 source/ritual holds**. Reconcile the 41 proposed existing identity matches, verify regional versus religious scope of the 39 variants, and keep cultural/historical references separate. All 260 have a provisional disposition; source and final identity review remains open. Resolve to an existing custom, a distinct provisional custom, another owner, regional context, or justified hold.
+1. **Continue source-adjudicating the 42 possible distinct practices** (six now have bounded independent support) and **the 23 source/ritual holds**. Reconcile the 41 proposed existing identity matches, verify regional versus religious scope of the 39 variants, and keep cultural/historical references separate. All 260 have a provisional disposition; source and final identity review remains open. Resolve to an existing custom, a distinct provisional custom, another owner, regional context, or justified hold.
 2. **Separate dates rigorously:** fixed historical custom day, movable feast relationship, observed 1962 feast precedence, family occasion, and actual local programme are different fields; the Calendar resolver owns observed feast dates.
 3. **Preserve geography and historical scope:** never turn an Irish household witness, German festival custom, French local blessing, Polish food custom or folklore into universal Roman practice.
 4. **Resolve the 84 P1 independent-source holds** where worthwhile without manufacturing an attestation. Weiser alone is a bibliographic pointer, not current-practice certification.
