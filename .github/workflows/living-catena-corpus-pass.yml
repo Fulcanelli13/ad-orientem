@@ -13,6 +13,7 @@ on:
       - tests/scripture-catena-first-pass.mjs
       - tests/scripture-catena-matthew-batch-one.mjs
       - tests/scripture-catena-matthew-batch-two.mjs
+      - tests/scripture-catena-matthew-batch-two-reconciliation.mjs
       - data/scripture/catena/research/full-corpus-pass-20261021/**
       - .github/workflows/living-catena-corpus-pass.yml
 
@@ -36,6 +37,8 @@ jobs:
         run: node tests/scripture-catena-matthew-batch-one.mjs
       - name: Verify second 300 Matthew excerpts and 47 source-level reviews
         run: node tests/scripture-catena-matthew-batch-two.mjs
+      - name: Reconcile both Matthew batch-two AI reviews and mixed author ownership
+        run: node tests/scripture-catena-matthew-batch-two-reconciliation.mjs
       - name: Ensure generated index is up to date for PR
         run: |
           git diff --exit-code -- data/scripture/catena/research/full-corpus-pass-20261021/
