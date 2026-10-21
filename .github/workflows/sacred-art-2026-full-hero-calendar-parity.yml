@@ -5,6 +5,7 @@ on:
     paths:
       - "data/calendar/sacred-art-2026-complete-hero-coverage-master.v1.json"
       - "tests/sacred-art-2026-full-hero-calendar-parity.mjs"
+      - "tests/sacred-art-2026-full-hero-master-integrity.mjs"
       - ".github/workflows/sacred-art-2026-full-hero-calendar-parity.yml"
   pull_request:
     branches: [main]
@@ -23,6 +24,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
+      - name: Verify 52 Sunday, 53 Class I, and 17 spotlight immutable editorial constraints
+        run: node tests/sacred-art-2026-full-hero-master-integrity.mjs
       - name: Setup browser environment
         run: |
           npm install --no-audit --no-fund
