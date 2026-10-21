@@ -11,7 +11,7 @@ function verse(book,edition,c,v){return source(book,edition).verses.find(x=>x[0]
 function ids(refs,edition){
  const set=new Set();
  for(const r of refs){
-  const m=r.match(/^(Acts|John|Matthew|Revelation) (\d+):(\d+)(?:–(\d+))?$/);
+  const m=r.match(/^(Genesis|Acts|John|Matthew|Revelation) (\d+):(\d+)(?:–(\d+))?$/);
   assert.ok(m,"Unexpected Scripture span "+r);
   for(let n=+m[3];n<=+(m[4]||m[3]);n++){
    assert.ok(verse(m[1],edition,+m[2],n),"Missing "+edition+" "+r+" verse "+n);
