@@ -63,3 +63,55 @@ Join narrative movements only when the movement's source reference demonstrably 
 ## Review boundary
 
 PR #1345 is a draft research overlay; PR #1310 owns the master covenant/genealogy/story crosswalk; PR #1069 owns the existing Atlas and scene studies. This branch is based on the latest P3 head and is intended as a continuation checkpoint. No source in this file approves Bible text, historical prose, coordinates, rights, theology, production UI or publication.
+
+
+## P4 citation crosswalk and isolated theatre laboratory — 21 October 2026
+
+This subsection records **completed research engineering only**, after the original continuity checkpoint. It does not revise the original 217-unit workbook, the P3 verse selections, #1310's canonical P0 owner, #1069's 183-scene owner, the public 151-event Atlas, or the app's production Explore screen.
+
+### Written deliverables
+
+- \`data/research/historia-p4-movement-theatre-citation-crosswalk.v1.json\`: source-pinned reference comparisons for **37 P3 movements**, **183 scene keys**, and **151 P0 canonical Atlas keys**. Source blob SHAs and branch owner references are embedded.
+- \`data/research/historia-p4-m20-m37-literary-review-queue.v1.json\`: **18** pending movement reviews, with **35** specific candidate narrative-seam or witness-integrity issues. Issue triage is **not** a verse-by-verse witness reading, oral pass, or approval.
+- \`labs/historia-salutis-theatre-p4.html\`: isolated four-state bilingual theatre prototype; MapLibre geographic camera for the Jordan region, traditional Mount Tabor and Jerusalem city context; a separate non-geographic Revelation scene. Scripture text and artwork assets are **not** imported.
+- \`tests/historia-p4-theatre-citation-contract.mjs\`: standalone fail-closed test for identifiers, invariant source counts, provenance restrictions, nonpublication flags, 18 literary holds and four-state laboratory source markers. Run from repository root using \`node tests/historia-p4-theatre-citation-contract.mjs\`.
+
+### Measured joins
+
+| Classification | Count | Interpretation |
+|---|---:|---|
+| P3 movements | 37 | Research proposal, not the P0's distinct 37 reading-chapter IDs |
+| Movements with one or more matched scene references | 24 | Scripture-book and selected-verse span overlap only |
+| Movements without matched scene references | 13 | Keep as source-coverage queue; do not invent scenes or force joins |
+| Scene rows with at least one matched movement | 57 | No equality of event identity established |
+| Scene rows without a matched movement | 126 | Remain available for independent research; no deletion |
+| Movement-to-scene citation links | 57 | Every result reciprocal in scene audit queue |
+| Movement-to-P0 Atlas citation links | 60 | Event references only, not verified identical historical events |
+| Source scene-to-Atlas classifications | 67 exact / 29 overlap / 87 unmatched | **Original #1069 status preserved**, independent of P3 citation overlaps |
+| Location row-by-row evidence approvals | 0 | All 183 geography and actor audits explicitly pending |
+| M20–M37 oral readings/editorial approvals | 0 / 0 | No claim of completed literary acceptance |
+
+The 13 movements without a linked scene are: HS-M01, M02, M03, M06, M12, M13, M14, M15, M16, M17, M35, M36 and M37. Many are essential theological or visionary episodes and do **not** require invented terrestrial map events.
+
+### Nonnegotiable boundary
+
+A shared biblical verse span is an **indexing aid**. It never certifies actor identity, geolocation, chronology, covenant provenance, textual wording, artistic suitability, reproduction rights or editorial approval. P0's reading chapters and P3's movements both happen to number 37 but have different chapter boundaries: **never join by their ordinal numbers**. The seven existing covenant/promise IDs remain differentiated; Matthew and Luke genealogies stay distinct. Explicit scene/Atlas candidate status is preserved without promotion.
+
+The theatre laboratory takes three localized camera positions as *presentation only*: a broad regional camera for the Jordan, and **already existing** \`ATLAS_GEO.transfiguration\` (traditional Mount Tabor) and \`ATLAS_GEO.cenacle\` (Jerusalem city-context) values. No point is drawn claiming the exact biblical event location. These positions are not additions to the canonical coordinate registry. Revelation is deliberately non-geographic. MapLibre and a dark basemap are loaded from public CDNs; network access is required for tiles, while the labelled dark fallback stays legible without them.
+
+The lab's English/French source synopses are copied from the **existing research scene records** for scenes 069, 104 and 119, not newly fabricated Scripture prose. M37 displays a carefully labelled short scriptural cue, not a certified edition import. Canonical reader content must eventually be injected by the existing source owner. The art display is deliberately held pending the existing sacred-art approval/rights pipeline.
+
+### Verification performed
+
+- Three upstream source datasets checked: 37 movements, 183 distinct scene keys, 151 distinct Atlas keys, and 488 total reference strings fitting the supported single-passage form in this comparison.
+- Saved output re-read from GitHub after each write; counts and nonpublication fields checked, including that 183 scenes have zero location certifications.
+- Prototype inline JavaScript passed a syntax compilation check and a mocked DOM interaction smoke test covering first scene, Revelation map-to-vision swap, French toggle and previous-scene navigation.
+- **Not done:** external-tile loading, browser screenshot/320–768px visual acceptance, Node-based repository test execution, scholarly verse witness reading, publication gate or release test. No CI or production deploy claimed.
+
+### Next bounded execution batch
+
+1. Execute the standalone Node contract in a repository runner and verify a real MapLibre/mobile browser acceptance at 320px, 390px and 768px, including no network/fallback and map attribution.
+2. Conduct actual Catholic text collation and sequential seam review of M20–M37 using the 35-item review queue. Do not set \`readAloudAccepted\` by inference.
+3. Complete evidence audits of 183 scene rows in the established 14 scene-chapter batches, adding text-identified actors, chronology basis and supported location class; no coordinate changes until sourced.
+4. Reconcile P0 seven stages/12 arcs and P3 37 movements through **verified event/source relationships**, not positional chapter matching. Distinguish main-reading scene coverage from optional scene repertoire.
+5. Substitute approved sacred art and canonical Scripture text into the theatre after their respective owners explicitly certify them. Production integration and publication are separate gates.
