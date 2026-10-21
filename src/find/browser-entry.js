@@ -145,6 +145,7 @@ export function createFindOwner(win=globalThis){
   const scrollGuard=createScrollTapGuard(win?.document,{
     contains:target=>Boolean(getRoot(win)?.contains?.(target)),
   });
+  let atlasReturnViewport=null;
   const state={
     lens:"heritage",
     view:"map",
@@ -702,7 +703,7 @@ export function createFindOwner(win=globalThis){
     atlasScriptureReturn=null;
     openState=false;state.selectedId=null;state.selectedPlaceId=null;state.expandPlace=false;state.expandDetail=false;
     state.bibleAtlas=false;state.bibleIndex=0;
-    state.timeMassOpen=false;state.atlasMode="places";state.atlasCountry=null;
+    state.timeMassOpen=false;state.atlasMode="places";state.atlasCountry=null;atlasReturnViewport=null;
     lastMapView=null;lastMapLens=null;mapHandle?.destroy?.();mapHandle=null;
     nearbyResults=null;
     const node=getRoot(win);if(node){node.dataset.open="false";node.innerHTML=""}
@@ -1136,6 +1137,21 @@ export function createFindOwner(win=globalThis){
       event.preventDefault?.();
       const mode=atlasButton.dataset.atlasMode;
       if(["places","heatmap","countries"].includes(mode)){
+        // A density or choropleth view needs global context even when a Place
+        // was just selected at street zoom. Restore that exact camera on exit.
+        if(mode==="places"){
+          if(atlasReturnViewport&&mapHandle?.map)
+            mapHandle.map.jumpTo?.({center:atlasReturnViewport.center,zoom:atlasReturnViewport.zoom});
+          atlasReturnViewport=null;
+        }else if(state.atlasMode==="places"){
+          const map=mapHandle?.map;
+          atlasReturnViewport=mapViewport(map);
+          if(map){
+            const width=Number(map.getContainer?.()?.getBoundingClientRect?.().width||win.innerWidth||390);
+            const zoom=Math.max(-1.2,Math.min(2.4,Math.log2(Math.max(280,width)/560)));
+            map.jumpTo?.({center:[0,19],zoom});
+          }
+        }
         state.atlasMode=mode;state.atlasCountry=null;
         if(mode!=="places"){
           state.timeMassOpen=false;state.journeyOpen=false;journeyPreviousCategories=null;
