@@ -65,6 +65,17 @@ for(const [cue,exactKey] of [
  assert.equal(icon(cue,{priestAction:{cueId:cue,label:"SOURCE_ACTION"}}).priestActionIconKey,exactKey,
   "Approved exact-source original no longer reached "+cue);
 }
+for(const [cueId,action,expected] of [
+ ["AO.SM.C0068","SIGNS HIMSELF","final_ao_sign_of_cross_vector"],
+ ["AO.SM.C0079","PROFOUND BOW","final_ao_adoration"],
+ ["AO.SM.C0104","SIGNS HIMSELF","final_ao_sign_of_cross_vector"],
+ ["AO.SM.C0262","KISSES ALTAR","priest_kiss_altar_rich"],
+]){
+ assert.equal(icon(cueId,{priestAction:{cueId,label:action}}).priestActionIconKey,expected,
+  "Exact 1962 rubric action must use user's approved artwork: "+cueId);
+ assert.equal(icon(cueId,{priestAction:{cueId,label:"UNRELATED ACTION"}}).priestActionIconKey,null,
+  "A generic source cue cannot substitute an unrelated action image: "+cueId);
+}
 assert.equal(icon("AO.SM.C0055",{gesture:{cueId:"AO.SM.C0055",action:"Bow head"}}).gestureIconKey,"bow");
 assert.equal(icon("AO.SM.C0072",{priestPosition:{station:"ALTAR_EPISTLE_MISSAL"}}).priestPositionIconKey,"priest_gospel_rich");
 assert.equal(icon("AO.SM.C0144",{priestPosition:{station:"ALTAR_CENTER",missalLocation:"GOSPEL_SIDE"}}).priestPositionIconKey,"priest_centre_hands_rich");
