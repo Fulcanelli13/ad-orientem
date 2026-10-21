@@ -195,13 +195,14 @@ try{
    // Provenance-bound custom and attributed-name facets at 320, 390 and 1440.
    await graph.locator("select[data-network-kind]").selectOption("custom");
    assert.ok(await graph.locator(".aoNetworkResults button[data-network-focus^='custom:']").count()>0);
-   await graph.locator(".aoNetworkResults button[data-network-focus='custom:DEV-010']").click();
-   await graph.locator('[data-network-open-custom="DEV-010"]').first().waitFor({state:"visible"});
+   // On phones the result rail is intentionally hidden: selecting the facet
+   // focuses its first sourced record and exposes the canonical custom CTA.
+   await graph.locator("[data-network-open-custom]").first().waitFor({state:"visible"});
    assert.ok(await graph.locator("a[href^='https://']").count()>0);
    await page.screenshot({path:resolve(out,"explore-"+width+"-network-custom.png"),fullPage:false});
    await graph.locator("select[data-network-kind]").selectOption("person");
    assert.ok(await graph.locator(".aoNetworkResults button[data-network-focus^='person:']").count()>0);
-   await graph.locator(".aoNetworkResults button[data-network-focus^='person:']").first().click();
+   await graph.locator(".aoNetworkMention").waitFor({state:"visible"});
    assert.match(await graph.locator(".aoNetworkMention").innerText(),/not a linked Saints profile/);
    await page.screenshot({path:resolve(out,"explore-"+width+"-network-person.png"),fullPage:false});
    await graph.locator("button[data-network-close]").click();
