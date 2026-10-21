@@ -1,0 +1,254 @@
+{
+  "schema": "ao-ultra-master-priest-voice-audit-v1",
+  "date": "2026-10-21",
+  "source": "Ad_Orientem_Ultra_Master_Mass_Music_Reconciled_2026-10-19.xlsx",
+  "sheet": "09 PRIEST EVENTS 279",
+  "crossCheck": "37 MUSIC LITURGICAL TIMELINE; 39 SCHOLA RUNTIME CROSSWALK",
+  "note": "34 source events contain SUNG/CHANT; only 27 are actually priest-owned chanting for the Sung reader. Do not conflate Schola, minister response, or mixed spoken/private transition with a priest chant icon.",
+  "counts": {
+    "PRIEST": 27,
+    "SCHOLA": 2,
+    "MINISTER_RESPONSE": 4,
+    "MIXED_PUBLIC_INVITATION_THEN_PRIEST_PRIVATE": 1
+  },
+  "items": [
+    {
+      "cueId": "AO.SM.C0053",
+      "ultraMasterVoice": "SUNG / PUBLIC",
+      "owner": "PRIEST",
+      "expectedIcon": "final_ao_chant",
+      "renderCondition": "SUNG_FORM_AND_PRIEST_ACTOR"
+    },
+    {
+      "cueId": "AO.SM.C0054",
+      "ultraMasterVoice": "SUNG / CLEAR",
+      "owner": "SCHOLA",
+      "expectedIcon": "final_schola",
+      "renderCondition": "ONLY_SCHOLA_CLOCK"
+    },
+    {
+      "cueId": "AO.SM.C0070",
+      "ultraMasterVoice": "SUNG / CLEAR",
+      "owner": "PRIEST",
+      "expectedIcon": "final_ao_chant",
+      "renderCondition": "SUNG_FORM_AND_PRIEST_ACTOR"
+    },
+    {
+      "cueId": "AO.SM.C0072",
+      "ultraMasterVoice": "SUNG / CLEAR",
+      "owner": "PRIEST",
+      "expectedIcon": "final_ao_chant",
+      "renderCondition": "SUNG_FORM_AND_PRIEST_ACTOR"
+    },
+    {
+      "cueId": "AO.SM.C0073",
+      "ultraMasterVoice": "SUNG / CLEAR",
+      "owner": "PRIEST",
+      "expectedIcon": "final_ao_chant",
+      "renderCondition": "SUNG_FORM_AND_PRIEST_ACTOR"
+    },
+    {
+      "cueId": "AO.SM.C0074",
+      "ultraMasterVoice": "SUNG / CLEAR",
+      "owner": "MINISTER_RESPONSE",
+      "expectedIcon": "final_response",
+      "renderCondition": "RESPONSE_NOT_PRIEST"
+    },
+    {
+      "cueId": "AO.SM.C0075",
+      "ultraMasterVoice": "SUNG / CLEAR",
+      "owner": "PRIEST",
+      "expectedIcon": "final_ao_chant",
+      "renderCondition": "SUNG_FORM_AND_PRIEST_ACTOR"
+    },
+    {
+      "cueId": "AO.SM.C0076",
+      "ultraMasterVoice": "SUNG / CLEAR",
+      "owner": "MINISTER_RESPONSE",
+      "expectedIcon": "final_response",
+      "renderCondition": "RESPONSE_NOT_PRIEST"
+    },
+    {
+      "cueId": "AO.SM.C0082",
+      "ultraMasterVoice": "SUNG / CLEAR",
+      "owner": "PRIEST",
+      "expectedIcon": "final_ao_chant",
+      "renderCondition": "SUNG_FORM_AND_PRIEST_ACTOR"
+    },
+    {
+      "cueId": "AO.SM.C0084",
+      "ultraMasterVoice": "SUNG / CLEAR",
+      "owner": "PRIEST",
+      "expectedIcon": "final_ao_chant",
+      "renderCondition": "SUNG_FORM_AND_PRIEST_ACTOR"
+    },
+    {
+      "cueId": "AO.SM.C0086",
+      "ultraMasterVoice": "SUNG / CLEAR",
+      "owner": "PRIEST",
+      "expectedIcon": "final_ao_chant",
+      "renderCondition": "SUNG_FORM_AND_PRIEST_ACTOR"
+    },
+    {
+      "cueId": "AO.SM.C0087",
+      "ultraMasterVoice": "SUNG / CLEAR",
+      "owner": "MINISTER_RESPONSE",
+      "expectedIcon": "final_response",
+      "renderCondition": "RESPONSE_NOT_PRIEST"
+    },
+    {
+      "cueId": "AO.SM.C0089",
+      "ultraMasterVoice": "SUNG / PUBLIC",
+      "owner": "PRIEST",
+      "expectedIcon": "final_ao_chant",
+      "renderCondition": "SUNG_FORM_AND_PRIEST_ACTOR"
+    },
+    {
+      "cueId": "AO.SM.C0090",
+      "ultraMasterVoice": "SUNG / CLEAR",
+      "owner": "SCHOLA",
+      "expectedIcon": "final_schola",
+      "renderCondition": "ONLY_SCHOLA_CLOCK"
+    },
+    {
+      "cueId": "AO.SM.C0106",
+      "ultraMasterVoice": "SUNG / CLEAR",
+      "owner": "PRIEST",
+      "expectedIcon": "final_ao_chant",
+      "renderCondition": "SUNG_FORM_AND_PRIEST_ACTOR"
+    },
+    {
+      "cueId": "AO.SM.C0108",
+      "ultraMasterVoice": "SUNG / CLEAR",
+      "owner": "PRIEST",
+      "expectedIcon": "final_ao_chant",
+      "renderCondition": "SUNG_FORM_AND_PRIEST_ACTOR"
+    },
+    {
+      "cueId": "AO.SM.C0109",
+      "ultraMasterVoice": "SUNG/CLEAR OPENING → SECRET OFFERTORY",
+      "owner": "MIXED_PUBLIC_INVITATION_THEN_PRIEST_PRIVATE",
+      "expectedIcon": null,
+      "renderCondition": "SPLIT_PUBLIC_OPENING_AND_PRIVATE_OFFERTORY"
+    },
+    {
+      "cueId": "AO.SM.C0135",
+      "ultraMasterVoice": "SUNG / CLEAR",
+      "owner": "PRIEST",
+      "expectedIcon": "final_ao_chant",
+      "renderCondition": "SUNG_FORM_AND_PRIEST_ACTOR"
+    },
+    {
+      "cueId": "AO.SM.C0137",
+      "ultraMasterVoice": "SUNG / CLEAR",
+      "owner": "PRIEST",
+      "expectedIcon": "final_ao_chant",
+      "renderCondition": "SUNG_FORM_AND_PRIEST_ACTOR"
+    },
+    {
+      "cueId": "AO.SM.C0139",
+      "ultraMasterVoice": "SUNG / CLEAR",
+      "owner": "PRIEST",
+      "expectedIcon": "final_ao_chant",
+      "renderCondition": "SUNG_FORM_AND_PRIEST_ACTOR"
+    },
+    {
+      "cueId": "AO.SM.C0141",
+      "ultraMasterVoice": "SUNG / CLEAR",
+      "owner": "PRIEST",
+      "expectedIcon": "final_ao_chant",
+      "renderCondition": "SUNG_FORM_AND_PRIEST_ACTOR"
+    },
+    {
+      "cueId": "AO.SM.C0142",
+      "ultraMasterVoice": "SUNG / CLEAR",
+      "owner": "PRIEST",
+      "expectedIcon": "final_ao_chant",
+      "renderCondition": "SUNG_FORM_AND_PRIEST_ACTOR"
+    },
+    {
+      "cueId": "AO.SM.C0144",
+      "ultraMasterVoice": "SUNG / CLEAR",
+      "owner": "PRIEST",
+      "expectedIcon": "final_ao_chant",
+      "renderCondition": "SUNG_FORM_AND_PRIEST_ACTOR"
+    },
+    {
+      "cueId": "AO.SM.C0206",
+      "ultraMasterVoice": "SUNG / CLEAR",
+      "owner": "PRIEST",
+      "expectedIcon": "final_ao_chant",
+      "renderCondition": "SUNG_FORM_AND_PRIEST_ACTOR"
+    },
+    {
+      "cueId": "AO.SM.C0208",
+      "ultraMasterVoice": "SUNG / CLEAR",
+      "owner": "PRIEST",
+      "expectedIcon": "final_ao_chant",
+      "renderCondition": "SUNG_FORM_AND_PRIEST_ACTOR"
+    },
+    {
+      "cueId": "AO.SM.C0209",
+      "ultraMasterVoice": "SUNG / CLEAR",
+      "owner": "PRIEST",
+      "expectedIcon": "final_ao_chant",
+      "renderCondition": "SUNG_FORM_AND_PRIEST_ACTOR"
+    },
+    {
+      "cueId": "AO.SM.C0217",
+      "ultraMasterVoice": "SUNG / CLEAR",
+      "owner": "PRIEST",
+      "expectedIcon": "final_ao_chant",
+      "renderCondition": "SUNG_FORM_AND_PRIEST_ACTOR"
+    },
+    {
+      "cueId": "AO.SM.C0219",
+      "ultraMasterVoice": "SUNG / CLEAR",
+      "owner": "PRIEST",
+      "expectedIcon": "final_ao_chant",
+      "renderCondition": "SUNG_FORM_AND_PRIEST_ACTOR"
+    },
+    {
+      "cueId": "AO.SM.C0251",
+      "ultraMasterVoice": "SUNG / CLEAR",
+      "owner": "PRIEST",
+      "expectedIcon": "final_ao_chant",
+      "renderCondition": "SUNG_FORM_AND_PRIEST_ACTOR"
+    },
+    {
+      "cueId": "AO.SM.C0253",
+      "ultraMasterVoice": "SUNG / CLEAR",
+      "owner": "PRIEST",
+      "expectedIcon": "final_ao_chant",
+      "renderCondition": "SUNG_FORM_AND_PRIEST_ACTOR"
+    },
+    {
+      "cueId": "AO.SM.C0254",
+      "ultraMasterVoice": "SUNG / CLEAR",
+      "owner": "PRIEST",
+      "expectedIcon": "final_ao_chant",
+      "renderCondition": "SUNG_FORM_AND_PRIEST_ACTOR"
+    },
+    {
+      "cueId": "AO.SM.C0255",
+      "ultraMasterVoice": "SUNG / CLEAR",
+      "owner": "MINISTER_RESPONSE",
+      "expectedIcon": "final_response",
+      "renderCondition": "RESPONSE_NOT_PRIEST"
+    },
+    {
+      "cueId": "AO.SM.C0257",
+      "ultraMasterVoice": "SUNG / CLEAR",
+      "owner": "PRIEST",
+      "expectedIcon": "final_ao_chant",
+      "renderCondition": "SUNG_FORM_AND_PRIEST_ACTOR"
+    },
+    {
+      "cueId": "AO.SM.C0259",
+      "ultraMasterVoice": "SUNG / PUBLIC",
+      "owner": "PRIEST",
+      "expectedIcon": "final_ao_chant",
+      "renderCondition": "SUNG_FORM_AND_PRIEST_ACTOR"
+    }
+  ]
+}
