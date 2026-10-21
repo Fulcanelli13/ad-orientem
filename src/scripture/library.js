@@ -250,13 +250,14 @@ export function mountScriptureLibrary(root,{
    const langControl=element("label",t.language);
    const languageSelect=element("select");
    for(const [value,name] of [["en","English"],["fr","Français"]]){
-     const opt=element("option",name);opt.value=value;languageSelect.append(opt);
+     const opt=element("option",name);opt.value=value;if(thematicEpisode?.plan.book==="Esther"&&value==="fr")opt.disabled=true;languageSelect.append(opt);
    }
    languageSelect.value=lang;
    languageSelect.addEventListener("change",()=>{
      const next=languageSelect.value;
      const nextEdition=next==="en"?prefs.englishEdition():DEFAULT_SCRIPTURE_EDITION[next];
-     moveEdition(nextEdition);lang=next;prefs.setLanguage(lang);draw();
+     if(thematicEpisode?.plan.book==="Esther"&&next==="fr"){draw();return;}
+     moveEdition(nextEdition);lang=next;prefs.setLanguage(lang);if(thematicEpisode)positionThematic();draw();
    });
    langControl.append(languageSelect);nav.append(langControl);
    const editionControl=element("label",t.source);
@@ -264,14 +265,15 @@ export function mountScriptureLibrary(root,{
    for(const edition of Object.values(SCRIPTURE_EDITIONS).filter(x=>x.language===lang)){
      const opt=element("option",edition.title);
      opt.value=edition.id;
-     opt.disabled=!(["dr-challoner","cpdv-2009"].includes(edition.id) || edition.id===DEFAULT_SCRIPTURE_EDITION[lang] || (edition.enabled && edition.rights==="cleared"));
+     opt.disabled=(thematicEpisode?.plan.book==="Esther"&&edition.id!=="dr-challoner")||!(["dr-challoner","cpdv-2009"].includes(edition.id) || edition.id===DEFAULT_SCRIPTURE_EDITION[lang] || (edition.enabled && edition.rights==="cleared"));
      editionSelect.append(opt);
    }
    editionSelect.value=editionId;
    editionSelect.addEventListener("change",()=>{
      const chosen=SCRIPTURE_EDITIONS[editionSelect.value];
      if(!chosen || chosen.language!==lang || (!["dr-challoner","cpdv-2009"].includes(chosen.id) && chosen.id!==DEFAULT_SCRIPTURE_EDITION[lang] && (!chosen.enabled || chosen.rights!=="cleared"))){draw();return;}
-     moveEdition(chosen.id);
+     if(thematicEpisode?.plan.book==="Esther"&&chosen.id!=="dr-challoner"){draw();return;}
+     moveEdition(chosen.id);if(thematicEpisode)positionThematic();
      if(lang==="en" && ["dr-challoner","cpdv-2009"].includes(editionId))prefs.setEnglishEdition(editionId);
      draw();
    });
@@ -282,7 +284,7 @@ export function mountScriptureLibrary(root,{
    const books=element("select");
    for(const book of scriptureBookCatalogue()){const opt=element("option",book);opt.value=book;books.append(opt);}
    books.value=location.book;
-   books.addEventListener("change",()=>{leaveSourceSegments();location=scripturePassage({book:books.value,chapter:1,verseStart:1});draw();});
+   books.addEventListener("change",()=>{exitThematic();leaveSourceSegments();context=null;location=scripturePassage({book:books.value,chapter:1,verseStart:1});draw();});
    bookControl.append(books);nav.append(bookControl);
    for(const [field,value] of [[t.chapter,location.chapter],[t.verse,location.verseStart]]){
      const label=element("label",field);const input=element("input");
@@ -290,7 +292,7 @@ export function mountScriptureLibrary(root,{
      input.addEventListener("change",()=>{
        const n=Number(input.value);
        if(!Number.isSafeInteger(n)||n<1||n>(field===t.chapter?scriptureChapterLimit(location.book):200)){input.value=String(value);return;}
-       leaveSourceSegments();
+       exitThematic();leaveSourceSegments();context=null;
        location=field===t.chapter
          ? scripturePassage({book:location.book,chapter:n,verseStart:1})
          : scripturePassage({book:location.book,chapter:location.chapter,verseStart:n});
@@ -481,7 +483,7 @@ export function mountScriptureLibrary(root,{
    for(const [direction,label] of [[-1,t.previous],[1,t.next]]){
      const button=element("button",label);button.type="button";
      button.disabled=direction<0 ? location.chapter===1 : location.chapter>=scriptureChapterLimit(location.book);
-     button.addEventListener("click",()=>{leaveSourceSegments();location=scripturePassage({book:location.book,chapter:location.chapter+direction,verseStart:1});draw();});
+     button.addEventListener("click",()=>{exitThematic();leaveSourceSegments();context=null;location=scripturePassage({book:location.book,chapter:location.chapter+direction,verseStart:1});draw();});
      actions.append(button);
    }
    main.append(actions);
@@ -593,11 +595,11 @@ export function mountScriptureLibrary(root,{
      if(!matches.length&&!bookMatches.length)resultArea.append(element("p",t.none));
      for(const book of bookMatches){
        const button=element("button",book);button.type="button";
-       button.addEventListener("click",()=>{leaveSourceSegments();location=scripturePassage({book,chapter:1,verseStart:1});draw();});resultArea.append(button);
+       button.addEventListener("click",()=>{exitThematic();leaveSourceSegments();context=null;location=scripturePassage({book,chapter:1,verseStart:1});draw();});resultArea.append(button);
      }
      for(const match of matches){
        const button=element("button",passageReference(match)+" — "+match.text.slice(0,140));button.type="button";
-       button.addEventListener("click",()=>{leaveSourceSegments();location=scripturePassage(match);draw();});resultArea.append(button);
+       button.addEventListener("click",()=>{exitThematic();leaveSourceSegments();context=null;location=scripturePassage(match);draw();});resultArea.append(button);
      }
    };
    searchField.addEventListener("input",()=>{query=searchField.value;paintResults();});
@@ -608,7 +610,7 @@ export function mountScriptureLibrary(root,{
    if(!marks.length)savedSection.append(element("p",t.noBookmarks));
    for(const mark of marks){
      const button=element("button",passageReference(mark));button.type="button";
-     button.addEventListener("click",()=>{leaveSourceSegments();location=scripturePassage(mark);draw();});
+     button.addEventListener("click",()=>{exitThematic();leaveSourceSegments();context=null;location=scripturePassage(mark);draw();});
      savedSection.append(button);
    }
    wrap.append(savedSection);
@@ -628,7 +630,7 @@ export function mountScriptureLibrary(root,{
    for(const [id,item] of Object.entries(ROSARY_SCRIPTURE_LINKS)){
      const line=element("div",null,"aoScriptureMystery");
      const button=element("button",id+" · "+passageReference(item.passage));button.type="button";
-     button.addEventListener("click",()=>{leaveSourceSegments();location=item.passage;draw();});
+     button.addEventListener("click",()=>{exitThematic();leaveSourceSegments();context=null;location=item.passage;draw();});
      line.append(button,element("p",item.editorialSummary[lang]));rosary.append(line);
    }
    wrap.append(rosary);
