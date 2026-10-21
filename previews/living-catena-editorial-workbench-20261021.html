@@ -211,7 +211,7 @@ function fillForm(root,rec,source){
  const boxes=new Map();
  for(const k of CATENA_REVIEW_CHECKS){
   const row=$("label","check"),check=$("input");check.type="checkbox";check.dataset.reviewCheck=k;
-  check.checked=prior.checks?.[k]===true;row.append(check,$("span",null,texts[k]));checklist.append(row);boxes.set(k,check);
+  check.checked=(prior.checks||prior.verifiedChecklist||{})[k]===true;row.append(check,$("span",null,texts[k]));checklist.append(row);boxes.set(k,check);
  }
  form.append(checklist);
  const buttons=$("div","operations"),save=$("button",null,"Save decision locally");save.type="submit";
