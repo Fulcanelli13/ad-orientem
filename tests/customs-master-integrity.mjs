@@ -9,6 +9,7 @@ const dates=load("normalized-temporal-context.v0.json");
 const triaged=triage.flatMap(x=>x.rows);
 const overlap=load("possible-distinct-candidate-overlap.v1.json");
 const bounded=load("independent-sources-batch01.v1.json");
+const bounded2=load("independent-sources-batch02.v1.json");
 
 
 const unique=items=>new Set(items).size===items.length;
@@ -87,6 +88,19 @@ assert.ok(bounded.records.every(x=>distinctIDs.has(x.weiser_id)&&x.source_claim_
   x.user_facing_status==="NOT_RELEASED"&&x.sources.every(s=>/^https:\/\//.test(s.url))));
 assert.ok(bounded.records.every(x=>x.identity_status==="DISTINCT_PRACTICE_CANDIDATE_REQUIRES_CROSS_MODULE_DUPLICATE_GATE"));
 assert.equal(bounded.scope.no_canonical_ids_created,true);
+assert.equal(bounded2.schema,"AO_CUSTOMS_INDEPENDENT_SOURCE_CLOSURE_B02_V1");
+assert.equal(bounded2.scope.candidate_records,9);
+assert.equal(bounded2.scope.source_witnesses,18);
+assert.equal(bounded2.scope.application_publications,0);
+assert.equal(bounded2.scope.canonical_ids_created,0);
+assert.ok(bounded2.records.every(x=>distinctIDs.has(x.weiser_id)));
+assert.ok(bounded2.records.every(x=>x.name_en&&x.name_fr&&x.history_en&&x.history_fr&&
+  x.meaning_en&&x.meaning_fr&&x.practice_en&&x.practice_fr&&x.qualification_en&&x.qualification_fr&&x.date_context));
+assert.ok(bounded2.records.every(x=>x.sources.length>=2&&x.sources.every(s=>s.id&&s.issuer&&s.supports&&s.limit&&/^https:\/\//.test(s.url))));
+assert.ok(bounded2.records.every(x=>x.publication_enabled===false&&x.artwork_assigned===false&&
+  x.editorial_approval==="PENDING"&&x.identity_gate==="PENDING"));
+assert.equal(new Set([...bounded.records,...bounded2.records].map(x=>x.weiser_id)).size,15);
+
 assert.equal(dates.schema,"AO_CUSTOMS_MASTER_NORMALIZED_TEMPORAL_42_V0");
 assert.equal(dates.records.length,42);
 assert.equal(dates.counts.dated_or_seasonal,30);
