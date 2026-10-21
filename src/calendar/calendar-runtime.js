@@ -281,7 +281,7 @@ function monthHybridOverview(monthId,selected){
       <div class="aoCalHybridMajors">${majorCards||`<p class="aoCalHybridEmpty">${esc(majorStatus==="loading"?L("Resolving this month’s celebrations…","Résolution des célébrations du mois…"):L("No resolved principal celebrations.","Aucune célébration principale résolue."))}</p>`}</div>
     </section>
     <section class="aoCalHybridSection aoCalHybridPracticesSection">
-      <div class="aoCalHybridHeading"><h3>${esc(L("Practices & customs","Pratiques et coutumes"))}</h3></div>
+      <div class="aoCalHybridHeading"><h3>${esc(L("Practices & customs","Pratiques et coutumes"))}</h3><button type="button" class="aoCalV2TextLink" data-cal-customs-open>${esc(L("All traditions","Toutes les coutumes"))} →</button></div>
       <div class="aoCalHybridPractices">${practiceCards||`<p class="aoCalHybridEmpty">${esc(L("No featured practices for this month.","Aucune pratique signalée pour ce mois."))}</p>`}</div>
     </section>
   </div>`;
@@ -1419,6 +1419,17 @@ function bind(r){
     const nextRetry=event.target.closest?.("[data-cal-next-major-retry]");if(nextRetry){event.preventDefault();const id=state()?.selectedDate||iso(new Date());nextMajorResults.delete(id);for(const date of nextMajorCandidateDates(id)){if(weekCache.get(date)?.status==="failed")weekCache.delete(date)}paint();void loadNextResolvedMajor(id);return}
     const monthRetry=event.target.closest?.("[data-cal-month-retry]");if(monthRetry){event.preventDefault();monthRetry.disabled=true;void retryFailedMonth().catch(error=>console.error("Calendar month retry failed",error)).finally(()=>{if(root())paint()});return}
     const dayRetry=event.target.closest?.("[data-cal-day-retry]");if(dayRetry){event.preventDefault();dayRetry.disabled=true;const id=state()?.selectedDate||iso(new Date());void Promise.resolve(cache()?.retryDate?.(id)).catch(error=>console.error("Calendar day retry failed",error)).finally(()=>{if(root())paint()});return}
+    const customsLibraryButton=event.target.closest?.("[data-cal-customs-open]");
+    if(customsLibraryButton){
+      event.preventDefault();
+      if(customsLibraryButton.disabled)return;
+      customsLibraryButton.disabled=true;
+      void import("../customs/customs-browser.js")
+        .then(({installCustomsBrowserOwner})=>installCustomsBrowserOwner(globalThis).open({view:"year"}))
+        .catch(error=>console.error("Customs library unavailable",error))
+        .finally(()=>{customsLibraryButton.disabled=false;});
+      return;
+    }
     const glossaryButton=event.target.closest?.("[data-cal-glossary]");if(glossaryButton){event.preventDefault();void openCalendarGlossary();return}
     const viewButton=event.target.closest?.("[data-cal-view]");if(viewButton){event.preventDefault();setView(viewButton.dataset.calView||"day");return}
     const exportButton=event.target.closest?.("[data-cal-export-ics]");
