@@ -1,0 +1,140 @@
+/* St Pius X 82-chapter editorial visual-novel review. Inlined by build script. */
+(()=>{
+"use strict";
+const node=document.getElementById("spxExpandedCorpus");
+const corpus=JSON.parse(node.textContent);
+const artwork=JSON.parse(document.getElementById("spxData").textContent).art;
+const $=id=>document.getElementById(id);
+const esc=t=>String(t??"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#39;");
+const fold=t=>String(t??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[’‘']/g," ").replace(/[^a-z0-9 ]/g," ").replace(/\s+/g," ").trim();
+const chapters=corpus.chapters, byId=new Map(chapters.map(c=>[c.id,c]));
+const ui={open:false,lang:"en",id:null,selected:[],menu:false,query:"",source:false};
+const term={
+en:{launch:"Explore 82 conversations",back:"Return to the original study",library:"Conversation library",search:"Search subjects and questions",entry:"Explore a subject",welcome:"Choose a question. These are documentary educational reconstructions, not verified speech of St Pius X.",review:"EDITORIAL REVIEW · NOT A HISTORICAL TRANSCRIPT",chapter:"Conversation",follow:"Where would you like to go next?",depth:"Ask a more specific question",related:"Related subjects",source:"Original source",sourceTitle:"Source and attribution",close:"Close",startOver:"Return to this subject",again:"Choose another subject",noResults:"No documented question matches that search. No reply has been invented.",special:"This subject requires fuller source review. Read the text as editorial commentary, not an authenticated papal statement.",biography:"Historical biography · editorial narrator",catechism:"Catechetical reconstruction · not personally spoken by the Pope",documents:"Source-bound editorial recreation · not verbatim",foot:"The original source records remain unchanged. No doctrine, translation, papal voice or publication has been independently approved.",go:"Read this question",sourceLocus:"Document passage",all:"All conversations",recent:"Start here",fr:"Français",questions:"Questions",backPath:"Previous exchange",reviewOnly:"Review only"},
+fr:{launch:"82 conversations",back:"Retour à l'étude initiale",library:"Bibliothèque des conversations",search:"Rechercher un sujet ou une question",entry:"Explorer un sujet",welcome:"Choisissez une question. Il s'agit de reconstitutions pédagogiques documentaires, non de paroles authentifiées de saint Pie X.",review:"RÉVISION ÉDITORIALE · NON UNE TRANSCRIPTION HISTORIQUE",chapter:"Conversation",follow:"Quelle question souhaitez-vous approfondir ?",depth:"Poser une question plus précise",related:"Sujets connexes",source:"Source originale",sourceTitle:"Source et attribution",close:"Fermer",startOver:"Reprendre ce sujet",again:"Choisir un autre sujet",noResults:"Aucune question documentée ne correspond à cette recherche. Aucune réponse n'a été inventée.",special:"Ce sujet exige une vérification plus approfondie. Ce texte est un commentaire éditorial, non une parole pontificale authentifiée.",biography:"Biographie historique · rédaction éditoriale",catechism:"Adaptation catéchétique · non personnellement prononcée par le pape",documents:"Reconstitution éditoriale fondée sur les sources · non verbatim",foot:"Les sources originales n'ont pas été modifiées. Aucune approbation indépendante doctrinale, linguistique, stylistique ou de publication.",go:"Ouvrir cette question",sourceLocus:"Passage cité",all:"Toutes les conversations",recent:"Pour commencer",fr:"English",questions:"Questions",backPath:"Échange précédent",reviewOnly:"Révision seulement"}};
+const T=()=>term[ui.lang], lang=v=>v?.[ui.lang]||v?.en||"", current=()=>byId.get(ui.id)||null;
+function isNarration(c){
+return !!c&&(c.partial||/BIOGRAPH|NARRATION_NO_SPRITE|PARTIAL|NO_SPRITE/.test(c.mode+" "+c.source.tier+" "+c.source.genre));
+}
+function isCatechism(c){
+return !!c&&(/CATECH|SALZANO|1905_LONGER/.test(c.mode+" "+c.source.genre+" "+c.source.tier)||/catechismo|cat[eé]chisme/i.test(c.source.url));
+}
+function provenanceLabel(c){
+return isNarration(c)?T().biography:isCatechism(c)?T().catechism:T().documents;
+}
+const catLabels={
+FOUNDATIONS_AND_BIOGRAPHY:{en:"Life, vocation and early pontificate",fr:"Vie, vocation et débuts du pontificat"},
+CATECHESIS_AND_LITURGY:{en:"Catechism and liturgy",fr:"Catéchisme et liturgie"},
+PASTORAL_AND_PERSONAL:{en:"Pastoral and spiritual life",fr:"Vie pastorale et spirituelle"},
+DOCTRINE_AND_REASON:{en:"Doctrine, faith and reason",fr:"Doctrine, foi et raison"},
+HISTORICAL_CHURCH_STATE:{en:"The Church and society",fr:"L'Église et la société"}
+};
+function words(q){return [...new Set(fold(q).split(" ").filter(x=>x.length>3))];}
+function match(c,term){
+const q=fold(term);if(q.length<2)return true;
+const targets=[lang(c.title),c.id,c.source?.locus,...c.nodes.flatMap(n=>[lang(n.q),lang(n.a)])].join(" ");
+const str=fold(targets);if(str.includes(q))return true;
+const w=words(q);return w.length>=2&&w.filter(t=>str.includes(t)).length>=Math.min(2,w.length);
+}
+function visibleChapters(){return chapters.filter(c=>match(c,ui.query));}
+function card(c,small=false){
+return "<button type='button' class='spxc-topic"+(small?" compact":"")+"' data-spxc-open='"+esc(c.id)+"'><span>"+esc(lang(c.title))+"</span><small>"+esc(c.source.locus||c.id)+" · "+c.nodes.length+" "+esc(T().questions.toLowerCase())+"</small></button>";
+}
+function nav(){
+const matches=visibleChapters(),by=new Map();
+for(const c of matches){const k=c.category||"THEOLOGY_AND_CHURCH";if(!by.has(k))by.set(k,[]);by.get(k).push(c);}
+return [...by.entries()].map(([k,cs])=>"<h3 class='spxc-group-title'>"+esc(lang(catLabels[k]||{en:k.replace(/_/g," "),fr:k.replace(/_/g," ")}))+" <span>"+cs.length+"</span></h3>"+cs.map(c=>card(c,true)).join("")).join("")||"<p class='spxc-note'>"+esc(T().noResults)+"</p>";
+}
+function choices(c,which){
+if(!c)return "";
+const first=c.nodes.filter(n=>!n.parentId&&n.id!==c.nodes[0]?.id);
+const last=ui.selected.at(-1)||c.nodes[0].id;
+const dependent=c.nodes.filter(n=>n.parentId===last);
+const offered=which==="dependent"?dependent:first.filter(n=>!ui.selected.includes(n.id));
+return offered.map(n=>"<button class='spxc-choice' data-spxc-choose='"+esc(n.id)+"'>"+esc(lang(n.q))+"<small>"+esc(c.source.locus||"")+"</small></button>").join("");
+}
+function conversationHTML(){
+const c=current();if(!c)return welcomeHTML();
+const items=[c.nodes[0],...ui.selected.map(id=>c.nodes.find(n=>n.id===id)).filter(Boolean)];
+const turns=items.map((n,i)=>"<article class='spxc-turn'><p class='spxc-person'>"+(i===0?esc(T().chapter):esc(T().questions))+"</p><h3>"+esc(lang(n.q))+"</h3><p class='spxc-voice'>"+esc(provenanceLabel(c))+"</p><p class='spxc-answer'>"+esc(lang(n.a))+"</p><button class='spxc-source-btn' data-spxc-source='"+esc(n.id)+"'>"+esc(T().source)+" · "+esc(n.source?.locus||c.source.locus)+" ↗</button></article>").join("");
+const deep=choices(c,"dependent"),side=choices(c,"follow");
+const related=(c.related||[]).map(id=>byId.get(id)).filter(Boolean);
+return "<div class='spxc-bread'>"+esc(T().reviewOnly)+" · "+esc(c.source.locus)+"</div>"+
+ "<h2 class='spxc-topic-title'>"+esc(lang(c.title))+"</h2>"+
+ (isNarration(c)?"<p class='spxc-caution'>"+esc(T().special)+"</p>":"")+
+ turns+
+ (deep?"<div class='spxc-next'><h3>"+esc(T().depth)+"</h3>"+deep+"</div>":"")+
+ (side?"<div class='spxc-next'><h3>"+esc(T().follow)+"</h3>"+side+"</div>":"")+
+ (related.length?"<div class='spxc-next'><h3>"+esc(T().related)+"</h3>"+related.map(x=>card(x,true)).join("")+"</div>":"")+
+ "<div class='spxc-bottom'><button data-spxc-restart='1'>"+esc(T().startOver)+"</button><button data-spxc-index='1'>"+esc(T().again)+"</button></div>";
+}
+function welcomeHTML(){
+const starters=["SPX-001","SPX-009","SPX-EXP-012","SPX-EXP-001"].map(id=>byId.get(id)).filter(Boolean);
+return "<p class='spxc-bread'>"+esc(T().review)+"</p><h2 class='spxc-topic-title'>"+esc(T().library)+"</h2>"+
+ "<p class='spxc-intro'>"+esc(T().welcome)+"</p><div class='spxc-next'><h3>"+esc(T().recent)+"</h3>"+starters.map(x=>card(x)).join("")+"</div>"+
+ "<p class='spxc-note'>"+esc(T().foot)+"</p>";
+}
+function citationHTML(){
+const c=current();if(!c||!ui.source)return "";
+const turn=c.nodes.find(n=>n.id===ui.source)||c.nodes[0];
+const source=turn.source?.url?turn.source:c.source;
+const safeURL=/^https:\/\//.test(source.url);
+return "<aside class='spxc-cite' role='dialog' aria-label='"+esc(T().sourceTitle)+"'><button data-spxc-source='close' class='spxc-cite-close'>"+esc(T().close)+" ×</button>"+
+ "<h2>"+esc(T().sourceTitle)+"</h2><p>"+esc(provenanceLabel(c))+"</p><p>"+esc(T().sourceLocus)+": <strong>"+esc(source.locus)+"</strong></p>"+
+ "<p>"+esc(source.genre||source.tier||"Research source")+"</p>"+
+ (safeURL?"<a href='"+esc(source.url)+"' target='_blank' rel='noopener noreferrer'>"+esc(T().source)+" ↗</a>":"")+
+ "<p class='spxc-note'>"+esc(T().foot)+"</p></aside>";
+}
+function render(){
+if(!ui.open)return;
+$("spxc-overlay").hidden=false;
+$("spxc-caption").textContent=T().review;
+$("spxc-close").textContent=T().back;
+$("spxc-lang").textContent=T().fr;
+$("spxc-search").placeholder=T().search;
+$("spxc-search").value=ui.query;
+$("spxc-nav").innerHTML=nav();
+$("spxc-main").innerHTML=conversationHTML();
+$("spxc-cite-slot").innerHTML=citationHTML();
+const c=current(),narration=isNarration(c);
+$("spxc-portrait").src=artwork[narration?"neutral":(c?.pose||"thoughtful")]||artwork.neutral;
+$("spxc-portrait").hidden=narration;
+$("spxc-overlay").style.setProperty("--spxc-study","url('"+artwork.study+"')");
+$("spxc-menu").setAttribute("aria-expanded",String(ui.menu));
+$("spxc-side").dataset.open=String(ui.menu);
+document.documentElement.lang=ui.lang;
+}
+const launch=document.createElement("button");
+launch.id="spxc-launch";launch.type="button";launch.textContent=T().launch;
+document.querySelector(".head-actions").prepend(launch);
+const overlay=document.createElement("section");
+overlay.id="spxc-overlay";overlay.hidden=true;overlay.setAttribute("aria-label","St Pius X expanded conversation review");
+overlay.innerHTML="<div class='spxc-background'></div><img id='spxc-portrait' alt='' aria-hidden='true'>"+
+"<div class='spxc-shell'><header class='spxc-head'><button id='spxc-close'></button><strong id='spxc-caption'></strong><button id='spxc-lang'></button><button id='spxc-menu' aria-expanded='false'>☰</button></header>"+
+"<div class='spxc-columns'><aside id='spxc-side' data-open='false'><label class='spxc-search-label' for='spxc-search'>"+esc(T().search)+"</label><input id='spxc-search' type='search'><div id='spxc-nav'></div></aside>"+
+"<main class='spxc-main-scroll'><div id='spxc-main'></div></main></div><div id='spxc-cite-slot'></div></div>";
+document.body.append(overlay);
+function openChapter(id){
+if(!byId.has(id))return;
+ui.id=id;ui.selected=[];ui.source=false;ui.menu=false;
+render();$("spxc-main").closest(".spxc-main-scroll").scrollTop=0;
+}
+function close(){ui.open=false;overlay.hidden=true;document.documentElement.lang=JSON.parse(document.getElementById("spxData").textContent)?.docs?"en":"en";}
+launch.addEventListener("click",()=>{ui.open=true;ui.id=null;ui.selected=[];ui.source=false;ui.query="";render();});
+overlay.addEventListener("click",e=>{
+const el=e.target.closest("button");if(!el)return;
+if(el.id==="spxc-close"){close();return;}
+if(el.id==="spxc-lang"){ui.lang=ui.lang==="en"?"fr":"en";render();return;}
+if(el.id==="spxc-menu"){ui.menu=!ui.menu;render();return;}
+if(el.dataset.spxcOpen){openChapter(el.dataset.spxcOpen);return;}
+if(el.dataset.spxcChoose){const c=current(),n=c?.nodes.find(n=>n.id===el.dataset.spxcChoose);if(!n)return;
+if(n.parentId&&!ui.selected.includes(n.parentId))return;
+if(!ui.selected.includes(n.id))ui.selected.push(n.id);
+ui.source=false;render();const sc=document.querySelector(".spxc-main-scroll");sc.scrollTop=sc.scrollHeight;return;}
+if(el.dataset.spxcSource){ui.source=el.dataset.spxcSource==="close"?false:el.dataset.spxcSource;render();return;}
+if(el.dataset.spxcIndex){ui.id=null;ui.selected=[];render();return;}
+if(el.dataset.spxcRestart){openChapter(ui.id);return;}
+});
+$("spxc-search").addEventListener("input",e=>{ui.query=e.target.value;$("spxc-nav").innerHTML=nav();});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&ui.open){if(ui.source){ui.source=false;render();}else if(ui.menu){ui.menu=false;render();}else close();}});
+})();
