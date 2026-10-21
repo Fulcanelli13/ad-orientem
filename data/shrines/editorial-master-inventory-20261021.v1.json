@@ -11,7 +11,8 @@
       "data/shrines/illustrated-place-guides-france.v1.json",
       "data/shrines/illustrated-place-guides-france-r67.v1.json",
       "data/shrines/illustrated-place-guides-ireland.v1.json",
-      "data/shrines/illustrated-place-guides-world-marian-r1.v1.json"
+      "data/shrines/illustrated-place-guides-world-marian-r1.v1.json",
+      "data/shrines/illustrated-place-guides-global-saints-r1.v1.json"
     ],
     "apparitions": "data/explore/sacred-phenomena-seed.v1.json",
     "publisherRegistry": "data/shrines/source-registry.v1.json"
@@ -30,9 +31,9 @@
     "saintShrines": 106,
     "christologicalShrines": 30,
     "otherShrines": 3,
-    "shrineGuides": 21,
+    "shrineGuides": 25,
     "shrineApprovedHero": 18,
-    "shrineGuideAndHero": 14,
+    "shrineGuideAndHero": 18,
     "marianGuides": 14,
     "marianApprovedHero": 11,
     "pilgrimages": 240,
@@ -465,7 +466,7 @@
       "geo_available": true,
       "intro_en": true,
       "intro_fr": true,
-      "detailed_guide": "MISSING",
+      "detailed_guide": "PUBLISHED",
       "hero_media": "APPROVED_LOCAL",
       "hero_asset_path": "assets/approved/place-media/CA-sainte-anne-de-beaupre.webp",
       "approved_gallery_count": 0,
@@ -473,7 +474,7 @@
         "pilgrimage:CA:sainte-anne-de-beaupre-destination"
       ],
       "apparition_ids": [],
-      "next_editorial_action": "WRITE_SOURCE_LINKED_GUIDE"
+      "next_editorial_action": "QA_RELEASED_FOLIO"
     },
     {
       "shrine_id": "shrine:CA:notre-dame-du-cap",
@@ -813,7 +814,7 @@
       "geo_available": true,
       "intro_en": true,
       "intro_fr": true,
-      "detailed_guide": "MISSING",
+      "detailed_guide": "PUBLISHED",
       "hero_media": "APPROVED_LOCAL",
       "hero_asset_path": "assets/approved/place-media/UG-namugongo-martyrs.webp",
       "approved_gallery_count": 0,
@@ -821,7 +822,7 @@
         "pilgrimage:UG:namugongo-martyrs-day"
       ],
       "apparition_ids": [],
-      "next_editorial_action": "WRITE_SOURCE_LINKED_GUIDE"
+      "next_editorial_action": "QA_RELEASED_FOLIO"
     },
     {
       "shrine_id": "shrine:UG:munyonyo-martyrs",
@@ -2412,7 +2413,7 @@
       "geo_available": true,
       "intro_en": true,
       "intro_fr": true,
-      "detailed_guide": "MISSING",
+      "detailed_guide": "PUBLISHED",
       "hero_media": "APPROVED_LOCAL",
       "hero_asset_path": "assets/approved/place-media/IT-basilica-san-francesco-assisi.webp",
       "approved_gallery_count": 0,
@@ -2420,7 +2421,7 @@
         "pilgrimage:20261009:IT:basilica-san-francesco-assisi:destination"
       ],
       "apparition_ids": [],
-      "next_editorial_action": "WRITE_SOURCE_LINKED_GUIDE"
+      "next_editorial_action": "QA_RELEASED_FOLIO"
     },
     {
       "shrine_id": "shrine:20261009:IT:basilica-santa-rita-cascia",
@@ -2504,7 +2505,7 @@
       "geo_available": true,
       "intro_en": true,
       "intro_fr": true,
-      "detailed_guide": "MISSING",
+      "detailed_guide": "PUBLISHED",
       "hero_media": "APPROVED_LOCAL",
       "hero_asset_path": "assets/approved/place-media/IN-basilica-bom-jesus-old-goa.webp",
       "approved_gallery_count": 0,
@@ -2512,7 +2513,7 @@
         "pilgrimage:20261009:IN:basilica-bom-jesus-old-goa:destination"
       ],
       "apparition_ids": [],
-      "next_editorial_action": "WRITE_SOURCE_LINKED_GUIDE"
+      "next_editorial_action": "QA_RELEASED_FOLIO"
     },
     {
       "shrine_id": "shrine:20261009:RW:sanctuaire-kibeho",
@@ -6310,7 +6311,7 @@
       "destination_place_id": "place:CA:sainte-anne-de-beaupre",
       "route_ids": [],
       "source_count": 2,
-      "narrative": "DESTINATION_GUIDE_PENDING",
+      "narrative": "DESTINATION_GUIDE_PUBLISHED",
       "destination_hero": "APPROVED_LOCAL",
       "canonical_temporal_links": [
         "temporal:sainte-anne-beaupre:feast"
@@ -6568,7 +6569,7 @@
       "destination_place_id": "place:UG:namugongo-martyrs",
       "route_ids": [],
       "source_count": 2,
-      "narrative": "DESTINATION_GUIDE_PENDING",
+      "narrative": "DESTINATION_GUIDE_PUBLISHED",
       "destination_hero": "APPROVED_LOCAL",
       "canonical_temporal_links": [
         "temporal:uganda-martyrs:namugongo"
@@ -7675,7 +7676,7 @@
       "destination_place_id": "place:IT:basilica-san-francesco-assisi",
       "route_ids": [],
       "source_count": 1,
-      "narrative": "DESTINATION_GUIDE_PENDING",
+      "narrative": "DESTINATION_GUIDE_PUBLISHED",
       "destination_hero": "APPROVED_LOCAL",
       "canonical_temporal_links": []
     },
@@ -7723,7 +7724,7 @@
       "destination_place_id": "place:IN:basilica-bom-jesus-old-goa",
       "route_ids": [],
       "source_count": 1,
-      "narrative": "DESTINATION_GUIDE_PENDING",
+      "narrative": "DESTINATION_GUIDE_PUBLISHED",
       "destination_hero": "APPROVED_LOCAL",
       "canonical_temporal_links": []
     },
