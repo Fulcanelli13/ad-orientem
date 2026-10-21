@@ -1,0 +1,403 @@
+{
+  "schema": "ao.historia.p4.wilderness-sinai-scene-witness-desk-audit.v1",
+  "date": "2026-10-21",
+  "status": "11_OF_183_DESK_TRIAGED_CATHOLIC_WITNESS_BOUNDARIES_NO_PUBLICATION",
+  "provenance": {
+    "sceneSource": {
+      "path": "data/explore/biblical-cinematic-studies-review.v1.json",
+      "branch": "feature/biblical-atlas-current-main-convergence-20261012",
+      "sha": "d937288862abab192e1d584f0e663a3eebb46611"
+    },
+    "witnesses": [
+      {
+        "path": "data/scripture/witness/dr-challoner/Exodus.json",
+        "edition": "dr-challoner",
+        "sha": "09b43d38baf0889623f0d30c15c01e0fe7b85da8",
+        "status": "UNCOLLATED_SOURCE_WITNESS"
+      },
+      {
+        "path": "data/scripture/witness/cpdv-2009/Exodus.json",
+        "edition": "cpdv-2009",
+        "sha": "fdd0d5685e5be2d32b29f0369dba4c3de47ea120",
+        "status": "UNCOLLATED_SOURCE_WITNESS"
+      },
+      {
+        "path": "data/scripture/witness/crampon-1923/Exodus.json",
+        "edition": "crampon-1923",
+        "sha": "49a299cc21b04ffcd5729e8df41327fa52c2806b",
+        "status": "UNCOLLATED_SOURCE_WITNESS"
+      }
+    ]
+  },
+  "counts": {
+    "firstIndex": 38,
+    "lastIndex": 48,
+    "rows": 11,
+    "totalSceneCorpus": 183,
+    "ordinarySameNumberedVerseCounts": 10,
+    "editionSpecificReferenceMismatches": 1,
+    "geocodesApproved": 0,
+    "scenesPublished": 0
+  },
+  "controls": {
+    "exodus40": {
+      "sceneKey": "biblical:scene:moses:048",
+      "reference": "Exodus 40:1–38",
+      "douayChallonerValidThrough": "Exodus 40:36",
+      "cpdvValidThrough": "Exodus 40:36",
+      "cramponValidThrough": "Exodus 40:38",
+      "automaticVerseAlignmentForbidden": true,
+      "doNotFabricateVerses37Or38": true
+    },
+    "modernSinai": "Jebel Musa is traditional and contested, not a Scripture-proven point."
+  },
+  "reviewedRows": [
+    {
+      "sceneKey": "biblical:scene:moses:038",
+      "index": 38,
+      "originalChapter": "WILDERNESS",
+      "title": "Bitter water made sweet",
+      "scriptureReference": "Exodus 15:22–27",
+      "existingLocationClaim": "Sinai wilderness · broad uncertain region",
+      "existingMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalAtlasCandidateKeys": [],
+      "witnessSpanChecks": {
+        "douayChallonerEntries": 6,
+        "cpdv2009Entries": 6,
+        "crampon1923Entries": 6,
+        "expectedLastVerseInSource": 27,
+        "coordinatePresenceVerified": true,
+        "editionReferenceMismatch": false,
+        "editionsUncollated": true
+      },
+      "sourceDescribedActors": [
+        "Moses"
+      ],
+      "actorAndIdentityApproval": false,
+      "locationEvidenceClass": "NAMED_BIBLICAL_WAYPOINTS_UNLOCATED",
+      "preciseSiteSupportedByCitedText": false,
+      "reviewFinding": "Exodus 15:22–27 names the wilderness of Shur/Sur, Marah and Elim; their exact modern sites remain unverified.",
+      "geographicalAction": "NO_SPECIFIC_MARAH_OR_ELIM_COORDINATES",
+      "modernCoordinatesApproved": false,
+      "scenePublicationApproved": false,
+      "editorialStatus": "THREE_SOURCE_WITNESS_DESK_TRIAGE_NOT_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:039",
+      "index": 39,
+      "originalChapter": "WILDERNESS",
+      "title": "Bread from heaven",
+      "scriptureReference": "Exodus 16:1–36",
+      "existingLocationClaim": "Sinai wilderness · broad uncertain region",
+      "existingMatchStatus": "EXACT_REFERENCE",
+      "originalAtlasCandidateKeys": [
+        "biblical:passage:exodus-16-1-36"
+      ],
+      "witnessSpanChecks": {
+        "douayChallonerEntries": 36,
+        "cpdv2009Entries": 36,
+        "crampon1923Entries": 36,
+        "expectedLastVerseInSource": 36,
+        "coordinatePresenceVerified": true,
+        "editionReferenceMismatch": false,
+        "editionsUncollated": true
+      },
+      "sourceDescribedActors": [
+        "Moses",
+        "Aaron"
+      ],
+      "actorAndIdentityApproval": false,
+      "locationEvidenceClass": "NAMED_BIBLICAL_WILDERNESS_NO_POINT",
+      "preciseSiteSupportedByCitedText": false,
+      "reviewFinding": "Exodus 16:1 identifies the wilderness of Sin between Elim and Sinai, but no reliable precise event point or reconstructed march line.",
+      "geographicalAction": "WILDERNESS_REGION_ONLY",
+      "modernCoordinatesApproved": false,
+      "scenePublicationApproved": false,
+      "editorialStatus": "THREE_SOURCE_WITNESS_DESK_TRIAGE_NOT_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:040",
+      "index": 40,
+      "originalChapter": "WILDERNESS",
+      "title": "Water from the rock",
+      "scriptureReference": "Exodus 17:1–7",
+      "existingLocationClaim": "Sinai wilderness · broad uncertain region",
+      "existingMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalAtlasCandidateKeys": [],
+      "witnessSpanChecks": {
+        "douayChallonerEntries": 7,
+        "cpdv2009Entries": 7,
+        "crampon1923Entries": 7,
+        "expectedLastVerseInSource": 7,
+        "coordinatePresenceVerified": true,
+        "editionReferenceMismatch": false,
+        "editionsUncollated": true
+      },
+      "sourceDescribedActors": [
+        "Moses"
+      ],
+      "actorAndIdentityApproval": false,
+      "locationEvidenceClass": "BIBLICAL_REPHIDIM_SITE_UNIDENTIFIED",
+      "preciseSiteSupportedByCitedText": false,
+      "reviewFinding": "Exodus 17:1 names Rephidim as the camp. The precise rock and modern settlement identification are not established.",
+      "geographicalAction": "NO_WATER_ROCK_POINT",
+      "modernCoordinatesApproved": false,
+      "scenePublicationApproved": false,
+      "editorialStatus": "THREE_SOURCE_WITNESS_DESK_TRIAGE_NOT_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:041",
+      "index": 41,
+      "originalChapter": "WILDERNESS",
+      "title": "Battle against Amalek",
+      "scriptureReference": "Exodus 17:8–16",
+      "existingLocationClaim": "Sinai wilderness · broad uncertain region",
+      "existingMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalAtlasCandidateKeys": [],
+      "witnessSpanChecks": {
+        "douayChallonerEntries": 9,
+        "cpdv2009Entries": 9,
+        "crampon1923Entries": 9,
+        "expectedLastVerseInSource": 16,
+        "coordinatePresenceVerified": true,
+        "editionReferenceMismatch": false,
+        "editionsUncollated": true
+      },
+      "sourceDescribedActors": [
+        "Moses",
+        "Joshua",
+        "Aaron",
+        "Hur"
+      ],
+      "actorAndIdentityApproval": false,
+      "locationEvidenceClass": "BIBLICAL_REPHIDIM_BATTLE_SITE_UNIDENTIFIED",
+      "preciseSiteSupportedByCitedText": false,
+      "reviewFinding": "Exodus 17:8 names Rephidim as the place of Amalek's attack; no battlefield coordinate may be inferred.",
+      "geographicalAction": "NO_BATTLEFIELD_COORDINATE",
+      "modernCoordinatesApproved": false,
+      "scenePublicationApproved": false,
+      "editorialStatus": "THREE_SOURCE_WITNESS_DESK_TRIAGE_NOT_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:042",
+      "index": 42,
+      "originalChapter": "WILDERNESS",
+      "title": "Jethro advises Moses",
+      "scriptureReference": "Exodus 18:13–27",
+      "existingLocationClaim": "Sinai wilderness · broad uncertain region",
+      "existingMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalAtlasCandidateKeys": [],
+      "witnessSpanChecks": {
+        "douayChallonerEntries": 15,
+        "cpdv2009Entries": 15,
+        "crampon1923Entries": 15,
+        "expectedLastVerseInSource": 27,
+        "coordinatePresenceVerified": true,
+        "editionReferenceMismatch": false,
+        "editionsUncollated": true
+      },
+      "sourceDescribedActors": [
+        "Moses",
+        "Jethro"
+      ],
+      "actorAndIdentityApproval": false,
+      "locationEvidenceClass": "EVENT_LOCATION_INHERITED_FROM_CONTEXT_ONLY",
+      "preciseSiteSupportedByCitedText": false,
+      "reviewFinding": "Exodus 18:13–27 discusses judging and delegation without naming Mount Sinai or a modern location in the selected span.",
+      "geographicalAction": "NO_JEBEL_MUSA_EVENT_POINT",
+      "modernCoordinatesApproved": false,
+      "scenePublicationApproved": false,
+      "editorialStatus": "THREE_SOURCE_WITNESS_DESK_TRIAGE_NOT_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:043",
+      "index": 43,
+      "originalChapter": "COVENANT",
+      "title": "At the mountain of God",
+      "scriptureReference": "Exodus 19:1–15",
+      "existingLocationClaim": "Jebel Musa · traditional Mount Sinai (contested)",
+      "existingMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalAtlasCandidateKeys": [],
+      "witnessSpanChecks": {
+        "douayChallonerEntries": 15,
+        "cpdv2009Entries": 15,
+        "crampon1923Entries": 15,
+        "expectedLastVerseInSource": 15,
+        "coordinatePresenceVerified": true,
+        "editionReferenceMismatch": false,
+        "editionsUncollated": true
+      },
+      "sourceDescribedActors": [
+        "Moses"
+      ],
+      "actorAndIdentityApproval": false,
+      "locationEvidenceClass": "BIBLICAL_SINAI_TRADITIONAL_PEAK",
+      "preciseSiteSupportedByCitedText": false,
+      "reviewFinding": "Exodus 19:1 identifies the wilderness of Sinai but not the contemporary Jebel Musa peak; the modern identification remains traditional and contested.",
+      "geographicalAction": "JEBEL_MUSA_TRADITION_ONLY",
+      "modernCoordinatesApproved": false,
+      "scenePublicationApproved": false,
+      "editorialStatus": "THREE_SOURCE_WITNESS_DESK_TRIAGE_NOT_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:044",
+      "index": 44,
+      "originalChapter": "COVENANT",
+      "title": "The Ten Commandments",
+      "scriptureReference": "Exodus 20:1–17",
+      "existingLocationClaim": "Jebel Musa · traditional Mount Sinai (contested)",
+      "existingMatchStatus": "EXACT_REFERENCE",
+      "originalAtlasCandidateKeys": [
+        "biblical:passage:exodus-20-1-17"
+      ],
+      "witnessSpanChecks": {
+        "douayChallonerEntries": 17,
+        "cpdv2009Entries": 17,
+        "crampon1923Entries": 17,
+        "expectedLastVerseInSource": 17,
+        "coordinatePresenceVerified": true,
+        "editionReferenceMismatch": false,
+        "editionsUncollated": true
+      },
+      "sourceDescribedActors": [],
+      "actorAndIdentityApproval": false,
+      "locationEvidenceClass": "MOUNTAIN_IN_PRECEDING_CONTEXT_ONLY",
+      "preciseSiteSupportedByCitedText": false,
+      "reviewFinding": "Exodus 20:1–17 contains the commandments but does not itself name a mountain; Mount Sinai comes from the preceding chapter, while Jebel Musa is traditional.",
+      "geographicalAction": "NO_EXACT_COMMANDMENTS_POINT",
+      "modernCoordinatesApproved": false,
+      "scenePublicationApproved": false,
+      "editorialStatus": "THREE_SOURCE_WITNESS_DESK_TRIAGE_NOT_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:045",
+      "index": 45,
+      "originalChapter": "COVENANT",
+      "title": "The covenant is ratified",
+      "scriptureReference": "Exodus 24:1–18",
+      "existingLocationClaim": "Jebel Musa · traditional Mount Sinai (contested)",
+      "existingMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalAtlasCandidateKeys": [],
+      "witnessSpanChecks": {
+        "douayChallonerEntries": 18,
+        "cpdv2009Entries": 18,
+        "crampon1923Entries": 18,
+        "expectedLastVerseInSource": 18,
+        "coordinatePresenceVerified": true,
+        "editionReferenceMismatch": false,
+        "editionsUncollated": true
+      },
+      "sourceDescribedActors": [
+        "Moses",
+        "Aaron",
+        "Nadab",
+        "Abihu"
+      ],
+      "actorAndIdentityApproval": false,
+      "locationEvidenceClass": "BIBLICAL_MOUNTAIN_TRADITIONAL_IDENTIFICATION",
+      "preciseSiteSupportedByCitedText": false,
+      "reviewFinding": "Exodus 24:1–18 identifies a mountain and covenant ceremony, but gives no archaeological proof of the location at modern Jebel Musa.",
+      "geographicalAction": "JEBEL_MUSA_TRADITION_ONLY",
+      "modernCoordinatesApproved": false,
+      "scenePublicationApproved": false,
+      "editorialStatus": "THREE_SOURCE_WITNESS_DESK_TRIAGE_NOT_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:046",
+      "index": 46,
+      "originalChapter": "COVENANT",
+      "title": "The golden calf",
+      "scriptureReference": "Exodus 32:1–35",
+      "existingLocationClaim": "Jebel Musa · traditional Mount Sinai (contested)",
+      "existingMatchStatus": "EXACT_REFERENCE",
+      "originalAtlasCandidateKeys": [
+        "biblical:passage:exodus-32-1-35"
+      ],
+      "witnessSpanChecks": {
+        "douayChallonerEntries": 35,
+        "cpdv2009Entries": 35,
+        "crampon1923Entries": 35,
+        "expectedLastVerseInSource": 35,
+        "coordinatePresenceVerified": true,
+        "editionReferenceMismatch": false,
+        "editionsUncollated": true
+      },
+      "sourceDescribedActors": [
+        "Moses",
+        "Aaron"
+      ],
+      "actorAndIdentityApproval": false,
+      "locationEvidenceClass": "UNLOCATED_CALF_EPISODE",
+      "preciseSiteSupportedByCitedText": false,
+      "reviewFinding": "Exodus 32:1–35 narrates the golden calf while Moses is away on the mountain; a particular modern spot for the calf is not established.",
+      "geographicalAction": "NO_CALF_LOCATION_PIN",
+      "modernCoordinatesApproved": false,
+      "scenePublicationApproved": false,
+      "editorialStatus": "THREE_SOURCE_WITNESS_DESK_TRIAGE_NOT_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:047",
+      "index": 47,
+      "originalChapter": "COVENANT",
+      "title": "The second tablets",
+      "scriptureReference": "Exodus 34:1–35",
+      "existingLocationClaim": "Jebel Musa · traditional Mount Sinai (contested)",
+      "existingMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalAtlasCandidateKeys": [],
+      "witnessSpanChecks": {
+        "douayChallonerEntries": 35,
+        "cpdv2009Entries": 35,
+        "crampon1923Entries": 35,
+        "expectedLastVerseInSource": 35,
+        "coordinatePresenceVerified": true,
+        "editionReferenceMismatch": false,
+        "editionsUncollated": true
+      },
+      "sourceDescribedActors": [
+        "Moses",
+        "Aaron"
+      ],
+      "actorAndIdentityApproval": false,
+      "locationEvidenceClass": "MOUNTAIN_TRADITION_ONLY",
+      "preciseSiteSupportedByCitedText": false,
+      "reviewFinding": "Exodus 34:1–35 records the renewed tablets and divine presence; Jebel Musa remains a proposed traditional identification, not a proven site.",
+      "geographicalAction": "NO_EXACT_TABLETS_SITE",
+      "modernCoordinatesApproved": false,
+      "scenePublicationApproved": false,
+      "editorialStatus": "THREE_SOURCE_WITNESS_DESK_TRIAGE_NOT_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:048",
+      "index": 48,
+      "originalChapter": "COVENANT",
+      "title": "The Tabernacle is erected",
+      "scriptureReference": "Exodus 40:1–38",
+      "existingLocationClaim": "Jebel Musa · traditional Mount Sinai (contested)",
+      "existingMatchStatus": "EXACT_REFERENCE",
+      "originalAtlasCandidateKeys": [
+        "biblical:passage:exodus-40-1-38"
+      ],
+      "witnessSpanChecks": {
+        "douayChallonerEntries": 36,
+        "cpdv2009Entries": 36,
+        "crampon1923Entries": 38,
+        "expectedLastVerseInSource": 38,
+        "coordinatePresenceVerified": true,
+        "editionReferenceMismatch": true,
+        "editionsUncollated": true
+      },
+      "sourceDescribedActors": [
+        "Moses",
+        "Aaron"
+      ],
+      "actorAndIdentityApproval": false,
+      "locationEvidenceClass": "EDITION_BOUNDARY_MISMATCH_AND_UNLOCATED_TABERNACLE",
+      "preciseSiteSupportedByCitedText": false,
+      "reviewFinding": "Exodus 40:1–38 in the scene source matches 38 Crampon verse entries but exceeds both installed English witnesses, whose Exodus 40 ends at 36. This is edition numbering, not two missing English verses; no automatic verse-by-verse correspondence is licensed. No exact modern Tabernacle encampment is given.",
+      "geographicalAction": "EDITION_SAFE_REFERENCES_REQUIRED_NO_JEBEL_MUSA_PIN",
+      "modernCoordinatesApproved": false,
+      "scenePublicationApproved": false,
+      "editorialStatus": "THREE_SOURCE_WITNESS_DESK_TRIAGE_NOT_PRINT_COLLATION"
+    }
+  ]
+}
