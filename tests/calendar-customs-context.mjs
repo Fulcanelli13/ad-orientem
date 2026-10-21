@@ -5,7 +5,7 @@ import {calendarPracticeEvents} from "../src/calendar/intelligence.js";
 import {v384Dates} from "../src/calendar/traditional-year-v384.js";
 const seed=JSON.parse(readFileSync(new URL("../data/customs/customs-atlas-seed.v1.json",import.meta.url),"utf8"));
 const licensed=new Set(seed.customs.filter(c=>c.publication_state==="PUBLISHED").map(c=>c.custom_id));
-assert.equal(CALENDAR_CUSTOM_ARTICLE_IDS.length,11);
+assert.equal(CALENDAR_CUSTOM_ARTICLE_IDS.length,35);
 for(const id of CALENDAR_CUSTOM_ARTICLE_IDS){
   assert.ok(licensed.has(id),"An unpublished custom cannot appear: "+id);
   const a=calendarCustomArticle(id);
@@ -29,8 +29,10 @@ for(const year of [2026,2027,2030]){
     assert.deepEqual(on(date,true),on(date,false),"Language cannot change selected IDs");
   }
 }
-assert.deepEqual(calendarCustomSeasonalMonthEntries("2026-05").map(x=>x.id),["MARI-002"]);
+assert.deepEqual(calendarCustomSeasonalMonthEntries("2026-05").map(x=>x.id),["DEV-001","MARI-002"]);
 assert.deepEqual(calendarCustomSeasonalMonthEntries("2026-12").map(x=>x.id),["ADVT-001","ADVT-002"]);
+assert.deepEqual(calendarCustomSeasonalMonthEntries("2026-06").map(x=>x.id),["DOM-006"]);
+assert.deepEqual(calendarCustomSeasonalMonthEntries("2026-11").map(x=>x.id),["DEAD-001"]);
 assert.deepEqual(calendarCustomSeasonalMonthEntries("2026-08"),[]);
 assert.deepEqual(calendarCustomRecommendations("invalid"),[]);
 const runtime=readFileSync(new URL("../src/calendar/calendar-runtime.js",import.meta.url),"utf8");
@@ -39,3 +41,31 @@ assert.match(runtime,/calendarCustomArticleMarkup/);
 assert.match(runtime,/calendarCustomSeasonalMonthEntries\(monthId/);
 assert.match(runtime,/\.filter\(\(\[route\]\)=>!route\.startsWith\("find:traditions:"\)\)/);
 console.log("PASS: canonical Calendar customs day, season and month contextual folios, source links, bilingual copy and unpublished holds");
+
+const pinnedDates={
+  "2026-02-02":["DOM-011"],"2026-02-03":["BLSS-001"],
+  "2026-03-19":["SJOS-001"],"2026-06-13":["SANT-001"],
+  "2026-07-25":["SCHR-001"],"2026-08-15":["MARI-001","BLSS-002"],
+  "2026-11-02":["DEAD-001","DEAD-003"],"2026-12-06":["SNIC-001"],
+  "2026-12-27":["BLSS-003"]
+};
+for(const [date,ids] of Object.entries(pinnedDates)){
+  const found=on(date);
+  for(const id of ids)assert.ok(found.includes(id),date+" missing "+id);
+  assert.deepEqual(found,on(date,true),"English/French timing drift on "+date);
+}
+for(const year of [2026,2027,2030]){
+  const x=v384Dates(year);
+  assert.ok(on(x.palm).includes("DOM-013"));
+  assert.ok(on(x.holySaturday).includes("BLSS-004"));
+  assert.equal(on(x.easter).includes("BLSS-004"),false);
+}
+for(const id of ["DEV-006","DOM-002","NDAY-001"]){
+  assert.ok(calendarCustomArticle(id),"undated published identity not browsable");
+  assert.ok(!on("2026-10-21").includes(id),"undated custom given invented date");
+}
+assert.match(runtime,/calendarCustomCatalogueMarkup/);
+assert.match(runtime,/data-cal-custom-search/);
+const extraFile=readFileSync(new URL("../src/calendar/customs-extra-articles.js",import.meta.url),"utf8");
+assert.match(extraFile,/RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED/);
+assert.ok(!CALENDAR_CUSTOM_ARTICLE_IDS.some(id=>id.startsWith("CUST-")),"unpublished research identities leaked");
