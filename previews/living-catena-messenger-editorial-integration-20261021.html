@@ -12,13 +12,14 @@ main{max-width:900px;padding:20px 15px 70px;margin:auto}
 <header><div class="kicker">Ad Orientem · Integrated prototype · research only</div><h1>Living Catena Messenger</h1>
 <p>The same source-faithful Messenger used by the Scripture reader, with an optional modern-question discovery panel. No synthesized Father responses.</p></header>
 <main><p class="notice">Select “Browse research questions” within the Messenger, then choose an editorial question. The resulting Father-attributed excerpts are source-verified, shown separately, and marked as unapproved research leads. Normal Messenger behavior remains available.</p>
-<div id="mount"><p>Loading source-verified Matthew commentary…</p></div></main>
+<div id="mount" class="aoScriptureLibrary"><p>Loading source-verified Matthew commentary…</p></div></main>
 <script type="module">
 import {loadCatenaForPassage} from "../src/scripture/catena-inline.js";
 import {mountCatenaMessenger} from "../src/scripture/catena-messenger.js";
 const host=document.getElementById("mount");
 try{
- const sections=await loadCatenaForPassage({book:"Matthew",chapter:6,verseStart:11,verseEnd:11});
+ const previewPassage=new URLSearchParams(location.search).get("passage")==="27:45"?{chapter:27,verse:45}:{chapter:6,verse:11};
+ const sections=await loadCatenaForPassage({book:"Matthew",chapter:previewPassage.chapter,verseStart:previewPassage.verse,verseEnd:previewPassage.verse});
  host.replaceChildren();
  if(!sections.length)throw Error("No source passage returned");
  mountCatenaMessenger(host,sections,{editorialResearchEnabled:true});
