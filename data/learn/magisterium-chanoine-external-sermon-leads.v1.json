@@ -1,0 +1,235 @@
+{
+  "schema": "AO_MAGISTERIUM_CHANOINE_EXTERNAL_SERMON_LEADS_V1",
+  "created": "2026-10-19",
+  "status": "EXTERNAL_PRIMARY_ATTRIBUTION_LEADS_ONLY_NOT_CANONICAL_HOMILY_IMPORT",
+  "policy": {
+    "alreadyMinedOtherChatPossible": true,
+    "originalHomilyOwnerRetained": true,
+    "noNewHomilyBankCanonicalIds": true,
+    "noQuotedSermonTextStored": true,
+    "noFirstPersonDialogue": true,
+    "notDoctrinalAuthorityEquivalent": true,
+    "sourceAudioNotIndependentlyVerified": true,
+    "translationRightsNotCleared": true
+  },
+  "metrics": {
+    "externalAttributedSermonPagesReviewed": 6,
+    "provisionalMagisteriumPassageRelations": 12,
+    "audioAlignedWordForWord": 0,
+    "certifiedHomilyBankIds": 0,
+    "approvedCharacterDialogues": 0,
+    "publishedLinks": 0
+  },
+  "records": [
+    {
+      "leadId": "LPL-1975-04-20",
+      "authorAttributed": "Mgr Marcel Lefebvre",
+      "publishedEventDate": "1975-04-20",
+      "title": "Third Sunday after Easter — Confirmations",
+      "sourceUrl": "https://laportelatine.org/formation/mgr-lefebvre/textes/sermon-de-mgr-lefebvre-3eme-dimanche-apres-paques-confirmations-20-avril-1975",
+      "publicationSource": "La Porte Latine — FSSPX France",
+      "language": "fr",
+      "sourceForm": "WEB_TRANSCRIPTION_ATTRIBUTED_WITH_RELATED_AUDIO_EMBED",
+      "sourceReadStatus": "DATED_FULL_WEB_SERMON_TRANSCRIPT_READ_AND_SCOPED_NOT_AUDIO_COLLATED",
+      "originalAudioLinkedOnPublisherPage": true,
+      "originalHomilyBankCanonicalId": null,
+      "provisionalSourceOwner": "CHANOINE_LEFEBVRE_PARALLEL_HOMILY_PIPELINE",
+      "sourceLocatorDescription": "Sermon paragraphs addressing Penance, frequent Communion and the Eucharist",
+      "genre": "PASTORAL_EXHORTATION_WITH_SACRAMENTAL_EXPOSITION",
+      "sourceTextCopied": false,
+      "provisionalMatches": [
+        {
+          "passageId": "MG-P027",
+          "relation": "SOURCE_THEME_CONVERGENCE_NOT_PROPOSITION_IDENTITY",
+          "editorialScopeNote": "Penance as sacramental means against sin; pastoral not canon text",
+          "published": false
+        },
+        {
+          "passageId": "MG-P011",
+          "relation": "SOURCE_THEME_CONVERGENCE_NOT_PROPOSITION_IDENTITY",
+          "editorialScopeNote": "Eucharistic presence and reception in Christian life",
+          "published": false
+        }
+      ],
+      "sourceRightsClearance": "NOT_CLEARED",
+      "doctrinallyAdjudicated": false,
+      "approvedFirstPersonSpeech": false,
+      "duplicateCheck": "MATCH_AGAINST_PARALLEL_HOMILY_REGISTRY_BEFORE_ASSIGNING_ANY_CANONICAL_SERMON_ID"
+    },
+    {
+      "leadId": "LPL-1975-09-14",
+      "authorAttributed": "Mgr Marcel Lefebvre",
+      "publishedEventDate": "1975-09-14",
+      "title": "Écône seminary opening — Holy Cross",
+      "sourceUrl": "https://laportelatine.org/formation/mgr-lefebvre/textes/sermon-de-mgr-lefebvre-rentree-seminaire-14-septembre-1975",
+      "publicationSource": "La Porte Latine — FSSPX France",
+      "language": "fr",
+      "sourceForm": "WEB_TRANSCRIPTION_ATTRIBUTED_WITH_RELATED_AUDIO_EMBED",
+      "sourceReadStatus": "DATED_FULL_WEB_SERMON_TRANSCRIPT_READ_AND_SCOPED_NOT_AUDIO_COLLATED",
+      "originalAudioLinkedOnPublisherPage": true,
+      "originalHomilyBankCanonicalId": null,
+      "provisionalSourceOwner": "CHANOINE_LEFEBVRE_PARALLEL_HOMILY_PIPELINE",
+      "sourceLocatorDescription": "Sermon on Cross, sacrifice and Purgatory; two distinct clauses",
+      "genre": "MASS_SPIRITUALITY_AND_REQUIEM_THEOLOGICAL_CONTEXT",
+      "sourceTextCopied": false,
+      "provisionalMatches": [
+        {
+          "passageId": "MG-P005",
+          "relation": "SOURCE_THEME_CONVERGENCE_NOT_PROPOSITION_IDENTITY",
+          "editorialScopeNote": "One sacrifice of the Cross offered sacramentally and without blood",
+          "published": false
+        },
+        {
+          "passageId": "MG-P061",
+          "relation": "SOURCE_THEME_CONVERGENCE_NOT_PROPOSITION_IDENTITY",
+          "editorialScopeNote": "Offering of Mass for departed not yet purified",
+          "published": false
+        }
+      ],
+      "sourceRightsClearance": "NOT_CLEARED",
+      "doctrinallyAdjudicated": false,
+      "approvedFirstPersonSpeech": false,
+      "duplicateCheck": "MATCH_AGAINST_PARALLEL_HOMILY_REGISTRY_BEFORE_ASSIGNING_ANY_CANONICAL_SERMON_ID"
+    },
+    {
+      "leadId": "LPL-1977-12-08",
+      "authorAttributed": "Mgr Marcel Lefebvre",
+      "publishedEventDate": "1977-12-08",
+      "title": "Immaculate Conception — commitments",
+      "sourceUrl": "https://laportelatine.org/formation/mgr-lefebvre/textes/sermon-de-mgr-lefebvre-immaculee-conception-engagements-8-decembre-1977",
+      "publicationSource": "La Porte Latine — FSSPX France",
+      "language": "fr",
+      "sourceForm": "WEB_TRANSCRIPTION_ATTRIBUTED_WITH_RELATED_AUDIO_EMBED",
+      "sourceReadStatus": "DATED_FULL_WEB_SERMON_TRANSCRIPT_READ_AND_SCOPED_NOT_AUDIO_COLLATED",
+      "originalAudioLinkedOnPublisherPage": true,
+      "originalHomilyBankCanonicalId": null,
+      "provisionalSourceOwner": "CHANOINE_LEFEBVRE_PARALLEL_HOMILY_PIPELINE",
+      "sourceLocatorDescription": "Sermon on Immaculate Conception, Gen 3:15 and Christ's redemptive design",
+      "genre": "MARIAN_TYPOLOGY_PASTORAL_NOT_DEFINITION",
+      "sourceTextCopied": false,
+      "provisionalMatches": [
+        {
+          "passageId": "MG-P007",
+          "relation": "SOURCE_THEME_CONVERGENCE_NOT_PROPOSITION_IDENTITY",
+          "editorialScopeNote": "Mary's preservation related to divine saving plan and Christ, not her personal autonomous merit",
+          "published": false
+        },
+        {
+          "passageId": "MG-P057",
+          "relation": "SOURCE_THEME_CONVERGENCE_NOT_PROPOSITION_IDENTITY",
+          "editorialScopeNote": "Providential and salvation-history argument separate from dogmatic defining formula",
+          "published": false
+        }
+      ],
+      "sourceRightsClearance": "NOT_CLEARED",
+      "doctrinallyAdjudicated": false,
+      "approvedFirstPersonSpeech": false,
+      "duplicateCheck": "MATCH_AGAINST_PARALLEL_HOMILY_REGISTRY_BEFORE_ASSIGNING_ANY_CANONICAL_SERMON_ID"
+    },
+    {
+      "leadId": "LPL-1979-02-11",
+      "authorAttributed": "Mgr Marcel Lefebvre",
+      "publishedEventDate": "1979-02-11",
+      "title": "Marziac priestly silver jubilee, Écône",
+      "sourceUrl": "https://laportelatine.org/?p=64575",
+      "publicationSource": "La Porte Latine — FSSPX France",
+      "language": "fr",
+      "sourceForm": "WEB_TRANSCRIPTION_ATTRIBUTED_WITH_RELATED_AUDIO_EMBED",
+      "sourceReadStatus": "DATED_FULL_WEB_SERMON_TRANSCRIPT_READ_AND_SCOPED_NOT_AUDIO_COLLATED",
+      "originalAudioLinkedOnPublisherPage": true,
+      "originalHomilyBankCanonicalId": null,
+      "provisionalSourceOwner": "CHANOINE_LEFEBVRE_PARALLEL_HOMILY_PIPELINE",
+      "sourceLocatorDescription": "Sermon on priestly and missionary vocation, altar and Cross",
+      "genre": "PRIESTHOOD_VOCATION_AND_SACRIFICE",
+      "sourceTextCopied": false,
+      "provisionalMatches": [
+        {
+          "passageId": "MG-P008",
+          "relation": "SOURCE_THEME_CONVERGENCE_NOT_PROPOSITION_IDENTITY",
+          "editorialScopeNote": "Priestly mission and Eucharistic sacrifice",
+          "published": false
+        },
+        {
+          "passageId": "MG-P005",
+          "relation": "SOURCE_THEME_CONVERGENCE_NOT_PROPOSITION_IDENTITY",
+          "editorialScopeNote": "Christ's sacrifice of the Cross and ministerial Mass",
+          "published": false
+        }
+      ],
+      "sourceRightsClearance": "NOT_CLEARED",
+      "doctrinallyAdjudicated": false,
+      "approvedFirstPersonSpeech": false,
+      "duplicateCheck": "MATCH_AGAINST_PARALLEL_HOMILY_REGISTRY_BEFORE_ASSIGNING_ANY_CANONICAL_SERMON_ID"
+    },
+    {
+      "leadId": "LPL-1979-06-30",
+      "authorAttributed": "Mgr Marcel Lefebvre",
+      "publishedEventDate": "1979-06-30",
+      "title": "First Mass of Abbé D. Maret",
+      "sourceUrl": "https://laportelatine.org/formation/mgr-lefebvre/textes/sermon-de-mgr-lefebvre-1ere-messe-de-labbe-d-maret-30-juin-1979",
+      "publicationSource": "La Porte Latine — FSSPX France",
+      "language": "fr",
+      "sourceForm": "WEB_TRANSCRIPTION_ATTRIBUTED_WITH_RELATED_AUDIO_EMBED",
+      "sourceReadStatus": "DATED_FULL_WEB_SERMON_TRANSCRIPT_READ_AND_SCOPED_NOT_AUDIO_COLLATED",
+      "originalAudioLinkedOnPublisherPage": true,
+      "originalHomilyBankCanonicalId": null,
+      "provisionalSourceOwner": "CHANOINE_LEFEBVRE_PARALLEL_HOMILY_PIPELINE",
+      "sourceLocatorDescription": "Sermon addresses priestly sacrifice, confession, and grace",
+      "genre": "PASTORAL_PRIESTHOOD_NOT_CANONICAL_LAW",
+      "sourceTextCopied": false,
+      "provisionalMatches": [
+        {
+          "passageId": "MG-P018",
+          "relation": "SOURCE_THEME_CONVERGENCE_NOT_PROPOSITION_IDENTITY",
+          "editorialScopeNote": "The priest offers the true sacrifice; not merely a Eucharistic meal",
+          "published": false
+        },
+        {
+          "passageId": "MG-P020",
+          "relation": "SOURCE_THEME_CONVERGENCE_NOT_PROPOSITION_IDENTITY",
+          "editorialScopeNote": "Confessional ministry only in broad pastoral sense; NOT precise sacramental form",
+          "published": false
+        }
+      ],
+      "sourceRightsClearance": "NOT_CLEARED",
+      "doctrinallyAdjudicated": false,
+      "approvedFirstPersonSpeech": false,
+      "duplicateCheck": "MATCH_AGAINST_PARALLEL_HOMILY_REGISTRY_BEFORE_ASSIGNING_ANY_CANONICAL_SERMON_ID"
+    },
+    {
+      "leadId": "LPL-1988-03-31",
+      "authorAttributed": "Mgr Marcel Lefebvre",
+      "publishedEventDate": "1988-03-31",
+      "title": "Holy Thursday — Chrism Mass",
+      "sourceUrl": "https://laportelatine.org/formation/mgr-lefebvre/textes/sermon-de-mgr-lefebvre-jeudi-saint-messe-chrismale-31-mars-1988",
+      "publicationSource": "La Porte Latine — FSSPX France",
+      "language": "fr",
+      "sourceForm": "WEB_TRANSCRIPTION_ATTRIBUTED_WITH_RELATED_AUDIO_EMBED",
+      "sourceReadStatus": "DATED_FULL_WEB_SERMON_TRANSCRIPT_READ_AND_SCOPED_NOT_AUDIO_COLLATED",
+      "originalAudioLinkedOnPublisherPage": true,
+      "originalHomilyBankCanonicalId": null,
+      "provisionalSourceOwner": "CHANOINE_LEFEBVRE_PARALLEL_HOMILY_PIPELINE",
+      "sourceLocatorDescription": "Sermon on ministers, holiness, ex opere operato, disposition",
+      "genre": "THEOLOGICAL_EXHORTATION_NOT_TRENT_PROPOSITION_EQUIVALENT",
+      "sourceTextCopied": false,
+      "provisionalMatches": [
+        {
+          "passageId": "MG-P018",
+          "relation": "SOURCE_THEME_CONVERGENCE_NOT_PROPOSITION_IDENTITY",
+          "editorialScopeNote": "Mass as sacrifice together with ministry of sacraments",
+          "published": false
+        },
+        {
+          "passageId": "MG-P027",
+          "relation": "SOURCE_THEME_CONVERGENCE_NOT_PROPOSITION_IDENTITY",
+          "editorialScopeNote": "Sacramental penance and Eucharist with proper dispositions",
+          "published": false
+        }
+      ],
+      "sourceRightsClearance": "NOT_CLEARED",
+      "doctrinallyAdjudicated": false,
+      "approvedFirstPersonSpeech": false,
+      "duplicateCheck": "MATCH_AGAINST_PARALLEL_HOMILY_REGISTRY_BEFORE_ASSIGNING_ANY_CANONICAL_SERMON_ID"
+    }
+  ]
+}

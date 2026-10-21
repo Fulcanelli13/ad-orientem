@@ -1,0 +1,107 @@
+{
+  "schema": "AO_MAGISTERIUM_DENZINGER_EDITION_BIBLIOGRAPHY_V1",
+  "date": "2026-10-19",
+  "status": "B9_NAMED_1911_EDITION_OCR_CHECKS_NO_FACSIMILE_OR_MODERN_DH_CERTIFICATION",
+  "editions": [
+    {
+      "id": "DH43_DE_2010",
+      "year": 2010,
+      "label": "43rd Latin/German Herder",
+      "isbn": "9783451370007",
+      "url": "https://www.leo-bw.de/en-GB/detail/-/Detail/details/DOKUMENT/bsz_swb/625378865/Enchiridion%20symbolorum%20definitionum%20et%20declarationum%20de%20rebus%20fidei%20et%20morum%20Henrici%20Denzinger%20Quod%20emendavit%20in%20linguam",
+      "editionEntryConcordanceChecked": false,
+      "rightsCleared": false
+    },
+    {
+      "id": "DH43_IT_2012",
+      "year": 2012,
+      "label": "Italian bilingual based on 43rd EDB",
+      "isbn": "9788810241202",
+      "url": "https://edb.it/libro/9788810241202-enchiridion-symbolorum-definitionum-et-declarationum-de-rebus-fidei-et-morum",
+      "editionEntryConcordanceChecked": false,
+      "rightsCleared": false
+    },
+    {
+      "id": "DH45_DE_2017",
+      "year": 2017,
+      "label": "45th Latin/German Herder eBook",
+      "isbn": "9783451847974",
+      "url": "https://www.herder.de/theologie-pastoral/shop/p2/51559-kompendium-der-glaubensbekenntnisse-und-kirchlichen-lehrentscheidungen-enchiridion-symbolorum-/",
+      "editionEntryConcordanceChecked": false,
+      "rightsCleared": false
+    },
+    {
+      "id": "DH38_FR_1996",
+      "year": 1996,
+      "label": "38th French edition Cerf",
+      "isbn": null,
+      "url": "https://catalogue.bnf.fr/ark:/12148/cb366932231",
+      "editionEntryConcordanceChecked": false,
+      "rightsCleared": false
+    },
+    {
+      "id": "DZ_1900_LATIN_PRINT",
+      "year": 1900,
+      "label": "Printed Latin Enchiridion, Würzburg, Stahel; facsimile (506 page)",
+      "isbn": null,
+      "url": "https://commons.wikimedia.org/wiki/File:Enchiridion_symbolorum_et_definitionum_-_quae_de_rebus_fidei_et_morum_a_conciliis_oecumenicis_et_summis_pontificibus_emanarunt_(IA_enchiridionsymbo00denz_0).pdf",
+      "printedVolumeDigitized": true,
+      "volumeProof": "Commons catalogue identifies date/publisher; Commons scan preview page 1 inspected; no passage pages collation",
+      "editionEntryConcordanceChecked": false,
+      "rightsCleared": false,
+      "earliestPossibleEntries": "Historical material issued through 1900; cannot index later 1905-1962 statements."
+    },
+    {
+      "id": "DZ29_1955_RAHNER",
+      "year": 1955,
+      "label": "29th edition edited by Karl Rahner, Herder, 787 pages",
+      "isbn": null,
+      "url": "https://books.google.com/books/about/Enchiridion_symbolorum.html?id=lP66gc5F1cgC",
+      "printedVolumeDigitized": false,
+      "volumeProof": "Google Books bibliographic metadata, limited preview; no numbered entry read from actual volume",
+      "editionEntryConcordanceChecked": false,
+      "rightsCleared": false
+    },
+    {
+      "id": "DZ30_1954_RAHNER",
+      "year": 1954,
+      "label": "30th edition revised by Karl Rahner, Herder, original of Deferrari English translation",
+      "isbn": null,
+      "url": "https://biblia.com/api/plugins/embeddedpreview?historybuttons=false&layout=minimal&navigationbox=false&resourceName=LLS%3ASRCCATDOGMA&sharebutton=false",
+      "printedVolumeDigitized": false,
+      "volumeProof": "Deferrari translator prefatory provenance identifies 1954 Herder 30th edition; English translation copyright 1957",
+      "editionEntryConcordanceChecked": false,
+      "rightsCleared": false
+    },
+    {
+      "id": "DZ11_BANNWART_1911",
+      "year": 1911,
+      "label": "Editio undecima — Clemens Bannwart SJ, Herder (Friburgi Brisgoviae)",
+      "isbn": null,
+      "url": "https://openlibrary.org/books/OL24756683M/Enchiridion_symbolorum_definitionum_et_declarationum_de_rebus_fidei_et_morum",
+      "editionIdentityVerifiedByTitlePageOCR": true,
+      "digitizedFacsimileUrl": "https://archive.org/details/enchiridionsymbo00denz",
+      "ocrUrl": "https://archive.org/stream/enchiridionsymbo00denz/enchiridionsymbo00denz_djvu.txt",
+      "editionEntryConcordanceChecked": false,
+      "entryOcrLeadsFile": "data/learn/magisterium-denzinger-1911-ocr-entry-review.v1.json",
+      "individualPrintedPageImagesCollated": 0,
+      "rightsCleared": false
+    }
+  ],
+  "onlineCandidates": "https://www.apotre.org/livres/enchiridion-symbolorum/6",
+  "metrics": {
+    "bibliographicEditions": 8,
+    "printedEntryNumbersChecked": 0,
+    "approvedCrosswalks": 0,
+    "scannedHistoricalLatinVolumesLocated": 1,
+    "editionVerifiedConcordances": 0,
+    "namedEditionLegacyNumberOcrLeads": 13
+  },
+  "sourceHierarchyNotes": [
+    "1900 Latin print facsimile and 1913 French Catechism print are *different works*, never crosswire.",
+    "A printed original Latin Denzinger facsimile is edition evidence, not an independent magisterial source document.",
+    "The 1954 thirty-edition primary book and 1957 English derivative are separately licensed; bibliographic identity alone does not authorize reproduction.",
+    "Candidate DS/DH-style numbers from unversioned online sources cannot be certified as DH43 or DH45.",
+    "The 1900 scan cannot contain later Vatican-era declarations (1912 onward)."
+  ]
+}

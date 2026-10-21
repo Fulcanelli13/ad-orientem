@@ -1,0 +1,649 @@
+{
+  "schema": "AO_MAGISTERIUM_SOURCE_OWNER_BRIDGES_V1",
+  "created": "2026-10-19",
+  "status": "RESEARCH_ONLY_NO_CHARACTER_OR_UI_PUBLICATION",
+  "documentsRegistry": "data/learn/magisterium-ultra-master-doctrines.v1.json",
+  "sourceClaimRegistry": "data/learn/magisterium-doctrinal-claim-reviews.v1.json",
+  "bridgeRules": {
+    "oneCanonicalAnswerOwner": true,
+    "noDuplicatedCharacterText": true,
+    "allSourceEvidenceMustExist": true,
+    "onlyExistingAPOLandPiusIds": true,
+    "massReaderNotEdited": true,
+    "noConjecturalMassCardIds": true,
+    "sourceDoesNotLicenseCopying": true,
+    "sourceDoesNotCertifyCharacterVoice": true,
+    "characterOriginalWitnessNeededBeforeUse": true
+  },
+  "metrics": {
+    "bridgeTopicGroups": 7,
+    "uniqueApolOwnerIds": 8,
+    "uniquePiusQuestionIds": 28,
+    "groupPassageJoins": 27,
+    "massExplorerCandidateContexts": 4,
+    "approvedPublishedLinks": 0,
+    "b7BilingualFullAnswerReviews": 28,
+    "b7OriginalItalianPrintedCollations": 0
+  },
+  "bridges": [
+    {
+      "id": "SCRIPTURE",
+      "family": "Scripture and apostolic Tradition",
+      "topic": [
+        "SCRIPTURE_CANON",
+        "APOSTOLIC_TRADITION"
+      ],
+      "passages": [
+        "MG-P001",
+        "MG-P010"
+      ],
+      "apol": [
+        "APOL-013",
+        "APOL-015"
+      ],
+      "pius": [
+        "PX1912-Q233",
+        "PX1912-Q234",
+        "PX1912-Q235"
+      ],
+      "nuance": "Canon of books and unwritten apostolic Tradition are distinct; APOL-012 concerns inspiration, not the book list.",
+      "sourceEvidenceIds": [
+        "MGC-P001",
+        "MGC-P010"
+      ],
+      "originalOwnerRefs": [
+        {
+          "owner": "APOLOGETICS_CANONICAL_V1",
+          "ref": "APOL-013",
+          "originalTitle": "How do we know which books belong in the Bible?",
+          "status": "TOPICAL_QUESTION_MATCH_ONLY"
+        },
+        {
+          "owner": "APOLOGETICS_CANONICAL_V1",
+          "ref": "APOL-015",
+          "originalTitle": "What is Apostolic Tradition, and why is it authoritative?",
+          "status": "TOPICAL_QUESTION_MATCH_ONLY"
+        },
+        {
+          "owner": "LTF_PIUS_X_CATECHISM_INDEX",
+          "ref": "PX1912-Q233",
+          "originalQuestionStem": "Where is preserved that which God",
+          "status": "FULL_DIGITAL_BILINGUAL_QA_READ_NOT_PRINT_OR_COPYRIGHT_CLEARED",
+          "b7ReviewFile": "data/learn/magisterium-pius-x-catechism-qa-crosswalk.v1.json",
+          "precision": "DIRECT_DOCTRINAL_TOPIC"
+        },
+        {
+          "owner": "LTF_PIUS_X_CATECHISM_INDEX",
+          "ref": "PX1912-Q234",
+          "originalQuestionStem": "What is Sacred Scripture?",
+          "status": "FULL_DIGITAL_BILINGUAL_QA_READ_NOT_PRINT_OR_COPYRIGHT_CLEARED",
+          "b7ReviewFile": "data/learn/magisterium-pius-x-catechism-qa-crosswalk.v1.json",
+          "precision": "CONTEXT_ONLY"
+        },
+        {
+          "owner": "LTF_PIUS_X_CATECHISM_INDEX",
+          "ref": "PX1912-Q235",
+          "originalQuestionStem": "What is Tradition?",
+          "status": "FULL_DIGITAL_BILINGUAL_QA_READ_NOT_PRINT_OR_COPYRIGHT_CLEARED",
+          "b7ReviewFile": "data/learn/magisterium-pius-x-catechism-qa-crosswalk.v1.json",
+          "precision": "DIRECT_DOCTRINAL_TOPIC"
+        }
+      ],
+      "characterOwnerRequirement": "Canon dialogue and Pius X original work must be verified separately; sources here never become their first-person speech",
+      "candidateOnly": true,
+      "approvedForCharacterAnswer": false,
+      "approvedForUI": false
+    },
+    {
+      "id": "REAL_PRESENCE",
+      "family": "Eucharistic Real Presence",
+      "topic": [
+        "EUCHARIST_REAL_PRESENCE",
+        "TRANSUBSTANTIATION"
+      ],
+      "passages": [
+        "MG-P002",
+        "MG-P003",
+        "MG-P011",
+        "MG-P013",
+        "MG-P014"
+      ],
+      "apol": [
+        "APOL-030"
+      ],
+      "pius": [
+        "PX1912-Q325",
+        "PX1912-Q329",
+        "PX1912-Q330",
+        "PX1912-Q331",
+        "PX1912-Q328",
+        "PX1912-Q332"
+      ],
+      "nuance": "Substance and species must remain distinct; this bridge does not supply sacramental mechanics or reinterpret the Consecration text.",
+      "sourceEvidenceIds": [
+        "MGC-P002",
+        "MGC-P003",
+        "MGC-P011",
+        "MGC-P013",
+        "MGC-P014"
+      ],
+      "originalOwnerRefs": [
+        {
+          "owner": "APOLOGETICS_CANONICAL_V1",
+          "ref": "APOL-030",
+          "originalTitle": "Is Christ really present in the Eucharist?",
+          "status": "TOPICAL_QUESTION_MATCH_ONLY"
+        },
+        {
+          "owner": "LTF_PIUS_X_CATECHISM_INDEX",
+          "ref": "PX1912-Q325",
+          "originalQuestionStem": "After the consecration, what is the",
+          "status": "FULL_DIGITAL_BILINGUAL_QA_READ_NOT_PRINT_OR_COPYRIGHT_CLEARED",
+          "b7ReviewFile": "data/learn/magisterium-pius-x-catechism-qa-crosswalk.v1.json",
+          "precision": "DIRECT_DOCTRINAL_TOPIC"
+        },
+        {
+          "owner": "LTF_PIUS_X_CATECHISM_INDEX",
+          "ref": "PX1912-Q329",
+          "originalQuestionStem": "After the consecration, is there nothing",
+          "status": "FULL_DIGITAL_BILINGUAL_QA_READ_NOT_PRINT_OR_COPYRIGHT_CLEARED",
+          "b7ReviewFile": "data/learn/magisterium-pius-x-catechism-qa-crosswalk.v1.json",
+          "precision": "DIRECT_DOCTRINAL_TOPIC"
+        },
+        {
+          "owner": "LTF_PIUS_X_CATECHISM_INDEX",
+          "ref": "PX1912-Q330",
+          "originalQuestionStem": "What are the species or appearances?",
+          "status": "FULL_DIGITAL_BILINGUAL_QA_READ_NOT_PRINT_OR_COPYRIGHT_CLEARED",
+          "b7ReviewFile": "data/learn/magisterium-pius-x-catechism-qa-crosswalk.v1.json",
+          "precision": "CONTEXT_ONLY"
+        },
+        {
+          "owner": "LTF_PIUS_X_CATECHISM_INDEX",
+          "ref": "PX1912-Q331",
+          "originalQuestionStem": "Under the appearances of bread is",
+          "status": "FULL_DIGITAL_BILINGUAL_QA_READ_NOT_PRINT_OR_COPYRIGHT_CLEARED",
+          "b7ReviewFile": "data/learn/magisterium-pius-x-catechism-qa-crosswalk.v1.json",
+          "precision": "DIRECT_DOCTRINAL_TOPIC"
+        },
+        {
+          "owner": "LTF_PIUS_X_CATECHISM_INDEX",
+          "ref": "PX1912-Q328",
+          "originalQuestionStem": "When do the bread and the",
+          "status": "FULL_DIGITAL_BILINGUAL_QA_READ_NOT_PRINT_OR_COPYRIGHT_CLEARED",
+          "b7ReviewFile": "data/learn/magisterium-pius-x-catechism-qa-crosswalk.v1.json",
+          "precision": "DIRECT_DOCTRINAL_TOPIC"
+        },
+        {
+          "owner": "LTF_PIUS_X_CATECHISM_INDEX",
+          "ref": "PX1912-Q332",
+          "originalQuestionStem": "When the host is broken into",
+          "status": "FULL_DIGITAL_BILINGUAL_QA_READ_NOT_PRINT_OR_COPYRIGHT_CLEARED",
+          "b7ReviewFile": "data/learn/magisterium-pius-x-catechism-qa-crosswalk.v1.json",
+          "precision": "DIRECT_DOCTRINAL_TOPIC"
+        }
+      ],
+      "characterOwnerRequirement": "Canon dialogue and Pius X original work must be verified separately; sources here never become their first-person speech",
+      "candidateOnly": true,
+      "approvedForCharacterAnswer": false,
+      "approvedForUI": false
+    },
+    {
+      "id": "PENANCE",
+      "family": "Penance and absolution",
+      "topic": [
+        "PENANCE_ABSOLUTION"
+      ],
+      "passages": [
+        "MG-P020",
+        "MG-P021",
+        "MG-P023",
+        "MG-P027",
+        "MG-P028",
+        "MG-P029"
+      ],
+      "apol": [
+        "APOL-026"
+      ],
+      "pius": [
+        "PX1912-Q355",
+        "PX1912-Q359",
+        "PX1912-Q363",
+        "PX1912-Q356",
+        "PX1912-Q362",
+        "PX1912-Q364",
+        "PX1912-Q365",
+        "PX1912-Q366",
+        "PX1912-Q372",
+        "PX1912-Q380",
+        "PX1912-Q381"
+      ],
+      "nuance": "Q359 is examination of conscience; Q363 concerns perfect contrition, whereas MG-P021 also discusses imperfect attrition. Do not equate the two.",
+      "sourceEvidenceIds": [
+        "MGC-P020",
+        "MGC-P021",
+        "MGC-P023",
+        "MGC-P027",
+        "MGC-P028",
+        "MGC-P029"
+      ],
+      "originalOwnerRefs": [
+        {
+          "owner": "APOLOGETICS_CANONICAL_V1",
+          "ref": "APOL-026",
+          "originalTitle": "Why confess sins to a priest?",
+          "status": "TOPICAL_QUESTION_MATCH_ONLY"
+        },
+        {
+          "owner": "LTF_PIUS_X_CATECHISM_INDEX",
+          "ref": "PX1912-Q355",
+          "originalQuestionStem": "What is Penance?",
+          "status": "FULL_DIGITAL_BILINGUAL_QA_READ_NOT_PRINT_OR_COPYRIGHT_CLEARED",
+          "b7ReviewFile": "data/learn/magisterium-pius-x-catechism-qa-crosswalk.v1.json",
+          "precision": "DIRECT_DOCTRINAL_TOPIC"
+        },
+        {
+          "owner": "LTF_PIUS_X_CATECHISM_INDEX",
+          "ref": "PX1912-Q359",
+          "originalQuestionStem": "How is the examination of conscience",
+          "status": "FULL_DIGITAL_BILINGUAL_QA_READ_NOT_PRINT_OR_COPYRIGHT_CLEARED",
+          "b7ReviewFile": "data/learn/magisterium-pius-x-catechism-qa-crosswalk.v1.json",
+          "precision": "PASTORAL_METHOD_ONLY"
+        },
+        {
+          "owner": "LTF_PIUS_X_CATECHISM_INDEX",
+          "ref": "PX1912-Q363",
+          "originalQuestionStem": "What is perfect sorrow, or contrition?",
+          "status": "FULL_DIGITAL_BILINGUAL_QA_READ_NOT_PRINT_OR_COPYRIGHT_CLEARED",
+          "b7ReviewFile": "data/learn/magisterium-pius-x-catechism-qa-crosswalk.v1.json",
+          "precision": "CONTRAST_ONLY"
+        },
+        {
+          "owner": "LTF_PIUS_X_CATECHISM_INDEX",
+          "ref": "PX1912-Q356",
+          "originalQuestionStem": "When was the sacrament of Penance",
+          "status": "FULL_DIGITAL_BILINGUAL_QA_READ_NOT_PRINT_OR_COPYRIGHT_CLEARED",
+          "b7ReviewFile": "data/learn/magisterium-pius-x-catechism-qa-crosswalk.v1.json",
+          "precision": "DIRECT_DOCTRINAL_TOPIC"
+        },
+        {
+          "owner": "LTF_PIUS_X_CATECHISM_INDEX",
+          "ref": "PX1912-Q362",
+          "originalQuestionStem": "How many kinds of sorrow are",
+          "status": "FULL_DIGITAL_BILINGUAL_QA_READ_NOT_PRINT_OR_COPYRIGHT_CLEARED",
+          "b7ReviewFile": "data/learn/magisterium-pius-x-catechism-qa-crosswalk.v1.json",
+          "precision": "DIRECT_DOCTRINAL_TOPIC"
+        },
+        {
+          "owner": "LTF_PIUS_X_CATECHISM_INDEX",
+          "ref": "PX1912-Q364",
+          "originalQuestionStem": "Why is contrition perfect sorrow?",
+          "status": "FULL_DIGITAL_BILINGUAL_QA_READ_NOT_PRINT_OR_COPYRIGHT_CLEARED",
+          "b7ReviewFile": "data/learn/magisterium-pius-x-catechism-qa-crosswalk.v1.json",
+          "precision": "DIRECT_DOCTRINAL_TOPIC"
+        },
+        {
+          "owner": "LTF_PIUS_X_CATECHISM_INDEX",
+          "ref": "PX1912-Q365",
+          "originalQuestionStem": "What is imperfect sorrow, or attrition?",
+          "status": "FULL_DIGITAL_BILINGUAL_QA_READ_NOT_PRINT_OR_COPYRIGHT_CLEARED",
+          "b7ReviewFile": "data/learn/magisterium-pius-x-catechism-qa-crosswalk.v1.json",
+          "precision": "DIRECT_DOCTRINAL_TOPIC"
+        },
+        {
+          "owner": "LTF_PIUS_X_CATECHISM_INDEX",
+          "ref": "PX1912-Q366",
+          "originalQuestionStem": "Why is attrition imperfect sorrow?",
+          "status": "FULL_DIGITAL_BILINGUAL_QA_READ_NOT_PRINT_OR_COPYRIGHT_CLEARED",
+          "b7ReviewFile": "data/learn/magisterium-pius-x-catechism-qa-crosswalk.v1.json",
+          "precision": "DIRECT_DOCTRINAL_TOPIC"
+        },
+        {
+          "owner": "LTF_PIUS_X_CATECHISM_INDEX",
+          "ref": "PX1912-Q372",
+          "originalQuestionStem": "What is confession?",
+          "status": "FULL_DIGITAL_BILINGUAL_QA_READ_NOT_PRINT_OR_COPYRIGHT_CLEARED",
+          "b7ReviewFile": "data/learn/magisterium-pius-x-catechism-qa-crosswalk.v1.json",
+          "precision": "DIRECT_DOCTRINAL_TOPIC"
+        },
+        {
+          "owner": "LTF_PIUS_X_CATECHISM_INDEX",
+          "ref": "PX1912-Q380",
+          "originalQuestionStem": "What is absolution?",
+          "status": "FULL_DIGITAL_BILINGUAL_QA_READ_NOT_PRINT_OR_COPYRIGHT_CLEARED",
+          "b7ReviewFile": "data/learn/magisterium-pius-x-catechism-qa-crosswalk.v1.json",
+          "precision": "DIRECT_DOCTRINAL_TOPIC"
+        },
+        {
+          "owner": "LTF_PIUS_X_CATECHISM_INDEX",
+          "ref": "PX1912-Q381",
+          "originalQuestionStem": "When sins are forgiven by absolution,",
+          "status": "FULL_DIGITAL_BILINGUAL_QA_READ_NOT_PRINT_OR_COPYRIGHT_CLEARED",
+          "b7ReviewFile": "data/learn/magisterium-pius-x-catechism-qa-crosswalk.v1.json",
+          "precision": "DIRECT_DOCTRINAL_TOPIC"
+        }
+      ],
+      "characterOwnerRequirement": "Canon dialogue and Pius X original work must be verified separately; sources here never become their first-person speech",
+      "candidateOnly": true,
+      "approvedForCharacterAnswer": false,
+      "approvedForUI": false
+    },
+    {
+      "id": "PAPAL",
+      "family": "Primacy and infallibility",
+      "topic": [
+        "PAPAL_INFALLIBILITY"
+      ],
+      "passages": [
+        "MG-P006",
+        "MG-P025"
+      ],
+      "apol": [
+        "APOL-020"
+      ],
+      "pius": [
+        "PX1912-Q116"
+      ],
+      "nuance": "Ex cathedra conditions only; chapter III primacy P024 is context, not an interchangeable definition of infallibility.",
+      "sourceEvidenceIds": [
+        "MGC-P006",
+        "MGC-P025"
+      ],
+      "originalOwnerRefs": [
+        {
+          "owner": "APOLOGETICS_CANONICAL_V1",
+          "ref": "APOL-020",
+          "originalTitle": "What does papal and ecclesial infallibility actually mean?",
+          "status": "TOPICAL_QUESTION_MATCH_ONLY"
+        },
+        {
+          "owner": "LTF_PIUS_X_CATECHISM_INDEX",
+          "ref": "PX1912-Q116",
+          "originalQuestionStem": "Can the Pope, by himself, err",
+          "status": "FULL_DIGITAL_BILINGUAL_QA_READ_NOT_PRINT_OR_COPYRIGHT_CLEARED",
+          "b7ReviewFile": "data/learn/magisterium-pius-x-catechism-qa-crosswalk.v1.json",
+          "precision": "DIRECT_DOCTRINAL_TOPIC"
+        }
+      ],
+      "characterOwnerRequirement": "Canon dialogue and Pius X original work must be verified separately; sources here never become their first-person speech",
+      "candidateOnly": true,
+      "approvedForCharacterAnswer": false,
+      "approvedForUI": false
+    },
+    {
+      "id": "MASS",
+      "family": "Sacrifice of the Mass",
+      "topic": [
+        "EUCHARISTIC_SACRIFICE"
+      ],
+      "passages": [
+        "MG-P008",
+        "MG-P005",
+        "MG-P018",
+        "MG-P019",
+        "MG-P047",
+        "MG-P060",
+        "MG-P061"
+      ],
+      "apol": [
+        "APOL-031"
+      ],
+      "pius": [
+        "PX1912-Q321",
+        "PX1912-Q346",
+        "PX1912-Q348",
+        "PX1912-Q349",
+        "PX1912-Q350",
+        "PX1912-Q351",
+        "PX1912-Q352"
+      ],
+      "nuance": "Visible sacrifice of one Cross, living/dead applications, Malachi typology, and qualified priest-only Communion must retain distinct scopes.",
+      "sourceEvidenceIds": [
+        "MGC-P008",
+        "MGC-P005",
+        "MGC-P018",
+        "MGC-P019",
+        "MGC-P047",
+        "MGC-P060",
+        "MGC-P061"
+      ],
+      "originalOwnerRefs": [
+        {
+          "owner": "APOLOGETICS_CANONICAL_V1",
+          "ref": "APOL-031",
+          "originalTitle": "Is the Mass really a sacrifice—and does it re-sacrifice Christ?",
+          "status": "TOPICAL_QUESTION_MATCH_ONLY"
+        },
+        {
+          "owner": "LTF_PIUS_X_CATECHISM_INDEX",
+          "ref": "PX1912-Q321",
+          "originalQuestionStem": "Why did Jesus Christ institute the",
+          "status": "FULL_DIGITAL_BILINGUAL_QA_READ_NOT_PRINT_OR_COPYRIGHT_CLEARED",
+          "b7ReviewFile": "data/learn/magisterium-pius-x-catechism-qa-crosswalk.v1.json",
+          "precision": "DIRECT_DOCTRINAL_TOPIC"
+        },
+        {
+          "owner": "LTF_PIUS_X_CATECHISM_INDEX",
+          "ref": "PX1912-Q346",
+          "originalQuestionStem": "Is the Eucharist only a sacrament?",
+          "status": "FULL_DIGITAL_BILINGUAL_QA_READ_NOT_PRINT_OR_COPYRIGHT_CLEARED",
+          "b7ReviewFile": "data/learn/magisterium-pius-x-catechism-qa-crosswalk.v1.json",
+          "precision": "DIRECT_DOCTRINAL_TOPIC"
+        },
+        {
+          "owner": "LTF_PIUS_X_CATECHISM_INDEX",
+          "ref": "PX1912-Q348",
+          "originalQuestionStem": "What is the Holy Mass?",
+          "status": "FULL_DIGITAL_BILINGUAL_QA_READ_NOT_PRINT_OR_COPYRIGHT_CLEARED",
+          "b7ReviewFile": "data/learn/magisterium-pius-x-catechism-qa-crosswalk.v1.json",
+          "precision": "DIRECT_DOCTRINAL_TOPIC"
+        },
+        {
+          "owner": "LTF_PIUS_X_CATECHISM_INDEX",
+          "ref": "PX1912-Q349",
+          "originalQuestionStem": "Is the sacrifice of the Mass",
+          "status": "FULL_DIGITAL_BILINGUAL_QA_READ_NOT_PRINT_OR_COPYRIGHT_CLEARED",
+          "b7ReviewFile": "data/learn/magisterium-pius-x-catechism-qa-crosswalk.v1.json",
+          "precision": "DIRECT_DOCTRINAL_TOPIC"
+        },
+        {
+          "owner": "LTF_PIUS_X_CATECHISM_INDEX",
+          "ref": "PX1912-Q350",
+          "originalQuestionStem": "What difference is there between the",
+          "status": "FULL_DIGITAL_BILINGUAL_QA_READ_NOT_PRINT_OR_COPYRIGHT_CLEARED",
+          "b7ReviewFile": "data/learn/magisterium-pius-x-catechism-qa-crosswalk.v1.json",
+          "precision": "DIRECT_DOCTRINAL_TOPIC"
+        },
+        {
+          "owner": "LTF_PIUS_X_CATECHISM_INDEX",
+          "ref": "PX1912-Q351",
+          "originalQuestionStem": "For what ends is the Mass",
+          "status": "FULL_DIGITAL_BILINGUAL_QA_READ_NOT_PRINT_OR_COPYRIGHT_CLEARED",
+          "b7ReviewFile": "data/learn/magisterium-pius-x-catechism-qa-crosswalk.v1.json",
+          "precision": "DIRECT_DOCTRINAL_TOPIC"
+        },
+        {
+          "owner": "LTF_PIUS_X_CATECHISM_INDEX",
+          "ref": "PX1912-Q352",
+          "originalQuestionStem": "Is the Mass not also offered",
+          "status": "FULL_DIGITAL_BILINGUAL_QA_READ_NOT_PRINT_OR_COPYRIGHT_CLEARED",
+          "b7ReviewFile": "data/learn/magisterium-pius-x-catechism-qa-crosswalk.v1.json",
+          "precision": "DIRECT_DOCTRINAL_TOPIC"
+        }
+      ],
+      "characterOwnerRequirement": "Canon dialogue and Pius X original work must be verified separately; sources here never become their first-person speech",
+      "candidateOnly": true,
+      "approvedForCharacterAnswer": false,
+      "approvedForUI": false
+    },
+    {
+      "id": "MARY",
+      "family": "Immaculate Conception",
+      "topic": [
+        "IMMACULATE_CONCEPTION"
+      ],
+      "passages": [
+        "MG-P007",
+        "MG-P026",
+        "MG-P057",
+        "MG-P059"
+      ],
+      "apol": [
+        "APOL-033"
+      ],
+      "pius": [],
+      "nuance": "Definition P007 is distinct from providential argument P057, consultation P026, and legal warning P059. APOL-033 also covers Assumption; source here does not.",
+      "sourceEvidenceIds": [
+        "MGC-P007",
+        "MGC-P026",
+        "MGC-P057",
+        "MGC-P059"
+      ],
+      "originalOwnerRefs": [
+        {
+          "owner": "APOLOGETICS_CANONICAL_V1",
+          "ref": "APOL-033",
+          "originalTitle": "Why believe in the Immaculate Conception and Assumption?",
+          "status": "TOPICAL_QUESTION_MATCH_ONLY"
+        }
+      ],
+      "characterOwnerRequirement": "Canon dialogue and Pius X original work must be verified separately; sources here never become their first-person speech",
+      "candidateOnly": true,
+      "approvedForCharacterAnswer": false,
+      "approvedForUI": false
+    },
+    {
+      "id": "DEPARTED",
+      "family": "Prayer and sacrifice for departed",
+      "topic": [
+        "PURGATORY"
+      ],
+      "passages": [
+        "MG-P061"
+      ],
+      "apol": [
+        "APOL-040"
+      ],
+      "pius": [],
+      "nuance": "Mass offered for deceased in Christ not yet fully purified; do not infer a complete theory of Purgatory or Requiem rubrics.",
+      "sourceEvidenceIds": [
+        "MGC-P061"
+      ],
+      "originalOwnerRefs": [
+        {
+          "owner": "APOLOGETICS_CANONICAL_V1",
+          "ref": "APOL-040",
+          "originalTitle": "Why believe in Purgatory and pray for the dead?",
+          "status": "TOPICAL_QUESTION_MATCH_ONLY"
+        }
+      ],
+      "characterOwnerRequirement": "Canon dialogue and Pius X original work must be verified separately; sources here never become their first-person speech",
+      "candidateOnly": true,
+      "approvedForCharacterAnswer": false,
+      "approvedForUI": false
+    }
+  ],
+  "massExplorerContextCandidates": [
+    {
+      "id": "MASS_SACRIFICE_READING",
+      "evidence": [
+        "MG-P008",
+        "MG-P005",
+        "MG-P019"
+      ],
+      "theme": "The sacrifice of the Mass and relation to Calvary",
+      "owner": "MASS_EXPLORER",
+      "ownerSource": "src/learn/mass-explorer.js",
+      "publicRoute": "learn.mass_explorer",
+      "specificCardId": null,
+      "cardMapping": "PENDING_EXISTING_AO_CARD_GUIDE_VERIFICATION",
+      "integration": "REFERENCE_CANDIDATE_ONLY_NO_RUNTIME_DATA_IMPORT",
+      "approvedForUI": false
+    },
+    {
+      "id": "CEREMONIES_VOICE",
+      "evidence": [
+        "MG-P016",
+        "MG-P017",
+        "MG-P054",
+        "MG-P056"
+      ],
+      "theme": "Canon, sacred signs and silent or audible prayer",
+      "owner": "MASS_EXPLORER",
+      "ownerSource": "src/learn/mass-explorer.js",
+      "publicRoute": "learn.mass_explorer",
+      "specificCardId": null,
+      "cardMapping": "PENDING_EXISTING_AO_CARD_GUIDE_VERIFICATION",
+      "integration": "REFERENCE_CANDIDATE_ONLY_NO_RUNTIME_DATA_IMPORT",
+      "approvedForUI": false
+    },
+    {
+      "id": "COMMUNION_IN_MASS",
+      "evidence": [
+        "MG-P047",
+        "MG-P055"
+      ],
+      "theme": "Priest's and faithful's sacramental Communion",
+      "owner": "MASS_EXPLORER",
+      "ownerSource": "src/learn/mass-explorer.js",
+      "publicRoute": "learn.mass_explorer",
+      "specificCardId": null,
+      "cardMapping": "PENDING_EXISTING_AO_CARD_GUIDE_VERIFICATION",
+      "integration": "REFERENCE_CANDIDATE_ONLY_NO_RUNTIME_DATA_IMPORT",
+      "approvedForUI": false
+    },
+    {
+      "id": "REQUIEM_DOCTRINAL_CONTEXT",
+      "evidence": [
+        "MG-P061"
+      ],
+      "theme": "Offering for the departed, not Requiem rubrics",
+      "owner": "MASS_EXPLORER",
+      "ownerSource": "src/learn/mass-explorer.js",
+      "publicRoute": "learn.mass_explorer",
+      "specificCardId": null,
+      "cardMapping": "PENDING_EXISTING_AO_CARD_GUIDE_VERIFICATION",
+      "integration": "REFERENCE_CANDIDATE_ONLY_NO_RUNTIME_DATA_IMPORT",
+      "approvedForUI": false
+    }
+  ],
+  "outstanding": [
+    "Verify Canon's precise own-voice sermon source before authoring any answer or first-person statement.",
+    "Resolve existing Mass Explorer canonical AO.CARD and AO.SM.B IDs from approved guide registry before any integration.",
+    "Independent theological authority adjudication, printed-edition concordance, and translation licensing remain outstanding.",
+    "B7: 28 full Q/A read in modern English plus Italian online transcription; 1912 print facsimile and translation rights pending; no personal authorship inference.",
+    "B8: No original Lefebvre sermon transcription file identified in this PR's recorded repository tree snapshot or PR 1443 question-router files. Only source-owned authenticated sermon IDs can unlock Chanoine bridge.",
+    "B9: Six directly attributable sermon transcriptions linked as source leads; reconcile with parallel Chanoine homily registry before creating an original sermon ID or approving character speech."
+  ],
+  "catechismFullAnswerCrosswalk": "data/learn/magisterium-pius-x-catechism-qa-crosswalk.v1.json",
+  "researchBatch": "2026-10-19-B9",
+  "b8CharacterSermonSourceGate": {
+    "subject": "Monsieur le Chanoine — source-owned sermons, not Mass Roman Canon",
+    "repository": "Fulcanelli13/ad-orientem",
+    "branchExamined": "research/magisterium-ultra-master-p0-p1-20261019",
+    "headShaAudited": "bfea91c370e13af50e0bd2710ab410540e190c04",
+    "treeUrl": "https://api.github.com/repos/Fulcanelli13/ad-orientem/git/trees/bfea91c370e13af50e0bd2710ab410540e190c04?recursive=1",
+    "treeContainsStandaloneLefebvreSermonTranscripts": false,
+    "companionPRChecked": 1443,
+    "companionPRPurpose": "Living Church three-character source referral and question routing, not original sermon corpus",
+    "verifiedSermonPassagesInThisBranch": 0,
+    "approvedFirstPersonChanoineResponses": 0,
+    "status": "UPSTREAM_HOMILY_PIPELINE_ORIGINAL_TRANSCRIPTS_NOT_PRESENT_IN_THIS_REPOSITORY_SNAPSHOT",
+    "dependency": "Require explicit authenticated sermon source IDs and quotations from the parallel source-owned Chanoine research branch before Magisterium links become character speech."
+  },
+  "b8CatechismPrintReview": {
+    "canonicalQaCrosswalk": "data/learn/magisterium-pius-x-catechism-qa-crosswalk.v1.json",
+    "alreadyExistingFrenchPrintSourceRegistry": "data/learn/ltfaith-pius-x-1913-french-print-page-evidence.v1.json",
+    "frenchPrintVerifiedQAsInBridge": 5,
+    "original1912ItalianFacsimileVerifiedQAs": 0,
+    "characterVoicePermission": false
+  },
+  "b9ChanoinePrimaryWebWitnesses": {
+    "file": "data/learn/magisterium-chanoine-external-sermon-leads.v1.json",
+    "externallyDatedSeromsWithTranscripts": 6,
+    "canonicalHomilyRegistryIdsVerified": 0,
+    "fullAudioCollations": 0,
+    "approvedFirstPersonDialogue": 0,
+    "status": "EXTERNAL_URL_WITNESSES_FOUND_AWAITING_UPSTREAM_CANONICAL_HOMILY_OWNER_MATCH"
+  }
+}
