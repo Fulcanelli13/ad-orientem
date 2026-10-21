@@ -2655,6 +2655,7 @@ export async function mountNativeReaderPreview({
             cueId:state.nativeCueId,
             form:ready.prepared?.session?.resolvedMass?.form,
             language:ready.prepared?.readerPreferences?.language??"en",
+            sourceBlocks:ready.data?.sungCorpus?.blocks,
           })
         :null,
     });
