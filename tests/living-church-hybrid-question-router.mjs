@@ -11,7 +11,7 @@ const legacy=createSharedQuestionRouter(catalog);
 const hybrid=createHybridQuestionRouter(catalog,semantic);
 assert.equal(hybrid.version,HYBRID_QUESTION_RETRIEVAL_VERSION);
 assert.equal(hybrid.status,"RESEARCH_ONLY_NO_EMBEDDINGS");
-assert.equal(hybrid.topicCount,186);
+assert.equal(hybrid.topicCount,197);
 assert.equal(hybrid.conceptCount,40);
 assert.equal(catalog.policy.canGenerateNewDoctrinalAnswer,false);
 assert.equal(catalog.pilotLimits.approvedConversationalAnswers,0);
