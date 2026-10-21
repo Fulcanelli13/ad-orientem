@@ -59,3 +59,11 @@ A substantial part of our intended functionality **already exists publicly** at 
 See [VIA_PATRUM_FEATURE_BENCHMARK_20261021.md](VIA_PATRUM_FEATURE_BENCHMARK_20261021.md) for capabilities, source and editorial comparisons and differences from our Catena.
 
 **Policy:** borrow the conceptual retrieval/taxonomy lessons, use Via Patrum as a research **reference** and link where appropriate, but do not copy its new copyrighted English translation or assume the same Catena excerpt is present merely because a Gospel verse matches. Stop duplicating its broad generic patristic inventory. Continue only our source-specific Catena voice/context review and selectively fill independently demonstrated gaps.
+
+## Matthew second 300-excerpt batch
+
+The second priority review batch has **300** distinct source-linked Matthew fragments (**109** different pericopes, **420** literal question marks). Each receives source-faithful voice/context triage, including retained question-mark offsets; **209** remain lexically ambiguous. A further **47** undergo AI-assisted close reading of their actual arguments, with **42** fairly direct same-excerpt responses and **five** longer multi-stage explanations that cannot be compressed to a single response. Seven cross-Father comparison leads (21 reviewed source pointers) preserve distinctions between authors and question types.
+
+Files: `matthew-batch-02-300-voice-triage.v1.json`, `matthew-batch-02-47-meaning-checks.v1.json`, `matthew-batch-02-seven-comparison-leads.v1.json`, and [full contextual findings](MATTHEW_BATCH02_MEANING_AND_SPEAKER_AUDIT.md). The regression check is `tests/scripture-catena-matthew-batch-two.mjs`.
+
+**Cumulative first two batches:** **600 source excerpts** structurally screened, **73 AI-assisted semantic spot checks**, and **11** careful cross-commentary comparison leads. They are neither 600 certified Father-authored questions nor publication-ready English answers. This discovery pipeline never modifies the original Catena or produces Father speech.
