@@ -25,9 +25,15 @@
 
 **Ritual and source ownership:** `ritual-and-source-ownership-23.v1.json` now routes all **23** remaining blessing/source observations. Its historical Roman Ritual index references distinguish the existence of a rite *genre* from any claim that a given local date or formula was used. The Polish Corpus Christi herbal-wreath custom has independent ethnographic evidence, but no unverified formula is approved for display.
 
-**Evidence and release:** among 42 possibly distinct Weiser observations, 25 have bounded independent witnesses, 17 retain exact or partial source holds, and 14 of the 25 have been staged as separate working identities. Eleven sourced observations remain nested variants, cultural context, or blessing-sensitive matters. None of these additions is live. The 39 related/regional observation variants and 41 proposed links to existing identities require final parity and editorial checks.
+**Evidence and release:** among 42 possibly distinct Weiser observations, 25 have bounded independent witnesses, 17 retain exact or partial source holds, and 14 of the 25 have been staged as separate working identities. Eleven sourced observations remain nested variants, cultural context, or blessing-sensitive matters. None of these additions is live. The 39 regional variants and 41 links have now been assigned explicit review dispositions; source acceptance and eventual public inclusion remain gated.
 
 ---
+## Relationship review — all 80 previously ambiguous observations
+
+`relation-review-80.v1.json` now records an explicit **nonpublishing** decision for each of **41 proposed links to older identities** and **39 related/regional variants**. **Three false merges were corrected**: John/Joan Christmas candle lighting ≠ patronal name day; Easter grandparent visits ≠ Emmaus prayer walk; All Saints prayer bells ≠ funeral death bell. Related-practice links retain source limitations and never create new canonical IDs.
+
+**This completes the first-pass identity/relationship routing** for the current mined Weiser inventory. It does *not* certify every item for presentation to users: regional source sufficiency, editorial identity acceptance, exact period-specific priestly rituals, and the final selection of visible content remain separate release gates.
+
 ## Source-of-truth hierarchy
 
 - **38 existing canonical records** are owned by `data/customs/customs-atlas-seed.v1.json` on `main`. Their identity and publication states are retained unchanged (35 published, 3 context-only).
@@ -194,7 +200,7 @@ Editorial distinctions now explicit:
 
 **The source triage is complete, not the master release:** `unverified-candidate-exact-claim-holds.v1.json` protects 17 uncorroborated or partial claims, each with a specific reason and reopening condition. `witnessed-identity-recommendations.v1.json` records 25 independently witnessed observations, including **14 proposed distinct identities**, three regional variants, four cultural-context records, a gift-bell component, a broader crèche-history item, an Eastern Catholic context and a rite-sensitive household wreath. The 14 identity proposals remain unapproved; actual final identity count will depend on deduplication and editorial decisions.
 
-**Next gate:** evaluate the 14 staged identities for formal inclusion, reconcile the 39 regional variants and 41 potential existing-ID links, and complete final editorial and ritual-release acceptance. The 23 source/ritual observations have owner dispositions, not formula authorization.
+**Next gate:** accept or revise the 14 staged identities for publication, perform source acceptance only on desired visible regional/related records, and complete final editorial and ritual-release assessment. The 23 source/ritual observations have owner dispositions, not formula authorization.
 
 ## Source-closure waves 3 and 4
 
@@ -229,7 +235,7 @@ Eight candidate family-overlap reviews, comprising 19 possible distinct observat
 
 ## Editorial decisions that remain open
 
-1. **Review the 14 source-backed staged identity proposals for final acceptance**, without implying they are universal Roman rites. The 25 source-backed observations are fully routed and 17 retain exact claim holds. The 23 separate ritual/source observations are assigned owners. Work remains on 39 regional variants and 41 potential existing-identity links.
+1. **Review the 14 source-backed staged identity proposals for final acceptance**, without implying they are universal Roman rites. The 25 source-backed observations are fully routed, 17 retain exact claim holds, 23 ritual/source observations have owners, and all 80 relationship cases now have nonpublishing dispositions. Only source-qualified visible records should be released.
 2. **Separate dates rigorously:** fixed historical custom day, movable feast relationship, observed 1962 feast precedence, family occasion, and actual local programme are different fields; the Calendar resolver owns observed feast dates.
 3. **Preserve geography and historical scope:** never turn an Irish household witness, German festival custom, French local blessing, Polish food custom or folklore into universal Roman practice.
 4. **Prioritise unresolved source claims that materially change identity decisions**. The older 84 P1 source evidence gaps overlap the 568 historical observations and should not be counted as additional missing customs.
@@ -249,6 +255,8 @@ Eight candidate family-overlap reviews, comprising 19 possible distinct observat
 - `working-master.v1.json` — 56 EN/FR working identities, with source and calendar flags.
 - `proposed-identity-additions.v1.json` — 14 separate source-backed research IDs, nonpublished.
 - `ritual-and-source-ownership-23.v1.json` — 23 routed blessing/source holds, no formula release.
+- `relation-review-80.v1.json` — 41 existing links and 39 regional variants, including three corrected owner mismatches.
+- `master-readiness-audit.v1.json` — inventory coverage and final release gate checklist.
 
 - `identities.v0.json` — 42 English/French working identities with calendar fields, sources and provenance.
 - `weiser-observations.v0.json` — 568 immutable source locators, original triage and review status.
