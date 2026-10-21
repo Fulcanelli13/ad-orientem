@@ -1832,8 +1832,8 @@
       "name_fr": "La couronne de l’Avent en famille",
       "description_en": "A ring of evergreen branches with four candles can accompany a family's Advent prayers. One more candle is lighted each Sunday, marking the approach of Christmas and the expectation of Christ's coming.",
       "description_fr": "Une couronne de feuillage portant quatre bougies peut accompagner la prière familiale durant l'Avent. Chaque dimanche, une bougie supplémentaire est allumée pour marquer l'approche de Noël et l'attente du Christ.",
-      "history_en": null,
-      "history_fr": null,
+      "history_en": "The Cologne Archdiocese traces the original Wichern wreath to 1839, with four candles becoming the common form and wider Catholic adoption in Germany occurring chiefly after the Second World War. This is a Christian custom received into Catholic home devotion, not an ancient Roman rite.",
+      "history_fr": "La couronne de l’Avent apparaît au XIXe siècle dans un contexte protestant allemand ; les travaux de l’archevêché de Cologne situent en 1839 la couronne de Wichern, plus riche en bougies que la forme actuelle à quatre cierges. Sa réception dans les églises et foyers catholiques s’est faite progressivement, particulièrement au XXe siècle. Ce n’est pas un rite ancien de la messe romaine.",
       "meaning_en": "Its growing light reminds the household of hope and preparation for the Saviour.",
       "meaning_fr": "Sa lumière grandissante rappelle l'espérance et la préparation à la venue du Sauveur.",
       "practice_en": "Light the appropriate candle during a short family prayer or Scripture reading, using a safe candle arrangement. The devotion is optional; do not imply the Church prescribes it at a 1962 Mass.",
@@ -1866,7 +1866,29 @@
         }
       ],
       "editorial_status": "CANONICAL_FIELDS_WITH_DRAFT_FRENCH_AND_HISTORY_NOT_YET_FINAL",
-      "do_not_auto_publish": true
+      "do_not_auto_publish": true,
+      "historical_source_witnesses": [
+        {
+          "issuer": "Archdiocese of Cologne, Der Adventskranz: Bedeutung und Ursprung",
+          "url": "https://www.erzbistum-koeln.de/presse_und_medien/magazin/Der-Adventskranz-Bedeutung-und-Ursprung-des-Adventskranzes/?channel=MSN",
+          "supports": "Wichern's original wheel with 23 candles, evolution to four candles, spread into Catholic churches in Cologne and broader Germany.",
+          "limit": "Regional diocesan history; local dates for first adoption are reported as such."
+        },
+        {
+          "issuer": "Vatican State, winter issue on Christmas traditions",
+          "url": "https://vaticanstate.va/images/trimestrale/2-numero-en.pdf",
+          "supports": "Places the wreath's origin in nineteenth-century Germany and describes later spread to neighbouring countries.",
+          "limit": "General historical overview; does not turn household use into liturgical law."
+        },
+        {
+          "issuer": "USCCB, Blessing of an Advent Wreath",
+          "url": "https://www.usccb.org/prayers/blessing-advent-wreath",
+          "supports": "A current Catholic family setting for Advent wreath prayer and a separate published blessing resource.",
+          "limit": "A blessing text is not evidence that a priest must bless every wreath or that families may perform a priestly blessing."
+        }
+      ],
+      "historical_scope_en": "Originated in nineteenth-century Protestant Hamburg; adopted and adapted by Catholic families and parishes in Germany and later elsewhere.",
+      "historical_article_status": "EVIDENCE_BOUNDED_EDITORIAL_DRAFT_APPROVAL_PENDING"
     },
     {
       "id": "ADVT-002",
@@ -1879,8 +1901,8 @@
       "name_fr": "La crèche préparée par les bonnes actions",
       "description_en": "Children in some Catholic families place a little straw in an empty manger after doing a good deed or saying a prayer. The custom makes their preparation for the coming of the Christ Child visible, without measuring grace or turning charity into a competition.",
       "description_fr": "Dans certaines familles catholiques, les enfants déposent un peu de paille dans une mangeoire après une bonne action ou une prière. La coutume rend visible leur préparation à la venue de l'Enfant Jésus, sans mesurer la grâce ni transformer la charité en compétition.",
-      "history_en": null,
-      "history_fr": null,
+      "history_en": "The reviewed independent witness is a contemporary Catholic family's account that labels the activity French. It documents present devotional use, not the date or geographic origin of the practice.",
+      "history_fr": "Un témoignage familial catholique contemporain présente la paille ajoutée à la crèche en récompense d’actes de bonté et l’appelle « coutume française ». Il atteste l’usage actuel, mais ne démontre ni une origine française ancienne ni une continuité historique précise. La paille de la crèche ne se confond pas avec le foin placé sous la nappe dans certaines familles polonaises.",
       "meaning_en": "The empty crib reminds everyone to make room for Christ through charity and conversion.",
       "meaning_fr": "La mangeoire vide rappelle qu'il faut faire place au Christ par la charité et la conversion.",
       "practice_en": "As a freely chosen family custom, add a little straw after acts of kindness; pray together before placing the Child Jesus in the crib at Christmas.",
@@ -1913,7 +1935,23 @@
         }
       ],
       "editorial_status": "CANONICAL_FIELDS_WITH_DRAFT_FRENCH_AND_HISTORY_NOT_YET_FINAL",
-      "do_not_auto_publish": true
+      "do_not_auto_publish": true,
+      "historical_source_witnesses": [
+        {
+          "issuer": "Catholic Culture, Straws in the Manger—Preparing Our Hearts for Christ's Birth",
+          "url": "https://www.catholicculture.org/commentary/straws-in-manger-preparing-our-hearts-for-christs-birth/",
+          "supports": "A contemporary Catholic family report calls it a French custom and describes adding straw for children's kindness, obedience, help and prayer.",
+          "limit": "One modern family account; does not independently verify French historical origin or prevalence."
+        },
+        {
+          "issuer": "Polish Bishops' Conference, Polish Christmas Traditions",
+          "url": "https://episkopat.pl/doc_pr/181602.polish-christmas-traditions-2",
+          "supports": "A separate Polish Christmas Eve practice places hay under the table as a reminder of the stable.",
+          "limit": "This is a different custom and does not corroborate straw placed in a manger in response to good deeds."
+        }
+      ],
+      "historical_scope_en": "A family devotion described as French in a modern Catholic family account; an independent historical French origin has not been verified.",
+      "historical_article_status": "EVIDENCE_BOUNDED_EDITORIAL_DRAFT_APPROVAL_PENDING"
     },
     {
       "id": "ADVT-003",
@@ -1926,8 +1964,8 @@
       "name_fr": "Las Posadas : accueillir la Sainte Famille",
       "description_en": "In Las Posadas, neighbours or parish groups remember Mary and Joseph seeking lodging before the Nativity. The community moves between homes or stations, singing, until a household symbolically offers welcome.",
       "description_fr": "Pendant les posadas, des familles ou des groupes paroissiaux rappellent la recherche d'un abri par Marie et Joseph avant Noël. Le groupe passe de maison en maison, souvent en chantant, jusqu'à l'accueil symbolique dans un foyer.",
-      "history_en": null,
-      "history_fr": null,
+      "history_en": "A Mexican colonial Catholic novena/procession tradition. Mexico's Ministry of Culture reports an origin tradition at Acolman in 1587 while also noting a competing account of Andalusian transmission; the exact origin is disputed.",
+      "history_fr": "Las Posadas est une coutume dévotionnelle née dans le contexte du catholicisme mexicain colonial et jouée durant les soirées qui précèdent Noël. Le ministère mexicain de la Culture rapporte une tradition d’origine à Acolman en 1587, tout en signalant d’autres hypothèses de transmission depuis l’Andalousie. La première origine exacte reste donc discutée.",
       "meaning_en": "Christ's coming invites Christians to hospitality and charity toward those looking for shelter.",
       "meaning_fr": "La venue du Christ appelle les chrétiens à l'hospitalité et à la charité envers ceux qui cherchent refuge.",
       "practice_en": "Where celebrated, join an announced parish gathering; otherwise read Luke's infancy narrative and offer a concrete act of hospitality.",
@@ -1960,7 +1998,23 @@
         }
       ],
       "editorial_status": "CANONICAL_FIELDS_WITH_DRAFT_FRENCH_AND_HISTORY_NOT_YET_FINAL",
-      "do_not_auto_publish": true
+      "do_not_auto_publish": true,
+      "historical_source_witnesses": [
+        {
+          "issuer": "United States Conference of Catholic Bishops, Advent December 16",
+          "url": "https://www.usccb.org/prayer-and-worship/liturgical-year/advent/advent-december-16",
+          "supports": "An episcopal-catechetical account of Las Posadas around 16–24 December and the Holy Family lodging theme.",
+          "limit": "Describes a regional community custom, not universal Roman-rite use."
+        },
+        {
+          "issuer": "Secretaría de Cultura de México, ¿Y tú, cómo celebras las posadas?",
+          "url": "https://www.gob.mx/cultura/es/articulos/y-tu-como-celebras-las-posadas?idiom=es",
+          "supports": "Mexican colonial context, observance from 16 to 24 December and competing origin explanations, including the Acolman 1587 account.",
+          "limit": "The article itself signals disagreement; 1587 is an attributed origin, not a settled first occurrence."
+        }
+      ],
+      "historical_scope_en": "Mexico and related Latin American communities; forms vary by town, parish and diaspora.",
+      "historical_article_status": "EVIDENCE_BOUNDED_EDITORIAL_DRAFT_APPROVAL_PENDING"
     },
     {
       "id": "XMAS-001",
@@ -1973,8 +2027,8 @@
       "name_fr": "Le partage de l’opłatek à la veille de Noël",
       "description_en": "Before Christmas Eve dinner, family members share a thin unleavened opłatek wafer while offering one another good wishes and reconciliation. It is ordinary blessed-or-unblessed festive bread, not Holy Communion.",
       "description_fr": "Avant le repas de la veille de Noël, les membres de la famille partagent une fine hostie de pain non consacré appelée opłatek, en échangeant des vœux et des paroles de réconciliation. Ce pain de fête n'est pas la sainte communion.",
-      "history_en": null,
-      "history_fr": null,
+      "history_en": "A Polish Catholic household custom centred on a thin, unleavened, image-embossed Christmas wafer. The precise date of origin is not established by the consulted sources.",
+      "history_fr": "La tradition familiale polonaise de l’opłatek repose sur le partage d’une mince feuille de pain non consacré, ornée de motifs religieux, à la veille de Noël. Les sources catholiques et culturelles attestent l’usage et ses souhaits réciproques, sans établir précisément sa date de naissance. Les usages analogues des régions voisines conservent leur identité propre.",
       "meaning_en": "A tangible act of family peace and mutual charity as the household prepares to celebrate the Nativity.",
       "meaning_fr": "Un geste concret de paix familiale et de charité mutuelle avant la célébration de la Nativité.",
       "practice_en": "If this is part of your family tradition, share opłatek with a simple blessing of thanks and personal good wishes; where a priest offers a blessing of the wafers, keep that ministerial act distinct.",
@@ -2007,7 +2061,23 @@
         }
       ],
       "editorial_status": "CANONICAL_FIELDS_WITH_DRAFT_FRENCH_AND_HISTORY_NOT_YET_FINAL",
-      "do_not_auto_publish": true
+      "do_not_auto_publish": true,
+      "historical_source_witnesses": [
+        {
+          "issuer": "Culture.pl, Polish Christmas Eve Traditions",
+          "url": "https://culture.pl/en/article/polish-christmas-eve-traditions",
+          "supports": "Current Polish family practice: religious-image wafer shared before supper with mutual good wishes; situates it within 24 December Wigilia.",
+          "limit": "Cultural overview; does not establish an exact medieval origin."
+        },
+        {
+          "issuer": "Polish Bishops' Conference, Polish Christmas Traditions",
+          "url": "https://episkopat.pl/doc_pr/181602.polish-christmas-traditions-2",
+          "supports": "The family reads Scripture about Christ's birth and shares the Christmas wafer with good wishes before the meal.",
+          "limit": "A present-day episcopal description, not a ritual directive or universal household norm."
+        }
+      ],
+      "historical_scope_en": "Especially Polish households and Polish communities abroad; related Christmas wafers exist in neighbouring Central and Eastern European traditions.",
+      "historical_article_status": "EVIDENCE_BOUNDED_EDITORIAL_DRAFT_APPROVAL_PENDING"
     },
     {
       "id": "HTHU-001",
@@ -2020,8 +2090,8 @@
       "name_fr": "Visiter les églises le Jeudi saint",
       "description_en": "After the Mass of the Lord's Supper, some faithful visit several churches to pray before the Blessed Sacrament at an altar of repose. Seven is a common traditional number but is not mandatory.",
       "description_fr": "Après la messe de la Cène du Seigneur, certains fidèles visitent plusieurs églises pour prier devant le Saint-Sacrement au reposoir. Le nombre de sept est traditionnel dans certains lieux, sans constituer une obligation.",
-      "history_en": null,
-      "history_fr": null,
+      "history_en": "Catholic sources connect the practice with Rome and the sixteenth-century pilgrimages popularised by St Philip Neri. The origins and local forms of Holy Thursday visits are not identical to Rome's separate pilgrimage to its seven basilicas.",
+      "history_fr": "La visite des églises le Jeudi saint s’inscrit dans une tradition de prière devant les reposoirs, avec des associations historiques romaines et une diffusion liée à saint Philippe Néri. La pratique des visites de plusieurs reposoirs ne doit pourtant pas être assimilée sans nuance au pèlerinage romain distinct des sept basiliques. Aucun nombre de visites obligatoire n’est établi.",
       "meaning_en": "A voluntary way to keep watch with Christ before His Passion.",
       "meaning_fr": "Une manière libre de veiller avec le Christ à la veille de sa Passion.",
       "practice_en": "Visit one or more churches actually open for prayer, or simply remain in adoration at your own parish's repository.",
@@ -2054,7 +2124,23 @@
         }
       ],
       "editorial_status": "CANONICAL_FIELDS_WITH_DRAFT_FRENCH_AND_HISTORY_NOT_YET_FINAL",
-      "do_not_auto_publish": true
+      "do_not_auto_publish": true,
+      "historical_source_witnesses": [
+        {
+          "issuer": "EWTN News, Why do Catholics visit 7 churches on Holy Thursday?",
+          "url": "https://www.ewtnnews.com/world/us/why-do-catholics-visit-7-churches-on-holy-thursday",
+          "supports": "Current Holy Thursday visits to altars of repose, prayer on the Passion and a Roman/St Philip Neri history account.",
+          "limit": "A popular contemporary explanation; does not establish a universal number or obligation."
+        },
+        {
+          "issuer": "Archdiocese of Sydney, Holy Thursday Visitation of the Seven Churches",
+          "url": "https://sydneycatholic.au/wp-content/uploads/2024/03/Holy-Thursday-Visitation-of-the-Seven-Churches.pdf",
+          "supports": "Voluntary visits between churches, prayer before altars of repose and the association with St Philip Neri.",
+          "limit": "A local pastoral guide; follow local church access and liturgical arrangements."
+        }
+      ],
+      "historical_scope_en": "Roman Catholic practice with strong Roman associations and documented use in Latin America, Italy, Poland, the Philippines and other local communities.",
+      "historical_article_status": "EVIDENCE_BOUNDED_EDITORIAL_DRAFT_APPROVAL_PENDING"
     },
     {
       "id": "ROGA-001",
@@ -2067,8 +2153,8 @@
       "name_fr": "Une marche de prière familiale aux Rogations",
       "description_en": "A Catholic family guide describes going on a simple prayer walk during the Rogations, asking God's blessing on gardens, crops and the labour of those who provide food. This private act is distinct from the priest-led litanies or blessings.",
       "description_fr": "Un ancien guide familial catholique propose une promenade de prière aux Rogations pour confier à Dieu les jardins, les récoltes et le travail de ceux qui produisent la nourriture. Ce geste privé est distinct des litanies et des bénédictions sacerdotales.",
-      "history_en": null,
-      "history_fr": null,
+      "history_en": "Historical Rogation processions were public ecclesiastical processions with prayers for the land and its produce. Recent Catholic family accounts document a household walk as a practical domestic adaptation; that does not prove it was a universal or inherited historical family custom.",
+      "history_fr": "Les Rogations anciennes comportaient des processions ecclésiastiques publiques, des supplications et des prières pour la terre et ses récoltes. Des guides familiaux catholiques contemporains proposent d’en adapter l’intention à une marche domestique. Cette pratique familiale ne peut donc être présentée comme un rite traditionnel universel remontant à l’origine des Rogations.",
       "meaning_en": "Prayer for the harvest recognises dependence on God's providence and the dignity of human labour.",
       "meaning_fr": "La prière pour les récoltes rappelle la dépendance envers la Providence et la dignité du travail humain.",
       "practice_en": "Take a short family walk, or pause beside a garden, to pray for farmers and give thanks for creation; attend a real parish Rogation if offered.",
@@ -2101,7 +2187,29 @@
         }
       ],
       "editorial_status": "CANONICAL_FIELDS_WITH_DRAFT_FRENCH_AND_HISTORY_NOT_YET_FINAL",
-      "do_not_auto_publish": true
+      "do_not_auto_publish": true,
+      "historical_source_witnesses": [
+        {
+          "issuer": "Catholic Culture, A Family Rogation Walk",
+          "url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1234",
+          "supports": "A Catholic family guide proposing a walk and prayer for gardens and fields.",
+          "limit": "Modern devotional guidance; not proof of a centuries-old household custom."
+        },
+        {
+          "issuer": "National Catholic Register, When Rogation Days Filled Our Yard With Prayer, Processions and Shortcake",
+          "url": "https://www.ncregister.com/blog/behe-rogation-days-memories",
+          "supports": "First-person contemporary family practice of walking around property while praying for a fruitful harvest.",
+          "limit": "Personal household witness; not a normative rite or broad historical survey."
+        },
+        {
+          "issuer": "Catholic Encyclopedia, Processions",
+          "url": "https://www.newadvent.org/cathen/12446c.htm",
+          "supports": "Historical Rogation processions, prayer for the earth's produce, parish-boundary perambulation and clergy-led practice.",
+          "limit": "Historical ecclesiastical processions are evidence for the broader observance, not for the household adaptation."
+        }
+      ],
+      "historical_scope_en": "A contemporary household adaptation of the wider Western Catholic Rogation tradition; no single national household form established.",
+      "historical_article_status": "EVIDENCE_BOUNDED_EDITORIAL_DRAFT_APPROVAL_PENDING"
     },
     {
       "id": "EPIP-001",
@@ -2114,8 +2222,8 @@
       "name_fr": "Les chanteurs de l’Épiphanie",
       "description_en": "Children dressed as the Magi visit homes around Epiphany, bringing a Christian blessing, singing and gathering support for children in need. In Germany the practice is organised through Catholic parishes and the Sternsinger campaign.",
       "description_fr": "Autour de l'Épiphanie, des enfants costumés en mages rendent visite aux familles, chantent et portent un message de bénédiction tout en recueillant une aide pour les enfants dans le besoin. En Allemagne, l'action est organisée par les paroisses catholiques.",
-      "history_en": null,
-      "history_fr": null,
+      "history_en": "The Austrian Catholic Jungschar's Three Kings Action describes a medieval practice of costumed singers visiting homes and a modern charitable revival in Austria beginning in 1954. Its modern campaign is not the whole historical custom.",
+      "history_fr": "La collecte des Sternsinger prolonge des formes anciennes de chants et de visites de maison en maison en costume de Mages. En Autriche, l’organisation catholique de la jeunesse situe en 1954 le début de sa relance caritative moderne. Cette campagne actuelle, ses collectes et ses usages locaux ne résument pas l’ensemble des traditions historiques de l’Épiphanie.",
       "meaning_en": "The Magi's homage becomes a lesson in mission, charity and bringing Christ's light into homes.",
       "meaning_fr": "L'hommage des mages devient une leçon de mission, de charité et de présence de la lumière du Christ dans les foyers.",
       "practice_en": "Join only a local parish's organised visit, welcome the singers when announced, or pray for children who are in need.",
@@ -2148,7 +2256,23 @@
         }
       ],
       "editorial_status": "CANONICAL_FIELDS_WITH_DRAFT_FRENCH_AND_HISTORY_NOT_YET_FINAL",
-      "do_not_auto_publish": true
+      "do_not_auto_publish": true,
+      "historical_source_witnesses": [
+        {
+          "issuer": "Dreikönigsaktion der Katholischen Jungschar, Hintergründe zum Sternsingen",
+          "url": "https://www.dka.at/sternsingen/hintergruende-zum-sternsingen",
+          "supports": "Austrian Catholic organisation describes house-to-house song, greetings, charitable fundraising, medieval roots and its 1954 revival.",
+          "limit": "Institutional history is about the Austrian tradition and campaign, not every German regional variant."
+        },
+        {
+          "issuer": "Archdiocese of Cologne, Heilige Drei Könige: Herkunft und Bedeutung des Feiertags",
+          "url": "https://www.erzbistum-koeln.de/presse_und_medien/magazin/kirchen-glaubensorte/Heilige-Drei-Koenige-Herkunft-und-Bedeutung-des-Feiertags/",
+          "supports": "German children dressed as the Magi visit homes around 6 January, offer a blessing greeting and raise support for children in need.",
+          "limit": "Current German practice; the wording C+M+B is not in itself a priestly blessing."
+        }
+      ],
+      "historical_scope_en": "Austria and German-speaking Catholic regions, with distinct local forms.",
+      "historical_article_status": "EVIDENCE_BOUNDED_EDITORIAL_DRAFT_APPROVAL_PENDING"
     },
     {
       "id": "EPIP-002",
@@ -2161,8 +2285,8 @@
       "name_fr": "La galette des Rois et la part du pauvre",
       "description_en": "French families may share a King Cake or galette with a hidden bean and a symbolic paper crown. Some historical forms set aside an extra portion for a poor neighbour or unexpected guest.",
       "description_fr": "À l'Épiphanie, on partage en France une galette ou un gâteau des Rois contenant une fève, souvent accompagnée d'une couronne. Certaines formes de la coutume prévoient une part supplémentaire pour une personne pauvre ou un invité inattendu.",
-      "history_en": null,
-      "history_fr": null,
+      "history_en": "The French Bishops' Conference describes the galette custom as attested from the fourteenth century and distinguishes regional forms. Its account also repeats pre-Christian and Roman explanations; these should be labelled as traditional theories, not settled origin.",
+      "history_fr": "La galette et la couronne des Rois existent sous plusieurs formes régionales françaises. La Conférence des évêques de France signale des attestations à partir du XIVe siècle ; certaines traditions prévoient une part pour le pauvre ou l’étranger. Les récits qui les font descendre directement des Saturnales romaines demeurent des hypothèses, non une origine démontrée.",
       "meaning_en": "The feast of the Magi can connect domestic joy with generosity to others.",
       "meaning_fr": "La fête des mages unit la joie familiale à la générosité envers autrui.",
       "practice_en": "Share a family cake and, if appropriate, include an act of hospitality or a portion offered to someone in need.",
@@ -2195,7 +2319,29 @@
         }
       ],
       "editorial_status": "CANONICAL_FIELDS_WITH_DRAFT_FRENCH_AND_HISTORY_NOT_YET_FINAL",
-      "do_not_auto_publish": true
+      "do_not_auto_publish": true,
+      "historical_source_witnesses": [
+        {
+          "issuer": "Conférence des évêques de France, Fête de l'Épiphanie en Occident, la « fête des Rois »",
+          "url": "https://eglise.catholique.fr/approfondir-sa-foi/la-celebration-de-la-foi/lesgrandes-fetes%20chretiennes/epiphanie/372242-fete-de-lepiphanie-en-occident-la-fete-des-rois-et-qu/",
+          "supports": "French regional galette and brioche distinctions, fourteenth-century attestation, and an optional extra share for the poor or stranger.",
+          "limit": "The article repeats older origin theories; its evidence supports the custom, not every explanation for its origin."
+        },
+        {
+          "issuer": "French Ministry of Agriculture, Après les fêtes... place à la galette !",
+          "url": "https://agriculture.gouv.fr/apres-les-fetes-place-la-galette",
+          "supports": "The king cake is traditionally consumed at Epiphany and traces the French history of the cake.",
+          "limit": "Food-history overview; not a liturgical source."
+        },
+        {
+          "issuer": "Institut de France, Le gâteau ou la galette des Rois",
+          "url": "https://podcasts.institutdefrance.fr/emissions/les-chroniques/histoire-et-gastronomie/le-gateau-ou-la-galette-des-rois",
+          "supports": "Sixteenth-century culinary sources describe drawing the bean and reserving a portion for God/poor.",
+          "limit": "The Saturnalia connection is expressed as a possibility, not proof of direct continuity."
+        }
+      ],
+      "historical_scope_en": "France, with regional distinction between northern frangipane galette and southern brioche/couronne des rois; similar cakes elsewhere are not identical.",
+      "historical_article_status": "EVIDENCE_BOUNDED_EDITORIAL_DRAFT_APPROVAL_PENDING"
     },
     {
       "id": "CORP-001",
@@ -2208,8 +2354,8 @@
       "name_fr": "Tapis de fleurs pour la Fête-Dieu",
       "description_en": "In some Catholic communities, families lay floral carpets along Corpus Christi procession routes; in others, flowers decorate nearby streets and windows. A specific Polish tradition is recognised as cultural heritage.",
       "description_fr": "Dans certaines communautés catholiques, les familles réalisent des tapis de fleurs sur le parcours de la procession de la Fête-Dieu ; ailleurs, les rues et les fenêtres sont fleuries. Une tradition polonaise est reconnue comme patrimoine culturel.",
-      "history_en": null,
-      "history_fr": null,
+      "history_en": "Catalonia's heritage authority documents Arbúcies Enramades from at least the sixteenth century; flower carpets along the Blessed Sacrament procession route remain part of the local custom. Galicia's tourism authority describes a separate Ponteareas carpet practice of more than 150 years.",
+      "history_fr": "Les tapis floraux et décorations de parcours de la Fête-Dieu ont des histoires locales distinctes. Le patrimoine catalan atteste les Enramades d’Arbúcies depuis le XVIe siècle, tandis que Ponteareas possède une tradition différente remontant à plus d’un siècle et demi. Une fête culturelle contemporaine ne représente pas nécessairement une procession eucharistique encore célébrée.",
       "meaning_en": "Flowers along the route express public reverence for Christ in the Blessed Sacrament, without creating a liturgical rite.",
       "meaning_fr": "Les fleurs sur le parcours manifestent la révérence envers le Christ présent au Saint-Sacrement, sans constituer un nouveau rite liturgique.",
       "practice_en": "Ask your parish organisers before decorating an announced procession route or nearby window; otherwise pray on the feast.",
@@ -2248,7 +2394,23 @@
         }
       ],
       "editorial_status": "CANONICAL_FIELDS_WITH_DRAFT_FRENCH_AND_HISTORY_NOT_YET_FINAL",
-      "do_not_auto_publish": true
+      "do_not_auto_publish": true,
+      "historical_source_witnesses": [
+        {
+          "issuer": "Catalan Government Heritage, Arbúcies Festival of Enramades",
+          "url": "https://patrimoni.gencat.cat/en/collection/arbucies-festival-enramades",
+          "supports": "Sixteenth-century documentary mention, women and children gathering flowers, carpets along Corpus Christi processional route, and later change in the procession's role.",
+          "limit": "Evidence is specific to Arbúcies; later secular festival elements are distinguished from the earlier Blessed Sacrament procession."
+        },
+        {
+          "issuer": "Galicia Tourism, Festivals of International Tourist Interest: Corpus Christi, Ponteareas",
+          "url": "https://www.turismo.gal/osdam/filestore/1/8/4/5/2_42077859a15ba54/18452_e939f6434093b45.pdf",
+          "supports": "More-than-150-year local flower carpets, made by residents overnight as offerings along a Corpus Christi procession route.",
+          "limit": "Official tourism description of a particular local celebration; calendar placement and procession schedule are local."
+        }
+      ],
+      "historical_scope_en": "Documented local forms include Arbúcies in Catalonia and Ponteareas in Galicia; other European localities have their own histories and designs.",
+      "historical_article_status": "EVIDENCE_BOUNDED_EDITORIAL_DRAFT_APPROVAL_PENDING"
     },
     {
       "id": "EAST-001",
@@ -2261,8 +2423,8 @@
       "name_fr": "Une marche d'Emmaüs le lundi de Pâques",
       "description_en": "In parts of southern Germany and Austria, a traditional Easter Monday walk commemorates the disciples' encounter with the risen Christ on the road to Emmaus. Some families or parishes walk toward a church or shrine, with moments of prayer and Scripture.",
       "description_fr": "Dans certaines régions du sud de l'Allemagne et d'Autriche, une promenade du lundi de Pâques rappelle la rencontre des disciples avec le Christ ressuscité sur le chemin d'Emmaüs. Des familles ou paroisses marchent parfois vers une église ou un sanctuaire en priant.",
-      "history_en": null,
-      "history_fr": null,
+      "history_en": "The Diocese of Essen defines the Emmausgang as a living southern German custom; Vatican News reports it as an Easter Monday practice in many Austrian parishes. It is an Easter devotion inspired by Luke 24:13–35, not a required liturgical procession.",
+      "history_fr": "L’Emmausgang, marche de dévotion du lundi de Pâques inspirée de Luc 24,13-35, est attesté dans le sud de l’Allemagne et dans des paroisses autrichiennes. Les participants marchent, prient ou chantent selon l’usage local. Les sources consultées n’établissent pas avec certitude la première origine de la marche actuelle, qui ne constitue pas une procession liturgique obligatoire.",
       "meaning_en": "The walk encourages recognition of the risen Lord in Scripture and ordinary companionship.",
       "meaning_fr": "La marche invite à reconnaître le Seigneur ressuscité dans l'Écriture et la rencontre fraternelle.",
       "practice_en": "Read Luke 24:13–35, take a gentle walk with family or friends and pray together; a real local parish walk may be joined where one is offered.",
@@ -2295,7 +2457,23 @@
         }
       ],
       "editorial_status": "CANONICAL_FIELDS_WITH_DRAFT_FRENCH_AND_HISTORY_NOT_YET_FINAL",
-      "do_not_auto_publish": true
+      "do_not_auto_publish": true,
+      "historical_source_witnesses": [
+        {
+          "issuer": "Diocese of Essen, Emmausgang",
+          "url": "https://www.bistum-essen.de/pressemenue/lexikon/e-lexikon/emmausgang",
+          "supports": "A living southern German Easter Monday custom of a prayerful walk with song or a contemplative Easter walk, tied to Luke 24.",
+          "limit": "The diocese notes many contemporary walks are understood mainly as spring walks."
+        },
+        {
+          "issuer": "Vatican News, Stichwort: Ostermontag",
+          "url": "https://www.vaticannews.va/de/kirche/news/2026-04/ostermontag-feiertag-emmausgeschichte-arbeitsruhe.html",
+          "supports": "The Emmaus narrative's place in Easter Monday and parish Emmausgangs with prayer, song and sometimes an outdoor Mass in Austria.",
+          "limit": "Current Austrian witness; outdoor Mass depends on an actual parish celebration."
+        }
+      ],
+      "historical_scope_en": "Documented especially in southern Germany and Austrian parishes; local forms differ.",
+      "historical_article_status": "EVIDENCE_BOUNDED_EDITORIAL_DRAFT_APPROVAL_PENDING"
     },
     {
       "id": "MARI-002",
@@ -2308,8 +2486,8 @@
       "name_fr": "Un petit jardin dédié à Notre-Dame",
       "description_en": "In a Marian garden, a family grows flowers or fragrant herbs chosen to recall the Blessed Virgin. The arrangement may be as modest as a few plants in pots, with a small Marian image or inscription. Some traditional plant names and legends offer subjects for reflection, not historical facts to be accepted without evidence.",
       "description_fr": "Dans un jardin marial, une famille cultive des fleurs ou des herbes parfumées qui rappellent la Sainte Vierge. Quelques pots et une petite image de Marie suffisent. Les noms et les légendes attachés aux plantes peuvent nourrir la méditation sans être présentés comme des faits historiques certains.",
-      "history_en": null,
-      "history_fr": null,
+      "history_en": "The University of Dayton Marian Library documents a public Mary Garden at Woods Hole, Massachusetts, established in 1932, and a 1951 Philadelphia initiative that encouraged household gardens. Medieval Marian plant names are an older strand of flower symbolism, but they do not prove that today's Mary Garden form is medieval.",
+      "history_fr": "La bibliothèque mariale de l’Université de Dayton relève un jardin marial public à Woods Hole, aux États-Unis, en 1932, puis une initiative de jardins domestiques lancée à Philadelphie en 1951. Le mouvement moderne s’inspire aussi d’anciens noms de plantes consacrés à la Vierge ; cela ne suffit pas à démontrer que la forme actuelle du jardin existait déjà au Moyen Âge.",
       "meaning_en": "The beauty of creation leads the mind toward gratitude and the virtues of Our Lady.",
       "meaning_fr": "La beauté de la création invite à la reconnaissance et à la contemplation des vertus de Notre-Dame.",
       "practice_en": "Choose a few locally suitable plants, care for them and say a short Marian prayer when working in the garden.",
@@ -2342,7 +2520,29 @@
         }
       ],
       "editorial_status": "CANONICAL_FIELDS_WITH_DRAFT_FRENCH_AND_HISTORY_NOT_YET_FINAL",
-      "do_not_auto_publish": true
+      "do_not_auto_publish": true,
+      "historical_source_witnesses": [
+        {
+          "issuer": "University of Dayton Marian Library, Background on Mary's Gardens",
+          "url": "https://udayton.edu/marianlibrary/marysgardens/b/background-on-marys-gardens.php",
+          "supports": "Public Woods Hole garden in 1932; 1951 Philadelphia organization promoting home gardens as a religious work of stewardship and devotion.",
+          "limit": "Institutional archive/history supports the modern movement, not an ancient universal garden custom."
+        },
+        {
+          "issuer": "University of Dayton, 'Mary gardens' bring Catholic piety to the garden",
+          "url": "https://udayton.edu/magazine/2024/05/mary-garden.php",
+          "supports": "Modern Marian garden practice and the historical interest in traditional plant names.",
+          "limit": "The article explicitly notes inconsistencies in folk names and associated legends."
+        },
+        {
+          "issuer": "Howth Parish, The Mary Garden at Our Lady of the Assumption",
+          "url": "https://howthparish.ie/wp-content/uploads/2020/12/Mary-Garden-leaflet-WEB-2020-01-18.pdf",
+          "supports": "A contemporary Irish parish garden used as a place of beauty, reflection and prayer.",
+          "limit": "A local example, not evidence of Irish or universal historical origin."
+        }
+      ],
+      "historical_scope_en": "Documented modern Catholic household and parish practice in the United States, inspired by older European Marian flower names; individual gardens are local.",
+      "historical_article_status": "EVIDENCE_BOUNDED_EDITORIAL_DRAFT_APPROVAL_PENDING"
     },
     {
       "id": "CANDIDATE-STPATRICK-RIBBON",
@@ -2590,20 +2790,9 @@
     "canonical_records": 38,
     "canonical_meaning_en_fr": 38,
     "canonical_practice_en_fr": 38,
-    "canonical_historical_en_fr": 27,
-    "history_gap_ids": [
-      "ADVT-001",
-      "ADVT-002",
-      "ADVT-003",
-      "XMAS-001",
-      "HTHU-001",
-      "ROGA-001",
-      "EPIP-001",
-      "EPIP-002",
-      "CORP-001",
-      "EAST-001",
-      "MARI-002"
-    ],
-    "editorial_release_approved": false
+    "canonical_historical_en_fr": 38,
+    "history_gap_ids": [],
+    "editorial_release_approved": false,
+    "historical_witnesses_from_closure": 26
   }
 }
