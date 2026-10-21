@@ -984,8 +984,10 @@ try{
       image:art?.style.backgroundImage??"",mask:art?.style.maskImage??""};
   });
   assert.equal(priestBowArt.active,"true","Gloria source priest bow action is missing from the rail");
-  assert.equal(priestBowArt.hidden,false,
-    "approved canonical priest head-bow art must remain visible with its exact source action");
+  // The approved October registry has faithful bow art, but the priest
+  // head-bow remains intentionally text-only without a certified asset.
+  assert.equal(priestBowArt.hidden,true,
+    "priest head-bow must remain text-only until exact priest artwork is approved");
   assert.equal(gloriaBow.scholaSharedActive,"true","shared Gloria text lost the v1.76 right-rail Schola indicator");
   assert.equal(gloriaBow.scholaSharedIconHidden,false,"shared Gloria text has no visible Schola pictogram");
   // The central Gloria remains the only Latin lyric surface; the compact
