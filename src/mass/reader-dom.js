@@ -3735,10 +3735,14 @@ export function createReaderDomAdapter({
     // Reassess on cue-only updates; never change the priest event clock.
     if(mode==="LIVE"){
       const iconKey=current.priestActionIconKey;
-      const iconNode=root.querySelector('.ao-rail-right [data-icon-slot="priest-action"]');
+      const rightRail=root.querySelector(".ao-rail-right");
+      const actionRail=rightRail?.querySelector('[data-channel="priest-action"]');
+      const iconNode=actionRail?.querySelector('[data-icon-slot="priest-action"]');
       let iconResolved=false;
       try{
-        iconResolved=Boolean(iconNode&&!iconNode.hidden&&iconKey&&
+        iconResolved=Boolean(rightRail?.dataset.visible==="true"&&
+          actionRail?.dataset.active==="true"&&
+          iconNode&&!iconNode.hidden&&iconKey&&
           typeof iconResolver==="function"&&iconResolver(iconKey));
       }catch(_){iconResolved=false;}
       const byId=new Map(current.paragraphs.flatMap(p=>p.publishedMissalRubrics??[])
