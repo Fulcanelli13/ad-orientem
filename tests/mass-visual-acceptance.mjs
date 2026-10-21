@@ -886,6 +886,7 @@ try{
       gestureActive:document.querySelector("#ao-r17-native-reader-preview [data-channel='gesture']")?.dataset?.active??null,
       postureActive:document.querySelector("#ao-r17-native-reader-preview [data-channel='posture']")?.dataset?.active??null,
       gestureIconHidden:document.querySelector("#ao-r17-native-reader-preview [data-icon-slot='gesture']")?.hidden??null,
+      gestureIconKey:globalThis.AO_R17_NATIVE_READER_STATE?.gestureIconKey??null,
       postureIconHidden:document.querySelector("#ao-r17-native-reader-preview [data-icon-slot='posture']")?.hidden??null,
       scholaSharedActive:document.querySelector("#ao-r17-native-reader-preview [data-channel='schola-shared']")?.dataset?.active??null,
       scholaSharedIconHidden:document.querySelector("#ao-r17-native-reader-preview [data-icon-slot='schola-shared']")?.hidden??null,
@@ -922,7 +923,10 @@ try{
   assert.equal(gloriaBow.leftRail,"true","active Gloria gesture did not reveal the faithful cue rail");
   assert.equal(gloriaBow.gestureActive,"true");
   assert.equal(gloriaBow.postureActive,"true");
-  assert.equal(gloriaBow.gestureIconHidden,true,"rejected Gloria head-bow art returned to faithful rail");
+  assert.equal(gloriaBow.gestureIconKey,"canon:faithful.gesture.bow_head",
+    "The source-owned Gloria Holy Name bow must use the approved canonical gesture");
+  assert.equal(gloriaBow.gestureIconHidden,false,
+    "The approved canonical bow icon must be visible on the faithful rail");
   const faithfulGloriaIcons=await page.evaluate(()=>{
     const r=document.querySelector("#ao-r17-native-reader-preview");
     const rows=[...r.querySelectorAll(".ao-reader-paragraph[data-faithful-row-id]")];
@@ -931,7 +935,8 @@ try{
   });
   assert.ok(faithfulGloriaIcons.count>=1 && faithfulGloriaIcons.eachHasPosture,
     "each visible Gloria paragraph requires its own faithful posture icon");
-  assert.notEqual(faithfulGloriaIcons.current,false,"rejected head-bow art returned inside faithful paragraph");
+  assert.equal(faithfulGloriaIcons.current,false,
+    "The approved canonical bow must appear with its exact source paragraph");
   // An actual tap on the faithful pictogram, not the priest icon, owns
   // the local posture/gesture picker. Saving must not rebuild the card.
   const gloriaInline=page.locator(
