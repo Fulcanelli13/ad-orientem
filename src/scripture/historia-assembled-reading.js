@@ -77,6 +77,26 @@ export function assembleHistoriaReading(proof, edition, getWitness) {
   const movements = proof.movements.map(movement => {
     const segments = [], omittedSourceSeams = [];
     let previous = null;
+    const appendReadingTrial = (beat, trial, trialType) => {
+      if(trial.accepted!==false || trial.publicationApproved!==false || !Array.isArray(trial.refs))
+        throw new Error("Historia research-trial status unsafe: "+beat.id);
+      for(const [position, ref] of trial.refs.entries()){
+        const parsed=parseHistoriaSpan(ref);
+        const gap=gapBetween(previous,parsed);
+        if(gap)omittedSourceSeams.push({beforeAnchor:movement.id+":"+beat.id+":trial:"+position,...gap});
+        const verses=actualVerses(parsed,getIndex(parsed.book),edition);
+        segments.push({
+          kind:"SCRIPTURE_READING_TRIAL_NOT_APPROVED",
+          anchor:movement.id+":"+beat.id+":trial:"+(position+1),
+          ownerUnitId:beat.id,reference:ref,edition,trialType,
+          originalCandidateReference:trial.originalHeldReference||trial.sourceReference||null,
+          sourceStatus:"UNCOLLATED_SOURCE_WITNESS",verses,
+          text:verses.map(v=>v.text).join(" "),
+          selectedForPublication:false,accepted:false,publicationApproved:false
+        });
+        previous=parsed;
+      }
+    };
     for (const beat of movement.beats) {
       if (beat.kind === "EDITORIAL_CONTEXT_NOT_BIBLE") {
         segments.push({
@@ -91,11 +111,27 @@ export function assembleHistoriaReading(proof, edition, getWitness) {
         continue;
       }
       if (beat.kind === "SOURCE_BRIDGE_CANDIDATE") {
-        segments.push({
-          kind: "HELD_SOURCE_CANDIDATE", anchor: movement.id + ":" + beat.id,
-          ownerUnitId: beat.id, reference: beat.reference, purpose: beat.purpose || null,
-          text: null, selected: false, accepted: false, publicationApproved: false
-        });
+        if(beat.readthroughTrial){
+          if(beat.readthroughTrial.editorialPreface){
+            const c=beat.readthroughTrial.editorialPreface;
+            if(c.accepted!==false || c.publicationApproved!==false)
+              throw new Error("Unsafe research editorial preface "+c.id);
+            segments.push({
+              kind:"EDITORIAL_CONNECTOR_PROPOSAL",anchor:movement.id+":"+c.id,
+              ownerUnitId:beat.id,candidateId:c.id,text:c.text,
+              sourceReference:c.sourceReferences.join("; "),sourceReferences:c.sourceReferences,
+              additionalCausalSeam:true,originalDeskText:null,editorialCopyStatus:c.status,
+              editionIndependent:true,accepted:false,publicationApproved:false
+            });
+          }
+          appendReadingTrial(beat,beat.readthroughTrial,"HELD_BRIDGE_RESEARCH_TRIAL");
+        } else {
+          segments.push({
+            kind: "HELD_SOURCE_CANDIDATE", anchor: movement.id + ":" + beat.id,
+            ownerUnitId: beat.id, reference: beat.reference, purpose: beat.purpose || null,
+            text: null, selected: false, accepted: false, publicationApproved: false
+          });
+        }
         continue;
       }
       if (beat.kind !== "SCRIPTURE") throw new Error("Unknown Historia beat kind " + beat.kind);
@@ -125,6 +161,7 @@ export function assembleHistoriaReading(proof, edition, getWitness) {
         });
         previous = parsed;
       }
+      if(beat.afterSelectedReadthroughTrial)appendReadingTrial(beat,beat.afterSelectedReadthroughTrial,"ADDITIONAL_CAUSAL_READING_TRIAL");
     }
     return {
       id: movement.id, sequence: movement.sequence, title: movement.title,
@@ -145,7 +182,12 @@ export function assembleHistoriaReading(proof, edition, getWitness) {
       editorialConnectorProposals: segments.filter(s => s.kind === "EDITORIAL_CONNECTOR_PROPOSAL").length,
       originalContextUnits: segments.filter(s => s.kind === "EDITORIAL_CONNECTOR_PROPOSAL" && !s.additionalCausalSeam).length,
       additionalCausalSeams: segments.filter(s => s.kind === "EDITORIAL_CONNECTOR_PROPOSAL" && s.additionalCausalSeam).length,
-      heldSourceCandidates: segments.filter(s => s.kind === "HELD_SOURCE_CANDIDATE").length,
+      heldSourceCandidates: segments.filter(s=>s.kind==="HELD_SOURCE_CANDIDATE").length+
+        new Set(segments.filter(s=>s.kind==="SCRIPTURE_READING_TRIAL_NOT_APPROVED"&&s.trialType==="HELD_BRIDGE_RESEARCH_TRIAL").map(s=>s.ownerUnitId)).size,
+      stillUnselectedBridgeCandidates: segments.filter(s=>s.kind==="HELD_SOURCE_CANDIDATE").length,
+      bridgeReadingTrials: new Set(segments.filter(s=>s.kind==="SCRIPTURE_READING_TRIAL_NOT_APPROVED"&&s.trialType==="HELD_BRIDGE_RESEARCH_TRIAL").map(s=>s.ownerUnitId)).size,
+      readingTrialSpans: segments.filter(s=>s.kind==="SCRIPTURE_READING_TRIAL_NOT_APPROVED").length,
+      trialVerseEntries: segments.filter(s=>s.kind==="SCRIPTURE_READING_TRIAL_NOT_APPROVED").reduce((n,s)=>n+s.verses.length,0),
       published: 0
     }
   };
@@ -165,7 +207,7 @@ export function historiaAssemblyMarkdown(assembly) {
     "Witness: " + assembly.edition + " (uncollated; verify against the intended printed edition).",
     "All Scripture wording below comes directly from that edition's existing source witness.",
     "Each reference preceding a paragraph is its future vertical-rail anchor; the complete per-verse rail is in the machine assembly.",
-    "Italic connectors are editorial proposals, not Bible quotations. Held passages are visibly unresolved and never inserted as Scripture.",
+    "Italic connectors are editorial proposals, not Bible quotations. Trial Scripture is exact witness text provisionally inserted for research reading ONLY; selection, printed collation, literary acceptance and publication remain unapproved.",
     ""
   ];
   for (const movement of assembly.movements) {
@@ -173,6 +215,8 @@ export function historiaAssemblyMarkdown(assembly) {
     for (const s of movement.segments) {
       if (s.kind === "SCRIPTURE_EXACT_WITNESS") {
         lines.push("**⟦" + s.reference + "⟧**", "", asText(s.text), "");
+      } else if (s.kind === "SCRIPTURE_READING_TRIAL_NOT_APPROVED") {
+        lines.push("**⟦TRIAL SCRIPTURE · " + s.reference + " · NOT APPROVED⟧**", "", asText(s.text), "");
       } else if (s.kind === "EDITORIAL_CONNECTOR_PROPOSAL") {
         lines.push("*⟦Editorial connector · source: " + (s.sourceReferences?.join("; ") || s.sourceReference) + " · NOT APPROVED⟧*", "",
           "*" + asText(s.text) + "*", "");
