@@ -3,6 +3,7 @@ import { readFileSync } from "node:fs";
 const read = path => JSON.parse(readFileSync(new URL(path, import.meta.url),"utf8"));
 const crosswalk=read("../data/research/historia-p4-movement-theatre-citation-crosswalk.v1.json");
 const seam=read("../data/research/historia-p4-m20-m37-literary-review-queue.v1.json");
+const patriarchs=read("../data/research/historia-p4-patriarchs-witness-desk-audit.v1.json");
 const html=readFileSync(new URL("../labs/historia-salutis-theatre-p4.html",import.meta.url),"utf8");
 const C=crosswalk.counts;
 assert.equal(crosswalk.status,"RESEARCH_ONLY_SOURCE_OVERLAP_NOT_IDENTITY_NOT_APPROVED");
@@ -56,6 +57,24 @@ for(const [i,m] of seam.movements.entries()){
  assert.equal(m.readAloudAccepted,false);assert.equal(m.publicationApproved,false);
  assert.ok(m.reviewFindings.length>0);
 }
+assert.equal(patriarchs.reviewedRows.length,25);
+assert.equal(patriarchs.counts.rowsWithVersePresenceBothWitnesses,25);
+assert.equal(patriarchs.counts.rowsApprovedForGeocoding,0);
+assert.equal(patriarchs.counts.rowsPublished,0);
+assert.equal(patriarchs.counts.criticalLocationCorrections,1);
+for(const [i,x] of patriarchs.reviewedRows.entries()){
+ assert.equal(x.index,i);
+ assert.ok(sceneIds.has(x.sceneKey));
+ assert.equal(x.publicationApproval,false);
+ assert.equal(x.definitiveModernCoordinatesApproved,false);
+ assert.equal(x.witnessSpanChecks.coordinatePresenceVerified,true);
+ assert.ok(x.witnessSpanChecks.douayChallonerVerseEntries>0);
+ assert.equal(x.witnessSpanChecks.douayChallonerVerseEntries,x.witnessSpanChecks.cpdv2009VerseEntries);
+}
+const isaacBirth=patriarchs.reviewedRows.find(x=>x.sceneKey==="biblical:scene:abraham:021");
+assert.ok(isaacBirth);
+assert.equal(isaacBirth.geographicalAction,"CORRECTION_REQUIRED_NO_BEERSHEBA_BIRTH_PIN");
+assert.equal(isaacBirth.locationEvidenceClass,"UNLOCATED_EVENT");
 for(const token of ["maplibregl.Map","prefers-reduced-motion","ATLAS_GEO.cenacle","ATLAS_GEO.transfiguration","HS-M37","sourceBridgeCandidates"]) {
  if(token==="sourceBridgeCandidates") continue;
  assert.ok(html.includes(token),"Theatre lab missing "+token);
@@ -63,4 +82,4 @@ for(const token of ["maplibregl.Map","prefers-reduced-motion","ATLAS_GEO.cenacle
 assert.ok(html.includes("No cinematic-scene identity exists"));
 assert.ok(html.includes("No painting imported"));
 assert.ok(!html.includes("<script type=\"module\" src=\"../src/"),"Research lab must not import production modules");
-console.log("PASS: Historia P4 crosswalk, 183-row evidence queue, 18 seam holds and four-state theatre laboratory source contracts");
+console.log("PASS: Historia P4 crosswalk, 183-row evidence queue, 18 seam holds, 25 Genesis witnesses and four-state theatre laboratory source contracts");
