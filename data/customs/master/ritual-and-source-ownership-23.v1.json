@@ -1,0 +1,460 @@
+{
+  "schema": "AO_CUSTOMS_MASTER_23_RITUAL_AND_SOURCE_OWNERSHIP_V1",
+  "as_of": "2026-10-21",
+  "status": "ALL_SOURCE_HOLDS_ROUTED_NOT_PUBLICATION",
+  "notes": [
+    "Weller 1964 translates an earlier Roman Ritual with changes; this catalogue is title-level evidence only.",
+    "General rite titles cannot establish a named feast-day local practice.",
+    "The Polish Corpus Christi wreath custom has ethnographic evidence but no cleared 1962 ritual formula.",
+    "The 1883 St Blaise food blessing is historically documented; no new automatic parish event or cure is implied.",
+    "Do not conflate rain processions, field blessings, grave tending, or domestic devotional objects with the Mass."
+  ],
+  "summary": {
+    "total": 23,
+    "with_title_level_or_ethnographic_ref": 15,
+    "unresolved_exact_rubrics": 23,
+    "app_publications": 0,
+    "canonical_new_ids": 0
+  },
+  "records": [
+    {
+      "weiser_id": "WEI58-02-002",
+      "research_disposition": "PERSONAL_PENANCE_HOLD",
+      "other_module_owner": "Pray/Calendar",
+      "editorial_conclusion_en": "Wednesday voluntary fasting is a private penitential issue; no universal historical rule established.",
+      "name": "Voluntary Wednesday fasting",
+      "independent_refs": [],
+      "source_edition_policy": "WELLER_1964_TRANSLATION_NOT_AUTOMATIC_1962_PROOF",
+      "research_only": true,
+      "publishable_rite_text": false,
+      "ministerial_action_inferred": false,
+      "local_event_scheduled": false,
+      "canonical_id_created": false
+    },
+    {
+      "weiser_id": "WEI58-03-006",
+      "research_disposition": "PERSONAL_PRAYER_HOLD",
+      "other_module_owner": "Pray/Calendar",
+      "editorial_conclusion_en": "Ember prayer for expectant mothers needs a local source; a general mother's blessing proves no Ember association.",
+      "name": "Expectant mothers' Ember prayers",
+      "independent_refs": [],
+      "source_edition_policy": "WELLER_1964_TRANSLATION_NOT_AUTOMATIC_1962_PROOF",
+      "research_only": true,
+      "publishable_rite_text": false,
+      "ministerial_action_inferred": false,
+      "local_event_scheduled": false,
+      "canonical_id_created": false
+    },
+    {
+      "weiser_id": "WEI58-04-005",
+      "research_disposition": "RITUAL_GENRE_ONLY",
+      "other_module_owner": "Special Days/Calendar",
+      "editorial_conclusion_en": "Roman Ritual indexes weather and rain processions, not a specific local procession.",
+      "name": "Special weather processions",
+      "independent_refs": [
+        {
+          "id": "RITUAL_INDEX",
+          "title": "Roman Ritual, index, Weller translation (1964)",
+          "url": "https://www.ewtn.com/catholicism/library/roman-ritual-index-11884",
+          "constraint": "Historical category listing; NOT exact verification of unchanged 1962 formulas or current faculties."
+        }
+      ],
+      "source_edition_policy": "WELLER_1964_TRANSLATION_NOT_AUTOMATIC_1962_PROOF",
+      "research_only": true,
+      "publishable_rite_text": false,
+      "ministerial_action_inferred": false,
+      "local_event_scheduled": false,
+      "canonical_id_created": false
+    },
+    {
+      "weiser_id": "WEI58-05-009",
+      "research_disposition": "LOCAL_NOVENA_HOLD",
+      "other_module_owner": "Pray/Saints",
+      "editorial_conclusion_en": "Nine-night St Joseph image visits need independent historical parish evidence.",
+      "name": "Nine-night Saint Joseph statue visits",
+      "independent_refs": [],
+      "source_edition_policy": "WELLER_1964_TRANSLATION_NOT_AUTOMATIC_1962_PROOF",
+      "research_only": true,
+      "publishable_rite_text": false,
+      "ministerial_action_inferred": false,
+      "local_event_scheduled": false,
+      "canonical_id_created": false
+    },
+    {
+      "weiser_id": "WEI58-08-005",
+      "research_disposition": "OBJECT_BLESSING_NOT_FEAST_PROOF",
+      "other_module_owner": "Blessings/Customs",
+      "editorial_conclusion_en": "General blessing of candles does not establish a priest-blessed Christmas dinner candle.",
+      "name": "Priest-blessed Christmas candle displayed at meal",
+      "independent_refs": [
+        {
+          "id": "RITUAL_INDEX",
+          "title": "Roman Ritual, index, Weller translation (1964)",
+          "url": "https://www.ewtn.com/catholicism/library/roman-ritual-index-11884",
+          "constraint": "Historical category listing; NOT exact verification of unchanged 1962 formulas or current faculties."
+        }
+      ],
+      "source_edition_policy": "WELLER_1964_TRANSLATION_NOT_AUTOMATIC_1962_PROOF",
+      "research_only": true,
+      "publishable_rite_text": false,
+      "ministerial_action_inferred": false,
+      "local_event_scheduled": false,
+      "canonical_id_created": false
+    },
+    {
+      "weiser_id": "WEI58-10-010",
+      "research_disposition": "ANIMAL_BLESSING_NOT_FEAST_PROOF",
+      "other_module_owner": "Blessings/Saints",
+      "editorial_conclusion_en": "A blessing of horses exists as a category, but St Stephen feast scheduling needs a named witness.",
+      "name": "St Stephen blessing of horses",
+      "independent_refs": [
+        {
+          "id": "RITUAL_INDEX",
+          "title": "Roman Ritual, index, Weller translation (1964)",
+          "url": "https://www.ewtn.com/catholicism/library/roman-ritual-index-11884",
+          "constraint": "Historical category listing; NOT exact verification of unchanged 1962 formulas or current faculties."
+        }
+      ],
+      "source_edition_policy": "WELLER_1964_TRANSLATION_NOT_AUTOMATIC_1962_PROOF",
+      "research_only": true,
+      "publishable_rite_text": false,
+      "ministerial_action_inferred": false,
+      "local_event_scheduled": false,
+      "canonical_id_created": false
+    },
+    {
+      "weiser_id": "WEI58-10-012",
+      "research_disposition": "OATS_BLESSING_NOT_FEAST_PROOF",
+      "other_module_owner": "Blessings/Saints",
+      "editorial_conclusion_en": "The oats blessing category does not establish St Stephen hay or oats observance.",
+      "name": "St Stephen blessing hay and oats",
+      "independent_refs": [
+        {
+          "id": "RITUAL_INDEX",
+          "title": "Roman Ritual, index, Weller translation (1964)",
+          "url": "https://www.ewtn.com/catholicism/library/roman-ritual-index-11884",
+          "constraint": "Historical category listing; NOT exact verification of unchanged 1962 formulas or current faculties."
+        }
+      ],
+      "source_edition_policy": "WELLER_1964_TRANSLATION_NOT_AUTOMATIC_1962_PROOF",
+      "research_only": true,
+      "publishable_rite_text": false,
+      "ministerial_action_inferred": false,
+      "local_event_scheduled": false,
+      "canonical_id_created": false
+    },
+    {
+      "weiser_id": "WEI58-12-009",
+      "research_disposition": "EPIPHANY_RITE_HISTORICALLY_INDEXED",
+      "other_module_owner": "Blessings/Calendar",
+      "editorial_conclusion_en": "Epiphany home blessing and water appear in Weller; distinct from lay Sternsinger visits.",
+      "name": "Priestly Epiphany home blessing",
+      "independent_refs": [
+        {
+          "id": "RITUAL_INDEX",
+          "title": "Roman Ritual, index, Weller translation (1964)",
+          "url": "https://www.ewtn.com/catholicism/library/roman-ritual-index-11884",
+          "constraint": "Historical category listing; NOT exact verification of unchanged 1962 formulas or current faculties."
+        }
+      ],
+      "source_edition_policy": "WELLER_1964_TRANSLATION_NOT_AUTOMATIC_1962_PROOF",
+      "research_only": true,
+      "publishable_rite_text": false,
+      "ministerial_action_inferred": false,
+      "local_event_scheduled": false,
+      "canonical_id_created": false
+    },
+    {
+      "weiser_id": "WEI58-12-019",
+      "research_disposition": "UNVERIFIED_CAKE_CHARITY_CLAIM",
+      "other_module_owner": "Customs/History",
+      "editorial_conclusion_en": "A specific Epiphany cake payment for educating a poor child lacks independent corroboration.",
+      "name": "French Magi cake donations for education of poor child",
+      "independent_refs": [],
+      "source_edition_policy": "WELLER_1964_TRANSLATION_NOT_AUTOMATIC_1962_PROOF",
+      "research_only": true,
+      "publishable_rite_text": false,
+      "ministerial_action_inferred": false,
+      "local_event_scheduled": false,
+      "canonical_id_created": false
+    },
+    {
+      "weiser_id": "WEI58-14-022",
+      "research_disposition": "FOLK_ETYMOLOGY_HOLD",
+      "other_module_owner": "Customs/History",
+      "editorial_conclusion_en": "Lenten pretzel folded-arms symbolism is not proof of a specific early Catholic devotional origin.",
+      "name": "Lenten pretzels as folded arms in prayer",
+      "independent_refs": [],
+      "source_edition_policy": "WELLER_1964_TRANSLATION_NOT_AUTOMATIC_1962_PROOF",
+      "research_only": true,
+      "publishable_rite_text": false,
+      "ministerial_action_inferred": false,
+      "local_event_scheduled": false,
+      "canonical_id_created": false
+    },
+    {
+      "weiser_id": "WEI58-16-014",
+      "research_disposition": "EASTER_FIRE_LANTERN_HOLD",
+      "other_module_owner": "Mass/Customs",
+      "editorial_conclusion_en": "Blessing an Easter fire in liturgy does not establish local domestic transport by lantern.",
+      "name": "Bringing home blessed Easter fire by lantern",
+      "independent_refs": [],
+      "source_edition_policy": "WELLER_1964_TRANSLATION_NOT_AUTOMATIC_1962_PROOF",
+      "research_only": true,
+      "publishable_rite_text": false,
+      "ministerial_action_inferred": false,
+      "local_event_scheduled": false,
+      "canonical_id_created": false
+    },
+    {
+      "weiser_id": "WEI58-18-005",
+      "research_disposition": "FIELDS_BLESSING_NOT_ASCENSION_PROOF",
+      "other_module_owner": "Blessings/Calendar",
+      "editorial_conclusion_en": "Generic field blessings are not evidence for an Ascension procession in a locality.",
+      "name": "Fields and pastures blessed in Ascension procession",
+      "independent_refs": [
+        {
+          "id": "RITUAL_INDEX",
+          "title": "Roman Ritual, index, Weller translation (1964)",
+          "url": "https://www.ewtn.com/catholicism/library/roman-ritual-index-11884",
+          "constraint": "Historical category listing; NOT exact verification of unchanged 1962 formulas or current faculties."
+        }
+      ],
+      "source_edition_policy": "WELLER_1964_TRANSLATION_NOT_AUTOMATIC_1962_PROOF",
+      "research_only": true,
+      "publishable_rite_text": false,
+      "ministerial_action_inferred": false,
+      "local_event_scheduled": false,
+      "canonical_id_created": false
+    },
+    {
+      "weiser_id": "WEI58-19-023",
+      "research_disposition": "AGRICULTURAL_BLESSING_NOT_PENTECOST_PROOF",
+      "other_module_owner": "Blessings/Calendar",
+      "editorial_conclusion_en": "General orchards and fields blessings do not prove Pentecost Vigil flower/field blessing.",
+      "name": "Pentecost Vigil blessing flowers fields and fruit trees",
+      "independent_refs": [
+        {
+          "id": "RITUAL_INDEX",
+          "title": "Roman Ritual, index, Weller translation (1964)",
+          "url": "https://www.ewtn.com/catholicism/library/roman-ritual-index-11884",
+          "constraint": "Historical category listing; NOT exact verification of unchanged 1962 formulas or current faculties."
+        }
+      ],
+      "source_edition_policy": "WELLER_1964_TRANSLATION_NOT_AUTOMATIC_1962_PROOF",
+      "research_only": true,
+      "publishable_rite_text": false,
+      "ministerial_action_inferred": false,
+      "local_event_scheduled": false,
+      "canonical_id_created": false
+    },
+    {
+      "weiser_id": "WEI58-21-019",
+      "research_disposition": "CORPUS_WREATH_ETHNOGRAPHY_ATTESTED",
+      "other_module_owner": "Customs/Blessings",
+      "editorial_conclusion_en": "Independent Polish field research documents Corpus Christi octave wreath blessing; precise 1962 ritual formula and local schedule remain unverified.",
+      "name": "Priestly blessing of Corpus Christi flower wreaths",
+      "independent_refs": [
+        {
+          "id": "WREATHS",
+          "title": "Łuczaj (2012) Polish Corpus Christi herbal wreaths",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/22575705/",
+          "constraint": "Ethnographic documentation of local custom, not a precise 1962 Roman formula."
+        }
+      ],
+      "source_edition_policy": "WELLER_1964_TRANSLATION_NOT_AUTOMATIC_1962_PROOF",
+      "research_only": true,
+      "publishable_rite_text": false,
+      "ministerial_action_inferred": false,
+      "local_event_scheduled": false,
+      "canonical_id_created": false
+    },
+    {
+      "weiser_id": "WEI58-24-012",
+      "research_disposition": "FIELDS_BLESSING_NOT_ASSUMPTION_PROOF",
+      "other_module_owner": "Blessings/Marian",
+      "editorial_conclusion_en": "A general field blessing does not demonstrate an Assumption field rite.",
+      "name": "Assumption blessing of countryside and fields",
+      "independent_refs": [
+        {
+          "id": "RITUAL_INDEX",
+          "title": "Roman Ritual, index, Weller translation (1964)",
+          "url": "https://www.ewtn.com/catholicism/library/roman-ritual-index-11884",
+          "constraint": "Historical category listing; NOT exact verification of unchanged 1962 formulas or current faculties."
+        }
+      ],
+      "source_edition_policy": "WELLER_1964_TRANSLATION_NOT_AUTOMATIC_1962_PROOF",
+      "research_only": true,
+      "publishable_rite_text": false,
+      "ministerial_action_inferred": false,
+      "local_event_scheduled": false,
+      "canonical_id_created": false
+    },
+    {
+      "weiser_id": "WEI58-24-013",
+      "research_disposition": "ANIMAL_BLESSING_NOT_ALPINE_PROOF",
+      "other_module_owner": "Blessings/Marian",
+      "editorial_conclusion_en": "General animal and pasture blessings do not establish the local French Alpine Marian timing.",
+      "name": "French Alpine pasture and livestock blessing",
+      "independent_refs": [
+        {
+          "id": "RITUAL_INDEX",
+          "title": "Roman Ritual, index, Weller translation (1964)",
+          "url": "https://www.ewtn.com/catholicism/library/roman-ritual-index-11884",
+          "constraint": "Historical category listing; NOT exact verification of unchanged 1962 formulas or current faculties."
+        }
+      ],
+      "source_edition_policy": "WELLER_1964_TRANSLATION_NOT_AUTOMATIC_1962_PROOF",
+      "research_only": true,
+      "publishable_rite_text": false,
+      "ministerial_action_inferred": false,
+      "local_event_scheduled": false,
+      "canonical_id_created": false
+    },
+    {
+      "weiser_id": "WEI58-25-024",
+      "research_disposition": "GRAPE_BLESSING_NOT_NATIVITY_PROOF",
+      "other_module_owner": "Blessings/Marian",
+      "editorial_conclusion_en": "Historical Roman blessing of grapes exists, but it is not evidence for the Nativity of Mary as the feast occasion.",
+      "name": "French vineyard grapes brought for priestly blessing",
+      "independent_refs": [
+        {
+          "id": "RITUAL_INDEX",
+          "title": "Roman Ritual, index, Weller translation (1964)",
+          "url": "https://www.ewtn.com/catholicism/library/roman-ritual-index-11884",
+          "constraint": "Historical category listing; NOT exact verification of unchanged 1962 formulas or current faculties."
+        },
+        {
+          "id": "GRAPES",
+          "title": "Roman Ritual historical blessing of grapes",
+          "url": "https://www.catholicculture.org/culture/liturgicalyear/prayers/view.cfm?id=1361",
+          "constraint": "Reference connects grape blessing to Transfiguration; not proof of Marian Nativity custom."
+        }
+      ],
+      "source_edition_policy": "WELLER_1964_TRANSLATION_NOT_AUTOMATIC_1962_PROOF",
+      "research_only": true,
+      "publishable_rite_text": false,
+      "ministerial_action_inferred": false,
+      "local_event_scheduled": false,
+      "canonical_id_created": false
+    },
+    {
+      "weiser_id": "WEI58-26-008",
+      "research_disposition": "ALLSOULS_GRAVE_FORMULA_HOLD",
+      "other_module_owner": "Funerals/Calendar",
+      "editorial_conclusion_en": "Grave tending, cemetery blessing and annual All Souls priestly blessing are not automatically the same act.",
+      "name": "Priest blesses graves on All Souls",
+      "independent_refs": [],
+      "source_edition_policy": "WELLER_1964_TRANSLATION_NOT_AUTOMATIC_1962_PROOF",
+      "research_only": true,
+      "publishable_rite_text": false,
+      "ministerial_action_inferred": false,
+      "local_event_scheduled": false,
+      "canonical_id_created": false
+    },
+    {
+      "weiser_id": "WEI58-27-002",
+      "research_disposition": "BLAISE_FEAST_BREAD_BLESSING_ATTESTED",
+      "other_module_owner": "Blessings/Saints",
+      "editorial_conclusion_en": "An 1883 approved St Blaise blessing for bread, wine, water and fruit appears in Weller 1964, but does not prove each regional pan bendito format.",
+      "name": "St Blaise pan bendito blessed sticks",
+      "independent_refs": [
+        {
+          "id": "RITUAL_INDEX",
+          "title": "Roman Ritual, index, Weller translation (1964)",
+          "url": "https://www.ewtn.com/catholicism/library/roman-ritual-index-11884",
+          "constraint": "Historical category listing; NOT exact verification of unchanged 1962 formulas or current faculties."
+        },
+        {
+          "id": "BLAISE",
+          "title": "Roman Ritual blessing of bread, wine, water, fruit for St Blaise",
+          "url": "https://www.catholicculture.org/culture/liturgicalyear/prayers/view.cfm?id=1375",
+          "constraint": "1883 approval noted in Weller 1964 translation; publication of formula still gated."
+        }
+      ],
+      "source_edition_policy": "WELLER_1964_TRANSLATION_NOT_AUTOMATIC_1962_PROOF",
+      "research_only": true,
+      "publishable_rite_text": false,
+      "ministerial_action_inferred": false,
+      "local_event_scheduled": false,
+      "canonical_id_created": false
+    },
+    {
+      "weiser_id": "WEI58-27-004",
+      "research_disposition": "BLAISE_LOCAL_WICK_HOLD",
+      "other_module_owner": "Blessings/Saints",
+      "editorial_conclusion_en": "Secondary historical literature notes oil-dipped wick in parts of Italy, not the ordinary crossed-candle form; local place and permission need evidence.",
+      "name": "Oil-dipped wick throat blessing variant",
+      "independent_refs": [
+        {
+          "id": "BLAISE_WICK",
+          "title": "Local St Blaise oil-wick variant",
+          "url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1376",
+          "constraint": "Secondary historical description, precise locality/minister still open."
+        }
+      ],
+      "source_edition_policy": "WELLER_1964_TRANSLATION_NOT_AUTOMATIC_1962_PROOF",
+      "research_only": true,
+      "publishable_rite_text": false,
+      "ministerial_action_inferred": false,
+      "local_event_scheduled": false,
+      "canonical_id_created": false
+    },
+    {
+      "weiser_id": "WEI58-28-004",
+      "research_disposition": "SEED_BLESSING_NOT_PETERPAUL_PROOF",
+      "other_module_owner": "Blessings/Saints",
+      "editorial_conclusion_en": "General seed/grain blessing does not establish a Hungarian Peter and Paul custom.",
+      "name": "Priestly grain blessing on feast of Peter and Paul",
+      "independent_refs": [
+        {
+          "id": "RITUAL_INDEX",
+          "title": "Roman Ritual, index, Weller translation (1964)",
+          "url": "https://www.ewtn.com/catholicism/library/roman-ritual-index-11884",
+          "constraint": "Historical category listing; NOT exact verification of unchanged 1962 formulas or current faculties."
+        }
+      ],
+      "source_edition_policy": "WELLER_1964_TRANSLATION_NOT_AUTOMATIC_1962_PROOF",
+      "research_only": true,
+      "publishable_rite_text": false,
+      "ministerial_action_inferred": false,
+      "local_event_scheduled": false,
+      "canonical_id_created": false
+    },
+    {
+      "weiser_id": "WEI58-28-005",
+      "research_disposition": "STRAW_CROWN_DOMESTIC_HOLD",
+      "other_module_owner": "Customs/Hungarian history",
+      "editorial_conclusion_en": "A blessed straw crown hung over a table is a household claim, not its own priestly ritual.",
+      "name": "Blessed straw crowns hung above dining table",
+      "independent_refs": [],
+      "source_edition_policy": "WELLER_1964_TRANSLATION_NOT_AUTOMATIC_1962_PROOF",
+      "research_only": true,
+      "publishable_rite_text": false,
+      "ministerial_action_inferred": false,
+      "local_event_scheduled": false,
+      "canonical_id_created": false
+    },
+    {
+      "weiser_id": "WEI58-28-006",
+      "research_disposition": "BREAD_BLESSING_NOT_PETERPAUL_PROOF",
+      "other_module_owner": "Blessings/Saints",
+      "editorial_conclusion_en": "Generic bread blessing does not establish special Peter and Paul liturgical use.",
+      "name": "Special bread blessing for Peter and Paul",
+      "independent_refs": [
+        {
+          "id": "RITUAL_INDEX",
+          "title": "Roman Ritual, index, Weller translation (1964)",
+          "url": "https://www.ewtn.com/catholicism/library/roman-ritual-index-11884",
+          "constraint": "Historical category listing; NOT exact verification of unchanged 1962 formulas or current faculties."
+        }
+      ],
+      "source_edition_policy": "WELLER_1964_TRANSLATION_NOT_AUTOMATIC_1962_PROOF",
+      "research_only": true,
+      "publishable_rite_text": false,
+      "ministerial_action_inferred": false,
+      "local_event_scheduled": false,
+      "canonical_id_created": false
+    }
+  ]
+}
