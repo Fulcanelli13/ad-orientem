@@ -7,6 +7,7 @@ import { scriptureReferenceWarning, scriptureParallelReferenceState } from "./re
 import { cpdvTextualNotesFor } from "./cpdv-textual-notes.js";
 import { verifiedScriptureCommentary } from "./context.js";
 import {loadCatenaForPassage,isCatenaGospel} from "./catena-inline.js";
+import {mountCatenaMessenger} from "./catena-messenger.js";
 import {scriptureChapterLimit} from "./chapter-counts.js";
 import {scriptureSegments,scriptureSegmentsReference} from "./segments.js";
 import {hasScriptureWitness} from "./witness-loader.js";
@@ -289,22 +290,7 @@ export function mountScriptureLibrary(root,{
            if(!area.isConnected||!commentaryVisible||lang!=="en")return;
            status.remove();
            if(!nodes.length)area.append(element("p","No source fragment matches these exact verses.","aoScriptureCommentaryDisclosure"));
-           for(const node of nodes){
-             const item=element("section",null,"aoScriptureCatenaPericope");
-             item.append(element("h4",node.citation,"aoScriptureCatenaHeading"));
-             node.segments.forEach((segment,i)=>{
-               const father=element("details",null,"aoScriptureFather");father.open=i<2;
-               father.append(element("summary",segment.father));
-               father.append(element("p",segment.text,"aoScriptureFatherText"));
-               item.append(father);
-             });
-             if(node.source?.url){
-               const link=element("a","Original Catena source ↗");link.href=node.source.url;
-               link.target="_blank";link.rel="noopener noreferrer";
-               link.dataset.scriptureCommentarySource="verified";item.append(link);
-             }
-             area.append(item);
-           }
+           if(nodes.length)mountCatenaMessenger(area,nodes,{language:lang});
          }).catch(()=>{if(area.isConnected)status.textContent="Source unavailable; no commentary has been invented.";});
        }else if(isCatenaGospel(location)&&lang==="fr"){
          area.append(element("p","Le commentaire patristique français n’est pas encore intégré. Aucun texte anglais n’est substitué.","aoScriptureCommentaryDisclosure"));
