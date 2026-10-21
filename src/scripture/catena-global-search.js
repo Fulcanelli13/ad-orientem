@@ -5,7 +5,7 @@
  * has fetched and integrity-validated its actual source chapter pack.
  */
 import {CATENA_LOCAL_BASE,CATENA_SOURCE_COMMIT,loadCatenaForPassage} from "./catena-inline.js";
-import {catenaSearchTerms,catenaQuestionHasSufficientEvidence,catenaQuestionHasUnsupportedContext,indexCatenaMessages,retrieveCatenaMessages} from "./catena-messenger.js";
+import {catenaSearchTerms,catenaQuestionHasSufficientEvidence,catenaQuestionHasUnsupportedContext,indexCatenaMessages,retrieveCatenaMessages,catenaLiteralMatchEvidence} from "./catena-messenger.js";
 import {catenaRelatedTopic,catenaTopicEvidence,retrieveCatenaRelatedMessages} from "./catena-related-vocabulary.js";
 export const CATENA_GLOBAL_SCHEMA="ao.catena.gospel-lexicon.v1";
 export const CATENA_LEXICON_BASE=CATENA_LOCAL_BASE+"lexicon/";
@@ -196,7 +196,8 @@ export async function searchCatenaAcrossGospels(question,{
     used.add(original.id);
     results.push(Object.freeze({...row,reference:original.citation,
      fromAnotherPassage:true,
-     ...(evidence?{relatedSourceEvidence:evidence}: {})}));
+     ...(evidence?{relatedSourceEvidence:evidence}:
+      {sourceMatchEvidence:catenaLiteralMatchEvidence(row,contentQuery)})}));
    }catch{unavailable.push(match.gospel)}
   }
  }
