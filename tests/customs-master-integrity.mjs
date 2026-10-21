@@ -3,6 +3,10 @@ import {readFileSync} from "node:fs";
 const load=name=>JSON.parse(readFileSync(new URL("../data/customs/master/"+name,import.meta.url),"utf8"));
 const identities=load("identities.v0.json"),observations=load("weiser-observations.v0.json"),editorial=load("editorial-owner-reconciliation.v0.json"),queue=load("coverage-and-review-queue.v0.json");
 const rows=identities.records,obs=observations.records,edit=editorial.editorial_cards,proposals=editorial.candidate_proposals;
+const triage=[load("identity-triage-ch01-12.v0.json"),load("identity-triage-ch13-19.v0.json"),load("identity-triage-ch20-28.v0.json")];
+const firstPass=load("first-pass-260-reconciliation.v1.json");
+const triaged=triage.flatMap(x=>x.rows);
+
 const unique=items=>new Set(items).size===items.length;
 const sum=obj=>Object.values(obj).reduce((n,x)=>n+x,0);
 assert.equal(identities.schema,"AO_CUSTOMS_MASTER_IDENTITIES_V0");
@@ -43,6 +47,31 @@ assert.equal(editorial.potential_same_practice_groups.length,14);
 assert.equal(editorial.related_variant_families.length,28);
 assert.ok(editorial.potential_same_practice_groups.every(x=>x.observation_ids.every(id=>wid.has(id))));
 assert.ok(editorial.related_variant_families.every(x=>x.observation_ids.every(id=>wid.has(id))));
+assert.equal(triaged.length,260,"All 260 owner-unknown observations receive a provisional route");
+assert.equal(new Set(triaged.map(x=>x.weiser_id)).size,260,"Never collapse two distinct book locators");
+const old260=obs.filter(x=>!x.linked_master_identity_ids.length&&
+  ["CANDIDATE","REGIONAL","ENRICH"].includes(x.triage)&&!x.editorial_card_ids.length);
+assert.deepEqual(new Set(triaged.map(x=>x.weiser_id)),new Set(old260.map(x=>x.id)),"Exactly cover the previously ownerless observations");
+assert.ok(triage.every(x=>x.schema==="AO_CUSTOMS_MASTER_260_OBSERVATION_DISPOSITIONS_V0"&&
+  x.status==="PROVISIONAL_OWNER_TRIAGE_NOT_FINAL_SOURCE_ADJUDICATION"));
+assert.ok(triaged.every(x=>x.publication_authorized===false&&x.editorial_review_complete===false));
+assert.ok(triaged.every(x=>x.proposed_owner_or_identity==null||
+  !x.proposed_owner_or_identity.startsWith("CANDIDATE-")||
+  ids.has(x.proposed_owner_or_identity)),"Provisional candidate identities must exist in the master");
+const bins={};for(const x of triaged)bins[x.provisional_disposition]=(bins[x.provisional_disposition]||0)+1;
+assert.deepEqual(bins,firstPass.summary.dispositions);
+assert.deepEqual(bins,{
+ REGIONAL_VARIANT_OR_RELATED_PRACTICE:39,
+ HISTORICAL_OR_CULTURAL_REFERENCE_ONLY:59,
+ SOURCE_OR_RITUAL_HOLD:23,
+ LINK_TO_KNOWN_IDENTITY_FOR_REVIEW:41,
+ OTHER_MODULE_OWNER_NO_NEW_CUSTOM:56,
+ POTENTIALLY_DISTINCT_CUSTOM_REQUIRES_SOURCE_GATE:42
+});
+assert.equal(firstPass.governance.new_canonical_ids_issued,0);
+assert.equal(firstPass.governance.app_publications_authorized,0);
+assert.equal(firstPass.governance.source_witnesses_added,0);
+assert.equal(queue.summary.remaining_without_provisional_disposition,0);
 assert.equal(queue.summary.identity_or_variant_review,286);
 assert.equal(queue.summary.previously_decided_other_owner_or_context_within_286,26);
 assert.equal(queue.summary.remaining_without_54_card_owner_decision,260);
