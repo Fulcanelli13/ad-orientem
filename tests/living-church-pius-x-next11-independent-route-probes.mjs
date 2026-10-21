@@ -65,6 +65,8 @@ for(const [name,engine] of Object.entries(engines)){
   else counts.negativeSafe++;
  }
  report.results[name]=counts;
+ for(const x of report.observations.filter(x=>x.engine===name&&x.observedRef&&x.observedRef!==x.sourceRef))
+  console.log('PIUS_NEXT11_WRONG_SOURCE_DETAIL '+JSON.stringify(x));
  console.log('PIUS_NEXT11_NAVIGATION '+JSON.stringify({engine:name,...counts}));
  assert.equal(counts.wrongSource,0,'incorrect documentary owner must be fixed');
  assert.equal(counts.negativeUnsafe,0,'misleading negative question mapped to new document');
