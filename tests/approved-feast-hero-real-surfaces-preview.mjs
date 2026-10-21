@@ -150,9 +150,12 @@ try{
       assert.ok(calActual.alt.includes(decision.artist)&&calActual.alt.includes(decision.title));
       assert.deepEqual(calActual.natural,actual.natural);
       assert.equal(calActual.fit,"contain");
-      await page.locator("#ao-calendar-modular-root .aoCalV2Hero").screenshot({
-        path:resolve(out,"calendar-hero-"+date+"-"+width+".png")
+      // Calendar can independently repaint while resolving next-week context.
+      // Screenshot the viewport instead of an ephemeral calendar DOM node.
+      await page.evaluate(()=>{
+        document.querySelector("#ao-calendar-modular-root")?.scrollTo({top:0,left:0,behavior:"instant"});
       });
+      await page.screenshot({path:resolve(out,"calendar-hero-"+date+"-"+width+".png")});
       evidence.push({date,width,artist:decision.artist,title:decision.title,
         actualPrincipal:prepared.observed,homeImageLoaded:true,calendarImageLoaded:true,
         homeImageNatural:actual.natural,calendarImageNatural:calActual.natural,
@@ -172,7 +175,7 @@ try{
 }
 const result={schema:"AO_TEN_FEAST_HERO_HOME_CALENDAR_SIMULATED_RELEASE_PREVIEW_V1",
   policy:"TEST_FIXTURE_ONLY; no rights/photo/user visual approvals granted",
-  expected:40,total:evidence.length,photos:evidence,
+  expectedSurfaceChecks:40,pairsCompleted:evidence.length,photos:evidence,
   actualPublishedImages:0};
 await writeFile(resolve(out,"home-calendar-preview-evidence.json"),
   JSON.stringify(result,null,2)+"\n");
