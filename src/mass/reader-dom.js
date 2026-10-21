@@ -3313,7 +3313,7 @@ export function createReaderDomAdapter({
     setChannel(root,"response",current.response);
     setChannel(root,"bell",visibleBell);
     setChannel(root,"priest-voice",current.priestVoice);
-    setChannel(root,"priest-position",current.priestPosition);
+    setChannel(root,"priest-position",showContext?current.priestPosition:null);
     setChannel(root,"schola-shared",current.scholaShared ? current.schola : null);
     setChannel(root,"schola",current.scholaVisible ? current.schola : null);
     syncScholaChrome();
