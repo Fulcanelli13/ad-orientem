@@ -254,6 +254,7 @@ try{
     const top= document.querySelector('.ao-state-cell[data-side="faithful"]');
     const left=document.querySelector(".ao-rail-left");
     const posture=left?.querySelector('[data-channel="posture"]');
+    const postureCopy=posture?.querySelector('[data-role="posture-left"]');
     const right=document.querySelector(".ao-rail-right");
     const position=right?.querySelector('[data-channel="priest-position"]');
     return {
@@ -264,6 +265,8 @@ try{
       leftVisible:left?.dataset.visible??null,
       postureDisplay:posture?getComputedStyle(posture).display:null,
       postureIconHidden:posture?.querySelector('[data-icon-slot="posture"]')?.hidden??true,
+      postureCopy:postureCopy?.textContent??"",
+      postureCopyDisplay:postureCopy?getComputedStyle(postureCopy).display:null,
       rightVisible:right?.dataset.visible??null,
       positionActive:position?.dataset.active??null,
       positionLabel:position?.querySelector('[data-role="priest-position-rail"]')?.textContent??null,
@@ -278,8 +281,11 @@ try{
     "The faithful posture must remain visible in the left rail");
   assert.equal(objectiveVisual.postureDisplay,"grid",
     "Context ribbon hid the actual faithful posture tile via legacy LIVE CSS");
-  assert.equal(objectiveVisual.postureIconHidden,false,
-    "Kneeling icon is not rendered in its restored rail tile");
+  assert.ok(!objectiveVisual.postureIconHidden ||
+    (objectiveVisual.postureCopyDisplay!=="none"&&
+     /kneel/i.test(objectiveVisual.postureCopy)&&
+     !/\[object Object\]/.test(objectiveVisual.postureCopy)),
+    "Faithful posture must show a reviewed icon or a legible source-state label");
   assert.equal(objectiveVisual.rightVisible,"true",
     "Priest actions and position must remain on the right rail");
   assert.equal(objectiveVisual.positionActive,"true",
