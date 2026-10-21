@@ -24,6 +24,22 @@ export function catenaQuestionHasSufficientEvidence(query){
  const count=(String(query).toLowerCase().match(new RegExp("(^|[^a-z])"+term+"([^a-z]|$)","g"))||[]).length;
  return count>=2;
 }
+/**
+ * Conservatively abstain when a question contains multiple substantial
+ * concepts absent from the original excerpts. A curated topic phrase is
+ * removed before the check because its source wording may be different.
+ * Never infer modern facts from a shared generic Gospel word.
+ */
+export function catenaQuestionHasUnsupportedContext(query,rows){
+ if(!Array.isArray(rows)||!rows.length)return false;
+ const topic=catenaRelatedTopic(query);
+ const residual=topic?String(query).replace(topic.query," "):String(query);
+ const words=catenaSearchTerms(residual).filter(t=>t.length>=5);
+ if(!words.length)return false;
+ const source=rows.map(r=>String(r?.text||"").toLowerCase()).join(" ");
+ const absent=words.filter(word=>!source.includes(word));
+ return absent.length>=3||(absent.length>=2&&absent.some(word=>word.length>=8));
+}
 function safeUrl(value){try{const u=new URL(value);return u.protocol==="https:"&&u.hostname==="www.ecatholic2000.com"?u.href:null}catch{return null}}
 export function indexCatenaMessages(pericopes){
  const result=[];
@@ -265,6 +281,10 @@ export function mountCatenaMessenger(host,pericopes,{language="en",fetcher=globa
   if(!query.trim())return;
   feed.append(element(d,"div","aoCatenaMUser",display));
   lastQuestion=query;wider.disabled=false;
+  if(catenaQuestionHasUnsupportedContext(query,rows)){
+   note("The question contains concepts not attested in this passage. No Father is being presented as answering it.");
+   return;
+  }
   const topic=catenaRelatedTopic(query);
   const related=topic?retrieveCatenaRelatedMessages(rows,query,{limit:4,excludeIds:seen}):[];
   const matched=related.length?related.map(hit=>Object.freeze({
