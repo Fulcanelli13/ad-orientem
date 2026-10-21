@@ -80,6 +80,13 @@ These are research-only links; the published home, Mass and Scripture navigation
 
 **Validation actually performed:** independent matching of all 19 records against the repository Atlas and the 54-chapter/37-movement research owners (6 exact miracle, 3 exact teaching, 2 composite, 8 unlinked, 18 contextual movements, 1 chronology hold); syntax checks passed for the modified JS modules and original manuscript prototype; 11 static reciprocal-link contract checks passed. **Not performed:** full Node project tests and a real headless/mobile browser round-trip. The repository could not be cloned into this execution container (network DNS unavailable). These remain explicit acceptance gates.
 
+
+### Atlas live-route gate
+
+The identity registry now separately evaluates each documented Atlas event against the existing **151-stop Bible Atlas runtime**. Only four matched events currently have a usable `biblical:event:...` destination: Cana (`cana-e1`), Nain (`nain-e1`), calming of the storm (`galilee-sea-e2`), and the man born blind at Siloam (`siloam-miracle-26`). The in-app reader presents an Atlas navigation action **only** for those four, using the existing Scripture→Find→Atlas reciprocal-return owner; all seven additional documented or composite Atlas relationships remain informative text, never dead navigation buttons. The eight entries without individual Atlas evidence remain unlinked.
+
+A simulated DOM exercise of the actual `mountScriptureLibrary` implementation passed **10 interaction assertions**, including the Prodigal Son deep link, source-coordinate context link, Tobit chapter paging, the absence of a Judith chronology link, Esther's edition lock, and exit on ordinary Bible navigation. This is **not** equivalent to running Playwright in a genuine browser. The Node test sources have been committed, and a real browser end-to-end check is still mandatory before merge or release.
+
 ## Main manuscript protection
 
 - The 54-chapter research proposal at data/research/historia-salutis-p3-provisional-reading-chapter-consolidation-20261021.v2.json is unchanged.
