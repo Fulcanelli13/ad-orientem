@@ -756,8 +756,9 @@ export function mountScriptureLibrary(root,{
     const base="great_biblical_narratives:7|miracles_of_christ:6|parables_and_teachings:6";
     const extended="great_biblical_narratives:7|miracles_of_christ:27|parables_and_teachings:23|biblical_prayers_and_canticles:3";
     const segmented="great_biblical_narratives:11|miracles_of_christ:27|parables_and_teachings:24|biblical_prayers_and_canticles:3|prophets_and_their_lives:1|life_of_christ:1";
+    const all217="great_biblical_narratives:86|prophets_and_their_lives:13|life_of_christ:26|miracles_of_christ:27|parables_and_teachings:24|encounters_with_christ:8|apostolic_church:17|visions_and_revelations:13|biblical_prayers_and_canticles:3";
     const all=groups.flatMap(g=>g.episodes||[]);
-    if((layout!==base&&layout!==extended&&layout!==segmented) ||
+    if((layout!==base&&layout!==extended&&layout!==segmented&&layout!==all217) ||
        new Set(all.map(x=>x.id)).size!==all.length ||
        all.some(x=>!x.plan?.chapters?.length||!/^hist-omitted-\d{3}$/.test(x.id)))
       throw new Error("Invalid thematic research catalogue");
