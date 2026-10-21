@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
-import {indexCatenaMessages,retrieveCatenaQuestionMatches,catenaHasExactSourcePhrase} from "../src/scripture/catena-messenger.js";
+import {indexCatenaMessages,retrieveCatenaQuestionMatches,catenaHasExactSourcePhrase,catenaLiteralMatchEvidence} from "../src/scripture/catena-messenger.js";
 import {catenaRelatedTopic,retrieveCatenaRelatedMessages} from "../src/scripture/catena-related-vocabulary.js";
 
 const fixture=JSON.parse(readFileSync(
@@ -31,6 +31,23 @@ assert.equal(catenaHasExactSourcePhrase(spirit,
 assert.ok(retrieve(spirit,"Is the Holy Spirit excluded when Father and Son dwell in the soul?")
   .some(r=>r.ordinal===5&&r.father==="Augustine"),
   "An exact phrase in a canonical Father's extract must outrank generic topical matches");
+const posture=rowsFor("catena.luke.18.9");
+const postureQuestion="How did the Pharisee's posture show pride?";
+const postureResults=retrieve(posture,postureQuestion);
+assert.equal(postureResults[0]?.ordinal,4,
+ "A distinctive physical-action term should surface Theophylact's posture interpretation first");
+assert.equal(postureResults[0]?.father,"Theophylact");
+assert.equal(postureResults[0]?.sourceMatchEvidence?.kind,"shared-vocabulary",
+ "A source-term match is not an independently certified direct theological answer");
+const evidence=catenaLiteralMatchEvidence(
+ posture.find(row=>row.ordinal===4),postureQuestion);
+assert.equal(evidence?.kind,"shared-vocabulary");
+assert.ok(evidence.sourceTerms.includes("posture"),"Posture is attested literally in the source");
+const spiritMatch=retrieve(spirit,"Is the Holy Spirit excluded when Father and Son dwell in the soul?");
+const exact=spiritMatch.find(row=>row.ordinal===5);
+assert.equal(exact?.sourceMatchEvidence?.kind,"exact-source-wording");
+assert.ok(exact.text.includes(exact.sourceMatchEvidence.sourcePhrase),
+ "Evidence must be copied exactly from the original source excerpt");
 const ids=new Set(),byGospel=new Map();
 const misses=[];
 let topFour=0;
