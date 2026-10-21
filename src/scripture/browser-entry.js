@@ -5,6 +5,7 @@ import {loadScriptureWitness,hasScriptureWitness} from "./witness-loader.js";
 import { parseScriptureContext } from "./context.js";
 import {scriptureSegmentContext} from "./segments.js";
 import {buildThematicPilots} from "./historia-thematic-collections.js";
+import {expandedThematicResearchCollections} from "./historia-thematic-expansion.js";
 export const SCRIPTURE_BROWSER_VERSION="ao-scripture-library-v1";
 export function installScriptureBrowserOwner(win=globalThis){
  if(win.AO_SCRIPTURE_APP_V1)return win.AO_SCRIPTURE_APP_V1;
@@ -15,6 +16,7 @@ export function installScriptureBrowserOwner(win=globalThis){
  const inflight=new Set();
  // Only available on an explicitly opted-in research URL, not public app routes.
  const thematicEnabled=new URLSearchParams(win.location?.search||"").get("ao_historia_collections")==="1";
+ const thematicBatch2=thematicEnabled && new URLSearchParams(win.location?.search||"").get("ao_historia_batch2")==="1";
  let thematicCache=null,thematicInflight=null,thematicLinks=null;
  async function loadThematic(){
   if(!thematicEnabled)return null;
@@ -36,7 +38,10 @@ export function installScriptureBrowserOwner(win=globalThis){
       new Set(mapping.entries.map(e=>e.episodeId)).size!==19)
      throw new Error("Mismatched thematic episode identity evidence");
    thematicLinks=mapping;
-   return groups;
+   if(!thematicBatch2)return groups;
+   const preflight=await win.fetch("/data/research/historia-salutis-thematic-collections-expansion-preflight-20261021.v1.json",{cache:"no-store"});
+   if(!preflight?.ok)throw new Error("Historia second-batch preflight unavailable");
+   return expandedThematicResearchCollections(await preflight.json(),groups);
   })();
   try{return thematicCache=await thematicInflight;}
   finally{thematicInflight=null;}
