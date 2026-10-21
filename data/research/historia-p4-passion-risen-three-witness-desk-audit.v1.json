@@ -1,0 +1,975 @@
+{
+  "schema": "ao.historia.p4.passion-risen-three-witness-desk-audit.v1",
+  "date": "2026-10-21",
+  "status": "RESEARCH_ONLY_23_SCENES_NO_PUBLICATION_APPROVAL",
+  "provenance": {
+    "scene": {
+      "path": "data/explore/biblical-cinematic-studies-review.v1.json",
+      "branch": "feature/biblical-atlas-current-main-convergence-20261012",
+      "blobSha": "d937288862abab192e1d584f0e663a3eebb46611"
+    },
+    "witnesses": [
+      {
+        "path": "data/scripture/witness/dr-challoner/Matthew.json",
+        "book": "Matthew",
+        "edition": "dr-challoner",
+        "sourceStatus": "UNCOLLATED_SOURCE_WITNESS",
+        "sha": "004832d16a49ceca579d674adf94dac9d3902234"
+      },
+      {
+        "path": "data/scripture/witness/cpdv-2009/Matthew.json",
+        "book": "Matthew",
+        "edition": "cpdv-2009",
+        "sourceStatus": "UNCOLLATED_SOURCE_WITNESS",
+        "sha": "d22f2d5f715731aa3e8fb8c05470f7a01489205e"
+      },
+      {
+        "path": "data/scripture/witness/crampon-1923/Matthew.json",
+        "book": "Matthew",
+        "edition": "crampon-1923",
+        "sourceStatus": "UNCOLLATED_SOURCE_WITNESS",
+        "sha": "a73aecf7e76be1657b578390c23007b0cfa4981c"
+      },
+      {
+        "path": "data/scripture/witness/dr-challoner/Mark.json",
+        "book": "Mark",
+        "edition": "dr-challoner",
+        "sourceStatus": "UNCOLLATED_SOURCE_WITNESS",
+        "sha": "e6e381cd25e5ab238a28602d8395da39adcce80d"
+      },
+      {
+        "path": "data/scripture/witness/cpdv-2009/Mark.json",
+        "book": "Mark",
+        "edition": "cpdv-2009",
+        "sourceStatus": "UNCOLLATED_SOURCE_WITNESS",
+        "sha": "7c81eedf9ddbe1888a3bd9901c1169d4bc0e6958"
+      },
+      {
+        "path": "data/scripture/witness/crampon-1923/Mark.json",
+        "book": "Mark",
+        "edition": "crampon-1923",
+        "sourceStatus": "UNCOLLATED_SOURCE_WITNESS",
+        "sha": "93c05664335f1d851ef0288fcd12a4015d380742"
+      },
+      {
+        "path": "data/scripture/witness/dr-challoner/Luke.json",
+        "book": "Luke",
+        "edition": "dr-challoner",
+        "sourceStatus": "UNCOLLATED_SOURCE_WITNESS",
+        "sha": "96b5a5d845c58359094814dc9317557fe4853bf0"
+      },
+      {
+        "path": "data/scripture/witness/cpdv-2009/Luke.json",
+        "book": "Luke",
+        "edition": "cpdv-2009",
+        "sourceStatus": "UNCOLLATED_SOURCE_WITNESS",
+        "sha": "c12aa39604852cd65e90ebbc00e0db989b2f46a8"
+      },
+      {
+        "path": "data/scripture/witness/crampon-1923/Luke.json",
+        "book": "Luke",
+        "edition": "crampon-1923",
+        "sourceStatus": "UNCOLLATED_SOURCE_WITNESS",
+        "sha": "4c8e3535c2200e3c4173cec16a198b8618d0fd4e"
+      },
+      {
+        "path": "data/scripture/witness/dr-challoner/John.json",
+        "book": "John",
+        "edition": "dr-challoner",
+        "sourceStatus": "UNCOLLATED_SOURCE_WITNESS",
+        "sha": "a146e78ec89ad15d3df29a49462c8373e9dee3f8"
+      },
+      {
+        "path": "data/scripture/witness/cpdv-2009/John.json",
+        "book": "John",
+        "edition": "cpdv-2009",
+        "sourceStatus": "UNCOLLATED_SOURCE_WITNESS",
+        "sha": "5c0f7929ec052ae1aa92c583219087bb25c32655"
+      },
+      {
+        "path": "data/scripture/witness/crampon-1923/John.json",
+        "book": "John",
+        "edition": "crampon-1923",
+        "sourceStatus": "UNCOLLATED_SOURCE_WITNESS",
+        "sha": "0f49d89ad2fb1754ef966305caf70f2a3b2b7790"
+      },
+      {
+        "path": "data/scripture/witness/dr-challoner/Acts.json",
+        "book": "Acts",
+        "edition": "dr-challoner",
+        "sourceStatus": "UNCOLLATED_SOURCE_WITNESS",
+        "sha": "790769859646ecd4ca6b45f6b61b9ecaec1da826"
+      },
+      {
+        "path": "data/scripture/witness/cpdv-2009/Acts.json",
+        "book": "Acts",
+        "edition": "cpdv-2009",
+        "sourceStatus": "UNCOLLATED_SOURCE_WITNESS",
+        "sha": "5eaaa125d14538d00305e49624196b55033da41d"
+      },
+      {
+        "path": "data/scripture/witness/crampon-1923/Acts.json",
+        "book": "Acts",
+        "edition": "crampon-1923",
+        "sourceStatus": "UNCOLLATED_SOURCE_WITNESS",
+        "sha": "25fde9eaaff3412445430f4ae1fa87b0c6aae244"
+      }
+    ]
+  },
+  "policy": [
+    "Passage presence in three uncollated Catholic witnesses does not certify printed editions or translation wording parity.",
+    "Passion and Resurrection Gospel accounts remain author-identified and distinct; scene overlaps do not create multiple canonical events.",
+    "Traditional sites including Holy Sepulchre, Gethsemane garden, Cenacle and Emmaus are not exact archaeological event-point approvals.",
+    "No historical street-by-street Calvary route, exact apparition room or burial point is invented.",
+    "No source status, canonical Atlas key, Bible verse or published app state is altered."
+  ],
+  "counts": {
+    "firstIndex": 115,
+    "lastIndex": 137,
+    "total": 23,
+    "passion": 16,
+    "risen": 7,
+    "spanPresenceAcrossThree": 23,
+    "coordinatesCertified": 0,
+    "publicationApproved": 0
+  },
+  "guards": {
+    "john20Overlap": {
+      "broadScene": "biblical:scene:christ:131",
+      "embeddedScene": "biblical:scene:christ:132",
+      "relationship": "SELECTED_PASSAGE_OVERLAP_NOT_TWO_RESURRECTIONS"
+    },
+    "cenacle": {
+      "sceneIndices": [
+        119,
+        120,
+        121,
+        122,
+        133,
+        134
+      ],
+      "position": "TRADITIONAL_ROOM_CONTEXT_ONLY"
+    },
+    "gospelDistinct": {
+      "john2Scene": "biblical:scene:christ:074",
+      "mark11Scene": "biblical:scene:christ:117",
+      "relationship": "REVIEW_DONOT_MERGE_OR_SPLIT_BY_ASSUMPTION"
+    }
+  },
+  "reviewedRows": [
+    {
+      "sceneKey": "biblical:scene:christ:115",
+      "originalIndex": 115,
+      "chapter": "PASSION",
+      "title": "The entry into Jerusalem",
+      "scriptureReference": "Matthew 21:1–11",
+      "canonicalGospelOrActsSource": "Matthew",
+      "existingLocationClaim": "Bethphage / Mount of Olives · tradition",
+      "existingSceneAtlasMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "originalCandidateAtlasKeys": [
+        {
+          "eventKey": "biblical:event:bethphage-e1",
+          "sourceStatus": "PASSAGE_OVERLAP_REVIEW_ONLY"
+        }
+      ],
+      "witnessSpan": {
+        "douayChallonerEntries": 11,
+        "cpdv2009Entries": 11,
+        "crampon1923Entries": 11,
+        "allRequestedNumberedVersesPresent": true,
+        "uncollatedResearchWitnesses": true
+      },
+      "sourceActorHints": [
+        "Jesus",
+        "disciples",
+        "crowd"
+      ],
+      "locationEvidenceClass": "BETHPHAGE_AND_OLIVES_ENTRANCE_REGIONAL",
+      "editorialFinding": "Matthew 21:1 names Bethphage near the Mount of Olives and describes the entry to Jerusalem; an exact donkey route, gate, or pin for the moment of entry is not established.",
+      "geographicAction": "NO_EXACT_ENTRY_ROUTE",
+      "personIdentitiesCertified": false,
+      "gospelParallelIdentityCertified": false,
+      "exactModernCoordinatesCertified": false,
+      "readAloudApproved": false,
+      "publicationApproved": false,
+      "reviewStage": "PASSAGE_COVERAGE_GEO_AND_EVENT_BOUNDARY_TRIAGE"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:116",
+      "originalIndex": 116,
+      "chapter": "PASSION",
+      "title": "Jesus weeps over Jerusalem",
+      "scriptureReference": "Luke 19:41–44",
+      "canonicalGospelOrActsSource": "Luke",
+      "existingLocationClaim": "Mount of Olives · traditional region",
+      "existingSceneAtlasMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "originalCandidateAtlasKeys": [
+        {
+          "eventKey": "biblical:event:olives-e1",
+          "sourceStatus": "PASSAGE_OVERLAP_REVIEW_ONLY"
+        }
+      ],
+      "witnessSpan": {
+        "douayChallonerEntries": 4,
+        "cpdv2009Entries": 4,
+        "crampon1923Entries": 4,
+        "allRequestedNumberedVersesPresent": true,
+        "uncollatedResearchWitnesses": true
+      },
+      "sourceActorHints": [
+        "Jesus",
+        "Jerusalem"
+      ],
+      "locationEvidenceClass": "WEEPING_FROM_JERUSALEM_APPROACH_CONTEXT",
+      "editorialFinding": "Luke 19:41-44 depicts weeping on approach to Jerusalem, but does not name the particular later chapel or footprint at which it occurred.",
+      "geographicAction": "JERUSALEM_APPROACH_ONLY_NO_CHAPEL_PIN",
+      "personIdentitiesCertified": false,
+      "gospelParallelIdentityCertified": false,
+      "exactModernCoordinatesCertified": false,
+      "readAloudApproved": false,
+      "publicationApproved": false,
+      "reviewStage": "PASSAGE_COVERAGE_GEO_AND_EVENT_BOUNDARY_TRIAGE"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:117",
+      "originalIndex": 117,
+      "chapter": "PASSION",
+      "title": "The Temple cleansed",
+      "scriptureReference": "Mark 11:15–19",
+      "canonicalGospelOrActsSource": "Mark",
+      "existingLocationClaim": "Jerusalem · Temple Mount context",
+      "existingSceneAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasKeys": [],
+      "witnessSpan": {
+        "douayChallonerEntries": 5,
+        "cpdv2009Entries": 5,
+        "crampon1923Entries": 5,
+        "allRequestedNumberedVersesPresent": true,
+        "uncollatedResearchWitnesses": true
+      },
+      "sourceActorHints": [
+        "Jesus",
+        "sellers",
+        "buyers",
+        "scribes",
+        "chief priests"
+      ],
+      "locationEvidenceClass": "TEMPLE_CLEANSING_SYNOPTIC_DISTINCT",
+      "editorialFinding": "Mark 11:15-19 names Jerusalem Temple but not a precise court; keep the Mark narrative independently from John 2 (scene 074), without asserting same event or two events by guesswork.",
+      "geographicAction": "JERUSALEM_TEMPLE_ONLY_PARALLEL_HOLD",
+      "personIdentitiesCertified": false,
+      "gospelParallelIdentityCertified": false,
+      "exactModernCoordinatesCertified": false,
+      "readAloudApproved": false,
+      "publicationApproved": false,
+      "reviewStage": "PASSAGE_COVERAGE_GEO_AND_EVENT_BOUNDARY_TRIAGE"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:118",
+      "originalIndex": 118,
+      "chapter": "PASSION",
+      "title": "The discourse on the end",
+      "scriptureReference": "Mark 13:1–37",
+      "canonicalGospelOrActsSource": "Mark",
+      "existingLocationClaim": "Mount of Olives · traditional region",
+      "existingSceneAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasKeys": [],
+      "witnessSpan": {
+        "douayChallonerEntries": 37,
+        "cpdv2009Entries": 37,
+        "crampon1923Entries": 37,
+        "allRequestedNumberedVersesPresent": true,
+        "uncollatedResearchWitnesses": true
+      },
+      "sourceActorHints": [
+        "Jesus",
+        "Peter",
+        "James",
+        "John",
+        "Andrew"
+      ],
+      "locationEvidenceClass": "OLIVET_DISCOURSE_MOUNTAIN_NOT_SUMMIT_PIN",
+      "editorialFinding": "Mark 13:3 locates Jesus opposite the Temple on the Mount of Olives; no named surviving seat or exact ancient vantage point is certified.",
+      "geographicAction": "MOUNT_OF_OLIVES_REGION_ONLY",
+      "personIdentitiesCertified": false,
+      "gospelParallelIdentityCertified": false,
+      "exactModernCoordinatesCertified": false,
+      "readAloudApproved": false,
+      "publicationApproved": false,
+      "reviewStage": "PASSAGE_COVERAGE_GEO_AND_EVENT_BOUNDARY_TRIAGE"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:119",
+      "originalIndex": 119,
+      "chapter": "PASSION",
+      "title": "The Last Supper",
+      "scriptureReference": "Luke 22:14–20",
+      "canonicalGospelOrActsSource": "Luke",
+      "existingLocationClaim": "Jerusalem · city context",
+      "existingSceneAtlasMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "originalCandidateAtlasKeys": [
+        {
+          "eventKey": "biblical:event:cenacle-e1",
+          "sourceStatus": "PASSAGE_OVERLAP_REVIEW_ONLY"
+        }
+      ],
+      "witnessSpan": {
+        "douayChallonerEntries": 7,
+        "cpdv2009Entries": 7,
+        "crampon1923Entries": 7,
+        "allRequestedNumberedVersesPresent": true,
+        "uncollatedResearchWitnesses": true
+      },
+      "sourceActorHints": [
+        "Jesus",
+        "Twelve"
+      ],
+      "locationEvidenceClass": "LAST_SUPPER_UPPER_ROOM_CITY_CONTEXT",
+      "editorialFinding": "Luke 22:14-20 records the Supper and institution; the location is inherited from the prior prepared room setting and no current Cenacle room is proved.",
+      "geographicAction": "JERUSALEM_CITY_CONTEXT_ONLY",
+      "personIdentitiesCertified": false,
+      "gospelParallelIdentityCertified": false,
+      "exactModernCoordinatesCertified": false,
+      "readAloudApproved": false,
+      "publicationApproved": false,
+      "reviewStage": "PASSAGE_COVERAGE_GEO_AND_EVENT_BOUNDARY_TRIAGE"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:120",
+      "originalIndex": 120,
+      "chapter": "PASSION",
+      "title": "Washing of the feet",
+      "scriptureReference": "John 13:1–17",
+      "canonicalGospelOrActsSource": "John",
+      "existingLocationClaim": "Upper Room / Cenacle · traditional site",
+      "existingSceneAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasKeys": [
+        {
+          "eventKey": "biblical:event:cenacle-e2",
+          "sourceStatus": "EXACT_REFERENCE"
+        }
+      ],
+      "witnessSpan": {
+        "douayChallonerEntries": 17,
+        "cpdv2009Entries": 17,
+        "crampon1923Entries": 17,
+        "allRequestedNumberedVersesPresent": true,
+        "uncollatedResearchWitnesses": true
+      },
+      "sourceActorHints": [
+        "Jesus",
+        "Peter",
+        "disciples"
+      ],
+      "locationEvidenceClass": "FOOTWASHING_ROOM_NOT_AUTHENTICATED",
+      "editorialFinding": "John 13:1-17 records footwashing at supper but does not identify the currently visited Cenacle as a demonstrably identical room.",
+      "geographicAction": "NO_CERTIFIED_CENACLE_INTERIOR",
+      "personIdentitiesCertified": false,
+      "gospelParallelIdentityCertified": false,
+      "exactModernCoordinatesCertified": false,
+      "readAloudApproved": false,
+      "publicationApproved": false,
+      "reviewStage": "PASSAGE_COVERAGE_GEO_AND_EVENT_BOUNDARY_TRIAGE"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:121",
+      "originalIndex": 121,
+      "chapter": "PASSION",
+      "title": "The new commandment",
+      "scriptureReference": "John 13:31–35",
+      "canonicalGospelOrActsSource": "John",
+      "existingLocationClaim": "Upper Room / Cenacle · traditional site",
+      "existingSceneAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasKeys": [],
+      "witnessSpan": {
+        "douayChallonerEntries": 5,
+        "cpdv2009Entries": 5,
+        "crampon1923Entries": 5,
+        "allRequestedNumberedVersesPresent": true,
+        "uncollatedResearchWitnesses": true
+      },
+      "sourceActorHints": [
+        "Jesus",
+        "disciples"
+      ],
+      "locationEvidenceClass": "NEW_COMMANDMENT_NOT_SEPARATE_CENACLE_GEOPIN",
+      "editorialFinding": "John 13:31-35 continues Christ's discourse; there is no distinct modern room reference or independent spatial event to geocode.",
+      "geographicAction": "DISCOURSE_CONTINUATION_NO_PIN",
+      "personIdentitiesCertified": false,
+      "gospelParallelIdentityCertified": false,
+      "exactModernCoordinatesCertified": false,
+      "readAloudApproved": false,
+      "publicationApproved": false,
+      "reviewStage": "PASSAGE_COVERAGE_GEO_AND_EVENT_BOUNDARY_TRIAGE"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:122",
+      "originalIndex": 122,
+      "chapter": "PASSION",
+      "title": "The prayer for unity",
+      "scriptureReference": "John 17:1–26",
+      "canonicalGospelOrActsSource": "John",
+      "existingLocationClaim": "Upper Room / Cenacle · traditional site",
+      "existingSceneAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasKeys": [],
+      "witnessSpan": {
+        "douayChallonerEntries": 26,
+        "cpdv2009Entries": 26,
+        "crampon1923Entries": 26,
+        "allRequestedNumberedVersesPresent": true,
+        "uncollatedResearchWitnesses": true
+      },
+      "sourceActorHints": [
+        "Jesus",
+        "disciples"
+      ],
+      "locationEvidenceClass": "HIGH_PRIESTLY_PRAYER_NO_EXACT_ROOM",
+      "editorialFinding": "John 17:1-26 is the prayer of Christ, continuing the Johannine farewell discourse; the selected chapter does not identify an address or verify the modern Upper Room.",
+      "geographicAction": "NO_JOHN_17_ROOM_PIN",
+      "personIdentitiesCertified": false,
+      "gospelParallelIdentityCertified": false,
+      "exactModernCoordinatesCertified": false,
+      "readAloudApproved": false,
+      "publicationApproved": false,
+      "reviewStage": "PASSAGE_COVERAGE_GEO_AND_EVENT_BOUNDARY_TRIAGE"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:123",
+      "originalIndex": 123,
+      "chapter": "PASSION",
+      "title": "Gethsemane",
+      "scriptureReference": "Matthew 26:36–46",
+      "canonicalGospelOrActsSource": "Matthew",
+      "existingLocationClaim": "Gethsemane · traditional garden",
+      "existingSceneAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasKeys": [
+        {
+          "eventKey": "biblical:event:gethsemane-e1",
+          "sourceStatus": "EXACT_REFERENCE"
+        }
+      ],
+      "witnessSpan": {
+        "douayChallonerEntries": 11,
+        "cpdv2009Entries": 11,
+        "crampon1923Entries": 11,
+        "allRequestedNumberedVersesPresent": true,
+        "uncollatedResearchWitnesses": true
+      },
+      "sourceActorHints": [
+        "Jesus",
+        "Peter",
+        "James",
+        "John"
+      ],
+      "locationEvidenceClass": "GETHSEMANE_NAMED_GARDEN_TRADITIONAL_SITE",
+      "editorialFinding": "Matthew 26:36 names the place Gethsemane, but the particular surviving garden trees or prayer stone are not geographically certified by the Gospel passage.",
+      "geographicAction": "GETHSEMANE_NAMED_TRADITIONAL_SITE_ONLY",
+      "personIdentitiesCertified": false,
+      "gospelParallelIdentityCertified": false,
+      "exactModernCoordinatesCertified": false,
+      "readAloudApproved": false,
+      "publicationApproved": false,
+      "reviewStage": "PASSAGE_COVERAGE_GEO_AND_EVENT_BOUNDARY_TRIAGE"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:124",
+      "originalIndex": 124,
+      "chapter": "PASSION",
+      "title": "The arrest in the garden",
+      "scriptureReference": "Matthew 26:47–56",
+      "canonicalGospelOrActsSource": "Matthew",
+      "existingLocationClaim": "Gethsemane · traditional garden",
+      "existingSceneAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasKeys": [
+        {
+          "eventKey": "biblical:event:gethsemane-e2",
+          "sourceStatus": "EXACT_REFERENCE"
+        }
+      ],
+      "witnessSpan": {
+        "douayChallonerEntries": 10,
+        "cpdv2009Entries": 10,
+        "crampon1923Entries": 10,
+        "allRequestedNumberedVersesPresent": true,
+        "uncollatedResearchWitnesses": true
+      },
+      "sourceActorHints": [
+        "Jesus",
+        "Judas",
+        "crowd",
+        "disciples"
+      ],
+      "locationEvidenceClass": "ARREST_SHARED_NARRATIVE_NOT_SECOND_SITE",
+      "editorialFinding": "Matthew 26:47-56 follows the Gethsemane prayer at the same narrative setting; no separate modern capture spot may be created as fact.",
+      "geographicAction": "GETHSEMANE_CONTEXT_ONLY",
+      "personIdentitiesCertified": false,
+      "gospelParallelIdentityCertified": false,
+      "exactModernCoordinatesCertified": false,
+      "readAloudApproved": false,
+      "publicationApproved": false,
+      "reviewStage": "PASSAGE_COVERAGE_GEO_AND_EVENT_BOUNDARY_TRIAGE"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:125",
+      "originalIndex": 125,
+      "chapter": "PASSION",
+      "title": "Peter’s three denials",
+      "scriptureReference": "Luke 22:54–62",
+      "canonicalGospelOrActsSource": "Luke",
+      "existingLocationClaim": "Jerusalem · ancient city context",
+      "existingSceneAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasKeys": [],
+      "witnessSpan": {
+        "douayChallonerEntries": 9,
+        "cpdv2009Entries": 9,
+        "crampon1923Entries": 9,
+        "allRequestedNumberedVersesPresent": true,
+        "uncollatedResearchWitnesses": true
+      },
+      "sourceActorHints": [
+        "Peter",
+        "Jesus",
+        "servants"
+      ],
+      "locationEvidenceClass": "PETERS_DENIAL_COURTYARD_UNIDENTIFIED",
+      "editorialFinding": "Luke 22:54-62 names the high priest's house/courtyard context, not a historically certified surviving courtyard building or location.",
+      "geographicAction": "JERUSALEM_CONTEXT_ONLY_NO_COURTYARD_PIN",
+      "personIdentitiesCertified": false,
+      "gospelParallelIdentityCertified": false,
+      "exactModernCoordinatesCertified": false,
+      "readAloudApproved": false,
+      "publicationApproved": false,
+      "reviewStage": "PASSAGE_COVERAGE_GEO_AND_EVENT_BOUNDARY_TRIAGE"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:126",
+      "originalIndex": 126,
+      "chapter": "PASSION",
+      "title": "Christ before Pilate",
+      "scriptureReference": "John 18:28–40",
+      "canonicalGospelOrActsSource": "John",
+      "existingLocationClaim": "Jerusalem · ancient city context",
+      "existingSceneAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasKeys": [],
+      "witnessSpan": {
+        "douayChallonerEntries": 13,
+        "cpdv2009Entries": 13,
+        "crampon1923Entries": 13,
+        "allRequestedNumberedVersesPresent": true,
+        "uncollatedResearchWitnesses": true
+      },
+      "sourceActorHints": [
+        "Jesus",
+        "Pilate",
+        "accusers"
+      ],
+      "locationEvidenceClass": "PILATE_PRAETORIUM_LOCATION_DISPUTED",
+      "editorialFinding": "John 18:28-40 names the praetorium, but modern candidate structures and precise positions are disputed. Do not treat a station of the cross as archaeological location proof.",
+      "geographicAction": "JERUSALEM_CITY_ONLY_PRAETORIUM_HOLD",
+      "personIdentitiesCertified": false,
+      "gospelParallelIdentityCertified": false,
+      "exactModernCoordinatesCertified": false,
+      "readAloudApproved": false,
+      "publicationApproved": false,
+      "reviewStage": "PASSAGE_COVERAGE_GEO_AND_EVENT_BOUNDARY_TRIAGE"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:127",
+      "originalIndex": 127,
+      "chapter": "PASSION",
+      "title": "The scourging and thorns",
+      "scriptureReference": "John 19:1–16",
+      "canonicalGospelOrActsSource": "John",
+      "existingLocationClaim": "Jerusalem · ancient city context",
+      "existingSceneAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasKeys": [
+        {
+          "eventKey": "biblical:event:jerusalem-trial-e3",
+          "sourceStatus": "EXACT_REFERENCE"
+        }
+      ],
+      "witnessSpan": {
+        "douayChallonerEntries": 16,
+        "cpdv2009Entries": 16,
+        "crampon1923Entries": 16,
+        "allRequestedNumberedVersesPresent": true,
+        "uncollatedResearchWitnesses": true
+      },
+      "sourceActorHints": [
+        "Jesus",
+        "Pilate",
+        "soldiers"
+      ],
+      "locationEvidenceClass": "SCOURGING_AND_THORNS_NOT_PRECISE_SITE",
+      "editorialFinding": "John 19:1-16 narrates scourging/crowning and sentencing. The location cannot be equated with one authenticated contemporary chapel or pavement without external archaeological review.",
+      "geographicAction": "JERUSALEM_TRIAL_REGION_ONLY",
+      "personIdentitiesCertified": false,
+      "gospelParallelIdentityCertified": false,
+      "exactModernCoordinatesCertified": false,
+      "readAloudApproved": false,
+      "publicationApproved": false,
+      "reviewStage": "PASSAGE_COVERAGE_GEO_AND_EVENT_BOUNDARY_TRIAGE"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:128",
+      "originalIndex": 128,
+      "chapter": "PASSION",
+      "title": "The way to Calvary",
+      "scriptureReference": "Luke 23:26–32",
+      "canonicalGospelOrActsSource": "Luke",
+      "existingLocationClaim": "Golgotha / Holy Sepulchre tradition",
+      "existingSceneAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasKeys": [],
+      "witnessSpan": {
+        "douayChallonerEntries": 7,
+        "cpdv2009Entries": 7,
+        "crampon1923Entries": 7,
+        "allRequestedNumberedVersesPresent": true,
+        "uncollatedResearchWitnesses": true
+      },
+      "sourceActorHints": [
+        "Jesus",
+        "Simon of Cyrene",
+        "women of Jerusalem"
+      ],
+      "locationEvidenceClass": "VIA_DOLOROSA_NOT_CERTIFIED_ROUTE",
+      "editorialFinding": "Luke 23:26-32 describes Simon carrying the cross and the lamenting women, not a verified street-by-street modern Via Dolorosa itinerary.",
+      "geographicAction": "NO_ANCIENT_STREET_TRACE",
+      "personIdentitiesCertified": false,
+      "gospelParallelIdentityCertified": false,
+      "exactModernCoordinatesCertified": false,
+      "readAloudApproved": false,
+      "publicationApproved": false,
+      "reviewStage": "PASSAGE_COVERAGE_GEO_AND_EVENT_BOUNDARY_TRIAGE"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:129",
+      "originalIndex": 129,
+      "chapter": "PASSION",
+      "title": "The Crucifixion",
+      "scriptureReference": "John 19:17–30",
+      "canonicalGospelOrActsSource": "John",
+      "existingLocationClaim": "Golgotha · Holy Sepulchre tradition",
+      "existingSceneAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasKeys": [
+        {
+          "eventKey": "biblical:event:golgotha-e2",
+          "sourceStatus": "EXACT_REFERENCE"
+        }
+      ],
+      "witnessSpan": {
+        "douayChallonerEntries": 14,
+        "cpdv2009Entries": 14,
+        "crampon1923Entries": 14,
+        "allRequestedNumberedVersesPresent": true,
+        "uncollatedResearchWitnesses": true
+      },
+      "sourceActorHints": [
+        "Jesus",
+        "Mary",
+        "beloved disciple",
+        "soldiers"
+      ],
+      "locationEvidenceClass": "GOLGOTHA_NAMED_HOLY_SEPULCHRE_TRADITION",
+      "editorialFinding": "John 19:17 names Golgotha and narrates the crucifixion. Holy Sepulchre is a strong traditional site identification, but no modern GIS coordinate is certified by this passage.",
+      "geographicAction": "TRADITIONAL_GOLGOTHA_SITE_ONLY",
+      "personIdentitiesCertified": false,
+      "gospelParallelIdentityCertified": false,
+      "exactModernCoordinatesCertified": false,
+      "readAloudApproved": false,
+      "publicationApproved": false,
+      "reviewStage": "PASSAGE_COVERAGE_GEO_AND_EVENT_BOUNDARY_TRIAGE"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:130",
+      "originalIndex": 130,
+      "chapter": "PASSION",
+      "title": "The burial of Christ",
+      "scriptureReference": "John 19:38–42",
+      "canonicalGospelOrActsSource": "John",
+      "existingLocationClaim": "Golgotha / Holy Sepulchre tradition",
+      "existingSceneAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasKeys": [
+        {
+          "eventKey": "biblical:event:christ-tomb-e1",
+          "sourceStatus": "EXACT_REFERENCE"
+        }
+      ],
+      "witnessSpan": {
+        "douayChallonerEntries": 5,
+        "cpdv2009Entries": 5,
+        "crampon1923Entries": 5,
+        "allRequestedNumberedVersesPresent": true,
+        "uncollatedResearchWitnesses": true
+      },
+      "sourceActorHints": [
+        "Jesus",
+        "Joseph of Arimathea",
+        "Nicodemus"
+      ],
+      "locationEvidenceClass": "BURIAL_GARDEN_TOMB_NOT_EXACT_PIN",
+      "editorialFinding": "John 19:38-42 records a nearby garden and new tomb; exact coordinates of the particular tomb from the textual witness alone remain unresolved.",
+      "geographicAction": "BURIAL_AREA_TRADITION_NO_EXACT_TOMB",
+      "personIdentitiesCertified": false,
+      "gospelParallelIdentityCertified": false,
+      "exactModernCoordinatesCertified": false,
+      "readAloudApproved": false,
+      "publicationApproved": false,
+      "reviewStage": "PASSAGE_COVERAGE_GEO_AND_EVENT_BOUNDARY_TRIAGE"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:131",
+      "originalIndex": 131,
+      "chapter": "RISEN",
+      "title": "The empty tomb and Mary Magdalene",
+      "scriptureReference": "John 20:1–18",
+      "canonicalGospelOrActsSource": "John",
+      "existingLocationClaim": "Holy Sepulchre · traditional tomb",
+      "existingSceneAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasKeys": [
+        {
+          "eventKey": "biblical:event:christ-tomb-e2",
+          "sourceStatus": "EXACT_REFERENCE"
+        }
+      ],
+      "witnessSpan": {
+        "douayChallonerEntries": 18,
+        "cpdv2009Entries": 18,
+        "crampon1923Entries": 18,
+        "allRequestedNumberedVersesPresent": true,
+        "uncollatedResearchWitnesses": true
+      },
+      "sourceActorHints": [
+        "Mary Magdalene",
+        "Peter",
+        "beloved disciple",
+        "Jesus"
+      ],
+      "locationEvidenceClass": "RESURRECTION_TOMB_WITNESS_PARTIAL_OVERLAP",
+      "editorialFinding": "John 20:1-18 spans the empty tomb, visits of Peter and beloved disciple, and Mary's encounter. It overlaps scene 132, but does not imply two separate empty tomb incidents.",
+      "geographicAction": "SINGLE_PASSAGE_MULTI_SCENE_NO_DUPLICATE_EVENT",
+      "personIdentitiesCertified": false,
+      "gospelParallelIdentityCertified": false,
+      "exactModernCoordinatesCertified": false,
+      "readAloudApproved": false,
+      "publicationApproved": false,
+      "reviewStage": "PASSAGE_COVERAGE_GEO_AND_EVENT_BOUNDARY_TRIAGE"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:132",
+      "originalIndex": 132,
+      "chapter": "RISEN",
+      "title": "Peter and John at the tomb",
+      "scriptureReference": "John 20:3–10",
+      "canonicalGospelOrActsSource": "John",
+      "existingLocationClaim": "Golgotha / Holy Sepulchre tradition",
+      "existingSceneAtlasMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "originalCandidateAtlasKeys": [
+        {
+          "eventKey": "biblical:event:christ-tomb-e2",
+          "sourceStatus": "PASSAGE_OVERLAP_REVIEW_ONLY"
+        }
+      ],
+      "witnessSpan": {
+        "douayChallonerEntries": 8,
+        "cpdv2009Entries": 8,
+        "crampon1923Entries": 8,
+        "allRequestedNumberedVersesPresent": true,
+        "uncollatedResearchWitnesses": true
+      },
+      "sourceActorHints": [
+        "Peter",
+        "beloved disciple",
+        "Mary Magdalene"
+      ],
+      "locationEvidenceClass": "PETER_BELOVED_DISCIPLE_TOMB_SUBSCENE",
+      "editorialFinding": "John 20:3-10 is a subsection of 20:1-18, not a second historically distinct tomb location or resurrection event. Keep distinct visual beat without duplicating the canonical event.",
+      "geographicAction": "SUBSCENE_OVERLAP_NOT_NEW_EVENT",
+      "personIdentitiesCertified": false,
+      "gospelParallelIdentityCertified": false,
+      "exactModernCoordinatesCertified": false,
+      "readAloudApproved": false,
+      "publicationApproved": false,
+      "reviewStage": "PASSAGE_COVERAGE_GEO_AND_EVENT_BOUNDARY_TRIAGE"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:133",
+      "originalIndex": 133,
+      "chapter": "RISEN",
+      "title": "The risen Lord meets the Apostles",
+      "scriptureReference": "John 20:19–23",
+      "canonicalGospelOrActsSource": "John",
+      "existingLocationClaim": "Upper Room / Cenacle · traditional site",
+      "existingSceneAtlasMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "originalCandidateAtlasKeys": [
+        {
+          "eventKey": "biblical:event:cenacle-e3",
+          "sourceStatus": "PASSAGE_OVERLAP_REVIEW_ONLY"
+        }
+      ],
+      "witnessSpan": {
+        "douayChallonerEntries": 5,
+        "cpdv2009Entries": 5,
+        "crampon1923Entries": 5,
+        "allRequestedNumberedVersesPresent": true,
+        "uncollatedResearchWitnesses": true
+      },
+      "sourceActorHints": [
+        "Jesus",
+        "disciples"
+      ],
+      "locationEvidenceClass": "APPEARANCE_ROOM_UNNAMED",
+      "editorialFinding": "John 20:19-23 says the doors were shut where the disciples gathered, but does not name the Upper Room/Cenacle building. Modern Cenacle is a traditional association.",
+      "geographicAction": "NO_CERTIFIED_APPEARANCE_ROOM",
+      "personIdentitiesCertified": false,
+      "gospelParallelIdentityCertified": false,
+      "exactModernCoordinatesCertified": false,
+      "readAloudApproved": false,
+      "publicationApproved": false,
+      "reviewStage": "PASSAGE_COVERAGE_GEO_AND_EVENT_BOUNDARY_TRIAGE"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:134",
+      "originalIndex": 134,
+      "chapter": "RISEN",
+      "title": "Thomas believes",
+      "scriptureReference": "John 20:24–29",
+      "canonicalGospelOrActsSource": "John",
+      "existingLocationClaim": "Upper Room / Cenacle · traditional site",
+      "existingSceneAtlasMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "originalCandidateAtlasKeys": [
+        {
+          "eventKey": "biblical:event:cenacle-e3",
+          "sourceStatus": "PASSAGE_OVERLAP_REVIEW_ONLY"
+        }
+      ],
+      "witnessSpan": {
+        "douayChallonerEntries": 6,
+        "cpdv2009Entries": 6,
+        "crampon1923Entries": 6,
+        "allRequestedNumberedVersesPresent": true,
+        "uncollatedResearchWitnesses": true
+      },
+      "sourceActorHints": [
+        "Jesus",
+        "Thomas",
+        "disciples"
+      ],
+      "locationEvidenceClass": "THOMAS_APPEARANCE_LOCATION_UNNAMED",
+      "editorialFinding": "John 20:24-29 reports a later appearance when Thomas was present, without authenticating the modern Cenacle. Preserve the distinct eight-day interval.",
+      "geographicAction": "SEPARATE_APPEARANCE_NO_CENACLE_CERTAINTY",
+      "personIdentitiesCertified": false,
+      "gospelParallelIdentityCertified": false,
+      "exactModernCoordinatesCertified": false,
+      "readAloudApproved": false,
+      "publicationApproved": false,
+      "reviewStage": "PASSAGE_COVERAGE_GEO_AND_EVENT_BOUNDARY_TRIAGE"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:135",
+      "originalIndex": 135,
+      "chapter": "RISEN",
+      "title": "The road to Emmaus",
+      "scriptureReference": "Luke 24:13–35",
+      "canonicalGospelOrActsSource": "Luke",
+      "existingLocationClaim": "Emmaus · competing identifications",
+      "existingSceneAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasKeys": [
+        {
+          "eventKey": "biblical:event:emmaus-e1",
+          "sourceStatus": "EXACT_REFERENCE"
+        }
+      ],
+      "witnessSpan": {
+        "douayChallonerEntries": 23,
+        "cpdv2009Entries": 23,
+        "crampon1923Entries": 23,
+        "allRequestedNumberedVersesPresent": true,
+        "uncollatedResearchWitnesses": true
+      },
+      "sourceActorHints": [
+        "Jesus",
+        "Cleopas",
+        "companion"
+      ],
+      "locationEvidenceClass": "EMMAUS_VILLAGE_SITE_COMPETES",
+      "editorialFinding": "Luke 24:13-35 names Emmaus and distance context; competing modern village identifications exist and no exact road alignment follows from the passage.",
+      "geographicAction": "EMMAUS_REGION_DISPUTED_NO_EXACT_ROUTE",
+      "personIdentitiesCertified": false,
+      "gospelParallelIdentityCertified": false,
+      "exactModernCoordinatesCertified": false,
+      "readAloudApproved": false,
+      "publicationApproved": false,
+      "reviewStage": "PASSAGE_COVERAGE_GEO_AND_EVENT_BOUNDARY_TRIAGE"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:136",
+      "originalIndex": 136,
+      "chapter": "RISEN",
+      "title": "Peter, feed my sheep",
+      "scriptureReference": "John 21:15–19",
+      "canonicalGospelOrActsSource": "John",
+      "existingLocationClaim": "Sea of Galilee · lake region",
+      "existingSceneAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasKeys": [],
+      "witnessSpan": {
+        "douayChallonerEntries": 5,
+        "cpdv2009Entries": 5,
+        "crampon1923Entries": 5,
+        "allRequestedNumberedVersesPresent": true,
+        "uncollatedResearchWitnesses": true
+      },
+      "sourceActorHints": [
+        "Jesus",
+        "Peter",
+        "disciples"
+      ],
+      "locationEvidenceClass": "GALILEE_SHORE_FROM_PRIOR_CHAPTER_CONTEXT",
+      "editorialFinding": "John 21:15-19 follows the Galilean lakeshore breakfast scene in John 21:1-14, but gives no precise shoreline coordinate for Christ's charge to Peter.",
+      "geographicAction": "LAKE_REGION_ONLY_NO_PETERS_PRIMACY_SHRINE_PIN",
+      "personIdentitiesCertified": false,
+      "gospelParallelIdentityCertified": false,
+      "exactModernCoordinatesCertified": false,
+      "readAloudApproved": false,
+      "publicationApproved": false,
+      "reviewStage": "PASSAGE_COVERAGE_GEO_AND_EVENT_BOUNDARY_TRIAGE"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:137",
+      "originalIndex": 137,
+      "chapter": "RISEN",
+      "title": "The Ascension",
+      "scriptureReference": "Acts 1:6–12",
+      "canonicalGospelOrActsSource": "Acts",
+      "existingLocationClaim": "Mount of Olives · regional context",
+      "existingSceneAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasKeys": [
+        {
+          "eventKey": "biblical:event:olives-e3",
+          "sourceStatus": "EXACT_REFERENCE"
+        }
+      ],
+      "witnessSpan": {
+        "douayChallonerEntries": 7,
+        "cpdv2009Entries": 7,
+        "crampon1923Entries": 7,
+        "allRequestedNumberedVersesPresent": true,
+        "uncollatedResearchWitnesses": true
+      },
+      "sourceActorHints": [
+        "Jesus",
+        "apostles",
+        "angels"
+      ],
+      "locationEvidenceClass": "ASCENSION_OLIVET_CONTEXT_LOCATION_NOT_POINT",
+      "editorialFinding": "Acts 1:12 refers to the Mount of Olives after Acts 1:6-11; this supports a mountain-region context, not certainty about a particular chapel footprint.",
+      "geographicAction": "OLIVET_REGION_ONLY_NO_EXACT_ASCENSION_STONE",
+      "personIdentitiesCertified": false,
+      "gospelParallelIdentityCertified": false,
+      "exactModernCoordinatesCertified": false,
+      "readAloudApproved": false,
+      "publicationApproved": false,
+      "reviewStage": "PASSAGE_COVERAGE_GEO_AND_EVENT_BOUNDARY_TRIAGE"
+    }
+  ]
+}
