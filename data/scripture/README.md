@@ -77,6 +77,9 @@ actually had. It does not synthesize, paraphrase or translate patristic speech.
   It does not yet implement semantic question answering or retrieval across
   unrelated verses. An unsupported query visibly returns no match, never
   fabricated words or a misleading patristic reply.
+- The selected Scripture witness remains visible as a compact expandable
+  passage panel above the Messenger thread; its exact verse, source link and
+  uncollated-witness warning reuse the existing canonical Bible reader.
 - Bible text remains owned by the established Scripture reader and by its
   separately governed editions; commentary does not impersonate Scripture.
 - French remains unavailable until the French patristic extracts and their
