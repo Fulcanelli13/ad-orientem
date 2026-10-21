@@ -266,7 +266,8 @@
     "test:mass-icon-source": "node tests/mass-icon-generation-provenance.mjs && npm run test:mass-icon-originals && node tests/mass-icon-originals-schumacher1920.mjs && node tests/mass-icon-source-acquisition-p3.mjs",
     "test:mass-icon-originals": "node tests/mass-icon-originals-leclerc1661.mjs",
     "test:customs-weiser": "node tests/customs-weiser-selective-release.mjs",
-    "test:customs-library": "node tests/customs-living-library.mjs"
+    "test:customs-library": "node tests/customs-living-library.mjs",
+    "test:customs-library-phone": "node tests/customs-living-library-phone.mjs"
   },
   "devDependencies": {
     "@playwright/test": "^1.55.0"
