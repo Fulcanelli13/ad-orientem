@@ -34,7 +34,12 @@ export function projectReaderObjectiveContext(card,{cueId,form,language="en"}={}
     const start=block.firstParagraphIndex,end=start+block.paragraphCount;
     if(start<0||end>card.paragraphs.length)continue;
     if(card.paragraphs.slice(start,end).some(p=>
-      Array.isArray(p.sourceCueIds)&&p.sourceCueIds.includes(cueId)))matches.push(row);
+      // Fixed Ordinary passages use explicit cue sets; Propers (Gospel,
+      // Postcommunion) instead have one independently sourced anchor. Do not
+      // treat a neighboring card, approximate section title or model clock
+      // as evidence of the actual paragraph.
+      (Array.isArray(p.sourceCueIds)&&p.sourceCueIds.includes(cueId)) ||
+      p.sourceAnchorCueId===cueId))matches.push(row);
   }
   if(matches.length!==1)return null;
   const selected=matches[0];
