@@ -167,6 +167,27 @@ try{
    await atlas.waitFor({state:"detached",timeout:15000});
    await page.locator("#ao-find-modular-root [data-mapcn-discover-rail]").waitFor({state:"visible"});
    assert.equal(await page.locator(".aoHeritageSurface .aoFindMap canvas.maplibregl-canvas").count(),1);
+   // P5: MapCN semantic Network; no geographical route lines are created.
+   await page.locator("#ao-find-modular-root [data-network-toggle]").click();
+   const network=page.locator("#ao-find-modular-root [data-sacred-network-panel]");
+   await network.waitFor({state:"visible",timeout:15000});
+   assert.ok(Number(await network.locator(".aoNetworkMetrics strong").nth(1).textContent())>0,
+      "P5 requires real sourced connections, not decorative demo edges");
+   assert.ok(await network.locator("svg .aoSacredNetworkEdge").count()>0);
+   assert.ok(await network.locator(".aoNetworkEdgeCard a[href^='https://']").count()>0);
+   assert.equal(await page.locator(".aoHeritageSurface .aoFindMap canvas.maplibregl-canvas").count(),1);
+   const netBox=await network.evaluate(el=>{const r=el.getBoundingClientRect();
+     return {top:r.top,bottom:r.bottom,width:r.width,height:r.height,vh:innerHeight,
+       overflow:document.documentElement.scrollWidth-innerWidth};});
+   assert.ok(netBox.top>=0&&netBox.bottom<=netBox.vh+1&&netBox.height>200&&netBox.overflow<=1,
+      "Network panel must fit the real viewport: "+JSON.stringify(netBox));
+   await page.screenshot({path:resolve(out,"explore-"+width+"-sacred-network.png"),fullPage:false});
+   await network.locator(".aoNetworkEdgeCard button[data-network-root]").first().click();
+   await network.locator(".aoNetworkSelected h3").waitFor({state:"visible"});
+   assert.equal(await page.locator(".aoHeritageSurface .aoFindMap canvas.maplibregl-canvas").count(),1);
+   await network.locator("[data-network-close]").click();
+   await network.waitFor({state:"detached",timeout:10000});
+   await page.locator("#ao-find-modular-root [data-mapcn-discover-rail]").waitFor({state:"visible"});
    // D is a same-map journey folio: no new page and no manufactured route
    // lines. Exercise a historical source-owned 3-stage pilgrimage.
    await page.locator("#ao-find-modular-root [data-explore-journey-open]").click();

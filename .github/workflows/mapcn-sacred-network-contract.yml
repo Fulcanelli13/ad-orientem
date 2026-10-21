@@ -1,0 +1,25 @@
+name: Explore Sacred Network source contracts
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "src/find/mapcn-sacred-network*"
+      - "src/find/heritage-presentation.js"
+      - "src/find/explore-presentation.js"
+      - "src/find/browser-entry.js"
+      - "src/find/explore-atlas-layout-style.js"
+      - "tests/mapcn-sacred-network-contract.mjs"
+      - ".github/workflows/mapcn-sacred-network-contract.yml"
+jobs:
+  contracts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: node --check src/find/mapcn-sacred-network.js
+      - run: node --check src/find/mapcn-sacred-network-presentation.js
+      - run: node --check src/find/browser-entry.js
+      - run: node --check src/find/heritage-presentation.js
+      - run: node --test tests/mapcn-sacred-network-contract.mjs
