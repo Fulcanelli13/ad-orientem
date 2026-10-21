@@ -252,6 +252,11 @@ export function mountScriptureLibrary(root,{
        a.dataset.historiaContextLink=thematicEpisode.id;
        active.append(a);
       }
+     }else if(thematicEpisode.publicationStatus==="RESEARCH_STAGED_NOT_LIVE"){
+      active.append(element("p",lang==="fr"
+       ?"Passage supplémentaire en préparation : contexte historique, liens avec l'Atlas et choix éditorial non vérifiés."
+       :"Staged supplementary Scripture: its Atlas identity, covenantal placement and editorial selection are not yet verified.",
+       "aoScriptureNotice"));
      }else{
       active.append(element("p",lang==="fr"
        ?"Aucun placement chronologique précis et défendable pour ce récit."
@@ -712,8 +717,14 @@ export function mountScriptureLibrary(root,{
  if(initialThematicEpisodeId&&thematicGroups)selectThematic(initialThematicEpisodeId);
  return Object.freeze({
    setThematicCatalogue(groups,id=null,links=null){
-    if(!Array.isArray(groups)||groups.length!==3||
-      groups.reduce((n,g)=>n+(g.episodes?.length||0),0)!==19)
+    if(!Array.isArray(groups))throw new Error("Invalid thematic research catalogue");
+    const layout=groups.map(g=>g.id+":"+g.episodes?.length).join("|");
+    const base="great_biblical_narratives:7|miracles_of_christ:6|parables_and_teachings:6";
+    const extended="great_biblical_narratives:7|miracles_of_christ:27|parables_and_teachings:23|biblical_prayers_and_canticles:3";
+    const all=groups.flatMap(g=>g.episodes||[]);
+    if((layout!==base&&layout!==extended) ||
+       new Set(all.map(x=>x.id)).size!==all.length ||
+       all.some(x=>!x.plan?.chapters?.length||!/^hist-omitted-\d{3}$/.test(x.id)))
       throw new Error("Invalid thematic research catalogue");
     thematicGroups=groups;thematicIdentityLinks=links;if(id)return selectThematic(id);draw();return true;
    },
