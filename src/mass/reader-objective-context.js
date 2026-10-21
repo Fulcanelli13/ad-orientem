@@ -23,13 +23,19 @@ const sourceCue=id=>/^AO\.SM\.C\d{4}$/.test(String(id??""));
 // The canonical cue (not card number, inferred time or Schola playback) owns
 // the chosen block. Return null if a split/conditional/exceptional card does
 // not expose an unambiguous source row at that exact cue.
-export function projectReaderObjectiveContext(card,{cueId,form,language="en"}={}){
+export function projectReaderObjectiveContext(card,{cueId,form,language="en",sourceBlocks}={}){
   if(!sourceCue(cueId)||!knownForms.has(String(form??"").toUpperCase())||
-     !Array.isArray(card?.blocks)||!Array.isArray(card?.paragraphs))return null;
+     !Array.isArray(card?.blocks)||!Array.isArray(card?.paragraphs)||
+     !Array.isArray(sourceBlocks))return null;
   const matches=[];
   for(const block of card.blocks){
     const row=byBlock.get(block.blockId);
-    if(!row||!Number.isInteger(block.firstParagraphIndex)||
+    // The live source corpus, not a duplicated cue allowlist or a section
+    // title, proves which original 1962 cues belong to this exact block.
+    const witnessed=sourceBlocks.some(source=>
+      source.Block_ID===block.blockId&&Array.isArray(source.units)&&
+      source.units.some(unit=>unit.cue_id===cueId));
+    if(!row||!witnessed||!Number.isInteger(block.firstParagraphIndex)||
        !Number.isInteger(block.paragraphCount)||block.paragraphCount<1)continue;
     const start=block.firstParagraphIndex,end=start+block.paragraphCount;
     if(start<0||end>card.paragraphs.length)continue;
