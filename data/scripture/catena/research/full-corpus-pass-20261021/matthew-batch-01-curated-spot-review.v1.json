@@ -1,8 +1,8 @@
 {
   "schema": "ao.catena.matthew-first-300-curated-spot-review.v1",
   "created": "2026-10-21",
-  "status": "research_only__individually_source_checked_not_publication_approved",
-  "scope": "26 individual in-context spot-reviews from the first 300 queue; remaining source pointers retain automated triage only",
+  "status": "research_only__AI_assisted_contextual_spot_review__human_approval_pending",
+  "scope": "26 AI-assisted in-context spot-reviews from the first 300 queue; remaining source pointers retain automated triage only",
   "sourceIndex": "data/scripture/catena/research/full-corpus-pass-20261021/matthew-batch-01-300-question-triage.v1.json",
   "reviewedCount": 26,
   "coveredByFullBatch": 300,
@@ -29,7 +29,7 @@
       "authoredAnswerTextCopied": false,
       "confidenceLevel": "clear_same_excerpt_argument_pending_source_edition_review",
       "editorialRisks": "Jerome supplies two stated reasons; do not infer that Matthew gives a maternal genealogy.",
-      "status": "human_semantic_spot_review__NOT_PUBLICATION_APPROVED"
+      "status": "AI_assisted_source_and_meaning_spot_review__HUMAN_APPROVAL_PENDING"
     },
     {
       "pointer": "catena.matthew.1.18:3",
@@ -46,7 +46,7 @@
       "authoredAnswerTextCopied": false,
       "confidenceLevel": "clear_same_excerpt_argument_pending_source_edition_review",
       "editorialRisks": "Jerome gives three reasons and attributes a fourth specifically to Ignatius; do not transfer Ignatius's reason to Jerome as an original opinion.",
-      "status": "human_semantic_spot_review__NOT_PUBLICATION_APPROVED"
+      "status": "AI_assisted_source_and_meaning_spot_review__HUMAN_APPROVAL_PENDING"
     },
     {
       "pointer": "catena.matthew.1.19:3",
@@ -63,7 +63,7 @@
       "authoredAnswerTextCopied": false,
       "confidenceLevel": "insufficient_without_adjacent_context",
       "editorialRisks": "This Jerome excerpt raises the difficulty but does not itself give a completed positive answer. Needs adjacent commentary; no standalone Jerome answer bubble.",
-      "status": "human_semantic_spot_review__NOT_PUBLICATION_APPROVED"
+      "status": "AI_assisted_source_and_meaning_spot_review__HUMAN_APPROVAL_PENDING"
     },
     {
       "pointer": "catena.matthew.1.19:8",
@@ -80,7 +80,7 @@
       "authoredAnswerTextCopied": false,
       "confidenceLevel": "clear_same_excerpt_argument_pending_source_edition_review",
       "editorialRisks": "Origen suggests reverent unworthiness before a great mystery; distinct from any reading assuming Mary's guilt.",
-      "status": "human_semantic_spot_review__NOT_PUBLICATION_APPROVED"
+      "status": "AI_assisted_source_and_meaning_spot_review__HUMAN_APPROVAL_PENDING"
     },
     {
       "pointer": "catena.matthew.1.20:20",
@@ -97,7 +97,7 @@
       "authoredAnswerTextCopied": false,
       "confidenceLevel": "clear_same_excerpt_argument_pending_source_edition_review",
       "editorialRisks": "Augustine explicitly rejects biological/personal fatherhood implied by the phrase and distinguishes origin by the Spirit from sonship; full excerpt carries the logic.",
-      "status": "human_semantic_spot_review__NOT_PUBLICATION_APPROVED"
+      "status": "AI_assisted_source_and_meaning_spot_review__HUMAN_APPROVAL_PENDING"
     },
     {
       "pointer": "catena.matthew.1.22:13",
@@ -114,7 +114,7 @@
       "authoredAnswerTextCopied": false,
       "confidenceLevel": "clear_same_excerpt_argument_pending_source_edition_review",
       "editorialRisks": "Jerome uses chronology and alternatives; preserve historical philological argument in context.",
-      "status": "human_semantic_spot_review__NOT_PUBLICATION_APPROVED"
+      "status": "AI_assisted_source_and_meaning_spot_review__HUMAN_APPROVAL_PENDING"
     },
     {
       "pointer": "catena.matthew.1.22:4",
@@ -131,7 +131,7 @@
       "authoredAnswerTextCopied": false,
       "confidenceLevel": "clear_same_excerpt_argument_pending_source_edition_review",
       "editorialRisks": "Jerome discusses the Hebrew word and its meanings; original philology and printed spelling require separate verification before theological claims.",
-      "status": "human_semantic_spot_review__NOT_PUBLICATION_APPROVED"
+      "status": "AI_assisted_source_and_meaning_spot_review__HUMAN_APPROVAL_PENDING"
     },
     {
       "pointer": "catena.matthew.1.24:4",
@@ -148,7 +148,7 @@
       "authoredAnswerTextCopied": false,
       "confidenceLevel": "clear_same_excerpt_argument_pending_source_edition_review",
       "editorialRisks": "Heresiological dispute with Helvidius. Augustine not the author; Jerome distinguishes finite from indefinite uses of until and gives Scripture analogies.",
-      "status": "human_semantic_spot_review__NOT_PUBLICATION_APPROVED"
+      "status": "AI_assisted_source_and_meaning_spot_review__HUMAN_APPROVAL_PENDING"
     },
     {
       "pointer": "catena.matthew.1.24:6",
@@ -165,7 +165,7 @@
       "authoredAnswerTextCopied": false,
       "confidenceLevel": "clear_same_excerpt_argument_pending_source_edition_review",
       "editorialRisks": "Argument to Helvidius, with rhetorical question and predicted answer; do not treat interlocutor's imagined reply as a documented quotation.",
-      "status": "human_semantic_spot_review__NOT_PUBLICATION_APPROVED"
+      "status": "AI_assisted_source_and_meaning_spot_review__HUMAN_APPROVAL_PENDING"
     },
     {
       "pointer": "catena.matthew.2.1:29",
@@ -182,7 +182,7 @@
       "authoredAnswerTextCopied": false,
       "confidenceLevel": "clear_same_excerpt_argument_pending_source_edition_review",
       "editorialRisks": "Augustine distinguishes observed celestial influences on bodies from determinism over minds and raises the example of twins; not a rejection of physical astronomy.",
-      "status": "human_semantic_spot_review__NOT_PUBLICATION_APPROVED"
+      "status": "AI_assisted_source_and_meaning_spot_review__HUMAN_APPROVAL_PENDING"
     },
     {
       "pointer": "catena.matthew.2.1:30",
@@ -199,7 +199,7 @@
       "authoredAnswerTextCopied": false,
       "confidenceLevel": "clear_same_excerpt_argument_pending_source_edition_review",
       "editorialRisks": "Augustine explicitly rejects stars as governing Christ's birth and interprets the star as a ministering sign.",
-      "status": "human_semantic_spot_review__NOT_PUBLICATION_APPROVED"
+      "status": "AI_assisted_source_and_meaning_spot_review__HUMAN_APPROVAL_PENDING"
     },
     {
       "pointer": "catena.matthew.2.1:39",
@@ -216,7 +216,7 @@
       "authoredAnswerTextCopied": false,
       "confidenceLevel": "clear_same_excerpt_argument_pending_source_edition_review",
       "editorialRisks": "Augustine offers an angelic revelation explanation, partly in conditional speech ('might say'); present as his proposal, not an established Gospel event.",
-      "status": "human_semantic_spot_review__NOT_PUBLICATION_APPROVED"
+      "status": "AI_assisted_source_and_meaning_spot_review__HUMAN_APPROVAL_PENDING"
     },
     {
       "pointer": "catena.matthew.3.1:4",
@@ -233,7 +233,7 @@
       "authoredAnswerTextCopied": false,
       "confidenceLevel": "clear_same_excerpt_argument_pending_source_edition_review",
       "editorialRisks": "Two explicit reasons; initial label is Chrysostom with 'non occ.' inherited sourcing, so independent authorship still unverified.",
-      "status": "human_semantic_spot_review__NOT_PUBLICATION_APPROVED"
+      "status": "AI_assisted_source_and_meaning_spot_review__HUMAN_APPROVAL_PENDING"
     },
     {
       "pointer": "catena.matthew.3.11:3",
@@ -250,7 +250,7 @@
       "authoredAnswerTextCopied": false,
       "confidenceLevel": "clear_same_excerpt_argument_pending_source_edition_review",
       "editorialRisks": "Gregory explicitly connects John's baptism to the forerunner's ministry.",
-      "status": "human_semantic_spot_review__NOT_PUBLICATION_APPROVED"
+      "status": "AI_assisted_source_and_meaning_spot_review__HUMAN_APPROVAL_PENDING"
     },
     {
       "pointer": "catena.matthew.5.14:15",
@@ -267,7 +267,7 @@
       "authoredAnswerTextCopied": false,
       "confidenceLevel": "clear_same_excerpt_argument_pending_source_edition_review",
       "editorialRisks": "Augustine identifies suppression of proclamation through bodily ease; retain details about body and temporal limits.",
-      "status": "human_semantic_spot_review__NOT_PUBLICATION_APPROVED"
+      "status": "AI_assisted_source_and_meaning_spot_review__HUMAN_APPROVAL_PENDING"
     },
     {
       "pointer": "catena.matthew.5.20:28",
@@ -284,7 +284,7 @@
       "authoredAnswerTextCopied": false,
       "confidenceLevel": "clear_same_excerpt_argument_pending_source_edition_review",
       "editorialRisks": "Augustine's brief answer is yes; cannot detach from teaching on anger and homicide without referencing Matthew 5 context.",
-      "status": "human_semantic_spot_review__NOT_PUBLICATION_APPROVED"
+      "status": "AI_assisted_source_and_meaning_spot_review__HUMAN_APPROVAL_PENDING"
     },
     {
       "pointer": "catena.matthew.5.25:4",
@@ -301,7 +301,7 @@
       "authoredAnswerTextCopied": false,
       "confidenceLevel": "insufficient_without_adjacent_context",
       "editorialRisks": "Augustine rejects some identifications in this excerpt; a positive interpretation is not securely established by this fragment alone.",
-      "status": "human_semantic_spot_review__NOT_PUBLICATION_APPROVED"
+      "status": "AI_assisted_source_and_meaning_spot_review__HUMAN_APPROVAL_PENDING"
     },
     {
       "pointer": "catena.matthew.5.38:22",
@@ -318,7 +318,7 @@
       "authoredAnswerTextCopied": false,
       "confidenceLevel": "clear_same_excerpt_argument_pending_source_edition_review",
       "editorialRisks": "Augustine distinguishes a request from giving what is morally lawful and helpful; retains the refusal-and-correction qualification.",
-      "status": "human_semantic_spot_review__NOT_PUBLICATION_APPROVED"
+      "status": "AI_assisted_source_and_meaning_spot_review__HUMAN_APPROVAL_PENDING"
     },
     {
       "pointer": "catena.matthew.5.43:22",
@@ -335,7 +335,7 @@
       "authoredAnswerTextCopied": false,
       "confidenceLevel": "clear_same_excerpt_argument_pending_source_edition_review",
       "editorialRisks": "Gloss, not an identifiable historical Father. Do not give it an Augustine or Gregory sprite.",
-      "status": "human_semantic_spot_review__NOT_PUBLICATION_APPROVED"
+      "status": "AI_assisted_source_and_meaning_spot_review__HUMAN_APPROVAL_PENDING"
     },
     {
       "pointer": "catena.matthew.9.14:4",
@@ -352,7 +352,7 @@
       "authoredAnswerTextCopied": false,
       "confidenceLevel": "clear_same_excerpt_argument_pending_source_edition_review",
       "editorialRisks": "Augustine interprets who was present and who posed the objection. Preserve Matthew, Mark, Luke comparison and printed erroneous 'Luck' separately.",
-      "status": "human_semantic_spot_review__NOT_PUBLICATION_APPROVED"
+      "status": "AI_assisted_source_and_meaning_spot_review__HUMAN_APPROVAL_PENDING"
     },
     {
       "pointer": "catena.matthew.12.1:9",
@@ -369,7 +369,7 @@
       "authoredAnswerTextCopied": false,
       "confidenceLevel": "clear_same_excerpt_argument_pending_source_edition_review",
       "editorialRisks": "The question is framed as 'But some one will say', not Chrysostom's unmediated personal question. The answer contrasts sacred bread and Sabbath observance.",
-      "status": "human_semantic_spot_review__NOT_PUBLICATION_APPROVED"
+      "status": "AI_assisted_source_and_meaning_spot_review__HUMAN_APPROVAL_PENDING"
     },
     {
       "pointer": "catena.matthew.25.46:8",
@@ -386,7 +386,7 @@
       "authoredAnswerTextCopied": false,
       "confidenceLevel": "clear_same_excerpt_argument_pending_source_edition_review",
       "editorialRisks": "Gregory reports 'But they say' and responds; never present objector's question as Gregory's own view. Requires theological contextual review.",
-      "status": "human_semantic_spot_review__NOT_PUBLICATION_APPROVED"
+      "status": "AI_assisted_source_and_meaning_spot_review__HUMAN_APPROVAL_PENDING"
     },
     {
       "pointer": "catena.matthew.25.46:11",
@@ -403,7 +403,7 @@
       "authoredAnswerTextCopied": false,
       "confidenceLevel": "clear_same_excerpt_argument_pending_source_edition_review",
       "editorialRisks": "Gregory reports opponents' objection and supplies a reply dependent on whether repentance remains possible; contextual review required.",
-      "status": "human_semantic_spot_review__NOT_PUBLICATION_APPROVED"
+      "status": "AI_assisted_source_and_meaning_spot_review__HUMAN_APPROVAL_PENDING"
     },
     {
       "pointer": "catena.matthew.2.3:11",
@@ -420,7 +420,7 @@
       "authoredAnswerTextCopied": false,
       "confidenceLevel": "clear_same_excerpt_argument_pending_source_edition_review",
       "editorialRisks": "The inherited label is Pseudo-Chrysostom; must not be attributed to historical John Chrysostom.",
-      "status": "human_semantic_spot_review__NOT_PUBLICATION_APPROVED"
+      "status": "AI_assisted_source_and_meaning_spot_review__HUMAN_APPROVAL_PENDING"
     },
     {
       "pointer": "catena.matthew.2.1:22",
@@ -437,7 +437,7 @@
       "authoredAnswerTextCopied": false,
       "confidenceLevel": "clear_same_excerpt_argument_pending_source_edition_review",
       "editorialRisks": "Pseudepigraphic Augustine label; no Augustine persona until independent provenance.",
-      "status": "human_semantic_spot_review__NOT_PUBLICATION_APPROVED"
+      "status": "AI_assisted_source_and_meaning_spot_review__HUMAN_APPROVAL_PENDING"
     },
     {
       "pointer": "catena.matthew.1.18:6",
@@ -454,7 +454,7 @@
       "authoredAnswerTextCopied": false,
       "confidenceLevel": "clear_same_excerpt_argument_pending_source_edition_review",
       "editorialRisks": "Origen supplies the titles in a rhetorical exclamation; the question does not stand as an independent user concern without surrounding context.",
-      "status": "human_semantic_spot_review__NOT_PUBLICATION_APPROVED"
+      "status": "AI_assisted_source_and_meaning_spot_review__HUMAN_APPROVAL_PENDING"
     }
   ],
   "contrastOrComplementGroups": [
@@ -494,5 +494,6 @@
       "relationship": "Augustine's qualification concerns lawful giving; the Gloss treats prayer and enemies. Related applications, not identical arguments.",
       "status": "related_topics_not_a_single_common_question"
     }
-  ]
+  ],
+  "reviewProvenance": "AI-assisted reading against exact source excerpts in the pinned Catena; no independent human second-reader review conducted."
 }
