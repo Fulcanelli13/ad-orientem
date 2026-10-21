@@ -149,3 +149,30 @@ This is deliberately small and audit-friendly: expanding to further topics
 requires separate review of matching phrases, source scope and false-positive
 cases. It is not a general-purpose theological AI or an unrestricted synonym
 database.
+
+
+### Editorial relevance and false-positive acceptance (October 2026)
+
+The initial 11-question benchmark remains a regression test, not proof of
+quality. A separate challenge of **38 additional source-linked questions**
+covers all four Gospels (Mark 10, Matthew 9, Luke 10, John 9), alongside 16
+unsupported-query probes. Source IDs, precise original segment ordinals,
+inherited author labels and literal evidence strings are checked in CI:
+
+\`node tests/scripture-catena-editorial-challenge.mjs\`
+
+Initial expanded result: **23/38** selected original exemplars appear in the
+first four displayed responses; Gospel-specific counts are recorded in
+\`EDITORIAL_REVIEW_PROTOCOL.md\`. The 16 negative prompts yielded zero
+attributed messages after the source-context abstention safeguard. These
+are *diagnostic retrieval metrics*, not independent judgments that the
+other excerpts are irrelevant or proof that a larger release meets quality
+targets. There is **no human-independent editorial acceptance yet**.
+
+For a blind two-reviewer grading procedure (direct answer, useful related
+context, weak match, misleading/unsupported), how to record full-source
+evidence, and proposed release criteria, see
+\`data/scripture/catena/EDITORIAL_REVIEW_PROTOCOL.md\`. Keep all 15 missed
+exemplars in the diagnostic set; never silently rewrite test targets to
+inflate an automated score. No fictional speeches, new translations or
+second Catena registry may be introduced through this process.
