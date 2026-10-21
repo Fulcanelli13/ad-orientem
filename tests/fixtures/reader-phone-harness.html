@@ -16,6 +16,7 @@ import { createHostIconResolver } from "../../src/mass/reader-icons.js";
 import { R17_FROZEN_ACTIVE_ICON_ASSETS } from "../../src/mass/reader-icon-bank.js";
 import { R17_REVIEWED_POSTURE_ASSETS } from "../../src/mass/reader-reviewed-posture-assets.js";
 import { R17_FINAL_APPROVED_MASS_ASSETS } from "../../src/mass/reader-final-approved-assets.js";
+import { CANONICAL_ICON_ASSETS } from "../../src/mass/reader-canonical-icons.js";
 
 const params=new URLSearchParams(location.search);
 const lang=params.get("lang")==="fr"?"fr":"en";
@@ -144,7 +145,7 @@ try{
     window.__AO_PHONE_PREVIEW=mounted.preview;
   }else{
     window.__AO_PHONE_PREVIEW=await mountNativeReaderPreview({doc:document,prepared,
-      iconResolver:createHostIconResolver({assets:{...R17_FROZEN_ACTIVE_ICON_ASSETS,...R17_REVIEWED_POSTURE_ASSETS,...R17_FINAL_APPROVED_MASS_ASSETS}})});
+      iconResolver:createHostIconResolver({assets:{...R17_FROZEN_ACTIVE_ICON_ASSETS,...R17_REVIEWED_POSTURE_ASSETS,...R17_FINAL_APPROVED_MASS_ASSETS,...CANONICAL_ICON_ASSETS}})});
   }
   document.documentElement.dataset.harnessReady="true";
 }catch(error){
