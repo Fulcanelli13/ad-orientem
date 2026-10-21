@@ -1,0 +1,35 @@
+name: Sacred Art W102 Open Access Museum Images
+on:
+  push:
+    branches:
+      - platform/885-sacred-art-candidates
+    paths:
+      - data/calendar/sacred-art-biblical-kings-judges-prophets-wave102-20261021.v1.json
+      - tools/calendar/acquire-sacred-art-w102-open-access-api.py
+      - .github/workflows/sacred-art-w102-open-access-api.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  museum-open-access:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install bounded research acquisition dependencies
+        run: pip install 'Pillow>=10,<12' 'requests>=2.31,<3'
+      - name: Fetch eight exact museum originals, verify API permissions, and render uncropped phone previews
+        run: |
+          python -m py_compile tools/calendar/acquire-sacred-art-w102-open-access-api.py
+          python tools/calendar/acquire-sacred-art-w102-open-access-api.py
+      - name: Preserve image bytes, SHA evidence, thumbnails, and holds
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-w102-eight-museum-originals-and-phone-proof
+          path: artifacts/sacred-art-w102-open-access-original-evidence/
+          retention-days: 30
+          if-no-files-found: warn
