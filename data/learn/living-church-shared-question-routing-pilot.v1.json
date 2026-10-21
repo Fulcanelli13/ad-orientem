@@ -6432,7 +6432,11 @@
               "prêtres",
               "clergé",
               "pastoral",
-              "ministère"
+              "ministère",
+              "curé",
+              "curés",
+              "curé de paroisse",
+              "pasteur de paroisse"
             ],
             [
               "oraison",
@@ -6720,6 +6724,180 @@
           ]
         }
       }
+    },
+    {
+      "id": "pius.historical_spx_pilot_13",
+      "character": "pius-x",
+      "coverage": "SOURCE_NAVIGATION_ONLY",
+      "approvedReply": false,
+      "category": "pius_historical_source_navigation",
+      "scopeNotice": "Research-only historical source navigation. These 1903–1905 texts addressed bishops and clergy in their historical context; a lay visitor is not directly bound by the wording of those instructions. No approved character reply.",
+      "sourceBridgeOwner": "PR1458_EXTERNAL_DOCUMENTARY_POINTERS_RESEARCH_ONLY",
+      "title": {
+        "en": "Sermons and catechetical instruction",
+        "fr": "Prédication et enseignement du catéchisme"
+      },
+      "questionVariants": {
+        "en": [
+          "can an eloquent sermon take the place of the catechism",
+          "how does pius x distinguish a homily from catechetical instruction",
+          "must an acclaimed preacher still teach the rudiments of faith"
+        ],
+        "fr": [
+          "un beau sermon peut-il remplacer le catéchisme",
+          "quelle différence le pape fait-il entre homélie et catéchèse",
+          "un prédicateur doit-il aussi enseigner les rudiments de la foi"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "owner": "PIUS_X_HISTORICAL_PASSAGE_POINTERS_V1",
+          "ref": "SPX-PILOT-13",
+          "evidence": "PASSAGE_LOCATOR_RESEARCH_ONLY"
+        }
+      ],
+      "historicalIntent": {
+        "status": "DOCUMENTARY_TOPIC_ANCHORS_RESEARCH_ONLY",
+        "facets": {
+          "en": [
+            [
+              "preacher",
+              "sermon",
+              "homily",
+              "pulpit orator",
+              "eloquent sermon"
+            ],
+            [
+              "catechism",
+              "catechesis",
+              "catechetical",
+              "rudiments of faith"
+            ]
+          ],
+          "fr": [
+            [
+              "prédicateur",
+              "sermon",
+              "homélie",
+              "orateur",
+              "prédication éloquente"
+            ],
+            [
+              "catéchisme",
+              "catéchèse",
+              "catéchétique",
+              "rudiments de la foi"
+            ]
+          ]
+        },
+        "disposition": "SOURCE_NAVIGATION_ONLY",
+        "contextContinuation": {
+          "en": [
+            "homily",
+            "catechism",
+            "sermon",
+            "rudiments"
+          ],
+          "fr": [
+            "homélie",
+            "catéchisme",
+            "sermon",
+            "rudiments"
+          ]
+        }
+      }
+    },
+    {
+      "id": "pius.historical_spx_pilot_14",
+      "character": "pius-x",
+      "coverage": "SOURCE_NAVIGATION_ONLY",
+      "approvedReply": false,
+      "category": "pius_historical_source_navigation",
+      "scopeNotice": "Research-only historical source navigation. These 1903–1905 texts addressed bishops and clergy in their historical context; a lay visitor is not directly bound by the wording of those instructions. No approved character reply.",
+      "sourceBridgeOwner": "PR1458_EXTERNAL_DOCUMENTARY_POINTERS_RESEARCH_ONLY",
+      "title": {
+        "en": "Charity in correcting opponents",
+        "fr": "Charité envers les adversaires et correction fraternelle"
+      },
+      "questionVariants": {
+        "en": [
+          "must charity govern correction of hostile people",
+          "what does e supremi teach about bitter zeal and rebuking opponents",
+          "how should christians show charity to those who persecute them"
+        ],
+        "fr": [
+          "la charité doit-elle accompagner la correction des adversaires",
+          "que dit e supremi du zèle amer et des reproches sévères",
+          "comment rester charitable envers ceux qui persécutent l'Église"
+        ]
+      },
+      "sourceRefs": [
+        {
+          "owner": "PIUS_X_HISTORICAL_PASSAGE_POINTERS_V1",
+          "ref": "SPX-PILOT-14",
+          "evidence": "PASSAGE_LOCATOR_RESEARCH_ONLY"
+        }
+      ],
+      "historicalIntent": {
+        "status": "DOCUMENTARY_TOPIC_ANCHORS_RESEARCH_ONLY",
+        "facets": {
+          "en": [
+            [
+              "charity",
+              "charitable",
+              "gentleness",
+              "patient correction",
+              "kindness"
+            ],
+            [
+              "mock",
+              "mocking",
+              "hostile",
+              "opponents",
+              "persecutors",
+              "persecution",
+              "reproach",
+              "rebuke",
+              "bitter zeal"
+            ]
+          ],
+          "fr": [
+            [
+              "charité",
+              "charitable",
+              "douceur",
+              "correction patiente"
+            ],
+            [
+              "moque",
+              "moquerie",
+              "hostile",
+              "adversaire",
+              "ennemi",
+              "persécuteur",
+              "persécution",
+              "reproche",
+              "réprimande",
+              "zèle amer"
+            ]
+          ]
+        },
+        "disposition": "SOURCE_NAVIGATION_ONLY",
+        "contextContinuation": {
+          "en": [
+            "adversaries",
+            "reproof",
+            "charity",
+            "patience"
+          ],
+          "fr": [
+            "adversaires",
+            "reproches",
+            "charité",
+            "patience"
+          ]
+        }
+      }
     }
   ],
   "ambiguities": [
@@ -6957,7 +7135,7 @@
     }
   ],
   "pilotLimits": {
-    "topics": 184,
+    "topics": 186,
     "approvedConversationalAnswers": 0,
     "embeddingSearch": false,
     "deterministicKeywordVariantMatching": true,
@@ -6968,7 +7146,7 @@
     "maxClarifications": 3,
     "maxTransfersPerQuestion": 1,
     "semanticModelPlannedButNotEnabled": true,
-    "sourceNavigableTopics": 94,
+    "sourceNavigableTopics": 96,
     "sourceGapTopics": 90,
     "apologeticsDossiersIndexed": 60,
     "researchOnlyUnpublishedAnswerCount": 85,
