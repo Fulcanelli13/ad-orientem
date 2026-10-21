@@ -16,7 +16,8 @@
     "elevatedChristiesUKAuctionPhotograph": 1,
     "carracciDimensionDocumentationHold": 1,
     "sourcePhotosFormallyAcceptedByCurator": 0,
-    "finalAppRelease": 0
+    "finalAppRelease": 0,
+    "explicitSourceLicenseRestrictionForUKTateAndChristies": 2
   },
   "principles": [
     "Copyright in original painting not same as photographer's reproduction license",
@@ -176,12 +177,15 @@
         "origin": "Exact Christie’s UK auction catalogue photograph, 3 December 2019 lot 4",
         "sourceClaim": "Commons PD-Art in US, photograph source originally from UK commercial auction house",
         "verification": [
-          "https://commons.wikimedia.org/wiki/File:Ambrosius_Benson_-_Salvator_Mundi.jpeg"
+          "https://commons.wikimedia.org/wiki/File:Ambrosius_Benson_-_Salvator_Mundi.jpeg",
+          "https://www.christies.com/about-us/contact/terms-and-conditions/?lid=1&sc_lang=en",
+          "https://press.christies.com/images-terms-of-use/"
         ],
         "restrictions": [
+          "Christie's official website terms authorize only a personal, non-commercial copy and prohibit redistribution, modification and public/commercial use without prior written permission; Commons U.S. faithful-copy rule may differ but does not remove the documented source contractual risk.",
           "UK and cross-border 2D reproduction copyright/contract concerns; no Christie’s licensing permission evidenced"
         ],
-        "release": "ELEVATED_PHOTO_RIGHTS_REVIEW_REQUIRED"
+        "release": "HOLD_OR_OBTAIN_EXPRESS_PHOTO_REUSE_PERMISSION_OR_OTHER_PROVENANCE"
       },
       "readyForUnrestrictedAppRelease": false
     },
@@ -248,9 +252,11 @@
           "https://commons.wikimedia.org/wiki/File:John_Martin_-_The_Great_Day_of_His_Wrath_-_Google_Art_Project.jpg",
           "https://artuk.org/discover/artworks/the-great-day-of-his-wrath-117730",
           "https://www.tate.org.uk/art/artworks/martin-the-great-day-of-his-wrath-n05613",
-          "https://www.bapla.org.uk/image-suppliers/tate-images"
+          "https://www.bapla.org.uk/image-suppliers/tate-images",
+          "https://artuk.org/discover/artworks/the-great-day-of-his-wrath-117730"
         ],
         "restrictions": [
+          "Art UK lists this photograph only under CC BY-NC-ND; this is incompatible with a future paid/mobile application redistribution or converting the file to a WebP derivative absent separate permission.",
           "Explicit UK Tate photograph copyright assertion on Commons; Art UK provides only CC BY-NC-ND for its photograph—UNSUITABLE for commercial app and WebP modification; require permission for exact photo or separately suitable photograph of same approved painting."
         ],
         "release": "PHOTO_VERSION_HIGH_RIGHTS_HOLD_NO_WORLDWIDE_RELEASE"
@@ -258,5 +264,12 @@
       "readyForUnrestrictedAppRelease": false
     }
   ],
-  "releaseGate": "ALL 10 FAIL_CLOSED_NOT_YET_RELEASED; 2 Met licenses policy verified; 8 Commons require reuse assessment; user photo decisions missing"
+  "releaseGate": "ALL 10 FAIL_CLOSED_NOT_YET_RELEASED; 2 Met licenses policy verified; 8 Commons require reuse assessment; user photo decisions missing",
+  "findings": [
+    "Met official OA CC0 covers selected exact Met API photos of Ugolino and Saraceni for commercial/non-commercial reuse; human visual acceptance still missing.",
+    "All eight Commons files carry PD-Art US reasoning; in other territories photographic reproductions of public-domain 2D paintings may have rights/contract claims; do not treat Commons metadata as commercial world licence.",
+    "Tate-sourced John Martin photo has an explicit Tate UK copyright claim on its exact Commons file, and Art UK offers CC BY-NC-ND only on its image; serious reuse blocker for commercial app distribution.",
+    "Christie's-source Ambrosius Benson reproduction is from a commercial UK auction catalogue; Christie’s restricts website/press photographic reproduction and redistribution without separate permission; serious reuse blocker for app.",
+    "Carracci WGA itself identifies portrait 866×1200 file *and* 44×51cm physical original, source conflict cannot be resolved from derivative catalogues. Keep no-full-surface-certified."
+  ]
 }
