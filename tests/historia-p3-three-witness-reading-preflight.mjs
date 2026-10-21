@@ -97,7 +97,8 @@ assert.ok(html.includes('host.append(note);continue;'),"Editorial context may no
 assert.ok(html.includes('!isPriorityHistoriaBridge(beat))))continue;'),"Hiding held candidates must not conceal canonical omissions");
 assert.ok(!html.includes('host.append(note);previous=null;continue;'),"Unattributed gap through editorial context");
 assert.ok(html.includes('line.lang=edition==="crampon-1923"?"fr":"en";'),"Accurate screen-reader language for French Scripture");
-assert.ok(html.includes("Selected Scripture · research proof · not publication-approved"),"Selection still research, not accepted");
+assert.ok(html.includes("Scripture selections are unapproved research. Dashed sections show optional"),"One source status disclaimer per movement");
+assert.ok(!html.includes("Selected Scripture · research proof · not publication-approved"),"Avoid repeated warnings on all 93 Scripture beats");
 assert.ok(html.includes("explicitHistoriaBurialHold(seam)"),"A held burial seam must not look like accepted Scripture");
 assert.ok(html.includes("Unselected intervening biblical chapters"),"Large canon gaps must be explicit");
 console.log("PASS Historia 37-movement 3-witness range preflight: "+JSON.stringify(metrics)+"; editorial publication blocked");
