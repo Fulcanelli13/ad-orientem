@@ -100,6 +100,7 @@ function installStyle(d){
  ".aoCatenaMRow{display:flex;align-items:flex-start;gap:9px;width:100%}",
  ".aoCatenaMAvatar{flex:0 0 38px;width:38px;height:38px;border-radius:50%;border:1px solid #aa8552;background:#303739;display:grid;place-items:center;color:#ead0a6;font:600 15px Georgia}",
  ".aoCatenaMBody{flex:1;min-width:0}",
+ ".aoCatenaMElsewhere{font:600 11px/1.5 var(--ao-font-ui,Georgia,serif);color:#d6ae70;margin:0 0 5px!important;letter-spacing:.035em}",
  ".aoCatenaMName{color:#e9c68e;font:600 13px var(--ao-font-ui,Georgia,serif);margin:0 0 5px!important}",
  ".aoCatenaMBubble{border:1px solid #41505b;background:#1a2834;padding:13px;border-radius:4px 14px 14px 14px;color:#efe6d9;white-space:pre-wrap;overflow-wrap:anywhere;font:17px/1.65 var(--ao-font-liturgical,Georgia,serif)}",
  ".aoCatenaMBubble p{margin:0!important}",
@@ -123,7 +124,7 @@ function installStyle(d){
  ].join("\n");
  (d.head||d.documentElement).append(s);
 }
-export function mountCatenaMessenger(host,pericopes,{language="en"}={}){
+export function mountCatenaMessenger(host,pericopes,{language="en",fetcher=globalThis.fetch?.bind(globalThis),cacheStorage=globalThis.caches,cryptoProvider=globalThis.crypto}={}){
  if(!host?.ownerDocument||language!=="en")return null;
  const d=host.ownerDocument,rows=indexCatenaMessages(pericopes);
  if(!rows.length)return null;
@@ -142,9 +143,11 @@ export function mountCatenaMessenger(host,pericopes,{language="en"}={}){
  input.type="search";input.maxLength=240;input.placeholder="Ask about the passage…";input.setAttribute("aria-label","Find the Fathers' words");
  const send=element(d,"button",null,"Find excerpts");send.type="submit";
  form.append(input,send);
- foot.append(topics,acts,form,element(d,"p","aoCatenaMDisclaimer","Messages reproduce the Oxford/Newman Catena extracts. Questions search the actual words in this passage; no AI answer is generated. Historical author labels remain as supplied by the source."));
+ foot.append(topics,acts,form,element(d,"p","aoCatenaMDisclaimer","Messages reproduce the Oxford/Newman Catena extracts. Questions search literal source vocabulary here or elsewhere in the four Gospels; no AI answer is generated. Historical author labels remain as supplied by the source."));
  shell.append(head,authors,feed,foot);host.append(shell);
- const seen=new Set();let lastFather=null;
+ const seen=new Set();let lastFather=null,lastQuestion="",searching=false;
+ const wider=action(d,"Search all four Gospels",()=>{if(lastQuestion)void searchElsewhere(lastQuestion)});
+ wider.disabled=true;
  function note(s){const e=element(d,"p","aoCatenaMNotice",s);e.setAttribute("role","status");feed.append(e)}
  function renderAuthors(){
   const count=new Map();rows.forEach(r=>count.set(r.father,(count.get(r.father)||0)+1));
@@ -163,6 +166,7 @@ export function mountCatenaMessenger(host,pericopes,{language="en"}={}){
   const article=element(d,"article","aoCatenaMRow");article.dataset.catenaFragmentId=r.id;
   const av=element(d,"div","aoCatenaMAvatar",r.father.slice(0,1).toUpperCase());av.setAttribute("aria-hidden","true");
   const body=element(d,"div","aoCatenaMBody"),bubble=element(d,"div","aoCatenaMBubble");
+  if(r.fromAnotherPassage)body.append(element(d,"p","aoCatenaMElsewhere","FROM ANOTHER PASSAGE · "+r.reference));
   body.append(element(d,"p","aoCatenaMName",r.father));
   const excerpt=opening(r.text);bubble.append(element(d,"p",null,excerpt));
   if(excerpt!==r.text){
@@ -185,12 +189,34 @@ export function mountCatenaMessenger(host,pericopes,{language="en"}={}){
  }),action(d,"Another Father",()=>{
   const next=rows.find(r=>r.father!==lastFather&&!seen.has(r.id));
   if(next)message(next);else note("No further extracts from another attributed author remain.");
- }));
+ }),wider);
+ async function searchElsewhere(query){
+  if(searching||!shell.isConnected)return;
+  searching=true;wider.disabled=true;
+  const busy=element(d,"p","aoCatenaMNotice","Searching the original Catena across all four Gospels…");
+  busy.setAttribute("role","status");feed.append(busy);
+  try{
+   const module=await import("./catena-global-search.js");
+   const output=await module.searchCatenaAcrossGospels(query,{
+    currentPericopeIds:pericopes.map(p=>p.id),
+    currentAuthors:[...new Set(rows.map(r=>r.father))],
+    fetcher,cacheStorage,cryptoProvider,limit:3
+   });
+   if(!shell.isConnected)return;
+   busy.remove();let added=0;
+   for(const result of output.results)if(message(result))added++;
+   if(!added)note("No further matching original extracts could be verified elsewhere in the indexed Gospels.");
+   if(output.unavailable.length)note("Some Gospel indexes or original chapter packs could not be loaded. Results are incomplete: "+output.unavailable.join(", ")+".");
+  }catch{
+   if(shell.isConnected){busy.remove();note("Cross-Gospel source search is unavailable. No patristic message has been invented.");}
+  }finally{searching=false;wider.disabled=!lastQuestion||!shell.isConnected}
+ }
  function ask(query,display=query){
   if(!query.trim())return;
   feed.append(element(d,"div","aoCatenaMUser",display));
+  lastQuestion=query;wider.disabled=false;
   const hits=retrieveCatenaMessages(rows,query,{limit:4,excludeIds:seen});
-  if(!hits.length){note("No matching source wording was found for this passage. Nothing has been invented.");return}
+  if(!hits.length){note("No matching excerpt in this passage. Checking the other indexed Gospel passages…");void searchElsewhere(query);return}
   let fresh=0;for(const r of hits)if(message(r))fresh++;
   if(!fresh)note("The matching extracts are already present earlier in the conversation.");
  }
