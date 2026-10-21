@@ -23,7 +23,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - run: npm ci --ignore-scripts
+      - run: npm install --no-save --ignore-scripts --no-audit --no-fund @playwright/test@1.55.0
       - run: npx playwright install --with-deps chromium
       - name: Execute the single-file story at phone and desktop sizes
         run: node tests/pius-x-study-standalone-e2e.mjs
