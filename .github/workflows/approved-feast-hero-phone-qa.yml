@@ -33,7 +33,7 @@ jobs:
           node tests/approved-feast-hero-candidate-integrity.mjs
       - name: Install browser test dependencies
         run: |
-          npm ci --no-audit --no-fund
+          npm install --no-audit --no-fund
           npx playwright install --with-deps chromium
       - name: Render ten actual candidates at 320px and 390px viewport widths
         run: node tests/approved-feast-hero-gallery-phone-e2e.mjs
