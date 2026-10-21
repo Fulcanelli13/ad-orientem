@@ -158,6 +158,29 @@ export function catenaHasExactSourcePhrase(rows,question){
  });
 }
 /**
+ * Report HOW an original extract was retrieved without classifying it as a
+ * theological answer. A source occurrence supports only retrieval evidence.
+ * The returned sourcePhrase is taken verbatim from the canonical fragment.
+ */
+export function catenaLiteralMatchEvidence(row,question){
+ if(typeof row?.text!=="string"||typeof question!=="string")return null;
+ const words=question.toLowerCase().match(/[a-z]+/g)||[];
+ const content=new Set(catenaSearchTerms(question));
+ for(const size of [4,3,2]){
+  for(let i=0;i+size<=words.length;i++){
+   const phrase=words.slice(i,i+size);
+   if(phrase.filter(word=>content.has(word)).length<2)continue;
+   const pattern=new RegExp("\\b"+phrase.join("[^a-zA-Z]+")+"\\b","i");
+   const match=pattern.exec(row.text);
+   if(match)return Object.freeze({kind:"exact-source-wording",sourcePhrase:match[0]});
+  }
+ }
+ const shared=[...content].filter(word=>
+  new RegExp("(^|[^a-z])"+word+"([^a-z]|$)","i").test(row.text));
+ if(shared.length)return Object.freeze({kind:"shared-vocabulary",sourceTerms:shared});
+ return null;
+}
+/**
  * The actual source selector used for both the Messenger and the automated
  * editorial acceptance fixtures. Related-topic retrieval is a fallback unless
  * the question's exact multiword wording appears in the canonical extract.
@@ -166,11 +189,14 @@ export function retrieveCatenaQuestionMatches(rows,question,{limit=4,excludeIds=
  if(catenaQuestionHasUnsupportedContext(question,rows))return [];
  const literal=retrieveCatenaMessages(rows,question,{limit,excludeIds});
  const topic=catenaRelatedTopic(question);
- if(literal.length&&(!topic||catenaHasExactSourcePhrase(rows,question)))return literal;
+ const annotated=literal.map(row=>Object.freeze({
+  ...row,sourceMatchEvidence:catenaLiteralMatchEvidence(row,question)
+ }));
+ if(literal.length&&(!topic||catenaHasExactSourcePhrase(rows,question)))return annotated;
  const related=topic?retrieveCatenaRelatedMessages(rows,question,{limit,excludeIds}):[];
  return related.length?related.map(hit=>Object.freeze({
   ...hit.row,relatedSourceEvidence:hit.evidence
- })):literal;
+ })):annotated;
 }
 export function suggestCatenaTopics(rows,{limit=4}={}){
  const candidates=["Word","Beginning","Father","Creation","Eternal",
@@ -209,7 +235,7 @@ function installStyle(d){
  ".aoCatenaMRow{display:flex;align-items:flex-start;gap:9px;width:100%}",
  ".aoCatenaMAvatar{flex:0 0 38px;width:38px;height:38px;border-radius:50%;border:1px solid #aa8552;background:#303739;display:grid;place-items:center;color:#ead0a6;font:600 15px Georgia}",
  ".aoCatenaMBody{flex:1;min-width:0}",
- ".aoCatenaMRelated{font:500 11px/1.5 var(--ao-font-ui,Georgia,serif);color:#c7b9a1;margin:0 0 5px!important}",
+ ".aoCatenaMRelated,.aoCatenaMEvidence{font:500 11px/1.5 var(--ao-font-ui,Georgia,serif);color:#c7b9a1;margin:0 0 5px!important}",
  ".aoCatenaMElsewhere{font:600 11px/1.5 var(--ao-font-ui,Georgia,serif);color:#d6ae70;margin:0 0 5px!important;letter-spacing:.035em}",
  ".aoCatenaMName{color:#e9c68e;font:600 13px var(--ao-font-ui,Georgia,serif);margin:0 0 5px!important}",
  ".aoCatenaMBubble{border:1px solid #41505b;background:#1a2834;padding:13px;border-radius:4px 14px 14px 14px;color:#efe6d9;white-space:pre-wrap;overflow-wrap:anywhere;font:17px/1.65 var(--ao-font-liturgical,Georgia,serif)}",
@@ -278,6 +304,15 @@ export function mountCatenaMessenger(host,pericopes,{language="en",fetcher=globa
   const body=element(d,"div","aoCatenaMBody"),bubble=element(d,"div","aoCatenaMBubble");
   if(r.fromAnotherPassage)body.append(element(d,"p","aoCatenaMElsewhere","FROM ANOTHER PASSAGE · "+r.reference));
   if(r.relatedSourceEvidence)body.append(element(d,"p","aoCatenaMRelated","RELATED SOURCE WORDING · “"+r.relatedSourceEvidence.sourcePhrase+"” · Not a direct answer"));
+  else if(r.sourceMatchEvidence){
+   const evidence=r.sourceMatchEvidence;
+   const label=evidence.kind==="exact-source-wording"
+    ?"EXACT SOURCE WORDING · “"+evidence.sourcePhrase+"” · Relevance not reviewed"
+    :"SHARED SOURCE WORDS · Not necessarily an answer";
+   const context=element(d,"p","aoCatenaMEvidence",label);
+   context.dataset.catenaMatch=evidence.kind;
+   body.append(context);
+  }
   body.append(element(d,"p","aoCatenaMName",r.father));
   const excerpt=opening(r.text);bubble.append(element(d,"p",null,excerpt));
   if(excerpt!==r.text){
