@@ -153,6 +153,24 @@ Four essential apocalyptic scope refinements preserve Scripture's own account bo
 
 **Remaining editorial gates:** verify fine-grained labels and source bounds for the 150 against scholarly source editions and the Church's genre conventions; collate historical printed Bible editions; adjudicate exact Atlas episode identities and covenantal contexts individually; make publication and app-shell navigation decisions explicitly. A pass at *source-row parity* does not certify the original witness files or approve all editorial classifications.
 
+## Editorial certification queue — final 150 source scopes
+
+The 150 most recently admitted Scripture reading scopes now have an individually indexed **editorial triage ledger**. This distinguishes verified source-coordinate availability (which passed) from scene-boundary correctness, canonical event identities, Atlas publication, and printed-edition collation (which are not globally approved).
+
+- Data: `data/research/historia-salutis-thematic-150-editorial-queue-20261021.v1.json`
+- Reader-only corrections: `src/scripture/historia-thematic-editorial-triage.js`
+- Regression: `tests/historia-thematic-150-editorial-triage.mjs`
+
+The automated Scripture-overlap review identified **ten narrower source-window proposals**, each checked against **Challoner, CPDV and Crampon** as existing original-source verses. Examples include the Queen of Sheba (1 Kings 10:1–13), the encounter between Elijah and the Sarepta widow (1 Kings 17:8–16), the separate raising of her son (1 Kings 17:17–24, unchanged), Elijah and Baal (1 Kings 18:17–40), Ezekiel's dry-bones vision (37:1–14), Samson and Delilah (Judges 16:4–22), and the separate deaths and burial of Jacob and Joseph. The reader retains every **original omission-inventory citation** independently of its displayed narrower range.
+
+There remain **seven deliberate shared-verse pairs** where separate educational views access some of the same authoritative Bible words. Examples: Visitation/Magnificat, Presentation/Nunc dimittis, twelve-year-old Jesus/hidden life, appearance at the lake/miraculous catch, and a broader Sodom narrative/Lot's escape. They are not seven copies of Bible texts.
+
+The ledger records **28 Atlas entries with exactly matching inventory Scripture-reference strings**, nine of which correspond to IDs in the 151-stop Atlas navigation. Reference equality is **candidate evidence only**, never proof of identical canonical episode identity or authorisation to display a geographical pin. Four readings intersect P3 selected source spans, but this likewise does **not** imply that the complete missing episode is already included in the compact salvation-history narrative. Forty-six earlier *core restoration review* candidates remain undecided; they are not silently inserted into the 54-chapter reading.
+
+All **13 Visions and Revelations** references retain a genre lock: do not interpret visionary Scripture as a sequence of independently dated terrestrial events. The extended Exodus/Nehemiah readings retain warnings about their broad, multichapter scope. Nothing here is a theological commentary or a new retelling.
+
+The current acceptance work only certifies the **technical contract and source-coordinate integrity**. Publication requires genuine historical edition collation, editorial judgement on the remaining scopes and questions of genre, and source-grounded canonical episode identity decisions. Explicit approval remains necessary to expose these collections in normal Ad Orientem navigation.
+
 ## Main manuscript protection
 
 - The 54-chapter research proposal at data/research/historia-salutis-p3-provisional-reading-chapter-consolidation-20261021.v2.json is unchanged.
