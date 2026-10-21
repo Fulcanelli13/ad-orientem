@@ -91,6 +91,9 @@ on:
       - 'previews/pius-x-12scene-visual-novel-editorial-review-20261021.html'
       - 'docs/research/PIUS-X-SCENE-PACING-VOICE-ACCEPTANCE-20261021.md'
       - 'tests/pius-x-depth12-visual-review.mjs'
+      - 'previews/pius-x-three-voice-source-tethered-v2-20261021.json'
+      - 'docs/research/PIUS-X-FIRST3-SOURCE-TETHERED-VOICE-20261021.md'
+      - 'tests/pius-x-three-voice-source-tethered-v2.mjs'
       - 'tests/pius-x-depth12-visual-novel-browser.mjs'
       - 'tests/pius-x-first20-personal-and-papal-source-edits.mjs'
       - 'previews/visible-mass-3d/pius-x-batch-release-editorial-review.html'
@@ -443,6 +446,7 @@ jobs:
       - run: node tests/pius-x-next20-pastoral-dialogue-graph.mjs
       - run: node tests/pius-x-12chapter-dependent-dialogue-flow.mjs
       - run: node tests/pius-x-depth12-visual-review.mjs
+      - run: node tests/pius-x-three-voice-source-tethered-v2.mjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
