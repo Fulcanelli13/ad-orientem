@@ -90,6 +90,7 @@ for(const row of READER_OBJECTIVE_CONTEXT_ROWS){
   assert.ok(matching.length,"Missing source block in real LIVE cards: "+row.blockId);
   const active=matching.map(card=>projectReaderObjectiveContext(card,{
     cueId:cue,form:"MISSA_CANTATA_INCENSE",language:"fr",
+    sourceBlocks:data.sungCorpus.blocks,
   })).find(Boolean);
   assert.ok(active,"Actual LIVE card cannot project context for "+row.blockId+"/"+cue);
   assert.equal(active.blockId,row.blockId);
@@ -98,6 +99,7 @@ for(const row of READER_OBJECTIVE_CONTEXT_ROWS){
   assert.equal(active.observedNow,false);
   assert.equal(projectReaderObjectiveContext(matching[0],{
     cueId:"AO.SM.C9999",form:"MISSA_CANTATA_INCENSE",language:"fr",
+    sourceBlocks:data.sungCorpus.blocks,
   }),null,"Context leaked onto an unrelated cue");
 }
 
