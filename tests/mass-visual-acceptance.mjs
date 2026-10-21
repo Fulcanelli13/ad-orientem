@@ -956,14 +956,16 @@ try{
   assert.match(await page.evaluate(()=>localStorage.getItem("ao-mass-customary-v1")??""),/AO.SM.C0061/,
     "faithful paragraph icon customization was not saved");
   await faithfulPicker.locator("[data-faithful-picker-gesture]").selectOption("DEFAULT");
-  // Default head-bow has no approved artwork: remove a user-inserted gesture
-  // pictogram, but do not discard source cue, paragraph, or posture control.
-  await page.waitForFunction(()=>
-    !document.querySelector("#ao-r17-native-reader-preview .ao-reader-paragraph[data-cue-id='AO.SM.C0061'] [data-faithful-field='gesture']"),
-    null,{timeout:7000});
+  // Reset returns to the source-owned Holy Name bow. The October canonical
+  // set approves this pictogram; it must be restored rather than suppressed.
+  await page.waitForFunction(()=>{
+    const node=document.querySelector("#ao-r17-native-reader-preview .ao-reader-paragraph[data-cue-id='AO.SM.C0061'] [data-faithful-field='gesture']");
+    const art=node?.querySelector(".ao-icon-mask");
+    return Boolean(node&&art&&!art.hidden);
+  },null,{timeout:7000});
   assert.equal(await page.locator(
     "#ao-r17-native-reader-preview .ao-reader-paragraph[data-cue-id='AO.SM.C0061'] [data-faithful-field='posture']").count(),1,
-    "resetting a rejected bow depiction removed the essential faithful posture button");
+    "resetting to the canonical bow removed the essential faithful posture button");
   await faithfulPicker.locator("[data-faithful-picker-posture]").selectOption("DEFAULT");
   await faithfulPicker.locator("[data-faithful-picker-close]").click();
   assert.equal(await faithfulPicker.isVisible(),false,"faithful picker did not close");
@@ -982,8 +984,8 @@ try{
       image:art?.style.backgroundImage??"",mask:art?.style.maskImage??""};
   });
   assert.equal(priestBowArt.active,"true","Gloria source priest bow action is missing from the rail");
-  assert.equal(priestBowArt.hidden,true,
-    "rejected priest BOWS HEAD image returned although exact source action remains");
+  assert.equal(priestBowArt.hidden,false,
+    "approved canonical priest head-bow art must remain visible with its exact source action");
   assert.equal(gloriaBow.scholaSharedActive,"true","shared Gloria text lost the v1.76 right-rail Schola indicator");
   assert.equal(gloriaBow.scholaSharedIconHidden,false,"shared Gloria text has no visible Schola pictogram");
   // The central Gloria remains the only Latin lyric surface; the compact
