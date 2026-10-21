@@ -6,7 +6,7 @@ import { romanClassTier } from "./roman-class-tier.js";
 import { calendarIntelligenceForDate, calendarPracticeMonthEntries } from "./intelligence.js";
 import { pilgrimagePlacesForCalendarKeys } from "./pilgrimage-places.js";
 import { renderYearJourney, yearJourneyCss } from "./year-journey.js";
-import { calendarCustomRecommendations, calendarCustomSeasonalMonthEntries } from "./customs-read-model.js";
+import { calendarCustomRecommendations, calendarCustomSeasonalMonthEntries, calendarCustomArticleIds, calendarCustomArticle } from "./customs-read-model.js";
 import { calendarMassColour } from "./colour-projection.js";
 import { calendarPaletteColour, yearDailyProjection, yearSeasonGradient } from "./year-colour-wheel.js";
 import { serialize1962CalendarMonth, calendarMonthIcsFilename } from "./export-ics.js";
@@ -719,6 +719,23 @@ function calendarCustomArticleMarkup(article){
   </details>`;
 }
 
+
+function calendarCustomCatalogueMarkup(){
+  const articles=calendarCustomArticleIds().map(calendarCustomArticle).filter(Boolean);
+  const isFr=fr();
+  const item=article=>{
+    const searchable=[article.title.en,article.title.fr,article.description.en,article.description.fr].join(" ").toLocaleLowerCase();
+    return '<div data-cal-custom-item data-cal-custom-terms="'+esc(searchable)+'">'+calendarCustomArticleMarkup(article)+'</div>';
+  };
+  return '<section class="aoCalCustomCatalogueSection"><details class="aoCalCustomCatalogue">'
+    +'<summary>'+esc(L("Browse all customs","Parcourir toutes les coutumes"))+' <small>('+articles.length+')</small></summary>'
+    +'<label class="aoCalCustomCatalogueLabel" for="ao-cal-custom-search">'+esc(L("Search customs","Rechercher une coutume"))+'</label>'
+    +'<input id="ao-cal-custom-search" type="search" data-cal-custom-search autocomplete="off" placeholder="'+esc(L("Name or subject","Nom ou sujet"))+'">'
+    +'<p data-cal-custom-empty hidden>'+esc(L("No matching customs.","Aucune coutume correspondante."))+'</p>'
+    +'<div class="aoCalCustomCatalogueItems">'+articles.map(item).join("")+'</div>'
+    +'</details></section>';
+}
+
 function practiceContext(selected,r){
   let intel=null;
   try{intel=calendarIntelligenceForDate(selected,{fr:fr(),properTitle:titleOf(r)})}catch(error){console.error("Calendar intelligence failed",error)}
@@ -867,6 +884,7 @@ function daySurface(selected,r){
       <button class="aoCalV2TextLink" type="button" data-cal-view="year">${esc(L("View the liturgical year","Voir l’année liturgique"))} →</button>
     </section>
     ${practiceContext(selected,r)}
+    ${calendarCustomCatalogueMarkup()}
     <section class="aoCalV2WeekSection">
       <div class="aoCalV2SectionTitle"><div><small>${esc(L("IN CONTEXT","EN CONTEXTE"))}</small><h3>${esc(L("This week","Cette semaine"))}</h3></div><button class="aoCalV2Today" type="button" data-cal-today>${esc(L("Today","Aujourd’hui"))}</button></div>
       ${compactWeek(selected)}
@@ -1068,6 +1086,16 @@ function hybridMonthCss(){return `
 .aoCalCustomArticleContent p{margin:5px 0 10px}
 .aoCalCustomArticleContent ul{padding-left:18px}
 .aoCalCustomArticleContent a{color:#d8c5a4;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.aoCalCustomCatalogueSection{margin:18px 0 14px}
+.aoCalCustomCatalogue{border-top:1px solid rgba(227,212,187,.15);border-bottom:1px solid rgba(227,212,187,.12);padding:3px 0}
+.aoCalCustomCatalogue>summary{list-style:none;cursor:pointer;padding:13px 2px;font-size:15px;color:#d2c6b2}
+.aoCalCustomCatalogue>summary::-webkit-details-marker{display:none}
+.aoCalCustomCatalogue>summary small{opacity:.7;font-size:12px;margin-left:5px}
+.aoCalCustomCatalogueLabel{display:block;margin-top:9px;margin-bottom:5px;color:#aaa49c;font-size:12px}
+.aoCalCustomCatalogue [data-cal-custom-search]{box-sizing:border-box;width:100%;max-width:100%;border:1px solid rgba(227,212,187,.23);border-radius:5px;background:#111923;color:#ebe1d0;font:inherit;min-height:42px;padding:10px}
+.aoCalCustomCatalogue [data-cal-custom-item][hidden]{display:none!important}
+.aoCalCustomCatalogueItems{margin-top:10px}
+.aoCalCustomCatalogue [data-cal-custom-empty]{font-size:13px;color:#aba49b}
 /* Sanctorale defaults to the restrained register while the user-chosen
    hybrid leaves its exact aesthetic open; no source identities are modified. */
 #ao-calendar-modular-root [data-cal-month-index="sanctorale"] .aoCalMonthIndexList{gap:0}
@@ -1407,6 +1435,20 @@ function bind(r){
     if((event.key==="Enter"||event.key===" ")&&event.target.closest?.("g[data-cal-clock-season],g[data-cal-clock-feast],g[data-cal-clock-cluster]")){
       event.preventDefault();event.target.dispatchEvent(new MouseEvent("click",{bubbles:true}));
     }
+  });
+  r.addEventListener("input",event=>{
+    const input=event.target.closest?.("[data-cal-custom-search]");
+    if(!input)return;
+    const container=input.closest(".aoCalCustomCatalogue");
+    const term=input.value.trim().toLocaleLowerCase();
+    let visible=0;
+    for(const row of container?.querySelectorAll("[data-cal-custom-item]")||[]){
+      const matches=String(row.dataset.calCustomTerms||"").includes(term);
+      row.hidden=!matches;
+      if(matches)visible++;
+    }
+    const empty=container?.querySelector("[data-cal-custom-empty]");
+    if(empty)empty.hidden=visible!==0;
   });
   r.addEventListener("click",event=>{
     const clockControl=event.target.closest?.("[data-cal-clock-close],[data-cal-clock-season],[data-cal-clock-cluster],[data-cal-clock-feast],[data-cal-clock-open-day],[data-cal-clock-browse],[data-cal-clock-year],[data-cal-clock-today]");
