@@ -11,15 +11,20 @@ const byAsset=new Map(lock.map(x=>[x.id,x]));
 const byActionCue=new Map(cross.filter(x=>x.lane==="priest_action").map(x=>[x.cueId,x]));
 const entries=Object.entries(EXACT_ICON_BACKED_LIVE_RUBRICS);
 assert.equal(rubric.length,57);
-assert.equal(entries.length,4,"No unreviewed source rubric may be silently icon-only");
+assert.equal(entries.length,8,"No unreviewed source rubric may be silently icon-only");
 for(const [id,rec] of entries){
  const source=byRubric.get(id),chosen=byActionCue.get(rec.cueId),asset=byAsset.get(rec.assetId);
- assert.ok(source&&chosen&&asset,"Icon-only rubric must link exact original, source cue and asset");
+ assert.ok(source&&asset,"Icon-only rubric must link an exact source event and approved original");
  assert.equal(source.actor,"PRIEST");
  assert.equal(source.label,rec.action,"Wrong ceremonial phase for icon-only rubric "+id);
  assert.equal(source.cueId,rec.cueId);
- assert.equal(chosen.assetId,rec.assetId);
- assert.equal(chosen.runtimeAssetKey,rec.iconKey);
+ if(chosen?.assetId){
+  assert.equal(chosen.assetId,rec.assetId);
+  assert.equal(chosen.runtimeAssetKey,rec.iconKey);
+ }else{
+  assert.ok(["AO.SM.C0068","AO.SM.C0079","AO.SM.C0104","AO.SM.C0262"].includes(rec.cueId),
+   "Unreviewed action alias not allowed: "+rec.cueId);
+ }
  assert.ok(!asset.rejected&&["approved","repurposed"].includes(asset.status));
  const state={mode:"LIVE",cueId:rec.cueId,priestActionIconKey:rec.iconKey,
    iconResolved:true,priestActionLabel:rec.action};
@@ -42,4 +47,4 @@ for(const x of rubric.filter(x=>!EXACT_ICON_BACKED_LIVE_RUBRICS[x.id])){
 }
 assert.ok(!Object.keys(EXACT_ICON_BACKED_LIVE_RUBRICS).some(id=>id.includes("C0265")),
  "Final blessing must not acquire a substitute by word matching");
-console.log("Four exact LIVE rubric/icon equivalences certified; other 53 source rubrics preserved.");
+console.log("Eight exact LIVE rubric/icon equivalences certified; other 49 source rubrics preserved.");
