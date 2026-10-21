@@ -64,7 +64,9 @@ try{
   await page.locator('#sourceToggle').click();
   assert.equal(await page.locator('#evidence').evaluate(x=>x.open),true);
   assert.match(await page.locator('#sourceFull a').getAttribute('href'),/^https:\/\/www\.vatican\.va\//);
-  await page.locator('#review summary').click();
+  await page.locator('#reviewToggle').click();
+  assert.equal(await page.locator('#evidence').evaluate(x=>x.open),false);
+  assert.equal(await page.locator('#review').evaluate(x=>x.open),true);
   await page.locator('#pace').selectOption('4');
   await page.locator('#voice').selectOption('3');
   await page.locator('#clarity').selectOption('5');
