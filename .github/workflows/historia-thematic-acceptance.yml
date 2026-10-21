@@ -44,6 +44,7 @@ jobs:
           node tests/historia-thematic-batch2-witness.mjs
           node tests/historia-thematic-composite.mjs
           node tests/historia-thematic-editorial-boundaries.mjs
+          node tests/historia-thematic-all217-witness.mjs
   browser:
     needs: node-contracts
     runs-on: ubuntu-latest
