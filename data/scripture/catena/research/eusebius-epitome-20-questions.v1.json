@@ -66,7 +66,9 @@
       "sourceAccess": {
         "browserUrl": "https://catholiclibrary.org/library/browse/title/e",
         "englishMetadataUrl": "https://www.roger-pearse.com/weblog/2015/12/12/eusebius-of-caesarea-gospel-problems-and-solutions-now-online-in-english/"
-      }
+      },
+      "researchSolutionStructureFile": "data/scripture/catena/research/eusebius-stephanus-early-solution-structure.v1.json",
+      "researchSolutionMiningStatus": "initial_argument_routes_extracted__full_primary_Greek_alignment_pending"
     },
     {
       "id": "eusebius-stephanus-02",
@@ -111,7 +113,9 @@
       "sourceAccess": {
         "browserUrl": "https://catholiclibrary.org/library/browse/title/e",
         "englishMetadataUrl": "https://www.roger-pearse.com/weblog/2015/12/12/eusebius-of-caesarea-gospel-problems-and-solutions-now-online-in-english/"
-      }
+      },
+      "researchSolutionStructureFile": "data/scripture/catena/research/eusebius-stephanus-early-solution-structure.v1.json",
+      "researchSolutionMiningStatus": "initial_argument_routes_extracted__full_primary_Greek_alignment_pending"
     },
     {
       "id": "eusebius-stephanus-03",
@@ -156,7 +160,9 @@
       "sourceAccess": {
         "browserUrl": "https://catholiclibrary.org/library/browse/title/e",
         "englishMetadataUrl": "https://www.roger-pearse.com/weblog/2015/12/12/eusebius-of-caesarea-gospel-problems-and-solutions-now-online-in-english/"
-      }
+      },
+      "researchSolutionStructureFile": "data/scripture/catena/research/eusebius-stephanus-early-solution-structure.v1.json",
+      "researchSolutionMiningStatus": "initial_argument_routes_extracted__full_primary_Greek_alignment_pending"
     },
     {
       "id": "eusebius-stephanus-04",
@@ -208,7 +214,9 @@
         "historicalName": "Julius Africanus",
         "relation": "material_transmitted_in_eusebian_collection",
         "instruction": "Never render an unqualified Eusebius speech bubble for Africanus quotation; require segment-by-segment attribution."
-      }
+      },
+      "researchSolutionStructureFile": "data/scripture/catena/research/eusebius-stephanus-early-solution-structure.v1.json",
+      "researchSolutionMiningStatus": "quoted_Africanus_source_boundaries_to_be_collated"
     },
     {
       "id": "eusebius-stephanus-05",
@@ -732,7 +740,9 @@
       "sourceAccess": {
         "browserUrl": "https://catholiclibrary.org/library/view?chunk.id=00000003&docId=%2FFathers-Synchronized-EN%2FEusebius_Caesariensis__Quaestiones_evangelicae_ad_Marinum.en.html",
         "englishMetadataUrl": "https://www.roger-pearse.com/weblog/2015/12/12/eusebius-of-caesarea-gospel-problems-and-solutions-now-online-in-english/"
-      }
+      },
+      "researchSolutionStructureFile": "data/scripture/catena/research/eusebius-marinus-solution-structure.v1.json",
+      "researchSolutionMiningStatus": "argument_alternatives_extracted__complete_Greek_translation_review_pending"
     },
     {
       "id": "eusebius-marinus-02",
@@ -784,7 +794,9 @@
         "englishMetadataUrl": "https://www.roger-pearse.com/weblog/2015/12/12/eusebius-of-caesarea-gospel-problems-and-solutions-now-online-in-english/"
       },
       "solutionSourceObserved": "Catholic Library, To Marinus II online text; question-numbered section with different-women and different-visits proposals.",
-      "solutionConfidence": "partial_source_read__not_independently_checked_greek"
+      "solutionConfidence": "partial_source_read__not_independently_checked_greek",
+      "researchSolutionStructureFile": "data/scripture/catena/research/eusebius-marinus-solution-structure.v1.json",
+      "researchSolutionMiningStatus": "argument_alternatives_extracted__complete_Greek_translation_review_pending"
     },
     {
       "id": "eusebius-marinus-03",
@@ -829,7 +841,9 @@
       "sourceAccess": {
         "browserUrl": "https://catholiclibrary.org/library/view?chunk.id=00000003&docId=%2FFathers-Synchronized-EN%2FEusebius_Caesariensis__Quaestiones_evangelicae_ad_Marinum.en.html",
         "englishMetadataUrl": "https://www.roger-pearse.com/weblog/2015/12/12/eusebius-of-caesarea-gospel-problems-and-solutions-now-online-in-english/"
-      }
+      },
+      "researchSolutionStructureFile": "data/scripture/catena/research/eusebius-marinus-solution-structure.v1.json",
+      "researchSolutionMiningStatus": "argument_alternatives_extracted__complete_Greek_translation_review_pending"
     },
     {
       "id": "eusebius-marinus-04",
@@ -890,7 +904,27 @@
         "englishMetadataUrl": "https://www.roger-pearse.com/weblog/2015/12/12/eusebius-of-caesarea-gospel-problems-and-solutions-now-online-in-english/"
       },
       "relatedSupplementId": "eusebius-marinus-supp-05",
-      "relatedSupplementRelation": "independent_greek_catena_supplement_on_angel_accounts__do_not_merge_into_epitome_IV_unreviewed"
+      "relatedSupplementRelation": "independent_greek_catena_supplement_on_angel_accounts__do_not_merge_into_epitome_IV_unreviewed",
+      "researchSolutionStructureFile": "data/scripture/catena/research/eusebius-marinus-solution-structure.v1.json",
+      "researchSolutionMiningStatus": "partial_solution_mixed_witness_boundary_review",
+      "cautionFlag": "Modern editors report that epitome IV may reflect a distinct epitomator; IV.5–6 may answer another lost question; the Greek supplement on angels supplies a contradictory order of scenes."
     }
-  ]
+  ],
+  "solutionMiningCrosswalk": {
+    "marinusQuestionNumbers": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "stephanusQuestionNumbers": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "countMapped": 8,
+    "sourceSegmentsAreEditorialNotesNotFatherReplies": true,
+    "actualGreekCriticalEditionComparisonPending": true
+  }
 }
