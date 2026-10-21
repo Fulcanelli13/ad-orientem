@@ -487,8 +487,8 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          git fetch --no-tags --depth=1 origin '0339883dc3d1ecfc16f07fd35b68469df206337b'
-          test "$(git rev-parse FETCH_HEAD)" = '0339883dc3d1ecfc16f07fd35b68469df206337b'
+          git fetch --no-tags --depth=1 origin '433e0b515b4800593a18b1d8594efec3f9936eaa'
+          test "$(git rev-parse FETCH_HEAD)" = '433e0b515b4800593a18b1d8594efec3f9936eaa'
           for file in \
             src/learn/living-church-shared-question-router.js \
             src/learn/living-church-hybrid-question-router.js \
@@ -499,6 +499,7 @@ jobs:
             src/learn/living-church-contemporary-discipline-scope.js \
             data/learn/living-church-shared-question-routing-pilot.v1.json \
             data/learn/living-church-symbolic-concepts.v1.json \
+            data/learn/living-church-pius-x-source-concept-facets.v1.json \
             data/learn/living-church-pius-x-historical-passage-pointers.v1.json
           do
             dest="research-out/pr1443-pius-x-document-first-router/$file"
