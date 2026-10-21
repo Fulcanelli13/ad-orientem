@@ -686,7 +686,7 @@ And the children of Israel of the captivity kept the phase, on the fourteenth da
 
 *⟦Editorial connector · source: Luke 1:5–25; Luke 1:26; Luke 1:36 · NOT APPROVED⟧*
 
-*The priest Zachary and his wife Elizabeth, who had been barren, were expecting a son after the angel's promise. In the sixth month of her pregnancy, another announcement followed.*
+*Generations after the return from exile, in the days of Herod king of Judea, the priest Zachary and his wife Elizabeth, once barren, were expecting a son following an angel's promise. In the sixth month of her pregnancy, another announcement followed.*
 
 **⟦Luke 1:26–38⟧**
 
@@ -918,13 +918,13 @@ The disciples therefore departed again to their home.
 
 But Mary stood at the sepulchre without, weeping. Now as she was weeping, she stooped down and looked into the sepulchre, And she saw two angels in white, sitting, one at the head, and one at the feet, where the body of Jesus had been laid. They say to her: Woman, why weepest thou? She saith to them: Because they have taken away my Lord: and I know not where they have laid him. When she had thus said, she turned herself back and saw Jesus standing: and she knew not that it was Jesus. Jesus saith to her: Woman, why weepest thou? Whom seekest thou? She, thinking that it was the gardener, saith to him: Sir, if thou hast taken him hence, tell me where thou hast laid him: and I will take him away. Jesus saith to her: Mary. She turning, saith to him: Rabboni (which is to say, Master). Jesus saith to her: Do not touch me: for I am not yet ascended to my Father. But go to my brethren and say to them: I ascend to my Father and to your Father, to my God and to your God. Mary Magdalen cometh and telleth the disciples: I have seen the Lord; and these things he said to me.
 
+*⟦Editorial connector · source: Luke 24:13–35 · NOT APPROVED⟧*
+
+*On that same Easter day, Luke records that the risen Christ accompanied two disciples to Emmaus and opened the Scriptures to them. Towards evening they recognised Him in the breaking of bread and returned to Jerusalem.*
+
 **⟦John 20:19–29⟧**
 
 Now when it was late the same day, the first of the week, and the doors were shut, where the disciples were gathered together, for fear of the Jews, Jesus came and stood in the midst and said to them: Peace be to you. And when he had said this, he shewed them his hands and his side. The disciples therefore were glad, when they saw the Lord. He said therefore to them again: Peace be to you. As the Father hath sent me, I also send you. When he had said this, he breathed on them; and he said to them: Receive ye the Holy Ghost. Whose sins you shall forgive, they are forgiven them: and whose sins you shall retain, they are retained. Now Thomas, one of the twelve, who is called Didymus, was not with them when Jesus came. The other disciples therefore said to him: We have seen the Lord. But he said to them: Except I shall see in his hands the print of the nails and put my finger into the place of the nails and put my hand into his side, I will not believe. And after eight days, again his disciples were within, and Thomas with them. Jesus cometh, the doors being shut, and stood in the midst and said: Peace be to you. Then he said to Thomas: Put in thy finger hither and see my hands. And bring hither thy hand and put it into my side. And be not faithless, but believing. Thomas answered and said to him: My Lord and my God. Jesus saith to him: Because thou hast seen me, Thomas, thou hast believed: blessed are they that have not seen and have believed.
-
-*⟦Editorial connector · source: Luke 24:13–35 · NOT APPROVED⟧*
-
-*Luke separately records that the risen Christ accompanied two disciples on the road to Emmaus and opened the Scriptures to them, showing that the Christ had to suffer and enter into His glory.*
 
 ## 30 · The Ascension and promised mission
 
