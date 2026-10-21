@@ -578,7 +578,7 @@ async function exerciseRealShellFollowingAction(browser,spec){
           optional:api.model.cards.some(c=>c.title?.startsWith("Second Confiteor")),
           lastGospelCards:api.model.cards.filter(c=>(c.sourceSectionId??c.sectionId)==="AO.CARD.030").length};
       });
-      assert.equal(audit.total,64,spec.kind+" must have curated Mass before following action");
+      assert.equal(audit.total,65,spec.kind+" must preserve the full curated source-card structure before following action");
       assert.equal(audit.source,39);
       assert.equal(audit.owner,"SOURCE_FIRST_LIVE_CURATED_65_REVIEW");
       assert.equal(audit.curated,"true");
