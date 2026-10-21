@@ -5,6 +5,7 @@ const crosswalk=read("../data/research/historia-p4-movement-theatre-citation-cro
 const seam=read("../data/research/historia-p4-m20-m37-literary-review-queue.v1.json");
 const patriarchs=read("../data/research/historia-p4-patriarchs-witness-desk-audit.v1.json");
 const deliverance=read("../data/research/historia-p4-deliverance-witness-desk-audit.v1.json");
+const wilderness=read("../data/research/historia-p4-wilderness-sinai-witness-desk-audit.v1.json");
 const html=readFileSync(new URL("../labs/historia-salutis-theatre-p4.html",import.meta.url),"utf8");
 const C=crosswalk.counts;
 assert.equal(crosswalk.status,"RESEARCH_ONLY_SOURCE_OVERLAP_NOT_IDENTITY_NOT_APPROVED");
@@ -91,6 +92,26 @@ for(const [i,x] of deliverance.reviewedRows.entries()){
  assert.equal(x.witnessSpanChecks.douayChallonerVerseEntries,x.witnessSpanChecks.cpdv2009VerseEntries);
 }
 assert.equal(deliverance.reviewedRows.find(x=>x.index===36).geographicalAction,"KEEP_NO_PIN");
+assert.equal(wilderness.reviewedRows.length,11);
+assert.deepEqual([wilderness.counts.firstIndex,wilderness.counts.lastIndex],[38,48]);
+assert.equal(wilderness.counts.ordinarySameNumberedVerseCounts,10);
+assert.equal(wilderness.counts.editionSpecificReferenceMismatches,1);
+assert.equal(wilderness.counts.geocodesApproved,0);
+for(const [i,x] of wilderness.reviewedRows.entries()){
+ assert.equal(x.index,i+38);
+ assert.ok(sceneIds.has(x.sceneKey));
+ assert.equal(x.scenePublicationApproved,false);
+ assert.equal(x.modernCoordinatesApproved,false);
+ assert.equal(x.witnessSpanChecks.coordinatePresenceVerified,true);
+}
+const tabernacle=wilderness.reviewedRows.find(x=>x.index===48);
+assert.equal(tabernacle.scriptureReference,"Exodus 40:1–38");
+assert.equal(tabernacle.witnessSpanChecks.douayChallonerEntries,36);
+assert.equal(tabernacle.witnessSpanChecks.cpdv2009Entries,36);
+assert.equal(tabernacle.witnessSpanChecks.crampon1923Entries,38);
+assert.equal(tabernacle.witnessSpanChecks.editionReferenceMismatch,true);
+assert.equal(wilderness.controls.exodus40.automaticVerseAlignmentForbidden,true);
+assert.equal(wilderness.controls.exodus40.doNotFabricateVerses37Or38,true);
 for(const token of ["maplibregl.Map","prefers-reduced-motion","ATLAS_GEO.cenacle","ATLAS_GEO.transfiguration","HS-M37","sourceBridgeCandidates"]) {
  if(token==="sourceBridgeCandidates") continue;
  assert.ok(html.includes(token),"Theatre lab missing "+token);
@@ -98,4 +119,4 @@ for(const token of ["maplibregl.Map","prefers-reduced-motion","ATLAS_GEO.cenacle
 assert.ok(html.includes("No cinematic-scene identity exists"));
 assert.ok(html.includes("No painting imported"));
 assert.ok(!html.includes("<script type=\"module\" src=\"../src/"),"Research lab must not import production modules");
-console.log("PASS: Historia P4 crosswalk, 183-row evidence queue, 18 seam holds, 38 Genesis/Exodus witnesses and four-state theatre laboratory source contracts");
+console.log("PASS: Historia P4 crosswalk, 183-row evidence queue, 18 seam holds, 49 Genesis/Exodus witnesses and four-state theatre laboratory source contracts");
