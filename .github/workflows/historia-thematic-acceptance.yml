@@ -43,6 +43,7 @@ jobs:
           node tests/historia-thematic-source-gaps.mjs
           node tests/historia-thematic-batch2-witness.mjs
           node tests/historia-thematic-composite.mjs
+          node tests/historia-thematic-editorial-boundaries.mjs
   browser:
     needs: node-contracts
     runs-on: ubuntu-latest
