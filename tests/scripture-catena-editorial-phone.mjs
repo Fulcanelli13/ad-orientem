@@ -11,9 +11,10 @@ const server=http.createServer(async(req,res)=>{
   const pathname=decodeURIComponent(new URL(req.url,"http://127.0.0.1").pathname);
   const file=resolve(root,"."+pathname);
   if(!file.startsWith(root+sep)){res.writeHead(403);res.end();return;}
+  const data=await readFile(file);
   res.writeHead(200,{"content-type":mime[extname(file)]||"application/octet-stream","cache-control":"no-store"});
-  res.end(await readFile(file));
- }catch(e){res.writeHead(e?.code==="ENOENT"?404:500);res.end(String(e.message||e));}
+  res.end(data);
+ }catch(e){if(!res.headersSent)res.writeHead(e?.code==="ENOENT"?404:500);res.end(String(e.message||e));}
 });
 await new Promise((resolve,reject)=>{server.once("error",reject);server.listen(4201,"127.0.0.1",resolve)});
 let browser;
