@@ -63,7 +63,7 @@ assert.ok(domSource.includes('setChannel(root,"priest-position",showContext?curr
 assert.ok(domSource.includes('data-icon-slot="priest-position-rail"'));
 assert.ok(domSource.includes('applyIcon(root,"priest-position-rail",showContext'));
 assert.ok(domSource.includes('setText(root,"priest-position-rail",priestStationLabel(showContext'));
-assert.equal((domSource.match(/data-icon-slot="priest-position"/g)||[]).length,1,
+assert.equal((domSource.match(/<span class="ao-icon-mask" data-icon-slot="priest-position" hidden><\/span>/g)||[]).length,1,
   "The original top priest icon and contextual rail must never share a slot");
 assert.ok(domSource.includes('rightRail?.dataset.visible==="true"'),
   "LIVE rubrics may disappear only with an actually visible rail action");
