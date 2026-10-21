@@ -1,0 +1,870 @@
+{
+  "schema": "AO_CUSTOMS_MASTER_260_FIRST_PASS_RECONCILIATION_V1",
+  "as_of": "2026-10-21",
+  "status": "FIRST_PASS_CLASSIFICATION_COMPLETE_SOURCE_AND_IDENTITY_APPROVAL_STILL_REQUIRED",
+  "governance": {
+    "working_master_identities": 42,
+    "preexisting_main_canonical": 38,
+    "preexisting_provisional_distinct": 4,
+    "new_canonical_ids_issued": 0,
+    "app_publications_authorized": 0,
+    "source_witnesses_added": 0,
+    "retained_weiser_observations": 568,
+    "classification_is_not_final_identity_resolution": true,
+    "unverified_regional_folklore_remains_historical": true,
+    "ministerial_blessing_requires_ritual_witness": true
+  },
+  "summary": {
+    "previous_54_card_routing_coverage": 26,
+    "newly_triaged_unique_observations": 260,
+    "dispositions": {
+      "REGIONAL_VARIANT_OR_RELATED_PRACTICE": 39,
+      "HISTORICAL_OR_CULTURAL_REFERENCE_ONLY": 59,
+      "SOURCE_OR_RITUAL_HOLD": 23,
+      "LINK_TO_KNOWN_IDENTITY_FOR_REVIEW": 41,
+      "OTHER_MODULE_OWNER_NO_NEW_CUSTOM": 56,
+      "POTENTIALLY_DISTINCT_CUSTOM_REQUIRES_SOURCE_GATE": 42
+    },
+    "existing_identity_references_for_review": 41,
+    "possible_distinct_practices_needing_independent_closure": 42,
+    "ritual_or_source_holds": 23,
+    "source_state_on_distinct": {
+      "NO_P1_SOURCE_GATE_ASSESSED": 13,
+      "NO_EXACT_INDEPENDENT_MATCH_HOLD": 15,
+      "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD": 14
+    }
+  },
+  "interpretation": "All 260 previously unclassified observations now have explicit provisional owner dispositions, without fabricating sources. The 42 working identities and the 568 historical observations are unchanged. Distinct labels do not equal new canonicals, and regional/historical grouping decisions are provisional.",
+  "known_identity_refs": {
+    "DEAD-003": 3,
+    "ADVT-001": 1,
+    "CANDIDATE-IRISH-CHRISTMAS-CANDLE": 1,
+    "SNIC-001": 1,
+    "BLSS-003": 1,
+    "NDAY-001": 3,
+    "DEV-006": 8,
+    "DEAD-001": 4,
+    "DOM-013": 2,
+    "CANDIDATE-EASTER-EGG-CRAFT": 3,
+    "BLSS-004": 5,
+    "EAST-001": 2,
+    "CORP-001": 2,
+    "PATR-001": 1,
+    "DOM-011": 1,
+    "BELL-004": 1,
+    "CANDIDATE-STJOHN-BONFIRE": 2
+  },
+  "distinct_custom_candidates": [
+    {
+      "weiser_id": "WEI58-05-006",
+      "title": "German Advent picture calendar",
+      "chapter": 5,
+      "page": 56,
+      "geography": "Germany; later wider",
+      "source_state": "NO_P1_SOURCE_GATE_ASSESSED",
+      "proposed_status": "SOURCE_AND_DUPLICATE_IDENTITY_REVIEW_REQUIRED",
+      "publication_allowed": false
+    },
+    {
+      "weiser_id": "WEI58-05-008",
+      "title": "Alpine Marian image house visits",
+      "chapter": 5,
+      "page": 57,
+      "geography": "Alpine Europe",
+      "source_state": "NO_P1_SOURCE_GATE_ASSESSED",
+      "proposed_status": "SOURCE_AND_DUPLICATE_IDENTITY_REVIEW_REQUIRED",
+      "publication_allowed": false
+    },
+    {
+      "weiser_id": "WEI58-05-010",
+      "title": "Herbergsuchen inn-search drama",
+      "chapter": 5,
+      "page": 58,
+      "geography": "German-speaking areas",
+      "source_state": "NO_P1_SOURCE_GATE_ASSESSED",
+      "proposed_status": "SOURCE_AND_DUPLICATE_IDENTITY_REVIEW_REQUIRED",
+      "publication_allowed": false
+    },
+    {
+      "weiser_id": "WEI58-06-008",
+      "title": "Christkind gifts announced by bell",
+      "chapter": 6,
+      "page": 74,
+      "geography": "German/Austrian/central European Catholic homes",
+      "source_state": "NO_P1_SOURCE_GATE_ASSESSED",
+      "proposed_status": "SOURCE_AND_DUPLICATE_IDENTITY_REVIEW_REQUIRED",
+      "publication_allowed": false
+    },
+    {
+      "weiser_id": "WEI58-06-010",
+      "title": "Straw or hay under Christmas Eve tablecloth",
+      "chapter": 6,
+      "page": 74,
+      "geography": "Slavic, Lithuanian, Hungarian households",
+      "source_state": "NO_P1_SOURCE_GATE_ASSESSED",
+      "proposed_status": "SOURCE_AND_DUPLICATE_IDENTITY_REVIEW_REQUIRED",
+      "publication_allowed": false
+    },
+    {
+      "weiser_id": "WEI58-06-012",
+      "title": "Extra fodder for livestock and grain for birds at Christmas",
+      "chapter": 6,
+      "page": 75,
+      "geography": "Northern and Central Europe/Scandinavia",
+      "source_state": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "proposed_status": "SOURCE_AND_DUPLICATE_IDENTITY_REVIEW_REQUIRED",
+      "publication_allowed": false
+    },
+    {
+      "weiser_id": "WEI58-06-015",
+      "title": "French family réveillon after Midnight Mass",
+      "chapter": 6,
+      "page": 76,
+      "geography": "France",
+      "source_state": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "proposed_status": "SOURCE_AND_DUPLICATE_IDENTITY_REVIEW_REQUIRED",
+      "publication_allowed": false
+    },
+    {
+      "weiser_id": "WEI58-07-007",
+      "title": "French Canadian La guignolée collection for the poor",
+      "chapter": 7,
+      "page": 87,
+      "geography": "French Canada",
+      "source_state": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "proposed_status": "SOURCE_AND_DUPLICATE_IDENTITY_REVIEW_REQUIRED",
+      "publication_allowed": false
+    },
+    {
+      "weiser_id": "WEI58-07-008",
+      "title": "Polish Kolednicy Christmas star and Nativity drama rounds",
+      "chapter": 7,
+      "page": 87,
+      "geography": "Poland and Slavic regions",
+      "source_state": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "proposed_status": "SOURCE_AND_DUPLICATE_IDENTITY_REVIEW_REQUIRED",
+      "publication_allowed": false
+    },
+    {
+      "weiser_id": "WEI58-07-009",
+      "title": "Hungarian Bethlehem house-to-house singing",
+      "chapter": 7,
+      "page": 87,
+      "geography": "Hungary",
+      "source_state": "NO_P1_SOURCE_GATE_ASSESSED",
+      "proposed_status": "SOURCE_AND_DUPLICATE_IDENTITY_REVIEW_REQUIRED",
+      "publication_allowed": false
+    },
+    {
+      "weiser_id": "WEI58-08-002",
+      "title": "Large Alpine Nativity dioramas constructed in Advent",
+      "chapter": 8,
+      "page": 96,
+      "geography": "Alpine central Europe",
+      "source_state": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "proposed_status": "SOURCE_AND_DUPLICATE_IDENTITY_REVIEW_REQUIRED",
+      "publication_allowed": false
+    },
+    {
+      "weiser_id": "WEI58-08-019",
+      "title": "St Barbara's December 4 cherry blossom branches",
+      "chapter": 8,
+      "page": 106,
+      "geography": "Czech, Slovak, Austrian homes",
+      "source_state": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "proposed_status": "SOURCE_AND_DUPLICATE_IDENTITY_REVIEW_REQUIRED",
+      "publication_allowed": false
+    },
+    {
+      "weiser_id": "WEI58-08-026",
+      "title": "Christ Child gift-bearer and prayer before opening gifts",
+      "chapter": 8,
+      "page": 111,
+      "geography": "Germany/Austria/France/Canada/Spain/Latin America",
+      "source_state": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "proposed_status": "SOURCE_AND_DUPLICATE_IDENTITY_REVIEW_REQUIRED",
+      "publication_allowed": false
+    },
+    {
+      "weiser_id": "WEI58-09-001",
+      "title": "Ukrainian Christmas wheat sheaf Didukh forefather emblem",
+      "chapter": 9,
+      "page": 116,
+      "geography": "Ukraine",
+      "source_state": "NO_P1_SOURCE_GATE_ASSESSED",
+      "proposed_status": "SOURCE_AND_DUPLICATE_IDENTITY_REVIEW_REQUIRED",
+      "publication_allowed": false
+    },
+    {
+      "weiser_id": "WEI58-09-006",
+      "title": "French Pain calendau Christmas loaf share with poor",
+      "chapter": 9,
+      "page": 117,
+      "geography": "Provence/southern France",
+      "source_state": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "proposed_status": "SOURCE_AND_DUPLICATE_IDENTITY_REVIEW_REQUIRED",
+      "publication_allowed": false
+    },
+    {
+      "weiser_id": "WEI58-10-002",
+      "title": "Twelve Christmas nights as devotional domestic evenings",
+      "chapter": 10,
+      "page": 123,
+      "geography": "Central and Eastern Europe",
+      "source_state": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "proposed_status": "SOURCE_AND_DUPLICATE_IDENTITY_REVIEW_REQUIRED",
+      "publication_allowed": false
+    },
+    {
+      "weiser_id": "WEI58-10-004",
+      "title": "Polish szopka and children's nativity dramatizations",
+      "chapter": 10,
+      "page": 124,
+      "geography": "Poland",
+      "source_state": "NO_P1_SOURCE_GATE_ASSESSED",
+      "proposed_status": "SOURCE_AND_DUPLICATE_IDENTITY_REVIEW_REQUIRED",
+      "publication_allowed": false
+    },
+    {
+      "weiser_id": "WEI58-11-007",
+      "title": "Father blesses family on Jan 1",
+      "chapter": 11,
+      "page": 139,
+      "geography": "France and French Canada",
+      "source_state": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "proposed_status": "SOURCE_AND_DUPLICATE_IDENTITY_REVIEW_REQUIRED",
+      "publication_allowed": false
+    },
+    {
+      "weiser_id": "WEI58-12-016",
+      "title": "Spanish and Latin American Magi gifts in children's shoes",
+      "chapter": 12,
+      "page": 152,
+      "geography": "Spain and Latin America",
+      "source_state": "NO_P1_SOURCE_GATE_ASSESSED",
+      "proposed_status": "SOURCE_AND_DUPLICATE_IDENTITY_REVIEW_REQUIRED",
+      "publication_allowed": false
+    },
+    {
+      "weiser_id": "WEI58-14-026",
+      "title": "French Canadian Mi-Carême meal and gathering",
+      "chapter": 14,
+      "page": 185,
+      "geography": "France and French Canada",
+      "source_state": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "proposed_status": "SOURCE_AND_DUPLICATE_IDENTITY_REVIEW_REQUIRED",
+      "publication_allowed": false
+    },
+    {
+      "weiser_id": "WEI58-15-002",
+      "title": "Holy Week house-cleaning before Sacred Triduum",
+      "chapter": 15,
+      "page": 188,
+      "geography": "Poland and other Catholic European countries",
+      "source_state": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "proposed_status": "SOURCE_AND_DUPLICATE_IDENTITY_REVIEW_REQUIRED",
+      "publication_allowed": false
+    },
+    {
+      "weiser_id": "WEI58-16-005",
+      "title": "Surrexit Dominus vere Easter greeting",
+      "chapter": 16,
+      "page": 212,
+      "geography": "Early Latin Christian practice",
+      "source_state": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "proposed_status": "SOURCE_AND_DUPLICATE_IDENTITY_REVIEW_REQUIRED",
+      "publication_allowed": false
+    },
+    {
+      "weiser_id": "WEI58-16-020",
+      "title": "Maltese running procession of Resurrection image",
+      "chapter": 16,
+      "page": 220,
+      "geography": "Malta, Weiser 1958",
+      "source_state": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "proposed_status": "SOURCE_AND_DUPLICATE_IDENTITY_REVIEW_REQUIRED",
+      "publication_allowed": false
+    },
+    {
+      "weiser_id": "WEI58-16-024",
+      "title": "Easter open house and family visits",
+      "chapter": 16,
+      "page": 221,
+      "geography": "European Catholic and wider Christian homes",
+      "source_state": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "proposed_status": "SOURCE_AND_DUPLICATE_IDENTITY_REVIEW_REQUIRED",
+      "publication_allowed": false
+    },
+    {
+      "weiser_id": "WEI58-18-014",
+      "title": "Ascension mountain climbs and hilltop family picnics",
+      "chapter": 18,
+      "page": 245,
+      "geography": "Central Europe",
+      "source_state": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "proposed_status": "SOURCE_AND_DUPLICATE_IDENTITY_REVIEW_REQUIRED",
+      "publication_allowed": false
+    },
+    {
+      "weiser_id": "WEI58-19-003",
+      "title": "Pentecost homes and churches decorated with flowering branches",
+      "chapter": 19,
+      "page": 248,
+      "geography": "Polish, Ukrainian and central European Christian traditions",
+      "source_state": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "proposed_status": "SOURCE_AND_DUPLICATE_IDENTITY_REVIEW_REQUIRED",
+      "publication_allowed": false
+    },
+    {
+      "weiser_id": "WEI58-19-017",
+      "title": "Wooden dove suspended over household dining table",
+      "chapter": 19,
+      "page": 252,
+      "geography": "Central and Eastern Europe",
+      "source_state": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "proposed_status": "SOURCE_AND_DUPLICATE_IDENTITY_REVIEW_REQUIRED",
+      "publication_allowed": false
+    },
+    {
+      "weiser_id": "WEI58-19-018",
+      "title": "Pentecost dawn hilltop prayer",
+      "chapter": 19,
+      "page": 253,
+      "geography": "Several European Christian regions",
+      "source_state": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "proposed_status": "SOURCE_AND_DUPLICATE_IDENTITY_REVIEW_REQUIRED",
+      "publication_allowed": false
+    },
+    {
+      "weiser_id": "WEI58-21-020",
+      "title": "Blessed floral wreaths hung at home and field margins",
+      "chapter": 21,
+      "page": 266,
+      "geography": "Poland",
+      "source_state": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "proposed_status": "SOURCE_AND_DUPLICATE_IDENTITY_REVIEW_REQUIRED",
+      "publication_allowed": false
+    },
+    {
+      "weiser_id": "WEI58-22-005",
+      "title": "Cross-shaped last sheaf decorated in household",
+      "chapter": 22,
+      "page": 269,
+      "geography": "Southern France",
+      "source_state": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "proposed_status": "SOURCE_AND_DUPLICATE_IDENTITY_REVIEW_REQUIRED",
+      "publication_allowed": false
+    },
+    {
+      "weiser_id": "WEI58-22-008",
+      "title": "Martinmas thanksgiving Mass and village harvest feasting",
+      "chapter": 22,
+      "page": 270,
+      "geography": "France Germany Holland England and central Europe",
+      "source_state": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "proposed_status": "SOURCE_AND_DUPLICATE_IDENTITY_REVIEW_REQUIRED",
+      "publication_allowed": false
+    },
+    {
+      "weiser_id": "WEI58-24-006",
+      "title": "L'Inchinata symbolic meeting of Christ and Mary images",
+      "chapter": 24,
+      "page": 289,
+      "geography": "Lazio near Rome, Italy",
+      "source_state": "NO_P1_SOURCE_GATE_ASSESSED",
+      "proposed_status": "SOURCE_AND_DUPLICATE_IDENTITY_REVIEW_REQUIRED",
+      "publication_allowed": false
+    },
+    {
+      "weiser_id": "WEI58-24-007",
+      "title": "Sardinian Candelieri candle offering procession",
+      "chapter": 24,
+      "page": 290,
+      "geography": "Sassari, Sardinia",
+      "source_state": "NO_P1_SOURCE_GATE_ASSESSED",
+      "proposed_status": "SOURCE_AND_DUPLICATE_IDENTITY_REVIEW_REQUIRED",
+      "publication_allowed": false
+    },
+    {
+      "weiser_id": "WEI58-24-015",
+      "title": "Our Lady's Thirty Days after Assumption",
+      "chapter": 24,
+      "page": 292,
+      "geography": "German-speaking countries",
+      "source_state": "NO_P1_SOURCE_GATE_ASSESSED",
+      "proposed_status": "SOURCE_AND_DUPLICATE_IDENTITY_REVIEW_REQUIRED",
+      "publication_allowed": false
+    },
+    {
+      "weiser_id": "WEI58-24-021",
+      "title": "Spanish balcony candles and flowers for 8 December",
+      "chapter": 24,
+      "page": 294,
+      "geography": "Northern Spanish provinces",
+      "source_state": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "proposed_status": "SOURCE_AND_DUPLICATE_IDENTITY_REVIEW_REQUIRED",
+      "publication_allowed": false
+    },
+    {
+      "weiser_id": "WEI58-25-020",
+      "title": "Annunciation picture among seed grain with prayer",
+      "chapter": 25,
+      "page": 304,
+      "geography": "Austria central Europe",
+      "source_state": "NO_P1_SOURCE_GATE_ASSESSED",
+      "proposed_status": "SOURCE_AND_DUPLICATE_IDENTITY_REVIEW_REQUIRED",
+      "publication_allowed": false
+    },
+    {
+      "weiser_id": "WEI58-25-025",
+      "title": "Our Lady of Grape Harvest family festive meal",
+      "chapter": 25,
+      "page": 305,
+      "geography": "French vineyards",
+      "source_state": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "proposed_status": "SOURCE_AND_DUPLICATE_IDENTITY_REVIEW_REQUIRED",
+      "publication_allowed": false
+    },
+    {
+      "weiser_id": "WEI58-26-014",
+      "title": "Breton all-night prayer bells and farmhouse visits",
+      "chapter": 26,
+      "page": 311,
+      "geography": "Brittany, France",
+      "source_state": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "proposed_status": "SOURCE_AND_DUPLICATE_IDENTITY_REVIEW_REQUIRED",
+      "publication_allowed": false
+    },
+    {
+      "weiser_id": "WEI58-26-020",
+      "title": "Eight days of family Soul Nights after All Souls",
+      "chapter": 26,
+      "page": 312,
+      "geography": "Central Europe",
+      "source_state": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "proposed_status": "SOURCE_AND_DUPLICATE_IDENTITY_REVIEW_REQUIRED",
+      "publication_allowed": false
+    },
+    {
+      "weiser_id": "WEI58-26-021",
+      "title": "Daily charitable meal portions during Soul Nights",
+      "chapter": 26,
+      "page": 312,
+      "geography": "Central European Catholic homes",
+      "source_state": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "proposed_status": "SOURCE_AND_DUPLICATE_IDENTITY_REVIEW_REQUIRED",
+      "publication_allowed": false
+    },
+    {
+      "weiser_id": "WEI58-26-024",
+      "title": "Beans peas lentils as food given to poor",
+      "chapter": 26,
+      "page": 313,
+      "geography": "Western European Catholic households",
+      "source_state": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "proposed_status": "SOURCE_AND_DUPLICATE_IDENTITY_REVIEW_REQUIRED",
+      "publication_allowed": false
+    },
+    {
+      "weiser_id": "WEI58-26-028",
+      "title": "Hungarian orphan children invited for All Souls",
+      "chapter": 26,
+      "page": 314,
+      "geography": "Hungary",
+      "source_state": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "proposed_status": "SOURCE_AND_DUPLICATE_IDENTITY_REVIEW_REQUIRED",
+      "publication_allowed": false
+    }
+  ],
+  "source_ritual_holds": [
+    {
+      "weiser_id": "WEI58-02-002",
+      "title": "Voluntary Wednesday fasting",
+      "chapter": 2,
+      "page": 23,
+      "source_state": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "reason": "Verify exact identity, chronology, geographic scope and independent witness before publication.",
+      "publication_allowed": false
+    },
+    {
+      "weiser_id": "WEI58-03-006",
+      "title": "Expectant mothers' Ember prayers",
+      "chapter": 3,
+      "page": 36,
+      "source_state": "NO_P1_SOURCE_GATE_ASSESSED",
+      "reason": "Verify exact identity, chronology, geographic scope and independent witness before publication.",
+      "publication_allowed": false
+    },
+    {
+      "weiser_id": "WEI58-04-005",
+      "title": "Special weather processions",
+      "chapter": 4,
+      "page": 45,
+      "source_state": "NO_P1_SOURCE_GATE_ASSESSED",
+      "reason": "Verify exact identity, chronology, geographic scope and independent witness before publication.",
+      "publication_allowed": false
+    },
+    {
+      "weiser_id": "WEI58-05-009",
+      "title": "Nine-night Saint Joseph statue visits",
+      "chapter": 5,
+      "page": 57,
+      "source_state": "NO_P1_SOURCE_GATE_ASSESSED",
+      "reason": "Verify exact identity, chronology, geographic scope and independent witness before publication.",
+      "publication_allowed": false
+    },
+    {
+      "weiser_id": "WEI58-08-005",
+      "title": "Priest-blessed Christmas candle displayed at meal",
+      "chapter": 8,
+      "page": 97,
+      "source_state": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "reason": "Specifically priest-blessed Christmas dinner candle needs exact rite.",
+      "publication_allowed": false
+    },
+    {
+      "weiser_id": "WEI58-10-010",
+      "title": "St Stephen blessing of horses",
+      "chapter": 10,
+      "page": 129,
+      "source_state": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "reason": "Verify exact identity, chronology, geographic scope and independent witness before publication.",
+      "publication_allowed": false
+    },
+    {
+      "weiser_id": "WEI58-10-012",
+      "title": "St Stephen blessing hay and oats",
+      "chapter": 10,
+      "page": 130,
+      "source_state": "NO_P1_SOURCE_GATE_ASSESSED",
+      "reason": "Verify exact identity, chronology, geographic scope and independent witness before publication.",
+      "publication_allowed": false
+    },
+    {
+      "weiser_id": "WEI58-12-009",
+      "title": "Priestly Epiphany home blessing",
+      "chapter": 12,
+      "page": 150,
+      "source_state": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "reason": "Priestly Epiphany house blessing differs from lay Sternsinger visit.",
+      "publication_allowed": false
+    },
+    {
+      "weiser_id": "WEI58-12-019",
+      "title": "French Magi cake donations for education of poor child",
+      "chapter": 12,
+      "page": 153,
+      "source_state": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "reason": "Poor-child school-payment claim not corroborated by cake evidence.",
+      "publication_allowed": false
+    },
+    {
+      "weiser_id": "WEI58-14-022",
+      "title": "Lenten pretzels as folded arms in prayer",
+      "chapter": 14,
+      "page": 184,
+      "source_state": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "reason": "Check exact practice identity, local period, source reliability and no automatic rite.",
+      "publication_allowed": false
+    },
+    {
+      "weiser_id": "WEI58-16-014",
+      "title": "Bringing home blessed Easter fire by lantern",
+      "chapter": 16,
+      "page": 217,
+      "source_state": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "reason": "Transport of blessed Easter fire is historically local; verify ritual and household permissions.",
+      "publication_allowed": false
+    },
+    {
+      "weiser_id": "WEI58-18-005",
+      "title": "Fields and pastures blessed in Ascension procession",
+      "chapter": 18,
+      "page": 242,
+      "source_state": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "reason": "Check exact practice identity, local period, source reliability and no automatic rite.",
+      "publication_allowed": false
+    },
+    {
+      "weiser_id": "WEI58-19-023",
+      "title": "Pentecost Vigil blessing flowers fields and fruit trees",
+      "chapter": 19,
+      "page": 253,
+      "source_state": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "reason": "Claimed Pentecost Vigil flower or field blessing needs named liturgical/local witness.",
+      "publication_allowed": false
+    },
+    {
+      "weiser_id": "WEI58-21-019",
+      "title": "Priestly blessing of Corpus Christi flower wreaths",
+      "chapter": 21,
+      "page": 265,
+      "source_state": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "reason": "Distinct priestly flower-wreath blessing needs exact Roman/local ritual source, not an automatic Corpus Christi act.",
+      "publication_allowed": false
+    },
+    {
+      "weiser_id": "WEI58-24-012",
+      "title": "Assumption blessing of countryside and fields",
+      "chapter": 24,
+      "page": 291,
+      "source_state": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "reason": "Historical Assumption countryside blessing cannot be inferred from herb blessing BLSS-002.",
+      "publication_allowed": false
+    },
+    {
+      "weiser_id": "WEI58-24-013",
+      "title": "French Alpine pasture and livestock blessing",
+      "chapter": 24,
+      "page": 291,
+      "source_state": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "reason": "French Alpine livestock blessings need identifiable local Catholic rites and place evidence.",
+      "publication_allowed": false
+    },
+    {
+      "weiser_id": "WEI58-25-024",
+      "title": "French vineyard grapes brought for priestly blessing",
+      "chapter": 25,
+      "page": 305,
+      "source_state": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "reason": "Grape blessing near the Nativity of Mary requires actual ritual/parish verification.",
+      "publication_allowed": false
+    },
+    {
+      "weiser_id": "WEI58-26-008",
+      "title": "Priest blesses graves on All Souls",
+      "chapter": 26,
+      "page": 310,
+      "source_state": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "reason": "Priestly grave blessing differs from a family's optional cemetery visit.",
+      "publication_allowed": false
+    },
+    {
+      "weiser_id": "WEI58-27-002",
+      "title": "St Blaise pan bendito blessed sticks",
+      "chapter": 27,
+      "page": 317,
+      "source_state": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "reason": "Food blessing is distinct from St Blaise crossed-candle throat blessing.",
+      "publication_allowed": false
+    },
+    {
+      "weiser_id": "WEI58-27-004",
+      "title": "Oil-dipped wick throat blessing variant",
+      "chapter": 27,
+      "page": 318,
+      "source_state": "NO_P1_SOURCE_GATE_ASSESSED",
+      "reason": "Oil-dipped wick is not the ordinary St Blaise ritual; verify separate local source before instructions.",
+      "publication_allowed": false
+    },
+    {
+      "weiser_id": "WEI58-28-004",
+      "title": "Priestly grain blessing on feast of Peter and Paul",
+      "chapter": 28,
+      "page": 334,
+      "source_state": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "reason": "Verify local source, rite authority and distinct-practice scope before publication.",
+      "publication_allowed": false
+    },
+    {
+      "weiser_id": "WEI58-28-005",
+      "title": "Blessed straw crowns hung above dining table",
+      "chapter": 28,
+      "page": 334,
+      "source_state": "NO_EXACT_INDEPENDENT_MATCH_HOLD",
+      "reason": "Blessed straw crowns depend on a prior blessing; household usage does not create a priestly formula.",
+      "publication_allowed": false
+    },
+    {
+      "weiser_id": "WEI58-28-006",
+      "title": "Special bread blessing for Peter and Paul",
+      "chapter": 28,
+      "page": 334,
+      "source_state": "PARTIAL_OR_INDIRECT_EVIDENCE_HOLD",
+      "reason": "Verify local source, rite authority and distinct-practice scope before publication.",
+      "publication_allowed": false
+    }
+  ],
+  "review_by_chapter": [
+    {
+      "chapter": 1,
+      "total": 4,
+      "distinct": 0,
+      "ritual_holds": 0
+    },
+    {
+      "chapter": 2,
+      "total": 4,
+      "distinct": 0,
+      "ritual_holds": 1
+    },
+    {
+      "chapter": 3,
+      "total": 3,
+      "distinct": 0,
+      "ritual_holds": 1
+    },
+    {
+      "chapter": 4,
+      "total": 3,
+      "distinct": 0,
+      "ritual_holds": 1
+    },
+    {
+      "chapter": 5,
+      "total": 6,
+      "distinct": 3,
+      "ritual_holds": 1
+    },
+    {
+      "chapter": 6,
+      "total": 11,
+      "distinct": 4,
+      "ritual_holds": 0
+    },
+    {
+      "chapter": 7,
+      "total": 8,
+      "distinct": 3,
+      "ritual_holds": 0
+    },
+    {
+      "chapter": 8,
+      "total": 15,
+      "distinct": 3,
+      "ritual_holds": 1
+    },
+    {
+      "chapter": 9,
+      "total": 9,
+      "distinct": 2,
+      "ritual_holds": 0
+    },
+    {
+      "chapter": 10,
+      "total": 11,
+      "distinct": 2,
+      "ritual_holds": 2
+    },
+    {
+      "chapter": 11,
+      "total": 7,
+      "distinct": 1,
+      "ritual_holds": 0
+    },
+    {
+      "chapter": 12,
+      "total": 7,
+      "distinct": 1,
+      "ritual_holds": 2
+    },
+    {
+      "chapter": 13,
+      "total": 8,
+      "distinct": 0,
+      "ritual_holds": 0
+    },
+    {
+      "chapter": 14,
+      "total": 13,
+      "distinct": 1,
+      "ritual_holds": 1
+    },
+    {
+      "chapter": 15,
+      "total": 15,
+      "distinct": 1,
+      "ritual_holds": 0
+    },
+    {
+      "chapter": 16,
+      "total": 19,
+      "distinct": 3,
+      "ritual_holds": 1
+    },
+    {
+      "chapter": 17,
+      "total": 12,
+      "distinct": 0,
+      "ritual_holds": 0
+    },
+    {
+      "chapter": 18,
+      "total": 5,
+      "distinct": 1,
+      "ritual_holds": 1
+    },
+    {
+      "chapter": 19,
+      "total": 10,
+      "distinct": 3,
+      "ritual_holds": 1
+    },
+    {
+      "chapter": 20,
+      "total": 7,
+      "distinct": 0,
+      "ritual_holds": 0
+    },
+    {
+      "chapter": 21,
+      "total": 9,
+      "distinct": 1,
+      "ritual_holds": 1
+    },
+    {
+      "chapter": 22,
+      "total": 7,
+      "distinct": 2,
+      "ritual_holds": 0
+    },
+    {
+      "chapter": 23,
+      "total": 6,
+      "distinct": 0,
+      "ritual_holds": 0
+    },
+    {
+      "chapter": 24,
+      "total": 13,
+      "distinct": 4,
+      "ritual_holds": 2
+    },
+    {
+      "chapter": 25,
+      "total": 7,
+      "distinct": 2,
+      "ritual_holds": 1
+    },
+    {
+      "chapter": 26,
+      "total": 16,
+      "distinct": 5,
+      "ritual_holds": 1
+    },
+    {
+      "chapter": 27,
+      "total": 15,
+      "distinct": 0,
+      "ritual_holds": 2
+    },
+    {
+      "chapter": 28,
+      "total": 10,
+      "distinct": 0,
+      "ritual_holds": 3
+    }
+  ],
+  "files": [
+    "identity-triage-ch01-12.v0.json",
+    "identity-triage-ch13-19.v0.json",
+    "identity-triage-ch20-28.v0.json"
+  ],
+  "next": [
+    "Compare all possible distinct customs against the 42 identity records and 14 possible duplicate practice groups and 28 related variant families.",
+    "Use existing source citations, direct diocesan/museum/ritual witnesses and historical locators to adjudicate each candidate without claiming Weiser alone confirms a living custom.",
+    "Preserve locally dated customs as local references, never change the universal 1962 calendar or ceremonial engine.",
+    "Consolidate editorial EN/FR short and long copy once distinct identity and sources are closed.",
+    "Review master completeness before any module interface or artwork decisions."
+  ]
+}
