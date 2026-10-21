@@ -52,7 +52,7 @@ try{
   assert.match(await page.locator('.dialog-title').innerText(),/conversation with the sources/i);
   assert.equal(await page.locator('#portrait').evaluate(e=>e.complete&&e.naturalWidth>0),true,'Approved sprite failed to render');
   imagesDecoded++;
-  await page.locator('[data-open="SPX.BENCH.E_SUPREMI.T1"]').first().click();
+  await page.locator('#folioContent [data-open="SPX.BENCH.E_SUPREMI.T1"]').click();
   assert.match(await page.locator('.dialog-title').innerText(),/purpose did you set/i);
   await page.locator('[data-next="1"]').click();
   assert.match(await page.locator('.dialogue').last().innerText(),/We denied|We.*design/i);
