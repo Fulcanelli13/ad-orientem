@@ -33,11 +33,23 @@ assert.equal(depthCount,36);
 const all=chapters.flatMap(c=>c.nodes);
 assert.equal(all.length,327);
 assert.equal(new Set(all.map(x=>x.id)).size,327);
+const sourceClass=c=>{
+ const a=(c.mode+" "+c.source.genre+" "+c.source.tier+" "+c.source.url).toUpperCase();
+ if(/SECONDARY_BIOGRAPHICAL_NARRATION|EDITORIAL_HISTORICAL_NARRATION_NO_SPRITE/.test(a))return "BIOGRAPHICAL_NARRATOR";
+ if(/CATECHISMO|CATECHISM|CATECHETICAL|SALZANO|PREPAPAL_MANUSCRIPT/.test(a))return "CATECHETICAL_ADAPTATION";
+ if(/SOURCE_SCOPE_NOTE_NOT_PAPAL_CHARACTER_SPEECH/.test(a))return "SOURCE_SCOPE_EDITORIAL_HOLD";
+ if(/PAPAL_DOCUMENT|AUTHORED_PAPAL|PIUS_X_SOURCE_BOUNDED|SOURCE_BOUND_PIUS_X/.test(a))return "PAPAL_DOCUMENT_ADAPTATION";
+ return "SOURCE_BOUNDED_EDITORIAL_EXPLANATION";
+};
 let biographical=0,partial=0,heldExternalRelated=0;
+const sourceClassCounts={};
 for(const c of chapters){
  assert(c.source?.url?.startsWith('https://'),'invalid original source URL '+c.id);
  assert(c.source.locus,'no original source locator '+c.id);
  assert(c.nodes[0].q.en&&c.nodes[0].q.fr,'no chapter entry');
+ c.sourceClass=sourceClass(c);
+ if(c.partial&&c.sourceClass==="PAPAL_DOCUMENT_ADAPTATION")c.sourceClass="SOURCE_SCOPE_EDITORIAL_HOLD";
+ sourceClassCounts[c.sourceClass]=(sourceClassCounts[c.sourceClass]||0)+1;
  if(c.partial)partial++;
  if(/NARRATION/.test(c.mode))biographical++;
  const linked=c.related||[];
@@ -55,10 +67,13 @@ for(const c of chapters){
   assert(!n.approvedReply,'unreviewed turn cannot claim approval');
  }
 }
+// Unapproved archival content is classified before it reaches the speaker UI.
+assert.equal(Object.values(sourceClassCounts).reduce((a,b)=>a+b,0),82);
+assert.equal(sourceClassCounts.BIOGRAPHICAL_NARRATOR,9);
 const payload={
  version:'SPX_82_CHAPTER_327_NODE_UNAPPROVED_LIBRARY_V1',
  counts:{chapters:82,regularNodes:291,dependentNodes:36,allNodes:327,
-   editorialBiographicalChapters:biographical,partialReviewChapters:partial,heldExternalRelated},
+   editorialBiographicalChapters:biographical,partialReviewChapters:partial,heldExternalRelated,sourceClassCounts},
  originalOwner:'formation/1457-pius-x-conversation-evidence',
  contentStatus:'UNAPPROVED_SOURCE_BOUNDED_RECONSTRUCTION_NOT_PAPAL_TRANSCRIPT',
  approvals:{history:false,source:false,doctrine:false,english:false,french:false,voice:false,publishing:false},
