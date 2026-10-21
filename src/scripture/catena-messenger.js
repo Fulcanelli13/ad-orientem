@@ -8,6 +8,22 @@ export const LIVING_CATENA_SCHEMA="ao.catena.messenger.v1";
 const STOP=new Set("a an and are as at be been but by can could did do does for from had has have how i in is it its may me my of on or our shall should so that the the their them there these this those to was were what when where which who why will with would you your about passage say says".split(" "));
 export const catenaSearchTerms=q=>[...new Set((String(q||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().match(/[a-z]{4,}/g)||[]).filter(x=>!STOP.has(x)))];
 const tokens=catenaSearchTerms;
+/**
+ * Avoid making a lone generic source word seem to answer a long, unrelated
+ * question. Short one-topic prompts and repeated focal expressions remain
+ * searchable (e.g., "Word" or "Our Father ... My Father").
+ * This gate is deliberately conservative, not a claim of semantic relevance.
+ */
+export function catenaQuestionHasSufficientEvidence(query){
+ const terms=catenaSearchTerms(query);
+ if(!terms.length)return false;
+ if(terms.length>1)return true;
+ const words=(String(query).toLowerCase().match(/[a-z0-9]+/g)||[]);
+ if(words.length<7)return true;
+ const term=terms[0].replace(/[.*+?^\x24{}()|[\]\\]/g,"\\const tokens=catenaSearchTerms;");
+ const count=(String(query).toLowerCase().match(new RegExp("(^|[^a-z])"+term+"([^a-z]|$)","g"))||[]).length;
+ return count>=2;
+}
 function safeUrl(value){try{const u=new URL(value);return u.protocol==="https:"&&u.hostname==="www.ecatholic2000.com"?u.href:null}catch{return null}}
 export function indexCatenaMessages(pericopes){
  const result=[];
@@ -23,7 +39,7 @@ export function indexCatenaMessages(pericopes){
  return Object.freeze(result);
 }
 export function retrieveCatenaMessages(rows,query,{limit=3,excludeIds=null}={}){
- if(!Array.isArray(rows)||!rows.length)return [];
+ if(!Array.isArray(rows)||!rows.length||!catenaQuestionHasSufficientEvidence(query))return [];
  const q=String(query||"").toLowerCase();
  // An explicitly named Father is a source filter, not content to be
  // mistaken for a theological search keyword.
