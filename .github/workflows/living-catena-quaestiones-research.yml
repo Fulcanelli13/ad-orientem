@@ -1,0 +1,35 @@
+name: Living Catena Quaestiones research integrity
+
+on:
+  push:
+    branches:
+      - research/living-catena-quaestiones-crosswalk-20261021
+  pull_request:
+    paths:
+      - "data/scripture/catena/research/**"
+      - "tests/scripture-catena-original-questions.mjs"
+      - "tests/scripture-catena-quaestiones-crosswalk.mjs"
+      - "tests/scripture-catena-augustine-sequential.mjs"
+      - "tests/scripture-catena-eusebius-supplement.mjs"
+      - ".github/workflows/living-catena-quaestiones-research.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Verify original questions from existing Catena
+        run: node tests/scripture-catena-original-questions.mjs
+      - name: Verify Augustine-Eusebius primary source crosswalk
+        run: node tests/scripture-catena-quaestiones-crosswalk.mjs
+      - name: Verify sequential Augustine source links
+        run: node tests/scripture-catena-augustine-sequential.mjs
+      - name: Verify Eusebius supplement verse mappings
+        run: node tests/scripture-catena-eusebius-supplement.mjs
