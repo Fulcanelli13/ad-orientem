@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
-import {indexCatenaMessages,retrieveCatenaMessages} from "../src/scripture/catena-messenger.js";
+import {indexCatenaMessages,retrieveCatenaMessages,catenaQuestionHasSufficientEvidence} from "../src/scripture/catena-messenger.js";
 import {catenaRelatedTopic,retrieveCatenaRelatedMessages} from "../src/scripture/catena-related-vocabulary.js";
 
 const dataset=JSON.parse(readFileSync(new URL("../data/scripture/catena/editorial-acceptance.v1.json",import.meta.url),"utf8"));
@@ -28,6 +28,11 @@ function retrieved(rows,question){
  return (related.length?related.map(x=>x.row):
   retrieveCatenaMessages(rows,question,{limit:4})).map(x=>x.id);
 }
+assert.equal(catenaQuestionHasSufficientEvidence("Who won the World Cup in 2026?"),false,
+ "Do not use a solitary generic word to fabricate relevance in a long query");
+assert.equal(catenaQuestionHasSufficientEvidence("Why do we say Our Father and not My Father?"),true,
+ "Repeated subject phrase remains eligible for source lookup");
+assert.equal(catenaQuestionHasSufficientEvidence("Grace"),true);
 let rank4=0;
 const misses=[];
 for(const c of dataset.positives){
