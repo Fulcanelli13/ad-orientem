@@ -6,7 +6,8 @@ const read=p=>JSON.parse(readFileSync(new URL(p,import.meta.url),"utf8"));
 const registry=read("../data/presentation/reader-rubric-events.v1.json");
 const sung=read("../data/presentation/reader-text-sung.v1.json");
 const mk=(cue,form,language,kind)=>({kind,sourceCueIds:[cue],publishedMissalRubrics:publishedMissalRubricsForParagraph({sourceCueIds:[cue]},registry,{form,language})});
-const sourceSequences=["AO.SM.C0111","AO.SM.C0117","AO.SM.C0174","AO.SM.C0262","AO.SM.C0263"];
+const sourceSequences=["AO.SM.C0111","AO.SM.C0115","AO.SM.C0117","AO.SM.C0174",
+ "AO.SM.C0181","AO.SM.C0262","AO.SM.C0263"];
 for(const cue of sourceSequences){
  const original=sung.blocks.flatMap(b=>b.units).find(u=>u.cue_id===cue);
  assert.ok(original&&original.latin.startsWith("["),cue+" not a source-only action bracket");
@@ -14,6 +15,12 @@ for(const cue of sourceSequences){
   for(const language of ["en","fr"]){
    const row=mk(cue,form,language,"RUBRIC");
    const projection=conciseMissalSourceRubric(row,{form,language});
+   const mixedRoleSolemn=form==="SOLEMN"&&
+     (cue==="AO.SM.C0115"||cue==="AO.SM.C0181");
+   if(mixedRoleSolemn){
+     assert.equal(projection,null,"Solemn mixed-role chalice actions retain source witness");
+     continue;
+   }
    assert.ok(projection,cue+" missing certified concise rubric");
    assert.equal(projection.owner,RUBRIC_PRESENTATION_OWNER);
    assert.equal(projection.observedNow,false);
@@ -52,6 +59,7 @@ assert.match(dom,/iconNode&&!iconNode\.hidden&&iconKey/);
 assert.match(dom,/for\(const note of root\.querySelectorAll\?\.\("\.ao-live-inline-rubrics"\)/);
 assert.match(dom,/mode==="MISSAL"\|\|mode==="LIVE"/);
 assert.match(dom,/source\.href=event\.sourceUrl/);
+assert.match(dom,/node\.dataset\.rubricPresentationOwner=conciseSource\.owner/);
 assert.doesNotMatch(dom,/data-prayer-suggestion|optional-private-prayer/);
 const native=readFileSync(new URL("../src/mass/reader-native-preview.js",import.meta.url),"utf8");
 assert.match(native,/withCertifiedSolemnMissalMinisters/);
