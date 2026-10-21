@@ -11,6 +11,11 @@ export function historicalFocusCandidates(question,topics,language="en"){
  if(!query)return [];
  return topics.filter(t=>t.historicalIntent?.status==="DOCUMENTARY_TOPIC_ANCHORS_RESEARCH_ONLY")
   .filter(t=>{
+   // Haerent animo §34 addresses the clergy's exercises, not an obligation
+   // imposed on laypeople. A mixed lay/clergy question needs another source.
+   if(t.id==="pius.historical_spx_pilot_24"
+      && /\b(?:laic|laique|laics|laiques|layperson|laypeople|laywoman|layman|laity)\b/.test(query))
+     return false;
    const actor=t.historicalIntent.actorRequired?.[lang];
    if(actor?.length&&!actor.some(x=>hasPhrase(query,fold(x))))return false;
    const sets=t.historicalIntent.facets?.[lang];
