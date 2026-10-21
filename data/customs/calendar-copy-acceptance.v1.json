@@ -1,0 +1,371 @@
+{
+  "schema": "AO_CALENDAR_CUSTOMS_EDITORIAL_COPY_ACCEPTANCE_V1",
+  "date": "2026-10-21",
+  "baseline": "data/customs/customs-atlas-seed.v1.json published identities",
+  "copy_input": "data/customs/master/working-master.v1.json in research/customs-unified-master-20261021",
+  "accepted_copy_count": 24,
+  "context": "Editorial acceptance of bounded EN/FR calendar article copy; does not approve or publish the unrelated 14 research-only proposed identities.",
+  "rules": [
+    "Every accepted ID must already be PUBLISHED in the canonical customs seed.",
+    "Every accepted text must be complete in EN and FR and have traceable HTTPS sources in source-registry.v1.json.",
+    "Historical practices are voluntary; a feast date does not assert a local event, blessing, procession or availability.",
+    "Historical Roman Ritual evidence does not imply identical modern ministry, formula or regional usage.",
+    "The Calendar 1962 day resolver remains the sole owner of liturgical dates and precedence; household occasions must not create a new Mass event.",
+    "All 14 CUST-* research-only proposals remain excluded from this release."
+  ],
+  "scope_decisions": [
+    {
+      "custom_id": "DOM-002",
+      "decision": "CALENDAR_BILINGUAL_ARTICLE_ACCEPTED",
+      "source_ids": [
+        "MUCEM-BENITIER"
+      ],
+      "scope_controls": [
+        "DOMESTIC",
+        "UNDATED"
+      ],
+      "publication_identity": "ALREADY_PUBLISHED_IN_MAIN",
+      "new_liturgical_observance": false
+    },
+    {
+      "custom_id": "DOM-006",
+      "decision": "CALENDAR_BILINGUAL_ARTICLE_ACCEPTED",
+      "source_ids": [
+        "PARAY-CONSECRATION"
+      ],
+      "scope_controls": [
+        "DOMESTIC",
+        "OPTIONAL",
+        "NO_RITUAL_INFERENCE"
+      ],
+      "publication_identity": "ALREADY_PUBLISHED_IN_MAIN",
+      "new_liturgical_observance": false
+    },
+    {
+      "custom_id": "DOM-007",
+      "decision": "CALENDAR_BILINGUAL_ARTICLE_ACCEPTED",
+      "source_ids": [
+        "PARAY-INTRONISATION"
+      ],
+      "scope_controls": [
+        "DOMESTIC",
+        "MINISTERIAL_BLESSING_DISTINCT"
+      ],
+      "publication_identity": "ALREADY_PUBLISHED_IN_MAIN",
+      "new_liturgical_observance": false
+    },
+    {
+      "custom_id": "LIFE-002",
+      "decision": "CALENDAR_BILINGUAL_ARTICLE_ACCEPTED",
+      "source_ids": [
+        "RIT-1878",
+        "SCHOLA-RELEVAILLES"
+      ],
+      "scope_controls": [
+        "OCCASIONAL",
+        "PRIEST_BLESSING_IF_AVAILABLE",
+        "NO_IMPURITY_CLAIM"
+      ],
+      "publication_identity": "ALREADY_PUBLISHED_IN_MAIN",
+      "new_liturgical_observance": false
+    },
+    {
+      "custom_id": "DEV-001",
+      "decision": "CALENDAR_BILINGUAL_ARTICLE_ACCEPTED",
+      "source_ids": [
+        "ECF-MAY"
+      ],
+      "scope_controls": [
+        "MARIAN_MONTH",
+        "NO_NEW_LITURGICAL_SEASON"
+      ],
+      "publication_identity": "ALREADY_PUBLISHED_IN_MAIN",
+      "new_liturgical_observance": false
+    },
+    {
+      "custom_id": "DEV-006",
+      "decision": "CALENDAR_BILINGUAL_ARTICLE_ACCEPTED",
+      "source_ids": [
+        "DPP-2001",
+        "ECF-PILGRIMAGE",
+        "BEAURAING-PILGRIMAGE-CUSTOM",
+        "NEUMANN-PILGRIMAGE-CUSTOM",
+        "CZESTOCHOWA-US-WALK-CUSTOM",
+        "SETON-SEA-SERVICES-CUSTOM",
+        "BERMONT-PILGRIMAGE-CUSTOM",
+        "PELLEVOISIN-ANNUAL-CUSTOM",
+        "RUE-DU-BAC-PILGRIMAGE-CUSTOM",
+        "WIGRATZBAD-PILGRIMAGE-CUSTOM",
+        "BETTBRUNN-PILGRIMAGE-CUSTOM",
+        "AURIESVILLE-RESTORATION-CUSTOM",
+        "LITCHFIELD-LOURDES-PILGRIMAGE-CUSTOM"
+      ],
+      "scope_controls": [
+        "OCCASIONAL",
+        "NO_LOCAL_AVAILABILITY_INFERENCE"
+      ],
+      "publication_identity": "ALREADY_PUBLISHED_IN_MAIN",
+      "new_liturgical_observance": false
+    },
+    {
+      "custom_id": "DEV-009",
+      "decision": "CALENDAR_BILINGUAL_ARTICLE_ACCEPTED",
+      "source_ids": [
+        "LAGHET-EXVOTO",
+        "ALTOETTING-EXVOTO"
+      ],
+      "scope_controls": [
+        "OCCASIONAL",
+        "NO_MIRACLE_PROMISE"
+      ],
+      "publication_identity": "ALREADY_PUBLISHED_IN_MAIN",
+      "new_liturgical_observance": false
+    },
+    {
+      "custom_id": "DEV-010",
+      "decision": "CALENDAR_BILINGUAL_ARTICLE_ACCEPTED",
+      "source_ids": [
+        "LOURDES-CANDLES",
+        "MARIAZELL-VOTIVE-CANDLES",
+        "GUADALUPE-VOTIVE-CANDLES",
+        "NDC-VOTIVE-CANDLE",
+        "MIRACULOUS-MEDAL-CANDLE-CUSTOM",
+        "PONTMAIN-CANDLE-CUSTOM",
+        "BETTBRUNN-VOTIVE-CANDLES-CUSTOM"
+      ],
+      "scope_controls": [
+        "OCCASIONAL",
+        "NO_PURCHASE_REQUIRED"
+      ],
+      "publication_identity": "ALREADY_PUBLISHED_IN_MAIN",
+      "new_liturgical_observance": false
+    },
+    {
+      "custom_id": "DEAD-001",
+      "decision": "CALENDAR_BILINGUAL_ARTICLE_ACCEPTED",
+      "source_ids": [
+        "DPP-2001",
+        "ECF-DEAD"
+      ],
+      "scope_controls": [
+        "NOVEMBER",
+        "VISIT_OPTIONAL"
+      ],
+      "publication_identity": "ALREADY_PUBLISHED_IN_MAIN",
+      "new_liturgical_observance": false
+    },
+    {
+      "custom_id": "DEAD-003",
+      "decision": "CALENDAR_BILINGUAL_ARTICLE_ACCEPTED",
+      "source_ids": [
+        "ECF-DEAD",
+        "DPP-2001",
+        "MONTLIGEON-DEAD-CUSTOM",
+        "POLAND-WYPOMINKI-2025"
+      ],
+      "scope_controls": [
+        "ALL_SOULS",
+        "POLISH_VARIANT_DISTINCT"
+      ],
+      "publication_identity": "ALREADY_PUBLISHED_IN_MAIN",
+      "new_liturgical_observance": false
+    },
+    {
+      "custom_id": "DOM-003",
+      "decision": "CALENDAR_BILINGUAL_ARTICLE_ACCEPTED",
+      "source_ids": [
+        "MUCEM-BENITIER",
+        "RIT-WELLER"
+      ],
+      "scope_controls": [
+        "DOMESTIC",
+        "NO_LAY_RITUAL_BLESSING"
+      ],
+      "publication_identity": "ALREADY_PUBLISHED_IN_MAIN",
+      "new_liturgical_observance": false
+    },
+    {
+      "custom_id": "DOM-011",
+      "decision": "CALENDAR_BILINGUAL_ARTICLE_ACCEPTED",
+      "source_ids": [
+        "ECF-CHANDLEUR-HOME"
+      ],
+      "scope_controls": [
+        "CANDLEMAS",
+        "MINISTERIAL_BLESSING_DISTINCT"
+      ],
+      "publication_identity": "ALREADY_PUBLISHED_IN_MAIN",
+      "new_liturgical_observance": false
+    },
+    {
+      "custom_id": "DOM-013",
+      "decision": "CALENDAR_BILINGUAL_ARTICLE_ACCEPTED",
+      "source_ids": [
+        "ECF-RAMEAUX-HOME",
+        "DPP-2001"
+      ],
+      "scope_controls": [
+        "PALM_SUNDAY",
+        "MINISTERIAL_BLESSING_DISTINCT"
+      ],
+      "publication_identity": "ALREADY_PUBLISHED_IN_MAIN",
+      "new_liturgical_observance": false
+    },
+    {
+      "custom_id": "BLSS-001",
+      "decision": "CALENDAR_BILINGUAL_ARTICLE_ACCEPTED",
+      "source_ids": [
+        "ROMR-BLAISE-1956",
+        "SCHOLA-BLAISE-LATIN",
+        "BOOK-BLESSINGS-BLAISE",
+        "ORDO-BLAISE-1962"
+      ],
+      "scope_controls": [
+        "ST_BLAISE",
+        "PRIEST_RITE",
+        "CURRENT_RITE_DISTINCT"
+      ],
+      "publication_identity": "ALREADY_PUBLISHED_IN_MAIN",
+      "new_liturgical_observance": false
+    },
+    {
+      "custom_id": "NDAY-001",
+      "decision": "CALENDAR_BILINGUAL_ARTICLE_ACCEPTED",
+      "source_ids": [
+        "EWTN-MCLOUGHLIN-NAMEDAY"
+      ],
+      "scope_controls": [
+        "USER_DEFINED_PATRON",
+        "NO_PATRON_INFERENCE"
+      ],
+      "publication_identity": "ALREADY_PUBLISHED_IN_MAIN",
+      "new_liturgical_observance": false
+    },
+    {
+      "custom_id": "PATR-001",
+      "decision": "CALENDAR_BILINGUAL_ARTICLE_ACCEPTED",
+      "source_ids": [
+        "ECF-CHANTELLE-PATRONAL"
+      ],
+      "scope_controls": [
+        "LOCAL_ONLY",
+        "NO_PARISH_EVENT_INFERENCE"
+      ],
+      "publication_identity": "ALREADY_PUBLISHED_IN_MAIN",
+      "new_liturgical_observance": false
+    },
+    {
+      "custom_id": "MARI-001",
+      "decision": "CALENDAR_BILINGUAL_ARTICLE_ACCEPTED",
+      "source_ids": [
+        "DIOCESE-PARIS-ASSOMPTION-2026"
+      ],
+      "scope_controls": [
+        "ASSUMPTION",
+        "LOCAL_PROCESSION_NOT_AUTOMATIC"
+      ],
+      "publication_identity": "ALREADY_PUBLISHED_IN_MAIN",
+      "new_liturgical_observance": false
+    },
+    {
+      "custom_id": "SJOS-001",
+      "decision": "CALENDAR_BILINGUAL_ARTICLE_ACCEPTED",
+      "source_ids": [
+        "BR-DIOCESE-STJOSEPH-2026"
+      ],
+      "scope_controls": [
+        "ST_JOSEPH",
+        "LOCAL_CHARITY_CUSTOM"
+      ],
+      "publication_identity": "ALREADY_PUBLISHED_IN_MAIN",
+      "new_liturgical_observance": false
+    },
+    {
+      "custom_id": "SANT-001",
+      "decision": "CALENDAR_BILINGUAL_ARTICLE_ACCEPTED",
+      "source_ids": [
+        "ERMITAGE-ANTHONY-POOR-BREAD"
+      ],
+      "scope_controls": [
+        "ST_ANTHONY",
+        "VOLUNTARY_CHARITY"
+      ],
+      "publication_identity": "ALREADY_PUBLISHED_IN_MAIN",
+      "new_liturgical_observance": false
+    },
+    {
+      "custom_id": "SCHR-001",
+      "decision": "CALENDAR_BILINGUAL_ARTICLE_ACCEPTED",
+      "source_ids": [
+        "DIOCESE-LAVAL-CHRISTOPHER-2026"
+      ],
+      "scope_controls": [
+        "ST_CHRISTOPHER",
+        "LOCAL_ONLY",
+        "BLESSING_NOT_SAFETY_GUARANTEE"
+      ],
+      "publication_identity": "ALREADY_PUBLISHED_IN_MAIN",
+      "new_liturgical_observance": false
+    },
+    {
+      "custom_id": "SNIC-001",
+      "decision": "CALENDAR_BILINGUAL_ARTICLE_ACCEPTED",
+      "source_ids": [
+        "STRASBOURG-SAINT-NICOLAS-2022"
+      ],
+      "scope_controls": [
+        "ST_NICHOLAS",
+        "REGIONAL_FOLK_CUSTOM"
+      ],
+      "publication_identity": "ALREADY_PUBLISHED_IN_MAIN",
+      "new_liturgical_observance": false
+    },
+    {
+      "custom_id": "BLSS-002",
+      "decision": "CALENDAR_BILINGUAL_ARTICLE_ACCEPTED",
+      "source_ids": [
+        "DPP-ASSUMPTION-HERBS-181",
+        "RIT-ASSUMPTION-WELLER",
+        "PARISH-ASSUMPTION-HERBS-NEWTON"
+      ],
+      "scope_controls": [
+        "ASSUMPTION",
+        "MINISTERIAL_BLESSING_DISTINCT",
+        "REGIONAL"
+      ],
+      "publication_identity": "ALREADY_PUBLISHED_IN_MAIN",
+      "new_liturgical_observance": false
+    },
+    {
+      "custom_id": "BLSS-003",
+      "decision": "CALENDAR_BILINGUAL_ARTICLE_ACCEPTED",
+      "source_ids": [
+        "RIT-STJOHN-WINE-1962-TRANSCRIPTION",
+        "UK-PARISH-STJOHN-WINE"
+      ],
+      "scope_controls": [
+        "ST_JOHN",
+        "MINISTERIAL_BLESSING_DISTINCT",
+        "LEGEND_DISTINCT"
+      ],
+      "publication_identity": "ALREADY_PUBLISHED_IN_MAIN",
+      "new_liturgical_observance": false
+    },
+    {
+      "custom_id": "BLSS-004",
+      "decision": "CALENDAR_BILINGUAL_ARTICLE_ACCEPTED",
+      "source_ids": [
+        "RIT-EASTER-FOOD-WELLER",
+        "US-DIOCESE-EASTER-BASKETS",
+        "DPP-2001"
+      ],
+      "scope_controls": [
+        "HOLY_SATURDAY",
+        "MINISTERIAL_BLESSING_DISTINCT",
+        "REGIONAL"
+      ],
+      "publication_identity": "ALREADY_PUBLISHED_IN_MAIN",
+      "new_liturgical_observance": false
+    }
+  ]
+}
