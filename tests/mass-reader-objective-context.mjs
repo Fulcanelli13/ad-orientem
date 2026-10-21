@@ -33,6 +33,19 @@ const block={blocks:[{blockId:"AO.SM.B047",firstParagraphIndex:0,paragraphCount:
 assert.equal(projectReaderObjectiveContext(block,{cueId:"AO.SM.C0151",form:"LOW"}),null);
 assert.equal(projectReaderObjectiveContext(block,{cueId:"AO.SM.C0150",form:"GOOD_FRIDAY"}),null);
 assert.equal(projectReaderObjectiveContext({blocks:[],paragraphs:[]},{cueId:"AO.SM.C0150",form:"LOW"}),null);
+// Selected Propers are grounded by sourceAnchorCueId, not their display ID.
+const proper={blocks:[{blockId:"AO.SM.B026",firstParagraphIndex:0,paragraphCount:1}],
+ paragraphs:[{id:"PROPER.GOSPEL",sourceCueIds:[],sourceAnchorCueId:"AO.SM.C0086"}]};
+assert.equal(projectReaderObjectiveContext(proper,{
+ cueId:"AO.SM.C0086",form:"MISSA_CANTATA_INCENSE",language:"fr"
+}).blockId,"AO.SM.B026");
+assert.equal(projectReaderObjectiveContext(proper,{
+ cueId:"AO.SM.C0087",form:"MISSA_CANTATA_INCENSE",language:"fr"
+}),null,"A nearby cue without an attested Proper anchor must fail closed");
+assert.equal(projectReaderObjectiveContext({...proper,blocks:[{
+ blockId:"AO.SM.B088",firstParagraphIndex:0,paragraphCount:1}]},{
+ cueId:"AO.SM.C0086",form:"MISSA_CANTATA_INCENSE",language:"fr"
+}),null,"A Gospel anchor is not evidence of Postcommunion content");
 // Integration guards: no competing Guide, no prayer suggestions and no
 // premature retirement of SIMPLE; retain all existing Missal ownership.
 const domSource=readFileSync(new URL("../src/mass/reader-dom.js",import.meta.url),"utf8");
