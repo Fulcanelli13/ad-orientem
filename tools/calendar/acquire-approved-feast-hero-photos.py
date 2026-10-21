@@ -231,6 +231,28 @@ def main():
               "noCropOrCover": True}
     (OUT / "ten-approved-feast-heroes-source-evidence.json").write_text(
         json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    # Permanent source-bits evidence can be recovered from Actions text logs.
+    # Action ZIP archives have limited retention and must not be the only SOT.
+    for item in records:
+        if item.get("files"):
+            m = item.get("sourceInfo") or {}
+            proof = {
+                "date": item["date"], "artist": item["artist"], "title": item["title"],
+                "sourcePage": item["museumObjectUrl"],
+                "photoPage": item["commonsFilePage"],
+                "actualImageUrl": item["actualImageUrl"],
+                "sourceSHA256": item["sourceSHA256"], "sourceBytes": item["byteCount"],
+                "sourceDimensions": item["originalDimensions"],
+                "originalFormat": item["originalFormat"],
+                "retrievedVariant": item["retrievedVariant"],
+                "metadataAccess": m.get("metadataAccess"),
+                "licenseCandidate": m.get("licenseLabel"),
+                "licenseEvidenceUrl": m.get("licenseUrl"),
+                "curatorPhotoRightsApproved": False,
+                "wholePaintingHumanVerified": False,
+                "releaseApproved": False,
+            }
+            print("HERO_SOURCE_PROOF " + json.dumps(proof, ensure_ascii=False), flush=True)
     print("HERO_COMPLETE", json.dumps(stats), flush=True)
 
 
