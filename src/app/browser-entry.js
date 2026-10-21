@@ -3,6 +3,7 @@ import "./offline-boot.js";
 import "./release-identity.js";
 import { installAppDesignSystem } from "./design-system.js";
 import { installAppLiturgicalTheme } from "./liturgical-theme.js";
+import { installDocumentLanguage } from "./document-language.js";
 import { createScrollTapGuard } from "./scroll-tap-guard.js";
 import { installDateFormat } from "./date-format.js";
 import "./cinematic-runtime.js";
@@ -424,6 +425,11 @@ export function installAppShellBridge({
       });
       // Calendar-owned dark accents, preserving independent selected-Proper Mass colours.
       installAppLiturgicalTheme({ win });
+      try {
+        installDocumentLanguage({ win });
+      } catch (error) {
+        console.error("Document language sync install failed", error);
+      }
       try {
         installNonMassConvergence({ win });
       } catch (error) {

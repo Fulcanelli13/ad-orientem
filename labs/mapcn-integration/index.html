@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Ad Orientem | MapCN Laboratory (internal review)</title>
+<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@6.13.0/dist/maplibre-gl.css">
+<link rel="stylesheet" href="./style.css"></head>
+<body>
+<div class="app" id="lab">
+<header class="top"><div class="brand"><div class="seal">✠</div><div><small>AD ORIENTEM · DESIGN LAB</small><h1>Explore / MapCN</h1></div></div>
+<div class="top-right"><span class="tag">READ-ONLY · NOT PRODUCTION</span><a target="_blank" rel="noopener noreferrer" href="https://www.mapcn.dev/blocks">MapCN originals ↗</a></div></header>
+<nav class="modes" role="tablist" aria-label="MapCN template adaptations">
+<button role="tab" aria-selected="true" data-mode="discover">01 <strong>Discover</strong></button>
+<button role="tab" aria-selected="false" data-mode="time">02 <strong>Time & Mass</strong></button>
+<button role="tab" aria-selected="false" data-mode="density">03 <strong>Heatmap</strong></button>
+<button role="tab" aria-selected="false" data-mode="regions">04 <strong>Choropleth</strong></button>
+</nav>
+<main class="workspace">
+<aside class="sidebar" aria-label="Explore controls and results">
+<div class="side-intro"><p class="eyebrow" id="mode-kicker">MAPCN / STORE LOCATOR</p><h2 id="mode-title">Sacred places</h2><p id="mode-description">Explore the source-owned Catholic places and traditional Mass directory.</p>
+<div class="controls"><label class="search-label" for="search">Search by place or country</label><input id="search" type="search" placeholder="Name, town, country…" autocomplete="off">
+<label for="scope">Display records</label><select id="scope"><option value="all">All published map records</option><option value="heritage">Sacred places</option><option value="tlm">Traditional Mass venues</option></select>
+<div class="date-field" id="date-field" hidden><label for="selected-date">Liturgical date (1962)</label><input id="selected-date" type="date"><p id="season" class="season"></p></div></div></div>
+<div class="side-summary"><strong id="total">—</strong><span id="total-label">published mapped records</span><button id="reset" type="button">View all</button></div>
+<div id="list" class="results" role="region" aria-live="polite" aria-label="Explore results"></div>
+<div class="side-foot"><span id="disclaimer">All pins belong to existing documented records. No inferred coordinates.</span><a id="original" href="https://www.mapcn.dev/blocks/store-locator" target="_blank" rel="noopener noreferrer">Original MapCN block ↗</a></div>
+</aside>
+<section class="map-stage" aria-label="Interactive geographic map"><div id="map" aria-label="MapLibre atlas"></div>
+<div class="map-top"><div class="map-flag"><span class="signal"></span><span id="map-status">Loading canonical records…</span></div>
+<div class="map-toggle"><button id="fit" type="button" aria-label="Fit map to visible records">⌖ Fit</button><button id="hide-sidebar" type="button" aria-pressed="true">Panel</button></div></div>
+<div id="map-caption" class="map-caption">MapCN Store Locator • source-bound place records</div>
+<div id="legend" class="legend" hidden></div>
+<div id="selected" class="selected" hidden></div>
+</section></main>
+<footer class="footer"><span>MapCN patterns · MapLibre GL JS · OpenFreeMap · canonical Ad Orientem data</span><span>No paid API · No fabricated routes · Not a live Mass availability service</span></footer>
+</div>
+<script type="module" src="./lab.js"></script></body></html>

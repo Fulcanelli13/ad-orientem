@@ -738,4 +738,369 @@ export const EXPLORE_ATLAS_LAYOUT_STYLE = `
   color:#b5a997;font:400 11px/1.45 var(--ao-font-ui,system-ui,sans-serif);margin:4px 0 0;
 }
 
+
+/* MapCN Store Locator visual grammar, source-bound to the existing atlas.
+   One map instance, one action owner. Rail is an overlay, not a new column
+   that shrinks map canvas or steals viewport height. */
+.aoHeritageSurface .aoMapcnDiscoverRail{
+ position:absolute;z-index:9;top:188px;bottom:13px;left:17px;
+ width:min(320px,calc(100% - 34px));min-height:0;display:flex;flex-direction:column;
+ border:1px solid rgba(201,174,121,.28);border-radius:13px;
+ background:#0d1721f5;color:#e5ddce;box-shadow:0 18px 42px #0008;
+ backdrop-filter:blur(10px);overflow:hidden;
+}
+.aoHeritageSurface .aoMapcnDiscoverHead{
+ flex:none;display:flex;align-items:center;justify-content:space-between;
+ padding:17px 15px 13px;gap:9px;border-bottom:1px solid #a18c6038;
+}
+.aoMapcnDiscoverHead small{color:#c9ad7b;letter-spacing:.12em;font:600 9px/1.3 var(--ao-font-ui,system-ui,sans-serif)}
+.aoMapcnDiscoverHead h2{margin:5px 0 0;font:500 26px/1 var(--ao-font-display,Georgia,serif);color:#eee1ce}
+.aoMapcnDiscoverHead>strong{font:500 27px/1 var(--ao-font-display,Georgia,serif);color:#ccb07c}
+.aoHeritageSurface .aoMapcnDiscoverEntries{min-height:0;flex:1;overflow:auto;overscroll-behavior:contain;scrollbar-color:#6f654e transparent}
+.aoHeritageSurface .aoMapcnDiscoverItem{
+ display:flex;align-items:flex-start;gap:10px;text-align:left;color:#e4ddcf;
+ background:transparent;border:0;border-bottom:1px solid #a18c6026;
+ width:100%;min-height:80px;padding:12px 13px;cursor:pointer;
+}
+.aoHeritageSurface .aoMapcnDiscoverItem:hover,.aoHeritageSurface .aoMapcnDiscoverItem[aria-current=true]{
+ background:#23313b;
+}
+.aoHeritageSurface .aoMapcnDiscoverItem:focus-visible{outline:2px solid #d2b57e;outline-offset:-3px}
+.aoHeritageSurface .aoMapcnDiscoverItem>img,.aoHeritageSurface .aoMapcnDiscoverGlyph{
+ width:63px;height:66px;flex:none;border-radius:6px;object-fit:cover;
+ border:1px solid #bda47748;background:#1d2c36;
+}
+.aoHeritageSurface .aoMapcnDiscoverGlyph{display:grid;place-items:center;font:29px Georgia,serif;color:#bca47b}
+.aoHeritageSurface .aoMapcnDiscoverCopy{flex:1;min-width:0;display:flex;flex-direction:column;gap:4px}
+.aoMapcnDiscoverCopy>small{color:#cdb78c;letter-spacing:.09em;font:600 9px var(--ao-font-ui,system-ui,sans-serif)}
+.aoMapcnDiscoverCopy>strong{font:500 18px/1.12 var(--ao-font-display,Georgia,serif);color:#f0e5d3}
+.aoMapcnDiscoverCopy>span,.aoMapcnDiscoverCopy>em{font:11px/1.35 var(--ao-font-ui,system-ui,sans-serif);color:#9fb0b7;font-style:normal}
+.aoMapcnDiscoverCopy>em{color:#c7ab7a}
+.aoMapcnDiscoverArrow{flex:none;color:#d3b984;font-size:15px}
+.aoHeritageSurface .aoMapcnDiscoverFoot{flex:none;padding:8px 13px;border-top:1px solid #a18c6038}
+.aoMapcnDiscoverFoot button{display:block;width:100%;min-height:44px;color:#deca9e;border:1px solid #ac916749;border-radius:7px;background:#1a2a34;font:600 11px var(--ao-font-ui,system-ui,sans-serif)}
+.aoMapcnDiscoverFoot span{display:block;padding:8px;color:#a3afb2;text-align:center;font-size:11px}
+@media(max-width:799px){
+ .aoHeritageSurface .aoMapcnDiscoverRail{
+   top:auto;left:0;right:0;bottom:0;width:100%;height:min(35dvh,310px);
+   border-radius:15px 15px 0 0;border-left:0;border-right:0;
+   background:#0f1b25f8;
+ }
+ .aoHeritageSurface .aoMapcnDiscoverHead{padding:9px 13px}
+ .aoMapcnDiscoverHead h2{font-size:21px}
+ .aoMapcnDiscoverHead>strong{font-size:24px}
+ .aoHeritageSurface .aoMapcnDiscoverItem{min-height:69px;padding:9px 11px}
+ .aoHeritageSurface .aoMapcnDiscoverItem>img,.aoHeritageSurface .aoMapcnDiscoverGlyph{width:49px;height:54px}
+ .aoMapcnDiscoverCopy>strong{font-size:17px}
+ .aoHeritageSurface .aoHeritageMapHint{display:none}
+ .aoHeritageSurface:has(.aoMapcnDiscoverRail) .aoHeritageNearby{bottom:calc(min(35dvh,310px) + 12px)}
+ .aoHeritageSurface:has(.aoFindSheetBackdrop[data-find-close-place]) .aoMapcnDiscoverRail{display:none}
+}
+
+
+/* P3: MapCN Uptime Monitor-inspired liturgical-time and source-evidence board.
+   It overlays the ONE existing Explore map; does not imply a second map or
+   continuous real-time Mass availability. */
+.aoHeritageSurface .aoTimeMassLaunch.active{
+  border-color:rgba(219,186,119,.9);
+  background:#443d2d;color:#f0dfb9;
+}
+.aoHeritageSurface .aoTimeMassPanel{
+  position:absolute;z-index:14;top:184px;bottom:13px;left:17px;
+  width:min(418px,calc(100% - 34px));min-height:0;
+  display:flex;flex-direction:column;color:#ebdfc9;
+  background:#101b26fa;border:1px solid rgba(207,181,126,.48);
+  border-radius:13px;overflow:hidden;box-shadow:0 18px 46px #000b;
+}
+.aoTimeMassHead{flex:none;display:flex;justify-content:space-between;align-items:center;
+  gap:9px;padding:14px 17px;background:#111d27;border-bottom:1px solid #a68d593e}
+.aoTimeMassHead small{display:block;color:#bda878;letter-spacing:.14em;
+  font:600 9px/1.3 var(--ao-font-ui,system-ui,sans-serif)}
+.aoTimeMassHead h2{margin:4px 0 0;color:#f3e6ce;
+  font:500 29px/1 var(--ao-font-display,Georgia,serif)}
+.aoTimeMassHead button{min-height:40px;min-width:40px;border:1px solid #866f4e88;
+  border-radius:50%;background:#1c2935;color:#e8d7b9;font-size:22px;cursor:pointer}
+.aoTimeMassScroll{min-height:0;flex:1;overflow:auto;overscroll-behavior:contain;
+  scrollbar-color:#88785e #15212b;padding:14px 16px 19px}
+.aoTimeMassSeason{position:relative;padding:15px 16px 13px 22px;
+  border:1px solid #ab936544;border-radius:9px;background:#172634;overflow:hidden}
+.aoTimeMassSeasonAccent{position:absolute;inset:0 auto 0 0;width:5px;background:#638b69}
+.aoTimeMassSeason[data-season-colour=violet] .aoTimeMassSeasonAccent{background:#85689b}
+.aoTimeMassSeason[data-season-colour=white] .aoTimeMassSeasonAccent{background:#e1cfad}
+.aoTimeMassSeason[data-season-colour=red] .aoTimeMassSeasonAccent{background:#ad685f}
+.aoTimeMassSeason[data-season-colour=black] .aoTimeMassSeasonAccent{background:#737576}
+.aoTimeMassSeason small{font:600 10px var(--ao-font-ui,system-ui,sans-serif);
+ color:#baaa8c;letter-spacing:.09em}
+.aoTimeMassSeason h3{font:500 25px/1.06 var(--ao-font-display,Georgia,serif);
+  color:#eee1ca;margin:8px 0 7px}
+.aoTimeMassSeason p{font:12px/1.5 var(--ao-font-ui,system-ui,sans-serif);
+ color:#b6c1bd;margin:0 0 8px}
+.aoTimeMassSeason>span{display:block;color:#cdb98f;
+ font:11px/1.4 var(--ao-font-ui,system-ui,sans-serif)}
+.aoTimeMassFields{display:flex;align-items:end;gap:9px;padding:12px 0 8px}
+.aoTimeMassFields label,.aoTimeMassFilters label{flex:1;min-width:0;display:grid;gap:6px;
+ font:600 10px/1.3 var(--ao-font-ui,system-ui,sans-serif);
+ text-transform:uppercase;letter-spacing:.055em;color:#cbb689}
+.aoTimeMassFields input,.aoTimeMassFilters input,.aoTimeMassFilters select{
+ display:block;width:100%;box-sizing:border-box;min-width:0;min-height:42px;
+ border:1px solid #ad925c63;border-radius:7px;padding:8px 9px;
+ background:#0d1721;color:#eee1cb;font:400 12px var(--ao-font-ui,system-ui,sans-serif)}
+.aoTimeMassFields button{min-height:42px;border:1px solid #ab93655e;
+ border-radius:7px;background:#24343e;color:#e6cf9d;padding:6px 10px;
+ font:600 11px/1.3 var(--ao-font-ui,system-ui,sans-serif);cursor:pointer}
+.aoTimeMassNotice{color:#b5b0a7;background:#101923;border-left:2px solid #a98d60;
+ padding:10px 11px;margin:5px 0 12px;font:11px/1.5 var(--ao-font-ui,system-ui,sans-serif)}
+.aoTimeMassMetrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.aoTimeMassMetrics>div{min-width:0;padding:10px;background:#1d2b34;border:1px solid #846f4745;
+  border-radius:7px}
+.aoTimeMassMetrics small{display:block;color:#bac2ba;font:10px/1.3 var(--ao-font-ui,system-ui,sans-serif)}
+.aoTimeMassMetrics strong{display:block;margin-top:5px;font:500 24px/1 var(--ao-font-display,Georgia,serif);color:#e8d2a4}
+.aoTimeMassFilters{display:grid;grid-template-columns:minmax(0,1fr);gap:10px;
+ margin:15px 0 12px}
+.aoTimeMassResults{font:600 11px var(--ao-font-ui,system-ui,sans-serif);
+ color:#cbb78e;margin:0 0 9px}
+.aoTimeMassRows{display:grid;gap:8px}
+.aoTimeMassRow{padding:13px;background:#152330;border:1px solid #ad925c40;border-radius:8px}
+.aoTimeMassRow>small{display:block;color:#c7ad81;text-transform:uppercase;
+ letter-spacing:.045em;font:600 9px/1.4 var(--ao-font-ui,system-ui,sans-serif)}
+.aoTimeMassRow h3{font:500 19px/1.16 var(--ao-font-display,Georgia,serif);
+ color:#f0e5d2;margin:5px 0 4px}
+.aoTimeMassRow p{font:11px/1.45 var(--ao-font-ui,system-ui,sans-serif);
+ color:#aebec0;margin:5px 0}
+.aoTimeMassRow blockquote{margin:9px 0;white-space:pre-line;max-height:130px;
+ overflow:auto;padding:9px 10px;background:#0e1b25;border-left:2px solid #c3a775;
+ font:12px/1.55 var(--ao-font-body,Georgia,serif);color:#dcd1bb}
+.aoTimeMassRow a{display:inline-block;margin-top:8px;color:#e1c591;
+ font:600 11px/1.4 var(--ao-font-ui,system-ui,sans-serif);
+ text-decoration:underline;text-underline-offset:3px}
+.aoTimeMassRow[data-time-mass-status=REVIEW_DUE]{
+ border-color:#bb8e626e}
+.aoTimeMassMore,.aoTimeMassScroll footer button{width:100%;min-height:44px;margin-top:12px;
+ cursor:pointer;border:1px solid #bda07272;border-radius:7px;
+ background:#24363d;color:#e5cca0;padding:9px;
+ font:600 11px/1.4 var(--ao-font-ui,system-ui,sans-serif)}
+.aoTimeMassScroll footer{margin-top:15px;border-top:1px solid #ae965d4a;padding-top:10px}
+.aoTimeMassScroll footer p{font:11px/1.5 var(--ao-font-ui,system-ui,sans-serif);color:#b5bdb9}
+.aoTimeMassPanel button:focus-visible,.aoTimeMassPanel input:focus-visible,
+.aoTimeMassPanel select:focus-visible,.aoTimeMassPanel a:focus-visible{
+ outline:2px solid #ebd3a3;outline-offset:2px}
+.aoHeritageSurface:has(.aoFindSheetBackdrop) .aoTimeMassPanel{visibility:hidden;pointer-events:none}
+@media(max-width:799px){
+ .aoHeritageSurface .aoTimeMassPanel{top:auto;left:0;right:0;bottom:0;width:100%;
+   height:min(53dvh,475px);border-radius:17px 17px 0 0;border-left:0;border-right:0}
+ .aoTimeMassHead{padding:10px 14px}
+ .aoTimeMassHead h2{font-size:23px}
+ .aoTimeMassScroll{padding:10px 12px 17px}
+ .aoTimeMassSeason{padding:10px 12px 10px 18px}
+ .aoTimeMassSeason h3{font-size:22px}
+ .aoTimeMassFields{align-items:stretch}
+ .aoTimeMassFields button{max-width:49%}
+ .aoTimeMassMetrics strong{font-size:20px}
+ .aoHeritageSurface:has(.aoTimeMassPanel) .aoHeritageMapHint{display:none}
+}
+
+
+/* P4 MapCN layers · canonical MapLibre instance, overlay is explanatory only */
+.aoHeritageSurface .aoAtlasLayersLaunch.active{background:#443d2d;color:#f1dfba;border-color:#c7a777}
+.aoHeritageSurface .aoAtlasCoveragePanel{
+ position:absolute;z-index:14;top:184px;left:17px;bottom:13px;
+ width:min(410px,calc(100% - 34px));min-height:0;
+ display:flex;flex-direction:column;overflow:hidden;
+ background:#101b26fb;color:#ebdfc9;
+ border:1px solid rgba(207,181,126,.47);border-radius:13px;
+ box-shadow:0 18px 46px #000b;
+}
+.aoAtlasCoverageHead{padding:15px 17px;flex:none;display:flex;align-items:center;
+ justify-content:space-between;gap:10px;background:#121f2a;border-bottom:1px solid #9b86573c}
+.aoAtlasCoverageHead small{font:600 9px/1.3 var(--ao-font-ui,system-ui,sans-serif);
+ color:#c1a677;letter-spacing:.14em}
+.aoAtlasCoverageHead h2{margin:4px 0 0;color:#f1e2c9;
+ font:500 27px/1.06 var(--ao-font-display,Georgia,serif)}
+.aoAtlasCoverageHead>button{min-height:44px;min-width:44px;
+ border:1px solid #947c5299;border-radius:50%;background:#1a2a35;
+ font-size:23px;color:#f0dcba;cursor:pointer}
+.aoAtlasCoverageScroll{padding:12px 15px 16px;min-height:0;
+ overflow:auto;flex:1;overscroll-behavior:contain;scrollbar-color:#7e7156 #15232c}
+.aoAtlasCoverageModes{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.aoAtlasCoverageModes button{min-height:44px;border:1px solid #9f87595a;
+ border-radius:7px;background:#172936;color:#d4b985;font:600 12px var(--ao-font-ui,system-ui,sans-serif)}
+.aoAtlasCoverageModes button[aria-pressed=true],.aoAtlasCoverageScope button[aria-pressed=true]{
+ background:#b99e6d;color:#101a22;border-color:#dcc494}
+.aoAtlasCoverageScope{display:flex;align-items:center;gap:5px;flex-wrap:wrap;margin:14px 0}
+.aoAtlasCoverageScope>span{color:#b7a477;font:600 10px var(--ao-font-ui,system-ui,sans-serif);
+ text-transform:uppercase;letter-spacing:.09em;margin-right:5px}
+.aoAtlasCoverageScope button{min-height:38px;padding:7px 10px;border:1px solid #aa93644d;
+ border-radius:999px;background:#17242f;color:#e5d4ac;
+ font:600 11px var(--ao-font-ui,system-ui,sans-serif)}
+.aoAtlasCoverageMetrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.aoAtlasCoverageMetrics>div{padding:10px 8px;min-width:0;background:#1b2b35;
+ border:1px solid #997d514f;border-radius:7px}
+.aoAtlasCoverageMetrics small{display:block;min-height:25px;
+ font:10px/1.25 var(--ao-font-ui,system-ui,sans-serif);color:#aebab7}
+.aoAtlasCoverageMetrics strong{display:block;margin-top:5px;color:#e8cf9d;
+ font:500 25px var(--ao-font-display,Georgia,serif)}
+.aoAtlasCoverageCaution{padding:12px;border-left:2px solid #b69c6a;
+ background:#111d27;color:#c6beb0;font:12px/1.5 var(--ao-font-ui,system-ui,sans-serif)}
+.aoAtlasCoverageLegend{display:grid;gap:7px;padding:14px 0}
+.aoAtlasCoverageLegend i{display:block;height:11px;border-radius:999px;
+ background:linear-gradient(90deg,#172f3b,#315b65,#627966,#b99b65,#f0d49d)}
+.aoAtlasCoverageLegend span{color:#c6c1b5;font:11px var(--ao-font-ui,system-ui,sans-serif)}
+.aoAtlasCountryLegend{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));
+ gap:3px;margin:10px 0 5px}
+.aoAtlasCountryLegend span{text-align:center;padding:7px 2px;color:#f4ead8;
+ border-radius:4px;font:600 10px var(--ao-font-ui,system-ui,sans-serif)}
+.aoAtlasCountryLegend span:nth-child(1){background:#25313c}
+.aoAtlasCountryLegend span:nth-child(2){background:#506a64}
+.aoAtlasCountryLegend span:nth-child(3){background:#728774}
+.aoAtlasCountryLegend span:nth-child(4){background:#bfa975;color:#111c26}
+.aoAtlasCountryLegend span:nth-child(5){background:#e2c58b;color:#111c26}
+.aoAtlasBoundaryStatus{color:#adafa9;font:11px/1.4 var(--ao-font-ui,system-ui,sans-serif)}
+.aoAtlasSelectedCountry{padding:8px 10px;border:1px solid #a68e625e;
+ background:#23333b;color:#e5ca9c;font:600 12px var(--ao-font-ui,system-ui,sans-serif)}
+.aoAtlasCountryRows{display:grid;gap:4px;max-height:310px;overflow:auto;overscroll-behavior:contain}
+.aoAtlasCountryRows button{display:flex;justify-content:space-between;align-items:center;gap:12px;
+ width:100%;min-height:44px;text-align:left;padding:9px 12px;cursor:pointer;
+ background:#1b2a34;border:1px solid #927e5c46;border-radius:6px;color:#e8dcc5}
+.aoAtlasCountryRows strong{font:500 15px/1.2 var(--ao-font-display,Georgia,serif)}
+.aoAtlasCountryRows span{color:#e8c78a;font:600 13px var(--ao-font-ui,system-ui,sans-serif)}
+.aoAtlasCountryRows button:hover{background:#273944}
+.aoAtlasCoveragePanel button:focus-visible,.aoAtlasCoveragePanel a:focus-visible{
+ outline:2px solid #e8cf9a;outline-offset:2px}
+.aoAtlasCoveragePanel [data-atlas-country-more],.aoAtlasCoveragePanel footer button{
+ display:block;width:100%;min-height:44px;margin:12px 0 0;padding:9px;
+ border:1px solid #a58b5d77;border-radius:7px;background:#25343e;
+ color:#dfc99f;font:600 12px var(--ao-font-ui,system-ui,sans-serif)}
+.aoAtlasCoveragePanel footer{margin-top:16px;padding-top:12px;border-top:1px solid #947d5549;
+ color:#aeb8b5;font:11px/1.6 var(--ao-font-ui,system-ui,sans-serif)}
+.aoAtlasCoveragePanel footer p{margin:9px 0}
+.aoAtlasCoveragePanel footer a{color:#d9c28e;text-underline-offset:2px}
+.aoHeritageSurface:has(.aoFindSheetBackdrop) .aoAtlasCoveragePanel{visibility:hidden;pointer-events:none}
+@media(max-width:799px){
+ .aoHeritageSurface .aoAtlasCoveragePanel{top:auto;bottom:0;left:0;right:0;
+ width:100%;height:min(48dvh,430px);
+ border-left:0;border-right:0;border-radius:17px 17px 0 0}
+ .aoAtlasCoverageHead{padding:9px 13px}
+ .aoAtlasCoverageHead h2{font-size:22px}
+ .aoAtlasCoverageScroll{padding:10px 12px 17px}
+ .aoAtlasCoverageMetrics strong{font-size:21px}
+ .aoAtlasCountryRows{max-height:230px}
+ .aoHeritageSurface:has(.aoAtlasCoveragePanel) .aoHeritageMapHint{display:none}
+}
+
+
+/* P5 · MapCN Network View: a provenance-bound relationship diagram.
+   Dedicated diagram surface, never presented as a geographic route map. */
+.aoHeritageSurface .aoNetworkLaunch.active{border-color:#d5b97d;background:#433c30;color:#f4e1b9}
+.aoHeritageSurface .aoNetworkPanel{
+ position:absolute;inset:0;z-index:16;display:flex;flex-direction:column;
+ min-width:0;min-height:0;overflow:hidden;background:#0b141e;
+ border:1px solid rgba(195,165,109,.45);color:#e9dec9;
+ box-shadow:0 15px 45px #000b;
+}
+.aoNetworkHeader{flex:none;min-height:67px;padding:10px 19px;display:flex;align-items:center;
+ justify-content:space-between;border-bottom:1px solid #9a85574a;background:#101c27}
+.aoNetworkHeader small{font:600 9px/1.2 var(--ao-font-ui,system-ui,sans-serif);
+ letter-spacing:.15em;color:#c2aa81}
+.aoNetworkHeader h2{font:500 29px/1.05 var(--ao-font-display,Georgia,serif);
+ color:#f1e7d6;margin:4px 0 0}
+.aoNetworkHeader>button{height:44px;width:44px;border-radius:50%;border:1px solid #b29b74;
+ background:#1b2b36;color:#e8d4ad;font-size:22px;cursor:pointer}
+.aoNetworkColumns{display:grid;grid-template-columns:minmax(250px,305px) minmax(0,1fr);
+ min-height:0;flex:1;overflow:hidden}
+.aoNetworkRail{min-height:0;display:flex;flex-direction:column;gap:9px;padding:14px;
+ background:#131f2a;border-right:1px solid #8b805b4c}
+.aoNetworkExplanation{margin:0;color:#afbcb9;font:11px/1.5 var(--ao-font-ui,system-ui,sans-serif)}
+.aoNetworkStats{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.aoNetworkStats>div{padding:8px 9px;background:#20313b;border:1px solid #89785466;border-radius:7px}
+.aoNetworkStats strong{font:500 24px/1 var(--ao-font-display,Georgia,serif);color:#efd1a0}
+.aoNetworkStats small{display:block;color:#b6b7ab;font:10px/1.35 var(--ao-font-ui,system-ui,sans-serif)}
+.aoNetworkLabel{display:grid;gap:5px;color:#c6b189;text-transform:uppercase;
+ letter-spacing:.075em;font:600 10px/1.3 var(--ao-font-ui,system-ui,sans-serif)}
+.aoNetworkLabel input,.aoNetworkLabel select{min-height:42px;width:100%;box-sizing:border-box;
+ border:1px solid #a68a5d85;border-radius:8px;padding:8px 11px;background:#0b1823;
+ color:#f1e5d1;font:13px var(--ao-font-ui,system-ui,sans-serif)}
+.aoNetworkMatchCount{padding-top:3px;color:#bfa979;font:600 10px var(--ao-font-ui,system-ui,sans-serif)}
+.aoNetworkResults{flex:1;min-height:0;overflow:auto;overscroll-behavior:contain;
+ scrollbar-color:#8b7855 #18232d}
+.aoNetworkResults button{display:flex;flex-direction:column;gap:3px;
+ width:100%;min-height:57px;text-align:left;padding:9px 10px;border-radius:7px;
+ border:1px solid transparent;border-bottom-color:#8e7a4f30;
+ background:transparent;color:#e9ddc8;cursor:pointer}
+.aoNetworkResults button[aria-pressed=true],.aoNetworkResults button:hover{
+ border-color:#b59d6a88;background:#2a353b}
+.aoNetworkResults small{color:#d0b985;font:600 9px/1.3 var(--ao-font-ui,system-ui,sans-serif);
+ text-transform:uppercase;letter-spacing:.09em}
+.aoNetworkResults strong{font:500 17px/1.1 var(--ao-font-display,Georgia,serif)}
+.aoNetworkResults span{color:#95a9b0;font:10px var(--ao-font-ui,system-ui,sans-serif)}
+.aoNetworkMain{min-width:0;min-height:0;overflow:auto;overscroll-behavior:contain;
+ background:radial-gradient(ellipse at 50% 32%,#28333a 0%,#101a25 51%,#0b151f 100%);
+ scrollbar-color:#74694f #101b25}
+.aoNetworkCurrent{padding:13px 19px 3px;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.aoNetworkCurrent small{color:#bfa77e;font:600 10px/1.4 var(--ao-font-ui,system-ui,sans-serif);
+ text-transform:uppercase;letter-spacing:.075em}
+.aoNetworkCurrent h3{font:500 24px/1.1 var(--ao-font-display,Georgia,serif);
+ margin:4px 0;color:#efe3cc}
+.aoNetworkCurrent button{padding:10px 12px;min-height:42px;flex:none;border:1px solid #af9368;
+ background:#29373f;color:#e8d0a0;border-radius:7px;font:600 10px var(--ao-font-ui,system-ui,sans-serif)}
+.aoNetworkGraphWrap{width:min(100%,930px);margin:0 auto}
+.aoNetworkGraph{display:block;width:100%;height:auto;max-height:min(58vh,480px)}
+.aoNetworkGraphWrap>p{margin:0;text-align:center;color:#8fadaf;
+ font:10px/1.5 var(--ao-font-ui,system-ui,sans-serif);padding:0 14px 8px}
+.aoNetworkSvgItem{cursor:pointer}
+.aoNetworkSvgItem:focus .aoNetworkSvgCircle,.aoNetworkSvgItem:hover .aoNetworkSvgCircle{
+ stroke-width:3.2;fill:#405059}
+.aoNetworkSvgCircle{fill:#213541;stroke:#b2a180;stroke-width:1.8}
+.aoNetworkType-place{fill:#324949}.aoNetworkType-shrine{fill:#4b463a}
+.aoNetworkType-pilgrimage{fill:#4a3a4c}.aoNetworkType-route{fill:#344358}
+.aoNetworkType-relic{fill:#4b4140}.aoNetworkType-apparition{fill:#394552}
+.aoNetworkType-calendar{fill:#385047}
+.aoNetworkSvgType{fill:#d8bd90;font:600 9px var(--ao-font-ui,system-ui,sans-serif);
+ letter-spacing:.07em;pointer-events:none}
+.aoNetworkSvgTitle{fill:#f0e5d1;font:500 11px var(--ao-font-display,Georgia,serif);pointer-events:none}
+.aoNetworkSvgSmall{fill:#cfbd99;font:9px var(--ao-font-ui,system-ui,sans-serif);pointer-events:none}
+.aoNetworkEvidence{padding:11px 18px 25px;max-width:1000px;margin:0 auto}
+.aoNetworkEvidenceTop{display:flex;align-items:center;justify-content:space-between;
+ border-bottom:1px solid #a38c5c60;padding:0 0 8px;margin-bottom:6px}
+.aoNetworkEvidenceTop h4{font:500 21px/1 var(--ao-font-display,Georgia,serif);margin:0}
+.aoNetworkEvidenceTop span{color:#cbb383;font:11px var(--ao-font-ui,system-ui,sans-serif)}
+.aoNetworkEvidenceRow{display:flex;align-items:center;justify-content:space-between;gap:15px;
+ padding:10px 0;border-bottom:1px solid #9a80562d}
+.aoNetworkEvidenceRow>div{display:grid;gap:4px;min-width:0}
+.aoNetworkEvidenceRow small{font:10px/1.4 var(--ao-font-ui,system-ui,sans-serif);color:#b6b1a0}
+.aoNetworkEvidenceRow button{border:0;background:transparent;text-align:left;color:#eadac2;
+ cursor:pointer;font:500 17px/1.2 var(--ao-font-display,Georgia,serif);padding:0}
+.aoNetworkEvidenceRow .aoNetworkPlaceButton{color:#c9b083;font:600 10px var(--ao-font-ui,system-ui,sans-serif)}
+.aoNetworkEvidenceRow a{flex:none;color:#debb83;font:600 11px var(--ao-font-ui,system-ui,sans-serif);
+ text-decoration:underline;text-underline-offset:2px}
+.aoNetworkMore{width:100%;min-height:44px;border:1px solid #b19b71;
+ background:#1e303a;color:#ecd7aa;margin-top:9px;border-radius:7px}
+.aoNetworkEmpty{padding:35px;color:#d7ccb5}
+.aoNetworkFoot{flex:none;padding:7px 16px;max-height:54px;overflow:auto;
+ border-top:1px solid #99835545;color:#9eadac;
+ font:10px/1.5 var(--ao-font-ui,system-ui,sans-serif)}
+.aoNetworkPanel button:focus-visible,.aoNetworkPanel input:focus-visible,
+.aoNetworkPanel select:focus-visible,.aoNetworkPanel a:focus-visible,
+.aoNetworkSvgItem:focus-visible{outline:2px solid #ddc18c;outline-offset:2px}
+.aoHeritageSurface:has(.aoFindSheetBackdrop[data-find-close-place]) .aoNetworkPanel{visibility:hidden;pointer-events:none}
+@media(max-width:799px){
+ .aoNetworkHeader{padding:7px 11px;min-height:49px}
+ .aoNetworkHeader h2{font-size:22px}
+ .aoNetworkColumns{display:flex;flex-direction:column}
+ .aoNetworkRail{flex:none;height:min(25dvh,200px);min-height:150px;
+ padding:8px 11px;gap:4px;border-right:0;border-bottom:1px solid #8d7d5947}
+ .aoNetworkExplanation{font-size:10px;line-height:1.3;max-height:27px;overflow:hidden}
+ .aoNetworkStats{display:none}
+ .aoNetworkLabel{font-size:9px;gap:2px}
+ .aoNetworkLabel input,.aoNetworkLabel select{min-height:36px;padding:5px 8px;font-size:12px}
+ .aoNetworkResults{display:none}
+ .aoNetworkMatchCount{font-size:9px}
+ .aoNetworkCurrent{padding:9px 12px 0}
+ .aoNetworkCurrent h3{font-size:20px}
+ .aoNetworkCurrent button{font-size:9px;padding:6px 9px;max-width:120px}
+ .aoNetworkGraph{max-height:250px}
+ .aoNetworkEvidence{padding:7px 11px 20px}
+ .aoNetworkEvidenceRow{gap:9px}
+ .aoNetworkFoot{font-size:9px;max-height:47px}
+}
+
 `;

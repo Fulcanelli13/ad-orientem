@@ -43,11 +43,13 @@ export function groupTraditionsForBrowse(items,{includeNovenaContext=false}={}){
       source_id:custom.custom_id,
       lens:"traditions",
       kind:"CANONICAL_CUSTOM",
-      eyebrow:"CUSTOM · "+clean(custom.family).toUpperCase(),
+      eyebrow:"CUSTOM · CATHOLIC LIFE",
+      eyebrow_fr:"COUTUME · VIE CATHOLIQUE",
       status:first.status,
       title:guide?.title_en??custom.name,
       title_fr:guide?.title_fr??null,
-      subtitle:clean(custom.family),
+      subtitle:guide?.scope_en??null,
+      subtitle_fr:guide?.scope_fr??null,
       summary:guide?.description_en??custom.canonical_statement,
       summary_fr:guide?.description_fr??null,
       place_id:null,
@@ -55,10 +57,9 @@ export function groupTraditionsForBrowse(items,{includeNovenaContext=false}={}){
       geo:null,
       map_publishable:false,
       map_state:"NOT_MAPPED",
-      facts:Object.freeze([
-        {label:"Period",value:clean(custom.period_label)},
+      facts:Object.freeze(attestations.length>1?[
         {label:"Documented examples",value:String(attestations.length)},
-      ].filter(fact=>fact.value)),
+      ]:[]),
       sections:Object.freeze([
         ...(guide?[
           {label:"Meaning",label_fr:"Sens",title:"",body:guide.meaning_en,body_fr:guide.meaning_fr},

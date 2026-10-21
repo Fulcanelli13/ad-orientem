@@ -34,8 +34,8 @@ for (const entry of negative.entries) {
   assert.equal(auditNegativeKnowledge(entry).length, 0, entry.custom_id);
 }
 
-assert.equal(atlas.customs.length, 33);
-assert.equal(atlas.attestations.length, 92);
+assert.equal(atlas.customs.length,38);
+assert.equal(atlas.attestations.length,97);
 assert.equal(negative.entries.length, 7);
 
 const result = assertCustomsAtlasRegistry({
@@ -48,9 +48,9 @@ const result = assertCustomsAtlasRegistry({
 });
 assert.equal(result.pass, true);
 assert.deepEqual(result.counts, {
-  customs: 33,
-  attestations: 92,
-  sources: 102,
+  customs: 38,
+  attestations: 97,
+  sources: 108,
   negativeKnowledge: 7,
 });
 assert.deepEqual(

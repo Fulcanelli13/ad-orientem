@@ -1,0 +1,25 @@
+name: Explore MapCN Network source contracts
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "src/find/mapcn-network-*"
+      - "src/find/browser-entry.js"
+      - "src/find/explore-presentation.js"
+      - "src/find/heritage-presentation.js"
+      - "src/find/explore-atlas-layout-style.js"
+      - "tests/mapcn-network-contract.mjs"
+      - ".github/workflows/mapcn-network-contract.yml"
+jobs:
+  contracts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: node --check src/find/browser-entry.js
+      - run: node --check src/find/heritage-presentation.js
+      - run: node --check src/find/mapcn-network-model.js
+      - run: node --check src/find/mapcn-network-presentation.js
+      - run: node --test tests/mapcn-network-contract.mjs

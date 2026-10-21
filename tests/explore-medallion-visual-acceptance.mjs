@@ -88,20 +88,114 @@ try{
    const rgb=(credits.background.match(/[0-9.]+/g)||[]).slice(0,3).map(Number);
    assert.ok(rgb.length===3&&rgb.every(value=>value<100),
      "Attribution must use the dark atlas palette: "+JSON.stringify(credits));
+   const rail=page.locator("#ao-find-modular-root [data-mapcn-discover-rail]");
+   await rail.waitFor({state:"visible"});
+   assert.ok(await rail.locator("button[data-explore-open-place]").count()>0,
+     "MapCN Discover must contain canonical actionable Places");
+   const railGeometry=await rail.evaluate(el=>{const r=el.getBoundingClientRect();return {
+     width:r.width,height:r.height,left:r.left,right:r.right,top:r.top,bottom:r.bottom};});
+   assert.ok(railGeometry.width>280&&railGeometry.bottom<=844+(mobile?1:1000)&&railGeometry.height>150,
+     "Discover rail must remain inside the visual viewport: "+JSON.stringify(railGeometry));
    const guide=page.locator("#ao-find-modular-root .aoHeritageMapHint");
-   await guide.waitFor({state:"visible"});
-   assert.match(await guide.innerText(),/Numbers zoom.*icons open places/i,
-     "Map onboarding must distinguish number clusters from place pins");
    if(mobile){
-     const overlap=await page.evaluate(()=>{
-       const a=document.querySelector(".aoHeritageMapHint")?.getBoundingClientRect();
-       const b=document.querySelector(".aoHeritageNearby")?.getBoundingClientRect();
-       return a&&b?a.right>b.left&&a.left<b.right&&a.bottom>b.top&&a.top<b.bottom:false;
-     });
-     assert.equal(overlap,false,"Cluster guide must not obstruct Near me at "+width);
+     assert.equal(await guide.isVisible(),false,
+       "On phones the browsable list replaces the old passive map hint");
+   }else{
+     await guide.waitFor({state:"visible"});
+     assert.match(await guide.innerText(),/Numbers zoom.*icons open places/i);
    }
+   const originalCanvas=await page.locator(".aoHeritageSurface .aoFindMap canvas.maplibregl-canvas").count();
+   assert.equal(originalCanvas,1,"One map canvas, shared with canonical Explore");
+   await rail.locator("button[data-explore-open-place]").first().click();
+   await page.locator("#ao-find-modular-root .aoHeritagePreview").waitFor({state:"visible",timeout:15000});
+   assert.equal(await rail.locator("button[data-explore-open-place]").first().getAttribute("aria-current"),"true",
+     "Selected Place should remain synchronized with its map rail row");
+   assert.equal(await page.locator(".aoHeritageSurface .aoFindMap canvas.maplibregl-canvas").count(),1,
+     "Opening a rail Place must preserve the existing map canvas");
+   await page.locator("#ao-find-modular-root .aoHeritageCardClose").click();
+   await rail.waitFor({state:"visible"});
+   assert.equal(await page.locator(".aoHeritageSurface .aoFindMap canvas.maplibregl-canvas").count(),1);
    await page.screenshot({path:resolve(out,"explore-"+width+"-overview.png"),fullPage:false});
 
+   // P3 MapCN Uptime Monitor adaptation stays inside the SAME canonical map.
+   await page.locator("#ao-find-modular-root [data-explore-time-mass-toggle]").click();
+   const timeMass=page.locator("#ao-find-modular-root [data-explore-time-mass-panel]");
+   await timeMass.waitFor({state:"visible",timeout:15000});
+   assert.ok(await timeMass.locator("[data-explore-time-mass-date]").count()>0);
+   assert.ok(await timeMass.locator(".aoTimeMassRow").count()>0,
+     "P3 must show source-owned directory rows, not a template placeholder");
+   assert.ok(await timeMass.locator("a[href^='https://']").count()>0,
+     "P3 needs publisher links, not guessed times");
+   assert.equal(await page.locator(".aoHeritageSurface .aoFindMap canvas.maplibregl-canvas").count(),1);
+   await timeMass.locator("[data-explore-time-mass-date]").fill("2026-12-25");
+   await timeMass.locator("[data-explore-time-mass-date]").dispatchEvent("change");
+   await page.waitForFunction(()=>document.querySelector(".aoTimeMassSeason h3")?.textContent
+     ?.includes("Christmas"),null,{timeout:10000});
+   const boardFit=await timeMass.evaluate(el=>{const r=el.getBoundingClientRect();return {
+     top:r.top,bottom:r.bottom,width:r.width,height:r.height,vh:innerHeight};});
+   assert.ok(boardFit.top>=0&&boardFit.bottom<=boardFit.vh+1&&boardFit.height>230,
+     "P3 panel must fit mobile and desktop: "+JSON.stringify(boardFit));
+   await page.screenshot({path:resolve(out,"explore-"+width+"-time-mass.png"),fullPage:false});
+   await timeMass.locator(".aoTimeMassHead [data-explore-time-mass-toggle]").click();
+   await timeMass.waitFor({state:"detached",timeout:10000});
+   assert.equal(await page.locator(".aoHeritageSurface .aoFindMap canvas.maplibregl-canvas").count(),1);
+   // P4 MapCN Heatmap + Choropleth · exact canonical coverage only.
+   await page.locator("#ao-find-modular-root .aoAtlasLayersLaunch").click();
+   const atlas=page.locator("#ao-find-modular-root [data-atlas-coverage-panel]");
+   await atlas.waitFor({state:"visible",timeout:15000});
+   assert.equal(await atlas.getAttribute("data-atlas-mode"),"heatmap");
+   assert.match(await atlas.locator(".aoAtlasCoverageCaution").innerText(),/not Catholic population/i);
+   assert.ok(Number(await atlas.locator(".aoAtlasCoverageMetrics strong").first().textContent())>0);
+   assert.equal(await page.locator(".aoHeritageSurface .aoFindMap canvas.maplibregl-canvas").count(),1);
+   const atlasFit=await atlas.evaluate(el=>{const r=el.getBoundingClientRect();
+     return {top:r.top,bottom:r.bottom,height:r.height,vh:innerHeight,overflow:document.documentElement.scrollWidth-innerWidth};});
+   assert.ok(atlasFit.top>=0&&atlasFit.bottom<=atlasFit.vh+1&&atlasFit.height>200&&atlasFit.overflow<=1,
+     "P4 heatmap panel must fit viewport: "+JSON.stringify(atlasFit));
+   await page.screenshot({path:resolve(out,"explore-"+width+"-atlas-heatmap.png"),fullPage:false});
+   await atlas.locator('[data-atlas-mode="countries"]').click();
+   await atlas.waitFor({state:"visible",timeout:15000});
+   assert.equal(await atlas.getAttribute("data-atlas-mode"),"countries");
+   assert.ok(await atlas.locator('[data-atlas-country]').count()>0);
+   await page.waitForFunction(()=>{
+      const el=document.querySelector("[data-atlas-boundary-status]");
+      return el&&/Natural Earth|unavailable/i.test(el.textContent||"");
+   },null,{timeout:35000});
+   await page.screenshot({path:resolve(out,"explore-"+width+"-atlas-countries.png"),fullPage:false});
+   await atlas.locator('[data-atlas-scope="tlm"]').click();
+   assert.equal(await atlas.locator('[data-atlas-scope="tlm"]').getAttribute("aria-pressed"),"true");
+   await atlas.locator('[data-atlas-mode="places"]').first().click();
+   await atlas.waitFor({state:"detached",timeout:15000});
+   await page.locator("#ao-find-modular-root [data-mapcn-discover-rail]").waitFor({state:"visible"});
+   assert.equal(await page.locator(".aoHeritageSurface .aoFindMap canvas.maplibregl-canvas").count(),1);
+   // P5 · provenance-bound relationship graph, never a second map.
+   await page.locator("#ao-find-modular-root button[data-network-toggle]").click();
+   const graph=page.locator("#ao-find-modular-root [data-network-panel]");
+   await graph.waitFor({state:"visible",timeout:20000});
+   assert.ok(Number(await graph.locator(".aoNetworkStats strong").first().textContent())>0,
+      "Real canonical relationship nodes should be present");
+   assert.ok(await graph.locator("a[href^='https://']").count()>0,
+      "Network edges must expose original source links");
+   assert.ok(await graph.locator(".aoNetworkSvgItem").count()>0,
+      "The graph must render selectable relationship nodes");
+   assert.equal(await page.locator(".aoHeritageSurface .aoFindMap canvas.maplibregl-canvas").count(),1,
+      "P5 must preserve the existing MapLibre map");
+   const graphFit=await graph.evaluate(el=>{
+     const b=el.getBoundingClientRect();
+     return {top:b.top,bottom:b.bottom,height:b.height,width:b.width,vh:innerHeight};
+   });
+   assert.ok(graphFit.top>=0&&graphFit.bottom<=graphFit.vh+1&&graphFit.height>230,
+      "The network must stay within the available viewport: "+JSON.stringify(graphFit));
+   await page.screenshot({path:resolve(out,"explore-"+width+"-network.png"),fullPage:false});
+   const node=graph.locator(".aoNetworkSvgItem").first();
+   await node.focus();
+   await page.keyboard.press("Enter");
+   await graph.waitFor({state:"visible",timeout:10000});
+   await graph.locator("select[data-network-kind]").selectOption("place");
+   assert.equal(await graph.locator("select[data-network-kind]").inputValue(),"place");
+   await graph.locator("button[data-network-close]").click();
+   await graph.waitFor({state:"detached",timeout:10000});
+   await page.locator("#ao-find-modular-root [data-mapcn-discover-rail]").waitFor({state:"visible"});
+   assert.equal(await page.locator(".aoHeritageSurface .aoFindMap canvas.maplibregl-canvas").count(),1);
    // D is a same-map journey folio: no new page and no manufactured route
    // lines. Exercise a historical source-owned 3-stage pilgrimage.
    await page.locator("#ao-find-modular-root [data-explore-journey-open]").click();
