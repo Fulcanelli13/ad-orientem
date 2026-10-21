@@ -115,6 +115,9 @@ on:
       - 'data/learn/research/pius-x-document-first-router-to-claims-20261021.v1.json'
       - 'tools/formation/pius-x-document-first-answer-selector.mjs'
       - 'tests/pius-x-document-first-answer-selection.mjs'
+      - 'tests/pius-x-document-first-answer-expansion-next11.mjs'
+      - 'data/learn/research/pius-x-next11-frozen-english-french-question-probes-20261021.v1.json'
+      - 'data/learn/research/pius-x-next11-pre-evaluation-paraphrase-pairs-20261021.v1.json'
       - 'tests/pius-x-document-first-unscripted-router-6.mjs'
       - 'tools/formation/build-pius-x-three-document-full-benchmark.mjs'
       - 'tests/pius-x-document-first-full-34-source-map.mjs'
@@ -484,8 +487,8 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          git fetch --no-tags --depth=1 origin 'd25651b7b77ea5331bfc8485717cb00bb0047811'
-          test "$(git rev-parse FETCH_HEAD)" = 'd25651b7b77ea5331bfc8485717cb00bb0047811'
+          git fetch --no-tags --depth=1 origin '0339883dc3d1ecfc16f07fd35b68469df206337b'
+          test "$(git rev-parse FETCH_HEAD)" = '0339883dc3d1ecfc16f07fd35b68469df206337b'
           for file in \
             src/learn/living-church-shared-question-router.js \
             src/learn/living-church-hybrid-question-router.js \
@@ -506,11 +509,15 @@ jobs:
         run: node tools/formation/build-pius-x-three-document-full-benchmark.mjs
       - name: Verify exact source-to-claim selection, bilingual parity and negative cases
         run: node tests/pius-x-document-first-answer-selection.mjs
+      - name: Verify 11 further source-first topics and safe off-catalog refusal
+        run: node tests/pius-x-document-first-answer-expansion-next11.mjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: SPX-Three-Document-Review-Only-Answer-Selection
-          path: research-out/pius-x-document-first-answer-selection.v1.json
+          path: |
+            research-out/pius-x-document-first-answer-selection.v1.json
+            research-out/pius-x-document-first-next11-claim-selection.v1.json
           if-no-files-found: warn
           retention-days: 30
 
