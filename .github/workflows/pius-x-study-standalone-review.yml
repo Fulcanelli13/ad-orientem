@@ -6,11 +6,15 @@ on:
     paths:
       - 'previews/pius-x-study/**'
       - 'tests/pius-x-study-standalone-e2e.mjs'
+      - 'tests/pius-x-study-expanded-82-e2e.mjs'
+      - 'tools/build-pius-x-expanded-standalone.mjs'
       - '.github/workflows/pius-x-study-standalone-review.yml'
   pull_request:
     paths:
       - 'previews/pius-x-study/**'
       - 'tests/pius-x-study-standalone-e2e.mjs'
+      - 'tests/pius-x-study-expanded-82-e2e.mjs'
+      - 'tools/build-pius-x-expanded-standalone.mjs'
       - '.github/workflows/pius-x-study-standalone-review.yml'
 permissions:
   contents: read
@@ -27,10 +31,16 @@ jobs:
       - run: npx playwright install --with-deps chromium
       - name: Execute the single-file story at phone and desktop sizes
         run: node tests/pius-x-study-standalone-e2e.mjs
+      - name: Compile the full 82-chapter offline review from immutable source-owner stages
+        run: node tools/build-pius-x-expanded-standalone.mjs
+      - name: Exercise expanded bilingual dialogue, sources and third-level questions
+        run: node tests/pius-x-study-expanded-82-e2e.mjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: pius-x-study-desktop-mobile-review
-          path: artifacts/pius-x-study-review/
+          path: |
+            artifacts/pius-x-study-review/
+            artifacts/pius-x-study-expanded/
           if-no-files-found: warn
           retention-days: 30
