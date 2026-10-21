@@ -1,0 +1,51 @@
+name: Ask the Church V7 real-shell acceptance
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "tests/ask-church-*.mjs"
+      - "src/learn/ask-church-*.js"
+      - "data/learn/ask-church-app-route-survey.v1.json"
+      - "docs/ASK-CHURCH-V7-REAL-SHELL-ACCEPTANCE.md"
+      - ".github/workflows/ask-church-v7-real-shell.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  objective-handoffs-real-shell:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Check out the complete app repository
+        uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install test dependencies
+        run: npm install --no-audit --no-fund
+      - name: Check source-declared route survey
+        run: node tests/ask-church-app-route-survey.mjs
+      - name: Check objective classification and publication gates
+        run: node tests/ask-church-objective-engine.mjs
+      - name: Check handoff lifecycle and fail-closed cases
+        run: node tests/ask-church-handoff-lifecycle.mjs
+      - name: Install Chromium for real-app acceptance
+        run: npx playwright install --with-deps chromium
+      - name: Run real-shell phone/desktop browser acceptance
+        run: node tests/ask-church-real-shell-phone-e2e.mjs
+      - name: Preserve acceptance evidence if available
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ask-church-v7-real-shell-evidence
+          path: artifacts/ask-church-v7/
+          if-no-files-found: ignore
+          retention-days: 14
