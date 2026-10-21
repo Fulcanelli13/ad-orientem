@@ -294,6 +294,23 @@ try{
     "Explanatory ribbon expanded excessively on a narrow phone");
   assert.ok(objectiveVisual.viewportOverflow<=1,
     "Context ribbon created horizontal phone overflow");
+  const rubricLegibility=await page.evaluate(()=>{
+    const rubric=document.querySelector('.ao-reader-paragraph[data-kind="RUBRIC"][data-cue-id="AO.SM.C0174"]');
+    const annotation=rubric?.querySelector(".ao-live-inline-rubrics");
+    return {
+      exists:Boolean(rubric),
+      visible:Boolean(rubric&&getComputedStyle(rubric).display!=="none"),
+      opacity:rubric?Number(getComputedStyle(rubric).opacity):0,
+      annotationOpacity:annotation?Number(getComputedStyle(annotation).opacity):null,
+    };
+  });
+  assert.ok(rubricLegibility.exists&&rubricLegibility.visible,
+    "The exact Host elevation source rubric must remain visible");
+  assert.ok(rubricLegibility.opacity>=0.55,
+    "Source rubric must remain readable, not disappear under faded LIVE focus");
+  assert.ok(rubricLegibility.annotationOpacity==null ||
+    rubricLegibility.annotationOpacity>=0.85,
+    "Optional certified ceremonial detail is excessively dim");
   await mkdir(resolve(repoRoot,"artifacts/live-cinematics"),{recursive:true});
   await page.screenshot({
     path:resolve(repoRoot,"artifacts/live-cinematics/context-host-390-en.png"),
