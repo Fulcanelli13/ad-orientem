@@ -11,12 +11,15 @@ const fold=s=>String(s??'').normalize('NFD').replace(/[\u0300-\u036f]/g,'')
 const containsPhrase=(text,phrase)=>(' '+fold(text)+' ').includes(' '+fold(phrase)+' ');
 const locatorSections=value=>{
  const found=new Set();
- const bits=[...String(value).matchAll(/§{1,2}\s*(\d+)(?:\s*[–-]\s*(\d+))?/g)];
- for(const m of bits){
-  const first=Number(m[1]),last=Number(m[2]||m[1]);
-  assert(last>=first&&last-first<=30,'unexpected source locator '+value);
-  for(let n=first;n<=last;n++)found.add(n);
- }
+ // Pius X printed locators can enumerate noncontiguous spans: §§15, 24–25.
+ for(const block of String(value).matchAll(/§{1,2}\s*([\d\s,–-]+)/g))
+  for(const part of block[1].split(',')){
+   const match=part.trim().match(/^(\d+)(?:\s*[–-]\s*(\d+))?$/);
+   assert(match,'unparsed source locator '+value);
+   const first=Number(match[1]),last=Number(match[2]||match[1]);
+   assert(last>=first&&last-first<=30,'unexpected source locator '+value);
+   for(let n=first;n<=last;n++)found.add(n);
+  }
  return found;
 };
 const locusSections=value=>{
@@ -93,7 +96,8 @@ export function createPiusDocumentFirstReviewSelector({router,benchmark,registry
   }
   bySource.set(entry.sourceRef,{entry,source});
  }
- assert.equal(bySource.size,3);
+ assert.equal(bySource.size,registry.entries.length);
+ assert(bySource.size>=3&&bySource.size<=30,'unexpected source-bridge expansion size');
  function evaluate(question,{language='en',confirmed=false,context=null}={}){
   const lang=language==='fr'?'fr':'en';
   const routing=router.match(question,{language:lang,currentCharacter:'pius-x',...(context?{context}:{})});
