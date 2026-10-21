@@ -32,16 +32,16 @@
     "christologicalShrines": 30,
     "otherShrines": 3,
     "shrineGuides": 25,
-    "shrineApprovedHero": 18,
-    "shrineGuideAndHero": 18,
+    "shrineApprovedHero": 19,
+    "shrineGuideAndHero": 19,
     "marianGuides": 14,
-    "marianApprovedHero": 11,
+    "marianApprovedHero": 12,
     "pilgrimages": 240,
     "destinationPilgrimages": 207,
     "annualPilgrimages": 33,
     "routes": 20,
     "apparitions": 33,
-    "approvedSitePhotos": 18
+    "approvedSitePhotos": 19
   },
   "shrines": [
     {
@@ -1379,8 +1379,8 @@
       "intro_en": true,
       "intro_fr": true,
       "detailed_guide": "PUBLISHED",
-      "hero_media": "MISSING_APPROVED",
-      "hero_asset_path": null,
+      "hero_media": "APPROVED_LOCAL",
+      "hero_asset_path": "assets/approved/place-media/FR-pontmain-basilica-east.webp",
       "approved_gallery_count": 2,
       "pilgrimage_ids": [
         "pilgrimage:FR:pontmain-destination",
@@ -1390,7 +1390,7 @@
       "apparition_ids": [
         "apparition:FR:pontmain"
       ],
-      "next_editorial_action": "FIND_AND_LICENSE_EXACT_SITE_PHOTO"
+      "next_editorial_action": "QA_RELEASED_FOLIO"
     },
     {
       "shrine_id": "shrine:FR:pellevoisin",
@@ -6955,7 +6955,7 @@
       "route_ids": [],
       "source_count": 1,
       "narrative": "DESTINATION_GUIDE_PUBLISHED",
-      "destination_hero": "NO_APPROVED_DESTINATION_PHOTO",
+      "destination_hero": "APPROVED_LOCAL",
       "canonical_temporal_links": []
     },
     {
@@ -6967,7 +6967,7 @@
       "route_ids": [],
       "source_count": 1,
       "narrative": "DESTINATION_GUIDE_PUBLISHED",
-      "destination_hero": "NO_APPROVED_DESTINATION_PHOTO",
+      "destination_hero": "APPROVED_LOCAL",
       "canonical_temporal_links": [
         "temporal:pontmain:jan17"
       ]
@@ -6981,7 +6981,7 @@
       "route_ids": [],
       "source_count": 1,
       "narrative": "DESTINATION_GUIDE_PUBLISHED",
-      "destination_hero": "NO_APPROVED_DESTINATION_PHOTO",
+      "destination_hero": "APPROVED_LOCAL",
       "canonical_temporal_links": [
         "temporal:pontmain:assumption"
       ]
