@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
-import {indexCatenaMessages,retrieveCatenaMessages} from "../src/scripture/catena-messenger.js";
+import {indexCatenaMessages,retrieveCatenaMessages,catenaQuestionHasUnsupportedContext} from "../src/scripture/catena-messenger.js";
 import {catenaRelatedTopic,retrieveCatenaRelatedMessages} from "../src/scripture/catena-related-vocabulary.js";
 
 const fixture=JSON.parse(readFileSync(
@@ -23,6 +23,7 @@ function rowsFor(id){
  }]);
 }
 function retrieve(rows,question){
+ if(catenaQuestionHasUnsupportedContext(question,rows))return [];
  const topic=catenaRelatedTopic(question);
  const related=topic?retrieveCatenaRelatedMessages(rows,question,{limit:4}):[];
  return related.length?related.map(x=>x.row):retrieveCatenaMessages(rows,question,{limit:4});
