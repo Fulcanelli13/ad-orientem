@@ -160,6 +160,13 @@ test("A route's generic source cannot authenticate an unmatched named waypoint",
  mismatch.shrines.routeStageSiteLinks[0].original_stage_name="Wrong Stage";
  assert.ok(!buildSacredNetwork(mismatch).edges.some(e=>e.recordId==="route:a#stage-2"));
 });
+test("Search constrains focused nodes when phone results are hidden",()=>{
+ const graph=buildSacredNetwork(sample);
+ assert.equal(networkFocus(graph,{focus:"place:a",kind:"custom"}).current.type,"custom");
+ assert.equal(networkFocus(graph,{focus:"place:a",search:"Ex-votos"}).current.key,"custom:DEV-009");
+ assert.equal(networkFocus(graph,{focus:"place:a",search:"no such custom"}).current,null);
+ assert.equal(networkFocus(graph,{focus:"person:relic:a",kind:"place"}).current.type,"place");
+});
 test("Both relationship categories have bilingual facets and direct custom folios",()=>{
  const graph=buildSacredNetwork(sample);
  assert.ok(networkFocus(graph,{kind:"custom"}).results.every(n=>n.type==="custom"));
