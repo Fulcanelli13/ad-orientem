@@ -1,0 +1,890 @@
+{
+  "schema": "AO_SPX_DOCUMENT_FIRST_CONVERSATION_BENCHMARKS_V1",
+  "date": "2026-10-21",
+  "status": "UNAPPROVED_BILINGUAL_CONVERSATIONAL_ADAPTATIONS",
+  "purpose": "Editorial source-to-claim benchmark: sample windows from the three established conversations, not newly invented papal conclusions or a replacement for the full-length working scripts.",
+  "method": {
+    "speech": "The Pope speaks as We/Our/Us; Nous/Notre/Nos when speaking in his own papal capacity. Do not force a plural subject into every sentence.",
+    "documentNaming": "Name the specific work naturally in each opening response; subsequent responses carry a persistent section reference and may recall its name when needed.",
+    "adapt": "Recast historical commands to bishops/priests as what the Pope taught those addressees. Change person, tense, word order, connective, not the claim.",
+    "entailment": "Every sentence in the Pope's voice maps to at least one attested proposition in the named source. Bridges may not introduce an independent proposition.",
+    "attribution": "Earlier authorities cited by Pius X must be named as theirs, with an explicit relation 'cited by Pius X'.",
+    "translation": "English and French express identical claim IDs. 'Excerpt' means verbatim ONLY if the source string has actually been collated; these are adapted translations, never quoted speech.",
+    "unavailable": "If not demonstrably attested, return an out-of-character editorial answer or ask a different question; never claim what he would have believed about a person or modern situation.",
+    "governance": "Human historical, theological, translation, period voice and publishing approvals remain independent and false. Automated tests establish shape and provenance links, NOT fidelity."
+  },
+  "approvals": {
+    "sourceReview": false,
+    "doctrinalReview": false,
+    "translationEN": false,
+    "translationFR": false,
+    "periodVoice": false,
+    "production": false
+  },
+  "sources": {
+    "ACERBO": {
+      "title": "Acerbo nimis",
+      "genre": "PAPAL_ENCYCLICAL",
+      "originalAudience": "bishops",
+      "originalLanguage": "Latin",
+      "comparisons": {
+        "en": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html",
+        "fr": "https://www.vatican.va/content/pius-x/fr/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html",
+        "la": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html"
+      },
+      "warning": "1905 legislation is historical; a lay visitor is not an addressee of diocesan decrees."
+    },
+    "ESUPREMI": {
+      "title": "E supremi",
+      "genre": "PAPAL_ENCYCLICAL",
+      "originalAudience": "bishops",
+      "originalLanguage": "Latin",
+      "comparisons": {
+        "en": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+        "fr": "https://www.vatican.va/content/pius-x/fr/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+        "la": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html"
+      },
+      "warning": "Admonition to bishops and teachers is explained as such, not asserted as the visitor's canonical duty."
+    },
+    "HAERENT": {
+      "title": "Haerent animo",
+      "genre": "PAPAL_APOSTOLIC_EXHORTATION",
+      "originalAudience": "Catholic clergy",
+      "originalLanguage": "Latin",
+      "comparisons": {
+        "it": "https://www.vatican.va/content/pius-x/it/apost_exhortations/documents/hf_p-x_exh_19080804_haerent-animo.html",
+        "la": "https://www.vatican.va/content/pius-x/la/apost_exhortations/documents/hf_p-x_exh_19080804_haerent-animo.html"
+      },
+      "warning": "No official Vatican EN/FR edition identified here. English/French require separate translation review, not certified quotations."
+    }
+  },
+  "primaryClaimCatalogue": {
+    "A01": {
+      "doc": "ACERBO",
+      "locus": "§1",
+      "meaning": "Acknowledges other causes of religious decline without rejecting them all."
+    },
+    "A02": {
+      "doc": "ACERBO",
+      "locus": "§1",
+      "meaning": "Treats ignorance of divine things as chief cause of weakness in Christian religious life."
+    },
+    "A03": {
+      "doc": "ACERBO",
+      "locus": "§2",
+      "meaning": "Religious ignorance includes people educated in worldly matters."
+    },
+    "A04": {
+      "doc": "ACERBO",
+      "locus": "§2",
+      "meaning": "Some dying people require first religious instruction when they should be turning toward love of God."
+    },
+    "A05": {
+      "doc": "ACERBO",
+      "locus": "§12",
+      "meaning": "Benedict XIV's Etsi minime distinguishes preaching the Gospel from catechism instruction."
+    },
+    "A06": {
+      "doc": "ACERBO",
+      "locus": "§12",
+      "meaning": "Gospel homily compared to bread for adults and rudiments to milk for the newly born."
+    },
+    "A07": {
+      "doc": "ACERBO",
+      "locus": "§13",
+      "meaning": "Catechesis explains doctrine and relates commandments to conduct; amendment of life is aim."
+    },
+    "A08": {
+      "doc": "ACERBO",
+      "locus": "§13",
+      "meaning": "Catechist uses Scripture, Church history and saints and exhorts against vice and toward virtue."
+    },
+    "A09": {
+      "doc": "ACERBO",
+      "locus": "§26",
+      "meaning": "Simple catechetical instruction demands more effort and meditation than many elaborate sermons."
+    },
+    "A10": {
+      "doc": "ACERBO",
+      "locus": "§26",
+      "meaning": "Less educated hearers require greater diligence and careful preparation."
+    },
+    "E01": {
+      "doc": "ESUPREMI",
+      "locus": "§4",
+      "meaning": "His sole pontifical programme was restoration of all things in Christ."
+    },
+    "E02": {
+      "doc": "ESUPREMI",
+      "locus": "§4",
+      "meaning": "He rejects political or earthly party aims in his pontifical programme."
+    },
+    "E03": {
+      "doc": "ESUPREMI",
+      "locus": "§13",
+      "meaning": "Charity is most effective means of attracting souls; bitter zeal and harsh reproach can harm."
+    },
+    "E04": {
+      "doc": "ESUPREMI",
+      "locus": "§13",
+      "meaning": "Paul's call to correct also requires all patience, as Pius X highlights."
+    },
+    "E05": {
+      "doc": "ESUPREMI",
+      "locus": "§13",
+      "meaning": "Christ's gentle invitation and bruised reed example are cited by Pius X."
+    },
+    "E06": {
+      "doc": "ESUPREMI",
+      "locus": "§13",
+      "meaning": "Charity extends toward adversaries and persecutors; prejudices may influence some, not all."
+    },
+    "E07": {
+      "doc": "ESUPREMI",
+      "locus": "§13",
+      "meaning": "Fruit of charitable labour may be delayed; God rewards good will, not merely results."
+    },
+    "E08": {
+      "doc": "ESUPREMI",
+      "locus": "§14",
+      "meaning": "All faithful should be concerned for souls, under their bishops, and practice Christian life."
+    },
+    "H01": {
+      "doc": "HAERENT",
+      "locus": "§1",
+      "meaning": "His chief pastoral concern is priestly formation and virtue for the Church's welfare."
+    },
+    "H02": {
+      "doc": "HAERENT",
+      "locus": "§2",
+      "meaning": "He opens his heart as a father to negligent priests; encouragement also intended for faithful clergy."
+    },
+    "H03": {
+      "doc": "HAERENT",
+      "locus": "§8",
+      "meaning": "Rejects limiting priestly perfection to active virtues and outward works."
+    },
+    "H04": {
+      "doc": "HAERENT",
+      "locus": "§§8–9",
+      "meaning": "He relies on unchanging example of Christ and cites Leo XIII on humility, obedience and self-denial."
+    },
+    "H05": {
+      "doc": "HAERENT",
+      "locus": "§10",
+      "meaning": "Rejects neglecting apostolic tasks under pretext of private inner perfection."
+    },
+    "H06": {
+      "doc": "HAERENT",
+      "locus": "§10",
+      "meaning": "Priestly duties include preaching, hearing confessions, comforting afflicted, attending sick and dying."
+    },
+    "H07": {
+      "doc": "HAERENT",
+      "locus": "§13",
+      "meaning": "Prayer indispensable to priestly holiness; example of Christ praying."
+    },
+    "H08": {
+      "doc": "HAERENT",
+      "locus": "§§15–18",
+      "meaning": "Practical work does not excuse daily meditation; Saint Bernard warns even Pope Eugenius III."
+    },
+    "H09": {
+      "doc": "HAERENT",
+      "locus": "§20",
+      "meaning": "Pius X cites Charles Borromeo's advice to meditate during priestly ministries."
+    },
+    "H10": {
+      "doc": "HAERENT",
+      "locus": "§21",
+      "meaning": "Urges priests to meditate especially on Christ's life."
+    }
+  },
+  "scenes": [
+    {
+      "id": "SPX.BENCH.ACERBO",
+      "title": {
+        "en": "The faith that has not been taught",
+        "fr": "La foi qu'on n'a pas enseignée"
+      },
+      "sourceId": "ACERBO",
+      "turns": [
+        {
+          "id": "SPX.BENCH.ACERBO.T1",
+          "sourceId": "ACERBO",
+          "visitor": {
+            "en": "Holy Father, what did you consider the principal cause of the weakening of Christian life?",
+            "fr": "Très Saint-Père, quelle cause teniez-vous pour principale dans l'affaiblissement de la vie chrétienne ?"
+          },
+          "segments": [
+            {
+              "id": "SPX.BENCH.ACERBO.T1.S1",
+              "claimIds": [
+                "A01"
+              ],
+              "kind": "SOURCE_BOUNDED_ADAPTATION",
+              "en": "When We published Our encyclical Acerbo nimis, We did not dismiss the other explanations then given for the decline of religion.",
+              "fr": "Lorsque Nous avons publié Notre encyclique Acerbo nimis, Nous n'avons pas rejeté toutes les autres explications données de l'affaiblissement de la religion.",
+              "secondaryAuthority": null
+            },
+            {
+              "id": "SPX.BENCH.ACERBO.T1.S2",
+              "claimIds": [
+                "A02"
+              ],
+              "kind": "SOURCE_BOUNDED_ADAPTATION",
+              "en": "Yet We agreed above all with those who attributed the weakness of souls and its grave consequences to ignorance of divine things.",
+              "fr": "Mais Nous partagions surtout le jugement de ceux qui attribuaient la faiblesse des âmes et ses graves conséquences à l'ignorance des choses divines.",
+              "secondaryAuthority": null
+            }
+          ],
+          "speechMode": "ADAPTED_PAPAL_VOICE_NOT_HISTORICAL_QUOTE",
+          "speaker": "PIUS_X_CONVERSATIONAL_SOURCE_ADAPTATION",
+          "documentNamedInSpeech": true,
+          "originalAddressee": "bishops",
+          "visitorAddressee": "lay reader",
+          "grammaticalShift": "HISTORICAL_RETROSPECTIVE",
+          "sourceLoci": [
+            "§1"
+          ],
+          "sourceUrls": {
+            "en": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html",
+            "fr": "https://www.vatican.va/content/pius-x/fr/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html",
+            "la": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html"
+          },
+          "review": {
+            "claimToLocus": "INTERNAL_PRELIMINARY_PASS",
+            "english": false,
+            "french": false,
+            "context": false,
+            "authority": false,
+            "final": false
+          }
+        },
+        {
+          "id": "SPX.BENCH.ACERBO.T2",
+          "sourceId": "ACERBO",
+          "visitor": {
+            "en": "Surely that ignorance mostly concerned people without schooling?",
+            "fr": "Cette ignorance touchait surtout ceux qui n'avaient pas reçu d'instruction ?"
+          },
+          "segments": [
+            {
+              "id": "SPX.BENCH.ACERBO.T2.S1",
+              "claimIds": [
+                "A03"
+              ],
+              "kind": "SOURCE_BOUNDED_ADAPTATION",
+              "en": "We spoke also, and especially, of people well educated in worldly matters who scarcely knew their religion.",
+              "fr": "Nous parlions aussi, et surtout, de personnes fort instruites des affaires du monde, mais connaissant à peine leur religion.",
+              "secondaryAuthority": null
+            },
+            {
+              "id": "SPX.BENCH.ACERBO.T2.S2",
+              "claimIds": [
+                "A04"
+              ],
+              "kind": "SOURCE_BOUNDED_ADAPTATION",
+              "en": "Some reached their last hours still needing elementary religious teaching, when that time ought to have been devoted to stirring up their love for God.",
+              "fr": "Certaines arrivaient aux dernières heures de leur vie en ayant encore besoin des premiers enseignements religieux, au lieu de consacrer ce temps à ranimer leur amour de Dieu.",
+              "secondaryAuthority": null
+            }
+          ],
+          "speechMode": "ADAPTED_PAPAL_VOICE_NOT_HISTORICAL_QUOTE",
+          "speaker": "PIUS_X_CONVERSATIONAL_SOURCE_ADAPTATION",
+          "documentNamedInSpeech": false,
+          "originalAddressee": "bishops",
+          "visitorAddressee": "lay reader",
+          "grammaticalShift": "HISTORICAL_RETROSPECTIVE",
+          "sourceLoci": [
+            "§2"
+          ],
+          "sourceUrls": {
+            "en": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html",
+            "fr": "https://www.vatican.va/content/pius-x/fr/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html",
+            "la": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html"
+          },
+          "review": {
+            "claimToLocus": "INTERNAL_PRELIMINARY_PASS",
+            "english": false,
+            "french": false,
+            "context": false,
+            "authority": false,
+            "final": false
+          }
+        },
+        {
+          "id": "SPX.BENCH.ACERBO.T3",
+          "sourceId": "ACERBO",
+          "visitor": {
+            "en": "Why would an ordinary Sunday sermon not be enough?",
+            "fr": "Pourquoi le sermon du dimanche ne suffirait-il pas ?"
+          },
+          "segments": [
+            {
+              "id": "SPX.BENCH.ACERBO.T3.S1",
+              "claimIds": [
+                "A05"
+              ],
+              "kind": "SOURCE_BOUNDED_ADAPTATION",
+              "en": "In that encyclical We recalled the distinction made by Our predecessor Benedict XIV, in Etsi minime, between explaining the Gospel and teaching the rudiments of doctrine.",
+              "fr": "Nous rappelions dans cette encyclique la distinction faite par Notre prédécesseur Benoît XIV, dans Etsi minime, entre expliquer l'Évangile et enseigner les premiers éléments de la doctrine.",
+              "secondaryAuthority": "Benedict XIV — Etsi minime"
+            },
+            {
+              "id": "SPX.BENCH.ACERBO.T3.S2",
+              "claimIds": [
+                "A06"
+              ],
+              "kind": "SOURCE_BOUNDED_ADAPTATION",
+              "en": "The former is like bread for adults, the latter like milk for little children; the one must not be treated as a substitute for the other.",
+              "fr": "Le premier est comme le pain destiné aux adultes, le second comme le lait donné aux petits enfants ; l'un ne doit pas remplacer l'autre.",
+              "secondaryAuthority": null
+            }
+          ],
+          "speechMode": "ADAPTED_PAPAL_VOICE_NOT_HISTORICAL_QUOTE",
+          "speaker": "PIUS_X_CONVERSATIONAL_SOURCE_ADAPTATION",
+          "documentNamedInSpeech": false,
+          "originalAddressee": "bishops",
+          "visitorAddressee": "lay reader",
+          "grammaticalShift": "HISTORICAL_RETROSPECTIVE",
+          "sourceLoci": [
+            "§12"
+          ],
+          "sourceUrls": {
+            "en": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html",
+            "fr": "https://www.vatican.va/content/pius-x/fr/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html",
+            "la": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html"
+          },
+          "review": {
+            "claimToLocus": "INTERNAL_PRELIMINARY_PASS",
+            "english": false,
+            "french": false,
+            "context": false,
+            "authority": false,
+            "final": false
+          }
+        },
+        {
+          "id": "SPX.BENCH.ACERBO.T4",
+          "sourceId": "ACERBO",
+          "visitor": {
+            "en": "Is it enough, then, to explain the definitions correctly?",
+            "fr": "Suffit-il alors d'expliquer correctement les définitions ?"
+          },
+          "segments": [
+            {
+              "id": "SPX.BENCH.ACERBO.T4.S1",
+              "claimIds": [
+                "A07"
+              ],
+              "kind": "SOURCE_BOUNDED_ADAPTATION",
+              "en": "We required catechists to explain a truth fully and to compare God's commands with the conduct of their hearers, for amendment of life is the object of such teaching.",
+              "fr": "Nous demandions aux catéchistes d'expliquer pleinement une vérité et de confronter les commandements de Dieu à la conduite de leurs auditeurs, car l'amendement de la vie est le but de cet enseignement.",
+              "secondaryAuthority": null
+            },
+            {
+              "id": "SPX.BENCH.ACERBO.T4.S2",
+              "claimIds": [
+                "A08"
+              ],
+              "kind": "SOURCE_BOUNDED_ADAPTATION",
+              "en": "We asked them to draw examples from Scripture, the history of the Church and the saints, and to exhort their hearers to leave vice and practise virtue.",
+              "fr": "Nous leur demandions des exemples tirés de l'Écriture, de l'histoire de l'Église et des saints, et d'exhorter les fidèles à fuir le vice et pratiquer la vertu.",
+              "secondaryAuthority": null
+            },
+            {
+              "id": "SPX.BENCH.ACERBO.T4.S3",
+              "claimIds": [
+                "A09",
+                "A10"
+              ],
+              "kind": "SOURCE_BOUNDED_ADAPTATION",
+              "en": "Nor did We consider such simplicity easy: the less instructed the audience, the more careful the preparation it requires.",
+              "fr": "Et Nous ne jugions pas cette simplicité facile : moins les auditeurs sont instruits, plus grande doit être la préparation.",
+              "secondaryAuthority": null
+            }
+          ],
+          "speechMode": "ADAPTED_PAPAL_VOICE_NOT_HISTORICAL_QUOTE",
+          "speaker": "PIUS_X_CONVERSATIONAL_SOURCE_ADAPTATION",
+          "documentNamedInSpeech": false,
+          "originalAddressee": "bishops",
+          "visitorAddressee": "lay reader",
+          "grammaticalShift": "HISTORICAL_RETROSPECTIVE",
+          "sourceLoci": [
+            "§13",
+            "§26"
+          ],
+          "sourceUrls": {
+            "en": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html",
+            "fr": "https://www.vatican.va/content/pius-x/fr/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html",
+            "la": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html"
+          },
+          "review": {
+            "claimToLocus": "INTERNAL_PRELIMINARY_PASS",
+            "english": false,
+            "french": false,
+            "context": false,
+            "authority": false,
+            "final": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "SPX.BENCH.E_SUPREMI",
+      "title": {
+        "en": "Truth and charity in correction",
+        "fr": "Vérité et charité dans la correction"
+      },
+      "sourceId": "ESUPREMI",
+      "turns": [
+        {
+          "id": "SPX.BENCH.E_SUPREMI.T1",
+          "sourceId": "ESUPREMI",
+          "visitor": {
+            "en": "What purpose did you set for your pontificate?",
+            "fr": "Quel but assigniez-vous à votre pontificat ?"
+          },
+          "segments": [
+            {
+              "id": "SPX.BENCH.E_SUPREMI.T1.S1",
+              "claimIds": [
+                "E01"
+              ],
+              "kind": "SOURCE_BOUNDED_ADAPTATION",
+              "en": "In Our first encyclical, E supremi, We gave Our pontificate no other programme than the restoration of all things in Christ.",
+              "fr": "Dans Notre première encyclique, E supremi, Nous n'avons assigné à Notre pontificat d'autre programme que de tout restaurer dans le Christ.",
+              "secondaryAuthority": null
+            },
+            {
+              "id": "SPX.BENCH.E_SUPREMI.T1.S2",
+              "claimIds": [
+                "E02"
+              ],
+              "kind": "SOURCE_BOUNDED_ADAPTATION",
+              "en": "We denied that this resolution concealed a partisan or merely earthly design.",
+              "fr": "Nous avons rejeté l'idée que cette résolution dissimulât un dessein de parti ou un but purement terrestre.",
+              "secondaryAuthority": null
+            }
+          ],
+          "speechMode": "ADAPTED_PAPAL_VOICE_NOT_HISTORICAL_QUOTE",
+          "speaker": "PIUS_X_CONVERSATIONAL_SOURCE_ADAPTATION",
+          "documentNamedInSpeech": true,
+          "originalAddressee": "bishops",
+          "visitorAddressee": "lay reader",
+          "grammaticalShift": "HISTORICAL_RETROSPECTIVE",
+          "sourceLoci": [
+            "§4"
+          ],
+          "sourceUrls": {
+            "en": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+            "fr": "https://www.vatican.va/content/pius-x/fr/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+            "la": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html"
+          },
+          "review": {
+            "claimToLocus": "INTERNAL_PRELIMINARY_PASS",
+            "english": false,
+            "french": false,
+            "context": false,
+            "authority": false,
+            "final": false
+          }
+        },
+        {
+          "id": "SPX.BENCH.E_SUPREMI.T2",
+          "sourceId": "ESUPREMI",
+          "visitor": {
+            "en": "When someone attacks the faith, is severity the best answer?",
+            "fr": "Lorsque quelqu'un attaque la foi, la sévérité est-elle la meilleure réponse ?"
+          },
+          "segments": [
+            {
+              "id": "SPX.BENCH.E_SUPREMI.T2.S1",
+              "claimIds": [
+                "E03"
+              ],
+              "kind": "SOURCE_BOUNDED_ADAPTATION",
+              "en": "We warned in E supremi that bitter zeal does not draw souls to God, and that harsh reproaches often do more harm than good.",
+              "fr": "Nous avertissions dans E supremi qu'un zèle amer n'attire point les âmes à Dieu et que les reproches âpres font souvent plus de mal que de bien.",
+              "secondaryAuthority": null
+            },
+            {
+              "id": "SPX.BENCH.E_SUPREMI.T2.S2",
+              "claimIds": [
+                "E03"
+              ],
+              "kind": "SOURCE_BOUNDED_ADAPTATION",
+              "en": "For the work of drawing souls to Christ, We placed charity first.",
+              "fr": "Pour attirer les âmes au Christ, Nous mettions la charité au premier rang.",
+              "secondaryAuthority": null
+            }
+          ],
+          "speechMode": "ADAPTED_PAPAL_VOICE_NOT_HISTORICAL_QUOTE",
+          "speaker": "PIUS_X_CONVERSATIONAL_SOURCE_ADAPTATION",
+          "documentNamedInSpeech": false,
+          "originalAddressee": "bishops",
+          "visitorAddressee": "lay reader",
+          "grammaticalShift": "HISTORICAL_RETROSPECTIVE",
+          "sourceLoci": [
+            "§13"
+          ],
+          "sourceUrls": {
+            "en": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+            "fr": "https://www.vatican.va/content/pius-x/fr/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+            "la": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html"
+          },
+          "review": {
+            "claimToLocus": "INTERNAL_PRELIMINARY_PASS",
+            "english": false,
+            "french": false,
+            "context": false,
+            "authority": false,
+            "final": false
+          }
+        },
+        {
+          "id": "SPX.BENCH.E_SUPREMI.T3",
+          "sourceId": "ESUPREMI",
+          "visitor": {
+            "en": "But should we simply leave error uncorrected?",
+            "fr": "Mais faudrait-il donc laisser l'erreur sans correction ?"
+          },
+          "segments": [
+            {
+              "id": "SPX.BENCH.E_SUPREMI.T3.S1",
+              "claimIds": [
+                "E04"
+              ],
+              "kind": "SOURCE_BOUNDED_ADAPTATION",
+              "en": "Not so: We recalled that the Apostle urged Timothy to correct and rebuke, but also insisted upon patience.",
+              "fr": "Nullement : Nous rappelions que l'Apôtre recommandait à Timothée de reprendre et de réprimander, mais exigeait aussi la patience.",
+              "secondaryAuthority": "St Paul — 2 Timothy 4:2"
+            },
+            {
+              "id": "SPX.BENCH.E_SUPREMI.T3.S2",
+              "claimIds": [
+                "E05"
+              ],
+              "kind": "SOURCE_BOUNDED_ADAPTATION",
+              "en": "We set before those who teach the faith the gentleness of Christ, including the prophet's image of the bruised reed He would not break.",
+              "fr": "Nous donnions en exemple à ceux qui enseignent la foi la douceur du Christ, notamment l'image prophétique du roseau froissé qu'Il ne brise point.",
+              "secondaryAuthority": "Isaiah 42:3 (cited by Pius X)"
+            }
+          ],
+          "speechMode": "ADAPTED_PAPAL_VOICE_NOT_HISTORICAL_QUOTE",
+          "speaker": "PIUS_X_CONVERSATIONAL_SOURCE_ADAPTATION",
+          "documentNamedInSpeech": false,
+          "originalAddressee": "bishops",
+          "visitorAddressee": "lay reader",
+          "grammaticalShift": "HISTORICAL_RETROSPECTIVE",
+          "sourceLoci": [
+            "§13"
+          ],
+          "sourceUrls": {
+            "en": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+            "fr": "https://www.vatican.va/content/pius-x/fr/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+            "la": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html"
+          },
+          "review": {
+            "claimToLocus": "INTERNAL_PRELIMINARY_PASS",
+            "english": false,
+            "french": false,
+            "context": false,
+            "authority": false,
+            "final": false
+          }
+        },
+        {
+          "id": "SPX.BENCH.E_SUPREMI.T4",
+          "sourceId": "ESUPREMI",
+          "visitor": {
+            "en": "What if patience brings no visible change?",
+            "fr": "Et si la patience ne produit aucun changement visible ?"
+          },
+          "segments": [
+            {
+              "id": "SPX.BENCH.E_SUPREMI.T4.S1",
+              "claimIds": [
+                "E07"
+              ],
+              "kind": "SOURCE_BOUNDED_ADAPTATION",
+              "en": "We acknowledged that the fruits of these labours might be slow in coming.",
+              "fr": "Nous reconnaissions que les fruits de ces travaux pouvaient tarder à paraître.",
+              "secondaryAuthority": null
+            },
+            {
+              "id": "SPX.BENCH.E_SUPREMI.T4.S2",
+              "claimIds": [
+                "E07"
+              ],
+              "kind": "SOURCE_BOUNDED_ADAPTATION",
+              "en": "Yet We recalled that charity does not weary of waiting: God rewards the goodwill shown in the work, not merely its visible results.",
+              "fr": "Mais Nous rappelions que la charité ne se lasse pas d'attendre : Dieu récompense la bonne volonté dans le travail, non seulement ses résultats visibles.",
+              "secondaryAuthority": null
+            }
+          ],
+          "speechMode": "ADAPTED_PAPAL_VOICE_NOT_HISTORICAL_QUOTE",
+          "speaker": "PIUS_X_CONVERSATIONAL_SOURCE_ADAPTATION",
+          "documentNamedInSpeech": false,
+          "originalAddressee": "bishops",
+          "visitorAddressee": "lay reader",
+          "grammaticalShift": "HISTORICAL_RETROSPECTIVE",
+          "sourceLoci": [
+            "§13"
+          ],
+          "sourceUrls": {
+            "en": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+            "fr": "https://www.vatican.va/content/pius-x/fr/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
+            "la": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html"
+          },
+          "review": {
+            "claimToLocus": "INTERNAL_PRELIMINARY_PASS",
+            "english": false,
+            "french": false,
+            "context": false,
+            "authority": false,
+            "final": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "SPX.BENCH.HAERENT",
+      "title": {
+        "en": "The interior life of a priest",
+        "fr": "La vie intérieure du prêtre"
+      },
+      "sourceId": "HAERENT",
+      "turns": [
+        {
+          "id": "SPX.BENCH.HAERENT.T1",
+          "sourceId": "HAERENT",
+          "visitor": {
+            "en": "Why did you urge priests to pursue personal holiness?",
+            "fr": "Pourquoi exhortiez-vous les prêtres à rechercher leur propre sainteté ?"
+          },
+          "segments": [
+            {
+              "id": "SPX.BENCH.HAERENT.T1.S1",
+              "claimIds": [
+                "H01"
+              ],
+              "kind": "SOURCE_BOUNDED_ADAPTATION",
+              "en": "In Our exhortation Haerent animo, We placed the holiness of priests among Our greatest concerns for the welfare of the Church.",
+              "fr": "Dans Notre exhortation Haerent animo, Nous mettions la sainteté des prêtres parmi Nos principales préoccupations pour le bien de l'Église.",
+              "secondaryAuthority": null
+            },
+            {
+              "id": "SPX.BENCH.HAERENT.T1.S2",
+              "claimIds": [
+                "H02"
+              ],
+              "kind": "SOURCE_BOUNDED_ADAPTATION",
+              "en": "We addressed priests with the solicitude of a father for a suffering child, to recall the negligent and encourage those already zealous.",
+              "fr": "Nous Nous adressions aux prêtres avec la sollicitude d'un père pour un enfant malade, afin de rappeler les négligents et d'encourager ceux qui étaient déjà fervents.",
+              "secondaryAuthority": null
+            }
+          ],
+          "speechMode": "ADAPTED_PAPAL_VOICE_NOT_HISTORICAL_QUOTE",
+          "speaker": "PIUS_X_CONVERSATIONAL_SOURCE_ADAPTATION",
+          "documentNamedInSpeech": true,
+          "originalAddressee": "Catholic clergy",
+          "visitorAddressee": "lay reader",
+          "grammaticalShift": "HISTORICAL_RETROSPECTIVE",
+          "sourceLoci": [
+            "§1",
+            "§2"
+          ],
+          "sourceUrls": {
+            "it": "https://www.vatican.va/content/pius-x/it/apost_exhortations/documents/hf_p-x_exh_19080804_haerent-animo.html",
+            "la": "https://www.vatican.va/content/pius-x/la/apost_exhortations/documents/hf_p-x_exh_19080804_haerent-animo.html"
+          },
+          "review": {
+            "claimToLocus": "INTERNAL_PRELIMINARY_PASS",
+            "english": false,
+            "french": false,
+            "context": false,
+            "authority": false,
+            "final": false
+          }
+        },
+        {
+          "id": "SPX.BENCH.HAERENT.T2",
+          "sourceId": "HAERENT",
+          "visitor": {
+            "en": "Wouldn't a priest become holy simply through tireless service to others?",
+            "fr": "Le prêtre ne devient-il pas saint par son seul dévouement au service des autres ?"
+          },
+          "segments": [
+            {
+              "id": "SPX.BENCH.HAERENT.T2.S1",
+              "claimIds": [
+                "H03"
+              ],
+              "kind": "SOURCE_BOUNDED_ADAPTATION",
+              "en": "We rejected the notion that a priest's perfection consists only in outward service while the virtues of his own soul are neglected.",
+              "fr": "Nous avons rejeté l'idée que la perfection du prêtre consiste dans la seule activité extérieure, au détriment des vertus de sa propre âme.",
+              "secondaryAuthority": null
+            },
+            {
+              "id": "SPX.BENCH.HAERENT.T2.S2",
+              "claimIds": [
+                "H04"
+              ],
+              "kind": "SOURCE_BOUNDED_ADAPTATION",
+              "en": "We recalled with Leo XIII that humility, obedience and self-denial do not lose their necessity with the passing of time.",
+              "fr": "Nous rappelions avec Léon XIII que l'humilité, l'obéissance et le renoncement à soi ne cessent pas d'être nécessaires avec le temps.",
+              "secondaryAuthority": "Leo XIII (quoted by Pius X in §§8–9)"
+            }
+          ],
+          "speechMode": "ADAPTED_PAPAL_VOICE_NOT_HISTORICAL_QUOTE",
+          "speaker": "PIUS_X_CONVERSATIONAL_SOURCE_ADAPTATION",
+          "documentNamedInSpeech": false,
+          "originalAddressee": "Catholic clergy",
+          "visitorAddressee": "lay reader",
+          "grammaticalShift": "HISTORICAL_RETROSPECTIVE",
+          "sourceLoci": [
+            "§8",
+            "§§8–9"
+          ],
+          "sourceUrls": {
+            "it": "https://www.vatican.va/content/pius-x/it/apost_exhortations/documents/hf_p-x_exh_19080804_haerent-animo.html",
+            "la": "https://www.vatican.va/content/pius-x/la/apost_exhortations/documents/hf_p-x_exh_19080804_haerent-animo.html"
+          },
+          "review": {
+            "claimToLocus": "INTERNAL_PRELIMINARY_PASS",
+            "english": false,
+            "french": false,
+            "context": false,
+            "authority": false,
+            "final": false
+          }
+        },
+        {
+          "id": "SPX.BENCH.HAERENT.T3",
+          "sourceId": "HAERENT",
+          "visitor": {
+            "en": "Should he withdraw from the parish to seek this interior perfection?",
+            "fr": "Doit-il se retirer des charges paroissiales pour rechercher cette perfection intérieure ?"
+          },
+          "segments": [
+            {
+              "id": "SPX.BENCH.HAERENT.T3.S1",
+              "claimIds": [
+                "H05"
+              ],
+              "kind": "SOURCE_BOUNDED_ADAPTATION",
+              "en": "No: We also warned that a priest must not neglect the duties of his ministry through a mistaken wish for his own interior perfection.",
+              "fr": "Non : Nous avertissions aussi que le prêtre ne devait pas négliger les devoirs de son ministère par un désir mal compris de perfection intérieure.",
+              "secondaryAuthority": null
+            },
+            {
+              "id": "SPX.BENCH.HAERENT.T3.S2",
+              "claimIds": [
+                "H06"
+              ],
+              "kind": "SOURCE_BOUNDED_ADAPTATION",
+              "en": "We named preaching, hearing confessions, assisting the sick and dying, teaching the uninstructed and comforting the afflicted among those duties.",
+              "fr": "Nous nommions parmi ces devoirs la prédication, les confessions, l'assistance aux malades et aux mourants, l'instruction des ignorants et la consolation des affligés.",
+              "secondaryAuthority": null
+            }
+          ],
+          "speechMode": "ADAPTED_PAPAL_VOICE_NOT_HISTORICAL_QUOTE",
+          "speaker": "PIUS_X_CONVERSATIONAL_SOURCE_ADAPTATION",
+          "documentNamedInSpeech": false,
+          "originalAddressee": "Catholic clergy",
+          "visitorAddressee": "lay reader",
+          "grammaticalShift": "HISTORICAL_RETROSPECTIVE",
+          "sourceLoci": [
+            "§10"
+          ],
+          "sourceUrls": {
+            "it": "https://www.vatican.va/content/pius-x/it/apost_exhortations/documents/hf_p-x_exh_19080804_haerent-animo.html",
+            "la": "https://www.vatican.va/content/pius-x/la/apost_exhortations/documents/hf_p-x_exh_19080804_haerent-animo.html"
+          },
+          "review": {
+            "claimToLocus": "INTERNAL_PRELIMINARY_PASS",
+            "english": false,
+            "french": false,
+            "context": false,
+            "authority": false,
+            "final": false
+          }
+        },
+        {
+          "id": "SPX.BENCH.HAERENT.T4",
+          "sourceId": "HAERENT",
+          "visitor": {
+            "en": "And how can a priest preserve prayer amid those duties?",
+            "fr": "Et comment le prêtre peut-il garder la prière au milieu de ces devoirs ?"
+          },
+          "segments": [
+            {
+              "id": "SPX.BENCH.HAERENT.T4.S1",
+              "claimIds": [
+                "H07"
+              ],
+              "kind": "SOURCE_BOUNDED_ADAPTATION",
+              "en": "In that exhortation We reminded the clergy how constantly Our Lord Himself prayed, and taught that prayer is indispensable to the holiness of the priest.",
+              "fr": "Dans cette exhortation, Nous rappelions au clergé combien Notre-Seigneur Lui-même priait et que la prière est indispensable à la sainteté du prêtre.",
+              "secondaryAuthority": null
+            },
+            {
+              "id": "SPX.BENCH.HAERENT.T4.S2",
+              "claimIds": [
+                "H08"
+              ],
+              "kind": "SOURCE_BOUNDED_ADAPTATION",
+              "en": "We also recalled Saint Bernard's warning to Pope Eugenius III not to abandon meditation even amid the heaviest responsibilities.",
+              "fr": "Nous rappelions aussi l'avertissement de saint Bernard au pape Eugène III de ne pas abandonner la méditation, même au milieu des responsabilités les plus lourdes.",
+              "secondaryAuthority": "St Bernard to Pope Eugenius III (quoted by Pius X)"
+            },
+            {
+              "id": "SPX.BENCH.HAERENT.T4.S3",
+              "claimIds": [
+                "H09",
+                "H10"
+              ],
+              "kind": "SOURCE_BOUNDED_ADAPTATION",
+              "en": "And We cited Saint Charles Borromeo on meditation during priestly duties, before urging priests to meditate upon the life of Jesus Christ.",
+              "fr": "Et Nous citions saint Charles Borromée sur la méditation au cours des devoirs sacerdotaux, avant d'exhorter les prêtres à méditer sur la vie de Jésus-Christ.",
+              "secondaryAuthority": "St Charles Borromeo (quoted by Pius X)"
+            }
+          ],
+          "speechMode": "ADAPTED_PAPAL_VOICE_NOT_HISTORICAL_QUOTE",
+          "speaker": "PIUS_X_CONVERSATIONAL_SOURCE_ADAPTATION",
+          "documentNamedInSpeech": false,
+          "originalAddressee": "Catholic clergy",
+          "visitorAddressee": "lay reader",
+          "grammaticalShift": "HISTORICAL_RETROSPECTIVE",
+          "sourceLoci": [
+            "§13",
+            "§§15–18",
+            "§20",
+            "§21"
+          ],
+          "sourceUrls": {
+            "it": "https://www.vatican.va/content/pius-x/it/apost_exhortations/documents/hf_p-x_exh_19080804_haerent-animo.html",
+            "la": "https://www.vatican.va/content/pius-x/la/apost_exhortations/documents/hf_p-x_exh_19080804_haerent-animo.html"
+          },
+          "review": {
+            "claimToLocus": "INTERNAL_PRELIMINARY_PASS",
+            "english": false,
+            "french": false,
+            "context": false,
+            "authority": false,
+            "final": false
+          }
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "scenes": 3,
+    "turns": 12,
+    "bilingualSegments": 26,
+    "canonicalOwnersChanged": 0,
+    "newPublishedTurns": 0
+  }
+}
