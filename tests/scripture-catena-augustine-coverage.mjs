@@ -29,7 +29,7 @@ for(const row of missing.records)add(row.book,row.section,"gap_reconciliation");
 assert.equal(ledger.size,94);
 assert.deepEqual(duplicates,[],"the three main registers must not duplicate");
 for(const row of primary.records.filter(r=>r.author==="Augustine of Hippo")){
- const parts=row.locator.match(/^(I|II)\.(\d+)$/);
+ const parts=row.locator.match(/^(I|II)\.(\d+)(?:\.\d+)?$/);
  assert.ok(parts,"invalid historic Augustine locus");
  const key=parts[1]+"."+Number(parts[2]);
  if(ledger.has(key)){
