@@ -257,6 +257,8 @@ try{
     const postureCopy=posture?.querySelector('[data-role="posture-left"]');
     const right=document.querySelector(".ao-rail-right");
     const position=right?.querySelector('[data-channel="priest-position"]');
+    const action=right?.querySelector('[data-channel="priest-action"]');
+    const actionText=action?.querySelector('[data-role="priest-action"]');
     return {
       context:box?.textContent??"",
       contextHeight:box?.getBoundingClientRect().height??0,
@@ -270,6 +272,9 @@ try{
       rightVisible:right?.dataset.visible??null,
       positionActive:position?.dataset.active??null,
       positionLabel:position?.querySelector('[data-role="priest-position-rail"]')?.textContent??null,
+      sourceActionFallback:action?.dataset.actionTextFallback??null,
+      sourceActionText:actionText?.textContent??"",
+      sourceActionTextDisplay:actionText?getComputedStyle(actionText).display:null,
       viewportOverflow:document.documentElement.scrollWidth-innerWidth,
     };
   });
@@ -290,6 +295,12 @@ try{
     "Priest actions and position must remain on the right rail");
   assert.equal(objectiveVisual.positionActive,"true",
     "Context ribbon displaced the priest's active station");
+  assert.equal(objectiveVisual.sourceActionFallback,"true",
+    "Blank elevation priest-action pictogram must use its canonical label");
+  assert.ok(objectiveVisual.sourceActionTextDisplay!=="none" &&
+    objectiveVisual.sourceActionText.trim() &&
+    !/^—$/.test(objectiveVisual.sourceActionText.trim()),
+    "Elevation right rail still contains an empty priest-action tile");
   assert.ok(objectiveVisual.ribbonHeight<=90,
     "Explanatory ribbon expanded excessively on a narrow phone");
   assert.ok(objectiveVisual.viewportOverflow<=1,
