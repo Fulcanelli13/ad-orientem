@@ -18,6 +18,7 @@ const staged14=load("proposed-identity-additions.v1.json");
 const working56=load("working-master.v1.json");
 const routed23=load("ritual-and-source-ownership-23.v1.json");
 const readiness=load("master-readiness-audit.v1.json");
+const accepted14=load("editorial-identity-acceptance-14.v1.json");
 const relation80=load("relation-review-80.v1.json");
 const candidateBoard=load("candidate-source-decision-board.v1.json");
 
@@ -129,21 +130,21 @@ assert.equal(candidateBoard.records.length,42);
 assert.equal(candidateBoard.summary.source_bounded,25);
 assert.equal(candidateBoard.summary.still_unverified,17);
 assert.equal(candidateBoard.summary.bilingual_source_bounded,25);
-assert.equal(candidateBoard.summary.source_witnesses,42);
+assert.equal(candidateBoard.summary.source_witnesses,43);
 assert.ok(candidateBoard.records.every(x=>x.published===false&&x.new_canonical_id===null));
 assert.deepEqual(new Set(candidateBoard.records.map(x=>x.weiser_id)),distinctIDs);
 assert.ok(candidateBoard.records.every(x=>x.related_master_or_review_ids.every(id=>ids.has(id)||distinctIDs.has(id))));
 assert.equal(candidateBoard.summary.new_canonicals,0);
 assert.equal(bounded3.schema,"AO_CUSTOMS_INDEPENDENT_SOURCE_CLOSURE_B03_V1");
 assert.equal(bounded3.records.length,8);
-assert.equal(bounded3.audit.witnesses,12);
+assert.equal(bounded3.audit.witnesses,13);
 assert.equal(bounded4.schema,"AO_CUSTOMS_INDEPENDENT_SOURCE_CLOSURE_B04_V1");
 assert.equal(bounded4.records.length,2);
 assert.equal(bounded4.audit.independent_witnesses,3);
 const allBatches=[...bounded.records,...bounded2.records,...bounded3.records,...bounded4.records];
 const boundedIDs=new Set(allBatches.map(x=>x.weiser_id));
 assert.equal(boundedIDs.size,25);
-assert.equal(allBatches.reduce((n,x)=>n+x.sources.length,0),42);
+assert.equal(allBatches.reduce((n,x)=>n+x.sources.length,0),43);
 assert.ok(allBatches.every(x=>x.sources.length&&x.sources.every(s=>/^https:\/\//.test(s.url)&&s.issuer)));
 assert.ok(bounded3.records.every(x=>x.history_en&&x.history_fr&&x.practice_en&&x.practice_fr&&x.meaning_en&&x.meaning_fr&&x.qualification_en&&x.qualification_fr&&x.publication_enabled===false));
 assert.ok(bounded4.records.every(x=>x.history_en&&x.history_fr&&x.practice_en&&x.practice_fr&&x.publication_enabled===false));
@@ -169,8 +170,8 @@ assert.equal(staged14.schema,"AO_CUSTOMS_PROPOSED_14_DISTINCT_IDENTITIES_V1");
 assert.equal(staged14.records.length,14);
 assert.equal(new Set(staged14.records.map(x=>x.id)).size,14);
 assert.equal(staged14.numbers.new_published,0);
-assert.ok(staged14.records.every(x=>x.identity_state==="PROPOSED_NEW_DISTINCT_IDENTITY_NONPUBLISHED"&&
-  x.publication_enabled===false&&x.identity_approved===false&&x.artwork===null));
+assert.ok(staged14.records.every(x=>x.identity_state==="EDITORIALLY_ACCEPTED_FOR_RESEARCH_MASTER_NOT_APP"&&
+  x.publication_enabled===false&&x.identity_approved===true&&x.artwork===null));
 assert.ok(staged14.records.every(x=>x.independent_sources.length>0&&x.independent_sources.every(s=>/^https:\/\//.test(s.url))));
 assert.deepEqual(new Set(staged14.records.flatMap(x=>x.original_observation_ids)),
   new Set(identityRecs.records.filter(x=>x.editorial_recommendation==="DISTINCT_IDENTITY_PROPOSAL").map(x=>x.weiser_id)));
@@ -197,6 +198,23 @@ assert.ok(routed23.records.every(x=>x.research_only===true&&x.publishable_rite_t
 assert.ok(routed23.records.every(x=>x.independent_refs.every(s=>/^https:\/\//.test(s.url)&&s.constraint)));
 assert.equal(readiness.schema,"AO_CUSTOMS_MASTER_EDITORIAL_READINESS_V1");
 assert.equal(readiness.snapshot.working_identities,56);
+assert.equal(accepted14.schema,"AO_CUSTOMS_MASTER_FOURTEEN_EDITORIAL_IDENTITY_ACCEPTANCE_V1");
+assert.equal(accepted14.records.length,14);
+assert.deepEqual(accepted14.summary.taxonomy_counts,{
+ ATTESTED_LOCAL_CATHOLIC_DEVOTION:7,
+ ATTESTED_REGIONAL_CHRISTIAN_FOLK:5,
+ ATTESTED_CULTURAL_FEAST_HERITAGE:2
+});
+assert.equal(accepted14.summary.app_publications,0);
+assert.equal(accepted14.summary.pending_identity_decisions,0);
+assert.equal(working56.distribution.editorially_classified_staged_research_identities,14);
+assert.equal(working56.records.filter(x=>x.master_version==="V1_PROPOSED_RESEARCH_ONLY"&&
+ x.identity_status==="MASTER_RESEARCH_IDENTITY_ACCEPTED_NOT_PUBLISHED"&&x.identity_approved_for_research_master).length,14);
+assert.equal(readiness.snapshot.research_identities_scope_accepted,14);
+assert.equal(readiness.snapshot.source_witness_refs_within_25_bounded_dossiers,43);
+assert.equal(readiness.completeness.proposed_identity_editorial_approval,
+ "CLOSED_14_OF_14_ACCEPTED_AS_RESEARCH_IDENTITIES_NOT_PUBLISHED");
+
 assert.equal(readiness.snapshot.bilingual_complete_working_profiles,56);
 assert.equal(readiness.snapshot.new_source_bounded_proposed_ids,14);
 assert.equal(readiness.snapshot.historic_weiser_observations,568);
