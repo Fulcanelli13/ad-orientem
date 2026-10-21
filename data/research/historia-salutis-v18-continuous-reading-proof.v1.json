@@ -740,7 +740,21 @@
             },
             "recommendedNextStep": "PROVISIONAL_COMPARE",
             "optionWasAppliedToMainResearchManuscript": false,
-            "noFinalAcceptances": true
+            "noFinalAcceptances": true,
+            "readingDecision": {
+              "decision": "USE_SHORTENED_PASSAGES_IN_RESEARCH_READING_ONLY",
+              "reason": "Joseph's counsel and appointment (41:33–41) remain, as does his designation and marriage (41:45); 41:42–44 repeat the ceremonial bestowal of power. The investiture regalia remain accessible in full Scripture context, and typological review is still necessary.",
+              "projectedReferences": [
+                "Genesis 41:33–41",
+                "Genesis 41:45"
+              ],
+              "appliesOnlyToDerivedReadingView": true,
+              "originalSourceSelectionPreserved": true,
+              "explicitNotPublicationApproval": true,
+              "printedWitnessCollationPending": true,
+              "editorialLiteraryApproval": false,
+              "publicationApproved": false
+            }
           }
         },
         {
@@ -1385,7 +1399,18 @@
             },
             "recommendedNextStep": "HOLD_PENDING_FULL_SEQUENCE_READ",
             "optionWasAppliedToMainResearchManuscript": false,
-            "noFinalAcceptances": true
+            "noFinalAcceptances": true,
+            "readingDecision": {
+              "decision": "RETAIN_FULL_IN_RESEARCH_READING",
+              "reason": "Verse 10:6 refers to the coming of the Spirit and the prophetic sign; the proposed verse 1-only cut loses a theologically significant element, and an isolated 10:6 would retain a dangling 'them' antecedent.",
+              "projectedReferences": null,
+              "appliesOnlyToDerivedReadingView": true,
+              "originalSourceSelectionPreserved": true,
+              "explicitNotPublicationApproval": true,
+              "printedWitnessCollationPending": true,
+              "editorialLiteraryApproval": false,
+              "publicationApproved": false
+            }
           }
         }
       ],
@@ -1538,7 +1563,22 @@
             },
             "recommendedNextStep": "PROVISIONAL_COMPARE",
             "optionWasAppliedToMainResearchManuscript": false,
-            "noFinalAcceptances": true
+            "noFinalAcceptances": true,
+            "readingDecision": {
+              "decision": "USE_SHORTENED_PASSAGES_IN_RESEARCH_READING_ONLY",
+              "reason": "Preserve Israel's acknowledgment and covenant with David, the capture of Zion and establishment of Jerusalem. Omit the repeated reign-years synopsis (5:4–5) and siege detail (5:8), retained in the full Bible link and genealogy chronology.",
+              "projectedReferences": [
+                "2Samuel 5:1–3",
+                "2Samuel 5:6–7",
+                "2Samuel 5:9–10"
+              ],
+              "appliesOnlyToDerivedReadingView": true,
+              "originalSourceSelectionPreserved": true,
+              "explicitNotPublicationApproval": true,
+              "printedWitnessCollationPending": true,
+              "editorialLiteraryApproval": false,
+              "publicationApproved": false
+            }
           }
         },
         {
@@ -3655,7 +3695,18 @@
             },
             "recommendedNextStep": "HOLD_PRONOUN_AND_DIALOGUE_REVIEW",
             "optionWasAppliedToMainResearchManuscript": false,
-            "noFinalAcceptances": true
+            "noFinalAcceptances": true,
+            "readingDecision": {
+              "decision": "RETAIN_FULL_IN_RESEARCH_READING",
+              "reason": "Peter asks in Acts 10:29 why Cornelius sent for him; 10:30–32 gives his direct answer and recalls the angelic message. Cutting this speech would produce a dialogue seam and weaken the Gentile-revelation event.",
+              "projectedReferences": null,
+              "appliesOnlyToDerivedReadingView": true,
+              "originalSourceSelectionPreserved": true,
+              "explicitNotPublicationApproval": true,
+              "printedWitnessCollationPending": true,
+              "editorialLiteraryApproval": false,
+              "publicationApproved": false
+            }
           }
         }
       ],
@@ -4602,6 +4653,16 @@
       ],
       "estimatedEnglishDouayWordReductionIfAllFourSelected": 544,
       "currentReadingUsesAllOriginalVerses": true
+    },
+    "economyDecisionPass4": {
+      "status": "RESEARCH_READING_DECISIONS_NOT_THEOLOGICALLY_OR_LITERARILY_APPROVED",
+      "candidatesDecided": 4,
+      "retainedFull": 2,
+      "shortenedOnlyInDerivedReading": 2,
+      "estimatedDouayWordsSavedInDerivedReading": 192,
+      "canonicalProofSelectedScriptureUnchanged": true,
+      "queuedForReevaluationInContinuousReadthrough": true,
+      "publicationApproved": false
     }
   },
   "historicallyProposedBridgeStatus": {
