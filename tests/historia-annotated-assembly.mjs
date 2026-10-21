@@ -1,10 +1,10 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
-import {assembleHistoriaReading,historiaAssemblyMarkdown,HISTORIA_EDITIONS,parseHistoriaSpan} from "../src/scripture/historia-assembled-reading.js";
+import {assembleHistoriaReading,historiaAssemblyMarkdown,historiaReadableMarkdown,HISTORIA_EDITIONS,parseHistoriaSpan} from "../src/scripture/historia-assembled-reading.js";
 
 const read=path=>JSON.parse(readFileSync(new URL("../"+path,import.meta.url),"utf8"));
 const proof=read("data/research/historia-salutis-v18-continuous-reading-proof.v1.json");
-const expected={movements:37,scriptureBeats:93,scriptureSpans:166,editorialConnectorProposals:39,originalContextUnits:29,additionalCausalSeams:10,heldSourceCandidates:16,stillUnselectedBridgeCandidates:7,bridgeReadingTrials:9,readingTrialSpans:12,exactVerseRailSections:220,sourceSpansWithProposedRailSplits:18,trialVerseEntries:54,published:0};
+const expected={movements:37,scriptureBeats:93,scriptureSpans:166,editorialConnectorProposals:39,originalContextUnits:29,additionalCausalSeams:10,heldSourceCandidates:16,stillUnselectedBridgeCandidates:7,bridgeReadingTrials:9,readingTrialSpans:12,exactVerseRailSections:220,sourceSpansWithProposedRailSplits:18,readableResearchProjectedSourceSpans:2,readableResearchSourceVerseOmissions:6,trialVerseEntries:54,published:0};
 for (const edition of HISTORIA_EDITIONS) {
   const witnessCache=new Map();
   const getWitness=book=>{
@@ -167,6 +167,19 @@ for (const edition of HISTORIA_EDITIONS) {
     assert.equal(opt.appliedToDefaultReading,false);
     assert.equal(opt.optionWasAppliedToMainResearchManuscript,false);
     assert.equal(opt.publicationApproved,false);
+    const r=opt.readingDecision;
+    assert.ok(r);
+    assert.equal(r.originalSourceSelectionPreserved,true);
+    assert.equal(r.editorialLiteraryApproval,false);
+    assert.equal(r.publicationApproved,false);
+    assert.equal(r.appliesOnlyToDerivedReadingView,true);
+    if(["H16-03","H32-02"].includes(trial.id)){
+      assert.equal(r.decision,"USE_SHORTENED_PASSAGES_IN_RESEARCH_READING_ONLY");
+      assert.deepEqual(r.projectedReferences,trial.to);
+    }else{
+      assert.equal(r.decision,"RETAIN_FULL_IN_RESEARCH_READING");
+      assert.equal(r.projectedReferences,null);
+    }
     assert.equal(opt.sourceVerseComparison.sourceBook,trial.book);
     const original=readOption(trial.from),short=readOption(trial.to);
     const diff=wordCount(original)-wordCount(short);
@@ -175,6 +188,16 @@ for (const edition of HISTORIA_EDITIONS) {
     sumWordSavings+=diff;
     const current=output.movements.find(m=>m.id===trial.mid).segments.filter(s=>s.ownerUnitId===trial.id&&s.kind==="SCRIPTURE_EXACT_WITNESS");
     for(const ref of trial.from)assert.ok(current.some(s=>s.reference===ref),"Original passage must remain in default reading");
+    for(const segment of current.filter(s=>trial.from.includes(s.reference))){
+      const projected=segment.readableResearchProjection;
+      if(["H16-03","H32-02"].includes(trial.id)){
+        assert.ok(projected&&projected.publicationApproved===false);
+        assert.equal(projected.originalReference,segment.reference);
+        assert.deepEqual(projected.sections.map(s=>s.reference),trial.to);
+        assert.deepEqual(projected.omittedVerseReferences.length,3);
+        assert.equal(projected.sections.map(s=>s.text).join(" "),short);
+      }else assert.equal(projected,null);
+    }
   }
   assert.equal(sumWordSavings,edition==="dr-challoner"?544:edition==="cpdv-2009"?585:489);
   const manuscript=historiaAssemblyMarkdown(output);
@@ -197,7 +220,26 @@ for (const edition of HISTORIA_EDITIONS) {
   assert.ok(!manuscript.includes("**APPROVED FOR PUBLICATION**"));
   if(edition==="dr-challoner"){
     const committed=readFileSync(new URL("../data/research/historia-salutis-p3-assembled-dr-challoner.v1.md",import.meta.url),"utf8");
-    assert.equal(committed,manuscript,"Committed research manuscript must exactly reproduce from source owners");
+    assert.equal(committed,manuscript,"Committed annotated manuscript must reproduce from source owners");
+    const readable=historiaReadableMarkdown(output);
+    const committedReadable=readFileSync(new URL("../data/research/historia-salutis-p3-continuous-research-reading-dr-challoner.v1.md",import.meta.url),"utf8");
+    assert.equal(committedReadable,readable,"The clean research reading must reproduce from identical canonical source data");
+    assert.equal((readable.match(/^## \\d\\d · /gm)||[]).length,37);
+    assert.equal((readable.match(/^\\*[^\\n]+\\*$/gm)||[]).filter(r=>/^(?:\\*Genesis |\\*Exodus |\\*1Samuel |\\*2Samuel |\\*Acts )/.test(r)).length>0,true);
+    assert.ok(!readable.includes("⟦TRIAL SCRIPTURE"));
+    assert.ok(!readable.includes("⟦HELD source bridge"));
+    assert.ok(readable.includes("**UNAPPROVED RESEARCH READING — NOT FOR PUBLICATION**"));
+    assert.equal((readable.match(/\\*Genesis 41:33–41\\*/g)||[]).length,1);
+    assert.equal((readable.match(/\\*Genesis 41:45\\*/g)||[]).length,1);
+    assert.equal((readable.match(/\\*2Samuel 5:6–7\\*/g)||[]).length,1);
+    assert.ok(!readable.includes("and made him go up into his second chariot"));
+    assert.ok(readable.includes("The Lord had made known to Samuel"));
+  }else if(edition==="crampon-1923"){
+    assert.throws(()=>historiaReadableMarkdown(output),/untranslated English drafts/);
+  }else{
+    const readable=historiaReadableMarkdown(output);
+    assert.ok(readable.includes("**UNAPPROVED RESEARCH READING — NOT FOR PUBLICATION**"));
+    assert.ok(readable.includes("*Genesis 41:33–41*"));
   }
 }
 console.log("PASS Historia annotated source assembly: 37 movements, 93 A units, 166 original + 12 provisional source spans, 29 original + 10 causal editorial connectors, 16 held candidates (9 tested/7 not included); 220 verse-traceable rail sections from 18 proposed semantic splits; all three witnesses; no publication approval");
