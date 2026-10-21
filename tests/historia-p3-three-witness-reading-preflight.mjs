@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
+import {inspectHistoriaReadingSeams,explicitHistoriaBurialHold} from "../src/scripture/historia-reading-seams.js";
 const read=path=>JSON.parse(readFileSync(new URL("../"+path,import.meta.url),"utf8"));
 const proof=read("data/research/historia-salutis-v18-continuous-reading-proof.v1.json");
 const editions=["cpdv-2009","dr-challoner","crampon-1923"];
@@ -76,10 +77,27 @@ const metrics=Object.fromEntries(editions.map(e=>[e,{
  selectedUniqueVerses:unique[e].selected.size,bridgeUniqueVerses:unique[e].bridges.size,
  selectedSourceSpans:unique[e].sourceSpans,heldSourceSpans:unique[e].bridgeSpans
 }]));
+const seams=inspectHistoriaReadingSeams(proof.movements);
+assert.equal(seams.length,36,"Continuous reading has 36 movement transitions");
+const seam=(a,b)=>seams.find(x=>x.fromMovementId===a&&x.toMovementId===b);
+assert.equal(seam("HS-M33","HS-M34").omittedChapterSpan,"Acts 16–27");
+assert.equal(seam("HS-M35","HS-M36").omittedChapterSpan,"Revelation 6–18");
+assert.equal(seam("HS-M31","HS-M32").omittedChapterSpan,"Acts 8");
+assert.equal(explicitHistoriaBurialHold(seam("HS-M28","HS-M29")),true);
+assert.equal(seam("HS-M28","HS-M29").nextSelectedReference,"John 20:1–3");
+assert.equal(seams.filter(x=>x.sameWitnessBook).length,17);
+assert.equal(seams.filter(x=>!x.sameWitnessBook).length,19);
+for(const edge of seams){
+ assert.ok(edge.previousSelectedReference);
+ assert.ok(edge.nextSelectedReference);
+ assert.equal(edge.unapprovedContextRequired,false,"Cross-movement source regression: "+edge.fromMovementId);
+}
 const html=readFileSync(new URL("../previews/scripture-mining-workbench-20261017.html",import.meta.url),"utf8");
 assert.ok(html.includes('host.append(note);continue;'),"Editorial context may not erase source omission tracking");
 assert.ok(html.includes('!isPriorityHistoriaBridge(beat))))continue;'),"Hiding held candidates must not conceal canonical omissions");
 assert.ok(!html.includes('host.append(note);previous=null;continue;'),"Unattributed gap through editorial context");
 assert.ok(html.includes('line.lang=edition==="crampon-1923"?"fr":"en";'),"Accurate screen-reader language for French Scripture");
 assert.ok(html.includes("Selected Scripture · research proof · not publication-approved"),"Selection still research, not accepted");
+assert.ok(html.includes("explicitHistoriaBurialHold(seam)"),"A held burial seam must not look like accepted Scripture");
+assert.ok(html.includes("Unselected intervening biblical chapters"),"Large canon gaps must be explicit");
 console.log("PASS Historia 37-movement 3-witness range preflight: "+JSON.stringify(metrics)+"; editorial publication blocked");
