@@ -115,3 +115,23 @@ The lab's English/French source synopses are copied from the **existing research
 3. Complete evidence audits of 183 scene rows in the established 14 scene-chapter batches, adding text-identified actors, chronology basis and supported location class; no coordinate changes until sourced.
 4. Reconcile P0 seven stages/12 arcs and P3 37 movements through **verified event/source relationships**, not positional chapter matching. Distinguish main-reading scene coverage from optional scene repertoire.
 5. Substitute approved sacred art and canonical Scripture text into the theatre after their respective owners explicitly certify them. Production integration and publication are separate gates.
+
+
+## P4 first source-witness geography cohort and browser acceptance — 21 October 2026
+
+### Completed
+
+- \`data/research/historia-p4-patriarchs-witness-desk-audit.v1.json\` now contains **25 of 183** scene desk-triage records in the original PATRIARCHS (indices 0–24) batch. The exact ranges in all 25 were found in both installed Genesis CPDV and Douay–Rheims Challoner source witnesses. Both are explicitly **uncollated historical research transcriptions**; matching verse presence does not establish publication, precise site identification or translation parity.
+- The 25 records include actor candidates and the **precise limitation of each original geographical label**; no event coordinates are approved or inserted. One priority error is confirmed from the selected verses: scene \`biblical:scene:abraham:021\` (Genesis 21:1–7) places Isaac's birth in Beersheba, while that reference **does not name Beersheba as the birthplace**. The original source scene remains unchanged pending its owner's editorial correction.
+- Other source warnings: Genesis 15 does not place the covenant ritual at Mamre; Genesis 14:17–20 does not prove the Melchizedek meeting took place at modern Jerusalem; Genesis 22:2 in both installed Catholic English witnesses describes the "land of vision" and an unspecified mountain; the rescue of Lot spans several biblical places and cannot have one certified event pin. Source-witness and topographic review are separate gates.
+- \`tests/historia-p4-theatre-phone.mjs\` now checks the **actual Chromium rendering** at 320, 390, 768 and 1280 viewport widths, offline fallback, previous/next steps, EN/FR controls, Revelation without a terrestrial map, genuine online MapLibre canvas and attribution. \`tests/historia-p4-theatre-citation-contract.mjs\` also locks the 25-Genesis-row audit and its Beersheba correction.
+- \`.github/workflows/historia-p4-theatre-review.yml\` is restricted to the P4 research branch; the **latest complete run** [#39560795972](https://github.com/Fulcanelli13/ad-orientem/actions/runs/39560795972) finished with **success** on the source and browser jobs. The prior failed run exposed an overly strict French string assertion, which was corrected; it did not constitute a MapLibre or app production regression. Browser logs include distinct pass lines for offline phone/tablet/desktop responsiveness and online MapLibre canvas/attribution/map-to-vision transitions.
+
+### Remaining editorial and implementation boundaries
+
+- **158 scene rows** beyond PATRIARCHS await the same passage-level and archaeological-evidence review.
+- M20–M37 still have no signed-off sequential Catholic witness read-aloud. Their **35 candidate issues** remain triage findings only.
+- This theatre laboratory has no certified principal Scripture text integration and no sacred-art import. The existing Mass, Bible overlay, Explore and published Atlas remain unmodified; no production reader, source translation, artwork or coordinate has been promoted.
+- Real Chromium acceptance establishes browser functionality for the **four tested states**, not an accepted 37-movement production route, rights certification or a historical-geography sign-off.
+
+Next source batch: DELIVERANCE (scene indices 25–37); afterwards WILDERNESS and COVENANT. Keep actor/place evidence anchored to installed Catholic texts and preserve each scene's original matching status.
