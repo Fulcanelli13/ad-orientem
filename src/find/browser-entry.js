@@ -1145,7 +1145,8 @@ export function createFindOwner(win=globalThis){
           atlasReturnViewport=null;
         }else if(state.atlasMode==="places"){
           const map=mapHandle?.map;
-          atlasReturnViewport=mapViewport(map);
+          const previous=mapViewport(map);
+          atlasReturnViewport=previous?{...previous,zoom:Number(map?.getZoom?.())||0}:null;
           if(map){
             const width=Number(map.getContainer?.()?.getBoundingClientRect?.().width||win.innerWidth||390);
             const zoom=Math.max(-1.2,Math.min(2.4,Math.log2(Math.max(280,width)/560)));
