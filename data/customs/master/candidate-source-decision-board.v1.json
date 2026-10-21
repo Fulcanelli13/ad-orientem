@@ -10,7 +10,7 @@
     "bilingual_source_bounded": 25,
     "auto_publications": 0,
     "new_canonicals": 0,
-    "source_witnesses": 42,
+    "source_witnesses": 43,
     "partial_claim_only": 5,
     "no_exact_independent_match": 12
   },
@@ -236,9 +236,10 @@
       "geography_weiser": "Hungary",
       "evidence_review": "INDEPENDENTLY_WITNESSED_NARROW_CLAIM",
       "prior_p1_source_state": "NO_P1_SOURCE_GATE_ASSESSED",
-      "current_source_count": 1,
+      "current_source_count": 2,
       "current_source_ids": [
-        "HU-NEPRAJZ-LEXIKON"
+        "HU-NEPRAJZ-LEXIKON",
+        "HU-MAGYAR-KATOLIKUS-LEXIKON-BETLEHEMEZES"
       ],
       "editorial_language_status": "EN_FR_BOUNDED_DRAFT_REQUIRES_APPROVAL",
       "related_master_or_review_ids": [],
@@ -947,5 +948,11 @@
     "independent-sources-batch03.v1.json",
     "independent-sources-batch04.v1.json"
   ],
-  "source_hold_file": "unverified-candidate-exact-claim-holds.v1.json"
+  "source_hold_file": "unverified-candidate-exact-claim-holds.v1.json",
+  "editorial_identity_review": {
+    "all_source_bounded_25_reconciled": true,
+    "all_14_distinct_identity_decisions_made": true,
+    "app_published": 0,
+    "decision_record": "editorial-identity-acceptance-14.v1.json"
+  }
 }
