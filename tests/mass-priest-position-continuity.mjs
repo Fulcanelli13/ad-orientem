@@ -135,4 +135,31 @@ assert.equal(expanded.conditionalBookOverlays.length,2);
 assert.ok(expanded.conditionalBookOverlays.some(x=>x.condition==='PROPER_LAST_GOSPEL_APPOINTED'&&x.station==='GOSPEL_SIDE'));
 assert.equal(cue('C0267').missal.location,'EPISTLE_SIDE',
   'Ordinary Last Gospel should not activate proper Last Gospel Missal transfer');
+
+// Ultra Master 19 October 2026: compare every one of 279 per-cue priest
+// stations, preserving the eight *documented* form/observation differences.
+const masterAudit=read('../data/presentation/mass-ultra-master-priest-and-chant-audit-20261021.v1.json');
+assert.equal(masterAudit.positionSignature.length,279);
+assert.equal(masterAudit.sourceTransitionsVerified,original.items.length);
+const stationSymbol=Object.fromEntries(
+ Object.entries(masterAudit.symbols).map(([symbol,station])=>[station,symbol]));
+const byCue=new Map(expanded.cues
+ .filter(x=>/^AO\.SM\.C\d{4}$/.test(x.cueId))
+ .map(x=>[Number(x.cueId.slice(-4)),x]));
+const actualExceptions=[];
+for(let n=1;n<=279;n++){
+ const cue=byCue.get(n);
+ assert.ok(cue,'Missing Ultra Master source cue C'+String(n).padStart(4,'0'));
+ const station=cue.defaultTrack?.station;
+ const observed=station===null?'?':stationSymbol[station];
+ const required=masterAudit.positionSignature[n-1];
+ assert.ok(observed,'Unrecognized priest station '+station);
+ if(observed!==required)actualExceptions.push(cue.cueId);
+}
+assert.deepEqual(actualExceptions.sort(),
+ masterAudit.allowedSourceToDefaultDifferences.map(x=>x.cueId).sort(),
+ 'Unexpected source station drift or missing conditional/priest-observation boundary');
+assert.ok(masterAudit.allowedSourceToDefaultDifferences.every(x=>x.reason.length>15),
+ 'Every master-to-default positional exception needs a ceremonial explanation');
+
 console.log('1962 source priest-station continuity: 280/280 sung cues, 96/96 source blocks, 49/49 transitions; no art/position overrides.');
