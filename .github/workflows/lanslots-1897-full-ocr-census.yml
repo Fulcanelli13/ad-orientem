@@ -1,0 +1,105 @@
+name: Lanslots 1897 full OCR Scripture census (research only)
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - mass/342-lanslots-1897-crosswalk
+    paths:
+      - '.github/workflows/lanslots-1897-full-ocr-census.yml'
+      - 'tests/mass-lanslots-*.mjs'
+      - 'data/research/mass-lanslots-*.json'
+      - 'data/research/archive/lanslots-1897-original-ocr.txt'
+      - 'data/research/archive/lanslots-1897-original-ocr-acquisition.v1.json'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: lanslots-ocr-census-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  original-full-text-census:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify archived original OCR, source locations and research-only holds
+        run: |
+          node tools/mass/extract-lanslots-scripture.mjs --self-test
+          node tests/mass-lanslots-original-cue-audit.mjs
+          node tests/mass-lanslots-critical-reconciliation.mjs
+          node tests/mass-lanslots-full-ocr-integrity.mjs
+          node tests/mass-lanslots-original-image-spotcheck.mjs
+          node tests/mass-lanslots-parenthetical-adjudication.mjs
+          node tests/mass-lanslots-nonparenthetical-bible.mjs
+      - name: Supply byte-verified archived OCR (push) or independently re-download (manual)
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts/lanslots-1897-full-ocr
+          output="artifacts/lanslots-1897-full-ocr/illustratedexpla00lans_djvu.txt"
+          source_file="artifacts/lanslots-1897-full-ocr/source-url.txt"
+          expected="7ef37c1395a788a159a521fad66fd43aaff86a27d57767b2e16d87dbd93b4312"
+          if [ "$GITHUB_EVENT_NAME" = "push" ]; then
+            cp data/research/archive/lanslots-1897-original-ocr.txt "$output"
+            printf '%s\n' "https://archive.org/download/illustratedexpla00lans/illustratedexpla00lans_djvu.txt" > "$source_file"
+          else
+            for url in \
+              "https://archive.org/download/illustratedexpla00lans/illustratedexpla00lans_djvu.txt" \
+              "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt"
+            do
+              if curl --fail --location --silent --show-error --retry 3 --retry-all-errors --connect-timeout 15 --max-time 150 "$url" -o "$output"; then
+                printf '%s\n' "$url" > "$source_file"
+                break
+              fi
+              rm -f "$output"
+            done
+          fi
+          test -s "$output"
+          echo "$expected  $output" | sha256sum --check --status
+      - name: Extract candidate Bible citations without publication authority
+        shell: bash
+        run: |
+          set -euo pipefail
+          node tools/mass/extract-lanslots-scripture.mjs \
+            artifacts/lanslots-1897-full-ocr/illustratedexpla00lans_djvu.txt \
+            artifacts/lanslots-1897-full-ocr/citation-candidates.unverified.json
+          node --input-type=module -e '
+            import {readFileSync,writeFileSync} from "node:fs";
+            import {createHash} from "node:crypto";
+            const dir="artifacts/lanslots-1897-full-ocr/";
+            const bytes=readFileSync(dir+"illustratedexpla00lans_djvu.txt");
+            const refs=JSON.parse(readFileSync(dir+"citation-candidates.unverified.json","utf8"));
+            const source=readFileSync(dir+"source-url.txt","utf8").trim();
+            const report={
+              schema:"ao-lanslots-1897-full-ocr-acquisition-v1",
+              access:"ARCHIVED_EXACT_ORIGINAL_OCR_SHA256_RECHECKED",
+              sourceUrl:source,
+              originalArchiveId:"illustratedexpla00lans",
+              bytes:bytes.length,
+              sha256:createHash("sha256").update(bytes).digest("hex"),
+              machineParserCandidateCount:refs.candidateCount,
+              includesFrontAndEndMarkers:true,
+              scannedPdfPagesVisuallyChecked:0,
+              absolutePrintedPageIndexValidated:false,
+              bibleVerseEditionChecked:false,
+              humanCitationCompletenessCertified:false,
+              runtimePublishingAuthority:false,
+              warning:"Machine candidate extraction is not an exhaustive Bible-reference inventory: OCR and citation spelling can defeat regex detection."
+            };
+            writeFileSync(dir+"acquisition-report.v1.json",JSON.stringify(report,null,2)+"\n");
+            console.log("LANSLOTS_OCR_REPORT="+JSON.stringify(report));
+          '
+      - name: Preserve unmodified OCR plus review-only machine candidates
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lanslots-1897-unverified-full-ocr-census
+          path: artifacts/lanslots-1897-full-ocr/
+          retention-days: 30
+          if-no-files-found: warn

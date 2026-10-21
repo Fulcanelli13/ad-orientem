@@ -1,0 +1,848 @@
+{
+  "schema": "ao-mass-lanslots-1897-original-ocr-confirmed-scripture-batch-v1",
+  "date": "2026-10-14",
+  "status": "OCR_DIRECTLY_INSPECTED_NOT_VISUALLY_PAGE_VERIFIED_NOT_PUBLISHED",
+  "source": {
+    "title": "Illustrated Explanation of the Prayers and Ceremonies of the Mass",
+    "author": "Rev. D. I. Lanslots, O.S.B.",
+    "year": 1897,
+    "ocrUrl": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+    "originalScanUrl": "https://commons.wikimedia.org/wiki/File:Illustrated_explanation_of_the_prayers_and_ceremonies_of_the_Mass_(IA_illustratedexpla00lans).pdf",
+    "ocrTotalWebLines": 11057,
+    "ocrAvailableViaInternetArchiveFullText": true,
+    "pdfPageImageVerified": false,
+    "bookTextVerifiedViaWeb": true
+  },
+  "recovery": "Internet Archive item's FULL TEXT download link routes to an indexable 11,057-line source. The OCR is web-readable but full payload cannot be downloaded inside this session. The references in this file were verified against local spans of that original OCR web rendering, not against PDF page images.",
+  "citationPolicy": {
+    "EXPLICIT_REFERENCE": "Book and verse explicitly printed in OCR, subject to scan and versification checks",
+    "EXPLICIT_REFERENCE_BOOK_CHAPTER": "Book and chapter printed, precise verse not supplied by author",
+    "EXPLICIT_REFERENCE_OCR_CORRECTION": "Book/verse is legible by context but OCR corrupts one or more characters; source PDF visual check required",
+    "EXPLICIT_REFERENCE_BUT_SPECULATIVE_ALLEGORY": "Original reference printed; symbolic connection is historically unproven",
+    "BIBLICAL_ALLUSION_VERSE_NORMALIZED": "Author quotes or alludes to passage, but exact verse number supplied editorially",
+    "EXPLICIT_BOOK_CHAPTER_VERSE_NORMALIZED": "Book and chapter explicitly printed; verse span assigned editorially",
+    "BIBLICAL_LITURGICAL_TEXT_MATCH": "Liturgical biblical text reproduced, but no verse string printed"
+  },
+  "rowCount": 43,
+  "records": [
+    {
+      "id": "L1897-OCR-001",
+      "chapter": "Intro",
+      "normalizedScriptureRef": "Psalms 83:2-4",
+      "asPrintedRefOrAllusion": "Ps. lxxxiii. 2-4",
+      "webOcrLineRange": {
+        "start": 458,
+        "end": 471
+      },
+      "evidenceKind": "EXPLICIT_REFERENCE",
+      "canonicalMassTopicOwner": "AO.CARD.001",
+      "editorialCaution": "Introduction; traditional Psalm enumeration",
+      "sourceUrl": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+      "ocrVerified": true,
+      "originalPageImageVerified": false,
+      "localeReview": "PENDING",
+      "production": "BLOCKED"
+    },
+    {
+      "id": "L1897-OCR-002",
+      "chapter": "I",
+      "normalizedScriptureRef": "Malachi 1:11",
+      "asPrintedRefOrAllusion": "Mai. i. u (OCR damaged)",
+      "webOcrLineRange": {
+        "start": 482,
+        "end": 496
+      },
+      "evidenceKind": "EXPLICIT_REFERENCE_OCR_CORRECTION",
+      "canonicalMassTopicOwner": "AO.CARD.001",
+      "editorialCaution": "OCR's 'u' is printed citation 11, to verify visually",
+      "sourceUrl": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+      "ocrVerified": true,
+      "originalPageImageVerified": false,
+      "localeReview": "PENDING",
+      "production": "BLOCKED"
+    },
+    {
+      "id": "L1897-OCR-003",
+      "chapter": "I",
+      "normalizedScriptureRef": "Matthew 21:42",
+      "asPrintedRefOrAllusion": "Matt. xxi. 42",
+      "webOcrLineRange": {
+        "start": 535,
+        "end": 541
+      },
+      "evidenceKind": "EXPLICIT_REFERENCE",
+      "canonicalMassTopicOwner": "AO.CARD.001",
+      "editorialCaution": "Cornerstone as altar image",
+      "sourceUrl": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+      "ocrVerified": true,
+      "originalPageImageVerified": false,
+      "localeReview": "PENDING",
+      "production": "BLOCKED"
+    },
+    {
+      "id": "L1897-OCR-004",
+      "chapter": "I",
+      "normalizedScriptureRef": "1 Corinthians 10:4",
+      "asPrintedRefOrAllusion": "1 Cor. x. 4",
+      "webOcrLineRange": {
+        "start": 544,
+        "end": 548
+      },
+      "evidenceKind": "EXPLICIT_REFERENCE",
+      "canonicalMassTopicOwner": "AO.CARD.001",
+      "editorialCaution": "Christ spiritual rock",
+      "sourceUrl": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+      "ocrVerified": true,
+      "originalPageImageVerified": false,
+      "localeReview": "PENDING",
+      "production": "BLOCKED"
+    },
+    {
+      "id": "L1897-OCR-005",
+      "chapter": "I",
+      "normalizedScriptureRef": "Revelation 6:9",
+      "asPrintedRefOrAllusion": "Apocalypse vi. 9",
+      "webOcrLineRange": {
+        "start": 573,
+        "end": 588
+      },
+      "evidenceKind": "EXPLICIT_REFERENCE",
+      "canonicalMassTopicOwner": "AO.CARD.001",
+      "editorialCaution": "Martyrs under altar",
+      "sourceUrl": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+      "ocrVerified": true,
+      "originalPageImageVerified": false,
+      "localeReview": "PENDING",
+      "production": "BLOCKED"
+    },
+    {
+      "id": "L1897-OCR-006",
+      "chapter": "II",
+      "normalizedScriptureRef": "Psalms 25:8",
+      "asPrintedRefOrAllusion": "Ps. xxv. 8",
+      "webOcrLineRange": {
+        "start": 633,
+        "end": 639
+      },
+      "evidenceKind": "EXPLICIT_REFERENCE",
+      "canonicalMassTopicOwner": "AO.CARD.001",
+      "editorialCaution": "Beauty of the Lord's house",
+      "sourceUrl": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+      "ocrVerified": true,
+      "originalPageImageVerified": false,
+      "localeReview": "PENDING",
+      "production": "BLOCKED"
+    },
+    {
+      "id": "L1897-OCR-007",
+      "chapter": "III",
+      "normalizedScriptureRef": "Matthew 26:39",
+      "asPrintedRefOrAllusion": "Matt. xxvi. 39",
+      "webOcrLineRange": {
+        "start": 908,
+        "end": 916
+      },
+      "evidenceKind": "EXPLICIT_REFERENCE",
+      "canonicalMassTopicOwner": "AO.CARD.010",
+      "editorialCaution": "Chalice as Passion",
+      "sourceUrl": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+      "ocrVerified": true,
+      "originalPageImageVerified": false,
+      "localeReview": "PENDING",
+      "production": "BLOCKED"
+    },
+    {
+      "id": "L1897-OCR-008",
+      "chapter": "III",
+      "normalizedScriptureRef": "Matthew 20:22",
+      "asPrintedRefOrAllusion": "Matt. xx. 22",
+      "webOcrLineRange": {
+        "start": 916,
+        "end": 921
+      },
+      "evidenceKind": "EXPLICIT_REFERENCE",
+      "canonicalMassTopicOwner": "AO.CARD.010",
+      "editorialCaution": "Cup shared by apostles",
+      "sourceUrl": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+      "ocrVerified": true,
+      "originalPageImageVerified": false,
+      "localeReview": "PENDING",
+      "production": "BLOCKED"
+    },
+    {
+      "id": "L1897-OCR-009",
+      "chapter": "III",
+      "normalizedScriptureRef": "Psalms 115:12-13",
+      "asPrintedRefOrAllusion": "Ps. cxv. 12, 13",
+      "webOcrLineRange": {
+        "start": 925,
+        "end": 931
+      },
+      "evidenceKind": "EXPLICIT_REFERENCE",
+      "canonicalMassTopicOwner": "AO.CARD.023",
+      "editorialCaution": "Chalice of salvation; psalm numbering caution",
+      "sourceUrl": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+      "ocrVerified": true,
+      "originalPageImageVerified": false,
+      "localeReview": "PENDING",
+      "production": "BLOCKED"
+    },
+    {
+      "id": "L1897-OCR-010",
+      "chapter": "IV",
+      "normalizedScriptureRef": "Exodus 28:2",
+      "asPrintedRefOrAllusion": "Ex. xxviii. 2",
+      "webOcrLineRange": {
+        "start": 992,
+        "end": 1009
+      },
+      "evidenceKind": "EXPLICIT_REFERENCE",
+      "canonicalMassTopicOwner": "AO.CARD.001",
+      "editorialCaution": "Aaronic vestment typology",
+      "sourceUrl": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+      "ocrVerified": true,
+      "originalPageImageVerified": false,
+      "localeReview": "PENDING",
+      "production": "BLOCKED"
+    },
+    {
+      "id": "L1897-OCR-011",
+      "chapter": "IV",
+      "normalizedScriptureRef": "Sirach 50:6-11",
+      "asPrintedRefOrAllusion": "Ecclus. l. 6-11 (OCR damaged)",
+      "webOcrLineRange": {
+        "start": 1265,
+        "end": 1279
+      },
+      "evidenceKind": "EXPLICIT_REFERENCE_OCR_CORRECTION",
+      "canonicalMassTopicOwner": "AO.CARD.001",
+      "editorialCaution": "High-priest Simon imagery; l = fifty",
+      "sourceUrl": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+      "ocrVerified": true,
+      "originalPageImageVerified": false,
+      "localeReview": "PENDING",
+      "production": "BLOCKED"
+    },
+    {
+      "id": "L1897-OCR-012",
+      "chapter": "V",
+      "normalizedScriptureRef": "Ezekiel 16:8-13",
+      "asPrintedRefOrAllusion": "Ezech. xvi. 8-13",
+      "webOcrLineRange": {
+        "start": 1291,
+        "end": 1304
+      },
+      "evidenceKind": "EXPLICIT_REFERENCE",
+      "canonicalMassTopicOwner": "AO.CARD.001",
+      "editorialCaution": "Bridal finery related to liturgical colours; allegory not norm",
+      "sourceUrl": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+      "ocrVerified": true,
+      "originalPageImageVerified": false,
+      "localeReview": "PENDING",
+      "production": "BLOCKED"
+    },
+    {
+      "id": "L1897-OCR-013",
+      "chapter": "VIII",
+      "normalizedScriptureRef": "Revelation 5:8",
+      "asPrintedRefOrAllusion": "Apocalypse v. 8",
+      "webOcrLineRange": {
+        "start": 2141,
+        "end": 2163
+      },
+      "evidenceKind": "EXPLICIT_REFERENCE",
+      "canonicalMassTopicOwner": "AO.CARD.001",
+      "editorialCaution": "Incense and prayer of saints; origin claim requires distinction",
+      "sourceUrl": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+      "ocrVerified": true,
+      "originalPageImageVerified": false,
+      "localeReview": "PENDING",
+      "production": "BLOCKED"
+    },
+    {
+      "id": "L1897-OCR-014",
+      "chapter": "IX",
+      "normalizedScriptureRef": "Luke 2:13-14",
+      "asPrintedRefOrAllusion": "Nativity angelic canticle (unnumbered)",
+      "webOcrLineRange": {
+        "start": 2356,
+        "end": 2378
+      },
+      "evidenceKind": "BIBLICAL_ALLUSION_VERSE_NORMALIZED",
+      "canonicalMassTopicOwner": "AO.CARD.003",
+      "editorialCaution": "Opening Gloria from angels; no verse printed",
+      "sourceUrl": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+      "ocrVerified": true,
+      "originalPageImageVerified": false,
+      "localeReview": "PENDING",
+      "production": "BLOCKED"
+    },
+    {
+      "id": "L1897-OCR-015",
+      "chapter": "X",
+      "normalizedScriptureRef": "Colossians 4:16",
+      "asPrintedRefOrAllusion": "Colossians iv. 16",
+      "webOcrLineRange": {
+        "start": 2633,
+        "end": 2638
+      },
+      "evidenceKind": "EXPLICIT_REFERENCE",
+      "canonicalMassTopicOwner": "AO.CARD.005",
+      "editorialCaution": "Reading and circulation of apostolic letters",
+      "sourceUrl": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+      "ocrVerified": true,
+      "originalPageImageVerified": false,
+      "localeReview": "PENDING",
+      "production": "BLOCKED"
+    },
+    {
+      "id": "L1897-OCR-016",
+      "chapter": "XI",
+      "normalizedScriptureRef": "Isaiah 14:13",
+      "asPrintedRefOrAllusion": "Is. xiv. 13",
+      "webOcrLineRange": {
+        "start": 2828,
+        "end": 2837
+      },
+      "evidenceKind": "EXPLICIT_REFERENCE_BUT_SPECULATIVE_ALLEGORY",
+      "canonicalMassTopicOwner": "AO.CARD.007",
+      "editorialCaution": "North/Gospel-side association is author's speculative symbolism, not origin",
+      "sourceUrl": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+      "ocrVerified": true,
+      "originalPageImageVerified": false,
+      "localeReview": "PENDING",
+      "production": "BLOCKED"
+    },
+    {
+      "id": "L1897-OCR-017",
+      "chapter": "XI",
+      "normalizedScriptureRef": "Jeremiah 1:14",
+      "asPrintedRefOrAllusion": "Jerem. i. 14",
+      "webOcrLineRange": {
+        "start": 2833,
+        "end": 2838
+      },
+      "evidenceKind": "EXPLICIT_REFERENCE_BUT_SPECULATIVE_ALLEGORY",
+      "canonicalMassTopicOwner": "AO.CARD.007",
+      "editorialCaution": "Do not imply reference explains historical side change",
+      "sourceUrl": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+      "ocrVerified": true,
+      "originalPageImageVerified": false,
+      "localeReview": "PENDING",
+      "production": "BLOCKED"
+    },
+    {
+      "id": "L1897-OCR-018",
+      "chapter": "XI",
+      "normalizedScriptureRef": "Isaiah 6:1-8",
+      "asPrintedRefOrAllusion": "Isaias vi.1-8",
+      "webOcrLineRange": {
+        "start": 2841,
+        "end": 2875
+      },
+      "evidenceKind": "EXPLICIT_REFERENCE",
+      "canonicalMassTopicOwner": "AO.CARD.007",
+      "editorialCaution": "Munda cor meum and prophet's coal",
+      "sourceUrl": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+      "ocrVerified": true,
+      "originalPageImageVerified": false,
+      "localeReview": "PENDING",
+      "production": "BLOCKED"
+    },
+    {
+      "id": "L1897-OCR-019",
+      "chapter": "XI",
+      "normalizedScriptureRef": "Luke 9:26",
+      "asPrintedRefOrAllusion": "Luke ix. 26",
+      "webOcrLineRange": {
+        "start": 2899,
+        "end": 2912
+      },
+      "evidenceKind": "EXPLICIT_REFERENCE",
+      "canonicalMassTopicOwner": "AO.CARD.007",
+      "editorialCaution": "Gospel small-cross forehead explanation",
+      "sourceUrl": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+      "ocrVerified": true,
+      "originalPageImageVerified": false,
+      "localeReview": "PENDING",
+      "production": "BLOCKED"
+    },
+    {
+      "id": "L1897-OCR-020",
+      "chapter": "XI",
+      "normalizedScriptureRef": "Romans 10:10",
+      "asPrintedRefOrAllusion": "Rom. x. 10",
+      "webOcrLineRange": {
+        "start": 2921,
+        "end": 2931
+      },
+      "evidenceKind": "EXPLICIT_REFERENCE",
+      "canonicalMassTopicOwner": "AO.CARD.007",
+      "editorialCaution": "Heart and mouth confessing the faith",
+      "sourceUrl": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+      "ocrVerified": true,
+      "originalPageImageVerified": false,
+      "localeReview": "PENDING",
+      "production": "BLOCKED"
+    },
+    {
+      "id": "L1897-OCR-021",
+      "chapter": "XI",
+      "normalizedScriptureRef": "Nehemiah 8",
+      "asPrintedRefOrAllusion": "2 Esdr. viii.",
+      "webOcrLineRange": {
+        "start": 2930,
+        "end": 2937
+      },
+      "evidenceKind": "EXPLICIT_REFERENCE_BOOK_CHAPTER",
+      "canonicalMassTopicOwner": "AO.CARD.007",
+      "editorialCaution": "Standing to hear Scripture; validate Old Testament naming by edition",
+      "sourceUrl": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+      "ocrVerified": true,
+      "originalPageImageVerified": false,
+      "localeReview": "PENDING",
+      "production": "BLOCKED"
+    },
+    {
+      "id": "L1897-OCR-022",
+      "chapter": "XI",
+      "normalizedScriptureRef": "Luke 4:16",
+      "asPrintedRefOrAllusion": "Luke iv. 16",
+      "webOcrLineRange": {
+        "start": 2936,
+        "end": 2940
+      },
+      "evidenceKind": "EXPLICIT_REFERENCE",
+      "canonicalMassTopicOwner": "AO.CARD.007",
+      "editorialCaution": "Christ stands to read",
+      "sourceUrl": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+      "ocrVerified": true,
+      "originalPageImageVerified": false,
+      "localeReview": "PENDING",
+      "production": "BLOCKED"
+    },
+    {
+      "id": "L1897-OCR-023",
+      "chapter": "XIII",
+      "normalizedScriptureRef": "Matthew 5:23",
+      "asPrintedRefOrAllusion": "Matt. v. 23",
+      "webOcrLineRange": {
+        "start": 3575,
+        "end": 3583
+      },
+      "evidenceKind": "EXPLICIT_REFERENCE",
+      "canonicalMassTopicOwner": "AO.CARD.010",
+      "editorialCaution": "Reconciliation before presenting offering",
+      "sourceUrl": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+      "ocrVerified": true,
+      "originalPageImageVerified": false,
+      "localeReview": "PENDING",
+      "production": "BLOCKED"
+    },
+    {
+      "id": "L1897-OCR-024",
+      "chapter": "XIII",
+      "normalizedScriptureRef": "1 Corinthians 5:7-8",
+      "asPrintedRefOrAllusion": "i Cor. v. 7, 8",
+      "webOcrLineRange": {
+        "start": 3760,
+        "end": 3771
+      },
+      "evidenceKind": "EXPLICIT_REFERENCE",
+      "canonicalMassTopicOwner": "AO.CARD.010",
+      "editorialCaution": "Unleavened bread and Christ our Pasch",
+      "sourceUrl": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+      "ocrVerified": true,
+      "originalPageImageVerified": false,
+      "localeReview": "PENDING",
+      "production": "BLOCKED"
+    },
+    {
+      "id": "L1897-OCR-025",
+      "chapter": "XIV",
+      "normalizedScriptureRef": "Psalms 140:2-4",
+      "asPrintedRefOrAllusion": "Psalm cxl. (no verse numbers)",
+      "webOcrLineRange": {
+        "start": 4101,
+        "end": 4114
+      },
+      "evidenceKind": "EXPLICIT_BOOK_CHAPTER_VERSE_NORMALIZED",
+      "canonicalMassTopicOwner": "AO.CARD.010",
+      "editorialCaution": "Incense prayer; Vulgate Psalm 140",
+      "sourceUrl": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+      "ocrVerified": true,
+      "originalPageImageVerified": false,
+      "localeReview": "PENDING",
+      "production": "BLOCKED"
+    },
+    {
+      "id": "L1897-OCR-026",
+      "chapter": "XIV",
+      "normalizedScriptureRef": "Psalms 25:6-12",
+      "asPrintedRefOrAllusion": "Psalm xxv. (no verse numbers)",
+      "webOcrLineRange": {
+        "start": 4164,
+        "end": 4180
+      },
+      "evidenceKind": "EXPLICIT_BOOK_CHAPTER_VERSE_NORMALIZED",
+      "canonicalMassTopicOwner": "AO.CARD.010",
+      "editorialCaution": "Lavabo inter innocentes; original prints Psalm 25, verse span mapped editorially, Vulgate numbering",
+      "sourceUrl": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+      "ocrVerified": true,
+      "originalPageImageVerified": false,
+      "localeReview": "PENDING",
+      "production": "BLOCKED"
+    },
+    {
+      "id": "L1897-OCR-027",
+      "chapter": "XV",
+      "normalizedScriptureRef": "Isaiah 6:3",
+      "asPrintedRefOrAllusion": "Isaias vi. 3",
+      "webOcrLineRange": {
+        "start": 4819,
+        "end": 4828
+      },
+      "evidenceKind": "EXPLICIT_REFERENCE",
+      "canonicalMassTopicOwner": "AO.CARD.013",
+      "editorialCaution": "Sanctus celestial praise",
+      "sourceUrl": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+      "ocrVerified": true,
+      "originalPageImageVerified": false,
+      "localeReview": "PENDING",
+      "production": "BLOCKED"
+    },
+    {
+      "id": "L1897-OCR-028",
+      "chapter": "XV",
+      "normalizedScriptureRef": "Revelation 4:8",
+      "asPrintedRefOrAllusion": "Apocalypse iv. 8",
+      "webOcrLineRange": {
+        "start": 4825,
+        "end": 4830
+      },
+      "evidenceKind": "EXPLICIT_REFERENCE",
+      "canonicalMassTopicOwner": "AO.CARD.013",
+      "editorialCaution": "Sanctus heavenly vision",
+      "sourceUrl": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+      "ocrVerified": true,
+      "originalPageImageVerified": false,
+      "localeReview": "PENDING",
+      "production": "BLOCKED"
+    },
+    {
+      "id": "L1897-OCR-029",
+      "chapter": "XV",
+      "normalizedScriptureRef": "Matthew 21:9",
+      "asPrintedRefOrAllusion": "Matthew xxi. 9",
+      "webOcrLineRange": {
+        "start": 4862,
+        "end": 4870
+      },
+      "evidenceKind": "EXPLICIT_REFERENCE",
+      "canonicalMassTopicOwner": "AO.CARD.013",
+      "editorialCaution": "Benedictus from entrance to Jerusalem",
+      "sourceUrl": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+      "ocrVerified": true,
+      "originalPageImageVerified": false,
+      "localeReview": "PENDING",
+      "production": "BLOCKED"
+    },
+    {
+      "id": "L1897-OCR-030",
+      "chapter": "XIX",
+      "normalizedScriptureRef": "Exodus 12",
+      "asPrintedRefOrAllusion": "Exodus chapter xii",
+      "webOcrLineRange": {
+        "start": 6498,
+        "end": 6507
+      },
+      "evidenceKind": "EXPLICIT_REFERENCE_BOOK_CHAPTER",
+      "canonicalMassTopicOwner": "AO.CANON.07",
+      "editorialCaution": "Paschal lamb is a figure of the Eucharistic Lamb",
+      "sourceUrl": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+      "ocrVerified": true,
+      "originalPageImageVerified": false,
+      "localeReview": "PENDING",
+      "production": "BLOCKED"
+    },
+    {
+      "id": "L1897-OCR-031",
+      "chapter": "XX",
+      "normalizedScriptureRef": "Revelation 5:6",
+      "asPrintedRefOrAllusion": "Lamb as slain in Apocalypse (unnumbered)",
+      "webOcrLineRange": {
+        "start": 6711,
+        "end": 6721
+      },
+      "evidenceKind": "BIBLICAL_ALLUSION_VERSE_NORMALIZED",
+      "canonicalMassTopicOwner": "AO.CANON.08",
+      "editorialCaution": "No physical new death of risen Christ; doctrinal wording review",
+      "sourceUrl": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+      "ocrVerified": true,
+      "originalPageImageVerified": false,
+      "localeReview": "PENDING",
+      "production": "BLOCKED"
+    },
+    {
+      "id": "L1897-OCR-032",
+      "chapter": "XX",
+      "normalizedScriptureRef": "Malachi 1:11",
+      "asPrintedRefOrAllusion": "clean oblation foretold by Malachias (unnumbered)",
+      "webOcrLineRange": {
+        "start": 6820,
+        "end": 6836
+      },
+      "evidenceKind": "BIBLICAL_ALLUSION_VERSE_NORMALIZED",
+      "canonicalMassTopicOwner": "AO.CANON.08",
+      "editorialCaution": "Reuses authorial Malachi interpretation from ch. I",
+      "sourceUrl": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+      "ocrVerified": true,
+      "originalPageImageVerified": false,
+      "localeReview": "PENDING",
+      "production": "BLOCKED"
+    },
+    {
+      "id": "L1897-OCR-033",
+      "chapter": "XXIII",
+      "normalizedScriptureRef": "Isaiah 53:5",
+      "asPrintedRefOrAllusion": "Is. liii. 5",
+      "webOcrLineRange": {
+        "start": 8251,
+        "end": 8257
+      },
+      "evidenceKind": "EXPLICIT_REFERENCE",
+      "canonicalMassTopicOwner": "AO.CARD.020",
+      "editorialCaution": "Fraction and wounded servant, attribution interpretation",
+      "sourceUrl": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+      "ocrVerified": true,
+      "originalPageImageVerified": false,
+      "localeReview": "PENDING",
+      "production": "BLOCKED"
+    },
+    {
+      "id": "L1897-OCR-034",
+      "chapter": "XXIII",
+      "normalizedScriptureRef": "John 6:52",
+      "asPrintedRefOrAllusion": "John vi. 52",
+      "webOcrLineRange": {
+        "start": 8281,
+        "end": 8293
+      },
+      "evidenceKind": "EXPLICIT_REFERENCE",
+      "canonicalMassTopicOwner": "AO.CARD.020",
+      "editorialCaution": "Bread given for the life of the world; check versification",
+      "sourceUrl": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+      "ocrVerified": true,
+      "originalPageImageVerified": false,
+      "localeReview": "PENDING",
+      "production": "BLOCKED"
+    },
+    {
+      "id": "L1897-OCR-035",
+      "chapter": "XXIII",
+      "normalizedScriptureRef": "John 1:29",
+      "asPrintedRefOrAllusion": "St John Baptist's Lamb (unnumbered)",
+      "webOcrLineRange": {
+        "start": 8502,
+        "end": 8507
+      },
+      "evidenceKind": "BIBLICAL_ALLUSION_VERSE_NORMALIZED",
+      "canonicalMassTopicOwner": "AO.CARD.021",
+      "editorialCaution": "Agnus Dei phrase and presentation to communicants",
+      "sourceUrl": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+      "ocrVerified": true,
+      "originalPageImageVerified": false,
+      "localeReview": "PENDING",
+      "production": "BLOCKED"
+    },
+    {
+      "id": "L1897-OCR-036",
+      "chapter": "XXIV",
+      "normalizedScriptureRef": "Hebrews 9:14",
+      "asPrintedRefOrAllusion": "Heb. ix. 14",
+      "webOcrLineRange": {
+        "start": 8743,
+        "end": 8752
+      },
+      "evidenceKind": "EXPLICIT_REFERENCE",
+      "canonicalMassTopicOwner": "AO.CARD.022",
+      "editorialCaution": "Christ offering through eternal Spirit",
+      "sourceUrl": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+      "ocrVerified": true,
+      "originalPageImageVerified": false,
+      "localeReview": "PENDING",
+      "production": "BLOCKED"
+    },
+    {
+      "id": "L1897-OCR-037",
+      "chapter": "XXIV",
+      "normalizedScriptureRef": "1 Corinthians 11:26",
+      "asPrintedRefOrAllusion": "1 Cor. xi. 26",
+      "webOcrLineRange": {
+        "start": 8753,
+        "end": 8758
+      },
+      "evidenceKind": "EXPLICIT_REFERENCE",
+      "canonicalMassTopicOwner": "AO.CARD.022",
+      "editorialCaution": "Proclaiming Lord's death until He comes",
+      "sourceUrl": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+      "ocrVerified": true,
+      "originalPageImageVerified": false,
+      "localeReview": "PENDING",
+      "production": "BLOCKED"
+    },
+    {
+      "id": "L1897-OCR-038",
+      "chapter": "XXIV",
+      "normalizedScriptureRef": "Matthew 8:8",
+      "asPrintedRefOrAllusion": "St Matthew's centurion (unnumbered)",
+      "webOcrLineRange": {
+        "start": 8888,
+        "end": 8912
+      },
+      "evidenceKind": "BIBLICAL_ALLUSION_VERSE_NORMALIZED",
+      "canonicalMassTopicOwner": "AO.CARD.023",
+      "editorialCaution": "Domine non sum dignus and priest Communion",
+      "sourceUrl": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+      "ocrVerified": true,
+      "originalPageImageVerified": false,
+      "localeReview": "PENDING",
+      "production": "BLOCKED"
+    },
+    {
+      "id": "L1897-OCR-039",
+      "chapter": "XXIV",
+      "normalizedScriptureRef": "Matthew 11:28",
+      "asPrintedRefOrAllusion": "Matt. xi. 28",
+      "webOcrLineRange": {
+        "start": 8913,
+        "end": 8916
+      },
+      "evidenceKind": "EXPLICIT_REFERENCE",
+      "canonicalMassTopicOwner": "AO.CARD.023",
+      "editorialCaution": "Come unto me, weary and burdened",
+      "sourceUrl": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+      "ocrVerified": true,
+      "originalPageImageVerified": false,
+      "localeReview": "PENDING",
+      "production": "BLOCKED"
+    },
+    {
+      "id": "L1897-OCR-040",
+      "chapter": "XXIV",
+      "normalizedScriptureRef": "Song of Songs 2:16",
+      "asPrintedRefOrAllusion": "Cant. ii. 16",
+      "webOcrLineRange": {
+        "start": 8945,
+        "end": 8950
+      },
+      "evidenceKind": "EXPLICIT_REFERENCE",
+      "canonicalMassTopicOwner": "AO.CARD.023",
+      "editorialCaution": "Priest after Communion meditation",
+      "sourceUrl": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+      "ocrVerified": true,
+      "originalPageImageVerified": false,
+      "localeReview": "PENDING",
+      "production": "BLOCKED"
+    },
+    {
+      "id": "L1897-OCR-041",
+      "chapter": "XXIV",
+      "normalizedScriptureRef": "Song of Songs 3:4",
+      "asPrintedRefOrAllusion": "Cant. iii. 4",
+      "webOcrLineRange": {
+        "start": 8945,
+        "end": 8950
+      },
+      "evidenceKind": "EXPLICIT_REFERENCE",
+      "canonicalMassTopicOwner": "AO.CARD.023",
+      "editorialCaution": "Priest after Communion meditation",
+      "sourceUrl": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+      "ocrVerified": true,
+      "originalPageImageVerified": false,
+      "localeReview": "PENDING",
+      "production": "BLOCKED"
+    },
+    {
+      "id": "L1897-OCR-042",
+      "chapter": "XXIV",
+      "normalizedScriptureRef": "Leviticus 20:7",
+      "asPrintedRefOrAllusion": "Lev. xx. 7",
+      "webOcrLineRange": {
+        "start": 9243,
+        "end": 9249
+      },
+      "evidenceKind": "EXPLICIT_REFERENCE",
+      "canonicalMassTopicOwner": "AO.CARD.026",
+      "editorialCaution": "Purification and holiness",
+      "sourceUrl": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+      "ocrVerified": true,
+      "originalPageImageVerified": false,
+      "localeReview": "PENDING",
+      "production": "BLOCKED"
+    },
+    {
+      "id": "L1897-OCR-043",
+      "chapter": "XXV",
+      "normalizedScriptureRef": "John 1:1-14",
+      "asPrintedRefOrAllusion": "Last Gospel Johannine prologue (unnumbered)",
+      "webOcrLineRange": {
+        "start": 9690,
+        "end": 9732
+      },
+      "evidenceKind": "BIBLICAL_LITURGICAL_TEXT_MATCH",
+      "canonicalMassTopicOwner": "AO.CARD.030",
+      "editorialCaution": "Do not use older proper Last Gospel rules as 1962 law",
+      "sourceUrl": "https://archive.org/stream/illustratedexpla00lans/illustratedexpla00lans_djvu.txt",
+      "ocrVerified": true,
+      "originalPageImageVerified": false,
+      "localeReview": "PENDING",
+      "production": "BLOCKED"
+    }
+  ],
+  "editorialExceptions": [
+    {
+      "webOcrLineRange": {
+        "start": 1790,
+        "end": 1809
+      },
+      "chapter": "VII",
+      "subject": "Author cautions against an allegory for every minute ceremonial detail",
+      "status": "CONFIRMED_OCR_AUTHOR_EDITORIAL_DISCIPLINE"
+    },
+    {
+      "webOcrLineRange": {
+        "start": 6337,
+        "end": 6356
+      },
+      "chapter": "XIX",
+      "subject": "Author says non-scriptural liturgical language is equally inspired as Scripture",
+      "status": "THEOLOGICAL_QUALIFICATION_REQUIRED; distinguish liturgical tradition and canonical biblical inspiration"
+    },
+    {
+      "webOcrLineRange": {
+        "start": 8393,
+        "end": 8416
+      },
+      "chapter": "XXIII",
+      "subject": "Author cites Bellarmine on 'new consecration' as renewed sacramental signification at commingling",
+      "status": "DO_NOT_TREAT_AS_REPEAT_OF_EUCHARISTIC_CONSECRATION; compare FRG27"
+    },
+    {
+      "webOcrLineRange": {
+        "start": 9690,
+        "end": 9739
+      },
+      "chapter": "XXV",
+      "subject": "Period-specific Last Gospel exceptions",
+      "status": "HISTORICAL_1897_NOT_1962_NORM"
+    }
+  ],
+  "qualityGates": [
+    "Visual source-page spot checking against PDF before publication",
+    "Full OCR grep not yet run; 43 selected references are not exhaustive",
+    "Validate edition-specific book and Psalm numbering before creating Scripture routes",
+    "Retain existing Guide and 1962 source ownership",
+    "Deduplicate against Guéranger and 422-record September compendium before authoring new copy"
+  ]
+}

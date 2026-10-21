@@ -1,0 +1,1488 @@
+{
+  "schema": "ao-mass-lanslots-1897-69-reference-cue-ownership-audit-v1",
+  "date": "2026-10-14",
+  "status": "RESEARCH_ONLY_NOT_PUBLISHABLE",
+  "scope": "Only source text of current SUNG corpus was checked for literal Latin wording. A direct phrase match proves correspondence of wording, not that Lanslots attributed that Scripture to that precise 1962 cue. Remaining rows are thematic editorial research, explicitly not certified placements.",
+  "sourcePaths": [
+    "data/research/mass-lanslots-1897-ocr-scripture-batch01.v1.json",
+    "data/research/mass-lanslots-1897-ocr-scripture-batch02.v1.json",
+    "data/presentation/reader-text-sung.v1.json",
+    "data/presentation/reader-canon-source-map.v1.json",
+    "data/research/mass-fr-gueranger-microguide-batch02.v1.json"
+  ],
+  "totalReferenceOccurrences": 69,
+  "literalOrNamedMatches": 12,
+  "topicOnlyRecords": 57,
+  "anchorCaveats": [
+    "Named Melchisedech in Supra quae is a textual name match, not a direct quotation of Psalm 109:4.",
+    "For original chapter XXIV's centurion explanation, assign the priest's Domine non sum dignus at C0229; the faithful's C0243 is a separate occurrence in the rite and is not silently inherited.",
+    "For Sanctus the same Latin words relate to Isaiah 6:3 and Revelation 4:8, but this is one prayer position, not duplicate guidance.",
+    "Do not map pre-Mass vestments, architecture, colours and theology to arbitrary live prayer paragraphs.",
+    "1962 source first step IDs are current. Historical 48-card project is not used as a source of cue ownership.",
+    "Original page image check, Catholic Scripture versification, French review and claim-level deduplication remain blockers."
+  ],
+  "entries": [
+    {
+      "sourceRecordId": "L1897-OCR-001",
+      "sourceChapter": "Intro",
+      "scriptureReference": "Psalms 83:2-4",
+      "previousTopicOwner": "AO.CARD.001",
+      "originalOcrLineRange": {
+        "start": 458,
+        "end": 471
+      },
+      "originalCitationKind": "EXPLICIT_REFERENCE",
+      "liturgicalMatchStatus": "NO_DIRECT_PHRASE_MATCH_REVIEWED_TOPIC_ONLY",
+      "cueId": null,
+      "blockId": null,
+      "sourceFirstSectionId": null,
+      "sourceLatinExcerpt": null,
+      "sourceRelation": "RESEARCH_TOPIC_ONLY_NOT_INLINE_GUIDE",
+      "relatedPriorResearchIds": [],
+      "editorialCaution": "Introduction; traditional Psalm enumeration",
+      "verifyOriginalPageImage": false,
+      "publishToGuide": false
+    },
+    {
+      "sourceRecordId": "L1897-OCR-002",
+      "sourceChapter": "I",
+      "scriptureReference": "Malachi 1:11",
+      "previousTopicOwner": "AO.CARD.001",
+      "originalOcrLineRange": {
+        "start": 482,
+        "end": 496
+      },
+      "originalCitationKind": "EXPLICIT_REFERENCE_OCR_CORRECTION",
+      "liturgicalMatchStatus": "NO_DIRECT_PHRASE_MATCH_REVIEWED_TOPIC_ONLY",
+      "cueId": null,
+      "blockId": null,
+      "sourceFirstSectionId": null,
+      "sourceLatinExcerpt": null,
+      "sourceRelation": "RESEARCH_TOPIC_ONLY_NOT_INLINE_GUIDE",
+      "relatedPriorResearchIds": [],
+      "editorialCaution": "OCR's 'u' is printed citation 11, to verify visually",
+      "verifyOriginalPageImage": false,
+      "publishToGuide": false
+    },
+    {
+      "sourceRecordId": "L1897-OCR-003",
+      "sourceChapter": "I",
+      "scriptureReference": "Matthew 21:42",
+      "previousTopicOwner": "AO.CARD.001",
+      "originalOcrLineRange": {
+        "start": 535,
+        "end": 541
+      },
+      "originalCitationKind": "EXPLICIT_REFERENCE",
+      "liturgicalMatchStatus": "NO_DIRECT_PHRASE_MATCH_REVIEWED_TOPIC_ONLY",
+      "cueId": null,
+      "blockId": null,
+      "sourceFirstSectionId": null,
+      "sourceLatinExcerpt": null,
+      "sourceRelation": "RESEARCH_TOPIC_ONLY_NOT_INLINE_GUIDE",
+      "relatedPriorResearchIds": [],
+      "editorialCaution": "Cornerstone as altar image",
+      "verifyOriginalPageImage": false,
+      "publishToGuide": false
+    },
+    {
+      "sourceRecordId": "L1897-OCR-004",
+      "sourceChapter": "I",
+      "scriptureReference": "1 Corinthians 10:4",
+      "previousTopicOwner": "AO.CARD.001",
+      "originalOcrLineRange": {
+        "start": 544,
+        "end": 548
+      },
+      "originalCitationKind": "EXPLICIT_REFERENCE",
+      "liturgicalMatchStatus": "NO_DIRECT_PHRASE_MATCH_REVIEWED_TOPIC_ONLY",
+      "cueId": null,
+      "blockId": null,
+      "sourceFirstSectionId": null,
+      "sourceLatinExcerpt": null,
+      "sourceRelation": "RESEARCH_TOPIC_ONLY_NOT_INLINE_GUIDE",
+      "relatedPriorResearchIds": [],
+      "editorialCaution": "Christ spiritual rock",
+      "verifyOriginalPageImage": false,
+      "publishToGuide": false
+    },
+    {
+      "sourceRecordId": "L1897-OCR-005",
+      "sourceChapter": "I",
+      "scriptureReference": "Revelation 6:9",
+      "previousTopicOwner": "AO.CARD.001",
+      "originalOcrLineRange": {
+        "start": 573,
+        "end": 588
+      },
+      "originalCitationKind": "EXPLICIT_REFERENCE",
+      "liturgicalMatchStatus": "NO_DIRECT_PHRASE_MATCH_REVIEWED_TOPIC_ONLY",
+      "cueId": null,
+      "blockId": null,
+      "sourceFirstSectionId": null,
+      "sourceLatinExcerpt": null,
+      "sourceRelation": "RESEARCH_TOPIC_ONLY_NOT_INLINE_GUIDE",
+      "relatedPriorResearchIds": [],
+      "editorialCaution": "Martyrs under altar",
+      "verifyOriginalPageImage": false,
+      "publishToGuide": false
+    },
+    {
+      "sourceRecordId": "L1897-OCR-006",
+      "sourceChapter": "II",
+      "scriptureReference": "Psalms 25:8",
+      "previousTopicOwner": "AO.CARD.001",
+      "originalOcrLineRange": {
+        "start": 633,
+        "end": 639
+      },
+      "originalCitationKind": "EXPLICIT_REFERENCE",
+      "liturgicalMatchStatus": "LATIN_SOURCE_TEXT_MATCH_VERIFIED",
+      "cueId": "AO.SM.C0125",
+      "blockId": "AO.SM.B037",
+      "sourceFirstSectionId": "AO.CARD.010",
+      "sourceLatinExcerpt": "dilexi decorem domus",
+      "sourceRelation": "DIRECT_LATIN_PHRASE_IN_PRAYER",
+      "relatedPriorResearchIds": [
+        "FRG13"
+      ],
+      "editorialCaution": "Beauty of the Lord's house",
+      "verifyOriginalPageImage": false,
+      "publishToGuide": false
+    },
+    {
+      "sourceRecordId": "L1897-OCR-007",
+      "sourceChapter": "III",
+      "scriptureReference": "Matthew 26:39",
+      "previousTopicOwner": "AO.CARD.010",
+      "originalOcrLineRange": {
+        "start": 908,
+        "end": 916
+      },
+      "originalCitationKind": "EXPLICIT_REFERENCE",
+      "liturgicalMatchStatus": "NO_DIRECT_PHRASE_MATCH_REVIEWED_TOPIC_ONLY",
+      "cueId": null,
+      "blockId": null,
+      "sourceFirstSectionId": null,
+      "sourceLatinExcerpt": null,
+      "sourceRelation": "RESEARCH_TOPIC_ONLY_NOT_INLINE_GUIDE",
+      "relatedPriorResearchIds": [],
+      "editorialCaution": "Chalice as Passion",
+      "verifyOriginalPageImage": false,
+      "publishToGuide": false
+    },
+    {
+      "sourceRecordId": "L1897-OCR-008",
+      "sourceChapter": "III",
+      "scriptureReference": "Matthew 20:22",
+      "previousTopicOwner": "AO.CARD.010",
+      "originalOcrLineRange": {
+        "start": 916,
+        "end": 921
+      },
+      "originalCitationKind": "EXPLICIT_REFERENCE",
+      "liturgicalMatchStatus": "NO_DIRECT_PHRASE_MATCH_REVIEWED_TOPIC_ONLY",
+      "cueId": null,
+      "blockId": null,
+      "sourceFirstSectionId": null,
+      "sourceLatinExcerpt": null,
+      "sourceRelation": "RESEARCH_TOPIC_ONLY_NOT_INLINE_GUIDE",
+      "relatedPriorResearchIds": [],
+      "editorialCaution": "Cup shared by apostles",
+      "verifyOriginalPageImage": false,
+      "publishToGuide": false
+    },
+    {
+      "sourceRecordId": "L1897-OCR-009",
+      "sourceChapter": "III",
+      "scriptureReference": "Psalms 115:12-13",
+      "previousTopicOwner": "AO.CARD.023",
+      "originalOcrLineRange": {
+        "start": 925,
+        "end": 931
+      },
+      "originalCitationKind": "EXPLICIT_REFERENCE",
+      "liturgicalMatchStatus": "LATIN_SOURCE_TEXT_MATCH_VERIFIED",
+      "cueId": "AO.SM.C0233",
+      "blockId": "AO.SM.B075",
+      "sourceFirstSectionId": "AO.CARD.023",
+      "sourceLatinExcerpt": "calicem salutaris",
+      "sourceRelation": "DIRECT_LATIN_PHRASE_IN_PRAYER",
+      "relatedPriorResearchIds": [],
+      "editorialCaution": "Chalice of salvation; psalm numbering caution",
+      "verifyOriginalPageImage": false,
+      "publishToGuide": false
+    },
+    {
+      "sourceRecordId": "L1897-OCR-010",
+      "sourceChapter": "IV",
+      "scriptureReference": "Exodus 28:2",
+      "previousTopicOwner": "AO.CARD.001",
+      "originalOcrLineRange": {
+        "start": 992,
+        "end": 1009
+      },
+      "originalCitationKind": "EXPLICIT_REFERENCE",
+      "liturgicalMatchStatus": "NO_DIRECT_PHRASE_MATCH_REVIEWED_TOPIC_ONLY",
+      "cueId": null,
+      "blockId": null,
+      "sourceFirstSectionId": null,
+      "sourceLatinExcerpt": null,
+      "sourceRelation": "RESEARCH_TOPIC_ONLY_NOT_INLINE_GUIDE",
+      "relatedPriorResearchIds": [],
+      "editorialCaution": "Aaronic vestment typology",
+      "verifyOriginalPageImage": false,
+      "publishToGuide": false
+    },
+    {
+      "sourceRecordId": "L1897-OCR-011",
+      "sourceChapter": "IV",
+      "scriptureReference": "Sirach 50:6-11",
+      "previousTopicOwner": "AO.CARD.001",
+      "originalOcrLineRange": {
+        "start": 1265,
+        "end": 1279
+      },
+      "originalCitationKind": "EXPLICIT_REFERENCE_OCR_CORRECTION",
+      "liturgicalMatchStatus": "NO_DIRECT_PHRASE_MATCH_REVIEWED_TOPIC_ONLY",
+      "cueId": null,
+      "blockId": null,
+      "sourceFirstSectionId": null,
+      "sourceLatinExcerpt": null,
+      "sourceRelation": "RESEARCH_TOPIC_ONLY_NOT_INLINE_GUIDE",
+      "relatedPriorResearchIds": [],
+      "editorialCaution": "High-priest Simon imagery; l = fifty",
+      "verifyOriginalPageImage": false,
+      "publishToGuide": false
+    },
+    {
+      "sourceRecordId": "L1897-OCR-012",
+      "sourceChapter": "V",
+      "scriptureReference": "Ezekiel 16:8-13",
+      "previousTopicOwner": "AO.CARD.001",
+      "originalOcrLineRange": {
+        "start": 1291,
+        "end": 1304
+      },
+      "originalCitationKind": "EXPLICIT_REFERENCE",
+      "liturgicalMatchStatus": "NO_DIRECT_PHRASE_MATCH_REVIEWED_TOPIC_ONLY",
+      "cueId": null,
+      "blockId": null,
+      "sourceFirstSectionId": null,
+      "sourceLatinExcerpt": null,
+      "sourceRelation": "RESEARCH_TOPIC_ONLY_NOT_INLINE_GUIDE",
+      "relatedPriorResearchIds": [],
+      "editorialCaution": "Bridal finery related to liturgical colours; allegory not norm",
+      "verifyOriginalPageImage": false,
+      "publishToGuide": false
+    },
+    {
+      "sourceRecordId": "L1897-OCR-013",
+      "sourceChapter": "VIII",
+      "scriptureReference": "Revelation 5:8",
+      "previousTopicOwner": "AO.CARD.001",
+      "originalOcrLineRange": {
+        "start": 2141,
+        "end": 2163
+      },
+      "originalCitationKind": "EXPLICIT_REFERENCE",
+      "liturgicalMatchStatus": "NO_DIRECT_PHRASE_MATCH_REVIEWED_TOPIC_ONLY",
+      "cueId": null,
+      "blockId": null,
+      "sourceFirstSectionId": null,
+      "sourceLatinExcerpt": null,
+      "sourceRelation": "RESEARCH_TOPIC_ONLY_NOT_INLINE_GUIDE",
+      "relatedPriorResearchIds": [],
+      "editorialCaution": "Incense and prayer of saints; origin claim requires distinction",
+      "verifyOriginalPageImage": false,
+      "publishToGuide": false
+    },
+    {
+      "sourceRecordId": "L1897-OCR-014",
+      "sourceChapter": "IX",
+      "scriptureReference": "Luke 2:13-14",
+      "previousTopicOwner": "AO.CARD.003",
+      "originalOcrLineRange": {
+        "start": 2356,
+        "end": 2378
+      },
+      "originalCitationKind": "BIBLICAL_ALLUSION_VERSE_NORMALIZED",
+      "liturgicalMatchStatus": "NO_DIRECT_PHRASE_MATCH_REVIEWED_TOPIC_ONLY",
+      "cueId": null,
+      "blockId": null,
+      "sourceFirstSectionId": null,
+      "sourceLatinExcerpt": null,
+      "sourceRelation": "RESEARCH_TOPIC_ONLY_NOT_INLINE_GUIDE",
+      "relatedPriorResearchIds": [],
+      "editorialCaution": "Opening Gloria from angels; no verse printed",
+      "verifyOriginalPageImage": false,
+      "publishToGuide": false
+    },
+    {
+      "sourceRecordId": "L1897-OCR-015",
+      "sourceChapter": "X",
+      "scriptureReference": "Colossians 4:16",
+      "previousTopicOwner": "AO.CARD.005",
+      "originalOcrLineRange": {
+        "start": 2633,
+        "end": 2638
+      },
+      "originalCitationKind": "EXPLICIT_REFERENCE",
+      "liturgicalMatchStatus": "NO_DIRECT_PHRASE_MATCH_REVIEWED_TOPIC_ONLY",
+      "cueId": null,
+      "blockId": null,
+      "sourceFirstSectionId": null,
+      "sourceLatinExcerpt": null,
+      "sourceRelation": "RESEARCH_TOPIC_ONLY_NOT_INLINE_GUIDE",
+      "relatedPriorResearchIds": [],
+      "editorialCaution": "Reading and circulation of apostolic letters",
+      "verifyOriginalPageImage": false,
+      "publishToGuide": false
+    },
+    {
+      "sourceRecordId": "L1897-OCR-016",
+      "sourceChapter": "XI",
+      "scriptureReference": "Isaiah 14:13",
+      "previousTopicOwner": "AO.CARD.007",
+      "originalOcrLineRange": {
+        "start": 2828,
+        "end": 2837
+      },
+      "originalCitationKind": "EXPLICIT_REFERENCE_BUT_SPECULATIVE_ALLEGORY",
+      "liturgicalMatchStatus": "NO_DIRECT_PHRASE_MATCH_REVIEWED_TOPIC_ONLY",
+      "cueId": null,
+      "blockId": null,
+      "sourceFirstSectionId": null,
+      "sourceLatinExcerpt": null,
+      "sourceRelation": "RESEARCH_TOPIC_ONLY_NOT_INLINE_GUIDE",
+      "relatedPriorResearchIds": [],
+      "editorialCaution": "North/Gospel-side association is author's speculative symbolism, not origin",
+      "verifyOriginalPageImage": false,
+      "publishToGuide": false
+    },
+    {
+      "sourceRecordId": "L1897-OCR-017",
+      "sourceChapter": "XI",
+      "scriptureReference": "Jeremiah 1:14",
+      "previousTopicOwner": "AO.CARD.007",
+      "originalOcrLineRange": {
+        "start": 2833,
+        "end": 2838
+      },
+      "originalCitationKind": "EXPLICIT_REFERENCE_BUT_SPECULATIVE_ALLEGORY",
+      "liturgicalMatchStatus": "NO_DIRECT_PHRASE_MATCH_REVIEWED_TOPIC_ONLY",
+      "cueId": null,
+      "blockId": null,
+      "sourceFirstSectionId": null,
+      "sourceLatinExcerpt": null,
+      "sourceRelation": "RESEARCH_TOPIC_ONLY_NOT_INLINE_GUIDE",
+      "relatedPriorResearchIds": [],
+      "editorialCaution": "Do not imply reference explains historical side change",
+      "verifyOriginalPageImage": false,
+      "publishToGuide": false
+    },
+    {
+      "sourceRecordId": "L1897-OCR-018",
+      "sourceChapter": "XI",
+      "scriptureReference": "Isaiah 6:1-8",
+      "previousTopicOwner": "AO.CARD.007",
+      "originalOcrLineRange": {
+        "start": 2841,
+        "end": 2875
+      },
+      "originalCitationKind": "EXPLICIT_REFERENCE",
+      "liturgicalMatchStatus": "LATIN_SOURCE_TEXT_MATCH_VERIFIED",
+      "cueId": "AO.SM.C0079",
+      "blockId": "AO.SM.B023",
+      "sourceFirstSectionId": "AO.CARD.007",
+      "sourceLatinExcerpt": "isaiae prophetae",
+      "sourceRelation": "DIRECT_LATIN_PHRASE_IN_PRAYER",
+      "relatedPriorResearchIds": [],
+      "editorialCaution": "Munda cor meum and prophet's coal",
+      "verifyOriginalPageImage": false,
+      "publishToGuide": false
+    },
+    {
+      "sourceRecordId": "L1897-OCR-019",
+      "sourceChapter": "XI",
+      "scriptureReference": "Luke 9:26",
+      "previousTopicOwner": "AO.CARD.007",
+      "originalOcrLineRange": {
+        "start": 2899,
+        "end": 2912
+      },
+      "originalCitationKind": "EXPLICIT_REFERENCE",
+      "liturgicalMatchStatus": "NO_DIRECT_PHRASE_MATCH_REVIEWED_TOPIC_ONLY",
+      "cueId": null,
+      "blockId": null,
+      "sourceFirstSectionId": null,
+      "sourceLatinExcerpt": null,
+      "sourceRelation": "RESEARCH_TOPIC_ONLY_NOT_INLINE_GUIDE",
+      "relatedPriorResearchIds": [],
+      "editorialCaution": "Gospel small-cross forehead explanation",
+      "verifyOriginalPageImage": false,
+      "publishToGuide": false
+    },
+    {
+      "sourceRecordId": "L1897-OCR-020",
+      "sourceChapter": "XI",
+      "scriptureReference": "Romans 10:10",
+      "previousTopicOwner": "AO.CARD.007",
+      "originalOcrLineRange": {
+        "start": 2921,
+        "end": 2931
+      },
+      "originalCitationKind": "EXPLICIT_REFERENCE",
+      "liturgicalMatchStatus": "NO_DIRECT_PHRASE_MATCH_REVIEWED_TOPIC_ONLY",
+      "cueId": null,
+      "blockId": null,
+      "sourceFirstSectionId": null,
+      "sourceLatinExcerpt": null,
+      "sourceRelation": "RESEARCH_TOPIC_ONLY_NOT_INLINE_GUIDE",
+      "relatedPriorResearchIds": [],
+      "editorialCaution": "Heart and mouth confessing the faith",
+      "verifyOriginalPageImage": false,
+      "publishToGuide": false
+    },
+    {
+      "sourceRecordId": "L1897-OCR-021",
+      "sourceChapter": "XI",
+      "scriptureReference": "Nehemiah 8",
+      "previousTopicOwner": "AO.CARD.007",
+      "originalOcrLineRange": {
+        "start": 2930,
+        "end": 2937
+      },
+      "originalCitationKind": "EXPLICIT_REFERENCE_BOOK_CHAPTER",
+      "liturgicalMatchStatus": "NO_DIRECT_PHRASE_MATCH_REVIEWED_TOPIC_ONLY",
+      "cueId": null,
+      "blockId": null,
+      "sourceFirstSectionId": null,
+      "sourceLatinExcerpt": null,
+      "sourceRelation": "RESEARCH_TOPIC_ONLY_NOT_INLINE_GUIDE",
+      "relatedPriorResearchIds": [],
+      "editorialCaution": "Standing to hear Scripture; validate Old Testament naming by edition",
+      "verifyOriginalPageImage": false,
+      "publishToGuide": false
+    },
+    {
+      "sourceRecordId": "L1897-OCR-022",
+      "sourceChapter": "XI",
+      "scriptureReference": "Luke 4:16",
+      "previousTopicOwner": "AO.CARD.007",
+      "originalOcrLineRange": {
+        "start": 2936,
+        "end": 2940
+      },
+      "originalCitationKind": "EXPLICIT_REFERENCE",
+      "liturgicalMatchStatus": "NO_DIRECT_PHRASE_MATCH_REVIEWED_TOPIC_ONLY",
+      "cueId": null,
+      "blockId": null,
+      "sourceFirstSectionId": null,
+      "sourceLatinExcerpt": null,
+      "sourceRelation": "RESEARCH_TOPIC_ONLY_NOT_INLINE_GUIDE",
+      "relatedPriorResearchIds": [],
+      "editorialCaution": "Christ stands to read",
+      "verifyOriginalPageImage": false,
+      "publishToGuide": false
+    },
+    {
+      "sourceRecordId": "L1897-OCR-023",
+      "sourceChapter": "XIII",
+      "scriptureReference": "Matthew 5:23",
+      "previousTopicOwner": "AO.CARD.010",
+      "originalOcrLineRange": {
+        "start": 3575,
+        "end": 3583
+      },
+      "originalCitationKind": "EXPLICIT_REFERENCE",
+      "liturgicalMatchStatus": "NO_DIRECT_PHRASE_MATCH_REVIEWED_TOPIC_ONLY",
+      "cueId": null,
+      "blockId": null,
+      "sourceFirstSectionId": null,
+      "sourceLatinExcerpt": null,
+      "sourceRelation": "RESEARCH_TOPIC_ONLY_NOT_INLINE_GUIDE",
+      "relatedPriorResearchIds": [],
+      "editorialCaution": "Reconciliation before presenting offering",
+      "verifyOriginalPageImage": false,
+      "publishToGuide": false
+    },
+    {
+      "sourceRecordId": "L1897-OCR-024",
+      "sourceChapter": "XIII",
+      "scriptureReference": "1 Corinthians 5:7-8",
+      "previousTopicOwner": "AO.CARD.010",
+      "originalOcrLineRange": {
+        "start": 3760,
+        "end": 3771
+      },
+      "originalCitationKind": "EXPLICIT_REFERENCE",
+      "liturgicalMatchStatus": "NO_DIRECT_PHRASE_MATCH_REVIEWED_TOPIC_ONLY",
+      "cueId": null,
+      "blockId": null,
+      "sourceFirstSectionId": null,
+      "sourceLatinExcerpt": null,
+      "sourceRelation": "RESEARCH_TOPIC_ONLY_NOT_INLINE_GUIDE",
+      "relatedPriorResearchIds": [],
+      "editorialCaution": "Unleavened bread and Christ our Pasch",
+      "verifyOriginalPageImage": false,
+      "publishToGuide": false
+    },
+    {
+      "sourceRecordId": "L1897-OCR-025",
+      "sourceChapter": "XIV",
+      "scriptureReference": "Psalms 140:2-4",
+      "previousTopicOwner": "AO.CARD.010",
+      "originalOcrLineRange": {
+        "start": 4101,
+        "end": 4114
+      },
+      "originalCitationKind": "EXPLICIT_BOOK_CHAPTER_VERSE_NORMALIZED",
+      "liturgicalMatchStatus": "LATIN_SOURCE_TEXT_MATCH_VERIFIED",
+      "cueId": "AO.SM.C0122",
+      "blockId": "AO.SM.B036",
+      "sourceFirstSectionId": "AO.CARD.010",
+      "sourceLatinExcerpt": "dirigatur domine oratio mea sicut incensum",
+      "sourceRelation": "DIRECT_LATIN_PHRASE_IN_PRAYER",
+      "relatedPriorResearchIds": [],
+      "editorialCaution": "Incense prayer; Vulgate Psalm 140",
+      "verifyOriginalPageImage": false,
+      "publishToGuide": false
+    },
+    {
+      "sourceRecordId": "L1897-OCR-026",
+      "sourceChapter": "XIV",
+      "scriptureReference": "Psalms 25:6-12",
+      "previousTopicOwner": "AO.CARD.010",
+      "originalOcrLineRange": {
+        "start": 4164,
+        "end": 4180
+      },
+      "originalCitationKind": "EXPLICIT_BOOK_CHAPTER_VERSE_NORMALIZED",
+      "liturgicalMatchStatus": "LATIN_SOURCE_TEXT_MATCH_VERIFIED",
+      "cueId": "AO.SM.C0125",
+      "blockId": "AO.SM.B037",
+      "sourceFirstSectionId": "AO.CARD.010",
+      "sourceLatinExcerpt": "lavabo inter innocentes manus meas",
+      "sourceRelation": "DIRECT_LATIN_PHRASE_IN_PRAYER",
+      "relatedPriorResearchIds": [
+        "FRG13"
+      ],
+      "editorialCaution": "Lavabo inter innocentes; original prints Psalm 25, verse span mapped editorially, Vulgate numbering",
+      "verifyOriginalPageImage": false,
+      "publishToGuide": false
+    },
+    {
+      "sourceRecordId": "L1897-OCR-027",
+      "sourceChapter": "XV",
+      "scriptureReference": "Isaiah 6:3",
+      "previousTopicOwner": "AO.CARD.013",
+      "originalOcrLineRange": {
+        "start": 4819,
+        "end": 4828
+      },
+      "originalCitationKind": "EXPLICIT_REFERENCE",
+      "liturgicalMatchStatus": "LATIN_SOURCE_TEXT_MATCH_VERIFIED",
+      "cueId": "AO.SM.C0145",
+      "blockId": "AO.SM.B046",
+      "sourceFirstSectionId": "AO.CARD.013",
+      "sourceLatinExcerpt": "sanctus sanctus sanctus",
+      "sourceRelation": "DIRECT_LATIN_PHRASE_IN_PRAYER",
+      "relatedPriorResearchIds": [],
+      "editorialCaution": "Sanctus celestial praise",
+      "verifyOriginalPageImage": false,
+      "publishToGuide": false
+    },
+    {
+      "sourceRecordId": "L1897-OCR-028",
+      "sourceChapter": "XV",
+      "scriptureReference": "Revelation 4:8",
+      "previousTopicOwner": "AO.CARD.013",
+      "originalOcrLineRange": {
+        "start": 4825,
+        "end": 4830
+      },
+      "originalCitationKind": "EXPLICIT_REFERENCE",
+      "liturgicalMatchStatus": "LATIN_SOURCE_TEXT_MATCH_VERIFIED",
+      "cueId": "AO.SM.C0145",
+      "blockId": "AO.SM.B046",
+      "sourceFirstSectionId": "AO.CARD.013",
+      "sourceLatinExcerpt": "sanctus sanctus sanctus",
+      "sourceRelation": "DIRECT_LATIN_PHRASE_IN_PRAYER",
+      "relatedPriorResearchIds": [],
+      "editorialCaution": "Sanctus heavenly vision",
+      "verifyOriginalPageImage": false,
+      "publishToGuide": false
+    },
+    {
+      "sourceRecordId": "L1897-OCR-029",
+      "sourceChapter": "XV",
+      "scriptureReference": "Matthew 21:9",
+      "previousTopicOwner": "AO.CARD.013",
+      "originalOcrLineRange": {
+        "start": 4862,
+        "end": 4870
+      },
+      "originalCitationKind": "EXPLICIT_REFERENCE",
+      "liturgicalMatchStatus": "LATIN_SOURCE_TEXT_MATCH_VERIFIED",
+      "cueId": "AO.SM.C0148",
+      "blockId": "AO.SM.B046",
+      "sourceFirstSectionId": "AO.CARD.013",
+      "sourceLatinExcerpt": "benedictus qui venit in nomine domini",
+      "sourceRelation": "DIRECT_LATIN_PHRASE_IN_PRAYER",
+      "relatedPriorResearchIds": [],
+      "editorialCaution": "Benedictus from entrance to Jerusalem",
+      "verifyOriginalPageImage": false,
+      "publishToGuide": false
+    },
+    {
+      "sourceRecordId": "L1897-OCR-030",
+      "sourceChapter": "XIX",
+      "scriptureReference": "Exodus 12",
+      "previousTopicOwner": "AO.CANON.07",
+      "originalOcrLineRange": {
+        "start": 6498,
+        "end": 6507
+      },
+      "originalCitationKind": "EXPLICIT_REFERENCE_BOOK_CHAPTER",
+      "liturgicalMatchStatus": "NO_DIRECT_PHRASE_MATCH_REVIEWED_TOPIC_ONLY",
+      "cueId": null,
+      "blockId": null,
+      "sourceFirstSectionId": null,
+      "sourceLatinExcerpt": null,
+      "sourceRelation": "RESEARCH_TOPIC_ONLY_NOT_INLINE_GUIDE",
+      "relatedPriorResearchIds": [],
+      "editorialCaution": "Paschal lamb is a figure of the Eucharistic Lamb",
+      "verifyOriginalPageImage": false,
+      "publishToGuide": false
+    },
+    {
+      "sourceRecordId": "L1897-OCR-031",
+      "sourceChapter": "XX",
+      "scriptureReference": "Revelation 5:6",
+      "previousTopicOwner": "AO.CANON.08",
+      "originalOcrLineRange": {
+        "start": 6711,
+        "end": 6721
+      },
+      "originalCitationKind": "BIBLICAL_ALLUSION_VERSE_NORMALIZED",
+      "liturgicalMatchStatus": "NO_DIRECT_PHRASE_MATCH_REVIEWED_TOPIC_ONLY",
+      "cueId": null,
+      "blockId": null,
+      "sourceFirstSectionId": null,
+      "sourceLatinExcerpt": null,
+      "sourceRelation": "RESEARCH_TOPIC_ONLY_NOT_INLINE_GUIDE",
+      "relatedPriorResearchIds": [],
+      "editorialCaution": "No physical new death of risen Christ; doctrinal wording review",
+      "verifyOriginalPageImage": false,
+      "publishToGuide": false
+    },
+    {
+      "sourceRecordId": "L1897-OCR-032",
+      "sourceChapter": "XX",
+      "scriptureReference": "Malachi 1:11",
+      "previousTopicOwner": "AO.CANON.08",
+      "originalOcrLineRange": {
+        "start": 6820,
+        "end": 6836
+      },
+      "originalCitationKind": "BIBLICAL_ALLUSION_VERSE_NORMALIZED",
+      "liturgicalMatchStatus": "NO_DIRECT_PHRASE_MATCH_REVIEWED_TOPIC_ONLY",
+      "cueId": null,
+      "blockId": null,
+      "sourceFirstSectionId": null,
+      "sourceLatinExcerpt": null,
+      "sourceRelation": "RESEARCH_TOPIC_ONLY_NOT_INLINE_GUIDE",
+      "relatedPriorResearchIds": [],
+      "editorialCaution": "Reuses authorial Malachi interpretation from ch. I",
+      "verifyOriginalPageImage": false,
+      "publishToGuide": false
+    },
+    {
+      "sourceRecordId": "L1897-OCR-033",
+      "sourceChapter": "XXIII",
+      "scriptureReference": "Isaiah 53:5",
+      "previousTopicOwner": "AO.CARD.020",
+      "originalOcrLineRange": {
+        "start": 8251,
+        "end": 8257
+      },
+      "originalCitationKind": "EXPLICIT_REFERENCE",
+      "liturgicalMatchStatus": "NO_DIRECT_PHRASE_MATCH_REVIEWED_TOPIC_ONLY",
+      "cueId": null,
+      "blockId": null,
+      "sourceFirstSectionId": null,
+      "sourceLatinExcerpt": null,
+      "sourceRelation": "RESEARCH_TOPIC_ONLY_NOT_INLINE_GUIDE",
+      "relatedPriorResearchIds": [],
+      "editorialCaution": "Fraction and wounded servant, attribution interpretation",
+      "verifyOriginalPageImage": false,
+      "publishToGuide": false
+    },
+    {
+      "sourceRecordId": "L1897-OCR-034",
+      "sourceChapter": "XXIII",
+      "scriptureReference": "John 6:52",
+      "previousTopicOwner": "AO.CARD.020",
+      "originalOcrLineRange": {
+        "start": 8281,
+        "end": 8293
+      },
+      "originalCitationKind": "EXPLICIT_REFERENCE",
+      "liturgicalMatchStatus": "NO_DIRECT_PHRASE_MATCH_REVIEWED_TOPIC_ONLY",
+      "cueId": null,
+      "blockId": null,
+      "sourceFirstSectionId": null,
+      "sourceLatinExcerpt": null,
+      "sourceRelation": "RESEARCH_TOPIC_ONLY_NOT_INLINE_GUIDE",
+      "relatedPriorResearchIds": [],
+      "editorialCaution": "Bread given for the life of the world; check versification",
+      "verifyOriginalPageImage": false,
+      "publishToGuide": false
+    },
+    {
+      "sourceRecordId": "L1897-OCR-035",
+      "sourceChapter": "XXIII",
+      "scriptureReference": "John 1:29",
+      "previousTopicOwner": "AO.CARD.021",
+      "originalOcrLineRange": {
+        "start": 8502,
+        "end": 8507
+      },
+      "originalCitationKind": "BIBLICAL_ALLUSION_VERSE_NORMALIZED",
+      "liturgicalMatchStatus": "LATIN_SOURCE_TEXT_MATCH_VERIFIED",
+      "cueId": "AO.SM.C0222",
+      "blockId": "AO.SM.B068",
+      "sourceFirstSectionId": "AO.CARD.021",
+      "sourceLatinExcerpt": "agnus dei qui tollis peccata mundi",
+      "sourceRelation": "DIRECT_LATIN_PHRASE_IN_PRAYER",
+      "relatedPriorResearchIds": [
+        "FRG58"
+      ],
+      "editorialCaution": "Agnus Dei phrase and presentation to communicants",
+      "verifyOriginalPageImage": false,
+      "publishToGuide": false
+    },
+    {
+      "sourceRecordId": "L1897-OCR-036",
+      "sourceChapter": "XXIV",
+      "scriptureReference": "Hebrews 9:14",
+      "previousTopicOwner": "AO.CARD.022",
+      "originalOcrLineRange": {
+        "start": 8743,
+        "end": 8752
+      },
+      "originalCitationKind": "EXPLICIT_REFERENCE",
+      "liturgicalMatchStatus": "NO_DIRECT_PHRASE_MATCH_REVIEWED_TOPIC_ONLY",
+      "cueId": null,
+      "blockId": null,
+      "sourceFirstSectionId": null,
+      "sourceLatinExcerpt": null,
+      "sourceRelation": "RESEARCH_TOPIC_ONLY_NOT_INLINE_GUIDE",
+      "relatedPriorResearchIds": [],
+      "editorialCaution": "Christ offering through eternal Spirit",
+      "verifyOriginalPageImage": false,
+      "publishToGuide": false
+    },
+    {
+      "sourceRecordId": "L1897-OCR-037",
+      "sourceChapter": "XXIV",
+      "scriptureReference": "1 Corinthians 11:26",
+      "previousTopicOwner": "AO.CARD.022",
+      "originalOcrLineRange": {
+        "start": 8753,
+        "end": 8758
+      },
+      "originalCitationKind": "EXPLICIT_REFERENCE",
+      "liturgicalMatchStatus": "NO_DIRECT_PHRASE_MATCH_REVIEWED_TOPIC_ONLY",
+      "cueId": null,
+      "blockId": null,
+      "sourceFirstSectionId": null,
+      "sourceLatinExcerpt": null,
+      "sourceRelation": "RESEARCH_TOPIC_ONLY_NOT_INLINE_GUIDE",
+      "relatedPriorResearchIds": [],
+      "editorialCaution": "Proclaiming Lord's death until He comes",
+      "verifyOriginalPageImage": false,
+      "publishToGuide": false
+    },
+    {
+      "sourceRecordId": "L1897-OCR-038",
+      "sourceChapter": "XXIV",
+      "scriptureReference": "Matthew 8:8",
+      "previousTopicOwner": "AO.CARD.023",
+      "originalOcrLineRange": {
+        "start": 8888,
+        "end": 8912
+      },
+      "originalCitationKind": "BIBLICAL_ALLUSION_VERSE_NORMALIZED",
+      "liturgicalMatchStatus": "LATIN_SOURCE_TEXT_MATCH_VERIFIED",
+      "cueId": "AO.SM.C0229",
+      "blockId": "AO.SM.B073",
+      "sourceFirstSectionId": "AO.CARD.022",
+      "sourceLatinExcerpt": "domine non sum dignus ut intres sub tectum meum",
+      "sourceRelation": "DIRECT_LATIN_PHRASE_IN_PRAYER",
+      "relatedPriorResearchIds": [
+        "FRG63"
+      ],
+      "editorialCaution": "Domine non sum dignus and priest Communion",
+      "verifyOriginalPageImage": false,
+      "publishToGuide": false
+    },
+    {
+      "sourceRecordId": "L1897-OCR-039",
+      "sourceChapter": "XXIV",
+      "scriptureReference": "Matthew 11:28",
+      "previousTopicOwner": "AO.CARD.023",
+      "originalOcrLineRange": {
+        "start": 8913,
+        "end": 8916
+      },
+      "originalCitationKind": "EXPLICIT_REFERENCE",
+      "liturgicalMatchStatus": "NO_DIRECT_PHRASE_MATCH_REVIEWED_TOPIC_ONLY",
+      "cueId": null,
+      "blockId": null,
+      "sourceFirstSectionId": null,
+      "sourceLatinExcerpt": null,
+      "sourceRelation": "RESEARCH_TOPIC_ONLY_NOT_INLINE_GUIDE",
+      "relatedPriorResearchIds": [],
+      "editorialCaution": "Come unto me, weary and burdened",
+      "verifyOriginalPageImage": false,
+      "publishToGuide": false
+    },
+    {
+      "sourceRecordId": "L1897-OCR-040",
+      "sourceChapter": "XXIV",
+      "scriptureReference": "Song of Songs 2:16",
+      "previousTopicOwner": "AO.CARD.023",
+      "originalOcrLineRange": {
+        "start": 8945,
+        "end": 8950
+      },
+      "originalCitationKind": "EXPLICIT_REFERENCE",
+      "liturgicalMatchStatus": "NO_DIRECT_PHRASE_MATCH_REVIEWED_TOPIC_ONLY",
+      "cueId": null,
+      "blockId": null,
+      "sourceFirstSectionId": null,
+      "sourceLatinExcerpt": null,
+      "sourceRelation": "RESEARCH_TOPIC_ONLY_NOT_INLINE_GUIDE",
+      "relatedPriorResearchIds": [],
+      "editorialCaution": "Priest after Communion meditation",
+      "verifyOriginalPageImage": false,
+      "publishToGuide": false
+    },
+    {
+      "sourceRecordId": "L1897-OCR-041",
+      "sourceChapter": "XXIV",
+      "scriptureReference": "Song of Songs 3:4",
+      "previousTopicOwner": "AO.CARD.023",
+      "originalOcrLineRange": {
+        "start": 8945,
+        "end": 8950
+      },
+      "originalCitationKind": "EXPLICIT_REFERENCE",
+      "liturgicalMatchStatus": "NO_DIRECT_PHRASE_MATCH_REVIEWED_TOPIC_ONLY",
+      "cueId": null,
+      "blockId": null,
+      "sourceFirstSectionId": null,
+      "sourceLatinExcerpt": null,
+      "sourceRelation": "RESEARCH_TOPIC_ONLY_NOT_INLINE_GUIDE",
+      "relatedPriorResearchIds": [],
+      "editorialCaution": "Priest after Communion meditation",
+      "verifyOriginalPageImage": false,
+      "publishToGuide": false
+    },
+    {
+      "sourceRecordId": "L1897-OCR-042",
+      "sourceChapter": "XXIV",
+      "scriptureReference": "Leviticus 20:7",
+      "previousTopicOwner": "AO.CARD.026",
+      "originalOcrLineRange": {
+        "start": 9243,
+        "end": 9249
+      },
+      "originalCitationKind": "EXPLICIT_REFERENCE",
+      "liturgicalMatchStatus": "NO_DIRECT_PHRASE_MATCH_REVIEWED_TOPIC_ONLY",
+      "cueId": null,
+      "blockId": null,
+      "sourceFirstSectionId": null,
+      "sourceLatinExcerpt": null,
+      "sourceRelation": "RESEARCH_TOPIC_ONLY_NOT_INLINE_GUIDE",
+      "relatedPriorResearchIds": [],
+      "editorialCaution": "Purification and holiness",
+      "verifyOriginalPageImage": false,
+      "publishToGuide": false
+    },
+    {
+      "sourceRecordId": "L1897-OCR-043",
+      "sourceChapter": "XXV",
+      "scriptureReference": "John 1:1-14",
+      "previousTopicOwner": "AO.CARD.030",
+      "originalOcrLineRange": {
+        "start": 9690,
+        "end": 9732
+      },
+      "originalCitationKind": "BIBLICAL_LITURGICAL_TEXT_MATCH",
+      "liturgicalMatchStatus": "LATIN_SOURCE_TEXT_MATCH_VERIFIED",
+      "cueId": "AO.SM.C0271",
+      "blockId": "AO.SM.B095",
+      "sourceFirstSectionId": "AO.CARD.030",
+      "sourceLatinExcerpt": "in principio erat verbum",
+      "sourceRelation": "DIRECT_LATIN_PHRASE_IN_PRAYER",
+      "relatedPriorResearchIds": [
+        "FRG30",
+        "FRG71"
+      ],
+      "editorialCaution": "Do not use older proper Last Gospel rules as 1962 law",
+      "verifyOriginalPageImage": false,
+      "publishToGuide": false
+    },
+    {
+      "sourceRecordId": "L1897-OCR2-001",
+      "sourceChapter": "II",
+      "scriptureReference": "Exodus 26",
+      "previousTopicOwner": "AO.CARD.001",
+      "originalOcrLineRange": {
+        "start": 815,
+        "end": 820
+      },
+      "originalCitationKind": "BOOK_CHAPTER_EXPLICIT",
+      "liturgicalMatchStatus": "NO_DIRECT_PHRASE_MATCH_REVIEWED_TOPIC_ONLY",
+      "cueId": null,
+      "blockId": null,
+      "sourceFirstSectionId": null,
+      "sourceLatinExcerpt": null,
+      "sourceRelation": "RESEARCH_TOPIC_ONLY_NOT_INLINE_GUIDE",
+      "relatedPriorResearchIds": [],
+      "editorialCaution": "Biblical tabernacle fabrics and decoration; not claim Christian ornament rules were prescribed by Exodus",
+      "verifyOriginalPageImage": false,
+      "publishToGuide": false
+    },
+    {
+      "sourceRecordId": "L1897-OCR2-002",
+      "sourceChapter": "II",
+      "scriptureReference": "Psalms 96:11",
+      "previousTopicOwner": "AO.CARD.001",
+      "originalOcrLineRange": {
+        "start": 697,
+        "end": 701
+      },
+      "originalCitationKind": "EXPLICIT_CITATION_OCR_NUMERAL_DAMAGED",
+      "liturgicalMatchStatus": "NO_DIRECT_PHRASE_MATCH_REVIEWED_TOPIC_ONLY",
+      "cueId": null,
+      "blockId": null,
+      "sourceFirstSectionId": null,
+      "sourceLatinExcerpt": null,
+      "sourceRelation": "RESEARCH_TOPIC_ONLY_NOT_INLINE_GUIDE",
+      "relatedPriorResearchIds": [],
+      "editorialCaution": "Text 'light is risen to the just'; confirm Psalm numeration and damaged OCR number visually",
+      "verifyOriginalPageImage": false,
+      "publishToGuide": false
+    },
+    {
+      "sourceRecordId": "L1897-OCR2-003",
+      "sourceChapter": "II",
+      "scriptureReference": "Matthew 4:16",
+      "previousTopicOwner": "AO.CARD.001",
+      "originalOcrLineRange": {
+        "start": 700,
+        "end": 705
+      },
+      "originalCitationKind": "EXPLICIT_CITATION",
+      "liturgicalMatchStatus": "NO_DIRECT_PHRASE_MATCH_REVIEWED_TOPIC_ONLY",
+      "cueId": null,
+      "blockId": null,
+      "sourceFirstSectionId": null,
+      "sourceLatinExcerpt": null,
+      "sourceRelation": "RESEARCH_TOPIC_ONLY_NOT_INLINE_GUIDE",
+      "relatedPriorResearchIds": [],
+      "editorialCaution": "Light metaphor; not claimed historic reason for candle requirement",
+      "verifyOriginalPageImage": false,
+      "publishToGuide": false
+    },
+    {
+      "sourceRecordId": "L1897-OCR2-004",
+      "sourceChapter": "II",
+      "scriptureReference": "Psalms 91:13",
+      "previousTopicOwner": "AO.CARD.001",
+      "originalOcrLineRange": {
+        "start": 786,
+        "end": 791
+      },
+      "originalCitationKind": "EXPLICIT_CITATION",
+      "liturgicalMatchStatus": "NO_DIRECT_PHRASE_MATCH_REVIEWED_TOPIC_ONLY",
+      "cueId": null,
+      "blockId": null,
+      "sourceFirstSectionId": null,
+      "sourceLatinExcerpt": null,
+      "sourceRelation": "RESEARCH_TOPIC_ONLY_NOT_INLINE_GUIDE",
+      "relatedPriorResearchIds": [],
+      "editorialCaution": "Just flourishing like palm; floristic devotional symbolism",
+      "verifyOriginalPageImage": false,
+      "publishToGuide": false
+    },
+    {
+      "sourceRecordId": "L1897-OCR2-005",
+      "sourceChapter": "II",
+      "scriptureReference": "Sirach 24:18",
+      "previousTopicOwner": "AO.CARD.001",
+      "originalOcrLineRange": {
+        "start": 786,
+        "end": 791
+      },
+      "originalCitationKind": "EXPLICIT_CITATION",
+      "liturgicalMatchStatus": "NO_DIRECT_PHRASE_MATCH_REVIEWED_TOPIC_ONLY",
+      "cueId": null,
+      "blockId": null,
+      "sourceFirstSectionId": null,
+      "sourceLatinExcerpt": null,
+      "sourceRelation": "RESEARCH_TOPIC_ONLY_NOT_INLINE_GUIDE",
+      "relatedPriorResearchIds": [],
+      "editorialCaution": "Roses in Jericho; confirm traditional Ecclesiasticus/Douay versification",
+      "verifyOriginalPageImage": false,
+      "publishToGuide": false
+    },
+    {
+      "sourceRecordId": "L1897-OCR2-006",
+      "sourceChapter": "II",
+      "scriptureReference": "Song of Songs 2:2",
+      "previousTopicOwner": "AO.CARD.001",
+      "originalOcrLineRange": {
+        "start": 789,
+        "end": 795
+      },
+      "originalCitationKind": "EXPLICIT_CITATION",
+      "liturgicalMatchStatus": "NO_DIRECT_PHRASE_MATCH_REVIEWED_TOPIC_ONLY",
+      "cueId": null,
+      "blockId": null,
+      "sourceFirstSectionId": null,
+      "sourceLatinExcerpt": null,
+      "sourceRelation": "RESEARCH_TOPIC_ONLY_NOT_INLINE_GUIDE",
+      "relatedPriorResearchIds": [],
+      "editorialCaution": "Lily among thorns; devotional floral typology",
+      "verifyOriginalPageImage": false,
+      "publishToGuide": false
+    },
+    {
+      "sourceRecordId": "L1897-OCR2-007",
+      "sourceChapter": "IV",
+      "scriptureReference": "Matthew 26:68",
+      "previousTopicOwner": "AO.CARD.001",
+      "originalOcrLineRange": {
+        "start": 1061,
+        "end": 1066
+      },
+      "originalCitationKind": "EXPLICIT_CITATION",
+      "liturgicalMatchStatus": "NO_DIRECT_PHRASE_MATCH_REVIEWED_TOPIC_ONLY",
+      "cueId": null,
+      "blockId": null,
+      "sourceFirstSectionId": null,
+      "sourceLatinExcerpt": null,
+      "sourceRelation": "RESEARCH_TOPIC_ONLY_NOT_INLINE_GUIDE",
+      "relatedPriorResearchIds": [],
+      "editorialCaution": "Amice as allegory of veiling Christ during Passion; not historical etiology",
+      "verifyOriginalPageImage": false,
+      "publishToGuide": false
+    },
+    {
+      "sourceRecordId": "L1897-OCR2-008",
+      "sourceChapter": "IV",
+      "scriptureReference": "Matthew 28:18",
+      "previousTopicOwner": "AO.CARD.001",
+      "originalOcrLineRange": {
+        "start": 1200,
+        "end": 1209
+      },
+      "originalCitationKind": "EXPLICIT_CITATION_OCR_PUNCTUATION",
+      "liturgicalMatchStatus": "NO_DIRECT_PHRASE_MATCH_REVIEWED_TOPIC_ONLY",
+      "cueId": null,
+      "blockId": null,
+      "sourceFirstSectionId": null,
+      "sourceLatinExcerpt": null,
+      "sourceRelation": "RESEARCH_TOPIC_ONLY_NOT_INLINE_GUIDE",
+      "relatedPriorResearchIds": [],
+      "editorialCaution": "Priestly mission explanation; chapter source quoted, Church authority remains distinct",
+      "verifyOriginalPageImage": false,
+      "publishToGuide": false
+    },
+    {
+      "sourceRecordId": "L1897-OCR2-009",
+      "sourceChapter": "IV",
+      "scriptureReference": "John 20:21",
+      "previousTopicOwner": "AO.CARD.001",
+      "originalOcrLineRange": {
+        "start": 1205,
+        "end": 1210
+      },
+      "originalCitationKind": "EXPLICIT_CITATION",
+      "liturgicalMatchStatus": "NO_DIRECT_PHRASE_MATCH_REVIEWED_TOPIC_ONLY",
+      "cueId": null,
+      "blockId": null,
+      "sourceFirstSectionId": null,
+      "sourceLatinExcerpt": null,
+      "sourceRelation": "RESEARCH_TOPIC_ONLY_NOT_INLINE_GUIDE",
+      "relatedPriorResearchIds": [],
+      "editorialCaution": "Priestly mission, priestly stole as yoke; historical allegory",
+      "verifyOriginalPageImage": false,
+      "publishToGuide": false
+    },
+    {
+      "sourceRecordId": "L1897-OCR2-010",
+      "sourceChapter": "V",
+      "scriptureReference": "Psalms 117:24",
+      "previousTopicOwner": null,
+      "originalOcrLineRange": {
+        "start": 1381,
+        "end": 1386
+      },
+      "originalCitationKind": "EXPLICIT_CITATION",
+      "liturgicalMatchStatus": "NO_DIRECT_PHRASE_MATCH_REVIEWED_TOPIC_ONLY",
+      "cueId": null,
+      "blockId": null,
+      "sourceFirstSectionId": null,
+      "sourceLatinExcerpt": null,
+      "sourceRelation": "RESEARCH_TOPIC_ONLY_NOT_INLINE_GUIDE",
+      "relatedPriorResearchIds": [],
+      "editorialCaution": "Joy/Easter; 1897 colour explanations do not set 1962 feast colours",
+      "verifyOriginalPageImage": false,
+      "publishToGuide": false
+    },
+    {
+      "sourceRecordId": "L1897-OCR2-011",
+      "sourceChapter": "V",
+      "scriptureReference": "Matthew 17:2",
+      "previousTopicOwner": null,
+      "originalOcrLineRange": {
+        "start": 1355,
+        "end": 1363
+      },
+      "originalCitationKind": "EXPLICIT_CITATION",
+      "liturgicalMatchStatus": "NO_DIRECT_PHRASE_MATCH_REVIEWED_TOPIC_ONLY",
+      "cueId": null,
+      "blockId": null,
+      "sourceFirstSectionId": null,
+      "sourceLatinExcerpt": null,
+      "sourceRelation": "RESEARCH_TOPIC_ONLY_NOT_INLINE_GUIDE",
+      "relatedPriorResearchIds": [],
+      "editorialCaution": "Transfiguration garment imagery for white",
+      "verifyOriginalPageImage": false,
+      "publishToGuide": false
+    },
+    {
+      "sourceRecordId": "L1897-OCR2-012",
+      "sourceChapter": "V",
+      "scriptureReference": "Revelation 7:9",
+      "previousTopicOwner": null,
+      "originalOcrLineRange": {
+        "start": 1361,
+        "end": 1366
+      },
+      "originalCitationKind": "EXPLICIT_CITATION",
+      "liturgicalMatchStatus": "NO_DIRECT_PHRASE_MATCH_REVIEWED_TOPIC_ONLY",
+      "cueId": null,
+      "blockId": null,
+      "sourceFirstSectionId": null,
+      "sourceLatinExcerpt": null,
+      "sourceRelation": "RESEARCH_TOPIC_ONLY_NOT_INLINE_GUIDE",
+      "relatedPriorResearchIds": [],
+      "editorialCaution": "White robes of multitude before throne",
+      "verifyOriginalPageImage": false,
+      "publishToGuide": false
+    },
+    {
+      "sourceRecordId": "L1897-OCR2-013",
+      "sourceChapter": "V",
+      "scriptureReference": "Matthew 25:21",
+      "previousTopicOwner": null,
+      "originalOcrLineRange": {
+        "start": 1403,
+        "end": 1408
+      },
+      "originalCitationKind": "EXPLICIT_CITATION",
+      "liturgicalMatchStatus": "NO_DIRECT_PHRASE_MATCH_REVIEWED_TOPIC_ONLY",
+      "cueId": null,
+      "blockId": null,
+      "sourceFirstSectionId": null,
+      "sourceLatinExcerpt": null,
+      "sourceRelation": "RESEARCH_TOPIC_ONLY_NOT_INLINE_GUIDE",
+      "relatedPriorResearchIds": [],
+      "editorialCaution": "Good and faithful servant for saints/confessors; symbolic colour rationale only",
+      "verifyOriginalPageImage": false,
+      "publishToGuide": false
+    },
+    {
+      "sourceRecordId": "L1897-OCR2-014",
+      "sourceChapter": "V",
+      "scriptureReference": "John 15:13",
+      "previousTopicOwner": null,
+      "originalOcrLineRange": {
+        "start": 1421,
+        "end": 1427
+      },
+      "originalCitationKind": "EXPLICIT_CITATION",
+      "liturgicalMatchStatus": "NO_DIRECT_PHRASE_MATCH_REVIEWED_TOPIC_ONLY",
+      "cueId": null,
+      "blockId": null,
+      "sourceFirstSectionId": null,
+      "sourceLatinExcerpt": null,
+      "sourceRelation": "RESEARCH_TOPIC_ONLY_NOT_INLINE_GUIDE",
+      "relatedPriorResearchIds": [],
+      "editorialCaution": "Love shown by laying down life; red and martyrs",
+      "verifyOriginalPageImage": false,
+      "publishToGuide": false
+    },
+    {
+      "sourceRecordId": "L1897-OCR2-015",
+      "sourceChapter": "V",
+      "scriptureReference": "1 John 3:16",
+      "previousTopicOwner": null,
+      "originalOcrLineRange": {
+        "start": 1423,
+        "end": 1427
+      },
+      "originalCitationKind": "EXPLICIT_CITATION",
+      "liturgicalMatchStatus": "NO_DIRECT_PHRASE_MATCH_REVIEWED_TOPIC_ONLY",
+      "cueId": null,
+      "blockId": null,
+      "sourceFirstSectionId": null,
+      "sourceLatinExcerpt": null,
+      "sourceRelation": "RESEARCH_TOPIC_ONLY_NOT_INLINE_GUIDE",
+      "relatedPriorResearchIds": [],
+      "editorialCaution": "Charity of God shown in Christ's death; red symbolic colour rationale",
+      "verifyOriginalPageImage": false,
+      "publishToGuide": false
+    },
+    {
+      "sourceRecordId": "L1897-OCR2-016",
+      "sourceChapter": "XI",
+      "scriptureReference": "Matthew 10:32",
+      "previousTopicOwner": "AO.CARD.007",
+      "originalOcrLineRange": {
+        "start": 2923,
+        "end": 2928
+      },
+      "originalCitationKind": "EXPLICIT_CITATION",
+      "liturgicalMatchStatus": "NO_DIRECT_PHRASE_MATCH_REVIEWED_TOPIC_ONLY",
+      "cueId": null,
+      "blockId": null,
+      "sourceFirstSectionId": null,
+      "sourceLatinExcerpt": null,
+      "sourceRelation": "RESEARCH_TOPIC_ONLY_NOT_INLINE_GUIDE",
+      "relatedPriorResearchIds": [],
+      "editorialCaution": "Cross at mouth, professing Gospel; this is a theological interpretation, not the rubrical prescription",
+      "verifyOriginalPageImage": false,
+      "publishToGuide": false
+    },
+    {
+      "sourceRecordId": "L1897-OCR2-017",
+      "sourceChapter": "XIII",
+      "scriptureReference": "Psalms 109:4",
+      "previousTopicOwner": "AO.CARD.010",
+      "originalOcrLineRange": {
+        "start": 3666,
+        "end": 3674
+      },
+      "originalCitationKind": "EXPLICIT_CITATION",
+      "liturgicalMatchStatus": "NO_DIRECT_PHRASE_MATCH_REVIEWED_TOPIC_ONLY",
+      "cueId": null,
+      "blockId": null,
+      "sourceFirstSectionId": null,
+      "sourceLatinExcerpt": null,
+      "sourceRelation": "RESEARCH_TOPIC_ONLY_NOT_INLINE_GUIDE",
+      "relatedPriorResearchIds": [],
+      "editorialCaution": "Priest forever according to Melchisedech; clarify Christology and typology",
+      "verifyOriginalPageImage": false,
+      "publishToGuide": false
+    },
+    {
+      "sourceRecordId": "L1897-OCR2-018",
+      "sourceChapter": "XIII",
+      "scriptureReference": "Psalms 103:13-15",
+      "previousTopicOwner": "AO.CARD.010",
+      "originalOcrLineRange": {
+        "start": 3684,
+        "end": 3693
+      },
+      "originalCitationKind": "EXPLICIT_CITATION",
+      "liturgicalMatchStatus": "NO_DIRECT_PHRASE_MATCH_REVIEWED_TOPIC_ONLY",
+      "cueId": null,
+      "blockId": null,
+      "sourceFirstSectionId": null,
+      "sourceLatinExcerpt": null,
+      "sourceRelation": "RESEARCH_TOPIC_ONLY_NOT_INLINE_GUIDE",
+      "relatedPriorResearchIds": [],
+      "editorialCaution": "Bread and wine as human sustenance in offertory theology; Psalm numbering source edition",
+      "verifyOriginalPageImage": false,
+      "publishToGuide": false
+    },
+    {
+      "sourceRecordId": "L1897-OCR2-019",
+      "sourceChapter": "XIII",
+      "scriptureReference": "1 Corinthians 10:17",
+      "previousTopicOwner": "AO.CARD.010",
+      "originalOcrLineRange": {
+        "start": 3692,
+        "end": 3704
+      },
+      "originalCitationKind": "EXPLICIT_CITATION",
+      "liturgicalMatchStatus": "NO_DIRECT_PHRASE_MATCH_REVIEWED_TOPIC_ONLY",
+      "cueId": null,
+      "blockId": null,
+      "sourceFirstSectionId": null,
+      "sourceLatinExcerpt": null,
+      "sourceRelation": "RESEARCH_TOPIC_ONLY_NOT_INLINE_GUIDE",
+      "relatedPriorResearchIds": [],
+      "editorialCaution": "Breads/grains and Eucharistic ecclesial unity, not dogmatic claim that species consists of many bodies",
+      "verifyOriginalPageImage": false,
+      "publishToGuide": false
+    },
+    {
+      "sourceRecordId": "L1897-OCR2-020",
+      "sourceChapter": "XIII",
+      "scriptureReference": "Hebrews 7:27",
+      "previousTopicOwner": "AO.CARD.010",
+      "originalOcrLineRange": {
+        "start": 3832,
+        "end": 3839
+      },
+      "originalCitationKind": "EXPLICIT_CITATION",
+      "liturgicalMatchStatus": "NO_DIRECT_PHRASE_MATCH_REVIEWED_TOPIC_ONLY",
+      "cueId": null,
+      "blockId": null,
+      "sourceFirstSectionId": null,
+      "sourceLatinExcerpt": null,
+      "sourceRelation": "RESEARCH_TOPIC_ONLY_NOT_INLINE_GUIDE",
+      "relatedPriorResearchIds": [],
+      "editorialCaution": "Contrast Christ's sinlessness with celebrating priest's unworthiness; do not conflate minister and Christ",
+      "verifyOriginalPageImage": false,
+      "publishToGuide": false
+    },
+    {
+      "sourceRecordId": "L1897-OCR2-021",
+      "sourceChapter": "XVIII",
+      "scriptureReference": "Luke 1:74",
+      "previousTopicOwner": "AO.CANON.04",
+      "originalOcrLineRange": {
+        "start": 6079,
+        "end": 6087
+      },
+      "originalCitationKind": "EXPLICIT_CITATION",
+      "liturgicalMatchStatus": "NO_DIRECT_PHRASE_MATCH_REVIEWED_TOPIC_ONLY",
+      "cueId": null,
+      "blockId": null,
+      "sourceFirstSectionId": null,
+      "sourceLatinExcerpt": null,
+      "sourceRelation": "RESEARCH_TOPIC_ONLY_NOT_INLINE_GUIDE",
+      "relatedPriorResearchIds": [],
+      "editorialCaution": "Deliverance and service in holiness; part of Lanslots explanation of peace petition",
+      "verifyOriginalPageImage": false,
+      "publishToGuide": false
+    },
+    {
+      "sourceRecordId": "L1897-OCR2-022",
+      "sourceChapter": "XVIII",
+      "scriptureReference": "Leviticus 8:14",
+      "previousTopicOwner": "AO.CANON.04",
+      "originalOcrLineRange": {
+        "start": 6120,
+        "end": 6133
+      },
+      "originalCitationKind": "EXPLICIT_CITATION",
+      "liturgicalMatchStatus": "NO_DIRECT_PHRASE_MATCH_REVIEWED_TOPIC_ONLY",
+      "cueId": null,
+      "blockId": null,
+      "sourceFirstSectionId": null,
+      "sourceLatinExcerpt": null,
+      "sourceRelation": "RESEARCH_TOPIC_ONLY_NOT_INLINE_GUIDE",
+      "relatedPriorResearchIds": [],
+      "editorialCaution": "Hand extension over oblation explained through Old Covenant laying-on-of-hands; a typological interpretation, not proven derivation of modern gesture",
+      "verifyOriginalPageImage": false,
+      "publishToGuide": false
+    },
+    {
+      "sourceRecordId": "L1897-OCR2-023",
+      "sourceChapter": "XX",
+      "scriptureReference": "Psalms 109:4",
+      "previousTopicOwner": "AO.CANON.09",
+      "originalOcrLineRange": {
+        "start": 7034,
+        "end": 7043
+      },
+      "originalCitationKind": "EXPLICIT_CITATION",
+      "liturgicalMatchStatus": "LATIN_SOURCE_TEXT_MATCH_VERIFIED",
+      "cueId": "AO.SM.C0186",
+      "blockId": "AO.SM.B055",
+      "sourceFirstSectionId": "AO.CANON.09",
+      "sourceLatinExcerpt": "melchisedech",
+      "sourceRelation": "BIBLICAL_PERSON_NAMED_IN_PRAYER",
+      "relatedPriorResearchIds": [
+        "FRG43"
+      ],
+      "editorialCaution": "Repeated explicit citation in different chapter and Canon location; existing Guéranger FRG43 already covers conceptual topic",
+      "verifyOriginalPageImage": false,
+      "publishToGuide": false
+    },
+    {
+      "sourceRecordId": "L1897-OCR2-024",
+      "sourceChapter": "XXIII",
+      "scriptureReference": "Matthew 26:26",
+      "previousTopicOwner": "AO.CARD.020",
+      "originalOcrLineRange": {
+        "start": 8212,
+        "end": 8218
+      },
+      "originalCitationKind": "BIBLICAL_ALLUSION_NORMALIZED",
+      "liturgicalMatchStatus": "NO_DIRECT_PHRASE_MATCH_REVIEWED_TOPIC_ONLY",
+      "cueId": null,
+      "blockId": null,
+      "sourceFirstSectionId": null,
+      "sourceLatinExcerpt": null,
+      "sourceRelation": "RESEARCH_TOPIC_ONLY_NOT_INLINE_GUIDE",
+      "relatedPriorResearchIds": [],
+      "editorialCaution": "Author mentions Last Supper breaking, but this Matthew locator is an editorial mapping, not author-printed citation",
+      "verifyOriginalPageImage": false,
+      "publishToGuide": false
+    },
+    {
+      "sourceRecordId": "L1897-OCR2-025",
+      "sourceChapter": "XXIII",
+      "scriptureReference": "Luke 24:30-31",
+      "previousTopicOwner": "AO.CARD.020",
+      "originalOcrLineRange": {
+        "start": 8213,
+        "end": 8219
+      },
+      "originalCitationKind": "BIBLICAL_ALLUSION_NORMALIZED",
+      "liturgicalMatchStatus": "NO_DIRECT_PHRASE_MATCH_REVIEWED_TOPIC_ONLY",
+      "cueId": null,
+      "blockId": null,
+      "sourceFirstSectionId": null,
+      "sourceLatinExcerpt": null,
+      "sourceRelation": "RESEARCH_TOPIC_ONLY_NOT_INLINE_GUIDE",
+      "relatedPriorResearchIds": [],
+      "editorialCaution": "Author invokes disciples at Emmaus; numeric verse inferred editorially",
+      "verifyOriginalPageImage": false,
+      "publishToGuide": false
+    },
+    {
+      "sourceRecordId": "L1897-OCR2-026",
+      "sourceChapter": "XXIV",
+      "scriptureReference": "1 Corinthians 11:28-29",
+      "previousTopicOwner": "AO.CARD.022",
+      "originalOcrLineRange": {
+        "start": 8788,
+        "end": 8800
+      },
+      "originalCitationKind": "EXPLICIT_CITATION",
+      "liturgicalMatchStatus": "NO_DIRECT_PHRASE_MATCH_REVIEWED_TOPIC_ONLY",
+      "cueId": null,
+      "blockId": null,
+      "sourceFirstSectionId": null,
+      "sourceLatinExcerpt": null,
+      "sourceRelation": "RESEARCH_TOPIC_ONLY_NOT_INLINE_GUIDE",
+      "relatedPriorResearchIds": [],
+      "editorialCaution": "Real warning against unworthy communion; avoid equating ordinary humility with being in mortal sin",
+      "verifyOriginalPageImage": false,
+      "publishToGuide": false
+    }
+  ]
+}
