@@ -14,7 +14,7 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {
- indexCatenaMessages,retrieveCatenaMessages,catenaQuestionHasUnsupportedContext
+ indexCatenaMessages,retrieveCatenaQuestionMatches,catenaQuestionHasUnsupportedContext
 } from "../../src/scripture/catena-messenger.js";
 import {
  catenaRelatedTopic,retrieveCatenaRelatedMessages
@@ -46,14 +46,12 @@ const inspect=c=>{
   "Unverified editorial target "+c.id);
  const abstained=catenaQuestionHasUnsupportedContext(c.question,rows);
  const topic=catenaRelatedTopic(c.question);
- const related=!abstained&&topic?
-  retrieveCatenaRelatedMessages(rows,c.question,{limit:4}):[];
- const selected=abstained?[]:related.length?related.map(hit=>hit.row):
-  retrieveCatenaMessages(rows,c.question,{limit:4});
+ const selected=retrieveCatenaQuestionMatches(rows,c.question,{limit:4});
+ const related=selected.some(row=>row.relatedSourceEvidence);
  let reason;
  if(selected.some(row=>row.id===target.id))reason="target-in-top-four";
  else if(abstained)reason="attestation-veto";
- else if(related.length)reason="reviewed-topic-ranking";
+ else if(related)reason="reviewed-topic-ranking";
  else if(!selected.length)reason="no-extract-selected";
  else reason="ranking-or-author-diversity";
  return {
