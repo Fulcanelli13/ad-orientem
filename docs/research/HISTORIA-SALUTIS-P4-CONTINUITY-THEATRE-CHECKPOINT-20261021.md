@@ -236,3 +236,52 @@ Source-critical findings include:
 \`tests/historia-p4-theatre-citation-contract.mjs\` now fail-closes on **139 unique scene indexes**, 23 three-witness passage records, and original Gospel/scene identity safety flags. No literary acceptances, geocodes, art, Scriptures, source rewriting, or production interfaces have been published. The source/test browser CI is handled by \`.github/workflows/historia-p4-theatre-review.yml\` on this research branch.
 
 **Next execution:** complete indices 138–180 and 182, retaining source order and the independent appended Pentecost source record, then address 37-movement literary acceptance and source/art runtime integration separately.
+
+
+## P4 full 183-scene reference desk census — 21 October 2026
+
+**The preliminary passage-presence, geography and event-identity desk audit now covers every one of the source study's 183 scenes, exactly once.** This is **100% of the planned source-reference census**, *not* 100% editorial readiness, printed-edition certification, manuscript collation, source-text authorship review, archaeology, or publication.
+
+The final research file is \`data/research/historia-p4-apostles-missions-rome-three-witness-desk-audit.v1.json\`. It covers 44 original scene keys: contiguous indexes **138–180** across APOSTLES, FIRST_MISSION, SECOND_MISSION, THIRD_MISSION and TO_ROME, and the appended **182** Pentecost entry. Each has an Acts passage checked for available numbered verse entries in the three installed Catholic research transcriptions, with source Git blob SHAs pinned. The exact source indexes 181 (Holy Innocents) and 182 (Pentecost) have both been reconciled without incorrectly using their numeric offsets as narrative time.
+
+### All scene batches
+
+| Source grouping | Scene keys accounted for |
+|---|---:|
+| Patriarchs | 25 |
+| Deliverance | 13 |
+| Wilderness and Covenant | 11 |
+| Wanderings | 8 |
+| Incarnation, including Holy Innocents (#181) | 13 |
+| Public Ministry | 46 |
+| Passion and Risen | 23 |
+| Apostles, first/second/third missions, voyage to Rome, and Pentecost (#182) | 44 |
+| **Entire 183-scene source catalogue** | **183** |
+
+**Four original-scene passage-boundary hazards now documented across the census:**
+
+- **Exodus 40:1–38**: the current CPDV and Douay witnesses have 36 numbered verses, Crampon has 38; a different French/English versification boundary, not permission to supply nonexistent English 37–38.
+- **Mark 4:35–41**: all three imported source witnesses include 4:35–40 (6 entries) and lack 4:41 as a separate entry. Print-edition comparison is required.
+- **Acts 14:20–28**: all three imported source witnesses contain only Acts 14:20–27 (8 entries).
+- **Acts 19:23–41**: all three imported source witnesses contain only Acts 19:23–40 (18 entries).
+
+**One additional cross-edition verse alignment issue:** the Capernaum synagogue statement in John 6 occurs at **6:60** in the installed Douay and CPDV witnesses and at **6:59** in the installed French Crampon. Consequently equal row counts alone do not establish verse-by-verse bilingual parity. Do not invent verses, blindly apply cross-edition boundaries, or silently alter canonical Scripture sources.
+
+### Narrative and geography corrections queued
+
+- Acts 18:23 names the Galatian and Phrygian regions, not Pisidian Antioch; source scene 165's place label is therefore unsupported by that selected passage and must not yield a Pisidian Antioch event pin.
+- Acts 13:4–12 spans several Cyprus stages, not a single point in Paphos; similarly Acts 18:18–23 and Acts 27:1–12 span multiple locations. The source chapter scenes can drive an evidence-qualified *named-port itinerary*, never an imagined literal ship track or exact 1st-century road.
+- Acts 27:13–44 shipwreck remains unlocated: the UI must not fabricate a Mediterranean wreck marker or identify the physical vessel route. Acts 28:1–10 names Malta, not an authenticated modern landing beach.
+- Acts 28:13–14 overlaps Acts 28:11–14; these are two reader beats from one segment, not duplicate canonical port-arrival incidents.
+- Acts 2:1–41's Pentecost is placed in Jerusalem and does not certify the current Upper Room as the exact location of the coming of the Holy Ghost.
+- The original 183 source scene identifiers and Atlas candidate statuses remain unchanged, and no source toponyms, regional bounds or biblical-genealogy person records have been overwritten.
+
+\`tests/historia-p4-theatre-citation-contract.mjs\` now requires **all original indexes 0–182, exactly once across the eight desk files**, rejects false geolocation approvals, and locks both Acts short-reference hazards. The real-browser theatre lab remains a four-state prototype and is separate from this editorial corpus.
+
+### Meaning of "complete"
+
+The following milestone is **complete**: the source-research catalogue of 183 scenes has a preliminary verse-coordinate/witness-presence and geography-confidence desk record for every item.
+
+The following milestones are **not complete**: verifying every verse string against exact print editions; approving actor identities and source chronology; deciding whether 183 optional scenes are sufficient for a continuous 37-movement Theatre; geospatial certification and art rights; adapting every scene for the bilingual reader; completing a read-aloud review of the full 37-movement narrative; integrating source-driven MapLibre scenes in production. The 183 research records are **not** 183 release-accepted scenes.
+
+Next P4 sequence: move from **coverage** to **adjudication** by prioritising the five versification/alignment hazards above, the 35 M20–M37 narrative-seam questions, passage-overlap identity and staging conflicts, and the separate source-owner art and geolocation approvals. No need to repeat the 183-row preliminary desk census.
