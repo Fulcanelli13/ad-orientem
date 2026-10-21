@@ -37,7 +37,7 @@ for(const scene of d.scenes){
    assert(/[.!?]$/.test(segment.fr));
    assert(segment.en.length>25 && segment.fr.length>25);
    assert(!/\b(?:I|me|my|mine)\b/i.test(segment.en),'no English singular self-reference '+segment.id);
-   assert(!/\b(?:je|moi|mon|ma|mes)\b/i.test(segment.fr),'no French singular self-reference '+segment.id);
+   assert(!/(?:^|[\s([{«])(?:je|moi|mon|ma|mes)(?=$|[\s.,!?;:)\]}»])/i.test(segment.fr),'no French singular self-reference '+segment.id);
    for(const c of segment.claimIds){
     const claim=d.primaryClaimCatalogue[c];
     assert(claim,segment.id+' missing claim '+c);
