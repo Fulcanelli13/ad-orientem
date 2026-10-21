@@ -38,11 +38,12 @@ export async function mountHistoriaThematicPreview() {
   const [registry, p3] = await Promise.all([fetchJson(REGISTRY), fetchJson(P3)]);
   const collections = buildThematicPilots(registry), cache = new Map();
   let collection = collections[0], episode = collection.episodes[0],
-    pageIndex = 0, edition = 'dr-challoner', generation = 0;
+    pageIndex = 0, edition = 'cpdv-2009', generation = 0;
   const rawHash = decodeURIComponent(location.hash.slice(1));
   const deepLinked = collections.flatMap(group => group.episodes.map(ep => ({group, ep})))
     .find(item => item.ep.id === rawHash);
   if (deepLinked) { collection = deepLinked.group; episode = deepLinked.ep; }
+  if (episode.plan.book === 'Esther') edition = 'dr-challoner';
 
   function setHash() {
     history.replaceState(null, '', location.pathname + location.search + '#' +
