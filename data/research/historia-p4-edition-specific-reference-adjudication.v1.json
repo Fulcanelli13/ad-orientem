@@ -1,0 +1,313 @@
+{
+  "schema": "ao.historia.p4.edition-specific-reference-adjudication.v1",
+  "date": "2026-10-21",
+  "status": "SOURCE_BOUNDED_RESEARCH_RESOLUTION_NOT_PRINT_COLLATED_OR_RELEASE_APPROVED",
+  "summary": "Five hazards are resolved for passage selection against current installed witness data; semantic alignment and certified edition print collation remain separate",
+  "policy": {
+    "neverSynthesizeVerses": true,
+    "neverCrossAlignByNumericIndex": true,
+    "allReferenceDisplayFromSelectedWitness": true,
+    "originalResearchSceneReferenceUntouched": true,
+    "onlySourceResearchSlice": true,
+    "doNotPublishAsOfficialEdition": true,
+    "doNotRewriteOriginalBibleText": true,
+    "independentChallonerWebEvidenceIsNotPrintEditionCollation": true
+  },
+  "sources": {
+    "witnessFiles": [
+      {
+        "edition": "dr-challoner",
+        "book": "Exodus",
+        "blobSha": "09b43d38baf0889623f0d30c15c01e0fe7b85da8",
+        "path": "data/scripture/witness/dr-challoner/Exodus.json",
+        "status": "UNCOLLATED_SOURCE_WITNESS"
+      },
+      {
+        "edition": "cpdv-2009",
+        "book": "Exodus",
+        "blobSha": "fdd0d5685e5be2d32b29f0369dba4c3de47ea120",
+        "path": "data/scripture/witness/cpdv-2009/Exodus.json",
+        "status": "UNCOLLATED_SOURCE_WITNESS"
+      },
+      {
+        "edition": "crampon-1923",
+        "book": "Exodus",
+        "blobSha": "49a299cc21b04ffcd5729e8df41327fa52c2806b",
+        "path": "data/scripture/witness/crampon-1923/Exodus.json",
+        "status": "UNCOLLATED_SOURCE_WITNESS"
+      },
+      {
+        "edition": "dr-challoner",
+        "book": "Mark",
+        "blobSha": "e6e381cd25e5ab238a28602d8395da39adcce80d",
+        "path": "data/scripture/witness/dr-challoner/Mark.json",
+        "status": "UNCOLLATED_SOURCE_WITNESS"
+      },
+      {
+        "edition": "cpdv-2009",
+        "book": "Mark",
+        "blobSha": "7c81eedf9ddbe1888a3bd9901c1169d4bc0e6958",
+        "path": "data/scripture/witness/cpdv-2009/Mark.json",
+        "status": "UNCOLLATED_SOURCE_WITNESS"
+      },
+      {
+        "edition": "crampon-1923",
+        "book": "Mark",
+        "blobSha": "93c05664335f1d851ef0288fcd12a4015d380742",
+        "path": "data/scripture/witness/crampon-1923/Mark.json",
+        "status": "UNCOLLATED_SOURCE_WITNESS"
+      },
+      {
+        "edition": "dr-challoner",
+        "book": "John",
+        "blobSha": "a146e78ec89ad15d3df29a49462c8373e9dee3f8",
+        "path": "data/scripture/witness/dr-challoner/John.json",
+        "status": "UNCOLLATED_SOURCE_WITNESS"
+      },
+      {
+        "edition": "cpdv-2009",
+        "book": "John",
+        "blobSha": "5c0f7929ec052ae1aa92c583219087bb25c32655",
+        "path": "data/scripture/witness/cpdv-2009/John.json",
+        "status": "UNCOLLATED_SOURCE_WITNESS"
+      },
+      {
+        "edition": "crampon-1923",
+        "book": "John",
+        "blobSha": "0f49d89ad2fb1754ef966305caf70f2a3b2b7790",
+        "path": "data/scripture/witness/crampon-1923/John.json",
+        "status": "UNCOLLATED_SOURCE_WITNESS"
+      },
+      {
+        "edition": "dr-challoner",
+        "book": "Acts",
+        "blobSha": "790769859646ecd4ca6b45f6b61b9ecaec1da826",
+        "path": "data/scripture/witness/dr-challoner/Acts.json",
+        "status": "UNCOLLATED_SOURCE_WITNESS"
+      },
+      {
+        "edition": "cpdv-2009",
+        "book": "Acts",
+        "blobSha": "5eaaa125d14538d00305e49624196b55033da41d",
+        "path": "data/scripture/witness/cpdv-2009/Acts.json",
+        "status": "UNCOLLATED_SOURCE_WITNESS"
+      },
+      {
+        "edition": "crampon-1923",
+        "book": "Acts",
+        "blobSha": "25fde9eaaff3412445430f4ae1fa87b0c6aae244",
+        "path": "data/scripture/witness/crampon-1923/Acts.json",
+        "status": "UNCOLLATED_SOURCE_WITNESS"
+      }
+    ]
+  },
+  "hazards": [
+    {
+      "hazardId": "HS-VS-EXODUS40",
+      "sceneKey": "biblical:scene:moses:048",
+      "sourceReference": "Exodus 40:1–38",
+      "book": "Exodus",
+      "chapter": 40,
+      "start": 1,
+      "endByEdition": {
+        "dr-challoner": 36,
+        "cpdv-2009": 36,
+        "crampon-1923": 38
+      },
+      "classification": "CHAPTER_FINAL_BOUNDARY_BY_EDITION",
+      "semanticLock": "Tabernacle cloud-by-day and fire-by-night closure exists in all three witnesses",
+      "independentChallonerUrl": "https://sacredbible.org/challoner/OT-02_Exodus.htm",
+      "editionResolution": {
+        "dr-challoner": {
+          "resolvedSelection": "Exodus 40:1–36",
+          "startVerse": 1,
+          "endVerse": 36,
+          "verseEntries": 36,
+          "sourceWitnessBlobSha": "09b43d38baf0889623f0d30c15c01e0fe7b85da8"
+        },
+        "cpdv-2009": {
+          "resolvedSelection": "Exodus 40:1–36",
+          "startVerse": 1,
+          "endVerse": 36,
+          "verseEntries": 36,
+          "sourceWitnessBlobSha": "fdd0d5685e5be2d32b29f0369dba4c3de47ea120"
+        },
+        "crampon-1923": {
+          "resolvedSelection": "Exodus 40:1–38",
+          "startVerse": 1,
+          "endVerse": 38,
+          "verseEntries": 38,
+          "sourceWitnessBlobSha": "49a299cc21b04ffcd5729e8df41327fa52c2806b"
+        }
+      }
+    },
+    {
+      "hazardId": "HS-VS-MARK4",
+      "sceneKey": "biblical:scene:christ:090",
+      "sourceReference": "Mark 4:35–41",
+      "book": "Mark",
+      "chapter": 4,
+      "start": 35,
+      "endByEdition": {
+        "dr-challoner": 40,
+        "cpdv-2009": 40,
+        "crampon-1923": 40
+      },
+      "classification": "CHAPTER_FINAL_BOUNDARY_BY_EDITION",
+      "semanticLock": "Disciples' final response is within verse 40 of each installed witness",
+      "independentChallonerUrl": "https://sacredbible.org/challoner/NT-02_Mark.htm",
+      "editionResolution": {
+        "dr-challoner": {
+          "resolvedSelection": "Mark 4:35–40",
+          "startVerse": 35,
+          "endVerse": 40,
+          "verseEntries": 6,
+          "sourceWitnessBlobSha": "e6e381cd25e5ab238a28602d8395da39adcce80d"
+        },
+        "cpdv-2009": {
+          "resolvedSelection": "Mark 4:35–40",
+          "startVerse": 35,
+          "endVerse": 40,
+          "verseEntries": 6,
+          "sourceWitnessBlobSha": "7c81eedf9ddbe1888a3bd9901c1169d4bc0e6958"
+        },
+        "crampon-1923": {
+          "resolvedSelection": "Mark 4:35–40",
+          "startVerse": 35,
+          "endVerse": 40,
+          "verseEntries": 6,
+          "sourceWitnessBlobSha": "93c05664335f1d851ef0288fcd12a4015d380742"
+        }
+      }
+    },
+    {
+      "hazardId": "HS-VS-JOHN6",
+      "sceneKey": "biblical:scene:christ:097",
+      "sourceReference": "John 6:22–59",
+      "book": "John",
+      "chapter": 6,
+      "start": 22,
+      "endByEdition": {
+        "dr-challoner": 59,
+        "cpdv-2009": 59,
+        "crampon-1923": 59
+      },
+      "classification": "SAME_NUMERICAL_SELECTED_SPAN_DIFFERENT_SEMANTIC_END",
+      "semanticAnchor": "Capernaum-synagogue location sentence",
+      "semanticAnchorVerseByEdition": {
+        "dr-challoner": 60,
+        "cpdv-2009": 60,
+        "crampon-1923": 59
+      },
+      "semanticLock": "The Capernaum synagogue location sentence is not included inside the original selected English verses 22–59; the corresponding French numbering places it at 59",
+      "independentChallonerUrl": "https://sacredbible.org/challoner/NT-04_John.htm",
+      "editionResolution": {
+        "dr-challoner": {
+          "resolvedSelection": "John 6:22–59",
+          "startVerse": 22,
+          "endVerse": 59,
+          "verseEntries": 38,
+          "sourceWitnessBlobSha": "a146e78ec89ad15d3df29a49462c8373e9dee3f8",
+          "semanticAnchorVerse": 60,
+          "semanticAnchorIncludedInSelectedSpan": false
+        },
+        "cpdv-2009": {
+          "resolvedSelection": "John 6:22–59",
+          "startVerse": 22,
+          "endVerse": 59,
+          "verseEntries": 38,
+          "sourceWitnessBlobSha": "5c0f7929ec052ae1aa92c583219087bb25c32655",
+          "semanticAnchorVerse": 60,
+          "semanticAnchorIncludedInSelectedSpan": false
+        },
+        "crampon-1923": {
+          "resolvedSelection": "John 6:22–59",
+          "startVerse": 22,
+          "endVerse": 59,
+          "verseEntries": 38,
+          "sourceWitnessBlobSha": "0f49d89ad2fb1754ef966305caf70f2a3b2b7790",
+          "semanticAnchorVerse": 59,
+          "semanticAnchorIncludedInSelectedSpan": true
+        }
+      }
+    },
+    {
+      "hazardId": "HS-VS-ACTS14",
+      "sceneKey": "biblical:scene:paul:151",
+      "sourceReference": "Acts 14:20–28",
+      "book": "Acts",
+      "chapter": 14,
+      "start": 20,
+      "endByEdition": {
+        "dr-challoner": 27,
+        "cpdv-2009": 27,
+        "crampon-1923": 27
+      },
+      "classification": "CHAPTER_FINAL_BOUNDARY_BY_EDITION",
+      "semanticLock": "Final period at Antioch is preserved in verse 27 of all three installed witnesses",
+      "independentChallonerUrl": "https://sacredbible.org/challoner/NT-05_Acts.htm",
+      "editionResolution": {
+        "dr-challoner": {
+          "resolvedSelection": "Acts 14:20–27",
+          "startVerse": 20,
+          "endVerse": 27,
+          "verseEntries": 8,
+          "sourceWitnessBlobSha": "790769859646ecd4ca6b45f6b61b9ecaec1da826"
+        },
+        "cpdv-2009": {
+          "resolvedSelection": "Acts 14:20–27",
+          "startVerse": 20,
+          "endVerse": 27,
+          "verseEntries": 8,
+          "sourceWitnessBlobSha": "5eaaa125d14538d00305e49624196b55033da41d"
+        },
+        "crampon-1923": {
+          "resolvedSelection": "Acts 14:20–27",
+          "startVerse": 20,
+          "endVerse": 27,
+          "verseEntries": 8,
+          "sourceWitnessBlobSha": "25fde9eaaff3412445430f4ae1fa87b0c6aae244"
+        }
+      }
+    },
+    {
+      "hazardId": "HS-VS-ACTS19",
+      "sceneKey": "biblical:scene:paul:167",
+      "sourceReference": "Acts 19:23–41",
+      "book": "Acts",
+      "chapter": 19,
+      "start": 23,
+      "endByEdition": {
+        "dr-challoner": 40,
+        "cpdv-2009": 40,
+        "crampon-1923": 40
+      },
+      "classification": "CHAPTER_FINAL_BOUNDARY_BY_EDITION",
+      "semanticLock": "Dismissal of the Ephesian assembly is included in verse 40 of all three installed witnesses",
+      "independentChallonerUrl": "https://sacredbible.org/challoner/NT-05_Acts.htm",
+      "editionResolution": {
+        "dr-challoner": {
+          "resolvedSelection": "Acts 19:23–40",
+          "startVerse": 23,
+          "endVerse": 40,
+          "verseEntries": 18,
+          "sourceWitnessBlobSha": "790769859646ecd4ca6b45f6b61b9ecaec1da826"
+        },
+        "cpdv-2009": {
+          "resolvedSelection": "Acts 19:23–40",
+          "startVerse": 23,
+          "endVerse": 40,
+          "verseEntries": 18,
+          "sourceWitnessBlobSha": "5eaaa125d14538d00305e49624196b55033da41d"
+        },
+        "crampon-1923": {
+          "resolvedSelection": "Acts 19:23–40",
+          "startVerse": 23,
+          "endVerse": 40,
+          "verseEntries": 18,
+          "sourceWitnessBlobSha": "25fde9eaaff3412445430f4ae1fa87b0c6aae244"
+        }
+      }
+    }
+  ]
+}
