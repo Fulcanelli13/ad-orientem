@@ -8,6 +8,9 @@ const research='data/learn/research/';
 const baseline=await read(research+'pius-x-document-first-three-benchmark-source-map-20261021.v1.json');
 const a=await read(research+'pius-x-document-first-remaining-acerbo-esupremi-20261021.v1.json');
 const h=await read(research+'pius-x-document-first-remaining-haerent-20261021.v1.json');
+const editorial=await read(research+'pius-x-document-first-34-editorial-corrections-20261021.v1.json');
+assert.equal(editorial.schema,'AO_SPX_DOCUMENT_FIRST_34_EDITORIAL_CORRECTIONS_V1');
+assert.equal(editorial.status,'SOURCE_TETHERED_EDITORIAL_PROPOSALS_UNAPPROVED');
 assert.equal(baseline.scenes.length,3);
 assert.equal(a.records.length,13);
 assert.equal(h.records.length,9);
@@ -34,6 +37,28 @@ haerent4.segments.push({id:haerent4.id+'.S4',claimIds:['H16'],kind:'SOURCE_BOUND
  secondaryAuthority:null});
 haerent4.sourceLoci=['§13','§14'];
 exceptions.push({id:haerent4.id,type:'RESTORE_SOURCE_ORDER',description:'Earlier reply conflated §§13, 15–18 and 20–21. Keep prayer in §§13–14; move meditation and St Charles counsel to separate turns.'});
+// Correct only the generated derivative. The 12-turn baseline and the 22 new
+// owner records remain unchanged and can be compared with this audited overlay.
+for(const [id,change] of Object.entries(editorial.claimMeaningOverrides)){
+ assert(claimCatalogue[id],'unknown editorial claim '+id);
+ assert.equal(claimCatalogue[id].meaning,change.old,'source claim changed upstream '+id);
+ claimCatalogue[id].meaning=change.new;
+}
+const appliedEditorial=[];
+for(const edit of editorial.edits){
+ const turn=byId.get(edit.turnId);
+ assert(turn,'unknown editorial turn '+edit.turnId);
+ const segment=turn.segments.find(x=>x.id===edit.segmentId);
+ assert(segment,'unknown editorial segment '+edit.segmentId);
+ assert.equal(segment.en,edit.before.en,'upstream EN changed '+edit.segmentId);
+ assert.equal(segment.fr,edit.before.fr,'upstream FR changed '+edit.segmentId);
+ assert(segment.claimIds.some(id=>claimCatalogue[id]?.locus===edit.sourceLocus),'editorial source locus mismatch '+edit.segmentId);
+ segment.en=edit.after.en;
+ segment.fr=edit.after.fr;
+ appliedEditorial.push({turnId:edit.turnId,segmentId:edit.segmentId,sourceLocus:edit.sourceLocus,reason:edit.reason});
+}
+assert.equal(appliedEditorial.length,4);
+assert(new Set(appliedEditorial.map(e=>e.segmentId)).size===4);
 const sequences={
  ACERBO:{core:['T1','T2','T5','T6','T3','T4','T7','T8','T9','T10'],optional:['T11'],branchAnchor:{T11:'T7'}},
  ESUPREMI:{core:['T1','T5','T2','T3','T6','T7','T4','T8','T9'],optional:['T10'],branchAnchor:{T10:'T1'}},
@@ -68,7 +93,8 @@ const result={
  sourceInputs:[
  research+'pius-x-document-first-three-benchmark-source-map-20261021.v1.json',
  research+'pius-x-document-first-remaining-acerbo-esupremi-20261021.v1.json',
- research+'pius-x-document-first-remaining-haerent-20261021.v1.json'],
+ research+'pius-x-document-first-remaining-haerent-20261021.v1.json',
+ research+'pius-x-document-first-34-editorial-corrections-20261021.v1.json'],
  evidenceAuthority:'Primary passage / proposition matching is an internal editorial screen, not independent historical or theological certification.',
  method:baseline.method,sources:baseline.sources,claims:claimCatalogue,
  counts:{documents:3,exchanges:scenes.reduce((n,s)=>n+s.turns.length,0),
@@ -77,7 +103,8 @@ const result={
  segments:scenes.reduce((n,s)=>n+s.turns.reduce((m,t)=>m+t.segments.length,0),0),
  bilingualLocalizedAnswers:scenes.reduce((n,s)=>n+s.turns.length*2,0),
  canonicalOwnerMutations:0,published:0},
- exceptions,reviewGates:structuredClone(baseline.approvals),
+ exceptions,editorialCorrections:appliedEditorial,
+ reviewGates:structuredClone(baseline.approvals),
  scenes};
 assert.equal(result.counts.exchanges,34);
 assert.equal(result.counts.core,30);
@@ -113,7 +140,9 @@ for(const sc of scenes){
 }
 markdown.push('## Source-order corrections',
   ...result.exceptions.map(x=>'- '+x.id+': '+x.description),
+  '','## Four source-tethered editorial corrections',
+  ...appliedEditorial.map(x=>'- '+x.segmentId+' ('+x.sourceLocus+'): '+x.reason),
   '','Do not publish without independent passage-level bilingual and theological review.','');
 await writeFile(resolve(root,out+'SPX_Three_Document_Full_34_EN_FR_Review.md'),markdown.join('\n')+'\n');
-const summary={counts:result.counts,byDocument:scenes.map(s=>({doc:s.sourceId,core:s.coreTurnIds.length,optional:s.optionalTurnIds.length,segments:s.turns.reduce((n,t)=>n+t.segments.length,0)})),exceptions};
+const summary={counts:result.counts,byDocument:scenes.map(s=>({doc:s.sourceId,core:s.coreTurnIds.length,optional:s.optionalTurnIds.length,segments:s.turns.reduce((n,t)=>n+t.segments.length,0)})),exceptions,editorialCorrections:appliedEditorial};
 console.log('SPX_FULL_BENCHMARK '+JSON.stringify(summary));
