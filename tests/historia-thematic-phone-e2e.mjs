@@ -262,6 +262,52 @@ try{
  await segmented.screenshot({path:resolve(output,"seven-segmented-390.png"),animations:"disabled"});
  await segmented.close();
 
+ // Fourth and final research-only catalogue: 217 original inventory identities.
+ const complete=await context.newPage();
+ complete.on("pageerror",e=>errors.push(String(e.message)));
+ await complete.goto(base+
+  "/index.html?ao_historia_collections=1&ao_historia_batch2=1&ao_historia_segmented=1&ao_historia_all=1#hist-omitted-213",
+  {waitUntil:"domcontentloaded",timeout:90000});
+ await complete.waitForFunction(()=>{
+  const r=globalThis.AO_SCRIPTURE_APP_V1?.status?.().reader;
+  return r?.thematicEpisodeId==="hist-omitted-213" &&
+   r?.passage?.book==="Revelation" && r?.passage?.chapter===13 &&
+   r?.passage?.verseStart===1 && r?.passage?.verseEnd===10;
+ },null,{timeout:65000});
+ const full=complete.locator("#ao-scripture-overlay");
+ assert.equal(await full.locator("[data-historia-episode]").count(),217);
+ assert.equal(await full.locator(".aoHistoriaGroup").count(),9);
+ assert.equal(await full.locator('[data-historia-context-link="hist-omitted-213"]').count(),0);
+ await full.locator(".aoScriptureVerse").first().waitFor({timeout:30000});
+ assert.match(await full.locator("[data-historia-active-episode]").innerText(),/beast coming from the sea/i);
+ assert.equal(await complete.evaluate(()=>
+  globalThis.AO_SCRIPTURE_APP_V1.openThematicEpisode("hist-omitted-214")),true);
+ await complete.waitForFunction(()=>{
+  const r=globalThis.AO_SCRIPTURE_APP_V1.status().reader;
+  return r?.passage?.chapter===13&&r?.passage?.verseStart===11&&r?.passage?.verseEnd===18;
+ });
+ assert.match(await full.locator("[data-historia-active-episode]").innerText(),/beast from the earth/i);
+ // Ordinary historic Acts episodes remain distinct from visionary scenes.
+ assert.equal(await complete.evaluate(()=>
+  globalThis.AO_SCRIPTURE_APP_V1.openThematicEpisode("hist-omitted-205")),true);
+ await complete.waitForFunction(()=>{
+  const r=globalThis.AO_SCRIPTURE_APP_V1.status().reader;
+  return r?.passage?.book==="Acts"&&r?.passage?.chapter===27&&r?.passage?.verseStart===13;
+ });
+ // The full construction account must remain a chapter-at-a-time reading.
+ assert.equal(await complete.evaluate(()=>
+  globalThis.AO_SCRIPTURE_APP_V1.openThematicEpisode("hist-omitted-032")),true);
+ await complete.waitForFunction(()=>{
+  const r=globalThis.AO_SCRIPTURE_APP_V1.status().reader;
+  return r?.passage?.book==="Exodus"&&r?.passage?.chapter===35;
+ });
+ assert.match(await full.locator('[data-historia-boundary-review]').innerText(),/six Exodus chapters|Exodus 35–40/i);
+ await full.locator("[data-historia-next]").click();
+ await complete.waitForFunction(()=>globalThis.AO_SCRIPTURE_APP_V1.status().reader?.passage?.chapter===36);
+ results.push("complete mode: all 217 sources in nine collections, distinct Revelation beasts, Acts events, long Exodus chapter paging");
+ await complete.screenshot({path:resolve(output,"all217-nine-families-390.png"),animations:"disabled"});
+ await complete.close();
+
  assert.deepEqual(errors.filter(s=>/ReferenceError|SyntaxError|TypeError/.test(s)),[],
   "Browser runtime failures: "+errors.join(" | "));
  await original.close();await manuscript.close();await page.close();
