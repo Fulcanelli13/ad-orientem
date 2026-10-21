@@ -95,6 +95,11 @@ on:
       - 'docs/research/PIUS-X-FIRST3-SOURCE-TETHERED-VOICE-20261021.md'
       - 'tests/pius-x-three-voice-source-tethered-v2.mjs'
       - 'tools/formation/build-pius-x-first-release-dialogue-review-queue.mjs'
+      - 'data/learn/research/pius-x-first-release-source-locked-eight-20261021.v1.json'
+      - 'docs/research/PIUS-X-FIRST-RELEASE-EIGHT-SOURCE-LOCKED-TRANSCRIPTS-20261021.md'
+      - 'previews/pius-x-eight-first-release-source-locked-20261021.html'
+      - 'tests/pius-x-first-release-eight-static.mjs'
+      - 'tests/pius-x-first-release-eight-browser.mjs'
       - 'tests/pius-x-depth12-visual-novel-browser.mjs'
       - 'tests/pius-x-first20-personal-and-papal-source-edits.mjs'
       - 'previews/visible-mass-3d/pius-x-batch-release-editorial-review.html'
@@ -357,11 +362,15 @@ jobs:
           done
       - name: Exercise twelve deep dialogue scenes in Chromium with authentic approved sprite bytes
         run: node tests/pius-x-depth12-visual-novel-browser.mjs
+      - name: Exercise eight source-locked first-release scenes in Chromium
+        run: node tests/pius-x-first-release-eight-browser.mjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: pius-x-depth12-phone-desktop-visual-review
           path: artifacts/pius-x-depth12-visual-review/
+          name: pius-x-first-release-eight-phone-desktop-review
+          path: artifacts/pius-x-first-release-eight-browser/
           if-no-files-found: warn
           retention-days: 14
       - name: Build portable 40-answer editorial review batch
@@ -439,6 +448,8 @@ jobs:
         run: node tools/formation/build-pius-x-810-corpus-release-selection.mjs
       - name: Reconcile first-release 130 with existing 82 authored dialogue chapters
         run: node tools/formation/build-pius-x-first-release-dialogue-review-queue.mjs
+      - name: Validate eight new source-tethered first-release conversations against 130-owner shortlist
+        run: node tests/pius-x-first-release-eight-static.mjs
       - name: Verify corpus ownership and the 130-candidate first-release shortlist
         run: node tests/pius-x-full810-balanced130-corpus.mjs
       - name: Test first twenty revised papal teaching and biography replies against original owners
