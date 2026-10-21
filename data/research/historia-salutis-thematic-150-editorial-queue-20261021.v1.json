@@ -1,0 +1,4487 @@
+{
+  "schema": "AO_HISTORIA_THEMATIC_150_EDITORIAL_CERTIFICATION_QUEUE_V1",
+  "status": "SOURCE_BOUNDARY_AND_CROSS_VIEW_TRIAGE_NOT_EDITORIAL_CERTIFICATION",
+  "date": "2026-10-21",
+  "source": {
+    "remainder": {
+      "path": "data/research/historia-salutis-thematic-remainder-research-20261021.v1.json",
+      "blobSha": "64c815d6c1d03f503d9f5c826fb43ab6b48776e1"
+    },
+    "master": {
+      "path": "data/research/historia-salutis-thematic-episode-reconciliation-20261021.v2.json",
+      "blobSha": "878acb2ae3230dbf290b19bd1917c9323814a373"
+    },
+    "atlas": {
+      "path": "data/explore/bible-places-compact.v1.json",
+      "blobSha": "1fd7f9b58d3b3773ac6004633a079caa046b8cdc"
+    },
+    "runtimeAtlas": {
+      "path": "src/find/bible-atlas.js",
+      "blobSha": "c63e1b01cb7310efe6067c5f575e41a3420b880c"
+    }
+  },
+  "policy": {
+    "sourceTextOwner": "existing three Catholic witness libraries",
+    "allEditionsUncollated": true,
+    "retainsOriginalInventoryRefs": true,
+    "noAutomaticPromotionToMain54Chapters": true,
+    "atlasMatchesNotCanonicalIdentity": true,
+    "sourceOverlapNotProofOfSameEvent": true,
+    "visionsNotChronologicallyDated": true,
+    "allEntriesResearchOnly": true
+  },
+  "totals": {
+    "rows": 150,
+    "proposedBoundaryCorrections": 10,
+    "sharedReferencePairs": 7,
+    "rowsWithSharedSource": 10,
+    "atlasExactReferenceCandidates": 28,
+    "atlasRuntimeCandidates": 9,
+    "p3SelectedSourceOverlapCandidates": 4,
+    "visionsOrRevelations": 13,
+    "restorationDispositionStillPending": 46,
+    "sameSourceWordsRewritten": 0,
+    "canonicallyApprovedIdentities": 0
+  },
+  "sharedSourcePairs": [
+    {
+      "a": "hist-omitted-009",
+      "b": "hist-omitted-010",
+      "relationship": "SOURCE_VERSE_RANGE_INTERSECTION_NOT_SAME_EVENT",
+      "intersections": [
+        {
+          "book": "Genesis",
+          "chapter": 19,
+          "firstVerse": 15,
+          "lastVerse": 29
+        }
+      ]
+    },
+    {
+      "a": "hist-omitted-019",
+      "b": "hist-omitted-020",
+      "relationship": "SOURCE_VERSE_RANGE_INTERSECTION_NOT_SAME_EVENT",
+      "intersections": [
+        {
+          "book": "Genesis",
+          "chapter": 44,
+          "firstVerse": 18,
+          "lastVerse": 34
+        }
+      ]
+    },
+    {
+      "a": "hist-omitted-048",
+      "b": "hist-omitted-049",
+      "relationship": "SOURCE_VERSE_RANGE_INTERSECTION_NOT_SAME_EVENT",
+      "intersections": [
+        {
+          "book": "Judges",
+          "chapter": 16,
+          "firstVerse": 4,
+          "lastVerse": 22
+        }
+      ]
+    },
+    {
+      "a": "hist-omitted-103",
+      "b": "hist-omitted-104",
+      "relationship": "SOURCE_VERSE_RANGE_INTERSECTION_NOT_SAME_EVENT",
+      "intersections": [
+        {
+          "book": "Luke",
+          "chapter": 1,
+          "firstVerse": 46,
+          "lastVerse": 55
+        }
+      ]
+    },
+    {
+      "a": "hist-omitted-108",
+      "b": "hist-omitted-109",
+      "relationship": "SOURCE_VERSE_RANGE_INTERSECTION_NOT_SAME_EVENT",
+      "intersections": [
+        {
+          "book": "Luke",
+          "chapter": 2,
+          "firstVerse": 29,
+          "lastVerse": 32
+        }
+      ]
+    },
+    {
+      "a": "hist-omitted-113",
+      "b": "hist-omitted-114",
+      "relationship": "SOURCE_VERSE_RANGE_INTERSECTION_NOT_SAME_EVENT",
+      "intersections": [
+        {
+          "book": "Luke",
+          "chapter": 2,
+          "firstVerse": 51,
+          "lastVerse": 52
+        }
+      ]
+    },
+    {
+      "a": "hist-omitted-186",
+      "b": "hist-omitted-187",
+      "relationship": "SOURCE_VERSE_RANGE_INTERSECTION_NOT_SAME_EVENT",
+      "intersections": [
+        {
+          "book": "John",
+          "chapter": 21,
+          "firstVerse": 4,
+          "lastVerse": 11
+        }
+      ]
+    }
+  ],
+  "entries": [
+    {
+      "id": "hist-omitted-002",
+      "title": "Enoch's life and departure",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Genesis 5:21–24",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Genesis 5:21–24"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-003",
+      "title": "The corruption preceding the Flood",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Genesis 6:5–8",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Genesis 6:5–8"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-004",
+      "title": "The Tower of Babel",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Genesis 11:1–9",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Genesis 11:1–9"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-005",
+      "title": "Abraham rescues Lot",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Genesis 14:1–17",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Genesis 14:1–17"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-008",
+      "title": "Abraham intercedes for Sodom",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Genesis 18:16–33",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Genesis 18:16–33"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-009",
+      "title": "Destruction of Sodom and Gomorrah",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Genesis 19",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Genesis 19:1–29"
+        }
+      ],
+      "correctionJustification": "The city's destruction and Lot's rescue end at v29; vv30–38 are Lot's daughters and the later origins of Moab and Ammon.",
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "SOURCE_WINDOW_REFINEMENT_RESEARCH_PROPOSAL",
+      "reviewFlags": [
+        "NARROWED_OR_SEGMENTED_SOURCE_RANGE",
+        "INTENTIONAL_OR_DUPLICATED_BIBLICAL_SOURCE_ROWS_REVIEW"
+      ],
+      "nearbySharedSource": [
+        {
+          "otherId": "hist-omitted-010",
+          "a": "hist-omitted-009",
+          "b": "hist-omitted-010",
+          "relationship": "SOURCE_VERSE_RANGE_INTERSECTION_NOT_SAME_EVENT",
+          "intersections": [
+            {
+              "book": "Genesis",
+              "chapter": 19,
+              "firstVerse": 15,
+              "lastVerse": 29
+            }
+          ]
+        }
+      ],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-010",
+      "title": "Lot's escape",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Genesis 19:15–29",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Genesis 19:15–29"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "SHARED_SOURCE_CROSS_VIEW_REVIEW_NEEDED",
+      "reviewFlags": [
+        "INTENTIONAL_OR_DUPLICATED_BIBLICAL_SOURCE_ROWS_REVIEW"
+      ],
+      "nearbySharedSource": [
+        {
+          "otherId": "hist-omitted-009",
+          "a": "hist-omitted-009",
+          "b": "hist-omitted-010",
+          "relationship": "SOURCE_VERSE_RANGE_INTERSECTION_NOT_SAME_EVENT",
+          "intersections": [
+            {
+              "book": "Genesis",
+              "chapter": 19,
+              "firstVerse": 15,
+              "lastVerse": 29
+            }
+          ]
+        }
+      ],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-011",
+      "title": "Abraham's servant finds Rebecca",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Genesis 24",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Genesis 24"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-012",
+      "title": "Jacob purchases Esau's birthright",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Genesis 25:29–34",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Genesis 25:29–34"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-013",
+      "title": "Jacob receives Isaac's blessing",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Genesis 27",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Genesis 27"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-014",
+      "title": "Jacob's dream of the ladder",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Genesis 28:10–22",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Genesis 28:10–22"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-015",
+      "title": "Jacob's reconciliation with Esau",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Genesis 33",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Genesis 33"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-016",
+      "title": "Dinah and the events at Shechem",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Genesis 34",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Genesis 34"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-017",
+      "title": "Joseph and Potiphar's wife",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Genesis 39",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Genesis 39"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-018",
+      "title": "Judah and Tamar",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Genesis 38",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Genesis 38"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-019",
+      "title": "Joseph tests his brothers",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Genesis 42–44",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Genesis 42–44"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "SHARED_SOURCE_CROSS_VIEW_REVIEW_NEEDED",
+      "reviewFlags": [
+        "INTENTIONAL_OR_DUPLICATED_BIBLICAL_SOURCE_ROWS_REVIEW"
+      ],
+      "nearbySharedSource": [
+        {
+          "otherId": "hist-omitted-020",
+          "a": "hist-omitted-019",
+          "b": "hist-omitted-020",
+          "relationship": "SOURCE_VERSE_RANGE_INTERSECTION_NOT_SAME_EVENT",
+          "intersections": [
+            {
+              "book": "Genesis",
+              "chapter": 44,
+              "firstVerse": 18,
+              "lastVerse": 34
+            }
+          ]
+        }
+      ],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-020",
+      "title": "Judah pleads for Benjamin",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Genesis 44:18–34",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Genesis 44:18–34"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "SHARED_SOURCE_CROSS_VIEW_REVIEW_NEEDED",
+      "reviewFlags": [
+        "INTENTIONAL_OR_DUPLICATED_BIBLICAL_SOURCE_ROWS_REVIEW",
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "nearbySharedSource": [
+        {
+          "otherId": "hist-omitted-019",
+          "a": "hist-omitted-019",
+          "b": "hist-omitted-020",
+          "relationship": "SOURCE_VERSE_RANGE_INTERSECTION_NOT_SAME_EVENT",
+          "intersections": [
+            {
+              "book": "Genesis",
+              "chapter": 44,
+              "firstVerse": 18,
+              "lastVerse": 34
+            }
+          ]
+        }
+      ],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-021",
+      "title": "Jacob blesses his sons",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Genesis 49",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Genesis 49:1–28"
+        }
+      ],
+      "correctionJustification": "The blessings of Jacob's sons conclude in v28; vv29–32 contain burial instructions and Jacob's death.",
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "SOURCE_WINDOW_REFINEMENT_RESEARCH_PROPOSAL",
+      "reviewFlags": [
+        "NARROWED_OR_SEGMENTED_SOURCE_RANGE",
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-022",
+      "title": "Deaths of Jacob and Joseph",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Genesis 49–50",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Genesis 49:29–32"
+        },
+        {
+          "order": 2,
+          "reference": "Genesis 50:1–14"
+        },
+        {
+          "order": 3,
+          "reference": "Genesis 50:22–25"
+        }
+      ],
+      "correctionJustification": "Jacob's death and burial and Joseph's death occur at distinct points. Genesis 50:15–21 is a separate reconciliation episode, not one death scene.",
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "SOURCE_WINDOW_REFINEMENT_RESEARCH_PROPOSAL",
+      "reviewFlags": [
+        "NARROWED_OR_SEGMENTED_SOURCE_RANGE"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-023",
+      "title": "The Hebrew midwives resist Pharaoh",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Exodus 1:15–21",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Exodus 1:15–21"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-024",
+      "title": "Moses' birth and rescue from the Nile",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Exodus 2:1–10",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Exodus 2:1–10"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-025",
+      "title": "Moses flees to Midian",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Exodus 2:11–22",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Exodus 2:11–22"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-026",
+      "title": "Individual confrontations during the ten plagues",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Exodus 7–11",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Exodus 7–11"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "P3_SELECTION_RECONCILIATION_NEEDED",
+      "reviewFlags": [
+        "P3_SOURCE_SPAN_INTERSECTS_NOT_PROOF_OF_SELECTED_EPISODE",
+        "LONG_SOURCE_CHAPTER_RANGE_REQUIRES_EDITORIAL_LIMIT_REVIEW",
+        "LONG_COMPLEX_SEQUENCE"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [
+        {
+          "movementId": "HS-M08",
+          "beatId": null,
+          "sourceRef": "Exodus 7:14–17",
+          "relation": "REFERENCE_INTERSECTION_ONLY"
+        },
+        {
+          "movementId": "HS-M08",
+          "beatId": null,
+          "sourceRef": "Exodus 7:20–21",
+          "relation": "REFERENCE_INTERSECTION_ONLY"
+        },
+        {
+          "movementId": "HS-M08",
+          "beatId": null,
+          "sourceRef": "Exodus 11:4–8",
+          "relation": "REFERENCE_INTERSECTION_ONLY"
+        }
+      ],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-027",
+      "title": "Manna from heaven",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Exodus 16",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Exodus 16"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-028",
+      "title": "Water from the rock",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Exodus 17:1–7",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Exodus 17:1–7"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-029",
+      "title": "Battle against Amalek",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Exodus 17:8–16",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Exodus 17:8–16"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-030",
+      "title": "Jethro advises Moses",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Exodus 18",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Exodus 18"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-031",
+      "title": "The golden calf and Moses' intercession",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Exodus 32–34",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Exodus 32–34"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "P3_SELECTION_RECONCILIATION_NEEDED",
+      "reviewFlags": [
+        "P3_SOURCE_SPAN_INTERSECTS_NOT_PROOF_OF_SELECTED_EPISODE",
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [
+        {
+          "movementId": "HS-M10",
+          "beatId": null,
+          "sourceRef": "Exodus 32:1–4",
+          "relation": "REFERENCE_INTERSECTION_ONLY"
+        },
+        {
+          "movementId": "HS-M10",
+          "beatId": null,
+          "sourceRef": "Exodus 32:7–14",
+          "relation": "REFERENCE_INTERSECTION_ONLY"
+        },
+        {
+          "movementId": "HS-M10",
+          "beatId": null,
+          "sourceRef": "Exodus 32:19–20",
+          "relation": "REFERENCE_INTERSECTION_ONLY"
+        },
+        {
+          "movementId": "HS-M10",
+          "beatId": null,
+          "sourceRef": "Exodus 32:30–34",
+          "relation": "REFERENCE_INTERSECTION_ONLY"
+        }
+      ],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-032",
+      "title": "Construction and consecration of the Tabernacle",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Exodus 35–40",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Exodus 35–40"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "EXTENDED_READING_EDITORIAL_REVIEW_NEEDED",
+      "reviewFlags": [
+        "LONG_SOURCE_CHAPTER_RANGE_REQUIRES_EDITORIAL_LIMIT_REVIEW",
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED",
+        "LONG_TECHNICAL_CONSTRUCTION_ACCOUNT"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-033",
+      "title": "The seventy elders",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Numbers 11:16–30",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Numbers 11:16–30"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-034",
+      "title": "Miriam and Aaron speak against Moses",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Numbers 12",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Numbers 12"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-035",
+      "title": "The twelve spies",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Numbers 13–14",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Numbers 13–14"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-036",
+      "title": "Korah's rebellion",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Numbers 16",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Numbers 16"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-037",
+      "title": "Aaron's rod",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Numbers 17",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Numbers 17"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-038",
+      "title": "Moses strikes the rock",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Numbers 20:1–13",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Numbers 20:1–13"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-039",
+      "title": "The bronze serpent",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Numbers 21:4–9",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Numbers 21:4–9"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-040",
+      "title": "Balaam and Balak",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Numbers 22–24",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Numbers 22–24"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-041",
+      "title": "Crossing the Jordan",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Joshua 3",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Joshua 3"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "P3_SELECTION_RECONCILIATION_NEEDED",
+      "reviewFlags": [
+        "P3_SOURCE_SPAN_INTERSECTS_NOT_PROOF_OF_SELECTED_EPISODE",
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [
+        {
+          "movementId": "HS-M11",
+          "beatId": null,
+          "sourceRef": "Joshua 3:7–8",
+          "relation": "REFERENCE_INTERSECTION_ONLY"
+        },
+        {
+          "movementId": "HS-M11",
+          "beatId": null,
+          "sourceRef": "Joshua 3:13–17",
+          "relation": "REFERENCE_INTERSECTION_ONLY"
+        }
+      ],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-042",
+      "title": "The fall of Jericho",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Joshua 6",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Joshua 6"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-043",
+      "title": "Achan's sin and the defeat at Ai",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Joshua 7",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Joshua 7"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-044",
+      "title": "Joshua's farewell and covenant renewal",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Joshua 23–24",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Joshua 23–24"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-045",
+      "title": "Deborah and Barak",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Judges 4–5",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Judges 4–5"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-046",
+      "title": "Gideon's call and victory",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Judges 6–8",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Judges 6–8"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-047",
+      "title": "Jephthah",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Judges 11",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Judges 11"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-048",
+      "title": "Samson's birth and exploits",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Judges 13–16",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Judges 13–16"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "SHARED_SOURCE_CROSS_VIEW_REVIEW_NEEDED",
+      "reviewFlags": [
+        "INTENTIONAL_OR_DUPLICATED_BIBLICAL_SOURCE_ROWS_REVIEW"
+      ],
+      "nearbySharedSource": [
+        {
+          "otherId": "hist-omitted-049",
+          "a": "hist-omitted-048",
+          "b": "hist-omitted-049",
+          "relationship": "SOURCE_VERSE_RANGE_INTERSECTION_NOT_SAME_EVENT",
+          "intersections": [
+            {
+              "book": "Judges",
+              "chapter": 16,
+              "firstVerse": 4,
+              "lastVerse": 22
+            }
+          ]
+        }
+      ],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-049",
+      "title": "Samson and Delilah",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Judges 16",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Judges 16:4–22"
+        }
+      ],
+      "correctionJustification": "Delilah enters at v4, and Samson is captured by v22; vv1–3 concern Gaza, and vv23–31 narrate his final exploit and death.",
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "SOURCE_WINDOW_REFINEMENT_RESEARCH_PROPOSAL",
+      "reviewFlags": [
+        "NARROWED_OR_SEGMENTED_SOURCE_RANGE",
+        "INTENTIONAL_OR_DUPLICATED_BIBLICAL_SOURCE_ROWS_REVIEW"
+      ],
+      "nearbySharedSource": [
+        {
+          "otherId": "hist-omitted-048",
+          "a": "hist-omitted-048",
+          "b": "hist-omitted-049",
+          "relationship": "SOURCE_VERSE_RANGE_INTERSECTION_NOT_SAME_EVENT",
+          "intersections": [
+            {
+              "book": "Judges",
+              "chapter": 16,
+              "firstVerse": 4,
+              "lastVerse": 22
+            }
+          ]
+        }
+      ],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-050",
+      "title": "Hannah's prayer and Samuel's birth",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "1 Samuel 1–2",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "1 Samuel 1–2"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-051",
+      "title": "The calling of Samuel",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "1 Samuel 3",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "1 Samuel 3"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-052",
+      "title": "Capture and return of the Ark",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "1 Samuel 4–6",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "1 Samuel 4–6"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-053",
+      "title": "Saul's disobedience and rejection",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "1 Samuel 15",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "1 Samuel 15"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-055",
+      "title": "David and Jonathan's friendship",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "1 Samuel 18–20",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "1 Samuel 18–20"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-057",
+      "title": "David and Abigail",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "1 Samuel 25",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "1 Samuel 25"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-058",
+      "title": "Saul and the woman of Endor",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "1 Samuel 28",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "1 Samuel 28"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-059",
+      "title": "David and Bathsheba",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "2 Samuel 11–12",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "2 Samuel 11–12"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-060",
+      "title": "Absalom's rebellion",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "2 Samuel 15–18",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "2 Samuel 15–18"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-061",
+      "title": "Solomon judges between two women",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "1 Kings 3:16–28",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "1 Kings 3:16–28"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-062",
+      "title": "Queen of Sheba visits Solomon",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "1 Kings 10",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "1 Kings 10:1–13"
+        }
+      ],
+      "correctionJustification": "The Queen of Sheba departs in v13; the succeeding account from v14 concerns Solomon's wealth.",
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "SOURCE_WINDOW_REFINEMENT_RESEARCH_PROPOSAL",
+      "reviewFlags": [
+        "NARROWED_OR_SEGMENTED_SOURCE_RANGE"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-063",
+      "title": "Solomon's apostasy",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "1 Kings 11",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "1 Kings 11:1–13"
+        }
+      ],
+      "correctionJustification": "Solomon's religious apostasy and divine response occupy vv1–13; from v14 the narrative turns to political adversaries.",
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "SOURCE_WINDOW_REFINEMENT_RESEARCH_PROPOSAL",
+      "reviewFlags": [
+        "NARROWED_OR_SEGMENTED_SOURCE_RANGE",
+        "P3_SOURCE_SPAN_INTERSECTS_NOT_PROOF_OF_SELECTED_EPISODE",
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [
+        {
+          "movementId": "HS-M14",
+          "beatId": null,
+          "sourceRef": "1Kings 11:29–32",
+          "relation": "REFERENCE_INTERSECTION_ONLY"
+        }
+      ],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-064",
+      "title": "Elijah and the widow of Sarepta",
+      "primaryCollectionId": "prophets_and_their_lives",
+      "originalInventoryReference": "1 Kings 17",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "1 Kings 17:8–16"
+        }
+      ],
+      "correctionJustification": "Elijah and the widow at Sarepta begins with God's instruction in v8, and the multiplication ends in v16; v17 begins the separate sickness of her son.",
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "SOURCE_WINDOW_REFINEMENT_RESEARCH_PROPOSAL",
+      "reviewFlags": [
+        "NARROWED_OR_SEGMENTED_SOURCE_RANGE"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-065",
+      "title": "Elijah raises the widow's son",
+      "primaryCollectionId": "prophets_and_their_lives",
+      "originalInventoryReference": "1 Kings 17:17–24",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "1 Kings 17:17–24"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-066",
+      "title": "Elijah confronts the prophets of Baal",
+      "primaryCollectionId": "prophets_and_their_lives",
+      "originalInventoryReference": "1 Kings 18",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "1 Kings 18:17–40"
+        }
+      ],
+      "correctionJustification": "The public confrontation and triumph over Baal's prophets begin with Elijah confronting Ahab in v17 and end at v40; v41 introduces rain.",
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "SOURCE_WINDOW_REFINEMENT_RESEARCH_PROPOSAL",
+      "reviewFlags": [
+        "NARROWED_OR_SEGMENTED_SOURCE_RANGE",
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-067",
+      "title": "Elijah encounters God at Horeb",
+      "primaryCollectionId": "prophets_and_their_lives",
+      "originalInventoryReference": "1 Kings 19",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "1 Kings 19"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-068",
+      "title": "Elijah is taken up to heaven",
+      "primaryCollectionId": "prophets_and_their_lives",
+      "originalInventoryReference": "2 Kings 2",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "2 Kings 2"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-069",
+      "title": "Elisha multiplies the widow's oil",
+      "primaryCollectionId": "prophets_and_their_lives",
+      "originalInventoryReference": "2 Kings 4:1–7",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "2 Kings 4:1–7"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-070",
+      "title": "Elisha raises the Shunammite's son",
+      "primaryCollectionId": "prophets_and_their_lives",
+      "originalInventoryReference": "2 Kings 4:8–37",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "2 Kings 4:8–37"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-071",
+      "title": "Naaman is healed of leprosy",
+      "primaryCollectionId": "prophets_and_their_lives",
+      "originalInventoryReference": "2 Kings 5",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "2 Kings 5"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-072",
+      "title": "Isaiah's call and vision of God's holiness",
+      "primaryCollectionId": "prophets_and_their_lives",
+      "originalInventoryReference": "Isaiah 6",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Isaiah 6"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-073",
+      "title": "Hezekiah and the Assyrian invasion",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "2 Kings 18–19",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "2 Kings 18–19"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-074",
+      "title": "Josiah discovers the Book of the Law",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "2 Kings 22",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "2 Kings 22"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-075",
+      "title": "Josiah renews the covenant",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "2 Kings 23",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "2 Kings 23"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-076",
+      "title": "Jeremiah's Temple sermon",
+      "primaryCollectionId": "prophets_and_their_lives",
+      "originalInventoryReference": "Jeremiah 7",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Jeremiah 7"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-078",
+      "title": "Jeremiah purchases a field",
+      "primaryCollectionId": "prophets_and_their_lives",
+      "originalInventoryReference": "Jeremiah 32",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Jeremiah 32"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-079",
+      "title": "Ezekiel's vision of God's glory",
+      "primaryCollectionId": "visions_and_revelations",
+      "originalInventoryReference": "Ezekiel 1",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Ezekiel 1"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "VISION_GENRE_REVIEW_NEEDED",
+      "reviewFlags": [
+        "VISION_NOT_EARTHLY_DATE_OR_GEOGRAPHY"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-080",
+      "title": "Ezekiel's valley of dry bones",
+      "primaryCollectionId": "visions_and_revelations",
+      "originalInventoryReference": "Ezekiel 37",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Ezekiel 37:1–14"
+        }
+      ],
+      "correctionJustification": "The vision of dry bones and its explicit interpretation conclude at v14; v15 begins the different symbolic action of the two sticks.",
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "SOURCE_WINDOW_REFINEMENT_RESEARCH_PROPOSAL",
+      "reviewFlags": [
+        "NARROWED_OR_SEGMENTED_SOURCE_RANGE",
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED",
+        "VISION_NOT_EARTHLY_DATE_OR_GEOGRAPHY"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-081",
+      "title": "Jonah and Nineveh",
+      "primaryCollectionId": "prophets_and_their_lives",
+      "originalInventoryReference": "Jonah 1–4",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Jonah 1–4"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-082",
+      "title": "Daniel and his companions at Babylon's court",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Daniel 1",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Daniel 1"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [
+        "EDITION_OR_GENRE_SAFEGUARD"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-083",
+      "title": "Nebuchadnezzar's dream",
+      "primaryCollectionId": "visions_and_revelations",
+      "originalInventoryReference": "Daniel 2",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Daniel 2"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "VISION_GENRE_REVIEW_NEEDED",
+      "reviewFlags": [
+        "EDITION_OR_GENRE_SAFEGUARD",
+        "VISION_NOT_EARTHLY_DATE_OR_GEOGRAPHY"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-084",
+      "title": "The three young men in the fiery furnace",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Daniel 3",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Daniel 3"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [
+        "EDITION_OR_GENRE_SAFEGUARD",
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-085",
+      "title": "Nebuchadnezzar's humiliation",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Daniel 4",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Daniel 4"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [
+        "EDITION_OR_GENRE_SAFEGUARD"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-086",
+      "title": "Belshazzar's feast and the writing on the wall",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Daniel 5",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Daniel 5"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [
+        "EDITION_OR_GENRE_SAFEGUARD"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-088",
+      "title": "Susanna's vindication",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Daniel 13",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Daniel 13"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [
+        "EDITION_OR_GENRE_SAFEGUARD"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-089",
+      "title": "Daniel and Bel",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Daniel 14:1–22",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Daniel 14:1–22"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [
+        "EDITION_OR_GENRE_SAFEGUARD"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-090",
+      "title": "Daniel and the dragon",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Daniel 14:23–42",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Daniel 14:23–42"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [
+        "EDITION_OR_GENRE_SAFEGUARD"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-091",
+      "title": "Tobit's trials and blindness",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Tobit 1–3",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Tobit 1–3"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-096",
+      "title": "Ezra publicly reads the Law",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Nehemiah 8",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Nehemiah 8"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-097",
+      "title": "Nehemiah rebuilds Jerusalem's walls",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Nehemiah 2–6",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Nehemiah 2–6"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "EXTENDED_READING_EDITORIAL_REVIEW_NEEDED",
+      "reviewFlags": [
+        "LONG_SOURCE_CHAPTER_RANGE_REQUIRES_EDITORIAL_LIMIT_REVIEW",
+        "LONG_REBUILDING_ACCOUNT"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-098",
+      "title": "Martyrdom of Eleazar",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "2 Maccabees 6:18–31",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "2 Maccabees 6:18–31"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-099",
+      "title": "Martyrdom of the seven brothers and their mother",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "2 Maccabees 7",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "2 Maccabees 7"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-100",
+      "title": "Judas Maccabeus purifies and rededicates the Temple",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "1 Maccabees 4",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "1 Maccabees 4"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-101",
+      "title": "Prayer and sacrifice for the dead",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "2 Maccabees 12:38–46",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "2 Maccabees 12:38–46"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-102",
+      "title": "Zachary and the angel Gabriel",
+      "primaryCollectionId": "life_of_christ",
+      "originalInventoryReference": "Luke 1:5–25",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Luke 1:5–25"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-103",
+      "title": "The Visitation",
+      "primaryCollectionId": "life_of_christ",
+      "originalInventoryReference": "Luke 1:39–56",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Luke 1:39–56"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "ATLAS_SAME_REFERENCE_IDENTITY_REVIEW_NEEDED",
+      "reviewFlags": [
+        "INTENTIONAL_OR_DUPLICATED_BIBLICAL_SOURCE_ROWS_REVIEW",
+        "ATLAS_REFERENCE_EQUALITY_NOT_EVENT_ID_CERTIFICATION",
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED",
+        "SCRIPTURE_OVERLAP_DISTINCT_THEMATIC_VIEW"
+      ],
+      "nearbySharedSource": [
+        {
+          "otherId": "hist-omitted-104",
+          "a": "hist-omitted-103",
+          "b": "hist-omitted-104",
+          "relationship": "SOURCE_VERSE_RANGE_INTERSECTION_NOT_SAME_EVENT",
+          "intersections": [
+            {
+              "book": "Luke",
+              "chapter": 1,
+              "firstVerse": 46,
+              "lastVerse": 55
+            }
+          ]
+        }
+      ],
+      "sameReferenceAtlasCandidates": [
+        {
+          "eventId": "ein-karem-e1",
+          "placeId": "ein-karem",
+          "atlasTitle": "The Visitation",
+          "sourceRef": "Luke 1:39–56",
+          "runtimeInAtlas151": true,
+          "relationship": "REFERENCE_STRING_EQUALITY_ONLY_IDENTITY_PENDING"
+        }
+      ],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-105",
+      "title": "Birth of St John the Baptist",
+      "primaryCollectionId": "life_of_christ",
+      "originalInventoryReference": "Luke 1:57–66",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Luke 1:57–66"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "ATLAS_SAME_REFERENCE_IDENTITY_REVIEW_NEEDED",
+      "reviewFlags": [
+        "ATLAS_REFERENCE_EQUALITY_NOT_EVENT_ID_CERTIFICATION"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [
+        {
+          "eventId": "ein-karem-e2",
+          "placeId": "ein-karem",
+          "atlasTitle": "Birth of John the Baptist",
+          "sourceRef": "Luke 1:57–66",
+          "runtimeInAtlas151": false,
+          "relationship": "REFERENCE_STRING_EQUALITY_ONLY_IDENTITY_PENDING"
+        }
+      ],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-107",
+      "title": "Circumcision and naming of Jesus",
+      "primaryCollectionId": "life_of_christ",
+      "originalInventoryReference": "Luke 2:21",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Luke 2:21"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-108",
+      "title": "Presentation of Jesus in the Temple",
+      "primaryCollectionId": "life_of_christ",
+      "originalInventoryReference": "Luke 2:22–38",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Luke 2:22–38"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "ATLAS_SAME_REFERENCE_IDENTITY_REVIEW_NEEDED",
+      "reviewFlags": [
+        "INTENTIONAL_OR_DUPLICATED_BIBLICAL_SOURCE_ROWS_REVIEW",
+        "ATLAS_REFERENCE_EQUALITY_NOT_EVENT_ID_CERTIFICATION",
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "nearbySharedSource": [
+        {
+          "otherId": "hist-omitted-109",
+          "a": "hist-omitted-108",
+          "b": "hist-omitted-109",
+          "relationship": "SOURCE_VERSE_RANGE_INTERSECTION_NOT_SAME_EVENT",
+          "intersections": [
+            {
+              "book": "Luke",
+              "chapter": 2,
+              "firstVerse": 29,
+              "lastVerse": 32
+            }
+          ]
+        }
+      ],
+      "sameReferenceAtlasCandidates": [
+        {
+          "eventId": "jerusalem-temple-e1",
+          "placeId": "jerusalem-temple",
+          "atlasTitle": "The Presentation of Jesus",
+          "sourceRef": "Luke 2:22–38",
+          "runtimeInAtlas151": true,
+          "relationship": "REFERENCE_STRING_EQUALITY_ONLY_IDENTITY_PENDING"
+        }
+      ],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-110",
+      "title": "Massacre of the Holy Innocents",
+      "primaryCollectionId": "life_of_christ",
+      "originalInventoryReference": "Matthew 2:16–18",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Matthew 2:16–18"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "ATLAS_SAME_REFERENCE_IDENTITY_REVIEW_NEEDED",
+      "reviewFlags": [
+        "ATLAS_REFERENCE_EQUALITY_NOT_EVENT_ID_CERTIFICATION"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [
+        {
+          "eventId": "bethlehem-additional-003",
+          "placeId": "bethlehem",
+          "atlasTitle": "Herod orders the massacre of the Innocents",
+          "sourceRef": "Matthew 2:16–18",
+          "runtimeInAtlas151": false,
+          "relationship": "REFERENCE_STRING_EQUALITY_ONLY_IDENTITY_PENDING"
+        }
+      ],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-111",
+      "title": "Flight into Egypt",
+      "primaryCollectionId": "life_of_christ",
+      "originalInventoryReference": "Matthew 2:13–15",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Matthew 2:13–15"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "ATLAS_SAME_REFERENCE_IDENTITY_REVIEW_NEEDED",
+      "reviewFlags": [
+        "ATLAS_REFERENCE_EQUALITY_NOT_EVENT_ID_CERTIFICATION"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [
+        {
+          "eventId": "egypt-e1",
+          "placeId": "egypt",
+          "atlasTitle": "The flight into Egypt",
+          "sourceRef": "Matthew 2:13–15",
+          "runtimeInAtlas151": true,
+          "relationship": "REFERENCE_STRING_EQUALITY_ONLY_IDENTITY_PENDING"
+        }
+      ],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-112",
+      "title": "Return from Egypt",
+      "primaryCollectionId": "life_of_christ",
+      "originalInventoryReference": "Matthew 2:19–23",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Matthew 2:19–23"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "ATLAS_SAME_REFERENCE_IDENTITY_REVIEW_NEEDED",
+      "reviewFlags": [
+        "ATLAS_REFERENCE_EQUALITY_NOT_EVENT_ID_CERTIFICATION"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [
+        {
+          "eventId": "nazareth-e2",
+          "placeId": "nazareth",
+          "atlasTitle": "Jesus grows up in Nazareth",
+          "sourceRef": "Matthew 2:19–23",
+          "runtimeInAtlas151": false,
+          "relationship": "REFERENCE_STRING_EQUALITY_ONLY_IDENTITY_PENDING"
+        },
+        {
+          "eventId": "egypt-e2",
+          "placeId": "egypt",
+          "atlasTitle": "Return from Egypt",
+          "sourceRef": "Matthew 2:19–23",
+          "runtimeInAtlas151": false,
+          "relationship": "REFERENCE_STRING_EQUALITY_ONLY_IDENTITY_PENDING"
+        }
+      ],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-113",
+      "title": "Twelve-year-old Jesus among the doctors in the Temple",
+      "primaryCollectionId": "life_of_christ",
+      "originalInventoryReference": "Luke 2:41–52",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Luke 2:41–52"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "ATLAS_SAME_REFERENCE_IDENTITY_REVIEW_NEEDED",
+      "reviewFlags": [
+        "INTENTIONAL_OR_DUPLICATED_BIBLICAL_SOURCE_ROWS_REVIEW",
+        "ATLAS_REFERENCE_EQUALITY_NOT_EVENT_ID_CERTIFICATION",
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED",
+        "INTERVENING_SCENE_ALREADY_SEGMENTED"
+      ],
+      "nearbySharedSource": [
+        {
+          "otherId": "hist-omitted-114",
+          "a": "hist-omitted-113",
+          "b": "hist-omitted-114",
+          "relationship": "SOURCE_VERSE_RANGE_INTERSECTION_NOT_SAME_EVENT",
+          "intersections": [
+            {
+              "book": "Luke",
+              "chapter": 2,
+              "firstVerse": 51,
+              "lastVerse": 52
+            }
+          ]
+        }
+      ],
+      "sameReferenceAtlasCandidates": [
+        {
+          "eventId": "jerusalem-temple-e2",
+          "placeId": "jerusalem-temple",
+          "atlasTitle": "The twelve-year-old Jesus in the Temple",
+          "sourceRef": "Luke 2:41–52",
+          "runtimeInAtlas151": true,
+          "relationship": "REFERENCE_STRING_EQUALITY_ONLY_IDENTITY_PENDING"
+        }
+      ],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-115",
+      "title": "Forty days and temptations in the wilderness",
+      "primaryCollectionId": "life_of_christ",
+      "originalInventoryReference": "Matthew 4:1–11",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Matthew 4:1–11"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "ATLAS_SAME_REFERENCE_IDENTITY_REVIEW_NEEDED",
+      "reviewFlags": [
+        "ATLAS_REFERENCE_EQUALITY_NOT_EVENT_ID_CERTIFICATION",
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [
+        {
+          "eventId": "judean-wilderness-e1",
+          "placeId": "judean-wilderness",
+          "atlasTitle": "The forty-day fast and temptations",
+          "sourceRef": "Matthew 4:1–11",
+          "runtimeInAtlas151": true,
+          "relationship": "REFERENCE_STRING_EQUALITY_ONLY_IDENTITY_PENDING"
+        }
+      ],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-117",
+      "title": "Jesus cleanses the Temple",
+      "primaryCollectionId": "life_of_christ",
+      "originalInventoryReference": "John 2:13–22",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "John 2:13–22"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "ATLAS_SAME_REFERENCE_IDENTITY_REVIEW_NEEDED",
+      "reviewFlags": [
+        "ATLAS_REFERENCE_EQUALITY_NOT_EVENT_ID_CERTIFICATION"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [
+        {
+          "eventId": "jerusalem-temple-e3",
+          "placeId": "jerusalem-temple",
+          "atlasTitle": "Jesus purifies the Temple",
+          "sourceRef": "John 2:13–22",
+          "runtimeInAtlas151": false,
+          "relationship": "REFERENCE_STRING_EQUALITY_ONLY_IDENTITY_PENDING"
+        }
+      ],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-118",
+      "title": "Nicodemus visits Jesus at night",
+      "primaryCollectionId": "encounters_with_christ",
+      "originalInventoryReference": "John 3:1–21",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "John 3:1–21"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "ATLAS_SAME_REFERENCE_IDENTITY_REVIEW_NEEDED",
+      "reviewFlags": [
+        "ATLAS_REFERENCE_EQUALITY_NOT_EVENT_ID_CERTIFICATION",
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [
+        {
+          "eventId": "jerusalem-city-additional-010",
+          "placeId": "jerusalem-city",
+          "atlasTitle": "Nicodemus visits Jesus by night",
+          "sourceRef": "John 3:1–21",
+          "runtimeInAtlas151": false,
+          "relationship": "REFERENCE_STRING_EQUALITY_ONLY_IDENTITY_PENDING"
+        }
+      ],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-119",
+      "title": "Conversation with the Samaritan woman",
+      "primaryCollectionId": "encounters_with_christ",
+      "originalInventoryReference": "John 4:4–26",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "John 4:4–26"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "ATLAS_SAME_REFERENCE_IDENTITY_REVIEW_NEEDED",
+      "reviewFlags": [
+        "ATLAS_REFERENCE_EQUALITY_NOT_EVENT_ID_CERTIFICATION"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [
+        {
+          "eventId": "sychar-e1",
+          "placeId": "sychar",
+          "atlasTitle": "Jesus and the Samaritan woman",
+          "sourceRef": "John 4:4–26",
+          "runtimeInAtlas151": true,
+          "relationship": "REFERENCE_STRING_EQUALITY_ONLY_IDENTITY_PENDING"
+        }
+      ],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-121",
+      "title": "Calling of Matthew/Levi",
+      "primaryCollectionId": "encounters_with_christ",
+      "originalInventoryReference": "Mark 2:13–17",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Mark 2:13–17"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "ATLAS_SAME_REFERENCE_IDENTITY_REVIEW_NEEDED",
+      "reviewFlags": [
+        "ATLAS_REFERENCE_EQUALITY_NOT_EVENT_ID_CERTIFICATION"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [
+        {
+          "eventId": "capernaum-additional-018",
+          "placeId": "capernaum",
+          "atlasTitle": "The call of the tax collector Levi",
+          "sourceRef": "Mark 2:13–17",
+          "runtimeInAtlas151": false,
+          "relationship": "REFERENCE_STRING_EQUALITY_ONLY_IDENTITY_PENDING"
+        }
+      ],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-122",
+      "title": "Formal appointment of the Twelve",
+      "primaryCollectionId": "life_of_christ",
+      "originalInventoryReference": "Luke 6:12–16",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Luke 6:12–16"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "ATLAS_SAME_REFERENCE_IDENTITY_REVIEW_NEEDED",
+      "reviewFlags": [
+        "ATLAS_REFERENCE_EQUALITY_NOT_EVENT_ID_CERTIFICATION",
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [
+        {
+          "eventId": "beatitudes-additional-021",
+          "placeId": "beatitudes",
+          "atlasTitle": "The choosing of the Twelve Apostles",
+          "sourceRef": "Luke 6:12–16",
+          "runtimeInAtlas151": false,
+          "relationship": "REFERENCE_STRING_EQUALITY_ONLY_IDENTITY_PENDING"
+        }
+      ],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-123",
+      "title": "Rejection of Jesus at Nazareth",
+      "primaryCollectionId": "life_of_christ",
+      "originalInventoryReference": "Luke 4:16–30",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Luke 4:16–30"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "ATLAS_SAME_REFERENCE_IDENTITY_REVIEW_NEEDED",
+      "reviewFlags": [
+        "ATLAS_REFERENCE_EQUALITY_NOT_EVENT_ID_CERTIFICATION"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [
+        {
+          "eventId": "nazareth-e3",
+          "placeId": "nazareth",
+          "atlasTitle": "Jesus teaches in the synagogue",
+          "sourceRef": "Luke 4:16–30",
+          "runtimeInAtlas151": false,
+          "relationship": "REFERENCE_STRING_EQUALITY_ONLY_IDENTITY_PENDING"
+        }
+      ],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-124",
+      "title": "Mission of the Twelve",
+      "primaryCollectionId": "life_of_christ",
+      "originalInventoryReference": "Matthew 10",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Matthew 10"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-125",
+      "title": "Mission of the seventy-two disciples",
+      "primaryCollectionId": "life_of_christ",
+      "originalInventoryReference": "Luke 10:1–20",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Luke 10:1–20"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-155",
+      "title": "Mary and Martha",
+      "primaryCollectionId": "encounters_with_christ",
+      "originalInventoryReference": "Luke 10:38–42",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Luke 10:38–42"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "ATLAS_SAME_REFERENCE_IDENTITY_REVIEW_NEEDED",
+      "reviewFlags": [
+        "ATLAS_REFERENCE_EQUALITY_NOT_EVENT_ID_CERTIFICATION"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [
+        {
+          "eventId": "bethany-additional-057",
+          "placeId": "bethany",
+          "atlasTitle": "Jesus visits Martha and Mary",
+          "sourceRef": "Luke 10:38–42",
+          "runtimeInAtlas151": false,
+          "relationship": "REFERENCE_STRING_EQUALITY_ONLY_IDENTITY_PENDING"
+        }
+      ],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-167",
+      "title": "Zacchaeus",
+      "primaryCollectionId": "encounters_with_christ",
+      "originalInventoryReference": "Luke 19:1–10",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Luke 19:1–10"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "ATLAS_SAME_REFERENCE_IDENTITY_REVIEW_NEEDED",
+      "reviewFlags": [
+        "ATLAS_REFERENCE_EQUALITY_NOT_EVENT_ID_CERTIFICATION"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [
+        {
+          "eventId": "jericho-e2",
+          "placeId": "jericho",
+          "atlasTitle": "The conversion of Zacchaeus",
+          "sourceRef": "Luke 19:1–10",
+          "runtimeInAtlas151": true,
+          "relationship": "REFERENCE_STRING_EQUALITY_ONLY_IDENTITY_PENDING"
+        },
+        {
+          "eventId": "jericho-additional-064",
+          "placeId": "jericho",
+          "atlasTitle": "Jesus calls Zacchaeus down from the tree",
+          "sourceRef": "Luke 19:1–10",
+          "runtimeInAtlas151": false,
+          "relationship": "REFERENCE_STRING_EQUALITY_ONLY_IDENTITY_PENDING"
+        }
+      ],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-168",
+      "title": "Jesus and the sinful woman",
+      "primaryCollectionId": "encounters_with_christ",
+      "originalInventoryReference": "Luke 7:36–50",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Luke 7:36–50"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "ATLAS_SAME_REFERENCE_IDENTITY_REVIEW_NEEDED",
+      "reviewFlags": [
+        "ATLAS_REFERENCE_EQUALITY_NOT_EVENT_ID_CERTIFICATION"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [
+        {
+          "eventId": "galilee-region-additional-026",
+          "placeId": "galilee-region",
+          "atlasTitle": "The sinful woman anoints Jesus' feet",
+          "sourceRef": "Luke 7:36–50",
+          "runtimeInAtlas151": false,
+          "relationship": "REFERENCE_STRING_EQUALITY_ONLY_IDENTITY_PENDING"
+        }
+      ],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-170",
+      "title": "The anointing at Bethany",
+      "primaryCollectionId": "encounters_with_christ",
+      "originalInventoryReference": "John 12:1–8",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "John 12:1–8"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "ATLAS_SAME_REFERENCE_IDENTITY_REVIEW_NEEDED",
+      "reviewFlags": [
+        "ATLAS_REFERENCE_EQUALITY_NOT_EVENT_ID_CERTIFICATION"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [
+        {
+          "eventId": "bethany-e2",
+          "placeId": "bethany",
+          "atlasTitle": "The anointing at Bethany",
+          "sourceRef": "John 12:1–8",
+          "runtimeInAtlas151": false,
+          "relationship": "REFERENCE_STRING_EQUALITY_ONLY_IDENTITY_PENDING"
+        },
+        {
+          "eventId": "bethany-additional-066",
+          "placeId": "bethany",
+          "atlasTitle": "Jesus stays at Bethany before the Passion",
+          "sourceRef": "John 12:1–8",
+          "runtimeInAtlas151": false,
+          "relationship": "REFERENCE_STRING_EQUALITY_ONLY_IDENTITY_PENDING"
+        }
+      ],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-174",
+      "title": "Washing of the Apostles' feet",
+      "primaryCollectionId": "life_of_christ",
+      "originalInventoryReference": "John 13:1–17",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "John 13:1–17"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "ATLAS_SAME_REFERENCE_IDENTITY_REVIEW_NEEDED",
+      "reviewFlags": [
+        "ATLAS_REFERENCE_EQUALITY_NOT_EVENT_ID_CERTIFICATION",
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [
+        {
+          "eventId": "cenacle-e2",
+          "placeId": "cenacle",
+          "atlasTitle": "The washing of the feet",
+          "sourceRef": "John 13:1–17",
+          "runtimeInAtlas151": false,
+          "relationship": "REFERENCE_STRING_EQUALITY_ONLY_IDENTITY_PENDING"
+        }
+      ],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-179",
+      "title": "Jesus before Herod Antipas",
+      "primaryCollectionId": "life_of_christ",
+      "originalInventoryReference": "Luke 23:6–12",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Luke 23:6–12"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "ATLAS_SAME_REFERENCE_IDENTITY_REVIEW_NEEDED",
+      "reviewFlags": [
+        "ATLAS_REFERENCE_EQUALITY_NOT_EVENT_ID_CERTIFICATION"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [
+        {
+          "eventId": "jerusalem-trial-additional-076",
+          "placeId": "jerusalem-trial",
+          "atlasTitle": "Jesus appears before Herod Antipas",
+          "sourceRef": "Luke 23:6–12",
+          "runtimeInAtlas151": false,
+          "relationship": "REFERENCE_STRING_EQUALITY_ONLY_IDENTITY_PENDING"
+        }
+      ],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-180",
+      "title": "Simon of Cyrene and the women of Jerusalem",
+      "primaryCollectionId": "life_of_christ",
+      "originalInventoryReference": "Luke 23:26–31",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Luke 23:26–31"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-181",
+      "title": "The good thief",
+      "primaryCollectionId": "life_of_christ",
+      "originalInventoryReference": "Luke 23:39–43",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Luke 23:39–43"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "ATLAS_SAME_REFERENCE_IDENTITY_REVIEW_NEEDED",
+      "reviewFlags": [
+        "ATLAS_REFERENCE_EQUALITY_NOT_EVENT_ID_CERTIFICATION",
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [
+        {
+          "eventId": "golgotha-e3",
+          "placeId": "golgotha",
+          "atlasTitle": "Jesus and the good thief",
+          "sourceRef": "Luke 23:39–43",
+          "runtimeInAtlas151": false,
+          "relationship": "REFERENCE_STRING_EQUALITY_ONLY_IDENTITY_PENDING"
+        }
+      ],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-182",
+      "title": "The guards at the tomb",
+      "primaryCollectionId": "life_of_christ",
+      "originalInventoryReference": "Matthew 27:62–66",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Matthew 27:62–66"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "ATLAS_SAME_REFERENCE_IDENTITY_REVIEW_NEEDED",
+      "reviewFlags": [
+        "ATLAS_REFERENCE_EQUALITY_NOT_EVENT_ID_CERTIFICATION"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [
+        {
+          "eventId": "christ-tomb-additional-079",
+          "placeId": "christ-tomb",
+          "atlasTitle": "The guards at the tomb",
+          "sourceRef": "Matthew 27:62–66",
+          "runtimeInAtlas151": false,
+          "relationship": "REFERENCE_STRING_EQUALITY_ONLY_IDENTITY_PENDING"
+        }
+      ],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-183",
+      "title": "Angel's announcement to the women",
+      "primaryCollectionId": "life_of_christ",
+      "originalInventoryReference": "Matthew 28:1–10",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Matthew 28:1–10"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "ATLAS_SAME_REFERENCE_IDENTITY_REVIEW_NEEDED",
+      "reviewFlags": [
+        "ATLAS_REFERENCE_EQUALITY_NOT_EVENT_ID_CERTIFICATION",
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED",
+        "RESURRECTION_ACCOUNTS_DISTINCT_CANONICAL_WITNESS"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [
+        {
+          "eventId": "christ-tomb-e3",
+          "placeId": "christ-tomb",
+          "atlasTitle": "The angel announces the Resurrection",
+          "sourceRef": "Matthew 28:1–10",
+          "runtimeInAtlas151": false,
+          "relationship": "REFERENCE_STRING_EQUALITY_ONLY_IDENTITY_PENDING"
+        }
+      ],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-184",
+      "title": "Road to Emmaus",
+      "primaryCollectionId": "life_of_christ",
+      "originalInventoryReference": "Luke 24:13–35",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Luke 24:13–35"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "ATLAS_SAME_REFERENCE_IDENTITY_REVIEW_NEEDED",
+      "reviewFlags": [
+        "ATLAS_REFERENCE_EQUALITY_NOT_EVENT_ID_CERTIFICATION",
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [
+        {
+          "eventId": "emmaus-e1",
+          "placeId": "emmaus",
+          "atlasTitle": "The risen Jesus walks to Emmaus",
+          "sourceRef": "Luke 24:13–35",
+          "runtimeInAtlas151": true,
+          "relationship": "REFERENCE_STRING_EQUALITY_ONLY_IDENTITY_PENDING"
+        }
+      ],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-185",
+      "title": "Jesus eats before the Apostles",
+      "primaryCollectionId": "life_of_christ",
+      "originalInventoryReference": "Luke 24:36–43",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Luke 24:36–43"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "ATLAS_SAME_REFERENCE_IDENTITY_REVIEW_NEEDED",
+      "reviewFlags": [
+        "ATLAS_REFERENCE_EQUALITY_NOT_EVENT_ID_CERTIFICATION"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [
+        {
+          "eventId": "cenacle-additional-081",
+          "placeId": "cenacle",
+          "atlasTitle": "Jesus shows his wounds to the disciples",
+          "sourceRef": "Luke 24:36–43",
+          "runtimeInAtlas151": false,
+          "relationship": "REFERENCE_STRING_EQUALITY_ONLY_IDENTITY_PENDING"
+        }
+      ],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-186",
+      "title": "Appearance beside the Sea of Galilee",
+      "primaryCollectionId": "life_of_christ",
+      "originalInventoryReference": "John 21:1–14",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "John 21:1–14"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "ATLAS_SAME_REFERENCE_IDENTITY_REVIEW_NEEDED",
+      "reviewFlags": [
+        "INTENTIONAL_OR_DUPLICATED_BIBLICAL_SOURCE_ROWS_REVIEW",
+        "ATLAS_REFERENCE_EQUALITY_NOT_EVENT_ID_CERTIFICATION",
+        "SCENE_CONTAINS_SEPARATELY_INDEXED_MIRACLE"
+      ],
+      "nearbySharedSource": [
+        {
+          "otherId": "hist-omitted-187",
+          "a": "hist-omitted-186",
+          "b": "hist-omitted-187",
+          "relationship": "SOURCE_VERSE_RANGE_INTERSECTION_NOT_SAME_EVENT",
+          "intersections": [
+            {
+              "book": "John",
+              "chapter": 21,
+              "firstVerse": 4,
+              "lastVerse": 11
+            }
+          ]
+        }
+      ],
+      "sameReferenceAtlasCandidates": [
+        {
+          "eventId": "galilee-sea-e4",
+          "placeId": "galilee-sea",
+          "atlasTitle": "The risen Jesus appears by the lake",
+          "sourceRef": "John 21:1–14",
+          "runtimeInAtlas151": true,
+          "relationship": "REFERENCE_STRING_EQUALITY_ONLY_IDENTITY_PENDING"
+        }
+      ],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-188",
+      "title": "Jesus asks Peter three times whether he loves Him",
+      "primaryCollectionId": "encounters_with_christ",
+      "originalInventoryReference": "John 21:15–19",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "John 21:15–19"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "ATLAS_SAME_REFERENCE_IDENTITY_REVIEW_NEEDED",
+      "reviewFlags": [
+        "ATLAS_REFERENCE_EQUALITY_NOT_EVENT_ID_CERTIFICATION",
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [
+        {
+          "eventId": "galilee-sea-additional-083",
+          "placeId": "galilee-sea",
+          "atlasTitle": "Jesus asks Peter three times whether he loves him",
+          "sourceRef": "John 21:15–19",
+          "runtimeInAtlas151": false,
+          "relationship": "REFERENCE_STRING_EQUALITY_ONLY_IDENTITY_PENDING"
+        }
+      ],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-189",
+      "title": "Great Commission in Galilee",
+      "primaryCollectionId": "life_of_christ",
+      "originalInventoryReference": "Matthew 28:16–20",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Matthew 28:16–20"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "ATLAS_SAME_REFERENCE_IDENTITY_REVIEW_NEEDED",
+      "reviewFlags": [
+        "ATLAS_REFERENCE_EQUALITY_NOT_EVENT_ID_CERTIFICATION",
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [
+        {
+          "eventId": "galilee-mountain-additional-084",
+          "placeId": "galilee-mountain",
+          "atlasTitle": "Jesus commissions the Eleven in Galilee",
+          "sourceRef": "Matthew 28:16–20",
+          "runtimeInAtlas151": false,
+          "relationship": "REFERENCE_STRING_EQUALITY_ONLY_IDENTITY_PENDING"
+        }
+      ],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-190",
+      "title": "Election of Matthias",
+      "primaryCollectionId": "apostolic_church",
+      "originalInventoryReference": "Acts 1:15–26",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Acts 1:15–26"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-191",
+      "title": "Peter heals the lame man",
+      "primaryCollectionId": "apostolic_church",
+      "originalInventoryReference": "Acts 3:1–10",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Acts 3:1–10"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-192",
+      "title": "Ananias and Sapphira",
+      "primaryCollectionId": "apostolic_church",
+      "originalInventoryReference": "Acts 5:1–11",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Acts 5:1–11"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-193",
+      "title": "Philip baptises the Ethiopian official",
+      "primaryCollectionId": "apostolic_church",
+      "originalInventoryReference": "Acts 8:26–40",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Acts 8:26–40"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-194",
+      "title": "Peter raises Tabitha (Dorcas)",
+      "primaryCollectionId": "apostolic_church",
+      "originalInventoryReference": "Acts 9:36–43",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Acts 9:36–43"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-195",
+      "title": "Peter is released from prison",
+      "primaryCollectionId": "apostolic_church",
+      "originalInventoryReference": "Acts 12:1–19",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Acts 12:3–19"
+        }
+      ],
+      "correctionJustification": "James's martyrdom is in Acts 12:1–2 and has its own entry; Peter's imprisonment and release begin at v3 and end at v19.",
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "SOURCE_WINDOW_REFINEMENT_RESEARCH_PROPOSAL",
+      "reviewFlags": [
+        "NARROWED_OR_SEGMENTED_SOURCE_RANGE"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-196",
+      "title": "Martyrdom of James, brother of John",
+      "primaryCollectionId": "apostolic_church",
+      "originalInventoryReference": "Acts 12:1–2",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Acts 12:1–2"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [
+        "SCRIPTURE_RANGE_WITH_PARENT_EPISODE_OVERLAP"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-197",
+      "title": "Paul heals a man at Lystra",
+      "primaryCollectionId": "apostolic_church",
+      "originalInventoryReference": "Acts 14:8–18",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Acts 14:8–18"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-198",
+      "title": "Paul meets Lydia",
+      "primaryCollectionId": "apostolic_church",
+      "originalInventoryReference": "Acts 16:11–15",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Acts 16:11–15"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-199",
+      "title": "Paul and Silas are imprisoned at Philippi",
+      "primaryCollectionId": "apostolic_church",
+      "originalInventoryReference": "Acts 16:16–40",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Acts 16:16–40"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-200",
+      "title": "Paul preaches in Thessalonica",
+      "primaryCollectionId": "apostolic_church",
+      "originalInventoryReference": "Acts 17:1–9",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Acts 17:1–9"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-201",
+      "title": "Paul addresses the Areopagus at Athens",
+      "primaryCollectionId": "apostolic_church",
+      "originalInventoryReference": "Acts 17:16–34",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Acts 17:16–34"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-202",
+      "title": "Paul's ministry at Ephesus",
+      "primaryCollectionId": "apostolic_church",
+      "originalInventoryReference": "Acts 19:1–20",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Acts 19:1–20"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-203",
+      "title": "Eutychus at Troas",
+      "primaryCollectionId": "apostolic_church",
+      "originalInventoryReference": "Acts 20:7–12",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Acts 20:7–12"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-204",
+      "title": "Paul's farewell to the elders at Miletus",
+      "primaryCollectionId": "apostolic_church",
+      "originalInventoryReference": "Acts 20:17–38",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Acts 20:17–38"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-205",
+      "title": "Paul's shipwreck",
+      "primaryCollectionId": "apostolic_church",
+      "originalInventoryReference": "Acts 27:13–44",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Acts 27:13–44"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-206",
+      "title": "Paul on Malta",
+      "primaryCollectionId": "apostolic_church",
+      "originalInventoryReference": "Acts 28:1–10",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Acts 28:1–10"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "UNCOLLATED_SOURCE_SCOPE_NOT_CERTIFIED",
+      "reviewFlags": [],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-207",
+      "title": "John sees the risen Christ on Patmos",
+      "primaryCollectionId": "visions_and_revelations",
+      "originalInventoryReference": "Revelation 1:9–20",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Revelation 1:9–20"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "VISION_GENRE_REVIEW_NEEDED",
+      "reviewFlags": [
+        "EDITION_OR_GENRE_SAFEGUARD",
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED",
+        "VISION_NOT_EARTHLY_CHRONOLOGY",
+        "VISION_NOT_EARTHLY_DATE_OR_GEOGRAPHY"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-208",
+      "title": "Messages to the seven churches",
+      "primaryCollectionId": "visions_and_revelations",
+      "originalInventoryReference": "Revelation 2–3",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Revelation 2–3"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "VISION_GENRE_REVIEW_NEEDED",
+      "reviewFlags": [
+        "EDITION_OR_GENRE_SAFEGUARD",
+        "MESSAGES_TO_SEVEN_CHURCHES",
+        "VISION_NOT_EARTHLY_DATE_OR_GEOGRAPHY"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-209",
+      "title": "The heavenly throne and twenty-four elders",
+      "primaryCollectionId": "visions_and_revelations",
+      "originalInventoryReference": "Revelation 4",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Revelation 4"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "VISION_GENRE_REVIEW_NEEDED",
+      "reviewFlags": [
+        "EDITION_OR_GENRE_SAFEGUARD",
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED",
+        "VISION_NOT_EARTHLY_DATE_OR_GEOGRAPHY"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-210",
+      "title": "Opening of the seven seals",
+      "primaryCollectionId": "visions_and_revelations",
+      "originalInventoryReference": "Revelation 6–8",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Revelation 6–7"
+        },
+        {
+          "order": 2,
+          "reference": "Revelation 8:1–5"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "VISION_GENRE_REVIEW_NEEDED",
+      "reviewFlags": [
+        "EDITION_OR_GENRE_SAFEGUARD",
+        "COMPOSITE_SEALS_SEVENTH_SEAL_BOUNDARY",
+        "VISION_NOT_EARTHLY_DATE_OR_GEOGRAPHY"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-211",
+      "title": "The seven trumpets",
+      "primaryCollectionId": "visions_and_revelations",
+      "originalInventoryReference": "Revelation 8–11",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Revelation 8:6–13"
+        },
+        {
+          "order": 2,
+          "reference": "Revelation 9–11"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "VISION_GENRE_REVIEW_NEEDED",
+      "reviewFlags": [
+        "EDITION_OR_GENRE_SAFEGUARD",
+        "TRUMPET_START_EXCLUDES_SEVENTH_SEAL",
+        "VISION_NOT_EARTHLY_DATE_OR_GEOGRAPHY"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-212",
+      "title": "The woman clothed with the sun and the dragon",
+      "primaryCollectionId": "visions_and_revelations",
+      "originalInventoryReference": "Revelation 12",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Revelation 12"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "VISION_GENRE_REVIEW_NEEDED",
+      "reviewFlags": [
+        "EDITION_OR_GENRE_SAFEGUARD",
+        "CORE_RESTORATION_CANDIDATE_NOT_DECIDED",
+        "APOCALYPTIC_IMAGE_NOT_DATED_EARTHLY_EVENT",
+        "VISION_NOT_EARTHLY_DATE_OR_GEOGRAPHY"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-213",
+      "title": "The beast from the sea",
+      "primaryCollectionId": "visions_and_revelations",
+      "originalInventoryReference": "Revelation 13",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Revelation 13:1–10"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "VISION_GENRE_REVIEW_NEEDED",
+      "reviewFlags": [
+        "EDITION_OR_GENRE_SAFEGUARD",
+        "DUPLICATED_OR_SHARED_REFERENCE_WITH_hist-omitted-214",
+        "DISTINCT_VISION_WITH_SHARED_CHAPTER",
+        "VISION_NOT_EARTHLY_DATE_OR_GEOGRAPHY"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-214",
+      "title": "The beast from the earth",
+      "primaryCollectionId": "visions_and_revelations",
+      "originalInventoryReference": "Revelation 13",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Revelation 13:11–18"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "VISION_GENRE_REVIEW_NEEDED",
+      "reviewFlags": [
+        "EDITION_OR_GENRE_SAFEGUARD",
+        "DUPLICATED_OR_SHARED_REFERENCE_WITH_hist-omitted-213",
+        "DISTINCT_VISION_WITH_SHARED_CHAPTER",
+        "VISION_NOT_EARTHLY_DATE_OR_GEOGRAPHY"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-215",
+      "title": "The seven last plagues",
+      "primaryCollectionId": "visions_and_revelations",
+      "originalInventoryReference": "Revelation 15–16",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Revelation 15–16"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "VISION_GENRE_REVIEW_NEEDED",
+      "reviewFlags": [
+        "EDITION_OR_GENRE_SAFEGUARD",
+        "APOCALYPTIC_VISION_SEQUENCE",
+        "VISION_NOT_EARTHLY_DATE_OR_GEOGRAPHY"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    },
+    {
+      "id": "hist-omitted-216",
+      "title": "The fall of Babylon",
+      "primaryCollectionId": "visions_and_revelations",
+      "originalInventoryReference": "Revelation 17–18",
+      "proposedSourceParts": [
+        {
+          "order": 1,
+          "reference": "Revelation 17–18"
+        }
+      ],
+      "correctionJustification": null,
+      "auditStatus": "SOURCE_RANGE_SCREENED_RESEARCH_ONLY_NO_PUBLICATION_APPROVAL",
+      "editorialQueue": "VISION_GENRE_REVIEW_NEEDED",
+      "reviewFlags": [
+        "EDITION_OR_GENRE_SAFEGUARD",
+        "APOCALYPTIC_SYMBOLIC_JUDGMENT",
+        "VISION_NOT_EARTHLY_DATE_OR_GEOGRAPHY"
+      ],
+      "nearbySharedSource": [],
+      "sameReferenceAtlasCandidates": [],
+      "p3SpanIntersection": [],
+      "catholicEditionCollationStatus": "UNCOLLATED",
+      "canonicalEpisodeId": null,
+      "approvedAtlasEventId": null,
+      "approvedCovenantalChapterId": null,
+      "published": false
+    }
+  ]
+}
