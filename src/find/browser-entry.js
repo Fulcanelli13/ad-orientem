@@ -25,6 +25,7 @@ import { buildCustomsAtlasFacets, filterCustomsAtlasItems } from "./customs-atla
 import { groupTraditionsForBrowse, countCanonicalTraditions } from "./traditions-browse.js";
 import { HERITAGE_CATEGORIES, projectHeritagePlaces, heritageCustomCards, nearbyHeritagePlaces } from "./heritage-map.js";
 import { buildExplorePlaceProfiles } from "./place-profiles.js";
+import { publishedCustomFolioId } from "./custom-canonical-handoff.js";
 import { buildPilgrimageJourneyCatalogue,selectedPilgrimageJourney,journeysForCanonicalPlace } from "./pilgrimage-journey.js";
 
 const VERSION="explore-v1";
@@ -637,10 +638,11 @@ export function createFindOwner(win=globalThis){
     // Canonical published membership is the authority. Valid IDs have both
     // 3- and 4-letter families (DEV-010, DOM-006, ADVT-001, ...).
     if(options?.customId!=null&&!customId)return false;
+    let customFolio=null;
     if(customId){
       try{await ensureData()}catch{return false;}
-      if(!projection?.byLens?.traditions?.some(item=>
-        item?.raw?.custom?.custom_id===customId&&item.raw.custom.publication_state==="PUBLISHED"))return false;
+      customFolio=publishedCustomFolioId(projection,customId);
+      if(!customFolio)return false;
     }
     try{win?.AO_LEARN_APP_V1?.close?.()}catch{}
     try{win?.AO_PRAY_APP_V1?.close?.()}catch{}
@@ -672,7 +674,7 @@ export function createFindOwner(win=globalThis){
     if(customId){
       state.lens="traditions";state.view="list";state.query="";
       state.atlasFamily="ANY";state.atlasArea="ANY";state.atlasPeriod="ANY";state.atlasCalendar="ANY";
-      state.displayLimit=24;state.selectedId="tradition:custom:"+customId;state.selectedPlaceId=null;
+      state.displayLimit=24;state.selectedId=customFolio;state.selectedPlaceId=null;
     }
     state.expandPlace=false;state.expandDetail=Boolean(customId&&options?.expandDetail);
     state.bibleAtlas=false;state.bibleIndex=0;
@@ -1188,16 +1190,15 @@ export function createFindOwner(win=globalThis){
     if(openCustom&&state.lens==="heritage"&&state.networkOpen){
       event.preventDefault?.();
       const id=openCustom.dataset.networkOpenCustom;
-      const canonical=projection?.byLens?.traditions?.find(item=>
-        item?.raw?.custom?.custom_id===id&&item?.raw?.custom?.publication_state==="PUBLISHED");
-      if(!canonical)return;
+      const canonicalFolio=publishedCustomFolioId(projection,id);
+      if(!canonicalFolio)return;
       // Open the existing canonical Traditions folio; no duplicate custom owner.
       queryByLens.set("heritage",state.query);
       state.lens="traditions";state.view="list";state.query="";
       state.networkOpen=false;state.networkFocus="";state.selectedPlaceId=null;
       // Grouped canonical custom folios use tradition:custom:<custom_id>,
       // never an individual attestation item's source-specific identity.
-      state.selectedId="tradition:custom:"+id;state.expandPlace=false;state.expandDetail=false;
+      state.selectedId=canonicalFolio;state.expandPlace=false;state.expandDetail=false;
       state.displayLimit=24;state.highlightCustomId=null;
       lastMapView=null;lastMapLens=null;nearbyResults=null;
       void paint();return;
