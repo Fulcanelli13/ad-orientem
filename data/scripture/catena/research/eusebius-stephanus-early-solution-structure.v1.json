@@ -1,0 +1,236 @@
+{
+  "schema": "ao.catena.eusebius-stephanus-early-solution-structure.v1",
+  "created": "2026-10-21",
+  "status": "research_only_not_live",
+  "parentIndex": "data/scripture/catena/research/eusebius-epitome-20-questions.v1.json",
+  "coverage": {
+    "from": 1,
+    "to": 4,
+    "questions": 4,
+    "internalResearchUnits": 14
+  },
+  "sourceWitness": "Eusebius to Stephanus epitome, the complete original longer work lost; Greek/modern English synchronized online for source-navigation; the Africanus material must retain original author provenance",
+  "explicitQualifications": [
+    "Original Greek precise per-unit spans and rights-reviewed quotations pending: analytical notes must not be displayed as ancient authors' literal responses.",
+    "III has competing historical and spiritual genealogical explanations: display neither as asserted unique chronology.",
+    "IV carries Africanus's work as the quoted/reported author; transmission through Eusebius must never be conflated with original authorship.",
+    "The allegedly simple contradiction between Luke and Matthew genealogies is addressed with nuanced assumptions; no AI simplification for Father speech.",
+    "Household devotional Catholic publication must not present speculative spiritual genealogy or marginal interpretations as doctrine."
+  ],
+  "records": [
+    {
+      "questionId": "eusebius-stephanus-01",
+      "work": "Quaestiones ad Stephanum — abridged Greek selection",
+      "sourceTextStatus": "partial_online_primary_excerpt_read__complete_greek_alignment_pending",
+      "publicationStatus": "research_only__not_a_verified_Father_answer",
+      "units": [
+        {
+          "spanId": "S1-A",
+          "section": "I.opening",
+          "kind": "objection_about_descent",
+          "analyticalNote": "Initial difficulty: why a genealogy through Joseph is given if Christ's human birth is from Mary, not Joseph.",
+          "scriptureKey": "matthew/1/16",
+          "provenance": "recorded_proposed_objection_not_author_commitment",
+          "sourceUrl": null,
+          "noteType": "internal_scholarly_analysis_not_user_facing_translation",
+          "originalGreekText": null,
+          "englishFatherReply": null,
+          "releaseStatus": "blocked_until_text_and_edition_checked"
+        },
+        {
+          "spanId": "S1-B",
+          "section": "I.sections following opening",
+          "kind": "historical_veil_or_social_perception",
+          "analyticalNote": "The discussion treats Christ's generally perceived identity as Joseph's son, within the divine economy that does not openly announce the virginal conception to all at once.",
+          "scriptureKey": "matthew/1/16",
+          "provenance": "observed_in_online_text_but_paragraph_span_pending",
+          "sourceUrl": "https://catholiclibrary.org/library/view?chunk.id=00000007&docId=%2FFathers-Synchronized-EN%2FEusebius_Caesariensis__Quaestiones_evangelicae_ad_Stephanum.en.html",
+          "noteType": "internal_scholarly_analysis_not_user_facing_translation",
+          "originalGreekText": null,
+          "englishFatherReply": null,
+          "releaseStatus": "blocked_until_text_and_edition_checked"
+        },
+        {
+          "spanId": "S1-C",
+          "section": "I.sections following opening",
+          "kind": "distinction_between_social_and_real_parentage",
+          "analyticalNote": "Any discussion of Jesus being socially regarded as Joseph's son must retain the text's affirmation of the virginal conception, avoiding biological paternity attributed to Joseph.",
+          "scriptureKey": "luke/3/23",
+          "provenance": "source_context_guard__not_a_distinct_original_conclusion",
+          "sourceUrl": null,
+          "noteType": "internal_scholarly_analysis_not_user_facing_translation",
+          "originalGreekText": null,
+          "englishFatherReply": null,
+          "releaseStatus": "blocked_until_text_and_edition_checked"
+        }
+      ]
+    },
+    {
+      "questionId": "eusebius-stephanus-02",
+      "work": "Quaestiones ad Stephanum — abridged Greek selection",
+      "sourceTextStatus": "partial_online_primary_excerpt_read__complete_greek_alignment_pending",
+      "publicationStatus": "research_only__not_a_verified_Father_answer",
+      "units": [
+        {
+          "spanId": "S2-A",
+          "section": "II",
+          "kind": "contrasting_genealogy_direction",
+          "analyticalNote": "The two evangelists' contrary directions are treated as different expository intentions, not as a failed attempt to describe the same genealogy in identical fashion.",
+          "scriptureKey": "matthew/1/1",
+          "provenance": "textual_argument_described_in_transmitted_section",
+          "sourceUrl": null,
+          "noteType": "internal_scholarly_analysis_not_user_facing_translation",
+          "originalGreekText": null,
+          "englishFatherReply": null,
+          "releaseStatus": "blocked_until_text_and_edition_checked"
+        },
+        {
+          "spanId": "S2-B",
+          "section": "II",
+          "kind": "contrast_of_start_and_end_points",
+          "analyticalNote": "Matthew's ancestry begins with Abraham, while Luke traces back to Adam and then God; the explanation connects the difference with Christ's redemptive work.",
+          "scriptureKey": "luke/3/38",
+          "provenance": "topic_and_source_analytical_note__detail_greek_pending",
+          "sourceUrl": null,
+          "noteType": "internal_scholarly_analysis_not_user_facing_translation",
+          "originalGreekText": null,
+          "englishFatherReply": null,
+          "releaseStatus": "blocked_until_text_and_edition_checked"
+        },
+        {
+          "spanId": "S2-C",
+          "section": "II",
+          "kind": "precedent_of_scripture_genealogy",
+          "analyticalNote": "The treatment appeals to other scriptural sequences to show that more than one genealogy convention may legitimately be followed.",
+          "scriptureKey": "luke/3/23",
+          "provenance": "partial_online_witness_observed",
+          "sourceUrl": "https://catholiclibrary.org/library/view?chunk.id=00000013&docId=%2FFathers-Synchronized-EN%2FEusebius_Caesariensis__Quaestiones_evangelicae_ad_Stephanum.en.html",
+          "noteType": "internal_scholarly_analysis_not_user_facing_translation",
+          "originalGreekText": null,
+          "englishFatherReply": null,
+          "releaseStatus": "blocked_until_text_and_edition_checked"
+        }
+      ]
+    },
+    {
+      "questionId": "eusebius-stephanus-03",
+      "work": "Quaestiones ad Stephanum — abridged Greek selection",
+      "sourceTextStatus": "partial_online_primary_excerpt_read__complete_greek_alignment_pending",
+      "publicationStatus": "research_only__not_a_verified_Father_answer",
+      "units": [
+        {
+          "spanId": "S3-A",
+          "section": "III.a",
+          "kind": "grammatical_qualification",
+          "analyticalNote": "Contrasts Matthew's asserted 'begat' statement with Luke's 'as was supposed' as an interpretative distinction.",
+          "scriptureKey": "luke/3/23",
+          "provenance": "eusebius_primary_argument_as_presented",
+          "sourceUrl": "https://catholiclibrary.org/library/view?chunk.id=00000013&docId=%2FFathers-Synchronized-EN%2FEusebius_Caesariensis__Quaestiones_evangelicae_ad_Stephanum.en.html",
+          "noteType": "internal_scholarly_analysis_not_user_facing_translation",
+          "originalGreekText": null,
+          "englishFatherReply": null,
+          "releaseStatus": "blocked_until_text_and_edition_checked"
+        },
+        {
+          "spanId": "S3-B",
+          "section": "III.b",
+          "kind": "first_historical_explanation",
+          "analyticalNote": "Suggests Luke could be reporting a lineage attributed in common opinion through Nathan, while Matthew records another lineage; carefully retain the conditional character.",
+          "scriptureKey": "matthew/1/16",
+          "provenance": "hypothetical_genealogical_explanation_not_historical_certainty",
+          "sourceUrl": "https://catholiclibrary.org/library/view?chunk.id=00000013&docId=%2FFathers-Synchronized-EN%2FEusebius_Caesariensis__Quaestiones_evangelicae_ad_Stephanum.en.html",
+          "noteType": "internal_scholarly_analysis_not_user_facing_translation",
+          "originalGreekText": null,
+          "englishFatherReply": null,
+          "releaseStatus": "blocked_until_text_and_edition_checked"
+        },
+        {
+          "spanId": "S3-C",
+          "section": "III.c–e",
+          "kind": "alternative_spiritual_baptismal_reading",
+          "analyticalNote": "Offers a different interpretation of Luke's genealogy in connection with the baptism and spiritual regeneration, rather than a second physical pedigree.",
+          "scriptureKey": "luke/3/23",
+          "provenance": "distinct_alternative_not_to_be_blended_with_S3_B",
+          "sourceUrl": "https://catholiclibrary.org/library/view?chunk.id=00000015&docId=%2FFathers-Synchronized-EN%2FEusebius_Caesariensis__Quaestiones_evangelicae_ad_Stephanum.en.html",
+          "noteType": "internal_scholarly_analysis_not_user_facing_translation",
+          "originalGreekText": null,
+          "englishFatherReply": null,
+          "releaseStatus": "blocked_until_text_and_edition_checked"
+        },
+        {
+          "spanId": "S3-D",
+          "section": "III.d–e",
+          "kind": "analogy_of_nonphysical_parentage",
+          "analyticalNote": "Uses analogies of spiritual descent (such as being sons of Abraham through belief) to explain the proposed distinction.",
+          "scriptureKey": "luke/3/38",
+          "provenance": "subargument_belongs_with_S3_C",
+          "sourceUrl": "https://catholiclibrary.org/library/view?chunk.id=00000015&docId=%2FFathers-Synchronized-EN%2FEusebius_Caesariensis__Quaestiones_evangelicae_ad_Stephanum.en.html",
+          "noteType": "internal_scholarly_analysis_not_user_facing_translation",
+          "originalGreekText": null,
+          "englishFatherReply": null,
+          "releaseStatus": "blocked_until_text_and_edition_checked"
+        }
+      ]
+    },
+    {
+      "questionId": "eusebius-stephanus-04",
+      "work": "Quaestiones ad Stephanum — abridged Greek selection",
+      "sourceTextStatus": "composite_transmission_Africanus_quote_author",
+      "publicationStatus": "research_only__not_a_verified_Father_answer",
+      "units": [
+        {
+          "spanId": "S4-A",
+          "section": "IV.heading",
+          "kind": "source_author_boundary",
+          "analyticalNote": "The inherited heading identifies Africanus as the source for this genealogy explanation.",
+          "scriptureKey": "matthew/1/16",
+          "provenance": "credited_to_Julius_Africanus_not_Eusebius_unqualified",
+          "sourceUrl": "https://catholiclibrary.org/library/view?chunk.id=00000015&docId=%2FFathers-Synchronized-EN%2FEusebius_Caesariensis__Quaestiones_evangelicae_ad_Stephanum.en.html",
+          "noteType": "internal_scholarly_analysis_not_user_facing_translation",
+          "originalGreekText": null,
+          "englishFatherReply": null,
+          "releaseStatus": "blocked_until_text_and_edition_checked"
+        },
+        {
+          "spanId": "S4-B",
+          "section": "IV.text",
+          "kind": "rejected_explanation",
+          "analyticalNote": "Africanus rejects the view that different genealogies were simply constructed to confer priestly and royal lineage without historical grounding.",
+          "scriptureKey": "luke/3/23",
+          "provenance": "Africanus_own_argument_transmitted_by_Eusebius",
+          "sourceUrl": "https://catholiclibrary.org/library/view?chunk.id=00000015&docId=%2FFathers-Synchronized-EN%2FEusebius_Caesariensis__Quaestiones_evangelicae_ad_Stephanum.en.html",
+          "noteType": "internal_scholarly_analysis_not_user_facing_translation",
+          "originalGreekText": null,
+          "englishFatherReply": null,
+          "releaseStatus": "blocked_until_text_and_edition_checked"
+        },
+        {
+          "spanId": "S4-C",
+          "section": "IV.later_treatment",
+          "kind": "historical_levirate_kinship_proposal",
+          "analyticalNote": "Africanus's transmitted solution uses natural descent and legal fatherhood in the setting of levirate marriage to discuss Joseph's genealogical ancestors.",
+          "scriptureKey": "matthew/1/16",
+          "provenance": "Africanus_tradition_not_independently_proved_historical_reconstruction",
+          "sourceUrl": "https://en.wikisource.org/wiki/Nicene_and_Post-Nicene_Fathers:_Series_II/Volume_I/Church_History_of_Eusebius/Book_I/Chapter_7",
+          "noteType": "internal_scholarly_analysis_not_user_facing_translation",
+          "originalGreekText": null,
+          "englishFatherReply": null,
+          "releaseStatus": "blocked_until_text_and_edition_checked"
+        },
+        {
+          "spanId": "S4-D",
+          "section": "historical_transmission",
+          "kind": "parallel_witness",
+          "analyticalNote": "The Africanus letter survives in Eusebius's Church History I.7 as a related witness; do not silently equate its wording with the Stephanus epitome.",
+          "scriptureKey": "luke/3/23",
+          "provenance": "independent_source_witness_not_identical_exact_quote",
+          "sourceUrl": "https://en.wikisource.org/wiki/Nicene_and_Post-Nicene_Fathers:_Series_II/Volume_I/Church_History_of_Eusebius/Book_I/Chapter_7",
+          "noteType": "internal_scholarly_analysis_not_user_facing_translation",
+          "originalGreekText": null,
+          "englishFatherReply": null,
+          "releaseStatus": "blocked_until_text_and_edition_checked"
+        }
+      ]
+    }
+  ]
+}
