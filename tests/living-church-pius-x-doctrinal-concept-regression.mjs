@@ -20,7 +20,7 @@ assert.equal(fixture.schema,"AO_SPX_BILINGUAL_DOCTRINAL_CONCEPT_PROBE_V1");
 assert.equal(fixture.status,"FROZEN_BEFORE_THEOLOGICAL_CONCEPT_RETRIEVAL_IMPLEMENTATION");
 assert.equal(fixture.primary.length,40);
 assert.equal(fixture.followups.length,6);
-assert.equal(concepts.families.length,7);
+assert.equal(concepts.families.length,18);
 validatePiusSourceConceptRegistry(concepts,catalog);
 const engineOptions={historicalPointers:pointers,sourceConceptRegistry:concepts};
 const engines={
