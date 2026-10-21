@@ -1,3 +1,4 @@
+import {renderSacredNetworkPanel} from "./mapcn-sacred-network-presentation.js";
 import {renderAtlasCoveragePanel} from "./mapcn-atlas-coverage.js";
 import {renderMapcnDiscoverRail} from "./mapcn-discover-rail.js";
 import {renderTimeMassPanel} from "./mapcn-time-mass-presentation.js";
@@ -159,13 +160,16 @@ export function renderHeritageToString(vm,{placeSheet,detailSheet,itemPreview,jo
   html+='<button type="button" class="aoAtlasLayersLaunch'+(vm.atlasCoverage?' active':'')+
     '" data-atlas-mode="heatmap" aria-pressed="'+String(Boolean(vm.atlasCoverage))+'">'+
     L(vm.language,"Layers","Couches")+'</button>';
-  html+='<button type="button" data-heritage-category="ALL" aria-pressed="'+String(all)+'" class="'+(all?"active":"")+'">'+L(vm.language,"All places","Tous les lieux")+'</button>';
+  html+='<button type="button" class="aoSacredNetworkLaunch'+(vm.sacredNetwork?' active':'')+
+    '" data-network-toggle aria-pressed="'+String(Boolean(vm.sacredNetwork))+'">'+
+    L(vm.language,"Network","Réseau")+'</button>';
+  html+='<button type="button" data-heritage-category="ALL"' aria-pressed="'+String(all)+'" class="'+(all?"active":"")+'">'+L(vm.language,"All places","Tous les lieux")+'</button>';
   for(const key of Object.keys(CATEGORY_LABELS))html+='<button type="button" data-heritage-category="'+key+'" data-category="'+key+'" class="'+(!vm.journeyOpen&&active.length===1&&active.includes(key)?"active":"")+'" aria-pressed="'+String(!vm.journeyOpen&&active.length===1&&active.includes(key))+'">'+esc(label(vm.language,key))+'</button>';
   html+='</nav>';
   html+='<p class="aoHeritageLocationStatus" data-heritage-location-status role="status" aria-live="polite" hidden></p>';
   html+='<div class="aoFindBody aoHeritageBody" data-find-view="map" data-explore-lens="heritage"><div class="aoFindMap" data-find-map><div class="aoFindMapFallback"><strong>'+L(vm.language,"Sacred places","Lieux sacrés")+'</strong><span>'+(vm.items.length?L(vm.language,"Loading documented places…","Chargement des lieux documentés…"):L(vm.language,"No places match. Change the search or category.","Aucun lieu trouvé. Modifiez le thème ou la recherche."))+'</span></div></div>';
-  if(!vm.timeMass&&!vm.atlasCoverage&&!arr(vm.nearby).length)html+='<button type="button" class="aoHeritageNearby" data-heritage-nearby aria-label="'+L(vm.language,"Find documented places near me","Trouver des lieux documentés près de moi")+'">'+L(vm.language,"Near me","Près de moi")+'</button>';
-  if(!vm.timeMass&&!vm.atlasCoverage)html+='<button type="button" class="aoHeritageWorldReset" data-heritage-world aria-label="'+L(vm.language,"Show all places on the world map","Afficher tous les lieux sur la carte du monde")+'">'+L(vm.language,"World view","Vue du monde")+'</button>';
+  if(!vm.sacredNetwork&&!vm.timeMass&&!vm.atlasCoverage&&!arr(vm.nearby).length)html+='<button type="button" class="aoHeritageNearby" data-heritage-nearby aria-label="'+L(vm.language,"Find documented places near me","Trouver des lieux documentés près de moi")+'">'+L(vm.language,"Near me","Près de moi")+'</button>';
+  if(!vm.sacredNetwork&&!vm.timeMass&&!vm.atlasCoverage)html+='<button type="button" class="aoHeritageWorldReset" data-heritage-world aria-label="'+L(vm.language,"Show all places on the world map","Afficher tous les lieux sur la carte du monde")+'">'+L(vm.language,"World view","Vue du monde")+'</button>';
   // Hide search suggestions when an editorial place folio is open.
   if(searching&&!vm.selectedPlace&&!vm.selected)html+=searchMatches(vm);
   else if(arr(vm.nearby).length)html+=nearbyPanel(vm);
@@ -173,14 +177,18 @@ export function renderHeritageToString(vm,{placeSheet,detailSheet,itemPreview,jo
   // MapCN's Store Locator rail shares the active canonical map and its
   // existing data-explore-open-place action. Hide it when a separate journey
   // has ownership or when the legacy search overlay is active.
-  if(!vm.atlasCoverage&&!vm.timeMass&&!vm.journeyOpen&&!searching&&!arr(vm.nearby).length&&!arr(vm.customCards).length&&!vm.filters?.highlightCustomId)
+  if(!vm.sacredNetwork&&!vm.atlasCoverage&&!vm.timeMass&&!vm.journeyOpen&&!searching&&!arr(vm.nearby).length&&!arr(vm.customCards).length&&!vm.filters?.highlightCustomId)
     html+=renderMapcnDiscoverRail(vm);
   if(vm.timeMass)html+=renderTimeMassPanel({board:vm.timeMass,language:vm.language,filters:vm.filters});
   if(vm.atlasCoverage)html+=renderAtlasCoveragePanel({
     coverage:{...vm.atlasCoverage,selectedCountry:vm.filters.atlasCountry},
     mode:vm.filters.atlasMode,language:vm.language,limit:vm.filters.atlasCountryLimit});
+  if(vm.sacredNetwork)html+=renderSacredNetworkPanel({
+    network:vm.sacredNetwork,rootId:vm.filters.networkRoot,
+    kind:vm.filters.networkKind,query:vm.filters.networkQuery,
+    limit:vm.filters.networkLimit,language:vm.language});
   const customs=arr(vm.customCards);
-  if(customs.length&&!vm.timeMass&&!vm.atlasCoverage){
+  if(customs.length&&!vm.sacredNetwork&&!vm.timeMass&&!vm.atlasCoverage){
     html+='<div class="aoHeritageCustomStrip"><div class="aoHeritageStripHeading"><span>'+L(vm.language,"Living traditions","Traditions vivantes")+'</span>';
     if(vm.filters?.highlightCustomId)html+='<span class="aoHeritageStripActions"><button type="button" data-heritage-custom-details>'+L(vm.language,"About","Découvrir")+'</button><button type="button" data-heritage-custom-clear>'+L(vm.language,"Clear","Effacer")+'</button></span>';
     html+='</div><div class="aoHeritageCustomRail" aria-label="'+L(vm.language,"Discover customs","Découvrir les coutumes")+'">';
