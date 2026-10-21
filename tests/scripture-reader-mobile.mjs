@@ -342,6 +342,13 @@ try{
     "Catena message feed must not overflow the phone: "+JSON.stringify(catenaWidth));
   await dialog.locator(".aoCatenaMForm input").fill("angel");
   await dialog.locator(".aoCatenaMForm button").click();
+  const matchClue=dialog.locator(".aoCatenaMEvidence").first();
+  await matchClue.waitFor({state:"visible",timeout:15000});
+  assert.match(await matchClue.innerText(),/SOURCE WORD|SHARED SOURCE WORD/i,
+    "Every retrieved lexical Father message discloses that textual overlap is not a certified answer");
+  assert.ok(["exact-source-wording","shared-vocabulary"].includes(
+    await matchClue.getAttribute("data-catena-match")));
+
   const searchAll=dialog.getByRole("button",{name:"Search all four Gospels"});
   await searchAll.click();
   await dialog.locator(".aoCatenaMElsewhere").first().waitFor({state:"visible",timeout:30000});
