@@ -1,0 +1,109 @@
+{
+  "schema": "ao.catena.matthew-batch02-crossfather-comparison.v1",
+  "created": "2026-10-21",
+  "status": "research_comparison_not_authorized_quotes",
+  "sourceReview": "data/scripture/catena/research/full-corpus-pass-20261021/matthew-batch-02-47-meaning-checks.v1.json",
+  "count": 7,
+  "sourceAnchors": 21,
+  "policy": "Even multiple Fathers at one Scripture location do not necessarily address one identical question. Keep each answer as a verbatim pointer into its own Catena source and distinguish allegory, reported opponent, doctrinal condition and alternative readings.",
+  "groups": [
+    {
+      "id": "yoke_difficulty_matthew_11_28",
+      "modernReaderQuestion": "How can Christ's yoke be easy if following Him demands sacrifice?",
+      "questionVoice": "modern_editorial_prompt_not_historical",
+      "originalAnswerPointers": [
+        "catena.matthew.11.28:13",
+        "catena.matthew.11.28:15",
+        "catena.matthew.11.28:17"
+      ],
+      "relationKind": "complementary_distinct_explanations",
+      "analyticalComparison": "Gregory refers to relief from disordered desire; Rabanus to love's developing sweetness; Jerome contrasts Gospel and Law.",
+      "sourceDifferenceOrRisk": "Do not suggest the texts all address exactly the same sense of 'easy'; Jerome's law-and-grace wording needs contextual theological scrutiny.",
+      "releaseState": "review_lead_not_approved_parallel_dialogue"
+    },
+    {
+      "id": "tares_judgment_church_matthew_13_24",
+      "modernReaderQuestion": "What should Christians learn from the wheat and tares about separating evil from good?",
+      "questionVoice": "modern_editorial_prompt_not_historical",
+      "originalAnswerPointers": [
+        "catena.matthew.13.24:14",
+        "catena.matthew.13.24:20",
+        "catena.matthew.13.24:22"
+      ],
+      "relationKind": "different_aspects_not_direct_agreement",
+      "analyticalComparison": "Jerome addresses rash expulsion and apparent ambiguity; Chrysostom comments on order of final gathering; Augustine offers and then qualifies a heresy-bundle interpretation.",
+      "sourceDifferenceOrRisk": "Preserve Augustine's retraction/qualification. Avoid treating church discipline and final divine judgment as interchangeable.",
+      "releaseState": "review_lead_not_approved_parallel_dialogue"
+    },
+    {
+      "id": "Peter_faith_storm_matthew_14_22",
+      "modernReaderQuestion": "Why did Peter sink, and what does Christ's rescue teach?",
+      "questionVoice": "modern_editorial_prompt_not_historical",
+      "originalAnswerPointers": [
+        "catena.matthew.14.22:20",
+        "catena.matthew.14.22:21",
+        "catena.matthew.14.22:40"
+      ],
+      "relationKind": "complementary_literal_and_allegorical",
+      "analyticalComparison": "Augustine emphasizes Peter's prayer and an allegory of the Church; Chrysostom contrasts the physical wind with weakness of faith.",
+      "sourceDifferenceOrRisk": "The Church-as-Peter interpretation must remain marked as Augustine's allegory, not an additional literal Gospel event.",
+      "releaseState": "review_lead_not_approved_parallel_dialogue"
+    },
+    {
+      "id": "traditions_sabbath_parents_matthew_15_1",
+      "modernReaderQuestion": "Why does Christ oppose some traditions of the elders?",
+      "questionVoice": "modern_editorial_prompt_not_historical",
+      "originalAnswerPointers": [
+        "catena.matthew.15.1:5",
+        "catena.matthew.15.1:12"
+      ],
+      "relationKind": "related_scripture_distinct_emphases",
+      "analyticalComparison": "Chrysostom distinguishes accusation based on human tradition rather than Mosaic law; Jerome stresses material support owed to parents.",
+      "sourceDifferenceOrRisk": "The Pharisees' historical question belongs to the Gospel speakers, not to Chrysostom or Jerome.",
+      "releaseState": "review_lead_not_approved_parallel_dialogue"
+    },
+    {
+      "id": "planted_god_law_matthew_15_12",
+      "modernReaderQuestion": "What does Christ mean by the plant not planted by the Father?",
+      "questionVoice": "modern_editorial_prompt_not_historical",
+      "originalAnswerPointers": [
+        "catena.matthew.15.12:3",
+        "catena.matthew.15.12:6"
+      ],
+      "relationKind": "convergent_rejection_with_distinct_followup",
+      "analyticalComparison": "Chrysostom rejects identifying the uprooted plant with the Mosaic Law; Jerome develops an account of God's planting and the will's possible deviation.",
+      "sourceDifferenceOrRisk": "Do not equate Chrysostom's refutation of Manichaeans with Jerome's account of free will as if they were a single argument.",
+      "releaseState": "review_lead_not_approved_parallel_dialogue"
+    },
+    {
+      "id": "leaven_bread_matthew_16_5",
+      "modernReaderQuestion": "Why does Christ use bread and leaven to teach the disciples?",
+      "questionVoice": "modern_editorial_prompt_not_historical",
+      "originalAnswerPointers": [
+        "catena.matthew.16.5:4",
+        "catena.matthew.16.5:5",
+        "catena.matthew.16.5:8",
+        "catena.matthew.16.5:11"
+      ],
+      "relationKind": "related_exegetical_questions_not_single_identical_answer",
+      "analyticalComparison": "Chrysostom offers reasons for the figurative rebuke and its timing; Jerome explains lack of bread and distinguishes corrupt teaching from wholesome doctrine.",
+      "sourceDifferenceOrRisk": "A topic group may contain several questions, so use subquestions or separate bubbles with distinct original answer anchors.",
+      "releaseState": "review_lead_not_approved_parallel_dialogue"
+    },
+    {
+      "id": "son_of_man_confession_matthew_16_13",
+      "modernReaderQuestion": "Why does Christ ask who people say the Son of Man is?",
+      "questionVoice": "modern_editorial_prompt_not_historical",
+      "originalAnswerPointers": [
+        "catena.matthew.16.13:6",
+        "catena.matthew.16.13:7",
+        "catena.matthew.16.13:8",
+        "catena.matthew.16.13:9"
+      ],
+      "relationKind": "distinct_exegetical_readings_on_one_biblical_question",
+      "analyticalComparison": "Jerome discusses the wording and humility of the question; Chrysostom distinguishes popular opinion from hostile opponents; Hilary insists on Christ's humanity and divinity.",
+      "sourceDifferenceOrRisk": "The literal question was asked by Christ and must not be re-presented as though Jerome, Hilary or Chrysostom originally asked it.",
+      "releaseState": "review_lead_not_approved_parallel_dialogue"
+    }
+  ]
+}
