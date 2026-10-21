@@ -13,6 +13,27 @@ import {
   auditHostIconBank,
 } from "../src/mass/reader-icons.js";
 
+// The approved Chant icon represents the priest's ACTUAL sung delivery,
+// across supported Sung modes, never Low Mass or Solemn minister-owned texts.
+const priestChantAt=(form,cueId,voice="SUNG / CLEAR")=>iconKeysForReaderState({
+ form,cueId,priestVoice:{value:voice,label:voice,cueId}
+}).priestVoiceIconKey;
+assert.equal(priestChantAt("MISSA_CANTATA_SIMPLE","AO.SM.C0144"),"final_ao_chant");
+assert.equal(priestChantAt("MISSA_CANTATA_INCENSE","AO.SM.C0070"),"final_ao_chant");
+assert.equal(priestChantAt("SOLEMN","AO.SM.C0053","SUNG / PUBLIC"),"final_ao_chant");
+assert.equal(priestChantAt("LOW","AO.SM.C0144"),"priest_audible",
+ "Low Mass priest voice is audible speech, not sung Chant");
+assert.equal(priestChantAt("SOLEMN","AO.SM.C0075"),null,
+ "Subdeacon owns Solemn Epistle; celebrant must not show Chant");
+assert.equal(priestChantAt("SOLEMN","AO.SM.C0086"),null,
+ "Deacon owns Solemn Gospel; celebrant must not show Chant");
+assert.equal(priestChantAt("MISSA_CANTATA_SIMPLE","AO.SM.C0130","AUDIBLE / ELEVATED"),"priest_audible",
+ "Audible Orate fratres is not sung");
+assert.equal(priestChantAt("MISSA_CANTATA_SIMPLE","AO.SM.C0150","SECRET / LOW"),"priest_silent",
+ "Original rollback quiet-priest icon is not Chant");
+// Final curated 65 uses exact separate lower-voice original, as checked in
+// reader-final65-position-icons.mjs.
+
 // All newly approved presentation assets are real files and do not extend
 // the frozen 67-master donor contract.
 for(const [name,url] of Object.entries(R17_REVIEWED_POSTURE_ASSETS)){
@@ -82,7 +103,9 @@ keys=iconKeysForReaderState({
 assert.equal(keys.postureIconKey,R17_ICON_KEYS.posture.STAND);
 assert.equal(keys.gestureIconKey,null,"head-bow illustrations were explicitly rejected by user");
 assert.equal(keys.priestVoiceIconKey,"priest_audible");
-assert.equal(keys.priestPositionIconKey,"priest_foot");
+assert.equal(keys.priestPositionIconKey,null,"Foot Centre rejected: position text only");
+assert.equal(iconKeysForReaderState({priestPosition:{station:"FOOT_CENTER",facing:"PEOPLE"}}).priestPositionIconKey,null,
+  "Facing-people fallback may not substitute a rejected Foot Centre pictogram");
 assert.equal(keys.priestActionIconKey,null,"position-only state must remain action-art free");
 
 const broken={...bank}; delete broken.priest_ascending_rich;
@@ -190,8 +213,8 @@ for(const [station,wanted] of Object.entries(approvedPosition)){
   assert.equal(iconKeysForReaderState({priestPosition:{station}}).priestPositionIconKey,wanted,
     station+" did not render the reviewed 19 October 2026 Mass art");
 }
-assert.equal(iconKeysForReaderState({priestPosition:{station:"FOOT_CENTER"}}).priestPositionIconKey,"priest_foot",
-  "unresolved foot-of-altar must not be marked as user-approved");
+assert.equal(iconKeysForReaderState({priestPosition:{station:"FOOT_CENTER"}}).priestPositionIconKey,null,
+  "No Foot Centre image is authorized, even in rollback readers");
 assert.equal(iconKeysForReaderState({priestAction:{label:"ELEVATES HOST",owner:"GESTURE_MATRIX_SOT",iconKey:"priest_elevate_host_rich"}}).priestActionIconKey,
   "priest_elevation","exact source-owned Host elevation did not honor the reviewed icon");
 assert.equal(iconKeysForReaderState({priestAction:{label:"ELEVATES CHALICE",owner:"GESTURE_MATRIX_SOT",iconKey:"priest_elevate_chalice_rich"}}).priestActionIconKey,

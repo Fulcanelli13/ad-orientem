@@ -1,3 +1,4 @@
+import { finalCurated65IconKeys } from "./reader-final65-icon-keys.js";
 // Exact v1.80 / Asset Bank v4.6 semantic mapping for the native reader.
 // Presentation authority: uploaded definitive v1.80 donor, AO_V46_ASSETS + v1.30 mapping.
 // R17/R19 remains the state/liturgical owner; this file only resolves semantic art.
@@ -24,7 +25,7 @@ export const R17_ICON_KEYS=Object.freeze({
     // the donor artwork named epistle visually depicts the Gospel side,
     // and vice versa. Preserve file identities; correct semantic use only.
     // Priest position remains independent of the transient priest action.
-    FOOT_CENTER:"priest_foot",
+    FOOT_CENTER:null, // 2026-10-20 user veto: no priest pictogram at the Foot
     ALTAR_STEPS_ASCENDING:"priest_ascending_rich",
     ALTAR_CENTER:"priest_centre_rich",
     ALTAR_EPISTLE_MISSAL:"priest_gospel_rich",
@@ -247,7 +248,23 @@ function gestureKey(gesture){
   return null;
 }
 
+const SOURCE_SUNG_FORMS=new Set(["MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]);
+function sourceFormPriestVoiceIcon(state,baseKey){
+  const form=token(state.form??state.celebrationForm);
+  const raw=String(state.priestVoice?.value??state.priestVoice?.label??"").trim().toUpperCase();
+  if(!SOURCE_SUNG_FORMS.has(form)||!/^SUNG\s*\/\s*(CLEAR|PUBLIC)(?:\s*\(MISSA CANTATA\))?$/.test(raw))
+    return baseKey;
+  const id=String(state.cueId??state.priestVoice?.cueId??"");
+  const n=Number(id.match(/^AO\.SM\.C(\d{4})$/)?.[1]??NaN);
+  // At Solemn Mass the subdeacon/deacon chant the Epistle/Gospel.
+  if(form==="SOLEMN"&&((n>=75&&n<=78)||(n>=82&&n<=88)))return null;
+  return "final_ao_chant";
+}
+
 export function iconKeysForReaderState(state={}){
+  // The final approved bank is opt-in for the actual 65-card curated LIVE
+  // presentation. Do not change frozen/legacy/Low/special rite resolver rules.
+  if(state.curated65FinalArt===true)return finalCurated65IconKeys(state);
   const posture=token(state.posture?.value??state.posture?.label);
   const voice=token(state.priestVoice?.value??state.priestVoice?.label);
   const station=token(state.priestPosition?.station??state.priestPosition?.value);
@@ -256,12 +273,13 @@ export function iconKeysForReaderState(state={}){
     postureIconKey:R17_ICON_KEYS.posture[posture]??null,
     gestureIconKey:gestureKey(state.gesture),
     responseIconKey:state.response ? R17_ICON_KEYS.response : null,
-    priestVoiceIconKey:R17_ICON_KEYS.priestVoice[voice]??voiceIconKey(state.priestVoice?.value??state.priestVoice?.label),
+    priestVoiceIconKey:sourceFormPriestVoiceIcon(state,R17_ICON_KEYS.priestVoice[voice]??voiceIconKey(state.priestVoice?.value??state.priestVoice?.label)),
     scholaIconKey:state.schola ? R17_ICON_KEYS.schola : null,
     // Only an explicit turn toward the congregation owns this pictogram.
     // SEDILIA may face people OR altar depending on local layout; the
     // ambiguous profile must keep its sedilia station icon.
-    priestPositionIconKey:(facing==="PEOPLE"||facing==="PEOPLE_DURING_TURN")
+    priestPositionIconKey:station==="FOOT_CENTER"?null:
+      (facing==="PEOPLE"||facing==="PEOPLE_DURING_TURN")
       ? "priest_facing_people"
       : (R17_ICON_KEYS.priestPosition[station]??null),
     priestActionIconKey:priestActionKey(state.priestAction),

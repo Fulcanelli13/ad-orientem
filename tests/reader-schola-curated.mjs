@@ -53,7 +53,7 @@ function fixture(form="MISSA_CANTATA_INCENSE"){
   return {p,review,schola,cards:review.presentationModel.cards};
 }
 const {review,schola,cards}=fixture();
-assert.equal(review.presentationModel.totalCards,64);
+assert.equal(review.presentationModel.totalCards,65);
 const cardForCue=id=>cards.find(c=>c.paragraphs.some(p=>(p.sourceCueIds??[]).includes(id)));
 const titled=s=>cards.find(c=>c.title===s);
 const verify=(card,expected,message)=>{
@@ -96,7 +96,8 @@ verify(titled("Offertory · Invitation and Antiphon"),"OFFERTORY",
 // One chant scene must survive the successive priestly offering prayers,
 // even though the B030 written proper only occurs on the first card.
 for(const title of [
-  "Offertory · Offering of the Bread and Chalice",
+  "Offertory · Offering of the Bread",
+  "Offertory · Preparing and Offering the Chalice",
   "Offertory · Humility and Invocation",
   "Offertory · Incensation",
   "Offertory · Lavabo and Offering to the Trinity",
@@ -168,16 +169,16 @@ assert.equal(productionSchola.activateForCard(2).trackId,"KYRIE");
 // Solemn sung has the same source-owner behavior without assuming the
 // celebrant proclaims the Gospel or dismissal instead of their ministers.
 const solemn=fixture("SOLEMN");
-assert.equal(solemn.review.presentationModel.totalCards,64);
+assert.equal(solemn.review.presentationModel.totalCards,65);
 const solemnGloria=solemn.cards.find(c=>c.paragraphs.some(p=>
   p.sourceCueIds?.includes("AO.SM.C0055")));
 assert.equal(solemn.schola.activateForCard(solemnGloria).trackId,"GLORIA");
 
 // Low Mass has no Schola. The curated sung review is not force-projected.
 const low=fixture("LOW");
-assert.ok(low.review.presentationModel.totalCards!==64,
+assert.ok(low.review.presentationModel.totalCards!==65,
   "Low Mass must not inherit the curated Sung-only segmentation");
 assert.equal(low.schola.project().structuralAbsence,true);
 assert.equal(low.schola.activateForCard(solemnGloria).schola,null);
 
-console.log("Mass Schola source-aware cards PASS — 64 curated, 48 rollback, Solemn, Low, no false progress/rewinds.");
+console.log("Mass Schola source-aware cards PASS — 65 curated, 48 rollback, Solemn, Low, no false progress/rewinds.");

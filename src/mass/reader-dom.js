@@ -5,6 +5,7 @@ import { missalSourceRubricCopy } from "./reader-missal-book-rubrics.js";
 import { normalizePresentationMode } from "./session-engine.js";
 import { resolveMassLiturgicalTheme, massThemeCssVariables } from "./reader-liturgical-theme.js";
 import { R17_DONOR_PNG_ICON_KEYS } from "./reader-icon-bank.js";
+import { exactIconBackedRubric } from "./reader-icon-backed-rubrics.js";
 
 export const SCHOLA_SPEEDS=Object.freeze([0.25,0.35,0.45,0.60,0.80,1.00]);
 export const DEFAULT_SCHOLA_SPEED=0.45;
@@ -102,6 +103,13 @@ const SHELL_STYLE = `
 .ao-state-cell[data-side="priest"] .ao-state-label{max-width:132px}
 .ao-state-kicker{font:700 7px/1 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.12em;color:var(--ao-mass-accent-text)}
 .ao-state-copy{min-width:0;display:flex;flex-direction:column}
+.ao-priest-book-context{
+  max-width:142px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;
+  font:500 8px/1.2 var(--ao-font-ui,system-ui,sans-serif);
+  letter-spacing:.015em;color:var(--ao-muted)
+}
+.ao-reader-shell[data-mode="MISSAL"] .ao-priest-book-context{display:none}
+
 .ao-state-label{
   max-width:142px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
   font:600 10px/1.15 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.045em;color:#c9d1ca
@@ -1073,6 +1081,19 @@ button.ao-schola-control{cursor:pointer}
 .ao-reader-shell[data-mode="LIVE"] .ao-live-rubric-action{
   display:block;margin:1px 0;
 }
+/* Four exact, current-actor, current-subaction icons may replace their
+   duplicate short line in LIVE only. The complete sourced rubric remains
+   in MISSAL and the same source-linked node remains in the LIVE DOM. */
+.ao-reader-shell[data-mode="LIVE"] .ao-live-inline-rubrics[data-fully-icon-backed="true"]{
+  position:absolute!important;width:1px;height:1px;padding:0!important;
+  margin:-1px!important;overflow:hidden;clip:rect(0,0,0,0);
+  white-space:nowrap;border:0!important
+}
+.ao-reader-shell[data-mode="LIVE"] .ao-live-rubric-action[data-icon-backed="true"]{
+  position:absolute!important;width:1px;height:1px;padding:0!important;
+  margin:-1px!important;overflow:hidden;clip:rect(0,0,0,0);
+  white-space:nowrap;border:0!important
+}
 .ao-reader-shell[data-mode="LIVE"] .ao-reader-paragraph:not([data-active="true"])
   .ao-live-inline-rubrics{opacity:.63}
 .ao-reader-shell[data-mode="LIVE"] .ao-live-inline-rubrics .ao-missal-ceremonial-state-detail
@@ -1812,7 +1833,7 @@ export function buildReaderShellMarkup(prepared = {}) {
     </button>
     <div class="ao-state-cell" data-side="priest">
       <span class="ao-icon-mask" data-icon-slot="priest-position" hidden></span>
-      <span class="ao-state-copy"><span class="ao-state-kicker">PRIEST</span><span class="ao-state-label" data-role="priest-position">—</span><span class="ao-missal-state-detail" data-role="missal-priest-action" hidden></span></span>
+      <span class="ao-state-copy"><span class="ao-state-kicker">PRIEST</span><span class="ao-state-label" data-role="priest-position">—</span><span class="ao-priest-book-context" data-role="priest-book-context" hidden></span><span class="ao-missal-state-detail" data-role="missal-priest-action" hidden></span></span>
       <span class="ao-priest-action-badge" data-role="priest-action-badge" data-active="false" data-major="false" aria-hidden="true"><span class="ao-icon-mask" data-icon-slot="priest-action-top" hidden></span></span>
     </div>
   </div>
@@ -2078,6 +2099,42 @@ function applyIconNode(el,key,iconResolver){
 function applyIcon(root,slot,key,iconResolver){
   applyIconNode(root.querySelector(`[data-icon-slot="${slot}"]`),key,iconResolver);
 }
+
+function syncExactIconBackedRubrics(root,current,mode,iconResolver){
+  // Never suppress a reading or historical rubric merely because a nearby
+  // generic icon looks similar. Even the same source cue can contain
+  // genuflection, elevation, replacement and finger discipline.
+  const cueId=current?.nativeCueId??null;
+  const key=current?.priestActionIconKey??null;
+  const actionLabel=String(current?.priestAction?.label??current?.priestAction?.action??"").trim();
+  const renderedIcon=root.querySelector?.('[data-icon-slot="priest-action"]');
+  const imagePresent=Boolean(key&&renderedIcon&&!renderedIcon.hidden&&
+    typeof iconResolver==="function"&&iconResolver(key));
+  let covered=0;
+  for(const item of root.querySelectorAll?.('.ao-live-inline-rubrics [data-rubric-id]')??[]){
+    const match=exactIconBackedRubric(item.dataset.rubricId,{
+      mode,cueId,priestActionIconKey:key,iconResolved:imagePresent,priestActionLabel:actionLabel
+    });
+    if(match){item.dataset.iconBacked="true";covered++;}
+    else delete item.dataset.iconBacked;
+  }
+  for(const note of root.querySelectorAll?.('.ao-live-inline-rubrics')??[]){
+    const actions=[...(note.querySelectorAll?.('.ao-live-rubric-action')??[])];
+    note.dataset.fullyIconBacked=String(actions.length>0 &&
+      actions.every(x=>x.dataset.iconBacked==="true") &&
+      (note.querySelector?.("details")==null));
+  }
+  const actionRail=root.querySelector?.('[data-channel="priest-action"]');
+  if(actionRail){
+    // setChannel owns the accessible meaning and long-press title. Rubric
+    // compaction may mark exact artwork provenance but must never erase or
+    // replace the active cue's label (or restore one on an inactive cue).
+    if(covered)actionRail.dataset.rubricSourceIcon="true";
+    else delete actionRail.dataset.rubricSourceIcon;
+  }
+  return covered;
+}
+
 
 export function toggleReaderTranslation(node){
   if(node?.dataset?.translateToggle!=="true")return false;
@@ -3182,6 +3239,15 @@ export function createReaderDomAdapter({
     }
     setText(root,"progress",current.progress);
     setText(root,"priest-position",priestStationLabel(mode==="MISSAL" ? (current.missalRubric?.priestPosition??current.priestPosition) : current.priestPosition,root));
+    const bookContext=root.querySelector?.('[data-role="priest-book-context"]');
+    if(bookContext){
+      const side=mode==="LIVE" ? current.priestPosition?.missalLocation : null;
+      const text=side==="EPISTLE_SIDE"?"Missal · Epistle side":
+        side==="GOSPEL_SIDE"?"Missal · Gospel side":null;
+      bookContext.hidden=!text;
+      bookContext.textContent=text??"";
+      bookContext.title=text??"";
+    }
     setText(root,"priest-action",textValue(current.priestAction));
     setText(root,"sacred-minister",textValue(current.sacredMinister));
     setText(root,"posture",textValue(current.posture));
@@ -3707,6 +3773,7 @@ export function createReaderDomAdapter({
       if(stageShell)stageShell.dataset.cinematicVisual=canIllustrate?"ICON":"RAIL";
     }
     syncReaderRitualHighlights(root,current.gesture);
+    syncExactIconBackedRubrics(root,current,mode,iconResolver);
     syncFaithfulParagraphIcons();
     return current;
   }

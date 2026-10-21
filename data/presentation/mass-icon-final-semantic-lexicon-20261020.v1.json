@@ -1,0 +1,619 @@
+{
+  "schema": "ao-mass-icon-semantic-lexicon-v1",
+  "authority": "User final names unchanged; source event IDs, actor, context control assignment",
+  "date": "2026-10-20",
+  "concepts": [
+    {
+      "concept": "FAITHFUL_BOW_GENERIC",
+      "actor": "FAITHFUL",
+      "rubricalTerms": [
+        "Bow head",
+        "Bow the head"
+      ],
+      "assetId": "v46_bow",
+      "exactUserName": "Faithful Bow",
+      "semanticConstraint": "Generic faithful bow pictogram; retain exact source text 'Bow head' and never infer profound bow",
+      "display": "FAITHFUL_GESTURE",
+      "mode": "SEMANTIC_REUSE"
+    },
+    {
+      "concept": "PRIEST_PROFOUND_BOW",
+      "actor": "PRIEST",
+      "rubricalTerms": [
+        "PROFOUND BOW"
+      ],
+      "assetId": "ao_adoration",
+      "exactUserName": "Priest bow Adoration",
+      "semanticConstraint": "Priest bows profoundly; user name is 'Priest bow Adoration'; do not use to mean head bow or altar kiss",
+      "display": "PRIEST_ACTION",
+      "mode": "SEMANTIC_REUSE"
+    },
+    {
+      "concept": "BREAST_STRIKE_ANY_ACTOR",
+      "actor": "FAITHFUL_OR_PRIEST",
+      "rubricalTerms": [
+        "STRIKES BREAST",
+        "Strike breast ×3",
+        "Strike breast once"
+      ],
+      "assetId": "v46_breast_strike",
+      "exactUserName": "Breast Strike",
+      "semanticConstraint": "Shared generic breast-strike gesture; count and actor come from source event, not artwork",
+      "display": "ACTOR_SPECIFIC_GESTURE",
+      "mode": "SEMANTIC_REUSE"
+    },
+    {
+      "concept": "PRIEST_OFFER_HOST",
+      "actor": "PRIEST",
+      "rubricalTerms": [
+        "OFFERS HOST"
+      ],
+      "assetId": "v46_priest_elevate_host_rich",
+      "exactUserName": "Priest offers Host",
+      "semanticConstraint": "Offertory offering; never Consecration elevation",
+      "display": "PRIEST_ACTION",
+      "mode": "DIRECT"
+    },
+    {
+      "concept": "PRIEST_OFFER_CHALICE",
+      "actor": "PRIEST",
+      "rubricalTerms": [
+        "OFFERS CHALICE"
+      ],
+      "assetId": "v46_priest_elevate_chalice_rich",
+      "exactUserName": "Priest offers Chalice",
+      "semanticConstraint": "Offertory offering; never Consecration elevation",
+      "display": "PRIEST_ACTION",
+      "mode": "DIRECT"
+    },
+    {
+      "concept": "PRIEST_ELEVATES_HOST",
+      "actor": "PRIEST",
+      "rubricalTerms": [
+        "ELEVATES HOST"
+      ],
+      "assetId": "v46_priest_elevation",
+      "exactUserName": "Host Elevation",
+      "semanticConstraint": "Consecration Host elevation, not Ecce Agnus Dei",
+      "display": "PRIEST_ACTION",
+      "mode": "DIRECT"
+    },
+    {
+      "concept": "PRIEST_ELEVATES_CHALICE",
+      "actor": "PRIEST",
+      "rubricalTerms": [
+        "ELEVATES CHALICE"
+      ],
+      "assetId": "ao_elevation_chalice",
+      "exactUserName": "Elevation Chalice",
+      "semanticConstraint": "Consecration chalice elevation, not Offertory offering",
+      "display": "PRIEST_ACTION",
+      "mode": "DIRECT"
+    },
+    {
+      "concept": "PRIEST_RECEIVES_HOST",
+      "actor": "PRIEST",
+      "rubricalTerms": [
+        "RECEIVES HOST"
+      ],
+      "assetId": "ea_priest_communion_host_original",
+      "exactUserName": "Priest Communion Host",
+      "semanticConstraint": "Priest's own Communion, not Communion distribution",
+      "display": "PRIEST_ACTION",
+      "mode": "DIRECT"
+    },
+    {
+      "concept": "PRIEST_RECEIVES_CHALICE",
+      "actor": "PRIEST",
+      "rubricalTerms": [
+        "RECEIVES CHALICE"
+      ],
+      "assetId": "ea_priest_communion_chalice_original",
+      "exactUserName": "Priest Communion Chalice",
+      "semanticConstraint": "Priest receives Precious Blood, not chalice elevation",
+      "display": "PRIEST_ACTION",
+      "mode": "DIRECT"
+    },
+    {
+      "concept": "PRIEST_FRACTION",
+      "actor": "PRIEST",
+      "rubricalTerms": [
+        "BREAKS HOST"
+      ],
+      "assetId": "ea_priest_fraction_host",
+      "exactUserName": "Priest Fraction Host",
+      "semanticConstraint": "Fraction only; not Communion",
+      "display": "PRIEST_ACTION",
+      "mode": "DIRECT"
+    },
+    {
+      "concept": "PRIEST_COMMINGLING",
+      "actor": "PRIEST",
+      "rubricalTerms": [
+        "PLACES PARTICLE"
+      ],
+      "assetId": "ea_priest_commingling",
+      "exactUserName": "Priest Commingling",
+      "semanticConstraint": "Commingling, not fraction",
+      "display": "PRIEST_ACTION",
+      "mode": "DIRECT"
+    },
+    {
+      "concept": "PRIEST_AT_EPISTLE",
+      "actor": "PRIEST",
+      "rubricalTerms": [
+        "ALTAR_EPISTLE_SIDE",
+        "ALTAR_EPISTLE_MISSAL"
+      ],
+      "assetId": "v46_priest_gospel_rich",
+      "exactUserName": "Epistle side",
+      "semanticConstraint": "19-20 Oct user-repurposed physical Gospel-named file depicts Epistle station",
+      "display": "PRIEST_POSITION",
+      "mode": "USER_REPURPOSE"
+    },
+    {
+      "concept": "PRIEST_AT_GOSPEL",
+      "actor": "PRIEST",
+      "rubricalTerms": [
+        "ALTAR_GOSPEL_SIDE",
+        "ALTAR_GOSPEL_MISSAL"
+      ],
+      "assetId": "v46_priest_epistle_rich",
+      "exactUserName": "Gospel side",
+      "semanticConstraint": "19-20 Oct user-repurposed physical Epistle-named file depicts Gospel station",
+      "display": "PRIEST_POSITION",
+      "mode": "USER_REPURPOSE"
+    },
+    {
+      "concept": "PRIEST_INCENSE_BLESSING",
+      "actor": "PRIEST",
+      "rubricalTerms": [
+        "BLESSES INCENSE"
+      ],
+      "assetId": "ao_incensation",
+      "exactUserName": "Priest blessing incense",
+      "semanticConstraint": "Blesses incense, not incenses the faithful",
+      "display": "PRIEST_ACTION",
+      "mode": "DIRECT"
+    },
+    {
+      "concept": "MINISTER_POURS_WATER_AT_LAVABO",
+      "actor": "MINISTER",
+      "rubricalTerms": [
+        "Servant pours water",
+        "LAVABO"
+      ],
+      "assetId": "v46_lavabo",
+      "exactUserName": "servant pours water",
+      "semanticConstraint": "This depicts minister pouring water; do NOT bind as priest-only washing action",
+      "display": "MINISTER_ACTION_OR_RITE_SCENE",
+      "mode": "ACTOR_GUARD"
+    },
+    {
+      "concept": "FAITHFUL_LOOK",
+      "actor": "FAITHFUL",
+      "rubricalTerms": [
+        "Reverent attention to the Host",
+        "look up at the Sacred Host"
+      ],
+      "assetId": "listen",
+      "exactUserName": "Look",
+      "semanticConstraint": "User renamed frozen v4-look icon to 'Look'; use only on attentional lane, not generic auditory LISTEN",
+      "display": "FAITHFUL_ATTENTION",
+      "mode": "SURFACE_GUARD"
+    }
+  ],
+  "sourceConditionalResolvers": [
+    {
+      "cueId": "AO.SM.C0096",
+      "actor": "FAITHFUL",
+      "rubric": "Et incarnatus est",
+      "branches": [
+        {
+          "when": "CHRISTMAS_OR_ANNUNCIATION_SUNG_CREDO",
+          "assetId": "review_posture_kneel",
+          "name": "Faithful Kneel"
+        },
+        {
+          "when": "STANDING_AND_NOT_EXCEPTIONAL_FEAST",
+          "assetId": "review_posture_genuflect",
+          "name": "Faithful Genuflect"
+        },
+        {
+          "when": "SEATED_AND_NOT_EXCEPTIONAL_FEAST",
+          "assetId": "v46_bow",
+          "name": "Faithful Bow"
+        }
+      ],
+      "warning": "Use established calendar/posture resolver; do not auto-apply all branches"
+    },
+    {
+      "cueId": "AO.SM.C0174",
+      "actor": "FAITHFUL",
+      "rubric": "Elevation of Host",
+      "branches": [
+        {
+          "when": "PERSISTENT_POSTURE_KNEEL",
+          "assetId": "review_posture_kneel",
+          "name": "Faithful Kneel"
+        },
+        {
+          "when": "LOOK_AFTER_BOW",
+          "assetId": "listen",
+          "name": "Look"
+        }
+      ],
+      "warning": "Look is an attention cue; bow/reverence not a universal extra gesture"
+    },
+    {
+      "cueId": "AO.SM.C0179",
+      "actor": "FAITHFUL",
+      "rubric": "Elevation of Chalice",
+      "branches": [
+        {
+          "when": "PERSISTENT_POSTURE_KNEEL",
+          "assetId": "review_posture_kneel",
+          "name": "Faithful Kneel"
+        },
+        {
+          "when": "LOOK_AFTER_BOW",
+          "assetId": "listen",
+          "name": "Look"
+        }
+      ],
+      "warning": "Use correct Chalice elevation actor action and separate attention lane"
+    }
+  ],
+  "exceptions": {
+    "faithful_gesture": [
+      {
+        "cueId": "AO.SM.C0021",
+        "resolution": "CONDITIONAL_COMPOSITE",
+        "why": "Select kneeling or reverent bow according to posture profile"
+      },
+      {
+        "cueId": "AO.SM.C0023",
+        "resolution": "NO_NEW_TRANSIENT_ICON",
+        "why": "Maintain prior gesture briefly rather than replay bow"
+      },
+      {
+        "cueId": "AO.SM.C0056",
+        "resolution": "LOCAL_CUSTOM",
+        "why": "Only indicate when explicitly enabled in community profile"
+      },
+      {
+        "cueId": "AO.SM.C0096",
+        "resolution": "CALENDAR_AND_POSTURE_CONDITIONAL",
+        "why": "At Incarnatus: standing genuflect; seated bow; Christmas/Annunciation sung kneel"
+      },
+      {
+        "cueId": "AO.SM.C0097",
+        "resolution": "RETURN_TO_PREVIOUS_POSTURE",
+        "why": "Posture resolver owns restoration"
+      },
+      {
+        "cueId": "AO.SM.C0173",
+        "resolution": "COMPOSITE_ATTENTION",
+        "why": "Kneel persistently; bow and look as separate visual phases"
+      },
+      {
+        "cueId": "AO.SM.C0174",
+        "resolution": "COMPOSITE_ATTENTION",
+        "why": "Kneel persistently; bow and look as separate visual phases"
+      },
+      {
+        "cueId": "AO.SM.C0179",
+        "resolution": "COMPOSITE_ATTENTION",
+        "why": "Kneel persistently; bow and look as separate visual phases"
+      },
+      {
+        "cueId": "AO.SM.C0235",
+        "resolution": "OPTIONAL_NONNORMATIVE_CONFITEOR",
+        "why": "Never enable for normative 1962 Mass by default"
+      },
+      {
+        "cueId": "AO.SM.C0237",
+        "resolution": "OPTIONAL_NONNORMATIVE_CONFITEOR",
+        "why": "Never enable for normative 1962 Mass by default"
+      },
+      {
+        "cueId": "AO.SM.C0242",
+        "resolution": "FAITHFUL_ATTENTION_NOT_ACTION",
+        "why": "User's approved 'Look' may occupy attention lane, not gesture lane"
+      }
+    ],
+    "priest_action": [
+      {
+        "cueId": "AO.SM.C0053",
+        "resolution": "COVERED_BY_VOICE_AND_POSITION",
+        "why": "Intonation is an audible priest action at his existing station"
+      },
+      {
+        "cueId": "AO.SM.C0089",
+        "resolution": "COVERED_BY_VOICE_AND_POSITION",
+        "why": "Credo intonation uses audible priest and his existing station"
+      },
+      {
+        "cueId": "AO.SM.C0071",
+        "resolution": "COVERED_BY_POSITION",
+        "why": "Turn to missal reflects a station/orientation update"
+      },
+      {
+        "cueId": "AO.SM.C0072",
+        "resolution": "COVERED_BY_POSITION",
+        "why": "Turn to missal reflects a station/orientation update"
+      },
+      {
+        "cueId": "AO.SM.C0253",
+        "resolution": "COVERED_BY_POSITION",
+        "why": "Turn to missal reflects a station/orientation update"
+      },
+      {
+        "cueId": "AO.SM.C0075",
+        "resolution": "COVERED_BY_VOICE_AND_POSITION",
+        "why": "Epistle-side station and spoken/sung priest lane already represent this reading"
+      },
+      {
+        "cueId": "AO.SM.C0086",
+        "resolution": "COVERED_BY_VOICE_AND_POSITION",
+        "why": "Gospel-side station and spoken/sung priest lane represent proclamation"
+      },
+      {
+        "cueId": "AO.SM.C0131",
+        "resolution": "COVERED_BY_POSITION",
+        "why": "Turning to altar should update orientation, not use facing-people artwork"
+      },
+      {
+        "cueId": "AO.SM.C0125",
+        "resolution": "RITE_SCENE_MINISTER",
+        "why": "User-approved 'servant pours water' depicts a minister; do not pass as priest-action art"
+      },
+      {
+        "cueId": "AO.SM.C0124",
+        "resolution": "ACTOR_GUARD",
+        "why": "Minister incenses priest; user-approved 'Incense of faithful' is a different recipient"
+      },
+      {
+        "cueId": "AO.SM.C0088",
+        "resolution": "OBJECT_MISMATCH",
+        "why": "Priest kisses Gospel book, not altar"
+      },
+      {
+        "cueId": "AO.SM.C0204",
+        "resolution": "DEGREE_MISMATCH",
+        "why": "Minor elevation is distinct from both full elevations"
+      },
+      {
+        "cueId": "AO.SM.C0242",
+        "resolution": "CEREMONY_MISMATCH",
+        "why": "Ecce Agnus Dei showing Host differs from Consecration elevation"
+      },
+      {
+        "cueId": "AO.SM.C0265",
+        "resolution": "CEREMONY_MISMATCH",
+        "why": "Final blessing is not Indulgentiam"
+      }
+    ],
+    "priest_position": [
+      {
+        "cueId": "AO.SM.C0041",
+        "resolution": "ROUTE_CONTROLLED",
+        "why": "Incensation route is transitory, not an idle priest-position icon"
+      },
+      {
+        "cueId": "AO.SM.C0077",
+        "resolution": "POSITION_PERSISTS",
+        "why": "Schola/public clock can advance asynchronously; preserve last observed priest station"
+      },
+      {
+        "cueId": "AO.SM.C0122",
+        "resolution": "ROUTE_CONTROLLED",
+        "why": "Offertory incensation route does not need a generic station pictogram"
+      },
+      {
+        "cueId": "AO.SM.C0246",
+        "resolution": "POSITION_VS_ACTION",
+        "why": "Approved Communion images depict distribution or presenting hands, not idle at rail"
+      },
+      {
+        "cueId": "AO.SM.C0249",
+        "resolution": "POSITION_PERSISTS",
+        "why": "No new station asserted; preserve prior known position"
+      }
+    ]
+  },
+  "appliedReuses": [
+    {
+      "cueId": "AO.SM.C0055",
+      "lane": "faithful_gesture",
+      "concept": "FAITHFUL_BOW_GENERIC",
+      "assetId": "v46_bow"
+    },
+    {
+      "cueId": "AO.SM.C0057",
+      "lane": "faithful_gesture",
+      "concept": "FAITHFUL_BOW_GENERIC",
+      "assetId": "v46_bow"
+    },
+    {
+      "cueId": "AO.SM.C0058",
+      "lane": "faithful_gesture",
+      "concept": "FAITHFUL_BOW_GENERIC",
+      "assetId": "v46_bow"
+    },
+    {
+      "cueId": "AO.SM.C0059",
+      "lane": "faithful_gesture",
+      "concept": "FAITHFUL_BOW_GENERIC",
+      "assetId": "v46_bow"
+    },
+    {
+      "cueId": "AO.SM.C0060",
+      "lane": "faithful_gesture",
+      "concept": "FAITHFUL_BOW_GENERIC",
+      "assetId": "v46_bow"
+    },
+    {
+      "cueId": "AO.SM.C0061",
+      "lane": "faithful_gesture",
+      "concept": "FAITHFUL_BOW_GENERIC",
+      "assetId": "v46_bow"
+    },
+    {
+      "cueId": "AO.SM.C0062",
+      "lane": "faithful_gesture",
+      "concept": "FAITHFUL_BOW_GENERIC",
+      "assetId": "v46_bow"
+    },
+    {
+      "cueId": "AO.SM.C0063",
+      "lane": "faithful_gesture",
+      "concept": "FAITHFUL_BOW_GENERIC",
+      "assetId": "v46_bow"
+    },
+    {
+      "cueId": "AO.SM.C0064",
+      "lane": "faithful_gesture",
+      "concept": "FAITHFUL_BOW_GENERIC",
+      "assetId": "v46_bow"
+    },
+    {
+      "cueId": "AO.SM.C0066",
+      "lane": "faithful_gesture",
+      "concept": "FAITHFUL_BOW_GENERIC",
+      "assetId": "v46_bow"
+    },
+    {
+      "cueId": "AO.SM.C0067",
+      "lane": "faithful_gesture",
+      "concept": "FAITHFUL_BOW_GENERIC",
+      "assetId": "v46_bow"
+    },
+    {
+      "cueId": "AO.SM.C0089",
+      "lane": "faithful_gesture",
+      "concept": "FAITHFUL_BOW_GENERIC",
+      "assetId": "v46_bow"
+    },
+    {
+      "cueId": "AO.SM.C0090",
+      "lane": "faithful_gesture",
+      "concept": "FAITHFUL_BOW_GENERIC",
+      "assetId": "v46_bow"
+    },
+    {
+      "cueId": "AO.SM.C0092",
+      "lane": "faithful_gesture",
+      "concept": "FAITHFUL_BOW_GENERIC",
+      "assetId": "v46_bow"
+    },
+    {
+      "cueId": "AO.SM.C0093",
+      "lane": "faithful_gesture",
+      "concept": "FAITHFUL_BOW_GENERIC",
+      "assetId": "v46_bow"
+    },
+    {
+      "cueId": "AO.SM.C0094",
+      "lane": "faithful_gesture",
+      "concept": "FAITHFUL_BOW_GENERIC",
+      "assetId": "v46_bow"
+    },
+    {
+      "cueId": "AO.SM.C0100",
+      "lane": "faithful_gesture",
+      "concept": "FAITHFUL_BOW_GENERIC",
+      "assetId": "v46_bow"
+    },
+    {
+      "cueId": "AO.SM.C0101",
+      "lane": "faithful_gesture",
+      "concept": "FAITHFUL_BOW_GENERIC",
+      "assetId": "v46_bow"
+    },
+    {
+      "cueId": "AO.SM.C0102",
+      "lane": "faithful_gesture",
+      "concept": "FAITHFUL_BOW_GENERIC",
+      "assetId": "v46_bow"
+    },
+    {
+      "cueId": "AO.SM.C0141",
+      "lane": "faithful_gesture",
+      "concept": "FAITHFUL_BOW_GENERIC",
+      "assetId": "v46_bow"
+    },
+    {
+      "cueId": "AO.SM.C0142",
+      "lane": "faithful_gesture",
+      "concept": "FAITHFUL_BOW_GENERIC",
+      "assetId": "v46_bow"
+    },
+    {
+      "cueId": "AO.SM.C0145",
+      "lane": "faithful_gesture",
+      "concept": "FAITHFUL_BOW_GENERIC",
+      "assetId": "v46_bow"
+    },
+    {
+      "cueId": "AO.SM.C0246",
+      "lane": "faithful_gesture",
+      "concept": "FAITHFUL_BOW_GENERIC",
+      "assetId": "v46_bow"
+    },
+    {
+      "cueId": "AO.SM.C0016",
+      "lane": "priest_action",
+      "concept": "PRIEST_PROFOUND_BOW",
+      "assetId": "ao_adoration"
+    },
+    {
+      "cueId": "AO.SM.C0017",
+      "lane": "priest_action",
+      "concept": "BREAST_STRIKE_ANY_ACTOR",
+      "assetId": "v46_breast_strike"
+    },
+    {
+      "cueId": "AO.SM.C0196",
+      "lane": "priest_action",
+      "concept": "BREAST_STRIKE_ANY_ACTOR",
+      "assetId": "v46_breast_strike"
+    },
+    {
+      "cueId": "AO.SM.C0222",
+      "lane": "priest_action",
+      "concept": "BREAST_STRIKE_ANY_ACTOR",
+      "assetId": "v46_breast_strike"
+    },
+    {
+      "cueId": "AO.SM.C0223",
+      "lane": "priest_action",
+      "concept": "BREAST_STRIKE_ANY_ACTOR",
+      "assetId": "v46_breast_strike"
+    },
+    {
+      "cueId": "AO.SM.C0224",
+      "lane": "priest_action",
+      "concept": "BREAST_STRIKE_ANY_ACTOR",
+      "assetId": "v46_breast_strike"
+    },
+    {
+      "cueId": "AO.SM.C0229",
+      "lane": "priest_action",
+      "concept": "BREAST_STRIKE_ANY_ACTOR",
+      "assetId": "v46_breast_strike"
+    },
+    {
+      "cueId": "AO.SM.C0230",
+      "lane": "priest_action",
+      "concept": "BREAST_STRIKE_ANY_ACTOR",
+      "assetId": "v46_breast_strike"
+    },
+    {
+      "cueId": "AO.SM.C0231",
+      "lane": "priest_action",
+      "concept": "BREAST_STRIKE_ANY_ACTOR",
+      "assetId": "v46_breast_strike"
+    }
+  ]
+}

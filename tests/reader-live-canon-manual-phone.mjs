@@ -44,7 +44,7 @@ try{
      return {total:a.model.totalCards,cue:a.getActiveCue(),visible:
        !document.querySelector("[data-live-canon-follow-trigger]")?.hidden};
    });
-   assert.equal(initial.total,64);
+   assert.equal(initial.total,65);
    assert.equal(initial.visible,false,"Manual button must be absent outside the two elevation cues");
    // Use the reader's exact 39%-focus geometry, not merely
    // scrollIntoViewIfNeeded (a visible bottom rubric can remain unfocused).
