@@ -17,7 +17,7 @@ export const CATENA_RELATED_TOPICS=Object.freeze([
  }),
  Object.freeze({
   id:"preexistence",label:"The Son before creation",
-  query:/\b(?:pre.?exist(?:ence|ent)?|before (?:creation|the world|all (?:things|ages)|time)|always existed|without (?:a )?beginning|eternal generation|eternity of (?:christ|the son|the word))\b/i,
+  query:/\b(?:pre.?exist(?:ence|ent)?|before (?:creation|the world|all (?:things|ages)|time)|always existed|is (?:jesus|christ|the son|the word) eternal|without (?:a )?beginning|eternal generation|eternity of (?:christ|the son|the word))\b/i,
   probes:Object.freeze(["eternal","eternity","beginning","before","begotten","generation","uncreated"]),
   evidence:Object.freeze([/\beternal generation\b/i,/\bbefore (?:all things|creation|the world|all ages|time)\b/i,/\bwithout (?:a )?beginning\b/i,/\bfrom eternity\b/i,/\bnever (?:had|has) a beginning\b/i,/\bin the beginning was the word\b/i,/\bword (?:was|is) (?:ever|eternal)\b/i,/\bnot created\b/i])
  }),
