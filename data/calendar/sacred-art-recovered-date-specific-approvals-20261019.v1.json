@@ -1,0 +1,162 @@
+{
+  "schema": "AO_SACRED_ART_RECOVERED_OCT19_EDITIONS_V1",
+  "asOf": "2026-10-21",
+  "status": "PROTECTED_USER_DECISIONS_FOR_EDITORIAL_FEAST_PLACEMENT_RELEASE_GATES_SEPARATE",
+  "authority": "Explicit user approved choices in preceding Ad Orientem Sacred Art conversations, especially 2026-10-19. This is a reconciliation of past user decisions, NOT new independent review or museum-source certification.",
+  "revisionCorrects": "2026-10-21 priority audit mistakenly read stale 2026-10-13 NO_SUITABLE_PHONE_HERO_IDENTIFIED as NO_USER_SELECTION. Those were research and mobile-ready statuses, not durable artistic user approvals.",
+  "howToMerge": "Treat explicit, dated later user choices as stronger date-specific editorial authority than earlier researcher snapshots; preserve original artwork IDs, star ratings, rejection lists and unselected alternates. Never auto-add duplicates or override production assets.",
+  "counts": {
+    "userApprovedDateAssignments": 10,
+    "formerlyMislabelledSixThemesNowRecovered": 6,
+    "imageRightsVerifiedByThisReconciliation": 0,
+    "newImagesDownloaded": 0,
+    "userRatingsChanged": 0,
+    "releaseStatusesVerified": 0
+  },
+  "artworks": [
+    {
+      "date": "2026-03-29",
+      "occasion": "Palm Sunday",
+      "artist": "Anthony van Dyck",
+      "title": "The Entry of Christ into Jerusalem",
+      "editorialStatus": "USER_APPROVED_FOR_DATE",
+      "evidence": "Explicit 2026-10-19 date-specific user selection",
+      "historicalCandidateNote": "Giulio Benso alternative remains unselected, not rejected",
+      "releaseStatus": "NOT_VERIFIED_BY_THIS_PASS"
+    },
+    {
+      "date": "2026-04-02",
+      "occasion": "Holy Thursday",
+      "artist": "Ugolino da Siena",
+      "title": "Last Supper",
+      "rating": 5,
+      "editorialStatus": "USER_APPROVED_FOR_DATE",
+      "evidence": "Explicit 2026-10-19 date-specific five-star approval",
+      "releaseStatus": "NOT_VERIFIED_BY_THIS_PASS"
+    },
+    {
+      "date": "2026-05-23",
+      "occasion": "Pentecost Vigil",
+      "artist": "Juan Bautista Maíno",
+      "title": "The Pentecost",
+      "editorialStatus": "USER_APPROVED_FOR_DATE",
+      "evidence": "2026-10-19 named Vigil image choice",
+      "relation": "ANTICIPATORY_PENTECOST_SUBJECT_NOT_LITERAL_VIGIL_READINGS",
+      "releaseStatus": "NOT_VERIFIED_BY_THIS_PASS"
+    },
+    {
+      "date": "2026-05-24",
+      "occasion": "Pentecost Sunday",
+      "artist": "Jean II Restout",
+      "title": "Pentecost",
+      "rating": 5,
+      "editorialStatus": "USER_APPROVED_ARTWORK_FOR_FEAST",
+      "artworkId": "ART-ean-estout-entecost",
+      "evidence": "2026-10-17 final decision freeze confirms artwork rating 5 locked; 2026-10-19 user confirms approved Pentecost painting",
+      "releaseStatus": "NOT_VERIFIED_BY_THIS_PASS"
+    },
+    {
+      "date": "2026-05-27",
+      "occasion": "Pentecost Ember Wednesday",
+      "artist": "Philippe de Champaigne",
+      "title": "La Petite Cène",
+      "editorialStatus": "USER_APPROVED_FOR_DATE",
+      "evidence": "User 2026-10-19 selection of Eucharistic thematic art for Ember Wednesday",
+      "relation": "EUCHARISTIC_THEME_FOR_JOHN_6_NOT_LITERAL_DISCOURSE",
+      "releaseStatus": "NOT_VERIFIED_BY_THIS_PASS"
+    },
+    {
+      "date": "2026-06-12",
+      "occasion": "Sacred Heart",
+      "artist": "Juan Patricio Morlete Ruiz",
+      "title": "The Heart of Jesus",
+      "rating": 5,
+      "editorialStatus": "USER_APPROVED_FOR_FEAST",
+      "artworkId": "commons-morlete-sacred-heart-1759",
+      "evidence": "2026-10-17 final curator file: 5, locked, perfect_theme; 2026-10-19 user reaffirmation",
+      "releaseStatus": "NOT_VERIFIED_BY_THIS_PASS",
+      "relatedApprovedArtwork": [
+        {
+          "artist": "Anthony van Dyck",
+          "title": "The Lance Thrust",
+          "relation": "PASSION_THEMATIC_ONLY_NOT_SACRED_HEART_DEPICTION"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-25",
+      "occasion": "Christ the King",
+      "artist": "Ambrosius Benson",
+      "title": "Salvator Mundi",
+      "editorialStatus": "USER_APPROVED_FOR_DATE",
+      "evidence": "Explicit 2026-10-19 date-specific user selection",
+      "relation": "CHRIST_AS_SAVIOUR_AND_KING",
+      "releaseStatus": "NOT_VERIFIED_BY_THIS_PASS"
+    },
+    {
+      "date": "2026-11-01",
+      "occasion": "All Saints",
+      "artist": "Carlo Saraceni",
+      "title": "Paradise",
+      "editorialStatus": "USER_APPROVED_FOR_DATE",
+      "evidence": "Explicit 2026-10-19 date-specific user selection",
+      "releaseStatus": "NOT_VERIFIED_BY_THIS_PASS"
+    },
+    {
+      "date": "2026-11-02",
+      "occasion": "All Souls",
+      "artist": "Ludovico Carracci",
+      "title": "An Angel Frees the Souls of Purgatory",
+      "editorialStatus": "USER_APPROVED_FOR_DATE",
+      "evidence": "Explicit 2026-10-19 date-specific user selection",
+      "releaseStatus": "NOT_VERIFIED_BY_THIS_PASS"
+    },
+    {
+      "date": "2026-11-29",
+      "occasion": "First Sunday of Advent",
+      "artist": "John Martin",
+      "title": "The Great Day of His Wrath",
+      "editorialStatus": "USER_APPROVED_FOR_DATE",
+      "evidence": "Explicit 2026-10-19 date-specific user selection",
+      "relation": "ESCHATOLOGICAL_THEME_NOT_LITERAL_SUNDAY_GOSPEL",
+      "releaseStatus": "NOT_VERIFIED_BY_THIS_PASS"
+    }
+  ],
+  "protectedAlternates": [
+    {
+      "occasion": "Pentecost",
+      "artist": "Jean II Restout",
+      "title": "Pentecost",
+      "status": "APPROVED_NOT_REJECTED_BY_MAINO_SELECTION"
+    },
+    {
+      "occasion": "Pentecost",
+      "artist": "Eustache Le Sueur",
+      "title": "Saint Paul Preaching at Ephesus",
+      "status": "PREVIOUSLY_APPROVED_RETAIN_AS_CONTEXTUAL_OPTION"
+    },
+    {
+      "occasion": "Pentecost Ember Wednesday",
+      "artist": "Ugolino da Siena",
+      "title": "The Last Supper",
+      "status": "PREVIOUSLY_APPROVED_NOT_REJECTED"
+    },
+    {
+      "occasion": "Palm Sunday",
+      "artist": "Giulio Benso",
+      "status": "UNSELECTED_NOT_REJECTED"
+    }
+  ],
+  "sourceContext": [
+    "Previous user selection conversations October 19, 2026 (explicit human dated approvals)",
+    "ad-orientem-sacred-art-final-review-decisions.json October 17 2026 (five-star locked artworks)",
+    "Ad_Orientem_Sacred_Art_Decision_Freeze_2026-10-17.json (do not overturn approved artworks)",
+    "data/calendar/sacred-art-user-235-subject-decisions-20261012.v1.json (earlier baseline, not later approvals)"
+  ],
+  "remainingActualTasks": [
+    "Match each approval to exact canonical ARTWORK_ID/object accession and authorized image rendition, without inventing museum identifiers",
+    "Check which actual thumbnails/master files already exist and whether media URLs work",
+    "Check full painted surface and mobile quality, photo rights, 1962 calendar mapping and frontend hero assignment",
+    "Audit other major Sunday/feast dates for unresolved artwork choices only after recovering later user approvals; never automatically request new artwork choices for these ten dates"
+  ]
+}
