@@ -401,6 +401,24 @@ export function mountScriptureLibrary(root,{
      actions.append(button);
    }
    main.append(actions);
+   // The conversation is anchored to the exact existing Bible witness.
+   // Never invent, retranslate or cache a parallel copy of Scripture here.
+   if(commentaryVisible&&context?.reference&&isCatenaGospel(location)&&lang==="en"){
+     const scriptureAnchor=element("details",null,"aoCatenaScriptureAnchor");
+     scriptureAnchor.open=location.verseEnd-location.verseStart<=2;
+     scriptureAnchor.setAttribute("aria-label","Selected Scripture alongside the Living Catena");
+     scriptureAnchor.append(element("summary",passageReference(location)));
+     scriptureAnchor.append(textBlock.cloneNode(true));
+     if(url){
+       const openSource=element("button","Read Scripture at source ↗");
+       openSource.type="button";
+       openSource.addEventListener("click",()=>linkToSource(editionSource()));
+       scriptureAnchor.append(openSource);
+     }
+     const before=wrap.querySelector(".aoScriptureContextBar");
+     if(before)wrap.insertBefore(scriptureAnchor,before);
+     else wrap.append(scriptureAnchor);
+   }
    // Commentary is a reading-depth panel, not an additional section competing with Scripture.
    if(!commentaryVisible||!context?.reference)wrap.append(main);
    // One secondary disclosure shared by every source-owned Scripture entry.
