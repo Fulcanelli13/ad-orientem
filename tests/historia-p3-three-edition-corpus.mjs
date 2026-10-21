@@ -84,4 +84,13 @@ for(const snippet of [
  'Unapproved source-bridge candidate','never approved'
 ])assert.ok(html.toLowerCase().includes(snippet.toLowerCase()),"Missing evidence-based proof reader guard "+snippet);
 assert.ok(!html.includes('"cpdv-2009"?"CPDV":"Douay–Rheims"'),"French witness must never be mislabelled Douay");
+assert.ok(html.includes('id="historiaProofBridgeFilter"'),"Research reader needs a bounded P0-only comparison mode");
+assert.ok(html.includes('highPriorityBridgesOnly&&!isPriorityHistoriaBridge(beat)'),"All held passages must be filtered by the priority helper, not silently promoted");
+assert.ok(html.includes('historiaProofBridgeFilter").addEventListener("change"'),"The research-bridge comparison mode must be interactive");
+const priority=proof.movements.flatMap(m=>m.beats.filter(b=>b.kind==="SOURCE_BRIDGE_CANDIDATE"&&(b.researchReadthroughPriority||b.researchCuration?.sourceReadingPriority||"").startsWith("P0")).map(b=>b.id)).sort();
+assert.deepEqual(priority,["HS-CF-06","HS-CF-08","HS-P3-CF-12","HS-P3-CF-15"]);
+for(const m of proof.movements)for(const b of m.beats.filter(x=>x.kind==="SOURCE_BRIDGE_CANDIDATE")){
+ assert.equal(b.status,"UNAPPROVED_SOURCE_COORDINATE_REFERENCE");
+ assert.equal(b.publicationApproved??false,false);
+}
 console.log("PASS P3 three-edition corpus: "+counters.sourceRefs+" source ranges (166 selected + 16 held), "+counters.checkedVerseSelections+" cross-edition verse displays, "+counters.books.size+" biblical books, 37 movements; edition-only Stephen and John 6 provenance preserved.");
