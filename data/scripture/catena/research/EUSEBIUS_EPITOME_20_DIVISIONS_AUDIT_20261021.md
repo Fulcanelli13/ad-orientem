@@ -22,7 +22,7 @@ See [eusebius-epitome-20-questions.v1.json](eusebius-epitome-20-questions.v1.jso
 - No new author answer text, translation, speech reconstruction or pseudo-historical quote.
 - Every displayed-looking English question is labelled **modern editorial formulation** based on the issue heading, *not* ancient verbatim phrasing.
 - The only copied Greek phrase is a **short incomplete primary-witness anchor** from Marinus I, not a complete supposed authorial question. The historical voice there is **Marinus addressed by Eusebius**, not Eusebius asking himself.
-- Solution texts for 19 divisions have **not** been independently verified in this batch. Marinus I's **two alternative approaches** have been read in context as displayed at Catholic Library, but neither is published as Eusebius's final judgement.
+- Solution texts for 18 divisions have **not** been independently verified in this batch. Marinus I's **two alternative approaches** have been read in context as displayed at Catholic Library, and **Marinus II** has a preliminary source-observed account of multiple visits versus similarly named women; neither is published as Eusebius's final judgement. All require original-Greek/contextual validation.
 
 ### To Stephanus — abridged sections and their main issues
 
@@ -55,6 +55,10 @@ See [eusebius-epitome-20-questions.v1.json](eusebius-epitome-20-questions.v1.jso
 | II | Mary Magdalene's appearance at the tomb on different days | Matthew 28:1; John 20:11 |
 | III | Touching Christ's feet vs the prohibition on touching | Matthew 28:9; John 20:17 |
 | IV | One/two angels or young men and their positions at the tomb | Matthew 28:2; Mark 16:5; Luke 24:4; John 20:12 |
+
+**Marinus II:** The online source also puts forward multiple conditional reconciliations of the Magdalene account: repeated visits by one woman, a distinction between similarly named women, and a hypothetical textual/scribal naming issue. These are **Eusebius's transmitted conjectures**, not historical facts established by Living Catena. In particular, do not assert that two women called Magdalene actually existed or that the evangelists' received manuscripts are corrupt. Modern Greek-edition scrutiny remains pending.
+
+**Marinus IV:** The existing `eusebius-marinus-supp-05` record concerns related angel-location difficulties in an *independently transmitted supplement*, **not** evidence that its wording or argument is identical with the four-question epitome's IV. The database links the thematic relationship only, with the witness boundary intact.
 
 **Marinus I:** Eusebius's transmitted treatment distinguishes a possible argument for ending Mark at 16:8 (as witnessed in certain copies) from another interpretation that accepts the additional passage and inserts a punctuation distinction between Jesus rising and his appearance to Magdalene. These are **different proposed solutions**, not a single statement of what Catholics must conclude. Preserve both with their conditional framing, source text, and ancient textual criticism.
 
