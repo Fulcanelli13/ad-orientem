@@ -47,6 +47,12 @@ export function retrieveCatenaMessages(rows,query,{limit=3,excludeIds=null}={}){
    f.length>=4&&q.includes(f.toLowerCase()));
  const terms=tokens(query).filter(t=>!mentioned.some(f=>f.toLowerCase().includes(t)));
  if(!terms.length&&!mentioned.length)return [];
+ // A conspicuously absent technical/content term is evidence AGAINST
+ // relevance, even when a generic phrase overlaps ("the prodigal son"
+ // does not make "smartphone" a patristic subject). Editorially recognized
+ // related concepts use their separately disclosed source-evidence route.
+ if(!catenaRelatedTopic(query)&&terms.some(t=>t.length>=8&&
+   !rows.some(r=>String(r?.text||"").toLowerCase().includes(t))))return [];
  const preferred=mentioned.length?rows.filter(r=>mentioned.includes(r.father)):rows;
  // Original-source phrase agreement is stronger than isolated token overlap.
  // Keep ordinary stopwords inside phrases: "Our Father"/"My Father" or
