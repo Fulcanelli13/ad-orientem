@@ -1170,6 +1170,22 @@ export function createFindOwner(win=globalThis){
     if(target?.closest?.("button[data-network-close]")&&state.networkOpen){
       event.preventDefault?.();state.networkOpen=false;void paint();return;
     }
+    const openCustom=target?.closest?.("[data-network-open-custom]");
+    if(openCustom&&state.lens==="heritage"&&state.networkOpen){
+      event.preventDefault?.();
+      const id=openCustom.dataset.networkOpenCustom;
+      const canonical=projection?.byLens?.traditions?.find(item=>
+        item?.raw?.custom?.custom_id===id&&item?.raw?.custom?.publication_state==="PUBLISHED");
+      if(!canonical)return;
+      // Open the existing canonical Traditions folio; no duplicate custom owner.
+      queryByLens.set("heritage",state.query);
+      state.lens="traditions";state.view="list";state.query="";
+      state.networkOpen=false;state.networkFocus="";state.selectedPlaceId=null;
+      state.selectedId=canonical.item_id;state.expandPlace=false;state.expandDetail=false;
+      state.displayLimit=24;state.highlightCustomId=null;
+      lastMapView=null;lastMapLens=null;nearbyResults=null;
+      void paint();return;
+    }
     const focused=target?.closest?.("[data-network-focus]");
     if(focused&&state.networkOpen){
       event.preventDefault?.();
@@ -1551,8 +1567,10 @@ export function createFindOwner(win=globalThis){
     if(state.lens==="heritage"&&state.networkOpen){
       const field=event?.target?.closest?.("[data-network-kind]");
       if(field){
-        const allowed=["all","place","shrine","pilgrimage","route","relic","apparition","calendar"];
-        if(allowed.includes(field.value)){state.networkKind=field.value;void paint();}
+        const allowed=["all","place","shrine","pilgrimage","route","relic","apparition","calendar","custom","person"];
+        if(allowed.includes(field.value)){
+          state.networkKind=field.value;state.networkFocus="";state.networkLimit=12;void paint();
+        }
         return;
       }
     }
