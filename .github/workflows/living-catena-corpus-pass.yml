@@ -17,6 +17,9 @@ on:
       - tests/scripture-catena-matthew-batch-three.mjs
       - scripts/scripture-catena-reader-routing.mjs
       - tests/scripture-catena-reader-routing.mjs
+      - src/scripture/catena-research-retrieval.js
+      - tests/scripture-catena-research-retrieval.mjs
+      - previews/living-catena-reader-research-20261021.html
       - data/scripture/catena/research/full-corpus-pass-20261021/**
       - .github/workflows/living-catena-corpus-pass.yml
 
@@ -48,6 +51,8 @@ jobs:
         run: node scripts/scripture-catena-reader-routing.mjs
       - name: Verify complete partition and editorial provenance
         run: node tests/scripture-catena-reader-routing.mjs
+      - name: Verify source-backed Matthew question retrieval and abstention
+        run: node tests/scripture-catena-research-retrieval.mjs
       - name: Ensure generated index is up to date for PR
         run: |
           git diff --exit-code -- data/scripture/catena/research/full-corpus-pass-20261021/
