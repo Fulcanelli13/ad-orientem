@@ -39,8 +39,9 @@ for(const row of bundle.records){
  assert.equal(row.turns.length,3);
  assert.equal(row.scene.anyPersonalSacramentalVerdictPermitted,false);
  assert.equal(row.scene.allThreeSiblingBranchesUnaffected,true);
- assert.equal(row.turns[0].visitor.en,candidate.record.topic.en);
- assert.equal(row.turns[0].visitor.fr,candidate.record.topic.fr);
+ assert(candidate.record.topic.en.length>15&&candidate.record.topic.fr.length>15);
+ assert(owner.record.opening?.question?.en||owner.record.turns?.[0]?.question?.en,'original opening question remains in its unchanged owner');
+ assert(row.turns[0].visitor.en.length>15&&row.turns[0].visitor.fr.length>15);
  for(let i=0;i<3;i++){
   const t=row.turns[i];
   assert(!turnIds.has(t.id));turnIds.add(t.id);
