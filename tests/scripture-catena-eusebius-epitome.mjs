@@ -71,9 +71,15 @@ for(let n=1;n<=4;n++)assert.ok(entries.has(`eusebius-marinus-${String(n).padStar
 assert.equal(printedLinks.size,33);
 const africanus=d.records.find(x=>x.id==="eusebius-stephanus-04");
 assert.equal(africanus.solutionResearchStatus,"quotation_transmitted_not_eusebius_own_unmediated_solution");
+assert.equal(africanus.quotedAuthority.historicalName,"Julius Africanus");
 const mar1=d.records.find(x=>x.id==="eusebius-marinus-01");
 assert.equal(mar1.historicalQuestionSpeaker,"Marinus_as_addressed_by_eusebius");
 assert.equal(mar1.solutionStructuralNotes.length,2);
+const mar2=d.records.find(x=>x.id==="eusebius-marinus-02");
+assert.equal(mar2.solutionResearchStatus,"partial_online_source_observed__full_greek_edition_review_pending");
+assert.equal(mar2.solutionStructuralNotes.length,4);
+const mar4=d.records.find(x=>x.id==="eusebius-marinus-04");
+assert.equal(mar4.relatedSupplementId,"eusebius-marinus-supp-05");
 assert.ok(earlier.records.some(x=>x.id==="eusebius-marinus-1"),"previous Marinus pilot not silently replaced");
 assert.equal(supplements.entries.length,3,"supplement research kept separate from epitome");
 assert.ok(d.copyrightPolicy.includes("Do not bulk reproduce"));
