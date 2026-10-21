@@ -393,6 +393,12 @@ const SHELL_STYLE = `
 @keyframes aoCueIn{0%{opacity:0;transform:scale(.78)}55%{opacity:1;transform:scale(1.08)}100%{opacity:1;transform:scale(1)}}
 .ao-rail-copy{display:none!important}
 .ao-rail-item[data-channel="priest-action"]:has(.ao-icon-mask[hidden]) .ao-rail-copy{display:block!important;max-width:54px;font:700 7px/1.12 var(--ao-font-ui,system-ui,sans-serif);letter-spacing:.035em;text-transform:uppercase;color:#c8d0c9;text-align:center;overflow-wrap:anywhere}
+/* Fallback for the two elevation tiles found blank in the final-icon capture. */
+.ao-reader-shell[data-mode="LIVE"][data-objective-context="true"] .ao-rail-item[data-channel="priest-action"][data-action-text-fallback="true"] .ao-icon-mask{display:none!important}
+.ao-reader-shell[data-mode="LIVE"][data-objective-context="true"] .ao-rail-item[data-channel="priest-action"][data-action-text-fallback="true"] .ao-rail-copy{
+ display:block!important;max-width:50px;font:600 8px/1.2 var(--ao-font-ui,system-ui,sans-serif);
+ color:#e6dfcd;text-transform:uppercase;letter-spacing:0;text-align:center;overflow-wrap:anywhere
+}
 /* No new artwork/clock: one occasional Solemn minister *rubric*, not a
    claimed observation or a priest-action clone. Only certified existing
    sacredMinister states may populate this otherwise absent right-rail tile. */
@@ -2166,7 +2172,9 @@ function syncExactIconBackedRubrics(root,current,mode,iconResolver){
   const key=current?.priestActionIconKey??null;
   const actionLabel=String(current?.priestAction?.label??current?.priestAction?.action??"").trim();
   const renderedIcon=root.querySelector?.('[data-icon-slot="priest-action"]');
-  const imagePresent=Boolean(key&&renderedIcon&&!renderedIcon.hidden&&
+  const fallbackTile=root.querySelector?.('[data-channel="priest-action"]');
+  const imagePresent=Boolean(fallbackTile?.dataset.actionTextFallback!=="true"&&
+    key&&renderedIcon&&!renderedIcon.hidden&&
     typeof iconResolver==="function"&&iconResolver(key));
   let covered=0;
   for(const item of root.querySelectorAll?.('.ao-live-inline-rubrics [data-rubric-id]')??[]){
@@ -3404,6 +3412,14 @@ export function createReaderDomAdapter({
     // Keep priest-action semantics on the rail even when reviewed artwork is
     // withheld. Phone cinematic and accessible cue owners depend on it.
     setChannel(root,"priest-action",current.priestAction);
+    const sourceActionTile=root.querySelector('.ao-rail-right [data-channel="priest-action"]');
+    if(sourceActionTile){
+      const sourceAction=textValue(current.priestAction);
+      const fallback=showContext&&Boolean(sourceAction)&&
+        ["AO.SM.C0174","AO.SM.C0181"].includes(current.nativeCueId);
+      sourceActionTile.dataset.actionTextFallback=String(fallback);
+      setText(root,"priest-action",sourceAction);
+    }
     setChannel(root,"sacred-minister",mode==="LIVE"?current.sacredMinister:null);
     setChannel(root,"gesture",current.gesture);
     setChannel(root,"response",current.response);
