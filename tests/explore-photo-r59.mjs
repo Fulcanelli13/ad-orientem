@@ -39,14 +39,17 @@ for(const row of r59Review.approved){
  assert.ok(record.credit&&record.changes_en&&record.changes_fr&&record.alt_en&&record.alt_fr);
 }
 for(const row of r59Review.held){
- assert.ok(!reviewed.has(row.place_id)&&!live.has(row.place_id));
- assert.equal(published.items.some(x=>x.place_id===row.place_id),false);
+ const historic=batch.candidates.find(x=>x.place_id===row.place_id);
+ assert.ok(!reviewed.has(row.place_id)&&historic);
+ assert.equal(published.items.some(x=>x.place_id===row.place_id&&x.source_url===historic.source_page_url),false,
+   "The precise photograph held by R59 must stay unpublished, even if later independently sourced imagery is accepted");
 }
 let four=0,two=0,three=0;
 for(const c of batch.candidates){
   assert.ok(known.has(c.place_id),"Must only describe a canonical physical Place");
   if(c.expected_license==="CC-BY-SA-4.0")assert.ok(live.has(c.place_id),"R59 photo release must include all eight reviewed updates");
-  else assert.ok(!live.has(c.place_id),"Older-licence research must remain unpublished");
+  else assert.ok(!published.items.some(x=>x.place_id===c.place_id&&x.source_url===c.source_page_url),
+   "Older-licence original R59 photograph itself must remain unpublished");
   assert.equal(c.publication_approved,false);
   assert.equal(c.subject_crop_reviewed,false);
   assert.equal(c.status,"RESEARCH_UNREVIEWED");
