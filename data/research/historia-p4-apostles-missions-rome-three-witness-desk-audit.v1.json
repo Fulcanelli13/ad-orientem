@@ -1,0 +1,1551 @@
+{
+  "schema": "ao.historia.p4.apostles-missions-rome-three-witness-desk-audit.v1",
+  "date": "2026-10-21",
+  "status": "RESEARCH_ONLY_44_SOURCE_SCENE_ROWS_NOT_PUBLISHED",
+  "sources": {
+    "scene": {
+      "path": "data/explore/biblical-cinematic-studies-review.v1.json",
+      "branch": "feature/biblical-atlas-current-main-convergence-20261012",
+      "blobSha": "d937288862abab192e1d584f0e663a3eebb46611"
+    },
+    "witnesses": [
+      {
+        "path": "data/scripture/witness/dr-challoner/Acts.json",
+        "edition": "dr-challoner",
+        "sourceStatus": "UNCOLLATED_SOURCE_WITNESS",
+        "blobSha": "790769859646ecd4ca6b45f6b61b9ecaec1da826"
+      },
+      {
+        "path": "data/scripture/witness/cpdv-2009/Acts.json",
+        "edition": "cpdv-2009",
+        "sourceStatus": "UNCOLLATED_SOURCE_WITNESS",
+        "blobSha": "5eaaa125d14538d00305e49624196b55033da41d"
+      },
+      {
+        "path": "data/scripture/witness/crampon-1923/Acts.json",
+        "edition": "crampon-1923",
+        "sourceStatus": "UNCOLLATED_SOURCE_WITNESS",
+        "blobSha": "25fde9eaaff3412445430f4ae1fa87b0c6aae244"
+      }
+    ]
+  },
+  "rules": [
+    "44/44 Acts source ranges have nonempty source verse entries in all 3 Catholic transcriptions, but 2 original reference endpoints are absent. Their absence is NOT permission to synthesize an extra verse.",
+    "Chronology is biblical Acts order; appended Pentecost scene 182 is reviewed, but its research-array index is not narrative time.",
+    "Acts 14:20-28 must be edition-mapped through verse 27 in these sources, and Acts 19:23-41 through verse 40; printed-edition re-collation required.",
+    "No unsupported ancient ship tracks, apostolic itineraries, shoreline landing points or historic room coordinates created.",
+    "Overlapping scene excerpts and stage-by-stage narrative segments do not introduce duplicate canonical Atlas events.",
+    "Biblical topography, family identity, scene literary acceptance and publication are separate research stages."
+  ],
+  "counts": {
+    "rows": 44,
+    "firstIndex": 138,
+    "lastContiguousIndex": 180,
+    "appendIndex": 182,
+    "totalCorpus": 183,
+    "requestedPassagesWithAllThreeSourceWitnesses": 44,
+    "sourceRangeEndpointDiscrepancies": 2,
+    "sourceGeographicApprovals": 0,
+    "publicationApprovals": 0
+  },
+  "highPriority": {
+    "acts14": {
+      "sceneKey": "biblical:scene:paul:151",
+      "sceneReference": "Acts 14:20–28",
+      "allThreeWitnessLastVerse": "Acts 14:27",
+      "nominalRequestedLastVerse": "Acts 14:28",
+      "insertedVerseForbidden": true
+    },
+    "acts19": {
+      "sceneKey": "biblical:scene:paul:167",
+      "sceneReference": "Acts 19:23–41",
+      "allThreeWitnessLastVerse": "Acts 19:40",
+      "nominalRequestedLastVerse": "Acts 19:41",
+      "insertedVerseForbidden": true
+    },
+    "galatia": {
+      "sceneKey": "biblical:scene:paul:165",
+      "source": "Acts 18:23",
+      "pisidianAntiochNotNamedInPassage": true
+    },
+    "shipwreck": {
+      "sceneKey": "biblical:scene:paul:176",
+      "reference": "Acts 27:13–44",
+      "preciseShipwreckPinForbidden": true
+    },
+    "pentecost": {
+      "sceneKey": "biblical:scene:paul:182",
+      "reference": "Acts 2:1–41",
+      "noAuthenticatedUpperRoom": true
+    }
+  },
+  "reviewedRows": [
+    {
+      "sceneKey": "biblical:scene:paul:138",
+      "originalIndex": 138,
+      "chapter": "APOSTLES",
+      "title": "The road to Damascus",
+      "scriptureReference": "Acts 9:1–9",
+      "existingLocationClaim": "Damascus region · not exact roadside location",
+      "originalSceneAtlasMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "originalCandidateAtlasKeys": [
+        {
+          "eventKey": "biblical:passage:acts-9-1-22",
+          "sourceStatus": "PASSAGE_OVERLAP_REVIEW_ONLY"
+        }
+      ],
+      "witnessSpan": {
+        "douayChallonerEntries": 9,
+        "cpdv2009Entries": 9,
+        "crampon1923Entries": 9,
+        "nominalEntriesInCitedRange": 9,
+        "requestedFinalVersePresent": true,
+        "uncollatedWitness": true
+      },
+      "provisionalActors": [
+        "Saul",
+        "Jesus",
+        "companions"
+      ],
+      "actorIdentityCertification": false,
+      "locationEvidenceClass": "DAMASCUS_APPROACH_NOT_ROADSIDE_POINT",
+      "editorialFinding": "Acts 9:1-9 records Saul nearing Damascus, but not a precise road bend, chapel or point of encounter.",
+      "geographicalAction": "DAMASCUS_REGION_NO_CONVERSION_PIN",
+      "routeGeometryCertification": false,
+      "modernPointCertification": false,
+      "publicationApproval": false,
+      "reviewStage": "SOURCE_PASSAGE_DESK_TRIAGE_NO_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:139",
+      "originalIndex": 139,
+      "chapter": "APOSTLES",
+      "title": "Ananias baptises Saul",
+      "scriptureReference": "Acts 9:10–19",
+      "existingLocationClaim": "Damascus · historic city",
+      "originalSceneAtlasMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "originalCandidateAtlasKeys": [
+        {
+          "eventKey": "biblical:passage:acts-9-1-22",
+          "sourceStatus": "PASSAGE_OVERLAP_REVIEW_ONLY"
+        }
+      ],
+      "witnessSpan": {
+        "douayChallonerEntries": 10,
+        "cpdv2009Entries": 10,
+        "crampon1923Entries": 10,
+        "nominalEntriesInCitedRange": 10,
+        "requestedFinalVersePresent": true,
+        "uncollatedWitness": true
+      },
+      "provisionalActors": [
+        "Saul",
+        "Ananias",
+        "Judas"
+      ],
+      "actorIdentityCertification": false,
+      "locationEvidenceClass": "DAMASCUS_CITY_ANANIAS_HOUSE_NOT_CERTIFIED",
+      "editorialFinding": "Acts 9:10-19 names Damascus and the street called Straight; modern traditional house identifications require independent evidence.",
+      "geographicalAction": "DAMASCUS_CITY_CONTEXT_ONLY",
+      "routeGeometryCertification": false,
+      "modernPointCertification": false,
+      "publicationApproval": false,
+      "reviewStage": "SOURCE_PASSAGE_DESK_TRIAGE_NO_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:140",
+      "originalIndex": 140,
+      "chapter": "APOSTLES",
+      "title": "Saul escapes Damascus",
+      "scriptureReference": "Acts 9:20–25",
+      "existingLocationClaim": "Damascus · historic city",
+      "originalSceneAtlasMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "originalCandidateAtlasKeys": [
+        {
+          "eventKey": "biblical:passage:acts-9-1-22",
+          "sourceStatus": "PASSAGE_OVERLAP_REVIEW_ONLY"
+        }
+      ],
+      "witnessSpan": {
+        "douayChallonerEntries": 6,
+        "cpdv2009Entries": 6,
+        "crampon1923Entries": 6,
+        "nominalEntriesInCitedRange": 6,
+        "requestedFinalVersePresent": true,
+        "uncollatedWitness": true
+      },
+      "provisionalActors": [
+        "Saul",
+        "disciples"
+      ],
+      "actorIdentityCertification": false,
+      "locationEvidenceClass": "DAMASCUS_ESCAPE_WALL_SITE_UNIDENTIFIED",
+      "editorialFinding": "Acts 9:20-25 recounts escape in a basket over the wall; it does not certify the preserved chapel/window location.",
+      "geographicalAction": "NO_EXACT_ESCAPE_WINDOW_PIN",
+      "routeGeometryCertification": false,
+      "modernPointCertification": false,
+      "publicationApproval": false,
+      "reviewStage": "SOURCE_PASSAGE_DESK_TRIAGE_NO_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:141",
+      "originalIndex": 141,
+      "chapter": "APOSTLES",
+      "title": "Saul visits Jerusalem",
+      "scriptureReference": "Acts 9:26–30",
+      "existingLocationClaim": "Jerusalem · city context",
+      "originalSceneAtlasMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "originalCandidateAtlasKeys": [
+        {
+          "eventKey": "biblical:passage:acts-9-29-30",
+          "sourceStatus": "PASSAGE_OVERLAP_REVIEW_ONLY"
+        }
+      ],
+      "witnessSpan": {
+        "douayChallonerEntries": 5,
+        "cpdv2009Entries": 5,
+        "crampon1923Entries": 5,
+        "nominalEntriesInCitedRange": 5,
+        "requestedFinalVersePresent": true,
+        "uncollatedWitness": true
+      },
+      "provisionalActors": [
+        "Saul",
+        "Barnabas",
+        "apostles"
+      ],
+      "actorIdentityCertification": false,
+      "locationEvidenceClass": "JERUSALEM_VISIT_CITY_ONLY",
+      "editorialFinding": "Acts 9:26-30 names Jerusalem; no authenticated meeting room or exact travel path is given.",
+      "geographicalAction": "JERUSALEM_CITY_ONLY",
+      "routeGeometryCertification": false,
+      "modernPointCertification": false,
+      "publicationApproval": false,
+      "reviewStage": "SOURCE_PASSAGE_DESK_TRIAGE_NO_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:142",
+      "originalIndex": 142,
+      "chapter": "APOSTLES",
+      "title": "The disciples at Antioch",
+      "scriptureReference": "Acts 11:19–26",
+      "existingLocationClaim": "Antioch on the Orontes",
+      "originalSceneAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasKeys": [
+        {
+          "eventKey": "biblical:passage:acts-11-19-26",
+          "sourceStatus": "EXACT_REFERENCE"
+        }
+      ],
+      "witnessSpan": {
+        "douayChallonerEntries": 8,
+        "cpdv2009Entries": 8,
+        "crampon1923Entries": 8,
+        "nominalEntriesInCitedRange": 8,
+        "requestedFinalVersePresent": true,
+        "uncollatedWitness": true
+      },
+      "provisionalActors": [
+        "Barnabas",
+        "Saul",
+        "disciples"
+      ],
+      "actorIdentityCertification": false,
+      "locationEvidenceClass": "ANTIOCH_ON_ORONTES_NAMED_CITY",
+      "editorialFinding": "Acts 11:19-26 names Antioch and disciples first called Christians there; it gives no specific church/house address.",
+      "geographicalAction": "ANTIOCH_CITY_ONLY",
+      "routeGeometryCertification": false,
+      "modernPointCertification": false,
+      "publicationApproval": false,
+      "reviewStage": "SOURCE_PASSAGE_DESK_TRIAGE_NO_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:143",
+      "originalIndex": 143,
+      "chapter": "FIRST_MISSION",
+      "title": "Barnabas and Saul are sent",
+      "scriptureReference": "Acts 13:1–3",
+      "existingLocationClaim": "Antioch on the Orontes",
+      "originalSceneAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasKeys": [],
+      "witnessSpan": {
+        "douayChallonerEntries": 3,
+        "cpdv2009Entries": 3,
+        "crampon1923Entries": 3,
+        "nominalEntriesInCitedRange": 3,
+        "requestedFinalVersePresent": true,
+        "uncollatedWitness": true
+      },
+      "provisionalActors": [
+        "Barnabas",
+        "Saul",
+        "prophets",
+        "teachers"
+      ],
+      "actorIdentityCertification": false,
+      "locationEvidenceClass": "ANTIOCH_MISSION_SENDING_NO_CHURCH_ROOM",
+      "editorialFinding": "Acts 13:1-3 names Antioch and the Spirit's commissioning; exact gathering room or modern building is not identified.",
+      "geographicalAction": "ANTIOCH_CITY_ONLY",
+      "routeGeometryCertification": false,
+      "modernPointCertification": false,
+      "publicationApproval": false,
+      "reviewStage": "SOURCE_PASSAGE_DESK_TRIAGE_NO_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:144",
+      "originalIndex": 144,
+      "chapter": "FIRST_MISSION",
+      "title": "Departure from Seleucia",
+      "scriptureReference": "Acts 13:4",
+      "existingLocationClaim": "Seleucia Pieria · ancient port",
+      "originalSceneAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasKeys": [],
+      "witnessSpan": {
+        "douayChallonerEntries": 1,
+        "cpdv2009Entries": 1,
+        "crampon1923Entries": 1,
+        "nominalEntriesInCitedRange": 1,
+        "requestedFinalVersePresent": true,
+        "uncollatedWitness": true
+      },
+      "provisionalActors": [
+        "Barnabas",
+        "Saul"
+      ],
+      "actorIdentityCertification": false,
+      "locationEvidenceClass": "SELEUCIA_DEPARTURE_PORT_NAMED",
+      "editorialFinding": "Acts 13:4 names Seleucia as departure port; not an exact embarkation pier or vessel.",
+      "geographicalAction": "SELEUCIA_CITY_PORT_ONLY",
+      "routeGeometryCertification": false,
+      "modernPointCertification": false,
+      "publicationApproval": false,
+      "reviewStage": "SOURCE_PASSAGE_DESK_TRIAGE_NO_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:145",
+      "originalIndex": 145,
+      "chapter": "FIRST_MISSION",
+      "title": "Salamis on Cyprus",
+      "scriptureReference": "Acts 13:5",
+      "existingLocationClaim": "Salamis, Cyprus · archaeological city",
+      "originalSceneAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasKeys": [],
+      "witnessSpan": {
+        "douayChallonerEntries": 1,
+        "cpdv2009Entries": 1,
+        "crampon1923Entries": 1,
+        "nominalEntriesInCitedRange": 1,
+        "requestedFinalVersePresent": true,
+        "uncollatedWitness": true
+      },
+      "provisionalActors": [
+        "Barnabas",
+        "Saul",
+        "John Mark"
+      ],
+      "actorIdentityCertification": false,
+      "locationEvidenceClass": "SALAMIS_SYNAPGOGUES_NOT_PINNED",
+      "editorialFinding": "Acts 13:5 names Salamis and synagogues; the specific first-century synagogue locations are not identified.",
+      "geographicalAction": "SALAMIS_CITY_ONLY",
+      "routeGeometryCertification": false,
+      "modernPointCertification": false,
+      "publicationApproval": false,
+      "reviewStage": "SOURCE_PASSAGE_DESK_TRIAGE_NO_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:146",
+      "originalIndex": 146,
+      "chapter": "FIRST_MISSION",
+      "title": "The mission to Cyprus",
+      "scriptureReference": "Acts 13:4–12",
+      "existingLocationClaim": "Paphos · city context",
+      "originalSceneAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasKeys": [],
+      "witnessSpan": {
+        "douayChallonerEntries": 9,
+        "cpdv2009Entries": 9,
+        "crampon1923Entries": 9,
+        "nominalEntriesInCitedRange": 9,
+        "requestedFinalVersePresent": true,
+        "uncollatedWitness": true
+      },
+      "provisionalActors": [
+        "Barnabas",
+        "Saul",
+        "Elymas",
+        "Sergius Paulus"
+      ],
+      "actorIdentityCertification": false,
+      "locationEvidenceClass": "CYPRUS_MULTI_CITY_NOT_ONE_PAPHOS_EVENT",
+      "editorialFinding": "Acts 13:4-12 traverses Seleucia/Salamis and reaches Paphos. A single pin at Paphos cannot represent the whole Cyprus mission.",
+      "geographicalAction": "CYPRUS_MULTI_STOP_SOURCE_CONTEXT",
+      "routeGeometryCertification": false,
+      "modernPointCertification": false,
+      "publicationApproval": false,
+      "reviewStage": "SOURCE_PASSAGE_DESK_TRIAGE_NO_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:147",
+      "originalIndex": 147,
+      "chapter": "FIRST_MISSION",
+      "title": "Perga in Pamphylia",
+      "scriptureReference": "Acts 13:13–14",
+      "existingLocationClaim": "Perga · archaeological city",
+      "originalSceneAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasKeys": [],
+      "witnessSpan": {
+        "douayChallonerEntries": 2,
+        "cpdv2009Entries": 2,
+        "crampon1923Entries": 2,
+        "nominalEntriesInCitedRange": 2,
+        "requestedFinalVersePresent": true,
+        "uncollatedWitness": true
+      },
+      "provisionalActors": [
+        "Paul",
+        "Barnabas",
+        "John Mark"
+      ],
+      "actorIdentityCertification": false,
+      "locationEvidenceClass": "PERGA_PISIDIA_MOVEMENT_TWO_PLACES",
+      "editorialFinding": "Acts 13:13-14 names Perga and then Antioch in Pisidia; treat as successive named towns, not one event point.",
+      "geographicalAction": "TWO_CITIES_NO_SINGLE_POINT",
+      "routeGeometryCertification": false,
+      "modernPointCertification": false,
+      "publicationApproval": false,
+      "reviewStage": "SOURCE_PASSAGE_DESK_TRIAGE_NO_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:148",
+      "originalIndex": 148,
+      "chapter": "FIRST_MISSION",
+      "title": "Antioch in Pisidia",
+      "scriptureReference": "Acts 13:14–43",
+      "existingLocationClaim": "Pisidian Antioch · archaeological context",
+      "originalSceneAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasKeys": [],
+      "witnessSpan": {
+        "douayChallonerEntries": 30,
+        "cpdv2009Entries": 30,
+        "crampon1923Entries": 30,
+        "nominalEntriesInCitedRange": 30,
+        "requestedFinalVersePresent": true,
+        "uncollatedWitness": true
+      },
+      "provisionalActors": [
+        "Paul",
+        "Barnabas",
+        "hearers"
+      ],
+      "actorIdentityCertification": false,
+      "locationEvidenceClass": "PISIDIAN_ANTIOCH_NAMED_NO_SYNAPGOGUE_ROOM",
+      "editorialFinding": "Acts 13:14-43 describes preaching at Antioch in Pisidia; exact synagogue building or podium is not certified.",
+      "geographicalAction": "PISIDIAN_ANTIOCH_CITY_ONLY",
+      "routeGeometryCertification": false,
+      "modernPointCertification": false,
+      "publicationApproval": false,
+      "reviewStage": "SOURCE_PASSAGE_DESK_TRIAGE_NO_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:149",
+      "originalIndex": 149,
+      "chapter": "FIRST_MISSION",
+      "title": "Iconium resists the preaching",
+      "scriptureReference": "Acts 14:1–7",
+      "existingLocationClaim": "Iconium / Konya · city context",
+      "originalSceneAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasKeys": [],
+      "witnessSpan": {
+        "douayChallonerEntries": 7,
+        "cpdv2009Entries": 7,
+        "crampon1923Entries": 7,
+        "nominalEntriesInCitedRange": 7,
+        "requestedFinalVersePresent": true,
+        "uncollatedWitness": true
+      },
+      "provisionalActors": [
+        "Paul",
+        "Barnabas",
+        "hearers"
+      ],
+      "actorIdentityCertification": false,
+      "locationEvidenceClass": "ICONIUM_NAMED_CITY_NO_EXACT_SYNAGOGUE",
+      "editorialFinding": "Acts 14:1-7 names Iconium and departure into Lycaonian cities; no precise preaching room, mob location or ancient route.",
+      "geographicalAction": "ICONIUM_CITY_ONLY",
+      "routeGeometryCertification": false,
+      "modernPointCertification": false,
+      "publicationApproval": false,
+      "reviewStage": "SOURCE_PASSAGE_DESK_TRIAGE_NO_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:150",
+      "originalIndex": 150,
+      "chapter": "FIRST_MISSION",
+      "title": "Lystra and the miracle",
+      "scriptureReference": "Acts 14:8–20",
+      "existingLocationClaim": "Lystra · ancient settlement",
+      "originalSceneAtlasMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "originalCandidateAtlasKeys": [
+        {
+          "eventKey": "biblical:passage:acts-14-8-18",
+          "sourceStatus": "PASSAGE_OVERLAP_REVIEW_ONLY"
+        }
+      ],
+      "witnessSpan": {
+        "douayChallonerEntries": 13,
+        "cpdv2009Entries": 13,
+        "crampon1923Entries": 13,
+        "nominalEntriesInCitedRange": 13,
+        "requestedFinalVersePresent": true,
+        "uncollatedWitness": true
+      },
+      "provisionalActors": [
+        "Paul",
+        "Barnabas",
+        "man healed"
+      ],
+      "actorIdentityCertification": false,
+      "locationEvidenceClass": "LYSTRA_NAMED_SETTLEMENT_EXACT_SITE_DEBATED",
+      "editorialFinding": "Acts 14:8-20 locates the healing and ensuing hostility at Lystra; modern settlement/site and exact stoning spot are not established.",
+      "geographicalAction": "LYSTRA_SETTLEMENT_CONTEXT_ONLY",
+      "routeGeometryCertification": false,
+      "modernPointCertification": false,
+      "publicationApproval": false,
+      "reviewStage": "SOURCE_PASSAGE_DESK_TRIAGE_NO_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:151",
+      "originalIndex": 151,
+      "chapter": "FIRST_MISSION",
+      "title": "Derbe and the return",
+      "scriptureReference": "Acts 14:20–28",
+      "existingLocationClaim": "Derbe · competing settlement identifications",
+      "originalSceneAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasKeys": [],
+      "witnessSpan": {
+        "douayChallonerEntries": 8,
+        "cpdv2009Entries": 8,
+        "crampon1923Entries": 8,
+        "nominalEntriesInCitedRange": 9,
+        "requestedFinalVersePresent": false,
+        "uncollatedWitness": true
+      },
+      "provisionalActors": [
+        "Paul",
+        "Barnabas",
+        "disciples"
+      ],
+      "actorIdentityCertification": false,
+      "locationEvidenceClass": "DERBE_AND_RETURN_ROUTE_MULTIPLE_CITIES",
+      "editorialFinding": "Acts 14:20-28 describes Derbe and reverse visits through Lystra, Iconium, Antioch and Perga; not a single Derbe incident. Verse 14:28 is absent from the three imported research witnesses.",
+      "geographicalAction": "MULTI_STOP_ROUTE_AND_VERSE_14_28_HOLD",
+      "routeGeometryCertification": false,
+      "modernPointCertification": false,
+      "publicationApproval": false,
+      "reviewStage": "SOURCE_PASSAGE_DESK_TRIAGE_NO_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:152",
+      "originalIndex": 152,
+      "chapter": "FIRST_MISSION",
+      "title": "Council in Jerusalem",
+      "scriptureReference": "Acts 15:1–29",
+      "existingLocationClaim": "Jerusalem · city context",
+      "originalSceneAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasKeys": [
+        {
+          "eventKey": "biblical:passage:acts-15-1-29",
+          "sourceStatus": "EXACT_REFERENCE"
+        }
+      ],
+      "witnessSpan": {
+        "douayChallonerEntries": 29,
+        "cpdv2009Entries": 29,
+        "crampon1923Entries": 29,
+        "nominalEntriesInCitedRange": 29,
+        "requestedFinalVersePresent": true,
+        "uncollatedWitness": true
+      },
+      "provisionalActors": [
+        "Peter",
+        "James",
+        "Paul",
+        "Barnabas",
+        "apostles",
+        "elders"
+      ],
+      "actorIdentityCertification": false,
+      "locationEvidenceClass": "JERUSALEM_COUNCIL_MEETING_SITE_UNCERTAIN",
+      "editorialFinding": "Acts 15:1-29 recounts the council but names no authenticated meeting chamber. Keep the apostolic decree distinct from a modern location.",
+      "geographicalAction": "JERUSALEM_CITY_ONLY",
+      "routeGeometryCertification": false,
+      "modernPointCertification": false,
+      "publicationApproval": false,
+      "reviewStage": "SOURCE_PASSAGE_DESK_TRIAGE_NO_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:153",
+      "originalIndex": 153,
+      "chapter": "SECOND_MISSION",
+      "title": "A second departure",
+      "scriptureReference": "Acts 15:36–41",
+      "existingLocationClaim": "Antioch · city context",
+      "originalSceneAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasKeys": [],
+      "witnessSpan": {
+        "douayChallonerEntries": 6,
+        "cpdv2009Entries": 6,
+        "crampon1923Entries": 6,
+        "nominalEntriesInCitedRange": 6,
+        "requestedFinalVersePresent": true,
+        "uncollatedWitness": true
+      },
+      "provisionalActors": [
+        "Paul",
+        "Silas",
+        "Barnabas",
+        "John Mark"
+      ],
+      "actorIdentityCertification": false,
+      "locationEvidenceClass": "SECOND_DEPARTURE_SYRIA_CILICIA_ROUTE_UNPROVEN",
+      "editorialFinding": "Acts 15:36-41 describes the Paul/Barnabas disagreement and separate journeys; do not map both parties as one continuous route.",
+      "geographicalAction": "TWO_MISSION_BRANCHES_SEPARATE",
+      "routeGeometryCertification": false,
+      "modernPointCertification": false,
+      "publicationApproval": false,
+      "reviewStage": "SOURCE_PASSAGE_DESK_TRIAGE_NO_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:154",
+      "originalIndex": 154,
+      "chapter": "SECOND_MISSION",
+      "title": "Timothy joins the mission",
+      "scriptureReference": "Acts 16:1–5",
+      "existingLocationClaim": "Lystra · proposed settlement area",
+      "originalSceneAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasKeys": [],
+      "witnessSpan": {
+        "douayChallonerEntries": 5,
+        "cpdv2009Entries": 5,
+        "crampon1923Entries": 5,
+        "nominalEntriesInCitedRange": 5,
+        "requestedFinalVersePresent": true,
+        "uncollatedWitness": true
+      },
+      "provisionalActors": [
+        "Paul",
+        "Timothy",
+        "Silas"
+      ],
+      "actorIdentityCertification": false,
+      "locationEvidenceClass": "TIMOTHY_JOINS_LYSTRA_AND_DERBE_CONTEXT",
+      "editorialFinding": "Acts 16:1-5 names Derbe and Lystra; exact initial meeting point is not given and Timothy's family identity needs the proper named source.",
+      "geographicalAction": "LYSTRA_DERBE_REGION_ONLY",
+      "routeGeometryCertification": false,
+      "modernPointCertification": false,
+      "publicationApproval": false,
+      "reviewStage": "SOURCE_PASSAGE_DESK_TRIAGE_NO_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:155",
+      "originalIndex": 155,
+      "chapter": "SECOND_MISSION",
+      "title": "The Macedonian vision",
+      "scriptureReference": "Acts 16:6–10",
+      "existingLocationClaim": "Troas · archaeological setting",
+      "originalSceneAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasKeys": [],
+      "witnessSpan": {
+        "douayChallonerEntries": 5,
+        "cpdv2009Entries": 5,
+        "crampon1923Entries": 5,
+        "nominalEntriesInCitedRange": 5,
+        "requestedFinalVersePresent": true,
+        "uncollatedWitness": true
+      },
+      "provisionalActors": [
+        "Paul",
+        "Macedonian visionary figure"
+      ],
+      "actorIdentityCertification": false,
+      "locationEvidenceClass": "MACEDONIAN_VISION_TROAS_CONTEXT",
+      "editorialFinding": "Acts 16:6-10 includes movement across Phrygia/Mysia and the Troas vision; it gives no particular modern dream room or berth.",
+      "geographicalAction": "TROAS_CITY_NO_VISION_ROOM",
+      "routeGeometryCertification": false,
+      "modernPointCertification": false,
+      "publicationApproval": false,
+      "reviewStage": "SOURCE_PASSAGE_DESK_TRIAGE_NO_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:156",
+      "originalIndex": 156,
+      "chapter": "SECOND_MISSION",
+      "title": "The crossing to Macedonia",
+      "scriptureReference": "Acts 16:8–12",
+      "existingLocationClaim": "Troas · departure city",
+      "originalSceneAtlasMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "originalCandidateAtlasKeys": [
+        {
+          "eventKey": "biblical:passage:acts-16-11-15",
+          "sourceStatus": "PASSAGE_OVERLAP_REVIEW_ONLY"
+        }
+      ],
+      "witnessSpan": {
+        "douayChallonerEntries": 5,
+        "cpdv2009Entries": 5,
+        "crampon1923Entries": 5,
+        "nominalEntriesInCitedRange": 5,
+        "requestedFinalVersePresent": true,
+        "uncollatedWitness": true
+      },
+      "provisionalActors": [
+        "Paul",
+        "companions"
+      ],
+      "actorIdentityCertification": false,
+      "locationEvidenceClass": "TROAS_SAMOTHRACE_NEAPOLIS_ROUTE_STOP_SEQUENCE",
+      "editorialFinding": "Acts 16:8-12 includes Troas, Samothrace, Neapolis and Philippi as separate named stages. Map point sequence is textual, not certified ancient sailing geometry.",
+      "geographicalAction": "MULTIPLE_STOPS_NO_EXACT_SAILING_TRACK",
+      "routeGeometryCertification": false,
+      "modernPointCertification": false,
+      "publicationApproval": false,
+      "reviewStage": "SOURCE_PASSAGE_DESK_TRIAGE_NO_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:157",
+      "originalIndex": 157,
+      "chapter": "SECOND_MISSION",
+      "title": "Landfall at Neapolis",
+      "scriptureReference": "Acts 16:11–12",
+      "existingLocationClaim": "Neapolis / Kavala · port",
+      "originalSceneAtlasMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "originalCandidateAtlasKeys": [
+        {
+          "eventKey": "biblical:passage:acts-16-11-15",
+          "sourceStatus": "PASSAGE_OVERLAP_REVIEW_ONLY"
+        }
+      ],
+      "witnessSpan": {
+        "douayChallonerEntries": 2,
+        "cpdv2009Entries": 2,
+        "crampon1923Entries": 2,
+        "nominalEntriesInCitedRange": 2,
+        "requestedFinalVersePresent": true,
+        "uncollatedWitness": true
+      },
+      "provisionalActors": [
+        "Paul",
+        "companions"
+      ],
+      "actorIdentityCertification": false,
+      "locationEvidenceClass": "NEAPOLIS_PORT_NOT_EXACT_QUAY",
+      "editorialFinding": "Acts 16:11-12 names Neapolis and onward Philippi; no specific historic landing pier or ancient road trace is established.",
+      "geographicalAction": "NEAPOLIS_HISTORIC_PORT_ONLY",
+      "routeGeometryCertification": false,
+      "modernPointCertification": false,
+      "publicationApproval": false,
+      "reviewStage": "SOURCE_PASSAGE_DESK_TRIAGE_NO_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:158",
+      "originalIndex": 158,
+      "chapter": "SECOND_MISSION",
+      "title": "Lydia and the church at Philippi",
+      "scriptureReference": "Acts 16:11–15",
+      "existingLocationClaim": "Philippi · ancient settlement",
+      "originalSceneAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasKeys": [
+        {
+          "eventKey": "biblical:passage:acts-16-11-15",
+          "sourceStatus": "EXACT_REFERENCE"
+        }
+      ],
+      "witnessSpan": {
+        "douayChallonerEntries": 5,
+        "cpdv2009Entries": 5,
+        "crampon1923Entries": 5,
+        "nominalEntriesInCitedRange": 5,
+        "requestedFinalVersePresent": true,
+        "uncollatedWitness": true
+      },
+      "provisionalActors": [
+        "Paul",
+        "Silas",
+        "Lydia"
+      ],
+      "actorIdentityCertification": false,
+      "locationEvidenceClass": "PHILIPPI_LYDIA_RIVERSIDE_NOT_IDENTIFIED",
+      "editorialFinding": "Acts 16:11-15 places Lydia's encounter beside a river outside Philippi; exact riverbank prayer spot or baptistry identification requires external evidence.",
+      "geographicalAction": "PHILIPPI_REGION_NO_PRECISE_RIVERSIDE_PIN",
+      "routeGeometryCertification": false,
+      "modernPointCertification": false,
+      "publicationApproval": false,
+      "reviewStage": "SOURCE_PASSAGE_DESK_TRIAGE_NO_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:159",
+      "originalIndex": 159,
+      "chapter": "SECOND_MISSION",
+      "title": "Paul and Silas in prison",
+      "scriptureReference": "Acts 16:16–40",
+      "existingLocationClaim": "Philippi · archaeological city",
+      "originalSceneAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasKeys": [],
+      "witnessSpan": {
+        "douayChallonerEntries": 25,
+        "cpdv2009Entries": 25,
+        "crampon1923Entries": 25,
+        "nominalEntriesInCitedRange": 25,
+        "requestedFinalVersePresent": true,
+        "uncollatedWitness": true
+      },
+      "provisionalActors": [
+        "Paul",
+        "Silas",
+        "jailer"
+      ],
+      "actorIdentityCertification": false,
+      "locationEvidenceClass": "PHILIPPI_JAIL_NOT_EXCAVATED_CERTAINTY",
+      "editorialFinding": "Acts 16:16-40 narrates beating, prison and the jailer's conversion; a modern identified prison chamber is not proven by the text.",
+      "geographicalAction": "PHILIPPI_CITY_ONLY_NO_PRISON_ROOM",
+      "routeGeometryCertification": false,
+      "modernPointCertification": false,
+      "publicationApproval": false,
+      "reviewStage": "SOURCE_PASSAGE_DESK_TRIAGE_NO_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:160",
+      "originalIndex": 160,
+      "chapter": "SECOND_MISSION",
+      "title": "Paul at Thessalonica",
+      "scriptureReference": "Acts 17:1–9",
+      "existingLocationClaim": "Thessalonica · historic city",
+      "originalSceneAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasKeys": [
+        {
+          "eventKey": "biblical:passage:acts-17-1-9",
+          "sourceStatus": "EXACT_REFERENCE"
+        }
+      ],
+      "witnessSpan": {
+        "douayChallonerEntries": 9,
+        "cpdv2009Entries": 9,
+        "crampon1923Entries": 9,
+        "nominalEntriesInCitedRange": 9,
+        "requestedFinalVersePresent": true,
+        "uncollatedWitness": true
+      },
+      "provisionalActors": [
+        "Paul",
+        "Silas",
+        "Jason"
+      ],
+      "actorIdentityCertification": false,
+      "locationEvidenceClass": "THESSALONICA_NAMED_CITY_JASON_HOUSE_UNKNOWN",
+      "editorialFinding": "Acts 17:1-9 names Thessalonica and Jason's house, but not a certified contemporary house or synagogue structure.",
+      "geographicalAction": "THESSALONICA_CITY_ONLY",
+      "routeGeometryCertification": false,
+      "modernPointCertification": false,
+      "publicationApproval": false,
+      "reviewStage": "SOURCE_PASSAGE_DESK_TRIAGE_NO_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:161",
+      "originalIndex": 161,
+      "chapter": "SECOND_MISSION",
+      "title": "The believers at Berea",
+      "scriptureReference": "Acts 17:10–15",
+      "existingLocationClaim": "Berea / Veria · historic city",
+      "originalSceneAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasKeys": [],
+      "witnessSpan": {
+        "douayChallonerEntries": 6,
+        "cpdv2009Entries": 6,
+        "crampon1923Entries": 6,
+        "nominalEntriesInCitedRange": 6,
+        "requestedFinalVersePresent": true,
+        "uncollatedWitness": true
+      },
+      "provisionalActors": [
+        "Paul",
+        "Silas",
+        "believers"
+      ],
+      "actorIdentityCertification": false,
+      "locationEvidenceClass": "BEREA_NAMED_CITY_NO_SYNAPGOGUE_POINT",
+      "editorialFinding": "Acts 17:10-15 names Berea and its hearers but no exact ancient synagogue location or route.",
+      "geographicalAction": "BEREA_CITY_ONLY",
+      "routeGeometryCertification": false,
+      "modernPointCertification": false,
+      "publicationApproval": false,
+      "reviewStage": "SOURCE_PASSAGE_DESK_TRIAGE_NO_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:162",
+      "originalIndex": 162,
+      "chapter": "SECOND_MISSION",
+      "title": "The Areopagus at Athens",
+      "scriptureReference": "Acts 17:16–34",
+      "existingLocationClaim": "Athens · city context",
+      "originalSceneAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasKeys": [
+        {
+          "eventKey": "biblical:passage:acts-17-16-34",
+          "sourceStatus": "EXACT_REFERENCE"
+        }
+      ],
+      "witnessSpan": {
+        "douayChallonerEntries": 19,
+        "cpdv2009Entries": 19,
+        "crampon1923Entries": 19,
+        "nominalEntriesInCitedRange": 19,
+        "requestedFinalVersePresent": true,
+        "uncollatedWitness": true
+      },
+      "provisionalActors": [
+        "Paul",
+        "Athenians",
+        "Dionysius",
+        "Damaris"
+      ],
+      "actorIdentityCertification": false,
+      "locationEvidenceClass": "ATHENS_AREOPAGUS_ADDRESS_VS_MODERN_SITE",
+      "editorialFinding": "Acts 17:16-34 names Athens and the Areopagus, but the speech's exact architectural position versus institution is a separate historical question.",
+      "geographicalAction": "ATHENS_CITY_AREOPAGUS_CONTEXT_ONLY",
+      "routeGeometryCertification": false,
+      "modernPointCertification": false,
+      "publicationApproval": false,
+      "reviewStage": "SOURCE_PASSAGE_DESK_TRIAGE_NO_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:163",
+      "originalIndex": 163,
+      "chapter": "SECOND_MISSION",
+      "title": "Corinth and the tentmakers",
+      "scriptureReference": "Acts 18:1–18",
+      "existingLocationClaim": "Corinth · ancient settlement",
+      "originalSceneAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasKeys": [
+        {
+          "eventKey": "biblical:passage:acts-18-1-18",
+          "sourceStatus": "EXACT_REFERENCE"
+        }
+      ],
+      "witnessSpan": {
+        "douayChallonerEntries": 18,
+        "cpdv2009Entries": 18,
+        "crampon1923Entries": 18,
+        "nominalEntriesInCitedRange": 18,
+        "requestedFinalVersePresent": true,
+        "uncollatedWitness": true
+      },
+      "provisionalActors": [
+        "Paul",
+        "Aquila",
+        "Priscilla",
+        "Gallio"
+      ],
+      "actorIdentityCertification": false,
+      "locationEvidenceClass": "CORINTH_MULTI_LOCATION_NOT_SINGLE_SHOP",
+      "editorialFinding": "Acts 18:1-18 covers tentmaking, synagogue teaching and Gallio's tribunal. No shop or hearing space coordinates are certified by the passage.",
+      "geographicalAction": "CORINTH_CITY_NO_SHOP_PIN",
+      "routeGeometryCertification": false,
+      "modernPointCertification": false,
+      "publicationApproval": false,
+      "reviewStage": "SOURCE_PASSAGE_DESK_TRIAGE_NO_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:164",
+      "originalIndex": 164,
+      "chapter": "THIRD_MISSION",
+      "title": "The mission returns to Antioch",
+      "scriptureReference": "Acts 18:18–23",
+      "existingLocationClaim": "Antioch on the Orontes",
+      "originalSceneAtlasMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "originalCandidateAtlasKeys": [
+        {
+          "eventKey": "biblical:passage:acts-18-1-18",
+          "sourceStatus": "PASSAGE_OVERLAP_REVIEW_ONLY"
+        }
+      ],
+      "witnessSpan": {
+        "douayChallonerEntries": 6,
+        "cpdv2009Entries": 6,
+        "crampon1923Entries": 6,
+        "nominalEntriesInCitedRange": 6,
+        "requestedFinalVersePresent": true,
+        "uncollatedWitness": true
+      },
+      "provisionalActors": [
+        "Paul",
+        "Priscilla",
+        "Aquila",
+        "disciples"
+      ],
+      "actorIdentityCertification": false,
+      "locationEvidenceClass": "THIRD_MISSION_MULTI_CITY_RETURN",
+      "editorialFinding": "Acts 18:18-23 spans Cenchreae, Ephesus, Caesarea, Jerusalem and Antioch, then the next departure; Antioch alone cannot represent the entire passage.",
+      "geographicalAction": "MULTI_STOP_RETURN_AND_REDEPARTURE",
+      "routeGeometryCertification": false,
+      "modernPointCertification": false,
+      "publicationApproval": false,
+      "reviewStage": "SOURCE_PASSAGE_DESK_TRIAGE_NO_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:165",
+      "originalIndex": 165,
+      "chapter": "THIRD_MISSION",
+      "title": "Paul revisits Galatia and Phrygia",
+      "scriptureReference": "Acts 18:23",
+      "existingLocationClaim": "Pisidian Antioch · ancient city",
+      "originalSceneAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasKeys": [],
+      "witnessSpan": {
+        "douayChallonerEntries": 1,
+        "cpdv2009Entries": 1,
+        "crampon1923Entries": 1,
+        "nominalEntriesInCitedRange": 1,
+        "requestedFinalVersePresent": true,
+        "uncollatedWitness": true
+      },
+      "provisionalActors": [
+        "Paul",
+        "disciples"
+      ],
+      "actorIdentityCertification": false,
+      "locationEvidenceClass": "GALATIA_PHRYGIA_ONLY_NO_PISIDIAN_PIN",
+      "editorialFinding": "Acts 18:23 names the Galatian country and Phrygia but **does not name Pisidian Antioch**. Existing scene 165's location claim requires correction/qualification.",
+      "geographicalAction": "NO_PISIDIAN_ANTIOCH_PIN_FROM_ACTS_18_23",
+      "routeGeometryCertification": false,
+      "modernPointCertification": false,
+      "publicationApproval": false,
+      "reviewStage": "SOURCE_PASSAGE_DESK_TRIAGE_NO_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:166",
+      "originalIndex": 166,
+      "chapter": "THIRD_MISSION",
+      "title": "The mission in Ephesus",
+      "scriptureReference": "Acts 19:1–20",
+      "existingLocationClaim": "Ephesus · ancient city",
+      "originalSceneAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasKeys": [
+        {
+          "eventKey": "biblical:passage:acts-19-1-20",
+          "sourceStatus": "EXACT_REFERENCE"
+        }
+      ],
+      "witnessSpan": {
+        "douayChallonerEntries": 20,
+        "cpdv2009Entries": 20,
+        "crampon1923Entries": 20,
+        "nominalEntriesInCitedRange": 20,
+        "requestedFinalVersePresent": true,
+        "uncollatedWitness": true
+      },
+      "provisionalActors": [
+        "Paul",
+        "disciples",
+        "Ephesians"
+      ],
+      "actorIdentityCertification": false,
+      "locationEvidenceClass": "EPHESUS_NAMED_CITY_MULTIPLE_MINISTRY_SITES",
+      "editorialFinding": "Acts 19:1-20 names Ephesus but spans baptisms, synagogue and lecture venue without proving extant specific interiors.",
+      "geographicalAction": "EPHESUS_CITY_CONTEXT_ONLY",
+      "routeGeometryCertification": false,
+      "modernPointCertification": false,
+      "publicationApproval": false,
+      "reviewStage": "SOURCE_PASSAGE_DESK_TRIAGE_NO_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:167",
+      "originalIndex": 167,
+      "chapter": "THIRD_MISSION",
+      "title": "Riot of the silversmiths",
+      "scriptureReference": "Acts 19:23–41",
+      "existingLocationClaim": "Ephesus · archaeological city",
+      "originalSceneAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasKeys": [],
+      "witnessSpan": {
+        "douayChallonerEntries": 18,
+        "cpdv2009Entries": 18,
+        "crampon1923Entries": 18,
+        "nominalEntriesInCitedRange": 19,
+        "requestedFinalVersePresent": false,
+        "uncollatedWitness": true
+      },
+      "provisionalActors": [
+        "Paul",
+        "Demetrius",
+        "craftsmen",
+        "town clerk"
+      ],
+      "actorIdentityCertification": false,
+      "locationEvidenceClass": "EPHESUS_RIOT_ASSEMBLY_NO_VERSE_41",
+      "editorialFinding": "Acts 19:23-41 is one longer than the installed witnesses' Acts 19:23-40. The latter conclude at 19:40. No missing verse may be invented; exact riot assembly location remains archaeological review.",
+      "geographicalAction": "EDITION_SAFE_ACTS_19_40_FINAL_NO_EXTRA_41",
+      "routeGeometryCertification": false,
+      "modernPointCertification": false,
+      "publicationApproval": false,
+      "reviewStage": "SOURCE_PASSAGE_DESK_TRIAGE_NO_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:168",
+      "originalIndex": 168,
+      "chapter": "THIRD_MISSION",
+      "title": "Eutychus restored at Troas",
+      "scriptureReference": "Acts 20:7–12",
+      "existingLocationClaim": "Troas · archaeological setting",
+      "originalSceneAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasKeys": [
+        {
+          "eventKey": "biblical:passage:acts-20-7-12",
+          "sourceStatus": "EXACT_REFERENCE"
+        }
+      ],
+      "witnessSpan": {
+        "douayChallonerEntries": 6,
+        "cpdv2009Entries": 6,
+        "crampon1923Entries": 6,
+        "nominalEntriesInCitedRange": 6,
+        "requestedFinalVersePresent": true,
+        "uncollatedWitness": true
+      },
+      "provisionalActors": [
+        "Paul",
+        "Eutychus",
+        "disciples"
+      ],
+      "actorIdentityCertification": false,
+      "locationEvidenceClass": "TROAS_EUTYCHUS_UPPER_ROOM_UNLOCATED",
+      "editorialFinding": "Acts 20:7-12 names the Troas gathering and upper room, but does not establish the modern building address or floor level.",
+      "geographicalAction": "TROAS_CITY_ONLY_NO_ROOM_PIN",
+      "routeGeometryCertification": false,
+      "modernPointCertification": false,
+      "publicationApproval": false,
+      "reviewStage": "SOURCE_PASSAGE_DESK_TRIAGE_NO_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:169",
+      "originalIndex": 169,
+      "chapter": "THIRD_MISSION",
+      "title": "Farewell at Miletus",
+      "scriptureReference": "Acts 20:17–38",
+      "existingLocationClaim": "Miletus · ancient settlement",
+      "originalSceneAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasKeys": [
+        {
+          "eventKey": "biblical:passage:acts-20-17-38",
+          "sourceStatus": "EXACT_REFERENCE"
+        }
+      ],
+      "witnessSpan": {
+        "douayChallonerEntries": 22,
+        "cpdv2009Entries": 22,
+        "crampon1923Entries": 22,
+        "nominalEntriesInCitedRange": 22,
+        "requestedFinalVersePresent": true,
+        "uncollatedWitness": true
+      },
+      "provisionalActors": [
+        "Paul",
+        "elders of Ephesus"
+      ],
+      "actorIdentityCertification": false,
+      "locationEvidenceClass": "MILETUS_ELDERS_GATHERING_NOT_EXACT_SPOT",
+      "editorialFinding": "Acts 20:17-38 identifies Paul's farewell at Miletus and summoned Ephesian elders, without an exact site of speech or shoreline.",
+      "geographicalAction": "MILETUS_CITY_ONLY",
+      "routeGeometryCertification": false,
+      "modernPointCertification": false,
+      "publicationApproval": false,
+      "reviewStage": "SOURCE_PASSAGE_DESK_TRIAGE_NO_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:170",
+      "originalIndex": 170,
+      "chapter": "TO_ROME",
+      "title": "Paul arrives at Tyre",
+      "scriptureReference": "Acts 21:1–6",
+      "existingLocationClaim": "Tyre · historic city",
+      "originalSceneAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasKeys": [],
+      "witnessSpan": {
+        "douayChallonerEntries": 6,
+        "cpdv2009Entries": 6,
+        "crampon1923Entries": 6,
+        "nominalEntriesInCitedRange": 6,
+        "requestedFinalVersePresent": true,
+        "uncollatedWitness": true
+      },
+      "provisionalActors": [
+        "Paul",
+        "disciples",
+        "companions"
+      ],
+      "actorIdentityCertification": false,
+      "locationEvidenceClass": "TYRE_JOURNEY_DOCKS_UNVERIFIED",
+      "editorialFinding": "Acts 21:1-6 places the group in Tyre, including prayers at the shore. This does not authenticate a modern dock or route pin.",
+      "geographicalAction": "TYRE_HISTORIC_CITY_ONLY",
+      "routeGeometryCertification": false,
+      "modernPointCertification": false,
+      "publicationApproval": false,
+      "reviewStage": "SOURCE_PASSAGE_DESK_TRIAGE_NO_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:171",
+      "originalIndex": 171,
+      "chapter": "TO_ROME",
+      "title": "Prophecy at Caesarea",
+      "scriptureReference": "Acts 21:8–14",
+      "existingLocationClaim": "Caesarea Maritima · archaeological city",
+      "originalSceneAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasKeys": [],
+      "witnessSpan": {
+        "douayChallonerEntries": 7,
+        "cpdv2009Entries": 7,
+        "crampon1923Entries": 7,
+        "nominalEntriesInCitedRange": 7,
+        "requestedFinalVersePresent": true,
+        "uncollatedWitness": true
+      },
+      "provisionalActors": [
+        "Paul",
+        "Philip",
+        "Agabus",
+        "companions"
+      ],
+      "actorIdentityCertification": false,
+      "locationEvidenceClass": "CAESAREA_AGABUS_HOUSE_NOT_CERTIFIED",
+      "editorialFinding": "Acts 21:8-14 names Caesarea and Philip's house, but the location of that house and the prophetic action remains unknown.",
+      "geographicalAction": "CAESAREA_MARITIMA_CITY_ONLY",
+      "routeGeometryCertification": false,
+      "modernPointCertification": false,
+      "publicationApproval": false,
+      "reviewStage": "SOURCE_PASSAGE_DESK_TRIAGE_NO_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:172",
+      "originalIndex": 172,
+      "chapter": "TO_ROME",
+      "title": "Paul arrested at the Temple",
+      "scriptureReference": "Acts 21:27–36",
+      "existingLocationClaim": "Jerusalem · city context",
+      "originalSceneAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasKeys": [],
+      "witnessSpan": {
+        "douayChallonerEntries": 10,
+        "cpdv2009Entries": 10,
+        "crampon1923Entries": 10,
+        "nominalEntriesInCitedRange": 10,
+        "requestedFinalVersePresent": true,
+        "uncollatedWitness": true
+      },
+      "provisionalActors": [
+        "Paul",
+        "crowd",
+        "Roman commander"
+      ],
+      "actorIdentityCertification": false,
+      "locationEvidenceClass": "TEMPLE_ARREST_MULTI_COURT_NO_EXACT_POINT",
+      "editorialFinding": "Acts 21:27-36 names the Temple and barracks stairs as narrative contexts, without certifying a modern precise stair or room.",
+      "geographicalAction": "JERUSALEM_CITY_NO_STAIR_PIN",
+      "routeGeometryCertification": false,
+      "modernPointCertification": false,
+      "publicationApproval": false,
+      "reviewStage": "SOURCE_PASSAGE_DESK_TRIAGE_NO_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:173",
+      "originalIndex": 173,
+      "chapter": "TO_ROME",
+      "title": "Before Felix at Caesarea",
+      "scriptureReference": "Acts 24:1–27",
+      "existingLocationClaim": "Caesarea Maritima · archaeological city",
+      "originalSceneAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasKeys": [],
+      "witnessSpan": {
+        "douayChallonerEntries": 27,
+        "cpdv2009Entries": 27,
+        "crampon1923Entries": 27,
+        "nominalEntriesInCitedRange": 27,
+        "requestedFinalVersePresent": true,
+        "uncollatedWitness": true
+      },
+      "provisionalActors": [
+        "Paul",
+        "Felix",
+        "Tertullus",
+        "Drusilla"
+      ],
+      "actorIdentityCertification": false,
+      "locationEvidenceClass": "FELIX_CAESAREA_PRAETORIUM_CONTEXT_ONLY",
+      "editorialFinding": "Acts 24:1-27 records the hearing before Felix at Caesarea; no exact contemporary tribunal room can be sourced from the passage.",
+      "geographicalAction": "CAESAREA_CITY_ONLY_NO_COURTROOM_PIN",
+      "routeGeometryCertification": false,
+      "modernPointCertification": false,
+      "publicationApproval": false,
+      "reviewStage": "SOURCE_PASSAGE_DESK_TRIAGE_NO_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:174",
+      "originalIndex": 174,
+      "chapter": "TO_ROME",
+      "title": "Paul appeals to Caesar",
+      "scriptureReference": "Acts 25:1–12",
+      "existingLocationClaim": "Caesarea Maritima · archaeological city",
+      "originalSceneAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasKeys": [],
+      "witnessSpan": {
+        "douayChallonerEntries": 12,
+        "cpdv2009Entries": 12,
+        "crampon1923Entries": 12,
+        "nominalEntriesInCitedRange": 12,
+        "requestedFinalVersePresent": true,
+        "uncollatedWitness": true
+      },
+      "provisionalActors": [
+        "Paul",
+        "Festus",
+        "accusers"
+      ],
+      "actorIdentityCertification": false,
+      "locationEvidenceClass": "CAESAREA_PAUL_APPEAL_NO_EXACT_HEARING_SITE",
+      "editorialFinding": "Acts 25:1-12 spans Festus in Jerusalem and Caesarea for the hearing and appeal. It must not collapse both places into a single courtroom.",
+      "geographicalAction": "MULTIPLE_JERUSALEM_AND_CAESAREA_STAGES",
+      "routeGeometryCertification": false,
+      "modernPointCertification": false,
+      "publicationApproval": false,
+      "reviewStage": "SOURCE_PASSAGE_DESK_TRIAGE_NO_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:175",
+      "originalIndex": 175,
+      "chapter": "TO_ROME",
+      "title": "The long voyage from Caesarea",
+      "scriptureReference": "Acts 27:1–12",
+      "existingLocationClaim": "Crete · island region, not vessel position",
+      "originalSceneAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasKeys": [],
+      "witnessSpan": {
+        "douayChallonerEntries": 12,
+        "cpdv2009Entries": 12,
+        "crampon1923Entries": 12,
+        "nominalEntriesInCitedRange": 12,
+        "requestedFinalVersePresent": true,
+        "uncollatedWitness": true
+      },
+      "provisionalActors": [
+        "Paul",
+        "Julius",
+        "shipmates"
+      ],
+      "actorIdentityCertification": false,
+      "locationEvidenceClass": "CAESAREA_TO_CRETE_MULTIPLE_PORTS",
+      "editorialFinding": "Acts 27:1-12 begins with departure and traces several maritime stages before Crete, not only Crete. Ancient nautical positions are not reconstructible from the narrative.",
+      "geographicalAction": "TEXTUAL_PORT_SEQUENCE_ONLY_NO_TRACK",
+      "routeGeometryCertification": false,
+      "modernPointCertification": false,
+      "publicationApproval": false,
+      "reviewStage": "SOURCE_PASSAGE_DESK_TRIAGE_NO_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:176",
+      "originalIndex": 176,
+      "chapter": "TO_ROME",
+      "title": "A storm on the sea",
+      "scriptureReference": "Acts 27:13–44",
+      "existingLocationClaim": "Central Mediterranean · indicative only",
+      "originalSceneAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasKeys": [
+        {
+          "eventKey": "biblical:passage:acts-27-13-44",
+          "sourceStatus": "EXACT_REFERENCE"
+        }
+      ],
+      "witnessSpan": {
+        "douayChallonerEntries": 32,
+        "cpdv2009Entries": 32,
+        "crampon1923Entries": 32,
+        "nominalEntriesInCitedRange": 32,
+        "requestedFinalVersePresent": true,
+        "uncollatedWitness": true
+      },
+      "provisionalActors": [
+        "Paul",
+        "shipmates",
+        "sailors"
+      ],
+      "actorIdentityCertification": false,
+      "locationEvidenceClass": "STORM_MEDITERRANEAN_UNLOCATED_SHIPWRECK",
+      "editorialFinding": "Acts 27:13-44 narrates a storm at sea without an independently proved contemporary vessel track or landing GIS point; the canonical Atlas explicitly avoids a fabricated shipwreck location.",
+      "geographicalAction": "NO_STORM_SHIPWRECK_PIN",
+      "routeGeometryCertification": false,
+      "modernPointCertification": false,
+      "publicationApproval": false,
+      "reviewStage": "SOURCE_PASSAGE_DESK_TRIAGE_NO_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:177",
+      "originalIndex": 177,
+      "chapter": "TO_ROME",
+      "title": "Shipwreck and hospitality on Malta",
+      "scriptureReference": "Acts 28:1–10",
+      "existingLocationClaim": "Malta · island; beach/landing place debated",
+      "originalSceneAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasKeys": [],
+      "witnessSpan": {
+        "douayChallonerEntries": 10,
+        "cpdv2009Entries": 10,
+        "crampon1923Entries": 10,
+        "nominalEntriesInCitedRange": 10,
+        "requestedFinalVersePresent": true,
+        "uncollatedWitness": true
+      },
+      "provisionalActors": [
+        "Paul",
+        "islanders",
+        "Publius"
+      ],
+      "actorIdentityCertification": false,
+      "locationEvidenceClass": "MALTA_NAMED_ISLAND_LANDING_BAY_UNKNOWN",
+      "editorialFinding": "Acts 28:1 identifies Malta, but does not certify today's named St Paul's Bay, beach or any individual footprint as the shipwreck landing point.",
+      "geographicalAction": "MALTA_ISLAND_ONLY_NO_LANDING_PIN",
+      "routeGeometryCertification": false,
+      "modernPointCertification": false,
+      "publicationApproval": false,
+      "reviewStage": "SOURCE_PASSAGE_DESK_TRIAGE_NO_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:178",
+      "originalIndex": 178,
+      "chapter": "TO_ROME",
+      "title": "Syracuse and Puteoli",
+      "scriptureReference": "Acts 28:11–14",
+      "existingLocationClaim": "Syracuse · historic city",
+      "originalSceneAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasKeys": [],
+      "witnessSpan": {
+        "douayChallonerEntries": 4,
+        "cpdv2009Entries": 4,
+        "crampon1923Entries": 4,
+        "nominalEntriesInCitedRange": 4,
+        "requestedFinalVersePresent": true,
+        "uncollatedWitness": true
+      },
+      "provisionalActors": [
+        "Paul",
+        "companions"
+      ],
+      "actorIdentityCertification": false,
+      "locationEvidenceClass": "SYRACUSE_RHEGIUM_PUTEOLI_SEQUENCE",
+      "editorialFinding": "Acts 28:11-14 lists Syracuse, Rhegium and Puteoli as consecutive Mediterranean and mainland stops; the specific ship berths remain uncertain.",
+      "geographicalAction": "MULTIPLE_PORT_STAGES",
+      "routeGeometryCertification": false,
+      "modernPointCertification": false,
+      "publicationApproval": false,
+      "reviewStage": "SOURCE_PASSAGE_DESK_TRIAGE_NO_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:179",
+      "originalIndex": 179,
+      "chapter": "TO_ROME",
+      "title": "The Italian mainland",
+      "scriptureReference": "Acts 28:13–14",
+      "existingLocationClaim": "Puteoli / Pozzuoli · port",
+      "originalSceneAtlasMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalCandidateAtlasKeys": [],
+      "witnessSpan": {
+        "douayChallonerEntries": 2,
+        "cpdv2009Entries": 2,
+        "crampon1923Entries": 2,
+        "nominalEntriesInCitedRange": 2,
+        "requestedFinalVersePresent": true,
+        "uncollatedWitness": true
+      },
+      "provisionalActors": [
+        "Paul",
+        "brethren"
+      ],
+      "actorIdentityCertification": false,
+      "locationEvidenceClass": "PUTEOLI_OVERLAPPING_SUBSCENE",
+      "editorialFinding": "Acts 28:13-14 is a short subsection of scene 178 Acts 28:11-14. Do not create a second Italian-mainland arrival event from the overlap.",
+      "geographicalAction": "ONE_NARRATIVE_ARRIVAL_BEAT_NO_DUPLICATE",
+      "routeGeometryCertification": false,
+      "modernPointCertification": false,
+      "publicationApproval": false,
+      "reviewStage": "SOURCE_PASSAGE_DESK_TRIAGE_NO_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:180",
+      "originalIndex": 180,
+      "chapter": "TO_ROME",
+      "title": "Paul arrives in Rome",
+      "scriptureReference": "Acts 28:16–31",
+      "existingLocationClaim": "Rome · city context",
+      "originalSceneAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasKeys": [
+        {
+          "eventKey": "biblical:passage:acts-28-16-31",
+          "sourceStatus": "EXACT_REFERENCE"
+        }
+      ],
+      "witnessSpan": {
+        "douayChallonerEntries": 16,
+        "cpdv2009Entries": 16,
+        "crampon1923Entries": 16,
+        "nominalEntriesInCitedRange": 16,
+        "requestedFinalVersePresent": true,
+        "uncollatedWitness": true
+      },
+      "provisionalActors": [
+        "Paul",
+        "brethren",
+        "Roman visitors"
+      ],
+      "actorIdentityCertification": false,
+      "locationEvidenceClass": "ROME_ARRIVAL_NOT_ACTS_CLOSING_EXECUTION",
+      "editorialFinding": "Acts 28:16-31 records Rome and Paul's preaching but does not narrate his martyrdom, death or site. Never append fabricated events after the final canonical reading.",
+      "geographicalAction": "ROME_CITY_CONTEXT_ONLY_NO_MARTYRDOM_PIN",
+      "routeGeometryCertification": false,
+      "modernPointCertification": false,
+      "publicationApproval": false,
+      "reviewStage": "SOURCE_PASSAGE_DESK_TRIAGE_NO_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:paul:182",
+      "originalIndex": 182,
+      "chapter": "APOSTLES",
+      "title": "Pentecost: the Holy Spirit descends",
+      "scriptureReference": "Acts 2:1–41",
+      "existingLocationClaim": "Jerusalem · city context; the precise room is not identified by Acts 2",
+      "originalSceneAtlasMatchStatus": "EXACT_REFERENCE",
+      "originalCandidateAtlasKeys": [
+        {
+          "eventKey": "biblical:passage:acts-2-1-41",
+          "sourceStatus": "EXACT_REFERENCE"
+        }
+      ],
+      "witnessSpan": {
+        "douayChallonerEntries": 41,
+        "cpdv2009Entries": 41,
+        "crampon1923Entries": 41,
+        "nominalEntriesInCitedRange": 41,
+        "requestedFinalVersePresent": true,
+        "uncollatedWitness": true
+      },
+      "provisionalActors": [
+        "Peter",
+        "apostles",
+        "gathered disciples"
+      ],
+      "actorIdentityCertification": false,
+      "locationEvidenceClass": "PENTECOST_JERUSALEM_NOT_CERTIFIED_CENACLE_ROOM",
+      "editorialFinding": "Acts 2:1-41 narrates the Spirit's descent and Peter's preaching without proving that an extant Upper Room was the precise place; keep appended scene 182 in its correct theological order following Ascension.",
+      "geographicalAction": "JERUSALEM_CITY_ONLY_NO_CENACLE_CERTIFICATION",
+      "routeGeometryCertification": false,
+      "modernPointCertification": false,
+      "publicationApproval": false,
+      "reviewStage": "SOURCE_PASSAGE_DESK_TRIAGE_NO_PRINT_COLLATION"
+    }
+  ]
+}
