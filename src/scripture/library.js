@@ -42,7 +42,7 @@ function validatedRecord(record,editionId) {
  */
 export function mountScriptureLibrary(root,{
  language="en",openExternal=url=>window.open(url,"_blank","noopener,noreferrer"),
- storage=globalThis.localStorage,records=[],onClose=()=>{},onNeedBook=()=>{},onOpenRelatedObject=null,canOpenRelatedObject=()=>false,fetchCommentary=globalThis.fetch?.bind(globalThis),passage=null,context=null
+ storage=globalThis.localStorage,records=[],onClose=()=>{},onNeedBook=()=>{},onOpenRelatedObject=null,canOpenRelatedObject=()=>false,fetchCommentary=globalThis.fetch?.bind(globalThis),passage=null,context=null,thematicCatalogue=null,initialThematicEpisodeId=null
 }={}){
  if(!root||typeof root.replaceChildren!=="function")throw new TypeError("Scripture root required");
  if(!Array.isArray(records))throw new TypeError("Scripture records array required");
@@ -66,6 +66,49 @@ export function mountScriptureLibrary(root,{
  let browseExpanded=!context?.reference;
  let editionId=lang==="en"?prefs.englishEdition():DEFAULT_SCRIPTURE_EDITION[lang];
  const editionLocations=new Map([[editionId,location]]);
+ // Research-only collection navigation; the shared reader retains ownership.
+ let thematicGroups=thematicCatalogue,thematicEpisode=null,thematicGroup=null;
+ let thematicPage=0,thematicOpen=Boolean(initialThematicEpisodeId),thematicReturn=null;
+ function findThematic(id){
+  for(const group of (Array.isArray(thematicGroups)?thematicGroups:[])){
+   const episode=group.episodes?.find(e=>e.id===id);
+   if(episode)return {episode,group};
+  }
+  return null;
+ }
+ function exitThematic(restore=false){
+  thematicEpisode=null;thematicGroup=null;thematicPage=0;
+  if(restore&&thematicReturn){
+   ({location,context,contextDepth,commentaryVisible,segmentSet,activeSegmentIndex,
+    browseExpanded,lang,editionId}=thematicReturn);
+  }
+  thematicReturn=null;
+ }
+ function positionThematic(){
+  if(!thematicEpisode)return;
+  const p=thematicEpisode.plan.chapters[thematicPage];
+  if(!p)throw new Error("Invalid collection chapter");
+  leaveSourceSegments();
+  location=scripturePassage({book:p.book,chapter:p.chapter,
+   verseStart:p.firstVerse??1,verseEnd:p.lastVerse??p.firstVerse??1});
+  context=Object.freeze({reference:p.label,passage:location,provenance:"UNCOLLATED_THEMATIC_RESEARCH"});
+  contextDepth=p.firstVerse==null?"chapter":"selected";
+  commentaryVisible=false;relatedExpanded=false;browseExpanded=false;
+ }
+ function selectThematic(id){
+  const m=findThematic(id);if(!m)return false;
+  if(!thematicEpisode)thematicReturn={location,context,contextDepth,commentaryVisible,
+   segmentSet,activeSegmentIndex,browseExpanded,lang,editionId};
+  thematicEpisode=m.episode;thematicGroup=m.group;thematicPage=0;thematicOpen=true;
+  if(thematicEpisode.plan.book==="Esther"){lang="en";editionId="dr-challoner";}
+  positionThematic();draw();return true;
+ }
+ function stepThematic(direction){
+  if(!thematicEpisode)return false;
+  const next=thematicPage+direction;
+  if(next<0||next>=thematicEpisode.plan.chapters.length)return false;
+  thematicPage=next;positionThematic();draw();root.scrollTop=0;return true;
+ }
  function moveEdition(nextEdition){
    if(nextEdition===editionId)return;
    editionLocations.set(editionId,location);
@@ -543,9 +586,17 @@ export function mountScriptureLibrary(root,{
    wrap.append(rosary);
  }
  draw();
+ if(initialThematicEpisodeId&&thematicGroups)selectThematic(initialThematicEpisodeId);
  return Object.freeze({
+   setThematicCatalogue(groups,id=null){
+    if(!Array.isArray(groups)||groups.length!==3||
+      groups.reduce((n,g)=>n+(g.episodes?.length||0),0)!==19)
+      throw new Error("Invalid thematic research catalogue");
+    thematicGroups=groups;if(id)return selectThematic(id);draw();return true;
+   },
+   openThematicEpisode(id){return selectThematic(id);},
    setLanguage(next){if(!L[next])throw new Error("Unsupported language");moveEdition(next==="en"?prefs.englishEdition():DEFAULT_SCRIPTURE_EDITION[next]);lang=next;prefs.setLanguage(lang);draw();},
-   setPassage(next){leaveSourceSegments();location=scripturePassage(next);draw();},
+   setPassage(next){exitThematic();leaveSourceSegments();context=null;location=scripturePassage(next);draw();},
    setRecords(next){
       if(!Array.isArray(next))throw new TypeError("Scripture records array required");
       records=next;
@@ -567,7 +618,7 @@ export function mountScriptureLibrary(root,{
       draw();
       if(closeFocused)wrap.querySelector("[data-scripture-close]")?.focus?.({preventScroll:true});
     },
-   status(){return Object.freeze({language:lang,editionId,passage:location,contextReference:context?.reference??null,contextDepth,commentaryVisible,segmentCount:segmentSet?.length??0,activeSegmentIndex,bookmarks:prefs.load().bookmarks.length});},
+   status(){return Object.freeze({thematicEpisodeId:thematicEpisode?.id??null,thematicPageIndex:thematicPage,language:lang,editionId,passage:location,contextReference:context?.reference??null,contextDepth,commentaryVisible,segmentCount:segmentSet?.length??0,activeSegmentIndex,bookmarks:prefs.load().bookmarks.length});},
    resume(){
      // Canonical shell transitions can detach the original reading subtree.
      // Reattach it without resetting the selected passage or edition.
