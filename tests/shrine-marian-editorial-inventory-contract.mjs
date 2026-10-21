@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import {createHash} from "node:crypto";
 import {readFileSync,existsSync} from "node:fs";
 import {fileURLToPath} from "node:url";
 import {resolve} from "node:path";
@@ -35,6 +36,17 @@ assert.deepEqual([...new Set(ledger.apparitionSites.map(x=>x.apparition_id))].so
 assert.equal(ledger.summary.marianShrines,118);
 assert.equal(ledger.summary.shrineGuides,25);
 assert.equal(ledger.summary.shrineApprovedHero,24);
+assert.equal(images.items.length,24,"Approved photo registry count must match source ledger");
+for(const item of images.items){
+ assert.ok(item.status==="APPROVED"&&item.rights_verified&&item.subject_verified&&item.crop_reviewed);
+ assert.ok(/^https:\/\//.test(item.source_url)&&/^https:\/\//.test(item.license_url));
+ assert.ok(item.credit&&item.alt_en&&item.alt_fr&&item.source_sha1&&item.derivative_sha256);
+ const path=resolve(root,item.asset_path);
+ assert.ok(existsSync(path),"Approved photo blob missing: "+item.asset_path);
+ const actual=createHash("sha256").update(readFileSync(path)).digest("hex");
+ assert.equal(actual,item.derivative_sha256,"Approved photo derivative was changed: "+item.place_id);
+}
+
 assert.equal(ledger.summary.shrineGuideAndHero,24);
 assert.equal(ledger.summary.marianGuides,14);
 assert.equal(allGuides.length,25);
