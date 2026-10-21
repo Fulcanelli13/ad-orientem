@@ -49,7 +49,7 @@ try{
     requests.push(file);
     return route.fulfill({status:200,contentType:'image/webp',body:images[file]});
    }
-   if(url.startsWith('http://127.0.0.1:'+server.address().port))return route.continue();
+   if(url.startsWith('http://127.0.0.1:'+server.address().port)||url.startsWith('blob:http://127.0.0.1:'))return route.continue();
    return route.abort('blockedbyclient');
   });
   await page.goto(address,{waitUntil:'domcontentloaded'});
