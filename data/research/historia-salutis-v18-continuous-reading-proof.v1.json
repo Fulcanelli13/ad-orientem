@@ -724,9 +724,23 @@
             "reason": "Retain Joseph's advice, Pharaoh's acceptance, appointment and Joseph's new name and marriage. Omit duplicate ceremonial investiture in 41:42–44 in the short main narrative.",
             "theologicalAndNarrativeRisk": "Verse 45's 'saviour of the world' designation is important for typological review and must not be silently dropped.",
             "appliedToDefaultReading": false,
-            "bookWitnessSourceCoordinatesVerified": false,
+            "bookWitnessSourceCoordinatesVerified": true,
             "finalLiteraryAcceptance": false,
-            "publicationApproved": false
+            "publicationApproved": false,
+            "witnessCollationStatus": "SOURCE_DATA_COORDINATES_CHECKED_PRINTED_EDITION_UNCOLLATED",
+            "sourceVerseComparison": {
+              "originalVerseCount": 13,
+              "proposedVerseCount": 10,
+              "sourceBook": "Genesis",
+              "approximateWordsSavedByEdition": {
+                "dr-challoner": 94,
+                "cpdv-2009": 100,
+                "crampon-1923": 88
+              }
+            },
+            "recommendedNextStep": "PROVISIONAL_COMPARE",
+            "optionWasAppliedToMainResearchManuscript": false,
+            "noFinalAcceptances": true
           }
         },
         {
@@ -1355,9 +1369,23 @@
             "reason": "Saul's anointing is the causal event; the itinerary of three later signs and Galgal instruction are not necessary for the continuous kingship line. Keep Saul's name in the already sourced editorial preface.",
             "theologicalAndNarrativeRisk": "Saul's receipt of the Spirit in 10:6 is a meaningful loss; make full 10:1–8 accessible through reference expansion.",
             "appliedToDefaultReading": false,
-            "bookWitnessSourceCoordinatesVerified": false,
+            "bookWitnessSourceCoordinatesVerified": true,
             "finalLiteraryAcceptance": false,
-            "publicationApproved": false
+            "publicationApproved": false,
+            "witnessCollationStatus": "SOURCE_DATA_COORDINATES_CHECKED_PRINTED_EDITION_UNCOLLATED",
+            "sourceVerseComparison": {
+              "originalVerseCount": 8,
+              "proposedVerseCount": 1,
+              "sourceBook": "1Samuel",
+              "approximateWordsSavedByEdition": {
+                "dr-challoner": 279,
+                "cpdv-2009": 299,
+                "crampon-1923": 238
+              }
+            },
+            "recommendedNextStep": "HOLD_PENDING_FULL_SEQUENCE_READ",
+            "optionWasAppliedToMainResearchManuscript": false,
+            "noFinalAcceptances": true
           }
         }
       ],
@@ -1494,9 +1522,23 @@
             "reason": "Retain David's recognition by all tribes and the taking and establishment of Jerusalem; omit the duration summary in 5:4–5 and the military proverbial detail of 5:8.",
             "theologicalAndNarrativeRisk": "Regnal chronology in 5:4–5 is historically relevant; retain via full-source navigation.",
             "appliedToDefaultReading": false,
-            "bookWitnessSourceCoordinatesVerified": false,
+            "bookWitnessSourceCoordinatesVerified": true,
             "finalLiteraryAcceptance": false,
-            "publicationApproved": false
+            "publicationApproved": false,
+            "witnessCollationStatus": "SOURCE_DATA_COORDINATES_CHECKED_PRINTED_EDITION_UNCOLLATED",
+            "sourceVerseComparison": {
+              "originalVerseCount": 10,
+              "proposedVerseCount": 7,
+              "sourceBook": "2Samuel",
+              "approximateWordsSavedByEdition": {
+                "dr-challoner": 98,
+                "cpdv-2009": 105,
+                "crampon-1923": 82
+              }
+            },
+            "recommendedNextStep": "PROVISIONAL_COMPARE",
+            "optionWasAppliedToMainResearchManuscript": false,
+            "noFinalAcceptances": true
           }
         },
         {
@@ -3597,9 +3639,23 @@
             "reason": "Cornelius retells the angel's instructions already given directly in Acts 10:1–8. The next line (10:33) restates that he sent for Peter and invites him to speak.",
             "theologicalAndNarrativeRisk": "This creates a question-answer seam from 10:29 to 10:33; retain only if judged intelligible in the full sequential reading, otherwise preserve these three verses.",
             "appliedToDefaultReading": false,
-            "bookWitnessSourceCoordinatesVerified": false,
+            "bookWitnessSourceCoordinatesVerified": true,
             "finalLiteraryAcceptance": false,
-            "publicationApproved": false
+            "publicationApproved": false,
+            "witnessCollationStatus": "SOURCE_DATA_COORDINATES_CHECKED_PRINTED_EDITION_UNCOLLATED",
+            "sourceVerseComparison": {
+              "originalVerseCount": 3,
+              "proposedVerseCount": 0,
+              "sourceBook": "Acts",
+              "approximateWordsSavedByEdition": {
+                "dr-challoner": 73,
+                "cpdv-2009": 81,
+                "crampon-1923": 81
+              }
+            },
+            "recommendedNextStep": "HOLD_PRONOUN_AND_DIALOGUE_REVIEW",
+            "optionWasAppliedToMainResearchManuscript": false,
+            "noFinalAcceptances": true
           }
         }
       ],
@@ -4538,7 +4594,14 @@
         "John 19 full Passion and side-piercing",
         "Acts 2 Pentecost",
         "Revelation 5 Lamb and Revelation 20 judgment"
-      ]
+      ],
+      "candidateSourceCoordinatesCheckedInEditions": [
+        "dr-challoner",
+        "cpdv-2009",
+        "crampon-1923"
+      ],
+      "estimatedEnglishDouayWordReductionIfAllFourSelected": 544,
+      "currentReadingUsesAllOriginalVerses": true
     }
   },
   "historicallyProposedBridgeStatus": {
