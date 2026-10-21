@@ -11,6 +11,7 @@ on:
       - "tests/scripture-catena-quaestiones-crosswalk.mjs"
       - "tests/scripture-catena-augustine-sequential.mjs"
       - "tests/scripture-catena-eusebius-supplement.mjs"
+      - "tests/scripture-catena-eusebius-epitome.mjs"
       - "tests/scripture-catena-augustine-continuation.mjs"
       - "tests/scripture-catena-augustine-original-spans.mjs"
       - "tests/scripture-catena-augustine-coverage.mjs"
@@ -40,5 +41,7 @@ jobs:
         run: node tests/scripture-catena-augustine-original-spans.mjs
       - name: Verify full Augustine I.1–47 and II.1–51 numerical section coverage
         run: node tests/scripture-catena-augustine-coverage.mjs
+      - name: Verify full Eusebius 16 + 4 epitome crosswalk
+        run: node tests/scripture-catena-eusebius-epitome.mjs
       - name: Verify Eusebius supplement verse mappings
         run: node tests/scripture-catena-eusebius-supplement.mjs
