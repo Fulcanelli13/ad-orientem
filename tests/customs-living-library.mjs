@@ -43,4 +43,8 @@ assert.equal(typeof installCustomsBrowserOwner,"function","standalone browser ow
 const calendar=readFileSync(new URL("../src/calendar/calendar-runtime.js",import.meta.url),"utf8");
 assert.match(calendar,/data-cal-customs-open/,"Calendar links to first-class Customs library");
 assert.match(calendar,/import\("\.\.\/customs\/customs-browser\.js"\)/,"Calendar entry is lazy and independent");
+const explorePresentation=readFileSync(new URL("../src/find/explore-presentation.js",import.meta.url),"utf8");
+const exploreBrowser=readFileSync(new URL("../src/find/browser-entry.js",import.meta.url),"utf8");
+assert.match(explorePresentation,/data-explore-customs-library/,"Explore Traditions must lead to the full independent collection");
+assert.match(exploreBrowser,/import\("\.\.\/customs\/customs-browser\.js"\)/,"Explore must use the canonical Customs owner");
 console.log("Customs living-library gate: 38 canonical + 568 research, dated/undated parity, research boundaries and Calendar entry pass.");
