@@ -10,7 +10,8 @@
     "guideCorpora": [
       "data/shrines/illustrated-place-guides-france.v1.json",
       "data/shrines/illustrated-place-guides-france-r67.v1.json",
-      "data/shrines/illustrated-place-guides-ireland.v1.json"
+      "data/shrines/illustrated-place-guides-ireland.v1.json",
+      "data/shrines/illustrated-place-guides-world-marian-r1.v1.json"
     ],
     "apparitions": "data/explore/sacred-phenomena-seed.v1.json",
     "publisherRegistry": "data/shrines/source-registry.v1.json"
@@ -29,10 +30,10 @@
     "saintShrines": 106,
     "christologicalShrines": 30,
     "otherShrines": 3,
-    "shrineGuides": 14,
+    "shrineGuides": 21,
     "shrineApprovedHero": 18,
-    "shrineGuideAndHero": 7,
-    "marianGuides": 7,
+    "shrineGuideAndHero": 14,
+    "marianGuides": 14,
     "marianApprovedHero": 11,
     "pilgrimages": 240,
     "destinationPilgrimages": 207,
@@ -250,7 +251,7 @@
       "geo_available": true,
       "intro_en": true,
       "intro_fr": true,
-      "detailed_guide": "MISSING",
+      "detailed_guide": "PUBLISHED",
       "hero_media": "APPROVED_LOCAL",
       "hero_asset_path": "assets/approved/place-media/DE-altoetting-gnadenkapelle.webp",
       "approved_gallery_count": 0,
@@ -259,7 +260,7 @@
         "pilgrimage:DE:altoetting-assumption"
       ],
       "apparition_ids": [],
-      "next_editorial_action": "WRITE_SOURCE_LINKED_GUIDE"
+      "next_editorial_action": "QA_RELEASED_FOLIO"
     },
     {
       "shrine_id": "shrine:DE:kevelaer-consolatrix-afflictorum",
@@ -534,7 +535,7 @@
       "geo_available": true,
       "intro_en": true,
       "intro_fr": true,
-      "detailed_guide": "MISSING",
+      "detailed_guide": "PUBLISHED",
       "hero_media": "APPROVED_LOCAL",
       "hero_asset_path": "assets/approved/place-media/IT-loreto-santa-casa.webp",
       "approved_gallery_count": 0,
@@ -542,7 +543,7 @@
         "pilgrimage:IT:loreto-destination"
       ],
       "apparition_ids": [],
-      "next_editorial_action": "WRITE_SOURCE_LINKED_GUIDE"
+      "next_editorial_action": "QA_RELEASED_FOLIO"
     },
     {
       "shrine_id": "shrine:IT:pompei-rosary",
@@ -557,7 +558,7 @@
       "geo_available": true,
       "intro_en": true,
       "intro_fr": true,
-      "detailed_guide": "MISSING",
+      "detailed_guide": "PUBLISHED",
       "hero_media": "APPROVED_LOCAL",
       "hero_asset_path": "assets/approved/place-media/IT-pompei-rosary-shrine.webp",
       "approved_gallery_count": 0,
@@ -565,7 +566,7 @@
         "pilgrimage:IT:pompei-destination"
       ],
       "apparition_ids": [],
-      "next_editorial_action": "WRITE_SOURCE_LINKED_GUIDE"
+      "next_editorial_action": "QA_RELEASED_FOLIO"
     },
     {
       "shrine_id": "shrine:PL:jasna-gora-czestochowa",
@@ -580,7 +581,7 @@
       "geo_available": true,
       "intro_en": true,
       "intro_fr": true,
-      "detailed_guide": "MISSING",
+      "detailed_guide": "PUBLISHED",
       "hero_media": "APPROVED_LOCAL",
       "hero_asset_path": "assets/approved/place-media/PL-jasna-gora.webp",
       "approved_gallery_count": 0,
@@ -588,7 +589,7 @@
         "pilgrimage:PL:jasna-gora-destination"
       ],
       "apparition_ids": [],
-      "next_editorial_action": "WRITE_SOURCE_LINKED_GUIDE"
+      "next_editorial_action": "QA_RELEASED_FOLIO"
     },
     {
       "shrine_id": "shrine:PL:kalwaria-zebrzydowska",
@@ -858,7 +859,7 @@
       "geo_available": true,
       "intro_en": true,
       "intro_fr": true,
-      "detailed_guide": "MISSING",
+      "detailed_guide": "PUBLISHED",
       "hero_media": "APPROVED_LOCAL",
       "hero_asset_path": "assets/approved/place-media/MX-basilica-guadalupe-mexico-city.webp",
       "approved_gallery_count": 0,
@@ -868,7 +869,7 @@
       "apparition_ids": [
         "apparition:MX:guadalupe"
       ],
-      "next_editorial_action": "WRITE_SOURCE_LINKED_GUIDE"
+      "next_editorial_action": "QA_RELEASED_FOLIO"
     },
     {
       "shrine_id": "shrine:MX:zapopan-our-lady",
@@ -907,7 +908,7 @@
       "geo_available": true,
       "intro_en": true,
       "intro_fr": true,
-      "detailed_guide": "MISSING",
+      "detailed_guide": "PUBLISHED",
       "hero_media": "APPROVED_LOCAL",
       "hero_asset_path": "assets/approved/place-media/BR-aparecida-national-shrine.webp",
       "approved_gallery_count": 0,
@@ -915,7 +916,7 @@
         "pilgrimage:BR:aparecida-destination"
       ],
       "apparition_ids": [],
-      "next_editorial_action": "WRITE_SOURCE_LINKED_GUIDE"
+      "next_editorial_action": "QA_RELEASED_FOLIO"
     },
     {
       "shrine_id": "shrine:BR:nazare-belem",
@@ -1142,7 +1143,7 @@
       "geo_available": true,
       "intro_en": true,
       "intro_fr": true,
-      "detailed_guide": "MISSING",
+      "detailed_guide": "PUBLISHED",
       "hero_media": "APPROVED_LOCAL",
       "hero_asset_path": "assets/approved/place-media/PT-fatima-sanctuary.webp",
       "approved_gallery_count": 0,
@@ -1152,7 +1153,7 @@
       "apparition_ids": [
         "apparition:PT:fatima"
       ],
-      "next_editorial_action": "WRITE_SOURCE_LINKED_GUIDE"
+      "next_editorial_action": "QA_RELEASED_FOLIO"
     },
     {
       "shrine_id": "shrine:PT:sameiro",
@@ -6121,7 +6122,7 @@
       "destination_place_id": "place:DE:altoetting-gnadenkapelle",
       "route_ids": [],
       "source_count": 1,
-      "narrative": "DESTINATION_GUIDE_PENDING",
+      "narrative": "DESTINATION_GUIDE_PUBLISHED",
       "destination_hero": "APPROVED_LOCAL",
       "canonical_temporal_links": []
     },
@@ -6133,7 +6134,7 @@
       "destination_place_id": "place:DE:altoetting-gnadenkapelle",
       "route_ids": [],
       "source_count": 1,
-      "narrative": "DESTINATION_GUIDE_PENDING",
+      "narrative": "DESTINATION_GUIDE_PUBLISHED",
       "destination_hero": "APPROVED_LOCAL",
       "canonical_temporal_links": [
         "temporal:altoetting:assumption"
@@ -6365,7 +6366,7 @@
       "destination_place_id": "place:IT:loreto-santa-casa",
       "route_ids": [],
       "source_count": 2,
-      "narrative": "DESTINATION_GUIDE_PENDING",
+      "narrative": "DESTINATION_GUIDE_PUBLISHED",
       "destination_hero": "APPROVED_LOCAL",
       "canonical_temporal_links": [
         "temporal:loreto:our-lady-feast"
@@ -6379,7 +6380,7 @@
       "destination_place_id": "place:IT:pompei-rosary-shrine",
       "route_ids": [],
       "source_count": 2,
-      "narrative": "DESTINATION_GUIDE_PENDING",
+      "narrative": "DESTINATION_GUIDE_PUBLISHED",
       "destination_hero": "APPROVED_LOCAL",
       "canonical_temporal_links": [
         "temporal:pompei:supplica-may-8"
@@ -6393,7 +6394,7 @@
       "destination_place_id": "place:PL:jasna-gora",
       "route_ids": [],
       "source_count": 2,
-      "narrative": "DESTINATION_GUIDE_PENDING",
+      "narrative": "DESTINATION_GUIDE_PUBLISHED",
       "destination_hero": "APPROVED_LOCAL",
       "canonical_temporal_links": [
         "temporal:jasna-gora:czestochowa-feast"
@@ -6595,7 +6596,7 @@
       "destination_place_id": "place:MX:basilica-guadalupe-mexico-city",
       "route_ids": [],
       "source_count": 2,
-      "narrative": "DESTINATION_GUIDE_PENDING",
+      "narrative": "DESTINATION_GUIDE_PUBLISHED",
       "destination_hero": "APPROVED_LOCAL",
       "canonical_temporal_links": [
         "temporal:guadalupe-mx:dec12"
@@ -6637,7 +6638,7 @@
       "destination_place_id": "place:BR:aparecida-national-shrine",
       "route_ids": [],
       "source_count": 2,
-      "narrative": "DESTINATION_GUIDE_PENDING",
+      "narrative": "DESTINATION_GUIDE_PUBLISHED",
       "destination_hero": "APPROVED_LOCAL",
       "canonical_temporal_links": [
         "temporal:aparecida:oct12"
@@ -6791,7 +6792,7 @@
       "destination_place_id": "place:PT:fatima-sanctuary",
       "route_ids": [],
       "source_count": 2,
-      "narrative": "DESTINATION_GUIDE_PENDING",
+      "narrative": "DESTINATION_GUIDE_PUBLISHED",
       "destination_hero": "APPROVED_LOCAL",
       "canonical_temporal_links": [
         "temporal:fatima:may13"
