@@ -33,4 +33,17 @@ const block={blocks:[{blockId:"AO.SM.B047",firstParagraphIndex:0,paragraphCount:
 assert.equal(projectReaderObjectiveContext(block,{cueId:"AO.SM.C0151",form:"LOW"}),null);
 assert.equal(projectReaderObjectiveContext(block,{cueId:"AO.SM.C0150",form:"GOOD_FRIDAY"}),null);
 assert.equal(projectReaderObjectiveContext({blocks:[],paragraphs:[]},{cueId:"AO.SM.C0150",form:"LOW"}),null);
-console.log("PASS: Objective LIVE ribbon copy, source block/cue ownership, EN/FR and no devotional suggestions");
+// Integration guards: no competing Guide, no prayer suggestions and no
+// premature retirement of SIMPLE; retain all existing Missal ownership.
+const domSource=readFileSync(new URL("../src/mass/reader-dom.js",import.meta.url),"utf8");
+const nativeSource=readFileSync(new URL("../src/mass/reader-native-preview.js",import.meta.url),"utf8");
+assert.ok(nativeSource.includes('import { projectReaderObjectiveContext } from "./reader-objective-context.js"'));
+assert.ok(nativeSource.includes("projectReaderObjectiveContext(visibleCard"));
+assert.ok(nativeSource.includes("cueId:state.nativeCueId"));
+assert.ok(domSource.includes('data-role="objective-context" hidden aria-live="off"'));
+assert.ok(domSource.includes('const showContext=mode==="LIVE"&&'));
+assert.ok(domSource.includes('copy?.owner==="MASS_READER_OBJECTIVE_CONTEXT_V1"'));
+assert.ok(domSource.includes('setChannel(root,"priest-position",showContext?current.priestPosition:null)'));
+assert.ok(domSource.includes('["MISSAL","SIMPLE","LIVE"]'));
+assert.ok(!nativeSource.includes("pray.communion_treasury"));
+console.log("PASS: Objective LIVE ribbon copy, source block/cue ownership, EN/FR, guarded rails, no devotional suggestions and SIMPLE/Missal compatibility.");
