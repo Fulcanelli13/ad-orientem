@@ -18,6 +18,7 @@ import { loadReaderCueRegistries } from "./reader-cue-state.js";
 import { loadReaderFormStateData, createReaderFormCueStateController } from "./reader-form-state.js";
 import { installCueFocusTracker } from "./reader-cue-focus.js";
 import { withLiveReadingSections } from "./reader-live-reading-sections.js";
+import { projectReaderObjectiveContext } from "./reader-objective-context.js";
 
 // The certified Good Friday state graph carries nine kneel/rise formula
 // pairs and three Cross-unveiling silent adoration intervals. Their spoken
@@ -2647,6 +2648,15 @@ export async function mountNativeReaderPreview({
       // supplies LIVE rubrics at the exact source cue paragraph.
       guide:null,
       ...state,
+      // The context is descriptive editorial copy, never a priest observation
+      // and never a replacement for the existing exact-gesture rails.
+      objectiveContext:String(readerModel?.presentationMode??"").toUpperCase()==="LIVE"
+        ? projectReaderObjectiveContext(visibleCard,{
+            cueId:state.nativeCueId,
+            form:ready.prepared?.session?.resolvedMass?.form,
+            language:ready.prepared?.readerPreferences?.language??"en",
+          })
+        :null,
     });
     canonManualUI?.update();
     root.dataset.r17NativeEvent=state.nativeEventId??"unresolved";
