@@ -1,0 +1,155 @@
+/*
+ * Living Catena: only attributed, unmodified English excerpts from the
+ * pinned Oxford/Newman Catena corpus appear as Father messages.
+ * Search is conservative local lexical retrieval, never generated speech.
+ */
+export const LIVING_CATENA_SCHEMA="ao.catena.messenger.v1";
+const STOP=new Set("a an and are as at be been but by can could did do does for from had has have how i in is it its may me my of on or our shall should so that the the their them there these this those to was were what when where which who why will with would you your about passage say says".split(" "));
+const tokens=q=>[...new Set((String(q||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().match(/[a-z]{4,}/g)||[]).filter(x=>!STOP.has(x)))];
+function safeUrl(value){try{const u=new URL(value);return u.protocol==="https:"&&u.hostname==="www.ecatholic2000.com"?u.href:null}catch{return null}}
+export function indexCatenaMessages(pericopes){
+ const result=[];
+ for(const p of Array.isArray(pericopes)?pericopes:[]){
+  const url=safeUrl(p?.source?.url);
+  if(!url||typeof p?.id!=="string"||typeof p?.citation!=="string"||!Array.isArray(p?.segments))continue;
+  p.segments.forEach((s,i)=>{
+   if(typeof s?.father!=="string"||!s.father.trim()||typeof s?.text!=="string"||!s.text.trim())return;
+   result.push(Object.freeze({id:p.id+":"+i,pericopeId:p.id,ordinal:i+1,
+     father:s.father,text:s.text,citation:p.citation,sourceUrl:url}));
+  });
+ }
+ return Object.freeze(result);
+}
+export function retrieveCatenaMessages(rows,query,{limit=3}={}){
+ const terms=tokens(query);
+ if(!terms.length||!Array.isArray(rows))return [];
+ return rows.map((r,i)=>{
+   const hay=String(r.text||"").toLowerCase();
+   let score=0;
+   for(const t of terms)if(hay.includes(t))score+=t.length>=8?3:2;
+   return {r,i,score};
+ }).filter(x=>x.score>0).sort((a,b)=>b.score-a.score||a.i-b.i)
+ .slice(0,Math.max(1,Math.min(5,limit))).map(x=>x.r);
+}
+const element=(d,tag,cls,text)=>{
+ const e=d.createElement(tag);if(cls)e.className=cls;if(text!==undefined)e.textContent=text;return e;
+};
+function action(d,label,fn){
+ const b=element(d,"button",null,label);b.type="button";b.addEventListener("click",fn);return b;
+}
+function opening(text){
+ if(text.length<=440)return text;
+ const at=text.lastIndexOf(" ",440);
+ return text.slice(0,at>250?at:440);
+}
+function installStyle(d){
+ if(d.getElementById("ao-catena-messenger-style"))return;
+ const s=element(d,"style");s.id="ao-catena-messenger-style";
+ s.textContent=[
+ ".aoCatenaMessenger{background:#0a131c;border:1px solid #67563d;border-radius:14px;overflow:hidden;margin:14px 0;font-family:var(--ao-font-liturgical,Georgia,serif)}",
+ ".aoCatenaMessenger *{box-sizing:border-box}",
+ ".aoCatenaMHead{background:linear-gradient(130deg,#24303b,#0a131c);padding:18px;border-bottom:1px solid #67563d}",
+ ".aoCatenaMHead h4{font:400 26px/1.3 var(--ao-font-liturgical,Georgia,serif)!important;color:#ecd7b4;margin:0!important}",
+ ".aoCatenaMHead p{font:13px/1.5 var(--ao-font-ui,Georgia,serif);color:#bdb09e;margin:6px 0}",
+ ".aoCatenaMHead .aoCatenaMKicker{color:#d6b477;letter-spacing:.13em;text-transform:uppercase;font-size:11px}",
+ ".aoCatenaMAuthors{padding:10px;display:flex;gap:7px;flex-wrap:wrap;border-bottom:1px solid #574933}",
+ ".aoScriptureLibrary .aoCatenaMAuthors button{min-height:43px;border:1px solid #776044;background:#17232e;color:#efd8b8;padding:9px 12px;border-radius:25px;font:500 13px var(--ao-font-ui,Georgia,serif)}",
+ ".aoScriptureLibrary .aoCatenaMAuthors button[aria-pressed=true]{background:#53402b;border-color:#c4a16a}",
+ ".aoCatenaMFeed{padding:15px 11px;display:flex;flex-direction:column;gap:17px}",
+ ".aoCatenaMRow{display:flex;align-items:flex-start;gap:9px;width:100%}",
+ ".aoCatenaMAvatar{flex:0 0 38px;width:38px;height:38px;border-radius:50%;border:1px solid #aa8552;background:#303739;display:grid;place-items:center;color:#ead0a6;font:600 15px Georgia}",
+ ".aoCatenaMBody{flex:1;min-width:0}",
+ ".aoCatenaMName{color:#e9c68e;font:600 13px var(--ao-font-ui,Georgia,serif);margin:0 0 5px!important}",
+ ".aoCatenaMBubble{border:1px solid #41505b;background:#1a2834;padding:13px;border-radius:4px 14px 14px 14px;color:#efe6d9;white-space:pre-wrap;overflow-wrap:anywhere;font:17px/1.65 var(--ao-font-liturgical,Georgia,serif)}",
+ ".aoCatenaMBubble p{margin:0!important}",
+ ".aoCatenaMComplete{margin-top:9px;border-top:1px solid #56606b;padding-top:4px}",
+ ".aoCatenaMComplete summary{display:flex;align-items:center;min-height:44px;color:#e4c18a;font:500 13px var(--ao-font-ui,Georgia,serif)}",
+ ".aoCatenaMMeta{margin-top:7px;color:#c2b6a4;font:12px/1.5 var(--ao-font-ui,Georgia,serif)}",
+ ".aoCatenaMMeta a{display:inline!important;margin:0!important;font:inherit!important;color:#e6cb96}",
+ ".aoCatenaMUser{align-self:flex-end;max-width:83%;padding:11px 14px;background:#463725;border:1px solid #997b50;border-radius:14px 14px 3px 14px;font:16px/1.5 var(--ao-font-liturgical,Georgia,serif);color:#fff0d5;overflow-wrap:anywhere}",
+ ".aoCatenaMNotice{align-self:center;max-width:95%;padding:10px 13px;border:1px solid #6c563a;border-radius:9px;color:#d0bfa6;text-align:center;font:13px/1.5 var(--ao-font-ui,Georgia,serif)}",
+ ".aoCatenaMFooter{background:#101c27;border-top:1px solid #67563d;padding:12px}",
+ ".aoCatenaMActions{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:12px}",
+ ".aoScriptureLibrary .aoCatenaMActions button{min-height:44px;background:transparent;border:1px solid #967954;color:#e5c895;font:500 13px var(--ao-font-ui,Georgia,serif)}",
+ ".aoCatenaMForm{display:flex;gap:7px}",
+ ".aoScriptureLibrary .aoCatenaMForm input{flex:1;min-width:0;min-height:47px;background:#08131e;color:#eee3d1}",
+ ".aoScriptureLibrary .aoCatenaMForm button{min-height:47px;background:#ba945a;border:0;color:#09121b;font:600 13px var(--ao-font-ui,Georgia,serif)}",
+ ".aoCatenaMDisclaimer{margin:11px 0 0!important;font:12px/1.5 var(--ao-font-ui,Georgia,serif);color:#aeb0ad}",
+ "@media(max-width:480px){.aoCatenaMHead{padding:13px}.aoCatenaMFeed{padding:12px 7px}.aoCatenaMAvatar{flex-basis:31px;width:31px;height:31px}.aoCatenaMBubble{font-size:16px;padding:10px}}"
+ ].join("\n");
+ (d.head||d.documentElement).append(s);
+}
+export function mountCatenaMessenger(host,pericopes,{language="en"}={}){
+ if(!host?.ownerDocument||language!=="en")return null;
+ const d=host.ownerDocument,rows=indexCatenaMessages(pericopes);
+ if(!rows.length)return null;
+ installStyle(d);
+ const shell=element(d,"section","aoCatenaMessenger");
+ shell.dataset.catenaMessenger=LIVING_CATENA_SCHEMA;
+ shell.setAttribute("aria-label","Source-faithful Living Catena conversation");
+ const head=element(d,"header","aoCatenaMHead");
+ head.append(element(d,"p","aoCatenaMKicker","The Fathers on Holy Scripture"),
+  element(d,"h4",null,"The Living Catena"),
+  element(d,"p",null,rows.length+" original excerpts · "+new Set(rows.map(r=>r.father)).size+" attributed authors · "+pericopes.map(p=>p.citation).join("; ")));
+ const authors=element(d,"nav","aoCatenaMAuthors");authors.setAttribute("aria-label","Select an attributed Father");
+ const feed=element(d,"div","aoCatenaMFeed");feed.setAttribute("role","log");feed.setAttribute("aria-label","Patristic source extracts");
+ const foot=element(d,"div","aoCatenaMFooter"),acts=element(d,"div","aoCatenaMActions"),form=element(d,"form","aoCatenaMForm");
+ const input=element(d,"input");
+ input.type="search";input.maxLength=240;input.placeholder="Ask about the passage…";input.setAttribute("aria-label","Find the Fathers' words");
+ const send=element(d,"button",null,"Find excerpts");send.type="submit";
+ form.append(input,send);
+ foot.append(acts,form,element(d,"p","aoCatenaMDisclaimer","Messages reproduce the Oxford/Newman Catena extracts. Questions search the actual words in this passage; no AI answer is generated. Historical author labels remain as supplied by the source."));
+ shell.append(head,authors,feed,foot);host.append(shell);
+ const seen=new Set();let lastFather=null;
+ function note(s){const e=element(d,"p","aoCatenaMNotice",s);e.setAttribute("role","status");feed.append(e)}
+ function renderAuthors(){
+  const count=new Map();rows.forEach(r=>count.set(r.father,(count.get(r.father)||0)+1));
+  authors.replaceChildren();
+  for(const [name,n] of count){
+   const b=action(d,name+" · "+n,()=>{
+    const candidate=rows.find(r=>r.father===name&&!seen.has(r.id));
+    if(candidate)message(candidate);else note("All available extracts from "+name+" are already shown.");
+   });
+   b.setAttribute("aria-pressed",String(name===lastFather));authors.append(b);
+  }
+ }
+ function message(r){
+  if(!r||seen.has(r.id))return false;
+  seen.add(r.id);lastFather=r.father;
+  const article=element(d,"article","aoCatenaMRow");article.dataset.catenaFragmentId=r.id;
+  const av=element(d,"div","aoCatenaMAvatar",r.father.slice(0,1).toUpperCase());av.setAttribute("aria-hidden","true");
+  const body=element(d,"div","aoCatenaMBody"),bubble=element(d,"div","aoCatenaMBubble");
+  body.append(element(d,"p","aoCatenaMName",r.father));
+  const excerpt=opening(r.text);bubble.append(element(d,"p",null,excerpt));
+  if(excerpt!==r.text){
+   const details=element(d,"details","aoCatenaMComplete");
+   details.append(element(d,"summary",null,"Read complete, unabridged extract"),
+                  element(d,"p",null,r.text));
+   bubble.append(details);
+  }
+  const meta=element(d,"div","aoCatenaMMeta");
+  meta.append(d.createTextNode(r.citation+" · Extract "+r.ordinal+" · "));
+  const source=element(d,"a",null,"Original Catena source ↗");
+  source.href=r.sourceUrl;source.target="_blank";source.rel="noopener noreferrer";
+  source.dataset.scriptureCommentarySource="verified";meta.append(source);
+  body.append(bubble,meta);article.append(av,body);feed.append(article);renderAuthors();
+  return true;
+ }
+ acts.append(action(d,"Continue reading",()=>{
+  const next=rows.find(r=>!seen.has(r.id));
+  if(next)message(next);else note("All extracts for this passage are already in the thread.");
+ }),action(d,"Another Father",()=>{
+  const next=rows.find(r=>r.father!==lastFather&&!seen.has(r.id));
+  if(next)message(next);else note("No further extracts from another attributed author remain.");
+ }));
+ form.addEventListener("submit",event=>{
+  event.preventDefault();const query=input.value.trim();if(!query)return;
+  feed.append(element(d,"div","aoCatenaMUser",query));input.value="";
+  const hits=retrieveCatenaMessages(rows,query,{limit:4});
+  if(!hits.length){note("No matching source wording was found for this passage. Nothing has been invented.");return}
+  let fresh=0;for(const r of hits)if(message(r))fresh++;
+  if(!fresh)note("The matching extracts are already present earlier in the conversation.");
+ });
+ message(rows[0]);const second=rows.find(r=>r.father!==rows[0].father);if(second)message(second);
+ return Object.freeze({element:shell,total:rows.length});
+}
