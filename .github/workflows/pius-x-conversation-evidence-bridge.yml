@@ -91,6 +91,7 @@ on:
       - 'previews/pius-x-12scene-visual-novel-editorial-review-20261021.html'
       - 'docs/research/PIUS-X-SCENE-PACING-VOICE-ACCEPTANCE-20261021.md'
       - 'tests/pius-x-depth12-visual-review.mjs'
+      - 'tests/pius-x-depth12-visual-novel-browser.mjs'
       - 'tests/pius-x-first20-personal-and-papal-source-edits.mjs'
       - 'previews/visible-mass-3d/pius-x-batch-release-editorial-review.html'
       - 'tools/formation/build-pius-x-release-review.mjs'
@@ -339,6 +340,26 @@ jobs:
       - run: npx playwright install --with-deps chromium
       - name: Validate actual St Pius X visual-novel on phone and desktop
         run: node tests/pius-x-20path-visual-novel-browser.mjs
+      - name: Stage exact five approved St Pius X sprites for deep dialogue browser review
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch --no-tags --depth=1 origin '2245d762237ef36fc778200ab2b3d536c342d2d4'
+          test "$(git rev-parse FETCH_HEAD)" = '2245d762237ef36fc778200ab2b3d536c342d2d4' || exit 1
+          mkdir -p research-out/pius-x-depth12-review-sprites
+          git show 'FETCH_HEAD:previews/visible-mass-3d/assets/living-church/manifest.json' > research-out/pius-x-depth12-review-sprites/manifest.json
+          for pose in neutral welcoming explaining thoughtful grave; do
+            git show "FETCH_HEAD:previews/visible-mass-3d/assets/living-church/pius_${pose}.webp" > "research-out/pius-x-depth12-review-sprites/pius_${pose}.webp"
+          done
+      - name: Exercise twelve deep dialogue scenes in Chromium with authentic approved sprite bytes
+        run: node tests/pius-x-depth12-visual-novel-browser.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pius-x-depth12-phone-desktop-visual-review
+          path: artifacts/pius-x-depth12-visual-review/
+          if-no-files-found: warn
+          retention-days: 14
       - name: Build portable 40-answer editorial review batch
         run: node tools/formation/build-pius-x-release-review.mjs
       - name: Exercise batch review in actual mobile and desktop browser
