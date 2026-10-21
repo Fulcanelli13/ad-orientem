@@ -76,4 +76,10 @@ const metrics=Object.fromEntries(editions.map(e=>[e,{
  selectedUniqueVerses:unique[e].selected.size,bridgeUniqueVerses:unique[e].bridges.size,
  selectedSourceSpans:unique[e].sourceSpans,heldSourceSpans:unique[e].bridgeSpans
 }]));
+const html=readFileSync(new URL("../previews/scripture-mining-workbench-20261017.html",import.meta.url),"utf8");
+assert.ok(html.includes('host.append(note);continue;'),"Editorial context may not erase source omission tracking");
+assert.ok(html.includes('!isPriorityHistoriaBridge(beat))))continue;'),"Hiding held candidates must not conceal canonical omissions");
+assert.ok(!html.includes('host.append(note);previous=null;continue;'),"Unattributed gap through editorial context");
+assert.ok(html.includes('line.lang=edition==="crampon-1923"?"fr":"en";'),"Accurate screen-reader language for French Scripture");
+assert.ok(html.includes("Selected Scripture · research proof · not publication-approved"),"Selection still research, not accepted");
 console.log("PASS Historia 37-movement 3-witness range preflight: "+JSON.stringify(metrics)+"; editorial publication blocked");
