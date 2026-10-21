@@ -1,10 +1,10 @@
-# Customs master — Phase 1 reconciliation (21 October 2026)
+# Catholic Customs — unified research master (21 October 2026)
 
 > **Working inventory, not a final comprehensive register or an app publication.** This repository branch is data-only. Freeze UI, artwork and module architecture decisions until the master identity and calendar gates are complete.
 
 ## Current consolidated research inventory — v1
 
-**56 distinct working identity records** are now maintained in `working-master.v1.json`: **38 canonical identities already on main**, **4 older P2 provisional customs**, and **14 source-backed, namespaced, nonpublishing new proposals**. Every one of the 56 has bilingual name, description, historical context, spiritual meaning, optional practice, pastoral qualification, source provenance and a qualified calendar context. This is the *research inventory*, not 56 live published customs.
+**56 distinct working identity records** are now maintained in `working-master.v1.json`: **38 canonical identities already on main**, **4 older regional/heritage P2 records accepted for research use**, and **14 additional source-backed research identity records, accepted with restricted scope but not published**. Every one of the 56 has bilingual name, description, historical context, spiritual meaning, optional practice, pastoral qualification, source provenance and a qualified calendar context. This is the *research inventory*, not 56 live published customs.
 
 | Proposed research identity | English name | Related date / feast (not an event booking) |
 |---|---|---|
@@ -28,6 +28,22 @@
 **Evidence and release:** among 42 possibly distinct Weiser observations, 25 have bounded independent witnesses, 17 retain exact or partial source holds, and 14 of the 25 have been staged as separate working identities. Eleven sourced observations remain nested variants, cultural context, or blessing-sensitive matters. None of these additions is live. The 39 regional variants and 41 links have now been assigned explicit review dispositions; source acceptance and eventual public inclusion remain gated.
 
 ---
+## Reconciled original French-world and geographic research
+
+The original **63-row SOT-07 French-world register** has been preserved in `sot07-original-63-crosswalk.v1.json`: 16 are already among the 38 existing canonical identities, 40 remain with the originally assigned other-module/editorial owner, three are evidence holds, and four were explicitly excluded. These are not extra 63 customs.
+
+The separate SOT-07G geographic source workbook contributes **53 custom families, 21 local complexes, 135 geographic attestations, 162 geographic-area identifiers, and 117 original source IDs**. `geographic-family-crosswalk-53.v1.json` preserves all identifiers and assigns each family a relationship or owner: eight are exact existing custom concepts; 15 additional families are related to known master records but must not be silently merged; 30 have other-module, historical, local-ritual or new-identity-review dispositions.
+
+**Major release blocker:** the 117 original source identifiers still require verified URLs/passages, and the 162 research geographic areas lack certified canonical Place identities. The 135 attestations are **not** 135 verified map pins or public events. All 21 complexes, including the Père Laval / Mauritius pilgrimage complex, remain linked to Explore as research entities rather than automatically minted Customs entries.
+
+One historical owner mismatch was corrected here: a Rosary procession is a prayer/procession or local event, not automatically an instance of `DEV-001` (the May devotion); likewise a Corpus Christi procession is not simply the floral-carpet custom `CORP-001`.
+
+## Final editorial identity review — 18 regional additions accepted for research
+
+**14 of 14** newly staged source-backed identities are editorially classified within the research master (7 local Catholic devotional/charitable practices, 5 regional Christian folk practices, 2 cultural feast customs). **4 of 4** older P2 customs have likewise been classified (St Patrick's ribbon cross, Irish Christmas candles, St John bonfires, Easter egg decoration). These decisions do not change the 38 existing canonical identities or publish any new custom.
+
+The Austrian Herbergsuche title was corrected to the parish-attested image-of-Mary household relay, and the Hungarian betlehemezés source was strengthened by the Hungarian Catholic Lexicon. A broken Smithsonian Easter-egg link was replaced with a verified museum object record.
+
 ## Relationship review — all 80 previously ambiguous observations
 
 `relation-review-80.v1.json` now records an explicit **nonpublishing** decision for each of **41 proposed links to older identities** and **39 related/regional variants**. **Three false merges were corrected**: John/Joan Christmas candle lighting ≠ patronal name day; Easter grandparent visits ≠ Emmaus prayer walk; All Saints prayer bells ≠ funeral death bell. Related-practice links retain source limitations and never create new canonical IDs.
@@ -37,7 +53,7 @@
 ## Source-of-truth hierarchy
 
 - **38 existing canonical records** are owned by `data/customs/customs-atlas-seed.v1.json` on `main`. Their identity and publication states are retained unchanged (35 published, 3 context-only).
-- **4 bounded distinct P2 candidates** remain provisional, not new published customs or universal rites.
+- **4 older P2 custom identities** have been historically classified for the research master, not added to the public app.
 - **568 Weiser book observations, 28 chapters** are preserved one-for-one in `weiser-observations.v0.json`; observations are not synonymous with distinct customs.
 - **54 bilingual Weiser editorial drafts** and their prior owner decisions are reconciled in `editorial-owner-reconciliation.v0.json`. Of their 15 formerly “new canonical” groups, 11 match current canonical identities; four remain provisional.
 - **14 possible duplicate-practice groups** and **28 related-family groups** remain reversible review aids. We do not merge regional, household, liturgical and ministerial acts simply because they are related.
@@ -47,9 +63,9 @@
 | Measure | Count | Meaning |
 |---|---:|---|
 | Canonical identities | 38 | Present on main; not necessarily complete descriptions for every future module use |
-| Provisional distinct additions | 4 | Historical / regional P2 candidates, not publication-approved |
+| Older regional/heritage research identities | 4 | Research-classified, not app publication-approved |
 | Earlier v0 baseline | **42** | Historical baseline, 38 + 4 |
-| Current v1 working identities | **56** | 38 + 4 + 14 staged nonpublishing |
+| Current v1 working identities | **56** | 38 existing canonical + 18 research-classified, no new app publication |
 | Weiser observations inventoried | **568** | All 28 chapters indexed |
 | Explicit observation-to-master links | **50** | Identity association for editorial review only |
 | Unlinked observations | **518** | **Not** 518 missing customs |
@@ -173,7 +189,7 @@ These are working original editorial drafts, **not a new approval to publish**. 
 | Practical guidance, EN/FR | 38/38 |
 | Publication approvals issued by this master | **0** |
 
-The four additional provisional P2 customs remain separately documented, and 42 further source-observation candidates are still adjudicated in their own review ledger. Do **not** add 42 to the canonical count.
+The four older P2 identities have received source-bounded research dispositions, and all 42 further possible source-observation candidates have explicit source outcomes. Do **not** add 42 to the canonical count.
 
 ## Candidate source triage — all 42 observations (25 bounded / 17 explicit holds)
 
@@ -198,9 +214,9 @@ Editorial distinctions now explicit:
 - The Provençal pain calendal, Spanish Magi gifts, Tivoli Inchinata, Sassari Faradda and Bavarian Frauendreißiger have independently bounded geography and date contexts.
 - Local Marian procession, household custom and priestly blessing remain distinct actions; source-based dates never trigger events automatically.
 
-**The source triage is complete, not the master release:** `unverified-candidate-exact-claim-holds.v1.json` protects 17 uncorroborated or partial claims, each with a specific reason and reopening condition. `witnessed-identity-recommendations.v1.json` records 25 independently witnessed observations, including **14 proposed distinct identities**, three regional variants, four cultural-context records, a gift-bell component, a broader crèche-history item, an Eastern Catholic context and a rite-sensitive household wreath. The 14 identity proposals remain unapproved; actual final identity count will depend on deduplication and editorial decisions.
+**The source triage is complete, not the master release:** `unverified-candidate-exact-claim-holds.v1.json` protects 17 uncorroborated or partial claims, each with a specific reason and reopening condition. `witnessed-identity-recommendations.v1.json` records 25 independently witnessed observations, including **14 proposed distinct identities**, three regional variants, four cultural-context records, a gift-bell component, a broader crèche-history item, an Eastern Catholic context and a rite-sensitive household wreath. The 14 proposals have been accepted as separate *research identities* within the 56-entry master, split into seven explicitly Catholic local/devotional, five regional Christian folk, and two predominantly cultural feast customs; none has been approved for app publication.
 
-**Next gate:** accept or revise the 14 staged identities for publication, perform source acceptance only on desired visible regional/related records, and complete final editorial and ritual-release assessment. The 23 source/ritual observations have owner dispositions, not formula authorization.
+**Next gate:** verify remaining source/passage evidence and publication selection for visible regional records, reconcile geographic Place entities and original source URLs, and test the master against other historical Catholic customary sources. No ritual publishing is permitted by these research decisions. The 23 source/ritual observations have owner dispositions, not formula authorization.
 
 ## Source-closure waves 3 and 4
 
@@ -235,7 +251,7 @@ Eight candidate family-overlap reviews, comprising 19 possible distinct observat
 
 ## Editorial decisions that remain open
 
-1. **Review the 14 source-backed staged identity proposals for final acceptance**, without implying they are universal Roman rites. The 25 source-backed observations are fully routed, 17 retain exact claim holds, 23 ritual/source observations have owners, and all 80 relationship cases now have nonpublishing dispositions. Only source-qualified visible records should be released.
+1. **Select the user-facing subset from the 56 research identities**, without presenting regional Christian folklore as universal Roman practice. The 18 newer identities have research-scope editorial dispositions; 17 additional candidate observations retain exact claim holds, 23 ritual/source observations retain owner routes, and all 80 relationship cases have nonpublishing dispositions.
 2. **Separate dates rigorously:** fixed historical custom day, movable feast relationship, observed 1962 feast precedence, family occasion, and actual local programme are different fields; the Calendar resolver owns observed feast dates.
 3. **Preserve geography and historical scope:** never turn an Irish household witness, German festival custom, French local blessing, Polish food custom or folklore into universal Roman practice.
 4. **Prioritise unresolved source claims that materially change identity decisions**. The older 84 P1 source evidence gaps overlap the 568 historical observations and should not be counted as additional missing customs.
@@ -251,6 +267,10 @@ Eight candidate family-overlap reviews, comprising 19 possible distinct observat
 - Preserve the current Mass, Calendar, LIVE reader and all prior research branches as separate authorities.
 
 ## Machine-readable files
+
+- `editorial-identity-acceptance-14.v1.json` and `editorial-identity-acceptance-p2-four.v1.json` — 18 historically bounded research identity acceptances; no app release.
+- `sot07-original-63-crosswalk.v1.json` — complete source-to-owner crosswalk of the original 63 French-world register rows.
+- `geographic-family-crosswalk-53.v1.json` — 53 original families, 21 complexes, 135 attestations and retained 117 source IDs.
 
 - `working-master.v1.json` — 56 EN/FR working identities, with source and calendar flags.
 - `proposed-identity-additions.v1.json` — 14 separate source-backed research IDs, nonpublished.
