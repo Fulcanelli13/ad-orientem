@@ -83,7 +83,15 @@ export function retrieveCatenaMessages(rows,query,{limit=3,excludeIds=null}={}){
  const phrases=[];
  for(const size of [3,2])for(let n=0;n+size<=rawWords.length;n++){
   const parts=rawWords.slice(n,n+size);
-  if(parts.some(word=>terms.includes(word))){
+  const contentCount=parts.filter(word=>terms.includes(word)).length;
+  // Never reward possessive apostrophe fragments, bare articles, or
+  // "the Pharisee's" as a substantive thematic match. Two content terms
+  // provide a stronger span; short relation words only matter in bounded
+  // expressions such as "Our Father" and "to himself".
+  const relationWords=new Set(["our","my","his","her","to","not"]);
+  const meaningful=contentCount>=2||
+   (size===2&&contentCount===1&&parts.some(word=>relationWords.has(word)));
+  if(meaningful&&!parts.includes("s")){
    const phrase=parts.join(" ");
    if(!phrases.some(row=>row.value===phrase))
     phrases.push({value:phrase,points:size===3?10:6});
