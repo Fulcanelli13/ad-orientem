@@ -9,7 +9,8 @@
     "canAuthorHistoricalAnswer": false,
     "mayOverrideSafetyHold": false,
     "overlaps": "When multiple unrelated source families match, ask the visitor to clarify rather than choosing a seemingly high confidence document.",
-    "positiveMatch": "Source-nav research candidate only. Does NOT certify provenance, sentence-level support, doctrine, pastoral application or character voice."
+    "positiveMatch": "Source-nav research candidate only. Does NOT certify provenance, sentence-level support, doctrine, pastoral application or character voice.",
+    "expansion20261021": "Eleven existing claim-mapped document topics gain conservative bilingual two-facet source-concept coverage; no generated reply and no contemporary rule inferred."
   },
   "families": [
     {
@@ -447,6 +448,498 @@
             "sacrement",
             "recit",
             "connaitre"
+          ]
+        ]
+      },
+      "provenance": "EDITORIAL_INTENT_FACETS_DERIVED_FROM_VERIFIED_SOURCE_TOPIC_NOT_VISITOR_PROBE_QUOTE"
+    },
+    {
+      "id": "SPX-CONCEPT-15",
+      "topicId": "pius.historical_spx_pilot_15",
+      "sourceRef": "SPX-PILOT-15",
+      "concept": "RELIGIOUS_IGNORANCE_AND_WORLDLY_LEARNING",
+      "facets": {
+        "en": [
+          [
+            "ignor",
+            "lack of religio",
+            "without religious knowledge",
+            "know nothing"
+          ],
+          [
+            "religio",
+            "christian",
+            "educated",
+            "worldly",
+            "learned",
+            "culture",
+            "scholar"
+          ]
+        ],
+        "fr": [
+          [
+            "ignor",
+            "meconnai",
+            "sans connaissance religieuse"
+          ],
+          [
+            "religio",
+            "chretie",
+            "cultur",
+            "savant",
+            "mondain",
+            "instru"
+          ]
+        ]
+      },
+      "provenance": "EDITORIAL_INTENT_FACETS_DERIVED_FROM_VERIFIED_SOURCE_TOPIC_NOT_VISITOR_PROBE_QUOTE"
+    },
+    {
+      "id": "SPX-CONCEPT-16",
+      "topicId": "pius.historical_spx_pilot_16",
+      "sourceRef": "SPX-PILOT-16",
+      "concept": "PASTORAL_CATECHESIS_OBLIGATION",
+      "facets": {
+        "en": [
+          [
+            "priest",
+            "pastor",
+            "shepherd",
+            "parishioner",
+            "curate"
+          ],
+          [
+            "catech",
+            "teach",
+            "instruct",
+            "explain",
+            "doctrin",
+            "religious knowledge",
+            "religious education"
+          ]
+        ],
+        "fr": [
+          [
+            "pasteur",
+            "pretre",
+            "cure",
+            "paroiss",
+            "fidele"
+          ],
+          [
+            "enseign",
+            "instru",
+            "doctrin",
+            "catech",
+            "expliqu",
+            "instruction religieuse"
+          ]
+        ]
+      },
+      "provenance": "EDITORIAL_INTENT_FACETS_DERIVED_FROM_VERIFIED_SOURCE_TOPIC_NOT_VISITOR_PROBE_QUOTE"
+    },
+    {
+      "id": "SPX-CONCEPT-17",
+      "topicId": "pius.historical_spx_pilot_17",
+      "sourceRef": "SPX-PILOT-17",
+      "concept": "PREPARATION_FOR_ELEMENTARY_CATECHESIS",
+      "facets": {
+        "en": [
+          [
+            "catech",
+            "religious lesson",
+            "basic doctrine",
+            "elementary religious",
+            "rudiments of faith"
+          ],
+          [
+            "prepar",
+            "careful",
+            "effort",
+            "simpl",
+            "difficult",
+            "learned sermon",
+            "instruct the uneducated"
+          ]
+        ],
+        "fr": [
+          [
+            "catech",
+            "lecon religieuse",
+            "rudiment de la foi",
+            "enseignement elementaire"
+          ],
+          [
+            "prepar",
+            "soign",
+            "effort",
+            "simple",
+            "diffic",
+            "auditoire",
+            "personnes peu instruites"
+          ]
+        ]
+      },
+      "provenance": "EDITORIAL_INTENT_FACETS_DERIVED_FROM_VERIFIED_SOURCE_TOPIC_NOT_VISITOR_PROBE_QUOTE"
+    },
+    {
+      "id": "SPX-CONCEPT-18",
+      "topicId": "pius.historical_spx_pilot_18",
+      "sourceRef": "SPX-PILOT-18",
+      "concept": "BAPTISMAL_FAITH_AND_INSTRUCTION",
+      "facets": {
+        "en": [
+          [
+            "baptis",
+            "baptiz",
+            "baptism"
+          ],
+          [
+            "faith",
+            "belief",
+            "catech",
+            "instruct",
+            "learn",
+            "nourish",
+            "teach",
+            "formation"
+          ]
+        ],
+        "fr": [
+          [
+            "baptem",
+            "baptism"
+          ],
+          [
+            "foi",
+            "catech",
+            "instru",
+            "enseign",
+            "nourri",
+            "formation",
+            "grandir"
+          ]
+        ]
+      },
+      "provenance": "EDITORIAL_INTENT_FACETS_DERIVED_FROM_VERIFIED_SOURCE_TOPIC_NOT_VISITOR_PROBE_QUOTE"
+    },
+    {
+      "id": "SPX-CONCEPT-19",
+      "topicId": "pius.historical_spx_pilot_19",
+      "sourceRef": "SPX-PILOT-19",
+      "concept": "INSTRUCTION_IN_RESTORING_SOULS_TO_CHRIST",
+      "facets": {
+        "en": [
+          [
+            "religious instruct",
+            "religious educat",
+            "teach",
+            "teaching religion",
+            "instruct the ignorant",
+            "catech"
+          ],
+          [
+            "restor",
+            "return to christ",
+            "back to christ",
+            "christian societ",
+            "renew souls",
+            "bring back"
+          ]
+        ],
+        "fr": [
+          [
+            "instruction religieuse",
+            "enseignement religieux",
+            "enseign",
+            "instru",
+            "catech"
+          ],
+          [
+            "restaur",
+            "retour au christ",
+            "ramen",
+            "renouv",
+            "societe chretienne",
+            "conversion des ames"
+          ]
+        ]
+      },
+      "provenance": "EDITORIAL_INTENT_FACETS_DERIVED_FROM_VERIFIED_SOURCE_TOPIC_NOT_VISITOR_PROBE_QUOTE"
+    },
+    {
+      "id": "SPX-CONCEPT-20",
+      "topicId": "pius.historical_spx_pilot_20",
+      "sourceRef": "SPX-PILOT-20",
+      "concept": "LAY_COOPERATION_IN_CHRISTIAN_WORKS",
+      "facets": {
+        "en": [
+          [
+            "lay",
+            "laity",
+            "faithful",
+            "believ",
+            "catholic",
+            "ordinary christian"
+          ],
+          [
+            "apostol",
+            "particip",
+            "action",
+            "work for christ",
+            "restor",
+            "works of charity",
+            "collabor",
+            "practic"
+          ]
+        ],
+        "fr": [
+          [
+            "laic",
+            "fidel",
+            "catholiq",
+            "chretie",
+            "simples fideles"
+          ],
+          [
+            "apostol",
+            "particip",
+            "agir",
+            "action",
+            "oeuvre",
+            "restaur",
+            "renouv",
+            "contribu",
+            "travaill"
+          ]
+        ]
+      },
+      "provenance": "EDITORIAL_INTENT_FACETS_DERIVED_FROM_VERIFIED_SOURCE_TOPIC_NOT_VISITOR_PROBE_QUOTE"
+    },
+    {
+      "id": "SPX-CONCEPT-21",
+      "topicId": "pius.historical_spx_pilot_21",
+      "sourceRef": "SPX-PILOT-21",
+      "concept": "PRIESTLY_HOLINESS_AND_EXTERIOR_MINISTRY",
+      "facets": {
+        "en": [
+          [
+            "priest",
+            "pastor",
+            "clergy",
+            "cleric",
+            "ministry"
+          ],
+          [
+            "holiness",
+            "holy",
+            "sanct",
+            "virtue",
+            "pastoral activ",
+            "outward service",
+            "self denial",
+            "perfection",
+            "neglect duties",
+            "withdraw"
+          ]
+        ],
+        "fr": [
+          [
+            "pretr",
+            "pasteur",
+            "clerg",
+            "minist",
+            "paroiss"
+          ],
+          [
+            "saint",
+            "sanct",
+            "vertu",
+            "activit",
+            "travail pastor",
+            "perfection",
+            "neglig",
+            "abandonn"
+          ]
+        ]
+      },
+      "provenance": "EDITORIAL_INTENT_FACETS_DERIVED_FROM_VERIFIED_SOURCE_TOPIC_NOT_VISITOR_PROBE_QUOTE"
+    },
+    {
+      "id": "SPX-CONCEPT-22",
+      "topicId": "pius.historical_spx_pilot_22",
+      "sourceRef": "SPX-PILOT-22",
+      "concept": "SCRIPTURE_AND_SPIRITUAL_READING_FOR_PRIESTS",
+      "facets": {
+        "en": [
+          [
+            "priest",
+            "pastor",
+            "clergy",
+            "cleric"
+          ],
+          [
+            "read",
+            "scriptur",
+            "book",
+            "spiritual literature",
+            "holy writing",
+            "sacred reading"
+          ]
+        ],
+        "fr": [
+          [
+            "pretr",
+            "pasteur",
+            "clerg",
+            "clerc"
+          ],
+          [
+            "lectur",
+            "lire",
+            "livre",
+            "ecritur",
+            "ouvrage spirituel",
+            "livres saints"
+          ]
+        ]
+      },
+      "provenance": "EDITORIAL_INTENT_FACETS_DERIVED_FROM_VERIFIED_SOURCE_TOPIC_NOT_VISITOR_PROBE_QUOTE"
+    },
+    {
+      "id": "SPX-CONCEPT-23",
+      "topicId": "pius.historical_spx_pilot_23",
+      "sourceRef": "SPX-PILOT-23",
+      "concept": "DAILY_EXAMINATION_OF_PRIESTLY_CONSCIENCE",
+      "facets": {
+        "en": [
+          [
+            "priest",
+            "pastor",
+            "clergy",
+            "cleric",
+            "confessor",
+            "minister"
+          ],
+          [
+            "examin",
+            "conscien",
+            "account for",
+            "review own conduct",
+            "daily failing",
+            "words and actions",
+            "own failings"
+          ]
+        ],
+        "fr": [
+          [
+            "pretr",
+            "confesseur",
+            "clerg",
+            "ministre de dieu"
+          ],
+          [
+            "examin",
+            "conscien",
+            "ses fautes",
+            "paroles et actions",
+            "chaque soir",
+            "bilan spirituel",
+            "juger ses actes"
+          ]
+        ]
+      },
+      "provenance": "EDITORIAL_INTENT_FACETS_DERIVED_FROM_VERIFIED_SOURCE_TOPIC_NOT_VISITOR_PROBE_QUOTE"
+    },
+    {
+      "id": "SPX-CONCEPT-24",
+      "topicId": "pius.historical_spx_pilot_24",
+      "sourceRef": "SPX-PILOT-24",
+      "concept": "PRIESTLY_EXERCISES_AND_ASSOCIATIONS",
+      "facets": {
+        "en": [
+          [
+            "priest",
+            "pastor",
+            "clergy",
+            "cleric"
+          ],
+          [
+            "retreat",
+            "recollect",
+            "spiritual exercis",
+            "association",
+            "mutual support",
+            "fraternal",
+            "annual retreat"
+          ]
+        ],
+        "fr": [
+          [
+            "pretr",
+            "clerg",
+            "pasteur"
+          ],
+          [
+            "retrait",
+            "recueillem",
+            "exercices spirituels",
+            "association",
+            "entraide",
+            "fratern",
+            "recollection"
+          ]
+        ]
+      },
+      "provenance": "EDITORIAL_INTENT_FACETS_DERIVED_FROM_VERIFIED_SOURCE_TOPIC_NOT_VISITOR_PROBE_QUOTE"
+    },
+    {
+      "id": "SPX-CONCEPT-25",
+      "topicId": "pius.historical_spx_pilot_25",
+      "sourceRef": "SPX-PILOT-25",
+      "concept": "SACRED_HEART_PETITION_FOR_CLERGY",
+      "facets": {
+        "en": [
+          [
+            "sacred heart",
+            "heart of jesus",
+            "heart of christ",
+            "prayer for priests",
+            "concluding prayer",
+            "final petition",
+            "end of the exhortation"
+          ],
+          [
+            "priest",
+            "clerg",
+            "minister",
+            "virtue",
+            "grace",
+            "sanctif",
+            "prayer",
+            "implor",
+            "petition"
+          ]
+        ],
+        "fr": [
+          [
+            "sacre coeur",
+            "coeur de jesus",
+            "coeur du christ",
+            "priere pour le clerge",
+            "fin de son exhortation",
+            "priere finale"
+          ],
+          [
+            "pretr",
+            "clerg",
+            "sanctifi",
+            "vertu",
+            "grace",
+            "priere",
+            "implor",
+            "demand",
+            "sollicit"
           ]
         ]
       },
