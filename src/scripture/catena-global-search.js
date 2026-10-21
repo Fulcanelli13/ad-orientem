@@ -6,6 +6,7 @@
  */
 import {CATENA_LOCAL_BASE,CATENA_SOURCE_COMMIT,loadCatenaForPassage} from "./catena-inline.js";
 import {catenaSearchTerms,indexCatenaMessages,retrieveCatenaMessages} from "./catena-messenger.js";
+import {catenaRelatedTopic,catenaTopicEvidence,retrieveCatenaRelatedMessages} from "./catena-related-vocabulary.js";
 export const CATENA_GLOBAL_SCHEMA="ao.catena.gospel-lexicon.v1";
 export const CATENA_LEXICON_BASE=CATENA_LOCAL_BASE+"lexicon/";
 const CENSUS=Object.freeze({
@@ -105,6 +106,33 @@ export function rankCatenaPassages(indexes,query,{
     a.book.localeCompare(b.book)||a.chapter-b.chapter||a.verse-b.verse)
   .slice(0,Math.min(40,Math.max(1,limit)));
 }
+/**
+ * A separate, explicitly marked *related wording* candidate pass. A source
+ * locator is NOT a theological match until the retrieved original extract
+ * contains a qualifying, literal evidence phrase.
+ */
+export function rankCatenaRelatedPassages(indexes,question,{
+ currentPericopeIds=[],limit=24
+}={}){
+ const topic=catenaRelatedTopic(question);
+ if(!topic)return [];
+ const excluded=new Set(currentPericopeIds),hits=new Map();
+ for(const index of indexes){
+  if(!index||!CENSUS[index.gospel])continue;
+  for(const term of topic.probes){
+   for(const i of postings(index.lexicon?.[term],index.pericopes.length)){
+    const p=index.pericopes[i],id=p[0];
+    if(excluded.has(id))continue;
+    if(!hits.has(id))hits.set(id,{id,gospel:index.gospel,
+     book:CENSUS[index.gospel][2],chapter:p[1],verse:p[2],count:0});
+    hits.get(id).count++;
+   }
+  }
+ }
+ return [...hits.values()].sort((a,b)=>b.count-a.count||
+  a.book.localeCompare(b.book)||a.chapter-b.chapter||a.verse-b.verse)
+  .slice(0,Math.min(60,Math.max(1,limit)));
+}
 function namedFather(rows,query){
  const q=String(query||"").toLowerCase();
  return [...new Set(rows.map(r=>r.father))].filter(f=>
@@ -134,29 +162,43 @@ export async function searchCatenaAcrossGospels(question,{
   ?terms.filter(t=>!authors.some(f=>f.toLowerCase().includes(t))).join(" ")
   :question;
  if(!catenaSearchTerms(contentQuery).length)return {results:[],unavailable,searched:indexes.length};
- const matches=rankCatenaPassages(indexes,contentQuery,
+ const literal=rankCatenaPassages(indexes,contentQuery,
   {currentPericopeIds,limit:24});
+ const topic=catenaRelatedTopic(contentQuery);
+ const expanded=rankCatenaRelatedPassages(indexes,contentQuery,
+  {currentPericopeIds,limit:40});
  const results=[],used=new Set(),target=Math.min(5,Math.max(1,limit));
  let attempts=0;
- for(const match of matches){
-  if(results.length>=target||attempts>=16)break;
-  attempts++;
-  try{
-   const sections=await loadCatenaForPassage({
-    book:match.book,chapter:match.chapter,verseStart:match.verse,verseEnd:match.verse
-   },{fetcher,cacheStorage,cryptoProvider});
-   const original=sections.find(p=>p.id===match.id);
-   if(!original||used.has(original.id))continue;
-   const rows=indexCatenaMessages([original]).filter(r=>!authors.length||authors.includes(r.father));
-   const hits=retrieveCatenaMessages(rows,contentQuery,{limit:1});
-   if(!hits.length)continue;
-   const row=hits[0];
-   // All displayed text, attribution, citations and source links MUST come
-   // from the integrity-checked canonical chapter pack, not the index.
-   used.add(original.id);
-   results.push(Object.freeze({...row,reference:original.citation,
-    fromAnotherPassage:true}));
-  }catch{unavailable.push(match.gospel)}
+ // First return exact lexical overlap. A second pass may surface related
+ // vocabulary, but only after verifying its source phrase in the real text.
+ async function expand(candidates,related){
+  for(const match of candidates){
+   if(results.length>=target||attempts>=36)break;
+   if(used.has(match.id))continue;
+   attempts++;
+   try{
+    const sections=await loadCatenaForPassage({
+     book:match.book,chapter:match.chapter,verseStart:match.verse,verseEnd:match.verse
+    },{fetcher,cacheStorage,cryptoProvider});
+    const original=sections.find(p=>p.id===match.id);
+    if(!original)continue;
+    const rows=indexCatenaMessages([original])
+     .filter(r=>!authors.length||authors.includes(r.father));
+    const relatedHit=related?retrieveCatenaRelatedMessages(rows,contentQuery,{limit:1})[0]:null;
+    const row=related?relatedHit?.row:
+     retrieveCatenaMessages(rows,contentQuery,{limit:1})[0];
+    if(!row)continue;
+    const evidence=related?catenaTopicEvidence(topic,row.text):null;
+    if(related&&!evidence)continue;
+    // Never present index-only text. Rows are from integrity-checked packs.
+    used.add(original.id);
+    results.push(Object.freeze({...row,reference:original.citation,
+     fromAnotherPassage:true,
+     ...(evidence?{relatedSourceEvidence:evidence}: {})}));
+   }catch{unavailable.push(match.gospel)}
+  }
  }
+ await expand(literal,false);
+ if(results.length<target&&topic)await expand(expanded,true);
  return {results,unavailable:[...new Set(unavailable)],searched:indexes.length};
 }
