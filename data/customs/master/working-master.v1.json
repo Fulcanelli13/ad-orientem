@@ -3508,12 +3508,12 @@
       "category_en": "ADVENT_HOSPITALITY",
       "classification": "REGIONAL_CATHOLIC_DEVOTION",
       "confidence": "LOCAL_HISTORICAL_SOURCE_BOUNDED",
-      "name_en": "Herbergsuche — local Advent lodging-search devotion",
-      "name_fr": "Herbergsuche — dévotion locale de l'hospitalité pendant l'Avent",
-      "description_en": "Herbergsuche recalls the Holy Family looking for lodging. An Austrian Catholic parish describes an Advent image of Our Lady or a Marian statue passed from household to household with short devotions. The parish, not the universal Roman calendar, determines the participating homes and schedule.",
-      "description_fr": "La Herbergsuche rappelle la recherche d’un logement par la Sainte Famille. Une paroisse catholique autrichienne décrit le passage d’une image ou statue mariale d’un foyer à l’autre pendant l’Avent, avec de courtes prières. Les maisons participantes et les dates relèvent de l’organisation paroissiale.",
-      "history_en": "Herbergsuche recalls the Holy Family looking for lodging. An Austrian Catholic parish describes an Advent image of Our Lady or a Marian statue passed from household to household with short devotions. The parish, not the universal Roman calendar, determines the participating homes and schedule.",
-      "history_fr": "La Herbergsuche rappelle la recherche d’un logement par la Sainte Famille. Une paroisse catholique autrichienne décrit le passage d’une image ou statue mariale d’un foyer à l’autre pendant l’Avent, avec de courtes prières. Les maisons participantes et les dates relèvent de l’organisation paroissiale.",
+      "name_en": "Herbergsuche — Advent Marian-image visits between households",
+      "name_fr": "Herbergsuche — visite d'une image mariale de foyer en foyer pendant l'Avent",
+      "description_en": "In Großpetersdorf, an Advent image or statue of Our Lady moves between households. Families pray a short devotion as the image arrives and departs. The custom recalls the journey of Mary and Joseph to Bethlehem and encourages hospitality. Dramatic local lodging-search plays must be researched as separate variants.",
+      "description_fr": "À Großpetersdorf, une image ou statue de Notre-Dame passe de foyer en foyer pendant l’Avent. Les familles récitent une courte prière à son arrivée et à son départ. La coutume rappelle le voyage de Marie et Joseph à Bethléem et encourage l’hospitalité. Les représentations théâtrales locales demeurent des variantes distinctes à vérifier.",
+      "history_en": "In Großpetersdorf, an Advent image or statue of Our Lady moves between households. Families pray a short devotion as the image arrives and departs. The custom recalls the journey of Mary and Joseph to Bethlehem and encourages hospitality. Dramatic local lodging-search plays must be researched as separate variants.",
+      "history_fr": "À Großpetersdorf, une image ou statue de Notre-Dame passe de foyer en foyer pendant l’Avent. Les familles récitent une courte prière à son arrivée et à son départ. La coutume rappelle le voyage de Marie et Joseph à Bethléem et encourage l’hospitalité. Les représentations théâtrales locales demeurent des variantes distinctes à vérifier.",
       "meaning_en": "Hospitality toward Mary and Joseph as preparation to welcome Christ.",
       "meaning_fr": "L’hospitalité envers Marie et Joseph pour se préparer à accueillir le Christ.",
       "practice_en": "In a participating parish, receive the image and pray as a household; otherwise retain as a historical local account.",
@@ -3895,7 +3895,8 @@
         "universal_latin_rite": false
       },
       "source_ids": [
-        "HU-NEPRAJZ-LEXIKON"
+        "HU-NEPRAJZ-LEXIKON",
+        "HU-MAGYAR-KATOLIKUS-LEXIKON-BETLEHEMEZES"
       ],
       "sources": [
         {
@@ -3904,6 +3905,13 @@
           "url": "https://mek.oszk.hu/02100/02115/html/1-713.html",
           "claim": "House visiting, shepherd Nativity plays, regional actors and puppets",
           "limit": "Ethnography, not ecclesiastical law; mirror may intermittently fail"
+        },
+        {
+          "id": "HU-MAGYAR-KATOLIKUS-LEXIKON-BETLEHEMEZES",
+          "title": "Magyar Katolikus Lexikon, betlehemezés",
+          "url": "https://lexikon.katolikus.hu/B/betlehemez%C3%A9s.html",
+          "claim": "Hungarian Catholic historical classification, Nativity dramatic components and regional variants; earliest surviving Hungarian-language texts from the seventeenth century",
+          "limit": "Religious and ethnographic evidence, not a Roman rite or proof that every community retains the custom."
         }
       ],
       "weiser_observation_ids": [
