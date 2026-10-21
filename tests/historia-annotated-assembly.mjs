@@ -64,6 +64,9 @@ for (const edition of HISTORIA_EDITIONS) {
           assert.equal(original.editorialReadingCandidate.publicationApproved,false);
         }
         assert.equal(segment.accepted,false);
+        assert.equal(segment.editorialSourceLanguage,"en");
+        assert.equal(segment.requiresEditorialLocalization,edition==="crampon-1923");
+        assert.equal(segment.editionIndependent,false);
       } else if(segment.kind==="SCRIPTURE_READING_TRIAL_NOT_APPROVED"){
         const trial=segment.trialType==="HELD_BRIDGE_RESEARCH_TRIAL"?
           original.readthroughTrial:original.afterSelectedReadthroughTrial;
@@ -139,6 +142,11 @@ for (const edition of HISTORIA_EDITIONS) {
   assert.ok(manuscript.includes("1Samuel 9:15–17; 1Samuel 9:25–27"));
   assert.ok(!manuscript.includes("Christ's temptation may be mentioned briefly"));
   assert.ok(!manuscript.includes("Introduce the loaves once"));
+  if(edition==="crampon-1923"){
+    assert.ok(manuscript.includes("ATTENTION: Les raccords éditoriaux sont encore des brouillons en anglais"));
+  }else{
+    assert.ok(!manuscript.includes("ATTENTION: Les raccords éditoriaux"));
+  }
   assert.ok(manuscript.includes("**RESEARCH TEXT PROOF — NOT APPROVED FOR PUBLICATION**"));
   assert.ok(!manuscript.includes("**APPROVED FOR PUBLICATION**"));
   if(edition==="dr-challoner"){
