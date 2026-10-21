@@ -49,9 +49,9 @@ And the Lord God said to the serpent: Because thou hast done this thing, thou ar
 
 ## 03 · Noah, the covenant and the peoples
 
-*⟦Editorial connector · source: Genesis 4:25–26 · NOT APPROVED⟧*
+*⟦Editorial connector · source: Genesis 4:25–26; Genesis 5:28–32 · NOT APPROVED⟧*
 
-*Adam's descendants continued through Seth, whose line leads to Noah (Genesis 4–5).*
+*The generations after Adam continued through Seth, and from his line came Noah.*
 
 *⟦HELD source bridge: Genesis 6:9–22 · not selected or approved⟧*
 
@@ -75,9 +75,9 @@ And God spoke to Noe, saying: Go out of the ark, thou and thy wife, thy sons and
 
 Thus also said God to Noe, and to his sons with him: Behold I will establish my covenant with you, and with your seed after you: And with every living soul that is with you, as well in all birds, as in cattle and beasts of the earth, that are come forth out of the ark, and in all the beasts of the earth. I will establish my covenant with you, and all flesh shall be no more destroyed with the waters of a flood, neither shall there be from henceforth a flood to waste the earth. And God said: This is the sign of the covenant which I give between me and you, and to every living soul that is with you, for perpetual generations. I will set my bow in the clouds, and it shall be the sign of a covenant between me and between the earth. And when I shall cover the sky with clouds, my bow shall appear in the clouds: And I will remember my covenant with you, and with every living soul that beareth flesh: and there shall no more be waters of a flood to destroy all flesh. And the bow shall be in the clouds, and I shall see it, and shall remember the everlasting covenant, that was made between God and every living soul of all flesh which is upon the earth. And God said to Noe: This shall be the sign of the covenant, which I have established, between me and all flesh upon the earth.
 
-*⟦Editorial connector · source: Genesis 11:1–9 · NOT APPROVED⟧*
+*⟦Editorial connector · source: Genesis 10:1–32; Genesis 11:1–9 · NOT APPROVED⟧*
 
-*After the flood, Noah's descendants spread into peoples and nations; at Babel their language was confounded and they were scattered (Genesis 10–11).*
+*After the flood, the descendants of Noah spread into peoples and nations. At Babel, their language was confounded, and they were scattered over the earth.*
 
 <details><summary>Unselected same-book source seams (research audit)</summary>
 
@@ -134,13 +134,13 @@ And the Lord visited Sara, as he had promised: and fulfilled what he had spoken.
 
 After these things, God tempted Abraham, and said to him: Abraham, Abraham. And he answered: Here I am. He said to him: Take thy only begotten son Isaac, whom thou lovest, and go into the land of vision; and there thou shalt offer him for an holocaust upon one of the mountains which I will shew thee. So Abraham rising up in the night, saddled his ass, and took with him two young men, and Isaac his son: and when he had cut wood for the holocaust, he went his way to the place which God had commanded him. And on the third day, lifting up his eyes, he saw the place afar off. And he said to his young men: Stay you here with the ass; I and the boy will go with speed as far as yonder, and after we have worshipped, will return to you. And he took the wood for the holocaust, and laid it upon Isaac his son; and he himself carried in his hands fire and a sword. And as they two went on together, Isaac said to his father: My father. And he answered: What wilt thou, son? Behold, saith he, fire and wood: where is the victim for the holocaust? And Abraham said: God will provide himself a victim for an holocaust, my son. So they went on together. And they came to the place which God had shewn him, where he built an altar, and laid the wood in order upon it; and when he had bound Isaac his son, he laid him on the altar upon the pile of wood. And he put forth his hand, and took the sword, to sacrifice his son. And behold, an angel of the Lord from heaven called to him, saying: Abraham, Abraham. And he answered: Here I am. And he said to him: Lay not thy hand upon the boy, neither do thou any thing to him: now I know that thou fearest God, and hast not spared thy only begotten son for my sake. Abraham lifted up his eyes, and saw behind his back a ram, amongst the briers, sticking fast by the horns, which he took and offered for a holocaust instead of his son. And he called the name of that place, The Lord seeth. Whereupon, even to this day, it is said: In the mountain the Lord will see. And the angel of the Lord called to Abraham a second time from heaven, saying: By my own self have I sworn, saith the Lord: because thou hast done this thing, and hast not spared thy only begotten son for my sake: I will bless thee, and I will multiply thy seed as the stars of heaven, and as the sand that is by the sea shore; thy seed shall possess the gates of their enemies. And in thy seed shall all the nations of the earth be blessed, because thou hast obeyed my voice. Abraham returned to his young men, and they went to Bersabee together, and he dwelt there.
 
-*⟦Editorial connector · source: Genesis 25:19–26, 29–34 · NOT APPROVED⟧*
+*⟦Editorial connector · source: Genesis 25:19–26; Genesis 25:29–34 · NOT APPROVED⟧*
 
-*Isaac and Rebecca had two sons, Esau and Jacob (Genesis 25:19–26).*
+*Isaac and Rebecca became the parents of twin sons, Esau and Jacob. The younger son would inherit the promises given to their fathers.*
 
-*⟦Editorial connector · source: Genesis 27:18–29, 34–40 · NOT APPROVED⟧*
+*⟦Editorial connector · source: Genesis 27:18–29; Genesis 27:34–40 · NOT APPROVED⟧*
 
-*Jacob received his father Isaac's blessing amid the conflict with his elder brother Esau (Genesis 27).*
+*Jacob obtained Isaac's blessing while Esau was away, and the brothers were divided by the deed.*
 
 **⟦Genesis 32:22–32⟧**
 
@@ -224,9 +224,9 @@ The children of Israel increased, and sprung up into multitudes, and growing exc
 
 Pharao therefore charged all his people, saying: Whatsoever shall be born of the male sex, ye shall cast into the river: whatsoever of the female, ye shall save alive.
 
-*⟦Editorial connector · source: Exodus 2:1–10, 23–25 · NOT APPROVED⟧*
+*⟦Editorial connector · source: Exodus 2:1–22; Exodus 2:23–25 · NOT APPROVED⟧*
 
-*Moses was a Hebrew child rescued from Pharaoh's decree, raised by Pharaoh's daughter, and later driven into Midian (Exodus 2).*
+*Moses was born among the Hebrews and saved from Pharaoh's decree. Pharaoh's daughter brought him up, but as a man he fled to Midian. Meanwhile, the suffering Israelites cried out to God.*
 
 **⟦Exodus 3:1–8⟧**
 
@@ -254,9 +254,9 @@ And the Lord said to Moses: Pharao’s heart is hardened, he will not let the pe
 
 And Moses and Aaron did as the Lord had commanded: and lifting up the rod, he struck the water of the river before Pharao and his servants: and it was turned into blood. And the fishes that were in the river died; and the river corrupted, and the Egyptians could not drink the water of the river, and there was blood in all the land of Egypt.
 
-*⟦Editorial connector · source: Exodus 9:13–16 · NOT APPROVED⟧*
+*⟦Editorial connector · source: Exodus 9:13–16; Exodus 10:27–29 · NOT APPROVED⟧*
 
-*Pharaoh repeatedly refused to let Israel go despite the plagues (Exodus 7–10). Moses then warned of the final judgment.*
+*Pharaoh continued to refuse the liberation of Israel despite the signs worked before him. The Lord warned him of further judgment.*
 
 **⟦Exodus 11:4–8⟧**
 
@@ -305,7 +305,7 @@ And the children of Israel set forward from Ramesse to Socoth, being about six h
 
 *⟦Editorial connector · source: Exodus 13:17–22 · NOT APPROVED⟧*
 
-*God guided Israel in the wilderness by a pillar of cloud by day and of fire by night (Exodus 13:21–22).*
+*As Israel departed from Egypt, the Lord went before the people in a pillar of cloud by day and of fire by night.*
 
 **⟦Exodus 14:5–10⟧**
 
@@ -323,9 +323,9 @@ And the angel of God, who went before the camp of Israel, removing, went behind 
 
 And the Lord said to Moses: Stretch forth thy hand over the sea, that the waters may come again upon the Egyptians, upon their chariots and horsemen. And when Moses had stretched forth his hand towards the sea, it returned at the first break of day to the former place: and as the Egyptians were fleeing away, the waters came upon them, and the Lord shut them up in the middle of the waves. And the waters returned, and covered the chariots and the horsemen of all the army of Pharao, who had come into the sea after them, neither did there so much as one of them remain. But the children of Israel marched through the midst of the sea upon dry land, and the waters were to them as a wall on the right hand and on the left: And the Lord delivered Israel in that day out of the hands of the Egyptians. And they saw the Egyptians dead upon the sea shore, and the mighty hand that the Lord had used against them: and the people feared the Lord, and they believed the Lord, and Moses his servant.
 
-*⟦Editorial connector · source: Exodus 16:2–4, 12–15 · NOT APPROVED⟧*
+*⟦Editorial connector · source: Exodus 16:2–4; Exodus 16:12–15 · NOT APPROVED⟧*
 
-*In the wilderness God provided manna to sustain the people of Israel (Exodus 16).*
+*In the wilderness, when the people hungered, the Lord gave them manna to eat.*
 
 <details><summary>Unselected same-book source seams (research audit)</summary>
 
@@ -367,9 +367,9 @@ And when he came nigh to the camp, he saw the calf, and the dances: and being ve
 
 And when the next day was come, Moses spoke to the people: You have sinned a very great sin: I will go up to the Lord, if by any means I may be able to entreat him for your crime. And returning to the Lord, he said: I beseech thee: this people hath sinned a heinous sin, and they have made to themselves gods of gold: either forgive them this trespass, Or if thou do not, strike me out of the book that thou hast written. And the Lord answered him: He that hath sinned against me, him will I strike out of my book: But go thou, and lead this people whither I have told thee: my angel shall go before thee. And I in the day of revenge will visit this sin also of theirs.
 
-*⟦Editorial connector · source: Exodus 40:16–21, 34–38 · NOT APPROVED⟧*
+*⟦Editorial connector · source: Exodus 40:16–21; Exodus 40:34–38 · NOT APPROVED⟧*
 
-*The Lord commanded Israel to erect the Tabernacle, where the Ark of the Covenant signified his dwelling among the people during their journey (Exodus 40:17–38).*
+*The Tabernacle was erected according to the Lord's command. His cloud covered it, and its presence guided Israel through the wilderness.*
 
 <details><summary>Unselected same-book source seams (research audit)</summary>
 
@@ -385,7 +385,7 @@ And when the next day was come, Moses spoke to the people: You have sinned a ver
 
 *⟦Editorial connector · source: Deuteronomy 31:1–8 · NOT APPROVED⟧*
 
-*After the years in the wilderness, Moses commissioned Joshua to lead Israel across the Jordan into the promised land (Numbers 14:33–34; Deuteronomy 31:7–8).*
+*Before his death, Moses entrusted the leadership of the people to Joshua, charging him to enter the land promised to their fathers.*
 
 **⟦Deuteronomy 34:1–7⟧**
 
@@ -421,9 +421,9 @@ And the Lord raised up judges, to deliver them from the hands of those that oppr
 
 ## 12 · From Ruth to Samuel and Saul
 
-*⟦Editorial connector · source: Ruth 1:1–18 · NOT APPROVED⟧*
+*⟦Editorial connector · source: Ruth 1:1–22 · NOT APPROVED⟧*
 
-*Ruth, a Moabite widow, remained faithful to her mother-in-law Naomi and returned with her to Bethlehem (Ruth 1:16–22).*
+*Ruth, a widowed woman of Moab, would not abandon her mother-in-law Naomi. She went with her to Bethlehem and made Naomi's people and God her own.*
 
 **⟦Ruth 4:13⟧**
 
@@ -433,9 +433,9 @@ Booz therefore took Ruth, and married her: and went in unto her, and the Lord ga
 
 And the women, her neighbours, congratulating with her, and saying, There is a son born to Noemi, called his name Obed: he is the father of Isai, the father of David. These are the generations of Phares: Phares begot Esron, Esron begot Aram, Aram begot Aminadab, Aminadab begot Nahasson, Nahasson begot Salmon, Salmon begot Booz, Booz begot Obed, Obed begot Isai, Isai begot David.
 
-*⟦Editorial connector · source: 1 Samuel 3:1–21 · NOT APPROVED⟧*
+*⟦Editorial connector · source: 1Samuel 3:1–21 · NOT APPROVED⟧*
 
-*Samuel served as a prophet during Israel's transition to kingship. Saul, a Benjaminite, came to Samuel, whom the Lord had instructed to anoint him (1 Samuel 3:19–21; 9:15–27).*
+*Samuel had heard the Lord's call from his youth and was recognised by Israel as a prophet.*
 
 **⟦1Samuel 8:4–8⟧**
 
@@ -444,6 +444,10 @@ Then all the ancients of Israel being assembled came to Samuel to Ramatha. And t
 **⟦1Samuel 8:19–22⟧**
 
 But the people would not hear the voice of Samuel, and they said, Nay: but there shall be a king over us, And we also will be like all nations: and our king shall judge us, and go out before us, and fight our battles for us. And Samuel heard all the words of the people, and rehearsed them in the ears of the Lord. And the Lord said to Samuel: Hearken to their voice, and make them a king. And Samuel said to the men of Israel: Let every man go to his city.
+
+*⟦Editorial connector · source: 1Samuel 9:15–17; 1Samuel 9:25–27 · NOT APPROVED⟧*
+
+*The Lord had made known to Samuel that a man from Benjamin would be sent to him. Saul came to Samuel, who was to anoint him ruler over Israel.*
 
 **⟦1Samuel 10:1–8⟧**
 
@@ -463,9 +467,9 @@ And Samuel took a little vial of oil, and poured it upon his head, and kissed hi
 
 And the Lord said to Samuel: How long wilt thou mourn for Saul, whom I have rejected from reigning over Israel? fill thy horn with oil, and come, that I may send thee to Isai, the Bethlehemite: for I have provided me a king among his sons. And Samuel said: How shall I go? for Saul will hear of it, and he will kill me. And the Lord said: Thou shalt take with thee a calf of the herd, and thou shalt say: I am come to sacrifice to the Lord. And thou shalt call Isai to the sacrifice, and I will shew thee what thou art to do, and thou shalt anoint him whom I shall shew to thee. Then Samuel did as the Lord had said to him. And he came to Bethlehem, and the ancients of the city wondered, and meeting him, they said: Is thy coming hither peaceable? And he said: It is peaceable: I am come to offer sacrifice to the Lord, be ye sanctified, and come with me to the sacrifice. And he sanctified Isai and his sons, and called them to the sacrifice. And when they were come in, he saw Eliab, and said: Is the Lord’s anointed before him? And the Lord said to Samuel: Look not on his countenance, nor on the height of his stature: because I have rejected him, nor do I judge according to the look of man: for man seeth those things that appear, but the Lord beholdeth the heart. And Isai called Abinadab, and brought him before Samuel. And he said: Neither hath the Lord chosen this, And Isai brought Samma, and he said of him: Neither hath the Lord chosen this. Isai therefore brought his seven sons before Samuel: and Samuel said to Isai: The Lord hath not chosen any one of these. And Samuel said to Isai: Are here all thy sons? He answered: There remaineth yet a young one, who keepeth the sheep. And Samuel said to Isai: Send, and fetch him: for we will not sit down till he come hither. He sent therefore and brought him. Now he was ruddy and beautiful to behold, and of a comely face. And the Lord said: Arise, and anoint him, for this is he. Then Samuel took the horn of oil, and anointed him in the midst of his brethren: and the Spirit of the Lord came upon David from that day forward: and Samuel rose up, and went to Ramatha.
 
-*⟦Editorial connector · source: 1 Samuel 31:1–13 · NOT APPROVED⟧*
+*⟦Editorial connector · source: 1Samuel 31:1–13; 2Samuel 2:1–4 · NOT APPROVED⟧*
 
-*Saul died in battle against the Philistines, and David subsequently began his reign over Judah at Hebron (1 Samuel 31; 2 Samuel 2:1–4).*
+*Saul fell in battle against the Philistines. After his death, David sought the Lord's guidance and went to Hebron, where the men of Judah anointed him king.*
 
 **⟦2Samuel 2:1–4⟧**
 
@@ -496,9 +500,9 @@ And it came to pass when the king sat in his house, and the Lord had given him r
 
 ## 14 · The Temple and the divided kingdom
 
-*⟦Editorial connector · source: 2 Samuel 11:1–5, 14–17 · NOT APPROVED⟧*
+*⟦Editorial connector · source: 2Samuel 11:1–17; 2Samuel 12:1–13 · NOT APPROVED⟧*
 
-*David sinned grievously against Bathsheba and Uriah. Nathan confronted him, and David acknowledged his sin before the Lord (2 Samuel 11–12).*
+*David sinned grievously in his dealings with Bathsheba and her husband Uriah. When the prophet Nathan reproved him, David confessed his sin to the Lord.*
 
 **⟦1Kings 6:1⟧**
 
@@ -520,9 +524,9 @@ And Solomon stood before the altar of the Lord, in the sight of the assembly of 
 
 Is it then to be thought that God should indeed dwell upon earth? for if heaven, and the heavens of heavens, cannot contain thee, how much less this house which I have built? But have regard to the prayer of thy servant, and to his supplications, O Lord, my God: hear the hymn and the prayer, which thy servant prayeth before thee this day: That thy eyes may be open upon this house, night and day: upon the house of which thou hast said: My name shall be there: that thou mayst hearken to the prayer which thy servant prayeth, in this place to thee: That thou mayst hearken to the supplication of thy servant, and of thy people Israel, whatsoever they shall pray for in this place, and hear them in the place of thy dwelling in heaven; and when thou hearest, shew them mercy.
 
-*⟦Editorial connector · source: 1 Kings 11:1–13 · NOT APPROVED⟧*
+*⟦Editorial connector · source: 1Kings 11:1–13 · NOT APPROVED⟧*
 
-*Solomon subsequently turned to foreign gods, and the Lord announced that the kingdom would be torn apart after him, though a portion would remain for David's sake (1 Kings 11:1–13).*
+*In later years, Solomon turned toward other gods. The Lord announced that the kingdom would be divided after Solomon's death, yet a portion would remain for David's sake.*
 
 **⟦1Kings 11:29–32⟧**
 
@@ -549,9 +553,9 @@ And the king answered the people roughly, leaving the counsel of the old men, wh
 
 ## 15 · Prophetic warning and Israel's judgment
 
-*⟦Editorial connector · source: 1 Kings 18:20–39 · NOT APPROVED⟧*
+*⟦Editorial connector · source: 1Kings 18:20–39; Isaiah 7:10–17; Isaiah 9:1–6; Isaiah 11:1–10; Isaiah 52:13–53:12 · NOT APPROVED⟧*
 
-*Elijah opposed the worship of Baal during Israel's apostasy (1 Kings 18). The following oracles of Isaiah are distinct prophetic witnesses to God's promises, not episodes occurring in one continuous scene (Isaiah 7; 9; 11; 52–53).*
+*As Israel strayed from the worship of the Lord, Elijah confronted the prophets of Baal. The prophetic books also preserve promises that would reach beyond the calamities of the kingdoms.*
 
 **⟦Isaiah 7:10–17⟧**
 
@@ -631,15 +635,15 @@ And the children of Israel of the captivity kept the phase, on the fourteenth da
 
 *⟦Editorial connector · source: Nehemiah 8:1–12 · NOT APPROVED⟧*
 
-*After the return, Ezra publicly proclaimed the Law and the community renewed its worship of the Lord (Nehemiah 8:1–8).*
+*After the return from exile, Ezra read the Law before the assembled people, who heard it with reverence and renewed their observance of the Lord's commands.*
 
-*⟦Editorial connector · source: 1 Maccabees 2:15–28 · NOT APPROVED⟧*
+*⟦Editorial connector · source: 1Maccabees 2:15–28 · NOT APPROVED⟧*
 
-*In later generations, foreign rulers pressured the Jewish people to forsake their law. Mattathias resisted enforced idolatry, beginning the Maccabean struggle (1 Maccabees 2:15–28).*
+*In later generations, foreign rulers sought to force the Jews to abandon their Law. Mattathias refused the command to sacrifice to idols and began the resistance.*
 
-*⟦Editorial connector · source: 2 Maccabees 7:1–42 · NOT APPROVED⟧*
+*⟦Editorial connector · source: 2Maccabees 7:1–42 · NOT APPROVED⟧*
 
-*The martyrs under persecution witnessed to Israel's hope in the resurrection, even in the face of death (2 Maccabees 7).*
+*During this persecution, faithful Israelites suffered martyrdom rather than deny the Law, confessing their hope that God would raise the dead.*
 
 <details><summary>Unselected same-book source seams (research audit)</summary>
 
@@ -658,7 +662,7 @@ And in the sixth month, the angel Gabriel was sent from God into a city of Galil
 
 *⟦Editorial connector · source: Luke 1:39–56 · NOT APPROVED⟧*
 
-*Mary visited Elizabeth, whose child leapt at her greeting, and praised the Lord for his mercy and promises to Israel in the Magnificat (Luke 1:39–56).*
+*Mary visited her kinswoman Elizabeth, whose child leapt at her greeting. Mary praised the Lord for His mercy and for remembering His promises to Israel.*
 
 **⟦Matthew 1:18–25⟧**
 
@@ -670,7 +674,7 @@ And it came to pass that in those days there went out a decree from Caesar Augus
 
 *⟦Editorial connector · source: Luke 2:22–38 · NOT APPROVED⟧*
 
-*Mary and Joseph presented Jesus in the Temple, where Simeon recognised the promised salvation, a light to the Gentiles (Luke 2:22–32).*
+*Mary and Joseph brought the child Jesus to the Temple. There Simeon blessed God, recognising in Him the salvation prepared for all peoples.*
 
 **⟦Matthew 2:1–12⟧**
 
@@ -678,7 +682,7 @@ When Jesus therefore was born in Bethlehem of Juda, in the days of king Herod, b
 
 *⟦Editorial connector · source: Matthew 2:13–23 · NOT APPROVED⟧*
 
-*Warned that Herod threatened the child, Joseph took Jesus and Mary into Egypt. After Herod's death, the family returned and settled in Nazareth (Matthew 2:13–23).*
+*When Herod sought the child's life, Joseph took Jesus and Mary into Egypt. After Herod's death, they returned and made their home in Nazareth.*
 
 ## 20 · The Forerunner and first disciples
 
@@ -692,7 +696,7 @@ I indeed baptize you in water unto penance, but he that shall come after me, is 
 
 *⟦Editorial connector · source: Matthew 4:1–11 · NOT APPROVED⟧*
 
-*Christ's temptation may be mentioned briefly as the transition into his public ministry.*
+*After His baptism, Jesus was led by the Spirit into the wilderness, where He resisted the temptations of the devil.*
 
 *⟦HELD source bridge: John 1:29–34 · not selected or approved⟧*
 
@@ -722,13 +726,13 @@ Thus therefore shall you pray: Our Father who art in heaven, hallowed be thy nam
 
 *⟦Editorial connector · source: Mark 2:1–12 · NOT APPROVED⟧*
 
-*A representative forgiveness/healing sign demonstrates authority; this one remains the only nominated main-narrative miracle from H54.*
+*On another occasion, Jesus forgave the sins of a paralysed man and healed him, showing His authority to forgive sins on earth.*
 
 ## 22 · Christ the Bread of Life
 
 *⟦Editorial connector · source: John 6:1–15 · NOT APPROVED⟧*
 
-*Introduce the loaves once as the setting for Jesus' subsequent Bread of Life declaration; do not repeat H54-04.*
+*Before this discourse, Jesus fed a multitude with five barley loaves and two fishes.*
 
 **⟦John 6:26–35⟧**
 
@@ -830,7 +834,7 @@ And Jesus stood before the governor, and the governor asked him, saying: Art tho
 
 *⟦Editorial connector · source: John 19:1–16 · NOT APPROVED⟧*
 
-*Carry scourging and crowning as a clearly attributed Johannine witness without conflating it with Matthew's separate Pilate scene.*
+*John also recounts how the soldiers crowned Jesus with thorns and mocked Him as king before Pilate delivered Him to be crucified.*
 
 <details><summary>Unselected same-book source seams (research audit)</summary>
 
@@ -874,7 +878,7 @@ Now when it was late the same day, the first of the week, and the doors were shu
 
 *⟦Editorial connector · source: Luke 24:13–35 · NOT APPROVED⟧*
 
-*Emmaus may supply the key scriptural interpretation that the Messiah had to suffer; do not require the complete walk dialogue.*
+*Luke separately records that the risen Christ accompanied two disciples on the road to Emmaus and opened the Scriptures to them, showing that the Christ had to suffer and enter into His glory.*
 
 ## 30 · The Ascension and promised mission
 
@@ -1042,7 +1046,7 @@ And when they had appointed him a day, there came very many to him unto his lodg
 
 *⟦Editorial connector · source: Revelation 4:1–11 · NOT APPROVED⟧*
 
-*The throne vision supplies the antecedent for the book held by the One upon the throne in Revelation 5.*
+*John also beheld a throne in heaven, with living creatures and elders worshipping the One seated upon it.*
 
 *⟦HELD source bridge: Revelation 4:1–2 · not selected or approved⟧*
 
@@ -1054,7 +1058,7 @@ And I saw, in the right hand of him that sat on the throne, a book, written with
 
 *⟦Editorial connector · source: Revelation 12:1–17 · NOT APPROVED⟧*
 
-*Use the woman/dragon vision as symbolic conflict linked to the first promise; never turn apocalyptic imagery into dated literal history.*
+*In another vision, John saw a woman clothed with the sun and a dragon who sought to destroy her child and waged war against her offspring.*
 
 **⟦Revelation 19:11–21⟧**
 
