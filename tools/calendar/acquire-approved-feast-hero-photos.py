@@ -88,7 +88,7 @@ def meta(item):
                 "objectIdentifier": rec.get("accessionNumber")}
     name = item["lookup"]
     api = ("https://commons.wikimedia.org/w/api.php?action=query&format=json&formatversion=2"
-           "&prop=imageinfo&iiprop=url%7Csize%7Cmime%7Cextmetadata%7Csha1&titles=File%3A"
+           "&prop=imageinfo&iiprop=url%7Csize%7Cmime%7Cextmetadata%7Csha1&iiurlwidth=1800&titles=File%3A"
            + quote(name, safe=""))
     try:
         result = as_json(api)
@@ -107,6 +107,7 @@ def meta(item):
                 "attribution": re.sub(r"<[^>]*>", "", (ext.get("Artist") or {}).get("value", ""))[:200],
                 "rights": re.sub(r"<[^>]*>", "", (ext.get("UsageTerms") or {}).get("value", ""))[:180],
                 "widthFromApi": info.get("width"), "heightFromApi": info.get("height"),
+                "thumbUrl": info.get("thumburl"),
                 "commonsSha1": info.get("sha1")}
     except Exception as e:
         # A direct photo can still be documented even if Commons API is down.
@@ -118,7 +119,18 @@ def meta(item):
 
 def one(item):
     m = meta(item)
-    buf, final_url = download(m["downloadUrl"])
+    variant = "EXACT_ORIGINAL_BYTES"
+    try:
+        buf, final_url = download(m["downloadUrl"])
+    except Exception as exc:
+        # Wikimedia explicitly recommends generated thumbnails when original
+        # media transfer is rate-limited (HTTP 429). The full composition is
+        # retained but derivative bytes are NOT misreported as an original.
+        thumbnail = m.get("thumbUrl")
+        if "429" not in str(exc) or not thumbnail:
+            raise
+        buf, final_url = download(thumbnail)
+        variant = "WIKIMEDIA_RENDERED_1800PX_WHOLE_IMAGE_FALLBACK"
     if host(final_url) not in IMAGE_HOSTS:
         raise ValueError("Image redirected to unapproved host")
     with Image.open(io.BytesIO(buf)) as im:
@@ -148,6 +160,7 @@ def one(item):
     return {
         "date": item["date"], "artist": item["artist"], "title": item["title"],
         "status": "DOWNLOADED_RESEARCH_PHOTO_NOT_RELEASED",
+        "retrievedVariant": variant,
         "museumObjectUrl": item["objectUrl"], "commonsFilePage": item["filePage"],
         "sourceInfo": m, "actualImageUrl": final_url,
         "sourceSHA256": sha, "byteCount": len(buf),
