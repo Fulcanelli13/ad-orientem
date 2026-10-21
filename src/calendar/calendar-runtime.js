@@ -747,7 +747,8 @@ function calendarPersonalContext(selected){
     const canonical=record.origin==="canonical"?calendarCustomArticle(record.customId):null;
     const title=canonical?.title[fr()?"fr":"en"]||record.title;
     const kind=canonical?L("Adopted sourced custom","Coutume sourcée adoptée"):record.kind==="prayer"?L("Personal prayer","Prière personnelle"):L("Personal custom","Coutume personnelle");
-    return '<article class="aoCalPersonalPractice"><small>'+esc(kind)+'</small><strong>'+esc(title)+'</strong>'+(record.note?'<p>'+esc(record.note)+'</p>':"")+'</article>';
+    const reading=record.body?'<details data-cal-personal-reading><summary>'+esc(L("Read my text","Lire mon texte"))+'</summary><p>'+esc(record.body)+'</p></details>':"";
+    return '<article class="aoCalPersonalPractice"><small>'+esc(kind)+'</small><strong>'+esc(title)+'</strong>'+reading+(record.note?'<p>'+esc(record.note)+'</p>':"")+'</article>';
   };
   return '<section class="aoCalPersonalContext" data-cal-personal-date="'+esc(selected)+'"><div class="aoCalV2SectionTitle"><div><small>'+esc(L("PERSONAL · NOT LITURGICAL","PERSONNEL · NON LITURGIQUE"))+'</small><h3>'+esc(L("My household practices","Mes pratiques familiales"))+'</h3></div></div>'
    +mine.map(copy).join("")+'<button type="button" class="aoCalMyCustomsButton" data-cal-my-customs-open>'+esc(L("Manage my customs & prayers","Gérer mes coutumes et prières"))+' →</button></section>';
@@ -1120,6 +1121,8 @@ function hybridMonthCss(){return `
 .aoCalPersonalPractice small{color:#b7a98e;font-size:12px}
 .aoCalPersonalPractice strong{color:#eee2ce;font-size:16px;font-weight:500}
 .aoCalPersonalPractice p{color:#bbb3a7;font-size:14px;white-space:pre-wrap;overflow-wrap:anywhere;margin:2px 0}
+.aoCalPersonalPractice details{border-top:1px solid rgba(222,208,178,.13);padding-top:7px}
+.aoCalPersonalPractice details summary{color:#d6be91;cursor:pointer;font-size:14px;min-height:36px;padding:7px 0}
 /* Sanctorale defaults to the restrained register while the user-chosen
    hybrid leaves its exact aesthetic open; no source identities are modified. */
 #ao-calendar-modular-root [data-cal-month-index="sanctorale"] .aoCalMonthIndexList{gap:0}
