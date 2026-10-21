@@ -6,16 +6,20 @@
 const fold=text=>String(text??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"")
  .toLowerCase().replace(/[’‘']/g," ").replace(/[^a-z0-9 ]+/g," ").replace(/\s+/g," ").trim();
 const hasPhrase=(hay,needle)=>hay===needle||(" "+hay+" ").includes(" "+needle+" ");
+// Shared documentary-scope restriction for both literal and concept-based
+// source navigation. A historically clergy-only retreat is not a personal
+// obligation imposed on a lay visitor merely because the words match.
+export function historicalSourceScopeExcluded(topicId,question){
+ const query=fold(question);
+ return topicId==="pius.historical_spx_pilot_24"
+  && /\b(?:laic|laique|laics|laiques|layperson|laypeople|laywoman|layman|laity)\b/.test(query);
+}
 export function historicalFocusCandidates(question,topics,language="en"){
  const lang=language==="fr"?"fr":"en",query=fold(question);
  if(!query)return [];
  return topics.filter(t=>t.historicalIntent?.status==="DOCUMENTARY_TOPIC_ANCHORS_RESEARCH_ONLY")
   .filter(t=>{
-   // Haerent animo §34 addresses the clergy's exercises, not an obligation
-   // imposed on laypeople. A mixed lay/clergy question needs another source.
-   if(t.id==="pius.historical_spx_pilot_24"
-      && /\b(?:laic|laique|laics|laiques|layperson|laypeople|laywoman|layman|laity)\b/.test(query))
-     return false;
+   if(historicalSourceScopeExcluded(t.id,question))return false;
    const actor=t.historicalIntent.actorRequired?.[lang];
    if(actor?.length&&!actor.some(x=>hasPhrase(query,fold(x))))return false;
    const sets=t.historicalIntent.facets?.[lang];
