@@ -186,6 +186,54 @@ export function mountScriptureLibrary(root,{
      });
      wrap.append(back);
    }
+   if(Array.isArray(thematicGroups)){
+    const nav=element("details",null,"aoScriptureThematic");
+    nav.dataset.historiaCollections="RESEARCH_NOT_PUBLISHED";
+    nav.open=thematicOpen;
+    const summary=element("summary",lang==="fr"?"Collections bibliques · recherche":"Biblical collections · research");
+    summary.addEventListener("click",e=>{e.preventDefault();thematicOpen=!nav.open;nav.open=thematicOpen;});
+    nav.append(summary,element("p",lang==="fr"
+      ?"Lectures supplémentaires de transcriptions non collationnées ; aucun récit réécrit."
+      :"Supplementary Scripture, from uncollated source witnesses. No rewritten biblical narratives.","aoScriptureNotice"));
+    const groups=element("div",null,"aoHistoriaGroups");
+    for(const group of thematicGroups){
+     const category=element("section",null,"aoHistoriaGroup");
+     category.append(element("h3",group.title+" · "+group.episodes.length));
+     for(const episode of group.episodes){
+      const button=element("button",episode.title+" · "+episode.reference);
+      button.type="button";button.dataset.historiaEpisode=episode.id;
+      button.setAttribute("aria-pressed",String(thematicEpisode?.id===episode.id));
+      button.addEventListener("click",()=>{selectThematic(episode.id);root.scrollTop=0;});
+      category.append(button);
+     }
+     groups.append(category);
+    }
+    nav.append(groups);wrap.append(nav);
+    if(thematicEpisode){
+     const page=thematicEpisode.plan.chapters[thematicPage];
+     const active=element("section",null,"aoHistoriaSelected");
+     active.dataset.historiaActiveEpisode=thematicEpisode.id;
+     active.append(element("h3",thematicEpisode.title),
+       element("p",thematicEpisode.reference+" · "+thematicGroup.title,"aoScriptureNotice"));
+     const pager=element("nav",null,"aoHistoriaPager");
+     pager.setAttribute("aria-label",lang==="fr"?"Chapitres du récit":"Episode chapters");
+     const prev=element("button",lang==="fr"?"← Chapitre précédent":"← Previous chapter");
+     prev.type="button";prev.disabled=thematicPage===0;prev.dataset.historiaPrevious="";
+     prev.addEventListener("click",()=>stepThematic(-1));
+     const count=element("span",page.label+" · "+(thematicPage+1)+"/"+thematicEpisode.plan.chapters.length);
+     const next=element("button",lang==="fr"?"Chapitre suivant →":"Next chapter →");
+     next.type="button";next.disabled=thematicPage===thematicEpisode.plan.chapters.length-1;
+     next.dataset.historiaNext="";next.addEventListener("click",()=>stepThematic(1));
+     pager.append(prev,count,next);active.append(pager);
+     if(thematicEpisode.plan.book==="Esther")
+      active.append(element("p",lang==="fr"?"Numérotation Challoner uniquement."
+       :"Challoner coordinates only; other editions require a verified Catholic crosswalk.","aoScriptureNotice"));
+     const back=element("button",lang==="fr"?"Retour à la lecture précédente":"Return to previous Bible passage");
+     back.type="button";back.dataset.historiaExit="";
+     back.addEventListener("click",()=>{exitThematic(true);draw();});
+     active.append(back);wrap.append(active);
+    }
+   }
    // Citation reading is the primary surface. All-library navigation lives below it.
    const browse=element("details",null,"aoScriptureBrowse");
    browse.open=browseExpanded;
