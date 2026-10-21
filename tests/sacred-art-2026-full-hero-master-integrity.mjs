@@ -64,9 +64,28 @@ for(const x of m.dateIndex){
  assert.equal(Boolean(x.lockedDatePainting),locked.has(x.date));
 }
 assert.equal(m.reusableEarlierArt.userSelectedSubjectAssignments.length,44);
+assert.equal(m.counts.allUniqueDatesRuntimeVerified,102);
+assert.equal(m.counts.allClassIPrincipalIDsRuntimeVerified,53);
+assert.equal(m.counts.sundayPrincipalIDsRuntimeVerified,52);
+assert.equal(m.counts.additionalHighlightsObservedPrincipalIDsRuntimeVerified,17);
+assert.equal(m.counts.historicalSubjectArtworkIdentitiesReconciled,44);
+assert.equal(m.acceptance.real1962DayResolverAllUniqueDates,"PASSED_102_102");
+assert.equal(m.constraints.excludeElGrecoFromNewSuggestions,true);
+for(const x of m.dateIndex){
+ assert.equal(x.observedDayReady,true);
+ assert.ok(x.observedPrincipalId && x.observedTitle);
+}
+
 assert.equal(m.reusableEarlierArt.ratingEligibleArtworkReviewPool.length,135);
-for(const x of m.reusableEarlierArt.userSelectedSubjectAssignments)
+for(const x of m.reusableEarlierArt.userSelectedSubjectAssignments){
  assert.equal(x.selectedForThisExact2026Date,false);
+ assert.equal(x.noAutomaticRelease,true);
+ assert.equal(x.catalogueArtwork?.artworkId,x.artworkId);
+ assert.ok(x.catalogueArtwork?.artist && x.catalogueArtwork?.title);
+ assert.ok(x.catalogueArtwork?.museumObjectUrl);
+ if(/fra angelico|el greco/i.test(x.catalogueArtwork.artist))
+   assert.equal(x.notEligibleForNewSuggestion,true);
+}
 for(const x of m.reusableEarlierArt.ratingEligibleArtworkReviewPool){
  assert.equal(x.placedForExactDate,false);
  assert.ok(!/fra angelico/i.test((x.artist||"")+" "+(x.title||"")));
