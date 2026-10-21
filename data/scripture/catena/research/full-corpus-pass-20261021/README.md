@@ -67,3 +67,7 @@ The second priority review batch has **300** distinct source-linked Matthew frag
 Files: `matthew-batch-02-300-voice-triage.v1.json`, `matthew-batch-02-47-meaning-checks.v1.json`, `matthew-batch-02-seven-comparison-leads.v1.json`, and [full contextual findings](MATTHEW_BATCH02_MEANING_AND_SPEAKER_AUDIT.md). The regression check is `tests/scripture-catena-matthew-batch-two.mjs`.
 
 **Cumulative first two batches:** **600 source excerpts** structurally screened, **73 AI-assisted semantic spot checks**, and **11** careful cross-commentary comparison leads. They are neither 600 certified Father-authored questions nor publication-ready English answers. This discovery pipeline never modifies the original Catena or produces Father speech.
+
+## Reader-first whole-book routing (21 October)
+
+A [source-linked catalogue and full-book priority queue](MATTHEW_READER_CATALOGUE_ACCELERATION_20261021.md) now aggregates 192 distinct existing AI-reviewed passage pointers, 31 overlapping comparison leads and all 4,633 remaining contextual-review pointers. **3,925 excerpts remain only mechanically indexed**; no new individual semantic reading is claimed. Human approval remains zero. Use `node scripts/scripture-catena-reader-routing.mjs` and `node tests/scripture-catena-reader-routing.mjs` to regenerate and validate the data.
