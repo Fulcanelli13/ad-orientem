@@ -75,7 +75,7 @@ try{
    const orig=URL.createObjectURL.bind(URL);
    URL.createObjectURL=blob=>{window.__exportBlob=blob;return orig(blob)};
   });
-  await page.locator('#export').click();
+  await page.locator('#exportTop').click();
   const data=await page.evaluate(async()=>window.__exportBlob?JSON.parse(await window.__exportBlob.text()):null);
   assert.equal(data.schema,'AO_SPX_P1_EIGHT_SOURCE_LOCKED_REVIEW_RATINGS_V1');
   assert.equal(data.ratings['SPX-035'].pacing,'4');
