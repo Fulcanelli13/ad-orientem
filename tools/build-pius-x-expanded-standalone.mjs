@@ -5,6 +5,7 @@
  */
 import assert from 'node:assert/strict';
 import {readFileSync,writeFileSync,mkdirSync} from 'node:fs';
+import {applyPiusEditorialReview} from './spx-p0-editorial-normalization.mjs';
 
 const root='previews/pius-x-study/';
 const load=name=>JSON.parse(readFileSync(root+name,'utf8'));
@@ -70,10 +71,12 @@ for(const c of chapters){
 // Unapproved archival content is classified before it reaches the speaker UI.
 assert.equal(Object.values(sourceClassCounts).reduce((a,b)=>a+b,0),82);
 assert.equal(sourceClassCounts.BIOGRAPHICAL_NARRATOR,9);
+const editorialReview=applyPiusEditorialReview(chapters,load('spx-p0-enriched-openings.v1.json'));
+assert(editorialReview.expandedOpenings===18);
 const payload={
  version:'SPX_82_CHAPTER_327_NODE_UNAPPROVED_LIBRARY_V1',
  counts:{chapters:82,regularNodes:291,dependentNodes:36,allNodes:327,
-   editorialBiographicalChapters:biographical,partialReviewChapters:partial,heldExternalRelated,sourceClassCounts},
+   editorialBiographicalChapters:biographical,partialReviewChapters:partial,heldExternalRelated,sourceClassCounts,editorialReview},
  originalOwner:'formation/1457-pius-x-conversation-evidence',
  contentStatus:'UNAPPROVED_SOURCE_BOUNDED_RECONSTRUCTION_NOT_PAPAL_TRANSCRIPT',
  approvals:{history:false,source:false,doctrine:false,english:false,french:false,voice:false,publishing:false},
@@ -97,4 +100,4 @@ mkdirSync('artifacts/pius-x-study-expanded',{recursive:true});
 const output='artifacts/pius-x-study-expanded/SPX_Study_Expanded_82.html';
 writeFileSync(output,result);
 console.log('PASS SPX_82_CHAPTER_OFFLINE_BUILD '+JSON.stringify({output,bytes:Buffer.byteLength(result),
- chapters:82,turnNodes:327,depth:36,biographical,partial,requests:0,published:0}));
+ chapters:82,turnNodes:327,depth:36,biographical,partial,editorialReview,requests:0,published:0}));
