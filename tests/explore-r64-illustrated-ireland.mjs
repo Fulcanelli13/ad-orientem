@@ -18,7 +18,7 @@ assert.ok(s.shrines.length>=216);
 assert.ok(s.pilgrimages.length>=206);
 assert.ok(geo.places.length>=220);
 assert.equal(featured.items.length,20);
-assert.equal(media.items.length,18);
+assert.equal(media.items.length,24,"Expanded verified sanctuary corpus includes original eighteen plus six new photos");
 assert.ok(EXPLORE_DATA_URLS.illustratedPlaceGuides.endsWith("/data/shrines/illustrated-place-guides-ireland.v1.json"));
 const ids=new Set(["place:IE:knock-shrine","place:IE:lough-derg-station-island"]);
 let count=0;
@@ -84,7 +84,9 @@ for(const id of ids){
  }
 }
 assert.ok(explorePlaceProfile(profiles,"place:IE:knock-shrine").media,"Knock retains licensed photo");
-assert.equal(explorePlaceProfile(profiles,"place:IE:lough-derg-station-island").media,null);
+assert.equal(explorePlaceProfile(profiles,"place:IE:lough-derg-station-island").media?.asset_path,
+ "assets/approved/place-media/IE-lough-derg-station-island.webp",
+ "Lough Derg now has a reviewed photo of the correct Station Island basilica");
 assert.ok(profiles.filter(p=>!guides.guides.some(g=>g.place_id===p.place_id)).every(p=>p.illustrated_guide===null));
 assert.ok(!JSON.stringify(guides.guides).includes("destinationes.com"),"No copying third-party guide text");
 console.log("PASS R64: two bilingual guides, 3 research holds, source-linked timelines/dates and approved-photo guard");
