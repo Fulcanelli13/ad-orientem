@@ -20,6 +20,12 @@ export const TODAY_V2_CSS = String.raw`/* Today v2 / uploaded 10 Oct sacred fron
 .aoTodayV2Art .aoPhase1HomeArt,.aoTodayV2Art .aoSaintArtCard{height:100%}
 .aoTodayV2Art:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(to bottom,rgba(8,12,18,.05),rgba(8,12,18,.16) 42%,rgba(8,12,18,.94))}
 .aoTodayV2ArtSource{width:100%;height:100%;overflow:hidden}.aoTodayV2ArtSource>img,.aoTodayV2ArtSource>picture,.aoTodayV2ArtSource>figure{width:100%;height:100%;object-fit:cover;display:block}
+/* Only the later curator-approved local painting is uncropped. Legacy Proper
+   photos keep their original layout; the complete painted surface must fit. */
+.aoTodayV2ArtSource>.aoApprovedFeastHero{margin:0;display:grid;grid-template-rows:minmax(0,1fr) auto;height:100%;width:100%;min-height:0;background:#080c12}
+.aoTodayV2Art .aoApprovedFeastHero>img{display:block;width:100%;height:100%!important;max-height:100%!important;min-height:0;object-fit:contain!important;object-position:center center!important}
+.aoTodayV2Art .aoApprovedFeastHero>figcaption{position:relative;z-index:1;max-height:48px;overflow:hidden;padding:8px 11px;background:#0a1119;color:#d3c9b7;font:500 11px/1.3 var(--ao-font-ui,system-ui,sans-serif)}
+.aoTodayV2Art .aoApprovedFeastHero>figcaption a{color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:2px}
 .aoTodayV2NoArt{height:100%;background:radial-gradient(ellipse at 50% 35%,var(--liturgical-soft,rgba(143,154,165,.1)),transparent 65%),var(--surface-1,#111924)}
 .aoTodayV2ArtOverlay{position:absolute;z-index:2;inset:18px 16px 18px;display:flex;flex-direction:column;justify-content:space-between;pointer-events:none}
 .aoTodayV2ArtOverlay .eyebrow{align-self:flex-start;color:var(--text,#eee9df);font-size:13px;letter-spacing:.12em;text-shadow:0 2px 8px #000}
