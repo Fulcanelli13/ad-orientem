@@ -127,6 +127,44 @@ export function retrieveCatenaMessages(rows,query,{limit=3,excludeIds=null}={}){
  }
  return picked;
 }
+/**
+ * A literal three-word phrase in a *single original attributed excerpt*
+ * is stronger navigational evidence than an otherwise broad theme bucket.
+ * This is strictly text matching, not editorial doctrinal interpretation.
+ */
+export function catenaHasExactSourcePhrase(rows,question){
+ if(!Array.isArray(rows)||typeof question!=="string")return false;
+ const wordList=question.toLowerCase().match(/[a-z]+/g)||[];
+ const content=new Set(catenaSearchTerms(question));
+ if(wordList.length<3||!content.size)return false;
+ const phrases=[];
+ for(let i=0;i<=wordList.length-3;i++){
+  const phrase=wordList.slice(i,i+3);
+  if(phrase.filter(word=>content.has(word)).length>=2)
+   phrases.push(" "+phrase.join(" ")+" ");
+ }
+ if(!phrases.length)return false;
+ return rows.some(r=>{
+  const normalized=" "+String(r.text||"").toLowerCase()
+   .replace(/[^a-z]+/g," ").replace(/ +/g," ").trim()+" ";
+  return phrases.some(phrase=>normalized.includes(phrase));
+ });
+}
+/**
+ * The actual source selector used for both the Messenger and the automated
+ * editorial acceptance fixtures. Related-topic retrieval is a fallback unless
+ * the question's exact multiword wording appears in the canonical extract.
+ */
+export function retrieveCatenaQuestionMatches(rows,question,{limit=4,excludeIds=null}={}){
+ if(catenaQuestionHasUnsupportedContext(question,rows))return [];
+ const literal=retrieveCatenaMessages(rows,question,{limit,excludeIds});
+ const topic=catenaRelatedTopic(question);
+ if(literal.length&&(!topic||catenaHasExactSourcePhrase(rows,question)))return literal;
+ const related=topic?retrieveCatenaRelatedMessages(rows,question,{limit,excludeIds}):[];
+ return related.length?related.map(hit=>Object.freeze({
+  ...hit.row,relatedSourceEvidence:hit.evidence
+ })):literal;
+}
 export function suggestCatenaTopics(rows,{limit=4}={}){
  const candidates=["Word","Beginning","Father","Creation","Eternal",
    "Kingdom","Faith","Mercy","Grace","Love","Prayer","Resurrection",
@@ -285,11 +323,7 @@ export function mountCatenaMessenger(host,pericopes,{language="en",fetcher=globa
    note("The question contains concepts not attested in this passage. No Father is being presented as answering it.");
    return;
   }
-  const topic=catenaRelatedTopic(query);
-  const related=topic?retrieveCatenaRelatedMessages(rows,query,{limit:4,excludeIds:seen}):[];
-  const matched=related.length?related.map(hit=>Object.freeze({
-    ...hit.row,relatedSourceEvidence:hit.evidence
-  })):retrieveCatenaMessages(rows,query,{limit:4,excludeIds:seen});
+  const matched=retrieveCatenaQuestionMatches(rows,query,{limit:4,excludeIds:seen});
   if(!matched.length){
    note("No verified matching source wording here. Searching other Gospel passages…");
    void searchElsewhere(query);return;
