@@ -94,3 +94,33 @@ actually had. It does not synthesize, paraphrase or translate patristic speech.
 Regression: \`node tests/scripture-catena-messenger.mjs\`.
 The existing comprehensive integrity test remains
 \`node tests/scripture-catena-corpus.mjs\`.
+
+
+### Four-Gospel concordance (source locators, not generated theology)
+
+The four files in \`data/scripture/catena/lexicon/\` are rebuilt from the 23
+integrity-pinned chapter packs by
+\`node tools/scripture/build-catena-global-lexicon.mjs\`.
+CI verifies byte-for-byte reproducibility with \`--check\`. The concordance
+contains all **814 pericope locators** and lexical postings derived from
+all **12,692 original attributed fragments**; it does **not** store or
+synthesize alternative patristic text.
+
+From a Living Catena thread, the user may search a question across all four
+Gospels. An unanswered local question triggers the broader search automatically;
+otherwise “Search all four Gospels” is an explicit expansion control.
+Each returned message is **reloaded from the original authenticated chapter
+pack** and carries an explicit “FROM ANOTHER PASSAGE” label, the actual Catena
+citation, author attribution and link to the original source. The pinned Gospel
+verse remains unchanged. Each search loads at most four small index files and
+only a bounded set of source chapter packs.
+
+This is vocabulary matching with source integrity, **not** semantic
+theological inference, impersonation or an AI-authored response. Searches
+can miss relevant writings whose wording differs from the query; no
+cross-Gospel comparison is asserted unless the exact source excerpt is
+available. Missing indexes or source packs produce an explicit incomplete
+results notice rather than fabricated texts. The French source alignment
+continues to be withheld.
+
+Regression: \`node tests/scripture-catena-global-search.mjs\`.
