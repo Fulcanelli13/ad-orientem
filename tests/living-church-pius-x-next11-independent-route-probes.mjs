@@ -14,19 +14,21 @@ const novel=read(owner+'data/learn/research/pius-x-next11-pre-evaluation-paraphr
 const catalog=read('data/learn/living-church-shared-question-routing-pilot.v1.json');
 const pointers=read('data/learn/living-church-pius-x-historical-passage-pointers.v1.json');
 const symbols=read('data/learn/living-church-symbolic-concepts.v1.json');
+const concepts=read('data/learn/living-church-pius-x-source-concept-facets.v1.json');
 assert.equal(catalog.topics.length,197);
 assert.equal(pointers.records.length,23);
 assert.equal(frozen.records.length,11);
 assert.equal(novel.records.length,11);
 const pointerMap=new Map(pointers.records.map(p=>[p.id,p]));
 const byNovel=new Map(novel.records.map(p=>[p.sourceRef,p]));
-const engines={shared:createSharedQuestionRouter(catalog,{historicalPointers:pointers}),
- hybrid:createHybridQuestionRouter(catalog,symbols,{historicalPointers:pointers})};
+const engineOptions={historicalPointers:pointers,sourceConceptRegistry:concepts};
+const engines={shared:createSharedQuestionRouter(catalog,engineOptions),
+ hybrid:createHybridQuestionRouter(catalog,symbols,engineOptions)};
 const candidates=r=>['source_navigation','offer_handoff'].includes(r.kind);
 const report={schema:'AO_SPX_NEXT11_SOURCE_ROUTER_EXPANSION_OBSERVED_V1',
  status:'EXECUTED_EDITORIAL_REGRESSION_NO_HISTORICAL_ANSWER_APPROVAL',
  sourceOwner:'PR #1458',routerOwner:'PR #1443',
- notIndependent:'Previously committed question variants and editor-authored paraphrases are not representative human usage; only the third was not in the catalog on the first evaluation.',
+ notIndependent:'Previously committed question variants and editor-authored paraphrases are an inspected regression set, not blind visitor data. New concept coverage is evaluated post inspection and MUST NOT be reported as fresh.',
  results:{},observations:[]};
 for(const [name,engine] of Object.entries(engines)){
  const counts={catalogCorrect:0,catalogMiss:0,novelCorrect:0,novelMiss:0,wrongSource:0,
