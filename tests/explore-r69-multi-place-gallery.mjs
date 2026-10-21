@@ -20,7 +20,7 @@ assert.equal(sources.schema,"AO_PLACE_GALLERY_ACQUISITION_R69_V1");
 assert.equal(registry.schema,"AO_APPROVED_PLACE_GALLERY_V1");
 assert.equal(sources.sources.length,4);
 assert.equal(registry.items.length,6);
-assert.equal(hero.items.length,18);
+assert.equal(hero.items.length,24);
 assert.ok(EXPLORE_DATA_URLS.approvedPlaceGallery.endsWith("/data/geography/approved-place-gallery.v1.json"));
 assert.equal(new Set(registry.items.map(x=>x.media_id)).size,6);
 assert.deepEqual([...new Set(registry.items.map(x=>x.place_id))].sort(),[
@@ -68,7 +68,7 @@ for(const placeId of new Set(registry.items.map(x=>x.place_id))){
  const profile=profiles.find(x=>x.place_id===placeId);
  assert.ok(profile&&profile.illustrated_guide);
  assert.equal(profile.gallery.length,images.length);
- assert.equal(Boolean(profile.media),placeId!=="place:FR:pontmain");
+ assert.equal(Boolean(profile.media),true,"All four gallery owners now also have their own approved exact-site hero photograph");
  for(const lang of ["en","fr"]){
   const html=renderExploreToString(buildExploreViewModel({
    language:lang,lens:"heritage",view:"map",items:projected.byLens.shrines,
@@ -93,4 +93,4 @@ for(const placeId of new Set(registry.items.map(x=>x.place_id))){
 }
 for(const p of profiles.filter(x=>!registry.items.some(img=>img.place_id===x.place_id)))
  assert.equal(p.gallery.length,0);
-console.log("PASS R69: 6 approved local gallery photographs over 4 physical Places, EN/FR UI, unchanged 18 heroes and 14 guides");
+console.log("PASS R69: 6 approved local gallery photographs over 4 physical Places, EN/FR UI, 24 independently approved heroes and original 14 guides");

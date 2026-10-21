@@ -22,7 +22,7 @@ assert.equal(gallery.schema,"AO_APPROVED_PLACE_GALLERY_V1");
 assert.equal(gallery.items.length,2);
 assert.equal(manifest.sources.length,2);
 assert.ok(EXPLORE_DATA_URLS.approvedPlaceGallery.endsWith("/data/geography/approved-place-gallery.v1.json"));
-assert.equal(hero.items.length,18,"Do not change the independent hero-photo publication total");
+assert.equal(hero.items.length,24,"Six separate shrine approvals retain the original Pontmain gallery");
 assert.equal(new Set(gallery.items.map(m=>m.media_id)).size,2);
 const named=new Map(manifest.sources.map(r=>[r.media_id,r]));
 for(const item of gallery.items){
@@ -72,7 +72,8 @@ assert.equal(profiles.filter(p=>p.gallery.length).length,1);
 const pont=profiles.find(p=>p.place_id==="place:FR:pontmain");
 assert.ok(pont.illustrated_guide);
 assert.equal(pont.gallery.length,2);
-assert.equal(pont.media,null);
+assert.equal(pont.media?.asset_path,"assets/approved/place-media/FR-pontmain-basilica-east.webp",
+ "Pontmain uses the exact same approved image as the original gallery photograph");
 for(const lang of ["en","fr"]){
  const html=renderExploreToString(buildExploreViewModel({
   language:lang,lens:"heritage",view:"map",items:projected.byLens.shrines,

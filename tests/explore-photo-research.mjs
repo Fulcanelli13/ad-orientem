@@ -26,23 +26,50 @@ assert.ok(editorialReview.needs_replacement.every(x=>r59.candidates.some(y=>y.pl
 assert.equal(research.schema,"AO_EXPLORE_PLACE_MEDIA_RESEARCH_V1");
 assert.equal(curated.schema,"AO_EXPLORE_MAJOR_PLACES_EDITORIAL_V1");
 assert.equal(approved.schema,"AO_APPROVED_PLACE_MEDIA_V1");
-assert.equal(approved.items.length,18,"Eight R59 replacements extend the original ten approved site photographs");
+const legacyIds=new Set([...editorialReview.approved,...editorialReview.needs_replacement].map(x=>x.place_id));
+assert.equal(legacyIds.size,18,"Original R58/R59 photo cohort must remain distinct and intact");
+assert.equal(approved.items.filter(x=>legacyIds.has(x.place_id)).length,18,
+ "The original ten plus eight replacement approved photographs must be preserved");
+assert.equal(approved.items.length,24,"Six additional independently reviewed exact-shrine photos must be approved");
+const shrineRecovery=read("data/geography/research/shrine-seven-photo-recovery-20261021.v1.json");
+const shrineCandidates=new Map(shrineRecovery.candidates.map(x=>[x.place_id,x]));
+const existingGallery=read("data/geography/approved-place-gallery.v1.json");
+const pontmain=existingGallery.items.find(x=>x.media_id==="pontmain-east-facade-2016");
 const approvedIds=new Set();
 for(const item of approved.items){
   assert.ok(!approvedIds.has(item.place_id));approvedIds.add(item.place_id);
   assert.equal(item.status,"APPROVED");
   assert.ok(item.rights_verified&&item.subject_verified&&item.crop_reviewed);
   assert.match(item.asset_path,/^assets\/approved\/place-media\/[a-zA-Z0-9_.-]+\.webp$/);
-  assert.equal(item.license,"CC-BY-SA-4.0");
-  assert.equal(item.license_url,"https://creativecommons.org/licenses/by-sa/4.0/");
+  assert.ok(["CC-BY-SA-2.0","CC-BY-SA-3.0","CC-BY-SA-4.0"].includes(item.license),
+    "Only independently confirmed freely reusable site photos may be published");
+  assert.equal(item.license_url,
+    "https://creativecommons.org/licenses/by-sa/"+item.license.split("-").at(-1)+"/");
+  if(legacyIds.has(item.place_id)){
+    assert.equal(item.license,"CC-BY-SA-4.0","Original cohort licence must never be loosened");
+  }
   assert.ok(item.source_sha1&&item.derivative_sha256);
   assert.ok(item.changes_en&&item.changes_fr&&item.alt_en&&item.alt_fr);
   assert.ok(Number(item.width)>=640&&Number(item.height)>=480);
   assert.equal(item.orientation,item.height>item.width?"portrait":"landscape");
   const related=research.candidates.find(row=>row.place_id===item.place_id);
   const upgraded=r59.candidates.find(row=>row.place_id===item.place_id);
-  assert.equal(item.source_url,upgraded?.source_page_url||related?.source_page_url,
-    "Approved image must match an exact verified Commons site source");
+  if(legacyIds.has(item.place_id)){
+    assert.equal(item.source_url,upgraded?.source_page_url||related?.source_page_url,
+      "Historical approved image must match its exact original R58/R59 Commons source");
+  }else if(item.place_id==="place:FR:pontmain"){
+    assert.equal(item.source_url,pontmain?.source_url,
+      "Pontmain hero is reused from an independently approved and site-matched gallery image");
+    assert.equal(item.derivative_sha256,pontmain?.derivative_sha256,
+      "Pontmain hero and gallery must have identical source-reviewed photograph bytes");
+  }else{
+    const c=shrineCandidates.get(item.place_id);
+    assert.ok(c&&c.image_review_state==="EDITORIALLY_ACCEPTED_EXACT_SITE_AND_FULL_FRAME_20261021",
+      "New shrine photo lacks exact-source and visual approval");
+    assert.equal(item.source_url,c.source_url);
+    assert.equal(item.credit,c.credit);
+    assert.equal(item.license,c.license);
+  }
   const asset=readFileSync(item.asset_path);
   assert.ok(asset.length>50000,"Approved file must contain image bytes");
   assert.equal(asset.toString("ascii",0,4),"RIFF","Optimized asset must be WebP");

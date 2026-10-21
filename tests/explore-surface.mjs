@@ -848,7 +848,7 @@ await import("./explore-first-load-recovery.mjs");
 
 const mediaRegistry=readJson("data/geography/approved-place-media.v1.json");
 assert.equal(mediaRegistry.schema,"AO_APPROVED_PLACE_MEDIA_V1");
-assert.equal(mediaRegistry.items.length,18,"Exactly eighteen reviewed physical-site photographs should be published");
+assert.equal(mediaRegistry.items.length,24,"All twenty-four independently approved physical-site photographs should be published");
 const mediaFixture={
   place_id:"place:FR:lourdes",status:"APPROVED",asset_path:"assets/places/lourdes.webp",
   source_url:"https://example.org/photograph",credit:"Photographer Name",license:"CC-BY-4.0",
@@ -861,6 +861,22 @@ const mediaFixture={
 const realMedia=readJson("data/geography/approved-place-media.v1.json");
 const reviewedProfiles=buildExplorePlaceProfiles({...dataset,media:{approved:realMedia.items}},projection);
 const reviewedLourdes=reviewedProfiles.find(p=>p.place_id==="place:FR:sanctuaire-notre-dame-de-lourdes");
+for(const [placeId,filename,license] of [
+ ["place:FR:pontmain","FR-pontmain-basilica-east.webp","CC-BY-SA-4.0"],
+ ["place:FR:sanctuaire-notre-dame-de-laghet","FR-sanctuaire-notre-dame-de-laghet.webp","CC-BY-SA-3.0"],
+ ["place:FR:sanctuary-of-our-lady-of-rocamadour","FR-sanctuary-of-our-lady-of-rocamadour.webp","CC-BY-SA-4.0"],
+ ["place:IE:lough-derg-station-island","IE-lough-derg-station-island.webp","CC-BY-SA-4.0"],
+ ["place:IE:croagh-patrick-murrisk-pilgrimage-base","IE-croagh-patrick-murrisk-pilgrimage-base.webp","CC-BY-SA-2.0"],
+ ["place:IE:st-peters-oliver-plunkett-drogheda","IE-st-peters-oliver-plunkett-drogheda.webp","CC-BY-SA-3.0"],
+]){
+ const profile=reviewedProfiles.find(p=>p.place_id===placeId);
+ assert.equal(profile?.media?.asset_path,"assets/approved/place-media/"+filename,
+   "Exact shrine must own approved local site image, not an unrelated site: "+placeId);
+ assert.equal(profile?.media?.license,license,
+   "Original photographer's licence must remain visible: "+placeId);
+}
+assert.equal(reviewedProfiles.find(p=>p.place_id==="place:IE:solas-bhride-kildare")?.media,null,
+ "No unverified nearby Brigid image may substitute for the actual Solas Bhride Centre");
 assert.equal(reviewedLourdes?.media?.license,"CC-BY-SA-4.0","Exact Place should expose screened photograph");
 assert.match(reviewedLourdes.media.asset_path,/^assets\/approved\/place-media\//);
 assert.ok(reviewedProfiles.find(p=>p.place_id==="place:FR:chartres-notre-dame")?.media,
