@@ -26,8 +26,10 @@ const recoveredGuides=(await Promise.all(previouslyPublished.map(async f=>
  JSON.parse(await readFile(resolve(root,f),"utf8")).guides)))
  .flat().filter(g=>illustratedRecoveryIds.has(g.place_id));
 assert.equal(recoveredGuides.length,6,"Each recovered photo must retain its original published guide");
-const corpus=[...newGuides,...recoveredGuides];
-assert.equal(corpus.length,17,"Eleven first-batch guides plus six recovered existing folios");
+const batchB2=JSON.parse(await readFile(resolve(root,"data/shrines/illustrated-place-guides-global-marian-b2.v1.json"),"utf8")).guides;
+assert.equal(batchB2.length,8);
+const corpus=[...newGuides,...recoveredGuides,...batchB2];
+assert.equal(corpus.length,25,"17 existing illustrated folios and eight new substantial Marian guides");
 const photos=JSON.parse(await readFile(resolve(root,"data/geography/approved-place-media.v1.json"),"utf8")).items;
 const byPlace=new Map(photos.map(x=>[x.place_id,x]));
 const mime={".html":"text/html; charset=utf-8",".js":"text/javascript; charset=utf-8",
@@ -75,13 +77,17 @@ try{
    const full=page.locator('#ao-find-modular-root .aoExplorePlaceSheet[data-explore-place-owner="'+g.place_id+'"]');
    await full.waitFor({state:"visible",timeout:15000});
    const img=full.locator(".aoExplorePlaceMedia img");
-   await img.waitFor({state:"visible"});
-   await page.waitForFunction(({id})=>{
-    const image=document.querySelector('#ao-find-modular-root .aoExplorePlaceSheet[data-explore-place-owner="'+id+'"] .aoExplorePlaceMedia img');
-    return image?.complete&&image.naturalWidth>0;
-   },{id:g.place_id},{timeout:10000});
-   const src=await img.getAttribute("src");
-   assert.equal(src,byPlace.get(g.place_id).asset_path,g.place_id+" uses wrong photograph");
+   if(byPlace.has(g.place_id)){
+    await img.waitFor({state:"visible"});
+    await page.waitForFunction(({id})=>{
+     const image=document.querySelector('#ao-find-modular-root .aoExplorePlaceSheet[data-explore-place-owner="'+id+'"] .aoExplorePlaceMedia img');
+     return image?.complete&&image.naturalWidth>0;
+    },{id:g.place_id},{timeout:10000});
+    const src=await img.getAttribute("src");
+    assert.equal(src,byPlace.get(g.place_id).asset_path,g.place_id+" uses wrong photograph");
+   }else{
+    assert.equal(await img.count(),0,"No borrowed/unlicensed image may appear on "+g.place_id);
+   }
    const guide=full.locator(".aoExploreIllustratedGuide");
    assert.equal(await guide.count(),1,g.place_id+" lacks the detailed guide");
    assert.ok(await guide.locator(".aoExploreStoryEvidence a[href^='https://']").count()>=3,g.place_id+" lacks original sources");
@@ -99,7 +105,7 @@ try{
     return {content:el.scrollWidth,frame:el.clientWidth,offenders};
    });
    assert.ok(overflow.content<=overflow.frame+2,g.place_id+" horizontal overflow "+JSON.stringify(overflow));
-   if([0,3,6,8,10,11,12,13,14,15,16].includes(index)){
+   if([0,3,6,8,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24].includes(index)){
     const safe=g.place_id.replace(/[^a-z0-9]+/gi,"-");
     await page.screenshot({path:resolve(out,width+"-"+safe+".png"),fullPage:false});
    }
@@ -107,7 +113,7 @@ try{
   assert.deepEqual(errors,[],"Browser JavaScript errors at "+width);
   await context.close();
  }
- console.log("PASS: 17 real Place folios × 2 phone widths; all approved photos load with canonical ID, bilingual guide and source evidence.");
+ console.log("PASS: 25 real Place folios × 2 phone widths: 17 existing photo-backed and eight new bilingual-source guides without borrowed artwork.");
 }finally{
  if(browser)await browser.close();
  await new Promise(done=>server.close(done));
