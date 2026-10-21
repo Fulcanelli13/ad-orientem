@@ -1,0 +1,2651 @@
+{
+  "schema": "AO_SACRED_ART_HERO_FIRST_SUNDAYS_FEASTS_MASTER_V1",
+  "asOf": "2026-10-21",
+  "year": 2026,
+  "ownerPR": 887,
+  "status": "RESEARCH_ONLY_COVERAGE_AUDIT_NOT_FRONTEND_OR_HUMAN_SELECTION",
+  "governingPriority": [
+    "P0_HOME_HERO_MASTERPIECES_FIRST",
+    "P1_EVERY_MAJOR_FEAST_AND_EVERY_SUNDAY_EXPLICITLY_COVERED",
+    "P2_SOURCE_PHOTO_RIGHTS_MOBILE_RELEASE_AND_DAYRESOLVER_HOOKUP",
+    "P3_OPTIONAL_OTHER_SAINTS_AND_HISTORIA_ACQUISITION_PAUSED"
+  ],
+  "authority": "Explicit user Oct 21 2026 reprioritisation overrides earlier quantity-driven W101/W102 expansion and any 'all 75 saint subjects' acquisition targets, not previously approved original art.",
+  "noOverwrite": [
+    "All original human score/rejection files retained",
+    "All historical selected subject artworks remain immutable",
+    "Class-I selections approved on May23 Pentecost Vigil and May27 Ember Wednesday must be preserved",
+    "No El Greco or Fra Angelico reintroduction"
+  ],
+  "counts": {
+    "sundays2026": 52,
+    "classIDates": 53,
+    "majorOptionalNonClassIDates": 17,
+    "classIThemeStatuses": {
+      "STRONG_EXISTING_APPROPRIATE": 9,
+      "EXISTING_PAINTING_ONLY_CONDITIONAL": 8,
+      "STRONG_CONTEXTUAL_REUSE": 3,
+      "NO_SUITABLE_PHONE_HERO_IDENTIFIED": 6,
+      "SEPARATE_ARCHIVED_REVIEW_ORIGINAL": 1
+    },
+    "classIDateStatuses": {
+      "STRONG_EXISTING_APPROPRIATE": 14,
+      "EXISTING_PAINTING_ONLY_CONDITIONAL": 19,
+      "STRONG_CONTEXTUAL_REUSE": 6,
+      "NO_SUITABLE_PHONE_HERO_IDENTIFIED": 13,
+      "SEPARATE_ARCHIVED_REVIEW_ORIGINAL": 1
+    },
+    "olderExactResearchLinkedClassIDates": 21,
+    "olderWithoutExactResearchLinks": 32,
+    "SundayGospelOriginalResearchDates": 29,
+    "SundayGospelResearchRows": 32,
+    "unresolvedExactSundayScene": "2026-07-05 Mark 8:1–9 feeding of FOUR thousand (not five thousand)",
+    "verifiedHomepagePublishedCountFromTheseFiles": 0
+  },
+  "coverageSemantics": {
+    "sourceLink": "Institutional/thematic research only, never published",
+    "heroAssigned": "Canonical physical artwork deliberately assigned to a date or group of dates with correct iconography",
+    "published": "Full image/photo rights, aesthetic approval, image dimensions, mobile fit and deployed frontend asset confirmed separately",
+    "SundayGuarantee": "All 52 Sundays have an accountable hero mapping, not necessarily 52 different paintings",
+    "principalAlwaysFrom": "1962 DayResolver, never date-only fixed saint label",
+    "caption": "Caption must depict actual art, not falsely imply Sunday Gospel",
+    "feastHoldRule": "An excellent painting may persist for weeks if it remains liturgically appropriate; do not rotate to weak art just to mark a Sunday"
+  },
+  "heroPriorityTargets": [
+    {
+      "topic": "Holy Thursday / Institution of Eucharist",
+      "priority": "P0_CRITICAL",
+      "baseline": "NO_SUITABLE_PHONE_HERO_IDENTIFIED",
+      "action": "Prioritize user-selected Champaigne La Petite Cène, prove exact original and rights; consider alternative great Baroque Last Supper"
+    },
+    {
+      "topic": "Pentecost including May23 Vigil and Octave",
+      "priority": "P0_CRITICAL",
+      "baseline": "NO_SUITABLE_PHONE_HERO_IDENTIFIED",
+      "action": "Honor newer user-approved May 23 Maíno, previously Restout approved; distinguish Vigil, Sunday, May27 Eucharistic Ember Wednesday associations"
+    },
+    {
+      "topic": "Palm Sunday / Entry into Jerusalem",
+      "priority": "P0_CRITICAL",
+      "baseline": "NO_SUITABLE_PHONE_HERO_IDENTIFIED",
+      "action": "Replace inadequate early-style source lead by exceptional whole-painting alternative; keep Passion Gospel and procession subjects distinct"
+    },
+    {
+      "topic": "Sacred Heart",
+      "priority": "P0_CRITICAL",
+      "baseline": "NO_SUITABLE_PHONE_HERO_IDENTIFIED",
+      "action": "Select strong authentic Catholic iconography and clear photo rights; no generic Christ portrait mislabelled"
+    },
+    {
+      "topic": "All Saints",
+      "priority": "P0_CRITICAL",
+      "baseline": "NO_SUITABLE_PHONE_HERO_IDENTIFIED",
+      "action": "Inspect Rubens or equivalent magnificent assembly; distinguish from Last Judgment and All Souls"
+    },
+    {
+      "topic": "Christ the King",
+      "priority": "P0_CRITICAL",
+      "baseline": "NO_SUITABLE_PHONE_HERO_IDENTIFIED",
+      "action": "Seek genuinely great regal Christ or properly captioned kingship context; not generic Last Judgment falsely named Christ the King"
+    },
+    {
+      "topic": "Easter / Resurrection",
+      "priority": "P0_HIGH",
+      "baseline": "EXISTING_PAINTING_ONLY_CONDITIONAL",
+      "action": "Reconcile historical user-selected Rubens and actual object/photo and impressive phone framing"
+    },
+    {
+      "topic": "Ascension",
+      "priority": "P0_HIGH",
+      "baseline": "EXISTING_PAINTING_ONLY_CONDITIONAL",
+      "action": "Assess approved Artus Wolffort and superior candidates at mobile size"
+    },
+    {
+      "topic": "Epiphany, Assumption, Good Friday, Trinity, Corpus Christi",
+      "priority": "P0_HIGH",
+      "baseline": "MIXED_EXISTING_CONDITIONAL_CONTEXTUAL_ARCHIVED",
+      "action": "Prioritize existing protected originals first, then rights/mobile criteria and truthful depiction"
+    },
+    {
+      "topic": "Every 1962 Sunday throughout the year",
+      "priority": "P1_REQUIRED",
+      "baseline": "NOT_AUDITED_FOR_RELEASE",
+      "action": "Resolve all 52 actual observed Sundays, Gospel and feast precedence and attach an artistic hero or purposeful fallback"
+    },
+    {
+      "topic": "Major Class II feasts",
+      "priority": "P1_REQUIRED",
+      "baseline": "17 optional major themes in 2026 occasion list need DayResolver checking",
+      "action": "Explicitly include Candlemas, Holy Family, Baptism, Visitation, Transfiguration, Rosary, Seven Sorrows, Holy Cross, Holy Innocents and significant patrons, subject to principal-day truth"
+    }
+  ],
+  "protectedResearchLane": {
+    "W101": "PARKED; 12 researched Bible museum originals remain in branch",
+    "W102": "PARKED; 23 museum leads and 8 acquired photos remain as evidence, do not continue as default",
+    "scope": "No further Doctors, Apostles, biblical minor-character research until P0/P1 gates are satisfied"
+  },
+  "heroInitialCatalogue": {
+    "themes": [
+      {
+        "id": "nativity",
+        "title": "Nativity and Christmastide",
+        "reviewStatus": "NOT_STARTED"
+      },
+      {
+        "id": "epiphany",
+        "title": "Epiphany / Adoration of the Magi",
+        "reviewStatus": "NOT_STARTED"
+      },
+      {
+        "id": "presentation",
+        "title": "Presentation in the Temple / Candlemas",
+        "reviewStatus": "NOT_STARTED"
+      },
+      {
+        "id": "lent",
+        "title": "Lent, penitence and Christ in the wilderness",
+        "reviewStatus": "NOT_STARTED"
+      },
+      {
+        "id": "saint-joseph",
+        "title": "Saint Joseph",
+        "reviewStatus": "NOT_STARTED"
+      },
+      {
+        "id": "annunciation",
+        "title": "Annunciation",
+        "reviewStatus": "NOT_STARTED"
+      },
+      {
+        "id": "passion-palm",
+        "title": "Passiontide and Palm Sunday",
+        "reviewStatus": "NOT_STARTED"
+      },
+      {
+        "id": "holy-thursday",
+        "title": "Holy Thursday / Last Supper",
+        "reviewStatus": "NOT_STARTED"
+      },
+      {
+        "id": "crucifixion",
+        "title": "Crucifixion / Precious Blood / Exaltation",
+        "reviewStatus": "NOT_STARTED"
+      },
+      {
+        "id": "resurrection",
+        "title": "Resurrection and the Easter Octave",
+        "reviewStatus": "NOT_STARTED"
+      },
+      {
+        "id": "ascension",
+        "title": "Ascension",
+        "reviewStatus": "NOT_STARTED"
+      },
+      {
+        "id": "pentecost",
+        "title": "Pentecost and its Octave",
+        "reviewStatus": "NOT_STARTED"
+      },
+      {
+        "id": "trinity",
+        "title": "Holy Trinity",
+        "reviewStatus": "NOT_STARTED"
+      },
+      {
+        "id": "corpus-christi",
+        "title": "Corpus Christi / Eucharist",
+        "reviewStatus": "NOT_STARTED"
+      },
+      {
+        "id": "sacred-heart",
+        "title": "Sacred Heart",
+        "reviewStatus": "NOT_STARTED"
+      },
+      {
+        "id": "nativity-john-baptist",
+        "title": "Saint John the Baptist",
+        "reviewStatus": "NOT_STARTED"
+      },
+      {
+        "id": "peter-and-paul",
+        "title": "Saints Peter and Paul",
+        "reviewStatus": "NOT_STARTED"
+      },
+      {
+        "id": "assumption",
+        "title": "Assumption of the BVM",
+        "reviewStatus": "NOT_STARTED"
+      },
+      {
+        "id": "immaculate-conception",
+        "title": "Immaculate Conception",
+        "reviewStatus": "NOT_STARTED"
+      },
+      {
+        "id": "saint-michael",
+        "title": "Saint Michael",
+        "reviewStatus": "NOT_STARTED"
+      },
+      {
+        "id": "christ-king",
+        "title": "Christ the King",
+        "reviewStatus": "NOT_STARTED"
+      },
+      {
+        "id": "saints-and-souls",
+        "title": "All Saints / All Souls",
+        "reviewStatus": "NOT_STARTED"
+      },
+      {
+        "id": "advent",
+        "title": "Advent",
+        "reviewStatus": "NOT_STARTED"
+      },
+      {
+        "id": "rosary",
+        "title": "Our Lady of the Rosary",
+        "reviewStatus": "NOT_STARTED"
+      },
+      {
+        "id": "apostles-and-evangelists",
+        "title": "Apostles and four Evangelists — masterworks shared across multiple feasts",
+        "reviewStatus": "NOT_STARTED"
+      },
+      {
+        "id": "mystics-and-spiritual-doctors",
+        "title": "Great mystics and spiritual saints — exceptional paintings only",
+        "reviewStatus": "NOT_STARTED"
+      }
+    ],
+    "historicalAnchorResearchThemes": 23,
+    "existingHeroProductionReadyFromAnchorResearch": 0
+  },
+  "outstandingAllMajorFeastCoverage": {
+    "everyClassIDateCapturedInThisResearchMatrix": true,
+    "selectedClassIIDayResolverAccurate": false,
+    "localProfileMajorFeastsAudited": false
+  },
+  "sundayRows": [
+    {
+      "date2026": "2026-01-04",
+      "knownClassIPrincipalId": null,
+      "knownClassIPrincipalTitle": null,
+      "full1962PrincipalDayResolverChecked": false,
+      "liturgicalGospelReference": null,
+      "heroTheme": null,
+      "candidateResearch": [
+        {
+          "source": "sunday-phase2",
+          "title": "The Circumcision of Christ",
+          "artist": "Guercino",
+          "relation": "EXACT_APPOINTED_GOSPEL_EPISODE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Guercino%20Circoncisione.jpg"
+        }
+      ],
+      "contextualReuseResearch": [],
+      "sourceLeadCount": 1,
+      "artworkAssignedForHomepage": null,
+      "actualVisibleProductionHeroVerified": false,
+      "editorialNextStep": "RESOLVE_1962_SUNDAY_GOSPEL_AND_ASSIGN_HERO",
+      "fallbacksAllowed": [
+        "SAME_FEAST_SUBJECT",
+        "GOSPEL_SCENE",
+        "TRUTHFUL_SEASONAL_IMAGE",
+        "PREVIOUS_APPROVED_HERO_IF_SEASONALLY_COMPATIBLE"
+      ],
+      "noFalseAttribution": true
+    },
+    {
+      "date2026": "2026-01-11",
+      "knownClassIPrincipalId": null,
+      "knownClassIPrincipalTitle": null,
+      "full1962PrincipalDayResolverChecked": false,
+      "liturgicalGospelReference": null,
+      "heroTheme": null,
+      "candidateResearch": [],
+      "contextualReuseResearch": [],
+      "sourceLeadCount": 0,
+      "artworkAssignedForHomepage": null,
+      "actualVisibleProductionHeroVerified": false,
+      "editorialNextStep": "RESOLVE_1962_SUNDAY_GOSPEL_AND_ASSIGN_HERO",
+      "fallbacksAllowed": [
+        "SAME_FEAST_SUBJECT",
+        "GOSPEL_SCENE",
+        "TRUTHFUL_SEASONAL_IMAGE",
+        "PREVIOUS_APPROVED_HERO_IF_SEASONALLY_COMPATIBLE"
+      ],
+      "noFalseAttribution": true
+    },
+    {
+      "date2026": "2026-01-18",
+      "knownClassIPrincipalId": null,
+      "knownClassIPrincipalTitle": null,
+      "full1962PrincipalDayResolverChecked": false,
+      "liturgicalGospelReference": null,
+      "heroTheme": null,
+      "candidateResearch": [],
+      "contextualReuseResearch": [],
+      "sourceLeadCount": 0,
+      "artworkAssignedForHomepage": null,
+      "actualVisibleProductionHeroVerified": false,
+      "editorialNextStep": "RESOLVE_1962_SUNDAY_GOSPEL_AND_ASSIGN_HERO",
+      "fallbacksAllowed": [
+        "SAME_FEAST_SUBJECT",
+        "GOSPEL_SCENE",
+        "TRUTHFUL_SEASONAL_IMAGE",
+        "PREVIOUS_APPROVED_HERO_IF_SEASONALLY_COMPATIBLE"
+      ],
+      "noFalseAttribution": true
+    },
+    {
+      "date2026": "2026-01-25",
+      "knownClassIPrincipalId": null,
+      "knownClassIPrincipalTitle": null,
+      "full1962PrincipalDayResolverChecked": false,
+      "liturgicalGospelReference": null,
+      "heroTheme": null,
+      "candidateResearch": [
+        {
+          "source": "sunday-phase1",
+          "title": "Christ and the Centurion",
+          "artist": "Paolo Veronese",
+          "relation": "DEPICTS_APPOINTED_GOSPEL_SCENE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Christ%20and%20the%20Centurion%20.jpg"
+        }
+      ],
+      "contextualReuseResearch": [],
+      "sourceLeadCount": 1,
+      "artworkAssignedForHomepage": null,
+      "actualVisibleProductionHeroVerified": false,
+      "editorialNextStep": "RESOLVE_1962_SUNDAY_GOSPEL_AND_ASSIGN_HERO",
+      "fallbacksAllowed": [
+        "SAME_FEAST_SUBJECT",
+        "GOSPEL_SCENE",
+        "TRUTHFUL_SEASONAL_IMAGE",
+        "PREVIOUS_APPROVED_HERO_IF_SEASONALLY_COMPATIBLE"
+      ],
+      "noFalseAttribution": true
+    },
+    {
+      "date2026": "2026-02-01",
+      "knownClassIPrincipalId": null,
+      "knownClassIPrincipalTitle": null,
+      "full1962PrincipalDayResolverChecked": false,
+      "liturgicalGospelReference": null,
+      "heroTheme": null,
+      "candidateResearch": [
+        {
+          "source": "sunday-phase1",
+          "title": "Parable of the Laborers in the Vineyard",
+          "artist": "Rembrandt van Rijn",
+          "relation": "DEPICTS_APPOINTED_GOSPEL_SCENE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rembrandt%20-%20Parable%20of%20the%20Laborers%20in%20the%20Vineyard.jpg"
+        },
+        {
+          "source": "sunday-phase1",
+          "title": "Parable of the Workers in the Vineyard",
+          "artist": "Salomon Koninck",
+          "relation": "DEPICTS_APPOINTED_GOSPEL_SCENE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Salomon%20Koninck%20-%20Parable%20of%20the%20Workers%20in%20the%20Vineyard%20-%20WGA12249.jpg"
+        }
+      ],
+      "contextualReuseResearch": [],
+      "sourceLeadCount": 2,
+      "artworkAssignedForHomepage": null,
+      "actualVisibleProductionHeroVerified": false,
+      "editorialNextStep": "RESOLVE_1962_SUNDAY_GOSPEL_AND_ASSIGN_HERO",
+      "fallbacksAllowed": [
+        "SAME_FEAST_SUBJECT",
+        "GOSPEL_SCENE",
+        "TRUTHFUL_SEASONAL_IMAGE",
+        "PREVIOUS_APPROVED_HERO_IF_SEASONALLY_COMPATIBLE"
+      ],
+      "noFalseAttribution": true
+    },
+    {
+      "date2026": "2026-02-08",
+      "knownClassIPrincipalId": null,
+      "knownClassIPrincipalTitle": null,
+      "full1962PrincipalDayResolverChecked": false,
+      "liturgicalGospelReference": null,
+      "heroTheme": null,
+      "candidateResearch": [
+        {
+          "source": "sunday-phase1",
+          "title": "Landscape with the Parable of the Sower",
+          "artist": "Pieter Bruegel the Elder",
+          "relation": "DEPICTS_APPOINTED_GOSPEL_SCENE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pieter%20Bruegel%20the%20Elder%20-%20Landscape%20with%20the%20Parable%20of%20the%20Sower%20-%20WGA03340.jpg"
+        }
+      ],
+      "contextualReuseResearch": [],
+      "sourceLeadCount": 1,
+      "artworkAssignedForHomepage": null,
+      "actualVisibleProductionHeroVerified": false,
+      "editorialNextStep": "RESOLVE_1962_SUNDAY_GOSPEL_AND_ASSIGN_HERO",
+      "fallbacksAllowed": [
+        "SAME_FEAST_SUBJECT",
+        "GOSPEL_SCENE",
+        "TRUTHFUL_SEASONAL_IMAGE",
+        "PREVIOUS_APPROVED_HERO_IF_SEASONALLY_COMPATIBLE"
+      ],
+      "noFalseAttribution": true
+    },
+    {
+      "date2026": "2026-02-15",
+      "knownClassIPrincipalId": null,
+      "knownClassIPrincipalTitle": null,
+      "full1962PrincipalDayResolverChecked": false,
+      "liturgicalGospelReference": null,
+      "heroTheme": null,
+      "candidateResearch": [
+        {
+          "source": "sunday-phase3",
+          "title": "Healing of the Blind Man of Jericho (Triptych)",
+          "artist": "Lucas van Leyden",
+          "relation": "DEPICTS_APPOINTED_GOSPEL_EPISODE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Leyden%2C_Lucas_van_%E2%80%94_Healing_of_Blind_Man_of_Jericho_(triptych)_%E2%80%94_Hermitage_Museum%2C_%D0%93%D0%AD-407.jpg"
+        }
+      ],
+      "contextualReuseResearch": [],
+      "sourceLeadCount": 1,
+      "artworkAssignedForHomepage": null,
+      "actualVisibleProductionHeroVerified": false,
+      "editorialNextStep": "RESOLVE_1962_SUNDAY_GOSPEL_AND_ASSIGN_HERO",
+      "fallbacksAllowed": [
+        "SAME_FEAST_SUBJECT",
+        "GOSPEL_SCENE",
+        "TRUTHFUL_SEASONAL_IMAGE",
+        "PREVIOUS_APPROVED_HERO_IF_SEASONALLY_COMPATIBLE"
+      ],
+      "noFalseAttribution": true
+    },
+    {
+      "date2026": "2026-02-22",
+      "knownClassIPrincipalId": "tempora:Quad1-0:1:v",
+      "knownClassIPrincipalTitle": "I Sunday of Lent",
+      "full1962PrincipalDayResolverChecked": true,
+      "liturgicalGospelReference": null,
+      "heroTheme": "lent",
+      "candidateResearch": [
+        {
+          "source": "sunday-phase2",
+          "title": "The Temptation of Christ",
+          "artist": "Juan de Flandes",
+          "relation": "EXACT_APPOINTED_GOSPEL_EPISODE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Juan%20de%20Flandes%2C%20The%20Temptation%20of%20Christ%2C%20c.%201500-1504%2C%20NGA%2050726.jpg"
+        }
+      ],
+      "contextualReuseResearch": [],
+      "sourceLeadCount": 1,
+      "artworkAssignedForHomepage": null,
+      "actualVisibleProductionHeroVerified": false,
+      "editorialNextStep": "CONFIRM_MOBILE_MASTERPIECE_FOR_CLASS_I",
+      "fallbacksAllowed": [
+        "SAME_FEAST_SUBJECT",
+        "GOSPEL_SCENE",
+        "TRUTHFUL_SEASONAL_IMAGE",
+        "PREVIOUS_APPROVED_HERO_IF_SEASONALLY_COMPATIBLE"
+      ],
+      "noFalseAttribution": true
+    },
+    {
+      "date2026": "2026-03-01",
+      "knownClassIPrincipalId": "tempora:Quad2-0:1:v",
+      "knownClassIPrincipalTitle": "II Sunday of Lent",
+      "full1962PrincipalDayResolverChecked": true,
+      "liturgicalGospelReference": null,
+      "heroTheme": "lent",
+      "candidateResearch": [
+        {
+          "source": "sunday-phase1",
+          "title": "Transfiguration",
+          "artist": "Raphael",
+          "relation": "DEPICTS_APPOINTED_GOSPEL_SCENE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Transfiguration%20Raphael.jpg"
+        }
+      ],
+      "contextualReuseResearch": [],
+      "sourceLeadCount": 1,
+      "artworkAssignedForHomepage": null,
+      "actualVisibleProductionHeroVerified": false,
+      "editorialNextStep": "CONFIRM_MOBILE_MASTERPIECE_FOR_CLASS_I",
+      "fallbacksAllowed": [
+        "SAME_FEAST_SUBJECT",
+        "GOSPEL_SCENE",
+        "TRUTHFUL_SEASONAL_IMAGE",
+        "PREVIOUS_APPROVED_HERO_IF_SEASONALLY_COMPATIBLE"
+      ],
+      "noFalseAttribution": true
+    },
+    {
+      "date2026": "2026-03-08",
+      "knownClassIPrincipalId": "tempora:Quad3-0:1:v",
+      "knownClassIPrincipalTitle": "III Sunday of Lent",
+      "full1962PrincipalDayResolverChecked": true,
+      "liturgicalGospelReference": null,
+      "heroTheme": "lent",
+      "candidateResearch": [
+        {
+          "source": "sunday-phase1",
+          "title": "Jesus Heals a Mute Possessed Man",
+          "artist": "James Tissot",
+          "relation": "DEPICTS_APPOINTED_GOSPEL_SCENE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Brooklyn%20Museum%20-%20Jesus%20Heals%20a%20Mute%20Possessed%20Man%20(J%C3%A9sus%20gu%C3%A9rit%20un%20poss%C3%A9d%C3%A9%20muet)%20-%20James%20Tissot.jpg"
+        }
+      ],
+      "contextualReuseResearch": [],
+      "sourceLeadCount": 1,
+      "artworkAssignedForHomepage": null,
+      "actualVisibleProductionHeroVerified": false,
+      "editorialNextStep": "CONFIRM_MOBILE_MASTERPIECE_FOR_CLASS_I",
+      "fallbacksAllowed": [
+        "SAME_FEAST_SUBJECT",
+        "GOSPEL_SCENE",
+        "TRUTHFUL_SEASONAL_IMAGE",
+        "PREVIOUS_APPROVED_HERO_IF_SEASONALLY_COMPATIBLE"
+      ],
+      "noFalseAttribution": true
+    },
+    {
+      "date2026": "2026-03-15",
+      "knownClassIPrincipalId": "tempora:Quad4-0:1:pv",
+      "knownClassIPrincipalTitle": "IV Sunday of Lent",
+      "full1962PrincipalDayResolverChecked": true,
+      "liturgicalGospelReference": null,
+      "heroTheme": "lent",
+      "candidateResearch": [],
+      "contextualReuseResearch": [],
+      "sourceLeadCount": 0,
+      "artworkAssignedForHomepage": null,
+      "actualVisibleProductionHeroVerified": false,
+      "editorialNextStep": "CONFIRM_MOBILE_MASTERPIECE_FOR_CLASS_I",
+      "fallbacksAllowed": [
+        "SAME_FEAST_SUBJECT",
+        "GOSPEL_SCENE",
+        "TRUTHFUL_SEASONAL_IMAGE",
+        "PREVIOUS_APPROVED_HERO_IF_SEASONALLY_COMPATIBLE"
+      ],
+      "noFalseAttribution": true
+    },
+    {
+      "date2026": "2026-03-22",
+      "knownClassIPrincipalId": "tempora:Quad5-0:1:v",
+      "knownClassIPrincipalTitle": "Passion Sunday",
+      "full1962PrincipalDayResolverChecked": true,
+      "liturgicalGospelReference": null,
+      "heroTheme": "passiontide",
+      "candidateResearch": [],
+      "contextualReuseResearch": [],
+      "sourceLeadCount": 0,
+      "artworkAssignedForHomepage": null,
+      "actualVisibleProductionHeroVerified": false,
+      "editorialNextStep": "CONFIRM_MOBILE_MASTERPIECE_FOR_CLASS_I",
+      "fallbacksAllowed": [
+        "SAME_FEAST_SUBJECT",
+        "GOSPEL_SCENE",
+        "TRUTHFUL_SEASONAL_IMAGE",
+        "PREVIOUS_APPROVED_HERO_IF_SEASONALLY_COMPATIBLE"
+      ],
+      "noFalseAttribution": true
+    },
+    {
+      "date2026": "2026-03-29",
+      "knownClassIPrincipalId": "tempora:Quad6-0r:1:rv",
+      "knownClassIPrincipalTitle": "Palm Sunday",
+      "full1962PrincipalDayResolverChecked": true,
+      "liturgicalGospelReference": null,
+      "heroTheme": "palm-sunday",
+      "candidateResearch": [
+        {
+          "source": "sunday-phase3",
+          "title": "Entry of Christ into Jerusalem",
+          "artist": "Domenico Cresti (il Passignano)",
+          "relation": "PALM_SUNDAY_PROCESSION_EVENT_NOT_APPOINTED_MASS_GOSPEL",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Domenico%20Cresti%20-%20il%20Passignano.%20Ingresso%20di%20Cristo%20in%20Gerusalemme.jpg"
+        },
+        {
+          "source": "sunday-phase3",
+          "title": "Christ's Entry into Jerusalem",
+          "artist": "Adriaen van Nieulandt the Younger",
+          "relation": "PALM_SUNDAY_PROCESSION_EVENT_NOT_APPOINTED_MASS_GOSPEL",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Adriaen%20van%20Nieulandt%20-%20Christ's%20Entry%20into%20Jerusalem%20-%20KMSsp256%20-%20Statens%20Museum%20for%20Kunst.jpg"
+        }
+      ],
+      "contextualReuseResearch": [],
+      "sourceLeadCount": 2,
+      "artworkAssignedForHomepage": null,
+      "actualVisibleProductionHeroVerified": false,
+      "editorialNextStep": "CONFIRM_MOBILE_MASTERPIECE_FOR_CLASS_I",
+      "fallbacksAllowed": [
+        "SAME_FEAST_SUBJECT",
+        "GOSPEL_SCENE",
+        "TRUTHFUL_SEASONAL_IMAGE",
+        "PREVIOUS_APPROVED_HERO_IF_SEASONALLY_COMPATIBLE"
+      ],
+      "noFalseAttribution": true
+    },
+    {
+      "date2026": "2026-04-05",
+      "knownClassIPrincipalId": "tempora:Pasc0-0:1:w",
+      "knownClassIPrincipalTitle": "Easter Sunday",
+      "full1962PrincipalDayResolverChecked": true,
+      "liturgicalGospelReference": null,
+      "heroTheme": "resurrection",
+      "candidateResearch": [
+        {
+          "source": "sunday-phase2",
+          "title": "The Three Marys at the Tomb",
+          "artist": "Jan and/or Hubert van Eyck",
+          "relation": "EXACT_APPOINTED_GOSPEL_EPISODE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hubert%20van%20Eyck%20-%20The%20Three%20Marys%20at%20the%20Tomb%20-%20WGA7586.jpg"
+        }
+      ],
+      "contextualReuseResearch": [],
+      "sourceLeadCount": 1,
+      "artworkAssignedForHomepage": null,
+      "actualVisibleProductionHeroVerified": false,
+      "editorialNextStep": "CONFIRM_MOBILE_MASTERPIECE_FOR_CLASS_I",
+      "fallbacksAllowed": [
+        "SAME_FEAST_SUBJECT",
+        "GOSPEL_SCENE",
+        "TRUTHFUL_SEASONAL_IMAGE",
+        "PREVIOUS_APPROVED_HERO_IF_SEASONALLY_COMPATIBLE"
+      ],
+      "noFalseAttribution": true
+    },
+    {
+      "date2026": "2026-04-12",
+      "knownClassIPrincipalId": "tempora:Pasc1-0:1:w",
+      "knownClassIPrincipalTitle": "Low Sunday",
+      "full1962PrincipalDayResolverChecked": true,
+      "liturgicalGospelReference": null,
+      "heroTheme": "resurrection",
+      "candidateResearch": [
+        {
+          "source": "sunday-phase1",
+          "title": "The Incredulity of Saint Thomas",
+          "artist": "Caravaggio",
+          "relation": "DEPICTS_APPOINTED_GOSPEL_SCENE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Caravaggio%20-%20The%20Incredulity%20of%20Saint%20Thomas.jpg"
+        }
+      ],
+      "contextualReuseResearch": [],
+      "sourceLeadCount": 1,
+      "artworkAssignedForHomepage": null,
+      "actualVisibleProductionHeroVerified": false,
+      "editorialNextStep": "CONFIRM_MOBILE_MASTERPIECE_FOR_CLASS_I",
+      "fallbacksAllowed": [
+        "SAME_FEAST_SUBJECT",
+        "GOSPEL_SCENE",
+        "TRUTHFUL_SEASONAL_IMAGE",
+        "PREVIOUS_APPROVED_HERO_IF_SEASONALLY_COMPATIBLE"
+      ],
+      "noFalseAttribution": true
+    },
+    {
+      "date2026": "2026-04-19",
+      "knownClassIPrincipalId": null,
+      "knownClassIPrincipalTitle": null,
+      "full1962PrincipalDayResolverChecked": false,
+      "liturgicalGospelReference": null,
+      "heroTheme": null,
+      "candidateResearch": [],
+      "contextualReuseResearch": [],
+      "sourceLeadCount": 0,
+      "artworkAssignedForHomepage": null,
+      "actualVisibleProductionHeroVerified": false,
+      "editorialNextStep": "RESOLVE_1962_SUNDAY_GOSPEL_AND_ASSIGN_HERO",
+      "fallbacksAllowed": [
+        "SAME_FEAST_SUBJECT",
+        "GOSPEL_SCENE",
+        "TRUTHFUL_SEASONAL_IMAGE",
+        "PREVIOUS_APPROVED_HERO_IF_SEASONALLY_COMPATIBLE"
+      ],
+      "noFalseAttribution": true
+    },
+    {
+      "date2026": "2026-04-26",
+      "knownClassIPrincipalId": null,
+      "knownClassIPrincipalTitle": null,
+      "full1962PrincipalDayResolverChecked": false,
+      "liturgicalGospelReference": null,
+      "heroTheme": null,
+      "candidateResearch": [],
+      "contextualReuseResearch": [
+        {
+          "artworkId": "nga-12130",
+          "relation": "FAREWELL_DISCOURSE_SETTING_CONTEXT_NOT_LITERAL_WORDS",
+          "title": "The Last Supper"
+        }
+      ],
+      "sourceLeadCount": 0,
+      "artworkAssignedForHomepage": null,
+      "actualVisibleProductionHeroVerified": false,
+      "editorialNextStep": "RESOLVE_1962_SUNDAY_GOSPEL_AND_ASSIGN_HERO",
+      "fallbacksAllowed": [
+        "SAME_FEAST_SUBJECT",
+        "GOSPEL_SCENE",
+        "TRUTHFUL_SEASONAL_IMAGE",
+        "PREVIOUS_APPROVED_HERO_IF_SEASONALLY_COMPATIBLE"
+      ],
+      "noFalseAttribution": true
+    },
+    {
+      "date2026": "2026-05-03",
+      "knownClassIPrincipalId": null,
+      "knownClassIPrincipalTitle": null,
+      "full1962PrincipalDayResolverChecked": false,
+      "liturgicalGospelReference": null,
+      "heroTheme": null,
+      "candidateResearch": [],
+      "contextualReuseResearch": [
+        {
+          "artworkId": "nga-12130",
+          "relation": "FAREWELL_DISCOURSE_SETTING_CONTEXT_NOT_LITERAL_WORDS",
+          "title": "The Last Supper"
+        }
+      ],
+      "sourceLeadCount": 0,
+      "artworkAssignedForHomepage": null,
+      "actualVisibleProductionHeroVerified": false,
+      "editorialNextStep": "RESOLVE_1962_SUNDAY_GOSPEL_AND_ASSIGN_HERO",
+      "fallbacksAllowed": [
+        "SAME_FEAST_SUBJECT",
+        "GOSPEL_SCENE",
+        "TRUTHFUL_SEASONAL_IMAGE",
+        "PREVIOUS_APPROVED_HERO_IF_SEASONALLY_COMPATIBLE"
+      ],
+      "noFalseAttribution": true
+    },
+    {
+      "date2026": "2026-05-10",
+      "knownClassIPrincipalId": null,
+      "knownClassIPrincipalTitle": null,
+      "full1962PrincipalDayResolverChecked": false,
+      "liturgicalGospelReference": null,
+      "heroTheme": null,
+      "candidateResearch": [],
+      "contextualReuseResearch": [
+        {
+          "artworkId": "nga-12130",
+          "relation": "FAREWELL_DISCOURSE_SETTING_CONTEXT_NOT_LITERAL_WORDS",
+          "title": "The Last Supper"
+        }
+      ],
+      "sourceLeadCount": 0,
+      "artworkAssignedForHomepage": null,
+      "actualVisibleProductionHeroVerified": false,
+      "editorialNextStep": "RESOLVE_1962_SUNDAY_GOSPEL_AND_ASSIGN_HERO",
+      "fallbacksAllowed": [
+        "SAME_FEAST_SUBJECT",
+        "GOSPEL_SCENE",
+        "TRUTHFUL_SEASONAL_IMAGE",
+        "PREVIOUS_APPROVED_HERO_IF_SEASONALLY_COMPATIBLE"
+      ],
+      "noFalseAttribution": true
+    },
+    {
+      "date2026": "2026-05-17",
+      "knownClassIPrincipalId": null,
+      "knownClassIPrincipalTitle": null,
+      "full1962PrincipalDayResolverChecked": false,
+      "liturgicalGospelReference": null,
+      "heroTheme": null,
+      "candidateResearch": [],
+      "contextualReuseResearch": [
+        {
+          "artworkId": "nga-12130",
+          "relation": "FAREWELL_DISCOURSE_SETTING_CONTEXT_NOT_LITERAL_WORDS",
+          "title": "The Last Supper"
+        }
+      ],
+      "sourceLeadCount": 0,
+      "artworkAssignedForHomepage": null,
+      "actualVisibleProductionHeroVerified": false,
+      "editorialNextStep": "RESOLVE_1962_SUNDAY_GOSPEL_AND_ASSIGN_HERO",
+      "fallbacksAllowed": [
+        "SAME_FEAST_SUBJECT",
+        "GOSPEL_SCENE",
+        "TRUTHFUL_SEASONAL_IMAGE",
+        "PREVIOUS_APPROVED_HERO_IF_SEASONALLY_COMPATIBLE"
+      ],
+      "noFalseAttribution": true
+    },
+    {
+      "date2026": "2026-05-24",
+      "knownClassIPrincipalId": "tempora:Pasc7-0:1:r",
+      "knownClassIPrincipalTitle": "Pentecost Sunday",
+      "full1962PrincipalDayResolverChecked": true,
+      "liturgicalGospelReference": null,
+      "heroTheme": "pentecost",
+      "candidateResearch": [],
+      "contextualReuseResearch": [],
+      "sourceLeadCount": 0,
+      "artworkAssignedForHomepage": null,
+      "actualVisibleProductionHeroVerified": false,
+      "editorialNextStep": "CONFIRM_MOBILE_MASTERPIECE_FOR_CLASS_I",
+      "fallbacksAllowed": [
+        "SAME_FEAST_SUBJECT",
+        "GOSPEL_SCENE",
+        "TRUTHFUL_SEASONAL_IMAGE",
+        "PREVIOUS_APPROVED_HERO_IF_SEASONALLY_COMPATIBLE"
+      ],
+      "noFalseAttribution": true
+    },
+    {
+      "date2026": "2026-05-31",
+      "knownClassIPrincipalId": "tempora:Pent01-0r:1:w",
+      "knownClassIPrincipalTitle": "Trinity Sunday",
+      "full1962PrincipalDayResolverChecked": true,
+      "liturgicalGospelReference": null,
+      "heroTheme": "trinity",
+      "candidateResearch": [],
+      "contextualReuseResearch": [],
+      "sourceLeadCount": 0,
+      "artworkAssignedForHomepage": null,
+      "actualVisibleProductionHeroVerified": false,
+      "editorialNextStep": "CONFIRM_MOBILE_MASTERPIECE_FOR_CLASS_I",
+      "fallbacksAllowed": [
+        "SAME_FEAST_SUBJECT",
+        "GOSPEL_SCENE",
+        "TRUTHFUL_SEASONAL_IMAGE",
+        "PREVIOUS_APPROVED_HERO_IF_SEASONALLY_COMPATIBLE"
+      ],
+      "noFalseAttribution": true
+    },
+    {
+      "date2026": "2026-06-07",
+      "knownClassIPrincipalId": null,
+      "knownClassIPrincipalTitle": null,
+      "full1962PrincipalDayResolverChecked": false,
+      "liturgicalGospelReference": null,
+      "heroTheme": null,
+      "candidateResearch": [
+        {
+          "source": "sunday-phase1",
+          "title": "The Parable of the Great Supper",
+          "artist": "Cornelis Droochsloot",
+          "relation": "DEPICTS_APPOINTED_GOSPEL_SCENE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cornelis%20Droochsloot%20(1630-1673)%20-%20The%20Parable%20of%20the%20Great%20Supper%20-%20B.M.605%20-%20Bowes%20Museum.jpg"
+        }
+      ],
+      "contextualReuseResearch": [],
+      "sourceLeadCount": 1,
+      "artworkAssignedForHomepage": null,
+      "actualVisibleProductionHeroVerified": false,
+      "editorialNextStep": "RESOLVE_1962_SUNDAY_GOSPEL_AND_ASSIGN_HERO",
+      "fallbacksAllowed": [
+        "SAME_FEAST_SUBJECT",
+        "GOSPEL_SCENE",
+        "TRUTHFUL_SEASONAL_IMAGE",
+        "PREVIOUS_APPROVED_HERO_IF_SEASONALLY_COMPATIBLE"
+      ],
+      "noFalseAttribution": true
+    },
+    {
+      "date2026": "2026-06-14",
+      "knownClassIPrincipalId": null,
+      "knownClassIPrincipalTitle": null,
+      "full1962PrincipalDayResolverChecked": false,
+      "liturgicalGospelReference": null,
+      "heroTheme": null,
+      "candidateResearch": [
+        {
+          "source": "sunday-phase1",
+          "title": "Christ tells the Pharisees the Parable of the Lost Sheep",
+          "artist": "Workshop of Leopold Layer",
+          "relation": "DEPICTS_APPOINTED_GOSPEL_SCENE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kristus%20pove%20farizejem%20in%20pismoukom%20priliko%20o%20izgubljeni%20ovci%20(panjska%20kon%C4%8Dnica).jpg"
+        }
+      ],
+      "contextualReuseResearch": [],
+      "sourceLeadCount": 1,
+      "artworkAssignedForHomepage": null,
+      "actualVisibleProductionHeroVerified": false,
+      "editorialNextStep": "RESOLVE_1962_SUNDAY_GOSPEL_AND_ASSIGN_HERO",
+      "fallbacksAllowed": [
+        "SAME_FEAST_SUBJECT",
+        "GOSPEL_SCENE",
+        "TRUTHFUL_SEASONAL_IMAGE",
+        "PREVIOUS_APPROVED_HERO_IF_SEASONALLY_COMPATIBLE"
+      ],
+      "noFalseAttribution": true
+    },
+    {
+      "date2026": "2026-06-21",
+      "knownClassIPrincipalId": null,
+      "knownClassIPrincipalTitle": null,
+      "full1962PrincipalDayResolverChecked": false,
+      "liturgicalGospelReference": null,
+      "heroTheme": null,
+      "candidateResearch": [],
+      "contextualReuseResearch": [],
+      "sourceLeadCount": 0,
+      "artworkAssignedForHomepage": null,
+      "actualVisibleProductionHeroVerified": false,
+      "editorialNextStep": "RESOLVE_1962_SUNDAY_GOSPEL_AND_ASSIGN_HERO",
+      "fallbacksAllowed": [
+        "SAME_FEAST_SUBJECT",
+        "GOSPEL_SCENE",
+        "TRUTHFUL_SEASONAL_IMAGE",
+        "PREVIOUS_APPROVED_HERO_IF_SEASONALLY_COMPATIBLE"
+      ],
+      "noFalseAttribution": true
+    },
+    {
+      "date2026": "2026-06-28",
+      "knownClassIPrincipalId": null,
+      "knownClassIPrincipalTitle": null,
+      "full1962PrincipalDayResolverChecked": false,
+      "liturgicalGospelReference": null,
+      "heroTheme": null,
+      "candidateResearch": [],
+      "contextualReuseResearch": [
+        {
+          "relation": "SERMON_MOUNT_BROAD_CONTEXT_NOT_EXACT_SPOKEN_VERSE"
+        }
+      ],
+      "sourceLeadCount": 0,
+      "artworkAssignedForHomepage": null,
+      "actualVisibleProductionHeroVerified": false,
+      "editorialNextStep": "RESOLVE_1962_SUNDAY_GOSPEL_AND_ASSIGN_HERO",
+      "fallbacksAllowed": [
+        "SAME_FEAST_SUBJECT",
+        "GOSPEL_SCENE",
+        "TRUTHFUL_SEASONAL_IMAGE",
+        "PREVIOUS_APPROVED_HERO_IF_SEASONALLY_COMPATIBLE"
+      ],
+      "noFalseAttribution": true
+    },
+    {
+      "date2026": "2026-07-05",
+      "knownClassIPrincipalId": null,
+      "knownClassIPrincipalTitle": null,
+      "full1962PrincipalDayResolverChecked": false,
+      "liturgicalGospelReference": null,
+      "heroTheme": null,
+      "candidateResearch": [
+        {
+          "source": "sunday-phase3",
+          "title": "The Miracle of the Loaves and Fishes",
+          "artist": "Giovanni Lanfranco",
+          "relation": "TENTATIVE_FOUR_THOUSAND_LINK_NOT_MUSEUM_EXACT",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Giovanni_Lanfranco_-_Miracle_of_the_Bread_and_Fish_-_WGA12454.jpg"
+        }
+      ],
+      "contextualReuseResearch": [],
+      "sourceLeadCount": 1,
+      "artworkAssignedForHomepage": null,
+      "actualVisibleProductionHeroVerified": false,
+      "editorialNextStep": "RESOLVE_1962_SUNDAY_GOSPEL_AND_ASSIGN_HERO",
+      "fallbacksAllowed": [
+        "SAME_FEAST_SUBJECT",
+        "GOSPEL_SCENE",
+        "TRUTHFUL_SEASONAL_IMAGE",
+        "PREVIOUS_APPROVED_HERO_IF_SEASONALLY_COMPATIBLE"
+      ],
+      "noFalseAttribution": true
+    },
+    {
+      "date2026": "2026-07-12",
+      "knownClassIPrincipalId": null,
+      "knownClassIPrincipalTitle": null,
+      "full1962PrincipalDayResolverChecked": false,
+      "liturgicalGospelReference": null,
+      "heroTheme": null,
+      "candidateResearch": [],
+      "contextualReuseResearch": [
+        {
+          "relation": "SERMON_MOUNT_BROAD_CONTEXT_NOT_EXACT_SPOKEN_VERSE"
+        }
+      ],
+      "sourceLeadCount": 0,
+      "artworkAssignedForHomepage": null,
+      "actualVisibleProductionHeroVerified": false,
+      "editorialNextStep": "RESOLVE_1962_SUNDAY_GOSPEL_AND_ASSIGN_HERO",
+      "fallbacksAllowed": [
+        "SAME_FEAST_SUBJECT",
+        "GOSPEL_SCENE",
+        "TRUTHFUL_SEASONAL_IMAGE",
+        "PREVIOUS_APPROVED_HERO_IF_SEASONALLY_COMPATIBLE"
+      ],
+      "noFalseAttribution": true
+    },
+    {
+      "date2026": "2026-07-19",
+      "knownClassIPrincipalId": null,
+      "knownClassIPrincipalTitle": null,
+      "full1962PrincipalDayResolverChecked": false,
+      "liturgicalGospelReference": null,
+      "heroTheme": null,
+      "candidateResearch": [
+        {
+          "source": "sunday-phase2",
+          "title": "The Parable of the Unjust Steward",
+          "artist": "Andrea Schiavone (Andrea Meldolla)",
+          "relation": "EXACT_APPOINTED_GOSPEL_EPISODE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Andrea%20Meldolla%20(1510%20-%201563)%20-%20The%20parable%20of%20the%20unjust%20steward%20-%20170A%20-%20Gem%C3%A4ldegalerie.jpg"
+        }
+      ],
+      "contextualReuseResearch": [],
+      "sourceLeadCount": 1,
+      "artworkAssignedForHomepage": null,
+      "actualVisibleProductionHeroVerified": false,
+      "editorialNextStep": "RESOLVE_1962_SUNDAY_GOSPEL_AND_ASSIGN_HERO",
+      "fallbacksAllowed": [
+        "SAME_FEAST_SUBJECT",
+        "GOSPEL_SCENE",
+        "TRUTHFUL_SEASONAL_IMAGE",
+        "PREVIOUS_APPROVED_HERO_IF_SEASONALLY_COMPATIBLE"
+      ],
+      "noFalseAttribution": true
+    },
+    {
+      "date2026": "2026-07-26",
+      "knownClassIPrincipalId": null,
+      "knownClassIPrincipalTitle": null,
+      "full1962PrincipalDayResolverChecked": false,
+      "liturgicalGospelReference": null,
+      "heroTheme": null,
+      "candidateResearch": [
+        {
+          "source": "sunday-phase1",
+          "title": "Christ Cleansing the Temple",
+          "artist": "Luca Giordano",
+          "relation": "DEPICTS_APPOINTED_GOSPEL_SCENE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Luca%20Giordano%20-%20Christ%20Cleansing%20the%20Temple%20-%20WGA09000.jpg"
+        }
+      ],
+      "contextualReuseResearch": [],
+      "sourceLeadCount": 1,
+      "artworkAssignedForHomepage": null,
+      "actualVisibleProductionHeroVerified": false,
+      "editorialNextStep": "RESOLVE_1962_SUNDAY_GOSPEL_AND_ASSIGN_HERO",
+      "fallbacksAllowed": [
+        "SAME_FEAST_SUBJECT",
+        "GOSPEL_SCENE",
+        "TRUTHFUL_SEASONAL_IMAGE",
+        "PREVIOUS_APPROVED_HERO_IF_SEASONALLY_COMPATIBLE"
+      ],
+      "noFalseAttribution": true
+    },
+    {
+      "date2026": "2026-08-02",
+      "knownClassIPrincipalId": null,
+      "knownClassIPrincipalTitle": null,
+      "full1962PrincipalDayResolverChecked": false,
+      "liturgicalGospelReference": null,
+      "heroTheme": null,
+      "candidateResearch": [
+        {
+          "source": "sunday-phase1",
+          "title": "Church Interior with the Parable of the Pharisee and the Publican",
+          "artist": "Dirck van Delen",
+          "relation": "DEPICTS_APPOINTED_GOSPEL_SCENE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Church%20Interior%20with%20the%20Parable%20of%20the%20Pharisee%20and%20the%20Publican.jpg"
+        }
+      ],
+      "contextualReuseResearch": [],
+      "sourceLeadCount": 1,
+      "artworkAssignedForHomepage": null,
+      "actualVisibleProductionHeroVerified": false,
+      "editorialNextStep": "RESOLVE_1962_SUNDAY_GOSPEL_AND_ASSIGN_HERO",
+      "fallbacksAllowed": [
+        "SAME_FEAST_SUBJECT",
+        "GOSPEL_SCENE",
+        "TRUTHFUL_SEASONAL_IMAGE",
+        "PREVIOUS_APPROVED_HERO_IF_SEASONALLY_COMPATIBLE"
+      ],
+      "noFalseAttribution": true
+    },
+    {
+      "date2026": "2026-08-09",
+      "knownClassIPrincipalId": null,
+      "knownClassIPrincipalTitle": null,
+      "full1962PrincipalDayResolverChecked": false,
+      "liturgicalGospelReference": null,
+      "heroTheme": null,
+      "candidateResearch": [
+        {
+          "source": "sunday-phase1",
+          "title": "Christ Healing the Deaf-Mute",
+          "artist": "Philippe de Champaigne",
+          "relation": "DEPICTS_APPOINTED_GOSPEL_SCENE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Philippe%20de%20Champaigne%20-%20Christ%20Healing%20the%20Deaf-Mute%20-%20Google%20Art%20Project.jpg"
+        }
+      ],
+      "contextualReuseResearch": [],
+      "sourceLeadCount": 1,
+      "artworkAssignedForHomepage": null,
+      "actualVisibleProductionHeroVerified": false,
+      "editorialNextStep": "RESOLVE_1962_SUNDAY_GOSPEL_AND_ASSIGN_HERO",
+      "fallbacksAllowed": [
+        "SAME_FEAST_SUBJECT",
+        "GOSPEL_SCENE",
+        "TRUTHFUL_SEASONAL_IMAGE",
+        "PREVIOUS_APPROVED_HERO_IF_SEASONALLY_COMPATIBLE"
+      ],
+      "noFalseAttribution": true
+    },
+    {
+      "date2026": "2026-08-16",
+      "knownClassIPrincipalId": null,
+      "knownClassIPrincipalTitle": null,
+      "full1962PrincipalDayResolverChecked": false,
+      "liturgicalGospelReference": null,
+      "heroTheme": null,
+      "candidateResearch": [],
+      "contextualReuseResearch": [],
+      "sourceLeadCount": 0,
+      "artworkAssignedForHomepage": null,
+      "actualVisibleProductionHeroVerified": false,
+      "editorialNextStep": "RESOLVE_1962_SUNDAY_GOSPEL_AND_ASSIGN_HERO",
+      "fallbacksAllowed": [
+        "SAME_FEAST_SUBJECT",
+        "GOSPEL_SCENE",
+        "TRUTHFUL_SEASONAL_IMAGE",
+        "PREVIOUS_APPROVED_HERO_IF_SEASONALLY_COMPATIBLE"
+      ],
+      "noFalseAttribution": true
+    },
+    {
+      "date2026": "2026-08-23",
+      "knownClassIPrincipalId": null,
+      "knownClassIPrincipalTitle": null,
+      "full1962PrincipalDayResolverChecked": false,
+      "liturgicalGospelReference": null,
+      "heroTheme": null,
+      "candidateResearch": [
+        {
+          "source": "sunday-phase1",
+          "title": "The Healing of Ten Lepers",
+          "artist": "James Tissot",
+          "relation": "DEPICTS_APPOINTED_GOSPEL_SCENE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Brooklyn%20Museum%20-%20The%20Healing%20of%20Ten%20Lepers%20(Gu%C3%A9rison%20de%20dix%20l%C3%A9preux)%20-%20James%20Tissot%20-%20overall.jpg"
+        }
+      ],
+      "contextualReuseResearch": [],
+      "sourceLeadCount": 1,
+      "artworkAssignedForHomepage": null,
+      "actualVisibleProductionHeroVerified": false,
+      "editorialNextStep": "RESOLVE_1962_SUNDAY_GOSPEL_AND_ASSIGN_HERO",
+      "fallbacksAllowed": [
+        "SAME_FEAST_SUBJECT",
+        "GOSPEL_SCENE",
+        "TRUTHFUL_SEASONAL_IMAGE",
+        "PREVIOUS_APPROVED_HERO_IF_SEASONALLY_COMPATIBLE"
+      ],
+      "noFalseAttribution": true
+    },
+    {
+      "date2026": "2026-08-30",
+      "knownClassIPrincipalId": null,
+      "knownClassIPrincipalTitle": null,
+      "full1962PrincipalDayResolverChecked": false,
+      "liturgicalGospelReference": null,
+      "heroTheme": null,
+      "candidateResearch": [],
+      "contextualReuseResearch": [
+        {
+          "relation": "SERMON_MOUNT_BROAD_CONTEXT_NOT_EXACT_SPOKEN_VERSE"
+        }
+      ],
+      "sourceLeadCount": 0,
+      "artworkAssignedForHomepage": null,
+      "actualVisibleProductionHeroVerified": false,
+      "editorialNextStep": "RESOLVE_1962_SUNDAY_GOSPEL_AND_ASSIGN_HERO",
+      "fallbacksAllowed": [
+        "SAME_FEAST_SUBJECT",
+        "GOSPEL_SCENE",
+        "TRUTHFUL_SEASONAL_IMAGE",
+        "PREVIOUS_APPROVED_HERO_IF_SEASONALLY_COMPATIBLE"
+      ],
+      "noFalseAttribution": true
+    },
+    {
+      "date2026": "2026-09-06",
+      "knownClassIPrincipalId": null,
+      "knownClassIPrincipalTitle": null,
+      "full1962PrincipalDayResolverChecked": false,
+      "liturgicalGospelReference": null,
+      "heroTheme": null,
+      "candidateResearch": [
+        {
+          "source": "sunday-phase1",
+          "title": "Raising of the Son of the Widow of Nain",
+          "artist": "Wilhelm Kotarbiński",
+          "relation": "DEPICTS_APPOINTED_GOSPEL_SCENE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Wilhelm%20Kotarbi%C5%84ski%20-%20Raising%20of%20the%20son%20of%20the%20widow%20of%20Nain%20-%20MP%201073%20-%20National%20Museum%20in%20Warsaw.jpg"
+        },
+        {
+          "source": "sunday-phase1",
+          "title": "Raising of the Son of the Widow of Nain",
+          "artist": "Martino Altomonte",
+          "relation": "DEPICTS_APPOINTED_GOSPEL_SCENE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Martino%20Altomonte%20-%20Raising%20of%20the%20Son%20of%20the%20Widow%20of%20Nain.jpg"
+        }
+      ],
+      "contextualReuseResearch": [],
+      "sourceLeadCount": 2,
+      "artworkAssignedForHomepage": null,
+      "actualVisibleProductionHeroVerified": false,
+      "editorialNextStep": "RESOLVE_1962_SUNDAY_GOSPEL_AND_ASSIGN_HERO",
+      "fallbacksAllowed": [
+        "SAME_FEAST_SUBJECT",
+        "GOSPEL_SCENE",
+        "TRUTHFUL_SEASONAL_IMAGE",
+        "PREVIOUS_APPROVED_HERO_IF_SEASONALLY_COMPATIBLE"
+      ],
+      "noFalseAttribution": true
+    },
+    {
+      "date2026": "2026-09-13",
+      "knownClassIPrincipalId": null,
+      "knownClassIPrincipalTitle": null,
+      "full1962PrincipalDayResolverChecked": false,
+      "liturgicalGospelReference": null,
+      "heroTheme": null,
+      "candidateResearch": [
+        {
+          "source": "sunday-phase3",
+          "title": "Christ Healing the Man with Dropsy",
+          "artist": "Anonymous monastic painters",
+          "relation": "DEPICTS_APPOINTED_GOSPEL_EPISODE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Reichenau_St.Georg_-_Fresko_2a_Heilung_Wassers%C3%BCchtiger.jpg"
+        }
+      ],
+      "contextualReuseResearch": [],
+      "sourceLeadCount": 1,
+      "artworkAssignedForHomepage": null,
+      "actualVisibleProductionHeroVerified": false,
+      "editorialNextStep": "RESOLVE_1962_SUNDAY_GOSPEL_AND_ASSIGN_HERO",
+      "fallbacksAllowed": [
+        "SAME_FEAST_SUBJECT",
+        "GOSPEL_SCENE",
+        "TRUTHFUL_SEASONAL_IMAGE",
+        "PREVIOUS_APPROVED_HERO_IF_SEASONALLY_COMPATIBLE"
+      ],
+      "noFalseAttribution": true
+    },
+    {
+      "date2026": "2026-09-20",
+      "knownClassIPrincipalId": null,
+      "knownClassIPrincipalTitle": null,
+      "full1962PrincipalDayResolverChecked": false,
+      "liturgicalGospelReference": null,
+      "heroTheme": null,
+      "candidateResearch": [],
+      "contextualReuseResearch": [],
+      "sourceLeadCount": 0,
+      "artworkAssignedForHomepage": null,
+      "actualVisibleProductionHeroVerified": false,
+      "editorialNextStep": "RESOLVE_1962_SUNDAY_GOSPEL_AND_ASSIGN_HERO",
+      "fallbacksAllowed": [
+        "SAME_FEAST_SUBJECT",
+        "GOSPEL_SCENE",
+        "TRUTHFUL_SEASONAL_IMAGE",
+        "PREVIOUS_APPROVED_HERO_IF_SEASONALLY_COMPATIBLE"
+      ],
+      "noFalseAttribution": true
+    },
+    {
+      "date2026": "2026-09-27",
+      "knownClassIPrincipalId": null,
+      "knownClassIPrincipalTitle": null,
+      "full1962PrincipalDayResolverChecked": false,
+      "liturgicalGospelReference": null,
+      "heroTheme": null,
+      "candidateResearch": [],
+      "contextualReuseResearch": [],
+      "sourceLeadCount": 0,
+      "artworkAssignedForHomepage": null,
+      "actualVisibleProductionHeroVerified": false,
+      "editorialNextStep": "RESOLVE_1962_SUNDAY_GOSPEL_AND_ASSIGN_HERO",
+      "fallbacksAllowed": [
+        "SAME_FEAST_SUBJECT",
+        "GOSPEL_SCENE",
+        "TRUTHFUL_SEASONAL_IMAGE",
+        "PREVIOUS_APPROVED_HERO_IF_SEASONALLY_COMPATIBLE"
+      ],
+      "noFalseAttribution": true
+    },
+    {
+      "date2026": "2026-10-04",
+      "knownClassIPrincipalId": null,
+      "knownClassIPrincipalTitle": null,
+      "full1962PrincipalDayResolverChecked": false,
+      "liturgicalGospelReference": null,
+      "heroTheme": null,
+      "candidateResearch": [
+        {
+          "source": "sunday-phase1",
+          "title": "Parable of the Wedding Feast",
+          "artist": "Andrei Mironov",
+          "relation": "DEPICTS_APPOINTED_GOSPEL_SCENE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Parable%20of%20the%20Wedding%20Feast.jpg"
+        }
+      ],
+      "contextualReuseResearch": [],
+      "sourceLeadCount": 1,
+      "artworkAssignedForHomepage": null,
+      "actualVisibleProductionHeroVerified": false,
+      "editorialNextStep": "RESOLVE_1962_SUNDAY_GOSPEL_AND_ASSIGN_HERO",
+      "fallbacksAllowed": [
+        "SAME_FEAST_SUBJECT",
+        "GOSPEL_SCENE",
+        "TRUTHFUL_SEASONAL_IMAGE",
+        "PREVIOUS_APPROVED_HERO_IF_SEASONALLY_COMPATIBLE"
+      ],
+      "noFalseAttribution": true
+    },
+    {
+      "date2026": "2026-10-11",
+      "knownClassIPrincipalId": null,
+      "knownClassIPrincipalTitle": null,
+      "full1962PrincipalDayResolverChecked": false,
+      "liturgicalGospelReference": null,
+      "heroTheme": null,
+      "candidateResearch": [
+        {
+          "source": "sunday-phase2",
+          "title": "Jesus Heals the Nobleman's Son in Capernaum",
+          "artist": "Unknown Indian Mughal painter",
+          "relation": "EXACT_APPOINTED_GOSPEL_EPISODE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Unknown%20artist%20-%20Jesus%20Heals%20the%20Nobleman's%20Son%20in%20Capernaum%2C%20from%20a%20Mirror%20of%20Holiness%20(Mir%E2%80%99at%20al-quds)%20of%20Father%20Jerome%20Xavier%20-%202005.145.70.a%20-%20Cleveland%20Museum%20of%20Art.jpg"
+        }
+      ],
+      "contextualReuseResearch": [],
+      "sourceLeadCount": 1,
+      "artworkAssignedForHomepage": null,
+      "actualVisibleProductionHeroVerified": false,
+      "editorialNextStep": "RESOLVE_1962_SUNDAY_GOSPEL_AND_ASSIGN_HERO",
+      "fallbacksAllowed": [
+        "SAME_FEAST_SUBJECT",
+        "GOSPEL_SCENE",
+        "TRUTHFUL_SEASONAL_IMAGE",
+        "PREVIOUS_APPROVED_HERO_IF_SEASONALLY_COMPATIBLE"
+      ],
+      "noFalseAttribution": true
+    },
+    {
+      "date2026": "2026-10-18",
+      "knownClassIPrincipalId": null,
+      "knownClassIPrincipalTitle": null,
+      "full1962PrincipalDayResolverChecked": false,
+      "liturgicalGospelReference": null,
+      "heroTheme": null,
+      "candidateResearch": [
+        {
+          "source": "sunday-phase1",
+          "title": "Parable of the Unforgiving Servant",
+          "artist": "Claude Vignon",
+          "relation": "DEPICTS_APPOINTED_GOSPEL_SCENE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Claude%20Vignon%20-%20Parable%20of%20the%20Unforgiving%20Servant.jpg"
+        }
+      ],
+      "contextualReuseResearch": [],
+      "sourceLeadCount": 1,
+      "artworkAssignedForHomepage": null,
+      "actualVisibleProductionHeroVerified": false,
+      "editorialNextStep": "RESOLVE_1962_SUNDAY_GOSPEL_AND_ASSIGN_HERO",
+      "fallbacksAllowed": [
+        "SAME_FEAST_SUBJECT",
+        "GOSPEL_SCENE",
+        "TRUTHFUL_SEASONAL_IMAGE",
+        "PREVIOUS_APPROVED_HERO_IF_SEASONALLY_COMPATIBLE"
+      ],
+      "noFalseAttribution": true
+    },
+    {
+      "date2026": "2026-10-25",
+      "knownClassIPrincipalId": "sancti:10-DU:1:w",
+      "knownClassIPrincipalTitle": "Christ the King",
+      "full1962PrincipalDayResolverChecked": true,
+      "liturgicalGospelReference": null,
+      "heroTheme": "christ-king",
+      "candidateResearch": [
+        {
+          "source": "sunday-phase2",
+          "title": "Christ before Pilate",
+          "artist": "Mihály Munkácsy",
+          "relation": "EXACT_APPOINTED_GOSPEL_EPISODE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Munk%C3%A1csy%20Christ%20before%20Pilate.JPG"
+        }
+      ],
+      "contextualReuseResearch": [],
+      "sourceLeadCount": 1,
+      "artworkAssignedForHomepage": null,
+      "actualVisibleProductionHeroVerified": false,
+      "editorialNextStep": "CONFIRM_MOBILE_MASTERPIECE_FOR_CLASS_I",
+      "fallbacksAllowed": [
+        "SAME_FEAST_SUBJECT",
+        "GOSPEL_SCENE",
+        "TRUTHFUL_SEASONAL_IMAGE",
+        "PREVIOUS_APPROVED_HERO_IF_SEASONALLY_COMPATIBLE"
+      ],
+      "noFalseAttribution": true
+    },
+    {
+      "date2026": "2026-11-01",
+      "knownClassIPrincipalId": "sancti:11-01:1:w",
+      "knownClassIPrincipalTitle": "All Saints",
+      "full1962PrincipalDayResolverChecked": true,
+      "liturgicalGospelReference": null,
+      "heroTheme": "all-saints",
+      "candidateResearch": [
+        {
+          "source": "sunday-phase2",
+          "title": "Sermon on the Mount",
+          "artist": "Carl Heinrich Bloch",
+          "relation": "EXACT_APPOINTED_GOSPEL_EPISODE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bloch-SermonOnTheMount.jpg"
+        }
+      ],
+      "contextualReuseResearch": [],
+      "sourceLeadCount": 1,
+      "artworkAssignedForHomepage": null,
+      "actualVisibleProductionHeroVerified": false,
+      "editorialNextStep": "CONFIRM_MOBILE_MASTERPIECE_FOR_CLASS_I",
+      "fallbacksAllowed": [
+        "SAME_FEAST_SUBJECT",
+        "GOSPEL_SCENE",
+        "TRUTHFUL_SEASONAL_IMAGE",
+        "PREVIOUS_APPROVED_HERO_IF_SEASONALLY_COMPATIBLE"
+      ],
+      "noFalseAttribution": true
+    },
+    {
+      "date2026": "2026-11-08",
+      "knownClassIPrincipalId": null,
+      "knownClassIPrincipalTitle": null,
+      "full1962PrincipalDayResolverChecked": false,
+      "liturgicalGospelReference": null,
+      "heroTheme": null,
+      "candidateResearch": [
+        {
+          "source": "sunday-phase2",
+          "title": "The Parable of the Wheat and the Tares",
+          "artist": "Lucas Gassel",
+          "relation": "EXACT_APPOINTED_GOSPEL_EPISODE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:The%20Parable%20of%20the%20Wheat%20and%20the%20Tares(112332).jpg"
+        }
+      ],
+      "contextualReuseResearch": [],
+      "sourceLeadCount": 1,
+      "artworkAssignedForHomepage": null,
+      "actualVisibleProductionHeroVerified": false,
+      "editorialNextStep": "RESOLVE_1962_SUNDAY_GOSPEL_AND_ASSIGN_HERO",
+      "fallbacksAllowed": [
+        "SAME_FEAST_SUBJECT",
+        "GOSPEL_SCENE",
+        "TRUTHFUL_SEASONAL_IMAGE",
+        "PREVIOUS_APPROVED_HERO_IF_SEASONALLY_COMPATIBLE"
+      ],
+      "noFalseAttribution": true
+    },
+    {
+      "date2026": "2026-11-15",
+      "knownClassIPrincipalId": null,
+      "knownClassIPrincipalTitle": null,
+      "full1962PrincipalDayResolverChecked": false,
+      "liturgicalGospelReference": null,
+      "heroTheme": null,
+      "candidateResearch": [],
+      "contextualReuseResearch": [],
+      "sourceLeadCount": 0,
+      "artworkAssignedForHomepage": null,
+      "actualVisibleProductionHeroVerified": false,
+      "editorialNextStep": "RESOLVE_1962_SUNDAY_GOSPEL_AND_ASSIGN_HERO",
+      "fallbacksAllowed": [
+        "SAME_FEAST_SUBJECT",
+        "GOSPEL_SCENE",
+        "TRUTHFUL_SEASONAL_IMAGE",
+        "PREVIOUS_APPROVED_HERO_IF_SEASONALLY_COMPATIBLE"
+      ],
+      "noFalseAttribution": true
+    },
+    {
+      "date2026": "2026-11-22",
+      "knownClassIPrincipalId": null,
+      "knownClassIPrincipalTitle": null,
+      "full1962PrincipalDayResolverChecked": false,
+      "liturgicalGospelReference": null,
+      "heroTheme": null,
+      "candidateResearch": [],
+      "contextualReuseResearch": [],
+      "sourceLeadCount": 0,
+      "artworkAssignedForHomepage": null,
+      "actualVisibleProductionHeroVerified": false,
+      "editorialNextStep": "RESOLVE_1962_SUNDAY_GOSPEL_AND_ASSIGN_HERO",
+      "fallbacksAllowed": [
+        "SAME_FEAST_SUBJECT",
+        "GOSPEL_SCENE",
+        "TRUTHFUL_SEASONAL_IMAGE",
+        "PREVIOUS_APPROVED_HERO_IF_SEASONALLY_COMPATIBLE"
+      ],
+      "noFalseAttribution": true
+    },
+    {
+      "date2026": "2026-11-29",
+      "knownClassIPrincipalId": "tempora:Adv1-0:1:v",
+      "knownClassIPrincipalTitle": "I Sunday of Advent",
+      "full1962PrincipalDayResolverChecked": true,
+      "liturgicalGospelReference": null,
+      "heroTheme": "advent",
+      "candidateResearch": [],
+      "contextualReuseResearch": [],
+      "sourceLeadCount": 0,
+      "artworkAssignedForHomepage": null,
+      "actualVisibleProductionHeroVerified": false,
+      "editorialNextStep": "CONFIRM_MOBILE_MASTERPIECE_FOR_CLASS_I",
+      "fallbacksAllowed": [
+        "SAME_FEAST_SUBJECT",
+        "GOSPEL_SCENE",
+        "TRUTHFUL_SEASONAL_IMAGE",
+        "PREVIOUS_APPROVED_HERO_IF_SEASONALLY_COMPATIBLE"
+      ],
+      "noFalseAttribution": true
+    },
+    {
+      "date2026": "2026-12-06",
+      "knownClassIPrincipalId": "tempora:Adv2-0:1:v",
+      "knownClassIPrincipalTitle": "II Sunday of Advent",
+      "full1962PrincipalDayResolverChecked": true,
+      "liturgicalGospelReference": null,
+      "heroTheme": "advent",
+      "candidateResearch": [
+        {
+          "source": "sunday-phase3",
+          "title": "Saint John the Baptist in Prison",
+          "artist": "Victor Meirelles",
+          "relation": "PERSON_CONTEXT_NOT_PRECISE_ENVOYS_SCENE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Victor_Meirelles_-_S%C3%A3o_Jo%C3%A3o_Batista_no_c%C3%A1rcere%2C_1852.jpg"
+        }
+      ],
+      "contextualReuseResearch": [],
+      "sourceLeadCount": 1,
+      "artworkAssignedForHomepage": null,
+      "actualVisibleProductionHeroVerified": false,
+      "editorialNextStep": "CONFIRM_MOBILE_MASTERPIECE_FOR_CLASS_I",
+      "fallbacksAllowed": [
+        "SAME_FEAST_SUBJECT",
+        "GOSPEL_SCENE",
+        "TRUTHFUL_SEASONAL_IMAGE",
+        "PREVIOUS_APPROVED_HERO_IF_SEASONALLY_COMPATIBLE"
+      ],
+      "noFalseAttribution": true
+    },
+    {
+      "date2026": "2026-12-13",
+      "knownClassIPrincipalId": "tempora:Adv3-0:1:pv",
+      "knownClassIPrincipalTitle": "III Sunday of Advent",
+      "full1962PrincipalDayResolverChecked": true,
+      "liturgicalGospelReference": null,
+      "heroTheme": "advent",
+      "candidateResearch": [
+        {
+          "source": "sunday-phase2",
+          "title": "Saint John the Baptist Preaching",
+          "artist": "Mattia Preti",
+          "relation": "BIBLICAL_PERSON_CONTEXT_NOT_VERSE_EXACT",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Saint%20John%20the%20Baptist%20Preaching%20MET%20DP123820.jpg"
+        }
+      ],
+      "contextualReuseResearch": [],
+      "sourceLeadCount": 1,
+      "artworkAssignedForHomepage": null,
+      "actualVisibleProductionHeroVerified": false,
+      "editorialNextStep": "CONFIRM_MOBILE_MASTERPIECE_FOR_CLASS_I",
+      "fallbacksAllowed": [
+        "SAME_FEAST_SUBJECT",
+        "GOSPEL_SCENE",
+        "TRUTHFUL_SEASONAL_IMAGE",
+        "PREVIOUS_APPROVED_HERO_IF_SEASONALLY_COMPATIBLE"
+      ],
+      "noFalseAttribution": true
+    },
+    {
+      "date2026": "2026-12-20",
+      "knownClassIPrincipalId": "tempora:Adv4-0:1:v",
+      "knownClassIPrincipalTitle": "IV Sunday of Advent",
+      "full1962PrincipalDayResolverChecked": true,
+      "liturgicalGospelReference": null,
+      "heroTheme": "advent",
+      "candidateResearch": [],
+      "contextualReuseResearch": [],
+      "sourceLeadCount": 0,
+      "artworkAssignedForHomepage": null,
+      "actualVisibleProductionHeroVerified": false,
+      "editorialNextStep": "CONFIRM_MOBILE_MASTERPIECE_FOR_CLASS_I",
+      "fallbacksAllowed": [
+        "SAME_FEAST_SUBJECT",
+        "GOSPEL_SCENE",
+        "TRUTHFUL_SEASONAL_IMAGE",
+        "PREVIOUS_APPROVED_HERO_IF_SEASONALLY_COMPATIBLE"
+      ],
+      "noFalseAttribution": true
+    },
+    {
+      "date2026": "2026-12-27",
+      "knownClassIPrincipalId": null,
+      "knownClassIPrincipalTitle": null,
+      "full1962PrincipalDayResolverChecked": false,
+      "liturgicalGospelReference": null,
+      "heroTheme": null,
+      "candidateResearch": [],
+      "contextualReuseResearch": [],
+      "sourceLeadCount": 0,
+      "artworkAssignedForHomepage": null,
+      "actualVisibleProductionHeroVerified": false,
+      "editorialNextStep": "RESOLVE_1962_SUNDAY_GOSPEL_AND_ASSIGN_HERO",
+      "fallbacksAllowed": [
+        "SAME_FEAST_SUBJECT",
+        "GOSPEL_SCENE",
+        "TRUTHFUL_SEASONAL_IMAGE",
+        "PREVIOUS_APPROVED_HERO_IF_SEASONALLY_COMPATIBLE"
+      ],
+      "noFalseAttribution": true
+    }
+  ],
+  "classIDayRows": [
+    {
+      "date2026": "2026-01-01",
+      "observedPrincipalId": "sancti:01-01:1:w",
+      "observedTitle": "Octave Day of Christmas",
+      "heroTheme": "nativity",
+      "previousResearchVisualStatus": "STRONG_EXISTING_APPROPRIATE",
+      "existingArtworkIds": [
+        "cma-143784",
+        "cma-143644",
+        "nga-46185"
+      ],
+      "exactSourceLinkCount": 0,
+      "approvedHomeHero": null,
+      "sourceImageReleaseVerified": false,
+      "mobileWholePaintingAccepted": false,
+      "plannedReusePermitted": true
+    },
+    {
+      "date2026": "2026-01-06",
+      "observedPrincipalId": "sancti:01-06:1:w",
+      "observedTitle": "Epiphany of the Lord",
+      "heroTheme": "epiphany",
+      "previousResearchVisualStatus": "EXISTING_PAINTING_ONLY_CONDITIONAL",
+      "existingArtworkIds": [
+        "met-436984",
+        "met-436104"
+      ],
+      "exactSourceLinkCount": 1,
+      "approvedHomeHero": null,
+      "sourceImageReleaseVerified": false,
+      "mobileWholePaintingAccepted": false,
+      "plannedReusePermitted": true
+    },
+    {
+      "date2026": "2026-02-18",
+      "observedPrincipalId": "tempora:Quadp3-3:1:v",
+      "observedTitle": "Ash Wednesday",
+      "heroTheme": "ash-wednesday",
+      "previousResearchVisualStatus": "EXISTING_PAINTING_ONLY_CONDITIONAL",
+      "existingArtworkIds": [
+        "nga-50726",
+        "met-437821"
+      ],
+      "exactSourceLinkCount": 0,
+      "approvedHomeHero": null,
+      "sourceImageReleaseVerified": false,
+      "mobileWholePaintingAccepted": false,
+      "plannedReusePermitted": true
+    },
+    {
+      "date2026": "2026-02-22",
+      "observedPrincipalId": "tempora:Quad1-0:1:v",
+      "observedTitle": "I Sunday of Lent",
+      "heroTheme": "lent",
+      "previousResearchVisualStatus": "EXISTING_PAINTING_ONLY_CONDITIONAL",
+      "existingArtworkIds": [
+        "nga-50726",
+        "met-437821"
+      ],
+      "exactSourceLinkCount": 1,
+      "approvedHomeHero": null,
+      "sourceImageReleaseVerified": false,
+      "mobileWholePaintingAccepted": false,
+      "plannedReusePermitted": true
+    },
+    {
+      "date2026": "2026-03-01",
+      "observedPrincipalId": "tempora:Quad2-0:1:v",
+      "observedTitle": "II Sunday of Lent",
+      "heroTheme": "lent",
+      "previousResearchVisualStatus": "EXISTING_PAINTING_ONLY_CONDITIONAL",
+      "existingArtworkIds": [
+        "nga-50726",
+        "met-437821"
+      ],
+      "exactSourceLinkCount": 1,
+      "approvedHomeHero": null,
+      "sourceImageReleaseVerified": false,
+      "mobileWholePaintingAccepted": false,
+      "plannedReusePermitted": true
+    },
+    {
+      "date2026": "2026-03-08",
+      "observedPrincipalId": "tempora:Quad3-0:1:v",
+      "observedTitle": "III Sunday of Lent",
+      "heroTheme": "lent",
+      "previousResearchVisualStatus": "EXISTING_PAINTING_ONLY_CONDITIONAL",
+      "existingArtworkIds": [
+        "nga-50726",
+        "met-437821"
+      ],
+      "exactSourceLinkCount": 0,
+      "approvedHomeHero": null,
+      "sourceImageReleaseVerified": false,
+      "mobileWholePaintingAccepted": false,
+      "plannedReusePermitted": true
+    },
+    {
+      "date2026": "2026-03-15",
+      "observedPrincipalId": "tempora:Quad4-0:1:pv",
+      "observedTitle": "IV Sunday of Lent",
+      "heroTheme": "lent",
+      "previousResearchVisualStatus": "EXISTING_PAINTING_ONLY_CONDITIONAL",
+      "existingArtworkIds": [
+        "nga-50726",
+        "met-437821"
+      ],
+      "exactSourceLinkCount": 1,
+      "approvedHomeHero": null,
+      "sourceImageReleaseVerified": false,
+      "mobileWholePaintingAccepted": false,
+      "plannedReusePermitted": true
+    },
+    {
+      "date2026": "2026-03-19",
+      "observedPrincipalId": "sancti:03-19:1:w",
+      "observedTitle": "St. Joseph, Spouse of the Bl. Virgin Mary",
+      "heroTheme": "saint-joseph",
+      "previousResearchVisualStatus": "STRONG_EXISTING_APPROPRIATE",
+      "existingArtworkIds": [
+        "cma-160143",
+        "met-437458"
+      ],
+      "exactSourceLinkCount": 0,
+      "approvedHomeHero": null,
+      "sourceImageReleaseVerified": false,
+      "mobileWholePaintingAccepted": false,
+      "plannedReusePermitted": true
+    },
+    {
+      "date2026": "2026-03-22",
+      "observedPrincipalId": "tempora:Quad5-0:1:v",
+      "observedTitle": "Passion Sunday",
+      "heroTheme": "passiontide",
+      "previousResearchVisualStatus": "STRONG_CONTEXTUAL_REUSE",
+      "existingArtworkIds": [
+        "met-437342",
+        "met-437156",
+        "met-437986"
+      ],
+      "exactSourceLinkCount": 0,
+      "approvedHomeHero": null,
+      "sourceImageReleaseVerified": false,
+      "mobileWholePaintingAccepted": false,
+      "plannedReusePermitted": true
+    },
+    {
+      "date2026": "2026-03-25",
+      "observedPrincipalId": "sancti:03-25:1:w",
+      "observedTitle": "Annunciation of the Blessed Virgin Mary",
+      "heroTheme": "annunciation",
+      "previousResearchVisualStatus": "STRONG_EXISTING_APPROPRIATE",
+      "existingArtworkIds": [
+        "met-438724",
+        "met-436502"
+      ],
+      "exactSourceLinkCount": 1,
+      "approvedHomeHero": null,
+      "sourceImageReleaseVerified": false,
+      "mobileWholePaintingAccepted": false,
+      "plannedReusePermitted": true
+    },
+    {
+      "date2026": "2026-03-29",
+      "observedPrincipalId": "tempora:Quad6-0r:1:rv",
+      "observedTitle": "Palm Sunday",
+      "heroTheme": "palm-sunday",
+      "previousResearchVisualStatus": "NO_SUITABLE_PHONE_HERO_IDENTIFIED",
+      "existingArtworkIds": [
+        "kress-k2017"
+      ],
+      "exactSourceLinkCount": 1,
+      "approvedHomeHero": null,
+      "sourceImageReleaseVerified": false,
+      "mobileWholePaintingAccepted": false,
+      "plannedReusePermitted": true
+    },
+    {
+      "date2026": "2026-03-30",
+      "observedPrincipalId": "tempora:Quad6-1:1:v",
+      "observedTitle": "Feria II of Holy Week",
+      "heroTheme": "palm-sunday",
+      "previousResearchVisualStatus": "STRONG_CONTEXTUAL_REUSE",
+      "existingArtworkIds": [
+        "met-437342",
+        "met-437156",
+        "met-437986"
+      ],
+      "exactSourceLinkCount": 0,
+      "approvedHomeHero": null,
+      "sourceImageReleaseVerified": false,
+      "mobileWholePaintingAccepted": false,
+      "plannedReusePermitted": true
+    },
+    {
+      "date2026": "2026-03-31",
+      "observedPrincipalId": "tempora:Quad6-2:1:v",
+      "observedTitle": "Feria III of Holy Week",
+      "heroTheme": "palm-sunday",
+      "previousResearchVisualStatus": "STRONG_CONTEXTUAL_REUSE",
+      "existingArtworkIds": [
+        "met-437342",
+        "met-437156",
+        "met-437986"
+      ],
+      "exactSourceLinkCount": 1,
+      "approvedHomeHero": null,
+      "sourceImageReleaseVerified": false,
+      "mobileWholePaintingAccepted": false,
+      "plannedReusePermitted": true
+    },
+    {
+      "date2026": "2026-04-01",
+      "observedPrincipalId": "tempora:Quad6-3:1:v",
+      "observedTitle": "Feria IV of Holy Week",
+      "heroTheme": "palm-sunday",
+      "previousResearchVisualStatus": "STRONG_CONTEXTUAL_REUSE",
+      "existingArtworkIds": [
+        "met-437342",
+        "met-437156",
+        "met-437986"
+      ],
+      "exactSourceLinkCount": 1,
+      "approvedHomeHero": null,
+      "sourceImageReleaseVerified": false,
+      "mobileWholePaintingAccepted": false,
+      "plannedReusePermitted": true
+    },
+    {
+      "date2026": "2026-04-02",
+      "observedPrincipalId": "tempora:Quad6-4r:1:w",
+      "observedTitle": "Holy Thursday",
+      "heroTheme": "holy-thursday",
+      "previousResearchVisualStatus": "NO_SUITABLE_PHONE_HERO_IDENTIFIED",
+      "existingArtworkIds": [
+        "nga-12130",
+        "met-459131"
+      ],
+      "exactSourceLinkCount": 0,
+      "approvedHomeHero": null,
+      "sourceImageReleaseVerified": false,
+      "mobileWholePaintingAccepted": false,
+      "plannedReusePermitted": true
+    },
+    {
+      "date2026": "2026-04-03",
+      "observedPrincipalId": "tempora:Quad6-5r:1:bv",
+      "observedTitle": "Good Friday",
+      "heroTheme": "crucifixion",
+      "previousResearchVisualStatus": "EXISTING_PAINTING_ONLY_CONDITIONAL",
+      "existingArtworkIds": [
+        "met-652416",
+        "met-437342"
+      ],
+      "exactSourceLinkCount": 0,
+      "approvedHomeHero": null,
+      "sourceImageReleaseVerified": false,
+      "mobileWholePaintingAccepted": false,
+      "plannedReusePermitted": true
+    },
+    {
+      "date2026": "2026-04-04",
+      "observedPrincipalId": "tempora:Quad6-6r:1:vw",
+      "observedTitle": "Holy Saturday",
+      "heroTheme": "holy-saturday",
+      "previousResearchVisualStatus": "STRONG_EXISTING_APPROPRIATE",
+      "existingArtworkIds": [
+        "met-437156",
+        "met-437342"
+      ],
+      "exactSourceLinkCount": 0,
+      "approvedHomeHero": null,
+      "sourceImageReleaseVerified": false,
+      "mobileWholePaintingAccepted": false,
+      "plannedReusePermitted": true
+    },
+    {
+      "date2026": "2026-04-05",
+      "observedPrincipalId": "tempora:Pasc0-0:1:w",
+      "observedTitle": "Easter Sunday",
+      "heroTheme": "resurrection",
+      "previousResearchVisualStatus": "EXISTING_PAINTING_ONLY_CONDITIONAL",
+      "existingArtworkIds": [
+        "cma-78982"
+      ],
+      "exactSourceLinkCount": 1,
+      "approvedHomeHero": null,
+      "sourceImageReleaseVerified": false,
+      "mobileWholePaintingAccepted": false,
+      "plannedReusePermitted": true
+    },
+    {
+      "date2026": "2026-04-06",
+      "observedPrincipalId": "tempora:Pasc0-1:1:w",
+      "observedTitle": "Monday in the Octave of Easter",
+      "heroTheme": "resurrection",
+      "previousResearchVisualStatus": "EXISTING_PAINTING_ONLY_CONDITIONAL",
+      "existingArtworkIds": [
+        "cma-78982"
+      ],
+      "exactSourceLinkCount": 0,
+      "approvedHomeHero": null,
+      "sourceImageReleaseVerified": false,
+      "mobileWholePaintingAccepted": false,
+      "plannedReusePermitted": true
+    },
+    {
+      "date2026": "2026-04-07",
+      "observedPrincipalId": "tempora:Pasc0-2:1:w",
+      "observedTitle": "Tuesday in the Octave of Easter",
+      "heroTheme": "resurrection",
+      "previousResearchVisualStatus": "EXISTING_PAINTING_ONLY_CONDITIONAL",
+      "existingArtworkIds": [
+        "cma-78982"
+      ],
+      "exactSourceLinkCount": 0,
+      "approvedHomeHero": null,
+      "sourceImageReleaseVerified": false,
+      "mobileWholePaintingAccepted": false,
+      "plannedReusePermitted": true
+    },
+    {
+      "date2026": "2026-04-08",
+      "observedPrincipalId": "tempora:Pasc0-3:1:w",
+      "observedTitle": "Wednesday in the Octave of Easter",
+      "heroTheme": "resurrection",
+      "previousResearchVisualStatus": "EXISTING_PAINTING_ONLY_CONDITIONAL",
+      "existingArtworkIds": [
+        "cma-78982"
+      ],
+      "exactSourceLinkCount": 0,
+      "approvedHomeHero": null,
+      "sourceImageReleaseVerified": false,
+      "mobileWholePaintingAccepted": false,
+      "plannedReusePermitted": true
+    },
+    {
+      "date2026": "2026-04-09",
+      "observedPrincipalId": "tempora:Pasc0-4:1:w",
+      "observedTitle": "Thursday in the Octave of Easter",
+      "heroTheme": "resurrection",
+      "previousResearchVisualStatus": "EXISTING_PAINTING_ONLY_CONDITIONAL",
+      "existingArtworkIds": [
+        "cma-78982"
+      ],
+      "exactSourceLinkCount": 0,
+      "approvedHomeHero": null,
+      "sourceImageReleaseVerified": false,
+      "mobileWholePaintingAccepted": false,
+      "plannedReusePermitted": true
+    },
+    {
+      "date2026": "2026-04-10",
+      "observedPrincipalId": "tempora:Pasc0-5:1:w",
+      "observedTitle": "Friday in the Octave of Easter",
+      "heroTheme": "resurrection",
+      "previousResearchVisualStatus": "EXISTING_PAINTING_ONLY_CONDITIONAL",
+      "existingArtworkIds": [
+        "cma-78982"
+      ],
+      "exactSourceLinkCount": 0,
+      "approvedHomeHero": null,
+      "sourceImageReleaseVerified": false,
+      "mobileWholePaintingAccepted": false,
+      "plannedReusePermitted": true
+    },
+    {
+      "date2026": "2026-04-11",
+      "observedPrincipalId": "tempora:Pasc0-6:1:w",
+      "observedTitle": "Saturday in the Octave of Easter",
+      "heroTheme": "resurrection",
+      "previousResearchVisualStatus": "EXISTING_PAINTING_ONLY_CONDITIONAL",
+      "existingArtworkIds": [
+        "cma-78982"
+      ],
+      "exactSourceLinkCount": 0,
+      "approvedHomeHero": null,
+      "sourceImageReleaseVerified": false,
+      "mobileWholePaintingAccepted": false,
+      "plannedReusePermitted": true
+    },
+    {
+      "date2026": "2026-04-12",
+      "observedPrincipalId": "tempora:Pasc1-0:1:w",
+      "observedTitle": "Low Sunday",
+      "heroTheme": "resurrection",
+      "previousResearchVisualStatus": "EXISTING_PAINTING_ONLY_CONDITIONAL",
+      "existingArtworkIds": [
+        "cma-78982"
+      ],
+      "exactSourceLinkCount": 0,
+      "approvedHomeHero": null,
+      "sourceImageReleaseVerified": false,
+      "mobileWholePaintingAccepted": false,
+      "plannedReusePermitted": true
+    },
+    {
+      "date2026": "2026-05-01",
+      "observedPrincipalId": "sancti:05-01r:1:w",
+      "observedTitle": "St. Joseph the Workman",
+      "heroTheme": "saint-joseph",
+      "previousResearchVisualStatus": "STRONG_EXISTING_APPROPRIATE",
+      "existingArtworkIds": [
+        "cma-160143",
+        "met-437458"
+      ],
+      "exactSourceLinkCount": 0,
+      "approvedHomeHero": null,
+      "sourceImageReleaseVerified": false,
+      "mobileWholePaintingAccepted": false,
+      "plannedReusePermitted": true
+    },
+    {
+      "date2026": "2026-05-14",
+      "observedPrincipalId": "tempora:Pasc5-4:1:w",
+      "observedTitle": "Ascension of the Lord",
+      "heroTheme": "ascension",
+      "previousResearchVisualStatus": "EXISTING_PAINTING_ONLY_CONDITIONAL",
+      "existingArtworkIds": [
+        "met-436835"
+      ],
+      "exactSourceLinkCount": 1,
+      "approvedHomeHero": null,
+      "sourceImageReleaseVerified": false,
+      "mobileWholePaintingAccepted": false,
+      "plannedReusePermitted": true
+    },
+    {
+      "date2026": "2026-05-23",
+      "observedPrincipalId": "tempora:Pasc6-6:1:r",
+      "observedTitle": "Vigil of Pentecost",
+      "heroTheme": "ascension",
+      "previousResearchVisualStatus": "NO_SUITABLE_PHONE_HERO_IDENTIFIED",
+      "existingArtworkIds": [
+        "commons-debray-pentecost",
+        "commons-multscher-pentecost",
+        "commons-baroncelli-pentecost"
+      ],
+      "exactSourceLinkCount": 0,
+      "approvedHomeHero": null,
+      "sourceImageReleaseVerified": false,
+      "mobileWholePaintingAccepted": false,
+      "plannedReusePermitted": true
+    },
+    {
+      "date2026": "2026-05-24",
+      "observedPrincipalId": "tempora:Pasc7-0:1:r",
+      "observedTitle": "Pentecost Sunday",
+      "heroTheme": "pentecost",
+      "previousResearchVisualStatus": "NO_SUITABLE_PHONE_HERO_IDENTIFIED",
+      "existingArtworkIds": [
+        "commons-debray-pentecost",
+        "commons-multscher-pentecost",
+        "commons-baroncelli-pentecost"
+      ],
+      "exactSourceLinkCount": 1,
+      "approvedHomeHero": null,
+      "sourceImageReleaseVerified": false,
+      "mobileWholePaintingAccepted": false,
+      "plannedReusePermitted": true
+    },
+    {
+      "date2026": "2026-05-25",
+      "observedPrincipalId": "tempora:Pasc7-1:1:r",
+      "observedTitle": "Monday after Pentecost",
+      "heroTheme": "pentecost",
+      "previousResearchVisualStatus": "NO_SUITABLE_PHONE_HERO_IDENTIFIED",
+      "existingArtworkIds": [
+        "commons-debray-pentecost",
+        "commons-multscher-pentecost",
+        "commons-baroncelli-pentecost"
+      ],
+      "exactSourceLinkCount": 0,
+      "approvedHomeHero": null,
+      "sourceImageReleaseVerified": false,
+      "mobileWholePaintingAccepted": false,
+      "plannedReusePermitted": true
+    },
+    {
+      "date2026": "2026-05-26",
+      "observedPrincipalId": "tempora:Pasc7-2:1:r",
+      "observedTitle": "Tuesday after Pentecost",
+      "heroTheme": "pentecost",
+      "previousResearchVisualStatus": "NO_SUITABLE_PHONE_HERO_IDENTIFIED",
+      "existingArtworkIds": [
+        "commons-debray-pentecost",
+        "commons-multscher-pentecost",
+        "commons-baroncelli-pentecost"
+      ],
+      "exactSourceLinkCount": 0,
+      "approvedHomeHero": null,
+      "sourceImageReleaseVerified": false,
+      "mobileWholePaintingAccepted": false,
+      "plannedReusePermitted": true
+    },
+    {
+      "date2026": "2026-05-27",
+      "observedPrincipalId": "tempora:Pasc7-3:1:r",
+      "observedTitle": "Ember Wednesday of Pentecost",
+      "heroTheme": "pentecost",
+      "previousResearchVisualStatus": "NO_SUITABLE_PHONE_HERO_IDENTIFIED",
+      "existingArtworkIds": [
+        "commons-debray-pentecost",
+        "commons-multscher-pentecost",
+        "commons-baroncelli-pentecost"
+      ],
+      "exactSourceLinkCount": 0,
+      "approvedHomeHero": null,
+      "sourceImageReleaseVerified": false,
+      "mobileWholePaintingAccepted": false,
+      "plannedReusePermitted": true
+    },
+    {
+      "date2026": "2026-05-28",
+      "observedPrincipalId": "tempora:Pasc7-4:1:r",
+      "observedTitle": "Thursday after Pentecost",
+      "heroTheme": "pentecost",
+      "previousResearchVisualStatus": "NO_SUITABLE_PHONE_HERO_IDENTIFIED",
+      "existingArtworkIds": [
+        "commons-debray-pentecost",
+        "commons-multscher-pentecost",
+        "commons-baroncelli-pentecost"
+      ],
+      "exactSourceLinkCount": 0,
+      "approvedHomeHero": null,
+      "sourceImageReleaseVerified": false,
+      "mobileWholePaintingAccepted": false,
+      "plannedReusePermitted": true
+    },
+    {
+      "date2026": "2026-05-29",
+      "observedPrincipalId": "tempora:Pasc7-5:1:r",
+      "observedTitle": "Ember Friday of Pentecost",
+      "heroTheme": "pentecost",
+      "previousResearchVisualStatus": "NO_SUITABLE_PHONE_HERO_IDENTIFIED",
+      "existingArtworkIds": [
+        "commons-debray-pentecost",
+        "commons-multscher-pentecost",
+        "commons-baroncelli-pentecost"
+      ],
+      "exactSourceLinkCount": 0,
+      "approvedHomeHero": null,
+      "sourceImageReleaseVerified": false,
+      "mobileWholePaintingAccepted": false,
+      "plannedReusePermitted": true
+    },
+    {
+      "date2026": "2026-05-30",
+      "observedPrincipalId": "tempora:Pasc7-6:1:r",
+      "observedTitle": "Ember Saturday of Pentecost",
+      "heroTheme": "pentecost",
+      "previousResearchVisualStatus": "NO_SUITABLE_PHONE_HERO_IDENTIFIED",
+      "existingArtworkIds": [
+        "commons-debray-pentecost",
+        "commons-multscher-pentecost",
+        "commons-baroncelli-pentecost"
+      ],
+      "exactSourceLinkCount": 0,
+      "approvedHomeHero": null,
+      "sourceImageReleaseVerified": false,
+      "mobileWholePaintingAccepted": false,
+      "plannedReusePermitted": true
+    },
+    {
+      "date2026": "2026-05-31",
+      "observedPrincipalId": "tempora:Pent01-0r:1:w",
+      "observedTitle": "Trinity Sunday",
+      "heroTheme": "trinity",
+      "previousResearchVisualStatus": "SEPARATE_ARCHIVED_REVIEW_ORIGINAL",
+      "existingArtworkIds": [
+        "review-kmska-314"
+      ],
+      "exactSourceLinkCount": 1,
+      "approvedHomeHero": null,
+      "sourceImageReleaseVerified": false,
+      "mobileWholePaintingAccepted": false,
+      "plannedReusePermitted": true
+    },
+    {
+      "date2026": "2026-06-04",
+      "observedPrincipalId": "tempora:Pent01-4:1:w",
+      "observedTitle": "Corpus Christi",
+      "heroTheme": "corpus-christi",
+      "previousResearchVisualStatus": "STRONG_CONTEXTUAL_REUSE",
+      "existingArtworkIds": [
+        "met-438434"
+      ],
+      "exactSourceLinkCount": 0,
+      "approvedHomeHero": null,
+      "sourceImageReleaseVerified": false,
+      "mobileWholePaintingAccepted": false,
+      "plannedReusePermitted": true
+    },
+    {
+      "date2026": "2026-06-12",
+      "observedPrincipalId": "tempora:Pent02-5:1:w",
+      "observedTitle": "Sacred Heart of Jesus",
+      "heroTheme": "sacred-heart",
+      "previousResearchVisualStatus": "NO_SUITABLE_PHONE_HERO_IDENTIFIED",
+      "existingArtworkIds": [
+        "commons-morlete-sacred-heart-1759"
+      ],
+      "exactSourceLinkCount": 2,
+      "approvedHomeHero": null,
+      "sourceImageReleaseVerified": false,
+      "mobileWholePaintingAccepted": false,
+      "plannedReusePermitted": true
+    },
+    {
+      "date2026": "2026-06-24",
+      "observedPrincipalId": "sancti:06-24:1:w",
+      "observedTitle": "Nativity of St. John the Baptist",
+      "heroTheme": "nativity-john-baptist",
+      "previousResearchVisualStatus": "EXISTING_PAINTING_ONLY_CONDITIONAL",
+      "existingArtworkIds": [
+        "met-438467"
+      ],
+      "exactSourceLinkCount": 3,
+      "approvedHomeHero": null,
+      "sourceImageReleaseVerified": false,
+      "mobileWholePaintingAccepted": false,
+      "plannedReusePermitted": true
+    },
+    {
+      "date2026": "2026-06-29",
+      "observedPrincipalId": "sancti:06-29:1:r",
+      "observedTitle": "Sts. Peter & Paul",
+      "heroTheme": "peter-and-paul",
+      "previousResearchVisualStatus": "STRONG_EXISTING_APPROPRIATE",
+      "existingArtworkIds": [
+        "met-442491"
+      ],
+      "exactSourceLinkCount": 1,
+      "approvedHomeHero": null,
+      "sourceImageReleaseVerified": false,
+      "mobileWholePaintingAccepted": false,
+      "plannedReusePermitted": true
+    },
+    {
+      "date2026": "2026-07-01",
+      "observedPrincipalId": "sancti:07-01:1:r",
+      "observedTitle": "The Precious Blood of Our Lord Jesus Christ",
+      "heroTheme": "precious-blood",
+      "previousResearchVisualStatus": "STRONG_CONTEXTUAL_REUSE",
+      "existingArtworkIds": [
+        "met-652416",
+        "met-437342"
+      ],
+      "exactSourceLinkCount": 0,
+      "approvedHomeHero": null,
+      "sourceImageReleaseVerified": false,
+      "mobileWholePaintingAccepted": false,
+      "plannedReusePermitted": true
+    },
+    {
+      "date2026": "2026-08-15",
+      "observedPrincipalId": "sancti:08-15:1:w",
+      "observedTitle": "Assumption of the Blessed Virgin Mary",
+      "heroTheme": "assumption",
+      "previousResearchVisualStatus": "EXISTING_PAINTING_ONLY_CONDITIONAL",
+      "existingArtworkIds": [
+        "nga-46470",
+        "nga-46145"
+      ],
+      "exactSourceLinkCount": 1,
+      "approvedHomeHero": null,
+      "sourceImageReleaseVerified": false,
+      "mobileWholePaintingAccepted": false,
+      "plannedReusePermitted": true
+    },
+    {
+      "date2026": "2026-09-29",
+      "observedPrincipalId": "sancti:09-29:1:w",
+      "observedTitle": "Dedication of St. Michael the Archangel",
+      "heroTheme": "saint-michael",
+      "previousResearchVisualStatus": "STRONG_EXISTING_APPROPRIATE",
+      "existingArtworkIds": [
+        "met-437729"
+      ],
+      "exactSourceLinkCount": 1,
+      "approvedHomeHero": null,
+      "sourceImageReleaseVerified": false,
+      "mobileWholePaintingAccepted": false,
+      "plannedReusePermitted": true
+    },
+    {
+      "date2026": "2026-10-25",
+      "observedPrincipalId": "sancti:10-DU:1:w",
+      "observedTitle": "Christ the King",
+      "heroTheme": "christ-king",
+      "previousResearchVisualStatus": "NO_SUITABLE_PHONE_HERO_IDENTIFIED",
+      "existingArtworkIds": [
+        "met-436794"
+      ],
+      "exactSourceLinkCount": 0,
+      "approvedHomeHero": null,
+      "sourceImageReleaseVerified": false,
+      "mobileWholePaintingAccepted": false,
+      "plannedReusePermitted": true
+    },
+    {
+      "date2026": "2026-11-01",
+      "observedPrincipalId": "sancti:11-01:1:w",
+      "observedTitle": "All Saints",
+      "heroTheme": "all-saints",
+      "previousResearchVisualStatus": "NO_SUITABLE_PHONE_HERO_IDENTIFIED",
+      "existingArtworkIds": [
+        "met-437743"
+      ],
+      "exactSourceLinkCount": 1,
+      "approvedHomeHero": null,
+      "sourceImageReleaseVerified": false,
+      "mobileWholePaintingAccepted": false,
+      "plannedReusePermitted": true
+    },
+    {
+      "date2026": "2026-11-02",
+      "observedPrincipalId": "sancti:11-02m1:1:b",
+      "observedTitle": "Commemoration of All Souls",
+      "heroTheme": "all-souls",
+      "previousResearchVisualStatus": "EXISTING_PAINTING_ONLY_CONDITIONAL",
+      "existingArtworkIds": [
+        "met-437542"
+      ],
+      "exactSourceLinkCount": 1,
+      "approvedHomeHero": null,
+      "sourceImageReleaseVerified": false,
+      "mobileWholePaintingAccepted": false,
+      "plannedReusePermitted": true
+    },
+    {
+      "date2026": "2026-11-29",
+      "observedPrincipalId": "tempora:Adv1-0:1:v",
+      "observedTitle": "I Sunday of Advent",
+      "heroTheme": "advent",
+      "previousResearchVisualStatus": "STRONG_EXISTING_APPROPRIATE",
+      "existingArtworkIds": [
+        "met-436502",
+        "met-438724"
+      ],
+      "exactSourceLinkCount": 0,
+      "approvedHomeHero": null,
+      "sourceImageReleaseVerified": false,
+      "mobileWholePaintingAccepted": false,
+      "plannedReusePermitted": true
+    },
+    {
+      "date2026": "2026-12-06",
+      "observedPrincipalId": "tempora:Adv2-0:1:v",
+      "observedTitle": "II Sunday of Advent",
+      "heroTheme": "advent",
+      "previousResearchVisualStatus": "STRONG_EXISTING_APPROPRIATE",
+      "existingArtworkIds": [
+        "met-436502",
+        "met-438724"
+      ],
+      "exactSourceLinkCount": 0,
+      "approvedHomeHero": null,
+      "sourceImageReleaseVerified": false,
+      "mobileWholePaintingAccepted": false,
+      "plannedReusePermitted": true
+    },
+    {
+      "date2026": "2026-12-08",
+      "observedPrincipalId": "sancti:12-08:1:w",
+      "observedTitle": "Immaculate Conception of the Blessed Virgin Mary",
+      "heroTheme": "immaculate-conception",
+      "previousResearchVisualStatus": "STRONG_EXISTING_APPROPRIATE",
+      "existingArtworkIds": [
+        "met-437423",
+        "cma-135659"
+      ],
+      "exactSourceLinkCount": 1,
+      "approvedHomeHero": null,
+      "sourceImageReleaseVerified": false,
+      "mobileWholePaintingAccepted": false,
+      "plannedReusePermitted": true
+    },
+    {
+      "date2026": "2026-12-13",
+      "observedPrincipalId": "tempora:Adv3-0:1:pv",
+      "observedTitle": "III Sunday of Advent",
+      "heroTheme": "advent",
+      "previousResearchVisualStatus": "STRONG_EXISTING_APPROPRIATE",
+      "existingArtworkIds": [
+        "met-436502",
+        "met-438724"
+      ],
+      "exactSourceLinkCount": 0,
+      "approvedHomeHero": null,
+      "sourceImageReleaseVerified": false,
+      "mobileWholePaintingAccepted": false,
+      "plannedReusePermitted": true
+    },
+    {
+      "date2026": "2026-12-20",
+      "observedPrincipalId": "tempora:Adv4-0:1:v",
+      "observedTitle": "IV Sunday of Advent",
+      "heroTheme": "advent",
+      "previousResearchVisualStatus": "STRONG_EXISTING_APPROPRIATE",
+      "existingArtworkIds": [
+        "met-436502",
+        "met-438724"
+      ],
+      "exactSourceLinkCount": 0,
+      "approvedHomeHero": null,
+      "sourceImageReleaseVerified": false,
+      "mobileWholePaintingAccepted": false,
+      "plannedReusePermitted": true
+    },
+    {
+      "date2026": "2026-12-24",
+      "observedPrincipalId": "sancti:12-24:1:v",
+      "observedTitle": "Vigil of Christmas",
+      "heroTheme": "nativity",
+      "previousResearchVisualStatus": "STRONG_EXISTING_APPROPRIATE",
+      "existingArtworkIds": [
+        "cma-143784",
+        "cma-143644",
+        "nga-46185"
+      ],
+      "exactSourceLinkCount": 0,
+      "approvedHomeHero": null,
+      "sourceImageReleaseVerified": false,
+      "mobileWholePaintingAccepted": false,
+      "plannedReusePermitted": true
+    },
+    {
+      "date2026": "2026-12-25",
+      "observedPrincipalId": "sancti:12-25m1:1:w",
+      "observedTitle": "The Nativity of Our Lord",
+      "heroTheme": "nativity",
+      "previousResearchVisualStatus": "STRONG_EXISTING_APPROPRIATE",
+      "existingArtworkIds": [
+        "cma-143784",
+        "cma-143644",
+        "nga-46185"
+      ],
+      "exactSourceLinkCount": 1,
+      "approvedHomeHero": null,
+      "sourceImageReleaseVerified": false,
+      "mobileWholePaintingAccepted": false,
+      "plannedReusePermitted": true
+    }
+  ],
+  "majorNonClassISpotlights": [
+    {
+      "date2026": "2026-01-04",
+      "title": "Most Holy Name of Jesus",
+      "rank": 2,
+      "heroSubjectKey": "holy-name",
+      "observedPrincipalDayResolverChecked": false,
+      "artworkAssignedForHomepage": null
+    },
+    {
+      "date2026": "2026-01-11",
+      "title": "Holy Family",
+      "rank": 2,
+      "heroSubjectKey": "holy-family",
+      "observedPrincipalDayResolverChecked": false,
+      "artworkAssignedForHomepage": null
+    },
+    {
+      "date2026": "2026-01-13",
+      "title": "Commemoration of the Baptism of Our Lord",
+      "rank": 2,
+      "heroSubjectKey": "baptism",
+      "observedPrincipalDayResolverChecked": false,
+      "artworkAssignedForHomepage": null
+    },
+    {
+      "date2026": "2026-02-01",
+      "title": "Septuagesima Sunday",
+      "rank": 2,
+      "heroSubjectKey": "septuagesima",
+      "observedPrincipalDayResolverChecked": false,
+      "artworkAssignedForHomepage": null
+    },
+    {
+      "date2026": "2026-02-02",
+      "title": "Purification of the BVM / Presentation of the Lord (Candlemas)",
+      "rank": 2,
+      "heroSubjectKey": "presentation",
+      "observedPrincipalDayResolverChecked": false,
+      "artworkAssignedForHomepage": null
+    },
+    {
+      "date2026": "2026-02-11",
+      "title": "Our Lady of Lourdes",
+      "rank": 3,
+      "heroSubjectKey": "our-lady-lourdes",
+      "observedPrincipalDayResolverChecked": false,
+      "artworkAssignedForHomepage": null
+    },
+    {
+      "date2026": "2026-07-02",
+      "title": "Visitation of the Blessed Virgin Mary",
+      "rank": 2,
+      "heroSubjectKey": "visitation",
+      "observedPrincipalDayResolverChecked": false,
+      "artworkAssignedForHomepage": null
+    },
+    {
+      "date2026": "2026-07-22",
+      "title": "St. Mary Magdalene",
+      "rank": 3,
+      "heroSubjectKey": "magdalene",
+      "observedPrincipalDayResolverChecked": false,
+      "artworkAssignedForHomepage": null
+    },
+    {
+      "date2026": "2026-08-06",
+      "title": "Transfiguration of Our Lord",
+      "rank": 2,
+      "heroSubjectKey": "transfiguration",
+      "observedPrincipalDayResolverChecked": false,
+      "artworkAssignedForHomepage": null
+    },
+    {
+      "date2026": "2026-09-08",
+      "title": "Nativity of the Blessed Virgin Mary",
+      "rank": 2,
+      "heroSubjectKey": "nativity-mary",
+      "observedPrincipalDayResolverChecked": false,
+      "artworkAssignedForHomepage": null
+    },
+    {
+      "date2026": "2026-09-14",
+      "title": "Exaltation of the Holy Cross",
+      "rank": 2,
+      "heroSubjectKey": "exaltation-cross",
+      "observedPrincipalDayResolverChecked": false,
+      "artworkAssignedForHomepage": null
+    },
+    {
+      "date2026": "2026-09-15",
+      "title": "Seven Sorrows of the Blessed Virgin Mary",
+      "rank": 2,
+      "heroSubjectKey": "mater-dolorosa",
+      "observedPrincipalDayResolverChecked": false,
+      "artworkAssignedForHomepage": null
+    },
+    {
+      "date2026": "2026-10-03",
+      "title": "St. Thérèse of the Child Jesus",
+      "rank": 3,
+      "heroSubjectKey": "therese-lisieux",
+      "observedPrincipalDayResolverChecked": false,
+      "artworkAssignedForHomepage": null
+    },
+    {
+      "date2026": "2026-10-07",
+      "title": "Our Lady of the Rosary",
+      "rank": 2,
+      "heroSubjectKey": "our-lady-rosary",
+      "observedPrincipalDayResolverChecked": false,
+      "artworkAssignedForHomepage": null
+    },
+    {
+      "date2026": "2026-11-09",
+      "title": "Dedication of the Lateran Archbasilica",
+      "rank": 2,
+      "heroSubjectKey": "lateran-dedication",
+      "observedPrincipalDayResolverChecked": false,
+      "artworkAssignedForHomepage": null
+    },
+    {
+      "date2026": "2026-11-22",
+      "title": "Last Sunday after Pentecost",
+      "rank": 2,
+      "heroSubjectKey": "last-sunday",
+      "observedPrincipalDayResolverChecked": false,
+      "artworkAssignedForHomepage": null
+    },
+    {
+      "date2026": "2026-12-28",
+      "title": "Holy Innocents",
+      "rank": 2,
+      "heroSubjectKey": "holy-innocents",
+      "observedPrincipalDayResolverChecked": false,
+      "artworkAssignedForHomepage": null
+    }
+  ],
+  "references": [
+    "data/calendar/sacred-art-home-masterpiece-occasions-2026.v1.json",
+    "data/calendar/sacred-art-class-i-existing-image-matrix-20261013.v1.json",
+    "data/calendar/sacred-art-feast-coverage-truth-2026-20261017.v1.json",
+    "data/calendar/sacred-art-sunday-gospel-paintings-open-sources-20261017.v1.json",
+    "data/calendar/sacred-art-sunday-gospel-open-paintings-phase2-20261017.v1.json",
+    "data/calendar/sacred-art-sunday-gospel-open-paintings-phase3-20261017.v1.json",
+    "data/calendar/sacred-art-masterpiece-anchor-wave-20261012.v1.json"
+  ],
+  "acceptance": [
+    "Exact-year inventory: 52/52 Sundays and 53/53 Class I observed principals individually mapped (not just file rows).",
+    "Top hero collection approximately 20-25 high-quality works with at least one approved source+image, clear correct feast/Gospel caption, phone visual gate and rights clearance.",
+    "Every listed Sunday and major feast has a signed-off visible hero or documented appropriate art carry-over; no generic placeholding or false exact Gospel claim.",
+    "Seasonal and major Class-II overrides computed from canonical 1962 DayResolver for 2026 and other supported years, not hardcoded date list.",
+    "No production gate claimed merely because research links exist; production mapping and tests verify actual visible Home result."
+  ]
+}
