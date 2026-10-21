@@ -191,6 +191,51 @@ try{
  await expanded.screenshot({path:resolve(output,"batch2-magnificat-390.png"),animations:"disabled"});
  await expanded.close();
 
+ // Third optional research mode: seven distinct, noncontiguous Scriptural plans.
+ const segmented=await context.newPage();
+ segmented.on("pageerror",e=>errors.push(String(e.message)));
+ await segmented.goto(base+
+  "/index.html?ao_historia_collections=1&ao_historia_batch2=1&ao_historia_segmented=1#hist-omitted-095",
+  {waitUntil:"domcontentloaded",timeout:90000});
+ await segmented.waitForFunction(()=>{
+  const r=globalThis.AO_SCRIPTURE_APP_V1?.status?.().reader;
+  return r?.thematicEpisodeId==="hist-omitted-095"&&
+   r?.editionId==="dr-challoner"&&r?.passage?.book==="Esther"&&r?.passage?.chapter===14;
+ },null,{timeout:65000});
+ const sevenReader=segmented.locator("#ao-scripture-overlay");
+ assert.equal(await sevenReader.locator("[data-historia-episode]").count(),67);
+ assert.equal(await sevenReader.locator(".aoHistoriaGroup").count(),6);
+ await sevenReader.locator(".aoScriptureVerse").first().waitFor({timeout:30000});
+ assert.match(await sevenReader.locator("[data-historia-active-episode]").innerText(),/CPDV chapter 14 has unrelated material/);
+ assert.equal(await sevenReader.locator('[data-historia-context-link="hist-omitted-095"]').count(),0);
+ // A literary frame: the middle chapters are conspicuously absent.
+ assert.equal(await segmented.evaluate(()=>
+  globalThis.AO_SCRIPTURE_APP_V1.openThematicEpisode("hist-omitted-217")),true);
+ await segmented.waitForFunction(()=>globalThis.AO_SCRIPTURE_APP_V1.status().reader?.passage?.chapter===1);
+ let paging=sevenReader.locator("[data-historia-next]");
+ await paging.click();
+ await segmented.waitForFunction(()=>globalThis.AO_SCRIPTURE_APP_V1.status().reader?.passage?.chapter===2);
+ await paging.click();
+ await segmented.waitForFunction(()=>globalThis.AO_SCRIPTURE_APP_V1.status().reader?.passage?.chapter===42);
+ assert.match(await sevenReader.locator("[data-historia-active-episode]").innerText(),/Job 3–41 is deliberately not shown/);
+ assert.equal(await sevenReader.locator('[data-historia-context-link="hist-omitted-217"]').count(),0);
+ // Two distinct Luke verse segments may not include the Finding in the Temple.
+ assert.equal(await segmented.evaluate(()=>
+  globalThis.AO_SCRIPTURE_APP_V1.openThematicEpisode("hist-omitted-114")),true);
+ await segmented.waitForFunction(()=>globalThis.AO_SCRIPTURE_APP_V1.status().reader?.passage?.verseStart===39);
+ await paging.click();
+ await segmented.waitForFunction(()=>globalThis.AO_SCRIPTURE_APP_V1.status().reader?.passage?.verseStart===51);
+ // Matthew 24 and Mark 13 are parallel records, not an invented double event.
+ assert.equal(await segmented.evaluate(()=>
+  globalThis.AO_SCRIPTURE_APP_V1.openThematicEpisode("hist-omitted-173")),true);
+ await segmented.waitForFunction(()=>globalThis.AO_SCRIPTURE_APP_V1.status().reader?.passage?.book==="Matthew");
+ await paging.click();
+ await segmented.waitForFunction(()=>globalThis.AO_SCRIPTURE_APP_V1.status().reader?.passage?.book==="Mark");
+ assert.match(await sevenReader.locator("[data-historia-active-episode]").innerText(),/separate Gospel tellings/);
+ results.push("segmented mode: 67 sources, Esther 14 protected, Job 1/2/42 visibly noncontiguous, Luke 2 split, Matthew/Mark separate");
+ await segmented.screenshot({path:resolve(output,"seven-segmented-390.png"),animations:"disabled"});
+ await segmented.close();
+
  assert.deepEqual(errors.filter(s=>/ReferenceError|SyntaxError|TypeError/.test(s)),[],
   "Browser runtime failures: "+errors.join(" | "));
  await original.close();await manuscript.close();await page.close();
