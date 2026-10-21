@@ -196,3 +196,38 @@ The seven full-text assessments explicitly distinguish literal reading,
 allegorical commentary, historical-author labels, and a warning against
 generalizing one patristic interpretation of the paralytic's condition.
 Release still requires source-critical checks and independent editorial review.
+
+
+### Source-strength labels and passage-specific ranking
+
+Living Catena questions now apply **within-passage document-frequency
+weighting** to the original source text. Distinctive words found in very few
+Father-attributed extracts gain more weight than words repeated across the
+whole passage. This helps preserve a specific interpretation of the
+Pharisee's **standing/posture** (Luke 18:9–14) ahead of broader discussions of
+pride, without inserting a prewritten answer or changing the 1962 Scripture
+reader or original Catena text.
+
+A query-result message carries one of these **retrieval evidence** labels:
+
+- **EXACT SOURCE WORDING:** a multiword phrase literally occurs in the
+  original extract. The phrase is taken from that source and is not an
+  independently verified doctrinal answer.
+- **SHARED SOURCE WORDS:** only individual source terms overlap; the message
+  may supply context but must not be presented as a direct answer.
+- **RELATED SOURCE WORDING:** a narrowly reviewed vocabulary cue points to
+  an evidenced original phrase; explicitly **not a direct answer**.
+- **FROM ANOTHER PASSAGE:** the selected extract belongs elsewhere in the
+  four-Gospel Catena and keeps its own original citation.
+
+Initial chronological browsing and the direct **Another Father** control
+remain plainly reading/navigation actions, not responses to a typed
+question. All textual evidence originates in the authenticated chapter
+packs. The UI does **not** automatically certify Grade 3 versus Grade 2
+theological relevance. That remains the work of a separate source-critical,
+independently reviewed editorial process.
+
+The mobile acceptance suite checks that retrieval evidence labels stay
+visible and are associated with the correct original-message fragments.
+The expanded editorial challenge includes the Luke 18 exact-source
+selection regression and continues to reject unsupported modern questions.
