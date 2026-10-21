@@ -1,0 +1,187 @@
+{
+  "schema": "ao.historia.p4.m20-m24-literary-seam-adjudication.v1",
+  "date": "2026-10-21",
+  "status": "SOURCE_ANCHORED_DESK_RECOMMENDATIONS_NOT_APPLIED_TO_P3",
+  "source": {
+    "proof": {
+      "path": "data/research/historia-salutis-v18-continuous-reading-proof.v1.json",
+      "branch": "research/historia-p4-continuity-theatre-20261021",
+      "blobSha": "7548fc8c80daa5d7c6bb85e1bb2277fbac862e81"
+    },
+    "queue": {
+      "path": "data/research/historia-p4-m20-m37-literary-review-queue.v1.json",
+      "branch": "research/historia-p4-continuity-theatre-20261021",
+      "blobSha": "e0a7d99744b8572c4160f3e0ff118f5b1bc5c657"
+    },
+    "textWitnesses": [
+      {
+        "edition": "dr-challoner",
+        "book": "Matthew",
+        "blobSha": "004832d16a49ceca579d674adf94dac9d3902234",
+        "status": "UNCOLLATED_SOURCE_WITNESS"
+      },
+      {
+        "edition": "dr-challoner",
+        "book": "Mark",
+        "blobSha": "e6e381cd25e5ab238a28602d8395da39adcce80d",
+        "status": "UNCOLLATED_SOURCE_WITNESS"
+      },
+      {
+        "edition": "dr-challoner",
+        "book": "John",
+        "blobSha": "a146e78ec89ad15d3df29a49462c8373e9dee3f8",
+        "status": "UNCOLLATED_SOURCE_WITNESS"
+      }
+    ]
+  },
+  "policy": {
+    "editedP3VerseSelections": false,
+    "acceptedNarrativeChanges": 0,
+    "readAloudAcceptances": 0,
+    "releaseApproval": false,
+    "chapterIndexPositionUsedForIdentity": false,
+    "copyOriginalScriptureInsteadOfParaphrase": true,
+    "avoidInventedGospelDialogue": true
+  },
+  "counts": {
+    "assessedMovements": 5,
+    "highPriorityHolds": 3,
+    "remainingM20M37MovementsToTriagedeeply": 13,
+    "automaticFixesApplied": 0
+  },
+  "findings": [
+    {
+      "id": "HS-P4-M20-ORDER",
+      "movementId": "HS-M20",
+      "risk": "P0_HIGH_CHRONOLOGY",
+      "finding": "Selected beat H51-03 (Mark 1:14–15, after the Baptist is delivered up) currently precedes H52-01 (John 1:35–51, where the Baptist is standing with two disciples). A continuous narrative without an explicit retrospective step gives the wrong temporal inference.",
+      "sourceCueRefs": [
+        "Mark 1:14",
+        "John 1:35–36"
+      ],
+      "currentBeatOrder": [
+        "H51-01",
+        "H51-02",
+        "H51-03",
+        "H52-01"
+      ],
+      "proposedBeatOrderIfEditorConfirms": [
+        "H51-01",
+        "H51-02",
+        "H52-01",
+        "H51-03"
+      ],
+      "candidateSupplement": "John 1:29–34 as a possible retrospective link to John 1:35; source scene 071 is not itself in selected P3 reading",
+      "decision": "REORDER_RECOMMENDATION_NOT_APPLIED",
+      "productionGate": "HOLD",
+      "sceneKeys": [
+        "biblical:scene:christ:069",
+        "biblical:scene:christ:071",
+        "biblical:scene:christ:072"
+      ],
+      "requiredNextReview": "Validate within-Gospel timeline and oral continuity with named Challoner/Crampon witnesses; only then edit P3 owner."
+    },
+    {
+      "id": "HS-P4-M21-TITLE",
+      "movementId": "HS-M21",
+      "risk": "P1_SCOPE_MISMATCH",
+      "finding": "The existing title promises teaching and signs, but the chosen Scripture beats are the Beatitudes (Matthew 5:1–12) and Lord's Prayer (Matthew 6:9–15). The healing of the paralytic is context-only, not a selected Scripture beat.",
+      "sourceCueRefs": [
+        "Matthew 5:1–12",
+        "Matthew 6:9–15",
+        "Mark 2:1–12"
+      ],
+      "currentBeatOrder": [
+        "H53-01",
+        "H53-02",
+        "H54-02"
+      ],
+      "proposedRetitleWithoutNewScripture": "The Kingdom in Christ's teaching",
+      "alternativeRequiresSourceSelection": "Keep existing title only if at least one sign is selected with its own verse witness and editorially costed abridgment",
+      "decision": "RETITLE_RECOMMENDATION_NOT_APPLIED",
+      "productionGate": "HOLD",
+      "sceneKeys": [
+        "biblical:scene:christ:080",
+        "biblical:scene:christ:085",
+        "biblical:scene:christ:086"
+      ],
+      "requiredNextReview": "Editorially decide accuracy of title vs explicit sign selection; do not show context-only story as original Scripture."
+    },
+    {
+      "id": "HS-P4-M22-SEAM",
+      "movementId": "HS-M22",
+      "risk": "P0_HIGH_DOCTRINAL_AND_EDITION_SEAM",
+      "finding": "John 6:26–35 is followed directly by 47–59. The omitted 36–46 contains disbelief, the Father's will, Jewish objections and the Father's drawing (notably 6:41–45), so the progression is not merely a short repetition. The linked scene 097's Capernaum synagogue sentence is at verse 60 in current English witnesses but 59 in French.",
+      "sourceCueRefs": [
+        "John 6:26–35",
+        "John 6:36–46",
+        "John 6:47–59",
+        "John 6:60"
+      ],
+      "currentBeatOrder": [
+        "H56-01",
+        "H56-02"
+      ],
+      "proposedTextualSeamToEvaluate": "John 6:36–46; assess whether a shorter context-preserving sequence can be justified without losing verse 44/45",
+      "distinctSignContext": "John 6:1–15 loaves remain separate from this discourse; H56-01 is editorial context, not scripture",
+      "decision": "GAP_BRIDGE_REVIEW_NOT_APPLIED",
+      "productionGate": "HOLD",
+      "sceneKeys": [
+        "biblical:scene:christ:096",
+        "biblical:scene:christ:097"
+      ],
+      "requiredNextReview": "Compare every verse of 26–60 against named English/French printed witnesses; establish an edition-aware bilingual display, then perform theology and oral review."
+    },
+    {
+      "id": "HS-P4-M23-PHASES",
+      "movementId": "HS-M23",
+      "risk": "P2_VISUAL_EVENT_SEPARATION",
+      "finding": "The selected Matthew 16:13–28 and Matthew 17:1–9 provide the confession, Passion prediction and six-day Transfiguration transition within one Gospel witness. No passage gap requires fabricated narrative, but those are three distinct visual beats.",
+      "sourceCueRefs": [
+        "Matthew 16:13–28",
+        "Matthew 17:1–9"
+      ],
+      "currentBeatOrder": [
+        "H57-01",
+        "H57-02"
+      ],
+      "proposedTheatreBeats": [
+        "Peter's confession (Matthew 16:13–20)",
+        "Prediction and discipleship (Matthew 16:21–28)",
+        "Transfiguration (Matthew 17:1–9)"
+      ],
+      "decision": "PHASE_BOUNDARY_CANDIDATE_NOT_APPLIED",
+      "productionGate": "HOLD_ART_AND_LOCATION",
+      "sceneKeys": [
+        "biblical:scene:christ:102",
+        "biblical:scene:christ:103",
+        "biblical:scene:christ:104"
+      ],
+      "requiredNextReview": "Source compare, oral read, 3 distinct artwork subjects and qualified Tabor label; no new geographical point."
+    },
+    {
+      "id": "HS-P4-M24-MARY",
+      "movementId": "HS-M24",
+      "risk": "P0_HIGH_ACTOR_AGENCY_SEAM",
+      "finding": "The selected John 11:20–27 describes Martha and explicitly says Mary remained at home. Jumping to 11:32–35 makes Mary appear before Christ without the 11:28–31 summons and movement; her agency and the mourners' reaction are lost.",
+      "sourceCueRefs": [
+        "John 11:20",
+        "John 11:27",
+        "John 11:28–31",
+        "John 11:32"
+      ],
+      "currentBeatOrder": [
+        "H58-04",
+        "HS-CF-05"
+      ],
+      "proposedTextualSeamToEvaluate": "Insert John 11:28–31 or minimally 11:28–29 between selected 11:20–27 and 11:32–35",
+      "heldPlotBridge": "HS-CF-05 (John 11:45–53) remains candidate and must not be automatically appended",
+      "decision": "SEAM_BRIDGE_REVIEW_NOT_APPLIED",
+      "productionGate": "HOLD",
+      "sceneKeys": [
+        "biblical:scene:christ:113"
+      ],
+      "requiredNextReview": "Review the continuous 11:1–44 narrative, compare Catholic witnesses, weigh smallest adequate bridge and only then alter P3 source selections."
+    }
+  ]
+}
