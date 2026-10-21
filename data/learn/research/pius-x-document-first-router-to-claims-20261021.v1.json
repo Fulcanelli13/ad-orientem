@@ -1,0 +1,171 @@
+{
+  "schema": "AO_SPX_DOCUMENT_FIRST_ROUTER_TO_CLAIMS_BRIDGE_V1",
+  "date": "2026-10-21",
+  "status": "RESEARCH_ONLY_UNAPPROVED_ADAPTED_VOICE_NOT_PUBLISHED",
+  "sourceOwner": "formation/1457-pius-x-conversation-evidence",
+  "navigationOwner": "feature/living-church-shared-question-routing-20261019",
+  "expectedRouterCommit": "b5dd7272e503236cab3635081d93469e6a3ebc34",
+  "benchmarkArtifact": "artifacts/pius-x-complete-corpus/SPX_Three_Document_Full_34_Turn_Claim_Map.json",
+  "rules": {
+    "retrieval": "Existing shared-router source_navigation and exact sourceRef+URL+locator only; this file contains no new document classifier.",
+    "selection": "Select whole pre-mapped bilingual segments by source and bounded concept; never generate new papal sentences or infer person-specific decisions.",
+    "confirm": "A candidate remains unspoken until explicit topic confirmation; human approval remains separately false.",
+    "security": "Reject unexpected source pointer, mismatched URL, partial claim mismatch, unsupported segment loci, or any ambiguous/unresolved router result."
+  },
+  "entries": [
+    {
+      "sourceRef": "SPX-PILOT-13",
+      "topicId": "pius.historical_spx_pilot_13",
+      "document": "ACERBO",
+      "locator": "Acerbo nimis §§12–14",
+      "selectionPlans": [
+        {
+          "id": "ACERBO_PREACHING_FOUNDATION",
+          "role": "DEFAULT",
+          "segmentIds": [
+            "SPX.BENCH.ACERBO.T7.S1",
+            "SPX.BENCH.ACERBO.T7.S2"
+          ],
+          "claimIds": [
+            "A15",
+            "A16"
+          ]
+        },
+        {
+          "id": "ACERBO_HOMILY_CATECHESIS",
+          "role": "SCOPED_ALTERNATE",
+          "trigger": {
+            "en": [
+              "distinction",
+              "difference",
+              "compared",
+              "compare",
+              "milk",
+              "bread"
+            ],
+            "fr": [
+              "distinction",
+              "différence",
+              "comparer",
+              "compare",
+              "lait",
+              "pain"
+            ]
+          },
+          "segmentIds": [
+            "SPX.BENCH.ACERBO.T3.S1",
+            "SPX.BENCH.ACERBO.T3.S2"
+          ],
+          "claimIds": [
+            "A05",
+            "A06"
+          ]
+        }
+      ]
+    },
+    {
+      "sourceRef": "SPX-PILOT-14",
+      "topicId": "pius.historical_spx_pilot_14",
+      "document": "ESUPREMI",
+      "locator": "E supremi §13",
+      "selectionPlans": [
+        {
+          "id": "ESUPREMI_CHARITY_OPPONENTS",
+          "role": "DEFAULT",
+          "segmentIds": [
+            "SPX.BENCH.E_SUPREMI.T2.S2",
+            "SPX.BENCH.E_SUPREMI.T7.S1"
+          ],
+          "claimIds": [
+            "E03",
+            "E13"
+          ]
+        },
+        {
+          "id": "ESUPREMI_SEVERE_REPROOF",
+          "role": "SCOPED_ALTERNATE",
+          "trigger": {
+            "en": [
+              "reproof",
+              "reproach",
+              "severity",
+              "harsh",
+              "bitter zeal"
+            ],
+            "fr": [
+              "reproche",
+              "sévérité",
+              "sévère",
+              "zèle amer",
+              "réprimande"
+            ]
+          },
+          "segmentIds": [
+            "SPX.BENCH.E_SUPREMI.T2.S1",
+            "SPX.BENCH.E_SUPREMI.T2.S2"
+          ],
+          "claimIds": [
+            "E03"
+          ]
+        }
+      ]
+    },
+    {
+      "sourceRef": "SPX-PILOT-09",
+      "topicId": "pius.historical_spx_pilot_09",
+      "document": "HAERENT",
+      "locator": "Haerent animo §§15–20",
+      "selectionPlans": [
+        {
+          "id": "HAERENT_BUSY_PRIEST_MEDITATION",
+          "role": "DEFAULT",
+          "segmentIds": [
+            "SPX.BENCH.HAERENT.T7.S1",
+            "SPX.BENCH.HAERENT.T7.S2"
+          ],
+          "claimIds": [
+            "H17",
+            "H18",
+            "H20"
+          ]
+        },
+        {
+          "id": "HAERENT_HABIT_FERVOUR",
+          "role": "SCOPED_ALTERNATE",
+          "trigger": {
+            "en": [
+              "habit",
+              "routine",
+              "fervour",
+              "reverence",
+              "cold"
+            ],
+            "fr": [
+              "habitude",
+              "routine",
+              "ferveur",
+              "révérence",
+              "refroidi"
+            ]
+          },
+          "segmentIds": [
+            "SPX.BENCH.HAERENT.T12.S1",
+            "SPX.BENCH.HAERENT.T12.S2"
+          ],
+          "claimIds": [
+            "H19",
+            "H18"
+          ]
+        }
+      ]
+    }
+  ],
+  "approvals": {
+    "source": false,
+    "theology": false,
+    "english": false,
+    "french": false,
+    "periodVoice": false,
+    "publishing": false
+  }
+}
