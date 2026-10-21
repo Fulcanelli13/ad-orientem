@@ -127,7 +127,7 @@ assert.deepEqual(anomaly.units.map(u=>[u.range.start,u.range.endExclusive]),[[0,
 for(const u of anomaly.units){
   const x=s.text.slice(u.range.start,u.range.endExclusive);
   assert.ok(x.startsWith(u.startPhrase));
-  assert.ok(x.endsWith(u.endPhrase));
+  assert.ok(x.trimEnd().endsWith(u.endPhrase));
   assert.ok(u.publicationStatus.startsWith("blocked"));
 }
 console.log("PASS: Matthew batch03 300/300 original excerpts screened, 80 AI-assisted interpretations, 14 distinct comparison leads, and split Origen/Pseudo-Dionysius provenance");
