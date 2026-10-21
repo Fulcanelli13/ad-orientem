@@ -3583,6 +3583,12 @@ export function createReaderDomAdapter({
             node.dataset.missalRubricLanguage=bookRubric.requestedLanguage;
             node.dataset.sourceRubricWitness=bookRubric.owner;
           }
+          if(conciseSource){
+            // Distinguish the existing original witness from the concise
+            // editorial presentation; retain every underlying published ID.
+            node.dataset.rubricPresentationOwner=conciseSource.owner;
+            node.dataset.rubricSourceEventIds=conciseSource.eventIds.join(" ");
+          }
           node.append(primary);
           const parallel=mode==="MISSAL"&&p.kind==="RUBRIC"
             ? null:(p.kind==="RUBRIC"?p.secondary:(p.secondary??p.alternate));
