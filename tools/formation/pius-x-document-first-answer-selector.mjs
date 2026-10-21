@@ -7,7 +7,7 @@
 import assert from 'node:assert/strict';
 
 const fold=s=>String(s??'').normalize('NFD').replace(/[\u0300-\u036f]/g,'')
-  .toLowerCase().replace(/[’‘']/g,"'").replace(/[^a-z0-9' ]+/g,' ').replace(/\s+/g,' ').trim();
+  .toLowerCase().replace(/[’‘']/g," ").replace(/[^a-z0-9 ]+/g,' ').replace(/\s+/g,' ').trim();
 const containsPhrase=(text,phrase)=>(' '+fold(text)+' ').includes(' '+fold(phrase)+' ');
 const locatorSections=value=>{
  const found=new Set();
