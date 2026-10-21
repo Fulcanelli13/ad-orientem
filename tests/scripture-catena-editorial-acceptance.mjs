@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
-import {indexCatenaMessages,retrieveCatenaMessages,catenaQuestionHasSufficientEvidence} from "../src/scripture/catena-messenger.js";
+import {indexCatenaMessages,retrieveCatenaQuestionMatches,catenaQuestionHasSufficientEvidence} from "../src/scripture/catena-messenger.js";
 import {catenaRelatedTopic,retrieveCatenaRelatedMessages} from "../src/scripture/catena-related-vocabulary.js";
 
 const dataset=JSON.parse(readFileSync(new URL("../data/scripture/catena/editorial-acceptance.v1.json",import.meta.url),"utf8"));
@@ -23,10 +23,7 @@ function sourceRows(id){
  }]);
 }
 function retrieved(rows,question){
- const topic=catenaRelatedTopic(question);
- const related=topic?retrieveCatenaRelatedMessages(rows,question,{limit:4}):[];
- return (related.length?related.map(x=>x.row):
-  retrieveCatenaMessages(rows,question,{limit:4})).map(x=>x.id);
+ return retrieveCatenaQuestionMatches(rows,question,{limit:4}).map(x=>x.id);
 }
 assert.equal(catenaQuestionHasSufficientEvidence("Who won the World Cup in 2026?"),false,
  "Do not use a solitary generic word to fabricate relevance in a long query");
