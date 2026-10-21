@@ -7,8 +7,11 @@ import {chromium} from "@playwright/test";
 const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
 const dest=resolve(root,"artifacts/customs-mobile-folios");
 await mkdir(dest,{recursive:true});
-const corpus=JSON.parse(await readFile(resolve(root,"data/customs/customs-p0-guidance-en-fr.v1.json"),"utf8")).entries;
-assert.equal(corpus.length,6);
+const corpus=[
+  ...JSON.parse(await readFile(resolve(root,"data/customs/customs-p0-guidance-en-fr.v1.json"),"utf8")).entries,
+  ...JSON.parse(await readFile(resolve(root,"data/customs/customs-p1-guidance-en-fr.v1.json"),"utf8")).entries,
+];
+assert.equal(corpus.length,11);
 const mime={".html":"text/html; charset=utf-8",".js":"text/javascript; charset=utf-8",".mjs":"text/javascript; charset=utf-8",".json":"application/json; charset=utf-8",".css":"text/css; charset=utf-8",".svg":"image/svg+xml",".png":"image/png",".jpg":"image/jpeg",".webp":"image/webp"};
 const server=http.createServer(async(req,res)=>{
   try{
@@ -50,6 +53,11 @@ try{
         const rect=sheet?.getBoundingClientRect(),computed=lead?getComputedStyle(lead):null;
         return {selected:sheet.getAttribute("data-explore-custom-id"),
           headings:[...sheet.querySelectorAll("header h2")].map(e=>e.textContent),
+          eyebrow:sheet.querySelector("header small")?.textContent,
+          subtitle:sheet.querySelector("header p")?.textContent??null,
+          factCards:sheet.querySelectorAll(".aoFindFacts>div").length,
+          evidencePanels:sheet.querySelectorAll(".aoTraditionEvidence").length,
+          firstSectionTop:sheet.querySelector(".aoExploreSections article")?.getBoundingClientRect().top,
           text:sheet.textContent,
           sheetWidth:rect?.width,viewportWidth:innerWidth,
           sheetOverflow:sheet?.scrollWidth>sheet?.clientWidth+2,
@@ -69,6 +77,12 @@ try{
       assert.ok(ui.text.includes(language==="fr"?guide.meaning_fr:guide.meaning_en),"missing spiritual meaning");
       assert.ok(ui.text.includes(language==="fr"?guide.how_fr:guide.how_en),"missing optional practice");
       assert.ok(ui.text.includes(language==="fr"?guide.caution_fr:"Pastoral context"),"pastoral boundary missing");
+      assert.equal(ui.eyebrow,language==="fr"?"COUTUME · VIE CATHOLIQUE":"CUSTOM · CATHOLIC LIFE","untranslated eyebrow");
+      if(guide.scope_fr){assert.equal(ui.subtitle,language==="fr"?guide.scope_fr:guide.scope_en,"geographic scope must be localized");}
+      else{assert.equal(ui.subtitle,null,"remove untranslated family label");}
+      assert.equal(ui.factCards,0,"single national witness must not produce a redundant Period tile");
+      assert.equal(ui.evidencePanels,0,"single national witness must not duplicate documented examples");
+      assert.ok(ui.firstSectionTop<height,"spiritual meaning should begin in opening viewport");
       assert.ok(ui.sourceLinks>=1,"no direct independent source links");
       assert.equal(ui.nonPlacePins,0,"inferred national pin is forbidden");
       assert.ok(ui.sheetWidth<=ui.viewportWidth+2&&!ui.sheetOverflow&&!ui.bodyOverflow,"mobile horizontal overflow: "+JSON.stringify(ui));
@@ -101,5 +115,5 @@ try{
     await context.close();
   }
   await writeFile(resolve(dest,"audit.json"),JSON.stringify({profiles:measurements.length,measurements},null,2));
-  console.log("PASS Customs Atlas 18 EN/FR mobile/tablet full folios: legibility, overflow, exact identity, source links and screenshots");
+  console.log("PASS Customs Atlas 33 EN/FR mobile/tablet full folios: legibility, overflow, exact identity, source links and screenshots");
 }finally{await browser?.close();await new Promise(resolve=>server.close(resolve));}

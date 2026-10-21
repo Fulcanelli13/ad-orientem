@@ -564,6 +564,92 @@
       "calendar_trigger_hint": "Major Rogation 25 April and the three Minor Rogation days before Ascension; Calendar owns calculation",
       "confidence": "HIGH",
       "guardrail": "Domestic walk is voluntary and never an automatic liturgical procession; omit historical family's improvised blessings or ceremonial imitation. No rite, invented route, farm proximity requirement or 1962 rubric change."
+    },
+    {
+      "custom_id": "EPIP-001",
+      "family": "Epiphany charity",
+      "name": "German Epiphany star singers / Sternsinger",
+      "canonical_statement": "Catholic children dressed as the Magi visit homes around Epiphany with song, blessings conveyed in the custom and charitable collections for children in need.",
+      "custom_class": "LOCAL_REGIONAL_CUSTOM",
+      "period_label": "Historical traditional practice with bounded contemporary or institutional witness",
+      "decision": "KEEP — SOURCE-LOCKED WEISER P1 FIVE DRAFT",
+      "publication_state": "PUBLISHED",
+      "owners": [
+        "Calendar",
+        "Saints",
+        "Learn"
+      ],
+      "calendar_trigger_hint": "6 January, as a regional practice; visits must be locally announced",
+      "confidence": "HIGH",
+      "guardrail": "This is a German organised Catholic charitable custom, not universal priestly house blessing. Never infer local schedules, rites, donations or 1962 ceremony."
+    },
+    {
+      "custom_id": "EPIP-002",
+      "family": "Epiphany household",
+      "name": "French Galette des Rois and the poor person's portion",
+      "canonical_statement": "French Catholic households share a galette or King Cake with a fève; some traditional forms reserve an extra portion for someone poor or a guest.",
+      "custom_class": "FRENCH_CATHOLIC_CUSTOM",
+      "period_label": "Historical traditional practice with bounded contemporary or institutional witness",
+      "decision": "KEEP — SOURCE-LOCKED WEISER P1 FIVE DRAFT",
+      "publication_state": "PUBLISHED",
+      "owners": [
+        "Calendar",
+        "Learn"
+      ],
+      "calendar_trigger_hint": "6 January in the 1962 calendar; household celebration date may differ",
+      "confidence": "HIGH",
+      "guardrail": "Optional French household culture; the separate Weiser school-fees claim is not independently corroborated and is excluded."
+    },
+    {
+      "custom_id": "CORP-001",
+      "family": "Corpus Christi regional decorations",
+      "name": "Corpus Christi flower carpets and window decorations",
+      "canonical_statement": "Some Catholic communities arrange flower carpets along Corpus Christi processional routes; in others flowers adorn streets and windows as expressions of reverence for the Blessed Sacrament.",
+      "custom_class": "LOCAL_REGIONAL_CUSTOM",
+      "period_label": "Historical traditional practice with bounded contemporary or institutional witness",
+      "decision": "KEEP — SOURCE-LOCKED WEISER P1 FIVE DRAFT",
+      "publication_state": "PUBLISHED",
+      "owners": [
+        "Calendar",
+        "Learn"
+      ],
+      "calendar_trigger_hint": "Corpus Christi where a real procession is celebrated locally",
+      "confidence": "HIGH",
+      "guardrail": "One canonical ID for two distinct regional floral forms. Neither a procession route nor a priestly blessing is automatically created. Weiser's precise candles-and-images claim is unverified."
+    },
+    {
+      "custom_id": "EAST-001",
+      "family": "Eastertide regional devotional walks",
+      "name": "Easter Monday Emmaus walk",
+      "canonical_statement": "Catholics in parts of southern Germany and Austria take a family or parish walk on Easter Monday recalling the disciples who encountered the risen Christ on the road to Emmaus (Luke 24:13–35).",
+      "custom_class": "LOCAL_REGIONAL_CUSTOM",
+      "period_label": "Historical traditional practice with bounded contemporary or institutional witness",
+      "decision": "KEEP — SOURCE-LOCKED WEISER P1 FIVE DRAFT",
+      "publication_state": "PUBLISHED",
+      "owners": [
+        "Calendar",
+        "Learn"
+      ],
+      "calendar_trigger_hint": "Easter Monday calculated by Calendar; regional voluntary practice",
+      "confidence": "HIGH",
+      "guardrail": "No invented itinerary, time, local event or Eucharistic procession. Optional regional custom, separate from the 1962 Mass."
+    },
+    {
+      "custom_id": "MARI-002",
+      "family": "Marian household customs",
+      "name": "Mary garden — flowers and herbs dedicated to Our Lady",
+      "canonical_statement": "A Catholic home may keep a small Mary garden or planters with flowers and herbs that recall Our Lady and invite prayer; individual plant legends require historical verification.",
+      "custom_class": "DEVOTIONAL_OPTION",
+      "period_label": "Historical traditional practice with bounded contemporary or institutional witness",
+      "decision": "KEEP — SOURCE-LOCKED WEISER P1 FIVE DRAFT",
+      "publication_state": "PUBLISHED",
+      "owners": [
+        "Calendar",
+        "Learn"
+      ],
+      "calendar_trigger_hint": "May or another suitable gardening season; linked to DEV-001",
+      "confidence": "MEDIUM_HIGH",
+      "guardrail": "Voluntary household devotion connected to existing May custom DEV-001, not a new feast. No magical, medicinal or historically unsupported plant properties."
     }
   ],
   "attestations": [
@@ -2050,6 +2136,87 @@
       "evidence_note": "WEI58-04-003. Independent 1956 Catholic family source describes Rogation prayers and family procession for crops.",
       "map_policy": "NOT_MAPPED",
       "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:EPIP-001:DE",
+      "custom_id": "EPIP-001",
+      "geo_area_id": "geo:country:DE",
+      "place_id": null,
+      "place_name_hint": null,
+      "geographic_precision": "COUNTRY",
+      "period_label": "Historically attested or current bounded local Catholic practice",
+      "strength": "STRONG",
+      "source_ids": [
+        "STERN-KINDERMISSIONSWERK-2026"
+      ],
+      "evidence_note": "WEI58-12-013. German Kindermissionswerk directly documents carol singers visiting homes between Christmas and Epiphany for charitable solidarity.",
+      "map_policy": "NOT_MAPPED",
+      "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:EPIP-002:FR",
+      "custom_id": "EPIP-002",
+      "geo_area_id": "geo:country:FR",
+      "place_id": null,
+      "place_name_hint": null,
+      "geographic_precision": "COUNTRY",
+      "period_label": "Historically attested or current bounded local Catholic practice",
+      "strength": "STRONG",
+      "source_ids": [
+        "ECF-GALETTE-EPIPHANIE"
+      ],
+      "evidence_note": "WEI58-12-017, WEI58-12-018. The French Bishops' Conference describes the galette, fève and additional portion for a poor guest.",
+      "map_policy": "NOT_MAPPED",
+      "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:CORP-001:PL",
+      "custom_id": "CORP-001",
+      "geo_area_id": "geo:country:PL",
+      "place_id": null,
+      "place_name_hint": null,
+      "geographic_precision": "COUNTRY",
+      "period_label": "Historically attested or current bounded local Catholic practice",
+      "strength": "STRONG",
+      "source_ids": [
+        "UNESCO-CORPUS-FLOWER-CARPETS",
+        "VATICAN-DPP-CORPUS-FLOWERS-162"
+      ],
+      "evidence_note": "WEI58-21-009, WEI58-21-007. UNESCO documents Polish flower carpets; Holy See Directory 162 supports flowers on streets and windows.",
+      "map_policy": "NOT_MAPPED",
+      "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:EAST-001:DE",
+      "custom_id": "EAST-001",
+      "geo_area_id": "geo:country:DE",
+      "place_id": null,
+      "place_name_hint": null,
+      "geographic_precision": "COUNTRY",
+      "period_label": "Historically attested or current bounded local Catholic practice",
+      "strength": "STRONG",
+      "source_ids": [
+        "MUNICH-FREISING-EMMAUSGANG"
+      ],
+      "evidence_note": "WEI58-16-028. Munich-Freising Archdiocese documents German/Austrian Emmaus walks connected to Luke 24.",
+      "map_policy": "NOT_MAPPED",
+      "confidence": "HIGH"
+    },
+    {
+      "attestation_id": "att:MARI-002:US",
+      "custom_id": "MARI-002",
+      "geo_area_id": "geo:country:US",
+      "place_id": null,
+      "place_name_hint": null,
+      "geographic_precision": "COUNTRY",
+      "period_label": "Historically attested or current bounded local Catholic practice",
+      "strength": "MODERATE",
+      "source_ids": [
+        "CATHCULTURE-MARY-GARDEN"
+      ],
+      "evidence_note": "WEI58-13-011. Catholic Culture documents practical household Mary gardens, without independently establishing legends about particular plant names.",
+      "map_policy": "NOT_MAPPED",
+      "confidence": "MEDIUM_HIGH"
     }
   ]
 }
