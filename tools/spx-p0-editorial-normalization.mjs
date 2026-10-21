@@ -6,7 +6,7 @@
 import assert from 'node:assert/strict';
 
 const EN_SINGULAR=/\b(I|my|me|mine|myself)\b/g;
-const FR_SINGULAR=/\b(?:je|mon|ma|mes|moi|me)\b|j[’']/gi;
+const FR_SINGULAR=/(?<![\p{L}\p{N}])(?:je|mon|ma|mes|moi|me)(?![\p{L}\p{N}])|(?<![\p{L}\p{N}])j[’']/giu;
 
 function pluralEnglish(s){
  return s.replace(/\bmyself\b/gi,m=>m[0]==='M'?'Ourselves':'ourselves')
@@ -37,12 +37,12 @@ function pluralFrench(s){
   [/\bj['’]évoquais\b/gi,'Nous évoquions'],
   [/\bj['’]indiquais\b/gi,'Nous indiquions'],
   [/\bj['’]insistais\b/gi,'Nous insistions'],
-  [/\bje\b/gi,'Nous'],
-  [/\bmon\b/gi,'Notre'],
-  [/\bma\b/gi,'Notre'],
-  [/\bmes\b/gi,'Nos'],
-  [/\bme\b/gi,'nous'],
-  [/\bm['’]/gi,'nous ']
+  [/(?<![\p{L}\p{N}])je(?![\p{L}\p{N}])/giu,'Nous'],
+  [/(?<![\p{L}\p{N}])mon(?![\p{L}\p{N}])/giu,'Notre'],
+  [/(?<![\p{L}\p{N}])ma(?![\p{L}\p{N}])/giu,'Notre'],
+  [/(?<![\p{L}\p{N}])mes(?![\p{L}\p{N}])/giu,'Nos'],
+  [/(?<![\p{L}\p{N}])me(?![\p{L}\p{N}])/giu,'nous'],
+  [/(?<![\p{L}\p{N}])m['’]/giu,'nous ']
  ];
  for(const [pattern,replacement] of rules)out=out.replace(pattern,replacement);
  return out;
