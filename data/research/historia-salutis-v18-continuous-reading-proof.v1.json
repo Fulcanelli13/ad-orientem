@@ -430,7 +430,19 @@
           "edition": "cpdv-2009",
           "policy": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
           "hasPartialVerseHold": false,
-          "publicationApproved": false
+          "publicationApproved": false,
+          "beforeScriptureConnectorCandidate": {
+            "id": "HS-P3-EC-11",
+            "text": "Among the descendants of Sem was Abram, whom the Lord called to leave his father's house.",
+            "sourceReferences": [
+              "Genesis 11:10–31",
+              "Genesis 12:1"
+            ],
+            "status": "SOURCE_GROUNDED_CROSS_MOVEMENT_RESEARCH_CONNECTOR_NOT_APPROVED",
+            "accepted": false,
+            "publicationApproved": false,
+            "notPartOfOriginal29ContextUnits": true
+          }
         },
         {
           "kind": "SCRIPTURE",
@@ -1789,10 +1801,10 @@
           "researchSourceReference": "1 Kings 18:20–39",
           "editorialTextApproved": false,
           "editorialReadingCandidate": {
-            "text": "As Israel strayed from the worship of the Lord, Elijah confronted the prophets of Baal. The prophetic books also preserve promises that would reach beyond the calamities of the kingdoms.",
+            "text": "As Israel strayed from the Lord, Elijah confronted the prophets of Baal. Later, in Judah, Isaiah spoke the Lord's promise to King Achaz and proclaimed the coming of a righteous ruler and suffering servant.",
             "sourceReferences": [
               "1Kings 18:20–39",
-              "Isaiah 7:10–17",
+              "Isaiah 7:1–17",
               "Isaiah 9:1–6",
               "Isaiah 11:1–10",
               "Isaiah 52:13–53:12"
@@ -1801,7 +1813,9 @@
             "preservesOriginalDeskCopy": true,
             "printedEditionCollationPending": true,
             "finalLiteraryAcceptance": false,
-            "publicationApproved": false
+            "publicationApproved": false,
+            "previousTextForCrossMovementAudit": "As Israel strayed from the worship of the Lord, Elijah confronted the prophets of Baal. The prophetic books also preserve promises that would reach beyond the calamities of the kingdoms.",
+            "crossMovementNarrativeReason": "Achaz's identity and setting are necessary to understand the Isaiah 7 opening, without turning the prophetic sequence into an exact event chronology."
           }
         },
         {
@@ -2202,7 +2216,7 @@
           "researchSourceReference": "Luke 2:22–38",
           "editorialTextApproved": false,
           "editorialReadingCandidate": {
-            "text": "Mary and Joseph brought the child Jesus to the Temple. There Simeon blessed God, recognising in Him the salvation prepared for all peoples.",
+            "text": "Luke also recounts how Mary and Joseph presented Jesus in the Temple, where Simeon blessed God and recognised in Him the salvation prepared for all peoples.",
             "sourceReferences": [
               "Luke 2:22–38"
             ],
@@ -2210,7 +2224,9 @@
             "preservesOriginalDeskCopy": true,
             "printedEditionCollationPending": true,
             "finalLiteraryAcceptance": false,
-            "publicationApproved": false
+            "publicationApproved": false,
+            "previousTextForCrossMovementAudit": "Mary and Joseph brought the child Jesus to the Temple. There Simeon blessed God, recognising in Him the salvation prepared for all peoples.",
+            "crossMovementNarrativeReason": "Avoid asserting a precise chronological placement of Presentation relative to Magi from two separate Gospel witnesses."
           }
         },
         {
@@ -2280,7 +2296,20 @@
           "edition": "cpdv-2009",
           "policy": "PROPOSED_CURATED_TRIM",
           "hasPartialVerseHold": false,
-          "publicationApproved": false
+          "publicationApproved": false,
+          "beforeScriptureConnectorCandidate": {
+            "id": "HS-P3-EC-12",
+            "text": "Jesus grew up in Nazareth. In later years, John the Baptist began preaching repentance in the wilderness of Judea.",
+            "sourceReferences": [
+              "Luke 2:51–52",
+              "Luke 3:1–3",
+              "Matthew 3:1–3"
+            ],
+            "status": "SOURCE_GROUNDED_CROSS_MOVEMENT_RESEARCH_CONNECTOR_NOT_APPROVED",
+            "accepted": false,
+            "publicationApproved": false,
+            "notPartOfOriginal29ContextUnits": true
+          }
         },
         {
           "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
@@ -4156,15 +4185,18 @@
           "sourceReference": "Revelation 4:1–11",
           "publicationApproved": false,
           "editorialReadingCandidate": {
-            "text": "John also beheld a throne in heaven, with living creatures and elders worshipping the One seated upon it.",
+            "text": "The account now turns from the apostolic mission to the visions recorded by John. On Patmos, John received the revelation; later in the vision he beheld a throne in heaven, with living creatures and elders worshipping the One seated upon it.",
             "sourceReferences": [
+              "Revelation 1:9–11",
               "Revelation 4:1–11"
             ],
             "status": "PROPOSED_SOURCE_BACKED_CONTINUITY_COPY_NOT_APPROVED",
             "preservesOriginalDeskCopy": true,
             "printedEditionCollationPending": true,
             "finalLiteraryAcceptance": false,
-            "publicationApproved": false
+            "publicationApproved": false,
+            "previousTextForCrossMovementAudit": "John also beheld a throne in heaven, with living creatures and elders worshipping the One seated upon it.",
+            "crossMovementNarrativeReason": "Identify the literary change from historical Acts to heavenly vision and its attested Johannine provenance, not a terrestrial journey or dated sequence."
           }
         },
         {
@@ -4662,6 +4694,17 @@
       "estimatedDouayWordsSavedInDerivedReading": 192,
       "canonicalProofSelectedScriptureUnchanged": true,
       "queuedForReevaluationInContinuousReadthrough": true,
+      "publicationApproved": false
+    },
+    "crossMovementEconomyPass4": {
+      "status": "36_MOVEMENT_BOUNDARIES_READ_AT_TEXT_BOUNDARY_DESK_ONLY",
+      "intermovementBoundariesChecked": 36,
+      "newSourceBackedConnectors": 2,
+      "existingConnectorsClarified": 3,
+      "sourceSelectionsAltered": 0,
+      "religiousInterpretationsInvented": 0,
+      "chronologyHypothesesTreatedAsCertain": false,
+      "oralReadAloudAcceptance": false,
       "publicationApproved": false
     }
   },
