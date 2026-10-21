@@ -66,6 +66,11 @@ on:
       - 'data/learn/research/pius-x-first17-branching-dialogue-graph-20261021.v1.json'
       - 'docs/research/PIUS-X-17-BILINGUAL-DIALOGUES-20261021.md'
       - 'tests/pius-x-first17-dialogue-graph.mjs'
+      - 'data/learn/research/pius-x-dialogue-authoring-next20-part-a-20261021.v1.json'
+      - 'data/learn/research/pius-x-dialogue-authoring-next20-part-b-20261021.v1.json'
+      - 'data/learn/research/pius-x-37chapter-dialogue-navigation-index-20261021.v1.json'
+      - 'docs/research/PIUS-X-NEXT-20-EN-FR-DIALOGUES-20261021.md'
+      - 'tests/pius-x-next20-dialogue-content.mjs'
       - 'tests/pius-x-first20-personal-and-papal-source-edits.mjs'
       - 'previews/visible-mass-3d/pius-x-batch-release-editorial-review.html'
       - 'tools/formation/build-pius-x-release-review.mjs'
@@ -392,6 +397,7 @@ jobs:
       - name: Test first twenty revised papal teaching and biography replies against original owners
         run: node tests/pius-x-first20-personal-and-papal-source-edits.mjs
       - run: node tests/pius-x-first17-dialogue-graph.mjs
+      - run: node tests/pius-x-next20-dialogue-content.mjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
