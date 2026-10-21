@@ -111,11 +111,25 @@ try{
   await page.locator('#rateVoice').selectOption('3');
   await page.locator('#rateClarity').selectOption('5');
   await page.locator('#notes').fill('The source and performer must remain separate.');
-  const [download]=await Promise.all([page.waitForEvent('download'),page.locator('#exportRating').click()]);
-  assert.equal(download.suggestedFilename(),'pius-x-12-scene-review-ratings.json');
-  const dest=resolve(artefacts,'review-'+vp.width+'.json');
-  await download.saveAs(dest);
-  const exported=JSON.parse(await readFile(dest,'utf8'));
+  await page.evaluate(()=>{
+    const originalCreate=URL.createObjectURL.bind(URL);
+    URL.createObjectURL=blob=>{window.__spxExportBlob=blob;return originalCreate(blob)};
+    const originalClick=HTMLAnchorElement.prototype.click;
+    HTMLAnchorElement.prototype.click=function(){
+      window.__spxExportAnchor={download:this.download,href:this.href,connected:this.isConnected};
+      return originalClick.call(this);
+    };
+  });
+  await page.locator('#exportRating').click();
+  const captured=await page.evaluate(async()=>({
+    payload:window.__spxExportBlob?JSON.parse(await window.__spxExportBlob.text()):null,
+    anchor:window.__spxExportAnchor||null
+  }));
+  assert(captured.payload,'review export must generate a complete client-side JSON Blob');
+  assert.equal(captured.anchor?.download,'pius-x-12-scene-review-ratings.json');
+  assert.equal(captured.anchor?.connected,true,'download link was connected when clicked');
+  assert.match(captured.anchor.href,/^blob:http:\/\/127\.0\.0\.1:/);
+  const exported=captured.payload;
   assert.equal(exported.schema,'AO_SPX_DEPTH12_EDITORIAL_SCENE_RATINGS_V1');
   assert.equal(exported.ratings['SPX-023'].pacing,'4');
   assert.equal(exported.ratings['SPX-023'].voice,'3');
