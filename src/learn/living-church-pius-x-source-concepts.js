@@ -1,3 +1,5 @@
+import {historicalSourceScopeExcluded} from "./living-church-historical-focus.js";
+
 /**
  * Conservative concept-to-document navigation for St Pius X. No embeddings,
  * answer generation, spiritual diagnosis or application of present-day law.
@@ -48,6 +50,7 @@ export function piusSourceConceptCandidates(question,registry,{language="en"}={}
  const q=fold(question),lang=language==="fr"?"fr":"en";
  if(!q)return [];
  return registry.families.filter(f=>{
+  if(historicalSourceScopeExcluded(f.topicId,question))return false;
   const groups=f.facets[lang];
   return groups.length===2&&groups.every(g=>g.some(term=>phraseMatch(q,term)));
  }).map(f=>Object.freeze({topicId:f.topicId,sourceRef:f.sourceRef,concept:f.concept,
