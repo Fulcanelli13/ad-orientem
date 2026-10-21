@@ -10,10 +10,13 @@ const data={
   archive:json("data/customs/research/weiser-public-reference-index.v1.json"),
   sources:json("data/customs/source-registry.v1.json"),
   p0:json("data/customs/customs-p0-guidance-en-fr.v1.json"),
-  p1:json("data/customs/customs-p1-guidance-en-fr.v1.json")
+  p1:json("data/customs/customs-p1-guidance-en-fr.v1.json"),
+  frCopy:json("data/customs/customs-fr-canonical-copy.v1.json")
 };
 const library=createCustomsLibrary(data);
 assert.equal(library.stats.canonical,38,"38 current canonical IDs retained");
+assert.equal(library.items.every(c=>c.title_fr&&c.description_fr&&c.caution_fr),true,"all 38 canonical records have French title, description and pastoral qualification");
+assert.equal(new Set(data.frCopy.entries.map(c=>c.custom_id)).size,27,"exactly 27 supplementary French records");
 assert.equal(library.published,35,"publication boundary preserved");
 assert.equal(library.contextOnly,3,"three contextual customs not promoted into published practices");
 assert.equal(library.stats.research,568,"all Weiser observations accessible in research index");
