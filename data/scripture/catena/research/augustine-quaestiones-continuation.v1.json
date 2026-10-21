@@ -1,0 +1,1208 @@
+{
+  "schema": "ao.catena.augustine-quaestiones-continuation.v1",
+  "date": "2026-10-21",
+  "corpusRef": "data/scripture/catena/manifest.v1.json",
+  "priorSequentialIndex": "data/scripture/catena/research/augustine-quaestiones-sequential-index.v1.json",
+  "sourceRef": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+  "sourceTranslationStatus": "Original Latin short anchors + modern editorial question navigation only; no independent English patristic answers",
+  "editorialPrinciples": [
+    "Do not turn a quoted biblical question into a question Augustine authored.",
+    "Keep section count separate from number of explicit original questions.",
+    "Original Latin anchoring from displayed source is not critical-edition textual certification.",
+    "Do not join distinct Augustinian works simply because Catena calls both Quaestiones."
+  ],
+  "coverage": [
+    {
+      "book": "I",
+      "from": 14,
+      "to": 47,
+      "count": 34
+    },
+    {
+      "book": "II",
+      "from": 24,
+      "to": 51,
+      "count": 28
+    }
+  ],
+  "records": [
+    {
+      "id": "aug-qev-i-14",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 14,
+      "sourceLocator": "I.14",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum#QE_001_014_014",
+      "latinAnchor": "Quod dixerunt Iudei",
+      "scriptureKeys": [
+        "matthew/13/54"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "How does Augustine distinguish Christ's wisdom from his mighty works?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-i-15",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 15,
+      "sourceLocator": "I.15",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum#QE_001_015_015",
+      "latinAnchor": "Quod dixerunt discipuli fantasma",
+      "scriptureKeys": [
+        "matthew/14/26"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "What does the disciples' fear on the water signify?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-i-16",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 16,
+      "sourceLocator": "I.16",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum#QE_001_016_016",
+      "latinAnchor": "Munus quodcumque est ex me",
+      "scriptureKeys": [
+        "matthew/15/5"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "What is the significance of the gift invoked to avoid supporting parents?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-i-17",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 17,
+      "sourceLocator": "I.17",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum#QE_001_017_017",
+      "latinAnchor": "Omnis plantatio quam non plantavit",
+      "scriptureKeys": [
+        "matthew/15/13"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "What does the plant not planted by the Father signify?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-i-18",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 18,
+      "sourceLocator": "I.18",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum#QE_001_018_018",
+      "latinAnchor": "Quod et puerum centurionis",
+      "scriptureKeys": [
+        "matthew/15/22"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "Why are the Gentiles healed by Christ's word without his visiting their houses?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-i-19",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 19,
+      "sourceLocator": "I.19",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum#QE_001_019_019",
+      "latinAnchor": "Quod turbae obtulerunt Domino",
+      "scriptureKeys": [
+        "matthew/15/30"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "How does Augustine interpret the disabilities of the healed crowd?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-i-20",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 20,
+      "sourceLocator": "I.20",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum#QE_001_020_020",
+      "latinAnchor": "Quod dixit Dominus: Facto vespere",
+      "scriptureKeys": [
+        "matthew/16/2"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "How does Augustine interpret the signs of the weather?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-i-21",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 21,
+      "sourceLocator": "I.21",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum#QE_001_021_021",
+      "latinAnchor": "Quod dixit Dominus: Helias",
+      "scriptureKeys": [
+        "matthew/17/11"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "What does Elijah's restoration signify?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-i-22",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 22,
+      "sourceLocator": "I.22",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum#QE_001_022_022",
+      "latinAnchor": "Quod dixit: Saepe cadit",
+      "scriptureKeys": [
+        "matthew/17/15"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "What does the boy's falling into fire and water signify?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-i-23",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 23,
+      "sourceLocator": "I.23",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum#QE_001_023_023",
+      "latinAnchor": "Quod dixit: Ergo liberi",
+      "scriptureKeys": [
+        "matthew/17/26"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "What does the freedom of the sons signify?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-i-24",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 24,
+      "sourceLocator": "I.24",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum#QE_001_024_024",
+      "latinAnchor": "Quod Dominus dicit: Qui autem scandalizaverit",
+      "scriptureKeys": [
+        "matthew/18/6"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "What warning does the millstone signify?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-i-25",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 25,
+      "sourceLocator": "I.25",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum#QE_001_025_025",
+      "latinAnchor": "Quod oblatus est domino debitor",
+      "scriptureKeys": [
+        "matthew/18/24"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "What does the debtor of ten thousand talents signify?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-i-26",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 26,
+      "sourceLocator": "I.26",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum#QE_001_026_026",
+      "latinAnchor": "Quod ait Dominus divitem non intrare",
+      "scriptureKeys": [
+        "matthew/19/24"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "Does Christ's warning concerning riches include people who merely desire them?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-i-27",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 27,
+      "sourceLocator": "I.27",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum#QE_001_027_027",
+      "latinAnchor": "Quod Dominus seorsum se duobus",
+      "scriptureKeys": [
+        "matthew/20/17"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "What does Augustine say of Christ privately announcing his Passion?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-i-28",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 28,
+      "sourceLocator": "I.28",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum#QE_001_028_028",
+      "latinAnchor": "Ab Iericho egreditur Dominus",
+      "scriptureKeys": [
+        "matthew/20/30"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "What do the two blind men near Jericho signify?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-i-29",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 29,
+      "sourceLocator": "I.29",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum#QE_001_029_029",
+      "latinAnchor": "Quod Dominus dicit discipulis: Dicetis",
+      "scriptureKeys": [
+        "matthew/21/21"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "What does the mountain cast into the sea signify?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-i-30",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 30,
+      "sourceLocator": "I.30",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum#QE_001_030_030",
+      "latinAnchor": "Quod Dominus dicit: Et qui ceciderit",
+      "scriptureKeys": [
+        "matthew/21/44"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "What is the distinction between falling on the stone and having it fall upon one?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-i-31",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 31,
+      "sourceLocator": "I.31",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum#QE_001_031_031",
+      "latinAnchor": "Quod dixit Dominus: Simile est regnum",
+      "scriptureKeys": [
+        "matthew/22/2"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "What is signified by the king's wedding feast?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-i-32",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 32,
+      "sourceLocator": "I.32",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum#QE_001_032_032",
+      "latinAnchor": "Quod Sadducei dicunt Domino: Fuerunt",
+      "scriptureKeys": [
+        "matthew/22/25"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "How does Augustine interpret the Sadducees' seven brothers?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-i-33",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 33,
+      "sourceLocator": "I.33",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum#QE_001_033_033",
+      "latinAnchor": "Quod Dominus dixit: In his duobus",
+      "scriptureKeys": [
+        "matthew/22/40"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "Why does all the law hang upon the two commandments?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-i-34",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 34,
+      "sourceLocator": "I.34",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum#QE_001_034_034",
+      "latinAnchor": "Quod Dominus dixit: Quid enim maius",
+      "scriptureKeys": [
+        "matthew/23/17"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "What do temple, altar, gold, and offering signify?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-i-35",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 35,
+      "sourceLocator": "I.35",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum#QE_001_035_035",
+      "latinAnchor": "Quod Dominus dixit: Excolantes culicem",
+      "scriptureKeys": [
+        "matthew/23/24"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "What does straining out the gnat and swallowing the camel signify?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-i-36",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 36,
+      "sourceLocator": "I.36",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum#QE_001_036_036",
+      "latinAnchor": "Quod dixit Dominus ad Ierusalem",
+      "scriptureKeys": [
+        "matthew/23/37"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "Why does Christ liken himself to a hen gathering her chicks?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-i-37",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 37,
+      "sourceLocator": "I.37",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum#QE_001_037_037",
+      "latinAnchor": "Quod Dominus dixit: Orate ne fiat",
+      "scriptureKeys": [
+        "matthew/24/20"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "What does a flight in winter or on the Sabbath mean?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-i-38",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 38,
+      "sourceLocator": "I.38",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum#QE_001_038_038",
+      "latinAnchor": "Quod Dominus dixit: Sicut enim fulgur",
+      "scriptureKeys": [
+        "matthew/24/27"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "How does Augustine interpret lightning from east to west?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-i-39",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 39,
+      "sourceLocator": "I.39",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum#QE_001_039_039",
+      "latinAnchor": "Quod Dominus dixit: Ab arbore autem",
+      "scriptureKeys": [
+        "matthew/24/32"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "What does the fig tree signify?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-i-40",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 40,
+      "sourceLocator": "I.40",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum#QE_001_040_040",
+      "latinAnchor": "Quod Dominus de Iuda dixit",
+      "scriptureKeys": [
+        "matthew/26/24"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "original_authorial_question_within_section",
+      "originalQuestionAnchor": "utrum in hanc vitam, ut usitate locutus sit?",
+      "readerQuestion": "In what sense could it be better for Judas not to have been born?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-i-41",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 41,
+      "sourceLocator": "I.41",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum#QE_001_041_041",
+      "latinAnchor": "Quod Dominus triginta argenteis venditus",
+      "scriptureKeys": [
+        "matthew/26/15"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "What meaning does Augustine give to the thirty pieces of silver?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-i-42",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 42,
+      "sourceLocator": "I.42",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum#QE_001_042_042",
+      "latinAnchor": "Quod Dominus dicit: Ubi fuerit corpus",
+      "scriptureKeys": [
+        "matthew/24/28"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "What do the body and the eagles signify?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-i-43",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 43,
+      "sourceLocator": "I.43",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum#QE_001_043_043",
+      "latinAnchor": "Quod Dominus dicit sub tempus passionis",
+      "scriptureKeys": [
+        "matthew/26/29"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "What does the promised new wine signify?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-i-44",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 44,
+      "sourceLocator": "I.44",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum#QE_001_044_044",
+      "latinAnchor": "Quod dictum est: Expuerunt in faciem",
+      "scriptureKeys": [
+        "matthew/26/67"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "How does Augustine interpret those who spat in Christ's face?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-i-45",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 45,
+      "sourceLocator": "I.45",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum#QE_001_045_045",
+      "latinAnchor": "Quod Petrus necdum solidatus in fide",
+      "scriptureKeys": [
+        "matthew/26/75"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "How does Augustine interpret Peter's three denials?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-i-46",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 46,
+      "sourceLocator": "I.46",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum#QE_001_046_046",
+      "latinAnchor": "Quod ad passionem euntem Dominum",
+      "scriptureKeys": [
+        "matthew/26/58"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "Why does Peter follow Christ from afar?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-i-47",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "I",
+      "section": 47,
+      "sourceLocator": "I.47",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum#QE_001_047_047",
+      "latinAnchor": "Sicut tentatio cupiditatis trina",
+      "scriptureKeys": [
+        "matthew/26/44"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "Why does Augustine associate Christ's three prayers with three kinds of temptation?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-ii-24",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 24,
+      "sourceLocator": "II.24",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "latinAnchor": "Quod Dominus dicit discipulis: Anima",
+      "scriptureKeys": [
+        "luke/12/23"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "What does the comparison of life and food teach?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-ii-25",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 25,
+      "sourceLocator": "II.25",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "latinAnchor": "Quod Dominus dicit: Sint lumbi",
+      "scriptureKeys": [
+        "luke/12/35"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "What do girded loins and burning lamps signify?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-ii-26",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 26,
+      "sourceLocator": "II.26",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "latinAnchor": "Quod Dominus dixit Petro: Quis putas",
+      "scriptureKeys": [
+        "luke/12/42"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "What does the faithful steward's measured provision mean?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-ii-27",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 27,
+      "sourceLocator": "II.27",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "latinAnchor": "Quod Dominus dixit: Cum videritis nubem",
+      "scriptureKeys": [
+        "luke/12/54"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "What does the cloud from the west signify?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-ii-28",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 28,
+      "sourceLocator": "II.28",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "latinAnchor": "Quod Dominus dixit: Si enim quod minimum",
+      "scriptureKeys": [
+        "luke/12/26"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "Why is increasing bodily stature called the least thing?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-ii-29",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 29,
+      "sourceLocator": "II.29",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "latinAnchor": "Cum diceret discipulis non debere",
+      "scriptureKeys": [
+        "luke/12/29"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "Why is anxiety over necessities linked to pride?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-ii-30",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 30,
+      "sourceLocator": "II.30",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "latinAnchor": "Quod de civitate adducit invitatos",
+      "scriptureKeys": [
+        "luke/14/21"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "What do the guests brought from streets and hedges signify?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-ii-31",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 31,
+      "sourceLocator": "II.31",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "latinAnchor": "Sumptus ad turrem aedificandam",
+      "scriptureKeys": [
+        "luke/14/28"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "What do the tower and the king preparing for war signify?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-ii-32",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 32,
+      "sourceLocator": "II.32",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "latinAnchor": "Salem infatuatum apostatam",
+      "scriptureKeys": [
+        "luke/15/4"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "What do the lost sheep and the ninety-nine signify?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-ii-33",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 33,
+      "sourceLocator": "II.33",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "latinAnchor": "Homo habens duos filios",
+      "scriptureKeys": [
+        "luke/15/11"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "original_authorial_question_within_section",
+      "originalQuestionAnchor": "Quis est ergo haedus quem numquam accepit ad epulandum?",
+      "readerQuestion": "How does Augustine interpret the prodigal son and his elder brother?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-ii-34",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 34,
+      "sourceLocator": "II.34",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "latinAnchor": "In villico quem Dominus eiciebat",
+      "scriptureKeys": [
+        "luke/16/1"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "What may and may not be imitated in the dishonest steward?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-ii-35",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 35,
+      "sourceLocator": "II.35",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "latinAnchor": "Quod dicit: Si in alieno fideles",
+      "scriptureKeys": [
+        "luke/16/12"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "Why are earthly possessions described as another's property?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-ii-36",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 36,
+      "sourceLocator": "II.36",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "latinAnchor": "Quod ait: Aut unum odiet",
+      "scriptureKeys": [
+        "luke/16/13"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "How does Augustine interpret the two masters?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-ii-37",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 37,
+      "sourceLocator": "II.37",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "latinAnchor": "Regnum caelorum vim patitur",
+      "scriptureKeys": [
+        "luke/16/16"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "What is the force by which the kingdom is taken?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-ii-38",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 38,
+      "sourceLocator": "II.38",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "latinAnchor": "Homo quidam erat dives",
+      "scriptureKeys": [
+        "luke/16/19"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "What interpretations does Augustine give of the rich man and Lazarus?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-ii-39",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 39,
+      "sourceLocator": "II.39",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "latinAnchor": "Quod dixerunt discipuli: Domine, auge",
+      "scriptureKeys": [
+        "luke/17/5"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "How does service relate to Christ's reply about increasing faith?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-ii-40",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 40,
+      "sourceLocator": "II.40",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "latinAnchor": "In decem leprosis quos Dominus",
+      "scriptureKeys": [
+        "luke/17/12"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "original_authorial_question_within_section",
+      "originalQuestionAnchor": "cur ad sacerdotes eos miserit",
+      "readerQuestion": "Why were the ten lepers sent to the priests before being cleansed?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-ii-41",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 41,
+      "sourceLocator": "II.41",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "latinAnchor": "Quid est quod dicit Dominus: Qui fuerit",
+      "scriptureKeys": [
+        "luke/17/31"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "original_authorial_question_within_section",
+      "originalQuestionAnchor": "Quid est quod dicit Dominus: Qui fuerit in tecto",
+      "readerQuestion": "Why must a person on the housetop not descend for possessions?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-ii-42",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 42,
+      "sourceLocator": "II.42",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "latinAnchor": "Quid est quod dictum est: Similiter",
+      "scriptureKeys": [
+        "luke/17/31"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "original_authorial_question_within_section",
+      "originalQuestionAnchor": "Quid est quod dictum est: Similiter et qui in agro fuerit",
+      "readerQuestion": "Why must the person in the field not return?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-ii-43",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 43,
+      "sourceLocator": "II.43",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "latinAnchor": "Quid significavit uxor Loth",
+      "scriptureKeys": [
+        "luke/17/32"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "original_authorial_question_within_section",
+      "originalQuestionAnchor": "Quid significavit uxor Loth?",
+      "readerQuestion": "What did Lot's wife signify?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-ii-44",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 44,
+      "sourceLocator": "II.44",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "latinAnchor": "Qui sunt in illa nocte duo in lecto",
+      "scriptureKeys": [
+        "luke/17/34"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "original_authorial_question_within_section",
+      "originalQuestionAnchor": "Qui sunt in illa nocte duo in lecto",
+      "readerQuestion": "Who are those taken and those left?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-ii-45",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 45,
+      "sourceLocator": "II.45",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "latinAnchor": "Quid est quod ad semper orandum",
+      "scriptureKeys": [
+        "luke/18/1"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "original_authorial_question_within_section",
+      "originalQuestionAnchor": "Quid est quod ad semper orandum",
+      "readerQuestion": "Why did Christ choose the unjust judge to teach perseverance in prayer?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-ii-46",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 46,
+      "sourceLocator": "II.46",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "latinAnchor": "Homo quidam nobilis abiit",
+      "scriptureKeys": [
+        "luke/19/12"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "What do the nobleman and his entrusted pounds signify?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-ii-47",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 47,
+      "sourceLocator": "II.47",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "latinAnchor": "Quid est quod ait: Facilius est camelum",
+      "scriptureKeys": [
+        "luke/18/25"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "original_authorial_question_within_section",
+      "originalQuestionAnchor": "Quid est quod ait: Facilius est camelum",
+      "readerQuestion": "Why does Christ compare the rich man's entry to a camel passing through a needle?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-ii-48",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 48,
+      "sourceLocator": "II.48",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "latinAnchor": "Possemus de propinquantibus ad Iericho",
+      "scriptureKeys": [
+        "luke/18/35"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "How does Augustine reconcile the blind men near Jericho in different Gospels?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-ii-49",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 49,
+      "sourceLocator": "II.49",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "latinAnchor": "Ad id quod dixit: Non enim ultra",
+      "scriptureKeys": [
+        "luke/20/36"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "Why does marriage cease in the resurrection?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-ii-50",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 50,
+      "sourceLocator": "II.50",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "latinAnchor": "Quod dixit Dominus discipulis: Orate ne intretis",
+      "scriptureKeys": [
+        "luke/22/40"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "numbered_exegetical_treatment_not_verbatim_question",
+      "originalQuestionAnchor": null,
+      "readerQuestion": "What does the stone's throw in Gethsemane signify?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    },
+    {
+      "id": "aug-qev-ii-51",
+      "work": "Augustine, Quaestiones Evangeliorum",
+      "book": "II",
+      "section": 51,
+      "sourceLocator": "II.51",
+      "latinWitnessUrl": "https://la.wikisource.org/wiki/Quaestionum_Evangeliorum",
+      "latinAnchor": "Quod scriptum est de Domino: Finxit se",
+      "scriptureKeys": [
+        "luke/24/28"
+      ],
+      "scriptureKeyEvidence": "editorially aligned with passage cited in Latin; verse-level granularity not a proof of precise verse quotation",
+      "originalQuestionKind": "original_authorial_question_within_section",
+      "originalQuestionAnchor": "Quid ergo significat quod se ire longius Dominus finxit",
+      "readerQuestion": "Why did Christ appear to intend to travel farther on the road to Emmaus?",
+      "readerQuestionOrigin": "modern_editorial_rephrasing_not_father_quote",
+      "catenaLinks": [],
+      "publicationState": "research_only_context_edition_translation_review_pending"
+    }
+  ]
+}
