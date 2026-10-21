@@ -198,7 +198,9 @@ export async function searchCatenaAcrossGospels(question,{
    }catch{unavailable.push(match.gospel)}
   }
  }
- await expand(literal,false);
- if(results.length<target&&topic)await expand(expanded,true);
+ // When a narrowly recognized subject is requested, verified source wording
+ // outranks incidental generic lexical overlap; exact matches fill gaps.
+ if(topic)await expand(expanded,true);
+ if(results.length<target)await expand(literal,false);
  return {results,unavailable:[...new Set(unavailable)],searched:indexes.length};
 }
