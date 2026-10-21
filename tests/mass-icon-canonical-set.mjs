@@ -45,8 +45,16 @@ for (const m of set.meanings.filter(m => m.assetId)) {
   const bytes = fs.readFileSync(new URL('../' + m.path, import.meta.url));
   ok(crypto.createHash('sha256').update(bytes).digest('hex') === m.sha256, `${m.assetId}: bytes differ from pinned hash`);
   if (item.sourceHash) ok(item.sourceHash === m.sha256, `${m.assetId}: hash disagrees with the Oct 20 lock`);
-  ok(!assetSeen.has(m.assetId), `${m.assetId} is canonical for two meanings (${assetSeen.get(m.assetId)}, ${m.meaningId})`);
-  assetSeen.set(m.assetId, m.meaningId);
+  if (m.reusesMeaning) {
+    // A declared reuse: same picture as another meaning in the SAME lane, by explicit user decision.
+    const owner = meanings.get(m.reusesMeaning);
+    ok(owner && owner.assetId === m.assetId, `${m.meaningId}: declared reuse of ${m.reusesMeaning} but the asset differs`);
+    ok(owner.lane === m.lane, `${m.meaningId}: a reuse may not cross lanes (${owner.lane} -> ${m.lane})`);
+    ok(/^user-/.test(m.decidedBy), `${m.meaningId}: a reuse must be a user decision`);
+  } else {
+    ok(!assetSeen.has(m.assetId), `${m.assetId} is canonical for two meanings (${assetSeen.get(m.assetId)}, ${m.meaningId})`);
+    assetSeen.set(m.assetId, m.meaningId);
+  }
   if (!shaByLane.has(m.sha256)) shaByLane.set(m.sha256, new Set());
   shaByLane.get(m.sha256).add(m.lane);
 }
