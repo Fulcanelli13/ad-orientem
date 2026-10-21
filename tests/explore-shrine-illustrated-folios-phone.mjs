@@ -9,8 +9,25 @@ import {chromium} from "@playwright/test";
 const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
 const out=resolve(root,"artifacts/shrine-folios");
 await mkdir(out,{recursive:true});
-const corpus=JSON.parse(await readFile(resolve(root,"data/shrines/illustrated-place-guides-world-marian-r1.v1.json"),"utf8")).guides
+const newGuides=JSON.parse(await readFile(resolve(root,"data/shrines/illustrated-place-guides-world-marian-r1.v1.json"),"utf8")).guides
  .concat(JSON.parse(await readFile(resolve(root,"data/shrines/illustrated-place-guides-global-saints-r1.v1.json"),"utf8")).guides);
+const illustratedRecoveryIds=new Set([
+ "place:FR:pontmain","place:FR:sanctuaire-notre-dame-de-laghet",
+ "place:FR:sanctuary-of-our-lady-of-rocamadour",
+ "place:IE:lough-derg-station-island","place:IE:croagh-patrick-murrisk-pilgrimage-base",
+ "place:IE:st-peters-oliver-plunkett-drogheda"
+]);
+const previouslyPublished=[
+ "data/shrines/illustrated-place-guides-france.v1.json",
+ "data/shrines/illustrated-place-guides-france-r67.v1.json",
+ "data/shrines/illustrated-place-guides-ireland.v1.json"
+];
+const recoveredGuides=(await Promise.all(previouslyPublished.map(async f=>
+ JSON.parse(await readFile(resolve(root,f),"utf8")).guides)))
+ .flat().filter(g=>illustratedRecoveryIds.has(g.place_id));
+assert.equal(recoveredGuides.length,6,"Each recovered photo must retain its original published guide");
+const corpus=[...newGuides,...recoveredGuides];
+assert.equal(corpus.length,17,"Eleven first-batch guides plus six recovered existing folios");
 const photos=JSON.parse(await readFile(resolve(root,"data/geography/approved-place-media.v1.json"),"utf8")).items;
 const byPlace=new Map(photos.map(x=>[x.place_id,x]));
 const mime={".html":"text/html; charset=utf-8",".js":"text/javascript; charset=utf-8",
@@ -82,7 +99,7 @@ try{
     return {content:el.scrollWidth,frame:el.clientWidth,offenders};
    });
    assert.ok(overflow.content<=overflow.frame+2,g.place_id+" horizontal overflow "+JSON.stringify(overflow));
-   if([0,3,6,8,10].includes(index)){
+   if([0,3,6,8,10,11,12,13,14,15,16].includes(index)){
     const safe=g.place_id.replace(/[^a-z0-9]+/gi,"-");
     await page.screenshot({path:resolve(out,width+"-"+safe+".png"),fullPage:false});
    }
@@ -90,7 +107,7 @@ try{
   assert.deepEqual(errors,[],"Browser JavaScript errors at "+width);
   await context.close();
  }
- console.log("PASS: 11 real Place folios × 2 phone widths; all approved photos load with canonical ID, bilingual guide and source evidence.");
+ console.log("PASS: 17 real Place folios × 2 phone widths; all approved photos load with canonical ID, bilingual guide and source evidence.");
 }finally{
  if(browser)await browser.close();
  await new Promise(done=>server.close(done));
