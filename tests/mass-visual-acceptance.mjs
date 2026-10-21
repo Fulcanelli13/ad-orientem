@@ -761,7 +761,8 @@ try{
     "loaded v1.80 priest-action registry does not expose the Host elevation action at AO.SM.C0174: "+JSON.stringify(elevationState));
   assert.equal(elevationState.projectedAction,"ELEVATES HOST",
     "native state projection dropped the Host elevation action after cue resolution");
-  assert.equal(elevationState.projectedActionIconKey,"priest_elevation","Host elevation lost the reviewed v1.80 art");
+  assert.equal(elevationState.projectedActionIconKey,"canon:priest.action.elevate_host",
+    "Host elevation must use its approved canonical action meaning (same reviewed v1.80 asset)");
   assert.equal(elevationState.cinematicKind,"ELEVATION");
   // The later source-first cinematic deliberately replaces the old opaque
   // full-screen blackout with one rail-owned icon in MEASURED EMPTY SPACE.
