@@ -44,6 +44,12 @@ assert.equal(editorial.related_variant_families.length,28);
 assert.ok(editorial.potential_same_practice_groups.every(x=>x.observation_ids.every(id=>wid.has(id))));
 assert.ok(editorial.related_variant_families.every(x=>x.observation_ids.every(id=>wid.has(id))));
 assert.equal(queue.summary.identity_or_variant_review,286);
+assert.equal(queue.summary.previously_decided_other_owner_or_context_within_286,26);
+assert.equal(queue.summary.remaining_without_54_card_owner_decision,260);
+const mappedTo54=new Set(obs.filter(x=>x.linked_master_identity_ids.length===0&&
+  ["CANDIDATE","REGIONAL","ENRICH"].includes(x.triage)&&x.editorial_card_ids.length).map(x=>x.id));
+assert.equal(mappedTo54.size,26);
+
 assert.equal(queue.summary.unlinked,518);
 assert.equal(queue.summary.historical_archive,117);
 assert.equal(queue.summary.excluded_reference,34);
