@@ -6,6 +6,7 @@ import { romanClassTier } from "./roman-class-tier.js";
 import { calendarIntelligenceForDate, calendarPracticeMonthEntries } from "./intelligence.js";
 import { pilgrimagePlacesForCalendarKeys } from "./pilgrimage-places.js";
 import { renderYearJourney, yearJourneyCss } from "./year-journey.js";
+import { calendarCustomRecommendations, calendarCustomSeasonalMonthEntries } from "./customs-read-model.js";
 import { calendarMassColour } from "./colour-projection.js";
 import { calendarPaletteColour, yearDailyProjection, yearSeasonGradient } from "./year-colour-wheel.js";
 import { serialize1962CalendarMonth, calendarMonthIcsFilename } from "./export-ics.js";
@@ -263,6 +264,7 @@ function monthIndexEntries(monthId,view){
 function monthHybridOverview(monthId,selected){
   const principal=monthIndexEntries(monthId,"major"),practices=monthIndexEntries(monthId,"practices");
   const majorStatus=monthIndexResolutionState(monthId,"major");
+  const seasonalCustoms=calendarCustomSeasonalMonthEntries(monthId,{fr:fr()});
   const majorCards=principal.map((item,i)=>
     `<button type="button" class="aoCalHybridMajor${i<2?" featured":""}" data-cal-month-index-date="${esc(item.date)}" style="--month-accent:${esc(item.accent)}">
       <span class="aoCalHybridDate">${esc(displayDate(item.date))}</span>
@@ -282,6 +284,7 @@ function monthHybridOverview(monthId,selected){
     </section>
     <section class="aoCalHybridSection aoCalHybridPracticesSection">
       <div class="aoCalHybridHeading"><h3>${esc(L("Practices & customs","Pratiques et coutumes"))}</h3></div>
+      ${seasonalCustoms.length?`<div class="aoCalCustomMonthContext"><small>${esc(L("CUSTOMS OF THE SEASON","COUTUMES DE LA SAISON"))}</small>${seasonalCustoms.map(item=>`<button type="button" data-cal-month-index-date="${esc(item.date)}"><strong>${esc(item.title)}</strong><span aria-hidden="true">›</span></button>`).join("")}</div>`:""}
       <div class="aoCalHybridPractices">${practiceCards||`<p class="aoCalHybridEmpty">${esc(L("No featured practices for this month.","Aucune pratique signalée pour ce mois."))}</p>`}</div>
     </section>
   </div>`;
@@ -699,6 +702,23 @@ function disciplineReference(discipline){
     ${eras.map(era=>`<section><small>${esc(String(era.label||"").toUpperCase())}</small>${(era.items||[]).map(item=>`<article><div><strong>${esc(item.title)}</strong><span>${esc(item.status)}</span></div><p>${esc(item.summary)}</p>${item.today?`<b>${esc(item.today)}</b>`:""}</article>`).join("")}${era.sources?.length?`<div class="aoCalPracticeSources">${era.sources.map(source=>`<a href="${esc(source.url)}" target="_blank" rel="noopener">${esc(source.label)} ↗</a>`).join("")}</div>`:""}</section>`).join("")}
   </details>`;
 }
+
+function calendarCustomArticleMarkup(article){
+  const isFr=fr(),lang=isFr?"fr":"en",Lcopy=(en,frText)=>isFr?frText:en;
+  const sources=article.sources||[];
+  return `<details class="aoCalCustomArticle" data-cal-custom-id="${esc(article.id)}">
+    <summary><span><strong>${esc(article.title[lang])}</strong><small>${esc(article.occasion[lang]||"")}</small></span><span aria-hidden="true">›</span></summary>
+    <div class="aoCalCustomArticleContent">
+      <p>${esc(article.description[lang])}</p>
+      ${article.history[lang]!==article.description[lang]?`<h5>${esc(Lcopy("Historical context","Contexte historique"))}</h5><p>${esc(article.history[lang])}</p>`:""}
+      <h5>${esc(Lcopy("Spiritual meaning","Sens spirituel"))}</h5><p>${esc(article.meaning[lang])}</p>
+      <h5>${esc(Lcopy("Traditional household practice","Pratique traditionnelle"))}</h5><p>${esc(article.practice[lang])}</p>
+      <h5>${esc(Lcopy("Scope and cautions","Portée et précautions"))}</h5><p>${esc(article.scope[lang])}</p><p>${esc(article.caution[lang])}</p>
+      ${sources.length?`<h5>${esc(Lcopy("Sources","Sources"))}</h5><ul>${sources.map(source=>`<li><a href="${esc(source.url)}" target="_blank" rel="noopener noreferrer">${esc(source.title)} ↗</a></li>`).join("")}</ul>`:""}
+    </div>
+  </details>`;
+}
+
 function practiceContext(selected,r){
   let intel=null;
   try{intel=calendarIntelligenceForDate(selected,{fr:fr(),properTitle:titleOf(r)})}catch(error){console.error("Calendar intelligence failed",error)}
@@ -707,16 +727,18 @@ function practiceContext(selected,r){
   const tags=new Set(events.flatMap(event=>event?.tags||[]));
   const linkedPlaces=pilgrimagePlacesForCalendarKeys(intel.semantic?.map(event=>event.key),pilgrimageCorpus??{});
   const disciplineRelevant=intel.discipline?.today?.key!=="none"||[...tags].some(tag=>/DISCIPLINE|PENITENTIAL/.test(tag));
-  if(!events.length&&!disciplineRelevant)return "";
+  const seasonalCustoms=calendarCustomRecommendations(selected,{events,fr:fr()});
+  if(!events.length&&!disciplineRelevant&&!seasonalCustoms.length)return "";
   return `<section class="aoCalPracticeContext" data-cal-intelligence-date="${esc(selected)}">
     <div class="aoCalV2SectionTitle"><div><small>${esc(L("PRACTICES & DISCIPLINE","PRATIQUES & DISCIPLINE"))}</small><h3>${esc(L("For this date","Pour cette date"))}</h3></div></div>
     <p class="aoCalPracticeIntro">${esc(L("Date-bound devotional context. Current obligations remain separate from historical discipline and voluntary custom.","Contexte dévotionnel lié à la date. Les obligations actuelles restent distinctes de la discipline historique et des coutumes volontaires."))}</p>
+    ${seasonalCustoms.length?`<div class="aoCalCustomsBlock"><h4>${esc(L("Customs of this day & season","Coutumes du jour et de la saison"))}</h4><div class="aoCalCustomsEntries">${seasonalCustoms.map(calendarCustomArticleMarkup).join("")}</div></div>`:""}
     ${events.length?`<div class="aoCalPracticeList">${events.map(event=>`<article class="aoCalPracticeCard" data-cal-intelligence-id="${esc(event.id)}">
       <small>${esc(intelligenceKind(event))}</small>
       <h4>${esc(event.title)}</h4>
       <p>${esc(event.summary||"")}</p>
       ${event.current||event.historical?`<details><summary>${esc(L("Current / traditional status","Statut actuel / traditionnel"))}</summary>${event.current?`<p><b>${esc(L("Current:","Actuel :"))}</b> ${esc(event.current)}</p>`:""}${event.historical?`<p><b>${esc(L("Traditional:","Traditionnel :"))}</b> ${esc(event.historical)}</p>`:""}</details>`:""}
-      ${intelligenceActions(event).length?`<div class="aoCalPracticeActions">${intelligenceActions(event).map(([route,label])=>`<button type="button" data-cal-intelligence-route="${esc(route)}">${esc(label)} →</button>`).join("")}</div>`:""}
+      ${intelligenceActions(event).some(([route])=>!route.startsWith("find:traditions:"))?`<div class="aoCalPracticeActions">${intelligenceActions(event).filter(([route])=>!route.startsWith("find:traditions:")).map(([route,label])=>`<button type="button" data-cal-intelligence-route="${esc(route)}">${esc(label)} →</button>`).join("")}</div>`:""}
     </article>`).join("")}</div>`:""}
     ${linkedPlaces.length?`<section class="aoCalPilgrimagePlaces"><small>${esc(L("PILGRIMAGES & SACRED PLACES","PÈLERINAGES ET SANCTUAIRES"))}</small><p>${esc(L("Places associated with this feast or anniversary. Local celebrations and travel arrangements must be checked with the shrine.","Lieux associés à cette fête ou à cet anniversaire. Les célébrations locales et les renseignements pratiques restent à vérifier auprès du sanctuaire."))}</p>${linkedPlaces.map(place=>`<article><div><strong>${esc(place.shrine_name)}</strong>${place.saints.length?`<small>${esc(place.saints.join(" · "))}</small>`:""}</div><button type="button" data-cal-intelligence-route="${esc("find:pilgrimages:"+place.semantic_key)}">${esc(L("View pilgrimage","Voir le pèlerinage"))} →</button></article>`).join("")}</section>`:""}
     ${disciplineRelevant?disciplineReference(intel.discipline):""}
@@ -1028,6 +1050,24 @@ function hybridMonthCss(){return `
 .aoCalMonthUnclassified p{font:400 14px/1.45 var(--ao-font-ui,"EB Garamond",Georgia,serif);color:#90989b}
 #ao-calendar-modular-root .aoCalMonthUnclassified button{display:block;width:100%;min-height:44px;padding:10px 0!important;border:0!important;border-bottom:1px solid rgba(227,212,187,.1)!important;border-radius:0!important;background:transparent!important;text-align:left!important}
 
+.aoCalCustomMonthContext{padding:9px 11px 12px;margin:0 0 12px;background:rgba(203,182,137,.055);border-left:2px solid rgba(203,182,137,.37)}
+.aoCalCustomMonthContext>small{display:block;margin-bottom:5px;color:#baa883;font-size:10px;letter-spacing:.09em}
+#ao-calendar-modular-root .aoCalCustomMonthContext button{width:100%;min-height:38px;padding:7px 2px!important;text-align:left!important;display:flex;justify-content:space-between;gap:9px;border:0!important;background:transparent!important;color:inherit!important}
+.aoCalCustomMonthContext button strong{font-weight:500;font-size:15px}
+.aoCalCustomsBlock{margin:18px 0 14px;border-top:1px solid rgba(227,212,187,.18);padding-top:16px}
+.aoCalCustomsBlock>h4{font-size:18px;font-weight:500;margin:0 0 8px}
+.aoCalCustomArticle{border-bottom:1px solid rgba(227,212,187,.12)}
+.aoCalCustomArticle summary{display:flex;justify-content:space-between;align-items:center;gap:12px;cursor:pointer;min-height:56px;padding:9px 1px}
+.aoCalCustomArticle summary::-webkit-details-marker{display:none}
+.aoCalCustomArticle summary{list-style:none}
+.aoCalCustomArticle summary strong{display:block;font-size:16px;font-weight:500}
+.aoCalCustomArticle summary small{display:block;color:#a6a09a;font-size:12px;line-height:1.4;margin-top:4px}
+.aoCalCustomArticle[open] summary>span:last-child{transform:rotate(90deg)}
+.aoCalCustomArticleContent{padding:0 6px 13px;color:#cbc5bb;font-size:14px;line-height:1.55}
+.aoCalCustomArticleContent h5{color:#ddc59f;font-size:13px;margin:15px 0 4px;font-weight:600}
+.aoCalCustomArticleContent p{margin:5px 0 10px}
+.aoCalCustomArticleContent ul{padding-left:18px}
+.aoCalCustomArticleContent a{color:#d8c5a4;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
 /* Sanctorale defaults to the restrained register while the user-chosen
    hybrid leaves its exact aesthetic open; no source identities are modified. */
 #ao-calendar-modular-root [data-cal-month-index="sanctorale"] .aoCalMonthIndexList{gap:0}
