@@ -10,6 +10,7 @@ const triaged=triage.flatMap(x=>x.rows);
 const overlap=load("possible-distinct-candidate-overlap.v1.json");
 const bounded=load("independent-sources-batch01.v1.json");
 const bounded2=load("independent-sources-batch02.v1.json");
+const candidateBoard=load("candidate-source-decision-board.v1.json");
 
 
 const unique=items=>new Set(items).size===items.length;
@@ -100,6 +101,18 @@ assert.ok(bounded2.records.every(x=>x.sources.length>=2&&x.sources.every(s=>s.id
 assert.ok(bounded2.records.every(x=>x.publication_enabled===false&&x.artwork_assigned===false&&
   x.editorial_approval==="PENDING"&&x.identity_gate==="PENDING"));
 assert.equal(new Set([...bounded.records,...bounded2.records].map(x=>x.weiser_id)).size,15);
+assert.ok(bounded.records.every(x=>x.history_en&&x.history_fr&&x.meaning_en&&x.meaning_fr&&x.practice_en&&x.practice_fr&&x.qualification_en&&x.qualification_fr&&x.publication_enabled===false));
+assert.equal(candidateBoard.schema,"AO_CUSTOMS_MASTER_42_SOURCE_DECISION_BOARD_V1");
+assert.equal(candidateBoard.records.length,42);
+assert.equal(candidateBoard.summary.source_bounded,15);
+assert.equal(candidateBoard.summary.still_unverified,27);
+assert.equal(candidateBoard.summary.bilingual_source_bounded,15);
+assert.equal(candidateBoard.summary.source_witnesses,27);
+assert.ok(candidateBoard.records.every(x=>x.published===false&&x.new_canonical_id===null));
+assert.deepEqual(new Set(candidateBoard.records.map(x=>x.weiser_id)),distinctIDs);
+assert.ok(candidateBoard.records.every(x=>x.related_master_or_review_ids.every(id=>ids.has(id)||distinctIDs.has(id))));
+assert.equal(candidateBoard.summary.new_canonicals,0);
+
 
 assert.equal(dates.schema,"AO_CUSTOMS_MASTER_NORMALIZED_TEMPORAL_42_V0");
 assert.equal(dates.records.length,42);
