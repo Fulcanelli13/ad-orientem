@@ -97,6 +97,16 @@ The seven manual holds are Hagar/Ishmael (two Genesis passages), David sparing S
 
 Registry: `data/research/historia-salutis-thematic-collections-expansion-preflight-20261021.v1.json`. Tests: `tests/historia-thematic-expansion-preflight.mjs` and `tests/historia-thematic-expansion-adapter.mjs`. The 41-entry adapter has passed a direct in-process evaluation against the branch's registry, but Node/Playwright workflow confirmation is still outstanding.
 
+## Second-batch opt-in research reader (60 total)
+
+The actual GitHub Actions Node and Chromium acceptance gates passed for the 19-episode original research interface on 21 October 2026. The separately reviewed second batch is now available **only with a second explicit research flag**:
+
+    http://localhost:8000/index.html?ao_historia_collections=1&ao_historia_batch2=1
+
+This assembles **four research collections / 60 Scripture readings**: Great Biblical Narratives (7), Miracles of Our Lord (27), Parables and Teachings (23), Biblical Prayers and Canticles (3). The first 19 remain unchanged under the original `?ao_historia_collections=1` flag. All 41 additional passages still have `RESEARCH_STAGED_NOT_LIVE` source status and are clearly labelled as unapproved; none are assigned an inferred Atlas identity, location or covenantal chapter.
+
+A separate source-availability pass checked all 41 additional readings across **12 original book/edition witness files**, **129 chapter views** and **1,608 available verse records** with no empty requested chapters or explicit internal source gaps. Source-verse wording continues to live exclusively in the original Scripture files. The CI contract for this is `tests/historia-thematic-batch2-witness.mjs`, with the extended-research URL journey in `tests/historia-thematic-phone-e2e.mjs`. Confirm the **latest successful** workflow before treating this new opt-in flag as accepted; the earlier successful browser run predates second-batch activation.
+
 ## Main manuscript protection
 
 - The 54-chapter research proposal at data/research/historia-salutis-p3-provisional-reading-chapter-consolidation-20261021.v2.json is unchanged.
