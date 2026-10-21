@@ -29,7 +29,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
-      - run: npm ci --no-audit --no-fund
+      - run: npm install --no-audit --no-fund
       - run: npx playwright install --with-deps chromium
       - name: Confirm eleven actual illustrated shrine pages at 320 and 390
         run: node tests/explore-shrine-illustrated-folios-phone.mjs
