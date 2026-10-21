@@ -1,7 +1,9 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {projectCurated65PriestStation} from "../src/mass/reader-priest-station65.js";
-import {finalCurated65IconKeys,FINAL_65_CUE_ICON_KEYS} from "../src/mass/reader-final65-icon-keys.js";
+import {finalCurated65IconKeys,FINAL_65_CUE_ICON_KEYS,
+  ULTRA_MASTER_PRIEST_CHANT_CUE_ADDITIONS,SCHOLA_NOT_PRIEST_CHANT_CUES
+} from "../src/mass/reader-final65-icon-keys.js";
 import {iconKeysForReaderState} from "../src/mass/reader-icons.js";
 const read=p=>JSON.parse(readFileSync(new URL(p,import.meta.url),"utf8"));
 const lock=read("../data/presentation/mass-icon-final-user-lock-20261020.v1.json");
@@ -85,6 +87,29 @@ for(const id of ["AO.SM.C0075","AO.SM.C0082","AO.SM.C0086"]){
  "Celebrant chant icon must not be displayed for deacon/subdeacon: "+id);
 }
 assert.equal(icon("AO.SM.C0075",{priestVoice:{cueId:"AO.SM.C0075",voice:"SUNG / CLEAR"}}).priestVoiceIconKey,"final_ao_chant");
+assert.deepEqual(ULTRA_MASTER_PRIEST_CHANT_CUE_ADDITIONS,
+ ["AO.SM.C0073","AO.SM.C0142","AO.SM.C0209","AO.SM.C0254"]);
+assert.deepEqual(SCHOLA_NOT_PRIEST_CHANT_CUES,
+ ["AO.SM.C0054","AO.SM.C0090"]);
+for(const id of ULTRA_MASTER_PRIEST_CHANT_CUE_ADDITIONS){
+ assert.equal(icon(id).priestVoiceIconKey,"final_ao_chant",
+  "Ultra Master sung celebrant moment missing Chant pictogram: "+id);
+ assert.equal(icon(id,{form:"SOLEMN"}).priestVoiceIconKey,"final_ao_chant",
+  "Properly priest-owned sung moment lost in Solemn Mass: "+id);
+ assert.notEqual(icon(id,{form:"LOW"}).priestVoiceIconKey,"final_ao_chant",
+  "Low Mass must not show a Chant pictogram: "+id);
+}
+for(const id of SCHOLA_NOT_PRIEST_CHANT_CUES){
+ assert.equal(icon(id,{priestVoice:{cueId:id,voice:"SUNG / CLEAR"}}).priestVoiceIconKey,null,
+  "Schola-public continuation falsely depicts chanting priest: "+id);
+}
+assert.equal(icon("AO.SM.C0074",{priestVoice:{cueId:"AO.SM.C0073",voice:"SUNG / CLEAR"}}).priestVoiceIconKey,null,
+ "Collect chant cannot leak into the server's Amen");
+assert.equal(icon("AO.SM.C0210",{priestVoice:{cueId:"AO.SM.C0209",voice:"SUNG / CLEAR"}}).priestVoiceIconKey,null,
+ "Pater noster chant cannot leak into the minister's response");
+assert.equal(icon("AO.SM.C0144",{priestVoice:{cueId:"AO.SM.C0139",voice:"SUNG / CLEAR"}}).priestVoiceIconKey,null,
+ "Stale priest chanting event cannot outlive its own cue");
+
 assert.equal(icon("AO.SM.C0053",{form:"LOW",priestVoice:{cueId:"AO.SM.C0053",voice:"SUNG / PUBLIC"}}).priestVoiceIconKey,null,
  "Final 65 Sung resolver cannot leak priest Chant into Low Mass");
 assert.equal(iconKeysForReaderState({priestVoice:{value:"CHANTED"}}).priestVoiceIconKey,"priest_audible",
