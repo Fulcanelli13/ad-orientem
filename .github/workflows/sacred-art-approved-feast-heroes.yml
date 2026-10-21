@@ -6,6 +6,7 @@ on:
       - "src/calendar/approved-feast-heroes.js"
       - "src/calendar/calendar-runtime.js"
       - "src/home/presentation.js"
+      - "src/home/today-v2-styles.js"
       - "tests/approved-feast-heroes.mjs"
       - ".github/workflows/sacred-art-approved-feast-heroes.yml"
   pull_request:
@@ -14,6 +15,7 @@ on:
       - "src/calendar/approved-feast-heroes.js"
       - "src/calendar/calendar-runtime.js"
       - "src/home/presentation.js"
+      - "src/home/today-v2-styles.js"
       - "tests/approved-feast-heroes.mjs"
       - ".github/workflows/sacred-art-approved-feast-heroes.yml"
 permissions:
