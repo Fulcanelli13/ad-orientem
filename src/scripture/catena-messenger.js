@@ -279,7 +279,7 @@ export function mountCatenaMessenger(host,pericopes,{language="en",fetcher=globa
  input.type="search";input.maxLength=240;input.placeholder="Ask about the passage…";input.setAttribute("aria-label","Find the Fathers' words");
  const send=element(d,"button",null,"Find excerpts");send.type="submit";
  form.append(input,send);
- foot.append(topics,acts,form,element(d,"p","aoCatenaMDisclaimer","Messages reproduce the Oxford/Newman Catena extracts. Questions use literal vocabulary and a small reviewed list of related expressions; related matches are marked, not treated as answers. No AI speech. Historical author labels follow the source."));
+ foot.append(topics,acts,form,element(d,"p","aoCatenaMDisclaimer","All Father messages reproduce the Oxford/Newman Catena extracts. Search labels show exact wording, shared words or related vocabulary; none certifies that an excerpt answers the question. No AI speech. Author labels follow the historical source."));
  shell.append(head,authors,feed,foot);host.append(shell);
  const seen=new Set();let lastFather=null,lastQuestion="",searching=false;
  const wider=action(d,"Search all four Gospels",()=>{if(lastQuestion)void searchElsewhere(lastQuestion)});
