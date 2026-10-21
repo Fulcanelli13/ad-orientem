@@ -1,0 +1,433 @@
+{
+  "schema": "AO_SPX_PAPAL_DOCUMENT_SOURCE_MINING_20261021_V1",
+  "date": "2026-10-21",
+  "status": "RESEARCH_ONLY_PRIMARY_SOURCE_LOCATORS_NOT_NEW_CERTIFIED_QA",
+  "repositoryOwner": "PR#1458",
+  "purpose": "Mine distinct papal writings for character-relevant evidence and attach to existing conversation families instead of producing more Catechism-derived Q&A or duplicating the independent voice pipeline.",
+  "reconciliationScope": [
+    "Existing SPX-001..064 candidates",
+    "SPX-EXP-001..048 seeds",
+    "Existing 20 selected personal/papal review candidates",
+    "Existing 10-family bilingual pilot"
+  ],
+  "counts": {
+    "officialPapalDocumentsScreened": 4,
+    "passageLevelEvidenceRecords": 16,
+    "perDocument": {
+      "AD": 4,
+      "IU": 4,
+      "PI": 4,
+      "LA": 4
+    },
+    "newCertifiedAnswers": 0,
+    "newApprovedVisitorQuestionIntents": 0,
+    "originalContentFilesMutated": 0
+  },
+  "sourceCaveats": [
+    "Documents are papal encyclicals, but not necessarily every embedded quotation: when Pius X cites Scripture, Gregory, or other saints, the quoted words belong to that cited author.",
+    "English Vatican pages used to locate passages; original Italian/Latin/French and first-publication collation still required for authentication of specific wording.",
+    "Summaries are editorial abstracts, not quotations and not historically reconstructed first-person conversation.",
+    "Do not infer that absent from the 48-question expansion means absent from all source registries, voice files, or other working branches.",
+    "The end-user period voice, especially personal first-person memory, requires separate review. Historical disciplinary provisions must never be transferred to present law.",
+    "Existing 1905/1912/Salzano catechism material, Mass Ultra Master and Chanoine routing owners not modified."
+  ],
+  "documents": [
+    {
+      "id": "AD",
+      "title": "Ad diem illum laetissimum",
+      "date": "1904-02-02",
+      "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_02021904_ad-diem-illum-laetissimum.html",
+      "class": "PAPAL_ENCYCLICAL",
+      "preexisting": [
+        "SPX-045: §21 Mary at Calvary, already source-supported; no new family from that locus"
+      ]
+    },
+    {
+      "id": "IU",
+      "title": "Iucunda sane",
+      "date": "1904-03-12",
+      "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_12031904_iucunda-sane.html",
+      "class": "PAPAL_ENCYCLICAL",
+      "preexisting": [
+        "SPX-030: concluding crisis/prayer appeal already source-supported; passages below give other specific lenses"
+      ]
+    },
+    {
+      "id": "PI",
+      "title": "Pieni l'animo",
+      "date": "1906-07-28",
+      "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_28071906_pieni-l-animo.html",
+      "class": "PAPAL_ENCYCLICAL_ITALIAN_CLERGY",
+      "preexisting": [
+        "Related thematic owners: SPX-014, SPX-EXP-045, SPX-EXP-046 on priestly interior life and pastoral example; not a duplicate source"
+      ]
+    },
+    {
+      "id": "LA",
+      "title": "Lacrimabili statu",
+      "date": "1912-06-07",
+      "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_07061912_lacrimabili-statu.html",
+      "class": "PAPAL_ENCYCLICAL_LATIN_AMERICA",
+      "preexisting": [
+        "Earlier 48-seed topic catalogue contains no entry naming this source; semantic novelty not certified"
+      ]
+    }
+  ],
+  "records": [
+    {
+      "id": "SPX-PAPAL-20261021-01",
+      "sourceCode": "AD",
+      "passage": "§2",
+      "theme": "Personal devotion expressed in a published encyclical",
+      "sourceSupportedSummaryEN": "In describing the Immaculate Conception anniversary, Pius X explicitly recalls the devotion and gratitude he himself has long cherished toward the Blessed Virgin.",
+      "speakerEvidenceClass": "SELF_REPORT_WITHIN_AUTHORISED_PAPAL_TEXT",
+      "scopeGuard": "NO_PRIVATE_DIARY_OR_CHILDHOOD_MEMORIES",
+      "conversationThemeEN": "Papal devotion; documentary first-person statement; avoid invented private episodes",
+      "conversationThemeFR": "Dévotion mariale du pape ; témoignage de l'encyclique, sans souvenirs privés inventés",
+      "priorFamilyLinks": [
+        "SPX-045"
+      ],
+      "relationshipToExistingFamilies": "POSSIBLE_REUSE_OR_SOURCE_ENRICHMENT_ONLY",
+      "sourcePassageLocatedInVaticanPublishedText": true,
+      "authorialQuoteCertified": false,
+      "italianOrLatinWitnessCollated": false,
+      "independentTheologyReview": false,
+      "englishFrenchReview": false,
+      "voiceApproval": false,
+      "published": false
+    },
+    {
+      "id": "SPX-PAPAL-20261021-02",
+      "sourceCode": "AD",
+      "passage": "§§5–6",
+      "theme": "Christological purpose of Marian devotion",
+      "sourceSupportedSummaryEN": "Pius X presents devotion to Mary as a way to union with Christ, explicitly rooting its purpose in restoration of all things in Christ.",
+      "speakerEvidenceClass": "PAPAL_DOCTRINAL_EXPOSITION",
+      "scopeGuard": "NOT_MARY_AS_ALTERNATE_REDEEMER",
+      "conversationThemeEN": "Why Mary leads believers to Christ",
+      "conversationThemeFR": "Pourquoi la dévotion mariale conduit au Christ",
+      "priorFamilyLinks": [
+        "SPX-045"
+      ],
+      "relationshipToExistingFamilies": "POSSIBLE_REUSE_OR_SOURCE_ENRICHMENT_ONLY",
+      "sourcePassageLocatedInVaticanPublishedText": true,
+      "authorialQuoteCertified": false,
+      "italianOrLatinWitnessCollated": false,
+      "independentTheologyReview": false,
+      "englishFrenchReview": false,
+      "voiceApproval": false,
+      "published": false
+    },
+    {
+      "id": "SPX-PAPAL-20261021-03",
+      "sourceCode": "AD",
+      "passage": "§14",
+      "theme": "God alone as productive source of grace",
+      "sourceSupportedSummaryEN": "Pius X distinguishes the productive power of grace, belonging to God alone, from Mary's subordinate participation and intercessory ministry; his merit distinction is the historical theological terminology of the encyclical.",
+      "speakerEvidenceClass": "PAPAL_THEOLOGICAL_EXPOSITION",
+      "scopeGuard": "DO_NOT_INFER_EQUAL_REDEMPTIVE_POWER_OR_MODERN_DEFINITION",
+      "conversationThemeEN": "What Mary can and cannot be said to do in the order of grace",
+      "conversationThemeFR": "Le rôle subordonné de Marie et Dieu comme source de la grâce",
+      "priorFamilyLinks": [
+        "SPX-045"
+      ],
+      "relationshipToExistingFamilies": "POSSIBLE_REUSE_OR_SOURCE_ENRICHMENT_ONLY",
+      "sourcePassageLocatedInVaticanPublishedText": true,
+      "authorialQuoteCertified": false,
+      "italianOrLatinWitnessCollated": false,
+      "independentTheologyReview": false,
+      "englishFrenchReview": false,
+      "voiceApproval": false,
+      "published": false
+    },
+    {
+      "id": "SPX-PAPAL-20261021-04",
+      "sourceCode": "AD",
+      "passage": "§§16–17",
+      "theme": "True devotion evidenced by Christian conduct",
+      "sourceSupportedSummaryEN": "Pius X contrasts festive external Marian honours with inward conversion and obedience to Christ; he invokes the command of Mary at Cana.",
+      "speakerEvidenceClass": "PAPAL_PASTORAL_EXHORTATION",
+      "scopeGuard": "NO_PERSONAL_VERDICT_ON_SOMEONE_ELSES_PIETY",
+      "conversationThemeEN": "Marian devotion that affects one's actual life",
+      "conversationThemeFR": "Dévotion mariale et réforme concrète de la vie chrétienne",
+      "priorFamilyLinks": [
+        "SPX-045"
+      ],
+      "relationshipToExistingFamilies": "POSSIBLE_REUSE_OR_SOURCE_ENRICHMENT_ONLY",
+      "sourcePassageLocatedInVaticanPublishedText": true,
+      "authorialQuoteCertified": false,
+      "italianOrLatinWitnessCollated": false,
+      "independentTheologyReview": false,
+      "englishFrenchReview": false,
+      "voiceApproval": false,
+      "published": false
+    },
+    {
+      "id": "SPX-PAPAL-20261021-05",
+      "sourceCode": "IU",
+      "passage": "§§1–3",
+      "theme": "Pastoral model of Gregory amid papal anxieties",
+      "sourceSupportedSummaryEN": "Pius X expressly describes his own worries at the beginning of the pontificate and turns to Gregory the Great as an example of firm yet charitable pastoral government.",
+      "speakerEvidenceClass": "PAPAL_REFLECTION_ON_PREDECESSOR",
+      "scopeGuard": "DISTINGUISH_PIUS_X_THOUGHTS_FROM_GREGORY_EPISODES_AND_QUOTATIONS",
+      "conversationThemeEN": "How a Pope sought encouragement from an earlier Pope",
+      "conversationThemeFR": "Comment Pie X prenait exemple sur saint Grégoire le Grand",
+      "priorFamilyLinks": [
+        "SPX-030",
+        "SPX-PILOT-01"
+      ],
+      "relationshipToExistingFamilies": "POSSIBLE_REUSE_OR_SOURCE_ENRICHMENT_ONLY",
+      "sourcePassageLocatedInVaticanPublishedText": true,
+      "authorialQuoteCertified": false,
+      "italianOrLatinWitnessCollated": false,
+      "independentTheologyReview": false,
+      "englishFrenchReview": false,
+      "voiceApproval": false,
+      "published": false
+    },
+    {
+      "id": "SPX-PAPAL-20261021-06",
+      "sourceCode": "IU",
+      "passage": "§§16–17",
+      "theme": "Proper historical criticism not rejected as such",
+      "sourceSupportedSummaryEN": "The encyclical criticises historical methods that exclude the supernatural in advance; it also explicitly says sound critical inquiry can be a legitimate instrument of investigation.",
+      "speakerEvidenceClass": "PAPAL_EPISTEMOLOGICAL_DISCUSSION",
+      "scopeGuard": "DO_NOT_TREAT_ALL_HISTORY_OR_SCIENCE_AS_HOSTILE",
+      "conversationThemeEN": "Can historical criticism ever help faith?",
+      "conversationThemeFR": "La critique historique peut-elle être légitime ?",
+      "priorFamilyLinks": [
+        "SPX-EXP-015",
+        "SPX-EXP-016",
+        "SPX-EXP-033"
+      ],
+      "relationshipToExistingFamilies": "POSSIBLE_REUSE_OR_SOURCE_ENRICHMENT_ONLY",
+      "sourcePassageLocatedInVaticanPublishedText": true,
+      "authorialQuoteCertified": false,
+      "italianOrLatinWitnessCollated": false,
+      "independentTheologyReview": false,
+      "englishFrenchReview": false,
+      "voiceApproval": false,
+      "published": false
+    },
+    {
+      "id": "SPX-PAPAL-20261021-07",
+      "sourceCode": "IU",
+      "passage": "§§22–23",
+      "theme": "Charity must accompany doctrinal preaching",
+      "sourceSupportedSummaryEN": "Pius X describes the ministry as instructing minds and forming virtue, joined to practical charity that consoles affliction and relieves need.",
+      "speakerEvidenceClass": "PAPAL_PASTORAL_EXHORTATION",
+      "scopeGuard": "DO_NOT_REPLACE_DOCTRINE_WITH_ONLY_MATERIAL_RELIEF",
+      "conversationThemeEN": "Why preaching must be accompanied by actual charity",
+      "conversationThemeFR": "Pourquoi joindre la charité effective à la prédication",
+      "priorFamilyLinks": [
+        "SPX-030",
+        "SPX-EXP-048"
+      ],
+      "relationshipToExistingFamilies": "POSSIBLE_REUSE_OR_SOURCE_ENRICHMENT_ONLY",
+      "sourcePassageLocatedInVaticanPublishedText": true,
+      "authorialQuoteCertified": false,
+      "italianOrLatinWitnessCollated": false,
+      "independentTheologyReview": false,
+      "englishFrenchReview": false,
+      "voiceApproval": false,
+      "published": false
+    },
+    {
+      "id": "SPX-PAPAL-20261021-08",
+      "sourceCode": "IU",
+      "passage": "§27",
+      "theme": "Interior piety as a condition for fruitful ministry",
+      "sourceSupportedSummaryEN": "Using Gregory as a model, Pius X teaches that pastoral energy without an interior life with Christ and solid piety is insufficient.",
+      "speakerEvidenceClass": "PAPAL_PASTORAL_EXHORTATION",
+      "scopeGuard": "PRIEST_FOCUSED_NO_PERSONAL_SIN_DIAGNOSIS",
+      "conversationThemeEN": "The inner life behind pastoral action",
+      "conversationThemeFR": "La vie intérieure et la fécondité pastorale",
+      "priorFamilyLinks": [
+        "SPX-014",
+        "SPX-EXP-045"
+      ],
+      "relationshipToExistingFamilies": "POSSIBLE_REUSE_OR_SOURCE_ENRICHMENT_ONLY",
+      "sourcePassageLocatedInVaticanPublishedText": true,
+      "authorialQuoteCertified": false,
+      "italianOrLatinWitnessCollated": false,
+      "independentTheologyReview": false,
+      "englishFrenchReview": false,
+      "voiceApproval": false,
+      "published": false
+    },
+    {
+      "id": "SPX-PAPAL-20261021-09",
+      "sourceCode": "PI",
+      "passage": "Opening paragraph before §2",
+      "theme": "Papal accountability for souls",
+      "sourceSupportedSummaryEN": "Pius X expresses fear of the account he must render to Christ for the people entrusted to him and describes constant solicitude for the flock.",
+      "speakerEvidenceClass": "PAPAL_SELF_REPORT_IN_OFFICIAL_DOCUMENT",
+      "scopeGuard": "NOT_PRIVATE_EMOTION_OR_UNRECORDED_DIALOGUE",
+      "conversationThemeEN": "How Pius X understood the burden of governing souls",
+      "conversationThemeFR": "Le poids de la responsabilité du pape envers les âmes",
+      "priorFamilyLinks": [
+        "SPX-PILOT-01",
+        "SPX-EXP-010"
+      ],
+      "relationshipToExistingFamilies": "POSSIBLE_REUSE_OR_SOURCE_ENRICHMENT_ONLY",
+      "sourcePassageLocatedInVaticanPublishedText": true,
+      "authorialQuoteCertified": false,
+      "italianOrLatinWitnessCollated": false,
+      "independentTheologyReview": false,
+      "englishFrenchReview": false,
+      "voiceApproval": false,
+      "published": false
+    },
+    {
+      "id": "SPX-PAPAL-20261021-10",
+      "sourceCode": "PI",
+      "passage": "§4",
+      "theme": "Vocation discerned, not claimed as a right",
+      "sourceSupportedSummaryEN": "The encyclical says priesthood is not a worldly occupation that an aspirant may claim as an entitlement; bishops must exercise prudence in examining suitability.",
+      "speakerEvidenceClass": "PAPAL_PRIESTLY_FORMATION",
+      "scopeGuard": "HISTORICAL_DISCIPLINE_CONTEXT_BISHOPS_DECIDE_NOT_CHATBOT",
+      "conversationThemeEN": "How the Church should discern priestly vocations",
+      "conversationThemeFR": "Le discernement prudent des vocations sacerdotales",
+      "priorFamilyLinks": [
+        "SPX-EXP-004",
+        "SPX-EXP-045"
+      ],
+      "relationshipToExistingFamilies": "POSSIBLE_REUSE_OR_SOURCE_ENRICHMENT_ONLY",
+      "sourcePassageLocatedInVaticanPublishedText": true,
+      "authorialQuoteCertified": false,
+      "italianOrLatinWitnessCollated": false,
+      "independentTheologyReview": false,
+      "englishFrenchReview": false,
+      "voiceApproval": false,
+      "published": false
+    },
+    {
+      "id": "SPX-PAPAL-20261021-11",
+      "sourceCode": "PI",
+      "passage": "§6",
+      "theme": "Intellectual and spiritual seminary formation",
+      "sourceSupportedSummaryEN": "Pius X connects biblical and theological study, spiritual direction and solid piety to priestly preparation, alongside specific 1906 Italian institutional restrictions.",
+      "speakerEvidenceClass": "PAPAL_PRIESTLY_FORMATION",
+      "scopeGuard": "DATED_RESTRICTIONS_ON_SEMINARY_MEDIA_AND_UNIVERSITY_NOT_PRESENT_UNIVERSAL_LAW",
+      "conversationThemeEN": "Why priestly training joins learning and holiness",
+      "conversationThemeFR": "Pourquoi la formation du prêtre unit étude et piété",
+      "priorFamilyLinks": [
+        "SPX-EXP-004",
+        "SPX-EXP-046"
+      ],
+      "relationshipToExistingFamilies": "POSSIBLE_REUSE_OR_SOURCE_ENRICHMENT_ONLY",
+      "sourcePassageLocatedInVaticanPublishedText": true,
+      "authorialQuoteCertified": false,
+      "italianOrLatinWitnessCollated": false,
+      "independentTheologyReview": false,
+      "englishFrenchReview": false,
+      "voiceApproval": false,
+      "published": false
+    },
+    {
+      "id": "SPX-PAPAL-20261021-12",
+      "sourceCode": "PI",
+      "passage": "§13",
+      "theme": "Priestly duty toward ordinary people",
+      "sourceSupportedSummaryEN": "Pius X commends ministry among ordinary people: spiritual teaching, strengthening adult Christian life and encouraging institutions benefiting moral and material welfare, while requiring conformity to historical ecclesiastical discipline.",
+      "speakerEvidenceClass": "PAPAL_HISTORICAL_SOCIAL_PASTORAL_DISCIPLINE",
+      "scopeGuard": "DATE_SPECIFIC_CLERGY_ASSOCIATION_RULES_NOT_CURRENT_CANON_LAW",
+      "conversationThemeEN": "Priests and the spiritual and material welfare of working people",
+      "conversationThemeFR": "Les prêtres et le bien spirituel et matériel du peuple",
+      "priorFamilyLinks": [
+        "SPX-EXP-026",
+        "SPX-EXP-027",
+        "SPX-EXP-047"
+      ],
+      "relationshipToExistingFamilies": "POSSIBLE_REUSE_OR_SOURCE_ENRICHMENT_ONLY",
+      "sourcePassageLocatedInVaticanPublishedText": true,
+      "authorialQuoteCertified": false,
+      "italianOrLatinWitnessCollated": false,
+      "independentTheologyReview": false,
+      "englishFrenchReview": false,
+      "voiceApproval": false,
+      "published": false
+    },
+    {
+      "id": "SPX-PAPAL-20261021-13",
+      "sourceCode": "LA",
+      "passage": "§§1–2",
+      "theme": "Public condemnation of Indigenous oppression",
+      "sourceSupportedSummaryEN": "The encyclical recounts enslavement, theft, beatings and massacres against Indigenous peoples in South America and condemns these acts, including wrongdoing by professed Christians noted from Benedict XIV's precedent.",
+      "speakerEvidenceClass": "PAPAL_HISTORICAL_SOCIAL_CONDEMNATION",
+      "scopeGuard": "CONTEXTUALIZE_EARLY_20TH_CENTURY_LANGUAGE_AND_REPORTS",
+      "conversationThemeEN": "What Pius X wrote about enslavement and abuse",
+      "conversationThemeFR": "Ce que Pie X écrivit contre l'esclavage et les violences",
+      "priorFamilyLinks": [],
+      "relationshipToExistingFamilies": "NO_MATCH_IN_SELECTED_PILOT_AND_48_SEED_CATALOG_NOT_GLOBAL_NOVELTY_PROOF",
+      "sourcePassageLocatedInVaticanPublishedText": true,
+      "authorialQuoteCertified": false,
+      "italianOrLatinWitnessCollated": false,
+      "independentTheologyReview": false,
+      "englishFrenchReview": false,
+      "voiceApproval": false,
+      "published": false
+    },
+    {
+      "id": "SPX-PAPAL-20261021-14",
+      "sourceCode": "LA",
+      "passage": "§3",
+      "theme": "Investigation before moral condemnation",
+      "sourceSupportedSummaryEN": "Pius X describes initially finding atrocity reports difficult to believe, then accepting them after testimony from bishops, apostolic delegates, missionaries and other credible witnesses.",
+      "speakerEvidenceClass": "PAPAL_ACCOUNT_OF_RECEIVING_REPORTS",
+      "scopeGuard": "NOT_PERSONAL_EYEWITNESS_OF_REPORTED_EVENTS",
+      "conversationThemeEN": "How he weighed testimony about distant injustices",
+      "conversationThemeFR": "Comment il examina les témoignages sur des injustices lointaines",
+      "priorFamilyLinks": [],
+      "relationshipToExistingFamilies": "NO_MATCH_IN_SELECTED_PILOT_AND_48_SEED_CATALOG_NOT_GLOBAL_NOVELTY_PROOF",
+      "sourcePassageLocatedInVaticanPublishedText": true,
+      "authorialQuoteCertified": false,
+      "italianOrLatinWitnessCollated": false,
+      "independentTheologyReview": false,
+      "englishFrenchReview": false,
+      "voiceApproval": false,
+      "published": false
+    },
+    {
+      "id": "SPX-PAPAL-20261021-15",
+      "sourceCode": "LA",
+      "passage": "§5",
+      "theme": "Human fraternity and charity in deeds",
+      "sourceSupportedSummaryEN": "Pius X instructs bishops to preach and practice Christian charity toward everyone regardless of national origin or colour, demanding practical action against exploitation.",
+      "speakerEvidenceClass": "PAPAL_MORAL_PASTORAL_EXHORTATION",
+      "scopeGuard": "DISTINGUISH_1912_HISTORICAL_LANGUAGE_FROM_EDITORIAL_WORDING",
+      "conversationThemeEN": "Christian charity across national and racial divisions",
+      "conversationThemeFR": "La charité chrétienne sans distinction d'origine et manifestée par des actes",
+      "priorFamilyLinks": [],
+      "relationshipToExistingFamilies": "NO_MATCH_IN_SELECTED_PILOT_AND_48_SEED_CATALOG_NOT_GLOBAL_NOVELTY_PROOF",
+      "sourcePassageLocatedInVaticanPublishedText": true,
+      "authorialQuoteCertified": false,
+      "italianOrLatinWitnessCollated": false,
+      "independentTheologyReview": false,
+      "englishFrenchReview": false,
+      "voiceApproval": false,
+      "published": false
+    },
+    {
+      "id": "SPX-PAPAL-20261021-16",
+      "sourceCode": "LA",
+      "passage": "§6",
+      "theme": "Practical protection and prohibition of slave trading",
+      "sourceSupportedSummaryEN": "The encyclical describes establishing additional missions as places of protection; it also explicitly condemns trafficking and deprivation of freedom. Its reservation of absolution for specified crimes is historical ecclesiastical discipline.",
+      "speakerEvidenceClass": "PAPAL_HISTORICAL_PROTECTIVE_ACTION_AND_DISCIPLINE",
+      "scopeGuard": "1900S_DISCIPLINARY_RESERVATION_NOT_APPLIED_AS_CURRENT_CONFESSION_RULE",
+      "conversationThemeEN": "Concrete measures for victims alongside formal condemnation",
+      "conversationThemeFR": "Mesures concrètes de protection et condamnation de la traite",
+      "priorFamilyLinks": [],
+      "relationshipToExistingFamilies": "NO_MATCH_IN_SELECTED_PILOT_AND_48_SEED_CATALOG_NOT_GLOBAL_NOVELTY_PROOF",
+      "sourcePassageLocatedInVaticanPublishedText": true,
+      "authorialQuoteCertified": false,
+      "italianOrLatinWitnessCollated": false,
+      "independentTheologyReview": false,
+      "englishFrenchReview": false,
+      "voiceApproval": false,
+      "published": false
+    }
+  ],
+  "proposedNextAction": "Attach verified passage locators to existing families; where no existing topic matches, open grouped thematic paths instead of bulk-creating stand-alone questions; invite independent Italian/Latin source verification and EN/FR review."
+}
