@@ -61,7 +61,7 @@ export function addRemainingThematicReadings(remainder,segmentedAndAuditedCollec
     chapters:Object.freeze(planChapters),
     type:entry.sourceParts.length>1?'NON_CONTIGUOUS_SOURCE_SEGMENTS':'REVIEWED_SINGLE_SOURCE_WINDOW'
    }),
-   sourceReviewDisposition:entry.reasonCode,
+   sourceReviewDisposition:entry.reasonCode==='SOURCE_WINDOW_RETAINED_PROVISIONALLY'?'RETAIN_REFERENCED_PASSAGE':entry.reasonCode,
    sourceReviewWarnings:Object.freeze([...entry.scopeWarnings]),
    segmentationNote:entry.editorialNote,
    editorialWindowReviewedNotCertified:true,
