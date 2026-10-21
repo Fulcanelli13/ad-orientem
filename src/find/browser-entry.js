@@ -1183,7 +1183,7 @@ export function createFindOwner(win=globalThis){
       state.networkOpen=false;state.networkFocus="";state.selectedPlaceId=null;
       // Grouped canonical custom folios use tradition:custom:<custom_id>,
       // never an individual attestation item's source-specific identity.
-      state.selectedId="tradition:custom:"+id;state.expandPlace=false;state.expandDetail=false;
+      state.selectedId="tradition:custom:"+id;state.expandPlace=false;state.expandDetail=true;
       state.displayLimit=24;state.highlightCustomId=null;
       lastMapView=null;lastMapLens=null;nearbyResults=null;
       void paint();return;
