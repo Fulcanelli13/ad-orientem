@@ -1,0 +1,78 @@
+{
+  "schema": "AO_CUSTOMS_MASTER_FOUR_P2_EDITORIAL_ACCEPTANCE_V1",
+  "as_of": "2026-10-21",
+  "status": "FOUR_HISTORICALLY_BOUNDED_RESEARCH_IDENTITIES_ACCEPTED_NONPUBLISHING",
+  "summary": {
+    "previously_provisional_p2": 4,
+    "research_scope_accepted": 4,
+    "app_publications": 0,
+    "new_canonical_ids": 0
+  },
+  "records": [
+    {
+      "id": "CANDIDATE-STPATRICK-RIBBON",
+      "title_en": "St Patrick's ribbon cross",
+      "title_fr": "La croix de rubans de saint Patrick",
+      "classification": "HISTORICAL_IRISH_CATHOLIC_SAINT_CUSTOM",
+      "linked_owner": "Customs/Saints",
+      "reason": "National Museum of Ireland and Galway City Museum document historical 17 March home-made crosses; no claim that this is universally current.",
+      "evidence_urls": [
+        "https://source.museum.ie/en-IE/Collections-Research/Folklife-Collections/Folklife-Collections-List-(1)/Religion-and-Calendar-Customs/St-Patrick",
+        "https://galwaycitymuseum.ie/blog/1-reviving-an-old-tradition-st-patricks-crosses/"
+      ],
+      "calendar_hint_en": "17 March",
+      "identity_approved_for_research_master": true,
+      "app_publication": false,
+      "universal_rite": false
+    },
+    {
+      "id": "CANDIDATE-IRISH-CHRISTMAS-CANDLE",
+      "title_en": "The Irish Christmas candle",
+      "title_fr": "La bougie de Noël dans les foyers irlandais",
+      "classification": "IRISH_CATHOLIC_HOUSEHOLD_HISTORY",
+      "linked_owner": "Customs/Calendar",
+      "reason": "Irish Folklore Collection and National Museum of Ireland support domestic Christmas candles; ghost stories and guaranteed blessings remain folklore.",
+      "evidence_urls": [
+        "https://www.duchas.ie/en/cbes/4922029/4920129/4948861",
+        "https://source.museum.ie/en-IE/Collections-Research/Folklife-Collections/Folklife-Collections-List-(1)/Religion-and-Calendar-Customs/Generations-past-how-Christmas-was-celebrated-in-y"
+      ],
+      "calendar_hint_en": "24–25 December; local duration varies",
+      "identity_approved_for_research_master": true,
+      "app_publication": false,
+      "universal_rite": false
+    },
+    {
+      "id": "CANDIDATE-STJOHN-BONFIRE",
+      "title_en": "St John Baptist's community bonfire",
+      "title_fr": "Le feu communautaire de la Saint-Jean-Baptiste",
+      "classification": "LOCAL_CATHOLIC_PARISH_CELEBRATION",
+      "linked_owner": "Customs/Calendar",
+      "reason": "Regional heritage inventory and a 2026 diocese programme document a local religious procession/fire; the event is locally announced, not automatically 23 or 24 June.",
+      "evidence_urls": [
+        "https://pop.culture.gouv.fr/notice/merimee/IA04002601",
+        "https://diocese64.org/evenement/feu-de-la-saint-jean-a-oloron-sainte-marie/"
+      ],
+      "calendar_hint_en": "Nativity of St John Baptist, 24 June; eve commonly 23 June",
+      "identity_approved_for_research_master": true,
+      "app_publication": false,
+      "universal_rite": false
+    },
+    {
+      "id": "CANDIDATE-EASTER-EGG-CRAFT",
+      "title_en": "Decorating Easter eggs: pisanki and pysanky",
+      "title_fr": "Décorer les œufs de Pâques : pisanki et pysanky",
+      "classification": "CROSS_CONFESSIONAL_CHRISTIAN_HERITAGE",
+      "linked_owner": "Customs/Historical",
+      "reason": "Polish pisanki and Ukrainian pysanky have regional Christian and cultural contexts; decorating eggs is not their priestly blessing or a supernatural protective formula.",
+      "evidence_urls": [
+        "https://ich.unesco.org/en/RL/pysanka-ukrainian-tradition-and-art-of-decorating-eggs-02134",
+        "https://americanhistory.si.edu/collections/object/nmah_1175123",
+        "https://www.muzeum-radom.pl/terminy/plastyka-obrzedowa/361"
+      ],
+      "calendar_hint_en": "Easter season; no independently established universal Holy Saturday decorating time",
+      "identity_approved_for_research_master": true,
+      "app_publication": false,
+      "universal_rite": false
+    }
+  ]
+}
