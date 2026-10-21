@@ -10,6 +10,10 @@ const triaged=triage.flatMap(x=>x.rows);
 const overlap=load("possible-distinct-candidate-overlap.v1.json");
 const bounded=load("independent-sources-batch01.v1.json");
 const bounded2=load("independent-sources-batch02.v1.json");
+const bounded3=load("independent-sources-batch03.v1.json");
+const bounded4=load("independent-sources-batch04.v1.json");
+const holds17=load("unverified-candidate-exact-claim-holds.v1.json");
+const identityRecs=load("witnessed-identity-recommendations.v1.json");
 const candidateBoard=load("candidate-source-decision-board.v1.json");
 
 
@@ -117,14 +121,47 @@ assert.equal(new Set([...bounded.records,...bounded2.records].map(x=>x.weiser_id
 assert.ok(bounded.records.every(x=>x.history_en&&x.history_fr&&x.meaning_en&&x.meaning_fr&&x.practice_en&&x.practice_fr&&x.qualification_en&&x.qualification_fr&&x.publication_enabled===false));
 assert.equal(candidateBoard.schema,"AO_CUSTOMS_MASTER_42_SOURCE_DECISION_BOARD_V1");
 assert.equal(candidateBoard.records.length,42);
-assert.equal(candidateBoard.summary.source_bounded,15);
-assert.equal(candidateBoard.summary.still_unverified,27);
-assert.equal(candidateBoard.summary.bilingual_source_bounded,15);
-assert.equal(candidateBoard.summary.source_witnesses,27);
+assert.equal(candidateBoard.summary.source_bounded,25);
+assert.equal(candidateBoard.summary.still_unverified,17);
+assert.equal(candidateBoard.summary.bilingual_source_bounded,25);
+assert.equal(candidateBoard.summary.source_witnesses,42);
 assert.ok(candidateBoard.records.every(x=>x.published===false&&x.new_canonical_id===null));
 assert.deepEqual(new Set(candidateBoard.records.map(x=>x.weiser_id)),distinctIDs);
 assert.ok(candidateBoard.records.every(x=>x.related_master_or_review_ids.every(id=>ids.has(id)||distinctIDs.has(id))));
 assert.equal(candidateBoard.summary.new_canonicals,0);
+assert.equal(bounded3.schema,"AO_CUSTOMS_INDEPENDENT_SOURCE_CLOSURE_B03_V1");
+assert.equal(bounded3.records.length,8);
+assert.equal(bounded3.audit.witnesses,12);
+assert.equal(bounded4.schema,"AO_CUSTOMS_INDEPENDENT_SOURCE_CLOSURE_B04_V1");
+assert.equal(bounded4.records.length,2);
+assert.equal(bounded4.audit.independent_witnesses,3);
+const allBatches=[...bounded.records,...bounded2.records,...bounded3.records,...bounded4.records];
+const boundedIDs=new Set(allBatches.map(x=>x.weiser_id));
+assert.equal(boundedIDs.size,25);
+assert.equal(allBatches.reduce((n,x)=>n+x.sources.length,0),42);
+assert.ok(allBatches.every(x=>x.sources.length&&x.sources.every(s=>/^https:\/\//.test(s.url)&&s.issuer)));
+assert.ok(bounded3.records.every(x=>x.history_en&&x.history_fr&&x.practice_en&&x.practice_fr&&x.meaning_en&&x.meaning_fr&&x.qualification_en&&x.qualification_fr&&x.publication_enabled===false));
+assert.ok(bounded4.records.every(x=>x.history_en&&x.history_fr&&x.practice_en&&x.practice_fr&&x.publication_enabled===false));
+assert.equal(holds17.schema,"AO_CUSTOMS_UNVERIFIED_CANDIDATE_EXACT_CLAIM_HOLDS_V1");
+assert.equal(holds17.records.length,17);
+assert.equal(holds17.scope.missing_exact_source,12);
+assert.equal(holds17.scope.partial_claim_support,5);
+assert.ok(holds17.records.every(x=>x.reopen_condition&&x.unverified_claim&&x.publication_enabled===false));
+const holdIDs=new Set(holds17.records.map(x=>x.weiser_id));
+assert.equal(holdIDs.size,17);
+assert.ok([...holdIDs].every(id=>!boundedIDs.has(id)));
+assert.deepEqual(new Set([...boundedIDs,...holdIDs]),distinctIDs);
+assert.ok(candidateBoard.records.every(x=>(boundedIDs.has(x.weiser_id)?
+  x.evidence_review==="INDEPENDENTLY_WITNESSED_NARROW_CLAIM"&&x.current_source_count>0&&x.editorial_language_status==="EN_FR_BOUNDED_DRAFT_REQUIRES_APPROVAL":
+  x.current_source_count===0&&x.working_identity_decision==="SOURCE_GATE_HOLD_NO_NEW_CANONICAL_ID")));
+assert.equal(identityRecs.schema,"AO_CUSTOMS_25_WITNESSED_IDENTITY_RECOMMENDATIONS_V1");
+assert.equal(identityRecs.records.length,25);
+assert.deepEqual(new Set(identityRecs.records.map(x=>x.weiser_id)),boundedIDs);
+assert.equal(identityRecs.scope.recommendations.DISTINCT_IDENTITY_PROPOSAL,14);
+assert.equal(identityRecs.scope.new_ids_allocated,0);
+assert.equal(identityRecs.scope.app_publications,0);
+assert.ok(identityRecs.records.every(x=>x.canonical_id===null&&x.distinct_canonical_decision==="PENDING_HUMAN_APPROVAL"&&!x.published));
+
 
 
 assert.equal(dates.schema,"AO_CUSTOMS_MASTER_NORMALIZED_TEMPORAL_42_V0");
