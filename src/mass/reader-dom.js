@@ -2104,9 +2104,11 @@ function syncExactIconBackedRubrics(root,current,mode,iconResolver){
   }
   const actionRail=root.querySelector?.('[data-channel="priest-action"]');
   if(actionRail){
-    if(covered){actionRail.title=actionLabel+" · 1962 Ritus servandus";
-      actionRail.dataset.rubricSourceIcon="true";}
-    else{actionRail.removeAttribute?.("title");delete actionRail.dataset.rubricSourceIcon;}
+    // setChannel owns the accessible meaning and long-press title. Rubric
+    // compaction may mark exact artwork provenance but must never erase or
+    // replace the active cue's label (or restore one on an inactive cue).
+    if(covered)actionRail.dataset.rubricSourceIcon="true";
+    else delete actionRail.dataset.rubricSourceIcon;
   }
   return covered;
 }
