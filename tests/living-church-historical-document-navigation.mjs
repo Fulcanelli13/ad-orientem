@@ -7,8 +7,8 @@ const get=async path=>JSON.parse(await readFile(new URL("../"+path,import.meta.u
 const catalog=await get("data/learn/living-church-shared-question-routing-pilot.v1.json");
 const pointer=await get("data/learn/living-church-pius-x-historical-passage-pointers.v1.json");
 const concepts=await get("data/learn/living-church-symbolic-concepts.v1.json");
-assert.equal(pointer.records.length,10);
-assert.equal(catalog.topics.length,184);
+assert.equal(pointer.records.length,12);
+assert.equal(catalog.topics.length,186);
 const cases=[
  ["en","What worried him when he accepted the papacy?",1],
  ["fr","Pourquoi le pape a-t-il accepté le pontificat avec réticence ?",1],
