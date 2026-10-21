@@ -20,7 +20,7 @@ export function catenaQuestionHasSufficientEvidence(query){
  if(terms.length>1)return true;
  const words=(String(query).toLowerCase().match(/[a-z0-9]+/g)||[]);
  if(words.length<7)return true;
- const term=terms[0].replace(/[.*+?^\x24{}()|[\]\\]/g,"\\const tokens=catenaSearchTerms;");
+ const term=terms[0]; // tokenizer guarantees lowercase ASCII letters only
  const count=(String(query).toLowerCase().match(new RegExp("(^|[^a-z])"+term+"([^a-z]|$)","g"))||[]).length;
  return count>=2;
 }
