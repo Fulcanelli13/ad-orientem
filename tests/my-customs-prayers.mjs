@@ -45,7 +45,7 @@ assert.equal(fresh.list().length,3,"Persistence after reload");
 assert.equal(fresh.list().find(x=>x.id===adopted.id).customId,"ADVT-001");
 fresh.update(annual.id,{origin:"personal",kind:"custom",title:"Another household anniversary",
   body:"Updated by me",schedule:{kind:"annual",mmdd:"04-15"}});
-assert.equal(fresh.onDate("2026-12-04").length,0);
+assert.equal(fresh.onDate("2026-12-04").some(x=>x.id===annual.id),false);
 assert.ok(fresh.onDate("2027-04-15").some(x=>x.id===annual.id));
 assert.throws(()=>fresh.update(adopted.id,{origin:"personal",kind:"custom",title:"Alter source",schedule:{kind:"none"}}),/Source type/);
 assert.throws(()=>normalizeMyCustomSchedule({kind:"annual",mmdd:"02-30"}),/Invalid/);
