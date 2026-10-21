@@ -18,6 +18,10 @@
     "movementManuscript": {
       "path": "data/research/historia-salutis-v18-continuous-reading-proof.v1.json",
       "blobSha": "cbc5be02da7cd54af5da1f998f9c6c343772bab5"
+    },
+    "atlasRuntime": {
+      "path": "src/find/bible-atlas.js",
+      "blobSha": "c63e1b01cb7310efe6067c5f575e41a3420b880c"
     }
   },
   "policy": {
@@ -37,7 +41,9 @@
     "withinCompositeAtlasRecords": 2,
     "noAtlasIndividualRecord": 8,
     "contextualMovementAnchors": 18,
-    "unplaced": 1
+    "unplaced": 1,
+    "atlasRuntimeNavigable": 4,
+    "atlasDocumentedNonRoutable": 7
   },
   "entries": [
     {
@@ -59,6 +65,11 @@
         "returnToEpisodeId": "hist-omitted-001",
         "openAs": "RESEARCH_ONLY",
         "crossModuleAuthoredLink": false
+      },
+      "atlasRuntimeNavigation": {
+        "status": "NO_ATLAS_EVENT_RECORD",
+        "eventKey": null,
+        "relation": "OPTIONAL_RECIPROCAL_RESEARCH_ROUTE_NOT_CANONICAL_IDENTITY"
       }
     },
     {
@@ -80,6 +91,11 @@
         "returnToEpisodeId": "hist-omitted-006",
         "openAs": "RESEARCH_ONLY",
         "crossModuleAuthoredLink": false
+      },
+      "atlasRuntimeNavigation": {
+        "status": "NO_ATLAS_EVENT_RECORD",
+        "eventKey": null,
+        "relation": "OPTIONAL_RECIPROCAL_RESEARCH_ROUTE_NOT_CANONICAL_IDENTITY"
       }
     },
     {
@@ -101,6 +117,11 @@
         "returnToEpisodeId": "hist-omitted-054",
         "openAs": "RESEARCH_ONLY",
         "crossModuleAuthoredLink": false
+      },
+      "atlasRuntimeNavigation": {
+        "status": "NO_ATLAS_EVENT_RECORD",
+        "eventKey": null,
+        "relation": "OPTIONAL_RECIPROCAL_RESEARCH_ROUTE_NOT_CANONICAL_IDENTITY"
       }
     },
     {
@@ -122,6 +143,11 @@
         "returnToEpisodeId": "hist-omitted-087",
         "openAs": "RESEARCH_ONLY",
         "crossModuleAuthoredLink": false
+      },
+      "atlasRuntimeNavigation": {
+        "status": "NO_ATLAS_EVENT_RECORD",
+        "eventKey": null,
+        "relation": "OPTIONAL_RECIPROCAL_RESEARCH_ROUTE_NOT_CANONICAL_IDENTITY"
       }
     },
     {
@@ -143,6 +169,11 @@
         "returnToEpisodeId": "hist-omitted-092",
         "openAs": "RESEARCH_ONLY",
         "crossModuleAuthoredLink": false
+      },
+      "atlasRuntimeNavigation": {
+        "status": "NO_ATLAS_EVENT_RECORD",
+        "eventKey": null,
+        "relation": "OPTIONAL_RECIPROCAL_RESEARCH_ROUTE_NOT_CANONICAL_IDENTITY"
       }
     },
     {
@@ -155,6 +186,11 @@
         "returnToEpisodeId": "hist-omitted-093",
         "openAs": "RESEARCH_ONLY",
         "crossModuleAuthoredLink": false
+      },
+      "atlasRuntimeNavigation": {
+        "status": "NO_ATLAS_EVENT_RECORD",
+        "eventKey": null,
+        "relation": "OPTIONAL_RECIPROCAL_RESEARCH_ROUTE_NOT_CANONICAL_IDENTITY"
       }
     },
     {
@@ -176,6 +212,11 @@
         "returnToEpisodeId": "hist-omitted-094",
         "openAs": "RESEARCH_ONLY",
         "crossModuleAuthoredLink": false
+      },
+      "atlasRuntimeNavigation": {
+        "status": "NO_ATLAS_EVENT_RECORD",
+        "eventKey": null,
+        "relation": "OPTIONAL_RECIPROCAL_RESEARCH_ROUTE_NOT_CANONICAL_IDENTITY"
       }
     },
     {
@@ -206,6 +247,11 @@
         "returnToEpisodeId": "hist-omitted-116",
         "openAs": "RESEARCH_ONLY",
         "crossModuleAuthoredLink": false
+      },
+      "atlasRuntimeNavigation": {
+        "status": "EVENT_PRESENT_IN_ATLAS_151_SEQUENCE",
+        "eventKey": "biblical:event:cana-e1",
+        "relation": "OPTIONAL_RECIPROCAL_RESEARCH_ROUTE_NOT_CANONICAL_IDENTITY"
       }
     },
     {
@@ -236,6 +282,11 @@
         "returnToEpisodeId": "hist-omitted-131",
         "openAs": "RESEARCH_ONLY",
         "crossModuleAuthoredLink": false
+      },
+      "atlasRuntimeNavigation": {
+        "status": "EVENT_PRESENT_IN_ATLAS_151_SEQUENCE",
+        "eventKey": "biblical:event:nain-e1",
+        "relation": "OPTIONAL_RECIPROCAL_RESEARCH_ROUTE_NOT_CANONICAL_IDENTITY"
       }
     },
     {
@@ -266,6 +317,11 @@
         "returnToEpisodeId": "hist-omitted-132",
         "openAs": "RESEARCH_ONLY",
         "crossModuleAuthoredLink": false
+      },
+      "atlasRuntimeNavigation": {
+        "status": "EVENT_PRESENT_IN_ATLAS_151_SEQUENCE",
+        "eventKey": "biblical:event:galilee-sea-e2",
+        "relation": "OPTIONAL_RECIPROCAL_RESEARCH_ROUTE_NOT_CANONICAL_IDENTITY"
       }
     },
     {
@@ -296,6 +352,11 @@
         "returnToEpisodeId": "hist-omitted-135",
         "openAs": "RESEARCH_ONLY",
         "crossModuleAuthoredLink": false
+      },
+      "atlasRuntimeNavigation": {
+        "status": "ATLAS_RECORD_NOT_IN_151_SEQUENCE",
+        "eventKey": null,
+        "relation": "OPTIONAL_RECIPROCAL_RESEARCH_ROUTE_NOT_CANONICAL_IDENTITY"
       }
     },
     {
@@ -326,6 +387,11 @@
         "returnToEpisodeId": "hist-omitted-137",
         "openAs": "RESEARCH_ONLY",
         "crossModuleAuthoredLink": false
+      },
+      "atlasRuntimeNavigation": {
+        "status": "ATLAS_RECORD_NOT_IN_151_SEQUENCE",
+        "eventKey": null,
+        "relation": "OPTIONAL_RECIPROCAL_RESEARCH_ROUTE_NOT_CANONICAL_IDENTITY"
       }
     },
     {
@@ -356,6 +422,11 @@
         "returnToEpisodeId": "hist-omitted-144",
         "openAs": "RESEARCH_ONLY",
         "crossModuleAuthoredLink": false
+      },
+      "atlasRuntimeNavigation": {
+        "status": "EVENT_PRESENT_IN_ATLAS_151_SEQUENCE",
+        "eventKey": "biblical:event:siloam-miracle-26",
+        "relation": "OPTIONAL_RECIPROCAL_RESEARCH_ROUTE_NOT_CANONICAL_IDENTITY"
       }
     },
     {
@@ -377,6 +448,11 @@
         "returnToEpisodeId": "hist-omitted-149",
         "openAs": "RESEARCH_ONLY",
         "crossModuleAuthoredLink": false
+      },
+      "atlasRuntimeNavigation": {
+        "status": "NO_ATLAS_EVENT_RECORD",
+        "eventKey": null,
+        "relation": "OPTIONAL_RECIPROCAL_RESEARCH_ROUTE_NOT_CANONICAL_IDENTITY"
       }
     },
     {
@@ -407,6 +483,11 @@
         "returnToEpisodeId": "hist-omitted-154",
         "openAs": "RESEARCH_ONLY",
         "crossModuleAuthoredLink": false
+      },
+      "atlasRuntimeNavigation": {
+        "status": "ATLAS_RECORD_NOT_IN_151_SEQUENCE",
+        "eventKey": null,
+        "relation": "OPTIONAL_RECIPROCAL_RESEARCH_ROUTE_NOT_CANONICAL_IDENTITY"
       }
     },
     {
@@ -437,6 +518,11 @@
         "returnToEpisodeId": "hist-omitted-159",
         "openAs": "RESEARCH_ONLY",
         "crossModuleAuthoredLink": false
+      },
+      "atlasRuntimeNavigation": {
+        "status": "ATLAS_RECORD_NOT_IN_151_SEQUENCE",
+        "eventKey": null,
+        "relation": "OPTIONAL_RECIPROCAL_RESEARCH_ROUTE_NOT_CANONICAL_IDENTITY"
       }
     },
     {
@@ -467,6 +553,11 @@
         "returnToEpisodeId": "hist-omitted-161",
         "openAs": "RESEARCH_ONLY",
         "crossModuleAuthoredLink": false
+      },
+      "atlasRuntimeNavigation": {
+        "status": "ATLAS_RECORD_NOT_IN_151_SEQUENCE",
+        "eventKey": null,
+        "relation": "OPTIONAL_RECIPROCAL_RESEARCH_ROUTE_NOT_CANONICAL_IDENTITY"
       }
     },
     {
@@ -497,6 +588,11 @@
         "returnToEpisodeId": "hist-omitted-164",
         "openAs": "RESEARCH_ONLY",
         "crossModuleAuthoredLink": false
+      },
+      "atlasRuntimeNavigation": {
+        "status": "ATLAS_RECORD_NOT_IN_151_SEQUENCE",
+        "eventKey": null,
+        "relation": "OPTIONAL_RECIPROCAL_RESEARCH_ROUTE_NOT_CANONICAL_IDENTITY"
       }
     },
     {
@@ -527,6 +623,11 @@
         "returnToEpisodeId": "hist-omitted-165",
         "openAs": "RESEARCH_ONLY",
         "crossModuleAuthoredLink": false
+      },
+      "atlasRuntimeNavigation": {
+        "status": "ATLAS_RECORD_NOT_IN_151_SEQUENCE",
+        "eventKey": null,
+        "relation": "OPTIONAL_RECIPROCAL_RESEARCH_ROUTE_NOT_CANONICAL_IDENTITY"
       }
     }
   ]
