@@ -11,10 +11,19 @@ const data={
   sources:json("data/customs/source-registry.v1.json"),
   p0:json("data/customs/customs-p0-guidance-en-fr.v1.json"),
   p1:json("data/customs/customs-p1-guidance-en-fr.v1.json"),
-  frCopy:json("data/customs/customs-fr-canonical-copy.v1.json")
+  frCopy:json("data/customs/customs-fr-canonical-copy.v1.json"),
+  historical:json("data/customs/customs-historical-folios.v1.json")
 };
 const library=createCustomsLibrary(data);
 assert.equal(library.stats.canonical,38,"38 current canonical IDs retained");
+assert.equal(data.historical.entries.length,27,"27 historical research-bound folios required");
+assert.equal(library.items.filter(c=>c.history).length,27,"all shorter customs get detailed historical context");
+assert.equal(library.items.filter(c=>c.history).every(c=>
+  c.history.source_ids.length>0&&c.history.source_ids.every(id=>c.sources.some(s=>s.id===id))),true,
+  "historical claims must retain valid canonical source links");
+assert.equal(library.items.filter(c=>c.history).every(c=>
+  c.history.history_fr&&c.history.history_en),true,"historical folios fully bilingual");
+
 assert.equal(library.items.every(c=>c.title_fr&&c.description_fr&&c.caution_fr),true,"all 38 canonical records have French title, description and pastoral qualification");
 assert.equal(new Set(data.frCopy.entries.map(c=>c.custom_id)).size,27,"exactly 27 supplementary French records");
 assert.equal(library.published,35,"publication boundary preserved");
