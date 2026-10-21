@@ -49,14 +49,19 @@ const originalSourceRefs=new Set();
 const trialSourceRefs=new Set();
 const editorText=new Set();
 const expectedProjected=new Map();
+const projectedReaderParts=new Map();
 for(const m of source.movements)for(const b of m.beats){
  if(b.kind==="SCRIPTURE")for(const ref of (b.semanticEditionAlignment?.selectedReferencesByEdition?.["dr-challoner"]||b.refs))originalSourceRefs.add(ref);
  for(const ref of [...(b.readthroughTrial?.refs||[]),...(b.afterSelectedReadthroughTrial?.refs||[])])trialSourceRefs.add(ref);
  if(b.kind==="EDITORIAL_CONTEXT_NOT_BIBLE")editorText.add(b.editorialReadingCandidate?.text||b.explanation);
  if(b.beforeScriptureConnectorCandidate)editorText.add(b.beforeScriptureConnectorCandidate.text);
  if(b.readthroughTrial?.editorialPreface)editorText.add(b.readthroughTrial.editorialPreface.text);
- if(b.literaryEconomyOption?.readingDecision?.decision==="USE_SHORTENED_PASSAGES_IN_RESEARCH_READING_ONLY")
-   expectedProjected.set(b.literaryEconomyOption.sourceReferencesUnderReview[0],b.literaryEconomyOption.readingDecision.projectedReferences);
+ if(b.literaryEconomyOption?.readingDecision?.decision==="USE_SHORTENED_PASSAGES_IN_RESEARCH_READING_ONLY"){
+   const original=b.literaryEconomyOption.sourceReferencesUnderReview[0];
+   const proposals=b.literaryEconomyOption.readingDecision.projectedReferences;
+   expectedProjected.set(original,proposals);
+   for(const sub of proposals)projectedReaderParts.set(sub,original);
+ }
 }
 let scriptCount=0,railCount=0,bridgeCount=0,connectors=0;
 const seenRefs=new Set(),allEditorial=new Set();
@@ -65,7 +70,7 @@ for(const [ci,m] of data.chapters.entries()){
  for(const b of m.blocks){
   if(b.type==="scripture"){
    scriptCount++;
-   assert.ok(originalSourceRefs.has(b.reference)||trialSourceRefs.has(b.reference),
+   assert.ok(originalSourceRefs.has(b.reference)||trialSourceRefs.has(b.reference)||projectedReaderParts.has(b.reference),
       "Prototype invents source range "+b.reference);
    bridgeCount+=b.trial?1:0;
    assert.equal(b.trial,trialSourceRefs.has(b.reference),"Trial must retain its source status "+b.reference);
@@ -99,6 +104,11 @@ assert.equal(bridgeCount,12);
 assert.equal(connectors,41);
 assert.equal(allEditorial.size,41);
 assert.ok(expectedProjected.size===2);
+assert.equal(projectedReaderParts.size,5);
+for(const [part,original] of projectedReaderParts){
+ assert.ok(originalSourceRefs.has(original),"Abridgment needs a canonical source owner");
+ assert.ok(!trialSourceRefs.has(part),"Abridgment must never create trial status");
+}
 assert.ok(data.chapters.at(-1).blocks.some(b=>b.type==="scripture"&&b.reference==="Revelation 22:1–5"));
 const manuscript=get("data/research/historia-salutis-p3-continuous-research-reading-dr-challoner.v1.md");
 assert.ok(manuscript.includes("**UNAPPROVED RESEARCH READING — NOT FOR PUBLICATION**"));
