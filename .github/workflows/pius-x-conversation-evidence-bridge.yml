@@ -81,6 +81,11 @@ on:
       - 'data/learn/research/pius-x-82chapter-dialogue-authoring-index-20261021.v1.json'
       - 'docs/research/PIUS-X-NEXT-20-PASTORAL-BILINGUAL-CONVERSATIONS-20261021.md'
       - 'tests/pius-x-next20-pastoral-dialogue-graph.mjs'
+      - 'data/learn/research/pius-x-conversation-depth12-part-a-20261021.v1.json'
+      - 'data/learn/research/pius-x-conversation-depth12-part-b-20261021.v1.json'
+      - 'data/learn/research/pius-x-12chapter-dependent-dialogue-flow-20261021.v1.json'
+      - 'docs/research/PIUS-X-12-DEEP-CONVERSATION-TRANSCRIPTS-20261021.md'
+      - 'tests/pius-x-12chapter-dependent-dialogue-flow.mjs'
       - 'tests/pius-x-first20-personal-and-papal-source-edits.mjs'
       - 'previews/visible-mass-3d/pius-x-batch-release-editorial-review.html'
       - 'tools/formation/build-pius-x-release-review.mjs'
@@ -410,6 +415,7 @@ jobs:
       - run: node tests/pius-x-next20-dialogue-content.mjs
       - run: node tests/pius-x-next25-dialogue-graph.mjs
       - run: node tests/pius-x-next20-pastoral-dialogue-graph.mjs
+      - run: node tests/pius-x-12chapter-dependent-dialogue-flow.mjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
