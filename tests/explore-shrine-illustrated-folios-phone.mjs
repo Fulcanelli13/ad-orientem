@@ -37,7 +37,13 @@ try{
   const page=await context.newPage(),errors=[];
   page.on("pageerror",e=>errors.push(e.message));
   await page.goto(origin+"/index.html",{waitUntil:"domcontentloaded",timeout:65000});
-  await page.waitForFunction(()=>Boolean(globalThis.AO_FIND_APP_V1?.open&&globalThis.AO_RUNTIME_V8?.store?.dispatch),null,{timeout:50000});
+  const entry=page.locator('[data-ao-app-surface="find"]');
+  await entry.waitFor({state:"visible",timeout:30000});
+  await entry.click();
+  await page.waitForFunction(()=>globalThis.AO_FIND_APP_V1?.status?.().open===true
+   &&globalThis.AO_FIND_APP_V1?.status?.().loadState==="ready"
+   &&Boolean(document.querySelector("#ao-find-modular-root .aoHeritageSurface")),
+   null,{timeout:60000});
   const selectedLang=await page.evaluate(v=>{
    globalThis.AO_RUNTIME_V8.store.dispatch({type:"set-language",language:v});
    return globalThis.AO_RUNTIME_V8.store.getState().language;
