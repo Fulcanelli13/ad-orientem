@@ -224,15 +224,15 @@ for (const edition of HISTORIA_EDITIONS) {
     const readable=historiaReadableMarkdown(output);
     const committedReadable=readFileSync(new URL("../data/research/historia-salutis-p3-continuous-research-reading-dr-challoner.v1.md",import.meta.url),"utf8");
     assert.equal(committedReadable,readable,"The clean research reading must reproduce from identical canonical source data");
-    assert.equal((readable.match(/^## \\d\\d · /gm)||[]).length,37);
-    assert.equal((readable.match(/^\\*[^\\n]+\\*$/gm)||[]).filter(r=>/^(?:\\*Genesis |\\*Exodus |\\*1Samuel |\\*2Samuel |\\*Acts )/.test(r)).length>0,true);
+    assert.equal((readable.match(/^## \d\d · /gm)||[]).length,37);
+    assert.equal((readable.match(/^\*[^\n]+\*$/gm)||[]).filter(r=>/^(?:\*Genesis |\*Exodus |\*1Samuel |\*2Samuel |\*Acts )/.test(r)).length>0,true);
     assert.ok(!readable.includes("⟦TRIAL SCRIPTURE"));
     assert.ok(!readable.includes("⟦HELD source bridge"));
     assert.ok(readable.includes("**UNAPPROVED RESEARCH READING — NOT FOR PUBLICATION**"));
-    assert.equal((readable.match(/\\*Genesis 41:33–41\\*/g)||[]).length,1);
-    assert.equal((readable.match(/\\*Genesis 41:45\\*/g)||[]).length,1);
-    assert.equal((readable.match(/\\*2Samuel 5:6–7\\*/g)||[]).length,1);
-    assert.ok(!readable.includes("and made him go up into his second chariot"));
+    assert.equal((readable.match(/\*Genesis 41:33–41\*/g)||[]).length,1);
+    assert.equal((readable.match(/\*Genesis 41:45\*/g)||[]).length,1);
+    assert.equal((readable.match(/\*2Samuel 5:6–7\*/g)||[]).length,1);
+    assert.ok(!readable.includes("And he made him go up into his second chariot"));
     assert.ok(readable.includes("The Lord had made known to Samuel"));
   }else if(edition==="crampon-1923"){
     assert.throws(()=>historiaReadableMarkdown(output),/untranslated English drafts/);
