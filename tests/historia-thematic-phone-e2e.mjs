@@ -142,9 +142,22 @@ try{
  await manuscript.waitForFunction(()=>globalThis.AO_SCRIPTURE_APP_V1.status().reader?.passage?.chapter===5);
  assert.equal(await manuscript.evaluate(()=>
   globalThis.AO_SCRIPTURE_APP_V1.openThematicEpisode("hist-omitted-094")),true);
- await manuscript.waitForFunction(()=>globalThis.AO_SCRIPTURE_APP_V1.status().reader?.editionId==="dr-challoner");
- assert.equal(await manuscript.locator("#ao-scripture-overlay .aoScriptureNav select").first()
-  .locator('option[value="fr"]').isDisabled(),true);
+ await manuscript.waitForFunction(()=>{
+  const state=globalThis.AO_SCRIPTURE_APP_V1?.status?.().reader;
+  return state?.thematicEpisodeId==="hist-omitted-094"&&state.editionId==="dr-challoner";
+ });
+ const estherGuard=await manuscript.evaluate(()=>{
+  const control=document.querySelector("#ao-scripture-overlay .aoScriptureNav select");
+  const option=control?.querySelector('option[value="fr"]');
+  return {episode:globalThis.AO_SCRIPTURE_APP_V1?.status?.().reader?.thematicEpisodeId,
+   edition:globalThis.AO_SCRIPTURE_APP_V1?.status?.().reader?.editionId,
+   optionDisabled:option?.disabled??null,
+   optionHTML:option?.outerHTML??null,
+   controlHTML:control?.outerHTML?.slice(0,450)??null};
+ });
+ console.log("HISTORIA_ESTHER_GUARD",JSON.stringify(estherGuard));
+ assert.equal(estherGuard.optionDisabled,true,
+  "Esther French option must be disabled under the unverified edition crosswalk");
  results.push("chapter navigation: Tobit 4 -> 5; Esther uses Challoner only");
  await manuscript.screenshot({path:resolve(output,"inapp-historia-390.png"),animations:"disabled"});
 
