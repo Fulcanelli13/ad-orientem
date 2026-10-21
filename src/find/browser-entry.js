@@ -1510,6 +1510,14 @@ export function createFindOwner(win=globalThis){
     void paint({selectionOnly:true});
   }
   function onKeyDown(event){
+    if(openState&&state.networkOpen&&["Enter"," "].includes(event?.key)){
+      const item=event?.target?.closest?.(".aoNetworkSvgItem[data-network-focus]");
+      if(item){
+        event.preventDefault?.();
+        state.networkFocus=item.dataset.networkFocus;state.networkLimit=12;
+        void paint();return;
+      }
+    }
     if(!openState||event?.key!=="Escape")return;
     if(state.bibleAtlas){event.preventDefault?.();
       if(atlasScriptureReturn){returnToScriptureAtlas();return;}
