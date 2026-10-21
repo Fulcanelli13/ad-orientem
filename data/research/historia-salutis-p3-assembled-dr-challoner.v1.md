@@ -337,3 +337,160 @@ And the Lord said to Moses: Stretch forth thy hand over the sea, that the waters
 
 </details>
 
+## 10 · Sinai: covenant and unfaithfulness
+
+**⟦Exodus 19:1–8⟧**
+
+In the third month of the departure of Israel out of the land of Egypt, on this day they came into the wilderness of Sinai: For departing out of Raphidim, and coming to the desert of Sinai, they camped in the same place, and there Israel pitched their tents over against the mountain. And Moses went up to God; and the Lord called unto him from the mountain, and said: Thus shalt thou say to the house of Jacob, and tell the children of Israel: You have seen what I have done to the Egyptians, how I have carried you upon the wings of eagles, and have taken you to myself. If therefore you will hear my voice, and keep my covenant, you shall be my peculiar possession above all people: for all the earth is mine. And you shall be to me a priestly kingdom, and a holy nation. These are the words thou shalt speak to the children of Israel. Moses came; and calling together the elders of the people, he declared all the words which the Lord had commanded. And all the people answered together: All that the Lord hath spoken, we will do. And when Moses had related the people’s words to the Lord,
+
+**⟦Exodus 20:1–17⟧**
+
+And the Lord spoke all these words: I am the Lord thy God, who brought thee out of the land of Egypt, out of the house of bondage. Thou shalt not have strange gods before me. Thou shalt not make to thyself a graven thing, nor the likeness of any thing that is in heaven above, or in the earth beneath, nor of those things that are in the waters under the earth. Thou shalt not adore them, nor serve them: I am the Lord thy God, mighty, jealous, visiting the iniquity of the fathers upon the children, unto the third and fourth generation of them that hate me: And shewing mercy unto thousands to them that love me, and keep my commandments. Thou shalt not take the name of the Lord thy God in vain: for the Lord will not hold him guiltless that shall take the name of the Lord his God in vain. Remember that thou keep holy the sabbath day. Six days shalt thou labour, and shalt do all thy works. But on the seventh day is the sabbath of the Lord thy God: thou shalt do no work on it, thou nor thy son, nor thy daughter, nor thy manservant, nor thy maidservant, nor thy beast, nor the stranger that is within thy gates. For in six days the Lord made heaven and earth, and the sea, and all things that are in them, and rested on the seventh day: therefore the Lord blessed the seventh day, and sanctified it. Honour thy father and thy mother, that thou mayst be longlived upon the land which the Lord thy God will give thee. Thou shalt not kill. Thou shalt not commit adultery. Thou shalt not steal. Thou shalt not bear false witness against thy neighbour. Thou shalt not covet thy neighbour’s house; neither shalt thou desire his wife, nor his servant, nor his handmaid, nor his ox, nor his ass, nor any thing that is his.
+
+**⟦Exodus 24:3–8⟧**
+
+So Moses came and told the people all the words of the Lord, and all the judgments: and all the people answered with one voice: We will do all the words of the Lord, which he hath spoken. And Moses wrote all the words of the Lord: and rising in the morning, he built an altar at the foot of the mount, and twelve titles according to the twelve tribes of Israel. And he sent young men of the children of Israel, and they offered holocausts, and sacrificed pacific victims of calves to the Lord. Then Moses took half of the blood, and put it into bowls; and the rest he poured upon the altar. And taking the book of the covenant, he read it in the hearing of the people: and they said: All things that the Lord hath spoken, we will do, we will be obedient. And he took the blood and sprinkled it upon the people, and he said: This is the blood of the covenant, which the Lord hath made with you concerning all these words.
+
+**⟦Exodus 32:1–4⟧**
+
+And the people seeing that Moses delayed to come down from the mount, gathering together against Aaron, said: Arise, make us gods, that may go before us: For as to this Moses, the man that brought us out of the land of Egypt, we know not what has befallen him. And Aaron said to them: Take the golden earrings from the ears of your wives, and your sons and daughters, and bring them to me. And the people did what he had commanded, bringing the earrings to Aaron. And when he had received them, he fashioned them by founders’ work, and made of them a molten calf. And they said: These are thy gods, O Israel, that have brought thee out of the land of Egypt.
+
+**⟦Exodus 32:7–14⟧**
+
+And the Lord spoke to Moses, saying: Go, get thee down: thy people, which thou hast brought out of the land of Egypt, hath sinned. They have quickly strayed from the way which thou didst shew them: and they have made to themselves a molten calf, and have adored it, and sacrificing victims to it, have said: These are thy gods, O Israel, that have brought thee out of the land of Egypt. And again the Lord said to Moses: I see that this people is stiffnecked: Let me alone, that my wrath may be kindled against them, and that I may destroy them, and I will make of thee a great nation. But Moses besought the Lord his God, saying: Why, O Lord, is thy indignation enkindled against thy people, whom thou hast brought out of the land of Egypt, with great power, and with a mighty hand? Let not the Egyptians say, I beseech thee: He craftily brought them out, that he might kill them in the mountains, and destroy them from the earth: let thy anger cease, and be appeased upon the wickedness of thy people. Remember Abraham, Isaac, and Israel, thy servants, to whom thou sworest by thy own self, saying: I will multiply your seed as the stars of heaven: and this whole land that I have spoken of, I will give to your seed, and you shall possess it for ever: And the Lord was appeased from doing the evil which he had spoken against his people.
+
+**⟦Exodus 32:19–20⟧**
+
+And when he came nigh to the camp, he saw the calf, and the dances: and being very angry, he threw the tables out of his hand, and broke them at the foot of the mount: And laying hold of the calf which they had made, he burnt it, and beat it to powder, which he strewed into water, and gave thereof to the children of Israel to drink.
+
+**⟦Exodus 32:30–34⟧**
+
+And when the next day was come, Moses spoke to the people: You have sinned a very great sin: I will go up to the Lord, if by any means I may be able to entreat him for your crime. And returning to the Lord, he said: I beseech thee: this people hath sinned a heinous sin, and they have made to themselves gods of gold: either forgive them this trespass, Or if thou do not, strike me out of the book that thou hast written. And the Lord answered him: He that hath sinned against me, him will I strike out of my book: But go thou, and lead this people whither I have told thee: my angel shall go before thee. And I in the day of revenge will visit this sin also of theirs.
+
+*⟦Editorial connector · source: Exodus 40:16–21, 34–38 · NOT APPROVED⟧*
+
+*The Lord commanded Israel to erect the Tabernacle, where the Ark of the Covenant signified his dwelling among the people during their journey (Exodus 40:17–38).*
+
+<details><summary>Unselected same-book source seams (research audit)</summary>
+
+- INTERVENING_CHAPTERS: Exodus 21–23
+- INTERVENING_CHAPTERS: Exodus 25–31
+- OMITTED_VERSES: Exodus 32:5–6
+- OMITTED_VERSES: Exodus 32:15–18
+- OMITTED_VERSES: Exodus 32:21–29
+
+</details>
+
+## 11 · Israel enters the promised land
+
+*⟦Editorial connector · source: Deuteronomy 31:1–8 · NOT APPROVED⟧*
+
+*After the years in the wilderness, Moses commissioned Joshua to lead Israel across the Jordan into the promised land (Numbers 14:33–34; Deuteronomy 31:7–8).*
+
+**⟦Deuteronomy 34:1–7⟧**
+
+Then Moses went up from the plains of Moab upon mount Nebo, to the top of Phasga over against Jericho: and the Lord shewed him all the land of Galaad as far as Dan. And all Nephtali, and the land of Ephraim and Manasses, and all the land of Juda unto the furthermost sea, And the south part, and the breadth of the plain of Jericho the city of palm trees as far as Segor. And the Lord said to him: This is the land, for which I swore to Abraham, Isaac, and Jacob, saying: I will give it to thy seed. Thou hast seen it with thy eyes, and shalt not pass over to it. And Moses the servant of the Lord died there, in the land of Moab, by the commandment of the Lord: And he buried him in the valley of the land of Moab over against Phogor: and no man hath known of his sepulchre until this present day. Moses was a hundred and twenty years old when he died: his eye was not dim, neither were his teeth moved.
+
+**⟦Deuteronomy 34:9–12⟧**
+
+And Josue the son of Nun was filled with the spirit of wisdom, because Moses had laid his hands upon him. And the children of Israel obeyed him, and did as the Lord commanded Moses. And there arose no more a prophet in Israel like unto Moses, whom the Lord knew face to face, In all the signs and wonders, which he sent by him, to do in the land of Egypt to Pharao, and to all his servants, and to his whole land, And all the mighty hand, and great miracles, which Moses did before all Israel.
+
+**⟦Joshua 3:7–8⟧**
+
+And the Lord said to Josue: This day will I begin to exalt thee before Israel: that they may know that as I was with Moses, so I am with thee also. And do thou command the priests, that carry the ark of the covenant, and say to them: When you shall have entered into part of the water of the Jordan, stand in it.
+
+**⟦Joshua 3:13–17⟧**
+
+And when the priests, that carry the ark of the Lord the God of the whole earth, shall set the soles of their feet in the waters of the Jordan, the waters that are beneath shall run down and go off: and those that come from above, shall stand together upon a heap. So the people went out of their tents, to pass over the Jordan: and the priests that carried the ark of the covenant, went on before them. And as soon as they came into the Jordan, and their feet were dipped in part of the water, (now the Jordan, it being harvest time, had filled the banks of its channel,) The waters that came down from above stood in one place, and swelling up like a mountain, were seen afar off, from the city that is called Adom, to the place of Sarthan: but those that were beneath, ran down into the sea of the wilderness, (which now is called the Dead Sea) until they wholly failed. And the people marched over against Jericho: and the priests that carried the ark of the covenant of the Lord, stood girded upon the dry ground in the midst of the Jordan, and all the people passed over, through the channel that was dried up.
+
+**⟦Judges 2:6–12⟧**
+
+And Josue sent away the people, and the children of Israel went every one to his own possession to hold it: And they served the Lord all his days, and the days of the ancients, that lived a long time after him, and who knew all the works of the Lord, which he had done for Israel. And Josue, the son of Nun, the servant of the Lord, died, being a hundred and ten years old; And they buried him in the borders of his possession in Thamnathsare, in Mount Ephraim, on the north side of Mount Gaas. And all that generation was gathered to their fathers: and there arose others that knew not the Lord and the works which he had done for Israel. And the children of Israel did evil in the sight of the Lord, and they served Baalim, And they left the Lord, the God of their fathers, who had brought them out of the land of Egypt: and they followed strange gods, and the gods of the people that dwelt round about them, and they adored them: and they provoked the Lord to anger,
+
+**⟦Judges 2:16–19⟧**
+
+And the Lord raised up judges, to deliver them from the hands of those that oppressed them: but they would not hearken to them, Committing fornication with strange gods, and adoring them. They quickly forsook the way, in which their fathers had walked: and hearing the commandments of the Lord, they did all things contrary. And when the Lord raised them up judges, in their days, he was moved to mercy, and heard the groanings of the afflicted, and delivered them from the slaughter of the oppressors. But after the judge was dead, they returned, and did much worse things than their fathers had done, following strange gods, serving them, and adoring them. They left not their own inventions, and the stubborn way, by which they were accustomed to walk.
+
+<details><summary>Unselected same-book source seams (research audit)</summary>
+
+- OMITTED_VERSES: Deuteronomy 34:8–8
+- OMITTED_VERSES: Joshua 3:9–12
+- OMITTED_VERSES: Judges 2:13–15
+
+</details>
+
+## 12 · From Ruth to Samuel and Saul
+
+*⟦Editorial connector · source: Ruth 1:1–18 · NOT APPROVED⟧*
+
+*Ruth, a Moabite widow, remained faithful to her mother-in-law Naomi and returned with her to Bethlehem (Ruth 1:16–22).*
+
+**⟦Ruth 4:13⟧**
+
+Booz therefore took Ruth, and married her: and went in unto her, and the Lord gave her to conceive, and to bear a son.
+
+**⟦Ruth 4:17–22⟧**
+
+And the women, her neighbours, congratulating with her, and saying, There is a son born to Noemi, called his name Obed: he is the father of Isai, the father of David. These are the generations of Phares: Phares begot Esron, Esron begot Aram, Aram begot Aminadab, Aminadab begot Nahasson, Nahasson begot Salmon, Salmon begot Booz, Booz begot Obed, Obed begot Isai, Isai begot David.
+
+*⟦Editorial connector · source: 1 Samuel 3:1–21 · NOT APPROVED⟧*
+
+*Samuel served as a prophet during Israel's transition to kingship. Saul, a Benjaminite, came to Samuel, whom the Lord had instructed to anoint him (1 Samuel 3:19–21; 9:15–27).*
+
+**⟦1Samuel 8:4–8⟧**
+
+Then all the ancients of Israel being assembled came to Samuel to Ramatha. And they said to him: Behold thou art old, and thy sons walk not in thy ways: make us a king, to judge us, as all nations have. And the word was displeasing in the eyes of Samuel, that they should say: Give us a king to judge us. And Samuel prayed to the Lord. And the Lord said to Samuel: Hearken to the voice of the people in all that they say to thee. For they have not rejected thee, but me, that I should not reign over them. According to all their works, they have done from the day that I brought them out of Egypt until this day: as they have forsaken me, and served strange gods, so do they also unto thee.
+
+**⟦1Samuel 8:19–22⟧**
+
+But the people would not hear the voice of Samuel, and they said, Nay: but there shall be a king over us, And we also will be like all nations: and our king shall judge us, and go out before us, and fight our battles for us. And Samuel heard all the words of the people, and rehearsed them in the ears of the Lord. And the Lord said to Samuel: Hearken to their voice, and make them a king. And Samuel said to the men of Israel: Let every man go to his city.
+
+**⟦1Samuel 10:1–8⟧**
+
+And Samuel took a little vial of oil, and poured it upon his head, and kissed him, and said: Behold, the Lord hath anointed thee to be prince over his inheritance, and thou shalt deliver his people out of the hands of their enemies, that are round about them. And this shall be a sign unto thee, that God hath anointed thee to be prince. When thou shalt depart from me this day, thou shalt find two men by the sepulchre of Rachel in the borders of Benjamin to the south, and they shall say to thee: The asses are found which thou wentest to seek: and thy father, thinking no more of the asses, is concerned for you, and saith: What shall I do for my son? And when thou shalt depart from thence, and go farther on, and shalt come to the oak of Thabor, there shall meet thee three men going up to God to Bethel, one carrying three kids, and another three loaves of bread, and another carrying a bottle of wine. And they will salute thee, and will give thee two loaves, and thou shalt take them at their hand. After that thou shalt come to the hill of God, where the garrison of the Philistines is: and when thou shalt be come there into the city, thou shalt meet a company of prophets coming down from the high place, with a psaltery, and a timbrel, and a pipe, and a harp before them, and they shall be prophesying. And the Spirit of the Lord shall come upon thee, and thou shalt prophesy with them, and shalt be changed into another man. When therefore these signs shall happen to thee, do whatsoever thy hand shall find, for the Lord is with thee. And thou shalt go down before me to Galgal, (for I will come down to thee), that thou mayst offer an oblation, and sacrifice victims of peace: seven days shalt thou wait, till I come to thee, and I will shew thee what thou art to do.
+
+<details><summary>Unselected same-book source seams (research audit)</summary>
+
+- OMITTED_VERSES: Ruth 4:14–16
+- OMITTED_VERSES: 1Samuel 8:9–18
+- INTERVENING_CHAPTERS: 1Samuel 9–9
+
+</details>
+
+## 13 · David and the enduring royal promise
+
+**⟦1Samuel 16:1–13⟧**
+
+And the Lord said to Samuel: How long wilt thou mourn for Saul, whom I have rejected from reigning over Israel? fill thy horn with oil, and come, that I may send thee to Isai, the Bethlehemite: for I have provided me a king among his sons. And Samuel said: How shall I go? for Saul will hear of it, and he will kill me. And the Lord said: Thou shalt take with thee a calf of the herd, and thou shalt say: I am come to sacrifice to the Lord. And thou shalt call Isai to the sacrifice, and I will shew thee what thou art to do, and thou shalt anoint him whom I shall shew to thee. Then Samuel did as the Lord had said to him. And he came to Bethlehem, and the ancients of the city wondered, and meeting him, they said: Is thy coming hither peaceable? And he said: It is peaceable: I am come to offer sacrifice to the Lord, be ye sanctified, and come with me to the sacrifice. And he sanctified Isai and his sons, and called them to the sacrifice. And when they were come in, he saw Eliab, and said: Is the Lord’s anointed before him? And the Lord said to Samuel: Look not on his countenance, nor on the height of his stature: because I have rejected him, nor do I judge according to the look of man: for man seeth those things that appear, but the Lord beholdeth the heart. And Isai called Abinadab, and brought him before Samuel. And he said: Neither hath the Lord chosen this, And Isai brought Samma, and he said of him: Neither hath the Lord chosen this. Isai therefore brought his seven sons before Samuel: and Samuel said to Isai: The Lord hath not chosen any one of these. And Samuel said to Isai: Are here all thy sons? He answered: There remaineth yet a young one, who keepeth the sheep. And Samuel said to Isai: Send, and fetch him: for we will not sit down till he come hither. He sent therefore and brought him. Now he was ruddy and beautiful to behold, and of a comely face. And the Lord said: Arise, and anoint him, for this is he. Then Samuel took the horn of oil, and anointed him in the midst of his brethren: and the Spirit of the Lord came upon David from that day forward: and Samuel rose up, and went to Ramatha.
+
+*⟦Editorial connector · source: 1 Samuel 31:1–13 · NOT APPROVED⟧*
+
+*Saul died in battle against the Philistines, and David subsequently began his reign over Judah at Hebron (1 Samuel 31; 2 Samuel 2:1–4).*
+
+**⟦2Samuel 2:1–4⟧**
+
+And after these things David consulted the Lord, saying: Shall I go up into one of the cities of Juda? And the Lord said to him: Go up. And David said: Whither shall I go up? And he answered him: Into Hebron. So David went up, and his two wives Achinoam the Jezrahelitess, and Abigail the wife of Nabal of Carmel: And the men also that were with him, David brought up every man with his household: and they abode in the towns of Hebron. And the men of Juda came, and anointed David there, to be king over the house of Juda. And it was told David that the men of Jabes Galaad had buried Saul.
+
+**⟦2Samuel 5:1–10⟧**
+
+Then all the tribes of Israel came to David in Hebron, saying: Behold we are thy bone and thy flesh. Moreover yesterday also and the day before, when Saul was king over us, thou wast he that did lead out and bring in Israel: and the Lord said to thee: Thou shalt feed my people Israel, and thou shalt be prince over Israel. The ancients also of Israel came to the king of Hebron, and king David made a league with them in Hebron before the Lord: and they anointed David to be king over Israel. David was thirty years old when he began to reign, and he reigned forty years. In Hebron he reigned over Juda seven years and six months: and in Jerusalem he reigned three and thirty years over all Israel and Juda. And the king and all the men that were with him went to Jerusalem to the Jebusites the inhabitants of the land: and they said to David: Thou shalt not come in hither unless thou take away the blind and the lame that say: David shall not come in hither. But David took the castle of Sion, the same is the city of David. For David had offered that day a reward to whosoever should strike the Jebusites and get up to the gutters of the tops of the houses, and take away the blind and the lame that hated the soul of David: therefore it is said in the proverb: The blind and the lame shall not come into the temple. And David dwelt in the castle, and called it, The city of David: and built round about from Mello and inwards. And he went on prospering and growing up, and the Lord God of hosts was with him.
+
+**⟦2Samuel 6:12–15⟧**
+
+And it was told king David, that the Lord had blessed Obededom, and all that he had, because of the ark of God. So David went, and brought away the ark of God out of the house of Obededom into the city of David with joy. And there were with David seven choirs, and calves for victims. And when they that carried the ark of the Lord had gone six paces, he sacrificed an ox and a ram: And David danced with all his might before the Lord: and David was girded with a linen ephod. And David and all the house of Israel brought the ark of the covenant of the Lord with joyful shouting, and with sound of trumpet.
+
+**⟦2Samuel 6:17–19⟧**
+
+And they brought the ark of the Lord, and set it in its place in the midst of the tabernacle, which David had pitched for it: and David offered holocausts, and peace offerings before the Lord. And when he had made an end of offering holocausts and peace offerings, he blessed the people in the name of the Lord of hosts. And he distributed to all the multitude of Israel, both men and women, to every one, a cake of bread, and a piece of roasted beef, and fine flour fried with oil: and all the people departed every one to his own house.
+
+**⟦2Samuel 7:1–16⟧**
+
+And it came to pass when the king sat in his house, and the Lord had given him rest on every side from all his enemies, He said to Nathan the prophet: Dost thou see that I dwell in a house of cedar, and the ark of God is lodged within skins? And Nathan said to the king: Go, do all that is in thy heart: because the Lord is with thee. But it came to pass that night, that the word of the Lord came to Nathan, saying: Go, and say to my servant David: Thus saith the Lord: Shalt thou build me a house to dwell in? Whereas I have not dwelt in a house from the day that I brought the children of Israel out of the land of Egypt even to this day: but have walked in a tabernacle, and in a tent. In all the places that I have gone through with all the children of Israel, did ever I speak a word to any one of the tribes of Israel, whom I commanded to feed my people Israel, saying: Why have you not built me a house of cedar? And now thus shalt thou speak to my servant David: Thus saith the Lord of hosts: I took thee out of the pastures from following the sheep to be ruler over my people Israel: And I have been with thee wheresoever thou hast walked, and have slain all thy enemies from before thy face: and I have made thee a great man, like unto the name of the great ones that are on the earth. And I will appoint a place for my people Israel, and I will plant them, and they shall dwell therein, and shall be disturbed no more: neither shall the children of iniquity afflict them any more as they did before, From the day that I appointed judges over my people Israel: and I will give thee rest from all thy enemies. And the Lord foretelleth to thee, that the Lord will make thee a house. And when thy days shall be fulfilled, and thou shalt sleep with thy fathers, I will raise up thy seed after thee, which shall proceed out of thy bowels, and I will establish his kingdom. He shall build a house to my name, and I will establish the throne of his kingdom for ever. I will be to him a father, and he shall be to me a son: and if he commit any iniquity, I will correct him with the rod of men, and with the stripes of the children of men. But my mercy I will not take away from him, as I took it from Saul, whom I removed from before my face. And thy house shall be faithful, and thy kingdom for ever before thy face, and thy throne shall be firm for ever.
+
+<details><summary>Unselected same-book source seams (research audit)</summary>
+
+- INTERVENING_CHAPTERS: 2Samuel 3–4
+- OMITTED_VERSES: 2Samuel 6:16–16
+
+</details>
+
