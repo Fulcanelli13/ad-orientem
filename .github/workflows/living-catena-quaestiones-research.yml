@@ -13,6 +13,7 @@ on:
       - "tests/scripture-catena-eusebius-supplement.mjs"
       - "tests/scripture-catena-augustine-continuation.mjs"
       - "tests/scripture-catena-augustine-original-spans.mjs"
+      - "tests/scripture-catena-augustine-coverage.mjs"
       - ".github/workflows/living-catena-quaestiones-research.yml"
 
 permissions:
@@ -37,5 +38,7 @@ jobs:
         run: node tests/scripture-catena-augustine-continuation.mjs
       - name: Distinguish Augustine authored questions from quoted biblical voices
         run: node tests/scripture-catena-augustine-original-spans.mjs
+      - name: Verify full Augustine I.1–47 and II.1–51 numerical section coverage
+        run: node tests/scripture-catena-augustine-coverage.mjs
       - name: Verify Eusebius supplement verse mappings
         run: node tests/scripture-catena-eusebius-supplement.mjs
