@@ -37,6 +37,9 @@ try{
   if(width===390)await p.locator('#spxc-menu').click();
   await p.locator('[data-spxc-open="SPX-001"]').first().click();
   assert.equal(await p.locator('.spxc-turn').count(),1);
+  const rect=await p.locator('.spxc-turn').first().boundingBox();
+  assert(rect?.width>(width===1280?480:290),'dialogue column is too narrow on viewport '+width+': '+rect?.width);
+  await p.screenshot({path:'artifacts/pius-x-study-expanded/review-screenshots/'+width+'-opening.png'});
   assert.equal(await p.locator('.spxc-choice').count(),3);
   await p.locator('.spxc-choice').first().click();
   assert.equal(await p.locator('.spxc-turn').count(),2);
