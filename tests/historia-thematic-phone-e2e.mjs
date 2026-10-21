@@ -70,6 +70,8 @@ try{
     rootScrollBehavior:getComputedStyle(document.documentElement).scrollBehavior}};
  });
  console.log("HISTORIA_CLICK_GEOMETRY",JSON.stringify(hitGeometry));
+ assert.ok(hitGeometry.windowScroll.innerWidth <= 391, 'Mobile document overflow widens the viewport: '+JSON.stringify(hitGeometry));
+ assert.ok(hitGeometry.listScroll.clientWidth <= 390, 'Horizontal catalogue must scroll inside its own viewport: '+JSON.stringify(hitGeometry));
  await page.locator("#episode-index > li > button").filter({hasText:"Calming of the storm"}).click();
  await page.locator("#episode-reading .verse").first().waitFor({timeout:30000});
  assert.equal(await page.locator("#episode-reading .verse").count(),7);
