@@ -493,9 +493,9 @@ And Samuel took a little vial of oil, and poured it upon his head, and kissed hi
 
 And the Lord said to Samuel: How long wilt thou mourn for Saul, whom I have rejected from reigning over Israel? fill thy horn with oil, and come, that I may send thee to Isai, the Bethlehemite: for I have provided me a king among his sons. And Samuel said: How shall I go? for Saul will hear of it, and he will kill me. And the Lord said: Thou shalt take with thee a calf of the herd, and thou shalt say: I am come to sacrifice to the Lord. And thou shalt call Isai to the sacrifice, and I will shew thee what thou art to do, and thou shalt anoint him whom I shall shew to thee. Then Samuel did as the Lord had said to him. And he came to Bethlehem, and the ancients of the city wondered, and meeting him, they said: Is thy coming hither peaceable? And he said: It is peaceable: I am come to offer sacrifice to the Lord, be ye sanctified, and come with me to the sacrifice. And he sanctified Isai and his sons, and called them to the sacrifice. And when they were come in, he saw Eliab, and said: Is the Lord’s anointed before him? And the Lord said to Samuel: Look not on his countenance, nor on the height of his stature: because I have rejected him, nor do I judge according to the look of man: for man seeth those things that appear, but the Lord beholdeth the heart. And Isai called Abinadab, and brought him before Samuel. And he said: Neither hath the Lord chosen this, And Isai brought Samma, and he said of him: Neither hath the Lord chosen this. Isai therefore brought his seven sons before Samuel: and Samuel said to Isai: The Lord hath not chosen any one of these. And Samuel said to Isai: Are here all thy sons? He answered: There remaineth yet a young one, who keepeth the sheep. And Samuel said to Isai: Send, and fetch him: for we will not sit down till he come hither. He sent therefore and brought him. Now he was ruddy and beautiful to behold, and of a comely face. And the Lord said: Arise, and anoint him, for this is he. Then Samuel took the horn of oil, and anointed him in the midst of his brethren: and the Spirit of the Lord came upon David from that day forward: and Samuel rose up, and went to Ramatha.
 
-*⟦Editorial connector · source: 1Samuel 31:1–13; 2Samuel 2:1–4 · NOT APPROVED⟧*
+*⟦Editorial connector · source: 1Samuel 31:1–13 · NOT APPROVED⟧*
 
-*Saul fell in battle against the Philistines. After his death, David sought the Lord's guidance and went to Hebron, where the men of Judah anointed him king.*
+*Saul and his sons died in battle against the Philistines.*
 
 **⟦2Samuel 2:1–4⟧**
 
@@ -684,6 +684,10 @@ And the children of Israel of the captivity kept the phase, on the fourteenth da
 
 ## 18 · The generations and the Annunciation
 
+*⟦Editorial connector · source: Luke 1:5–25; Luke 1:26; Luke 1:36 · NOT APPROVED⟧*
+
+*The priest Zachary and his wife Elizabeth, who had been barren, were expecting a son after the angel's promise. In the sixth month of her pregnancy, another announcement followed.*
+
 **⟦Luke 1:26–38⟧**
 
 And in the sixth month, the angel Gabriel was sent from God into a city of Galilee, called Nazareth, To a virgin espoused to a man whose name was Joseph, of the house of David: and the virgin’s name was Mary. And the angel being come in, said unto her: Hail, full of grace, the Lord is with thee: blessed art thou among women. Who having heard, was troubled at his saying and thought with herself what manner of salutation this should be. And the angel said to her: Fear not, Mary, for thou hast found grace with God. Behold thou shalt conceive in thy womb and shalt bring forth a son: and thou shalt call his name Jesus. He shall be great and shall be called the Son of the Most High. And the Lord God shall give unto him the throne of David his father: and he shall reign in the house of Jacob for ever. And of his kingdom there shall be no end. And Mary said to the angel: How shall this be done, because I know not man? And the angel answering, said to her: The Holy Ghost shall come upon thee and the power of the Most High shall overshadow thee. And therefore also the Holy which shall be born of thee shall be called the Son of God. And behold thy cousin Elizabeth, she also hath conceived a son in her old age: and this is the sixth month with her that is called barren. Because no word shall be impossible with God. And Mary said: Behold the handmaid of the Lord: be it done to me according to thy word. And the angel departed from her.
@@ -730,6 +734,10 @@ I indeed baptize you in water unto penance, but he that shall come after me, is 
 
 *⟦HELD source bridge: John 1:29–34 · not selected or approved⟧*
 
+*⟦Editorial connector · source: John 1:29–34 · NOT APPROVED⟧*
+
+*John the Baptist had also identified Jesus as the Lamb of God and testified that He was the Son of God.*
+
 **⟦John 1:35–51⟧**
 
 The next day again John stood and two of his disciples. And beholding Jesus walking, he saith: Behold the Lamb of God. And the two disciples heard him speak: and they followed Jesus. And Jesus turning and seeing them following him, saith to them: What seek you? Who said to him: Rabbi (which is to say, being interpreted, Master), where dwellest thou? He saith to them: Come and see. They came and saw where he abode: and they stayed with him that day. Now it was about the tenth hour. And Andrew, the brother of Simon Peter, was one of the two who had heard of John and followed him. He findeth first his brother Simon and saith to him: We have found the Messias, which is, being interpreted, the Christ. And he brought him to Jesus. And Jesus looking upon him, said: Thou art Simon the son of Jona. Thou shalt be called Cephas, which is interpreted Peter. On the following day, he would go forth into Galilee: and he findeth Philip, And Jesus saith to him: follow me. Now Philip was of Bethsaida, the city of Andrew and Peter. Philip findeth Nathanael and saith to him: We have found him of whom Moses, in the law and the prophets did write, Jesus the son of Joseph of Nazareth. And Nathanael said to him: Can any thing of good come from Nazareth? Philip saith to him: Come and see. Jesus saw Nathanael coming to him and he saith of him: Behold an Israelite indeed, in whom there is no guile. Nathanael saith to him: Whence knowest thou me? Jesus answered and said to him: Before that Philip called thee, when thou wast under the fig tree, I saw thee. Nathanael answered him and said: Rabbi: Thou art the Son of God. Thou art the King of Israel. Jesus answered and said to him: Because I said unto thee, I saw thee under the fig tree, thou believest: greater things than these shalt thou see. And he saith to him: Amen, amen, I say to you, you shall see the heaven opened and the angels of God ascending and descending upon the Son of man.
@@ -760,9 +768,9 @@ Thus therefore shall you pray: Our Father who art in heaven, hallowed be thy nam
 
 ## 22 · Christ the Bread of Life
 
-*⟦Editorial connector · source: John 6:1–15 · NOT APPROVED⟧*
+*⟦Editorial connector · source: John 6:1–15; John 6:22–25 · NOT APPROVED⟧*
 
-*Before this discourse, Jesus fed a multitude with five barley loaves and two fishes.*
+*Jesus fed a multitude with five barley loaves and two fishes. The next day, the people crossed the sea to Capharnaum in search of Him.*
 
 **⟦John 6:26–35⟧**
 
@@ -1046,6 +1054,10 @@ Now they who had been dispersed by the persecution that arose on occasion of Ste
 Now there were in the church which was at Antioch prophets and doctors, among whom was Barnabas and Simon who was called Niger, and Lucius of Cyrene and Manahen who was the foster brother of Herod the tetrarch, and Saul. And as they were ministering to the Lord and fasting, the Holy Ghost said to them: Separate me Saul and Barnabas, for the work whereunto I have taken them. Then they fasting and praying and imposing their hands upon them, sent them away. So they, being sent by the Holy Ghost, went to Seleucia: and from thence they sailed to Cyprus. And when they were come to Salamina, they preached the word of God in the synagogues of the Jews. And they had John also in the ministry.
 
 *⟦HELD source bridge: Acts 14:26–27 · not selected or approved⟧*
+
+*⟦Editorial connector · source: Acts 14:21–27 · NOT APPROVED⟧*
+
+*After Paul and Barnabas had preached among the Gentiles, they returned to Antioch and told the Church what God had accomplished through them.*
 
 **⟦Acts 15:1–2⟧**
 
