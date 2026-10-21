@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 permissions:
   actions: read
-  contents: write
+  contents: read
 concurrency:
   group: approved-hero-candidate-stage-${{ github.ref }}
   cancel-in-progress: false
@@ -20,7 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          persist-credentials: true
+          persist-credentials: false
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -57,13 +57,13 @@ jobs:
               assert x['productionRelease'] is False
           print('TEN CANDIDATE FILES HASH VERIFIED; ALL RELEASE GATES REMAIN CLOSED')
           PY
-      - name: Commit only stage candidates and the internal photograph QA gallery
-        run: |
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add assets/sacred-art/candidates/ \
-            data/calendar/approved-feast-hero-packaged-candidates-20261021.v1.json \
+      - name: Upload independent packaging evidence (no repository writes)
+        uses: actions/upload-artifact@v4
+        with:
+          name: ten-approved-feast-hero-candidate-package-verified
+          path: |
+            assets/sacred-art/candidates/
+            data/calendar/approved-feast-hero-packaged-candidates-20261021.v1.json
             docs/research/APPROVED-FEAST-HERO-PHOTO-REVIEW-20261021.html
-          git diff --cached --check
-          git commit -m 'assets(sacred-art): stage ten approved feast hero photo candidates pending rights and visual QA'
-          git push origin HEAD:fix/approved-feast-heroes-main-20261021
+          retention-days: 30
+          if-no-files-found: error
