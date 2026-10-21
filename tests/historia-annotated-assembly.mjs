@@ -4,7 +4,7 @@ import {assembleHistoriaReading,historiaAssemblyMarkdown,HISTORIA_EDITIONS,parse
 
 const read=path=>JSON.parse(readFileSync(new URL("../"+path,import.meta.url),"utf8"));
 const proof=read("data/research/historia-salutis-v18-continuous-reading-proof.v1.json");
-const expected={movements:37,scriptureBeats:93,scriptureSpans:166,editorialConnectorProposals:30,originalContextUnits:29,additionalCausalSeams:1,heldSourceCandidates:16,published:0};
+const expected={movements:37,scriptureBeats:93,scriptureSpans:166,editorialConnectorProposals:31,originalContextUnits:29,additionalCausalSeams:2,heldSourceCandidates:16,stillUnselectedBridgeCandidates:7,bridgeReadingTrials:9,readingTrialSpans:11,trialVerseEntries:46,published:0};
 for (const edition of HISTORIA_EDITIONS) {
   const witnessCache=new Map();
   const getWitness=book=>{
@@ -41,11 +41,14 @@ for (const edition of HISTORIA_EDITIONS) {
         }
       } else if(segment.kind==="EDITORIAL_CONNECTOR_PROPOSAL"){
         if(segment.additionalCausalSeam){
-          assert.equal(original.kind,"SCRIPTURE");
-          assert.equal(original.beforeScriptureConnectorCandidate.id,segment.candidateId);
-          assert.equal(segment.candidateId,"HS-P3-EC-01");
-          assert.deepEqual(segment.sourceReferences,original.beforeScriptureConnectorCandidate.sourceReferences);
-          assert.equal(segment.text,original.beforeScriptureConnectorCandidate.text);
+          assert.ok(["HS-P3-EC-01","HS-P3-EC-02"].includes(segment.candidateId));
+          const candidate=segment.candidateId==="HS-P3-EC-01"?
+            original.beforeScriptureConnectorCandidate:original.readthroughTrial?.editorialPreface;
+          assert.ok(candidate);
+          assert.ok(["SCRIPTURE","SOURCE_BRIDGE_CANDIDATE"].includes(original.kind));
+          assert.equal(candidate.id,segment.candidateId);
+          assert.deepEqual(segment.sourceReferences,candidate.sourceReferences);
+          assert.equal(segment.text,candidate.text);
           assert.equal(segment.originalDeskText,null);
         } else {
           assert.equal(original.kind,"EDITORIAL_CONTEXT_NOT_BIBLE");
@@ -56,6 +59,23 @@ for (const edition of HISTORIA_EDITIONS) {
           assert.equal(original.editorialReadingCandidate.publicationApproved,false);
         }
         assert.equal(segment.accepted,false);
+      } else if(segment.kind==="SCRIPTURE_READING_TRIAL_NOT_APPROVED"){
+        const trial=segment.trialType==="HELD_BRIDGE_RESEARCH_TRIAL"?
+          original.readthroughTrial:original.afterSelectedReadthroughTrial;
+        assert.ok(trial);
+        assert.ok(trial.refs.includes(segment.reference));
+        assert.equal(trial.accepted,false);
+        assert.equal(trial.publicationApproved,false);
+        assert.equal(segment.selectedForPublication,false);
+        assert.equal(segment.sourceStatus,"UNCOLLATED_SOURCE_WITNESS");
+        assert.equal(segment.text,segment.verses.map(v=>v.text).join(" "));
+        const parsed=parseHistoriaSpan(segment.reference);
+        assert.equal(segment.verses[0].chapter,parsed.fromChapter);
+        assert.equal(segment.verses[0].verse,parsed.fromVerse);
+        assert.equal(segment.verses.at(-1).chapter,parsed.toChapter);
+        assert.equal(segment.verses.at(-1).verse,parsed.toVerse);
+        const lookup=new Map(getWitness(parsed.book).verses.map(([c,v,t])=>[c+":"+v,t]));
+        for(const verse of segment.verses)assert.equal(verse.text,lookup.get(verse.chapter+":"+verse.verse));
       } else {
         assert.equal(segment.kind,"HELD_SOURCE_CANDIDATE");
         assert.equal(original.kind,"SOURCE_BRIDGE_CANDIDATE");
@@ -71,12 +91,17 @@ for (const edition of HISTORIA_EDITIONS) {
   const saul=king.segments.find(s=>s.candidateId==="HS-P3-EC-01");
   assert.ok(saul&&saul.additionalCausalSeam&&saul.publicationApproved===false);
   assert.ok(king.segments.indexOf(saul)<king.segments.findIndex(s=>s.reference==="1Samuel 10:1–8"));
-  assert.ok(output.movements.find(m=>m.id==="HS-M34").segments.some(s=>s.kind==="HELD_SOURCE_CANDIDATE"&&s.reference==="Acts 28:17–22"));
+  assert.ok(output.movements.find(m=>m.id==="HS-M34").segments.some(s=>s.kind==="SCRIPTURE_READING_TRIAL_NOT_APPROVED"&&s.reference==="Acts 28:17–22"));
+  assert.ok(output.movements.find(m=>m.id==="HS-M08").segments.some(s=>s.kind==="SCRIPTURE_READING_TRIAL_NOT_APPROVED"&&s.reference==="Exodus 12:29–30"));
+  assert.ok(output.movements.find(m=>m.id==="HS-M06").segments.some(s=>s.candidateId==="HS-P3-EC-02"));
   const stephen=m31.segments.find(s=>s.ownerUnitId==="H68-04"&&s.kind==="SCRIPTURE_EXACT_WITNESS");
   assert.equal(stephen.reference,edition==="crampon-1923"?"Acts 7:54–60":"Acts 7:54–59");
   const manuscript=historiaAssemblyMarkdown(output);
   assert.ok(manuscript.includes("## 37 · The New Creation"));
   assert.ok(manuscript.includes("⟦HELD source bridge:"));
+  assert.ok(manuscript.includes("⟦TRIAL SCRIPTURE · John 19:38–42 · NOT APPROVED⟧"));
+  assert.ok(manuscript.includes("⟦TRIAL SCRIPTURE · Acts 7:51–53 · NOT APPROVED⟧"));
+  assert.ok(manuscript.includes("⟦TRIAL SCRIPTURE · Exodus 12:29–30 · NOT APPROVED⟧"));
   assert.ok(manuscript.includes("Editorial connector · source:"));
   assert.ok(manuscript.includes("1Samuel 9:15–17; 1Samuel 9:25–27"));
   assert.ok(!manuscript.includes("Christ's temptation may be mentioned briefly"));
@@ -88,4 +113,4 @@ for (const edition of HISTORIA_EDITIONS) {
     assert.equal(committed,manuscript,"Committed research manuscript must exactly reproduce from source owners");
   }
 }
-console.log("PASS Historia annotated source assembly: 37 movements, 93 A units, 166 selected spans, 29 original + 1 new unapproved editorial connector, 16 held bridges; all three witnesses; immutable verse provenance; no publication approval");
+console.log("PASS Historia annotated source assembly: 37 movements, 93 A units, 166 original + 11 provisional source spans, 29 original + 2 causal editorial connectors, 16 held candidates (9 tested/7 not included); all three witnesses; no publication approval");
