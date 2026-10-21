@@ -1,0 +1,44 @@
+import assert from "node:assert/strict";
+import fs from "node:fs";
+import crypto from "node:crypto";
+import path from "node:path";
+
+const root=path.resolve(import.meta.dirname,"..");
+const get=p=>fs.readFileSync(path.join(root,p));
+const candidate=JSON.parse(get("data/calendar/approved-feast-hero-packaged-candidates-20261021.v1.json").toString());
+const source=JSON.parse(get("data/calendar/approved-feast-hero-photo-sha-evidence-20261021.v1.json").toString());
+assert.equal(candidate.schema,"AO_APPROVED_FEAST_HERO_PACKAGING_CANDIDATES_20261021_V1");
+assert.equal(candidate.photographs.length,10);
+assert.equal(source.photographs.length,10);
+assert.equal(candidate.liveReleaseManifest,null);
+assert.equal(candidate.humanAcceptedImagePhotos,0);
+assert.equal(candidate.explicitAppRightsReleaseApprovals,0);
+let totalBytes=0;
+for(const x of candidate.photographs){
+  const original=source.photographs.find(y=>y.date===x.date);
+  assert.ok(original,x.date+" cannot find permanent source");
+  assert.equal(x.artist,original.artist);
+  assert.equal(x.title,original.title);
+  assert.equal(x.sourceImageSHA256,original.sourceSHA256);
+  assert.equal(x.editorialSelectionPreserved,true);
+  assert.equal(x.productionRelease,false);
+  const c=x.candidateFile;
+  assert.equal(c.originalPaintingSurfaceUncroppedByThisScript,true);
+  assert.equal(c.photoHumanVisualAccepted,false);
+  assert.equal(c.mobile320VisualAccepted,false);
+  assert.equal(c.mobile390VisualAccepted,false);
+  assert.match(c.path,/^assets\/sacred-art\/candidates\/hero-2026-\d\d-\d\d-[0-9a-f]{12}\.webp$/);
+  const b=get(c.path);
+  totalBytes+=b.byteLength;
+  assert.equal(b.length,c.byteCount);
+  assert.equal(crypto.createHash("sha256").update(b).digest("hex"),c.sha256);
+  assert.equal(b.slice(0,4).toString("ascii"),"RIFF");
+  assert.equal(b.slice(8,12).toString("ascii"),"WEBP");
+  assert.ok(c.width>=400&&c.height>=400);
+  assert.equal(x.rightsReview.appDistributionIndependentlyApproved,false);
+  assert.equal(x.rightsReview.photographRightsHumanSignedOff,false);
+}
+assert.equal(candidate.photographs.filter(x=>x.rightsReview.status.startsWith("MET_")).length,2);
+assert.equal(candidate.photographs.filter(x=>x.rightsReview.status.startsWith("COMMONS_")).length,8);
+assert.ok(totalBytes>1_000_000 && totalBytes<6_000_000);
+console.log("HERO_CANDIDATE_ASSET_INTEGRITY PASS: 10/10 local WEBP hashes matched; source SHA identities preserved; 0 production approvals");
