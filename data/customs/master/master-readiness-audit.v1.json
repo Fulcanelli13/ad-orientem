@@ -1,7 +1,7 @@
 {
   "schema": "AO_CUSTOMS_MASTER_EDITORIAL_READINESS_V1",
   "date": "2026-10-21",
-  "status": "14_IDENTITY_ACCEPTANCE_COMPLETE_BILINGUAL_56_REMAIN_UNPUBLISHED",
+  "status": "ALL_KNOWN_SOT07_AND_WEISER_RESEARCH_IDENTITIES_ROUTED_NONPUBLISHING_GEOGRAPHIC_SOURCES_NOT_CERTIFIED",
   "snapshot": {
     "main_canonical_ids": 38,
     "earlier_provisional_P2_ids": 4,
@@ -21,7 +21,18 @@
     "existing_owner_and_regional_relations_reviewed": 80,
     "explicit_wrong_owner_relations_corrected": 3,
     "source_witness_refs_within_25_bounded_dossiers": 43,
-    "research_identities_scope_accepted": 14
+    "research_identities_scope_accepted": 14,
+    "older_P2_identities_accepted_for_research": 4,
+    "all_56_identities_classified_in_research_master": true,
+    "original_sot07_rows_reconciled": 63,
+    "sot07_original_canonical_links": 16,
+    "sot07_original_other_owner": 40,
+    "sot07_original_holds_or_exclusions": 7,
+    "additional_geographic_families_reconciled": 53,
+    "source_attributed_geographic_attestations_preserved": 135,
+    "geographic_complexes_preserved": 21,
+    "original_geographic_source_ids_preserved": 117,
+    "geographic_source_urls_validated_in_this_pass": 0
   },
   "completeness": {
     "source_observation_inventory": "CLOSED_568_OF_568",
@@ -37,7 +48,12 @@
     "image_artwork_selection": "OUT_OF_SCOPE_UNTIL_MASTER_ACCEPTANCE",
     "module_navigation_visual_design": "OUT_OF_SCOPE_UNTIL_MASTER_ACCEPTANCE",
     "relationship_owner_review": "80_OF_80_EXPLICIT_DISPOSITIONS_NOT_FINAL_PUBLICATION",
-    "master_identity_review": "CLOSED_14_OF_14_SOURCE_BOUNDED_EDITORIAL_CLASSIFICATION"
+    "master_identity_review": "CLOSED_14_OF_14_SOURCE_BOUNDED_EDITORIAL_CLASSIFICATION",
+    "research_identity_acceptance": "CLOSED_18_OF_18_RESEARCH_SCOPE_ACCEPTED_14_NEW_AND_4_P2",
+    "original_sot07_recovery": "CLOSED_63_OF_63_ORIGINAL_WORKBOOK_IDENTITIES_CROSSWALKED",
+    "geographic_sot07g_recovery": "CLOSED_53_FAMILIES_21_COMPLEXES_135_ATTESTATIONS_RESEARCH_ONLY",
+    "geographic_sources_and_places": "BLOCKED_117_ORIGINAL_SOURCE_URLS_AND_162_GEO_IDS_NOT_PLACE_CERTIFIED",
+    "public_corpus_exhaustiveness": "NOT_ESTABLISHED_ACROSS_ALL_TRADITIONAL_CATHOLIC_SOURCES"
   },
   "release_decision": {
     "approved_final_comprehensive_master": false,
@@ -46,9 +62,9 @@
     "approved_new_sacred_art_publishing": false
   },
   "next_review_order": [
-    "Finish provenance/claim and bilingual editorial acceptance on the 38 original canonical and four older P2 records, distinguishing historical reference from optional devotional practice.",
-    "Decide the public-inventory inclusion criteria, handling 17 explicit holds and 23 priestly-ritual source cases as archive/cross-module context without publishing formulas.",
-    "Audit taxonomy distribution of all 56 records, cross-module ownership and 1962 calendar associations before declaring the master publication-ready.",
-    "Only after the master data release gate is cleared, discuss module interface/navigation and images."
+    "Recover original source URLs from the SOT-07G workbook for 117 source IDs and verify only the 135 geographic attestations intended for a public place entry; do not synthesize map points.",
+    "Review the 56 identity narratives and taxonomy for accuracy before selecting which belong in the visible Catholic Customs catalogue versus heritage/source archive; preserve 17 exact holds and 23 rite-gated cases.",
+    "Measure coverage against other Catholic customs sources beyond Weiser and the existing SOT-07 French-world register; the current 56 identities are not proof that every traditional Catholic practice has been inventoried.",
+    "Once the research master is genuinely scoped and release-accepted, decide module structure, sacred-art assets and Calendar/Explore surfaces."
   ]
 }
