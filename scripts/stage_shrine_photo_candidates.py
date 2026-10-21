@@ -8,8 +8,8 @@ from pathlib import Path
 from PIL import Image, ImageOps, ImageDraw, ImageFont
 
 ROOT = Path(__file__).resolve().parents[1]
-RESEARCH = ROOT / "data/geography/research/shrine-seven-photo-recovery-20261021.v1.json"
-OUT = ROOT / "artifacts/shrine-photo-source-review"
+RESEARCH = ROOT / os.environ.get("SHRINE_PHOTO_MANIFEST","data/geography/research/shrine-seven-photo-recovery-20261021.v1.json")
+OUT = ROOT / os.environ.get("SHRINE_PHOTO_OUT","artifacts/shrine-photo-source-review")
 OUT.mkdir(parents=True, exist_ok=True)
 UA = "AdOrientemSacredGeography/1.0 (research project: https://github.com/Fulcanelli13/ad-orientem)"
 API = "https://commons.wikimedia.org/w/api.php"

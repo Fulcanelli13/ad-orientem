@@ -20,7 +20,7 @@ assert.equal(sources.schema,"AO_PLACE_GALLERY_ACQUISITION_R69_V1");
 assert.equal(registry.schema,"AO_APPROVED_PLACE_GALLERY_V1");
 assert.equal(sources.sources.length,4);
 assert.equal(registry.items.length,6);
-assert.equal(hero.items.length,24);
+assert.equal(hero.items.length,31);
 assert.ok(EXPLORE_DATA_URLS.approvedPlaceGallery.endsWith("/data/geography/approved-place-gallery.v1.json"));
 assert.equal(new Set(registry.items.map(x=>x.media_id)).size,6);
 assert.deepEqual([...new Set(registry.items.map(x=>x.place_id))].sort(),[

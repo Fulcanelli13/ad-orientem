@@ -18,8 +18,11 @@ assert.ok(editorialReview.approved.every(x=>approved.items.some(item=>item.place
 const excluded=[...editorialReview.needs_replacement,...editorialReview.held].map(x=>x.place_id);
 assert.equal(new Set(excluded).size,10);
 const r59=read("data/geography/research/place-media-candidates-r59.v1.json");
-assert.ok(editorialReview.held.every(x=>!approved.items.some(item=>item.place_id===x.place_id)),
- "Older-licence hold must remain unpublished");
+assert.ok(editorialReview.held.every(x=>{
+ const historic=r59.candidates.find(y=>y.place_id===x.place_id);
+ return historic&&!approved.items.some(item=>item.place_id===x.place_id&&
+   item.source_url===historic.source_page_url);
+}),"The historical R59 held photos must remain unpublished, even when a different later photo is independently cleared");
 assert.ok(editorialReview.needs_replacement.every(x=>r59.candidates.some(y=>y.place_id===x.place_id)),
  "All eight R58 quality holds must be replaced only by R59 curated sources");
 
@@ -30,9 +33,10 @@ const legacyIds=new Set([...editorialReview.approved,...editorialReview.needs_re
 assert.equal(legacyIds.size,18,"Original R58/R59 photo cohort must remain distinct and intact");
 assert.equal(approved.items.filter(x=>legacyIds.has(x.place_id)).length,18,
  "The original ten plus eight replacement approved photographs must be preserved");
-assert.equal(approved.items.length,24,"Six additional independently reviewed exact-shrine photos must be approved");
+assert.equal(approved.items.length,31,"Six additional independently reviewed exact-shrine photos must be approved");
 const shrineRecovery=read("data/geography/research/shrine-seven-photo-recovery-20261021.v1.json");
 const shrineCandidates=new Map(shrineRecovery.candidates.map(x=>[x.place_id,x]));
+const b2Candidates=new Map(read("data/geography/research/explore-major-marian-b2-photo-candidates.v1.json").candidates.map(x=>[x.place_id,x]));
 const existingGallery=read("data/geography/approved-place-gallery.v1.json");
 const pontmain=existingGallery.items.find(x=>x.media_id==="pontmain-east-facade-2016");
 const approvedIds=new Set();
@@ -41,10 +45,11 @@ for(const item of approved.items){
   assert.equal(item.status,"APPROVED");
   assert.ok(item.rights_verified&&item.subject_verified&&item.crop_reviewed);
   assert.match(item.asset_path,/^assets\/approved\/place-media\/[a-zA-Z0-9_.-]+\.webp$/);
-  assert.ok(["CC-BY-SA-2.0","CC-BY-SA-3.0","CC-BY-SA-4.0"].includes(item.license),
+  assert.ok(["PUBLIC_DOMAIN","CC-BY-SA-2.0","CC-BY-SA-3.0","CC-BY-SA-4.0"].includes(item.license),
     "Only independently confirmed freely reusable site photos may be published");
-  assert.equal(item.license_url,
-    "https://creativecommons.org/licenses/by-sa/"+item.license.split("-").at(-1)+"/");
+  assert.equal(item.license_url,item.license==="PUBLIC_DOMAIN"
+    ? "https://creativecommons.org/publicdomain/mark/1.0/"
+    : "https://creativecommons.org/licenses/by-sa/"+item.license.split("-").at(-1)+"/");
   if(legacyIds.has(item.place_id)){
     assert.equal(item.license,"CC-BY-SA-4.0","Original cohort licence must never be loosened");
   }
@@ -63,7 +68,7 @@ for(const item of approved.items){
     assert.equal(item.derivative_sha256,pontmain?.derivative_sha256,
       "Pontmain hero and gallery must have identical source-reviewed photograph bytes");
   }else{
-    const c=shrineCandidates.get(item.place_id);
+    const c=shrineCandidates.get(item.place_id)||b2Candidates.get(item.place_id);
     assert.ok(c&&c.image_review_state==="EDITORIALLY_ACCEPTED_EXACT_SITE_AND_FULL_FRAME_20261021",
       "New shrine photo lacks exact-source and visual approval");
     assert.equal(item.source_url,c.source_url);
@@ -78,7 +83,9 @@ for(const item of approved.items){
     "Approved photo bytes must match source stage report for "+item.place_id);
 }
 for(const held of research.held){
- assert.equal(approvedIds.has(held.place_id),false,"Older-licensed or identity-held photo cannot publish");
+ const historic=r59.candidates.find(x=>x.place_id===held.place_id);
+ assert.ok(historic&&!approved.items.some(item=>item.place_id===held.place_id&&item.source_url===historic.source_page_url),
+  "Historical held photograph may not be published through a separate source review");
 }
 assert.equal(research.candidates.length,18);
 assert.equal(research.held.length,2);
