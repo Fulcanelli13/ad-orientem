@@ -1,7 +1,7 @@
 {
   "schema": "ao.catena.original-questions-seed.v1",
   "edition": "Oxford/Newman English Catena Aurea compiled commentary",
-  "status": "original_question_and_answer_phrase_citation_to_be_mechanically_verified; never approved for Father-voice delivery without contextual review",
+  "status": "question_and_subsequent_evidence_literally_checked_in_canonical_source_chunks__editorial_authorship_unreviewed",
   "selectionPolicy": "Questions genuinely posed in attributed commentary and answered or addressed within the SAME original attributed Catena segment. Excludes questions appearing merely as Bible quotations, imagined dialogue, or editorial query suggestions.",
   "sourceOfRecord": "Canonical existing Ad Orientem Catena chunk text, without duplicate answer text",
   "observedQuestionMarksInFortyPilot": 173,
@@ -468,5 +468,14 @@
       "reason": "answer_not_present_in_same_excerpt_requires_contiguous_source_check"
     }
   ],
-  "excludedExamplesStatus": "Selected illustrative false-positive controls, not an exhaustive rejected-question list"
+  "excludedExamplesStatus": "Selected illustrative false-positive controls, not an exhaustive rejected-question list",
+  "sourceVerification": {
+    "date": "2026-10-21",
+    "method": "Connector read of canonical chapter packs; exact question substring, subsequent answer evidence, source ordinal and historical attribution",
+    "acceptedPassed": 27,
+    "excludedExampleProvenancePassed": 7,
+    "criticalEditionAttributionVerified": false,
+    "independentTheologicalEditorialReview": false,
+    "standaloneValidator": "Committed; not run in CI on this research branch"
+  }
 }
