@@ -314,12 +314,24 @@ try{
  assert.equal(await dialog.locator(".aoScriptureVerse").count(),1,"Reopened contextual reader restores the selected verse from memory");
  assert.equal(await dialog.locator("[data-scripture-witness-unreviewed='dr-challoner']").count(),1);
  await dialog.locator("[data-scripture-context-depth='commentary']").click();
- await dialog.locator(".aoScriptureFatherText").first().waitFor({state:"visible",timeout:15000});
- assert.ok((await dialog.locator(".aoScriptureFatherText").first().innerText()).length>80,
-   "Original full-length Father-attributed text should load from the bundled Gospel");
- assert.ok(await dialog.locator(".aoScriptureFather").count()>=2,
-   "Source-matched Catena pericope includes separately attributed Fathers");
- assert.match(await dialog.locator(".aoScriptureCatenaHeading").first().innerText(),/Catena Aurea, Luke 1:/);
+  await dialog.locator("[data-catena-messenger]").waitFor({state:"visible",timeout:15000});
+  const catenaRows=dialog.locator(".aoCatenaMRow");
+  await catenaRows.first().waitFor({state:"visible",timeout:15000});
+  assert.ok(await catenaRows.count()>=2,
+    "The conversation begins with distinct original Father-attributed extracts");
+  assert.ok((await catenaRows.first().locator(".aoCatenaMBubble").innerText()).length>40,
+    "Source-pinned commentary should appear as a readable message, not just a link");
+  assert.match(await catenaRows.first().locator(".aoCatenaMMeta").innerText(),/Catena Aurea, Luke 1:/);
+  assert.ok((await catenaRows.first().locator(".aoCatenaMName").innerText()).trim().length>1,
+    "Attributed Father must be visibly named");
+  assert.match(await catenaRows.first().locator(".aoCatenaMMeta a").getAttribute("href"),
+    /^https:\/\/www\.ecatholic2000\.com\//);
+  await dialog.locator(".aoCatenaMActions button").first().click();
+  assert.ok(await catenaRows.count()>=3,
+    "Continue reading must expose another original source extract");
+  const catenaWidth=await dialog.locator(".aoCatenaMessenger").evaluate(el=>({scroll:el.scrollWidth,client:el.clientWidth}));
+  assert.ok(catenaWidth.scroll<=catenaWidth.client+2,
+    "Catena message feed must not overflow the phone: "+JSON.stringify(catenaWidth));
  await dialog.locator("[data-scripture-close]").click();
  // Source-witnessed divided reading opens in the same overlay. The two
  // chapters are separate; omitted verses are never silently restored.
