@@ -1,0 +1,57 @@
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {parseThematicReference} from '../src/scripture/historia-thematic-collections.js';
+const json=path=>JSON.parse(readFileSync(new URL('../'+path,import.meta.url),'utf8'));
+const full=json('data/research/historia-salutis-thematic-episode-reconciliation-20261021.v2.json');
+const next=json('data/research/historia-salutis-thematic-collections-expansion-preflight-20261021.v1.json');
+assert.equal(next.schema,'AO_HISTORIA_THEMATIC_COLLECTIONS_EXPANSION_PREFLIGHT_V1');
+assert.equal(next.status,'RESEARCH_NOT_PUBLISHED_NOT_A_SECOND_VERSE_STORE');
+assert.equal(next.restrictions.neverPublishStagedAutomatically,true);
+assert.equal(next.restrictions.oneCanonicalScriptureOwner,true);
+assert.equal(next.restrictions.noChangesToP3,true);
+const pilotIds=new Set(Object.values(full.pilotCollections).flat().map(x=>x.key));
+assert.equal(pilotIds.size,19);
+assert.equal(next.stagedEntries.length,191);
+assert.equal(next.manualSegmentationHolds.length,7);
+assert.equal(next.totals.allAccountedFor,217);
+const original=new Map(full.entries.map(x=>[x.provisional_record_key,x]));
+const ids=new Set(pilotIds),sameRefs=new Map(),counts=new Map();
+for(const episode of next.stagedEntries){
+ assert(!ids.has(episode.id),'No staged duplicate pilot '+episode.id);
+ ids.add(episode.id);
+ assert.equal(episode.publicationStatus,'RESEARCH_STAGED_NOT_LIVE');
+ assert.equal(episode.canonicalEpisodeId,null);
+ assert.equal(episode.atlasEventId,null);
+ assert.equal(episode.approvedCovenantalLink,null);
+ assert(!Object.hasOwn(episode,'scriptureText')&&!Object.hasOwn(episode,'verseText'));
+ const master=original.get(episode.id);
+ assert(master,'All staged entries come from existing user omission inventory');
+ assert.equal(episode.sourceReference,master.biblical_reference_from_inventory);
+ assert.equal(episode.primaryCollectionId,master.primary_collection_key);
+ const parsed=parseThematicReference(episode.sourceReference);
+ assert.equal(parsed.book,episode.canonicalBook);
+ assert.equal(parsed.chapters.length,episode.requestedChapterCount);
+ assert.equal(parsed.firstChapter,episode.sourceChapterStart);
+ assert.equal(parsed.lastChapter,episode.sourceChapterEnd);
+ const key=episode.canonicalBook+':'+episode.sourceReference;
+ sameRefs.set(key,(sameRefs.get(key)||0)+1);
+ counts.set(episode.primaryCollectionId,(counts.get(episode.primaryCollectionId)||0)+1);
+}
+const flagged=next.stagedEntries.filter(x=>x.nextBatch==='BATCH_2_MIRACLES_PARABLES_CANTICLES');
+assert.equal(flagged.length,41);
+assert.equal(flagged.filter(x=>x.primaryCollectionId==='miracles_of_christ').length,21);
+assert.equal(flagged.filter(x=>x.primaryCollectionId==='parables_and_teachings').length,17);
+assert.equal(flagged.filter(x=>x.primaryCollectionId==='biblical_prayers_and_canticles').length,3);
+assert.equal([...sameRefs].filter(([,n])=>n>1).length,1);
+assert.equal(sameRefs.get('Revelation:Revelation 13'),2);
+for(const held of next.manualSegmentationHolds){
+ assert(!ids.has(held.id));
+ ids.add(held.id);
+ assert(!held.parsed);
+ assert(original.has(held.id));
+ assert.throws(()=>parseThematicReference(held.reference));
+}
+assert.equal(ids.size,217);
+assert.equal(new Set([...ids]).size,217);
+assert.deepEqual(Object.fromEntries([...counts].sort()),Object.fromEntries(Object.entries(next.totals.byCollection).sort()));
+console.log('PASS Historia expansion preflight: 217 entries reconciled, 191 valid single-book candidates, 7 edition/composite holds, 41 next-batch priority; zero Scripture words duplicated.');
