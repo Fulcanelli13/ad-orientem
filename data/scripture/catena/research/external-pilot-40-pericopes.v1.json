@@ -1,0 +1,993 @@
+{
+  "schema": "ao.living-catena.external-pilot.v1",
+  "date": "2026-10-21",
+  "state": "research_only_not_approved_app_material",
+  "publicationAllowed": false,
+  "independentCatholicEditorialReview": false,
+  "selectionMethod": "Pilot candidates chosen from existing source-checked Ad Orientem editorial fixtures plus verified Mark 8:27 original Catena segment; separate from external topic/Q&A alignments.",
+  "externalQuestionPolicy": "Only original question strings directly observed in the external Catholic catechism are labelled external; no Bible-to-Father question relationship is implied or approved.",
+  "totals": {
+    "pericopes": 40,
+    "perGospel": {
+      "matthew": 10,
+      "mark": 10,
+      "luke": 10,
+      "john": 10
+    },
+    "questionCandidates": 41,
+    "externalCandidateLinks": 8
+  },
+  "passages": [
+    {
+      "pericopeId": "catena.matthew.3.17",
+      "book": "matthew",
+      "focusReference": "Matthew 3:17",
+      "subjectCandidate": "trinity",
+      "subjectStatus": "editorial_candidate_not_external_taxonomy",
+      "questions": [
+        {
+          "question": "How is the Trinity shown at Jesus' baptism?",
+          "origin": "previous_ad_orientem_editorial_fixture",
+          "fixture": "editorial-challenge.v1.json",
+          "fixtureId": "MATTHEW_TRINITY",
+          "originalSegment": {
+            "fatherAsInCatena": "Jerome",
+            "ordinal": 3,
+            "verbatimEvidencePhrase": "mystery of the Trinity"
+          },
+          "status": "original_segment_phrase_previously_source_checked__question_relevance_not_certified"
+        }
+      ],
+      "externalCandidateLinks": [
+        {
+          "kind": "catholic_catechism_question",
+          "sourceTitle": "Baltimore Catechism No. 1 (1885)",
+          "sourceItemId": "26",
+          "originalQuestion": "Is the Holy Ghost God?",
+          "recordUrl": "https://github.com/OpenChristianData/open-christian-data/blob/main/data/catechisms/baltimore-catechism-no-1.json",
+          "relationship": "topic_candidate_unreviewed_against_patristic_segment",
+          "isFatherQuotation": false
+        }
+      ]
+    },
+    {
+      "pericopeId": "catena.matthew.4.3",
+      "book": "matthew",
+      "focusReference": "Matthew 4:4",
+      "subjectCandidate": "humility",
+      "subjectStatus": "editorial_candidate_not_external_taxonomy",
+      "questions": [
+        {
+          "question": "How did Christ overcome the devil's temptation?",
+          "origin": "previous_ad_orientem_editorial_fixture",
+          "fixture": "editorial-challenge.v1.json",
+          "fixtureId": "MATTHEW_HUMILITY",
+          "originalSegment": {
+            "fatherAsInCatena": "Jerome",
+            "ordinal": 7,
+            "verbatimEvidencePhrase": "vanquish by humility"
+          },
+          "status": "original_segment_phrase_previously_source_checked__question_relevance_not_certified"
+        }
+      ],
+      "externalCandidateLinks": []
+    },
+    {
+      "pericopeId": "catena.matthew.6.9",
+      "book": "matthew",
+      "focusReference": "Matthew 6:9",
+      "subjectCandidate": "father",
+      "subjectStatus": "editorial_candidate_not_external_taxonomy",
+      "questions": [
+        {
+          "question": "Why do we say Our Father and not My Father?",
+          "origin": "previous_ad_orientem_editorial_fixture",
+          "fixture": "editorial-acceptance.v1.json",
+          "fixtureId": "MATTHEW_FATHER",
+          "originalSegment": {
+            "fatherAsInCatena": "Cyprian",
+            "ordinal": 6,
+            "verbatimEvidencePhrase": "not My Father, but Our Father"
+          },
+          "status": "original_segment_phrase_previously_source_checked__question_relevance_not_certified"
+        }
+      ],
+      "externalCandidateLinks": []
+    },
+    {
+      "pericopeId": "catena.matthew.9.9",
+      "book": "matthew",
+      "focusReference": "Matthew 9:9",
+      "subjectCandidate": "levi",
+      "subjectStatus": "editorial_candidate_not_external_taxonomy",
+      "questions": [
+        {
+          "question": "Why did Jesus call a tax collector?",
+          "origin": "previous_ad_orientem_editorial_fixture",
+          "fixture": "editorial-challenge.v1.json",
+          "fixtureId": "MATTHEW_LEVI",
+          "originalSegment": {
+            "fatherAsInCatena": "Chrysostom",
+            "ordinal": 4,
+            "verbatimEvidencePhrase": "rescued him from the midst of evil"
+          },
+          "status": "original_segment_phrase_previously_source_checked__question_relevance_not_certified"
+        }
+      ],
+      "externalCandidateLinks": []
+    },
+    {
+      "pericopeId": "catena.matthew.11.28",
+      "book": "matthew",
+      "focusReference": "Matthew 11:28",
+      "subjectCandidate": "rest",
+      "subjectStatus": "editorial_candidate_not_external_taxonomy",
+      "questions": [
+        {
+          "question": "Who are those burdened whom Christ calls to rest?",
+          "origin": "previous_ad_orientem_editorial_fixture",
+          "fixture": "editorial-challenge.v1.json",
+          "fixtureId": "MATTHEW_REST",
+          "originalSegment": {
+            "fatherAsInCatena": "Hilary",
+            "ordinal": 3,
+            "verbatimEvidencePhrase": "burdened with the sins of this world"
+          },
+          "status": "original_segment_phrase_previously_source_checked__question_relevance_not_certified"
+        }
+      ],
+      "externalCandidateLinks": []
+    },
+    {
+      "pericopeId": "catena.matthew.13.44",
+      "book": "matthew",
+      "focusReference": "Matthew 13:44",
+      "subjectCandidate": "treasure",
+      "subjectStatus": "editorial_candidate_not_external_taxonomy",
+      "questions": [
+        {
+          "question": "What does the hidden treasure signify?",
+          "origin": "previous_ad_orientem_editorial_fixture",
+          "fixture": "editorial-challenge.v1.json",
+          "fixtureId": "MATTHEW_TREASURE",
+          "originalSegment": {
+            "fatherAsInCatena": "Gregory",
+            "ordinal": 4,
+            "verbatimEvidencePhrase": "treasure hidden in the field is the desire of heaven"
+          },
+          "status": "original_segment_phrase_previously_source_checked__question_relevance_not_certified"
+        }
+      ],
+      "externalCandidateLinks": []
+    },
+    {
+      "pericopeId": "catena.matthew.18.21",
+      "book": "matthew",
+      "focusReference": "Matthew 18:22",
+      "subjectCandidate": "forgive",
+      "subjectStatus": "editorial_candidate_not_external_taxonomy",
+      "questions": [
+        {
+          "question": "How often must a brother be forgiven?",
+          "origin": "previous_ad_orientem_editorial_fixture",
+          "fixture": "editorial-challenge.v1.json",
+          "fixtureId": "MATTHEW_FORGIVE",
+          "originalSegment": {
+            "fatherAsInCatena": "Chrysostom",
+            "ordinal": 4,
+            "verbatimEvidencePhrase": "Until seventy times seven"
+          },
+          "status": "original_segment_phrase_previously_source_checked__question_relevance_not_certified"
+        }
+      ],
+      "externalCandidateLinks": []
+    },
+    {
+      "pericopeId": "catena.matthew.19.16",
+      "book": "matthew",
+      "focusReference": "Matthew 19:21",
+      "subjectCandidate": "rich",
+      "subjectStatus": "editorial_candidate_not_external_taxonomy",
+      "questions": [
+        {
+          "question": "Why did the rich young man struggle to follow Christ?",
+          "origin": "previous_ad_orientem_editorial_fixture",
+          "fixture": "editorial-challenge.v1.json",
+          "fixtureId": "MATTHEW_RICH",
+          "originalSegment": {
+            "fatherAsInCatena": "Chrysostom",
+            "ordinal": 3,
+            "verbatimEvidencePhrase": "lover of money"
+          },
+          "status": "original_segment_phrase_previously_source_checked__question_relevance_not_certified"
+        }
+      ],
+      "externalCandidateLinks": []
+    },
+    {
+      "pericopeId": "catena.matthew.21.10",
+      "book": "matthew",
+      "focusReference": "Matthew 21:13",
+      "subjectCandidate": "temple",
+      "subjectStatus": "editorial_candidate_not_external_taxonomy",
+      "questions": [
+        {
+          "question": "Why did Jesus expel the merchants from the temple?",
+          "origin": "previous_ad_orientem_editorial_fixture",
+          "fixture": "editorial-challenge.v1.json",
+          "fixtureId": "MATTHEW_TEMPLE",
+          "originalSegment": {
+            "fatherAsInCatena": "Jerome",
+            "ordinal": 7,
+            "verbatimEvidencePhrase": "cast out all them that sold and bought"
+          },
+          "status": "original_segment_phrase_previously_source_checked__question_relevance_not_certified"
+        }
+      ],
+      "externalCandidateLinks": []
+    },
+    {
+      "pericopeId": "catena.matthew.23.5",
+      "book": "matthew",
+      "focusReference": "Matthew 23:12",
+      "subjectCandidate": "vain",
+      "subjectStatus": "editorial_candidate_not_external_taxonomy",
+      "questions": [
+        {
+          "question": "Why did Christ condemn the Pharisees' vain glory?",
+          "origin": "previous_ad_orientem_editorial_fixture",
+          "fixture": "editorial-challenge.v1.json",
+          "fixtureId": "MATTHEW_VAIN",
+          "originalSegment": {
+            "fatherAsInCatena": "Chrysostom",
+            "ordinal": 1,
+            "verbatimEvidencePhrase": "their vain-glory"
+          },
+          "status": "original_segment_phrase_previously_source_checked__question_relevance_not_certified"
+        }
+      ],
+      "externalCandidateLinks": []
+    },
+    {
+      "pericopeId": "catena.mark.1.9",
+      "book": "mark",
+      "focusReference": "Mark 1:11",
+      "subjectCandidate": "baptism",
+      "subjectStatus": "editorial_candidate_not_external_taxonomy",
+      "questions": [
+        {
+          "question": "Why was Christ baptized by John?",
+          "origin": "previous_ad_orientem_editorial_fixture",
+          "fixture": "editorial-challenge.v1.json",
+          "fixtureId": "MARK_BAPTISM",
+          "originalSegment": {
+            "fatherAsInCatena": "Bede",
+            "ordinal": 3,
+            "verbatimEvidencePhrase": "He was baptized"
+          },
+          "status": "original_segment_phrase_previously_source_checked__question_relevance_not_certified"
+        }
+      ],
+      "externalCandidateLinks": [
+        {
+          "kind": "catholic_catechism_question",
+          "sourceTitle": "Baltimore Catechism No. 1 (1885)",
+          "sourceItemId": "152",
+          "originalQuestion": "What is Baptism?",
+          "recordUrl": "https://github.com/OpenChristianData/open-christian-data/blob/main/data/catechisms/baltimore-catechism-no-1.json",
+          "relationship": "topic_candidate_unreviewed_against_patristic_segment",
+          "isFatherQuotation": false
+        }
+      ]
+    },
+    {
+      "pericopeId": "catena.mark.1.16",
+      "book": "mark",
+      "focusReference": "Mark 1:17",
+      "subjectCandidate": "fishers",
+      "subjectStatus": "editorial_candidate_not_external_taxonomy",
+      "questions": [
+        {
+          "question": "What does fishing for men mean?",
+          "origin": "previous_ad_orientem_editorial_fixture",
+          "fixture": "editorial-challenge.v1.json",
+          "fixtureId": "MARK_FISHERS",
+          "originalSegment": {
+            "fatherAsInCatena": "Remigius",
+            "ordinal": 3,
+            "verbatimEvidencePhrase": "net of holy preaching"
+          },
+          "status": "original_segment_phrase_previously_source_checked__question_relevance_not_certified"
+        },
+        {
+          "question": "Why follow the Lord without delay?",
+          "origin": "previous_ad_orientem_editorial_fixture",
+          "fixture": "editorial-challenge.v1.json",
+          "fixtureId": "MARK_FOLLOW",
+          "originalSegment": {
+            "fatherAsInCatena": "Theophylact",
+            "ordinal": 5,
+            "verbatimEvidencePhrase": "at once follow the Lord"
+          },
+          "status": "original_segment_phrase_previously_source_checked__question_relevance_not_certified"
+        }
+      ],
+      "externalCandidateLinks": []
+    },
+    {
+      "pericopeId": "catena.mark.4.35",
+      "book": "mark",
+      "focusReference": "Mark 4:39",
+      "subjectCandidate": "storm",
+      "subjectStatus": "editorial_candidate_not_external_taxonomy",
+      "questions": [
+        {
+          "question": "Why did Christ allow the disciples to fear the storm?",
+          "origin": "previous_ad_orientem_editorial_fixture",
+          "fixture": "editorial-challenge.v1.json",
+          "fixtureId": "MARK_STORM",
+          "originalSegment": {
+            "fatherAsInCatena": "Theophylact",
+            "ordinal": 4,
+            "verbatimEvidencePhrase": "experience His power"
+          },
+          "status": "original_segment_phrase_previously_source_checked__question_relevance_not_certified"
+        }
+      ],
+      "externalCandidateLinks": []
+    },
+    {
+      "pericopeId": "catena.mark.8.27",
+      "book": "mark",
+      "focusReference": "Mark 8:27",
+      "subjectCandidate": "confession",
+      "subjectStatus": "editorial_candidate_not_external_taxonomy",
+      "questions": [
+        {
+          "question": "Why did Jesus ask the disciples about His identity away from the crowds?",
+          "origin": "previous_ad_orientem_editorial_fixture",
+          "fixture": "new_catena_source_read_2026-10-21",
+          "fixtureId": "MARK_CONFESSION",
+          "originalSegment": {
+            "fatherAsInCatena": "Theophylact",
+            "ordinal": 1,
+            "verbatimEvidencePhrase": "that they might speak the truth without fear"
+          },
+          "status": "original_segment_phrase_previously_source_checked__question_relevance_not_certified"
+        }
+      ],
+      "externalCandidateLinks": []
+    },
+    {
+      "pericopeId": "catena.mark.10.13",
+      "book": "mark",
+      "focusReference": "Mark 10:14",
+      "subjectCandidate": "children",
+      "subjectStatus": "editorial_candidate_not_external_taxonomy",
+      "questions": [
+        {
+          "question": "Why should we be like little children?",
+          "origin": "previous_ad_orientem_editorial_fixture",
+          "fixture": "editorial-challenge.v1.json",
+          "fixtureId": "MARK_CHILDREN",
+          "originalSegment": {
+            "fatherAsInCatena": "Chrysostom",
+            "ordinal": 4,
+            "verbatimEvidencePhrase": "mind of a child is pure"
+          },
+          "status": "original_segment_phrase_previously_source_checked__question_relevance_not_certified"
+        }
+      ],
+      "externalCandidateLinks": []
+    },
+    {
+      "pericopeId": "catena.mark.10.41",
+      "book": "mark",
+      "focusReference": "Mark 10:44",
+      "subjectCandidate": "service",
+      "subjectStatus": "editorial_candidate_not_external_taxonomy",
+      "questions": [
+        {
+          "question": "Why must the greatest become servant of all?",
+          "origin": "previous_ad_orientem_editorial_fixture",
+          "fixture": "editorial-challenge.v1.json",
+          "fixtureId": "MARK_SERVICE",
+          "originalSegment": {
+            "fatherAsInCatena": "Bede",
+            "ordinal": 2,
+            "verbatimEvidencePhrase": "who is servant of all"
+          },
+          "status": "original_segment_phrase_previously_source_checked__question_relevance_not_certified"
+        }
+      ],
+      "externalCandidateLinks": []
+    },
+    {
+      "pericopeId": "catena.mark.12.28",
+      "book": "mark",
+      "focusReference": "Mark 12:30",
+      "subjectCandidate": "love",
+      "subjectStatus": "editorial_candidate_not_external_taxonomy",
+      "questions": [
+        {
+          "question": "How does loving God relate to loving His creature?",
+          "origin": "previous_ad_orientem_editorial_fixture",
+          "fixture": "editorial-challenge.v1.json",
+          "fixtureId": "MARK_LOVE",
+          "originalSegment": {
+            "fatherAsInCatena": "Theophylact",
+            "ordinal": 5,
+            "verbatimEvidencePhrase": "he who loves God, loves also His creature"
+          },
+          "status": "original_segment_phrase_previously_source_checked__question_relevance_not_certified"
+        }
+      ],
+      "externalCandidateLinks": []
+    },
+    {
+      "pericopeId": "catena.mark.14.22",
+      "book": "mark",
+      "focusReference": "Mark 14:22",
+      "subjectCandidate": "eucharist",
+      "subjectStatus": "editorial_candidate_not_external_taxonomy",
+      "questions": [
+        {
+          "question": "Is the bread only a figure of Christ's body?",
+          "origin": "previous_ad_orientem_editorial_fixture",
+          "fixture": "editorial-challenge.v1.json",
+          "fixtureId": "MARK_EUCHARIST",
+          "originalSegment": {
+            "fatherAsInCatena": "Theophylact",
+            "ordinal": 4,
+            "verbatimEvidencePhrase": "not a mere figure"
+          },
+          "status": "original_segment_phrase_previously_source_checked__question_relevance_not_certified"
+        }
+      ],
+      "externalCandidateLinks": [
+        {
+          "kind": "catholic_catechism_question",
+          "sourceTitle": "Baltimore Catechism No. 1 (1885)",
+          "sourceItemId": "238",
+          "originalQuestion": "What is the Holy Eucharist?",
+          "recordUrl": "https://github.com/OpenChristianData/open-christian-data/blob/main/data/catechisms/baltimore-catechism-no-1.json",
+          "relationship": "topic_candidate_unreviewed_against_patristic_segment",
+          "isFatherQuotation": false
+        }
+      ]
+    },
+    {
+      "pericopeId": "catena.mark.15.33",
+      "book": "mark",
+      "focusReference": "Mark 15:34",
+      "subjectCandidate": "forsken",
+      "subjectStatus": "editorial_candidate_not_external_taxonomy",
+      "questions": [
+        {
+          "question": "Why does the Lord speak as one forsaken on the cross?",
+          "origin": "previous_ad_orientem_editorial_fixture",
+          "fixture": "editorial-challenge.v1.json",
+          "fixtureId": "MARK_FORSKEN",
+          "originalSegment": {
+            "fatherAsInCatena": "Theophylact",
+            "ordinal": 6,
+            "verbatimEvidencePhrase": "as man crucified"
+          },
+          "status": "original_segment_phrase_previously_source_checked__question_relevance_not_certified"
+        }
+      ],
+      "externalCandidateLinks": []
+    },
+    {
+      "pericopeId": "catena.mark.16.1",
+      "book": "mark",
+      "focusReference": "Mark 16:6",
+      "subjectCandidate": "resurrection",
+      "subjectStatus": "editorial_candidate_not_external_taxonomy",
+      "questions": [
+        {
+          "question": "Why was the day of resurrection joyful?",
+          "origin": "previous_ad_orientem_editorial_fixture",
+          "fixture": "editorial-challenge.v1.json",
+          "fixtureId": "MARK_RESURRECTION",
+          "originalSegment": {
+            "fatherAsInCatena": "Pseudo-Jerome",
+            "ordinal": 1,
+            "verbatimEvidencePhrase": "Lord rises in triumph"
+          },
+          "status": "original_segment_phrase_previously_source_checked__question_relevance_not_certified"
+        }
+      ],
+      "externalCandidateLinks": []
+    },
+    {
+      "pericopeId": "catena.luke.5.17",
+      "book": "luke",
+      "focusReference": "Luke 5:20",
+      "subjectCandidate": "pardon",
+      "subjectStatus": "editorial_candidate_not_external_taxonomy",
+      "questions": [
+        {
+          "question": "Why did Jesus forgive the paralytic before healing him?",
+          "origin": "previous_ad_orientem_editorial_fixture",
+          "fixture": "editorial-challenge.v1.json",
+          "fixtureId": "LUKE_PARDON",
+          "originalSegment": {
+            "fatherAsInCatena": "Bede",
+            "ordinal": 3,
+            "verbatimEvidencePhrase": "first loosens the chains of his sins"
+          },
+          "status": "original_segment_phrase_previously_source_checked__question_relevance_not_certified"
+        }
+      ],
+      "externalCandidateLinks": []
+    },
+    {
+      "pericopeId": "catena.luke.6.32",
+      "book": "luke",
+      "focusReference": "Luke 6:36",
+      "subjectCandidate": "enemies",
+      "subjectStatus": "editorial_candidate_not_external_taxonomy",
+      "questions": [
+        {
+          "question": "Why must Christians love their enemies?",
+          "origin": "previous_ad_orientem_editorial_fixture",
+          "fixture": "editorial-challenge.v1.json",
+          "fixtureId": "LUKE_ENEMIES",
+          "originalSegment": {
+            "fatherAsInCatena": "Chrysostom",
+            "ordinal": 1,
+            "verbatimEvidencePhrase": "must love our enemies"
+          },
+          "status": "original_segment_phrase_previously_source_checked__question_relevance_not_certified"
+        }
+      ],
+      "externalCandidateLinks": []
+    },
+    {
+      "pericopeId": "catena.luke.8.4",
+      "book": "luke",
+      "focusReference": "Luke 8:15",
+      "subjectCandidate": "sower",
+      "subjectStatus": "editorial_candidate_not_external_taxonomy",
+      "questions": [
+        {
+          "question": "Who is the sower of the parable?",
+          "origin": "previous_ad_orientem_editorial_fixture",
+          "fixture": "editorial-challenge.v1.json",
+          "fixtureId": "LUKE_SOWER",
+          "originalSegment": {
+            "fatherAsInCatena": "Bede",
+            "ordinal": 4,
+            "verbatimEvidencePhrase": "The sower we can conceive to be none other but the Son of God"
+          },
+          "status": "original_segment_phrase_previously_source_checked__question_relevance_not_certified"
+        }
+      ],
+      "externalCandidateLinks": []
+    },
+    {
+      "pericopeId": "catena.luke.10.29",
+      "book": "luke",
+      "focusReference": "Luke 10:33",
+      "subjectCandidate": "neighbor",
+      "subjectStatus": "editorial_candidate_not_external_taxonomy",
+      "questions": [
+        {
+          "question": "Who is our neighbor in the Good Samaritan story?",
+          "origin": "previous_ad_orientem_editorial_fixture",
+          "fixture": "editorial-challenge.v1.json",
+          "fixtureId": "LUKE_NEIGHBOR",
+          "originalSegment": {
+            "fatherAsInCatena": "Theophylact",
+            "ordinal": 3,
+            "verbatimEvidencePhrase": "our Saviour defines a neighbour"
+          },
+          "status": "original_segment_phrase_previously_source_checked__question_relevance_not_certified"
+        }
+      ],
+      "externalCandidateLinks": []
+    },
+    {
+      "pericopeId": "catena.luke.10.38",
+      "book": "luke",
+      "focusReference": "Luke 10:42",
+      "subjectCandidate": "mary",
+      "subjectStatus": "editorial_candidate_not_external_taxonomy",
+      "questions": [
+        {
+          "question": "Why did Mary sit at Jesus' feet?",
+          "origin": "previous_ad_orientem_editorial_fixture",
+          "fixture": "editorial-challenge.v1.json",
+          "fixtureId": "LUKE_MARY",
+          "originalSegment": {
+            "fatherAsInCatena": "Chrysostom",
+            "ordinal": 4,
+            "verbatimEvidencePhrase": "at His feet"
+          },
+          "status": "original_segment_phrase_previously_source_checked__question_relevance_not_certified"
+        }
+      ],
+      "externalCandidateLinks": []
+    },
+    {
+      "pericopeId": "catena.luke.12.32",
+      "book": "luke",
+      "focusReference": "Luke 12:32",
+      "subjectCandidate": "flock",
+      "subjectStatus": "editorial_candidate_not_external_taxonomy",
+      "questions": [
+        {
+          "question": "What does Jesus mean by little flock?",
+          "origin": "previous_ad_orientem_editorial_fixture",
+          "fixture": "editorial-challenge.v1.json",
+          "fixtureId": "LUKE_FLOCK",
+          "originalSegment": {
+            "fatherAsInCatena": "Theophylact",
+            "ordinal": 2,
+            "verbatimEvidencePhrase": "By the little flock"
+          },
+          "status": "original_segment_phrase_previously_source_checked__question_relevance_not_certified"
+        }
+      ],
+      "externalCandidateLinks": []
+    },
+    {
+      "pericopeId": "catena.luke.18.9",
+      "book": "luke",
+      "focusReference": "Luke 18:13",
+      "subjectCandidate": "pride",
+      "subjectStatus": "editorial_candidate_not_external_taxonomy",
+      "questions": [
+        {
+          "question": "How did the Pharisee's posture show pride?",
+          "origin": "previous_ad_orientem_editorial_fixture",
+          "fixture": "editorial-challenge.v1.json",
+          "fixtureId": "LUKE_PRIDE",
+          "originalSegment": {
+            "fatherAsInCatena": "Theophylact",
+            "ordinal": 4,
+            "verbatimEvidencePhrase": "haughty temper"
+          },
+          "status": "original_segment_phrase_previously_source_checked__question_relevance_not_certified"
+        }
+      ],
+      "externalCandidateLinks": []
+    },
+    {
+      "pericopeId": "catena.luke.22.19",
+      "book": "luke",
+      "focusReference": "Luke 22:19",
+      "subjectCandidate": "consecration",
+      "subjectStatus": "editorial_candidate_not_external_taxonomy",
+      "questions": [
+        {
+          "question": "What happens to bread when consecrated?",
+          "origin": "previous_ad_orientem_editorial_fixture",
+          "fixture": "editorial-challenge.v1.json",
+          "fixtureId": "LUKE_CONSECRATION",
+          "originalSegment": {
+            "fatherAsInCatena": "Gregory of Nyssa",
+            "ordinal": 2,
+            "verbatimEvidencePhrase": "bread before the consecration is common bread"
+          },
+          "status": "original_segment_phrase_previously_source_checked__question_relevance_not_certified"
+        }
+      ],
+      "externalCandidateLinks": [
+        {
+          "kind": "catholic_catechism_question",
+          "sourceTitle": "Baltimore Catechism No. 1 (1885)",
+          "sourceItemId": "238",
+          "originalQuestion": "What is the Holy Eucharist?",
+          "recordUrl": "https://github.com/OpenChristianData/open-christian-data/blob/main/data/catechisms/baltimore-catechism-no-1.json",
+          "relationship": "topic_candidate_unreviewed_against_patristic_segment",
+          "isFatherQuotation": false
+        }
+      ]
+    },
+    {
+      "pericopeId": "catena.luke.23.34",
+      "book": "luke",
+      "focusReference": "Luke 23:34",
+      "subjectCandidate": "cross",
+      "subjectStatus": "editorial_candidate_not_external_taxonomy",
+      "questions": [
+        {
+          "question": "Why did Christ pray for his persecutors on the cross?",
+          "origin": "previous_ad_orientem_editorial_fixture",
+          "fixture": "editorial-challenge.v1.json",
+          "fixtureId": "LUKE_CROSS",
+          "originalSegment": {
+            "fatherAsInCatena": "Chrysostom",
+            "ordinal": 1,
+            "verbatimEvidencePhrase": "Pray for them that persecute you"
+          },
+          "status": "original_segment_phrase_previously_source_checked__question_relevance_not_certified"
+        }
+      ],
+      "externalCandidateLinks": []
+    },
+    {
+      "pericopeId": "catena.luke.24.25",
+      "book": "luke",
+      "focusReference": "Luke 24:32",
+      "subjectCandidate": "emmaus",
+      "subjectStatus": "editorial_candidate_not_external_taxonomy",
+      "questions": [
+        {
+          "question": "How did Moses and the Prophets speak of Christ?",
+          "origin": "previous_ad_orientem_editorial_fixture",
+          "fixture": "editorial-challenge.v1.json",
+          "fixtureId": "LUKE_EMMAUS",
+          "originalSegment": {
+            "fatherAsInCatena": "Bede",
+            "ordinal": 4,
+            "verbatimEvidencePhrase": "Moses and the Prophets spoke of Christ"
+          },
+          "status": "original_segment_phrase_previously_source_checked__question_relevance_not_certified"
+        }
+      ],
+      "externalCandidateLinks": []
+    },
+    {
+      "pericopeId": "catena.john.1.1",
+      "book": "john",
+      "focusReference": "John 1:1",
+      "subjectCandidate": "logos",
+      "subjectStatus": "editorial_candidate_not_external_taxonomy",
+      "questions": [
+        {
+          "question": "Why is Christ called the Word?",
+          "origin": "previous_ad_orientem_editorial_fixture",
+          "fixture": "editorial-acceptance.v1.json",
+          "fixtureId": "JOHN_LOGOS",
+          "originalSegment": {
+            "fatherAsInCatena": "Augustine",
+            "ordinal": 2,
+            "verbatimEvidencePhrase": "logos"
+          },
+          "status": "original_segment_phrase_previously_source_checked__question_relevance_not_certified"
+        }
+      ],
+      "externalCandidateLinks": [
+        {
+          "kind": "parallel_patristic_witness",
+          "sourceTitle": "John Chrysostom, Homily on John 2",
+          "sourceUrl": "https://github.com/HistoricalChristianFaith/Commentaries-Database/blob/master/John%20Chrysostom/John%201_1.toml",
+          "biblicalLocation": "John 1:1",
+          "verbatimEvidencePhrase": "For this reason he calls Him",
+          "relationship": "independent_verse_link_verified__not_collated_with_existing_Catena",
+          "isFatherQuotation": true
+        }
+      ]
+    },
+    {
+      "pericopeId": "catena.john.1.14",
+      "book": "john",
+      "focusReference": "John 1:14",
+      "subjectCandidate": "incarnation",
+      "subjectStatus": "editorial_candidate_not_external_taxonomy",
+      "questions": [
+        {
+          "question": "What does it mean that the Word became flesh?",
+          "origin": "previous_ad_orientem_editorial_fixture",
+          "fixture": "editorial-acceptance.v1.json",
+          "fixtureId": "JOHN_INCARNATION",
+          "originalSegment": {
+            "fatherAsInCatena": "Chrysostom",
+            "ordinal": 2,
+            "verbatimEvidencePhrase": "Word being made flesh"
+          },
+          "status": "original_segment_phrase_previously_source_checked__question_relevance_not_certified"
+        }
+      ],
+      "externalCandidateLinks": [
+        {
+          "kind": "catholic_catechism_question",
+          "sourceTitle": "Baltimore Catechism No. 1 (1885)",
+          "sourceItemId": "69",
+          "originalQuestion": "What do you mean by the Incarnation?",
+          "recordUrl": "https://github.com/OpenChristianData/open-christian-data/blob/main/data/catechisms/baltimore-catechism-no-1.json",
+          "relationship": "topic_candidate_unreviewed_against_patristic_segment",
+          "isFatherQuotation": false
+        }
+      ]
+    },
+    {
+      "pericopeId": "catena.john.6.35",
+      "book": "john",
+      "focusReference": "John 6:35",
+      "subjectCandidate": "life bread",
+      "subjectStatus": "editorial_candidate_not_external_taxonomy",
+      "questions": [
+        {
+          "question": "Why does Christ call himself the bread of life?",
+          "origin": "previous_ad_orientem_editorial_fixture",
+          "fixture": "editorial-challenge.v1.json",
+          "fixtureId": "JOHN_LIFE_BREAD",
+          "originalSegment": {
+            "fatherAsInCatena": "Theophylact",
+            "ordinal": 2,
+            "verbatimEvidencePhrase": "bread of nourishment, but of life"
+          },
+          "status": "original_segment_phrase_previously_source_checked__question_relevance_not_certified"
+        }
+      ],
+      "externalCandidateLinks": []
+    },
+    {
+      "pericopeId": "catena.john.8.12",
+      "book": "john",
+      "focusReference": "John 8:12",
+      "subjectCandidate": "light",
+      "subjectStatus": "editorial_candidate_not_external_taxonomy",
+      "questions": [
+        {
+          "question": "What does light of the world mean?",
+          "origin": "previous_ad_orientem_editorial_fixture",
+          "fixture": "editorial-challenge.v1.json",
+          "fixtureId": "JOHN_LIGHT",
+          "originalSegment": {
+            "fatherAsInCatena": "Bede",
+            "ordinal": 2,
+            "verbatimEvidencePhrase": "Light of the world"
+          },
+          "status": "original_segment_phrase_previously_source_checked__question_relevance_not_certified"
+        }
+      ],
+      "externalCandidateLinks": []
+    },
+    {
+      "pericopeId": "catena.john.10.11",
+      "book": "john",
+      "focusReference": "John 10:11",
+      "subjectCandidate": "shepherd",
+      "subjectStatus": "editorial_candidate_not_external_taxonomy",
+      "questions": [
+        {
+          "question": "Why does the good Shepherd lay down his life?",
+          "origin": "previous_ad_orientem_editorial_fixture",
+          "fixture": "editorial-challenge.v1.json",
+          "fixtureId": "JOHN_SHEPHERD",
+          "originalSegment": {
+            "fatherAsInCatena": "Gregory",
+            "ordinal": 2,
+            "verbatimEvidencePhrase": "The good Shepherd giveth His life"
+          },
+          "status": "original_segment_phrase_previously_source_checked__question_relevance_not_certified"
+        }
+      ],
+      "externalCandidateLinks": []
+    },
+    {
+      "pericopeId": "catena.john.12.20",
+      "book": "john",
+      "focusReference": "John 12:24",
+      "subjectCandidate": "grain",
+      "subjectStatus": "editorial_candidate_not_external_taxonomy",
+      "questions": [
+        {
+          "question": "How does the grain of wheat signify Christ's death?",
+          "origin": "previous_ad_orientem_editorial_fixture",
+          "fixture": "editorial-challenge.v1.json",
+          "fixtureId": "JOHN_GRAIN",
+          "originalSegment": {
+            "fatherAsInCatena": "Bede",
+            "ordinal": 6,
+            "verbatimEvidencePhrase": "by dying, He might rise again"
+          },
+          "status": "original_segment_phrase_previously_source_checked__question_relevance_not_certified"
+        }
+      ],
+      "externalCandidateLinks": []
+    },
+    {
+      "pericopeId": "catena.john.14.5",
+      "book": "john",
+      "focusReference": "John 14:6",
+      "subjectCandidate": "way",
+      "subjectStatus": "editorial_candidate_not_external_taxonomy",
+      "questions": [
+        {
+          "question": "What does Christ mean by I am the way and the truth?",
+          "origin": "previous_ad_orientem_editorial_fixture",
+          "fixture": "editorial-challenge.v1.json",
+          "fixtureId": "JOHN_WAY",
+          "originalSegment": {
+            "fatherAsInCatena": "Augustine",
+            "ordinal": 3,
+            "verbatimEvidencePhrase": "I am the way"
+          },
+          "status": "original_segment_phrase_previously_source_checked__question_relevance_not_certified"
+        }
+      ],
+      "externalCandidateLinks": []
+    },
+    {
+      "pericopeId": "catena.john.14.22",
+      "book": "john",
+      "focusReference": "John 14:26",
+      "subjectCandidate": "spirit",
+      "subjectStatus": "editorial_candidate_not_external_taxonomy",
+      "questions": [
+        {
+          "question": "Is the Holy Spirit excluded when Father and Son dwell in the soul?",
+          "origin": "previous_ad_orientem_editorial_fixture",
+          "fixture": "editorial-challenge.v1.json",
+          "fixtureId": "JOHN_SPIRIT",
+          "originalSegment": {
+            "fatherAsInCatena": "Augustine",
+            "ordinal": 5,
+            "verbatimEvidencePhrase": "Holy Spirit excluded"
+          },
+          "status": "original_segment_phrase_previously_source_checked__question_relevance_not_certified"
+        }
+      ],
+      "externalCandidateLinks": [
+        {
+          "kind": "catholic_catechism_question",
+          "sourceTitle": "Baltimore Catechism No. 1 (1885)",
+          "sourceItemId": "94",
+          "originalQuestion": "Who is the Holy Ghost?",
+          "recordUrl": "https://github.com/OpenChristianData/open-christian-data/blob/main/data/catechisms/baltimore-catechism-no-1.json",
+          "relationship": "topic_candidate_unreviewed_against_patristic_segment",
+          "isFatherQuotation": false
+        },
+        {
+          "kind": "catholic_catechism_question",
+          "sourceTitle": "Baltimore Catechism No. 1 (1885)",
+          "sourceItemId": "26",
+          "originalQuestion": "Is the Holy Ghost God?",
+          "recordUrl": "https://github.com/OpenChristianData/open-christian-data/blob/main/data/catechisms/baltimore-catechism-no-1.json",
+          "relationship": "topic_candidate_unreviewed_against_patristic_segment",
+          "isFatherQuotation": false
+        }
+      ]
+    },
+    {
+      "pericopeId": "catena.john.15.4",
+      "book": "john",
+      "focusReference": "John 15:5",
+      "subjectCandidate": "vine",
+      "subjectStatus": "editorial_candidate_not_external_taxonomy",
+      "questions": [
+        {
+          "question": "Why can the branches do nothing without Christ?",
+          "origin": "previous_ad_orientem_editorial_fixture",
+          "fixture": "editorial-challenge.v1.json",
+          "fixtureId": "JOHN_VINE",
+          "originalSegment": {
+            "fatherAsInCatena": "Augustine",
+            "ordinal": 4,
+            "verbatimEvidencePhrase": "without Me ye can do nothing"
+          },
+          "status": "original_segment_phrase_previously_source_checked__question_relevance_not_certified"
+        }
+      ],
+      "externalCandidateLinks": []
+    },
+    {
+      "pericopeId": "catena.john.15.12",
+      "book": "john",
+      "focusReference": "John 15:12",
+      "subjectCandidate": "love",
+      "subjectStatus": "editorial_candidate_not_external_taxonomy",
+      "questions": [
+        {
+          "question": "Why does Jesus command love for one another?",
+          "origin": "previous_ad_orientem_editorial_fixture",
+          "fixture": "editorial-challenge.v1.json",
+          "fixtureId": "JOHN_LOVE",
+          "originalSegment": {
+            "fatherAsInCatena": "Augustine",
+            "ordinal": 3,
+            "verbatimEvidencePhrase": "Where then love is"
+          },
+          "status": "original_segment_phrase_previously_source_checked__question_relevance_not_certified"
+        }
+      ],
+      "externalCandidateLinks": []
+    }
+  ]
+}
