@@ -19,6 +19,10 @@ const working56=load("working-master.v1.json");
 const routed23=load("ritual-and-source-ownership-23.v1.json");
 const readiness=load("master-readiness-audit.v1.json");
 const accepted14=load("editorial-identity-acceptance-14.v1.json");
+const acceptedP2=load("editorial-identity-acceptance-p2-four.v1.json");
+const geo53=load("geographic-family-crosswalk-53.v1.json");
+const sot63=load("sot07-original-63-crosswalk.v1.json");
+
 const relation80=load("relation-review-80.v1.json");
 const candidateBoard=load("candidate-source-decision-board.v1.json");
 
@@ -211,6 +215,39 @@ assert.equal(working56.distribution.editorially_classified_staged_research_ident
 assert.equal(working56.records.filter(x=>x.master_version==="V1_PROPOSED_RESEARCH_ONLY"&&
  x.identity_status==="MASTER_RESEARCH_IDENTITY_ACCEPTED_NOT_PUBLISHED"&&x.identity_approved_for_research_master).length,14);
 assert.equal(readiness.snapshot.research_identities_scope_accepted,14);
+assert.equal(acceptedP2.schema,"AO_CUSTOMS_MASTER_FOUR_P2_EDITORIAL_ACCEPTANCE_V1");
+assert.equal(acceptedP2.records.length,4);
+assert.equal(acceptedP2.summary.app_publications,0);
+assert.ok(acceptedP2.records.every(x=>x.identity_approved_for_research_master&&x.app_publication===false));
+assert.equal(working56.distribution.earlier_P2_research_accepted,4);
+assert.equal(working56.distribution.total_research_identities_editorially_classified,18);
+assert.equal(geo53.schema,"AO_CUSTOMS_SOT07G_GEOGRAPHIC_SOURCE_RECONCILIATION_V1");
+assert.equal(geo53.families.length,53);
+assert.equal(geo53.complexes.length,21);
+assert.equal(geo53.attestations.length,135);
+assert.equal(geo53.geo_area_ids.length,162);
+assert.equal(geo53.original_source_ids.length,117);
+assert.equal(geo53.summary.exact_same_practice_links,8);
+assert.equal(geo53.summary.mapped_to_existing_working_master_identity,23);
+assert.equal(geo53.summary.new_canonicals,0);
+assert.equal(geo53.summary.publication_actions,0);
+assert.ok(geo53.families.every(x=>!x.working_master_custom_id||working56.records.some(r=>r.id===x.working_master_custom_id)));
+const geoFamilies=new Set(geo53.families.map(x=>x.family_id));
+const geoAreas=new Set(geo53.geo_area_ids),geoSources=new Set(geo53.original_source_ids);
+assert.ok(geo53.attestations.every(x=>geoFamilies.has(x.family_id)&&geoAreas.has(x.geo_id)&&geoSources.has(x.source_id)&&
+ x.place_lookup_verified===false&&x.source_url_verified===false&&x.publication_status==="RESEARCH_ONLY"));
+assert.equal(geo53.families.find(x=>x.family_id==="CF-ROSARY-PROCESSION").working_master_custom_id,null);
+assert.equal(geo53.families.find(x=>x.family_id==="CF-CORPUS-CHRISTI-PROCESSION").working_master_custom_id,null);
+assert.equal(geo53.families.find(x=>x.family_id==="CF-FLOWER-CARPET").working_master_custom_id,"CORP-001");
+assert.equal(sot63.schema,"AO_CUSTOMS_MASTER_SOT07_ORIGINAL_63_CROSSWALK_V1");
+assert.equal(sot63.records.length,63);
+assert.equal(sot63.summary.canonical_in_working_master,16);
+assert.equal(sot63.summary.other_module_or_editorial_owner,40);
+assert.equal(sot63.summary.rejected,4);
+assert.equal(sot63.summary.source_held,3);
+assert.equal(sot63.summary.additional_canonicals,0);
+assert.ok(sot63.records.filter(x=>x.working_master_id).every(x=>working56.records.some(y=>y.id===x.working_master_id)));
+
 assert.equal(readiness.snapshot.source_witness_refs_within_25_bounded_dossiers,43);
 assert.equal(readiness.completeness.proposed_identity_editorial_approval,
  "CLOSED_14_OF_14_ACCEPTED_AS_RESEARCH_IDENTITIES_NOT_PUBLISHED");
