@@ -2187,7 +2187,17 @@
             "reasonId": "HS-M32-H69-01-ACTOR-AGENCY-20261021",
             "explanation": "Saul's vision, Ananias' objection and the Lord's commission; contiguous original v18 unit",
             "printingAndOralSignOffPending": true,
-            "retainsOriginalUnitId": true
+            "retainsOriginalUnitId": true,
+            "sourceWitnessTextFlags": [
+              {
+                "edition": "cpdv-2009",
+                "book": "Acts",
+                "chapter": 9,
+                "verse": 12,
+                "status": "PRINTED_EDITION_COLLATION_REQUIRED_NO_AUTO_CORRECTION",
+                "observation": "Installed CPDV transcription uses the designation Paul in verse 9:12 while the larger narrated episode names Saul; retain witness text unchanged, verify against its source edition before publication"
+              }
+            ]
           }
         },
         {
@@ -2546,6 +2556,6 @@
     ],
     "originalSourceBridgeCandidatesPreserved": 10,
     "revisedTotalSourceBridgeCandidates": 11,
-    "printedTextAlignmentRequiresSourceEdits": false
+    "printedTextCollationRequired": true
   }
 }
