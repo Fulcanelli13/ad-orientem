@@ -1,0 +1,44 @@
+name: Correct Walsingham historical held interior hero (one-shot)
+on:
+  pull_request:
+    paths:
+      - "scripts/replace_walsingham_hero.py"
+      - ".github/workflows/explore-walsingham-catholic-hero-correction.yml"
+permissions:
+  contents: write
+jobs:
+  original-photo-hold-guard:
+    if: >-
+      github.event.pull_request.head.repo.full_name == github.repository &&
+      github.event.pull_request.head.ref == 'research/explore-major-shrines-world-guides-b2-20261021'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install --disable-pip-version-check pillow
+      - name: Replace held interior with independently certified Catholic chapel exterior
+        env:
+          SHRINE_PHOTO_MANIFEST: data/geography/research/explore-major-marian-b2-photo-candidates.v1.json
+          SHRINE_PHOTO_OUT: artifacts/marian-b2-photo-source-review
+        run: python scripts/replace_walsingham_hero.py
+      - name: Commit photo and provenance only if branch has not moved
+        env:
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          TARGET_REF: ${{ github.event.pull_request.head.ref }}
+        run: |
+          set -euo pipefail
+          git fetch origin "refs/heads/$TARGET_REF" --no-tags
+          [ "$(git rev-parse FETCH_HEAD)" = "$HEAD_SHA" ] || { echo "Branch moved: refusing stale photo overwrite"; exit 1; }
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- assets/approved/place-media/GB-walsingham-catholic-shrine.webp data/geography/approved-place-media.v1.json
+          git diff --cached --quiet && exit 0
+          git commit -m "Use freely reusable Catholic Slipper Chapel exterior, not historical R59-held interior"
+          git push origin "HEAD:refs/heads/$TARGET_REF"
