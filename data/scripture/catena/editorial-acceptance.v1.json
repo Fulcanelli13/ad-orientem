@@ -1,0 +1,150 @@
+{
+  "schema": "ao.catena.editorial-acceptance.v1",
+  "edition": "Oxford/Newman 1841–45",
+  "reviewState": "editorial-test-fixtures-not-patristic-interpretation",
+  "description": "Real pericope and original segment locators for measuring retrieval relevance. Excerpts are never copied into the fixture.",
+  "positives": [
+    {
+      "id": "JOHN_LOGOS",
+      "passage": "John 1:1",
+      "pericope": "catena.john.1.1",
+      "question": "Why is Christ called the Word?",
+      "sourceOrdinal": 2,
+      "father": "Augustine",
+      "evidence": "logos",
+      "mode": "literal"
+    },
+    {
+      "id": "JOHN_ETERNAL",
+      "passage": "John 1:1",
+      "pericope": "catena.john.1.1",
+      "question": "Did Christ exist before creation?",
+      "sourceOrdinal": 1,
+      "father": "Chrysostom",
+      "evidence": "Eternal Generation",
+      "mode": "related"
+    },
+    {
+      "id": "JOHN_INCARNATION",
+      "passage": "John 1:14",
+      "pericope": "catena.john.1.14",
+      "question": "What does it mean that the Word became flesh?",
+      "sourceOrdinal": 2,
+      "father": "Chrysostom",
+      "evidence": "Word being made flesh",
+      "mode": "literal"
+    },
+    {
+      "id": "JOHN_BREAD",
+      "passage": "John 6:53",
+      "pericope": "catena.john.6.52",
+      "question": "How can He give His flesh to eat?",
+      "sourceOrdinal": 1,
+      "father": "Augustine",
+      "evidence": "flesh to eat",
+      "mode": "literal"
+    },
+    {
+      "id": "JOHN_LAZARUS",
+      "passage": "John 11:25",
+      "pericope": "catena.john.11.17",
+      "question": "What does Jesus mean by resurrection and life?",
+      "sourceOrdinal": 15,
+      "father": "Chrysostom",
+      "evidence": "I am the resurrection",
+      "mode": "literal"
+    },
+    {
+      "id": "JOHN_THOMAS",
+      "passage": "John 20:28",
+      "pericope": "catena.john.20.26",
+      "question": "Why does Thomas say My Lord and my God?",
+      "sourceOrdinal": 8,
+      "father": "Augustine",
+      "evidence": "My Lord and my God",
+      "mode": "literal"
+    },
+    {
+      "id": "MATTHEW_FATHER",
+      "passage": "Matthew 6:9",
+      "pericope": "catena.matthew.6.9",
+      "question": "Why do we say Our Father and not My Father?",
+      "sourceOrdinal": 6,
+      "father": "Cyprian",
+      "evidence": "not My Father, but Our Father",
+      "mode": "literal"
+    },
+    {
+      "id": "MATTHEW_ENEMIES",
+      "passage": "Matthew 5:44",
+      "pericope": "catena.matthew.5.43",
+      "question": "Why must we love our enemies?",
+      "sourceOrdinal": 9,
+      "father": "Jerome",
+      "evidence": "love them",
+      "mode": "literal"
+    },
+    {
+      "id": "LUKE_GRACE",
+      "passage": "Luke 1:28",
+      "pericope": "catena.luke.1.28",
+      "question": "What means full of grace?",
+      "sourceOrdinal": 4,
+      "father": "Pseudo-Jerome",
+      "evidence": "Full of grace",
+      "mode": "literal"
+    },
+    {
+      "id": "LUKE_PRODIGAL",
+      "passage": "Luke 15:20",
+      "pericope": "catena.luke.15.17",
+      "question": "What does coming to himself mean?",
+      "sourceOrdinal": 2,
+      "father": "Ambrose",
+      "evidence": "returns to himself",
+      "mode": "literal"
+    },
+    {
+      "id": "MATTHEW_BAPTISM",
+      "passage": "Matthew 28:19",
+      "pericope": "catena.matthew.28.16",
+      "question": "Why baptize in the name of the Trinity?",
+      "sourceOrdinal": 15,
+      "father": "Jerome",
+      "evidence": "baptize",
+      "mode": "literal"
+    }
+  ],
+  "negatives": [
+    {
+      "id": "UNSUPPORTED_TECH",
+      "passage": "John 1:1",
+      "pericope": "catena.john.1.1",
+      "question": "Did Augustine invent the iPhone?"
+    },
+    {
+      "id": "UNSUPPORTED_SPORT",
+      "passage": "John 1:1",
+      "pericope": "catena.john.1.1",
+      "question": "Who won the World Cup in 2026?"
+    },
+    {
+      "id": "UNSUPPORTED_QUANTUM",
+      "passage": "Luke 1:28",
+      "pericope": "catena.luke.1.28",
+      "question": "What is quantum entanglement?"
+    },
+    {
+      "id": "UNSUPPORTED_PRIVATE",
+      "passage": "Matthew 6:9",
+      "pericope": "catena.matthew.6.9",
+      "question": "What is my personal bank account password?"
+    },
+    {
+      "id": "UNSUPPORTED_FUTURE",
+      "passage": "Luke 15:20",
+      "pericope": "catena.luke.15.17",
+      "question": "Did the prodigal son own a smartphone?"
+    }
+  ]
+}
