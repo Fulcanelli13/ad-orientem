@@ -548,7 +548,12 @@ export const CRAMPON_SOURCE_EMPTY_SLOTS=Object.freeze({
  ]
 });
 export const CRAMPON_EMPTY_CENSUS=124;
+// Exact repository-witness defect verified independently in all three
+// uncollated source files. This is a disclosure, NEVER inferred verse text.
+const SHARED_MARK_4_GAP=Object.freeze([41]);
 export function scriptureWitnessEmptySlots(edition,book,chapter){
+ if((edition==="dr-challoner"||edition==="cpdv-2009")&&book==="Mark"&&chapter===4)
+  return SHARED_MARK_4_GAP;
  if(edition!=="crampon-1923")return [];
  return (CRAMPON_SOURCE_EMPTY_SLOTS[book]||[]).filter(v=>v[0]===chapter).map(v=>v[1]);
 }
