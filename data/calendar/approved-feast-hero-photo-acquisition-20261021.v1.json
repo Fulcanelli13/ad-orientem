@@ -92,10 +92,10 @@
       "artist": "Philippe de Champaigne",
       "title": "La Petite Cène",
       "route": "COMMONS",
-      "lookup": "Philippe de Champaigne - La Petite Cène (Louvre, INV 1125).jpg",
+      "lookup": "Champaigne Petite Cène Louvre.jpg",
       "objectUrl": "https://collections.louvre.fr/en/ark:/53355/cl010062076",
-      "filePage": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_-_La_Petite_C%C3%A8ne_(Louvre,_INV_1125).jpg",
-      "notes": "COMMONS_AUTHORED_PHOTO_RIGHTS_CHECK_FRAME_TRIM_ALLOWED_ONLY",
+      "filePage": "https://commons.wikimedia.org/wiki/File:Champaigne_Petite_C%C3%A8ne_Louvre.jpg",
+      "notes": "PREFER_UNFRAMED_1112x591_WHOLE_PAINTED_SURFACE_MOBILE_FIRST; retain original framed high-resolution photo as separately unapproved alternative. Both depict exactly same Louvre INV1125 artwork; don't crop painted surface.",
       "state": "RESEARCH_ACQUISITION_NOT_APPROVED",
       "requiredChecks": [
         "EXACT_PAINTING_IDENTITY",
@@ -104,7 +104,8 @@
         "320_390_PHONE_VISUAL",
         "REAL_LOCAL_ASSET_BYTES_SHA",
         "HUMAN_VISUAL_RELEASE_APPROVAL"
-      ]
+      ],
+      "previousFramedPhotoPage": "https://commons.wikimedia.org/wiki/File:Philippe_de_Champaigne_-_La_Petite_C%C3%A8ne_(Louvre,_INV_1125).jpg"
     },
     {
       "date": "2026-06-12",
@@ -204,5 +205,6 @@
   ],
   "sourceRule": "Museum owner object pages, and individual exact Commons file pages; downloaded bytes may differ from the human-selected preview; record for review, never silently substitute painting.",
   "qualityRule": "At phone sizes entire painted surface is preserved, regardless of arbitrary 2500 pixel print-size threshold.",
-  "rightsRule": "Commons metadata and Met open access statements are evidence to evaluate, not an automatic app distribution approval; distinguish copyright in painting from photograph."
+  "rightsRule": "Commons metadata and Met open access statements are evidence to evaluate, not an automatic app distribution approval; distinguish copyright in painting from photograph.",
+  "recoveryNote20261021": "Original framed external-photo source was unsuitable for default phone hero; unframed photograph of identical Louvre INV1125 painting selected as acquisition candidate, not new user artwork selection. Commons Morlete candidate remains same; retry Wikimedia 429 throttled."
 }
