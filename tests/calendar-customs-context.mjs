@@ -67,5 +67,19 @@ for(const id of ["DEV-006","DOM-002","NDAY-001"]){
 assert.match(runtime,/calendarCustomCatalogueMarkup/);
 assert.match(runtime,/data-cal-custom-search/);
 const extraFile=readFileSync(new URL("../src/calendar/customs-extra-articles.js",import.meta.url),"utf8");
-assert.match(extraFile,/RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED/);
+assert.match(extraFile,/CALENDAR_ARTICLE_SCOPE_ACCEPTED/);
+const copyDecisions=JSON.parse(readFileSync(new URL("../data/customs/calendar-copy-acceptance.v1.json",import.meta.url),"utf8"));
+assert.equal(copyDecisions.accepted_copy_count,24);
+assert.equal(copyDecisions.scope_decisions.length,24);
+const evidence=JSON.parse(readFileSync(new URL("../data/customs/source-registry.v1.json",import.meta.url),"utf8"));
+const sourceIds=new Set(evidence.sources.map(row=>row.id));
+for(const row of copyDecisions.scope_decisions){
+  assert.ok(licensed.has(row.custom_id),"Copy approval on non-published ID");
+  assert.equal(row.decision,"CALENDAR_BILINGUAL_ARTICLE_ACCEPTED");
+  assert.ok(row.source_ids.length&&row.source_ids.every(id=>sourceIds.has(id)));
+  assert.ok(calendarCustomArticle(row.custom_id),"Copy approval without visible article");
+}
+assert.match(runtime,/seasonalCustoms\.map\(item=>calendarCustomArticle\(item.id\)\)/,"Month suggestion should directly expand the article");
+assert.doesNotMatch(runtime,/seasonalCustoms\.map\(item=>\`<button[^>]+data-cal-month-index-date/,"Month seasonal customs cannot navigate to arbitrary dates");
+
 assert.ok(!CALENDAR_CUSTOM_ARTICLE_IDS.some(id=>id.startsWith("CUST-")),"unpublished research identities leaked");
