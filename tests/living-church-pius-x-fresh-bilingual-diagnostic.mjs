@@ -16,7 +16,7 @@ assert.equal(corpus.schema,"AO_LIVING_CHURCH_PIUS_X_BLIND_BILINGUAL_FRESH_PROBES
 assert.equal(corpus.status,"FROZEN_EDITORIAL_FRESH_UNTUNED_NOT_INDEPENDENT_VISITOR_SAMPLE");
 assert.equal(corpus.primary.length,60);
 assert.equal(corpus.confirmedContextContinuations.length,8);
-assert.equal(catalog.topics.length,186);
+assert.equal(catalog.topics.length,197);
 const pointerById=new Map(pointers.records.map(x=>[x.id,x]));
 const engines={shared:createSharedQuestionRouter(catalog,{historicalPointers:pointers}),
  hybrid:createHybridQuestionRouter(catalog,symbols,{historicalPointers:pointers})};
