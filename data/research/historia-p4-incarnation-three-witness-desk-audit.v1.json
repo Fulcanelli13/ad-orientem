@@ -1,0 +1,559 @@
+{
+  "schema": "ao.historia.p4.incarnation-three-witness-desk-audit.v1",
+  "date": "2026-10-21",
+  "status": "RESEARCH_ONLY_13_OF_183_SCENES_SOURCE_DESK_TRIAGE",
+  "source": {
+    "scene": {
+      "path": "data/explore/biblical-cinematic-studies-review.v1.json",
+      "branch": "feature/biblical-atlas-current-main-convergence-20261012",
+      "blobSha": "d937288862abab192e1d584f0e663a3eebb46611"
+    },
+    "witnesses": [
+      {
+        "path": "data/scripture/witness/dr-challoner/Luke.json",
+        "edition": "dr-challoner",
+        "sourceStatus": "UNCOLLATED_SOURCE_WITNESS",
+        "blobSha": "96b5a5d845c58359094814dc9317557fe4853bf0"
+      },
+      {
+        "path": "data/scripture/witness/cpdv-2009/Luke.json",
+        "edition": "cpdv-2009",
+        "sourceStatus": "UNCOLLATED_SOURCE_WITNESS",
+        "blobSha": "c12aa39604852cd65e90ebbc00e0db989b2f46a8"
+      },
+      {
+        "path": "data/scripture/witness/crampon-1923/Luke.json",
+        "edition": "crampon-1923",
+        "sourceStatus": "UNCOLLATED_SOURCE_WITNESS",
+        "blobSha": "4c8e3535c2200e3c4173cec16a198b8618d0fd4e"
+      },
+      {
+        "path": "data/scripture/witness/dr-challoner/Matthew.json",
+        "edition": "dr-challoner",
+        "sourceStatus": "UNCOLLATED_SOURCE_WITNESS",
+        "blobSha": "004832d16a49ceca579d674adf94dac9d3902234"
+      },
+      {
+        "path": "data/scripture/witness/cpdv-2009/Matthew.json",
+        "edition": "cpdv-2009",
+        "sourceStatus": "UNCOLLATED_SOURCE_WITNESS",
+        "blobSha": "d22f2d5f715731aa3e8fb8c05470f7a01489205e"
+      },
+      {
+        "path": "data/scripture/witness/crampon-1923/Matthew.json",
+        "edition": "crampon-1923",
+        "sourceStatus": "UNCOLLATED_SOURCE_WITNESS",
+        "blobSha": "a73aecf7e76be1657b578390c23007b0cfa4981c"
+      }
+    ]
+  },
+  "rules": [
+    "All 13 scene rows include out-of-order append-only original scene index 181 (Holy Innocents); do not erase or duplicate it.",
+    "Matthew's and Luke's independent narratives remain distinct, no inferred joined chronology, date or itinerary.",
+    "Chapter/verse presence in three uncollated Catholic witnesses is not word-for-word collation, Scripture textual certification or printed edition approval.",
+    "Geo classes distinguish a named biblical city from a traditional modern shrine or building.",
+    "Original Atlas match status is preserved; exact reference is not an historical proof of exact coordinate.",
+    "No new paintings, canonical event or duplicate Scripture records are generated."
+  ],
+  "counts": {
+    "sceneBatch": "INCARNATION",
+    "rows": 13,
+    "indices": [
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      181
+    ],
+    "versesAvailableInThreeWitnesses": 13,
+    "exactModernSiteApprovals": 0,
+    "scenesPublished": 0
+  },
+  "reviewedRows": [
+    {
+      "sceneKey": "biblical:scene:christ:057",
+      "originalIndex": 57,
+      "originalChapter": "INCARNATION",
+      "title": "The Annunciation",
+      "scriptureReference": "Luke 1:26–38",
+      "gospelWitness": "Luke",
+      "existingLocationClaim": "Nazareth · city context",
+      "existingMatchStatus": "EXACT_REFERENCE",
+      "originalAtlasCandidateKeys": [
+        {
+          "eventKey": "biblical:event:nazareth-e1",
+          "relation": "EXACT_REFERENCE"
+        }
+      ],
+      "witnessSpanChecks": {
+        "douayChallonerEntries": 13,
+        "cpdv2009Entries": 13,
+        "crampon1923Entries": 13,
+        "spanPresenceVerified": true,
+        "editionsRemainUncollated": true
+      },
+      "sourceActorReviewHints": [
+        "Mary",
+        "Gabriel",
+        "Joseph"
+      ],
+      "actorsProvenancePublicationApproved": false,
+      "locationEvidenceClass": "NAZARETH_NAMED_CITY_HOUSE_UNLOCATED",
+      "reviewFinding": "Luke 1:26 explicitly names Nazareth, but provides no identified dwelling or point of the Annunciation; a city-context camera is supportable without a precise event pin.",
+      "geographicalAction": "NAZARETH_CITY_ONLY",
+      "preciseCoordinatesApproved": false,
+      "canonicalBibleEdits": false,
+      "scenePublicationApproved": false,
+      "editorialStatus": "THREE_SOURCE_WITNESS_DESK_TRIAGE_NO_FINAL_TEXT_OR_GEOGRAPHY_APPROVAL"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:058",
+      "originalIndex": 58,
+      "originalChapter": "INCARNATION",
+      "title": "Joseph receives the angelic message",
+      "scriptureReference": "Matthew 1:18–25",
+      "gospelWitness": "Matthew",
+      "existingLocationClaim": "Nazareth · city context",
+      "existingMatchStatus": "EXACT_REFERENCE",
+      "originalAtlasCandidateKeys": [
+        {
+          "eventKey": "biblical:event:nazareth-additional-001",
+          "relation": "EXACT_REFERENCE"
+        }
+      ],
+      "witnessSpanChecks": {
+        "douayChallonerEntries": 8,
+        "cpdv2009Entries": 8,
+        "crampon1923Entries": 8,
+        "spanPresenceVerified": true,
+        "editionsRemainUncollated": true
+      },
+      "sourceActorReviewHints": [
+        "Joseph",
+        "Mary",
+        "Jesus",
+        "angel of the Lord"
+      ],
+      "actorsProvenancePublicationApproved": false,
+      "locationEvidenceClass": "NAZARETH_FROM_GOSPEL_CONTEXT_NOT_IN_MATTHEW_PASSAGE",
+      "reviewFinding": "Matthew 1:18–25 identifies Joseph's dream and his actions but does not itself name Nazareth. Treat Nazareth as a separate contextual association, not a geographically identified dream site.",
+      "geographicalAction": "NO_CERTIFIED_JOSEPH_DREAM_POINT",
+      "preciseCoordinatesApproved": false,
+      "canonicalBibleEdits": false,
+      "scenePublicationApproved": false,
+      "editorialStatus": "THREE_SOURCE_WITNESS_DESK_TRIAGE_NO_FINAL_TEXT_OR_GEOGRAPHY_APPROVAL"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:059",
+      "originalIndex": 59,
+      "originalChapter": "INCARNATION",
+      "title": "The Visitation",
+      "scriptureReference": "Luke 1:39–56",
+      "gospelWitness": "Luke",
+      "existingLocationClaim": "Judean hill country / Ein Karem",
+      "existingMatchStatus": "EXACT_REFERENCE",
+      "originalAtlasCandidateKeys": [
+        {
+          "eventKey": "biblical:event:ein-karem-e1",
+          "relation": "EXACT_REFERENCE"
+        }
+      ],
+      "witnessSpanChecks": {
+        "douayChallonerEntries": 18,
+        "cpdv2009Entries": 18,
+        "crampon1923Entries": 18,
+        "spanPresenceVerified": true,
+        "editionsRemainUncollated": true
+      },
+      "sourceActorReviewHints": [
+        "Mary",
+        "Elizabeth",
+        "Zechariah"
+      ],
+      "actorsProvenancePublicationApproved": false,
+      "locationEvidenceClass": "JUDEAN_HILL_COUNTRY_NAMED_REGION_EIN_KAREM_TRADITIONAL",
+      "reviewFinding": "Luke 1:39 names a city in Judah's hill country and the house of Zechariah; the particular settlement Ein Karem is a later traditional identification, not an explicit biblical place name.",
+      "geographicalAction": "HILL_COUNTRY_REGION_ONLY_EIN_KAREM_TRADITION",
+      "preciseCoordinatesApproved": false,
+      "canonicalBibleEdits": false,
+      "scenePublicationApproved": false,
+      "editorialStatus": "THREE_SOURCE_WITNESS_DESK_TRIAGE_NO_FINAL_TEXT_OR_GEOGRAPHY_APPROVAL"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:060",
+      "originalIndex": 60,
+      "originalChapter": "INCARNATION",
+      "title": "Birth of John the Baptist",
+      "scriptureReference": "Luke 1:57–80",
+      "gospelWitness": "Luke",
+      "existingLocationClaim": "Judean hill country / Ein Karem tradition",
+      "existingMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalAtlasCandidateKeys": [],
+      "witnessSpanChecks": {
+        "douayChallonerEntries": 24,
+        "cpdv2009Entries": 24,
+        "crampon1923Entries": 24,
+        "spanPresenceVerified": true,
+        "editionsRemainUncollated": true
+      },
+      "sourceActorReviewHints": [
+        "Elizabeth",
+        "Zechariah",
+        "John the Baptist"
+      ],
+      "actorsProvenancePublicationApproved": false,
+      "locationEvidenceClass": "BIRTH_SITE_NOT_NAMED_BY_LUKE_1_57_80",
+      "reviewFinding": "Luke 1:57–80 narrates the birth and naming without specifying Ein Karem. Local setting may be inferred only as continuity from the earlier Visitation scene, not as a verified modern birthplace.",
+      "geographicalAction": "NO_INFERRED_EIN_KAREM_BIRTH_PIN",
+      "preciseCoordinatesApproved": false,
+      "canonicalBibleEdits": false,
+      "scenePublicationApproved": false,
+      "editorialStatus": "THREE_SOURCE_WITNESS_DESK_TRIAGE_NO_FINAL_TEXT_OR_GEOGRAPHY_APPROVAL"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:061",
+      "originalIndex": 61,
+      "originalChapter": "INCARNATION",
+      "title": "The Nativity",
+      "scriptureReference": "Luke 2:1–20",
+      "gospelWitness": "Luke",
+      "existingLocationClaim": "Bethlehem · traditional site",
+      "existingMatchStatus": "EXACT_REFERENCE",
+      "originalAtlasCandidateKeys": [
+        {
+          "eventKey": "biblical:event:bethlehem-e1",
+          "relation": "EXACT_REFERENCE"
+        }
+      ],
+      "witnessSpanChecks": {
+        "douayChallonerEntries": 20,
+        "cpdv2009Entries": 20,
+        "crampon1923Entries": 20,
+        "spanPresenceVerified": true,
+        "editionsRemainUncollated": true
+      },
+      "sourceActorReviewHints": [
+        "Mary",
+        "Joseph",
+        "Jesus",
+        "shepherds"
+      ],
+      "actorsProvenancePublicationApproved": false,
+      "locationEvidenceClass": "BETHLEHEM_NAMED_TOWN_EXACT_NATIVITY_PLACE_UNKNOWN",
+      "reviewFinding": "Luke 2:4–7 explicitly names Bethlehem as the town; the specific modern sanctuary, grotto and exact feeding-place footprint are not certified by the passage.",
+      "geographicalAction": "BETHLEHEM_TOWN_CONTEXT_ONLY",
+      "preciseCoordinatesApproved": false,
+      "canonicalBibleEdits": false,
+      "scenePublicationApproved": false,
+      "editorialStatus": "THREE_SOURCE_WITNESS_DESK_TRIAGE_NO_FINAL_TEXT_OR_GEOGRAPHY_APPROVAL"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:062",
+      "originalIndex": 62,
+      "originalChapter": "INCARNATION",
+      "title": "The circumcision and naming",
+      "scriptureReference": "Luke 2:21",
+      "gospelWitness": "Luke",
+      "existingLocationClaim": "Bethlehem · traditional birthplace sanctuary",
+      "existingMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "originalAtlasCandidateKeys": [
+        {
+          "eventKey": "biblical:event:bethlehem-additional-002",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY"
+        }
+      ],
+      "witnessSpanChecks": {
+        "douayChallonerEntries": 1,
+        "cpdv2009Entries": 1,
+        "crampon1923Entries": 1,
+        "spanPresenceVerified": true,
+        "editionsRemainUncollated": true
+      },
+      "sourceActorReviewHints": [
+        "Jesus"
+      ],
+      "actorsProvenancePublicationApproved": false,
+      "locationEvidenceClass": "NAME_AND_CIRCUMCISION_NO_LOCATION",
+      "reviewFinding": "Luke 2:21 gives the eighth-day circumcision and naming of Jesus without naming Bethlehem or a sanctuary; locating the ceremony within a specific shrine is not source-supported.",
+      "geographicalAction": "NO_SANCTUARY_CIRCUMCISION_PIN",
+      "preciseCoordinatesApproved": false,
+      "canonicalBibleEdits": false,
+      "scenePublicationApproved": false,
+      "editorialStatus": "THREE_SOURCE_WITNESS_DESK_TRIAGE_NO_FINAL_TEXT_OR_GEOGRAPHY_APPROVAL"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:063",
+      "originalIndex": 63,
+      "originalChapter": "INCARNATION",
+      "title": "The Magi come to adore",
+      "scriptureReference": "Matthew 2:1–12",
+      "gospelWitness": "Matthew",
+      "existingLocationClaim": "Bethlehem · traditional birthplace sanctuary",
+      "existingMatchStatus": "EXACT_REFERENCE",
+      "originalAtlasCandidateKeys": [
+        {
+          "eventKey": "biblical:event:bethlehem-e2",
+          "relation": "EXACT_REFERENCE"
+        }
+      ],
+      "witnessSpanChecks": {
+        "douayChallonerEntries": 12,
+        "cpdv2009Entries": 12,
+        "crampon1923Entries": 12,
+        "spanPresenceVerified": true,
+        "editionsRemainUncollated": true
+      },
+      "sourceActorReviewHints": [
+        "Jesus",
+        "Mary",
+        "Magi",
+        "Herod"
+      ],
+      "actorsProvenancePublicationApproved": false,
+      "locationEvidenceClass": "BETHLEHEM_TOWN_HOUSE_UNLOCATED",
+      "reviewFinding": "Matthew 2:1–12 names Bethlehem as the destination and describes the Magi entering a house (2:11), not a certified modern grotto or sanctuary. Preserve source narrative rather than harmonising its scene-setting with Luke's manger.",
+      "geographicalAction": "BETHLEHEM_TOWN_ONLY_NO_HOUSE_PIN",
+      "preciseCoordinatesApproved": false,
+      "canonicalBibleEdits": false,
+      "scenePublicationApproved": false,
+      "editorialStatus": "THREE_SOURCE_WITNESS_DESK_TRIAGE_NO_FINAL_TEXT_OR_GEOGRAPHY_APPROVAL"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:064",
+      "originalIndex": 64,
+      "originalChapter": "INCARNATION",
+      "title": "The Presentation",
+      "scriptureReference": "Luke 2:22–38",
+      "gospelWitness": "Luke",
+      "existingLocationClaim": "Jerusalem · Temple precinct context",
+      "existingMatchStatus": "EXACT_REFERENCE",
+      "originalAtlasCandidateKeys": [
+        {
+          "eventKey": "biblical:event:jerusalem-temple-e1",
+          "relation": "EXACT_REFERENCE"
+        }
+      ],
+      "witnessSpanChecks": {
+        "douayChallonerEntries": 17,
+        "cpdv2009Entries": 17,
+        "crampon1923Entries": 17,
+        "spanPresenceVerified": true,
+        "editionsRemainUncollated": true
+      },
+      "sourceActorReviewHints": [
+        "Jesus",
+        "Mary",
+        "Joseph",
+        "Simeon",
+        "Anna"
+      ],
+      "actorsProvenancePublicationApproved": false,
+      "locationEvidenceClass": "JERUSALEM_TEMPLE_SCRIPTURALLY_NAMED_INTERIOR_SITE_UNCERTAIN",
+      "reviewFinding": "Luke 2:22 and 2:27 identify Jerusalem and the Temple setting. No extant building footprint or precise Temple-court presentation point follows from the text.",
+      "geographicalAction": "TEMPLE_CITY_CONTEXT_NOT_EXACT_POINT",
+      "preciseCoordinatesApproved": false,
+      "canonicalBibleEdits": false,
+      "scenePublicationApproved": false,
+      "editorialStatus": "THREE_SOURCE_WITNESS_DESK_TRIAGE_NO_FINAL_TEXT_OR_GEOGRAPHY_APPROVAL"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:065",
+      "originalIndex": 65,
+      "originalChapter": "INCARNATION",
+      "title": "Flight into Egypt",
+      "scriptureReference": "Matthew 2:13–15",
+      "gospelWitness": "Matthew",
+      "existingLocationClaim": "Egypt · region only, residence unknown",
+      "existingMatchStatus": "EXACT_REFERENCE",
+      "originalAtlasCandidateKeys": [
+        {
+          "eventKey": "biblical:event:egypt-e1",
+          "relation": "EXACT_REFERENCE"
+        }
+      ],
+      "witnessSpanChecks": {
+        "douayChallonerEntries": 3,
+        "cpdv2009Entries": 3,
+        "crampon1923Entries": 3,
+        "spanPresenceVerified": true,
+        "editionsRemainUncollated": true
+      },
+      "sourceActorReviewHints": [
+        "Joseph",
+        "Mary",
+        "Jesus",
+        "angel of the Lord"
+      ],
+      "actorsProvenancePublicationApproved": false,
+      "locationEvidenceClass": "EGYPT_REGION_ONLY_NO_HOLY_FAMILY_STOP_POINTS",
+      "reviewFinding": "Matthew 2:13–15 names Egypt, not a city, residence, road or sequence of sanctuaries. No Holy Family route, visit stop or precise arrival point is authorised by these verses.",
+      "geographicalAction": "EGYPT_REGION_ONLY_NO_ROUTE",
+      "preciseCoordinatesApproved": false,
+      "canonicalBibleEdits": false,
+      "scenePublicationApproved": false,
+      "editorialStatus": "THREE_SOURCE_WITNESS_DESK_TRIAGE_NO_FINAL_TEXT_OR_GEOGRAPHY_APPROVAL"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:066",
+      "originalIndex": 66,
+      "originalChapter": "INCARNATION",
+      "title": "Return to Nazareth",
+      "scriptureReference": "Matthew 2:19–23",
+      "gospelWitness": "Matthew",
+      "existingLocationClaim": "Nazareth · city context",
+      "existingMatchStatus": "EXACT_REFERENCE",
+      "originalAtlasCandidateKeys": [
+        {
+          "eventKey": "biblical:event:egypt-e2",
+          "relation": "EXACT_REFERENCE"
+        }
+      ],
+      "witnessSpanChecks": {
+        "douayChallonerEntries": 5,
+        "cpdv2009Entries": 5,
+        "crampon1923Entries": 5,
+        "spanPresenceVerified": true,
+        "editionsRemainUncollated": true
+      },
+      "sourceActorReviewHints": [
+        "Joseph",
+        "Mary",
+        "Jesus",
+        "Archelaus"
+      ],
+      "actorsProvenancePublicationApproved": false,
+      "locationEvidenceClass": "EGYPT_TO_NAZARETH_CITIES_KNOWN_ROUTE_UNKNOWN",
+      "reviewFinding": "Matthew 2:19–23 explicitly records departure from Egypt and eventual residence at Nazareth but does not establish a traversed route. Preserve its source sequence without treating Luke 2:39 as the same narrated journey.",
+      "geographicalAction": "NAZARETH_CITY_ONLY_NO_RETURN_ROUTE",
+      "preciseCoordinatesApproved": false,
+      "canonicalBibleEdits": false,
+      "scenePublicationApproved": false,
+      "editorialStatus": "THREE_SOURCE_WITNESS_DESK_TRIAGE_NO_FINAL_TEXT_OR_GEOGRAPHY_APPROVAL"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:067",
+      "originalIndex": 67,
+      "originalChapter": "INCARNATION",
+      "title": "The hidden years",
+      "scriptureReference": "Luke 2:39–52",
+      "gospelWitness": "Luke",
+      "existingLocationClaim": "Nazareth",
+      "existingMatchStatus": "PASSAGE_OVERLAP_REVIEW_ONLY",
+      "originalAtlasCandidateKeys": [
+        {
+          "eventKey": "biblical:event:jerusalem-temple-e2",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY"
+        },
+        {
+          "eventKey": "biblical:event:nazareth-additional-006",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY"
+        }
+      ],
+      "witnessSpanChecks": {
+        "douayChallonerEntries": 14,
+        "cpdv2009Entries": 14,
+        "crampon1923Entries": 14,
+        "spanPresenceVerified": true,
+        "editionsRemainUncollated": true
+      },
+      "sourceActorReviewHints": [
+        "Jesus",
+        "Mary",
+        "Joseph"
+      ],
+      "actorsProvenancePublicationApproved": false,
+      "locationEvidenceClass": "NAZARETH_FAMILY_YEARS_JERUSALEM_SUBEVENT",
+      "reviewFinding": "Luke 2:39–52 contains the return to Nazareth as well as the annual Jerusalem pilgrimage and the episode of the twelve-year-old Jesus in the Temple. It is not a homogeneous single-place scene or evidence for a precise house.",
+      "geographicalAction": "MULTI_PLACE_CONTEXT_NO_SINGLE_POINT",
+      "preciseCoordinatesApproved": false,
+      "canonicalBibleEdits": false,
+      "scenePublicationApproved": false,
+      "editorialStatus": "THREE_SOURCE_WITNESS_DESK_TRIAGE_NO_FINAL_TEXT_OR_GEOGRAPHY_APPROVAL"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:068",
+      "originalIndex": 68,
+      "originalChapter": "INCARNATION",
+      "title": "Jesus found in the Temple",
+      "scriptureReference": "Luke 2:41–52",
+      "gospelWitness": "Luke",
+      "existingLocationClaim": "Jerusalem · Temple Mount context",
+      "existingMatchStatus": "EXACT_REFERENCE",
+      "originalAtlasCandidateKeys": [
+        {
+          "eventKey": "biblical:event:jerusalem-temple-e2",
+          "relation": "EXACT_REFERENCE"
+        },
+        {
+          "eventKey": "biblical:event:nazareth-additional-006",
+          "relation": "PASSAGE_OVERLAP_REVIEW_ONLY"
+        }
+      ],
+      "witnessSpanChecks": {
+        "douayChallonerEntries": 12,
+        "cpdv2009Entries": 12,
+        "crampon1923Entries": 12,
+        "spanPresenceVerified": true,
+        "editionsRemainUncollated": true
+      },
+      "sourceActorReviewHints": [
+        "Jesus",
+        "Mary",
+        "Joseph",
+        "teachers"
+      ],
+      "actorsProvenancePublicationApproved": false,
+      "locationEvidenceClass": "JERUSALEM_TEMPLE_JOURNEY_NO_EXACT_INTERIOR",
+      "reviewFinding": "Luke 2:41–52 identifies Jerusalem and the Temple, but not a surviving hall or the family's historical walking route. Overlap with scene 067 is textual, not an independent duplicate canonical incident.",
+      "geographicalAction": "TEMPLE_CONTEXT_ONLY_NO_INTERIOR_POINT",
+      "preciseCoordinatesApproved": false,
+      "canonicalBibleEdits": false,
+      "scenePublicationApproved": false,
+      "editorialStatus": "THREE_SOURCE_WITNESS_DESK_TRIAGE_NO_FINAL_TEXT_OR_GEOGRAPHY_APPROVAL"
+    },
+    {
+      "sceneKey": "biblical:scene:christ:181",
+      "originalIndex": 181,
+      "originalChapter": "INCARNATION",
+      "title": "The massacre of the Holy Innocents",
+      "scriptureReference": "Matthew 2:16–18",
+      "gospelWitness": "Matthew",
+      "existingLocationClaim": "Bethlehem and its district · biblical regional identification only",
+      "existingMatchStatus": "EXACT_REFERENCE",
+      "originalAtlasCandidateKeys": [
+        {
+          "eventKey": "biblical:event:bethlehem-additional-003",
+          "relation": "EXACT_REFERENCE"
+        }
+      ],
+      "witnessSpanChecks": {
+        "douayChallonerEntries": 3,
+        "cpdv2009Entries": 3,
+        "crampon1923Entries": 3,
+        "spanPresenceVerified": true,
+        "editionsRemainUncollated": true
+      },
+      "sourceActorReviewHints": [
+        "Herod",
+        "unnamed children",
+        "Magi"
+      ],
+      "actorsProvenancePublicationApproved": false,
+      "locationEvidenceClass": "BETHLEHEM_AND_DISTRICT_REGION_ONLY_VICTIMS_UNKNOWN",
+      "reviewFinding": "Matthew 2:16–18 names Bethlehem and its surrounding territory. The passage does not identify individual victims' death sites, a common grave, an exact calendar date or a modern building. The scene is kept in Matthew's sequence relative to the flight into Egypt, not assigned a reconstructed cross-Gospel date.",
+      "geographicalAction": "NO_SPECIFIC_VICTIM_PINS_OR_DATATION",
+      "preciseCoordinatesApproved": false,
+      "canonicalBibleEdits": false,
+      "scenePublicationApproved": false,
+      "editorialStatus": "THREE_SOURCE_WITNESS_DESK_TRIAGE_NO_FINAL_TEXT_OR_GEOGRAPHY_APPROVAL"
+    }
+  ]
+}
