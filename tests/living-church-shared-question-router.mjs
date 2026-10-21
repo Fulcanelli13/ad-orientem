@@ -81,7 +81,10 @@ for(const topic of registry.topics){
    assert.match(pointer.originalDocumentUrl,/^https:\/\//);
    assert.ok(pointer.sourceLocator.length>=14);
    assert.equal(pointer.approvedReply,false);
-   assert.equal(pointer.researchSource,historicalPointers.researchOwner.fixture);
+   const originalOwner=historicalPointers.researchOwner.fixture;
+   const documentFirstOwner="https://github.com/Fulcanelli13/ad-orientem/blob/formation/1457-pius-x-conversation-evidence/data/learn/research/pius-x-document-first-unscripted-bilingual-probes-20261021.v1.json";
+   assert.equal(pointer.researchSource,["SPX-PILOT-13","SPX-PILOT-14"].includes(pointer.id)?documentFirstOwner:originalOwner,
+     "Historical research provenance must be exact: "+pointer.id);
   }else throw Error("Unrecognised source owner "+source.owner);
  }
 }
