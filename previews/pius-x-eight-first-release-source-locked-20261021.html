@@ -34,7 +34,7 @@ details p{color:#c7bfaf}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 </style></head><body>
 <header><div class="brand">Ad Orientem · Saint Pius X<small>First-release dialogue · source-locked editorial review</small></div>
-<div class="tools"><select id="chapters" aria-label="Choose dialogue chapter"></select><button id="lang">FR</button><button id="sourceToggle" aria-expanded="false">Source</button></div></header>
+<div class="tools"><select id="chapters" aria-label="Choose dialogue chapter"></select><button id="lang">FR</button><button id="sourceToggle" aria-expanded="false">Source</button><button id="exportTop">Export ratings</button></div></header>
 <main><div class="disclosure">Eight independently sourced **editorial dialogue reconstructions**, not recorded speech of Pius X. Historical style, doctrine and EN/FR translations remain subject to approval; this is not the published app.</div>
 <section id="stage" class="stage" aria-label="Visual novel review">
 <div class="arch"></div><div class="stage-note" id="stageNote">SOURCE-BOUNDED DIALOGUE · EDITORIAL</div>
@@ -97,7 +97,9 @@ $('reviewToggle').addEventListener('click',()=>{
 });
 function capture(){ratings[chapters[state.chapter].id]={pacing:$('pace').value,voice:$('voice').value,clarity:$('clarity').value,notes:$('notes').value};}
 $('record').addEventListener('click',()=>{capture();$('record').textContent=labels[locale].recorded});
-$('export').addEventListener('click',()=>{capture();const content=JSON.stringify({schema:'AO_SPX_P1_EIGHT_SOURCE_LOCKED_REVIEW_RATINGS_V1',sourceSchema:db.schema,ratings},null,2);
-const blob=new Blob([content],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='pius-x-eight-review-ratings.json';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000)});
+function exportRatings(){capture();const content=JSON.stringify({schema:'AO_SPX_P1_EIGHT_SOURCE_LOCKED_REVIEW_RATINGS_V1',sourceSchema:db.schema,ratings},null,2);
+const blob=new Blob([content],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='pius-x-eight-review-ratings.json';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000)}
+$('export').addEventListener('click',exportRatings);
+$('exportTop').addEventListener('click',exportRatings);
 render();
 </script></body></html>
