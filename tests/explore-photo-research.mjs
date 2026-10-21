@@ -18,8 +18,11 @@ assert.ok(editorialReview.approved.every(x=>approved.items.some(item=>item.place
 const excluded=[...editorialReview.needs_replacement,...editorialReview.held].map(x=>x.place_id);
 assert.equal(new Set(excluded).size,10);
 const r59=read("data/geography/research/place-media-candidates-r59.v1.json");
-assert.ok(editorialReview.held.every(x=>!approved.items.some(item=>item.place_id===x.place_id)),
- "Older-licence hold must remain unpublished");
+assert.ok(editorialReview.held.every(x=>{
+ const historic=r59.candidates.find(y=>y.place_id===x.place_id);
+ return historic&&!approved.items.some(item=>item.place_id===x.place_id&&
+   item.source_url===historic.source_page_url);
+}),"The historical R59 held photos must remain unpublished, even when a different later photo is independently cleared");
 assert.ok(editorialReview.needs_replacement.every(x=>r59.candidates.some(y=>y.place_id===x.place_id)),
  "All eight R58 quality holds must be replaced only by R59 curated sources");
 
@@ -80,7 +83,9 @@ for(const item of approved.items){
     "Approved photo bytes must match source stage report for "+item.place_id);
 }
 for(const held of research.held){
- assert.equal(approvedIds.has(held.place_id),false,"Older-licensed or identity-held photo cannot publish");
+ const historic=r59.candidates.find(x=>x.place_id===held.place_id);
+ assert.ok(historic&&!approved.items.some(item=>item.place_id===held.place_id&&item.source_url===historic.source_page_url),
+  "Historical held photograph may not be published through a separate source review");
 }
 assert.equal(research.candidates.length,18);
 assert.equal(research.held.length,2);
