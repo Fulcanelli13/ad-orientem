@@ -1,0 +1,267 @@
+{
+  "schema": "AO_VISIBLE_MASS_GUIDED_TRAIL_GRAPH_RESEARCH_V1",
+  "date": "2026-10-18",
+  "status": "RESEARCH_NAVIGATION_DESIGN_ONLY_NOT_PUBLICATION_NOT_A_SCRIPT",
+  "owner": "previews/visible-mass-3d/PHASE1_SANCTUARY_PILOT_QUESTIONS_20261017.v1.json",
+  "answerOwners": [
+    "previews/visible-mass-3d/HISTORICAL_SYMBOLIC_ANSWERS_20261017.v1.json",
+    "previews/visible-mass-3d/HISTORICAL_FUNCTIONAL_ANSWERS_NEXT_20261017.v1.json"
+  ],
+  "sceneOwner": "previews/visible-mass-3d/photographic-scene-bridge.mjs",
+  "massContextOwner": "previews/visible-mass-3d/photographic-object-mass-bridge.mjs",
+  "publicGuideOwner": "src/learn/mass-explorer.js",
+  "exactPhotoBinding": "BROMPTON_ALTAR_2019_B",
+  "visibleHotspotIds": [
+    "AL01",
+    "AL06",
+    "AL07",
+    "AL19",
+    "SN02",
+    "SN04"
+  ],
+  "questionIds": [
+    "VMQ-0001",
+    "VMQ-0002",
+    "VMQ-0003",
+    "VMQ-0004",
+    "VMQ-0005",
+    "VMQ-0006",
+    "VMQ-0013",
+    "VMQ-0014",
+    "VMQ-0016",
+    "VMQ-0017",
+    "VMQ-0018",
+    "VMQ-0019",
+    "VMQ-0021",
+    "VMQ-0052",
+    "VMQ-0053",
+    "VMQ-0056",
+    "VMQ-0057",
+    "VMQ-0058",
+    "VMQ-0059",
+    "VMQ-0061",
+    "VMQ-0062",
+    "VMQ-0063",
+    "VMQ-0064",
+    "VMQ-0065"
+  ],
+  "heldQuestionsOnly": [
+    "VMQ-0004",
+    "VMQ-0018",
+    "VMQ-0061",
+    "VMQ-0064"
+  ],
+  "optionalInvestigations": [
+    {
+      "entry": "VMQ-0059",
+      "type": "SHORT_HISTORY_THREAD",
+      "status": "RESEARCH_DRAFT_NOT_PUBLISHED"
+    }
+  ],
+  "trails": [
+    {
+      "id": "FIRST_VISIT",
+      "title": {
+        "en": "My First Latin Mass",
+        "fr": "Ma première messe traditionnelle"
+      },
+      "entry": "VMQ-0062",
+      "suggested": [
+        "VMQ-0062",
+        "VMQ-0056",
+        "VMQ-0001",
+        "VMQ-0013",
+        "VMQ-0005",
+        "VMQ-0057"
+      ],
+      "focus": "OBSERVE_SACRED_SPACE",
+      "kind": "BEGINNER",
+      "note": "Starts at an accessible physical threshold and follows concrete objects; no universal posture/Communion-direction claim."
+    },
+    {
+      "id": "SANCTUARY_SECRETS",
+      "title": {
+        "en": "Secrets of the Sanctuary",
+        "fr": "Les secrets du sanctuaire"
+      },
+      "entry": "VMQ-0052",
+      "suggested": [
+        "VMQ-0052",
+        "VMQ-0053",
+        "VMQ-0017",
+        "VMQ-0019",
+        "VMQ-0021",
+        "VMQ-0016",
+        "VMQ-0006"
+      ],
+      "focus": "INVESTIGATE_VISIBLE_OBJECTS",
+      "kind": "OBJECTS",
+      "note": "Prompts object-to-object visual comparison; six-candle furnishing is not a candle-count rule."
+    },
+    {
+      "id": "ALTAR_MYSTERY",
+      "title": {
+        "en": "The Mystery of the Altar",
+        "fr": "Le mystère de l'autel"
+      },
+      "entry": "VMQ-0013",
+      "suggested": [
+        "VMQ-0013",
+        "VMQ-0014",
+        "VMQ-0002",
+        "VMQ-0003",
+        "VMQ-0005",
+        "VMQ-0058",
+        "VMQ-0057"
+      ],
+      "focus": "VISUAL_OBJECT_TO_THEOLOGICAL_QUESTION",
+      "kind": "THEOLOGY",
+      "note": "Thematic route only; original historical draft answers remain under editorial review."
+    },
+    {
+      "id": "FOLLOW_PRIEST",
+      "title": {
+        "en": "Follow the Priest",
+        "fr": "Suivre le prêtre"
+      },
+      "entry": "VMQ-0065",
+      "suggested": [
+        "VMQ-0065",
+        "VMQ-0063",
+        "VMQ-0005",
+        "VMQ-0002",
+        "VMQ-0014",
+        "VMQ-0057"
+      ],
+      "focus": "OBSERVE_PRIEST_ACTIONS_WITH_ORIGINAL_CONTEXT",
+      "kind": "CEREMONY",
+      "note": "Do not simulate a priest in the Brompton still; Mass Guide links are separate source-scoped candidate context, not chronological event certification."
+    }
+  ],
+  "crossovers": [
+    {
+      "from": "VMQ-0001",
+      "to": "VMQ-0002",
+      "relation": "OBJECT_TO_THEOLOGY",
+      "editorialReason": "Altar's physical prominence prompts the question of sacrifice; from First Visit to Altar Mystery",
+      "status": "EDITORIAL_CONTEXTUAL_CANDIDATE_NO_PUBLICATION"
+    },
+    {
+      "from": "VMQ-0013",
+      "to": "VMQ-0014",
+      "relation": "OBJECT_TO_THEOLOGY",
+      "editorialReason": "Observed crucifix invites Calvary connection; from First Visit/Secrets to Altar Mystery",
+      "status": "EDITORIAL_CONTEXTUAL_CANDIDATE_NO_PUBLICATION"
+    },
+    {
+      "from": "VMQ-0056",
+      "to": "VMQ-0058",
+      "relation": "BOUNDARY_TO_MEANING",
+      "editorialReason": "Identifying the rail leads to the distinction between architectural boundary and sacredness",
+      "status": "EDITORIAL_CONTEXTUAL_CANDIDATE_NO_PUBLICATION"
+    },
+    {
+      "from": "VMQ-0053",
+      "to": "VMQ-0001",
+      "relation": "PART_TO_WHOLE",
+      "editorialReason": "Retable is behind, not identical with, the altar; pivot from objects to First Visit",
+      "status": "EDITORIAL_CONTEXTUAL_CANDIDATE_NO_PUBLICATION"
+    },
+    {
+      "from": "VMQ-0017",
+      "to": "VMQ-0021",
+      "relation": "APPEARANCE_VS_RUBRIC",
+      "editorialReason": "Six-piece arrangement prompts whether all six are lit; prevent categorical candle-count inference",
+      "status": "EDITORIAL_CONTEXTUAL_CANDIDATE_NO_PUBLICATION"
+    },
+    {
+      "from": "VMQ-0019",
+      "to": "VMQ-0014",
+      "relation": "SYMBOL_TO_MYSTERY",
+      "editorialReason": "From visible candle symbolism to the altar crucifix and sacrifice; editorial rather than ritual edge",
+      "status": "EDITORIAL_CONTEXTUAL_CANDIDATE_NO_PUBLICATION"
+    },
+    {
+      "from": "VMQ-0016",
+      "to": "VMQ-0013",
+      "relation": "HISTORY_TO_MEANING",
+      "editorialReason": "Historical development of altar crosses invites their intended significance",
+      "status": "EDITORIAL_CONTEXTUAL_CANDIDATE_NO_PUBLICATION"
+    },
+    {
+      "from": "VMQ-0005",
+      "to": "VMQ-0065",
+      "relation": "PRIEST_ACTION_TO_SPACE",
+      "editorialReason": "Reverence at the altar leads to sanctuary steps/predella without presenting a chronological rubric",
+      "status": "EDITORIAL_CONTEXTUAL_CANDIDATE_NO_PUBLICATION"
+    },
+    {
+      "from": "VMQ-0058",
+      "to": "VMQ-0056",
+      "relation": "MEANING_TO_IDENTIFICATION",
+      "editorialReason": "Return from significance of rail to the concrete visible object",
+      "status": "EDITORIAL_CONTEXTUAL_CANDIDATE_NO_PUBLICATION"
+    },
+    {
+      "from": "VMQ-0063",
+      "to": "VMQ-0056",
+      "relation": "STEP_TO_RAIL",
+      "editorialReason": "Study of steps suggests the nearby threshold and rail",
+      "status": "EDITORIAL_CONTEXTUAL_CANDIDATE_NO_PUBLICATION"
+    },
+    {
+      "from": "VMQ-0005",
+      "to": "VMQ-0013",
+      "relation": "ACTION_TO_OBJECT",
+      "editorialReason": "The priest's altar reverence prompts a separate investigation of the crucifix",
+      "status": "EDITORIAL_CONTEXTUAL_CANDIDATE_NO_PUBLICATION"
+    },
+    {
+      "from": "VMQ-0002",
+      "to": "VMQ-0017",
+      "relation": "SACRIFICE_TO_OBJECT",
+      "editorialReason": "Theological inquiry becomes an optional visual investigation of altar furnishings",
+      "status": "EDITORIAL_CONTEXTUAL_CANDIDATE_NO_PUBLICATION"
+    },
+    {
+      "from": "VMQ-0057",
+      "to": "VMQ-0059",
+      "relation": "CUSTOM_TO_HISTORY",
+      "editorialReason": "Optional short historical background rather than another required major trail",
+      "status": "EDITORIAL_CONTEXTUAL_CANDIDATE_NO_PUBLICATION"
+    }
+  ],
+  "interactionContract": {
+    "guideIsOptional": true,
+    "initialMode": "FREE_EXPLORATION_WITH_TRAIL_CHOICE",
+    "enterAtAnyHotspot": true,
+    "skipAnySuggestedQuestion": true,
+    "skipWholeTrail": true,
+    "switchTrailAtAnyTime": true,
+    "jumpToAnyKnownObject": true,
+    "leaveGuidePreservesContext": true,
+    "globalReadQuestionIds": "PERSIST_PER_VISIT_SESSION",
+    "skippedSuggestions": "PER_TRAIL_SESSION_NOT_EQUIVALENT_TO_READ",
+    "dismissedTrails": "SESSION_ONLY_REVERSIBLE",
+    "chosenTrailCursor": "PER_TRAIL_SESSION",
+    "context": "CURRENT_PHOTO_ID_PLUS_OBJECT_ID_PLUS_FOCUSED_QUESTION_ID",
+    "recommendedNextPolicy": "PREFER_NOT_READ_AND_NOT_SKIPPED_NON_HELD;NEVER_FORCE_REPLAY",
+    "revisitPolicy": "MANUAL_OR_EXPLICIT_REPLAY_ONLY",
+    "allTrailsAlreadyRead": "OFFER_FREE_EXPLORATION_OR_EXPLICIT_REVIEW_NOT_AUTOMATIC_RESET",
+    "questionMarkReadOn": "USER_ACTUALLY_OPENS_SOURCE_OWNED_DETAIL_NOT_PHOTO_TAP",
+    "noQuizScoring": true,
+    "noCompletionStreaks": true,
+    "noNewQuestionTexts": true,
+    "noNewAnswerTexts": true,
+    "noAutomaticFreeTextGenerativeAnswers": true,
+    "dialogueAndVisualEffects": "NOT_INCLUDED_AWAITING_EDITORIAL_ROUTE_ACCEPTANCE"
+  },
+  "publication": {
+    "researchDraftAnswers": "PREVIEW_ONLY_NOT_1962_RITE_CERTIFIED",
+    "heldQuestions": "QUESTION_ONLY_NO_AUTOGENERATED_ANSWER",
+    "tourCopy": "EDITORIAL_APPROVAL_REQUIRED",
+    "publishedGuideLinks": "EXISTING_RUNTIME_ONLY_REQUIRE_SOURCE_SCOPED_REVIEW",
+    "photographicEvidence": "REAL_SAME_PHOTO_BINDINGS_NOT_STAGE_REENACTMENT",
+    "formSpecificActions": "NOT_INFERRED_FROM_PHOTO_OR_SUNG_GUIDE"
+  }
+}

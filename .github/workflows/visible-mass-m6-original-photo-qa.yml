@@ -1,0 +1,26 @@
+name: Visible Mass M6 original-photo evidence (research only)
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  acquire-source-images:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install image-analysis requirements
+        run: python -m pip install --disable-pip-version-check --quiet Pillow==11.3.0 numpy==2.3.3 requests==2.32.5
+      - name: Acquire originals; compute non-editorial exposure and texture warnings; build contact sheets
+        run: python tools/visible-mass-m6-full-resolution-qa.py
+      - name: Upload original photographic evidence and source attribution
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: M6-Original-Source-Pixel-QA-20-Photos
+          path: dist/visible-mass/m6-original-photo-qa/
+          if-no-files-found: warn
+          retention-days: 30

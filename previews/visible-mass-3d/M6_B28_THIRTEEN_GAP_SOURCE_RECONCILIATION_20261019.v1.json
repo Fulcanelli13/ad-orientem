@@ -1,0 +1,289 @@
+{
+  "schema": "AO_VISIBLE_MASS_M6_B28_13_PHYSICAL_PILOT_GAP_ACQUISITION_V1",
+  "date": "2026-10-19",
+  "status": "RESEARCH_QUEUE_ONLY_NOT_APPROVAL",
+  "canonical_reference": "previews/visible-mass-3d/M6_PHOTOGRAPHIC_ATLAS_COVERAGE_20261018.v1.json",
+  "pilot_baseline": "previews/visible-mass-3d/M6_ONE_OBJECT_ONE_IMAGE_P0_20261019.v7.json",
+  "previous_research": [
+    "previews/visible-mass-3d/M6_B25_PILOT_18_RECONCILED_PRIMARY_REVIEW_20261019.v1.json",
+    "previews/visible-mass-3d/M6_B26_ORIGINAL_PIXEL_EDITORIAL_QA_20261019.v1.json",
+    "previews/visible-mass-3d/M6_B27_ORIGINAL_PIXEL_EDITORIAL_QA_20261019.v1.json"
+  ],
+  "counts": {
+    "pilot_30": 30,
+    "assistant_provisional_old": 15,
+    "physical_missing_now": 13,
+    "directional_annotations": [
+      "AL17",
+      "AL18"
+    ],
+    "originals_enqueued": 8,
+    "source_leads": 12,
+    "new_pilot_heroes": 0
+  },
+  "source_qa_queue": [
+    {
+      "object_id": "AL19",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Neuville-sur-Authou_retable.jpg"
+    },
+    {
+      "object_id": "AL03",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Tabernacle,_Christ_the_King_Catholic_Church,_Auckland.jpg"
+    },
+    {
+      "object_id": "SN02",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Saint_Ann_Catholic_Church_(Hamilton,_Ohio)_-_interior,_Communion_rail.jpg"
+    },
+    {
+      "object_id": "SN07",
+      "source_url": "https://commons.wikimedia.org/wiki/File:01027jfAndres_Bonifacio_Avenue_San_Jose_Chapel_Tañong_Marikina_Cityfvf_13.jpg"
+    },
+    {
+      "object_id": "BK01",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Missale_romanum1962.JPG"
+    },
+    {
+      "object_id": "AL10",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Candé_(49)_Église_Saint-Denis_-_Intérieur_-_Gradins_d'autel_et_tabernacle_-_01.jpg"
+    },
+    {
+      "object_id": "BK02",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Missal_stand,_Japan,_late_1500s_to_early_1600s_AD,_lacquered_wood,_mother-of-pearl,_gold_-_Peabody_Essex_Museum_-_DSC07672.jpg"
+    },
+    {
+      "object_id": "SN04",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Holy_Trinity_Catholic_Church_(Somerset,_Ohio)_-_high_altar,_view_from_communion_rail.jpg"
+    }
+  ],
+  "physical_targets": [
+    {
+      "object_id": "SN02",
+      "label": "Communion rail",
+      "type": "ARCHITECTURAL_IN_SITU",
+      "candidate": [
+        {
+          "source_url": "https://commons.wikimedia.org/wiki/File:Saint_Ann_Catholic_Church_(Hamilton,_Ohio)_-_interior,_Communion_rail.jpg",
+          "creator": "Nheyob",
+          "license": "CC BY-SA 3.0",
+          "fit": "full Catholic communion rail; inspect full rail composition",
+          "kind": "ARCHITECTURAL_OBJECT",
+          "status": "EXACT_SOURCE_PHOTO_PRESELECTION_NOT_USER_APPROVED"
+        }
+      ],
+      "acceptance": "Entire usable length and rail identity discernible; centre gate if present; no anti-Catholic rite substitutions",
+      "user_approved": false,
+      "publication_approved": false
+    },
+    {
+      "object_id": "SN04",
+      "label": "Sanctuary steps",
+      "type": "ARCHITECTURAL_IN_SITU",
+      "candidate": [
+        {
+          "source_url": "https://commons.wikimedia.org/wiki/File:Holy_Trinity_Catholic_Church_(Somerset,_Ohio)_-_high_altar,_view_from_communion_rail.jpg",
+          "creator": "Nheyob",
+          "license": "CC BY-SA 4.0",
+          "fit": "only if distinct sanctuary steps actually visible",
+          "kind": "IN_SITU_POTENTIAL",
+          "status": "EXACT_SOURCE_PHOTO_PRESELECTION_NOT_USER_APPROVED"
+        }
+      ],
+      "acceptance": "Steps to sanctuary cannot be confused with gradine or altar predella",
+      "user_approved": false,
+      "publication_approved": false
+    },
+    {
+      "object_id": "SN07",
+      "label": "Credence table",
+      "type": "MOVABLE_FURNITURE",
+      "candidate": [
+        {
+          "source_url": "https://commons.wikimedia.org/wiki/File:01027jfAndres_Bonifacio_Avenue_San_Jose_Chapel_Tañong_Marikina_Cityfvf_13.jpg",
+          "creator": "Judgefloro",
+          "license": "CC0 1.0",
+          "fit": "Catholic credence table, modern chapel; examine full frame",
+          "kind": "MOVABLE_OBJECT_IN_SITU",
+          "status": "EXACT_SOURCE_PHOTO_PRESELECTION_NOT_USER_APPROVED"
+        }
+      ],
+      "acceptance": "Table is dominant and completely identifiable; no other large distracting objects; 1962 shape/context consistent",
+      "user_approved": false,
+      "publication_approved": false
+    },
+    {
+      "object_id": "AL01",
+      "label": "High altar",
+      "type": "ARCHITECTURAL_FURNISHING",
+      "candidate": [
+        {
+          "source_url": "https://commons.wikimedia.org/wiki/File:Castelnau-d'Estr%C3%A9tefonds_Eglise_-_Ma%C3%AEtre-autel.jpg",
+          "creator": "Didier Descouens",
+          "license": "CC BY-SA 4.0",
+          "fit": "already inspected at 7360×4912; complete 1848 high altar, 6 matching candlesticks",
+          "kind": "ORIGINAL_PIXELS_B26_COMPLETE",
+          "status": "EXACT_SOURCE_PHOTO_PRESELECTION_NOT_USER_APPROVED"
+        }
+      ],
+      "acceptance": "Architectural exception for a complete authentic altar scene not portable isolated studio object; publication still requires user visual approval",
+      "user_approved": false,
+      "publication_approved": false
+    },
+    {
+      "object_id": "AL03",
+      "label": "Tabernacle",
+      "type": "BUILT_IN_EUCHARISTIC_FURNISHING",
+      "candidate": [
+        {
+          "source_url": "https://commons.wikimedia.org/wiki/File:Tabernacle,_Christ_the_King_Catholic_Church,_Auckland.jpg",
+          "creator": "Bjankuloski06 / Bojan Jankuloski",
+          "license": "CC BY 4.0",
+          "fit": "unveiled tabernacle, 5347×3565 church source; inspect actual visual",
+          "kind": "SINGLE_FURNISHING_CANDIDATE",
+          "status": "EXACT_SOURCE_PHOTO_PRESELECTION_NOT_USER_APPROVED"
+        }
+      ],
+      "acceptance": "Complete door/front and volume; non-tendentious Roman Catholic context and no prominent unrelated candle/monstrance arrangement",
+      "user_approved": false,
+      "publication_approved": false
+    },
+    {
+      "object_id": "AL07",
+      "label": "Six altar candlesticks",
+      "type": "DEFINED_SIX_CANDLESTICK_SET",
+      "candidate": [
+        {
+          "source_url": "https://commons.wikimedia.org/wiki/File:Castelnau-d'Estr%C3%A9tefonds_Eglise_-_Ma%C3%AEtre-autel.jpg",
+          "creator": "Didier Descouens",
+          "license": "CC BY-SA 4.0",
+          "fit": "B26 confirms 3+3 matching candlesticks in one view; context only",
+          "kind": "DELIBERATELY_SHARED_SCENE",
+          "status": "EXACT_SOURCE_PHOTO_PRESELECTION_NOT_USER_APPROVED"
+        }
+      ],
+      "acceptance": "Either designated AL01 crop overlay containing precisely six, or find independently complete six-matching-piece set; one source not falsely counted twice",
+      "user_approved": false,
+      "publication_approved": false
+    },
+    {
+      "object_id": "AL08",
+      "label": "Individual altar candle",
+      "type": "SINGLE_CANDLE",
+      "candidate": [],
+      "acceptance": "Single authentic altar candle, not an entire candleholder/altar photograph; rights-eligible original needed",
+      "user_approved": false,
+      "publication_approved": false
+    },
+    {
+      "object_id": "AL10",
+      "label": "Altar gradine / candle shelf",
+      "type": "ARCHITECTURAL_GRADINE",
+      "candidate": [
+        {
+          "source_url": "https://commons.wikimedia.org/wiki/File:Candé_(49)_Église_Saint-Denis_-_Intérieur_-_Gradins_d'autel_et_tabernacle_-_01.jpg",
+          "creator": "Bo35bo35 (photo credit to verify exact file)",
+          "license": "LICENSE_NOT_CONFIRMED_EXACT_FILE",
+          "fit": "Catholic gradine visible with tabernacle; likely architectural ensemble not alone",
+          "kind": "GRADINE_CONTEXT_SUBJECT",
+          "status": "EXACT_SOURCE_PHOTO_PRESELECTION_NOT_USER_APPROVED"
+        }
+      ],
+      "acceptance": "Isolated gradine/candle shelf or credible gradine-dominant close-up, distinct from sanctuary stairs and predella",
+      "user_approved": false,
+      "publication_approved": false
+    },
+    {
+      "object_id": "AL13",
+      "label": "Altar linen coverings",
+      "type": "THREE_ALTAR_LINEN_SET",
+      "candidate": [],
+      "acceptance": "Complete actual three Roman altar linens laid out as one defined set; one antique lace strip not sufficient",
+      "user_approved": false,
+      "publication_approved": false
+    },
+    {
+      "object_id": "AL19",
+      "label": "Retable / reredos",
+      "type": "ALTAR_RETABLE_ARCHITECTURAL",
+      "candidate": [
+        {
+          "source_url": "https://commons.wikimedia.org/wiki/File:Neuville-sur-Authou_retable.jpg",
+          "creator": "Stanzilla",
+          "license": "CC0 1.0",
+          "fit": "Full historic French Catholic retable with Annunciation painting, 1928x1921; exact original QA needed",
+          "kind": "PRIMARY_AL19",
+          "status": "EXACT_SOURCE_PHOTO_PRESELECTION_NOT_USER_APPROVED"
+        },
+        {
+          "source_url": "https://commons.wikimedia.org/wiki/File:Retable_par_Jean_Gaudin_et_André_Ursault,_église_Sainte-Croix_de_Migné-Auxances,_Vienne.jpg",
+          "creator": "Danielclauzier",
+          "license": "CC0 1.0",
+          "fit": "French Catholic Art Deco retable from 1929–32, 3024x4032",
+          "kind": "HISTORICAL_COMPARISON",
+          "status": "EXACT_SOURCE_PHOTO_PRESELECTION_NOT_USER_APPROVED"
+        }
+      ],
+      "acceptance": "Full retable physically and visually distinct from stand-alone painting; no assumption free-standing altar table",
+      "user_approved": false,
+      "publication_approved": false
+    },
+    {
+      "object_id": "EQ01",
+      "label": "Wine cruet",
+      "type": "SINGLE_WINE_CRUET",
+      "candidate": [
+        {
+          "source_url": "https://commons.wikimedia.org/wiki/File:WLA_vanda_Cruet_for_the_Mass.jpg",
+          "creator": "VeronikaB",
+          "license": "CC BY 2.5",
+          "fit": "V&A Mass wine cruet complete but visually cluttered; prior thumbnail hold",
+          "kind": "HISTORICAL_CONTEXT_ONLY",
+          "status": "EXACT_SOURCE_PHOTO_PRESELECTION_NOT_USER_APPROVED"
+        }
+      ],
+      "acceptance": "Wine vessel legible A/V identification and truly isolated photo; prior crowded museum case does not suffice",
+      "user_approved": false,
+      "publication_approved": false
+    },
+    {
+      "object_id": "BK01",
+      "label": "Roman Missal on altar",
+      "type": "LITURGICAL_BOOK_ON_ALTAR",
+      "candidate": [
+        {
+          "source_url": "https://commons.wikimedia.org/wiki/File:Missale_romanum1962.JPG",
+          "creator": "MK777",
+          "license": "CC BY-SA 4.0",
+          "fit": "Authenticated 1962 Benziger Roman Missal, 1350x980; verify book physically on altar rather than opened on desk",
+          "kind": "EXACT_EDITION_NOT_IN_USE_CERTIFIED",
+          "status": "EXACT_SOURCE_PHOTO_PRESELECTION_NOT_USER_APPROVED"
+        }
+      ],
+      "acceptance": "Missal in use on altar; 1962 wording/edition verification, blank scene or book-only picture is not identical",
+      "user_approved": false,
+      "publication_approved": false
+    },
+    {
+      "object_id": "BK02",
+      "label": "Missal stand or cushion",
+      "type": "TRADITIONAL_MISSAL_BOOKSTAND",
+      "candidate": [
+        {
+          "source_url": "https://commons.wikimedia.org/wiki/File:Missal_stand,_Japan,_late_1500s_to_early_1600s_AD,_lacquered_wood,_mother-of-pearl,_gold_-_Peabody_Essex_Museum_-_DSC07672.jpg",
+          "creator": "Daderot",
+          "license": "CC0 1.0",
+          "fit": "One true Jesuit-era Catholic Missal stand, but exceptional rare Japanese liturgical specimen",
+          "kind": "HISTORICAL_REFERENCE_ONLY",
+          "status": "EXACT_SOURCE_PHOTO_PRESELECTION_NOT_USER_APPROVED"
+        }
+      ],
+      "acceptance": "Typical Roman parish Missal stand photographed alone; if historical exotic example, label as nonrepresentative and avoid pretending typical",
+      "user_approved": false,
+      "publication_approved": false
+    }
+  ],
+  "documented_policy_exception": "Architecture (high altar, steps, rail, retable) cannot be photographed as independent detached museum object. A single clear in-situ photograph of the entire architectural subject may qualify, without counting photos showing many unrelated objects. Portable furnishings/objects still demand strict single-object framing.",
+  "rights_policy": "No object-year-is-public-domain inference; use exact source photo license; source rights not equal to publication release and no silent CC BY-SA attribution/crop removal.",
+  "public_release": false,
+  "canonical_source_registry_changed": false,
+  "Mass_reader_changed": false
+}

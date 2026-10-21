@@ -1,0 +1,315 @@
+{
+  "schema": "AO_VM_VISIBLE_MASS_FR_EDITORIAL_OVERLAY_V1",
+  "status": "FRENCH_RESEARCH_TRANSLATION_NO_PUBLICATION",
+  "date": "2026-10-18",
+  "canonical_question_owner": "previews/visible-mass-3d/PHASE1_SANCTUARY_PILOT_QUESTIONS_20261017.v1.json",
+  "english_answer_owners": [
+    "previews/visible-mass-3d/HISTORICAL_SYMBOLIC_ANSWERS_20261017.v1.json",
+    "previews/visible-mass-3d/HISTORICAL_FUNCTIONAL_ANSWERS_NEXT_20261017.v1.json"
+  ],
+  "policy": {
+    "english_source_text": "READ_FROM_ORIGINAL_VM_QA_OWNER_ONLY_NOT_DUPLICATED",
+    "french_translation": "REVIEW_ONLY_UNTIL_EDITORIAL_AND_SOURCE_APPROVAL",
+    "selected_questions": "TWENTY_SOURCE_BACKED_TRIAL_VM_QA_IDS_EXCLUDING_FOUR_HELD",
+    "historical_sources": "1907_1914_ENCYCLOPEDIA_NOT_NORMATIVE_1962_RUBRICS",
+    "release": "NO_AUTOMATIC_PUBLICATION;NO_FRENCH_REGISTRY_REPLACEMENT"
+  },
+  "counts": {
+    "translations": 20,
+    "triage": {
+      "SOURCE_CORROBORATED_CANDIDATE": 14,
+      "1962_RITUAL_CROSSCHECK_REQUIRED": 3,
+      "HISTORICAL_REVIEW_REQUIRED": 3
+    }
+  },
+  "translations": [
+    {
+      "question_id": "VMQ-0062",
+      "owner_question_id": "VMQ-0062",
+      "object_id": "SN04",
+      "question_fr": "Pourquoi des marches conduisent-elles au sanctuaire et à l'autel ?",
+      "answer_fr": "Ces marches permettent de monter du sol de la nef ou du sanctuaire jusqu'à l'autel et donnent au prêtre un emplacement surélevé où se tenir.",
+      "explanation_fr": "Les auteurs anciens voyaient aussi dans cette élévation un signe de respect. Les marches du sanctuaire et celles qui soutiennent immédiatement l'autel sont liées, mais ne sont pas un seul et même élément.",
+      "triage": "SOURCE_CORROBORATED_CANDIDATE",
+      "translation_status": "EDITORIAL_FRENCH_DRAFT_NOT_APPROVED",
+      "original_answer_status": "RESEARCH_DRAFT_EXACT_QUESTION_NOT_PUBLICATION_CERTIFIED",
+      "primary_source_uris": [
+        "https://www.newadvent.org/cathen/01356f.htm",
+        "https://www.newadvent.org/cathen/01346a.htm"
+      ]
+    },
+    {
+      "question_id": "VMQ-0056",
+      "owner_question_id": "VMQ-0056",
+      "object_id": "SN02",
+      "question_fr": "Comment appelle-t-on la clôture située à la limite du sanctuaire ?",
+      "answer_fr": "Cette clôture qui sépare le sanctuaire de la nef se nomme « clôture de chœur » ou « banc de communion ».",
+      "explanation_fr": "Traditionnellement, les fidèles s'y agenouillent pour communier ; une nappe de communion peut en couvrir la partie supérieure. La clôture elle-même ne consacre pas le sanctuaire.",
+      "triage": "SOURCE_CORROBORATED_CANDIDATE",
+      "translation_status": "EDITORIAL_FRENCH_DRAFT_NOT_APPROVED",
+      "original_answer_status": "RESEARCH_DRAFT_EXACT_QUESTION_NOT_PUBLICATION_CERTIFIED",
+      "primary_source_uris": [
+        "https://www.newadvent.org/cathen/01356c.htm"
+      ]
+    },
+    {
+      "question_id": "VMQ-0001",
+      "owner_question_id": "VMQ-0001",
+      "object_id": "AL01",
+      "question_fr": "Pourquoi l'autel est-il l'élément principal du sanctuaire ?",
+      "answer_fr": "L'autel est le lieu où s'offre le Saint Sacrifice de la Messe ; il occupe donc la place centrale parmi les éléments du sanctuaire.",
+      "explanation_fr": "Dans la compréhension catholique, l'autel se définit d'abord par sa fonction sacrificielle et sa relation au Christ. Sa matière, sa décoration et sa forme architecturale viennent après cette fin liturgique.",
+      "triage": "SOURCE_CORROBORATED_CANDIDATE",
+      "translation_status": "EDITORIAL_FRENCH_DRAFT_NOT_APPROVED",
+      "original_answer_status": "RESEARCH_DRAFT_EXACT_QUESTION_NOT_PUBLICATION_CERTIFIED",
+      "primary_source_uris": [
+        "https://www.newadvent.org/cathen/01346a.htm"
+      ]
+    },
+    {
+      "question_id": "VMQ-0013",
+      "owner_question_id": "VMQ-0013",
+      "object_id": "AL06",
+      "question_fr": "Pourquoi trouve-t-on ordinairement un crucifix sur l'autel ?",
+      "answer_fr": "Le crucifix d'autel oriente le regard du prêtre et des fidèles vers le sacrifice du Christ au Calvaire, rendu sacramentellement présent dans la Messe. Il favorise la prière dirigée vers le Christ crucifié.",
+      "explanation_fr": "La présence de croix près de l'autel est ancienne, mais leur forme et leur emplacement ont évolué. Il faut distinguer la raison théologique du crucifix de l'histoire de son usage.",
+      "triage": "SOURCE_CORROBORATED_CANDIDATE",
+      "translation_status": "EDITORIAL_FRENCH_DRAFT_NOT_APPROVED",
+      "original_answer_status": "RESEARCH_DRAFT_EXACT_QUESTION_NOT_PUBLICATION_CERTIFIED",
+      "primary_source_uris": [
+        "https://www.newadvent.org/cathen/04533a.htm"
+      ]
+    },
+    {
+      "question_id": "VMQ-0005",
+      "owner_question_id": "VMQ-0005",
+      "object_id": "AL01",
+      "question_fr": "Pourquoi le prêtre s'approche-t-il de l'autel et le vénère-t-il ?",
+      "answer_fr": "Le prêtre baise l'autel en signe de vénération. Selon l'interprétation traditionnelle, l'autel représente le Christ ; les prières d'entrée évoquent aussi les reliques qu'il renferme traditionnellement.",
+      "explanation_fr": "Les anciens Ordines romains mentionnent le baiser de l'autel ; la fréquence du geste a augmenté au Moyen Âge. Cette histoire n'autorise pas à attribuer aux premiers siècles toutes les répétitions ultérieures.",
+      "triage": "1962_RITUAL_CROSSCHECK_REQUIRED",
+      "translation_status": "EDITORIAL_FRENCH_DRAFT_NOT_APPROVED",
+      "original_answer_status": "RESEARCH_DRAFT_EXACT_QUESTION_NOT_PUBLICATION_CERTIFIED",
+      "primary_source_uris": [
+        "https://www.newadvent.org/cathen/08663a.htm"
+      ]
+    },
+    {
+      "question_id": "VMQ-0057",
+      "owner_question_id": "VMQ-0057",
+      "object_id": "SN02",
+      "question_fr": "Pourquoi la sainte Communion est-elle traditionnellement distribuée à la clôture du sanctuaire ?",
+      "answer_fr": "La clôture de communion offre aux fidèles un emplacement adapté pour s'agenouiller et recevoir la Communion des mains du prêtre. Une nappe ou une patène de communion servait aussi à recueillir d'éventuelles parcelles eucharistiques.",
+      "explanation_fr": "Cette pratique associe une précaution concrète à la révérence envers le Saint-Sacrement. La clôture ne consacre pas le sanctuaire et ne fonde pas à elle seule la doctrine de la Présence réelle.",
+      "triage": "SOURCE_CORROBORATED_CANDIDATE",
+      "translation_status": "EDITORIAL_FRENCH_DRAFT_NOT_APPROVED",
+      "original_answer_status": "RESEARCH_DRAFT_EXACT_QUESTION_NOT_PUBLICATION_CERTIFIED",
+      "primary_source_uris": [
+        "https://www.newadvent.org/cathen/01356c.htm"
+      ]
+    },
+    {
+      "question_id": "VMQ-0052",
+      "owner_question_id": "VMQ-0052",
+      "object_id": "AL19",
+      "question_fr": "Quel est le grand ensemble décoratif qui s'élève derrière l'autel ?",
+      "answer_fr": "Le grand ensemble ornemental qui s'élève derrière un autel est couramment appelé retable ou, selon sa disposition, décor d'arrière-autel.",
+      "explanation_fr": "Il peut comprendre des tableaux, des statues, des niches et divers ornements. Il ne se confond pas nécessairement avec l'autel consacré où la Messe est offerte.",
+      "triage": "SOURCE_CORROBORATED_CANDIDATE",
+      "translation_status": "EDITORIAL_FRENCH_DRAFT_NOT_APPROVED",
+      "original_answer_status": "RESEARCH_DRAFT_EXACT_QUESTION_NOT_PUBLICATION_CERTIFIED",
+      "primary_source_uris": [
+        "https://www.newadvent.org/cathen/01346a.htm",
+        "https://www.newadvent.org/cathen/01362a.htm"
+      ]
+    },
+    {
+      "question_id": "VMQ-0053",
+      "owner_question_id": "VMQ-0053",
+      "object_id": "AL19",
+      "question_fr": "Quelle différence y a-t-il entre le retable et l'autel consacré ?",
+      "answer_fr": "Le retable est un ensemble décoratif placé derrière ou au-dessus de l'autel ; l'autel proprement dit est le lieu du sacrifice eucharistique.",
+      "explanation_fr": "Un retable peut être restauré ou remplacé en tant qu'œuvre d'art sans que cela change en soi la consécration de l'autel. Inversement, certains autels traditionnels n'ont pas de retable élaboré.",
+      "triage": "SOURCE_CORROBORATED_CANDIDATE",
+      "translation_status": "EDITORIAL_FRENCH_DRAFT_NOT_APPROVED",
+      "original_answer_status": "RESEARCH_DRAFT_EXACT_QUESTION_NOT_PUBLICATION_CERTIFIED",
+      "primary_source_uris": [
+        "https://www.newadvent.org/cathen/01346a.htm",
+        "https://www.newadvent.org/cathen/01362a.htm"
+      ]
+    },
+    {
+      "question_id": "VMQ-0017",
+      "owner_question_id": "VMQ-0017",
+      "object_id": "AL07",
+      "question_fr": "Pourquoi dispose-t-on traditionnellement six chandeliers sur le maître-autel ?",
+      "answer_fr": "Six chandeliers sont devenus un aménagement traditionnel du maître-autel, particulièrement pour les cérémonies plus solennelles. Leur présence ne signifie pas que six cierges doivent brûler à chaque Messe.",
+      "explanation_fr": "Les usages plus anciens recouraient souvent à deux cierges, ou à quatre ou six dans les fonctions plus solennelles. Il serait excessif d'attribuer au nombre six une signification mystique unique et obligatoire.",
+      "triage": "1962_RITUAL_CROSSCHECK_REQUIRED",
+      "translation_status": "EDITORIAL_FRENCH_DRAFT_NOT_APPROVED",
+      "original_answer_status": "RESEARCH_DRAFT_EXACT_QUESTION_NOT_PUBLICATION_CERTIFIED",
+      "primary_source_uris": [
+        "https://www.newadvent.org/cathen/01350a.htm"
+      ]
+    },
+    {
+      "question_id": "VMQ-0019",
+      "owner_question_id": "VMQ-0019",
+      "object_id": "AL07",
+      "question_fr": "Que signifie la lumière des cierges dans le culte catholique ?",
+      "answer_fr": "Les cierges expriment l'honneur rendu à Dieu, la joie et la prière ; ils rappellent le Christ, lumière du monde. Ils ne servent pas simplement à éclairer le sanctuaire.",
+      "explanation_fr": "Saint Jérôme défendait l'usage des cierges allumés même en plein jour, comme signe de joie. Des explications plus récentes associent aussi le cierge votif à une prière qui se prolonge pendant qu'il brûle.",
+      "triage": "SOURCE_CORROBORATED_CANDIDATE",
+      "translation_status": "EDITORIAL_FRENCH_DRAFT_NOT_APPROVED",
+      "original_answer_status": "RESEARCH_DRAFT_EXACT_QUESTION_NOT_PUBLICATION_CERTIFIED",
+      "primary_source_uris": [
+        "https://www.newadvent.org/cathen/03246a.htm"
+      ]
+    },
+    {
+      "question_id": "VMQ-0021",
+      "owner_question_id": "VMQ-0021",
+      "object_id": "AL07",
+      "question_fr": "La présence de six chandeliers signifie-t-elle qu'ils doivent tous être allumés ?",
+      "answer_fr": "Non. Six chandeliers peuvent faire partie de l'aménagement habituel du maître-autel sans que tous les cierges soient allumés à chaque célébration.",
+      "explanation_fr": "La tradition cérémonielle romaine distingue le nombre de chandeliers présents et celui des cierges effectivement allumés, variable selon la forme de la célébration et les circonstances. Les nombres précis applicables en 1962 exigent les rubriques correspondantes.",
+      "triage": "1962_RITUAL_CROSSCHECK_REQUIRED",
+      "translation_status": "EDITORIAL_FRENCH_DRAFT_NOT_APPROVED",
+      "original_answer_status": "RESEARCH_DRAFT_EXACT_QUESTION_NOT_PUBLICATION_CERTIFIED",
+      "primary_source_uris": [
+        "https://www.newadvent.org/cathen/01350a.htm"
+      ]
+    },
+    {
+      "question_id": "VMQ-0016",
+      "owner_question_id": "VMQ-0016",
+      "object_id": "AL06",
+      "question_fr": "Comment l'usage du crucifix d'autel s'est-il développé ?",
+      "answer_fr": "Dans les premiers siècles, une croix n'était pas toujours posée sur l'autel. On trouvait aussi des croix au-dessus de celui-ci ou suspendues aux ciboria ; l'usage du crucifix placé sur l'autel s'est développé progressivement.",
+      "explanation_fr": "Des auteurs médiévaux mentionnent une croix entre deux cierges ; la disposition devenue familière ne s'est pas imposée d'un seul coup. Il faut aussi distinguer la croix nue du crucifix portant l'image du Sauveur.",
+      "triage": "HISTORICAL_REVIEW_REQUIRED",
+      "translation_status": "EDITORIAL_FRENCH_DRAFT_NOT_APPROVED",
+      "original_answer_status": "RESEARCH_DRAFT_EXACT_QUESTION_NOT_PUBLICATION_CERTIFIED",
+      "primary_source_uris": [
+        "https://www.newadvent.org/cathen/04533a.htm"
+      ]
+    },
+    {
+      "question_id": "VMQ-0006",
+      "owner_question_id": "VMQ-0006",
+      "object_id": "AL01",
+      "question_fr": "Quelle différence y a-t-il entre maître-autel, autel latéral et autel isolé ?",
+      "answer_fr": "Le maître-autel est l'autel principal d'une église ; l'autel latéral est un autel secondaire. « Isolé » ou « indépendant » décrit la disposition matérielle d'un autel, non son rang dans l'église.",
+      "explanation_fr": "Les églises anciennes peuvent comporter plusieurs autels, adossés ou dégagés. L'orientation et la position ne déterminent pas à elles seules la consécration ni la validité sacramentelle.",
+      "triage": "SOURCE_CORROBORATED_CANDIDATE",
+      "translation_status": "EDITORIAL_FRENCH_DRAFT_NOT_APPROVED",
+      "original_answer_status": "RESEARCH_DRAFT_EXACT_QUESTION_NOT_PUBLICATION_CERTIFIED",
+      "primary_source_uris": [
+        "https://www.newadvent.org/cathen/01346a.htm",
+        "https://www.newadvent.org/cathen/01362a.htm"
+      ]
+    },
+    {
+      "question_id": "VMQ-0014",
+      "owner_question_id": "VMQ-0014",
+      "object_id": "AL06",
+      "question_fr": "Quel rapport unit le crucifix d'autel et le sacrifice du Calvaire ?",
+      "answer_fr": "Le crucifix placé près de l'autel rappelle la mort du Christ au Calvaire et le caractère sacrificiel de l'Eucharistie.",
+      "explanation_fr": "Sa proximité avec l'autel associe l'image visible du Seigneur crucifié à l'offrande liturgique. Cette signification théologique se distingue de l'histoire des croix placées sur l'autel.",
+      "triage": "SOURCE_CORROBORATED_CANDIDATE",
+      "translation_status": "EDITORIAL_FRENCH_DRAFT_NOT_APPROVED",
+      "original_answer_status": "RESEARCH_DRAFT_EXACT_QUESTION_NOT_PUBLICATION_CERTIFIED",
+      "primary_source_uris": [
+        "https://www.newadvent.org/cathen/04533a.htm",
+        "https://www.newadvent.org/cathen/01346a.htm"
+      ]
+    },
+    {
+      "question_id": "VMQ-0002",
+      "owner_question_id": "VMQ-0002",
+      "object_id": "AL01",
+      "question_fr": "En quel sens l'autel est-il à la fois une table et un lieu de sacrifice ?",
+      "answer_fr": "L'autel est appelé table parce qu'il rappelle la Cène du Seigneur, et autel du sacrifice parce que l'Eucharistie rend sacramentellement présent l'unique sacrifice du Christ.",
+      "explanation_fr": "La tradition chrétienne emploie les expressions mensa Domini et altare. Elles éclairent deux aspects complémentaires de l'Eucharistie qu'il ne faut pas opposer.",
+      "triage": "SOURCE_CORROBORATED_CANDIDATE",
+      "translation_status": "EDITORIAL_FRENCH_DRAFT_NOT_APPROVED",
+      "original_answer_status": "RESEARCH_DRAFT_EXACT_QUESTION_NOT_PUBLICATION_CERTIFIED",
+      "primary_source_uris": [
+        "https://www.newadvent.org/cathen/01346a.htm",
+        "https://www.newadvent.org/cathen/01362a.htm"
+      ]
+    },
+    {
+      "question_id": "VMQ-0003",
+      "owner_question_id": "VMQ-0003",
+      "object_id": "AL01",
+      "question_fr": "Quels liens unissent l'autel catholique aux autels de l'Ancien Testament et de l'Église primitive ?",
+      "answer_fr": "Les premiers chrétiens ont décrit l'autel eucharistique comme table du Seigneur et comme autel du sacrifice. Sa forme architecturale a évolué lorsque le culte est passé des maisons aux édifices construits pour les assemblées chrétiennes.",
+      "explanation_fr": "Les sources anciennes emploient des termes signifiant table et autel sacrificiel. Dans l'Antiquité tardive, les autels de pierre et les autels associés aux sépultures de martyrs ont pris plus d'importance, sans que chaque Eucharistie primitive ait pour autant été célébrée sur une tombe.",
+      "triage": "HISTORICAL_REVIEW_REQUIRED",
+      "translation_status": "EDITORIAL_FRENCH_DRAFT_NOT_APPROVED",
+      "original_answer_status": "RESEARCH_DRAFT_EXACT_QUESTION_NOT_PUBLICATION_CERTIFIED",
+      "primary_source_uris": [
+        "https://www.newadvent.org/cathen/01362a.htm"
+      ]
+    },
+    {
+      "question_id": "VMQ-0058",
+      "owner_question_id": "VMQ-0058",
+      "object_id": "SN02",
+      "question_fr": "La clôture rend-elle le sanctuaire sacré par elle-même ?",
+      "answer_fr": "Non. Le sanctuaire est réservé au culte sacré en raison de la destination et de l'usage liturgique de l'église, non du seul fait qu'une clôture y soit installée.",
+      "explanation_fr": "La clôture marque visiblement une limite et constitue un lieu approprié pour recevoir la Communion. Son absence ne signifie pas qu'il n'existe pas de sanctuaire.",
+      "triage": "SOURCE_CORROBORATED_CANDIDATE",
+      "translation_status": "EDITORIAL_FRENCH_DRAFT_NOT_APPROVED",
+      "original_answer_status": "RESEARCH_DRAFT_EXACT_QUESTION_NOT_PUBLICATION_CERTIFIED",
+      "primary_source_uris": [
+        "https://www.newadvent.org/cathen/01356c.htm",
+        "https://www.newadvent.org/cathen/01362a.htm"
+      ]
+    },
+    {
+      "question_id": "VMQ-0065",
+      "owner_question_id": "VMQ-0065",
+      "object_id": "SN04",
+      "question_fr": "Quelle différence y a-t-il entre les marches du sanctuaire et le marchepied de l'autel ?",
+      "answer_fr": "Les marches du sanctuaire relient différents niveaux du sol ; le marchepied supérieur de l'autel, appelé prédelle, est la plateforme immédiatement devant l'autel où se tient le célébrant.",
+      "explanation_fr": "Certains anciens manuels comptaient la prédelle dans le nombre total des degrés de l'autel ; cette convention peut rendre trompeuses des affirmations trop générales sur leur nombre.",
+      "triage": "SOURCE_CORROBORATED_CANDIDATE",
+      "translation_status": "EDITORIAL_FRENCH_DRAFT_NOT_APPROVED",
+      "original_answer_status": "RESEARCH_DRAFT_EXACT_QUESTION_NOT_PUBLICATION_CERTIFIED",
+      "primary_source_uris": [
+        "https://www.newadvent.org/cathen/01356f.htm"
+      ]
+    },
+    {
+      "question_id": "VMQ-0063",
+      "owner_question_id": "VMQ-0063",
+      "object_id": "SN04",
+      "question_fr": "Les marches ont-elles un rôle pratique, symbolique, ou les deux ?",
+      "answer_fr": "Les marches de l'autel ont une fonction pratique et une valeur symbolique : elles rendent l'autel surélevé accessible et soulignent visuellement sa dignité.",
+      "explanation_fr": "Des commentateurs catholiques ont donné à la montée vers l'autel un sens spirituel, tandis que les constructeurs adaptaient le nombre et la forme des marches à l'architecture de l'église.",
+      "triage": "SOURCE_CORROBORATED_CANDIDATE",
+      "translation_status": "EDITORIAL_FRENCH_DRAFT_NOT_APPROVED",
+      "original_answer_status": "RESEARCH_DRAFT_EXACT_QUESTION_NOT_PUBLICATION_CERTIFIED",
+      "primary_source_uris": [
+        "https://www.newadvent.org/cathen/01356f.htm"
+      ]
+    },
+    {
+      "question_id": "VMQ-0059",
+      "owner_question_id": "VMQ-0059",
+      "object_id": "SN02",
+      "question_fr": "Comment les bancs de communion se sont-ils développés en Occident ?",
+      "answer_fr": "Le banc de communion s'est développé comme une clôture marquant la limite du sanctuaire et un lieu où les fidèles pouvaient recevoir la Communion.",
+      "explanation_fr": "Ses formes et ses matériaux ont varié selon les époques et les églises. Il faut distinguer l'histoire de cet aménagement des exigences rubricales applicables à une célébration particulière.",
+      "triage": "HISTORICAL_REVIEW_REQUIRED",
+      "translation_status": "EDITORIAL_FRENCH_DRAFT_NOT_APPROVED",
+      "original_answer_status": "RESEARCH_DRAFT_EXACT_QUESTION_NOT_PUBLICATION_CERTIFIED",
+      "primary_source_uris": [
+        "https://www.newadvent.org/cathen/04170a.htm",
+        "https://www.newadvent.org/cathen/01356c.htm"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+name: Visible Mass sanctuary exact hotspot photograph
+on:
+  push:
+    branches: [feature/visible-mass-3d-explorer-p0]
+    paths:
+      - tools/acquire-visible-mass-hotspot-photo.py
+      - .github/workflows/visible-mass-exact-hotspot-photo.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - run: python -m pip install requests Pillow
+      - run: python tools/acquire-visible-mass-hotspot-photo.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: visible-mass-same-photo-hotspot
+          path: dist/visible-mass-altar-pilot/
+          if-no-files-found: error

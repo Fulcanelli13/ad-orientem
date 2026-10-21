@@ -1,0 +1,33 @@
+name: M6 B18 batch rights provenance
+on:
+  push:
+    branches:
+      - feature/visible-mass-3d-explorer-p0
+    paths:
+      - "tools/visible-mass-m6-b18-rights.py"
+      - "previews/visible-mass-3d/M6_P0_BATCH18_FRENCH_CATHOLIC_COLLECTIONS_20261019.v1.json"
+      - ".github/workflows/visible-mass-m6-b18-rights.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-provenance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install source metadata client
+        run: python -m pip install --quiet --disable-pip-version-check requests==2.32.5
+      - name: Check exact original Commons file licence, author and resolution
+        run: python tools/visible-mass-m6-b18-rights.py
+      - name: Preserve rights audit report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: M6-B18-Rights-Audit
+          path: dist/visible-mass/M6_B18_Commons_Rights_20261019.json
+          if-no-files-found: warn
+          retention-days: 30

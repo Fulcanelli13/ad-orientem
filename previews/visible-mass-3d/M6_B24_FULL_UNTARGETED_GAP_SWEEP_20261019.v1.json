@@ -1,0 +1,573 @@
+{
+  "schema": "AO_VISIBLE_MASS_M6_B24_FULL_UNTARGETED_GAP_SWEEP_V1",
+  "date": "2026-10-19",
+  "status": "BULK_RESEARCH_RIGHTS_SCREEN_ONLY_UNAPPROVED",
+  "sot": "previews/visible-mass-3d/M6_PHOTOGRAPHIC_ATLAS_COVERAGE_20261018.v1.json",
+  "preceding_gap_snapshot": "previews/visible-mass-3d/M6_B23_170_OBJECT_RECONCILED_GAP_SNAPSHOT_20261019.v1.json",
+  "object_count": 170,
+  "original_photo_gap_count": 72,
+  "source_record_count_original": 112,
+  "counts": {
+    "remaining_gaps_swept": 34,
+    "gap_ids_with_specific_source_urls": 15,
+    "gap_ids_with_exact_file_photo_license": 13,
+    "gap_ids_with_no_specific_photographic_candidate": 19,
+    "new_supporting_reconciliations": 8,
+    "independent_source_urls_in_document": 23,
+    "primary_assignments_added": 0,
+    "publication_approvals_added": 0
+  },
+  "source_status_breakdown": {
+    "CONTEXT_PHOTO_RIGHTS_IDENTIFIED": 1,
+    "UNRESOLVED": 12,
+    "NEEDS_SPECIFIC_SANCTUARY_VIEW": 1,
+    "CATHOLIC_CONTEXT_PHOTO_NEEDS_HERO_QA": 1,
+    "ANNOTATION_NOT_NEW_PHOTO": 3,
+    "DETAIL_OF_AL14_NOT_DISTINCT_PHOTO": 1,
+    "DETAIL_REUSE_HOLD": 2,
+    "MULTI_OBJECT_CONTEXT_ONLY": 1,
+    "TYPOLOGY_HOLD": 1,
+    "CATHOLIC_ENSEMBLE_CONTEXT_RIGHTS_IDENTIFIED": 1,
+    "HISTORICAL_SET_ONLY_RITE_UNPROVEN": 2,
+    "FUNCTIONAL_CONTEXT_ONLY": 1,
+    "EXACT_TYPE_RETAIL_RIGHTS_HOLD": 1,
+    "DIRECT_PHOTOGRAPH_FOUND": 1,
+    "HISTORICAL_SCAN_ONLY": 1,
+    "ILLUSTRATION_ONLY_NOT_PHOTO": 1,
+    "PHOTO_CANDIDATE_RITE_GENERIC": 1,
+    "LICENSED_HISTORICAL_VIATICUM_EXAMPLE": 1,
+    "OBJECT_CLASS_NOT_SINGLE_OBJECT": 1
+  },
+  "quality_principles": [
+    "Photograph rights verified per exact file, not inherited from object age or collection title.",
+    "Historical Catholic object not automatically representative of the 1962 Ordinary Roman rite.",
+    "Architectural/contextual views are a separate photo role from an isolated hero.",
+    "An illustration or digitized PDF of a real object does not satisfy the photographic-only atlas.",
+    "Shared source photo or museum accession reused for components must count once, not multiple independent acquisitions.",
+    "No one-object-one-image exception created without editorial signoff."
+  ],
+  "remaining_34": [
+    {
+      "object_id": "EN04",
+      "label": "Vestibule / narthex",
+      "zone": "EN",
+      "status": "CONTEXT_PHOTO_RIGHTS_IDENTIFIED",
+      "sources": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/File:Saint_Ladislaus_Church,_open_vestibule,_2016_Budapest.jpg",
+          "identity": "Vestibule of Roman Catholic Saint Ladislaus church, Budapest",
+          "license": "CC_BY_SA_3_0_EXACT_FILE",
+          "creator": "Globetrotter19",
+          "kind": "catholic_in_situ",
+          "fitness": "GOOD_CONTEXT_NO_STANDALONE_HERO",
+          "warning": "Entrance architecture should be a location view, not treated as isolated furniture"
+        }
+      ]
+    },
+    {
+      "object_id": "EN08",
+      "label": "Pew kneeler",
+      "zone": "EN",
+      "status": "UNRESOLVED",
+      "acquisition": "A Catholic church pew kneeler photographed on its own or close frontal view, distinguish fixed hinged pew kneeler from portable prie-dieu and Anglican needlepoint kneeler."
+    },
+    {
+      "object_id": "SN01",
+      "label": "Sanctuary",
+      "zone": "SN",
+      "status": "NEEDS_SPECIFIC_SANCTUARY_VIEW",
+      "acquisition": "Use exact existing Catholic sanctuary source from scene bank if rights and matching context confirmed; do not invent a new site or pretend a standalone object photo is required for architectural zone."
+    },
+    {
+      "object_id": "SN03",
+      "label": "Communion-rail gate",
+      "zone": "SN",
+      "status": "UNRESOLVED",
+      "acquisition": "Find traditional communion rail centre gate with visible latch and matched rail; must not mislabel the whole communion rail SN02."
+    },
+    {
+      "object_id": "SN09",
+      "label": "Hanging rood / sanctuary crucifix",
+      "zone": "SN",
+      "status": "CATHOLIC_CONTEXT_PHOTO_NEEDS_HERO_QA",
+      "sources": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/File:Church_of_the_Atonement_(Crooksville,_Ohio)_-_sanctuary_crucifix.jpg",
+          "identity": "Sanctuary crucifix at Catholic Church of the Atonement, Crooksville, Ohio",
+          "license": "CC_BY_SA_4_0_EXACT_FILE",
+          "creator": "Wikimedia original contributor",
+          "kind": "catholic_in_situ",
+          "fitness": "CONTEXT_OBJECT",
+          "warning": "Need check crucifix is actually hanging/suspended rather than wall mounted; if not, SN09 remains missing"
+        }
+      ]
+    },
+    {
+      "object_id": "AL02",
+      "label": "Altar orientation",
+      "zone": "AL",
+      "status": "ANNOTATION_NOT_NEW_PHOTO",
+      "acquisition": "Altar orientation belongs as spatial/rubrical annotation on authenticated Catholic altar photograph; no independent hero asset."
+    },
+    {
+      "object_id": "AL09",
+      "label": "Seventh / pontifical candle",
+      "zone": "AL",
+      "status": "UNRESOLVED",
+      "acquisition": "Photograph documented seventh pontifical candlestick in situ with six other altar candles and identify pontifical condition; single candle has no independent distinguishing physical form."
+    },
+    {
+      "object_id": "AL15",
+      "label": "Altar sepulchre / relic cavity",
+      "zone": "AL",
+      "status": "DETAIL_OF_AL14_NOT_DISTINCT_PHOTO",
+      "sources": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/File:Altar_stone_Sint-Niklaaskerk_Mesen.jpg",
+          "identity": "Existing Catholic altar-stone sepulchrum (AL14 asset): detail shows relic cavity marker",
+          "license": "CC_BY_SA_4_0_EXACT_FILE",
+          "creator": "ViennaUK",
+          "kind": "existing_source_reuse",
+          "fitness": "DETAIL_ANNOTATION_ONLY",
+          "warning": "Must inspect original to confirm centre lid/relic cavity; not a new independently sourced photo"
+        }
+      ],
+      "acquisition": "Use labelled macro crop only if relic cavity actually identifiable; otherwise commissioned macro photograph."
+    },
+    {
+      "object_id": "AL17",
+      "label": "Epistle side of altar",
+      "zone": "AL",
+      "status": "ANNOTATION_NOT_NEW_PHOTO",
+      "acquisition": "Correct Epistle side of an authenticated altar (liturgical right of celebrant when facing high altar): annotation, no isolated independent object."
+    },
+    {
+      "object_id": "AL18",
+      "label": "Gospel side of altar",
+      "zone": "AL",
+      "status": "ANNOTATION_NOT_NEW_PHOTO",
+      "acquisition": "Correct Gospel side of an authenticated altar (liturgical left of celebrant when facing high altar): annotation, no isolated independent object."
+    },
+    {
+      "object_id": "AL20",
+      "label": "Altar ornamentation / gilding",
+      "zone": "AL",
+      "status": "DETAIL_REUSE_HOLD",
+      "acquisition": "Photograph one representative existing original high-altar gilding detail. The source's altar identity must remain intact; detail cannot prove entire furniture configuration."
+    },
+    {
+      "object_id": "SV05",
+      "label": "Large altar Host",
+      "zone": "SV",
+      "status": "UNRESOLVED",
+      "acquisition": "Large unconsecrated priest's host, isolated on dark neutral background with scale, not an elevation/Consecration action or generic small bread."
+    },
+    {
+      "object_id": "SV06",
+      "label": "Small Communion Hosts",
+      "zone": "SV",
+      "status": "MULTI_OBJECT_CONTEXT_ONLY",
+      "sources": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/File:Patens_with_communion_wafers.JPG",
+          "identity": "Multiple deep patens holding smaller Communion breads (Polish Catholic setting)",
+          "license": "CC_BY_SA_4_0_EXACT_FILE",
+          "creator": "Paterm",
+          "kind": "catholic_photograph",
+          "fitness": "CONTEXT_ONLY_NOT_SINGLE_HOST",
+          "warning": "Image includes multiple patens; select only after crop retaining honest context, never count as isolated host"
+        }
+      ],
+      "acquisition": "One clearly identified small unconsecrated Communion host isolated on plain background."
+    },
+    {
+      "object_id": "SV07",
+      "label": "Mass wine",
+      "zone": "SV",
+      "status": "UNRESOLVED",
+      "acquisition": "Image of documented altar wine bottle or wine cruet with legible identification; avoid glass of secular wine or inference from unlabeled cruet."
+    },
+    {
+      "object_id": "SV11",
+      "label": "Custodia / exposition pyx",
+      "zone": "SV",
+      "status": "TYPOLOGY_HOLD",
+      "sources": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/File:Monstrance_from_a_Custodia,_Spain,_about_1625-1650,_silver_gilt_-_Victoria_and_Albert_Museum_-_London,_England_-_DSC05155.jpg",
+          "identity": "Spanish liturgical monstrance formerly associated with a custodia, NOT an exposition pyx/custodia container itself",
+          "license": "CC0_1_0_EXACT_FILE",
+          "creator": "Daderot",
+          "kind": "historic_museum",
+          "fitness": "REJECT_WRONG_OBJECT",
+          "warning": "Search result misleading: monstrance from a custodia cannot serve as custodia/pyx hero"
+        }
+      ],
+      "acquisition": "Find standalone traditional custodia/exposition pyx photographed separately, identified by museum or sacristy source."
+    },
+    {
+      "object_id": "SV12",
+      "label": "Sacred-vessel decoration",
+      "zone": "SV",
+      "status": "DETAIL_REUSE_HOLD",
+      "acquisition": "Select approved individual sacred vessel detail showing historically identified chased ornament; should link back to parent vessel ID, not create a second independent object."
+    },
+    {
+      "object_id": "LN07",
+      "label": "Subdeacon's humeral veil",
+      "zone": "LN",
+      "status": "UNRESOLVED",
+      "acquisition": "Traditional subdeacon's humeral veil used to hold paten in solemn Mass, physically distinguished from Benediction humeral veil; exact role and photograph required."
+    },
+    {
+      "object_id": "EQ03",
+      "label": "Cruet tray",
+      "zone": "EQ",
+      "status": "CATHOLIC_ENSEMBLE_CONTEXT_RIGHTS_IDENTIFIED",
+      "sources": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/File:Ciborium_Morlot_Notre-Dame_NDP7_Cat91.jpg",
+          "identity": "Altar cruets WITH tray, belonging to Cardinal Morlot, Notre-Dame; despite misleading Commons filename 'Ciborium'",
+          "license": "CC_BY_4_0_EXACT_FILE",
+          "creator": "Marie-Lan Nguyen",
+          "kind": "museum_catholic_liturgical",
+          "fitness": "TRAY_PART_OF_COMPOSITE_ONLY",
+          "warning": "Separate photo-level photographer credit from historic silver in public domain; full tray may be obscured by two cruets"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/File:Reims,_Palais_du_Tau,_jugs_for_wine.JPG",
+          "identity": "Royal coronation chapel cruet vessels with tray, Reims",
+          "license": "CC_BY_4_0_EXACT_FILE",
+          "creator": "Dguendel",
+          "kind": "museum_catholic_liturgical",
+          "fitness": "ENSEMBLE_CONTEXT_ONLY",
+          "warning": "Ceremonial coronation set, not standalone empty tray"
+        }
+      ],
+      "acquisition": "Photograph actual empty cruet tray alone OR clearly label ensemble as a defined set with the tray as identified component."
+    },
+    {
+      "object_id": "EQ04",
+      "label": "Lavabo bowl",
+      "zone": "EQ",
+      "status": "HISTORICAL_SET_ONLY_RITE_UNPROVEN",
+      "sources": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/File:Ewer_and_basin_(lavabo_set)_MET_DP117095.jpg",
+          "identity": "Moldovan aristocratic silver ewer and basin, circa 1680; museum name 'lavabo set'",
+          "license": "CC0_1_0_EXACT_FILE",
+          "creator": "Metropolitan Museum of Art Open Access",
+          "kind": "museum_secular_possible",
+          "fitness": "TYPOLOGY_HOLD",
+          "warning": "Lavabo washing set is not established as Roman Catholic Mass vessel; can't be Catholic EQ04 hero"
+        }
+      ],
+      "acquisition": "Isolated Catholic liturgical lavabo basin with church/vestry provenance."
+    },
+    {
+      "object_id": "EQ05",
+      "label": "Lavabo water jug",
+      "zone": "EQ",
+      "status": "HISTORICAL_SET_ONLY_RITE_UNPROVEN",
+      "sources": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/File:Ewer_and_basin_(lavabo_set)_MET_DP118664.jpg",
+          "identity": "Second view of SAME Moldovan ewer-and-basin set (Met 2005.62.1 .2a b)",
+          "license": "CC0_1_0_EXACT_FILE",
+          "creator": "Metropolitan Museum of Art Open Access",
+          "kind": "same_museum_object_as_EQ04",
+          "fitness": "TYPOLOGY_HOLD_NOT_INDEPENDENT_CANDIDATE",
+          "warning": "Same museum object reused; no extra distinct source/object credit. Courtly rather than established liturgical provenance"
+        }
+      ],
+      "acquisition": "Individual small church lavabo water jug/ewer explicitly identified as liturgical use."
+    },
+    {
+      "object_id": "EQ09",
+      "label": "Incense and charcoal",
+      "zone": "EQ",
+      "status": "UNRESOLVED",
+      "acquisition": "Incense grains and hardwood liturgical charcoal separately identifiable beside a Roman Catholic thurible; avoid confounding incense boat and spoon EQ08."
+    },
+    {
+      "object_id": "EQ12",
+      "label": "Acolyte candle / candlestick",
+      "zone": "EQ",
+      "status": "FUNCTIONAL_CONTEXT_ONLY",
+      "sources": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/File:Fun%C3%A7%C3%B5es_lit%C3%BArgicas_efetuadas_por_coroinhas.jpg",
+          "identity": "Brazilian Catholic altar servers, including two candle bearers",
+          "license": "CC_BY_3_0_EXACT_FILE",
+          "creator": "Pastoral da Comunicação Paróquia Nossa Senhora da Assunção",
+          "kind": "catholic_ceremonial_action",
+          "fitness": "LOW_RES_MULTI_PERSON_REFERENCE",
+          "warning": "342×349 pixels, shows roles not individual candlestick"
+        }
+      ],
+      "acquisition": "Isolated single processional/acolyte candlestick without attendant, not an altar stand AL07."
+    },
+    {
+      "object_id": "EQ13",
+      "label": "Torch / elevation candle",
+      "zone": "EQ",
+      "status": "UNRESOLVED",
+      "acquisition": "Catholic traditional hand-held elevation torch/candle, not outdoor procession torch, ecclesiastical sculpted angel or electronic altar lamp."
+    },
+    {
+      "object_id": "EQ14",
+      "label": "Candle snuffer",
+      "zone": "EQ",
+      "status": "EXACT_TYPE_RETAIL_RIGHTS_HOLD",
+      "sources": [
+        {
+          "url": "https://gerkens.com/products/24-candlelighter-w-snuffer",
+          "identity": "Modern elongated Catholic church candle lighter and bell-type snuffer on pole",
+          "license": "PHOTOGRAPH_REUSE_NOT_CLEARED",
+          "creator": "Gerken's Religious Supplies",
+          "kind": "retailer_product",
+          "fitness": "EXACT_PHYSICAL_SHAPE_WHITE_BACKGROUND",
+          "warning": "Commercial retailer owns photo; need explicit licence or original controlled photography"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/File:Candle_snuffer.jpg",
+          "identity": "Hunt Museum small 13th/14th-c bronze conical snuffer",
+          "license": "PUBLIC_DOMAIN_MARKED_ON_EXACT_FILE",
+          "creator": "Hunt Museum",
+          "kind": "historic_individual_small_artifact",
+          "fitness": "REJECT_WRONG_FORM",
+          "warning": "No long pole; cannot represent ordinary altar candle extinguishing device"
+        }
+      ],
+      "acquisition": "Single portable long-handled altar candle lighter/snuffer, clean background and photo redistribution rights."
+    },
+    {
+      "object_id": "EQ15",
+      "label": "Hand-held blessing cross",
+      "zone": "EQ",
+      "status": "UNRESOLVED",
+      "acquisition": "Handheld blessing cross applicable to Latin Roman rite with documented ceremonial function; exclude Eastern cross and non-liturgical decorative pendant."
+    },
+    {
+      "object_id": "EQ16",
+      "label": "Sacred purification vessel",
+      "zone": "EQ",
+      "status": "DIRECT_PHOTOGRAPH_FOUND",
+      "sources": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/File:Vasculum.JPG",
+          "identity": "Catholic ablution vessel (vasculum, vase à ablutions)",
+          "license": "CC_BY_SA_3_0_EXACT_FILE",
+          "creator": "Patnac",
+          "kind": "identified_liturgical_object",
+          "fitness": "SINGLE_OBJECT_OR_USE_VIEW_NEEDS_PIXEL_CHECK",
+          "warning": "2,272×1,704 original; picture quality, background and object typology against EQ16 must be visually reviewed"
+        }
+      ],
+      "acquisition": "Inspect 100% original photo; select if complete vessel and sufficient isolation."
+    },
+    {
+      "object_id": "SC02",
+      "label": "Vesting table",
+      "zone": "SC",
+      "status": "UNRESOLVED",
+      "acquisition": "Catholic sacristy vesting/preparation table isolated with linen covering, avoid ordinary modern office table or object unrelated to vestment layout."
+    },
+    {
+      "object_id": "SC04",
+      "label": "Sacristy crucifix",
+      "zone": "SC",
+      "status": "UNRESOLVED",
+      "acquisition": "Catholic sacristy wall crucifix in its identified room; must be clearly visible and distinguishable from altar crucifix AL06."
+    },
+    {
+      "object_id": "SC07",
+      "label": "Liturgical Ordo / calendar",
+      "zone": "SC",
+      "status": "HISTORICAL_SCAN_ONLY",
+      "sources": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/File:Ordo_divini_officii_recitandi_et_missae_celebrandae_juxta_breviarium_et_missale_romanum_-_pro_anno_bissextili,_1812_-_in_quo_Pascha_incidit_in_29_Martii_(IA_OrdoRecitandiDiviniOfficii).pdf",
+          "identity": "Catholic Roman Ordo for Québec diocese 1812; direct historical text scan",
+          "license": "HISTORIC_PRINT_PUBLIC_DOMAIN_BUT_NOT_PHOTOGRAPH",
+          "creator": "Catholic Church / digitized Internet Archive",
+          "kind": "digitized_pdf",
+          "fitness": "HISTORICAL_TEXT_REFERENCE_ONLY",
+          "warning": "Not photo of a physical Ordo booklet and not 1962 calendar; may guide exact artefact identity"
+        }
+      ],
+      "acquisition": "Standalone physical 1962 Roman-rite Ordo booklet (or earlier historical physical exemplar if labelled historical) clearly photographed against neutral background."
+    },
+    {
+      "object_id": "SC10",
+      "label": "Sacristy preparation board",
+      "zone": "SC",
+      "status": "UNRESOLVED",
+      "acquisition": "Document a Catholic sacristy preparation/rota board, distinguished from devotional poster and church noticeboard; photographed frontally."
+    },
+    {
+      "object_id": "SA03",
+      "label": "Baptismal shell / vessel",
+      "zone": "SA",
+      "status": "ILLUSTRATION_ONLY_NOT_PHOTO",
+      "sources": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/File:Catholic_Picture_Dictionary_(Pfeiffer)_-_Baptismal_shell.jpg",
+          "identity": "1948 Catholic illustrated definition of shallow baptismal shell",
+          "license": "ILLUSTRATION_US_STATUS_PD_NOT_REPRO_CLEAR_GLOBALLY",
+          "creator": "R. and K. Wood / Harold A Pfeiffer",
+          "kind": "historical_illustration",
+          "fitness": "TYPOLOGY_REFERENCE_ONLY",
+          "warning": "672×383 scan, not photograph; international rights not fully resolved; cannot fill photo gap"
+        }
+      ],
+      "acquisition": "Individual actual Catholic baptismal shell, museum provenance and eligible photograph rather than illustration."
+    },
+    {
+      "object_id": "SA09",
+      "label": "Wedding rings",
+      "zone": "SA",
+      "status": "PHOTO_CANDIDATE_RITE_GENERIC",
+      "sources": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/File:Wedding_rings.jpg",
+          "identity": "Two gold wedding rings shown as a pair on neutral-ish photograph",
+          "license": "COPYRIGHT_STATUS_CHECK_EXACT_FILE",
+          "creator": "Jeff Belmonte",
+          "kind": "generic_standalone_ring_photograph",
+          "fitness": "OBJECT_FORM_FIT_RITE_CONTEXT_ABSENT",
+          "warning": "Rings themselves have no special Catholic appearance; ensure image source rights and include explanatory Catholic rite link rather than asserting religion from jewelry"
+        }
+      ],
+      "acquisition": "Either simple pair of rings as physical objects with explicit generic status or photograph of rings being blessed at documented traditional Catholic marriage."
+    },
+    {
+      "object_id": "SA11",
+      "label": "Home Communion pyx and case",
+      "zone": "SA",
+      "status": "LICENSED_HISTORICAL_VIATICUM_EXAMPLE",
+      "sources": [
+        {
+          "url": "https://commons.wikimedia.org/wiki/File:Portavi%C3%A1tico_Museo_de_Am%C3%A9rica.JPG",
+          "identity": "Peruvian Spanish-colonial gold, enamel and gems viaticum carrier, Museo de América Madrid",
+          "license": "CC_BY_3_0_EXACT_FILE",
+          "creator": "Outisnn",
+          "kind": "museum_liturgical_object",
+          "fitness": "HISTORICAL_SINGLE_CARRIER_WITHOUT_DOCUMENTED_MODERN_CASE",
+          "warning": "Highly ornamented colonial carrier; not ordinary 1962 bedside Communion case"
+        },
+        {
+          "url": "https://commons.wikimedia.org/wiki/File:French_-_Pyx_-_Walters_44252.jpg",
+          "identity": "French medieval Catholic pyx for reserving and bringing Communion to sick",
+          "license": "SOURCE_LICENSE_CHECK_REQUIRED",
+          "creator": "Walters Art Museum",
+          "kind": "historic_museum",
+          "fitness": "HISTORICAL_ALTERNATE_ONLY",
+          "warning": "Not pyx + matching case as requested"
+        }
+      ],
+      "acquisition": "Physically matching home Communion pyx AND its carrier/case within one coherent authorized set. Avoid isolated pyx presented falsely as a complete sick-call kit."
+    },
+    {
+      "object_id": "SP06",
+      "label": "Historical sacred vessels",
+      "zone": "SP",
+      "status": "OBJECT_CLASS_NOT_SINGLE_OBJECT",
+      "acquisition": "This is a comparative category for historical sacred vessels; use tagged already-sourced chalice, paten, pyx and monstrance records instead of a forced arbitrary 'single object' hero. Requires editorial exception to one-image-one-object rule."
+    }
+  ],
+  "cross_batch_support": [
+    {
+      "object_id": "EQ01/EQ02/EQ03",
+      "priority": "PILOT_MAJOR_SOURCE_FIND",
+      "url": "https://dia.org/collection/pair-cruets-and-tray/24645",
+      "title": "Laurent Amiot Pair of Cruets and Tray, ca.1825, DIA 53.320, provenance Catholic Church Saint-Antoine de Tilly",
+      "identification": "Inscribed A (aqua) and V (vinum), eliminating visual wine/water ambiguity; tray also documented",
+      "rights": "MUSEUM_OBJECT_CIRCA_1825_PUBLIC_DOMAIN; EXACT_PHOTOGRAPH_RIGHTS_NEED_CHECK",
+      "photograph": "Institutional object record includes image, but exact image reuse/download field not individually verified",
+      "disposition": "HOLD_PHOTO_PUBLICATION; REQUIRE_PERMISSION_OR_MARKED_OPEN_ACCESS_IMAGE",
+      "note": "Single paired ensemble can show historical labels as identified parts, but cannot be repurposed as two different standalone photographs without truthful cropping."
+    },
+    {
+      "object_id": "EQ14",
+      "priority": "TYPOLOGY_GUIDE",
+      "url": "https://gerkens.com/products/24-candlelighter-w-snuffer",
+      "title": "Traditional church long-handled candle lighter and snuffer",
+      "identification": "Bell cap plus wax-taper tube on long handle; correct EQ14 form",
+      "rights": "COMMERCIAL_CATALOG_PHOTO_UNCLEARED",
+      "disposition": "REQUEST_DIRECT_PHOTO_PERMISSION_OR_COMMISSION"
+    },
+    {
+      "object_id": "SA10",
+      "priority": "ONE_DEFINED_KIT_STRONG_PHOTO",
+      "url": "https://commons.wikimedia.org/wiki/File:Versehgarnitur_komplett.jpg",
+      "title": "German/Austrian complete Catholic sick-call room arrangement",
+      "identification": "Last-rites cross, priest/patient napkins, tablecloth, two candles, oil and holy-water dishes; 1156×1368",
+      "rights": "CC_BY_SA_4_0_EXACT_FILE_AUTHOR_ViennaUK",
+      "disposition": "CATHOLIC_CONTEXTUAL_SET_WITH_LICENSE_NOT_YET_USER_APPROVED",
+      "note": "Not equivalent to a compact pocket carrying kit; useful to teach the proper sick-call setup if SA10 is rephrased."
+    },
+    {
+      "object_id": "SA11",
+      "priority": "CATHOLIC_HISTORICAL_EXAMPLE",
+      "url": "https://commons.wikimedia.org/wiki/File:Portavi%C3%A1tico_Museo_de_Am%C3%A9rica.JPG",
+      "title": "Viaticum carrier, Museo de América Madrid",
+      "identification": "Real Roman Catholic historical portable viaticum object",
+      "rights": "CC_BY_3_0_EXACT_FILE",
+      "disposition": "HISTORICAL_NOT_REPRESENTATIVE_1962_HERO"
+    },
+    {
+      "object_id": "SV06",
+      "priority": "REFERENCE_ONLY",
+      "url": "https://commons.wikimedia.org/wiki/File:Patens_with_communion_wafers.JPG",
+      "title": "Patens with small communion wafers in Catholic context",
+      "identification": "Several patens and unconsacrated breads (no physical isolation)",
+      "rights": "CC_BY_SA_4_0_EXACT_FILE",
+      "disposition": "CONTEXT_NOT_INDIVIDUAL_HOST_HERO"
+    },
+    {
+      "object_id": "SA02",
+      "priority": "SUPPORTING_PREVIOUS_RESEARCH",
+      "url": "https://commons.wikimedia.org/wiki/File:Fonts_baptismaux_de_l'%C3%A9glise_St_Victor_de_Glons,_KIK-IRPA_b027385.jpg",
+      "title": "St Victor de Glons historical covered baptismal font",
+      "identification": "Medieval Catholic stone font and c.1490–1510 brass cover; photograph dated 1942",
+      "rights": "CC_BY_4_0_EXACT_FILE_PHOTOGRAPH",
+      "disposition": "CONTEXT_PRECEDENT_NOT_STANDALONE_FONT_COVER_HERO"
+    },
+    {
+      "object_id": "EQ01",
+      "priority": "PILOT_LICENSED_SINGLE_WINE_CRUET_LEAD",
+      "url": "https://commons.wikimedia.org/wiki/File:WLA_vanda_Cruet_for_the_Mass.jpg",
+      "title": "V&A museum silver-gilt Mass cruet with V on lid, possibly Spanish Netherlands, c.1540, accession 472-1879",
+      "identification": "Museum explicitly explains the applied V (vinum) implies Mass wine; authentic Catholic altar cruet, photo original 3000x4000.",
+      "photographer": "VeronikaB (Wikipedia Loves Art at V&A, February 2009)",
+      "rights": "CC_BY_2_5_EXACT_FILE_FLICKR_REVIEWED",
+      "disposition": "SINGLE_OBJECT_WINE_CRUET_CANDIDATE_AWAITING_PIXEL_AND_EDITORIAL_REVIEW",
+      "note": "Museum describes V as a suggestion rather than definitive documentary proof. It illustrates EQ01 as a specific historical wine cruet; should not stand in for modern matching 1962 service without being labelled."
+    },
+    {
+      "object_id": "EQ01/EQ02/EQ03",
+      "priority": "DIA_IMAGE_RIGHTS_HOLD_NOT_GENERAL_COPYRIGHT",
+      "url": "https://dia.org/collection/rights-reproduction",
+      "title": "DIA rights and reproduction policy for separately downloadable public-domain object images",
+      "identification": "DIA says many images of public-domain artworks are downloadable without fee, but an exact downloadable/public-domain photographic image for accession 53.320 has not been verified",
+      "rights": "PER_IMAGE_CLEARANCE_PENDING",
+      "disposition": "VERIFY_ON_OBJECT_PAGE_OR_REQUEST_LICENSE; DO_NOT_INFER_FROM_OBJECT_YEAR"
+    }
+  ],
+  "unapproved": true,
+  "public_release": false,
+  "canonical_registry_mutated": false,
+  "b24_review_summary": {
+    "highest_return": [
+      "EQ01 licensed V-marked standalone wine cruet: Commons photograph CC BY 2.5",
+      "EQ01/EQ02/equivalent paired tray museum record with physical A/V markings: rights hold",
+      "EQ16 Vasculum identified ablution vessel with exact-file CC BY-SA 3.0",
+      "SA10 full Catholic sick-call room arrangement exact-file CC BY-SA 4.0",
+      "SA11 historical viaticum carrier exact-file CC BY 3.0",
+      "EQ03 French Notre-Dame liturgical cruet tray photograph exact-file CC BY 4.0; tray not isolated"
+    ],
+    "publication_eligible_hero_images_confirmed": 0,
+    "review_needed": "No new pilot hero statuses approved; separate source provenance and image rights from full image isolation, 1962 type, and user visual rating."
+  }
+}

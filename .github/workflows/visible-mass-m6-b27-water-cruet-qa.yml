@@ -1,0 +1,38 @@
+name: Visible Mass M6 B27 standalone water cruet QA (research only)
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - feature/visible-mass-3d-explorer-p0
+    paths:
+      - tools/visible-mass-m6-b27-water-cruet-qa.py
+      - .github/workflows/visible-mass-m6-b27-water-cruet-qa.yml
+  pull_request:
+    paths:
+      - tools/visible-mass-m6-b27-water-cruet-qa.py
+      - .github/workflows/visible-mass-m6-b27-water-cruet-qa.yml
+permissions:
+  contents: read
+jobs:
+  acquire:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Check Python syntax
+        run: python -m py_compile tools/visible-mass-m6-b27-water-cruet-qa.py
+      - name: Install image dependencies
+        run: python -m pip install --quiet --disable-pip-version-check Pillow==11.3.0 requests==2.32.5
+      - name: Acquire one licensed water-cruet original
+        run: python tools/visible-mass-m6-b27-water-cruet-qa.py
+      - name: Preserve researcher-only source and photo
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: M6-B27-Water-Cruet-Source-Original
+          path: dist/visible-mass/m6-b27-water-cruet/
+          if-no-files-found: warn
+          retention-days: 30

@@ -1,0 +1,289 @@
+{
+  "schema": "AO_VISIBLE_MASS_M6_B22_BULK_RIGHTS_AND_TYPOLOGY_V1",
+  "date": "2026-10-19",
+  "status": "RESEARCH_ONLY_UNAPPROVED_DO_NOT_PUBLISH",
+  "predecessor": "previews/visible-mass-3d/M6_B21_BULK_GAP_RESEARCH_20261019.v1.json",
+  "baseline": "previews/visible-mass-3d/M6_PHOTOGRAPHIC_ATLAS_COVERAGE_20261018.v1.json",
+  "pilot_source": "previews/visible-mass-3d/M6_ONE_OBJECT_ONE_IMAGE_P0_20261019.v4.json",
+  "baseline_metrics": {
+    "canonical_objects": 170,
+    "existing_source_records": 112,
+    "objects_without_any_candidate_or_hotspot": 72,
+    "pilot_objects": 30,
+    "pilot_provisional_single_hero": 12,
+    "pilot_without_single_hero": 18
+  },
+  "acquisition_policy": "One source photograph per exact physical object or defined set; no generic lecterns for Missal stand, altar ciboria for Eucharistic ciboria, or interior/context for standalone hero. Mark exact-file rights separately from visual acceptance and 1962 liturgical representativeness.",
+  "leads": [
+    {
+      "object_id": "BK02",
+      "label": "Missal stand or cushion",
+      "priority": "PILOT_RIGHTS_RESOLUTION_CANDIDATE",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Missal_stand,_Japan,_late_1500s_to_early_1600s_AD,_lacquered_wood,_mother-of-pearl,_gold_-_Peabody_Essex_Museum_-_DSC07672.jpg",
+      "collection": "Peabody Essex Museum, Salem, Massachusetts",
+      "identity": "Japanese Nanban-style lacquered wood Catholic missal stand, late 1500s to early 1600s, with central IHS emblem, mother-of-pearl/gold inlay.",
+      "creator": "Daderot (photographer, NOT maker)",
+      "rights_status": "CC0_1_0_SOURCE_FILE_VERIFIED",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "photo_px": [
+        3535,
+        4452
+      ],
+      "visual_status": "PREVIEW_SHOWS_STAND_AGAINST_MUSEUM_BACKGROUND; COMPLETE_PRESENCE_AND_ISOLATION_NEED_ORIGINAL_PIXEL_QA",
+      "liturgical_fit": "GENUINE_CATHOLIC_MISSAL_STAND_BUT_RARE_JESUIT_JAPANESE_HISTORICAL_TYPE_NOT_REPRESENTATIVE_COMMON_1962_PARISH",
+      "selection_status": "LICENSED_HISTORIC_BACKUP_NOT_APPROVED_HERO",
+      "notes": "This solves copyright on this independently photographed image, NOT the LACMA/Rawpixel rights disagreement. Museum collection image rights do not transfer automatically. Source is original photographer's CC0 release."
+    },
+    {
+      "object_id": "EQ06",
+      "label": "Altar bell",
+      "priority": "PILOT_STANDALONE_CANDIDATE",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Carcassonne_-_%C3%89glise_Saint-Vincent_-_Tr%C3%A9sor_25.jpg",
+      "collection": "Trésor de l'église Saint-Vincent de Carcassonne; French patrimony Palissy PM11002445",
+      "identity": "Gilt silver and enamel altar bell (clochette), nineteenth century",
+      "creator": "Tylwyth Eldar (photographer)",
+      "rights_status": "CC_BY_SA_4_0_SOURCE_FILE_VERIFIED",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "photo_px": [
+        4000,
+        6000
+      ],
+      "visual_status": "SINGLE_BELL_FROM_EXACT_TITLE; MUSEUM_DISPLAY_FRAMING_AND_ORIGINAL_PIXEL_QA_PENDING",
+      "liturgical_fit": "LITURGICAL_SINGLE_BELL_EXAMPLE; CEREMONIAL_STYLISTIC_REPRESENTATIVENESS_CHECK_REQUIRED",
+      "selection_status": "LICENSED_PILOT_HERO_LEAD_NOT_APPROVED"
+    },
+    {
+      "object_id": "SV04",
+      "label": "Ciborium veil",
+      "priority": "NEW_GAP_STRONG",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Italy,_18th_century_-_Ciborium_Veil_-_1921.135_-_Cleveland_Museum_of_Art.jpg",
+      "collection": "Cleveland Museum of Art",
+      "accession": "1921.135",
+      "identity": "Italian 18th-century silk-damask ciborium veil, specifically identified by museum",
+      "creator": "Cleveland Museum of Art Open Access (exact Commons media licensed)",
+      "rights_status": "CC0_1_0_SOURCE_FILE_VERIFIED",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "photo_px": [
+        3137,
+        3400
+      ],
+      "visual_status": "STUDIO_TEXTILE_IMAGE_SOURCE_IDENTIFIED; VERIFY_COMPLETE_EDGE_AND_FRAMING",
+      "liturgical_fit": "HISTORICAL_CATHOLIC_CIBORIUM_VEIL_EXAMPLE; FLAT_TEXTILE_NOT_VEIL_SHOWN_OVER_THE_VESSEL",
+      "selection_status": "EXACT_OBJECT_LICENSED_CANDIDATE_NO_USER_APPROVAL"
+    },
+    {
+      "object_id": "LN06",
+      "label": "Manutergium / finger towel",
+      "priority": "NEW_GAP_STRONG",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Lavabo_towel_Cieszyn_Poland.JPG",
+      "collection": "Catholic liturgical objects, Cieszyn, Poland",
+      "identity": "Catholic Mass lavabo towel used to dry celebrant's hands at the Offertory, recorded in source description",
+      "creator": "Abraham (photographer)",
+      "rights_status": "CC_BY_SA_4_0_SOURCE_FILE_VERIFIED",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "photo_px": [
+        2816,
+        2112
+      ],
+      "visual_status": "SOURCE_FILE_FULL_SIZE_AVAILABLE; NO_100_PERCENT_PIXEL_REVIEW",
+      "liturgical_fit": "DIRECT_ROMAN_CATHOLIC_LAVABO_FUNCTION; ENSURE_SINGLE_TEXTILE_ALONE",
+      "selection_status": "LICENSED_CANDIDATE_NOT_APPROVED"
+    },
+    {
+      "object_id": "SP05",
+      "label": "Architectural altar ciborium",
+      "priority": "NEW_GAP_HISTORICAL_REFERENCE",
+      "source_url": "https://www.metmuseum.org/art/collection/search/463315",
+      "collection": "Metropolitan Museum of Art",
+      "accession": "09.92.3",
+      "identity": "Italian Romanesque marble architectural altar canopy, about 1150, by Nicolaus Ranucius and his sons; object is a church HIGH ALTAR canopy, NOT Communion vessel.",
+      "creator": "The Metropolitan Museum of Art Open Access",
+      "rights_status": "CC0_1_0_SOURCE_FILE_VERIFIED",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "visual_status": "MUSEUM_HAS_MULTIPLE_VIEWS; NOT_ISOLATED_SMALL_OBJECT",
+      "liturgical_fit": "LEGITIMATE_CATHOLIC_HISTORICAL_ARCHITECTURAL_SUBJECT; VERY_EARLY_NOT_TYPICAL_1962_PARISH",
+      "selection_status": "HISTORICAL_REFERENCE_ONLY"
+    },
+    {
+      "object_id": "SC06",
+      "label": "Sacrarium / piscina",
+      "priority": "NEW_GAP_CONTEXT",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Sacrarium_di_Gereja_Keluarga_Kudus_Kota_Baru_(2026).jpg",
+      "collection": "Holy Family Catholic Church, Kota Baru, Pontianak",
+      "identity": "Physical sacred sacrarium/piscina in Catholic sacristy, 2026",
+      "creator": "Medelam (photographer)",
+      "rights_status": "CC_BY_SA_4_0_SOURCE_FILE_VERIFIED",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "photo_px": [
+        2394,
+        3352
+      ],
+      "visual_status": "IN_SITU_ARCHITECTURAL_CONTEXT_NOT_STANDALONE_OBJECT_STUDIO",
+      "liturgical_fit": "PHYSICAL_FUNCTION_MATCH; MODERN_LOCATION_CONTEXT_DOES_NOT_CERTIFY_1962_RUBRICS",
+      "selection_status": "LICENSED_CONTEXT_REFERENCE_ONLY"
+    },
+    {
+      "object_id": "SN02",
+      "label": "Communion rail",
+      "priority": "PILOT_CONTEXT",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Saint_Ann_Catholic_Church_(Hamilton,_Ohio)_-_interior,_Communion_rail.jpg",
+      "collection": "Saint Ann Catholic Church, Hamilton, Ohio",
+      "identity": "Actual church Communion rail photographed as part of Catholic sanctuary, March 2013",
+      "creator": "Nheyob (photographer)",
+      "rights_status": "CC_BY_SA_3_0_SOURCE_FILE_VERIFIED",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "photo_px": [
+        4288,
+        2848
+      ],
+      "visual_status": "IN_SITU_ARCHITECTURAL_OBJECT_MULTI_ELEMENT_BACKGROUND",
+      "liturgical_fit": "ROMAN_CATHOLIC_ALTAR_RAIL; NOT_ISOLATED_STANDALONE",
+      "selection_status": "LICENSED_CONTEXT_ONLY_NOT_PILOT_HERO"
+    },
+    {
+      "object_id": "SN07",
+      "label": "Credence table",
+      "priority": "PILOT_CONTEXT",
+      "source_url": "https://commons.wikimedia.org/wiki/File:St._Nikolaus_Germete_Kredenz_(1).jpg",
+      "collection": "St. Nikolaus Catholic church Germete, Germany",
+      "identity": "Credence table carrying veiled chalice, empty paten and cruets following Mass",
+      "creator": "MF-Warburg (photographer)",
+      "rights_status": "CC_BY_SA_4_0_SOURCE_FILE_VERIFIED",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "photo_px": [
+        1301,
+        1536
+      ],
+      "visual_status": "TABLE_AND_MULTIPLE_VESSELS_SHOWN; MULTI_OBJECT_NOT_ISOLATED",
+      "liturgical_fit": "VALID_CATHOLIC_CREDENCE_IN_USE_BUT_NOT_STANDALONE_HERO",
+      "selection_status": "LICENSED_CONTEXT_ONLY"
+    },
+    {
+      "object_id": "AL03",
+      "label": "Tabernacle",
+      "priority": "PILOT_HISTORICAL_REFERENCE",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Tabernacle,_Japan,_late_1500s_to_early_1600s_AD,_lacquered_wood,_mother-of-pearl,_gold_-_Peabody_Essex_Museum_-_DSC07674.jpg",
+      "collection": "Peabody Essex Museum",
+      "identity": "Japanese early Christian lacquered tabernacle, late 1500s to early 1600s",
+      "creator": "Daderot (photographer)",
+      "rights_status": "CC0_1_0_SOURCE_FILE_VERIFIED",
+      "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "photo_px": [
+        3462,
+        4978
+      ],
+      "visual_status": "SOURCE_HAS_MUSEUM_DISPLAY_BACKGROUND",
+      "liturgical_fit": "EXCEPTIONAL_HISTORIC_CATHOLIC_TABERNACLE_NOT_STANDARD_HIGH_ALTAR_1962_TYPE",
+      "selection_status": "HISTORICAL_REFERENCE_ONLY"
+    },
+    {
+      "object_id": "AL05",
+      "label": "Tabernacle veil / conopaeum",
+      "priority": "HISTORICAL_LOW_RES",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Tabernacle_veil_of_Kenmare_Lace_1911_%E2%80%93_National_museum.jpg",
+      "collection": "National Museum, Ireland",
+      "identity": "Historical Irish Kenmare Lace tabernacle veil dated 1911",
+      "creator": "Finmix (photographer)",
+      "rights_status": "PHOTOGRAPHER_RELEASED_TO_PUBLIC_DOMAIN",
+      "photo_px": [
+        282,
+        388
+      ],
+      "visual_status": "LOW_RES_SMALL_IMAGE_CANNOT_BE_PRIMARY_HERO",
+      "liturgical_fit": "REAL_TEXTILE_BUT_NOT_ILLUSTRATED_HANGING_ON_TABERNACLE",
+      "selection_status": "HISTORICAL_REFERENCE_ONLY"
+    },
+    {
+      "object_id": "SA04",
+      "label": "Holy oils container historical alternative",
+      "priority": "DO_NOT_DUPLICATE_B21",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Box_holy_oils_Louvre_OA6935.jpg",
+      "collection": "Louvre Museum",
+      "accession": "OA 6935",
+      "identity": "Limoges early-13th-century box designed to contain small bottles of holy oils",
+      "creator": "Marie-Lan Nguyen (photographer)",
+      "rights_status": "PHOTOGRAPHER_RELEASED_TO_PUBLIC_DOMAIN",
+      "photo_px": [
+        1771,
+        1786
+      ],
+      "visual_status": "SINGLE_ORNAMENTED_BOX_IMAGE; 100_PERCENT_QA_NOT_DONE",
+      "liturgical_fit": "HISTORICAL_SA04_ALTERNATIVE_ONLY; B21_ALREADY_HAS_MUSEUM_OIL_STOCK",
+      "selection_status": "DO_NOT_ADD_SECOND_HERO_SOURCE"
+    },
+    {
+      "object_id": "SV04",
+      "label": "Ciborium veil (assembled exemplar)",
+      "priority": "IMAGE_RIGHTS_HOLD",
+      "source_url": "https://www.mks-sticna.si/slo/zbirke/znameniti-predmeti/velum-za-ciborij-jagnje-bozje",
+      "collection": "Museum of Christianity in Slovenia, Stična",
+      "accession": "1642",
+      "identity": "19th-century embroidered ciborium velum with Agnus Dei, formerly Ursuline convent Skofja Loka; photographed as finished conical covering with finial on plain white",
+      "rights_status": "PHOTOGRAPH_REUSE_LICENSE_NOT_ESTABLISHED",
+      "visual_status": "VERY_STRONG_WHITE_BACKGROUND_ASSEMBLED_VIEW_FROM_SOURCE_PAGE",
+      "liturgical_fit": "EXACT_HISTORICAL_OBJECT_FITS_ROMAN_CATHOLIC_USE",
+      "selection_status": "EXCELLENT_VISUAL_BUT_RIGHTS_HOLD"
+    }
+  ],
+  "gaps_and_rejections": [
+    {
+      "object_id": "SE04",
+      "finding": "Searching Ash Wednesday context still yields action images, plastic take-home containers, or historical illustration, not a clear isolated traditional ash vessel.",
+      "decision": "NO_SINGLE_OBJECT_HERO"
+    },
+    {
+      "object_id": "AL10",
+      "finding": "Most French heritage photographs show assembled altar-gradine-tabernacle complex rather than independent gradine; reproduction permissions not resolved.",
+      "decision": "NO_SINGLE_OBJECT_HERO"
+    },
+    {
+      "object_id": "SN05",
+      "finding": "Catholic sanctuary lamps are mostly seen hanging in contextual sanctuary photographs; isolated representative red glass lamp with explicit reuse rights still missing.",
+      "decision": "NO_SINGLE_OBJECT_HERO"
+    },
+    {
+      "object_id": "BK02",
+      "finding": "LACMA M.2019.264.3 photo-licence conflict persists despite independently CC0-licensed Japanese Missal stand being newly identified.",
+      "decision": "DO_NOT_LICENSE_OR_SILENTLY_SUBSTITUTE_LACMA_FILE"
+    },
+    {
+      "object_id": "EN08",
+      "finding": "Photo searches commonly surface Anglican pew kneelers; must not substitute a Protestant/Anglican object for this Catholic atlas.",
+      "decision": "TYPOLOGY_HOLD"
+    },
+    {
+      "object_id": "EQ14",
+      "finding": "Secular tabletop Victorian candle snuffers are not long-handled Catholic altar candle extinguishers.",
+      "decision": "TYPOLOGY_HOLD"
+    },
+    {
+      "object_id": "AL17/AL18",
+      "finding": "Epistle/Gospel sides are direction annotations on authenticated altar photograph rather than collectible objects.",
+      "decision": "ANNOTATION_EXCEPTION"
+    }
+  ],
+  "uniqueness_rules": {
+    "new_target_object_ids": [
+      "BK02",
+      "EQ06",
+      "SV04",
+      "LN06",
+      "SP05",
+      "SC06",
+      "SN02",
+      "SN07",
+      "AL03",
+      "AL05"
+    ],
+    "novelty_note": "Records target 10 distinct object IDs not represented as unique B21 acquisition subjects. SA04 entry is explicit historical comparison only to prevent duplication."
+  },
+  "validation": {
+    "exact_source_licenses_verified_on_primary_pages": true,
+    "full_resolution_images_downloaded": false,
+    "human_liturgical_curation_done": false,
+    "pilot_hero_assignments_changed": false,
+    "canonical_catalogue_updated": false,
+    "publication_approved": false,
+    "release_approved": false
+  }
+}

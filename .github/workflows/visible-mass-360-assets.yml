@@ -1,0 +1,93 @@
+name: Visible Mass genuine 360 panoramas
+on:
+  push:
+    branches:
+      - feature/visible-mass-3d-explorer-p0
+    paths:
+      - .github/workflows/visible-mass-360-assets.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  download:
+    runs-on: ubuntu-latest
+    timeout-minutes: 16
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: 
+          python-version: '3.12'
+      - run: python -m pip install requests Pillow
+      - name: Download and verify reuse information
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from urllib.parse import urlencode
+          from PIL import Image,ImageOps
+          from io import BytesIO
+          import requests,json,time,hashlib
+          names={
+          'brompton360':'Brompton Oratory 360x180, London, UK - Diliff.jpg',
+          'newman360':'Newman University Church Interior 360x180, Dublin, Ireland - Diliff.jpg',
+          'newman-altar1':'Dublin Newman University Church Interior Choir Main Altar 1.jpg',
+          'newman-altar2':'Dublin Newman University Church Interior Choir Main Altar 2.jpg',
+          'newman-altar3':'Dublin Newman University Church Interior Choir Main Altar 3.jpg',
+          'newman-pulpit':'Dublin Newman University Church Interior Nave Pulpit.jpg',
+          'newman-apse':'Dublin Newman University Church Interior Choir Apse 1.jpg'
+          }
+          s=requests.Session();s.headers['User-Agent']='AdOrientemVisibleMass/0.3 (nonprofit liturgical education; github.com/Fulcanelli13/ad-orientem)'
+          pars={'action':'query','format':'json','formatversion':'2','prop':'imageinfo','iiprop':'url|extmetadata','iiurlwidth':4096,'titles':'|'.join('File:'+n for n in names.values())}
+          r=s.get('https://commons.wikimedia.org/w/api.php',params=pars,timeout=60);r.raise_for_status()
+          data=r.json()
+          assert 'query' in data, str(data)[:250]
+          table={p.get('title','').removeprefix('File:'):(p.get('imageinfo')or[{}])[0] for p in data['query']['pages'] if 'missing' not in p}
+          out=Path('dist/visible-mass-panoramas');out.mkdir(parents=True,exist_ok=True)
+          manifest={}
+          for key,name in names.items():
+            if name not in table:
+              if key.endswith('360'):raise RuntimeError('Essential panorama missing: '+name)
+              print('Missing optional photograph',name);continue
+            item=table[name]
+            urls=list(dict.fromkeys([item.get('thumburl'),item.get('url')]))
+            buf=None
+            for url in urls:
+              if not url:continue
+              for attempt in range(3):
+                try:
+                  d=s.get(url,timeout=90);d.raise_for_status()
+                  im=Image.open(BytesIO(d.content));im.load()
+                  if im.width<600:raise RuntimeError('Image thumbnail too small')
+                  buf=im
+                  break
+                except Exception as ex:
+                  print('RETRY',key,str(ex)[:135],flush=True)
+                  time.sleep(4*(attempt+1))
+              if buf is not None:break
+            if buf is None:
+              if key.endswith('360'):raise RuntimeError('Essential panorama cannot download: '+name)
+              continue
+            im=ImageOps.exif_transpose(buf).convert('RGB')
+            if key.endswith('360'):
+              assert abs(im.width/im.height-2)<.02,'Not equirectangular image: '+name
+              im=im.resize((4096,2048),Image.Resampling.LANCZOS)
+            else:
+              im.thumbnail((2200,1800),Image.Resampling.LANCZOS)
+            img=out.joinpath(key+'.jpg');im.save(img,'JPEG',quality=83,optimize=True)
+            ext=item.get('extmetadata',{})
+            meta=lambda k:ext.get(k,{}).get('value','')
+            manifest[key]={'file':img.name,'title':name,'source_page':'https://commons.wikimedia.org/wiki/File:'+name.replace(' ','_'),
+              'license':meta('LicenseShortName'),'license_url':meta('LicenseUrl'),'artist':meta('Artist'),
+              'original_width':buf.width,'original_height':buf.height,'width':im.width,'height':im.height,
+              'transformation':'Downscaled and re-encoded to JPEG for offline 360 viewer',
+              'sha256':hashlib.sha256(img.read_bytes()).hexdigest()}
+            print('OK',key,im.size,img.stat().st_size,meta('LicenseShortName'),flush=True)
+            time.sleep(2)
+          assert all(k in manifest for k in ['brompton360','newman360'])
+          (out/'manifest.json').write_text(json.dumps(manifest,indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: visible-mass-genuine-360-assets
+          path: dist/visible-mass-panoramas/
+          if-no-files-found: error
+          retention-days: 60

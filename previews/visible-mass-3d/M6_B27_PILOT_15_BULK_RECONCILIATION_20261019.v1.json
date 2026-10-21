@@ -1,0 +1,447 @@
+{
+  "schema": "AO_M6_B27_PILOT_15_PHYSICAL_IMAGE_RECONCILIATION_V1",
+  "date": "2026-10-19",
+  "status": "BULK_RESEARCH_CANDIDATE_SELECTION_NOT_PUBLICATION",
+  "source_pr": "https://github.com/Fulcanelli13/ad-orientem/pull/1309",
+  "baseline": "M6_ONE_OBJECT_ONE_IMAGE_P0_20261019.v5.json",
+  "counts": {
+    "pilot_total": 30,
+    "provisional_heroes_before": 13,
+    "remaining_total": 17,
+    "annotation_exceptions": 2,
+    "physical_targets": 15,
+    "physical_targets_audited": 15,
+    "listed_source_records": 22,
+    "provisional_heroes_added": 0
+  },
+  "source_rights_note": "Explicit Commons source declarations preferred; image-level author / licence retained. Institution rights and generic product image claims do not clear images.",
+  "original_pixel_acquisition_queue": [
+    {
+      "object_id": "SN05",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Sanctuary_lamp.jpg"
+    },
+    {
+      "object_id": "SN05",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Sanctuary_lamp,_Christ_the_King_Catholic_Church,_Auckland.jpg"
+    },
+    {
+      "object_id": "AL03",
+      "source_url": "https://commons.wikimedia.org/wiki/File:St._Comgall's_church_tabernacle.jpg"
+    },
+    {
+      "object_id": "SN02",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Saint_Ann_Catholic_Church_(Hamilton,_Ohio)_-_interior,_Communion_rail.jpg"
+    },
+    {
+      "object_id": "BK01",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Missale_romanum1962.JPG"
+    },
+    {
+      "object_id": "BK02",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Missal_stand,_Japan,_late_1500s_to_early_1600s_AD,_lacquered_wood,_mother-of-pearl,_gold_-_Peabody_Essex_Museum_-_DSC07672.jpg"
+    },
+    {
+      "object_id": "AL19",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Doulaincourt,_église_Saint-Martin,_retable_du_maître-autel,_détail_02.jpg"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "SN02",
+      "label": "Communion rail",
+      "canonical_glossary_id": "G186",
+      "classification": "ARCHITECTURAL_PRIMARY_CONDITIONAL",
+      "sources": [
+        {
+          "source_url": "https://commons.wikimedia.org/wiki/File:Saint_Ann_Catholic_Church_(Hamilton,_Ohio)_-_interior,_Communion_rail.jpg",
+          "source_label": "Communion rail in Catholic St Ann church Ohio",
+          "license": "CC BY-SA 3.0",
+          "photographer": "Nheyob",
+          "role": "full_rail_candidate",
+          "gates": "Inspect ends/central opening; architectural rather than isolated studio",
+          "full_pixel_status": "AWAITING_B27_ACQUISITION"
+        },
+        {
+          "source_url": "https://commons.wikimedia.org/wiki/File:Basílica_de_São_Sebastião_Salvador_Altar_Rail_2019-0157.jpg",
+          "source_label": "Salvador cropped baluster detail",
+          "license": "CC BY-SA 4.0",
+          "photographer": "Paul R. Burley",
+          "role": "rejected_full_rail_hero",
+          "gates": "Originals B26 verified cropped; retain detail",
+          "full_pixel_status": "AWAITING_B27_ACQUISITION"
+        }
+      ],
+      "acquisition": "A complete recognisable communion rail viewed straight-on, correctly identify central gates if visible",
+      "hero_asset_id": null,
+      "user_approved": false,
+      "publication_approved": false
+    },
+    {
+      "object_id": "SN04",
+      "label": "Sanctuary steps",
+      "canonical_glossary_id": "G181",
+      "classification": "SCENE_REUSE_HOLD",
+      "sources": [
+        {
+          "source_url": "https://commons.wikimedia.org/wiki/File:Holy_Trinity_Catholic_Church_(Somerset,_Ohio)_-_high_altar,_view_from_communion_rail.jpg",
+          "source_label": "High altar from communion rail, actual Roman Catholic sanctuary",
+          "license": "EXACT_FILE_RIGHTS_RECHECK",
+          "photographer": "Nheyob",
+          "role": "context_scene",
+          "gates": "Sanctuary floor/steps require direct visual check; photo title alone insufficient",
+          "full_pixel_status": "AWAITING_B27_ACQUISITION"
+        }
+      ],
+      "acquisition": "Architectural close-up clearly showing floor steps to sanctuary, not altar predella or gradine",
+      "hero_asset_id": null,
+      "user_approved": false,
+      "publication_approved": false
+    },
+    {
+      "object_id": "SN05",
+      "label": "Sanctuary lamp",
+      "canonical_glossary_id": "G218",
+      "classification": "POTENTIAL_FULL_PHOTO",
+      "sources": [
+        {
+          "source_url": "https://commons.wikimedia.org/wiki/File:Sanctuary_lamp.jpg",
+          "source_label": "CC0 sanctuary lamp at Roman Catholic St Comgall's Antrim",
+          "license": "CC0 1.0",
+          "photographer": "HenryPho17",
+          "role": "lamp_exact_source",
+          "gates": "Is red glass recognisable? chain and shade complete? no clutter",
+          "full_pixel_status": "AWAITING_B27_ACQUISITION"
+        },
+        {
+          "source_url": "https://commons.wikimedia.org/wiki/File:Sanctuary_lamp,_Christ_the_King_Catholic_Church,_Auckland.jpg",
+          "source_label": "Catholic sanctuary lamp New Windsor Auckland",
+          "license": "CC BY 4.0",
+          "photographer": "Bjankuloski06",
+          "role": "lamp_exact_source",
+          "gates": "Verify red glass and suspended full lamp; ISO 2500 noise check",
+          "full_pixel_status": "AWAITING_B27_ACQUISITION"
+        },
+        {
+          "source_url": "https://commons.wikimedia.org/wiki/File:Basílica_de_São_Sebastião_Salvador_Altar_Lamp_2019-0090.jpg",
+          "source_label": "Historical silver hanging lamp without obvious red glass",
+          "license": "CC BY-SA 4.0",
+          "photographer": "Paul R. Burley",
+          "role": "context_only_rejected_for_red",
+          "gates": "B26 preview failed primary typology",
+          "full_pixel_status": "AWAITING_B27_ACQUISITION"
+        }
+      ],
+      "acquisition": "Traditional red sanctuary lamp photographed completely and clearly enough for atlas",
+      "hero_asset_id": null,
+      "user_approved": false,
+      "publication_approved": false
+    },
+    {
+      "object_id": "SN07",
+      "label": "Credence table",
+      "canonical_glossary_id": "G184",
+      "classification": "CONTEXT_ONLY",
+      "sources": [
+        {
+          "source_url": "https://commons.wikimedia.org/wiki/File:St._Nikolaus_Germete_Kredenz_(1).jpg",
+          "source_label": "Credence table with vessels in German Catholic church",
+          "license": "CC BY-SA 4.0",
+          "photographer": "MF-Warburg",
+          "role": "credence_in_use",
+          "gates": "Multiple sacred vessels obscure table silhouette",
+          "full_pixel_status": "AWAITING_B27_ACQUISITION"
+        }
+      ],
+      "acquisition": "A full credence table with cloth photographed as the central subject, preferably empty",
+      "hero_asset_id": null,
+      "user_approved": false,
+      "publication_approved": false
+    },
+    {
+      "object_id": "AL01",
+      "label": "High altar",
+      "canonical_glossary_id": "G404",
+      "classification": "ARCHITECTURAL_SCENE_ACCEPTABILITY_HOLD",
+      "sources": [
+        {
+          "source_url": "https://commons.wikimedia.org/wiki/File:Castelnau-d'Estr%C3%A9tefonds_Eglise_-_Ma%C3%AEtre-autel.jpg",
+          "source_label": "French high altar of 1848 with six candlesticks",
+          "license": "CC BY-SA 4.0",
+          "photographer": "Didier Descouens",
+          "role": "valid_context",
+          "gates": "Original full pixels B26 verified; human approval needed whether architecture counts as one subject",
+          "full_pixel_status": "AWAITING_B27_ACQUISITION"
+        }
+      ],
+      "acquisition": "Use authenticated full Roman Catholic high altar context; a high altar is built-in architecture, not free-standing museum object",
+      "hero_asset_id": null,
+      "user_approved": false,
+      "publication_approved": false
+    },
+    {
+      "object_id": "AL03",
+      "label": "Tabernacle",
+      "canonical_glossary_id": "G080",
+      "classification": "POTENTIAL_FULL_PHOTO",
+      "sources": [
+        {
+          "source_url": "https://commons.wikimedia.org/wiki/File:St._Comgall's_church_tabernacle.jpg",
+          "source_label": "Roman Catholic St Comgall's tabernacle",
+          "license": "CC0 1.0",
+          "photographer": "HenryPho17",
+          "role": "tabernacle_subject",
+          "gates": "Source identifies tabernacle; verify no veiling, complete door and no extra liturgical objects",
+          "full_pixel_status": "AWAITING_B27_ACQUISITION"
+        },
+        {
+          "source_url": "https://commons.wikimedia.org/wiki/File:Tabernacle,_original,_St_Denis_Church,_Joondanna.jpg",
+          "source_label": "Original Catholic St Denis tabernacle now historical display",
+          "license": "EXACT_FILE_RIGHTS_RECHECK",
+          "photographer": "SOURCE_UPLOADER_RECHECK",
+          "role": "historical_tabernacle",
+          "gates": "Verify object complete and isolated, old church provenance",
+          "full_pixel_status": "AWAITING_B27_ACQUISITION"
+        }
+      ],
+      "acquisition": "Complete typical Roman Catholic tabernacle, front door and body visible",
+      "hero_asset_id": null,
+      "user_approved": false,
+      "publication_approved": false
+    },
+    {
+      "object_id": "AL07",
+      "label": "Six altar candlesticks",
+      "canonical_glossary_id": "G079",
+      "classification": "DEFINED_SET_CONTEXT_ONLY",
+      "sources": [
+        {
+          "source_url": "https://commons.wikimedia.org/wiki/File:Castelnau-d'Estr%C3%A9tefonds_Eglise_-_Ma%C3%AEtre-autel.jpg",
+          "source_label": "Six matching nineteenth century candlesticks on high altar",
+          "license": "CC BY-SA 4.0",
+          "photographer": "Didier Descouens",
+          "role": "six_set_context",
+          "gates": "Original B26 verifies three per side; not standalone isolated six-piece set",
+          "full_pixel_status": "AWAITING_B27_ACQUISITION"
+        }
+      ],
+      "acquisition": "Six matching candlesticks as coherent set; annotation on existing altar may be acceptable if exception explicitly approved",
+      "hero_asset_id": null,
+      "user_approved": false,
+      "publication_approved": false
+    },
+    {
+      "object_id": "AL08",
+      "label": "Individual altar candle",
+      "canonical_glossary_id": "G079",
+      "classification": "OBJECT_TYPING_HOLD",
+      "sources": [
+        {
+          "source_url": "https://commons.wikimedia.org/wiki/File:Basílica_de_São_Sebastião_Salvador_Altar_Candlestick_2019-0081.jpg",
+          "source_label": "Candle in candlestick, ornate Catholic altar",
+          "license": "CC BY-SA 4.0",
+          "photographer": "Paul R. Burley",
+          "role": "candle_on_holder_context",
+          "gates": "Not candle alone",
+          "full_pixel_status": "AWAITING_B27_ACQUISITION"
+        }
+      ],
+      "acquisition": "Single unlit or lit beeswax altar candle alone; include correct wax distinction if verified",
+      "hero_asset_id": null,
+      "user_approved": false,
+      "publication_approved": false
+    },
+    {
+      "object_id": "AL10",
+      "label": "Altar gradine / candle shelf",
+      "canonical_glossary_id": "G079",
+      "classification": "RIGHTS_HOLD",
+      "sources": [
+        {
+          "source_url": "https://www.patrimoine-culturel.gouv.qc.ca/rpcq/detail.do?id=233665&methode=consulter&type=bien",
+          "source_label": "18th/19th-century Augustinian altar gradine accession 2013.1066",
+          "license": "PHOTOGRAPH_REUSE_UNRESOLVED",
+          "photographer": "Québec heritage inventory",
+          "role": "object_historical",
+          "gates": "Rights require institutional confirmation",
+          "full_pixel_status": "AWAITING_B27_ACQUISITION"
+        }
+      ],
+      "acquisition": "Complete isolated gradine/candle shelf, not sanctuary steps or reredos",
+      "hero_asset_id": null,
+      "user_approved": false,
+      "publication_approved": false
+    },
+    {
+      "object_id": "AL13",
+      "label": "Altar linen coverings",
+      "canonical_glossary_id": "G079",
+      "classification": "DEFINITON_REQUIRES_SET",
+      "sources": [
+        {
+          "source_url": "https://commons.wikimedia.org/wiki/File:Altar_cloth_MET_47412.jpg",
+          "source_label": "Historical Venetian altar cloth textile detail",
+          "license": "CC0 1.0",
+          "photographer": "The Met Open Access",
+          "role": "textile_detail",
+          "gates": "Not three prepared linens",
+          "full_pixel_status": "AWAITING_B27_ACQUISITION"
+        }
+      ],
+      "acquisition": "Separate clearly identified three linen altar coverings or one complete correctly labelled three-cloth set",
+      "hero_asset_id": null,
+      "user_approved": false,
+      "publication_approved": false
+    },
+    {
+      "object_id": "AL19",
+      "label": "Retable / reredos",
+      "canonical_glossary_id": "G418",
+      "classification": "RETABLE_IN_SITU_CANDIDATE",
+      "sources": [
+        {
+          "source_url": "https://commons.wikimedia.org/wiki/File:Doulaincourt,_église_Saint-Martin,_retable_du_maître-autel,_détail_02.jpg",
+          "source_label": "French Catholic parish main altar retable detail",
+          "license": "CC0 1.0",
+          "photographer": "Henk van Gaal",
+          "role": "retable_detail",
+          "gates": "Original explicitly detail not full retable; examine and find full front if possible",
+          "full_pixel_status": "AWAITING_B27_ACQUISITION"
+        },
+        {
+          "source_url": "https://commons.wikimedia.org/wiki/File:Cornillé_(35)_Église_Saint-Melaine_Autel_et_retable_du_Rosaire_09.jpg",
+          "source_label": "Catholic altar and Rosary retable in Saint-Melaine church",
+          "license": "EXACT_FILE_RIGHTS_RECHECK",
+          "photographer": "Bo35bo35",
+          "role": "altarpiece_context",
+          "gates": "Photo from 2026, depiction might be retable segment not full; rights verify",
+          "full_pixel_status": "AWAITING_B27_ACQUISITION"
+        }
+      ],
+      "acquisition": "Complete retable itself distinguished from altar and historical stained glass",
+      "hero_asset_id": null,
+      "user_approved": false,
+      "publication_approved": false
+    },
+    {
+      "object_id": "EQ01",
+      "label": "Wine cruet",
+      "canonical_glossary_id": "G193",
+      "classification": "OBJECT_IDENTIFIED_BUT_BACKDROP_HOLD",
+      "sources": [
+        {
+          "source_url": "https://commons.wikimedia.org/wiki/File:WLA_vanda_Cruet_for_the_Mass.jpg",
+          "source_label": "V&A wine cruet V-marked",
+          "license": "CC BY 2.5",
+          "photographer": "VeronikaB",
+          "role": "historical_object_cluttered",
+          "gates": "B26 image failed download; B26 preview shows other museum objects",
+          "full_pixel_status": "AWAITING_B27_ACQUISITION"
+        }
+      ],
+      "acquisition": "One fully identified wine cruet on blank backdrop or authorized crop with no adjacent vessels",
+      "hero_asset_id": null,
+      "user_approved": false,
+      "publication_approved": false
+    },
+    {
+      "object_id": "EQ02",
+      "label": "Water cruet",
+      "canonical_glossary_id": "G193",
+      "classification": "OBJECT_IDENTIFIED_BUT_IMAGE_RIGHTS_HOLD",
+      "sources": [
+        {
+          "source_url": "https://dia.org/collection/pair-cruets-and-tray/24645",
+          "source_label": "Aqua water cruet in A/V identified Catholic silver set c.1825",
+          "license": "EXACT_PHOTO_RIGHTS_UNRESOLVED",
+          "photographer": "Detroit Institute of Arts",
+          "role": "context_pair",
+          "gates": "Need photo license and water-only crop, preserve original pair context",
+          "full_pixel_status": "AWAITING_B27_ACQUISITION"
+        }
+      ],
+      "acquisition": "Water cruet with A/aqua physical identification and clear individual reuse rights",
+      "hero_asset_id": null,
+      "user_approved": false,
+      "publication_approved": false
+    },
+    {
+      "object_id": "BK01",
+      "label": "Roman Missal on altar",
+      "canonical_glossary_id": "G214",
+      "classification": "1962_EDITION_BUT_NOT_ON_ALTAR_YET",
+      "sources": [
+        {
+          "source_url": "https://commons.wikimedia.org/wiki/File:Missale_romanum1962.JPG",
+          "source_label": "1962 editio typica Roman Missal, original owner photograph",
+          "license": "CC BY-SA 4.0 (dual licensed)",
+          "photographer": "MK777",
+          "role": "book_closeup",
+          "gates": "Object is authentic exact edition, but check whether physically on an altar",
+          "full_pixel_status": "AWAITING_B27_ACQUISITION"
+        },
+        {
+          "source_url": "https://commons.wikimedia.org/wiki/File:1962_Missale_Romanum.jpg",
+          "source_label": "Low-res scan-like 1962 Missal cover cropped Amazon product image",
+          "license": "COPYRIGHT_ASSUMPTION_UNSAFE",
+          "photographer": "Unknown original product photographer",
+          "role": "reject_wrong_source",
+          "gates": "Do not use 345px commercial screenshot despite PD-shape claim",
+          "full_pixel_status": "AWAITING_B27_ACQUISITION"
+        }
+      ],
+      "acquisition": "Complete actual 1962 altar Missal visible in situ on traditional Mass altar, otherwise retitle as standalone 1962 Missal and keep contextual photo separately",
+      "hero_asset_id": null,
+      "user_approved": false,
+      "publication_approved": false
+    },
+    {
+      "object_id": "BK02",
+      "label": "Missal stand or cushion",
+      "canonical_glossary_id": "G215",
+      "classification": "HISTORICAL_STAND_LICENSED_NOT_TYPICAL",
+      "sources": [
+        {
+          "source_url": "https://commons.wikimedia.org/wiki/File:Missal_stand,_Japan,_late_1500s_to_early_1600s_AD,_lacquered_wood,_mother-of-pearl,_gold_-_Peabody_Essex_Museum_-_DSC07672.jpg",
+          "source_label": "Japanese Jesuit-era Catholic Missal stand isolated in museum",
+          "license": "CC0 1.0",
+          "photographer": "Daderot",
+          "role": "historical_standalone",
+          "gates": "Rare Japanese Catholic specimen, not ordinary twentieth-century Roman stand",
+          "full_pixel_status": "AWAITING_B27_ACQUISITION"
+        },
+        {
+          "source_url": "https://collections.lacma.org/object/259589",
+          "source_label": "LACMA Guatemalan 18th century Catholic stand",
+          "license": "PHOTOGRAPH_REUSE_UNRESOLVED",
+          "photographer": "Museum Associates / LACMA",
+          "role": "strong_standalone_photo_hold",
+          "gates": "Object does satisfy form, photo copyright disputed by Rawpixel",
+          "full_pixel_status": "AWAITING_B27_ACQUISITION"
+        }
+      ],
+      "acquisition": "Traditional common Roman-rite altar Missal stand; neutral background and separately cleared photo rights",
+      "hero_asset_id": null,
+      "user_approved": false,
+      "publication_approved": false
+    }
+  ],
+  "annotations": [
+    {
+      "object_id": "AL17",
+      "role": "Epistle side",
+      "mode": "SPATIAL_ANNOTATION"
+    },
+    {
+      "object_id": "AL18",
+      "role": "Gospel side",
+      "mode": "SPATIAL_ANNOTATION"
+    }
+  ],
+  "release_flags": {
+    "source_registry_mutated": false,
+    "mass_reader_mutated": false,
+    "photograph_published": false,
+    "user_approved": false,
+    "publication_approved": false
+  }
+}

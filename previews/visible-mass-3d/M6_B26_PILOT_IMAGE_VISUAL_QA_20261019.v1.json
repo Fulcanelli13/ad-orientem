@@ -1,0 +1,223 @@
+{
+  "schema": "AO_M6_B26_PILOT_IMAGE_SOURCE_PREVIEW_QA_V1",
+  "date": "2026-10-19",
+  "status": "VISUAL_PREVIEW_AUDIT_NOT_FULL_SOURCE_PIXEL_QA_NOT_USER_APPROVAL",
+  "input": "previews/visible-mass-3d/M6_B25_PILOT_18_RECONCILED_PRIMARY_REVIEW_20261019.v1.json",
+  "methods": {
+    "first_party_source_pages_read": true,
+    "photographic_images_viewed_via_source_host_thumbnails": true,
+    "unique_images_visually_examined": 8,
+    "image_display_scale": "Up to 960px Commons source-hosted previews for reviewed files; original-pixel inspection NOT performed",
+    "actual_original_image_bytes_downloaded": 0,
+    "local_runtime_internet_access": false,
+    "rights_from_individual_file_pages": true
+  },
+  "visually_reviewed": [
+    {
+      "object_ids": [
+        "SN05"
+      ],
+      "source_url": "https://commons.wikimedia.org/wiki/File:Bas%C3%ADlica_de_S%C3%A3o_Sebasti%C3%A3o_Salvador_Altar_Lamp_2019-0090.jpg",
+      "file_author": "Paul R. Burley",
+      "file_license": "CC BY-SA 4.0",
+      "declared_original_px": [
+        4160,
+        6240
+      ],
+      "preview_max_width": 500,
+      "subject": "Ornate suspended silver-coloured sanctuary lamp, chains and building interior.",
+      "silhouette": "INCOMPLETE_CHAIN_SEGMENTS_AND_CONTEXT",
+      "decision": "REJECT_AS_TYPICAL_RED_GLASS_HERO",
+      "rationale": "No recognisable red glass; museum-quality Catholic context, but user expects recognisable red sanctuary lamp. High ISO 8000 in EXIF implies original texture verification needed; do not treat as neutral studio object."
+    },
+    {
+      "object_ids": [
+        "SN02"
+      ],
+      "source_url": "https://commons.wikimedia.org/wiki/File:Bas%C3%ADlica_de_S%C3%A3o_Sebasti%C3%A3o_Salvador_Altar_Rail_2019-0157.jpg",
+      "file_author": "Paul R. Burley",
+      "file_license": "CC BY-SA 4.0",
+      "declared_original_px": [
+        6240,
+        4160
+      ],
+      "preview_max_width": 960,
+      "subject": "Frontal close-up of white stone altar-rail balusters against dark background.",
+      "silhouette": "CROPPED_RAIL_WITH_NO_FULL_LENGTH_OR_GATE",
+      "decision": "ACCEPT_AS_CATHOLIC_RAIL_DETAIL_ONLY",
+      "rationale": "Only architectural detail; cannot teach complete communion rail or its gate. Original source identity accurate."
+    },
+    {
+      "object_ids": [
+        "AL01",
+        "AL07",
+        "AL19"
+      ],
+      "source_url": "https://commons.wikimedia.org/wiki/File:Castelnau-d%27Estr%C3%A9tefonds_Eglise_-_Ma%C3%AEtre-autel.jpg",
+      "file_author": "Didier Descouens",
+      "file_license": "CC BY-SA 4.0",
+      "declared_original_px": [
+        7360,
+        4912
+      ],
+      "preview_max_width": 960,
+      "subject": "Complete nineteenth-century French high altar, central Eucharistic tabernacle and six identifiable matching gilded candlesticks.",
+      "silhouette": "ENTIRE_ALTAR_WITH_ARCHITECTURAL_CONTEXT",
+      "decision": "PREFERRED_AUTHENTIC_HIGH_ALTAR_CONTEXT_WITH_SIX_CANDLESTICKS_NOT_STANDALONE_HERO",
+      "rationale": "Credible preconciliar-type altar. Metadata explicitly counts SIX candlesticks. One source is reusable as AL01 context and AL07 annotated ensemble only; AL19 independent retable remains unproven. No new image counts for multiple object IDs."
+    },
+    {
+      "object_ids": [
+        "AL03"
+      ],
+      "source_url": "https://commons.wikimedia.org/wiki/File:Bas%C3%ADlica_de_S%C3%A3o_Sebasti%C3%A3o_Salvador_Tabernacle_2019-0168.jpg",
+      "file_author": "Paul R. Burley",
+      "file_license": "CC BY-SA 4.0",
+      "declared_original_px": [
+        4888,
+        3910
+      ],
+      "preview_max_width": 960,
+      "subject": "Marble Catholic tabernacle with white domed upper enclosure and large purple veil hiding its door; four altar candles surround it.",
+      "silhouette": "MAIN_TABERNACLE_FACE_CONCEALED_BY_VEIL",
+      "decision": "REJECT_FOR_ISOLATED_UNVEILED_TABERNACLE_HERO_RETAIN_AS_TABERNACLE_VEIL_CONTEXT",
+      "rationale": "Correct liturgical furnishing, but veil and four additional candlesticks prevent a clear full-object teaching portrait. Consider AL05 secondary context."
+    },
+    {
+      "object_ids": [
+        "AL08"
+      ],
+      "source_url": "https://commons.wikimedia.org/wiki/File:Bas%C3%ADlica_de_S%C3%A3o_Sebasti%C3%A3o_Salvador_Altar_Candlestick_2019-0081.jpg",
+      "file_author": "Paul R. Burley",
+      "file_license": "CC BY-SA 4.0",
+      "declared_original_px": [
+        3229,
+        4844
+      ],
+      "preview_max_width": 500,
+      "subject": "Single altar candlestick with one taper candle in ornate architectural background.",
+      "silhouette": "CANDLE_PRESENT_BUT_DOMINATED_BY_CANDLESTICK",
+      "decision": "CANDLESTICK_IN_USE_CONTEXT_NOT_INDIVIDUAL_CANDLE_HERO",
+      "rationale": "Canonical AL08 calls for individual altar candle, not candlestick. This photo better illustrates holder/candle in use."
+    },
+    {
+      "object_ids": [
+        "EQ01"
+      ],
+      "source_url": "https://commons.wikimedia.org/wiki/File:WLA_vanda_Cruet_for_the_Mass.jpg",
+      "file_author": "VeronikaB",
+      "file_license": "CC BY 2.5",
+      "declared_original_px": [
+        3000,
+        4000
+      ],
+      "preview_max_width": 500,
+      "subject": "Complete authentic Mass wine cruet on reflective museum platform, other silver vessels and glass case visible.",
+      "silhouette": "COMPLETE_BUT_NONNEUTRAL_CLUTTERED_BACKGROUND",
+      "decision": "EXACT_OBJECT_LICENSED_BUT_FAILS_STRICT_SINGLE_OBJECT_NEUTRAL_BACKGROUND",
+      "rationale": "Historically V letter implies vinum (museum says suggests, not a proof). Image contains other prominent museum objects; do not count as clean isolated hero."
+    },
+    {
+      "object_ids": [
+        "EQ06"
+      ],
+      "source_url": "https://commons.wikimedia.org/wiki/File:Carcassonne_-_%C3%89glise_Saint-Vincent_-_Tr%C3%A9sor_25.jpg",
+      "file_author": "Tylwyth Eldar",
+      "file_license": "CC BY-SA 4.0",
+      "declared_original_px": [
+        4000,
+        6000
+      ],
+      "preview_max_width": 960,
+      "subject": "Entire nineteenth-century gilt/enamel altar bell standing upright with defined handle and blue decoration. Museum background and reflective base visible but out of focus.",
+      "silhouette": "SINGLE_COMPLETE_BELL_DOMINANT",
+      "decision": "B26_SINGLE_BELL_PRESELECTION_PENDING_ORIGINAL_PIXEL_QA",
+      "rationale": "Strongest near-term physical pilot subject; correct French Catholic liturgical provenance. Source preview supports composition but glare/noise at original resolution still untested."
+    },
+    {
+      "object_ids": [
+        "EQ06"
+      ],
+      "source_url": "https://commons.wikimedia.org/wiki/File:Longford_St._Mel%27s_Cathedral_Altar_Bells_2019_08_23.jpg",
+      "file_author": "Andreas F. Borchert",
+      "file_license": "CC BY-SA 4.0 (also other licences available)",
+      "declared_original_px": [
+        4042,
+        4042
+      ],
+      "preview_max_width": 960,
+      "subject": "Three-tiered altar bell stack on steps in modern St Mel's Catholic Cathedral, Longford, Ireland.",
+      "silhouette": "ONE_ASSEMBLED_STACK_CONTEXT_WITH_STEPS",
+      "decision": "HISTORICAL_RITE_CONTEXT_ALTERNATIVE_NOT_PREFERRED_STANDALONE",
+      "rationale": "More familiar modern altar bell geometry, but floor/steps context and restored modern cathedral make it a secondary in-use example, not a better isolated object than Carcassonne."
+    }
+  ],
+  "remaining_pilot_entries": [
+    {
+      "object_id": "SN04",
+      "decision": "SOURCE_PREVIEW_FAILED_NOT_VISUALLY_VERIFIED",
+      "reason": "Salvador altar scene original thumbnail request timed out; actual sanctuary steps not confirmed."
+    },
+    {
+      "object_id": "SN07",
+      "decision": "DOCUMENTED_CONTEXT_ONLY",
+      "reason": "St Nikolaus Germete credence with veiled chalice, paten and cruets; table cannot be isolated as a freestanding object."
+    },
+    {
+      "object_id": "AL10",
+      "decision": "IMAGE_RIGHTS_HOLD",
+      "reason": "Québec museum gradine exact reproduction reuse not cleared."
+    },
+    {
+      "object_id": "AL13",
+      "decision": "HISTORICAL_DETAIL_NOT_TRIPLE_LINEN",
+      "reason": "Met 47412 is a photographic DETAIL of bobbin-lace cloth, not full set of Roman altar coverings."
+    },
+    {
+      "object_id": "AL17",
+      "decision": "SPATIAL_ANNOTATION_EXCEPTION",
+      "reason": "Epistle side of altar cannot be an isolated photograph."
+    },
+    {
+      "object_id": "AL18",
+      "decision": "SPATIAL_ANNOTATION_EXCEPTION",
+      "reason": "Gospel side of altar cannot be an isolated photograph."
+    },
+    {
+      "object_id": "AL19",
+      "decision": "RETABLE_NOT_CONFIRMED",
+      "reason": "High altar background wall decoration is not necessarily a detachable retable or reredos."
+    },
+    {
+      "object_id": "EQ02",
+      "decision": "RIGHTS_HOLD",
+      "reason": "DIA A/V vessel identification promising but particular image reuse not confirmed."
+    },
+    {
+      "object_id": "BK01",
+      "decision": "UNRESOLVED_ORIGINAL_IMAGE_LINK",
+      "reason": "Existing original Canon-page image does not itself show a complete physical missal on high altar; retrieve actual source and rights."
+    },
+    {
+      "object_id": "BK02",
+      "decision": "HISTORICAL_CONTEXT_BACKUP_ONLY",
+      "reason": "Japanese museum missal stand CC0 source identified but not inspected at original resolution; unusual 16th–17th c. Jesuit use, not standard Roman parish stand."
+    }
+  ],
+  "decision_counts": {
+    "visually_reviewed_unique_files": 8,
+    "priority_standalone_object_preselections": 1,
+    "valid_architectural_scene_for_annotation": 1,
+    "publication_hero_assets_promoted": 0,
+    "original_pixels_downloaded": 0
+  },
+  "review_invariants": {
+    "object_matches_exactly": true,
+    "liturgical_rite_checked": true,
+    "no_live_reader_mutation": true,
+    "source_registry_not_modified": true,
+    "pilot_v4_not_modified": true,
+    "publication_approved": false,
+    "user_approved": false
+  }
+}

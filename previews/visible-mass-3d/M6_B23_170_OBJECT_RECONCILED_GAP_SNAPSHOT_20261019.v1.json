@@ -1,0 +1,2266 @@
+{
+  "schema": "AO_M6_B23_170_OBJECT_RECONCILED_GAP_SNAPSHOT_V1",
+  "date": "2026-10-19",
+  "status": "READ_ONLY_RESEARCH_RECONCILIATION_NOT_PUBLICATION_CERTIFICATION",
+  "input_sources": [
+    "previews/visible-mass-3d/M6_PHOTOGRAPHIC_ATLAS_COVERAGE_20261018.v1.json",
+    "previews/visible-mass-3d/M6_ONE_OBJECT_ONE_IMAGE_P0_20261019.v4.json",
+    "previews/visible-mass-3d/M6_B21_BULK_GAP_RESEARCH_20261019.v1.json",
+    "previews/visible-mass-3d/M6_B22_BULK_RIGHTS_AND_TYPOLOGY_20261019.v1.json",
+    "previews/visible-mass-3d/M6_B23_HIGH_VOLUME_SOURCE_MINING_20261019.v1.json"
+  ],
+  "counts": {
+    "canonical_objects": 170,
+    "original_source_records": 112,
+    "original_any_source_candidate_or_hotspot": 98,
+    "original_photo_gaps": 72,
+    "original_gaps_now_targeted_in_B21_B22_B23": 38,
+    "original_gaps_still_unresearched": 34,
+    "pilot_objects": 30,
+    "pilot_provisional_single_photo_heroes": 12,
+    "pilot_without_provisional_hero": 18,
+    "source_records_in_B23": 39,
+    "unique_source_urls_in_B23": 37,
+    "source_file_licence_checked_B23": 14,
+    "approved_publication_photographs_added": 0
+  },
+  "by_zone": [
+    {
+      "zone": "EN",
+      "total": 13,
+      "original_source_or_hotspot": 6,
+      "research_gap_with_lead": 5,
+      "unresearched_gap": 2
+    },
+    {
+      "zone": "DV",
+      "total": 12,
+      "original_source_or_hotspot": 12,
+      "research_gap_with_lead": 0,
+      "unresearched_gap": 0
+    },
+    {
+      "zone": "SN",
+      "total": 11,
+      "original_source_or_hotspot": 4,
+      "research_gap_with_lead": 4,
+      "unresearched_gap": 3
+    },
+    {
+      "zone": "AL",
+      "total": 20,
+      "original_source_or_hotspot": 10,
+      "research_gap_with_lead": 4,
+      "unresearched_gap": 6
+    },
+    {
+      "zone": "SV",
+      "total": 13,
+      "original_source_or_hotspot": 4,
+      "research_gap_with_lead": 4,
+      "unresearched_gap": 5
+    },
+    {
+      "zone": "LN",
+      "total": 8,
+      "original_source_or_hotspot": 5,
+      "research_gap_with_lead": 2,
+      "unresearched_gap": 1
+    },
+    {
+      "zone": "EQ",
+      "total": 16,
+      "original_source_or_hotspot": 5,
+      "research_gap_with_lead": 2,
+      "unresearched_gap": 9
+    },
+    {
+      "zone": "SC",
+      "total": 10,
+      "original_source_or_hotspot": 1,
+      "research_gap_with_lead": 5,
+      "unresearched_gap": 4
+    },
+    {
+      "zone": "VE",
+      "total": 20,
+      "original_source_or_hotspot": 20,
+      "research_gap_with_lead": 0,
+      "unresearched_gap": 0
+    },
+    {
+      "zone": "BK",
+      "total": 15,
+      "original_source_or_hotspot": 15,
+      "research_gap_with_lead": 0,
+      "unresearched_gap": 0
+    },
+    {
+      "zone": "SA",
+      "total": 11,
+      "original_source_or_hotspot": 2,
+      "research_gap_with_lead": 6,
+      "unresearched_gap": 3
+    },
+    {
+      "zone": "SE",
+      "total": 14,
+      "original_source_or_hotspot": 13,
+      "research_gap_with_lead": 1,
+      "unresearched_gap": 0
+    },
+    {
+      "zone": "SP",
+      "total": 7,
+      "original_source_or_hotspot": 1,
+      "research_gap_with_lead": 5,
+      "unresearched_gap": 1
+    }
+  ],
+  "remaining_untargeted_gaps": [
+    {
+      "object_id": "EN04",
+      "label": "Vestibule / narthex",
+      "zone": "EN"
+    },
+    {
+      "object_id": "EN08",
+      "label": "Pew kneeler",
+      "zone": "EN"
+    },
+    {
+      "object_id": "SN01",
+      "label": "Sanctuary",
+      "zone": "SN"
+    },
+    {
+      "object_id": "SN03",
+      "label": "Communion-rail gate",
+      "zone": "SN"
+    },
+    {
+      "object_id": "SN09",
+      "label": "Hanging rood / sanctuary crucifix",
+      "zone": "SN"
+    },
+    {
+      "object_id": "AL02",
+      "label": "Altar orientation",
+      "zone": "AL"
+    },
+    {
+      "object_id": "AL09",
+      "label": "Seventh / pontifical candle",
+      "zone": "AL"
+    },
+    {
+      "object_id": "AL15",
+      "label": "Altar sepulchre / relic cavity",
+      "zone": "AL"
+    },
+    {
+      "object_id": "AL17",
+      "label": "Epistle side of altar",
+      "zone": "AL"
+    },
+    {
+      "object_id": "AL18",
+      "label": "Gospel side of altar",
+      "zone": "AL"
+    },
+    {
+      "object_id": "AL20",
+      "label": "Altar ornamentation / gilding",
+      "zone": "AL"
+    },
+    {
+      "object_id": "SV05",
+      "label": "Large altar Host",
+      "zone": "SV"
+    },
+    {
+      "object_id": "SV06",
+      "label": "Small Communion Hosts",
+      "zone": "SV"
+    },
+    {
+      "object_id": "SV07",
+      "label": "Mass wine",
+      "zone": "SV"
+    },
+    {
+      "object_id": "SV11",
+      "label": "Custodia / exposition pyx",
+      "zone": "SV"
+    },
+    {
+      "object_id": "SV12",
+      "label": "Sacred-vessel decoration",
+      "zone": "SV"
+    },
+    {
+      "object_id": "LN07",
+      "label": "Subdeacon's humeral veil",
+      "zone": "LN"
+    },
+    {
+      "object_id": "EQ03",
+      "label": "Cruet tray",
+      "zone": "EQ"
+    },
+    {
+      "object_id": "EQ04",
+      "label": "Lavabo bowl",
+      "zone": "EQ"
+    },
+    {
+      "object_id": "EQ05",
+      "label": "Lavabo water jug",
+      "zone": "EQ"
+    },
+    {
+      "object_id": "EQ09",
+      "label": "Incense and charcoal",
+      "zone": "EQ"
+    },
+    {
+      "object_id": "EQ12",
+      "label": "Acolyte candle / candlestick",
+      "zone": "EQ"
+    },
+    {
+      "object_id": "EQ13",
+      "label": "Torch / elevation candle",
+      "zone": "EQ"
+    },
+    {
+      "object_id": "EQ14",
+      "label": "Candle snuffer",
+      "zone": "EQ"
+    },
+    {
+      "object_id": "EQ15",
+      "label": "Hand-held blessing cross",
+      "zone": "EQ"
+    },
+    {
+      "object_id": "EQ16",
+      "label": "Sacred purification vessel",
+      "zone": "EQ"
+    },
+    {
+      "object_id": "SC02",
+      "label": "Vesting table",
+      "zone": "SC"
+    },
+    {
+      "object_id": "SC04",
+      "label": "Sacristy crucifix",
+      "zone": "SC"
+    },
+    {
+      "object_id": "SC07",
+      "label": "Liturgical Ordo / calendar",
+      "zone": "SC"
+    },
+    {
+      "object_id": "SC10",
+      "label": "Sacristy preparation board",
+      "zone": "SC"
+    },
+    {
+      "object_id": "SA03",
+      "label": "Baptismal shell / vessel",
+      "zone": "SA"
+    },
+    {
+      "object_id": "SA09",
+      "label": "Wedding rings",
+      "zone": "SA"
+    },
+    {
+      "object_id": "SA11",
+      "label": "Home Communion pyx and case",
+      "zone": "SA"
+    },
+    {
+      "object_id": "SP06",
+      "label": "Historical sacred vessels",
+      "zone": "SP"
+    }
+  ],
+  "object_matrix": [
+    {
+      "object_id": "EN01",
+      "zone": "EN",
+      "label": "Church entrance / portal",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "EN02",
+      "zone": "EN",
+      "label": "Exterior cross",
+      "source_candidate_in_original": false,
+      "research_lead_count": 1,
+      "research_batches": [
+        "B23"
+      ],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_WITH_UNAPPROVED_RESEARCH_LEAD"
+    },
+    {
+      "object_id": "EN03",
+      "zone": "EN",
+      "label": "Bell tower and bells",
+      "source_candidate_in_original": false,
+      "research_lead_count": 1,
+      "research_batches": [
+        "B23"
+      ],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_WITH_UNAPPROVED_RESEARCH_LEAD"
+    },
+    {
+      "object_id": "EN04",
+      "zone": "EN",
+      "label": "Vestibule / narthex",
+      "source_candidate_in_original": false,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_NO_TARGETED_RESEARCH_LEAD"
+    },
+    {
+      "object_id": "EN05",
+      "zone": "EN",
+      "label": "Holy-water stoup",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "EN06",
+      "zone": "EN",
+      "label": "Nave",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "EN07",
+      "zone": "EN",
+      "label": "Pew",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "EN08",
+      "zone": "EN",
+      "label": "Pew kneeler",
+      "source_candidate_in_original": false,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_NO_TARGETED_RESEARCH_LEAD"
+    },
+    {
+      "object_id": "EN09",
+      "zone": "EN",
+      "label": "Central aisle",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "EN10",
+      "zone": "EN",
+      "label": "Processional cross",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "EN11",
+      "zone": "EN",
+      "label": "Wall-mounted crucifix",
+      "source_candidate_in_original": false,
+      "research_lead_count": 1,
+      "research_batches": [
+        "B23"
+      ],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_WITH_UNAPPROVED_RESEARCH_LEAD"
+    },
+    {
+      "object_id": "EN12",
+      "zone": "EN",
+      "label": "Church seating and family areas",
+      "source_candidate_in_original": false,
+      "research_lead_count": 1,
+      "research_batches": [
+        "B23"
+      ],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_WITH_UNAPPROVED_RESEARCH_LEAD"
+    },
+    {
+      "object_id": "EN13",
+      "zone": "EN",
+      "label": "Alms box / offertory box",
+      "source_candidate_in_original": false,
+      "research_lead_count": 4,
+      "research_batches": [
+        "B23"
+      ],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_WITH_UNAPPROVED_RESEARCH_LEAD"
+    },
+    {
+      "object_id": "DV01",
+      "zone": "DV",
+      "label": "Side altar",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "DV02",
+      "zone": "DV",
+      "label": "Statue of the Blessed Virgin",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "DV03",
+      "zone": "DV",
+      "label": "Statue of Saint Joseph",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "DV04",
+      "zone": "DV",
+      "label": "Statue of a saint",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "DV05",
+      "zone": "DV",
+      "label": "Sacred Heart image",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "DV06",
+      "zone": "DV",
+      "label": "Stations of the Cross",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "DV07",
+      "zone": "DV",
+      "label": "Votive candle stand",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "DV08",
+      "zone": "DV",
+      "label": "Reliquary / displayed relic",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "DV09",
+      "zone": "DV",
+      "label": "Stained glass / sacred painting",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "DV10",
+      "zone": "DV",
+      "label": "Ex-voto plaque",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "DV11",
+      "zone": "DV",
+      "label": "Rosary displayed at shrine",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "DV12",
+      "zone": "DV",
+      "label": "Sacred-image niche / shrine",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "SN01",
+      "zone": "SN",
+      "label": "Sanctuary",
+      "source_candidate_in_original": false,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_NO_TARGETED_RESEARCH_LEAD"
+    },
+    {
+      "object_id": "SN02",
+      "zone": "SN",
+      "label": "Communion rail",
+      "source_candidate_in_original": true,
+      "research_lead_count": 1,
+      "research_batches": [
+        "B22"
+      ],
+      "pilot_30": true,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "SN03",
+      "zone": "SN",
+      "label": "Communion-rail gate",
+      "source_candidate_in_original": false,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_NO_TARGETED_RESEARCH_LEAD"
+    },
+    {
+      "object_id": "SN04",
+      "zone": "SN",
+      "label": "Sanctuary steps",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": true,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "SN05",
+      "zone": "SN",
+      "label": "Sanctuary lamp",
+      "source_candidate_in_original": true,
+      "research_lead_count": 1,
+      "research_batches": [
+        "B23"
+      ],
+      "pilot_30": true,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "SN06",
+      "zone": "SN",
+      "label": "Sedilia / clergy seats",
+      "source_candidate_in_original": false,
+      "research_lead_count": 2,
+      "research_batches": [
+        "B23"
+      ],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_WITH_UNAPPROVED_RESEARCH_LEAD"
+    },
+    {
+      "object_id": "SN07",
+      "zone": "SN",
+      "label": "Credence table",
+      "source_candidate_in_original": true,
+      "research_lead_count": 1,
+      "research_batches": [
+        "B22"
+      ],
+      "pilot_30": true,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "SN08",
+      "zone": "SN",
+      "label": "Sanctuary pavement",
+      "source_candidate_in_original": false,
+      "research_lead_count": 1,
+      "research_batches": [
+        "B23"
+      ],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_WITH_UNAPPROVED_RESEARCH_LEAD"
+    },
+    {
+      "object_id": "SN09",
+      "zone": "SN",
+      "label": "Hanging rood / sanctuary crucifix",
+      "source_candidate_in_original": false,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_NO_TARGETED_RESEARCH_LEAD"
+    },
+    {
+      "object_id": "SN10",
+      "zone": "SN",
+      "label": "Rood / chancel screen",
+      "source_candidate_in_original": false,
+      "research_lead_count": 1,
+      "research_batches": [
+        "B23"
+      ],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_WITH_UNAPPROVED_RESEARCH_LEAD"
+    },
+    {
+      "object_id": "SN11",
+      "zone": "SN",
+      "label": "Cathedra / bishop's throne",
+      "source_candidate_in_original": false,
+      "research_lead_count": 2,
+      "research_batches": [
+        "B23"
+      ],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_WITH_UNAPPROVED_RESEARCH_LEAD"
+    },
+    {
+      "object_id": "AL01",
+      "zone": "AL",
+      "label": "High altar",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": true,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "AL02",
+      "zone": "AL",
+      "label": "Altar orientation",
+      "source_candidate_in_original": false,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_NO_TARGETED_RESEARCH_LEAD"
+    },
+    {
+      "object_id": "AL03",
+      "zone": "AL",
+      "label": "Tabernacle",
+      "source_candidate_in_original": true,
+      "research_lead_count": 1,
+      "research_batches": [
+        "B22"
+      ],
+      "pilot_30": true,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "AL04",
+      "zone": "AL",
+      "label": "Tabernacle door and ornament",
+      "source_candidate_in_original": false,
+      "research_lead_count": 1,
+      "research_batches": [
+        "B21"
+      ],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_WITH_UNAPPROVED_RESEARCH_LEAD"
+    },
+    {
+      "object_id": "AL05",
+      "zone": "AL",
+      "label": "Tabernacle veil / conopaeum",
+      "source_candidate_in_original": false,
+      "research_lead_count": 1,
+      "research_batches": [
+        "B22"
+      ],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_WITH_UNAPPROVED_RESEARCH_LEAD"
+    },
+    {
+      "object_id": "AL06",
+      "zone": "AL",
+      "label": "Altar crucifix",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": true,
+      "pilot_hero_asset_id": "M6B20-AL06-MET-ALTAR-CRUCIFIX",
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "AL07",
+      "zone": "AL",
+      "label": "Six altar candlesticks",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": true,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "AL08",
+      "zone": "AL",
+      "label": "Individual altar candle",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": true,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "AL09",
+      "zone": "AL",
+      "label": "Seventh / pontifical candle",
+      "source_candidate_in_original": false,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_NO_TARGETED_RESEARCH_LEAD"
+    },
+    {
+      "object_id": "AL10",
+      "zone": "AL",
+      "label": "Altar gradine / candle shelf",
+      "source_candidate_in_original": true,
+      "research_lead_count": 1,
+      "research_batches": [
+        "B23"
+      ],
+      "pilot_30": true,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "AL11",
+      "zone": "AL",
+      "label": "Altar predella / platform",
+      "source_candidate_in_original": false,
+      "research_lead_count": 1,
+      "research_batches": [
+        "B23"
+      ],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_WITH_UNAPPROVED_RESEARCH_LEAD"
+    },
+    {
+      "object_id": "AL12",
+      "zone": "AL",
+      "label": "Altar frontal / antependium",
+      "source_candidate_in_original": false,
+      "research_lead_count": 1,
+      "research_batches": [
+        "B21"
+      ],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_WITH_UNAPPROVED_RESEARCH_LEAD"
+    },
+    {
+      "object_id": "AL13",
+      "zone": "AL",
+      "label": "Altar linen coverings",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": true,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "AL14",
+      "zone": "AL",
+      "label": "Consecrated altar stone",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": true,
+      "pilot_hero_asset_id": "EXISTING-AL14",
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "AL15",
+      "zone": "AL",
+      "label": "Altar sepulchre / relic cavity",
+      "source_candidate_in_original": false,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_NO_TARGETED_RESEARCH_LEAD"
+    },
+    {
+      "object_id": "AL16",
+      "zone": "AL",
+      "label": "Three altar cards",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": true,
+      "pilot_hero_asset_id": "B19-AL16-LIVORNO-ENSEMBLE",
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "AL17",
+      "zone": "AL",
+      "label": "Epistle side of altar",
+      "source_candidate_in_original": false,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": true,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_NO_TARGETED_RESEARCH_LEAD"
+    },
+    {
+      "object_id": "AL18",
+      "zone": "AL",
+      "label": "Gospel side of altar",
+      "source_candidate_in_original": false,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": true,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_NO_TARGETED_RESEARCH_LEAD"
+    },
+    {
+      "object_id": "AL19",
+      "zone": "AL",
+      "label": "Retable / reredos",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": true,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "AL20",
+      "zone": "AL",
+      "label": "Altar ornamentation / gilding",
+      "source_candidate_in_original": false,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_NO_TARGETED_RESEARCH_LEAD"
+    },
+    {
+      "object_id": "SV01",
+      "zone": "SV",
+      "label": "Chalice",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": true,
+      "pilot_hero_asset_id": "M6B18-CLERMONT-CHALICE-BIAIS-RONDELET",
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "SV02",
+      "zone": "SV",
+      "label": "Paten",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": true,
+      "pilot_hero_asset_id": "M6B17-SV02-CLERMONT-STSAMSON-19C20C",
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "SV03",
+      "zone": "SV",
+      "label": "Ciborium",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": true,
+      "pilot_hero_asset_id": "EXISTING-SV03",
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "SV04",
+      "zone": "SV",
+      "label": "Ciborium veil",
+      "source_candidate_in_original": false,
+      "research_lead_count": 2,
+      "research_batches": [
+        "B22"
+      ],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_WITH_UNAPPROVED_RESEARCH_LEAD"
+    },
+    {
+      "object_id": "SV05",
+      "zone": "SV",
+      "label": "Large altar Host",
+      "source_candidate_in_original": false,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_NO_TARGETED_RESEARCH_LEAD"
+    },
+    {
+      "object_id": "SV06",
+      "zone": "SV",
+      "label": "Small Communion Hosts",
+      "source_candidate_in_original": false,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_NO_TARGETED_RESEARCH_LEAD"
+    },
+    {
+      "object_id": "SV07",
+      "zone": "SV",
+      "label": "Mass wine",
+      "source_candidate_in_original": false,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_NO_TARGETED_RESEARCH_LEAD"
+    },
+    {
+      "object_id": "SV08",
+      "zone": "SV",
+      "label": "Pyx",
+      "source_candidate_in_original": false,
+      "research_lead_count": 1,
+      "research_batches": [
+        "B21"
+      ],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_WITH_UNAPPROVED_RESEARCH_LEAD"
+    },
+    {
+      "object_id": "SV09",
+      "zone": "SV",
+      "label": "Monstrance",
+      "source_candidate_in_original": false,
+      "research_lead_count": 1,
+      "research_batches": [
+        "B21"
+      ],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_WITH_UNAPPROVED_RESEARCH_LEAD"
+    },
+    {
+      "object_id": "SV10",
+      "zone": "SV",
+      "label": "Luna / lunette",
+      "source_candidate_in_original": false,
+      "research_lead_count": 1,
+      "research_batches": [
+        "B23"
+      ],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_WITH_UNAPPROVED_RESEARCH_LEAD"
+    },
+    {
+      "object_id": "SV11",
+      "zone": "SV",
+      "label": "Custodia / exposition pyx",
+      "source_candidate_in_original": false,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_NO_TARGETED_RESEARCH_LEAD"
+    },
+    {
+      "object_id": "SV12",
+      "zone": "SV",
+      "label": "Sacred-vessel decoration",
+      "source_candidate_in_original": false,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_NO_TARGETED_RESEARCH_LEAD"
+    },
+    {
+      "object_id": "SV13",
+      "zone": "SV",
+      "label": "Communion paten / plate",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": true,
+      "pilot_hero_asset_id": "EXISTING-SV13",
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "LN01",
+      "zone": "LN",
+      "label": "Corporal",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": true,
+      "pilot_hero_asset_id": "B19-LN01-CORPORAL-GERMETE-1",
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "LN02",
+      "zone": "LN",
+      "label": "Purificator",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": true,
+      "pilot_hero_asset_id": "B19-LN02-PURIFICATOR-CIESZYN-3",
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "LN03",
+      "zone": "LN",
+      "label": "Pall for chalice",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": true,
+      "pilot_hero_asset_id": "M6B18-ABBEVILLE-PALL-IHS",
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "LN04",
+      "zone": "LN",
+      "label": "Burse",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": true,
+      "pilot_hero_asset_id": "M6B16-LN04-COOPER-HEWITT-19C",
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "LN05",
+      "zone": "LN",
+      "label": "Chalice veil",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": true,
+      "pilot_hero_asset_id": "M6B16-LN05-POLAND-CHRIST-COLUMN",
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "LN06",
+      "zone": "LN",
+      "label": "Manutergium / finger towel",
+      "source_candidate_in_original": false,
+      "research_lead_count": 1,
+      "research_batches": [
+        "B22"
+      ],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_WITH_UNAPPROVED_RESEARCH_LEAD"
+    },
+    {
+      "object_id": "LN07",
+      "zone": "LN",
+      "label": "Subdeacon's humeral veil",
+      "source_candidate_in_original": false,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_NO_TARGETED_RESEARCH_LEAD"
+    },
+    {
+      "object_id": "LN08",
+      "zone": "LN",
+      "label": "Liturgical linen storage",
+      "source_candidate_in_original": false,
+      "research_lead_count": 1,
+      "research_batches": [
+        "B23"
+      ],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_WITH_UNAPPROVED_RESEARCH_LEAD"
+    },
+    {
+      "object_id": "EQ01",
+      "zone": "EQ",
+      "label": "Wine cruet",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": true,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "EQ02",
+      "zone": "EQ",
+      "label": "Water cruet",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": true,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "EQ03",
+      "zone": "EQ",
+      "label": "Cruet tray",
+      "source_candidate_in_original": false,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_NO_TARGETED_RESEARCH_LEAD"
+    },
+    {
+      "object_id": "EQ04",
+      "zone": "EQ",
+      "label": "Lavabo bowl",
+      "source_candidate_in_original": false,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_NO_TARGETED_RESEARCH_LEAD"
+    },
+    {
+      "object_id": "EQ05",
+      "zone": "EQ",
+      "label": "Lavabo water jug",
+      "source_candidate_in_original": false,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_NO_TARGETED_RESEARCH_LEAD"
+    },
+    {
+      "object_id": "EQ06",
+      "zone": "EQ",
+      "label": "Altar bell",
+      "source_candidate_in_original": true,
+      "research_lead_count": 1,
+      "research_batches": [
+        "B22"
+      ],
+      "pilot_30": true,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "EQ07",
+      "zone": "EQ",
+      "label": "Thurible",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "EQ08",
+      "zone": "EQ",
+      "label": "Incense boat and spoon",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "EQ09",
+      "zone": "EQ",
+      "label": "Incense and charcoal",
+      "source_candidate_in_original": false,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_NO_TARGETED_RESEARCH_LEAD"
+    },
+    {
+      "object_id": "EQ10",
+      "zone": "EQ",
+      "label": "Holy-water bucket / aspersorium",
+      "source_candidate_in_original": false,
+      "research_lead_count": 1,
+      "research_batches": [
+        "B21"
+      ],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_WITH_UNAPPROVED_RESEARCH_LEAD"
+    },
+    {
+      "object_id": "EQ11",
+      "zone": "EQ",
+      "label": "Aspergillum",
+      "source_candidate_in_original": false,
+      "research_lead_count": 1,
+      "research_batches": [
+        "B21"
+      ],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_WITH_UNAPPROVED_RESEARCH_LEAD"
+    },
+    {
+      "object_id": "EQ12",
+      "zone": "EQ",
+      "label": "Acolyte candle / candlestick",
+      "source_candidate_in_original": false,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_NO_TARGETED_RESEARCH_LEAD"
+    },
+    {
+      "object_id": "EQ13",
+      "zone": "EQ",
+      "label": "Torch / elevation candle",
+      "source_candidate_in_original": false,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_NO_TARGETED_RESEARCH_LEAD"
+    },
+    {
+      "object_id": "EQ14",
+      "zone": "EQ",
+      "label": "Candle snuffer",
+      "source_candidate_in_original": false,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_NO_TARGETED_RESEARCH_LEAD"
+    },
+    {
+      "object_id": "EQ15",
+      "zone": "EQ",
+      "label": "Hand-held blessing cross",
+      "source_candidate_in_original": false,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_NO_TARGETED_RESEARCH_LEAD"
+    },
+    {
+      "object_id": "EQ16",
+      "zone": "EQ",
+      "label": "Sacred purification vessel",
+      "source_candidate_in_original": false,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_NO_TARGETED_RESEARCH_LEAD"
+    },
+    {
+      "object_id": "SC01",
+      "zone": "SC",
+      "label": "Sacristy room",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "SC02",
+      "zone": "SC",
+      "label": "Vesting table",
+      "source_candidate_in_original": false,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_NO_TARGETED_RESEARCH_LEAD"
+    },
+    {
+      "object_id": "SC03",
+      "zone": "SC",
+      "label": "Vestment press / cabinet",
+      "source_candidate_in_original": false,
+      "research_lead_count": 3,
+      "research_batches": [
+        "B21",
+        "B23"
+      ],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_WITH_UNAPPROVED_RESEARCH_LEAD"
+    },
+    {
+      "object_id": "SC04",
+      "zone": "SC",
+      "label": "Sacristy crucifix",
+      "source_candidate_in_original": false,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_NO_TARGETED_RESEARCH_LEAD"
+    },
+    {
+      "object_id": "SC05",
+      "zone": "SC",
+      "label": "Sacristy sink",
+      "source_candidate_in_original": false,
+      "research_lead_count": 4,
+      "research_batches": [
+        "B23"
+      ],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_WITH_UNAPPROVED_RESEARCH_LEAD"
+    },
+    {
+      "object_id": "SC06",
+      "zone": "SC",
+      "label": "Sacrarium / piscina",
+      "source_candidate_in_original": false,
+      "research_lead_count": 1,
+      "research_batches": [
+        "B22"
+      ],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_WITH_UNAPPROVED_RESEARCH_LEAD"
+    },
+    {
+      "object_id": "SC07",
+      "zone": "SC",
+      "label": "Liturgical Ordo / calendar",
+      "source_candidate_in_original": false,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_NO_TARGETED_RESEARCH_LEAD"
+    },
+    {
+      "object_id": "SC08",
+      "zone": "SC",
+      "label": "Sacred-vessel storage drawers",
+      "source_candidate_in_original": false,
+      "research_lead_count": 1,
+      "research_batches": [
+        "B23"
+      ],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_WITH_UNAPPROVED_RESEARCH_LEAD"
+    },
+    {
+      "object_id": "SC09",
+      "zone": "SC",
+      "label": "Holy oils cabinet / ambry",
+      "source_candidate_in_original": false,
+      "research_lead_count": 1,
+      "research_batches": [
+        "B21"
+      ],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_WITH_UNAPPROVED_RESEARCH_LEAD"
+    },
+    {
+      "object_id": "SC10",
+      "zone": "SC",
+      "label": "Sacristy preparation board",
+      "source_candidate_in_original": false,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_NO_TARGETED_RESEARCH_LEAD"
+    },
+    {
+      "object_id": "VE01",
+      "zone": "VE",
+      "label": "Cassock",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "VE02",
+      "zone": "VE",
+      "label": "Amice",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "VE03",
+      "zone": "VE",
+      "label": "Alb",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "VE04",
+      "zone": "VE",
+      "label": "Cincture",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "VE05",
+      "zone": "VE",
+      "label": "Stole",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "VE06",
+      "zone": "VE",
+      "label": "Maniple",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "VE07",
+      "zone": "VE",
+      "label": "Chasuble",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "VE08",
+      "zone": "VE",
+      "label": "Roman / fiddleback chasuble",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "VE09",
+      "zone": "VE",
+      "label": "Dalmatic",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "VE10",
+      "zone": "VE",
+      "label": "Tunicle",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "VE11",
+      "zone": "VE",
+      "label": "Surplice / cotta",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "VE12",
+      "zone": "VE",
+      "label": "Biretta",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "VE13",
+      "zone": "VE",
+      "label": "Cope",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "VE14",
+      "zone": "VE",
+      "label": "Humeral veil",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "VE15",
+      "zone": "VE",
+      "label": "Liturgical vestment colour set",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "VE16",
+      "zone": "VE",
+      "label": "Bishop's mitre",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "VE17",
+      "zone": "VE",
+      "label": "Crozier / pastoral staff",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "VE18",
+      "zone": "VE",
+      "label": "Pectoral cross",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "VE19",
+      "zone": "VE",
+      "label": "Zucchetto",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "VE20",
+      "zone": "VE",
+      "label": "Pontifical gloves / buskins / sandals",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "BK01",
+      "zone": "BK",
+      "label": "Roman Missal on altar",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": true,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "BK02",
+      "zone": "BK",
+      "label": "Missal stand or cushion",
+      "source_candidate_in_original": true,
+      "research_lead_count": 2,
+      "research_batches": [
+        "B22",
+        "B23"
+      ],
+      "pilot_30": true,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "BK03",
+      "zone": "BK",
+      "label": "Missal ribbons and tabs",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "BK04",
+      "zone": "BK",
+      "label": "Hand Missal",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "BK05",
+      "zone": "BK",
+      "label": "Book of Gospels",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "BK06",
+      "zone": "BK",
+      "label": "Epistolary",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "BK07",
+      "zone": "BK",
+      "label": "Graduale Romanum",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "BK08",
+      "zone": "BK",
+      "label": "Liber Usualis",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "BK09",
+      "zone": "BK",
+      "label": "Antiphonale / Breviary",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "BK10",
+      "zone": "BK",
+      "label": "Rituale Romanum",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "BK11",
+      "zone": "BK",
+      "label": "Pontificale Romanum",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "BK12",
+      "zone": "BK",
+      "label": "Pulpit",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "BK13",
+      "zone": "BK",
+      "label": "Pipe organ",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "BK14",
+      "zone": "BK",
+      "label": "Choir stalls / area",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "BK15",
+      "zone": "BK",
+      "label": "Choir lectern / music stand",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "SA01",
+      "zone": "SA",
+      "label": "Baptismal font",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "SA02",
+      "zone": "SA",
+      "label": "Font cover and enclosure",
+      "source_candidate_in_original": false,
+      "research_lead_count": 2,
+      "research_batches": [
+        "B23"
+      ],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_WITH_UNAPPROVED_RESEARCH_LEAD"
+    },
+    {
+      "object_id": "SA03",
+      "zone": "SA",
+      "label": "Baptismal shell / vessel",
+      "source_candidate_in_original": false,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_NO_TARGETED_RESEARCH_LEAD"
+    },
+    {
+      "object_id": "SA04",
+      "zone": "SA",
+      "label": "Oil stocks",
+      "source_candidate_in_original": false,
+      "research_lead_count": 2,
+      "research_batches": [
+        "B21",
+        "B22"
+      ],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_WITH_UNAPPROVED_RESEARCH_LEAD"
+    },
+    {
+      "object_id": "SA05",
+      "zone": "SA",
+      "label": "Confessional",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "SA06",
+      "zone": "SA",
+      "label": "Confessional grille",
+      "source_candidate_in_original": false,
+      "research_lead_count": 1,
+      "research_batches": [
+        "B23"
+      ],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_WITH_UNAPPROVED_RESEARCH_LEAD"
+    },
+    {
+      "object_id": "SA07",
+      "zone": "SA",
+      "label": "Confessional kneeler",
+      "source_candidate_in_original": false,
+      "research_lead_count": 1,
+      "research_batches": [
+        "B23"
+      ],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_WITH_UNAPPROVED_RESEARCH_LEAD"
+    },
+    {
+      "object_id": "SA08",
+      "zone": "SA",
+      "label": "Wedding kneeler / prie-dieu",
+      "source_candidate_in_original": false,
+      "research_lead_count": 2,
+      "research_batches": [
+        "B23"
+      ],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_WITH_UNAPPROVED_RESEARCH_LEAD"
+    },
+    {
+      "object_id": "SA09",
+      "zone": "SA",
+      "label": "Wedding rings",
+      "source_candidate_in_original": false,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_NO_TARGETED_RESEARCH_LEAD"
+    },
+    {
+      "object_id": "SA10",
+      "zone": "SA",
+      "label": "Sick-call kit",
+      "source_candidate_in_original": false,
+      "research_lead_count": 1,
+      "research_batches": [
+        "B23"
+      ],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_WITH_UNAPPROVED_RESEARCH_LEAD"
+    },
+    {
+      "object_id": "SA11",
+      "zone": "SA",
+      "label": "Home Communion pyx and case",
+      "source_candidate_in_original": false,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_NO_TARGETED_RESEARCH_LEAD"
+    },
+    {
+      "object_id": "SE01",
+      "zone": "SE",
+      "label": "Paschal candle",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "SE02",
+      "zone": "SE",
+      "label": "Candlemas candles",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "SE03",
+      "zone": "SE",
+      "label": "Blessed palms",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "SE04",
+      "zone": "SE",
+      "label": "Ashes and ash vessel",
+      "source_candidate_in_original": false,
+      "research_lead_count": 1,
+      "research_batches": [
+        "B23"
+      ],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_WITH_UNAPPROVED_RESEARCH_LEAD"
+    },
+    {
+      "object_id": "SE05",
+      "zone": "SE",
+      "label": "Veiled crucifix and images",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "SE06",
+      "zone": "SE",
+      "label": "Good Friday cross",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "SE07",
+      "zone": "SE",
+      "label": "Requiem catafalque",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "SE08",
+      "zone": "SE",
+      "label": "Funeral bier / coffin",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "SE09",
+      "zone": "SE",
+      "label": "Funeral pall",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "SE10",
+      "zone": "SE",
+      "label": "Eucharistic processional canopy",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "SE11",
+      "zone": "SE",
+      "label": "Processional banner",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "SE12",
+      "zone": "SE",
+      "label": "Requiem vestments",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "SE13",
+      "zone": "SE",
+      "label": "Altar of Repose furnishings",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "SE14",
+      "zone": "SE",
+      "label": "Tenebrae hearse / triangular stand",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "SP01",
+      "zone": "SP",
+      "label": "Pax-brede / instrument of peace",
+      "source_candidate_in_original": false,
+      "research_lead_count": 1,
+      "research_batches": [
+        "B21"
+      ],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_WITH_UNAPPROVED_RESEARCH_LEAD"
+    },
+    {
+      "object_id": "SP02",
+      "zone": "SP",
+      "label": "Bishop's hand candle / bugia",
+      "source_candidate_in_original": true,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "HAS_ORIGINAL_SOURCE_CANDIDATE_OR_HOTSPOT_NOT_AUTO_APPROVED"
+    },
+    {
+      "object_id": "SP03",
+      "zone": "SP",
+      "label": "Gremial",
+      "source_candidate_in_original": false,
+      "research_lead_count": 1,
+      "research_batches": [
+        "B23"
+      ],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_WITH_UNAPPROVED_RESEARCH_LEAD"
+    },
+    {
+      "object_id": "SP04",
+      "zone": "SP",
+      "label": "Portable altar stone",
+      "source_candidate_in_original": false,
+      "research_lead_count": 2,
+      "research_batches": [
+        "B23"
+      ],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_WITH_UNAPPROVED_RESEARCH_LEAD"
+    },
+    {
+      "object_id": "SP05",
+      "zone": "SP",
+      "label": "Architectural altar ciborium",
+      "source_candidate_in_original": false,
+      "research_lead_count": 1,
+      "research_batches": [
+        "B22"
+      ],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_WITH_UNAPPROVED_RESEARCH_LEAD"
+    },
+    {
+      "object_id": "SP06",
+      "zone": "SP",
+      "label": "Historical sacred vessels",
+      "source_candidate_in_original": false,
+      "research_lead_count": 0,
+      "research_batches": [],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_NO_TARGETED_RESEARCH_LEAD"
+    },
+    {
+      "object_id": "SP07",
+      "zone": "SP",
+      "label": "Ecclesiastical heraldry",
+      "source_candidate_in_original": false,
+      "research_lead_count": 1,
+      "research_batches": [
+        "B23"
+      ],
+      "pilot_30": false,
+      "pilot_hero_asset_id": null,
+      "status": "GAP_WITH_UNAPPROVED_RESEARCH_LEAD"
+    }
+  ],
+  "gates": {
+    "original_registry_changed": false,
+    "primary_hero_selections_changed": false,
+    "all_new_sources_research_only": true,
+    "one_image_one_object_rule": true,
+    "do_not_treat_context_as_hero": true,
+    "licenses_must_be_checked_per_photo": true,
+    "full_resolution_required": true
+  }
+}

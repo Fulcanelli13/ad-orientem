@@ -1,0 +1,127 @@
+{
+  "schema": "AO_M6_B30_NATIVE_PIXEL_TLM_REPRESENTATIVENESS_QA_V1",
+  "date": "2026-10-19",
+  "status": "ORIGINALS_CHECKED_NEW_TLM_CANDIDATE_RESEARCH_ONLY",
+  "original_run": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/39233412703",
+  "original_artifact": "https://github.com/Fulcanelli13/ad-orientem/actions/runs/39233412703/artifacts/12176972977",
+  "attempted": 6,
+  "acquired": 3,
+  "source_files_distinct": 3,
+  "rate_limit_stop": true,
+  "source_reviews": [
+    {
+      "object_ids": [
+        "AL16"
+      ],
+      "source_url": "https://commons.wikimedia.org/wiki/File:Livorno,_museo_di_santa_giulia,_cartegloria_del_1800-50_ca.jpg",
+      "author": "Sailko",
+      "license": "CC BY 3.0",
+      "dimensions": [
+        3828,
+        2160
+      ],
+      "source_sha256": "bcbed883927ea129b1306ed67eaf18674b541e4e45d38cd2ed253075d32776ba",
+      "original_inspected": true,
+      "visual": "Three coordinated Latin altar cards in heavily silvered ornate frames on museum dark-plinth exhibition with reflections. All three visible; genuine Catholic object form, but not appreciably more representative for an ordinary 1962 parish Mass than existing ornate hero.",
+      "decision": "REJECT_AS_REPLACEMENT_FOR_AL16_KEEP_HISTORICAL_ALT"
+    },
+    {
+      "object_ids": [
+        "AL06"
+      ],
+      "source_url": "https://commons.wikimedia.org/wiki/File:Altar_crucifix,_St_Michael's,_Remuera.jpg",
+      "author": "Bojan Jankuloski (Bjankuloski06)",
+      "license": "CC BY 4.0",
+      "dimensions": [
+        5911,
+        3941
+      ],
+      "source_sha256": "357436b8c0b6ae83d36632a75b87c161e36c713fc40234efcb2f133460b30d17",
+      "original_inspected": true,
+      "visual": "Wall-mounted monumental Crucifix of Christ above altar, not a freestanding altar crucifix with base. The file's title 'altar crucifix' does not establish a single freestanding physical object as required by AL06.",
+      "decision": "TYPOLOGY_REJECT_FOR_AL06_PORTABLE_STANDING_ALTAR_CRUCIFIX"
+    },
+    {
+      "object_ids": [
+        "EQ01",
+        "EQ02"
+      ],
+      "source_url": "https://commons.wikimedia.org/wiki/File:Holy_water_and_wine_for_Mass.jpg",
+      "author": "Wilfredor",
+      "license": "CC0 1.0",
+      "dimensions": [
+        2848,
+        2318
+      ],
+      "source_sha256": "2f077169095462b62e8eca922ca5c9253c1ef5217dae7f20ed2eeec353795f00",
+      "original_inspected": true,
+      "visual": "Matched clear-glass Catholic Mass cruets with cross-topped gold stoppers and handles on a single tray; water uncoloured in left vessel, golden-coloured wine in right vessel. Very recognisable vessel type for the Traditional Latin Mass, but image is a generic Mass photograph and not certified from a 1962-rubrics celebration. Crops preserve each vessel without fabricating its form.",
+      "decision": "PREFER_TYPICAL_GLASS_CRUET_SHAPES_OVER_GOTHIC_HISTORICAL_CANDIDATE_FOR_PROVISIONAL_EQ01_EQ02",
+      "subobject_crops": [
+        {
+          "object_id": "EQ02",
+          "crop_box_original_pixels": [
+            205,
+            826,
+            968,
+            2022
+          ],
+          "asset_id": "M6B30-EQ02-CC0-GLASS-WATER-CRUET-CROP",
+          "derived_original_crop_px": [
+            763,
+            1196
+          ],
+          "crop_sha256": "478e8327d265d7ef13457c761ecf9f4970f14a63055f7ab701339596060eee5b",
+          "image_quality_note": "Complete water bottle but ornate gold candle/linen objects remain soft-focus in background; 763px width."
+        },
+        {
+          "object_id": "EQ01",
+          "crop_box_original_pixels": [
+            946,
+            826,
+            1629,
+            2022
+          ],
+          "asset_id": "M6B30-EQ01-CC0-GLASS-WINE-CRUET-CROP",
+          "derived_original_crop_px": [
+            683,
+            1196
+          ],
+          "crop_sha256": "1b60718cfe90222e49cf4dce86f97f15f9876e9669cb91a341d5ee3550f05e95",
+          "image_quality_note": "Complete wine bottle but decorated gold object remains soft-focus behind; 683px width."
+        }
+      ],
+      "caveats": "One photograph split into two truthful single-object crops; source photo count remains ONE. Two crops are not two independently photographed objects. Context of source is modern Catholic Mass, not necessarily 1962; classification is physically appropriate to TLM, not evidence of a particular historical liturgy."
+    }
+  ],
+  "download_incomplete": [
+    {
+      "object_id": "EQ06",
+      "status": "WIKIMEDIA_429_SOURCE_STOP"
+    },
+    {
+      "object_id": "LN02",
+      "status": "NOT_ATTEMPTED_AFTER_429"
+    },
+    {
+      "object_id": "AL03",
+      "status": "NOT_ATTEMPTED_AFTER_429"
+    }
+  ],
+  "licence_policy": "CC0 source allows original crop redistribution without copyright attribution mandate. Retain Wilfredor and Wikimedia Commons source provenance nonetheless.",
+  "decision_summary": {
+    "image_sources_downloaded": 3,
+    "more_representative_tlm_selection_ids": [
+      "EQ01",
+      "EQ02"
+    ],
+    "number_distinct_source_photographs_used_for_two_cruets": 1,
+    "prior_typicality_flag_EQ02": "1500 Gothic historic museum specimen retained as historical alternative",
+    "AL06_replace": false,
+    "AL16_replace": false,
+    "publication_approved": false,
+    "user_approved": false
+  },
+  "canonical_registry_170_untouched": true,
+  "Mass_reader_untouched": true
+}

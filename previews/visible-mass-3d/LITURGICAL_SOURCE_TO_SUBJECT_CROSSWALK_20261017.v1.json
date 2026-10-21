@@ -1,0 +1,4276 @@
+{
+  "schema": "AO_VISIBLE_MASS_1962_SOURCE_TO_SUBJECT_CROSSWALK_V1",
+  "version": "1.0.0",
+  "as_of": "2026-10-17",
+  "status": "RESEARCH_CANDIDATE_NO_RUBRIC_OR_CONTENT_CERTIFICATION",
+  "scope": "Existing 170 physical objects and 134 sanctuary questions; routing and source reconnaissance only.",
+  "owners": {
+    "calendar": "data/calendar/traditional-calendar-adjudication-matrix.v1.json",
+    "commemorations": "data/calendar/1962-privileged-commemorations.v1.json",
+    "formation": "data/learn/mass-formation-campion.v1.json",
+    "mass": "data/mass/ritus-1962-ceremonial-research-contract.v2.json",
+    "special": "data/mass/special-days-core.v1.1.json",
+    "extension": "data/mass/special-days-extension.v1.3.json",
+    "glossary": "data/glossary/concepts-*.v1.json",
+    "texts": "data/learn/mass-explorer-prayer-readings.v1.json"
+  },
+  "source_roles": [
+    {
+      "id": "VM-RG60",
+      "title": "1960 Code of Rubrics",
+      "role": "NORMATIVE_1962",
+      "url": "https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html",
+      "limitation": "Already referenced in calendar and glossary; binding norms checked against original Latin",
+      "source_validation": "LANDING_PAGE_OR_EXISTING_PROJECT_REFERENCE_LOCATED_PASSAGE_PENDING"
+    },
+    {
+      "id": "VM-MR62",
+      "title": "1962 Missale Romanum",
+      "role": "NORMATIVE_1962",
+      "url": "https://archive.org/details/sp07mr62-editio-typica",
+      "limitation": "Existing Mass/Formation owner; precise printed leaves needed for individual ritual claims",
+      "source_validation": "LANDING_PAGE_OR_EXISTING_PROJECT_REFERENCE_LOCATED_PASSAGE_PENDING"
+    },
+    {
+      "id": "VM-FSSP",
+      "title": "FSSP, Fr William Rock, seven Extraordinary Thoughts guides",
+      "role": "SEASONAL_EXPLANATION",
+      "url": "https://fssp.com/extraordinary-guides/",
+      "limitation": "Seven guide index verified; PDF passages not independently collated",
+      "source_validation": "LANDING_PAGE_OR_EXISTING_PROJECT_REFERENCE_LOCATED_PASSAGE_PENDING"
+    },
+    {
+      "id": "VM-SSPXAPI",
+      "title": "SSPX Ordo public 1962 API",
+      "role": "CALENDAR_COMPARISON",
+      "url": "https://ordo.fsspx.org/api-docs?lang=en",
+      "limitation": "Default lang=fr, source=gallia, congregation=fsspx; never treat as universal unconfigured",
+      "source_validation": "LANDING_PAGE_OR_EXISTING_PROJECT_REFERENCE_LOCATED_PASSAGE_PENDING"
+    },
+    {
+      "id": "VM-SSPXFAQ",
+      "title": "1962 Ordo, rubrical FAQ",
+      "role": "SECONDARY_EXPLANATION",
+      "url": "https://1962ordo.today/1962-rubrics/",
+      "limitation": "Independent explainer; must reconcile individual claims against 1960 original",
+      "source_validation": "LANDING_PAGE_OR_EXISTING_PROJECT_REFERENCE_LOCATED_PASSAGE_PENDING"
+    },
+    {
+      "id": "VM-ICKSP",
+      "title": "ICKSP sacred music and liturgical Propers",
+      "role": "CHANT_PROPER_WITNESS",
+      "url": "https://www.institute-christ-king.org/resources/sacred-music",
+      "limitation": "Source distinguishes 1962 and pre-1955 items; calendar day not proof of Mass selection",
+      "source_validation": "LANDING_PAGE_OR_EXISTING_PROJECT_REFERENCE_LOCATED_PASSAGE_PENDING"
+    },
+    {
+      "id": "VM-OCONNELL",
+      "title": "J B O'Connell, The Celebration of Mass (4th ed., 1964)",
+      "role": "CEREMONIAL_SECONDARY",
+      "url": "https://books.google.com/books/about/The_Celebration_of_Mass.html?id=4cgNAQAAMAAJ",
+      "limitation": "Existing glossary and Formation source, exact page not collated in this pass",
+      "source_validation": "LANDING_PAGE_OR_EXISTING_PROJECT_REFERENCE_LOCATED_PASSAGE_PENDING"
+    },
+    {
+      "id": "VM-FORTESCUE",
+      "title": "Fortescue/O'Connell/Reid, Ceremonies of the Roman Rite Described",
+      "role": "CEREMONIAL_SECONDARY",
+      "url": "https://www.bloomsbury.com/uk/ceremonies-of-the-roman-rite-described-9780860124627/",
+      "limitation": "Different editions require edition-control and 1962 source comparison",
+      "source_validation": "LANDING_PAGE_OR_EXISTING_PROJECT_REFERENCE_LOCATED_PASSAGE_PENDING"
+    },
+    {
+      "id": "VM-AO-HW",
+      "title": "Ad Orientem existing 1962 Holy Week owner",
+      "role": "PROJECT_CROSSWALK",
+      "url": "https://github.com/Fulcanelli13/ad-orientem/blob/main/docs/HOLY-WEEK-LEGACY-RECONCILIATION-2026-10-10.md",
+      "limitation": "Project register, not the printed normative text",
+      "source_validation": "LANDING_PAGE_OR_EXISTING_PROJECT_REFERENCE_LOCATED_PASSAGE_PENDING"
+    }
+  ],
+  "topics": [
+    {
+      "id": "VM-RB01",
+      "title": "Liturgical year and season boundaries",
+      "object_ids": [
+        "SC07",
+        "BK01",
+        "BK07",
+        "BK08",
+        "VE15",
+        "AL12"
+      ],
+      "source_ids": [
+        "VM-RG60",
+        "VM-FSSP",
+        "VM-SSPXAPI"
+      ],
+      "existing_owners": [
+        "data/calendar/traditional-calendar-adjudication-matrix.v1.json"
+      ],
+      "source_locator": "RG 71–77",
+      "illustrative_question": "Why has the liturgical season changed?",
+      "non_negotiable_gate": "ACTUAL_OFFICE_MASS_NOT_DATE_ONLY",
+      "validation": "SOURCE_ROUTE_ONLY_NO_ANSWER_CERTIFIED"
+    },
+    {
+      "id": "VM-RB02",
+      "title": "Four liturgical day classes",
+      "object_ids": [
+        "SC07",
+        "BK01",
+        "BK04",
+        "VE15"
+      ],
+      "source_ids": [
+        "VM-RG60",
+        "VM-SSPXAPI",
+        "VM-SSPXFAQ"
+      ],
+      "existing_owners": [
+        "data/calendar/traditional-calendar-adjudication-matrix.v1.json"
+      ],
+      "source_locator": "RG 11–34, 35–62, 91",
+      "illustrative_question": "Why is this feast class II?",
+      "non_negotiable_gate": "DAY_CLASS_NOT_MASS_FORM",
+      "validation": "SOURCE_ROUTE_ONLY_NO_ANSWER_CERTIFIED"
+    },
+    {
+      "id": "VM-RB03",
+      "title": "Precedence and impeded feasts",
+      "object_ids": [
+        "SC07",
+        "BK01",
+        "BK03",
+        "BK04"
+      ],
+      "source_ids": [
+        "VM-RG60",
+        "VM-SSPXAPI",
+        "VM-SSPXFAQ"
+      ],
+      "existing_owners": [
+        "data/calendar/traditional-calendar-adjudication-matrix.v1.json"
+      ],
+      "source_locator": "RG 91–102",
+      "illustrative_question": "Why is the saint not celebrated today?",
+      "non_negotiable_gate": "NO_HEURISTIC_OVERRIDES",
+      "validation": "SOURCE_ROUTE_ONLY_NO_ANSWER_CERTIFIED"
+    },
+    {
+      "id": "VM-RB04",
+      "title": "Commemorations and extra orations",
+      "object_ids": [
+        "BK01",
+        "BK03",
+        "BK04"
+      ],
+      "source_ids": [
+        "VM-RG60",
+        "VM-MR62",
+        "VM-SSPXAPI"
+      ],
+      "existing_owners": [
+        "data/calendar/1962-privileged-commemorations.v1.json",
+        "data/calendar/traditional-calendar-adjudication-matrix.v1.json"
+      ],
+      "source_locator": "RG 106–116",
+      "illustrative_question": "Why does another saint appear in the Collect?",
+      "non_negotiable_gate": "APPROVED_COMM_LIMIT",
+      "validation": "SOURCE_ROUTE_ONLY_NO_ANSWER_CERTIFIED"
+    },
+    {
+      "id": "VM-RB05",
+      "title": "Universal and particular calendars",
+      "object_ids": [
+        "SC07",
+        "SC10",
+        "BK01",
+        "DV04",
+        "DV12"
+      ],
+      "source_ids": [
+        "VM-RG60",
+        "VM-SSPXAPI",
+        "VM-SSPXFAQ"
+      ],
+      "existing_owners": [
+        "data/calendar/traditional-calendar-adjudication-matrix.v1.json"
+      ],
+      "source_locator": "RG 35–62",
+      "illustrative_question": "Why does this church celebrate a local feast?",
+      "non_negotiable_gate": "LOCATION_AND_COMMUNITY_SPECIFIED",
+      "validation": "SOURCE_ROUTE_ONLY_NO_ANSWER_CERTIFIED"
+    },
+    {
+      "id": "VM-RB06",
+      "title": "External solemnity vs transfer",
+      "object_ids": [
+        "SC07",
+        "BK01",
+        "BK07",
+        "BK08"
+      ],
+      "source_ids": [
+        "VM-MR62",
+        "VM-RG60",
+        "VM-SSPXAPI",
+        "VM-SSPXFAQ"
+      ],
+      "existing_owners": [
+        "data/calendar/traditional-calendar-adjudication-matrix.v1.json",
+        "data/mass/ritus-1962-ceremonial-research-contract.v2.json"
+      ],
+      "source_locator": "RGMR 356–361; RG 95–102",
+      "illustrative_question": "Why is Our Lady of the Rosary celebrated on a Sunday?",
+      "non_negotiable_gate": "EXTERNAL_SOLEMNITY_NOT_AUTOMATIC",
+      "validation": "SOURCE_ROUTE_ONLY_NO_ANSWER_CERTIFIED"
+    },
+    {
+      "id": "VM-RB07",
+      "title": "Vigils",
+      "object_ids": [
+        "SC07",
+        "BK01",
+        "BK07",
+        "BK08"
+      ],
+      "source_ids": [
+        "VM-RG60",
+        "VM-MR62",
+        "VM-FSSP"
+      ],
+      "existing_owners": [
+        "data/calendar/traditional-calendar-adjudication-matrix.v1.json",
+        "data/learn/mass-explorer-prayer-readings.v1.json"
+      ],
+      "source_locator": "RG 28–34",
+      "illustrative_question": "Why does this feast have a vigil?",
+      "non_negotiable_gate": "VIGIL_RITE_DISTINCT",
+      "validation": "SOURCE_ROUTE_ONLY_NO_ANSWER_CERTIFIED"
+    },
+    {
+      "id": "VM-RB08",
+      "title": "Three 1962 octaves",
+      "object_ids": [
+        "SC07",
+        "BK01",
+        "BK07",
+        "BK08"
+      ],
+      "source_ids": [
+        "VM-RG60",
+        "VM-SSPXAPI",
+        "VM-SSPXFAQ"
+      ],
+      "existing_owners": [
+        "data/calendar/traditional-calendar-adjudication-matrix.v1.json"
+      ],
+      "source_locator": "RG 63–70",
+      "illustrative_question": "Why is Pentecost celebrated throughout the octave?",
+      "non_negotiable_gate": "OLDER_OCTAVES_EXCLUDED",
+      "validation": "SOURCE_ROUTE_ONLY_NO_ANSWER_CERTIFIED"
+    },
+    {
+      "id": "VM-RB09",
+      "title": "Five usual liturgical colours",
+      "object_ids": [
+        "VE05",
+        "VE06",
+        "VE07",
+        "VE08",
+        "VE09",
+        "VE10",
+        "VE13",
+        "VE15",
+        "AL12",
+        "LN05",
+        "SC03",
+        "SC07"
+      ],
+      "source_ids": [
+        "VM-RG60",
+        "VM-FSSP",
+        "VM-SSPXAPI"
+      ],
+      "existing_owners": [
+        "data/calendar/traditional-calendar-adjudication-matrix.v1.json",
+        "data/mass/ritus-1962-ceremonial-research-contract.v2.json"
+      ],
+      "source_locator": "RG 117–132",
+      "illustrative_question": "Why are the vestments this colour?",
+      "non_negotiable_gate": "ACTUAL_MASS_AND_PHASE",
+      "validation": "SOURCE_ROUTE_ONLY_NO_ANSWER_CERTIFIED"
+    },
+    {
+      "id": "VM-RB10",
+      "title": "Rose gold silver and indults",
+      "object_ids": [
+        "VE07",
+        "VE09",
+        "VE10",
+        "VE13",
+        "VE15",
+        "AL12",
+        "LN05"
+      ],
+      "source_ids": [
+        "VM-RG60",
+        "VM-SSPXFAQ",
+        "VM-OCONNELL"
+      ],
+      "existing_owners": [
+        "data/calendar/traditional-calendar-adjudication-matrix.v1.json",
+        "data/mass/ritus-1962-ceremonial-research-contract.v2.json"
+      ],
+      "source_locator": "RG 117,131–137",
+      "illustrative_question": "Why can rose or gold be used?",
+      "non_negotiable_gate": "PERMISSION_NOT_UNIVERSAL",
+      "validation": "SOURCE_ROUTE_ONLY_NO_ANSWER_CERTIFIED"
+    },
+    {
+      "id": "VM-RB11",
+      "title": "Different colours within a ceremony",
+      "object_ids": [
+        "VE07",
+        "VE09",
+        "VE10",
+        "VE13",
+        "VE14",
+        "VE15",
+        "AL12",
+        "LN05"
+      ],
+      "source_ids": [
+        "VM-RG60",
+        "VM-MR62",
+        "VM-AO-HW"
+      ],
+      "existing_owners": [
+        "data/mass/ritus-1962-ceremonial-research-contract.v2.json",
+        "data/mass/special-days-core.v1.1.json"
+      ],
+      "source_locator": "RG 120–135; Holy Week proper",
+      "illustrative_question": "Why do Palm Sunday colours change?",
+      "non_negotiable_gate": "CEREMONY_PHASE_REQUIRED",
+      "validation": "SOURCE_ROUTE_ONLY_NO_ANSWER_CERTIFIED"
+    },
+    {
+      "id": "VM-RB12",
+      "title": "Low Sung Solemn distinction",
+      "object_ids": [
+        "AL07",
+        "AL08",
+        "AL09",
+        "SN06",
+        "SC07",
+        "VE07",
+        "VE09",
+        "VE10",
+        "LN07",
+        "EQ07",
+        "EQ12",
+        "EQ13",
+        "BK01"
+      ],
+      "source_ids": [
+        "VM-MR62",
+        "VM-OCONNELL",
+        "VM-FORTESCUE"
+      ],
+      "existing_owners": [
+        "data/mass/ritus-1962-ceremonial-research-contract.v2.json"
+      ],
+      "source_locator": "RGMR 271; Ritus servandus",
+      "illustrative_question": "Why does this Mass have a deacon?",
+      "non_negotiable_gate": "FORM_NOT_CLASS",
+      "validation": "SOURCE_ROUTE_ONLY_NO_ANSWER_CERTIFIED"
+    },
+    {
+      "id": "VM-RB13",
+      "title": "Pontifical Mass objects",
+      "object_ids": [
+        "SN11",
+        "AL09",
+        "VE16",
+        "VE17",
+        "VE18",
+        "VE19",
+        "VE20",
+        "SP02",
+        "SP03",
+        "BK11"
+      ],
+      "source_ids": [
+        "VM-MR62",
+        "VM-OCONNELL",
+        "VM-FORTESCUE"
+      ],
+      "existing_owners": [
+        "data/mass/ritus-1962-ceremonial-research-contract.v2.json"
+      ],
+      "source_locator": "Pontificale Romanum, edition check",
+      "illustrative_question": "Why is there a seventh candle?",
+      "non_negotiable_gate": "BISHOP_CONTEXT_REQUIRED",
+      "validation": "SOURCE_ROUTE_ONLY_NO_ANSWER_CERTIFIED"
+    },
+    {
+      "id": "VM-RB14",
+      "title": "Gloria Credo Alleluia Tract",
+      "object_ids": [
+        "BK01",
+        "BK03",
+        "BK07",
+        "BK08",
+        "BK15"
+      ],
+      "source_ids": [
+        "VM-MR62",
+        "VM-ICKSP",
+        "VM-FSSP"
+      ],
+      "existing_owners": [
+        "data/learn/mass-explorer-prayer-readings.v1.json",
+        "data/mass/ritus-1962-ceremonial-research-contract.v2.json"
+      ],
+      "source_locator": "RGMR proper rubrics; exact locator to collate",
+      "illustrative_question": "Why is Alleluia missing?",
+      "non_negotiable_gate": "CHANT_NOT_CALENDAR_AUTHORITY",
+      "validation": "SOURCE_ROUTE_ONLY_NO_ANSWER_CERTIFIED"
+    },
+    {
+      "id": "VM-RB15",
+      "title": "Readings and Prefaces",
+      "object_ids": [
+        "BK01",
+        "BK03",
+        "BK04",
+        "BK05",
+        "BK06",
+        "BK07",
+        "BK08"
+      ],
+      "source_ids": [
+        "VM-MR62",
+        "VM-ICKSP",
+        "VM-OCONNELL"
+      ],
+      "existing_owners": [
+        "data/learn/mass-explorer-prayer-readings.v1.json",
+        "data/mass/ritus-1962-ceremonial-research-contract.v2.json"
+      ],
+      "source_locator": "RGMR proper and Preface sections",
+      "illustrative_question": "Why are there extra readings?",
+      "non_negotiable_gate": "PRESERVE_SOURCE_ORDER",
+      "validation": "SOURCE_ROUTE_ONLY_NO_ANSWER_CERTIFIED"
+    },
+    {
+      "id": "VM-RB16",
+      "title": "Votive Mass eligibility",
+      "object_ids": [
+        "BK01",
+        "SC07",
+        "VE15",
+        "AL12"
+      ],
+      "source_ids": [
+        "VM-MR62",
+        "VM-RG60",
+        "VM-SSPXAPI"
+      ],
+      "existing_owners": [
+        "data/calendar/traditional-calendar-adjudication-matrix.v1.json",
+        "data/mass/ritus-1962-ceremonial-research-contract.v2.json"
+      ],
+      "source_locator": "RGMR 302–334",
+      "illustrative_question": "Why is a white votive Mass said on a green feria?",
+      "non_negotiable_gate": "PERMITTED_SELECTED_MASS",
+      "validation": "SOURCE_ROUTE_ONLY_NO_ANSWER_CERTIFIED"
+    },
+    {
+      "id": "VM-RB17",
+      "title": "Requiem and All Souls",
+      "object_ids": [
+        "SE07",
+        "SE08",
+        "SE09",
+        "SE12",
+        "VE05",
+        "VE07",
+        "VE15",
+        "EQ07",
+        "EQ10",
+        "EQ11",
+        "BK01",
+        "AL01",
+        "SN02"
+      ],
+      "source_ids": [
+        "VM-MR62",
+        "VM-RG60",
+        "VM-OCONNELL",
+        "VM-AO-HW"
+      ],
+      "existing_owners": [
+        "data/mass/ritus-1962-ceremonial-research-contract.v2.json",
+        "data/mass/special-days-core.v1.1.json"
+      ],
+      "source_locator": "1962 Masses of the Dead and following rites",
+      "illustrative_question": "Why is there a catafalque?",
+      "non_negotiable_gate": "ABSOLUTION_NOT_ALWAYS_FOLLOWS",
+      "validation": "SOURCE_ROUTE_ONLY_NO_ANSWER_CERTIFIED"
+    },
+    {
+      "id": "VM-RB18",
+      "title": "Nuptial Mass and blessing",
+      "object_ids": [
+        "SA08",
+        "SA09",
+        "BK01",
+        "VE05",
+        "VE07",
+        "AL01"
+      ],
+      "source_ids": [
+        "VM-MR62",
+        "VM-OCONNELL",
+        "VM-FORTESCUE"
+      ],
+      "existing_owners": [
+        "data/mass/ritus-1962-ceremonial-research-contract.v2.json",
+        "data/mass/special-days-core.v1.1.json"
+      ],
+      "source_locator": "1962 Nuptial rubrics exact leaf pending",
+      "illustrative_question": "Why can a wedding occur without Nuptial Mass?",
+      "non_negotiable_gate": "NUPTIAL_FORM_ELIGIBILITY",
+      "validation": "SOURCE_ROUTE_ONLY_NO_ANSWER_CERTIFIED"
+    },
+    {
+      "id": "VM-RB19",
+      "title": "Advent privileged ferias",
+      "object_ids": [
+        "VE15",
+        "AL12",
+        "SC07",
+        "BK01",
+        "BK07",
+        "BK08"
+      ],
+      "source_ids": [
+        "VM-RG60",
+        "VM-FSSP",
+        "VM-ICKSP",
+        "VM-SSPXAPI"
+      ],
+      "existing_owners": [
+        "data/calendar/traditional-calendar-adjudication-matrix.v1.json"
+      ],
+      "source_locator": "RG 21–27,71",
+      "illustrative_question": "Why does this Advent feria outrank a feast?",
+      "non_negotiable_gate": "FERIAL_GRADE_DATE",
+      "validation": "SOURCE_ROUTE_ONLY_NO_ANSWER_CERTIFIED"
+    },
+    {
+      "id": "VM-RB20",
+      "title": "Septuagesima",
+      "object_ids": [
+        "BK01",
+        "BK07",
+        "BK08",
+        "VE15",
+        "AL12"
+      ],
+      "source_ids": [
+        "VM-RG60",
+        "VM-FSSP",
+        "VM-ICKSP"
+      ],
+      "existing_owners": [
+        "data/calendar/traditional-calendar-adjudication-matrix.v1.json",
+        "data/learn/mass-explorer-prayer-readings.v1.json"
+      ],
+      "source_locator": "RG 73 and proper",
+      "illustrative_question": "Why is Alleluia absent before Lent?",
+      "non_negotiable_gate": "NOT_ASH_WEDNESDAY",
+      "validation": "SOURCE_ROUTE_ONLY_NO_ANSWER_CERTIFIED"
+    },
+    {
+      "id": "VM-RB21",
+      "title": "Lent and Ember Days",
+      "object_ids": [
+        "SE04",
+        "BK01",
+        "BK07",
+        "BK08",
+        "VE15",
+        "AL12",
+        "SC07"
+      ],
+      "source_ids": [
+        "VM-RG60",
+        "VM-FSSP",
+        "VM-MR62"
+      ],
+      "existing_owners": [
+        "data/calendar/traditional-calendar-adjudication-matrix.v1.json",
+        "data/learn/mass-explorer-prayer-readings.v1.json"
+      ],
+      "source_locator": "RG 21–27,74,108",
+      "illustrative_question": "Why are there extra lessons today?",
+      "non_negotiable_gate": "DATE_AND_PROPER_REQUIRED",
+      "validation": "SOURCE_ROUTE_ONLY_NO_ANSWER_CERTIFIED"
+    },
+    {
+      "id": "VM-RB22",
+      "title": "Passiontide veil",
+      "object_ids": [
+        "SE05",
+        "AL06",
+        "EN11",
+        "DV02",
+        "DV03",
+        "DV04",
+        "DV05",
+        "DV06",
+        "DV09",
+        "DV12",
+        "SN09"
+      ],
+      "source_ids": [
+        "VM-MR62",
+        "VM-FSSP",
+        "VM-OCONNELL"
+      ],
+      "existing_owners": [
+        "data/mass/special-days-core.v1.1.json",
+        "data/glossary/concepts-*.v1.json"
+      ],
+      "source_locator": "1962 Passiontide and Holy Week proper",
+      "illustrative_question": "Why cover sacred images?",
+      "non_negotiable_gate": "ACTUAL_IMAGE_AND_DATE_EXCEPTION",
+      "validation": "SOURCE_ROUTE_ONLY_NO_ANSWER_CERTIFIED"
+    },
+    {
+      "id": "VM-RB23",
+      "title": "Palm Sunday palms and procession",
+      "object_ids": [
+        "SE03",
+        "EN10",
+        "SE11",
+        "VE13",
+        "VE15",
+        "EQ07",
+        "EQ10",
+        "EQ11",
+        "BK01"
+      ],
+      "source_ids": [
+        "VM-MR62",
+        "VM-ICKSP",
+        "VM-AO-HW"
+      ],
+      "existing_owners": [
+        "data/mass/special-days-core.v1.1.json",
+        "data/mass/special-days-extension.v1.3.json"
+      ],
+      "source_locator": "1962 Palm Sunday Ordo; RG 126",
+      "illustrative_question": "Why change vestments after the procession?",
+      "non_negotiable_gate": "1962_NOT_PRE1955",
+      "validation": "SOURCE_ROUTE_ONLY_NO_ANSWER_CERTIFIED"
+    },
+    {
+      "id": "VM-RB24",
+      "title": "Holy Thursday repository and stripping",
+      "object_ids": [
+        "AL01",
+        "AL03",
+        "AL05",
+        "AL12",
+        "AL13",
+        "SN05",
+        "SV03",
+        "SV04",
+        "SE13",
+        "VE14",
+        "EQ07"
+      ],
+      "source_ids": [
+        "VM-MR62",
+        "VM-AO-HW",
+        "VM-OCONNELL"
+      ],
+      "existing_owners": [
+        "data/mass/special-days-core.v1.1.json",
+        "data/mass/special-days-extension.v1.3.json"
+      ],
+      "source_locator": "1962 Holy Thursday proper",
+      "illustrative_question": "Why is the altar stripped?",
+      "non_negotiable_gate": "TRANSFER_NOT_AUTOMATIC_MANDATUM",
+      "validation": "SOURCE_ROUTE_ONLY_NO_ANSWER_CERTIFIED"
+    },
+    {
+      "id": "VM-RB25",
+      "title": "Good Friday Cross and no Mass",
+      "object_ids": [
+        "SE05",
+        "SE06",
+        "AL01",
+        "AL03",
+        "AL06",
+        "AL12",
+        "SE13",
+        "VE15",
+        "EQ10",
+        "EQ11"
+      ],
+      "source_ids": [
+        "VM-MR62",
+        "VM-AO-HW",
+        "VM-ICKSP"
+      ],
+      "existing_owners": [
+        "data/mass/special-days-core.v1.1.json",
+        "data/mass/special-days-extension.v1.3.json"
+      ],
+      "source_locator": "1962 Good Friday Ordo",
+      "illustrative_question": "Why unveil the Cross today?",
+      "non_negotiable_gate": "PRINTED_1962_NOT_2008_OR_PRE1955",
+      "validation": "SOURCE_ROUTE_ONLY_NO_ANSWER_CERTIFIED"
+    },
+    {
+      "id": "VM-RB26",
+      "title": "Easter Vigil fire and candle",
+      "object_ids": [
+        "SE01",
+        "SA01",
+        "SA02",
+        "SA03",
+        "AL01",
+        "AL07",
+        "EN03",
+        "EN10",
+        "EQ12",
+        "BK01",
+        "BK07"
+      ],
+      "source_ids": [
+        "VM-MR62",
+        "VM-AO-HW",
+        "VM-ICKSP",
+        "VM-FSSP"
+      ],
+      "existing_owners": [
+        "data/mass/special-days-core.v1.1.json",
+        "data/mass/special-days-extension.v1.3.json"
+      ],
+      "source_locator": "1962 Easter Vigil Ordo",
+      "illustrative_question": "Why inscribe Alpha and Omega?",
+      "non_negotiable_gate": "NOT_PRE1955",
+      "validation": "SOURCE_ROUTE_ONLY_NO_ANSWER_CERTIFIED"
+    },
+    {
+      "id": "VM-RB27",
+      "title": "Easter octave and Paschaltide",
+      "object_ids": [
+        "SE01",
+        "VE15",
+        "BK01",
+        "BK07",
+        "BK08",
+        "SC07"
+      ],
+      "source_ids": [
+        "VM-RG60",
+        "VM-MR62",
+        "VM-FSSP",
+        "VM-ICKSP"
+      ],
+      "existing_owners": [
+        "data/calendar/traditional-calendar-adjudication-matrix.v1.json",
+        "data/learn/mass-explorer-prayer-readings.v1.json"
+      ],
+      "source_locator": "RG 63–70,76",
+      "illustrative_question": "Why is the Paschal candle present?",
+      "non_negotiable_gate": "EXACT_CONTEXT_REQUIRED",
+      "validation": "SOURCE_ROUTE_ONLY_NO_ANSWER_CERTIFIED"
+    },
+    {
+      "id": "VM-RB28",
+      "title": "Pentecost Vigil and octave",
+      "object_ids": [
+        "SE01",
+        "VE07",
+        "VE15",
+        "BK01",
+        "BK07",
+        "BK08",
+        "SC07"
+      ],
+      "source_ids": [
+        "VM-RG60",
+        "VM-MR62",
+        "VM-ICKSP"
+      ],
+      "existing_owners": [
+        "data/calendar/traditional-calendar-adjudication-matrix.v1.json",
+        "data/mass/special-days-core.v1.1.json"
+      ],
+      "source_locator": "RG 66,76,123",
+      "illustrative_question": "Why red throughout the octave?",
+      "non_negotiable_gate": "PRE1955_VIGIL_GUARD",
+      "validation": "SOURCE_ROUTE_ONLY_NO_ANSWER_CERTIFIED"
+    },
+    {
+      "id": "VM-RB29",
+      "title": "Candlemas",
+      "object_ids": [
+        "SE02",
+        "EN10",
+        "VE13",
+        "VE15",
+        "EQ10",
+        "EQ11",
+        "BK01"
+      ],
+      "source_ids": [
+        "VM-RG60",
+        "VM-MR62",
+        "VM-AO-HW",
+        "VM-FSSP"
+      ],
+      "existing_owners": [
+        "data/mass/special-days-core.v1.1.json",
+        "data/calendar/traditional-calendar-adjudication-matrix.v1.json"
+      ],
+      "source_locator": "RG 120(b); 2 February proper",
+      "illustrative_question": "Why bless and carry candles?",
+      "non_negotiable_gate": "PROCESSION_NOT_AUTOMATIC",
+      "validation": "SOURCE_ROUTE_ONLY_NO_ANSWER_CERTIFIED"
+    },
+    {
+      "id": "VM-RB30",
+      "title": "Ash Wednesday",
+      "object_ids": [
+        "SE04",
+        "VE15",
+        "EQ10",
+        "EQ11",
+        "BK01"
+      ],
+      "source_ids": [
+        "VM-RG60",
+        "VM-MR62",
+        "VM-FSSP",
+        "VM-AO-HW"
+      ],
+      "existing_owners": [
+        "data/mass/special-days-core.v1.1.json",
+        "data/calendar/traditional-calendar-adjudication-matrix.v1.json"
+      ],
+      "source_locator": "RG 21–27,91; Ash Wednesday proper",
+      "illustrative_question": "Why impose ashes?",
+      "non_negotiable_gate": "1962_PROPER_ONLY",
+      "validation": "SOURCE_ROUTE_ONLY_NO_ANSWER_CERTIFIED"
+    },
+    {
+      "id": "VM-RB31",
+      "title": "Rogations and litanies",
+      "object_ids": [
+        "EN10",
+        "SE11",
+        "EQ10",
+        "EQ11",
+        "VE15",
+        "BK01",
+        "BK07"
+      ],
+      "source_ids": [
+        "VM-RG60",
+        "VM-MR62",
+        "VM-ICKSP",
+        "VM-AO-HW"
+      ],
+      "existing_owners": [
+        "data/mass/special-days-core.v1.1.json",
+        "data/calendar/traditional-calendar-adjudication-matrix.v1.json"
+      ],
+      "source_locator": "RG 80–90, RGMR 346–347",
+      "illustrative_question": "Why the Litany of Saints in a procession?",
+      "non_negotiable_gate": "LOCAL_ORDINARY_AND_FOLLOWING_ACTION",
+      "validation": "SOURCE_ROUTE_ONLY_NO_ANSWER_CERTIFIED"
+    },
+    {
+      "id": "VM-RB32",
+      "title": "Corpus Christi procession",
+      "object_ids": [
+        "SV09",
+        "SV10",
+        "SV11",
+        "SE10",
+        "EN10",
+        "VE13",
+        "VE14",
+        "EQ07",
+        "EQ08",
+        "EQ09",
+        "BK07"
+      ],
+      "source_ids": [
+        "VM-RG60",
+        "VM-MR62",
+        "VM-ICKSP",
+        "VM-AO-HW"
+      ],
+      "existing_owners": [
+        "data/mass/special-days-core.v1.1.json",
+        "data/mass/special-days-extension.v1.3.json"
+      ],
+      "source_locator": "Corpus Christi Mass and procession proper",
+      "illustrative_question": "Why carry a monstrance beneath a canopy?",
+      "non_negotiable_gate": "PROCESSION_ACTION_EXPLICIT",
+      "validation": "SOURCE_ROUTE_ONLY_NO_ANSWER_CERTIFIED"
+    },
+    {
+      "id": "VM-RB33",
+      "title": "Exposition and Benediction",
+      "object_ids": [
+        "SV09",
+        "SV10",
+        "SV11",
+        "AL01",
+        "AL03",
+        "VE13",
+        "VE14",
+        "EQ07",
+        "EQ08",
+        "EQ09"
+      ],
+      "source_ids": [
+        "VM-MR62",
+        "VM-OCONNELL",
+        "VM-FORTESCUE"
+      ],
+      "existing_owners": [
+        "data/mass/special-days-core.v1.1.json",
+        "data/learn/mass-formation-campion.v1.json"
+      ],
+      "source_locator": "Rituale Romanum; rite edition pending",
+      "illustrative_question": "Why is a humeral veil used?",
+      "non_negotiable_gate": "SEPARATE_FROM_MASS",
+      "validation": "SOURCE_ROUTE_ONLY_NO_ANSWER_CERTIFIED"
+    },
+    {
+      "id": "VM-RB34",
+      "title": "First Friday votive Sacred Heart",
+      "object_ids": [
+        "VE15",
+        "SC07",
+        "BK01",
+        "BK04",
+        "DV05"
+      ],
+      "source_ids": [
+        "VM-RG60",
+        "VM-MR62",
+        "VM-ICKSP",
+        "VM-SSPXAPI"
+      ],
+      "existing_owners": [
+        "data/calendar/traditional-calendar-adjudication-matrix.v1.json",
+        "data/mass/ritus-1962-ceremonial-research-contract.v2.json"
+      ],
+      "source_locator": "RGMR 302–334, first-Friday rubrics",
+      "illustrative_question": "Why white on First Friday?",
+      "non_negotiable_gate": "VOTIVE_MASS_NOT_AUTO",
+      "validation": "SOURCE_ROUTE_ONLY_NO_ANSWER_CERTIFIED"
+    },
+    {
+      "id": "VM-RB35",
+      "title": "Tenebrae",
+      "object_ids": [
+        "SE14",
+        "EN03",
+        "BK09",
+        "DV06"
+      ],
+      "source_ids": [
+        "VM-MR62",
+        "VM-AO-HW",
+        "VM-FSSP"
+      ],
+      "existing_owners": [
+        "data/mass/special-days-core.v1.1.json",
+        "data/mass/special-days-extension.v1.3.json"
+      ],
+      "source_locator": "1962 Office Holy Week",
+      "illustrative_question": "Why extinguish fifteen candles?",
+      "non_negotiable_gate": "OFFICE_NOT_MASS",
+      "validation": "SOURCE_ROUTE_ONLY_NO_ANSWER_CERTIFIED"
+    },
+    {
+      "id": "VM-RB36",
+      "title": "Baptism, font, holy oils",
+      "object_ids": [
+        "SA01",
+        "SA02",
+        "SA03",
+        "SA04",
+        "SC09",
+        "BK10",
+        "SE01"
+      ],
+      "source_ids": [
+        "VM-MR62",
+        "VM-FORTESCUE",
+        "VM-FSSP"
+      ],
+      "existing_owners": [
+        "data/learn/mass-formation-campion.v1.json",
+        "data/mass/special-days-core.v1.1.json"
+      ],
+      "source_locator": "1962 Rituale Romanum, Easter Vigil distinction",
+      "illustrative_question": "Why is baptismal water blessed?",
+      "non_negotiable_gate": "RITUAL_BAPTISM_NOT_VIGIL",
+      "validation": "SOURCE_ROUTE_ONLY_NO_ANSWER_CERTIFIED"
+    },
+    {
+      "id": "VM-RB37",
+      "title": "Confession",
+      "object_ids": [
+        "SA05",
+        "SA06",
+        "SA07",
+        "BK10"
+      ],
+      "source_ids": [
+        "VM-MR62",
+        "VM-FORTESCUE"
+      ],
+      "existing_owners": [
+        "data/learn/mass-formation-campion.v1.json"
+      ],
+      "source_locator": "Rituale Romanum penance rites",
+      "illustrative_question": "Why a confessional grille?",
+      "non_negotiable_gate": "DO_NOT_CONFLATE_MASS",
+      "validation": "SOURCE_ROUTE_ONLY_NO_ANSWER_CERTIFIED"
+    },
+    {
+      "id": "VM-RB38",
+      "title": "Relics and altar dedication",
+      "object_ids": [
+        "AL01",
+        "AL14",
+        "AL15",
+        "DV08",
+        "SP04",
+        "BK11"
+      ],
+      "source_ids": [
+        "VM-MR62",
+        "VM-OCONNELL",
+        "VM-FORTESCUE"
+      ],
+      "existing_owners": [
+        "data/learn/mass-formation-campion.v1.json",
+        "data/glossary/concepts-*.v1.json"
+      ],
+      "source_locator": "Pontificale Romanum consecration",
+      "illustrative_question": "Why are relics placed in an altar?",
+      "non_negotiable_gate": "1983_CANONS_NOT_SUFFICIENT",
+      "validation": "SOURCE_ROUTE_ONLY_NO_ANSWER_CERTIFIED"
+    },
+    {
+      "id": "VM-RB39",
+      "title": "Incense and holy-water roles",
+      "object_ids": [
+        "EQ07",
+        "EQ08",
+        "EQ09",
+        "EQ10",
+        "EQ11",
+        "EQ15",
+        "VE14"
+      ],
+      "source_ids": [
+        "VM-MR62",
+        "VM-OCONNELL",
+        "VM-FORTESCUE"
+      ],
+      "existing_owners": [
+        "data/mass/ritus-1962-ceremonial-research-contract.v2.json",
+        "data/mass/special-days-core.v1.1.json"
+      ],
+      "source_locator": "Ritus servandus and rite-specific",
+      "illustrative_question": "Why incense at some ceremonies?",
+      "non_negotiable_gate": "LITURGICAL_ACTOR_REQUIRED",
+      "validation": "SOURCE_ROUTE_ONLY_NO_ANSWER_CERTIFIED"
+    },
+    {
+      "id": "VM-RB40",
+      "title": "Sanctuary preparation and reservation",
+      "object_ids": [
+        "AL01",
+        "AL03",
+        "AL04",
+        "AL05",
+        "AL06",
+        "AL07",
+        "AL12",
+        "AL13",
+        "SN05",
+        "SN07",
+        "SC02",
+        "SC07"
+      ],
+      "source_ids": [
+        "VM-MR62",
+        "VM-OCONNELL",
+        "VM-AO-HW"
+      ],
+      "existing_owners": [
+        "data/mass/ritus-1962-ceremonial-research-contract.v2.json",
+        "data/mass/special-days-core.v1.1.json"
+      ],
+      "source_locator": "Ritus servandus and Holy Week proper",
+      "illustrative_question": "Why does a sanctuary object move?",
+      "non_negotiable_gate": "NOT_EVERY_CHURCH_HAS_SAME_STATE",
+      "validation": "SOURCE_ROUTE_ONLY_NO_ANSWER_CERTIFIED"
+    },
+    {
+      "id": "VM-RB41",
+      "title": "Church bells and altar bells",
+      "object_ids": [
+        "EN03",
+        "EQ06",
+        "EQ12",
+        "EQ13",
+        "AL07"
+      ],
+      "source_ids": [
+        "VM-MR62",
+        "VM-OCONNELL",
+        "VM-FORTESCUE"
+      ],
+      "existing_owners": [
+        "data/mass/ritus-1962-ceremonial-research-contract.v2.json",
+        "data/glossary/concepts-*.v1.json"
+      ],
+      "source_locator": "Ritus servandus and local custom",
+      "illustrative_question": "Why ring the bell at Consecration?",
+      "non_negotiable_gate": "LOCAL_CUSTOM_NOT_UNIVERSAL_RUBRIC",
+      "validation": "SOURCE_ROUTE_ONLY_NO_ANSWER_CERTIFIED"
+    },
+    {
+      "id": "VM-RB42",
+      "title": "Patronal feasts and titular churches",
+      "object_ids": [
+        "SC07",
+        "BK01",
+        "SC10",
+        "DV03",
+        "DV04",
+        "SP07",
+        "AL01"
+      ],
+      "source_ids": [
+        "VM-RG60",
+        "VM-SSPXAPI",
+        "VM-SSPXFAQ",
+        "VM-ICKSP"
+      ],
+      "existing_owners": [
+        "data/calendar/traditional-calendar-adjudication-matrix.v1.json"
+      ],
+      "source_locator": "RG 35–62,1961 particular calendars",
+      "illustrative_question": "Why does this church celebrate its patron?",
+      "non_negotiable_gate": "EXACT_TITULAR_AND_LOCALITY",
+      "validation": "SOURCE_ROUTE_ONLY_NO_ANSWER_CERTIFIED"
+    },
+    {
+      "id": "VM-RB43",
+      "title": "Wine and water at Offertory",
+      "object_ids": [
+        "EQ01",
+        "EQ02",
+        "EQ03",
+        "SV01",
+        "SV02",
+        "LN01",
+        "LN02",
+        "VE09",
+        "VE10"
+      ],
+      "source_ids": [
+        "VM-MR62",
+        "VM-OCONNELL"
+      ],
+      "existing_owners": [
+        "data/mass/ritus-1962-ceremonial-research-contract.v2.json"
+      ],
+      "source_locator": "Ritus servandus VII.4, VII.9",
+      "illustrative_question": "Why does the minister add water?",
+      "non_negotiable_gate": "LOW_SUNG_SOLEMN_REQUIEM_BRANCH",
+      "validation": "SOURCE_ROUTE_ONLY_NO_ANSWER_CERTIFIED"
+    },
+    {
+      "id": "VM-RB44",
+      "title": "Funerals and burial",
+      "object_ids": [
+        "SE07",
+        "SE08",
+        "SE09",
+        "SE12",
+        "EN10",
+        "EQ10",
+        "EQ11",
+        "BK10"
+      ],
+      "source_ids": [
+        "VM-MR62",
+        "VM-OCONNELL",
+        "VM-FORTESCUE"
+      ],
+      "existing_owners": [
+        "data/mass/special-days-core.v1.1.json",
+        "data/learn/mass-formation-campion.v1.json"
+      ],
+      "source_locator": "Rituale Romanum Exsequiae",
+      "illustrative_question": "Why incense the coffin?",
+      "non_negotiable_gate": "ACTUAL_FOLLOWING_ABSOLUTION",
+      "validation": "SOURCE_ROUTE_ONLY_NO_ANSWER_CERTIFIED"
+    }
+  ],
+  "objects": [
+    {
+      "object_id": "EN01",
+      "label": "Church entrance / portal",
+      "glossary_id": "G401",
+      "match": "R",
+      "topic_ids": [],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "EN02",
+      "label": "Exterior cross",
+      "glossary_id": null,
+      "match": "M",
+      "topic_ids": [],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "EN03",
+      "label": "Bell tower and bells",
+      "glossary_id": null,
+      "match": "M",
+      "topic_ids": [
+        "VM-RB26",
+        "VM-RB35",
+        "VM-RB41"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "EN04",
+      "label": "Vestibule / narthex",
+      "glossary_id": "G401",
+      "match": "D",
+      "topic_ids": [],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "EN05",
+      "label": "Holy-water stoup",
+      "glossary_id": "G411",
+      "match": "D",
+      "topic_ids": [],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "EN06",
+      "label": "Nave",
+      "glossary_id": "G402",
+      "match": "D",
+      "topic_ids": [],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "EN07",
+      "label": "Pew",
+      "glossary_id": null,
+      "match": "M",
+      "topic_ids": [],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "EN08",
+      "label": "Pew kneeler",
+      "glossary_id": "G072",
+      "match": "R",
+      "topic_ids": [],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "EN09",
+      "label": "Central aisle",
+      "glossary_id": "G402",
+      "match": "R",
+      "topic_ids": [],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "EN10",
+      "label": "Processional cross",
+      "glossary_id": "G229",
+      "match": "D",
+      "topic_ids": [
+        "VM-RB23",
+        "VM-RB26",
+        "VM-RB29",
+        "VM-RB31",
+        "VM-RB32",
+        "VM-RB44"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "EN11",
+      "label": "Wall-mounted crucifix",
+      "glossary_id": null,
+      "match": "M",
+      "topic_ids": [
+        "VM-RB22"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "EN12",
+      "label": "Church seating and family areas",
+      "glossary_id": null,
+      "match": "M",
+      "topic_ids": [],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "EN13",
+      "label": "Alms box / offertory box",
+      "glossary_id": null,
+      "match": "M",
+      "topic_ids": [],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "DV01",
+      "label": "Side altar",
+      "glossary_id": "G405",
+      "match": "D",
+      "topic_ids": [],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "DV02",
+      "label": "Statue of the Blessed Virgin",
+      "glossary_id": "G153",
+      "match": "R",
+      "topic_ids": [
+        "VM-RB22"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "DV03",
+      "label": "Statue of Saint Joseph",
+      "glossary_id": "G154",
+      "match": "R",
+      "topic_ids": [
+        "VM-RB22",
+        "VM-RB42"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "DV04",
+      "label": "Statue of a saint",
+      "glossary_id": "G154",
+      "match": "R",
+      "topic_ids": [
+        "VM-RB05",
+        "VM-RB22",
+        "VM-RB42"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "DV05",
+      "label": "Sacred Heart image",
+      "glossary_id": null,
+      "match": "M",
+      "topic_ids": [
+        "VM-RB22",
+        "VM-RB34"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "DV06",
+      "label": "Stations of the Cross",
+      "glossary_id": "G419",
+      "match": "D",
+      "topic_ids": [
+        "VM-RB22",
+        "VM-RB35"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "DV07",
+      "label": "Votive candle stand",
+      "glossary_id": null,
+      "match": "M",
+      "topic_ids": [],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "DV08",
+      "label": "Reliquary / displayed relic",
+      "glossary_id": "G220",
+      "match": "D",
+      "topic_ids": [
+        "VM-RB38"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "DV09",
+      "label": "Stained glass / sacred painting",
+      "glossary_id": null,
+      "match": "M",
+      "topic_ids": [
+        "VM-RB22"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "DV10",
+      "label": "Ex-voto plaque",
+      "glossary_id": null,
+      "match": "M",
+      "topic_ids": [],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "DV11",
+      "label": "Rosary displayed at shrine",
+      "glossary_id": "G097",
+      "match": "R",
+      "topic_ids": [],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "DV12",
+      "label": "Sacred-image niche / shrine",
+      "glossary_id": "G436",
+      "match": "R",
+      "topic_ids": [
+        "VM-RB05",
+        "VM-RB22"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "SN01",
+      "label": "Sanctuary",
+      "glossary_id": "G181",
+      "match": "D",
+      "topic_ids": [],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "SN02",
+      "label": "Communion rail",
+      "glossary_id": "G186",
+      "match": "D",
+      "topic_ids": [
+        "VM-RB17"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "SN03",
+      "label": "Communion-rail gate",
+      "glossary_id": "G186",
+      "match": "R",
+      "topic_ids": [],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "SN04",
+      "label": "Sanctuary steps",
+      "glossary_id": "G181",
+      "match": "R",
+      "topic_ids": [],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "SN05",
+      "label": "Sanctuary lamp",
+      "glossary_id": "G218",
+      "match": "D",
+      "topic_ids": [
+        "VM-RB24",
+        "VM-RB40"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "SN06",
+      "label": "Sedilia / clergy seats",
+      "glossary_id": "G185",
+      "match": "D",
+      "topic_ids": [
+        "VM-RB12"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "SN07",
+      "label": "Credence table",
+      "glossary_id": "G184",
+      "match": "D",
+      "topic_ids": [
+        "VM-RB40"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "SN08",
+      "label": "Sanctuary pavement",
+      "glossary_id": null,
+      "match": "M",
+      "topic_ids": [],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "SN09",
+      "label": "Hanging rood / sanctuary crucifix",
+      "glossary_id": null,
+      "match": "M",
+      "topic_ids": [
+        "VM-RB22"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "SN10",
+      "label": "Rood / chancel screen",
+      "glossary_id": "G407",
+      "match": "D",
+      "topic_ids": [],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "SN11",
+      "label": "Cathedra / bishop's throne",
+      "glossary_id": "G406",
+      "match": "D",
+      "topic_ids": [
+        "VM-RB13"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "AL01",
+      "label": "High altar",
+      "glossary_id": "G404",
+      "match": "D",
+      "topic_ids": [
+        "VM-RB17",
+        "VM-RB18",
+        "VM-RB24",
+        "VM-RB25",
+        "VM-RB26",
+        "VM-RB33",
+        "VM-RB38",
+        "VM-RB40",
+        "VM-RB42"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "AL02",
+      "label": "Altar orientation",
+      "glossary_id": "G075",
+      "match": "R",
+      "topic_ids": [],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "AL03",
+      "label": "Tabernacle",
+      "glossary_id": "G080",
+      "match": "D",
+      "topic_ids": [
+        "VM-RB24",
+        "VM-RB25",
+        "VM-RB33",
+        "VM-RB40"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "AL04",
+      "label": "Tabernacle door and ornament",
+      "glossary_id": "G080",
+      "match": "R",
+      "topic_ids": [
+        "VM-RB40"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "AL05",
+      "label": "Tabernacle veil / conopaeum",
+      "glossary_id": "G080",
+      "match": "R",
+      "topic_ids": [
+        "VM-RB24",
+        "VM-RB40"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "AL06",
+      "label": "Altar crucifix",
+      "glossary_id": "G079",
+      "match": "R",
+      "topic_ids": [
+        "VM-RB22",
+        "VM-RB25",
+        "VM-RB40"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "AL07",
+      "label": "Six altar candlesticks",
+      "glossary_id": "G079",
+      "match": "R",
+      "topic_ids": [
+        "VM-RB12",
+        "VM-RB26",
+        "VM-RB40",
+        "VM-RB41"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "AL08",
+      "label": "Individual altar candle",
+      "glossary_id": "G079",
+      "match": "R",
+      "topic_ids": [
+        "VM-RB12"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "AL09",
+      "label": "Seventh / pontifical candle",
+      "glossary_id": "G446",
+      "match": "R",
+      "topic_ids": [
+        "VM-RB12",
+        "VM-RB13"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "AL10",
+      "label": "Altar gradine / candle shelf",
+      "glossary_id": "G079",
+      "match": "R",
+      "topic_ids": [],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "AL11",
+      "label": "Altar predella / platform",
+      "glossary_id": "G079",
+      "match": "R",
+      "topic_ids": [],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "AL12",
+      "label": "Altar frontal / antependium",
+      "glossary_id": "G079",
+      "match": "R",
+      "topic_ids": [
+        "VM-RB01",
+        "VM-RB09",
+        "VM-RB10",
+        "VM-RB11",
+        "VM-RB16",
+        "VM-RB19",
+        "VM-RB20",
+        "VM-RB21",
+        "VM-RB24",
+        "VM-RB25",
+        "VM-RB40"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "AL13",
+      "label": "Altar linen coverings",
+      "glossary_id": "G079",
+      "match": "R",
+      "topic_ids": [
+        "VM-RB24",
+        "VM-RB40"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "AL14",
+      "label": "Consecrated altar stone",
+      "glossary_id": "G219",
+      "match": "D",
+      "topic_ids": [
+        "VM-RB38"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "AL15",
+      "label": "Altar sepulchre / relic cavity",
+      "glossary_id": "G219",
+      "match": "R",
+      "topic_ids": [
+        "VM-RB38"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "AL16",
+      "label": "Three altar cards",
+      "glossary_id": "G213",
+      "match": "D",
+      "topic_ids": [],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "AL17",
+      "label": "Epistle side of altar",
+      "glossary_id": "G077",
+      "match": "D",
+      "topic_ids": [],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "AL18",
+      "label": "Gospel side of altar",
+      "glossary_id": "G078",
+      "match": "D",
+      "topic_ids": [],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "AL19",
+      "label": "Retable / reredos",
+      "glossary_id": "G418",
+      "match": "D",
+      "topic_ids": [],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "AL20",
+      "label": "Altar ornamentation / gilding",
+      "glossary_id": "G079",
+      "match": "R",
+      "topic_ids": [],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "SV01",
+      "label": "Chalice",
+      "glossary_id": "G190",
+      "match": "D",
+      "topic_ids": [
+        "VM-RB43"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "SV02",
+      "label": "Paten",
+      "glossary_id": "G191",
+      "match": "D",
+      "topic_ids": [
+        "VM-RB43"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "SV03",
+      "label": "Ciborium",
+      "glossary_id": "G192",
+      "match": "D",
+      "topic_ids": [
+        "VM-RB24"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "SV04",
+      "label": "Ciborium veil",
+      "glossary_id": "G319",
+      "match": "D",
+      "topic_ids": [
+        "VM-RB24"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "SV05",
+      "label": "Large altar Host",
+      "glossary_id": "G030",
+      "match": "R",
+      "topic_ids": [],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "SV06",
+      "label": "Small Communion Hosts",
+      "glossary_id": "G030",
+      "match": "R",
+      "topic_ids": [],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "SV07",
+      "label": "Mass wine",
+      "glossary_id": "G030",
+      "match": "R",
+      "topic_ids": [],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "SV08",
+      "label": "Pyx",
+      "glossary_id": "G318",
+      "match": "D",
+      "topic_ids": [],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "SV09",
+      "label": "Monstrance",
+      "glossary_id": "G305",
+      "match": "D",
+      "topic_ids": [
+        "VM-RB32",
+        "VM-RB33"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "SV10",
+      "label": "Luna / lunette",
+      "glossary_id": "G306",
+      "match": "D",
+      "topic_ids": [
+        "VM-RB32",
+        "VM-RB33"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "SV11",
+      "label": "Custodia / exposition pyx",
+      "glossary_id": "G306",
+      "match": "R",
+      "topic_ids": [
+        "VM-RB32",
+        "VM-RB33"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "SV12",
+      "label": "Sacred-vessel decoration",
+      "glossary_id": "G190",
+      "match": "R",
+      "topic_ids": [],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "SV13",
+      "label": "Communion paten / plate",
+      "glossary_id": "G191",
+      "match": "R",
+      "topic_ids": [],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "LN01",
+      "label": "Corporal",
+      "glossary_id": "G187",
+      "match": "D",
+      "topic_ids": [
+        "VM-RB43"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "LN02",
+      "label": "Purificator",
+      "glossary_id": "G188",
+      "match": "D",
+      "topic_ids": [
+        "VM-RB43"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "LN03",
+      "label": "Pall for chalice",
+      "glossary_id": "G189",
+      "match": "D",
+      "topic_ids": [],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "LN04",
+      "label": "Burse",
+      "glossary_id": "G212",
+      "match": "D",
+      "topic_ids": [],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "LN05",
+      "label": "Chalice veil",
+      "glossary_id": "G211",
+      "match": "D",
+      "topic_ids": [
+        "VM-RB09",
+        "VM-RB10",
+        "VM-RB11"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "LN06",
+      "label": "Manutergium / finger towel",
+      "glossary_id": "G217",
+      "match": "D",
+      "topic_ids": [],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "LN07",
+      "label": "Subdeacon's humeral veil",
+      "glossary_id": "G204",
+      "match": "R",
+      "topic_ids": [
+        "VM-RB12"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "LN08",
+      "label": "Liturgical linen storage",
+      "glossary_id": "G187",
+      "match": "R",
+      "topic_ids": [],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "EQ01",
+      "label": "Wine cruet",
+      "glossary_id": "G193",
+      "match": "R",
+      "topic_ids": [
+        "VM-RB43"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "EQ02",
+      "label": "Water cruet",
+      "glossary_id": "G193",
+      "match": "R",
+      "topic_ids": [
+        "VM-RB43"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "EQ03",
+      "label": "Cruet tray",
+      "glossary_id": "G193",
+      "match": "R",
+      "topic_ids": [
+        "VM-RB43"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "EQ04",
+      "label": "Lavabo bowl",
+      "glossary_id": "G216",
+      "match": "R",
+      "topic_ids": [],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "EQ05",
+      "label": "Lavabo water jug",
+      "glossary_id": "G216",
+      "match": "R",
+      "topic_ids": [],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "EQ06",
+      "label": "Altar bell",
+      "glossary_id": null,
+      "match": "M",
+      "topic_ids": [
+        "VM-RB41"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "EQ07",
+      "label": "Thurible",
+      "glossary_id": "G194",
+      "match": "D",
+      "topic_ids": [
+        "VM-RB12",
+        "VM-RB17",
+        "VM-RB23",
+        "VM-RB24",
+        "VM-RB32",
+        "VM-RB33",
+        "VM-RB39"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "EQ08",
+      "label": "Incense boat and spoon",
+      "glossary_id": "G195",
+      "match": "D",
+      "topic_ids": [
+        "VM-RB32",
+        "VM-RB33",
+        "VM-RB39"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "EQ09",
+      "label": "Incense and charcoal",
+      "glossary_id": "G231",
+      "match": "R",
+      "topic_ids": [
+        "VM-RB32",
+        "VM-RB33",
+        "VM-RB39"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "EQ10",
+      "label": "Holy-water bucket / aspersorium",
+      "glossary_id": "G043",
+      "match": "R",
+      "topic_ids": [
+        "VM-RB17",
+        "VM-RB23",
+        "VM-RB25",
+        "VM-RB29",
+        "VM-RB30",
+        "VM-RB31",
+        "VM-RB39",
+        "VM-RB44"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "EQ11",
+      "label": "Aspergillum",
+      "glossary_id": "G196",
+      "match": "D",
+      "topic_ids": [
+        "VM-RB17",
+        "VM-RB23",
+        "VM-RB25",
+        "VM-RB29",
+        "VM-RB30",
+        "VM-RB31",
+        "VM-RB39",
+        "VM-RB44"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "EQ12",
+      "label": "Acolyte candle / candlestick",
+      "glossary_id": "G222",
+      "match": "R",
+      "topic_ids": [
+        "VM-RB12",
+        "VM-RB26",
+        "VM-RB41"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "EQ13",
+      "label": "Torch / elevation candle",
+      "glossary_id": "G224",
+      "match": "R",
+      "topic_ids": [
+        "VM-RB12",
+        "VM-RB41"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "EQ14",
+      "label": "Candle snuffer",
+      "glossary_id": null,
+      "match": "M",
+      "topic_ids": [],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "EQ15",
+      "label": "Hand-held blessing cross",
+      "glossary_id": "G229",
+      "match": "R",
+      "topic_ids": [
+        "VM-RB39"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "EQ16",
+      "label": "Sacred purification vessel",
+      "glossary_id": "G414",
+      "match": "R",
+      "topic_ids": [],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "SC01",
+      "label": "Sacristy room",
+      "glossary_id": "G183",
+      "match": "D",
+      "topic_ids": [],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "SC02",
+      "label": "Vesting table",
+      "glossary_id": "G183",
+      "match": "R",
+      "topic_ids": [
+        "VM-RB40"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "SC03",
+      "label": "Vestment press / cabinet",
+      "glossary_id": "G081",
+      "match": "R",
+      "topic_ids": [
+        "VM-RB09"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "SC04",
+      "label": "Sacristy crucifix",
+      "glossary_id": "G183",
+      "match": "R",
+      "topic_ids": [],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "SC05",
+      "label": "Sacristy sink",
+      "glossary_id": "G414",
+      "match": "R",
+      "topic_ids": [],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "SC06",
+      "label": "Sacrarium / piscina",
+      "glossary_id": "G414",
+      "match": "D",
+      "topic_ids": [],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "SC07",
+      "label": "Liturgical Ordo / calendar",
+      "glossary_id": "G051",
+      "match": "R",
+      "topic_ids": [
+        "VM-RB01",
+        "VM-RB02",
+        "VM-RB03",
+        "VM-RB05",
+        "VM-RB06",
+        "VM-RB07",
+        "VM-RB08",
+        "VM-RB09",
+        "VM-RB12",
+        "VM-RB16",
+        "VM-RB19",
+        "VM-RB21",
+        "VM-RB27",
+        "VM-RB28",
+        "VM-RB34",
+        "VM-RB40",
+        "VM-RB42"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "SC08",
+      "label": "Sacred-vessel storage drawers",
+      "glossary_id": "G183",
+      "match": "R",
+      "topic_ids": [],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "SC09",
+      "label": "Holy oils cabinet / ambry",
+      "glossary_id": "G041",
+      "match": "R",
+      "topic_ids": [
+        "VM-RB36"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "SC10",
+      "label": "Sacristy preparation board",
+      "glossary_id": "G183",
+      "match": "R",
+      "topic_ids": [
+        "VM-RB05",
+        "VM-RB42"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "VE01",
+      "label": "Cassock",
+      "glossary_id": "G207",
+      "match": "D",
+      "topic_ids": [],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "VE02",
+      "label": "Amice",
+      "glossary_id": "G197",
+      "match": "D",
+      "topic_ids": [],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "VE03",
+      "label": "Alb",
+      "glossary_id": "G198",
+      "match": "D",
+      "topic_ids": [],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "VE04",
+      "label": "Cincture",
+      "glossary_id": "G205",
+      "match": "D",
+      "topic_ids": [],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "VE05",
+      "label": "Stole",
+      "glossary_id": "G199",
+      "match": "D",
+      "topic_ids": [
+        "VM-RB09",
+        "VM-RB17",
+        "VM-RB18"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "VE06",
+      "label": "Maniple",
+      "glossary_id": "G182",
+      "match": "D",
+      "topic_ids": [
+        "VM-RB09"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "VE07",
+      "label": "Chasuble",
+      "glossary_id": "G200",
+      "match": "D",
+      "topic_ids": [
+        "VM-RB09",
+        "VM-RB10",
+        "VM-RB11",
+        "VM-RB12",
+        "VM-RB17",
+        "VM-RB18",
+        "VM-RB28"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "VE08",
+      "label": "Roman / fiddleback chasuble",
+      "glossary_id": "G200",
+      "match": "R",
+      "topic_ids": [
+        "VM-RB09"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "VE09",
+      "label": "Dalmatic",
+      "glossary_id": "G201",
+      "match": "D",
+      "topic_ids": [
+        "VM-RB09",
+        "VM-RB10",
+        "VM-RB11",
+        "VM-RB12",
+        "VM-RB43"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "VE10",
+      "label": "Tunicle",
+      "glossary_id": "G202",
+      "match": "D",
+      "topic_ids": [
+        "VM-RB09",
+        "VM-RB10",
+        "VM-RB11",
+        "VM-RB12",
+        "VM-RB43"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "VE11",
+      "label": "Surplice / cotta",
+      "glossary_id": "G206",
+      "match": "D",
+      "topic_ids": [],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "VE12",
+      "label": "Biretta",
+      "glossary_id": "G208",
+      "match": "D",
+      "topic_ids": [],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "VE13",
+      "label": "Cope",
+      "glossary_id": "G203",
+      "match": "D",
+      "topic_ids": [
+        "VM-RB09",
+        "VM-RB10",
+        "VM-RB11",
+        "VM-RB23",
+        "VM-RB29",
+        "VM-RB32",
+        "VM-RB33"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "VE14",
+      "label": "Humeral veil",
+      "glossary_id": "G204",
+      "match": "D",
+      "topic_ids": [
+        "VM-RB11",
+        "VM-RB24",
+        "VM-RB32",
+        "VM-RB33",
+        "VM-RB39"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "VE15",
+      "label": "Liturgical vestment colour set",
+      "glossary_id": "G081",
+      "match": "R",
+      "topic_ids": [
+        "VM-RB01",
+        "VM-RB02",
+        "VM-RB09",
+        "VM-RB10",
+        "VM-RB11",
+        "VM-RB16",
+        "VM-RB17",
+        "VM-RB19",
+        "VM-RB20",
+        "VM-RB21",
+        "VM-RB23",
+        "VM-RB25",
+        "VM-RB27",
+        "VM-RB28",
+        "VM-RB29",
+        "VM-RB30",
+        "VM-RB31",
+        "VM-RB34"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "VE16",
+      "label": "Bishop's mitre",
+      "glossary_id": "G406",
+      "match": "R",
+      "topic_ids": [
+        "VM-RB13"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "VE17",
+      "label": "Crozier / pastoral staff",
+      "glossary_id": "G406",
+      "match": "R",
+      "topic_ids": [
+        "VM-RB13"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "VE18",
+      "label": "Pectoral cross",
+      "glossary_id": "G406",
+      "match": "R",
+      "topic_ids": [
+        "VM-RB13"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "VE19",
+      "label": "Zucchetto",
+      "glossary_id": "G210",
+      "match": "D",
+      "topic_ids": [
+        "VM-RB13"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "VE20",
+      "label": "Pontifical gloves / buskins / sandals",
+      "glossary_id": "G446",
+      "match": "R",
+      "topic_ids": [
+        "VM-RB13"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "BK01",
+      "label": "Roman Missal on altar",
+      "glossary_id": "G214",
+      "match": "D",
+      "topic_ids": [
+        "VM-RB01",
+        "VM-RB02",
+        "VM-RB03",
+        "VM-RB04",
+        "VM-RB05",
+        "VM-RB06",
+        "VM-RB07",
+        "VM-RB08",
+        "VM-RB12",
+        "VM-RB14",
+        "VM-RB15",
+        "VM-RB16",
+        "VM-RB17",
+        "VM-RB18",
+        "VM-RB19",
+        "VM-RB20",
+        "VM-RB21",
+        "VM-RB23",
+        "VM-RB26",
+        "VM-RB27",
+        "VM-RB28",
+        "VM-RB29",
+        "VM-RB30",
+        "VM-RB31",
+        "VM-RB34",
+        "VM-RB42"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "BK02",
+      "label": "Missal stand or cushion",
+      "glossary_id": "G215",
+      "match": "D",
+      "topic_ids": [],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "BK03",
+      "label": "Missal ribbons and tabs",
+      "glossary_id": "G214",
+      "match": "R",
+      "topic_ids": [
+        "VM-RB03",
+        "VM-RB04",
+        "VM-RB14",
+        "VM-RB15"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "BK04",
+      "label": "Hand Missal",
+      "glossary_id": "G214",
+      "match": "R",
+      "topic_ids": [
+        "VM-RB02",
+        "VM-RB03",
+        "VM-RB04",
+        "VM-RB15",
+        "VM-RB34"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "BK05",
+      "label": "Book of Gospels",
+      "glossary_id": "G057",
+      "match": "R",
+      "topic_ids": [
+        "VM-RB15"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "BK06",
+      "label": "Epistolary",
+      "glossary_id": "G054",
+      "match": "R",
+      "topic_ids": [
+        "VM-RB15"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "BK07",
+      "label": "Graduale Romanum",
+      "glossary_id": "G241",
+      "match": "R",
+      "topic_ids": [
+        "VM-RB01",
+        "VM-RB06",
+        "VM-RB07",
+        "VM-RB08",
+        "VM-RB14",
+        "VM-RB15",
+        "VM-RB19",
+        "VM-RB20",
+        "VM-RB21",
+        "VM-RB26",
+        "VM-RB27",
+        "VM-RB28",
+        "VM-RB31",
+        "VM-RB32"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "BK08",
+      "label": "Liber Usualis",
+      "glossary_id": "G241",
+      "match": "R",
+      "topic_ids": [
+        "VM-RB01",
+        "VM-RB06",
+        "VM-RB07",
+        "VM-RB08",
+        "VM-RB14",
+        "VM-RB15",
+        "VM-RB19",
+        "VM-RB20",
+        "VM-RB21",
+        "VM-RB27",
+        "VM-RB28"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "BK09",
+      "label": "Antiphonale / Breviary",
+      "glossary_id": "G112",
+      "match": "R",
+      "topic_ids": [
+        "VM-RB35"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "BK10",
+      "label": "Rituale Romanum",
+      "glossary_id": "G026",
+      "match": "R",
+      "topic_ids": [
+        "VM-RB36",
+        "VM-RB37",
+        "VM-RB44"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "BK11",
+      "label": "Pontificale Romanum",
+      "glossary_id": "G446",
+      "match": "R",
+      "topic_ids": [
+        "VM-RB13",
+        "VM-RB38"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "BK12",
+      "label": "Pulpit",
+      "glossary_id": "G408",
+      "match": "D",
+      "topic_ids": [],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "BK13",
+      "label": "Pipe organ",
+      "glossary_id": "G241",
+      "match": "R",
+      "topic_ids": [],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "BK14",
+      "label": "Choir stalls / area",
+      "glossary_id": "G403",
+      "match": "D",
+      "topic_ids": [],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "BK15",
+      "label": "Choir lectern / music stand",
+      "glossary_id": "G241",
+      "match": "R",
+      "topic_ids": [
+        "VM-RB14"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "SA01",
+      "label": "Baptismal font",
+      "glossary_id": "G410",
+      "match": "D",
+      "topic_ids": [
+        "VM-RB26",
+        "VM-RB36"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "SA02",
+      "label": "Font cover and enclosure",
+      "glossary_id": "G410",
+      "match": "R",
+      "topic_ids": [
+        "VM-RB26",
+        "VM-RB36"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "SA03",
+      "label": "Baptismal shell / vessel",
+      "glossary_id": "G410",
+      "match": "R",
+      "topic_ids": [
+        "VM-RB26",
+        "VM-RB36"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "SA04",
+      "label": "Oil stocks",
+      "glossary_id": "G041",
+      "match": "R",
+      "topic_ids": [
+        "VM-RB36"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "SA05",
+      "label": "Confessional",
+      "glossary_id": "G412",
+      "match": "D",
+      "topic_ids": [
+        "VM-RB37"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "SA06",
+      "label": "Confessional grille",
+      "glossary_id": "G413",
+      "match": "D",
+      "topic_ids": [
+        "VM-RB37"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "SA07",
+      "label": "Confessional kneeler",
+      "glossary_id": "G412",
+      "match": "R",
+      "topic_ids": [
+        "VM-RB37"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "SA08",
+      "label": "Wedding kneeler / prie-dieu",
+      "glossary_id": "G040",
+      "match": "R",
+      "topic_ids": [
+        "VM-RB18"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "SA09",
+      "label": "Wedding rings",
+      "glossary_id": "G040",
+      "match": "R",
+      "topic_ids": [
+        "VM-RB18"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "SA10",
+      "label": "Sick-call kit",
+      "glossary_id": "G037",
+      "match": "R",
+      "topic_ids": [],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "SA11",
+      "label": "Home Communion pyx and case",
+      "glossary_id": "G318",
+      "match": "D",
+      "topic_ids": [],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "SE01",
+      "label": "Paschal candle",
+      "glossary_id": "G092",
+      "match": "R",
+      "topic_ids": [
+        "VM-RB26",
+        "VM-RB27",
+        "VM-RB28",
+        "VM-RB36"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "SE02",
+      "label": "Candlemas candles",
+      "glossary_id": null,
+      "match": "M",
+      "topic_ids": [
+        "VM-RB29"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "SE03",
+      "label": "Blessed palms",
+      "glossary_id": null,
+      "match": "M",
+      "topic_ids": [
+        "VM-RB23"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "SE04",
+      "label": "Ashes and ash vessel",
+      "glossary_id": "G027",
+      "match": "R",
+      "topic_ids": [
+        "VM-RB21",
+        "VM-RB30"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "SE05",
+      "label": "Veiled crucifix and images",
+      "glossary_id": null,
+      "match": "M",
+      "topic_ids": [
+        "VM-RB22",
+        "VM-RB25"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "SE06",
+      "label": "Good Friday cross",
+      "glossary_id": null,
+      "match": "M",
+      "topic_ids": [
+        "VM-RB25"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "SE07",
+      "label": "Requiem catafalque",
+      "glossary_id": "G266",
+      "match": "R",
+      "topic_ids": [
+        "VM-RB17",
+        "VM-RB44"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "SE08",
+      "label": "Funeral bier / coffin",
+      "glossary_id": "G267",
+      "match": "R",
+      "topic_ids": [
+        "VM-RB17",
+        "VM-RB44"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "SE09",
+      "label": "Funeral pall",
+      "glossary_id": "G189",
+      "match": "R",
+      "topic_ids": [
+        "VM-RB17",
+        "VM-RB44"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "SE10",
+      "label": "Eucharistic processional canopy",
+      "glossary_id": "G230",
+      "match": "D",
+      "topic_ids": [
+        "VM-RB32"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "SE11",
+      "label": "Processional banner",
+      "glossary_id": "G233",
+      "match": "R",
+      "topic_ids": [
+        "VM-RB23",
+        "VM-RB31"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "SE12",
+      "label": "Requiem vestments",
+      "glossary_id": "G266",
+      "match": "R",
+      "topic_ids": [
+        "VM-RB17",
+        "VM-RB44"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "SE13",
+      "label": "Altar of Repose furnishings",
+      "glossary_id": null,
+      "match": "M",
+      "topic_ids": [
+        "VM-RB24",
+        "VM-RB25"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "SE14",
+      "label": "Tenebrae hearse / triangular stand",
+      "glossary_id": null,
+      "match": "M",
+      "topic_ids": [
+        "VM-RB35"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "SP01",
+      "label": "Pax-brede / instrument of peace",
+      "glossary_id": "G240",
+      "match": "R",
+      "topic_ids": [],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "SP02",
+      "label": "Bishop's hand candle / bugia",
+      "glossary_id": "G446",
+      "match": "R",
+      "topic_ids": [
+        "VM-RB13"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "SP03",
+      "label": "Gremial",
+      "glossary_id": "G446",
+      "match": "R",
+      "topic_ids": [
+        "VM-RB13"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "SP04",
+      "label": "Portable altar stone",
+      "glossary_id": "G219",
+      "match": "R",
+      "topic_ids": [
+        "VM-RB38"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "SP05",
+      "label": "Architectural altar ciborium",
+      "glossary_id": "G416",
+      "match": "D",
+      "topic_ids": [],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "SP06",
+      "label": "Historical sacred vessels",
+      "glossary_id": "G190",
+      "match": "R",
+      "topic_ids": [],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    },
+    {
+      "object_id": "SP07",
+      "label": "Ecclesiastical heraldry",
+      "glossary_id": null,
+      "match": "M",
+      "topic_ids": [
+        "VM-RB42"
+      ],
+      "status": "SOURCE_ROUTE_NOT_PUBLISHED"
+    }
+  ],
+  "question_routes": [
+    {
+      "question_id": "VMQ-0001",
+      "object_id": "AL01",
+      "topic_candidates": [
+        "VM-RB17",
+        "VM-RB18",
+        "VM-RB24",
+        "VM-RB25",
+        "VM-RB26",
+        "VM-RB33",
+        "VM-RB38",
+        "VM-RB40",
+        "VM-RB42"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0002",
+      "object_id": "AL01",
+      "topic_candidates": [
+        "VM-RB17",
+        "VM-RB18",
+        "VM-RB24",
+        "VM-RB25",
+        "VM-RB26",
+        "VM-RB33",
+        "VM-RB38",
+        "VM-RB40",
+        "VM-RB42"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0003",
+      "object_id": "AL01",
+      "topic_candidates": [
+        "VM-RB17",
+        "VM-RB18",
+        "VM-RB24",
+        "VM-RB25",
+        "VM-RB26",
+        "VM-RB33",
+        "VM-RB38",
+        "VM-RB40",
+        "VM-RB42"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0004",
+      "object_id": "AL01",
+      "topic_candidates": [
+        "VM-RB17",
+        "VM-RB18",
+        "VM-RB24",
+        "VM-RB25",
+        "VM-RB26",
+        "VM-RB33",
+        "VM-RB38",
+        "VM-RB40",
+        "VM-RB42"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0005",
+      "object_id": "AL01",
+      "topic_candidates": [
+        "VM-RB17",
+        "VM-RB18",
+        "VM-RB24",
+        "VM-RB25",
+        "VM-RB26",
+        "VM-RB33",
+        "VM-RB38",
+        "VM-RB40",
+        "VM-RB42"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0006",
+      "object_id": "AL01",
+      "topic_candidates": [
+        "VM-RB17",
+        "VM-RB18",
+        "VM-RB24",
+        "VM-RB25",
+        "VM-RB26",
+        "VM-RB33",
+        "VM-RB38",
+        "VM-RB40",
+        "VM-RB42"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0007",
+      "object_id": "AL03",
+      "topic_candidates": [
+        "VM-RB24",
+        "VM-RB25",
+        "VM-RB33",
+        "VM-RB40"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0008",
+      "object_id": "AL03",
+      "topic_candidates": [
+        "VM-RB24",
+        "VM-RB25",
+        "VM-RB33",
+        "VM-RB40"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0009",
+      "object_id": "AL03",
+      "topic_candidates": [
+        "VM-RB24",
+        "VM-RB25",
+        "VM-RB33",
+        "VM-RB40"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0010",
+      "object_id": "AL03",
+      "topic_candidates": [
+        "VM-RB24",
+        "VM-RB25",
+        "VM-RB33",
+        "VM-RB40"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0011",
+      "object_id": "AL03",
+      "topic_candidates": [
+        "VM-RB24",
+        "VM-RB25",
+        "VM-RB33",
+        "VM-RB40"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0012",
+      "object_id": "AL03",
+      "topic_candidates": [
+        "VM-RB24",
+        "VM-RB25",
+        "VM-RB33",
+        "VM-RB40"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0013",
+      "object_id": "AL06",
+      "topic_candidates": [
+        "VM-RB22",
+        "VM-RB25",
+        "VM-RB40"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0014",
+      "object_id": "AL06",
+      "topic_candidates": [
+        "VM-RB22",
+        "VM-RB25",
+        "VM-RB40"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0015",
+      "object_id": "AL06",
+      "topic_candidates": [
+        "VM-RB22",
+        "VM-RB25",
+        "VM-RB40"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0016",
+      "object_id": "AL06",
+      "topic_candidates": [
+        "VM-RB22",
+        "VM-RB25",
+        "VM-RB40"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0017",
+      "object_id": "AL07",
+      "topic_candidates": [
+        "VM-RB12",
+        "VM-RB26",
+        "VM-RB40",
+        "VM-RB41"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0018",
+      "object_id": "AL07",
+      "topic_candidates": [
+        "VM-RB12",
+        "VM-RB26",
+        "VM-RB40",
+        "VM-RB41"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0019",
+      "object_id": "AL07",
+      "topic_candidates": [
+        "VM-RB12",
+        "VM-RB26",
+        "VM-RB40",
+        "VM-RB41"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0020",
+      "object_id": "AL07",
+      "topic_candidates": [
+        "VM-RB12",
+        "VM-RB26",
+        "VM-RB40",
+        "VM-RB41"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0021",
+      "object_id": "AL07",
+      "topic_candidates": [
+        "VM-RB12",
+        "VM-RB26",
+        "VM-RB40",
+        "VM-RB41"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0022",
+      "object_id": "AL07",
+      "topic_candidates": [
+        "VM-RB12",
+        "VM-RB26",
+        "VM-RB40",
+        "VM-RB41"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0023",
+      "object_id": "AL08",
+      "topic_candidates": [
+        "VM-RB12"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0024",
+      "object_id": "AL08",
+      "topic_candidates": [
+        "VM-RB12"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0025",
+      "object_id": "AL08",
+      "topic_candidates": [
+        "VM-RB12"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0026",
+      "object_id": "AL08",
+      "topic_candidates": [
+        "VM-RB12"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0027",
+      "object_id": "AL10",
+      "topic_candidates": [],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0028",
+      "object_id": "AL10",
+      "topic_candidates": [],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0029",
+      "object_id": "AL10",
+      "topic_candidates": [],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0030",
+      "object_id": "AL10",
+      "topic_candidates": [],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0031",
+      "object_id": "AL13",
+      "topic_candidates": [
+        "VM-RB24",
+        "VM-RB40"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0032",
+      "object_id": "AL13",
+      "topic_candidates": [
+        "VM-RB24",
+        "VM-RB40"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0033",
+      "object_id": "AL13",
+      "topic_candidates": [
+        "VM-RB24",
+        "VM-RB40"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0034",
+      "object_id": "AL13",
+      "topic_candidates": [
+        "VM-RB24",
+        "VM-RB40"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0035",
+      "object_id": "AL14",
+      "topic_candidates": [
+        "VM-RB38"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0036",
+      "object_id": "AL14",
+      "topic_candidates": [
+        "VM-RB38"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0037",
+      "object_id": "AL14",
+      "topic_candidates": [
+        "VM-RB38"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0038",
+      "object_id": "AL14",
+      "topic_candidates": [
+        "VM-RB38"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0039",
+      "object_id": "AL16",
+      "topic_candidates": [],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0040",
+      "object_id": "AL16",
+      "topic_candidates": [],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0041",
+      "object_id": "AL16",
+      "topic_candidates": [],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0042",
+      "object_id": "AL16",
+      "topic_candidates": [],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0043",
+      "object_id": "AL16",
+      "topic_candidates": [],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0044",
+      "object_id": "AL17",
+      "topic_candidates": [],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0045",
+      "object_id": "AL17",
+      "topic_candidates": [],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0046",
+      "object_id": "AL17",
+      "topic_candidates": [],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0047",
+      "object_id": "AL17",
+      "topic_candidates": [],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0048",
+      "object_id": "AL18",
+      "topic_candidates": [],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0049",
+      "object_id": "AL18",
+      "topic_candidates": [],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0050",
+      "object_id": "AL18",
+      "topic_candidates": [],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0051",
+      "object_id": "AL18",
+      "topic_candidates": [],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0052",
+      "object_id": "AL19",
+      "topic_candidates": [],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0053",
+      "object_id": "AL19",
+      "topic_candidates": [],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0054",
+      "object_id": "AL19",
+      "topic_candidates": [],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0055",
+      "object_id": "AL19",
+      "topic_candidates": [],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0056",
+      "object_id": "SN02",
+      "topic_candidates": [
+        "VM-RB17"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0057",
+      "object_id": "SN02",
+      "topic_candidates": [
+        "VM-RB17"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0058",
+      "object_id": "SN02",
+      "topic_candidates": [
+        "VM-RB17"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0059",
+      "object_id": "SN02",
+      "topic_candidates": [
+        "VM-RB17"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0060",
+      "object_id": "SN02",
+      "topic_candidates": [
+        "VM-RB17"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0061",
+      "object_id": "SN02",
+      "topic_candidates": [
+        "VM-RB17"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0062",
+      "object_id": "SN04",
+      "topic_candidates": [],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0063",
+      "object_id": "SN04",
+      "topic_candidates": [],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0064",
+      "object_id": "SN04",
+      "topic_candidates": [],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0065",
+      "object_id": "SN04",
+      "topic_candidates": [],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0066",
+      "object_id": "SN05",
+      "topic_candidates": [
+        "VM-RB24",
+        "VM-RB40"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0067",
+      "object_id": "SN05",
+      "topic_candidates": [
+        "VM-RB24",
+        "VM-RB40"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0068",
+      "object_id": "SN05",
+      "topic_candidates": [
+        "VM-RB24",
+        "VM-RB40"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0069",
+      "object_id": "SN05",
+      "topic_candidates": [
+        "VM-RB24",
+        "VM-RB40"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0070",
+      "object_id": "SN05",
+      "topic_candidates": [
+        "VM-RB24",
+        "VM-RB40"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0071",
+      "object_id": "SN07",
+      "topic_candidates": [
+        "VM-RB40"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0072",
+      "object_id": "SN07",
+      "topic_candidates": [
+        "VM-RB40"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0073",
+      "object_id": "SN07",
+      "topic_candidates": [
+        "VM-RB40"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0074",
+      "object_id": "SN07",
+      "topic_candidates": [
+        "VM-RB40"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0075",
+      "object_id": "SN07",
+      "topic_candidates": [
+        "VM-RB40"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0076",
+      "object_id": "BK01",
+      "topic_candidates": [
+        "VM-RB01",
+        "VM-RB02",
+        "VM-RB03",
+        "VM-RB04",
+        "VM-RB05",
+        "VM-RB06",
+        "VM-RB07",
+        "VM-RB08",
+        "VM-RB12",
+        "VM-RB14",
+        "VM-RB15",
+        "VM-RB16",
+        "VM-RB17",
+        "VM-RB18",
+        "VM-RB19",
+        "VM-RB20",
+        "VM-RB21",
+        "VM-RB23",
+        "VM-RB26",
+        "VM-RB27",
+        "VM-RB28",
+        "VM-RB29",
+        "VM-RB30",
+        "VM-RB31",
+        "VM-RB34",
+        "VM-RB42"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0077",
+      "object_id": "BK01",
+      "topic_candidates": [
+        "VM-RB01",
+        "VM-RB02",
+        "VM-RB03",
+        "VM-RB04",
+        "VM-RB05",
+        "VM-RB06",
+        "VM-RB07",
+        "VM-RB08",
+        "VM-RB12",
+        "VM-RB14",
+        "VM-RB15",
+        "VM-RB16",
+        "VM-RB17",
+        "VM-RB18",
+        "VM-RB19",
+        "VM-RB20",
+        "VM-RB21",
+        "VM-RB23",
+        "VM-RB26",
+        "VM-RB27",
+        "VM-RB28",
+        "VM-RB29",
+        "VM-RB30",
+        "VM-RB31",
+        "VM-RB34",
+        "VM-RB42"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0078",
+      "object_id": "BK01",
+      "topic_candidates": [
+        "VM-RB01",
+        "VM-RB02",
+        "VM-RB03",
+        "VM-RB04",
+        "VM-RB05",
+        "VM-RB06",
+        "VM-RB07",
+        "VM-RB08",
+        "VM-RB12",
+        "VM-RB14",
+        "VM-RB15",
+        "VM-RB16",
+        "VM-RB17",
+        "VM-RB18",
+        "VM-RB19",
+        "VM-RB20",
+        "VM-RB21",
+        "VM-RB23",
+        "VM-RB26",
+        "VM-RB27",
+        "VM-RB28",
+        "VM-RB29",
+        "VM-RB30",
+        "VM-RB31",
+        "VM-RB34",
+        "VM-RB42"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0079",
+      "object_id": "BK01",
+      "topic_candidates": [
+        "VM-RB01",
+        "VM-RB02",
+        "VM-RB03",
+        "VM-RB04",
+        "VM-RB05",
+        "VM-RB06",
+        "VM-RB07",
+        "VM-RB08",
+        "VM-RB12",
+        "VM-RB14",
+        "VM-RB15",
+        "VM-RB16",
+        "VM-RB17",
+        "VM-RB18",
+        "VM-RB19",
+        "VM-RB20",
+        "VM-RB21",
+        "VM-RB23",
+        "VM-RB26",
+        "VM-RB27",
+        "VM-RB28",
+        "VM-RB29",
+        "VM-RB30",
+        "VM-RB31",
+        "VM-RB34",
+        "VM-RB42"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0080",
+      "object_id": "BK01",
+      "topic_candidates": [
+        "VM-RB01",
+        "VM-RB02",
+        "VM-RB03",
+        "VM-RB04",
+        "VM-RB05",
+        "VM-RB06",
+        "VM-RB07",
+        "VM-RB08",
+        "VM-RB12",
+        "VM-RB14",
+        "VM-RB15",
+        "VM-RB16",
+        "VM-RB17",
+        "VM-RB18",
+        "VM-RB19",
+        "VM-RB20",
+        "VM-RB21",
+        "VM-RB23",
+        "VM-RB26",
+        "VM-RB27",
+        "VM-RB28",
+        "VM-RB29",
+        "VM-RB30",
+        "VM-RB31",
+        "VM-RB34",
+        "VM-RB42"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0081",
+      "object_id": "BK02",
+      "topic_candidates": [],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0082",
+      "object_id": "BK02",
+      "topic_candidates": [],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0083",
+      "object_id": "BK02",
+      "topic_candidates": [],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0084",
+      "object_id": "BK02",
+      "topic_candidates": [],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0085",
+      "object_id": "SV01",
+      "topic_candidates": [
+        "VM-RB43"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0086",
+      "object_id": "SV01",
+      "topic_candidates": [
+        "VM-RB43"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0087",
+      "object_id": "SV01",
+      "topic_candidates": [
+        "VM-RB43"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0088",
+      "object_id": "SV01",
+      "topic_candidates": [
+        "VM-RB43"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0089",
+      "object_id": "SV01",
+      "topic_candidates": [
+        "VM-RB43"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0090",
+      "object_id": "SV01",
+      "topic_candidates": [
+        "VM-RB43"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0091",
+      "object_id": "SV02",
+      "topic_candidates": [
+        "VM-RB43"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0092",
+      "object_id": "SV02",
+      "topic_candidates": [
+        "VM-RB43"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0093",
+      "object_id": "SV02",
+      "topic_candidates": [
+        "VM-RB43"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0094",
+      "object_id": "SV02",
+      "topic_candidates": [
+        "VM-RB43"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0095",
+      "object_id": "SV03",
+      "topic_candidates": [
+        "VM-RB24"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0096",
+      "object_id": "SV03",
+      "topic_candidates": [
+        "VM-RB24"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0097",
+      "object_id": "SV03",
+      "topic_candidates": [
+        "VM-RB24"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0098",
+      "object_id": "SV03",
+      "topic_candidates": [
+        "VM-RB24"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0099",
+      "object_id": "SV13",
+      "topic_candidates": [],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0100",
+      "object_id": "SV13",
+      "topic_candidates": [],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0101",
+      "object_id": "SV13",
+      "topic_candidates": [],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0102",
+      "object_id": "SV13",
+      "topic_candidates": [],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0103",
+      "object_id": "LN01",
+      "topic_candidates": [
+        "VM-RB43"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0104",
+      "object_id": "LN01",
+      "topic_candidates": [
+        "VM-RB43"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0105",
+      "object_id": "LN01",
+      "topic_candidates": [
+        "VM-RB43"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0106",
+      "object_id": "LN01",
+      "topic_candidates": [
+        "VM-RB43"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0107",
+      "object_id": "LN02",
+      "topic_candidates": [
+        "VM-RB43"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0108",
+      "object_id": "LN02",
+      "topic_candidates": [
+        "VM-RB43"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0109",
+      "object_id": "LN02",
+      "topic_candidates": [
+        "VM-RB43"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0110",
+      "object_id": "LN02",
+      "topic_candidates": [
+        "VM-RB43"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0111",
+      "object_id": "LN03",
+      "topic_candidates": [],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0112",
+      "object_id": "LN03",
+      "topic_candidates": [],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0113",
+      "object_id": "LN03",
+      "topic_candidates": [],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0114",
+      "object_id": "LN03",
+      "topic_candidates": [],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0115",
+      "object_id": "LN04",
+      "topic_candidates": [],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0116",
+      "object_id": "LN04",
+      "topic_candidates": [],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0117",
+      "object_id": "LN04",
+      "topic_candidates": [],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0118",
+      "object_id": "LN04",
+      "topic_candidates": [],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0119",
+      "object_id": "LN05",
+      "topic_candidates": [
+        "VM-RB09",
+        "VM-RB10",
+        "VM-RB11"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0120",
+      "object_id": "LN05",
+      "topic_candidates": [
+        "VM-RB09",
+        "VM-RB10",
+        "VM-RB11"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0121",
+      "object_id": "LN05",
+      "topic_candidates": [
+        "VM-RB09",
+        "VM-RB10",
+        "VM-RB11"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0122",
+      "object_id": "LN05",
+      "topic_candidates": [
+        "VM-RB09",
+        "VM-RB10",
+        "VM-RB11"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0123",
+      "object_id": "EQ01",
+      "topic_candidates": [
+        "VM-RB43"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0124",
+      "object_id": "EQ01",
+      "topic_candidates": [
+        "VM-RB43"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0125",
+      "object_id": "EQ01",
+      "topic_candidates": [
+        "VM-RB43"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0126",
+      "object_id": "EQ01",
+      "topic_candidates": [
+        "VM-RB43"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0127",
+      "object_id": "EQ02",
+      "topic_candidates": [
+        "VM-RB43"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0128",
+      "object_id": "EQ02",
+      "topic_candidates": [
+        "VM-RB43"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0129",
+      "object_id": "EQ02",
+      "topic_candidates": [
+        "VM-RB43"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0130",
+      "object_id": "EQ02",
+      "topic_candidates": [
+        "VM-RB43"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0131",
+      "object_id": "EQ06",
+      "topic_candidates": [
+        "VM-RB41"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0132",
+      "object_id": "EQ06",
+      "topic_candidates": [
+        "VM-RB41"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0133",
+      "object_id": "EQ06",
+      "topic_candidates": [
+        "VM-RB41"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    },
+    {
+      "question_id": "VMQ-0134",
+      "object_id": "EQ06",
+      "topic_candidates": [
+        "VM-RB41"
+      ],
+      "approval": "NOT_ANSWERED_BY_THIS_INDEX"
+    }
+  ],
+  "counts": {
+    "source_references": 9,
+    "subject_themes": 44,
+    "physical_objects": 170,
+    "objects_with_one_or_more_routes": 109,
+    "objects_not_specifically_seasonal_or_ceremonial": 61,
+    "topic_object_links": 316,
+    "sanctuary_questions_indexed": 134,
+    "questions_with_candidate_topics": 93
+  },
+  "hard_limits": [
+    "The 1960 Code/1962 printed Missal prevail over institutional explanations and computed calendars.",
+    "FSSP supports seasons; ICKSP serves chant texts; SSPX API is comparative and defaults to French SSPX calendar.",
+    "Never import pre-1955 Holy Week materials as ordinary printed 1962 rubrics.",
+    "Local calendar/permission and explicit following-action state are required for processions, exposition, absolution, Mandatum and external solemnity.",
+    "No source route certifies a question's theological or ceremonial answer; perform exact passage collation before publishing.",
+    "Do not create 170 new glossary objects or duplicate existing calendar rules.",
+    "Do not redistribute whole secondary source text or API dumps without permission.",
+    "This crosswalk does not certify the image exists in the church photograph."
+  ]
+}

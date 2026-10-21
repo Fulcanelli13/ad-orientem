@@ -1,0 +1,387 @@
+{
+  "schema": "AO_VISIBLE_MASS_1962_PRIMARY_RUBRIC_PASSAGE_CHECKS_V1",
+  "date": "2026-10-17",
+  "status": "SOURCE_FIRST_ENGLISH_PASSAGE_INSPECTION_NEEDS_LATIN_SOURCE_RECONCILIATION",
+  "authority_note": "These 24 short paraphrases are direct numbered anchors from an online English rendering of the 1960 Code. Publication must check the promulgated Latin/1962 printed wording, related special-rubric exceptions and applicable local indults. Not published question answers.",
+  "crosswalk": "previews/visible-mass-3d/LITURGICAL_SOURCE_TO_SUBJECT_CROSSWALK_20261017.v1.json",
+  "primary_documents": [
+    "https://www.vatican.va/content/john-xxiii/la/motu_proprio/documents/hf_j-xxiii_motu-proprio_19600725_rubricarum-instructum.html",
+    "https://www.vatican.va/archive/aas/documents/AAS-52-1960-ocr.pdf"
+  ],
+  "passage_checks": [
+    {
+      "id": "VM-RULE-01",
+      "topic_id": "VM-RB08",
+      "source_id": "VM-RG60",
+      "exact_locus": "RG 64",
+      "summary": "Only three octaves remain in the 1962 common calendar: Christmas, Easter, Pentecost.",
+      "object_ids": [
+        "SC07",
+        "BK01"
+      ],
+      "guard": "Older Corpus Christi octave cannot be added as a current 1962 octave",
+      "review_status": "ENGLISH_1960_CODE_PASSAGE_INSPECTED_LATIN_PRINTED_1962_CHECK_PENDING",
+      "permission": "REVIEW_METADATA_ONLY_NOT_RUBRICAL_PUBLICATION_APPROVAL",
+      "english_transcription_url": "https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html"
+    },
+    {
+      "id": "VM-RULE-02",
+      "topic_id": "VM-RB08",
+      "source_id": "VM-RG60",
+      "exact_locus": "RG 66–67",
+      "summary": "Easter and Pentecost octaves are first-class; Christmas octave is second-class, with first-class octave day.",
+      "object_ids": [
+        "SC07",
+        "BK01",
+        "VE15"
+      ],
+      "guard": "Christmas octave has its own day-specific exceptions",
+      "review_status": "ENGLISH_1960_CODE_PASSAGE_INSPECTED_LATIN_PRINTED_1962_CHECK_PENDING",
+      "permission": "REVIEW_METADATA_ONLY_NOT_RUBRICAL_PUBLICATION_APPROVAL",
+      "english_transcription_url": "https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html"
+    },
+    {
+      "id": "VM-RULE-03",
+      "topic_id": "VM-RB01",
+      "source_id": "VM-RG60",
+      "exact_locus": "RG 73–76",
+      "summary": "Septuagesima, Lent, Passiontide and Paschaltide have distinct liturgical boundaries.",
+      "object_ids": [
+        "SC07",
+        "BK01",
+        "VE15"
+      ],
+      "guard": "Boundaries depend on liturgical offices and Mass, not midnight alone",
+      "review_status": "ENGLISH_1960_CODE_PASSAGE_INSPECTED_LATIN_PRINTED_1962_CHECK_PENDING",
+      "permission": "REVIEW_METADATA_ONLY_NOT_RUBRICAL_PUBLICATION_APPROVAL",
+      "english_transcription_url": "https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html"
+    },
+    {
+      "id": "VM-RULE-04",
+      "topic_id": "VM-RB31",
+      "source_id": "VM-RG60",
+      "exact_locus": "RG 80, 87",
+      "summary": "Greater Litanies ordinarily fall 25 April; lesser Rogations ordinarily the three weekdays before Ascension.",
+      "object_ids": [
+        "EN10",
+        "SE11",
+        "BK01"
+      ],
+      "guard": "Rubrics explicitly permit exceptions, transfers and local implementation",
+      "review_status": "ENGLISH_1960_CODE_PASSAGE_INSPECTED_LATIN_PRINTED_1962_CHECK_PENDING",
+      "permission": "REVIEW_METADATA_ONLY_NOT_RUBRICAL_PUBLICATION_APPROVAL",
+      "english_transcription_url": "https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html"
+    },
+    {
+      "id": "VM-RULE-05",
+      "topic_id": "VM-RB31",
+      "source_id": "VM-RG60",
+      "exact_locus": "RG 82–83",
+      "summary": "Whether and how the Greater Litanies procession is held is locally judged; supplication replaces it where necessary.",
+      "object_ids": [
+        "EN10",
+        "SE11"
+      ],
+      "guard": "A date does not certify that a procession occurred in the chosen church",
+      "review_status": "ENGLISH_1960_CODE_PASSAGE_INSPECTED_LATIN_PRINTED_1962_CHECK_PENDING",
+      "permission": "REVIEW_METADATA_ONLY_NOT_RUBRICAL_PUBLICATION_APPROVAL",
+      "english_transcription_url": "https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html"
+    },
+    {
+      "id": "VM-RULE-06",
+      "topic_id": "VM-RB03",
+      "source_id": "VM-RG60",
+      "exact_locus": "RG 91",
+      "summary": "The official table of precedence governs competing observances, including particular/local feasts.",
+      "object_ids": [
+        "SC07",
+        "BK01"
+      ],
+      "guard": "Class label alone cannot replace precedence order",
+      "review_status": "ENGLISH_1960_CODE_PASSAGE_INSPECTED_LATIN_PRINTED_1962_CHECK_PENDING",
+      "permission": "REVIEW_METADATA_ONLY_NOT_RUBRICAL_PUBLICATION_APPROVAL",
+      "english_transcription_url": "https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html"
+    },
+    {
+      "id": "VM-RULE-07",
+      "topic_id": "VM-RB42",
+      "source_id": "VM-RG60",
+      "exact_locus": "RG 91, table I.12",
+      "summary": "Qualifying local titular and dedication feasts enjoy specified first-class rank.",
+      "object_ids": [
+        "SC07",
+        "AL01"
+      ],
+      "guard": "Must validate the church's actual titular, patron and local law",
+      "review_status": "ENGLISH_1960_CODE_PASSAGE_INSPECTED_LATIN_PRINTED_1962_CHECK_PENDING",
+      "permission": "REVIEW_METADATA_ONLY_NOT_RUBRICAL_PUBLICATION_APPROVAL",
+      "english_transcription_url": "https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html"
+    },
+    {
+      "id": "VM-RULE-08",
+      "topic_id": "VM-RB19",
+      "source_id": "VM-RG60",
+      "exact_locus": "RG 91, table II.18",
+      "summary": "Advent ferias 17–23 December and Advent/Lent/September Ember Days are second class.",
+      "object_ids": [
+        "SC07",
+        "BK01"
+      ],
+      "guard": "Do not classify all Advent weekdays identically",
+      "review_status": "ENGLISH_1960_CODE_PASSAGE_INSPECTED_LATIN_PRINTED_1962_CHECK_PENDING",
+      "permission": "REVIEW_METADATA_ONLY_NOT_RUBRICAL_PUBLICATION_APPROVAL",
+      "english_transcription_url": "https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html"
+    },
+    {
+      "id": "VM-RULE-09",
+      "topic_id": "VM-RB21",
+      "source_id": "VM-RG60",
+      "exact_locus": "RG 91, table III.22–25",
+      "summary": "Lenten third-class ferias normally precede third-class feasts; Advent ferias to 16 December occupy a later place.",
+      "object_ids": [
+        "SC07",
+        "BK01"
+      ],
+      "guard": "Calendar collision needs precise feast/day witness",
+      "review_status": "ENGLISH_1960_CODE_PASSAGE_INSPECTED_LATIN_PRINTED_1962_CHECK_PENDING",
+      "permission": "REVIEW_METADATA_ONLY_NOT_RUBRICAL_PUBLICATION_APPROVAL",
+      "english_transcription_url": "https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html"
+    },
+    {
+      "id": "VM-RULE-10",
+      "topic_id": "VM-RB03",
+      "source_id": "VM-RG60",
+      "exact_locus": "RG 92–94",
+      "summary": "A lower-ranked observance may be omitted, commemorated or transferred under specific rules.",
+      "object_ids": [
+        "SC07",
+        "BK01"
+      ],
+      "guard": "Never move every impeded feast by heuristic",
+      "review_status": "ENGLISH_1960_CODE_PASSAGE_INSPECTED_LATIN_PRINTED_1962_CHECK_PENDING",
+      "permission": "REVIEW_METADATA_ONLY_NOT_RUBRICAL_PUBLICATION_APPROVAL",
+      "english_transcription_url": "https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html"
+    },
+    {
+      "id": "VM-RULE-11",
+      "topic_id": "VM-RB04",
+      "source_id": "VM-RG60",
+      "exact_locus": "RG 106–114",
+      "summary": "Privileged commemorations are separately classified and have day/class-based numerical limits.",
+      "object_ids": [
+        "BK01",
+        "BK03"
+      ],
+      "guard": "Do not automatically append unsupported saint commemorations",
+      "review_status": "ENGLISH_1960_CODE_PASSAGE_INSPECTED_LATIN_PRINTED_1962_CHECK_PENDING",
+      "permission": "REVIEW_METADATA_ONLY_NOT_RUBRICAL_PUBLICATION_APPROVAL",
+      "english_transcription_url": "https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html"
+    },
+    {
+      "id": "VM-RULE-12",
+      "topic_id": "VM-RB04",
+      "source_id": "VM-RG60",
+      "exact_locus": "RG 111",
+      "summary": "First class and sung non-conventual Mass: privileged only; other categories have conditional numerical caps.",
+      "object_ids": [
+        "BK01",
+        "BK03"
+      ],
+      "guard": "Requires exact sung and conventual setting before counting",
+      "review_status": "ENGLISH_1960_CODE_PASSAGE_INSPECTED_LATIN_PRINTED_1962_CHECK_PENDING",
+      "permission": "REVIEW_METADATA_ONLY_NOT_RUBRICAL_PUBLICATION_APPROVAL",
+      "english_transcription_url": "https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html"
+    },
+    {
+      "id": "VM-RULE-13",
+      "topic_id": "VM-RB09",
+      "source_id": "VM-RG60",
+      "exact_locus": "RG 117",
+      "summary": "The altar antependium and vestments follow the Office or Mass actually celebrated, rather than the civil date label.",
+      "object_ids": [
+        "AL12",
+        "VE07",
+        "VE15"
+      ],
+      "guard": "Selected Mass and exceptions must be known",
+      "review_status": "ENGLISH_1960_CODE_PASSAGE_INSPECTED_LATIN_PRINTED_1962_CHECK_PENDING",
+      "permission": "REVIEW_METADATA_ONLY_NOT_RUBRICAL_PUBLICATION_APPROVAL",
+      "english_transcription_url": "https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html"
+    },
+    {
+      "id": "VM-RULE-14",
+      "topic_id": "VM-RB29",
+      "source_id": "VM-RG60",
+      "exact_locus": "RG 120(b)",
+      "summary": "White is prescribed for Candlemas blessing of candles and procession.",
+      "object_ids": [
+        "SE02",
+        "VE13",
+        "VE15"
+      ],
+      "guard": "Do not infer actual procession from date",
+      "review_status": "ENGLISH_1960_CODE_PASSAGE_INSPECTED_LATIN_PRINTED_1962_CHECK_PENDING",
+      "permission": "REVIEW_METADATA_ONLY_NOT_RUBRICAL_PUBLICATION_APPROVAL",
+      "english_transcription_url": "https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html"
+    },
+    {
+      "id": "VM-RULE-15",
+      "topic_id": "VM-RB24",
+      "source_id": "VM-RG60",
+      "exact_locus": "RG 122",
+      "summary": "White is used at the Mass of the Lord's Supper on Holy Thursday.",
+      "object_ids": [
+        "VE07",
+        "VE15",
+        "AL01"
+      ],
+      "guard": "Post-Mass actions have distinct rubrics",
+      "review_status": "ENGLISH_1960_CODE_PASSAGE_INSPECTED_LATIN_PRINTED_1962_CHECK_PENDING",
+      "permission": "REVIEW_METADATA_ONLY_NOT_RUBRICAL_PUBLICATION_APPROVAL",
+      "english_transcription_url": "https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html"
+    },
+    {
+      "id": "VM-RULE-16",
+      "topic_id": "VM-RB28",
+      "source_id": "VM-RG60",
+      "exact_locus": "RG 123",
+      "summary": "Red covers Mass of Pentecost Vigil through None on following Saturday.",
+      "object_ids": [
+        "VE07",
+        "VE15"
+      ],
+      "guard": "Do not import the pre-1955 Vigil ceremony",
+      "review_status": "ENGLISH_1960_CODE_PASSAGE_INSPECTED_LATIN_PRINTED_1962_CHECK_PENDING",
+      "permission": "REVIEW_METADATA_ONLY_NOT_RUBRICAL_PUBLICATION_APPROVAL",
+      "english_transcription_url": "https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html"
+    },
+    {
+      "id": "VM-RULE-17",
+      "topic_id": "VM-RB23",
+      "source_id": "VM-RG60",
+      "exact_locus": "RG 126",
+      "summary": "Red is used for Palm Sunday blessing of branches and procession.",
+      "object_ids": [
+        "SE03",
+        "VE13",
+        "VE15"
+      ],
+      "guard": "The Mass has separate purple/violet rubrical state",
+      "review_status": "ENGLISH_1960_CODE_PASSAGE_INSPECTED_LATIN_PRINTED_1962_CHECK_PENDING",
+      "permission": "REVIEW_METADATA_ONLY_NOT_RUBRICAL_PUBLICATION_APPROVAL",
+      "english_transcription_url": "https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html"
+    },
+    {
+      "id": "VM-RULE-18",
+      "topic_id": "VM-RB09",
+      "source_id": "VM-RG60",
+      "exact_locus": "RG 128",
+      "summary": "Violet covers Advent and Septuagesima-to-Vigil seasons subject to explicit exceptions.",
+      "object_ids": [
+        "VE15",
+        "AL12"
+      ],
+      "guard": "Mass/ceremony phase can override general season",
+      "review_status": "ENGLISH_1960_CODE_PASSAGE_INSPECTED_LATIN_PRINTED_1962_CHECK_PENDING",
+      "permission": "REVIEW_METADATA_ONLY_NOT_RUBRICAL_PUBLICATION_APPROVAL",
+      "english_transcription_url": "https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html"
+    },
+    {
+      "id": "VM-RULE-19",
+      "topic_id": "VM-RB25",
+      "source_id": "VM-RG60",
+      "exact_locus": "RG 130(c),132(a)",
+      "summary": "Good Friday black applies before Communion, violet for Communion.",
+      "object_ids": [
+        "SE06",
+        "AL01",
+        "VE15"
+      ],
+      "guard": "No ordinary Good Friday Mass; distinguish printed 1962 from other variants",
+      "review_status": "ENGLISH_1960_CODE_PASSAGE_INSPECTED_LATIN_PRINTED_1962_CHECK_PENDING",
+      "permission": "REVIEW_METADATA_ONLY_NOT_RUBRICAL_PUBLICATION_APPROVAL",
+      "english_transcription_url": "https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html"
+    },
+    {
+      "id": "VM-RULE-20",
+      "topic_id": "VM-RB10",
+      "source_id": "VM-RG60",
+      "exact_locus": "RG 131",
+      "summary": "Rose may be worn on Gaudete and Laetare Sundays only for the Office and Mass of those Sundays.",
+      "object_ids": [
+        "VE07",
+        "VE15"
+      ],
+      "guard": "Do not generalize to any day in these weeks",
+      "review_status": "ENGLISH_1960_CODE_PASSAGE_INSPECTED_LATIN_PRINTED_1962_CHECK_PENDING",
+      "permission": "REVIEW_METADATA_ONLY_NOT_RUBRICAL_PUBLICATION_APPROVAL",
+      "english_transcription_url": "https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html"
+    },
+    {
+      "id": "VM-RULE-21",
+      "topic_id": "VM-RB17",
+      "source_id": "VM-RG60",
+      "exact_locus": "RG 132(b)",
+      "summary": "Black belongs to Office and Mass of the Dead, with the Forty Hours exception in RG 130(d).",
+      "object_ids": [
+        "SE12",
+        "VE07"
+      ],
+      "guard": "The actual Requiem exception requires positive evidence",
+      "review_status": "ENGLISH_1960_CODE_PASSAGE_INSPECTED_LATIN_PRINTED_1962_CHECK_PENDING",
+      "permission": "REVIEW_METADATA_ONLY_NOT_RUBRICAL_PUBLICATION_APPROVAL",
+      "english_transcription_url": "https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html"
+    },
+    {
+      "id": "VM-RULE-22",
+      "topic_id": "VM-RB12",
+      "source_id": "VM-RG60",
+      "exact_locus": "RG 133, 135–137",
+      "summary": "Chasuble, cope and minister vestments have different rules by Mass, procession, office and role.",
+      "object_ids": [
+        "VE07",
+        "VE09",
+        "VE10",
+        "VE13"
+      ],
+      "guard": "Not all vestment pieces appear at every form of celebration",
+      "review_status": "ENGLISH_1960_CODE_PASSAGE_INSPECTED_LATIN_PRINTED_1962_CHECK_PENDING",
+      "permission": "REVIEW_METADATA_ONLY_NOT_RUBRICAL_PUBLICATION_APPROVAL",
+      "english_transcription_url": "https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html"
+    },
+    {
+      "id": "VM-RULE-23",
+      "topic_id": "VM-RB12",
+      "source_id": "VM-RG60",
+      "exact_locus": "RG 137",
+      "summary": "Folded chasubles and broad stole are not used in the 1960 rubrics.",
+      "object_ids": [
+        "VE09",
+        "VE10"
+      ],
+      "guard": "Do not import pre-1960 seasonal minister dress",
+      "review_status": "ENGLISH_1960_CODE_PASSAGE_INSPECTED_LATIN_PRINTED_1962_CHECK_PENDING",
+      "permission": "REVIEW_METADATA_ONLY_NOT_RUBRICAL_PUBLICATION_APPROVAL",
+      "english_transcription_url": "https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html"
+    },
+    {
+      "id": "VM-RULE-24",
+      "topic_id": "VM-RB02",
+      "source_id": "VM-RG60",
+      "exact_locus": "RG 91, table I.6–7",
+      "summary": "Advent/Lenten Sundays and the first-class ferias (Ash Wednesday and early Holy Week) precede many other feasts.",
+      "object_ids": [
+        "SC07",
+        "BK01"
+      ],
+      "guard": "1962 precedence table is not one straight descending class number for all cases",
+      "review_status": "ENGLISH_1960_CODE_PASSAGE_INSPECTED_LATIN_PRINTED_1962_CHECK_PENDING",
+      "permission": "REVIEW_METADATA_ONLY_NOT_RUBRICAL_PUBLICATION_APPROVAL",
+      "english_transcription_url": "https://isidore.co/divinum/www/horas/Help/Rubrics/General%20Rubrics.html"
+    }
+  ],
+  "counts": {
+    "numbered_passages": 24,
+    "linked_topics": 18
+  }
+}
