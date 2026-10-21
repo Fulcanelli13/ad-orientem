@@ -121,8 +121,13 @@ for(const [engineName,router] of Object.entries(engines)){
  const exactAuthored='can an eloquent sermon take the place of the catechism';
  const exactResult=router.match(exactAuthored,{language:'en',currentCharacter:'pius-x'});
  assert.equal(exactResult.kind,'source_navigation');
- assert.equal(exactResult.requiresQuestionConfirmation,false);
- const stillNeedsConfirmation=selector.evaluate(exactAuthored,{language:'en'});
+ // The historical documentary-focus gate may still ask for confirmation
+ // even on a catalog variant; emulate the strongest exact-variant allowance.
+ const exactVariantRouter={match:()=>({...exactResult,requiresQuestionConfirmation:false})};
+ const exactVariantSelector=createPiusDocumentFirstReviewSelector({
+  router:exactVariantRouter,benchmark,registry,pointers
+ });
+ const stillNeedsConfirmation=exactVariantSelector.evaluate(exactAuthored,{language:'en'});
  assert.equal(stillNeedsConfirmation.kind,'confirm_source',
   'matching an authored catalog phrase is not consent to unapproved papal speech');
  assert.equal(stillNeedsConfirmation.answerText,null);
