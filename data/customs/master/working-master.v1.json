@@ -10,7 +10,14 @@
     "original_weiser_observations": 568,
     "with_bilingual_title_description_history_meaning_practice_cautions": 56,
     "new_publications": 0,
-    "new_approved_canonical_ids": 0
+    "new_approved_canonical_ids": 0,
+    "editorially_classified_staged_research_identities": 14,
+    "app_accepted_new_records": 0,
+    "editorial_taxonomy_counts": {
+      "ATTESTED_LOCAL_CATHOLIC_DEVOTION": 7,
+      "ATTESTED_REGIONAL_CHRISTIAN_FOLK": 5,
+      "ATTESTED_CULTURAL_FEAST_HERITAGE": 2
+    }
   },
   "date_governance": {
     "date_resolver_is_1962_calendar": true,
@@ -3503,7 +3510,7 @@
     },
     {
       "id": "CUST-ADVT-HERBERGSUCHE",
-      "identity_status": "PROPOSED_DISTINCT_SOURCE_BOUNDED_NOT_CANONICAL",
+      "identity_status": "MASTER_RESEARCH_IDENTITY_ACCEPTED_NOT_PUBLISHED",
       "publication_state": "NOT_APPROVED",
       "category_en": "ADVENT_HOSPITALITY",
       "classification": "REGIONAL_CATHOLIC_DEVOTION",
@@ -3563,13 +3570,16 @@
         "ADVT-003",
         "WEI58-05-008"
       ],
-      "editorial_status": "DISTINCT_RESEARCH_IDENTITY_STAGED_LOCAL_SOURCE_AND_DATE_NO_PUBLICATION",
+      "editorial_status": "FINAL_RESEARCH_SCOPE_ACCEPTED_RELEASE_GATED",
       "master_version": "V1_PROPOSED_RESEARCH_ONLY",
-      "do_not_auto_publish": true
+      "do_not_auto_publish": true,
+      "editorial_class": "ATTESTED_LOCAL_CATHOLIC_DEVOTION",
+      "editorial_home": "Calendar/Customs",
+      "identity_approved_for_research_master": true
     },
     {
       "id": "CUST-XMAS-POLISH-HAY",
-      "identity_status": "PROPOSED_DISTINCT_SOURCE_BOUNDED_NOT_CANONICAL",
+      "identity_status": "MASTER_RESEARCH_IDENTITY_ACCEPTED_NOT_PUBLISHED",
       "publication_state": "NOT_APPROVED",
       "category_en": "POLISH_CHRISTMAS_EVE",
       "classification": "REGIONAL_CATHOLIC_HOUSEHOLD",
@@ -3637,13 +3647,16 @@
         "ADVT-002",
         "XMAS-001"
       ],
-      "editorial_status": "DISTINCT_RESEARCH_IDENTITY_STAGED_LOCAL_SOURCE_AND_DATE_NO_PUBLICATION",
+      "editorial_status": "FINAL_RESEARCH_SCOPE_ACCEPTED_RELEASE_GATED",
       "master_version": "V1_PROPOSED_RESEARCH_ONLY",
-      "do_not_auto_publish": true
+      "do_not_auto_publish": true,
+      "editorial_class": "ATTESTED_REGIONAL_CHRISTIAN_FOLK",
+      "editorial_home": "Customs/Calendar",
+      "identity_approved_for_research_master": true
     },
     {
       "id": "CUST-XMAS-KASHUBIAN-ANIMAL-CARE",
-      "identity_status": "PROPOSED_DISTINCT_SOURCE_BOUNDED_NOT_CANONICAL",
+      "identity_status": "MASTER_RESEARCH_IDENTITY_ACCEPTED_NOT_PUBLISHED",
       "publication_state": "NOT_APPROVED",
       "category_en": "CHRISTMAS_CREATION_CARE",
       "classification": "HISTORICAL_REGIONAL_FOLK",
@@ -3710,13 +3723,16 @@
       "related_id_links": [
         "WEI58-06-010"
       ],
-      "editorial_status": "DISTINCT_RESEARCH_IDENTITY_STAGED_LOCAL_SOURCE_AND_DATE_NO_PUBLICATION",
+      "editorial_status": "FINAL_RESEARCH_SCOPE_ACCEPTED_RELEASE_GATED",
       "master_version": "V1_PROPOSED_RESEARCH_ONLY",
-      "do_not_auto_publish": true
+      "do_not_auto_publish": true,
+      "editorial_class": "ATTESTED_CULTURAL_FEAST_HERITAGE",
+      "editorial_home": "Customs/Historical",
+      "identity_approved_for_research_master": true
     },
     {
       "id": "CUST-XMAS-QUEBEC-GUIGNOLEE",
-      "identity_status": "PROPOSED_DISTINCT_SOURCE_BOUNDED_NOT_CANONICAL",
+      "identity_status": "MASTER_RESEARCH_IDENTITY_ACCEPTED_NOT_PUBLISHED",
       "publication_state": "NOT_APPROVED",
       "category_en": "CHRISTMAS_CHARITY",
       "classification": "REGIONAL_CATHOLIC_CHARITY_ORIGIN",
@@ -3781,13 +3797,16 @@
         "WEI58-07-007"
       ],
       "related_id_links": [],
-      "editorial_status": "DISTINCT_RESEARCH_IDENTITY_STAGED_LOCAL_SOURCE_AND_DATE_NO_PUBLICATION",
+      "editorial_status": "FINAL_RESEARCH_SCOPE_ACCEPTED_RELEASE_GATED",
       "master_version": "V1_PROPOSED_RESEARCH_ONLY",
-      "do_not_auto_publish": true
+      "do_not_auto_publish": true,
+      "editorial_class": "ATTESTED_LOCAL_CATHOLIC_DEVOTION",
+      "editorial_home": "Customs/Charity",
+      "identity_approved_for_research_master": true
     },
     {
       "id": "CUST-XMAS-POLISH-KOLEDNICI",
-      "identity_status": "PROPOSED_DISTINCT_SOURCE_BOUNDED_NOT_CANONICAL",
+      "identity_status": "MASTER_RESEARCH_IDENTITY_ACCEPTED_NOT_PUBLISHED",
       "publication_state": "NOT_APPROVED",
       "category_en": "NATIVITY_HOUSE_VISITS",
       "classification": "REGIONAL_RELIGIOUS_FOLK",
@@ -3847,13 +3866,16 @@
         "EPIP-001",
         "WEI58-10-004"
       ],
-      "editorial_status": "DISTINCT_RESEARCH_IDENTITY_STAGED_LOCAL_SOURCE_AND_DATE_NO_PUBLICATION",
+      "editorial_status": "FINAL_RESEARCH_SCOPE_ACCEPTED_RELEASE_GATED",
       "master_version": "V1_PROPOSED_RESEARCH_ONLY",
-      "do_not_auto_publish": true
+      "do_not_auto_publish": true,
+      "editorial_class": "ATTESTED_REGIONAL_CHRISTIAN_FOLK",
+      "editorial_home": "Customs/Calendar",
+      "identity_approved_for_research_master": true
     },
     {
       "id": "CUST-XMAS-HUNGARIAN-BETLEHEMEZES",
-      "identity_status": "PROPOSED_DISTINCT_SOURCE_BOUNDED_NOT_CANONICAL",
+      "identity_status": "MASTER_RESEARCH_IDENTITY_ACCEPTED_NOT_PUBLISHED",
       "publication_state": "NOT_APPROVED",
       "category_en": "NATIVITY_HOUSE_VISITS",
       "classification": "REGIONAL_RELIGIOUS_FOLK",
@@ -3921,13 +3943,16 @@
         "CUST-XMAS-POLISH-KOLEDNICI",
         "ADVT-003"
       ],
-      "editorial_status": "DISTINCT_RESEARCH_IDENTITY_STAGED_LOCAL_SOURCE_AND_DATE_NO_PUBLICATION",
+      "editorial_status": "FINAL_RESEARCH_SCOPE_ACCEPTED_RELEASE_GATED",
       "master_version": "V1_PROPOSED_RESEARCH_ONLY",
-      "do_not_auto_publish": true
+      "do_not_auto_publish": true,
+      "editorial_class": "ATTESTED_REGIONAL_CHRISTIAN_FOLK",
+      "editorial_home": "Customs/Calendar",
+      "identity_approved_for_research_master": true
     },
     {
       "id": "CUST-BARBARA-BRANCHES",
-      "identity_status": "PROPOSED_DISTINCT_SOURCE_BOUNDED_NOT_CANONICAL",
+      "identity_status": "MASTER_RESEARCH_IDENTITY_ACCEPTED_NOT_PUBLISHED",
       "publication_state": "NOT_APPROVED",
       "category_en": "SAINT_FEAST_CUSTOMS",
       "classification": "REGIONAL_SAINT_HOUSEHOLD",
@@ -3984,13 +4009,16 @@
         "WEI58-08-019"
       ],
       "related_id_links": [],
-      "editorial_status": "DISTINCT_RESEARCH_IDENTITY_STAGED_LOCAL_SOURCE_AND_DATE_NO_PUBLICATION",
+      "editorial_status": "FINAL_RESEARCH_SCOPE_ACCEPTED_RELEASE_GATED",
       "master_version": "V1_PROPOSED_RESEARCH_ONLY",
-      "do_not_auto_publish": true
+      "do_not_auto_publish": true,
+      "editorial_class": "ATTESTED_LOCAL_CATHOLIC_DEVOTION",
+      "editorial_home": "Customs/Saints",
+      "identity_approved_for_research_master": true
     },
     {
       "id": "CUST-XMAS-PROVENCAL-PAIN-CALENDAL",
-      "identity_status": "PROPOSED_DISTINCT_SOURCE_BOUNDED_NOT_CANONICAL",
+      "identity_status": "MASTER_RESEARCH_IDENTITY_ACCEPTED_NOT_PUBLISHED",
       "publication_state": "NOT_APPROVED",
       "category_en": "PROVENCAL_CHRISTMAS_TABLE",
       "classification": "REGIONAL_FRENCH_CATHOLIC_HOUSEHOLD",
@@ -4058,13 +4086,16 @@
         "WEI58-06-015",
         "FOOD-001"
       ],
-      "editorial_status": "DISTINCT_RESEARCH_IDENTITY_STAGED_LOCAL_SOURCE_AND_DATE_NO_PUBLICATION",
+      "editorial_status": "FINAL_RESEARCH_SCOPE_ACCEPTED_RELEASE_GATED",
       "master_version": "V1_PROPOSED_RESEARCH_ONLY",
-      "do_not_auto_publish": true
+      "do_not_auto_publish": true,
+      "editorial_class": "ATTESTED_REGIONAL_CHRISTIAN_FOLK",
+      "editorial_home": "Customs/Calendar",
+      "identity_approved_for_research_master": true
     },
     {
       "id": "CUST-EPIPHANY-SPANISH-MAGI-GIFTS",
-      "identity_status": "PROPOSED_DISTINCT_SOURCE_BOUNDED_NOT_CANONICAL",
+      "identity_status": "MASTER_RESEARCH_IDENTITY_ACCEPTED_NOT_PUBLISHED",
       "publication_state": "NOT_APPROVED",
       "category_en": "EPIPHANY_GIFTS",
       "classification": "REGIONAL_CULTURAL_CHRISTIAN_HOUSEHOLD",
@@ -4132,13 +4163,16 @@
         "EPIP-001",
         "EPIP-002"
       ],
-      "editorial_status": "DISTINCT_RESEARCH_IDENTITY_STAGED_LOCAL_SOURCE_AND_DATE_NO_PUBLICATION",
+      "editorial_status": "FINAL_RESEARCH_SCOPE_ACCEPTED_RELEASE_GATED",
       "master_version": "V1_PROPOSED_RESEARCH_ONLY",
-      "do_not_auto_publish": true
+      "do_not_auto_publish": true,
+      "editorial_class": "ATTESTED_CULTURAL_FEAST_HERITAGE",
+      "editorial_home": "Customs/Historical",
+      "identity_approved_for_research_master": true
     },
     {
       "id": "CUST-EASTER-MALTESE-IRXOXT",
-      "identity_status": "PROPOSED_DISTINCT_SOURCE_BOUNDED_NOT_CANONICAL",
+      "identity_status": "MASTER_RESEARCH_IDENTITY_ACCEPTED_NOT_PUBLISHED",
       "publication_state": "NOT_APPROVED",
       "category_en": "REGIONAL_EASTER_PUBLIC_DEVOTION",
       "classification": "LOCAL_CATHOLIC_PROCESSION",
@@ -4205,13 +4239,16 @@
       "related_id_links": [
         "EAST-001"
       ],
-      "editorial_status": "DISTINCT_RESEARCH_IDENTITY_STAGED_LOCAL_SOURCE_AND_DATE_NO_PUBLICATION",
+      "editorial_status": "FINAL_RESEARCH_SCOPE_ACCEPTED_RELEASE_GATED",
       "master_version": "V1_PROPOSED_RESEARCH_ONLY",
-      "do_not_auto_publish": true
+      "do_not_auto_publish": true,
+      "editorial_class": "ATTESTED_LOCAL_CATHOLIC_DEVOTION",
+      "editorial_home": "Customs/Explore",
+      "identity_approved_for_research_master": true
     },
     {
       "id": "CUST-PENTECOST-POLISH-GREENERY",
-      "identity_status": "PROPOSED_DISTINCT_SOURCE_BOUNDED_NOT_CANONICAL",
+      "identity_status": "MASTER_RESEARCH_IDENTITY_ACCEPTED_NOT_PUBLISHED",
       "publication_state": "NOT_APPROVED",
       "category_en": "PENTECOST_HOME_CUSTOMS",
       "classification": "REGIONAL_CATHOLIC_HOUSEHOLD",
@@ -4278,13 +4315,16 @@
       "related_id_links": [
         "DEV-001"
       ],
-      "editorial_status": "DISTINCT_RESEARCH_IDENTITY_STAGED_LOCAL_SOURCE_AND_DATE_NO_PUBLICATION",
+      "editorial_status": "FINAL_RESEARCH_SCOPE_ACCEPTED_RELEASE_GATED",
       "master_version": "V1_PROPOSED_RESEARCH_ONLY",
-      "do_not_auto_publish": true
+      "do_not_auto_publish": true,
+      "editorial_class": "ATTESTED_REGIONAL_CHRISTIAN_FOLK",
+      "editorial_home": "Customs/Calendar",
+      "identity_approved_for_research_master": true
     },
     {
       "id": "CUST-ASSUMPTION-TIVOLI-INCHINATA",
-      "identity_status": "PROPOSED_DISTINCT_SOURCE_BOUNDED_NOT_CANONICAL",
+      "identity_status": "MASTER_RESEARCH_IDENTITY_ACCEPTED_NOT_PUBLISHED",
       "publication_state": "NOT_APPROVED",
       "category_en": "ITALIAN_ASSUMPTION_LOCAL",
       "classification": "LOCAL_CATHOLIC_PROCESSION",
@@ -4351,13 +4391,16 @@
       "related_id_links": [
         "MARI-001"
       ],
-      "editorial_status": "DISTINCT_RESEARCH_IDENTITY_STAGED_LOCAL_SOURCE_AND_DATE_NO_PUBLICATION",
+      "editorial_status": "FINAL_RESEARCH_SCOPE_ACCEPTED_RELEASE_GATED",
       "master_version": "V1_PROPOSED_RESEARCH_ONLY",
-      "do_not_auto_publish": true
+      "do_not_auto_publish": true,
+      "editorial_class": "ATTESTED_LOCAL_CATHOLIC_DEVOTION",
+      "editorial_home": "Customs/Explore",
+      "identity_approved_for_research_master": true
     },
     {
       "id": "CUST-ASSUMPTION-SASSARI-CANDELIERI",
-      "identity_status": "PROPOSED_DISTINCT_SOURCE_BOUNDED_NOT_CANONICAL",
+      "identity_status": "MASTER_RESEARCH_IDENTITY_ACCEPTED_NOT_PUBLISHED",
       "publication_state": "NOT_APPROVED",
       "category_en": "ITALIAN_ASSUMPTION_LOCAL",
       "classification": "LOCAL_CATHOLIC_PROCESSION",
@@ -4425,13 +4468,16 @@
         "MARI-001",
         "CUST-ASSUMPTION-TIVOLI-INCHINATA"
       ],
-      "editorial_status": "DISTINCT_RESEARCH_IDENTITY_STAGED_LOCAL_SOURCE_AND_DATE_NO_PUBLICATION",
+      "editorial_status": "FINAL_RESEARCH_SCOPE_ACCEPTED_RELEASE_GATED",
       "master_version": "V1_PROPOSED_RESEARCH_ONLY",
-      "do_not_auto_publish": true
+      "do_not_auto_publish": true,
+      "editorial_class": "ATTESTED_LOCAL_CATHOLIC_DEVOTION",
+      "editorial_home": "Customs/Explore",
+      "identity_approved_for_research_master": true
     },
     {
       "id": "CUST-MARIAN-BAVARIAN-FRAUENDREISSIGER",
-      "identity_status": "PROPOSED_DISTINCT_SOURCE_BOUNDED_NOT_CANONICAL",
+      "identity_status": "MASTER_RESEARCH_IDENTITY_ACCEPTED_NOT_PUBLISHED",
       "publication_state": "NOT_APPROVED",
       "category_en": "ASSUMPTION_MARIAN_SHRINE",
       "classification": "LOCAL_CATHOLIC_SHRINE_DEVOTION",
@@ -4500,9 +4546,12 @@
         "DEV-007",
         "MARI-001"
       ],
-      "editorial_status": "DISTINCT_RESEARCH_IDENTITY_STAGED_LOCAL_SOURCE_AND_DATE_NO_PUBLICATION",
+      "editorial_status": "FINAL_RESEARCH_SCOPE_ACCEPTED_RELEASE_GATED",
       "master_version": "V1_PROPOSED_RESEARCH_ONLY",
-      "do_not_auto_publish": true
+      "do_not_auto_publish": true,
+      "editorial_class": "ATTESTED_LOCAL_CATHOLIC_DEVOTION",
+      "editorial_home": "Customs/Shrines",
+      "identity_approved_for_research_master": true
     }
   ]
 }
