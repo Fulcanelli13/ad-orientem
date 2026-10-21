@@ -13,6 +13,7 @@ const owner='research-out/pr1443-pius-x-document-first-router/';
 const catalog=read(owner+'data/learn/living-church-shared-question-routing-pilot.v1.json');
 const pointers=read(owner+'data/learn/living-church-pius-x-historical-passage-pointers.v1.json');
 const symbols=read(owner+'data/learn/living-church-symbolic-concepts.v1.json');
+const concepts=read(owner+'data/learn/living-church-pius-x-source-concept-facets.v1.json');
 const benchmark=read('artifacts/pius-x-complete-corpus/SPX_Three_Document_Full_34_Turn_Claim_Map.json');
 const bridge=read('data/learn/research/pius-x-document-first-router-to-claims-20261021.v1.json');
 const fixture=read('data/learn/research/pius-x-next11-frozen-english-french-question-probes-20261021.v1.json');
@@ -25,8 +26,8 @@ const novelByRef=new Map(novel.records.map(x=>[x.sourceRef,x]));
 const {createSharedQuestionRouter}=await import(pathToFileURL(resolve(owner+'src/learn/living-church-shared-question-router.js')).href);
 const {createHybridQuestionRouter}=await import(pathToFileURL(resolve(owner+'src/learn/living-church-hybrid-question-router.js')).href);
 const routers={
- shared:createSharedQuestionRouter(catalog,{historicalPointers:pointers}),
- hybrid:createHybridQuestionRouter(catalog,symbols,{historicalPointers:pointers})
+ shared:createSharedQuestionRouter(catalog,{historicalPointers:pointers,sourceConceptRegistry:concepts}),
+ hybrid:createHybridQuestionRouter(catalog,symbols,{historicalPointers:pointers,sourceConceptRegistry:concepts})
 };
 const report={schema:'AO_SPX_NEXT11_SOURCE_TO_CLAIM_ANSWERS_V1',
  status:'SOURCE_FIRST_RESEARCH_ONLY_17_OCTOBER_CONTEXT_NO_PUBLICATION',
