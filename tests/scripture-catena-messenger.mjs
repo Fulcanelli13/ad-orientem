@@ -55,7 +55,7 @@ assert.equal(mountCatenaMessenger(null,sections),null);
 assert.equal(mountCatenaMessenger({},sections,{language:"fr"}),null,
  "French is not silently translated or replaced with English");
 const library=readFileSync(new URL("../src/scripture/library.js",import.meta.url),"utf8");
-assert.match(library,/mountCatenaMessenger\(area,nodes,\{language:lang\}\)/,
+assert.match(library,/mountCatenaMessenger\(area,nodes,\{language:lang,fetcher:fetchCommentary\}\)/,
  "Canonical Scripture owner must render the real source-backed messenger");
 assert.match(library,/loadCatenaForPassage\(location,\{fetcher:fetchCommentary\}\)/,
  "Keep the existing source-pinned, integrity-checked lazy loader");
