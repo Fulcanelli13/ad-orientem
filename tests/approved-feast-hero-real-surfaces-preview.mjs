@@ -52,7 +52,8 @@ try{
         return {
           key:choice.key,artist:choice.artist,title:choice.title,artworkId:choice.artworkId,
           source:{
-            objectUrl:x.sourceObjectPage,
+            objectUrl:x.sourcePhotoPage, // TEST-ONLY: exact file page; object page source can be a museum homepage
+
             photoUrl:x.sourcePhotoPage,
             exactOriginalVerified:true, // MOCK ONLY: source labels not yet human audited
           },
