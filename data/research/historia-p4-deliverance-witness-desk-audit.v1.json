@@ -1,0 +1,424 @@
+{
+  "schema": "ao.historia.p4.deliverance-scene-witness-desk-audit.v1",
+  "date": "2026-10-21",
+  "status": "13_OF_183_DESK_TRIAGED_NO_GEOCODE_OR_PUBLICATION_APPROVAL",
+  "provenance": {
+    "sceneSource": {
+      "path": "data/explore/biblical-cinematic-studies-review.v1.json",
+      "branch": "feature/biblical-atlas-current-main-convergence-20261012",
+      "sha": "d937288862abab192e1d584f0e663a3eebb46611"
+    },
+    "douayWitness": {
+      "path": "data/scripture/witness/dr-challoner/Exodus.json",
+      "sha": "09b43d38baf0889623f0d30c15c01e0fe7b85da8",
+      "status": "UNCOLLATED_SOURCE_WITNESS"
+    },
+    "cpdvWitness": {
+      "path": "data/scripture/witness/cpdv-2009/Exodus.json",
+      "sha": "fdd0d5685e5be2d32b29f0369dba4c3de47ea120",
+      "status": "UNCOLLATED_SOURCE_WITNESS"
+    }
+  },
+  "rules": [
+    "All 13 cited ranges exist in both installed uncollated Catholic witnesses; not a print collation, translation comparison, or reader text approval.",
+    "Known biblical settlements, region-only narratives and unlocated events remain distinct.",
+    "Source actor pointers are desk aids, not independently reviewed canonical person/identity assignments.",
+    "No proposed route or site receives coordinates from a schematic Atlas line or modern guess.",
+    "The scene source and published Atlas are unchanged."
+  ],
+  "counts": {
+    "sceneBatch": "DELIVERANCE",
+    "rows": 13,
+    "firstIndex": 25,
+    "lastIndex": 37,
+    "totalSceneCorpus": 183,
+    "rowsWithVersePresenceBothWitnesses": 13,
+    "rowsApprovedForGeocoding": 0,
+    "rowsPublished": 0,
+    "originalExactRefSceneCount": 6
+  },
+  "reviewedRows": [
+    {
+      "sceneKey": "biblical:scene:moses:025",
+      "index": 25,
+      "title": "Israel under oppression",
+      "scriptureReference": "Exodus 1:8–22",
+      "existingLocationClaim": "Goshen · eastern Nile Delta (approximate)",
+      "existingMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalAtlasCandidateKeys": [],
+      "witnessSpanChecks": {
+        "douayChallonerVerseEntries": 15,
+        "cpdv2009VerseEntries": 15,
+        "coordinatePresenceVerified": true,
+        "textualIdentityBetweenEditionsNotCertified": true
+      },
+      "sourceDescribedActors": [
+        "Pharaoh",
+        "Shiphrah",
+        "Puah"
+      ],
+      "actorIdentificationsAreCitedTextOrLocalNarrativeContextNotNewGenealogy": true,
+      "locationEvidenceClass": "EGYPT_REGION_ONLY_GOSHEN_NOT_IN_VERSES",
+      "preciseSiteSupportedByCitedText": false,
+      "reviewFinding": "Exodus 1:8–22 explicitly places the oppression in Egypt, not Goshen; a specific Goshen location is inherited from other Genesis material and is not proved by these selected verses.",
+      "geographicalAction": "NO_GOSHEN_EVENT_PIN",
+      "definitiveModernCoordinatesApproved": false,
+      "identifiedModernSiteApproved": false,
+      "publicationApproval": false,
+      "editorialStatus": "SOURCE_WITNESS_DESK_TRIAGE_NOT_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:026",
+      "index": 26,
+      "title": "Moses is born and hidden",
+      "scriptureReference": "Exodus 2:1–10",
+      "existingLocationClaim": "Nile Valley · contextual reference",
+      "existingMatchStatus": "EXACT_REFERENCE",
+      "originalAtlasCandidateKeys": [
+        "biblical:passage:exodus-2-1-10"
+      ],
+      "witnessSpanChecks": {
+        "douayChallonerVerseEntries": 10,
+        "cpdv2009VerseEntries": 10,
+        "coordinatePresenceVerified": true,
+        "textualIdentityBetweenEditionsNotCertified": true
+      },
+      "sourceDescribedActors": [
+        "Moses",
+        "Pharaoh's daughter"
+      ],
+      "actorIdentificationsAreCitedTextOrLocalNarrativeContextNotNewGenealogy": true,
+      "locationEvidenceClass": "RIVER_SETTING_NO_EVENT_COORDINATE",
+      "preciseSiteSupportedByCitedText": false,
+      "reviewFinding": "Exodus 2:1–10 mentions a river and Pharaoh's daughter but gives no precise riverbank or birthplace. Nile Valley may be labelled context only.",
+      "geographicalAction": "RIVER_REGION_ONLY",
+      "definitiveModernCoordinatesApproved": false,
+      "identifiedModernSiteApproved": false,
+      "publicationApproval": false,
+      "editorialStatus": "SOURCE_WITNESS_DESK_TRIAGE_NOT_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:027",
+      "index": 27,
+      "title": "Moses flees to Midian",
+      "scriptureReference": "Exodus 2:11–22",
+      "existingLocationClaim": "Midian · wide traditional region",
+      "existingMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalAtlasCandidateKeys": [],
+      "witnessSpanChecks": {
+        "douayChallonerVerseEntries": 12,
+        "cpdv2009VerseEntries": 12,
+        "coordinatePresenceVerified": true,
+        "textualIdentityBetweenEditionsNotCertified": true
+      },
+      "sourceDescribedActors": [
+        "Moses",
+        "Reuel",
+        "Zipporah"
+      ],
+      "actorIdentificationsAreCitedTextOrLocalNarrativeContextNotNewGenealogy": true,
+      "locationEvidenceClass": "MIDIAN_WIDE_REGION_NO_ROUTE",
+      "preciseSiteSupportedByCitedText": false,
+      "reviewFinding": "Moses' flight from Egypt to Midian is explicit at Exodus 2:15; neither a road nor a certain modern Midian settlement is established.",
+      "geographicalAction": "NO_EXACT_MIDIAN_PIN",
+      "definitiveModernCoordinatesApproved": false,
+      "identifiedModernSiteApproved": false,
+      "publicationApproval": false,
+      "editorialStatus": "SOURCE_WITNESS_DESK_TRIAGE_NOT_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:028",
+      "index": 28,
+      "title": "The burning bush",
+      "scriptureReference": "Exodus 3:1–15",
+      "existingLocationClaim": "Jebel Musa · traditional Mount Sinai (contested)",
+      "existingMatchStatus": "EXACT_REFERENCE",
+      "originalAtlasCandidateKeys": [
+        "biblical:passage:exodus-3-1-15"
+      ],
+      "witnessSpanChecks": {
+        "douayChallonerVerseEntries": 15,
+        "cpdv2009VerseEntries": 15,
+        "coordinatePresenceVerified": true,
+        "textualIdentityBetweenEditionsNotCertified": true
+      },
+      "sourceDescribedActors": [
+        "Moses",
+        "Jethro"
+      ],
+      "actorIdentificationsAreCitedTextOrLocalNarrativeContextNotNewGenealogy": true,
+      "locationEvidenceClass": "BIBLICAL_HOREB_TRADITIONAL_JEBEL_MUSA",
+      "preciseSiteSupportedByCitedText": false,
+      "reviewFinding": "Exodus 3:1 names the mountain of God, Horeb. Equating it with today's Jebel Musa is a traditional, contested site identification.",
+      "geographicalAction": "TRADITIONAL_HOREB_ONLY",
+      "definitiveModernCoordinatesApproved": false,
+      "identifiedModernSiteApproved": false,
+      "publicationApproval": false,
+      "editorialStatus": "SOURCE_WITNESS_DESK_TRIAGE_NOT_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:029",
+      "index": 29,
+      "title": "Moses returns to Egypt",
+      "scriptureReference": "Exodus 4:18–31",
+      "existingLocationClaim": "Goshen · eastern Nile Delta (approximate)",
+      "existingMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalAtlasCandidateKeys": [],
+      "witnessSpanChecks": {
+        "douayChallonerVerseEntries": 14,
+        "cpdv2009VerseEntries": 14,
+        "coordinatePresenceVerified": true,
+        "textualIdentityBetweenEditionsNotCertified": true
+      },
+      "sourceDescribedActors": [
+        "Moses",
+        "Jethro",
+        "Aaron"
+      ],
+      "actorIdentificationsAreCitedTextOrLocalNarrativeContextNotNewGenealogy": true,
+      "locationEvidenceClass": "MULTI_LOCATION_JOURNEY_GOSHEN_NOT_IN_SPAN",
+      "preciseSiteSupportedByCitedText": false,
+      "reviewFinding": "Exodus 4:18–31 follows Moses from Midian toward Egypt and his meeting with Aaron; Goshen is not a named endpoint in this selected text.",
+      "geographicalAction": "NO_GOSHEN_AS_CERTAIN_ENDPOINT",
+      "definitiveModernCoordinatesApproved": false,
+      "identifiedModernSiteApproved": false,
+      "publicationApproval": false,
+      "editorialStatus": "SOURCE_WITNESS_DESK_TRIAGE_NOT_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:030",
+      "index": 30,
+      "title": "Let my people go",
+      "scriptureReference": "Exodus 5:1–23",
+      "existingLocationClaim": "Rameses · eastern Delta (hypothesis)",
+      "existingMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalAtlasCandidateKeys": [],
+      "witnessSpanChecks": {
+        "douayChallonerVerseEntries": 23,
+        "cpdv2009VerseEntries": 23,
+        "coordinatePresenceVerified": true,
+        "textualIdentityBetweenEditionsNotCertified": true
+      },
+      "sourceDescribedActors": [
+        "Moses",
+        "Aaron",
+        "Pharaoh"
+      ],
+      "actorIdentificationsAreCitedTextOrLocalNarrativeContextNotNewGenealogy": true,
+      "locationEvidenceClass": "PHARAOH_UNLOCATED_COURT",
+      "preciseSiteSupportedByCitedText": false,
+      "reviewFinding": "Exodus 5:1–23 reports Moses and Aaron before Pharaoh, but does not name the royal residence as Rameses; the proposed eastern-Delta city is not established.",
+      "geographicalAction": "NO_RAMESES_COURT_PIN",
+      "definitiveModernCoordinatesApproved": false,
+      "identifiedModernSiteApproved": false,
+      "publicationApproval": false,
+      "editorialStatus": "SOURCE_WITNESS_DESK_TRIAGE_NOT_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:031",
+      "index": 31,
+      "title": "The staff and the magicians",
+      "scriptureReference": "Exodus 7:8–13",
+      "existingLocationClaim": "Rameses · eastern Delta (hypothesis)",
+      "existingMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalAtlasCandidateKeys": [],
+      "witnessSpanChecks": {
+        "douayChallonerVerseEntries": 6,
+        "cpdv2009VerseEntries": 6,
+        "coordinatePresenceVerified": true,
+        "textualIdentityBetweenEditionsNotCertified": true
+      },
+      "sourceDescribedActors": [
+        "Moses",
+        "Aaron",
+        "Pharaoh"
+      ],
+      "actorIdentificationsAreCitedTextOrLocalNarrativeContextNotNewGenealogy": true,
+      "locationEvidenceClass": "UNLOCATED_COURT",
+      "preciseSiteSupportedByCitedText": false,
+      "reviewFinding": "Exodus 7:8–13 records Moses and Aaron before Pharaoh and unnamed magicians; no specific court city or the magicians' later traditional names are given here.",
+      "geographicalAction": "NO_RAMESES_EVENT_PIN",
+      "definitiveModernCoordinatesApproved": false,
+      "identifiedModernSiteApproved": false,
+      "publicationApproval": false,
+      "editorialStatus": "SOURCE_WITNESS_DESK_TRIAGE_NOT_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:032",
+      "index": 32,
+      "title": "The first plague: the Nile turns to blood",
+      "scriptureReference": "Exodus 7:14–25",
+      "existingLocationClaim": "Nile Valley · contextual reference",
+      "existingMatchStatus": "EXACT_REFERENCE",
+      "originalAtlasCandidateKeys": [
+        "biblical:passage:exodus-7-14-25"
+      ],
+      "witnessSpanChecks": {
+        "douayChallonerVerseEntries": 12,
+        "cpdv2009VerseEntries": 12,
+        "coordinatePresenceVerified": true,
+        "textualIdentityBetweenEditionsNotCertified": true
+      },
+      "sourceDescribedActors": [
+        "Moses",
+        "Aaron",
+        "Pharaoh"
+      ],
+      "actorIdentificationsAreCitedTextOrLocalNarrativeContextNotNewGenealogy": true,
+      "locationEvidenceClass": "NILE_RIVER_CONTEXT_NO_BANK_IDENTIFIED",
+      "preciseSiteSupportedByCitedText": false,
+      "reviewFinding": "Exodus 7:14–25 locates the miracle at the river and includes Pharaoh's approach to its bank. It does not identify an exact bank, urban setting or river segment.",
+      "geographicalAction": "RIVER_CONTEXT_ONLY",
+      "definitiveModernCoordinatesApproved": false,
+      "identifiedModernSiteApproved": false,
+      "publicationApproval": false,
+      "editorialStatus": "SOURCE_WITNESS_DESK_TRIAGE_NOT_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:033",
+      "index": 33,
+      "title": "The first Passover",
+      "scriptureReference": "Exodus 12:1–28",
+      "existingLocationClaim": "Goshen · eastern Nile Delta (approximate)",
+      "existingMatchStatus": "EXACT_REFERENCE",
+      "originalAtlasCandidateKeys": [
+        "biblical:passage:exodus-12-1-28"
+      ],
+      "witnessSpanChecks": {
+        "douayChallonerVerseEntries": 28,
+        "cpdv2009VerseEntries": 28,
+        "coordinatePresenceVerified": true,
+        "textualIdentityBetweenEditionsNotCertified": true
+      },
+      "sourceDescribedActors": [
+        "Moses",
+        "Aaron"
+      ],
+      "actorIdentificationsAreCitedTextOrLocalNarrativeContextNotNewGenealogy": true,
+      "locationEvidenceClass": "EGYPT_REGION_GOSHEN_NOT_IN_VERSES",
+      "preciseSiteSupportedByCitedText": false,
+      "reviewFinding": "Exodus 12:1 says only 'in the land of Egypt'. Goshen is not named in 12:1–28, so it cannot be geocoded as the proven address of the first Passover.",
+      "geographicalAction": "NO_GOSHEN_PASSOVER_PIN",
+      "definitiveModernCoordinatesApproved": false,
+      "identifiedModernSiteApproved": false,
+      "publicationApproval": false,
+      "editorialStatus": "SOURCE_WITNESS_DESK_TRIAGE_NOT_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:034",
+      "index": 34,
+      "title": "The departure from Rameses",
+      "scriptureReference": "Exodus 12:31–42",
+      "existingLocationClaim": "Rameses · eastern Delta (hypothesis)",
+      "existingMatchStatus": "EXACT_REFERENCE",
+      "originalAtlasCandidateKeys": [
+        "biblical:passage:exodus-12-31-42"
+      ],
+      "witnessSpanChecks": {
+        "douayChallonerVerseEntries": 12,
+        "cpdv2009VerseEntries": 12,
+        "coordinatePresenceVerified": true,
+        "textualIdentityBetweenEditionsNotCertified": true
+      },
+      "sourceDescribedActors": [
+        "Moses",
+        "Aaron",
+        "Pharaoh"
+      ],
+      "actorIdentificationsAreCitedTextOrLocalNarrativeContextNotNewGenealogy": true,
+      "locationEvidenceClass": "NAMED_DEPARTURE_TOWNS_SITE_CORRELATION_UNRESOLVED",
+      "preciseSiteSupportedByCitedText": false,
+      "reviewFinding": "Exodus 12:37 names departure from Ramesse/Rameses to Socoth/Succoth. These are scriptural place names, not authenticated modern coordinates or a recovered marching path.",
+      "geographicalAction": "SCHEMATIC_JOURNEY_ONLY",
+      "definitiveModernCoordinatesApproved": false,
+      "identifiedModernSiteApproved": false,
+      "publicationApproval": false,
+      "editorialStatus": "SOURCE_WITNESS_DESK_TRIAGE_NOT_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:035",
+      "index": 35,
+      "title": "The pillar of cloud and fire",
+      "scriptureReference": "Exodus 13:17–22",
+      "existingLocationClaim": "Northern Suez isthmus · schematic focus only",
+      "existingMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalAtlasCandidateKeys": [],
+      "witnessSpanChecks": {
+        "douayChallonerVerseEntries": 6,
+        "cpdv2009VerseEntries": 6,
+        "coordinatePresenceVerified": true,
+        "textualIdentityBetweenEditionsNotCertified": true
+      },
+      "sourceDescribedActors": [
+        "Moses"
+      ],
+      "actorIdentificationsAreCitedTextOrLocalNarrativeContextNotNewGenealogy": true,
+      "locationEvidenceClass": "NAMED_WAYPOINTS_NO_CERTIFIED_ROUTE",
+      "preciseSiteSupportedByCitedText": false,
+      "reviewFinding": "Exodus 13:17–22 names Succoth and Etham and an indirect route toward the sea; a specific northern Suez track is a geographical hypothesis, not an attested ancient road.",
+      "geographicalAction": "NO_NORTHERN_SUEZ_ROUTE_AS_FACT",
+      "definitiveModernCoordinatesApproved": false,
+      "identifiedModernSiteApproved": false,
+      "publicationApproval": false,
+      "editorialStatus": "SOURCE_WITNESS_DESK_TRIAGE_NOT_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:036",
+      "index": 36,
+      "title": "The crossing of the sea",
+      "scriptureReference": "Exodus 14:15–31",
+      "existingLocationClaim": "Location not established",
+      "existingMatchStatus": "EXACT_REFERENCE",
+      "originalAtlasCandidateKeys": [
+        "biblical:passage:exodus-14-15-31"
+      ],
+      "witnessSpanChecks": {
+        "douayChallonerVerseEntries": 17,
+        "cpdv2009VerseEntries": 17,
+        "coordinatePresenceVerified": true,
+        "textualIdentityBetweenEditionsNotCertified": true
+      },
+      "sourceDescribedActors": [
+        "Moses",
+        "Pharaoh"
+      ],
+      "actorIdentificationsAreCitedTextOrLocalNarrativeContextNotNewGenealogy": true,
+      "locationEvidenceClass": "SEA_CROSSING_SITE_UNIDENTIFIED",
+      "preciseSiteSupportedByCitedText": false,
+      "reviewFinding": "Exodus 14:15–31 narrates the sea crossing but supplies no exact modern sea crossing point. Preserve the existing scene's no-pin choice.",
+      "geographicalAction": "KEEP_NO_PIN",
+      "definitiveModernCoordinatesApproved": false,
+      "identifiedModernSiteApproved": false,
+      "publicationApproval": false,
+      "editorialStatus": "SOURCE_WITNESS_DESK_TRIAGE_NOT_PRINT_COLLATION"
+    },
+    {
+      "sceneKey": "biblical:scene:moses:037",
+      "index": 37,
+      "title": "The song of Moses and Miriam",
+      "scriptureReference": "Exodus 15:1–21",
+      "existingLocationClaim": "Location not established",
+      "existingMatchStatus": "NO_DIRECT_PASSAGE_MATCH",
+      "originalAtlasCandidateKeys": [],
+      "witnessSpanChecks": {
+        "douayChallonerVerseEntries": 21,
+        "cpdv2009VerseEntries": 21,
+        "coordinatePresenceVerified": true,
+        "textualIdentityBetweenEditionsNotCertified": true
+      },
+      "sourceDescribedActors": [
+        "Moses",
+        "Miriam"
+      ],
+      "actorIdentificationsAreCitedTextOrLocalNarrativeContextNotNewGenealogy": true,
+      "locationEvidenceClass": "SONG_SITE_UNIDENTIFIED",
+      "preciseSiteSupportedByCitedText": false,
+      "reviewFinding": "Exodus 15:1–21 is the canticle of Moses and Miriam after the crossing; the quoted verses do not fix a modern performance spot.",
+      "geographicalAction": "KEEP_NO_PIN",
+      "definitiveModernCoordinatesApproved": false,
+      "identifiedModernSiteApproved": false,
+      "publicationApproval": false,
+      "editorialStatus": "SOURCE_WITNESS_DESK_TRIAGE_NOT_PRINT_COLLATION"
+    }
+  ]
+}
