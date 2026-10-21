@@ -285,7 +285,7 @@ function monthHybridOverview(monthId,selected){
     <section class="aoCalHybridSection aoCalHybridPracticesSection">
       <div class="aoCalHybridHeading"><h3>${esc(L("Practices & customs","Pratiques et coutumes"))}</h3></div>
       ${seasonalCustoms.length?`<div class="aoCalCustomMonthContext"><small>${esc(L("CUSTOMS OF THE SEASON","COUTUMES DE LA SAISON"))}</small>${seasonalCustoms.map(item=>`<button type="button" data-cal-month-index-date="${esc(item.date)}"><strong>${esc(item.title)}</strong><span aria-hidden="true">›</span></button>`).join("")}</div>`:""}
-      <div class="aoCalHybridPractices">${practiceCards||`<p class="aoCalHybridEmpty">${esc(L("No featured practices for this month.","Aucune pratique signalée pour ce mois."))}</p>`}</div>
+      <div class="aoCalHybridPractices">${practiceCards||(seasonalCustoms.length?"":`<p class="aoCalHybridEmpty">${esc(L("No featured practices for this month.","Aucune pratique signalée pour ce mois."))}</p>`)}</div>
     </section>
   </div>`;
 }
