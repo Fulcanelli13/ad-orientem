@@ -2,6 +2,8 @@ import { glossaryContextCapsule } from "../app/contextual-study.js";
 import { decorateLiturgicalSpeaker } from "../app/liturgical-speakers.js";
 import { insertChantPhraseBreaks } from "./reader-chant-line-layout.js";
 import { missalSourceRubricCopy } from "./reader-missal-book-rubrics.js";
+import { conciseMissalSourceRubric, conciseMissalInlineSequence,
+  liveActionCoveredByIcon } from "./reader-rubric-presentation.js";
 import { normalizePresentationMode } from "./session-engine.js";
 import { resolveMassLiturgicalTheme, massThemeCssVariables } from "./reader-liturgical-theme.js";
 import { R17_DONOR_PNG_ICON_KEYS } from "./reader-icon-bank.js";
@@ -1073,6 +1075,8 @@ button.ao-schola-control{cursor:pointer}
 .ao-reader-shell[data-mode="LIVE"] .ao-live-rubric-action{
   display:block;margin:1px 0;
 }
+.ao-reader-shell[data-mode="LIVE"] .ao-live-rubric-action[hidden],
+.ao-reader-shell[data-mode="LIVE"] .ao-live-inline-rubrics[hidden]{display:none!important}
 .ao-reader-shell[data-mode="LIVE"] .ao-reader-paragraph:not([data-active="true"])
   .ao-live-inline-rubrics{opacity:.63}
 .ao-reader-shell[data-mode="LIVE"] .ao-live-inline-rubrics .ao-missal-ceremonial-state-detail
@@ -1601,6 +1605,7 @@ export function normalizeReaderMoment(moment = {}, previous = {}) {
             event.sourceId==="R18_SOLEMN_FORM_STATE")))
         .map(event=>Object.freeze({
           id:String(event.id),displayText:event.displayText,actor:event.actor,
+          shortAction:typeof event.shortAction==="string"?event.shortAction:null,
           sourceCueId:event.sourceCueId,sourceId:event.sourceId,
           owner:event.owner,review:event.review,
           kind:event.kind??"ACTION",
@@ -3566,7 +3571,13 @@ export function createReaderDomAdapter({
           // DOM focus and the *same* projected gesture as the rail below.
           const bookRubric=mode==="MISSAL" && p.kind==="RUBRIC"
             ? missalSourceRubricCopy(p,{language:frenchReader?"fr":"en"}):null;
-          renderReaderText(primary,bookRubric?.text ??
+          // Only shorten complete, certified action sequences; never change
+          // the original Latin/prayer row or expose editorial research drafts.
+          const conciseSource=bookRubric ? conciseMissalSourceRubric(p,{
+            form:prepared?.session?.resolvedMass?.form,
+            language:frenchReader?"fr":"en",
+          }):null;
+          renderReaderText(primary,conciseSource?.text??bookRubric?.text ??
             (p.kind==="RUBRIC"?stripRubricBrackets(p.primary):p.primary));
           if(bookRubric){
             node.dataset.missalRubricLanguage=bookRubric.requestedLanguage;
@@ -3603,7 +3614,20 @@ export function createReaderDomAdapter({
             const actions=doc.createElement(mode==="MISSAL"?"div":"span");
             actions.className="ao-canon-inline-actions";
             if(mode==="MISSAL"||mode==="LIVE"){
-              for(const event of shortRubrics){
+              const condensed=mode==="MISSAL"?conciseMissalInlineSequence(shortRubrics,{
+                form:prepared?.session?.resolvedMass?.form,
+                language:frenchReader?"fr":"en",
+              }):null;
+              if(condensed){
+                // Keep both event IDs on the one printed sentence.
+                const line=doc.createElement("span");
+                line.className="ao-missal-rubric-action";
+                line.dataset.rubricIds=condensed.eventIds.join(" ");
+                line.dataset.sourceCueId=condensed.sourceCueId;
+                line.textContent=condensed.text;
+                actions.append(line);
+              }
+              for(const event of (condensed?[]:shortRubrics)){
                 // Only two separately approved persistent states exist.
                 // A full C0174.06 paragraph would overwhelm the Consecration;
                 // preserve its exception and duration in a real, optional
@@ -3705,6 +3729,32 @@ export function createReaderDomAdapter({
       stageCinema.hidden=!canIllustrate;
       stageCinema.setAttribute?.("aria-hidden","true");
       if(stageShell)stageShell.dataset.cinematicVisual=canIllustrate?"ICON":"RAIL";
+    }
+    // Exact visual duplication alone may suppress a LIVE *action* sentence.
+    // Any precise, unpictured or inactive-cue rubric remains printed.
+    // Reassess on cue-only updates; never change the priest event clock.
+    if(mode==="LIVE"){
+      const iconKey=current.priestActionIconKey;
+      const iconNode=root.querySelector('.ao-rail-right [data-icon-slot="priest-action"]');
+      let iconResolved=false;
+      try{
+        iconResolved=Boolean(iconNode&&!iconNode.hidden&&iconKey&&
+          typeof iconResolver==="function"&&iconResolver(iconKey));
+      }catch(_){iconResolved=false;}
+      const byId=new Map(current.paragraphs.flatMap(p=>p.publishedMissalRubrics??[])
+        .map(e=>[e.id,e]));
+      for(const label of root.querySelectorAll?.(".ao-live-rubric-action[data-rubric-id]")??[]){
+        const event=byId.get(label.dataset.rubricId);
+        label.hidden=liveActionCoveredByIcon(event,{
+          cueId:current.nativeCueId,priestAction:current.priestAction,
+          iconKey,iconResolved,
+        });
+      }
+      for(const note of root.querySelectorAll?.(".ao-live-inline-rubrics")??[]){
+        const visible=[...(note.querySelectorAll?.(".ao-live-rubric-action")??[])]
+          .some(label=>!label.hidden);
+        note.hidden=!visible;
+      }
     }
     syncReaderRitualHighlights(root,current.gesture);
     syncFaithfulParagraphIcons();
