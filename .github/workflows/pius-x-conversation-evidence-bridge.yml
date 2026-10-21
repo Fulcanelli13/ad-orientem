@@ -110,6 +110,9 @@ on:
       - 'tests/pius-x-document-first-three-benchmark-source-map.mjs'
       - 'data/learn/research/pius-x-document-first-remaining-acerbo-esupremi-20261021.v1.json'
       - 'data/learn/research/pius-x-document-first-remaining-haerent-20261021.v1.json'
+      - 'data/learn/research/pius-x-document-first-34-editorial-corrections-20261021.v1.json'
+      - 'data/learn/research/pius-x-document-first-unscripted-bilingual-probes-20261021.v1.json'
+      - 'tests/pius-x-document-first-unscripted-router-6.mjs'
       - 'tools/formation/build-pius-x-three-document-full-benchmark.mjs'
       - 'tests/pius-x-document-first-full-34-source-map.mjs'
       - 'tests/pius-x-depth12-visual-novel-browser.mjs'
@@ -339,11 +342,15 @@ jobs:
           done
       - name: Regress 48 original questions against source-aware retrieval
         run: node tests/pius-x-pr1443-source-aware-48-regression.mjs
+      - name: Probe three new document-first questions in English and French
+        run: node tests/pius-x-document-first-unscripted-router-6.mjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: pius-x-source-aware-48-regression
-          path: research-out/pius-x-pr1443-source-aware-heldout-48.v1.json
+          path: |
+            research-out/pius-x-pr1443-source-aware-heldout-48.v1.json
+            research-out/pius-x-document-first-unscripted-router-6.v1.json
           if-no-files-found: warn
           retention-days: 30
 
