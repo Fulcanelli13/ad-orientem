@@ -399,6 +399,12 @@ const SHELL_STYLE = `
  display:block!important;max-width:50px;font:600 8px/1.2 var(--ao-font-ui,system-ui,sans-serif);
  color:#e6dfcd;text-transform:uppercase;letter-spacing:0;text-align:center;overflow-wrap:anywhere
 }
+/* Consecration voice-state cue stays legible if its final artwork paints blank. */
+.ao-reader-shell[data-mode="LIVE"][data-objective-context="true"] .ao-rail-item[data-channel="priest-voice"][data-voice-text-fallback="true"] .ao-icon-mask{display:none!important}
+.ao-reader-shell[data-mode="LIVE"][data-objective-context="true"] .ao-rail-item[data-channel="priest-voice"][data-voice-text-fallback="true"] .ao-rail-copy{
+ display:block!important;max-width:50px;font:600 8px/1.2 var(--ao-font-ui,system-ui,sans-serif);
+ color:#d7ddcf;letter-spacing:0;text-align:center;overflow-wrap:anywhere
+}
 /* No new artwork/clock: one occasional Solemn minister *rubric*, not a
    claimed observation or a priest-action clone. Only certified existing
    sacredMinister states may populate this otherwise absent right-rail tile. */
@@ -3425,6 +3431,13 @@ export function createReaderDomAdapter({
     setChannel(root,"response",current.response);
     setChannel(root,"bell",visibleBell);
     setChannel(root,"priest-voice",current.priestVoice);
+    const voiceTile=root.querySelector('.ao-rail-right [data-channel="priest-voice"]');
+    if(voiceTile){
+      const voiceText=textValue(current.priestVoice);
+      voiceTile.dataset.voiceTextFallback=String(showContext&&Boolean(voiceText)&&
+        ["AO.SM.B052","AO.SM.B053"].includes(copy.blockId));
+      setText(root,"priest-voice",voiceText);
+    }
     setChannel(root,"priest-position",showContext?current.priestPosition:null);
     setText(root,"priest-position-rail",priestStationLabel(showContext
       ? current.priestPosition:null,root));
