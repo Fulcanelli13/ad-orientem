@@ -1,8 +1,8 @@
-/* Editorial staging from the 56-record research master, not published article copy.
- * The 24 underlying custom identities are PUBLISHED in canonical SOT-07,
- * but expanded bilingual wording in this projection requires acceptance.
- * PR must remain draft until wording/source checks are signed off.
- * Not imported as new identities into the 1962 calendar.
+/* Editor-reviewed Calendar prose for 24 identities already PUBLISHED in canonical SOT-07.
+ * This is a source-bounded read-model projection. No new customs, Mass
+ * rites, local ceremonies, bookings or geography are published.
+ * Acceptance register: data/customs/calendar-copy-acceptance.v1.json
+ * The research master remains draft and its 14 NOT_APPROVED identities stay excluded.
  */
 export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
   {
@@ -39,7 +39,7 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "en": "France",
       "fr": "France"
     },
-    "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
+    "editorialCopyStatus": "CALENDAR_ARTICLE_SCOPE_ACCEPTED",
     "sources": [
       {
         "id": "MUCEM-BENITIER",
@@ -82,7 +82,7 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "en": "French Catholic tradition · France",
       "fr": "Tradition catholique française · France"
     },
-    "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
+    "editorialCopyStatus": "CALENDAR_ARTICLE_SCOPE_ACCEPTED",
     "sources": [
       {
         "id": "PARAY-CONSECRATION",
@@ -94,7 +94,7 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
   {
     "id": "DOM-007",
     "title": {
-      "en": "Intronement of a Sacred Heart image in the home",
+      "en": "Enthronement of a Sacred Heart image in the home",
       "fr": "Intronisation du Sacré-Cœur dans la maison"
     },
     "description": {
@@ -125,7 +125,7 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "en": "French Catholic tradition · France",
       "fr": "Tradition catholique française · France"
     },
-    "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
+    "editorialCopyStatus": "CALENDAR_ARTICLE_SCOPE_ACCEPTED",
     "sources": [
       {
         "id": "PARAY-INTRONISATION",
@@ -168,7 +168,7 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "en": "France",
       "fr": "France"
     },
-    "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
+    "editorialCopyStatus": "CALENDAR_ARTICLE_SCOPE_ACCEPTED",
     "sources": [
       {
         "id": "RIT-1878",
@@ -216,7 +216,7 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "en": "France",
       "fr": "France"
     },
-    "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
+    "editorialCopyStatus": "CALENDAR_ARTICLE_SCOPE_ACCEPTED",
     "sources": [
       {
         "id": "ECF-MAY",
@@ -259,7 +259,7 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "en": "International devotional practice · France · Belgium · United States · Germany",
       "fr": "Pratique dévotionnelle internationale · France · Belgique · États-Unis · Allemagne"
     },
-    "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
+    "editorialCopyStatus": "CALENDAR_ARTICLE_SCOPE_ACCEPTED",
     "sources": [
       {
         "id": "DPP-2001",
@@ -362,7 +362,7 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "en": "France · Germany",
       "fr": "France · Allemagne"
     },
-    "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
+    "editorialCopyStatus": "CALENDAR_ARTICLE_SCOPE_ACCEPTED",
     "sources": [
       {
         "id": "LAGHET-EXVOTO",
@@ -410,7 +410,7 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "en": "France · Austria · United States · Canada · Germany",
       "fr": "France · Autriche · États-Unis · Canada · Allemagne"
     },
-    "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
+    "editorialCopyStatus": "CALENDAR_ARTICLE_SCOPE_ACCEPTED",
     "sources": [
       {
         "id": "LOURDES-CANDLES",
@@ -483,7 +483,7 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "en": "International devotional practice · France",
       "fr": "Pratique dévotionnelle internationale · France"
     },
-    "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
+    "editorialCopyStatus": "CALENDAR_ARTICLE_SCOPE_ACCEPTED",
     "sources": [
       {
         "id": "DPP-2001",
@@ -531,7 +531,7 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "en": "France · Poland",
       "fr": "France · Pologne"
     },
-    "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
+    "editorialCopyStatus": "CALENDAR_ARTICLE_SCOPE_ACCEPTED",
     "sources": [
       {
         "id": "ECF-DEAD",
@@ -589,7 +589,7 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "en": "France",
       "fr": "France"
     },
-    "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
+    "editorialCopyStatus": "CALENDAR_ARTICLE_SCOPE_ACCEPTED",
     "sources": [
       {
         "id": "MUCEM-BENITIER",
@@ -637,7 +637,7 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "en": "France",
       "fr": "France"
     },
-    "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
+    "editorialCopyStatus": "CALENDAR_ARTICLE_SCOPE_ACCEPTED",
     "sources": [
       {
         "id": "ECF-CHANDLEUR-HOME",
@@ -680,7 +680,7 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "en": "France",
       "fr": "France"
     },
-    "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
+    "editorialCopyStatus": "CALENDAR_ARTICLE_SCOPE_ACCEPTED",
     "sources": [
       {
         "id": "ECF-RAMEAUX-HOME",
@@ -728,7 +728,7 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "en": "International devotional practice",
       "fr": "Pratique dévotionnelle internationale"
     },
-    "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
+    "editorialCopyStatus": "CALENDAR_ARTICLE_SCOPE_ACCEPTED",
     "sources": [
       {
         "id": "ROMR-BLAISE-1956",
@@ -786,7 +786,7 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "en": "United States",
       "fr": "États-Unis"
     },
-    "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
+    "editorialCopyStatus": "CALENDAR_ARTICLE_SCOPE_ACCEPTED",
     "sources": [
       {
         "id": "EWTN-MCLOUGHLIN-NAMEDAY",
@@ -829,7 +829,7 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "en": "France",
       "fr": "France"
     },
-    "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
+    "editorialCopyStatus": "CALENDAR_ARTICLE_SCOPE_ACCEPTED",
     "sources": [
       {
         "id": "ECF-CHANTELLE-PATRONAL",
@@ -872,7 +872,7 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "en": "France",
       "fr": "France"
     },
-    "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
+    "editorialCopyStatus": "CALENDAR_ARTICLE_SCOPE_ACCEPTED",
     "sources": [
       {
         "id": "DIOCESE-PARIS-ASSOMPTION-2026",
@@ -915,7 +915,7 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "en": "United States",
       "fr": "États-Unis"
     },
-    "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
+    "editorialCopyStatus": "CALENDAR_ARTICLE_SCOPE_ACCEPTED",
     "sources": [
       {
         "id": "BR-DIOCESE-STJOSEPH-2026",
@@ -958,7 +958,7 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "en": "France",
       "fr": "France"
     },
-    "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
+    "editorialCopyStatus": "CALENDAR_ARTICLE_SCOPE_ACCEPTED",
     "sources": [
       {
         "id": "ERMITAGE-ANTHONY-POOR-BREAD",
@@ -1001,7 +1001,7 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "en": "France",
       "fr": "France"
     },
-    "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
+    "editorialCopyStatus": "CALENDAR_ARTICLE_SCOPE_ACCEPTED",
     "sources": [
       {
         "id": "DIOCESE-LAVAL-CHRISTOPHER-2026",
@@ -1044,7 +1044,7 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "en": "France",
       "fr": "France"
     },
-    "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
+    "editorialCopyStatus": "CALENDAR_ARTICLE_SCOPE_ACCEPTED",
     "sources": [
       {
         "id": "STRASBOURG-SAINT-NICOLAS-2022",
@@ -1087,7 +1087,7 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "en": "International devotional practice",
       "fr": "Pratique dévotionnelle internationale"
     },
-    "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
+    "editorialCopyStatus": "CALENDAR_ARTICLE_SCOPE_ACCEPTED",
     "sources": [
       {
         "id": "DPP-ASSUMPTION-HERBS-181",
@@ -1140,7 +1140,7 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "en": "International devotional practice",
       "fr": "Pratique dévotionnelle internationale"
     },
-    "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
+    "editorialCopyStatus": "CALENDAR_ARTICLE_SCOPE_ACCEPTED",
     "sources": [
       {
         "id": "RIT-STJOHN-WINE-1962-TRANSCRIPTION",
@@ -1188,7 +1188,7 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "en": "International devotional practice",
       "fr": "Pratique dévotionnelle internationale"
     },
-    "editorialCopyStatus": "RESEARCH_DRAFT_RELEASE_REVIEW_REQUIRED",
+    "editorialCopyStatus": "CALENDAR_ARTICLE_SCOPE_ACCEPTED",
     "sources": [
       {
         "id": "RIT-EASTER-FOOD-WELLER",
