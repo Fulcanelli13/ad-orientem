@@ -107,6 +107,29 @@ This assembles **four research collections / 60 Scripture readings**: Great Bibl
 
 A separate source-availability pass checked all 41 additional readings across **12 original book/edition witness files**, **129 chapter views** and **1,608 available verse records** with no empty requested chapters or explicit internal source gaps. Source-verse wording continues to live exclusively in the original Scripture files. The CI contract for this is `tests/historia-thematic-batch2-witness.mjs`, with the extended-research URL journey in `tests/historia-thematic-phone-e2e.mjs`. Confirm the **latest successful** workflow before treating this new opt-in flag as accepted; the earlier successful browser run predates second-batch activation.
 
+## Next editorial pass — 67 research readings (21 October 2026)
+
+**Green verification:** GitHub Actions Chromium + Node research acceptance run [39666450547](https://github.com/Fulcanelli13/ad-orientem/actions/runs/39666450547) passed. The test covers the 19-, 60-, and segmented 67-reading research modes, including the four revised source windows. This is research acceptance, **not** biblical-text collation or publication approval.
+
+To inspect the seven formerly held composite references as distinct, labelled original Scripture spans, use the **third explicit opt-in**:
+
+    http://localhost:8000/index.html?ao_historia_collections=1&ao_historia_batch2=1&ao_historia_segmented=1
+
+This produces **67 source-coordinate research readings in six collections** (11 Great Narratives, 27 Miracles, 24 Parables/Teachings, 3 Canticles, 1 Prophets, 1 Life of Christ). All seven have explicit source plans: Hagar/Ishmael; David sparing Saul twice; Jeremiah's distinct persecutions; Esther's prayer; the nonconsecutive Nazareth verses; the Matthew/Mark discourse as two Gospel testimonies; and the Job wisdom-narrative frame. Their *13 section locators* cover *15 actual Bible chapter views*. Source words are loaded through the same established Catholic witness loader, never stored here. The database records why intervening chapters are excluded. Job is not called a parable and is not forced into chronological history.
+
+**Edition-specific Esther:** the Greek addition convention yields Queen Esther's prayer at **Esther 14:1–19 in Douay/Challoner and Crampon**. The CPDV witness's Esther 14 contains other material. Until source-collated crosswalk approval, the research reader uses **Challoner only** for this prayer. Never infer that chapter number equality across the three editions implies identical content.
+
+**41-entry editorial source audit:** `data/research/historia-salutis-thematic-batch2-boundary-audit-20261021.v1.json` retains all the original omission-inventory references but proposes four precise research-reader corrections:
+
+- Mark 9:14–28 stops before the following Galilean journey at verse 29;
+- Matthew 13:24–30 and Christ's Matthew 13:36–43 explanation are separate passages;
+- Mark 11:12–14 and 11:20–21 are separated by the Temple cleansing;
+- The debates and denunciations use Matthew 21:23–27, 22:15–46 and 23:1–39, not an indiscriminate Matthew 21–23 that repeats the Palm entry and wedding feast.
+
+Three further entries have *literary or scope cautions*, without introducing interpretive prose into the biblical readings: the rich man and Lazarus; the future Last Judgment; and the broader content of John 15. These boundaries are **editorial research proposals** and not an accepted substitution for the original sources.
+
+Source-only implementations: `src/scripture/historia-thematic-composite.js` and `src/scripture/historia-thematic-boundaries.js`. Regressions: `tests/historia-thematic-composite.mjs`, `tests/historia-thematic-editorial-boundaries.mjs`, and the expanded phone browser journey in `tests/historia-thematic-phone-e2e.mjs`. None of these changes alters the existing 54-chapter P3 manuscript, 37 original source movements or Scripture witness text files.
+
 ## Main manuscript protection
 
 - The 54-chapter research proposal at data/research/historia-salutis-p3-provisional-reading-chapter-consolidation-20261021.v2.json is unchanged.
