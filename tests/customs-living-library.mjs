@@ -15,6 +15,23 @@ const data={
   historical:json("data/customs/customs-historical-folios.v1.json")
 };
 const library=createCustomsLibrary(data);
+
+const art=json("data/customs/customs-approved-art-reuse-review.v1.json");
+assert.equal(art.schema,"AO_CUSTOMS_APPROVED_ART_REUSE_REVIEW_V1");
+assert.equal(art.status,"NON_PUBLISHING_CURATORIAL_CROSSWALK");
+assert.equal(art.candidate_placements.length,19,"19 possible uses of previously approved paintings");
+assert.equal(art.unmatched_customs.length,19,"19 unresolved artwork matches remain visible");
+assert.equal(art.counts.canonical_customs,38);
+const artIDs=new Set([...art.candidate_placements,...art.unmatched_customs].map(x=>x.custom_id));
+assert.equal(artIDs.size,38,"every custom needs exactly one art review disposition");
+assert.deepEqual(artIDs,new Set(library.items.map(x=>x.id)));
+assert.ok(art.candidate_placements.every(x=>x.cross_module_placement_status==="PROPOSED_NEEDS_CURATOR_APPROVAL" &&
+  x.image_release_status==="NOT_VERIFIED" && !x.artwork_display_enabled && x.asset_path==null &&
+  /^OCT(12|19)_/.test(x.original_selection_origin) && x.approval_locator && x.selected_artist && x.selected_title),
+  "approved originals must never be auto-published as new custom placements");
+assert.ok(art.unmatched_customs.every(x=>x.placement_status==="NO_SUITABLE_APPROVED_ORIGINAL_MATCH_ESTABLISHED" && !x.artwork_display_enabled),
+  "no unsuitable visual substitution allowed");
+
 assert.equal(library.stats.canonical,38,"38 current canonical IDs retained");
 assert.equal(data.temporal.records.filter(x=>x.calendar_hint).length,26,"exactly 26 dated seasonal notices");
 assert.equal(data.temporal.records.filter(x=>x.calendar_hint).every(x=>x.calendar_hint_fr),true,
