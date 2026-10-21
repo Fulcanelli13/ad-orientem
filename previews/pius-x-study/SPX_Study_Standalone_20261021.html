@@ -170,7 +170,7 @@ function sourceHTML(record){
  "<div class='citation-links'>"+urls+"</div>"+
  "<p class='eyebrow'>"+tr().claim+"</p>"+cite+
  "<p class='warning'>"+tr().caution+"</p>"+
- "<p class='discreet-note'>"+tr().notes+": "+fmt(selected.id)+" · "+fmt(data.version)+"</p>";
+ "<p class='discreet-note'>"+tr().notes+": "+fmt(selected.map(seg=>seg.id).join(", "))+" · "+fmt(data.version)+"</p>";
 }
 function navHTML(){
  return data.docs.map(d=>"<button class='doc-tab' data-doc='"+d.id+"' data-active='"+(d.id===state.doc)+"'>"+fmt(d.title)+"<small>"+d.turns.length+" "+tr().counts+"</small></button>"+
