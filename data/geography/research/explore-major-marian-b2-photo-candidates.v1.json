@@ -1,7 +1,7 @@
 {
   "schema": "AO_MAJOR_MARIAN_B2_PHOTO_SOURCE_RESEARCH_V1",
   "as_of": "2026-10-21",
-  "publication": "RESEARCH_ONLY_NOT_APPROVED",
+  "publication": "SOURCE_REVIEWED_PENDING_SECOND_CONTACT_SHEET",
   "policy": "Only exact original Commons images with verified metadata, current licence, local derivative and manual subject framing inspection may be promoted. Do not use hotlinks, borrow art or substitute Catholic places with same Marian title.",
   "candidates": [
     {
@@ -21,14 +21,14 @@
     },
     {
       "place_id": "place:AT:mariazell-basilica",
-      "commons_title": "File:Mariazell-Basilika 9123.JPG",
-      "credit": "Wikimedia Commons/KarlGruber",
-      "license": "CC-BY-SA-4.0",
-      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-      "source_url": "https://commons.wikimedia.org/wiki/File%3AMariazell-Basilika_9123.JPG",
-      "subject": "Actual Mariazell basilica architecture; not the separate Marian grace statue",
-      "alt_en": "Basilica of Mariazell in Austria, pilgrimage church of the Magna Mater Austriae",
-      "alt_fr": "Basilique de Mariazell en Autriche, église de pèlerinage de la Magna Mater Austriae",
+      "commons_title": "File:Basilika von Mariazell 01.JPG",
+      "credit": "Thomas2006",
+      "license": "PUBLIC_DOMAIN",
+      "license_url": "https://creativecommons.org/publicdomain/mark/1.0/",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Basilika_von_Mariazell_01.JPG",
+      "subject": "Exterior of the actual Mariazell Basilica photographed from Grazerstraße, voluntarily dedicated to public domain by author",
+      "alt_en": "Basilica of Mariazell viewed from Grazerstraße, Styria, Austria",
+      "alt_fr": "Basilique de Mariazell vue depuis la Grazerstraße en Styrie, Autriche",
       "status": "SOURCE_IDENTIFIED_STAGING_ONLY",
       "render_in_app": false,
       "image_review_state": "PENDING_FULL_CONTACT_SHEET_EXACT_SITE_REVIEW",
@@ -51,14 +51,14 @@
     },
     {
       "place_id": "place:PL:kalwaria-zebrzydowska",
-      "commons_title": "File:Kalwaria Zebrzydowska - Bazylika-012GP.jpg",
-      "credit": "Pliszka-GP",
-      "license": "CC-BY-SA-4.0",
-      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
-      "source_url": "https://commons.wikimedia.org/wiki/File%3AKalwaria_Zebrzydowska_-_Bazylika-012GP.jpg",
-      "subject": "Exact sanctuary basilica; no implication photograph depicts all Passion chapels",
-      "alt_en": "Basilica in the Bernardine Marian and Passion pilgrimage sanctuary of Kalwaria Zebrzydowska",
-      "alt_fr": "Basilique du sanctuaire marial et de la Passion de Kalwaria Zebrzydowska",
+      "commons_title": "File:Kalwaria Zebrzydowska 014.jpg",
+      "credit": "Ludwig Schneider / Wikimedia",
+      "license": "CC-BY-SA-3.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Kalwaria_Zebrzydowska_014.jpg",
+      "subject": "Full Catholic Basilica of Our Lady of the Angels within the Kalwaria Zebrzydowska Bernardine sanctuary; NOT carved furnishing",
+      "alt_en": "Basilica of Our Lady of the Angels at Kalwaria Zebrzydowska, Poland",
+      "alt_fr": "Basilique Notre-Dame-des-Anges à Kalwaria Zebrzydowska, Pologne",
       "status": "SOURCE_IDENTIFIED_STAGING_ONLY",
       "render_in_app": false,
       "image_review_state": "PENDING_FULL_CONTACT_SHEET_EXACT_SITE_REVIEW",
@@ -118,6 +118,40 @@
       "render_in_app": false,
       "reason": "Search results returned Catholic replicas in other towns and an old unidentified-author postcard with uncertain U.S. public-domain evidence; neither passes the exact-site/current free-reuse gate.",
       "original_source": "https://banneux-nd.be/en/chapel-of-apparitions/"
+    }
+  ],
+  "rejected_after_visual_review": [
+    {
+      "place_id": "place:AT:mariazell-basilica",
+      "commons_title": "File:Mariazell-Basilika 9123.JPG",
+      "credit": "Wikimedia Commons/KarlGruber",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "source_url": "https://commons.wikimedia.org/wiki/File%3AMariazell-Basilika_9123.JPG",
+      "subject": "Actual Mariazell basilica architecture; not the separate Marian grace statue",
+      "alt_en": "Basilica of Mariazell in Austria, pilgrimage church of the Magna Mater Austriae",
+      "alt_fr": "Basilique de Mariazell en Autriche, église de pèlerinage de la Magna Mater Austriae",
+      "status": "SOURCE_IDENTIFIED_STAGING_ONLY",
+      "render_in_app": false,
+      "image_review_state": "PENDING_FULL_CONTACT_SHEET_EXACT_SITE_REVIEW",
+      "reviewed_original_page": "2026-10-21",
+      "rejection": "NOT_HERO: glass/architectural floor detail; basilica exterior absent"
+    },
+    {
+      "place_id": "place:PL:kalwaria-zebrzydowska",
+      "commons_title": "File:Kalwaria Zebrzydowska - Bazylika-012GP.jpg",
+      "credit": "Pliszka-GP",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "source_url": "https://commons.wikimedia.org/wiki/File%3AKalwaria_Zebrzydowska_-_Bazylika-012GP.jpg",
+      "subject": "Exact sanctuary basilica; no implication photograph depicts all Passion chapels",
+      "alt_en": "Basilica in the Bernardine Marian and Passion pilgrimage sanctuary of Kalwaria Zebrzydowska",
+      "alt_fr": "Basilique du sanctuaire marial et de la Passion de Kalwaria Zebrzydowska",
+      "status": "SOURCE_IDENTIFIED_STAGING_ONLY",
+      "render_in_app": false,
+      "image_review_state": "PENDING_FULL_CONTACT_SHEET_EXACT_SITE_REVIEW",
+      "reviewed_original_page": "2026-10-21",
+      "rejection": "NOT_HERO: close-up carved relief rather than recognisable basilica"
     }
   ]
 }
