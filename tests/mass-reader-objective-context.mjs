@@ -65,8 +65,8 @@ assert.ok(domSource.includes('applyIcon(root,"priest-position-rail",showContext'
 assert.ok(domSource.includes('setText(root,"priest-position-rail",priestStationLabel(showContext'));
 assert.equal((domSource.match(/<span class="ao-icon-mask" data-icon-slot="priest-position" hidden><\/span>/g)||[]).length,1,
   "The original top priest icon and contextual rail must never share a slot");
-assert.ok(domSource.includes('rightRail?.dataset.visible==="true"'),
-  "LIVE rubrics may disappear only with an actually visible rail action");
+assert.ok(domSource.includes('syncExactIconBackedRubrics(root,current,mode,iconResolver)'),
+  "The main registry remains the only approved LIVE icon-backed duplicate owner");
 assert.ok(domSource.includes('["MISSAL","SIMPLE","LIVE"]'));
 assert.ok(!nativeSource.includes("pray.communion_treasury"));
 console.log("PASS: Objective LIVE ribbon copy, source block/cue ownership, EN/FR, guarded rails, no devotional suggestions and SIMPLE/Missal compatibility.");

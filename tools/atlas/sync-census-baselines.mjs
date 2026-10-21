@@ -30,13 +30,9 @@ const files={
   [/\bpilgrimages:\d+,/g,`pilgrimages:${count.pilgrimages},`],
   [/\bsources:\d+,/g,`sources:${count.sources},`]
  ],
- "tests/explore-surface.mjs":[
-  [/\bshrines:\d+,/g,`shrines:${count.shrines},`],
-  [/\bpilgrimages:\d+,/g,`pilgrimages:${count.pilgrimages},`],
-  [/\brelics:\d+,/g,`relics:${count.relics},`],
-  [/\bapparitions:\d+,/g,`apparitions:${count.apparitions},`],
-  [/exploreMapFeatures\(projection\.byLens\.shrines\)\.length,\d+/g,`exploreMapFeatures(projection.byLens.shrines).length,${count.mappedShrines}`]
- ],
+ // tests/explore-surface.mjs is not listed: it derives these counts from the
+ // seed files itself (tests/support/explore-invariants.mjs), so it has no
+ // copied numbers to keep in sync.
  "tests/explore-place-profiles.mjs":[[/\bprofiles\.length,\d+/g,`profiles.length,${count.places}`]],
  "tests/customs-atlas-place-pins.mjs":[[/\bpublished\.length,\d+/g,`published.length,${count.mappedPlaces}`]],
  "tests/pilgrimage-associations.mjs":[

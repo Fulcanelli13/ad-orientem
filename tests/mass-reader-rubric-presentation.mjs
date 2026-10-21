@@ -1,7 +1,8 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
+import {exactIconBackedRubric} from "../src/mass/reader-icon-backed-rubrics.js";
 import {publishedMissalRubricsForParagraph} from "../src/mass/reader-missal-rubrics.js";
-import {conciseMissalSourceRubric,conciseMissalInlineSequence,liveActionCoveredByIcon,RUBRIC_PRESENTATION_OWNER} from "../src/mass/reader-rubric-presentation.js";
+import {conciseMissalSourceRubric,conciseMissalInlineSequence,RUBRIC_PRESENTATION_OWNER} from "../src/mass/reader-rubric-presentation.js";
 const read=p=>JSON.parse(readFileSync(new URL(p,import.meta.url),"utf8"));
 const registry=read("../data/presentation/reader-rubric-events.v1.json");
 const sung=read("../data/presentation/reader-text-sung.v1.json");
@@ -42,10 +43,14 @@ for(const cue of ["AO.SM.C0232","AO.SM.C0234"]){
  }
 }
 const covered=mk("AO.SM.C0232","LOW","en","TEXT").publishedMissalRubrics;
-assert.equal(liveActionCoveredByIcon(covered[1],{cueId:"AO.SM.C0232",priestAction:{cueId:"AO.SM.C0232",label:"RECEIVES HOST"},iconKey:"communion",iconResolved:true}),true);
-assert.equal(liveActionCoveredByIcon(covered[0],{cueId:"AO.SM.C0232",priestAction:{cueId:"AO.SM.C0232",label:"RECEIVES HOST"},iconKey:"communion",iconResolved:true}),false,"Precise Sign of the Cross remains textual");
-assert.equal(liveActionCoveredByIcon(covered[1],{cueId:"AO.SM.C0232",priestAction:{cueId:"AO.SM.C0232",label:"RECEIVES HOST"},iconKey:"communion",iconResolved:false}),false,"No icon means no suppression");
-assert.equal(liveActionCoveredByIcon(covered[1],{cueId:"AO.SM.C0234",priestAction:{cueId:"AO.SM.C0232",label:"RECEIVES HOST"},iconKey:"communion",iconResolved:true}),false,"Stale cue must not suppress");
+assert.ok(exactIconBackedRubric("AO.RUB.C0232.02",{
+ mode:"LIVE",cueId:"AO.SM.C0232",priestActionIconKey:"final_ea_priest_communion_host_original",
+ iconResolved:true,priestActionLabel:"RECEIVES HOST",
+}),"Existing main source-verified asset/gesture owner retained");
+assert.equal(exactIconBackedRubric("AO.RUB.C0232.02",{
+ mode:"LIVE",cueId:"AO.SM.C0232",priestActionIconKey:"communion",
+ iconResolved:true,priestActionLabel:"RECEIVES HOST",
+}),null,"Never suppress rubric via rejected art");
 assert.equal(conciseMissalSourceRubric(mk("AO.SM.C0174","LOW","en","TEXT"),{form:"LOW"}),null);
 assert.equal(conciseMissalInlineSequence(covered,{form:"GOOD_FRIDAY"}),null);
 // Integration must use the concise treatment ONLY in Missal; do not
@@ -54,9 +59,9 @@ const dom=readFileSync(new URL("../src/mass/reader-dom.js",import.meta.url),"utf
 assert.match(dom,/mode==="MISSAL"\?conciseMissalInlineSequence\(shortRubrics/);
 assert.match(dom,/const conciseSource=bookRubric \? conciseMissalSourceRubric\(p/);
 assert.match(dom,/shortAction:typeof event\.shortAction==="string"\?event\.shortAction:null/);
-assert.match(dom,/liveActionCoveredByIcon\(event,/);
-assert.match(dom,/iconNode&&!iconNode\.hidden&&iconKey/);
-assert.match(dom,/for\(const note of root\.querySelectorAll\?\.\("\.ao-live-inline-rubrics"\)/);
+assert.match(dom,/syncExactIconBackedRubrics\(root,current,mode,iconResolver\)/);
+assert.match(dom,/renderedIcon&&!renderedIcon\.hidden/);
+assert.match(dom,/syncExactIconBackedRubrics/);
 assert.match(dom,/mode==="MISSAL"\|\|mode==="LIVE"/);
 assert.match(dom,/source\.href=event\.sourceUrl/);
 assert.match(dom,/node\.dataset\.rubricPresentationOwner=conciseSource\.owner/);

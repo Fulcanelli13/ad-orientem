@@ -38,10 +38,6 @@ const MISSA_COMPACT=Object.freeze({
    en:"The priest traces a sign of the Cross with the chalice, then receives the Precious Blood.",
    fr:"Le prêtre trace un signe de croix avec le calice, puis communie au Précieux Sang."})
 });
-const ICON_ALREADY_SAYS_ACTION=frozen(new Set([
-  "AO.RUB.C0174.02","AO.RUB.C0181.02",
-  "AO.RUB.C0232.02","AO.RUB.C0234.02",
-]));
 const CUE=/^AO\.SM\.C\d{4}$/;
 const FORMS=new Set(["LOW","MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]);
 const locale=language=>String(language).toLowerCase().startsWith("fr")?"fr":"en";
@@ -85,19 +81,4 @@ export function conciseMissalInlineSequence(events,{form,language="en"}={}){
   const cue=events[0].sourceCueId,rule=MISSA_COMPACT[cue];
   if(!rule||!approved(events,cue,rule.ids))return null;
   return result(cue,rule,language);
-}
-/**
- * Only silence a LIVE line when the *same* currently active source event
- * is already represented by an actually resolved priest-action icon.
- * Unpictured precise gestures, other card paragraphs, source-only rubric
- * rows, or ambiguous semantics remain textual. This is NOT a clock.
- */
-export function liveActionCoveredByIcon(event,{cueId,priestAction,iconKey,iconResolved=false}={}){
-  return Boolean(ICON_ALREADY_SAYS_ACTION.has(event?.id)&&
-    event?.sourceCueId===cueId&&event?.sourceCueId===priestAction?.cueId&&
-    event?.shortAction===priestAction?.label&&
-    event?.owner==="PUBLISHED_R17_MISSAL_INLINE"&&
-    event?.review==="EXISTING_PUBLISHED_R17_1962_RUBRIC"&&
-    event?.sourceId==="MR62_RITUS"&&event?.observedNow===false&&
-    typeof iconKey==="string"&&iconKey.length>0&&iconResolved===true);
 }
