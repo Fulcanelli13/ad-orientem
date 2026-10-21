@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {selectCatenaPericopes} from "../src/scripture/catena-inline.js";
-import {LIVING_CATENA_SCHEMA,indexCatenaMessages,retrieveCatenaMessages,mountCatenaMessenger} from "../src/scripture/catena-messenger.js";
+import {LIVING_CATENA_SCHEMA,indexCatenaMessages,retrieveCatenaMessages,suggestCatenaTopics,mountCatenaMessenger} from "../src/scripture/catena-messenger.js";
 assert.equal(LIVING_CATENA_SCHEMA,"ao.catena.messenger.v1");
 const packet=JSON.parse(readFileSync(new URL("../data/scripture/catena/chunks/john-01-04.json",import.meta.url),"utf8"));
 const passage={book:"John",chapter:1,verseStart:1,verseEnd:1};
@@ -29,6 +29,21 @@ assert.ok(reason.length);
 assert.ok(reason.some(m=>m.father==="Augustine"&&m.text.includes("logos")));
 const human=retrieveCatenaMessages(messages,"Was this a human word?");
 assert.ok(human.some(m=>m.father==="Basil"));
+const topics=suggestCatenaTopics(messages);
+assert.ok(topics.includes("Word")&&topics.includes("Beginning"),
+  "Topic chips must refer to words actually found in the original texts");
+assert.ok(!suggestCatenaTopics(messages).includes("Baptism"),
+  "No arbitrary topical suggestion may appear unless grounded in the selected source");
+const augustine=retrieveCatenaMessages(messages,"What does Augustine say about Word?",{limit:4});
+assert.ok(augustine.length>0&&augustine.every(m=>m.father==="Augustine"),
+  "Explicitly asking for Augustine must not return a different Father");
+const basil=retrieveCatenaMessages(messages,"Basil",{limit:4});
+assert.ok(basil.length>0&&basil.every(m=>m.father==="Basil"),
+  "Selecting just a Father name navigates his real excerpts");
+const seen=new Set([reason[0].id]);
+const unseen=retrieveCatenaMessages(messages,"Word and Reason",{limit:3,excludeIds:seen});
+assert.ok(unseen.length>0&&unseen[0].id!==reason[0].id,
+  "Prefer relevant unseen original excerpts in continuing dialogue");
 assert.deepEqual(retrieveCatenaMessages(messages,"What is purgatory?"),[],
  "Unsupported question must not produce simulated Church Father speech");
 assert.deepEqual(retrieveCatenaMessages(messages,"why?"),[],
