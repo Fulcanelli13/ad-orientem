@@ -304,6 +304,45 @@ try{
  assert.match(await full.locator('[data-historia-boundary-review]').innerText(),/six Exodus chapters|Exodus 35–40/i);
  await full.locator("[data-historia-next]").click();
  await complete.waitForFunction(()=>globalThis.AO_SCRIPTURE_APP_V1.status().reader?.passage?.chapter===36);
+ // Editorial source-seam corrections: source verse limits, not new wording.
+ assert.equal(await complete.evaluate(()=>globalThis.AO_SCRIPTURE_APP_V1.openThematicEpisode("hist-omitted-022")),true);
+ await complete.waitForFunction(()=>{
+  const p=globalThis.AO_SCRIPTURE_APP_V1.status().reader?.passage;
+  return p?.book==="Genesis"&&p.chapter===49&&p.verseStart===29&&p.verseEnd===32;
+ });
+ assert.match(await full.locator("[data-historia-boundary-review]").innerText(),/Jacob's death and burial/);
+ await full.locator("[data-historia-next]").click();
+ await complete.waitForFunction(()=>{
+  const p=globalThis.AO_SCRIPTURE_APP_V1.status().reader?.passage;
+  return p?.chapter===50&&p.verseStart===1&&p.verseEnd===14;
+ });
+ await full.locator("[data-historia-next]").click();
+ await complete.waitForFunction(()=>{
+  const p=globalThis.AO_SCRIPTURE_APP_V1.status().reader?.passage;
+  return p?.chapter===50&&p.verseStart===22&&p.verseEnd===25;
+ });
+ assert.equal(await complete.evaluate(()=>globalThis.AO_SCRIPTURE_APP_V1.openThematicEpisode("hist-omitted-064")),true);
+ await complete.waitForFunction(()=>{
+  const p=globalThis.AO_SCRIPTURE_APP_V1.status().reader?.passage;
+  return p?.book==="1Kings"&&p.chapter===17&&p.verseStart===8&&p.verseEnd===16;
+ });
+ assert.equal(await complete.evaluate(()=>globalThis.AO_SCRIPTURE_APP_V1.openThematicEpisode("hist-omitted-065")),true);
+ await complete.waitForFunction(()=>{
+  const p=globalThis.AO_SCRIPTURE_APP_V1.status().reader?.passage;
+  return p?.book==="1Kings"&&p.chapter===17&&p.verseStart===17&&p.verseEnd===24;
+ });
+ assert.equal(await complete.evaluate(()=>globalThis.AO_SCRIPTURE_APP_V1.openThematicEpisode("hist-omitted-195")),true);
+ await complete.waitForFunction(()=>{
+  const p=globalThis.AO_SCRIPTURE_APP_V1.status().reader?.passage;
+  return p?.book==="Acts"&&p.chapter===12&&p.verseStart===3&&p.verseEnd===19;
+ });
+ assert.equal(await complete.evaluate(()=>globalThis.AO_SCRIPTURE_APP_V1.openThematicEpisode("hist-omitted-196")),true);
+ await complete.waitForFunction(()=>{
+  const p=globalThis.AO_SCRIPTURE_APP_V1.status().reader?.passage;
+  return p?.book==="Acts"&&p.chapter===12&&p.verseStart===1&&p.verseEnd===2;
+ });
+ results.push("source-seam acceptance: separate Jacob/Joseph deaths, Elijah's two widow episodes, and Acts' James/Peter scenes");
+
  results.push("complete mode: all 217 sources in nine collections, distinct Revelation beasts, Acts events, long Exodus chapter paging");
  await complete.screenshot({path:resolve(output,"all217-nine-families-390.png"),animations:"disabled"});
  await complete.close();
