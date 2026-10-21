@@ -7,7 +7,7 @@ export const HISTORIA_EDITIONS = Object.freeze(["cpdv-2009", "dr-challoner", "cr
 
 export function parseHistoriaSpan(reference) {
   const m = typeof reference === "string" &&
-    reference.match(/^([1-3]?[A-Za-z]+) (\\d+):(\\d+)(?:[–-](?:(\\d+):)?(\\d+))?$/);
+    reference.match(/^([1-3]?[A-Za-z]+) (\d+):(\d+)(?:[–-](?:(\d+):)?(\d+))?$/);
   if (!m) throw new Error("Unparseable Historia verse coordinates: " + reference);
   const fromChapter = Number(m[2]), fromVerse = Number(m[3]);
   const toChapter = Number(m[4] || m[2]), toVerse = Number(m[5] || m[3]);
