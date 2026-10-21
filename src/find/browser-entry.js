@@ -1550,6 +1550,7 @@ export function createFindOwner(win=globalThis){
     const networkInput=event?.target?.closest?.("[data-network-search]");
     if(networkInput&&state.lens==="heritage"&&state.networkOpen){
       state.networkSearch=networkInput.value||"";
+      state.networkFocus="";state.networkLimit=12;
       void paint();return;
     }
     const timeInput=event?.target?.closest?.("[data-explore-time-mass-query]");
