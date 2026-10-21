@@ -10,6 +10,7 @@ const wanderings=read("../data/research/historia-p4-wanderings-three-witness-des
 const incarnation=read("../data/research/historia-p4-incarnation-three-witness-desk-audit.v1.json");
 const ministry=read("../data/research/historia-p4-public-ministry-three-witness-desk-audit.v1.json");
 const passionRisen=read("../data/research/historia-p4-passion-risen-three-witness-desk-audit.v1.json");
+const actsMission=read("../data/research/historia-p4-apostles-missions-rome-three-witness-desk-audit.v1.json");
 const html=readFileSync(new URL("../labs/historia-salutis-theatre-p4.html",import.meta.url),"utf8");
 const C=crosswalk.counts;
 assert.equal(crosswalk.status,"RESEARCH_ONLY_SOURCE_OVERLAP_NOT_IDENTITY_NOT_APPROVED");
@@ -213,6 +214,36 @@ assert.equal(passionRisen.guards.john20Overlap.relationship,"SELECTED_PASSAGE_OV
 assert.equal(passionRisen.reviewedRows.find(x=>x.originalIndex===128).geographicAction,"NO_ANCIENT_STREET_TRACE");
 assert.equal(passionRisen.reviewedRows.find(x=>x.originalIndex===135).geographicAction,"EMMAUS_REGION_DISPUTED_NO_EXACT_ROUTE");
 assert.equal(passionRisen.reviewedRows.find(x=>x.originalIndex===133).geographicAction,"NO_CERTIFIED_APPEARANCE_ROOM");
+assert.equal(actsMission.reviewedRows.length,44);
+assert.deepEqual([actsMission.counts.firstIndex,actsMission.counts.lastContiguousIndex,actsMission.counts.appendIndex],[138,180,182]);
+assert.equal(actsMission.counts.sourceRangeEndpointDiscrepancies,2);
+assert.equal(actsMission.counts.sourceGeographicApprovals,0);
+assert.equal(actsMission.counts.publicationApprovals,0);
+const allAuditIndices=[...allPassionRisen,...actsMission.reviewedRows.map(x=>x.originalIndex)].sort((a,b)=>a-b);
+assert.equal(allAuditIndices.length,183,"Every research source scene should be audited once");
+assert.deepEqual(allAuditIndices,Array.from({length:183},(_,i)=>i),"All 183 original scene indexes must occur exactly once");
+for(const row of actsMission.reviewedRows){
+ assert.ok(sceneIds.has(row.sceneKey),"Unknown Acts scene "+row.sceneKey);
+ assert.equal(row.actorIdentityCertification,false);
+ assert.equal(row.routeGeometryCertification,false);
+ assert.equal(row.modernPointCertification,false);
+ assert.equal(row.publicationApproval,false);
+ assert.equal(row.witnessSpan.uncollatedWitness,true);
+ for(const ed of ["douayChallonerEntries","cpdv2009Entries","crampon1923Entries"])assert.ok(row.witnessSpan[ed]>0);
+}
+for(const [sceneIndex,range,tail] of [[151,"Acts 14:20–28",27],[167,"Acts 19:23–41",40]]){
+ const row=actsMission.reviewedRows.find(x=>x.originalIndex===sceneIndex);
+ assert.equal(row.scriptureReference,range);
+ assert.equal(row.witnessSpan.requestedFinalVersePresent,false);
+ assert.equal(row.witnessSpan.douayChallonerEntries,row.witnessSpan.cpdv2009Entries);
+ assert.equal(row.witnessSpan.douayChallonerEntries,row.witnessSpan.crampon1923Entries);
+}
+assert.equal(actsMission.highPriority.acts14.insertedVerseForbidden,true);
+assert.equal(actsMission.highPriority.acts19.insertedVerseForbidden,true);
+assert.equal(actsMission.highPriority.galatia.pisidianAntiochNotNamedInPassage,true);
+assert.equal(actsMission.highPriority.shipwreck.preciseShipwreckPinForbidden,true);
+assert.equal(actsMission.highPriority.pentecost.noAuthenticatedUpperRoom,true);
+assert.equal(actsMission.reviewedRows.find(x=>x.originalIndex===182).chapter,"APOSTLES");
 for(const token of ["maplibregl.Map","prefers-reduced-motion","ATLAS_GEO.cenacle","ATLAS_GEO.transfiguration","HS-M37","sourceBridgeCandidates"]) {
  if(token==="sourceBridgeCandidates") continue;
  assert.ok(html.includes(token),"Theatre lab missing "+token);
@@ -220,4 +251,4 @@ for(const token of ["maplibregl.Map","prefers-reduced-motion","ATLAS_GEO.cenacle
 assert.ok(html.includes("No cinematic-scene identity exists"));
 assert.ok(html.includes("No painting imported"));
 assert.ok(!html.includes("<script type=\"module\" src=\"../src/"),"Research lab must not import production modules");
-console.log("PASS: Historia P4 crosswalk, 183-row evidence queue, 18 seam holds, 139 source-reviewed scenes and four-state theatre laboratory source contracts");
+console.log("PASS: Historia P4 crosswalk, 183-row evidence queue, 18 seam holds, 183 source-reviewed scenes and four-state theatre laboratory source contracts");
