@@ -1,0 +1,27 @@
+name: Customs Master Identity and Source Audit
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    paths:
+      - "data/customs/master/**"
+      - "tests/customs-master-integrity.mjs"
+      - ".github/workflows/customs-master-integrity.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+jobs:
+  integrity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Verify immutable review inventory, P1 holds and identity relationships
+        run: |
+          node --check tests/customs-master-integrity.mjs
+          node tests/customs-master-integrity.mjs
