@@ -23,6 +23,7 @@ import { createHostIconResolver, auditHostIconBank } from "./reader-icons.js";
 import { R17_FROZEN_ACTIVE_ICON_ASSETS } from "./reader-icon-bank.js";
 import { R17_REVIEWED_POSTURE_ASSETS } from "./reader-reviewed-posture-assets.js";
 import { R17_FINAL_APPROVED_MASS_ASSETS } from "./reader-final-approved-assets.js";
+import { CANONICAL_ICON_ASSETS } from "./reader-canonical-icons.js";
 import { installShellFocusVisibilityGuard } from "../app/shell-focus-visibility.js";
 import { recoverReaderProperOmissions } from "./reader-proper-runtime-recovery.js";
 import {select1962CommemorationsForMassForm} from "./1962-commemoration-form-source.js";
@@ -38,7 +39,7 @@ export function resolveHostIconAssets(_win=globalThis){
   // The frozen modular bank is the production authority. Historical hosts may
   // still expose AO_R17_ICON_ASSETS, but that global must never override,
   // partially replace, or downgrade the certified R17 asset contract.
-  return Object.freeze({...R17_FROZEN_ACTIVE_ICON_ASSETS,...R17_REVIEWED_POSTURE_ASSETS,...R17_FINAL_APPROVED_MASS_ASSETS});
+  return Object.freeze({...R17_FROZEN_ACTIVE_ICON_ASSETS,...R17_REVIEWED_POSTURE_ASSETS,...R17_FINAL_APPROVED_MASS_ASSETS,...CANONICAL_ICON_ASSETS});
 }
 
 export function mapLegacyFollowMode(value) {
