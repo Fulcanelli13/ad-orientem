@@ -4,6 +4,8 @@
  * This is a presentation projection, not a new canonical Calendar or Atlas.
  */
 import { buildLiturgicalYear } from "./liturgical-year.js";
+import { v384Dates } from "./traditional-year-v384.js";
+import { CANONICAL_EXTRA_CUSTOM_ARTICLES } from "./customs-extra-articles.js";
 import { calendarCustomProfileActions } from "./customs-profile-links.js";
 
 const PUBLISHED_ARTICLES = [
@@ -475,8 +477,9 @@ const PUBLISHED_ARTICLES = [
     ]
   }
 ];
-const ARTICLES = new Map(PUBLISHED_ARTICLES.map(row=>[row.id,Object.freeze(row)]));
+const ARTICLES = new Map([...PUBLISHED_ARTICLES,...CANONICAL_EXTRA_CUSTOM_ARTICLES].map(row=>[row.id,Object.freeze(row)]));
 export const CALENDAR_CUSTOM_ARTICLE_IDS = Object.freeze([...ARTICLES.keys()]);
+export function calendarCustomArticleIds(){return CALENDAR_CUSTOM_ARTICLE_IDS;}
 export function calendarCustomArticle(id){return ARTICLES.get(String(id))||null;}
 const validDate = date => /^\d{4}-\d{2}-\d{2}$/.test(String(date||"")) && !Number.isNaN(new Date(date+"T12:00:00").getTime());
 function seasonalIds(date){
@@ -489,14 +492,29 @@ function seasonalIds(date){
     if(mmdd>="12-16"&&mmdd<="12-24")out.push("ADVT-003");
   }
   // May is a customary Marian devotional month, not a liturgical season.
-  if(mmdd>="05-01"&&mmdd<="05-31")out.push("MARI-002");
+  if(mmdd>="05-01"&&mmdd<="05-31")out.push("DEV-001","MARI-002");
+  // June/November are voluntary customary devotional months, not a new 1962 rite.
+  if(mmdd>="06-01"&&mmdd<="06-30")out.push("DOM-006");
+  if(mmdd>="11-01"&&mmdd<="11-30")out.push("DEAD-001");
   return out;
+}
+const FIXED_CUSTOMS=Object.freeze({
+ "02-02":["DOM-011"],"02-03":["BLSS-001"],
+ "03-19":["SJOS-001"],"06-13":["SANT-001"],"07-25":["SCHR-001"],
+ "08-15":["MARI-001","BLSS-002"],"11-02":["DEAD-003"],
+ "12-06":["SNIC-001"],"12-27":["BLSS-003"]
+});
+function additionalDateBoundIds(date){
+ const x=v384Dates(Number(date.slice(0,4)));
+ return [...(FIXED_CUSTOMS[date.slice(5)]||[]),
+  ...(date===x.palm?["DOM-013"]:[]),
+  ...(date===x.holySaturday?["BLSS-004"]:[])];
 }
 export function calendarCustomRecommendations(date,{events=[],fr=false}={}){
   if(!validDate(date))return Object.freeze([]);
   const keys=Array.isArray(events)?events.map(event=>event?.key).filter(Boolean):[];
   const eventIds=keys.flatMap(key=>calendarCustomProfileActions(key,{fr}).map(row=>row[0].split(":").at(-1)));
-  const ids=[...new Set([...eventIds,...seasonalIds(date)])];
+  const ids=[...new Set([...eventIds,...additionalDateBoundIds(date),...seasonalIds(date)])];
   return Object.freeze(ids.filter(id=>ARTICLES.has(id)).map(id=>ARTICLES.get(id)));
 }
 export function calendarCustomSeasonalMonthEntries(monthId,{fr=false}={}){
