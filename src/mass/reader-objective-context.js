@@ -8,10 +8,10 @@ export const READER_OBJECTIVE_CONTEXT_ROWS=Object.freeze([
   {blockId:"AO.SM.B031",en:"The gifts are prepared for the Eucharistic Sacrifice.",fr:"Les offrandes sont préparées pour le Sacrifice eucharistique.",evidence:["MF01-C03"]},
   {blockId:"AO.SM.B047",en:"The priest begins the silent Roman Canon, the prayer of offering and intercession.",fr:"Le prêtre commence le Canon romain à voix basse, prière d'offrande et d'intercession.",evidence:["MF04-C01"]},
   {blockId:"AO.SM.B048",en:"Within the Canon, the Church commemorates the living.",fr:"Dans le Canon, l'Église fait mémoire des vivants.",evidence:["MF04-C02"]},
-  {blockId:"AO.SM.B052",en:"In this part, the priest consecrates the bread into Christ's Body and elevates the Sacred Host.",fr:"Dans cette partie, le prêtre consacre le pain au Corps du Christ et élève la sainte Hostie.",evidence:["MF05-C01","MF05-C03"]},
-  {blockId:"AO.SM.B053",en:"In this part, the priest consecrates the wine into Christ's Blood and elevates the chalice.",fr:"Dans cette partie, le prêtre consacre le vin au Sang du Christ et élève le calice.",evidence:["MF05-C01","MF05-C03"]},
+  {blockId:"AO.SM.B052",en:"In this part, the bread is consecrated into Christ's Body and the Sacred Host is then elevated.",fr:"Dans cette partie, le pain devient le Corps du Christ par la consécration ; la sainte Hostie est ensuite élevée.",evidence:["MF05-C01","MF05-C03"]},
+  {blockId:"AO.SM.B053",en:"In this part, the wine is consecrated into Christ's Blood and the chalice is then elevated.",fr:"Dans cette partie, le vin devient le Sang du Christ par la consécration ; le calice est ensuite élevé.",evidence:["MF05-C01","MF05-C03"]},
   {blockId:"AO.SM.B057",en:"Within the Canon, the Church commemorates the faithful departed.",fr:"Dans le Canon, l'Église fait mémoire des fidèles défunts.",evidence:["MF04-C02"]},
-  {blockId:"AO.SM.B060",en:"The Canon concludes by giving all honour and glory to the Father through Christ.",fr:"Le Canon s'achève en rendant tout honneur et toute gloire au Père par le Christ.",evidence:["AO.SM.C0202","AO.SM.C0203","AO.SM.C0204"]},
+  {blockId:"AO.SM.B060",en:"The Canon ends by giving glory to the Father through Christ, in the unity of the Holy Ghost.",fr:"Le Canon s'achève en rendant gloire au Père par le Christ, dans l'unité du Saint-Esprit.",evidence:["AO.SM.C0202","AO.SM.C0203","AO.SM.C0204"]},
   {blockId:"AO.SM.B074",en:"The celebrant receives the Sacred Host; his Communion belongs to the integrity of the Mass.",fr:"Le célébrant communie à la sainte Hostie ; sa communion appartient à l'intégrité de la Messe.",evidence:["MF07-C01"]},
   {blockId:"AO.SM.B088",en:"The Postcommunion is the Church's liturgical thanksgiving after Communion.",fr:"La Postcommunion est l'action de grâces liturgique de l'Église après la Communion.",evidence:["MF08-C01"]},
 ].map(row=>Object.freeze({...row,evidence:Object.freeze([...row.evidence])})));
@@ -38,8 +38,9 @@ export function projectReaderObjectiveContext(card,{cueId,form,language="en"}={}
   }
   if(matches.length!==1)return null;
   const selected=matches[0];
-  const text=String(language).toLowerCase().startsWith("fr")?selected.fr:selected.en;
+  const locale=String(language).toLowerCase().startsWith("fr")?"fr":"en";
+  const text=selected[locale];
   return Object.freeze({owner:READER_OBJECTIVE_CONTEXT_OWNER,
     status:"SOURCE_GROUNDED_EDITORIAL_SHORT",blockId:selected.blockId,
-    cueId:String(cueId),text,evidence:selected.evidence,observedNow:false});
+    cueId:String(cueId),language:locale,text,evidence:selected.evidence,observedNow:false});
 }
