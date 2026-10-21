@@ -142,16 +142,16 @@ These are working original editorial drafts, **not a new approval to publish**. 
 
 The four additional provisional P2 customs remain separately documented, and 42 further source-observation candidates are still adjudicated in their own review ledger. Do **not** add 42 to the canonical count.
 
-## Candidate source and bilingual editorial closure — 15 of 42
+## Candidate source triage — all 42 observations (25 bounded / 17 explicit holds)
 
-The previously undifferentiated **42 possible distinct customs** now have a single `candidate-source-decision-board.v1.json` with independent source status, cross-module identity links, provisional date context and editorial state. These 42 observations are **not 42 new canonical customs**.
+The **42 observations formerly shortlisted as potentially distinct customs** now each have a documented source-gate decision in `candidate-source-decision-board.v1.json`. They are **not 42 canonical customs**, and the source decision does not itself settle identity or publication.
 
 | Review population | Count |
 |---|---:|
 | Potential distinct source observations | 42 |
-| With bounded independent-source evidence and EN/FR editorial drafts | **15** |
-| Still requiring adequate independent evidence | **27** |
-| Independently documented source witnesses across both batches | 27 |
+| With bounded independent-source evidence and EN/FR editorial drafts | **25** |
+| Exact or partial evidence holds with explicit reopening conditions | **17** (12 exact-match gaps, 5 partial claims) |
+| Source witness references across all four batches | 42 |
 | Newly published or canonical records | **0** |
 
 Nine additional histories, meanings, practice descriptions and cautions (English/French) are in `independent-sources-batch02.v1.json`. The six previously corroborated customs also now have complete bilingual drafts, and `independent-sources-batch01.v1.json` has corrected URLs and narrowed source claims.
@@ -165,7 +165,15 @@ Editorial distinctions now explicit:
 - The Provençal pain calendal, Spanish Magi gifts, Tivoli Inchinata, Sassari Faradda and Bavarian Frauendreißiger have independently bounded geography and date contexts.
 - Local Marian procession, household custom and priestly blessing remain distinct actions; source-based dates never trigger events automatically.
 
-**Next gate:** review the 27 without sufficient independent corroboration, and adjudicate the 15 source-backed customs as distinct identities, variants of existing customs or contextual heritage before allocating canonical IDs or publishing.
+**The source triage is complete, not the master release:** `unverified-candidate-exact-claim-holds.v1.json` protects 17 uncorroborated or partial claims, each with a specific reason and reopening condition. `witnessed-identity-recommendations.v1.json` records 25 independently witnessed observations, including **14 proposed distinct identities**, three regional variants, four cultural-context records, a gift-bell component, a broader crèche-history item, an Eastern Catholic context and a rite-sensitive household wreath. The 14 identity proposals remain unapproved; actual final identity count will depend on deduplication and editorial decisions.
+
+**Next gate:** verify whether the proposed distinct customs deserve canonical IDs, examine the 23 other ritual/source holds, consolidate geographic/seasonal categories and run the full final editorial acceptance. Do not force low-value or unverified customs into the live app.
+
+## Source-closure waves 3 and 4
+
+Eight additional bilingual dossiers were researched for the Christkind bell, Polish Christmas table hay, Kashubian animal feeding, the Provençal post-midnight réveillon, Hungarian betlehemezés, Polish Pentecost greenery, Polish Corpus Christi wreaths and St Martin village feast customs. Two further bounded historical profiles describe Tyrolean scenic Nativity cribs and Polish Holy Week domestic preparations. All are original EN/FR copy, local or historical, and unpublished.
+
+Geographic and ritual restrictions are explicit: Christmas animal lore does not establish magical outcomes; the Christmas gift bell is one component of the broader gift family; Corpus Christi wreaths are not flower carpets; household wreath use does not prove a particular 1962 Roman Ritual formula; St Martin social celebrations do not prove a universal harvest Mass.
 
 ## Normalized calendar associations — all 42 identities
 
