@@ -1,0 +1,256 @@
+{
+  "schema": "AO_HISTORIA_THEMATIC_COMPOSITE_SCRIPTURE_SEGMENTS_V1",
+  "date": "2026-10-21",
+  "status": "RESEARCH_SOURCE_COORDINATES_ONLY_NOT_PUBLISHED",
+  "sourceRegistry": "data/research/historia-salutis-thematic-episode-reconciliation-20261021.v2.json",
+  "policies": {
+    "neverJoinDiscontinuousSourceVersesIntoNewText": true,
+    "displayGapAndParallelLabels": true,
+    "neverInferHistoricalDateForJob": true,
+    "estherVersificationStrictlyEditionScoped": true,
+    "requireOriginalWitnessVerseText": true,
+    "doNotTreatCrossGospelParallelsAsSequentialEvents": true,
+    "retainSevenOriginalInventoryEntries": true,
+    "originalMassAndHistoriaReaderUnaffected": true
+  },
+  "totals": {
+    "entries": 7,
+    "segments": 13,
+    "catholicEstherEditionHolds": 1
+  },
+  "entries": [
+    {
+      "num": "007",
+      "parts": [
+        {
+          "reference": "Genesis 16",
+          "sequence": 1,
+          "label": "Opening scriptural span",
+          "sourceStatus": "PINNED_UNCOLLATED_SCRIPTURE_WITNESS"
+        },
+        {
+          "reference": "Genesis 21:8–21",
+          "sequence": 2,
+          "label": "Companion scriptural span",
+          "sourceStatus": "PINNED_UNCOLLATED_SCRIPTURE_WITNESS"
+        }
+      ],
+      "relation": "SEPARATE_EVENTS_SAME_NARRATIVE_FAMILY",
+      "note": "Genesis 16 and 21:8–21 are separate scenes. Preserve intervening Abraham material as an explicit narrative gap.",
+      "id": "hist-omitted-007",
+      "title": "Hagar and Ishmael",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Genesis 16; 21:8–21",
+      "testament": "OT",
+      "readerAllowedEditions": [
+        "dr-challoner",
+        "cpdv-2009",
+        "crampon-1923"
+      ],
+      "publicationStatus": "RESEARCH_SEGMENTED_NOT_APPROVED",
+      "canonicalEpisodeId": null,
+      "atlasEventId": null,
+      "approvedCovenantalLink": null
+    },
+    {
+      "num": "056",
+      "parts": [
+        {
+          "reference": "1 Samuel 24",
+          "sequence": 1,
+          "label": "Opening scriptural span",
+          "sourceStatus": "PINNED_UNCOLLATED_SCRIPTURE_WITNESS"
+        },
+        {
+          "reference": "1 Samuel 26",
+          "sequence": 2,
+          "label": "Companion scriptural span",
+          "sourceStatus": "PINNED_UNCOLLATED_SCRIPTURE_WITNESS"
+        }
+      ],
+      "relation": "TWO_DISTINCT_SAUL_SPARED_EPISODES",
+      "note": "David spares Saul twice; do not collapse chapters 24 and 26 into a single encounter.",
+      "id": "hist-omitted-056",
+      "title": "David spares Saul",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "1 Samuel 24; 26",
+      "testament": "OT",
+      "readerAllowedEditions": [
+        "dr-challoner",
+        "cpdv-2009",
+        "crampon-1923"
+      ],
+      "publicationStatus": "RESEARCH_SEGMENTED_NOT_APPROVED",
+      "canonicalEpisodeId": null,
+      "atlasEventId": null,
+      "approvedCovenantalLink": null
+    },
+    {
+      "num": "077",
+      "parts": [
+        {
+          "reference": "Jeremiah 20",
+          "sequence": 1,
+          "label": "Opening scriptural span",
+          "sourceStatus": "PINNED_UNCOLLATED_SCRIPTURE_WITNESS"
+        },
+        {
+          "reference": "Jeremiah 37–38",
+          "sequence": 2,
+          "label": "Companion scriptural span",
+          "sourceStatus": "PINNED_UNCOLLATED_SCRIPTURE_WITNESS"
+        }
+      ],
+      "relation": "DISCONTINUOUS_PROPHETIC_EXPERIENCES",
+      "note": "Persecution in Jeremiah 20 and imprisonment in 37–38 are distinct settings. There is no claim of adjacency.",
+      "id": "hist-omitted-077",
+      "title": "Jeremiah's persecution and imprisonment",
+      "primaryCollectionId": "prophets_and_their_lives",
+      "originalInventoryReference": "Jeremiah 20; 37–38",
+      "testament": "OT",
+      "readerAllowedEditions": [
+        "dr-challoner",
+        "cpdv-2009",
+        "crampon-1923"
+      ],
+      "publicationStatus": "RESEARCH_SEGMENTED_NOT_APPROVED",
+      "canonicalEpisodeId": null,
+      "atlasEventId": null,
+      "approvedCovenantalLink": null
+    },
+    {
+      "num": "095",
+      "parts": [
+        {
+          "reference": "Esther 14:1–19",
+          "sequence": 1,
+          "label": "Opening scriptural span",
+          "sourceStatus": "PINNED_UNCOLLATED_SCRIPTURE_WITNESS"
+        }
+      ],
+      "relation": "DOUAY_CATHOLIC_ADDITION_EDITION_SPECIFIC",
+      "note": "This prayer is in Douay/Challoner Esther 14:1–19. Crampon 1923 also has it at Esther 14:1–19. CPDV chapter 14 is a different episode: forbidden as an automatic parallel.",
+      "readerAllowedEditions": [
+        "dr-challoner"
+      ],
+      "additionalWitnessCoordinates": {
+        "crampon-1923": [
+          "Esther 14:1–19"
+        ]
+      },
+      "crosswalkStatus": "PARTIALLY_TRACED_DO_NOT_AUTOMATICALLY_CONVERT_CPVD",
+      "id": "hist-omitted-095",
+      "title": "Esther's prayer",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Greek Esther additions",
+      "testament": "OT",
+      "publicationStatus": "RESEARCH_SEGMENTED_NOT_APPROVED",
+      "canonicalEpisodeId": null,
+      "atlasEventId": null,
+      "approvedCovenantalLink": null
+    },
+    {
+      "num": "114",
+      "parts": [
+        {
+          "reference": "Luke 2:39–40",
+          "sequence": 1,
+          "label": "Opening scriptural span",
+          "sourceStatus": "PINNED_UNCOLLATED_SCRIPTURE_WITNESS"
+        },
+        {
+          "reference": "Luke 2:51–52",
+          "sequence": 2,
+          "label": "Companion scriptural span",
+          "sourceStatus": "PINNED_UNCOLLATED_SCRIPTURE_WITNESS"
+        }
+      ],
+      "relation": "TWO_DISTINCT_DISCONTINUOUS_LUKE_SPANS",
+      "note": "Luke 2:41–50 contains the Finding in the Temple; it must not be silently fused into the hidden-life reading.",
+      "id": "hist-omitted-114",
+      "title": "Hidden life at Nazareth",
+      "primaryCollectionId": "life_of_christ",
+      "originalInventoryReference": "Luke 2:39–40, 51–52",
+      "testament": "NT",
+      "readerAllowedEditions": [
+        "dr-challoner",
+        "cpdv-2009",
+        "crampon-1923"
+      ],
+      "publicationStatus": "RESEARCH_SEGMENTED_NOT_APPROVED",
+      "canonicalEpisodeId": null,
+      "atlasEventId": null,
+      "approvedCovenantalLink": null
+    },
+    {
+      "num": "173",
+      "parts": [
+        {
+          "reference": "Matthew 24",
+          "sequence": 1,
+          "label": "Opening scriptural span",
+          "sourceStatus": "PINNED_UNCOLLATED_SCRIPTURE_WITNESS"
+        },
+        {
+          "reference": "Mark 13",
+          "sequence": 2,
+          "label": "Companion scriptural span",
+          "sourceStatus": "PINNED_UNCOLLATED_SCRIPTURE_WITNESS"
+        }
+      ],
+      "relation": "PARALLEL_GOSPEL_WITNESSES_NOT_SEQUENTIAL_EVENTS",
+      "note": "Matthew 24 and Mark 13 are separate Gospel tellings, not consecutive chronological events. Do not conflate with Revelation visions.",
+      "id": "hist-omitted-173",
+      "title": "Discourse on the destruction of Jerusalem and the last things",
+      "primaryCollectionId": "parables_and_teachings",
+      "originalInventoryReference": "Matthew 24; Mark 13",
+      "testament": "NT",
+      "readerAllowedEditions": [
+        "dr-challoner",
+        "cpdv-2009",
+        "crampon-1923"
+      ],
+      "publicationStatus": "RESEARCH_SEGMENTED_NOT_APPROVED",
+      "canonicalEpisodeId": null,
+      "atlasEventId": null,
+      "approvedCovenantalLink": null,
+      "genre": "TWO_GOSPEL_WITNESSES",
+      "chronology": "GOSPEL_PARALLELS_NOT_TWO_SUCCESSIVE_EVENTS"
+    },
+    {
+      "num": "217",
+      "parts": [
+        {
+          "reference": "Job 1–2",
+          "sequence": 1,
+          "label": "Opening scriptural span",
+          "sourceStatus": "PINNED_UNCOLLATED_SCRIPTURE_WITNESS"
+        },
+        {
+          "reference": "Job 42",
+          "sequence": 2,
+          "label": "Companion scriptural span",
+          "sourceStatus": "PINNED_UNCOLLATED_SCRIPTURE_WITNESS"
+        }
+      ],
+      "relation": "LITERARY_WISDOM_FRAME_WITH_MAJOR_OMITTED_MIDDLE",
+      "note": "Job 3–41 is deliberately not shown in this abridged frame. The omission must be explicit; no placement in a fixed date, and Job is not a parable.",
+      "id": "hist-omitted-217",
+      "title": "The trials and restoration of Job",
+      "primaryCollectionId": "great_biblical_narratives",
+      "originalInventoryReference": "Job 1–2; 42",
+      "testament": "OT",
+      "readerAllowedEditions": [
+        "dr-challoner",
+        "cpdv-2009",
+        "crampon-1923"
+      ],
+      "publicationStatus": "RESEARCH_SEGMENTED_NOT_APPROVED",
+      "canonicalEpisodeId": null,
+      "atlasEventId": null,
+      "approvedCovenantalLink": null,
+      "genre": "LITERARY_WISDOM_NARRATIVE",
+      "chronology": "NOT_CHRONOLOGICALLY_PLACED"
+    }
+  ]
+}
