@@ -53,6 +53,24 @@ for(const row of seed.questions){
  hitBooks.set(gospel,(hitBooks.get(gospel)||0)+1);
  hitPassages.add(row.pericopeId);
 }
+for(const item of seed.excludedExamples){
+ const pericope=corpus.get(item.pericopeId);
+ assert.ok(pericope,"Excluded illustration must still be source-grounded");
+ const segment=pericope.segments[item.sourceOrdinal-1];
+ assert.ok(segment,"Missing original text for excluded case");
+ assert.equal(segment.father,item.attributionAsInCompilation);
+ assert.ok(segment.text.includes(item.originalQuestionExact),
+  "Excluded example must still occur verbatim in the source");
+ assert.ok(item.reason.startsWith("quoted_gospel_")||
+  item.reason.startsWith("hypothetical_interlocutor_")||
+  item.reason.startsWith("discussion_continues_")||
+  item.reason.startsWith("answer_not_present_"),
+  "Exclusion must have an explicit rationale");
+ assert.ok(!seed.questions.some(q=>q.pericopeId===item.pericopeId&&
+  q.sourceOrdinal===item.sourceOrdinal&&q.originalQuestionExact===item.originalQuestionExact),
+  "Quoted Scripture or hypothetical dialogue may not be credited as an authored question");
+}
+assert.equal(seed.excludedExamples.length,7,"Preserve negative examples");
 assert.ok(seed.questions.length>=27,"Do not silently remove reviewed source candidates");
 assert.equal(hitPassages.size,14,
  "Initial 27-question pilot covers exactly 14 unique Gospel pericopes");
@@ -62,4 +80,4 @@ console.log("PASS original patristic questions: "+seed.questions.length+
  " exact Father-attributed questions and subsequent original answer evidence in "+
  hitPassages.size+"/40 unique pilot passages; "+
  [...hitBooks].map(([book,count])=>book+"="+count).join(", ")+
- ". No invented replies; no editorial/publication approval implied.");
+ "; "+seed.excludedExamples.length+" provenance-checked negative examples. No invented replies; no editorial/publication approval implied.");
