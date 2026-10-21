@@ -262,6 +262,26 @@ export function mountScriptureLibrary(root,{
        ?"Aucun placement chronologique précis et défendable pour ce récit."
        :"No defensible precise chronological placement for this episode.","aoScriptureNotice"));
      }
+     if(thematicEpisode.plan.type==="NON_CONTIGUOUS_SOURCE_SEGMENTS"){
+      const currentPart=thematicEpisode.plan.chapters[thematicPage];
+      const warning=element("p",null,"aoScriptureNotice");
+      warning.dataset.historiaSegmentWarning="";
+      warning.textContent=lang==="fr"?
+       "Passages distincts (non continus) : "+thematicEpisode.segmentationNote:
+       "Separate Scripture passages (not a continuous abridgment): "+thematicEpisode.segmentationNote;
+      active.append(warning);
+      const sourceLine=element("p",null,"aoScriptureNotice");
+      sourceLine.textContent=(lang==="fr"?"Passage":"Part")+
+       " "+(currentPart.partIndex+1)+"/"+currentPart.partCount+
+       " · "+currentPart.partReference+
+       (currentPart.companionNotContinuous?" · distinct passage":"");
+      active.append(sourceLine);
+      if(currentPart.book==="Esther")
+       active.append(element("p",lang==="fr"
+        ?"L'édition CPDV numérote ce passage différemment ; lecture limitée à Challoner."
+        :"CPDV chapter 14 has unrelated material; only Challoner is enabled for this prayer.",
+        "aoScriptureNotice"));
+     }
      if(linked?.atlasIdentity){
       const a=linked.atlasIdentity;
       const exact=a.relation!=="PASSAGE_CONTAINED_IN_COMPOSITE_TEACHING_ATLAS_RECORD";
@@ -721,8 +741,9 @@ export function mountScriptureLibrary(root,{
     const layout=groups.map(g=>g.id+":"+g.episodes?.length).join("|");
     const base="great_biblical_narratives:7|miracles_of_christ:6|parables_and_teachings:6";
     const extended="great_biblical_narratives:7|miracles_of_christ:27|parables_and_teachings:23|biblical_prayers_and_canticles:3";
+    const segmented="great_biblical_narratives:11|miracles_of_christ:27|parables_and_teachings:24|biblical_prayers_and_canticles:3|prophets_and_their_lives:1|life_of_christ:1";
     const all=groups.flatMap(g=>g.episodes||[]);
-    if((layout!==base&&layout!==extended) ||
+    if((layout!==base&&layout!==extended&&layout!==segmented) ||
        new Set(all.map(x=>x.id)).size!==all.length ||
        all.some(x=>!x.plan?.chapters?.length||!/^hist-omitted-\d{3}$/.test(x.id)))
       throw new Error("Invalid thematic research catalogue");
