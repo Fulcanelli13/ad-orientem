@@ -52,10 +52,11 @@ export function catenaRelatedTopic(query){
 }
 export function catenaTopicEvidence(topic,sourceText){
  if(!topic||!CATENA_RELATED_TOPICS.includes(topic)||typeof sourceText!=="string")return null;
- for(const regex of topic.evidence){
+ for(const [strength,regex] of topic.evidence.entries()){
   const matched=regex.exec(sourceText);
   if(matched)return Object.freeze({topicId:topic.id,label:topic.label,
-    // Evidence phrases are verbatim source spans, never generated commentary.
+    // Lower number means the reviewed expression is stronger evidence.
+    evidenceOrder:strength,
     sourcePhrase:matched[0],status:"RELATED_SOURCE_WORDING_NOT_AN_ANSWER"});
  }
  return null;
@@ -72,6 +73,7 @@ export function retrieveCatenaRelatedMessages(rows,query,{limit=3,excludeIds=nul
  }
  hits.sort((a,b)=>
   Number(Boolean(excludeIds?.has?.(a.row.id)))-Number(Boolean(excludeIds?.has?.(b.row.id)))||
+  a.evidence.evidenceOrder-b.evidence.evidenceOrder||
   b.evidence.sourcePhrase.length-a.evidence.sourcePhrase.length);
  const found=[],seenAuthors=new Set(),cap=Math.min(5,Math.max(1,limit));
  for(const hit of hits)if(found.length<cap&&!seenAuthors.has(hit.row.father)){
