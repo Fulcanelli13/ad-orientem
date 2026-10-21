@@ -17,7 +17,7 @@ assert.equal(proof.totals.briefEditorialContextNotes,29);
 assert.equal(proof.literaryReviewProgress.movementsDeskExamined,19);
 assert.equal(proof.literaryReviewProgress.historicSourceBridgesAbsorbedIntoEssentialText,1);
 assert.equal(proof.literaryReviewProgress.oralReadingsApproved,0);
-assert.equal(proof.totals.sourceBridgeCandidates,11);
+assert.equal(proof.totals.sourceBridgeCandidates,17);
 assert.equal(proof.totals.independentlyReadAndApproved,false);
 assert.equal(proof.displayRules.neverCombineDifferentWitnessText,true);
 assert.equal(proof.displayRules.showEveryDroppedSpanBetweenAdjacentScriptureFragments,true);
@@ -26,6 +26,7 @@ const originalB=new Map(desk.contextDecisions.filter(x=>x.readthroughDecision===
 const originalBridges=new Map(desk.sourceBridgeCandidates.filter(x=>x.id!=="HS-CF-04").map(x=>[x.id,x]));
 assert.deepEqual(proof.historicallyProposedBridgeStatus.absorbedByCompleteNativeReading,["HS-CF-04"]);
 const seenA=new Set(),seenB=new Set(),seenBridges=new Set(),newOwnedBridges=new Set();
+const p3OwnedBridgeToMovement={"HS-P3-CF-12":"HS-M33","HS-P3-CF-13":"HS-M34","HS-P3-CF-14":"HS-M35","HS-P3-CF-15":"HS-M37","HS-P3-CF-16":"HS-M37","HS-P3-CF-17":"HS-M20","HS-P3-CF-18":"HS-M27"};
 let scriptureVerses=0,previousId=0;
 const witnesses=new Map();
 function fetchVerses(edition,book){
@@ -77,10 +78,11 @@ for(const m of proof.movements){
   }else{
    assert.equal(beat.kind,"SOURCE_BRIDGE_CANDIDATE");
    assert.ok(!seenBridges.has(beat.id)&&!newOwnedBridges.has(beat.id),"Duplicate proposed additional Scripture source");
-   if(beat.id==="HS-P3-CF-12"){
-    assert.equal(m.id,"HS-M33");
-    assert.equal(beat.reference,"Acts 14:26–27");
+   if(Object.hasOwn(p3OwnedBridgeToMovement,beat.id)){
+    assert.equal(m.id,p3OwnedBridgeToMovement[beat.id]);
+    if(beat.id==="HS-P3-CF-12")assert.equal(beat.reference,"Acts 14:26–27");
     assert.equal(beat.p3SourceOwnership,"NEW_INDEPENDENT_SCRIPTURE_SOURCE_BRIDGE_NOT_ORIGINAL_V18_ESSENTIAL");
+    assert.equal(beat.editorialOwnerId,beat.id);
     assert.equal(beat.proposedScriptureNotAccepted,true);
     assert.equal(beat.publicationApproved,false);
     assert.equal(originalBridges.has(beat.id),false);
@@ -100,9 +102,9 @@ for(const m of proof.movements){
 assert.deepEqual([...seenA].sort(),[...originalA.keys()].sort());
 assert.deepEqual([...seenB].sort(),[...originalB.keys()].sort());
 assert.deepEqual([...seenBridges].sort(),[...originalBridges.keys()].sort());
-assert.deepEqual([...newOwnedBridges],["HS-P3-CF-12"]);
+assert.deepEqual([...newOwnedBridges].sort(),Object.keys(p3OwnedBridgeToMovement).sort());
 assert.equal(proof.p4LateMovementDraft.originalSourceBridgeCandidatesPreserved,10);
-assert.equal(proof.p4LateMovementDraft.revisedTotalSourceBridgeCandidates,11);
+assert.equal(proof.p4LateMovementDraft.revisedTotalSourceBridgeCandidates,17);
 assert.equal(proof.movements.find(x=>x.id==="HS-M34").beats.some(x=>x.id==="H73-02"),false,
  "Philippi jail conversion may not become an obligatory story");
 assert.deepEqual(proof.movements.find(x=>x.id==="HS-M34").beats.map(x=>x.id),
@@ -153,4 +155,4 @@ for(const beat of proof.movements.slice(0,19).flatMap(x=>x.beats).filter(x=>x.ki
  assert.equal(beat.editorialTextApproved,false);
 }
 assert.ok(necessity.units.length===217);
-console.log("PASS Historia continuous proof: 37 movements, 93 real Scripture units, 29 visibly distinct context notes, 11 held source candidates (10 original, 1 P3-owned), "+scriptureVerses+" verse displays validated in CPDV + Douay; no character filler or extra Bible experience");
+console.log("PASS Historia continuous proof: 37 movements, 93 real Scripture units, 29 visibly distinct context notes, 17 held source candidates (10 original, 7 P3-owned), "+scriptureVerses+" verse displays validated in CPDV + Douay; no character filler or extra Bible experience");
