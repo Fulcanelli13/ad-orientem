@@ -4,7 +4,7 @@ import {assembleHistoriaReading,historiaAssemblyMarkdown,HISTORIA_EDITIONS,parse
 
 const read=path=>JSON.parse(readFileSync(new URL("../"+path,import.meta.url),"utf8"));
 const proof=read("data/research/historia-salutis-v18-continuous-reading-proof.v1.json");
-const expected={movements:37,scriptureBeats:93,scriptureSpans:166,editorialConnectorProposals:39,originalContextUnits:29,additionalCausalSeams:10,heldSourceCandidates:16,stillUnselectedBridgeCandidates:7,bridgeReadingTrials:9,readingTrialSpans:12,trialVerseEntries:54,published:0};
+const expected={movements:37,scriptureBeats:93,scriptureSpans:166,editorialConnectorProposals:39,originalContextUnits:29,additionalCausalSeams:10,heldSourceCandidates:16,stillUnselectedBridgeCandidates:7,bridgeReadingTrials:9,readingTrialSpans:12,exactVerseRailSections:220,sourceSpansWithProposedRailSplits:18,trialVerseEntries:54,published:0};
 for (const edition of HISTORIA_EDITIONS) {
   const witnessCache=new Map();
   const getWitness=book=>{
@@ -34,6 +34,12 @@ for (const edition of HISTORIA_EDITIONS) {
         assert.equal(segment.verses.at(-1).verse,parsed.toVerse);
         assert.equal(segment.text,segment.verses.map(v=>v.text).join(" "));
         assert.equal(segment.sourceStatus,"UNCOLLATED_SOURCE_WITNESS");
+        assert.ok(segment.railSections.length>=1);
+        assert.equal(segment.railSections.map(r=>r.text).join(" "),segment.text);
+        const intended=original.railSegmentationTrial?.byOriginalReference?.[segment.reference];
+        assert.deepEqual(segment.railSections.map(r=>r.reference),intended||[segment.reference]);
+        assert.equal(segment.railSubdivisionAccepted,false);
+        assert.equal(segment.railSections.every(r=>r.verseCount>0&&r.anchorVerseStart&&r.anchorVerseEnd),true);
         const lookup=new Map(getWitness(parsed.book).verses.map(([c,v,t])=>[c+":"+v,t]));
         for(const v of segment.verses){
           assert.equal(v.text,lookup.get(v.chapter+":"+v.verse));
@@ -68,6 +74,8 @@ for (const edition of HISTORIA_EDITIONS) {
         assert.equal(segment.selectedForPublication,false);
         assert.equal(segment.sourceStatus,"UNCOLLATED_SOURCE_WITNESS");
         assert.equal(segment.text,segment.verses.map(v=>v.text).join(" "));
+        assert.deepEqual(segment.railSections.map(x=>x.reference),[segment.reference]);
+        assert.equal(segment.railSections[0].text,segment.text);
         const parsed=parseHistoriaSpan(segment.reference);
         assert.equal(segment.verses[0].chapter,parsed.fromChapter);
         assert.equal(segment.verses[0].verse,parsed.fromVerse);
@@ -83,6 +91,11 @@ for (const edition of HISTORIA_EDITIONS) {
       }
     }
   }
+  const creation=output.movements.find(m=>m.id==="HS-M01");
+  const sixDays=creation.segments.find(s=>s.reference==="Genesis 1:1–31");
+  assert.deepEqual(sixDays.railSections.map(s=>s.reference),["Genesis 1:1–5","Genesis 1:6–8","Genesis 1:9–13","Genesis 1:14–19","Genesis 1:20–23","Genesis 1:24–25","Genesis 1:26–31"]);
+  const cross=output.movements.find(m=>m.id==="HS-M28");
+  assert.deepEqual(cross.segments.find(s=>s.reference==="John 19:17–30").railSections.map(s=>s.reference),["John 19:17–22","John 19:23–27","John 19:28–30"]);
   const m31=output.movements.find(m=>m.id==="HS-M31");
   assert.ok(m31.segments.some(s=>s.reference==="Acts 2:1–10"));
   assert.ok(output.movements.find(m=>m.id==="HS-M33").segments.some(s=>s.reference==="Acts 15:4–11"));
@@ -133,4 +146,4 @@ for (const edition of HISTORIA_EDITIONS) {
     assert.equal(committed,manuscript,"Committed research manuscript must exactly reproduce from source owners");
   }
 }
-console.log("PASS Historia annotated source assembly: 37 movements, 93 A units, 166 original + 12 provisional source spans, 29 original + 10 causal editorial connectors, 16 held candidates (9 tested/7 not included); all three witnesses; no publication approval");
+console.log("PASS Historia annotated source assembly: 37 movements, 93 A units, 166 original + 12 provisional source spans, 29 original + 10 causal editorial connectors, 16 held candidates (9 tested/7 not included); 220 verse-traceable rail sections from 18 proposed semantic splits; all three witnesses; no publication approval");
