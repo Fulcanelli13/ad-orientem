@@ -108,7 +108,7 @@ def main():
       ],
       "tests/explore-photo-r59.mjs":[('assert.equal(published.items.length,24,','assert.equal(published.items.length,31,')],
       "tests/explore-r64-illustrated-ireland.mjs":[('assert.equal(media.items.length,24,','assert.equal(media.items.length,31,')],
-      "tests/explore-r65-ireland-five-places.mjs":[('assert.equal(media.items.length,24);','assert.equal(media.items.length,31);')],
+      "tests/explore-r65-ireland-five-places.mjs":[('assert.equal(media.items.length,24,','assert.equal(media.items.length,31,')],
       "tests/explore-r68-photo-gallery.mjs":[('assert.equal(hero.items.length,24,','assert.equal(hero.items.length,31,')],
       "tests/explore-r69-multi-place-gallery.mjs":[('assert.equal(hero.items.length,24);','assert.equal(hero.items.length,31);')],
       "tests/sacred-geography-r70-six-global-sites.mjs":[('assert.equal(hero.items.length,24,','assert.equal(hero.items.length,31,')]
