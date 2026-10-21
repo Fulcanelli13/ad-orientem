@@ -1,0 +1,42 @@
+name: Sacred Art — Full 2026 Hero 1962 Calendar Parity
+on:
+  push:
+    branches: [research/2026-hero-complete-coverage-20261021]
+    paths:
+      - "data/calendar/sacred-art-2026-complete-hero-coverage-master.v1.json"
+      - "tests/sacred-art-2026-full-hero-calendar-parity.mjs"
+      - "tests/sacred-art-2026-full-hero-master-integrity.mjs"
+      - ".github/workflows/sacred-art-2026-full-hero-calendar-parity.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "data/calendar/sacred-art-2026-complete-hero-coverage-master.v1.json"
+      - "tests/sacred-art-2026-full-hero-calendar-parity.mjs"
+      - ".github/workflows/sacred-art-2026-full-hero-calendar-parity.yml"
+permissions:
+  contents: read
+jobs:
+  production-resolver:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Verify 52 Sunday, 53 Class I, and 17 spotlight immutable editorial constraints
+        run: node tests/sacred-art-2026-full-hero-master-integrity.mjs
+      - name: Setup browser environment
+        run: |
+          npm install --no-audit --no-fund
+          npx playwright install --with-deps chromium
+      - name: Validate all target dates against production 1962 resolver
+        run: node tests/sacred-art-2026-full-hero-calendar-parity.mjs
+      - name: Preserve full date-level evidence including failures
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: 2026-sacred-art-102-date-production-dayresolver-evidence
+          path: artifacts/sacred-art-full-year-resolver/
+          if-no-files-found: warn
+          retention-days: 30
