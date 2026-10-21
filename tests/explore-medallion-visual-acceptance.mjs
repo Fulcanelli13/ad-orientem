@@ -139,6 +139,34 @@ try{
    await timeMass.locator(".aoTimeMassHead [data-explore-time-mass-toggle]").click();
    await timeMass.waitFor({state:"detached",timeout:10000});
    assert.equal(await page.locator(".aoHeritageSurface .aoFindMap canvas.maplibregl-canvas").count(),1);
+   // P4 MapCN Heatmap + Choropleth · exact canonical coverage only.
+   await page.locator("#ao-find-modular-root .aoAtlasLayersLaunch").click();
+   const atlas=page.locator("#ao-find-modular-root [data-atlas-coverage-panel]");
+   await atlas.waitFor({state:"visible",timeout:15000});
+   assert.equal(await atlas.getAttribute("data-atlas-mode"),"heatmap");
+   assert.match(await atlas.locator(".aoAtlasCoverageCaution").innerText(),/not Catholic population/i);
+   assert.ok(Number(await atlas.locator(".aoAtlasCoverageMetrics strong").first().textContent())>0);
+   assert.equal(await page.locator(".aoHeritageSurface .aoFindMap canvas.maplibregl-canvas").count(),1);
+   const atlasFit=await atlas.evaluate(el=>{const r=el.getBoundingClientRect();
+     return {top:r.top,bottom:r.bottom,height:r.height,vh:innerHeight,overflow:document.documentElement.scrollWidth-innerWidth};});
+   assert.ok(atlasFit.top>=0&&atlasFit.bottom<=atlasFit.vh+1&&atlasFit.height>200&&atlasFit.overflow<=1,
+     "P4 heatmap panel must fit viewport: "+JSON.stringify(atlasFit));
+   await page.screenshot({path:resolve(out,"explore-"+width+"-atlas-heatmap.png"),fullPage:false});
+   await atlas.locator('[data-atlas-mode="countries"]').click();
+   await atlas.waitFor({state:"visible",timeout:15000});
+   assert.equal(await atlas.getAttribute("data-atlas-mode"),"countries");
+   assert.ok(await atlas.locator('[data-atlas-country]').count()>0);
+   await page.waitForFunction(()=>{
+      const el=document.querySelector("[data-atlas-boundary-status]");
+      return el&&/Natural Earth|unavailable/i.test(el.textContent||"");
+   },null,{timeout:35000});
+   await page.screenshot({path:resolve(out,"explore-"+width+"-atlas-countries.png"),fullPage:false});
+   await atlas.locator('[data-atlas-scope="tlm"]').click();
+   assert.equal(await atlas.locator('[data-atlas-scope="tlm"]').getAttribute("aria-pressed"),"true");
+   await atlas.locator('[data-atlas-mode="places"]').first().click();
+   await atlas.waitFor({state:"detached",timeout:15000});
+   await page.locator("#ao-find-modular-root [data-mapcn-discover-rail]").waitFor({state:"visible"});
+   assert.equal(await page.locator(".aoHeritageSurface .aoFindMap canvas.maplibregl-canvas").count(),1);
    // D is a same-map journey folio: no new page and no manufactured route
    // lines. Exercise a historical source-owned 3-stage pilgrimage.
    await page.locator("#ao-find-modular-root [data-explore-journey-open]").click();
