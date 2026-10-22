@@ -47,6 +47,7 @@ jobs:
           node tests/historia-thematic-all217-witness.mjs
           node tests/historia-thematic-150-editorial-triage.mjs
           node tests/historia-thematic-adjudication.mjs
+          node tests/historia-priority16-economical-selections.mjs
           node tests/historia-thematic-priority16-economical.mjs
   browser:
     needs: node-contracts
