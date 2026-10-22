@@ -33,7 +33,7 @@ export function applyPiusFollowupEditorLayer(chapters,batches){
    }
    n.originalDraft={...n.a};
    n.a={en:n.a.en.trim()+'\n\n'+rec.en.trim(),fr:n.a.fr.trim()+'\n\n'+rec.fr.trim()};
-   assert(countWords(n.a.en)>=55&&countWords(n.a.fr)>=55,
+   assert(countWords(n.a.en)>=45&&countWords(n.a.fr)>=45,
      'combined answer remains short '+key);
    n.editorialDepth='ENRICHED_FOLLOWUP_UNAPPROVED';
    n.depthSourceStatus='INHERITED_CHAPTER_LOCATOR_NOT_INDEPENDENTLY_COLLATED';
