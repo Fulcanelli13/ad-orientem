@@ -93,7 +93,8 @@ export function validateCatenaEditorialReview(value,registry){
  }
  if(new Set(value.records.map(r=>r.rank)).size!==30)
   throw new Error("CATENA_EDITORIAL_CONTEXT_REVIEW_DUPLICATE_RANK");
- return Object.freeze({byPointer:examined,records:value.records});
+ return Object.freeze({sourceResearchCommit:value.sourceResearchCommit,
+  reviewSchema:value.schema,byPointer:examined,records:value.records});
 }
 let reviewPromise;
 export async function loadCatenaEditorialReview(registry,{fetcher=globalThis.fetch?.bind(globalThis)}={}){

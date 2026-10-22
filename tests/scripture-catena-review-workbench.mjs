@@ -1,16 +1,25 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {validateCatenaWorkLociPreview} from "../src/scripture/catena-review-work-loci.js";
+import {validateCatenaEditorialRoutes,validateCatenaEditorialReview} from "../src/scripture/catena-editorial-routes.js";
 import {validateCatenaNineFocus} from "../src/scripture/catena-nine-focus.js";
 import {CATENA_REVIEW_CHECKS,isCatenaReviewRouteEligible,
  validateCatenaReviewDecision,buildCatenaReviewExport,CATENA_REVIEW_EXPORT_SCHEMA} from "../src/scripture/catena-review-decisions.js";
 const data=JSON.parse(readFileSync("data/scripture/catena/editorial-matthew-first-30-review.v1.json","utf8"));
 assert.equal(data.records.length,30);
+const registry=validateCatenaEditorialRoutes(JSON.parse(readFileSync(
+ "data/scripture/catena/editorial-matthew-routes.v1.json","utf8")));
+const validatedReview=validateCatenaEditorialReview(data,registry);
+assert.equal(validatedReview.sourceResearchCommit,data.sourceResearchCommit);
+assert.equal(validatedReview.reviewSchema,"ao.catena.matthew-first-30-app-preview-review.v1");
 const works=JSON.parse(readFileSync("data/scripture/catena/editorial-matthew-work-loci.v1.json","utf8"));
-const external=validateCatenaWorkLociPreview(works,data);
+const external=validateCatenaWorkLociPreview(works,validatedReview);
 assert.equal(external.total,18);
+assert.throws(()=>validateCatenaWorkLociPreview(works,{
+ records:validatedReview.records}),/CATENA_ORIGINAL_WORK_RESEARCH_INVALID/,
+ "The edition crosswalk must not silently accept a validated registry with missing source revision");
 const focused=JSON.parse(readFileSync("data/scripture/catena/editorial-matthew-nine-focus.v1.json","utf8"));
-const nine=validateCatenaNineFocus(focused,data,external);
+const nine=validateCatenaNineFocus(focused,validatedReview,external);
 assert.equal(nine.total,9);
 assert.equal(focused.researchCommit,"d2b5ca02248361eb0a6acddfc1c0f4c0d90fca65");
 assert.ok(focused.records.every(x=>x.englishWitnessCheck.onlineSearchAnchorObserved===true));
