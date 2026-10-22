@@ -1,0 +1,310 @@
+{
+  "schema": "AO_SPX_P3_NEW_CHAPTER_BATCH_V1",
+  "status": "UNAPPROVED_SOURCE_LOCATOR_BOUND_BILINGUAL",
+  "chapters": [
+    {
+      "id": "SPX-NEW-005",
+      "category": "FOUNDATIONS_AND_BIOGRAPHY",
+      "pose": "thoughtful",
+      "related": [
+        "SPX-PILOT-01",
+        "SPX-EXP-021",
+        "SPX-EXP-048"
+      ],
+      "partial": false,
+      "source": {
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_12031904_iucunda-sane.html",
+        "locus": "Iucunda sane (12 March 1904), §§1–4",
+        "tier": "PRIMARY_DOCUMENT_EDITORIAL_REVIEW",
+        "genre": "PAPAL_DOCUMENT_ENCYCLICAL"
+      },
+      "mode": "SOURCE_BOUND_PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+      "nodes": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-005.OPEN",
+          "kind": "OPENING",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Why did you look to St Gregory the Great at the beginning of your pontificate?",
+            "fr": "Pourquoi avez-vous regardé vers saint Grégoire le Grand au début de votre pontificat ?"
+          },
+          "a": {
+            "en": "In Iucunda sane, We recalled the example of Gregory the Great while feeling keenly the difficulties of governing the universal Church. Gregory had taken up his office amid invasion, famine, disorder and grave anxieties for his people. Yet his memory was not for Us a romance about a perfect past. His writings, conduct and pastoral courage showed how a bishop could act amid circumstances beyond his choosing, sustained by divine assistance. We proposed his example to pastors facing difficulties in Our own time, without pretending that sixth-century Rome and the modern Church were historically identical. The saint furnished a model for duties and virtues, not a script of private thoughts that We had never recorded.",
+            "fr": "Dans Iucunda sane, Nous rappelions l'exemple de Grégoire le Grand alors que Nous éprouvions vivement les difficultés du gouvernement de l'Église universelle. Grégoire avait reçu sa charge au milieu des invasions, de la famine, du désordre et de graves inquiétudes pour son peuple. Mais son souvenir n'était pas pour Nous une légende d'un passé parfait. Ses écrits, sa conduite et son courage pastoral montraient comment un évêque pouvait agir dans des circonstances qu'il n'avait pas choisies, soutenu par le secours divin. Nous proposions son exemple aux pasteurs confrontés aux difficultés de Notre temps, sans prétendre que la Rome du sixième siècle et l'Église moderne fussent historiquement identiques. Le saint offrait un modèle de devoirs et de vertus, non un récit de pensées privées jamais enregistrées."
+          }
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-005.FOLLOW_1",
+          "kind": "FOLLOWUP",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Was Gregory's Rome really so troubled?",
+            "fr": "La Rome de Grégoire était-elle réellement si éprouvée ?"
+          },
+          "a": {
+            "en": "The encyclical recounts threats from invaders, as well as pestilence, flooding and famine. These details explain why Gregory's office demanded more than theological learning alone: his duties were exercised among frightened and suffering people.",
+            "fr": "L'encyclique rappelle les menaces des envahisseurs, ainsi que la peste, les inondations et la famine. Ces détails expliquent pourquoi la charge de Grégoire demandait plus que la science théologique : ses devoirs s'exerçaient au milieu d'un peuple effrayé et souffrant."
+          }
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-005.FOLLOW_2",
+          "kind": "FOLLOWUP",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Did you want to copy his political actions exactly?",
+            "fr": "Vouliez-vous reproduire exactement ses actes politiques ?"
+          },
+          "a": {
+            "en": "No. We placed his example before pastors as a witness to virtue, vigilance and trust in God. The circumstances were different; fidelity to his example concerns the principles governing Christian ministry, not a mechanical imitation of sixth-century decisions.",
+            "fr": "Non. Nous présentions son exemple aux pasteurs comme un témoignage de vertu, de vigilance et de confiance en Dieu. Les circonstances étaient différentes ; lui demeurer fidèle concerne les principes du ministère chrétien, non l'imitation mécanique de décisions du sixième siècle."
+          }
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-005.FOLLOW_3",
+          "kind": "FOLLOWUP",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "What can someone without high office learn from him?",
+            "fr": "Que peut apprendre de lui une personne sans haute charge ?"
+          },
+          "a": {
+            "en": "Gregory's courage amid responsibility can encourage fidelity to one's own duties. Yet Iucunda sane was addressed to bishops and cannot make a layperson personally responsible for every obligation belonging to ecclesiastical government.",
+            "fr": "Le courage de Grégoire dans la responsabilité peut encourager la fidélité aux devoirs de chacun. Cependant, Iucunda sane s'adressait aux évêques et ne saurait rendre un laïc personnellement responsable de toutes les obligations propres au gouvernement ecclésiastique."
+          }
+        }
+      ],
+      "title": {
+        "en": "Why did you look to St Gregory the Great at the beginning of your pontificate?",
+        "fr": "Pourquoi avez-vous regardé vers saint Grégoire le Grand au début de votre pontificat ?"
+      }
+    },
+    {
+      "id": "SPX-NEW-006",
+      "category": "DOCTRINE_AND_REASON",
+      "pose": "explaining",
+      "related": [
+        "SPX-EXP-029",
+        "SPX-EXP-012",
+        "SPX-NEW-005"
+      ],
+      "partial": false,
+      "source": {
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_21041909_communium-rerum.html",
+        "locus": "Communium rerum (21 April 1909), §§49–55",
+        "tier": "PRIMARY_DOCUMENT_EDITORIAL_REVIEW",
+        "genre": "PAPAL_DOCUMENT_ENCYCLICAL"
+      },
+      "mode": "SOURCE_BOUND_PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+      "nodes": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-006.OPEN",
+          "kind": "OPENING",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Why did you praise St Anselm's search for understanding?",
+            "fr": "Pourquoi avez-vous loué la recherche de compréhension de saint Anselme ?"
+          },
+          "a": {
+            "en": "In Communium rerum, We honoured St Anselm for joining fidelity to revealed faith with patient intellectual labour. He did not treat every theological problem as an excuse to discard the Church's doctrine, nor did he suppose that reverence makes careful reasoning unnecessary. We recalled his humility about conclusions that could legitimately be corrected and his insistence upon sound principles for theological study. The encyclical pointed toward the later tradition of scholastic learning and the formation of young clergy. Its argument therefore concerns faith seeking sound understanding, not a promise that unaided reason can discover every mystery of revelation. The original text distinguishes genuine inquiry from obstinacy and intellectual pride.",
+            "fr": "Dans Communium rerum, Nous honorions saint Anselme pour avoir uni la fidélité à la foi révélée au travail patient de l'intelligence. Il ne traitait pas toute difficulté théologique comme une raison d'abandonner la doctrine de l'Église et ne supposait pas non plus que la révérence rendît inutile le raisonnement attentif. Nous rappelions son humilité devant les conclusions qui pouvaient légitimement être corrigées et son insistance sur de bons principes pour l'étude théologique. L'encyclique regardait vers la tradition ultérieure de l'enseignement scolastique et la formation du jeune clergé. Il s'agissait donc d'une foi recherchant une compréhension solide, non d'une promesse que la raison sans secours découvrirait tous les mystères révélés. Le texte distingue la recherche véritable de l'obstination et de l'orgueil intellectuel."
+          }
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-006.FOLLOW_1",
+          "kind": "FOLLOWUP",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Is asking difficult questions a sign of weak faith?",
+            "fr": "Poser des questions difficiles révèle-t-il une foi faible ?"
+          },
+          "a": {
+            "en": "Not by itself. We commended serious reasoning within fidelity to revelation and recalled Anselm's willingness to correct an argument when better reasons prevailed. The question is how inquiry is conducted and what authority a conclusion claims.",
+            "fr": "Pas en soi. Nous recommandions un raisonnement sérieux dans la fidélité à la Révélation et rappelions la disposition d'Anselme à corriger un argument devant de meilleures raisons. La question est la manière de rechercher et l'autorité attribuée à la conclusion."
+          }
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-006.FOLLOW_2",
+          "kind": "FOLLOWUP",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Did Anselm claim that all his arguments were beyond correction?",
+            "fr": "Anselme prétendait-il que tous ses arguments échappaient à la correction ?"
+          },
+          "a": {
+            "en": "No. We expressly noted his modesty in matters open to debate and his readiness for correction. This is different from treating a doctrine of faith as a mere opinion; it distinguishes an argument offered by a theologian from the deposit the Church receives.",
+            "fr": "Non. Nous remarquions expressément sa modestie dans les questions débattues et sa disponibilité à la correction. Cela diffère de traiter une doctrine de foi comme une simple opinion ; il faut distinguer l'argument du théologien du dépôt reçu par l'Église."
+          }
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-006.FOLLOW_3",
+          "kind": "FOLLOWUP",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "How should learning affect the life of a priest?",
+            "fr": "Comment la science doit-elle influencer la vie d'un prêtre ?"
+          },
+          "a": {
+            "en": "We set Anselm's learning alongside his holiness and fidelity. Study should equip a priest to teach clearly and guard the faith, not serve as a display of superiority detached from prayer and ministry.",
+            "fr": "Nous placions la science d'Anselme à côté de sa sainteté et de sa fidélité. L'étude doit préparer le prêtre à enseigner clairement et à garder la foi, non lui servir à afficher une supériorité séparée de la prière et du ministère."
+          }
+        }
+      ],
+      "title": {
+        "en": "Why did you praise St Anselm's search for understanding?",
+        "fr": "Pourquoi avez-vous loué la recherche de compréhension de saint Anselme ?"
+      }
+    },
+    {
+      "id": "SPX-NEW-007",
+      "category": "PASTORAL_AND_PERSONAL",
+      "pose": "explaining",
+      "related": [
+        "SPX-EXP-046",
+        "SPX-NEW-005",
+        "SPX-NEW-006"
+      ],
+      "partial": false,
+      "source": {
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_26051910_editae-saepe.html",
+        "locus": "Editae saepe (26 May 1910), §§1–3; St Charles Borromeo and imitation of the saints",
+        "tier": "PRIMARY_DOCUMENT_EDITORIAL_REVIEW",
+        "genre": "PAPAL_DOCUMENT_ENCYCLICAL"
+      },
+      "mode": "SOURCE_BOUND_PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+      "nodes": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-007.OPEN",
+          "kind": "OPENING",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Why remember saints rather than simply admire them?",
+            "fr": "Pourquoi se souvenir des saints au lieu de simplement les admirer ?"
+          },
+          "a": {
+            "en": "In Editae saepe, We explained that the Church remembers the saints not merely to decorate her history with illustrious names. Their lives encourage the faithful and give examples of Christian virtue that can be imitated. We proposed St Charles Borromeo within the same purpose that had led Us to recall Gregory the Great and Anselm: reform of Christian life must be rooted in Christ and made visible through holiness, teaching and pastoral charity. This is not the claim that every circumstance of an earlier saint's life can be repeated today. The enduring lesson concerns fidelity and virtue, while particular historical actions must be understood within their own period.",
+            "fr": "Dans Editae saepe, Nous expliquions que l'Église ne rappelle pas les saints simplement pour orner son histoire de noms illustres. Leurs vies encouragent les fidèles et offrent des exemples de vertu chrétienne à imiter. Nous proposions saint Charles Borromée dans le même dessein qui Nous avait amené à rappeler Grégoire le Grand et Anselme : la réforme de la vie chrétienne doit s'enraciner dans le Christ et devenir visible par la sainteté, l'enseignement et la charité pastorale. Cela ne signifie pas que toutes les circonstances de la vie d'un saint ancien puissent être reproduites aujourd'hui. La leçon durable concerne la fidélité et la vertu, tandis que les actes historiques particuliers doivent être compris dans leur époque."
+          }
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-007.FOLLOW_1",
+          "kind": "FOLLOWUP",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Is admiration enough to imitate a saint?",
+            "fr": "L'admiration suffit-elle pour imiter un saint ?"
+          },
+          "a": {
+            "en": "Admiration may begin the process, but We described the saints as examples for conduct. Christian imitation seeks virtues such as charity and fidelity, rather than turning a feast or biography into an occasion for empty praise.",
+            "fr": "L'admiration peut commencer le mouvement, mais Nous décrivions les saints comme des exemples de conduite. L'imitation chrétienne cherche des vertus comme la charité et la fidélité, au lieu de faire d'une fête ou d'une biographie une simple louange."
+          }
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-007.FOLLOW_2",
+          "kind": "FOLLOWUP",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Why did you so often return to earlier bishops?",
+            "fr": "Pourquoi reveniez-vous si souvent à des évêques d'autrefois ?"
+          },
+          "a": {
+            "en": "We considered their combination of teaching and holiness an encouragement for those entrusted with souls. The saints' historical situations differed, but their fidelity could help pastors understand the responsibilities of their own time.",
+            "fr": "Nous considérions leur union de doctrine et de sainteté comme un encouragement pour ceux qui avaient la charge des âmes. Leurs situations historiques différaient, mais leur fidélité pouvait aider les pasteurs à comprendre les responsabilités de leur temps."
+          }
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-007.FOLLOW_3",
+          "kind": "FOLLOWUP",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Does reform mean introducing something new at every opportunity?",
+            "fr": "Réformer signifie-t-il introduire du nouveau à chaque occasion ?"
+          },
+          "a": {
+            "en": "Not in the argument of Editae saepe. We spoke of renewal through Christian truth and exemplary lives. Prudential changes may be needed, but novelty itself was not presented as the measure of faithful reform.",
+            "fr": "Non dans le raisonnement d'Editae saepe. Nous parlions d'un renouveau par la vérité chrétienne et l'exemple de vies saintes. Des changements prudents peuvent être nécessaires, mais la nouveauté ne constituait pas en elle-même la mesure d'une réforme fidèle."
+          }
+        }
+      ],
+      "title": {
+        "en": "Why remember saints rather than simply admire them?",
+        "fr": "Pourquoi se souvenir des saints au lieu de simplement les admirer ?"
+      }
+    },
+    {
+      "id": "SPX-NEW-008",
+      "category": "HISTORICAL_CHURCH_STATE",
+      "pose": "grave",
+      "related": [
+        "SPX-EXP-026",
+        "SPX-EXP-027",
+        "SPX-NEW-009"
+      ],
+      "partial": false,
+      "source": {
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_24091912_singulari-quadam.html",
+        "locus": "Singulari quadam (24 September 1912), §§2–5",
+        "tier": "PRIMARY_DOCUMENT_EDITORIAL_REVIEW",
+        "genre": "PAPAL_DOCUMENT_ENCYCLICAL"
+      },
+      "mode": "SOURCE_BOUND_PIUS_X_EDUCATIONAL_RECONSTRUCTION",
+      "nodes": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-008.OPEN",
+          "kind": "OPENING",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Why were wages and working conditions religious questions?",
+            "fr": "Pourquoi le salaire et les conditions de travail étaient-ils des questions religieuses ?"
+          },
+          "a": {
+            "en": "In Singulari quadam, We considered the social question in Germany and refused to treat workers' conditions as though they were outside the demands of justice and charity. We discussed wages, the duration of labour and disputes between employers and workers as questions with a moral dimension, even where their immediate details belonged to economic life. We urged concord rather than enmity between social classes, while insisting that temporal advantage could not simply displace Christian principles. The text concerns a particular dispute over labour associations, not a modern formula for calculating the wage of any named worker. Its value lies in the moral reasoning it requires, not an invented ruling on today's contracts.",
+            "fr": "Dans Singulari quadam, Nous examinions la question sociale en Allemagne et refusions de traiter les conditions ouvrières comme si elles échappaient aux exigences de justice et de charité. Nous abordions les salaires, la durée du travail et les différends entre employeurs et ouvriers comme des questions ayant une dimension morale, même lorsque leurs détails immédiats appartenaient à la vie économique. Nous recommandions la concorde plutôt que l'hostilité entre classes sociales, tout en affirmant que l'avantage temporel ne devait pas remplacer les principes chrétiens. Le texte concerne une controverse particulière sur les associations ouvrières, non une formule moderne pour calculer le salaire d'un travailleur nommé. Sa valeur tient au raisonnement moral exigé, non à un jugement inventé sur les contrats actuels."
+          }
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-008.FOLLOW_1",
+          "kind": "FOLLOWUP",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Can a labour contract be legally valid and morally unjust?",
+            "fr": "Un contrat de travail peut-il être légal et moralement injuste ?"
+          },
+          "a": {
+            "en": "Social arrangements cannot be judged solely by their economic label. We insisted that questions of wages and working conditions also involve the moral law. The encyclical does not decide the justice of an unidentified modern contract.",
+            "fr": "Les arrangements sociaux ne peuvent être jugés uniquement par leur qualification économique. Nous insistions pour que les salaires et les conditions de travail soient également examinés selon la loi morale. L'encyclique ne décide pas de la justice d'un contrat moderne non identifié."
+          }
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-008.FOLLOW_2",
+          "kind": "FOLLOWUP",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Did you encourage hatred between employers and employees?",
+            "fr": "Encouragiez-vous la haine entre patrons et salariés ?"
+          },
+          "a": {
+            "en": "No. We expressly warned against discord and hostility among classes, while recognising legitimate concerns about labour and livelihood. Pursuing justice should not become an excuse for treating another class of people as enemies.",
+            "fr": "Non. Nous mettions expressément en garde contre la discorde et l'hostilité entre classes, tout en reconnaissant les préoccupations légitimes du travail et des moyens de subsistance. Rechercher la justice ne doit pas servir d'excuse pour traiter une autre classe comme ennemie."
+          }
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-008.FOLLOW_3",
+          "kind": "FOLLOWUP",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Does the encyclical tell me what salary to demand today?",
+            "fr": "L'encyclique me dit-elle quel salaire demander aujourd'hui ?"
+          },
+          "a": {
+            "en": "No numerical amount follows from its historical treatment. Determining a fair wage in a particular setting requires facts about work, needs, law and the economic circumstances, while the moral principles remain important.",
+            "fr": "Aucun montant chiffré ne découle de son traitement historique. Déterminer un salaire juste dans une situation particulière demande les faits du travail, des besoins, du droit et des circonstances économiques, tout en conservant les principes moraux."
+          }
+        }
+      ],
+      "title": {
+        "en": "Why were wages and working conditions religious questions?",
+        "fr": "Pourquoi le salaire et les conditions de travail étaient-ils des questions religieuses ?"
+      }
+    }
+  ]
+}
