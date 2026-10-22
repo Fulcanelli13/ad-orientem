@@ -8,6 +8,8 @@ on:
       - 'tests/pius-x-study-standalone-e2e.mjs'
       - 'tests/pius-x-study-expanded-82-e2e.mjs'
       - 'tools/build-pius-x-expanded-standalone.mjs'
+      - 'tools/spx-p0-editorial-normalization.mjs'
+      - 'tools/spx-p2-followup-editorial-layer.mjs'
       - '.github/workflows/pius-x-study-standalone-review.yml'
   pull_request:
     paths:
@@ -15,6 +17,8 @@ on:
       - 'tests/pius-x-study-standalone-e2e.mjs'
       - 'tests/pius-x-study-expanded-82-e2e.mjs'
       - 'tools/build-pius-x-expanded-standalone.mjs'
+      - 'tools/spx-p0-editorial-normalization.mjs'
+      - 'tools/spx-p2-followup-editorial-layer.mjs'
       - '.github/workflows/pius-x-study-standalone-review.yml'
 permissions:
   contents: read
