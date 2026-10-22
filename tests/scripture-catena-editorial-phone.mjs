@@ -132,6 +132,28 @@ try{
  await third.waitFor({state:"visible",timeout:15000});
  await third.click();
  assert.equal(await page.locator(".aoCatenaMUser[data-catena-question-id]").count(),3);
+ const navigation=page.locator(".aoCatenaMNav");
+ const history=page.locator('[data-catena-navigate="history"]');
+ assert.equal(await history.innerText(),"History · 3");
+ assert.equal(await history.isDisabled(),false);
+ await history.click();
+ assert.equal(await history.getAttribute("aria-expanded"),"true");
+ assert.equal(await page.locator(".aoCatenaMHistory[hidden]").count(),0);
+ assert.equal(await page.locator(".aoCatenaMHistory [data-catena-history-id]").count(),3);
+ const firstHistory=page.locator('[data-catena-history-id="mat-our-father"]');
+ assert.match(await firstHistory.innerText(),/Cyprian/);
+ const beforeJump=await page.locator(".aoCatenaMUser[data-catena-question-id]").count();
+ await firstHistory.click();
+ assert.equal(await history.getAttribute("aria-expanded"),"false");
+ assert.equal(await page.locator(".aoCatenaMUser[data-catena-question-id]").count(),beforeJump);
+ assert.ok((await page.locator('.aoCatenaMRow[data-catena-fragment-id="catena.matthew.6.9:5"]')
+  .getAttribute("class")).includes("aoCatenaMRevisited"));
+ await page.locator('[data-catena-navigate="latest"]').click();
+ assert.equal(await navigation.locator(".aoCatenaMHistory[hidden]").count(),1);
+ await page.locator('[data-catena-navigate="questions"]').click();
+ const questionPanel=page.locator(".aoCatenaMTopics");
+ assert.equal(await questionPanel.isVisible(),true);
+ assert.ok((await questionPanel.locator('[data-catena-curated-question="mat-our-father"]').count())===1);
  assert.equal(await page.locator(".aoCatenaMResearchBadge").count(),0);
  assert.ok(await page.locator(".aoCatenaMMeta a[href^='https://www.ecatholic2000.com/']").count()>=2);
  const repeated=page.locator('[data-catena-curated-question="mat-our-father"]');
