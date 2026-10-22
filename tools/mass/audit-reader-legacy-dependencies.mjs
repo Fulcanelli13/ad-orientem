@@ -33,11 +33,25 @@ for(const filename of files){
    if(body.includes(base))reverse.get(target).push(rel);
  }
 }
+const retired=new Set([
+ "src/mass/reader-shadow.js",
+ "src/mass/reader-preview.js",
+ "src/mass/reader-dom-adapter.js",
+]);
 for(const [path,referrers] of reverse){
  const runtime=referrers.filter(p=>p.startsWith("src/")||p==="index.html");
  const tests=referrers.filter(p=>p.startsWith("tests/")||p==="package.json");
  const others=referrers.filter(p=>!runtime.includes(p)&&!tests.includes(p));
- console.log(JSON.stringify({path,classification:runtime.length?"ACTIVE_IMPORTS_OR_REFERENCES":
-   tests.length?"TEST_REFERENCED_ONLY":"NO_SCANNED_IMPORTERS",
+ const present=existsSync(join(root,path));
+ if(retired.has(path) && (present||runtime.length||tests.length)){
+   throw new Error("OBSOLETE_READER_REINTRODUCED:"+path+" referenced by "+referrers.join(","));
+ }
+ if(path==="src/mass/reader-live-product48.js"&&
+    (!present||!runtime.includes("src/mass/reader-mode-switch.js")||
+     !runtime.includes("src/mass/reader-native-preview.js"))){
+   throw new Error("HISTORICAL_48_INTERNAL_DEPENDENCY_CHANGED: certify exceptions before deleting");
+ }
+ console.log(JSON.stringify({path,present,classification:retired.has(path)?"RETIRED_DELETED":
+   runtime.length?"ACTIVE_IMPORTS_OR_REFERENCES":tests.length?"TEST_REFERENCED_ONLY":"NO_SCANNED_IMPORTERS",
    runtime,tests,others}));
 }
