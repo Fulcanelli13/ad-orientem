@@ -51,6 +51,7 @@ try{
   {waitUntil:"domcontentloaded",timeout:90000});
  await editorial.locator("#episode-list button").first().waitFor({timeout:30000});
  assert.equal(await editorial.locator("#episode-list button").count(),16);
+ await editorial.locator("#detail .verse").first().waitFor({timeout:30000});
  assert.equal(await editorial.locator("#detail .verse").count(),4);
  assert.match(await editorial.locator("#detail").innerText(),/Genesis 6:5–8/);
  assert.match(await editorial.locator("#detail").innerText(),/Existing salvation-history movement/);
