@@ -1627,12 +1627,28 @@
   "AO.SM.C0209",
   "AO.SM.C0254"
  ],
- "scholaOwnedNotPriestChantCues": [
+ "priestIntonationEndCues": [
   "AO.SM.C0054",
+  "AO.SM.C0090"
+ ],
+ "voiceOwnerAdjudications": [
+  {
+   "cueId": "AO.SM.C0054",
+   "auditOwner": "SCHOLA",
+   "ruling": "PRIEST",
+   "reason": "End of the celebrant's intonation; the choir begins at the next phrase."
+  },
+  {
+   "cueId": "AO.SM.C0090",
+   "auditOwner": "SCHOLA",
+   "ruling": "PRIEST",
+   "reason": "End of the celebrant's intonation; the choir begins at the next phrase."
+  }
+ ],
+ "scholaOwnedNotPriestChantCues": [
   "AO.SM.C0074",
   "AO.SM.C0076",
   "AO.SM.C0087",
-  "AO.SM.C0090",
   "AO.SM.C0255"
  ],
  "solemnMinisterReadingCues": [

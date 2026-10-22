@@ -116,9 +116,18 @@ for(const id of ULTRA_MASTER_PRIEST_CHANT_CUE_ADDITIONS){
  assert.notEqual(icon(id,{form:"LOW"}).priestVoiceIconKey,"canon:priest.voice.chant",
   "Low Mass must not show a Chant pictogram: "+id);
 }
+// 22 Oct ruling (canonical set voiceOwnerAdjudications): "Deo." (C0054) and
+// "in unum Deum." (C0090) end the CELEBRANT's intonation; the choir begins at the
+// next phrase. The old SCHOLA_NOT_PRIEST_CHANT_CUES classification is overruled.
+const canonVoice=read("../data/presentation/mass-icon-canonical-set-20261021.v1.json");
+assert.deepEqual(canonVoice.priestIntonationEndCues,[...SCHOLA_NOT_PRIEST_CHANT_CUES]);
 for(const id of SCHOLA_NOT_PRIEST_CHANT_CUES){
- assert.equal(icon(id,{priestVoice:{cueId:id,voice:"SUNG / CLEAR"}}).priestVoiceIconKey,null,
-  "Schola-public continuation falsely depicts chanting priest: "+id);
+ assert.equal(icon(id,{priestVoice:{cueId:id,voice:"SUNG / CLEAR"}}).priestVoiceIconKey,"canon:priest.voice.chant",
+  "End of the celebrant's Gloria/Credo intonation must show the priest chanting: "+id);
+ assert.equal(icon(id).priestVoiceIconKey,"canon:priest.voice.chant",
+  "Intonation end needs no separate voice event: "+id);
+ assert.notEqual(icon(id,{form:"LOW",priestVoice:{cueId:id,voice:"SUNG / CLEAR"}}).priestVoiceIconKey,"canon:priest.voice.chant",
+  "Low Mass must not show Chant: "+id);
 }
 assert.equal(icon("AO.SM.C0074",{priestVoice:{cueId:"AO.SM.C0073",voice:"SUNG / CLEAR"}}).priestVoiceIconKey,null,
  "Collect chant cannot leak into the server's Amen");
@@ -151,6 +160,8 @@ for(const witness of ultraVoice.items){
    "Ultra Master sung celebrant missed priest Chant at "+cueId);
   assert.notEqual(icon(cueId,{...event,form:"LOW"}).priestVoiceIconKey,
    "canon:priest.voice.chant","Low Mass wrongly uses Chant at "+cueId);
+ }else if(canonVoice.priestIntonationEndCues.includes(cueId)){
+  assert.equal(actual,"canon:priest.voice.chant","Adjudicated intonation end must be priest Chant: "+cueId);
  }else if(witness.owner==="SCHOLA"||witness.owner==="MINISTER_RESPONSE"){
   assert.notEqual(actual,"canon:priest.voice.chant",
    "Schola/server sung source spuriously marked as priest Chant: "+cueId);
