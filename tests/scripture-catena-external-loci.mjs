@@ -37,3 +37,7 @@ assert.ok(cross.records.find(x=>x.rank===19).workLocus.includes("Sermon 20"),
 assert.ok(cross.records.find(x=>x.rank===18).workLocus.includes("5–8"),
  "Jerome against Helvidius must retain cross-chapter extraction");
 console.log("PASS: 13 externally identified whole-work English parallels, correct variants and no false human approval");
+
+// Explicit pinpoint section corrections in the English full-work locator.
+assert.equal(cross.records.find(x=>x.rank===2).workLocus,"Homily 44, section 5");
+assert.equal(cross.records.find(x=>x.rank===22).workLocus,"Homily 47, section 1");

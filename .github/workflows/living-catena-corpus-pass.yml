@@ -21,6 +21,7 @@ on:
       - tests/scripture-catena-research-retrieval.mjs
       - tests/scripture-catena-first-30-adjudication.mjs
       - tests/scripture-catena-external-loci.mjs
+      - tests/scripture-catena-nine-focus.mjs
       - previews/living-catena-reader-research-20261021.html
       - data/scripture/catena/research/full-corpus-pass-20261021/**
       - .github/workflows/living-catena-corpus-pass.yml
@@ -59,6 +60,8 @@ jobs:
         run: node tests/scripture-catena-first-30-adjudication.mjs
       - name: Validate identified primary-work English parallels and blocked approval
         run: node tests/scripture-catena-external-loci.mjs
+      - name: Verify pinned nine-record human-review focus batch
+        run: node tests/scripture-catena-nine-focus.mjs
       - name: Ensure generated index is up to date for PR
         run: |
           git diff --exit-code -- data/scripture/catena/research/full-corpus-pass-20261021/

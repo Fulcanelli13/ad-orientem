@@ -17,3 +17,10 @@ The digital source references were inspected from New Advent, whose NPNF transla
 - Jerome on the women at the Cross, Matthew 27:51:18: chs. 13–16 preserve the opponent's allegation and Jerome's separate rebuttal. These are not Jerome's undifferentiated voice.
 - Chrysostom's Sabbath discussions (Matthew 12:1:2 and 12:1:11) belong respectively to Homily 39 sections 1 and 2, treating necessity and priestly temple duties without declaring sin.
 - Hilary on Christ's cry (Matthew 27:45:8) condenses arguments from *De Trinitate* X.49–52 and 60–62, including *rejected adversarial claims*. This is a cross-section, not a verbatim continuous excerpt.
+
+
+## Focused original-work subsection corrections and independent-editor batch (22 October)
+
+A direct re-read of the English full homilies corrected two earlier *subsection* locations without altering the underlying Catena quotation or theological interpretation: Chrysostom's explanation of mutable rocky ground is at **Homily 44 §5**, and the present-versus-future harvest distinction at **Homily 47 §1**. The previous recorded §4 and §2 have been replaced in the crosswalk.
+
+The 9-source focussed shortlist `matthew-nine-focused-original-work-signoff.v1.json` now supplies a whole-work link, short English search anchor, corrected subsection, canonical source pointer, bounded relevance claim and qualification for ranks 2, 3, 4, 9, 12, 22, 23, 25, 29. Its function is to **facilitate an independent human review**. It does not fulfil the original-language text review, independent author verification, editorial-source licensing check, or human approval. Nine cases remain explicitly blocked for publication, like the rest of the catalogue.
