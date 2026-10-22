@@ -61,7 +61,7 @@ try{
  assert.equal(await editorial.locator("#detail .break").count(),6);
  await editorial.locator("#edition").selectOption("crampon-1923");
  await editorial.waitForFunction(()=>
-  document.querySelector("#detail .warning")?.textContent?.includes("Crampon 1923") &&
+  [...document.querySelectorAll("#detail .warning")].some(e=>e.textContent?.includes("Crampon 1923")) &&
   document.querySelectorAll("#detail .verse").length===19,null,{timeout:30000});
  const editorialSizing=await editorial.evaluate(()=>({
   viewport:innerWidth,width:document.documentElement.scrollWidth
