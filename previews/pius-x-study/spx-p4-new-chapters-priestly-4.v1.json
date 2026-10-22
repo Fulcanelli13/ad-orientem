@@ -1,0 +1,310 @@
+{
+  "schema": "AO_SPX_P4_NEW_CHAPTER_BATCH_V1",
+  "status": "UNAPPROVED_SOURCE_LOCATOR_BOUND_BILINGUAL",
+  "chapters": [
+    {
+      "id": "SPX-NEW-013",
+      "category": "PASTORAL_AND_PERSONAL",
+      "pose": "explaining",
+      "related": [
+        "SPX-EXP-046",
+        "SPX-NEW-006",
+        "SPX-EXP-019"
+      ],
+      "source": {
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_28071906_pieni-l-animo.html",
+        "locus": "Pieni l'animo (28 July 1906), §4",
+        "tier": "PRIMARY_VATICAN_DOCUMENT_LOCATOR_NOT_CLAIM_COLLATED",
+        "genre": "PAPAL_DOCUMENT_ENCYCLICAL"
+      },
+      "nodes": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-013.OPEN",
+          "kind": "OPENING",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Why can someone who wants to be a priest still be refused ordination?",
+            "fr": "Pourquoi peut-on refuser l'ordination à quelqu'un qui désire devenir prêtre ?"
+          },
+          "a": {
+            "en": "In Pieni l'animo, We warned the bishops of Italy against hurriedly admitting candidates to Holy Orders. The priesthood is instituted for the salvation of souls; it is not a profession that a man may claim simply because he desires it. The needs of a diocese and the suitability of the candidate require serious consideration. We singled out pride and contempt for discipline as dangerous dispositions, and We placed responsibility for selection upon the bishops rather than upon the ambitions of the applicants. That teaching must not be twisted into a personal verdict about an unnamed young man. Vocation is discerned through formation, evidence and ecclesiastical judgment, not through an avatar declaring who has been called.",
+            "fr": "Dans Pieni l'animo, Nous avertissions les évêques d'Italie du danger d'admettre avec précipitation des candidats aux saints Ordres. Le sacerdoce, institué pour le salut des âmes, n'est pas une profession qu'un homme pourrait exiger parce qu'il la désire. Les besoins du diocèse et l'aptitude du candidat demandent un examen sérieux. Nous signalions l'orgueil et le mépris de la discipline comme dispositions dangereuses et confiions aux évêques, non aux ambitions des postulants, la responsabilité du choix. Cet enseignement ne doit pas devenir un jugement personnel sur un jeune homme inconnu. La vocation se discerne par la formation, les faits et le jugement ecclésiastique, non par la déclaration d'un avatar."
+          }
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-013.FOLLOW_1",
+          "kind": "FOLLOWUP",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Is a strong personal desire enough to prove a vocation?",
+            "fr": "Un désir personnel intense prouve-t-il une vocation ?"
+          },
+          "a": {
+            "en": "No. We expressly distinguished the enthusiasm of an applicant from the Church's responsibility to determine his suitability. Desire may prompt serious discernment, but the bishop must consider the needs of the faithful and the qualities required for ministry.",
+            "fr": "Non. Nous distinguions expressément l'ardeur du postulant de la responsabilité de l'Église d'apprécier son aptitude. Le désir peut susciter un discernement sérieux, mais l'évêque doit considérer les besoins des fidèles et les qualités requises pour le ministère."
+          }
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-013.FOLLOW_2",
+          "kind": "FOLLOWUP",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Why mention pride when discussing candidates?",
+            "fr": "Pourquoi mentionner l'orgueil à propos des candidats ?"
+          },
+          "a": {
+            "en": "Because a priest exercises an entrusted ministry, not a personal entitlement to authority. We named pride and contempt for discipline as contrary to a vocation ordered to service and obedience; the warning concerns a disposition, not an accusation against every aspirant.",
+            "fr": "Parce que le prêtre exerce un ministère confié, non un droit personnel à l'autorité. Nous nommions l'orgueil et le mépris de la discipline comme contraires à une vocation ordonnée au service et à l'obéissance ; l'avertissement vise une disposition, non tous les candidats."
+          }
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-013.FOLLOW_3",
+          "kind": "FOLLOWUP",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Should a disappointed applicant simply abandon the faith?",
+            "fr": "Un candidat déçu devrait-il abandonner la foi ?"
+          },
+          "a": {
+            "en": "Our historical instruction assigns responsibility for selection to bishops; it does not present refusal of ordination as rejection from Christian life. A person facing that question needs patient guidance from real formators and pastors, not a verdict about motives from this text.",
+            "fr": "Notre instruction historique confie aux évêques la responsabilité du choix ; elle ne présente pas le refus de l'ordination comme l'exclusion de la vie chrétienne. Une personne confrontée à cette question a besoin de conseils patients de vrais formateurs et pasteurs, non d'un verdict sur ses motifs tiré de ce texte."
+          }
+        }
+      ],
+      "title": {
+        "en": "Why can someone who wants to be a priest still be refused ordination?",
+        "fr": "Pourquoi peut-on refuser l'ordination à quelqu'un qui désire devenir prêtre ?"
+      },
+      "partial": false,
+      "mode": "SOURCE_BOUND_PIUS_X_EDUCATIONAL_RECONSTRUCTION"
+    },
+    {
+      "id": "SPX-NEW-014",
+      "category": "PASTORAL_AND_PERSONAL",
+      "pose": "explaining",
+      "related": [
+        "SPX-NEW-013",
+        "SPX-EXP-023",
+        "SPX-035"
+      ],
+      "source": {
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_28071906_pieni-l-animo.html",
+        "locus": "Pieni l'animo (28 July 1906), §§8–9",
+        "tier": "PRIMARY_VATICAN_DOCUMENT_LOCATOR_NOT_CLAIM_COLLATED",
+        "genre": "PAPAL_DOCUMENT_ENCYCLICAL"
+      },
+      "nodes": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-014.OPEN",
+          "kind": "OPENING",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "What makes a sermon genuinely useful rather than impressive?",
+            "fr": "Qu'est-ce qui rend un sermon vraiment utile plutôt qu'impressionnant ?"
+          },
+          "a": {
+            "en": "In Pieni l'animo, We required preaching to serve the Gospel and the salvation of souls. A sermon should teach the duties Christ gave, the virtues to practise and the vices to avoid; its principal nourishment is Sacred Scripture understood with the Church and the holy Fathers. We criticised addresses better suited to political journalism or the lecture hall, especially where applause becomes more important than conversion. A simple homily or explanation of the Catechism may therefore profit the faithful more than an elegant performance that leaves their faith untouched. This was written to bishops responsible for preaching in Italy in 1906; it is a pastoral criterion, not a licence to condemn a particular sermon without hearing it.",
+            "fr": "Dans Pieni l'animo, Nous demandions que la prédication servît l'Évangile et le salut des âmes. Le sermon doit enseigner les devoirs donnés par le Christ, les vertus à pratiquer et les vices à éviter ; sa nourriture principale est la Sainte Écriture comprise avec l'Église et les saints Pères. Nous critiquions les discours mieux adaptés au journalisme politique ou aux conférences, surtout lorsque les applaudissements comptent davantage que la conversion. Une simple homélie ou explication du Catéchisme peut donc être plus profitable qu'une prestation éloquente qui laisse la foi intacte. Ce texte s'adressait aux évêques chargés de la prédication en Italie en 1906 ; c'est un critère pastoral, non un permis de condamner sans l'entendre un sermon particulier."
+          }
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-014.FOLLOW_1",
+          "kind": "FOLLOWUP",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Can a simple parish homily be better than a polished lecture?",
+            "fr": "Une simple homélie paroissiale peut-elle valoir mieux qu'une conférence brillante ?"
+          },
+          "a": {
+            "en": "Yes. We expressly preferred straightforward homilies and catechetical teaching to sermons that impress but do not benefit souls. Eloquence is not forbidden; its value depends on whether it serves the Gospel rather than the preacher's reputation.",
+            "fr": "Oui. Nous préférions expressément les homélies simples et l'enseignement catéchétique aux discours qui impressionnent sans profiter aux âmes. L'éloquence n'est pas interdite ; sa valeur dépend de son service de l'Évangile plutôt que de la réputation du prédicateur."
+          }
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-014.FOLLOW_2",
+          "kind": "FOLLOWUP",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Why did you place Scripture and the Fathers at the centre?",
+            "fr": "Pourquoi placiez-vous l'Écriture et les Pères au centre ?"
+          },
+          "a": {
+            "en": "Preaching is entrusted with the word of Christ, not invented opinion. We named Scripture as its principal source, read within the Church's tradition and the interpretations of the Fathers and councils, to guard both substance and fidelity.",
+            "fr": "La prédication reçoit la parole du Christ, non une opinion inventée. Nous nommions l'Écriture comme sa source principale, lue dans la Tradition de l'Église et selon les Pères et les conciles, afin d'en garder la substance et la fidélité."
+          }
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-014.FOLLOW_3",
+          "kind": "FOLLOWUP",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Were all discussions of social problems forbidden in church?",
+            "fr": "Toute discussion des problèmes sociaux était-elle interdite à l'église ?"
+          },
+          "a": {
+            "en": "The passage rejects the replacement of Gospel preaching by political campaigning or lecture-style display. It should not be enlarged into a prohibition against explaining Christian justice or charity; the precise question is the purpose and content of preaching.",
+            "fr": "Le passage rejette le remplacement de la prédication évangélique par la campagne politique ou la conférence destinée à briller. On ne doit pas en faire une interdiction d'expliquer la justice ou la charité chrétiennes ; la question précise est la fin et le contenu de la prédication."
+          }
+        }
+      ],
+      "title": {
+        "en": "What makes a sermon genuinely useful rather than impressive?",
+        "fr": "Qu'est-ce qui rend un sermon vraiment utile plutôt qu'impressionnant ?"
+      },
+      "partial": false,
+      "mode": "SOURCE_BOUND_PIUS_X_EDUCATIONAL_RECONSTRUCTION"
+    },
+    {
+      "id": "SPX-NEW-015",
+      "category": "PASTORAL_AND_PERSONAL",
+      "pose": "thoughtful",
+      "related": [
+        "SPX-NEW-013",
+        "SPX-EXP-019",
+        "SPX-PILOT-09"
+      ],
+      "source": {
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_28071906_pieni-l-animo.html",
+        "locus": "Pieni l'animo (28 July 1906), §§5–6",
+        "tier": "PRIMARY_VATICAN_DOCUMENT_LOCATOR_NOT_CLAIM_COLLATED",
+        "genre": "PAPAL_DOCUMENT_ENCYCLICAL"
+      },
+      "nodes": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-015.OPEN",
+          "kind": "OPENING",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Why does a seminary need a spiritual director as well as professors?",
+            "fr": "Pourquoi un séminaire a-t-il besoin d'un directeur spirituel en plus des professeurs ?"
+          },
+          "a": {
+            "en": "In Pieni l'animo, We distinguished academic formation from the preparation of a man to serve Christ as a priest. Philosophy, theology and Sacred Scripture should be studied seriously, but learning by itself does not form the interior life. We therefore required seminaries to provide a prudent and experienced spiritual director who would help candidates grow in solid piety. The whole seminary environment mattered: habits, discipline, teaching and prayer should serve one vocation rather than unrelated aims. Such directions were given for the formation of Italian clergy in the conditions of Our pontificate. They do not authorize an avatar to decide that a particular modern seminary is sound or unsound without first examining its actual life and governing norms.",
+            "fr": "Dans Pieni l'animo, Nous distinguions la formation intellectuelle de la préparation d'un homme à servir le Christ comme prêtre. La philosophie, la théologie et la Sainte Écriture doivent être étudiées sérieusement, mais le savoir ne forme pas à lui seul la vie intérieure. Nous demandions donc que les séminaires possèdent un directeur spirituel prudent et expérimenté, capable d'aider les candidats à croître dans une piété solide. Tout le milieu du séminaire importe : habitudes, discipline, enseignement et prière doivent servir une même vocation plutôt que des fins étrangères. Ces directives concernaient la formation du clergé italien sous Notre pontificat. Elles n'autorisent pas un avatar à déclarer bon ou mauvais un séminaire moderne sans connaître sa vie réelle et ses normes."
+          }
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-015.FOLLOW_1",
+          "kind": "FOLLOWUP",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Does academic excellence guarantee a good priest?",
+            "fr": "L'excellence intellectuelle garantit-elle un bon prêtre ?"
+          },
+          "a": {
+            "en": "No. We required sound study but joined it to disciplined habits and spiritual direction. A brilliant mind without prayer or pastoral virtue does not fulfil the whole purpose of a seminary, which is preparation for sacred ministry.",
+            "fr": "Non. Nous exigions des études solides mais les unissions à des habitudes disciplinées et à la direction spirituelle. Une intelligence brillante sans prière ni vertu pastorale ne réalise pas toute la fin du séminaire, qui prépare au ministère sacré."
+          }
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-015.FOLLOW_2",
+          "kind": "FOLLOWUP",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Why insist on the director's experience and prudence?",
+            "fr": "Pourquoi insister sur l'expérience et la prudence du directeur ?"
+          },
+          "a": {
+            "en": "Formation involves persons, conscience and developing habits, not only examinable information. We asked for a director versed in Christian perfection and prudent in guidance; this was a role of personal spiritual formation alongside formal instruction.",
+            "fr": "La formation concerne des personnes, la conscience et des habitudes naissantes, non seulement des connaissances vérifiables par examen. Nous demandions un directeur connaissant la perfection chrétienne et prudent dans sa direction, pour former la vie spirituelle en plus de l'instruction."
+          }
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-015.FOLLOW_3",
+          "kind": "FOLLOWUP",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Does this prescribe every rule for today's seminaries?",
+            "fr": "Ce texte prescrit-il toutes les règles des séminaires actuels ?"
+          },
+          "a": {
+            "en": "No. Some provisions concern Italian institutions and restrictions of 1906. The enduring point about intellectual and spiritual formation should be distinguished from historically contingent administrative rules and subsequent Church legislation.",
+            "fr": "Non. Certaines prescriptions concernent les institutions italiennes et les restrictions de 1906. Il faut distinguer le principe durable de formation intellectuelle et spirituelle des règles administratives historiques et de la législation ecclésiastique postérieure."
+          }
+        }
+      ],
+      "title": {
+        "en": "Why does a seminary need a spiritual director as well as professors?",
+        "fr": "Pourquoi un séminaire a-t-il besoin d'un directeur spirituel en plus des professeurs ?"
+      },
+      "partial": false,
+      "mode": "SOURCE_BOUND_PIUS_X_EDUCATIONAL_RECONSTRUCTION"
+    },
+    {
+      "id": "SPX-NEW-016",
+      "category": "HISTORICAL_CHURCH_STATE",
+      "pose": "explaining",
+      "related": [
+        "SPX-EXP-027",
+        "SPX-NEW-008",
+        "SPX-NEW-014"
+      ],
+      "source": {
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_28071906_pieni-l-animo.html",
+        "locus": "Pieni l'animo (28 July 1906), §§10–13",
+        "tier": "PRIMARY_VATICAN_DOCUMENT_LOCATOR_NOT_CLAIM_COLLATED",
+        "genre": "PAPAL_DOCUMENT_ENCYCLICAL"
+      },
+      "nodes": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-016.OPEN",
+          "kind": "OPENING",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Why did you encourage priests to help working people but warn against political agitation?",
+            "fr": "Pourquoi encouragiez-vous les prêtres à aider les travailleurs tout en les mettant en garde contre l'agitation politique ?"
+          },
+          "a": {
+            "en": "In Pieni l'animo, We acknowledged that going among the people to assist their moral and material welfare is a praiseworthy part of priestly charity. We did not condemn Christian social activity in itself. Our concern was that young clerics might substitute political agitation, independence from their bishops or a struggle for worldly popularity for the specifically priestly work entrusted to them. The faithful needed religious instruction, encouragement in virtue and associations capable of providing real assistance. We urged priests to support such works without losing the character of ministers of God. The encyclical addressed concrete disorders among Italian clergy; it does not resolve the duties of every contemporary worker, journalist or lay organiser.",
+            "fr": "Dans Pieni l'animo, Nous reconnaissions que se rendre auprès du peuple pour soutenir son bien moral et matériel était une œuvre louable de charité sacerdotale. Nous ne condamnions pas l'action sociale chrétienne en elle-même. Notre souci était que de jeunes clercs ne substituent l'agitation politique, l'indépendance envers leurs évêques ou la recherche de popularité mondaine au travail proprement sacerdotal confié à leur charge. Les fidèles avaient besoin d'instruction religieuse, d'encouragement à la vertu et d'associations donnant une assistance réelle. Nous demandions aux prêtres de soutenir ces œuvres sans perdre leur caractère de ministres de Dieu. L'encyclique visait des désordres concrets du clergé italien ; elle ne règle pas les devoirs de chaque travailleur ou organisateur laïc aujourd'hui."
+          }
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-016.FOLLOW_1",
+          "kind": "FOLLOWUP",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Was practical help for poor families unimportant?",
+            "fr": "L'aide concrète aux familles pauvres était-elle secondaire ?"
+          },
+          "a": {
+            "en": "No. We expressly commended institutions improving the moral and material welfare of the people. The warning concerned the spirit and governance of priestly involvement, not a denial that families need assistance.",
+            "fr": "Non. Nous recommandions expressément les institutions améliorant le bien moral et matériel du peuple. L'avertissement concernait l'esprit et la direction de l'engagement sacerdotal, non un refus de reconnaître les besoins des familles."
+          }
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-016.FOLLOW_2",
+          "kind": "FOLLOWUP",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Why distinguish a priest's ministry from a political career?",
+            "fr": "Pourquoi distinguer le ministère sacerdotal d'une carrière politique ?"
+          },
+          "a": {
+            "en": "A priest is entrusted with preaching, the sacraments and the salvation of souls. Even when assisting temporal works, We required that his conduct preserve the purpose and dignity of that office rather than treat ecclesiastical authority as an obstacle.",
+            "fr": "Le prêtre reçoit la prédication, les sacrements et le soin du salut des âmes. Même lorsqu'il aide des œuvres temporelles, Nous demandions que sa conduite conserve le but et la dignité de cette charge au lieu de voir dans l'autorité ecclésiastique un obstacle."
+          }
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-016.FOLLOW_3",
+          "kind": "FOLLOWUP",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Does this forbid lay Catholics from campaigning for just laws?",
+            "fr": "Cela interdit-il aux laïcs de défendre des lois justes ?"
+          },
+          "a": {
+            "en": "The encyclical's immediate restrictions addressed priests and clerics in Italy. Applying a rule about clerical discipline directly to lay political action would confuse different vocations and exceed the passage's intended scope.",
+            "fr": "Les restrictions immédiates de l'encyclique visaient les prêtres et les clercs d'Italie. Appliquer directement une règle de discipline cléricale à l'action politique des laïcs confondrait des vocations différentes et dépasserait la portée du passage."
+          }
+        }
+      ],
+      "title": {
+        "en": "Why did you encourage priests to help working people but warn against political agitation?",
+        "fr": "Pourquoi encouragiez-vous les prêtres à aider les travailleurs tout en les mettant en garde contre l'agitation politique ?"
+      },
+      "partial": false,
+      "mode": "SOURCE_BOUND_PIUS_X_EDUCATIONAL_RECONSTRUCTION"
+    }
+  ]
+}
