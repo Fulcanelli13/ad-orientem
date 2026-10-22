@@ -26,6 +26,20 @@ try{
  const url="http://127.0.0.1:4201/previews/living-catena-messenger-editorial-integration-20261021.html";
  await page.goto(url,{waitUntil:"domcontentloaded",timeout:60000});
  await page.locator(".aoCatenaMessenger").waitFor({state:"visible",timeout:20000});
+ assert.equal(await page.locator(".aoCatenaMResearch").count(),0,
+  "Normal Scripture reader must not show experimental editorial routes");
+ await page.locator("[data-catena-source-question]").first().waitFor({state:"visible",timeout:15000});
+ const sourceQuestion=page.locator("[data-catena-source-question]").first();
+ assert.match(await sourceQuestion.getAttribute("data-catena-source-pointer"),/^catena\.matthew\./);
+ const questionText=await sourceQuestion.innerText();
+ const prior=await page.locator(".aoCatenaMUser").count();
+ await sourceQuestion.click();
+ assert.equal(await page.locator(".aoCatenaMUser").count(),prior+1);
+ assert.ok((await page.locator(".aoCatenaMUser").last().innerText()).includes(questionText));
+ assert.ok(await page.locator(".aoCatenaMMeta a[href^='https://www.ecatholic2000.com/']").count()>=1);
+ assert.equal(await page.locator(".aoCatenaMResearchBadge").count(),0);
+ await page.goto(url+"?research=1",{waitUntil:"domcontentloaded",timeout:60000});
+ await page.locator(".aoCatenaMessenger").waitFor({state:"visible",timeout:20000});
  const panel=page.locator(".aoCatenaMResearch");
  assert.equal(await panel.isHidden(),true,"Research question panel must be opt-in");
  await page.getByRole("button",{name:"Browse research questions"}).click();
@@ -40,7 +54,7 @@ try{
  assert.ok(await page.locator(".aoCatenaMMeta a[href^='https://www.ecatholic2000.com/']").count()>=2);
  const overflow=await page.locator(".aoCatenaMessenger").evaluate(e=>e.scrollWidth-e.clientWidth);
  assert.ok(overflow<=2,"Messenger phone panel overflows horizontally by "+overflow);
- await page.goto(url+"?passage=11:28",{waitUntil:"domcontentloaded",timeout:60000});
+ await page.goto(url+"?passage=11:28&research=1",{waitUntil:"domcontentloaded",timeout:60000});
  await page.locator(".aoCatenaMessenger").waitFor({state:"visible",timeout:20000});
  await page.getByRole("button",{name:"Browse research questions"}).click();
  await page.locator('[data-catena-research-question="catena.matthew.11.28:1"]').waitFor({state:"visible",timeout:20000});
@@ -48,7 +62,7 @@ try{
  await page.locator(".aoCatenaMFeed .aoCatenaMNotice").last().waitFor({state:"visible",timeout:25000});
  assert.match(await page.locator(".aoCatenaMFeed").innerText(),/not a standalone answer/i);
  assert.match(await page.locator(".aoCatenaMFeed").innerText(),/HUMAN APPROVAL PENDING/);
- await page.goto(url+"?passage=27:45",{waitUntil:"domcontentloaded",timeout:60000});
+ await page.goto(url+"?passage=27:45&research=1",{waitUntil:"domcontentloaded",timeout:60000});
  await page.locator('[data-catena-fragment-id="catena.matthew.27.45:1"]').waitFor({state:"visible",timeout:20000});
  const split=page.locator('[data-catena-fragment-id="catena.matthew.27.45:1"]');
  assert.equal(await split.locator(".aoCatenaMResearchOwner").count(),2);

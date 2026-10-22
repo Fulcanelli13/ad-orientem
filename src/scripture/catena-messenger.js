@@ -236,6 +236,25 @@ export function suggestCatenaTopics(rows,{limit=4}={}){
  return candidates.filter(term=>new RegExp("(^|[^a-z])"+term.toLowerCase()+"(s|al|ity)?([^a-z]|$)").test(corpus))
   .slice(0,Math.max(0,Math.min(6,limit)));
 }
+/**
+ * Source-grounded navigational questions. The modern questions are not
+ * patristic writings or editorially authenticated answers.
+ */
+export function suggestCatenaQuestions(rows,{limit=5}={}){
+ const result=[];
+ if(!Array.isArray(rows)||!rows.length)return Object.freeze(result);
+ for(const term of suggestCatenaTopics(rows,{limit:6})){
+  const hits=retrieveCatenaQuestionMatches(rows,term,{limit:1});
+  if(!hits.length||(!hits[0].sourceMatchEvidence&&!hits[0].relatedSourceEvidence))continue;
+  result.push(Object.freeze({
+   topic:term,question:"What do the Fathers say about “"+term+"”?",
+   sourcePointer:hits[0].id,lookupTerm:term,
+   kind:"source-vocabulary-navigation"
+  }));
+  if(result.length>=Math.max(1,Math.min(6,limit)))break;
+ }
+ return Object.freeze(result);
+}
 const element=(d,tag,cls,text)=>{
  const e=d.createElement(tag);if(cls)e.className=cls;if(text!==undefined)e.textContent=text;return e;
 };
@@ -283,7 +302,13 @@ function installStyle(d){
  ".aoCatenaMUser{align-self:flex-end;max-width:83%;padding:11px 14px;background:#463725;border:1px solid #997b50;border-radius:14px 14px 3px 14px;font:16px/1.5 var(--ao-font-liturgical,Georgia,serif);color:#fff0d5;overflow-wrap:anywhere}",
  ".aoCatenaMNotice{align-self:center;max-width:95%;padding:10px 13px;border:1px solid #6c563a;border-radius:9px;color:#d0bfa6;text-align:center;font:13px/1.5 var(--ao-font-ui,Georgia,serif)}",
  ".aoCatenaMFooter{background:#101c27;border-top:1px solid #67563d;padding:12px}",
- ".aoCatenaMTopics{display:flex;flex-wrap:wrap;align-items:center;gap:7px;margin:0 0 12px}",
+ ".aoCatenaMTopics{display:grid;gap:7px;margin:0 0 14px}",
+ ".aoCatenaMTopics h5{font:400 20px/1.3 var(--ao-font-liturgical,Georgia,serif);color:#f2d6ac;margin:0}",
+ ".aoCatenaMTopics>p{font:12px/1.45 var(--ao-font-ui,Georgia,serif);color:#b5a38a;margin:0 0 3px}",
+ ".aoCatenaMTopicChoices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}",
+ ".aoScriptureLibrary .aoCatenaMTopicChoices button{min-height:49px;text-align:left;background:#172633;color:#e8ce9f;border:1px solid #68573e;border-radius:8px;padding:9px 12px;font:14px/1.4 var(--ao-font-liturgical,Georgia,serif)}",
+ ".aoCatenaMTopicChoices button:focus-visible{outline:2px solid #dfbc81;outline-offset:2px}",
+ ".aoCatenaMRevisited{outline:2px solid #b6945d;outline-offset:4px;border-radius:8px}",
  ".aoCatenaMTopics>span{font:12px var(--ao-font-ui,Georgia,serif);color:#b5a38a}",
  ".aoScriptureLibrary .aoCatenaMTopics button{min-height:40px;background:#172633;color:#e3c598;border:1px solid #68573e;border-radius:22px;padding:8px 10px;font:500 13px var(--ao-font-ui,Georgia,serif)}",
  ".aoCatenaMActions{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:12px}",
@@ -292,7 +317,7 @@ function installStyle(d){
  ".aoScriptureLibrary .aoCatenaMForm input{flex:1;min-width:0;min-height:47px;background:#08131e;color:#eee3d1}",
  ".aoScriptureLibrary .aoCatenaMForm button{min-height:47px;background:#ba945a;border:0;color:#09121b;font:600 13px var(--ao-font-ui,Georgia,serif)}",
  ".aoCatenaMDisclaimer{margin:11px 0 0!important;font:12px/1.5 var(--ao-font-ui,Georgia,serif);color:#aeb0ad}",
- "@media(max-width:480px){.aoCatenaMHead{padding:13px}.aoCatenaMFeed{padding:12px 7px}.aoCatenaMAvatar{flex-basis:31px;width:31px;height:31px}.aoCatenaMBubble{font-size:16px;padding:10px}}"
+ "@media(max-width:480px){.aoCatenaMHead{padding:13px}.aoCatenaMFeed{padding:12px 7px}.aoCatenaMAvatar{flex-basis:31px;width:31px;height:31px}.aoCatenaMBubble{font-size:16px;padding:10px}.aoCatenaMTopicChoices{grid-template-columns:1fr}}"
  ].join("\n");
  (d.head||d.documentElement).append(s);
 }
@@ -319,7 +344,7 @@ export function mountCatenaMessenger(host,pericopes,{language="en",fetcher=globa
  form.append(input,send);
  foot.append(topics,editorialResearchEnabled?researchPanel:element(d,"span"),acts,form,
   element(d,"p","aoCatenaMDisclaimer",
-   "All displayed commentaries reproduce Oxford/Newman Catena excerpts. The printed author labels are historically inherited, not critically authenticated. Editorial research questions (when enabled) are NOT quotations or approved answers. No AI Father speech."));
+   "All displayed commentaries reproduce Oxford/Newman Catena excerpts, with historically inherited attribution labels. Reader questions locate original source wording; they are not questions or answers by the Fathers. The separate editorial research suggestions (when enabled) remain unapproved. No AI Father speech."));
  shell.append(head,authors,feed,foot);host.append(shell);
  const seen=new Set();let lastFather=null,lastQuestion="",searching=false;
  const wider=action(d,"Search all four Gospels",()=>{if(lastQuestion)void searchElsewhere(lastQuestion)});
@@ -504,11 +529,30 @@ export function mountCatenaMessenger(host,pericopes,{language="en",fetcher=globa
    void searchElsewhere(query);return;
   }
   let fresh=0;for(const r of matched)if(message(r))fresh++;
-  if(!fresh)note("The matching original extracts are already present earlier in the conversation.");
+  if(!fresh){
+   const first=matched.find(r=>seen.has(r.id));
+   const existing=first&&[...feed.querySelectorAll("[data-catena-fragment-id]")].find(
+    node=>node.dataset.catenaFragmentId===first.id);
+   if(existing){
+    existing.classList.add("aoCatenaMRevisited");
+    existing.scrollIntoView?.({behavior:"auto",block:"nearest"});
+    note("The original excerpt is already above and has been highlighted; no new reply was composed.");
+   }else note("The matching original extracts are already present earlier in the conversation.");
+  }
  }
- topics.append(element(d,"span",null,"Find passages on:"));
- for(const subject of suggestCatenaTopics(rows)){
-  topics.append(action(d,subject,()=>ask(subject,"Find source extracts mentioning “"+subject+"”")));
+ const questions=suggestCatenaQuestions(rows);
+ if(questions.length){
+  topics.append(element(d,"h5",null,"Explore this passage"));
+  topics.append(element(d,"p",null,
+   "Select a question to locate original texts, not composed replies."));
+  const choices=element(d,"div","aoCatenaMTopicChoices");
+  for(const item of questions){
+   const b=action(d,item.question,()=>ask(item.lookupTerm,item.question));
+   b.dataset.catenaSourceQuestion=item.topic;
+   b.dataset.catenaSourcePointer=item.sourcePointer;
+   choices.append(b);
+  }
+  topics.append(choices);
  }
  form.addEventListener("submit",event=>{
   event.preventDefault();const query=input.value.trim();input.value="";ask(query);

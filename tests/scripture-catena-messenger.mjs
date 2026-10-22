@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {selectCatenaPericopes} from "../src/scripture/catena-inline.js";
-import {LIVING_CATENA_SCHEMA,indexCatenaMessages,retrieveCatenaMessages,suggestCatenaTopics,mountCatenaMessenger} from "../src/scripture/catena-messenger.js";
+import {LIVING_CATENA_SCHEMA,indexCatenaMessages,retrieveCatenaMessages,suggestCatenaTopics,suggestCatenaQuestions,mountCatenaMessenger} from "../src/scripture/catena-messenger.js";
 assert.equal(LIVING_CATENA_SCHEMA,"ao.catena.messenger.v1");
 const packet=JSON.parse(readFileSync(new URL("../data/scripture/catena/chunks/john-01-04.json",import.meta.url),"utf8"));
 const passage={book:"John",chapter:1,verseStart:1,verseEnd:1};
@@ -34,6 +34,20 @@ assert.ok(topics.includes("Word")&&topics.includes("Beginning"),
   "Topic chips must refer to words actually found in the original texts");
 assert.ok(!suggestCatenaTopics(messages).includes("Baptism"),
   "No arbitrary topical suggestion may appear unless grounded in the selected source");
+const sourceQuestions=suggestCatenaQuestions(messages,{limit:5});
+assert.ok(sourceQuestions.length>=2&&sourceQuestions.length<=5);
+assert.ok(sourceQuestions.some(q=>q.topic==="Word"));
+for(const q of sourceQuestions){
+ assert.equal(q.kind,"source-vocabulary-navigation");
+ const owner=messages.find(x=>x.id===q.sourcePointer);
+ assert.ok(owner,"Every reader question must dereference an actual original source");
+ assert.ok(new RegExp("\\b"+q.topic+"\\b","i").test(owner.text),
+  "Reader questions may use only source-attested topic language");
+ assert.ok(retrieveCatenaMessages(messages,q.lookupTerm).length>0);
+ assert.ok(q.question.includes(q.topic));
+}
+assert.deepEqual(suggestCatenaQuestions([],{}),[],
+ "No questions may be invented when an original-source passage is unavailable");
 const augustine=retrieveCatenaMessages(messages,"What does Augustine say about Word?",{limit:4});
 assert.ok(augustine.length>0&&augustine.every(m=>m.father==="Augustine"),
   "Explicitly asking for Augustine must not return a different Father");
@@ -57,6 +71,10 @@ assert.equal(mountCatenaMessenger({},sections,{language:"fr"}),null,
 const library=readFileSync(new URL("../src/scripture/library.js",import.meta.url),"utf8");
 assert.match(library,/mountCatenaMessenger\(area,nodes,\{language:lang,fetcher:fetchCommentary\}\)/,
  "Canonical Scripture owner must render the real source-backed messenger");
+const messengerSource=readFileSync(new URL("../src/scripture/catena-messenger.js",import.meta.url),"utf8");
+assert.match(messengerSource,/const questions=suggestCatenaQuestions\(rows\)/);
+assert.match(messengerSource,/dataset\.catenaSourceQuestion=item\.topic/);
+assert.match(messengerSource,/editorialResearchEnabled=false/);
 assert.match(library,/loadCatenaForPassage\(location,\{fetcher:fetchCommentary\}\)/,
  "Keep the existing source-pinned, integrity-checked lazy loader");
 console.log("PASS Living Catena messenger source parity, lexical fallback and Scripture overlay integration");
