@@ -1,0 +1,38 @@
+name: Ten approved feast heroes — actual 1962 resolver parity
+on:
+  push:
+    branches: [fix/approved-feast-heroes-main-20261021]
+    paths:
+      - "tests/approved-feast-hero-real-resolver-parity.mjs"
+      - "src/calendar/approved-feast-heroes.js"
+      - ".github/workflows/approved-feast-hero-principal-parity.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "tests/approved-feast-hero-real-resolver-parity.mjs"
+      - "src/calendar/approved-feast-heroes.js"
+      - ".github/workflows/approved-feast-hero-principal-parity.yml"
+permissions:
+  contents: read
+jobs:
+  actual-resolver:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install browser dependencies
+        run: |
+          npm install --no-audit --no-fund
+          npx playwright install --with-deps chromium
+      - name: Compare editorial image dates with real 1962 DayResolver output
+        run: node tests/approved-feast-hero-real-resolver-parity.mjs
+      - name: Persist observed day IDs even if mismatch found
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ten-hero-real-calendar-dayresolver-evidence
+          path: artifacts/sacred-art-verified-principal/
+          if-no-files-found: warn

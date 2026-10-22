@@ -1,0 +1,42 @@
+name: Sacred Art approved feast hero integration
+on:
+  push:
+    branches: [fix/approved-feast-heroes-main-20261021]
+    paths:
+      - "src/calendar/approved-feast-heroes.js"
+      - "src/calendar/calendar-runtime.js"
+      - "src/home/presentation.js"
+      - "src/home/today-v2-styles.js"
+      - "tests/approved-feast-heroes.mjs"
+      - ".github/workflows/sacred-art-approved-feast-heroes.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "src/calendar/approved-feast-heroes.js"
+      - "src/calendar/calendar-runtime.js"
+      - "src/home/presentation.js"
+      - "src/home/today-v2-styles.js"
+      - "tests/approved-feast-heroes.mjs"
+      - ".github/workflows/sacred-art-approved-feast-heroes.yml"
+permissions:
+  contents: read
+jobs:
+  approved-feast-heroes:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Syntax checks
+        run: |
+          node --check src/calendar/approved-feast-heroes.js
+          node --check src/calendar/calendar-runtime.js
+          node --check src/home/presentation.js
+      - name: Exact approved object, day resolver, rights and photo gates
+        run: node tests/approved-feast-heroes.mjs
+      - name: Existing Home composition contract
+        run: node tests/home-presentation.mjs
+      - name: Current Calendar to Home reconciliation
+        run: node tests/calendar-home-living-observances.mjs

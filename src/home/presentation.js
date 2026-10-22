@@ -1,4 +1,5 @@
 import { removeExcludedLegacyHomeArtwork } from "./legacy-art-exclusions.js";
+import { approvedFeastHeroForResolvedDay, resolveApprovedFeastHero, renderApprovedFeastHero } from "../calendar/approved-feast-heroes.js";
 import { canonicalAssetIdForSurface, resolveCanonicalAssetUrl } from "../assets/asset-registry.js";
 import { buildHomeEnrichers, renderHomeEnrichersToString } from "./enrichers.js";
 import { formatDisplayDate } from "../app/date-format.js";
@@ -179,9 +180,25 @@ export function renderHome(root,state,win=globalThis){
   const slot=root.querySelector?.("[data-ao-home-art-slot]");
   if(slot){
     const language=state?.language==="fr"?"fr":"en";
+    const observed=state.resolution?.date===state.selectedDate
+      ? state.resolution?.day?.main?.id : null;
+    // Later explicit Feast-Hero approvals take priority over old proper-art
+    // illustrations, but ONLY for the genuinely observed 1962 principal.
+    const editorialChoice=approvedFeastHeroForResolvedDay(state.selectedDate,observed);
+    const released=editorialChoice
+      ? resolveApprovedFeastHero(
+          state.selectedDate,observed,win?.AO_APPROVED_FEAST_ART_RELEASE_V1,"home"
+        ) : null;
+    if(editorialChoice)slot.dataset.aoApprovedHeroStatus=released?.status||"AWAITING_RELEASED_PHOTOGRAPH";
     let art="";
-    try{art=win?.AO_PHASE1_ART?.homeMarkup?.(state,language)||""}
-    catch(error){win?.console?.warn?.("Approved Today artwork unavailable",error)}
+    if(released?.status==="RELEASED"){
+      art=renderApprovedFeastHero(released);
+    }else if(!editorialChoice){
+      // Keep historical Proper illustrations on other dates. Never let an old
+      // non-selected painting masquerade as the user-approved feast hero.
+      try{art=win?.AO_PHASE1_ART?.homeMarkup?.(state,language)||""}
+      catch(error){win?.console?.warn?.("Legacy Today artwork unavailable",error)}
+    }
     if(art)slot.innerHTML=art;
     // Legacy art is not curatorial approval; remove known rejected painter/ID selections.
     removeExcludedLegacyHomeArtwork(slot);
@@ -190,7 +207,9 @@ export function renderHome(root,state,win=globalThis){
     const hasArt=Boolean(slot.querySelector("img[src],picture source[srcset],video[poster],canvas"));
     const hero=root.querySelector(".aoTodayV2Frontispiece");
     hero?.classList?.toggle("aoTodayV2ArtMissing",!hasArt);
-    if(!hasArt)slot.innerHTML='<div class="aoTodayV2NoArt" aria-label="No reviewed artwork for this celebration"></div>';
+    if(!hasArt)slot.innerHTML=editorialChoice
+      ? '<div class="aoTodayV2NoArt" aria-label="Approved feast painting awaiting verified image release"></div>'
+      : '<div class="aoTodayV2NoArt" aria-label="No reviewed artwork for this celebration"></div>';
   }
   reconcileTodayHero(root);
   return true;

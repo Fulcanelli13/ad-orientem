@@ -1,0 +1,2757 @@
+{
+  "schema": "AO_SACRED_ART_2026_HERO_CONSOLIDATED_ASSIGNMENT_MASTER_V1",
+  "created": "2026-10-21",
+  "status": "SOURCE_RECONCILED_EDITORIAL_COVERAGE_MASTER_NOT_PRODUCTION_ORIGINALS_RELEASE",
+  "authority": "User explicitly approved Oct19 2026 ten date paintings; research-only sources from older branch, with frozen ratings retained, cannot auto-promote images.",
+  "publishedProductionCountVerified": 0,
+  "freeOnlyAndNoContacts": true,
+  "noPaidImages": true,
+  "noEmails": true,
+  "paths": {
+    "approvedSelections": "data/calendar/sacred-art-recovered-date-specific-approvals-20261019.v1.json",
+    "legacySundayFeastResearch": "data/calendar/sacred-art-hero-first-2026-sunday-feast-gap-register.v1.json",
+    "ratings": "data/calendar/sacred-art-rating-reconciliation-20261013.v1.json",
+    "classIAndSpotlights": "data/calendar/sacred-art-home-masterpiece-occasions-2026.v1.json",
+    "currentCandidateAssets": "data/calendar/approved-feast-hero-packaged-candidates-20261021.v1.json",
+    "currentUIProof": "data/calendar/approved-feast-hero-real-home-calendar-preview-proof-20261021.v1.json"
+  },
+  "counts": {
+    "sundays": 52,
+    "sundayWithApprovedDateSelection": 5,
+    "sundayWithResearchLeads": 29,
+    "sundayWithNoResearchLead": 23,
+    "classI": 53,
+    "classIWithApprovedDateSelection": 10,
+    "classIWithoutApprovedDateSelection": 43,
+    "classIWithPriorApprovedArtworkIDsAsPoolLeads": 40,
+    "classIWithExistingArtworkCandidateIds": 53,
+    "optionalSpotlights": 17,
+    "optionalDateSpecificSelections": 0,
+    "datesAcrossThreeRegisters": 102,
+    "actualDateSelectionsAcrossThreeRegisters": 10,
+    "selectedArtworkRatingCandidatesInOlderMaster": 170,
+    "olderEligibleRatedThreeToFive": 135,
+    "olderPreviouslyApprovedDistinctOriginals": 35,
+    "sameApprovedTenImageFilesAcquired": 10,
+    "sameApprovedTenActuallyShipped": 0
+  },
+  "requirements": [
+    "Reconcile old rating/inventory artwork IDs to feast theme and appointed Gospel context; do not automatically infer approval.",
+    "Avoid double counting a date occurring in both Sunday and Class I ledgers.",
+    "Class I observed principal IDs from snapshot; for lower-ranked Sunday and optional feast candidates run 2026 actual DayResolver, not civil-date labels.",
+    "Sundays can reuse one painting across multiple days if contextually accurate; it is not necessary to acquire 52 unique paintings.",
+    "Never auto-publish ambiguous rights files; only zero-fee independently reusable exact painting photographs; no contacts or fees.",
+    "Preserve already approved Oct19 date artists/titles and exact physical originals; never regenerate artwork or ask the user to rerate those paintings."
+  ],
+  "sundays": [
+    {
+      "date": "2026-01-04",
+      "classIObservedPrincipalFromSnapshot": null,
+      "classIObservedTitleFromSnapshot": null,
+      "gospel": null,
+      "gospelObservedInFullResolver": false,
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "NO_RECORDED_LEAD"
+      },
+      "researchLeads": [
+        {
+          "title": "The Circumcision of Christ",
+          "artist": "Guercino",
+          "relation": "EXACT_APPOINTED_GOSPEL_EPISODE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Guercino%20Circoncisione.jpg",
+          "sourceRegistry": "sunday-phase2"
+        }
+      ],
+      "contextualReuseLeads": [],
+      "sourceLeadCount": 1,
+      "dateSelectionNeeded": true,
+      "status": "EXISTING_RESEARCH_LEADS_TO_RECONCILE_WITH_CURATOR_APPROVALS",
+      "productionHeroReleased": false,
+      "rule": "Never represent a theme/possible Gospel-scene research lead as curator-approved; resolve actual 1962 observed day before assignment."
+    },
+    {
+      "date": "2026-01-11",
+      "classIObservedPrincipalFromSnapshot": null,
+      "classIObservedTitleFromSnapshot": null,
+      "gospel": null,
+      "gospelObservedInFullResolver": false,
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "NO_RECORDED_LEAD"
+      },
+      "researchLeads": [],
+      "contextualReuseLeads": [],
+      "sourceLeadCount": 0,
+      "dateSelectionNeeded": true,
+      "status": "NO_EXPLICIT_LEAD_IN_OLD_SUNDAY_RESEARCH",
+      "productionHeroReleased": false,
+      "rule": "Never represent a theme/possible Gospel-scene research lead as curator-approved; resolve actual 1962 observed day before assignment."
+    },
+    {
+      "date": "2026-01-18",
+      "classIObservedPrincipalFromSnapshot": null,
+      "classIObservedTitleFromSnapshot": null,
+      "gospel": null,
+      "gospelObservedInFullResolver": false,
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "NO_RECORDED_LEAD"
+      },
+      "researchLeads": [],
+      "contextualReuseLeads": [],
+      "sourceLeadCount": 0,
+      "dateSelectionNeeded": true,
+      "status": "NO_EXPLICIT_LEAD_IN_OLD_SUNDAY_RESEARCH",
+      "productionHeroReleased": false,
+      "rule": "Never represent a theme/possible Gospel-scene research lead as curator-approved; resolve actual 1962 observed day before assignment."
+    },
+    {
+      "date": "2026-01-25",
+      "classIObservedPrincipalFromSnapshot": null,
+      "classIObservedTitleFromSnapshot": null,
+      "gospel": null,
+      "gospelObservedInFullResolver": false,
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "NO_RECORDED_LEAD"
+      },
+      "researchLeads": [
+        {
+          "title": "Christ and the Centurion",
+          "artist": "Paolo Veronese",
+          "relation": "DEPICTS_APPOINTED_GOSPEL_SCENE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Christ%20and%20the%20Centurion%20.jpg",
+          "sourceRegistry": "sunday-phase1"
+        }
+      ],
+      "contextualReuseLeads": [],
+      "sourceLeadCount": 1,
+      "dateSelectionNeeded": true,
+      "status": "EXISTING_RESEARCH_LEADS_TO_RECONCILE_WITH_CURATOR_APPROVALS",
+      "productionHeroReleased": false,
+      "rule": "Never represent a theme/possible Gospel-scene research lead as curator-approved; resolve actual 1962 observed day before assignment."
+    },
+    {
+      "date": "2026-02-01",
+      "classIObservedPrincipalFromSnapshot": null,
+      "classIObservedTitleFromSnapshot": null,
+      "gospel": null,
+      "gospelObservedInFullResolver": false,
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "NO_RECORDED_LEAD"
+      },
+      "researchLeads": [
+        {
+          "title": "Parable of the Laborers in the Vineyard",
+          "artist": "Rembrandt van Rijn",
+          "relation": "DEPICTS_APPOINTED_GOSPEL_SCENE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Rembrandt%20-%20Parable%20of%20the%20Laborers%20in%20the%20Vineyard.jpg",
+          "sourceRegistry": "sunday-phase1"
+        },
+        {
+          "title": "Parable of the Workers in the Vineyard",
+          "artist": "Salomon Koninck",
+          "relation": "DEPICTS_APPOINTED_GOSPEL_SCENE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Salomon%20Koninck%20-%20Parable%20of%20the%20Workers%20in%20the%20Vineyard%20-%20WGA12249.jpg",
+          "sourceRegistry": "sunday-phase1"
+        }
+      ],
+      "contextualReuseLeads": [],
+      "sourceLeadCount": 2,
+      "dateSelectionNeeded": true,
+      "status": "EXISTING_RESEARCH_LEADS_TO_RECONCILE_WITH_CURATOR_APPROVALS",
+      "productionHeroReleased": false,
+      "rule": "Never represent a theme/possible Gospel-scene research lead as curator-approved; resolve actual 1962 observed day before assignment."
+    },
+    {
+      "date": "2026-02-08",
+      "classIObservedPrincipalFromSnapshot": null,
+      "classIObservedTitleFromSnapshot": null,
+      "gospel": null,
+      "gospelObservedInFullResolver": false,
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "NO_RECORDED_LEAD"
+      },
+      "researchLeads": [
+        {
+          "title": "Landscape with the Parable of the Sower",
+          "artist": "Pieter Bruegel the Elder",
+          "relation": "DEPICTS_APPOINTED_GOSPEL_SCENE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pieter%20Bruegel%20the%20Elder%20-%20Landscape%20with%20the%20Parable%20of%20the%20Sower%20-%20WGA03340.jpg",
+          "sourceRegistry": "sunday-phase1"
+        }
+      ],
+      "contextualReuseLeads": [],
+      "sourceLeadCount": 1,
+      "dateSelectionNeeded": true,
+      "status": "EXISTING_RESEARCH_LEADS_TO_RECONCILE_WITH_CURATOR_APPROVALS",
+      "productionHeroReleased": false,
+      "rule": "Never represent a theme/possible Gospel-scene research lead as curator-approved; resolve actual 1962 observed day before assignment."
+    },
+    {
+      "date": "2026-02-15",
+      "classIObservedPrincipalFromSnapshot": null,
+      "classIObservedTitleFromSnapshot": null,
+      "gospel": null,
+      "gospelObservedInFullResolver": false,
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "NO_RECORDED_LEAD"
+      },
+      "researchLeads": [
+        {
+          "title": "Healing of the Blind Man of Jericho (Triptych)",
+          "artist": "Lucas van Leyden",
+          "relation": "DEPICTS_APPOINTED_GOSPEL_EPISODE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Leyden%2C_Lucas_van_%E2%80%94_Healing_of_Blind_Man_of_Jericho_(triptych)_%E2%80%94_Hermitage_Museum%2C_%D0%93%D0%AD-407.jpg",
+          "sourceRegistry": "sunday-phase3"
+        }
+      ],
+      "contextualReuseLeads": [],
+      "sourceLeadCount": 1,
+      "dateSelectionNeeded": true,
+      "status": "EXISTING_RESEARCH_LEADS_TO_RECONCILE_WITH_CURATOR_APPROVALS",
+      "productionHeroReleased": false,
+      "rule": "Never represent a theme/possible Gospel-scene research lead as curator-approved; resolve actual 1962 observed day before assignment."
+    },
+    {
+      "date": "2026-02-22",
+      "classIObservedPrincipalFromSnapshot": "tempora:Quad1-0:1:v",
+      "classIObservedTitleFromSnapshot": "I Sunday of Lent",
+      "gospel": null,
+      "gospelObservedInFullResolver": true,
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "NO_RECORDED_LEAD"
+      },
+      "researchLeads": [
+        {
+          "title": "The Temptation of Christ",
+          "artist": "Juan de Flandes",
+          "relation": "EXACT_APPOINTED_GOSPEL_EPISODE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Juan%20de%20Flandes%2C%20The%20Temptation%20of%20Christ%2C%20c.%201500-1504%2C%20NGA%2050726.jpg",
+          "sourceRegistry": "sunday-phase2"
+        }
+      ],
+      "contextualReuseLeads": [],
+      "sourceLeadCount": 1,
+      "dateSelectionNeeded": true,
+      "status": "EXISTING_RESEARCH_LEADS_TO_RECONCILE_WITH_CURATOR_APPROVALS",
+      "productionHeroReleased": false,
+      "rule": "Never represent a theme/possible Gospel-scene research lead as curator-approved; resolve actual 1962 observed day before assignment."
+    },
+    {
+      "date": "2026-03-01",
+      "classIObservedPrincipalFromSnapshot": "tempora:Quad2-0:1:v",
+      "classIObservedTitleFromSnapshot": "II Sunday of Lent",
+      "gospel": null,
+      "gospelObservedInFullResolver": true,
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "NO_RECORDED_LEAD"
+      },
+      "researchLeads": [
+        {
+          "title": "Transfiguration",
+          "artist": "Raphael",
+          "relation": "DEPICTS_APPOINTED_GOSPEL_SCENE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Transfiguration%20Raphael.jpg",
+          "sourceRegistry": "sunday-phase1"
+        }
+      ],
+      "contextualReuseLeads": [],
+      "sourceLeadCount": 1,
+      "dateSelectionNeeded": true,
+      "status": "EXISTING_RESEARCH_LEADS_TO_RECONCILE_WITH_CURATOR_APPROVALS",
+      "productionHeroReleased": false,
+      "rule": "Never represent a theme/possible Gospel-scene research lead as curator-approved; resolve actual 1962 observed day before assignment."
+    },
+    {
+      "date": "2026-03-08",
+      "classIObservedPrincipalFromSnapshot": "tempora:Quad3-0:1:v",
+      "classIObservedTitleFromSnapshot": "III Sunday of Lent",
+      "gospel": null,
+      "gospelObservedInFullResolver": true,
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "NO_RECORDED_LEAD"
+      },
+      "researchLeads": [
+        {
+          "title": "Jesus Heals a Mute Possessed Man",
+          "artist": "James Tissot",
+          "relation": "DEPICTS_APPOINTED_GOSPEL_SCENE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Brooklyn%20Museum%20-%20Jesus%20Heals%20a%20Mute%20Possessed%20Man%20(J%C3%A9sus%20gu%C3%A9rit%20un%20poss%C3%A9d%C3%A9%20muet)%20-%20James%20Tissot.jpg",
+          "sourceRegistry": "sunday-phase1"
+        }
+      ],
+      "contextualReuseLeads": [],
+      "sourceLeadCount": 1,
+      "dateSelectionNeeded": true,
+      "status": "EXISTING_RESEARCH_LEADS_TO_RECONCILE_WITH_CURATOR_APPROVALS",
+      "productionHeroReleased": false,
+      "rule": "Never represent a theme/possible Gospel-scene research lead as curator-approved; resolve actual 1962 observed day before assignment."
+    },
+    {
+      "date": "2026-03-15",
+      "classIObservedPrincipalFromSnapshot": "tempora:Quad4-0:1:pv",
+      "classIObservedTitleFromSnapshot": "IV Sunday of Lent",
+      "gospel": null,
+      "gospelObservedInFullResolver": true,
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "NO_RECORDED_LEAD"
+      },
+      "researchLeads": [],
+      "contextualReuseLeads": [],
+      "sourceLeadCount": 0,
+      "dateSelectionNeeded": true,
+      "status": "NO_EXPLICIT_LEAD_IN_OLD_SUNDAY_RESEARCH",
+      "productionHeroReleased": false,
+      "rule": "Never represent a theme/possible Gospel-scene research lead as curator-approved; resolve actual 1962 observed day before assignment."
+    },
+    {
+      "date": "2026-03-22",
+      "classIObservedPrincipalFromSnapshot": "tempora:Quad5-0:1:v",
+      "classIObservedTitleFromSnapshot": "Passion Sunday",
+      "gospel": null,
+      "gospelObservedInFullResolver": true,
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "NO_RECORDED_LEAD"
+      },
+      "researchLeads": [],
+      "contextualReuseLeads": [],
+      "sourceLeadCount": 0,
+      "dateSelectionNeeded": true,
+      "status": "NO_EXPLICIT_LEAD_IN_OLD_SUNDAY_RESEARCH",
+      "productionHeroReleased": false,
+      "rule": "Never represent a theme/possible Gospel-scene research lead as curator-approved; resolve actual 1962 observed day before assignment."
+    },
+    {
+      "date": "2026-03-29",
+      "classIObservedPrincipalFromSnapshot": "tempora:Quad6-0r:1:rv",
+      "classIObservedTitleFromSnapshot": "Palm Sunday",
+      "gospel": null,
+      "gospelObservedInFullResolver": true,
+      "approvedDateHero": {
+        "state": "CURATOR_APPROVED_EXACT_DATE",
+        "artist": "Anthony van Dyck",
+        "title": "The Entry of Christ into Jerusalem",
+        "artworkId": null,
+        "rating": null,
+        "source": "2026-10-19 explicit user approved artwork"
+      },
+      "researchLeads": [
+        {
+          "title": "Entry of Christ into Jerusalem",
+          "artist": "Domenico Cresti (il Passignano)",
+          "relation": "PALM_SUNDAY_PROCESSION_EVENT_NOT_APPOINTED_MASS_GOSPEL",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Domenico%20Cresti%20-%20il%20Passignano.%20Ingresso%20di%20Cristo%20in%20Gerusalemme.jpg",
+          "sourceRegistry": "sunday-phase3"
+        },
+        {
+          "title": "Christ's Entry into Jerusalem",
+          "artist": "Adriaen van Nieulandt the Younger",
+          "relation": "PALM_SUNDAY_PROCESSION_EVENT_NOT_APPOINTED_MASS_GOSPEL",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Adriaen%20van%20Nieulandt%20-%20Christ's%20Entry%20into%20Jerusalem%20-%20KMSsp256%20-%20Statens%20Museum%20for%20Kunst.jpg",
+          "sourceRegistry": "sunday-phase3"
+        }
+      ],
+      "contextualReuseLeads": [],
+      "sourceLeadCount": 2,
+      "dateSelectionNeeded": false,
+      "status": "APPROVED_DATE_SELECTION_PENDING_PHOTO_RELEASE",
+      "productionHeroReleased": false,
+      "rule": "Never represent a theme/possible Gospel-scene research lead as curator-approved; resolve actual 1962 observed day before assignment."
+    },
+    {
+      "date": "2026-04-05",
+      "classIObservedPrincipalFromSnapshot": "tempora:Pasc0-0:1:w",
+      "classIObservedTitleFromSnapshot": "Easter Sunday",
+      "gospel": null,
+      "gospelObservedInFullResolver": true,
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "NO_RECORDED_LEAD"
+      },
+      "researchLeads": [
+        {
+          "title": "The Three Marys at the Tomb",
+          "artist": "Jan and/or Hubert van Eyck",
+          "relation": "EXACT_APPOINTED_GOSPEL_EPISODE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hubert%20van%20Eyck%20-%20The%20Three%20Marys%20at%20the%20Tomb%20-%20WGA7586.jpg",
+          "sourceRegistry": "sunday-phase2"
+        }
+      ],
+      "contextualReuseLeads": [],
+      "sourceLeadCount": 1,
+      "dateSelectionNeeded": true,
+      "status": "EXISTING_RESEARCH_LEADS_TO_RECONCILE_WITH_CURATOR_APPROVALS",
+      "productionHeroReleased": false,
+      "rule": "Never represent a theme/possible Gospel-scene research lead as curator-approved; resolve actual 1962 observed day before assignment."
+    },
+    {
+      "date": "2026-04-12",
+      "classIObservedPrincipalFromSnapshot": "tempora:Pasc1-0:1:w",
+      "classIObservedTitleFromSnapshot": "Low Sunday",
+      "gospel": null,
+      "gospelObservedInFullResolver": true,
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "NO_RECORDED_LEAD"
+      },
+      "researchLeads": [
+        {
+          "title": "The Incredulity of Saint Thomas",
+          "artist": "Caravaggio",
+          "relation": "DEPICTS_APPOINTED_GOSPEL_SCENE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Caravaggio%20-%20The%20Incredulity%20of%20Saint%20Thomas.jpg",
+          "sourceRegistry": "sunday-phase1"
+        }
+      ],
+      "contextualReuseLeads": [],
+      "sourceLeadCount": 1,
+      "dateSelectionNeeded": true,
+      "status": "EXISTING_RESEARCH_LEADS_TO_RECONCILE_WITH_CURATOR_APPROVALS",
+      "productionHeroReleased": false,
+      "rule": "Never represent a theme/possible Gospel-scene research lead as curator-approved; resolve actual 1962 observed day before assignment."
+    },
+    {
+      "date": "2026-04-19",
+      "classIObservedPrincipalFromSnapshot": null,
+      "classIObservedTitleFromSnapshot": null,
+      "gospel": null,
+      "gospelObservedInFullResolver": false,
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "NO_RECORDED_LEAD"
+      },
+      "researchLeads": [],
+      "contextualReuseLeads": [],
+      "sourceLeadCount": 0,
+      "dateSelectionNeeded": true,
+      "status": "NO_EXPLICIT_LEAD_IN_OLD_SUNDAY_RESEARCH",
+      "productionHeroReleased": false,
+      "rule": "Never represent a theme/possible Gospel-scene research lead as curator-approved; resolve actual 1962 observed day before assignment."
+    },
+    {
+      "date": "2026-04-26",
+      "classIObservedPrincipalFromSnapshot": null,
+      "classIObservedTitleFromSnapshot": null,
+      "gospel": null,
+      "gospelObservedInFullResolver": false,
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "NO_RECORDED_LEAD"
+      },
+      "researchLeads": [],
+      "contextualReuseLeads": [
+        {
+          "artworkId": "nga-12130",
+          "relation": "FAREWELL_DISCOURSE_SETTING_CONTEXT_NOT_LITERAL_WORDS",
+          "title": "The Last Supper"
+        }
+      ],
+      "sourceLeadCount": 0,
+      "dateSelectionNeeded": true,
+      "status": "NO_EXPLICIT_LEAD_IN_OLD_SUNDAY_RESEARCH",
+      "productionHeroReleased": false,
+      "rule": "Never represent a theme/possible Gospel-scene research lead as curator-approved; resolve actual 1962 observed day before assignment."
+    },
+    {
+      "date": "2026-05-03",
+      "classIObservedPrincipalFromSnapshot": null,
+      "classIObservedTitleFromSnapshot": null,
+      "gospel": null,
+      "gospelObservedInFullResolver": false,
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "NO_RECORDED_LEAD"
+      },
+      "researchLeads": [],
+      "contextualReuseLeads": [
+        {
+          "artworkId": "nga-12130",
+          "relation": "FAREWELL_DISCOURSE_SETTING_CONTEXT_NOT_LITERAL_WORDS",
+          "title": "The Last Supper"
+        }
+      ],
+      "sourceLeadCount": 0,
+      "dateSelectionNeeded": true,
+      "status": "NO_EXPLICIT_LEAD_IN_OLD_SUNDAY_RESEARCH",
+      "productionHeroReleased": false,
+      "rule": "Never represent a theme/possible Gospel-scene research lead as curator-approved; resolve actual 1962 observed day before assignment."
+    },
+    {
+      "date": "2026-05-10",
+      "classIObservedPrincipalFromSnapshot": null,
+      "classIObservedTitleFromSnapshot": null,
+      "gospel": null,
+      "gospelObservedInFullResolver": false,
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "NO_RECORDED_LEAD"
+      },
+      "researchLeads": [],
+      "contextualReuseLeads": [
+        {
+          "artworkId": "nga-12130",
+          "relation": "FAREWELL_DISCOURSE_SETTING_CONTEXT_NOT_LITERAL_WORDS",
+          "title": "The Last Supper"
+        }
+      ],
+      "sourceLeadCount": 0,
+      "dateSelectionNeeded": true,
+      "status": "NO_EXPLICIT_LEAD_IN_OLD_SUNDAY_RESEARCH",
+      "productionHeroReleased": false,
+      "rule": "Never represent a theme/possible Gospel-scene research lead as curator-approved; resolve actual 1962 observed day before assignment."
+    },
+    {
+      "date": "2026-05-17",
+      "classIObservedPrincipalFromSnapshot": null,
+      "classIObservedTitleFromSnapshot": null,
+      "gospel": null,
+      "gospelObservedInFullResolver": false,
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "NO_RECORDED_LEAD"
+      },
+      "researchLeads": [],
+      "contextualReuseLeads": [
+        {
+          "artworkId": "nga-12130",
+          "relation": "FAREWELL_DISCOURSE_SETTING_CONTEXT_NOT_LITERAL_WORDS",
+          "title": "The Last Supper"
+        }
+      ],
+      "sourceLeadCount": 0,
+      "dateSelectionNeeded": true,
+      "status": "NO_EXPLICIT_LEAD_IN_OLD_SUNDAY_RESEARCH",
+      "productionHeroReleased": false,
+      "rule": "Never represent a theme/possible Gospel-scene research lead as curator-approved; resolve actual 1962 observed day before assignment."
+    },
+    {
+      "date": "2026-05-24",
+      "classIObservedPrincipalFromSnapshot": "tempora:Pasc7-0:1:r",
+      "classIObservedTitleFromSnapshot": "Pentecost Sunday",
+      "gospel": null,
+      "gospelObservedInFullResolver": true,
+      "approvedDateHero": {
+        "state": "CURATOR_APPROVED_EXACT_DATE",
+        "artist": "Jean II Restout",
+        "title": "Pentecost",
+        "artworkId": "ART-ean-estout-entecost",
+        "rating": 5,
+        "source": "2026-10-19 explicit user approved artwork"
+      },
+      "researchLeads": [],
+      "contextualReuseLeads": [],
+      "sourceLeadCount": 0,
+      "dateSelectionNeeded": false,
+      "status": "APPROVED_DATE_SELECTION_PENDING_PHOTO_RELEASE",
+      "productionHeroReleased": false,
+      "rule": "Never represent a theme/possible Gospel-scene research lead as curator-approved; resolve actual 1962 observed day before assignment."
+    },
+    {
+      "date": "2026-05-31",
+      "classIObservedPrincipalFromSnapshot": "tempora:Pent01-0r:1:w",
+      "classIObservedTitleFromSnapshot": "Trinity Sunday",
+      "gospel": null,
+      "gospelObservedInFullResolver": true,
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "NO_RECORDED_LEAD"
+      },
+      "researchLeads": [],
+      "contextualReuseLeads": [],
+      "sourceLeadCount": 0,
+      "dateSelectionNeeded": true,
+      "status": "NO_EXPLICIT_LEAD_IN_OLD_SUNDAY_RESEARCH",
+      "productionHeroReleased": false,
+      "rule": "Never represent a theme/possible Gospel-scene research lead as curator-approved; resolve actual 1962 observed day before assignment."
+    },
+    {
+      "date": "2026-06-07",
+      "classIObservedPrincipalFromSnapshot": null,
+      "classIObservedTitleFromSnapshot": null,
+      "gospel": null,
+      "gospelObservedInFullResolver": false,
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "NO_RECORDED_LEAD"
+      },
+      "researchLeads": [
+        {
+          "title": "The Parable of the Great Supper",
+          "artist": "Cornelis Droochsloot",
+          "relation": "DEPICTS_APPOINTED_GOSPEL_SCENE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cornelis%20Droochsloot%20(1630-1673)%20-%20The%20Parable%20of%20the%20Great%20Supper%20-%20B.M.605%20-%20Bowes%20Museum.jpg",
+          "sourceRegistry": "sunday-phase1"
+        }
+      ],
+      "contextualReuseLeads": [],
+      "sourceLeadCount": 1,
+      "dateSelectionNeeded": true,
+      "status": "EXISTING_RESEARCH_LEADS_TO_RECONCILE_WITH_CURATOR_APPROVALS",
+      "productionHeroReleased": false,
+      "rule": "Never represent a theme/possible Gospel-scene research lead as curator-approved; resolve actual 1962 observed day before assignment."
+    },
+    {
+      "date": "2026-06-14",
+      "classIObservedPrincipalFromSnapshot": null,
+      "classIObservedTitleFromSnapshot": null,
+      "gospel": null,
+      "gospelObservedInFullResolver": false,
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "NO_RECORDED_LEAD"
+      },
+      "researchLeads": [
+        {
+          "title": "Christ tells the Pharisees the Parable of the Lost Sheep",
+          "artist": "Workshop of Leopold Layer",
+          "relation": "DEPICTS_APPOINTED_GOSPEL_SCENE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kristus%20pove%20farizejem%20in%20pismoukom%20priliko%20o%20izgubljeni%20ovci%20(panjska%20kon%C4%8Dnica).jpg",
+          "sourceRegistry": "sunday-phase1"
+        }
+      ],
+      "contextualReuseLeads": [],
+      "sourceLeadCount": 1,
+      "dateSelectionNeeded": true,
+      "status": "EXISTING_RESEARCH_LEADS_TO_RECONCILE_WITH_CURATOR_APPROVALS",
+      "productionHeroReleased": false,
+      "rule": "Never represent a theme/possible Gospel-scene research lead as curator-approved; resolve actual 1962 observed day before assignment."
+    },
+    {
+      "date": "2026-06-21",
+      "classIObservedPrincipalFromSnapshot": null,
+      "classIObservedTitleFromSnapshot": null,
+      "gospel": null,
+      "gospelObservedInFullResolver": false,
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "NO_RECORDED_LEAD"
+      },
+      "researchLeads": [],
+      "contextualReuseLeads": [],
+      "sourceLeadCount": 0,
+      "dateSelectionNeeded": true,
+      "status": "NO_EXPLICIT_LEAD_IN_OLD_SUNDAY_RESEARCH",
+      "productionHeroReleased": false,
+      "rule": "Never represent a theme/possible Gospel-scene research lead as curator-approved; resolve actual 1962 observed day before assignment."
+    },
+    {
+      "date": "2026-06-28",
+      "classIObservedPrincipalFromSnapshot": null,
+      "classIObservedTitleFromSnapshot": null,
+      "gospel": null,
+      "gospelObservedInFullResolver": false,
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "NO_RECORDED_LEAD"
+      },
+      "researchLeads": [],
+      "contextualReuseLeads": [
+        {
+          "relation": "SERMON_MOUNT_BROAD_CONTEXT_NOT_EXACT_SPOKEN_VERSE"
+        }
+      ],
+      "sourceLeadCount": 0,
+      "dateSelectionNeeded": true,
+      "status": "NO_EXPLICIT_LEAD_IN_OLD_SUNDAY_RESEARCH",
+      "productionHeroReleased": false,
+      "rule": "Never represent a theme/possible Gospel-scene research lead as curator-approved; resolve actual 1962 observed day before assignment."
+    },
+    {
+      "date": "2026-07-05",
+      "classIObservedPrincipalFromSnapshot": null,
+      "classIObservedTitleFromSnapshot": null,
+      "gospel": null,
+      "gospelObservedInFullResolver": false,
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "NO_RECORDED_LEAD"
+      },
+      "researchLeads": [
+        {
+          "title": "The Miracle of the Loaves and Fishes",
+          "artist": "Giovanni Lanfranco",
+          "relation": "TENTATIVE_FOUR_THOUSAND_LINK_NOT_MUSEUM_EXACT",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Giovanni_Lanfranco_-_Miracle_of_the_Bread_and_Fish_-_WGA12454.jpg",
+          "sourceRegistry": "sunday-phase3"
+        }
+      ],
+      "contextualReuseLeads": [],
+      "sourceLeadCount": 1,
+      "dateSelectionNeeded": true,
+      "status": "EXISTING_RESEARCH_LEADS_TO_RECONCILE_WITH_CURATOR_APPROVALS",
+      "productionHeroReleased": false,
+      "rule": "Never represent a theme/possible Gospel-scene research lead as curator-approved; resolve actual 1962 observed day before assignment."
+    },
+    {
+      "date": "2026-07-12",
+      "classIObservedPrincipalFromSnapshot": null,
+      "classIObservedTitleFromSnapshot": null,
+      "gospel": null,
+      "gospelObservedInFullResolver": false,
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "NO_RECORDED_LEAD"
+      },
+      "researchLeads": [],
+      "contextualReuseLeads": [
+        {
+          "relation": "SERMON_MOUNT_BROAD_CONTEXT_NOT_EXACT_SPOKEN_VERSE"
+        }
+      ],
+      "sourceLeadCount": 0,
+      "dateSelectionNeeded": true,
+      "status": "NO_EXPLICIT_LEAD_IN_OLD_SUNDAY_RESEARCH",
+      "productionHeroReleased": false,
+      "rule": "Never represent a theme/possible Gospel-scene research lead as curator-approved; resolve actual 1962 observed day before assignment."
+    },
+    {
+      "date": "2026-07-19",
+      "classIObservedPrincipalFromSnapshot": null,
+      "classIObservedTitleFromSnapshot": null,
+      "gospel": null,
+      "gospelObservedInFullResolver": false,
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "NO_RECORDED_LEAD"
+      },
+      "researchLeads": [
+        {
+          "title": "The Parable of the Unjust Steward",
+          "artist": "Andrea Schiavone (Andrea Meldolla)",
+          "relation": "EXACT_APPOINTED_GOSPEL_EPISODE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Andrea%20Meldolla%20(1510%20-%201563)%20-%20The%20parable%20of%20the%20unjust%20steward%20-%20170A%20-%20Gem%C3%A4ldegalerie.jpg",
+          "sourceRegistry": "sunday-phase2"
+        }
+      ],
+      "contextualReuseLeads": [],
+      "sourceLeadCount": 1,
+      "dateSelectionNeeded": true,
+      "status": "EXISTING_RESEARCH_LEADS_TO_RECONCILE_WITH_CURATOR_APPROVALS",
+      "productionHeroReleased": false,
+      "rule": "Never represent a theme/possible Gospel-scene research lead as curator-approved; resolve actual 1962 observed day before assignment."
+    },
+    {
+      "date": "2026-07-26",
+      "classIObservedPrincipalFromSnapshot": null,
+      "classIObservedTitleFromSnapshot": null,
+      "gospel": null,
+      "gospelObservedInFullResolver": false,
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "NO_RECORDED_LEAD"
+      },
+      "researchLeads": [
+        {
+          "title": "Christ Cleansing the Temple",
+          "artist": "Luca Giordano",
+          "relation": "DEPICTS_APPOINTED_GOSPEL_SCENE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Luca%20Giordano%20-%20Christ%20Cleansing%20the%20Temple%20-%20WGA09000.jpg",
+          "sourceRegistry": "sunday-phase1"
+        }
+      ],
+      "contextualReuseLeads": [],
+      "sourceLeadCount": 1,
+      "dateSelectionNeeded": true,
+      "status": "EXISTING_RESEARCH_LEADS_TO_RECONCILE_WITH_CURATOR_APPROVALS",
+      "productionHeroReleased": false,
+      "rule": "Never represent a theme/possible Gospel-scene research lead as curator-approved; resolve actual 1962 observed day before assignment."
+    },
+    {
+      "date": "2026-08-02",
+      "classIObservedPrincipalFromSnapshot": null,
+      "classIObservedTitleFromSnapshot": null,
+      "gospel": null,
+      "gospelObservedInFullResolver": false,
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "NO_RECORDED_LEAD"
+      },
+      "researchLeads": [
+        {
+          "title": "Church Interior with the Parable of the Pharisee and the Publican",
+          "artist": "Dirck van Delen",
+          "relation": "DEPICTS_APPOINTED_GOSPEL_SCENE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Church%20Interior%20with%20the%20Parable%20of%20the%20Pharisee%20and%20the%20Publican.jpg",
+          "sourceRegistry": "sunday-phase1"
+        }
+      ],
+      "contextualReuseLeads": [],
+      "sourceLeadCount": 1,
+      "dateSelectionNeeded": true,
+      "status": "EXISTING_RESEARCH_LEADS_TO_RECONCILE_WITH_CURATOR_APPROVALS",
+      "productionHeroReleased": false,
+      "rule": "Never represent a theme/possible Gospel-scene research lead as curator-approved; resolve actual 1962 observed day before assignment."
+    },
+    {
+      "date": "2026-08-09",
+      "classIObservedPrincipalFromSnapshot": null,
+      "classIObservedTitleFromSnapshot": null,
+      "gospel": null,
+      "gospelObservedInFullResolver": false,
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "NO_RECORDED_LEAD"
+      },
+      "researchLeads": [
+        {
+          "title": "Christ Healing the Deaf-Mute",
+          "artist": "Philippe de Champaigne",
+          "relation": "DEPICTS_APPOINTED_GOSPEL_SCENE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Philippe%20de%20Champaigne%20-%20Christ%20Healing%20the%20Deaf-Mute%20-%20Google%20Art%20Project.jpg",
+          "sourceRegistry": "sunday-phase1"
+        }
+      ],
+      "contextualReuseLeads": [],
+      "sourceLeadCount": 1,
+      "dateSelectionNeeded": true,
+      "status": "EXISTING_RESEARCH_LEADS_TO_RECONCILE_WITH_CURATOR_APPROVALS",
+      "productionHeroReleased": false,
+      "rule": "Never represent a theme/possible Gospel-scene research lead as curator-approved; resolve actual 1962 observed day before assignment."
+    },
+    {
+      "date": "2026-08-16",
+      "classIObservedPrincipalFromSnapshot": null,
+      "classIObservedTitleFromSnapshot": null,
+      "gospel": null,
+      "gospelObservedInFullResolver": false,
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "NO_RECORDED_LEAD"
+      },
+      "researchLeads": [],
+      "contextualReuseLeads": [],
+      "sourceLeadCount": 0,
+      "dateSelectionNeeded": true,
+      "status": "NO_EXPLICIT_LEAD_IN_OLD_SUNDAY_RESEARCH",
+      "productionHeroReleased": false,
+      "rule": "Never represent a theme/possible Gospel-scene research lead as curator-approved; resolve actual 1962 observed day before assignment."
+    },
+    {
+      "date": "2026-08-23",
+      "classIObservedPrincipalFromSnapshot": null,
+      "classIObservedTitleFromSnapshot": null,
+      "gospel": null,
+      "gospelObservedInFullResolver": false,
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "NO_RECORDED_LEAD"
+      },
+      "researchLeads": [
+        {
+          "title": "The Healing of Ten Lepers",
+          "artist": "James Tissot",
+          "relation": "DEPICTS_APPOINTED_GOSPEL_SCENE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Brooklyn%20Museum%20-%20The%20Healing%20of%20Ten%20Lepers%20(Gu%C3%A9rison%20de%20dix%20l%C3%A9preux)%20-%20James%20Tissot%20-%20overall.jpg",
+          "sourceRegistry": "sunday-phase1"
+        }
+      ],
+      "contextualReuseLeads": [],
+      "sourceLeadCount": 1,
+      "dateSelectionNeeded": true,
+      "status": "EXISTING_RESEARCH_LEADS_TO_RECONCILE_WITH_CURATOR_APPROVALS",
+      "productionHeroReleased": false,
+      "rule": "Never represent a theme/possible Gospel-scene research lead as curator-approved; resolve actual 1962 observed day before assignment."
+    },
+    {
+      "date": "2026-08-30",
+      "classIObservedPrincipalFromSnapshot": null,
+      "classIObservedTitleFromSnapshot": null,
+      "gospel": null,
+      "gospelObservedInFullResolver": false,
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "NO_RECORDED_LEAD"
+      },
+      "researchLeads": [],
+      "contextualReuseLeads": [
+        {
+          "relation": "SERMON_MOUNT_BROAD_CONTEXT_NOT_EXACT_SPOKEN_VERSE"
+        }
+      ],
+      "sourceLeadCount": 0,
+      "dateSelectionNeeded": true,
+      "status": "NO_EXPLICIT_LEAD_IN_OLD_SUNDAY_RESEARCH",
+      "productionHeroReleased": false,
+      "rule": "Never represent a theme/possible Gospel-scene research lead as curator-approved; resolve actual 1962 observed day before assignment."
+    },
+    {
+      "date": "2026-09-06",
+      "classIObservedPrincipalFromSnapshot": null,
+      "classIObservedTitleFromSnapshot": null,
+      "gospel": null,
+      "gospelObservedInFullResolver": false,
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "NO_RECORDED_LEAD"
+      },
+      "researchLeads": [
+        {
+          "title": "Raising of the Son of the Widow of Nain",
+          "artist": "Wilhelm Kotarbiński",
+          "relation": "DEPICTS_APPOINTED_GOSPEL_SCENE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Wilhelm%20Kotarbi%C5%84ski%20-%20Raising%20of%20the%20son%20of%20the%20widow%20of%20Nain%20-%20MP%201073%20-%20National%20Museum%20in%20Warsaw.jpg",
+          "sourceRegistry": "sunday-phase1"
+        },
+        {
+          "title": "Raising of the Son of the Widow of Nain",
+          "artist": "Martino Altomonte",
+          "relation": "DEPICTS_APPOINTED_GOSPEL_SCENE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Martino%20Altomonte%20-%20Raising%20of%20the%20Son%20of%20the%20Widow%20of%20Nain.jpg",
+          "sourceRegistry": "sunday-phase1"
+        }
+      ],
+      "contextualReuseLeads": [],
+      "sourceLeadCount": 2,
+      "dateSelectionNeeded": true,
+      "status": "EXISTING_RESEARCH_LEADS_TO_RECONCILE_WITH_CURATOR_APPROVALS",
+      "productionHeroReleased": false,
+      "rule": "Never represent a theme/possible Gospel-scene research lead as curator-approved; resolve actual 1962 observed day before assignment."
+    },
+    {
+      "date": "2026-09-13",
+      "classIObservedPrincipalFromSnapshot": null,
+      "classIObservedTitleFromSnapshot": null,
+      "gospel": null,
+      "gospelObservedInFullResolver": false,
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "NO_RECORDED_LEAD"
+      },
+      "researchLeads": [
+        {
+          "title": "Christ Healing the Man with Dropsy",
+          "artist": "Anonymous monastic painters",
+          "relation": "DEPICTS_APPOINTED_GOSPEL_EPISODE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Reichenau_St.Georg_-_Fresko_2a_Heilung_Wassers%C3%BCchtiger.jpg",
+          "sourceRegistry": "sunday-phase3"
+        }
+      ],
+      "contextualReuseLeads": [],
+      "sourceLeadCount": 1,
+      "dateSelectionNeeded": true,
+      "status": "EXISTING_RESEARCH_LEADS_TO_RECONCILE_WITH_CURATOR_APPROVALS",
+      "productionHeroReleased": false,
+      "rule": "Never represent a theme/possible Gospel-scene research lead as curator-approved; resolve actual 1962 observed day before assignment."
+    },
+    {
+      "date": "2026-09-20",
+      "classIObservedPrincipalFromSnapshot": null,
+      "classIObservedTitleFromSnapshot": null,
+      "gospel": null,
+      "gospelObservedInFullResolver": false,
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "NO_RECORDED_LEAD"
+      },
+      "researchLeads": [],
+      "contextualReuseLeads": [],
+      "sourceLeadCount": 0,
+      "dateSelectionNeeded": true,
+      "status": "NO_EXPLICIT_LEAD_IN_OLD_SUNDAY_RESEARCH",
+      "productionHeroReleased": false,
+      "rule": "Never represent a theme/possible Gospel-scene research lead as curator-approved; resolve actual 1962 observed day before assignment."
+    },
+    {
+      "date": "2026-09-27",
+      "classIObservedPrincipalFromSnapshot": null,
+      "classIObservedTitleFromSnapshot": null,
+      "gospel": null,
+      "gospelObservedInFullResolver": false,
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "NO_RECORDED_LEAD"
+      },
+      "researchLeads": [],
+      "contextualReuseLeads": [],
+      "sourceLeadCount": 0,
+      "dateSelectionNeeded": true,
+      "status": "NO_EXPLICIT_LEAD_IN_OLD_SUNDAY_RESEARCH",
+      "productionHeroReleased": false,
+      "rule": "Never represent a theme/possible Gospel-scene research lead as curator-approved; resolve actual 1962 observed day before assignment."
+    },
+    {
+      "date": "2026-10-04",
+      "classIObservedPrincipalFromSnapshot": null,
+      "classIObservedTitleFromSnapshot": null,
+      "gospel": null,
+      "gospelObservedInFullResolver": false,
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "NO_RECORDED_LEAD"
+      },
+      "researchLeads": [
+        {
+          "title": "Parable of the Wedding Feast",
+          "artist": "Andrei Mironov",
+          "relation": "DEPICTS_APPOINTED_GOSPEL_SCENE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Parable%20of%20the%20Wedding%20Feast.jpg",
+          "sourceRegistry": "sunday-phase1"
+        }
+      ],
+      "contextualReuseLeads": [],
+      "sourceLeadCount": 1,
+      "dateSelectionNeeded": true,
+      "status": "EXISTING_RESEARCH_LEADS_TO_RECONCILE_WITH_CURATOR_APPROVALS",
+      "productionHeroReleased": false,
+      "rule": "Never represent a theme/possible Gospel-scene research lead as curator-approved; resolve actual 1962 observed day before assignment."
+    },
+    {
+      "date": "2026-10-11",
+      "classIObservedPrincipalFromSnapshot": null,
+      "classIObservedTitleFromSnapshot": null,
+      "gospel": null,
+      "gospelObservedInFullResolver": false,
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "NO_RECORDED_LEAD"
+      },
+      "researchLeads": [
+        {
+          "title": "Jesus Heals the Nobleman's Son in Capernaum",
+          "artist": "Unknown Indian Mughal painter",
+          "relation": "EXACT_APPOINTED_GOSPEL_EPISODE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Unknown%20artist%20-%20Jesus%20Heals%20the%20Nobleman's%20Son%20in%20Capernaum%2C%20from%20a%20Mirror%20of%20Holiness%20(Mir%E2%80%99at%20al-quds)%20of%20Father%20Jerome%20Xavier%20-%202005.145.70.a%20-%20Cleveland%20Museum%20of%20Art.jpg",
+          "sourceRegistry": "sunday-phase2"
+        }
+      ],
+      "contextualReuseLeads": [],
+      "sourceLeadCount": 1,
+      "dateSelectionNeeded": true,
+      "status": "EXISTING_RESEARCH_LEADS_TO_RECONCILE_WITH_CURATOR_APPROVALS",
+      "productionHeroReleased": false,
+      "rule": "Never represent a theme/possible Gospel-scene research lead as curator-approved; resolve actual 1962 observed day before assignment."
+    },
+    {
+      "date": "2026-10-18",
+      "classIObservedPrincipalFromSnapshot": null,
+      "classIObservedTitleFromSnapshot": null,
+      "gospel": null,
+      "gospelObservedInFullResolver": false,
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "NO_RECORDED_LEAD"
+      },
+      "researchLeads": [
+        {
+          "title": "Parable of the Unforgiving Servant",
+          "artist": "Claude Vignon",
+          "relation": "DEPICTS_APPOINTED_GOSPEL_SCENE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Claude%20Vignon%20-%20Parable%20of%20the%20Unforgiving%20Servant.jpg",
+          "sourceRegistry": "sunday-phase1"
+        }
+      ],
+      "contextualReuseLeads": [],
+      "sourceLeadCount": 1,
+      "dateSelectionNeeded": true,
+      "status": "EXISTING_RESEARCH_LEADS_TO_RECONCILE_WITH_CURATOR_APPROVALS",
+      "productionHeroReleased": false,
+      "rule": "Never represent a theme/possible Gospel-scene research lead as curator-approved; resolve actual 1962 observed day before assignment."
+    },
+    {
+      "date": "2026-10-25",
+      "classIObservedPrincipalFromSnapshot": "sancti:10-DU:1:w",
+      "classIObservedTitleFromSnapshot": "Christ the King",
+      "gospel": null,
+      "gospelObservedInFullResolver": true,
+      "approvedDateHero": {
+        "state": "CURATOR_APPROVED_EXACT_DATE",
+        "artist": "Ambrosius Benson",
+        "title": "Salvator Mundi",
+        "artworkId": null,
+        "rating": null,
+        "source": "2026-10-19 explicit user approved artwork"
+      },
+      "researchLeads": [
+        {
+          "title": "Christ before Pilate",
+          "artist": "Mihály Munkácsy",
+          "relation": "EXACT_APPOINTED_GOSPEL_EPISODE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Munk%C3%A1csy%20Christ%20before%20Pilate.JPG",
+          "sourceRegistry": "sunday-phase2"
+        }
+      ],
+      "contextualReuseLeads": [],
+      "sourceLeadCount": 1,
+      "dateSelectionNeeded": false,
+      "status": "APPROVED_DATE_SELECTION_PENDING_PHOTO_RELEASE",
+      "productionHeroReleased": false,
+      "rule": "Never represent a theme/possible Gospel-scene research lead as curator-approved; resolve actual 1962 observed day before assignment."
+    },
+    {
+      "date": "2026-11-01",
+      "classIObservedPrincipalFromSnapshot": "sancti:11-01:1:w",
+      "classIObservedTitleFromSnapshot": "All Saints",
+      "gospel": null,
+      "gospelObservedInFullResolver": true,
+      "approvedDateHero": {
+        "state": "CURATOR_APPROVED_EXACT_DATE",
+        "artist": "Carlo Saraceni",
+        "title": "Paradise",
+        "artworkId": null,
+        "rating": null,
+        "source": "2026-10-19 explicit user approved artwork"
+      },
+      "researchLeads": [
+        {
+          "title": "Sermon on the Mount",
+          "artist": "Carl Heinrich Bloch",
+          "relation": "EXACT_APPOINTED_GOSPEL_EPISODE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bloch-SermonOnTheMount.jpg",
+          "sourceRegistry": "sunday-phase2"
+        }
+      ],
+      "contextualReuseLeads": [],
+      "sourceLeadCount": 1,
+      "dateSelectionNeeded": false,
+      "status": "APPROVED_DATE_SELECTION_PENDING_PHOTO_RELEASE",
+      "productionHeroReleased": false,
+      "rule": "Never represent a theme/possible Gospel-scene research lead as curator-approved; resolve actual 1962 observed day before assignment."
+    },
+    {
+      "date": "2026-11-08",
+      "classIObservedPrincipalFromSnapshot": null,
+      "classIObservedTitleFromSnapshot": null,
+      "gospel": null,
+      "gospelObservedInFullResolver": false,
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "NO_RECORDED_LEAD"
+      },
+      "researchLeads": [
+        {
+          "title": "The Parable of the Wheat and the Tares",
+          "artist": "Lucas Gassel",
+          "relation": "EXACT_APPOINTED_GOSPEL_EPISODE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:The%20Parable%20of%20the%20Wheat%20and%20the%20Tares(112332).jpg",
+          "sourceRegistry": "sunday-phase2"
+        }
+      ],
+      "contextualReuseLeads": [],
+      "sourceLeadCount": 1,
+      "dateSelectionNeeded": true,
+      "status": "EXISTING_RESEARCH_LEADS_TO_RECONCILE_WITH_CURATOR_APPROVALS",
+      "productionHeroReleased": false,
+      "rule": "Never represent a theme/possible Gospel-scene research lead as curator-approved; resolve actual 1962 observed day before assignment."
+    },
+    {
+      "date": "2026-11-15",
+      "classIObservedPrincipalFromSnapshot": null,
+      "classIObservedTitleFromSnapshot": null,
+      "gospel": null,
+      "gospelObservedInFullResolver": false,
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "NO_RECORDED_LEAD"
+      },
+      "researchLeads": [],
+      "contextualReuseLeads": [],
+      "sourceLeadCount": 0,
+      "dateSelectionNeeded": true,
+      "status": "NO_EXPLICIT_LEAD_IN_OLD_SUNDAY_RESEARCH",
+      "productionHeroReleased": false,
+      "rule": "Never represent a theme/possible Gospel-scene research lead as curator-approved; resolve actual 1962 observed day before assignment."
+    },
+    {
+      "date": "2026-11-22",
+      "classIObservedPrincipalFromSnapshot": null,
+      "classIObservedTitleFromSnapshot": null,
+      "gospel": null,
+      "gospelObservedInFullResolver": false,
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "NO_RECORDED_LEAD"
+      },
+      "researchLeads": [],
+      "contextualReuseLeads": [],
+      "sourceLeadCount": 0,
+      "dateSelectionNeeded": true,
+      "status": "NO_EXPLICIT_LEAD_IN_OLD_SUNDAY_RESEARCH",
+      "productionHeroReleased": false,
+      "rule": "Never represent a theme/possible Gospel-scene research lead as curator-approved; resolve actual 1962 observed day before assignment."
+    },
+    {
+      "date": "2026-11-29",
+      "classIObservedPrincipalFromSnapshot": "tempora:Adv1-0:1:v",
+      "classIObservedTitleFromSnapshot": "I Sunday of Advent",
+      "gospel": null,
+      "gospelObservedInFullResolver": true,
+      "approvedDateHero": {
+        "state": "CURATOR_APPROVED_EXACT_DATE",
+        "artist": "John Martin",
+        "title": "The Great Day of His Wrath",
+        "artworkId": null,
+        "rating": null,
+        "source": "2026-10-19 explicit user approved artwork"
+      },
+      "researchLeads": [],
+      "contextualReuseLeads": [],
+      "sourceLeadCount": 0,
+      "dateSelectionNeeded": false,
+      "status": "APPROVED_DATE_SELECTION_PENDING_PHOTO_RELEASE",
+      "productionHeroReleased": false,
+      "rule": "Never represent a theme/possible Gospel-scene research lead as curator-approved; resolve actual 1962 observed day before assignment."
+    },
+    {
+      "date": "2026-12-06",
+      "classIObservedPrincipalFromSnapshot": "tempora:Adv2-0:1:v",
+      "classIObservedTitleFromSnapshot": "II Sunday of Advent",
+      "gospel": null,
+      "gospelObservedInFullResolver": true,
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "NO_RECORDED_LEAD"
+      },
+      "researchLeads": [
+        {
+          "title": "Saint John the Baptist in Prison",
+          "artist": "Victor Meirelles",
+          "relation": "PERSON_CONTEXT_NOT_PRECISE_ENVOYS_SCENE",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Victor_Meirelles_-_S%C3%A3o_Jo%C3%A3o_Batista_no_c%C3%A1rcere%2C_1852.jpg",
+          "sourceRegistry": "sunday-phase3"
+        }
+      ],
+      "contextualReuseLeads": [],
+      "sourceLeadCount": 1,
+      "dateSelectionNeeded": true,
+      "status": "EXISTING_RESEARCH_LEADS_TO_RECONCILE_WITH_CURATOR_APPROVALS",
+      "productionHeroReleased": false,
+      "rule": "Never represent a theme/possible Gospel-scene research lead as curator-approved; resolve actual 1962 observed day before assignment."
+    },
+    {
+      "date": "2026-12-13",
+      "classIObservedPrincipalFromSnapshot": "tempora:Adv3-0:1:pv",
+      "classIObservedTitleFromSnapshot": "III Sunday of Advent",
+      "gospel": null,
+      "gospelObservedInFullResolver": true,
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "NO_RECORDED_LEAD"
+      },
+      "researchLeads": [
+        {
+          "title": "Saint John the Baptist Preaching",
+          "artist": "Mattia Preti",
+          "relation": "BIBLICAL_PERSON_CONTEXT_NOT_VERSE_EXACT",
+          "sourceUrl": "https://commons.wikimedia.org/wiki/File:Saint%20John%20the%20Baptist%20Preaching%20MET%20DP123820.jpg",
+          "sourceRegistry": "sunday-phase2"
+        }
+      ],
+      "contextualReuseLeads": [],
+      "sourceLeadCount": 1,
+      "dateSelectionNeeded": true,
+      "status": "EXISTING_RESEARCH_LEADS_TO_RECONCILE_WITH_CURATOR_APPROVALS",
+      "productionHeroReleased": false,
+      "rule": "Never represent a theme/possible Gospel-scene research lead as curator-approved; resolve actual 1962 observed day before assignment."
+    },
+    {
+      "date": "2026-12-20",
+      "classIObservedPrincipalFromSnapshot": "tempora:Adv4-0:1:v",
+      "classIObservedTitleFromSnapshot": "IV Sunday of Advent",
+      "gospel": null,
+      "gospelObservedInFullResolver": true,
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "NO_RECORDED_LEAD"
+      },
+      "researchLeads": [],
+      "contextualReuseLeads": [],
+      "sourceLeadCount": 0,
+      "dateSelectionNeeded": true,
+      "status": "NO_EXPLICIT_LEAD_IN_OLD_SUNDAY_RESEARCH",
+      "productionHeroReleased": false,
+      "rule": "Never represent a theme/possible Gospel-scene research lead as curator-approved; resolve actual 1962 observed day before assignment."
+    },
+    {
+      "date": "2026-12-27",
+      "classIObservedPrincipalFromSnapshot": null,
+      "classIObservedTitleFromSnapshot": null,
+      "gospel": null,
+      "gospelObservedInFullResolver": false,
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "NO_RECORDED_LEAD"
+      },
+      "researchLeads": [],
+      "contextualReuseLeads": [],
+      "sourceLeadCount": 0,
+      "dateSelectionNeeded": true,
+      "status": "NO_EXPLICIT_LEAD_IN_OLD_SUNDAY_RESEARCH",
+      "productionHeroReleased": false,
+      "rule": "Never represent a theme/possible Gospel-scene research lead as curator-approved; resolve actual 1962 observed day before assignment."
+    }
+  ],
+  "classI": [
+    {
+      "date": "2026-01-01",
+      "observedPrincipalId": "sancti:01-01:1:w",
+      "observedTitle": "Octave Day of Christmas",
+      "heroTheme": "nativity",
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "STRONG_EXISTING_APPROPRIATE"
+      },
+      "priorApprovedArtworkIds": [
+        "cma-143784"
+      ],
+      "existingArtworkCandidateIds": [
+        "cma-143784",
+        "cma-143644",
+        "nga-46185"
+      ],
+      "historicalResearchStatus": "STRONG_EXISTING_APPROPRIATE",
+      "exactResearchSourceLinkCount": 0,
+      "dateSelectionNeeded": true,
+      "productionHeroReleased": false,
+      "rule": "Artwork IDs in pre-existing source are pool leads, not date-specific user approval. Do not add inferred reuse."
+    },
+    {
+      "date": "2026-01-06",
+      "observedPrincipalId": "sancti:01-06:1:w",
+      "observedTitle": "Epiphany of the Lord",
+      "heroTheme": "epiphany",
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "EXISTING_PAINTING_ONLY_CONDITIONAL"
+      },
+      "priorApprovedArtworkIds": [
+        "met-436984"
+      ],
+      "existingArtworkCandidateIds": [
+        "met-436984",
+        "met-436104"
+      ],
+      "historicalResearchStatus": "EXISTING_PAINTING_ONLY_CONDITIONAL",
+      "exactResearchSourceLinkCount": 1,
+      "dateSelectionNeeded": true,
+      "productionHeroReleased": false,
+      "rule": "Artwork IDs in pre-existing source are pool leads, not date-specific user approval. Do not add inferred reuse."
+    },
+    {
+      "date": "2026-02-18",
+      "observedPrincipalId": "tempora:Quadp3-3:1:v",
+      "observedTitle": "Ash Wednesday",
+      "heroTheme": "ash-wednesday",
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "EXISTING_PAINTING_ONLY_CONDITIONAL"
+      },
+      "priorApprovedArtworkIds": [],
+      "existingArtworkCandidateIds": [
+        "nga-50726",
+        "met-437821"
+      ],
+      "historicalResearchStatus": "EXISTING_PAINTING_ONLY_CONDITIONAL",
+      "exactResearchSourceLinkCount": 0,
+      "dateSelectionNeeded": true,
+      "productionHeroReleased": false,
+      "rule": "Artwork IDs in pre-existing source are pool leads, not date-specific user approval. Do not add inferred reuse."
+    },
+    {
+      "date": "2026-02-22",
+      "observedPrincipalId": "tempora:Quad1-0:1:v",
+      "observedTitle": "I Sunday of Lent",
+      "heroTheme": "lent",
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "EXISTING_PAINTING_ONLY_CONDITIONAL"
+      },
+      "priorApprovedArtworkIds": [],
+      "existingArtworkCandidateIds": [
+        "nga-50726",
+        "met-437821"
+      ],
+      "historicalResearchStatus": "EXISTING_PAINTING_ONLY_CONDITIONAL",
+      "exactResearchSourceLinkCount": 1,
+      "dateSelectionNeeded": true,
+      "productionHeroReleased": false,
+      "rule": "Artwork IDs in pre-existing source are pool leads, not date-specific user approval. Do not add inferred reuse."
+    },
+    {
+      "date": "2026-03-01",
+      "observedPrincipalId": "tempora:Quad2-0:1:v",
+      "observedTitle": "II Sunday of Lent",
+      "heroTheme": "lent",
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "EXISTING_PAINTING_ONLY_CONDITIONAL"
+      },
+      "priorApprovedArtworkIds": [],
+      "existingArtworkCandidateIds": [
+        "nga-50726",
+        "met-437821"
+      ],
+      "historicalResearchStatus": "EXISTING_PAINTING_ONLY_CONDITIONAL",
+      "exactResearchSourceLinkCount": 1,
+      "dateSelectionNeeded": true,
+      "productionHeroReleased": false,
+      "rule": "Artwork IDs in pre-existing source are pool leads, not date-specific user approval. Do not add inferred reuse."
+    },
+    {
+      "date": "2026-03-08",
+      "observedPrincipalId": "tempora:Quad3-0:1:v",
+      "observedTitle": "III Sunday of Lent",
+      "heroTheme": "lent",
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "EXISTING_PAINTING_ONLY_CONDITIONAL"
+      },
+      "priorApprovedArtworkIds": [],
+      "existingArtworkCandidateIds": [
+        "nga-50726",
+        "met-437821"
+      ],
+      "historicalResearchStatus": "EXISTING_PAINTING_ONLY_CONDITIONAL",
+      "exactResearchSourceLinkCount": 0,
+      "dateSelectionNeeded": true,
+      "productionHeroReleased": false,
+      "rule": "Artwork IDs in pre-existing source are pool leads, not date-specific user approval. Do not add inferred reuse."
+    },
+    {
+      "date": "2026-03-15",
+      "observedPrincipalId": "tempora:Quad4-0:1:pv",
+      "observedTitle": "IV Sunday of Lent",
+      "heroTheme": "lent",
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "EXISTING_PAINTING_ONLY_CONDITIONAL"
+      },
+      "priorApprovedArtworkIds": [],
+      "existingArtworkCandidateIds": [
+        "nga-50726",
+        "met-437821"
+      ],
+      "historicalResearchStatus": "EXISTING_PAINTING_ONLY_CONDITIONAL",
+      "exactResearchSourceLinkCount": 1,
+      "dateSelectionNeeded": true,
+      "productionHeroReleased": false,
+      "rule": "Artwork IDs in pre-existing source are pool leads, not date-specific user approval. Do not add inferred reuse."
+    },
+    {
+      "date": "2026-03-19",
+      "observedPrincipalId": "sancti:03-19:1:w",
+      "observedTitle": "St. Joseph, Spouse of the Bl. Virgin Mary",
+      "heroTheme": "saint-joseph",
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "STRONG_EXISTING_APPROPRIATE"
+      },
+      "priorApprovedArtworkIds": [
+        "cma-160143"
+      ],
+      "existingArtworkCandidateIds": [
+        "cma-160143",
+        "met-437458"
+      ],
+      "historicalResearchStatus": "STRONG_EXISTING_APPROPRIATE",
+      "exactResearchSourceLinkCount": 0,
+      "dateSelectionNeeded": true,
+      "productionHeroReleased": false,
+      "rule": "Artwork IDs in pre-existing source are pool leads, not date-specific user approval. Do not add inferred reuse."
+    },
+    {
+      "date": "2026-03-22",
+      "observedPrincipalId": "tempora:Quad5-0:1:v",
+      "observedTitle": "Passion Sunday",
+      "heroTheme": "passiontide",
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "STRONG_CONTEXTUAL_REUSE"
+      },
+      "priorApprovedArtworkIds": [
+        "met-437342",
+        "met-437156"
+      ],
+      "existingArtworkCandidateIds": [
+        "met-437342",
+        "met-437156",
+        "met-437986"
+      ],
+      "historicalResearchStatus": "STRONG_CONTEXTUAL_REUSE",
+      "exactResearchSourceLinkCount": 0,
+      "dateSelectionNeeded": true,
+      "productionHeroReleased": false,
+      "rule": "Artwork IDs in pre-existing source are pool leads, not date-specific user approval. Do not add inferred reuse."
+    },
+    {
+      "date": "2026-03-25",
+      "observedPrincipalId": "sancti:03-25:1:w",
+      "observedTitle": "Annunciation of the Blessed Virgin Mary",
+      "heroTheme": "annunciation",
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "STRONG_EXISTING_APPROPRIATE"
+      },
+      "priorApprovedArtworkIds": [
+        "met-438724"
+      ],
+      "existingArtworkCandidateIds": [
+        "met-438724",
+        "met-436502"
+      ],
+      "historicalResearchStatus": "STRONG_EXISTING_APPROPRIATE",
+      "exactResearchSourceLinkCount": 1,
+      "dateSelectionNeeded": true,
+      "productionHeroReleased": false,
+      "rule": "Artwork IDs in pre-existing source are pool leads, not date-specific user approval. Do not add inferred reuse."
+    },
+    {
+      "date": "2026-03-29",
+      "observedPrincipalId": "tempora:Quad6-0r:1:rv",
+      "observedTitle": "Palm Sunday",
+      "heroTheme": "palm-sunday",
+      "approvedDateHero": {
+        "state": "CURATOR_APPROVED_EXACT_DATE",
+        "artist": "Anthony van Dyck",
+        "title": "The Entry of Christ into Jerusalem",
+        "artworkId": null,
+        "rating": null,
+        "source": "2026-10-19 explicit user approved artwork"
+      },
+      "priorApprovedArtworkIds": [
+        "kress-k2017"
+      ],
+      "existingArtworkCandidateIds": [
+        "kress-k2017"
+      ],
+      "historicalResearchStatus": "NO_SUITABLE_PHONE_HERO_IDENTIFIED [HISTORICAL_PRE_OCT19_SELECTION]",
+      "exactResearchSourceLinkCount": 1,
+      "dateSelectionNeeded": false,
+      "productionHeroReleased": false,
+      "rule": "Artwork IDs in pre-existing source are pool leads, not date-specific user approval. Do not add inferred reuse."
+    },
+    {
+      "date": "2026-03-30",
+      "observedPrincipalId": "tempora:Quad6-1:1:v",
+      "observedTitle": "Feria II of Holy Week",
+      "heroTheme": "palm-sunday",
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "STRONG_CONTEXTUAL_REUSE"
+      },
+      "priorApprovedArtworkIds": [
+        "met-437342",
+        "met-437156"
+      ],
+      "existingArtworkCandidateIds": [
+        "met-437342",
+        "met-437156",
+        "met-437986"
+      ],
+      "historicalResearchStatus": "STRONG_CONTEXTUAL_REUSE",
+      "exactResearchSourceLinkCount": 0,
+      "dateSelectionNeeded": true,
+      "productionHeroReleased": false,
+      "rule": "Artwork IDs in pre-existing source are pool leads, not date-specific user approval. Do not add inferred reuse."
+    },
+    {
+      "date": "2026-03-31",
+      "observedPrincipalId": "tempora:Quad6-2:1:v",
+      "observedTitle": "Feria III of Holy Week",
+      "heroTheme": "palm-sunday",
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "STRONG_CONTEXTUAL_REUSE"
+      },
+      "priorApprovedArtworkIds": [
+        "met-437342",
+        "met-437156"
+      ],
+      "existingArtworkCandidateIds": [
+        "met-437342",
+        "met-437156",
+        "met-437986"
+      ],
+      "historicalResearchStatus": "STRONG_CONTEXTUAL_REUSE",
+      "exactResearchSourceLinkCount": 1,
+      "dateSelectionNeeded": true,
+      "productionHeroReleased": false,
+      "rule": "Artwork IDs in pre-existing source are pool leads, not date-specific user approval. Do not add inferred reuse."
+    },
+    {
+      "date": "2026-04-01",
+      "observedPrincipalId": "tempora:Quad6-3:1:v",
+      "observedTitle": "Feria IV of Holy Week",
+      "heroTheme": "palm-sunday",
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "STRONG_CONTEXTUAL_REUSE"
+      },
+      "priorApprovedArtworkIds": [
+        "met-437342",
+        "met-437156"
+      ],
+      "existingArtworkCandidateIds": [
+        "met-437342",
+        "met-437156",
+        "met-437986"
+      ],
+      "historicalResearchStatus": "STRONG_CONTEXTUAL_REUSE",
+      "exactResearchSourceLinkCount": 1,
+      "dateSelectionNeeded": true,
+      "productionHeroReleased": false,
+      "rule": "Artwork IDs in pre-existing source are pool leads, not date-specific user approval. Do not add inferred reuse."
+    },
+    {
+      "date": "2026-04-02",
+      "observedPrincipalId": "tempora:Quad6-4r:1:w",
+      "observedTitle": "Holy Thursday",
+      "heroTheme": "holy-thursday",
+      "approvedDateHero": {
+        "state": "CURATOR_APPROVED_EXACT_DATE",
+        "artist": "Ugolino da Siena",
+        "title": "Last Supper",
+        "artworkId": null,
+        "rating": 5,
+        "source": "2026-10-19 explicit user approved artwork"
+      },
+      "priorApprovedArtworkIds": [
+        "met-459131"
+      ],
+      "existingArtworkCandidateIds": [
+        "nga-12130",
+        "met-459131"
+      ],
+      "historicalResearchStatus": "NO_SUITABLE_PHONE_HERO_IDENTIFIED [HISTORICAL_PRE_OCT19_SELECTION]",
+      "exactResearchSourceLinkCount": 0,
+      "dateSelectionNeeded": false,
+      "productionHeroReleased": false,
+      "rule": "Artwork IDs in pre-existing source are pool leads, not date-specific user approval. Do not add inferred reuse."
+    },
+    {
+      "date": "2026-04-03",
+      "observedPrincipalId": "tempora:Quad6-5r:1:bv",
+      "observedTitle": "Good Friday",
+      "heroTheme": "crucifixion",
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "EXISTING_PAINTING_ONLY_CONDITIONAL"
+      },
+      "priorApprovedArtworkIds": [
+        "met-437342"
+      ],
+      "existingArtworkCandidateIds": [
+        "met-652416",
+        "met-437342"
+      ],
+      "historicalResearchStatus": "EXISTING_PAINTING_ONLY_CONDITIONAL",
+      "exactResearchSourceLinkCount": 0,
+      "dateSelectionNeeded": true,
+      "productionHeroReleased": false,
+      "rule": "Artwork IDs in pre-existing source are pool leads, not date-specific user approval. Do not add inferred reuse."
+    },
+    {
+      "date": "2026-04-04",
+      "observedPrincipalId": "tempora:Quad6-6r:1:vw",
+      "observedTitle": "Holy Saturday",
+      "heroTheme": "holy-saturday",
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "STRONG_EXISTING_APPROPRIATE"
+      },
+      "priorApprovedArtworkIds": [
+        "met-437156",
+        "met-437342"
+      ],
+      "existingArtworkCandidateIds": [
+        "met-437156",
+        "met-437342"
+      ],
+      "historicalResearchStatus": "STRONG_EXISTING_APPROPRIATE",
+      "exactResearchSourceLinkCount": 0,
+      "dateSelectionNeeded": true,
+      "productionHeroReleased": false,
+      "rule": "Artwork IDs in pre-existing source are pool leads, not date-specific user approval. Do not add inferred reuse."
+    },
+    {
+      "date": "2026-04-05",
+      "observedPrincipalId": "tempora:Pasc0-0:1:w",
+      "observedTitle": "Easter Sunday",
+      "heroTheme": "resurrection",
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "EXISTING_PAINTING_ONLY_CONDITIONAL"
+      },
+      "priorApprovedArtworkIds": [
+        "cma-78982"
+      ],
+      "existingArtworkCandidateIds": [
+        "cma-78982"
+      ],
+      "historicalResearchStatus": "EXISTING_PAINTING_ONLY_CONDITIONAL",
+      "exactResearchSourceLinkCount": 1,
+      "dateSelectionNeeded": true,
+      "productionHeroReleased": false,
+      "rule": "Artwork IDs in pre-existing source are pool leads, not date-specific user approval. Do not add inferred reuse."
+    },
+    {
+      "date": "2026-04-06",
+      "observedPrincipalId": "tempora:Pasc0-1:1:w",
+      "observedTitle": "Monday in the Octave of Easter",
+      "heroTheme": "resurrection",
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "EXISTING_PAINTING_ONLY_CONDITIONAL"
+      },
+      "priorApprovedArtworkIds": [
+        "cma-78982"
+      ],
+      "existingArtworkCandidateIds": [
+        "cma-78982"
+      ],
+      "historicalResearchStatus": "EXISTING_PAINTING_ONLY_CONDITIONAL",
+      "exactResearchSourceLinkCount": 0,
+      "dateSelectionNeeded": true,
+      "productionHeroReleased": false,
+      "rule": "Artwork IDs in pre-existing source are pool leads, not date-specific user approval. Do not add inferred reuse."
+    },
+    {
+      "date": "2026-04-07",
+      "observedPrincipalId": "tempora:Pasc0-2:1:w",
+      "observedTitle": "Tuesday in the Octave of Easter",
+      "heroTheme": "resurrection",
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "EXISTING_PAINTING_ONLY_CONDITIONAL"
+      },
+      "priorApprovedArtworkIds": [
+        "cma-78982"
+      ],
+      "existingArtworkCandidateIds": [
+        "cma-78982"
+      ],
+      "historicalResearchStatus": "EXISTING_PAINTING_ONLY_CONDITIONAL",
+      "exactResearchSourceLinkCount": 0,
+      "dateSelectionNeeded": true,
+      "productionHeroReleased": false,
+      "rule": "Artwork IDs in pre-existing source are pool leads, not date-specific user approval. Do not add inferred reuse."
+    },
+    {
+      "date": "2026-04-08",
+      "observedPrincipalId": "tempora:Pasc0-3:1:w",
+      "observedTitle": "Wednesday in the Octave of Easter",
+      "heroTheme": "resurrection",
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "EXISTING_PAINTING_ONLY_CONDITIONAL"
+      },
+      "priorApprovedArtworkIds": [
+        "cma-78982"
+      ],
+      "existingArtworkCandidateIds": [
+        "cma-78982"
+      ],
+      "historicalResearchStatus": "EXISTING_PAINTING_ONLY_CONDITIONAL",
+      "exactResearchSourceLinkCount": 0,
+      "dateSelectionNeeded": true,
+      "productionHeroReleased": false,
+      "rule": "Artwork IDs in pre-existing source are pool leads, not date-specific user approval. Do not add inferred reuse."
+    },
+    {
+      "date": "2026-04-09",
+      "observedPrincipalId": "tempora:Pasc0-4:1:w",
+      "observedTitle": "Thursday in the Octave of Easter",
+      "heroTheme": "resurrection",
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "EXISTING_PAINTING_ONLY_CONDITIONAL"
+      },
+      "priorApprovedArtworkIds": [
+        "cma-78982"
+      ],
+      "existingArtworkCandidateIds": [
+        "cma-78982"
+      ],
+      "historicalResearchStatus": "EXISTING_PAINTING_ONLY_CONDITIONAL",
+      "exactResearchSourceLinkCount": 0,
+      "dateSelectionNeeded": true,
+      "productionHeroReleased": false,
+      "rule": "Artwork IDs in pre-existing source are pool leads, not date-specific user approval. Do not add inferred reuse."
+    },
+    {
+      "date": "2026-04-10",
+      "observedPrincipalId": "tempora:Pasc0-5:1:w",
+      "observedTitle": "Friday in the Octave of Easter",
+      "heroTheme": "resurrection",
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "EXISTING_PAINTING_ONLY_CONDITIONAL"
+      },
+      "priorApprovedArtworkIds": [
+        "cma-78982"
+      ],
+      "existingArtworkCandidateIds": [
+        "cma-78982"
+      ],
+      "historicalResearchStatus": "EXISTING_PAINTING_ONLY_CONDITIONAL",
+      "exactResearchSourceLinkCount": 0,
+      "dateSelectionNeeded": true,
+      "productionHeroReleased": false,
+      "rule": "Artwork IDs in pre-existing source are pool leads, not date-specific user approval. Do not add inferred reuse."
+    },
+    {
+      "date": "2026-04-11",
+      "observedPrincipalId": "tempora:Pasc0-6:1:w",
+      "observedTitle": "Saturday in the Octave of Easter",
+      "heroTheme": "resurrection",
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "EXISTING_PAINTING_ONLY_CONDITIONAL"
+      },
+      "priorApprovedArtworkIds": [
+        "cma-78982"
+      ],
+      "existingArtworkCandidateIds": [
+        "cma-78982"
+      ],
+      "historicalResearchStatus": "EXISTING_PAINTING_ONLY_CONDITIONAL",
+      "exactResearchSourceLinkCount": 0,
+      "dateSelectionNeeded": true,
+      "productionHeroReleased": false,
+      "rule": "Artwork IDs in pre-existing source are pool leads, not date-specific user approval. Do not add inferred reuse."
+    },
+    {
+      "date": "2026-04-12",
+      "observedPrincipalId": "tempora:Pasc1-0:1:w",
+      "observedTitle": "Low Sunday",
+      "heroTheme": "resurrection",
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "EXISTING_PAINTING_ONLY_CONDITIONAL"
+      },
+      "priorApprovedArtworkIds": [
+        "cma-78982"
+      ],
+      "existingArtworkCandidateIds": [
+        "cma-78982"
+      ],
+      "historicalResearchStatus": "EXISTING_PAINTING_ONLY_CONDITIONAL",
+      "exactResearchSourceLinkCount": 0,
+      "dateSelectionNeeded": true,
+      "productionHeroReleased": false,
+      "rule": "Artwork IDs in pre-existing source are pool leads, not date-specific user approval. Do not add inferred reuse."
+    },
+    {
+      "date": "2026-05-01",
+      "observedPrincipalId": "sancti:05-01r:1:w",
+      "observedTitle": "St. Joseph the Workman",
+      "heroTheme": "saint-joseph",
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "STRONG_EXISTING_APPROPRIATE"
+      },
+      "priorApprovedArtworkIds": [
+        "cma-160143"
+      ],
+      "existingArtworkCandidateIds": [
+        "cma-160143",
+        "met-437458"
+      ],
+      "historicalResearchStatus": "STRONG_EXISTING_APPROPRIATE",
+      "exactResearchSourceLinkCount": 0,
+      "dateSelectionNeeded": true,
+      "productionHeroReleased": false,
+      "rule": "Artwork IDs in pre-existing source are pool leads, not date-specific user approval. Do not add inferred reuse."
+    },
+    {
+      "date": "2026-05-14",
+      "observedPrincipalId": "tempora:Pasc5-4:1:w",
+      "observedTitle": "Ascension of the Lord",
+      "heroTheme": "ascension",
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "EXISTING_PAINTING_ONLY_CONDITIONAL"
+      },
+      "priorApprovedArtworkIds": [
+        "met-436835"
+      ],
+      "existingArtworkCandidateIds": [
+        "met-436835"
+      ],
+      "historicalResearchStatus": "EXISTING_PAINTING_ONLY_CONDITIONAL",
+      "exactResearchSourceLinkCount": 1,
+      "dateSelectionNeeded": true,
+      "productionHeroReleased": false,
+      "rule": "Artwork IDs in pre-existing source are pool leads, not date-specific user approval. Do not add inferred reuse."
+    },
+    {
+      "date": "2026-05-23",
+      "observedPrincipalId": "tempora:Pasc6-6:1:r",
+      "observedTitle": "Vigil of Pentecost",
+      "heroTheme": "ascension",
+      "approvedDateHero": {
+        "state": "CURATOR_APPROVED_EXACT_DATE",
+        "artist": "Juan Bautista Maíno",
+        "title": "The Pentecost",
+        "artworkId": null,
+        "rating": null,
+        "source": "2026-10-19 explicit user approved artwork"
+      },
+      "priorApprovedArtworkIds": [
+        "commons-baroncelli-pentecost"
+      ],
+      "existingArtworkCandidateIds": [
+        "commons-debray-pentecost",
+        "commons-multscher-pentecost",
+        "commons-baroncelli-pentecost"
+      ],
+      "historicalResearchStatus": "NO_SUITABLE_PHONE_HERO_IDENTIFIED [HISTORICAL_PRE_OCT19_SELECTION]",
+      "exactResearchSourceLinkCount": 0,
+      "dateSelectionNeeded": false,
+      "productionHeroReleased": false,
+      "rule": "Artwork IDs in pre-existing source are pool leads, not date-specific user approval. Do not add inferred reuse."
+    },
+    {
+      "date": "2026-05-24",
+      "observedPrincipalId": "tempora:Pasc7-0:1:r",
+      "observedTitle": "Pentecost Sunday",
+      "heroTheme": "pentecost",
+      "approvedDateHero": {
+        "state": "CURATOR_APPROVED_EXACT_DATE",
+        "artist": "Jean II Restout",
+        "title": "Pentecost",
+        "artworkId": "ART-ean-estout-entecost",
+        "rating": 5,
+        "source": "2026-10-19 explicit user approved artwork"
+      },
+      "priorApprovedArtworkIds": [
+        "commons-baroncelli-pentecost"
+      ],
+      "existingArtworkCandidateIds": [
+        "commons-debray-pentecost",
+        "commons-multscher-pentecost",
+        "commons-baroncelli-pentecost"
+      ],
+      "historicalResearchStatus": "NO_SUITABLE_PHONE_HERO_IDENTIFIED [HISTORICAL_PRE_OCT19_SELECTION]",
+      "exactResearchSourceLinkCount": 1,
+      "dateSelectionNeeded": false,
+      "productionHeroReleased": false,
+      "rule": "Artwork IDs in pre-existing source are pool leads, not date-specific user approval. Do not add inferred reuse."
+    },
+    {
+      "date": "2026-05-25",
+      "observedPrincipalId": "tempora:Pasc7-1:1:r",
+      "observedTitle": "Monday after Pentecost",
+      "heroTheme": "pentecost",
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "NO_SUITABLE_PHONE_HERO_IDENTIFIED"
+      },
+      "priorApprovedArtworkIds": [
+        "commons-baroncelli-pentecost"
+      ],
+      "existingArtworkCandidateIds": [
+        "commons-debray-pentecost",
+        "commons-multscher-pentecost",
+        "commons-baroncelli-pentecost"
+      ],
+      "historicalResearchStatus": "NO_SUITABLE_PHONE_HERO_IDENTIFIED",
+      "exactResearchSourceLinkCount": 0,
+      "dateSelectionNeeded": true,
+      "productionHeroReleased": false,
+      "rule": "Artwork IDs in pre-existing source are pool leads, not date-specific user approval. Do not add inferred reuse."
+    },
+    {
+      "date": "2026-05-26",
+      "observedPrincipalId": "tempora:Pasc7-2:1:r",
+      "observedTitle": "Tuesday after Pentecost",
+      "heroTheme": "pentecost",
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "NO_SUITABLE_PHONE_HERO_IDENTIFIED"
+      },
+      "priorApprovedArtworkIds": [
+        "commons-baroncelli-pentecost"
+      ],
+      "existingArtworkCandidateIds": [
+        "commons-debray-pentecost",
+        "commons-multscher-pentecost",
+        "commons-baroncelli-pentecost"
+      ],
+      "historicalResearchStatus": "NO_SUITABLE_PHONE_HERO_IDENTIFIED",
+      "exactResearchSourceLinkCount": 0,
+      "dateSelectionNeeded": true,
+      "productionHeroReleased": false,
+      "rule": "Artwork IDs in pre-existing source are pool leads, not date-specific user approval. Do not add inferred reuse."
+    },
+    {
+      "date": "2026-05-27",
+      "observedPrincipalId": "tempora:Pasc7-3:1:r",
+      "observedTitle": "Ember Wednesday of Pentecost",
+      "heroTheme": "pentecost",
+      "approvedDateHero": {
+        "state": "CURATOR_APPROVED_EXACT_DATE",
+        "artist": "Philippe de Champaigne",
+        "title": "La Petite Cène",
+        "artworkId": null,
+        "rating": null,
+        "source": "2026-10-19 explicit user approved artwork"
+      },
+      "priorApprovedArtworkIds": [
+        "commons-baroncelli-pentecost"
+      ],
+      "existingArtworkCandidateIds": [
+        "commons-debray-pentecost",
+        "commons-multscher-pentecost",
+        "commons-baroncelli-pentecost"
+      ],
+      "historicalResearchStatus": "NO_SUITABLE_PHONE_HERO_IDENTIFIED [HISTORICAL_PRE_OCT19_SELECTION]",
+      "exactResearchSourceLinkCount": 0,
+      "dateSelectionNeeded": false,
+      "productionHeroReleased": false,
+      "rule": "Artwork IDs in pre-existing source are pool leads, not date-specific user approval. Do not add inferred reuse."
+    },
+    {
+      "date": "2026-05-28",
+      "observedPrincipalId": "tempora:Pasc7-4:1:r",
+      "observedTitle": "Thursday after Pentecost",
+      "heroTheme": "pentecost",
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "NO_SUITABLE_PHONE_HERO_IDENTIFIED"
+      },
+      "priorApprovedArtworkIds": [
+        "commons-baroncelli-pentecost"
+      ],
+      "existingArtworkCandidateIds": [
+        "commons-debray-pentecost",
+        "commons-multscher-pentecost",
+        "commons-baroncelli-pentecost"
+      ],
+      "historicalResearchStatus": "NO_SUITABLE_PHONE_HERO_IDENTIFIED",
+      "exactResearchSourceLinkCount": 0,
+      "dateSelectionNeeded": true,
+      "productionHeroReleased": false,
+      "rule": "Artwork IDs in pre-existing source are pool leads, not date-specific user approval. Do not add inferred reuse."
+    },
+    {
+      "date": "2026-05-29",
+      "observedPrincipalId": "tempora:Pasc7-5:1:r",
+      "observedTitle": "Ember Friday of Pentecost",
+      "heroTheme": "pentecost",
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "NO_SUITABLE_PHONE_HERO_IDENTIFIED"
+      },
+      "priorApprovedArtworkIds": [
+        "commons-baroncelli-pentecost"
+      ],
+      "existingArtworkCandidateIds": [
+        "commons-debray-pentecost",
+        "commons-multscher-pentecost",
+        "commons-baroncelli-pentecost"
+      ],
+      "historicalResearchStatus": "NO_SUITABLE_PHONE_HERO_IDENTIFIED",
+      "exactResearchSourceLinkCount": 0,
+      "dateSelectionNeeded": true,
+      "productionHeroReleased": false,
+      "rule": "Artwork IDs in pre-existing source are pool leads, not date-specific user approval. Do not add inferred reuse."
+    },
+    {
+      "date": "2026-05-30",
+      "observedPrincipalId": "tempora:Pasc7-6:1:r",
+      "observedTitle": "Ember Saturday of Pentecost",
+      "heroTheme": "pentecost",
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "NO_SUITABLE_PHONE_HERO_IDENTIFIED"
+      },
+      "priorApprovedArtworkIds": [
+        "commons-baroncelli-pentecost"
+      ],
+      "existingArtworkCandidateIds": [
+        "commons-debray-pentecost",
+        "commons-multscher-pentecost",
+        "commons-baroncelli-pentecost"
+      ],
+      "historicalResearchStatus": "NO_SUITABLE_PHONE_HERO_IDENTIFIED",
+      "exactResearchSourceLinkCount": 0,
+      "dateSelectionNeeded": true,
+      "productionHeroReleased": false,
+      "rule": "Artwork IDs in pre-existing source are pool leads, not date-specific user approval. Do not add inferred reuse."
+    },
+    {
+      "date": "2026-05-31",
+      "observedPrincipalId": "tempora:Pent01-0r:1:w",
+      "observedTitle": "Trinity Sunday",
+      "heroTheme": "trinity",
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "SEPARATE_ARCHIVED_REVIEW_ORIGINAL"
+      },
+      "priorApprovedArtworkIds": [],
+      "existingArtworkCandidateIds": [
+        "review-kmska-314"
+      ],
+      "historicalResearchStatus": "SEPARATE_ARCHIVED_REVIEW_ORIGINAL",
+      "exactResearchSourceLinkCount": 1,
+      "dateSelectionNeeded": true,
+      "productionHeroReleased": false,
+      "rule": "Artwork IDs in pre-existing source are pool leads, not date-specific user approval. Do not add inferred reuse."
+    },
+    {
+      "date": "2026-06-04",
+      "observedPrincipalId": "tempora:Pent01-4:1:w",
+      "observedTitle": "Corpus Christi",
+      "heroTheme": "corpus-christi",
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "STRONG_CONTEXTUAL_REUSE"
+      },
+      "priorApprovedArtworkIds": [],
+      "existingArtworkCandidateIds": [
+        "met-438434"
+      ],
+      "historicalResearchStatus": "STRONG_CONTEXTUAL_REUSE",
+      "exactResearchSourceLinkCount": 0,
+      "dateSelectionNeeded": true,
+      "productionHeroReleased": false,
+      "rule": "Artwork IDs in pre-existing source are pool leads, not date-specific user approval. Do not add inferred reuse."
+    },
+    {
+      "date": "2026-06-12",
+      "observedPrincipalId": "tempora:Pent02-5:1:w",
+      "observedTitle": "Sacred Heart of Jesus",
+      "heroTheme": "sacred-heart",
+      "approvedDateHero": {
+        "state": "CURATOR_APPROVED_EXACT_DATE",
+        "artist": "Juan Patricio Morlete Ruiz",
+        "title": "The Heart of Jesus",
+        "artworkId": "commons-morlete-sacred-heart-1759",
+        "rating": 5,
+        "source": "2026-10-19 explicit user approved artwork"
+      },
+      "priorApprovedArtworkIds": [
+        "commons-morlete-sacred-heart-1759"
+      ],
+      "existingArtworkCandidateIds": [
+        "commons-morlete-sacred-heart-1759"
+      ],
+      "historicalResearchStatus": "NO_SUITABLE_PHONE_HERO_IDENTIFIED [HISTORICAL_PRE_OCT19_SELECTION]",
+      "exactResearchSourceLinkCount": 2,
+      "dateSelectionNeeded": false,
+      "productionHeroReleased": false,
+      "rule": "Artwork IDs in pre-existing source are pool leads, not date-specific user approval. Do not add inferred reuse."
+    },
+    {
+      "date": "2026-06-24",
+      "observedPrincipalId": "sancti:06-24:1:w",
+      "observedTitle": "Nativity of St. John the Baptist",
+      "heroTheme": "nativity-john-baptist",
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "EXISTING_PAINTING_ONLY_CONDITIONAL"
+      },
+      "priorApprovedArtworkIds": [],
+      "existingArtworkCandidateIds": [
+        "met-438467"
+      ],
+      "historicalResearchStatus": "EXISTING_PAINTING_ONLY_CONDITIONAL",
+      "exactResearchSourceLinkCount": 3,
+      "dateSelectionNeeded": true,
+      "productionHeroReleased": false,
+      "rule": "Artwork IDs in pre-existing source are pool leads, not date-specific user approval. Do not add inferred reuse."
+    },
+    {
+      "date": "2026-06-29",
+      "observedPrincipalId": "sancti:06-29:1:r",
+      "observedTitle": "Sts. Peter & Paul",
+      "heroTheme": "peter-and-paul",
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "STRONG_EXISTING_APPROPRIATE"
+      },
+      "priorApprovedArtworkIds": [
+        "met-442491"
+      ],
+      "existingArtworkCandidateIds": [
+        "met-442491"
+      ],
+      "historicalResearchStatus": "STRONG_EXISTING_APPROPRIATE",
+      "exactResearchSourceLinkCount": 1,
+      "dateSelectionNeeded": true,
+      "productionHeroReleased": false,
+      "rule": "Artwork IDs in pre-existing source are pool leads, not date-specific user approval. Do not add inferred reuse."
+    },
+    {
+      "date": "2026-07-01",
+      "observedPrincipalId": "sancti:07-01:1:r",
+      "observedTitle": "The Precious Blood of Our Lord Jesus Christ",
+      "heroTheme": "precious-blood",
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "STRONG_CONTEXTUAL_REUSE"
+      },
+      "priorApprovedArtworkIds": [
+        "met-437342"
+      ],
+      "existingArtworkCandidateIds": [
+        "met-652416",
+        "met-437342"
+      ],
+      "historicalResearchStatus": "STRONG_CONTEXTUAL_REUSE",
+      "exactResearchSourceLinkCount": 0,
+      "dateSelectionNeeded": true,
+      "productionHeroReleased": false,
+      "rule": "Artwork IDs in pre-existing source are pool leads, not date-specific user approval. Do not add inferred reuse."
+    },
+    {
+      "date": "2026-08-15",
+      "observedPrincipalId": "sancti:08-15:1:w",
+      "observedTitle": "Assumption of the Blessed Virgin Mary",
+      "heroTheme": "assumption",
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "EXISTING_PAINTING_ONLY_CONDITIONAL"
+      },
+      "priorApprovedArtworkIds": [],
+      "existingArtworkCandidateIds": [
+        "nga-46470",
+        "nga-46145"
+      ],
+      "historicalResearchStatus": "EXISTING_PAINTING_ONLY_CONDITIONAL",
+      "exactResearchSourceLinkCount": 1,
+      "dateSelectionNeeded": true,
+      "productionHeroReleased": false,
+      "rule": "Artwork IDs in pre-existing source are pool leads, not date-specific user approval. Do not add inferred reuse."
+    },
+    {
+      "date": "2026-09-29",
+      "observedPrincipalId": "sancti:09-29:1:w",
+      "observedTitle": "Dedication of St. Michael the Archangel",
+      "heroTheme": "saint-michael",
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "STRONG_EXISTING_APPROPRIATE"
+      },
+      "priorApprovedArtworkIds": [],
+      "existingArtworkCandidateIds": [
+        "met-437729"
+      ],
+      "historicalResearchStatus": "STRONG_EXISTING_APPROPRIATE",
+      "exactResearchSourceLinkCount": 1,
+      "dateSelectionNeeded": true,
+      "productionHeroReleased": false,
+      "rule": "Artwork IDs in pre-existing source are pool leads, not date-specific user approval. Do not add inferred reuse."
+    },
+    {
+      "date": "2026-10-25",
+      "observedPrincipalId": "sancti:10-DU:1:w",
+      "observedTitle": "Christ the King",
+      "heroTheme": "christ-king",
+      "approvedDateHero": {
+        "state": "CURATOR_APPROVED_EXACT_DATE",
+        "artist": "Ambrosius Benson",
+        "title": "Salvator Mundi",
+        "artworkId": null,
+        "rating": null,
+        "source": "2026-10-19 explicit user approved artwork"
+      },
+      "priorApprovedArtworkIds": [],
+      "existingArtworkCandidateIds": [
+        "met-436794"
+      ],
+      "historicalResearchStatus": "NO_SUITABLE_PHONE_HERO_IDENTIFIED [HISTORICAL_PRE_OCT19_SELECTION]",
+      "exactResearchSourceLinkCount": 0,
+      "dateSelectionNeeded": false,
+      "productionHeroReleased": false,
+      "rule": "Artwork IDs in pre-existing source are pool leads, not date-specific user approval. Do not add inferred reuse."
+    },
+    {
+      "date": "2026-11-01",
+      "observedPrincipalId": "sancti:11-01:1:w",
+      "observedTitle": "All Saints",
+      "heroTheme": "all-saints",
+      "approvedDateHero": {
+        "state": "CURATOR_APPROVED_EXACT_DATE",
+        "artist": "Carlo Saraceni",
+        "title": "Paradise",
+        "artworkId": null,
+        "rating": null,
+        "source": "2026-10-19 explicit user approved artwork"
+      },
+      "priorApprovedArtworkIds": [],
+      "existingArtworkCandidateIds": [
+        "met-437743"
+      ],
+      "historicalResearchStatus": "NO_SUITABLE_PHONE_HERO_IDENTIFIED [HISTORICAL_PRE_OCT19_SELECTION]",
+      "exactResearchSourceLinkCount": 1,
+      "dateSelectionNeeded": false,
+      "productionHeroReleased": false,
+      "rule": "Artwork IDs in pre-existing source are pool leads, not date-specific user approval. Do not add inferred reuse."
+    },
+    {
+      "date": "2026-11-02",
+      "observedPrincipalId": "sancti:11-02m1:1:b",
+      "observedTitle": "Commemoration of All Souls",
+      "heroTheme": "all-souls",
+      "approvedDateHero": {
+        "state": "CURATOR_APPROVED_EXACT_DATE",
+        "artist": "Ludovico Carracci",
+        "title": "An Angel Frees the Souls of Purgatory",
+        "artworkId": null,
+        "rating": null,
+        "source": "2026-10-19 explicit user approved artwork"
+      },
+      "priorApprovedArtworkIds": [],
+      "existingArtworkCandidateIds": [
+        "met-437542"
+      ],
+      "historicalResearchStatus": "EXISTING_PAINTING_ONLY_CONDITIONAL [HISTORICAL_PRE_OCT19_SELECTION]",
+      "exactResearchSourceLinkCount": 1,
+      "dateSelectionNeeded": false,
+      "productionHeroReleased": false,
+      "rule": "Artwork IDs in pre-existing source are pool leads, not date-specific user approval. Do not add inferred reuse."
+    },
+    {
+      "date": "2026-11-29",
+      "observedPrincipalId": "tempora:Adv1-0:1:v",
+      "observedTitle": "I Sunday of Advent",
+      "heroTheme": "advent",
+      "approvedDateHero": {
+        "state": "CURATOR_APPROVED_EXACT_DATE",
+        "artist": "John Martin",
+        "title": "The Great Day of His Wrath",
+        "artworkId": null,
+        "rating": null,
+        "source": "2026-10-19 explicit user approved artwork"
+      },
+      "priorApprovedArtworkIds": [
+        "met-438724"
+      ],
+      "existingArtworkCandidateIds": [
+        "met-436502",
+        "met-438724"
+      ],
+      "historicalResearchStatus": "STRONG_EXISTING_APPROPRIATE [HISTORICAL_PRE_OCT19_SELECTION]",
+      "exactResearchSourceLinkCount": 0,
+      "dateSelectionNeeded": false,
+      "productionHeroReleased": false,
+      "rule": "Artwork IDs in pre-existing source are pool leads, not date-specific user approval. Do not add inferred reuse."
+    },
+    {
+      "date": "2026-12-06",
+      "observedPrincipalId": "tempora:Adv2-0:1:v",
+      "observedTitle": "II Sunday of Advent",
+      "heroTheme": "advent",
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "STRONG_EXISTING_APPROPRIATE"
+      },
+      "priorApprovedArtworkIds": [
+        "met-438724"
+      ],
+      "existingArtworkCandidateIds": [
+        "met-436502",
+        "met-438724"
+      ],
+      "historicalResearchStatus": "STRONG_EXISTING_APPROPRIATE",
+      "exactResearchSourceLinkCount": 0,
+      "dateSelectionNeeded": true,
+      "productionHeroReleased": false,
+      "rule": "Artwork IDs in pre-existing source are pool leads, not date-specific user approval. Do not add inferred reuse."
+    },
+    {
+      "date": "2026-12-08",
+      "observedPrincipalId": "sancti:12-08:1:w",
+      "observedTitle": "Immaculate Conception of the Blessed Virgin Mary",
+      "heroTheme": "immaculate-conception",
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "STRONG_EXISTING_APPROPRIATE"
+      },
+      "priorApprovedArtworkIds": [
+        "met-437423",
+        "cma-135659"
+      ],
+      "existingArtworkCandidateIds": [
+        "met-437423",
+        "cma-135659"
+      ],
+      "historicalResearchStatus": "STRONG_EXISTING_APPROPRIATE",
+      "exactResearchSourceLinkCount": 1,
+      "dateSelectionNeeded": true,
+      "productionHeroReleased": false,
+      "rule": "Artwork IDs in pre-existing source are pool leads, not date-specific user approval. Do not add inferred reuse."
+    },
+    {
+      "date": "2026-12-13",
+      "observedPrincipalId": "tempora:Adv3-0:1:pv",
+      "observedTitle": "III Sunday of Advent",
+      "heroTheme": "advent",
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "STRONG_EXISTING_APPROPRIATE"
+      },
+      "priorApprovedArtworkIds": [
+        "met-438724"
+      ],
+      "existingArtworkCandidateIds": [
+        "met-436502",
+        "met-438724"
+      ],
+      "historicalResearchStatus": "STRONG_EXISTING_APPROPRIATE",
+      "exactResearchSourceLinkCount": 0,
+      "dateSelectionNeeded": true,
+      "productionHeroReleased": false,
+      "rule": "Artwork IDs in pre-existing source are pool leads, not date-specific user approval. Do not add inferred reuse."
+    },
+    {
+      "date": "2026-12-20",
+      "observedPrincipalId": "tempora:Adv4-0:1:v",
+      "observedTitle": "IV Sunday of Advent",
+      "heroTheme": "advent",
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "STRONG_EXISTING_APPROPRIATE"
+      },
+      "priorApprovedArtworkIds": [
+        "met-438724"
+      ],
+      "existingArtworkCandidateIds": [
+        "met-436502",
+        "met-438724"
+      ],
+      "historicalResearchStatus": "STRONG_EXISTING_APPROPRIATE",
+      "exactResearchSourceLinkCount": 0,
+      "dateSelectionNeeded": true,
+      "productionHeroReleased": false,
+      "rule": "Artwork IDs in pre-existing source are pool leads, not date-specific user approval. Do not add inferred reuse."
+    },
+    {
+      "date": "2026-12-24",
+      "observedPrincipalId": "sancti:12-24:1:v",
+      "observedTitle": "Vigil of Christmas",
+      "heroTheme": "nativity",
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "STRONG_EXISTING_APPROPRIATE"
+      },
+      "priorApprovedArtworkIds": [
+        "cma-143784"
+      ],
+      "existingArtworkCandidateIds": [
+        "cma-143784",
+        "cma-143644",
+        "nga-46185"
+      ],
+      "historicalResearchStatus": "STRONG_EXISTING_APPROPRIATE",
+      "exactResearchSourceLinkCount": 0,
+      "dateSelectionNeeded": true,
+      "productionHeroReleased": false,
+      "rule": "Artwork IDs in pre-existing source are pool leads, not date-specific user approval. Do not add inferred reuse."
+    },
+    {
+      "date": "2026-12-25",
+      "observedPrincipalId": "sancti:12-25m1:1:w",
+      "observedTitle": "The Nativity of Our Lord",
+      "heroTheme": "nativity",
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "STRONG_EXISTING_APPROPRIATE"
+      },
+      "priorApprovedArtworkIds": [
+        "cma-143784"
+      ],
+      "existingArtworkCandidateIds": [
+        "cma-143784",
+        "cma-143644",
+        "nga-46185"
+      ],
+      "historicalResearchStatus": "STRONG_EXISTING_APPROPRIATE",
+      "exactResearchSourceLinkCount": 1,
+      "dateSelectionNeeded": true,
+      "productionHeroReleased": false,
+      "rule": "Artwork IDs in pre-existing source are pool leads, not date-specific user approval. Do not add inferred reuse."
+    }
+  ],
+  "optionalSpotlights": [
+    {
+      "date": "2026-01-04",
+      "title": "Most Holy Name of Jesus",
+      "rank": 2,
+      "subject": "holy-name",
+      "optional": true,
+      "observedPrincipalIn2026Verified": false,
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "NO_RECORDED_LEAD"
+      },
+      "dateSelectionNeeded": true,
+      "productionHeroReleased": false,
+      "editorialContext": "Maintain Nativity/Christ masterpiece if no truly exceptional Holy Name art.",
+      "rule": "Optional spotlight: do not overwrite more important observed 1962 principal feast."
+    },
+    {
+      "date": "2026-01-11",
+      "title": "Holy Family",
+      "rank": 2,
+      "subject": "holy-family",
+      "optional": true,
+      "observedPrincipalIn2026Verified": false,
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "NO_RECORDED_LEAD"
+      },
+      "dateSelectionNeeded": true,
+      "productionHeroReleased": false,
+      "editorialContext": "One exceptional canonical Holy Family painting only.",
+      "rule": "Optional spotlight: do not overwrite more important observed 1962 principal feast."
+    },
+    {
+      "date": "2026-01-13",
+      "title": "Commemoration of the Baptism of Our Lord",
+      "rank": 2,
+      "subject": "baptism",
+      "optional": true,
+      "observedPrincipalIn2026Verified": false,
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "NO_RECORDED_LEAD"
+      },
+      "dateSelectionNeeded": true,
+      "productionHeroReleased": false,
+      "editorialContext": "Can reuse the finest baptism masterpiece elsewhere.",
+      "rule": "Optional spotlight: do not overwrite more important observed 1962 principal feast."
+    },
+    {
+      "date": "2026-02-01",
+      "title": "Septuagesima Sunday",
+      "rank": 2,
+      "subject": "septuagesima",
+      "optional": true,
+      "observedPrincipalIn2026Verified": false,
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "NO_RECORDED_LEAD"
+      },
+      "dateSelectionNeeded": true,
+      "productionHeroReleased": false,
+      "editorialContext": "Seasonal change, not an obligation to switch hero painting.",
+      "rule": "Optional spotlight: do not overwrite more important observed 1962 principal feast."
+    },
+    {
+      "date": "2026-02-02",
+      "title": "Purification of the BVM / Presentation of the Lord (Candlemas)",
+      "rank": 2,
+      "subject": "presentation",
+      "optional": true,
+      "observedPrincipalIn2026Verified": false,
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "NO_RECORDED_LEAD"
+      },
+      "dateSelectionNeeded": true,
+      "productionHeroReleased": false,
+      "editorialContext": "Strong narrative painting and procession context.",
+      "rule": "Optional spotlight: do not overwrite more important observed 1962 principal feast."
+    },
+    {
+      "date": "2026-02-11",
+      "title": "Our Lady of Lourdes",
+      "rank": 3,
+      "subject": "our-lady-lourdes",
+      "optional": true,
+      "observedPrincipalIn2026Verified": false,
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "NO_RECORDED_LEAD"
+      },
+      "dateSelectionNeeded": true,
+      "productionHeroReleased": false,
+      "editorialContext": "Authentic devotional imagery only; source photo rights independently checked.",
+      "rule": "Optional spotlight: do not overwrite more important observed 1962 principal feast."
+    },
+    {
+      "date": "2026-07-02",
+      "title": "Visitation of the Blessed Virgin Mary",
+      "rank": 2,
+      "subject": "visitation",
+      "optional": true,
+      "observedPrincipalIn2026Verified": false,
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "NO_RECORDED_LEAD"
+      },
+      "dateSelectionNeeded": true,
+      "productionHeroReleased": false,
+      "editorialContext": "Exceptional Visitation painting; reuse for Rosary if relevant.",
+      "rule": "Optional spotlight: do not overwrite more important observed 1962 principal feast."
+    },
+    {
+      "date": "2026-07-22",
+      "title": "St. Mary Magdalene",
+      "rank": 3,
+      "subject": "magdalene",
+      "optional": true,
+      "observedPrincipalIn2026Verified": false,
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "NO_RECORDED_LEAD"
+      },
+      "dateSelectionNeeded": true,
+      "productionHeroReleased": false,
+      "editorialContext": "A selected exception to the no-daily-saints rule, because masterworks exist.",
+      "rule": "Optional spotlight: do not overwrite more important observed 1962 principal feast."
+    },
+    {
+      "date": "2026-08-06",
+      "title": "Transfiguration of Our Lord",
+      "rank": 2,
+      "subject": "transfiguration",
+      "optional": true,
+      "observedPrincipalIn2026Verified": false,
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "NO_RECORDED_LEAD"
+      },
+      "dateSelectionNeeded": true,
+      "productionHeroReleased": false,
+      "editorialContext": "Major biblical event; re-use at Lent II only when source/event correspondence verified.",
+      "rule": "Optional spotlight: do not overwrite more important observed 1962 principal feast."
+    },
+    {
+      "date": "2026-09-08",
+      "title": "Nativity of the Blessed Virgin Mary",
+      "rank": 2,
+      "subject": "nativity-mary",
+      "optional": true,
+      "observedPrincipalIn2026Verified": false,
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "NO_RECORDED_LEAD"
+      },
+      "dateSelectionNeeded": true,
+      "productionHeroReleased": false,
+      "editorialContext": "Recognizable major Marian feast, not generic Madonna picture.",
+      "rule": "Optional spotlight: do not overwrite more important observed 1962 principal feast."
+    },
+    {
+      "date": "2026-09-14",
+      "title": "Exaltation of the Holy Cross",
+      "rank": 2,
+      "subject": "exaltation-cross",
+      "optional": true,
+      "observedPrincipalIn2026Verified": false,
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "NO_RECORDED_LEAD"
+      },
+      "dateSelectionNeeded": true,
+      "productionHeroReleased": false,
+      "editorialContext": "A proven Cross masterpiece may be reused from Passiontide.",
+      "rule": "Optional spotlight: do not overwrite more important observed 1962 principal feast."
+    },
+    {
+      "date": "2026-09-15",
+      "title": "Seven Sorrows of the Blessed Virgin Mary",
+      "rank": 2,
+      "subject": "mater-dolorosa",
+      "optional": true,
+      "observedPrincipalIn2026Verified": false,
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "NO_RECORDED_LEAD"
+      },
+      "dateSelectionNeeded": true,
+      "productionHeroReleased": false,
+      "editorialContext": "Distinct Mater Dolorosa or Stabat Mater iconography.",
+      "rule": "Optional spotlight: do not overwrite more important observed 1962 principal feast."
+    },
+    {
+      "date": "2026-10-03",
+      "title": "St. Thérèse of the Child Jesus",
+      "rank": 3,
+      "subject": "therese-lisieux",
+      "optional": true,
+      "observedPrincipalIn2026Verified": false,
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "NO_RECORDED_LEAD"
+      },
+      "dateSelectionNeeded": true,
+      "productionHeroReleased": false,
+      "editorialContext": "Authentic Carmel imagery is preferred; reproduction licensing required.",
+      "rule": "Optional spotlight: do not overwrite more important observed 1962 principal feast."
+    },
+    {
+      "date": "2026-10-07",
+      "title": "Our Lady of the Rosary",
+      "rank": 2,
+      "subject": "our-lady-rosary",
+      "optional": true,
+      "observedPrincipalIn2026Verified": false,
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "NO_RECORDED_LEAD"
+      },
+      "dateSelectionNeeded": true,
+      "productionHeroReleased": false,
+      "editorialContext": "A genuine traditional Rosary masterpiece, not an arbitrary Virgin-and-Child.",
+      "rule": "Optional spotlight: do not overwrite more important observed 1962 principal feast."
+    },
+    {
+      "date": "2026-11-09",
+      "title": "Dedication of the Lateran Archbasilica",
+      "rank": 2,
+      "subject": "lateran-dedication",
+      "optional": true,
+      "observedPrincipalIn2026Verified": false,
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "NO_RECORDED_LEAD"
+      },
+      "dateSelectionNeeded": true,
+      "productionHeroReleased": false,
+      "editorialContext": "Image optional; retain prior masterpiece if no superb authenticated work.",
+      "rule": "Optional spotlight: do not overwrite more important observed 1962 principal feast."
+    },
+    {
+      "date": "2026-11-22",
+      "title": "Last Sunday after Pentecost",
+      "rank": 2,
+      "subject": "last-sunday",
+      "optional": true,
+      "observedPrincipalIn2026Verified": false,
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "NO_RECORDED_LEAD"
+      },
+      "dateSelectionNeeded": true,
+      "productionHeroReleased": false,
+      "editorialContext": "Judgment/Eschatology painting if superb; never invent its subject from title alone.",
+      "rule": "Optional spotlight: do not overwrite more important observed 1962 principal feast."
+    },
+    {
+      "date": "2026-12-28",
+      "title": "Holy Innocents",
+      "rank": 2,
+      "subject": "holy-innocents",
+      "optional": true,
+      "observedPrincipalIn2026Verified": false,
+      "approvedDateHero": {
+        "state": "NOT_DATE_ASSIGNED",
+        "researchState": "NO_RECORDED_LEAD"
+      },
+      "dateSelectionNeeded": true,
+      "productionHeroReleased": false,
+      "editorialContext": "Could retain Nativity hero unless a genuinely outstanding Massacre of the Innocents painting is selected.",
+      "rule": "Optional spotlight: do not overwrite more important observed 1962 principal feast."
+    }
+  ],
+  "backlog": {
+    "first": "Resolve all remaining Sunday 1962 actual principal identities and Scripture references (missing from old matrix); crosslink to existing rated candidate IDs",
+    "second": "Reconcile 43 Class I remaining date assignments against past curator-reviewed pool and seasonally/contextually suitable artwork; avoid re-rating existing selections",
+    "third": "Verify non-I spotlights against actual observed 1962 principal and decide only where an exceptional image justifies it",
+    "fourth": "Acquire free reusable specific photographic originals for selected candidates, then verify uncropped 320/390px UI. Do not merge until real image-rights release and human approval."
+  }
+}

@@ -1,0 +1,69 @@
+name: Stage Approved Feast Hero Candidate Photographs
+on:
+  push:
+    branches: [fix/approved-feast-heroes-main-20261021]
+    paths:
+      - "tools/calendar/package-approved-feast-hero-candidates.py"
+      - ".github/workflows/stage-approved-feast-hero-photo-candidates.yml"
+  workflow_dispatch:
+permissions:
+  actions: read
+  contents: read
+concurrency:
+  group: approved-hero-candidate-stage-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  package-candidate-only:
+    if: github.repository == 'Fulcanelli13/ad-orientem' && github.ref == 'refs/heads/fix/approved-feast-heroes-main-20261021'
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Retrieve exact source-byte artifact from verified successful run
+        uses: actions/download-artifact@v4
+        with:
+          name: ten-curator-approved-feast-hero-photo-evidence
+          run-id: 39565626625
+          github-token: ${{ github.token }}
+          path: artifacts/sacred-art-approved-feast-hero-photographs
+      - name: Install image conversion dependency
+        run: pip install 'Pillow>=10,<12'
+      - name: Verify all ten original bytes and stage lower-bandwidth uncropped whole paintings
+        run: |
+          python -m py_compile tools/calendar/package-approved-feast-hero-candidates.py
+          python tools/calendar/package-approved-feast-hero-candidates.py
+      - name: Check derived file presence, size, and non-release gate
+        run: |
+          python - <<'PY'
+          import json, hashlib
+          from pathlib import Path
+          p=Path('data/calendar/approved-feast-hero-packaged-candidates-20261021.v1.json')
+          v=json.loads(p.read_text())
+          assert v['candidateWebpFilesWritten']==10
+          assert v['explicitAppRightsReleaseApprovals']==0
+          assert v['humanAcceptedImagePhotos']==0
+          assert v['liveReleaseManifest'] is None
+          assert len(v['photographs'])==10
+          for x in v['photographs']:
+              c=x['candidateFile']
+              b=Path(c['path']).read_bytes()
+              assert hashlib.sha256(b).hexdigest()==c['sha256']
+              assert c['originalPaintingSurfaceUncroppedByThisScript']
+              assert x['productionRelease'] is False
+          print('TEN CANDIDATE FILES HASH VERIFIED; ALL RELEASE GATES REMAIN CLOSED')
+          PY
+      - name: Upload independent packaging evidence (no repository writes)
+        uses: actions/upload-artifact@v4
+        with:
+          name: ten-approved-feast-hero-candidate-package-verified
+          path: |
+            assets/sacred-art/candidates/
+            data/calendar/approved-feast-hero-packaged-candidates-20261021.v1.json
+            docs/research/APPROVED-FEAST-HERO-PHOTO-REVIEW-20261021.html
+          retention-days: 30
+          if-no-files-found: error

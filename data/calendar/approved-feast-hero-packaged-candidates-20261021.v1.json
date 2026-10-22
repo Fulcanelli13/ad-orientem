@@ -1,0 +1,376 @@
+{
+  "schema": "AO_APPROVED_FEAST_HERO_PACKAGING_CANDIDATES_20261021_V1",
+  "status": "STAGED_LOCAL_PHONE_CANDIDATE_IMAGES_NOT_PRODUCTION_RELEASE",
+  "userSelectedPaintingsPreserved": 10,
+  "verifiedOriginalImageSHA": 10,
+  "candidateWebpFilesWritten": 10,
+  "humanAcceptedImagePhotos": 0,
+  "explicitAppRightsReleaseApprovals": 0,
+  "liveReleaseManifest": null,
+  "source": "data/calendar/approved-feast-hero-photo-sha-evidence-20261021.v1.json",
+  "sourceWorkflowRun": 39565626625,
+  "packaging": "Exact-source SHA verified, image resized to fit <=1600x1600 preserving painting content, no crop, source copy remains in 30-day Action archive.",
+  "rightsPolicy": "Met's OA is explicit CC0 for its particular public-domain images; Commons PD-Art can leave foreign reproduction/jurisdiction rights uncertainty. Do not publish based on Commons label alone.",
+  "photographs": [
+    {
+      "date": "2026-03-29",
+      "artist": "Anthony van Dyck",
+      "title": "The Entry of Christ into Jerusalem",
+      "occasion": "Palm Sunday",
+      "iconographyRelationship": "PUBLIC_DOMAIN_PHOTO_PAGE_CHECK_REPRODUCTION",
+      "editorialSelectionPreserved": true,
+      "sourcePhotoPage": "https://commons.wikimedia.org/wiki/File:Entry_of_Christ_into_Jerusalem_by_Anthony_van_Dyck.jpg",
+      "sourceObjectPage": "https://www.newfields.org/",
+      "sourceImageSHA256": "3eb608022b94c7de29c33a5ca5390a881eb9f2372e6fa8b48a24b641e688aa5d",
+      "sourceOriginalDimensions": [
+        5043,
+        3325
+      ],
+      "candidateFile": {
+        "path": "assets/sacred-art/candidates/hero-2026-03-29-3eb608022b94.webp",
+        "sha256": "7dd646da72caebcac8b915db81d97e5e09b430ffe6501834034201ddfd9072aa",
+        "byteCount": 202482,
+        "width": 1600,
+        "height": 1055,
+        "derivation": "EXIF_ORIENT_AND_WHOLE_IMAGE_RESIZE_ONLY",
+        "originalPaintingSurfaceUncroppedByThisScript": true,
+        "photoHumanVisualAccepted": false,
+        "mobile320VisualAccepted": false,
+        "mobile390VisualAccepted": false,
+        "anyAdditionalCrop": false
+      },
+      "rightsReview": {
+        "status": "COMMONS_PUBLIC_DOMAIN_REPRODUCTION_JURISDICTION_REVIEW",
+        "sourceLicenseLabel": "Public domain",
+        "sourcePolicyUrl": "https://commons.wikimedia.org/wiki/Commons:PD-Art",
+        "appDistributionIndependentlyApproved": false,
+        "photographRightsHumanSignedOff": false
+      },
+      "productionRelease": false
+    },
+    {
+      "date": "2026-04-02",
+      "artist": "Ugolino da Siena",
+      "title": "Last Supper",
+      "occasion": "Holy Thursday",
+      "iconographyRelationship": "MET_OPEN_ACCESS_CC0_API_CHECK",
+      "editorialSelectionPreserved": true,
+      "sourcePhotoPage": "https://www.metmuseum.org/art/collection/search/459131",
+      "sourceObjectPage": "https://www.metmuseum.org/art/collection/search/459131",
+      "sourceImageSHA256": "5d19d31a2a213a80e81bffe2c195a1e9b3ae810c0b3428a69ae94685fd73c502",
+      "sourceOriginalDimensions": [
+        3811,
+        2499
+      ],
+      "candidateFile": {
+        "path": "assets/sacred-art/candidates/hero-2026-04-02-5d19d31a2a21.webp",
+        "sha256": "12ffe0d36e5378762b4e3f400fea43a790e53becfa6e747db199b0886a4951ef",
+        "byteCount": 464274,
+        "width": 1600,
+        "height": 1049,
+        "derivation": "EXIF_ORIENT_AND_WHOLE_IMAGE_RESIZE_ONLY",
+        "originalPaintingSurfaceUncroppedByThisScript": true,
+        "photoHumanVisualAccepted": false,
+        "mobile320VisualAccepted": false,
+        "mobile390VisualAccepted": false,
+        "anyAdditionalCrop": false
+      },
+      "rightsReview": {
+        "status": "MET_CC0_POLICY_CONFIRMED_PER_OBJECT",
+        "sourceLicenseLabel": "MET_OPEN_ACCESS_PUBLIC_DOMAIN_REPORTED",
+        "sourcePolicyUrl": "https://www.metmuseum.org/policies/image-resources",
+        "appDistributionIndependentlyApproved": false,
+        "photographRightsHumanSignedOff": false
+      },
+      "productionRelease": false
+    },
+    {
+      "date": "2026-05-23",
+      "artist": "Juan Bautista Maíno",
+      "title": "The Pentecost",
+      "occasion": "Pentecost Vigil",
+      "iconographyRelationship": "VERIFY_FULL_SURFACE_NOT_DETAIL_AND_PRADO_PHOTO",
+      "editorialSelectionPreserved": true,
+      "sourcePhotoPage": "https://commons.wikimedia.org/wiki/File:Maino_Pentecost%C3%A9s._Lienzo._285_x_163_cm._Museo_del_Prado.jpg",
+      "sourceObjectPage": "https://www.museodelprado.es/en/the-collection/art-work/the-pentecost/49c1d551-240d-4bab-8f4a-39c706ce0ee5",
+      "sourceImageSHA256": "196bdfd806aaa037b20b1bbbd6f84c6d346c3f0e39e1400f3c1b1e3c3ab1d7de",
+      "sourceOriginalDimensions": [
+        1800,
+        3071
+      ],
+      "candidateFile": {
+        "path": "assets/sacred-art/candidates/hero-2026-05-23-196bdfd806aa.webp",
+        "sha256": "d03e5fa2ca64b4d576f3461d25bf861267d2f69382e69bc5bd1f1de4e02038f5",
+        "byteCount": 239960,
+        "width": 938,
+        "height": 1600,
+        "derivation": "EXIF_ORIENT_AND_WHOLE_IMAGE_RESIZE_ONLY",
+        "originalPaintingSurfaceUncroppedByThisScript": true,
+        "photoHumanVisualAccepted": false,
+        "mobile320VisualAccepted": false,
+        "mobile390VisualAccepted": false,
+        "anyAdditionalCrop": false
+      },
+      "rightsReview": {
+        "status": "COMMONS_PUBLIC_DOMAIN_REPRODUCTION_JURISDICTION_REVIEW",
+        "sourceLicenseLabel": "Public domain",
+        "sourcePolicyUrl": "https://commons.wikimedia.org/wiki/Commons:PD-Art",
+        "appDistributionIndependentlyApproved": false,
+        "photographRightsHumanSignedOff": false
+      },
+      "productionRelease": false
+    },
+    {
+      "date": "2026-05-24",
+      "artist": "Jean Restout",
+      "title": "Pentecost",
+      "occasion": "Pentecost",
+      "iconographyRelationship": "LOW_RESOLUTION_1240_WIDE_PHONE_ASSESS_NEVER_AUTOREJECT",
+      "editorialSelectionPreserved": true,
+      "sourcePhotoPage": "https://commons.wikimedia.org/wiki/File:Jean_II_Restout_-_Pentecost_-_WGA19318.jpg",
+      "sourceObjectPage": "https://collections.louvre.fr/en/ark:/53355/cl010062538",
+      "sourceImageSHA256": "2f81e53275f9c32f7afb71c03d870c29cdde943f4ffd6f8d0ea23c5efd341589",
+      "sourceOriginalDimensions": [
+        1240,
+        730
+      ],
+      "candidateFile": {
+        "path": "assets/sacred-art/candidates/hero-2026-05-24-2f81e53275f9.webp",
+        "sha256": "5db13e2aedbed466ed8f7d049398f8a9f8a5175dc5665c8b6da56cdc1ee39e1f",
+        "byteCount": 194826,
+        "width": 1240,
+        "height": 730,
+        "derivation": "EXIF_ORIENT_AND_WHOLE_IMAGE_RESIZE_ONLY",
+        "originalPaintingSurfaceUncroppedByThisScript": true,
+        "photoHumanVisualAccepted": false,
+        "mobile320VisualAccepted": false,
+        "mobile390VisualAccepted": false,
+        "anyAdditionalCrop": false
+      },
+      "rightsReview": {
+        "status": "COMMONS_PUBLIC_DOMAIN_REPRODUCTION_JURISDICTION_REVIEW",
+        "sourceLicenseLabel": "Public domain",
+        "sourcePolicyUrl": "https://commons.wikimedia.org/wiki/Commons:PD-Art",
+        "appDistributionIndependentlyApproved": false,
+        "photographRightsHumanSignedOff": false
+      },
+      "productionRelease": false
+    },
+    {
+      "date": "2026-05-27",
+      "artist": "Philippe de Champaigne",
+      "title": "La Petite Cène",
+      "occasion": "Pentecost Ember Wednesday",
+      "iconographyRelationship": "PREFER_UNFRAMED_1112x591_WHOLE_PAINTED_SURFACE_MOBILE_FIRST; retain original framed high-resolution photo as separately unapproved alternative. Both depict exactly same Louvre INV1125 artwork; don't crop painted surface.",
+      "editorialSelectionPreserved": true,
+      "sourcePhotoPage": "https://commons.wikimedia.org/wiki/File:Champaigne_Petite_C%C3%A8ne_Louvre.jpg",
+      "sourceObjectPage": "https://collections.louvre.fr/en/ark:/53355/cl010062076",
+      "sourceImageSHA256": "d4d8b3c1ea957c9517a24c62a97ab7143e07cdec2434c77ee05df17a5b29a320",
+      "sourceOriginalDimensions": [
+        1112,
+        591
+      ],
+      "candidateFile": {
+        "path": "assets/sacred-art/candidates/hero-2026-05-27-d4d8b3c1ea95.webp",
+        "sha256": "64d631d58256a4e479a05b799af5956240e90c945b6e0418c0c4f3d7ac7af83a",
+        "byteCount": 81592,
+        "width": 1112,
+        "height": 591,
+        "derivation": "EXIF_ORIENT_AND_WHOLE_IMAGE_RESIZE_ONLY",
+        "originalPaintingSurfaceUncroppedByThisScript": true,
+        "photoHumanVisualAccepted": false,
+        "mobile320VisualAccepted": false,
+        "mobile390VisualAccepted": false,
+        "anyAdditionalCrop": false
+      },
+      "rightsReview": {
+        "status": "COMMONS_PUBLIC_DOMAIN_REPRODUCTION_JURISDICTION_REVIEW",
+        "sourceLicenseLabel": "Public domain",
+        "sourcePolicyUrl": "https://commons.wikimedia.org/wiki/Commons:PD-Art",
+        "appDistributionIndependentlyApproved": false,
+        "photographRightsHumanSignedOff": false
+      },
+      "productionRelease": false
+    },
+    {
+      "date": "2026-06-12",
+      "artist": "Juan Patricio Morlete Ruiz",
+      "title": "The Heart of Jesus",
+      "occasion": "Sacred Heart",
+      "iconographyRelationship": "COMMONS_PD_ART_REVIEW",
+      "editorialSelectionPreserved": true,
+      "sourcePhotoPage": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg",
+      "sourceObjectPage": "https://commons.wikimedia.org/wiki/File:Juan_Patricio_Morlete_Ruiz_-_The_Heart_of_Jesus_-_Google_Art_Project.jpg",
+      "sourceImageSHA256": "06f940863256dfc4877814b33a54340fb8ec9c07f04097f8b3f73985a3583249",
+      "sourceOriginalDimensions": [
+        2345,
+        3045
+      ],
+      "candidateFile": {
+        "path": "assets/sacred-art/candidates/hero-2026-06-12-06f940863256.webp",
+        "sha256": "d0d69e4f0dc0dbfe47b8e7f4dd129f2767ddcd6005412b7fb0a1fd6545878630",
+        "byteCount": 352244,
+        "width": 1232,
+        "height": 1600,
+        "derivation": "EXIF_ORIENT_AND_WHOLE_IMAGE_RESIZE_ONLY",
+        "originalPaintingSurfaceUncroppedByThisScript": true,
+        "photoHumanVisualAccepted": false,
+        "mobile320VisualAccepted": false,
+        "mobile390VisualAccepted": false,
+        "anyAdditionalCrop": false
+      },
+      "rightsReview": {
+        "status": "COMMONS_PUBLIC_DOMAIN_REPRODUCTION_JURISDICTION_REVIEW",
+        "sourceLicenseLabel": "Public domain",
+        "sourcePolicyUrl": "https://commons.wikimedia.org/wiki/Commons:PD-Art",
+        "appDistributionIndependentlyApproved": false,
+        "photographRightsHumanSignedOff": false
+      },
+      "productionRelease": false
+    },
+    {
+      "date": "2026-10-25",
+      "artist": "Ambrosius Benson",
+      "title": "Salvator Mundi",
+      "occasion": "Christ the King",
+      "iconographyRelationship": "COPY_RIGHTS_FROM_FILE_AND_IDENTITY_REVIEW",
+      "editorialSelectionPreserved": true,
+      "sourcePhotoPage": "https://commons.wikimedia.org/wiki/File:Ambrosius_Benson_-_Salvator_Mundi.jpeg",
+      "sourceObjectPage": "https://www.christies.com/lotfinder/paintings/ambrosius-benson-salvator-mundi-6238407-details.aspx?from=salesummery&intobjectid=6238407&sid=4e9340f9-e401-4126-b489-f0df06180dd5",
+      "sourceImageSHA256": "2a25ed08f0fc21825eb084e0f5a09de63e8bdcf13c42d8b008d1d3bc805d3cd5",
+      "sourceOriginalDimensions": [
+        2987,
+        3200
+      ],
+      "candidateFile": {
+        "path": "assets/sacred-art/candidates/hero-2026-10-25-2a25ed08f0fc.webp",
+        "sha256": "37cd218c71758d44037d05bddbebf9b2de8eb62d0fa2c50c969be8f7119fa749",
+        "byteCount": 447704,
+        "width": 1494,
+        "height": 1600,
+        "derivation": "EXIF_ORIENT_AND_WHOLE_IMAGE_RESIZE_ONLY",
+        "originalPaintingSurfaceUncroppedByThisScript": true,
+        "photoHumanVisualAccepted": false,
+        "mobile320VisualAccepted": false,
+        "mobile390VisualAccepted": false,
+        "anyAdditionalCrop": false
+      },
+      "rightsReview": {
+        "status": "COMMONS_PUBLIC_DOMAIN_REPRODUCTION_JURISDICTION_REVIEW",
+        "sourceLicenseLabel": "Public domain",
+        "sourcePolicyUrl": "https://commons.wikimedia.org/wiki/Commons:PD-Art",
+        "appDistributionIndependentlyApproved": false,
+        "photographRightsHumanSignedOff": false
+      },
+      "productionRelease": false
+    },
+    {
+      "date": "2026-11-01",
+      "artist": "Carlo Saraceni",
+      "title": "Paradise",
+      "occasion": "All Saints",
+      "iconographyRelationship": "MET_OPEN_ACCESS_CC0_API_CHECK",
+      "editorialSelectionPreserved": true,
+      "sourcePhotoPage": "https://www.metmuseum.org/art/collection/search/437607",
+      "sourceObjectPage": "https://www.metmuseum.org/art/collection/search/437607",
+      "sourceImageSHA256": "dd8a69a0c86c0855b7836a63439d7978205ae37fa108db05e7d18035f2a54e78",
+      "sourceOriginalDimensions": [
+        3548,
+        4000
+      ],
+      "candidateFile": {
+        "path": "assets/sacred-art/candidates/hero-2026-11-01-dd8a69a0c86c.webp",
+        "sha256": "e5f4fde3cf40bb02bfb5fee8d0a54da6a9aaef43a24a508a2db58f6d29326791",
+        "byteCount": 301672,
+        "width": 1419,
+        "height": 1600,
+        "derivation": "EXIF_ORIENT_AND_WHOLE_IMAGE_RESIZE_ONLY",
+        "originalPaintingSurfaceUncroppedByThisScript": true,
+        "photoHumanVisualAccepted": false,
+        "mobile320VisualAccepted": false,
+        "mobile390VisualAccepted": false,
+        "anyAdditionalCrop": false
+      },
+      "rightsReview": {
+        "status": "MET_CC0_POLICY_CONFIRMED_PER_OBJECT",
+        "sourceLicenseLabel": "MET_OPEN_ACCESS_PUBLIC_DOMAIN_REPORTED",
+        "sourcePolicyUrl": "https://www.metmuseum.org/policies/image-resources",
+        "appDistributionIndependentlyApproved": false,
+        "photographRightsHumanSignedOff": false
+      },
+      "productionRelease": false
+    },
+    {
+      "date": "2026-11-02",
+      "artist": "Ludovico Carracci",
+      "title": "An Angel Frees the Souls of Purgatory",
+      "occasion": "All Souls",
+      "iconographyRelationship": "1200_HEIGHT_CAN_BE_PHONE_ACCEPTED_IF_CLEAR",
+      "editorialSelectionPreserved": true,
+      "sourcePhotoPage": "https://commons.wikimedia.org/wiki/File:Carracci-Purgatory.jpg",
+      "sourceObjectPage": "https://commons.wikimedia.org/wiki/File:Carracci-Purgatory.jpg",
+      "sourceImageSHA256": "18da520ad0e948089fccc6234cf831e428c810143cc6b88c1f528f2ecd2b8454",
+      "sourceOriginalDimensions": [
+        866,
+        1200
+      ],
+      "candidateFile": {
+        "path": "assets/sacred-art/candidates/hero-2026-11-02-18da520ad0e9.webp",
+        "sha256": "8ddb069cdbded62cb6927f0723848fcac1d199b073f2a9ea1455ac3c22956139",
+        "byteCount": 226108,
+        "width": 866,
+        "height": 1200,
+        "derivation": "EXIF_ORIENT_AND_WHOLE_IMAGE_RESIZE_ONLY",
+        "originalPaintingSurfaceUncroppedByThisScript": true,
+        "photoHumanVisualAccepted": false,
+        "mobile320VisualAccepted": false,
+        "mobile390VisualAccepted": false,
+        "anyAdditionalCrop": false
+      },
+      "rightsReview": {
+        "status": "COMMONS_PUBLIC_DOMAIN_REPRODUCTION_JURISDICTION_REVIEW",
+        "sourceLicenseLabel": "Public domain",
+        "sourcePolicyUrl": "https://commons.wikimedia.org/wiki/Commons:PD-Art",
+        "appDistributionIndependentlyApproved": false,
+        "photographRightsHumanSignedOff": false
+      },
+      "productionRelease": false
+    },
+    {
+      "date": "2026-11-29",
+      "artist": "John Martin",
+      "title": "The Great Day of His Wrath",
+      "occasion": "First Sunday of Advent",
+      "iconographyRelationship": "EXACT_COMMONS_PHOTO_RIGHTS_CHECK",
+      "editorialSelectionPreserved": true,
+      "sourcePhotoPage": "https://commons.wikimedia.org/wiki/File:John_Martin_-_The_Great_Day_of_His_Wrath_-_Google_Art_Project.jpg",
+      "sourceObjectPage": "https://www.tate.org.uk/art/artworks/martin-the-great-day-of-his-wrath-n05613",
+      "sourceImageSHA256": "315324ebdea671205cfc4dde658ab614e0f40b0f4b1756b53da03323031b6673",
+      "sourceOriginalDimensions": [
+        3136,
+        2023
+      ],
+      "candidateFile": {
+        "path": "assets/sacred-art/candidates/hero-2026-11-29-315324ebdea6.webp",
+        "sha256": "b9b79c0dc71bcde7c6483ab845f5d709e07b87e4628fa275dd665d2eda9ac73d",
+        "byteCount": 332050,
+        "width": 1600,
+        "height": 1032,
+        "derivation": "EXIF_ORIENT_AND_WHOLE_IMAGE_RESIZE_ONLY",
+        "originalPaintingSurfaceUncroppedByThisScript": true,
+        "photoHumanVisualAccepted": false,
+        "mobile320VisualAccepted": false,
+        "mobile390VisualAccepted": false,
+        "anyAdditionalCrop": false
+      },
+      "rightsReview": {
+        "status": "COMMONS_PUBLIC_DOMAIN_REPRODUCTION_JURISDICTION_REVIEW",
+        "sourceLicenseLabel": "Public domain",
+        "sourcePolicyUrl": "https://commons.wikimedia.org/wiki/Commons:PD-Art",
+        "appDistributionIndependentlyApproved": false,
+        "photographRightsHumanSignedOff": false
+      },
+      "productionRelease": false
+    }
+  ]
+}
