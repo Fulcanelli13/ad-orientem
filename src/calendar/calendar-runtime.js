@@ -7,6 +7,7 @@ import { calendarIntelligenceForDate, calendarPracticeMonthEntries } from "./int
 import { pilgrimagePlacesForCalendarKeys } from "./pilgrimage-places.js";
 import { renderYearJourney, yearJourneyCss } from "./year-journey.js";
 import { calendarCustomRecommendations, calendarCustomSeasonalMonthEntries, calendarCustomArticleIds, calendarCustomArticle } from "./customs-read-model.js";
+import { personalCustomsForDate } from "../customs/personal-store.js";
 import { calendarMassColour } from "./colour-projection.js";
 import { calendarPaletteColour, yearDailyProjection, yearSeasonGradient } from "./year-colour-wheel.js";
 import { serialize1962CalendarMonth, calendarMonthIcsFilename } from "./export-ics.js";
@@ -286,6 +287,7 @@ function monthHybridOverview(monthId,selected){
       <div class="aoCalHybridHeading"><h3>${esc(L("Practices & customs","Pratiques et coutumes"))}</h3></div>
       ${seasonalCustoms.length?`<div class="aoCalCustomMonthContext"><small>${esc(L("CUSTOMS OF THE SEASON","COUTUMES DE LA SAISON"))}</small>${seasonalCustoms.map(item=>calendarCustomArticle(item.id)).filter(Boolean).map(calendarCustomArticleMarkup).join("")}</div>`:""}
       <div class="aoCalHybridPractices">${practiceCards||(seasonalCustoms.length?"":`<p class="aoCalHybridEmpty">${esc(L("No featured practices for this month.","Aucune pratique signalée pour ce mois."))}</p>`)}</div>
+      <button type="button" class="aoCalMyCustomsButton" data-cal-my-customs-open>${esc(L("My Customs & Prayers","Mes coutumes et prières"))} →</button>
     </section>
   </div>`;
 }
@@ -733,7 +735,23 @@ function calendarCustomCatalogueMarkup(){
     +'<input id="ao-cal-custom-search" type="search" data-cal-custom-search autocomplete="off" placeholder="'+esc(L("Name or subject","Nom ou sujet"))+'">'
     +'<p data-cal-custom-empty hidden>'+esc(L("No matching customs.","Aucune coutume correspondante."))+'</p>'
     +'<div class="aoCalCustomCatalogueItems">'+articles.map(item).join("")+'</div>'
-    +'</details></section>';
+    +'</details><button type="button" class="aoCalMyCustomsButton" data-cal-my-customs-open>'+esc(L("My Customs & Prayers","Mes coutumes et prières"))+' →</button></section>';
+}
+
+
+function calendarPersonalContext(selected){
+  let storage=null;try{storage=globalThis.localStorage}catch{}
+  const mine=personalCustomsForDate(selected,{storage,canonicalIds:calendarCustomArticleIds()});
+  if(!mine.length)return "";
+  const copy=record=>{
+    const canonical=record.origin==="canonical"?calendarCustomArticle(record.customId):null;
+    const title=canonical?.title[fr()?"fr":"en"]||record.title;
+    const kind=canonical?L("Adopted sourced custom","Coutume sourcée adoptée"):record.kind==="prayer"?L("Personal prayer","Prière personnelle"):L("Personal custom","Coutume personnelle");
+    const reading=record.body?'<details data-cal-personal-reading><summary>'+esc(L("Read my text","Lire mon texte"))+'</summary><p>'+esc(record.body)+'</p></details>':"";
+    return '<article class="aoCalPersonalPractice"><small>'+esc(kind)+'</small><strong>'+esc(title)+'</strong>'+reading+(record.note?'<p>'+esc(record.note)+'</p>':"")+'</article>';
+  };
+  return '<section class="aoCalPersonalContext" data-cal-personal-date="'+esc(selected)+'"><div class="aoCalV2SectionTitle"><div><small>'+esc(L("PERSONAL · NOT LITURGICAL","PERSONNEL · NON LITURGIQUE"))+'</small><h3>'+esc(L("My household practices","Mes pratiques familiales"))+'</h3></div></div>'
+   +mine.map(copy).join("")+'<button type="button" class="aoCalMyCustomsButton" data-cal-my-customs-open>'+esc(L("Manage my customs & prayers","Gérer mes coutumes et prières"))+' →</button></section>';
 }
 
 function practiceContext(selected,r){
@@ -884,6 +902,7 @@ function daySurface(selected,r){
       <button class="aoCalV2TextLink" type="button" data-cal-view="year">${esc(L("View the liturgical year","Voir l’année liturgique"))} →</button>
     </section>
     ${practiceContext(selected,r)}
+    ${calendarPersonalContext(selected)}
     ${calendarCustomCatalogueMarkup()}
     <section class="aoCalV2WeekSection">
       <div class="aoCalV2SectionTitle"><div><small>${esc(L("IN CONTEXT","EN CONTEXTE"))}</small><h3>${esc(L("This week","Cette semaine"))}</h3></div><button class="aoCalV2Today" type="button" data-cal-today>${esc(L("Today","Aujourd’hui"))}</button></div>
@@ -1096,6 +1115,14 @@ function hybridMonthCss(){return `
 .aoCalCustomCatalogue [data-cal-custom-item][hidden]{display:none!important}
 .aoCalCustomCatalogueItems{margin-top:10px}
 .aoCalCustomCatalogue [data-cal-custom-empty]{font-size:13px;color:#aba49b}
+.aoCalMyCustomsButton{margin-top:13px;background:transparent;border:1px solid rgba(202,180,144,.4);border-radius:5px;color:#d9c49d;padding:10px 14px;min-height:44px;font-size:14px;cursor:pointer}
+.aoCalPersonalContext{margin:14px 0 20px;padding:13px;border-left:2px solid rgba(203,176,131,.55);background:rgba(203,176,131,.045)}
+.aoCalPersonalPractice{border-top:1px solid rgba(222,208,178,.13);padding:10px 0;display:flex;flex-direction:column;gap:5px}
+.aoCalPersonalPractice small{color:#b7a98e;font-size:12px}
+.aoCalPersonalPractice strong{color:#eee2ce;font-size:16px;font-weight:500}
+.aoCalPersonalPractice p{color:#bbb3a7;font-size:14px;white-space:pre-wrap;overflow-wrap:anywhere;margin:2px 0}
+.aoCalPersonalPractice details{border-top:1px solid rgba(222,208,178,.13);padding-top:7px}
+.aoCalPersonalPractice details summary{color:#d6be91;cursor:pointer;font-size:14px;min-height:36px;padding:7px 0}
 /* Sanctorale defaults to the restrained register while the user-chosen
    hybrid leaves its exact aesthetic open; no source identities are modified. */
 #ao-calendar-modular-root [data-cal-month-index="sanctorale"] .aoCalMonthIndexList{gap:0}
@@ -1451,6 +1478,14 @@ function bind(r){
     if(empty)empty.hidden=visible!==0;
   });
   r.addEventListener("click",event=>{
+    const myCustoms=event.target.closest?.("[data-cal-my-customs-open]");
+    if(myCustoms){
+      event.preventDefault();
+      void import("../customs/personal-ui.js").then(module=>
+        module.openMyCustoms({language:fr()?"fr":"en",onChange:()=>{if(root())paint()}})
+      ).catch(error=>console.error("Personal Customs module unavailable",error));
+      return;
+    }
     const clockControl=event.target.closest?.("[data-cal-clock-close],[data-cal-clock-season],[data-cal-clock-cluster],[data-cal-clock-feast],[data-cal-clock-open-day],[data-cal-clock-browse],[data-cal-clock-year],[data-cal-clock-today]");
     if(clockControl){
       event.preventDefault();
