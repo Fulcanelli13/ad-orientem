@@ -62,8 +62,17 @@ try{
  assert.equal(await page.locator("#candidateList .candidate").count(),22);
  await page.locator(".source .body").first().waitFor({state:"visible",timeout:20000});
  assert.ok((await page.locator(".source .body").first().innerText()).length>50);
+ assert.equal(await page.locator('[data-original-work-evidence="translated-parallel-found"]').count(),1);
+ assert.match(await page.locator('[data-original-work-evidence="translated-parallel-found"]').innerText(),
+  /english translation/i);
+ assert.match(await page.locator('[data-original-work-evidence="translated-parallel-found"] a').getAttribute("href"),
+  /^https:\/\/www\.newadvent\.org\/fathers\//);
+ assert.equal(await page.locator('#reviewForm input[type="checkbox"]:checked').count(),0,
+  "External translated work links must not pre-certify any source attestation");
  await page.locator('[data-filter="escalated"]').click();
  assert.equal(await page.locator("#candidateList .candidate").count(),8);
+ assert.equal(await page.locator('[data-original-work-evidence="not-located"]').count(),1,
+  "At least one escalated source must display missing original-work status");
  assert.equal(await page.locator("#review-disposition option[value='approve']").count(),0,
   "An escalated source cannot receive an approval proposal");
  await page.locator('[data-filter="ready"]').click();

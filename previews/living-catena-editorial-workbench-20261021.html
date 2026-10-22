@@ -81,12 +81,13 @@ import {validateCatenaEditorialRoutes,validateCatenaEditorialReview,
   catenaEditorialReviewLabel} from "../src/scripture/catena-editorial-routes.js";
 import {CATENA_REVIEW_CHECKS,isCatenaReviewRouteEligible,
   validateCatenaReviewDecision,buildCatenaReviewExport} from "../src/scripture/catena-review-decisions.js";
+import {validateCatenaWorkLociPreview} from "../src/scripture/catena-review-work-loci.js";
 const ROOT="../data/scripture/catena/";
 const KEY="ao-catena-matthew-human-review-local-draft-v1";
 const candidateList=document.getElementById("candidateList");
 const workspace=document.getElementById("workspace");
 const count=document.getElementById("countText");
-let registry=null,review=null,filter="ready",active=null,sourceCache=new Map(),states=new Map();
+let registry=null,review=null,workLoci=null,filter="ready",active=null,sourceCache=new Map(),states=new Map();
 const $=(tag,className,text)=>{const el=document.createElement(tag);if(className)el.className=className;if(text!==undefined)el.textContent=text;return el};
 const append=(parent,tag,cls,str)=>{const e=$(tag,cls,str);parent.append(e);return e};
 const safe=(s)=>String(s||"");
@@ -273,6 +274,23 @@ async function select(pointer){
   link.target="_blank";link.rel="noopener noreferrer";frame.append(link);
   append(frame,"p","support","SHA-256 of unchanged original excerpt: "+source.hash);
   workspace.append(frame);
+  const reference=workLoci?.byPointer.get(rec.sourcePointer);
+  const primary=$("section","source");
+  primary.dataset.originalWorkEvidence=reference?"translated-parallel-found":"not-located";
+  append(primary,"h3",null,"Underlying patristic work");
+  if(reference){
+   append(primary,"p","footnote","Located in a full-work ENGLISH translation; no Greek/Latin collation, authorship certificate or licence clearance.");
+   append(primary,"p",null,reference.patristicWork+" · "+reference.workLocus);
+   append(primary,"p","subtle",reference.translatedParallelEvidence);
+   append(primary,"p","notice",reference.qualification);
+   const a=$("a",null,"Read the complete translated work ↗");
+   a.href=reference.externalWorkTextURL;a.target="_blank";a.rel="noopener noreferrer";
+   primary.append(a);
+  }else append(primary,"p","notice",
+   "Original-work passage not yet independently located in the external research. Do not infer that the printed Catena attribution constitutes original-work verification.");
+  append(primary,"p","footnote",
+   "This panel is an investigative aid only. All six review attestations remain unchecked unless an actual editor deliberately completes them.");
+  workspace.append(primary);
   const details=$("details"),summary=$("summary",null,"Examine adjacent commentary and other Fathers");
   details.append(summary);
   const context=$("div");addSourceUnits(context,source,source.ordinal);
@@ -298,12 +316,14 @@ document.querySelectorAll("[data-filter]").forEach(b=>b.addEventListener("click"
  if(!visible.some(x=>x.sourcePointer===active)&&visible.length)void select(visible[0].sourcePointer);
 }));
 try{
- const [index,reviewData]=await Promise.all([
+ const [index,reviewData,lociData]=await Promise.all([
   jsonFile("editorial-matthew-routes.v1.json"),
-  jsonFile("editorial-matthew-first-30-review.v1.json")
+  jsonFile("editorial-matthew-first-30-review.v1.json"),
+  jsonFile("editorial-matthew-work-loci.v1.json")
  ]);
  registry=validateCatenaEditorialRoutes(index);
  review=validateCatenaEditorialReview(reviewData,registry);
+ workLoci=validateCatenaWorkLociPreview(lociData,review);
  loadDraft();renderList();
  const first=review.records.find(isReady)||review.records[0];void select(first.sourcePointer);
 }catch(error){

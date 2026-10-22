@@ -1,9 +1,22 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
+import {validateCatenaWorkLociPreview} from "../src/scripture/catena-review-work-loci.js";
 import {CATENA_REVIEW_CHECKS,isCatenaReviewRouteEligible,
  validateCatenaReviewDecision,buildCatenaReviewExport,CATENA_REVIEW_EXPORT_SCHEMA} from "../src/scripture/catena-review-decisions.js";
 const data=JSON.parse(readFileSync("data/scripture/catena/editorial-matthew-first-30-review.v1.json","utf8"));
 assert.equal(data.records.length,30);
+const works=JSON.parse(readFileSync("data/scripture/catena/editorial-matthew-work-loci.v1.json","utf8"));
+const external=validateCatenaWorkLociPreview(works,data);
+assert.equal(external.total,13);
+assert.equal(external.byPointer.size,13);
+assert.ok([...external.byPointer.values()].every(x=>x.originalLanguageCollated===false));
+assert.ok([...external.byPointer.values()].every(x=>x.independentHumanApproved===false));
+assert.equal(external.byPointer.get("catena.matthew.1.20:20").workLocus.includes("38–39"),true);
+assert.equal(external.byPointer.get("catena.matthew.11.28:16").workLocus.includes("Sermon 20"),true);
+assert.throws(()=>validateCatenaWorkLociPreview({...works,humanApproved:true},data),
+ /CATENA_ORIGINAL_WORK_RESEARCH_INVALID/);
+assert.throws(()=>validateCatenaWorkLociPreview({...works,records:[...works.records,{...works.records[0]}]},data),
+ /CATENA_ORIGINAL_WORK_RESEARCH_INVALID/);
 const ready=data.records.filter(isCatenaReviewRouteEligible),blocked=data.records.filter(x=>!isCatenaReviewRouteEligible(x));
 assert.equal(ready.length,22);assert.equal(blocked.length,8);
 assert.equal(CATENA_REVIEW_CHECKS.length,6);
