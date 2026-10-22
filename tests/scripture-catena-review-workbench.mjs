@@ -12,6 +12,13 @@ assert.equal(external.total,18);
 const focused=JSON.parse(readFileSync("data/scripture/catena/editorial-matthew-nine-focus.v1.json","utf8"));
 const nine=validateCatenaNineFocus(focused,data,external);
 assert.equal(nine.total,9);
+assert.equal(focused.researchCommit,"d2b5ca02248361eb0a6acddfc1c0f4c0d90fca65");
+assert.ok(focused.records.every(x=>x.englishWitnessCheck.onlineSearchAnchorObserved===true));
+assert.ok(focused.records.every(x=>x.englishWitnessCheck.criticalEditionChecked===false));
+assert.ok(focused.records.every(x=>x.englishWitnessCheck.attestedHumanEditor===false));
+assert.throws(()=>validateCatenaNineFocus({...focused,records:focused.records.map((x,i)=>i===0?
+ {...x,englishWitnessCheck:{...x.englishWitnessCheck,originalGreekOrLatinCompared:true}}:x)},data,external),
+ /CATENA_NINE_FOCUS_RECORD_INVALID/);
 assert.equal(nine.byPointer.get("catena.matthew.13.1:17").fullWorkCitation,"Homily 44, section 5");
 assert.equal(nine.byPointer.get("catena.matthew.13.36:9").fullWorkCitation,"Homily 47, section 1");
 assert.throws(()=>validateCatenaNineFocus({...focused,independentlyEditorApproved:true},data,external),/CATENA_NINE_FOCUS_INVALID/);

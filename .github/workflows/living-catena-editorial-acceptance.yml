@@ -1,0 +1,53 @@
+name: Living Catena editorial source acceptance
+
+on:
+  push:
+    branches:
+      - feature/living-catena-messenger-source-linked-20261021
+    paths:
+      - '.github/workflows/living-catena-editorial-acceptance.yml'
+      - 'src/scripture/catena-*.js'
+      - 'data/scripture/catena/editorial-*.json'
+      - 'tests/scripture-catena-*.mjs'
+      - 'previews/living-catena-editorial-workbench-20261021.html'
+  pull_request:
+    paths:
+      - '.github/workflows/living-catena-editorial-acceptance.yml'
+      - 'src/scripture/catena-*.js'
+      - 'data/scripture/catena/editorial-*.json'
+      - 'tests/scripture-catena-*.mjs'
+      - 'previews/living-catena-editorial-workbench-20261021.html'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: catena-editorial-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  source-contracts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify pinned canonical source fragments and editorial-route blockers
+        run: node tests/scripture-catena-editorial-routes.mjs
+      - name: Verify nine English witnesses and local-only human review exports
+        run: node tests/scripture-catena-review-workbench.mjs
+  phone-acceptance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Verify experimental Messenger and human-editor phone workbench
+        run: node tests/scripture-catena-editorial-phone.mjs

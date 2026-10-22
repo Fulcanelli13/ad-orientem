@@ -5,8 +5,8 @@
 export const CATENA_NINE_FOCUS_SCHEMA="ao.catena.matthew-nine-focused-editorial-preview.v1";
 export function validateCatenaNineFocus(data,contextReview,workLoci){
  if(data?.schema!==CATENA_NINE_FOCUS_SCHEMA||
-  data.researchCommit!=="23a9dc9f45a5f9b90d17db80c0ed22ca6a60a597"||
-  data.sourceWorkCrosswalkCommit!==data.researchCommit||
+  data.researchCommit!=="d2b5ca02248361eb0a6acddfc1c0f4c0d90fca65"||
+  data.sourceWorkCrosswalkCommit!=="23a9dc9f45a5f9b90d17db80c0ed22ca6a60a597"||
   data.expectedTotal!==9||data.records?.length!==9||
   data.originalLanguageCollated!==false||data.independentlyEditorApproved!==false||
   data.publicationEligibility!=="blocked_research_only"||
@@ -27,6 +27,15 @@ export function validateCatenaNineFocus(data,contextReview,workLoci){
    row.shortParallelTranslationAnchor?.length<16||
    row.comparisonBasis!=="passage_argument_same_meaning_in_distinct_English_translations"||
    row.researchCaution?.length<45||
+   row.englishWitnessCheck?.checkedOn!=="2026-10-22"||
+   row.englishWitnessCheck?.checkedSection?.length<10||
+   row.englishWitnessCheck?.verbatimOnlineEnglishSearchAnchor!==row.shortParallelTranslationAnchor||
+   row.englishWitnessCheck?.onlineSearchAnchorObserved!==true||
+   row.englishWitnessCheck?.wholeWorkLocationObserved!==true||
+   row.englishWitnessCheck?.originalGreekOrLatinCompared!==false||
+   row.englishWitnessCheck?.criticalEditionChecked!==false||
+   row.englishWitnessCheck?.attestedHumanEditor!==false||
+   row.englishWitnessCheck?.researchAnchorSourceCommit!=="d2b5ca02248361eb0a6acddfc1c0f4c0d90fca65"||
    row.humanSignoff!==false||row.independentTextCriticalAuthentication!==false||
    row.publicationEligibility!=="blocked_research_only")
    throw new Error("CATENA_NINE_FOCUS_RECORD_INVALID");

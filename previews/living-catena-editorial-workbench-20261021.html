@@ -286,6 +286,9 @@ async function select(pointer){
    primary.dataset.focusedSource="english-parallel-checked";
    append(primary,"p","notice","FOCUSED EDITORIAL CHECK · Exact whole-work English passage located. Still requires independent source, speaker and rights verification.");
    append(primary,"p","footnote","Parallel English wording to locate inside the full work: “"+pinned.shortParallelTranslationAnchor+"”");
+   append(primary,"p","footnote","English translation checked "+pinned.englishWitnessCheck.checkedOn+
+    " at "+pinned.englishWitnessCheck.checkedSection+
+    "; neither original-language critical collation nor independent human approval has been completed.");
    append(primary,"p","footnote","Research has compared meaning between distinct English translations; this is not a verbatim original-language or edition-level collation.");
   }
   if(reference){
