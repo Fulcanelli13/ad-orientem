@@ -599,7 +599,25 @@ export const HERITAGE_STYLE = String.raw`
 .aoExplorePlaceSheet .aoExploreGuideDate small{font:400 11px/1.4 var(--ao-font-ui,system-ui,sans-serif);color:var(--ao-text-muted,#9ca6b3)}
 .aoExplorePlaceSheet .aoExploreIllustratedGuide .aoExploreStoryEvidence{margin-top:5px}
 .aoExplorePlaceSheet .aoExploreGuideIntro .aoExploreStoryEvidence{margin-top:12px}
-@media(max-width:520px){.aoExplorePlaceSheet .aoExploreIllustratedGuide{gap:18px}.aoExplorePlaceSheet .aoExploreGuideIntro{padding:18px 13px}.aoExplorePlaceSheet .aoExploreGuideTimeline li{grid-template-columns:92px 1fr;gap:9px}}
+/* Narrow sanctuary folios: grid tracks and headings must shrink without
+   forcing a sideways-scrolling sheet on phones. Keep evidence URLs legible. */
+.aoExplorePlaceSheet>header{grid-template-columns:minmax(0,1fr) var(--ao-control-h,44px)}
+.aoExplorePlaceSheet>header>div{min-width:0;max-width:100%}
+.aoExplorePlaceSheet>header h2,
+.aoExplorePlaceSheet>header p{overflow-wrap:anywhere}
+.aoExplorePlaceSheet .aoExploreIllustratedGuide{grid-template-columns:minmax(0,1fr)}
+.aoExplorePlaceSheet .aoExploreIllustratedGuide>*{min-width:0;max-width:100%;box-sizing:border-box}
+.aoExplorePlaceSheet .aoExploreGuideIntro h3,
+.aoExplorePlaceSheet .aoExploreGuideSection h4,
+.aoExplorePlaceSheet .aoExploreGuideStops h5,
+.aoExplorePlaceSheet .aoExploreGuideTimeline strong,
+.aoExplorePlaceSheet .aoExploreGuideDate strong{overflow-wrap:anywhere}
+.aoExplorePlaceSheet .aoExploreGuideTimeline li{grid-template-columns:minmax(0,30%) minmax(0,1fr)}
+@media(max-width:520px){
+ .aoExplorePlaceSheet .aoExploreIllustratedGuide{gap:18px}
+ .aoExplorePlaceSheet .aoExploreGuideIntro{padding:18px 13px}
+ .aoExplorePlaceSheet .aoExploreGuideTimeline li{grid-template-columns:minmax(0,92px) minmax(0,1fr);gap:9px}
+}
 
 /* Reviewed in-repository imagery: entire original frame, dark sacred palette, source credits. */
 .aoExplorePlaceSheet .aoExploreGuideGallery{min-width:0;display:grid;gap:14px}

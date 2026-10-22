@@ -17,6 +17,7 @@ import { projectSaintCatalogueItems } from "./saints-catalogue.js";
 import { projectSaintSourceIndexItems } from "./saints-source-index.js";
 import { mapViewport, mountExploreMap, exploreMapFeatures } from "./map-runtime.js";
 import {buildAtlasCoverage} from "./mapcn-atlas-coverage.js";
+import {buildSacredNetwork} from "./mapcn-network-model.js";
 import { ATLAS_PHYSICAL_STYLE } from "./atlas-physical-style.js";
 import { readAtlasReadingPlace, saveAtlasReadingPlace } from "./bible-atlas-reading-place.js";
 import { buildBibleAtlas, atlasMapItems, atlasIndexForPin, atlasDetail, atlasPinEpisodes, atlasEraOverlay, atlasCinemaPlate, renderBibleAtlasToString } from "./bible-atlas.js";
@@ -141,6 +142,7 @@ export function createFindOwner(win=globalThis){
   let lastMapView=null,lastMapLens=null;
   // Ephemeral ranked results only. Device location is never stored or persisted.
   let nearbyResults=null;
+  let networkGraph=null;
   let journeyPreviousCategories=null;
   const queryByLens=new Map();
   const scrollGuard=createScrollTapGuard(win?.document,{
@@ -182,6 +184,11 @@ export function createFindOwner(win=globalThis){
     atlasScope:"all",
     atlasCountry:null,
     atlasCountryLimit:12,
+    networkOpen:false,
+    networkFocus:"",
+    networkSearch:"",
+    networkKind:"all",
+    networkLimit:12,
     bibleAtlas:false,
     bibleIndex:0,
   };
@@ -325,6 +332,9 @@ export function createFindOwner(win=globalThis){
     // users can type a complete query, including on mobile keyboards.
     const priorDiscoverScroll=node.querySelector?.(".aoMapcnDiscoverEntries")?.scrollTop??0;
     const priorTimeMassScroll=node.querySelector?.(".aoTimeMassScroll")?.scrollTop??0;
+    const priorNetworkScroll=node.querySelector?.(".aoNetworkResults")?.scrollTop??0;
+    const wasNetworkSearch=node.querySelector?.("[data-network-search]")===win?.document?.activeElement;
+    const networkCaret=wasNetworkSearch?node.querySelector?.("[data-network-search]")?.selectionStart:0;
     const activeTimeMassSearch=node.querySelector?.("[data-explore-time-mass-query]");
     const timeMassFocused=activeTimeMassSearch===win?.document?.activeElement;
     const timeMassCaret=timeMassFocused?{start:activeTimeMassSearch.selectionStart,
@@ -422,6 +432,8 @@ export function createFindOwner(win=globalThis){
       data?.shrines?.routeStageSiteLinks,data?.geography?.places);
     const atlasCoverage=state.lens==="heritage"
       ?buildAtlasCoverage(data,projection,{scope:state.atlasScope}):null;
+    if(state.lens==="heritage"&&state.networkOpen&&!networkGraph)
+      networkGraph=buildSacredNetwork(data);
     const featuredPlaces=placeProfiles.filter(p=>p.editorial_feature&&p.map_publishable&&p.sources.length)
       .sort((a,b)=>a.editorial_feature.ordinal-b.editorial_feature.ordinal);
     const vm=buildExploreViewModel({
@@ -442,6 +454,7 @@ export function createFindOwner(win=globalThis){
       selectedOverride,
       displayLimit:state.displayLimit,
       atlasCoverage:state.atlasMode!=="places"?atlasCoverage:null,
+      network:state.lens==="heritage"&&state.networkOpen?networkGraph:null,
       timeMass:state.lens==="heritage"&&state.timeMassOpen
         ?buildTimeMassBoard({projection,asOf:localTodayIso(),
           date:state.timeMassDate,query:state.timeMassQuery,
@@ -498,6 +511,13 @@ export function createFindOwner(win=globalThis){
     }else node.innerHTML=rendered;
     const discoverEntries=node.querySelector?.(".aoMapcnDiscoverEntries");
     if(discoverEntries)discoverEntries.scrollTop=priorDiscoverScroll;
+    const networkList=node.querySelector?.(".aoNetworkResults");
+    if(networkList)networkList.scrollTop=priorNetworkScroll;
+    if(wasNetworkSearch){
+      const target=node.querySelector?.("[data-network-search]");
+      target?.focus?.({preventScroll:true});
+      try{target?.setSelectionRange?.(networkCaret,networkCaret)}catch{}
+    }
     const newTimeMassScroll=node.querySelector?.(".aoTimeMassScroll");
     if(newTimeMassScroll)newTimeMassScroll.scrollTop=priorTimeMassScroll;
     if(timeMassFocused){
@@ -628,6 +648,7 @@ export function createFindOwner(win=globalThis){
     if(state.lens==="heritage"){
       state.view="map";
       state.timeMassOpen=options?.timeMass===true;
+      state.networkOpen=false;
       state.atlasMode="places";state.atlasCountry=null;
       if(Array.isArray(options?.categories))state.heritageCategories=options.categories.filter(cat=>HERITAGE_CATEGORIES.includes(cat));
     }
@@ -705,6 +726,7 @@ export function createFindOwner(win=globalThis){
     openState=false;state.selectedId=null;state.selectedPlaceId=null;state.expandPlace=false;state.expandDetail=false;
     state.bibleAtlas=false;state.bibleIndex=0;
     state.timeMassOpen=false;state.atlasMode="places";state.atlasCountry=null;atlasReturnViewport=null;
+    state.networkOpen=false;
     lastMapView=null;lastMapLens=null;mapHandle?.destroy?.();mapHandle=null;
     nearbyResults=null;
     const node=getRoot(win);if(node){node.dataset.open="false";node.innerHTML=""}
@@ -802,6 +824,7 @@ export function createFindOwner(win=globalThis){
       }
       state.lens=value;state.calendarKey=null;nearbyResults=null;
       state.timeMassOpen=false;state.atlasMode="places";state.atlasCountry=null;
+      state.networkOpen=false;
       if(value!=="heritage"){state.journeyOpen=false;journeyPreviousCategories=null;}
       if(value==="saints")state.view="list";
       else if(value==="heritage"||value==="traditions"||value==="tlm")state.view="map";
@@ -1119,6 +1142,7 @@ export function createFindOwner(win=globalThis){
       state.query="";state.heritageCategories=[...HERITAGE_CATEGORIES];
       state.journeyOpen=false;journeyPreviousCategories=null;
       state.timeMassOpen=false;state.atlasMode="places";state.atlasCountry=null;
+      state.networkOpen=false;
       state.highlightCustomId=null;state.selectedId=null;
       state.selectedPlaceId=null;state.expandPlace=false;state.expandDetail=false;
       nearbyResults=null;
@@ -1129,6 +1153,7 @@ export function createFindOwner(win=globalThis){
       event.preventDefault?.();
       state.timeMassOpen=!state.timeMassOpen;
       if(state.timeMassOpen){
+        state.networkOpen=false;
         state.atlasMode="places";state.atlasCountry=null;
         state.journeyOpen=false;journeyPreviousCategories=null;nearbyResults=null;
         state.selectedId=null;state.selectedPlaceId=null;
@@ -1147,6 +1172,46 @@ export function createFindOwner(win=globalThis){
         state.timeMassLimit=Math.min(120,state.timeMassLimit+24);
         void paint();return;
       }
+    }
+    if(target?.closest?.("button[data-network-toggle]")&&state.lens==="heritage"){
+      event.preventDefault?.();
+      state.networkOpen=!state.networkOpen;
+      if(state.networkOpen){
+        state.timeMassOpen=false;state.atlasMode="places";state.atlasCountry=null;
+        state.journeyOpen=false;journeyPreviousCategories=null;nearbyResults=null;
+        state.highlightCustomId=null;state.selectedId=null;state.selectedPlaceId=null;
+      }
+      void paint();return;
+    }
+    if(target?.closest?.("button[data-network-close]")&&state.networkOpen){
+      event.preventDefault?.();state.networkOpen=false;void paint();return;
+    }
+    const openCustom=target?.closest?.("[data-network-open-custom]");
+    if(openCustom&&state.lens==="heritage"&&state.networkOpen){
+      event.preventDefault?.();
+      const id=openCustom.dataset.networkOpenCustom;
+      const canonical=projection?.byLens?.traditions?.find(item=>
+        item?.raw?.custom?.custom_id===id&&item?.raw?.custom?.publication_state==="PUBLISHED");
+      if(!canonical)return;
+      // Open the existing canonical Traditions folio; no duplicate custom owner.
+      queryByLens.set("heritage",state.query);
+      state.lens="traditions";state.view="list";state.query="";
+      state.networkOpen=false;state.networkFocus="";state.selectedPlaceId=null;
+      // Grouped canonical custom folios use tradition:custom:<custom_id>,
+      // never an individual attestation item's source-specific identity.
+      state.selectedId="tradition:custom:"+id;state.expandPlace=false;state.expandDetail=true;
+      state.displayLimit=24;state.highlightCustomId=null;
+      lastMapView=null;lastMapLens=null;nearbyResults=null;
+      void paint();return;
+    }
+    const focused=target?.closest?.("[data-network-focus]");
+    if(focused&&state.networkOpen){
+      event.preventDefault?.();
+      state.networkFocus=focused.dataset.networkFocus||"";
+      state.networkLimit=12;void paint();return;
+    }
+    if(target?.closest?.("button[data-network-more]")&&state.networkOpen){
+      event.preventDefault?.();state.networkLimit=Math.min(20,state.networkLimit+4);void paint();return;
     }
     const atlasButton=target?.closest?.("button[data-atlas-mode]");
     if(atlasButton&&state.lens==="heritage"){
@@ -1171,6 +1236,7 @@ export function createFindOwner(win=globalThis){
         }
         state.atlasMode=mode;state.atlasCountry=null;
         if(mode!=="places"){
+          state.networkOpen=false;
           state.timeMassOpen=false;state.journeyOpen=false;journeyPreviousCategories=null;
           state.highlightCustomId=null;state.heritageCategories=[...HERITAGE_CATEGORIES];
           state.selectedId=null;state.selectedPlaceId=null;state.query="";nearbyResults=null;
@@ -1265,7 +1331,7 @@ export function createFindOwner(win=globalThis){
       event.preventDefault?.();state.expandDetail=false;void paint({selectionOnly:true});return;
     }
     const openJourney=target?.closest?.("[data-explore-journey-open]");
-    if(openJourney){state.timeMassOpen=false;state.atlasMode="places";state.atlasCountry=null;}
+    if(openJourney){state.networkOpen=false;state.timeMassOpen=false;state.atlasMode="places";state.atlasCountry=null;}
     if(openJourney&&state.lens==="heritage"){
       event.preventDefault?.();
       if(!state.journeyOpen){
@@ -1314,7 +1380,7 @@ export function createFindOwner(win=globalThis){
       void paint({selectionOnly:true});return;
     }
     const heritageCategory=target?.closest?.("[data-heritage-category]");
-    if(heritageCategory){state.timeMassOpen=false;state.atlasMode="places";state.atlasCountry=null;}
+    if(heritageCategory){state.networkOpen=false;state.timeMassOpen=false;state.atlasMode="places";state.atlasCountry=null;}
     if(heritageCategory&&state.lens==="heritage"){
       event.preventDefault?.();
       // Changing ordinary map subjects exits the D journey folio without
@@ -1339,7 +1405,7 @@ export function createFindOwner(win=globalThis){
       event.preventDefault?.();state.selectedId="tradition:custom:"+state.highlightCustomId;state.expandDetail=false;void paint({selectionOnly:true});return;
     }
     const heritageCustom=target?.closest?.("[data-heritage-custom]");
-    if(heritageCustom){state.timeMassOpen=false;state.atlasMode="places";state.atlasCountry=null;}
+    if(heritageCustom){state.networkOpen=false;state.timeMassOpen=false;state.atlasMode="places";state.atlasCountry=null;}
     if(heritageCustom&&state.lens==="heritage"){
       event.preventDefault?.();
       const id=heritageCustom.dataset.heritageCustom;
@@ -1478,6 +1544,14 @@ export function createFindOwner(win=globalThis){
     void paint({selectionOnly:true});
   }
   function onKeyDown(event){
+    if(openState&&state.networkOpen&&["Enter"," "].includes(event?.key)){
+      const item=event?.target?.closest?.(".aoNetworkSvgItem[data-network-focus]");
+      if(item){
+        event.preventDefault?.();
+        state.networkFocus=item.dataset.networkFocus;state.networkLimit=12;
+        void paint();return;
+      }
+    }
     if(!openState||event?.key!=="Escape")return;
     if(state.bibleAtlas){event.preventDefault?.();
       if(atlasScriptureReturn){returnToScriptureAtlas();return;}
@@ -1491,6 +1565,12 @@ export function createFindOwner(win=globalThis){
 
   function onInput(event){
     if(!openState)return;
+    const networkInput=event?.target?.closest?.("[data-network-search]");
+    if(networkInput&&state.lens==="heritage"&&state.networkOpen){
+      state.networkSearch=networkInput.value||"";
+      state.networkFocus="";state.networkLimit=12;
+      void paint();return;
+    }
     const timeInput=event?.target?.closest?.("[data-explore-time-mass-query]");
     if(timeInput&&state.lens==="heritage"&&state.timeMassOpen){
       state.timeMassQuery=timeInput.value||"";
@@ -1503,6 +1583,16 @@ export function createFindOwner(win=globalThis){
 
   function onChange(event){
     if(!openState)return;
+    if(state.lens==="heritage"&&state.networkOpen){
+      const field=event?.target?.closest?.("[data-network-kind]");
+      if(field){
+        const allowed=["all","place","shrine","pilgrimage","route","relic","apparition","calendar","custom","person"];
+        if(allowed.includes(field.value)){
+          state.networkKind=field.value;state.networkFocus="";state.networkLimit=12;void paint();
+        }
+        return;
+      }
+    }
     if(state.lens==="heritage"&&state.timeMassOpen){
       const dateField=event?.target?.closest?.("[data-explore-time-mass-date]");
       if(dateField){

@@ -179,18 +179,20 @@ try{
   assert.ok(await page.locator("[data-full-mass-category]").count()>=5);
   await page.screenshot({path:resolve(shots,"mass-preflight-"+width+".png"),fullPage:true});
   assert.equal(await page.locator("[data-full-mass-reader-mode]").count(),3);
-  // On days with a real 1962 commemoration the outer folio disclosure
-  // opens automatically. Do not toggle it closed by clicking blindly.
-  const folioCalendar=page.locator("[data-folio-calendar-details]");
-  if(!(await folioCalendar.evaluate(node=>node.open)))
-    await folioCalendar.locator(":scope > summary").click();
-  assert.equal(await folioCalendar.evaluate(node=>node.open),true,
-    "Mass folio Calendar details must remain expanded before nested navigation");
-  const nestedCalendar=page.locator("[data-mass-calendar-details]");
-  if(!(await nestedCalendar.evaluate(node=>node.open)))
-    await nestedCalendar.locator(":scope > summary").click();
-  assert.equal(await nestedCalendar.evaluate(node=>node.open),true,
-    "Nested liturgical Calendar must be expanded before switching year/month");
+  // A commemoration can auto-open the outer Calendar context.
+  // An unconditional click would close it and hide the nested Calendar control.
+  const outerCalendar=page.locator("[data-folio-calendar-details]");
+  if(!(await outerCalendar.evaluate(node=>node.open))){
+    await page.locator("[data-folio-calendar-details] > summary").click();
+  }
+  assert.equal(await outerCalendar.evaluate(node=>node.open),true,
+    "Liturgical context must be open before expanding the inner Calendar");
+  const innerCalendar=page.locator("[data-mass-calendar-details]");
+  if(!(await innerCalendar.evaluate(node=>node.open))){
+    await page.locator("[data-mass-calendar-details] > summary").click();
+  }
+  assert.equal(await innerCalendar.evaluate(node=>node.open),true,
+    "Nested Mass Calendar must be open before changing views");
   await page.locator('[data-mass-calendar-view="year"]').click();
   await page.waitForSelector('[data-mass-calendar-host] #ao-calendar-modular-root[data-ao-calendar-view="year"]',{state:"visible",timeout:45000});
   assert.equal(await page.locator('[data-mass-calendar-host] .aoCalV2Ring').count(),1,"Calendar year must render within Mass preparation");

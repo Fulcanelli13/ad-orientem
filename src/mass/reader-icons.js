@@ -1,212 +1,34 @@
+import { canonicalKey, canonicalIconKeysForReaderState } from "./reader-canonical-icons.js";
 // Exact v1.80 / Asset Bank v4.6 semantic mapping for the native reader.
 // Presentation authority: uploaded definitive v1.80 donor, AO_V46_ASSETS + v1.30 mapping.
 // R17/R19 remains the state/liturgical owner; this file only resolves semantic art.
 
+// Every rail resolves through the canonical icon set (21 Oct 2026): one
+// approved asset per meaning, with the priest's position, action and voice as
+// independent lanes. These tables are kept for callers that read them directly
+// (Gloria/Credo faithful customs); their values are canonical keys.
+const C=canonicalKey;
 export const R17_ICON_KEYS=Object.freeze({
   posture:Object.freeze({
-    STAND:"review_posture_stand",SIT:"review_posture_sit",
-    KNEEL:"review_posture_kneel",GENUFLECT:"review_posture_genuflect",
+    STAND:C("faithful.posture.stand"),SIT:C("faithful.posture.sit"),
+    KNEEL:C("faithful.posture.kneel"),GENUFLECT:C("faithful.gesture.genuflect"),
   }),
   gesture:Object.freeze({
-    SIGN_OF_CROSS:"cross",
-    GOSPEL_CROSSES:"gospel_crosses",
-    THREE_GOSPEL_CROSSES:"gospel_crosses",
-    BREAST_STRIKE:"breast_strike",
-    HEAD_BOW:null, // Both head-bow variants rejected in the 19 October review.
-    PROFOUND_BOW:"profound_bow",
-    BOW:"review_faithful_bow", // Priest bow retains v1.80 "bow".
-    GENUFLECT:"review_posture_genuflect",
-    HANDS_JOINED:"hands_joined",
-    RISE:"review_posture_stand",
+    SIGN_OF_CROSS:C("faithful.gesture.sign_of_cross"),
+    GOSPEL_CROSSES:C("faithful.gesture.gospel_crosses"),
+    THREE_GOSPEL_CROSSES:C("faithful.gesture.gospel_crosses"),
+    BREAST_STRIKE:C("faithful.gesture.strike_breast"),
+    HEAD_BOW:C("faithful.gesture.bow_head"),
+    PROFOUND_BOW:C("faithful.gesture.bow_profound"),
+    BOW:C("faithful.gesture.bow_head"),
+    GENUFLECT:C("faithful.gesture.genuflect"),
+    HANDS_JOINED:C("faithful.gesture.hands_joined"),
+    RISE:C("faithful.posture.stand"),
   }),
-  priestPosition:Object.freeze({
-    // 2026-10-19 icon review supersedes the earlier side assignments:
-    // the donor artwork named epistle visually depicts the Gospel side,
-    // and vice versa. Preserve file identities; correct semantic use only.
-    // Priest position remains independent of the transient priest action.
-    FOOT_CENTER:"priest_foot",
-    ALTAR_STEPS_ASCENDING:"priest_ascending_rich",
-    ALTAR_CENTER:"priest_centre_rich",
-    ALTAR_EPISTLE_MISSAL:"priest_gospel_rich",
-    ALTAR_EPISTLE_SIDE:"priest_gospel_rich",
-    ALTAR_FRONT_EPISTLE_HALF:"priest_gospel_rich",
-    ALTAR_GOSPEL_MISSAL:"priest_epistle_rich",
-    ALTAR_GOSPEL_SIDE:"priest_epistle_rich",
-    ALTAR_FRONT_GOSPEL_HALF:"priest_epistle_rich",
-    ALTAR_BACK_ROUTE:"priest_centre_rich",
-    SEDILIA:"priest_sedilia_rich",
-    COMMUNION_RAIL:null,
-    PREACHING_PLACE:"priest_ambo_rich",
-    ROUTE_CONTROLLED:"priest_centre_rich",
-    PRIEST_TRACK_ASYNC:"priest_centre_rich",
-    PROCESSION_ROUTE:"priest_procession_rich",
-  }),
-  response:"response",
-  schola:"schola",
-  bell:"bells",
-  priestVoice:Object.freeze({
-    AUDIBLE:"priest_audible",
-    PUBLIC:"priest_audible",
-    CHANTED:"priest_audible",
-    SINGS:"priest_audible",
-    SPEAKS:"priest_audible",
-    LOW_VOICE:"priest_silent",
-    QUIET:"priest_silent",
-    SILENT:"priest_silent",
-    SECRET:"priest_silent",
-    INAUDIBLE:"priest_silent",
-    LISTENS:"listen",
-    NONE:"priest_silent",
-  }),
+  response:C("response.people"),
+  schola:C("schola.sings"),
+  bell:C("bell.altar_bells"),
 });
-
-const ACTION_ICON_KEYS=Object.freeze({
-  // v1.80 primary gesture-matrix labels differ from the explicit 77-item
-  // priest-action registry. Resolve their exact source labels before hiding
-  // the rail; never infer an icon by a loose substring match.
-  "BOWS HEAD":"head_bow",
-  "BOWS SLIGHTLY":"head_bow",
-  "BOWS FOR SANCTUS":"head_bow",
-  "BOWS OVER THE ALTAR":"priest_profound_bow_rich",
-  "BOWS PROFOUNDLY":"priest_profound_bow_rich",
-  "STRIKES BREAST ×3":"breast_strike",
-  "SIGNS GOSPEL BOOK · FOREHEAD · LIPS · BREAST":"gospel_crosses",
-  "CROSSES WITH PATEN":"cross",
-  "CROSSES WITH CHALICE":"cross",
-  "RAISES EYES AND HANDS":"priest_centre_arms_rich",
-  "RAISES EYES":"priest_centre_arms_rich",
-  "BLESSES OFFERINGS":"cross",
-  "RAISES AND JOINS HANDS · BOWS HEAD":"priest_centre_hands_rich",
-  "HANDS OVER OBLATIONS":"priest_centre_hands_rich",
-  "RAISES AND JOINS HANDS · EYES ON THE SACRAMENT":"priest_centre_hands_rich",
-  "KISSES THE ALTAR":"priest_kiss_altar_rich",
-  "BLESSES PEOPLE":"priest_blessing_rich",
-  "MAKES THREE CROSSES OVER HOST AND CHALICE":"cross",
-  "MAKES CROSS OVER HOST":"cross",
-  "MAKES CROSS OVER CHALICE":"cross",
-  "CROSSES HOST THEN CHALICE":"cross",
-  "STRIKES BREAST ONCE":"breast_strike",
-  "THREE CROSSES WITH HOST OVER CHALICE":"cross",
-  "TWO CROSSES WITH HOST":"cross",
-  "ELEVATES HOST AND CHALICE SLIGHTLY":"canon",
-  "SIGNS HIMSELF WITH PATEN":"cross",
-  "THREE CROSSES WITH PARTICLE":"cross",
-  "SIGNS WITH HOST":"cross",
-  "SIGNS WITH CHALICE":"cross",
-  "MAKES ONE SIGN OF THE CROSS OVER THE PEOPLE":"priest_blessing_rich",
-  "GENUFLECTS TOWARD THE GOSPEL":"priest_genuflect",
-  "INCENSES ALTAR":"priest_incense_altar_rich",
-  "INCENSES PEOPLE":"priest_incense_people_rich",
-  "BLESSES INCENSE":"priest_incense_altar_rich",
-  "RECEIVES INCENSE":"priest_incense_people_rich",
-  "GENUFLECTS":"priest_genuflect",
-  "PROFOUND BOW":"priest_profound_bow_rich",
-  "KISSES ALTAR":"priest_kiss_altar_rich",
-  "ELEVATES HOST":"priest_elevation",
-  "SHOWS SACRED HOST":"priest_elevation",
-  "ELEVATES CHALICE":"priest_elevate_chalice_rich",
-  "MINOR ELEVATION":"canon",
-  "OFFERS HOST":"priest_elevate_host_rich",
-  "OFFERS CHALICE":"priest_elevate_chalice_rich",
-  "GIVES COMMUNION":"priest_communion_rich",
-  "RECEIVES HOST":"communion",
-  "RECEIVES CHALICE":"chalice_elevation",
-  "WASHES / PURIFIES":"lavabo",
-  "BREAKS HOST":"fraction",
-  "PLACES PARTICLE":"commingling",
-  "BLESSES PEOPLE":"priest_blessing_rich",
-  "PROCLAIMS GOSPEL":"priest_gospel_rich",
-  "READS EPISTLE":"priest_epistle_rich",
-  "TURNS TO PEOPLE":"priest_facing_people",
-  "TURNS TO ALTAR":"priest_return_altar_rich",
-  "TURNS TO MISSAL":"priest_epistle_rich",
-  "GOES TO GOSPEL SIDE":"priest_gospel_rich",
-  "GOES TO EPISTLE SIDE":"priest_epistle_rich",
-  "READS GRADUAL":"priest_epistle_rich",
-  "READS ALLELUIA":"priest_epistle_rich",
-  "READS COMMUNION":"priest_epistle_rich",
-  "ASCENDS ALTAR":"priest_ascending_rich",
-  "RETURNS TO ALTAR":"priest_return_altar_rich",
-  "GOES TO SEDILIA":"priest_sedilia_standing_rich",
-  "KISSES GOSPEL":"priest_gospel_rich",
-  "SIGNS BOOK":"gospel_crosses",
-  "SIGNS WITH PATEN":"cross",
-  "THREE CROSSES":"cross",
-  "SIGNS HOST":"cross",
-  "SIGNS CHALICE":"cross",
-  "SIGNS HIMSELF":"cross",
-  "STRIKES BREAST":"breast_strike",
-  "INTONES GLORIA":"priest_centre_arms_rich",
-  "INTONES CREDO":"priest_centre_arms_rich",
-  "UNCOVERS CHALICE":"canon",
-});
-
-const R17_REVIEWED_FAITHFUL_ART=Object.freeze({
-  stand:"review_posture_stand",
-  sit:"review_posture_sit",
-  kneel:"review_posture_kneel",
-  genuflect:"review_posture_genuflect",
-  bow:"review_faithful_bow",
-  head_bow:null,
-});
-function reviewedFaithfulArt(key){
-  return Object.prototype.hasOwnProperty.call(R17_REVIEWED_FAITHFUL_ART,key)
-    ? R17_REVIEWED_FAITHFUL_ART[key] : key;
-}
-
-// Reviewed render decisions override earlier v1.80 proposed icon assignments.
-// A null choice hides inaccurate artwork, NOT its source-owned ceremonial cue.
-// Never alter the Mass texts, timing, station, actor, or source identifiers here.
-const R17_REVIEW_20261019_ACTION_OVERRIDES=Object.freeze({
-  // The priest's head/profound bows have no approved exact images.
-  "BOWS HEAD":null,
-  "BOWS SLIGHTLY":"bow", // old v1.80 user-repurposed priest bow
-  "BOWS FOR SANCTUS":"bow",
-  "BOWS OVER THE ALTAR":null,
-  "BOWS PROFOUNDLY":null,
-  "PROFOUND BOW":null,
-  "GENUFLECTS":null,
-  "ELEVATES CHALICE":"priest_elevate_chalice_rich",
-  "GIVES COMMUNION":"priest_rail_after_rich",
-  "INCENSES PEOPLE":null, // incense of congregation belongs to the minister
-  "RECEIVES INCENSE":null, // candidate reused an inappropriate priest-incensing icon
-  "RECEIVES HOST":null,    // old 'communion' = fraction = commingling image
-  "RECEIVES CHALICE":null, // old 'chalice_elevation' actually depicts the Host
-  "BREAKS HOST":null,
-  "PLACES PARTICLE":null,
-});
-const R17_REVIEW_20261019_UNASSIGNED_ART=new Set([
-  "priest_communion_rich","priest_rail_rich",
-  "communion","fraction","commingling","chalice_elevation",
-  "priest_profound_bow_rich","head_bow","priest_genuflect",
-]);
-
-function reviewedPriestActionArt(key){
-  // The physical donor art is kept; semantic Gospel/Epistle ownership flips.
-  if(key==="priest_epistle_rich")return "priest_gospel_rich";
-  if(key==="priest_gospel_rich")return "priest_epistle_rich";
-  // No unreviewed substitute from a different ceremony.
-  return R17_REVIEW_20261019_UNASSIGNED_ART.has(key)?null:key;
-}
-
-function token(value){
-  return String(value??"").trim().toUpperCase().replace(/[ -]+/g,"_");
-}
-
-function priestActionKey(action){
-  // A source-owned gesture matrix expressly quarantines unmatched artwork.
-  // The older free-text v4.6 fallback is only for independent rubric actions.
-  if(action?.owner==="GESTURE_MATRIX_SOT"&&!action.iconKey)return null;
-  const direct=String(action?.iconKey??"").trim();
-  const label=String(action?.label??action?.action??action?.value??"").trim().toUpperCase();
-  // Explicit 19 October decisions take precedence over source-owned icon
-  // *presentation*, but never over the source-owned action/gesture itself.
-  if(Object.prototype.hasOwnProperty.call(R17_REVIEW_20261019_ACTION_OVERRIDES,label))
-    return R17_REVIEW_20261019_ACTION_OVERRIDES[label];
-  // Exact source-owned Host elevation; do not alter "OFFERS HOST".
-  if((label==="ELEVATES HOST"||label==="SHOWS SACRED HOST") && direct==="priest_elevate_host_rich")return "priest_elevation";
-  return reviewedPriestActionArt(direct || ACTION_ICON_KEYS[label] || null);
-}
 
 function voiceIconKey(value){
   const voice=String(value??"").trim().toUpperCase();
@@ -227,46 +49,8 @@ export function readerAttentionForState({priestVoice=null,response=null}={}){
     : null;
 }
 
-function gestureKey(gesture){
-  if(!gesture)return null;
-  // Do not turn an explicitly pending/customary source gesture into a
-  // universal instruction by guessing from its label's words.
-  if(gesture.owner==="GESTURE_MATRIX_SOT")return reviewedFaithfulArt(gesture.iconKey??null);
-  const direct=token(gesture.type??gesture.value);
-  if(R17_ICON_KEYS.gesture[direct])return R17_ICON_KEYS.gesture[direct];
-  const raw=String(gesture.action??gesture.label??"").toLowerCase();
-  if(/^rise$|\brise\b/.test(raw))return "review_posture_stand";
-  if(/forehead.*lips.*breast|three.*cross/.test(raw))return "gospel_crosses";
-  if(/sign of (the )?cross|cross oneself/.test(raw))return "cross";
-  if(/strike.*breast|breast strike/.test(raw))return "breast_strike";
-  if(/genuflect/.test(raw))return "review_posture_genuflect";
-  if(/profound.*bow/.test(raw))return "profound_bow";
-  if(/bow.*head|head.*bow/.test(raw))return null;
-  if(/hands joined/.test(raw))return "hands_joined";
-  if(/bow/.test(raw))return "review_faithful_bow";
-  return null;
-}
-
 export function iconKeysForReaderState(state={}){
-  const posture=token(state.posture?.value??state.posture?.label);
-  const voice=token(state.priestVoice?.value??state.priestVoice?.label);
-  const station=token(state.priestPosition?.station??state.priestPosition?.value);
-  const facing=token(state.priestPosition?.facing);
-  return Object.freeze({
-    postureIconKey:R17_ICON_KEYS.posture[posture]??null,
-    gestureIconKey:gestureKey(state.gesture),
-    responseIconKey:state.response ? R17_ICON_KEYS.response : null,
-    priestVoiceIconKey:R17_ICON_KEYS.priestVoice[voice]??voiceIconKey(state.priestVoice?.value??state.priestVoice?.label),
-    scholaIconKey:state.schola ? R17_ICON_KEYS.schola : null,
-    // Only an explicit turn toward the congregation owns this pictogram.
-    // SEDILIA may face people OR altar depending on local layout; the
-    // ambiguous profile must keep its sedilia station icon.
-    priestPositionIconKey:(facing==="PEOPLE"||facing==="PEOPLE_DURING_TURN")
-      ? "priest_facing_people"
-      : (R17_ICON_KEYS.priestPosition[station]??null),
-    priestActionIconKey:priestActionKey(state.priestAction),
-    bellIconKey:state.bell ? R17_ICON_KEYS.bell : null,
-  });
+  return canonicalIconKeysForReaderState(state);
 }
 
 export function createHostIconResolver({

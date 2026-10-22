@@ -167,6 +167,72 @@ try{
    await atlas.waitFor({state:"detached",timeout:15000});
    await page.locator("#ao-find-modular-root [data-mapcn-discover-rail]").waitFor({state:"visible"});
    assert.equal(await page.locator(".aoHeritageSurface .aoFindMap canvas.maplibregl-canvas").count(),1);
+   // P5 · provenance-bound relationship graph, never a second map.
+   await page.locator("#ao-find-modular-root button[data-network-toggle]").click();
+   const graph=page.locator("#ao-find-modular-root [data-network-panel]");
+   await graph.waitFor({state:"visible",timeout:20000});
+   assert.ok(Number(await graph.locator(".aoNetworkStats strong").first().textContent())>0,
+      "Real canonical relationship nodes should be present");
+   assert.ok(await graph.locator("a[href^='https://']").count()>0,
+      "Network edges must expose original source links");
+   assert.ok(await graph.locator(".aoNetworkSvgItem").count()>0,
+      "The graph must render selectable relationship nodes");
+   assert.equal(await page.locator(".aoHeritageSurface .aoFindMap canvas.maplibregl-canvas").count(),1,
+      "P5 must preserve the existing MapLibre map");
+   const graphFit=await graph.evaluate(el=>{
+     const b=el.getBoundingClientRect();
+     return {top:b.top,bottom:b.bottom,height:b.height,width:b.width,vh:innerHeight};
+   });
+   assert.ok(graphFit.top>=0&&graphFit.bottom<=graphFit.vh+1&&graphFit.height>230,
+      "The network must stay within the available viewport: "+JSON.stringify(graphFit));
+   await page.screenshot({path:resolve(out,"explore-"+width+"-network.png"),fullPage:false});
+   const node=graph.locator(".aoNetworkSvgItem").first();
+   await node.focus();
+   await page.keyboard.press("Enter");
+   await graph.waitFor({state:"visible",timeout:10000});
+   await graph.locator("select[data-network-kind]").selectOption("place");
+   assert.equal(await graph.locator("select[data-network-kind]").inputValue(),"place");
+   // Provenance-bound custom and attributed-name facets at 320, 390 and 1440.
+   await graph.locator("select[data-network-kind]").selectOption("custom");
+   assert.ok(await graph.locator(".aoNetworkResults button[data-network-focus^='custom:']").count()>0);
+   // On phones the result rail is intentionally hidden: selecting the facet
+   // focuses its first sourced record and exposes the canonical custom CTA.
+   await graph.locator("[data-network-open-custom]").first().waitFor({state:"visible"});
+   const customSearch=graph.locator("input[data-network-search]");
+   await customSearch.fill("Ex-votos");
+   await page.waitForFunction(()=>document.querySelector(
+     "#ao-find-modular-root .aoNetworkCurrent h3")?.textContent==="Ex-votos",null,{timeout:8000});
+   await customSearch.fill("");
+   await graph.locator("[data-network-open-custom]").first().waitFor({state:"visible"});
+   assert.ok(await graph.locator("a[href^='https://']").count()>0);
+   await page.screenshot({path:resolve(out,"explore-"+width+"-network-custom.png"),fullPage:false});
+   await graph.locator("select[data-network-kind]").selectOption("person");
+   assert.ok(await graph.locator(".aoNetworkResults button[data-network-focus^='person:']").count()>0);
+   await graph.locator(".aoNetworkMention").waitFor({state:"visible"});
+   assert.match(await graph.locator(".aoNetworkMention").innerText(),/not a linked Saints profile/i);
+   await page.screenshot({path:resolve(out,"explore-"+width+"-network-person.png"),fullPage:false});
+   await graph.locator("button[data-network-close]").click();
+   await graph.waitFor({state:"detached",timeout:10000});
+   await page.locator("#ao-find-modular-root [data-mapcn-discover-rail]").waitFor({state:"visible"});
+   assert.equal(await page.locator(".aoHeritageSurface .aoFindMap canvas.maplibregl-canvas").count(),1);
+   // P5: custom CTA must open a grouped canonical custom, not a bare
+   // geographic attestation. Verify this at all three accepted viewport sizes.
+   await page.locator("#ao-find-modular-root button[data-network-toggle]").click();
+   await graph.waitFor({state:"visible"});
+   await graph.locator("select[data-network-kind]").selectOption("custom");
+   const customCta=graph.locator(".aoNetworkCurrent [data-network-open-custom]");
+   await customCta.waitFor({state:"visible"});
+   const canonicalId=await customCta.getAttribute("data-network-open-custom");
+   await customCta.click();
+   const networkCustomFolio=page.locator('#ao-find-modular-root .aoExploreTraditionSheet[data-explore-custom-id="'+canonicalId+'"]');
+   await networkCustomFolio.waitFor({state:"visible",timeout:12000});
+   assert.ok(await networkCustomFolio.locator("a[href^='https://']").count()>0,
+     "Canonical custom handoff must preserve independently cited publishers");
+   assert.equal(await graph.count(),0);
+   await page.screenshot({path:resolve(out,"explore-"+width+"-network-custom-folio.png"),fullPage:false});
+   assert.equal(await page.evaluate(()=>globalThis.AO_FIND_APP_V1.open({lens:"heritage"})),true);
+   await page.locator("#ao-find-modular-root [data-mapcn-discover-rail]").waitFor({state:"visible"});
+   assert.equal(await page.locator(".aoHeritageSurface .aoFindMap canvas.maplibregl-canvas").count(),1);
    // D is a same-map journey folio: no new page and no manufactured route
    // lines. Exercise a historical source-owned 3-stage pilgrimage.
    await page.locator("#ao-find-modular-root [data-explore-journey-open]").click();

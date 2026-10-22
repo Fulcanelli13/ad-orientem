@@ -142,15 +142,22 @@ assert.doesNotMatch(rendered,/ao-schola-translate-hint|tap text · translate/,
 assert.match(dom,/setScholaPaused\(true\)/,"translation must pause live Schola motion");
 assert.match(dom,/scholaPausedBeforeTranslation/);
 
-// Donor artwork bytes remain frozen; the latest user's 19 October review
-// explicitly reversed the Gospel/Epistle *semantic assignment*, not the files.
-assert.match(iconMap,/ALTAR_GOSPEL_MISSAL:"priest_epistle_rich"/,
+// Donor artwork bytes remain frozen; the 19 October review reversed the
+// Gospel/Epistle *semantic assignment*, not the files. Since 21 October the
+// canonical icon set records that assignment by meaning.
+const canonSet=JSON.parse(readFileSync("data/presentation/mass-icon-canonical-set-20261021.v1.json","utf8"));
+const canonPath=id=>canonSet.meanings.find(m=>m.meaningId===id)?.path;
+assert.equal(canonPath("priest.position.gospel_side"),"assets/active/mass-v46/priest_epistle_rich.svg",
   "19 October Gospel-side physical artwork mapping missing");
-assert.match(iconMap,/ALTAR_EPISTLE_MISSAL:"priest_gospel_rich"/,
+assert.equal(canonPath("priest.position.epistle_side"),"assets/active/mass-v46/priest_gospel_rich.svg",
   "19 October Epistle-side physical artwork mapping missing");
-assert.match(iconMap,/FOOT_CENTER:"priest_foot"/,
-  "v1.77 top PRIEST summary lost the plain foot-of-altar pictogram");
-assert.match(iconMap,/priestActionIconKey:priestActionKey/,
+assert.notEqual(canonPath("priest.position.foot"),"assets/active/mass-v46/priest_foot.svg",
+  "Do not reinstate vetoed foot-of-altar donor artwork under donor parity");
+assert.equal(canonSet.stationMap.ALTAR_GOSPEL_MISSAL,"priest.position.gospel_side");
+assert.equal(canonSet.stationMap.ALTAR_EPISTLE_MISSAL,"priest.position.epistle_side");
+const canonResolver=readFileSync("src/mass/reader-canonical-icons.js","utf8");
+assert.match(iconMap,/return canonicalIconKeysForReaderState\(state\)/,"reader icons no longer delegate to the canonical resolver");
+assert.match(canonResolver,/priestActionIconKey: canonicalKey\(m\.priestAction\)/,
   "rich v4.6 action art is no longer separately owned by the action channel");
 assert.match(nativePreview,/priestAction,bell,schola:scholaProjection\.schola/,
   "native projected state stopped forwarding priest-action or bell semantics into icon resolution");

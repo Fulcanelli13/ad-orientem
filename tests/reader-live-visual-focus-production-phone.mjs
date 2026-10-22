@@ -54,7 +54,7 @@ try{
   assert.ok(!initial.error,spec.lang+" launch error: "+initial.error);
   assert.equal(initial.mode,"LIVE");
   assert.equal(initial.curated,"true","Real production mount bypassed curated CSS override");
-  assert.ok(initial.modelCards>=64,"Production did not select the curated LIVE reader");
+  assert.ok(initial.modelCards>=65,"Production did not select the curated LIVE reader");
   const cards=initial.named.filter(x=>/^Kyrie|Gloria · Praise and Supplication|Credo · Holy Spirit/.test(x.title));
   assert.ok(cards.length>=2,"Missing source-rich LIVE sections");
   const sample=async(card,at)=>{
@@ -121,7 +121,7 @@ try{
   }
   // The older cue-only focus coverage passed while users still reported
   // skipped Proper and short-response paragraphs. Audit *all* rendered
-  // reading rows across the actual 64-card production LIVE presentation.
+  // reading rows across the actual 65-card production LIVE presentation.
   // Source cue/ribbon state is explicitly not the oracle for visual focus.
   const readingAudit=[];
   const structuralAudit={sectionBreaks:0,invitationRows:0,invitationCueIds:[]};
