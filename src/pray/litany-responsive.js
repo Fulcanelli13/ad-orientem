@@ -193,7 +193,7 @@ const CSS=`
 .aoLitCRCall{display:flex;align-items:baseline;gap:10px;padding:9px 0;border-bottom:1px solid var(--lit-line);font-size:19px;line-height:1.4}
 .aoLitCRCallText{flex:1}
 .aoLitCRCue{flex:none;color:var(--lit-accent);opacity:.55;font-size:15px}
-.aoLitCRResponse{position:sticky;bottom:8px;z-index:1;display:flex;align-items:baseline;gap:8px;margin:10px 0 0;padding:12px 16px;border-radius:14px;border:1px solid rgba(108,192,138,.45);background:color-mix(in srgb,var(--lit-bg) 82%,#6cc08a 18%);box-shadow:0 6px 20px rgba(0,0,0,.35);font-size:19px;font-weight:600}
+.aoLitCRResponse{position:sticky;bottom:8px;z-index:1;display:flex;align-items:baseline;gap:8px;margin:10px 0 0;padding:12px 16px;border-radius:14px;border:1px solid rgba(108,192,138,.45);background:#15241c;background:color-mix(in srgb,var(--lit-bg) 82%,#6cc08a 18%);box-shadow:0 6px 20px rgba(0,0,0,.35);font-size:19px;font-weight:600}
 .aoLitCRResponseText{flex:1}
 .aoLitCRCount{font:600 11px/1 var(--ao-font-brand,Cinzel,serif);letter-spacing:.08em;color:var(--lit-muted);font-weight:600}
 .aoLitCR[data-voice="leader"] .aoLitCRCallText{font-weight:600}
