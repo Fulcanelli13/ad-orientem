@@ -1,0 +1,364 @@
+{
+  "schema": "AO_HISTORIA_PRIORITY16_PARALLEL_SOURCE_RECONCILIATION_V1",
+  "status": "RESEARCH_COMPARE_ONLY_SINGLE_WORKING_PREVIEW_NO_ACCEPTED_CANONICAL_SELECTION",
+  "date": "2026-10-22",
+  "sources": {
+    "workingPreview": {
+      "path": "data/research/historia-salutis-thematic-priority16-economical-select-20261022.v1.json",
+      "blobSha": "1c32fa02e40618edb4616ae93def9647c20b0d83",
+      "schema": "AO_HISTORIA_PRIORITY_16_ECONOMICAL_SCRIPTURE_SELECTIONS_V1",
+      "verseOccurrences": 156,
+      "sourceRanges": 45,
+      "role": "EXISTING_RESEARCH_EDITORIAL_PREVIEW_DOES_NOT_CHANGE_P3"
+    },
+    "contextPreservingAlternative": {
+      "path": "data/research/historia-salutis-priority16-economical-selections-20261022.v1.json",
+      "blobSha": "51b118e825a2f488901bd50fd242bec3a6b8a5f9",
+      "schema": "AO_HISTORIA_PRIORITY16_ECONOMICAL_SCRIPTURE_SELECTIONS_V1",
+      "verseOccurrences": 196,
+      "sourceRanges": 34,
+      "role": "COMPARATIVE_INTEGRITY_ALTERNATIVE_NOT_ACTIVE_READING"
+    }
+  },
+  "policy": {
+    "doNotCreateThirdBibleTextStore": true,
+    "keepOneActiveResearchPreview": true,
+    "doNotAutoMergeOrOverwriteParallelPipeline": true,
+    "manualResolutionForFourIntegrityHolds": true,
+    "noApprovalWithoutEditor": true,
+    "sourceWordsAlwaysFromWitnessOwner": true
+  },
+  "totals": {
+    "cases": 16,
+    "agree": 7,
+    "previewPreferred": 5,
+    "integrityHolds": 4,
+    "previewVerseOccurrences": 156,
+    "comparisonVerseOccurrences": 196,
+    "indicativeMixedEconomyVerseOccurrences": 182,
+    "indicativeMixedEconomySourceRanges": 39,
+    "indicativeMixedEconomyIsNotAnApprovedOrSavedReader": true
+  },
+  "entries": [
+    {
+      "episodeId": "hist-omitted-113",
+      "title": "Twelve-year-old Jesus among the doctors in the Temple",
+      "comparisonStatus": "AGREE_IDENTICAL",
+      "reviewIssue": "IDENTICAL",
+      "editorialReason": "Finding in the Temple is a complete narrative and remains intact.",
+      "previewMetrics": {
+        "verseOccurrences": 12,
+        "sourceRangeCount": 1
+      },
+      "contextualAlternativeMetrics": {
+        "verseOccurrences": null,
+        "sourceRangeCount": 1
+      },
+      "preferredForCurrentResearchPreview": "ORIGINAL_PREVIEW_156_VERSES",
+      "contextualAlternativeAcceptance": false,
+      "previewAcceptance": false,
+      "finalSelectionAccepted": false,
+      "distinctSourceRefsDoNotCreateNewBibleWording": true
+    },
+    {
+      "episodeId": "hist-omitted-122",
+      "title": "Formal appointment of the Twelve",
+      "comparisonStatus": "AGREE_IDENTICAL",
+      "reviewIssue": "IDENTICAL",
+      "editorialReason": "The twelve Apostles' calling retains the source's complete five verses.",
+      "previewMetrics": {
+        "verseOccurrences": 5,
+        "sourceRangeCount": 1
+      },
+      "contextualAlternativeMetrics": {
+        "verseOccurrences": null,
+        "sourceRangeCount": 1
+      },
+      "preferredForCurrentResearchPreview": "ORIGINAL_PREVIEW_156_VERSES",
+      "contextualAlternativeAcceptance": false,
+      "previewAcceptance": false,
+      "finalSelectionAccepted": false,
+      "distinctSourceRefsDoNotCreateNewBibleWording": true
+    },
+    {
+      "episodeId": "hist-omitted-174",
+      "title": "Washing of the Apostles' feet",
+      "comparisonStatus": "CONTEXT_PROTECTION_REVIEW_HOLD",
+      "reviewIssue": "PETRINE_DIALOGUE_AND_JUDAS_CONTEXT",
+      "editorialReason": "The preview omits John 13:9–11, Peter's response and Christ's warning that not all are clean; the unabridged passage keeps both the action and explanation.",
+      "previewMetrics": {
+        "verseOccurrences": 12,
+        "sourceRangeCount": 2
+      },
+      "contextualAlternativeMetrics": {
+        "verseOccurrences": null,
+        "sourceRangeCount": 1
+      },
+      "preferredForCurrentResearchPreview": "ORIGINAL_PREVIEW_156_VERSES",
+      "contextualAlternativeAcceptance": false,
+      "previewAcceptance": false,
+      "finalSelectionAccepted": false,
+      "distinctSourceRefsDoNotCreateNewBibleWording": true
+    },
+    {
+      "episodeId": "hist-omitted-181",
+      "title": "The good thief",
+      "comparisonStatus": "AGREE_IDENTICAL",
+      "reviewIssue": "IDENTICAL",
+      "editorialReason": "The good thief is complete; it is a separate Lucan witness alongside the Johannine Calvary passage.",
+      "previewMetrics": {
+        "verseOccurrences": 5,
+        "sourceRangeCount": 1
+      },
+      "contextualAlternativeMetrics": {
+        "verseOccurrences": null,
+        "sourceRangeCount": 1
+      },
+      "preferredForCurrentResearchPreview": "ORIGINAL_PREVIEW_156_VERSES",
+      "contextualAlternativeAcceptance": false,
+      "previewAcceptance": false,
+      "finalSelectionAccepted": false,
+      "distinctSourceRefsDoNotCreateNewBibleWording": true
+    },
+    {
+      "episodeId": "hist-omitted-184",
+      "title": "Road to Emmaus",
+      "comparisonStatus": "CONTEXT_PROTECTION_REVIEW_HOLD",
+      "reviewIssue": "GOSPEL_NARRATIVE_CONTINUITY",
+      "editorialReason": "The preview omits the Cleophas exchange and empty-tomb report (Luke 24:17–18,22–24) and part of the disciples' return; the full Emmaus account preserves why Christ responds as he does.",
+      "previewMetrics": {
+        "verseOccurrences": 16,
+        "sourceRangeCount": 5
+      },
+      "contextualAlternativeMetrics": {
+        "verseOccurrences": null,
+        "sourceRangeCount": 1
+      },
+      "preferredForCurrentResearchPreview": "ORIGINAL_PREVIEW_156_VERSES",
+      "contextualAlternativeAcceptance": false,
+      "previewAcceptance": false,
+      "finalSelectionAccepted": false,
+      "distinctSourceRefsDoNotCreateNewBibleWording": true
+    },
+    {
+      "episodeId": "hist-omitted-188",
+      "title": "Jesus asks Peter three times whether he loves Him",
+      "comparisonStatus": "AGREE_IDENTICAL",
+      "reviewIssue": "IDENTICAL",
+      "editorialReason": "Peter's threefold pastoral commission is uncut.",
+      "previewMetrics": {
+        "verseOccurrences": 5,
+        "sourceRangeCount": 1
+      },
+      "contextualAlternativeMetrics": {
+        "verseOccurrences": null,
+        "sourceRangeCount": 1
+      },
+      "preferredForCurrentResearchPreview": "ORIGINAL_PREVIEW_156_VERSES",
+      "contextualAlternativeAcceptance": false,
+      "previewAcceptance": false,
+      "finalSelectionAccepted": false,
+      "distinctSourceRefsDoNotCreateNewBibleWording": true
+    },
+    {
+      "episodeId": "hist-omitted-189",
+      "title": "Great Commission in Galilee",
+      "comparisonStatus": "AGREE_IDENTICAL",
+      "reviewIssue": "IDENTICAL",
+      "editorialReason": "The Matthean mission command is uncut and kept distinct from Acts 1.",
+      "previewMetrics": {
+        "verseOccurrences": 5,
+        "sourceRangeCount": 1
+      },
+      "contextualAlternativeMetrics": {
+        "verseOccurrences": null,
+        "sourceRangeCount": 1
+      },
+      "preferredForCurrentResearchPreview": "ORIGINAL_PREVIEW_156_VERSES",
+      "contextualAlternativeAcceptance": false,
+      "previewAcceptance": false,
+      "finalSelectionAccepted": false,
+      "distinctSourceRefsDoNotCreateNewBibleWording": true
+    },
+    {
+      "episodeId": "hist-omitted-207",
+      "title": "John sees the risen Christ on Patmos",
+      "comparisonStatus": "PREVIEW_PROVISIONALLY_PREFERRED",
+      "reviewIssue": "VISIONARY_SCOPE",
+      "editorialReason": "The ten-verse preview skips two descriptions of the risen Christ; an explicit ellipsis retains the visionary context without pretending a dated historical scene.",
+      "previewMetrics": {
+        "verseOccurrences": 10,
+        "sourceRangeCount": 2
+      },
+      "contextualAlternativeMetrics": {
+        "verseOccurrences": null,
+        "sourceRangeCount": 1
+      },
+      "preferredForCurrentResearchPreview": "ORIGINAL_PREVIEW_156_VERSES",
+      "contextualAlternativeAcceptance": false,
+      "previewAcceptance": false,
+      "finalSelectionAccepted": false,
+      "distinctSourceRefsDoNotCreateNewBibleWording": true
+    },
+    {
+      "episodeId": "hist-omitted-003",
+      "title": "The corruption preceding the Flood",
+      "comparisonStatus": "AGREE_IDENTICAL",
+      "reviewIssue": "IDENTICAL",
+      "editorialReason": "Both independently chose all four verses; no abridgment of the brief source.",
+      "previewMetrics": {
+        "verseOccurrences": 4,
+        "sourceRangeCount": 1
+      },
+      "contextualAlternativeMetrics": {
+        "verseOccurrences": null,
+        "sourceRangeCount": 1
+      },
+      "preferredForCurrentResearchPreview": "ORIGINAL_PREVIEW_156_VERSES",
+      "contextualAlternativeAcceptance": false,
+      "previewAcceptance": false,
+      "finalSelectionAccepted": false,
+      "distinctSourceRefsDoNotCreateNewBibleWording": true
+    },
+    {
+      "episodeId": "hist-omitted-027",
+      "title": "Manna from heaven",
+      "comparisonStatus": "PREVIEW_PROVISIONALLY_PREFERRED",
+      "reviewIssue": "VERSIFICATION_ECONOMY",
+      "editorialReason": "The nine-verse proposal contains complaint, provision, the name of manna and forty-year duration; preserve the jar/Sabbath text in the full source.",
+      "previewMetrics": {
+        "verseOccurrences": 9,
+        "sourceRangeCount": 4
+      },
+      "contextualAlternativeMetrics": {
+        "verseOccurrences": null,
+        "sourceRangeCount": 3
+      },
+      "preferredForCurrentResearchPreview": "ORIGINAL_PREVIEW_156_VERSES",
+      "contextualAlternativeAcceptance": false,
+      "previewAcceptance": false,
+      "finalSelectionAccepted": false,
+      "distinctSourceRefsDoNotCreateNewBibleWording": true
+    },
+    {
+      "episodeId": "hist-omitted-035",
+      "title": "The twelve spies",
+      "comparisonStatus": "CONTEXT_PROTECTION_REVIEW_HOLD",
+      "reviewIssue": "INTERCESSION_INTEGRITY",
+      "editorialReason": "The nineteen-verse preview removes Moses' intercession (Numbers 14:13–20); examine whether the source's pardon and forty-year judgment remain faithfully intelligible without it.",
+      "previewMetrics": {
+        "verseOccurrences": 19,
+        "sourceRangeCount": 7
+      },
+      "contextualAlternativeMetrics": {
+        "verseOccurrences": null,
+        "sourceRangeCount": 5
+      },
+      "preferredForCurrentResearchPreview": "ORIGINAL_PREVIEW_156_VERSES",
+      "contextualAlternativeAcceptance": false,
+      "previewAcceptance": false,
+      "finalSelectionAccepted": false,
+      "distinctSourceRefsDoNotCreateNewBibleWording": true
+    },
+    {
+      "episodeId": "hist-omitted-039",
+      "title": "The bronze serpent",
+      "comparisonStatus": "AGREE_IDENTICAL",
+      "reviewIssue": "IDENTICAL",
+      "editorialReason": "The bronze-serpent event is already just six verses; theological typology stays in the separate biblical-parallels compendium.",
+      "previewMetrics": {
+        "verseOccurrences": 6,
+        "sourceRangeCount": 1
+      },
+      "contextualAlternativeMetrics": {
+        "verseOccurrences": null,
+        "sourceRangeCount": 1
+      },
+      "preferredForCurrentResearchPreview": "ORIGINAL_PREVIEW_156_VERSES",
+      "contextualAlternativeAcceptance": false,
+      "previewAcceptance": false,
+      "finalSelectionAccepted": false,
+      "distinctSourceRefsDoNotCreateNewBibleWording": true
+    },
+    {
+      "episodeId": "hist-omitted-044",
+      "title": "Joshua's farewell and covenant renewal",
+      "comparisonStatus": "CONTEXT_PROTECTION_REVIEW_HOLD",
+      "reviewIssue": "COVENANT_WITNESS_INTEGRITY",
+      "editorialReason": "The preview is compact but omits Joshua 24:26–27, the written covenant and memorial witness, and much of the people's confession; assess the covenantal spine.",
+      "previewMetrics": {
+        "verseOccurrences": 14,
+        "sourceRangeCount": 4
+      },
+      "contextualAlternativeMetrics": {
+        "verseOccurrences": null,
+        "sourceRangeCount": 5
+      },
+      "preferredForCurrentResearchPreview": "ORIGINAL_PREVIEW_156_VERSES",
+      "contextualAlternativeAcceptance": false,
+      "previewAcceptance": false,
+      "finalSelectionAccepted": false,
+      "distinctSourceRefsDoNotCreateNewBibleWording": true
+    },
+    {
+      "episodeId": "hist-omitted-084",
+      "title": "The three young men in the fiery furnace",
+      "comparisonStatus": "PREVIEW_PROVISIONALLY_PREFERRED",
+      "reviewIssue": "EDITIONS_AND_GREEK_ADDITIONS",
+      "editorialReason": "The preview avoids Daniel 3:23, which contains a Crampon editorial interpolation, while retaining the defense, angel and king's response. The prayer and canticle remain authentic Catholic Scripture, available in full.",
+      "previewMetrics": {
+        "verseOccurrences": 13,
+        "sourceRangeCount": 5
+      },
+      "contextualAlternativeMetrics": {
+        "verseOccurrences": null,
+        "sourceRangeCount": 3
+      },
+      "preferredForCurrentResearchPreview": "ORIGINAL_PREVIEW_156_VERSES",
+      "contextualAlternativeAcceptance": false,
+      "previewAcceptance": false,
+      "finalSelectionAccepted": false,
+      "distinctSourceRefsDoNotCreateNewBibleWording": true
+    },
+    {
+      "episodeId": "hist-omitted-096",
+      "title": "Ezra publicly reads the Law",
+      "comparisonStatus": "PREVIEW_PROVISIONALLY_PREFERRED",
+      "reviewIssue": "RESPONSE_TO_LAW_REVIEW",
+      "editorialReason": "The preview retains public interpretation and joy in Nehemiah 8:12; 8:10–11 remains in the full chapter for editorial review.",
+      "previewMetrics": {
+        "verseOccurrences": 9,
+        "sourceRangeCount": 3
+      },
+      "contextualAlternativeMetrics": {
+        "verseOccurrences": null,
+        "sourceRangeCount": 3
+      },
+      "preferredForCurrentResearchPreview": "ORIGINAL_PREVIEW_156_VERSES",
+      "contextualAlternativeAcceptance": false,
+      "previewAcceptance": false,
+      "finalSelectionAccepted": false,
+      "distinctSourceRefsDoNotCreateNewBibleWording": true
+    },
+    {
+      "episodeId": "hist-omitted-099",
+      "title": "Martyrdom of the seven brothers and their mother",
+      "comparisonStatus": "PREVIEW_PROVISIONALLY_PREFERRED",
+      "reviewIssue": "MARTYRDOM_SCOPE",
+      "editorialReason": "The preview retains resurrection witnesses and the mother's role in twelve verses; neither proposal purports to reproduce all seven brothers' testimonies.",
+      "previewMetrics": {
+        "verseOccurrences": 12,
+        "sourceRangeCount": 6
+      },
+      "contextualAlternativeMetrics": {
+        "verseOccurrences": null,
+        "sourceRangeCount": 5
+      },
+      "preferredForCurrentResearchPreview": "ORIGINAL_PREVIEW_156_VERSES",
+      "contextualAlternativeAcceptance": false,
+      "previewAcceptance": false,
+      "finalSelectionAccepted": false,
+      "distinctSourceRefsDoNotCreateNewBibleWording": true
+    }
+  ]
+}
