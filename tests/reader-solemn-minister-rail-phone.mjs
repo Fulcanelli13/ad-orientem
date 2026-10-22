@@ -22,9 +22,9 @@ const server=http.createServer(async(req,res)=>{
 await new Promise((done,fail)=>{server.once("error",fail);server.listen(4368,"127.0.0.1",done);});
 let browser;
 async function focusCue(page,section,cue){
-  // LIVE48 may split a source section (notably Offertory 010) into
-  // multiple presentation cards. Resolve the source CUE, not a guessed
-  // presentation section ID; retain its canonical source-section owner.
+  // Source-owned LIVE projections can split a section (notably Offertory).
+  // Resolve its exact cue, not a guessed display card ID. This works for
+  // the curated 65-card ordinary Mass and retained Requiem compatibility.
   const found=await page.evaluate(({section,cue})=>{
     const api=window.__AO_PHONE_PREVIEW;
     const card=api.model.cards.find(c=>
@@ -59,8 +59,8 @@ try{
         {waitUntil:"networkidle"});
       await page.waitForFunction(()=>document.documentElement.dataset.harnessReady==="true",
         null,{timeout:25000});
-      assert.equal(await page.evaluate(()=>window.__AO_PHONE_PREVIEW.model.totalCards),48,
-        "Solemn minister label changed LIVE cards");
+      assert.equal(await page.evaluate(()=>window.__AO_PHONE_PREVIEW.model.totalCards),65,
+        "Ordinary Solemn/Cantata must use the curated 65-card production family");
       await focusCue(page,"AO.CARD.007","AO.SM.C0082");
       const current=await page.evaluate(()=>{
         const rail=document.querySelector('.ao-rail-right [data-channel="sacred-minister"]');
@@ -81,8 +81,8 @@ try{
         assert.equal(current.minister,null);
       }
       assert.ok(current.overflow<=1,"New rail overflows "+width+"px phone");
-      // The 48-card reader splits Offertory 010, and its source C0112 may
-      // share a display paragraph with C0113. Open the actual B032 prayer
+      // The curated reader splits Offertory 010, and source C0112 may
+      // share a paragraph with C0113. Open the actual B032 prayer
       // presentation, not an invented exact-word observation/gesture trigger.
       const opened=await page.evaluate(()=>{
         const api=window.__AO_PHONE_PREVIEW;
@@ -161,7 +161,7 @@ try{
     assert.deepEqual(errors,[],"Requiem phone browser errors");
     await context.close();
   }
-  console.log("PASS 360/390px ordinary and Requiem: source-owned Solemn deacon Gospel rubric is visibly distinct from priest, never claimed observed, absent in Cantata and at held Offertory C0112; LIVE 48 intact.");
+  console.log("PASS 360/390px Solemn/Cantata 65-card LIVE, distinct Requiem legacy compatibility: minister rail remains source-owned, unobserved actions fail closed.");
 }finally{
   await browser?.close().catch(()=>{});
   await new Promise(resolve=>server.close(resolve));
