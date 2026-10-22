@@ -50,6 +50,37 @@ try{
    "A source-attested question must work in the normal "+book+" Scripture Messenger");
   assert.ok(await page.locator(".aoCatenaMMeta a[href^='https://www.ecatholic2000.com/']").count()>0);
  }
+ for(const spec of [
+  {book:"Matthew",passage:"13:1",fragment:"catena.matthew.13.1:17"},
+  {book:"Mark",passage:"1:1",fragment:"catena.mark.1.1:2"},
+  {book:"Luke",passage:"15:11",fragment:"catena.luke.15.11:0"},
+  {book:"John",passage:"1:1",fragment:"catena.john.1.1:0"}
+ ]){
+  await page.goto(url+"?book="+spec.book+"&passage="+spec.passage,
+   {waitUntil:"domcontentloaded",timeout:60000});
+  await page.locator(".aoCatenaMessenger").waitFor({state:"visible",timeout:25000});
+  const q=page.locator("[data-catena-curated-question]").first();
+  await q.waitFor({state:"visible",timeout:15000});
+  assert.equal(await q.getAttribute("data-catena-source-pointer"),spec.fragment);
+  assert.ok(!(await q.innerText()).includes("What do the Fathers say about"),
+   "The promoted question must be theological and specific");
+  const before=await page.locator('.aoCatenaMRow[data-catena-fragment-id="'+spec.fragment+'"]').count();
+  await q.click();
+  assert.match(await page.locator(".aoCatenaMUser").last().innerText(),/Why|How|What/);
+  await page.locator('.aoCatenaMRow[data-catena-fragment-id="'+spec.fragment+'"]')
+   .waitFor({state:"visible",timeout:20000});
+  const target=page.locator('.aoCatenaMRow[data-catena-fragment-id="'+spec.fragment+'"]');
+  if(before){
+   assert.ok((await target.getAttribute("class")).includes("aoCatenaMRevisited"));
+  }else{
+   assert.match(await target.locator(".aoCatenaMEvidence").innerText(),/READER QUESTION/);
+  }
+  assert.match(await target.locator(".aoCatenaMMeta a").getAttribute("href"),
+   /^https:\/\/www\.ecatholic2000\.com\//);
+  assert.equal(await page.locator(".aoCatenaMResearchBadge").count(),0);
+  const overflowCurated=await page.locator(".aoCatenaMessenger").evaluate(el=>el.scrollWidth-el.clientWidth);
+  assert.ok(overflowCurated<=2, "Theological question panel overflows phone on "+spec.book);
+ }
  await page.goto(url+"?research=1",{waitUntil:"domcontentloaded",timeout:60000});
  await page.locator(".aoCatenaMessenger").waitFor({state:"visible",timeout:20000});
  const panel=page.locator(".aoCatenaMResearch");

@@ -37,6 +37,8 @@ jobs:
           node-version: '22'
       - name: Verify pinned canonical source fragments and editorial-route blockers
         run: node tests/scripture-catena-editorial-routes.mjs
+      - name: Verify nineteen reader theological question pointers against exact canonical source
+        run: node tests/scripture-catena-reader-curated.mjs
       - name: Verify nine English witnesses and local-only human review exports
         run: node tests/scripture-catena-review-workbench.mjs
   phone-acceptance:
