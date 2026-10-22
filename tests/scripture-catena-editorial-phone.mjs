@@ -66,6 +66,7 @@ try{
     "; workspace="+workspace+"; errors="+JSON.stringify(errors)+"; page="+responses.slice(0,1000));
  });
  assert.equal(await page.locator("#candidateList .candidate").count(),9);
+ await page.locator('[data-focused-source="english-parallel-checked"]').waitFor({state:"visible",timeout:20000});
  assert.equal(await page.locator('[data-focused-source="english-parallel-checked"]').count(),1);
  assert.match(await page.locator('[data-focused-source="english-parallel-checked"]').innerText(),/FOCUSED EDITORIAL CHECK/);
  await page.locator('[data-filter="ready"]').click();
@@ -81,6 +82,7 @@ try{
   "External translated work links must not pre-certify any source attestation");
  await page.locator('[data-filter="escalated"]').click();
  assert.equal(await page.locator("#candidateList .candidate").count(),8);
+ await page.locator('[data-original-work-evidence="not-located"]').waitFor({state:"visible",timeout:20000});
  assert.equal(await page.locator('[data-original-work-evidence="not-located"]').count(),1,
   "At least one escalated source must display missing original-work status");
  assert.equal(await page.locator("#review-disposition option[value='approve']").count(),0,
