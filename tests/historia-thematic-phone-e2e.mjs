@@ -442,6 +442,30 @@ try{
  assert.match(await approval.locator('#detail').innerText(),/NOT ACCEPTED/);
  results.push('single priority16 preview: 16 source-backed candidates, visible Daniel ellipses and French witness, no approval');
  await approval.screenshot({path:resolve(output,"priority16-single-review-390.png"),animations:"disabled"});
+
+ // The four original integrity holds are inspected in this SAME 156-verse
+ // working preview. The 196-verse alternative is not loaded as an active UI.
+ for(const [id,verseCount] of [
+  ["hist-omitted-035",8],["hist-omitted-044",2],
+  ["hist-omitted-174",5],["hist-omitted-184",7]
+ ]){
+  await approval.locator('[data-episode-id="'+id+'"]').click();
+  const hold=approval.locator('[data-integrity-hold="'+id+'"]');
+  await hold.waitFor({timeout:25000});
+  assert.match(await hold.innerText(),/Textual-integrity review/i);
+  assert.match(await hold.innerText(),/NOT ACCEPTED/i);
+  const details=hold.locator('[data-context-source-details="'+id+'"]');
+  assert.equal(await details.count(),1);
+  assert.equal(await details.locator(".context-verse").count(),verseCount,
+   "The four source-integrity additions must use real witness verse rows");
+  await details.locator("summary").click();
+  assert.equal(await details.locator(".context-verse").first().isVisible(),true);
+  // Original reviewer status and 16-source owner must remain unchanged.
+  assert.equal(await approval.locator('#episode-list [data-episode-id]').count(),16);
+ }
+ results.push("priority16 integrity: four original-source context holds in sole 156-verse preview, no competing reader");
+ await approval.screenshot({path:resolve(output,"priority16-integrity-390.png"),animations:"disabled"});
+
  await approval.close();
 
  assert.deepEqual(errors.filter(s=>/ReferenceError|SyntaxError|TypeError/.test(s)),[],
