@@ -1,0 +1,626 @@
+{
+  "schema": "AO_HISTORIA_PRIORITY16_ECONOMICAL_SCRIPTURE_SELECTIONS_V1",
+  "date": "2026-10-22",
+  "status": "SOURCE_BOUNDARY_CURATED_DRAFT_NOT_APPROVED_NOT_MERGED",
+  "sources": {
+    "candidateReviewPath": "data/research/historia-salutis-core-restoration-46-adjudication-20261022.v1.json",
+    "candidateReviewBlobSha": "bce8c9ca11920b11368f9dbc005103dd47d627c7",
+    "primaryScreenWitness": "dr-challoner",
+    "crossWitnessValidationRequired": [
+      "dr-challoner",
+      "cpdv-2009",
+      "crampon-1923"
+    ],
+    "mainNarrativeOwner": "data/research/historia-salutis-v18-continuous-reading-proof.v1.json"
+  },
+  "constraints": {
+    "doNotModify54ChapterManuscript": true,
+    "preserveOriginalScriptureInWitnessFiles": true,
+    "noParaphrasedBridges": true,
+    "discontinuousVersesRenderedWithVisibleGaps": true,
+    "threeCatholicWitnessesRequired": true,
+    "preserveDanielGreekAdditionEvenWhenOmittedFromShortSelection": true,
+    "noFalseCrossGospelChronologicalSynthesis": true,
+    "doNotPromoteVisionToDatedEvent": true,
+    "requireExplicitEditorialApprovalPerEntry": true
+  },
+  "totalProposals": 16,
+  "entries": [
+    {
+      "episodeId": "hist-omitted-003",
+      "title": "The corruption preceding the Flood",
+      "sourceInventoryReferences": [
+        "Genesis 6:5–8"
+      ],
+      "insertionCandidate": {
+        "researchMovementId": "HS-M03",
+        "candidate54ChapterIds": [
+          "R02",
+          "R03",
+          "R04"
+        ],
+        "proposedSlot": "BEFORE_ANCHOR",
+        "status": "UNAPPROVED_EDITORIAL_SLOT_NO_MANUSCRIPT_CHANGE"
+      },
+      "scripturalSelections": [
+        {
+          "sequence": 1,
+          "reference": "Genesis 6:5–8",
+          "function": "Human corruption and Noah's favour before the Flood",
+          "scriptureSourceOnly": true
+        }
+      ],
+      "rationale": "A four-verse transition into the already selected flood-and-covenant sequence.",
+      "integrityNote": "NONE",
+      "currentCanonicalScriptureStatus": "UNSELECTED_FROM_MAIN_READER",
+      "publicationApproval": false,
+      "selectionApproved": false,
+      "allSourceVersesReproduceOnlyFromWitness": true,
+      "exactVerseWordingsCopiedIntoRegistry": false
+    },
+    {
+      "episodeId": "hist-omitted-027",
+      "title": "Manna from heaven",
+      "sourceInventoryReferences": [
+        "Exodus 16"
+      ],
+      "insertionCandidate": {
+        "researchMovementId": "HS-M09",
+        "candidate54ChapterIds": [
+          "R13"
+        ],
+        "proposedSlot": "AFTER_ANCHOR",
+        "status": "UNAPPROVED_EDITORIAL_SLOT_NO_MANUSCRIPT_CHANGE"
+      },
+      "scripturalSelections": [
+        {
+          "sequence": 1,
+          "reference": "Exodus 16:2–4",
+          "function": "Israel's complaint and divine promise",
+          "scriptureSourceOnly": true
+        },
+        {
+          "sequence": 2,
+          "reference": "Exodus 16:11–15",
+          "function": "Bread from heaven appears and is identified",
+          "scriptureSourceOnly": true
+        },
+        {
+          "sequence": 3,
+          "reference": "Exodus 16:31–35",
+          "function": "Name, memorial and duration of the manna",
+          "scriptureSourceOnly": true
+        }
+      ],
+      "rationale": "Preserves complaint, divine provision and forty-year sustenance without the technical collection instructions.",
+      "integrityNote": "SABBATH_COLLECTION_RULES_OMITTED",
+      "currentCanonicalScriptureStatus": "UNSELECTED_FROM_MAIN_READER",
+      "publicationApproval": false,
+      "selectionApproved": false,
+      "allSourceVersesReproduceOnlyFromWitness": true,
+      "exactVerseWordingsCopiedIntoRegistry": false
+    },
+    {
+      "episodeId": "hist-omitted-035",
+      "title": "The twelve spies",
+      "sourceInventoryReferences": [
+        "Numbers 13–14"
+      ],
+      "insertionCandidate": {
+        "researchMovementId": "HS-M10",
+        "candidate54ChapterIds": [
+          "R14",
+          "R15"
+        ],
+        "proposedSlot": "AFTER_ANCHOR",
+        "status": "UNAPPROVED_EDITORIAL_SLOT_NO_MANUSCRIPT_CHANGE"
+      },
+      "scripturalSelections": [
+        {
+          "sequence": 1,
+          "reference": "Numbers 13:26–33",
+          "function": "Scouts' report and Caleb's dissent",
+          "scriptureSourceOnly": true
+        },
+        {
+          "sequence": 2,
+          "reference": "Numbers 14:1–4",
+          "function": "Israel refuses to enter",
+          "scriptureSourceOnly": true
+        },
+        {
+          "sequence": 3,
+          "reference": "Numbers 14:6–9",
+          "function": "Joshua and Caleb urge trust",
+          "scriptureSourceOnly": true
+        },
+        {
+          "sequence": 4,
+          "reference": "Numbers 14:13–20",
+          "function": "Moses intercedes and receives pardon",
+          "scriptureSourceOnly": true
+        },
+        {
+          "sequence": 5,
+          "reference": "Numbers 14:30–34",
+          "function": "Judgment of the generation and forty-year consequence",
+          "scriptureSourceOnly": true
+        }
+      ],
+      "rationale": "Retains causal sequence from the report through intercession to wandering, rather than cherry-picking the forty years.",
+      "integrityNote": "GAPS_WITHIN_A_CONTINUOUS_NARRATIVE_EXPLICIT",
+      "currentCanonicalScriptureStatus": "UNSELECTED_FROM_MAIN_READER",
+      "publicationApproval": false,
+      "selectionApproved": false,
+      "allSourceVersesReproduceOnlyFromWitness": true,
+      "exactVerseWordingsCopiedIntoRegistry": false
+    },
+    {
+      "episodeId": "hist-omitted-039",
+      "title": "The bronze serpent",
+      "sourceInventoryReferences": [
+        "Numbers 21:4–9"
+      ],
+      "insertionCandidate": {
+        "researchMovementId": "HS-M10",
+        "candidate54ChapterIds": [
+          "R14",
+          "R15"
+        ],
+        "proposedSlot": "AFTER_ANCHOR",
+        "status": "UNAPPROVED_EDITORIAL_SLOT_NO_MANUSCRIPT_CHANGE"
+      },
+      "scripturalSelections": [
+        {
+          "sequence": 1,
+          "reference": "Numbers 21:4–9",
+          "function": "Serpent, judgment and the divinely ordered remedy",
+          "scriptureSourceOnly": true
+        }
+      ],
+      "rationale": "A six-verse coherent episode; its typological correspondence with John 3 belongs outside the narration.",
+      "integrityNote": "TYPOLOGY_LINK_EXTERNAL",
+      "currentCanonicalScriptureStatus": "UNSELECTED_FROM_MAIN_READER",
+      "publicationApproval": false,
+      "selectionApproved": false,
+      "allSourceVersesReproduceOnlyFromWitness": true,
+      "exactVerseWordingsCopiedIntoRegistry": false
+    },
+    {
+      "episodeId": "hist-omitted-044",
+      "title": "Joshua's farewell and covenant renewal",
+      "sourceInventoryReferences": [
+        "Joshua 23–24"
+      ],
+      "insertionCandidate": {
+        "researchMovementId": "HS-M11",
+        "candidate54ChapterIds": [
+          "R16",
+          "R17"
+        ],
+        "proposedSlot": "AFTER_ANCHOR",
+        "status": "UNAPPROVED_EDITORIAL_SLOT_NO_MANUSCRIPT_CHANGE"
+      },
+      "scripturalSelections": [
+        {
+          "sequence": 1,
+          "reference": "Joshua 23:1–3",
+          "function": "Joshua's final charge and retrospective",
+          "scriptureSourceOnly": true
+        },
+        {
+          "sequence": 2,
+          "reference": "Joshua 23:6",
+          "function": "Faithfulness to the Law",
+          "scriptureSourceOnly": true
+        },
+        {
+          "sequence": 3,
+          "reference": "Joshua 24:1–2",
+          "function": "Assembly at Sichem",
+          "scriptureSourceOnly": true
+        },
+        {
+          "sequence": 4,
+          "reference": "Joshua 24:14–18",
+          "function": "Choice and the people's profession",
+          "scriptureSourceOnly": true
+        },
+        {
+          "sequence": 5,
+          "reference": "Joshua 24:21–27",
+          "function": "Witness, covenant and memorial",
+          "scriptureSourceOnly": true
+        }
+      ],
+      "rationale": "Two distinct speeches are deliberately separated; preserves the act of covenant renewal and its witness.",
+      "integrityNote": "TWO_DISCRETE_SPEECHES_NO_SYNTHETIC_TRANSITION",
+      "currentCanonicalScriptureStatus": "UNSELECTED_FROM_MAIN_READER",
+      "publicationApproval": false,
+      "selectionApproved": false,
+      "allSourceVersesReproduceOnlyFromWitness": true,
+      "exactVerseWordingsCopiedIntoRegistry": false
+    },
+    {
+      "episodeId": "hist-omitted-084",
+      "title": "The three young men in the fiery furnace",
+      "sourceInventoryReferences": [
+        "Daniel 3"
+      ],
+      "insertionCandidate": {
+        "researchMovementId": "HS-M16",
+        "candidate54ChapterIds": [
+          "R27",
+          "R28"
+        ],
+        "proposedSlot": "AFTER_ANCHOR",
+        "status": "UNAPPROVED_EDITORIAL_SLOT_NO_MANUSCRIPT_CHANGE"
+      },
+      "scripturalSelections": [
+        {
+          "sequence": 1,
+          "reference": "Daniel 3:12–23",
+          "function": "Accusation, refusal and furnace",
+          "scriptureSourceOnly": true
+        },
+        {
+          "sequence": 2,
+          "reference": "Daniel 3:49–50",
+          "function": "Angel protects those in the furnace",
+          "scriptureSourceOnly": true
+        },
+        {
+          "sequence": 3,
+          "reference": "Daniel 3:91–95",
+          "function": "King sees the fourth figure and acknowledges deliverance",
+          "scriptureSourceOnly": true
+        }
+      ],
+      "rationale": "The Greek prayer and canticle in Daniel 3:24–90 are intentionally omitted from the short reading, not treated as noncanonical or silently removed.",
+      "integrityNote": "CATHOLIC_GREEK_ADDITIONS_IN_OMITTED_SECTION",
+      "currentCanonicalScriptureStatus": "UNSELECTED_FROM_MAIN_READER",
+      "publicationApproval": false,
+      "selectionApproved": false,
+      "allSourceVersesReproduceOnlyFromWitness": true,
+      "exactVerseWordingsCopiedIntoRegistry": false
+    },
+    {
+      "episodeId": "hist-omitted-096",
+      "title": "Ezra publicly reads the Law",
+      "sourceInventoryReferences": [
+        "Nehemiah 8"
+      ],
+      "insertionCandidate": {
+        "researchMovementId": "HS-M17",
+        "candidate54ChapterIds": [
+          "R29"
+        ],
+        "proposedSlot": "WITHIN_ANCHOR_AFTER_RESTORATION",
+        "status": "UNAPPROVED_EDITORIAL_SLOT_NO_MANUSCRIPT_CHANGE"
+      },
+      "scripturalSelections": [
+        {
+          "sequence": 1,
+          "reference": "Nehemiah 8:1–3",
+          "function": "Assembly and public reading of the Law",
+          "scriptureSourceOnly": true
+        },
+        {
+          "sequence": 2,
+          "reference": "Nehemiah 8:5–6",
+          "function": "People stand and worship",
+          "scriptureSourceOnly": true
+        },
+        {
+          "sequence": 3,
+          "reference": "Nehemiah 8:8–12",
+          "function": "Interpretation, mourning and holy-day joy",
+          "scriptureSourceOnly": true
+        }
+      ],
+      "rationale": "Shows restored Israel receiving and understanding the Law after return without copying the chapter's entire ritual detail.",
+      "integrityNote": "EDITION_CHAPTER_ALIGNMENT_TO_VERIFY",
+      "currentCanonicalScriptureStatus": "UNSELECTED_FROM_MAIN_READER",
+      "publicationApproval": false,
+      "selectionApproved": false,
+      "allSourceVersesReproduceOnlyFromWitness": true,
+      "exactVerseWordingsCopiedIntoRegistry": false
+    },
+    {
+      "episodeId": "hist-omitted-099",
+      "title": "Martyrdom of the seven brothers and their mother",
+      "sourceInventoryReferences": [
+        "2 Maccabees 7"
+      ],
+      "insertionCandidate": {
+        "researchMovementId": "HS-M17",
+        "candidate54ChapterIds": [
+          "R29"
+        ],
+        "proposedSlot": "AFTER_ANCHOR",
+        "status": "UNAPPROVED_EDITORIAL_SLOT_NO_MANUSCRIPT_CHANGE"
+      },
+      "scripturalSelections": [
+        {
+          "sequence": 1,
+          "reference": "2 Maccabees 7:1–2",
+          "function": "Family's refusal to violate the Law",
+          "scriptureSourceOnly": true
+        },
+        {
+          "sequence": 2,
+          "reference": "2 Maccabees 7:8–9",
+          "function": "A son's witness to resurrection",
+          "scriptureSourceOnly": true
+        },
+        {
+          "sequence": 3,
+          "reference": "2 Maccabees 7:20–23",
+          "function": "The mother's faith in the Creator and restoration of life",
+          "scriptureSourceOnly": true
+        },
+        {
+          "sequence": 4,
+          "reference": "2 Maccabees 7:27–29",
+          "function": "The mother's exhortation to the youngest",
+          "scriptureSourceOnly": true
+        },
+        {
+          "sequence": 5,
+          "reference": "2 Maccabees 7:40–41",
+          "function": "Martyrdom and the mother's death",
+          "scriptureSourceOnly": true
+        }
+      ],
+      "rationale": "Keeps mother, persecution and resurrection hope while explicitly omitting many individual torments and the youngest son's full testimony.",
+      "integrityNote": "MARTYRDOM_DIALOGUES_AND_VIOLENCE_ABRIDGED",
+      "currentCanonicalScriptureStatus": "UNSELECTED_FROM_MAIN_READER",
+      "publicationApproval": false,
+      "selectionApproved": false,
+      "allSourceVersesReproduceOnlyFromWitness": true,
+      "exactVerseWordingsCopiedIntoRegistry": false
+    },
+    {
+      "episodeId": "hist-omitted-113",
+      "title": "Twelve-year-old Jesus among the doctors in the Temple",
+      "sourceInventoryReferences": [
+        "Luke 2:41–52"
+      ],
+      "insertionCandidate": {
+        "researchMovementId": "HS-M19",
+        "candidate54ChapterIds": [
+          "R31",
+          "R32",
+          "R33"
+        ],
+        "proposedSlot": "AFTER_ANCHOR",
+        "status": "UNAPPROVED_EDITORIAL_SLOT_NO_MANUSCRIPT_CHANGE"
+      },
+      "scripturalSelections": [
+        {
+          "sequence": 1,
+          "reference": "Luke 2:41–52",
+          "function": "Complete Finding in the Temple and return to Nazareth",
+          "scriptureSourceOnly": true
+        }
+      ],
+      "rationale": "The twelve verses form a complete, irreducible Gospel episode; shortening would remove the encounter or its theological setting.",
+      "integrityNote": "PRESERVE_COMPLETE_SHORT_EPISODE",
+      "currentCanonicalScriptureStatus": "UNSELECTED_FROM_MAIN_READER",
+      "publicationApproval": false,
+      "selectionApproved": false,
+      "allSourceVersesReproduceOnlyFromWitness": true,
+      "exactVerseWordingsCopiedIntoRegistry": false
+    },
+    {
+      "episodeId": "hist-omitted-122",
+      "title": "Formal appointment of the Twelve",
+      "sourceInventoryReferences": [
+        "Luke 6:12–16"
+      ],
+      "insertionCandidate": {
+        "researchMovementId": "HS-M20",
+        "candidate54ChapterIds": [
+          "R34"
+        ],
+        "proposedSlot": "AFTER_ANCHOR",
+        "status": "UNAPPROVED_EDITORIAL_SLOT_NO_MANUSCRIPT_CHANGE"
+      },
+      "scripturalSelections": [
+        {
+          "sequence": 1,
+          "reference": "Luke 6:12–16",
+          "function": "Prayer, choice and names of the Twelve",
+          "scriptureSourceOnly": true
+        }
+      ],
+      "rationale": "The existing five-verse source establishes the apostolic foundation without conflating parallel Synoptic lists.",
+      "integrityNote": "PRESERVE_COMPLETE_SHORT_EPISODE",
+      "currentCanonicalScriptureStatus": "UNSELECTED_FROM_MAIN_READER",
+      "publicationApproval": false,
+      "selectionApproved": false,
+      "allSourceVersesReproduceOnlyFromWitness": true,
+      "exactVerseWordingsCopiedIntoRegistry": false
+    },
+    {
+      "episodeId": "hist-omitted-174",
+      "title": "Washing of the Apostles' feet",
+      "sourceInventoryReferences": [
+        "John 13:1–17"
+      ],
+      "insertionCandidate": {
+        "researchMovementId": "HS-M26",
+        "candidate54ChapterIds": [
+          "R40"
+        ],
+        "proposedSlot": "WITHIN_ANCHOR_DISTINCT_GOSPEL",
+        "status": "UNAPPROVED_EDITORIAL_SLOT_NO_MANUSCRIPT_CHANGE"
+      },
+      "scripturalSelections": [
+        {
+          "sequence": 1,
+          "reference": "John 13:1–17",
+          "function": "Complete washing of feet and Peter's exchange",
+          "scriptureSourceOnly": true
+        }
+      ],
+      "rationale": "Preserves Peter's full reply, Jesus' response and the interpretation of the act; distinguish this Johannine scene from the selected Lucan Supper narrative.",
+      "integrityNote": "CROSS_GOSPEL_SCENE_NOT_ARTIFICIALLY_CONTINUOUS",
+      "currentCanonicalScriptureStatus": "UNSELECTED_FROM_MAIN_READER",
+      "publicationApproval": false,
+      "selectionApproved": false,
+      "allSourceVersesReproduceOnlyFromWitness": true,
+      "exactVerseWordingsCopiedIntoRegistry": false
+    },
+    {
+      "episodeId": "hist-omitted-181",
+      "title": "The good thief",
+      "sourceInventoryReferences": [
+        "Luke 23:39–43"
+      ],
+      "insertionCandidate": {
+        "researchMovementId": "HS-M28",
+        "candidate54ChapterIds": [
+          "R42"
+        ],
+        "proposedSlot": "WITHIN_ANCHOR_DISTINCT_GOSPEL",
+        "status": "UNAPPROVED_EDITORIAL_SLOT_NO_MANUSCRIPT_CHANGE"
+      },
+      "scripturalSelections": [
+        {
+          "sequence": 1,
+          "reference": "Luke 23:39–43",
+          "function": "Both condemned men and Christ's promise",
+          "scriptureSourceOnly": true
+        }
+      ],
+      "rationale": "A complete five-verse Lucan testimony at Calvary. Do not present it as words taken from the selected Johannine Passion.",
+      "integrityNote": "CROSS_GOSPEL_SCENE_NOT_ARTIFICIALLY_CONTINUOUS",
+      "currentCanonicalScriptureStatus": "UNSELECTED_FROM_MAIN_READER",
+      "publicationApproval": false,
+      "selectionApproved": false,
+      "allSourceVersesReproduceOnlyFromWitness": true,
+      "exactVerseWordingsCopiedIntoRegistry": false
+    },
+    {
+      "episodeId": "hist-omitted-184",
+      "title": "Road to Emmaus",
+      "sourceInventoryReferences": [
+        "Luke 24:13–35"
+      ],
+      "insertionCandidate": {
+        "researchMovementId": "HS-M29",
+        "candidate54ChapterIds": [
+          "R43"
+        ],
+        "proposedSlot": "AFTER_ANCHOR_DISTINCT_GOSPEL",
+        "status": "UNAPPROVED_EDITORIAL_SLOT_NO_MANUSCRIPT_CHANGE"
+      },
+      "scripturalSelections": [
+        {
+          "sequence": 1,
+          "reference": "Luke 24:13–35",
+          "function": "Complete journey, exposition and recognition at Emmaus",
+          "scriptureSourceOnly": true
+        }
+      ],
+      "rationale": "Retain all twenty-three verses: removing the disciples' report would make Christ's reply and recognition appear unmotivated.",
+      "integrityNote": "PRESERVE_COMPLETE_NARRATIVE_FOR_COHERENCE",
+      "currentCanonicalScriptureStatus": "UNSELECTED_FROM_MAIN_READER",
+      "publicationApproval": false,
+      "selectionApproved": false,
+      "allSourceVersesReproduceOnlyFromWitness": true,
+      "exactVerseWordingsCopiedIntoRegistry": false
+    },
+    {
+      "episodeId": "hist-omitted-188",
+      "title": "Jesus asks Peter three times whether he loves Him",
+      "sourceInventoryReferences": [
+        "John 21:15–19"
+      ],
+      "insertionCandidate": {
+        "researchMovementId": "HS-M29",
+        "candidate54ChapterIds": [
+          "R43"
+        ],
+        "proposedSlot": "AFTER_ANCHOR",
+        "status": "UNAPPROVED_EDITORIAL_SLOT_NO_MANUSCRIPT_CHANGE"
+      },
+      "scripturalSelections": [
+        {
+          "sequence": 1,
+          "reference": "John 21:15–19",
+          "function": "Peter's threefold profession and pastoral charge",
+          "scriptureSourceOnly": true
+        }
+      ],
+      "rationale": "Five inseparable verses explicitly include the repeated question, commission and Peter's future witness.",
+      "integrityNote": "PRESERVE_COMPLETE_SHORT_EPISODE",
+      "currentCanonicalScriptureStatus": "UNSELECTED_FROM_MAIN_READER",
+      "publicationApproval": false,
+      "selectionApproved": false,
+      "allSourceVersesReproduceOnlyFromWitness": true,
+      "exactVerseWordingsCopiedIntoRegistry": false
+    },
+    {
+      "episodeId": "hist-omitted-189",
+      "title": "Great Commission in Galilee",
+      "sourceInventoryReferences": [
+        "Matthew 28:16–20"
+      ],
+      "insertionCandidate": {
+        "researchMovementId": "HS-M30",
+        "candidate54ChapterIds": [
+          "R44"
+        ],
+        "proposedSlot": "BEFORE_ANCHOR_DISTINCT_GOSPEL",
+        "status": "UNAPPROVED_EDITORIAL_SLOT_NO_MANUSCRIPT_CHANGE"
+      },
+      "scripturalSelections": [
+        {
+          "sequence": 1,
+          "reference": "Matthew 28:16–20",
+          "function": "Appearance on the mountain and commission",
+          "scriptureSourceOnly": true
+        }
+      ],
+      "rationale": "The mission command precedes the Acts ascension in canonical presentation, but no unsupported hour-by-hour chronology is asserted.",
+      "integrityNote": "CANONICAL_WITNESSES_NOT_SINGLE_SYNCHRONIZED_TIMELINE",
+      "currentCanonicalScriptureStatus": "UNSELECTED_FROM_MAIN_READER",
+      "publicationApproval": false,
+      "selectionApproved": false,
+      "allSourceVersesReproduceOnlyFromWitness": true,
+      "exactVerseWordingsCopiedIntoRegistry": false
+    },
+    {
+      "episodeId": "hist-omitted-207",
+      "title": "John sees the risen Christ on Patmos",
+      "sourceInventoryReferences": [
+        "Revelation 1:9–20"
+      ],
+      "insertionCandidate": {
+        "researchMovementId": "HS-M35",
+        "candidate54ChapterIds": [
+          "R52"
+        ],
+        "proposedSlot": "BEFORE_ANCHOR_VISION",
+        "status": "UNAPPROVED_EDITORIAL_SLOT_NO_MANUSCRIPT_CHANGE"
+      },
+      "scripturalSelections": [
+        {
+          "sequence": 1,
+          "reference": "Revelation 1:9–20",
+          "function": "Patmos vision, message and Christ's self-disclosure",
+          "scriptureSourceOnly": true
+        }
+      ],
+      "rationale": "A complete first-person visionary introduction before the selected heavenly Lamb scene; not dated as a later earthly historical event.",
+      "integrityNote": "VISIONARY_LITERARY_ORDER_NOT_TERRESTRIAL_CHRONOLOGY",
+      "currentCanonicalScriptureStatus": "UNSELECTED_FROM_MAIN_READER",
+      "publicationApproval": false,
+      "selectionApproved": false,
+      "allSourceVersesReproduceOnlyFromWitness": true,
+      "exactVerseWordingsCopiedIntoRegistry": false
+    }
+  ]
+}
