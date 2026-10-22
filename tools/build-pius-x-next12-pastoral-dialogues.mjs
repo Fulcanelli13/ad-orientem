@@ -27,6 +27,37 @@ const incoming=batches.flatMap(b=>{
  return b.chapters;
 });
 assert.equal(incoming.length,12);
+// P5 editorial voice is an overlay, never a rewrite of the P4 source-owned drafts.
+const voice=load('spx-p5-conversational-voice-revisions-4.v1.json');
+assert.equal(voice.schema,'AO_SPX_P5_CONVERSATIONAL_VOICE_OVERLAY_V1');
+assert.equal(voice.status,'UNAPPROVED_REVIEW_ONLY');
+assert.equal(voice.revisions.length,16);
+assert.deepEqual(voice.chapters,['SPX-NEW-013','SPX-NEW-014','SPX-NEW-020','SPX-NEW-021']);
+const incomingNodes=new Map(incoming.flatMap(c=>c.nodes.map(n=>[n.id,n])));
+const voiceIds=new Set();
+for(const r of voice.revisions){
+ assert(!voiceIds.has(r.nodeId),'duplicate P5 editorial override');
+ voiceIds.add(r.nodeId);
+ const n=incomingNodes.get(r.nodeId);
+ assert(n,'P5 overlay has unknown or baseline-owned node '+r.nodeId);
+ const opening=r.nodeId.endsWith('.OPEN');
+ for(const l of ['en','fr']){
+  assert(typeof r.answer[l]==='string'&&r.answer[l].trim().split(/\\s+/).length>=(opening?90:30),
+   'P5 answer too short '+r.nodeId+'/'+l);
+ }
+ assert(!/\\b(?:avatar|editorial reconstruction|publication|historical instruction)\\b/i.test(r.answer.en),
+  'editorial apparatus leaked into P5 papal voice '+r.nodeId);
+ n.originalDraft={...n.a};
+ n.a={...r.answer};
+ n.editorialVoiceReview=true;
+ if(r.sourceDrawerNote){
+  assert(opening,'source caveat should attach to opening');
+  assert(r.sourceDrawerNote.en&&r.sourceDrawerNote.fr);
+  n.sourceDrawerNote={...r.sourceDrawerNote};
+ }
+}
+assert.equal(incoming.filter(c=>voice.chapters.includes(c.id)).flatMap(c=>c.nodes).filter(n=>n.editorialVoiceReview).length,16);
+
 const ids=new Set(base.chapters.map(c=>c.id));
 const nodeIds=new Set(base.chapters.flatMap(c=>c.nodes.map(n=>n.id)));
 const incomingIds=new Set(incoming.map(c=>c.id));
@@ -66,7 +97,7 @@ for(const chapter of incoming){
     'unverified quotation embedded in editorial EN prose '+n.id);
   n.approvedReply=false;
   n.publicationEligible=false;
-  n.editorialDepth='NEW_P4_DIALOGUE_UNAPPROVED';
+  n.editorialDepth=n.editorialVoiceReview?'P5_VOICE_EDIT_UNAPPROVED':'NEW_P4_DIALOGUE_UNAPPROVED';
   n.depthSourceStatus='DOCUMENT_LOCATOR_REVIEWED_CLAIMS_NOT_INDEPENDENTLY_COLLATED';
  }
 }
