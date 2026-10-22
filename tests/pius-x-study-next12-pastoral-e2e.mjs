@@ -37,19 +37,25 @@ for(const c of added){
  }
 }
 const voice=added.flatMap(c=>c.nodes).filter(n=>n.editorialVoiceReview);
-assert.equal(voice.length,16,'P5 must revoice 4 full bilingual conversation trees');
-assert.deepEqual([...new Set(voice.map(n=>n.id.split('.')[3]))],
- ['SPX-NEW-013','SPX-NEW-014','SPX-NEW-020','SPX-NEW-021']);
-assert.equal(voice.filter(n=>n.sourceDrawerNote?.en&&n.sourceDrawerNote?.fr).length,4);
+assert.equal(voice.length,48,'P5 must revoice all 12 full bilingual conversation trees');
+assert.deepEqual([...new Set(voice.map(n=>n.id.split('.')[3]))].sort(),
+ Array.from({length:12},(_,i)=>'SPX-NEW-'+String(13+i).padStart(3,'0')));
+assert(voice.every(n=>n.approvedReply===false&&n.publicationEligible===false));
+assert.equal(voice.filter(n=>n.sourceDrawerNote?.en&&n.sourceDrawerNote?.fr).length,12);
 for(const n of voice){
  assert(n.originalDraft.en&&n.originalDraft.fr,'P4 answer drafts must remain reviewable');
  assert.notEqual(n.originalDraft.en,n.a.en,'dialogue was not actually revised');
  assert(!/\b(?:avatar|editorial reconstruction|publication|historical instruction)\b/i.test(n.a.en));
+ assert(!/^In (?:Pieni l.animo|Haerent animo|Acerbo nimis)\b/i.test(n.a.en),
+  'in-character answer reverts to metatextual opening');
+ assert(!/\bavatar\b/i.test(n.a.fr),'French character voice mentions avatar');
 }
 const ledger=JSON.parse(readFileSync(dir+'SPX_106_Source_Closure_Ledger.json','utf8'));
 assert.equal(ledger.entries.length,106);
 assert.equal(ledger.counts.nodes,423);
 assert.equal(ledger.counts.verifiedOriginalPassageExcerpts,0);
+assert.equal(ledger.entries.slice(94).filter(x=>x.editorialVoiceReview).length,12);
+assert.equal(ledger.entries.slice(94).flatMap(x=>x.allTurnNodes).filter(x=>x.sourceOwnedDraftPreserved).length,48);
 assert(ledger.entries.every(x=>x.publicationEligible===false));
 assert(!/<script[^>]+src=/.test(text106));
 assert(!/<link[^>]+https?:\/\//.test(text106));
@@ -87,9 +93,20 @@ try{
   assert.equal(await p.locator('html').getAttribute('lang'),'fr');
   assert.match(await p.locator('.spxc-topic-title').innerText(),/cinquantième anniversaire/i);
   await p.screenshot({path:dir+'review-screenshots/'+width+'-106-questions.png'});
+  // Exercise a newly revoiced seminary conversation in both languages and source view.
+  if(width===390)await p.locator('#spxc-menu').click();
+  await p.locator('[data-spxc-open="SPX-NEW-015"]').first().click();
+  assert.match(await p.locator('.spxc-answer').first().innerText(),/Le savoir est nécessaire au prêtre/);
+  assert.equal(await p.locator('.spxc-choice').count(),3);
+  await p.locator('[data-spxc-source]').first().click();
+  assert.match(await p.locator('.spxc-cite').innerText(),/réglementation actuelle des séminaires/);
+  await p.locator('.spxc-cite-close').click();
+  await p.locator('#spxc-lang').click();
+  assert.match(await p.locator('.spxc-answer').first().innerText(),/Knowledge is necessary for a priest/);
+  await p.screenshot({path:dir+'review-screenshots/'+width+'-106-questions.png'});
   assert.deepEqual(errors,[]);
   assert.deepEqual(requests,[],'standalone HTML unexpectedly loaded internet');
   await p.close();
  }
 }finally{await browser.close();}
-console.log('PASS SPX_106_BROWSER_BILINGUAL: 106 subjects, 423 answers, 375 preserved; 16 P5 voice revisions; source drawer, phone/desktop, offline');
+console.log('PASS SPX_106_BROWSER_BILINGUAL: 106 subjects, 423 answers, 375 preserved; 48 P5 voice revisions; source drawer, phone/desktop, offline');
