@@ -14,7 +14,9 @@ assert.equal(d.counts.allNodes,327);
 assert.equal(d.counts.editorialReview.expandedOpenings,82);
 assert.equal(d.counts.editorialReview.unexpandedOpenings,0);
 assert.equal(d.counts.sourceClassCounts.BIOGRAPHICAL_NARRATOR,9);
-assert(d.counts.sourceClassCounts.PAPAL_DOCUMENT_ADAPTATION>=35);
+assert.equal(d.counts.sourceClassCounts.PAPAL_DOCUMENT_ADAPTATION,29);
+assert.equal(d.counts.sourceClassCounts.SOURCE_SCOPE_EDITORIAL_HOLD,6);
+assert.equal(d.counts.sourceClassCounts.CATECHETICAL_ADAPTATION,38);
 for(const id of ['SPX-013','SPX-EXP-031']){
  assert.equal(d.chapters.find(c=>c.id===id).sourceClass,'PAPAL_DOCUMENT_ADAPTATION',
   'original encyclical witness must outrank mixed inherited catechism label');
