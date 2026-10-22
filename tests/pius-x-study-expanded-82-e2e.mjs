@@ -13,6 +13,22 @@ assert.equal(d.counts.chapters,82);
 assert.equal(d.counts.allNodes,327);
 assert.equal(d.counts.editorialReview.expandedOpenings,82);
 assert.equal(d.counts.editorialReview.unexpandedOpenings,0);
+assert.equal(d.counts.followupReview.allFollowups,245);
+assert.equal(d.counts.followupReview.extended,245);
+assert.equal(d.counts.followupReview.unexpanded,0);
+assert.equal(d.counts.followupReview.frenchExtensions,245);
+assert.deepEqual(d.counts.followupReview.unexpandedNodeIds,[]);
+const expandedFollowups=d.chapters.flatMap(c=>c.nodes.slice(1));
+assert.equal(expandedFollowups.length,245);
+for(const n of expandedFollowups){
+ assert.equal(n.editorialDepth,'ENRICHED_FOLLOWUP_UNAPPROVED','followup missing editorial addition: '+n.id);
+ assert(n.originalDraft?.en&&n.originalDraft?.fr,'missing original short followup: '+n.id);
+ assert(n.depthSourceStatus==='INHERITED_CHAPTER_LOCATOR_NOT_INDEPENDENTLY_COLLATED');
+ assert(n.a.en.split(/\s+/).length>=55&&n.a.fr.split(/\s+/).length>=55,
+  'followup insufficient context in both languages: '+n.id);
+ assert(n.a.en.startsWith(n.originalDraft.en),'original answer replaced rather than preserved: '+n.id);
+}
+
 assert.equal(d.counts.sourceClassCounts.BIOGRAPHICAL_NARRATOR,9);
 assert.equal(d.counts.sourceClassCounts.PAPAL_DOCUMENT_ADAPTATION,29);
 assert.equal(d.counts.sourceClassCounts.SOURCE_SCOPE_EDITORIAL_HOLD,6);
