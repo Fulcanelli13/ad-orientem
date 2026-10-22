@@ -125,5 +125,33 @@ assert(!/<link[^>]+https?:\/\//.test(result));
 mkdirSync('artifacts/pius-x-study-expanded',{recursive:true});
 const output='artifacts/pius-x-study-expanded/SPX_Study_Expanded_82.html';
 writeFileSync(output,result);
+const sourceLedger={
+ schema:'AO_SPX_82_DOCUMENT_WITNESS_AND_EDITORIAL_PROVENANCE_LEDGER_V1',
+ policy:'Research navigation and original-document locators are not claim-level verification, approved translations or papal quotations.',
+ published:false,
+ counts:{chapters:82,nodes:327,enrichedOpenings:editorialReview.expandedOpenings,
+  pendingOriginalPassageCollation:82,verifiedOriginalPassageExcerpts:0},
+ entries:chapters.map(c=>({
+  chapterId:c.id,question:c.nodes[0].q,
+  sourceClass:c.sourceClass,sourceGenre:c.source.genre,
+  sourceTier:c.source.tier||null,originalDocumentUrl:c.source.url,
+  originalSourceLocator:c.source.locus,
+  partialEvidence:!!c.partial,
+  currentEditorialOpeningId:c.nodes[0].id,
+  originalShortDraftPreserved:!!c.nodes[0].originalDraft,
+  englishTranslationApproved:false,frenchTranslationApproved:false,
+  historicalLocusIndependentlyCollated:false,
+  directSupportingExcerptInSourceRegistry:false,
+  publicationEligible:false,
+  allTurnNodes:c.nodes.map(n=>({id:n.id,parentId:n.parentId||null,
+   supportingDocumentUrl:n.source?.url||c.source.url,
+   sourceLocator:n.source?.locus||c.source.locus,
+   claimExcerptStatus:'NOT_YET_COLLATED',
+   sourceBoundButNotVerified:true}))
+ }))
+};
+writeFileSync('artifacts/pius-x-study-expanded/SPX_82_Source_Closure_Ledger.json',
+ JSON.stringify(sourceLedger,null,2)+'\n');
+
 console.log('PASS SPX_82_CHAPTER_OFFLINE_BUILD '+JSON.stringify({output,bytes:Buffer.byteLength(result),
  chapters:82,turnNodes:327,depth:36,biographical,partial,editorialReview,requests:0,published:0}));
