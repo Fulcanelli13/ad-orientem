@@ -488,9 +488,9 @@ export const CATENA_READER_QUESTION_ROWS=Object.freeze([
     "editorialStatus": "unapproved_reader_navigation_not_standalone_answer",
     "related": [
       {
-        "sourcePointer": "catena.luke.18.9:5",
-        "father": "Augustine",
-        "evidence": "His fault was not that he gave God thanks"
+        "sourcePointer": "catena.luke.18.9:10",
+        "father": "Chrysostom",
+        "evidence": "To give thanks is not to heap reproaches on others"
       }
     ]
   },
