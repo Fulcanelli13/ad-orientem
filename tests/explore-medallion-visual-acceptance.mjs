@@ -233,6 +233,36 @@ try{
    assert.equal(await page.evaluate(()=>globalThis.AO_FIND_APP_V1.open({lens:"heritage"})),true);
    await page.locator("#ao-find-modular-root [data-mapcn-discover-rail]").waitFor({state:"visible"});
    assert.equal(await page.locator(".aoHeritageSurface .aoFindMap canvas.maplibregl-canvas").count(),1);
+   // P6: canonical three-letter identifiers must round-trip through the
+   // existing Calendar-to-Explore owner; research-only IDs must fail closed.
+   assert.equal(await page.evaluate(()=>globalThis.AO_FIND_APP_V1.open({
+     lens:"traditions",customId:"DEV-010",expandDetail:true})),true);
+   await page.locator('#ao-find-modular-root .aoExploreTraditionSheet[data-explore-custom-id="DEV-010"]').waitFor({state:"visible"});
+   assert.equal(await page.evaluate(()=>globalThis.AO_FIND_APP_V1.open({
+     lens:"traditions",customId:"DEV-999"})),false);
+   assert.equal(await page.locator('#ao-find-modular-root .aoExploreTraditionSheet[data-explore-custom-id="DEV-010"]').count(),1);
+   assert.equal(await page.evaluate(()=>globalThis.AO_FIND_APP_V1.open({lens:"heritage"})),true);
+   await page.locator("#ao-find-modular-root [data-mapcn-discover-rail]").waitFor({state:"visible"});
+   assert.equal(await page.locator(".aoHeritageSurface .aoFindMap canvas.maplibregl-canvas").count(),1,
+     "P6 cross-lens return must preserve a single MapLibre canvas");
+   const p6French=await page.evaluate(async()=>{
+     globalThis.AO_RUNTIME_V8.store.dispatch({type:"set-language",language:"fr"});
+     await globalThis.AO_FIND_APP_V1.paint();
+     return globalThis.AO_RUNTIME_V8.store.getState().language;
+   });
+   assert.equal(p6French,"fr");
+   await page.locator("#ao-find-modular-root button[data-network-toggle]").click();
+   await graph.waitFor({state:"visible"});
+   await graph.locator("select[data-network-kind]").selectOption("person");
+   assert.ok(await graph.locator("a[href^='https://']").count()>0);
+   await page.screenshot({path:resolve(out,"explore-"+width+"-network-fr.png"),fullPage:false});
+   await graph.locator("button[data-network-close]").click();
+   assert.equal(await page.evaluate(async()=>{
+     globalThis.AO_RUNTIME_V8.store.dispatch({type:"set-language",language:"en"});
+     await globalThis.AO_FIND_APP_V1.paint();
+     return globalThis.AO_RUNTIME_V8.store.getState().language;
+   }),"en");
+   await page.locator("#ao-find-modular-root [data-mapcn-discover-rail]").waitFor({state:"visible"});
    // D is a same-map journey folio: no new page and no manufactured route
    // lines. Exercise a historical source-owned 3-stage pilgrimage.
    await page.locator("#ao-find-modular-root [data-explore-journey-open]").click();
