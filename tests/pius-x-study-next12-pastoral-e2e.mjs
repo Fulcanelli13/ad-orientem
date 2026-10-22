@@ -31,10 +31,20 @@ for(const c of added){
  for(const [i,n] of c.nodes.entries()){
   assert(n.approvedReply===false&&n.publicationEligible===false);
   assert(n.q.en&&n.q.fr&&n.a.en&&n.a.fr);
-  assert.equal(n.editorialDepth,'NEW_P4_DIALOGUE_UNAPPROVED');
+  assert.equal(n.editorialDepth,n.editorialVoiceReview?'P5_VOICE_EDIT_UNAPPROVED':'NEW_P4_DIALOGUE_UNAPPROVED');
   assert(n.a.en.split(/\s+/).length>=(i?30:90));
   assert(n.a.fr.split(/\s+/).length>=(i?30:90));
  }
+}
+const voice=added.flatMap(c=>c.nodes).filter(n=>n.editorialVoiceReview);
+assert.equal(voice.length,16,'P5 must revoice 4 full bilingual conversation trees');
+assert.deepEqual([...new Set(voice.map(n=>n.id.split('.')[3]))],
+ ['SPX-NEW-013','SPX-NEW-014','SPX-NEW-020','SPX-NEW-021']);
+assert.equal(voice.filter(n=>n.sourceDrawerNote?.en&&n.sourceDrawerNote?.fr).length,4);
+for(const n of voice){
+ assert(n.originalDraft.en&&n.originalDraft.fr,'P4 answer drafts must remain reviewable');
+ assert.notEqual(n.originalDraft.en,n.a.en,'dialogue was not actually revised');
+ assert(!/\b(?:avatar|editorial reconstruction|publication|historical instruction)\b/i.test(n.a.en));
 }
 const ledger=JSON.parse(readFileSync(dir+'SPX_106_Source_Closure_Ledger.json','utf8'));
 assert.equal(ledger.entries.length,106);
@@ -59,6 +69,10 @@ try{
   await p.locator('[data-spxc-open="SPX-NEW-020"]').first().click();
   assert.match(await p.locator('.spxc-topic-title').innerText(),/fiftieth anniversary/i);
   assert.equal(await p.locator('.spxc-choice').count(),3);
+  assert.doesNotMatch(await p.locator('.spxc-answer').first().innerText(),/invented recollections|historical foundation/i);
+  await p.locator('[data-spxc-source]').first().click();
+  assert.match(await p.locator('.spxc-cite').innerText(),/Only the feelings explicitly expressed/);
+  await p.locator('.spxc-cite-close').click();
   assert.equal(await p.locator('#spxc-portrait').isVisible(),true);
   await p.locator('.spxc-choice').first().click();
   assert.equal(await p.locator('.spxc-turn').count(),2);
@@ -77,4 +91,4 @@ try{
   await p.close();
  }
 }finally{await browser.close();}
-console.log('PASS SPX_106_BROWSER_BILINGUAL: 106 subjects, 423 answers, 375 preserved; phone/desktop, offline');
+console.log('PASS SPX_106_BROWSER_BILINGUAL: 106 subjects, 423 answers, 375 preserved; 16 P5 voice revisions; source drawer, phone/desktop, offline');
