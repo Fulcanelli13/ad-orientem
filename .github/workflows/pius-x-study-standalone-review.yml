@@ -8,8 +8,10 @@ on:
       - 'tests/pius-x-study-standalone-e2e.mjs'
       - 'tests/pius-x-study-expanded-82-e2e.mjs'
       - 'tests/pius-x-study-next12-dialogues-e2e.mjs'
+      - 'tests/pius-x-study-next12-pastoral-e2e.mjs'
       - 'tools/build-pius-x-expanded-standalone.mjs'
       - 'tools/build-pius-x-next12-dialogues.mjs'
+      - 'tools/build-pius-x-next12-pastoral-dialogues.mjs'
       - 'tools/spx-p0-editorial-normalization.mjs'
       - 'tools/spx-p2-followup-editorial-layer.mjs'
       - '.github/workflows/pius-x-study-standalone-review.yml'
@@ -19,8 +21,10 @@ on:
       - 'tests/pius-x-study-standalone-e2e.mjs'
       - 'tests/pius-x-study-expanded-82-e2e.mjs'
       - 'tests/pius-x-study-next12-dialogues-e2e.mjs'
+      - 'tests/pius-x-study-next12-pastoral-e2e.mjs'
       - 'tools/build-pius-x-expanded-standalone.mjs'
       - 'tools/build-pius-x-next12-dialogues.mjs'
+      - 'tools/build-pius-x-next12-pastoral-dialogues.mjs'
       - 'tools/spx-p0-editorial-normalization.mjs'
       - 'tools/spx-p2-followup-editorial-layer.mjs'
       - '.github/workflows/pius-x-study-standalone-review.yml'
@@ -47,6 +51,10 @@ jobs:
         run: node tools/build-pius-x-next12-dialogues.mjs
       - name: Test all 94 subjects, bilingual authorship and offline browser interaction
         run: node tests/pius-x-study-next12-dialogues-e2e.mjs
+      - name: Assemble the next twelve pastoral dialogue chapters
+        run: node tools/build-pius-x-next12-pastoral-dialogues.mjs
+      - name: Browser-test 106 bilingual subjects and immutable original 375 answers
+        run: node tests/pius-x-study-next12-pastoral-e2e.mjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
