@@ -49,6 +49,7 @@ jobs:
           node tests/historia-thematic-adjudication.mjs
           node tests/historia-priority16-economical-selections.mjs
           node tests/historia-priority16-parallel-reconciliation.mjs
+          node tests/historia-priority16-four-integrity.mjs
           node tests/historia-thematic-priority16-economical.mjs
   browser:
     needs: node-contracts
