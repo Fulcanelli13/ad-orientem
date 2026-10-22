@@ -11,12 +11,28 @@ assert(mark);
 const d=JSON.parse(mark[1]);
 assert.equal(d.counts.chapters,82);
 assert.equal(d.counts.allNodes,327);
-assert.equal(d.counts.editorialReview.expandedOpenings,34);
-assert.equal(d.counts.editorialReview.unexpandedOpenings,48);
+assert.equal(d.counts.editorialReview.expandedOpenings,82);
+assert.equal(d.counts.editorialReview.unexpandedOpenings,0);
 assert.equal(d.counts.sourceClassCounts.BIOGRAPHICAL_NARRATOR,9);
+assert(d.counts.sourceClassCounts.PAPAL_DOCUMENT_ADAPTATION>=35);
+for(const id of ['SPX-013','SPX-EXP-031']){
+ assert.equal(d.chapters.find(c=>c.id===id).sourceClass,'PAPAL_DOCUMENT_ADAPTATION',
+  'original encyclical witness must outrank mixed inherited catechism label');
+}
+for(const id of ['SPX-EXP-029','SPX-EXP-041']){
+ assert.equal(d.chapters.find(c=>c.id===id).sourceClass,'CATECHETICAL_ADAPTATION',
+  'historical longer catechism must not be spoken as personal papal testimony');
+}
+assert.equal(d.chapters.filter(c=>c.partial).length,19);
+
 assert.equal(d.approvals.publishing,false);
 const fullDrafts=d.chapters.filter(c=>c.nodes[0].editorialDepth==='ENRICHED_OPENING_UNAPPROVED');
-assert.equal(fullDrafts.length,34);
+assert.equal(fullDrafts.length,82);
+assert(d.chapters.every(c=>c.nodes[0].originalDraft?.en&&c.nodes[0].originalDraft?.fr));
+assert(d.chapters.every(c=>c.nodes[0].depthSourceStatus==='INHERITED_CHAPTER_LOCATOR_NOT_INDEPENDENTLY_COLLATED'));
+assert.equal(d.counts.allNodes,327);
+const frenchAll=d.chapters.flatMap(c=>c.nodes.map(n=>n.a.fr)).join(' ');
+assert(frenchAll.includes('âmes'),'accented French words must remain intact');
 for(const c of fullDrafts){
  assert(c.nodes[0].originalDraft?.en&&c.nodes[0].originalDraft?.fr);
  assert(c.nodes[0].a.en.split(/\s+/).length>=90);
