@@ -7,8 +7,8 @@ const data=JSON.parse(readFileSync("data/scripture/catena/editorial-matthew-firs
 assert.equal(data.records.length,30);
 const works=JSON.parse(readFileSync("data/scripture/catena/editorial-matthew-work-loci.v1.json","utf8"));
 const external=validateCatenaWorkLociPreview(works,data);
-assert.equal(external.total,13);
-assert.equal(external.byPointer.size,13);
+assert.equal(external.total,18);
+assert.equal(external.byPointer.size,18);
 assert.ok([...external.byPointer.values()].every(x=>x.originalLanguageCollated===false));
 assert.ok([...external.byPointer.values()].every(x=>x.independentHumanApproved===false));
 assert.equal(external.byPointer.get("catena.matthew.1.20:20").workLocus.includes("38–39"),true);

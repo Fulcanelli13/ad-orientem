@@ -6,10 +6,10 @@
 export const CATENA_EXTERNAL_SOURCE_SCHEMA="ao.catena.matthew-original-work-preview-loci.v1";
 export function validateCatenaWorkLociPreview(data,contextReview){
  if(!contextReview||data?.schema!==CATENA_EXTERNAL_SOURCE_SCHEMA||
-  data.originalWorkResearchCommit!=="57b4126d0c21455679e2724673c9d56937f74788"||
+  data.originalWorkResearchCommit!=="2507093ccb1ad153aa260d05ca3229d0bc7aed20"||
   data.contextReviewSourceCommit!==contextReview.sourceResearchCommit||
   data.originalLanguageCollated!==false||data.humanApproved!==false||
-  data.publicationEligibility!=="blocked_research_only"||data.records?.length!==13)
+  data.publicationEligibility!=="blocked_research_only"||data.records?.length!==18)
   throw Error("CATENA_ORIGINAL_WORK_RESEARCH_INVALID");
  const source=new Map(contextReview.records.map(r=>[r.sourcePointer,r]));
  const seen=new Map();
