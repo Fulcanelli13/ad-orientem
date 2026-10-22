@@ -11,6 +11,19 @@ Enter through the first *E supremi* question. The **complete two-segment editori
 The UI follows the approved dark fixed-sprite visual-novel format: text in a staged folio, rather than messenger chat bubbles. This prototype is a standalone review artifact **not** a replacement or merge of the existing three-guide Living Church experience, Mass reader or native 433-question Catechism.
 
 
+## P6: first twelve earlier documentary conversations — independent voice review
+
+A separate review-only P6 file, `artifacts/pius-x-study-expanded/SPX_Study_Expanded_106_P6.html`, starts from the already-validated 106-chapter/423-answer P5 build. **It does not overwrite the P5 HTML, original research files, 94-chapter stage data, or source ledgers.** The P6 stage revises **22 EN/FR answer pairs in twelve of the earlier 94 chapters**, including twelve openings and ten follow-ups. The other 82 earlier subjects and all twelve newer P4 subjects remain identical to the P5 review.
+
+Selected topics: election as Pope; adult Catechism; priests' work and prayer; restoration in Christ; lay apostolate; discouragement; sacred music; teaching adults; charity beyond almsgiving; correction without bitterness; meditation on Christ; and spiritual reading. Only chapters classified as **papal-document adaptations** can be revoiced in this pass. **Third-person biography, catechetical reconstruction and source-scope holds are intentionally excluded** rather than being given invented first-person reminiscences.
+
+- Overlay ownership: `spx-p6-earlier-documentary-a.v1.json` (six chapters, ten answer pairs) and `spx-p6-earlier-documentary-b.v1.json` (six chapters, twelve answer pairs).
+- Each change preserves the former expanded bilingual answer in `previousEditorialDraft`. The older source-owner `originalDraft` field, where present, is retained independently. The UI offers **Compare previous editorial wording** rather than conflating these two kinds of provenance.
+- Each newly revised opening has a bilingual historical and translation qualification in the source drawer. Neither the voice revisions nor their EN/FR translations are certified as Pius X's exact historic speech.
+- The `tools/build-pius-x-earlier-94-p6.mjs` build and `tests/pius-x-study-earlier-94-p6-e2e.mjs` browser test check conservation of the 106-subject structure, all 423 answers, 22 specific changes, twelve source notes, the unchanged later twelve subjects, EN/FR switching, accessible comparison, and zero network calls.
+
+The workflow bundles the P6 HTML, P6 source ledger, and phone/desktop screenshots with the existing `pius-x-study-desktop-mobile-review` artifact. Original-passage collation, doctrinal review, source voice and translation review, and publication approval remain open.
+
 ## P5: all twelve recent chapters revoiced (22 October 2026)
 
 The **106-chapter / 423 bilingual answer-pair offline study** now applies a separately reviewable editorial conversational-voice overlay to **all twelve P4 supplementary chapters (48 complete EN/FR answer pairs)**, including each chapter's opening and three follow-up exchanges. These are chapters `SPX-NEW-013` through `SPX-NEW-024`. All 94 preceding chapters and their **375 original answer pairs remain structurally unchanged**.
