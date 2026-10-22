@@ -4,7 +4,7 @@
  * Search is conservative local lexical retrieval, never generated speech.
  */
 import {catenaRelatedTopic,catenaTopicEvidence,retrieveCatenaRelatedMessages} from "./catena-related-vocabulary.js";
-import {curatedCatenaReaderQuestions} from "./catena-reader-questions.js";
+import {curatedCatenaReaderQuestions,curatedCatenaReaderCompanions} from "./catena-reader-questions.js";
 export const LIVING_CATENA_SCHEMA="ao.catena.messenger.v1";
 // Mixed authorship recorded in the Catena research audit. These two
 // boundaries are display metadata only: the canonical source is untouched.
@@ -314,6 +314,9 @@ function installStyle(d){
  ".aoScriptureLibrary .aoCatenaMTopicChoices button{min-height:49px;text-align:left;background:#172633;color:#e8ce9f;border:1px solid #68573e;border-radius:8px;padding:9px 12px;font:14px/1.4 var(--ao-font-liturgical,Georgia,serif)}",
  ".aoCatenaMTopicChoices button:focus-visible{outline:2px solid #dfbc81;outline-offset:2px}",
  ".aoCatenaMRevisited{outline:2px solid #b6945d;outline-offset:4px;border-radius:8px}",
+ ".aoCatenaMCompanions{display:grid;gap:7px;border-inline-start:2px solid #786245;padding:8px 0 8px 12px;max-width:100%}",
+ ".aoCatenaMCompanions>p{font:12px/1.5 var(--ao-font-ui,Georgia,serif);color:#cfbb9e;margin:0}",
+ ".aoScriptureLibrary .aoCatenaMCompanions button{min-height:44px;text-align:left;background:#182735;color:#eed9bc;border:1px solid #786245;border-radius:7px;padding:8px 12px;font:14px/1.4 var(--ao-font-liturgical,Georgia,serif)}",
  ".aoCatenaMTopics>span{font:12px var(--ao-font-ui,Georgia,serif);color:#b5a38a}",
  ".aoScriptureLibrary .aoCatenaMTopics button{min-height:40px;background:#172633;color:#e3c598;border:1px solid #68573e;border-radius:22px;padding:8px 10px;font:500 13px var(--ao-font-ui,Georgia,serif)}",
  ".aoCatenaMActions{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:12px}",
@@ -375,6 +378,9 @@ export function mountCatenaMessenger(host,pericopes,{language="en",fetcher=globa
   const av=element(d,"div","aoCatenaMAvatar",r.father.slice(0,1).toUpperCase());av.setAttribute("aria-hidden","true");
   const body=element(d,"div","aoCatenaMBody"),bubble=element(d,"div","aoCatenaMBubble");
   if(r.fromAnotherPassage)body.append(element(d,"p","aoCatenaMElsewhere","FROM ANOTHER PASSAGE · "+r.reference));
+  if(r.comparisonSourceEvidence)body.append(element(d,"p","aoCatenaMRelated",
+   "ANOTHER FATHER ON THIS PASSAGE · DISTINCT SOURCE · “"+r.comparisonSourceEvidence+
+   "”. A separate interpretation or emphasis; not a combined answer."));
   if(r.readerQuestionLink)body.append(element(d,"p","aoCatenaMEvidence",
    "READER QUESTION · This exact original excerpt discusses “"+r.readerQuestionLink.sourceEvidence+
    "”. The modern question is a navigation aid, not the Father's own question or a certified standalone answer."));
@@ -569,6 +575,28 @@ export function mountCatenaMessenger(host,pericopes,{language="en",fetcher=globa
    if(revealExistingSource(item.sourcePointer))
     note("The original excerpt is already above and has been highlighted without inventing another reply.");
    else note("Could not present the original excerpt with a verified attribution.");
+  }
+  const companions=curatedCatenaReaderCompanions(rows,item);
+  if(companions.length){
+   const other=element(d,"section","aoCatenaMCompanions");
+   other.dataset.catenaCompanionsFor=item.id;
+   other.append(element(d,"p",null,
+    "Other Fathers in this same Gospel passage · Read their distinct, attributed extracts; their emphases may differ."));
+   for(const companion of companions){
+    const btn=action(d,"Read "+companion.father+" on this passage",()=>{
+     btn.disabled=true;
+     note("A separate Catena excerpt by "+companion.father+" on this passage; not a synthesized or necessarily identical answer.");
+     if(!message(companion)){
+      if(revealExistingSource(companion.id))
+       note("This Father's original excerpt was already displayed; it has been highlighted.");
+      else note("The companion source could not be displayed with verified attribution.");
+     }
+    });
+    btn.dataset.catenaCompanionPointer=companion.id;
+    btn.dataset.catenaCompanionFather=companion.father;
+    other.append(btn);
+   }
+   feed.append(other);
   }
  }
  const questions=suggestCatenaQuestions(rows);
