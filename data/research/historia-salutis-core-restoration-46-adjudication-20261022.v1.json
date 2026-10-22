@@ -1,0 +1,1240 @@
+{
+  "schema": "AO_HISTORIA_CORE_RESTORATION_46_EDITORIAL_ADJUDICATION_V1",
+  "date": "2026-10-22",
+  "status": "SOURCE_SCREENED_RECOMMENDATIONS_NOT_ACCEPTED",
+  "sources": {
+    "master": {
+      "path": "data/research/historia-salutis-thematic-episode-reconciliation-20261021.v2.json",
+      "sha": "878acb2ae3230dbf290b19bd1917c9323814a373"
+    },
+    "currentReader": {
+      "path": "data/research/historia-salutis-thematic-150-editorial-queue-20261021.v1.json",
+      "sha": "d9b64ae33c946086785b87c5ed546b8124eaac3b"
+    },
+    "p3Movements": {
+      "path": "data/research/historia-salutis-v18-continuous-reading-proof.v1.json",
+      "sha": "cbc5be02da7cd54af5da1f998f9c6c343772bab5"
+    },
+    "provisional54Chapters": {
+      "path": "data/research/historia-salutis-p3-provisional-reading-chapter-consolidation-20261021.v2.json",
+      "sha": "f41f6d5358e5460193785bddf90852d566200e63"
+    }
+  },
+  "policy": {
+    "noMainNarrativeWrites": true,
+    "noScriptureTextRewritten": true,
+    "noDuplicationOfSelectedP3Verses": true,
+    "scriptureReferencesComparedAtVersePrecision": true,
+    "possible54ChapterIdsAreNotExactEventPlacement": true,
+    "originalEditorialDispositionPreserved": true,
+    "visionsNotTerrestrialChronology": true,
+    "noAutomaticPublication": true
+  },
+  "totals": {
+    "candidates": 46,
+    "priority": 16,
+    "conditional": 23,
+    "selectedAlready": 2,
+    "keepSupplementary": 5,
+    "actualSelectedVerseOverlaps": 2,
+    "sameChapterButDistinctSolomonPassage": 1,
+    "publicationApprovals": 0
+  },
+  "entries": [
+    {
+      "episodeId": "hist-omitted-003",
+      "title": "The corruption preceding the Flood",
+      "originalInventoryReference": "Genesis 6:5–8",
+      "sourcePartsInResearchReader": [
+        "Genesis 6:5–8"
+      ],
+      "originalInventoryDisposition": "M1_core_restoration_review",
+      "proposedEditorialDisposition": "PRIORITY_SCOPED_MAIN_READING_REVIEW",
+      "editorialRationale": "A brief Flood covenant narrative motive bridges the Fall to Noah",
+      "nearestProposedResearchMovement": {
+        "id": "HS-M03",
+        "title": "Noah, the covenant and the peoples",
+        "candidate54ChapterIds": [
+          "R02",
+          "R03",
+          "R04"
+        ],
+        "relationship": "PROPOSED_CONTEXT_NOT_APPROVED_INSERTION_OR_IDENTICAL_EPISODE"
+      },
+      "selectedScriptureVerseIntersections": [],
+      "scriptureEconomyReviewRequired": true,
+      "namedCanonEventId": null,
+      "mainReaderUpdateApproved": false,
+      "publicationApproved": false,
+      "status": "EDITORIAL_PROPOSAL_REQUIRES_ACCEPTANCE"
+    },
+    {
+      "episodeId": "hist-omitted-004",
+      "title": "The Tower of Babel",
+      "originalInventoryReference": "Genesis 11:1–9",
+      "sourcePartsInResearchReader": [
+        "Genesis 11:1–9"
+      ],
+      "originalInventoryDisposition": "M2_conditional_restoration_review",
+      "proposedEditorialDisposition": "CONDITIONAL_MAIN_READING_REVIEW",
+      "editorialRationale": "Babel relates Noah's peoples to Abraham but may remain contextual",
+      "nearestProposedResearchMovement": {
+        "id": "HS-M03",
+        "title": "Noah, the covenant and the peoples",
+        "candidate54ChapterIds": [
+          "R02",
+          "R03",
+          "R04"
+        ],
+        "relationship": "PROPOSED_CONTEXT_NOT_APPROVED_INSERTION_OR_IDENTICAL_EPISODE"
+      },
+      "selectedScriptureVerseIntersections": [],
+      "scriptureEconomyReviewRequired": true,
+      "namedCanonEventId": null,
+      "mainReaderUpdateApproved": false,
+      "publicationApproved": false,
+      "status": "EDITORIAL_PROPOSAL_REQUIRES_ACCEPTANCE"
+    },
+    {
+      "episodeId": "hist-omitted-014",
+      "title": "Jacob's dream of the ladder",
+      "originalInventoryReference": "Genesis 28:10–22",
+      "sourcePartsInResearchReader": [
+        "Genesis 28:10–22"
+      ],
+      "originalInventoryDisposition": "M2_conditional_restoration_review",
+      "proposedEditorialDisposition": "CONDITIONAL_MAIN_READING_REVIEW",
+      "editorialRationale": "Jacob's promise scene competes with already selected Genesis 35 covenant restoration",
+      "nearestProposedResearchMovement": {
+        "id": "HS-M05",
+        "title": "Isaac, Jacob and Israel",
+        "candidate54ChapterIds": [
+          "R07",
+          "R08"
+        ],
+        "relationship": "PROPOSED_CONTEXT_NOT_APPROVED_INSERTION_OR_IDENTICAL_EPISODE"
+      },
+      "selectedScriptureVerseIntersections": [],
+      "scriptureEconomyReviewRequired": true,
+      "namedCanonEventId": null,
+      "mainReaderUpdateApproved": false,
+      "publicationApproved": false,
+      "status": "EDITORIAL_PROPOSAL_REQUIRES_ACCEPTANCE"
+    },
+    {
+      "episodeId": "hist-omitted-020",
+      "title": "Judah pleads for Benjamin",
+      "originalInventoryReference": "Genesis 44:18–34",
+      "sourcePartsInResearchReader": [
+        "Genesis 44:18–34"
+      ],
+      "originalInventoryDisposition": "M2_conditional_restoration_review",
+      "proposedEditorialDisposition": "CONDITIONAL_MAIN_READING_REVIEW",
+      "editorialRationale": "Judah's plea provides optional transition to Genesis 45 recognition",
+      "nearestProposedResearchMovement": {
+        "id": "HS-M06",
+        "title": "Joseph and the descent into Egypt",
+        "candidate54ChapterIds": [
+          "R09"
+        ],
+        "relationship": "PROPOSED_CONTEXT_NOT_APPROVED_INSERTION_OR_IDENTICAL_EPISODE"
+      },
+      "selectedScriptureVerseIntersections": [],
+      "scriptureEconomyReviewRequired": true,
+      "namedCanonEventId": null,
+      "mainReaderUpdateApproved": false,
+      "publicationApproved": false,
+      "status": "EDITORIAL_PROPOSAL_REQUIRES_ACCEPTANCE"
+    },
+    {
+      "episodeId": "hist-omitted-021",
+      "title": "Jacob blesses his sons",
+      "originalInventoryReference": "Genesis 49",
+      "sourcePartsInResearchReader": [
+        "Genesis 49:1–28"
+      ],
+      "originalInventoryDisposition": "M2_conditional_restoration_review",
+      "proposedEditorialDisposition": "KEEP_IN_SUPPLEMENTARY_RESEARCH",
+      "editorialRationale": "Jacob's extended blessings require a separately approved selective covenant quotation",
+      "nearestProposedResearchMovement": {
+        "id": "HS-M06",
+        "title": "Joseph and the descent into Egypt",
+        "candidate54ChapterIds": [
+          "R09"
+        ],
+        "relationship": "PROPOSED_CONTEXT_NOT_APPROVED_INSERTION_OR_IDENTICAL_EPISODE"
+      },
+      "selectedScriptureVerseIntersections": [],
+      "scriptureEconomyReviewRequired": false,
+      "namedCanonEventId": null,
+      "mainReaderUpdateApproved": false,
+      "publicationApproved": false,
+      "status": "EDITORIAL_PROPOSAL_REQUIRES_ACCEPTANCE"
+    },
+    {
+      "episodeId": "hist-omitted-024",
+      "title": "Moses' birth and rescue from the Nile",
+      "originalInventoryReference": "Exodus 2:1–10",
+      "sourcePartsInResearchReader": [
+        "Exodus 2:1–10"
+      ],
+      "originalInventoryDisposition": "M2_conditional_restoration_review",
+      "proposedEditorialDisposition": "CONDITIONAL_MAIN_READING_REVIEW",
+      "editorialRationale": "Moses' birth fills a short gap from Exodus 1 to the call in Exodus 3",
+      "nearestProposedResearchMovement": {
+        "id": "HS-M07",
+        "title": "Bondage and the calling of Moses",
+        "candidate54ChapterIds": [
+          "R10"
+        ],
+        "relationship": "PROPOSED_CONTEXT_NOT_APPROVED_INSERTION_OR_IDENTICAL_EPISODE"
+      },
+      "selectedScriptureVerseIntersections": [],
+      "scriptureEconomyReviewRequired": true,
+      "namedCanonEventId": null,
+      "mainReaderUpdateApproved": false,
+      "publicationApproved": false,
+      "status": "EDITORIAL_PROPOSAL_REQUIRES_ACCEPTANCE"
+    },
+    {
+      "episodeId": "hist-omitted-027",
+      "title": "Manna from heaven",
+      "originalInventoryReference": "Exodus 16",
+      "sourcePartsInResearchReader": [
+        "Exodus 16"
+      ],
+      "originalInventoryDisposition": "M1_core_restoration_review",
+      "proposedEditorialDisposition": "PRIORITY_SCOPED_MAIN_READING_REVIEW",
+      "editorialRationale": "Manna is a source-supported wilderness event absent between the sea and Sinai",
+      "nearestProposedResearchMovement": {
+        "id": "HS-M09",
+        "title": "Exodus through the sea",
+        "candidate54ChapterIds": [
+          "R13"
+        ],
+        "relationship": "PROPOSED_CONTEXT_NOT_APPROVED_INSERTION_OR_IDENTICAL_EPISODE"
+      },
+      "selectedScriptureVerseIntersections": [],
+      "scriptureEconomyReviewRequired": true,
+      "namedCanonEventId": null,
+      "mainReaderUpdateApproved": false,
+      "publicationApproved": false,
+      "status": "EDITORIAL_PROPOSAL_REQUIRES_ACCEPTANCE"
+    },
+    {
+      "episodeId": "hist-omitted-028",
+      "title": "Water from the rock",
+      "originalInventoryReference": "Exodus 17:1–7",
+      "sourcePartsInResearchReader": [
+        "Exodus 17:1–7"
+      ],
+      "originalInventoryDisposition": "M2_conditional_restoration_review",
+      "proposedEditorialDisposition": "CONDITIONAL_MAIN_READING_REVIEW",
+      "editorialRationale": "Water in Exodus 17 is a distinct wilderness testing episode",
+      "nearestProposedResearchMovement": {
+        "id": "HS-M09",
+        "title": "Exodus through the sea",
+        "candidate54ChapterIds": [
+          "R13"
+        ],
+        "relationship": "PROPOSED_CONTEXT_NOT_APPROVED_INSERTION_OR_IDENTICAL_EPISODE"
+      },
+      "selectedScriptureVerseIntersections": [],
+      "scriptureEconomyReviewRequired": true,
+      "namedCanonEventId": null,
+      "mainReaderUpdateApproved": false,
+      "publicationApproved": false,
+      "status": "EDITORIAL_PROPOSAL_REQUIRES_ACCEPTANCE"
+    },
+    {
+      "episodeId": "hist-omitted-031",
+      "title": "The golden calf and Moses' intercession",
+      "originalInventoryReference": "Exodus 32–34",
+      "sourcePartsInResearchReader": [
+        "Exodus 32–34"
+      ],
+      "originalInventoryDisposition": "M2_conditional_restoration_review",
+      "proposedEditorialDisposition": "ALREADY_SELECTED_SCRIPTURE_RECONCILIATION",
+      "editorialRationale": "Exodus 32 contains the golden calf and intercession already selected; do not duplicate",
+      "nearestProposedResearchMovement": {
+        "id": "HS-M10",
+        "title": "Sinai: covenant and unfaithfulness",
+        "candidate54ChapterIds": [
+          "R14",
+          "R15"
+        ],
+        "relationship": "PROPOSED_CONTEXT_NOT_APPROVED_INSERTION_OR_IDENTICAL_EPISODE"
+      },
+      "selectedScriptureVerseIntersections": [
+        {
+          "movementId": "HS-M10",
+          "beatId": "H23-01",
+          "selectedReference": "Exodus 32:30–34"
+        }
+      ],
+      "scriptureEconomyReviewRequired": false,
+      "namedCanonEventId": null,
+      "mainReaderUpdateApproved": false,
+      "publicationApproved": false,
+      "status": "EDITORIAL_PROPOSAL_REQUIRES_ACCEPTANCE"
+    },
+    {
+      "episodeId": "hist-omitted-032",
+      "title": "Construction and consecration of the Tabernacle",
+      "originalInventoryReference": "Exodus 35–40",
+      "sourcePartsInResearchReader": [
+        "Exodus 35–40"
+      ],
+      "originalInventoryDisposition": "M2_conditional_restoration_review",
+      "proposedEditorialDisposition": "KEEP_IN_SUPPLEMENTARY_RESEARCH",
+      "editorialRationale": "Tabernacle technical construction is far too lengthy for the economical main text",
+      "nearestProposedResearchMovement": {
+        "id": "HS-M10",
+        "title": "Sinai: covenant and unfaithfulness",
+        "candidate54ChapterIds": [
+          "R14",
+          "R15"
+        ],
+        "relationship": "PROPOSED_CONTEXT_NOT_APPROVED_INSERTION_OR_IDENTICAL_EPISODE"
+      },
+      "selectedScriptureVerseIntersections": [],
+      "scriptureEconomyReviewRequired": false,
+      "namedCanonEventId": null,
+      "mainReaderUpdateApproved": false,
+      "publicationApproved": false,
+      "status": "EDITORIAL_PROPOSAL_REQUIRES_ACCEPTANCE"
+    },
+    {
+      "episodeId": "hist-omitted-035",
+      "title": "The twelve spies",
+      "originalInventoryReference": "Numbers 13–14",
+      "sourcePartsInResearchReader": [
+        "Numbers 13–14"
+      ],
+      "originalInventoryDisposition": "M1_core_restoration_review",
+      "proposedEditorialDisposition": "PRIORITY_SCOPED_MAIN_READING_REVIEW",
+      "editorialRationale": "The spies explain the long wandering before Israel enters the land",
+      "nearestProposedResearchMovement": {
+        "id": "HS-M10",
+        "title": "Sinai: covenant and unfaithfulness",
+        "candidate54ChapterIds": [
+          "R14",
+          "R15"
+        ],
+        "relationship": "PROPOSED_CONTEXT_NOT_APPROVED_INSERTION_OR_IDENTICAL_EPISODE"
+      },
+      "selectedScriptureVerseIntersections": [],
+      "scriptureEconomyReviewRequired": true,
+      "namedCanonEventId": null,
+      "mainReaderUpdateApproved": false,
+      "publicationApproved": false,
+      "status": "EDITORIAL_PROPOSAL_REQUIRES_ACCEPTANCE"
+    },
+    {
+      "episodeId": "hist-omitted-038",
+      "title": "Moses strikes the rock",
+      "originalInventoryReference": "Numbers 20:1–13",
+      "sourcePartsInResearchReader": [
+        "Numbers 20:1–13"
+      ],
+      "originalInventoryDisposition": "M2_conditional_restoration_review",
+      "proposedEditorialDisposition": "CONDITIONAL_MAIN_READING_REVIEW",
+      "editorialRationale": "Moses striking the rock in Numbers 20 is different from Exodus 17",
+      "nearestProposedResearchMovement": {
+        "id": "HS-M10",
+        "title": "Sinai: covenant and unfaithfulness",
+        "candidate54ChapterIds": [
+          "R14",
+          "R15"
+        ],
+        "relationship": "PROPOSED_CONTEXT_NOT_APPROVED_INSERTION_OR_IDENTICAL_EPISODE"
+      },
+      "selectedScriptureVerseIntersections": [],
+      "scriptureEconomyReviewRequired": true,
+      "namedCanonEventId": null,
+      "mainReaderUpdateApproved": false,
+      "publicationApproved": false,
+      "status": "EDITORIAL_PROPOSAL_REQUIRES_ACCEPTANCE"
+    },
+    {
+      "episodeId": "hist-omitted-039",
+      "title": "The bronze serpent",
+      "originalInventoryReference": "Numbers 21:4–9",
+      "sourcePartsInResearchReader": [
+        "Numbers 21:4–9"
+      ],
+      "originalInventoryDisposition": "M1_core_restoration_review",
+      "proposedEditorialDisposition": "PRIORITY_SCOPED_MAIN_READING_REVIEW",
+      "editorialRationale": "A short wilderness event with an explicit New Testament comparison, kept outside the main narrative text",
+      "nearestProposedResearchMovement": {
+        "id": "HS-M10",
+        "title": "Sinai: covenant and unfaithfulness",
+        "candidate54ChapterIds": [
+          "R14",
+          "R15"
+        ],
+        "relationship": "PROPOSED_CONTEXT_NOT_APPROVED_INSERTION_OR_IDENTICAL_EPISODE"
+      },
+      "selectedScriptureVerseIntersections": [],
+      "scriptureEconomyReviewRequired": true,
+      "namedCanonEventId": null,
+      "mainReaderUpdateApproved": false,
+      "publicationApproved": false,
+      "status": "EDITORIAL_PROPOSAL_REQUIRES_ACCEPTANCE"
+    },
+    {
+      "episodeId": "hist-omitted-041",
+      "title": "Crossing the Jordan",
+      "originalInventoryReference": "Joshua 3",
+      "sourcePartsInResearchReader": [
+        "Joshua 3"
+      ],
+      "originalInventoryDisposition": "M2_conditional_restoration_review",
+      "proposedEditorialDisposition": "ALREADY_SELECTED_SCRIPTURE_RECONCILIATION",
+      "editorialRationale": "Joshua 3 crossing verses already selected in the main movement",
+      "nearestProposedResearchMovement": {
+        "id": "HS-M11",
+        "title": "Israel enters the promised land",
+        "candidate54ChapterIds": [
+          "R16",
+          "R17"
+        ],
+        "relationship": "PROPOSED_CONTEXT_NOT_APPROVED_INSERTION_OR_IDENTICAL_EPISODE"
+      },
+      "selectedScriptureVerseIntersections": [
+        {
+          "movementId": "HS-M11",
+          "beatId": "H25-01",
+          "selectedReference": "Joshua 3:13–17"
+        }
+      ],
+      "scriptureEconomyReviewRequired": false,
+      "namedCanonEventId": null,
+      "mainReaderUpdateApproved": false,
+      "publicationApproved": false,
+      "status": "EDITORIAL_PROPOSAL_REQUIRES_ACCEPTANCE"
+    },
+    {
+      "episodeId": "hist-omitted-044",
+      "title": "Joshua's farewell and covenant renewal",
+      "originalInventoryReference": "Joshua 23–24",
+      "sourcePartsInResearchReader": [
+        "Joshua 23–24"
+      ],
+      "originalInventoryDisposition": "M1_core_restoration_review",
+      "proposedEditorialDisposition": "PRIORITY_SCOPED_MAIN_READING_REVIEW",
+      "editorialRationale": "Joshua's covenant renewal is a major land-entry hinge",
+      "nearestProposedResearchMovement": {
+        "id": "HS-M11",
+        "title": "Israel enters the promised land",
+        "candidate54ChapterIds": [
+          "R16",
+          "R17"
+        ],
+        "relationship": "PROPOSED_CONTEXT_NOT_APPROVED_INSERTION_OR_IDENTICAL_EPISODE"
+      },
+      "selectedScriptureVerseIntersections": [],
+      "scriptureEconomyReviewRequired": true,
+      "namedCanonEventId": null,
+      "mainReaderUpdateApproved": false,
+      "publicationApproved": false,
+      "status": "EDITORIAL_PROPOSAL_REQUIRES_ACCEPTANCE"
+    },
+    {
+      "episodeId": "hist-omitted-046",
+      "title": "Gideon's call and victory",
+      "originalInventoryReference": "Judges 6–8",
+      "sourcePartsInResearchReader": [
+        "Judges 6–8"
+      ],
+      "originalInventoryDisposition": "M1_core_restoration_review",
+      "proposedEditorialDisposition": "CONDITIONAL_MAIN_READING_REVIEW",
+      "editorialRationale": "Gideon's representative judgeship requires comparison to Deborah",
+      "nearestProposedResearchMovement": {
+        "id": "HS-M11",
+        "title": "Israel enters the promised land",
+        "candidate54ChapterIds": [
+          "R16",
+          "R17"
+        ],
+        "relationship": "PROPOSED_CONTEXT_NOT_APPROVED_INSERTION_OR_IDENTICAL_EPISODE"
+      },
+      "selectedScriptureVerseIntersections": [],
+      "scriptureEconomyReviewRequired": true,
+      "namedCanonEventId": null,
+      "mainReaderUpdateApproved": false,
+      "publicationApproved": false,
+      "status": "EDITORIAL_PROPOSAL_REQUIRES_ACCEPTANCE"
+    },
+    {
+      "episodeId": "hist-omitted-051",
+      "title": "The calling of Samuel",
+      "originalInventoryReference": "1 Samuel 3",
+      "sourcePartsInResearchReader": [
+        "1 Samuel 3"
+      ],
+      "originalInventoryDisposition": "M2_conditional_restoration_review",
+      "proposedEditorialDisposition": "CONDITIONAL_MAIN_READING_REVIEW",
+      "editorialRationale": "Samuel's calling is secondary to the direct monarchy transition",
+      "nearestProposedResearchMovement": {
+        "id": "HS-M12",
+        "title": "From Ruth to Samuel and Saul",
+        "candidate54ChapterIds": [
+          "R17",
+          "R18",
+          "R19"
+        ],
+        "relationship": "PROPOSED_CONTEXT_NOT_APPROVED_INSERTION_OR_IDENTICAL_EPISODE"
+      },
+      "selectedScriptureVerseIntersections": [],
+      "scriptureEconomyReviewRequired": true,
+      "namedCanonEventId": null,
+      "mainReaderUpdateApproved": false,
+      "publicationApproved": false,
+      "status": "EDITORIAL_PROPOSAL_REQUIRES_ACCEPTANCE"
+    },
+    {
+      "episodeId": "hist-omitted-053",
+      "title": "Saul's disobedience and rejection",
+      "originalInventoryReference": "1 Samuel 15",
+      "sourcePartsInResearchReader": [
+        "1 Samuel 15"
+      ],
+      "originalInventoryDisposition": "M2_conditional_restoration_review",
+      "proposedEditorialDisposition": "CONDITIONAL_MAIN_READING_REVIEW",
+      "editorialRationale": "Saul's rejection motivates David's election",
+      "nearestProposedResearchMovement": {
+        "id": "HS-M12",
+        "title": "From Ruth to Samuel and Saul",
+        "candidate54ChapterIds": [
+          "R17",
+          "R18",
+          "R19"
+        ],
+        "relationship": "PROPOSED_CONTEXT_NOT_APPROVED_INSERTION_OR_IDENTICAL_EPISODE"
+      },
+      "selectedScriptureVerseIntersections": [],
+      "scriptureEconomyReviewRequired": true,
+      "namedCanonEventId": null,
+      "mainReaderUpdateApproved": false,
+      "publicationApproved": false,
+      "status": "EDITORIAL_PROPOSAL_REQUIRES_ACCEPTANCE"
+    },
+    {
+      "episodeId": "hist-omitted-059",
+      "title": "David and Bathsheba",
+      "originalInventoryReference": "2 Samuel 11–12",
+      "sourcePartsInResearchReader": [
+        "2 Samuel 11–12"
+      ],
+      "originalInventoryDisposition": "M2_conditional_restoration_review",
+      "proposedEditorialDisposition": "CONDITIONAL_MAIN_READING_REVIEW",
+      "editorialRationale": "David's repentance is morally important but full two-chapter span is excessive",
+      "nearestProposedResearchMovement": {
+        "id": "HS-M13",
+        "title": "David and the enduring royal promise",
+        "candidate54ChapterIds": [
+          "R20",
+          "R21",
+          "R22"
+        ],
+        "relationship": "PROPOSED_CONTEXT_NOT_APPROVED_INSERTION_OR_IDENTICAL_EPISODE"
+      },
+      "selectedScriptureVerseIntersections": [],
+      "scriptureEconomyReviewRequired": true,
+      "namedCanonEventId": null,
+      "mainReaderUpdateApproved": false,
+      "publicationApproved": false,
+      "status": "EDITORIAL_PROPOSAL_REQUIRES_ACCEPTANCE"
+    },
+    {
+      "episodeId": "hist-omitted-063",
+      "title": "Solomon's apostasy",
+      "originalInventoryReference": "1 Kings 11",
+      "sourcePartsInResearchReader": [
+        "1 Kings 11:1–13"
+      ],
+      "originalInventoryDisposition": "M2_conditional_restoration_review",
+      "proposedEditorialDisposition": "CONDITIONAL_MAIN_READING_REVIEW",
+      "editorialRationale": "Solomon's apostasy at 1 Kings 11:1–13 is distinct from selected Jeroboam 11:29–32",
+      "nearestProposedResearchMovement": {
+        "id": "HS-M14",
+        "title": "The Temple and the divided kingdom",
+        "candidate54ChapterIds": [
+          "R23",
+          "R24"
+        ],
+        "relationship": "PROPOSED_CONTEXT_NOT_APPROVED_INSERTION_OR_IDENTICAL_EPISODE"
+      },
+      "selectedScriptureVerseIntersections": [],
+      "scriptureEconomyReviewRequired": true,
+      "namedCanonEventId": null,
+      "mainReaderUpdateApproved": false,
+      "publicationApproved": false,
+      "status": "EDITORIAL_PROPOSAL_REQUIRES_ACCEPTANCE"
+    },
+    {
+      "episodeId": "hist-omitted-066",
+      "title": "Elijah confronts the prophets of Baal",
+      "originalInventoryReference": "1 Kings 18",
+      "sourcePartsInResearchReader": [
+        "1 Kings 18:17–40"
+      ],
+      "originalInventoryDisposition": "M2_conditional_restoration_review",
+      "proposedEditorialDisposition": "CONDITIONAL_MAIN_READING_REVIEW",
+      "editorialRationale": "Representative Baal confrontation is optional compared with selected prophetic oracles",
+      "nearestProposedResearchMovement": {
+        "id": "HS-M15",
+        "title": "Prophetic warning and Israel's judgment",
+        "candidate54ChapterIds": [
+          "R24",
+          "R25",
+          "R26"
+        ],
+        "relationship": "PROPOSED_CONTEXT_NOT_APPROVED_INSERTION_OR_IDENTICAL_EPISODE"
+      },
+      "selectedScriptureVerseIntersections": [],
+      "scriptureEconomyReviewRequired": true,
+      "namedCanonEventId": null,
+      "mainReaderUpdateApproved": false,
+      "publicationApproved": false,
+      "status": "EDITORIAL_PROPOSAL_REQUIRES_ACCEPTANCE"
+    },
+    {
+      "episodeId": "hist-omitted-072",
+      "title": "Isaiah's call and vision of God's holiness",
+      "originalInventoryReference": "Isaiah 6",
+      "sourcePartsInResearchReader": [
+        "Isaiah 6"
+      ],
+      "originalInventoryDisposition": "M2_conditional_restoration_review",
+      "proposedEditorialDisposition": "CONDITIONAL_MAIN_READING_REVIEW",
+      "editorialRationale": "Isaiah's vocation differs from the selected messianic prophecies",
+      "nearestProposedResearchMovement": {
+        "id": "HS-M15",
+        "title": "Prophetic warning and Israel's judgment",
+        "candidate54ChapterIds": [
+          "R24",
+          "R25",
+          "R26"
+        ],
+        "relationship": "PROPOSED_CONTEXT_NOT_APPROVED_INSERTION_OR_IDENTICAL_EPISODE"
+      },
+      "selectedScriptureVerseIntersections": [],
+      "scriptureEconomyReviewRequired": true,
+      "namedCanonEventId": null,
+      "mainReaderUpdateApproved": false,
+      "publicationApproved": false,
+      "status": "EDITORIAL_PROPOSAL_REQUIRES_ACCEPTANCE"
+    },
+    {
+      "episodeId": "hist-omitted-074",
+      "title": "Josiah discovers the Book of the Law",
+      "originalInventoryReference": "2 Kings 22",
+      "sourcePartsInResearchReader": [
+        "2 Kings 22"
+      ],
+      "originalInventoryDisposition": "M2_conditional_restoration_review",
+      "proposedEditorialDisposition": "CONDITIONAL_MAIN_READING_REVIEW",
+      "editorialRationale": "Treat discovery of Law and Josiah's renewal as one coherent optional context",
+      "nearestProposedResearchMovement": {
+        "id": "HS-M16",
+        "title": "Judah's fall and the promise of a New Covenant",
+        "candidate54ChapterIds": [
+          "R27",
+          "R28"
+        ],
+        "relationship": "PROPOSED_CONTEXT_NOT_APPROVED_INSERTION_OR_IDENTICAL_EPISODE"
+      },
+      "selectedScriptureVerseIntersections": [],
+      "scriptureEconomyReviewRequired": true,
+      "namedCanonEventId": null,
+      "mainReaderUpdateApproved": false,
+      "publicationApproved": false,
+      "status": "EDITORIAL_PROPOSAL_REQUIRES_ACCEPTANCE"
+    },
+    {
+      "episodeId": "hist-omitted-075",
+      "title": "Josiah renews the covenant",
+      "originalInventoryReference": "2 Kings 23",
+      "sourcePartsInResearchReader": [
+        "2 Kings 23"
+      ],
+      "originalInventoryDisposition": "M2_conditional_restoration_review",
+      "proposedEditorialDisposition": "CONDITIONAL_MAIN_READING_REVIEW",
+      "editorialRationale": "Pair Josiah's covenant with the preceding discovery, avoiding duplicate storyline",
+      "nearestProposedResearchMovement": {
+        "id": "HS-M16",
+        "title": "Judah's fall and the promise of a New Covenant",
+        "candidate54ChapterIds": [
+          "R27",
+          "R28"
+        ],
+        "relationship": "PROPOSED_CONTEXT_NOT_APPROVED_INSERTION_OR_IDENTICAL_EPISODE"
+      },
+      "selectedScriptureVerseIntersections": [],
+      "scriptureEconomyReviewRequired": true,
+      "namedCanonEventId": null,
+      "mainReaderUpdateApproved": false,
+      "publicationApproved": false,
+      "status": "EDITORIAL_PROPOSAL_REQUIRES_ACCEPTANCE"
+    },
+    {
+      "episodeId": "hist-omitted-080",
+      "title": "Ezekiel's valley of dry bones",
+      "originalInventoryReference": "Ezekiel 37",
+      "sourcePartsInResearchReader": [
+        "Ezekiel 37:1–14"
+      ],
+      "originalInventoryDisposition": "M2_conditional_restoration_review",
+      "proposedEditorialDisposition": "KEEP_IN_SUPPLEMENTARY_RESEARCH",
+      "editorialRationale": "Ezekiel dry bones is prophetic vision with interpretation, not a dated physical resurrection",
+      "nearestProposedResearchMovement": {
+        "id": "HS-M16",
+        "title": "Judah's fall and the promise of a New Covenant",
+        "candidate54ChapterIds": [
+          "R27",
+          "R28"
+        ],
+        "relationship": "PROPOSED_CONTEXT_NOT_APPROVED_INSERTION_OR_IDENTICAL_EPISODE"
+      },
+      "selectedScriptureVerseIntersections": [],
+      "scriptureEconomyReviewRequired": false,
+      "namedCanonEventId": null,
+      "mainReaderUpdateApproved": false,
+      "publicationApproved": false,
+      "status": "EDITORIAL_PROPOSAL_REQUIRES_ACCEPTANCE"
+    },
+    {
+      "episodeId": "hist-omitted-084",
+      "title": "The three young men in the fiery furnace",
+      "originalInventoryReference": "Daniel 3",
+      "sourcePartsInResearchReader": [
+        "Daniel 3"
+      ],
+      "originalInventoryDisposition": "M1_core_restoration_review",
+      "proposedEditorialDisposition": "PRIORITY_SCOPED_MAIN_READING_REVIEW",
+      "editorialRationale": "A compact exile-fidelity witness; Daniel's literary chronology must be respected",
+      "nearestProposedResearchMovement": {
+        "id": "HS-M16",
+        "title": "Judah's fall and the promise of a New Covenant",
+        "candidate54ChapterIds": [
+          "R27",
+          "R28"
+        ],
+        "relationship": "PROPOSED_CONTEXT_NOT_APPROVED_INSERTION_OR_IDENTICAL_EPISODE"
+      },
+      "selectedScriptureVerseIntersections": [],
+      "scriptureEconomyReviewRequired": true,
+      "namedCanonEventId": null,
+      "mainReaderUpdateApproved": false,
+      "publicationApproved": false,
+      "status": "EDITORIAL_PROPOSAL_REQUIRES_ACCEPTANCE"
+    },
+    {
+      "episodeId": "hist-omitted-096",
+      "title": "Ezra publicly reads the Law",
+      "originalInventoryReference": "Nehemiah 8",
+      "sourcePartsInResearchReader": [
+        "Nehemiah 8"
+      ],
+      "originalInventoryDisposition": "M1_core_restoration_review",
+      "proposedEditorialDisposition": "PRIORITY_SCOPED_MAIN_READING_REVIEW",
+      "editorialRationale": "Public hearing of the Law provides a covenant-renewal hinge during return",
+      "nearestProposedResearchMovement": {
+        "id": "HS-M17",
+        "title": "Restoration and the expectation of Christ",
+        "candidate54ChapterIds": [
+          "R29"
+        ],
+        "relationship": "PROPOSED_CONTEXT_NOT_APPROVED_INSERTION_OR_IDENTICAL_EPISODE"
+      },
+      "selectedScriptureVerseIntersections": [],
+      "scriptureEconomyReviewRequired": true,
+      "namedCanonEventId": null,
+      "mainReaderUpdateApproved": false,
+      "publicationApproved": false,
+      "status": "EDITORIAL_PROPOSAL_REQUIRES_ACCEPTANCE"
+    },
+    {
+      "episodeId": "hist-omitted-099",
+      "title": "Martyrdom of the seven brothers and their mother",
+      "originalInventoryReference": "2 Maccabees 7",
+      "sourcePartsInResearchReader": [
+        "2 Maccabees 7"
+      ],
+      "originalInventoryDisposition": "M1_core_restoration_review",
+      "proposedEditorialDisposition": "PRIORITY_SCOPED_MAIN_READING_REVIEW",
+      "editorialRationale": "Faithfulness and resurrection hope before Christ, subject to careful verse economy",
+      "nearestProposedResearchMovement": {
+        "id": "HS-M17",
+        "title": "Restoration and the expectation of Christ",
+        "candidate54ChapterIds": [
+          "R29"
+        ],
+        "relationship": "PROPOSED_CONTEXT_NOT_APPROVED_INSERTION_OR_IDENTICAL_EPISODE"
+      },
+      "selectedScriptureVerseIntersections": [],
+      "scriptureEconomyReviewRequired": true,
+      "namedCanonEventId": null,
+      "mainReaderUpdateApproved": false,
+      "publicationApproved": false,
+      "status": "EDITORIAL_PROPOSAL_REQUIRES_ACCEPTANCE"
+    },
+    {
+      "episodeId": "hist-omitted-100",
+      "title": "Judas Maccabeus purifies and rededicates the Temple",
+      "originalInventoryReference": "1 Maccabees 4",
+      "sourcePartsInResearchReader": [
+        "1 Maccabees 4"
+      ],
+      "originalInventoryDisposition": "M2_conditional_restoration_review",
+      "proposedEditorialDisposition": "CONDITIONAL_MAIN_READING_REVIEW",
+      "editorialRationale": "Second-Temple rededication must remain distinct from New Covenant events",
+      "nearestProposedResearchMovement": {
+        "id": "HS-M17",
+        "title": "Restoration and the expectation of Christ",
+        "candidate54ChapterIds": [
+          "R29"
+        ],
+        "relationship": "PROPOSED_CONTEXT_NOT_APPROVED_INSERTION_OR_IDENTICAL_EPISODE"
+      },
+      "selectedScriptureVerseIntersections": [],
+      "scriptureEconomyReviewRequired": true,
+      "namedCanonEventId": null,
+      "mainReaderUpdateApproved": false,
+      "publicationApproved": false,
+      "status": "EDITORIAL_PROPOSAL_REQUIRES_ACCEPTANCE"
+    },
+    {
+      "episodeId": "hist-omitted-103",
+      "title": "The Visitation",
+      "originalInventoryReference": "Luke 1:39–56",
+      "sourcePartsInResearchReader": [
+        "Luke 1:39–56"
+      ],
+      "originalInventoryDisposition": "M2_conditional_restoration_review",
+      "proposedEditorialDisposition": "CONDITIONAL_MAIN_READING_REVIEW",
+      "editorialRationale": "The Visitation also contains the separately indexed Magnificat",
+      "nearestProposedResearchMovement": {
+        "id": "HS-M18",
+        "title": "The generations and the Annunciation",
+        "candidate54ChapterIds": [
+          "R30"
+        ],
+        "relationship": "PROPOSED_CONTEXT_NOT_APPROVED_INSERTION_OR_IDENTICAL_EPISODE"
+      },
+      "selectedScriptureVerseIntersections": [],
+      "scriptureEconomyReviewRequired": true,
+      "namedCanonEventId": null,
+      "mainReaderUpdateApproved": false,
+      "publicationApproved": false,
+      "status": "EDITORIAL_PROPOSAL_REQUIRES_ACCEPTANCE"
+    },
+    {
+      "episodeId": "hist-omitted-108",
+      "title": "Presentation of Jesus in the Temple",
+      "originalInventoryReference": "Luke 2:22–38",
+      "sourcePartsInResearchReader": [
+        "Luke 2:22–38"
+      ],
+      "originalInventoryDisposition": "M2_conditional_restoration_review",
+      "proposedEditorialDisposition": "CONDITIONAL_MAIN_READING_REVIEW",
+      "editorialRationale": "Presentation also contains Simeon's separately indexed canticle",
+      "nearestProposedResearchMovement": {
+        "id": "HS-M19",
+        "title": "The birth of the Saviour",
+        "candidate54ChapterIds": [
+          "R31",
+          "R32",
+          "R33"
+        ],
+        "relationship": "PROPOSED_CONTEXT_NOT_APPROVED_INSERTION_OR_IDENTICAL_EPISODE"
+      },
+      "selectedScriptureVerseIntersections": [],
+      "scriptureEconomyReviewRequired": true,
+      "namedCanonEventId": null,
+      "mainReaderUpdateApproved": false,
+      "publicationApproved": false,
+      "status": "EDITORIAL_PROPOSAL_REQUIRES_ACCEPTANCE"
+    },
+    {
+      "episodeId": "hist-omitted-113",
+      "title": "Twelve-year-old Jesus among the doctors in the Temple",
+      "originalInventoryReference": "Luke 2:41–52",
+      "sourcePartsInResearchReader": [
+        "Luke 2:41–52"
+      ],
+      "originalInventoryDisposition": "M1_core_restoration_review",
+      "proposedEditorialDisposition": "PRIORITY_SCOPED_MAIN_READING_REVIEW",
+      "editorialRationale": "The temple episode bridges Christ's infancy and public ministry",
+      "nearestProposedResearchMovement": {
+        "id": "HS-M19",
+        "title": "The birth of the Saviour",
+        "candidate54ChapterIds": [
+          "R31",
+          "R32",
+          "R33"
+        ],
+        "relationship": "PROPOSED_CONTEXT_NOT_APPROVED_INSERTION_OR_IDENTICAL_EPISODE"
+      },
+      "selectedScriptureVerseIntersections": [],
+      "scriptureEconomyReviewRequired": true,
+      "namedCanonEventId": null,
+      "mainReaderUpdateApproved": false,
+      "publicationApproved": false,
+      "status": "EDITORIAL_PROPOSAL_REQUIRES_ACCEPTANCE"
+    },
+    {
+      "episodeId": "hist-omitted-115",
+      "title": "Forty days and temptations in the wilderness",
+      "originalInventoryReference": "Matthew 4:1–11",
+      "sourcePartsInResearchReader": [
+        "Matthew 4:1–11"
+      ],
+      "originalInventoryDisposition": "M2_conditional_restoration_review",
+      "proposedEditorialDisposition": "CONDITIONAL_MAIN_READING_REVIEW",
+      "editorialRationale": "The temptation before public ministry is important but requires economy",
+      "nearestProposedResearchMovement": {
+        "id": "HS-M20",
+        "title": "The Forerunner and first disciples",
+        "candidate54ChapterIds": [
+          "R34"
+        ],
+        "relationship": "PROPOSED_CONTEXT_NOT_APPROVED_INSERTION_OR_IDENTICAL_EPISODE"
+      },
+      "selectedScriptureVerseIntersections": [],
+      "scriptureEconomyReviewRequired": true,
+      "namedCanonEventId": null,
+      "mainReaderUpdateApproved": false,
+      "publicationApproved": false,
+      "status": "EDITORIAL_PROPOSAL_REQUIRES_ACCEPTANCE"
+    },
+    {
+      "episodeId": "hist-omitted-118",
+      "title": "Nicodemus visits Jesus at night",
+      "originalInventoryReference": "John 3:1–21",
+      "sourcePartsInResearchReader": [
+        "John 3:1–21"
+      ],
+      "originalInventoryDisposition": "M2_conditional_restoration_review",
+      "proposedEditorialDisposition": "CONDITIONAL_MAIN_READING_REVIEW",
+      "editorialRationale": "Nicodemus dialogue is long and doctrinal; avoid abridgment without source review",
+      "nearestProposedResearchMovement": {
+        "id": "HS-M21",
+        "title": "The Kingdom in Christ's teaching",
+        "candidate54ChapterIds": [
+          "R35"
+        ],
+        "relationship": "PROPOSED_CONTEXT_NOT_APPROVED_INSERTION_OR_IDENTICAL_EPISODE"
+      },
+      "selectedScriptureVerseIntersections": [],
+      "scriptureEconomyReviewRequired": true,
+      "namedCanonEventId": null,
+      "mainReaderUpdateApproved": false,
+      "publicationApproved": false,
+      "status": "EDITORIAL_PROPOSAL_REQUIRES_ACCEPTANCE"
+    },
+    {
+      "episodeId": "hist-omitted-122",
+      "title": "Formal appointment of the Twelve",
+      "originalInventoryReference": "Luke 6:12–16",
+      "sourcePartsInResearchReader": [
+        "Luke 6:12–16"
+      ],
+      "originalInventoryDisposition": "M1_core_restoration_review",
+      "proposedEditorialDisposition": "PRIORITY_SCOPED_MAIN_READING_REVIEW",
+      "editorialRationale": "Naming the Twelve gives the apostolic foundation before the teaching",
+      "nearestProposedResearchMovement": {
+        "id": "HS-M20",
+        "title": "The Forerunner and first disciples",
+        "candidate54ChapterIds": [
+          "R34"
+        ],
+        "relationship": "PROPOSED_CONTEXT_NOT_APPROVED_INSERTION_OR_IDENTICAL_EPISODE"
+      },
+      "selectedScriptureVerseIntersections": [],
+      "scriptureEconomyReviewRequired": true,
+      "namedCanonEventId": null,
+      "mainReaderUpdateApproved": false,
+      "publicationApproved": false,
+      "status": "EDITORIAL_PROPOSAL_REQUIRES_ACCEPTANCE"
+    },
+    {
+      "episodeId": "hist-omitted-174",
+      "title": "Washing of the Apostles' feet",
+      "originalInventoryReference": "John 13:1–17",
+      "sourcePartsInResearchReader": [
+        "John 13:1–17"
+      ],
+      "originalInventoryDisposition": "M1_core_restoration_review",
+      "proposedEditorialDisposition": "PRIORITY_SCOPED_MAIN_READING_REVIEW",
+      "editorialRationale": "Footwashing complements Luke's Supper as a distinct John witness",
+      "nearestProposedResearchMovement": {
+        "id": "HS-M26",
+        "title": "The Last Supper",
+        "candidate54ChapterIds": [
+          "R40"
+        ],
+        "relationship": "PROPOSED_CONTEXT_NOT_APPROVED_INSERTION_OR_IDENTICAL_EPISODE"
+      },
+      "selectedScriptureVerseIntersections": [],
+      "scriptureEconomyReviewRequired": true,
+      "namedCanonEventId": null,
+      "mainReaderUpdateApproved": false,
+      "publicationApproved": false,
+      "status": "EDITORIAL_PROPOSAL_REQUIRES_ACCEPTANCE"
+    },
+    {
+      "episodeId": "hist-omitted-180",
+      "title": "Simon of Cyrene and the women of Jerusalem",
+      "originalInventoryReference": "Luke 23:26–31",
+      "sourcePartsInResearchReader": [
+        "Luke 23:26–31"
+      ],
+      "originalInventoryDisposition": "M2_conditional_restoration_review",
+      "proposedEditorialDisposition": "CONDITIONAL_MAIN_READING_REVIEW",
+      "editorialRationale": "Do not merge Luke's way to Calvary into John Passion as a single Gospel account",
+      "nearestProposedResearchMovement": {
+        "id": "HS-M28",
+        "title": "The sacrifice on Calvary",
+        "candidate54ChapterIds": [
+          "R42"
+        ],
+        "relationship": "PROPOSED_CONTEXT_NOT_APPROVED_INSERTION_OR_IDENTICAL_EPISODE"
+      },
+      "selectedScriptureVerseIntersections": [],
+      "scriptureEconomyReviewRequired": true,
+      "namedCanonEventId": null,
+      "mainReaderUpdateApproved": false,
+      "publicationApproved": false,
+      "status": "EDITORIAL_PROPOSAL_REQUIRES_ACCEPTANCE"
+    },
+    {
+      "episodeId": "hist-omitted-181",
+      "title": "The good thief",
+      "originalInventoryReference": "Luke 23:39–43",
+      "sourcePartsInResearchReader": [
+        "Luke 23:39–43"
+      ],
+      "originalInventoryDisposition": "M1_core_restoration_review",
+      "proposedEditorialDisposition": "PRIORITY_SCOPED_MAIN_READING_REVIEW",
+      "editorialRationale": "Good thief: short Luke testimony at Calvary distinct from selected John 19",
+      "nearestProposedResearchMovement": {
+        "id": "HS-M28",
+        "title": "The sacrifice on Calvary",
+        "candidate54ChapterIds": [
+          "R42"
+        ],
+        "relationship": "PROPOSED_CONTEXT_NOT_APPROVED_INSERTION_OR_IDENTICAL_EPISODE"
+      },
+      "selectedScriptureVerseIntersections": [],
+      "scriptureEconomyReviewRequired": true,
+      "namedCanonEventId": null,
+      "mainReaderUpdateApproved": false,
+      "publicationApproved": false,
+      "status": "EDITORIAL_PROPOSAL_REQUIRES_ACCEPTANCE"
+    },
+    {
+      "episodeId": "hist-omitted-183",
+      "title": "Angel's announcement to the women",
+      "originalInventoryReference": "Matthew 28:1–10",
+      "sourcePartsInResearchReader": [
+        "Matthew 28:1–10"
+      ],
+      "originalInventoryDisposition": "M1_core_restoration_review",
+      "proposedEditorialDisposition": "CONDITIONAL_MAIN_READING_REVIEW",
+      "editorialRationale": "Keep Matthew's Resurrection announcement distinct from John 20 morning sequence",
+      "nearestProposedResearchMovement": {
+        "id": "HS-M29",
+        "title": "The risen Lord and his witnesses",
+        "candidate54ChapterIds": [
+          "R43"
+        ],
+        "relationship": "PROPOSED_CONTEXT_NOT_APPROVED_INSERTION_OR_IDENTICAL_EPISODE"
+      },
+      "selectedScriptureVerseIntersections": [],
+      "scriptureEconomyReviewRequired": true,
+      "namedCanonEventId": null,
+      "mainReaderUpdateApproved": false,
+      "publicationApproved": false,
+      "status": "EDITORIAL_PROPOSAL_REQUIRES_ACCEPTANCE"
+    },
+    {
+      "episodeId": "hist-omitted-184",
+      "title": "Road to Emmaus",
+      "originalInventoryReference": "Luke 24:13–35",
+      "sourcePartsInResearchReader": [
+        "Luke 24:13–35"
+      ],
+      "originalInventoryDisposition": "M1_core_restoration_review",
+      "proposedEditorialDisposition": "PRIORITY_SCOPED_MAIN_READING_REVIEW",
+      "editorialRationale": "Emmaus recognition requires its narrative setting, not an isolated final verse",
+      "nearestProposedResearchMovement": {
+        "id": "HS-M29",
+        "title": "The risen Lord and his witnesses",
+        "candidate54ChapterIds": [
+          "R43"
+        ],
+        "relationship": "PROPOSED_CONTEXT_NOT_APPROVED_INSERTION_OR_IDENTICAL_EPISODE"
+      },
+      "selectedScriptureVerseIntersections": [],
+      "scriptureEconomyReviewRequired": true,
+      "namedCanonEventId": null,
+      "mainReaderUpdateApproved": false,
+      "publicationApproved": false,
+      "status": "EDITORIAL_PROPOSAL_REQUIRES_ACCEPTANCE"
+    },
+    {
+      "episodeId": "hist-omitted-188",
+      "title": "Jesus asks Peter three times whether he loves Him",
+      "originalInventoryReference": "John 21:15–19",
+      "sourcePartsInResearchReader": [
+        "John 21:15–19"
+      ],
+      "originalInventoryDisposition": "M1_core_restoration_review",
+      "proposedEditorialDisposition": "PRIORITY_SCOPED_MAIN_READING_REVIEW",
+      "editorialRationale": "Peter's threefold commission precedes the Ascension in Gospel presentation",
+      "nearestProposedResearchMovement": {
+        "id": "HS-M29",
+        "title": "The risen Lord and his witnesses",
+        "candidate54ChapterIds": [
+          "R43"
+        ],
+        "relationship": "PROPOSED_CONTEXT_NOT_APPROVED_INSERTION_OR_IDENTICAL_EPISODE"
+      },
+      "selectedScriptureVerseIntersections": [],
+      "scriptureEconomyReviewRequired": true,
+      "namedCanonEventId": null,
+      "mainReaderUpdateApproved": false,
+      "publicationApproved": false,
+      "status": "EDITORIAL_PROPOSAL_REQUIRES_ACCEPTANCE"
+    },
+    {
+      "episodeId": "hist-omitted-189",
+      "title": "Great Commission in Galilee",
+      "originalInventoryReference": "Matthew 28:16–20",
+      "sourcePartsInResearchReader": [
+        "Matthew 28:16–20"
+      ],
+      "originalInventoryDisposition": "M1_core_restoration_review",
+      "proposedEditorialDisposition": "PRIORITY_SCOPED_MAIN_READING_REVIEW",
+      "editorialRationale": "Concise commission links the Resurrection and apostolic mission",
+      "nearestProposedResearchMovement": {
+        "id": "HS-M30",
+        "title": "The Ascension and promised mission",
+        "candidate54ChapterIds": [
+          "R44"
+        ],
+        "relationship": "PROPOSED_CONTEXT_NOT_APPROVED_INSERTION_OR_IDENTICAL_EPISODE"
+      },
+      "selectedScriptureVerseIntersections": [],
+      "scriptureEconomyReviewRequired": true,
+      "namedCanonEventId": null,
+      "mainReaderUpdateApproved": false,
+      "publicationApproved": false,
+      "status": "EDITORIAL_PROPOSAL_REQUIRES_ACCEPTANCE"
+    },
+    {
+      "episodeId": "hist-omitted-201",
+      "title": "Paul addresses the Areopagus at Athens",
+      "originalInventoryReference": "Acts 17:16–34",
+      "sourcePartsInResearchReader": [
+        "Acts 17:16–34"
+      ],
+      "originalInventoryDisposition": "M2_conditional_restoration_review",
+      "proposedEditorialDisposition": "CONDITIONAL_MAIN_READING_REVIEW",
+      "editorialRationale": "The Areopagus is illustrative of Gentile mission but may remain supplemental",
+      "nearestProposedResearchMovement": {
+        "id": "HS-M33",
+        "title": "Antioch, apostolic missions and the Council",
+        "candidate54ChapterIds": [
+          "R49",
+          "R50"
+        ],
+        "relationship": "PROPOSED_CONTEXT_NOT_APPROVED_INSERTION_OR_IDENTICAL_EPISODE"
+      },
+      "selectedScriptureVerseIntersections": [],
+      "scriptureEconomyReviewRequired": true,
+      "namedCanonEventId": null,
+      "mainReaderUpdateApproved": false,
+      "publicationApproved": false,
+      "status": "EDITORIAL_PROPOSAL_REQUIRES_ACCEPTANCE"
+    },
+    {
+      "episodeId": "hist-omitted-207",
+      "title": "John sees the risen Christ on Patmos",
+      "originalInventoryReference": "Revelation 1:9–20",
+      "sourcePartsInResearchReader": [
+        "Revelation 1:9–20"
+      ],
+      "originalInventoryDisposition": "M1_core_restoration_review",
+      "proposedEditorialDisposition": "PRIORITY_SCOPED_MAIN_READING_REVIEW",
+      "editorialRationale": "Visionary opening to Revelation, never dated as subsequent terrestrial plot",
+      "nearestProposedResearchMovement": {
+        "id": "HS-M35",
+        "title": "Christ and the Lamb in heavenly vision",
+        "candidate54ChapterIds": [
+          "R52"
+        ],
+        "relationship": "PROPOSED_CONTEXT_NOT_APPROVED_INSERTION_OR_IDENTICAL_EPISODE"
+      },
+      "selectedScriptureVerseIntersections": [],
+      "scriptureEconomyReviewRequired": true,
+      "namedCanonEventId": null,
+      "mainReaderUpdateApproved": false,
+      "publicationApproved": false,
+      "status": "EDITORIAL_PROPOSAL_REQUIRES_ACCEPTANCE"
+    },
+    {
+      "episodeId": "hist-omitted-209",
+      "title": "The heavenly throne and twenty-four elders",
+      "originalInventoryReference": "Revelation 4",
+      "sourcePartsInResearchReader": [
+        "Revelation 4"
+      ],
+      "originalInventoryDisposition": "M2_conditional_restoration_review",
+      "proposedEditorialDisposition": "KEEP_IN_SUPPLEMENTARY_RESEARCH",
+      "editorialRationale": "Revelation 4 is heavenly vision rather than historical terrestrial chronology",
+      "nearestProposedResearchMovement": {
+        "id": "HS-M35",
+        "title": "Christ and the Lamb in heavenly vision",
+        "candidate54ChapterIds": [
+          "R52"
+        ],
+        "relationship": "PROPOSED_CONTEXT_NOT_APPROVED_INSERTION_OR_IDENTICAL_EPISODE"
+      },
+      "selectedScriptureVerseIntersections": [],
+      "scriptureEconomyReviewRequired": false,
+      "namedCanonEventId": null,
+      "mainReaderUpdateApproved": false,
+      "publicationApproved": false,
+      "status": "EDITORIAL_PROPOSAL_REQUIRES_ACCEPTANCE"
+    },
+    {
+      "episodeId": "hist-omitted-212",
+      "title": "The woman clothed with the sun and the dragon",
+      "originalInventoryReference": "Revelation 12",
+      "sourcePartsInResearchReader": [
+        "Revelation 12"
+      ],
+      "originalInventoryDisposition": "M2_conditional_restoration_review",
+      "proposedEditorialDisposition": "KEEP_IN_SUPPLEMENTARY_RESEARCH",
+      "editorialRationale": "Revelation 12 is symbolic/apocalyptic; no terrestrial event placement",
+      "nearestProposedResearchMovement": {
+        "id": "HS-M35",
+        "title": "Christ and the Lamb in heavenly vision",
+        "candidate54ChapterIds": [
+          "R52"
+        ],
+        "relationship": "PROPOSED_CONTEXT_NOT_APPROVED_INSERTION_OR_IDENTICAL_EPISODE"
+      },
+      "selectedScriptureVerseIntersections": [],
+      "scriptureEconomyReviewRequired": false,
+      "namedCanonEventId": null,
+      "mainReaderUpdateApproved": false,
+      "publicationApproved": false,
+      "status": "EDITORIAL_PROPOSAL_REQUIRES_ACCEPTANCE"
+    }
+  ]
+}
