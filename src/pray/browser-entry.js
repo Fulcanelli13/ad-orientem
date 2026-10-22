@@ -1,5 +1,7 @@
 import { canonicalAssetIdForSurface } from "../assets/asset-registry.js";
 import { installLazyPrayRegistry } from "./lazy-module-registry.js";
+// Optional Rosary bead layout: presentation only, idle until the Rosary opens.
+import "./rosary-bead-view.js";
 
 
 
