@@ -346,11 +346,19 @@ try{
 
 
   async function tapMode(mode){
+    const beforeCue=await page.evaluate(()=>({
+      cue:window.__AO_PHONE_PREVIEW.getActiveCue(),
+      focus:document.querySelector("#ao-r17-native-reader-preview")?.dataset.r17NativeCue,
+      model:window.__AO_PHONE_PREVIEW.model?.totalCards,
+      scroll:document.querySelector(".ao-prayer-card")?.scrollTop,
+    }));
     const prefs=page.locator('[data-reader-preferences]');
     const prefBox=await prefs.boundingBox();
     assert.ok(prefBox&&prefBox.height>=40,"v1.80 Mass-preferences control is not touchable");
     await page.touchscreen.tap(prefBox.x+prefBox.width/2,prefBox.y+prefBox.height/2);
     await page.waitForFunction(()=>document.querySelector('[data-role="mass-preferences"]')?.dataset?.open==="true");
+    const prefsCue=await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getActiveCue());
+    if(mode==="SIMPLE") console.log("DEBUG MODE-SWITCH BEFORE",JSON.stringify({beforeCue,prefsCue}));
     const button=page.locator('[data-reader-mode="'+mode+'"]');
     const hit=await button.boundingBox();
     assert.ok(hit&&hit.height>=30,mode+" mode selector is not touchable in Mass preferences");
