@@ -1,0 +1,37 @@
+name: My Customs and Prayers acceptance
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    branches: [main, feat/calendar-customs-inline-context-20261021]
+    paths:
+      - "src/customs/**"
+      - "src/calendar/calendar-runtime.js"
+      - "src/pray/presentation-runtime.js"
+      - "tests/my-customs-prayers.mjs"
+      - "tests/my-customs-phone-e2e.mjs"
+      - ".github/workflows/my-customs-prayers-acceptance.yml"
+  workflow_dispatch:
+
+jobs:
+  my-customs:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - name: Personal data and recurrence acceptance
+        run: node tests/my-customs-prayers.mjs
+      - run: npx playwright install --with-deps chromium
+      - name: Real phone at 320 and 390
+        run: node tests/my-customs-phone-e2e.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: my-customs-prayers-phone
+          path: artifacts/my-customs-phone/
+          retention-days: 30
+          if-no-files-found: warn
