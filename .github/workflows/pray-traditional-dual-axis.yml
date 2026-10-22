@@ -6,6 +6,8 @@ on:
       - "src/pray/traditional-pray-runtime.js"
       - "src/pray/traditional-pray-styles.js"
       - "src/pray/devotional-sequence-adapter.js"
+      - "src/pray/litany-responsive.js"
+      - "tests/litany-call-response-phone.mjs"
       - "tests/pray-traditional-dual-axis-phone.mjs"
       - ".github/workflows/pray-traditional-dual-axis.yml"
   workflow_dispatch:
@@ -17,7 +19,7 @@ concurrency:
 jobs:
   phone:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 16
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -28,6 +30,16 @@ jobs:
       - run: node tests/pray-traditional-life.mjs
       - run: npx playwright install --with-deps chromium
       - run: node tests/pray-traditional-dual-axis-phone.mjs
+      - name: 320/390/430 litany call & response, source-identical EN/FR/LA
+        run: node tests/litany-call-response-phone.mjs
+      - name: Preserve litany call & response screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: litany-call-response-phone
+          path: artifacts/litany-call-response-phone
+          if-no-files-found: warn
+          retention-days: 21
       - name: Preserve French phone reader screenshots
         if: always()
         uses: actions/upload-artifact@v4
