@@ -7,7 +7,8 @@ const TYPE={
  place:["Place","Lieu"],shrine:["Shrine","Sanctuaire"],
  pilgrimage:["Pilgrimage","Pèlerinage"],route:["Journey","Parcours"],
  relic:["Relic","Relique"],apparition:["Apparition","Apparition"],
- calendar:["Calendar context","Contexte calendaire"]};
+ calendar:["Calendar context","Contexte calendaire"],
+ custom:["Custom","Coutume"],person:["Attributed name","Nom attribué"]};
 const LABEL=(language,type)=>L(language,...(TYPE[type]||[type,type]));
 const crop=(value,n=31)=>String(value||"").length>n?String(value).slice(0,n-1)+"…":String(value||"");
 export function renderNetworkPanel({graph,language="en",filters={}}={}){
@@ -53,6 +54,11 @@ export function renderNetworkPanel({graph,language="en",filters={}}={}){
      E(current.name)+'</h3></div>';
    if(current.type==="place")html+='<button type="button" data-explore-open-place="'+E(current.id)+'">'+
      L(language,"Open place profile","Ouvrir la fiche du lieu")+' ↗</button>';
+   if(current.type==="custom")html+='<button type="button" data-network-open-custom="'+E(current.id)+'">'+
+     L(language,"Open documented custom","Ouvrir la coutume documentée")+' ↗</button>';
+   if(current.type==="person")html+='<small class="aoNetworkMention">'+
+     L(language,"Source-attributed name only — not a linked Saints profile",
+       "Nom attribué à une source — aucune identité établie dans le catalogue des saints")+'</small>';
    html+='</div>';
    const num=relations.length,angles=relations.map((x,i)=>{
      const r=num>8&&i>=8?1:0;
@@ -100,6 +106,8 @@ export function renderNetworkPanel({graph,language="en",filters={}}={}){
        '<button type="button" data-network-focus="'+E(target.key)+'">'+E(target.name)+'</button>';
      if(target.type==="place")html+='<button type="button" class="aoNetworkPlaceButton" data-explore-open-place="'+E(target.id)+'">'+
        L(language,"Place profile","Fiche du lieu")+' ↗</button>';
+     if(target.type==="custom")html+='<button type="button" class="aoNetworkPlaceButton" data-network-open-custom="'+E(target.id)+'">'+
+       L(language,"Custom details","Fiche de coutume")+' ↗</button>';
      html+='</div><a href="'+E(edge.source.url)+'" target="_blank" rel="noopener noreferrer">'+
        L(language,"Source","Source")+' ↗</a></article>';
    }

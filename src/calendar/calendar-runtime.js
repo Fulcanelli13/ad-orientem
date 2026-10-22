@@ -6,6 +6,8 @@ import { romanClassTier } from "./roman-class-tier.js";
 import { calendarIntelligenceForDate, calendarPracticeMonthEntries } from "./intelligence.js";
 import { pilgrimagePlacesForCalendarKeys } from "./pilgrimage-places.js";
 import { renderYearJourney, yearJourneyCss } from "./year-journey.js";
+import { calendarCustomRecommendations, calendarCustomSeasonalMonthEntries, calendarCustomArticleIds, calendarCustomArticle } from "./customs-read-model.js";
+import { personalCustomsForDate } from "../customs/personal-store.js";
 import { calendarMassColour } from "./colour-projection.js";
 import { calendarPaletteColour, yearDailyProjection, yearSeasonGradient } from "./year-colour-wheel.js";
 import { serialize1962CalendarMonth, calendarMonthIcsFilename } from "./export-ics.js";
@@ -263,6 +265,7 @@ function monthIndexEntries(monthId,view){
 function monthHybridOverview(monthId,selected){
   const principal=monthIndexEntries(monthId,"major"),practices=monthIndexEntries(monthId,"practices");
   const majorStatus=monthIndexResolutionState(monthId,"major");
+  const seasonalCustoms=calendarCustomSeasonalMonthEntries(monthId,{fr:fr()});
   const majorCards=principal.map((item,i)=>
     `<button type="button" class="aoCalHybridMajor${i<2?" featured":""}" data-cal-month-index-date="${esc(item.date)}" style="--month-accent:${esc(item.accent)}">
       <span class="aoCalHybridDate">${esc(displayDate(item.date))}</span>
@@ -281,8 +284,10 @@ function monthHybridOverview(monthId,selected){
       <div class="aoCalHybridMajors">${majorCards||`<p class="aoCalHybridEmpty">${esc(majorStatus==="loading"?L("Resolving this month’s celebrations…","Résolution des célébrations du mois…"):L("No resolved principal celebrations.","Aucune célébration principale résolue."))}</p>`}</div>
     </section>
     <section class="aoCalHybridSection aoCalHybridPracticesSection">
-      <div class="aoCalHybridHeading"><h3>${esc(L("Practices & customs","Pratiques et coutumes"))}</h3></div>
-      <div class="aoCalHybridPractices">${practiceCards||`<p class="aoCalHybridEmpty">${esc(L("No featured practices for this month.","Aucune pratique signalée pour ce mois."))}</p>`}</div>
+      <div class="aoCalHybridHeading"><h3>${esc(L("Practices & customs","Pratiques et coutumes"))}</h3><button type="button" class="aoCalV2TextLink" data-cal-customs-open>${esc(L("All traditions","Toutes les coutumes"))} →</button></div>
+      ${seasonalCustoms.length?`<div class="aoCalCustomMonthContext"><small>${esc(L("CUSTOMS OF THE SEASON","COUTUMES DE LA SAISON"))}</small>${seasonalCustoms.map(item=>calendarCustomArticle(item.id)).filter(Boolean).map(calendarCustomArticleMarkup).join("")}</div>`:""}
+      <div class="aoCalHybridPractices">${practiceCards||(seasonalCustoms.length?"":`<p class="aoCalHybridEmpty">${esc(L("No featured practices for this month.","Aucune pratique signalée pour ce mois."))}</p>`)}</div>
+      <button type="button" class="aoCalMyCustomsButton" data-cal-my-customs-open>${esc(L("My Customs & Prayers","Mes coutumes et prières"))} →</button>
     </section>
   </div>`;
 }
@@ -699,6 +704,56 @@ function disciplineReference(discipline){
     ${eras.map(era=>`<section><small>${esc(String(era.label||"").toUpperCase())}</small>${(era.items||[]).map(item=>`<article><div><strong>${esc(item.title)}</strong><span>${esc(item.status)}</span></div><p>${esc(item.summary)}</p>${item.today?`<b>${esc(item.today)}</b>`:""}</article>`).join("")}${era.sources?.length?`<div class="aoCalPracticeSources">${era.sources.map(source=>`<a href="${esc(source.url)}" target="_blank" rel="noopener">${esc(source.label)} ↗</a>`).join("")}</div>`:""}</section>`).join("")}
   </details>`;
 }
+
+function calendarCustomArticleMarkup(article){
+  const isFr=fr(),lang=isFr?"fr":"en",Lcopy=(en,frText)=>isFr?frText:en;
+  const sources=article.sources||[];
+  return `<details class="aoCalCustomArticle" data-cal-custom-id="${esc(article.id)}">
+    <summary><span><strong>${esc(article.title[lang])}</strong><small>${esc(article.occasion[lang]||"")}</small></span><span aria-hidden="true">›</span></summary>
+    <div class="aoCalCustomArticleContent">
+      <p>${esc(article.description[lang])}</p>
+      ${article.history[lang]!==article.description[lang]?`<h5>${esc(Lcopy("Historical context","Contexte historique"))}</h5><p>${esc(article.history[lang])}</p>`:""}
+      <h5>${esc(Lcopy("Spiritual meaning","Sens spirituel"))}</h5><p>${esc(article.meaning[lang])}</p>
+      <h5>${esc(Lcopy("Traditional household practice","Pratique traditionnelle"))}</h5><p>${esc(article.practice[lang])}</p>
+      <h5>${esc(Lcopy("Scope and cautions","Portée et précautions"))}</h5><p>${esc(article.scope[lang])}</p><p>${esc(article.caution[lang])}</p>
+      ${sources.length?`<h5>${esc(Lcopy("Sources","Sources"))}</h5><ul>${sources.map(source=>`<li><a href="${esc(source.url)}" target="_blank" rel="noopener noreferrer">${esc(source.title)} ↗</a></li>`).join("")}</ul>`:""}
+    </div>
+  </details>`;
+}
+
+
+function calendarCustomCatalogueMarkup(){
+  const articles=calendarCustomArticleIds().map(calendarCustomArticle).filter(Boolean);
+  const isFr=fr();
+  const item=article=>{
+    const searchable=[article.title.en,article.title.fr,article.description.en,article.description.fr].join(" ").toLocaleLowerCase();
+    return '<div data-cal-custom-item data-cal-custom-terms="'+esc(searchable)+'">'+calendarCustomArticleMarkup(article)+'</div>';
+  };
+  return '<section class="aoCalCustomCatalogueSection"><details class="aoCalCustomCatalogue">'
+    +'<summary>'+esc(L("Browse all customs","Parcourir toutes les coutumes"))+' <small>('+articles.length+')</small></summary>'
+    +'<label class="aoCalCustomCatalogueLabel" for="ao-cal-custom-search">'+esc(L("Search customs","Rechercher une coutume"))+'</label>'
+    +'<input id="ao-cal-custom-search" type="search" data-cal-custom-search autocomplete="off" placeholder="'+esc(L("Name or subject","Nom ou sujet"))+'">'
+    +'<p data-cal-custom-empty hidden>'+esc(L("No matching customs.","Aucune coutume correspondante."))+'</p>'
+    +'<div class="aoCalCustomCatalogueItems">'+articles.map(item).join("")+'</div>'
+    +'</details><button type="button" class="aoCalMyCustomsButton" data-cal-my-customs-open>'+esc(L("My Customs & Prayers","Mes coutumes et prières"))+' →</button></section>';
+}
+
+
+function calendarPersonalContext(selected){
+  let storage=null;try{storage=globalThis.localStorage}catch{}
+  const mine=personalCustomsForDate(selected,{storage,canonicalIds:calendarCustomArticleIds()});
+  if(!mine.length)return "";
+  const copy=record=>{
+    const canonical=record.origin==="canonical"?calendarCustomArticle(record.customId):null;
+    const title=canonical?.title[fr()?"fr":"en"]||record.title;
+    const kind=canonical?L("Adopted sourced custom","Coutume sourcée adoptée"):record.kind==="prayer"?L("Personal prayer","Prière personnelle"):L("Personal custom","Coutume personnelle");
+    const reading=record.body?'<details data-cal-personal-reading><summary>'+esc(L("Read my text","Lire mon texte"))+'</summary><p>'+esc(record.body)+'</p></details>':"";
+    return '<article class="aoCalPersonalPractice"><small>'+esc(kind)+'</small><strong>'+esc(title)+'</strong>'+reading+(record.note?'<p>'+esc(record.note)+'</p>':"")+'</article>';
+  };
+  return '<section class="aoCalPersonalContext" data-cal-personal-date="'+esc(selected)+'"><div class="aoCalV2SectionTitle"><div><small>'+esc(L("PERSONAL · NOT LITURGICAL","PERSONNEL · NON LITURGIQUE"))+'</small><h3>'+esc(L("My household practices","Mes pratiques familiales"))+'</h3></div></div>'
+   +mine.map(copy).join("")+'<button type="button" class="aoCalMyCustomsButton" data-cal-my-customs-open>'+esc(L("Manage my customs & prayers","Gérer mes coutumes et prières"))+' →</button></section>';
+}
+
 function practiceContext(selected,r){
   let intel=null;
   try{intel=calendarIntelligenceForDate(selected,{fr:fr(),properTitle:titleOf(r)})}catch(error){console.error("Calendar intelligence failed",error)}
@@ -707,16 +762,18 @@ function practiceContext(selected,r){
   const tags=new Set(events.flatMap(event=>event?.tags||[]));
   const linkedPlaces=pilgrimagePlacesForCalendarKeys(intel.semantic?.map(event=>event.key),pilgrimageCorpus??{});
   const disciplineRelevant=intel.discipline?.today?.key!=="none"||[...tags].some(tag=>/DISCIPLINE|PENITENTIAL/.test(tag));
-  if(!events.length&&!disciplineRelevant)return "";
+  const seasonalCustoms=calendarCustomRecommendations(selected,{events,fr:fr()});
+  if(!events.length&&!disciplineRelevant&&!seasonalCustoms.length)return "";
   return `<section class="aoCalPracticeContext" data-cal-intelligence-date="${esc(selected)}">
     <div class="aoCalV2SectionTitle"><div><small>${esc(L("PRACTICES & DISCIPLINE","PRATIQUES & DISCIPLINE"))}</small><h3>${esc(L("For this date","Pour cette date"))}</h3></div></div>
     <p class="aoCalPracticeIntro">${esc(L("Date-bound devotional context. Current obligations remain separate from historical discipline and voluntary custom.","Contexte dévotionnel lié à la date. Les obligations actuelles restent distinctes de la discipline historique et des coutumes volontaires."))}</p>
+    ${seasonalCustoms.length?`<div class="aoCalCustomsBlock"><h4>${esc(L("Customs of this day & season","Coutumes du jour et de la saison"))}</h4><div class="aoCalCustomsEntries">${seasonalCustoms.map(calendarCustomArticleMarkup).join("")}</div></div>`:""}
     ${events.length?`<div class="aoCalPracticeList">${events.map(event=>`<article class="aoCalPracticeCard" data-cal-intelligence-id="${esc(event.id)}">
       <small>${esc(intelligenceKind(event))}</small>
       <h4>${esc(event.title)}</h4>
       <p>${esc(event.summary||"")}</p>
       ${event.current||event.historical?`<details><summary>${esc(L("Current / traditional status","Statut actuel / traditionnel"))}</summary>${event.current?`<p><b>${esc(L("Current:","Actuel :"))}</b> ${esc(event.current)}</p>`:""}${event.historical?`<p><b>${esc(L("Traditional:","Traditionnel :"))}</b> ${esc(event.historical)}</p>`:""}</details>`:""}
-      ${intelligenceActions(event).length?`<div class="aoCalPracticeActions">${intelligenceActions(event).map(([route,label])=>`<button type="button" data-cal-intelligence-route="${esc(route)}">${esc(label)} →</button>`).join("")}</div>`:""}
+      ${intelligenceActions(event).some(([route])=>!route.startsWith("find:traditions:"))?`<div class="aoCalPracticeActions">${intelligenceActions(event).filter(([route])=>!route.startsWith("find:traditions:")).map(([route,label])=>`<button type="button" data-cal-intelligence-route="${esc(route)}">${esc(label)} →</button>`).join("")}</div>`:""}
     </article>`).join("")}</div>`:""}
     ${linkedPlaces.length?`<section class="aoCalPilgrimagePlaces"><small>${esc(L("PILGRIMAGES & SACRED PLACES","PÈLERINAGES ET SANCTUAIRES"))}</small><p>${esc(L("Places associated with this feast or anniversary. Local celebrations and travel arrangements must be checked with the shrine.","Lieux associés à cette fête ou à cet anniversaire. Les célébrations locales et les renseignements pratiques restent à vérifier auprès du sanctuaire."))}</p>${linkedPlaces.map(place=>`<article><div><strong>${esc(place.shrine_name)}</strong>${place.saints.length?`<small>${esc(place.saints.join(" · "))}</small>`:""}</div><button type="button" data-cal-intelligence-route="${esc("find:pilgrimages:"+place.semantic_key)}">${esc(L("View pilgrimage","Voir le pèlerinage"))} →</button></article>`).join("")}</section>`:""}
     ${disciplineRelevant?disciplineReference(intel.discipline):""}
@@ -845,6 +902,8 @@ function daySurface(selected,r){
       <button class="aoCalV2TextLink" type="button" data-cal-view="year">${esc(L("View the liturgical year","Voir l’année liturgique"))} →</button>
     </section>
     ${practiceContext(selected,r)}
+    ${calendarPersonalContext(selected)}
+    ${calendarCustomCatalogueMarkup()}
     <section class="aoCalV2WeekSection">
       <div class="aoCalV2SectionTitle"><div><small>${esc(L("IN CONTEXT","EN CONTEXTE"))}</small><h3>${esc(L("This week","Cette semaine"))}</h3></div><button class="aoCalV2Today" type="button" data-cal-today>${esc(L("Today","Aujourd’hui"))}</button></div>
       ${compactWeek(selected)}
@@ -949,6 +1008,7 @@ function yearSurface(selected,r){
       </div>
     </section>
     `:""}
+    <div class="aoCalHybridHeading" style="margin:18px 0"><button type="button" class="aoCalV2TextLink" data-cal-customs-open>${esc(L("Explore customs throughout the year","Découvrir les coutumes au fil de l’année"))} →</button></div>
     ${embedded&&!embeddedHomeYear?renderYearJourney({year:y,selectedDate:selected,focusedPeriodId:focusedYearPeriodId,fr:fr(),formatDate:displayDate,dailyColours:daily}):""}
   `;
 }
@@ -1028,6 +1088,42 @@ function hybridMonthCss(){return `
 .aoCalMonthUnclassified p{font:400 14px/1.45 var(--ao-font-ui,"EB Garamond",Georgia,serif);color:#90989b}
 #ao-calendar-modular-root .aoCalMonthUnclassified button{display:block;width:100%;min-height:44px;padding:10px 0!important;border:0!important;border-bottom:1px solid rgba(227,212,187,.1)!important;border-radius:0!important;background:transparent!important;text-align:left!important}
 
+.aoCalCustomMonthContext{padding:9px 11px 12px;margin:0 0 12px;background:rgba(203,182,137,.055);border-left:2px solid rgba(203,182,137,.37)}
+.aoCalCustomMonthContext>small{display:block;margin-bottom:5px;color:#baa883;font-size:10px;letter-spacing:.09em}
+#ao-calendar-modular-root .aoCalCustomMonthContext button{width:100%;min-height:38px;padding:7px 2px!important;text-align:left!important;display:flex;justify-content:space-between;gap:9px;border:0!important;background:transparent!important;color:inherit!important}
+.aoCalCustomMonthContext button strong{font-weight:500;font-size:15px}
+.aoCalCustomsBlock{margin:18px 0 14px;border-top:1px solid rgba(227,212,187,.18);padding-top:16px}
+.aoCalCustomsBlock>h4{font-size:18px;font-weight:500;margin:0 0 8px}
+.aoCalCustomArticle{border-bottom:1px solid rgba(227,212,187,.12)}
+.aoCalCustomArticle summary{display:flex;justify-content:space-between;align-items:center;gap:12px;cursor:pointer;min-height:56px;padding:9px 1px}
+.aoCalCustomArticle summary::-webkit-details-marker{display:none}
+.aoCalCustomArticle summary{list-style:none}
+.aoCalCustomArticle summary strong{display:block;font-size:16px;font-weight:500}
+.aoCalCustomArticle summary small{display:block;color:#a6a09a;font-size:12px;line-height:1.4;margin-top:4px}
+.aoCalCustomArticle[open] summary>span:last-child{transform:rotate(90deg)}
+.aoCalCustomArticleContent{padding:0 6px 13px;color:#cbc5bb;font-size:14px;line-height:1.55}
+.aoCalCustomArticleContent h5{color:#ddc59f;font-size:13px;margin:15px 0 4px;font-weight:600}
+.aoCalCustomArticleContent p{margin:5px 0 10px}
+.aoCalCustomArticleContent ul{padding-left:18px}
+.aoCalCustomArticleContent a{color:#d8c5a4;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.aoCalCustomCatalogueSection{margin:18px 0 14px}
+.aoCalCustomCatalogue{border-top:1px solid rgba(227,212,187,.15);border-bottom:1px solid rgba(227,212,187,.12);padding:3px 0}
+.aoCalCustomCatalogue>summary{list-style:none;cursor:pointer;padding:13px 2px;font-size:15px;color:#d2c6b2}
+.aoCalCustomCatalogue>summary::-webkit-details-marker{display:none}
+.aoCalCustomCatalogue>summary small{opacity:.7;font-size:12px;margin-left:5px}
+.aoCalCustomCatalogueLabel{display:block;margin-top:9px;margin-bottom:5px;color:#aaa49c;font-size:12px}
+.aoCalCustomCatalogue [data-cal-custom-search]{box-sizing:border-box;width:100%;max-width:100%;border:1px solid rgba(227,212,187,.23);border-radius:5px;background:#111923;color:#ebe1d0;font:inherit;min-height:42px;padding:10px}
+.aoCalCustomCatalogue [data-cal-custom-item][hidden]{display:none!important}
+.aoCalCustomCatalogueItems{margin-top:10px}
+.aoCalCustomCatalogue [data-cal-custom-empty]{font-size:13px;color:#aba49b}
+.aoCalMyCustomsButton{margin-top:13px;background:transparent;border:1px solid rgba(202,180,144,.4);border-radius:5px;color:#d9c49d;padding:10px 14px;min-height:44px;font-size:14px;cursor:pointer}
+.aoCalPersonalContext{margin:14px 0 20px;padding:13px;border-left:2px solid rgba(203,176,131,.55);background:rgba(203,176,131,.045)}
+.aoCalPersonalPractice{border-top:1px solid rgba(222,208,178,.13);padding:10px 0;display:flex;flex-direction:column;gap:5px}
+.aoCalPersonalPractice small{color:#b7a98e;font-size:12px}
+.aoCalPersonalPractice strong{color:#eee2ce;font-size:16px;font-weight:500}
+.aoCalPersonalPractice p{color:#bbb3a7;font-size:14px;white-space:pre-wrap;overflow-wrap:anywhere;margin:2px 0}
+.aoCalPersonalPractice details{border-top:1px solid rgba(222,208,178,.13);padding-top:7px}
+.aoCalPersonalPractice details summary{color:#d6be91;cursor:pointer;font-size:14px;min-height:36px;padding:7px 0}
 /* Sanctorale defaults to the restrained register while the user-chosen
    hybrid leaves its exact aesthetic open; no source identities are modified. */
 #ao-calendar-modular-root [data-cal-month-index="sanctorale"] .aoCalMonthIndexList{gap:0}
@@ -1368,7 +1464,29 @@ function bind(r){
       event.preventDefault();event.target.dispatchEvent(new MouseEvent("click",{bubbles:true}));
     }
   });
+  r.addEventListener("input",event=>{
+    const input=event.target.closest?.("[data-cal-custom-search]");
+    if(!input)return;
+    const container=input.closest(".aoCalCustomCatalogue");
+    const term=input.value.trim().toLocaleLowerCase();
+    let visible=0;
+    for(const row of container?.querySelectorAll("[data-cal-custom-item]")||[]){
+      const matches=String(row.dataset.calCustomTerms||"").includes(term);
+      row.hidden=!matches;
+      if(matches)visible++;
+    }
+    const empty=container?.querySelector("[data-cal-custom-empty]");
+    if(empty)empty.hidden=visible!==0;
+  });
   r.addEventListener("click",event=>{
+    const myCustoms=event.target.closest?.("[data-cal-my-customs-open]");
+    if(myCustoms){
+      event.preventDefault();
+      void import("../customs/personal-ui.js").then(module=>
+        module.openMyCustoms({language:fr()?"fr":"en",onChange:()=>{if(root())paint()}})
+      ).catch(error=>console.error("Personal Customs module unavailable",error));
+      return;
+    }
     const clockControl=event.target.closest?.("[data-cal-clock-close],[data-cal-clock-season],[data-cal-clock-cluster],[data-cal-clock-feast],[data-cal-clock-open-day],[data-cal-clock-browse],[data-cal-clock-year],[data-cal-clock-today]");
     if(clockControl){
       event.preventDefault();
@@ -1419,6 +1537,17 @@ function bind(r){
     const nextRetry=event.target.closest?.("[data-cal-next-major-retry]");if(nextRetry){event.preventDefault();const id=state()?.selectedDate||iso(new Date());nextMajorResults.delete(id);for(const date of nextMajorCandidateDates(id)){if(weekCache.get(date)?.status==="failed")weekCache.delete(date)}paint();void loadNextResolvedMajor(id);return}
     const monthRetry=event.target.closest?.("[data-cal-month-retry]");if(monthRetry){event.preventDefault();monthRetry.disabled=true;void retryFailedMonth().catch(error=>console.error("Calendar month retry failed",error)).finally(()=>{if(root())paint()});return}
     const dayRetry=event.target.closest?.("[data-cal-day-retry]");if(dayRetry){event.preventDefault();dayRetry.disabled=true;const id=state()?.selectedDate||iso(new Date());void Promise.resolve(cache()?.retryDate?.(id)).catch(error=>console.error("Calendar day retry failed",error)).finally(()=>{if(root())paint()});return}
+    const customsLibraryButton=event.target.closest?.("[data-cal-customs-open]");
+    if(customsLibraryButton){
+      event.preventDefault();
+      if(customsLibraryButton.disabled)return;
+      customsLibraryButton.disabled=true;
+      void import("../customs/customs-browser.js")
+        .then(({installCustomsBrowserOwner})=>installCustomsBrowserOwner(globalThis).open({view:"year"}))
+        .catch(error=>console.error("Customs library unavailable",error))
+        .finally(()=>{customsLibraryButton.disabled=false;});
+      return;
+    }
     const glossaryButton=event.target.closest?.("[data-cal-glossary]");if(glossaryButton){event.preventDefault();void openCalendarGlossary();return}
     const viewButton=event.target.closest?.("[data-cal-view]");if(viewButton){event.preventDefault();setView(viewButton.dataset.calView||"day");return}
     const exportButton=event.target.closest?.("[data-cal-export-ics]");

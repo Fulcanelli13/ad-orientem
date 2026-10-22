@@ -73,5 +73,5 @@ window.AO_STATIONS_ART_V4311=Object.freeze({
  getMode:mode,setMode,resume:loadResume,clearResume,sync:schedule,
  inspect:()=>{const s=state(),r=root(),n=Number(s?.station)||0,figs=r?.querySelectorAll('.aoV4311StationsArt').length||0;return{version:VERSION,station:n,mode:mode(),resume:loadResume(),figures:figs,expectedFigure:(s?.view==='stations'&&mode()!=='off')?1:0,pass:ART.length===14&&(!s||s.view!=='stations'||mode()==='off'||figs===1)}}
 });
-try{document.title='Ad Orientem 2.0 · v43.11 · Stations Sacred Art Integration';document.documentElement.dataset.aoRelease='43.11'}catch{}
+try{document.title='Ad Orientem';document.documentElement.dataset.aoRelease='43.11'}catch{}
 })();

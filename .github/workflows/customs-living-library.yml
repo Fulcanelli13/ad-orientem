@@ -1,0 +1,59 @@
+name: Customs Living Library
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    paths:
+      - "src/customs/**"
+      - "data/customs/customs-temporal-projection.v1.json"
+      - "data/customs/customs-fr-canonical-copy.v1.json"
+      - "data/customs/research/weiser-public-reference-index.v1.json"
+      - "src/calendar/calendar-runtime.js"
+      - "tests/customs-living-library*.mjs"
+      - ".github/workflows/customs-living-library.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  source-integrity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Syntax checks
+        run: |
+          node --check src/customs/customs-library.js
+          node --check src/customs/customs-browser.js
+          node --check tests/customs-living-library.mjs
+          node --check tests/customs-living-library-phone.mjs
+      - name: Non-loss and French source integrity
+        run: npm run test:customs-library
+  phone:
+    needs: source-integrity
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Real browser EN/FR module browsing and archive review
+        run: npm run test:customs-library-phone
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: customs-living-library-phone
+          path: artifacts/customs-living-library/
+          retention-days: 30
+          if-no-files-found: warn
