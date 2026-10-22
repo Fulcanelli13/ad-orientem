@@ -12,6 +12,8 @@ on:
       - 'tools/build-pius-x-expanded-standalone.mjs'
       - 'tools/build-pius-x-next12-dialogues.mjs'
       - 'tools/build-pius-x-next12-pastoral-dialogues.mjs'
+      - 'tools/build-pius-x-earlier-94-p6.mjs'
+      - 'tests/pius-x-study-earlier-94-p6-e2e.mjs'
       - 'tools/spx-p0-editorial-normalization.mjs'
       - 'tools/spx-p2-followup-editorial-layer.mjs'
       - '.github/workflows/pius-x-study-standalone-review.yml'
@@ -25,6 +27,8 @@ on:
       - 'tools/build-pius-x-expanded-standalone.mjs'
       - 'tools/build-pius-x-next12-dialogues.mjs'
       - 'tools/build-pius-x-next12-pastoral-dialogues.mjs'
+      - 'tools/build-pius-x-earlier-94-p6.mjs'
+      - 'tests/pius-x-study-earlier-94-p6-e2e.mjs'
       - 'tools/spx-p0-editorial-normalization.mjs'
       - 'tools/spx-p2-followup-editorial-layer.mjs'
       - '.github/workflows/pius-x-study-standalone-review.yml'
@@ -55,6 +59,10 @@ jobs:
         run: node tools/build-pius-x-next12-pastoral-dialogues.mjs
       - name: Browser-test 106 bilingual subjects and immutable original 375 answers
         run: node tests/pius-x-study-next12-pastoral-e2e.mjs
+      - name: Build separate P6 voice-review artifact for twelve earlier subjects
+        run: node tools/build-pius-x-earlier-94-p6.mjs
+      - name: Validate P6 preserved sources and bilingual offline interaction
+        run: node tests/pius-x-study-earlier-94-p6-e2e.mjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
