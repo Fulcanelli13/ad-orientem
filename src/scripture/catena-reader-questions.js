@@ -753,3 +753,30 @@ export function curatedCatenaReaderCompanions(rows,route,{limit=2}={}){
  }
  return Object.freeze(found);
 }
+
+/**
+ * Follow-up questions refer only to other original fragments of the SAME
+ * selected Gospel pericope. All candidates pass the canonical excerpt,
+ * author and exact-phrase gates in curatedCatenaReaderQuestions first.
+ * A different attributed voice is preferred when available. This selects
+ * navigational routes, not a purported conversation authored by the Fathers.
+ */
+export function suggestCatenaNextReadingQuestions(rows,current,{visitedIds=[],limit=2}={}){
+ if(!Array.isArray(rows)||current?.kind!=="curated-source-pointer")return Object.freeze([]);
+ const validated=curatedCatenaReaderQuestions(rows,{limit:6});
+ const active=validated.find(x=>x.id===current.id&&x.sourcePointer===current.sourcePointer);
+ if(!active)return Object.freeze([]);
+ const pericope=active.sourcePointer.split(":")[0];
+ const visited=new Set(visitedIds);
+ const authors=new Map(rows.map(x=>[x.id,x.father]));
+ const baseFather=authors.get(active.sourcePointer);
+ const options=validated.filter(x=>
+  x.id!==active.id&&x.kind==="curated-source-pointer"&&
+  !visited.has(x.id)&&x.sourcePointer!==active.sourcePointer&&
+  x.sourcePointer.split(":")[0]===pericope
+ );
+ // Preserve source-backed question order inside equal author priority.
+ options.sort((a,b)=>Number(authors.get(a.sourcePointer)===baseFather)-
+                      Number(authors.get(b.sourcePointer)===baseFather));
+ return Object.freeze(options.slice(0,Math.max(0,Math.min(3,limit))));
+}
