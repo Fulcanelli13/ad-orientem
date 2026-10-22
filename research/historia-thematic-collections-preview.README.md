@@ -1,5 +1,8 @@
 # Historia Salutis · Three supplementary Scripture collections (pilot)
 
+> **Priority-16 parallel-pipeline ownership (22 October 2026):** the [single working review](./historia-priority16-review.html) uses 156 original verse occurrences, while the 196-verse packet is a context-preserving **alternative**, not a second approved source. Seven entries agree; five prefer the shorter working preview provisionally; four require explicit textual-integrity judgment. See the [reconciliation and approval protocol](./historia-priority16-parallel-reconciliation-20261022.md). No main manuscript additions are accepted.
+
+
 **Research status:** Not approved for publication. Kept off the main Ad Orientem Home, Mass, Rosary and P3 reader routes. Changes are isolated to this research branch.
 
 ## Open the preview
