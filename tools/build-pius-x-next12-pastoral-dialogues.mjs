@@ -28,11 +28,22 @@ const incoming=batches.flatMap(b=>{
 });
 assert.equal(incoming.length,12);
 // P5 editorial voice is an overlay, never a rewrite of the P4 source-owned drafts.
-const voice=load('spx-p5-conversational-voice-revisions-4.v1.json');
-assert.equal(voice.schema,'AO_SPX_P5_CONVERSATIONAL_VOICE_OVERLAY_V1');
-assert.equal(voice.status,'UNAPPROVED_REVIEW_ONLY');
-assert.equal(voice.revisions.length,16);
-assert.deepEqual(voice.chapters,['SPX-NEW-013','SPX-NEW-014','SPX-NEW-020','SPX-NEW-021']);
+const voiceBatches=[
+ 'spx-p5-conversational-voice-revisions-4.v1.json',
+ 'spx-p5-conversational-voice-next8-a.v1.json',
+ 'spx-p5-conversational-voice-next8-b1.v1.json',
+ 'spx-p5-conversational-voice-next8-b2.v1.json'
+].map(load);
+for(const b of voiceBatches){
+ assert.equal(b.schema,'AO_SPX_P5_CONVERSATIONAL_VOICE_OVERLAY_V1');
+ assert.equal(b.status,'UNAPPROVED_REVIEW_ONLY');
+ assert.equal(b.revisions.length,b.chapters.length*4);
+}
+const voice={chapters:voiceBatches.flatMap(b=>b.chapters),
+ revisions:voiceBatches.flatMap(b=>b.revisions)};
+assert.equal(voice.revisions.length,48);
+assert.deepEqual([...voice.chapters].sort(),
+ Array.from({length:12},(_,i)=>'SPX-NEW-'+String(13+i).padStart(3,'0')));
 const incomingNodes=new Map(incoming.flatMap(c=>c.nodes.map(n=>[n.id,n])));
 const voiceIds=new Set();
 for(const r of voice.revisions){
@@ -56,7 +67,7 @@ for(const r of voice.revisions){
   n.sourceDrawerNote={...r.sourceDrawerNote};
  }
 }
-assert.equal(incoming.filter(c=>voice.chapters.includes(c.id)).flatMap(c=>c.nodes).filter(n=>n.editorialVoiceReview).length,16);
+assert.equal(incoming.filter(c=>voice.chapters.includes(c.id)).flatMap(c=>c.nodes).filter(n=>n.editorialVoiceReview).length,48);
 
 const ids=new Set(base.chapters.map(c=>c.id));
 const nodeIds=new Set(base.chapters.flatMap(c=>c.nodes.map(n=>n.id)));
