@@ -37,7 +37,8 @@ function explicitSeason(resolution){
 /**
  * Called in the pre-Mass host with a completed, same-date 1962 day resolution.
  * The already-established year-wheel owns season boundaries (no second calendar).
- * Does not certify: Ember ferias, extraordinary feast exceptions, local customs,
+ * Certifies from the dated year: Gaudete/Laetare (§83b) and September Ember
+ * ferias (§81c). Does not certify: extraordinary or local feast exceptions (§83a),
  * a different selected Mass, or whether an organ is actually being played.
  */
 export function verifiedOrganContextFrom1962Calendar({
@@ -57,6 +58,27 @@ export function verifiedOrganContextFrom1962Calendar({
   if(!season||date<period.start||date>period.end)return null;
   const resolverSeason=explicitSeason(r);
   if(resolverSeason && resolverSeason!==season)return null;
+  // Which Mass the calendar resolved: the seasonal (temporal) day, or a
+  // saint's feast that replaced it ("tempora:" / "sancti:" day ids, or the
+  // Proper's Tempora/ / Sancti/ source path).
+  const dayId=String(r.day.main.id);
+  const properPath=String(r.proper?.data?.sourcePath??r.proper?.sourcePath??"");
+  const sanctoral=/^sancti:/i.test(dayId)||/^Sancti\//.test(properPath);
+  // §83(a): holy days of obligation, local holidays, patronal, titular and
+  // dedication feasts lift the Advent/Lent restriction. Which feasts qualify
+  // is local, so for a saint's feast in a restricted season make no claim.
+  if(["ADVENT","LENT","PASSIONTIDE"].includes(season)&&sanctoral)return null;
+  // §83(b): organ only on the third Sunday of Advent and the fourth of Lent.
+  const gaudete=addDaysIso(year.start,14);
+  const laetare=addDaysIso(year.easter,-21);
+  const organOnlySunday=date===gaudete||date===laetare;
+  // §81(c): September Ember days (Wednesday, Friday and Saturday after the
+  // third Sunday of September, 1960 rubrics) when the ferial Mass is said.
+  const civilYear=Number(date.slice(0,4));
+  const sept15=`${civilYear}-09-15`;
+  const thirdSundaySept=addDaysIso(sept15,(7-new Date(sept15+"T12:00:00").getDay())%7);
+  const septEmber=[3,5,6].map(n=>addDaysIso(thirdSundaySept,n)).includes(date);
+  const septEmberFerial=septEmber&&!sanctoral;
   // A completed 1962 resolution is necessary but never sufficient for
   // exceptional Holy Week instrumental permissions.
   const triduumStart=addDaysIso(year.easter,-3);
@@ -77,7 +99,7 @@ export function verifiedOrganContextFrom1962Calendar({
     triduum:identifiedHolyThursday,
     holyThursdayMass:identifiedHolyThursday,
     holyThursdayChrism:false,
-    septEmberFerial:false,exceptionalFeastConfirmed:false,
+    septEmberFerial,organOnlySunday,exceptionalFeastConfirmed:false,
     lowMassInterferingInstrumentalCustom:false,
     actuallyPlaying:"UNKNOWN",notAnObservation:true,
   });

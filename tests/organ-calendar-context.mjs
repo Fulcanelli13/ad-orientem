@@ -44,10 +44,16 @@ assert.equal(context("2026-10-19",{calendarResolution:{date:"2026-10-19",day:{ma
 assert.equal(context("2026-10-19",{calendarResolution:{
   ...day("2026-10-19"),day:{main:{...day("2026-10-19").day.main,season:"ADVENT"}}
 }}),null,"Conflicting resolver season must fail closed");
+// §83(a): a saint's feast in a restricted season may lift the restriction
+// (holy day of obligation, local holiday, patronal...). That is local, so the
+// bridge makes no claim rather than showing a wrong silence or permission.
 assert.equal(context("2026-03-25",{calendarResolution:{
-  ...day("2026-03-25"),day:{main:{id:"SANCTI_ANNUNCIATION",season:"Passiontide"}}
-}})?.season,"PASSIONTIDE",
-  "An observed feast in Passiontide must not switch to Ordinary season");
+  ...day("2026-03-25"),day:{main:{id:"sancti:03-25:1:w",season:"Passiontide"}}
+}}),null,
+  "A feast in Passiontide must neither switch season nor assert the Lenten silence (§83a is local)");
+assert.equal(context("2026-12-08",{calendarResolution:{
+  ...day("2026-12-08"),day:{main:{id:"sancti:12-08:1:w"}}
+}}),null,"Immaculate Conception in Advent: no silence asserted (§83a)");
 assert.equal(context("2026-03-25",{celebrationType:"VOTIVE"})?.season,"PASSIONTIDE",
   "An actual votive proper does not change the annual liturgical season");
 assert.equal(context("2026-04-03"),null,"Good Friday cannot inherit an ordinary Mass organ policy");
@@ -87,4 +93,28 @@ assert.equal(prepareMassSessionFromV346(base,{form:"sung",proper,
   organ1962:{...src,verified:false}}).resolvedMass.provenance.organ1962,null);
 assert.equal(prepareMassSessionFromV346(base,{form:"sung",proper})
   .resolvedMass.provenance.organ1962,null,"Old host caller remains fail-closed");
+// §83(b): organ only on Gaudete and Laetare.
+const note=(plan,form="MISSA_CANTATA_SIMPLE")=>project1962ReaderOrganNote({massCard:{sectionId:"AO.CARD.006",blocks:[]},
+  resolvedMass:{form,overlays:[],provenance:{organ1962:plan}}});
+for(const [date,label] of [["2026-12-13","Gaudete"],["2026-03-15","Laetare"]]){
+  const plan=context(date);
+  assert.equal(plan?.organOnlySunday,true,label+" not recognised");
+  assert.equal(note(plan)?.status,"PERMITTED",label+": the organ is permitted (§83b)");
+  assert.deepEqual([...note(plan).authority].includes("83b"),true);
+}
+assert.equal(context("2026-12-06")?.organOnlySunday,false,"Second Sunday of Advent is not Gaudete");
+assert.equal(note(context("2026-12-06"))?.status,"ACCOMPANIMENT_ONLY");
+assert.equal(note(context("2026-03-22"))?.status,"ACCOMPANIMENT_ONLY","Passion Sunday is not Laetare");
+// §81(c): September Ember days (2026: after the third Sunday, 20 Sept) when the ferial Mass is said.
+for(const date of ["2026-09-23","2026-09-25","2026-09-26"]){
+  const plan=context(date);
+  assert.equal(plan?.septEmberFerial,true,date+" is a September Ember feria");
+  assert.equal(note(plan)?.status,"ACCOMPANIMENT_ONLY",date+": §81(c) restriction missing");
+}
+assert.equal(context("2026-09-24")?.septEmberFerial,false,"Ember Thursday does not exist");
+assert.equal(note(context("2026-09-16"))?.status,"PERMITTED","The week before is unrestricted");
+const emberFeast=context("2026-09-23",{calendarResolution:{...day("2026-09-23"),day:{main:{id:"sancti:09-23:2:r"}}}});
+assert.equal(emberFeast?.septEmberFerial,false,"A feast replacing the Ember feria lifts §81(c)");
+assert.equal(note(emberFeast)?.status,"PERMITTED");
+
 console.log("Calendar → Mass → existing 1958 organ authority: PASS — same-day 1962 resolver, eight seasons, context holds, triduum, original host compatibility");
