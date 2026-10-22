@@ -85,7 +85,7 @@ export function buildPriority16ScriptureSelections(proposal,review){
     usesWitnessTextOnly:true,printedEditionCollationApproved:false
    });
  });
- if(ids.size!==16||pack.reduce((n,e)=>n+e.pageSpans.length,0)!==32)
+ if(ids.size!==16||pack.reduce((n,e)=>n+e.pageSpans.length,0)!==34)
   throw new Error('Priority-16 research selection inventory has drifted');
  return Object.freeze(pack);
 }
