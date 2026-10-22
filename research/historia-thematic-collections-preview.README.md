@@ -186,6 +186,12 @@ In the fourth, full `ao_historia_all=1` research mode only, `src/scripture/histo
 
 The acceptance gate is a **green GitHub Actions Node and Chromium job** on the relevant commit. This is research implementation verification only. Printed Catholic Bible edition collation and explicit approval of main-reading additions are separate, still-open responsibilities.
 
+## Economical restoration proposal (16 candidates) — 22 October 2026
+
+A source-grounded editor's review packet now proposes **34 exact original-Scripture passages** for the **16 priority potential main-narrative restorations**. The original parent readings contain **418 verses** and the proposed selections contain **196**, a **53.1% reduction** by Douay–Rheims verse count. The reader words remain owned by the uncollated witness files, not this proposal. Ten short narratives remain intact; six longer sources have clearly separated selections. All candidates remain **unapproved**, with special cautions for Daniel's canonical Greek prayer and hymn, the Numbers 13–14 intercession, Joshua's two speeches, and the Maccabean martyrs.
+
+Report and proposed approval protocol: `research/historia-priority16-scripture-editorial-packet-20261022.md`. Structured selectors: `data/research/historia-salutis-priority16-economical-selections-20261022.v1.json`. Source model and tests: `src/scripture/historia-priority16-selections.js`, `tests/historia-priority16-economical-selections.mjs`. The 16-entry test passed in GitHub Actions run [39723879828](https://github.com/Fulcanelli13/ad-orientem/actions/runs/39723879828), along with the prior mobile Chromium acceptance journey. **No main reader source verses or 54-chapter manuscript content have been changed.**
+
 ## Main manuscript protection
 
 - The 54-chapter research proposal at data/research/historia-salutis-p3-provisional-reading-chapter-consolidation-20261021.v2.json is unchanged.
