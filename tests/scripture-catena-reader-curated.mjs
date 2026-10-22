@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
-import {CATENA_READER_QUESTION_ROWS,CATENA_READER_QUESTION_SCHEMA,curatedCatenaReaderQuestions,curatedCatenaReaderCompanions}
+import {CATENA_READER_QUESTION_ROWS,CATENA_READER_QUESTION_SCHEMA,curatedCatenaReaderQuestions,curatedCatenaReaderCompanions,suggestCatenaNextReadingQuestions}
  from "../src/scripture/catena-reader-questions.js";
 import {indexCatenaMessages,suggestCatenaQuestions} from "../src/scripture/catena-messenger.js";
 assert.equal(CATENA_READER_QUESTION_SCHEMA,"ao.catena.reader-source-questions.v1");
@@ -72,6 +72,44 @@ for(const proposal of CATENA_READER_QUESTION_ROWS){
   "Wrong source owner must suppress question: "+proposal.id);
 }
 assert.deepEqual([...covered].sort(),["john","luke","mark","matthew"]);
+// Same-pericope followups must be source-validated and exclude already read routes.
+for(const [chunkName,pericopeId,initialId] of [
+ ["matthew-05-08","catena.matthew.6.9","mat-our-father"],
+ ["mark-13-16","catena.mark.14.22","mark-new-passover"],
+ ["luke-17-20","catena.luke.18.9","luke-pharisee-pride"],
+ ["john-17-20","catena.john.20.19","john-remit-sins"]
+]){
+ const pack=JSON.parse(readFileSync("data/scripture/catena/chunks/"+chunkName+".json","utf8"));
+ const section=pack.pericopes.find(x=>x.id===pericopeId);
+ const originals=indexCatenaMessages([{id:section.id,citation:section.citation,
+  source:{url:section.source_url},segments:section.segments}]);
+ const options=curatedCatenaReaderQuestions(originals,{limit:6});
+ const active=options.find(x=>x.id===initialId);
+ assert.ok(active,"The current passage must contain the curated question");
+ const next=suggestCatenaNextReadingQuestions(originals,active,{visitedIds:[active.id],limit:2});
+ assert.ok(next.length>0,"There should be a second question for "+pericopeId);
+ assert.ok(next.length<=2);
+ for(const item of next){
+  assert.equal(item.sourcePointer.split(":")[0],pericopeId);
+  assert.notEqual(item.id,active.id);
+  assert.notEqual(item.sourcePointer,active.sourcePointer);
+  assert.ok(options.some(x=>x.id===item.id));
+ }
+ const readAll=suggestCatenaNextReadingQuestions(originals,active,{
+  visitedIds:options.map(x=>x.id),limit:2
+ });
+ assert.equal(readAll.length,0,"Explored questions must not be recycled as new turns");
+ assert.equal(suggestCatenaNextReadingQuestions(originals,{...active,sourcePointer:"catena.john.1.1:0"}).length,0,
+  "Invalid current source pointer must fail closed");
+ const first=next[0];
+ const latest=suggestCatenaNextReadingQuestions(originals,active,{visitedIds:[active.id,first.id]});
+ assert.equal(latest.some(x=>x.id===first.id),false);
+ const sourceAuthor=originals.find(x=>x.id===active.sourcePointer).father;
+ if(next.some(x=>originals.find(r=>r.id===x.sourcePointer)?.father!==sourceAuthor))
+  assert.notEqual(originals.find(x=>x.id===next[0].sourcePointer).father,sourceAuthor,
+   "Prefer another Father's own source-backed question when available");
+}
+
 assert.equal(names.size,60);
 assert.equal(verifiedPairs,13);
 assert.ok(curatedCatenaReaderQuestions([]).length===0);

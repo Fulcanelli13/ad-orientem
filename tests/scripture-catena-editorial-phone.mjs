@@ -109,6 +109,46 @@ try{
   assert.equal(await btn.isDisabled(),true);
   assert.ok((await page.locator(".aoCatenaMessenger").evaluate(el=>el.scrollWidth-el.clientWidth))<=2);
  }
+ // Multi-turn exploration without resetting the Scripture passage or
+ // duplicating previous question bubbles and source texts.
+ await page.goto(url+"?book=Matthew&passage=6:9",{waitUntil:"domcontentloaded",timeout:60000});
+ await page.locator(".aoCatenaMessenger").waitFor({state:"visible",timeout:25000});
+ await page.locator('[data-catena-curated-question="mat-our-father"]').click();
+ let nextPanel=page.locator('[data-catena-next-after="mat-our-father"]');
+ await nextPanel.waitFor({state:"visible",timeout:15000});
+ assert.equal(await nextPanel.locator("[data-catena-next-question]").count(),2);
+ assert.equal(await page.locator('[data-catena-curated-question="mat-our-father"]').getAttribute("aria-pressed"),"true");
+ assert.equal(await page.locator(".aoCatenaMUser[data-catena-question-id]").count(),1);
+ for(const target of await nextPanel.locator("[data-catena-next-source]").evaluateAll(xs=>xs.map(x=>x.dataset.catenaNextSource)))
+  assert.ok(target.startsWith("catena.matthew.6.9:"),
+   "Follow-up routes must not jump to an unrelated Gospel pericope");
+ await nextPanel.locator('[data-catena-next-question="mat-prayer-adoption"]').click();
+ await page.locator('[data-catena-next-after="mat-prayer-adoption"]').waitFor({state:"visible",timeout:15000});
+ assert.equal(await page.locator('[data-catena-next-after]').count(),1,
+  "Only the active question should suggest the next two replies");
+ assert.equal(await page.locator(".aoCatenaMUser[data-catena-question-id]").count(),2);
+ assert.equal(await page.locator('[data-catena-curated-question="mat-prayer-adoption"]').getAttribute("aria-pressed"),"true");
+ const third=page.locator('[data-catena-next-question="mat-hallowed"]');
+ await third.waitFor({state:"visible",timeout:15000});
+ await third.click();
+ assert.equal(await page.locator(".aoCatenaMUser[data-catena-question-id]").count(),3);
+ assert.equal(await page.locator(".aoCatenaMResearchBadge").count(),0);
+ assert.ok(await page.locator(".aoCatenaMMeta a[href^='https://www.ecatholic2000.com/']").count()>=2);
+ const repeated=page.locator('[data-catena-curated-question="mat-our-father"]');
+ const beforeRepeated=await page.locator(".aoCatenaMUser[data-catena-question-id]").count();
+ const beforePanels=await page.locator("[data-catena-next-after]").count();
+ await repeated.click();
+ assert.equal(await page.locator(".aoCatenaMUser[data-catena-question-id]").count(),beforeRepeated,
+  "Revisited question must not insert a second user bubble");
+ assert.equal(await page.locator("[data-catena-next-after]").count(),beforePanels,
+  "Revisiting must not create a second follow-up panel");
+ assert.equal(await page.locator('.aoCatenaMRow[data-catena-fragment-id="catena.matthew.6.9:5"]').count(),1,
+  "Exact original source must remain unique within a Scripture session");
+ assert.ok((await page.locator('.aoCatenaMRow[data-catena-fragment-id="catena.matthew.6.9:5"]')
+  .getAttribute("class")).includes("aoCatenaMRevisited"));
+ assert.ok((await page.locator(".aoCatenaMessenger").evaluate(el=>el.scrollWidth-el.clientWidth))<=2,
+  "Continuing through questions must not overflow 390px phone width");
+
  await page.goto(url+"?research=1",{waitUntil:"domcontentloaded",timeout:60000});
  await page.locator(".aoCatenaMessenger").waitFor({state:"visible",timeout:20000});
  const panel=page.locator(".aoCatenaMResearch");
