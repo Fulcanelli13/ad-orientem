@@ -723,3 +723,33 @@ export function curatedCatenaReaderQuestions(rows,{limit=5}={}){
  }
  return Object.freeze(selected);
 }
+
+/**
+ * Companion excerpts are deliberately not inferred by keyword similarity.
+ * Only original wording explicitly mapped and verified against the currently
+ * selected source pericope is eligible. Distinct voices are never combined.
+ */
+export function curatedCatenaReaderCompanions(rows,route,{limit=2}={}){
+ if(!Array.isArray(rows)||!route||route.kind!=="curated-source-pointer")
+  return Object.freeze([]);
+ const item=CATENA_READER_QUESTION_ROWS.find(x=>x.id===route.id&&x.sourcePointer===route.sourcePointer);
+ if(!item?.related?.length)return Object.freeze([]);
+ const source=rows.find(r=>r.id===route.sourcePointer);
+ if(!source||source.father!==item.father||!source.text.includes(item.evidence))
+  return Object.freeze([]);
+ const found=[];
+ const max=Math.max(1,Math.min(3,limit));
+ for(const rel of item.related){
+  const row=rows.find(r=>r.id===rel.sourcePointer);
+  if(!row||row.pericopeId!==source.pericopeId||
+   row.father!==rel.father||row.father===source.father||
+   !row.text.includes(rel.evidence)||
+   !row.sourceUrl?.startsWith("https://www.ecatholic2000.com/"))continue;
+  found.push(Object.freeze({
+   ...row,comparisonSourceEvidence:rel.evidence,
+   comparisonOf:source.id,comparisonQuestionId:item.id
+  }));
+  if(found.length>=max)break;
+ }
+ return Object.freeze(found);
+}
