@@ -80,6 +80,7 @@ try{
   assert.equal(await p.locator('.spxc-turn').count(),2,'alternative branch must replace sibling');
   await p.locator('[data-spxc-source]').last().click();
   assert.equal(await p.locator('.spxc-cite').isVisible(),true);
+  assert.match(await p.locator('.spxc-cite').innerText(),/Only the feelings explicitly expressed/,'chapter evidence notes must persist through follow-up branches');
   assert.equal(await p.locator('.spxc-cite a[href^="https://"]').count(),1);
   await p.locator('.spxc-cite-close').click();
   await p.locator('#spxc-lang').click();
