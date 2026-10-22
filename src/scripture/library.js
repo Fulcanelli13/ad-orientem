@@ -231,6 +231,19 @@ export function mountScriptureLibrary(root,{
        :"Challoner coordinates only; other editions require a verified Catholic crosswalk.","aoScriptureNotice"));
      // Evidence-gated context, never an exact source placement or invented Atlas pin.
      const linked=thematicIdentityLinks?.entries?.find(e=>e.episodeId===thematicEpisode.id);
+     if(linked?.editorialRecommendation){
+      const ed=linked.editorialRecommendation;
+      const title=element("p",null,"aoScriptureNotice");
+      title.dataset.historiaEditorialRecommendation=thematicEpisode.id;
+      title.textContent=(lang==="fr"?"Proposition éditoriale (non approuvée) : "
+       :"Editorial recommendation (not approved): ")+
+       ed.proposedEditorialDisposition.replaceAll("_"," ").toLowerCase()+
+       " · "+ed.reviewRationale+
+       " · "+ed.nearestMovementId+
+       (ed.selectedSourceOverlapCount?
+        (lang==="fr"?" · passages déjà sélectionnés : ":" · selected passages already intersect: ")+ed.selectedSourceOverlapCount:"");
+      active.append(title);
+     }
      if(linked?.covenantalContext){
       const c=linked.covenantalContext;
       active.append(element("p",(lang==="fr"?"Contexte de l'Histoire du Salut (non inclus dans la lecture) : "
@@ -298,12 +311,16 @@ export function mountScriptureLibrary(root,{
      }
      if(linked?.atlasIdentity){
       const a=linked.atlasIdentity;
-      const exact=a.relation!=="PASSAGE_CONTAINED_IN_COMPOSITE_TEACHING_ATLAS_RECORD";
-      active.append(element("p",(lang==="fr"?"Lien dans l'Atlas biblique : ":"Biblical Atlas evidence: ")+
-       a.atlasEventTitle+" · "+a.atlasSourceReference+
-       (exact?" · "+(lang==="fr"?"même événement ou enseignement décrit":"matching named event or teaching")
-       :" · "+(lang==="fr"?"contenu dans une notice groupée":"contained in a composite record")),
-       "aoScriptureNotice"));
+      const interpretation=a.relation==="PASSAGE_CONTAINED_IN_COMPOSITE_TEACHING_ATLAS_RECORD"?
+       (lang==="fr"?"contenu dans une notice groupée":"contained in a composite record"):
+       a.relation==="SAME_SOURCE_PASSAGE_DIFFERENT_SUBACTION_OR_EMPHASIS"?
+       (lang==="fr"?"même texte biblique, action différente":"same Scripture passage, different narrative action"):
+       (lang==="fr"?"correspondance de scène proposée, non homologuée":"reviewed named-scene correspondence; not canonical approval");
+      const evidence=element("p",(lang==="fr"?"Lien documentaire dans l'Atlas : ":"Biblical Atlas evidence: ")+
+       a.atlasEventTitle+" · "+a.atlasSourceReference+" · "+interpretation,
+       "aoScriptureNotice");
+      evidence.dataset.historiaAtlasEvidence=thematicEpisode.id;
+      active.append(evidence);
      }
      if(linked?.atlasRuntimeNavigation?.status==="EVENT_PRESENT_IN_ATLAS_151_SEQUENCE" &&
         /^biblical:event:[a-z0-9-]+$/.test(linked.atlasRuntimeNavigation.eventKey)){
