@@ -85,8 +85,10 @@ for(let i=0;i<original.chapters.length;i++){
     restored.a=oldNode.a;
     restored.sourceDrawerNote=oldNode.sourceDrawerNote;
     if(oldNode.sourceDrawerNote===undefined)delete restored.sourceDrawerNote;
-    restored.approvedReply=oldNode.approvedReply;
-    restored.publicationEligible=oldNode.publicationEligible;
+    if('approvedReply' in oldNode)restored.approvedReply=oldNode.approvedReply;
+    else delete restored.approvedReply;
+    if('publicationEligible' in oldNode)restored.publicationEligible=oldNode.publicationEligible;
+    else delete restored.publicationEligible;
     assert.deepEqual(restored,oldNode,'other fields changed '+key);
    }
   }
