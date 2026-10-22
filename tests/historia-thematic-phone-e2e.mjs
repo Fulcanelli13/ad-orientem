@@ -43,6 +43,35 @@ try{
  const output=resolve(root,"test-output/historia-thematic");
  await mkdir(output,{recursive:true});
 
+ // Editorial-only proposal comparison preview. Source words must be read
+ // verbatim from the Catholic witness files, not embedded in the HTML.
+ const editorial=await context.newPage();
+ editorial.on("pageerror",e=>errors.push(String(e.message)));
+ await editorial.goto(base+"/research/historia-priority16-review.html",
+  {waitUntil:"domcontentloaded",timeout:90000});
+ await editorial.locator("#episode-list button").first().waitFor({timeout:30000});
+ assert.equal(await editorial.locator("#episode-list button").count(),16);
+ assert.equal(await editorial.locator("#detail .verse").count(),4);
+ assert.match(await editorial.locator("#detail").innerText(),/Genesis 6:5–8/);
+ assert.match(await editorial.locator("#detail").innerText(),/Existing salvation-history movement/);
+ await editorial.locator('[data-episode-id="hist-omitted-035"]').click();
+ await editorial.waitForFunction(()=>
+  document.querySelector("#heading")?.textContent==="The twelve spies" &&
+  document.querySelectorAll("#detail .verse").length===19,null,{timeout:30000});
+ assert.equal(await editorial.locator("#detail .break").count(),6);
+ await editorial.locator("#edition").selectOption("crampon-1923");
+ await editorial.waitForFunction(()=>
+  document.querySelector("#detail .warning")?.textContent?.includes("Crampon 1923") &&
+  document.querySelectorAll("#detail .verse").length===19,null,{timeout:30000});
+ const editorialSizing=await editorial.evaluate(()=>({
+  viewport:innerWidth,width:document.documentElement.scrollWidth
+ }));
+ assert(editorialSizing.width<=editorialSizing.viewport+1,
+  "Priority 16 review must fit a 390px phone: "+JSON.stringify(editorialSizing));
+ await editorial.screenshot({path:resolve(output,"priority16-original-witness-390.png"),animations:"disabled"});
+ results.push("16-episode comparison preview: pinned source words, visible excerpt gaps, Crampon switch, mobile fit");
+ await editorial.close();
+
  // First check standalone mode loads authentic source-owned Scripture.
  await page.goto(base+"/research/historia-thematic-collections-preview.html",
   {waitUntil:"domcontentloaded",timeout:90000});
