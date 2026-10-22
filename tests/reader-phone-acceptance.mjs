@@ -209,6 +209,18 @@ try{
   });
   assert.equal(wordsFocus.cue,"AO.SM.C0173",
     "pre-elevation words cue has no phone focus territory: "+JSON.stringify(wordsFocus));
+  const voiceEvidence=await page.evaluate(()=>{
+    const node=document.querySelector('.ao-rail-right [data-channel="priest-voice"]');
+    const copy=node?.querySelector('[data-role="priest-voice"]');
+    return {active:node?.dataset.active,voiceFallback:node?.dataset.voiceTextFallback,
+      text:copy?.textContent??"",display:copy?getComputedStyle(copy).display:null};
+  });
+  if(voiceEvidence.active==="true"){
+    assert.equal(voiceEvidence.voiceFallback,"true",
+      "Consecration voice tile must not rely on the unpainted icon");
+    assert.ok(voiceEvidence.display!=="none"&&voiceEvidence.text.trim()!=="—",
+      "Consecration words lost the priest's audible/silent source cue");
+  }
   assert.equal(await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getNativeEventState()?.bell??null),null,
     "Host elevation bell fires on the words cue before the action cue");
 
@@ -239,6 +251,95 @@ try{
   const elevationState=await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getNativeEventState());
   assert.equal(elevationState?.nativeCueId,"AO.SM.C0174");
   assert.equal(elevationState?.bell?.label,"ELEVATION BELL","Host elevation action cue lost its bell state");
+  // Regression: the section explanation must follow scroll-to-cue updates.
+  // Static card navigation itself has no attested LIVE cue and must not
+  // preempt the precise ceremonial rubric or the existing action rails.
+  await page.waitForFunction(()=>{
+    const shell=document.querySelector("[data-ao-reader-shell]");
+    const explanation=document.querySelector('[data-role="objective-context"]');
+    return shell?.dataset.objectiveContext==="true" &&
+      explanation&&!explanation.hidden&&explanation.dataset.blockId==="AO.SM.B052";
+  },null,{timeout:5000});
+  const objectiveVisual=await page.evaluate(()=>{
+    const box=document.querySelector('[data-role="objective-context"]');
+    const parent=document.querySelector(".ao-reader-stage");
+    const top= document.querySelector('.ao-state-cell[data-side="faithful"]');
+    const left=document.querySelector(".ao-rail-left");
+    const posture=left?.querySelector('[data-channel="posture"]');
+    const postureCopy=posture?.querySelector('[data-role="posture-left"]');
+    const right=document.querySelector(".ao-rail-right");
+    const position=right?.querySelector('[data-channel="priest-position"]');
+    const action=right?.querySelector('[data-channel="priest-action"]');
+    const actionText=action?.querySelector('[data-role="priest-action"]');
+    return {
+      context:box?.textContent??"",
+      contextHeight:box?.getBoundingClientRect().height??0,
+      ribbonHeight:box?.parentElement?.getBoundingClientRect().height??0,
+      oldTopDisplay:top?getComputedStyle(top).display:null,
+      leftVisible:left?.dataset.visible??null,
+      postureDisplay:posture?getComputedStyle(posture).display:null,
+      postureIconHidden:posture?.querySelector('[data-icon-slot="posture"]')?.hidden??true,
+      postureCopy:postureCopy?.textContent??"",
+      postureCopyDisplay:postureCopy?getComputedStyle(postureCopy).display:null,
+      rightVisible:right?.dataset.visible??null,
+      positionActive:position?.dataset.active??null,
+      positionLabel:position?.querySelector('[data-role="priest-position-rail"]')?.textContent??null,
+      sourceActionFallback:action?.dataset.actionTextFallback??null,
+      sourceActionText:actionText?.textContent??"",
+      sourceActionTextDisplay:actionText?getComputedStyle(actionText).display:null,
+      viewportOverflow:document.documentElement.scrollWidth-innerWidth,
+    };
+  });
+  assert.match(objectiveVisual.context,/Host|Sacred Host/,
+    "The context must explain the Consecration, not another Mass section");
+  assert.equal(objectiveVisual.oldTopDisplay,"none",
+    "LIVE explanation did not replace the duplicate top YOU/PRIEST cells");
+  assert.equal(objectiveVisual.leftVisible,"true",
+    "The faithful posture must remain visible in the left rail");
+  assert.equal(objectiveVisual.postureDisplay,"grid",
+    "Context ribbon hid the actual faithful posture tile via legacy LIVE CSS");
+  assert.ok(!objectiveVisual.postureIconHidden ||
+    (objectiveVisual.postureCopyDisplay!=="none"&&
+     /kneel/i.test(objectiveVisual.postureCopy)&&
+     !/\[object Object\]/.test(objectiveVisual.postureCopy)),
+    "Faithful posture must show a reviewed icon or a legible source-state label");
+  assert.equal(objectiveVisual.rightVisible,"true",
+    "Priest actions and position must remain on the right rail");
+  assert.equal(objectiveVisual.positionActive,"true",
+    "Context ribbon displaced the priest's active station");
+  assert.equal(objectiveVisual.sourceActionFallback,"true",
+    "Blank elevation priest-action pictogram must use its canonical label");
+  assert.ok(objectiveVisual.sourceActionTextDisplay!=="none" &&
+    objectiveVisual.sourceActionText.trim() &&
+    !/^—$/.test(objectiveVisual.sourceActionText.trim()),
+    "Elevation right rail still contains an empty priest-action tile");
+  assert.ok(objectiveVisual.ribbonHeight<=90,
+    "Explanatory ribbon expanded excessively on a narrow phone");
+  assert.ok(objectiveVisual.viewportOverflow<=1,
+    "Context ribbon created horizontal phone overflow");
+  const rubricLegibility=await page.evaluate(()=>{
+    const rubric=document.querySelector('.ao-reader-paragraph[data-kind="RUBRIC"][data-cue-id="AO.SM.C0174"]');
+    const annotation=rubric?.querySelector(".ao-live-inline-rubrics");
+    return {
+      exists:Boolean(rubric),
+      visible:Boolean(rubric&&getComputedStyle(rubric).display!=="none"),
+      opacity:rubric?Number(getComputedStyle(rubric).opacity):0,
+      annotationOpacity:annotation?Number(getComputedStyle(annotation).opacity):null,
+    };
+  });
+  assert.ok(rubricLegibility.exists&&rubricLegibility.visible,
+    "The exact Host elevation source rubric must remain visible");
+  assert.ok(rubricLegibility.opacity>=0.55,
+    "Source rubric must remain readable, not disappear under faded LIVE focus");
+  assert.ok(rubricLegibility.annotationOpacity==null ||
+    rubricLegibility.annotationOpacity>=0.85,
+    "Optional certified ceremonial detail is excessively dim");
+  await mkdir(resolve(repoRoot,"artifacts/live-cinematics"),{recursive:true});
+  await page.screenshot({
+    path:resolve(repoRoot,"artifacts/live-cinematics/context-host-390-en.png"),
+    fullPage:false,
+  });
+
 
   async function tapMode(mode){
     const prefs=page.locator('[data-reader-preferences]');
