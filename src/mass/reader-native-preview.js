@@ -2719,8 +2719,17 @@ export async function mountNativeReaderPreview({
     const cr=scroll.getBoundingClientRect?.();
     const tr=target.getBoundingClientRect?.();
     if(!cr||!tr)return false;
+    const exactRows=[...(scroll.querySelectorAll?.(".ao-reader-paragraph[data-cue-id]")??[])];
+    // The requested cue can be the final rubric on a 30-section SIMPLE
+    // card even though the 65-card LIVE model owns a separate elevation
+    // card. A center-based scroll target can land earlier in a short card;
+    // the focus tracker deliberately assigns the last cue at the bottom
+    // edge. Preserve the actual source cue, not a macro/card-number offset.
+    const atFinalSourceCue=exactRows.length>1&&exactRows.at(-1)===target;
     const absoluteCenter=(tr.top-cr.top+scroll.scrollTop)+(tr.height/2);
-    scroll.scrollTop=Math.max(0,absoluteCenter-scroll.clientHeight*.39);
+    scroll.scrollTop=atFinalSourceCue
+      ? Math.max(0,scroll.scrollHeight-scroll.clientHeight)
+      : Math.max(0,absoluteCenter-scroll.clientHeight*.39);
     cueTracker?.refresh?.();
     return true;
   }
