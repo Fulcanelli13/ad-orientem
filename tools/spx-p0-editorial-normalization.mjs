@@ -48,7 +48,7 @@ function pluralFrench(s){
  return out;
 }
 export function applyPiusEditorialReview(chapters,overlay){
- assert.equal(overlay.schema,'AO_SPX_P0_ENRICHED_BILINGUAL_OPENINGS_REVIEW_20261022_V1');
+ assert.equal(overlay.schema,'AO_SPX_82_BILINGUAL_SOURCE_ADAPTATION_LAYER_V2');
  assert.equal(overlay.status,'EDITORIAL_ONLY_UNPUBLISHED');
  const byId=new Map(chapters.map(c=>[c.id,c]));
  let voiceChanges=0,papalNodes=0,unchangedNodes=0;
@@ -95,7 +95,7 @@ export function applyPiusEditorialReview(chapters,overlay){
   }
   expansions++;
  }
- assert(expansions===34);
+ assert(expansions===82);
  return {papalNodes,voiceChanges,unchangedNodes,expandedOpenings:expansions,
   unexpandedOpenings:chapters.length-expansions};
 }
