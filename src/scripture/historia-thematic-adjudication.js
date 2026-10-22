@@ -85,7 +85,7 @@ export function composeHistoriaResearchEvidence(base,atlasReview,restorationRevi
  }
  if(atlasReview.entries.filter(e=>e.navigation?.eventKey).length!==9 ||
     restorationReview.entries.filter(e=>e.selectedScriptureVerseIntersections.length).length!==2 ||
-    combined.size!==59)throw new Error('Merged research evidence cardinality changed');
+    combined.size!==81)throw new Error('Merged research evidence cardinality changed');
  return Object.freeze({
   schema:'AO_HISTORIA_THEMATIC_RESEARCH_COMPOSED_EVIDENCE_V1',
   status:'RESEARCH_ONLY_NO_PUBLICATION_OR_CANONICAL_IDENTITY_PROMOTION',
