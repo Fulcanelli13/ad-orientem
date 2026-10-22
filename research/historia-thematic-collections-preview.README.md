@@ -171,6 +171,21 @@ All **13 Visions and Revelations** references retain a genre lock: do not interp
 
 The current acceptance work only certifies the **technical contract and source-coordinate integrity**. Publication requires genuine historical edition collation, editorial judgement on the remaining scopes and questions of genre, and source-grounded canonical episode identity decisions. Explicit approval remains necessary to expose these collections in normal Ad Orientem navigation.
 
+## Restoration and Atlas editorial decision batch — 22 October 2026
+
+The previous 217-source completion and 150-entry seam reviews are followed by **two reviewed decision ledgers**, neither of which mutates the main 54-chapter salvation-history manuscript or publishes a geographic Atlas identity:
+
+- `data/research/historia-salutis-core-restoration-46-adjudication-20261022.v1.json`: exactly **46** previously identified possible main-narrative restorations. Proposed disposition: **16** priority scoped-insertion reviews, **23** conditional cases, **2** where the actual biblical verses are already selected, and **5** recommended for the supplementary collection. All 46 have individual rationale and nearest existing research-movement context, not automatic insertion rights.
+- `data/research/historia-salutis-atlas-28-named-scene-review-20261022.v1.json`: exactly **28** Atlas record candidates with the same Scripture citation. **26** have matching named-scene labels; **2** describe a different subaction/emphasis in the same Gospel passage (Jesus' synagogue appearance/rejection at Nazareth; Jesus showing his wounds/eating before the Apostles). Of the 26, **9** are navigable pre-existing Atlas stops. The remaining 19 are **documented but not linked**; no new event, pin, geographic location, or official canonical identifier was created.
+
+**Precise overlap correction:** the previous inventory marked three main-narrative chapter overlaps, but comparison against **actual selected verses** established just two: the golden calf/intercession (Exodus 32) and the Jordan crossing (Joshua 3). Solomon's apostasy is now accurately scoped to **1 Kings 11:1–13**, which does *not* intersect the selected **1 Kings 11:29–32** concerning Jeroboam. This means Solomon's fall remains a distinct optional story rather than an already narrated episode.
+
+These ledgers have source pointers and decision statuses. Both are explicitly nonfinal; the 16 high-priority suggestions do **not** constitute editorial acceptance, Scripture abridgment approval, or extra chapters. Even where a proposed movement is named, that is a **context zone**, not a claim the omitted passage is quoted in its existing reading.
+
+In the fourth, full `ao_historia_all=1` research mode only, `src/scripture/historia-thematic-adjudication.js` assembles the above records with the original 19-episode source mappings. The reader shows the proposed decisions as **not approved**, distinguishes *matching named scene* from *same text/different subaction*, and exposes nine valid additional Atlas routes using the existing Scripture→Find→Atlas→Scripture return mechanism. No direct Atlas link is created for an unlisted Atlas stop. The previous three research modes and all ordinary app navigation remain unchanged. The source test is `tests/historia-thematic-adjudication.mjs`; the phone Chromium test also checks a genuine Visitation Atlas return.
+
+The acceptance gate is a **green GitHub Actions Node and Chromium job** on the relevant commit. This is research implementation verification only. Printed Catholic Bible edition collation and explicit approval of main-reading additions are separate, still-open responsibilities.
+
 ## Main manuscript protection
 
 - The 54-chapter research proposal at data/research/historia-salutis-p3-provisional-reading-chapter-consolidation-20261021.v2.json is unchanged.
