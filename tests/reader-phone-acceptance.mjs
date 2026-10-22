@@ -457,9 +457,24 @@ try{
   let frenchHit=await frenchNext.boundingBox();
   await french.touchscreen.tap(frenchHit.x+frenchHit.width/2,frenchHit.y+frenchHit.height/2);
   await french.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId==="AO.LIVECURATED.AO.CARD.001.1");
+  const frenchOpening=await french.locator('[data-role="paragraphs"]').textContent();
+  assert.match(frenchOpening,/Introíbo ad altáre Dei/,
+    "After Asperges, the sourced Foot-of-Altar prayers must remain before the Introit");
+  // Asperges is explicitly FOOT_CLUSTER-owned; unlike Palm/Ash/Candlemas/
+  // Rogations, it does not authorize omitting the four opening prayer cards.
+  // Follow the actual 65-card curated source sequence to its B014 Introit.
+  for(const ordinal of [2,3,4,5]){
+    const next=await frenchNext.boundingBox();
+    await french.touchscreen.tap(next.x+next.width/2,next.y+next.height/2);
+    await french.waitForFunction(n=>
+      window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId==="AO.LIVECURATED.AO.CARD.001."+n,ordinal);
+  }
+  assert.equal(await french.evaluate(()=>
+    window.__AO_PHONE_PREVIEW.getCurrentCard().blocks?.[0]?.blockId),"AO.SM.B014",
+    "French Introit must remain owned by canonical B014, not an earlier Foot-of-Altar card");
   const frenchBody=await french.locator('[data-role="paragraphs"]').textContent();
   assert.match(frenchBody,/Réjouissons-nous ensemble dans le Seigneur/,
-    "French-only resolved Proper did not reach the native Mass card");
+    "French-only resolved Proper did not reach its source-owned Introit card");
   assert.notEqual((await french.locator('[data-role="card-title"]').textContent())?.trim(),"",
     "French native reader rendered a blank card title");
   await frenchContext.close();
