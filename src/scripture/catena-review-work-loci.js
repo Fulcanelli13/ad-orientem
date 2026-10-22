@@ -6,7 +6,7 @@
 export const CATENA_EXTERNAL_SOURCE_SCHEMA="ao.catena.matthew-original-work-preview-loci.v1";
 export function validateCatenaWorkLociPreview(data,contextReview){
  if(!contextReview||data?.schema!==CATENA_EXTERNAL_SOURCE_SCHEMA||
-  data.originalWorkResearchCommit!=="2507093ccb1ad153aa260d05ca3229d0bc7aed20"||
+  data.originalWorkResearchCommit!=="23a9dc9f45a5f9b90d17db80c0ed22ca6a60a597"||
   data.contextReviewSourceCommit!==contextReview.sourceResearchCommit||
   data.originalLanguageCollated!==false||data.humanApproved!==false||
   data.publicationEligibility!=="blocked_research_only"||data.records?.length!==18)

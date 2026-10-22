@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {validateCatenaWorkLociPreview} from "../src/scripture/catena-review-work-loci.js";
+import {validateCatenaNineFocus} from "../src/scripture/catena-nine-focus.js";
 import {CATENA_REVIEW_CHECKS,isCatenaReviewRouteEligible,
  validateCatenaReviewDecision,buildCatenaReviewExport,CATENA_REVIEW_EXPORT_SCHEMA} from "../src/scripture/catena-review-decisions.js";
 const data=JSON.parse(readFileSync("data/scripture/catena/editorial-matthew-first-30-review.v1.json","utf8"));
@@ -8,6 +9,13 @@ assert.equal(data.records.length,30);
 const works=JSON.parse(readFileSync("data/scripture/catena/editorial-matthew-work-loci.v1.json","utf8"));
 const external=validateCatenaWorkLociPreview(works,data);
 assert.equal(external.total,18);
+const focused=JSON.parse(readFileSync("data/scripture/catena/editorial-matthew-nine-focus.v1.json","utf8"));
+const nine=validateCatenaNineFocus(focused,data,external);
+assert.equal(nine.total,9);
+assert.equal(nine.byPointer.get("catena.matthew.13.1:17").fullWorkCitation,"Homily 44, section 5");
+assert.equal(nine.byPointer.get("catena.matthew.13.36:9").fullWorkCitation,"Homily 47, section 1");
+assert.throws(()=>validateCatenaNineFocus({...focused,independentlyEditorApproved:true},data,external),/CATENA_NINE_FOCUS_INVALID/);
+assert.throws(()=>validateCatenaNineFocus({...focused,records:focused.records.map((x,i)=>i===0?{...x,humanSignoff:true}:x)},data,external),/CATENA_NINE_FOCUS_RECORD_INVALID/);
 assert.equal(external.byPointer.size,18);
 assert.ok([...external.byPointer.values()].every(x=>x.originalLanguageCollated===false));
 assert.ok([...external.byPointer.values()].every(x=>x.independentHumanApproved===false));

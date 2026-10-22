@@ -57,7 +57,8 @@ footer{max-width:1300px;margin:auto;padding:0 20px 30px;font:12px/1.6 system-ui,
 <div class="kicker">Thirty source candidates</div>
 <div class="counts" id="countText" aria-live="polite">Loading source metadata…</div>
 <div class="filter" role="group" aria-label="Review scope">
-<button type="button" data-filter="ready" aria-pressed="true">22 candidates</button>
+<button type="button" data-filter="focus" aria-pressed="true">9 source-matched</button>
+<button type="button" data-filter="ready" aria-pressed="false">22 candidates</button>
 <button type="button" data-filter="escalated" aria-pressed="false">8 escalations</button>
 <button type="button" data-filter="all" aria-pressed="false">All 30</button>
 </div>
@@ -82,12 +83,13 @@ import {validateCatenaEditorialRoutes,validateCatenaEditorialReview,
 import {CATENA_REVIEW_CHECKS,isCatenaReviewRouteEligible,
   validateCatenaReviewDecision,buildCatenaReviewExport} from "../src/scripture/catena-review-decisions.js";
 import {validateCatenaWorkLociPreview} from "../src/scripture/catena-review-work-loci.js";
+import {validateCatenaNineFocus} from "../src/scripture/catena-nine-focus.js";
 const ROOT="../data/scripture/catena/";
 const KEY="ao-catena-matthew-human-review-local-draft-v1";
 const candidateList=document.getElementById("candidateList");
 const workspace=document.getElementById("workspace");
 const count=document.getElementById("countText");
-let registry=null,review=null,workLoci=null,filter="ready",active=null,sourceCache=new Map(),states=new Map();
+let registry=null,review=null,workLoci=null,nineFocus=null,filter="focus",active=null,sourceCache=new Map(),states=new Map();
 const $=(tag,className,text)=>{const el=document.createElement(tag);if(className)el.className=className;if(text!==undefined)el.textContent=text;return el};
 const append=(parent,tag,cls,str)=>{const e=$(tag,cls,str);parent.append(e);return e};
 const safe=(s)=>String(s||"");
@@ -125,7 +127,8 @@ function renderList(){
  candidateList.replaceChildren();
  for(const btn of document.querySelectorAll("[data-filter]"))btn.setAttribute("aria-pressed",String(btn.dataset.filter===filter));
  for(const rec of review.records){
-  if(filter==="ready"&&!isReady(rec)||filter==="escalated"&&isReady(rec))continue;
+  if((filter==="ready"&&!isReady(rec))||(filter==="escalated"&&isReady(rec))||
+    (filter==="focus"&&!nineFocus?.byPointer.has(rec.sourcePointer)))continue;
   const b=$("button","candidate");b.type="button";b.dataset.pointer=rec.sourcePointer;b.setAttribute("aria-pressed",String(active===rec.sourcePointer));
   append(b,"span","eyebrow","#"+rec.rank+" · "+rec.inheritedFatherLabel+" · "+rec.AIContextAssessment.replaceAll("_"," "));
   append(b,"span",null,rec.originalReaderQuestion);
@@ -278,6 +281,13 @@ async function select(pointer){
   const primary=$("section","source");
   primary.dataset.originalWorkEvidence=reference?"translated-parallel-found":"not-located";
   append(primary,"h3",null,"Underlying patristic work");
+  const pinned=nineFocus?.byPointer.get(rec.sourcePointer);
+  if(pinned){
+   primary.dataset.focusedSource="english-parallel-checked";
+   append(primary,"p","notice","FOCUSED EDITORIAL CHECK · Exact whole-work English passage located. Still requires independent source, speaker and rights verification.");
+   append(primary,"p","footnote","Parallel English wording to locate inside the full work: “"+pinned.shortParallelTranslationAnchor+"”");
+   append(primary,"p","footnote","Research has compared meaning between distinct English translations; this is not a verbatim original-language or edition-level collation.");
+  }
   if(reference){
    append(primary,"p","footnote","Located in a full-work ENGLISH translation; no Greek/Latin collation, authorship certificate or licence clearance.");
    append(primary,"p",null,reference.patristicWork+" · "+reference.workLocus);
@@ -312,20 +322,26 @@ document.getElementById("download").addEventListener("click",()=>{
 });
 document.querySelectorAll("[data-filter]").forEach(b=>b.addEventListener("click",()=>{
  filter=b.dataset.filter;renderList();
- const visible=review.records.filter(r=>filter==="all"||filter==="ready"===isReady(r));
+ const visible=review.records.filter(r=>filter==="all"||
+   (filter==="ready"&&isReady(r))||
+   (filter==="escalated"&&!isReady(r))||
+   (filter==="focus"&&nineFocus?.byPointer.has(r.sourcePointer)));
  if(!visible.some(x=>x.sourcePointer===active)&&visible.length)void select(visible[0].sourcePointer);
 }));
 try{
- const [index,reviewData,lociData]=await Promise.all([
+ const [index,reviewData,lociData,focusData]=await Promise.all([
   jsonFile("editorial-matthew-routes.v1.json"),
   jsonFile("editorial-matthew-first-30-review.v1.json"),
-  jsonFile("editorial-matthew-work-loci.v1.json")
+  jsonFile("editorial-matthew-work-loci.v1.json"),
+  jsonFile("editorial-matthew-nine-focus.v1.json")
  ]);
  registry=validateCatenaEditorialRoutes(index);
  review=validateCatenaEditorialReview(reviewData,registry);
  workLoci=validateCatenaWorkLociPreview(lociData,review);
+ nineFocus=validateCatenaNineFocus(focusData,review,workLoci);
  loadDraft();renderList();
- const first=review.records.find(isReady)||review.records[0];void select(first.sourcePointer);
+ const first=review.records.find(r=>nineFocus.byPointer.has(r.sourcePointer));
+ void select(first.sourcePointer);
 }catch(error){
  count.textContent="Research source unavailable";
  workspace.replaceChildren($("p","notice","Source registry unavailable: "+error.message+". No review actions can be recorded."));

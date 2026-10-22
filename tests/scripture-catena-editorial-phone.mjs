@@ -59,6 +59,10 @@ try{
  const editorUrl="http://127.0.0.1:4201/previews/living-catena-editorial-workbench-20261021.html";
  await page.goto(editorUrl,{waitUntil:"domcontentloaded",timeout:60000});
  await page.locator("#candidateList .candidate").first().waitFor({state:"visible",timeout:25000});
+ assert.equal(await page.locator("#candidateList .candidate").count(),9);
+ assert.equal(await page.locator('[data-focused-source="english-parallel-checked"]').count(),1);
+ assert.match(await page.locator('[data-focused-source="english-parallel-checked"]').innerText(),/FOCUSED EDITORIAL CHECK/);
+ await page.locator('[data-filter="ready"]').click();
  assert.equal(await page.locator("#candidateList .candidate").count(),22);
  await page.locator(".source .body").first().waitFor({state:"visible",timeout:20000});
  assert.ok((await page.locator(".source .body").first().innerText()).length>50);
