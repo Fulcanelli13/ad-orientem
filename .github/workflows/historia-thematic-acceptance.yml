@@ -9,6 +9,10 @@ on:
       - 'data/research/historia-salutis-thematic-*.json'
       - 'data/research/historia-salutis-thematic-*.md'
       - 'research/historia-thematic-*'
+      - 'research/historia-priority16-*'
+      - 'data/research/historia-priority16-*'
+      - 'data/research/historia-salutis-priority16-*'
+      - 'tests/historia-priority16-*.mjs'
       - 'prototypes/historia-salutis-p3-continuous-reader-20261021.html'
       - 'tests/historia-thematic-*.mjs'
   pull_request:
@@ -17,6 +21,10 @@ on:
       - 'src/scripture/**'
       - 'data/research/historia-salutis-thematic-*'
       - 'tests/historia-thematic-*.mjs'
+      - 'research/historia-priority16-*'
+      - 'data/research/historia-priority16-*'
+      - 'data/research/historia-salutis-priority16-*'
+      - 'tests/historia-priority16-*.mjs'
   workflow_dispatch:
 permissions:
   contents: read
