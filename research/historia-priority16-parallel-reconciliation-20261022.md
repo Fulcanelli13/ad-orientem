@@ -22,6 +22,19 @@ The project already had two independently prepared exact-Scripture source-select
 
 The **156-verse preview** is approximately **63% shorter** than the 418-verse complete source group. The context-preserving comparison retains **196 verses** (53% shorter). A purely *illustrative* mix taking the longer variant for the four integrity holds would retain **182 verses in 39 ranges**, but **no third proposal has been installed or accepted**. Reducing the number of verses is never sufficient evidence that a reading is better.
 
+## Verified source-integrity evidence — 22 October 2026
+
+The four unresolved cases now have a [verse-level source-evidence registry](../data/research/historia-priority16-four-integrity-evidence-20261022.v1.json) and an **Inspect essential omitted context** disclosure inside the same [156-verse working review](./historia-priority16-review.html). The disclosed source wording is loaded directly from the original Challoner, Crampon or CPDV witness; it is not copied into the registry. A source-parity regression checks **66 actual witness verse records**, 22 context verses across three editions. No third selection was created, and the single review still loads only the 156-verse plan.
+
+The differences are now explicit rather than approximated:
+
+- **Twelve spies (035):** the comparison uniquely includes Numbers 14:13–20, where Moses intercedes and receives a reply. It does not merely add verses: the 156-verse preview alone also contains Numbers 13:3 and 14:29. A final selection must judge both inclusions and exclusions.
+- **Joshua's renewal (044):** Joshua 24:26–27 provides the written covenant and memorial witness. The comparison also restores Joshua 23:1–3 and 24:17–18, but omits 23:7–8 and 24:13 from the working preview. The two speeches should remain distinguishable.
+- **Footwashing (174):** the longer John 13:1–17 is a true superset of the working selection, adding John 13:9–11 and 13:16–17, including Peter's answer and the closing teaching.
+- **Emmaus (184):** the intact Luke 24:13–35 is also a true superset, adding Luke 24:17–18, 22–24 and 33–34. These passages preserve the dialogue, empty-tomb testimony and the return to the other disciples.
+
+On textual-integrity grounds, the contextual alternatives deserve serious preference in all four cases. This is an **editorial assessment only**, not acceptance or permission to amend the 54-chapter manuscript. Especially for cases 035 and 044, neither alternative is a strict superset, so a final decision cannot be implemented by naively appending its added verses to the shorter plan. Any approved selection requires a new explicit version and provenance review.
+
 ## The four decisions that matter
 
 | Episode | Working preview | Context-preserving alternative | Why editorial approval is needed |
