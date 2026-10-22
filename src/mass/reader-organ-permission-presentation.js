@@ -12,6 +12,39 @@ const SEASONS=new Set([
 // windows. Partial-boundary cards are deliberately excluded: AO.CARD.001
 // (arrival at altar), .011 (first versicles), .024 (second Confiteor), and
 // .029 (blessing). A static Missal page is not a priest-action observation.
+// §16b: the celebrant's and ministers' chant, and the sung responses, take no
+// instrumental accompaniment. Cards made only of these cues (sung dialogues,
+// orations, Preface, Pater noster, Pax, dismissal, and the Gloria / Credo
+// intonations) carry the note in sung Masses. Derived from the sung corpus:
+// blocks with no Schola text whose priest voice is chant, plus their responses.
+const PRIEST_CHANT_ONLY_CUES=freeze(new Set([
+  "AO.SM.C0053","AO.SM.C0054","AO.SM.C0089","AO.SM.C0090",
+  "AO.SM.C0070","AO.SM.C0071","AO.SM.C0072","AO.SM.C0073","AO.SM.C0074",
+  "AO.SM.C0075","AO.SM.C0076","AO.SM.C0082","AO.SM.C0083","AO.SM.C0084","AO.SM.C0085",
+  "AO.SM.C0106","AO.SM.C0107","AO.SM.C0108","AO.SM.C0135","AO.SM.C0136",
+  "AO.SM.C0137","AO.SM.C0138","AO.SM.C0139","AO.SM.C0140","AO.SM.C0141","AO.SM.C0142","AO.SM.C0143","AO.SM.C0144",
+  "AO.SM.C0206","AO.SM.C0207","AO.SM.C0208","AO.SM.C0209","AO.SM.C0210","AO.SM.C0211",
+  "AO.SM.C0217","AO.SM.C0218","AO.SM.C0219","AO.SM.C0220",
+  "AO.SM.C0251","AO.SM.C0252","AO.SM.C0253","AO.SM.C0254","AO.SM.C0255",
+  "AO.SM.C0257","AO.SM.C0258","AO.SM.C0259","AO.SM.C0260",
+]));
+const SUNG_FORMS=new Set(["MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]);
+function cardCueIds(massCard){
+  return (massCard?.paragraphs??[]).flatMap(p=>(p?.sourceCueIds??[]).map(String))
+    .filter(id=>/^AO\.SM\.C\d{4}$/.test(id));
+}
+// Proper texts the choir sings (Introit, Gradual/Alleluia, Offertory,
+// Communion) and the silent Secret: a card carrying any of them is not a
+// priest-chant-only card, even if its cue-bearing paragraphs are.
+const NOT_PRIEST_CHANT_BLOCKS=freeze(new Set([
+  "AO.SM.B014","AO.SM.B021","AO.SM.B022","AO.SM.B030","AO.SM.B085","AO.SM.B040",
+]));
+export function isPriestChantOnlyCard(massCard){
+  if((massCard?.blocks??[]).some(block=>NOT_PRIEST_CHANT_BLOCKS.has(String(block?.blockId))))return false;
+  const cues=cardCueIds(massCard);
+  return cues.length>0 && cues.every(id=>PRIEST_CHANT_ONLY_CUES.has(id));
+}
+
 const LOW_MASS_FULL_CARD_WINDOWS=freeze({
   "AO.CARD.002":"ARRIVAL_TO_OFFERTORY","AO.CARD.003":"ARRIVAL_TO_OFFERTORY",
   "AO.CARD.004":"ARRIVAL_TO_OFFERTORY","AO.CARD.005":"ARRIVAL_TO_OFFERTORY",
@@ -50,6 +83,7 @@ function verifiedOrdinaryContext(resolvedMass){
     septEmberFerial:verified && declared.septEmberFerial===true,
     exceptionalFeastConfirmed:verified &&
       declared.exceptionalFeastConfirmed===true,
+    organOnlySunday:verified && declared.organOnlySunday===true,
   };
 }
 
@@ -169,6 +203,21 @@ export function project1962ReaderOrganNote({
     return verdictFor({moment:"CONSECRATION"},{
       scope:massCard.sectionId,
       reason:"During the Consecration instrumental music ceases (§27e)",
+    });
+  }
+  const sung=SUNG_FORMS.has(String(resolvedMass?.form??"").toUpperCase());
+  // §27g: no organ while the priest gives the final blessing (sung Mass).
+  if(sung && (massCard.blocks??[]).some(block=>block.blockId==="AO.SM.B092")){
+    return verdictFor({moment:"FINAL_BLESSING"},{
+      scope:massCard.sectionId,
+      reason:"No organ while the priest gives the blessing (§27g)",
+    });
+  }
+  // §16b: the priest's and ministers' chant and the sung responses are unaccompanied.
+  if(sung && isPriestChantOnlyCard(massCard)){
+    return verdictFor({moment:"PRIEST_CHANT"},{
+      scope:massCard.sectionId,
+      reason:"The celebrant's and ministers' chant and the sung responses are unaccompanied (§16b)",
     });
   }
   const context=verifiedOrdinaryContext(resolvedMass);
