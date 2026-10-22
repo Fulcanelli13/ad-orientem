@@ -33,6 +33,16 @@ for(const row of full.rows){
  assert.ok(orig.text.includes(row.canonicalSourceEvidencePhrase),"Catena evidence must be exact");
  assert.ok(row.parallelEnglishTextAnchor.length>=16);
  assert.ok(/^https:\/\/www\.newadvent\.org\/fathers\/\d+\.htm$/.test(row.translationURL));
+ const evidence=row.externalEnglishWitness;
+ assert.equal(evidence.checkedOn,"2026-10-22");
+ assert.equal(evidence.verbatimOnlineEnglishSearchAnchor,row.parallelEnglishTextAnchor);
+ assert.equal(evidence.onlineSearchAnchorObserved,true);
+ assert.equal(evidence.wholeWorkLocationObserved,true);
+ assert.equal(evidence.originalGreekOrLatinCompared,false);
+ assert.equal(evidence.criticalEditionChecked,false);
+ assert.equal(evidence.attestedHumanEditor,false);
+ assert.equal(evidence.status,"online_English_anchor_and_section_checked_for_editor_navigation_only");
+ assert.ok(evidence.checkedSection?.length>=10);
  assert.equal(row.humanEditorialSignoff,false);
  assert.equal(row.independentTextCriticalAuthentication,false);
  assert.equal(row.permissionToPublish,false);

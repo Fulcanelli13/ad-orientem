@@ -24,3 +24,8 @@ The digital source references were inspected from New Advent, whose NPNF transla
 A direct re-read of the English full homilies corrected two earlier *subsection* locations without altering the underlying Catena quotation or theological interpretation: Chrysostom's explanation of mutable rocky ground is at **Homily 44 §5**, and the present-versus-future harvest distinction at **Homily 47 §1**. The previous recorded §4 and §2 have been replaced in the crosswalk.
 
 The 9-source focussed shortlist `matthew-nine-focused-original-work-signoff.v1.json` now supplies a whole-work link, short English search anchor, corrected subsection, canonical source pointer, bounded relevance claim and qualification for ranks 2, 3, 4, 9, 12, 22, 23, 25, 29. Its function is to **facilitate an independent human review**. It does not fulfil the original-language text review, independent author verification, editorial-source licensing check, or human approval. Nine cases remain explicitly blocked for publication, like the rest of the catalogue.
+
+
+## Nine online English witnesses re-opened (22 October)
+
+For the existing nine focused records, the source-level English search anchor and work section were checked directly against their corresponding full-work New Advent pages. Each record now carries `externalEnglishWitness` with an observed date, subsection and exact lookup phrase, explicitly denying original-language comparison and independent human approval. The evidence is for **locating the argument in a separately translated work** only; it neither authenticates the printed Catena heading in a critical edition nor changes the original Catena quotation. **0 sign-offs recorded.**
