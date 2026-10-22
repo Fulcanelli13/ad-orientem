@@ -169,8 +169,8 @@ try{
   assert.equal(await page.evaluate(()=>document.querySelector("[data-ao-reader-shell]")?.parentElement?.dataset.aoLastNavInput),"swipe:previous",
     "horizontal right swipe was not owned by the v1.80 card-navigation path");
 
-  await page.evaluate(()=>window.__AO_PHONE_PREVIEW.showSection("AO.CANON.06"));
-  await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId==="AO.CANON.06");
+  await page.evaluate(()=>window.__AO_PHONE_PREVIEW.showSection("AO.LIVECURATED.AO.CANON.06.1"));
+  await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId==="AO.LIVECURATED.AO.CANON.06.1");
   await page.waitForTimeout(300);
   const topFocus=await page.evaluate(()=>({
     cue:window.__AO_PHONE_PREVIEW.getActiveCue(),
@@ -183,6 +183,10 @@ try{
   assert.equal(topFocus.cue,"AO.SM.C0168",
     "top of Host Consecration card does not belong to first cue: "+JSON.stringify(topFocus));
 
+  // The real curated reader separates Consecration preparation from words
+  // and elevation; the historical 48-card test navigated an obsolete union.
+  await page.evaluate(()=>window.__AO_PHONE_PREVIEW.showSection("AO.LIVECURATED.AO.CANON.06.2"));
+  await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId==="AO.LIVECURATED.AO.CANON.06.2");
   const card=page.locator(".ao-prayer-card");
   await card.evaluate(el=>{
     const target=el.querySelector('[data-cue-id="AO.SM.C0173"]');
@@ -395,26 +399,31 @@ try{
     source:window.__AO_PHONE_PREVIEW.sourceModel?.totalCards??null,
     progress:document.querySelector('[data-role="progress"]')?.textContent??"",
   }));
-  assert.deepEqual(switched,{mode:"LIVE",card:"AO.CANON.06",cue:"AO.SM.C0174",product:48,source:39,progress:"21 / 48"},
-    "MISSAL -> LIVE did not restore the exact 48-step Host elevation surface");
+  assert.equal(switched.mode,"LIVE");
+  assert.equal(switched.card,"AO.LIVECURATED.AO.CANON.06.2",
+    "MISSAL -> LIVE must return to the source-cued Host elevation card, not a 48-step macro");
+  assert.equal(switched.cue,"AO.SM.C0174");
+  assert.equal(switched.product,65,"Ordinary LIVE must use the actual 65-card presentation");
+  assert.equal(switched.source,39,"Canonical Sung source sections must remain unchanged");
+  assert.match(switched.progress,/^\d+ \/ 65$/,"LIVE progress must use curated card count");
 
   box=await nextButton.boundingBox();
   await page.touchscreen.tap(box.x+box.width/2,box.y+box.height/2);
-  await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId==="AO.CANON.07");
+  await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId==="AO.LIVECURATED.AO.CANON.07.1");
   assert.equal(await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getNativeEventState()?.bell??null),null,
     "Host bell transient leaked into Chalice Consecration card");
 
   const progress=await page.locator('[data-role="progress"]').textContent();
-  assert.match(progress,/22 \/ 48/,"48-step LIVE product counter did not reach Chalice Consecration as 22 / 48");
+  assert.match(progress,/^\d+ \/ 65$/,"Curated LIVE progress must survive Chalice preparation");
   const modelCounts=await page.evaluate(()=>({
     product:window.__AO_PHONE_PREVIEW?.model?.totalCards??null,
     source:window.__AO_PHONE_PREVIEW?.sourceModel?.totalCards??null,
     productOwner:window.__AO_PHONE_PREVIEW?.model?.structureOwner??null,
     sourceOwner:window.__AO_PHONE_PREVIEW?.sourceModel?.structureOwner??null,
   }));
-  assert.equal(modelCounts.product,48,"phone reader lost 48-step product presentation");
-  assert.equal(modelCounts.source,39,"48-step product presentation replaced the certified 39-step source model");
-  assert.equal(modelCounts.productOwner,"SOURCE_FIRST_LIVE_PRODUCT_48");
+  assert.equal(modelCounts.product,65,"phone reader lost curated 65-card production presentation");
+  assert.equal(modelCounts.source,39,"curated presentation modified the canonical 39-section source model");
+  assert.equal(modelCounts.productOwner,"SOURCE_FIRST_LIVE_CURATED_65_REVIEW");
   assert.equal(modelCounts.sourceOwner,"SOURCE_FIRST_LIVE");
 
   await context.close();
@@ -439,7 +448,7 @@ try{
   }
   let frenchHit=await frenchNext.boundingBox();
   await french.touchscreen.tap(frenchHit.x+frenchHit.width/2,frenchHit.y+frenchHit.height/2);
-  await french.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId==="AO.CARD.001");
+  await french.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId==="AO.LIVECURATED.AO.CARD.001.1");
   const frenchBody=await french.locator('[data-role="paragraphs"]').textContent();
   assert.match(frenchBody,/Réjouissons-nous ensemble dans le Seigneur/,
     "French-only resolved Proper did not reach the native Mass card");
@@ -494,8 +503,8 @@ try{
     await p.touchscreen.tap(nbox.x+nbox.width/2,nbox.y+nbox.height/2);
     await p.waitForFunction(previous=>window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId!==previous,initial);
 
-    await p.evaluate(()=>window.__AO_PHONE_PREVIEW.showSection("AO.CANON.06"));
-    await p.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId==="AO.CANON.06");
+    await p.evaluate(()=>window.__AO_PHONE_PREVIEW.showSection("AO.LIVECURATED.AO.CANON.06.1"));
+    await p.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId==="AO.LIVECURATED.AO.CANON.06.1");
     await p.waitForTimeout(200);
     const firstCue=await p.evaluate(()=>window.__AO_PHONE_PREVIEW.getActiveCue());
     assert.equal(firstCue,"AO.SM.C0168",viewportSpec.width+"px top-of-card focus lost first cue ownership");
@@ -535,8 +544,8 @@ try{
   let hit=await aspNext.boundingBox();
   await asp.touchscreen.tap(hit.x+hit.width/2,hit.y+hit.height/2);
   await asp.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId==="AO.CARD.001");
-  assert.match(await asp.locator('[data-role="progress"]').textContent(),/1 \/ 48/,
-    "Asperges did not hand off to the first 48-step LIVE product card");
+  assert.match(await asp.locator('[data-role="progress"]').textContent(),/1 \/ 65/,
+    "Asperges did not hand off to the first curated 65-card LIVE prayer");
   assert.equal(await asp.evaluate(()=>window.__AO_PHONE_PREVIEW.sourceModel?.totalCards??null),39,
     "Asperges handoff replaced the certified 39-step source model");
 
@@ -598,7 +607,7 @@ try{
       {waitUntil:"networkidle"});
     await printPage.waitForFunction(()=>document.documentElement.dataset.harnessReady==="true",null,{timeout:20000});
     // Secondary printing lives inside the existing preferences umbrella:
-    // it must not obstruct the section jump or 48-step reading ribbon.
+    // it must not obstruct the section jump or current curated LIVE ribbon.
     assert.equal(await printPage.locator('[data-ao-native-mass-print]').isVisible(),false,
       "Print action leaked from closed Mass preferences");
     await printPage.locator("[data-reader-preferences]").click();
@@ -630,7 +639,7 @@ try{
     }
     await printed.locator('main [data-section]').first().waitFor({state:"visible",timeout:12000});
     assert.equal(await printed.locator("main [data-section]").count(),30,
-      "Print must use the 30-section complete Missal corpus, not LIVE presentation 39/48");
+      "Print must use the 30-section complete Missal corpus, not 65 curated LIVE cards");
     const body=await printed.locator("body").innerText();
     assert.match(body,/Per ómnia sǽcula sæculórum/,"Canon conclusion was not printed");
     assert.match(body,/R17 96/,"One or more source blocks were omitted");
@@ -639,12 +648,12 @@ try{
     const right=lang==="fr"?"fr":"en";
     assert.ok(await printed.locator('.two p[lang="'+right+'"]').count()>30,
       "Proper and Ordinary vernacular columns absent: "+right);
-    assert.equal(await printPage.evaluate(()=>window.__AO_PHONE_PREVIEW.model.totalCards),48,
-      "Printing mutated the native LIVE presentation model");
+    assert.equal(await printPage.evaluate(()=>window.__AO_PHONE_PREVIEW.model.totalCards),65,
+      "Printing mutated the curated 65-card native LIVE presentation");
     await printed.close();
     await printCtx.close();
   }
-  console.log("PASS Native source-first Mass text print on phone: 30 sections, 96 blocks, Canon B061, EN/FR, LIVE48 preserved");
+  console.log("PASS Native Mass text print on phone: 30 Missal sections, 96 source blocks, Canon B061, EN/FR and curated LIVE65 preserved");
 
   // Missal-only visual QA: independently capture actual 320/390px source
   // prayer pages and ribbon without perturbing the LIVE phone assertions.
