@@ -1,0 +1,991 @@
+{
+  "schema": "AO_HISTORIA_PRIORITY_16_ECONOMICAL_SCRIPTURE_SELECTIONS_V1",
+  "date": "2026-10-22",
+  "status": "COMPLETE_SOURCE_COORDINATE_DRAFT_AWAITING_ED_APPROVAL",
+  "sources": {
+    "restorationLedger": {
+      "path": "data/research/historia-salutis-core-restoration-46-adjudication-20261022.v1.json",
+      "blobSha": "bce8c9ca11920b11368f9dbc005103dd47d627c7"
+    },
+    "mainMovementProof": {
+      "path": "data/research/historia-salutis-v18-continuous-reading-proof.v1.json",
+      "blobSha": "cbc5be02da7cd54af5da1f998f9c6c343772bab5"
+    },
+    "sourcePathPattern": "data/scripture/witness/{editionId}/{book}.json",
+    "editions": [
+      "dr-challoner",
+      "cpdv-2009",
+      "crampon-1923"
+    ]
+  },
+  "rules": {
+    "exactBiblicalVersesOnly": true,
+    "noAITextParaphrase": true,
+    "noSilentlyStitchedOmissions": true,
+    "preserveOrderWithinEachEpisode": true,
+    "mainManuscriptUnchanged": true,
+    "separateSourceContextForMultiGospelEpisodes": true,
+    "noTypologyOrProphecyParallelsInsideNarration": true,
+    "noAutoPublishOrAutoInsert": true,
+    "researchSelectionOnly": true,
+    "catholicSourceWitnessesNotPrintedEditionCollated": true,
+    "sourceEditionSeparateForFrench": true
+  },
+  "totals": {
+    "episodes": 16,
+    "selectionRanges": 45,
+    "selectedVerseOccurrences": 156,
+    "currentMainVerseOccurrences": 1129,
+    "addedIfAllSelectedPercentage": 13.8,
+    "approvedIntegrations": 0,
+    "normalOrdered": 12,
+    "sequenceSensitive": 4
+  },
+  "entries": [
+    {
+      "episodeId": "hist-omitted-003",
+      "episodeTitle": "The corruption preceding the Flood",
+      "sourceInventoryReference": "Genesis 6:5–8",
+      "comparedCurrentMovement": "HS-M03",
+      "candidate54ChapterIDs": [
+        "R02",
+        "R03",
+        "R04"
+      ],
+      "proposedLocation": "BEFORE_HS_M03_FIRST_FLOOD_PASSAGE",
+      "proposedSelection": [
+        {
+          "order": 1,
+          "reference": "Genesis 6:5–8",
+          "book": "Genesis",
+          "chapter": 6,
+          "firstVerse": 5,
+          "lastVerse": 8,
+          "verseCount": 4,
+          "sourceOwner": "EXISTING_PINNED_CATHOLIC_WITNESS_VERSES_ONLY",
+          "textCopied": false,
+          "ellipsisBefore": false,
+          "editorialBoundaryStatus": "PROPOSED_NOT_ACCEPTED"
+        }
+      ],
+      "selectedVerseOccurrences": 4,
+      "reasonForEconomicalSelection": "Makes the necessity of judgment and Noah’s preserved grace intelligible; retain both the judgment and exception.",
+      "criticalOmissionDisclosure": "Genesis 6:9–22 remains available as supplementary Noah material; do not treat the abridgment as the complete pre-Flood account.",
+      "sequenceGuard": "NORMAL_COVENANT_SEQUENCE",
+      "selectedPassageIntersectCurrentMainReader": false,
+      "requiresManualApproval": true,
+      "acceptanceStatus": "VERSE_SET_PROPOSED_NOT_ACCEPTED",
+      "sourceCollationStatus": "UNCOLLATED_WITNESS_COORDINATES",
+      "approvedMainNarrativeChange": false,
+      "insertedIntoMainReader": false
+    },
+    {
+      "episodeId": "hist-omitted-027",
+      "episodeTitle": "Manna from heaven",
+      "sourceInventoryReference": "Exodus 16",
+      "comparedCurrentMovement": "HS-M09",
+      "candidate54ChapterIDs": [
+        "R13"
+      ],
+      "proposedLocation": "BETWEEN_HS_M09_AND_M10",
+      "proposedSelection": [
+        {
+          "order": 1,
+          "reference": "Exodus 16:2–4",
+          "book": "Exodus",
+          "chapter": 16,
+          "firstVerse": 2,
+          "lastVerse": 4,
+          "verseCount": 3,
+          "sourceOwner": "EXISTING_PINNED_CATHOLIC_WITNESS_VERSES_ONLY",
+          "textCopied": false,
+          "ellipsisBefore": false,
+          "editorialBoundaryStatus": "PROPOSED_NOT_ACCEPTED"
+        },
+        {
+          "order": 2,
+          "reference": "Exodus 16:12–15",
+          "book": "Exodus",
+          "chapter": 16,
+          "firstVerse": 12,
+          "lastVerse": 15,
+          "verseCount": 4,
+          "sourceOwner": "EXISTING_PINNED_CATHOLIC_WITNESS_VERSES_ONLY",
+          "textCopied": false,
+          "ellipsisBefore": true,
+          "editorialBoundaryStatus": "PROPOSED_NOT_ACCEPTED"
+        },
+        {
+          "order": 3,
+          "reference": "Exodus 16:31",
+          "book": "Exodus",
+          "chapter": 16,
+          "firstVerse": 31,
+          "lastVerse": 31,
+          "verseCount": 1,
+          "sourceOwner": "EXISTING_PINNED_CATHOLIC_WITNESS_VERSES_ONLY",
+          "textCopied": false,
+          "ellipsisBefore": true,
+          "editorialBoundaryStatus": "PROPOSED_NOT_ACCEPTED"
+        },
+        {
+          "order": 4,
+          "reference": "Exodus 16:35",
+          "book": "Exodus",
+          "chapter": 16,
+          "firstVerse": 35,
+          "lastVerse": 35,
+          "verseCount": 1,
+          "sourceOwner": "EXISTING_PINNED_CATHOLIC_WITNESS_VERSES_ONLY",
+          "textCopied": false,
+          "ellipsisBefore": true,
+          "editorialBoundaryStatus": "PROPOSED_NOT_ACCEPTED"
+        }
+      ],
+      "selectedVerseOccurrences": 9,
+      "reasonForEconomicalSelection": "Keeps hunger, God's promise of heavenly bread, fulfillment, the name Manna and duration of provision.",
+      "criticalOmissionDisclosure": "Exodus 16:5–11,16–30,32–34 is omitted; sabbath regulations and the jar of manna remain available in full text.",
+      "sequenceGuard": "NORMAL_COVENANT_SEQUENCE",
+      "selectedPassageIntersectCurrentMainReader": false,
+      "requiresManualApproval": true,
+      "acceptanceStatus": "VERSE_SET_PROPOSED_NOT_ACCEPTED",
+      "sourceCollationStatus": "UNCOLLATED_WITNESS_COORDINATES",
+      "approvedMainNarrativeChange": false,
+      "insertedIntoMainReader": false
+    },
+    {
+      "episodeId": "hist-omitted-035",
+      "episodeTitle": "The twelve spies",
+      "sourceInventoryReference": "Numbers 13–14",
+      "comparedCurrentMovement": "HS-M10",
+      "candidate54ChapterIDs": [
+        "R14",
+        "R15"
+      ],
+      "proposedLocation": "BETWEEN_HS_M10_AND_M11_BEFORE_BRONZE_SERPENT",
+      "proposedSelection": [
+        {
+          "order": 1,
+          "reference": "Numbers 13:3",
+          "book": "Numbers",
+          "chapter": 13,
+          "firstVerse": 3,
+          "lastVerse": 3,
+          "verseCount": 1,
+          "sourceOwner": "EXISTING_PINNED_CATHOLIC_WITNESS_VERSES_ONLY",
+          "textCopied": false,
+          "ellipsisBefore": false,
+          "editorialBoundaryStatus": "PROPOSED_NOT_ACCEPTED"
+        },
+        {
+          "order": 2,
+          "reference": "Numbers 13:26–29",
+          "book": "Numbers",
+          "chapter": 13,
+          "firstVerse": 26,
+          "lastVerse": 29,
+          "verseCount": 4,
+          "sourceOwner": "EXISTING_PINNED_CATHOLIC_WITNESS_VERSES_ONLY",
+          "textCopied": false,
+          "ellipsisBefore": true,
+          "editorialBoundaryStatus": "PROPOSED_NOT_ACCEPTED"
+        },
+        {
+          "order": 3,
+          "reference": "Numbers 13:31–32",
+          "book": "Numbers",
+          "chapter": 13,
+          "firstVerse": 31,
+          "lastVerse": 32,
+          "verseCount": 2,
+          "sourceOwner": "EXISTING_PINNED_CATHOLIC_WITNESS_VERSES_ONLY",
+          "textCopied": false,
+          "ellipsisBefore": true,
+          "editorialBoundaryStatus": "PROPOSED_NOT_ACCEPTED"
+        },
+        {
+          "order": 4,
+          "reference": "Numbers 14:1–4",
+          "book": "Numbers",
+          "chapter": 14,
+          "firstVerse": 1,
+          "lastVerse": 4,
+          "verseCount": 4,
+          "sourceOwner": "EXISTING_PINNED_CATHOLIC_WITNESS_VERSES_ONLY",
+          "textCopied": false,
+          "ellipsisBefore": true,
+          "editorialBoundaryStatus": "PROPOSED_NOT_ACCEPTED"
+        },
+        {
+          "order": 5,
+          "reference": "Numbers 14:6–9",
+          "book": "Numbers",
+          "chapter": 14,
+          "firstVerse": 6,
+          "lastVerse": 9,
+          "verseCount": 4,
+          "sourceOwner": "EXISTING_PINNED_CATHOLIC_WITNESS_VERSES_ONLY",
+          "textCopied": false,
+          "ellipsisBefore": true,
+          "editorialBoundaryStatus": "PROPOSED_NOT_ACCEPTED"
+        },
+        {
+          "order": 6,
+          "reference": "Numbers 14:29–30",
+          "book": "Numbers",
+          "chapter": 14,
+          "firstVerse": 29,
+          "lastVerse": 30,
+          "verseCount": 2,
+          "sourceOwner": "EXISTING_PINNED_CATHOLIC_WITNESS_VERSES_ONLY",
+          "textCopied": false,
+          "ellipsisBefore": true,
+          "editorialBoundaryStatus": "PROPOSED_NOT_ACCEPTED"
+        },
+        {
+          "order": 7,
+          "reference": "Numbers 14:33–34",
+          "book": "Numbers",
+          "chapter": 14,
+          "firstVerse": 33,
+          "lastVerse": 34,
+          "verseCount": 2,
+          "sourceOwner": "EXISTING_PINNED_CATHOLIC_WITNESS_VERSES_ONLY",
+          "textCopied": false,
+          "ellipsisBefore": true,
+          "editorialBoundaryStatus": "PROPOSED_NOT_ACCEPTED"
+        }
+      ],
+      "selectedVerseOccurrences": 19,
+      "reasonForEconomicalSelection": "The failed reconnaissance and forty-year judgment explain the wilderness interval between Sinai and entry into the Land.",
+      "criticalOmissionDisclosure": "The full speech of Caleb and Joshua, Moses' intercession and later presumption are not reproduced; preserve visible jump markers.",
+      "sequenceGuard": "NORMAL_COVENANT_SEQUENCE",
+      "selectedPassageIntersectCurrentMainReader": false,
+      "requiresManualApproval": true,
+      "acceptanceStatus": "VERSE_SET_PROPOSED_NOT_ACCEPTED",
+      "sourceCollationStatus": "UNCOLLATED_WITNESS_COORDINATES",
+      "approvedMainNarrativeChange": false,
+      "insertedIntoMainReader": false
+    },
+    {
+      "episodeId": "hist-omitted-039",
+      "episodeTitle": "The bronze serpent",
+      "sourceInventoryReference": "Numbers 21:4–9",
+      "comparedCurrentMovement": "HS-M10",
+      "candidate54ChapterIDs": [
+        "R14",
+        "R15"
+      ],
+      "proposedLocation": "BETWEEN_HS_M10_AND_M11_AFTER_SPIES",
+      "proposedSelection": [
+        {
+          "order": 1,
+          "reference": "Numbers 21:4–9",
+          "book": "Numbers",
+          "chapter": 21,
+          "firstVerse": 4,
+          "lastVerse": 9,
+          "verseCount": 6,
+          "sourceOwner": "EXISTING_PINNED_CATHOLIC_WITNESS_VERSES_ONLY",
+          "textCopied": false,
+          "ellipsisBefore": false,
+          "editorialBoundaryStatus": "PROPOSED_NOT_ACCEPTED"
+        }
+      ],
+      "selectedVerseOccurrences": 6,
+      "reasonForEconomicalSelection": "The intact six-verse sign preserves murmuring, serpents, repentance, God's instruction and healing.",
+      "criticalOmissionDisclosure": "John 3:14–15 is a separate theological cross-reference and MUST NOT be inserted inside the chronological narration.",
+      "sequenceGuard": "NORMAL_COVENANT_SEQUENCE",
+      "selectedPassageIntersectCurrentMainReader": false,
+      "requiresManualApproval": true,
+      "acceptanceStatus": "VERSE_SET_PROPOSED_NOT_ACCEPTED",
+      "sourceCollationStatus": "UNCOLLATED_WITNESS_COORDINATES",
+      "approvedMainNarrativeChange": false,
+      "insertedIntoMainReader": false
+    },
+    {
+      "episodeId": "hist-omitted-044",
+      "episodeTitle": "Joshua's farewell and covenant renewal",
+      "sourceInventoryReference": "Joshua 23–24",
+      "comparedCurrentMovement": "HS-M11",
+      "candidate54ChapterIDs": [
+        "R16",
+        "R17"
+      ],
+      "proposedLocation": "BETWEEN_HS_M11_AND_M12",
+      "proposedSelection": [
+        {
+          "order": 1,
+          "reference": "Joshua 23:6–8",
+          "book": "Joshua",
+          "chapter": 23,
+          "firstVerse": 6,
+          "lastVerse": 8,
+          "verseCount": 3,
+          "sourceOwner": "EXISTING_PINNED_CATHOLIC_WITNESS_VERSES_ONLY",
+          "textCopied": false,
+          "ellipsisBefore": false,
+          "editorialBoundaryStatus": "PROPOSED_NOT_ACCEPTED"
+        },
+        {
+          "order": 2,
+          "reference": "Joshua 24:1–2",
+          "book": "Joshua",
+          "chapter": 24,
+          "firstVerse": 1,
+          "lastVerse": 2,
+          "verseCount": 2,
+          "sourceOwner": "EXISTING_PINNED_CATHOLIC_WITNESS_VERSES_ONLY",
+          "textCopied": false,
+          "ellipsisBefore": true,
+          "editorialBoundaryStatus": "PROPOSED_NOT_ACCEPTED"
+        },
+        {
+          "order": 3,
+          "reference": "Joshua 24:13–16",
+          "book": "Joshua",
+          "chapter": 24,
+          "firstVerse": 13,
+          "lastVerse": 16,
+          "verseCount": 4,
+          "sourceOwner": "EXISTING_PINNED_CATHOLIC_WITNESS_VERSES_ONLY",
+          "textCopied": false,
+          "ellipsisBefore": true,
+          "editorialBoundaryStatus": "PROPOSED_NOT_ACCEPTED"
+        },
+        {
+          "order": 4,
+          "reference": "Joshua 24:21–25",
+          "book": "Joshua",
+          "chapter": 24,
+          "firstVerse": 21,
+          "lastVerse": 25,
+          "verseCount": 5,
+          "sourceOwner": "EXISTING_PINNED_CATHOLIC_WITNESS_VERSES_ONLY",
+          "textCopied": false,
+          "ellipsisBefore": true,
+          "editorialBoundaryStatus": "PROPOSED_NOT_ACCEPTED"
+        }
+      ],
+      "selectedVerseOccurrences": 14,
+      "reasonForEconomicalSelection": "Retains Joshua's injunction to keep Moses' Law, historical renewal at Shechem, the people's declaration and recorded covenant.",
+      "criticalOmissionDisclosure": "Joshua 24:3–12 historical rehearsal and 24:26–33 later witness/death are omitted but remain accessible.",
+      "sequenceGuard": "NORMAL_COVENANT_SEQUENCE",
+      "selectedPassageIntersectCurrentMainReader": false,
+      "requiresManualApproval": true,
+      "acceptanceStatus": "VERSE_SET_PROPOSED_NOT_ACCEPTED",
+      "sourceCollationStatus": "UNCOLLATED_WITNESS_COORDINATES",
+      "approvedMainNarrativeChange": false,
+      "insertedIntoMainReader": false
+    },
+    {
+      "episodeId": "hist-omitted-084",
+      "episodeTitle": "The three young men in the fiery furnace",
+      "sourceInventoryReference": "Daniel 3",
+      "comparedCurrentMovement": "HS-M16",
+      "candidate54ChapterIDs": [
+        "R27",
+        "R28"
+      ],
+      "proposedLocation": "BETWEEN_HS_M16_AND_M17_EXILIC_LITERARY_SCENE",
+      "proposedSelection": [
+        {
+          "order": 1,
+          "reference": "Daniel 3:12",
+          "book": "Daniel",
+          "chapter": 3,
+          "firstVerse": 12,
+          "lastVerse": 12,
+          "verseCount": 1,
+          "sourceOwner": "EXISTING_PINNED_CATHOLIC_WITNESS_VERSES_ONLY",
+          "textCopied": false,
+          "ellipsisBefore": false,
+          "editorialBoundaryStatus": "PROPOSED_NOT_ACCEPTED"
+        },
+        {
+          "order": 2,
+          "reference": "Daniel 3:16–18",
+          "book": "Daniel",
+          "chapter": 3,
+          "firstVerse": 16,
+          "lastVerse": 18,
+          "verseCount": 3,
+          "sourceOwner": "EXISTING_PINNED_CATHOLIC_WITNESS_VERSES_ONLY",
+          "textCopied": false,
+          "ellipsisBefore": true,
+          "editorialBoundaryStatus": "PROPOSED_NOT_ACCEPTED"
+        },
+        {
+          "order": 3,
+          "reference": "Daniel 3:21–22",
+          "book": "Daniel",
+          "chapter": 3,
+          "firstVerse": 21,
+          "lastVerse": 22,
+          "verseCount": 2,
+          "sourceOwner": "EXISTING_PINNED_CATHOLIC_WITNESS_VERSES_ONLY",
+          "textCopied": false,
+          "ellipsisBefore": true,
+          "editorialBoundaryStatus": "PROPOSED_NOT_ACCEPTED"
+        },
+        {
+          "order": 4,
+          "reference": "Daniel 3:49–50",
+          "book": "Daniel",
+          "chapter": 3,
+          "firstVerse": 49,
+          "lastVerse": 50,
+          "verseCount": 2,
+          "sourceOwner": "EXISTING_PINNED_CATHOLIC_WITNESS_VERSES_ONLY",
+          "textCopied": false,
+          "ellipsisBefore": true,
+          "editorialBoundaryStatus": "PROPOSED_NOT_ACCEPTED"
+        },
+        {
+          "order": 5,
+          "reference": "Daniel 3:91–95",
+          "book": "Daniel",
+          "chapter": 3,
+          "firstVerse": 91,
+          "lastVerse": 95,
+          "verseCount": 5,
+          "sourceOwner": "EXISTING_PINNED_CATHOLIC_WITNESS_VERSES_ONLY",
+          "textCopied": false,
+          "ellipsisBefore": true,
+          "editorialBoundaryStatus": "PROPOSED_NOT_ACCEPTED"
+        }
+      ],
+      "selectedVerseOccurrences": 13,
+      "reasonForEconomicalSelection": "Retains refusal of idolatry, steadfast trust, furnace, rescue by the angel and the king's recognition.",
+      "criticalOmissionDisclosure": "Daniel 3:23–90 contains the Catholic prayer and canticle (do not imply they never occurred); a Crampon source editorial insertion appears at 3:23, so that verse is not in this proposal. Keep prayer/canticle accessible as original Scripture.",
+      "sequenceGuard": "BOOK_SPECIFIC_EXILE_LITERARY_SEQUENCE",
+      "selectedPassageIntersectCurrentMainReader": false,
+      "requiresManualApproval": true,
+      "acceptanceStatus": "VERSE_SET_PROPOSED_NOT_ACCEPTED",
+      "sourceCollationStatus": "UNCOLLATED_WITNESS_COORDINATES",
+      "approvedMainNarrativeChange": false,
+      "insertedIntoMainReader": false
+    },
+    {
+      "episodeId": "hist-omitted-096",
+      "episodeTitle": "Ezra publicly reads the Law",
+      "sourceInventoryReference": "Nehemiah 8",
+      "comparedCurrentMovement": "HS-M17",
+      "candidate54ChapterIDs": [
+        "R29"
+      ],
+      "proposedLocation": "AFTER_HS_M17_EZRA_RESTORATION_BEFORE_SECOND_TEMPLE_MARTYRS",
+      "proposedSelection": [
+        {
+          "order": 1,
+          "reference": "Nehemiah 8:1–3",
+          "book": "Nehemiah",
+          "chapter": 8,
+          "firstVerse": 1,
+          "lastVerse": 3,
+          "verseCount": 3,
+          "sourceOwner": "EXISTING_PINNED_CATHOLIC_WITNESS_VERSES_ONLY",
+          "textCopied": false,
+          "ellipsisBefore": false,
+          "editorialBoundaryStatus": "PROPOSED_NOT_ACCEPTED"
+        },
+        {
+          "order": 2,
+          "reference": "Nehemiah 8:5–9",
+          "book": "Nehemiah",
+          "chapter": 8,
+          "firstVerse": 5,
+          "lastVerse": 9,
+          "verseCount": 5,
+          "sourceOwner": "EXISTING_PINNED_CATHOLIC_WITNESS_VERSES_ONLY",
+          "textCopied": false,
+          "ellipsisBefore": true,
+          "editorialBoundaryStatus": "PROPOSED_NOT_ACCEPTED"
+        },
+        {
+          "order": 3,
+          "reference": "Nehemiah 8:12",
+          "book": "Nehemiah",
+          "chapter": 8,
+          "firstVerse": 12,
+          "lastVerse": 12,
+          "verseCount": 1,
+          "sourceOwner": "EXISTING_PINNED_CATHOLIC_WITNESS_VERSES_ONLY",
+          "textCopied": false,
+          "ellipsisBefore": true,
+          "editorialBoundaryStatus": "PROPOSED_NOT_ACCEPTED"
+        }
+      ],
+      "selectedVerseOccurrences": 9,
+      "reasonForEconomicalSelection": "Preserves public assembly, the actual reading, popular reverence, interpretation and response.",
+      "criticalOmissionDisclosure": "Nehemiah 8:10–11 describes celebration instructions; Nehemiah 8:13–18 later feast practice is outside the compact scope.",
+      "sequenceGuard": "NORMAL_COVENANT_SEQUENCE",
+      "selectedPassageIntersectCurrentMainReader": false,
+      "requiresManualApproval": true,
+      "acceptanceStatus": "VERSE_SET_PROPOSED_NOT_ACCEPTED",
+      "sourceCollationStatus": "UNCOLLATED_WITNESS_COORDINATES",
+      "approvedMainNarrativeChange": false,
+      "insertedIntoMainReader": false
+    },
+    {
+      "episodeId": "hist-omitted-099",
+      "episodeTitle": "Martyrdom of the seven brothers and their mother",
+      "sourceInventoryReference": "2 Maccabees 7",
+      "comparedCurrentMovement": "HS-M17",
+      "candidate54ChapterIDs": [
+        "R29"
+      ],
+      "proposedLocation": "BETWEEN_HS_M17_AND_M18_SECOND_TEMPLE_WITNESS",
+      "proposedSelection": [
+        {
+          "order": 1,
+          "reference": "2 Maccabees 7:1–2",
+          "book": "2Maccabees",
+          "chapter": 7,
+          "firstVerse": 1,
+          "lastVerse": 2,
+          "verseCount": 2,
+          "sourceOwner": "EXISTING_PINNED_CATHOLIC_WITNESS_VERSES_ONLY",
+          "textCopied": false,
+          "ellipsisBefore": false,
+          "editorialBoundaryStatus": "PROPOSED_NOT_ACCEPTED"
+        },
+        {
+          "order": 2,
+          "reference": "2 Maccabees 7:9",
+          "book": "2Maccabees",
+          "chapter": 7,
+          "firstVerse": 9,
+          "lastVerse": 9,
+          "verseCount": 1,
+          "sourceOwner": "EXISTING_PINNED_CATHOLIC_WITNESS_VERSES_ONLY",
+          "textCopied": false,
+          "ellipsisBefore": true,
+          "editorialBoundaryStatus": "PROPOSED_NOT_ACCEPTED"
+        },
+        {
+          "order": 3,
+          "reference": "2 Maccabees 7:14",
+          "book": "2Maccabees",
+          "chapter": 7,
+          "firstVerse": 14,
+          "lastVerse": 14,
+          "verseCount": 1,
+          "sourceOwner": "EXISTING_PINNED_CATHOLIC_WITNESS_VERSES_ONLY",
+          "textCopied": false,
+          "ellipsisBefore": true,
+          "editorialBoundaryStatus": "PROPOSED_NOT_ACCEPTED"
+        },
+        {
+          "order": 4,
+          "reference": "2 Maccabees 7:20–23",
+          "book": "2Maccabees",
+          "chapter": 7,
+          "firstVerse": 20,
+          "lastVerse": 23,
+          "verseCount": 4,
+          "sourceOwner": "EXISTING_PINNED_CATHOLIC_WITNESS_VERSES_ONLY",
+          "textCopied": false,
+          "ellipsisBefore": true,
+          "editorialBoundaryStatus": "PROPOSED_NOT_ACCEPTED"
+        },
+        {
+          "order": 5,
+          "reference": "2 Maccabees 7:28–29",
+          "book": "2Maccabees",
+          "chapter": 7,
+          "firstVerse": 28,
+          "lastVerse": 29,
+          "verseCount": 2,
+          "sourceOwner": "EXISTING_PINNED_CATHOLIC_WITNESS_VERSES_ONLY",
+          "textCopied": false,
+          "ellipsisBefore": true,
+          "editorialBoundaryStatus": "PROPOSED_NOT_ACCEPTED"
+        },
+        {
+          "order": 6,
+          "reference": "2 Maccabees 7:40–41",
+          "book": "2Maccabees",
+          "chapter": 7,
+          "firstVerse": 40,
+          "lastVerse": 41,
+          "verseCount": 2,
+          "sourceOwner": "EXISTING_PINNED_CATHOLIC_WITNESS_VERSES_ONLY",
+          "textCopied": false,
+          "ellipsisBefore": true,
+          "editorialBoundaryStatus": "PROPOSED_NOT_ACCEPTED"
+        }
+      ],
+      "selectedVerseOccurrences": 12,
+      "reasonForEconomicalSelection": "Keeps resistance to apostasy, explicit resurrection hope, the mother and the conclusion of the martyrdom.",
+      "criticalOmissionDisclosure": "Several individual tortures and speeches are not selected; do not erase that six additional brothers are represented by omitted verses. This is a selected sample, not the entire martyrdom account.",
+      "sequenceGuard": "SECOND_TEMPLE_HISTORICAL_WITNESS",
+      "selectedPassageIntersectCurrentMainReader": false,
+      "requiresManualApproval": true,
+      "acceptanceStatus": "VERSE_SET_PROPOSED_NOT_ACCEPTED",
+      "sourceCollationStatus": "UNCOLLATED_WITNESS_COORDINATES",
+      "approvedMainNarrativeChange": false,
+      "insertedIntoMainReader": false
+    },
+    {
+      "episodeId": "hist-omitted-113",
+      "episodeTitle": "Twelve-year-old Jesus among the doctors in the Temple",
+      "sourceInventoryReference": "Luke 2:41–52",
+      "comparedCurrentMovement": "HS-M19",
+      "candidate54ChapterIDs": [
+        "R31",
+        "R32",
+        "R33"
+      ],
+      "proposedLocation": "BETWEEN_HS_M19_AND_M20",
+      "proposedSelection": [
+        {
+          "order": 1,
+          "reference": "Luke 2:41–52",
+          "book": "Luke",
+          "chapter": 2,
+          "firstVerse": 41,
+          "lastVerse": 52,
+          "verseCount": 12,
+          "sourceOwner": "EXISTING_PINNED_CATHOLIC_WITNESS_VERSES_ONLY",
+          "textCopied": false,
+          "ellipsisBefore": false,
+          "editorialBoundaryStatus": "PROPOSED_NOT_ACCEPTED"
+        }
+      ],
+      "selectedVerseOccurrences": 12,
+      "reasonForEconomicalSelection": "The complete short episode preserves the search, Temple dialogue, Christ's answer and return to Nazareth.",
+      "criticalOmissionDisclosure": "No cuts within the episode; keep it separate from the distinct hidden-life supplementary reading Luke 2:39–40; 51–52.",
+      "sequenceGuard": "SINGLE_GOSPEL_EPISODE",
+      "selectedPassageIntersectCurrentMainReader": false,
+      "requiresManualApproval": true,
+      "acceptanceStatus": "VERSE_SET_PROPOSED_NOT_ACCEPTED",
+      "sourceCollationStatus": "UNCOLLATED_WITNESS_COORDINATES",
+      "approvedMainNarrativeChange": false,
+      "insertedIntoMainReader": false
+    },
+    {
+      "episodeId": "hist-omitted-122",
+      "episodeTitle": "Formal appointment of the Twelve",
+      "sourceInventoryReference": "Luke 6:12–16",
+      "comparedCurrentMovement": "HS-M20",
+      "candidate54ChapterIDs": [
+        "R34"
+      ],
+      "proposedLocation": "AFTER_HS_M20_BEFORE_M21",
+      "proposedSelection": [
+        {
+          "order": 1,
+          "reference": "Luke 6:12–16",
+          "book": "Luke",
+          "chapter": 6,
+          "firstVerse": 12,
+          "lastVerse": 16,
+          "verseCount": 5,
+          "sourceOwner": "EXISTING_PINNED_CATHOLIC_WITNESS_VERSES_ONLY",
+          "textCopied": false,
+          "ellipsisBefore": false,
+          "editorialBoundaryStatus": "PROPOSED_NOT_ACCEPTED"
+        }
+      ],
+      "selectedVerseOccurrences": 5,
+      "reasonForEconomicalSelection": "All five verses preserve Christ's prayer and naming of the Twelve without omitting names.",
+      "criticalOmissionDisclosure": "Not conflated with the first disciples' encounters in John 1 already selected in HS-M20.",
+      "sequenceGuard": "SINGLE_GOSPEL_EPISODE",
+      "selectedPassageIntersectCurrentMainReader": false,
+      "requiresManualApproval": true,
+      "acceptanceStatus": "VERSE_SET_PROPOSED_NOT_ACCEPTED",
+      "sourceCollationStatus": "UNCOLLATED_WITNESS_COORDINATES",
+      "approvedMainNarrativeChange": false,
+      "insertedIntoMainReader": false
+    },
+    {
+      "episodeId": "hist-omitted-174",
+      "episodeTitle": "Washing of the Apostles' feet",
+      "sourceInventoryReference": "John 13:1–17",
+      "comparedCurrentMovement": "HS-M26",
+      "candidate54ChapterIDs": [
+        "R40"
+      ],
+      "proposedLocation": "WITH_HS_M26_SEPARATE_JOHN_WITNESS",
+      "proposedSelection": [
+        {
+          "order": 1,
+          "reference": "John 13:1–8",
+          "book": "John",
+          "chapter": 13,
+          "firstVerse": 1,
+          "lastVerse": 8,
+          "verseCount": 8,
+          "sourceOwner": "EXISTING_PINNED_CATHOLIC_WITNESS_VERSES_ONLY",
+          "textCopied": false,
+          "ellipsisBefore": false,
+          "editorialBoundaryStatus": "PROPOSED_NOT_ACCEPTED"
+        },
+        {
+          "order": 2,
+          "reference": "John 13:12–15",
+          "book": "John",
+          "chapter": 13,
+          "firstVerse": 12,
+          "lastVerse": 15,
+          "verseCount": 4,
+          "sourceOwner": "EXISTING_PINNED_CATHOLIC_WITNESS_VERSES_ONLY",
+          "textCopied": false,
+          "ellipsisBefore": true,
+          "editorialBoundaryStatus": "PROPOSED_NOT_ACCEPTED"
+        }
+      ],
+      "selectedVerseOccurrences": 12,
+      "reasonForEconomicalSelection": "Preserves Christ's action, Peter's objection and the Lord's explanation of service.",
+      "criticalOmissionDisclosure": "John 13:9–11 is an omitted part of Peter's response and Judas context; indicate that the John source is distinct from the selected Luke 22 Last Supper and do not interleave as a single continuous Gospel.",
+      "sequenceGuard": "MULTI_GOSPEL_ORDER_REVIEW_REQUIRED",
+      "selectedPassageIntersectCurrentMainReader": false,
+      "requiresManualApproval": true,
+      "acceptanceStatus": "VERSE_SET_PROPOSED_NOT_ACCEPTED",
+      "sourceCollationStatus": "UNCOLLATED_WITNESS_COORDINATES",
+      "approvedMainNarrativeChange": false,
+      "insertedIntoMainReader": false
+    },
+    {
+      "episodeId": "hist-omitted-181",
+      "episodeTitle": "The good thief",
+      "sourceInventoryReference": "Luke 23:39–43",
+      "comparedCurrentMovement": "HS-M28",
+      "candidate54ChapterIDs": [
+        "R42"
+      ],
+      "proposedLocation": "WITHIN_HS_M28_BEFORE_SELECTED_CHRISTS_DEATH",
+      "proposedSelection": [
+        {
+          "order": 1,
+          "reference": "Luke 23:39–43",
+          "book": "Luke",
+          "chapter": 23,
+          "firstVerse": 39,
+          "lastVerse": 43,
+          "verseCount": 5,
+          "sourceOwner": "EXISTING_PINNED_CATHOLIC_WITNESS_VERSES_ONLY",
+          "textCopied": false,
+          "ellipsisBefore": false,
+          "editorialBoundaryStatus": "PROPOSED_NOT_ACCEPTED"
+        }
+      ],
+      "selectedVerseOccurrences": 5,
+      "reasonForEconomicalSelection": "An intact short witness of the contrite thief and Christ's promise at Calvary.",
+      "criticalOmissionDisclosure": "The selected John 19:17–30 must not be interrupted as though one continuous Gospel text. The exact source-switch boundary must be approved.",
+      "sequenceGuard": "MULTI_GOSPEL_ORDER_REVIEW_REQUIRED",
+      "selectedPassageIntersectCurrentMainReader": false,
+      "requiresManualApproval": true,
+      "acceptanceStatus": "VERSE_SET_PROPOSED_NOT_ACCEPTED",
+      "sourceCollationStatus": "UNCOLLATED_WITNESS_COORDINATES",
+      "approvedMainNarrativeChange": false,
+      "insertedIntoMainReader": false
+    },
+    {
+      "episodeId": "hist-omitted-184",
+      "episodeTitle": "Road to Emmaus",
+      "sourceInventoryReference": "Luke 24:13–35",
+      "comparedCurrentMovement": "HS-M29",
+      "candidate54ChapterIDs": [
+        "R43"
+      ],
+      "proposedLocation": "WITH_HS_M29_RESURRECTION_DAY_PARALLEL_TO_JOHN_APPEARANCES",
+      "proposedSelection": [
+        {
+          "order": 1,
+          "reference": "Luke 24:13–16",
+          "book": "Luke",
+          "chapter": 24,
+          "firstVerse": 13,
+          "lastVerse": 16,
+          "verseCount": 4,
+          "sourceOwner": "EXISTING_PINNED_CATHOLIC_WITNESS_VERSES_ONLY",
+          "textCopied": false,
+          "ellipsisBefore": false,
+          "editorialBoundaryStatus": "PROPOSED_NOT_ACCEPTED"
+        },
+        {
+          "order": 2,
+          "reference": "Luke 24:19–21",
+          "book": "Luke",
+          "chapter": 24,
+          "firstVerse": 19,
+          "lastVerse": 21,
+          "verseCount": 3,
+          "sourceOwner": "EXISTING_PINNED_CATHOLIC_WITNESS_VERSES_ONLY",
+          "textCopied": false,
+          "ellipsisBefore": true,
+          "editorialBoundaryStatus": "PROPOSED_NOT_ACCEPTED"
+        },
+        {
+          "order": 3,
+          "reference": "Luke 24:25–27",
+          "book": "Luke",
+          "chapter": 24,
+          "firstVerse": 25,
+          "lastVerse": 27,
+          "verseCount": 3,
+          "sourceOwner": "EXISTING_PINNED_CATHOLIC_WITNESS_VERSES_ONLY",
+          "textCopied": false,
+          "ellipsisBefore": true,
+          "editorialBoundaryStatus": "PROPOSED_NOT_ACCEPTED"
+        },
+        {
+          "order": 4,
+          "reference": "Luke 24:28–32",
+          "book": "Luke",
+          "chapter": 24,
+          "firstVerse": 28,
+          "lastVerse": 32,
+          "verseCount": 5,
+          "sourceOwner": "EXISTING_PINNED_CATHOLIC_WITNESS_VERSES_ONLY",
+          "textCopied": false,
+          "ellipsisBefore": true,
+          "editorialBoundaryStatus": "PROPOSED_NOT_ACCEPTED"
+        },
+        {
+          "order": 5,
+          "reference": "Luke 24:35",
+          "book": "Luke",
+          "chapter": 24,
+          "firstVerse": 35,
+          "lastVerse": 35,
+          "verseCount": 1,
+          "sourceOwner": "EXISTING_PINNED_CATHOLIC_WITNESS_VERSES_ONLY",
+          "textCopied": false,
+          "ellipsisBefore": true,
+          "editorialBoundaryStatus": "PROPOSED_NOT_ACCEPTED"
+        }
+      ],
+      "selectedVerseOccurrences": 16,
+      "reasonForEconomicalSelection": "Keeps the road, unrecognized Lord, crisis of faith, exposition of Scripture and recognition in the breaking of bread.",
+      "criticalOmissionDisclosure": "Luke 24:17–18,22–24,33–34 have been omitted and need visible gap marks; John 20's later Thomas appearance may not be placed chronologically before this Easter-day event.",
+      "sequenceGuard": "MULTI_GOSPEL_ORDER_REVIEW_REQUIRED",
+      "selectedPassageIntersectCurrentMainReader": false,
+      "requiresManualApproval": true,
+      "acceptanceStatus": "VERSE_SET_PROPOSED_NOT_ACCEPTED",
+      "sourceCollationStatus": "UNCOLLATED_WITNESS_COORDINATES",
+      "approvedMainNarrativeChange": false,
+      "insertedIntoMainReader": false
+    },
+    {
+      "episodeId": "hist-omitted-188",
+      "episodeTitle": "Jesus asks Peter three times whether he loves Him",
+      "sourceInventoryReference": "John 21:15–19",
+      "comparedCurrentMovement": "HS-M29",
+      "candidate54ChapterIDs": [
+        "R43"
+      ],
+      "proposedLocation": "AFTER_HS_M29_BEFORE_M30_DISTINCT_APPEARANCE",
+      "proposedSelection": [
+        {
+          "order": 1,
+          "reference": "John 21:15–19",
+          "book": "John",
+          "chapter": 21,
+          "firstVerse": 15,
+          "lastVerse": 19,
+          "verseCount": 5,
+          "sourceOwner": "EXISTING_PINNED_CATHOLIC_WITNESS_VERSES_ONLY",
+          "textCopied": false,
+          "ellipsisBefore": false,
+          "editorialBoundaryStatus": "PROPOSED_NOT_ACCEPTED"
+        }
+      ],
+      "selectedVerseOccurrences": 5,
+      "reasonForEconomicalSelection": "The complete five-verse threefold commission and prophecy of Peter's death.",
+      "criticalOmissionDisclosure": "The immediate setting (John 21:1–14) belongs to a separately indexed appearance at the sea; provide a Scripture link, not a repeated full episode.",
+      "sequenceGuard": "RESURRECTION_WITNESS_SEQUENCE_REVIEW",
+      "selectedPassageIntersectCurrentMainReader": false,
+      "requiresManualApproval": true,
+      "acceptanceStatus": "VERSE_SET_PROPOSED_NOT_ACCEPTED",
+      "sourceCollationStatus": "UNCOLLATED_WITNESS_COORDINATES",
+      "approvedMainNarrativeChange": false,
+      "insertedIntoMainReader": false
+    },
+    {
+      "episodeId": "hist-omitted-189",
+      "episodeTitle": "Great Commission in Galilee",
+      "sourceInventoryReference": "Matthew 28:16–20",
+      "comparedCurrentMovement": "HS-M30",
+      "candidate54ChapterIDs": [
+        "R44"
+      ],
+      "proposedLocation": "AFTER_HS_M29_BEFORE_M30_DISTINCT_MATTHEW_COMMISSION",
+      "proposedSelection": [
+        {
+          "order": 1,
+          "reference": "Matthew 28:16–20",
+          "book": "Matthew",
+          "chapter": 28,
+          "firstVerse": 16,
+          "lastVerse": 20,
+          "verseCount": 5,
+          "sourceOwner": "EXISTING_PINNED_CATHOLIC_WITNESS_VERSES_ONLY",
+          "textCopied": false,
+          "ellipsisBefore": false,
+          "editorialBoundaryStatus": "PROPOSED_NOT_ACCEPTED"
+        }
+      ],
+      "selectedVerseOccurrences": 5,
+      "reasonForEconomicalSelection": "All five verses retain the eleven, the commission to baptize and teach all nations, and Christ's enduring presence.",
+      "criticalOmissionDisclosure": "Do not equate this scene temporally or geographically with Luke's Ascension/Acts 1; a distinct Gospel-source transition is mandatory.",
+      "sequenceGuard": "MULTI_GOSPEL_ORDER_REVIEW_REQUIRED",
+      "selectedPassageIntersectCurrentMainReader": false,
+      "requiresManualApproval": true,
+      "acceptanceStatus": "VERSE_SET_PROPOSED_NOT_ACCEPTED",
+      "sourceCollationStatus": "UNCOLLATED_WITNESS_COORDINATES",
+      "approvedMainNarrativeChange": false,
+      "insertedIntoMainReader": false
+    },
+    {
+      "episodeId": "hist-omitted-207",
+      "episodeTitle": "John sees the risen Christ on Patmos",
+      "sourceInventoryReference": "Revelation 1:9–20",
+      "comparedCurrentMovement": "HS-M35",
+      "candidate54ChapterIDs": [
+        "R52"
+      ],
+      "proposedLocation": "BEFORE_HS_M35_REVELATION_5_AS_VISUAL_LITERARY_FRAME",
+      "proposedSelection": [
+        {
+          "order": 1,
+          "reference": "Revelation 1:9–13",
+          "book": "Revelation",
+          "chapter": 1,
+          "firstVerse": 9,
+          "lastVerse": 13,
+          "verseCount": 5,
+          "sourceOwner": "EXISTING_PINNED_CATHOLIC_WITNESS_VERSES_ONLY",
+          "textCopied": false,
+          "ellipsisBefore": false,
+          "editorialBoundaryStatus": "PROPOSED_NOT_ACCEPTED"
+        },
+        {
+          "order": 2,
+          "reference": "Revelation 1:16–20",
+          "book": "Revelation",
+          "chapter": 1,
+          "firstVerse": 16,
+          "lastVerse": 20,
+          "verseCount": 5,
+          "sourceOwner": "EXISTING_PINNED_CATHOLIC_WITNESS_VERSES_ONLY",
+          "textCopied": false,
+          "ellipsisBefore": true,
+          "editorialBoundaryStatus": "PROPOSED_NOT_ACCEPTED"
+        }
+      ],
+      "selectedVerseOccurrences": 10,
+      "reasonForEconomicalSelection": "Retains the seer, Patmos, command to write, Son-of-Man vision, the Lord's words and explanation of the symbols.",
+      "criticalOmissionDisclosure": "Revelation 1:14–15 descriptions are omitted but remain in source; this is visionary literary order and not a dated next event after Acts 28.",
+      "sequenceGuard": "VISION_LITERARY_FRAME_NOT_EARTHLY_CHRONOLOGY",
+      "selectedPassageIntersectCurrentMainReader": false,
+      "requiresManualApproval": true,
+      "acceptanceStatus": "VERSE_SET_PROPOSED_NOT_ACCEPTED",
+      "sourceCollationStatus": "UNCOLLATED_WITNESS_COORDINATES",
+      "approvedMainNarrativeChange": false,
+      "insertedIntoMainReader": false
+    }
+  ]
+}
