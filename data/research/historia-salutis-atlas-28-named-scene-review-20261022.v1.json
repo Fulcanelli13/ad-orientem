@@ -1,0 +1,817 @@
+{
+  "schema": "AO_HISTORIA_28_ATLAS_NAMED_SCENE_REVIEW_V1",
+  "date": "2026-10-22",
+  "status": "SCOPED_MATCH_EVIDENCE_NOT_CANONICAL_ATLAS_IDENTITY_APPROVAL",
+  "source": {
+    "candidateQueue": {
+      "path": "data/research/historia-salutis-thematic-150-editorial-queue-20261021.v1.json",
+      "sha": "d9b64ae33c946086785b87c5ed546b8124eaac3b"
+    },
+    "atlasData": {
+      "path": "data/explore/bible-places-compact.v1.json",
+      "sha": "1fd7f9b58d3b3773ac6004633a079caa046b8cdc"
+    },
+    "atlasRuntime": {
+      "path": "src/find/bible-atlas.js",
+      "sha": "c63e1b01cb7310efe6067c5f575e41a3420b880c"
+    }
+  },
+  "policy": {
+    "exactReferenceStringRequired": true,
+    "manualNamedSceneMatchRequired": true,
+    "noLocationOrHistoricalDateInferred": true,
+    "onlyPreexisting151StopAtlasEventsNavigable": true,
+    "differentEmphasisNotIdenticalEvent": true,
+    "approvalAndPublicationSeparate": true,
+    "allChangesResearchOnly": true
+  },
+  "totals": {
+    "episodes": 28,
+    "sameNamed": 26,
+    "sameSourceDifferentEmphasis": 2,
+    "runtimeNavigable": 9,
+    "documentedButNotRoutable": 19,
+    "sameReferenceAlternatives": 3,
+    "approvedCanonicalIdentities": 0,
+    "geolocationsApproved": 0
+  },
+  "entries": [
+    {
+      "episodeId": "hist-omitted-103",
+      "episodeTitle": "The Visitation",
+      "scriptureReference": "Luke 1:39–56",
+      "sourceEvidence": {
+        "placeId": "ein-karem",
+        "placeName": "Judean hill country / Ein Karem",
+        "eventId": "ein-karem-e1",
+        "atlasLabel": "The Visitation",
+        "atlasRef": "Luke 1:39–56",
+        "atlasRecordCategory": "UNSPECIFIED",
+        "sourceMatch": true
+      },
+      "recommendedRelationship": "SAME_NAMED_SCRIPTURAL_SCENE_RESEARCH_MATCH",
+      "sourceScopeCaveat": null,
+      "alternativeSameReferenceRecords": [],
+      "navigation": {
+        "status": "PRESENT_IN_VERIFIED_ATLAS_151_STOP_INDEX",
+        "targetType": "atlas",
+        "eventKey": "biblical:event:ein-karem-e1"
+      },
+      "authoredCanonicalEpisodeId": null,
+      "geographicalGeolocationVerified": false,
+      "approvedCanonicalEpisodeIdentity": false,
+      "publicationApproved": false,
+      "reviewStatus": "SOURCE_AND_NAMED_SCENE_MATCH_REVIEW_NOT_CANONICAL_CERTIFICATION"
+    },
+    {
+      "episodeId": "hist-omitted-105",
+      "episodeTitle": "Birth of St John the Baptist",
+      "scriptureReference": "Luke 1:57–66",
+      "sourceEvidence": {
+        "placeId": "ein-karem",
+        "placeName": "Judean hill country / Ein Karem",
+        "eventId": "ein-karem-e2",
+        "atlasLabel": "Birth of John the Baptist",
+        "atlasRef": "Luke 1:57–66",
+        "atlasRecordCategory": "UNSPECIFIED",
+        "sourceMatch": true
+      },
+      "recommendedRelationship": "SAME_NAMED_SCRIPTURAL_SCENE_RESEARCH_MATCH",
+      "sourceScopeCaveat": null,
+      "alternativeSameReferenceRecords": [],
+      "navigation": {
+        "status": "NO_AUTOMATIC_RUNTIME_ATLAS_NAVIGATION",
+        "targetType": null,
+        "eventKey": null
+      },
+      "authoredCanonicalEpisodeId": null,
+      "geographicalGeolocationVerified": false,
+      "approvedCanonicalEpisodeIdentity": false,
+      "publicationApproved": false,
+      "reviewStatus": "SOURCE_AND_NAMED_SCENE_MATCH_REVIEW_NOT_CANONICAL_CERTIFICATION"
+    },
+    {
+      "episodeId": "hist-omitted-108",
+      "episodeTitle": "Presentation of Jesus in the Temple",
+      "scriptureReference": "Luke 2:22–38",
+      "sourceEvidence": {
+        "placeId": "jerusalem-temple",
+        "placeName": "Jerusalem — the Temple",
+        "eventId": "jerusalem-temple-e1",
+        "atlasLabel": "The Presentation of Jesus",
+        "atlasRef": "Luke 2:22–38",
+        "atlasRecordCategory": "UNSPECIFIED",
+        "sourceMatch": true
+      },
+      "recommendedRelationship": "SAME_NAMED_SCRIPTURAL_SCENE_RESEARCH_MATCH",
+      "sourceScopeCaveat": null,
+      "alternativeSameReferenceRecords": [],
+      "navigation": {
+        "status": "PRESENT_IN_VERIFIED_ATLAS_151_STOP_INDEX",
+        "targetType": "atlas",
+        "eventKey": "biblical:event:jerusalem-temple-e1"
+      },
+      "authoredCanonicalEpisodeId": null,
+      "geographicalGeolocationVerified": false,
+      "approvedCanonicalEpisodeIdentity": false,
+      "publicationApproved": false,
+      "reviewStatus": "SOURCE_AND_NAMED_SCENE_MATCH_REVIEW_NOT_CANONICAL_CERTIFICATION"
+    },
+    {
+      "episodeId": "hist-omitted-110",
+      "episodeTitle": "Massacre of the Holy Innocents",
+      "scriptureReference": "Matthew 2:16–18",
+      "sourceEvidence": {
+        "placeId": "bethlehem",
+        "placeName": "Bethlehem",
+        "eventId": "bethlehem-additional-003",
+        "atlasLabel": "Herod orders the massacre of the Innocents",
+        "atlasRef": "Matthew 2:16–18",
+        "atlasRecordCategory": "LIFE_EVENT",
+        "sourceMatch": true
+      },
+      "recommendedRelationship": "SAME_NAMED_SCRIPTURAL_SCENE_RESEARCH_MATCH",
+      "sourceScopeCaveat": null,
+      "alternativeSameReferenceRecords": [],
+      "navigation": {
+        "status": "NO_AUTOMATIC_RUNTIME_ATLAS_NAVIGATION",
+        "targetType": null,
+        "eventKey": null
+      },
+      "authoredCanonicalEpisodeId": null,
+      "geographicalGeolocationVerified": false,
+      "approvedCanonicalEpisodeIdentity": false,
+      "publicationApproved": false,
+      "reviewStatus": "SOURCE_AND_NAMED_SCENE_MATCH_REVIEW_NOT_CANONICAL_CERTIFICATION"
+    },
+    {
+      "episodeId": "hist-omitted-111",
+      "episodeTitle": "Flight into Egypt",
+      "scriptureReference": "Matthew 2:13–15",
+      "sourceEvidence": {
+        "placeId": "egypt",
+        "placeName": "Egypt",
+        "eventId": "egypt-e1",
+        "atlasLabel": "The flight into Egypt",
+        "atlasRef": "Matthew 2:13–15",
+        "atlasRecordCategory": "UNSPECIFIED",
+        "sourceMatch": true
+      },
+      "recommendedRelationship": "SAME_NAMED_SCRIPTURAL_SCENE_RESEARCH_MATCH",
+      "sourceScopeCaveat": null,
+      "alternativeSameReferenceRecords": [],
+      "navigation": {
+        "status": "PRESENT_IN_VERIFIED_ATLAS_151_STOP_INDEX",
+        "targetType": "atlas",
+        "eventKey": "biblical:event:egypt-e1"
+      },
+      "authoredCanonicalEpisodeId": null,
+      "geographicalGeolocationVerified": false,
+      "approvedCanonicalEpisodeIdentity": false,
+      "publicationApproved": false,
+      "reviewStatus": "SOURCE_AND_NAMED_SCENE_MATCH_REVIEW_NOT_CANONICAL_CERTIFICATION"
+    },
+    {
+      "episodeId": "hist-omitted-112",
+      "episodeTitle": "Return from Egypt",
+      "scriptureReference": "Matthew 2:19–23",
+      "sourceEvidence": {
+        "placeId": "egypt",
+        "placeName": "Egypt",
+        "eventId": "egypt-e2",
+        "atlasLabel": "Return from Egypt",
+        "atlasRef": "Matthew 2:19–23",
+        "atlasRecordCategory": "UNSPECIFIED",
+        "sourceMatch": true
+      },
+      "recommendedRelationship": "SAME_NAMED_SCRIPTURAL_SCENE_RESEARCH_MATCH",
+      "sourceScopeCaveat": "Nazareth-e2 shares Matthew 2:19–23 but labels Jesus' upbringing; the explicitly named Return from Egypt record in Egypt is the selected Atlas evidence.",
+      "alternativeSameReferenceRecords": [
+        {
+          "placeId": "nazareth",
+          "eventId": "nazareth-e2",
+          "title": "Jesus grows up in Nazareth",
+          "reason": "SHARED_SOURCE_PASSAGE_DIFFERENT_LABEL_OR_NARROWER_SUBACTION_NOT_PRIMARY_LINK"
+        }
+      ],
+      "navigation": {
+        "status": "NO_AUTOMATIC_RUNTIME_ATLAS_NAVIGATION",
+        "targetType": null,
+        "eventKey": null
+      },
+      "authoredCanonicalEpisodeId": null,
+      "geographicalGeolocationVerified": false,
+      "approvedCanonicalEpisodeIdentity": false,
+      "publicationApproved": false,
+      "reviewStatus": "SOURCE_AND_NAMED_SCENE_MATCH_REVIEW_NOT_CANONICAL_CERTIFICATION"
+    },
+    {
+      "episodeId": "hist-omitted-113",
+      "episodeTitle": "Twelve-year-old Jesus among the doctors in the Temple",
+      "scriptureReference": "Luke 2:41–52",
+      "sourceEvidence": {
+        "placeId": "jerusalem-temple",
+        "placeName": "Jerusalem — the Temple",
+        "eventId": "jerusalem-temple-e2",
+        "atlasLabel": "The twelve-year-old Jesus in the Temple",
+        "atlasRef": "Luke 2:41–52",
+        "atlasRecordCategory": "UNSPECIFIED",
+        "sourceMatch": true
+      },
+      "recommendedRelationship": "SAME_NAMED_SCRIPTURAL_SCENE_RESEARCH_MATCH",
+      "sourceScopeCaveat": null,
+      "alternativeSameReferenceRecords": [],
+      "navigation": {
+        "status": "PRESENT_IN_VERIFIED_ATLAS_151_STOP_INDEX",
+        "targetType": "atlas",
+        "eventKey": "biblical:event:jerusalem-temple-e2"
+      },
+      "authoredCanonicalEpisodeId": null,
+      "geographicalGeolocationVerified": false,
+      "approvedCanonicalEpisodeIdentity": false,
+      "publicationApproved": false,
+      "reviewStatus": "SOURCE_AND_NAMED_SCENE_MATCH_REVIEW_NOT_CANONICAL_CERTIFICATION"
+    },
+    {
+      "episodeId": "hist-omitted-115",
+      "episodeTitle": "Forty days and temptations in the wilderness",
+      "scriptureReference": "Matthew 4:1–11",
+      "sourceEvidence": {
+        "placeId": "judean-wilderness",
+        "placeName": "Wilderness of Judea",
+        "eventId": "judean-wilderness-e1",
+        "atlasLabel": "The forty-day fast and temptations",
+        "atlasRef": "Matthew 4:1–11",
+        "atlasRecordCategory": "UNSPECIFIED",
+        "sourceMatch": true
+      },
+      "recommendedRelationship": "SAME_NAMED_SCRIPTURAL_SCENE_RESEARCH_MATCH",
+      "sourceScopeCaveat": null,
+      "alternativeSameReferenceRecords": [],
+      "navigation": {
+        "status": "PRESENT_IN_VERIFIED_ATLAS_151_STOP_INDEX",
+        "targetType": "atlas",
+        "eventKey": "biblical:event:judean-wilderness-e1"
+      },
+      "authoredCanonicalEpisodeId": null,
+      "geographicalGeolocationVerified": false,
+      "approvedCanonicalEpisodeIdentity": false,
+      "publicationApproved": false,
+      "reviewStatus": "SOURCE_AND_NAMED_SCENE_MATCH_REVIEW_NOT_CANONICAL_CERTIFICATION"
+    },
+    {
+      "episodeId": "hist-omitted-117",
+      "episodeTitle": "Jesus cleanses the Temple",
+      "scriptureReference": "John 2:13–22",
+      "sourceEvidence": {
+        "placeId": "jerusalem-temple",
+        "placeName": "Jerusalem — the Temple",
+        "eventId": "jerusalem-temple-e3",
+        "atlasLabel": "Jesus purifies the Temple",
+        "atlasRef": "John 2:13–22",
+        "atlasRecordCategory": "UNSPECIFIED",
+        "sourceMatch": true
+      },
+      "recommendedRelationship": "SAME_NAMED_SCRIPTURAL_SCENE_RESEARCH_MATCH",
+      "sourceScopeCaveat": null,
+      "alternativeSameReferenceRecords": [],
+      "navigation": {
+        "status": "NO_AUTOMATIC_RUNTIME_ATLAS_NAVIGATION",
+        "targetType": null,
+        "eventKey": null
+      },
+      "authoredCanonicalEpisodeId": null,
+      "geographicalGeolocationVerified": false,
+      "approvedCanonicalEpisodeIdentity": false,
+      "publicationApproved": false,
+      "reviewStatus": "SOURCE_AND_NAMED_SCENE_MATCH_REVIEW_NOT_CANONICAL_CERTIFICATION"
+    },
+    {
+      "episodeId": "hist-omitted-118",
+      "episodeTitle": "Nicodemus visits Jesus at night",
+      "scriptureReference": "John 3:1–21",
+      "sourceEvidence": {
+        "placeId": "jerusalem-city",
+        "placeName": "Jerusalem — city and feasts",
+        "eventId": "jerusalem-city-additional-010",
+        "atlasLabel": "Nicodemus visits Jesus by night",
+        "atlasRef": "John 3:1–21",
+        "atlasRecordCategory": "LIFE_EVENT",
+        "sourceMatch": true
+      },
+      "recommendedRelationship": "SAME_NAMED_SCRIPTURAL_SCENE_RESEARCH_MATCH",
+      "sourceScopeCaveat": null,
+      "alternativeSameReferenceRecords": [],
+      "navigation": {
+        "status": "NO_AUTOMATIC_RUNTIME_ATLAS_NAVIGATION",
+        "targetType": null,
+        "eventKey": null
+      },
+      "authoredCanonicalEpisodeId": null,
+      "geographicalGeolocationVerified": false,
+      "approvedCanonicalEpisodeIdentity": false,
+      "publicationApproved": false,
+      "reviewStatus": "SOURCE_AND_NAMED_SCENE_MATCH_REVIEW_NOT_CANONICAL_CERTIFICATION"
+    },
+    {
+      "episodeId": "hist-omitted-119",
+      "episodeTitle": "Conversation with the Samaritan woman",
+      "scriptureReference": "John 4:4–26",
+      "sourceEvidence": {
+        "placeId": "sychar",
+        "placeName": "Sychar / Jacob's Well",
+        "eventId": "sychar-e1",
+        "atlasLabel": "Jesus and the Samaritan woman",
+        "atlasRef": "John 4:4–26",
+        "atlasRecordCategory": "UNSPECIFIED",
+        "sourceMatch": true
+      },
+      "recommendedRelationship": "SAME_NAMED_SCRIPTURAL_SCENE_RESEARCH_MATCH",
+      "sourceScopeCaveat": null,
+      "alternativeSameReferenceRecords": [],
+      "navigation": {
+        "status": "PRESENT_IN_VERIFIED_ATLAS_151_STOP_INDEX",
+        "targetType": "atlas",
+        "eventKey": "biblical:event:sychar-e1"
+      },
+      "authoredCanonicalEpisodeId": null,
+      "geographicalGeolocationVerified": false,
+      "approvedCanonicalEpisodeIdentity": false,
+      "publicationApproved": false,
+      "reviewStatus": "SOURCE_AND_NAMED_SCENE_MATCH_REVIEW_NOT_CANONICAL_CERTIFICATION"
+    },
+    {
+      "episodeId": "hist-omitted-121",
+      "episodeTitle": "Calling of Matthew/Levi",
+      "scriptureReference": "Mark 2:13–17",
+      "sourceEvidence": {
+        "placeId": "capernaum",
+        "placeName": "Capernaum",
+        "eventId": "capernaum-additional-018",
+        "atlasLabel": "The call of the tax collector Levi",
+        "atlasRef": "Mark 2:13–17",
+        "atlasRecordCategory": "LIFE_EVENT",
+        "sourceMatch": true
+      },
+      "recommendedRelationship": "SAME_NAMED_SCRIPTURAL_SCENE_RESEARCH_MATCH",
+      "sourceScopeCaveat": null,
+      "alternativeSameReferenceRecords": [],
+      "navigation": {
+        "status": "NO_AUTOMATIC_RUNTIME_ATLAS_NAVIGATION",
+        "targetType": null,
+        "eventKey": null
+      },
+      "authoredCanonicalEpisodeId": null,
+      "geographicalGeolocationVerified": false,
+      "approvedCanonicalEpisodeIdentity": false,
+      "publicationApproved": false,
+      "reviewStatus": "SOURCE_AND_NAMED_SCENE_MATCH_REVIEW_NOT_CANONICAL_CERTIFICATION"
+    },
+    {
+      "episodeId": "hist-omitted-122",
+      "episodeTitle": "Formal appointment of the Twelve",
+      "scriptureReference": "Luke 6:12–16",
+      "sourceEvidence": {
+        "placeId": "beatitudes",
+        "placeName": "Mount of the Beatitudes",
+        "eventId": "beatitudes-additional-021",
+        "atlasLabel": "The choosing of the Twelve Apostles",
+        "atlasRef": "Luke 6:12–16",
+        "atlasRecordCategory": "LIFE_EVENT",
+        "sourceMatch": true
+      },
+      "recommendedRelationship": "SAME_NAMED_SCRIPTURAL_SCENE_RESEARCH_MATCH",
+      "sourceScopeCaveat": null,
+      "alternativeSameReferenceRecords": [],
+      "navigation": {
+        "status": "NO_AUTOMATIC_RUNTIME_ATLAS_NAVIGATION",
+        "targetType": null,
+        "eventKey": null
+      },
+      "authoredCanonicalEpisodeId": null,
+      "geographicalGeolocationVerified": false,
+      "approvedCanonicalEpisodeIdentity": false,
+      "publicationApproved": false,
+      "reviewStatus": "SOURCE_AND_NAMED_SCENE_MATCH_REVIEW_NOT_CANONICAL_CERTIFICATION"
+    },
+    {
+      "episodeId": "hist-omitted-123",
+      "episodeTitle": "Rejection of Jesus at Nazareth",
+      "scriptureReference": "Luke 4:16–30",
+      "sourceEvidence": {
+        "placeId": "nazareth",
+        "placeName": "Nazareth",
+        "eventId": "nazareth-e3",
+        "atlasLabel": "Jesus teaches in the synagogue",
+        "atlasRef": "Luke 4:16–30",
+        "atlasRecordCategory": "UNSPECIFIED",
+        "sourceMatch": true
+      },
+      "recommendedRelationship": "SAME_SOURCE_PASSAGE_DIFFERENT_SUBACTION_OR_EMPHASIS",
+      "sourceScopeCaveat": "Atlas says Jesus teaches in Nazareth synagogue whereas the supplementary reading emphasizes the rejection within that same Luke 4 pericope.",
+      "alternativeSameReferenceRecords": [],
+      "navigation": {
+        "status": "NO_AUTOMATIC_RUNTIME_ATLAS_NAVIGATION",
+        "targetType": null,
+        "eventKey": null
+      },
+      "authoredCanonicalEpisodeId": null,
+      "geographicalGeolocationVerified": false,
+      "approvedCanonicalEpisodeIdentity": false,
+      "publicationApproved": false,
+      "reviewStatus": "SOURCE_AND_NAMED_SCENE_MATCH_REVIEW_NOT_CANONICAL_CERTIFICATION"
+    },
+    {
+      "episodeId": "hist-omitted-155",
+      "episodeTitle": "Mary and Martha",
+      "scriptureReference": "Luke 10:38–42",
+      "sourceEvidence": {
+        "placeId": "bethany",
+        "placeName": "Bethany",
+        "eventId": "bethany-additional-057",
+        "atlasLabel": "Jesus visits Martha and Mary",
+        "atlasRef": "Luke 10:38–42",
+        "atlasRecordCategory": "LIFE_EVENT",
+        "sourceMatch": true
+      },
+      "recommendedRelationship": "SAME_NAMED_SCRIPTURAL_SCENE_RESEARCH_MATCH",
+      "sourceScopeCaveat": null,
+      "alternativeSameReferenceRecords": [],
+      "navigation": {
+        "status": "NO_AUTOMATIC_RUNTIME_ATLAS_NAVIGATION",
+        "targetType": null,
+        "eventKey": null
+      },
+      "authoredCanonicalEpisodeId": null,
+      "geographicalGeolocationVerified": false,
+      "approvedCanonicalEpisodeIdentity": false,
+      "publicationApproved": false,
+      "reviewStatus": "SOURCE_AND_NAMED_SCENE_MATCH_REVIEW_NOT_CANONICAL_CERTIFICATION"
+    },
+    {
+      "episodeId": "hist-omitted-167",
+      "episodeTitle": "Zacchaeus",
+      "scriptureReference": "Luke 19:1–10",
+      "sourceEvidence": {
+        "placeId": "jericho",
+        "placeName": "Jericho",
+        "eventId": "jericho-e2",
+        "atlasLabel": "The conversion of Zacchaeus",
+        "atlasRef": "Luke 19:1–10",
+        "atlasRecordCategory": "UNSPECIFIED",
+        "sourceMatch": true
+      },
+      "recommendedRelationship": "SAME_NAMED_SCRIPTURAL_SCENE_RESEARCH_MATCH",
+      "sourceScopeCaveat": "A second record on calling Zacchaeus down is a narrower subaction inside the conversion scene; avoid two identifications for one visit.",
+      "alternativeSameReferenceRecords": [
+        {
+          "placeId": "jericho",
+          "eventId": "jericho-additional-064",
+          "title": "Jesus calls Zacchaeus down from the tree",
+          "reason": "SHARED_SOURCE_PASSAGE_DIFFERENT_LABEL_OR_NARROWER_SUBACTION_NOT_PRIMARY_LINK"
+        }
+      ],
+      "navigation": {
+        "status": "PRESENT_IN_VERIFIED_ATLAS_151_STOP_INDEX",
+        "targetType": "atlas",
+        "eventKey": "biblical:event:jericho-e2"
+      },
+      "authoredCanonicalEpisodeId": null,
+      "geographicalGeolocationVerified": false,
+      "approvedCanonicalEpisodeIdentity": false,
+      "publicationApproved": false,
+      "reviewStatus": "SOURCE_AND_NAMED_SCENE_MATCH_REVIEW_NOT_CANONICAL_CERTIFICATION"
+    },
+    {
+      "episodeId": "hist-omitted-168",
+      "episodeTitle": "Jesus and the sinful woman",
+      "scriptureReference": "Luke 7:36–50",
+      "sourceEvidence": {
+        "placeId": "galilee-region",
+        "placeName": "Galilee — unnamed villages",
+        "eventId": "galilee-region-additional-026",
+        "atlasLabel": "The sinful woman anoints Jesus' feet",
+        "atlasRef": "Luke 7:36–50",
+        "atlasRecordCategory": "LIFE_EVENT",
+        "sourceMatch": true
+      },
+      "recommendedRelationship": "SAME_NAMED_SCRIPTURAL_SCENE_RESEARCH_MATCH",
+      "sourceScopeCaveat": null,
+      "alternativeSameReferenceRecords": [],
+      "navigation": {
+        "status": "NO_AUTOMATIC_RUNTIME_ATLAS_NAVIGATION",
+        "targetType": null,
+        "eventKey": null
+      },
+      "authoredCanonicalEpisodeId": null,
+      "geographicalGeolocationVerified": false,
+      "approvedCanonicalEpisodeIdentity": false,
+      "publicationApproved": false,
+      "reviewStatus": "SOURCE_AND_NAMED_SCENE_MATCH_REVIEW_NOT_CANONICAL_CERTIFICATION"
+    },
+    {
+      "episodeId": "hist-omitted-170",
+      "episodeTitle": "The anointing at Bethany",
+      "scriptureReference": "John 12:1–8",
+      "sourceEvidence": {
+        "placeId": "bethany",
+        "placeName": "Bethany",
+        "eventId": "bethany-e2",
+        "atlasLabel": "The anointing at Bethany",
+        "atlasRef": "John 12:1–8",
+        "atlasRecordCategory": "UNSPECIFIED",
+        "sourceMatch": true
+      },
+      "recommendedRelationship": "SAME_NAMED_SCRIPTURAL_SCENE_RESEARCH_MATCH",
+      "sourceScopeCaveat": "The alternate Bethany stay record shares the range but describes context before the Passion, not the anointing itself.",
+      "alternativeSameReferenceRecords": [
+        {
+          "placeId": "bethany",
+          "eventId": "bethany-additional-066",
+          "title": "Jesus stays at Bethany before the Passion",
+          "reason": "SHARED_SOURCE_PASSAGE_DIFFERENT_LABEL_OR_NARROWER_SUBACTION_NOT_PRIMARY_LINK"
+        }
+      ],
+      "navigation": {
+        "status": "NO_AUTOMATIC_RUNTIME_ATLAS_NAVIGATION",
+        "targetType": null,
+        "eventKey": null
+      },
+      "authoredCanonicalEpisodeId": null,
+      "geographicalGeolocationVerified": false,
+      "approvedCanonicalEpisodeIdentity": false,
+      "publicationApproved": false,
+      "reviewStatus": "SOURCE_AND_NAMED_SCENE_MATCH_REVIEW_NOT_CANONICAL_CERTIFICATION"
+    },
+    {
+      "episodeId": "hist-omitted-174",
+      "episodeTitle": "Washing of the Apostles' feet",
+      "scriptureReference": "John 13:1–17",
+      "sourceEvidence": {
+        "placeId": "cenacle",
+        "placeName": "Upper Room / Cenacle",
+        "eventId": "cenacle-e2",
+        "atlasLabel": "The washing of the feet",
+        "atlasRef": "John 13:1–17",
+        "atlasRecordCategory": "UNSPECIFIED",
+        "sourceMatch": true
+      },
+      "recommendedRelationship": "SAME_NAMED_SCRIPTURAL_SCENE_RESEARCH_MATCH",
+      "sourceScopeCaveat": null,
+      "alternativeSameReferenceRecords": [],
+      "navigation": {
+        "status": "NO_AUTOMATIC_RUNTIME_ATLAS_NAVIGATION",
+        "targetType": null,
+        "eventKey": null
+      },
+      "authoredCanonicalEpisodeId": null,
+      "geographicalGeolocationVerified": false,
+      "approvedCanonicalEpisodeIdentity": false,
+      "publicationApproved": false,
+      "reviewStatus": "SOURCE_AND_NAMED_SCENE_MATCH_REVIEW_NOT_CANONICAL_CERTIFICATION"
+    },
+    {
+      "episodeId": "hist-omitted-179",
+      "episodeTitle": "Jesus before Herod Antipas",
+      "scriptureReference": "Luke 23:6–12",
+      "sourceEvidence": {
+        "placeId": "jerusalem-trial",
+        "placeName": "Jerusalem — the trials of Jesus",
+        "eventId": "jerusalem-trial-additional-076",
+        "atlasLabel": "Jesus appears before Herod Antipas",
+        "atlasRef": "Luke 23:6–12",
+        "atlasRecordCategory": "LIFE_EVENT",
+        "sourceMatch": true
+      },
+      "recommendedRelationship": "SAME_NAMED_SCRIPTURAL_SCENE_RESEARCH_MATCH",
+      "sourceScopeCaveat": null,
+      "alternativeSameReferenceRecords": [],
+      "navigation": {
+        "status": "NO_AUTOMATIC_RUNTIME_ATLAS_NAVIGATION",
+        "targetType": null,
+        "eventKey": null
+      },
+      "authoredCanonicalEpisodeId": null,
+      "geographicalGeolocationVerified": false,
+      "approvedCanonicalEpisodeIdentity": false,
+      "publicationApproved": false,
+      "reviewStatus": "SOURCE_AND_NAMED_SCENE_MATCH_REVIEW_NOT_CANONICAL_CERTIFICATION"
+    },
+    {
+      "episodeId": "hist-omitted-181",
+      "episodeTitle": "The good thief",
+      "scriptureReference": "Luke 23:39–43",
+      "sourceEvidence": {
+        "placeId": "golgotha",
+        "placeName": "Golgotha / Calvary",
+        "eventId": "golgotha-e3",
+        "atlasLabel": "Jesus and the good thief",
+        "atlasRef": "Luke 23:39–43",
+        "atlasRecordCategory": "UNSPECIFIED",
+        "sourceMatch": true
+      },
+      "recommendedRelationship": "SAME_NAMED_SCRIPTURAL_SCENE_RESEARCH_MATCH",
+      "sourceScopeCaveat": null,
+      "alternativeSameReferenceRecords": [],
+      "navigation": {
+        "status": "NO_AUTOMATIC_RUNTIME_ATLAS_NAVIGATION",
+        "targetType": null,
+        "eventKey": null
+      },
+      "authoredCanonicalEpisodeId": null,
+      "geographicalGeolocationVerified": false,
+      "approvedCanonicalEpisodeIdentity": false,
+      "publicationApproved": false,
+      "reviewStatus": "SOURCE_AND_NAMED_SCENE_MATCH_REVIEW_NOT_CANONICAL_CERTIFICATION"
+    },
+    {
+      "episodeId": "hist-omitted-182",
+      "episodeTitle": "The guards at the tomb",
+      "scriptureReference": "Matthew 27:62–66",
+      "sourceEvidence": {
+        "placeId": "christ-tomb",
+        "placeName": "Tomb of Christ / Holy Sepulchre",
+        "eventId": "christ-tomb-additional-079",
+        "atlasLabel": "The guards at the tomb",
+        "atlasRef": "Matthew 27:62–66",
+        "atlasRecordCategory": "LIFE_EVENT",
+        "sourceMatch": true
+      },
+      "recommendedRelationship": "SAME_NAMED_SCRIPTURAL_SCENE_RESEARCH_MATCH",
+      "sourceScopeCaveat": null,
+      "alternativeSameReferenceRecords": [],
+      "navigation": {
+        "status": "NO_AUTOMATIC_RUNTIME_ATLAS_NAVIGATION",
+        "targetType": null,
+        "eventKey": null
+      },
+      "authoredCanonicalEpisodeId": null,
+      "geographicalGeolocationVerified": false,
+      "approvedCanonicalEpisodeIdentity": false,
+      "publicationApproved": false,
+      "reviewStatus": "SOURCE_AND_NAMED_SCENE_MATCH_REVIEW_NOT_CANONICAL_CERTIFICATION"
+    },
+    {
+      "episodeId": "hist-omitted-183",
+      "episodeTitle": "Angel's announcement to the women",
+      "scriptureReference": "Matthew 28:1–10",
+      "sourceEvidence": {
+        "placeId": "christ-tomb",
+        "placeName": "Tomb of Christ / Holy Sepulchre",
+        "eventId": "christ-tomb-e3",
+        "atlasLabel": "The angel announces the Resurrection",
+        "atlasRef": "Matthew 28:1–10",
+        "atlasRecordCategory": "UNSPECIFIED",
+        "sourceMatch": true
+      },
+      "recommendedRelationship": "SAME_NAMED_SCRIPTURAL_SCENE_RESEARCH_MATCH",
+      "sourceScopeCaveat": null,
+      "alternativeSameReferenceRecords": [],
+      "navigation": {
+        "status": "NO_AUTOMATIC_RUNTIME_ATLAS_NAVIGATION",
+        "targetType": null,
+        "eventKey": null
+      },
+      "authoredCanonicalEpisodeId": null,
+      "geographicalGeolocationVerified": false,
+      "approvedCanonicalEpisodeIdentity": false,
+      "publicationApproved": false,
+      "reviewStatus": "SOURCE_AND_NAMED_SCENE_MATCH_REVIEW_NOT_CANONICAL_CERTIFICATION"
+    },
+    {
+      "episodeId": "hist-omitted-184",
+      "episodeTitle": "Road to Emmaus",
+      "scriptureReference": "Luke 24:13–35",
+      "sourceEvidence": {
+        "placeId": "emmaus",
+        "placeName": "Emmaus",
+        "eventId": "emmaus-e1",
+        "atlasLabel": "The risen Jesus walks to Emmaus",
+        "atlasRef": "Luke 24:13–35",
+        "atlasRecordCategory": "UNSPECIFIED",
+        "sourceMatch": true
+      },
+      "recommendedRelationship": "SAME_NAMED_SCRIPTURAL_SCENE_RESEARCH_MATCH",
+      "sourceScopeCaveat": null,
+      "alternativeSameReferenceRecords": [],
+      "navigation": {
+        "status": "PRESENT_IN_VERIFIED_ATLAS_151_STOP_INDEX",
+        "targetType": "atlas",
+        "eventKey": "biblical:event:emmaus-e1"
+      },
+      "authoredCanonicalEpisodeId": null,
+      "geographicalGeolocationVerified": false,
+      "approvedCanonicalEpisodeIdentity": false,
+      "publicationApproved": false,
+      "reviewStatus": "SOURCE_AND_NAMED_SCENE_MATCH_REVIEW_NOT_CANONICAL_CERTIFICATION"
+    },
+    {
+      "episodeId": "hist-omitted-185",
+      "episodeTitle": "Jesus eats before the Apostles",
+      "scriptureReference": "Luke 24:36–43",
+      "sourceEvidence": {
+        "placeId": "cenacle",
+        "placeName": "Upper Room / Cenacle",
+        "eventId": "cenacle-additional-081",
+        "atlasLabel": "Jesus shows his wounds to the disciples",
+        "atlasRef": "Luke 24:36–43",
+        "atlasRecordCategory": "LIFE_EVENT",
+        "sourceMatch": true
+      },
+      "recommendedRelationship": "SAME_SOURCE_PASSAGE_DIFFERENT_SUBACTION_OR_EMPHASIS",
+      "sourceScopeCaveat": "Atlas record emphasizes showing wounds; supplementary reading emphasizes eating. Both occur within Luke 24:36–43 but are distinct acts.",
+      "alternativeSameReferenceRecords": [],
+      "navigation": {
+        "status": "NO_AUTOMATIC_RUNTIME_ATLAS_NAVIGATION",
+        "targetType": null,
+        "eventKey": null
+      },
+      "authoredCanonicalEpisodeId": null,
+      "geographicalGeolocationVerified": false,
+      "approvedCanonicalEpisodeIdentity": false,
+      "publicationApproved": false,
+      "reviewStatus": "SOURCE_AND_NAMED_SCENE_MATCH_REVIEW_NOT_CANONICAL_CERTIFICATION"
+    },
+    {
+      "episodeId": "hist-omitted-186",
+      "episodeTitle": "Appearance beside the Sea of Galilee",
+      "scriptureReference": "John 21:1–14",
+      "sourceEvidence": {
+        "placeId": "galilee-sea",
+        "placeName": "Sea of Galilee",
+        "eventId": "galilee-sea-e4",
+        "atlasLabel": "The risen Jesus appears by the lake",
+        "atlasRef": "John 21:1–14",
+        "atlasRecordCategory": "UNSPECIFIED",
+        "sourceMatch": true
+      },
+      "recommendedRelationship": "SAME_NAMED_SCRIPTURAL_SCENE_RESEARCH_MATCH",
+      "sourceScopeCaveat": null,
+      "alternativeSameReferenceRecords": [],
+      "navigation": {
+        "status": "PRESENT_IN_VERIFIED_ATLAS_151_STOP_INDEX",
+        "targetType": "atlas",
+        "eventKey": "biblical:event:galilee-sea-e4"
+      },
+      "authoredCanonicalEpisodeId": null,
+      "geographicalGeolocationVerified": false,
+      "approvedCanonicalEpisodeIdentity": false,
+      "publicationApproved": false,
+      "reviewStatus": "SOURCE_AND_NAMED_SCENE_MATCH_REVIEW_NOT_CANONICAL_CERTIFICATION"
+    },
+    {
+      "episodeId": "hist-omitted-188",
+      "episodeTitle": "Jesus asks Peter three times whether he loves Him",
+      "scriptureReference": "John 21:15–19",
+      "sourceEvidence": {
+        "placeId": "galilee-sea",
+        "placeName": "Sea of Galilee",
+        "eventId": "galilee-sea-additional-083",
+        "atlasLabel": "Jesus asks Peter three times whether he loves him",
+        "atlasRef": "John 21:15–19",
+        "atlasRecordCategory": "LIFE_EVENT",
+        "sourceMatch": true
+      },
+      "recommendedRelationship": "SAME_NAMED_SCRIPTURAL_SCENE_RESEARCH_MATCH",
+      "sourceScopeCaveat": null,
+      "alternativeSameReferenceRecords": [],
+      "navigation": {
+        "status": "NO_AUTOMATIC_RUNTIME_ATLAS_NAVIGATION",
+        "targetType": null,
+        "eventKey": null
+      },
+      "authoredCanonicalEpisodeId": null,
+      "geographicalGeolocationVerified": false,
+      "approvedCanonicalEpisodeIdentity": false,
+      "publicationApproved": false,
+      "reviewStatus": "SOURCE_AND_NAMED_SCENE_MATCH_REVIEW_NOT_CANONICAL_CERTIFICATION"
+    },
+    {
+      "episodeId": "hist-omitted-189",
+      "episodeTitle": "Great Commission in Galilee",
+      "scriptureReference": "Matthew 28:16–20",
+      "sourceEvidence": {
+        "placeId": "galilee-mountain",
+        "placeName": "Galilee — the mountain of the risen Lord",
+        "eventId": "galilee-mountain-additional-084",
+        "atlasLabel": "Jesus commissions the Eleven in Galilee",
+        "atlasRef": "Matthew 28:16–20",
+        "atlasRecordCategory": "LIFE_EVENT",
+        "sourceMatch": true
+      },
+      "recommendedRelationship": "SAME_NAMED_SCRIPTURAL_SCENE_RESEARCH_MATCH",
+      "sourceScopeCaveat": null,
+      "alternativeSameReferenceRecords": [],
+      "navigation": {
+        "status": "NO_AUTOMATIC_RUNTIME_ATLAS_NAVIGATION",
+        "targetType": null,
+        "eventKey": null
+      },
+      "authoredCanonicalEpisodeId": null,
+      "geographicalGeolocationVerified": false,
+      "approvedCanonicalEpisodeIdentity": false,
+      "publicationApproved": false,
+      "reviewStatus": "SOURCE_AND_NAMED_SCENE_MATCH_REVIEW_NOT_CANONICAL_CERTIFICATION"
+    }
+  ]
+}
