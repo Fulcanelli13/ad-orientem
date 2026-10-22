@@ -20,6 +20,7 @@ on:
       - src/scripture/catena-research-retrieval.js
       - tests/scripture-catena-research-retrieval.mjs
       - tests/scripture-catena-first-30-adjudication.mjs
+      - tests/scripture-catena-external-loci.mjs
       - previews/living-catena-reader-research-20261021.html
       - data/scripture/catena/research/full-corpus-pass-20261021/**
       - .github/workflows/living-catena-corpus-pass.yml
@@ -56,6 +57,8 @@ jobs:
         run: node tests/scripture-catena-research-retrieval.mjs
       - name: Verify source evidence and human-publication locks for 30 Matthew candidates
         run: node tests/scripture-catena-first-30-adjudication.mjs
+      - name: Validate identified primary-work English parallels and blocked approval
+        run: node tests/scripture-catena-external-loci.mjs
       - name: Ensure generated index is up to date for PR
         run: |
           git diff --exit-code -- data/scripture/catena/research/full-corpus-pass-20261021/
