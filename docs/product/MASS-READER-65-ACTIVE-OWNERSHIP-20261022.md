@@ -19,6 +19,16 @@ This register supersedes any *active product* assertion that the ordinary LIVE r
 
 The October 2026 source contained a `?aoLiveCards=48` public rollback and a `?aoLiveCards=65` native opt-in alongside a browser-default curated path. Both query-based selectors are now retired. Regression checks in `tests/browser-entry.mjs` and `tests/mass-phase12-curated65-contract.mjs` must reject their return.
 
+## Removed obsolete reader implementations (dependency verified)
+
+A read-only reverse-reference audit across `src/`, `tests/`, `tools/`, `scripts/`, `index.html` and `package.json` returned **zero runtime and test importers** for each of these files. They have been deleted from the active Git tree; the repository's Git history retains their provenance:
+
+- `src/mass/reader-shadow.js` — unused legacy DOM parity shadow, not an authorized reader surface.
+- `src/mass/reader-preview.js` — detached inert mirror of the old reader, no active importer.
+- `src/mass/reader-dom-adapter.js` — previous parallel frame adapter superseded by `reader-dom.js`.
+
+`tools/mass/audit-reader-legacy-dependencies.mjs` now fails the Mass release gate if these obsolete files or their active importers return.
+
 ## Dependency-protected files — not yet deletable
 
 | File or evidence | Classification | Reason |
@@ -26,7 +36,7 @@ The October 2026 source contained a `?aoLiveCards=48` public rollback and a `?ao
 | `src/mass/reader-live-product48.js` | **SUPPORTING HISTORICAL COMPATIBILITY — no public selection** | Still imported by `reader-native-preview.js` and `reader-mode-switch.js` for noncurated fallback and by historical tests. Removing it now would require form-by-form migration and regression verification. It is **not** the normal reader. |
 | `tests/reader-live-product48.mjs`, historical sections of `tests/reader-native-preview.mjs` / `tests/reader-mode-switch.mjs` | **HISTORICAL / SUPPORTING** | Assert internal compatibility only. They must not be cited as certification of the ordinary production UI; retire with the fallback module after parity. |
 | `data/presentation/reader-release-gate.v1.json` 48-card historical markers | **HISTORICAL RECORD** | Historical research/release evidence, not a product selector; preserve provenance until the release ledger is explicitly versioned. |
-| `src/mass/reader-guide.js`, `src/mass/reader-preview.js`, `src/mass/reader-shadow.js` and older donation/demo assets | **REQUIRES DEPENDENCY TRACE** | Names alone are insufficient to infer safety of deletion. Preserve until all runtime, accessibility, print and regression importers have been checked. |
+| `src/mass/reader-guide.js` and older approved art / historical evidence | **SUPPORTING / REQUIRES SEPARATE TRACE** | Do not infer obsolescence from a legacy name; the three orphaned mirror implementations above were verified and removed separately. |
 | Historical 46 references to `46px` navigation geometry / `mass-v46` artwork | **NOT CARD COUNTS** | Do not rename navigation pixel dimensions or approved asset-generation IDs to solve a card-count issue. |
 
 ## Before retiring internal 48 compatibility
