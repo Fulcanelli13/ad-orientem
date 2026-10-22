@@ -81,6 +81,34 @@ try{
   const overflowCurated=await page.locator(".aoCatenaMessenger").evaluate(el=>el.scrollWidth-el.clientWidth);
   assert.ok(overflowCurated<=2, "Theological question panel overflows phone on "+spec.book);
  }
+ for(const spec of [
+  {book:"Matthew",verse:"6:9",id:"mat-our-father",other:"catena.matthew.6.9:4",father:"Chrysostom"},
+  {book:"Mark",verse:"14:22",id:"mark-real-body",other:"catena.mark.14.22:4",father:"Chrysostom"},
+  {book:"Luke",verse:"10:38",id:"luke-martha-mary",other:"catena.luke.10.38:15",father:"Gregory"},
+  {book:"John",verse:"20:19",id:"john-remit-sins",other:"catena.john.20.19:18",father:"Chrysostom"}
+ ]){
+  await page.goto(url+"?book="+spec.book+"&passage="+spec.verse,
+    {waitUntil:"domcontentloaded",timeout:60000});
+  await page.locator(".aoCatenaMessenger").waitFor({state:"visible",timeout:30000});
+  const openQuestion=page.locator('[data-catena-curated-question="'+spec.id+'"]');
+  await openQuestion.waitFor({state:"visible",timeout:15000});
+  await openQuestion.click();
+  const related=page.locator('[data-catena-companions-for="'+spec.id+'"]');
+  await related.waitFor({state:"visible",timeout:15000});
+  assert.match(await related.innerText(),/emphases may differ/i);
+  const btn=related.locator('[data-catena-companion-pointer="'+spec.other+'"]');
+  assert.equal(await btn.getAttribute("data-catena-companion-father"),spec.father);
+  await btn.click();
+  const other=page.locator('.aoCatenaMRow[data-catena-fragment-id="'+spec.other+'"]');
+  await other.waitFor({state:"visible",timeout:15000});
+  assert.ok((await other.locator(".aoCatenaMName").first().innerText()).includes(spec.father));
+  assert.match(await other.locator(".aoCatenaMRelated").innerText(),
+    /ANOTHER FATHER ON THIS PASSAGE.*DISTINCT SOURCE/);
+  assert.match(await other.locator(".aoCatenaMMeta a").getAttribute("href"),
+    /^https:\/\/www\.ecatholic2000\.com\//);
+  assert.equal(await btn.isDisabled(),true);
+  assert.ok((await page.locator(".aoCatenaMessenger").evaluate(el=>el.scrollWidth-el.clientWidth))<=2);
+ }
  await page.goto(url+"?research=1",{waitUntil:"domcontentloaded",timeout:60000});
  await page.locator(".aoCatenaMessenger").waitFor({state:"visible",timeout:20000});
  const panel=page.locator(".aoCatenaMResearch");
