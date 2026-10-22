@@ -598,8 +598,8 @@ export function mountCatenaMessenger(host,pericopes,{language="en",fetcher=globa
    return;
   }
   const source=rows.find(r=>r.id===item.sourcePointer);
-  if(!source||source.father!==rows.find(r=>r.id===item.sourcePointer)?.father||
-   !String(source.text).includes(item.sourceEvidence)){
+  if(!source||!curatedCatenaReaderQuestions(rows,{limit:6}).some(q=>
+    q.id===item.id&&q.sourcePointer===item.sourcePointer&&q.sourceEvidence===item.sourceEvidence)){
    note("This question's original excerpt is no longer source-verifiable, so no attributed reply can be shown.");
    return;
   }
