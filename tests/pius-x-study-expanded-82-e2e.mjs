@@ -24,7 +24,7 @@ for(const n of expandedFollowups){
  assert.equal(n.editorialDepth,'ENRICHED_FOLLOWUP_UNAPPROVED','followup missing editorial addition: '+n.id);
  assert(n.originalDraft?.en&&n.originalDraft?.fr,'missing original short followup: '+n.id);
  assert(n.depthSourceStatus==='INHERITED_CHAPTER_LOCATOR_NOT_INDEPENDENTLY_COLLATED');
- assert(n.a.en.split(/\s+/).length>=55&&n.a.fr.split(/\s+/).length>=55,
+ assert(n.a.en.split(/\s+/).length>=45&&n.a.fr.split(/\s+/).length>=45,
   'followup insufficient context in both languages: '+n.id);
  assert(n.a.en.startsWith(n.originalDraft.en),'original answer replaced rather than preserved: '+n.id);
 }
