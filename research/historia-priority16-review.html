@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>Historia Salutis · 16 Scripture proposals</title>
+<style>
+:root{color-scheme:dark;--bg:#080c12;--panel:#111923;--inner:#17212d;--line:#354252;--gold:#c5b08b;--text:#ebe5d9;--muted:#b9b4ac;--focus:#e4ca8c}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text)}
+body{font:16px/1.55 Georgia,"Times New Roman",serif}
+button,select{font:inherit}button{cursor:pointer}
+a{color:var(--gold)}
+header{border-bottom:1px solid var(--line);padding:27px clamp(16px,3vw,46px);background:#0d141d}
+.kicker{font:11px/1.4 system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+h1{font-weight:400;font-size:clamp(26px,4vw,42px);line-height:1.17;margin:10px 0}
+.sub{color:var(--muted);max-width:820px;margin:8px 0}
+.layout{display:grid;grid-template-columns:minmax(240px,300px) minmax(0,1fr);max-width:1500px;min-height:70vh;margin:0 auto}
+aside{padding:25px 14px;border-right:1px solid var(--line);background:#0b121b}
+aside h2{margin:0 12px 15px;font:11px system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+nav{display:grid;gap:5px}
+nav button{color:var(--text);text-align:left;display:flex;gap:12px;align-items:baseline;padding:11px 12px;width:100%;background:transparent;border:1px solid transparent;border-radius:6px}
+nav button:hover,nav button:focus-visible{border-color:var(--gold);outline:none}
+nav button[aria-current="true"]{background:var(--inner);border-color:#655946}
+nav .num{font:12px system-ui,sans-serif;min-width:30px;color:var(--gold)}
+nav .label{font:14px/1.35 Georgia,serif}
+main{padding:clamp(16px,3vw,40px);min-width:0}
+.topline{display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:space-between}
+select{color:var(--text);background:var(--inner);border:1px solid var(--line);padding:9px 12px;border-radius:4px}
+h2{font-weight:400;font-size:30px;line-height:1.2;margin:13px 0}
+.meta{font:12px/1.45 system-ui,sans-serif;color:var(--gold)}
+.paper{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:16px;margin:20px 0}
+section.panel{background:var(--panel);border:1px solid var(--line);border-radius:6px;min-width:0;padding:20px}
+section.panel h3{font-size:17px;font-weight:400;margin:0 0 15px}
+.refs{font:13px/1.65 system-ui,sans-serif;color:var(--muted)}
+.excerpt{padding:10px 0 16px;border-top:1px solid #293644}
+.excerpt:first-of-type{border-top:0}
+.excerpt h4{color:var(--gold);font:12px system-ui,sans-serif;margin:6px 0 11px}
+.verse{margin:0 0 9px;padding-left:29px;text-indent:-29px;line-height:1.65}
+.verse sup{font:11px system-ui,sans-serif;color:var(--gold);vertical-align:baseline;margin-right:10px}
+.break{margin:18px auto;text-align:center;max-width:95%;color:var(--muted);font:12px/1.55 system-ui,sans-serif;border-block:1px dotted #546070;padding:9px}
+.note{border-left:2px solid #817255;background:#151b24;padding:16px 20px;margin:18px 0 0}
+.note p{margin:5px 0 13px}
+.note strong{font:12px system-ui,sans-serif;letter-spacing:.04em;color:var(--gold)}
+.warning{font:12px/1.6 system-ui,sans-serif;color:var(--muted);margin-top:20px}
+.notice{border:1px solid var(--line);padding:15px;color:var(--muted)}
+@media(max-width:900px){.layout{grid-template-columns:minmax(0,1fr)}aside{border-right:0;border-bottom:1px solid var(--line);padding:14px 10px}aside h2{margin:0 8px 10px}nav{display:flex;overflow-x:auto;gap:8px;padding:0 0 5px;max-width:100%;scrollbar-width:thin}nav button{flex:0 0 175px;min-height:58px}.paper{grid-template-columns:minmax(0,1fr)}main{padding:20px 15px}header{padding:20px 16px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header>
+<div class="kicker">Ad Orientem · Historia Salutis · Editorial research</div>
+<h1>Sixteen economical Scripture selections</h1>
+<p class="sub">Compare a proposed Scripture excerpt against its existing salvation-history movement. All biblical words below load from the pinned Catholic source witness, not from an AI rendering. These are <strong>unapproved proposals</strong>, not modifications to the reader.</p>
+</header>
+<div class="layout">
+<aside>
+<h2>Proposals · <span id="quantity">16</span></h2>
+<nav id="episode-list" aria-label="Research proposals"><span class="notice">Loading source registry…</span></nav>
+</aside>
+<main>
+<div class="topline">
+<div class="meta" id="position">Research comparison</div>
+<label class="meta" for="edition">Scripture witness
+<select id="edition"><option value="dr-challoner">Douay–Rheims · Challoner</option><option value="cpdv-2009">CPDV · English</option><option value="crampon-1923">Crampon 1923 · Français</option></select>
+</label>
+</div>
+<h2 id="heading">Select a passage</h2>
+<div id="detail" aria-live="polite"><p class="notice">This review does not select or insert passages into the 54-chapter manuscript.</p></div>
+</main>
+</div>
+<script>
+"use strict";
+(function(){
+ const $=id=>document.getElementById(id);
+ const state={plan:null,proof:null,selected:null,edition:"dr-challoner",cache:new Map(),version:0};
+ const sourceRoot=new URL("../data/",document.baseURI);
+ const path=p=>new URL(p,sourceRoot);
+ const node=(tag,klass,text)=>{const e=document.createElement(tag);if(klass)e.className=klass;if(text!==undefined)e.textContent=String(text);return e;};
+ const plain=(parent,tag,klass,text)=>{const element=node(tag,klass,text);parent.append(element);return element;};
+ const error=message=>{const el=node("p","notice",message);$("detail").replaceChildren(el);};
+ async function fetchJSON(url){
+  const r=await fetch(url,{cache:"no-store"});
+  if(!r.ok)throw Error("Required source file unavailable: "+r.status);
+  return r.json();
+ }
+ async function getSource(edition,book){
+  const key=edition+"/"+book;
+  if(!state.cache.has(key)){
+   const pending=fetchJSON(path("scripture/witness/"+key+".json")).then(d=>{
+    if(d.schema!=="ao.scripture.source-witness.v1"||d.sourceStatus!=="UNCOLLATED_SOURCE_WITNESS"||d.editionId!==edition||d.book!==book||!Array.isArray(d.verses))throw Error("Unexpected source edition");
+    return d;
+   });
+   state.cache.set(key,pending);
+  }
+  return state.cache.get(key);
+ }
+ const allMovements=()=>state.proof?.movements||[];
+ function drawMenu(){
+  const nav=$("episode-list");nav.replaceChildren();
+  for(const proposal of state.plan.entries){
+   const b=node("button");b.type="button";b.dataset.episodeId=proposal.episodeId;
+   b.setAttribute("aria-current",String(state.selected===proposal.episodeId));
+   plain(b,"span","num",proposal.episodeId.slice(-3));
+   plain(b,"span","label",proposal.episodeTitle);
+   b.addEventListener("click",()=>{state.selected=proposal.episodeId;drawMenu();void draw();});
+   nav.append(b);
+  }
+ }
+ function renderMovement(holder,proposal){
+  const m=allMovements().find(x=>x.id===proposal.comparedCurrentMovement);
+  const section=plain(holder,"section","panel");
+  plain(section,"h3",null,"Existing salvation-history movement");
+  plain(section,"p","meta",m?m.id+" · "+m.title:"Movement context unavailable");
+  const selected=(m?.beats||[]).filter(x=>x.kind==="SCRIPTURE").flatMap(x=>x.refs||[]);
+  plain(section,"p","refs",selected.length?selected.join(" · "):"No selected Scripture refs found");
+  plain(section,"p","warning","This is the existing selected-reference map, not a claim that the proposed episode is already included.");
+ }
+ async function renderProposed(holder,proposal,myVersion){
+  const section=plain(holder,"section","panel");
+  plain(section,"h3",null,"Proposed selected Scripture — original witness");
+  const version=state.edition;
+  let previous=null,visible=0;
+  for(const span of proposal.proposedSelection){
+   const witness=await getSource(version,span.book);
+   if(myVersion!==state.version)return;
+   const list=witness.verses.filter(v=>v[0]===span.chapter&&v[1]>=span.firstVerse&&v[1]<=span.lastVerse)
+     .sort((a,b)=>a[1]-b[1]);
+   if(list.length!==span.verseCount || list.some((v,i)=>v[1]!==span.firstVerse+i))
+    throw Error("Source mismatch or missing verses in "+span.reference+" ("+version+")");
+   if(previous){
+    let consecutive=previous.book===span.book&&previous.chapter===span.chapter&&span.firstVerse===previous.lastVerse+1;
+    if(!consecutive)plain(section,"p","break","— Explicit Scripture omission / new selected passage —");
+   }
+   const frag=plain(section,"div","excerpt");
+   plain(frag,"h4",null,span.reference+" · "+span.verseCount+" verses");
+   for(const verse of list){
+    const p=plain(frag,"p","verse");const sup=node("sup",null,span.chapter+":"+verse[1]);p.append(sup,document.createTextNode(verse[2]));
+   }
+   previous=span;visible+=list.length;
+  }
+  if(myVersion!==state.version)return;
+  plain(section,"p","warning",visible+" original verse records displayed · "+witnessLabel(version)+" · UNCOLLATED SOURCE WITNESS");
+ }
+ function witnessLabel(v){return {"dr-challoner":"Douay–Rheims/Challoner","cpdv-2009":"CPDV 2009","crampon-1923":"Crampon 1923"}[v]||v}
+ async function draw(){
+  const proposal=state.plan?.entries.find(x=>x.episodeId===state.selected);
+  if(!proposal)return;
+  const version=++state.version;
+  $("heading").textContent=proposal.episodeTitle;
+  $("position").textContent=proposal.episodeId+" · "+proposal.selectedVerseOccurrences+" proposed verses · "+proposal.proposedSelection.length+" windows";
+  const out=$("detail");out.replaceChildren();
+  const comparative=plain(out,"div","paper");
+  renderMovement(comparative,proposal);
+  try{await renderProposed(comparative,proposal,version);}
+  catch(err){if(version===state.version)error(String(err?.message||err));return;}
+  if(version!==state.version)return;
+  const notes=plain(out,"div","note");
+  plain(notes,"strong",null,"Why these exact verses");
+  plain(notes,"p",null,proposal.reasonForEconomicalSelection);
+  plain(notes,"strong",null,"Material omitted from the compact selection");
+  plain(notes,"p",null,proposal.criticalOmissionDisclosure);
+  plain(notes,"strong",null,"Narrative / Gospel sequence safeguard");
+  plain(notes,"p",null,proposal.sequenceGuard.replaceAll("_"," ")+" · "+proposal.proposedLocation);
+  plain(out,"p","warning","Approval status: VERSE SET PROPOSED — NOT ACCEPTED. The actual source text remains in the Catholic witness file. An editorial approval must precede any change to the 54-chapter Scripture reading.");
+ }
+ $("edition").addEventListener("change",e=>{state.edition=e.target.value;void draw();});
+ Promise.all([
+  fetchJSON(path("research/historia-salutis-thematic-priority16-economical-select-20261022.v1.json")),
+  fetchJSON(path("research/historia-salutis-v18-continuous-reading-proof.v1.json"))
+ ]).then(([plan,proof])=>{
+  if(plan.schema!=="AO_HISTORIA_PRIORITY_16_ECONOMICAL_SCRIPTURE_SELECTIONS_V1"||
+     plan.status!=="COMPLETE_SOURCE_COORDINATE_DRAFT_AWAITING_ED_APPROVAL"||
+     plan.entries?.length!==16||plan.totals.selectedVerseOccurrences!==156||
+     proof.movements?.length!==37)throw Error("Research source registry/version mismatch");
+  state.plan=plan;state.proof=proof;state.selected=plan.entries[0].episodeId;
+  $("quantity").textContent=String(plan.entries.length);
+  drawMenu();return draw();
+ }).catch(err=>{error(err.message||String(err));$("episode-list").textContent="Could not load research source registry"});
+})();
+</script>
+</body>
+</html>
