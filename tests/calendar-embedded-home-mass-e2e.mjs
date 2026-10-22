@@ -107,10 +107,13 @@ try{
   assert.equal(await page.locator('.aoTodayV2CalendarInline .aoClockContext').count(),1,
     "One contextual season summary should replace the duplicated journey");
   const feastIndex=page.locator('.aoTodayV2CalendarInline .aoClockFeastMenu');
-  await feastIndex.locator('summary').click();
+  // A resolved commemoration may already open the feast menu.
+  if(!(await feastIndex.evaluate(node=>node.open)))
+    await feastIndex.locator(':scope > summary').click();
   await feastIndex.locator('button[data-cal-clock-feast="2026-11-01"]').waitFor({state:"visible",timeout:12000});
   await feastIndex.locator('button[data-cal-clock-feast="2026-11-02"]').waitFor({state:"visible",timeout:12000});
-  await feastIndex.locator('summary').click();
+  if(await feastIndex.evaluate(node=>node.open))
+    await feastIndex.locator(':scope > summary').click();
   assert.equal(await page.locator('.aoTodayV2CalendarInline #ao-calendar-modular-root .aoCalV2Tabs').isVisible(),false,
     "Embedded Calendar must not repeat the host Day/Month/Year tabs");
   await waitForWeekLoader(page);
