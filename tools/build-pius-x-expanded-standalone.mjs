@@ -36,6 +36,11 @@ assert.equal(all.length,327);
 assert.equal(new Set(all.map(x=>x.id)).size,327);
 const sourceClass=c=>{
  const a=(c.mode+" "+c.source.genre+" "+c.source.tier+" "+c.source.url).toUpperCase();
+ // Some catalogue modes are mixed; the original encyclical's witness
+ // controls attribution, not an inherited catechism-oriented UI label.
+ if(/PIUS_X_ENCYCLICAL_TEXT/.test(a)||
+    (/PAPAL_PRIMARY_TEXT_OR_APPROVED_CATECHISM/.test(a)&&/\/ENCYCLICALS\//.test(a)))
+   return "PAPAL_DOCUMENT_ADAPTATION";
  if(/SECONDARY_BIOGRAPHICAL_NARRATION|EDITORIAL_HISTORICAL_NARRATION_NO_SPRITE/.test(a))return "BIOGRAPHICAL_NARRATOR";
  if(/CATECHISMO|CATECHISM|CATECHETICAL|SALZANO|PREPAPAL_MANUSCRIPT/.test(a))return "CATECHETICAL_ADAPTATION";
  if(/SOURCE_SCOPE_NOTE_NOT_PAPAL_CHARACTER_SPEECH/.test(a))return "SOURCE_SCOPE_EDITORIAL_HOLD";
@@ -71,8 +76,29 @@ for(const c of chapters){
 // Unapproved archival content is classified before it reaches the speaker UI.
 assert.equal(Object.values(sourceClassCounts).reduce((a,b)=>a+b,0),82);
 assert.equal(sourceClassCounts.BIOGRAPHICAL_NARRATOR,9);
-const editorialReview=applyPiusEditorialReview(chapters,load('spx-p0-enriched-openings.v1.json'));
-assert(editorialReview.expandedOpenings===34);
+const p0=load('spx-p0-enriched-openings.v1.json');
+const p1Files=['spx-p1-openings-bio-partial-16.v1.json',
+ 'spx-p1-openings-doctrine-16.v1.json',
+ 'spx-p1-openings-morals-eschatology-16.v1.json'];
+const p1=p1Files.map(load);
+assert.equal(p0.records.length,34);
+for(const batch of p1){
+ assert.equal(batch.schema,'AO_SPX_P1_BILINGUAL_EXPANSION_BATCH_16_V1');
+ assert.equal(batch.status,'UNAPPROVED_EDITORIAL_PROPOSALS');
+ assert.equal(batch.records.length,16);
+}
+const combinedRecords=[...p0.records,...p1.flatMap(batch=>batch.records)];
+assert.equal(combinedRecords.length,82);
+assert.equal(new Set(combinedRecords.map(x=>x.chapterId)).size,82);
+for(const chapter of chapters)
+ assert(combinedRecords.some(x=>x.chapterId===chapter.id),
+ 'missing substantive bilingual opening for '+chapter.id);
+const editorialReview=applyPiusEditorialReview(chapters,{
+ schema:'AO_SPX_82_BILINGUAL_SOURCE_ADAPTATION_LAYER_V2',
+ status:'EDITORIAL_ONLY_UNPUBLISHED',records:combinedRecords
+});
+assert(editorialReview.expandedOpenings===82);
+assert(editorialReview.unexpandedOpenings===0);
 const payload={
  version:'SPX_82_CHAPTER_327_NODE_UNAPPROVED_LIBRARY_V1',
  counts:{chapters:82,regularNodes:291,dependentNodes:36,allNodes:327,
