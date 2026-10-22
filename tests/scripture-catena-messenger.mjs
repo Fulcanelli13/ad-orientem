@@ -65,6 +65,21 @@ assert.deepEqual(retrieveCatenaMessages(messages,"why?"),[],
 assert.deepEqual(indexCatenaMessages([{id:"forged",citation:"forged",
  source:{url:"https://attacker.example/catena"},segments:[{father:"Augustine",text:"invented"}]}]),[],
  "No arbitrary or untrusted source can be presented as canonical");
+for(const gospel of ["Mark","Luke"]){
+ const pack=JSON.parse(readFileSync(new URL("../data/scripture/catena/chunks/"+
+  gospel.toLowerCase()+"-01-04.json",import.meta.url),"utf8"));
+ const selections=selectCatenaPericopes(pack.pericopes,{
+  book:gospel,chapter:1,verseStart:1,verseEnd:1});
+ const authorRows=indexCatenaMessages(selections);
+ assert.ok(authorRows.length>0);
+ const proposed=suggestCatenaQuestions(authorRows);
+ assert.ok(proposed.length>0,"Source-grounded questions must be available for "+gospel);
+ for(const candidate of proposed){
+  const excerpt=authorRows.find(x=>x.id===candidate.sourcePointer);
+  assert.ok(excerpt?.text);
+  assert.ok(retrieveCatenaMessages(authorRows,candidate.lookupTerm).length>0);
+ }
+}
 assert.equal(mountCatenaMessenger(null,sections),null);
 assert.equal(mountCatenaMessenger({},sections,{language:"fr"}),null,
  "French is not silently translated or replaced with English");

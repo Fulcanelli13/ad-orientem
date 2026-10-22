@@ -38,6 +38,18 @@ try{
  assert.ok((await page.locator(".aoCatenaMUser").last().innerText()).includes(questionText));
  assert.ok(await page.locator(".aoCatenaMMeta a[href^='https://www.ecatholic2000.com/']").count()>=1);
  assert.equal(await page.locator(".aoCatenaMResearchBadge").count(),0);
+ for(const book of ["Mark","Luke","John"]){
+  await page.goto(url+"?book="+book+"&passage=1:1",{waitUntil:"domcontentloaded",timeout:60000});
+  await page.locator(".aoCatenaMessenger").waitFor({state:"visible",timeout:20000});
+  assert.match(await page.locator(".aoCatenaMHead").innerText(),new RegExp(book+" 1:1"));
+  assert.equal(await page.locator(".aoCatenaMResearch").count(),0);
+  await page.locator("[data-catena-source-question]").first().waitFor({state:"visible",timeout:15000});
+  const readerQuestion=page.locator("[data-catena-source-question]").first();
+  await readerQuestion.click();
+  assert.equal(await page.locator(".aoCatenaMUser").count(),1,
+   "A source-attested question must work in the normal "+book+" Scripture Messenger");
+  assert.ok(await page.locator(".aoCatenaMMeta a[href^='https://www.ecatholic2000.com/']").count()>0);
+ }
  await page.goto(url+"?research=1",{waitUntil:"domcontentloaded",timeout:60000});
  await page.locator(".aoCatenaMessenger").waitFor({state:"visible",timeout:20000});
  const panel=page.locator(".aoCatenaMResearch");

@@ -18,10 +18,13 @@ import {loadCatenaForPassage} from "../src/scripture/catena-inline.js";
 import {mountCatenaMessenger} from "../src/scripture/catena-messenger.js";
 const host=document.getElementById("mount");
 try{
- const selection=new URLSearchParams(location.search).get("passage");
- const previewPassage=selection==="27:45"?{chapter:27,verse:45}:
-  selection==="11:28"?{chapter:11,verse:28}:{chapter:6,verse:11};
- const sections=await loadCatenaForPassage({book:"Matthew",chapter:previewPassage.chapter,verseStart:previewPassage.verse,verseEnd:previewPassage.verse});
+ const params=new URLSearchParams(location.search);
+ const book=["Matthew","Mark","Luke","John"].includes(params.get("book"))?params.get("book"):"Matthew";
+ const match=/^(\d{1,2}):(\d{1,3})$/.exec(params.get("passage")||"");
+ const chapter=match?Number(match[1]):(book==="Matthew"?6:1);
+ const verse=match?Number(match[2]):(book==="Matthew"?11:1);
+ if(chapter<1||verse<1)throw Error("Unsupported passage reference");
+ const sections=await loadCatenaForPassage({book,chapter,verseStart:verse,verseEnd:verse});
  host.replaceChildren();
  if(!sections.length)throw Error("No source passage returned");
  mountCatenaMessenger(host,sections,{
