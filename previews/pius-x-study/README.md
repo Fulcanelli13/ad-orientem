@@ -11,7 +11,7 @@ Enter through the first *E supremi* question. The **complete two-segment editori
 The UI follows the approved dark fixed-sprite visual-novel format: text in a staged folio, rather than messenger chat bubbles. This prototype is a standalone review artifact **not** a replacement or merge of the existing three-guide Living Church experience, Mass reader or native 433-question Catechism.
 
 
-## Expanded P0 editorial prototype — 22 October 2026 review stage
+## Expanded P0+P1 82-opening editorial prototype — 22 October 2026 review stage
 
 The original single-file 34-question study remains unchanged as a source-verified benchmark demo. A **separate generated HTML artifact** now reconciles the canonical original research owner's **82 chapters, 291 normal question-and-answer nodes and 36 parent-dependent continuations**. It can be built with:
 
@@ -21,10 +21,12 @@ This produces `artifacts/pius-x-study-expanded/SPX_Study_Expanded_82.html`, a fu
 
 P0 content and source corrections are deliberately isolated from the original research owners:
 
-- `spx-p0-enriched-openings.v1.json` contains **34 substantial EN/FR opening-answer editorial drafts** (each at least 90 words in each language). They cover priority papal encyclicals, priestly and lay apostolate, sacramental catechesis and select biographical questions. Their exact original 34 research-draft openings remain accessible for side-by-side comparison. **48 openings still have the original shorter material.**
+- `spx-p0-enriched-openings.v1.json` contains **34 substantial EN/FR opening-answer editorial drafts** (each at least 90 words in each language). They cover priority papal encyclicals, priestly and lay apostolate, sacramental catechesis and select biographical questions. Their exact original 34 research-draft openings remain accessible for side-by-side comparison. **The other 48 openings have now also been expanded** in three 16-record source-tethered bilingual batches: `spx-p1-openings-bio-partial-16.v1.json`, `spx-p1-openings-doctrine-16.v1.json` and `spx-p1-openings-morals-eschatology-16.v1.json`. This means **82/82 openings have substantial, review-only EN/FR editorial answers**; each retains the original shorter research draft.
 - `tools/spx-p0-editorial-normalization.mjs` applies a non-authoritative We/Nous editorial-voice correction **only to source-attributed papal-document adaptations**. The earlier 44 first-person singular records were reconciled in the generated review artifact. The Unicode-aware French matching expressly protects words such as *âmes* and *système*.
 - The builder classifies all **82 original chapters** as papal-document adaptation, catechetical reconstruction, biographical narrator or an editorial source-scope hold. Papally approved catechisms are never silently treated as Pius X's personal spoken words. **Nineteen chapters** retain partial/special-evidence notices; partial evidence is **not called biography**.
 - Selecting a different first-level follow-up now **replaces the previous branch**, instead of appending independent alternatives into a fictitious continuous exchange. Dependent continuations are shown only under their actual parent turn.
+
+The builder also emits `artifacts/pius-x-study-expanded/SPX_82_Source_Closure_Ledger.json`, an 82-chapter / 327-turn original-witness ledger listing original URLs, locators, historic source classes, partial-evidence flags, parent-turn links and **unverified** source-excerpt status. Source navigation does not imply original passage collation or approval. The two ambiguous inherited mode records citing the original Vatican encyclicals (*Ad diem illum* and *Pascendi*) now follow their original-document provenance rather than a generic catechism-oriented mode label.
 
 The source panel links to the historical witness and prints its locator, but **does not yet contain exact, independently collated source quotations for every expanded claim**. These long-form answers are source-bounded editorial reconstructions, *not* verified quotations, independent translations or historical papal speech. They must not be made public until original-witness collation, doctrinal, period-voice, EN/FR and release reviews pass. No source-owner answer text was overwritten. The prototype does not provide open-ended AI chat or adjudicate individual spiritual states or current canon law.
 
