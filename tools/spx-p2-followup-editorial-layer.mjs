@@ -26,7 +26,7 @@ export function applyPiusFollowupEditorLayer(chapters,batches){
     assert(!/[“”«»]/.test(rec[lang]),'unattributed putative quotation '+key+'/'+lang);
    }
    if(c.sourceClass==='PAPAL_DOCUMENT_ADAPTATION'){
-    assert(!/(?<![\p{L}\p{N}])(?:I|my|me|mine|myself)(?![\p{L}\p{N}])/i.test(rec.en),
+    assert(!/(?<![\p{L}\p{N}])(?:I|my|me|mine|myself)(?![\p{L}\p{N}])/iu.test(rec.en),
       'singular personal voice in papal EN extension '+key);
     assert(!/(?<![\p{L}\p{N}])(?:je|mon|ma|mes|moi|me)(?![\p{L}\p{N}])|(?<![\p{L}\p{N}])j[’']/iu.test(rec.fr),
       'singular personal voice in papal FR extension '+key);
