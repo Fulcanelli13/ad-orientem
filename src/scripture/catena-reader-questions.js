@@ -323,7 +323,7 @@ export const CATENA_READER_QUESTION_ROWS=Object.freeze([
     "id": "mat-judgment-christ",
     "sourcePointer": "catena.matthew.25.31:3",
     "father": "Augustine",
-    "evidence": "seen in human shape",
+    "evidence": "shall see Him in human shape",
     "question": "How will Christ appear to the just and the wicked at judgment?",
     "topic": "Judgment",
     "sourceChunk": "matthew-25-28",
