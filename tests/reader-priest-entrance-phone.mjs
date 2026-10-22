@@ -74,8 +74,9 @@ try{
     assert.equal(rejected.accepted,false,"post-Mass entry appended a stale priest reverence");
     const nav=await page.evaluate(()=>{
       const api=window.__AO_PHONE_PREVIEW;
-      const host=api.model.cards.find(c=>c.sourceSectionId==="AO.CANON.06");
-      if(!host)throw new Error("Sourced Host preparation is missing from canonical LIVE");
+      const host=api.model.cards.find(c=>c.paragraphs?.some(p=>
+        (p.sourceCueIds??[]).includes("AO.SM.C0172")));
+      if(!host)throw new Error("Exact Host preparation C0172 is missing from canonical LIVE");
       api.showSequence(host.sequence);
       const element=document.getElementById("ao-r17-native-reader-preview");
       return {
