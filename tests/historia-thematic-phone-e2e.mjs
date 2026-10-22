@@ -343,6 +343,45 @@ try{
  });
  results.push("source-seam acceptance: separate Jacob/Joseph deaths, Elijah's two widow episodes, and Acts' James/Peter scenes");
 
+ // The proposed main-narrative path is not an approved insertion.
+ assert.equal(await complete.evaluate(()=>
+  globalThis.AO_SCRIPTURE_APP_V1.openThematicEpisode("hist-omitted-003")),true);
+ await full.locator('[data-historia-editorial-recommendation="hist-omitted-003"]').waitFor();
+ assert.match(await full.locator('[data-historia-editorial-recommendation="hist-omitted-003"]').innerText(),
+  /not approved/i);
+ assert.equal(await full.locator("[data-historia-atlas-event]").count(),0);
+ // Shared book/chapter is not an actual selected-verse overlap.
+ assert.equal(await complete.evaluate(()=>
+  globalThis.AO_SCRIPTURE_APP_V1.openThematicEpisode("hist-omitted-063")),true);
+ assert.match(await full.locator('[data-historia-editorial-recommendation="hist-omitted-063"]').innerText(),
+  /Solomon's apostasy.*distinct.*Jeroboam/s);
+ // A thematic scene and Atlas entry emphasizing different acts cannot be
+ // treated as one verified geographic stop.
+ assert.equal(await complete.evaluate(()=>
+  globalThis.AO_SCRIPTURE_APP_V1.openThematicEpisode("hist-omitted-123")),true);
+ assert.match(await full.locator('[data-historia-atlas-evidence="hist-omitted-123"]').innerText(),
+  /same Scripture passage, different narrative action/i);
+ assert.equal(await full.locator("[data-historia-atlas-event]").count(),0);
+ // By contrast a matching, navigable named scene should open the Atlas and
+ // return with the exact original Scripture reading still selected.
+ assert.equal(await complete.evaluate(()=>
+  globalThis.AO_SCRIPTURE_APP_V1.openThematicEpisode("hist-omitted-103")),true);
+ const atlasVisit=full.locator('[data-historia-atlas-event="biblical:event:ein-karem-e1"]');
+ await atlasVisit.waitFor();
+ await atlasVisit.click();
+ await complete.waitForFunction(()=>
+  globalThis.AO_APP_SHELL_V1?.getActive?.()==="find" &&
+  globalThis.AO_SCRIPTURE_APP_V1?.status?.().suspended===true,
+  null,{timeout:60000});
+ await complete.locator('[data-bible-event-key="biblical:event:ein-karem-e1"]').waitFor({timeout:30000});
+ await complete.locator("[data-bible-atlas-close]").first().click();
+ await complete.waitForFunction(()=>
+  globalThis.AO_APP_SHELL_V1?.getActive?.()==="home" &&
+  globalThis.AO_SCRIPTURE_APP_V1?.status?.().reader?.thematicEpisodeId==="hist-omitted-103",
+  null,{timeout:60000});
+ assert.equal(await complete.locator("#ao-scripture-overlay").isVisible(),true);
+ results.push("adjudication: 46 unapproved restoration decisions and verified Visitation Atlas handoff/return");
+
  results.push("complete mode: all 217 sources in nine collections, distinct Revelation beasts, Acts events, long Exodus chapter paging");
  await complete.screenshot({path:resolve(output,"all217-nine-families-390.png"),animations:"disabled"});
  await complete.close();
