@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import {test} from "node:test";
 import {buildSacredNetwork,networkFocus} from "../src/find/mapcn-network-model.js";
 import {renderNetworkPanel} from "../src/find/mapcn-network-presentation.js";
+import {publishedCustomFolioId} from "../src/find/custom-canonical-handoff.js";
 const sample={
  geography:{places:[
    {place_id:"place:a",name:{official:"St Winifred's Well"}},
@@ -178,4 +179,19 @@ test("Both relationship categories have bilingual facets and direct custom folio
  const mention=renderNetworkPanel({graph,language:"fr",filters:{networkFocus:"person:relic:a"}});
  assert.match(mention,/aucune identité établie/);
  assert.doesNotMatch(mention,/data-saint-crosslink-target/);
+});
+
+test("P6 canonical handoff accepts published 3/4-letter IDs and never mints unknown customs",()=>{
+ const projection={byLens:{traditions:[
+   {item_id:"tradition:att:DEV-010:LOURDES",raw:{custom:{custom_id:"DEV-010",publication_state:"PUBLISHED"}}},
+   {item_id:"tradition:att:ADVT-001:FR",raw:{custom:{custom_id:"ADVT-001",publication_state:"PUBLISHED"}}},
+   {item_id:"tradition:att:HELD-001:FR",raw:{custom:{custom_id:"HELD-001",publication_state:"CONTEXT_ONLY"}}}
+ ]}};
+ assert.equal(publishedCustomFolioId(projection,"DEV-010"),"tradition:custom:DEV-010");
+ assert.equal(publishedCustomFolioId(projection,"ADVT-001"),"tradition:custom:ADVT-001");
+ assert.equal(publishedCustomFolioId(projection,"HELD-001"),null);
+ assert.equal(publishedCustomFolioId(projection,"DEV-999"),null);
+ assert.equal(publishedCustomFolioId(projection,"DEV-010 "),null);
+ assert.equal(publishedCustomFolioId(projection,"<img>"),null);
+ assert.equal(publishedCustomFolioId({}, "DEV-010"),null);
 });
