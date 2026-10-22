@@ -49,5 +49,7 @@ jobs:
           node-version: '22'
       - run: npm install --no-audit --no-fund
       - run: npx playwright install --with-deps chromium
+      - name: Verify native Scripture-to-Living-Catena flow on phone
+        run: node tests/scripture-reader-mobile.mjs
       - name: Verify experimental Messenger and human-editor phone workbench
         run: node tests/scripture-catena-editorial-phone.mjs

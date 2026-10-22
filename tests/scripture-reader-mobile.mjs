@@ -334,6 +334,17 @@ try{
     "Attributed Father must be visibly named");
   assert.match(await catenaRows.first().locator(".aoCatenaMMeta a").getAttribute("href"),
     /^https:\/\/www\.ecatholic2000\.com\//);
+  const suggested=dialog.locator("[data-catena-source-question]");
+  await suggested.first().waitFor({state:"visible",timeout:12000});
+  assert.ok(await suggested.count()>0,
+    "Real Scripture commentary must expose source-grounded reader questions");
+  const q=await suggested.first().innerText();
+  assert.match(await suggested.first().getAttribute("data-catena-source-pointer"),/^catena\.luke\./);
+  await suggested.first().click();
+  assert.match(await dialog.locator(".aoCatenaMUser").last().innerText(),/What do the Fathers say about/);
+  assert.equal(await dialog.locator(".aoCatenaMResearch").count(),0,
+    "Normal Scripture context must not silently enable unpublished research questions");
+  assert.ok((await dialog.locator(".aoCatenaMUser").last().innerText()).includes(q));
   await dialog.locator(".aoCatenaMActions button").first().click();
   assert.ok(await catenaRows.count()>=3,
     "Continue reading must expose another original source extract");
