@@ -88,7 +88,9 @@ const source=turn.source?.url?turn.source:c.source;
 const safeURL=/^https:\/\//.test(source.url);
 return "<aside class='spxc-cite' role='dialog' aria-label='"+esc(T().sourceTitle)+"'><button data-spxc-source='close' class='spxc-cite-close'>"+esc(T().close)+" ×</button>"+
  "<h2>"+esc(T().sourceTitle)+"</h2><p>"+esc(provenanceLabel(c))+"</p><p>"+esc(T().sourceLocus)+": <strong>"+esc(source.locus)+"</strong></p>"+
- "<p>"+esc(source.genre||source.tier||"Research source")+"</p><p class='spxc-note'>"+esc(T().citationLimit)+"</p>"+
+ "<p>"+esc(source.genre||source.tier||"Research source")+"</p>"+
+ (turn.sourceDrawerNote?"<p class='spxc-note'>"+esc(lang(turn.sourceDrawerNote))+"</p>":"")+
+ "<p class='spxc-note'>"+esc(T().citationLimit)+"</p>"+
  (safeURL?"<a href='"+esc(source.url)+"' target='_blank' rel='noopener noreferrer'>"+esc(T().source)+" ↗</a>":"")+
  "<p class='spxc-note'>"+esc(T().foot)+"</p></aside>";
 }
