@@ -510,7 +510,9 @@ try{
     legacyOpen:document.getElementById("aoPrayerBookRoot")?.classList?.contains("open")??false,
   }));
   assert.equal(prayHub.owner,"modular-pray-v1");
-  assert.equal(prayHub.cards,8,"PRAY landing preserves six original doors, plus Chaplets discovery and a direct Divine Mercy shortcut");
+  assert.equal(prayHub.cards,9,"PRAY landing retains all original doors, Chaplets and Divine Mercy, plus the new private My Customs module");
+  assert.equal(await page.locator("#aoPray435930 [data-p435930-my-customs]").count(),1,
+    "private My Customs & Prayers must appear exactly once in canonical Pray Home");
   assert.equal(await page.locator("#aoPray435930 [data-p435930-family='chaplets']").count(),1,"Rosary & Chaplets family missing");
   assert.equal(await page.locator("#aoPray435930 [data-p435930-own='pray.divine_mercy']").count(),1,"Direct Divine Mercy shortcut missing");
   assert.equal(prayHub.legacyOpen,false,"legacy Prayer Book is visible beneath modular PRAY");
