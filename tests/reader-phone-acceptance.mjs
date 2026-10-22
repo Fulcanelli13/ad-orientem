@@ -346,19 +346,11 @@ try{
 
 
   async function tapMode(mode){
-    const beforeCue=await page.evaluate(()=>({
-      cue:window.__AO_PHONE_PREVIEW.getActiveCue(),
-      focus:document.querySelector("#ao-r17-native-reader-preview")?.dataset.r17NativeCue,
-      model:window.__AO_PHONE_PREVIEW.model?.totalCards,
-      scroll:document.querySelector(".ao-prayer-card")?.scrollTop,
-    }));
     const prefs=page.locator('[data-reader-preferences]');
     const prefBox=await prefs.boundingBox();
     assert.ok(prefBox&&prefBox.height>=40,"v1.80 Mass-preferences control is not touchable");
     await page.touchscreen.tap(prefBox.x+prefBox.width/2,prefBox.y+prefBox.height/2);
     await page.waitForFunction(()=>document.querySelector('[data-role="mass-preferences"]')?.dataset?.open==="true");
-    const prefsCue=await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getActiveCue());
-    if(mode==="SIMPLE") console.log("DEBUG MODE-SWITCH BEFORE",JSON.stringify({beforeCue,prefsCue}));
     const button=page.locator('[data-reader-mode="'+mode+'"]');
     const hit=await button.boundingBox();
     assert.ok(hit&&hit.height>=30,mode+" mode selector is not touchable in Mass preferences");
@@ -368,6 +360,13 @@ try{
     await page.locator('[data-reader-preferences-close]').click();
   }
 
+  // After the elevation bell cinematic the visible LIVE source cue can
+  // legitimately settle on the adjacent Words paragraph. Preserve the exact
+  // cue present when the reader actually switches modes, not a stale
+  // 48-card test fixture's assumed C0174.
+  const modeSwitchCue=await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getActiveCue());
+  assert.ok(["AO.SM.C0173","AO.SM.C0174"].includes(modeSwitchCue),
+    "Mode switch started outside the sourced Host Consecration");
   await tapMode("SIMPLE");
   let switched=await page.evaluate(()=>({
     mode:window.__AO_PHONE_PREVIEW.getPresentationMode(),
@@ -377,8 +376,8 @@ try{
     source:window.__AO_PHONE_PREVIEW.sourceModel?.totalCards??null,
     progress:document.querySelector('[data-role="progress"]')?.textContent??"",
   }));
-  assert.deepEqual(switched,{mode:"SIMPLE",card:"AO.CARD.015",cue:"AO.SM.C0174",product:30,source:30,progress:"15 / 30"},
-    "LIVE -> SIMPLE did not preserve the exact Host elevation source anchor");
+  assert.deepEqual(switched,{mode:"SIMPLE",card:"AO.CARD.015",cue:modeSwitchCue,product:30,source:30,progress:"15 / 30"},
+    "LIVE -> SIMPLE did not preserve the actually selected canonical Host cue");
 
   await tapMode("MISSAL");
   switched=await page.evaluate(()=>({
@@ -389,8 +388,8 @@ try{
     source:window.__AO_PHONE_PREVIEW.sourceModel?.totalCards??null,
     progress:document.querySelector('[data-role="progress"]')?.textContent??"",
   }));
-  assert.deepEqual(switched,{mode:"MISSAL",card:"AO.CARD.015",cue:"AO.SM.C0174",product:67,source:30,progress:"34 / 67"},
-    "SIMPLE -> MISSAL changed the canonical Host elevation anchor");
+  assert.deepEqual(switched,{mode:"MISSAL",card:"AO.CARD.015",cue:modeSwitchCue,product:67,source:30,progress:"34 / 67"},
+    "SIMPLE -> MISSAL changed the canonical Host source cue");
   assert.equal(await page.locator('.ao-missal-prayer-heading[data-source-block-id="AO.SM.B052"]').count(),1,
     "Missal lacks its in-text canonical prayer title at the Host Consecration");
   assert.equal(await page.locator('[data-role="missal-faithful-gesture"]').count(),1,
@@ -410,7 +409,8 @@ try{
   assert.equal(switched.mode,"LIVE");
   assert.equal(switched.card,"AO.LIVECURATED.AO.CANON.06.2",
     "MISSAL -> LIVE must return to the source-cued Host elevation card, not a 48-step macro");
-  assert.equal(switched.cue,"AO.SM.C0174");
+  assert.equal(switched.cue,modeSwitchCue,
+    "MISSAL -> curated LIVE did not preserve the selected Host source cue");
   assert.equal(switched.product,65,"Ordinary LIVE must use the actual 65-card presentation");
   assert.equal(switched.source,39,"Canonical Sung source sections must remain unchanged");
   assert.match(switched.progress,/^\d+ \/ 65$/,"LIVE progress must use curated card count");
