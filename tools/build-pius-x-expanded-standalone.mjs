@@ -6,6 +6,7 @@
 import assert from 'node:assert/strict';
 import {readFileSync,writeFileSync,mkdirSync} from 'node:fs';
 import {applyPiusEditorialReview} from './spx-p0-editorial-normalization.mjs';
+import {applyPiusFollowupEditorLayer} from './spx-p2-followup-editorial-layer.mjs';
 
 const root='previews/pius-x-study/';
 const load=name=>JSON.parse(readFileSync(root+name,'utf8'));
@@ -99,10 +100,26 @@ const editorialReview=applyPiusEditorialReview(chapters,{
 });
 assert(editorialReview.expandedOpenings===82);
 assert(editorialReview.unexpandedOpenings===0);
+const followupBatchNames=[
+ 'spx-p2-followups-early-biography-18.v1.json',
+ 'spx-p2-followups-early-documentary-a-28.v1.json',
+ 'spx-p2-followups-early-documentary-b-28.v1.json',
+ 'spx-p2-followups-catechism-a-39.v1.json',
+ 'spx-p2-followups-catechism-b-36.v1.json',
+ 'spx-p2-followups-pastoral-a-30.v1.json',
+ 'spx-p2-followups-pastoral-b-30.v1.json',
+ 'spx-p2-followups-dependent-a-18.v1.json',
+ 'spx-p2-followups-dependent-b-18.v1.json'
+];
+const followupReview=applyPiusFollowupEditorLayer(chapters,followupBatchNames.map(load));
+assert.equal(followupReview.extended,245);
+assert.equal(followupReview.unexpanded,0);
+assert.equal(followupReview.unexpandedNodeIds.length,0);
+
 const payload={
  version:'SPX_82_CHAPTER_327_NODE_UNAPPROVED_LIBRARY_V1',
  counts:{chapters:82,regularNodes:291,dependentNodes:36,allNodes:327,
-   editorialBiographicalChapters:biographical,partialReviewChapters:partial,heldExternalRelated,sourceClassCounts,editorialReview},
+   editorialBiographicalChapters:biographical,partialReviewChapters:partial,heldExternalRelated,sourceClassCounts,editorialReview,followupReview},
  originalOwner:'formation/1457-pius-x-conversation-evidence',
  contentStatus:'UNAPPROVED_SOURCE_BOUNDED_RECONSTRUCTION_NOT_PAPAL_TRANSCRIPT',
  approvals:{history:false,source:false,doctrine:false,english:false,french:false,voice:false,publishing:false},
@@ -130,6 +147,7 @@ const sourceLedger={
  policy:'Research navigation and original-document locators are not claim-level verification, approved translations or papal quotations.',
  published:false,
  counts:{chapters:82,nodes:327,enrichedOpenings:editorialReview.expandedOpenings,
+  enrichedFollowups:followupReview.extended,allEditorialReplies:327,
   pendingOriginalPassageCollation:82,verifiedOriginalPassageExcerpts:0},
  entries:chapters.map(c=>({
   chapterId:c.id,question:c.nodes[0].q,
@@ -154,4 +172,4 @@ writeFileSync('artifacts/pius-x-study-expanded/SPX_82_Source_Closure_Ledger.json
  JSON.stringify(sourceLedger,null,2)+'\n');
 
 console.log('PASS SPX_82_CHAPTER_OFFLINE_BUILD '+JSON.stringify({output,bytes:Buffer.byteLength(result),
- chapters:82,turnNodes:327,depth:36,biographical,partial,editorialReview,requests:0,published:0}));
+ chapters:82,turnNodes:327,depth:36,biographical,partial,editorialReview,followupReview,requests:0,published:0}));
