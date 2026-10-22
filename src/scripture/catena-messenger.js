@@ -4,6 +4,7 @@
  * Search is conservative local lexical retrieval, never generated speech.
  */
 import {catenaRelatedTopic,catenaTopicEvidence,retrieveCatenaRelatedMessages} from "./catena-related-vocabulary.js";
+import {curatedCatenaReaderQuestions} from "./catena-reader-questions.js";
 export const LIVING_CATENA_SCHEMA="ao.catena.messenger.v1";
 // Mixed authorship recorded in the Catena research audit. These two
 // boundaries are display metadata only: the canonical source is untouched.
@@ -241,9 +242,13 @@ export function suggestCatenaTopics(rows,{limit=4}={}){
  * patristic writings or editorially authenticated answers.
  */
 export function suggestCatenaQuestions(rows,{limit=5}={}){
- const result=[];
- if(!Array.isArray(rows)||!rows.length)return Object.freeze(result);
+ if(!Array.isArray(rows)||!rows.length)return Object.freeze([]);
+ const cap=Math.max(1,Math.min(6,limit));
+ // Full source-pointer question routes take priority over lexical fallback.
+ const result=[...curatedCatenaReaderQuestions(rows,{limit:cap})];
+ if(result.length>=cap)return Object.freeze(result);
  for(const term of suggestCatenaTopics(rows,{limit:6})){
+  if(result.some(x=>x.topic.toLowerCase()===term.toLowerCase()))continue;
   const hits=retrieveCatenaQuestionMatches(rows,term,{limit:1});
   if(!hits.length||(!hits[0].sourceMatchEvidence&&!hits[0].relatedSourceEvidence))continue;
   result.push(Object.freeze({
@@ -251,7 +256,7 @@ export function suggestCatenaQuestions(rows,{limit=5}={}){
    sourcePointer:hits[0].id,lookupTerm:term,
    kind:"source-vocabulary-navigation"
   }));
-  if(result.length>=Math.max(1,Math.min(6,limit)))break;
+  if(result.length>=cap)break;
  }
  return Object.freeze(result);
 }
@@ -370,6 +375,9 @@ export function mountCatenaMessenger(host,pericopes,{language="en",fetcher=globa
   const av=element(d,"div","aoCatenaMAvatar",r.father.slice(0,1).toUpperCase());av.setAttribute("aria-hidden","true");
   const body=element(d,"div","aoCatenaMBody"),bubble=element(d,"div","aoCatenaMBubble");
   if(r.fromAnotherPassage)body.append(element(d,"p","aoCatenaMElsewhere","FROM ANOTHER PASSAGE · "+r.reference));
+  if(r.readerQuestionLink)body.append(element(d,"p","aoCatenaMEvidence",
+   "READER QUESTION · This exact original excerpt discusses “"+r.readerQuestionLink.sourceEvidence+
+   "”. The modern question is a navigation aid, not the Father's own question or a certified standalone answer."));
   if(r.editorialResearchLead)body.append(element(d,"p","aoCatenaMResearchBadge",
    "EDITORIAL SOURCE LEAD · NOT A VERIFIED ANSWER · ORIGINAL EXCERPT"));
   if(r.editorialContextReview)body.append(element(d,"p","aoCatenaMEvidence",
@@ -540,6 +548,29 @@ export function mountCatenaMessenger(host,pericopes,{language="en",fetcher=globa
    }else note("The matching original extracts are already present earlier in the conversation.");
   }
  }
+ function revealExistingSource(pointer){
+  const el=[...feed.querySelectorAll("[data-catena-fragment-id]")].find(
+   node=>node.dataset.catenaFragmentId===pointer);
+  if(!el)return false;
+  el.classList.add("aoCatenaMRevisited");
+  el.scrollIntoView?.({behavior:"auto",block:"nearest"});
+  return true;
+ }
+ function askPinned(item){
+  feed.append(element(d,"div","aoCatenaMUser",item.question));
+  lastQuestion=item.lookupTerm;wider.disabled=false;
+  const source=rows.find(r=>r.id===item.sourcePointer);
+  if(!source||!String(source.text).includes(item.sourceEvidence)){
+   note("This question's original excerpt is no longer source-verifiable, so no attributed reply can be shown.");
+   return;
+  }
+  note("Curated reading lead, not an independently approved Father answer. Showing the exact original excerpt and citation.");
+  if(!message({...source,readerQuestionLink:item})){
+   if(revealExistingSource(item.sourcePointer))
+    note("The original excerpt is already above and has been highlighted without inventing another reply.");
+   else note("Could not present the original excerpt with a verified attribution.");
+  }
+ }
  const questions=suggestCatenaQuestions(rows);
  if(questions.length){
   topics.append(element(d,"h5",null,"Explore this passage"));
@@ -547,7 +578,9 @@ export function mountCatenaMessenger(host,pericopes,{language="en",fetcher=globa
    "Select a question to locate original texts, not composed replies."));
   const choices=element(d,"div","aoCatenaMTopicChoices");
   for(const item of questions){
-   const b=action(d,item.question,()=>ask(item.lookupTerm,item.question));
+   const b=action(d,item.question,()=>item.kind==="curated-source-pointer"
+    ?askPinned(item):ask(item.lookupTerm,item.question));
+   if(item.kind==="curated-source-pointer")b.dataset.catenaCuratedQuestion=item.id;
    b.dataset.catenaSourceQuestion=item.topic;
    b.dataset.catenaSourcePointer=item.sourcePointer;
    choices.append(b);
