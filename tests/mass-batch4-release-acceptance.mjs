@@ -15,12 +15,16 @@ const claim=(ok,msg)=>assert(ok,msg);
 claim(release.productionDefault==="R17_NATIVE","Native reader is not production default");
 claim(release.status==="FINAL_NATIVE_READY","Release registry is not ready");
 claim(Array.isArray(release.openBlockers)&&release.openBlockers.length===0,"Existing registry reports code blockers");
-// The current release presentation has 65 prayer cards, uniting Sanctus and Benedictus. The 48-card state is
-// explicitly an older rollback and cannot serve as the only release evidence.
-for(const [name,needle] of [["64 ordinary","cards:65,visible:64"],["65 optional","cards:65,visible:65"],["48 rollback","cards:48,visible:48"]])
+// The production presentation has 65 source-owned cards, with the optional
+// second Confiteor suppressed by default. All historic URL selectors must
+// leave that authoritative reader intact; never certify the old rollback.
+for(const [name,needle] of [["64 ordinary","cards:65,visible:64"],["65 optional","cards:65,visible:65"],
+  ["48 rollback blocked","rollback48-rejected"]])
  claim(phoneDefault.includes(needle),"Production default browser acceptance missing "+name);
+claim(!phoneDefault.includes("cards:48,visible:48"),
+  "Production phone tests are still advertising a public 48-card reader");
 claim(phoneDefault.includes("production=1"),"Phone test is not exercising production entry");
-claim(phoneDefault.includes("aoLiveCards=48"),"Rollback 48 not explicitly identified");
+claim(phoneDefault.includes("aoLiveCards=48"),"Obsolete rollback selector is not explicitly tested as ignored");
 claim(curated.includes("walked.visited.length,expectedVisible"),"Curated full-card rehearsal missing");
 claim(curated.includes("walked.defects,[]"),"Curated traversal defect assertion missing");
 claim(curated.includes("independentPriest.scholaUnchanged,true"),"Independent priest/Schola test missing");
@@ -55,4 +59,4 @@ claim(workflow.includes("phone-browser:")&&workflow.includes("curated65-phone:")
 claim(entry.includes("observePriestEvent")&&entry.includes("observePriestReverence"),"Independent observation APIs missing");
 claim(pkg.scripts["check:reader-release"]?.includes("reader-release-certification"),
  "Release gate script missing");
-console.log("PASS Batch 4 release automation contract: curated 64/65 production, explicit 48 rollback, Low/Sung/Solemn, holy-day paths, priest/Schola, icons/rail and phone gates. Physical-device acceptance is NOT certified.");
+console.log("PASS Batch 4 release automation contract: curated 64/65 production, public 48 rollback blocked, Low/Sung/Solemn, holy-day paths, priest/Schola, icons/rail and phone gates. Physical-device acceptance is NOT certified.");
