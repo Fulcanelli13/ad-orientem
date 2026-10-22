@@ -539,7 +539,6 @@ export async function prepareNativeReaderPreview({
 export async function mountNativeReaderPreview({
   doc=globalThis.document,
   prepared,
-  reviewCuratedCards=false,
   presentationData=null,
   loadPresentationData=loadReaderPresentationData,
   eventData=null,
@@ -582,11 +581,12 @@ export async function mountNativeReaderPreview({
 }={}){
   if(!doc?.body || !doc?.createElement) throw new TypeError("Document/body required");
 
-  // Validate everything before adding a single preview node.
-  const reviewEnabled=reviewCuratedCards===true ||
-    /(?:^|[?&])aoLiveCards=65(?:&|$)/.test(String(doc?.defaultView?.location?.search??""));
+  // User-facing native mount always selects the certified 65-card LIVE
+  // projection when eligible. The historical 48-step compatibility
+  // projector is internal to source-only test/exception paths and is
+  // never selected from URLs or mount options.
   const ready=await prepareNativeReaderPreview({
-    prepared,reviewCuratedCards:reviewEnabled,presentationData,loadPresentationData,eventData,loadEventData,
+    prepared,reviewCuratedCards:true,presentationData,loadPresentationData,eventData,loadEventData,
     cueRegistries,loadCueRegistries,formStateData,loadFormStateData,guideData,loadGuideData,
     riteMusicData,loadRiteMusicData,
     aspergesData,loadAspergesData,palmData,loadPalmData,ashData,loadAshData,
