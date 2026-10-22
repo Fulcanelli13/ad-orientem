@@ -38,13 +38,20 @@ const sourceQuestions=suggestCatenaQuestions(messages,{limit:5});
 assert.ok(sourceQuestions.length>=2&&sourceQuestions.length<=5);
 assert.ok(sourceQuestions.some(q=>q.topic==="Word"));
 for(const q of sourceQuestions){
- assert.equal(q.kind,"source-vocabulary-navigation");
  const owner=messages.find(x=>x.id===q.sourcePointer);
  assert.ok(owner,"Every reader question must dereference an actual original source");
- assert.ok(new RegExp("\\b"+q.topic+"\\b","i").test(owner.text),
-  "Reader questions may use only source-attested topic language");
- assert.ok(retrieveCatenaMessages(messages,q.lookupTerm).length>0);
- assert.ok(q.question.includes(q.topic));
+ if(q.kind==="curated-source-pointer"){
+  assert.ok(owner.text.includes(q.sourceEvidence),
+   "A curated modern question must keep the exact source phrase without paraphrase");
+  assert.equal(q.editorialStatus,"unapproved_reader_navigation_not_standalone_answer");
+ }else{
+  assert.equal(q.kind,"source-vocabulary-navigation");
+  assert.ok(new RegExp("\\b"+q.topic+"\\b","i").test(owner.text),
+   "Fallback questions may use only source-attested topic language");
+  assert.ok(retrieveCatenaMessages(messages,q.lookupTerm).length>0);
+  assert.ok(q.question.includes(q.topic));
+ }
+ assert.ok(q.question.endsWith("?"));
 }
 assert.deepEqual(suggestCatenaQuestions([],{}),[],
  "No questions may be invented when an original-source passage is unavailable");
@@ -77,7 +84,10 @@ for(const gospel of ["Mark","Luke"]){
  for(const candidate of proposed){
   const excerpt=authorRows.find(x=>x.id===candidate.sourcePointer);
   assert.ok(excerpt?.text);
-  assert.ok(retrieveCatenaMessages(authorRows,candidate.lookupTerm).length>0);
+  if(candidate.kind==="curated-source-pointer")
+   assert.ok(excerpt.text.includes(candidate.sourceEvidence),
+    "A curated Gospel question must lead to its exact original source");
+  else assert.ok(retrieveCatenaMessages(authorRows,candidate.lookupTerm).length>0);
  }
 }
 assert.equal(mountCatenaMessenger(null,sections),null);
