@@ -31,7 +31,11 @@ export function applyPiusFollowupEditorLayer(chapters,batches){
     assert(!/(?<![\p{L}\p{N}])(?:je|mon|ma|mes|moi|me)(?![\p{L}\p{N}])|(?<![\p{L}\p{N}])j[’']/iu.test(rec.fr),
       'singular personal voice in papal FR extension '+key);
    }
-   n.originalDraft={...n.a};
+   // Earlier period-voice reconciliation has already saved the literal
+   // short research draft in originalDraft. Keep that immutable witness;
+   // independently preserve the normalized pre-expansion reading.
+   n.previousDraft={...n.a};
+   n.originalDraft=n.originalDraft||{...n.a};
    n.a={en:n.a.en.trim()+'\n\n'+rec.en.trim(),fr:n.a.fr.trim()+'\n\n'+rec.fr.trim()};
    assert(countWords(n.a.en)>=45&&countWords(n.a.fr)>=45,
      'combined answer remains short '+key);
