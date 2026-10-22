@@ -94,11 +94,13 @@ try{
   assert.equal(cleared.ownership?.priestVoice,"PRIEST_VOICE_UNOBSERVED_FAIL_CLOSED");
   await page.evaluate(()=>{
    const api=window.__AO_PHONE_PREVIEW;
-   const host=api.model.cards.find(c=>c.sourceSectionId==="AO.CANON.06");
-   if(!host)throw new Error("Canonical Host preparation card is missing");
+   const host=api.model.cards.find(c=>c.paragraphs?.some(p=>
+     (p.sourceCueIds??[]).includes("AO.SM.C0173")));
+   if(!host)throw new Error("Source-owned Host Consecration cue C0173 is missing");
    api.showSequence(host.sequence);
   });
-  await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getCurrentCard().sourceSectionId==="AO.CANON.06");
+  await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getCurrentCard()?.paragraphs?.some(p=>
+    (p.sourceCueIds??[]).includes("AO.SM.C0173")));
   const stale=await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getNativeEventState());
   assert.notEqual(stale.ownership?.priestAction,"INDEPENDENT_PRIEST_OBSERVATION");
   assert.equal(await page.evaluate(()=>window.__AO_PHONE_PREVIEW.model.totalCards),65);
