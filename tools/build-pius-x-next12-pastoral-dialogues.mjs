@@ -137,11 +137,15 @@ const supplemental=incoming.map(c=>({
  sourceGenre:c.source.genre,sourceTier:c.source.tier||null,
  originalDocumentUrl:c.source.url,originalSourceLocator:c.source.locus,
  partialEvidence:false,currentEditorialOpeningId:c.nodes[0].id,
- originalShortDraftPreserved:false,englishTranslationApproved:false,
+ originalShortDraftPreserved:!!c.nodes[0].originalDraft,
+ editorialVoiceReview:!!c.nodes[0].editorialVoiceReview,
+ englishTranslationApproved:false,
  frenchTranslationApproved:false,historicalLocusIndependentlyCollated:false,
  directSupportingExcerptInSourceRegistry:false,publicationEligible:false,
  allTurnNodes:c.nodes.map(n=>({
-  id:n.id,parentId:null,supportingDocumentUrl:c.source.url,
+  id:n.id,parentId:null,editorialVoiceReview:!!n.editorialVoiceReview,
+  sourceOwnedDraftPreserved:!!n.originalDraft,
+  supportingDocumentUrl:c.source.url,
   sourceLocator:c.source.locus,claimExcerptStatus:'NOT_YET_COLLATED',
   sourceBoundButNotVerified:true}))
 }));
