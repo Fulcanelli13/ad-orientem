@@ -58,7 +58,13 @@ try{
  // Editor-facing workbench: the 22/8 review queue remains outside the public app.
  const editorUrl="http://127.0.0.1:4201/previews/living-catena-editorial-workbench-20261021.html";
  await page.goto(editorUrl,{waitUntil:"domcontentloaded",timeout:60000});
- await page.locator("#candidateList .candidate").first().waitFor({state:"visible",timeout:25000});
+ await page.locator("#candidateList .candidate").first().waitFor({state:"visible",timeout:16000}).catch(async error=>{
+  const workspace=await page.locator("#workspace").innerText().catch(()=>"<missing>");
+  const counts=await page.locator("#countText").innerText().catch(()=>"<missing>");
+  const responses=await page.locator("body").innerText().catch(()=>"<missing>");
+  throw Error("Workbench startup failed: "+String(error)+"; count="+counts+
+    "; workspace="+workspace+"; errors="+JSON.stringify(errors)+"; page="+responses.slice(0,1000));
+ });
  assert.equal(await page.locator("#candidateList .candidate").count(),9);
  assert.equal(await page.locator('[data-focused-source="english-parallel-checked"]').count(),1);
  assert.match(await page.locator('[data-focused-source="english-parallel-checked"]').innerText(),/FOCUSED EDITORIAL CHECK/);
