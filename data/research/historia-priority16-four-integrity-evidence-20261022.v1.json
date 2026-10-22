@@ -1,0 +1,237 @@
+{
+  "schema": "AO_HISTORIA_PRIORITY16_FOUR_INTEGRITY_EVIDENCE_V1",
+  "date": "2026-10-22",
+  "status": "SINGLE_WORKING_156_PREVIEW_WITH_UNAPPROVED_CONTEXT_EVIDENCE",
+  "sources": [
+    {
+      "path": "data/research/historia-salutis-thematic-priority16-economical-select-20261022.v1.json",
+      "blobSha": "1c32fa02e40618edb4616ae93def9647c20b0d83"
+    },
+    {
+      "path": "data/research/historia-salutis-priority16-economical-selections-20261022.v1.json",
+      "blobSha": "51b118e825a2f488901bd50fd242bec3a6b8a5f9"
+    },
+    {
+      "path": "data/research/historia-salutis-priority16-parallel-reconciliation-20261022.v1.json",
+      "blobSha": "790a9260bc773b51d41a3989ad943a5369d01c5c"
+    }
+  ],
+  "policy": {
+    "oneActiveResearchPreview": true,
+    "activeVerseCount156Unchanged": true,
+    "contextPacket196RemainsComparisonOnly": true,
+    "noThirdVerseSelection": true,
+    "noRewrittenScriptureText": true,
+    "preserveOriginalSourceWitnesses": true,
+    "differencesAtIndividualVerseLevel": true,
+    "main54ChapterManuscriptUntouched": true,
+    "manualApprovalRequired": true
+  },
+  "totals": {
+    "integrityCases": 4,
+    "notSubsetCases": 2,
+    "supersetCases": 2,
+    "workingTotalVerses": 61,
+    "alternativeTotalVerses": 87,
+    "previewOnlyVerses": 5,
+    "comparisonOnlyVerses": 31,
+    "approvedFinalSelections": 0
+  },
+  "entries": [
+    {
+      "episodeId": "hist-omitted-174",
+      "title": "Washing of the Apostles' feet",
+      "existingPreview": {
+        "owner": "156_verse_single_working_preview",
+        "references": [
+          "John 13:1–8",
+          "John 13:12–15"
+        ],
+        "verseOccurrences": 12
+      },
+      "existingContextComparison": {
+        "owner": "196_verse_unselected_comparison",
+        "references": [
+          "John 13:1–17"
+        ],
+        "verseOccurrences": 17
+      },
+      "differences": {
+        "onlyInWorkingPreview": [],
+        "onlyInContextComparison": [
+          "John 13:9–11",
+          "John 13:16–17"
+        ],
+        "distinctWorkingVerses": 0,
+        "distinctComparisonVerses": 5,
+        "sharedVerseOccurrences": 12,
+        "comparisonIsStrictSuperset": true
+      },
+      "integrityRequirement": "PRESERVE_PETER_REPLY_AND_NOT_ALL_CLEAN_WARNING",
+      "sourcePassagesToInspect": [
+        "John 13:9–11",
+        "John 13:16–17"
+      ],
+      "editorialAssessment": "The preview skips Peter's reply to Jesus, his washing response and the warning concerning betrayal. The complete John 13:1–17 preserves the dramatic exchange, its explanation and the example to the apostles. It is the more textually coherent independent Johannine witness.",
+      "provisionalIntegrityPreference": "FULL_CONTIGUOUS_CONTEXTUAL_ALTERNATIVE_PREFERRED_FOR_REVIEW",
+      "recommendationStatus": "CONTEXTUAL_INTEGRITY_RECOMMENDED_NOT_ACCEPTED",
+      "preserveCurrentPreviewSelection": true,
+      "actualFinalSelectionApproved": false,
+      "newThirdSelectionCreated": false,
+      "mainManuscriptChanged": false
+    },
+    {
+      "episodeId": "hist-omitted-184",
+      "title": "Road to Emmaus",
+      "existingPreview": {
+        "owner": "156_verse_single_working_preview",
+        "references": [
+          "Luke 24:13–16",
+          "Luke 24:19–21",
+          "Luke 24:25–27",
+          "Luke 24:28–32",
+          "Luke 24:35"
+        ],
+        "verseOccurrences": 16
+      },
+      "existingContextComparison": {
+        "owner": "196_verse_unselected_comparison",
+        "references": [
+          "Luke 24:13–35"
+        ],
+        "verseOccurrences": 23
+      },
+      "differences": {
+        "onlyInWorkingPreview": [],
+        "onlyInContextComparison": [
+          "Luke 24:17–18",
+          "Luke 24:22–24",
+          "Luke 24:33–34"
+        ],
+        "distinctWorkingVerses": 0,
+        "distinctComparisonVerses": 7,
+        "sharedVerseOccurrences": 16,
+        "comparisonIsStrictSuperset": true
+      },
+      "integrityRequirement": "PRESERVE_EMPTY_TOMB_REPORT_AND_RETURN_TO_APOSTLES",
+      "sourcePassagesToInspect": [
+        "Luke 24:17–18",
+        "Luke 24:22–24",
+        "Luke 24:33–34"
+      ],
+      "editorialAssessment": "Luke 24:17–18 introduces Cleophas and the dialogue, verses 22–24 report the empty tomb, and verses 33–34 recount the return and resurrection testimony. Removing them weakens why Christ responds as he does and how Emmaus connects with the apostles. The intact Luke 24:13–35 is the safer direct Scripture reading.",
+      "provisionalIntegrityPreference": "FULL_CONTIGUOUS_CONTEXTUAL_ALTERNATIVE_PREFERRED_FOR_REVIEW",
+      "recommendationStatus": "CONTEXTUAL_INTEGRITY_RECOMMENDED_NOT_ACCEPTED",
+      "preserveCurrentPreviewSelection": true,
+      "actualFinalSelectionApproved": false,
+      "newThirdSelectionCreated": false,
+      "mainManuscriptChanged": false
+    },
+    {
+      "episodeId": "hist-omitted-035",
+      "title": "The twelve spies",
+      "existingPreview": {
+        "owner": "156_verse_single_working_preview",
+        "references": [
+          "Numbers 13:3",
+          "Numbers 13:26–29",
+          "Numbers 13:31–32",
+          "Numbers 14:1–4",
+          "Numbers 14:6–9",
+          "Numbers 14:29–30",
+          "Numbers 14:33–34"
+        ],
+        "verseOccurrences": 19
+      },
+      "existingContextComparison": {
+        "owner": "196_verse_unselected_comparison",
+        "references": [
+          "Numbers 13:26–33",
+          "Numbers 14:1–4",
+          "Numbers 14:6–9",
+          "Numbers 14:13–20",
+          "Numbers 14:30–34"
+        ],
+        "verseOccurrences": 29
+      },
+      "differences": {
+        "onlyInWorkingPreview": [
+          "Numbers 13:3",
+          "Numbers 14:29"
+        ],
+        "onlyInContextComparison": [
+          "Numbers 13:30",
+          "Numbers 13:33",
+          "Numbers 14:13–20",
+          "Numbers 14:31–32"
+        ],
+        "distinctWorkingVerses": 2,
+        "distinctComparisonVerses": 12,
+        "sharedVerseOccurrences": 17,
+        "comparisonIsStrictSuperset": false
+      },
+      "integrityRequirement": "RESTORE_MOSES_INTERCESSION_AND_DIVINE_RESPONSE",
+      "sourcePassagesToInspect": [
+        "Numbers 14:13–20"
+      ],
+      "editorialAssessment": "The 156-verse preview jumps from rebellion and Joshua/Caleb to the forty-year verdict. Moses' appeal, the divine pardon and the reason for the judgment are central to a covenant-history reading. The 29-verse comparison protects that exchange, but also drops Numbers 13:3 and 14:29 from the preview. It must not be adopted as a simple superset.",
+      "provisionalIntegrityPreference": "CONTEXT_PRESERVING_ALTERNATIVE_FOR_INTEGRITY_REVIEW_ONLY",
+      "recommendationStatus": "CONTEXTUAL_INTEGRITY_RECOMMENDED_NOT_ACCEPTED",
+      "preserveCurrentPreviewSelection": true,
+      "actualFinalSelectionApproved": false,
+      "newThirdSelectionCreated": false,
+      "mainManuscriptChanged": false
+    },
+    {
+      "episodeId": "hist-omitted-044",
+      "title": "Joshua's farewell and covenant renewal",
+      "existingPreview": {
+        "owner": "156_verse_single_working_preview",
+        "references": [
+          "Joshua 23:6–8",
+          "Joshua 24:1–2",
+          "Joshua 24:13–16",
+          "Joshua 24:21–25"
+        ],
+        "verseOccurrences": 14
+      },
+      "existingContextComparison": {
+        "owner": "196_verse_unselected_comparison",
+        "references": [
+          "Joshua 23:1–3",
+          "Joshua 23:6",
+          "Joshua 24:1–2",
+          "Joshua 24:14–18",
+          "Joshua 24:21–27"
+        ],
+        "verseOccurrences": 18
+      },
+      "differences": {
+        "onlyInWorkingPreview": [
+          "Joshua 23:7–8",
+          "Joshua 24:13"
+        ],
+        "onlyInContextComparison": [
+          "Joshua 23:1–3",
+          "Joshua 24:17–18",
+          "Joshua 24:26–27"
+        ],
+        "distinctWorkingVerses": 3,
+        "distinctComparisonVerses": 7,
+        "sharedVerseOccurrences": 11,
+        "comparisonIsStrictSuperset": false
+      },
+      "integrityRequirement": "RETAIN_WRITTEN_COVENANT_AND_MEMORIAL_WITNESS",
+      "sourcePassagesToInspect": [
+        "Joshua 24:26–27"
+      ],
+      "editorialAssessment": "The written covenant and memorial witness complete the Sichem renewal. The 18-verse alternative includes these, yet drops Joshua 23:7–8 and 24:13 from the preview; its earlier address and renewal must remain distinguishable rather than being fused into a synthetic speech.",
+      "provisionalIntegrityPreference": "CONTEXT_PRESERVING_ALTERNATIVE_FOR_INTEGRITY_REVIEW_ONLY",
+      "recommendationStatus": "CONTEXTUAL_INTEGRITY_RECOMMENDED_NOT_ACCEPTED",
+      "preserveCurrentPreviewSelection": true,
+      "actualFinalSelectionApproved": false,
+      "newThirdSelectionCreated": false,
+      "mainManuscriptChanged": false
+    }
+  ]
+}
