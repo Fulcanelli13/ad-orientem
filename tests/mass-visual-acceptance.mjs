@@ -666,7 +666,7 @@ try{
   assert.equal(consecration.stageLeft,
     String((consecration.objectiveContext==="true"?
       consecration.leftAnyActive:consecration.leftTransientActive)>0),
-    "faithful rail visibility must match transient cues and objective-context posture ownership");
+    "faithful rail must reflect active transient cues, including posture only in objective-context mode");
   assert.equal(consecration.stageRight,String(consecration.rightTransientActive>0),
     "priest rail visibility contradicts active transient cues");
   const rubricPresentation=await page.evaluate(()=>{
