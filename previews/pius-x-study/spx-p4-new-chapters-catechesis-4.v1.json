@@ -1,0 +1,310 @@
+{
+  "schema": "AO_SPX_P4_NEW_CHAPTER_BATCH_V1",
+  "status": "UNAPPROVED_SOURCE_LOCATOR_BOUND_BILINGUAL",
+  "chapters": [
+    {
+      "id": "SPX-NEW-021",
+      "category": "CATECHESIS_AND_LITURGY",
+      "pose": "welcoming",
+      "related": [
+        "SPX-PILOT-08",
+        "SPX-EXP-043",
+        "SPX-EXP-044"
+      ],
+      "source": {
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html",
+        "locus": "Acerbo nimis (15 April 1905), §22, norm IV: Confraternity of Christian Doctrine",
+        "tier": "PRIMARY_VATICAN_DOCUMENT_LOCATOR_NOT_CLAIM_COLLATED",
+        "genre": "PAPAL_DOCUMENT_ENCYCLICAL"
+      },
+      "nodes": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-021.OPEN",
+          "kind": "OPENING",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Can an ordinary layperson help teach the faith?",
+            "fr": "Un simple laïc peut-il aider à enseigner la foi ?"
+          },
+          "a": {
+            "en": "In Acerbo nimis, We ordered that the Confraternity of Christian Doctrine be established in parishes, so that pastors could receive help in giving catechetical instruction, especially where priests were too few. This meant that the work of handing on Christian doctrine was not to be neglected merely because the priest had many duties. Lay helpers could offer valuable service, but their assistance remained joined to the pastor's responsibility for faithful teaching. We did not confuse a volunteer catechist with an ordained minister, nor assume that zeal dispensed anyone from learning the doctrine correctly. The instructions belonged to the parish organisation of 1905; present safeguarding, formation and canonical arrangements require the norms now applicable.",
+            "fr": "Dans Acerbo nimis, Nous ordonnions d'établir dans les paroisses la Confrérie de la Doctrine chrétienne, afin que les pasteurs reçoivent de l'aide pour l'instruction catéchétique, surtout là où les prêtres étaient trop peu nombreux. L'œuvre de transmettre la doctrine ne devait donc pas être abandonnée simplement parce que le prêtre avait de nombreuses charges. Des auxiliaires laïcs pouvaient rendre un service précieux, mais leur concours demeurait uni à la responsabilité du pasteur pour un enseignement fidèle. Nous ne confondions pas le catéchiste volontaire avec le ministre ordonné et ne supposions pas que le zèle dispensât d'apprendre correctement la doctrine. Les instructions appartenaient à l'organisation paroissiale de 1905 ; les dispositions actuelles de protection, de formation et de droit canonique demandent les normes en vigueur."
+          }
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-021.FOLLOW_1",
+          "kind": "FOLLOWUP",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Why involve lay helpers instead of leaving everything to priests?",
+            "fr": "Pourquoi recourir aux laïcs plutôt que laisser tout aux prêtres ?"
+          },
+          "a": {
+            "en": "We recognised the practical shortage of priests and the great need for instruction. A parish confraternity under pastoral responsibility could help ensure that children and others actually received the basic teaching entrusted to the Church.",
+            "fr": "Nous reconnaissions le manque pratique de prêtres et le grand besoin d'instruction. Une confrérie paroissiale sous la responsabilité du pasteur pouvait aider à donner réellement aux enfants et aux autres les enseignements élémentaires confiés à l'Église."
+          }
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-021.FOLLOW_2",
+          "kind": "FOLLOWUP",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Does enthusiasm replace the need to know the Catechism?",
+            "fr": "L'enthousiasme remplace-t-il la connaissance du catéchisme ?"
+          },
+          "a": {
+            "en": "No. Teaching requires knowledge of what the Church professes and an ability to explain it faithfully. The desire to help is praiseworthy, but an unprepared instructor may confuse those who depend upon the lessons.",
+            "fr": "Non. Enseigner demande de connaître ce que l'Église professe et de pouvoir l'expliquer fidèlement. Le désir d'aider est louable, mais un instructeur mal préparé peut troubler ceux qui dépendent de ses leçons."
+          }
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-021.FOLLOW_3",
+          "kind": "FOLLOWUP",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "May a volunteer decide doctrine independently of the parish?",
+            "fr": "Un volontaire peut-il décider de la doctrine indépendamment de la paroisse ?"
+          },
+          "a": {
+            "en": "The confraternity described in the encyclical serves pastors in their catechetical duty. That structure does not give each helper authority to invent doctrine, nor does its historical form by itself determine every modern diocesan programme.",
+            "fr": "La confrérie décrite dans l'encyclique aide les pasteurs dans leur devoir catéchétique. Cette structure ne donne pas à chaque auxiliaire l'autorité d'inventer la doctrine, et sa forme historique ne détermine pas tous les programmes diocésains actuels."
+          }
+        }
+      ],
+      "title": {
+        "en": "Can an ordinary layperson help teach the faith?",
+        "fr": "Un simple laïc peut-il aider à enseigner la foi ?"
+      },
+      "partial": false,
+      "mode": "SOURCE_BOUND_PIUS_X_EDUCATIONAL_RECONSTRUCTION"
+    },
+    {
+      "id": "SPX-NEW-022",
+      "category": "CATECHESIS_AND_LITURGY",
+      "pose": "explaining",
+      "related": [
+        "SPX-EXP-044",
+        "SPX-NEW-021",
+        "SPX-PILOT-08"
+      ],
+      "source": {
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html",
+        "locus": "Acerbo nimis (15 April 1905), §23, norm V: religious instruction for students in nonreligious schools",
+        "tier": "PRIMARY_VATICAN_DOCUMENT_LOCATOR_NOT_CLAIM_COLLATED",
+        "genre": "PAPAL_DOCUMENT_ENCYCLICAL"
+      },
+      "nodes": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-022.OPEN",
+          "kind": "OPENING",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "What about young people whose schools teach no religion?",
+            "fr": "Que faire pour les jeunes dont l'école n'enseigne pas la religion ?"
+          },
+          "a": {
+            "en": "In Acerbo nimis, We called for religious instruction to be organised, especially in larger towns with universities, colleges and schools where teaching about the faith was absent. These young people could receive substantial secular education and still lack knowledge of Christian doctrine. We did not treat intellectual ability in worldly subjects as a substitute for understanding the Creed, sacraments and moral life. Our pastoral response was to arrange opportunities for serious Catholic instruction beyond the school classroom. The provision concerned the actual educational situation of the period and the responsibility of ecclesiastical authorities. It must not be turned into a judgment on a particular family, or into an assertion about the present legality or quality of any named school.",
+            "fr": "Dans Acerbo nimis, Nous demandions d'organiser une instruction religieuse, particulièrement dans les grandes villes possédant des universités, des collèges et des écoles où la foi n'était pas enseignée. Ces jeunes pouvaient recevoir une importante formation profane tout en ignorant la doctrine chrétienne. Nous ne considérions pas les aptitudes intellectuelles dans les sciences du monde comme un substitut à la connaissance du Credo, des sacrements et de la vie morale. Notre réponse pastorale consistait à offrir une sérieuse instruction catholique en dehors des classes scolaires. Cette prescription concernait la situation éducative de l'époque et la responsabilité des autorités ecclésiastiques. Elle ne devient ni un jugement sur une famille particulière ni une affirmation sur la légalité ou la qualité actuelle d'une école nommée."
+          }
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-022.FOLLOW_1",
+          "kind": "FOLLOWUP",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Can a highly educated student still lack religious knowledge?",
+            "fr": "Un étudiant très instruit peut-il manquer de connaissances religieuses ?"
+          },
+          "a": {
+            "en": "Yes. We distinguished secular accomplishment from understanding the truths of faith. Excellence in science, literature or professional study does not automatically provide catechetical formation, so the need for instruction remains real.",
+            "fr": "Oui. Nous distinguions la réussite profane de la compréhension des vérités de foi. L'excellence scientifique, littéraire ou professionnelle ne donne pas automatiquement une formation catéchétique, et le besoin d'instruction demeure réel."
+          }
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-022.FOLLOW_2",
+          "kind": "FOLLOWUP",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Should this instruction simply repeat secular school subjects?",
+            "fr": "Cette instruction doit-elle seulement répéter les matières scolaires ?"
+          },
+          "a": {
+            "en": "No. We expressly sought teaching about religious truth and Christian conduct. It should complement the young person's broader education by addressing what is not supplied where religious instruction is absent.",
+            "fr": "Non. Nous recherchions expressément l'enseignement de la vérité religieuse et de la conduite chrétienne. Il doit compléter la formation plus large du jeune en abordant ce qui manque lorsque l'instruction religieuse est absente."
+          }
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-022.FOLLOW_3",
+          "kind": "FOLLOWUP",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Does this settle which school a family must choose today?",
+            "fr": "Ce texte décide-t-il quelle école une famille doit choisir aujourd'hui ?"
+          },
+          "a": {
+            "en": "No. It assigns a pastoral duty to provide catechesis; it does not know the legal requirements, safeguarding arrangements or concrete educational options facing a family today. Those questions require current information and competent advice.",
+            "fr": "Non. Il attribue un devoir pastoral de procurer la catéchèse ; il ne connaît ni les exigences juridiques, ni les garanties de protection, ni les choix concrets d'une famille aujourd'hui. Ces questions demandent des informations actuelles et des conseils compétents."
+          }
+        }
+      ],
+      "title": {
+        "en": "What about young people whose schools teach no religion?",
+        "fr": "Que faire pour les jeunes dont l'école n'enseigne pas la religion ?"
+      },
+      "partial": false,
+      "mode": "SOURCE_BOUND_PIUS_X_EDUCATIONAL_RECONSTRUCTION"
+    },
+    {
+      "id": "SPX-NEW-023",
+      "category": "CATECHESIS_AND_LITURGY",
+      "pose": "explaining",
+      "related": [
+        "SPX-PILOT-08",
+        "SPX-NEW-021",
+        "SPX-EXP-043"
+      ],
+      "source": {
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html",
+        "locus": "Acerbo nimis (15 April 1905), §24, norm VI: multi-year adult instruction",
+        "tier": "PRIMARY_VATICAN_DOCUMENT_LOCATOR_NOT_CLAIM_COLLATED",
+        "genre": "PAPAL_DOCUMENT_ENCYCLICAL"
+      },
+      "nodes": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-023.OPEN",
+          "kind": "OPENING",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Why should catechesis continue through several years of adult life?",
+            "fr": "Pourquoi la catéchèse devrait-elle se poursuivre pendant plusieurs années à l'âge adulte ?"
+          },
+          "a": {
+            "en": "In Acerbo nimis, We required a regular explanation of Christian doctrine for adults distinct from the ordinary Sunday homily. We proposed a structured course in which the Creed, sacraments, commandments, Lord's Prayer and precepts of the Church would be taught over four or five years. The purpose was to make the principal parts of the faith known to people who could easily pass through life with gaps in religious knowledge. A long course was not a pretext for deliberately postponing elementary truths; it meant that teaching should be systematic and renewed instead of reduced to occasional warnings. This was a concrete pastoral prescription for 1905, not an assertion that every modern parish must copy the same timetable unchanged.",
+            "fr": "Dans Acerbo nimis, Nous demandions une explication régulière de la doctrine chrétienne pour les adultes, distincte de l'homélie dominicale ordinaire. Nous proposions un cours structuré dans lequel le Credo, les sacrements, les commandements, le Notre Père et les préceptes de l'Église seraient enseignés sur quatre ou cinq années. Le but était de faire connaître les grandes parties de la foi à des personnes qui pouvaient vivre avec de graves lacunes religieuses. Un cours prolongé ne servait pas de prétexte pour retarder volontairement les vérités élémentaires ; il signifiait que l'enseignement devait être suivi et renouvelé au lieu de se réduire à des avertissements occasionnels. C'était une prescription pastorale concrète de 1905, non l'affirmation que chaque paroisse moderne doit copier sans changement le même calendrier."
+          }
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-023.FOLLOW_1",
+          "kind": "FOLLOWUP",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Which subjects belonged in this course?",
+            "fr": "Quelles matières appartenaient à ce programme ?"
+          },
+          "a": {
+            "en": "We named the Apostles' Creed, the sacraments, the Ten Commandments, the Lord's Prayer and the precepts of the Church. Together they cover what Christians believe, receive sacramentally, practise morally and ask of God.",
+            "fr": "Nous nommions le Symbole des Apôtres, les sacrements, les Dix Commandements, le Notre Père et les préceptes de l'Église. Ensemble, ils couvrent ce que les chrétiens croient, reçoivent sacramentellement, pratiquent moralement et demandent à Dieu."
+          }
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-023.FOLLOW_2",
+          "kind": "FOLLOWUP",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Could the Sunday homily replace the entire course?",
+            "fr": "L'homélie dominicale pouvait-elle remplacer tout ce programme ?"
+          },
+          "a": {
+            "en": "No. We required catechetical instruction in addition to the Gospel homily. The latter may exhort or explain one reading, while a structured programme ensures that essential articles of Christian doctrine are not left entirely to chance.",
+            "fr": "Non. Nous demandions l'instruction catéchétique en plus de l'homélie sur l'Évangile. Celle-ci peut exhorter ou expliquer une lecture, tandis qu'un programme structuré évite de laisser les articles essentiels de la doctrine au hasard."
+          }
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-023.FOLLOW_3",
+          "kind": "FOLLOWUP",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Does systematic teaching mean using difficult words?",
+            "fr": "Un enseignement systématique demande-t-il des mots compliqués ?"
+          },
+          "a": {
+            "en": "Quite the contrary. We required plain and simple language adapted to the hearers. A clear sequence of topics is meant to improve understanding, not to impress adults with vocabulary they have never been taught.",
+            "fr": "Bien au contraire. Nous demandions une langue simple et claire, adaptée aux auditeurs. Une suite ordonnée de sujets doit améliorer la compréhension, non impressionner les adultes par un vocabulaire qu'ils n'ont jamais appris."
+          }
+        }
+      ],
+      "title": {
+        "en": "Why should catechesis continue through several years of adult life?",
+        "fr": "Pourquoi la catéchèse devrait-elle se poursuivre pendant plusieurs années à l'âge adulte ?"
+      },
+      "partial": false,
+      "mode": "SOURCE_BOUND_PIUS_X_EDUCATIONAL_RECONSTRUCTION"
+    },
+    {
+      "id": "SPX-NEW-024",
+      "category": "PASTORAL_AND_PERSONAL",
+      "pose": "thoughtful",
+      "related": [
+        "SPX-043",
+        "SPX-NEW-023",
+        "SPX-EXP-043"
+      ],
+      "source": {
+        "url": "https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html",
+        "locus": "Acerbo nimis (15 April 1905), §§3–5: doctrine, reason and moral conduct",
+        "tier": "PRIMARY_VATICAN_DOCUMENT_LOCATOR_NOT_CLAIM_COLLATED",
+        "genre": "PAPAL_DOCUMENT_ENCYCLICAL"
+      },
+      "nodes": [
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-024.OPEN",
+          "kind": "OPENING",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Why does knowing the faith matter when someone is trying to live well?",
+            "fr": "Pourquoi connaître la foi importe-t-il lorsqu'on cherche à bien vivre ?"
+          },
+          "a": {
+            "en": "In Acerbo nimis, We described Christian doctrine as light for the understanding and a guide for the will. The teaching of Christ discloses the dignity of the human person, the duties of justice and charity and the virtues needed for Christian life. We were careful to distinguish knowledge from good conduct: someone may know religious truths and still act badly. Yet ignorance removes a necessary guide and makes it harder to recognise one's duties or resist distorted desires. Learning the faith is therefore not an academic decoration nor a guarantee of holiness. It is meant to illuminate choices and strengthen the practice of virtue through grace. These principles explain a pastoral duty to teach without authorising anyone to diagnose a stranger's hidden culpability.",
+            "fr": "Dans Acerbo nimis, Nous décrivions la doctrine chrétienne comme une lumière pour l'intelligence et un guide pour la volonté. L'enseignement du Christ révèle la dignité de la personne humaine, les devoirs de justice et de charité et les vertus nécessaires à la vie chrétienne. Nous distinguions soigneusement le savoir de la bonne conduite : quelqu'un peut connaître les vérités religieuses et néanmoins mal agir. Mais l'ignorance prive d'un guide nécessaire et rend plus difficile la reconnaissance de ses devoirs ou la résistance aux désirs désordonnés. Apprendre la foi n'est donc ni une décoration intellectuelle ni une garantie de sainteté. Cela doit éclairer les choix et soutenir la pratique de la vertu par la grâce. Ces principes expliquent le devoir pastoral d'enseigner sans autoriser le diagnostic de la culpabilité secrète d'un inconnu."
+          }
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-024.FOLLOW_1",
+          "kind": "FOLLOWUP",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Can someone know the Catechism and still behave badly?",
+            "fr": "Peut-on connaître le catéchisme et néanmoins mal agir ?"
+          },
+          "a": {
+            "en": "Yes. We explicitly acknowledged that knowledge of religion can coexist with a disordered will. Instruction is necessary and beneficial, but it does not automatically replace the person's free response and the practice of Christian virtue.",
+            "fr": "Oui. Nous reconnaissions expressément que la connaissance de la religion peut coexister avec une volonté désordonnée. L'instruction est nécessaire et bienfaisante, mais ne remplace pas automatiquement la réponse libre ni la pratique des vertus chrétiennes."
+          }
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-024.FOLLOW_2",
+          "kind": "FOLLOWUP",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Why connect ignorance with unjust conduct?",
+            "fr": "Pourquoi relier l'ignorance à une conduite injuste ?"
+          },
+          "a": {
+            "en": "A person cannot easily fulfil duties never learned or understood. We argued that Christian teaching enlightens the mind concerning God, neighbour and the moral law, giving the will a guide it might otherwise lack.",
+            "fr": "Une personne ne peut facilement remplir des devoirs qu'elle n'a jamais appris ni compris. Nous enseignions que la doctrine chrétienne éclaire l'esprit sur Dieu, le prochain et la loi morale, donnant à la volonté un guide qui autrement pourrait lui manquer."
+          }
+        },
+        {
+          "id": "AO.SPX.DIALOGUE.SPX-NEW-024.FOLLOW_3",
+          "kind": "FOLLOWUP",
+          "mode": "UNAPPROVED_SOURCE_BOUNDED_EDITORIAL_REVIEW",
+          "q": {
+            "en": "Does religious education alone make a person virtuous?",
+            "fr": "L'instruction religieuse suffit-elle à rendre une personne vertueuse ?"
+          },
+          "a": {
+            "en": "No. We distinguished knowledge from the actual practice of virtue. Teaching provides necessary light, while charity, grace and the person's conduct remain essential; an educated appearance alone reveals neither love of God nor perfect obedience.",
+            "fr": "Non. Nous distinguions le savoir de la pratique effective des vertus. L'enseignement donne une lumière nécessaire, mais la charité, la grâce et la conduite personnelle demeurent essentielles ; une apparence instruite ne révèle ni l'amour de Dieu ni une obéissance parfaite."
+          }
+        }
+      ],
+      "title": {
+        "en": "Why does knowing the faith matter when someone is trying to live well?",
+        "fr": "Pourquoi connaître la foi importe-t-il lorsqu'on cherche à bien vivre ?"
+      },
+      "partial": false,
+      "mode": "SOURCE_BOUND_PIUS_X_EDUCATIONAL_RECONSTRUCTION"
+    }
+  ]
+}
