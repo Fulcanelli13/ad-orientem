@@ -1,4 +1,7 @@
 # Historia Salutis — sixteen economical Scripture selections
+
+> **Parallel-work reconciliation (22 October 2026):** This document is a **context-preserving comparison**, not the project's active 16-selection review source. The [single working preview](./historia-priority16-review.html) uses a separate 156-verse selection. See the [reconciliation and four mandatory integrity decisions](./historia-priority16-parallel-reconciliation-20261022.md). **Neither has been approved for insertion.**
+
 **Research editor’s decision packet · 22 October 2026 · NOT ACCEPTED / NOT PUBLISHED**
 
 This is the next editorial step after the 217-source omission registry and the 46-case restoration triage. It does **not** revise the 54-chapter manuscript. Every selection is an **exact scriptural range** drawn from the existing pinned Catholic witness files. No AI-composed transitional sentence, synthetic Gospel harmony or duplicate text store is introduced.
