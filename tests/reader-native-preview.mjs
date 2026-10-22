@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { legacyReaderStateSnapshot, prepareNativeReaderPreview, resolveGestureProjection, resolveCueOwnedChannels, createCardTransitionTransientGuard, palmGospelFocusedRow } from "../src/mass/reader-native-preview.js";
+import { READER_OBJECTIVE_CONTEXT_ROWS, projectReaderObjectiveContext } from "../src/mass/reader-objective-context.js";
 
 const load=(path)=>JSON.parse(readFileSync(new URL(path,import.meta.url),"utf8"));
 const data={
@@ -77,6 +78,31 @@ assert.equal(liveReady.model.structureOwner,"SOURCE_FIRST_LIVE");
 assert.equal(liveReady.presentationModel.totalCards,48);
 assert.equal(liveReady.presentationModel.structureOwner,"SOURCE_FIRST_LIVE_PRODUCT_48");
 assert.equal(liveReady.presentationModel.sourceModelTotalCards,39);
+
+// Test the actual frozen 48-card presentation rather than only synthetic
+// one-paragraph examples. Context is source-cue owned, not card-number owned.
+for(const row of READER_OBJECTIVE_CONTEXT_ROWS){
+  const sourceBlock=data.sungCorpus.blocks.find(b=>b.Block_ID===row.blockId);
+  assert.ok(sourceBlock,"Unknown canonical section "+row.blockId);
+  const cue=sourceBlock.units[0].cue_id;
+  const matching=liveReady.presentationModel.cards.filter(card=>
+    card.blocks?.some(block=>block.blockId===row.blockId));
+  assert.ok(matching.length,"Missing source block in real LIVE cards: "+row.blockId);
+  const active=matching.map(card=>projectReaderObjectiveContext(card,{
+    cueId:cue,form:"MISSA_CANTATA_INCENSE",language:"fr",
+    sourceBlocks:data.sungCorpus.blocks,
+  })).find(Boolean);
+  assert.ok(active,"Actual LIVE card cannot project context for "+row.blockId+"/"+cue);
+  assert.equal(active.blockId,row.blockId);
+  assert.equal(active.language,"fr");
+  assert.equal(active.cueId,cue);
+  assert.equal(active.observedNow,false);
+  assert.equal(projectReaderObjectiveContext(matching[0],{
+    cueId:"AO.SM.C9999",form:"MISSA_CANTATA_INCENSE",language:"fr",
+    sourceBlocks:data.sungCorpus.blocks,
+  }),null,"Context leaked onto an unrelated cue");
+}
+
 assert.equal(liveReady.presentationModel.historicalV183IdentityClaim,false);
 assert.equal(liveReady.presentationModel.sourceAuthorityModel,liveReady.model);
 const curatedReady=await prepareNativeReaderPreview({
@@ -85,7 +111,7 @@ const curatedReady=await prepareNativeReaderPreview({
 });
 assert.equal(curatedReady.curatedEligible,true);
 assert.equal(curatedReady.model.totalCards,39);
-assert.equal(curatedReady.presentationModel.totalCards,64,
+assert.equal(curatedReady.presentationModel.totalCards,65,
   "the real native preview must show one combined Sanctus–Benedictus");
 assert.equal(curatedReady.presentationModel.structureOwner,"SOURCE_FIRST_LIVE_CURATED_65_REVIEW");
 assert.equal(curatedReady.presentationModel.sourceAuthorityModel,curatedReady.model);
@@ -142,7 +168,7 @@ assert.equal(aspergesCuratedAttempt.curatedEligible,true,
   "an independently sourced Asperges must be allowed to precede curated Sung LIVE");
 assert.equal(aspergesCuratedAttempt.model.totalCards,39,
   "Asperges cannot alter canonical Mass source ownership");
-assert.equal(aspergesCuratedAttempt.presentationModel.totalCards,64,
+assert.equal(aspergesCuratedAttempt.presentationModel.totalCards,65,
   "Asperges must hand off to the same combined-Sanctus projection");
 assert.equal(aspergesCuratedAttempt.presentationModel.cards[0].title,
   "At the Foot of the Altar · Opening and Psalm 42",
@@ -591,8 +617,8 @@ assert.equal(ashReady.ashController.project().card.id,"ASH-R01");
 assert.equal(ashReady.model.totalCards,30,"Ash prelude mutated Mass card identity");
 
 // 1962 special-day preludes ending at the Introit omit the entire Foot cluster.
-// The revised 64-piece Mass projection contains four such display cards;
-// only the verified 60-piece subset may follow Palm, Ash, or Candlemas.
+// The revised 65-piece Mass projection contains four such display cards;
+// only the verified 61-piece subset may follow Palm, Ash, or Candlemas.
 for(const {kind,loaded,source,omitsLastGospel} of [
   {kind:"PALM",loaded:palmData,source:"palmData",omitsLastGospel:true},
   {kind:"ASH",loaded:ashData,source:"ashData",omitsLastGospel:false},
@@ -612,8 +638,8 @@ for(const {kind,loaded,source,omitsLastGospel} of [
   const selected=await prepareNativeReaderPreview(opts);
   assert.equal(selected.model.totalCards,39,kind+" changed canonical Sung text model");
   assert.equal(selected.curatedEligible,true,kind+" must qualify only for certified Introit handoff");
-  assert.equal(selected.presentationModel.totalCards,60,kind+" must omit four Foot display cards");
-  assert.equal(selected.presentationModel.structureOwner,"SOURCE_FIRST_LIVE_CURATED_INTROIT_60");
+  assert.equal(selected.presentationModel.totalCards,61,kind+" must omit four Foot display cards");
+  assert.equal(selected.presentationModel.structureOwner,"SOURCE_FIRST_LIVE_CURATED_INTROIT_61");
   assert.equal(selected.presentationModel.sourceModelTotalCards,39);
   assert.deepEqual(selected.presentationModel.suppressedOpeningTitles,[
     "At the Foot of the Altar · Opening and Psalm 42",
@@ -660,7 +686,7 @@ const rogationCurated=await prepareNativeReaderPreview(rogationCuratedOptions);
 assert.equal(rogationCurated.curatedEligible,true,
   "certified Rogations -> Introit failed to reach curated LIVE");
 assert.equal(rogationCurated.model.totalCards,39);
-assert.equal(rogationCurated.presentationModel.totalCards,60);
+assert.equal(rogationCurated.presentationModel.totalCards,61);
 assert.equal(rogationCurated.presentationModel.cards[0].title,"Introit");
 assert.equal(rogationCurated.rogationsController.project().card.id,"ROG-R01");
 const rogationLegacy=await prepareNativeReaderPreview({
@@ -701,7 +727,7 @@ for(const [followingAction,loaded,controllerKey,firstId,policy] of [
   const curated=await prepareNativeReaderPreview(args);
   assert.equal(curated.curatedEligible,true,followingAction+" curated gate");
   assert.equal(curated.model.totalCards,39);
-  assert.equal(curated.presentationModel.totalCards,64);
+  assert.equal(curated.presentationModel.totalCards,65);
   assert.equal(curated.presentationModel.cards[0].title,
     "At the Foot of the Altar · Opening and Psalm 42");
   assert.equal(curated[controllerKey].project().card.id,firstId);

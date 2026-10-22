@@ -552,7 +552,7 @@ function prayFamilies(){
    items:Object.freeze([
     ['external','pray.morning_evening',L('Morning & Evening Prayer','Prières du matin & du soir'),L('A stable daily sequence for beginning and ending the day.','Une séquence quotidienne stable pour commencer et terminer la journée.')],
     ['own','pray.angelus_regina',L('Angelus / Regina Cæli','Angélus / Regina Cæli'),L('The traditional Marian prayer of the day and season.','La prière mariale traditionnelle du jour et du temps liturgique.')],
-    ['own','pray.rosary',L('Holy Rosary','Saint Rosaire'),L('Pray the mysteries in the existing Rosary companion.','Priez les mystères dans le compagnon du Rosaire existant.')],
+    ['own','pray.rosary',L('Holy Rosary','Saint Rosaire'),L('Pray the five decades with today’s mysteries.','Priez les cinq dizaines avec les mystères du jour.')],
     ['external','pray.meal_prayers',L('Grace at Meals','Prières des repas'),L('Traditional prayers before and after meals.','Prières traditionnelles avant et après les repas.')],
     ['external','pray.nightly_examen',L('Nightly Examination','Examen du soir'),L('A short examination before night prayer.','Un bref examen avant la prière du soir.')]
    ])
@@ -562,8 +562,8 @@ function prayFamilies(){
    description:L('Choose a bead devotion. Each retains its own traditional prayers and method.','Choisissez une dévotion au chapelet. Chacune conserve ses prières et sa méthode traditionnelles.'),
    assetId:'ao-rich-rosary',
    items:Object.freeze([
-    ['own','pray.rosary',L('The Holy Rosary','Le Saint Rosaire'),L('Pray the Mysteries in the existing Rosary companion, unchanged.','Priez les mystères dans le compagnon du Rosaire existant, sans modification.')],
-    ['own','pray.rosary_methods',L('Ways to pray the Rosary','Manières de prier le Rosaire'),L('Choose the existing traditional Rosary methods.','Choisissez parmi les méthodes traditionnelles existantes du Rosaire.')],
+    ['own','pray.rosary',L('The Holy Rosary','Le Saint Rosaire'),L('Pray the five decades with today’s mysteries.','Priez les cinq dizaines avec les mystères du jour.')],
+    ['own','pray.rosary_methods',L('Ways to pray the Rosary','Manières de prier le Rosaire'),L('Dominican, Montfort or Scripture-linked methods.','Méthodes dominicaine, de Montfort ou avec les Écritures.')],
     ['own','pray.divine_mercy',L('Chaplet of Divine Mercy','Chapelet de la Divine Miséricorde'),L('A distinct five-decade chaplet with its own prayers.','Un chapelet distinct de cinq dizaines avec ses propres prières.')]
    ])
   }),
@@ -1754,6 +1754,9 @@ function backToParent(){
  if(view==='prayerOnly'){view=prayerReturnView||'library';return render()}
  if(view!=='home'&&navStack.length){popView();return render()}
  if(view!=='home'&&familyId){view='family';return render()}
+ // Opened as the Pray tab (no caller to return to): Back goes Home, like
+ // the Home button. A bare close() here left the tab on a blank surface.
+ if(!returnContext)return goGlobalHome();
  return close();
 }
 async function goGlobalHome(){

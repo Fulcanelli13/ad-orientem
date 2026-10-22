@@ -1,3 +1,4 @@
+import { CANONICAL_ICON_ASSETS } from "../src/mass/reader-canonical-icons.js";
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {auditMassIconNecessity} from "../src/mass/reader-icon-necessity-audit.js";
@@ -51,16 +52,22 @@ assert.deepEqual(lavabo.map(x=>[x.cueId,x.treatment]),[
 
 // Absence of reviewed artwork may NEVER erase the native action event label.
 // These checks distinguish visual resolution from independent source data.
-for(const label of ["RECEIVES HOST","RECEIVES CHALICE","BREAKS HOST","PLACES PARTICLE"]){
+// 19 Oct: the only pictures were misleading donor files (communion / fraction /
+// commingling / chalice_elevation). 21 Oct: user-approved originals exist, and
+// only those may appear.
+const MISLEADING_DONOR=/assets\/active\/mass-v46\/(communion|fraction|commingling|chalice_elevation)\.svg$/;
+for(const [label,meaning] of [["RECEIVES HOST","priest.action.receive_host"],["RECEIVES CHALICE","priest.action.receive_chalice"],
+  ["BREAKS HOST","priest.action.fraction"],["PLACES PARTICLE","priest.action.commingling"]]){
   const row=actions.items.find(x=>x.label===label);
   assert.ok(row?.cueId,label+" source-owned event was deleted");
   const art=iconKeysForReaderState({priestAction:row}).priestActionIconKey;
-  assert.equal(art,null,label+" still projects a misleading unapproved icon");
+  assert.equal(art,"canon:"+meaning,label+" does not use the user-approved original");
+  assert.doesNotMatch(CANONICAL_ICON_ASSETS[art],MISLEADING_DONOR,label+" still projects a misleading donor icon");
 }
 assert.equal(iconKeysForReaderState({priestAction:{label:"ELEVATES CHALICE"}})
-  .priestActionIconKey,"priest_elevate_chalice_rich");
+  .priestActionIconKey,"canon:priest.action.elevate_chalice");
 assert.equal(iconKeysForReaderState({priestAction:{label:"GIVES COMMUNION"}})
-  .priestActionIconKey,"priest_rail_after_rich");
+  .priestActionIconKey,null,"Communion of the faithful is carried by the rail position and the faithful lane");
 assert.equal(policy.authority.status,"P2_EDITORIAL_PROPOSAL_NOT_AUTO_APPLIED",
   "policy changed liturgical reader presentation without separate approval");
 

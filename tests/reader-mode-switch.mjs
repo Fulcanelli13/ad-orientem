@@ -56,8 +56,8 @@ assert.equal(prepared.session.resolvedMass.presentationMode,"LIVE","mode rebuild
 // Explicit review mode uses curated liturgical turns, not one card per block.
 // The production 48-card reader is untouched.
 const expandedReview=buildReaderModeModels({prepared,data,mode:"LIVE",reviewExpandedCards:true});
-assert.equal(expandedReview.presentationModel.totalCards,64,
-  "curated LIVE should have 64 cards with one complete Sanctus–Benedictus");
+assert.equal(expandedReview.presentationModel.totalCards,65,
+  "curated LIVE should have 65 cards with one complete Sanctus–Benedictus");
 assert.equal(expandedReview.presentationModel.structureOwner,"SOURCE_FIRST_LIVE_CURATED_65_REVIEW");
 assert.equal(expandedReview.presentationModel.sourceAuthorityModel,expandedReview.sourceModel);
 
@@ -264,6 +264,7 @@ assert.equal(cardForCue("AO.SM.C0095"),cardForCue("AO.SM.C0096"),
   "The Credo genuflection and its doctrinal context must stay on one card");
 assert.equal(cardForCue("AO.SM.C0108")?.title,"Offertory · Invitation and Antiphon",
   "Short Orémus and the antiphon should not create two swipe screens");
+distinct("AO.SM.C0110","AO.SM.C0114","65-card source split must distinguish Bread from Chalice offering");
 distinct("AO.SM.C0116","AO.SM.C0120","Incensation is a distinct conditional stage");
 distinct("AO.SM.C0237","AO.SM.C0242","Optional Communion Confiteor must not blend into Ecce Agnus Dei");
 assert.ok(expandedReview.presentationModel.cards.some(c=>c.title==="Communion Antiphon" && c.paragraphs.length),
