@@ -43,8 +43,11 @@ for(let i=0;i<106;i++){
   if(j===0)assert(after.sourceDrawerNote?.en&&after.sourceDrawerNote?.fr);
   assert(!/\bavatar\b/i.test(after.a.en+' '+after.a.fr));
   assert(!/^In (E supremi|Acerbo nimis|Haerent animo|Il fermo proposito|Tra le sollecitudini)/.test(after.a.en));
-  const restored={...after,a:before.a,approvedReply:before.approvedReply,
-   publicationEligible:before.publicationEligible};
+  const restored={...after,a:before.a};
+  if('approvedReply' in before)restored.approvedReply=before.approvedReply;
+  else delete restored.approvedReply;
+  if('publicationEligible' in before)restored.publicationEligible=before.publicationEligible;
+  else delete restored.publicationEligible;
   delete restored.previousEditorialDraft;delete restored.p6VoiceReview;
   delete restored.p6SourceClass;
   if(before.sourceDrawerNote===undefined)delete restored.sourceDrawerNote;
