@@ -85,13 +85,22 @@ for(const e of selected){
 assert.deepEqual(missing,[],'No unreported gaps in three edition comparison');
 assert.equal(witness.size,33,'Eleven Catholic book witnesses in each of three editions');
 assert(selectedRows<sourceRows);
-const manuscriptSelections=manuscript.movements.flatMap(m=>m.beats.filter(b=>b.kind==='SCRIPTURE')
- .flatMap(b=>b.refs.flatMap(ref=>parseThematicReference(ref).chapters
-  .flatMap(range=>{
-   const source=getWitness('dr-challoner',range.book);
-   return selectThematicChapterVerses(source,'dr-challoner',range).verses.map(v=>
-    'dr-challoner|'+range.book+':'+v.chapter+':'+v.verse);
-  }))));
+const manuscriptSelections=[];
+for(const movement of manuscript.movements){
+ for(const beat of movement.beats.filter(b=>b.kind==='SCRIPTURE')){
+  for(const field of beat.refs){
+   for(const reference of field.split(';').map(r=>r.trim())){
+    const parsed=parseThematicReference(reference);
+    for(const chapter of parsed.chapters){
+     const backing=getWitness('dr-challoner',chapter.book);
+     const selectedRows=selectThematicChapterVerses(backing,'dr-challoner',chapter);
+     manuscriptSelections.push(...selectedRows.verses.map(v=>
+      'dr-challoner|'+chapter.book+':'+v.chapter+':'+v.verse));
+    }
+   }
+  }
+ }
+}
 const oldSet=new Set(manuscriptSelections);
 const overlap=[...selectedSourceIds].filter(id=>oldSet.has(id));
 assert.deepEqual(overlap,[],'Priority candidates may not silently duplicate already selected main-reader verses');
