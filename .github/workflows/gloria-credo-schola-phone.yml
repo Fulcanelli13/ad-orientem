@@ -1,0 +1,27 @@
+name: Gloria/Credo omission and Schola windows phone
+on:
+  pull_request:
+    paths:
+      - "tests/reader-gloria-credo-omission-phone.mjs"
+      - "tests/reader-schola-windows.mjs"
+      - "tests/fixtures/reader-phone-harness.html"
+      - ".github/workflows/gloria-credo-schola-phone.yml"
+      - "src/mass/reader-native-preview.js"
+      - "src/mass/reader-schola.js"
+      - "src/mass/host-adapter.js"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  gloria-credo-schola-phone:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Days without Gloria/Credo, Requiem, and Schola windows across the priest's prayers
+        run: timeout --signal=TERM --kill-after=5s 780s node tests/reader-gloria-credo-omission-phone.mjs

@@ -9,6 +9,8 @@ const PRIEST_INTONATION_END_CUES=new Set(["AO.SM.C0054","AO.SM.C0090"]);
 // advance within that track.
 
 const SUPPORTED_FORMS=new Set(["MISSA_CANTATA_SIMPLE","MISSA_CANTATA_INCENSE","SOLEMN"]);
+const INTERLECTION_TRACKS=new Set(["GRADUAL","ALLELUIA_TRACT_SEQUENCE"]);
+const PRIEST_PRAYERS_BEFORE_COMMUNION=new Set(["AO.SM.B069","AO.SM.B070","AO.SM.B071","AO.SM.B072","AO.SM.B073"]);
 
 const TRACK_SPECS=Object.freeze([
   {id:"INTROIT",kind:"PROPER",slot:"INTROIT",cards:[1],canonicalBlockIds:["AO.SM.B014"]},
@@ -173,6 +175,14 @@ export function createNativeScholaController(args={}){
     const id=String(cueId??"");
     if(id==="AO.SM.C0135" && activeTrackId==="OFFERTORY")return activate(null);
     if(id==="AO.SM.C0251" && activeTrackId==="COMMUNION")return activate(null);
+    // The Gospel's Dominus vobiscum: the chants between the readings are over.
+    if(id==="AO.SM.C0082" && INTERLECTION_TRACKS.has(activeTrackId))return activate(null);
+    // The choir begins the Agnus Dei after answering the Pax (Et cum spiritu
+    // tuo), while the priest says Haec commixtio and the Agnus Dei himself.
+    if(id==="AO.SM.C0220" && byId.has("AGNUS_DEI") && activeTrackId!=="AGNUS_DEI")
+      return activate("AGNUS_DEI",{reset:false});
+    // The priest's Communion: the Agnus Dei window gives way to the Communion.
+    if(id==="AO.SM.C0232" && activeTrackId==="AGNUS_DEI")return activate(null);
     return state();
   }
 
@@ -242,6 +252,20 @@ export function createNativeScholaController(args={}){
     // Do not use the single printed B030 Proper card as its stop clock.
     if(activeTrackId==="OFFERTORY" &&
        ["AO.CARD.010","AO.CARD.011"].includes(sourceSection))return state();
+
+    // The Gradual, Alleluia, Tract or Sequence is still being sung while the
+    // priest (or deacon) says Munda cor meum and goes to the Gospel side
+    // (B023). The Gospel's Dominus vobiscum (B024 / C0082) ends the window.
+    if(INTERLECTION_TRACKS.has(activeTrackId) && blockIds.has("AO.SM.B023"))return state();
+
+    // The Agnus Dei window opens with the commingling (B067), after the
+    // choir answers the Pax, and continues through the priest's prayers
+    // before his Communion (B069-B073). B074 (his Communion) hands over to
+    // the Communion window above.
+    if(blockIds.has("AO.SM.B067") && byId.has("AGNUS_DEI"))
+      return activate("AGNUS_DEI",{reset:false});
+    if(activeTrackId==="AGNUS_DEI" && blockIds.size &&
+       [...blockIds].every(id=>PRIEST_PRAYERS_BEFORE_COMMUNION.has(id)))return state();
 
     // The Benedictus may continue while the priest prays silently in
     // the Canon. Keep its independent Schola clock across those cards;

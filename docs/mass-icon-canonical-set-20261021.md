@@ -43,7 +43,8 @@ Priest: breast strike, head bow, moderate bow, hands joined, hands over the obla
 ## Corrections made
 
 * C0247 *Quod ore sumpsimus* is the first ablution (chalice); C0248 *Corpus tuum* is the ablution of the fingers. The 20 Oct crosswalk had them reversed.
-* Server and Schola sung cues (C0054, C0074, C0076, C0087, C0090, C0255) never show priest Chant.
+* Server sung responses (C0074, C0076, C0087, C0255) never show priest Chant.
+* C0054 ("Deo.") and C0090 ("in unum Deum.") end the celebrant's Gloria / Credo intonation and show priest Chant in sung forms (22 Oct ruling, overruling the Ultra Master voice audit's SCHOLA owner; see `voiceOwnerAdjudications`).
 * Donor PNG wrappers are unwrapped by file, not key name, so canonical aliases render as silhouettes.
 * *Oramus te* is *inclinatus* (moderate), not the profound-bow picture.
 

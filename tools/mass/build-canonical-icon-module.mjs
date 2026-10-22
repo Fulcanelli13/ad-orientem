@@ -22,6 +22,7 @@ export function renderCanonicalIconModule(set = JSON.parse(readFileSync(SRC, "ut
     voiceMap: Object.fromEntries(Object.entries(set.voiceMap).filter(([k]) => k !== "rules")),
     voiceCueOverrides: set.voiceCueOverrides,
     ultraMasterPriestChantCues: set.ultraMasterPriestChantCues,
+    priestIntonationEndCues: set.priestIntonationEndCues,
     scholaOwnedNotPriestChantCues: set.scholaOwnedNotPriestChantCues,
     solemnMinisterReadingCues: set.solemnMinisterReadingCues,
     otherLanes: set.otherLanes,

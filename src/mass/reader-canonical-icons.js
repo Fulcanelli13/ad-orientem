@@ -10,7 +10,9 @@ export { CANONICAL_ICON_ASSETS };
 export const CANONICAL_KEY_PREFIX = "canon:";
 const WITH_ART = new Set(SET.meanings.filter(m => m.path).map(m => m.meaningId));
 const SUNG_FORMS = new Set(["MISSA_CANTATA_SIMPLE", "MISSA_CANTATA_INCENSE", "SOLEMN"]);
-const ULTRA_CHANT = new Set(SET.ultraMasterPriestChantCues);
+// Celebrant-owned sung moments that need no voice event at the cue: the Ultra Master
+// additions, and the end of the Gloria / Credo intonations (C0054, C0090).
+const ULTRA_CHANT = new Set([...SET.ultraMasterPriestChantCues, ...(SET.priestIntonationEndCues ?? [])]);
 const SCHOLA_OWNED = new Set(SET.scholaOwnedNotPriestChantCues);
 const SOLEMN_MINISTER_READING = new Set(SET.solemnMinisterReadingCues);
 const normVoice = v => String(v ?? "").trim().toUpperCase().replace(/_/g, " ").replace(/\s+/g, " ");

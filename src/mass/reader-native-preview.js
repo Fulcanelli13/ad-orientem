@@ -2445,14 +2445,21 @@ export async function mountNativeReaderPreview({
     // Purple II-class Rogation votives always omit Gloria. Under 1960
     // General Rubrics §343(a), Credo is retained if the occurring
     // Sunday prescribes it. Keep the canonical 48-card source unchanged.
-    const isRogation=prepared?.session?.resolvedMass?.actualCelebration?.id==="rogation-mass-1962";
+    const resolved=prepared?.session?.resolvedMass;
+    const isRogation=resolved?.actualCelebration?.id==="rogation-mass-1962";
     const sourceSection=String(card.sourceSectionId??card.sectionId??"");
-    const prov=prepared?.session?.resolvedMass?.provenance??{};
+    const prov=resolved?.provenance??{};
     if(isRogation && sourceSection==="AO.CARD.003"){
       if(prov.gloria!==false)throw new Error("ROGATION_GLORIA_OMISSION_NOT_CERTIFIED");
       return null;
     }
-    if(isRogation && sourceSection==="AO.CARD.009"&&prov.credo===false)return null;
+    // The day's resolved Mass (calendar rules, else its Proper) decides
+    // whether the Gloria and Credo are said. A Mass of the Dead never has
+    // either, whatever a Proper flag says. Unknown (null) keeps the card.
+    const requiem=resolved?.overlays?.includes?.("REQUIEM")===true ||
+      String(resolved?.actualCelebration?.type??"").toUpperCase()==="REQUIEM";
+    if(sourceSection==="AO.CARD.003" && (requiem || prov.gloria===false))return null;
+    if(sourceSection==="AO.CARD.009" && (requiem || prov.credo===false))return null;
     const plan=prepared?.session?.plan;
     if(plan?.blessingAllowed!==false)return card;
     const blessing=card.blocks?.find?.(value=>value.blockId==="AO.SM.B092");
