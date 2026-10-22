@@ -11,16 +11,22 @@ Enter through the first *E supremi* question. The **complete two-segment editori
 The UI follows the approved dark fixed-sprite visual-novel format: text in a staged folio, rather than messenger chat bubbles. This prototype is a standalone review artifact **not** a replacement or merge of the existing three-guide Living Church experience, Mass reader or native 433-question Catechism.
 
 
-## P5: four conversational voice reviews (22 October 2026)
+## P5: all twelve recent chapters revoiced (22 October 2026)
 
-The **106-chapter / 423-answer-pair offline study** now applies a separately reviewable conversational-voice overlay to **four complete question trees (16 bilingual answers)**: the suitability of candidates for Holy Orders, useful preaching, Pius X's fiftieth anniversary of ordination, and lay catechists. These are the source-checked P4 chapters SPX-NEW-013, -014, -020, and -021. All 94 preceding chapters and their 375 answer pairs remain structurally unchanged.
+The **106-chapter / 423 bilingual answer-pair offline study** now applies a separately reviewable editorial conversational-voice overlay to **all twelve P4 supplementary chapters (48 complete EN/FR answer pairs)**, including each chapter's opening and three follow-up exchanges. These are chapters `SPX-NEW-013` through `SPX-NEW-024`. All 94 preceding chapters and their **375 original answer pairs remain structurally unchanged**.
 
-- Source-owned P4 answer wording remains intact in `spx-p4-new-chapters-*.v1.json`. The new `spx-p5-conversational-voice-revisions-4.v1.json` contains replacement **editorial review** text; the builder preserves each replaced P4 answer in `originalDraft`, available under **Compare original draft**.
-- The character's revised answers avoid referring to itself as an avatar, explaining publication rules, or beginning mechanically with a document-title introduction. Historical framing, limits of inference, and current-law caveats are shown through `sourceDrawerNote` in the **source drawer** for the four revised openings.
-- **No personal events have been invented.** The fiftieth-anniversary chapter is limited to what Pius X says in the introduction to *Haerent animo*; its source note explicitly excludes undocumented private recollections from his 1858 ordination.
-- The full build remains **unapproved, review-only and zero-network**. This editorial voice pass is not independent claim-level source collation, a certified translation, or historical first-person testimony. Follow-up branches remain user-selected, not model-generated.
+The source-owned P4 answers remain unchanged in `spx-p4-new-chapters-*.v1.json`. Four separate P5 overlay files hold the new text:
 
-The existing GitHub Actions workflow builds the 82, 94 and 106 chapter artifacts in order, then runs the desktop/mobile Chromium tests; the 106-chapter test now additionally verifies all sixteen overlays, draft preservation and the visible source drawer note. The locally generated review output is `artifacts/pius-x-study-expanded/SPX_Study_Expanded_106.html` and is delivered by the `pius-x-study-desktop-mobile-review` workflow artifact. Do not publish or integrate it into the main application without the outstanding source, doctrinal, voice and French review gates.
+- `spx-p5-conversational-voice-revisions-4.v1.json`: 013, 014, 020, 021 (previous batch).
+- `spx-p5-conversational-voice-next8-a.v1.json`: 015–018 (seminary formation, social action, priestly confession, retreats).
+- `spx-p5-conversational-voice-next8-b1.v1.json`: 019 and 022 (priestly fraternity and young people without school religious instruction).
+- `spx-p5-conversational-voice-next8-b2.v1.json`: 023–024 (adult catechesis and doctrinal knowledge in relation to moral conduct).
+
+The builder applies overlays only to the matching P4 nodes. Before each replacement, `originalDraft` captures the previous P4 answer verbatim, and the **Compare original draft** panel remains available. Each opening has a bilingual `sourceDrawerNote`; the source drawer also shows the chapter-wide note when opened from a follow-up. Historical scope, documentary gaps, and present-day legal qualifications stay separate from the character's speech. No new autobiographical events are invented. The priestly association and fiftieth-anniversary recollections are limited to the references in the published Italian `Haerent animo`.
+
+English/French parity, the 48 source-owned draft comparisons, twelve source notes, continued non-publication status, 375 immutable earlier answers, mobile/desktop browser interactions and zero-network operation are covered by the existing GitHub Actions workflow. A successful workflow produces `artifacts/pius-x-study-expanded/SPX_Study_Expanded_106.html` in the `pius-x-study-desktop-mobile-review` downloadable artifact.
+
+This is **editorial review only**. Original passage-by-passage collation, precise translation approval, period-voice review, doctrine review and publication approval remain outstanding. Do not merge into the production Ad Orientem module.
 
 ## Expanded P0–P2 complete 327-answer editorial prototype — 22 October 2026 review stage
 
