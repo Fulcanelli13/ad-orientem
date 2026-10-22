@@ -543,7 +543,7 @@ try{
   }
   let hit=await aspNext.boundingBox();
   await asp.touchscreen.tap(hit.x+hit.width/2,hit.y+hit.height/2);
-  await asp.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId==="AO.CARD.001");
+  await asp.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId==="AO.LIVECURATED.AO.CARD.001.1");
   assert.match(await asp.locator('[data-role="progress"]').textContent(),/1 \/ 65/,
     "Asperges did not hand off to the first curated 65-card LIVE prayer");
   assert.equal(await asp.evaluate(()=>window.__AO_PHONE_PREVIEW.sourceModel?.totalCards??null),39,
@@ -585,7 +585,7 @@ try{
     }
     let b=await next.boundingBox();
     await p.touchscreen.tap(b.x+b.width/2,b.y+b.height/2);
-    await p.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId==="AO.CARD.001");
+    await p.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId==="AO.LIVECURATED.AO.CARD.001.5");
     assert.equal(await p.locator('[data-role="card-title"]').textContent(),"Introit",kind+" handoff leaked preparatory prayers");
     const back=p.locator('[data-reader-nav="previous"]');
     b=await back.boundingBox();
