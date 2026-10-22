@@ -35,7 +35,7 @@ try{
       cue:window.__AO_PHONE_PREVIEW.getActiveCue(),
       phase:window.__AO_PHONE_PREVIEW.getPriestEntranceState().phase
     }));
-    assert.equal(original.cards,48,"48-card sung LIVE model was altered");
+    assert.equal(original.cards,65,"65-card curated Sung LIVE model was altered");
     assert.equal(original.phase,"UNOBSERVED");
     assert.match(original.cue,/^AO\.SM\.C\d{4}$/);
     const accepted=await page.evaluate(()=>{
@@ -60,7 +60,7 @@ try{
     assert.notEqual(observed.state.ownership.priestAction,"OBSERVED_PREMASS_PRIEST",
       "before-Mass reverence leaked onto an active Mass prayer cue");
     assert.equal(observed.state.nativeCueId,original.cue);
-    assert.equal(observed.cards,48);
+    assert.equal(observed.cards,65);
     const began=await page.evaluate(()=>window.__AO_PHONE_PREVIEW.beginObservedMass());
     assert.equal(began.accepted,true);
     await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getNativeEventState()?.priestEntrance?.phase==="MASS_STARTED",null,{timeout:4000});
@@ -74,7 +74,9 @@ try{
     assert.equal(rejected.accepted,false,"post-Mass entry appended a stale priest reverence");
     const nav=await page.evaluate(()=>{
       const api=window.__AO_PHONE_PREVIEW;
-      api.showSection("AO.CANON.06");
+      const host=api.model.cards.find(c=>c.sourceSectionId==="AO.CANON.06");
+      if(!host)throw new Error("Sourced Host preparation is missing from canonical LIVE");
+      api.showSequence(host.sequence);
       const element=document.getElementById("ao-r17-native-reader-preview");
       return {
         priestOwner:element?.dataset?.r17OwnerPriestAction,
@@ -82,8 +84,8 @@ try{
         cards:api.model.totalCards
       };
     });
-    assert.equal(nav.section,"AO.CANON.06");
-    assert.equal(nav.cards,48);
+    assert.equal(nav.section,"AO.LIVECURATED.AO.CANON.06.1");
+    assert.equal(nav.cards,65);
     assert.notEqual(nav.priestOwner,"OBSERVED_PREMASS_PRIEST",
       "old entrance reverence flashed in priest rail during card transition");
     await ctx.close();
@@ -99,7 +101,7 @@ try{
     return {accepted:result.accepted,observed:a.getPriestEntranceState().observed,
       phase:a.getPriestEntranceState().phase,cards:a.model.totalCards};
   });
-  assert.deepEqual(untouched,{accepted:true,observed:false,phase:"MASS_STARTED",cards:48});
+  assert.deepEqual(untouched,{accepted:true,observed:false,phase:"MASS_STARTED",cards:65});
   await ctx.close();
-  console.log("PASS 360/390px LIVE phone: optional observed entrance, no priest action leaking at C0001, unobserved Mass never blocked, 48 cards preserved");
+  console.log("PASS 360/390px LIVE phone: 65-card curated projection, optional priest arrival without stale Mass cues; unobserved Mass never blocked");
 }finally{await browser?.close();await new Promise(done=>server.close(done))}
