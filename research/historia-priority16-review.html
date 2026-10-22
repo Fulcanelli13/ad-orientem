@@ -46,7 +46,7 @@ section.panel h3{font-size:17px;font-weight:400;margin:0 0 15px}
 .notice{border:1px solid var(--line);padding:15px;color:var(--muted)}
 @media(max-width:900px){.layout{grid-template-columns:minmax(0,1fr)}aside{border-right:0;border-bottom:1px solid var(--line);padding:14px 10px}aside h2{margin:0 8px 10px}nav{display:flex;overflow-x:auto;gap:8px;padding:0 0 5px;max-width:100%;scrollbar-width:thin}nav button{flex:0 0 175px;min-height:58px}.paper{grid-template-columns:minmax(0,1fr)}main{padding:20px 15px}header{padding:20px 16px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}}
-.integrity-context{margin:15px 0;border:1px solid var(--line);padding:12px;border-radius:5px}.integrity-context summary{display:block;position:relative;z-index:2;cursor:pointer;color:var(--gold);padding:10px 8px;min-height:44px;border-radius:4px;background:var(--inner);touch-action:manipulation}.integrity-context summary:focus-visible{outline:2px solid var(--focus);outline-offset:2px}.integrity-source{margin:12px 0;border-top:1px solid var(--line);padding-top:9px}.integrity-source h4{font-size:15px;margin:4px 0 10px}.context-verse{margin:5px 0;font:16px/1.6 Georgia,serif}.context-verse sup{font:11px system-ui,sans-serif;color:var(--gold);margin-right:7px}
+.integrity-context{margin:12px 0;border:1px solid var(--line);padding:12px;border-radius:5px;min-width:0;max-width:100%;overflow-wrap:anywhere}.integrity-context summary{display:block;position:relative;z-index:2;cursor:pointer;color:var(--gold);padding:10px 8px;min-height:44px;border-radius:4px;background:var(--inner);touch-action:manipulation}.integrity-context summary:focus-visible{outline:2px solid var(--focus);outline-offset:2px}.integrity-source{margin:12px 0;border-top:1px solid var(--line);padding-top:9px}.integrity-source h4{font-size:15px;margin:4px 0 10px}.context-verse{margin:5px 0;font:16px/1.6 Georgia,serif}.context-verse sup{font:11px system-ui,sans-serif;color:var(--gold);margin-right:7px}
 </style>
 </head>
 <body>
@@ -105,7 +105,7 @@ section.panel h3{font-size:17px;font-weight:400;margin:0 0 15px}
    b.setAttribute("aria-current",String(state.selected===proposal.episodeId));
    plain(b,"span","num",proposal.episodeId.slice(-3));
    plain(b,"span","label",proposal.episodeTitle);
-   b.addEventListener("click",()=>{state.selected=proposal.episodeId;drawMenu();void draw();});
+   b.addEventListener("click",()=>{state.selected=proposal.episodeId;drawMenu();window.scrollTo({top:0,left:0,behavior:"instant"});void draw();});
    nav.append(b);
   }
  }
@@ -157,6 +157,9 @@ section.panel h3{font-size:17px;font-weight:400;margin:0 0 15px}
   const box=plain(holder,"section","note");
   box.dataset.integrityHold=item.episodeId;
   plain(box,"strong",null,"Textual-integrity review · editorial decision outstanding");
+  const details=plain(box,"details","integrity-context");
+  details.dataset.contextSourceDetails=item.episodeId;
+  plain(details,"summary",null,"Inspect essential omitted context in original Scripture");
   plain(box,"p",null,item.editorialAssessment);
   plain(box,"p","warning",
    "Existing preview: "+item.existingPreview.verseOccurrences+
@@ -165,9 +168,6 @@ section.panel h3{font-size:17px;font-weight:400;margin:0 0 15px}
   plain(box,"p","meta",
    "Verses only in working preview: "+(item.differences.onlyInWorkingPreview.join("; ")||"none")+
    " · only in comparison: "+(item.differences.onlyInContextComparison.join("; ")||"none"));
-  const details=plain(box,"details","integrity-context");
-  details.dataset.contextSourceDetails=item.episodeId;
-  plain(details,"summary",null,"Inspect essential omitted context in original Scripture");
   for(const ref of item.sourcePassagesToInspect){
    const p=verseRange(ref);
    const data=await getSource(state.edition,p.book);
