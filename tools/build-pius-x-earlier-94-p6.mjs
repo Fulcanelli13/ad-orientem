@@ -10,7 +10,7 @@ const out='artifacts/pius-x-study-expanded/';
 const readJSON=(p)=>JSON.parse(readFileSync(p,'utf8'));
 const file=out+'SPX_Study_Expanded_106.html';
 const html=readFileSync(file,'utf8');
-const pattern=/<script type="application\\/json" id="spxExpandedCorpus">([\\s\\S]*?)<\\/script>/;
+const pattern=/<script type="application\/json" id="spxExpandedCorpus">([\s\S]*?)<\/script>/;
 const hit=html.match(pattern);
 assert(hit,'missing P5 corpus');
 const original=JSON.parse(hit[1]);
@@ -46,12 +46,12 @@ for(const batch of batches){
   for(const lang of ['en','fr']){
    const answer=item.answer?.[lang];
    assert(typeof answer==='string');
-   assert(answer.trim().split(/\\s+/).length>=(item.nodeIndex===0?85:30),'short P6 '+key+' '+lang);
+   assert(answer.trim().split(/\s+/).length>=(item.nodeIndex===0?85:30),'short P6 '+key+' '+lang);
   }
-  assert(!/\\b(?:avatar|editorial reconstruction|publication eligible|modern canon law)\\b/i.test(item.answer.en),
+  assert(!/\b(?:avatar|editorial reconstruction|publication eligible|modern canon law)\b/i.test(item.answer.en),
    'apparatus leaked into character voice '+key);
-  assert(!/\\b(?:avatar|reconstitution éditoriale)\\b/i.test(item.answer.fr));
-  assert(!/^(?:In |Dans )(?:E supremi|Acerbo nimis|Haerent animo|Il fermo proposito|Tra le sollecitudini)\\b/i.test(item.answer.en));
+  assert(!/\b(?:avatar|reconstitution éditoriale)\b/i.test(item.answer.fr));
+  assert(!/^(?:In |Dans )(?:E supremi|Acerbo nimis|Haerent animo|Il fermo proposito|Tra le sollecitudini)\b/i.test(item.answer.en));
   node.previousEditorialDraft={...node.a};
   node.a={...item.answer};
   node.p6VoiceReview=true;
@@ -101,7 +101,7 @@ const enhanced={...original,
 const encode=JSON.stringify(enhanced).replace(/</g,'\\u003c').replace(/>/g,'\\u003e');
 const updated=html.replace(hit[0],'<script type="application/json" id="spxExpandedCorpus">'+encode+'</script>');
 assert(!/<script[^>]+src=/.test(updated));
-assert(!/<link[^>]+https?:\\/\\//.test(updated));
+assert(!/<link[^>]+https?:\/\//.test(updated));
 const dest=out+'SPX_Study_Expanded_106_P6.html';
 writeFileSync(dest,updated);
 const ledger=readJSON(out+'SPX_106_Source_Closure_Ledger.json');
@@ -121,7 +121,7 @@ ledger.counts.p6VoiceRevisions=revised;
 ledger.counts.p6Chapters=12;
 ledger.published=false;
 ledger.allPublicationApprovals=false;
-writeFileSync(out+'SPX_106_P6_Source_Closure_Ledger.json',JSON.stringify(ledger,null,2)+'\\n');
+writeFileSync(out+'SPX_106_P6_Source_Closure_Ledger.json',JSON.stringify(ledger,null,2)+'\n');
 console.log('PASS SPX_P6_OLD_DOC_VOICE '+JSON.stringify({chapters:106,answers:423,revisedChapters:12,
 revisedBilingualPairs:revised,untouchedBaseline:94-chapterNotes.size,untouchedP4:12,
 published:false,output:dest}));
