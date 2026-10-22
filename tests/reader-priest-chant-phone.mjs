@@ -30,11 +30,15 @@ try{
   await page.waitForFunction(()=>document.documentElement.dataset.harnessReady==="true",{timeout:20000});
   const pre=await page.evaluate(()=>{
    const api=window.__AO_PHONE_PREVIEW;
-   api.showSection("AO.CARD.013");
-   return {cards:api.model.totalCards,section:api.getCurrentCard()?.sectionId};
+   const sanctus=api.model.cards.find(c=>c.sourceSectionId==="AO.CARD.013" && c.title==="Sanctus");
+   if(!sanctus)throw new Error("Sourced Sanctus is missing from canonical 65-card LIVE");
+   api.showSequence(sanctus.sequence);
+   return {cards:api.model.totalCards,section:api.getCurrentCard()?.sectionId,
+     source:api.getCurrentCard()?.sourceSectionId};
   });
-  assert.equal(pre.cards,48,"LIVE 48-card invariant lost");
-  assert.equal(pre.section,"AO.CARD.013");
+  assert.equal(pre.cards,65,"Canonical 65-card LIVE invariant lost");
+  assert.equal(pre.source,"AO.CARD.013");
+  assert.equal(pre.section,"AO.LIVECURATED.AO.CARD.013.1");
   await page.waitForFunction(()=>/^AO\.SM\.C014[5-9]$/.test(window.__AO_PHONE_PREVIEW.getActiveCue()??""),null,{timeout:4000});
   // The public choir cue cannot by itself fire an action by the celebrant.
   const before=await page.evaluate(()=>({
@@ -88,12 +92,19 @@ try{
   const cleared=await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getNativeEventState());
   assert.equal(cleared.priestVoice,null);
   assert.equal(cleared.ownership?.priestVoice,"PRIEST_VOICE_UNOBSERVED_FAIL_CLOSED");
-  await page.evaluate(()=>window.__AO_PHONE_PREVIEW.showSection("AO.CANON.06"));
-  await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getCurrentCard().sectionId==="AO.CANON.06");
+  await page.evaluate(()=>{
+   const api=window.__AO_PHONE_PREVIEW;
+   const host=api.model.cards.find(c=>c.paragraphs?.some(p=>
+     (p.sourceCueIds??[]).includes("AO.SM.C0173")));
+   if(!host)throw new Error("Source-owned Host Consecration cue C0173 is missing");
+   api.showSequence(host.sequence);
+  });
+  await page.waitForFunction(()=>window.__AO_PHONE_PREVIEW.getCurrentCard()?.paragraphs?.some(p=>
+    (p.sourceCueIds??[]).includes("AO.SM.C0173")));
   const stale=await page.evaluate(()=>window.__AO_PHONE_PREVIEW.getNativeEventState());
   assert.notEqual(stale.ownership?.priestAction,"INDEPENDENT_PRIEST_OBSERVATION");
-  assert.equal(await page.evaluate(()=>window.__AO_PHONE_PREVIEW.model.totalCards),48);
+  assert.equal(await page.evaluate(()=>window.__AO_PHONE_PREVIEW.model.totalCards),65);
   await ctx.close();
  }
- console.log("PASS 360/390px phone: 48-card reader; Schola alone cannot move priest; explicit observation restores priest-only gesture; no Schola advancement or stale carryover.");
+ console.log("PASS 360/390px phone: canonical 65-card LIVE; Schola cannot move priest; explicit observation restores priest-only gesture without stale carryover.");
 } finally {await browser?.close();await new Promise(resolve=>server.close(resolve));}

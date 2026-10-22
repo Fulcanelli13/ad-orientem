@@ -24,10 +24,16 @@ assert.deepEqual(CURATED_LIVE_GROUPS["AO.CARD.013"].titles,["Sanctus"],
   "Keep both Sanctus and Benedictus in one prayer card titled simply Sanctus");
 assert.deepEqual(CURATED_LIVE_GROUPS["AO.CARD.013"].after,[]);
 assert.ok(CURATED_LIVE_GROUPS["AO.CARD.024"].titles[0].includes("Second Confiteor"));
-assert.match(browser,/aoLiveCards=48/,"Production must retain explicit 48 rollback");
-assert.match(browser,/reviewCuratedCards:!rollback48/,"Production must request curated 65 by default");
-assert.match(native,/projectCuratedOrdinaryLiveCards\(model\)/,"65 model must be mounted by native reader");
-assert.match(native,/projectSourceFirst48Presentation\(model\)/,"48 rollback must be recoverable");
+assert.doesNotMatch(browser,/aoLiveCards=(?:48|65)/,
+  "Production entry must not accept any obsolete LIVE card-count query flag");
+assert.doesNotMatch(browser,/rollback48|reviewCuratedCards:!rollback48/,
+  "URL-driven 48-card reader cannot return to production");
+assert.match(native,/prepared,reviewCuratedCards:true,presentationData/,
+  "Only the certified 65-family may be requested by the user-facing native mount");
+assert.match(native,/projectCuratedOrdinaryLiveCards\(model\)/,
+  "65-family projector must remain source-owned");
+assert.match(native,/projectSourceFirst48Presentation\(model\)/,
+  "Historical projector still supplies internal noncurated exception paths; do not delete without parity");
 const pre=assertV183PreGospelLiveContract();
 assert.deepEqual(pre.order,["AO.SM.B021","AO.SM.B022","AO.SM.B023"]);
 assert.equal(pre.alleluiaTract.mayMergeIntoGradual,false);
@@ -88,7 +94,7 @@ assert.equal(c0185.sourceCueAdvisory,true);
 assert.equal(certifiedLiveCanonActionOverride({
  presentationMode:"LIVE",curatedPresentation:false,
  cueId:"AO.SM.C0185",matrixAction:sourceAction,
-}),null,"Explicit 48-card rollback and noncurated readers must be untouched");
+}),null,"Uncertified noncurated source projections must not borrow 65-only actions");
 for(const mode of ["MISSAL","SIMPLE"]){
  assert.equal(certifiedLiveCanonActionOverride({
   presentationMode:mode,curatedPresentation:true,cueId:"AO.SM.C0185",matrixAction:sourceAction,
@@ -110,4 +116,4 @@ assert.equal(certifiedLiveCanonActionOverride({
 assert.match(native,/originalPriestAction=canonLiveAction\?\?/,
  "LIVE projector must use the certified correction before the frozen cue label");
 
-console.log("PASS Phase 1/2: 39-source/65-curated product, 64-visible option, explicit 48 rollback and pre-Gospel source ownership; independently sourced Sequence navigation tested separately.");
+console.log("PASS Phase 1/2: 39-source/65-curated production, 64-visible condition, no public 48/65 URL rollback; noncurated exceptional source path remains isolated.");

@@ -8,9 +8,9 @@ export function visibleMassCardTitle(card){
 // Curated LIVE prayer-card presentation: one card per meaningful moment,
 // not per donor block. All source paragraphs, cue IDs and events are preserved.
 // Ordinary LIVE has 65 curated source-backed prayer cards (64 visible by
-// default when the optional second Confiteor is omitted). The historical
-// aoLiveCards=65 opt-in flag now matches the actual ordinary card count.
-// The 48-card rollback remains available.
+// default when the optional second Confiteor is omitted). This is the
+// production Ordinary Sung LIVE family; no URL parameter can substitute
+// historical 48-card research presentations.
 // Keep the direct native fixture review activation backward compatible.
 // Pre-Gospel chant subnavigation requires a source-backed follow-up.
 //

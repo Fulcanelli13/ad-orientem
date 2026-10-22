@@ -29,7 +29,7 @@ try{
   const configurations=[
     {name:"production64",query:"production=1",cards:65,visible:64},
     {name:"optional65",query:"production=1&secondConfiteor=1",cards:65,visible:65},
-    {name:"rollback48",query:"production=1&aoLiveCards=48",cards:48,visible:48},
+    {name:"legacy-rollback-rejected",query:"production=1&aoLiveCards=48",cards:65,visible:64},
   ];
   for(const variant of configurations)for(const width of [320,360,390]){
     const context=await browser.newContext({
@@ -43,7 +43,7 @@ try{
       const cards=window.__AO_PHONE_PREVIEW.model.cards;
       return [...new Set([0,.18,.4,.62,.84].map(p=>cards[Math.floor(p*(cards.length-1))]?.sequence))].filter(x=>x!=null);
     });
-    assert.ok(checkpoints.length>=4,"Not enough curated or rollback card checkpoints");
+    assert.ok(checkpoints.length>=4,"Not enough canonical LIVE card checkpoints");
     for(const sequence of checkpoints){
       await page.evaluate(seq=>window.__AO_PHONE_PREVIEW.showSequence(seq),sequence);
       await page.waitForFunction(seq=>window.__AO_PHONE_PREVIEW.getCurrentCard()?.sequence===seq,sequence,{timeout:4000});
@@ -53,7 +53,7 @@ try{
         const stage=root?.querySelector(".ao-reader-stage");
         const rails=[...root.querySelectorAll(".ao-rail")].map(rail=>{
           const active=[...rail.querySelectorAll('.ao-rail-item[data-active="true"]')]
-            .filter(x=>x.dataset.channel!=="posture");
+            .filter(x=>root.dataset.objectiveContext==="true"||x.dataset.channel!=="posture");
           const inactive=[...rail.querySelectorAll('.ao-rail-item[data-active="false"]')];
           return {
             side:rail.classList.contains("ao-rail-left")?"left":"right",
@@ -76,7 +76,7 @@ try{
           };
         });
         return {
-          mode:root.dataset.mode,rails,
+          mode:root.dataset.mode,objectiveContext:root.dataset.objectiveContext,rails,
           title:root.querySelector('[data-role="section-title"]')?.textContent?.trim()??"",
           card:window.__AO_PHONE_PREVIEW.getCurrentCard()?.sectionId??null,
           count:window.__AO_PHONE_PREVIEW.model.totalCards,
@@ -87,7 +87,7 @@ try{
       assert.equal(snap.mode,"LIVE");
       assert.equal(snap.count,variant.cards,variant.name);
       assert.match(snap.progress,new RegExp("/\\s*"+variant.visible+"$"),
-        variant.name+" visible-card progress must use production/rollback denominator");
+        variant.name+" visible-card progress must retain curated 64/65 denominator");
       assert(snap.title.length>1,"active card title vanished from top jump");
       assert.equal(snap.rails.length,2);
       assert(snap.scrollCard>0);
@@ -114,16 +114,21 @@ try{
           assert.equal(cue.title,null,cue.channel+" stale hover title survived");
         }
       }
-      // Persistent posture is already in the top ribbon. Never duplicate it
-      // in the left transient rail even when it is a nonempty sourced state.
-      const repeat=await page.locator('.ao-rail-left .ao-rail-item[data-channel="posture"]')
+      // Contextual presentation may place sourced posture in the left rail;
+      // otherwise posture belongs to the top ribbon and must not create an
+      // additional transient icon. Follow the canonical current layout owner.
+      const postureDisplay=await page.locator('.ao-rail-left .ao-rail-item[data-channel="posture"]')
         .evaluate(el=>getComputedStyle(el).display);
-      assert.equal(repeat,"none","persistent posture was duplicated in the LIVE left rail");
+      if(snap.objectiveContext!=="true")
+        assert.equal(postureDisplay,"none","posture was duplicated in the transient LIVE left rail");
+      else if(postureDisplay!=="none")
+        assert.equal(snap.rails[0].visible,"true",
+          "objective-context posture is displayed but its left rail is hidden");
     }
     await context.close();
   }
   assert(sampledActive>0,"No active icon cue was sampled; test did not exercise semantic labelling");
-  console.log("PASS LIVE rails 320/360/390px: production 64, optional 65 and rollback 48; inactive icons vanish, active cues remain accessible and progress denominators match.");
+  console.log("PASS LIVE rails 320/360/390px: 65 source cards (64 normally visible); obsolete 48 URL ignored, faithful posture correctly owned, active cues accessible.");
 }finally{
   await browser?.close();
   await new Promise(ok=>server.close(ok));

@@ -13,6 +13,15 @@ if(gate.productionDefault!=="R17_NATIVE"){
   console.error("R17 reader release certification: BLOCKED — native is not production default");
   process.exit(1);
 }
+const production=gate.protectedInvariants?.find(x=>x.id==="PRODUCTION_CURATED65_LIVE_READER");
+if(production?.status!=="ACTIVE_PRODUCTION_CARD_CONTRACT"||
+   production.ordinaryPresentationCards!==65||
+   production.ordinarilyVisibleCardsWithoutOptionalSecondConfiteor!==64||
+   production.sourceOrdinarySungSections!==39||
+   production.publicCardCountQueryOverridesAllowed!==false){
+  console.error("R17 reader release certification: BLOCKED — wrong Ordinary LIVE product card owner");
+  process.exit(1);
+}
 const shell=gate.protectedInvariants?.find(x=>x.id==="REAL_APP_SHELL_ACCEPTANCE");
 if(shell?.status!=="CERTIFIED"){
   console.error("R17 reader release certification: BLOCKED — real app-shell acceptance is not certified");

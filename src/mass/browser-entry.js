@@ -685,16 +685,13 @@ export async function mountR17Preview({
   if(!iconAudit.complete){
     throw new Error("R17_ICON_BANK_INCOMPLETE:"+iconAudit.missing.join(","));
   }
-  // Production: use the source-curated 64/65 Ordinary Sung LIVE reader.
-  // The verified 48-step projector remains explicitly selectable for rollback.
-  // Structural special rites, non-Sung forms and non-LIVE modes retain their
-  // independent form-authoritative presentations inside the native owner.
-  const query=String(doc?.defaultView?.location?.search??"");
-  const rollback48=/(?:^|[?&])aoLiveCards=48(?:&|$)/.test(query);
+  // Production is the source-curated 65-family Ordinary Sung LIVE reader
+  // (64 ordinarily visible without the optional second Confiteor).
+  // URL parameters and persisted legacy modes may not select 48-card
+  // research presentations. Special rites retain source-backed ownership.
   const preview=await Promise.resolve(nativeMount({
     doc,
     prepared,
-    reviewCuratedCards:!rollback48,
     iconResolver:createHostIconResolver({assets}),
   }));
   return Object.freeze({

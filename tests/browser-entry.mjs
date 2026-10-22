@@ -288,18 +288,18 @@ assert.equal(nativeChoice.preview.kind,"native");
 assert.equal(nativeChoice.preview.hasLegacyDonor,false,"native production reader still received legacy-active donor");
 assert.equal(nativeChoice.fallbackReason,null);
 
-const defaultCurated=await mountR17Preview({
-  doc:{defaultView:{location:{search:""}}},prepared:{},iconAssets,
-  nativeMount:({reviewCuratedCards})=>({curated:reviewCuratedCards}),
-});
-assert.equal(defaultCurated.preview.curated,true,
-  "production entry must show the curated 64/65-card Ordinary Sung LIVE reader by default");
-const rollback48=await mountR17Preview({
-  doc:{defaultView:{location:{search:"?aoLiveCards=48"}}},prepared:{},iconAssets,
-  nativeMount:({reviewCuratedCards})=>({curated:reviewCuratedCards}),
-});
-assert.equal(rollback48.preview.curated,false,
-  "legacy source-first 48 projection must remain explicitly available for rollback");
+// Only the real native mount owns Ordinary 65-family selection. A URL or
+// obsolete option cannot force the production entry into a 48-card reader.
+for(const query of ["","?aoLiveCards=48","?aoLiveCards=65","?reader=legacy"]){
+  const selected=await mountR17Preview({
+    doc:{defaultView:{location:{search:query}}},prepared:{},iconAssets,
+    nativeMount:options=>({owner:"native",received:Object.keys(options)}),
+  });
+  assert.equal(selected.preview.owner,"native");
+  assert.equal(selected.uiOwner,"R17_NATIVE_PRODUCTION");
+  assert.ok(!selected.preview.received.includes("reviewCuratedCards"),
+    "production bridge exposed an obsolete card-count override: "+query);
+}
 
 await assert.rejects(
   ()=>mountR17Preview({

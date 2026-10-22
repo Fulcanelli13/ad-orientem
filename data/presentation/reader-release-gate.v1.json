@@ -13,6 +13,21 @@
       "releaseAuthority": false
     },
     {
+      "id": "PRODUCTION_CURATED65_LIVE_READER",
+      "status": "ACTIVE_PRODUCTION_CARD_CONTRACT",
+      "presentationOwner": "src/mass/reader-live-curated-cards.js",
+      "browserEntry": "src/mass/browser-entry.js",
+      "nativeEntry": "src/mass/reader-native-preview.js",
+      "sourceOrdinarySungSections": 39,
+      "ordinaryPresentationCards": 65,
+      "ordinarilyVisibleCardsWithoutOptionalSecondConfiteor": 64,
+      "extendedPreGospelSequencesConditional": true,
+      "explicitIntroitEntryMayOmitOpeningCards": true,
+      "publicCardCountQueryOverridesAllowed": false,
+      "otherModesOrSpecialRitesHaveSeparateSourceContracts": true,
+      "historical48RequiredForRelease": false
+    },
+    {
       "id": "HOST_ELEVATION_GATE",
       "wordsCue": "AO.SM.C0173",
       "actionCue": "AO.SM.C0174"

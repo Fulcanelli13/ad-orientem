@@ -7,7 +7,7 @@ _17 October 2026 · current-main decision overlay · does not supersede source-o
 
 | Domain | Current production/research state | Owner and release boundary |
 | --- | --- | --- |
-| Liturgical Mass reader | Existing LIVE/Simple/Missal and canonical ceremonial text; preserve curated and 48-card rollback | `src/mass/`; **prayer and immediate rubrics only** |
+| Liturgical Mass reader | Existing LIVE/Simple/Missal and canonical ceremonial text; **65-card Ordinary Sung LIVE is the production family (64 normally visible)**; historical 48 projection is internal, not a selectable reader | `src/mass/`; **prayer and immediate rubrics only** |
 | Single public Mass-study discovery destination | **Merged** "Understand the Mass", chronological five-phase Map and thematic study paths; retained legacy deep links | [#1293](https://github.com/Fulcanelli13/ad-orientem/pull/1293); `learn.mass_explorer` and original `learn.mass` lessons |
 | Chronological and source identity coverage | **32 published Guide moments / 96 original Sung source blocks** | `guide-registry.v1.json`, `reader-text-sung.v1.json` |
 | Current bilingual brief teaching | **84 source-block-specific EN/FR readings** from six families; **19 source blocks / 21 links** to already published Formation claims | [#1335](https://github.com/Fulcanelli13/ad-orientem/pull/1335), [#1333](https://github.com/Fulcanelli13/ad-orientem/pull/1333); no historical authority claim |

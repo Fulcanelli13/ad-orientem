@@ -539,7 +539,6 @@ export async function prepareNativeReaderPreview({
 export async function mountNativeReaderPreview({
   doc=globalThis.document,
   prepared,
-  reviewCuratedCards=false,
   presentationData=null,
   loadPresentationData=loadReaderPresentationData,
   eventData=null,
@@ -582,11 +581,12 @@ export async function mountNativeReaderPreview({
 }={}){
   if(!doc?.body || !doc?.createElement) throw new TypeError("Document/body required");
 
-  // Validate everything before adding a single preview node.
-  const reviewEnabled=reviewCuratedCards===true ||
-    /(?:^|[?&])aoLiveCards=65(?:&|$)/.test(String(doc?.defaultView?.location?.search??""));
+  // User-facing native mount always selects the certified 65-card LIVE
+  // projection when eligible. The historical 48-step compatibility
+  // projector is internal to source-only test/exception paths and is
+  // never selected from URLs or mount options.
   const ready=await prepareNativeReaderPreview({
-    prepared,reviewCuratedCards:reviewEnabled,presentationData,loadPresentationData,eventData,loadEventData,
+    prepared,reviewCuratedCards:true,presentationData,loadPresentationData,eventData,loadEventData,
     cueRegistries,loadCueRegistries,formStateData,loadFormStateData,guideData,loadGuideData,
     riteMusicData,loadRiteMusicData,
     aspergesData,loadAspergesData,palmData,loadPalmData,ashData,loadAshData,
@@ -1339,6 +1339,8 @@ export async function mountNativeReaderPreview({
   let observer=null;
   let cueTracker=null;
   let activeCueId=null;
+  let modeSwitchCueLock=null;
+  let stopModeSwitchCueLock=()=>{};
   let enteredCanonicalCueSequence=false;
   // Explicit external observation only; neither scroll focus nor Schola audio
   // may invent the priest's private Sanctus/Benedictus recitation.
@@ -2577,6 +2579,7 @@ export async function mountNativeReaderPreview({
     initialCardRender=false;
     armPartCinematic(partCinema);
     if(changed){
+      modeSwitchCueLock=null;
       enteredCanonicalCueSequence=true;
       observedPriestEvent=null;
       activeCueId=null;
@@ -2719,8 +2722,17 @@ export async function mountNativeReaderPreview({
     const cr=scroll.getBoundingClientRect?.();
     const tr=target.getBoundingClientRect?.();
     if(!cr||!tr)return false;
+    const exactRows=[...(scroll.querySelectorAll?.(".ao-reader-paragraph[data-cue-id]")??[])];
+    // The requested cue can be the final rubric on a 30-section SIMPLE
+    // card even though the 65-card LIVE model owns a separate elevation
+    // card. A center-based scroll target can land earlier in a short card;
+    // the focus tracker deliberately assigns the last cue at the bottom
+    // edge. Preserve the actual source cue, not a macro/card-number offset.
+    const atFinalSourceCue=exactRows.length>1&&exactRows.at(-1)===target;
     const absoluteCenter=(tr.top-cr.top+scroll.scrollTop)+(tr.height/2);
-    scroll.scrollTop=Math.max(0,absoluteCenter-scroll.clientHeight*.39);
+    scroll.scrollTop=atFinalSourceCue
+      ? Math.max(0,scroll.scrollHeight-scroll.clientHeight)
+      : Math.max(0,absoluteCenter-scroll.clientHeight*.39);
     cueTracker?.refresh?.();
     return true;
   }
@@ -2777,6 +2789,14 @@ export async function mountNativeReaderPreview({
         transientGuard.resolveCue(desiredCue);
         focusCueAtReaderLine(desiredCue);
         root.dataset.r17NativeCue=desiredCue;
+        // SIMPLE can combine several exact source units in one text row.
+        // Its geometry then reports the row's opening cue (C0172), while
+        // the source-backed card still includes the selected elevation
+        // cue (C0174). Do not erase the explicit mode-switch source
+        // anchor until the user resumes scrolling.
+        modeSwitchCueLock=rebuilt.mode==="MISSAL"?null:{
+          cueId:desiredCue,sectionId:current.sectionId,
+        };
         queue();
       }
     }
@@ -2905,6 +2925,7 @@ export async function mountNativeReaderPreview({
     observer=null;
     root.removeEventListener?.("click",onRiteChoiceClick);
     host.querySelector?.(".ao-prayer-card")?.removeEventListener?.("scroll",syncPalmGospelCue);
+    stopModeSwitchCueLock();
     cueTracker?.destroy?.();
     cueTracker=null;
     root.remove?.();
@@ -2955,6 +2976,23 @@ export async function mountNativeReaderPreview({
   const readerScroll=host.querySelector?.(".ao-prayer-card");
   if(readerScroll){
     readerScroll.addEventListener?.("scroll",syncPalmGospelCue,{passive:true});
+    const releaseModeSwitchCueLock=()=>{
+      if(!modeSwitchCueLock)return;
+      modeSwitchCueLock=null;
+      const resumed=cueTracker?.getCue?.();
+      if(resumed&&resumed!==activeCueId){
+        activeCueId=resumed;
+        root.dataset.r17NativeCue=resumed;
+        transientGuard.resolveCue(resumed);
+        queue();
+      }
+    };
+    readerScroll.addEventListener("touchstart",releaseModeSwitchCueLock,{passive:true});
+    readerScroll.addEventListener("wheel",releaseModeSwitchCueLock,{passive:true});
+    stopModeSwitchCueLock=()=>{
+      readerScroll.removeEventListener("touchstart",releaseModeSwitchCueLock);
+      readerScroll.removeEventListener("wheel",releaseModeSwitchCueLock);
+    };
     cueTracker=installCueFocusTracker({
       container:readerScroll,
       win,
@@ -2963,6 +3001,16 @@ export async function mountNativeReaderPreview({
         // The classical Missal is a static reading view. Scrolling must not
         // move the underlying source cue or trigger LIVE cinematics.
         if(root.querySelector?.("[data-ao-reader-shell]")?.dataset?.mode==="MISSAL")return;
+        if(modeSwitchCueLock&&modeSwitchCueLock.sectionId===current?.sectionId&&
+           modeSwitchCueLock.cueId===activeCueId &&
+           (current.paragraphs??[]).some(row=>(row.sourceCueIds??[])
+             .includes(modeSwitchCueLock.cueId))){
+          // Programmatic layout refresh is not a new observed priest or
+          // faithful cue. Preserve the same exact source event until user
+          // scroll/input releases this temporary mode-switch anchor.
+          return;
+        }
+        modeSwitchCueLock=null;
         if(activeCueId!==cueId){
           observedPriestEvent=null;
           clearCanonObservation();
