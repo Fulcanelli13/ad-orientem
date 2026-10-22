@@ -11,6 +11,7 @@ import {applyThematicBoundaryAudit} from "./historia-thematic-boundaries.js";
 import {all217ThematicResearchCollections} from "./historia-thematic-remaining.js";
 import {apply150EditorialTriage} from "./historia-thematic-editorial-triage.js";
 import {composeHistoriaResearchEvidence} from "./historia-thematic-adjudication.js";
+import {overlayEconomicalRestorationResearch} from "./historia-restoration-economy.js";
 export const SCRIPTURE_BROWSER_VERSION="ao-scripture-library-v1";
 export function installScriptureBrowserOwner(win=globalThis){
  if(win.AO_SCRIPTURE_APP_V1)return win.AO_SCRIPTURE_APP_V1;
@@ -24,6 +25,8 @@ export function installScriptureBrowserOwner(win=globalThis){
  const thematicBatch2=thematicEnabled && new URLSearchParams(win.location?.search||"").get("ao_historia_batch2")==="1";
  const thematicSegmented=thematicBatch2 && new URLSearchParams(win.location?.search||"").get("ao_historia_segmented")==="1";
  const thematicAll217=thematicSegmented && new URLSearchParams(win.location?.search||"").get("ao_historia_all")==="1";
+ const thematicEconomy16=thematicAll217 &&
+  new URLSearchParams(win.location?.search||"").get("ao_historia_economy16")==="1";
  let thematicCache=null,thematicInflight=null,thematicLinks=null;
  async function loadThematic(){
   if(!thematicEnabled)return null;
@@ -71,9 +74,13 @@ export function installScriptureBrowserOwner(win=globalThis){
    if(!reviewed?.ok||!core?.ok||!atlasReviewed?.ok)
     throw new Error("Historia editorial evidence unavailable");
    const adapted=apply150EditorialTriage(expanded,await reviewed.json());
+   const restorationData=await core.json();
    thematicLinks=composeHistoriaResearchEvidence(
-    mapping,await atlasReviewed.json(),await core.json(),adapted);
-   return adapted;
+    mapping,await atlasReviewed.json(),restorationData,adapted);
+   if(!thematicEconomy16)return adapted;
+   const economy=await win.fetch("/data/research/historia-salutis-sixteen-economical-scripture-selections-20261022.v1.json",{cache:"no-store"});
+   if(!economy?.ok)throw new Error("Historia economical verse proposal unavailable");
+   return overlayEconomicalRestorationResearch(await economy.json(),restorationData,adapted);
   })();
   try{return thematicCache=await thematicInflight;}
   finally{thematicInflight=null;}
