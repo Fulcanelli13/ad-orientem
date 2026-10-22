@@ -130,16 +130,23 @@ try{
       text:row?.querySelector(".ao-line-primary")?.textContent,
       secondary:row?.querySelector(".ao-line-secondary")?.textContent,
       witness:row?.dataset.sourceRubricWitness,
+      presentation:row?.dataset.rubricPresentationOwner,
+      eventIds:row?.dataset.rubricSourceEventIds?.split(" "),
       expanded:row?.getAttribute("role")==="button",
       overflow:document.documentElement.scrollWidth-innerWidth,
     };
   });
   assert.ok(paten.text && (lang==="fr"?/patène/.test(paten.text):/Paten/i.test(paten.text)),
     "Source rubric must be rendered from the selected existing English/French witness");
-  assert.ok(paten.text.startsWith(lang==="fr"?"Fait":"Makes"),
-    "Book must use the selected sentence-case EN/FR source, not uppercase English donor");
+  assert.ok(paten.text.startsWith(lang==="fr"?"Le prêtre trace":"The priest makes"),
+    "Condensed Missal rubric must remain sentence-case EN/FR and accurately describe the paten");
   assert.equal(paten.secondary,undefined,"English square-bracket directions cannot masquerade as Latin");
-  assert.equal(paten.witness,"EXISTING_SOURCE_VERNACULAR_RUBRIC");
+  assert.equal(paten.witness,"EXISTING_SOURCE_VERNACULAR_RUBRIC",
+    "Original source witness identity must be preserved");
+  assert.equal(paten.presentation,"PUBLISHED_1962_RUBRIC_SHORT_COPY_V1",
+    "Adapted presentation must be distinguished from the original witness");
+  assert.deepEqual(paten.eventIds,["AO.RUB.C0111.01","AO.RUB.C0111.02","AO.RUB.C0111.03"],
+    "Condensation must not erase any certified paten action");
   assert.equal(paten.expanded,false,"Source rubric must not be a competing tappable paragraph");
   assert.equal(await page.locator(".ao-missal-rubric-depth").count(),0,
     "Duplicate action lists are not genuine long rubrics");

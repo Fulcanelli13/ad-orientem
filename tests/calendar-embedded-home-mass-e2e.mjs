@@ -175,8 +175,20 @@ try{
   assert.ok(await page.locator("[data-full-mass-category]").count()>=5);
   await page.screenshot({path:resolve(shots,"mass-preflight-"+width+".png"),fullPage:true});
   assert.equal(await page.locator("[data-full-mass-reader-mode]").count(),3);
-  await page.locator("[data-folio-calendar-details] > summary").click();
-  await page.locator("[data-mass-calendar-details] > summary").click();
+  // A commemoration can auto-open the outer Calendar context.
+  // An unconditional click would close it and hide the nested Calendar control.
+  const outerCalendar=page.locator("[data-folio-calendar-details]");
+  if(!(await outerCalendar.evaluate(node=>node.open))){
+    await page.locator("[data-folio-calendar-details] > summary").click();
+  }
+  assert.equal(await outerCalendar.evaluate(node=>node.open),true,
+    "Liturgical context must be open before expanding the inner Calendar");
+  const innerCalendar=page.locator("[data-mass-calendar-details]");
+  if(!(await innerCalendar.evaluate(node=>node.open))){
+    await page.locator("[data-mass-calendar-details] > summary").click();
+  }
+  assert.equal(await innerCalendar.evaluate(node=>node.open),true,
+    "Nested Mass Calendar must be open before changing views");
   await page.locator('[data-mass-calendar-view="year"]').click();
   await page.waitForSelector('[data-mass-calendar-host] #ao-calendar-modular-root[data-ao-calendar-view="year"]',{state:"visible",timeout:45000});
   assert.equal(await page.locator('[data-mass-calendar-host] .aoCalV2Ring').count(),1,"Calendar year must render within Mass preparation");

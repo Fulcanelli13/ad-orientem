@@ -18,6 +18,7 @@ import { loadReaderCueRegistries } from "./reader-cue-state.js";
 import { loadReaderFormStateData, createReaderFormCueStateController } from "./reader-form-state.js";
 import { installCueFocusTracker } from "./reader-cue-focus.js";
 import { withLiveReadingSections } from "./reader-live-reading-sections.js";
+import { projectReaderObjectiveContext } from "./reader-objective-context.js";
 
 // The certified Good Friday state graph carries nine kneel/rise formula
 // pairs and three Cross-unveiling silent adoration intervals. Their spoken
@@ -61,6 +62,7 @@ import { createNativeScholaController } from "./reader-schola.js";
 import { readMassCustomaryPreferences, updateMassCustomaryPreferences } from "./reader-customary-preferences.js";
 import { projectGloriaCredoFaithfulCue, resolveIncarnatusSungAction } from "./gloria-credo-faithful.js";
 import { iconKeysForReaderState, readerAttentionForState } from "./reader-icons.js";
+import { projectCurated65PriestStation } from "./reader-priest-station65.js";
 import { createReaderTransientController, partTransitionCinematic, resolveCanonStageBellCinematic } from "./reader-transients.js";
 import {projectHolyThursdayBell,projectEasterVigilGloriaBell} from "./reader-triduum-bells.js";
 import {projectLowMassCommunionWarning} from "./reader-low-communion-bell.js";
@@ -1619,12 +1621,24 @@ export async function mountNativeReaderPreview({
     });
     const bell=triduumBell.bell;
     const cinematic=triduumBell.cinematic;
-    const priestPosition=observedPriest?.priestPosition ??
+    const sourcePriestPosition=observedPriest?.priestPosition ??
       (focusedFaithful?.conditionalSedilia
       ? Object.freeze({station:"SEDILIA",label:"AT SEDILIA",
           value:"SEDILIA",owner:"CUSTOMARY_SEDILIA_WITNESS",
           sourceCueId:focusedFaithful.priestStateWitness})
       : owned.priestPosition);
+    // Only the source-backed curated LIVE family receives the new state
+    // projection. A card scroll is never an observed priest movement.
+    const finalCurated65=readerModel?.structureOwner==="SOURCE_FIRST_LIVE_CURATED_65_REVIEW" &&
+      [65,66,67].includes(readerModel?.totalCards) &&
+      readerModel?.presentationMode==="LIVE";
+    const curatedLocation=projectCurated65PriestStation({
+      cueId:activeCueId,sourcePosition:sourcePriestPosition,
+      form,observedPriestEventId:observedPriest?.eventId??null,
+      enabled:finalCurated65,
+      sermonPause:current?.blocks?.some(block=>block.blockId==="AO.SM.B096")===true,
+    });
+    const priestPosition=curatedLocation?.priestPosition??sourcePriestPosition;
 
     // Posture ownership is profile-aware. FOLLOW_CONGREGATION remains an
     // observed rollback channel; sourced/local profiles never silently inherit it.
@@ -1795,10 +1809,14 @@ export async function mountNativeReaderPreview({
         ? cueProjection.posture : null;
     const iconKeys=iconKeysForReaderState({
       priestPosition,posture,gesture,response,priestVoice,
-      priestAction,bell,schola:scholaProjection.schola
+      priestAction,bell,schola:scholaProjection.schola,
+      cueId:activeCueId,curated65FinalArt:finalCurated65,
+      form
     });
     return Object.freeze({
       priestPosition,
+      priestMissalLocation:curatedLocation?.missalLocation??null,
+      priestStationConfidence:curatedLocation?.reason??null,
       posture,
       postureCue,
       paragraphCues,
@@ -2647,6 +2665,16 @@ export async function mountNativeReaderPreview({
       // supplies LIVE rubrics at the exact source cue paragraph.
       guide:null,
       ...state,
+      // The context is descriptive editorial copy, never a priest observation
+      // and never a replacement for the existing exact-gesture rails.
+      objectiveContext:String(readerModel?.presentationMode??"").toUpperCase()==="LIVE"
+        ? projectReaderObjectiveContext(visibleCard,{
+            cueId:state.nativeCueId,
+            form:ready.prepared?.session?.resolvedMass?.form,
+            language:ready.prepared?.readerPreferences?.language??"en",
+            sourceBlocks:ready.data?.sungCorpus?.blocks,
+          })
+        :null,
     });
     canonManualUI?.update();
     root.dataset.r17NativeEvent=state.nativeEventId??"unresolved";
@@ -2822,6 +2850,17 @@ export async function mountNativeReaderPreview({
       progress:current ? visibleProgress(current) : null,
       guide:null,
       ...state,
+      // Card navigation has no observed cue; scrolling later resolves one.
+      // Recompute contextual ribbon copy on every cue-only update or it
+      // remains null (or stale) even while the LIVE action rails advance.
+      objectiveContext:String(readerModel?.presentationMode??"").toUpperCase()==="LIVE"
+        ? projectReaderObjectiveContext(current,{
+            cueId:state.nativeCueId,
+            form:ready.prepared?.session?.resolvedMass?.form,
+            language:ready.prepared?.readerPreferences?.language??"en",
+            sourceBlocks:ready.data?.sungCorpus?.blocks,
+          })
+        :null,
       organPermission:project1962ReaderOrganNote({
         massCard:current,resolvedMass:prepared?.session?.resolvedMass,
       }),

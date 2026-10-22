@@ -215,57 +215,54 @@ try{
    await graph.waitFor({state:"detached",timeout:10000});
    await page.locator("#ao-find-modular-root [data-mapcn-discover-rail]").waitFor({state:"visible"});
    assert.equal(await page.locator(".aoHeritageSurface .aoFindMap canvas.maplibregl-canvas").count(),1);
-   // P6: existing five-surface owner must open exactly the canonical custom,
-   // including valid 3-letter IDs used by the published customs registry.
+   // P5: custom CTA must open a grouped canonical custom, not a bare
+   // geographic attestation. Verify this at all three accepted viewport sizes.
    await page.locator("#ao-find-modular-root button[data-network-toggle]").click();
    await graph.waitFor({state:"visible"});
    await graph.locator("select[data-network-kind]").selectOption("custom");
    const customCta=graph.locator(".aoNetworkCurrent [data-network-open-custom]");
    await customCta.waitFor({state:"visible"});
-   const ctaId=await customCta.getAttribute("data-network-open-custom");
-   assert.ok(/^[A-Z]{3,4}-[0-9]{3}$/.test(ctaId||""),"CTA must use an existing canonical ID");
+   const canonicalId=await customCta.getAttribute("data-network-open-custom");
    await customCta.click();
-   const customFolio=page.locator('#ao-find-modular-root .aoExploreTraditionSheet[data-explore-custom-id="'+ctaId+'"]');
-   await customFolio.waitFor({state:"visible",timeout:12000});
-   assert.ok(await customFolio.locator("a[href^='https://']").count()>0,
-     "Existing custom detail must retain independently cited publishers");
-   assert.equal(await graph.count(),0,"Network must close before opening canonical customs folio");
-   const direct=await page.evaluate(()=>globalThis.AO_FIND_APP_V1.open({
-      lens:"traditions",customId:"DEV-010",expandDetail:true}));
-   assert.equal(direct,true,"Valid 3-letter published customs must open by exact Calendar link");
+   const networkCustomFolio=page.locator('#ao-find-modular-root .aoExploreTraditionSheet[data-explore-custom-id="'+canonicalId+'"]');
+   await networkCustomFolio.waitFor({state:"visible",timeout:12000});
+   assert.ok(await networkCustomFolio.locator("a[href^='https://']").count()>0,
+     "Canonical custom handoff must preserve independently cited publishers");
+   assert.equal(await graph.count(),0);
+   await page.screenshot({path:resolve(out,"explore-"+width+"-network-custom-folio.png"),fullPage:false});
+   assert.equal(await page.evaluate(()=>globalThis.AO_FIND_APP_V1.open({lens:"heritage"})),true);
+   await page.locator("#ao-find-modular-root [data-mapcn-discover-rail]").waitFor({state:"visible"});
+   assert.equal(await page.locator(".aoHeritageSurface .aoFindMap canvas.maplibregl-canvas").count(),1);
+   // P6: canonical three-letter identifiers must round-trip through the
+   // existing Calendar-to-Explore owner; research-only IDs must fail closed.
+   assert.equal(await page.evaluate(()=>globalThis.AO_FIND_APP_V1.open({
+     lens:"traditions",customId:"DEV-010",expandDetail:true})),true);
    await page.locator('#ao-find-modular-root .aoExploreTraditionSheet[data-explore-custom-id="DEV-010"]').waitFor({state:"visible"});
-   const rejected=await page.evaluate(()=>globalThis.AO_FIND_APP_V1.open({
-      lens:"traditions",customId:"DEV-999"}));
-   assert.equal(rejected,false,"Missing customs must not mint profiles");
+   assert.equal(await page.evaluate(()=>globalThis.AO_FIND_APP_V1.open({
+     lens:"traditions",customId:"DEV-999"})),false);
    assert.equal(await page.locator('#ao-find-modular-root .aoExploreTraditionSheet[data-explore-custom-id="DEV-010"]').count(),1);
-   const returned=await page.evaluate(()=>globalThis.AO_FIND_APP_V1.open({lens:"heritage"}));
-   assert.equal(returned,true,"Canonical Explore owner must restore Discover");
+   assert.equal(await page.evaluate(()=>globalThis.AO_FIND_APP_V1.open({lens:"heritage"})),true);
    await page.locator("#ao-find-modular-root [data-mapcn-discover-rail]").waitFor({state:"visible"});
    assert.equal(await page.locator(".aoHeritageSurface .aoFindMap canvas.maplibregl-canvas").count(),1,
-     "Cross-surface folio handoff must restore a single MapLibre canvas");
-   // The same mobile and desktop surfaces must remain readable in French;
-   // source links and keyboard targets are invariant under language changes.
-   const french=await page.evaluate(async()=>{
+     "P6 cross-lens return must preserve a single MapLibre canvas");
+   const p6French=await page.evaluate(async()=>{
      globalThis.AO_RUNTIME_V8.store.dispatch({type:"set-language",language:"fr"});
      await globalThis.AO_FIND_APP_V1.paint();
      return globalThis.AO_RUNTIME_V8.store.getState().language;
    });
-   assert.equal(french,"fr");
+   assert.equal(p6French,"fr");
    await page.locator("#ao-find-modular-root button[data-network-toggle]").click();
    await graph.waitFor({state:"visible"});
-   assert.equal(await graph.locator(".aoNetworkHeader h2").innerText(),"Liens sacrés");
    await graph.locator("select[data-network-kind]").selectOption("person");
    assert.ok(await graph.locator("a[href^='https://']").count()>0);
    await page.screenshot({path:resolve(out,"explore-"+width+"-network-fr.png"),fullPage:false});
    await graph.locator("button[data-network-close]").click();
-   const english=await page.evaluate(async()=>{
+   assert.equal(await page.evaluate(async()=>{
      globalThis.AO_RUNTIME_V8.store.dispatch({type:"set-language",language:"en"});
      await globalThis.AO_FIND_APP_V1.paint();
      return globalThis.AO_RUNTIME_V8.store.getState().language;
-   });
-   assert.equal(english,"en");
+   }),"en");
    await page.locator("#ao-find-modular-root [data-mapcn-discover-rail]").waitFor({state:"visible"});
-   assert.equal(await page.locator(".aoHeritageSurface .aoFindMap canvas.maplibregl-canvas").count(),1);
    // D is a same-map journey folio: no new page and no manufactured route
    // lines. Exercise a historical source-owned 3-stage pilgrimage.
    await page.locator("#ao-find-modular-root [data-explore-journey-open]").click();

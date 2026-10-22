@@ -1,0 +1,559 @@
+{
+  "schema": "ao-mass-final-user-originals-v1",
+  "selectionDate": "2026-10-20T15:41:30.221Z",
+  "selectionAuthority": "mass-icon-final-user-lock-20261020.v1.json",
+  "files": [
+    {
+      "id": "stand",
+      "name": "Stand",
+      "sourceHash": "9b1a252e2cee33fbe7e54aaed93da22e579fd51401c8a87c38fa1b4d9c8dcafd",
+      "path": "assets/active/mass-final/stand.svg",
+      "kind": "svg",
+      "gitBlobSha": "8f1ea9e6c3367add43fb423639fe457f4490d993"
+    },
+    {
+      "id": "sit",
+      "name": "Faithful Sit",
+      "sourceHash": "161eb1c501ebc661b9b987234cb41ac6df587562dd4f586e694401c7f8db5203",
+      "path": "assets/active/mass-final/sit.png",
+      "kind": "png",
+      "gitBlobSha": "31b9894f2158921a2ee76c62ad23c4a78ad59d15"
+    },
+    {
+      "id": "kneel",
+      "name": "Kneel",
+      "sourceHash": "c456ed9f23c7df59b28fae4d3a6d794c080d5f6dabe6839b08c2bedab8e883b0",
+      "path": "assets/active/mass-final/kneel.svg",
+      "kind": "svg",
+      "gitBlobSha": "620187da5000a3d67712e41fdf5fa5e226f1fac1"
+    },
+    {
+      "id": "faithful_genuflect",
+      "name": "Faithful Genuflect",
+      "sourceHash": "d8921a6308ecef60bafda42779b5ca9608266c5ff48b81173fab42ef08ea8235",
+      "path": "assets/active/mass-final/faithful_genuflect.svg",
+      "kind": "svg",
+      "gitBlobSha": "1d3048085d257e956342d0bdfaf5bb0ee05a1e0d"
+    },
+    {
+      "id": "bow",
+      "name": "Faithful Bow",
+      "sourceHash": "5792564037b4b3e898dfbf8b7d79a2a57cf55bf2a9046a5068e4e7b96d6dc979",
+      "path": "assets/active/mass-final/bow.png",
+      "kind": "png",
+      "gitBlobSha": "95856a729fcf99c55d06d7fa2b9a2a7dad53fe99"
+    },
+    {
+      "id": "profound_bow",
+      "name": "Faithful Bow",
+      "sourceHash": "d9144dae59d37181b75c0e28ee867b97223aab08452736435246aa698a646b38",
+      "path": "assets/active/mass-final/profound_bow.png",
+      "kind": "png",
+      "gitBlobSha": "e299dc499d6a41c9166c8c901cde559a7d7108c3"
+    },
+    {
+      "id": "breast_strike",
+      "name": "Breast strike",
+      "sourceHash": "3d349d55bd9fef9e539e138711c5e88e04ebafcd8b76e62491e84a313b5726a4",
+      "path": "assets/active/mass-final/breast_strike.png",
+      "kind": "png",
+      "gitBlobSha": "a3e0e5a518547d86616e4ac38fda7c0bbfd540db"
+    },
+    {
+      "id": "hands_joined",
+      "name": "Hands Joined",
+      "sourceHash": "a985cd5b1172b25511daf9ca9090f13abe6c49cab62c0a6bd5795b9ad5bee2a3",
+      "path": "assets/active/mass-final/hands_joined.png",
+      "kind": "png",
+      "gitBlobSha": "358f95c64a6d6d159220c9fd6ca02639bc78ef5f"
+    },
+    {
+      "id": "response",
+      "name": "Response",
+      "sourceHash": "3978922cf1edf3fffab062c8de5d3eb6ac016af292a8a1428116e997aecd50dd",
+      "path": "assets/active/mass-final/response.png",
+      "kind": "png",
+      "gitBlobSha": "c9f5675db133865aea934a34647182744672850f"
+    },
+    {
+      "id": "listen",
+      "name": "Look",
+      "sourceHash": "83e61016ad49e3962aae19066a557efa754726cbe7b905d5bbfa0bdd23812667",
+      "path": "assets/active/mass-final/listen.png",
+      "kind": "png",
+      "gitBlobSha": "c667cb79fc6d17e196df4bd2705015de2cc592a9"
+    },
+    {
+      "id": "priest_audible",
+      "name": "Priest Audible",
+      "sourceHash": "44b6d5fdc831a11f4ed5870f2fed01c5f4ebf0ad75dea1f0557c59f716187652",
+      "path": "assets/active/mass-final/priest_audible.png",
+      "kind": "png",
+      "gitBlobSha": "0384d4c81a9355feb0781bdfa20252626e4a5451"
+    },
+    {
+      "id": "schola",
+      "name": "Schola sings",
+      "sourceHash": "98877d39eeda393b131e29ad4700ad7efba7a799da58038d5ad04509d1cbf278",
+      "path": "assets/active/mass-final/schola.png",
+      "kind": "png",
+      "gitBlobSha": "b7f0ab08cf1666eac9418ff1aa2b7c2b0c47264e"
+    },
+    {
+      "id": "priest_rail",
+      "name": "Priest offers hands to kiss",
+      "sourceHash": "7e1e16dbf729e59e5aa17e3a3c4939247e6108910ab2701ba55aa56733e486e1",
+      "path": "assets/active/mass-final/priest_rail.png",
+      "kind": "png",
+      "gitBlobSha": "5a4e48ee08c404f9b28dd437736d8e36f59e02ca"
+    },
+    {
+      "id": "ao_at_altar_centre",
+      "name": "At Altar Centre",
+      "sourceHash": "c3a91d2b1c2fdaf89a39a656b1bbe6526f8cc7c85987e07dccf841b4ce319213",
+      "path": "assets/active/mass-final/ao_at_altar_centre.svg",
+      "kind": "svg",
+      "gitBlobSha": "19e4aa658230b8dcd56b7f8929b4bc0b09101265"
+    },
+    {
+      "id": "ao_blessing",
+      "name": "Priest indulgence",
+      "sourceHash": "7b9666029a140671ff254325f527cb251e8d381e01601ab47de446a963c38953",
+      "path": "assets/active/mass-final/ao_blessing.svg",
+      "kind": "svg",
+      "gitBlobSha": "0a894499e8411d47f5d48393828e92625dcb13d6"
+    },
+    {
+      "id": "ao_chant",
+      "name": "Chant",
+      "sourceHash": "e2247df3cdddf4abbebc5f334ae42eb35a7deb072ef4d863ca715c6b956f1980",
+      "path": "assets/active/mass-final/ao_chant.svg",
+      "kind": "svg",
+      "gitBlobSha": "2f188f5cbb8c4b6c67245c567a4b76b587c78e69"
+    },
+    {
+      "id": "ao_drink_chalice",
+      "name": "priest Drink Chalice",
+      "sourceHash": "91b7c5ca554826cd81f75afca2572a6e43a22c12cb6c0ce25b6b37d8d42d245a",
+      "path": "assets/active/mass-final/ao_drink_chalice.svg",
+      "kind": "svg",
+      "gitBlobSha": "d9e276ffc9509d73b08cb7603a47aacf6f160b11"
+    },
+    {
+      "id": "ao_elevation_chalice",
+      "name": "Elevation Chalice",
+      "sourceHash": "b0916c29748ca983200424db968cc5b9110a3ed2bcf610be8a3a4f7976f28d08",
+      "path": "assets/active/mass-final/ao_elevation_chalice.svg",
+      "kind": "svg",
+      "gitBlobSha": "32afba18d3527b9930e1219b30d92efed48a1949"
+    },
+    {
+      "id": "ao_incensation",
+      "name": "Priest blessing incense",
+      "sourceHash": "5c8f30bffad11e645816c82154a92e8b5cc54b5a94c3c62e2921a11251ff34f6",
+      "path": "assets/active/mass-final/ao_incensation.svg",
+      "kind": "svg",
+      "gitBlobSha": "0228ef13b6c89a8e9933a81046b839677b09d783"
+    },
+    {
+      "id": "ao_place_on_altar",
+      "name": "Place On Altar",
+      "sourceHash": "38ad2c6f3cb317052b58116435def64664d6e206b5e1572828ab215733e62db4",
+      "path": "assets/active/mass-final/ao_place_on_altar.svg",
+      "kind": "svg",
+      "gitBlobSha": "12d9c820e6aee46b6bd2a4ca61bead3901de9fd8"
+    },
+    {
+      "id": "ao_pray_audible",
+      "name": "Priest speaks low voice",
+      "sourceHash": "9362d110c0609af2e8404a31669224e27eed460f8bc804276f0c738239c0bdb2",
+      "path": "assets/active/mass-final/ao_pray_audible.svg",
+      "kind": "svg",
+      "gitBlobSha": "0edd6ef41032d7a784f4ee4cd8dfc66e25535c2a"
+    },
+    {
+      "id": "ao_pray_silent",
+      "name": "Priest Silent",
+      "sourceHash": "74a6bf484cb63d13c46736bb879a1804cc6f6e90d480c89c7316d10b26e41a21",
+      "path": "assets/active/mass-final/ao_pray_silent.svg",
+      "kind": "svg",
+      "gitBlobSha": "e994a091f4fee988040648183cf92a14a6c0db10"
+    },
+    {
+      "id": "ao_purify_chalice",
+      "name": "Priest purify Chalice",
+      "sourceHash": "b009bd4f82f59f33e49be3379bbe65bbe436dcdc40971bd1a2c9c5a4c34360b0",
+      "path": "assets/active/mass-final/ao_purify_chalice.svg",
+      "kind": "svg",
+      "gitBlobSha": "04a925d0c0cd1032f2f71d48244be758fb39d95d"
+    },
+    {
+      "id": "ao_purify_fingers",
+      "name": "Priest purify Fingers",
+      "sourceHash": "b241d6eb22540b4079bdf06c0881bb3fc3ac805e151f34231d191a99bfce2055",
+      "path": "assets/active/mass-final/ao_purify_fingers.svg",
+      "kind": "svg",
+      "gitBlobSha": "7b4f109c0aa6c798f25997c59eb09985c1846e0f"
+    },
+    {
+      "id": "ea_priest_commingling",
+      "name": "Priest Commingling",
+      "sourceHash": "143e4d0c3199193a25177a6d6a77735a935e16c2b72387c5dbe35ecbca88a4fa",
+      "path": "assets/active/mass-final/ea_priest_commingling.svg",
+      "kind": "svg",
+      "gitBlobSha": "8c583ec2433948872fb623cc01ed7dde4959b1f1"
+    },
+    {
+      "id": "ea_priest_fraction_host",
+      "name": "Priest Fraction Host",
+      "sourceHash": "435debc00320983e57c2b923510d7c28228721ea9417c1eca988365ceda113f5",
+      "path": "assets/active/mass-final/ea_priest_fraction_host.svg",
+      "kind": "svg",
+      "gitBlobSha": "3bae0970175772666efa423c04454c71b79aef34"
+    },
+    {
+      "id": "sign_of_cross",
+      "name": "Sign Of Cross Priest",
+      "sourceHash": "dfa23aee9e3386b90f14b3af8153738797bd5861d14ed52856b8da6444e5de23",
+      "path": "assets/active/mass-final/sign_of_cross.png",
+      "kind": "png",
+      "gitBlobSha": "003d7c1e940055d6717243560f4d11fef2cc9dce"
+    },
+    {
+      "id": "priest_communion_host_preview",
+      "name": "Priest Communion Host",
+      "sourceHash": "8fcda5f770711eb58365d9ca2f14cbf4707e1d1e416deaf7aefa3471b30f5fc9",
+      "path": "assets/active/mass-final/priest_communion_host_preview.png",
+      "kind": "png",
+      "gitBlobSha": "09d66887e8894359b2647bb6e09bdd2cf105683b"
+    },
+    {
+      "id": "new_priest_genuflect",
+      "name": "Priest genuflect",
+      "sourceHash": "9cb630b261f4ae9986510bcf5dd69715c37d0a7b1bdf8577b324510d08c8bc15",
+      "path": "assets/active/mass-final/new_priest_genuflect.png",
+      "kind": "png",
+      "gitBlobSha": "f68fd1e29bf9f2785b5fbce70cfd1b591dc303f5"
+    },
+    {
+      "id": "new_priest_facing",
+      "name": "Facing congregation, hands joined",
+      "sourceHash": "fff61fe9f31403dc7f2a956576b148b1cd4fe88e71a3c1dababb8db5abc193b1",
+      "path": "assets/active/mass-final/new_priest_facing.png",
+      "kind": "png",
+      "gitBlobSha": "b859504c081081af9a38462a0abb4d40d0c00494"
+    },
+    {
+      "id": "ref_112201",
+      "name": "priest center of the altar (preface, secret)",
+      "sourceHash": "9d00b3a6069383ee1786808f289d98e482b2ef04ee0ac0ea06ad4c32e5096f71",
+      "path": "assets/active/mass-final/ref_112201.png",
+      "kind": "png",
+      "gitBlobSha": "6cd65ad772a74d16e7f19e0ffb8f74b1da9a131f"
+    },
+    {
+      "id": "ref_112206",
+      "name": "priest at the foot of altar",
+      "sourceHash": "bd6788d97eb1fe953cc00308e52aa15e3060f7633129a49313d804fa79198551",
+      "path": "assets/active/mass-final/ref_112206.png",
+      "kind": "png",
+      "gitBlobSha": "09279739f1f8134cca8979ea0646b02acc977512"
+    },
+    {
+      "id": "ref_112210",
+      "name": "ascending altar steps",
+      "sourceHash": "b2bfaa429b99af7799c971a21c332aaac29bb8b453b74002a7ac358f7b022937",
+      "path": "assets/active/mass-final/ref_112210.png",
+      "kind": "png",
+      "gitBlobSha": "3184ae47064dc86dc1bcf70683d9d57cce5cb016"
+    },
+    {
+      "id": "ref_112216",
+      "name": "priest epistle side",
+      "sourceHash": "36539d222b8506f89579fcc5fc12b11220e5272d55129ac4165ce6405366d85f",
+      "path": "assets/active/mass-final/ref_112216.png",
+      "kind": "png",
+      "gitBlobSha": "f22cb54bed4548c158fb8f10c2cc03595d30bc66"
+    },
+    {
+      "id": "ref_112222",
+      "name": "priest gospel side",
+      "sourceHash": "fc04156e9829c9618437e23fd5712292a900daa36d33ff161c505161c53e5b46",
+      "path": "assets/active/mass-final/ref_112222.png",
+      "kind": "png",
+      "gitBlobSha": "c85bcea677cb48675a719f58523555105ac3fc41"
+    },
+    {
+      "id": "ref_113836",
+      "name": "priest kisses altar",
+      "sourceHash": "d4f2f7dbcec39b9cf4df3175e042c3ffe40a0a96d802e8d709a0b971695ed016",
+      "path": "assets/active/mass-final/ref_113836.png",
+      "kind": "png",
+      "gitBlobSha": "bd67924254ea236d314b2c404f3e4b3e1fd57fba"
+    },
+    {
+      "id": "ref_113846",
+      "name": "priest sprinkling",
+      "sourceHash": "6cd06162131ed5c2276e487a0058ea8e7c8e8c986d35f072b3da532b9f54d227",
+      "path": "assets/active/mass-final/ref_113846.png",
+      "kind": "png",
+      "gitBlobSha": "d18c4300f21d7a6473015039631d3bcfa3f9599d"
+    },
+    {
+      "id": "ref_113851",
+      "name": "priest carrying monstrance",
+      "sourceHash": "f35f261dbe8bfdb997985fc8922ae95538aca4696fbaf991dcf3dca48780478a",
+      "path": "assets/active/mass-final/ref_113851.png",
+      "kind": "png",
+      "gitBlobSha": "ce1251f196bf84b56391890d87e213a2c1913e86"
+    },
+    {
+      "id": "ref_124320",
+      "name": "Ash Wednesday imposition",
+      "sourceHash": "e573e491c131868260741ac083bfcb9e7ae9d52d4d12d7df5f866eeaa4c2a8fa",
+      "path": "assets/active/mass-final/ref_124320.png",
+      "kind": "png",
+      "gitBlobSha": "4b0f0c68ee21cd3da9638bc6757762e56cbbde26"
+    },
+    {
+      "id": "ref_124325",
+      "name": "Candlemas candle distribution",
+      "sourceHash": "8527475354f891ba0ab56dfdf5db631b1d385ea8c57b61cb7a3a73d5050440ef",
+      "path": "assets/active/mass-final/ref_124325.png",
+      "kind": "png",
+      "gitBlobSha": "76f754b2028428d22e89fb19ea313c635dc36c51"
+    },
+    {
+      "id": "ref_124329",
+      "name": "Good Friday cross veneration",
+      "sourceHash": "9ed44b5a9024e876a1dcaf4872c560bce26531aa20b8451423e729c7c9a2d3ca",
+      "path": "assets/active/mass-final/ref_124329.png",
+      "kind": "png",
+      "gitBlobSha": "8ad35893db73db4afba071dc5daca80232420ad9"
+    },
+    {
+      "id": "ref_124334",
+      "name": "Easter Vigil fire blessing",
+      "sourceHash": "e29d263bace345933f0ba54e68f8b922bbb61c50b6e0d8817cf611298f0a26d7",
+      "path": "assets/active/mass-final/ref_124334.png",
+      "kind": "png",
+      "gitBlobSha": "01f87589913982532610ed3554dd990a64e0742f"
+    },
+    {
+      "id": "ao_adoration",
+      "name": "Priest bow Adoration",
+      "sourceHash": "9bcc104667cbb8b863513fe0c1b8fc8ec849c6341305bbbdf4d0c42b6d4ffe63",
+      "path": "assets/active/mass-final/ao_adoration.svg",
+      "kind": "svg",
+      "gitBlobSha": "599d5159205da12219609cf08a1092a0f256d29a"
+    },
+    {
+      "id": "ao_sign_of_cross_vector",
+      "name": "Sign of the Cross Priest",
+      "sourceHash": "13d1f4519de76e67e8f6b269cba4ca2166deff38eb494236dfe237d66e94939a",
+      "path": "assets/active/mass-final/ao_sign_of_cross_vector.svg",
+      "kind": "svg",
+      "gitBlobSha": "2f111ac2ce084eb105fd84a926c6c3ba9ee91d02"
+    },
+    {
+      "id": "ea_priest_communion_host_original",
+      "name": "Priest Communion Host",
+      "sourceHash": "bf3cd28d3aa565f7122d7b9c4dd0c74793c60ccdd2b1de086e6a9a86839f4b5e",
+      "path": "assets/active/mass-final/ea_priest_communion_host_original.svg",
+      "kind": "svg",
+      "gitBlobSha": "c64769cefeb17ffc8c050a46280a16ebc6c1a3b8"
+    },
+    {
+      "id": "ea_priest_communion_chalice_original",
+      "name": "Priest Communion Chalice",
+      "sourceHash": "e0cbda7f6a20e763dcda40681ca5dadbb11150023edcbe10aacd128c46bee701",
+      "path": "assets/active/mass-final/ea_priest_communion_chalice_original.svg",
+      "kind": "svg",
+      "gitBlobSha": "cecb51cafe50ec428b6faef392f6670c2af97707"
+    },
+    {
+      "id": "frozen_epistle",
+      "name": "Priest collect",
+      "sourceHash": "c27a58d196d0d4b7881f603a17cba1a60d67bbb7836e657e58d4da39779ee59f",
+      "path": "assets/active/mass-final/frozen_epistle.png",
+      "kind": "png",
+      "gitBlobSha": "1db0e74ddbc4e689c9ae2e7d1022823512f2067d"
+    },
+    {
+      "id": "frozen_people",
+      "name": "Priest raised arms facing the people",
+      "sourceHash": "ec6dccb0194dd1201cecd9d6ec781255d97ca1861b061c84950655cc37b011d8",
+      "path": "assets/active/mass-final/frozen_people.png",
+      "kind": "png",
+      "gitBlobSha": "6def905c60a69ba6ea48056cacf2e769b1877c89"
+    },
+    {
+      "id": "frozen_low",
+      "name": "Priest audible",
+      "sourceHash": "f3e08e9a206346149baa19c31d94afb1f5fa7217c4b33e0d8cebc5814c1e55e1",
+      "path": "assets/active/mass-final/frozen_low.png",
+      "kind": "png",
+      "gitBlobSha": "828ab819080fa55b3bc4d85f7291abde50c2dcd9"
+    },
+    {
+      "id": "frozen_scholarest",
+      "name": "Schola rest",
+      "sourceHash": "987c837ef83d14726783c6696cfb71a87de9528a2c3b00fa5de6a34ded640753",
+      "path": "assets/active/mass-final/frozen_scholarest.png",
+      "kind": "png",
+      "gitBlobSha": "f76703d51b21ba38940c92eb1a841c3da4054d20"
+    },
+    {
+      "id": "frozen_hear",
+      "name": "Listen",
+      "sourceHash": "41946cfe034c4d17579a00595ab543a501f7019e0f4b1cd553de627effad3ced",
+      "path": "assets/active/mass-final/frozen_hear.png",
+      "kind": "png",
+      "gitBlobSha": "562ff1d47fbdb6812d62bec8905ecdb84a742d61"
+    },
+    {
+      "id": "ao_turn_to_people",
+      "name": "priest facing altar raising hand",
+      "sourceHash": "e231044c4f75b92bf156faf0a14c5a983f2f62257d85e5f0b7e21a9fa54d1625",
+      "path": "assets/active/mass-final/ao_turn_to_people.svg",
+      "kind": "svg",
+      "gitBlobSha": "217275fc7484ad151f3d8edff286bea0a9192b31"
+    },
+    {
+      "id": "ea_priest_communion_host",
+      "name": "Priest communion (receives the Host)",
+      "sourceHash": "bf3cd28d3aa565f7122d7b9c4dd0c74793c60ccdd2b1de086e6a9a86839f4b5e",
+      "path": "assets/active/mass-final/ea_priest_communion_host.svg",
+      "kind": "svg",
+      "gitBlobSha": "c64769cefeb17ffc8c050a46280a16ebc6c1a3b8"
+    },
+    {
+      "id": "ea_priest_communion_chalice",
+      "name": "Priest receives the Chalice (precious blood)",
+      "sourceHash": "e0cbda7f6a20e763dcda40681ca5dadbb11150023edcbe10aacd128c46bee701",
+      "path": "assets/active/mass-final/ea_priest_communion_chalice.svg",
+      "kind": "svg",
+      "gitBlobSha": "cecb51cafe50ec428b6faef392f6670c2af97707"
+    },
+    {
+      "id": "ao_sign_of_cross",
+      "name": "Priest Sign of the Cross",
+      "sourceHash": "13d1f4519de76e67e8f6b269cba4ca2166deff38eb494236dfe237d66e94939a",
+      "path": "assets/active/mass-final/ao_sign_of_cross.svg",
+      "kind": "svg",
+      "gitBlobSha": "2f111ac2ce084eb105fd84a926c6c3ba9ee91d02"
+    },
+    {
+      "id": "review_posture_stand",
+      "name": "Faithful Stand",
+      "sourceHash": "e5e393a6650da8e544edf9374428c2a34835f705994878aa94992e7a75dc1312",
+      "path": "assets/active/mass-final/review_posture_stand.svg",
+      "kind": "svg",
+      "gitBlobSha": "c2270f53342151c55f221f3811618648595ea02f"
+    },
+    {
+      "id": "review_posture_kneel",
+      "name": "Faithful Kneel",
+      "sourceHash": "7985d016fcebcf8ac4a9eec6d81814059bd0d0eb340b66df46a2f3a462078d28",
+      "path": "assets/active/mass-final/review_posture_kneel.svg",
+      "kind": "svg",
+      "gitBlobSha": "f980aada0e92f89e47f9c1805306da0e3d32ecdf"
+    },
+    {
+      "id": "review_posture_genuflect",
+      "name": "Faithful Genuflect",
+      "sourceHash": "5f5e00a077ce7255e9692c50d8d5bfafe834306f435b4d87cb2c7b85b5000952",
+      "path": "assets/active/mass-final/review_posture_genuflect.svg",
+      "kind": "svg",
+      "gitBlobSha": "fa385563d608d6922207182b73ff263388085c09"
+    },
+    {
+      "id": "study_priest_ascending",
+      "name": "Priest ascending altar steps",
+      "sourceHash": "ecf70ef7c444b5d9fd4f05ace75a22d13ca5edb31b1be664bb3f50f6fd179e65",
+      "path": "assets/active/mass-final/study_priest_ascending.png",
+      "kind": "png",
+      "gitBlobSha": "16e11d01ca49d853cb49b6a64c1a4ebedf12aeb1"
+    },
+    {
+      "id": "study_priest_centre",
+      "name": "Priest at epistle side (collect)",
+      "sourceHash": "31b341754220bd637dacd45d0dee91f6000b451aec36ece6c048f97ddb1147c8",
+      "path": "assets/active/mass-final/study_priest_centre.png",
+      "kind": "png",
+      "gitBlobSha": "5b115387e117444cdb31ea9bab0eda0a26bc05b2"
+    },
+    {
+      "id": "study_priest_gospel",
+      "name": "Priest at Gospel side",
+      "sourceHash": "2d25c0d11e66875841cca3f4034076488ea4b2129df5b4e6b8c1f0709d2cfa54",
+      "path": "assets/active/mass-final/study_priest_gospel.png",
+      "kind": "png",
+      "gitBlobSha": "fc8cc528fcae99b98deaa0ff849a022c0bdf1fe5"
+    },
+    {
+      "id": "study_priest_epistle",
+      "name": "Priest at foot of the altar",
+      "sourceHash": "afefa067a336cc4e66b48f1d2c5d33166ac50fb54d15361132917152a89dcfd0",
+      "path": "assets/active/mass-final/study_priest_epistle.png",
+      "kind": "png",
+      "gitBlobSha": "dc2cd4481e78fafde6e1f8940ca23fbfe5f7762e"
+    },
+    {
+      "id": "study_kiss_altar",
+      "name": "Priest kisses altar",
+      "sourceHash": "8f907fb65886e51bd4559a7fe63b1272a2028eed1218e17f94f6cdcd0699dff0",
+      "path": "assets/active/mass-final/study_kiss_altar.png",
+      "kind": "png",
+      "gitBlobSha": "6582703a3ec7cb090c75f285f4d771f1eb126d4b"
+    },
+    {
+      "id": "study_asperges",
+      "name": "Priest sprinkling",
+      "sourceHash": "0d70e1097f8d715e5c0fc3275f9765ab7214002f3201e0d520ae32573dbfea37",
+      "path": "assets/active/mass-final/study_asperges.png",
+      "kind": "png",
+      "gitBlobSha": "bddd1c909ae761116d988731bff197785ff5d6c2"
+    },
+    {
+      "id": "study_monstrance",
+      "name": "Priest carries Blessed Sacrament",
+      "sourceHash": "93feb308e98d5094d38051d81cedfda043c6a3d8b12f3bd096a4bfbe5af8e2dd",
+      "path": "assets/active/mass-final/study_monstrance.png",
+      "kind": "png",
+      "gitBlobSha": "3b738b0d4a22ecd7f0d3799622cbd3c84ceac79a"
+    },
+    {
+      "id": "study_ash_v3",
+      "name": "Ash Wednesday",
+      "sourceHash": "aeaed6d21b4becab5c1e0f9f70f665f32266996c9874580db18ebf898df2ea4e",
+      "path": "assets/active/mass-final/study_ash_v3.png",
+      "kind": "png",
+      "gitBlobSha": "43ccb17491071612c30aaee82a0ba1b4cfc538a9"
+    },
+    {
+      "id": "study_candle_v3",
+      "name": "Candlemas",
+      "sourceHash": "bbec34b48e95cecb133c242717c81f5230d1a0434bc89e27bccbadcd6a8d135d",
+      "path": "assets/active/mass-final/study_candle_v3.png",
+      "kind": "png",
+      "gitBlobSha": "de6a5105d243664a5b96ac23ca1f98b5c2e6513a"
+    },
+    {
+      "id": "study_goodfriday_v3",
+      "name": "Good Friday cross veneration",
+      "sourceHash": "a1111ec7af65bd32dc64b04dc048f6f0c46ba4827f29e2366b5c33e4fc8ab565",
+      "path": "assets/active/mass-final/study_goodfriday_v3.png",
+      "kind": "png",
+      "gitBlobSha": "69720d95759e042081922c001d67d3ae0ed01e20"
+    }
+  ],
+  "counts": {
+    "approvedBundled": 68,
+    "svg": 27,
+    "png": 41,
+    "remoteNotBundled": 68
+  },
+  "originalBytesUnmodified": true,
+  "rejectedAssetsExcluded": true
+}
