@@ -415,6 +415,34 @@ try{
  await complete.screenshot({path:resolve(output,"all217-nine-families-390.png"),animations:"disabled"});
  await complete.close();
 
+ // One canonical priority-sixteen research preview (the 156-verse source
+ // variant). The independent 196-verse study is a comparison, not a second
+ // active owner. The UI never rewrites or silently joins Scripture verses.
+ const approval=await context.newPage();
+ approval.on("pageerror",e=>errors.push(String(e.message)));
+ await approval.goto(base+"/research/historia-priority16-review.html",
+  {waitUntil:"domcontentloaded",timeout:90000});
+ await approval.locator('#episode-list [data-episode-id]').first().waitFor({timeout:45000});
+ assert.equal(await approval.locator('#episode-list [data-episode-id]').count(),16);
+ await approval.locator('#detail .verse').first().waitFor({timeout:30000});
+ assert.equal(await approval.locator('#detail .verse').count(),4);
+ await approval.locator('[data-episode-id="hist-omitted-084"]').click();
+ await approval.waitForFunction(()=>document.querySelector('#position')?.textContent?.includes('13 proposed verses'),
+  null,{timeout:30000});
+ await approval.waitForFunction(()=>document.querySelectorAll('#detail .verse').length===13,
+  null,{timeout:30000});
+ assert.equal(await approval.locator('#detail .break').count(),4);
+ assert.match(await approval.locator('#detail').innerText(),/Catholic prayer and canticle/i);
+ await approval.locator('#edition').selectOption('crampon-1923');
+ await approval.waitForFunction(()=>
+  document.querySelector('#detail')?.textContent?.includes('Crampon 1923') &&
+  document.querySelectorAll('#detail .verse').length===13,
+  null,{timeout:30000});
+ assert.match(await approval.locator('#detail').innerText(),/NOT ACCEPTED/);
+ results.push('single priority16 preview: 16 source-backed candidates, visible Daniel ellipses and French witness, no approval');
+ await approval.screenshot({path:resolve(output,"priority16-single-review-390.png"),animations:"disabled"});
+ await approval.close();
+
  assert.deepEqual(errors.filter(s=>/ReferenceError|SyntaxError|TypeError/.test(s)),[],
   "Browser runtime failures: "+errors.join(" | "));
  await original.close();await manuscript.close();await page.close();
