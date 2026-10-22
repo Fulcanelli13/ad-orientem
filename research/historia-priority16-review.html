@@ -46,6 +46,7 @@ section.panel h3{font-size:17px;font-weight:400;margin:0 0 15px}
 .notice{border:1px solid var(--line);padding:15px;color:var(--muted)}
 @media(max-width:900px){.layout{grid-template-columns:minmax(0,1fr)}aside{border-right:0;border-bottom:1px solid var(--line);padding:14px 10px}aside h2{margin:0 8px 10px}nav{display:flex;overflow-x:auto;gap:8px;padding:0 0 5px;max-width:100%;scrollbar-width:thin}nav button{flex:0 0 175px;min-height:58px}.paper{grid-template-columns:minmax(0,1fr)}main{padding:20px 15px}header{padding:20px 16px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}}
+.integrity-context{margin:15px 0;border:1px solid var(--line);padding:12px;border-radius:5px}.integrity-context summary{cursor:pointer;color:var(--gold)}.integrity-source{margin:12px 0;border-top:1px solid var(--line);padding-top:9px}.integrity-source h4{font-size:15px;margin:4px 0 10px}.context-verse{margin:5px 0;font:16px/1.6 Georgia,serif}.context-verse sup{font:11px system-ui,sans-serif;color:var(--gold);margin-right:7px}
 </style>
 </head>
 <body>
@@ -74,7 +75,7 @@ section.panel h3{font-size:17px;font-weight:400;margin:0 0 15px}
 "use strict";
 (function(){
  const $=id=>document.getElementById(id);
- const state={plan:null,proof:null,selected:null,edition:"dr-challoner",cache:new Map(),version:0};
+ const state={plan:null,proof:null,integrity:null,selected:null,edition:"dr-challoner",cache:new Map(),version:0};
  const sourceRoot=new URL("../data/",document.baseURI);
  const path=p=>new URL(p,sourceRoot);
  const node=(tag,klass,text)=>{const e=document.createElement(tag);if(klass)e.className=klass;if(text!==undefined)e.textContent=String(text);return e;};
@@ -144,6 +145,48 @@ section.panel h3{font-size:17px;font-weight:400;margin:0 0 15px}
   plain(section,"p","warning",visible+" original verse records displayed · "+witnessLabel(version)+" · UNCOLLATED SOURCE WITNESS");
  }
  function witnessLabel(v){return {"dr-challoner":"Douay–Rheims/Challoner","cpdv-2009":"CPDV 2009","crampon-1923":"Crampon 1923"}[v]||v}
+ function verseRange(reference){
+  const match=reference.match(/^([1-3]?\s*[A-Za-z]+)\s+(\d+):(\d+)(?:[–-](\d+))?$/);
+  if(!match)throw Error("Unsupported contextual integrity source: "+reference);
+  return {book:match[1].replace(/\s+/g,""),chapter:Number(match[2]),
+    start:Number(match[3]),end:Number(match[4]||match[3])};
+ }
+ async function renderIntegrityReview(holder,proposal,myVersion){
+  const item=state.integrity?.entries?.find(e=>e.episodeId===proposal.episodeId);
+  if(!item)return;
+  const box=plain(holder,"section","note");
+  box.dataset.integrityHold=item.episodeId;
+  plain(box,"strong",null,"Textual-integrity review · editorial decision outstanding");
+  plain(box,"p",null,item.editorialAssessment);
+  plain(box,"p","warning",
+   "Existing preview: "+item.existingPreview.verseOccurrences+
+   " verses · comparison: "+item.existingContextComparison.verseOccurrences+
+   " verses. These are two existing research proposals, not two approved Scripture readings.");
+  plain(box,"p","meta",
+   "Verses only in working preview: "+(item.differences.onlyInWorkingPreview.join("; ")||"none")+
+   " · only in comparison: "+(item.differences.onlyInContextComparison.join("; ")||"none"));
+  const details=plain(box,"details","integrity-context");
+  details.dataset.contextSourceDetails=item.episodeId;
+  plain(details,"summary",null,"Inspect essential omitted context in original Scripture");
+  for(const ref of item.sourcePassagesToInspect){
+   const p=verseRange(ref);
+   const data=await getSource(state.edition,p.book);
+   if(myVersion!==state.version)return;
+   const rows=data.verses.filter(v=>v[0]===p.chapter&&v[1]>=p.start&&v[1]<=p.end)
+     .sort((a,b)=>a[1]-b[1]);
+   if(rows.length!==p.end-p.start+1||
+      rows.some((v,i)=>v[1]!==p.start+i))throw Error("Missing witness context: "+ref);
+   const passage=plain(details,"div","integrity-source");
+   plain(passage,"h4",null,ref+" · "+witnessLabel(state.edition));
+   for(const row of rows){
+    const verse=plain(passage,"p","context-verse");
+    verse.append(node("sup",null,p.chapter+":"+row[1]),document.createTextNode(row[2]));
+   }
+  }
+  plain(box,"p","warning",
+   "These context excerpts remain outside the 156-verse working selection. The comparison is NOT ACCEPTED and no new manuscript verses have been approved.");
+ }
+
  async function draw(){
   const proposal=state.plan?.entries.find(x=>x.episodeId===state.selected);
   if(!proposal)return;
@@ -163,18 +206,23 @@ section.panel h3{font-size:17px;font-weight:400;margin:0 0 15px}
   plain(notes,"p",null,proposal.criticalOmissionDisclosure);
   plain(notes,"strong",null,"Narrative / Gospel sequence safeguard");
   plain(notes,"p",null,proposal.sequenceGuard.replaceAll("_"," ")+" · "+proposal.proposedLocation);
+  try{await renderIntegrityReview(out,proposal,version)}catch(err){if(version===state.version)error(String(err?.message||err));return;}
+  if(version!==state.version)return;
   plain(out,"p","warning","Approval status: VERSE SET PROPOSED — NOT ACCEPTED. The actual source text remains in the Catholic witness file. An editorial approval must precede any change to the 54-chapter Scripture reading.");
  }
  $("edition").addEventListener("change",e=>{state.edition=e.target.value;void draw();});
  Promise.all([
   fetchJSON(path("research/historia-salutis-thematic-priority16-economical-select-20261022.v1.json")),
-  fetchJSON(path("research/historia-salutis-v18-continuous-reading-proof.v1.json"))
- ]).then(([plan,proof])=>{
+  fetchJSON(path("research/historia-salutis-v18-continuous-reading-proof.v1.json")),
+  fetchJSON(path("research/historia-priority16-four-integrity-evidence-20261022.v1.json"))
+ ]).then(([plan,proof,integrity])=>{
   if(plan.schema!=="AO_HISTORIA_PRIORITY_16_ECONOMICAL_SCRIPTURE_SELECTIONS_V1"||
      plan.status!=="COMPLETE_SOURCE_COORDINATE_DRAFT_AWAITING_ED_APPROVAL"||
      plan.entries?.length!==16||plan.totals.selectedVerseOccurrences!==156||
-     proof.movements?.length!==37)throw Error("Research source registry/version mismatch");
-  state.plan=plan;state.proof=proof;state.selected=plan.entries[0].episodeId;
+     proof.movements?.length!==37||integrity?.schema!=="AO_HISTORIA_PRIORITY16_FOUR_INTEGRITY_EVIDENCE_V1"||
+     integrity?.status!=="SINGLE_WORKING_156_PREVIEW_WITH_UNAPPROVED_CONTEXT_EVIDENCE"||
+     integrity.entries?.length!==4)throw Error("Research source registry/version mismatch");
+  state.plan=plan;state.proof=proof;state.integrity=integrity;state.selected=plan.entries[0].episodeId;
   $("quantity").textContent=String(plan.entries.length);
   drawMenu();return draw();
  }).catch(err=>{error(err.message||String(err));$("episode-list").textContent="Could not load research source registry"});
