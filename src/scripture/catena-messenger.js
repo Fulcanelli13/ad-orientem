@@ -281,6 +281,17 @@ function installStyle(d){
  ".aoCatenaMHead h4{font:400 26px/1.3 var(--ao-font-liturgical,Georgia,serif)!important;color:#ecd7b4;margin:0!important}",
  ".aoCatenaMHead p{font:13px/1.5 var(--ao-font-ui,Georgia,serif);color:#bdb09e;margin:6px 0}",
  ".aoCatenaMHead .aoCatenaMKicker{color:#d6b477;letter-spacing:.13em;text-transform:uppercase;font-size:11px}",
+ ".aoCatenaMNav{position:sticky;top:0;z-index:3;background:#0e1a25;border-bottom:1px solid #68563d;padding:9px 11px}",
+ ".aoCatenaMNavActions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}",
+ ".aoScriptureLibrary .aoCatenaMNavActions button{min-width:0;min-height:44px;overflow-wrap:anywhere;background:#1b2936;border:1px solid #6d5739;border-radius:7px;color:#e6d0a9;padding:8px;font:500 12px/1.3 var(--ao-font-ui,Georgia,serif)}",
+ ".aoScriptureLibrary .aoCatenaMNavActions button:disabled{opacity:.53}",
+ ".aoScriptureLibrary .aoCatenaMNavActions button[aria-expanded=true]{background:#433624;border-color:#b79765}",
+ ".aoCatenaMHistory{padding:10px 2px 2px;max-height:38vh;overflow-y:auto;overscroll-behavior:contain}",
+ ".aoCatenaMHistory[hidden]{display:none!important}",
+ ".aoCatenaMHistory>p{font:12px/1.5 var(--ao-font-ui,Georgia,serif);color:#cabb9e;margin:0 0 8px}",
+ ".aoCatenaMHistoryList{display:grid;gap:6px}",
+ ".aoScriptureLibrary .aoCatenaMHistoryList button{display:block;min-height:44px;width:100%;text-align:left;border:1px solid #635840;background:#172633;border-radius:7px;padding:9px 12px;color:#ead8b9;font:13px/1.4 var(--ao-font-liturgical,Georgia,serif)}",
+ ".aoCatenaMHistoryList small{display:block;color:#bda987;font:11px/1.4 var(--ao-font-ui,Georgia,serif);margin-top:4px}",
  ".aoCatenaMAuthors{padding:10px;display:flex;gap:7px;flex-wrap:wrap;border-bottom:1px solid #574933}",
  ".aoScriptureLibrary .aoCatenaMAuthors button{min-height:43px;border:1px solid #776044;background:#17232e;color:#efd8b8;padding:9px 12px;border-radius:25px;font:500 13px var(--ao-font-ui,Georgia,serif)}",
  ".aoScriptureLibrary .aoCatenaMAuthors button[aria-pressed=true]{background:#53402b;border-color:#c4a16a}",
@@ -347,6 +358,31 @@ export function mountCatenaMessenger(host,pericopes,{language="en",fetcher=globa
  head.append(element(d,"p","aoCatenaMKicker","The Fathers on Holy Scripture"),
   element(d,"h4",null,"The Living Catena"),
   element(d,"p",null,rows.length+" original excerpts · "+new Set(rows.map(r=>r.father)).size+" attributed authors · "+pericopes.map(p=>p.citation).join("; ")));
+ const navigation=element(d,"nav","aoCatenaMNav");
+ navigation.setAttribute("aria-label","Living Catena conversation navigation");
+ const navActions=element(d,"div","aoCatenaMNavActions");
+ const jumpQuestions=action(d,"Questions",()=>topics.scrollIntoView?.({behavior:"auto",block:"nearest"}));
+ jumpQuestions.dataset.catenaNavigate="questions";
+ const historyToggle=action(d,"History · 0",()=>toggleHistory());
+ historyToggle.dataset.catenaNavigate="history";
+ historyToggle.setAttribute("aria-expanded","false");
+ historyToggle.setAttribute("aria-controls","ao-catena-history");
+ historyToggle.disabled=true;
+ const jumpLatest=action(d,"Latest",()=>{
+  closeHistory();
+  feed.lastElementChild?.scrollIntoView?.({behavior:"auto",block:"nearest"});
+ });
+ jumpLatest.dataset.catenaNavigate="latest";
+ navActions.append(jumpQuestions,historyToggle,jumpLatest);
+ const historyPanel=element(d,"section","aoCatenaMHistory");
+ historyPanel.id="ao-catena-history";
+ historyPanel.hidden=true;
+ historyPanel.setAttribute("aria-label","Explored Scripture questions");
+ historyPanel.append(element(d,"p",null,
+  "Previously explored questions · Select one to return to its original source."));
+ const historyList=element(d,"div","aoCatenaMHistoryList");
+ historyPanel.append(historyList);
+ navigation.append(navActions,historyPanel);
  const authors=element(d,"nav","aoCatenaMAuthors");authors.setAttribute("aria-label","Select an attributed Father");
  const feed=element(d,"div","aoCatenaMFeed");feed.setAttribute("role","log");feed.setAttribute("aria-label","Patristic source extracts");
  const foot=element(d,"div","aoCatenaMFooter"),topics=element(d,"div","aoCatenaMTopics"),acts=element(d,"div","aoCatenaMActions"),form=element(d,"form","aoCatenaMForm");
@@ -359,9 +395,34 @@ export function mountCatenaMessenger(host,pericopes,{language="en",fetcher=globa
  foot.append(topics,editorialResearchEnabled?researchPanel:element(d,"span"),acts,form,
   element(d,"p","aoCatenaMDisclaimer",
    "All displayed commentaries reproduce Oxford/Newman Catena excerpts, with historically inherited attribution labels. Reader questions locate original source wording; they are not questions or answers by the Fathers. The separate editorial research suggestions (when enabled) remain unapproved. No AI Father speech."));
- shell.append(head,authors,feed,foot);host.append(shell);
- const seen=new Set(),exploredQuestions=new Set(),topicButtons=new Map();
- let lastFather=null,lastQuestion="",searching=false,followupPanel=null;
+ shell.append(head,navigation,authors,feed,foot);host.append(shell);
+ const seen=new Set(),exploredQuestions=new Set(),topicButtons=new Map(),exploredOrder=[];
+ let lastFather=null,lastQuestion="",searching=false,followupPanel=null,leadDisclosureShown=false;
+ function closeHistory(){
+  historyPanel.hidden=true;
+  historyToggle.setAttribute("aria-expanded","false");
+ }
+ function toggleHistory(){
+  if(!exploredOrder.length)return;
+  historyPanel.hidden=!historyPanel.hidden;
+  historyToggle.setAttribute("aria-expanded",String(!historyPanel.hidden));
+ }
+ function renderHistory(){
+  historyToggle.textContent="History · "+exploredOrder.length;
+  historyToggle.disabled=exploredOrder.length===0;
+  historyList.replaceChildren();
+  for(const item of exploredOrder){
+   const source=rows.find(r=>r.id===item.sourcePointer);
+   if(!source)continue;
+   const button=action(d,item.question,()=>{
+    closeHistory();
+    revealExistingSource(item.sourcePointer);
+   });
+   button.dataset.catenaHistoryId=item.id;
+   button.append(element(d,"small",null,source.father+" · "+source.citation));
+   historyList.append(button);
+  }
+ }
  const wider=action(d,"Search all four Gospels",()=>{if(lastQuestion)void searchElsewhere(lastQuestion)});
  wider.disabled=true;
  function note(s){const e=element(d,"p","aoCatenaMNotice",s);e.setAttribute("role","status");feed.append(e)}
@@ -608,7 +669,10 @@ export function mountCatenaMessenger(host,pericopes,{language="en",fetcher=globa
   bubble.dataset.catenaQuestionId=item.id;
   feed.append(bubble);
   lastQuestion=item.lookupTerm;wider.disabled=false;
-  note("Curated reading lead, not an independently approved Father answer. Showing the exact original excerpt and citation.");
+  if(!leadDisclosureShown){
+   note("These modern questions guide you to original Catena extracts, not independently certified answers.");
+   leadDisclosureShown=true;
+  }
   if(!message({...source,readerQuestionLink:item})){
    if(revealExistingSource(item.sourcePointer))
     note("The original excerpt is already above and has been highlighted without inventing another reply.");
@@ -618,6 +682,8 @@ export function mountCatenaMessenger(host,pericopes,{language="en",fetcher=globa
    }
   }
   exploredQuestions.add(item.id);
+  exploredOrder.push(item);
+  renderHistory();
   const originalButton=topicButtons.get(item.id);
   if(originalButton){
    originalButton.dataset.catenaExplored="true";
@@ -646,6 +712,7 @@ export function mountCatenaMessenger(host,pericopes,{language="en",fetcher=globa
    feed.append(other);
   }
   showNextQuestions(item);
+  feed.lastElementChild?.scrollIntoView?.({behavior:"auto",block:"nearest"});
  }
  const questions=suggestCatenaQuestions(rows);
  if(questions.length){
