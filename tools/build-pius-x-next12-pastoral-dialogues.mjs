@@ -42,10 +42,10 @@ for(const r of voice.revisions){
  assert(n,'P5 overlay has unknown or baseline-owned node '+r.nodeId);
  const opening=r.nodeId.endsWith('.OPEN');
  for(const l of ['en','fr']){
-  assert(typeof r.answer[l]==='string'&&r.answer[l].trim().split(/\\s+/).length>=(opening?90:30),
+  assert(typeof r.answer[l]==='string'&&r.answer[l].trim().split(/\s+/).length>=(opening?90:30),
    'P5 answer too short '+r.nodeId+'/'+l);
  }
- assert(!/\\b(?:avatar|editorial reconstruction|publication|historical instruction)\\b/i.test(r.answer.en),
+ assert(!/\b(?:avatar|editorial reconstruction|publication|historical instruction)\b/i.test(r.answer.en),
   'editorial apparatus leaked into P5 papal voice '+r.nodeId);
  n.originalDraft={...n.a};
  n.a={...r.answer};
