@@ -645,6 +645,8 @@ try{
       leftActive:document.querySelectorAll("#ao-r17-native-reader-preview .ao-rail-left [data-active='true']").length,
       rightActive:document.querySelectorAll("#ao-r17-native-reader-preview .ao-rail-right [data-active='true']").length,
       leftTransientActive:document.querySelectorAll("#ao-r17-native-reader-preview .ao-rail-left .ao-rail-item[data-active='true']:not([data-channel='posture'])").length,
+      leftAnyActive:document.querySelectorAll("#ao-r17-native-reader-preview .ao-rail-left .ao-rail-item[data-active='true']").length,
+      objectiveContext:document.querySelector("#ao-r17-native-reader-preview [data-ao-reader-shell]")?.dataset?.objectiveContext??null,
       rightTransientActive:document.querySelectorAll("#ao-r17-native-reader-preview .ao-rail-right .ao-rail-item[data-active='true']:not([data-channel='posture'])").length,
       guideDisabled:document.querySelector("#ao-r17-native-reader-preview [data-role='guide-button']")?.disabled??null,
       progress:document.querySelector("#ao-r17-native-reader-preview [data-role='progress']")?.textContent?.trim()??"",
@@ -661,8 +663,10 @@ try{
   assert.ok(consecration.rubricCount>=1,"elevation action still renders as ordinary prayer prose");
   assert.ok(consecration.consecrationWordsCount>=1,"Words of Consecration lost dedicated salience");
   // Rail surfaces exist only for active transient cues; posture is owned by the top ribbon.
-  assert.equal(consecration.stageLeft,String(consecration.leftTransientActive>0),
-    "faithful rail visibility contradicts active transient cues");
+  assert.equal(consecration.stageLeft,
+    String((consecration.objectiveContext==="true"?
+      consecration.leftAnyActive:consecration.leftTransientActive)>0),
+    "faithful rail must reflect active transient cues, including posture only in objective-context mode");
   assert.equal(consecration.stageRight,String(consecration.rightTransientActive>0),
     "priest rail visibility contradicts active transient cues");
   const rubricPresentation=await page.evaluate(()=>{
