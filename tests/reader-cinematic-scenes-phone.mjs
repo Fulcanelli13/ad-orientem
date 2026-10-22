@@ -5,8 +5,8 @@ import {resolve,extname,sep} from "node:path";
 import {fileURLToPath} from "node:url";
 import {chromium} from "@playwright/test";
 
-// Real R17 native reader, including the frozen 48-card rollback. Screenshots
-// are review evidence, not a claim that a priestly action has been observed.
+// Real R17 native 65-card reader. Obsolete query selectors must not restore a
+// 48-card UI. Screenshots do not claim a priestly action was observed.
 const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
 const out=resolve(root,"artifacts/live-cinematics");
 await mkdir(out,{recursive:true});
@@ -174,16 +174,11 @@ try{
     await page.waitForFunction(()=>document.documentElement.dataset.harnessReady==="true",
       null,{timeout:20000});
     const count=await page.evaluate(()=>window.__AO_PHONE_PREVIEW.model.totalCards);
-    assert.equal(count,query.includes("65")?65:48);
-    // Curated 65 has a known short Credo fragment whose C0096 is not
-    // reachable by source-focus scrolling (no fabricated cue activation).
-    // The independent 48-card source-first reader is the product acceptance
-    // owner for Incarnatus until the curated layout fixes its geometry.
-    const selected=query.includes("65")
-      ? SCENES.filter(([,v])=>v==="HOST_ELEVATION")
-      : motion==="reduce"
-        ? SCENES.filter(([,v])=>v==="HOST_ELEVATION"||v==="INCARNATUS_GESTURE")
-        : SCENES;
+    assert.equal(count,65,"Public LIVE must retain the canonical 65-card structure regardless of obsolete URL selectors");
+    // Check each source-owned cue in the actual production 65-card LIVE
+    // presentation. A compressed paragraph that cannot receive focus is a
+    // real reader defect, not grounds to switch to the retired 48-card UI.
+    const selected=SCENES;
     for(const [cue,scene] of selected){
       await snapshot(page,width,lang,cue,scene,{reducedMotion:motion==="reduce"});
     }
