@@ -231,31 +231,6 @@ export function mountScriptureLibrary(root,{
        :"Challoner coordinates only; other editions require a verified Catholic crosswalk.","aoScriptureNotice"));
      // Evidence-gated context, never an exact source placement or invented Atlas pin.
      const linked=thematicIdentityLinks?.entries?.find(e=>e.episodeId===thematicEpisode.id);
-     if(thematicEpisode.editorialEconomyProposal){
-      const draft=thematicEpisode.editorialEconomyProposal;
-      const part=thematicEpisode.plan.chapters[thematicPage];
-      const economyNotice=element("p",null,"aoScriptureNotice");
-      economyNotice.dataset.historiaEconomyProposal=thematicEpisode.id;
-      economyNotice.textContent=(lang==="fr"
-       ?"Extraits bibliques proposés, non approuvés : "
-       :"Proposed original-Scripture abridgment, not approved: ")+
-       draft.proposedVerseCount+"/"+draft.originalVerseCount+
-       (lang==="fr"?" versets de la source":" source verses")+
-       " · "+draft.proposedMovement;
-      active.append(economyNotice);
-      const omission=element("p",null,"aoScriptureNotice");
-      omission.dataset.historiaEconomyOmission=thematicEpisode.id;
-      omission.textContent=(lang==="fr"
-       ?"Passages omis : consulter la lecture biblique intégrale. "
-       :"Omitted passages remain in the complete Bible source. ")+
-       draft.rationale;
-      active.append(omission);
-      const coordinate=element("p",null,"aoScriptureNotice");
-      coordinate.dataset.historiaEconomyPart=thematicEpisode.id;
-      coordinate.textContent=(lang==="fr"?"Extrait ":"Source excerpt ")+
-       (part.partIndex+1)+"/"+part.partCount+" · "+part.partReference;
-      active.append(coordinate);
-     }
      if(linked?.editorialRecommendation){
       const ed=linked.editorialRecommendation;
       const title=element("p",null,"aoScriptureNotice");
@@ -290,11 +265,6 @@ export function mountScriptureLibrary(root,{
        a.dataset.historiaContextLink=thematicEpisode.id;
        active.append(a);
       }
-     }else if(thematicEpisode.publicationStatus==="RESEARCH_RESTORATION_DRAFT_NOT_LIVE"){
-      active.append(element("p",lang==="fr"
-       ?"Emplacement proposé dans le récit principal, non accepté. Aucun texte n'a été ajouté."
-       :"Proposed main-narrative location only; no manuscript insertion has been approved.",
-       "aoScriptureNotice"));
      }else if(thematicEpisode.publicationStatus==="RESEARCH_STAGED_NOT_LIVE"){
       active.append(element("p",lang==="fr"
        ?"Passage supplémentaire en préparation : contexte historique, liens avec l'Atlas et choix éditorial non vérifiés."
