@@ -20,7 +20,13 @@ export function buildPrimaryCoverageReport(store,{nextBatchDocuments=12}={}){
  if(!Number.isInteger(nextBatchDocuments)||nextBatchDocuments<1||nextBatchDocuments>30)
   throw new Error('nextBatchDocuments must be 1–30');
  const annexes=store.primaryWitnessAnnexes;
+ const gate=store.sourceOnlyGate;
  const groups=new Map();let nodes=0,partialChapters=0,coveredNodes=0;
+ const sourceOwnedInitialNodes=[...annexes.values()].reduce((n,a)=>n+a.dialogueMappings.length,0);
+ const supplemental=JSON.parse(readFileSync(new URL('../previews/pius-x-study/evidence/pius-x-eight-document-followup-triage-20261023.v1.json',import.meta.url),'utf8'));
+ const eight=JSON.parse(readFileSync(new URL('../previews/pius-x-study/evidence/pius-x-next12-eight-opening-context-evidence-20261023.v1.json',import.meta.url),'utf8'));
+ const totalResearchWitnesses=[...annexes.values()].reduce((n,a)=>n+a.sourceWitnesses.length,0)+
+   eight.items.reduce((n,a)=>n+a.witnesses.length,0)+supplemental.additionalOriginalWitnesses.length;
  for(const c of store.data.chapters){
   if(c.partial)partialChapters++;
   const sourceUrl=c.source?.url||c.nodes?.[0]?.source?.url||'';
@@ -33,15 +39,19 @@ export function buildPrimaryCoverageReport(store,{nextBatchDocuments=12}={}){
   g.genres.add(c.source?.genre||'UNKNOWN');
   g.sourceClasses.add(c.sourceClass||'UNCLASSIFIED');
   if(c.sourceClass==='PAPAL_DOCUMENT_ADAPTATION'&&!c.partial)g.papalSourceChapterCount++;
-  const annex=annexes.get(c.id);
-  if(annex){
-   const map=new Set(annex.dialogueMappings.map(x=>x.nodeId));
-   for(const n of c.nodes)if(map.has(n.id)){coveredNodes++;g.witnessMappedNodeCount++;}
-   for(const w of annex.sourceWitnesses)g.witnessAnchorIds.add(w.id);
+  const mapped=gate.get(c.id);
+  if(mapped){
+   for(const [nodeId,piece] of mapped){
+    if(!c.nodes.some(n=>n.id===nodeId)||!piece.pieces?.length)
+     throw new Error('Unknown or unattested source-only gate entry');
+    coveredNodes++;g.witnessMappedNodeCount++;
+    for(const w of piece.pieces)g.witnessAnchorIds.add(w.id);
+   }
   }
  }
- if(nodes!==423||store.data.chapters.length!==106||coveredNodes!==14)
-  throw new Error('Source owner or exact 4-chapter pilot evidence coverage contract drifted');
+ if(nodes!==423||store.data.chapters.length!==106||coveredNodes!==36||
+    gate.size!==12||sourceOwnedInitialNodes!==14||totalResearchWitnesses!==67)
+  throw new Error('Canonical P6 or 36-node original-text source-only coverage changed');
  const all=[...groups.values()].map(g=>{
   const {genres,sourceClasses,witnessAnchorIds,...rest}=g;
   return {...rest,genres:[...genres].sort(),sourceClasses:[...sourceClasses].sort(),
@@ -57,9 +67,12 @@ export function buildPrimaryCoverageReport(store,{nextBatchDocuments=12}={}){
  return {schema:'AO_SPX_PRIMARY_SOURCE_COVERAGE_REPORT_V1',
   status:'RESEARCH_ONLY_NOT_RELEASE_APPROVED',
   totals:{chapters:106,nodes:423,partialChapters,uniqueDocumentGroups:all.length,
-   chaptersWithWitnessSpotcheck:annexes.size,nodesWithWitnessSpotcheck:coveredNodes,
+   chaptersWithWitnessSpotcheck:gate.size,nodesWithWitnessSpotcheck:coveredNodes,
+   oldAnnexDocumentSubjects:annexes.size,oldAnnexMappedNodes:sourceOwnedInitialNodes,
+   expandedOpeningNodes:eight.items.length,newBoundedFollowupNodes:supplemental.summary.boundedFollowupCandidates,
+   heldResearchFollowups:supplemental.summary.heldFollowupNodes,
    nodesNotYetMappedToOriginalExcerpt:423-coveredNodes,
-   originalLanguageExcerptAnchors:[...annexes.values()].reduce((n,a)=>n+a.sourceWitnesses.length,0),
+   originalLanguageExcerptAnchors:totalResearchWitnesses,
    chaptersFullyAuthenticated:0,publishedAnswers:0},
   suggestedNextDocuments:pending.slice(0,nextBatchDocuments).map(g=>({
    documentKey:g.documentKey,representativeUrl:g.representativeUrl,
