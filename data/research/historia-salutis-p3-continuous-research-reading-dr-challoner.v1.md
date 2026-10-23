@@ -357,7 +357,7 @@ And when the next day was come, Moses spoke to the people: You have sinned a ver
 <details>
 <summary>References and editorial audit · 1 notes</summary>
 
-- e1 — **Editorial, not Scripture** · Exodus 40:16–21; Exodus 40:34–38 · approval pending
+- e1 — **Editorial, not Scripture** · Exodus 40:16–21; Exodus 40:32–36 · approval pending
 
 </details>
 
