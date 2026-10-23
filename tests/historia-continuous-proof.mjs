@@ -105,10 +105,10 @@ function p3JudasTrial(source){
  return trial;
 }
 assert.ok(middle);
-assert.ok(html.includes("if(!bridge&&showBridges&&between?.afterReference===reference)"),
+assert.ok(html.includes("if(!bridge&&showBridges&&(!highPriorityBridgesOnly||isPriorityHistoriaBridge(beat))&&between?.afterReference===reference)"),
  "Judas witness comparison must be hidden unless explicitly opted in");
 assert.ok(html.includes("Source omission remains in the main manuscript"));
-const betweenRenderer=html.split("if(!bridge&&showBridges&&between?.afterReference===reference)")[1]
+const betweenRenderer=html.split("if(!bridge&&showBridges&&(!highPriorityBridgesOnly||isPriorityHistoriaBridge(beat))&&between?.afterReference===reference)")[1]
  .split("section.append(compare);held++;")[0];
 assert.ok(betweenRenderer&&!betweenRenderer.includes("previous=pp")&&!betweenRenderer.includes("previous=p"),
  "Optional original witness must not close omitted main-source boundaries");
