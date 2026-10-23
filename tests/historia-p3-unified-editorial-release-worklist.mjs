@@ -308,4 +308,58 @@ assert.equal(ledger.antiRedundancy.unaccountedHistoricalP4Options,0);
 const originalSelected=proof.movements.flatMap(m=>m.beats.filter(b=>b.kind==="SCRIPTURE"));
 assert.equal(originalSelected.length,93);
 assert.ok(originalSelected.every(b=>b.publicationApproved===false));
-console.log("PASS Historia unified worklist: 36 fully owned hinge dispositions, 20 optional native-source decisions, 7 grouped reader tasks, 29 original contexts + 12 connectors, 6 editorial/acceptance tracks, seven unopened release gates, no new Atlas/Scripture publication");
+// Research-only editorial economy is an overlay on P3 owner IDs, not a second manuscript.
+const desktopEditorial=ledger.editorialDeskDispositionResearch;
+assert.equal(desktopEditorial.schema,"ao.historia.p3.editorial-owner-desk-disposition.v1");
+assert.equal(desktopEditorial.status,"ALL_41_DESK_TRIAGED_RESEARCH_ONLY_NO_COPY_ACCEPTED");
+assert.equal(desktopEditorial.allOwners,41);
+assert.equal(desktopEditorial.researched,41);
+assert.equal(desktopEditorial.contextOwners,29);
+assert.equal(desktopEditorial.connectorOwners,12);
+assert.equal(desktopEditorial.accepted,0);
+assert.equal(desktopEditorial.sourceUnitCountUnchanged,93);
+assert.equal(desktopEditorial.movementCountUnchanged,37);
+assert.equal(desktopEditorial.atlasEventCountUnchanged,151);
+assert.equal(ledger.totals.editorialDeskProvisionalDispositions,41);
+assert.equal(ledger.totals.editorialDeskAcceptedDecisions,0);
+assert.equal(desktopEditorial.dispositions.length,41);
+assert.deepEqual(desktopEditorial.provisionalDispositionCounts,{
+ RETAIN_CONTEXT:26, TRIM_PROSE:10, CONDITIONAL_TRIM:3, CONDITIONAL_SUPPRESS:2
+});
+const editorialOwners=[...ledger.existingEditorialContextOwners,...ledger.existingEditorConnectorOwners];
+assert.deepEqual(new Set(desktopEditorial.dispositions.map(x=>x.id)),new Set(editorialOwners.map(x=>x.id)));
+assert.equal(new Set(desktopEditorial.dispositions.map(x=>x.id)).size,41);
+for(const item of desktopEditorial.dispositions){
+ const owner=editorialOwners.find(x=>x.id===item.id);
+ assert.ok(owner && owner.movementId===item.movementId,"Lost original P3 editorial owner "+item.id);
+ const movement=proof.movements.find(x=>x.id===item.movementId);
+ const beat=movement?.beats.find(x=>x.id===item.sourceBeatId);
+ assert.ok(beat,"Lost original source beat for "+item.id);
+ const liveCandidate=item.sourceCandidateField.split(".").reduce((o,key)=>o?.[key],beat);
+ assert.ok(liveCandidate && typeof liveCandidate.text==="string" && liveCandidate.text.length>10);
+ assert.deepEqual(item.sourceReferences,liveCandidate.sourceReferences);
+ assert.deepEqual(item.editionAwareReferences,liveCandidate.sourceReferencesByEdition||null);
+ assert.equal(item.currentCandidateTextUnchanged,true);
+ assert.equal(item.originalScriptureUnchanged,true);
+ assert.equal(item.editorialAccepted,false);
+ assert.equal(item.selectedForPublication,false);
+ assert.equal(item.oralAccepted,false);
+ assert.equal(item.printedEditionCollated,false);
+ assert.equal(item.theologicallyApproved,false);
+ assert.equal(item.status,"PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED");
+ assert.ok(item.researchRationale.length>75 && item.sourceHandlingNote.length>25);
+ if(item.kind==="EXISTING_EDITORIAL_CONTEXT")assert.equal(beat.kind,"EDITORIAL_CONTEXT_NOT_BIBLE");
+ else {
+  assert.equal(item.kind,"EXISTING_EDITOR_CONNECTOR");
+  assert.equal(owner.parentBeatId,item.sourceBeatId);
+ }
+ if(["TRIM_PROSE","CONDITIONAL_TRIM"].includes(item.disposition))
+  assert.ok(item.trialReplacementCopy?.length>15,"Missing proposed research-only shortened copy "+item.id);
+ else assert.equal(item.trialReplacementCopy,null);
+ if(item.relatedSourceDecisionId)
+  assert.ok(items.find(w=>w.id===item.relatedSourceDecisionId),"Dangling source cross-reference "+item.id);
+}
+assert.deepEqual(desktopEditorial.dispositions.filter(x=>x.editionAwareReferences).map(x=>x.id),[
+ "H05-02","H23-02","H37-02"
+]);
+console.log("PASS Historia unified worklist: 36 fully owned hinge dispositions, 20 optional native-source decisions, 7 grouped reader tasks, 29 original contexts + 12 connectors (41 desk-triaged, 0 accepted), 6 editorial/acceptance tracks, seven unopened release gates, no new Atlas/Scripture publication");
