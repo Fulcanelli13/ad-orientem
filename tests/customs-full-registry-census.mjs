@@ -1891,3 +1891,66 @@ assert.equal(count.identity_working_rows.provisional_after_53_no_owner_action_re
 assert.equal(count.identity_working_rows.final_uniquely_verified_customs_added,0);
 assert.equal(researchCatalogue.summary.no_new_app_publications,true);
 console.log('Pitrè 1900: 129/129 first-pass source observations accounted for; 71 comparison links covering 82 and 47 explicit exceptions; 0 new source rows, identities or publications — PASS');
+
+
+// Pitrè 1900 source-access recovery; six copies/serial references are access
+// routes, NOT six independent first-hand authors. The original 1881 St Lucy
+// source remains unread and no second original-1900 OCR chapter is claimed.
+const pitreWitnessRecovery=load('data/customs/master/pitre-1900-129-original-witness-facsimile-and-1881-dependency-gates.v1.json');
+assert.equal(pitreWitnessRecovery.records.length,129);
+assert.equal(pitreWitnessRecovery.witness.length,6);
+assert.equal(pitreWitnessRecovery.summary.older_1900_source_rows,129);
+assert.equal(pitreWitnessRecovery.summary.source_rows_newly_added,0);
+assert.deepEqual(pitreWitnessRecovery.summary.source_validation_priorities,{
+ P2_STANDARD_FACSIMILE:87,
+ P0_SOURCE_CRITICAL:25,
+ P1_CONTEXT_VERIFICATION:17
+});
+assert.equal(pitreWitnessRecovery.summary.original_1900_facsimile_pages_checked,0);
+assert.equal(pitreWitnessRecovery.summary.original_1881_body_passages_read,0);
+assert.equal(pitreWitnessRecovery.summary.distinct_independent_historical_authors_verified,0);
+assert.equal(pitreWitnessRecovery.summary.calendar_app_changes,0);
+assert.equal(new Set(pitreWitnessRecovery.witness.map(w=>w.witness_id)).size,6);
+for(const witness of pitreWitnessRecovery.witness){
+ assert.ok(witness.url.startsWith('https://'));
+ assert.equal(witness.separate_independent_historical_author,false);
+ assert.equal(witness.full_text_directly_read_this_run,false);
+}
+assert.equal(pitreWitnessRecovery.untouched_original_book_access_targets.length,4);
+const originalPitreById=new Map(pitre1900OriginalOCR.records.map(r=>[r.id,r]));
+assert.equal(originalPitreById.size,129);
+const recoveryIds=new Set();
+let explicitPriorHoldCount=0;
+for(const gate of pitreWitnessRecovery.records){
+ const original=originalPitreById.get(gate.original_source_id);
+ assert.ok(original);
+ assert.ok(!recoveryIds.has(gate.original_source_id));
+ recoveryIds.add(gate.original_source_id);
+ assert.equal(gate.original_1900_ocr_line,original.html_ocr_line);
+ assert.equal(gate.locality,original.location);
+ assert.equal(gate.occasion,original.occasion);
+ assert.equal(gate.action,original.reported_action_or_component);
+ assert.equal(gate.claim_type,original.claim_type);
+ assert.equal(gate.required_folio_image,true);
+ assert.equal(gate.folio_image_visually_checked,false);
+ assert.equal(gate.source_1881_text_compared,false);
+ assert.equal(gate.distinct_predecessor_author_corroborated,false);
+ assert.equal(gate.official_1962_ritual_text_verified,false);
+ assert.equal(gate.unique_practice_identity_certified,false);
+ assert.equal(gate.app_publication,false);
+ if(gate.validation_flags.includes('EXPLICIT_PRIOR_SOURCE_OR_AUTHOR_DEPENDENCE_HOLD'))explicitPriorHoldCount++;
+}
+assert.equal(recoveryIds.size,129);
+assert.equal(explicitPriorHoldCount,5);
+const stLucyPrior=pitreWitnessRecovery.records.find(r=>r.original_source_id==='PIT1900-IT-083');
+assert.ok(stLucyPrior.validation_flags.includes('SAME_AUTHOR_1881_ST_LUCY_CHAPTER_P424'));
+assert.equal(count.source_review.pitre_1900_original_129_facsimile_source_gates,129);
+assert.equal(count.source_review.pitre_1900_129_source_critical_p0,25);
+assert.equal(count.source_review.pitre_1900_129_context_p1,17);
+assert.equal(count.source_review.pitre_1900_129_standard_p2,87);
+assert.equal(count.source_review.pitre_1900_six_bibliographic_access_routes_nonindependent,6);
+assert.equal(researchCatalogue.source_dataset_paths.pitre_original_1900_witness_and_1881_dependency_gates,'data/customs/master/pitre-1900-129-original-witness-facsimile-and-1881-dependency-gates.v1.json');
+assert.equal(count.source_observations.total_source_detail_rows_including_external,3114);
+assert.equal(count.identity_working_rows.final_uniquely_verified_customs_added,0);
+assert.equal(researchCatalogue.summary.no_new_app_publications,true);
+console.log('Pitrè archival source access: 129/129 provenance gates, six access routes, 1881 self-reference held, 0 new source rows or publications — PASS');
