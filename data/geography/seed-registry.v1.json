@@ -15529,6 +15529,88 @@
         "AO-P14-OVADA-MASSES",
         "AO-P14-OVADA-GEO"
       ]
+    },
+    {
+      "place_id": "place:PH:monasterio-de-tarlac-risen-christ-chapel",
+      "name": {
+        "official": "Chapel of the Risen Christ, Monasterio de Tarlac",
+        "aliases": [
+          "Church of the Risen Christ, Monasterio de Tarlac",
+          "Tarlac Monastery Chapel"
+        ]
+      },
+      "place_type": "chapel",
+      "geo_area_ids": [
+        "geo:country:PH"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 15.43665,
+        "lng": 120.43124,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/108344758",
+        "source_ref": "osm:way:108344758",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "PH",
+        "verified_at": "2026-10-24"
+      },
+      "address": {
+        "line1": "Mount Resurrection, Barangay Lubigan",
+        "line2": null,
+        "postal_code": null,
+        "city": "San Jose",
+        "region": "Tarlac",
+        "country_code": "PH",
+        "country": "Philippines",
+        "formatted": "Mount Resurrection, Barangay Lubigan, San Jose, Tarlac, Philippines"
+      },
+      "source_ids": [
+        "AO-P15-TARLAC-CUSTODIAN",
+        "AO-P15-TARLAC-DIOCESE",
+        "AO-P15-TARLAC-GEO"
+      ]
+    },
+    {
+      "place_id": "place:PE:basilica-nuestra-senora-merced-lima",
+      "name": {
+        "official": "Basílica Menor de Nuestra Señora de la Merced, Lima",
+        "aliases": [
+          "Basílica de la Merced, Lima",
+          "Iglesia Nuestra Señora de la Merced, Lima"
+        ]
+      },
+      "place_type": "basilica",
+      "geo_area_ids": [
+        "geo:country:PE"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": -12.04842,
+        "lng": -77.03252,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/126587274",
+        "source_ref": "osm:way:126587274",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "PE",
+        "verified_at": "2026-10-24"
+      },
+      "address": {
+        "line1": "Jirón de la Unión 621",
+        "line2": null,
+        "postal_code": null,
+        "city": "Lima",
+        "region": "Lima",
+        "country_code": "PE",
+        "country": "Peru",
+        "formatted": "Jirón de la Unión 621, Centro Histórico de Lima, Peru"
+      },
+      "source_ids": [
+        "AO-P15-MERCED-LIMA-MUNICIPAL",
+        "AO-P15-MERCED-LIMA-ADDRESS",
+        "AO-P15-MERCED-LIMA-GEO"
+      ]
     }
   ],
   "directoryPlaceLinks": [
