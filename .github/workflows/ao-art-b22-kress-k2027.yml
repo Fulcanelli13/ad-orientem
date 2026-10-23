@@ -27,6 +27,11 @@ jobs:
           path: artifacts/b22-kress-k2027/
           retention-days: 7
           if-no-files-found: error
+      - name: P0 gate - archive unchanged acquisition files in an unpublished GitHub Release
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python scripts/research/sacred_art_release_archive_gate.py --wave b22kress --source-dir artifacts/b22-kress-k2027
       - name: Preserve verified institutional image audit in research branch
         run: |
           python - <<'PY'
