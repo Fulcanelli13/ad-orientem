@@ -64,7 +64,9 @@ for (const edition of HISTORIA_EDITIONS) {
         } else {
           assert.equal(original.kind,"EDITORIAL_CONTEXT_NOT_BIBLE");
           assert.equal(segment.text,original.editorialReadingCandidate.text);
-          assert.deepEqual(segment.sourceReferences,original.editorialReadingCandidate.sourceReferences);
+          assert.deepEqual(segment.sourceReferences,
+             original.editorialReadingCandidate.sourceReferencesByEdition?.[edition]||
+             original.editorialReadingCandidate.sourceReferences);
           assert.equal(segment.sourceReference,original.sourceReference);
           assert.equal(segment.originalDeskText,original.explanation);
           assert.equal(original.editorialReadingCandidate.publicationApproved,false);
