@@ -414,6 +414,9 @@ async function showHistoriaMovement(){
    if(beat.semanticEditionAlignment?.kind==="SAME_CLOSING_SEMANTIC_DIFFERENT_VERSE_END"){
     section.append(make("p","Edition boundary: St Stephen's final prayer and death are numbered Acts 7:59 in Douay/CPDV and Acts 7:60 in French Crampon; this is the same narrated martyrdom, not a second event.","proofGap"));
    }
+   if(beat.semanticEditionAlignment?.kind==="SAME_WRESTLING_AND_RENAMING_DIFFERENT_VERSE_OFFSETS"){
+    section.append(make("p","Source-numbering alignment: Jacob wrestles in Genesis 32:24 and receives the name Israel at 32:28 in the English Douay/CPDV witnesses; the same episodes are 32:25 and 32:29 in French Crampon. Display the selected witness's own verse numbers, not an inferred textual equivalence.","proofGap"));
+   }
    if(beat.semanticEditionAlignment?.kind==="CAPERNAUM_LOCATION_VERSE_SHIFT"){
     section.append(make("p","Source alignment: the Capernaum synagogue sentence is John 6:60 in Douay/CPDV and John 6:59 in Crampon. Verse numbers are not interchangeable across these witnesses.","proofGap"));
    }
