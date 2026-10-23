@@ -20,6 +20,18 @@ assert.equal(data.canonicalNodes,11);
 assert.equal(data.bilingualEditorialPairs,22);
 assert.equal(data.originalWitnessFragments,18);
 assert.equal(data.originalCorpusNodes,423);
+assert.equal(data.navigationAliasCount,32);
+assert.equal(data.navigationAliases.length,32);
+assert.equal(data.navigationAliases.filter(x=>x.language==='en').length,16);
+assert.equal(data.navigationAliases.filter(x=>x.language==='fr').length,16);
+const aliasIds=new Set();
+for(const x of data.navigationAliases){
+ assert(!aliasIds.has(x.id));aliasIds.add(x.id);
+ assert.equal(x.status,'NAVIGATION_SUGGESTION_ONLY_NOT_SOURCE_ANSWER_CERTIFIED');
+ assert(data.cases.some(c=>c.nodeId===x.matchedNodeId&&c.chapterId===x.chapterId));
+ assert(['en','fr'].includes(x.language));
+ assert(x.question.length>8);
+}
 assert.equal(data.cases.length,11);
 assert.equal(corpus.counts.allNodes,423);
 assert.equal(corpus.chapters.length,106);
@@ -67,6 +79,7 @@ try{
   assert.equal(await page.locator('#spxc-offline-replay').count(),1);
   assert.equal(await page.locator('#spxc-offline-replay').isVisible(),true);
   assert.equal(await page.locator('.spxm-offline-choice').count(),3);
+  assert.match(await page.locator('#spxm-offline-example').innerText(),/Try different wording/);
   await page.locator('.spxm-offline-choice').first().click();
   const first=page.locator('#spxm-offline-replies .spxm-entry').first();
   await first.locator('.spxm-draft').waitFor();
@@ -85,6 +98,19 @@ try{
   const second=page.locator('#spxm-offline-replies .spxm-entry').nth(1);
   assert.match(await second.locator('.spxm-held').innerText(),/no reviewed offline response/i);
   assert.equal(await second.locator('.spxm-draft').count(),0);
+  // Navigation-only match must not silently answer a different question.
+  await page.locator('#spxm-offline-question').fill('What does restoring everything in Christ mean in the cited passage?');
+  await page.locator('#spxm-offline-send').click();
+  const related=page.locator('#spxm-offline-replies .spxm-entry').nth(2);
+  assert.match(await related.locator('.spxm-related-notice').innerText(),/may not answer every part/);
+  assert.equal(await related.locator('.spxm-draft').count(),0);
+  assert.match(await related.locator('.spxm-offline-related').innerText(),/What did you intend to do once you accepted/);
+  await related.locator('.spxm-offline-related').click();
+  const opened=page.locator('#spxm-offline-replies .spxm-entry').nth(3);
+  await opened.locator('.spxm-draft').waitFor();
+  assert.equal(await opened.locator('.spxm-draft').innerText(),
+   data.cases.find(c=>c.nodeId==='AO.SPX.DIALOGUE.SPX_PILOT_01.FOLLOW_2').reply.en);
+  assert.match(await opened.locator('details.spxm-offline-source').last().innerText(),/ES-8-CHRIST/);
   await page.locator('#spxc-lang').click();
   assert.equal(await page.locator('html').getAttribute('lang'),'fr');
   assert.equal(await page.locator('#spxm-offline-replies .spxm-entry').count(),0);
@@ -95,10 +121,23 @@ try{
   assert.equal(await french.locator('.spxm-draft').innerText(),
    data.cases.find(c=>c.chapterId==='SPX-PILOT-01').reply.fr);
   assert.match(await french.locator('.spxm-warning').innerText(),/NON PAROLES TEXTUELLES/);
+  await page.locator('#spxm-offline-question').fill('Que signifie tout restaurer dans le Christ dans ce texte ?');
+  await page.locator('#spxm-offline-send').click();
+  const suggestedFr=page.locator('#spxm-offline-replies .spxm-entry').nth(1);
+  assert.match(await suggestedFr.locator('.spxm-related-notice').innerText(),/connexe/);
+  assert.equal(await suggestedFr.locator('.spxm-draft').count(),0);
+  await suggestedFr.locator('.spxm-offline-related').click();
+  assert.equal(await page.locator('#spxm-offline-replies .spxm-draft').count(),2);
+  assert.equal(await page.locator('#spxm-offline-replies .spxm-draft').last().innerText(),
+   data.cases.find(c=>c.nodeId==='AO.SPX.DIALOGUE.SPX_PILOT_01.FOLLOW_2').reply.fr);
   if(width===390)await page.locator('#spxc-menu').click();
   await page.locator('#spxc-nav [data-spxc-open="SPX-NEW-012"]').first().click();
   assert.equal(await page.locator('.spxm-offline-choice').count(),2);
   assert.equal(await page.locator('#spxm-offline-replies .spxm-entry').count(),0);
+  await page.locator('#spxm-offline-question').fill('Que signifie tout restaurer dans le Christ dans ce texte ?');
+  await page.locator('#spxm-offline-send').click();
+  assert.match(await page.locator('#spxm-offline-replies .spxm-held').first().innerText(),/aucune réponse hors ligne/i);
+  assert.equal(await page.locator('#spxm-offline-replies .spxm-offline-related').count(),0);
   await page.locator('.spxm-offline-choice').first().click();
   assert.match(await page.locator('#spxm-offline-replies .spxm-draft').first().innerText(),
    /association fut supprimée/);
@@ -108,4 +147,4 @@ try{
   await page.close();
  }
 }finally{await browser.close();}
-console.log('PASS SPX_P26_OFFLINE_REPLAY: one HTML, original 423 nodes, four papal chapters, 11 source-owned questions, 22 EN/FR responses, exact 18 Latin/Italian snippets, two viewport/language flows, no model or external requests');
+console.log('PASS SPX_P27_OFFLINE_ROUTING: 32 navigation aliases + 11 verified question pairs,  one HTML, original 423 nodes, four papal chapters, 11 source-owned questions, 22 EN/FR responses, exact 18 Latin/Italian snippets, two viewport/language flows, no model or external requests');
