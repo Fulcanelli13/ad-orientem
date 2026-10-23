@@ -153,6 +153,8 @@ export async function composeDraft(store,input,model){
  // Opt-in, four-chapter routing resolves a narrow, explicit visitor topic to
  // its existing source-owner card. Unmatched queries keep the selected card.
  const route=input?.autoRoute===true?routePilotQuestion(store,input):null;
+ if(route?.reason==='no_explicit_bounded_intent')
+  return held('no_curated_source_match_for_free_question');
  const sourceInput=route?.status==='matched'?{...input,nodeId:route.nodeId}:input;
  const chosen=selectEvidence(store,sourceInput);if(chosen.status!=='eligible')return chosen;
  if(typeof model!=='function')return held('no_private_model_configured');
