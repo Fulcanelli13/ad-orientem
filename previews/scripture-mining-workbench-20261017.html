@@ -378,7 +378,7 @@ async function showHistoriaMovement(){
     const note=make("aside",undefined,"proofContext");
     note.append(make("span","Proposed editorial transition · not Scripture · not approved","caption"),
      make("p",draft.text),
-     make("div","Scripture basis: "+draft.sourceReferences.join("; "),"proofCitation"));
+     make("div","Scripture basis ("+historiaEditionName(edition)+"): "+(draft.sourceReferencesByEdition?.[edition]||draft.sourceReferences).join("; "),"proofCitation"));
     host.append(note);continue;
    }
    // These nine additional links were already written and source-attributed in
