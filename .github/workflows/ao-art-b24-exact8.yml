@@ -11,6 +11,8 @@ concurrency:
   cancel-in-progress: false
 jobs:
   research-only:
+    # Historical acquisition: prevent automatic duplicate downloads when archiving changes merge.
+    if: github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
