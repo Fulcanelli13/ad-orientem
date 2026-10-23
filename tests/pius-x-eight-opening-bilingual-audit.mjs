@@ -14,7 +14,7 @@ assert.equal(audit.summary.subjects,8);
 assert.equal(audit.summary.englishOpeningsExamined,8);
 assert.equal(audit.summary.frenchOpeningsExamined,8);
 assert.equal(audit.summary.alignedBilingualClaimSpans,25);
-assert.equal(audit.summary.editorialCautionSpans,19);
+assert.equal(audit.summary.editorialCautionSpans,21);
 assert.equal(audit.summary.translationsApproved,0);
 assert.equal(audit.summary.fullAnswersApproved,0);
 assert.equal(audit.summary.modelEvidencePromotions,0);
@@ -59,12 +59,12 @@ for(const row of audit.records){
 }
 assert.equal(ids.size,8);
 assert.equal(aligned,25);
-assert.equal(held,19);
+assert.equal(held,21);
 assert.deepEqual([...ids].sort(),sourceClaims.items.map(x=>x.chapterId).sort());
 assert(audit.records.some(x=>x.exceptionSpans.some(y=>y.code==='MISSING_JOHN_CHRYSOSTOM_FROM_THREE_NAME_SOURCE_LIST')));
-assert(audit.records.some(x=>x.exceptionSpans.some(y=>y.code==='STRENGTHENED_READING_OF_INDISCIPLINE_AND_INTELLECTUAL_PRIDE')));
+assert(audit.records.some(x=>x.exceptionSpans.some(y=>y.code==='STRONGER_CHARACTER_JUDGMENT_THAN_SIMPLE_INDISCIPLINE')));
 assert(audit.records.some(x=>x.exceptionSpans.some(y=>y.code==='PIUS_IX_EMBEDDED_QUOTE_ATTRIBUTION')));
-assert(audit.records.some(x=>x.exceptionSpans.some(y=>y.code==='MODERN_LAW_NOT_1905_PAPAL_TEXT')));
+assert(audit.records.some(x=>x.exceptionSpans.some(y=>y.code==='REASONABLE_ROLE_BOUNDARY_NOT_VERBATIM')));
 const mutated={...audit.records[0],renderedFrenchChecksumFNV1A32:'00000000'};
 assert.notEqual(mutated.renderedFrenchChecksumFNV1A32,fnv1a32(store.chapters.get(mutated.chapterId).nodes[0].a.fr));
-console.log('PASS SPX_EIGHT_OPENING_BILINGUAL_CLAIMS: 8 authentic P6 EN/FR answer pairs, 25 bounded source alignments, 19 editorial caveats; 0 translation/full-answer/model approvals');
+console.log('PASS SPX_EIGHT_OPENING_BILINGUAL_CLAIMS: 8 authentic P6 EN/FR answer pairs, 25 bounded source alignments, 21 editorial caveats; 0 translation/full-answer/model approvals');
