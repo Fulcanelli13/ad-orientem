@@ -140,7 +140,7 @@ def main():
     for i,rec in enumerate(sources,1):
         id=rec['asset_source_id']
         entry={k:'' for k in FIELDS}
-        entry.update(asset_source_id=id,record_id=rec['record_id'],source_sheet=rec['source_sheet'],source_row=rec['source_row'],title=rec['title'],artist=rec['artist'],source_type=rec['api_type'],rights_claim_unverified=rec['recorded_rights'],source_url=rec['source_url'],related_records=' | '.join(rec.get('related_records',[])),metadata_status='NOT_CHECKED',download_status='NOT_ATTEMPTED',editorial_gate='NOT_APPROVED',rights_gate='PENDING',checked_utc=now())
+        entry.update(asset_source_id=id,record_id=rec['record_id'],source_sheet=rec['source_sheet'],source_row=rec['source_row'],title=rec['title'],artist=rec['artist'],source_type=rec['api_type'],rights_claim_unverified=rec.get('recorded_rights',''),source_url=rec['source_url'],related_records=' | '.join(rec.get('related_records',[])),metadata_status='NOT_CHECKED',download_status='NOT_ATTEMPTED',editorial_gate='NOT_APPROVED',rights_gate='PENDING',checked_utc=now())
         gate=rec['download_gate']
         if gate=='MANUAL_HOLD':entry.update(metadata_status='MANUAL_HOLD_PRESERVED',download_status='SKIPPED_HOLD',rights_gate='MANUAL_HOLD')
         elif gate=='SKIP_PREVIOUSLY_ACQUIRED':entry.update(metadata_status='PREVIOUS_BATCH19_VERIFIED',download_status='VERIFIED_PRIOR_BATCH19',sha256=rec.get('prior_sha256',''),rights_gate='RETAIN_B19_RESEARCH_EVIDENCE')
