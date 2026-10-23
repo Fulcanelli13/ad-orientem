@@ -1140,5 +1140,37 @@
     "not_calendar_schedule": true,
     "not_universal_regional_scope": true,
     "source_links_belong_to": "Historically bounded explanatory context only"
+  },
+  "supplemental_claim_sources": [
+    {
+      "id": "BASILICA-HOLYWATER-HOME-O-CONNOR",
+      "custom_id": "DOM-003",
+      "title": "History and usage of Holy Water",
+      "issuer": "St Mary Basilica Archives — Rev. David O'Connor",
+      "url": "https://www.stmarybasilicaarchives.org/archives-desk/history-and-usage-of-holy-water/",
+      "directness": "DIRECT_PARISH_PRIEST_EXPLANATION",
+      "claim_supported": "Catholics traditionally obtained blessed water from church, kept it in entrance or bedroom fonts at home, made the Sign of the Cross, and sometimes blessed children; devotional use is distinct from priestly blessing of the water.",
+      "limitations": "Pastoral account, not population-level frequency study, universal liturgical prescription, or authorization for lay people to perform reserved clerical rites.",
+      "published_authority": "SECONDARY_PASTORAL_CORROBORATION_NOT_CANONICAL_ATTESTATION"
+    },
+    {
+      "id": "MUNICH-EMMAUS-2026-CURIA",
+      "custom_id": "EAST-001",
+      "title": "Mit Magdalena unterwegs — 2026 diocesan events including Emmausgang",
+      "issuer": "Erzbistum München und Freising — Pressestelle",
+      "url": "https://www.erzbistum-muenchen.de/ueber-das-erzbistum/pressebereich/pressemitteilungen/2026-pm/maria-magdalena-suche-nach-spuren-der-apostelin-der-apostel",
+      "directness": "DIRECT_DIOCESAN_2026_EVENT",
+      "claim_supported": "The Archdiocese announced an Emmausgang in Ruhpolding on Easter Monday, 6 April 2026, with walking stages and spiritual reflections. This corroborates actual contemporary Bavarian Catholic practice.",
+      "limitations": "A dated local event is not a recurrent universal schedule; an ecumenical activity in 2026 does not change the traditional 1962 Mass or mandate any route.",
+      "published_authority": "DATED_LOCAL_EVENT_CORROBORATION_NOT_CANONICAL_ATTESTATION"
+    }
+  ],
+  "supplemental_claim_sources_policy": {
+    "relation": "One existing published custom ID; strengthens a bounded claim without changing 108 attestation source owners",
+    "not_attestation": true,
+    "not_calendar_schedule": true,
+    "not_ritual_permission": true,
+    "not_new_custom_identity": true,
+    "review_date": "2026-10-23"
   }
 }
