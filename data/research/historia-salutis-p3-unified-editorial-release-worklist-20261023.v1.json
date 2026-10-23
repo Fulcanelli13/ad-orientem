@@ -3427,7 +3427,7 @@
         "readthroughSourceComparison": {
           "status": "THREE_WITNESS_SOURCE_REFERENCES_DESK_COMPARED_NOT_ACCEPTED",
           "sourceEvidenceReferences": [
-            "Ruth 2:1–3",
+            "Ruth 2:3",
             "Ruth 4:1–12",
             "Ruth 4:13"
           ],
@@ -3442,7 +3442,15 @@
           "originalSourceTextNotCopiedIntoEditorialLedger": true,
           "sourceEditoriallySelected": false,
           "changeAppliedToMainManuscript": false,
-          "manualOralLiteraryApproval": false
+          "manualOralLiteraryApproval": false,
+          "unresolvedEditionWitnessSlot": {
+            "edition": "cpdv-2009",
+            "reference": "Ruth 2:2",
+            "finding": "Ruth 2:2 is absent from the imported, uncollated CPDV verse table; it exists in the Douay–Challoner and Crampon witnesses. Ruth 2:3 independently attests gleaning in all three installed witnesses.",
+            "disposition": "RECORD_IMPORT_WITNESS_GAP_DO_NOT_RECONSTRUCT_OR_CERTIFY",
+            "textRestored": false,
+            "printedEditionCollationPending": true
+          }
         }
       },
       {
@@ -3856,7 +3864,16 @@
       "structuralOutcome": "NO_UNOWNED_EDITORIAL_UNIT_OR_NEW_SELECTED_SCRIPTURE_IN_DESK_TRIAL",
       "semanticOutcome": "UNINTERRUPTED_HUMAN_ORAL_AND_FINAL_CATHOLIC_EDITORIAL_APPROVAL_STILL_REQUIRED",
       "scope": "Existing original P3 contexts and nine independently displayed connectors; three bridge-attached prefaces are compared only alongside held source trials, never treated as already narrated.",
-      "applicationPolicy": "This worklist only records linked alternatives. Do not alter reading proof, Scripture selection, Bible witnesses, production Atlas or UI based on unapproved variants."
+      "applicationPolicy": "This worklist only records linked alternatives. Do not alter reading proof, Scripture selection, Bible witnesses, production Atlas or UI based on unapproved variants.",
+      "editionWitnessExceptions": [
+        {
+          "ownerId": "HS-P3-EC-03",
+          "edition": "cpdv-2009",
+          "reference": "Ruth 2:2",
+          "status": "UNRESOLVED_IMPORT_GAP_FAIL_CLOSED"
+        }
+      ],
+      "witnessNote": "All listed comparison anchors resolve in the three installed uncollated witnesses; the adjacent Ruth 2:2 CPDV import gap remains explicitly held. No claims of printed-edition certification."
     }
   }
 }
