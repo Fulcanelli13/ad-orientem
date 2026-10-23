@@ -15,6 +15,7 @@ on:
       - scripts/scripture-catena-chrysostom-catena-overlap.mjs
       - scripts/scripture-catena-chrysostom-focused-parallels.mjs
       - tests/scripture-catena-chrysostom-focused-parallels.mjs
+      - tests/scripture-catena-chrysostom-24-argument-hypotheses.mjs
       - tests/scripture-catena-chrysostom-catena-overlap.mjs
       - tests/scripture-catena-chrysostom-speech-layers.mjs
       - tests/scripture-catena-chrysostom-original-question-replies.mjs
@@ -41,6 +42,7 @@ on:
       - scripts/scripture-catena-chrysostom-catena-overlap.mjs
       - scripts/scripture-catena-chrysostom-focused-parallels.mjs
       - tests/scripture-catena-chrysostom-focused-parallels.mjs
+      - tests/scripture-catena-chrysostom-24-argument-hypotheses.mjs
       - tests/scripture-catena-chrysostom-catena-overlap.mjs
       - tests/scripture-catena-chrysostom-speech-layers.mjs
       - tests/scripture-catena-chrysostom-original-question-replies.mjs
@@ -155,6 +157,8 @@ jobs:
         run: node scripts/scripture-catena-chrysostom-focused-parallels.mjs
       - name: Verify 24 full original-source and canonical Catena excerpts with exact quotation evidence
         run: node tests/scripture-catena-chrysostom-focused-parallels.mjs
+      - name: Verify twenty-four first-pass argument interpretations remain exact-source linked, provisional and blocked
+        run: node tests/scripture-catena-chrysostom-24-argument-hypotheses.mjs
       - name: Attach both full original scan OCR texts and candidate indexes
         if: success()
         uses: actions/upload-artifact@v4
