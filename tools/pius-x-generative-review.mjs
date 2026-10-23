@@ -3,6 +3,7 @@ import {createServer} from 'node:http';
 import {readFileSync} from 'node:fs';
 import {fileURLToPath} from 'node:url';
 import {loadSourceOnlyGate,sourceOnlyEvidence} from './pius-x-source-only-gate.mjs';
+import {routePilotQuestion} from './pius-x-pilot-question-router.mjs';
 
 // Small, explicitly sourced evidence annex for one pilot subject only. The original
 // 106/423 source-owner corpus and public reader remain untouched.
@@ -149,7 +150,11 @@ const verifierRules=[
 ].join(' ');
 const parse=v=>typeof v==='string'?JSON.parse(v):v;
 export async function composeDraft(store,input,model){
- const chosen=selectEvidence(store,input);if(chosen.status!=='eligible')return chosen;
+ // Opt-in, four-chapter routing resolves a narrow, explicit visitor topic to
+ // its existing source-owner card. Unmatched queries keep the selected card.
+ const route=input?.autoRoute===true?routePilotQuestion(store,input):null;
+ const sourceInput=route?.status==='matched'?{...input,nodeId:route.nodeId}:input;
+ const chosen=selectEvidence(store,sourceInput);if(chosen.status!=='eligible')return chosen;
  if(typeof model!=='function')return held('no_private_model_configured');
  try{
   const proposal=parse(await model('compose',[
@@ -199,6 +204,10 @@ export async function composeDraft(store,input,model){
       originalLanguage:w.originalLanguage,speaker:w.speaker,
       status:'EXACT_WITNESS_ID_CITED_UNAPPROVED_NOT_A_CLAIM_CERTIFICATION'};
    }),
+   selectedSourceNodeId:chosen.evidence[0].id,
+   sourceRoute:route?.status==='matched'?{
+     method:route.method,intentKey:route.intentKey,nodeId:route.nodeId
+   }:{method:'CURRENT_CARD_OR_UNMATCHED',nodeId:chosen.evidence[0].id},
    claimWitnessStatus:citedWitnessIds===undefined?
      'LEGACY_CANONICAL_NODE_REFERENCE_ONLY':
      'EXACT_ORIGINAL_WITNESS_IDS_MATCHED_TO_NODE_NOT_CERTIFIED',
