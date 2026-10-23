@@ -10,7 +10,8 @@
     "PRODUCT_BOUNDARY": "No Ad Orientem runtime publication or prioritization.",
     "GRANULAR_DETAIL_NON_ADDITIVITY": "340 source detail rows comprise subpractices, regional variants, historical context and potential missing customs. Their overlap with the 568 Handbook original observations and one another is not yet resolved. 1025 research rows are NOT 1025 unique customs.",
     "POTENTIAL_UNINDEXED_NEED_GATE": "34 early-chapter details lack an appropriate source-index parent; they require manual identity review before being counted as distinct customs.",
-    "EARLY_UNINDEXED_PRACTICE_LEADS": "24 additional source-bounded group leads were created from 34 early-chapter unmatched detail observations. 10 others are either variants, historical background, other-rite comparison, or folk belief. Do not sum 371 provisional groups and the 56 master identities as confirmed distinct customs."
+    "EARLY_UNINDEXED_PRACTICE_LEADS": "24 additional source-bounded group leads were created from 34 early-chapter unmatched detail observations. 10 others are either variants, historical background, other-rite comparison, or folk belief. Do not sum 371 provisional groups and the 56 master identities as confirmed distinct customs.",
+    "RECONCILIATION_INTERPRETATION": "340 detail records now have explicit routes; 371 provisional practice groups each have an identity-review row; 111 Family observations and 53 geographic families have relation rows. 54 co-association pairs are NOT verified same customs. No merges or new practice certification."
   },
   "summary": {
     "source_observations": {
@@ -38,7 +39,9 @@
       "final_uniquely_verified_customs_added": 0,
       "new_identity_proposals_from_nested_details": 0,
       "provisional_early_chapter_unindexed_groups": 24,
-      "total_provisional_groups_including_unindexed": 371
+      "total_provisional_groups_including_unindexed": 371,
+      "provisional_groups_with_explicit_existing_owner_relation": 47,
+      "provisional_groups_without_explicit_existing_owner_relation": 324
     },
     "source_review": {
       "historical_context_disputed_cases_index_assessed": 181,
@@ -53,7 +56,16 @@
       "handbook_ch01_to_09_potential_unindexed_details": 34,
       "handbook_ch01_to_09_distinct_printed_page_locations": 53,
       "handbook_ch01_to_09_unindexed_proposed_groups": 24,
-      "handbook_ch01_to_09_unindexed_not_proposed_as_distinct_groups": 10
+      "handbook_ch01_to_09_unindexed_not_proposed_as_distinct_groups": 10,
+      "handbook_details_covered_by_no_loss_reconciliation": 340,
+      "handbook_details_with_provisional_group_candidate": 242,
+      "handbook_details_with_working_master_candidate": 71,
+      "handbook_details_without_group_or_master_candidate": 53,
+      "family_records_with_any_explicit_group_or_master_relation": 49,
+      "family_records_without_group_or_master_relation": 62,
+      "geographic_families_with_existing_master_relation": 23,
+      "geographic_families_without_existing_master_relation": 30,
+      "shared_owner_or_family_source_coassociation_edges": 54
     },
     "no_new_app_publications": true
   },
@@ -78,7 +90,10 @@
     "handbook_ch01_04_granular": "data/customs/master/weiser-handbook-targeted-addendum-ch01-04.v1.json",
     "handbook_ch05_09_granular": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json",
     "weiser_unindexed_early_adjudication": "data/customs/master/weiser-ch01-09-unindexed-leads-adjudication.v1.json",
-    "weiser_1958_printed_page_coverage": "data/customs/master/weiser-1958-second-pass-page-coverage.v1.json"
+    "weiser_1958_printed_page_coverage": "data/customs/master/weiser-1958-second-pass-page-coverage.v1.json",
+    "all_340_source_detail_relationships": "data/customs/master/all-340-granular-to-practice-reconciliation.v1.json",
+    "all_371_group_family_geographic_relationships": "data/customs/master/371-group-family-geographic-reconciliation.v1.json",
+    "shared_family_master_coassociation_review": "data/customs/master/54-coassociation-pairs-nonmerger-review.v1.json"
   },
   "existing_master_identities": [
     {
