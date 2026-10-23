@@ -1,0 +1,85 @@
+/* Additional review layer; never part of the published St Pius X dialogue. */
+(()=>{
+"use strict";
+const root=document.createElement('section');
+root.id='spxc-model-review';
+root.innerHTML="<div class='spxm-head'><strong>MODEL-ASSISTED PRIVATE EDITORIAL TRIAL</strong><small id='spxm-limit'>No historical or doctrinal approval</small></div>"+
+ "<form id='spxm-form'><label id='spxm-label' for='spxm-question'>Follow up freely on this documented subject</label>"+
+ "<div class='spxm-row'><input id='spxm-question' type='text' autocomplete='off' maxlength='240' required>"+
+ "<button id='spxm-send' type='submit'>Draft a reply</button></div></form>"+
+ "<p id='spxm-scope'></p><div id='spxm-replies' aria-live='polite'></div>";
+const $=id=>root.querySelector('#'+id);
+const translations={
+ en:{label:'Follow up on this documented subject',send:'Draft a reply',scope:'The model can adapt only the existing unpublished editorial passages. This is not authenticated speech of St Pius X.',
+ wait:'Preparing a research draft and independently checking its claims…',
+ held:'Reply withheld: the model could not establish support in the supplied passages.',
+ intro:'AI-COMPOSED EDITORIAL DRAFT · NOT THE WORDS OF ST PIUS X',sources:'Underlying unapproved editorial source pointers:',
+ prompt:'Question from visitor',error:'Unavailable. No invented reply has been displayed.'},
+ fr:{label:'Approfondir librement le sujet documentaire',send:'Rédiger une réponse',scope:'Le modèle ne peut adapter que les passages éditoriaux inédits existants. Il ne s’agit pas de paroles authentifiées de saint Pie X.',
+ wait:'Préparation de la rédaction et contrôle indépendant des affirmations…',
+ held:'Réponse suspendue : sources éditoriales insuffisantes pour étayer le propos.',
+ intro:'RÉDACTION IA NON APPROUVÉE · NON PAROLES DE SAINT PIE X',sources:'Références éditoriales non approuvées :',
+ prompt:'Question du visiteur',error:'Service indisponible. Aucune réponse inventée n’a été affichée.'}
+};
+let context=null,history=[],busy=false,lastSubject=null;
+function attach(){
+ const sc=document.querySelector('.spxc-main-scroll');
+ if(sc&&!sc.contains(root))sc.append(root);
+}
+function paragraph(content,cls){const p=document.createElement('p');if(cls)p.className=cls;p.textContent=content;return p;}
+function display(lang){
+ const t=translations[lang]||translations.en;
+ $('spxm-label').textContent=t.label;$('spxm-send').textContent=t.send;
+ $('spxm-scope').textContent=t.scope;
+ $('spxm-limit').textContent='PRIVATE · UNCOLLATED ORIGINALS · NO PUBLICATION';
+}
+document.addEventListener('ao-spx-review-context',e=>{
+ const v=e.detail||{};context={chapterId:v.chapterId,nodeId:v.nodeId,language:v.language};
+ if(lastSubject!==context.chapterId){history=[];lastSubject=context.chapterId;$('spxm-replies').replaceChildren();}
+ root.hidden=!context.chapterId;attach();display(context.language);
+});
+$('spxm-form').addEventListener('submit',async e=>{
+ e.preventDefault();if(busy||!context?.chapterId)return;
+ const question=$('spxm-question').value.trim().slice(0,240);
+ if(question.length<4)return;
+ const t=translations[context.language]||translations.en;
+ const snapshot={...context},previous=[...history];
+ const transcript=$('spxm-replies');
+ const entry=document.createElement('article');entry.className='spxm-entry';
+ entry.append(paragraph(t.prompt+': '+question,'spxm-question'),paragraph(t.wait,'spxm-status'));
+ transcript.append(entry);busy=true;$('spxm-send').disabled=true;
+ try{
+  const resp=await fetch('/api/pius-x-review',{method:'POST',
+   headers:{'content-type':'application/json','x-ao-review':'1'},
+   body:JSON.stringify({...snapshot,question,history:previous})});
+  const result=await resp.json();
+  entry.querySelector('.spxm-status')?.remove();
+  if(context.chapterId!==snapshot.chapterId){entry.remove();return;}
+  if(result.status!=='draft'||typeof result.reply!=='string'){
+   entry.append(paragraph(t.held+' ('+String(result.reason||'not_certified')+')','spxm-held'));return;
+  }
+  entry.append(paragraph(t.intro,'spxm-warning'),paragraph(result.reply,'spxm-draft'));
+  entry.append(paragraph(t.sources,'spxm-source-label'));
+  for(const ev of result.evidence||[]){
+   const line=document.createElement('div'),a=document.createElement('a');
+   const u=String(ev.sourceUrl||'');
+   if(!u.startsWith('https://'))continue;
+   a.href=u;a.target='_blank';a.rel='noopener noreferrer';
+   a.textContent=ev.id+' · '+ev.locus+' (NOT COLLATED)';
+   line.append(a);entry.append(line);
+  }
+  history.push({question,response:result.reply});history=history.slice(-3);
+  if(result.expression&&document.querySelector('#spxc-portrait:not([hidden])')){
+   const art=JSON.parse(document.getElementById('spxData').textContent).art;
+   const image=document.getElementById('spxc-portrait');
+   if(['neutral','welcoming','explaining','thoughtful','grave'].includes(result.expression)&&art[result.expression]){
+    image.src=art[result.expression];image.dataset.expression=result.expression;
+   }
+  }
+  $('spxm-question').value='';
+ }catch{
+  entry.querySelector('.spxm-status')?.remove();entry.append(paragraph(t.error,'spxm-held'));
+ }finally{busy=false;$('spxm-send').disabled=false;}
+});
+root.hidden=true;
+})();
