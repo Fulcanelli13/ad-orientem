@@ -362,4 +362,126 @@ for(const item of desktopEditorial.dispositions){
 assert.deepEqual(desktopEditorial.dispositions.filter(x=>x.editionAwareReferences).map(x=>x.id),[
  "H05-02","H23-02","H37-02"
 ]);
-console.log("PASS Historia unified worklist: 36 fully owned hinge dispositions, 20 optional native-source decisions, 7 grouped reader tasks, 29 original contexts + 12 connectors (41 desk-triaged, 0 accepted), 6 editorial/acceptance tracks, seven unopened release gates, no new Atlas/Scripture publication");
+// Trial the 15 proposed reductions against the native witness coordinates without
+// changing, certifying or translating any canonical Scripture or editorial copy.
+const sourceComparisonPhase=desktopEditorial.sourceComparisonPhase;
+assert.equal(sourceComparisonPhase.schema,"ao.historia.p3.proposed-copy-and-optional-source-sequential-readthrough.v1");
+assert.equal(sourceComparisonPhase.status,"15_SOURCE_EVIDENCE_COMPARISONS_COMPLETED_PROVISIONAL_NO_ORAL_ACCEPTANCE");
+assert.equal(sourceComparisonPhase.changeOwnersCompared,15);
+assert.equal(sourceComparisonPhase.originalScriptureUnitCount,93);
+assert.equal(sourceComparisonPhase.movementProjectionsChecked,37);
+assert.equal(sourceComparisonPhase.interMovementHingesCrossReferenced,36);
+assert.equal(sourceComparisonPhase.heldBridgeAttachedPrefacesNotShownUnlessTheirSourceTrialIsVisible,3);
+assert.deepEqual(sourceComparisonPhase.unresolvedHighestPriorityHinges,[
+ "HS-HINGE-02","HS-HINGE-08","HS-HINGE-28","HS-HINGE-33","HS-HINGE-34"
+]);
+assert.equal(sourceComparisonPhase.originalSelectedScriptureWordsFromSeparateAudit,audit.totals.selectedDouayChallonerWords);
+assert.equal(sourceComparisonPhase.wordCountIsEditorialProseOnlyExcludesScripture,true);
+assert.equal(ledger.totals.sourceComparedEditorialReductionOptions,15);
+assert.equal(ledger.totals.editsActuallyPromoted,0);
+const copied=desktopEditorial.dispositions.filter(x=>x.disposition!=="RETAIN_CONTEXT");
+assert.equal(copied.length,15);
+assert.equal(new Set(copied.map(x=>x.id)).size,15);
+const editorialTokenCount=s=>String(s||"").trim().split(/\\s+/).filter(Boolean).length;
+const copyOwners=new Map(desktopEditorial.dispositions.map(x=>[x.id,x]));
+let originalTrialWords=0,editedTrialWords=0,visibleContextCount=0,visibleTrialCount=0,originalScriptureCount=0;
+const projection=[];
+for(const movement of proof.movements){
+ let selectedInMovement=0,firstSelected=null,lastSelected=null,editorialCount=0,originalWords=0,trialWords=0;
+ for(const beat of movement.beats){
+  if(beat.kind==="SCRIPTURE"){
+   originalScriptureCount++;
+   selectedInMovement++;
+   firstSelected ??= beat.refs[0];
+   lastSelected=beat.refs.at(-1);
+   assert.equal(beat.publicationApproved,false);
+  }
+  const e=beat.kind==="EDITORIAL_CONTEXT_NOT_BIBLE"?beat.editorialReadingCandidate:null;
+  const c=beat.beforeScriptureConnectorCandidate;
+  for(const source of [e,c].filter(Boolean)){
+   const original=source.text;
+   const overlay=copyOwners.get(beat.kind==="EDITORIAL_CONTEXT_NOT_BIBLE"?beat.id:source.id);
+   if(overlay){
+    assert.equal(overlay.movementId,movement.id);
+    assert.equal(overlay.currentCandidateTextUnchanged,true);
+   }
+   let trial=overlay?.trialReplacementCopy||
+    overlay?.readthroughSourceComparison?.withoutNewSource?.copy||original;
+   assert.ok(original && trial,"Trial must not erase the active source-labelled handoff without a selected alternative");
+   editorialCount++;
+   originalWords+=editorialTokenCount(original);
+   trialWords+=editorialTokenCount(trial);
+  }
+ }
+ assert.ok(selectedInMovement>0,"Research readthrough projection must retain canonical Scripture in "+movement.id);
+ const metrics=audit.perMovementMetrics.find(m=>m.movementId===movement.id);
+ assert.equal(firstSelected,metrics.firstPassage);
+ assert.equal(lastSelected,metrics.lastPassage);
+ projection.push({id:movement.id,firstSelected,lastSelected,originalWords,trialWords,editorialCount});
+ originalTrialWords+=originalWords;editedTrialWords+=trialWords;
+ visibleContextCount+=editorialCount;visibleTrialCount+=editorialCount;
+}
+assert.equal(originalScriptureCount,93);
+assert.equal(projection.length,37);
+assert.equal(visibleContextCount,38);
+assert.equal(visibleTrialCount,38);
+assert.equal(sourceComparisonPhase.contextAndBeforeScriptureUnitsInTrial,38);
+assert.equal(sourceComparisonPhase.originalContextAndBeforeConnectorApproximateWords,originalTrialWords);
+assert.equal(sourceComparisonPhase.shortenedTrialContextAndBeforeConnectorApproximateWords,editedTrialWords);
+assert.ok(editedTrialWords<originalTrialWords,"Research revisions should improve prose economy");
+for(let i=0;i<36;i++){
+ const seam=audit.betweenMovementSeams[i],a=projection[i],b=projection[i+1];
+ assert.equal(seam.fromMovement,a.id);
+ assert.equal(seam.toMovement,b.id);
+ assert.equal(seam.fromLastSelectedSource,a.lastSelected);
+ assert.equal(seam.toFirstSelectedSource,b.firstSelected);
+ assert.notEqual(seam.approved,true,"Never treat desk movement continuity as a passed literary gate");
+ assert.equal(seam.publicationApproved,false);
+ assert.equal(seam.mayFillWithAIParaphrase,false);
+}
+// Held-bridge prefaces must not become visible in the 38-unit draft just
+// because their own trial source exists.
+const heldPrefaces=["HS-P3-EC-02","HS-P3-EC-06","HS-P3-EC-07"];
+for(const id of heldPrefaces){
+ const x=copyOwners.get(id);
+ assert.equal(x.sourceCandidateField,"readthroughTrial.editorialPreface");
+ assert.equal(x.readthroughSourceComparison.withoutNewSource.rendering,"NOT_RENDERED");
+ assert.equal(x.readthroughSourceComparison.withoutNewSource.copy,null);
+}
+for(const x of copied){
+ const comparison=x.readthroughSourceComparison;
+ assert.equal(comparison.status,"THREE_WITNESS_SOURCE_REFERENCES_DESK_COMPARED_NOT_ACCEPTED");
+ assert.equal(comparison.originalSourceTextNotCopiedIntoEditorialLedger,true);
+ assert.equal(comparison.sourceEditoriallySelected,false);
+ assert.equal(comparison.changeAppliedToMainManuscript,false);
+ assert.equal(comparison.manualOralLiteraryApproval,false);
+ assert.ok(comparison.sourceEvidenceFinding.length>90);
+ assert.ok(comparison.sourceEvidenceReferences.length>=1);
+ assert.ok(comparison.sourceEvidenceReferences.every(r=>typeof r==="string"&&r.length>=10));
+ for(const sourceRef of comparison.sourceEvidenceReferences){
+  for(const edition of editions)assert.ok(exactVerse(sourceRef,edition).length>0,
+   "Research edit lost a native Catholic witness: "+x.id+" / "+sourceRef+" / "+edition);
+ }
+ const withSource=comparison.withPairedOriginalSource;
+ if(withSource){
+  assert.ok(withSource.sourceDecisionIds.length>=1);
+  for(const id of withSource.sourceDecisionIds)
+   assert.ok(items.some(item=>item.id===id&&item.approval.selected===false),
+    "Unaccepted source must not silently become accepted: "+id);
+  if(withSource.rendering==="OMIT_EDITORIAL")assert.equal(withSource.copy,null);
+  else assert.ok(withSource.copy?.length>25);
+ }
+}
+assert.deepEqual(copied.filter(x=>x.readthroughSourceComparison.withPairedOriginalSource?.rendering==="OMIT_EDITORIAL").map(x=>x.id),[
+ "HS-P3-EC-11","HS-P3-EC-09","HS-P3-EC-10"
+]);
+assert.equal(copyOwners.get("H34-01").trialReplacementCopy.includes("adultery with Bathsheba"),false);
+assert.match(copyOwners.get("H34-01").trialReplacementCopy,/David took Bathsheba/);
+assert.doesNotMatch(copyOwners.get("HS-P3-EC-07").readthroughSourceComparison.withPairedOriginalSource.copy,/Caesar|appeal/i);
+assert.match(copyOwners.get("HS-P3-EC-09").readthroughSourceComparison.withoutNewSource.copy,/Son of God/);
+assert.doesNotMatch(copyOwners.get("HS-P3-EC-09").readthroughSourceComparison.withoutNewSource.copy,/Lamb of God/);
+assert.deepEqual(copyOwners.get("HS-P3-EC-06").readthroughSourceComparison.sourceEvidenceReferences,[
+ "Acts 6:5–15","Acts 7:51–55"
+]);
+assert.ok(sourceComparisonPhase.semanticOutcome.includes("STILL_REQUIRED"));
+console.log("PASS Historia unified worklist: 36 fully owned hinge dispositions, 20 optional native-source decisions, 7 grouped reader tasks, 29 original contexts + 12 connectors (41 desk-triaged and 15 witness-linked comparisons, 0 accepted), 6 editorial/acceptance tracks, seven unopened release gates, no new Atlas/Scripture publication");
