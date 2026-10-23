@@ -33,7 +33,9 @@ for(const row of newlyReviewed){
   assert.equal(review.source_url,row.representative_source_url);
   assert.equal(review.review_signoff,"SOURCE_SCOPE_ONLY_NOT_FINAL_BILINGUAL_ACCEPTANCE");
 }
-assert.equal(newlyReviewed.filter(row=>row.p2_source_text_review.status.startsWith("INDEXED")).length,1);
+assert.equal(newlyReviewed.filter(row=>row.p2_source_text_review.status.startsWith("INDEXED")).length,0);
+assert.equal(audit.counts.official_original_source_http_502,1);
+assert.equal(audit.counts.additional_claim_sources,3);
 assert.equal(audit.counts.p1_source_level_adjudications,13);
 assert.equal(audit.counts.p1_final_editorial_certifications,0);
 assert.equal(audit.records.filter(row=>row.p1_source_text_review?.status).length,13);
@@ -102,7 +104,7 @@ assert.match(calendarCustomArticle("ADVT-003").history.en,/Andalusia/);
 assert.match(calendarCustomArticle("MARI-002").history.en,/1932.*1951/);
 assert.match(calendarCustomArticle("ADVT-002").history.en,/German regions/);
 const supporting=registry.supplemental_claim_sources||[];
-assert.equal(supporting.length,2,"Basilica and 2026 Emmaus supplementary witnesses stay separate from 108 canonical attestations");
+assert.equal(supporting.length,3,"Basilica, 2026 Emmaus and Metz St Nicholas witnesses remain distinct from 108 canonical attestations");
 assert.equal(new Set(supporting.map(row=>row.id)).size,2);
 for(const evidence of supporting){
   assert.ok(published.has(evidence.custom_id),"Supplementary witness cannot publish a new custom");
@@ -115,6 +117,8 @@ for(const evidence of supporting){
 }
 assert.match(calendarCustomArticle("DOM-003").supporting_sources[0].url,/stmarybasilicaarchives/);
 assert.match(calendarCustomArticle("EAST-001").supporting_sources[0].url,/erzbistum-muenchen/);
+assert.match(calendarCustomArticle("SNIC-001").supporting_sources[0].url,/metz\.catholique\.fr/);
+assert.match(calendarCustomArticle("SNIC-001").history.fr,/diocèse de Metz de 2024/);
 const liveSourceAudit=read("data/customs/research/customs-source-link-access-audit.20261023.v1.json");
 assert.equal(liveSourceAudit.counts.access_statuses.FETCH_INCONCLUSIVE,8);
 assert.equal(liveSourceAudit.records.find(x=>x.source_id==="LAGHET-EXVOTO").recheck.status,"DIRECT_FULL_PAGE_RETRIEVED");
