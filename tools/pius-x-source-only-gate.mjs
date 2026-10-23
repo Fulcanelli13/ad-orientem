@@ -38,7 +38,7 @@ export function loadSourceOnlyGate(chapters,oldAnnexes){
      sourceUrl:a.document.sites.original||a.document.sites.la,
      speaker:w.speaker,readingNote:w.meaning};
    });
-   perNode.set(node.id,{status:'BOUNDED_ORIGINAL_EXCERPTS_UNAPPROVED',pieces,
+   perNode.set(node.id,{status:'BOUNDED_'+((a.document.languageOfOriginal||'la')==='it'?'ITALIAN':'LATIN')+'_SPOTCHECK_NOT_FULL_VERIFICATION',pieces,
     caution:[...(m.editorialWarnings||m.editorialFlags||[])]});
   }
   gate.set(id,perNode);
