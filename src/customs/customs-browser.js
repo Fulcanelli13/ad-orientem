@@ -1,4 +1,5 @@
 import {CUSTOMS_YEAR_GROUPS,createCustomsLibrary,selectCustoms,selectResearch} from "./customs-library.js";
+import {calendarCustomArticle} from "../calendar/customs-read-model.js";
 
 const ROOT="ao-customs-library-root";
 const E=value=>String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -34,7 +35,11 @@ function makeOwner(win=globalThis){
       [L("When","Quand"),dateHint(c)],
       [L("Meaning","Sens"),FR()?c.meaning_fr||c.meaning_en:c.meaning_en],
       [L("Optional observance","Pratique facultative"),FR()?c.how_fr||c.how_en:c.how_en],
-      [L("Historical and pastoral context","Contexte historique et pastoral"),FR()?c.caution_fr||c.guardrail:c.guardrail]
+      // Published customs share their current pastoral wording with the existing Calendar.
+      // Context-only source evidence retains its separate historical guardrail.
+      [L("Historical and pastoral context","Contexte historique et pastoral"),
+        (c.publication_state==="PUBLISHED"?calendarCustomArticle(c.id)?.caution[FR()?"fr":"en"]:null)
+          ||(FR()?c.caution_fr||c.guardrail:c.guardrail)]
     ];
     let html='<button class="aoCustBack" data-cust-back>'+E(L("← Return to collection","← Retour à la collection"))+'</button>'+
       '<p class="aoCustEyebrow">'+E(familyLabel(c.family))+'</p><h1 class="aoCustTitle">'+E(title(c))+'</h1>'+
