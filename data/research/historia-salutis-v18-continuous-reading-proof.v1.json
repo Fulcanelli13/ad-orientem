@@ -1205,7 +1205,23 @@
             "preservesOriginalDeskCopy": true,
             "printedEditionCollationPending": true,
             "finalLiteraryAcceptance": false,
-            "publicationApproved": false
+            "publicationApproved": false,
+            "sourceReferencesByEdition": {
+              "dr-challoner": [
+                "Exodus 40:16–21",
+                "Exodus 40:32–36"
+              ],
+              "cpdv-2009": [
+                "Exodus 40:16–21",
+                "Exodus 40:32–36"
+              ],
+              "crampon-1923": [
+                "Exodus 40:16–21",
+                "Exodus 40:34–38"
+              ]
+            },
+            "editionAlignmentStatus": "SOURCE_ANCHORED_TRANSLATION_VERSE_BOUNDARY_RESEARCH_NOT_PRINT_COLLATED",
+            "editionAlignmentNote": "The Tabernacle-cloud episode starts in Exodus 40:32 in imported Douay/CPDV but in 40:34 in French Crampon; the original historical context pointer 40:34–38 is not valid English verse numbering. Preserve the original pointer as research history, display witness-specific ranges; no Scripture copy or editorial acceptance."
           }
         }
       ],
