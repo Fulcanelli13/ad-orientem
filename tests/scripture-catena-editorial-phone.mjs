@@ -248,6 +248,41 @@ try{
  await page.locator("#download").click();
  const download=await downloadPromise;
  assert.equal(download.suggestedFilename(),"catena-matthew-editorial-review-export.json");
+ // The existing editorial workbench now also houses ten Mark research-only
+ // sources, with no publication form and no public Messenger route promotion.
+ await page.locator('[data-filter="mark"]').click();
+ await page.locator('[data-mark-pointer="catena.mark.6.45:11"]').waitFor({state:"visible",timeout:20000});
+ assert.equal(await page.locator("#candidateList [data-mark-pointer]").count(),10);
+ await page.locator('[data-mark-canonical-source="catena.mark.6.45:11"]')
+  .waitFor({state:"visible",timeout:20000});
+ assert.ok((await page.locator('[data-mark-canonical-source] .body').first().innerText()).length>60);
+ assert.equal(await page.locator("#reviewForm").count(),0);
+ assert.equal(await page.locator("#download").isDisabled(),true);
+ await page.locator('[data-mark-pointer="catena.mark.10.17:19"]').click();
+ await page.locator('[data-mark-canonical-source="catena.mark.10.17:19"]')
+  .waitFor({state:"visible",timeout:20000});
+ assert.match(await page.locator('[data-mark-research-witness]').innerText(),/Zacchaeus/);
+ assert.doesNotMatch(await page.locator('[data-mark-canonical-source] .body').innerText(),/Zacchaeus/);
+ await page.locator('[data-mark-pointer="catena.mark.14.17:2"]').click();
+ await page.locator('[data-mark-research-witness="only_secondary_work_attribution_excerpt_found"]')
+  .waitFor({state:"visible",timeout:20000});
+ assert.match(await page.locator('[data-mark-research-witness]').innerText(),/secondary/i);
+ assert.equal(await page.locator("#reviewForm").count(),0);
+ await page.locator("#markQuestion").fill("Did Theophylact prove Christ certainly ate the Passover twice?");
+ await page.locator('#markLookup button[type="submit"]').click();
+ assert.match(await page.locator("#workspace").innerText(),/No Father reply has been supplied or inferred/);
+ assert.equal(await page.locator("#workspace .source .body").count(),0);
+ await page.locator("#markQuestion").fill("Why does the Last Supper depict reclining if the Passover required standing?");
+ await page.locator('#markLookup button[type="submit"]').click();
+ await page.locator('[data-mark-canonical-source="catena.mark.14.17:2"]')
+  .waitFor({state:"visible",timeout:20000});
+ assert.equal(await page.locator("#reviewForm").count(),0);
+ assert.ok((await page.locator("body").evaluate(el=>el.scrollWidth-el.clientWidth))<=2,
+   "Mark editorial source overflows 390px phone width");
+ await page.locator('[data-filter="focus"]').click();
+ await page.locator('[data-focused-source="english-parallel-checked"]')
+  .waitFor({state:"visible",timeout:20000});
+ assert.equal(await page.locator("#download").isDisabled(),false);
  assert.deepEqual(errors,[],"Messenger and editorial workbench browser runtime errors");
  console.log("PASS: opt-in research question Messenger phone flow, source labels, author boundary and no overflow");
 }finally{
