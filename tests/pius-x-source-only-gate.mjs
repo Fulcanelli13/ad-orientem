@@ -41,8 +41,8 @@ for(const id of ['SPX-PILOT-07','SPX-NEW-021','SPX-NEW-013','SPX-EXP-037',
  assert(a.evidence[0].editorialWarnings.some(w=>w.includes('complete existing editorial answer')));
  if(c.nodes.length>1){
   const next=selectEvidence(store,{chapterId:id,nodeId:c.nodes[1].id,language:'en',question:c.nodes[1].q.en});
-  assert.equal(next.status,'held');
-  assert.equal(next.reason,'followup_not_mapped_to_primary_source_claim');
+  assert.equal(next.status,'eligible','directly attested first follow-up must now have narrow evidence');
+  assert.equal(next.evidence[0].primaryWitnessStatus,'NARROW_SOURCE_FOLLOWUP_CANDIDATE_UNAPPROVED');
  }
 }
 const legacy=store.chapters.get('SPX-PILOT-01');
@@ -82,6 +82,10 @@ assert(seen.evidence[0].text.includes('Universality'));
 assert(!seen.evidence[0].text.includes('Gregorian chant offers the clearest model'));
 const before=calls;
 const next=await composeDraft(store,{...input,nodeId:c.nodes[1].id,question:c.nodes[1].q.en},fake);
-assert.equal(next.reason,'followup_not_mapped_to_primary_source_claim');
-assert.equal(calls,before);
-console.log('PASS SPX_SOURCE_ONLY_GATE: 12 bounded opening subjects; 94 other subjects held; 8 expanded claim sets isolated; no full 106/423 draft sent to inference; hard preflight on unmapped followups; 0 release approval');
+assert.equal(next.status,'draft','liturgical music first follow-up is now independently witness-mapped');
+assert.equal(calls,before+2);
+const second=await composeDraft(store,{...input,nodeId:c.nodes[2].id,question:c.nodes[2].q.en},fake);
+assert.equal(second.status,'draft');
+assert.equal(calls,before+4);
+assert(seen.evidence[0].originalLanguageWitnesses.some(x=>x.id==='TLS-POLYPHONY'));
+console.log('PASS SPX_SOURCE_ONLY_GATE: 12 source-backed topics and 36 narrow mapped nodes (14 new followups); eight unsupported followups held, no P6 whole answers supplied, zero release approvals');
