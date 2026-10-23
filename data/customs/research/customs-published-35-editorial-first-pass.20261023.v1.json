@@ -40,7 +40,9 @@
     "final_release_approval": 0,
     "followup_direct_or_alternative_verified": 3,
     "followup_origin_fetch_blocked": 1,
-    "additional_claim_sources": 2
+    "additional_claim_sources": 3,
+    "independent_direct_diocesan_alternatives": 1,
+    "official_original_source_http_502": 1
   },
   "records": [
     {
@@ -822,11 +824,11 @@
       ],
       "primary_text_review_this_batch": "TARGETED_MATCH_AND_SCOPE",
       "verified_witness_urls": [],
-      "history_copy_action": "PRESERVED",
+      "history_copy_action": "REVISED_EN_FR_TO_NAME_STRASBOURG_2022_AND_METZ_2024_WITH_REGIONAL_BOUNDARY",
       "new_custom_approved": false,
       "needs_additional_historical_or_regional_signoff": true,
       "p2_source_text_review": {
-        "status": "INDEXED_OFFICIAL_SOURCE_RECHECK_REQUIRED",
+        "status": "INDEPENDENT_DIRECT_DIOCESAN_WITNESS_VERIFIED_ORIGINAL_INDEXED_502",
         "access_basis": "OFFICIAL_INDEXED_COPY_LIVE_502",
         "source_url": "https://www.alsace.catholique.fr/actualites/dossiers-thematiques/418575-6-decembre-fete-de-saint-nicolas/",
         "claim_supported": "Strasbourg diocesan 2022 text describes sweets, gifts and visits in Alsace and Lorraine.",
@@ -839,7 +841,15 @@
         "url": "https://www.alsace.catholique.fr/actualites/dossiers-thematiques/418575-6-decembre-fete-de-saint-nicolas/",
         "finding": "Full diocesan indexed article dated 6 Dec 2022 describes regional children's gifts and saints-day traditions, distinguishing the historic bishop from folklore; a diocesan parish report separately attests a 2016 local St Nicholas gift visit.",
         "alternative_url": "https://www.alsace.catholique.fr/zp-sundgau/notre-dame-des-7-douleurs/cp-portes-sundgau/",
-        "remaining_hold": "The 2022 original and the alternative parish page both returned HTTP 502 when opened directly; exact indexed content is available, but direct-origin access has not recovered."
+        "remaining_hold": "The 2022 original and the alternative parish page both returned HTTP 502 when opened directly; exact indexed content is available, but direct-origin access has not recovered.",
+        "independent_accessible_source": {
+          "url": "https://metz.catholique.fr/sites-paroissiaux/archipretre-rombas/445372-saint-nicolas-en-visite-a-montois-la-montagne/",
+          "status": "DIRECT_OFFICIAL_DIOCESAN_PAGE_READABLE",
+          "published": "2024-12-08",
+          "event": "2024-12-07",
+          "scope": "One Lorraine parish visit and child gift-giving; regional custom, not recurrence",
+          "original_strasbourg_access": "ORIGINAL_SITE_HTTP_502_INDEXED_FULL_TEXT_AVAILABLE"
+        }
       }
     },
     {
@@ -1370,5 +1380,5 @@
     }
   ],
   "history_source_registry_property": "data/customs/source-registry.v1.json#historical_context_sources",
-  "review_closure": "35_SOURCE_LEVEL_REVIEWS_COMPLETE_FOUR_TARGETED_FOLLOWUPS_RECOVERED_EVIDENCE_FINAL_BILINGUAL_SIGNOFF_PENDING"
+  "review_closure": "ALL_35_SOURCE_LEVEL_REVIEWS_HAVE_BOUNDED_OUTCOMES_ST_NICHOLAS_ALTERNATIVE_DIRECTLY_VERIFIED_HUMAN_BILINGUAL_SIGNOFF_PENDING"
 }

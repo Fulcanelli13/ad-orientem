@@ -1028,8 +1028,8 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "fr": "En Alsace et en Lorraine, familles et communautés marquent parfois le 6 décembre par la visite d'un personnage costumé, des friandises ou de petits cadeaux. La coutume peut rappeler aux enfants la charité chrétienne du saint."
     },
     "history": {
-      "en": "A Strasbourg diocesan account describes Alsatian St Nicholas gifts and visits for children. It distinguishes local traditions and folklore from the historical bishop, without making gift-giving a prescribed religious obligation.",
-      "fr": "Une présentation du diocèse de Strasbourg décrit les cadeaux et visites de saint Nicolas aux enfants en Alsace. Elle distingue les traditions locales et le folklore de l'évêque historique, sans faire des cadeaux une obligation religieuse prescrite."
+      "en": "A 2022 Strasbourg diocesan account describes St Nicholas gifts and visits in Alsace and distinguishes regional folklore from historical accounts of the saint. A separate 2024 Metz diocesan report documents a costumed St Nicholas distributing chocolates to children at a Lorraine parish. Neither report makes this family custom a liturgical obligation or recurring local event.",
+      "fr": "Un article du diocèse de Strasbourg daté de 2022 présente les visites et les cadeaux de saint Nicolas en Alsace, en distinguant les traditions populaires des récits historiques sur le saint. Un compte rendu du diocèse de Metz de 2024 atteste également un saint Nicolas costumé distribuant des chocolats à des enfants dans une paroisse lorraine. Aucun de ces exemples n'établit d'obligation liturgique ni d'événement paroissial reconduit chaque année."
     },
     "meaning": {
       "en": "St Nicholas's visit recalls the bishop's charity and encourages discreet generosity to children.",
@@ -1041,17 +1041,24 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
     },
     "caution": {
       "en": "The historical biography of Nicholas must be distinguished from later folklore. Exclude threatening costumed helpers and claims that gifts are liturgically required.",
-      "fr": "Distinguer la vie historique du saint des traditions folkloriques ultérieures ; ne pas présenter les cadeaux comme une obligation liturgique."
+      "fr": "Distinguer les récits historiques du saint des personnages folkloriques et exclure les mises en scène menaçantes pour les enfants ; les cadeaux ne sont pas une obligation liturgique."
     },
     "occasion": {
       "en": "06/12 — St Nicholas; regional household custom",
       "fr": "6 décembre — saint Nicolas ; coutume familiale régionale"
     },
     "scope": {
-      "en": "France",
-      "fr": "France"
+      "en": "Alsace and Lorraine, with dated Catholic parish examples; not a national or automatic event.",
+      "fr": "Alsace et Lorraine, selon les usages familiaux et les événements paroissiaux réellement annoncés."
     },
     "editorialCopyStatus": "CALENDAR_ARTICLE_SCOPE_ACCEPTED",
+    "supporting_sources": [
+      {
+        "id": "METZ-ST-NICHOLAS-VISIT-GIFTS-2024",
+        "title": "Saint Nicolas en visite à Montois-la-Montagne",
+        "url": "https://metz.catholique.fr/sites-paroissiaux/archipretre-rombas/445372-saint-nicolas-en-visite-a-montois-la-montagne/"
+      }
+    ],
     "sources": [
       {
         "id": "STRASBOURG-SAINT-NICOLAS-2022",

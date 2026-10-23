@@ -56,3 +56,13 @@ Run `node tests/customs-35-editorial-first-pass.mjs`, `node tests/calendar-custo
 Latest follow-up (23 October): the **Laghet ex-voto** official page is directly readable and attests more than 4,000 objects; the **Munich–Freising** archdiocese's alternative official 2026 HTML text directly documents an Easter Monday Emmaus walk; and the **St Mary Basilica** priest's article explicitly attests household holy-water fonts and personal use. Two bounded supporting sources are available separately in Calendar, without adding any canonical attestation or custom. The Strasbourg 2022 original still returns HTTP 502 on direct fetch, but its full official indexed text and a diocesan parish example corroborate regional St Nicholas gifts. See the source-access audit and the published-35 decision register for distinct origin versus alternative-source statuses.
 
 Next pass: no more generic source-inventory sweeps. The remaining limitation is the Strasbourg **direct-origin HTTP failure** and final content-by-content EN/FR semantic/editorial acceptance. The existing 35 publication approvals are neither retroactively rescinded nor re-labelled. The 18 unpublished/provisional research identities remain blocked. Do not merge research-only identities, grant art rights or create a second Calendar.
+
+## Direct Diocese of Metz fallback, 23 October 2026
+
+The original Diocese of Strasbourg St Nicholas article (6 December 2022) still returns HTTP 502 when accessed directly, while its original French text remains available through indexed results. An **independent and directly retrieved Catholic diocesan source** now corroborates the living custom:
+
+- [Diocese of Metz, 8 December 2024 — Saint Nicolas en visite à Montois-la-Montagne](https://metz.catholique.fr/sites-paroissiaux/archipretre-rombas/445372-saint-nicolas-en-visite-a-montois-la-montagne/), reporting an actual **7 December 2024** visit in a Lorraine parish and chocolate gifts to children.
+- The published SNIC-001 article now links both sources separately, has matched French/English history and explicitly excludes frightening portrayals or imagined recurrence.
+- The original Strasbourg URL and its access caveat remain in the registry/audit for provenance. No source was silently replaced; no future parish event was inferred.
+
+The accessible diocesan fallback resolves the **claim-verification dependency** but not the source origin HTTP 502 incident or the outstanding human editorial approval.
