@@ -1,0 +1,511 @@
+{
+  "schema": "AO_SACRED_PLACES_P13_IDENTITY_ADJUDICATION_V1",
+  "created_at": "2026-10-24",
+  "based_on": {
+    "p12": "data/geography/research/sacred-places-p12-six-georef-and-23-source-exceptions.v1.json",
+    "canonical": "data/geography/seed-registry.v1.json",
+    "canonical_count": 347
+  },
+  "decision_rules": [
+    "Source-identity research can close while exact coordinates, Catholic eligibility, media and publication approval remain separate.",
+    "A shrine devotion does not create a distinct sanctuary building; named sites and buildings must be independently corroborated.",
+    "Do not conflate a basilica, chapel, complex anchor, monument, or urban procession starting point.",
+    "Negative candidate-country matching is not definitive proof there is no existing site; no automatically generated IDs.",
+    "Do not rewrite or erase the original P12 decisions; P13 is an append-only delta."
+  ],
+  "summary": {
+    "original_exception_slots": 23,
+    "named_original_candidates": 20,
+    "unmapped_historical_slots": 3,
+    "source_identity_resolved_this_pass": 3,
+    "new_source_bounded_reviews": 13,
+    "source_identity_still_open": 20,
+    "proven_exact_duplicate_to_347": 0,
+    "canonical_places_changed": 0,
+    "canonical_pins_added": 0,
+    "new_publication_approvals": 0
+  },
+  "decisions": [
+    {
+      "candidate_id": "candidate:SG-INV-0702",
+      "prior_wave": "W4",
+      "source_inventory_title": "Our Lady of Assiut shrine (Coptic Orthodox)",
+      "country_code": "EG",
+      "previous_p12_status": "OPEN_ORIGINAL_EVIDENCE_HOLD",
+      "source_review_20261024": {
+        "stage": "ECCLESIAL_SCOPE_IDENTIFIED_IDENTITY_AMBIGUOUS",
+        "site_title": "Coptic Orthodox Marian pilgrimage at Durunka (Assiut)",
+        "site_scope": "Durunka Coptic Orthodox Virgin Mary monastery, one of several possible Marian sites around Assiut; Catholic operating-site category inapplicable",
+        "locality": "Durunka, Assiut Governorate, Egypt",
+        "urls": [
+          "https://stmarydurunka.org/"
+        ],
+        "basis": "Original Coptic monastery website documents Orthodox monastic custody and Marian pilgrimages; candidate's unqualified 'Assiut shrine' is not yet tied to one precise site.",
+        "next": "Require exact target before assigning historical/interchurch place; exclude from current Catholic shrine publishing."
+      },
+      "source_identity_gate": "HOLD",
+      "canonical_match": "NO_EXACT_PLACE_ID_CONFIRMED",
+      "canonical_collision_guard": null,
+      "publication_status": "HOLD_NO_NEW_PLACE_NO_PIN",
+      "research_next": "Require exact target before assigning historical/interchurch place; exclude from current Catholic shrine publishing."
+    },
+    {
+      "candidate_id": "candidate:SG-INV-0587",
+      "prior_wave": "W4",
+      "source_inventory_title": "Sanctuary of Our Lady of Perpetual Help, Goa",
+      "country_code": "IN",
+      "previous_p12_status": "OPEN_ORIGINAL_EVIDENCE_HOLD",
+      "source_review_20261024": {
+        "stage": "DEVOTION_FOUND_SHRINE_ID_UNPROVEN",
+        "site_title": "Our Lady of Perpetual Succour novena, Tivim / Goa",
+        "site_scope": "government describes Tivim devotional novena but does not attest a distinctly named 'Sanctuary of Our Lady of Perpetual Help, Goa'",
+        "locality": "Tivim, Goa, India",
+        "urls": [
+          "https://dip.goa.gov.in/religion-of-goa/"
+        ],
+        "basis": "State Government confirms Wednesday devotion to Our Lady of Perpetual Succour in Tivim; devotion or novena does not prove a designated independent shrine.",
+        "next": "Find Goa archdiocesan named physical worship site and formal sanctuary designation; hold original generic alias."
+      },
+      "source_identity_gate": "HOLD",
+      "canonical_match": "NO_EXACT_PLACE_ID_CONFIRMED",
+      "canonical_collision_guard": null,
+      "publication_status": "HOLD_NO_NEW_PLACE_NO_PIN",
+      "research_next": "Find Goa archdiocesan named physical worship site and formal sanctuary designation; hold original generic alias."
+    },
+    {
+      "candidate_id": "candidate:SG-INV-0071",
+      "prior_wave": "W4",
+      "source_inventory_title": "Sanctuary of Our Lady of the Snow, Santa Maria Maggiore (Bergamo)",
+      "country_code": "IT",
+      "previous_p12_status": "OPEN_ORIGINAL_EVIDENCE_HOLD",
+      "source_review_20261024": {
+        "stage": "MULTIPLE_SITES_TITLE_CONFLATION",
+        "site_title": "Santa Maria Maggiore (Bergamo) vs distinct diocesan Madonna della Neve sanctuaries",
+        "site_scope": "false merged title; Bergamo diocesan list separately names Santa Maria Maggiore, Madonna della Neve in Bergamo Sant'Anna, and Madonna della Neve at Foppolo",
+        "locality": "Bergamo province, Italy",
+        "urls": [
+          "https://diocesibg.it/santuari/",
+          "https://diocesibg.it/santuario/beata-vergine-della-neve/"
+        ],
+        "basis": "Diocese distinguishes physical places and dedications; no single 'Our Lady of the Snow, Santa Maria Maggiore (Bergamo)' proven.",
+        "next": "Resolve which place the original source meant; do not alias Bergamo Santa Maria Maggiore to either Neve shrine or to Rome's Santa Maria Maggiore."
+      },
+      "source_identity_gate": "HOLD",
+      "canonical_match": "NO_EXACT_PLACE_ID_CONFIRMED",
+      "canonical_collision_guard": "place:IT:santa-maria-maggiore-rome is in Rome, not Bergamo",
+      "publication_status": "HOLD_NO_NEW_PLACE_NO_PIN",
+      "research_next": "Resolve which place the original source meant; do not alias Bergamo Santa Maria Maggiore to either Neve shrine or to Rome's Santa Maria Maggiore."
+    },
+    {
+      "candidate_id": "candidate:SG-INV-0093",
+      "prior_wave": "W4",
+      "source_inventory_title": "Sanctuary of Saint Paul of the Cross, Ovada",
+      "country_code": "IT",
+      "previous_p12_status": "HISTORIC_PERSON_LINK_NOT_SHRINE_PROOF",
+      "source_review_20261024": {
+        "stage": "SOURCE_IDENTITY_RESOLVED",
+        "site_title": "Santuario di San Paolo della Croce, Ovada",
+        "site_scope": "distinct active Catholic sanctuary (modern sanctuary building), separate from the saint's birthplace and Santuario Nostra Signora delle Rocche in Molare",
+        "locality": "Corso Italia, Ovada, Alessandria, Italy",
+        "coordinates": {
+          "lat": 44.63312,
+          "lng": 8.63989,
+          "precision": "OSM_CHURCH_WAY_CENTROID_NOT_ENTRANCE",
+          "osm_id": "way/48892861"
+        },
+        "urls": [
+          "https://www.parrocchiaovada.it/wordpress/santuario-di-san-paolo-della-croce",
+          "https://mapcarta.com/W48892861",
+          "https://www.settimanalelancora.it/2026/10/10/fiera-di-san-paolo-al-santuario/"
+        ],
+        "basis": "Parish expressly describes sanctuary and location on Corso Italia; exact Catholic named OSM church polygon maps same building (Wikidata Q3950028); local event dated 10 October 2026 independently demonstrates ongoing sanctuary use.",
+        "next": "Review new canonical Place proposal with precise OSM way, pastoral title, rights-free map text, no 1962 timetable inferred."
+      },
+      "source_identity_gate": "RESOLVED",
+      "canonical_match": "NO_EXACT_PLACE_ID_CONFIRMED",
+      "canonical_collision_guard": null,
+      "publication_status": "HOLD_NO_NEW_PLACE_NO_PIN",
+      "research_next": "Review new canonical Place proposal with precise OSM way, pastoral title, rights-free map text, no 1962 timetable inferred."
+    },
+    {
+      "candidate_id": "candidate:SG-INV-0735",
+      "prior_wave": "W4",
+      "source_inventory_title": "Shrine of Our Lady of Itasy, Ampefy",
+      "country_code": "MG",
+      "previous_p12_status": "OPEN_ORIGINAL_EVIDENCE_HOLD",
+      "source_review_20261024": {
+        "stage": "PILGRIMAGE_SITE_INDICATED_OWNER_UNCERTAIN",
+        "site_title": "Îlot de la Vierge, Lake Itasy (candidate physical place)",
+        "site_scope": "Catholic pilgrimage hill and Virgin Mary statue, not independently certified current diocesan sanctuary/church",
+        "locality": "Lake Itasy near Ampefy, Madagascar",
+        "urls": [
+          "https://www.vern-tiers-monde.org/wp-content/uploads/2024/02/Madagascar_article125.pdf"
+        ],
+        "basis": "Local charity visit report describes Catholic pilgrimage to Virgin statue on hill near Itasy; lacks Catholic custodian publication, rights or precise site/entrance.",
+        "next": "Request diocesan or local custodian confirmation and site-specific map feature; research lead only."
+      },
+      "source_identity_gate": "HOLD",
+      "canonical_match": "NO_EXACT_PLACE_ID_CONFIRMED",
+      "canonical_collision_guard": null,
+      "publication_status": "HOLD_NO_NEW_PLACE_NO_PIN",
+      "research_next": "Request diocesan or local custodian confirmation and site-specific map feature; research lead only."
+    },
+    {
+      "candidate_id": "candidate:SG-INV-0475",
+      "prior_wave": "W4",
+      "source_inventory_title": "Shrine of Our Lady of the Angels, Kingston",
+      "country_code": "JM",
+      "previous_p12_status": "OPEN_ORIGINAL_EVIDENCE_HOLD",
+      "source_review_20261024": null,
+      "source_identity_gate": "HOLD",
+      "canonical_match": "NO_EXACT_PLACE_ID_CONFIRMED",
+      "canonical_collision_guard": null,
+      "publication_status": "HOLD_NO_NEW_PLACE_NO_PIN",
+      "research_next": "Retain previous evidence limitation; exact matching and custodian-source work still needed."
+    },
+    {
+      "candidate_id": "candidate:SG-INV-0696",
+      "prior_wave": "W5",
+      "source_inventory_title": "Ancient Basilica of Saint Cyprian, Carthage",
+      "country_code": "TN",
+      "previous_p12_status": "OPEN_ORIGINAL_EVIDENCE_HOLD",
+      "source_review_20261024": {
+        "stage": "SOURCE_IDENTITY_RESOLVED",
+        "site_title": "Basilica of Saint Cyprian, Carthage (archaeological monument)",
+        "site_scope": "UNESCO property component 37-012, not active Catholic church",
+        "locality": "Carthage, Tunis, Tunisia",
+        "coordinates": {
+          "lat": 36.8639444,
+          "lng": 10.3374444,
+          "precision": "UNESCO_PROPERTY_COMPONENT_APPROX_LOCATION_NOT_ENTRANCE",
+          "unesco_component": "37-012"
+        },
+        "urls": [
+          "https://whc.unesco.org/en/list/37/maps/",
+          "https://whc.unesco.org/en/list/37"
+        ],
+        "basis": "UNESCO uniquely names Basilica of Saint Cyprien property 37-012 with coordinates and protected archaeology status.",
+        "next": "Historic-Christian heritage editorial lane only. Do not label operating Catholic basilica or infer Mass access."
+      },
+      "source_identity_gate": "RESOLVED",
+      "canonical_match": "NO_EXACT_PLACE_ID_CONFIRMED",
+      "canonical_collision_guard": null,
+      "publication_status": "HOLD_NO_NEW_PLACE_NO_PIN",
+      "research_next": "Historic-Christian heritage editorial lane only. Do not label operating Catholic basilica or infer Mass access."
+    },
+    {
+      "candidate_id": "candidate:SG-INV-0230",
+      "prior_wave": "W5",
+      "source_inventory_title": "Chapel of Our Lady, Echt",
+      "country_code": "NL",
+      "previous_p12_status": "OPEN_ORIGINAL_EVIDENCE_HOLD",
+      "source_review_20261024": {
+        "stage": "GENERIC_NAME_NOT_ENOUGH_TO_MATCH",
+        "site_title": "Possible Carmelite Edith Stein pilgrimage chapel at Echt — NOT established as 'Chapel of Our Lady'",
+        "site_scope": "multiple distinct chapels and church sites in Echt",
+        "locality": "Echt, Netherlands",
+        "urls": [
+          "https://monumentenregister.cultureelerfgoed.nl/monumenten/525532",
+          "https://bedevaart.meertens.knaw.nl/plaats/186",
+          "https://www.edithstein.nl/over-edith-stein/edith-stein-route/"
+        ],
+        "basis": "Dutch state heritage registry identifies Carmelite convent at Bovenstestraat 48; national pilgrimage catalogue confirms Edith Stein cult there, not the candidate's Marian chapel title.",
+        "next": "Require patronal title, custodian and original photo before pairing any single chapel."
+      },
+      "source_identity_gate": "HOLD",
+      "canonical_match": "NO_EXACT_PLACE_ID_CONFIRMED",
+      "canonical_collision_guard": null,
+      "publication_status": "HOLD_NO_NEW_PLACE_NO_PIN",
+      "research_next": "Require patronal title, custodian and original photo before pairing any single chapel."
+    },
+    {
+      "candidate_id": "candidate:SG-INV-0229",
+      "prior_wave": "W5",
+      "source_inventory_title": "Chapel of Our Lady, Sittard",
+      "country_code": "NL",
+      "previous_p12_status": "OPEN_ORIGINAL_EVIDENCE_HOLD",
+      "source_review_20261024": {
+        "stage": "GENERIC_NAME_COLLISION_RETAIN_HOLD",
+        "site_title": "Multiple Marian chapels in Sittard",
+        "site_scope": "Marian chapel inside Heilig Hart basilica, Kollenberg and Broeksittarderweg are distinct",
+        "locality": "Sittard, Netherlands",
+        "urls": [
+          "https://bisdom-roermond.nl/parochies",
+          "https://monumentenregister.cultureelerfgoed.nl/monumenten/33711",
+          "https://www.mariakapelvinden.nl/overzicht-sittard"
+        ],
+        "basis": "Diocese names Catholic basilica; national monument register separately identifies its Mariapark; local chapel inventory records multiple physical Marian chapels.",
+        "next": "Require historic source locator naming exact chapel; no generic 'Our Lady chapel' map pin."
+      },
+      "source_identity_gate": "HOLD",
+      "canonical_match": "NO_EXACT_PLACE_ID_CONFIRMED",
+      "canonical_collision_guard": null,
+      "publication_status": "HOLD_NO_NEW_PLACE_NO_PIN",
+      "research_next": "Require historic source locator naming exact chapel; no generic 'Our Lady chapel' map pin."
+    },
+    {
+      "candidate_id": "candidate:SG-INV-0654",
+      "prior_wave": "W5",
+      "source_inventory_title": "Church of the Holy Cross, Tarlac Monastery",
+      "country_code": "PH",
+      "previous_p12_status": "OPEN_ORIGINAL_EVIDENCE_HOLD",
+      "source_review_20261024": {
+        "stage": "SOURCE_IDENTITY_RESOLVED",
+        "site_title": "Church of the Risen Christ, Monasterio de Tarlac",
+        "site_scope": "pilgrimage chapel at Monasterio de Tarlac; NOT the Holy Cross Parish in Tarlac or Concepcion",
+        "locality": "Barangay Lubigan, San Jose, Tarlac, Philippines",
+        "urls": [
+          "https://www.rvasia.org/feature-story/philippines-monasterio-de-tarlac-draws-pilgrims-fragment-christs-cross-inbox",
+          "https://www.visitmyphilippines.com/index_title_CentralLuzonSalesManual_func_single_pid_7277_Page_1_tbl_0.html",
+          "https://dioceseoftarlac.com/priests-under-each-vicariate/"
+        ],
+        "basis": "Radio Veritas Asia describes chapel on monastery complex; Philippine tourism source calls its church Church of the Risen Christ; diocese separately lists Holy Cross Parish, showing previous title collision.",
+        "next": "Keep physical monastery church identity; verify building-footprint locator and canonical rights before adding a Place; do not merge with Holy Cross parish."
+      },
+      "source_identity_gate": "RESOLVED",
+      "canonical_match": "NO_EXACT_PLACE_ID_CONFIRMED",
+      "canonical_collision_guard": null,
+      "publication_status": "HOLD_NO_NEW_PLACE_NO_PIN",
+      "research_next": "Keep physical monastery church identity; verify building-footprint locator and canonical rights before adding a Place; do not merge with Holy Cross parish."
+    },
+    {
+      "candidate_id": "candidate:SG-INV-0402",
+      "prior_wave": "W5",
+      "source_inventory_title": "National Shrine of the Sacred Heart, Milwaukee",
+      "country_code": "US",
+      "previous_p12_status": "SOURCE_CONFLICT_CONFIRMED_RETAIN_HOLD",
+      "source_review_20261024": null,
+      "source_identity_gate": "HOLD",
+      "canonical_match": "NO_EXACT_PLACE_ID_CONFIRMED",
+      "canonical_collision_guard": null,
+      "publication_status": "HOLD_NO_NEW_PLACE_NO_PIN",
+      "research_next": "Reconcile original candidate scope/title, prevent false National Shrine designation, and validate separate physical site before any new canonical Place."
+    },
+    {
+      "candidate_id": "candidate:SG-INV-0747",
+      "prior_wave": "W5",
+      "source_inventory_title": "Sanctuary of Blessed Peter To Rot, Rakunai",
+      "country_code": "PG",
+      "previous_p12_status": "OPEN_ORIGINAL_EVIDENCE_HOLD",
+      "source_review_20261024": {
+        "stage": "SAINT_TITLE_UPDATED_RAKUNAI_SHRINE_LOCATION_UNCERTAIN",
+        "site_title": "Saint Peter To Rot; anticipated Rakunai shrine and pilgrimage memorial",
+        "site_scope": "canonized saint, local shrine/relic destination requiring current physical-site verification",
+        "locality": "Rakunai, East New Britain, Papua New Guinea",
+        "urls": [
+          "https://www.causesanti.va/it/santi-e-beati/pietro-to-rot.html",
+          "https://www.vaticannews.va/en/church/news/2025-09/peter-to-rot-canonization-interview-postulator-fr-ravaioli.html"
+        ],
+        "basis": "Holy See official saints catalogue records canonization on 19 October 2025. Vatican News identifies planned Rakunai home-village shrine for relic; does not establish precise coordinates or that contemplated installation happened.",
+        "next": "Update title from Blessed to Saint in research; request shrine's post-canonization official custodian/location before map."
+      },
+      "source_identity_gate": "HOLD",
+      "canonical_match": "NO_EXACT_PLACE_ID_CONFIRMED",
+      "canonical_collision_guard": "place:PG:holy-cross-procathedral-vanimo is not Rakunai",
+      "publication_status": "HOLD_NO_NEW_PLACE_NO_PIN",
+      "research_next": "Update title from Blessed to Saint in research; request shrine's post-canonization official custodian/location before map."
+    },
+    {
+      "candidate_id": "candidate:SG-INV-0525",
+      "prior_wave": "W5",
+      "source_inventory_title": "Sanctuary of Saint Martin de Porres, Lima",
+      "country_code": "PE",
+      "previous_p12_status": "SITE_FOUND_AT_CORRECTED_LOCALITY_SCOPE_REVIEW",
+      "source_review_20261024": null,
+      "source_identity_gate": "HOLD",
+      "canonical_match": "NO_EXACT_PLACE_ID_CONFIRMED",
+      "canonical_collision_guard": "place:PE:convento-santo-domingo-lima is another building",
+      "publication_status": "HOLD_NO_NEW_PLACE_NO_PIN",
+      "research_next": "Candidate can be reconciled to Jicamarca; check exact 2026 operating status, administrative boundary and location coordinates before publication."
+    },
+    {
+      "candidate_id": "candidate:SG-INV-0521",
+      "prior_wave": "W5",
+      "source_inventory_title": "Shrine of Our Lady of Mercy, Lima",
+      "country_code": "PE",
+      "previous_p12_status": "TITLE_MISMATCH_CONFIRMED_RETAIN_HOLD",
+      "source_review_20261024": null,
+      "source_identity_gate": "HOLD",
+      "canonical_match": "NO_EXACT_PLACE_ID_CONFIRMED",
+      "canonical_collision_guard": null,
+      "publication_status": "HOLD_NO_NEW_PLACE_NO_PIN",
+      "research_next": "Correct church title if reusing Basilica de la Merced; do not infer an ecclesiastically designated shrine."
+    },
+    {
+      "candidate_id": "candidate:SG-INV-0534",
+      "prior_wave": "W5",
+      "source_inventory_title": "Shrine of Our Lady of Mount Carmel, Colonia",
+      "country_code": "UY",
+      "previous_p12_status": "OPEN_ORIGINAL_EVIDENCE_HOLD",
+      "source_review_20261024": {
+        "stage": "LOCALITY_CORRECTED_SCOPE_PENDING",
+        "site_title": "Santuario del Carmen (Carmelo)",
+        "site_scope": "separate sanctuary named in episcopal diocesan directory; the adjacent listed parish and Templo Viejo must not be equated to its exact physical building without more evidence",
+        "locality": "Carmelo, Colonia Department, Uruguay (not Colonia del Sacramento)",
+        "urls": [
+          "https://iglesiacatolica.org.uy/mercedes/"
+        ],
+        "basis": "Uruguayan bishops' directory lists Santuario del Carmen under CARMELO; 19 de Abril 383 is given for the parish of Nuestra Señora del Carmen, NOT independently proven as the sanctuary's own address.",
+        "next": "Resolve exact building/entrance relation among parish, Santuario del Carmen and Templo Viejo. Do not import 19 de Abril 383 as shrine GPS."
+      },
+      "source_identity_gate": "HOLD",
+      "canonical_match": "NO_EXACT_PLACE_ID_CONFIRMED",
+      "canonical_collision_guard": null,
+      "publication_status": "HOLD_NO_NEW_PLACE_NO_PIN",
+      "research_next": "Resolve exact building/entrance relation among parish, Santuario del Carmen and Templo Viejo. Do not import 19 de Abril 383 as shrine GPS."
+    },
+    {
+      "candidate_id": "candidate:SG-INV-0530",
+      "prior_wave": "W5",
+      "source_inventory_title": "Shrine of Our Lady of the Assumption, Asunción",
+      "country_code": "PY",
+      "previous_p12_status": "DEVOTION_NOT_PHYSICAL_SHRINE_RETAIN_HOLD",
+      "source_review_20261024": null,
+      "source_identity_gate": "HOLD",
+      "canonical_match": "NO_EXACT_PLACE_ID_CONFIRMED",
+      "canonical_collision_guard": null,
+      "publication_status": "HOLD_NO_NEW_PLACE_NO_PIN",
+      "research_next": "Identify explicit diocesan sanctuary title or reject the asserted shrine category; cathedral and monument require separate identities."
+    },
+    {
+      "candidate_id": "candidate:SG-INV-0676",
+      "prior_wave": "W5",
+      "source_inventory_title": "Shrine of Saint Jude, Kuala Lumpur",
+      "country_code": "MY",
+      "previous_p12_status": "SOURCE_CONFLICT_CONFIRMED_RETAIN_HOLD",
+      "source_review_20261024": null,
+      "source_identity_gate": "HOLD",
+      "canonical_match": "NO_EXACT_PLACE_ID_CONFIRMED",
+      "canonical_collision_guard": null,
+      "publication_status": "HOLD_NO_NEW_PLACE_NO_PIN",
+      "research_next": "Keep the Rawang church and a putative Kuala Lumpur shrine distinct until an independent formal shrine reference is documented."
+    },
+    {
+      "candidate_id": "candidate:SG-INV-0612",
+      "prior_wave": "LEGACY",
+      "source_inventory_title": "Our Lady of Lourdes Shrine, Tianjin",
+      "country_code": "CN",
+      "previous_p12_status": "OPEN_ORIGINAL_EVIDENCE_HOLD",
+      "source_review_20261024": null,
+      "source_identity_gate": "HOLD",
+      "canonical_match": "NO_EXACT_PLACE_ID_CONFIRMED",
+      "canonical_collision_guard": null,
+      "publication_status": "HOLD_NO_NEW_PLACE_NO_PIN",
+      "research_next": "Retain previous evidence limitation; exact matching and custodian-source work still needed."
+    },
+    {
+      "candidate_id": "candidate:SG-INV-0456",
+      "prior_wave": "LEGACY",
+      "source_inventory_title": "Shrine of Our Lady of Guadalupe, Matagalpa",
+      "country_code": "NI",
+      "previous_p12_status": "OPEN_ORIGINAL_EVIDENCE_HOLD",
+      "source_review_20261024": {
+        "stage": "DISTINCT_MATAGALPA_DEVOTIONS_COLLISION",
+        "site_title": "Ermita de Guadalupe (Matagalpa city) vs Montaña de la Paz / Santuario de Guadalupe (Apante)",
+        "site_scope": "two documented places; original generic Matagalpa Guadalupe shrine could refer to either",
+        "locality": "Matagalpa, Nicaragua",
+        "urls": [
+          "https://mapanicaragua.com/en/religious-festivities-of-matagalpa/",
+          "https://www.heartstouchinghearts.org/es/mountain-of-the-peace-2/",
+          "https://centromedjugorje.org/noticias-medjugorje/apante-la-montana-la-paz-matagalpa/"
+        ],
+        "basis": "National tourism portal starts Guadalupe procession at urban hermitage; sanctuary fundraiser says separate diocesan Santuario at Apante with giant Guadalupe image and Franciscan Renewal custodians.",
+        "next": "Split records if independently evidenced; determine intended place from original inventory before any new canonical Place."
+      },
+      "source_identity_gate": "HOLD",
+      "canonical_match": "NO_EXACT_PLACE_ID_CONFIRMED",
+      "canonical_collision_guard": "place:NI:cuapa-national-shrine is another devotion/site",
+      "publication_status": "HOLD_NO_NEW_PLACE_NO_PIN",
+      "research_next": "Split records if independently evidenced; determine intended place from original inventory before any new canonical Place."
+    },
+    {
+      "candidate_id": "candidate:SG-INV-0683",
+      "prior_wave": "LEGACY",
+      "source_inventory_title": "Shrine of Our Lady of Fátima, Dili",
+      "country_code": "TL",
+      "previous_p12_status": "OPEN_ORIGINAL_EVIDENCE_HOLD",
+      "source_review_20261024": {
+        "stage": "DILI_SHRINE_UNPROVEN_REGION_TITLE_COLLISION",
+        "site_title": "Our Lady of Fatima titles elsewhere in Archdiocese of Dili",
+        "site_scope": "Diocesan list names parishes Nossa Senhora de Fátima in Railaco and Atauro, not thereby a separate shrine within Dili city",
+        "locality": "Timor-Leste; Dili city specifically unverified",
+        "urls": [
+          "https://arqddili.tl/igreja-particular/",
+          "https://www.santuario-fatima.pt/en/locations/maternidade-escola-nossa-senhora-fatima"
+        ],
+        "basis": "2026 diocesan parish list distinguishes Fátima parishes in Railaco (Ermera) and Atauro (municipality now distinct), while the Fátima-associated maternity-school in Dili is not a shrine.",
+        "next": "Find literal diocesan shrine designation and physical address in Dili; don't transplant Atauro/Railaco chapel coordinates."
+      },
+      "source_identity_gate": "HOLD",
+      "canonical_match": "NO_EXACT_PLACE_ID_CONFIRMED",
+      "canonical_collision_guard": null,
+      "publication_status": "HOLD_NO_NEW_PLACE_NO_PIN",
+      "research_next": "Find literal diocesan shrine designation and physical address in Dili; don't transplant Atauro/Railaco chapel coordinates."
+    },
+    {
+      "candidate_id": "UNMAPPED-1",
+      "prior_wave": "LEGACY",
+      "source_inventory_title": "Unreconciled historical record",
+      "country_code": null,
+      "previous_p12_status": "OPEN_ORIGINAL_EVIDENCE_HOLD",
+      "source_review_20261024": null,
+      "source_identity_gate": "HOLD",
+      "canonical_match": "NO_EXACT_PLACE_ID_CONFIRMED",
+      "canonical_collision_guard": null,
+      "publication_status": "HOLD_NO_NEW_PLACE_NO_PIN",
+      "research_next": "Retain previous evidence limitation; exact matching and custodian-source work still needed."
+    },
+    {
+      "candidate_id": "UNMAPPED-2",
+      "prior_wave": "LEGACY",
+      "source_inventory_title": "Unreconciled historical record",
+      "country_code": null,
+      "previous_p12_status": "OPEN_ORIGINAL_EVIDENCE_HOLD",
+      "source_review_20261024": null,
+      "source_identity_gate": "HOLD",
+      "canonical_match": "NO_EXACT_PLACE_ID_CONFIRMED",
+      "canonical_collision_guard": null,
+      "publication_status": "HOLD_NO_NEW_PLACE_NO_PIN",
+      "research_next": "Retain previous evidence limitation; exact matching and custodian-source work still needed."
+    },
+    {
+      "candidate_id": "UNMAPPED-3",
+      "prior_wave": "LEGACY",
+      "source_inventory_title": "Unreconciled historical record",
+      "country_code": null,
+      "previous_p12_status": "OPEN_ORIGINAL_EVIDENCE_HOLD",
+      "source_review_20261024": null,
+      "source_identity_gate": "HOLD",
+      "canonical_match": "NO_EXACT_PLACE_ID_CONFIRMED",
+      "canonical_collision_guard": null,
+      "publication_status": "HOLD_NO_NEW_PLACE_NO_PIN",
+      "research_next": "Retain previous evidence limitation; exact matching and custodian-source work still needed."
+    }
+  ],
+  "high_priority_source_resolutions": [
+    "candidate:SG-INV-0093",
+    "candidate:SG-INV-0696",
+    "candidate:SG-INV-0654"
+  ],
+  "map_or_publication_proposals": [
+    {
+      "candidate_id": "candidate:SG-INV-0093",
+      "status": "NEXT_COHORT_IF_ACCEPTED",
+      "source_footprint": "https://www.openstreetmap.org/way/48892861",
+      "lat": 44.63312,
+      "lng": 8.63989,
+      "precision": "SITE_BUILDING_NOT_ENTRANCE"
+    },
+    {
+      "candidate_id": "candidate:SG-INV-0696",
+      "status": "HISTORIC_HERITAGE_ONLY",
+      "source": "https://whc.unesco.org/en/list/37/maps/",
+      "unesco_component": "37-012"
+    },
+    {
+      "candidate_id": "candidate:SG-INV-0654",
+      "status": "NEEDS_EXACT_GEOMETRY_CHECK_BEFORE_PUBLICATION",
+      "source": "https://www.rvasia.org/feature-story/philippines-monasterio-de-tarlac-draws-pilgrims-fragment-christs-cross-inbox"
+    }
+  ]
+}
