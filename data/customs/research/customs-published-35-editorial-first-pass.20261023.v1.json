@@ -16,16 +16,21 @@
     "local_2025_2026_events_not_annual_schedules": true,
     "roman_ritual_not_proof_of_local_custom": true,
     "no_1962_mass_or_calendar_modifications": true,
-    "do_not_auto_promote_unpublished_research": true
+    "do_not_auto_promote_unpublished_research": true,
+    "contextual_history_sources_are_not_custom_attestations": true,
+    "contextual_history_sources_are_displayed_separately": true
   },
   "counts": {
     "published_records": 35,
     "p1_priority": 13,
     "p2_priority": 22,
-    "targeted_primary_text_reviews": 10,
+    "targeted_primary_text_reviews": 11,
     "history_duplicate_fixes_proposed": 11,
     "fully_editorially_certified": 0,
-    "new_publications": 0
+    "new_publications": 0,
+    "historical_context_witnesses": 4,
+    "p1_source_wording_discrepancies_corrected": 1,
+    "history_narratives_with_direct_institutional_witnesses": 4
   },
   "records": [
     {
@@ -391,17 +396,18 @@
       "language_structure": "EN_FR_NONEMPTY_NOT_SEMANTICALLY_CERTIFIED",
       "review_stage": "EDITORIAL_FIRST_PASS_NOT_FINAL_CERTIFIED",
       "priority": "P1",
-      "claim_boundary": "The Candlemas lexicon requires a close citation check for the separate domestic retention/near-the-dying claim, not merely the church feast.",
+      "claim_boundary": "Original French liturgical lexicon explicitly says blessed Candlemas candles are taken home and traditionally burned 'auprès des morts' (beside the deceased), NOT 'auprès des mourants' (beside the dying); corresponding EN/FR article, folio and source-registry text corrected.",
       "representative_source_id": "ECF-CHANDLEUR-HOME",
       "representative_source_url": "https://liturgie.catholique.fr/lexique/chandeleur/",
       "all_attestation_source_ids": [
         "ECF-CHANDLEUR-HOME"
       ],
-      "primary_text_review_this_batch": "REFERENCE_CROSSWALK_ONLY",
+      "primary_text_review_this_batch": "TARGETED_MATCH_AND_SCOPE",
       "verified_witness_urls": [],
       "history_copy_action": "PRESERVED",
       "new_custom_approved": false,
-      "needs_additional_historical_or_regional_signoff": true
+      "needs_additional_historical_or_regional_signoff": true,
+      "source_text_disposition": "EXACT_PRIMARY_FRENCH_WITNESS_CHECKED_AND_PUBLIC_COPY_CORRECTED"
     },
     {
       "custom_id": "DOM-013",
@@ -792,9 +798,13 @@
         "https://www.erzbistum-koeln.de/presse_und_medien/magazin/Der-Adventskranz-Bedeutung-und-Ursprung-des-Adventskranzes/",
         "https://www.usccb.org/prayers/blessing-advent-wreath"
       ],
-      "history_copy_action": "REPLACED_DESCRIPTION_DUPLICATION_SOURCE_BOUNDED",
+      "history_copy_action": "PUBLISHED_SOURCE_BOUNDED_INSTITUTIONAL_HISTORICAL_CONTEXT",
       "new_custom_approved": false,
-      "needs_additional_historical_or_regional_signoff": true
+      "needs_additional_historical_or_regional_signoff": true,
+      "historical_context_source_ids": [
+        "EBK-ADVENT-WREATH-WICHERN-2025"
+      ],
+      "historical_context_decision": "VERIFIED_INSTITUTIONAL_WITNESS_WITH_EXPLICIT_LIMITATIONS"
     },
     {
       "custom_id": "ADVT-002",
@@ -821,9 +831,13 @@
       ],
       "primary_text_review_this_batch": "REFERENCE_CROSSWALK_ONLY",
       "verified_witness_urls": [],
-      "history_copy_action": "REPLACED_DESCRIPTION_DUPLICATION_SOURCE_BOUNDED",
+      "history_copy_action": "PUBLISHED_SOURCE_BOUNDED_INSTITUTIONAL_HISTORICAL_CONTEXT",
       "new_custom_approved": false,
-      "needs_additional_historical_or_regional_signoff": true
+      "needs_additional_historical_or_regional_signoff": true,
+      "historical_context_source_ids": [
+        "EBK-ADVENT-MANGER-STRAW-2025"
+      ],
+      "historical_context_decision": "VERIFIED_INSTITUTIONAL_WITNESS_WITH_EXPLICIT_LIMITATIONS"
     },
     {
       "custom_id": "ADVT-003",
@@ -853,9 +867,13 @@
         "https://www.gob.mx/cultura/articulos/54852",
         "https://www.usccb.org/prayer-and-worship/liturgical-year/advent/advent-december-16"
       ],
-      "history_copy_action": "REPLACED_DESCRIPTION_DUPLICATION_SOURCE_BOUNDED",
+      "history_copy_action": "PUBLISHED_SOURCE_BOUNDED_INSTITUTIONAL_HISTORICAL_CONTEXT",
       "new_custom_approved": false,
-      "needs_additional_historical_or_regional_signoff": true
+      "needs_additional_historical_or_regional_signoff": true,
+      "historical_context_source_ids": [
+        "MEX-CULTURA-POSADAS-ORIGINS-2017"
+      ],
+      "historical_context_decision": "VERIFIED_INSTITUTIONAL_WITNESS_WITH_EXPLICIT_LIMITATIONS"
     },
     {
       "custom_id": "XMAS-001",
@@ -1097,9 +1115,14 @@
         "https://udayton.edu/marianlibrary/marysgardens/b/background-on-marys-gardens.php",
         "https://www.catholicculture.org/commentary/annunciation-and-lent-celebrating-new-life-through-mary-garden/"
       ],
-      "history_copy_action": "REPLACED_DESCRIPTION_DUPLICATION_SOURCE_BOUNDED",
+      "history_copy_action": "PUBLISHED_SOURCE_BOUNDED_INSTITUTIONAL_HISTORICAL_CONTEXT",
       "new_custom_approved": false,
-      "needs_additional_historical_or_regional_signoff": true
+      "needs_additional_historical_or_regional_signoff": true,
+      "historical_context_source_ids": [
+        "DAYTON-MARIAN-MARY-GARDENS-HISTORY"
+      ],
+      "historical_context_decision": "VERIFIED_INSTITUTIONAL_WITNESS_WITH_EXPLICIT_LIMITATIONS"
     }
-  ]
+  ],
+  "history_source_registry_property": "data/customs/source-registry.v1.json#historical_context_sources"
 }
