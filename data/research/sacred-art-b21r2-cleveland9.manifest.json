@@ -1,0 +1,179 @@
+{
+  "schema_version": "1.0",
+  "wave": "B21R2",
+  "purpose": "Retrieve CC0 CMA print derivatives for eight oversized originals, recheck exact CMA subpart accession for one API 404; never count derivatives as original masters",
+  "source_manifest": "data/research/sacred-art-b21-museum95.manifest.json",
+  "records": [
+    {
+      "asset_source_id": "AO-SRC-B21-CMA-1929-920",
+      "record_id": "cma-111435",
+      "source_sheet": "PAINTING CATALOGUE",
+      "source_row": 310,
+      "title": "Coronation of the Virgin",
+      "artist": "Master of the Fröndenberg Altarpiece",
+      "source_url": "https://clevelandart.org/art/1929.920",
+      "api_type": "cleveland",
+      "download_gate": "METADATA_FIRST",
+      "recorded_rights": "",
+      "legacy_decision": "PREVIOUSLY_RATED_ACCEPTABLE",
+      "related_records": [
+        "PAINTING CATALOGUE:cma-111435"
+      ],
+      "object_id": "1929.920",
+      "planned_retrieval": "CMA_PRINT_DERIVATIVE_3400PX",
+      "prior_original_status": "SOURCE_ORIGINAL_TOO_LARGE"
+    },
+    {
+      "asset_source_id": "AO-SRC-B21-CMA-1966-237-",
+      "record_id": "cma-142473",
+      "source_sheet": "PAINTING CATALOGUE",
+      "source_row": 313,
+      "title": "Virgin and Child with Saints",
+      "artist": "Berlinghiero",
+      "source_url": "https://clevelandart.org/art/1966.237.a",
+      "api_type": "cleveland",
+      "download_gate": "METADATA_FIRST",
+      "recorded_rights": "",
+      "legacy_decision": "PREVIOUSLY_RATED_ACCEPTABLE",
+      "related_records": [
+        "PAINTING CATALOGUE:cma-142473"
+      ],
+      "object_id": "1966.237.",
+      "planned_retrieval": "EXACT_ACCESSION_RECHECK",
+      "prior_original_status": "API_404_STALE_PARSING"
+    },
+    {
+      "asset_source_id": "AO-SRC-B21-CMA-1961-40",
+      "record_id": "cma-136922",
+      "source_sheet": "PAINTING CATALOGUE",
+      "source_row": 314,
+      "title": "Virgin and Child with Saints",
+      "artist": "Ugolino di Nerio",
+      "source_url": "https://clevelandart.org/art/1961.40",
+      "api_type": "cleveland",
+      "download_gate": "METADATA_FIRST",
+      "recorded_rights": "",
+      "legacy_decision": "PREVIOUSLY_RATED_ACCEPTABLE",
+      "related_records": [
+        "PAINTING CATALOGUE:cma-136922"
+      ],
+      "object_id": "1961.40",
+      "planned_retrieval": "CMA_PRINT_DERIVATIVE_3400PX",
+      "prior_original_status": "SOURCE_ORIGINAL_TOO_LARGE"
+    },
+    {
+      "asset_source_id": "AO-SRC-B21-CMA-1936-18",
+      "record_id": "cma-115394",
+      "source_sheet": "PAINTING CATALOGUE",
+      "source_row": 331,
+      "title": "Adoration of the Magi",
+      "artist": "Konrad Laib",
+      "source_url": "https://clevelandart.org/art/1936.18",
+      "api_type": "cleveland",
+      "download_gate": "METADATA_FIRST",
+      "recorded_rights": "CC0",
+      "legacy_decision": "PREVIOUSLY_RATED_ACCEPTABLE",
+      "related_records": [
+        "PAINTING CATALOGUE:cma-115394"
+      ],
+      "object_id": "1936.18",
+      "planned_retrieval": "CMA_PRINT_DERIVATIVE_3400PX",
+      "prior_original_status": "SOURCE_ORIGINAL_TOO_LARGE"
+    },
+    {
+      "asset_source_id": "AO-SRC-B21-CMA-1964-150",
+      "record_id": "cma-140148",
+      "source_sheet": "PAINTING CATALOGUE",
+      "source_row": 367,
+      "title": "Pair of Panels from a Triptych: The Archangel Michael and St. Anthony Abbot",
+      "artist": "Fra Filippo Lippi",
+      "source_url": "https://clevelandart.org/art/1964.150",
+      "api_type": "cleveland",
+      "download_gate": "METADATA_FIRST",
+      "recorded_rights": "CC0",
+      "legacy_decision": "PREVIOUSLY_RATED_ACCEPTABLE",
+      "related_records": [
+        "PAINTING CATALOGUE:cma-140148"
+      ],
+      "object_id": "1964.150",
+      "planned_retrieval": "CMA_PRINT_DERIVATIVE_3400PX",
+      "prior_original_status": "SOURCE_ORIGINAL_TOO_LARGE"
+    },
+    {
+      "asset_source_id": "AO-SRC-B21-CMA-1932-227",
+      "record_id": "cma-113202",
+      "source_sheet": "PAINTING CATALOGUE",
+      "source_row": 423,
+      "title": "The Holy Family with Saint John the Baptist and Saint Margaret",
+      "artist": "Filippino Lippi",
+      "source_url": "https://clevelandart.org/art/1932.227",
+      "api_type": "cleveland",
+      "download_gate": "METADATA_FIRST",
+      "recorded_rights": "CC0",
+      "legacy_decision": "UNREVIEWED",
+      "related_records": [
+        "PAINTING CATALOGUE:cma-113202"
+      ],
+      "object_id": "1932.227",
+      "planned_retrieval": "CMA_PRINT_DERIVATIVE_3400PX",
+      "prior_original_status": "SOURCE_ORIGINAL_TOO_LARGE"
+    },
+    {
+      "asset_source_id": "AO-SRC-B21-CMA-2013-312",
+      "record_id": "cma-170814",
+      "source_sheet": "PAINTING CATALOGUE",
+      "source_row": 428,
+      "title": "The Holy Family",
+      "artist": "Unknown old master",
+      "source_url": "https://clevelandart.org/art/2013.312",
+      "api_type": "cleveland",
+      "download_gate": "METADATA_FIRST",
+      "recorded_rights": "CC0",
+      "legacy_decision": "UNREVIEWED",
+      "related_records": [
+        "PAINTING CATALOGUE:cma-170814"
+      ],
+      "object_id": "2013.312",
+      "planned_retrieval": "CMA_PRINT_DERIVATIVE_3400PX",
+      "prior_original_status": "SOURCE_ORIGINAL_TOO_LARGE"
+    },
+    {
+      "asset_source_id": "AO-SRC-B21-CMA-2019-168",
+      "record_id": "cma-370119",
+      "source_sheet": "PAINTING CATALOGUE",
+      "source_row": 429,
+      "title": "Holy Family with the Mystic Marriage of Saint Catherine",
+      "artist": "Maso da San Friano",
+      "source_url": "https://clevelandart.org/art/2019.168",
+      "api_type": "cleveland",
+      "download_gate": "METADATA_FIRST",
+      "recorded_rights": "CC0",
+      "legacy_decision": "UNREVIEWED",
+      "related_records": [
+        "PAINTING CATALOGUE:cma-370119"
+      ],
+      "object_id": "2019.168",
+      "planned_retrieval": "CMA_PRINT_DERIVATIVE_3400PX",
+      "prior_original_status": "SOURCE_ORIGINAL_TOO_LARGE"
+    },
+    {
+      "asset_source_id": "AO-SRC-B21-CMA-2017-192",
+      "record_id": "cma-78982",
+      "source_sheet": "PAINTING CATALOGUE",
+      "source_row": 440,
+      "title": "The Resurrection of Christ",
+      "artist": "Johann König",
+      "source_url": "https://clevelandart.org/art/2017.192",
+      "api_type": "cleveland",
+      "download_gate": "METADATA_FIRST",
+      "recorded_rights": "CC0",
+      "legacy_decision": "UNREVIEWED",
+      "related_records": [
+        "PAINTING CATALOGUE:cma-78982"
+      ],
+      "object_id": "2017.192",
+      "planned_retrieval": "CMA_PRINT_DERIVATIVE_3400PX",
+      "prior_original_status": "SOURCE_ORIGINAL_TOO_LARGE"
+    }
+  ]
+}
