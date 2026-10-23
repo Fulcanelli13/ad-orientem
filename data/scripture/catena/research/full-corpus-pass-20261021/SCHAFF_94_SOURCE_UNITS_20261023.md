@@ -29,6 +29,8 @@ Printed homily headings have been enumerated **I–XC**, with three OCR mistakes
 
 The four *Harmony* book headings are reliable enough for book-level units. **The printed Augustine chapter headings are not yet sufficiently reliable for section boundaries**: two-column OCR places some chapter headings out of numeric order (e.g. Book IV chapter II before chapter I). We must not silently assign question/answer words to the wrong chapter. Homily-level segmentation is a more stable first source unit for Chrysostom.
 
+The latest extraction now records **123 visible Augustine chapter-heading candidates** across those four books, preserving every original heading line and SHA-256. These are chapter *locators*, not 123 completed chapter text sections: some expected numbered headings are missing from OCR and others appear out of order. The regression explicitly tests these limitations so future code cannot silently convert uncertain headings into authoritative chapter boundaries.
+
 ## Internal triage result, not an author attribution claim
 
 | Screening class | Augustine *Harmony* | Chrysostom Matthew |
