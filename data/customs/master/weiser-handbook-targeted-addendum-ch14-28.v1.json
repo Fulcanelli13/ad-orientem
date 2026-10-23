@@ -10,7 +10,7 @@
   },
   "scope": "Independent comprehensive customs research. Directly located targeted source passages ch14–28, NOT exhaustive full-chapter line-by-line review.",
   "summary": {
-    "nested_source_details": 112,
+    "nested_source_details": 121,
     "source_chapters_covered": [
       14,
       15,
@@ -20,6 +20,7 @@
       19,
       20,
       21,
+      22,
       23,
       24,
       25,
@@ -27,10 +28,11 @@
       27,
       28
     ],
-    "unique_printed_page_locations": 39,
+    "unique_printed_page_locations": 42,
     "independently_verified_new_distinct_customs": 0,
     "additional_nonoverlapping_base_source_observations": 0,
-    "app_published": 0
+    "app_published": 0,
+    "ch22_folk_context_note": "Harvest mother/doll cases are pre-Christian/comparative folklore as Weiser presents them, not automatically approved Roman Catholic customs"
   },
   "caution": "Multiple nested details may be facets of one previous source observation; no automatic identity creation, no endorsement of popular magic or of claimed original rites. Separate Eastern and historical ceremonial descriptions from Roman household practice.",
   "entries": [
@@ -2713,6 +2715,222 @@
       "parent": {
         "source_observation_id": "WEI58-28-027",
         "existing_index_label": "St Lucy smoke as disease-protection charm",
+        "relationship": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE"
+      },
+      "preservation": "RETAINED_NESTED_SOURCE_DETAIL_NOT_ADDITIONAL_CERTIFIED_DISTINCT_CUSTOM",
+      "status": "DIRECT_OCR_PASSAGE_LOCATED_PDF_SELECTIVELY_SCREEN_CHECKED",
+      "independent_corrob": "NOT_TESTED_IN_THIS_PASS",
+      "current_practice_claim": "NOT_ESTABLISHED",
+      "denomination_or_rite_validation": "NOT_EVALUATED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "WEI58-DETAIL-B-113",
+      "independently_worded_label": "Harvest baby last sheaf carried in a folk procession",
+      "evidence_class": "FOLK_PRECHRISTIAN_CONTEXT",
+      "source_book": "WEISER-HANDBOOK-1958",
+      "location": {
+        "printed_page": 269,
+        "ocr_line_start": 10453,
+        "ocr_line_end": 10459,
+        "pdf_page_zero_based": 286,
+        "pdf_page_offset_verified_by_selected_screenshots": true
+      },
+      "parent": {
+        "source_observation_id": "WEI58-22-003",
+        "existing_index_label": "Pre-Christian last-sheaf harvest mother figures",
+        "relationship": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE"
+      },
+      "preservation": "RETAINED_NESTED_SOURCE_DETAIL_NOT_ADDITIONAL_CERTIFIED_DISTINCT_CUSTOM",
+      "status": "DIRECT_OCR_PASSAGE_LOCATED_PDF_SELECTIVELY_SCREEN_CHECKED",
+      "independent_corrob": "NOT_TESTED_IN_THIS_PASS",
+      "current_practice_claim": "NOT_ESTABLISHED",
+      "denomination_or_rite_validation": "NOT_EVALUATED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "WEI58-DETAIL-B-114",
+      "independently_worded_label": "Austrian Erntebraut with last-sheaf wreath as harvest bride",
+      "evidence_class": "FOLK_PRECHRISTIAN_CONTEXT",
+      "source_book": "WEISER-HANDBOOK-1958",
+      "location": {
+        "printed_page": 269,
+        "ocr_line_start": 10459,
+        "ocr_line_end": 10461,
+        "pdf_page_zero_based": 286,
+        "pdf_page_offset_verified_by_selected_screenshots": true
+      },
+      "parent": {
+        "source_observation_id": "WEI58-22-003",
+        "existing_index_label": "Pre-Christian last-sheaf harvest mother figures",
+        "relationship": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE"
+      },
+      "preservation": "RETAINED_NESTED_SOURCE_DETAIL_NOT_ADDITIONAL_CERTIFIED_DISTINCT_CUSTOM",
+      "status": "DIRECT_OCR_PASSAGE_LOCATED_PDF_SELECTIVELY_SCREEN_CHECKED",
+      "independent_corrob": "NOT_TESTED_IN_THIS_PASS",
+      "current_practice_claim": "NOT_ESTABLISHED",
+      "denomination_or_rite_validation": "NOT_EVALUATED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "WEI58-DETAIL-B-115",
+      "independently_worded_label": "English horkey cart and Scottish kirn doll last-sheaf practices",
+      "evidence_class": "FOLK_PRECHRISTIAN_CONTEXT",
+      "source_book": "WEISER-HANDBOOK-1958",
+      "location": {
+        "printed_page": 269,
+        "ocr_line_start": 10461,
+        "ocr_line_end": 10464,
+        "pdf_page_zero_based": 286,
+        "pdf_page_offset_verified_by_selected_screenshots": true
+      },
+      "parent": {
+        "source_observation_id": "WEI58-22-003",
+        "existing_index_label": "Pre-Christian last-sheaf harvest mother figures",
+        "relationship": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE"
+      },
+      "preservation": "RETAINED_NESTED_SOURCE_DETAIL_NOT_ADDITIONAL_CERTIFIED_DISTINCT_CUSTOM",
+      "status": "DIRECT_OCR_PASSAGE_LOCATED_PDF_SELECTIVELY_SCREEN_CHECKED",
+      "independent_corrob": "NOT_TESTED_IN_THIS_PASS",
+      "current_practice_claim": "NOT_ESTABLISHED",
+      "denomination_or_rite_validation": "NOT_EVALUATED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "WEI58-DETAIL-B-116",
+      "independently_worded_label": "Northern French harvest workers sing Kyrie-o-ole from the last wagon",
+      "evidence_class": "REGIONAL_HARVEST_SONG",
+      "source_book": "WEISER-HANDBOOK-1958",
+      "location": {
+        "printed_page": 269,
+        "ocr_line_start": 10465,
+        "ocr_line_end": 10470,
+        "pdf_page_zero_based": 286,
+        "pdf_page_offset_verified_by_selected_screenshots": true
+      },
+      "parent": {
+        "source_observation_id": "WEI58-22-004",
+        "existing_index_label": "Harvesters sing Kyrie-o-ole with last wagon",
+        "relationship": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE"
+      },
+      "preservation": "RETAINED_NESTED_SOURCE_DETAIL_NOT_ADDITIONAL_CERTIFIED_DISTINCT_CUSTOM",
+      "status": "DIRECT_OCR_PASSAGE_LOCATED_PDF_SELECTIVELY_SCREEN_CHECKED",
+      "independent_corrob": "NOT_TESTED_IN_THIS_PASS",
+      "current_practice_claim": "NOT_ESTABLISHED",
+      "denomination_or_rite_validation": "NOT_EVALUATED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "WEI58-DETAIL-B-117",
+      "independently_worded_label": "Southern French decorated cross-shaped last sheaf stored at home",
+      "evidence_class": "REGIONAL_HARVEST_SYMBOL",
+      "source_book": "WEISER-HANDBOOK-1958",
+      "location": {
+        "printed_page": 269,
+        "ocr_line_start": 10470,
+        "ocr_line_end": 10474,
+        "pdf_page_zero_based": 286,
+        "pdf_page_offset_verified_by_selected_screenshots": true
+      },
+      "parent": {
+        "source_observation_id": "WEI58-22-005",
+        "existing_index_label": "Cross-shaped last sheaf decorated in household",
+        "relationship": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE"
+      },
+      "preservation": "RETAINED_NESTED_SOURCE_DETAIL_NOT_ADDITIONAL_CERTIFIED_DISTINCT_CUSTOM",
+      "status": "DIRECT_OCR_PASSAGE_LOCATED_PDF_SELECTIVELY_SCREEN_CHECKED",
+      "independent_corrob": "NOT_TESTED_IN_THIS_PASS",
+      "current_practice_claim": "NOT_ESTABLISHED",
+      "denomination_or_rite_validation": "NOT_EVALUATED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "WEI58-DETAIL-B-118",
+      "independently_worded_label": "Hungarian Assumption harvest delegates bring first produce to procession",
+      "evidence_class": "REGIONAL_HARVEST_PROCESSION",
+      "source_book": "WEISER-HANDBOOK-1958",
+      "location": {
+        "printed_page": 270,
+        "ocr_line_start": 10494,
+        "ocr_line_end": 10502,
+        "pdf_page_zero_based": 287,
+        "pdf_page_offset_verified_by_selected_screenshots": true
+      },
+      "parent": {
+        "source_observation_id": "WEI58-22-007",
+        "existing_index_label": "Harvest produce processions near Assumption feast",
+        "relationship": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE"
+      },
+      "preservation": "RETAINED_NESTED_SOURCE_DETAIL_NOT_ADDITIONAL_CERTIFIED_DISTINCT_CUSTOM",
+      "status": "DIRECT_OCR_PASSAGE_LOCATED_PDF_SELECTIVELY_SCREEN_CHECKED",
+      "independent_corrob": "NOT_TESTED_IN_THIS_PASS",
+      "current_practice_claim": "NOT_ESTABLISHED",
+      "denomination_or_rite_validation": "NOT_EVALUATED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "WEI58-DETAIL-B-119",
+      "independently_worded_label": "Polish harvest wreaths from last sheaves blessed at church",
+      "evidence_class": "REGIONAL_HARVEST_BLESSING",
+      "source_book": "WEISER-HANDBOOK-1958",
+      "location": {
+        "printed_page": 270,
+        "ocr_line_start": 10502,
+        "ocr_line_end": 10507,
+        "pdf_page_zero_based": 287,
+        "pdf_page_offset_verified_by_selected_screenshots": true
+      },
+      "parent": {
+        "source_observation_id": "WEI58-22-006",
+        "existing_index_label": "Polish blessed harvest wreaths",
+        "relationship": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE"
+      },
+      "preservation": "RETAINED_NESTED_SOURCE_DETAIL_NOT_ADDITIONAL_CERTIFIED_DISTINCT_CUSTOM",
+      "status": "DIRECT_OCR_PASSAGE_LOCATED_PDF_SELECTIVELY_SCREEN_CHECKED",
+      "independent_corrob": "NOT_TESTED_IN_THIS_PASS",
+      "current_practice_claim": "NOT_ESTABLISHED",
+      "denomination_or_rite_validation": "NOT_EVALUATED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "WEI58-DETAIL-B-120",
+      "independently_worded_label": "Martinmas thanksgiving Mass followed by village games and harvest festivities",
+      "evidence_class": "REGIONAL_HARVEST_FEAST",
+      "source_book": "WEISER-HANDBOOK-1958",
+      "location": {
+        "printed_page": 270,
+        "ocr_line_start": 10508,
+        "ocr_line_end": 10513,
+        "pdf_page_zero_based": 287,
+        "pdf_page_offset_verified_by_selected_screenshots": true
+      },
+      "parent": {
+        "source_observation_id": "WEI58-22-008",
+        "existing_index_label": "Martinmas thanksgiving Mass and village harvest feasting",
+        "relationship": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE"
+      },
+      "preservation": "RETAINED_NESTED_SOURCE_DETAIL_NOT_ADDITIONAL_CERTIFIED_DISTINCT_CUSTOM",
+      "status": "DIRECT_OCR_PASSAGE_LOCATED_PDF_SELECTIVELY_SCREEN_CHECKED",
+      "independent_corrob": "NOT_TESTED_IN_THIS_PASS",
+      "current_practice_claim": "NOT_ESTABLISHED",
+      "denomination_or_rite_validation": "NOT_EVALUATED",
+      "app_publication": "NONE"
+    },
+    {
+      "id": "WEI58-DETAIL-B-121",
+      "independently_worded_label": "Martinmas goose with first harvest wine at table",
+      "evidence_class": "REGIONAL_FESTIVE_FOOD",
+      "source_book": "WEISER-HANDBOOK-1958",
+      "location": {
+        "printed_page": 271,
+        "ocr_line_start": 10514,
+        "ocr_line_end": 10522,
+        "pdf_page_zero_based": 288,
+        "pdf_page_offset_verified_by_selected_screenshots": true
+      },
+      "parent": {
+        "source_observation_id": "WEI58-22-009",
+        "existing_index_label": "St Martin goose at harvest table",
         "relationship": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE"
       },
       "preservation": "RETAINED_NESTED_SOURCE_DETAIL_NOT_ADDITIONAL_CERTIFIED_DISTINCT_CUSTOM",
