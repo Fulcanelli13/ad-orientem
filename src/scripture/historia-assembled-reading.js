@@ -184,7 +184,8 @@ export function assembleHistoriaReading(proof, edition, getWitness) {
           ownerUnitId: beat.id,
           text: beat.editorialReadingCandidate?.text || beat.explanation,
           sourceReference: beat.sourceReference,
-          sourceReferences: beat.editorialReadingCandidate?.sourceReferences || [beat.sourceReference],
+          sourceReferences: beat.editorialReadingCandidate?.sourceReferencesByEdition?.[edition] ||
+            beat.editorialReadingCandidate?.sourceReferences || [beat.sourceReference],
           originalDeskText: beat.explanation, editorialCopyStatus: beat.editorialReadingCandidate?.status || "ORIGINAL_DESK_TEXT_NOT_APPROVED",
           editorialSourceLanguage:"en", requiresEditorialLocalization:edition==="crampon-1923",
           editionIndependent: false, accepted: false, publicationApproved: false
