@@ -1,12 +1,5 @@
 name: Ad Orientem B20 sacred art wave150 acquisition
 on:
-  push:
-    branches:
-      - research/b19-original-image-acquisition-probe-20261023
-    paths:
-      - .github/workflows/ao-b20-sacred-art-wave150.yml
-      - scripts/research/sacred_art_acquire.py
-      - data/research/sacred-art-b20-wave150.manifest.json
   workflow_dispatch:
 permissions:
   contents: read
