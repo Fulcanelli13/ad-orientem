@@ -22,6 +22,7 @@ on:
       - 'tools/pius-x-live-eval.mjs'
       - 'tests/pius-x-live-eval-harness.mjs'
       - 'tests/pius-x-primary-witness-contract.mjs'
+      - 'tests/pius-x-primary-witness-expansion.mjs'
       - 'tools/spx-p0-editorial-normalization.mjs'
       - 'tools/spx-p2-followup-editorial-layer.mjs'
       - '.github/workflows/pius-x-study-standalone-review.yml'
@@ -45,6 +46,7 @@ on:
       - 'tools/pius-x-live-eval.mjs'
       - 'tests/pius-x-live-eval-harness.mjs'
       - 'tests/pius-x-primary-witness-contract.mjs'
+      - 'tests/pius-x-primary-witness-expansion.mjs'
       - 'tools/spx-p0-editorial-normalization.mjs'
       - 'tools/spx-p2-followup-editorial-layer.mjs'
       - '.github/workflows/pius-x-study-standalone-review.yml'
@@ -87,6 +89,8 @@ jobs:
         run: node tests/pius-x-live-eval-harness.mjs
       - name: Validate bounded original E supremi pilot witness metadata
         run: node tests/pius-x-primary-witness-contract.mjs
+      - name: Validate additional original Italian and Latin source-witness annexes
+        run: node tests/pius-x-primary-witness-expansion.mjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
