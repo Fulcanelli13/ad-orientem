@@ -389,7 +389,7 @@ And when he came nigh to the camp, he saw the calf, and the dances: and being ve
 
 And when the next day was come, Moses spoke to the people: You have sinned a very great sin: I will go up to the Lord, if by any means I may be able to entreat him for your crime. And returning to the Lord, he said: I beseech thee: this people hath sinned a heinous sin, and they have made to themselves gods of gold: either forgive them this trespass, Or if thou do not, strike me out of the book that thou hast written. And the Lord answered him: He that hath sinned against me, him will I strike out of my book: But go thou, and lead this people whither I have told thee: my angel shall go before thee. And I in the day of revenge will visit this sin also of theirs.
 
-*⟦Editorial connector · source: Exodus 40:16–21; Exodus 40:34–38 · NOT APPROVED⟧*
+*⟦Editorial connector · source: Exodus 40:16–21; Exodus 40:32–36 · NOT APPROVED⟧*
 
 *The Tabernacle was erected according to the Lord's command. His cloud covered it, and its presence guided Israel through the wilderness.*
 
