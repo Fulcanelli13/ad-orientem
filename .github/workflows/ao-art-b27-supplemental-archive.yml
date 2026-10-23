@@ -79,7 +79,9 @@ jobs:
           fi
           mkdir verify
           gh release download "$ARCHIVE_TAG" -p "$asset" -D verify -R "$GITHUB_REPOSITORY"
-          cmp "$asset" "verify/$asset"
+          mkdir -p verify/unpacked
+          tar -xf "verify/$asset" -C verify/unpacked
+          diff -qr -x AO_SUPPLEMENT_INDEX.json incoming verify/unpacked
           echo "SUPPLEMENT_REMOTE_BYTES_VERIFIED $WAVE"
   check-supplements:
     needs: supplement
