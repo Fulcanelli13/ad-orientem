@@ -1,0 +1,37 @@
+{
+  "schema": "ao.catena.schaff-ocr-source-manifest.v1",
+  "date": "2026-10-23",
+  "state": "unmodified_public_domain_1888_scans_ocr_candidate_only",
+  "purpose": "Acquire reproducible historical OCR from independent print scans. OCR is NOT verified original Father speech and outputs are internal candidate search records only.",
+  "editions": [
+    {
+      "editionId": "NPNF1-06",
+      "authorScope": "Augustine",
+      "workScope": "Sermon on Mount; Harmony of Gospels; Gospel Sermons",
+      "archiveId": "aselectlibrary06unknuoft",
+      "scanYear": 1888,
+      "archiveDetailUrl": "https://archive.org/details/aselectlibrary06unknuoft",
+      "downloadUrl": "https://archive.org/download/aselectlibrary06unknuoft/aselectlibrary06unknuoft_djvu.txt",
+      "streamUrl": "https://archive.org/stream/aselectlibrary06unknuoft/aselectlibrary06unknuoft_djvu.txt",
+      "expectedTextMarker": "HARMONY OF THE GOSPELS",
+      "sourceEdition": "Schaff NPNF first series volume VI (1888)",
+      "ocrQuality": "unverified",
+      "attribution": "volume_level_only"
+    },
+    {
+      "editionId": "NPNF1-10",
+      "authorScope": "John Chrysostom",
+      "workScope": "Homilies on Matthew with editorial apparatus",
+      "archiveId": "selectlibraryofn10auguuoft",
+      "scanYear": 1888,
+      "archiveDetailUrl": "https://archive.org/details/selectlibraryofn10auguuoft",
+      "downloadUrl": "https://archive.org/download/selectlibraryofn10auguuoft/selectlibraryofn10auguuoft_djvu.txt",
+      "streamUrl": "https://archive.org/stream/selectlibraryofn10auguuoft/selectlibraryofn10auguuoft_djvu.txt",
+      "expectedTextMarker": "HOMILY",
+      "sourceEdition": "Schaff NPNF first series volume X (1888)",
+      "ocrQuality": "unverified",
+      "attribution": "volume_level_only"
+    }
+  ],
+  "rightsProcessing": "Historical print public-domain edition; avoid CCEL dependence by downloading scan OCR from Internet Archive; record provenance and source SHA-256. Do not ingest modern apparatus or assume OCR is authoritative."
+}
