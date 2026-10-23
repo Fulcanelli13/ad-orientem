@@ -11,13 +11,13 @@ The source registry in `main` has **108 entries**: **103 HTTPS references** and 
 
 ## Retrieval disposition
 
-- **80** returned webpages or texts, with the original URL accessible.
-- **7** were inaccessible or timed out in this client: Altoetting ex voto, Mariazell offering candles, Ugwogo Perpetual Help shrine, Sameiro pilgrimages, US Czestochowa pilgrimage, Bermont pilgrimage, and Frielingsdorf Apollinaris octave. Do **not** call them broken without direct browser follow-up.
+- **79** returned webpages or texts at original URLs after follow-up reclassification; the official Laghet ex-voto page was directly retrieved again on 23 October.
+- **8** were inaccessible or timed out in this client (including the Strasbourg source, whose complete official text is indexed but whose origin returns HTTP 502): Altoetting ex voto, Mariazell offering candles, Ugwogo Perpetual Help shrine, Sameiro pilgrimages, US Czestochowa pilgrimage, Bermont pilgrimage, and Frielingsdorf Apollinaris octave. Do **not** call them broken without direct browser follow-up.
 - **1** redirected to a documented parish **404**: `MAASTRICHT-STERRE-DER-ZEE-CUSTOM`. Its original dated 3 October 2026 article remains visible as a search-index entry in the parish's news archive: https://olv-sintpieter.nl/category/laatste-nieuws/ . Preserve the dated evidence, but find a direct replacement or archival capture before public promotion.
 - **1** resolved to an ostensibly correct title but no readable content: `LITCHFIELD-LOURDES-PILGRIMAGE-CUSTOM`.
 - **2** yielded PDF text but were not fully visually verifiable: `ST-PETER-CHANEL-SHRINE-CUSTOM` (screenshot 403; text attests the site and route) and `SVATA-HORA-FEAST-CUSTOM` (2025 announcement PDF returned extracted text, but screenshot redirected off the original site). The Einsiedeln 2025 monastery programme returned PDF text and cover image normally.
 
-All 91 per-record dispositions, URLs, restrictions and review notes are preserved in `data/customs/research/customs-source-link-access-audit.20261023.v1.json`; the JSON is the machine-actionable ledger.
+The original Strasbourg diocesan page (6 December 2022) is **not reliably directly accessible** despite indexed original text. The Munich–Freising Emmausgang page is among the twelve earlier P0/P1 priority references, not these 91; a separate current archdiocesan 2026 HTML article independently validates local practice.\n\nAll 91 per-record dispositions, URLs, restrictions and review notes are preserved in `data/customs/research/customs-source-link-access-audit.20261023.v1.json`; the JSON is the machine-actionable ledger.
 
 ## Content-scope holds requiring source refinement
 
