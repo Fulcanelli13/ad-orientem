@@ -19,7 +19,7 @@ This pass created *reversible action-level decisions*, rather than simply repeat
 
 ### Formerly unassigned source actions promoted *only into research working labels*
 
-Examples: first-Sunday-of-Lent German `Brandsonntag` rolling fire wheels; French `Fête des brandons` torch-bearing; Plough Monday / `Blochziehen`; Easter dawn water-washing; maypole customs of Tyrolean newlyweds; the Maltese Holy Thursday charitable Last Supper table already attested elsewhere in the index; the Mexico/South America Last Supper dramatic reenactment; Pentecost dew practices; the Scandinavian St Lucy inscription and bonfire variants; harvest last-sheaf doll, Austrian `Erntebraut`, English horkey cart and Scottish kirn doll; domestic holly charms and reported Christmas or seasonal folklore.
+Examples: first-Sunday-of-Lent German `Brandsonntag` rolling fire wheels; French `Fête des brandons` torch-bearing; Plough Monday / `Blochziehen`; Easter dawn water-washing; maypole customs of Tyrolean newlyweds; the Mexico/South America Last Supper dramatic reenactment; Pentecost dew practices; the Scandinavian St Lucy inscription and bonfire variants; harvest last-sheaf doll, Austrian `Erntebraut`, English horkey cart and Scottish kirn doll; domestic holly charms and reported Christmas or seasonal folklore.
 
 **Different belief status is essential**: source-attested seasonal folklore, unsupported supernatural claims, historical Church ceremonies, Eastern Christian rites and Catholic household prayer are **different research categories**. Every practice-like source report may merit catalogue preservation, but it does *not* become an approved Catholic act, a Church ritual, or proof of modern continuity.
 
