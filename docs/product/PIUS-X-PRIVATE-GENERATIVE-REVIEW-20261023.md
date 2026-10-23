@@ -79,3 +79,19 @@ The same local composer now has a **three-consecutive-question** test path using
 - `tests/pius-x-live-eval-harness.mjs` tests the three-turn path with a mock that deliberately repeats one answer verbatim: the repetition is detected rather than celebrated. This does **not** claim a real model was run or that historically meaningful dialogue has been verified.
 
 **Current status:** still no configured external or localhost live inference run, no model quality score, no approved original-source quotations, and no publication permission. The documented source-class and 106/423 corpus remain unchanged.
+
+
+## P2.2 — Original-language E supremi anchors (23 October 2026)
+
+The three-turn St Pius X pilot uses the existing opening and two authored follow-ups of `SPX-PILOT-01` without editing their original owner. A separate source-witness annex at `previews/pius-x-study/evidence/pilot01-e-supremi-primary-witness.v1.json` now records eight **short Latin fragments** from the Vatican's original `E supremi` text and maps seven of them to the three dialogue IDs. The eighth records an embedded quotation from **St Anselm** as explicitly third-party testimony, not Pius X's own detailed recollection.
+
+The source is compared with the Vatican's English and French translation pages:
+- Latin: https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html
+- French: https://www.vatican.va/content/pius-x/fr/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html
+- English: https://www.vatican.va/content/pius-x/en/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html
+
+Two findings are important. First, the original text cites St Anselm's anguish at accepting the episcopacy; Pius X adopts the analogy, but the entire Anselm narrative is **not** a literal account of Pius X's private memories. Second, the third existing answer includes the notion of returning humanity through Christ to God; the clearest supporting passage is in **§8**, outside its current listed source locus, "Opening and §§1–4". The annex flags this as a **proposed source-locus extension**. It does not silently rewrite the original record. The opening also identifies the predecessor by context, but does not name Leo XIII in that particular text; avoid describing the name as literally quoted.
+
+The localhost review-only composer receives **short original-Latin witness anchors and editorial warnings** when the visitor has selected one of the three mapped nodes. Its verifier is now instructed to ground relevant factual claims in the Latin fragments instead of considering the unapproved editorial adaptation alone. **This is a bounded spot-check, not full passage collation, doctrinal certification, quotation authentication, or guaranteed model fact-checking.** All existing `publishingApproved` values remain false, the 106/423 owner corpus remains unchanged, and no generated output is promoted.
+
+`tests/pius-x-primary-witness-contract.mjs` checks original chapter IDs, node ordering, original-speaker classifications, the §8 boundary flag, source pointers, and that the reviewer-only evidence reaches both the composer and mock verifier. These structural tests cannot replace expert comparison with original printed witnesses.
