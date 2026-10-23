@@ -25,8 +25,9 @@ export function buildPrimaryCoverageReport(store,{nextBatchDocuments=12}={}){
  const sourceOwnedInitialNodes=[...annexes.values()].reduce((n,a)=>n+a.dialogueMappings.length,0);
  const supplemental=JSON.parse(readFileSync(new URL('../previews/pius-x-study/evidence/pius-x-eight-document-followup-triage-20261023.v1.json',import.meta.url),'utf8'));
  const eight=JSON.parse(readFileSync(new URL('../previews/pius-x-study/evidence/pius-x-next12-eight-opening-context-evidence-20261023.v1.json',import.meta.url),'utf8'));
+ const wave2=JSON.parse(readFileSync(new URL('../previews/pius-x-study/evidence/pius-x-six-document-wave2-20261023.v1.json',import.meta.url),'utf8'));
  const totalResearchWitnesses=[...annexes.values()].reduce((n,a)=>n+a.sourceWitnesses.length,0)+
-   eight.items.reduce((n,a)=>n+a.witnesses.length,0)+supplemental.additionalOriginalWitnesses.length;
+   eight.items.reduce((n,a)=>n+a.witnesses.length,0)+supplemental.additionalOriginalWitnesses.length+wave2.witnesses.length;
  for(const c of store.data.chapters){
   if(c.partial)partialChapters++;
   const sourceUrl=c.source?.url||c.nodes?.[0]?.source?.url||'';
@@ -49,9 +50,9 @@ export function buildPrimaryCoverageReport(store,{nextBatchDocuments=12}={}){
    }
   }
  }
- if(nodes!==423||store.data.chapters.length!==106||coveredNodes!==36||
-    gate.size!==12||sourceOwnedInitialNodes!==14||totalResearchWitnesses!==67)
-  throw new Error('Canonical P6 or 36-node original-text source-only coverage changed');
+ if(nodes!==423||store.data.chapters.length!==106||coveredNodes!==87||
+    gate.size!==37||sourceOwnedInitialNodes!==14||totalResearchWitnesses!==102)
+  throw new Error('Canonical P6 or 87-node original-text source-only coverage changed');
  const all=[...groups.values()].map(g=>{
   const {genres,sourceClasses,witnessAnchorIds,...rest}=g;
   return {...rest,genres:[...genres].sort(),sourceClasses:[...sourceClasses].sort(),
@@ -70,6 +71,7 @@ export function buildPrimaryCoverageReport(store,{nextBatchDocuments=12}={}){
    chaptersWithWitnessSpotcheck:gate.size,nodesWithWitnessSpotcheck:coveredNodes,
    oldAnnexDocumentSubjects:annexes.size,oldAnnexMappedNodes:sourceOwnedInitialNodes,
    expandedOpeningNodes:eight.items.length,newBoundedFollowupNodes:supplemental.summary.boundedFollowupCandidates,
+   bulkWave2NewNodes:wave2.summary.newlyMappedNodes,bulkWave2NewExcerpts:wave2.witnesses.length,
    heldResearchFollowups:supplemental.summary.heldFollowupNodes,
    nodesNotYetMappedToOriginalExcerpt:423-coveredNodes,
    originalLanguageExcerptAnchors:totalResearchWitnesses,
