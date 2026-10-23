@@ -58,6 +58,31 @@ export function makeEvaluationCases(store){
  return cases;
 }
 
+/** Diagnostic signals only: no string metric can certify naturalness or history. */
+export function dialogueQualitySignals(current,previous,question){
+ const words=s=>String(s||'').toLowerCase().normalize('NFKC')
+  .match(/[\\p{L}\\p{N}]+/gu)||[];
+ const tokens=words(current),prev=words(previous),q=words(question);
+ const set=new Set(tokens.filter(w=>w.length>=4));
+ const old=new Set(prev.filter(w=>w.length>=4));
+ const union=new Set([...set,...old]).size;
+ const overlap=union?[...set].filter(t=>old.has(t)).length/union:0;
+ const sentences=String(current||'').split(/[.!?]+/).map(s=>s.trim()).filter(Boolean);
+ const first=sentences[0]||'';
+ const repeatedSentence=!!previous&&sentences.some(x=>x.length>=35&&
+  String(previous).toLowerCase().includes(x.toLowerCase()));
+ const latestQuestionKeywords=q.filter(x=>x.length>=5);
+ const keywordEcho=latestQuestionKeywords.length?
+  latestQuestionKeywords.filter(w=>set.has(w)).length/latestQuestionKeywords.length:0;
+ return {wordCount:tokens.length,sentenceCount:sentences.length,
+  prevTurnTokenJaccard:Number(overlap.toFixed(3)),
+  exactRepeatedSentence:repeatedSentence,
+  latestQuestionKeywordEcho:Number(keywordEcho.toFixed(3)),
+  possiblyLongMonologue:tokens.length>165||sentences.length>9,
+  highPreviousTurnLexicalOverlap:!!previous&&overlap>=0.78,
+  classification:'HEURISTIC_SIGNAL_NOT_QUALITY_JUDGEMENT'};
+}
+
 /** Consecutive questions in ONE original papal-document chapter, not three separate cards. */
 export function makeConversationSequence(store,{chapterId='SPX-PILOT-01',language='en'}={}){
  if(!['en','fr'].includes(language))throw new Error('Unsupported conversation language');
@@ -87,13 +112,15 @@ export async function evaluateConversationSequence(store,model,options={}){
   const sourceIdsValid=response.status!=='draft'||(
     response.evidence?.length>0&&response.evidence.every(x=>allowedIds.has(x.id)));
   const repeatedDraft=response.status==='draft'&&previousDraft===response.reply;
+  const qualitySignals=response.status==='draft'?
+   dialogueQualitySignals(response.reply,previousDraft,step.question):null;
   records.push({
    turn:step.turn,language:step.language,question:step.question,sourceNode:step.nodeId,
    suppliedHistoryLength:suppliedHistory.length,
    status:response.status,reason:response.reason||null,
    draftText:response.status==='draft'?response.reply:null,
    referenceIds:response.status==='draft'?response.evidence.map(x=>x.id):[],
-   elapsedMs,exactDuplicateOfPreviousAcceptedTurn:repeatedDraft,
+   elapsedMs,exactDuplicateOfPreviousAcceptedTurn:repeatedDraft,qualitySignals,
    safeguards:{sourceIdsValid:!!sourceIdsValid,publicationBlocked:response.publishingApproved===false,
      originalPassageCollated:false},
    manualRatings:{respondsToLatestQuestion:'UNRATED',referencesPriorTurnAppropriately:'UNRATED',
@@ -110,6 +137,9 @@ export async function evaluateConversationSequence(store,model,options={}){
  const summary={totalTurns:records.length,acceptedEditorialDrafts:records.filter(r=>r.status==='draft').length,
   heldTurns:records.filter(r=>r.status==='held').length,
   acceptedDraftsRepeatedVerbatim:records.filter(r=>r.exactDuplicateOfPreviousAcceptedTurn).length,
+  likelyRepeatedSentences:records.filter(r=>r.qualitySignals?.exactRepeatedSentence).length,
+  longMonologueSignals:records.filter(r=>r.qualitySignals?.possiblyLongMonologue).length,
+  highLexicalOverlapSignals:records.filter(r=>r.qualitySignals?.highPreviousTurnLexicalOverlap).length,
   crossSourceFailures:records.filter(r=>!r.safeguards.sourceIdsValid).length,
   publicationFailures:records.filter(r=>!r.safeguards.publicationBlocked).length,
   independentlyCollatedClaims:0,humanReviewedTurns:0};
