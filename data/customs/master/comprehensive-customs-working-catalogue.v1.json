@@ -13,7 +13,9 @@
     "EARLY_UNINDEXED_PRACTICE_LEADS": "24 additional source-bounded group leads were created from 34 early-chapter unmatched detail observations. 10 others are either variants, historical background, other-rite comparison, or folk belief. Do not sum 371 provisional groups and the 56 master identities as confirmed distinct customs.",
     "RECONCILIATION_INTERPRETATION": "340 detail records now have explicit routes; 371 provisional practice groups each have an identity-review row; 111 Family observations and 53 geographic families have relation rows. 54 co-association pairs are NOT verified same customs. No merges or new practice certification.",
     "POST_53_UNASSIGNED_CASE_REVIEW": "All 53 formerly unassigned detail records now have specific action-level triage; 37 noncanonical practice or reported folklore groups from 36 cases, one related to a prior group, 16 contextual/comparative. No exact identity merges or global distinctness certified. Older 371-group reconciliation remains its own immutable snapshot.",
-    "POST_54_COASSOCIATION_REVIEW": "All 54 shared-owner/source pairs classified by likely action mismatch or possible regional subpractice. No pair was certified as identical; shared feast/master label never justifies automatic merging."
+    "POST_54_COASSOCIATION_REVIEW": "All 54 shared-owner/source pairs classified by likely action mismatch or possible regional subpractice. No pair was certified as identical; shared feast/master label never justifies automatic merging.",
+    "MCLOUGHLIN_REPRINT_CAUTION": "EWTN transcription attributed to Helen McLoughlin's 1954 Family Advent Customs includes postal ZIP codes in endnotes (which postdate 1954), so it cannot automatically be treated as a word-for-word 1954 first edition. Use EWTN online line locators and independently worded labels; do not attribute each wording to 1954.",
+    "MCLOUGHLIN_NOT_UNIQUE_CUSTOMS": "70 new source observations grouped into 26 source action families, not 70 new customs or 26 confirmed distinct identities. Same action may appear in both Weiser and McLoughlin; author cites Weiser."
   },
   "summary": {
     "source_observations": {
@@ -31,7 +33,10 @@
         "ch05_to_09": 121,
         "ch10_to_13": 57,
         "ch14_to_28": 121
-      }
+      },
+      "mcloughlin_fulltext_source_observations": 70,
+      "total_source_detail_rows_including_external": 1095,
+      "external_plus_weiser_count_note": "1,025 Weiser research rows (685 base + 340 nested) plus 70 independent McLoughlin textual witness observation rows = 1,095 research rows. This is NOT 1,095 distinct customs; McLoughlin borrows from Weiser and may use later online revisions."
     },
     "identity_working_rows": {
       "previously_existing_master_identities": 56,
@@ -77,7 +82,20 @@
       "coassociation_pair_label_relationships_reviewed": 54,
       "coassociation_pair_possibly_same_family_variants": 7,
       "coassociation_pair_distinct_primary_actions": 25,
-      "coassociation_pair_other_related_context": 22
+      "coassociation_pair_other_related_context": 22,
+      "mcloughlin_claim_types": {
+        "REPORTED_WIDER_PRACTICE": 4,
+        "AUTHOR_FAMILY_PRACTICE": 46,
+        "AUTHOR_SUGGESTED_ADAPTATION": 2,
+        "POSSIBLE_RITUAL_OR_AUTHORITY_CLAIM": 4,
+        "REPORTED_REGIONAL_TRADITION": 4,
+        "RECIPE_ASSOCIATED_WITH_FEAST": 6,
+        "HISTORICAL_OR_ORIGIN_CLAIM": 3,
+        "COMPARATIVE_RITE_CONTEXT": 1
+      },
+      "mcloughlin_source_family_clusters": 26,
+      "mcloughlin_families_with_existing_owner_candidates": 11,
+      "mcloughlin_families_without_existing_owner_candidates": 15
     },
     "no_new_app_publications": true
   },
@@ -107,7 +125,9 @@
     "all_371_group_family_geographic_relationships": "data/customs/master/371-group-family-geographic-reconciliation.v1.json",
     "shared_family_master_coassociation_review": "data/customs/master/54-coassociation-pairs-nonmerger-review.v1.json",
     "no_owner_detail_adjudication": "data/customs/master/53-no-owner-customs-action-review.v1.json",
-    "coassociation_action_level": "data/customs/master/54-coassociation-action-level-relationship-review.v1.json"
+    "coassociation_action_level": "data/customs/master/54-coassociation-action-level-relationship-review.v1.json",
+    "mcloughlin_family_advent": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+    "mcloughlin_family_advent_reconciliation": "data/customs/master/mcloughlin-family-advent-action-family-reconciliation.v1.json"
   },
   "existing_master_identities": [
     {
@@ -13524,6 +13544,1230 @@
       "modern_observance_verified": false,
       "source_page_spot_checked": false,
       "source_file": "data/customs/master/53-no-owner-customs-action-review.v1.json"
+    }
+  ],
+  "external_source_observations_mcloughlin": [
+    {
+      "id": "MCL54-EWTN-001",
+      "label": "Circular evergreen Advent wreath with four coloured candles",
+      "type": "REPORTED_WIDER_PRACTICE",
+      "section": "Advent wreath",
+      "web_lines": [
+        112,
+        116
+      ],
+      "source_file": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "MCL54-EWTN-002",
+      "label": "Household members construct fresh Advent wreath together annually",
+      "type": "AUTHOR_FAMILY_PRACTICE",
+      "section": "Advent wreath",
+      "web_lines": [
+        116,
+        118
+      ],
+      "source_file": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "MCL54-EWTN-003",
+      "label": "A new silver star added to an Advent wreath during each evening prayer",
+      "type": "AUTHOR_FAMILY_PRACTICE",
+      "section": "Advent wreath",
+      "web_lines": [
+        117,
+        117
+      ],
+      "source_file": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "MCL54-EWTN-004",
+      "label": "Paper greenery substituted in city homes or metal-hoop wreaths in rural homes",
+      "type": "AUTHOR_SUGGESTED_ADAPTATION",
+      "section": "Advent wreath",
+      "web_lines": [
+        118,
+        119
+      ],
+      "source_file": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "MCL54-EWTN-005",
+      "label": "Father-led family blessing and holy-water sprinkling of Advent wreath",
+      "type": "POSSIBLE_RITUAL_OR_AUTHORITY_CLAIM",
+      "section": "Advent wreath",
+      "web_lines": [
+        119,
+        128
+      ],
+      "source_file": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "MCL54-EWTN-006",
+      "label": "Children light successive Advent candles with each week's family collect",
+      "type": "AUTHOR_FAMILY_PRACTICE",
+      "section": "Advent wreath",
+      "web_lines": [
+        128,
+        145
+      ],
+      "source_file": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "MCL54-EWTN-007",
+      "label": "Keeping an Advent candle lit at family meals or evening prayers",
+      "type": "AUTHOR_FAMILY_PRACTICE",
+      "section": "Advent wreath",
+      "web_lines": [
+        133,
+        133
+      ],
+      "source_file": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "MCL54-EWTN-008",
+      "label": "Changing Advent wreath to white candles and Christmas decorations",
+      "type": "AUTHOR_FAMILY_PRACTICE",
+      "section": "Advent wreath",
+      "web_lines": [
+        149,
+        149
+      ],
+      "source_file": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "MCL54-EWTN-009",
+      "label": "Retaining the decorated Christmas wreath in the home until Epiphany",
+      "type": "AUTHOR_FAMILY_PRACTICE",
+      "section": "Advent wreath",
+      "web_lines": [
+        149,
+        149
+      ],
+      "source_file": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "MCL54-EWTN-010",
+      "label": "Preparing and collectively stirring a plum pudding early in Advent",
+      "type": "AUTHOR_FAMILY_PRACTICE",
+      "section": "Stir-up Sunday",
+      "web_lines": [
+        151,
+        155
+      ],
+      "source_file": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "MCL54-EWTN-011",
+      "label": "Each person makes a wish then prays the Advent collect while stirring pudding",
+      "type": "AUTHOR_FAMILY_PRACTICE",
+      "section": "Stir-up Sunday",
+      "web_lines": [
+        151,
+        155
+      ],
+      "source_file": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "MCL54-EWTN-012",
+      "label": "Storing steamed Advent pudding until Christmas feast",
+      "type": "AUTHOR_FAMILY_PRACTICE",
+      "section": "Stir-up Sunday",
+      "web_lines": [
+        155,
+        155
+      ],
+      "source_file": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "MCL54-EWTN-013",
+      "label": "Serving Christmas plum pudding ceremonially with burning spirit",
+      "type": "AUTHOR_FAMILY_PRACTICE",
+      "section": "Stir-up Sunday",
+      "web_lines": [
+        155,
+        155
+      ],
+      "source_file": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "MCL54-EWTN-014",
+      "label": "Individual Advent mangers receive straw for children's charitable acts",
+      "type": "AUTHOR_FAMILY_PRACTICE",
+      "section": "Gifts for Jesus",
+      "web_lines": [
+        167,
+        169
+      ],
+      "source_file": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "MCL54-EWTN-015",
+      "label": "Child finds a Christ Child figure placed into personal manger on Christmas",
+      "type": "AUTHOR_FAMILY_PRACTICE",
+      "section": "Gifts for Jesus",
+      "web_lines": [
+        169,
+        169
+      ],
+      "source_file": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "MCL54-EWTN-016",
+      "label": "Hungarian custom of planting blessed wheat seed per Advent sacrifice",
+      "type": "REPORTED_REGIONAL_TRADITION",
+      "section": "Gifts for Jesus",
+      "web_lines": [
+        170,
+        170
+      ],
+      "source_file": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "MCL54-EWTN-017",
+      "label": "Placing Advent-grown green wheat shoots beside Christmas crib until Epiphany",
+      "type": "AUTHOR_FAMILY_PRACTICE",
+      "section": "Gifts for Jesus",
+      "web_lines": [
+        170,
+        170
+      ],
+      "source_file": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "MCL54-EWTN-018",
+      "label": "Evening household prayers drawn from Mass collects prophetic readings and Advent hymns",
+      "type": "AUTHOR_FAMILY_PRACTICE",
+      "section": "Advent prayers",
+      "web_lines": [
+        172,
+        174
+      ],
+      "source_file": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "MCL54-EWTN-019",
+      "label": "Before morning and noon meals, Advent Lauds versicle with family response",
+      "type": "AUTHOR_FAMILY_PRACTICE",
+      "section": "Advent prayers",
+      "web_lines": [
+        178,
+        182
+      ],
+      "source_file": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "MCL54-EWTN-020",
+      "label": "Before evening meals, Advent Vespers versicle with family response",
+      "type": "AUTHOR_FAMILY_PRACTICE",
+      "section": "Advent prayers",
+      "web_lines": [
+        185,
+        190
+      ],
+      "source_file": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "MCL54-EWTN-021",
+      "label": "Singing Rorate Caeli and O Come Emmanuel within household Advent devotions",
+      "type": "AUTHOR_FAMILY_PRACTICE",
+      "section": "Advent hymns",
+      "web_lines": [
+        191,
+        191
+      ],
+      "source_file": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "MCL54-EWTN-022",
+      "label": "Children accompany seasonal hymns on a small household organ",
+      "type": "AUTHOR_FAMILY_PRACTICE",
+      "section": "Advent hymns",
+      "web_lines": [
+        192,
+        192
+      ],
+      "source_file": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "MCL54-EWTN-023",
+      "label": "Children hang stockings on Saint Nicholas Eve and receive bishop-themed gifts",
+      "type": "AUTHOR_FAMILY_PRACTICE",
+      "section": "St Nicholas",
+      "web_lines": [
+        224,
+        226
+      ],
+      "source_file": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "MCL54-EWTN-024",
+      "label": "Separating children's feast gifts among Saint Nicholas, Christmas and Epiphany",
+      "type": "AUTHOR_FAMILY_PRACTICE",
+      "section": "St Nicholas",
+      "web_lines": [
+        225,
+        226
+      ],
+      "source_file": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "MCL54-EWTN-025",
+      "label": "Children give part of their Saint Nicholas gifts to poorer children at Christmas",
+      "type": "AUTHOR_FAMILY_PRACTICE",
+      "section": "St Nicholas",
+      "web_lines": [
+        227,
+        227
+      ],
+      "source_file": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "MCL54-EWTN-026",
+      "label": "Family Saint Nicholas feast party with Dutch spiced cookies and Bishopwyn",
+      "type": "AUTHOR_FAMILY_PRACTICE",
+      "section": "St Nicholas",
+      "web_lines": [
+        228,
+        239
+      ],
+      "source_file": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "MCL54-EWTN-027",
+      "label": "Speculaas-style spiced Saint Nicholas cookies formed into saint and animal shapes",
+      "type": "RECIPE_ASSOCIATED_WITH_FEAST",
+      "section": "St Nicholas",
+      "web_lines": [
+        233,
+        238
+      ],
+      "source_file": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "MCL54-EWTN-028",
+      "label": "Singing Advent hymns and lighting Advent wreath at Saint Nicholas family party",
+      "type": "AUTHOR_FAMILY_PRACTICE",
+      "section": "St Nicholas",
+      "web_lines": [
+        239,
+        239
+      ],
+      "source_file": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "MCL54-EWTN-029",
+      "label": "Mary Candle veiled in white beside domestic Marian altar before Christmas",
+      "type": "AUTHOR_FAMILY_PRACTICE",
+      "section": "Mary Candle",
+      "web_lines": [
+        241,
+        244
+      ],
+      "source_file": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "MCL54-EWTN-030",
+      "label": "Mystical Rose symbolism marked with red rose and blue veil on Marian altar",
+      "type": "AUTHOR_FAMILY_PRACTICE",
+      "section": "Mary Candle",
+      "web_lines": [
+        242,
+        242
+      ],
+      "source_file": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "MCL54-EWTN-031",
+      "label": "Infant Jesus figure initially concealed by mantle on Advent Mary candle",
+      "type": "AUTHOR_FAMILY_PRACTICE",
+      "section": "Mary Candle",
+      "web_lines": [
+        244,
+        246
+      ],
+      "source_file": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "MCL54-EWTN-032",
+      "label": "Family recitation of Magnificat and Marian hymns on Immaculate Conception",
+      "type": "AUTHOR_FAMILY_PRACTICE",
+      "section": "Mary Candle",
+      "web_lines": [
+        246,
+        246
+      ],
+      "source_file": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "MCL54-EWTN-033",
+      "label": "Candle with white or blue ribbon burned by Our Lady's image at meals and prayers",
+      "type": "REPORTED_WIDER_PRACTICE",
+      "section": "Mary Candle",
+      "web_lines": [
+        247,
+        247
+      ],
+      "source_file": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "MCL54-EWTN-034",
+      "label": "Swedish saffron Saint Lucy cat-shaped buns made on December 13",
+      "type": "REPORTED_REGIONAL_TRADITION",
+      "section": "St Lucy",
+      "web_lines": [
+        249,
+        253
+      ],
+      "source_file": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "MCL54-EWTN-035",
+      "label": "Children enact daily Advent Gospel stories as household or school dramas",
+      "type": "AUTHOR_FAMILY_PRACTICE",
+      "section": "Advent dramatized",
+      "web_lines": [
+        254,
+        256
+      ],
+      "source_file": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "MCL54-EWTN-036",
+      "label": "Dramatic singing about Annunciation or Bethlehem journey in children's performance",
+      "type": "AUTHOR_FAMILY_PRACTICE",
+      "section": "Advent dramatized",
+      "web_lines": [
+        256,
+        257
+      ],
+      "source_file": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "MCL54-EWTN-037",
+      "label": "Family crafts Nativity figures from wood, soap, pastry or plaster",
+      "type": "AUTHOR_FAMILY_PRACTICE",
+      "section": "Christmas manger",
+      "web_lines": [
+        276,
+        278
+      ],
+      "source_file": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "MCL54-EWTN-038",
+      "label": "Family entrance-hall Nativity scene displayed for guests",
+      "type": "AUTHOR_FAMILY_PRACTICE",
+      "section": "Christmas manger",
+      "web_lines": [
+        278,
+        279
+      ],
+      "source_file": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "MCL54-EWTN-039",
+      "label": "Children place their names or portrait banners around Christmas crib",
+      "type": "AUTHOR_SUGGESTED_ADAPTATION",
+      "section": "Christmas manger",
+      "web_lines": [
+        279,
+        279
+      ],
+      "source_file": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "MCL54-EWTN-040",
+      "label": "Seven-window Advent House reveals successive O Antiphon symbols December 17–23",
+      "type": "AUTHOR_FAMILY_PRACTICE",
+      "section": "Advent House",
+      "web_lines": [
+        280,
+        283
+      ],
+      "source_file": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "MCL54-EWTN-041",
+      "label": "Daily opening Advent House windows during family morning O Antiphon prayers",
+      "type": "AUTHOR_FAMILY_PRACTICE",
+      "section": "Advent House",
+      "web_lines": [
+        281,
+        283
+      ],
+      "source_file": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "MCL54-EWTN-042",
+      "label": "December 23 Advent House door reveals Mother and Christ Child image",
+      "type": "AUTHOR_FAMILY_PRACTICE",
+      "section": "Advent House",
+      "web_lines": [
+        283,
+        283
+      ],
+      "source_file": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "MCL54-EWTN-043",
+      "label": "Children make devotional Christmas tree ornaments featuring saints and Nativity figures",
+      "type": "AUTHOR_FAMILY_PRACTICE",
+      "section": "Tree decorations",
+      "web_lines": [
+        298,
+        301
+      ],
+      "source_file": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "MCL54-EWTN-044",
+      "label": "Christmas tree ornaments feature biblical prophets and Advent characters",
+      "type": "AUTHOR_FAMILY_PRACTICE",
+      "section": "Tree decorations",
+      "web_lines": [
+        300,
+        300
+      ],
+      "source_file": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "MCL54-EWTN-045",
+      "label": "Jesse-tree-style ancestors of Christ represented by small dressed dolls",
+      "type": "AUTHOR_FAMILY_PRACTICE",
+      "section": "Tree decorations",
+      "web_lines": [
+        301,
+        301
+      ],
+      "source_file": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "MCL54-EWTN-046",
+      "label": "Symbols of Adam and Eve's Fall added to the domestic Jesse tree",
+      "type": "AUTHOR_FAMILY_PRACTICE",
+      "section": "Tree decorations",
+      "web_lines": [
+        301,
+        301
+      ],
+      "source_file": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "MCL54-EWTN-047",
+      "label": "French brioche prepared for Christmas in family cooking",
+      "type": "RECIPE_ASSOCIATED_WITH_FEAST",
+      "section": "Christmas cooking",
+      "web_lines": [
+        302,
+        305
+      ],
+      "source_file": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "MCL54-EWTN-048",
+      "label": "German Christstollen loaf shaped with swaddled Christ symbolism",
+      "type": "RECIPE_ASSOCIATED_WITH_FEAST",
+      "section": "Christmas cooking",
+      "web_lines": [
+        303,
+        319
+      ],
+      "source_file": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "MCL54-EWTN-049",
+      "label": "Greek Melachrino spiced cake for Christmas feast",
+      "type": "RECIPE_ASSOCIATED_WITH_FEAST",
+      "section": "Christmas cooking",
+      "web_lines": [
+        303,
+        320
+      ],
+      "source_file": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "MCL54-EWTN-050",
+      "label": "Historical offertory blessed bread taken home separately from Eucharist",
+      "type": "HISTORICAL_OR_ORIGIN_CLAIM",
+      "section": "Christmas cooking",
+      "web_lines": [
+        310,
+        310
+      ],
+      "source_file": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "MCL54-EWTN-051",
+      "label": "Eastern Christian blessed bread collected after Byzantine liturgy",
+      "type": "COMPARATIVE_RITE_CONTEXT",
+      "section": "Christmas cooking",
+      "web_lines": [
+        310,
+        310
+      ],
+      "source_file": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "MCL54-EWTN-052",
+      "label": "Lay parent sprinkles homemade festive bread with holy water and prays blessing",
+      "type": "POSSIBLE_RITUAL_OR_AUTHORITY_CLAIM",
+      "section": "Christmas cooking",
+      "web_lines": [
+        311,
+        314
+      ],
+      "source_file": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "MCL54-EWTN-053",
+      "label": "Greek custom of inserting a silver coin into Melachrino cake",
+      "type": "REPORTED_REGIONAL_TRADITION",
+      "section": "Christmas cooking",
+      "web_lines": [
+        320,
+        320
+      ],
+      "source_file": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "MCL54-EWTN-054",
+      "label": "Replacing silver coin with a small Christ Child figurine inside Christmas cake",
+      "type": "AUTHOR_FAMILY_PRACTICE",
+      "section": "Christmas cooking",
+      "web_lines": [
+        320,
+        320
+      ],
+      "source_file": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "MCL54-EWTN-055",
+      "label": "Italian Cassata dessert prepared for Christmas Eve",
+      "type": "RECIPE_ASSOCIATED_WITH_FEAST",
+      "section": "Christmas cooking",
+      "web_lines": [
+        326,
+        326
+      ],
+      "source_file": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "MCL54-EWTN-056",
+      "label": "Oblong Christmas mince pie decorated as Christ's manger",
+      "type": "RECIPE_ASSOCIATED_WITH_FEAST",
+      "section": "Christmas cooking",
+      "web_lines": [
+        333,
+        334
+      ],
+      "source_file": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "MCL54-EWTN-057",
+      "label": "Claim that gingerbread boy figures originally represent the Christ Child",
+      "type": "HISTORICAL_OR_ORIGIN_CLAIM",
+      "section": "Christmas cooking",
+      "web_lines": [
+        335,
+        335
+      ],
+      "source_file": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "MCL54-EWTN-058",
+      "label": "Evergreen mantel with Madonna and Child, vigil lights, and white dining candle",
+      "type": "AUTHOR_FAMILY_PRACTICE",
+      "section": "Christmas Eve",
+      "web_lines": [
+        336,
+        337
+      ],
+      "source_file": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "MCL54-EWTN-059",
+      "label": "Christmas Eve householder lights an Irish-style candle after the Angelus",
+      "type": "REPORTED_REGIONAL_TRADITION",
+      "section": "Christmas Eve",
+      "web_lines": [
+        337,
+        337
+      ],
+      "source_file": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "MCL54-EWTN-060",
+      "label": "Children process with candles and Infant Jesus image to domestic crib",
+      "type": "AUTHOR_FAMILY_PRACTICE",
+      "section": "Christmas Eve",
+      "web_lines": [
+        341,
+        341
+      ],
+      "source_file": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "MCL54-EWTN-061",
+      "label": "Household darkens room, then father lights Christmas tree and Christ candle",
+      "type": "AUTHOR_FAMILY_PRACTICE",
+      "section": "Christmas Eve",
+      "web_lines": [
+        341,
+        341
+      ],
+      "source_file": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "MCL54-EWTN-062",
+      "label": "Roman Martyrology Nativity proclamation read in the family home",
+      "type": "AUTHOR_FAMILY_PRACTICE",
+      "section": "Christmas Eve",
+      "web_lines": [
+        346,
+        349
+      ],
+      "source_file": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "MCL54-EWTN-063",
+      "label": "Household Magnificat sung or recited following Christmas crib procession",
+      "type": "AUTHOR_FAMILY_PRACTICE",
+      "section": "Christmas Eve",
+      "web_lines": [
+        353,
+        361
+      ],
+      "source_file": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "MCL54-EWTN-064",
+      "label": "Family reads Luke's Nativity Gospel beside Christmas crib",
+      "type": "AUTHOR_FAMILY_PRACTICE",
+      "section": "Christmas Eve",
+      "web_lines": [
+        366,
+        370
+      ],
+      "source_file": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "MCL54-EWTN-065",
+      "label": "Domestic crib blessing using family responses and a proposed prayer text",
+      "type": "POSSIBLE_RITUAL_OR_AUTHORITY_CLAIM",
+      "section": "Christmas Eve",
+      "web_lines": [
+        373,
+        383
+      ],
+      "source_file": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "MCL54-EWTN-066",
+      "label": "Christmas Eve household Mass collect and concluding Adeste Fideles",
+      "type": "AUTHOR_FAMILY_PRACTICE",
+      "section": "Christmas Eve",
+      "web_lines": [
+        384,
+        389
+      ],
+      "source_file": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "MCL54-EWTN-067",
+      "label": "Family blessing of Christmas tree before its first illumination",
+      "type": "REPORTED_WIDER_PRACTICE",
+      "section": "Christmas tree blessing",
+      "web_lines": [
+        392,
+        393
+      ],
+      "source_file": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "MCL54-EWTN-068",
+      "label": "Paradise tree decorated with apples and symbolic pastry or wafers",
+      "type": "HISTORICAL_OR_ORIGIN_CLAIM",
+      "section": "Christmas tree blessing",
+      "web_lines": [
+        394,
+        398
+      ],
+      "source_file": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "MCL54-EWTN-069",
+      "label": "Families bless Christmas tree on Eve and crib on Christmas morning",
+      "type": "REPORTED_WIDER_PRACTICE",
+      "section": "Christmas tree blessing",
+      "web_lines": [
+        398,
+        399
+      ],
+      "source_file": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "MCL54-EWTN-070",
+      "label": "Household Christmas tree blessing text proposed for lay use",
+      "type": "POSSIBLE_RITUAL_OR_AUTHORITY_CLAIM",
+      "section": "Christmas tree blessing",
+      "web_lines": [
+        399,
+        413
+      ],
+      "source_file": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    }
+  ],
+  "external_source_action_families_mcloughlin": [
+    {
+      "id": "MCL54-CLUSTER-001",
+      "label": "Family Advent wreath making, lighting and seasonal transition",
+      "source_observation_ids": [
+        "MCL54-EWTN-001",
+        "MCL54-EWTN-002",
+        "MCL54-EWTN-003",
+        "MCL54-EWTN-004",
+        "MCL54-EWTN-005",
+        "MCL54-EWTN-006",
+        "MCL54-EWTN-007",
+        "MCL54-EWTN-008",
+        "MCL54-EWTN-009"
+      ],
+      "possible_master_ids": [
+        "ADVT-001"
+      ],
+      "possible_provisional_group_ids": [
+        "CAT-WEISER-A-023"
+      ],
+      "kind": "HOUSEHOLD_CEREMONY",
+      "identity_certified": false,
+      "source_file": "data/customs/master/mcloughlin-family-advent-action-family-reconciliation.v1.json"
+    },
+    {
+      "id": "MCL54-CLUSTER-002",
+      "label": "Stir-up Sunday communal plum pudding ceremony",
+      "source_observation_ids": [
+        "MCL54-EWTN-010",
+        "MCL54-EWTN-011",
+        "MCL54-EWTN-012",
+        "MCL54-EWTN-013"
+      ],
+      "possible_master_ids": [],
+      "possible_provisional_group_ids": [],
+      "kind": "FOOD_FAMILY_CUSTOM",
+      "identity_certified": false,
+      "source_file": "data/customs/master/mcloughlin-family-advent-action-family-reconciliation.v1.json"
+    },
+    {
+      "id": "MCL54-CLUSTER-003",
+      "label": "Children's Advent good-deed manger and Christmas Infant figure",
+      "source_observation_ids": [
+        "MCL54-EWTN-014",
+        "MCL54-EWTN-015"
+      ],
+      "possible_master_ids": [
+        "ADVT-002"
+      ],
+      "possible_provisional_group_ids": [],
+      "kind": "FAMILY_DEVOTION",
+      "identity_certified": false,
+      "source_file": "data/customs/master/mcloughlin-family-advent-action-family-reconciliation.v1.json"
+    },
+    {
+      "id": "MCL54-CLUSTER-004",
+      "label": "Blessed wheat seeded at Advent and grown beside crib",
+      "source_observation_ids": [
+        "MCL54-EWTN-016",
+        "MCL54-EWTN-017"
+      ],
+      "possible_master_ids": [],
+      "possible_provisional_group_ids": [],
+      "kind": "REPORTED_REGIONAL_HOUSEHOLD",
+      "identity_certified": false,
+      "source_file": "data/customs/master/mcloughlin-family-advent-action-family-reconciliation.v1.json"
+    },
+    {
+      "id": "MCL54-CLUSTER-005",
+      "label": "Advent family prayers, seasonal versicles and hymn singing",
+      "source_observation_ids": [
+        "MCL54-EWTN-018",
+        "MCL54-EWTN-019",
+        "MCL54-EWTN-020",
+        "MCL54-EWTN-021",
+        "MCL54-EWTN-022"
+      ],
+      "possible_master_ids": [],
+      "possible_provisional_group_ids": [],
+      "kind": "FAMILY_DEVOTION",
+      "identity_certified": false,
+      "source_file": "data/customs/master/mcloughlin-family-advent-action-family-reconciliation.v1.json"
+    },
+    {
+      "id": "MCL54-CLUSTER-006",
+      "label": "St Nicholas early gifts, cookies, carols and charitable giving",
+      "source_observation_ids": [
+        "MCL54-EWTN-023",
+        "MCL54-EWTN-024",
+        "MCL54-EWTN-025",
+        "MCL54-EWTN-026",
+        "MCL54-EWTN-027",
+        "MCL54-EWTN-028"
+      ],
+      "possible_master_ids": [
+        "SNIC-001"
+      ],
+      "possible_provisional_group_ids": [],
+      "kind": "MULTI_ACTION_FEAST_FAMILY",
+      "identity_certified": false,
+      "source_file": "data/customs/master/mcloughlin-family-advent-action-family-reconciliation.v1.json"
+    },
+    {
+      "id": "MCL54-CLUSTER-007",
+      "label": "Mary Candle, Immaculate Conception Marian altar and symbolic veiling",
+      "source_observation_ids": [
+        "MCL54-EWTN-029",
+        "MCL54-EWTN-030",
+        "MCL54-EWTN-031",
+        "MCL54-EWTN-032",
+        "MCL54-EWTN-033"
+      ],
+      "possible_master_ids": [],
+      "possible_provisional_group_ids": [],
+      "kind": "MARIAL_HOUSEHOLD_CUSTOM",
+      "identity_certified": false,
+      "source_file": "data/customs/master/mcloughlin-family-advent-action-family-reconciliation.v1.json"
+    },
+    {
+      "id": "MCL54-CLUSTER-008",
+      "label": "Swedish Saint Lucy saffron cat-shaped buns",
+      "source_observation_ids": [
+        "MCL54-EWTN-034"
+      ],
+      "possible_master_ids": [],
+      "possible_provisional_group_ids": [
+        "CAT-WEISER-B-179"
+      ],
+      "kind": "REGIONAL_FESTIVE_FOOD",
+      "identity_certified": false,
+      "source_file": "data/customs/master/mcloughlin-family-advent-action-family-reconciliation.v1.json"
+    },
+    {
+      "id": "MCL54-CLUSTER-009",
+      "label": "Dramatizing Advent Gospel scenes and Nativity journey",
+      "source_observation_ids": [
+        "MCL54-EWTN-035",
+        "MCL54-EWTN-036"
+      ],
+      "possible_master_ids": [],
+      "possible_provisional_group_ids": [],
+      "kind": "HOUSEHOLD_AND_SCHOOL_DRAMA",
+      "identity_certified": false,
+      "source_file": "data/customs/master/mcloughlin-family-advent-action-family-reconciliation.v1.json"
+    },
+    {
+      "id": "MCL54-CLUSTER-010",
+      "label": "Creating domestic Nativity figures and personalized crib banners",
+      "source_observation_ids": [
+        "MCL54-EWTN-037",
+        "MCL54-EWTN-038",
+        "MCL54-EWTN-039"
+      ],
+      "possible_master_ids": [],
+      "possible_provisional_group_ids": [
+        "CAT-WEISER-A-045"
+      ],
+      "kind": "HOUSEHOLD_CRAFT",
+      "identity_certified": false,
+      "source_file": "data/customs/master/mcloughlin-family-advent-action-family-reconciliation.v1.json"
+    },
+    {
+      "id": "MCL54-CLUSTER-011",
+      "label": "Seven-window Advent House of Great O Antiphons",
+      "source_observation_ids": [
+        "MCL54-EWTN-040",
+        "MCL54-EWTN-041",
+        "MCL54-EWTN-042"
+      ],
+      "possible_master_ids": [],
+      "possible_provisional_group_ids": [],
+      "kind": "FAMILY_DEVOTIONAL_OBJECT",
+      "identity_certified": false,
+      "source_file": "data/customs/master/mcloughlin-family-advent-action-family-reconciliation.v1.json"
+    },
+    {
+      "id": "MCL54-CLUSTER-012",
+      "label": "Children's Jesse Tree and Salvation-History ornaments",
+      "source_observation_ids": [
+        "MCL54-EWTN-043",
+        "MCL54-EWTN-044",
+        "MCL54-EWTN-045",
+        "MCL54-EWTN-046"
+      ],
+      "possible_master_ids": [],
+      "possible_provisional_group_ids": [],
+      "kind": "FAMILY_DEVOTIONAL_CRAFT",
+      "identity_certified": false,
+      "source_file": "data/customs/master/mcloughlin-family-advent-action-family-reconciliation.v1.json"
+    },
+    {
+      "id": "MCL54-CLUSTER-013",
+      "label": "French Christmas brioche",
+      "source_observation_ids": [
+        "MCL54-EWTN-047"
+      ],
+      "possible_master_ids": [],
+      "possible_provisional_group_ids": [],
+      "kind": "RECIPE_WITH_FEAST",
+      "identity_certified": false,
+      "source_file": "data/customs/master/mcloughlin-family-advent-action-family-reconciliation.v1.json"
+    },
+    {
+      "id": "MCL54-CLUSTER-014",
+      "label": "German symbolic Christstollen",
+      "source_observation_ids": [
+        "MCL54-EWTN-048"
+      ],
+      "possible_master_ids": [],
+      "possible_provisional_group_ids": [
+        "CAT-WEISER-A-064"
+      ],
+      "kind": "RECIPE_WITH_FEAST",
+      "identity_certified": false,
+      "source_file": "data/customs/master/mcloughlin-family-advent-action-family-reconciliation.v1.json"
+    },
+    {
+      "id": "MCL54-CLUSTER-015",
+      "label": "Greek Christmas Melachrino and hidden child or coin",
+      "source_observation_ids": [
+        "MCL54-EWTN-049",
+        "MCL54-EWTN-053",
+        "MCL54-EWTN-054"
+      ],
+      "possible_master_ids": [],
+      "possible_provisional_group_ids": [],
+      "kind": "FOOD_AND_SYMBOLIC_VARIANT",
+      "identity_certified": false,
+      "source_file": "data/customs/master/mcloughlin-family-advent-action-family-reconciliation.v1.json"
+    },
+    {
+      "id": "MCL54-CLUSTER-016",
+      "label": "Historic Christian blessed bread after early Eucharistic assemblies",
+      "source_observation_ids": [
+        "MCL54-EWTN-050"
+      ],
+      "possible_master_ids": [
+        "FOOD-001"
+      ],
+      "possible_provisional_group_ids": [],
+      "kind": "HISTORICAL_LITURGICAL_CONTEXT",
+      "identity_certified": false,
+      "source_file": "data/customs/master/mcloughlin-family-advent-action-family-reconciliation.v1.json"
+    },
+    {
+      "id": "MCL54-CLUSTER-017",
+      "label": "Byzantine blessed bread taken home",
+      "source_observation_ids": [
+        "MCL54-EWTN-051"
+      ],
+      "possible_master_ids": [],
+      "possible_provisional_group_ids": [],
+      "kind": "OTHER_RITE_COMPARATIVE_CONTEXT",
+      "identity_certified": false,
+      "source_file": "data/customs/master/mcloughlin-family-advent-action-family-reconciliation.v1.json"
+    },
+    {
+      "id": "MCL54-CLUSTER-018",
+      "label": "Lay parent's proposed blessing of festive bread",
+      "source_observation_ids": [
+        "MCL54-EWTN-052"
+      ],
+      "possible_master_ids": [],
+      "possible_provisional_group_ids": [],
+      "kind": "AUTHOR_PROPOSED_CEREMONY",
+      "identity_certified": false,
+      "source_file": "data/customs/master/mcloughlin-family-advent-action-family-reconciliation.v1.json"
+    },
+    {
+      "id": "MCL54-CLUSTER-019",
+      "label": "Italian Christmas Eve Cassata dessert",
+      "source_observation_ids": [
+        "MCL54-EWTN-055"
+      ],
+      "possible_master_ids": [],
+      "possible_provisional_group_ids": [],
+      "kind": "FEAST_FOOD",
+      "identity_certified": false,
+      "source_file": "data/customs/master/mcloughlin-family-advent-action-family-reconciliation.v1.json"
+    },
+    {
+      "id": "MCL54-CLUSTER-020",
+      "label": "English manger-shaped Christmas mince pie",
+      "source_observation_ids": [
+        "MCL54-EWTN-056"
+      ],
+      "possible_master_ids": [],
+      "possible_provisional_group_ids": [
+        "CAT-WEISER-A-068"
+      ],
+      "kind": "FEAST_FOOD",
+      "identity_certified": false,
+      "source_file": "data/customs/master/mcloughlin-family-advent-action-family-reconciliation.v1.json"
+    },
+    {
+      "id": "MCL54-CLUSTER-021",
+      "label": "Gingerbread boy Christ Child origin assertion",
+      "source_observation_ids": [
+        "MCL54-EWTN-057"
+      ],
+      "possible_master_ids": [],
+      "possible_provisional_group_ids": [],
+      "kind": "HISTORICAL_CLAIM_REVIEW",
+      "identity_certified": false,
+      "source_file": "data/customs/master/mcloughlin-family-advent-action-family-reconciliation.v1.json"
+    },
+    {
+      "id": "MCL54-CLUSTER-022",
+      "label": "Decorating Christmas home with Marian image and vigil lights",
+      "source_observation_ids": [
+        "MCL54-EWTN-058"
+      ],
+      "possible_master_ids": [],
+      "possible_provisional_group_ids": [],
+      "kind": "HOME_DEVOTIONAL_DECOR",
+      "identity_certified": false,
+      "source_file": "data/customs/master/mcloughlin-family-advent-action-family-reconciliation.v1.json"
+    },
+    {
+      "id": "MCL54-CLUSTER-023",
+      "label": "Irish-style Christmas house candle lit after Angelus",
+      "source_observation_ids": [
+        "MCL54-EWTN-059"
+      ],
+      "possible_master_ids": [
+        "CANDIDATE-IRISH-CHRISTMAS-CANDLE"
+      ],
+      "possible_provisional_group_ids": [],
+      "kind": "REGIONAL_REPORTED_CUSTOM",
+      "identity_certified": false,
+      "source_file": "data/customs/master/mcloughlin-family-advent-action-family-reconciliation.v1.json"
+    },
+    {
+      "id": "MCL54-CLUSTER-024",
+      "label": "Christmas Eve crib procession, Martyrology, Gospel and home prayers",
+      "source_observation_ids": [
+        "MCL54-EWTN-060",
+        "MCL54-EWTN-061",
+        "MCL54-EWTN-062",
+        "MCL54-EWTN-063",
+        "MCL54-EWTN-064",
+        "MCL54-EWTN-065",
+        "MCL54-EWTN-066"
+      ],
+      "possible_master_ids": [],
+      "possible_provisional_group_ids": [
+        "CAT-WEISER-A-032"
+      ],
+      "kind": "HOUSEHOLD_NATIVITY_CEREMONY",
+      "identity_certified": false,
+      "source_file": "data/customs/master/mcloughlin-family-advent-action-family-reconciliation.v1.json"
+    },
+    {
+      "id": "MCL54-CLUSTER-025",
+      "label": "Christmas tree and domestic crib blessing occasions",
+      "source_observation_ids": [
+        "MCL54-EWTN-067",
+        "MCL54-EWTN-069",
+        "MCL54-EWTN-070"
+      ],
+      "possible_master_ids": [],
+      "possible_provisional_group_ids": [],
+      "kind": "HOUSEHOLD_CEREMONY",
+      "identity_certified": false,
+      "source_file": "data/customs/master/mcloughlin-family-advent-action-family-reconciliation.v1.json"
+    },
+    {
+      "id": "MCL54-CLUSTER-026",
+      "label": "Paradise-tree origin attribution quoted from Weiser",
+      "source_observation_ids": [
+        "MCL54-EWTN-068"
+      ],
+      "possible_master_ids": [],
+      "possible_provisional_group_ids": [
+        "CAT-WEISER-A-051"
+      ],
+      "kind": "HISTORICAL_CLAIM_REVIEW",
+      "identity_certified": false,
+      "source_file": "data/customs/master/mcloughlin-family-advent-action-family-reconciliation.v1.json"
     }
   ]
 }
