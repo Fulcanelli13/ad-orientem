@@ -3,7 +3,7 @@ import {resolve} from "node:path";
 import {pathToFileURL} from "node:url";
 import {articleFor,fingerprint,COPY_FIELDS,validationErrors} from "./editorial-acceptance-contract.mjs";
 const read=path=>JSON.parse(readFileSync(new URL("../../"+path,import.meta.url),"utf8"));
-const md=s=>String(s??"").replaceAll("|","\\|").replaceAll("\\n"," ").trim();
+const md=s=>String(s??"").replaceAll("|","\\|").replaceAll("\n"," ").trim();
 export function renderReviewPacket(){
   const decision=read("data/customs/editorial-final-acceptance.v1.json");
   const source=read("data/customs/research/customs-published-35-editorial-first-pass.20261023.v1.json");
@@ -43,7 +43,7 @@ export function renderReviewPacket(){
       "","---");
   }
   lines.push("","**Do not sign off by changing the research ledger or by marking the existing 24-item scoped-acceptance register.** Only the dedicated final-signoff manifest has the metadata fields required for final review.");
-  return lines.join("\\n")+"\\n";
+  return lines.join("\n")+"\n";
 }
 if(process.argv[1]&&import.meta.url===pathToFileURL(resolve(process.argv[1])).href)
   process.stdout.write(renderReviewPacket());
