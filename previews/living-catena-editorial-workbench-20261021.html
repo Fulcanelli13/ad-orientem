@@ -577,7 +577,12 @@ document.getElementById("download").addEventListener("click",()=>{
  }catch(err){alert("Export blocked: "+err.message);}
 });
 document.getElementById("blindReviewer").addEventListener("input",()=>{
- blindReviewerId="";blindDecisions=new Map();if(filter==="blind")renderList();
+ blindReviewerId="";blindDecisions=new Map();
+ if(filter==="blind"){
+  renderList();++selectedVersion;
+  workspace.replaceChildren();
+  append(workspace,"p","notice","Reviewer identity changed. Existing review fields are cleared; select or confirm a reviewer before grading.");
+ }
 });
 document.getElementById("blindChooseReviewer").addEventListener("click",()=>{
  const v=document.getElementById("blindReviewer").value.trim();
@@ -585,6 +590,7 @@ document.getElementById("blindChooseReviewer").addEventListener("click",()=>{
   document.getElementById("blindStatus").textContent="Reviewer identifier must be 3–100 characters.";return;
  }
  blindReviewerId=v;loadBlindDraft();renderList();
+ if(filter==="blind"&&active)void selectBlind(active);
  document.getElementById("blindStatus").textContent="Reviewer "+v+
   " · "+blindDecisions.size+"/23 cases graded locally. Separate exported reviews are not independently authenticated.";
 });
