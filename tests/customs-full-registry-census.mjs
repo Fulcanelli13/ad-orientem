@@ -444,7 +444,7 @@ assert.equal(allMcLReferences.length,70);
 assert.deepEqual(new Set(allMcLReferences),mclIds);
 assert.equal(mcloughlinGroups.summary.certified_distinct_new_catholic_customs,0);
 assert.equal(mcloughlinGroups.summary.publication_changes,0);
-assert.equal(count.source_observations.total_source_detail_rows_including_external,1425);
+assert.equal(count.source_observations.total_source_detail_rows_including_external,1629);
 assert.equal(count.source_observations.all_book_research_rows_including_nested_details,1025);
 assert.equal(researchCatalogue.external_source_observations_mcloughlin.length,70);
 assert.equal(researchCatalogue.external_source_action_families_mcloughlin.length,26);
@@ -545,7 +545,7 @@ for(const r of ccEx.records) {
 assert.equal(researchCatalogue.external_source_observations_catholicculture_excerpts.length,132);
 assert.deepEqual(new Set(researchCatalogue.external_source_observations_catholicculture_excerpts.map(r=>r.id)),ccIds);
 assert.equal(count.source_observations.catholicculture_trapp_berger_newland_excerpt_source_actions,132);
-assert.equal(count.source_observations.total_source_detail_rows_including_external,1425);
+assert.equal(count.source_observations.total_source_detail_rows_including_external,1629);
 assert.equal(count.identity_working_rows.provisional_after_53_no_owner_action_review,408);
 assert.equal(count.identity_working_rows.final_uniquely_verified_customs_added,0);
 assert.equal(researchCatalogue.summary.no_new_app_publications,true);
