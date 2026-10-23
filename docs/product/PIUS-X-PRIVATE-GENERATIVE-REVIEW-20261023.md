@@ -294,3 +294,30 @@ Two languages × three existing source-owner nodes, each reply **36–40 words i
 `tests/pius-x-inchat-bilingual-conversation-specimen.mjs` treats those authored replies as a frozen, non-approved fixture. It replays each answer through the existing *mock* composer/verifier API for both languages, checks all seven distinct source witness IDs and exactly three original node IDs, verifies source-only payloads do not disclose the unverified full P6 answers, and counts repetitions/monologues. It explicitly asserts the fixture's `externalProviderEndpointCalled:false` and `multiturnStatefulnessTested:false` flags. Replay test passes cannot be described as a successful real-model provider run.
 
 **Next empirical gate:** an opted-in configured real model must independently generate the three turns *sequentially* in both languages with prior accepted replies supplied only as context. Preserve the raw provider results and provider metadata privately; compare source support, history dependence, repetition, unnatural sermon length and style. Never use self-rating or a second model's unsupported approval as authentication of the source.
+
+
+## P2.12 — Bilingual configured-provider acceptance gate (23 October 2026)
+
+The decisive empirical question is whether an independently configured model endpoint can sustain **three actual sequential replies in English and three in French** from the original `E supremi` source owner, with no prior-session history leaking into a different language. The existing `tools/pius-x-live-eval.mjs` now supports `AO_SPX_EVAL_BILINGUAL=1` together with `AO_SPX_EVAL_MULTITURN=1`. It records accepted/held turns, distinct language sessions, source-ID and publication gate failures, repeated sentences, overlap and monologue diagnostics, and **actual attempted compose / verify provider requests**. No historical, stylistic, doctrinal, or bilingual authenticity approval is implied.
+
+**Provider status:** No live endpoint or API key has been configured in this PR or this connected workflow. Critically, **GitHub Models was retired on 30 July 2026**; older suggestions to use GitHub Models with `GITHUB_TOKEN` are obsolete and were not attempted. Use an already-authorized HTTPS OpenAI-compatible endpoint or a local compatible endpoint, with model identifier and any credential provisioned securely outside Git. Do not commit secrets, post them in chat, or add an automatic GitHub Actions job that spends third-party inference credits.
+
+**No-network readiness report (does not print API secrets):**
+
+    AO_SPX_EVAL_READINESS_ONLY=1 node tools/pius-x-live-eval.mjs
+
+**Once an explicitly configured provider is available:** From the project checkout with `artifacts/pius-x-study-expanded/SPX_Study_Expanded_106_P6.html` built, supply `AO_SPX_MODEL_URL`, `AO_SPX_MODEL`, and optionally `AO_SPX_MODEL_KEY` through secure environment injection, and run:
+
+    AO_SPX_LIVE_EVAL=I_ACCEPT_MODEL_COSTS_AND_DATA_TRANSFER \
+    AO_SPX_REVIEW_MODE=1 \
+    AO_SPX_EVAL_CASES=0 \
+    AO_SPX_EVAL_MULTITURN=1 \
+    AO_SPX_EVAL_BILINGUAL=1 \
+    AO_SPX_EVAL_CHAPTER=SPX-PILOT-01 \
+    node tools/pius-x-live-eval.mjs
+
+The command uses six separate composer requests **plus six separate model-verification requests** if all six draft compositions succeed (up to twelve model calls in this bounded trial). `AO_SPX_EVAL_CASES=0` keeps optional general scenarios out of the budget. It writes a local, private mode-0600 JSON record with the exact six responses and approved-source ID pointers, marks all manual ratings unreviewed, and sets a nonzero exit status if a source/publication guard fails, if no provider calls occur, or if fewer than all six supported trial questions receive an accepted research draft. Even six accepted research drafts are not a publishing pass: second-model verification is not independent philological certification.
+
+**What was completed in CI instead:** `tests/pius-x-live-eval-harness.mjs` exercises two sequential language sessions with a mock function and verifies `history=[0,1,2,0,1,2]`. `tests/pius-x-live-bilingual-loopback-adapter.mjs` makes **twelve actual loopback HTTP requests**, six composer + six mock-verifier, against an **in-process FAKE model server**, proving that the configured adapter's HTTP transport and mode-0600 private report path work while asserting no cross-language context, no exposed secret and no release flags. Neither fake-model scenario counts as a live LLM evaluation, and no unapproved papal dialogue was published.
+
+**Next external dependency:** supply an authorized provider/model access path and perform the actual six-turn, twelve-call run. The GitHub PR remains draft until the raw provider transcripts are assessed for first-turn directness, second-/third-turn continuity, accurate Latin-source support and embedded-author attribution. Other source/style pipelines remain independent and should not repeat this engineering work.
