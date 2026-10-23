@@ -5,6 +5,7 @@ import "./historia-p3-m11-m19-literary-review.mjs";
 import "./historia-p3-p4-m20-m37-reconciliation.mjs";
 import "./historia-p3-continuous-full-story-seam-audit.mjs";
 import "./historia-p3-five-p0-source-minimum-adjudication.mjs";
+import "./historia-p3-p0-incontext-integrity-review.mjs";
 import {readFileSync} from "node:fs";
 import {parseScriptureContext} from "../src/scripture/context.js";
 
