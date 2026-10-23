@@ -8,7 +8,8 @@
     "INTRA_AUTHOR_SOURCES": "Two Weiser books do not amount to independent corroboration.",
     "FULLNESS": "1958 Handbook's six overlooked observations prove its earlier 568-item index was not exhaustive. 1956 book full-scan pass likewise not certified page-by-page exhaustive.",
     "PRODUCT_BOUNDARY": "No Ad Orientem runtime publication or prioritization.",
-    "GRANULAR_DETAIL_NON_ADDITIVITY": "178 source details are nested under existing 568 Handbook observations; they are finer local or historical variants, not automatically 178 new independent custom identities. Base source-observation rows remain 685 across two Weiser books."
+    "GRANULAR_DETAIL_NON_ADDITIVITY": "340 source detail rows comprise subpractices, regional variants, historical context and potential missing customs. Their overlap with the 568 Handbook original observations and one another is not yet resolved. 1025 research rows are NOT 1025 unique customs.",
+    "POTENTIAL_UNINDEXED_NEED_GATE": "34 early-chapter details lack an appropriate source-index parent; they require manual identity review before being counted as distinct customs."
   },
   "summary": {
     "source_observations": {
@@ -18,10 +19,12 @@
       "family_1956_direct_scan": 111,
       "combined_distinct_source_rows": 685,
       "preview_subjects_extra_counted": 0,
-      "handbook_nested_granular_detail_mentions": 178,
-      "all_book_research_rows_including_nested_details": 863,
+      "handbook_nested_granular_detail_mentions": 340,
+      "all_book_research_rows_including_nested_details": 1025,
       "combined_distinct_source_rows_note": "685 non-nested separately identified source observations; plus 57 nested source details that may refer to the same source passages or practices. Do not infer 742 independent customs or independent mentions.",
       "granular_details_spread_by_batch": {
+        "ch01_to_04": 41,
+        "ch05_to_09": 121,
         "ch10_to_13": 57,
         "ch14_to_28": 121
       }
@@ -42,7 +45,10 @@
       "family_records_without_direct_match": 56,
       "handbook_ch10_to_ch13_page_detail_records": 57,
       "handbook_ch14_to_ch28_page_detail_records": 121,
-      "handbook_ch14_to_ch28_unique_page_locations": 42
+      "handbook_ch14_to_ch28_unique_page_locations": 42,
+      "handbook_ch01_to_09_page_detail_records": 162,
+      "handbook_ch01_to_09_potential_unindexed_details": 34,
+      "handbook_ch01_to_09_distinct_printed_page_locations": 53
     },
     "no_new_app_publications": true
   },
@@ -63,7 +69,9 @@
     "relation": "data/customs/master/weiser-two-book-relationship-review.v1.json",
     "handbook_ch10_13_granular": "data/customs/master/weiser-handbook-targeted-addendum-ch10-13.v1.json",
     "weiser_precursor_acquisition": "data/customs/master/weiser-precursor-works-acquisition.v1.json",
-    "handbook_ch14_28_granular": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    "handbook_ch14_28_granular": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json",
+    "handbook_ch01_04_granular": "data/customs/master/weiser-handbook-targeted-addendum-ch01-04.v1.json",
+    "handbook_ch05_09_granular": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
   },
   "existing_master_identities": [
     {
@@ -9964,6 +9972,2760 @@
       "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
       "verified_distinct_identity": false,
       "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-C-001",
+      "label": "Weekday saints' celebrations repeated on the following Sunday in local solemnity",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "LOCAL_FEAST_OBSERVANCE",
+      "chapter": 1,
+      "printed_page": 13,
+      "pdf_page_zero_index": 30,
+      "ocr_line_range": [
+        820,
+        825
+      ],
+      "existing_parent_source_observation": "WEI58-01-001",
+      "relation_type": "POSSIBLE_DISTINCT_COMPONENT_OR_REGIONAL_VARIANT",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch01-04.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-C-002",
+      "label": "Medieval Sunday pre-Mass sprinkling of the faithful",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "WESTERN_RITE_HISTORY",
+      "chapter": 1,
+      "printed_page": 15,
+      "pdf_page_zero_index": 32,
+      "ocr_line_range": [
+        907,
+        917
+      ],
+      "existing_parent_source_observation": "WEI58-01-002",
+      "relation_type": "POSSIBLE_DISTINCT_COMPONENT_OR_REGIONAL_VARIANT",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch01-04.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-C-003",
+      "label": "Historical Sunday sprinkling procession through churchyard graves",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_CHURCH_PROCESSION",
+      "chapter": 1,
+      "printed_page": 15,
+      "pdf_page_zero_index": 32,
+      "ocr_line_range": [
+        917,
+        919
+      ],
+      "existing_parent_source_observation": "WEI58-01-004",
+      "relation_type": "POSSIBLE_DISTINCT_COMPONENT_OR_REGIONAL_VARIANT",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch01-04.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-C-004",
+      "label": "Sunday Vespers displaced by popular devotion and Benediction, still locally called Vespers",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_DEVOTION_VARIANT",
+      "chapter": 1,
+      "printed_page": 16,
+      "pdf_page_zero_index": 33,
+      "ocr_line_range": [
+        921,
+        931
+      ],
+      "existing_parent_source_observation": "WEI58-01-003",
+      "relation_type": "POSSIBLE_DISTINCT_COMPONENT_OR_REGIONAL_VARIANT",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch01-04.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-C-005",
+      "label": "Family Sunday prayers walking around the parish churchyard",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "CEMETERY_HOUSEHOLD_DEVOTION",
+      "chapter": 1,
+      "printed_page": 16,
+      "pdf_page_zero_index": 33,
+      "ocr_line_range": [
+        933,
+        938
+      ],
+      "existing_parent_source_observation": "WEI58-01-004",
+      "relation_type": "POSSIBLE_DISTINCT_COMPONENT_OR_REGIONAL_VARIANT",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch01-04.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-C-006",
+      "label": "Parent questions children about Sunday's sermon at family meal",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HOUSEHOLD_CATECHESIS",
+      "chapter": 1,
+      "printed_page": 16,
+      "pdf_page_zero_index": 33,
+      "ocr_line_range": [
+        939,
+        946
+      ],
+      "existing_parent_source_observation": "WEI58-01-005",
+      "relation_type": "POSSIBLE_DISTINCT_COMPONENT_OR_REGIONAL_VARIANT",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch01-04.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-C-007",
+      "label": "First wearing a new garment or shoes for Sunday Mass",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HOUSEHOLD_CLOTHING_CUSTOM",
+      "chapter": 1,
+      "printed_page": 16,
+      "pdf_page_zero_index": 33,
+      "ocr_line_range": [
+        947,
+        950
+      ],
+      "existing_parent_source_observation": "WEI58-01-006",
+      "relation_type": "POSSIBLE_DISTINCT_COMPONENT_OR_REGIONAL_VARIANT",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch01-04.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-C-008",
+      "label": "Making three crosses on freshly baked Sunday bread before cutting",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HOUSEHOLD_FOOD_CUSTOM",
+      "chapter": 1,
+      "printed_page": 16,
+      "pdf_page_zero_index": 33,
+      "ocr_line_range": [
+        950,
+        953
+      ],
+      "existing_parent_source_observation": "WEI58-01-007",
+      "relation_type": "POSSIBLE_DISTINCT_COMPONENT_OR_REGIONAL_VARIANT",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch01-04.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-C-009",
+      "label": "Sunday household light lit before an image of the Trinity",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HOUSEHOLD_DEVOTION",
+      "chapter": 1,
+      "printed_page": 17,
+      "pdf_page_zero_index": 34,
+      "ocr_line_range": [
+        957,
+        960
+      ],
+      "existing_parent_source_observation": "WEI58-01-008",
+      "relation_type": "POSSIBLE_DISTINCT_COMPONENT_OR_REGIONAL_VARIANT",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch01-04.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-C-010",
+      "label": "Sunday-born child fortune and supernatural gifts folklore",
+      "working_type": "POTENTIALLY_UNINDEXED_SOURCE_ACTION_REVIEW",
+      "category": "DISPUTED_FOLK_BELIEF",
+      "chapter": 1,
+      "printed_page": 17,
+      "pdf_page_zero_index": 34,
+      "ocr_line_range": [
+        960,
+        965
+      ],
+      "existing_parent_source_observation": null,
+      "relation_type": "POTENTIALLY_UNINDEXED_ACTION_REVIEW_NOT_YET_CERTIFIED",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch01-04.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-C-011",
+      "label": "Punishment legends for breaking Sunday rest",
+      "working_type": "POTENTIALLY_UNINDEXED_SOURCE_ACTION_REVIEW",
+      "category": "FOLK_LEGEND_NOT_INDEPENDENT_CUSTOM",
+      "chapter": 1,
+      "printed_page": 17,
+      "pdf_page_zero_index": 34,
+      "ocr_line_range": [
+        966,
+        972
+      ],
+      "existing_parent_source_observation": null,
+      "relation_type": "POTENTIALLY_UNINDEXED_ACTION_REVIEW_NOT_YET_CERTIFIED",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch01-04.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-C-012",
+      "label": "Medieval laity praying from primers and vernacular books of hours",
+      "working_type": "POTENTIALLY_UNINDEXED_SOURCE_ACTION_REVIEW",
+      "category": "HISTORICAL_LAY_PRAYER_CUSTOM",
+      "chapter": 2,
+      "printed_page": 21,
+      "pdf_page_zero_index": 38,
+      "ocr_line_range": [
+        1115,
+        1127
+      ],
+      "existing_parent_source_observation": null,
+      "relation_type": "POTENTIALLY_UNINDEXED_ACTION_REVIEW_NOT_YET_CERTIFIED",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch01-04.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-C-013",
+      "label": "Lay brothers substituting memorized Ave Marias for the Psalter",
+      "working_type": "POTENTIALLY_UNINDEXED_SOURCE_ACTION_REVIEW",
+      "category": "HISTORICAL_LAY_PRAYER",
+      "chapter": 2,
+      "printed_page": 22,
+      "pdf_page_zero_index": 39,
+      "ocr_line_range": [
+        1137,
+        1145
+      ],
+      "existing_parent_source_observation": null,
+      "relation_type": "POTENTIALLY_UNINDEXED_ACTION_REVIEW_NOT_YET_CERTIFIED",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch01-04.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-C-014",
+      "label": "Stations of the Cross incorporated into private prayer hours",
+      "working_type": "POTENTIALLY_UNINDEXED_SOURCE_ACTION_REVIEW",
+      "category": "HISTORICAL_DEVOTIONAL_VARIANT",
+      "chapter": 2,
+      "printed_page": 22,
+      "pdf_page_zero_index": 39,
+      "ocr_line_range": [
+        1147,
+        1150
+      ],
+      "existing_parent_source_observation": null,
+      "relation_type": "POTENTIALLY_UNINDEXED_ACTION_REVIEW_NOT_YET_CERTIFIED",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch01-04.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-C-015",
+      "label": "Short prayer and Sign of the Cross when a clock strikes each hour",
+      "working_type": "POTENTIALLY_UNINDEXED_SOURCE_ACTION_REVIEW",
+      "category": "HISTORICAL_HOURLY_PRAYER",
+      "chapter": 2,
+      "printed_page": 22,
+      "pdf_page_zero_index": 39,
+      "ocr_line_range": [
+        1150,
+        1153
+      ],
+      "existing_parent_source_observation": null,
+      "relation_type": "POTENTIALLY_UNINDEXED_ACTION_REVIEW_NOT_YET_CERTIFIED",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch01-04.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-C-016",
+      "label": "Vernacular recitation of portions of the Breviary by laypeople",
+      "working_type": "POTENTIALLY_UNINDEXED_SOURCE_ACTION_REVIEW",
+      "category": "LAY_LITURGICAL_DEVOTION",
+      "chapter": 2,
+      "printed_page": 22,
+      "pdf_page_zero_index": 39,
+      "ocr_line_range": [
+        1164,
+        1170
+      ],
+      "existing_parent_source_observation": null,
+      "relation_type": "POTENTIALLY_UNINDEXED_ACTION_REVIEW_NOT_YET_CERTIFIED",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch01-04.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-C-017",
+      "label": "Historical Wednesday and Friday partial Station fast until afternoon",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_PENITENTIAL_DISCIPLINE",
+      "chapter": 2,
+      "printed_page": 23,
+      "pdf_page_zero_index": 40,
+      "ocr_line_range": [
+        1199,
+        1217
+      ],
+      "existing_parent_source_observation": "WEI58-02-002",
+      "relation_type": "POSSIBLE_DISTINCT_COMPONENT_OR_REGIONAL_VARIANT",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch01-04.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-C-018",
+      "label": "Voluntary Wednesday abstinence practiced in honour of Saint Joseph",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "LOCAL_PENITENTIAL_VARIANT",
+      "chapter": 2,
+      "printed_page": 24,
+      "pdf_page_zero_index": 41,
+      "ocr_line_range": [
+        1221,
+        1224
+      ],
+      "existing_parent_source_observation": "WEI58-02-002",
+      "relation_type": "POSSIBLE_DISTINCT_COMPONENT_OR_REGIONAL_VARIANT",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch01-04.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-C-019",
+      "label": "Historic Saturday fast in the Western Church",
+      "working_type": "POTENTIALLY_UNINDEXED_SOURCE_ACTION_REVIEW",
+      "category": "HISTORICAL_PENITENTIAL_DISCIPLINE",
+      "chapter": 2,
+      "printed_page": 24,
+      "pdf_page_zero_index": 41,
+      "ocr_line_range": [
+        1225,
+        1234
+      ],
+      "existing_parent_source_observation": null,
+      "relation_type": "POTENTIALLY_UNINDEXED_ACTION_REVIEW_NOT_YET_CERTIFIED",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch01-04.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-C-020",
+      "label": "Early weekly Station fast accompanied by hilltop prayer and church readings",
+      "working_type": "POTENTIALLY_UNINDEXED_SOURCE_ACTION_REVIEW",
+      "category": "HISTORICAL_EARLY_CHURCH_PRAYER",
+      "chapter": 2,
+      "printed_page": 24,
+      "pdf_page_zero_index": 41,
+      "ocr_line_range": [
+        1239,
+        1253
+      ],
+      "existing_parent_source_observation": null,
+      "relation_type": "POTENTIALLY_UNINDEXED_ACTION_REVIEW_NOT_YET_CERTIFIED",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch01-04.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-C-021",
+      "label": "First Wednesday devotion to Saint Joseph, with later historical indulgence",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_SAINT_DEVOTION",
+      "chapter": 2,
+      "printed_page": 28,
+      "pdf_page_zero_index": 45,
+      "ocr_line_range": [
+        1387,
+        1410
+      ],
+      "existing_parent_source_observation": "WEI58-02-006",
+      "relation_type": "POSSIBLE_DISTINCT_COMPONENT_OR_REGIONAL_VARIANT",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch01-04.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-C-022",
+      "label": "Central European Thursday Eucharistic High Mass attended by a delegate from each family",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_PARISH_DEVOTION",
+      "chapter": 2,
+      "printed_page": 29,
+      "pdf_page_zero_index": 46,
+      "ocr_line_range": [
+        1415,
+        1421
+      ],
+      "existing_parent_source_observation": "WEI58-02-007",
+      "relation_type": "POSSIBLE_DISTINCT_COMPONENT_OR_REGIONAL_VARIANT",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch01-04.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-C-023",
+      "label": "Thursday evening Holy Hour recalling Christ's agony",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "EUCHARISTIC_DEVOTION",
+      "chapter": 2,
+      "printed_page": 29,
+      "pdf_page_zero_index": 46,
+      "ocr_line_range": [
+        1421,
+        1423
+      ],
+      "existing_parent_source_observation": "WEI58-02-007",
+      "relation_type": "POSSIBLE_DISTINCT_COMPONENT_OR_REGIONAL_VARIANT",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch01-04.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-C-024",
+      "label": "First Thursday High Mass of Christ the Eternal High Priest under special indult",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_LITURGICAL_OBSERVANCE",
+      "chapter": 2,
+      "printed_page": 29,
+      "pdf_page_zero_index": 46,
+      "ocr_line_range": [
+        1424,
+        1427
+      ],
+      "existing_parent_source_observation": "WEI58-02-007",
+      "relation_type": "POSSIBLE_DISTINCT_COMPONENT_OR_REGIONAL_VARIANT",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch01-04.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-C-025",
+      "label": "Weekly Friday Sacred Heart prayers and vigil lights in the home",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HOUSEHOLD_SACRED_HEART_DEVOTION",
+      "chapter": 2,
+      "printed_page": 30,
+      "pdf_page_zero_index": 47,
+      "ocr_line_range": [
+        1438,
+        1443
+      ],
+      "existing_parent_source_observation": "WEI58-02-008",
+      "relation_type": "POSSIBLE_DISTINCT_COMPONENT_OR_REGIONAL_VARIANT",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch01-04.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-C-026",
+      "label": "Saturday Marian votive Mass and Office",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "WESTERN_RITE_HISTORY",
+      "chapter": 2,
+      "printed_page": 30,
+      "pdf_page_zero_index": 47,
+      "ocr_line_range": [
+        1444,
+        1456
+      ],
+      "existing_parent_source_observation": "WEI58-02-009",
+      "relation_type": "POSSIBLE_DISTINCT_COMPONENT_OR_REGIONAL_VARIANT",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch01-04.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-C-027",
+      "label": "Medieval Ember-day Mass attendance and abstaining from work",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_SEASONAL_OBSERVANCE",
+      "chapter": 3,
+      "printed_page": 36,
+      "pdf_page_zero_index": 53,
+      "ocr_line_range": [
+        1687,
+        1692
+      ],
+      "existing_parent_source_observation": "WEI58-03-007",
+      "relation_type": "POSSIBLE_DISTINCT_COMPONENT_OR_REGIONAL_VARIANT",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch01-04.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-C-028",
+      "label": "Ember-day Mass requested for the departed",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "FAMILY_INTERCESSORY_DEVOTION",
+      "chapter": 3,
+      "printed_page": 36,
+      "pdf_page_zero_index": 53,
+      "ocr_line_range": [
+        1693,
+        1698
+      ],
+      "existing_parent_source_observation": "WEI58-03-005",
+      "relation_type": "POSSIBLE_DISTINCT_COMPONENT_OR_REGIONAL_VARIANT",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch01-04.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-C-029",
+      "label": "Food and alms given to the poor on Ember Days",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "CHRISTIAN_CHARITY",
+      "chapter": 3,
+      "printed_page": 36,
+      "pdf_page_zero_index": 53,
+      "ocr_line_range": [
+        1699,
+        1701
+      ],
+      "existing_parent_source_observation": "WEI58-03-004",
+      "relation_type": "POSSIBLE_DISTINCT_COMPONENT_OR_REGIONAL_VARIANT",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch01-04.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-C-030",
+      "label": "Warm baths provided for poor people during Ember Days",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_CHARITY_VARIANT",
+      "chapter": 3,
+      "printed_page": 36,
+      "pdf_page_zero_index": 53,
+      "ocr_line_range": [
+        1699,
+        1701
+      ],
+      "existing_parent_source_observation": "WEI58-03-004",
+      "relation_type": "POSSIBLE_DISTINCT_COMPONENT_OR_REGIONAL_VARIANT",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch01-04.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-C-031",
+      "label": "Pregnant women ask prayers for safe childbirth at Embertide",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HOUSEHOLD_PRAYER",
+      "chapter": 3,
+      "printed_page": 36,
+      "pdf_page_zero_index": 53,
+      "ocr_line_range": [
+        1702,
+        1709
+      ],
+      "existing_parent_source_observation": "WEI58-03-006",
+      "relation_type": "POSSIBLE_DISTINCT_COMPONENT_OR_REGIONAL_VARIANT",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch01-04.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-C-032",
+      "label": "Mass offerings for forgotten souls in purgatory on Ember Days",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "DEVOTION_FOR_DEAD",
+      "chapter": 3,
+      "printed_page": 37,
+      "pdf_page_zero_index": 54,
+      "ocr_line_range": [
+        1717,
+        1721
+      ],
+      "existing_parent_source_observation": "WEI58-03-005",
+      "relation_type": "POSSIBLE_DISTINCT_COMPONENT_OR_REGIONAL_VARIANT",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch01-04.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-C-033",
+      "label": "Ember seasonal quarter-term payment of debts and tithes",
+      "working_type": "POTENTIALLY_UNINDEXED_SOURCE_ACTION_REVIEW",
+      "category": "HISTORICAL_CIVIC_CONTEXT",
+      "chapter": 3,
+      "printed_page": 37,
+      "pdf_page_zero_index": 54,
+      "ocr_line_range": [
+        1722,
+        1729
+      ],
+      "existing_parent_source_observation": null,
+      "relation_type": "POTENTIALLY_UNINDEXED_ACTION_REVIEW_NOT_YET_CERTIFIED",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch01-04.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-C-034",
+      "label": "Rogation procession antiphons once sung at the beginning of Major Litany",
+      "working_type": "POTENTIALLY_UNINDEXED_SOURCE_ACTION_REVIEW",
+      "category": "HISTORICAL_LITURGICAL_FORM",
+      "chapter": 4,
+      "printed_page": 43,
+      "pdf_page_zero_index": 60,
+      "ocr_line_range": [
+        1940,
+        1948
+      ],
+      "existing_parent_source_observation": null,
+      "relation_type": "POTENTIALLY_UNINDEXED_ACTION_REVIEW_NOT_YET_CERTIFIED",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch01-04.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-C-035",
+      "label": "Eastern pre-Lent Fast of Ninevites or Fast of Adam as comparative discipline",
+      "working_type": "POTENTIALLY_UNINDEXED_SOURCE_ACTION_REVIEW",
+      "category": "OTHER_RITE_FAST_NOT_ROMAN_ROGATION",
+      "chapter": 4,
+      "printed_page": 44,
+      "pdf_page_zero_index": 61,
+      "ocr_line_range": [
+        1968,
+        1982
+      ],
+      "existing_parent_source_observation": null,
+      "relation_type": "POTENTIALLY_UNINDEXED_ACTION_REVIEW_NOT_YET_CERTIFIED",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch01-04.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-C-036",
+      "label": "Rogation bells, processional banners and sprinkling of orchards and fields",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "RURAL_LITURGICAL_VARIANT",
+      "chapter": 4,
+      "printed_page": 44,
+      "pdf_page_zero_index": 61,
+      "ocr_line_range": [
+        1983,
+        1992
+      ],
+      "existing_parent_source_observation": "WEI58-04-002",
+      "relation_type": "POSSIBLE_DISTINCT_COMPONENT_OR_REGIONAL_VARIANT",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch01-04.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-C-037",
+      "label": "Rogation family prayer circuit around home, barns and fields",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HOUSEHOLD_ROGATION",
+      "chapter": 4,
+      "printed_page": 44,
+      "pdf_page_zero_index": 61,
+      "ocr_line_range": [
+        1992,
+        1995
+      ],
+      "existing_parent_source_observation": "WEI58-04-003",
+      "relation_type": "POSSIBLE_DISTINCT_COMPONENT_OR_REGIONAL_VARIANT",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch01-04.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-C-038",
+      "label": "Village Rogation processions converge on town parish for Mass and market",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_PILGRIMAGE_PROCESSION",
+      "chapter": 4,
+      "printed_page": 45,
+      "pdf_page_zero_index": 62,
+      "ocr_line_range": [
+        1996,
+        2002
+      ],
+      "existing_parent_source_observation": "WEI58-04-004",
+      "relation_type": "POSSIBLE_DISTINCT_COMPONENT_OR_REGIONAL_VARIANT",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch01-04.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-C-039",
+      "label": "Unscheduled rural weather processions against crop hazards",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "LOCAL_PENITENTIAL_PROCESSION",
+      "chapter": 4,
+      "printed_page": 45,
+      "pdf_page_zero_index": 62,
+      "ocr_line_range": [
+        2003,
+        2012
+      ],
+      "existing_parent_source_observation": "WEI58-04-005",
+      "relation_type": "POSSIBLE_DISTINCT_COMPONENT_OR_REGIONAL_VARIANT",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch01-04.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-C-040",
+      "label": "Sunday weather procession around church with Prologue of John",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_REGIONAL_RITUAL",
+      "chapter": 4,
+      "printed_page": 45,
+      "pdf_page_zero_index": 62,
+      "ocr_line_range": [
+        2013,
+        2017
+      ],
+      "existing_parent_source_observation": "WEI58-04-006",
+      "relation_type": "POSSIBLE_DISTINCT_COMPONENT_OR_REGIONAL_VARIANT",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch01-04.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-C-041",
+      "label": "Superstitious circumambulation of farmland with protective-effect claim",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "CONTESTED_FOLK_ACTION",
+      "chapter": 4,
+      "printed_page": 45,
+      "pdf_page_zero_index": 62,
+      "ocr_line_range": [
+        2019,
+        2033
+      ],
+      "existing_parent_source_observation": "WEI58-04-007",
+      "relation_type": "POSSIBLE_DISTINCT_COMPONENT_OR_REGIONAL_VARIANT",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch01-04.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-001",
+      "label": "Historical Advent fast limited to particular weekdays in Latin countries",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_FAST_DISCIPLINE",
+      "chapter": 5,
+      "printed_page": 50,
+      "pdf_page_zero_index": 67,
+      "ocr_line_range": [
+        2123,
+        2130
+      ],
+      "existing_parent_source_observation": "WEI58-05-001",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-002",
+      "label": "Byzantine Saint Philip's Nativity fast and Syriac Armenian Coptic variants",
+      "working_type": "POTENTIALLY_UNINDEXED_SOURCE_ACTION_REVIEW",
+      "category": "EASTERN_CHURCH_COMPARATIVE_FAST",
+      "chapter": 5,
+      "printed_page": 51,
+      "pdf_page_zero_index": 68,
+      "ocr_line_range": [
+        2132,
+        2151
+      ],
+      "existing_parent_source_observation": null,
+      "relation_type": "POTENTIAL_UNINDEXED_SOURCE_ACTION_OR_DISTINCT_FOLK_CLAIM",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-003",
+      "label": "Evergreen wreath of four candles placed at the household shrine",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HOUSEHOLD_DEVOTION_OBJECT",
+      "chapter": 5,
+      "printed_page": 55,
+      "pdf_page_zero_index": 72,
+      "ocr_line_range": [
+        2297,
+        2303
+      ],
+      "existing_parent_source_observation": "WEI58-05-002",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-004",
+      "label": "Family Advent evening prayer with one extra candle lit each Sunday",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HOUSEHOLD_PRAYER_VARIANT",
+      "chapter": 5,
+      "printed_page": 55,
+      "pdf_page_zero_index": 72,
+      "ocr_line_range": [
+        2303,
+        2311
+      ],
+      "existing_parent_source_observation": "WEI58-05-002",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-005",
+      "label": "Extinguishing ordinary household lamps for Advent wreath prayer",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HOUSEHOLD_PRAYER_VARIANT",
+      "chapter": 5,
+      "printed_page": 55,
+      "pdf_page_zero_index": 72,
+      "ocr_line_range": [
+        2305,
+        2309
+      ],
+      "existing_parent_source_observation": "WEI58-05-002",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-006",
+      "label": "Advent hymns or Marian songs sung after family wreath prayers",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HOUSEHOLD_MUSIC_VARIANT",
+      "chapter": 5,
+      "printed_page": 55,
+      "pdf_page_zero_index": 72,
+      "ocr_line_range": [
+        2310,
+        2311
+      ],
+      "existing_parent_source_observation": "WEI58-05-002",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-007",
+      "label": "A family member named John or Joan lights Advent candles first",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_FAMILY_NAME_CUSTOM",
+      "chapter": 5,
+      "printed_page": 55,
+      "pdf_page_zero_index": 72,
+      "ocr_line_range": [
+        2320,
+        2325
+      ],
+      "existing_parent_source_observation": "WEI58-05-003",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-008",
+      "label": "Children leave wish letters on St Nicholas Eve windowsills or at crib",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HOUSEHOLD_CHILDREN_CUSTOM",
+      "chapter": 5,
+      "printed_page": 56,
+      "pdf_page_zero_index": 73,
+      "ocr_line_range": [
+        2326,
+        2336
+      ],
+      "existing_parent_source_observation": "WEI58-05-004",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-009",
+      "label": "Latin-American children's Christ Child letters displayed at crib",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_CHILDREN_VARIANT",
+      "chapter": 5,
+      "printed_page": 56,
+      "pdf_page_zero_index": 73,
+      "ocr_line_range": [
+        2333,
+        2337
+      ],
+      "existing_parent_source_observation": "WEI58-05-004",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-010",
+      "label": "Children place straw in Advent crib to represent individual good works",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HOUSEHOLD_DEVOTIONAL_ACTION",
+      "chapter": 5,
+      "printed_page": 56,
+      "pdf_page_zero_index": 73,
+      "ocr_line_range": [
+        2338,
+        2346
+      ],
+      "existing_parent_source_observation": "WEI58-05-005",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-011",
+      "label": "German picture calendar with a Nativity door revealed on Christmas Eve",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HOUSEHOLD_DEVOTIONAL_OBJECT",
+      "chapter": 5,
+      "printed_page": 56,
+      "pdf_page_zero_index": 73,
+      "ocr_line_range": [
+        2347,
+        2356
+      ],
+      "existing_parent_source_observation": "WEI58-05-006",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-012",
+      "label": "Novena del Niño with instrumental carols and an empty crib",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_PARISH_NOVENA",
+      "chapter": 5,
+      "printed_page": 56,
+      "pdf_page_zero_index": 73,
+      "ocr_line_range": [
+        2358,
+        2367
+      ],
+      "existing_parent_source_observation": "WEI58-05-007",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-013",
+      "label": "Children's street firecrackers following pre-Christmas novena",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_FESTIVAL_VARIANT",
+      "chapter": 5,
+      "printed_page": 56,
+      "pdf_page_zero_index": 73,
+      "ocr_line_range": [
+        2364,
+        2367
+      ],
+      "existing_parent_source_observation": "WEI58-05-007",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-014",
+      "label": "Alpine Marian image carried from farm to farm for nine Golden Nights",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_HOUSEHOLD_PROCESSION",
+      "chapter": 5,
+      "printed_page": 57,
+      "pdf_page_zero_index": 74,
+      "ocr_line_range": [
+        2369,
+        2381
+      ],
+      "existing_parent_source_observation": "WEI58-05-008",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-015",
+      "label": "Host family candles and sings before travelling Advent Marian image",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_FAMILY_DEVOTION",
+      "chapter": 5,
+      "printed_page": 57,
+      "pdf_page_zero_index": 74,
+      "ocr_line_range": [
+        2375,
+        2381
+      ],
+      "existing_parent_source_observation": "WEI58-05-008",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-016",
+      "label": "Josephstragen image visits among nine boys before Christmas",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_CHILDREN_DEVOTION",
+      "chapter": 5,
+      "printed_page": 57,
+      "pdf_page_zero_index": 74,
+      "ocr_line_range": [
+        2382,
+        2393
+      ],
+      "existing_parent_source_observation": "WEI58-05-009",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-017",
+      "label": "Josephstragen final Christmas Eve schoolchildren procession",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_DEVOTIONAL_PROCESSION",
+      "chapter": 5,
+      "printed_page": 57,
+      "pdf_page_zero_index": 74,
+      "ocr_line_range": [
+        2389,
+        2393
+      ],
+      "existing_parent_source_observation": "WEI58-05-009",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-018",
+      "label": "Herbergsuchen musical enactment of Mary and Joseph seeking lodging",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_SACRED_DRAMA",
+      "chapter": 5,
+      "printed_page": 58,
+      "pdf_page_zero_index": 75,
+      "ocr_line_range": [
+        2394,
+        2404
+      ],
+      "existing_parent_source_observation": "WEI58-05-010",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-019",
+      "label": "Las Posadas indoor family procession and image veneration",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_HOUSEHOLD_PROCESSION",
+      "chapter": 5,
+      "printed_page": 58,
+      "pdf_page_zero_index": 75,
+      "ocr_line_range": [
+        2405,
+        2414
+      ],
+      "existing_parent_source_observation": "WEI58-05-011",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-020",
+      "label": "Pinata game after Mexican Posadas household devotions",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_FESTIVAL_FOLK",
+      "chapter": 5,
+      "printed_page": 58,
+      "pdf_page_zero_index": 75,
+      "ocr_line_range": [
+        2414,
+        2418
+      ],
+      "existing_parent_source_observation": "WEI58-05-011",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-021",
+      "label": "Pre-dawn Advent Rorate Mass with parishioners carrying lanterns",
+      "working_type": "POTENTIALLY_UNINDEXED_SOURCE_ACTION_REVIEW",
+      "category": "WESTERN_RITE_CUSTOM",
+      "chapter": 5,
+      "printed_page": 58,
+      "pdf_page_zero_index": 75,
+      "ocr_line_range": [
+        2419,
+        2428
+      ],
+      "existing_parent_source_observation": null,
+      "relation_type": "POTENTIAL_UNINDEXED_SOURCE_ACTION_OR_DISTINCT_FOLK_CLAIM",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-022",
+      "label": "Saint Thomas's Day noise-and-mask rites in central Europe",
+      "working_type": "POTENTIALLY_UNINDEXED_SOURCE_ACTION_REVIEW",
+      "category": "REGIONAL_FOLKLORE_NOT_RITE",
+      "chapter": 5,
+      "printed_page": 58,
+      "pdf_page_zero_index": 75,
+      "ocr_line_range": [
+        2429,
+        2433
+      ],
+      "existing_parent_source_observation": null,
+      "relation_type": "POTENTIAL_UNINDEXED_SOURCE_ACTION_OR_DISTINCT_FOLK_CLAIM",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-023",
+      "label": "Farmer circles buildings with incense and holy water while family prays Rosary",
+      "working_type": "POTENTIALLY_UNINDEXED_SOURCE_ACTION_REVIEW",
+      "category": "FOLK_SACRAMENTAL_VARIANT_NOT_PRESCRIBED",
+      "chapter": 5,
+      "printed_page": 58,
+      "pdf_page_zero_index": 75,
+      "ocr_line_range": [
+        2434,
+        2442
+      ],
+      "existing_parent_source_observation": null,
+      "relation_type": "POTENTIAL_UNINDEXED_SOURCE_ACTION_OR_DISTINCT_FOLK_CLAIM",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-024",
+      "label": "Adam and Eve name-day celebration on Christmas Eve in medieval Europe",
+      "working_type": "POTENTIALLY_UNINDEXED_SOURCE_ACTION_REVIEW",
+      "category": "HISTORICAL_NAME_DAY_CUSTOM",
+      "chapter": 5,
+      "printed_page": 59,
+      "pdf_page_zero_index": 76,
+      "ocr_line_range": [
+        2450,
+        2459
+      ],
+      "existing_parent_source_observation": null,
+      "relation_type": "POTENTIAL_UNINDEXED_SOURCE_ACTION_OR_DISTINCT_FOLK_CLAIM",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-025",
+      "label": "German apple-laden Paradise tree set up on Christmas Eve",
+      "working_type": "POTENTIALLY_UNINDEXED_SOURCE_ACTION_REVIEW",
+      "category": "HISTORICAL_HOUSEHOLD_DECORATION",
+      "chapter": 5,
+      "printed_page": 59,
+      "pdf_page_zero_index": 76,
+      "ocr_line_range": [
+        2455,
+        2459
+      ],
+      "existing_parent_source_observation": null,
+      "relation_type": "POTENTIAL_UNINDEXED_SOURCE_ACTION_OR_DISTINCT_FOLK_CLAIM",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-026",
+      "label": "Central European Christmas Eve joyful fast with abstinence from meat",
+      "working_type": "POTENTIALLY_UNINDEXED_SOURCE_ACTION_REVIEW",
+      "category": "HISTORICAL_FAST_LOCAL_VARIANT",
+      "chapter": 6,
+      "printed_page": 69,
+      "pdf_page_zero_index": 86,
+      "ocr_line_range": [
+        2857,
+        2863
+      ],
+      "existing_parent_source_observation": null,
+      "relation_type": "POTENTIAL_UNINDEXED_SOURCE_ACTION_OR_DISTINCT_FOLK_CLAIM",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-027",
+      "label": "Papal Christmas Day dawn station to honour St Anastasia",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_ROMAN_CEREMONIAL",
+      "chapter": 6,
+      "printed_page": 70,
+      "pdf_page_zero_index": 87,
+      "ocr_line_range": [
+        2885,
+        2891
+      ],
+      "existing_parent_source_observation": "WEI58-06-003",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-028",
+      "label": "Bethlehem Christmas visitors search dark well for the Magi star",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "FOLK_PILGRIMAGE_WITH_UNVERIFIED_VISION",
+      "chapter": 6,
+      "printed_page": 73,
+      "pdf_page_zero_index": 90,
+      "ocr_line_range": [
+        2980,
+        2988
+      ],
+      "existing_parent_source_observation": "WEI58-06-005",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-029",
+      "label": "Christmas Eve meatless family meal featuring fish",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_HOUSEHOLD_FOOD",
+      "chapter": 6,
+      "printed_page": 74,
+      "pdf_page_zero_index": 91,
+      "ocr_line_range": [
+        3018,
+        3025
+      ],
+      "existing_parent_source_observation": "WEI58-06-006",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-030",
+      "label": "Christmas Eve crib prayers and hymns before opening gifts",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HOUSEHOLD_DEVOTIONAL_GIFT_CUSTOM",
+      "chapter": 6,
+      "printed_page": 74,
+      "pdf_page_zero_index": 91,
+      "ocr_line_range": [
+        3026,
+        3034
+      ],
+      "existing_parent_source_observation": "WEI58-06-007",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-031",
+      "label": "Christmas gifts signalled by a small handbell",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HOUSEHOLD_CHILDREN_CUSTOM",
+      "chapter": 6,
+      "printed_page": 74,
+      "pdf_page_zero_index": 91,
+      "ocr_line_range": [
+        3027,
+        3030
+      ],
+      "existing_parent_source_observation": "WEI58-06-008",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-032",
+      "label": "Oplatki shared by head of home with greeting and kiss",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_HOUSEHOLD_FOOD",
+      "chapter": 6,
+      "printed_page": 74,
+      "pdf_page_zero_index": 91,
+      "ocr_line_range": [
+        3035,
+        3042
+      ],
+      "existing_parent_source_observation": "WEI58-06-009",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-033",
+      "label": "Bedding small children on hay on Christmas Night",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_NATIVITY_DOMESTIC",
+      "chapter": 6,
+      "printed_page": 74,
+      "pdf_page_zero_index": 91,
+      "ocr_line_range": [
+        3043,
+        3047
+      ],
+      "existing_parent_source_observation": "WEI58-06-010",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-034",
+      "label": "Hay or straw placed beneath Christmas Eve tablecloth",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_FESTIVE_FOOD_SETTING",
+      "chapter": 6,
+      "printed_page": 74,
+      "pdf_page_zero_index": 91,
+      "ocr_line_range": [
+        3043,
+        3047
+      ],
+      "existing_parent_source_observation": "WEI58-06-010",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-035",
+      "label": "Returning borrowed objects and completing chores before Christmas Eve",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HOUSEHOLD_CUSTOM",
+      "chapter": 6,
+      "printed_page": 74,
+      "pdf_page_zero_index": 91,
+      "ocr_line_range": [
+        3048,
+        3052
+      ],
+      "existing_parent_source_observation": "WEI58-06-011",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-036",
+      "label": "Extra grain put out for winter birds on Christmas Eve",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_CHARITY_TO_CREATION",
+      "chapter": 6,
+      "printed_page": 75,
+      "pdf_page_zero_index": 92,
+      "ocr_line_range": [
+        3053,
+        3069
+      ],
+      "existing_parent_source_observation": "WEI58-06-012",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-037",
+      "label": "Farm animals provided abundant food on Christmas Eve",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_CHARITY_TO_CREATION",
+      "chapter": 6,
+      "printed_page": 75,
+      "pdf_page_zero_index": 92,
+      "ocr_line_range": [
+        3053,
+        3063
+      ],
+      "existing_parent_source_observation": "WEI58-06-012",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-038",
+      "label": "Alpine Christmas bonfires visible along parish Midnight Mass routes",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_MOUNTAIN_CUSTOM",
+      "chapter": 6,
+      "printed_page": 75,
+      "pdf_page_zero_index": 92,
+      "ocr_line_range": [
+        3071,
+        3078
+      ],
+      "existing_parent_source_observation": "WEI58-06-013",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-039",
+      "label": "Mountain parishioners carry lanterns to Midnight Mass",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_PILGRIMAGE_ROUTE",
+      "chapter": 6,
+      "printed_page": 75,
+      "pdf_page_zero_index": 92,
+      "ocr_line_range": [
+        3074,
+        3078
+      ],
+      "existing_parent_source_observation": "WEI58-06-013",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-040",
+      "label": "Christmas Eve bell tolls as a mock Devil's funeral before midnight peal",
+      "working_type": "POTENTIALLY_UNINDEXED_SOURCE_ACTION_REVIEW",
+      "category": "HISTORICAL_PARISH_BELL",
+      "chapter": 6,
+      "printed_page": 75,
+      "pdf_page_zero_index": 92,
+      "ocr_line_range": [
+        3079,
+        3088
+      ],
+      "existing_parent_source_observation": null,
+      "relation_type": "POTENTIAL_UNINDEXED_SOURCE_ACTION_OR_DISTINCT_FOLK_CLAIM",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-041",
+      "label": "Christmas Eve Vespers bells or carillon with familiar carols",
+      "working_type": "POTENTIALLY_UNINDEXED_SOURCE_ACTION_REVIEW",
+      "category": "PARISH_MUSIC_CUSTOM",
+      "chapter": 6,
+      "printed_page": 76,
+      "pdf_page_zero_index": 93,
+      "ocr_line_range": [
+        3089,
+        3094
+      ],
+      "existing_parent_source_observation": null,
+      "relation_type": "POTENTIAL_UNINDEXED_SOURCE_ACTION_OR_DISTINCT_FOLK_CLAIM",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-042",
+      "label": "Bavarian and Austrian Christmas carols from church towers",
+      "working_type": "POTENTIALLY_UNINDEXED_SOURCE_ACTION_REVIEW",
+      "category": "REGIONAL_PARISH_MUSIC",
+      "chapter": 6,
+      "printed_page": 76,
+      "pdf_page_zero_index": 93,
+      "ocr_line_range": [
+        3095,
+        3099
+      ],
+      "existing_parent_source_observation": null,
+      "relation_type": "POTENTIAL_UNINDEXED_SOURCE_ACTION_OR_DISTINCT_FOLK_CLAIM",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-043",
+      "label": "Bethlehem Nativity Christ Child image placed at the grotto in procession",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "LOCAL_SHRINE_CEREMONIAL",
+      "chapter": 6,
+      "printed_page": 76,
+      "pdf_page_zero_index": 93,
+      "ocr_line_range": [
+        3100,
+        3111
+      ],
+      "existing_parent_source_observation": "WEI58-06-014",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-044",
+      "label": "Central European Christ Child figure placed in crib after Midnight Mass",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_LITURGICAL_CUSTOM",
+      "chapter": 6,
+      "printed_page": 76,
+      "pdf_page_zero_index": 93,
+      "ocr_line_range": [
+        3108,
+        3111
+      ],
+      "existing_parent_source_observation": "WEI58-06-014",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-045",
+      "label": "French réveillon household feast after Midnight Mass",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "FRENCH_FAMILY_FOOD",
+      "chapter": 6,
+      "printed_page": 76,
+      "pdf_page_zero_index": 93,
+      "ocr_line_range": [
+        3112,
+        3114
+      ],
+      "existing_parent_source_observation": "WEI58-06-015",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-046",
+      "label": "Spanish Midnight Mass exits accompanied by torchlight and musicians",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_FESTIVAL",
+      "chapter": 6,
+      "printed_page": 76,
+      "pdf_page_zero_index": 93,
+      "ocr_line_range": [
+        3114,
+        3116
+      ],
+      "existing_parent_source_observation": "WEI58-06-016",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-047",
+      "label": "Franciscan Nativity hymns sung in medieval Italy",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_CATHOLIC_MUSIC",
+      "chapter": 7,
+      "printed_page": 80,
+      "pdf_page_zero_index": 97,
+      "ocr_line_range": [
+        3239,
+        3252
+      ],
+      "existing_parent_source_observation": "WEI58-07-001",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-048",
+      "label": "Dominican-inspired German carols combining vernacular and Latin",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_CATHOLIC_MUSIC",
+      "chapter": 7,
+      "printed_page": 80,
+      "pdf_page_zero_index": 97,
+      "ocr_line_range": [
+        3253,
+        3257
+      ],
+      "existing_parent_source_observation": "WEI58-07-002",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-049",
+      "label": "Stille Nacht first performed at a Christmas Midnight Mass",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_PARISH_CAROL",
+      "chapter": 7,
+      "printed_page": 85,
+      "pdf_page_zero_index": 102,
+      "ocr_line_range": [
+        3475,
+        3489
+      ],
+      "existing_parent_source_observation": "WEI58-07-005",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-050",
+      "label": "Venezuelan town of Ocumare local Nativity carol custom",
+      "working_type": "POTENTIALLY_UNINDEXED_SOURCE_ACTION_REVIEW",
+      "category": "REGIONAL_CAROL",
+      "chapter": 7,
+      "printed_page": 86,
+      "pdf_page_zero_index": 103,
+      "ocr_line_range": [
+        3501,
+        3508
+      ],
+      "existing_parent_source_observation": null,
+      "relation_type": "POTENTIAL_UNINDEXED_SOURCE_ACTION_OR_DISTINCT_FOLK_CLAIM",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-051",
+      "label": "Huron mission Christmas fast and cedar-branch Nativity chapel",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_MISSION_CUSTOM",
+      "chapter": 7,
+      "printed_page": 86,
+      "pdf_page_zero_index": 103,
+      "ocr_line_range": [
+        3517,
+        3532
+      ],
+      "existing_parent_source_observation": "WEI58-07-003",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-052",
+      "label": "Christian Huron travellers assemble for Christmas hymns after long winter journeys",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_MISSION_SINGING",
+      "chapter": 7,
+      "printed_page": 86,
+      "pdf_page_zero_index": 103,
+      "ocr_line_range": [
+        3523,
+        3532
+      ],
+      "existing_parent_source_observation": "WEI58-07-003",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-053",
+      "label": "Beacon Hill Christmas Eve house-to-house carolling groups",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_COMMUNITY_MUSIC",
+      "chapter": 7,
+      "printed_page": 87,
+      "pdf_page_zero_index": 104,
+      "ocr_line_range": [
+        3533,
+        3542
+      ],
+      "existing_parent_source_observation": "WEI58-07-006",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-054",
+      "label": "Carollers sing where residents display Christmas window candles",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "COMMUNITY_MUSIC_WITH_LIGHT",
+      "chapter": 7,
+      "printed_page": 87,
+      "pdf_page_zero_index": 104,
+      "ocr_line_range": [
+        3539,
+        3542
+      ],
+      "existing_parent_source_observation": "WEI58-07-006",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-055",
+      "label": "La guignolée costumed charitable carolling and collection",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_CHARITY_CAROL",
+      "chapter": 7,
+      "printed_page": 87,
+      "pdf_page_zero_index": 104,
+      "ocr_line_range": [
+        3543,
+        3547
+      ],
+      "existing_parent_source_observation": "WEI58-07-007",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-056",
+      "label": "Carollers carry illuminated stars while presenting Nativity plays",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_COMMUNITY_DRAMA",
+      "chapter": 7,
+      "printed_page": 87,
+      "pdf_page_zero_index": 104,
+      "ocr_line_range": [
+        3548,
+        3553
+      ],
+      "existing_parent_source_observation": "WEI58-07-008",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-057",
+      "label": "French Noël and English Nowell refrain carols",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_VERNACULAR_CAROL",
+      "chapter": 7,
+      "printed_page": 89,
+      "pdf_page_zero_index": 106,
+      "ocr_line_range": [
+        3595,
+        3608
+      ],
+      "existing_parent_source_observation": "WEI58-07-010",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-058",
+      "label": "Macaronic Latin-and-vernacular carol singing",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_HYMN_FORM",
+      "chapter": 7,
+      "printed_page": 89,
+      "pdf_page_zero_index": 106,
+      "ocr_line_range": [
+        3609,
+        3620
+      ],
+      "existing_parent_source_observation": "WEI58-07-002",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-059",
+      "label": "Church choirboys' Christmas dancing traditions in York and Seville",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_CHURCH_CEREMONIAL",
+      "chapter": 7,
+      "printed_page": 91,
+      "pdf_page_zero_index": 108,
+      "ocr_line_range": [
+        3680,
+        3689
+      ],
+      "existing_parent_source_observation": "WEI58-07-011",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-060",
+      "label": "French shepherd bergerette danced in churches at Christmas",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_CHURCH_CEREMONIAL",
+      "chapter": 7,
+      "printed_page": 91,
+      "pdf_page_zero_index": 108,
+      "ocr_line_range": [
+        3687,
+        3693
+      ],
+      "existing_parent_source_observation": "WEI58-07-011",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-061",
+      "label": "Scandinavian ring dancing with carols around Christmas tree",
+      "working_type": "POTENTIALLY_UNINDEXED_SOURCE_ACTION_REVIEW",
+      "category": "REGIONAL_FESTIVE_MUSIC_DANCE",
+      "chapter": 7,
+      "printed_page": 91,
+      "pdf_page_zero_index": 108,
+      "ocr_line_range": [
+        3694,
+        3706
+      ],
+      "existing_parent_source_observation": null,
+      "relation_type": "POTENTIAL_UNINDEXED_SOURCE_ACTION_OR_DISTINCT_FOLK_CLAIM",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-062",
+      "label": "Kindelwiegen Christ Child cradle rocking in historical church services",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_DEVOTIONAL_DRAMA",
+      "chapter": 7,
+      "printed_page": 92,
+      "pdf_page_zero_index": 109,
+      "ocr_line_range": [
+        3707,
+        3717
+      ],
+      "existing_parent_source_observation": "WEI58-07-012",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-063",
+      "label": "Tyrolean white-clad girls carry and rock Christ Child cradle at houses",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_HOUSEHOLD_DEVOTION",
+      "chapter": 7,
+      "printed_page": 92,
+      "pdf_page_zero_index": 109,
+      "ocr_line_range": [
+        3717,
+        3725
+      ],
+      "existing_parent_source_observation": "WEI58-07-012",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-064",
+      "label": "Mothers rock Christ Child cradle while praying for family blessing",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_HOUSEHOLD_VARIANT",
+      "chapter": 7,
+      "printed_page": 92,
+      "pdf_page_zero_index": 109,
+      "ocr_line_range": [
+        3719,
+        3723
+      ],
+      "existing_parent_source_observation": "WEI58-07-012",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-065",
+      "label": "Tyrolean Christmas devotional yodelling by crib or on mountains",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_CAROL_MUSIC",
+      "chapter": 7,
+      "printed_page": 92,
+      "pdf_page_zero_index": 109,
+      "ocr_line_range": [
+        3736,
+        3748
+      ],
+      "existing_parent_source_observation": "WEI58-07-013",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-066",
+      "label": "Nativity crib displays traditional ox and ass from Isaiah and Habakkuk",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "NATIVITY_ICONOGRAPHY_VARIANT",
+      "chapter": 8,
+      "printed_page": 95,
+      "pdf_page_zero_index": 112,
+      "ocr_line_range": [
+        3850,
+        3857
+      ],
+      "existing_parent_source_observation": "WEI58-08-001",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-067",
+      "label": "Alpine elaborate home Nativity landscapes built during Advent",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_HOUSEHOLD_CRAFT",
+      "chapter": 8,
+      "printed_page": 95,
+      "pdf_page_zero_index": 112,
+      "ocr_line_range": [
+        3859,
+        3865
+      ],
+      "existing_parent_source_observation": "WEI58-08-002",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-068",
+      "label": "Moravian Bethlehem Pennsylvania putz landscapes visited at Christmas",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "NON_CATHOLIC_HISTORICAL_COMPARATIVE",
+      "chapter": 8,
+      "printed_page": 96,
+      "pdf_page_zero_index": 113,
+      "ocr_line_range": [
+        3866,
+        3878
+      ],
+      "existing_parent_source_observation": "WEI58-08-003",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-069",
+      "label": "Large Christmas candle burned all night then each night of feast season",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HOUSEHOLD_NATIVITY_LIGHT",
+      "chapter": 8,
+      "printed_page": 96,
+      "pdf_page_zero_index": 113,
+      "ocr_line_range": [
+        3884,
+        3888
+      ],
+      "existing_parent_source_observation": "WEI58-08-004",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-070",
+      "label": "Holly-decorated Irish Christmas vigil candle with prayer for departed relatives",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_HOUSEHOLD_DEVOTION",
+      "chapter": 8,
+      "printed_page": 96,
+      "pdf_page_zero_index": 113,
+      "ocr_line_range": [
+        3889,
+        3893
+      ],
+      "existing_parent_source_observation": "WEI58-08-004",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-071",
+      "label": "Priest-blessed Slavic Christmas candle inserted into bread",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_HOUSEHOLD_SACRAMENTAL",
+      "chapter": 8,
+      "printed_page": 96,
+      "pdf_page_zero_index": 113,
+      "ocr_line_range": [
+        3893,
+        3896
+      ],
+      "existing_parent_source_observation": "WEI58-08-005",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-072",
+      "label": "South American Christmas candle in illustrated paper lantern",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_LIGHT_VARIANT",
+      "chapter": 8,
+      "printed_page": 96,
+      "pdf_page_zero_index": 113,
+      "ocr_line_range": [
+        3897,
+        3900
+      ],
+      "existing_parent_source_observation": "WEI58-08-006",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-073",
+      "label": "English and French three joined candles symbolizing Holy Trinity",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_TRINITARIAN_LIGHT",
+      "chapter": 8,
+      "printed_page": 97,
+      "pdf_page_zero_index": 114,
+      "ocr_line_range": [
+        3899,
+        3902
+      ],
+      "existing_parent_source_observation": "WEI58-08-006",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-074",
+      "label": "German Christmas decorated candle pole or evergreen pyramid",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_HOUSEHOLD_LIGHT",
+      "chapter": 8,
+      "printed_page": 97,
+      "pdf_page_zero_index": 114,
+      "ocr_line_range": [
+        3902,
+        3910
+      ],
+      "existing_parent_source_observation": "WEI58-08-007",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-075",
+      "label": "Irish Christmas window candle custom promoted by Beacon Hill carollers",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_LIGHT_AND_MUSIC",
+      "chapter": 8,
+      "printed_page": 97,
+      "pdf_page_zero_index": 114,
+      "ocr_line_range": [
+        3911,
+        3917
+      ],
+      "existing_parent_source_observation": "WEI58-08-008",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-076",
+      "label": "Family Yule log selected and carried ceremonially to Christmas hearth",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_DOMESTIC_FIRE",
+      "chapter": 8,
+      "printed_page": 97,
+      "pdf_page_zero_index": 114,
+      "ocr_line_range": [
+        3918,
+        3927
+      ],
+      "existing_parent_source_observation": "WEI58-08-009",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-077",
+      "label": "Yule log selected at Candlemas and saved to kindle next year's fire",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_DOMESTIC_FIRE_VARIANT",
+      "chapter": 8,
+      "printed_page": 98,
+      "pdf_page_zero_index": 115,
+      "ocr_line_range": [
+        3935,
+        3941
+      ],
+      "existing_parent_source_observation": "WEI58-08-009",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-078",
+      "label": "Undecorated evergreen Yule tree kept distinct from decorated Christmas tree",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_SEASONAL_DECOR",
+      "chapter": 8,
+      "printed_page": 98,
+      "pdf_page_zero_index": 115,
+      "ocr_line_range": [
+        3958,
+        3968
+      ],
+      "existing_parent_source_observation": "WEI58-08-011",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-079",
+      "label": "Paradise play featuring an apple-laden tree as Genesis symbol",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_RELIGIOUS_DRAMA",
+      "chapter": 8,
+      "printed_page": 99,
+      "pdf_page_zero_index": 116,
+      "ocr_line_range": [
+        3977,
+        3985
+      ],
+      "existing_parent_source_observation": "WEI58-08-010",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-080",
+      "label": "Public illuminated Christmas trees introduced in American cities",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_CIVIC_DECORATION",
+      "chapter": 8,
+      "printed_page": 102,
+      "pdf_page_zero_index": 119,
+      "ocr_line_range": [
+        4097,
+        4102
+      ],
+      "existing_parent_source_observation": "WEI58-08-012",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-081",
+      "label": "Mistletoe seasonal greetings and kissing in English custom",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "NON_CATHOLIC_OR_SECULAR_FOLK",
+      "chapter": 8,
+      "printed_page": 104,
+      "pdf_page_zero_index": 121,
+      "ocr_line_range": [
+        4166,
+        4173
+      ],
+      "existing_parent_source_observation": "WEI58-08-015",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-082",
+      "label": "Historical York Cathedral mistletoe display at Christmas",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_LOCAL_CHURCH_DECOR",
+      "chapter": 8,
+      "printed_page": 104,
+      "pdf_page_zero_index": 121,
+      "ocr_line_range": [
+        4178,
+        4183
+      ],
+      "existing_parent_source_observation": "WEI58-08-015",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-083",
+      "label": "Holly hung at Christmas doors windows and tables",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_HOUSEHOLD_DECOR",
+      "chapter": 8,
+      "printed_page": 105,
+      "pdf_page_zero_index": 122,
+      "ocr_line_range": [
+        4200,
+        4207
+      ],
+      "existing_parent_source_observation": "WEI58-08-014",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-084",
+      "label": "Holly kept against alleged witchcraft or lightning effects",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "CONTESTED_FOLK_BELIEF",
+      "chapter": 8,
+      "printed_page": 105,
+      "pdf_page_zero_index": 122,
+      "ocr_line_range": [
+        4208,
+        4217
+      ],
+      "existing_parent_source_observation": "WEI58-08-016",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-085",
+      "label": "English medieval resistance to ivy inside Christmas households",
+      "working_type": "POTENTIALLY_UNINDEXED_SOURCE_ACTION_REVIEW",
+      "category": "HISTORICAL_SEASONAL_DECOR_CONTEXT",
+      "chapter": 8,
+      "printed_page": 105,
+      "pdf_page_zero_index": 122,
+      "ocr_line_range": [
+        4226,
+        4236
+      ],
+      "existing_parent_source_observation": null,
+      "relation_type": "POTENTIAL_UNINDEXED_SOURCE_ACTION_OR_DISTINCT_FOLK_CLAIM",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-086",
+      "label": "Laurel wreaths decorating homes and outdoor doors for Christmas",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_HOUSEHOLD_DECOR",
+      "chapter": 8,
+      "printed_page": 106,
+      "pdf_page_zero_index": 123,
+      "ocr_line_range": [
+        4246,
+        4259
+      ],
+      "existing_parent_source_observation": "WEI58-08-017",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-087",
+      "label": "Rosemary Christmas decorations linked to legend of Marian garments",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "FOLK_EXPLANATION_UNCERTAIN",
+      "chapter": 8,
+      "printed_page": 106,
+      "pdf_page_zero_index": 123,
+      "ocr_line_range": [
+        4260,
+        4269
+      ],
+      "existing_parent_source_observation": "WEI58-08-018",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-088",
+      "label": "St Barbara's cherry branches brought to bloom at Christmas",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_HOME_SEASON_CUSTOM",
+      "chapter": 8,
+      "printed_page": 106,
+      "pdf_page_zero_index": 123,
+      "ocr_line_range": [
+        4270,
+        4279
+      ],
+      "existing_parent_source_observation": "WEI58-08-019",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-089",
+      "label": "Mexican poinsettia placed in Christmas homes and churches",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_FLOWER_CUSTOM",
+      "chapter": 8,
+      "printed_page": 107,
+      "pdf_page_zero_index": 124,
+      "ocr_line_range": [
+        4280,
+        4287
+      ],
+      "existing_parent_source_observation": "WEI58-08-021",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-090",
+      "label": "Mexican poinsettia gift-to-Child-Jesus folk legend",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "FOLK_LEGEND_NOT_BOTANICAL_ORIGIN",
+      "chapter": 8,
+      "printed_page": 107,
+      "pdf_page_zero_index": 124,
+      "ocr_line_range": [
+        4288,
+        4304
+      ],
+      "existing_parent_source_observation": "WEI58-08-021",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-091",
+      "label": "Boston Catholic parish children's shepherd procession bearing charity gifts",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "LOCAL_PARISH_CHARITY_PAGEANT",
+      "chapter": 8,
+      "printed_page": 110,
+      "pdf_page_zero_index": 127,
+      "ocr_line_range": [
+        4386,
+        4404
+      ],
+      "existing_parent_source_observation": "WEI58-08-024",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-092",
+      "label": "St Stephen Boxing Day church alms and servants savings boxes",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_ALMSGIVING",
+      "chapter": 8,
+      "printed_page": 111,
+      "pdf_page_zero_index": 128,
+      "ocr_line_range": [
+        4432,
+        4444
+      ],
+      "existing_parent_source_observation": "WEI58-08-025",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-093",
+      "label": "Dutch and German children's Christmas savings stored in pig-shaped earthen pots",
+      "working_type": "POTENTIALLY_UNINDEXED_SOURCE_ACTION_REVIEW",
+      "category": "REGIONAL_GIFT_SAVINGS",
+      "chapter": 8,
+      "printed_page": 111,
+      "pdf_page_zero_index": 128,
+      "ocr_line_range": [
+        4445,
+        4448
+      ],
+      "existing_parent_source_observation": null,
+      "relation_type": "POTENTIAL_UNINDEXED_SOURCE_ACTION_OR_DISTINCT_FOLK_CLAIM",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-094",
+      "label": "German Christmas gift bundles include books toys and disciplinary rod",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_HOUSEHOLD_GIFT_VARIANT",
+      "chapter": 8,
+      "printed_page": 111,
+      "pdf_page_zero_index": 128,
+      "ocr_line_range": [
+        4419,
+        4425
+      ],
+      "existing_parent_source_observation": "WEI58-08-026",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-095",
+      "label": "German Christmas ship as container for children's gifts",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_CHILDREN_GIFT_CUSTOM",
+      "chapter": 8,
+      "printed_page": 111,
+      "pdf_page_zero_index": 128,
+      "ocr_line_range": [
+        4426,
+        4429
+      ],
+      "existing_parent_source_observation": "WEI58-08-026",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-096",
+      "label": "Christ Child gift-bringer accompanied by household Gospel prayers",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_NATIVITY_GIFTS",
+      "chapter": 8,
+      "printed_page": 112,
+      "pdf_page_zero_index": 129,
+      "ocr_line_range": [
+        4449,
+        4462
+      ],
+      "existing_parent_source_observation": "WEI58-08-026",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-097",
+      "label": "Christkind gift-bringer played by a white-clad girl in some homes",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_CHILDREN_PAGEANT",
+      "chapter": 8,
+      "printed_page": 112,
+      "pdf_page_zero_index": 129,
+      "ocr_line_range": [
+        4451,
+        4454
+      ],
+      "existing_parent_source_observation": "WEI58-08-026",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-098",
+      "label": "Befana Epiphany gifts and children's trumpets in Italy",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "ITALIAN_FOLK_GIFT_BRINGER",
+      "chapter": 8,
+      "printed_page": 112,
+      "pdf_page_zero_index": 129,
+      "ocr_line_range": [
+        4480,
+        4486
+      ],
+      "existing_parent_source_observation": "WEI58-08-027",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-099",
+      "label": "Russian Babushka Christmas gift-bringer story",
+      "working_type": "POTENTIALLY_UNINDEXED_SOURCE_ACTION_REVIEW",
+      "category": "OTHER_CULTURAL_FOLK_STORY",
+      "chapter": 8,
+      "printed_page": 112,
+      "pdf_page_zero_index": 129,
+      "ocr_line_range": [
+        4487,
+        4494
+      ],
+      "existing_parent_source_observation": null,
+      "relation_type": "POTENTIAL_UNINDEXED_SOURCE_ACTION_OR_DISTINCT_FOLK_CLAIM",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-100",
+      "label": "Ukrainian didukh wheat sheaf and ritual Christmas table settings",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_HARVEST_HOUSEHOLD",
+      "chapter": 9,
+      "printed_page": 117,
+      "pdf_page_zero_index": 134,
+      "ocr_line_range": [
+        4660,
+        4673
+      ],
+      "existing_parent_source_observation": "WEI58-09-001",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-101",
+      "label": "Ukrainian stacked Christmas loaves hold ceremonial candle",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_HOUSEHOLD_FOOD",
+      "chapter": 9,
+      "printed_page": 117,
+      "pdf_page_zero_index": 134,
+      "ocr_line_range": [
+        4666,
+        4670
+      ],
+      "existing_parent_source_observation": "WEI58-09-002",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-102",
+      "label": "Kutia wheat and poppy seed dish blessed by head of household",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_HOUSEHOLD_MEAL",
+      "chapter": 9,
+      "printed_page": 117,
+      "pdf_page_zero_index": 134,
+      "ocr_line_range": [
+        4668,
+        4673
+      ],
+      "existing_parent_source_observation": "WEI58-09-002",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-103",
+      "label": "Kutia tossed at ceiling as earlier agrarian fortune custom",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "FOLK_RITUAL_WITH_CONTESTED_EFFICACY",
+      "chapter": 9,
+      "printed_page": 117,
+      "pdf_page_zero_index": 134,
+      "ocr_line_range": [
+        4670,
+        4673
+      ],
+      "existing_parent_source_observation": "WEI58-09-003",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-104",
+      "label": "Polish harvest wheat sheaves stood in household corners at Christmas",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_HOUSEHOLD_HARVEST",
+      "chapter": 9,
+      "printed_page": 117,
+      "pdf_page_zero_index": 134,
+      "ocr_line_range": [
+        4674,
+        4680
+      ],
+      "existing_parent_source_observation": "WEI58-09-004",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-105",
+      "label": "Individual round caraway cakes baked for each family member on Christmas Eve",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_FOOD",
+      "chapter": 9,
+      "printed_page": 117,
+      "pdf_page_zero_index": 134,
+      "ocr_line_range": [
+        4684,
+        4688
+      ],
+      "existing_parent_source_observation": "WEI58-09-005",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-106",
+      "label": "French Christmas sugar-Child cakes and Provençal pain calendau share for poor",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_FOOD_AND_CHARITY",
+      "chapter": 9,
+      "printed_page": 117,
+      "pdf_page_zero_index": 134,
+      "ocr_line_range": [
+        4689,
+        4695
+      ],
+      "existing_parent_source_observation": "WEI58-09-006",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-107",
+      "label": "Greek cross-decorated cake left for the Christ Child on Christmas Night",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "OTHER_RITE_DOMESTIC_FOOD",
+      "chapter": 9,
+      "printed_page": 117,
+      "pdf_page_zero_index": 134,
+      "ocr_line_range": [
+        4690,
+        4692
+      ],
+      "existing_parent_source_observation": "WEI58-09-009",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-108",
+      "label": "Priest-blessed Christmas wafers decorated with Nativity scenes and shared",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_SACRAMENTAL_FOOD",
+      "chapter": 9,
+      "printed_page": 118,
+      "pdf_page_zero_index": 135,
+      "ocr_line_range": [
+        4698,
+        4706
+      ],
+      "existing_parent_source_observation": "WEI58-09-007",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-109",
+      "label": "Russian St Nicholas Christmas wheat cakes set on windowsills",
+      "working_type": "POTENTIALLY_UNINDEXED_SOURCE_ACTION_REVIEW",
+      "category": "REGIONAL_CHRISTMAS_FOOD",
+      "chapter": 9,
+      "printed_page": 118,
+      "pdf_page_zero_index": 135,
+      "ocr_line_range": [
+        4706,
+        4708
+      ],
+      "existing_parent_source_observation": null,
+      "relation_type": "POTENTIAL_UNINDEXED_SOURCE_ACTION_OR_DISTINCT_FOLK_CLAIM",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-110",
+      "label": "Kletzenbrot German and Austrian Christmas fruit breads",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_FESTIVE_FOOD",
+      "chapter": 9,
+      "printed_page": 118,
+      "pdf_page_zero_index": 135,
+      "ocr_line_range": [
+        4708,
+        4709
+      ],
+      "existing_parent_source_observation": "WEI58-09-008",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-111",
+      "label": "French Canadian pain d'habitant baked in numerous small festive loaves",
+      "working_type": "POTENTIALLY_UNINDEXED_SOURCE_ACTION_REVIEW",
+      "category": "REGIONAL_FESTIVE_FOOD",
+      "chapter": 9,
+      "printed_page": 118,
+      "pdf_page_zero_index": 135,
+      "ocr_line_range": [
+        4710,
+        4711
+      ],
+      "existing_parent_source_observation": null,
+      "relation_type": "POTENTIAL_UNINDEXED_SOURCE_ACTION_OR_DISTINCT_FOLK_CLAIM",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-112",
+      "label": "Edible Christmas-tree pastry ornaments taken down and shared with children",
+      "working_type": "POTENTIALLY_UNINDEXED_SOURCE_ACTION_REVIEW",
+      "category": "REGIONAL_FESTIVE_FOOD_DECOR",
+      "chapter": 9,
+      "printed_page": 118,
+      "pdf_page_zero_index": 135,
+      "ocr_line_range": [
+        4718,
+        4721
+      ],
+      "existing_parent_source_observation": null,
+      "relation_type": "POTENTIAL_UNINDEXED_SOURCE_ACTION_OR_DISTINCT_FOLK_CLAIM",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-113",
+      "label": "German honey Lebkuchen and stamped Springerle cookies",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_FESTIVE_FOOD",
+      "chapter": 9,
+      "printed_page": 118,
+      "pdf_page_zero_index": 135,
+      "ocr_line_range": [
+        4721,
+        4727
+      ],
+      "existing_parent_source_observation": "WEI58-09-008",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-114",
+      "label": "Scandinavian boar- or goat-shaped Christmas bread reserved until St Canute feast",
+      "working_type": "POTENTIALLY_UNINDEXED_SOURCE_ACTION_REVIEW",
+      "category": "REGIONAL_FOOD_DATE_VARIANT",
+      "chapter": 9,
+      "printed_page": 118,
+      "pdf_page_zero_index": 135,
+      "ocr_line_range": [
+        4728,
+        4731
+      ],
+      "existing_parent_source_observation": null,
+      "relation_type": "POTENTIAL_UNINDEXED_SOURCE_ACTION_OR_DISTINCT_FOLK_CLAIM",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-115",
+      "label": "Iberian almond sweets and Latin-American Christmas buñuelos",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_SWEET",
+      "chapter": 9,
+      "printed_page": 118,
+      "pdf_page_zero_index": 135,
+      "ocr_line_range": [
+        4732,
+        4736
+      ],
+      "existing_parent_source_observation": "WEI58-09-010",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-116",
+      "label": "Venezuelan hallaca as Christmas meal dish",
+      "working_type": "POTENTIALLY_UNINDEXED_SOURCE_ACTION_REVIEW",
+      "category": "REGIONAL_FESTIVE_FOOD",
+      "chapter": 9,
+      "printed_page": 118,
+      "pdf_page_zero_index": 135,
+      "ocr_line_range": [
+        4737,
+        4739
+      ],
+      "existing_parent_source_observation": null,
+      "relation_type": "POTENTIAL_UNINDEXED_SOURCE_ACTION_OR_DISTINCT_FOLK_CLAIM",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-117",
+      "label": "French and French Canadian date squares, doughnuts and fudge at Christmas",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_FESTIVE_FOOD",
+      "chapter": 9,
+      "printed_page": 118,
+      "pdf_page_zero_index": 135,
+      "ocr_line_range": [
+        4739,
+        4743
+      ],
+      "existing_parent_source_observation": "WEI58-09-011",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-118",
+      "label": "Lithuanian hard Christmas pastry balls softened in water",
+      "working_type": "POTENTIALLY_UNINDEXED_SOURCE_ACTION_REVIEW",
+      "category": "REGIONAL_FESTIVE_FOOD",
+      "chapter": 9,
+      "printed_page": 119,
+      "pdf_page_zero_index": 136,
+      "ocr_line_range": [
+        4743,
+        4746
+      ],
+      "existing_parent_source_observation": null,
+      "relation_type": "POTENTIAL_UNINDEXED_SOURCE_ACTION_OR_DISTINCT_FOLK_CLAIM",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-119",
+      "label": "English boar's head processed into hall to a traditional carol",
+      "working_type": "POTENTIALLY_UNINDEXED_SOURCE_ACTION_REVIEW",
+      "category": "HISTORICAL_FESTIVE_FOOD_PROCESSION",
+      "chapter": 9,
+      "printed_page": 119,
+      "pdf_page_zero_index": 136,
+      "ocr_line_range": [
+        4762,
+        4768
+      ],
+      "existing_parent_source_observation": null,
+      "relation_type": "POTENTIAL_UNINDEXED_SOURCE_ACTION_OR_DISTINCT_FOLK_CLAIM",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-120",
+      "label": "English traditional festive goose or capon Christmas dinner",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_FAMILY_MEAL",
+      "chapter": 9,
+      "printed_page": 119,
+      "pdf_page_zero_index": 136,
+      "ocr_line_range": [
+        4755,
+        4775
+      ],
+      "existing_parent_source_observation": "WEI58-09-012",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-D-121",
+      "label": "Oblong manger-shaped Christmas mince pies with removable Christ Child figure",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_FOOD_AND_DEVOTIONAL_SYMBOL",
+      "chapter": 9,
+      "printed_page": 120,
+      "pdf_page_zero_index": 137,
+      "ocr_line_range": [
+        4793,
+        4801
+      ],
+      "existing_parent_source_observation": "WEI58-09-013",
+      "relation_type": "SPECIFIC_SUBPRACTICE_OR_VARIANT_UNDER_SOURCE_OBSERVATION",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json"
     }
   ]
 }
