@@ -15,6 +15,8 @@ on:
       - scripts/scripture-catena-chrysostom-catena-overlap.mjs
       - scripts/scripture-catena-chrysostom-focused-parallels.mjs
       - scripts/scripture-catena-chrysostom-extended-context.mjs
+      - scripts/scripture-catena-chrysostom-bulk-context.mjs
+      - tests/scripture-catena-chrysostom-bulk-context.mjs
       - tests/scripture-catena-chrysostom-extended-context.mjs
       - tests/scripture-catena-chrysostom-focused-parallels.mjs
       - tests/scripture-catena-chrysostom-24-argument-hypotheses.mjs
@@ -44,6 +46,8 @@ on:
       - scripts/scripture-catena-chrysostom-catena-overlap.mjs
       - scripts/scripture-catena-chrysostom-focused-parallels.mjs
       - scripts/scripture-catena-chrysostom-extended-context.mjs
+      - scripts/scripture-catena-chrysostom-bulk-context.mjs
+      - tests/scripture-catena-chrysostom-bulk-context.mjs
       - tests/scripture-catena-chrysostom-extended-context.mjs
       - tests/scripture-catena-chrysostom-focused-parallels.mjs
       - tests/scripture-catena-chrysostom-24-argument-hypotheses.mjs
@@ -167,6 +171,10 @@ jobs:
         run: node scripts/scripture-catena-chrysostom-extended-context.mjs
       - name: Verify all long historical source words and scene relationships for eighteen Catena pointers
         run: node tests/scripture-catena-chrysostom-extended-context.mjs
+      - name: Screen all 1938 source question-prose candidates and extend 180 contexts across ninety Chrysostom homilies
+        run: node scripts/scripture-catena-chrysostom-bulk-context.mjs
+      - name: Check every bulk source hash, original question line, Catena pointer and publication block
+        run: node tests/scripture-catena-chrysostom-bulk-context.mjs
       - name: Attach both full original scan OCR texts and candidate indexes
         if: success()
         uses: actions/upload-artifact@v4
@@ -181,6 +189,7 @@ jobs:
             dist/schaff-chrysostom-catena-overlap/
             dist/schaff-chrysostom-focused-parallels/
             dist/schaff-chrysostom-extended/
+            dist/schaff-chrysostom-bulk-research/
             data/scripture/catena/research/full-corpus-pass-20261021/chrysostom-24-argument-research-hypotheses.v1.json
             data/scripture/catena/research/full-corpus-pass-20261021/CHRYSOSTOM_24_ARGUMENT_COMPARISON_20261023.md
           if-no-files-found: error
