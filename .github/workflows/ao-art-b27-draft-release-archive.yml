@@ -127,7 +127,9 @@ jobs:
           fi
           mkdir -p verify
           gh release download "$ARCHIVE_TAG" --pattern "$file" --dir verify --repo "$GITHUB_REPOSITORY"
-          cmp "$file" "verify/$file"
+          mkdir -p verify/unpacked
+          tar -xf "verify/$file" -C verify/unpacked
+          diff -qr incoming verify/unpacked
           sha256sum "verify/$file"
           echo "REMOTE_BYTES_VERIFIED $WAVE"
 
