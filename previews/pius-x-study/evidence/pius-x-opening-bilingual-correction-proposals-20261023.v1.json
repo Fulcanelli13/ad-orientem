@@ -1,13 +1,15 @@
 {
   "schema": "AO_SPX_P2_SELECTED_BILINGUAL_CORRECTIONS_PROPOSED_V1",
-  "status": "PRIVATE_TEXT_EDIT_CANDIDATES_NOT_APPLIED",
+  "status": "APPLIED_PRIVATE_P2_EDITORIAL_CORRECTIONS_NOT_PUBLICATION_CERTIFIED",
   "asOf": "2026-10-23",
   "target": "Existing P6 rendered opening text; preserve source-owner canonical data and P5/P6 provenance",
   "summary": {
     "proposals": 4,
     "distinctChapters": 3,
-    "applied": 0,
-    "released": 0
+    "appliedInPrivateBranch": 4,
+    "mergedToMain": 0,
+    "released": 0,
+    "translationsCertified": 0
   },
   "proposals": [
     {
@@ -28,7 +30,9 @@
       },
       "originalText": "la indisciplinatezza e ciò che la genera, l'orgoglio della mente",
       "source": "https://www.vatican.va/content/pius-x/it/encyclicals/documents/hf_p-x_enc_28071906_pieni-l-animo.html",
-      "status": "PROPOSAL_ONLY_NO_CANONICAL_CHANGE"
+      "status": "APPLIED_TO_PRIVATE_REVIEW_BRANCH_NOT_RELEASE_APPROVED",
+      "appliedOn": "2026-10-23",
+      "appliedIn": "spx-p5-conversational-voice-revisions-4.v1.json"
     },
     {
       "chapterId": "SPX-NEW-013",
@@ -48,7 +52,9 @@
       },
       "originalText": "alto ammonimento dell'Apostolo a Timoteo",
       "source": "https://www.vatican.va/content/pius-x/it/encyclicals/documents/hf_p-x_enc_28071906_pieni-l-animo.html",
-      "status": "PROPOSAL_ONLY_NO_CANONICAL_CHANGE"
+      "status": "APPLIED_TO_PRIVATE_REVIEW_BRANCH_NOT_RELEASE_APPROVED",
+      "appliedOn": "2026-10-23",
+      "appliedIn": "spx-p5-conversational-voice-revisions-4.v1.json"
     },
     {
       "chapterId": "SPX-NEW-007",
@@ -68,7 +74,9 @@
       },
       "originalText": "Gregorius Magnus, Ioannes Chrysostomus et Augustanus Anselmus",
       "source": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_26051910_editae-saepe.html",
-      "status": "PROPOSAL_ONLY_NO_CANONICAL_CHANGE"
+      "status": "APPLIED_TO_PRIVATE_REVIEW_BRANCH_NOT_RELEASE_APPROVED",
+      "appliedOn": "2026-10-23",
+      "appliedIn": "spx-p3-new-chapters-saints-social-4.v1.json"
     },
     {
       "chapterId": "SPX-013",
@@ -89,7 +97,9 @@
       },
       "displayPolicy": "Preserve a prominent, non-speech label outside character dialogue: EDITORIAL ADAPTATION — NOT A HISTORICAL QUOTATION (and French equivalent).",
       "source": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_02021904_ad-diem-illum-laetissimum.html",
-      "status": "PROPOSAL_ONLY_NO_CANONICAL_CHANGE"
+      "status": "APPLIED_TO_PRIVATE_REVIEW_BRANCH_NOT_RELEASE_APPROVED",
+      "appliedOn": "2026-10-23",
+      "appliedIn": "spx-p1-openings-bio-partial-16.v1.json"
     }
   ]
 }
