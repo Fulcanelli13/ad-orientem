@@ -37,7 +37,10 @@
     "p2_source_level_adjudications": 16,
     "p2_indexed_only_or_access_limited": 3,
     "final_english_french_editorial_signoffs": 0,
-    "final_release_approval": 0
+    "final_release_approval": 0,
+    "followup_direct_or_alternative_verified": 3,
+    "followup_origin_fetch_blocked": 1,
+    "additional_claim_sources": 2
   },
   "records": [
     {
@@ -295,12 +298,19 @@
       "new_custom_approved": false,
       "needs_additional_historical_or_regional_signoff": true,
       "p2_source_text_review": {
-        "status": "INDEXED_SOURCE_RECHECK_REQUIRED",
+        "status": "SOURCE_SCOPE_BOUND_WITH_NEW_PRIMARY_OR_PASTORAL_WITNESS",
         "access_basis": "OFFICIAL_INDEXED_COPY_DIRECT_TIMEOUT",
         "source_url": "https://sanctuaire-laghet.fr/ex-votos/",
         "claim_supported": "Laghet sanctuary indexed page reports over 4,000 ex-votos and historical thanksgiving objects.",
         "remaining_hold": "Direct live page timed out; no verification of every alleged miracle or artwork reuse rights.",
         "review_signoff": "SOURCE_SCOPE_ONLY_NOT_FINAL_BILINGUAL_ACCEPTANCE"
+      },
+      "followup_primary_source_verification": {
+        "evidence_status": "EXACT_PRIMARY_SOURCE_DIRECTLY_READ",
+        "date": "2026-10-23",
+        "url": "https://sanctuaire-laghet.fr/ex-votos/",
+        "finding": "The sanctuary's own readable text reports more than 4,000 ex-votos; the collection is thanksgiving evidence, not automatic adjudication of all miracle claims.",
+        "remaining_hold": "Art reuse, material-object rights, and reports of individual cures remain unverified."
       }
     },
     {
@@ -452,12 +462,19 @@
       "new_custom_approved": false,
       "needs_additional_historical_or_regional_signoff": true,
       "p2_source_text_review": {
-        "status": "SOURCE_SCOPE_BOUND",
+        "status": "SOURCE_SCOPE_BOUND_WITH_NEW_PRIMARY_OR_PASTORAL_WITNESS",
         "access_basis": "DIRECT_MUSEUM_PLUS_RITUAL_INDEX",
         "source_url": "https://www.ewtn.com/catholicism/library/roman-ritual-index-11884",
         "claim_supported": "Weller Roman Ritual index establishes historical blessings; Mucem artifacts establish domestic holy-water vessels.",
         "remaining_hold": "Ritual index alone does not prove frequency of personal routines; lay users do not confer reserved blessings.",
         "review_signoff": "SOURCE_SCOPE_ONLY_NOT_FINAL_BILINGUAL_ACCEPTANCE"
+      },
+      "followup_primary_source_verification": {
+        "evidence_status": "DIRECT_PASTORAL_DOCUMENTATION_OF_HOUSEHOLD_USE",
+        "date": "2026-10-23",
+        "url": "https://www.stmarybasilicaarchives.org/archives-desk/history-and-usage-of-holy-water/",
+        "finding": "Rev. David O'Connor explicitly documents holy water taken from church, home door/bedroom fonts and personal Sign of Cross, separately from priestly water blessing.",
+        "remaining_hold": "This is a priestly pastoral attestation, not a census of historical frequency or authorization to enact the reserved blessing."
       }
     },
     {
@@ -809,12 +826,20 @@
       "new_custom_approved": false,
       "needs_additional_historical_or_regional_signoff": true,
       "p2_source_text_review": {
-        "status": "INDEXED_SOURCE_RECHECK_REQUIRED",
+        "status": "INDEXED_OFFICIAL_SOURCE_RECHECK_REQUIRED",
         "access_basis": "OFFICIAL_INDEXED_COPY_LIVE_502",
         "source_url": "https://www.alsace.catholique.fr/actualites/dossiers-thematiques/418575-6-decembre-fete-de-saint-nicolas/",
         "claim_supported": "Strasbourg diocesan 2022 text describes sweets, gifts and visits in Alsace and Lorraine.",
         "remaining_hold": "Live fetch 502; later folklore and threatening companions are not saint biography or prescribed liturgy.",
         "review_signoff": "SOURCE_SCOPE_ONLY_NOT_FINAL_BILINGUAL_ACCEPTANCE"
+      },
+      "followup_primary_source_verification": {
+        "evidence_status": "OFFICIAL_INDEXED_TEXT_RETRIEVED_ORIGIN_HTTP_502",
+        "date": "2026-10-23",
+        "url": "https://www.alsace.catholique.fr/actualites/dossiers-thematiques/418575-6-decembre-fete-de-saint-nicolas/",
+        "finding": "Full diocesan indexed article dated 6 Dec 2022 describes regional children's gifts and saints-day traditions, distinguishing the historic bishop from folklore; a diocesan parish report separately attests a 2016 local St Nicholas gift visit.",
+        "alternative_url": "https://www.alsace.catholique.fr/zp-sundgau/notre-dame-des-7-douleurs/cp-portes-sundgau/",
+        "remaining_hold": "The 2022 original and the alternative parish page both returned HTTP 502 when opened directly; exact indexed content is available, but direct-origin access has not recovered."
       }
     },
     {
@@ -1286,12 +1311,19 @@
       "new_custom_approved": false,
       "needs_additional_historical_or_regional_signoff": true,
       "p2_source_text_review": {
-        "status": "INDEXED_SOURCE_RECHECK_REQUIRED",
+        "status": "SOURCE_SCOPE_BOUND_WITH_NEW_PRIMARY_OR_PASTORAL_WITNESS",
         "access_basis": "OFFICIAL_INDEXED_COPY_DIRECT_TIMEOUT",
         "source_url": "https://www2.erzbistum-muenchen.de/news/STK-Rosenheim/Emmausgang-30834.news",
         "claim_supported": "Munich–Freising indexed text describes southern German/Austrian Easter Monday Emmaus walks associated with Luke 24.",
         "remaining_hold": "Direct article fetch timed out; no universal origin, precise inception or current parish itinerary.",
         "review_signoff": "SOURCE_SCOPE_ONLY_NOT_FINAL_BILINGUAL_ACCEPTANCE"
+      },
+      "followup_primary_source_verification": {
+        "evidence_status": "ALTERNATIVE_CURRENT_OFFICIAL_HTML_DIRECTLY_READ",
+        "date": "2026-10-23",
+        "url": "https://www.erzbistum-muenchen.de/ueber-das-erzbistum/pressebereich/pressemitteilungen/2026-pm/maria-magdalena-suche-nach-spuren-der-apostelin-der-apostel",
+        "finding": "Munich–Freising's current official 2026 press article directly documents an Easter Monday Emmaus walk in Ruhpolding on 6 April. It independently corroborates practice even though the original archived Emmausgang article timed out.",
+        "remaining_hold": "The original legacy URL remains intermittently inaccessible and the 2026 event cannot create perpetual or universal schedule."
       }
     },
     {
@@ -1337,5 +1369,6 @@
       }
     }
   ],
-  "history_source_registry_property": "data/customs/source-registry.v1.json#historical_context_sources"
+  "history_source_registry_property": "data/customs/source-registry.v1.json#historical_context_sources",
+  "review_closure": "35_SOURCE_LEVEL_REVIEWS_COMPLETE_FOUR_TARGETED_FOLLOWUPS_RECOVERED_EVIDENCE_FINAL_BILINGUAL_SIGNOFF_PENDING"
 }
