@@ -98,7 +98,7 @@ def download(rec, out_dir, budget):
     name=rec['asset_source_id']
     base=out_dir/name
     for old in out_dir.glob(name+'.*'):
-        if old.suffix in ('.jpg','.png','.tiff','.webp'):
+        if old.suffix in ('.jpg','.png','.tiff','.webp','.mpo'):
             with old.open('rb') as f: sha=hashlib.sha256(f.read()).hexdigest()
             with Image.open(old) as im:im.load();w,h=im.size;fmt=im.format
             return {'download_status':'ALREADY_PRESENT_REVERIFIED','bytes_acquired':old.stat().st_size,'sha256':sha,'decoded_width':w,'decoded_height':h,'format':fmt,'resolution_gate':('LONG_EDGE_2400_PASS' if max(w,h)>=2400 else 'RESOLUTION_REVIEW')},0
@@ -124,10 +124,10 @@ def download(rec, out_dir, budget):
         if size<10000:raise ValueError('downloaded response too small')
         with Image.open(temp) as im:
             im.load();w,h=im.size;fmt=(im.format or '').upper()
-        ext={'JPEG':'.jpg','PNG':'.png','TIFF':'.tiff','WEBP':'.webp'}.get(fmt)
+        ext={'JPEG':'.jpg','PNG':'.png','TIFF':'.tiff','WEBP':'.webp','MPO':'.mpo'}.get(fmt)
         if ext is None: raise ValueError('unsupported format '+fmt)
         final=base.with_suffix(ext);temp.rename(final)
-        return {'download_status':'ACQUIRED_DECODED_SHA256','bytes_acquired':size,'sha256':sha.hexdigest(),'decoded_width':w,'decoded_height':h,'format':fmt,'resolution_gate':('LONG_EDGE_2400_PASS' if max(w,h)>=2400 else 'RESOLUTION_REVIEW')},size
+        return {'download_status':'ACQUIRED_DECODED_SHA256','bytes_acquired':size,'sha256':sha.hexdigest(),'decoded_width':w,'decoded_height':h,'format':fmt,'resolution_gate':('MPO_MULTIFRAME_REVIEW' if fmt=='MPO' else 'LONG_EDGE_2400_PASS' if max(w,h)>=2400 else 'RESOLUTION_REVIEW')},size
     finally:
         temp.unlink(missing_ok=True)
 
