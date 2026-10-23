@@ -19,7 +19,9 @@
     "STOKES_COMPILATION_DEPENDENCY": "Fr. Stokes 1955 is an additional separately authored source, but substantial passages depend on Maria von Trapp, Therese Mueller, Donald Attwater, Katherine Byles and other prior witnesses. 198 EWTN source-located action observations do NOT establish 198 independently attested or distinct practices.",
     "STOKES_RITUAL_AND_DATE_CAUTION": "Stokes's 1955 imprimatur is historical and does not validate specific blessing texts, indulgences, or current/1962 Roman Ritual ownership. No printed page numbers claimed; all locators refer to EWTN web lines, which may shift.",
     "CATHOLICCULTURE_EXCERPT_WITNESS": "132 independently worded observations from 29 CatholicCulture excerpt pages attributed to Trapp (54), Berger (21), and Newland (57). ONLINE EXCERPT LOCATORS ONLY: No printed pages audited and no full-book completeness claim. CatholicCulture is a reproduction host, not three more independent authors. Do not treat Stokes/McLoughlin retellings as independent confirmation or these observations as distinct Catholic customs. Ritual claims need 1962 Roman Ritual validation.",
-    "MUELLER_KELLY_WITNESS_SCOPE": "Mueller 1955-labelled EWTN full-text online transcription 122 line-located descriptions and Kelly 1959 Chapter 16 EWTN text 82 line-located descriptions. No printed editions page-audited. The action labels often split a paragraph into separate related practices, not evidence of 204 unique customs. Church rites, sacraments and family devotions distinct; current approval unverified. Source-dependency links to Weiser, McLoughlin, Stokes and others unresolved."
+    "MUELLER_KELLY_WITNESS_SCOPE": "Mueller 1955-labelled EWTN full-text online transcription 122 line-located descriptions and Kelly 1959 Chapter 16 EWTN text 82 line-located descriptions. No printed editions page-audited. The action labels often split a paragraph into separate related practices, not evidence of 204 unique customs. Church rites, sacraments and family devotions distinct; current approval unverified. Source-dependency links to Weiser, McLoughlin, Stokes and others unresolved.",
+    "MUELLER_SECOND_PASS_100_NONADDITIVE": "Another independent indexing pass recorded 100 shorter source-action details from the SAME online fifth-edition Mueller witness already represented by 122 primary Mueller source rows in the Mueller/Kelly intake. 95/100 second-pass entries co-locate to an EWTN line already cited by primary records; five need separate fine-detail review. These 100 are preserved as source-splitting annotations, NOT added to 1,629 total or 122 original Mueller observations, and NOT new independent corroboration.",
+    "STOKES_MUELLER_298_SCREEN_NOT_IDENTITY_ADJUDICATION": "298 rows (198 Stokes + 100 Mueller second-pass annotations) were run through label-only candidate lookup across 490 existing owner/group/source-family labels; 119 have one or more retrieval hints, 179 none. No lexical hit or no-hit establishes identity, nonidentity, distinctness, corroboration or ritual authority; the 100 Mueller annotations also overlap the primary 122."
   },
   "summary": {
     "source_observations": {
@@ -45,7 +47,8 @@
       "catholicculture_trapp_berger_newland_excerpt_source_actions": 132,
       "mueller_kelly_ewtn_source_action_observations": 204,
       "mueller_1955_ewtn_action_observations": 122,
-      "kelly_1959_ewtn_action_observations": 82
+      "kelly_1959_ewtn_action_observations": 82,
+      "mueller_second_pass_detail_rows_not_added_to_source_total": 100
     },
     "identity_working_rows": {
       "previously_existing_master_identities": 56,
@@ -113,7 +116,13 @@
         "SECONDARY_NAMED_SOURCE_OR_FAMILY_REPORT": 27,
         "HISTORICAL_CUSTOM_CLAIM_NOT_VERIFIED": 7
       },
-      "stokes_1955_records_mapped_to_distinct_verified_customs": 0
+      "stokes_1955_records_mapped_to_distinct_verified_customs": 0,
+      "mueller_secondary_source_detail_rows_retained_nonadditive": 100,
+      "mueller_secondary_exact_text_line_colocated": 95,
+      "mueller_secondary_without_exact_line_owner": 5,
+      "stokes_mueller_source_rows_routed_lexically_noncanonical": 298,
+      "stokes_mueller_source_rows_with_label_retrieval_hints": 119,
+      "stokes_mueller_source_rows_without_label_retrieval_hints": 179
     },
     "no_new_app_publications": true
   },
@@ -154,7 +163,10 @@
     "mcloughlin_family_advent_reconciliation": "data/customs/master/mcloughlin-family-advent-action-family-reconciliation.v1.json",
     "stokes_family_liturgy_1955": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
     "catholicculture_historical_author_excerpt_wave01": "data/customs/master/trapp-berger-newland-catholicculture-excerpts-wave01.v1.json",
-    "mueller_kelly_ewtn_action_source": "data/customs/master/mueller-1955-kelly-1959-ewtn-action-intake.v1.json"
+    "mueller_kelly_ewtn_action_source": "data/customs/master/mueller-1955-kelly-1959-ewtn-action-intake.v1.json",
+    "mueller_secondary_100_source_detail": "data/customs/master/mueller-1955-our-childrens-year-of-grace-ewtn-first-pass.v1.json",
+    "mueller_secondary_100_to_primary_122_nonadditive": "data/customs/master/mueller-100-second-pass-to-122-nonadditive-source-crosswalk.v1.json",
+    "stokes_mueller_298_label_lookup": "data/customs/master/stokes-mueller-298-source-routing-lexical-screen.v1.json"
   },
   "existing_master_identities": [
     {
