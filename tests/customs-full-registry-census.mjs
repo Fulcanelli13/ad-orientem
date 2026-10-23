@@ -444,7 +444,7 @@ assert.equal(allMcLReferences.length,70);
 assert.deepEqual(new Set(allMcLReferences),mclIds);
 assert.equal(mcloughlinGroups.summary.certified_distinct_new_catholic_customs,0);
 assert.equal(mcloughlinGroups.summary.publication_changes,0);
-assert.equal(count.source_observations.total_source_detail_rows_including_external,1799);
+assert.equal(count.source_observations.total_source_detail_rows_including_external,1926);
 assert.equal(count.source_observations.all_book_research_rows_including_nested_details,1025);
 assert.equal(researchCatalogue.external_source_observations_mcloughlin.length,70);
 assert.equal(researchCatalogue.external_source_action_families_mcloughlin.length,26);
@@ -545,7 +545,7 @@ for(const r of ccEx.records) {
 assert.equal(researchCatalogue.external_source_observations_catholicculture_excerpts.length,132);
 assert.deepEqual(new Set(researchCatalogue.external_source_observations_catholicculture_excerpts.map(r=>r.id)),ccIds);
 assert.equal(count.source_observations.catholicculture_trapp_berger_newland_excerpt_source_actions,132);
-assert.equal(count.source_observations.total_source_detail_rows_including_external,1799);
+assert.equal(count.source_observations.total_source_detail_rows_including_external,1926);
 assert.equal(count.identity_working_rows.provisional_after_53_no_owner_action_review,408);
 assert.equal(count.identity_working_rows.final_uniquely_verified_customs_added,0);
 assert.equal(researchCatalogue.summary.no_new_app_publications,true);
@@ -608,7 +608,7 @@ for(const r of muellerKelly.records){
 assert.equal(researchCatalogue.external_source_observations_mueller_kelly.length,204);
 assert.deepEqual(new Set(researchCatalogue.external_source_observations_mueller_kelly.map(x=>x.id)),mkIds);
 assert.equal(count.source_observations.mueller_kelly_ewtn_source_action_observations,204);
-assert.equal(count.source_observations.total_source_detail_rows_including_external,1799);
+assert.equal(count.source_observations.total_source_detail_rows_including_external,1926);
 assert.equal(count.identity_working_rows.provisional_after_53_no_owner_action_review,408);
 assert.equal(count.identity_working_rows.final_uniquely_verified_customs_added,0);
 assert.equal(researchCatalogue.summary.no_new_app_publications,true);
@@ -697,7 +697,7 @@ for(const r of muellerCross.records){
  }
 }
 assert.equal(coLocated,95);
-assert.equal(count.source_observations.total_source_detail_rows_including_external,1799);
+assert.equal(count.source_observations.total_source_detail_rows_including_external,1926);
 assert.equal(count.source_observations.mueller_second_pass_detail_rows_not_added_to_source_total,100);
 assert.equal(count.source_review.mueller_secondary_exact_text_line_colocated,95);
 assert.equal(count.source_review.mueller_secondary_without_exact_line_owner,5);
@@ -791,7 +791,7 @@ assert.ok(chaneySections.size>=9);
 assert.equal(researchCatalogue.external_source_observations_chaney.length,170);
 assert.deepEqual(new Set(researchCatalogue.external_source_observations_chaney.map(r=>r.id)),chaneyIds);
 assert.equal(count.source_observations.chaney_1955_online_source_observations,170);
-assert.equal(count.source_observations.total_source_detail_rows_including_external,1799);
+assert.equal(count.source_observations.total_source_detail_rows_including_external,1926);
 assert.equal(count.source_observations.mueller_second_pass_detail_rows_not_added_to_source_total,100);
 assert.equal(count.identity_working_rows.provisional_after_53_no_owner_action_review,408);
 assert.equal(count.identity_working_rows.final_uniquely_verified_customs_added,0);
@@ -887,6 +887,62 @@ for(const row of chaneyManual24.records) {
  if(row.action_description_relationship==='DISTINCT_ACTION_FALSE_LEXICAL_MATCH')falseCandidates++;
 }
 assert.equal(falseCandidates,6);
-assert.equal(count.source_observations.total_source_detail_rows_including_external,1799);
+assert.equal(count.source_observations.total_source_detail_rows_including_external,1926);
 assert.equal(researchCatalogue.summary.no_new_app_publications,true);
 console.log('Chaney 24 source-description comparisons: 12 same action core, 6 false lexical matches, 0 verified source-independent identities, 0 merges — PASS');
+
+
+// Curated top-105 Mueller/Kelly label comparisons are reversible triage only.
+const mkLabel105=load('data/customs/master/mueller-kelly-top105-curated-label-level-triage.v1.json');
+assert.equal(mkLabel105.records.length,105);
+assert.equal(mkLabel105.summary.triaged_pairs,105);
+assert.equal(mkLabel105.summary.CLOSE_ACTION_RELATION_PROVENANCE_UNDECIDED,46);
+assert.equal(mkLabel105.summary.RELATED_COMPONENT_OR_VARIANT_NOT_IDENTICAL,38);
+assert.equal(mkLabel105.summary.DIFFERENT_ACTION_OR_FEAST_LABEL_MATCH_ONLY,21);
+assert.equal(mkLabel105.summary.primary_text_identity_verifications,0);
+assert.equal(mkLabel105.summary.certified_source_independences,0);
+assert.equal(mkLabel105.summary.merged_groups,0);
+for (const r of mkLabel105.records) {
+ assert.ok(mkIds.has(r.source_id));
+ assert.ok(mkComparisonTargets.has(r.target_id));
+ assert.equal(r.automatic_merge,false);
+ assert.equal(r.canonical_identity_decision,'NONE');
+ assert.equal(r.primary_source_comparison,'NOT_DONE');
+ assert.equal(r.app_publication,'NONE');
+}
+
+// Regional French intangible-heritage evidence: many action descriptions
+// nested inside TWO ceremonial complexes; none means a new custom identity.
+const frBreton=load('data/customs/master/france-2020-breton-pardons-pci-regional-detail-pass.v1.json');
+const frBasque=load('data/customs/master/france-2018-basque-besta-berri-pci-detail-pass.v1.json');
+assert.equal(frBreton.records.length,71);
+assert.equal(frBasque.records.length,56);
+assert.equal(frBreton.summary.new_unique_customs_certified,0);
+assert.equal(frBasque.summary.distinct_custom_identities_certified,0);
+assert.equal(frBreton.summary.source_documents,1);
+assert.equal(frBasque.summary.source_documents,1);
+assert.equal(researchCatalogue.external_source_observations_france_pci_brittany.length,71);
+assert.equal(researchCatalogue.external_source_observations_france_pci_besta.length,56);
+const bretonIds=new Set(frBreton.records.map(r=>r.observation_id));
+const basqueIds=new Set(frBasque.records.map(r=>r.observation_id));
+assert.equal(bretonIds.size,71);
+assert.equal(basqueIds.size,56);
+assert.deepEqual(new Set(researchCatalogue.external_source_observations_france_pci_brittany.map(r=>r.id)),bretonIds);
+assert.deepEqual(new Set(researchCatalogue.external_source_observations_france_pci_besta.map(r=>r.id)),basqueIds);
+for(const [source,expected] of [[frBreton,71],[frBasque,56]]){
+ assert.equal(source.records.length,expected);
+ for(const r of source.records){
+  assert.ok(r.action_label.length>15);
+  assert.ok(r.source_url.startsWith('https://www.pci-lab.fr/'));
+  assert.ok(Number.isInteger(r.source_line||r.source_web_line));
+  assert.equal(r.publication_state,'RESEARCH_ONLY');
+  assert.ok((r.parent_practice_family||'').length>5);
+ }
+}
+assert.equal(count.source_observations.france_pci_breton_pardon_source_detail_rows,71);
+assert.equal(count.source_observations.france_pci_basque_besta_berri_source_detail_rows,56);
+assert.equal(count.source_observations.total_source_detail_rows_including_external,1926);
+assert.equal(count.identity_working_rows.provisional_after_53_no_owner_action_review,408);
+assert.equal(count.identity_working_rows.final_uniquely_verified_customs_added,0);
+assert.equal(researchCatalogue.summary.no_new_app_publications,true);
+console.log('French PCI regional: 71 Breton + 56 Basque source action/variant details, 1926 combined source/detail rows, zero new identities or app publications — PASS');
