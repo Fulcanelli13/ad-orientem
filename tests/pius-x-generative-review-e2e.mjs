@@ -33,7 +33,7 @@ const fakeModel=async(kind,messages)=>{
  return {supported:!rejectVerification,allClaimsSupported:!rejectVerification,ids:input.candidate.ids,
   ...(emitWitnesses?{witnessIds:input.candidate.witnessIds}: {})};
 };
-const eligible={chapterId:'SPX-PILOT-01',language:'en',question:'Could you explain your pastoral approach?'};
+const eligible={chapterId:'SPX-PILOT-01',language:'en',question:'Did you welcome your election as Pope?'};
 const chosen=selectEvidence(store,eligible);
 assert.equal(chosen.status,'eligible');
 assert.equal(chosen.evidence[0].status,'UNVERIFIED_EDITORIAL_ADAPTATION_NOT_ORIGINAL_QUOTATION');
@@ -73,7 +73,7 @@ try{
   assert.equal(await page.locator('#spxc-model-review').isVisible(),false);
   if(width===390)await page.locator('#spxc-menu').click();
   await page.locator('[data-spxc-open="SPX-PILOT-01"]').first().click();
-  await page.locator('#spxm-question').fill('Could you explain your pastoral approach?');
+  await page.locator('#spxm-question').fill('Did you welcome your election as Pope?');
   await page.locator('#spxm-send').click();
   await page.locator('.spxm-draft').first().waitFor();
   assert.match(await page.locator('.spxm-warning').first().innerText(),/NOT THE WORDS OF ST PIUS X/);
