@@ -8,7 +8,8 @@
 - All 35 articles were structurally checked for English and French title, description, history, meaning, voluntary practice, caution, occasion, and scope fields.
 - Each of the 35 articles' source IDs matches canonical attestations and the current 108-entry source registry. No new source or custom identity was silently created.
 - **11** P0/P1 articles had identical Description and History in both languages. These eleven histories have been replaced with independently worded, bounded contextual notes based on already attributed sources, with no invented antiquity, universal law or event schedule.
-- **10** high-value published claims received a targeted look at identifiable public institutional or Catholic primary/source texts this batch; the remaining **25** have a provenance crosswalk but have **not** had complete claim-by-claim original-text verification.
+- **11** published claims now received targeted source-text checks, including direct confirmation and correction of Candlemas usage; the remaining **24** have a provenance crosswalk but have **not** had complete claim-by-claim original-text verification.
+- Four independently verified institutional historical references are now registered in the **same source-registry file** under `historical_context_sources` (outside the original 108 customary attestation sources). The Calendar presents their links separately as Historical sources / Sources historiques for ADVT-001, ADVT-002, ADVT-003 and MARI-002.
 - **0 of 35** are declared finally editorially certified. The article register is a first-pass gating instrument, not retroactive source approval.
 
 Complete review notes and one explicit priority per custom: `data/customs/research/customs-published-35-editorial-first-pass.20261023.v1.json`.
