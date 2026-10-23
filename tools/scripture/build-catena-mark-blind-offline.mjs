@@ -39,8 +39,19 @@ const getSection=entry=>{
  assert.equal(selected.length,1);
  return selected[0];
 };
+const contexts={};
 const cases=fixture.cases.map(c=>{
  const section=getSection(c);
+ if(!contexts[section.id]){
+  contexts[section.id]={
+   citation:section.citation,
+   sourceUrl:section.source.url,
+   segments:section.segments.map((seg,i)=>({
+    id:section.id+":"+i,father:seg.father,originalWords:seg.text,
+    sourceSHA256:createHash("sha256").update(seg.text,"utf8").digest("hex")
+   }))
+  };
+ }
  const results=retrieveMarkBlindCase(c,section).map(r=>({
   id:r.id,father:r.father,citation:r.citation,sourceUrl:r.sourceUrl,
   originalWords:r.originalWords,
@@ -48,7 +59,7 @@ const cases=fixture.cases.map(c=>{
   speakerUnits:r.speakerUnits.map(u=>({father:u.father,originalWords:u.originalWords}))
  }));
  assert.ok(results.length<=4);
- return {id:c.id,question:c.question,citation:section.citation,results};
+ return {id:c.id,question:c.question,citation:section.citation,contextPericopeId:section.id,results};
 });
 assert.equal(cases.length,23);
 assert.equal(new Set(cases.map(c=>c.id)).size,23);
@@ -58,7 +69,8 @@ const packet={
  reviewOnly:true,publicationApproval:false,
  edition:"Oxford/Newman Catena Aurea 1841–45",
  source:"Ad Orientem integrity-checked local chapter packs; native pericope-local Messenger retrieval",
- cases
+ fullPericopeContextIsNotRetrievedAnswer:true,
+ contexts,cases
 };
 const template=read("previews/living-catena-mark-blind-offline-template.html");
 const placeholder="__CATENA_MARK_BLIND_PAYLOAD__";
@@ -86,6 +98,7 @@ const stats={
  nonempty:cases.filter(c=>c.results.length>0).length,
  noResult:cases.filter(c=>!c.results.length).length,
  excerptCount:cases.reduce((n,c)=>n+c.results.length,0),
+ contextualPericopes:Object.keys(contexts).length,
  bytes:Buffer.byteLength(html),
  sourceResearchCommit:fixture.sourceResearchCommit
 };
