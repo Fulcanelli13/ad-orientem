@@ -5,7 +5,7 @@
   "primaryProof": {
     "path": "data/research/historia-salutis-v18-continuous-reading-proof.v1.json",
     "branch": "research/historia-p3-esther-span-20261017",
-    "sha": "392d256df04ebaa9b75ea13b7adc321b310b3d20"
+    "sha": "ee75b8bc8a2ffcd6d32723ccf8ace69ad21e3446"
   },
   "parallelReviewSources": [
     {
@@ -46,7 +46,8 @@
     "theologicalTypologyAndCrossReferencesOutsideChronologicalNarration": true,
     "noNewGeographicCoordinates": true,
     "noPrintedEditionCollationOrOralApproval": true,
-    "noProductionContentChanged": true
+    "noProductionContentChanged": true,
+    "judasBetweenSelectedTrialDoesNotChangeSourceRefs": true
   },
   "totals": {
     "movements": 18,
@@ -54,8 +55,8 @@
     "p4HistoricalCandidateVerses": 69,
     "alreadyInUnapprovedP3SelectedScripture": 33,
     "alreadyExistingUnapprovedP3HeldBridge": 28,
-    "existingUnapprovedSourceComparisonTrial": 0,
-    "stillOutsideP3SourceAndHeldText": 8
+    "existingUnapprovedSourceComparisonTrial": 8,
+    "stillOutsideP3SourceAndHeldText": 0
   },
   "reviews": [
     {
@@ -358,8 +359,7 @@
       "reconciliation": {
         "alreadyInUnapprovedP3SelectedScripture": [],
         "alreadyExistingUnapprovedP3HeldBridge": [],
-        "existingUnapprovedSourceComparisonTrial": [],
-        "stillOutsideP3SourceAndHeldText": [
+        "existingUnapprovedSourceComparisonTrial": [
           "Matthew 27:3",
           "Matthew 27:4",
           "Matthew 27:5",
@@ -368,10 +368,11 @@
           "Matthew 27:8",
           "Matthew 27:9",
           "Matthew 27:10"
-        ]
+        ],
+        "stillOutsideP3SourceAndHeldText": []
       },
-      "disposition": "JUDAS_EIGHT_VERSE_GAP_STILL_UNMODELED",
-      "p3GroundedExplanation": "Matthew 27:3–10 remains outside selected, held or P3 trial text. Flag original witness verses for a source-economy readthrough; no automatic Judas insertion and no merger with John 19.",
+      "disposition": "JUDAS_EIGHT_VERSE_EXACT_TEXT_REVIEW_TRIAL_ADDED_NOT_SELECTED",
+      "p3GroundedExplanation": "Matthew 27:3–10 was the only part of the 69 older P4 suggested verses absent from P3 selection/hold/trial metadata. It is now a separately displayed, unapproved native-text source comparison exactly between Matthew 27:1–2 and 27:11–26 in the original H63-02 beat; original selected refs, omissions, and publication permissions remain unchanged.",
       "acceptedForOralReading": false,
       "publicationApproved": false,
       "certifiedPrintedCatholicEdition": false,
@@ -817,7 +818,7 @@
     }
   ],
   "actionableRemaining": [
-    "M27: check unmodeled Matthew 27:3–10 in all three witnesses as a strictly unapproved Judas scene trial; omission remains explicit.",
+    "M27: exact-source Matthew 27:3–10 now available only as an opt-in research comparison between selected trial spans; evaluate literary necessity, theological witness and source omissions before ever accepting.",
     "M28, M30, M33–M35, M37: evaluate existing held passages against uninterrupted source readthrough, without auto-selection.",
     "M23, M25, M36: stage genuine Gospel/vision boundaries; never present visual location tradition as validated historical site.",
     "Ensure all latest P3 adjustments remain covered by original Scripture contracts and published Atlas 151-event scope."
