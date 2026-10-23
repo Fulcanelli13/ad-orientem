@@ -11,9 +11,9 @@
     "novena_context": "data/customs/novena-context-links.v1.json"
   },
   "counts": {
-    "places": 348,
+    "places": 350,
     "places_with_linked_records": 259,
-    "places_without_direct_claim": 89,
+    "places_without_direct_claim": 91,
     "multicategory_heritage_places": 212,
     "shrines": 257,
     "pilgrimages": 240,
@@ -94,9 +94,11 @@
       "place:NO:var-frue-cathedral-tromso",
       "place:NP:assumption-cathedral-lalitpur",
       "place:OM:saints-peter-paul-catholic-church-ruwi",
+      "place:PE:basilica-nuestra-senora-merced-lima",
       "place:PF:notre-dame-cathedral-papeete",
       "place:PG:holy-cross-procathedral-vanimo",
       "place:PH:manila-cathedral-intramuros",
+      "place:PH:monasterio-de-tarlac-risen-christ-chapel",
       "place:PH:quiapo-national-shrine-jesus-nazareno",
       "place:PH:santo-nino-tondo-minor-basilica",
       "place:QA:our-lady-rosary-church-doha",
@@ -3691,6 +3693,12 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:PE:basilica-nuestra-senora-merced-lima",
+      "display_name": "Basílica Menor de Nuestra Señora de la Merced, Lima",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:PE:convento-santo-domingo-lima",
       "display_name": "Basílica y Convento de Santo Domingo, Lima",
       "record_ids": {
@@ -3734,6 +3742,12 @@
     {
       "place_id": "place:PH:manila-cathedral-intramuros",
       "display_name": "Manila Cathedral Basilica — Immaculate Conception",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
+      "place_id": "place:PH:monasterio-de-tarlac-risen-christ-chapel",
+      "display_name": "Chapel of the Risen Christ, Monasterio de Tarlac",
       "record_ids": {},
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
@@ -4866,5 +4880,24 @@
       "place:IT:santuario-san-paolo-della-croce-ovada"
     ],
     "rule": "Direct Catholic parish confirms extant Ovada sanctuary, independent OSM names same Catholic church polygon (site centre only). Do not infer 1962-Missal venue, visiting entrance, new shrine/relic joins, or approved photo."
+  },
+  "georeference_tranche_20261024_p15": {
+    "release": "P15",
+    "release_manifest": "data/geography/research/sacred-places-p15-two-exception-promotions.v1.json",
+    "new_sites": [
+      "place:PH:monasterio-de-tarlac-risen-christ-chapel",
+      "place:PE:basilica-nuestra-senora-merced-lima"
+    ],
+    "research_id_crosswalk": [
+      {
+        "candidate_id": "candidate:SG-INV-0654",
+        "place_id": "place:PH:monasterio-de-tarlac-risen-christ-chapel"
+      },
+      {
+        "candidate_id": "candidate:SG-INV-0521",
+        "place_id": "place:PE:basilica-nuestra-senora-merced-lima"
+      }
+    ],
+    "rule": "Two independent original Catholic sites with named OSM Catholic church/chapel polygons; Lima corrected to basilica, Tarlac to Chapel of Risen Christ. No entrance, TLM, relic-authenticity, shrine label beyond owner, approved image or opening hour inference."
   }
 }
