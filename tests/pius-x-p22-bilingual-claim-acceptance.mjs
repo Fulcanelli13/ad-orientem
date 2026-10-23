@@ -100,6 +100,30 @@ for(const chapterId of ['SPX-PILOT-01','SPX-PILOT-09']){
   assert.equal(record.exactDuplicateOfPreviousAcceptedTurn,false);
  }
 }
+// A selected historical source node is not a licence to determine current law.
+// These prompts are outside the nineteenth/twentieth-century evidence even when
+// a visitor intentionally supplies an otherwise eligible original node ID.
+for(const [language,question] of [
+ ['en','Does this mean my excommunication no longer applies today?'],
+ ['en','Is that canonical penalty still in force now?'],
+ ['en','Are the Communion fasting rules legally binding today?'],
+ ['fr','Cette peine canonique est-elle toujours valable actuellement ?'],
+ ['fr','Cette absolution est-elle valide aujourd’hui ?'],
+ ['fr','La règle de communion est-elle encore en vigueur ?']
+]){
+ const previous=callCount.compose;
+ const selected={chapterId:'SPX-NEW-012',nodeId:'AO.SPX.DIALOGUE.SPX-NEW-012.OPEN',language,question};
+ const result=await composeDraft(store,selected,mockModel);
+ assert.equal(result.status,'held','Contemporary canonical query must be held: '+question);
+ assert.equal(result.reason,'present_day_canonical_case_requires_current_authority');
+ assert.equal(callCount.compose,previous,'Blocked modern legal case called mock provider');
+}
+// A historical or general spiritual follow-up must not be blocked merely
+// because it uses the word today without a modern canonical determination.
+for(const [language,question] of [
+ ['en','Why do priests still need to meditate today?'],
+ ['fr','Pourquoi la méditation est-elle encore importante aujourd’hui ?']
+])assert.equal(selectEvidence(store,{chapterId:'SPX-PILOT-09',language,question}).status,'eligible');
 assert.equal(store.data.counts.allNodes,423);
 assert.equal(store.data.approvals.publishing,false);
 assert.equal([...store.sourceOnlyGate.values()].reduce((n,g)=>n+g.size,0),144);
