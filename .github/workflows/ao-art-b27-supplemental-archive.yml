@@ -1,0 +1,94 @@
+name: P0 zero-euro recovery of earlier B20 variants and 159 image gallery
+on:
+  push:
+    branches: [rescue/sacred-art-zero-euro-20261024]
+    paths: [.github/workflows/ao-art-b27-supplemental-archive.yml]
+  workflow_dispatch:
+permissions:
+  actions: read
+  contents: write
+concurrency:
+  group: ao-sacred-art-supplemental-preservation
+  cancel-in-progress: false
+env:
+  ARCHIVE_TAG: sacred-art-originals-b26-20261024
+jobs:
+  supplement:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        include:
+          - {key: b20-early-success, run_id: 39962512106, artifact_id: 12505726302, min_files: 1}
+          - {key: b20-early-partial, run_id: 39962265905, artifact_id: 12504444586, min_files: 1}
+          - {key: gallery159, run_id: 39975762727, artifact_id: 12511636001, min_files: 1}
+          - {key: sheet-b21, run_id: 39974008809, artifact_id: 12511940131, min_files: 1}
+          - {key: sheet-b19, run_id: 39974008809, artifact_id: 12511075274, min_files: 1}
+          - {key: sheet-b20r1, run_id: 39974008809, artifact_id: 12510820600, min_files: 1}
+          - {key: sheet-b21r1, run_id: 39974008809, artifact_id: 12510068561, min_files: 1}
+          - {key: sheet-b20, run_id: 39974008809, artifact_id: 12509979019, min_files: 1}
+          - {key: sheet-b21r2, run_id: 39974008809, artifact_id: 12509629114, min_files: 1}
+    steps:
+      - name: Download existing evidence only; never acquire new third-party imagery
+        uses: actions/download-artifact@v4
+        with:
+          artifact-ids: ${{ matrix.artifact_id }}
+          run-id: ${{ matrix.run_id }}
+          repository: Fulcanelli13/ad-orientem
+          github-token: ${{ github.token }}
+          path: incoming
+          merge-multiple: true
+      - name: Inventory every original and review file with SHA-256
+        env:
+          WAVE: ${{ matrix.key }}
+          SOURCE_RUN: ${{ matrix.run_id }}
+          SOURCE_ARTIFACT: ${{ matrix.artifact_id }}
+          MIN_FILES: ${{ matrix.min_files }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import pathlib,hashlib,json,os,datetime
+          root=pathlib.Path('incoming')
+          rows=[]
+          for p in sorted(root.rglob('*')):
+              if not p.is_file(): continue
+              h=hashlib.sha256()
+              with p.open('rb') as stream:
+                  for block in iter(lambda:stream.read(1024*1024),b''):h.update(block)
+              rows.append({'path':p.relative_to(root).as_posix(),'sha256':h.hexdigest(),'bytes':p.stat().st_size})
+          assert len(rows)>=int(os.environ['MIN_FILES']), 'Empty source artifact'
+          record={'wave':os.environ['WAVE'],'source_run_id':int(os.environ['SOURCE_RUN']),'source_artifact_id':int(os.environ['SOURCE_ARTIFACT']),'files':rows,'total_files':len(rows),'bytes':sum(r['bytes'] for r in rows),'rights_checked':False,'editorial_approvals_created':0,'storage_only_unpublished':True,'created_utc':datetime.datetime.now(datetime.timezone.utc).isoformat()}
+          (root/'AO_SUPPLEMENT_INDEX.json').write_text(json.dumps(record,indent=2),encoding='utf-8')
+          print('SUPPLEMENT_SHA256_INDEXED',record['wave'],record['total_files'],record['bytes'])
+          PY
+      - name: Upload as unpublished companion archive, then download and compare bytes
+        env:
+          GH_TOKEN: ${{ github.token }}
+          WAVE: ${{ matrix.key }}
+        run: |
+          set -euo pipefail
+          test "$(gh release view "$ARCHIVE_TAG" -R "$GITHUB_REPOSITORY" --json isDraft --jq .isDraft)" = true
+          asset="ao-supplement-b27-${WAVE}.tar"
+          tar -C incoming -cf "$asset" .
+          test "$(stat -c %s "$asset")" -lt 2147483648
+          if ! gh api "repos/$GITHUB_REPOSITORY/releases/tags/$ARCHIVE_TAG" --jq '.assets[].name' | grep -Fxq "$asset"; then
+            gh release upload "$ARCHIVE_TAG" "$asset" -R "$GITHUB_REPOSITORY"
+          fi
+          mkdir verify
+          gh release download "$ARCHIVE_TAG" -p "$asset" -D verify -R "$GITHUB_REPOSITORY"
+          cmp "$asset" "verify/$asset"
+          echo "SUPPLEMENT_REMOTE_BYTES_VERIFIED $WAVE"
+  check-supplements:
+    needs: supplement
+    runs-on: ubuntu-latest
+    steps:
+      - env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          test "$(gh release view "$ARCHIVE_TAG" -R "$GITHUB_REPOSITORY" --json isDraft --jq .isDraft)" = true
+          gh api "repos/$GITHUB_REPOSITORY/releases/tags/$ARCHIVE_TAG" --jq '[.assets[].name | select(startswith("ao-supplement-b27-"))] | length' | grep -qx '9'
+          echo '9 supplementary source/evidence packs verified in draft release. No public distribution.'
