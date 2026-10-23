@@ -6,6 +6,7 @@ on:
       - "data/customs/master/**"
       - "tests/customs-master-integrity.mjs"
       - "tests/customs-full-registry-census.mjs"
+      - "tests/customs-weiser-readiness-pages.mjs"
       - ".github/workflows/customs-master-integrity.yml"
   workflow_dispatch:
 permissions:
@@ -30,3 +31,7 @@ jobs:
         run: |
           node --check tests/customs-full-registry-census.mjs
           node tests/customs-full-registry-census.mjs
+      - name: Verify original Weiser page backlog and 408-source group readiness
+        run: |
+          node --check tests/customs-weiser-readiness-pages.mjs
+          node tests/customs-weiser-readiness-pages.mjs
