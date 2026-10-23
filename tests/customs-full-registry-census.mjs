@@ -204,15 +204,13 @@ for (const row of weiserFine.records) {
   assert.equal(row.approved_distinct_custom_identity,false);
   assert.equal(row.app_publication,'NONE');
 }
-assert.equal(count.source_observations.handbook_nested_granular_detail_mentions,57);
-assert.equal(count.source_observations.all_book_research_rows_including_nested_details,742);
-assert.equal(researchCatalogue.handbook_granular_source_details.length,57);
-assert.deepEqual(
-  new Set(researchCatalogue.handbook_granular_source_details.map(x=>x.id)),
-  new Set(weiserFine.records.map(x=>x.id))
-);
+assert.equal(count.source_observations.handbook_nested_granular_detail_mentions,178);
+assert.equal(count.source_observations.all_book_research_rows_including_nested_details,863);
+assert.equal(researchCatalogue.handbook_granular_source_details.length,178);
+const compiledDetailIds = new Set(researchCatalogue.handbook_granular_source_details.map(x=>x.id));
+for (const r of weiserFine.records) assert.ok(compiledDetailIds.has(r.id), 'Earlier ch10–13 detail lost');
 assert.equal(count.identity_working_rows.new_identity_proposals_from_nested_details,0);
-console.log('Handbook granular second pass — 57 nested details on 24 distinct printed pages, 742 research rows without claiming 742 customs — PASS');
+console.log('Handbook ch10–13 research details — original 57 rows retained within 863-row workbench — PASS');
 
 
 const remainingChapters = load('data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json');
