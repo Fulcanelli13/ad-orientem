@@ -1,0 +1,60 @@
+name: B22 NGA31 compact evidence recovery
+on:
+  push:
+    branches: [research/b19-original-image-acquisition-probe-20261023]
+    paths: [.github/workflows/ao-art-b22-nga-audit-recovery.yml]
+  workflow_dispatch:
+permissions:
+  actions: read
+  contents: write
+jobs:
+  retain-nga-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Recover source-rights audit from the completed 31-file NGA artifact
+        uses: actions/download-artifact@v4
+        with:
+          artifact-ids: '12525379414'
+          run-id: '40009972526'
+          repository: Fulcanelli13/ad-orientem
+          github-token: ${{ github.token }}
+          path: evidence
+      - name: Preserve row-level source licences, hashes and IIIF image tier
+        shell: bash
+        run: |
+          mkdir -p audit
+          cp evidence/ao-sacred-art-b22-nga31-source-renditions-and-audit/Acquisition_results.csv audit/
+          cp evidence/ao-sacred-art-b22-nga31-source-renditions-and-audit/Acquisition_summary.json audit/
+          python - <<'PY'
+          import csv,json,pathlib,re
+          with pathlib.Path('audit/Acquisition_results.csv').open(encoding='utf-8',newline='') as f: rows=list(csv.DictReader(f))
+          s=json.loads(pathlib.Path('audit/Acquisition_summary.json').read_text())
+          assert len(rows)==31 and len({r['object_id'] for r in rows})==31
+          assert s['downloaded_iiif_renditions']==31
+          assert s['publication_approvals_created']==0
+          assert all(r['image_openaccess']=='1' for r in rows)
+          assert all(r['metadata_gate']=='OPENACCESS_IMAGE_ROW_VERIFIED' for r in rows)
+          assert all(r['acquisition_status']=='ACQUIRED_IIIF_RENDITION_HASHED' for r in rows)
+          assert all(re.fullmatch('[a-f0-9]{64}',r['sha256']) for r in rows)
+          assert all(r['publication_gate']=='HOLD' for r in rows)
+          print('VERIFIED: 31 NGA open-access IIIF renditions with exact metadata IDs and SHA256')
+          PY
+          cp audit/Acquisition_results.csv data/research/sacred-art-b22-nga31.audit.csv
+          cp audit/Acquisition_summary.json data/research/sacred-art-b22-nga31.audit-summary.json
+      - name: Commit immutable research evidence
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/research/sacred-art-b22-nga31.audit.csv data/research/sacred-art-b22-nga31.audit-summary.json
+          git commit -m 'research: persist 31 NGA image-level CC0/openaccess source IDs and IIIF SHA256'
+          git fetch origin research/b19-original-image-acquisition-probe-20261023
+          git rebase origin/research/b19-original-image-acquisition-probe-20261023
+          git push origin HEAD:research/b19-original-image-acquisition-probe-20261023
+      - name: Export compact audit for workbook reconciliation
+        uses: actions/upload-artifact@v4
+        with:
+          name: ao-art-b22-nga31-compact-rights-and-hash-audit
+          path: audit/
+          retention-days: 45
