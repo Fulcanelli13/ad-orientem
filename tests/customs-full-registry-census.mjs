@@ -286,3 +286,26 @@ for(const r of secondPassCoverage.chapters) {
  assert.equal(r.complete_page_by_page_second_read_confirmed,false);
 }
 console.log('Handbook source-page coverage — 28/28 indexed, 120/342 locations touched, 222 without new detail location; no full page reading claimed — PASS');
+
+
+const orphanAdjudication = load('data/customs/master/weiser-ch01-09-unindexed-leads-adjudication.v1.json');
+assert.equal(orphanAdjudication.records.length,34);
+assert.equal(orphanAdjudication.working_research_groups.length,24);
+assert.equal(orphanAdjudication.summary.other_context_variant_or_comparison_cases,10);
+assert.equal(new Set(orphanAdjudication.records.map(x=>x.source_detail_id)).size,34);
+const earlyUnparented = new Set(earlyDetails.filter(r=>(r.reference_to_original_index??r.original_observation_link??null)===null).map(x=>x.id));
+assert.deepEqual(new Set(orphanAdjudication.records.map(x=>x.source_detail_id)),earlyUnparented);
+assert.equal(new Set(orphanAdjudication.working_research_groups.map(x=>x.provisional_id)).size,24);
+assert.equal(researchCatalogue.provisional_unindexed_practice_leads.length,24);
+assert.equal(count.identity_working_rows.total_provisional_groups_including_unindexed,371);
+assert.equal(count.identity_working_rows.provisional_early_chapter_unindexed_groups,24);
+for(const r of orphanAdjudication.records) {
+ assert.equal(r.distinct_custom_verified,false);
+ assert.equal(r.app_publication,false);
+ if(r.existing_source_relation_under_review) assert.ok(priorSourceIds.has(r.existing_source_relation_under_review));
+}
+for(const g of researchCatalogue.provisional_unindexed_practice_leads){
+ assert.ok(earlyUnparented.has(g.source_observation_id));
+ assert.equal(g.identity_status,'UNVERIFIED_DISTINCTNESS_OR_CATHOLIC_SPECIFICITY');
+}
+console.log('Unindexed 34 source details: 24 provisional group leads, 10 contextual/variant dispositions — PASS');
