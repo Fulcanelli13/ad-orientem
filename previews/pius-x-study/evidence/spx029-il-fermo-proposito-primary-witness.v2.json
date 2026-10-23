@@ -23,28 +23,52 @@
       "locus": "§3, charitable action and revealed truth",
       "text": "diffusione della verità rivelata",
       "meaning": "Spreading revealed truth is one dimension of Catholic action",
-      "speaker": "PIUS_X_AUTHOR"
+      "speaker": "PIUS_X_AUTHOR",
+      "webTextVerification": {
+        "status": "MATCHED_ORIGINAL_LANGUAGE_VATICAN_PAGE_TEXT",
+        "checkedOn": "2026-10-23",
+        "sourcePageLine": 55,
+        "method": "Exact substring in original-language Vatican webpage (transcription audit only; not independent doctrinal or translation approval)"
+      }
     },
     {
       "id": "IF-VIRTUE",
       "locus": "§3, practice of Christian virtues",
       "text": "esercizio delle virtù cristiane",
       "meaning": "Practice of Christian virtues is included",
-      "speaker": "PIUS_X_AUTHOR"
+      "speaker": "PIUS_X_AUTHOR",
+      "webTextVerification": {
+        "status": "MATCHED_ORIGINAL_LANGUAGE_VATICAN_PAGE_TEXT",
+        "checkedOn": "2026-10-23",
+        "sourcePageLine": 55,
+        "method": "Exact substring in original-language Vatican webpage (transcription audit only; not independent doctrinal or translation approval)"
+      }
     },
     {
       "id": "IF-MERCY",
       "locus": "§3, spiritual and corporal works",
       "text": "opere di carità o di misericordia spirituale e corporale",
       "meaning": "Works of charity or mercy address both spiritual and bodily needs",
-      "speaker": "PIUS_X_AUTHOR"
+      "speaker": "PIUS_X_AUTHOR",
+      "webTextVerification": {
+        "status": "MATCHED_ORIGINAL_LANGUAGE_VATICAN_PAGE_TEXT",
+        "checkedOn": "2026-10-23",
+        "sourcePageLine": 55,
+        "method": "Exact substring in original-language Vatican webpage (transcription audit only; not independent doctrinal or translation approval)"
+      }
     },
     {
       "id": "IF-INDIVIDUAL",
       "locus": "§3, individual cooperation",
       "text": "necessità del concorso individuale",
       "meaning": "Individual cooperation is required; does NOT expressly say association membership is never needed",
-      "speaker": "PIUS_X_AUTHOR"
+      "speaker": "PIUS_X_AUTHOR",
+      "webTextVerification": {
+        "status": "MATCHED_ORIGINAL_LANGUAGE_VATICAN_PAGE_TEXT",
+        "checkedOn": "2026-10-23",
+        "sourcePageLine": 55,
+        "method": "Exact substring in original-language Vatican webpage (transcription audit only; not independent doctrinal or translation approval)"
+      }
     }
   ],
   "dialogueMappings": [
@@ -93,5 +117,10 @@
     "Original language for this encyclical on the Vatican Italian page is Italian; the Vatican Latin Certum consilium is a version, not the source of the Italian snippets",
     "Spiritual/corporal works expressly supported in §3",
     "Personal freedom from association membership is editorial interpretation, not a direct quotation or categorical ruling"
-  ]
+  ],
+  "webTextAudit": {
+    "checkedOn": "2026-10-23",
+    "matchedCount": 4,
+    "notClaiming": "Full diplomatic collation, context-independent speaker approval, or publication eligibility"
+  }
 }
