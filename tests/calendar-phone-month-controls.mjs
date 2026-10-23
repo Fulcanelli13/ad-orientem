@@ -161,6 +161,53 @@ try{
      await catalogue.locator(":scope > summary").click();
      assert.equal(await catalogue.locator(".aoCalCustomCatalogueItems [data-cal-custom-item]").count(),35,
        "The existing Day catalogue must expose 35 published canonical customs");
+
+     // Real mobile-reader journey: search full EN/FR historical text, open it,
+     // return to the catalogue and then to the same selected calendar day.
+     const selectedBefore=await page.evaluate(()=>globalThis.AO_RUNTIME_V8?.store?.getState?.()?.selectedDate);
+     assert.equal(selectedBefore,"2026-11-02","The selected date must remain All Souls on opening its articles");
+     const search=catalogue.locator("[data-cal-custom-search]");
+     await search.fill("woods HOLE");
+     const maryGarden=catalogue.locator('[data-cal-custom-item] [data-cal-custom-id="MARI-002"]');
+     assert.equal(await catalogue.locator(".aoCalCustomCatalogueItems [data-cal-custom-item]:visible").count(),1,
+       "A history-term search should find the one existing Mary Garden article");
+     await maryGarden.locator("summary").click();
+     assert.ok(await maryGarden.locator(".aoCalCustomArticleContent a[href^='https://']").count()>0,
+       "The full article should expose attributed sources before returning");
+     assert.equal(await maryGarden.getAttribute("open"),"",
+       "Tapping the article expands it in the current Calendar, without navigation");
+     await page.screenshot({path:resolve(output,"calendar-custom-reading-"+lang+"-"+width+".png"),
+       fullPage:false,animations:"disabled"});
+     await maryGarden.locator("summary").click();
+     assert.equal(await maryGarden.getAttribute("open"),null,
+       "Tapping the same heading closes the article");
+     await search.fill(lang==="fr"?"aupres des defunts":"AUPrès des DÉFUNTS");
+     assert.ok(await catalogue.locator('[data-cal-custom-item] [data-cal-custom-id="DOM-011"]').isVisible(),
+       "French accent/case-neutral search must find the original Candlemas historical caution");
+     await search.fill("");
+     assert.equal(await catalogue.locator(".aoCalCustomCatalogueItems [data-cal-custom-item]:visible").count(),35,
+       "Clearing search restores the full published set with no stale hidden rows");
+     await catalogue.locator(":scope > summary").click();
+     assert.equal(await catalogue.getAttribute("open"),null,
+       "Closing the catalogue returns to the selected day's Calendar context");
+     const beforeReturn=await page.evaluate(()=>({
+       selected:globalThis.AO_RUNTIME_V8?.store?.getState?.()?.selectedDate,
+       resolved:globalThis.AO_RUNTIME_V8?.store?.getState?.()?.resolution?.date
+     }));
+     assert.equal(beforeReturn.selected,"2026-11-02","Reading an unrelated custom must not change the selected day");
+     assert.equal(beforeReturn.resolved,"2026-11-02","Reading an unrelated custom must not change the resolved Mass day");
+     assert.equal(await cal.getAttribute("data-ao-calendar-view"),"day","Article return must preserve Calendar day view");
+     await page.locator('.aoTodayV2Tabs [data-home-calendar-view="picker"]').click();
+     await page.waitForFunction(()=>document.getElementById("ao-calendar-modular-root")?.dataset.aoCalendarView==="picker",
+       null,{timeout:15000});
+     assert.equal(await page.evaluate(()=>globalThis.AO_RUNTIME_V8?.store?.getState?.()?.selectedDate),"2026-11-02",
+       "Returning to the existing Calendar month must preserve the selected day");
+     await page.locator('.aoTodayV2Tabs [data-home-calendar-view="day"]').first().click();
+     await page.waitForFunction(()=>document.getElementById("ao-calendar-modular-root")?.dataset.aoCalendarView==="day",
+       null,{timeout:15000});
+     await cal.locator('.aoCalCustomsBlock [data-cal-custom-id="DEAD-003"]').waitFor({state:"visible",timeout:15000});
+     assert.equal(await page.evaluate(()=>globalThis.AO_RUNTIME_V8?.store?.getState?.()?.selectedDate),"2026-11-02",
+       "Day/Month/Day return must retain the actual All Souls selection");
      const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-innerWidth);
      assert.ok(overflow<=1,"Customs Calendar introduces phone horizontal overflow: "+overflow);
      await page.screenshot({path:resolve(output,"calendar-custom-day-"+lang+"-"+width+".png"),
