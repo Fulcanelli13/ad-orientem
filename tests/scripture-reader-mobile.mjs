@@ -607,7 +607,36 @@ try{
     "Omitted Philippi cannot reappear as a compulsory Scripture reading; editorial notes may mention why it was excluded");
   assert.match(await page.locator("#historiaProofText").innerText(),/Acts 28:17–22/);
   assert.equal(await page.locator("#historiaProofText .proofSourceBridge").count(),3);
-  assert.deepEqual(pageErrors,[],"Research story proof must not disrupt the established mobile Scripture workbench");
+  // The P0 filter is worklist-backed, never inferred from incomplete legacy priority labels.
+  await page.locator("#historiaProofBridgeFilter").selectOption("p0");
+  await page.waitForFunction(()=>document.querySelector("#historiaProofDecisionReview")
+    ?.textContent?.includes("HS-W-SRC-HS-P3-CF-13"),null,{timeout:20000});
+  assert.equal(await page.locator("#historiaProofDecisionReview .proofDecision").count(),2);
+  assert.equal(await page.locator("#historiaProofText .proofSourceBridge").count(),2,
+    "P0 Rome should include the paired arrival and audience but not the non-P0 Acts 19 hold");
+  assert.equal(await page.locator("#historiaProofP0Jump option").count(),7);
+  await page.locator("#historiaProofP0Jump").selectOption("HS-M03");
+  await page.waitForFunction(()=>document.querySelector("#historiaProofStatus")
+    ?.textContent?.includes("source verses displayed"),null,{timeout:25000});
+  assert.equal(await page.locator("#historiaProofText .proofSourceBridge .proofVerse").count(),12,
+    "The P0 Ark trial is the already-held 12-verse version, never full 14 verses");
+  assert.match(await page.locator("#historiaProofText").innerText(),/Genesis 6:9–14/);
+  assert.match(await page.locator("#historiaProofText").innerText(),/Genesis 6:17–22/);
+  assert.equal(await page.locator("#historiaProofDecisionReview .proofDecision").count(),1);
+  await page.locator("#historiaProofP0Jump").selectOption("HS-M28");
+  await page.waitForFunction(()=>document.querySelector("#historiaProofStatus")
+    ?.textContent?.includes("source verses displayed"),null,{timeout:25000});
+  assert.equal(await page.locator("#historiaProofDecisionReview .proofDecision").count(),2);
+  assert.match(await page.locator("#historiaProofText").innerText(),/John 19:31–37/);
+  assert.match(await page.locator("#historiaProofText").innerText(),/John 19:38–42/);
+  await page.locator("#historiaProofP0Jump").selectOption("HS-M37");
+  await page.waitForFunction(()=>document.querySelector("#historiaProofStatus")
+    ?.textContent?.includes("source verses displayed"),null,{timeout:25000});
+  assert.match(await page.locator("#historiaProofText").innerText(),/Revelation 21:9–11/);
+  assert.doesNotMatch(await page.locator("#historiaProofText").innerText(),/Revelation 22:20–21/,
+    "Lower-priority book epilogue remains held, even when P0 angel source is shown");
+  assert.equal(await page.locator("#historiaProofDecisionReview .proofDecision").count(),1);
+  assert.deepEqual(pageErrors,[],"P0 comparisons must not disrupt mobile Scripture workbench");
   await page.locator("#historiaProofToggle").click();
   assert.equal(await page.locator("#historiaProof").isVisible(),false);
   assert.equal(await page.locator("#historiaUnitControls").isVisible(),true);
