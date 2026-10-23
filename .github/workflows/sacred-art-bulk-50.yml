@@ -1,0 +1,50 @@
+name: Sacred Art bulk acquisition — 50-work shards
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "data/research/sacred-art-bulk-source-intake-451-20261020.v1.json"
+      - "tools/calendar/acquire-sacred-art-bulk.mjs"
+      - "tests/sacred-art-bulk-acquisition.mjs"
+      - ".github/workflows/sacred-art-bulk-50.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  intake-gates:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: node tests/sacred-art-bulk-acquisition.mjs
+
+  source-review-shards:
+    needs: intake-gates
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        shard: [0,1,2,3,4,5,6,7,8,9]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Stage approved exact-file candidates; hold others
+        run: node tools/calendar/acquire-sacred-art-bulk.mjs ${{ matrix.shard }}
+      - name: Archive reviewable source images, hashes and hold ledger
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-source-batch-${{ matrix.shard }}
+          path: artifacts/sacred-art-bulk/batch-*/
+          retention-days: 14
+          if-no-files-found: warn

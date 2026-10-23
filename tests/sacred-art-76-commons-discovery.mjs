@@ -1,0 +1,40 @@
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+import {searchTerms,screenCandidate,metadataIsPrado,renderGallery} from "../tools/calendar/discover-sacred-art-76-open-sources.mjs";
+const get=p=>JSON.parse(readFileSync(new URL("../"+p,import.meta.url),"utf8"));
+const q=get("data/research/sacred-art-open-source-recovery-76-20261020.v1.json");
+const intake=get("data/research/sacred-art-bulk-source-intake-451-20261020.v1.json");
+assert.equal(q.records.length,76);
+assert.deepEqual(q.batches.map(x=>x.count),[50,26]);
+assert.equal(q.stationObjectProgress.officialExactLinks,9);
+assert.equal(q.stationObjectProgress.wrongStationLinksRemaining,0);
+assert.equal(q.records.filter(x=>x.status==="MOVED_TO_EXACT_COMMONS_SOURCE_QA").length,21);
+assert.equal(q.records.filter(x=>x.status==="HOLD_PRADO_SOURCE_POLICY").length,1);
+const example={artworkId:"TEST-ONLY",title:"The Dream of Saint Joseph",artist:"Philippe de Champaigne"};
+const meta={LicenseShortName:{value:"CC BY-SA 4.0"},Copyrighted:{value:"True"},Artist:{value:"Philippe de Champaigne"},ImageDescription:{value:"The Dream of Saint Joseph"}};
+const page={title:"File:Philippe de Champaigne - The Dream of Saint Joseph.jpg",imageinfo:[{width:3100,height:2400,mime:"image/jpeg",sha1:"a".repeat(40),
+ extmetadata:meta,thumburl:"https://upload.wikimedia.org/wikipedia/commons/thumb/example.jpg"}]};
+const candidate=screenCandidate(example,page);
+assert(candidate&&candidate.searchScore>=30);
+assert.equal(candidate.originalPhysicalIdentityConfirmed,false);
+assert.equal(candidate.productionEligible,false);
+assert.equal(candidate.photoRightsDeclared,"CC BY-SA 4.0");
+assert.equal(screenCandidate(example,{...page,imageinfo:[{...page.imageinfo[0],extmetadata:{
+ ...meta,LicenseShortName:{value:"CC BY-NC-ND 4.0"}}}]}),null,"Exclude noncommercial images");
+assert.equal(screenCandidate(example,{...page,title:"File:Museo del Prado - Dream of Saint Joseph.jpg"}),null);
+assert.equal(screenCandidate(example,{...page,imageinfo:[{...page.imageinfo[0],extmetadata:{
+ ...meta,Source:{value:"https://www.museodelprado.es/collection"}}}]}),null);
+assert.equal(screenCandidate(example,{...page,imageinfo:[{...page.imageinfo[0],width:300,height:500}]}),null);
+assert.equal(metadataIsPrado(page,page.imageinfo[0].extmetadata),false);
+assert.equal(searchTerms(example),"Philippe de Champaigne The Dream of Saint Joseph");
+const station=q.records.find(x=>/an-olo-ia-rucis-tation-02-/.test(x.artworkId));
+assert(station?.sourceUrl.includes("VIA_CRUCIS_II_")&&station.sourceObjectUrl?.endsWith("via-crucis-jesus-carries-the-cross/"));
+assert(searchTerms(station).includes("Giandomenico Tiepolo San Polo 2"));
+assert(!renderGallery([{...example,artist:"Example",lane:"TEST",candidates:[candidate]}]).includes("<script>"));
+assert.equal(intake.works.filter(x=>x.sourceObjectEvidence?.source==="OFFICIAL_CHORUS_SAN_POLO_OBJECT_PAGE").length,9);
+assert.equal(get("data/calendar/sacred-art-certified-media.v1.json").media.length,0);
+const source=readFileSync(new URL("../tools/calendar/discover-sacred-art-76-open-sources.mjs",import.meta.url),"utf8");
+assert(!source.includes("git push")&&!source.includes("api.php?action=edit"));
+assert(source.includes('gsrnamespace:"6"'));
+assert(source.includes("Math.min(30000"));
+console.log("PASS: 76 source discovery safe; nine exact San Polo objects; noncommercial, Prado, low resolution, publisher-gate protections");

@@ -1,0 +1,28 @@
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+import {Script} from "node:vm";
+const file=(path)=>new URL("../"+path,import.meta.url);
+const mf=JSON.parse(readFileSync(file("data/research/sacred-art-w67-saints-r1-unrated-gallery-manifest-20261015.v1.json"),"utf8"));
+const old=JSON.parse(readFileSync(file("data/research/sacred-visual-w61-grouped-artwork-register-20261015.v1.json"),"utf8"));
+const gallery=readFileSync(file("docs/research/review-galleries/ao-sacred-art-w67-saints-r1-20261015.html"),"utf8");
+const records=mf.cards;
+let checked=0;function pass(ok,label){assert.ok(ok,label);checked++}
+const oldById=new Map(old.w48ReviewPlacements.map(r=>[r.candidateId,r]));
+pass(mf.schema==="AO_SACRED_ART_W67_SAINTS_UNRATED_REVIEW_BATCH_V1","W67 schema");
+pass(records.length===70,"70 paintings");
+pass(new Set(records.map(r=>r.subject)).size===33,"33 saints");
+pass(new Set(records.map(r=>r.candidateId)).size===records.length,"one candidate per ID");
+pass(records.every(r=>r.priorUserRating===null&&!r.reviewedBefore),"no rerated originals");
+pass(records.every(r=>{const old=oldById.get(r.candidateId);return old&&old.effectiveScore==null&&old.originalRating==null}),"W48 source each unreviewed");
+pass(records.every(r=>r.primarySource.startsWith("https://commons.wikimedia.org/wiki/File:")),"exact original file page links");
+pass(records.every(r=>r.preview.startsWith("https://commons.wikimedia.org/wiki/Special:FilePath/File:")),"Commons image previews");
+pass(gallery.includes(JSON.stringify(mf).slice(0,120)),"embedded input snapshot");
+pass(gallery.includes("for(let n=0;n<=5;n++)"),"zero through five review");
+pass(gallery.includes("perfect_theme")&&gallery.includes("suitable_elsewhere")&&gallery.includes("unsuitable"),"subject suitability");
+pass(gallery.includes("AO_SACRED_ART_W67_SAINTS_R1_USER_REVIEW_EXPORT_V1")&&gallery.includes("importFile"),"JSON export/import");
+pass(gallery.includes("localStorage.setItem"),"local autosave");
+pass(!/<script\s+src=/i.test(gallery),"no external scripts");
+const script=gallery.match(/<script>([\s\S]*?)<\/script>/)?.[1];
+pass(!!script,"inline review script");
+new Script(script,{filename:"W67-review-gallery-inline.js"});checked++;
+console.log("W67 gallery checks: "+checked+"/"+checked+" passed");

@@ -1,0 +1,2350 @@
+{
+  "schema": "AO_SACRED_ART_CLASS_I_53_20261020_CURRENT_DECISIONS_NONDESTRUCTIVE_OVERLAY_V1",
+  "asOf": "2026-10-20",
+  "priority": "P0_CURRENT_EDITORIAL_CHOICE_SOURCE_SUPERSEDES_EARLIER_DATE_LINK_INVENTORY_FOR_SELECTION_ONLY",
+  "sourceAuthority": {
+    "file": "AO_Class_I_53_Production_Preflight_Delta_2026-10-20.json",
+    "companion": "AO_Class_I_53_Production_Readiness_Report_2026-10-20.md",
+    "capturedDateChoices": "2026-10-19",
+    "sourceStatus": "TRANSCRIBED_PRIOR_USER_DATE_APPROVALS_AND_HISTORICAL_ASSOCIATIONS; RECONCILE_TO_USER_EXPORT_BEFORE_FINAL_SOURCE_OF_TRUTH_MERGE"
+  },
+  "versionPrecedence": {
+    "olderFrozenApprovedWorksUnchanged": true,
+    "olderRejectedIDsUnchanged": true,
+    "earlierStrict18Of53ReflectsOct17Only": true,
+    "editorialStatusNow53Of53DateAssociations": true,
+    "willNotAutoMapAmbiguousPhysicalOriginals": true,
+    "p0Oct17Baseline": "data/research/sacred-art-p0-77-calendar-lock-reconciliation-20261020.v1.json",
+    "explicitNoChangeToUnderlyingArtworkRatings": true
+  },
+  "counts": {
+    "calendarRows": 53,
+    "dateEditorialArtworkAssociation": 53,
+    "newExplicitCurrentPrimarySelections": 5,
+    "newOtherDateSpecificSelections": 30,
+    "specialVigilCoverageByTwoProphecies": 1,
+    "historicalPreviouslyApprovedDateAssociationsUsed": 17,
+    "oct17DateAnyApprovedPreview": 18,
+    "currentSelectionCataloguePreview": 15,
+    "catalogueWorks": 451,
+    "catalogueReleaseCertified": 0,
+    "distinctSourceObjectURLsInCurrentSelection": 21,
+    "frozenApprovedCatalogWorks": 107,
+    "frozenRejectedCatalogWorks": 68,
+    "criticalFrozenRejectConflicts": 0,
+    "currentSelectionWithoutCataloguePreview": 38,
+    "currentSelectionMissingObjectURLInThisCrosswalk": 31,
+    "distinctSelectedWorkLabels": 51,
+    "savedAIVisualDraftsVerifiedInCurrentSession": 2
+  },
+  "protection": {
+    "noPradoSourcePhotosOrMirrors": true,
+    "noPaidRightsLicences": true,
+    "noMuseumOrRightsHolderContact": true,
+    "noAutoPublication": true,
+    "feastIconographyVsLiteralGospelAlwaysTyped": true,
+    "currentUserChoiceDoesNotClearSourceReproductionRights": true,
+    "zeroMediaProductionCertified": true,
+    "userApprovedVisualDraftDoesNotImplyCompositionFaithfulRecolour": true
+  },
+  "specialRules": [
+    {
+      "date": "2026-04-04",
+      "rule": "Only two Old Testament prophecy illustrations approved; preserve four liturgical prophecies and the separate Easter Vigil Gospel text."
+    },
+    {
+      "date": "2026-04-10",
+      "rule": "Luigi Minardi Missione degli Apostoli: selected, but exact Matthew 28 Galilean mountain episode unverified and fresco reproduction requires independent rights."
+    },
+    {
+      "date": "2026-04-07",
+      "rule": "Van Dyck depiction is thematic and not certified as exact Luke 24:36–47."
+    },
+    {
+      "date": "2026-05-23",
+      "rule": "Maíno Pentecost 1612–14 P003018 exact object; Prado photo and all Prado-derived mirrors embargoed; do not substitute 1615–20 Prado Pentecost."
+    },
+    {
+      "date": "2026-05-27",
+      "rule": "Philippe de Champaigne La Petite Cène Louvre INV1125 depicts Eucharistic theme not John 6 discourse; RMN photo rights require independent permission-free source."
+    },
+    {
+      "date": "2026-05-26",
+      "rule": "Figge 25.0032 Bruegel attribution disputed; qualified caption required."
+    },
+    {
+      "date": "2026-04-08",
+      "rule": "AI draft after Tissot not verified composition-faithful recolouring; separate derivative and rights evidence required."
+    },
+    {
+      "date": "2026-05-29",
+      "rule": "AI draft after Wierix not verified composition-faithful recolouring; separate derivative and rights evidence required."
+    }
+  ],
+  "records": [
+    {
+      "date": "2026-01-01",
+      "observance": "Octave Day of Christmas",
+      "selectedArtwork": {
+        "title": "The Circumcision",
+        "artist": "Tintoretto and workshop",
+        "iconographicRole": "GOSPEL_EXACT",
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "activeDateAssociation": true,
+        "notNewGlobalArtworkApproval": false
+      },
+      "scripture": "Luke 2:21",
+      "sourceObject": {
+        "url": null,
+        "museumPhotoAcquisitionBlocked": false,
+        "claimedRightsNotIndependentlyVerified": null
+      },
+      "catalogReview": {
+        "legacyPreviewMatched": false,
+        "olderOct17DateHasAnyApprovedPreview": false,
+        "possibleOriginalKeys": []
+      },
+      "preflight": {
+        "objectIdentity": "NEEDS_VERIFICATION",
+        "photo": "NOT_CERTIFIED",
+        "photoRights": "NOT_CLEARED",
+        "crop": "NOT_CERTIFIED",
+        "app": "NOT_DEPLOYED"
+      },
+      "originalWarnings": [
+        "SOURCE_OBJECT_URL_MISSING_OR_NOT_LINKED_TO_CURRENT_SELECTION",
+        "NO_OCT17_CATALOGUE_PREVIEW_FOR_CURRENT_SELECTION",
+        "NO_CERTIFIED_RELEASE_MASTER",
+        "REPRODUCTION_RIGHTS_NOT_YET_VERIFIED",
+        "CROP_AND_RESOLUTION_NOT_CERTIFIED"
+      ],
+      "humanNotes": null,
+      "publicationCertified": false,
+      "productionArtworkPath": null
+    },
+    {
+      "date": "2026-01-06",
+      "observance": "Epiphany of the Lord",
+      "selectedArtwork": {
+        "title": "Adoration of the Magi",
+        "artist": "Peter Paul Rubens",
+        "iconographicRole": "HISTORICAL_APPROVED_ASSOCIATION",
+        "editorialBasis": "OCT17_PREVIOUSLY_APPROVED_ASSOCIATION_PRIMARY_NOT_EXPLICITLY_RECONFIRMED",
+        "activeDateAssociation": true,
+        "notNewGlobalArtworkApproval": true
+      },
+      "scripture": "Matthew 2:1–12",
+      "sourceObject": {
+        "url": "https://www.museodelprado.es/en/the-collection/art-work/adoration-of-the-magi/b6440da1-0c0c-4ead-84b7-f5a017e2fd17",
+        "museumPhotoAcquisitionBlocked": true,
+        "claimedRightsNotIndependentlyVerified": "Public domain"
+      },
+      "catalogReview": {
+        "legacyPreviewMatched": true,
+        "olderOct17DateHasAnyApprovedPreview": true,
+        "possibleOriginalKeys": [
+          {
+            "artworkId": "ART-eter-aul-ubens-doration-of-the-agi",
+            "catalogReviewStatus": "APPROVED_5",
+            "previewAvailable": true,
+            "reproductionCertified": false
+          }
+        ]
+      },
+      "preflight": {
+        "objectIdentity": "NEEDS_VERIFICATION",
+        "photo": "NOT_CERTIFIED",
+        "photoRights": "NOT_CLEARED",
+        "crop": "NOT_CERTIFIED",
+        "app": "NOT_DEPLOYED"
+      },
+      "originalWarnings": [
+        "NO_CERTIFIED_RELEASE_MASTER",
+        "REPRODUCTION_RIGHTS_NOT_YET_VERIFIED",
+        "CROP_AND_RESOLUTION_NOT_CERTIFIED"
+      ],
+      "humanNotes": null,
+      "publicationCertified": false,
+      "productionArtworkPath": null
+    },
+    {
+      "date": "2026-02-18",
+      "observance": "Ash Wednesday",
+      "selectedArtwork": {
+        "title": "The Penitent Magdalen",
+        "artist": "Georges de La Tour",
+        "iconographicRole": "PENITENTIAL_FEAST_THEME",
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "activeDateAssociation": true,
+        "notNewGlobalArtworkApproval": false
+      },
+      "scripture": "Matthew 6:16–21",
+      "sourceObject": {
+        "url": "https://www.metmuseum.org/art/collection/search/436839",
+        "museumPhotoAcquisitionBlocked": false,
+        "claimedRightsNotIndependentlyVerified": "CC0"
+      },
+      "catalogReview": {
+        "legacyPreviewMatched": false,
+        "olderOct17DateHasAnyApprovedPreview": false,
+        "possibleOriginalKeys": [
+          {
+            "artworkId": "met-436839",
+            "catalogReviewStatus": "APPROVED_5",
+            "previewAvailable": false,
+            "reproductionCertified": false
+          }
+        ]
+      },
+      "preflight": {
+        "objectIdentity": "NEEDS_VERIFICATION",
+        "photo": "NOT_CERTIFIED",
+        "photoRights": "NOT_CLEARED",
+        "crop": "NOT_CERTIFIED",
+        "app": "NOT_DEPLOYED"
+      },
+      "originalWarnings": [
+        "NO_OCT17_CATALOGUE_PREVIEW_FOR_CURRENT_SELECTION",
+        "NO_CERTIFIED_RELEASE_MASTER",
+        "REPRODUCTION_RIGHTS_NOT_YET_VERIFIED",
+        "CROP_AND_RESOLUTION_NOT_CERTIFIED"
+      ],
+      "humanNotes": null,
+      "publicationCertified": false,
+      "productionArtworkPath": null
+    },
+    {
+      "date": "2026-02-22",
+      "observance": "I Sunday of Lent",
+      "selectedArtwork": {
+        "title": "Christ in the Desert",
+        "artist": "Ivan Kramskoi",
+        "iconographicRole": "GOSPEL_EXACT",
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "activeDateAssociation": true,
+        "notNewGlobalArtworkApproval": false
+      },
+      "scripture": "Matthew 4:1–11",
+      "sourceObject": {
+        "url": null,
+        "museumPhotoAcquisitionBlocked": false,
+        "claimedRightsNotIndependentlyVerified": null
+      },
+      "catalogReview": {
+        "legacyPreviewMatched": false,
+        "olderOct17DateHasAnyApprovedPreview": false,
+        "possibleOriginalKeys": []
+      },
+      "preflight": {
+        "objectIdentity": "NEEDS_VERIFICATION",
+        "photo": "NOT_CERTIFIED",
+        "photoRights": "NOT_CLEARED",
+        "crop": "NOT_CERTIFIED",
+        "app": "NOT_DEPLOYED"
+      },
+      "originalWarnings": [
+        "SOURCE_OBJECT_URL_MISSING_OR_NOT_LINKED_TO_CURRENT_SELECTION",
+        "NO_OCT17_CATALOGUE_PREVIEW_FOR_CURRENT_SELECTION",
+        "NO_CERTIFIED_RELEASE_MASTER",
+        "REPRODUCTION_RIGHTS_NOT_YET_VERIFIED",
+        "CROP_AND_RESOLUTION_NOT_CERTIFIED"
+      ],
+      "humanNotes": null,
+      "publicationCertified": false,
+      "productionArtworkPath": null
+    },
+    {
+      "date": "2026-03-01",
+      "observance": "II Sunday of Lent",
+      "selectedArtwork": {
+        "title": "The Transfiguration",
+        "artist": "Raphael",
+        "iconographicRole": "GOSPEL_EXACT",
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "activeDateAssociation": true,
+        "notNewGlobalArtworkApproval": false
+      },
+      "scripture": "Matthew 17:1–9",
+      "sourceObject": {
+        "url": null,
+        "museumPhotoAcquisitionBlocked": false,
+        "claimedRightsNotIndependentlyVerified": null
+      },
+      "catalogReview": {
+        "legacyPreviewMatched": false,
+        "olderOct17DateHasAnyApprovedPreview": false,
+        "possibleOriginalKeys": []
+      },
+      "preflight": {
+        "objectIdentity": "NEEDS_VERIFICATION",
+        "photo": "NOT_CERTIFIED",
+        "photoRights": "NOT_CLEARED",
+        "crop": "NOT_CERTIFIED",
+        "app": "NOT_DEPLOYED"
+      },
+      "originalWarnings": [
+        "SOURCE_OBJECT_URL_MISSING_OR_NOT_LINKED_TO_CURRENT_SELECTION",
+        "NO_OCT17_CATALOGUE_PREVIEW_FOR_CURRENT_SELECTION",
+        "NO_CERTIFIED_RELEASE_MASTER",
+        "REPRODUCTION_RIGHTS_NOT_YET_VERIFIED",
+        "CROP_AND_RESOLUTION_NOT_CERTIFIED"
+      ],
+      "humanNotes": null,
+      "publicationCertified": false,
+      "productionArtworkPath": null
+    },
+    {
+      "date": "2026-03-08",
+      "observance": "III Sunday of Lent",
+      "selectedArtwork": {
+        "title": "Christ Exorcising Devils from a Man — AI reinterpretation after Giacomo Cavedone",
+        "artist": "AI-derived after Giacomo Cavedone",
+        "iconographicRole": "GOSPEL_EPISODE",
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "activeDateAssociation": true,
+        "notNewGlobalArtworkApproval": false
+      },
+      "scripture": "Luke 11:14–28",
+      "sourceObject": {
+        "url": null,
+        "museumPhotoAcquisitionBlocked": false,
+        "claimedRightsNotIndependentlyVerified": null
+      },
+      "catalogReview": {
+        "legacyPreviewMatched": false,
+        "olderOct17DateHasAnyApprovedPreview": false,
+        "possibleOriginalKeys": []
+      },
+      "preflight": {
+        "objectIdentity": "NEEDS_VERIFICATION",
+        "photo": "NOT_CERTIFIED",
+        "photoRights": "NOT_CLEARED",
+        "crop": "NOT_CERTIFIED",
+        "app": "NOT_DEPLOYED"
+      },
+      "originalWarnings": [
+        "AI_REINTERPRETATION_NOT_COMPOSITION_PRESERVING_COLOURIZATION",
+        "KEEP_DERIVATIVE_LABEL_AND_SOURCE_PROVENANCE",
+        "REVIEW_VISUAL_FIDELITY_BEFORE_PUBLICATION",
+        "SOURCE_OBJECT_URL_MISSING_OR_NOT_LINKED_TO_CURRENT_SELECTION",
+        "NO_OCT17_CATALOGUE_PREVIEW_FOR_CURRENT_SELECTION",
+        "NO_CERTIFIED_RELEASE_MASTER",
+        "REPRODUCTION_RIGHTS_NOT_YET_VERIFIED",
+        "CROP_AND_RESOLUTION_NOT_CERTIFIED"
+      ],
+      "humanNotes": null,
+      "publicationCertified": false,
+      "productionArtworkPath": null
+    },
+    {
+      "date": "2026-03-15",
+      "observance": "IV Sunday of Lent",
+      "selectedArtwork": {
+        "title": "Miracle of Loaves and Fishes",
+        "artist": "Giovanni Lanfranco",
+        "iconographicRole": "HISTORICAL_APPROVED_ASSOCIATION",
+        "editorialBasis": "OCT17_PREVIOUSLY_APPROVED_ASSOCIATION_PRIMARY_NOT_EXPLICITLY_RECONFIRMED",
+        "activeDateAssociation": true,
+        "notNewGlobalArtworkApproval": true
+      },
+      "scripture": "John 6:1–15",
+      "sourceObject": {
+        "url": null,
+        "museumPhotoAcquisitionBlocked": false,
+        "claimedRightsNotIndependentlyVerified": "Public domain"
+      },
+      "catalogReview": {
+        "legacyPreviewMatched": true,
+        "olderOct17DateHasAnyApprovedPreview": true,
+        "possibleOriginalKeys": [
+          {
+            "artworkId": "ART-iovanni-anfranco-iracle-of-oaves-and-ishes",
+            "catalogReviewStatus": "APPROVED_LOCKED",
+            "previewAvailable": true,
+            "reproductionCertified": false
+          }
+        ]
+      },
+      "preflight": {
+        "objectIdentity": "NEEDS_VERIFICATION",
+        "photo": "NOT_CERTIFIED",
+        "photoRights": "NOT_CLEARED",
+        "crop": "NOT_CERTIFIED",
+        "app": "NOT_DEPLOYED"
+      },
+      "originalWarnings": [
+        "SOURCE_OBJECT_URL_MISSING_OR_NOT_LINKED_TO_CURRENT_SELECTION",
+        "NO_CERTIFIED_RELEASE_MASTER",
+        "REPRODUCTION_RIGHTS_NOT_YET_VERIFIED",
+        "CROP_AND_RESOLUTION_NOT_CERTIFIED"
+      ],
+      "humanNotes": null,
+      "publicationCertified": false,
+      "productionArtworkPath": null
+    },
+    {
+      "date": "2026-03-19",
+      "observance": "St. Joseph, Spouse of the Bl. Virgin Mary",
+      "selectedArtwork": {
+        "title": "The Dream of Saint Joseph",
+        "artist": "Philippe de Champaigne",
+        "iconographicRole": "HISTORICAL_APPROVED_ASSOCIATION",
+        "editorialBasis": "OCT17_PREVIOUSLY_APPROVED_ASSOCIATION_PRIMARY_NOT_EXPLICITLY_RECONFIRMED",
+        "activeDateAssociation": true,
+        "notNewGlobalArtworkApproval": true
+      },
+      "scripture": "Matthew 1:18–21",
+      "sourceObject": {
+        "url": "https://www.nationalgallery.org.uk/paintings/philippe-de-champaigne-the-dream-of-saint-joseph",
+        "museumPhotoAcquisitionBlocked": false,
+        "claimedRightsNotIndependentlyVerified": "Public domain"
+      },
+      "catalogReview": {
+        "legacyPreviewMatched": true,
+        "olderOct17DateHasAnyApprovedPreview": true,
+        "possibleOriginalKeys": [
+          {
+            "artworkId": "ART-hilippe-de-hampaigne-he-ream-of-aint-oseph",
+            "catalogReviewStatus": "APPROVED_LOCKED",
+            "previewAvailable": true,
+            "reproductionCertified": false
+          }
+        ]
+      },
+      "preflight": {
+        "objectIdentity": "NEEDS_VERIFICATION",
+        "photo": "NOT_CERTIFIED",
+        "photoRights": "NOT_CLEARED",
+        "crop": "NOT_CERTIFIED",
+        "app": "NOT_DEPLOYED"
+      },
+      "originalWarnings": [
+        "NO_CERTIFIED_RELEASE_MASTER",
+        "REPRODUCTION_RIGHTS_NOT_YET_VERIFIED",
+        "CROP_AND_RESOLUTION_NOT_CERTIFIED"
+      ],
+      "humanNotes": null,
+      "publicationCertified": false,
+      "productionArtworkPath": null
+    },
+    {
+      "date": "2026-03-22",
+      "observance": "Passion Sunday",
+      "selectedArtwork": {
+        "title": "Christ Escapes the Stoning — AI reinterpretation after Lucas van Doetechum",
+        "artist": "AI-derived after Lucas van Doetechum",
+        "iconographicRole": "GOSPEL_EPISODE",
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "activeDateAssociation": true,
+        "notNewGlobalArtworkApproval": false
+      },
+      "scripture": "John 8:46–59",
+      "sourceObject": {
+        "url": null,
+        "museumPhotoAcquisitionBlocked": false,
+        "claimedRightsNotIndependentlyVerified": null
+      },
+      "catalogReview": {
+        "legacyPreviewMatched": false,
+        "olderOct17DateHasAnyApprovedPreview": false,
+        "possibleOriginalKeys": []
+      },
+      "preflight": {
+        "objectIdentity": "NEEDS_VERIFICATION",
+        "photo": "NOT_CERTIFIED",
+        "photoRights": "NOT_CLEARED",
+        "crop": "NOT_CERTIFIED",
+        "app": "NOT_DEPLOYED"
+      },
+      "originalWarnings": [
+        "AI_REINTERPRETATION_NOT_COMPOSITION_PRESERVING_COLOURIZATION",
+        "KEEP_DERIVATIVE_LABEL_AND_SOURCE_PROVENANCE",
+        "REVIEW_VISUAL_FIDELITY_BEFORE_PUBLICATION",
+        "SOURCE_OBJECT_URL_MISSING_OR_NOT_LINKED_TO_CURRENT_SELECTION",
+        "NO_OCT17_CATALOGUE_PREVIEW_FOR_CURRENT_SELECTION",
+        "NO_CERTIFIED_RELEASE_MASTER",
+        "REPRODUCTION_RIGHTS_NOT_YET_VERIFIED",
+        "CROP_AND_RESOLUTION_NOT_CERTIFIED"
+      ],
+      "humanNotes": null,
+      "publicationCertified": false,
+      "productionArtworkPath": null
+    },
+    {
+      "date": "2026-03-25",
+      "observance": "Annunciation of the Blessed Virgin Mary",
+      "selectedArtwork": {
+        "title": "The Annunciation",
+        "artist": "Philippe de Champaigne",
+        "iconographicRole": "HISTORICAL_APPROVED_ASSOCIATION",
+        "editorialBasis": "OCT17_PREVIOUSLY_APPROVED_ASSOCIATION_PRIMARY_NOT_EXPLICITLY_RECONFIRMED",
+        "activeDateAssociation": true,
+        "notNewGlobalArtworkApproval": true
+      },
+      "scripture": "Luke 1:26–38",
+      "sourceObject": {
+        "url": "https://www.metmuseum.org/art/collection/search/438724",
+        "museumPhotoAcquisitionBlocked": false,
+        "claimedRightsNotIndependentlyVerified": "CC0 (museum official open access)"
+      },
+      "catalogReview": {
+        "legacyPreviewMatched": true,
+        "olderOct17DateHasAnyApprovedPreview": true,
+        "possibleOriginalKeys": [
+          {
+            "artworkId": "ART-hilippe-de-hampaigne-he-nnunciation",
+            "catalogReviewStatus": "APPROVED_LOCKED",
+            "previewAvailable": true,
+            "reproductionCertified": false
+          }
+        ]
+      },
+      "preflight": {
+        "objectIdentity": "NEEDS_VERIFICATION",
+        "photo": "NOT_CERTIFIED",
+        "photoRights": "NOT_CLEARED",
+        "crop": "NOT_CERTIFIED",
+        "app": "NOT_DEPLOYED"
+      },
+      "originalWarnings": [
+        "NO_CERTIFIED_RELEASE_MASTER",
+        "REPRODUCTION_RIGHTS_NOT_YET_VERIFIED",
+        "CROP_AND_RESOLUTION_NOT_CERTIFIED"
+      ],
+      "humanNotes": null,
+      "publicationCertified": false,
+      "productionArtworkPath": null
+    },
+    {
+      "date": "2026-03-29",
+      "observance": "Palm Sunday",
+      "selectedArtwork": {
+        "title": "The Entry of Christ into Jerusalem",
+        "artist": "Anthony van Dyck",
+        "iconographicRole": "LITURGICAL_PROCESSION",
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "activeDateAssociation": true,
+        "notNewGlobalArtworkApproval": false
+      },
+      "scripture": null,
+      "sourceObject": {
+        "url": null,
+        "museumPhotoAcquisitionBlocked": false,
+        "claimedRightsNotIndependentlyVerified": null
+      },
+      "catalogReview": {
+        "legacyPreviewMatched": false,
+        "olderOct17DateHasAnyApprovedPreview": true,
+        "possibleOriginalKeys": []
+      },
+      "preflight": {
+        "objectIdentity": "NEEDS_VERIFICATION",
+        "photo": "NOT_CERTIFIED",
+        "photoRights": "NOT_CLEARED",
+        "crop": "NOT_CERTIFIED",
+        "app": "NOT_DEPLOYED"
+      },
+      "originalWarnings": [
+        "SOURCE_OBJECT_URL_MISSING_OR_NOT_LINKED_TO_CURRENT_SELECTION",
+        "NO_OCT17_CATALOGUE_PREVIEW_FOR_CURRENT_SELECTION",
+        "NO_CERTIFIED_RELEASE_MASTER",
+        "REPRODUCTION_RIGHTS_NOT_YET_VERIFIED",
+        "CROP_AND_RESOLUTION_NOT_CERTIFIED"
+      ],
+      "humanNotes": null,
+      "publicationCertified": false,
+      "productionArtworkPath": null
+    },
+    {
+      "date": "2026-03-30",
+      "observance": "Feria II of Holy Week",
+      "selectedArtwork": {
+        "title": "The Anointing at Bethany",
+        "artist": "Peter Paul Rubens and Anthony van Dyck",
+        "iconographicRole": "GOSPEL_EXACT",
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "activeDateAssociation": true,
+        "notNewGlobalArtworkApproval": false
+      },
+      "scripture": "John 12:1–9",
+      "sourceObject": {
+        "url": null,
+        "museumPhotoAcquisitionBlocked": false,
+        "claimedRightsNotIndependentlyVerified": null
+      },
+      "catalogReview": {
+        "legacyPreviewMatched": false,
+        "olderOct17DateHasAnyApprovedPreview": false,
+        "possibleOriginalKeys": []
+      },
+      "preflight": {
+        "objectIdentity": "NEEDS_VERIFICATION",
+        "photo": "NOT_CERTIFIED",
+        "photoRights": "NOT_CLEARED",
+        "crop": "NOT_CERTIFIED",
+        "app": "NOT_DEPLOYED"
+      },
+      "originalWarnings": [
+        "SOURCE_OBJECT_URL_MISSING_OR_NOT_LINKED_TO_CURRENT_SELECTION",
+        "NO_OCT17_CATALOGUE_PREVIEW_FOR_CURRENT_SELECTION",
+        "NO_CERTIFIED_RELEASE_MASTER",
+        "REPRODUCTION_RIGHTS_NOT_YET_VERIFIED",
+        "CROP_AND_RESOLUTION_NOT_CERTIFIED"
+      ],
+      "humanNotes": null,
+      "publicationCertified": false,
+      "productionArtworkPath": null
+    },
+    {
+      "date": "2026-03-31",
+      "observance": "Feria III of Holy Week",
+      "selectedArtwork": {
+        "title": "The Taking of Christ",
+        "artist": "Caravaggio",
+        "iconographicRole": "PASSION_NARRATIVE_EXCERPT",
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "activeDateAssociation": true,
+        "notNewGlobalArtworkApproval": false
+      },
+      "scripture": "Mark 14:32–72; 15:1–46",
+      "sourceObject": {
+        "url": null,
+        "museumPhotoAcquisitionBlocked": false,
+        "claimedRightsNotIndependentlyVerified": null
+      },
+      "catalogReview": {
+        "legacyPreviewMatched": false,
+        "olderOct17DateHasAnyApprovedPreview": false,
+        "possibleOriginalKeys": []
+      },
+      "preflight": {
+        "objectIdentity": "NEEDS_VERIFICATION",
+        "photo": "NOT_CERTIFIED",
+        "photoRights": "NOT_CLEARED",
+        "crop": "NOT_CERTIFIED",
+        "app": "NOT_DEPLOYED"
+      },
+      "originalWarnings": [
+        "SOURCE_OBJECT_URL_MISSING_OR_NOT_LINKED_TO_CURRENT_SELECTION",
+        "NO_OCT17_CATALOGUE_PREVIEW_FOR_CURRENT_SELECTION",
+        "NO_CERTIFIED_RELEASE_MASTER",
+        "REPRODUCTION_RIGHTS_NOT_YET_VERIFIED",
+        "CROP_AND_RESOLUTION_NOT_CERTIFIED"
+      ],
+      "humanNotes": null,
+      "publicationCertified": false,
+      "productionArtworkPath": null
+    },
+    {
+      "date": "2026-04-01",
+      "observance": "Feria IV of Holy Week",
+      "selectedArtwork": {
+        "title": "The Denial of Saint Peter",
+        "artist": "Caravaggio",
+        "iconographicRole": "PASSION_NARRATIVE_EXCERPT",
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "activeDateAssociation": true,
+        "notNewGlobalArtworkApproval": false
+      },
+      "scripture": "Luke 22:39–71; 23:1–53",
+      "sourceObject": {
+        "url": "https://www.metmuseum.org/art/collection/search/437986",
+        "museumPhotoAcquisitionBlocked": false,
+        "claimedRightsNotIndependentlyVerified": "CC0"
+      },
+      "catalogReview": {
+        "legacyPreviewMatched": false,
+        "olderOct17DateHasAnyApprovedPreview": true,
+        "possibleOriginalKeys": [
+          {
+            "artworkId": "met-437986",
+            "catalogReviewStatus": "PREVIOUSLY_RATED_ACCEPTABLE",
+            "previewAvailable": false,
+            "reproductionCertified": false
+          }
+        ]
+      },
+      "preflight": {
+        "objectIdentity": "NEEDS_VERIFICATION",
+        "photo": "NOT_CERTIFIED",
+        "photoRights": "NOT_CLEARED",
+        "crop": "NOT_CERTIFIED",
+        "app": "NOT_DEPLOYED"
+      },
+      "originalWarnings": [
+        "NEW_USER_DATE_APPROVAL_SUPERSEDES_LEGACY_UNREVIEWED_STATUS_WITHOUT_MUTATING_FREEZE",
+        "NO_OCT17_CATALOGUE_PREVIEW_FOR_CURRENT_SELECTION",
+        "NO_CERTIFIED_RELEASE_MASTER",
+        "REPRODUCTION_RIGHTS_NOT_YET_VERIFIED",
+        "CROP_AND_RESOLUTION_NOT_CERTIFIED"
+      ],
+      "humanNotes": null,
+      "publicationCertified": false,
+      "productionArtworkPath": null
+    },
+    {
+      "date": "2026-04-02",
+      "observance": "Holy Thursday",
+      "selectedArtwork": {
+        "title": "The Last Supper",
+        "artist": "Ugolino da Siena",
+        "iconographicRole": "HISTORICAL_APPROVED_ASSOCIATION",
+        "editorialBasis": "OCT17_PREVIOUSLY_APPROVED_ASSOCIATION_PRIMARY_NOT_EXPLICITLY_RECONFIRMED",
+        "activeDateAssociation": true,
+        "notNewGlobalArtworkApproval": true
+      },
+      "scripture": null,
+      "sourceObject": {
+        "url": "https://www.metmuseum.org/art/collection/search/459131",
+        "museumPhotoAcquisitionBlocked": false,
+        "claimedRightsNotIndependentlyVerified": "CC0"
+      },
+      "catalogReview": {
+        "legacyPreviewMatched": false,
+        "olderOct17DateHasAnyApprovedPreview": false,
+        "possibleOriginalKeys": [
+          {
+            "artworkId": "met-459131",
+            "catalogReviewStatus": "APPROVED_5",
+            "previewAvailable": false,
+            "reproductionCertified": false
+          }
+        ]
+      },
+      "preflight": {
+        "objectIdentity": "NEEDS_VERIFICATION",
+        "photo": "NOT_CERTIFIED",
+        "photoRights": "NOT_CLEARED",
+        "crop": "NOT_CERTIFIED",
+        "app": "NOT_DEPLOYED"
+      },
+      "originalWarnings": [
+        "NO_OCT17_CATALOGUE_PREVIEW_FOR_CURRENT_SELECTION",
+        "NO_CERTIFIED_RELEASE_MASTER",
+        "REPRODUCTION_RIGHTS_NOT_YET_VERIFIED",
+        "CROP_AND_RESOLUTION_NOT_CERTIFIED"
+      ],
+      "humanNotes": null,
+      "publicationCertified": false,
+      "productionArtworkPath": null
+    },
+    {
+      "date": "2026-04-03",
+      "observance": "Good Friday",
+      "selectedArtwork": {
+        "title": "San Polo Via Crucis — Station 12: Death on the Cross",
+        "artist": "Giandomenico Tiepolo",
+        "iconographicRole": "HISTORICAL_APPROVED_ASSOCIATION",
+        "editorialBasis": "OCT17_PREVIOUSLY_APPROVED_ASSOCIATION_PRIMARY_NOT_EXPLICITLY_RECONFIRMED",
+        "activeDateAssociation": true,
+        "notNewGlobalArtworkApproval": true
+      },
+      "scripture": null,
+      "sourceObject": {
+        "url": "https://chorusvenezia.org/en/visita/via-crucis-jesus-is-taken-down-from-the-cross/",
+        "museumPhotoAcquisitionBlocked": false,
+        "claimedRightsNotIndependentlyVerified": "CC BY-SA 4.0"
+      },
+      "catalogReview": {
+        "legacyPreviewMatched": true,
+        "olderOct17DateHasAnyApprovedPreview": true,
+        "possibleOriginalKeys": [
+          {
+            "artworkId": "ART-iandomenico-iepolo-an-olo-ia-rucis-tation-12-eath-on-the-ross",
+            "catalogReviewStatus": "APPROVED_LOCKED",
+            "previewAvailable": true,
+            "reproductionCertified": false
+          }
+        ]
+      },
+      "preflight": {
+        "objectIdentity": "NEEDS_VERIFICATION",
+        "photo": "NOT_CERTIFIED",
+        "photoRights": "NOT_CLEARED",
+        "crop": "NOT_CERTIFIED",
+        "app": "NOT_DEPLOYED"
+      },
+      "originalWarnings": [
+        "NO_CERTIFIED_RELEASE_MASTER",
+        "REPRODUCTION_RIGHTS_NOT_YET_VERIFIED",
+        "CROP_AND_RESOLUTION_NOT_CERTIFIED"
+      ],
+      "humanNotes": null,
+      "publicationCertified": false,
+      "productionArtworkPath": null
+    },
+    {
+      "date": "2026-04-04",
+      "observance": "Holy Saturday",
+      "selectedArtwork": {
+        "title": "Easter Vigil prophecy illustrations: God Creating the World; The Destruction of Pharaoh’s Host",
+        "artist": "James Tissot; John Martin",
+        "iconographicRole": "TWO_OF_FOUR_OT_PROPHECIES_USER_SUFFICIENT",
+        "editorialBasis": "SPECIAL_VIGIL_TWO_OT_ILLUSTRATIONS_ACCEPTED",
+        "activeDateAssociation": true,
+        "notNewGlobalArtworkApproval": false
+      },
+      "scripture": "Matthew 28:1–7",
+      "sourceObject": {
+        "url": null,
+        "museumPhotoAcquisitionBlocked": false,
+        "claimedRightsNotIndependentlyVerified": null
+      },
+      "catalogReview": {
+        "legacyPreviewMatched": false,
+        "olderOct17DateHasAnyApprovedPreview": false,
+        "possibleOriginalKeys": []
+      },
+      "preflight": {
+        "objectIdentity": "NEEDS_VERIFICATION",
+        "photo": "NOT_CERTIFIED",
+        "photoRights": "NOT_CLEARED",
+        "crop": "NOT_CERTIFIED",
+        "app": "NOT_DEPLOYED"
+      },
+      "originalWarnings": [
+        "USER_ACCEPTS_TWO_OF_FOUR_VIGIL_PROPHECY_ILLUSTRATIONS",
+        "ALL_FOUR_1962_PROPHECIES_MUST_REMAIN_IN_LITURGICAL_TEXT",
+        "NO_DISTINCT_VIGIL_MASS_HERO_PRIMARY_SELECTED",
+        "SOURCE_OBJECT_URL_MISSING_OR_NOT_LINKED_TO_CURRENT_SELECTION",
+        "NO_OCT17_CATALOGUE_PREVIEW_FOR_CURRENT_SELECTION",
+        "NO_CERTIFIED_RELEASE_MASTER",
+        "REPRODUCTION_RIGHTS_NOT_YET_VERIFIED",
+        "CROP_AND_RESOLUTION_NOT_CERTIFIED"
+      ],
+      "humanNotes": null,
+      "publicationCertified": false,
+      "productionArtworkPath": null
+    },
+    {
+      "date": "2026-04-05",
+      "observance": "Easter Sunday",
+      "selectedArtwork": {
+        "title": "The Holy Women at the Tomb",
+        "artist": "William-Adolphe Bouguereau",
+        "iconographicRole": "GOSPEL_EXACT",
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "activeDateAssociation": true,
+        "notNewGlobalArtworkApproval": false
+      },
+      "scripture": "Mark 16:1–7",
+      "sourceObject": {
+        "url": null,
+        "museumPhotoAcquisitionBlocked": false,
+        "claimedRightsNotIndependentlyVerified": null
+      },
+      "catalogReview": {
+        "legacyPreviewMatched": false,
+        "olderOct17DateHasAnyApprovedPreview": false,
+        "possibleOriginalKeys": []
+      },
+      "preflight": {
+        "objectIdentity": "NEEDS_VERIFICATION",
+        "photo": "NOT_CERTIFIED",
+        "photoRights": "NOT_CLEARED",
+        "crop": "NOT_CERTIFIED",
+        "app": "NOT_DEPLOYED"
+      },
+      "originalWarnings": [
+        "SOURCE_OBJECT_URL_MISSING_OR_NOT_LINKED_TO_CURRENT_SELECTION",
+        "NO_OCT17_CATALOGUE_PREVIEW_FOR_CURRENT_SELECTION",
+        "NO_CERTIFIED_RELEASE_MASTER",
+        "REPRODUCTION_RIGHTS_NOT_YET_VERIFIED",
+        "CROP_AND_RESOLUTION_NOT_CERTIFIED"
+      ],
+      "humanNotes": null,
+      "publicationCertified": false,
+      "productionArtworkPath": null
+    },
+    {
+      "date": "2026-04-06",
+      "observance": "Monday in the Octave of Easter",
+      "selectedArtwork": {
+        "title": "The Supper at Emmaus",
+        "artist": "Caravaggio",
+        "iconographicRole": "GOSPEL_EXACT",
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "activeDateAssociation": true,
+        "notNewGlobalArtworkApproval": false
+      },
+      "scripture": "Luke 24:13–35",
+      "sourceObject": {
+        "url": null,
+        "museumPhotoAcquisitionBlocked": false,
+        "claimedRightsNotIndependentlyVerified": null
+      },
+      "catalogReview": {
+        "legacyPreviewMatched": false,
+        "olderOct17DateHasAnyApprovedPreview": false,
+        "possibleOriginalKeys": []
+      },
+      "preflight": {
+        "objectIdentity": "NEEDS_VERIFICATION",
+        "photo": "NOT_CERTIFIED",
+        "photoRights": "NOT_CLEARED",
+        "crop": "NOT_CERTIFIED",
+        "app": "NOT_DEPLOYED"
+      },
+      "originalWarnings": [
+        "SOURCE_OBJECT_URL_MISSING_OR_NOT_LINKED_TO_CURRENT_SELECTION",
+        "NO_OCT17_CATALOGUE_PREVIEW_FOR_CURRENT_SELECTION",
+        "NO_CERTIFIED_RELEASE_MASTER",
+        "REPRODUCTION_RIGHTS_NOT_YET_VERIFIED",
+        "CROP_AND_RESOLUTION_NOT_CERTIFIED"
+      ],
+      "humanNotes": null,
+      "publicationCertified": false,
+      "productionArtworkPath": null
+    },
+    {
+      "date": "2026-04-07",
+      "observance": "Tuesday in the Octave of Easter",
+      "selectedArtwork": {
+        "title": "Appearance of Christ to His Disciples",
+        "artist": "Anthony van Dyck",
+        "iconographicRole": "RELATED_RESURRECTION_APPEARANCE_NOT_EXACT_LUKE",
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "activeDateAssociation": true,
+        "notNewGlobalArtworkApproval": false
+      },
+      "scripture": "Luke 24:36–47",
+      "sourceObject": {
+        "url": null,
+        "museumPhotoAcquisitionBlocked": false,
+        "claimedRightsNotIndependentlyVerified": null
+      },
+      "catalogReview": {
+        "legacyPreviewMatched": false,
+        "olderOct17DateHasAnyApprovedPreview": false,
+        "possibleOriginalKeys": []
+      },
+      "preflight": {
+        "objectIdentity": "NEEDS_VERIFICATION",
+        "photo": "NOT_CERTIFIED",
+        "photoRights": "NOT_CLEARED",
+        "crop": "NOT_CERTIFIED",
+        "app": "NOT_DEPLOYED"
+      },
+      "originalWarnings": [
+        "VAN_DYCK_APPEARANCE_NOT_VERIFIED_EXACT_LUKE24_36_47",
+        "SOURCE_OBJECT_URL_MISSING_OR_NOT_LINKED_TO_CURRENT_SELECTION",
+        "NO_OCT17_CATALOGUE_PREVIEW_FOR_CURRENT_SELECTION",
+        "NO_CERTIFIED_RELEASE_MASTER",
+        "REPRODUCTION_RIGHTS_NOT_YET_VERIFIED",
+        "CROP_AND_RESOLUTION_NOT_CERTIFIED"
+      ],
+      "humanNotes": null,
+      "publicationCertified": false,
+      "productionArtworkPath": null
+    },
+    {
+      "date": "2026-04-08",
+      "observance": "Wednesday in the Octave of Easter",
+      "selectedArtwork": {
+        "title": "The Second Miraculous Draught of Fishes — AI visual draft after James Tissot",
+        "artist": "AI-derived after James Tissot",
+        "iconographicRole": "GOSPEL_SUBJECT_REINTERPRETED",
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "activeDateAssociation": true,
+        "notNewGlobalArtworkApproval": false
+      },
+      "scripture": "John 21:1–14",
+      "sourceObject": {
+        "url": "https://opencollection.brooklynmuseum.org/objects/4616",
+        "museumPhotoAcquisitionBlocked": false,
+        "claimedRightsNotIndependentlyVerified": null
+      },
+      "catalogReview": {
+        "legacyPreviewMatched": false,
+        "olderOct17DateHasAnyApprovedPreview": false,
+        "possibleOriginalKeys": []
+      },
+      "preflight": {
+        "objectIdentity": "NEEDS_VERIFICATION",
+        "photo": "NOT_CERTIFIED",
+        "photoRights": "NOT_CLEARED",
+        "crop": "NOT_CERTIFIED",
+        "app": "NOT_DEPLOYED"
+      },
+      "originalWarnings": [
+        "AI_REINTERPRETATION_NOT_COMPOSITION_PRESERVING_COLOURIZATION",
+        "KEEP_DERIVATIVE_LABEL_AND_SOURCE_PROVENANCE",
+        "REVIEW_VISUAL_FIDELITY_BEFORE_PUBLICATION",
+        "NO_OCT17_CATALOGUE_PREVIEW_FOR_CURRENT_SELECTION",
+        "NO_CERTIFIED_RELEASE_MASTER",
+        "REPRODUCTION_RIGHTS_NOT_YET_VERIFIED",
+        "CROP_AND_RESOLUTION_NOT_CERTIFIED",
+        "BROOKLYN_OBJECT_PAGE_DIRECT_OPEN_RETURNED_404_USE_COLLECTION_ID_AND_COMMONS_FALLBACK"
+      ],
+      "humanNotes": null,
+      "publicationCertified": false,
+      "productionArtworkPath": null
+    },
+    {
+      "date": "2026-04-09",
+      "observance": "Thursday in the Octave of Easter",
+      "selectedArtwork": {
+        "title": "Christ and St Mary Magdalen at the Tomb",
+        "artist": "Rembrandt",
+        "iconographicRole": "GOSPEL_EXACT",
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "activeDateAssociation": true,
+        "notNewGlobalArtworkApproval": false
+      },
+      "scripture": "John 20:11–18",
+      "sourceObject": {
+        "url": null,
+        "museumPhotoAcquisitionBlocked": false,
+        "claimedRightsNotIndependentlyVerified": null
+      },
+      "catalogReview": {
+        "legacyPreviewMatched": false,
+        "olderOct17DateHasAnyApprovedPreview": false,
+        "possibleOriginalKeys": []
+      },
+      "preflight": {
+        "objectIdentity": "NEEDS_VERIFICATION",
+        "photo": "NOT_CERTIFIED",
+        "photoRights": "NOT_CLEARED",
+        "crop": "NOT_CERTIFIED",
+        "app": "NOT_DEPLOYED"
+      },
+      "originalWarnings": [
+        "SOURCE_OBJECT_URL_MISSING_OR_NOT_LINKED_TO_CURRENT_SELECTION",
+        "NO_OCT17_CATALOGUE_PREVIEW_FOR_CURRENT_SELECTION",
+        "NO_CERTIFIED_RELEASE_MASTER",
+        "REPRODUCTION_RIGHTS_NOT_YET_VERIFIED",
+        "CROP_AND_RESOLUTION_NOT_CERTIFIED"
+      ],
+      "humanNotes": null,
+      "publicationCertified": false,
+      "productionArtworkPath": null
+    },
+    {
+      "date": "2026-04-10",
+      "observance": "Friday in the Octave of Easter",
+      "selectedArtwork": {
+        "title": "Missione degli Apostoli",
+        "artist": "Tommaso Minardi (with workshop/Fontana association)",
+        "iconographicRole": "RELATED_GREAT_COMMISSION_THEME_NOT_EXACT_MATTHEW",
+        "editorialBasis": "EXPLICIT_PRIMARY_SELECTED",
+        "activeDateAssociation": true,
+        "notNewGlobalArtworkApproval": false
+      },
+      "scripture": "Matthew 28:16–20",
+      "sourceObject": {
+        "url": "https://catalogo.fondazionezeri.unibo.it/scheda/opera/99995/Minardi%20Tommaso%2C%20Missione%20degli%20apostoli",
+        "museumPhotoAcquisitionBlocked": false,
+        "claimedRightsNotIndependentlyVerified": null
+      },
+      "catalogReview": {
+        "legacyPreviewMatched": false,
+        "olderOct17DateHasAnyApprovedPreview": false,
+        "possibleOriginalKeys": []
+      },
+      "preflight": {
+        "objectIdentity": "DOCUMENTED",
+        "photo": "NOT_CERTIFIED",
+        "photoRights": "NOT_CLEARED",
+        "crop": "NOT_CERTIFIED",
+        "app": "NOT_DEPLOYED"
+      },
+      "originalWarnings": [
+        "NOT_EXACT_MATTHEW_28_MOUNTAIN_SCENE",
+        "MINARDI_FONTANA_ATTRIBUTION_PRODUCTION_CAPTION_CHECK",
+        "PHOTO_RIGHTS_ORIGINAL_MURAL_CROP_REQUIRED",
+        "NO_OCT17_CATALOGUE_PREVIEW_FOR_CURRENT_SELECTION",
+        "NO_CERTIFIED_RELEASE_MASTER",
+        "REPRODUCTION_RIGHTS_NOT_YET_VERIFIED",
+        "CROP_AND_RESOLUTION_NOT_CERTIFIED"
+      ],
+      "humanNotes": null,
+      "publicationCertified": false,
+      "productionArtworkPath": null
+    },
+    {
+      "date": "2026-04-11",
+      "observance": "Saturday in the Octave of Easter",
+      "selectedArtwork": {
+        "title": "Peter and John Running to the Sepulchre",
+        "artist": "Eugène Burnand",
+        "iconographicRole": "GOSPEL_EXACT",
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "activeDateAssociation": true,
+        "notNewGlobalArtworkApproval": false
+      },
+      "scripture": "John 20:1–9",
+      "sourceObject": {
+        "url": null,
+        "museumPhotoAcquisitionBlocked": false,
+        "claimedRightsNotIndependentlyVerified": null
+      },
+      "catalogReview": {
+        "legacyPreviewMatched": false,
+        "olderOct17DateHasAnyApprovedPreview": false,
+        "possibleOriginalKeys": []
+      },
+      "preflight": {
+        "objectIdentity": "NEEDS_VERIFICATION",
+        "photo": "NOT_CERTIFIED",
+        "photoRights": "NOT_CLEARED",
+        "crop": "NOT_CERTIFIED",
+        "app": "NOT_DEPLOYED"
+      },
+      "originalWarnings": [
+        "SOURCE_OBJECT_URL_MISSING_OR_NOT_LINKED_TO_CURRENT_SELECTION",
+        "NO_OCT17_CATALOGUE_PREVIEW_FOR_CURRENT_SELECTION",
+        "NO_CERTIFIED_RELEASE_MASTER",
+        "REPRODUCTION_RIGHTS_NOT_YET_VERIFIED",
+        "CROP_AND_RESOLUTION_NOT_CERTIFIED"
+      ],
+      "humanNotes": null,
+      "publicationCertified": false,
+      "productionArtworkPath": null
+    },
+    {
+      "date": "2026-04-12",
+      "observance": "Low Sunday",
+      "selectedArtwork": {
+        "title": "The Incredulity of Saint Thomas",
+        "artist": "Caravaggio",
+        "iconographicRole": "HISTORICAL_APPROVED_ASSOCIATION",
+        "editorialBasis": "OCT17_PREVIOUSLY_APPROVED_ASSOCIATION_PRIMARY_NOT_EXPLICITLY_RECONFIRMED",
+        "activeDateAssociation": true,
+        "notNewGlobalArtworkApproval": true
+      },
+      "scripture": "John 20:19–31",
+      "sourceObject": {
+        "url": "https://www.spsg.de/en/press-material-paintings",
+        "museumPhotoAcquisitionBlocked": false,
+        "claimedRightsNotIndependentlyVerified": "Public domain"
+      },
+      "catalogReview": {
+        "legacyPreviewMatched": true,
+        "olderOct17DateHasAnyApprovedPreview": true,
+        "possibleOriginalKeys": [
+          {
+            "artworkId": "W07-014",
+            "catalogReviewStatus": "APPROVED_LOCKED",
+            "previewAvailable": true,
+            "reproductionCertified": false
+          }
+        ]
+      },
+      "preflight": {
+        "objectIdentity": "NEEDS_VERIFICATION",
+        "photo": "NOT_CERTIFIED",
+        "photoRights": "NOT_CLEARED",
+        "crop": "NOT_CERTIFIED",
+        "app": "NOT_DEPLOYED"
+      },
+      "originalWarnings": [
+        "NO_CERTIFIED_RELEASE_MASTER",
+        "REPRODUCTION_RIGHTS_NOT_YET_VERIFIED",
+        "CROP_AND_RESOLUTION_NOT_CERTIFIED"
+      ],
+      "humanNotes": null,
+      "publicationCertified": false,
+      "productionArtworkPath": null
+    },
+    {
+      "date": "2026-05-01",
+      "observance": "St. Joseph the Workman",
+      "selectedArtwork": {
+        "title": "Saint Joseph the Carpenter",
+        "artist": "Georges de La Tour",
+        "iconographicRole": "FEAST_PERSON_AND_WORK",
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "activeDateAssociation": true,
+        "notNewGlobalArtworkApproval": false
+      },
+      "scripture": "Matthew 13:54–58",
+      "sourceObject": {
+        "url": null,
+        "museumPhotoAcquisitionBlocked": false,
+        "claimedRightsNotIndependentlyVerified": null
+      },
+      "catalogReview": {
+        "legacyPreviewMatched": false,
+        "olderOct17DateHasAnyApprovedPreview": false,
+        "possibleOriginalKeys": []
+      },
+      "preflight": {
+        "objectIdentity": "NEEDS_VERIFICATION",
+        "photo": "NOT_CERTIFIED",
+        "photoRights": "NOT_CLEARED",
+        "crop": "NOT_CERTIFIED",
+        "app": "NOT_DEPLOYED"
+      },
+      "originalWarnings": [
+        "SOURCE_OBJECT_URL_MISSING_OR_NOT_LINKED_TO_CURRENT_SELECTION",
+        "NO_OCT17_CATALOGUE_PREVIEW_FOR_CURRENT_SELECTION",
+        "NO_CERTIFIED_RELEASE_MASTER",
+        "REPRODUCTION_RIGHTS_NOT_YET_VERIFIED",
+        "CROP_AND_RESOLUTION_NOT_CERTIFIED"
+      ],
+      "humanNotes": null,
+      "publicationCertified": false,
+      "productionArtworkPath": null
+    },
+    {
+      "date": "2026-05-14",
+      "observance": "Ascension of the Lord",
+      "selectedArtwork": {
+        "title": "The Ascension of Christ",
+        "artist": "Hans Süss von Kulmbach",
+        "iconographicRole": "FEAST_EVENT_EXACT",
+        "editorialBasis": "EXPLICIT_PRIMARY_SELECTED",
+        "activeDateAssociation": true,
+        "notNewGlobalArtworkApproval": false
+      },
+      "scripture": "Mark 16:14–20",
+      "sourceObject": {
+        "url": "https://www.metmuseum.org/art/collection/search/436835",
+        "museumPhotoAcquisitionBlocked": false,
+        "claimedRightsNotIndependentlyVerified": null
+      },
+      "catalogReview": {
+        "legacyPreviewMatched": false,
+        "olderOct17DateHasAnyApprovedPreview": true,
+        "possibleOriginalKeys": [
+          {
+            "artworkId": "met-436835",
+            "catalogReviewStatus": "APPROVED_LOCKED",
+            "previewAvailable": false,
+            "reproductionCertified": false
+          }
+        ]
+      },
+      "preflight": {
+        "objectIdentity": "NEEDS_VERIFICATION",
+        "photo": "NOT_CERTIFIED",
+        "photoRights": "NOT_CLEARED",
+        "crop": "NOT_CERTIFIED",
+        "app": "NOT_DEPLOYED"
+      },
+      "originalWarnings": [
+        "NO_OCT17_CATALOGUE_PREVIEW_FOR_CURRENT_SELECTION",
+        "NO_CERTIFIED_RELEASE_MASTER",
+        "REPRODUCTION_RIGHTS_NOT_YET_VERIFIED",
+        "CROP_AND_RESOLUTION_NOT_CERTIFIED"
+      ],
+      "humanNotes": null,
+      "publicationCertified": false,
+      "productionArtworkPath": null
+    },
+    {
+      "date": "2026-05-23",
+      "observance": "Vigil of Pentecost",
+      "selectedArtwork": {
+        "title": "The Pentecost",
+        "artist": "Juan Bautista Maíno",
+        "iconographicRole": "ANTICIPATORY_NEXT_DAY_EVENT",
+        "editorialBasis": "EXPLICIT_PRIMARY_SELECTED",
+        "activeDateAssociation": true,
+        "notNewGlobalArtworkApproval": false
+      },
+      "scripture": null,
+      "sourceObject": {
+        "url": "https://www.museodelprado.es/en/the-collection/art-work/pentecostes/49c1d551-240d-4bab-8f4a-39c706ce0ee5",
+        "museumPhotoAcquisitionBlocked": true,
+        "claimedRightsNotIndependentlyVerified": null
+      },
+      "catalogReview": {
+        "legacyPreviewMatched": false,
+        "olderOct17DateHasAnyApprovedPreview": true,
+        "possibleOriginalKeys": []
+      },
+      "preflight": {
+        "objectIdentity": "DOCUMENTED",
+        "photo": "NOT_CERTIFIED",
+        "photoRights": "NOT_CLEARED",
+        "crop": "NOT_CERTIFIED",
+        "app": "NOT_DEPLOYED"
+      },
+      "originalWarnings": [
+        "ANTICIPATORY_PENTECOST_EVENT_NOT_VIGIL_EPISODE",
+        "PRADO_HAS_TWO_SEPARATE_MAÍNO_PENTECOSTS_USE_P003018",
+        "NO_OCT17_CATALOGUE_PREVIEW_FOR_CURRENT_SELECTION",
+        "NO_CERTIFIED_RELEASE_MASTER",
+        "REPRODUCTION_RIGHTS_NOT_YET_VERIFIED",
+        "CROP_AND_RESOLUTION_NOT_CERTIFIED"
+      ],
+      "humanNotes": null,
+      "publicationCertified": false,
+      "productionArtworkPath": null
+    },
+    {
+      "date": "2026-05-24",
+      "observance": "Pentecost Sunday",
+      "selectedArtwork": {
+        "title": "Pentecost",
+        "artist": "Jean Restout",
+        "iconographicRole": "HISTORICAL_APPROVED_ASSOCIATION",
+        "editorialBasis": "OCT17_PREVIOUSLY_APPROVED_ASSOCIATION_PRIMARY_NOT_EXPLICITLY_RECONFIRMED",
+        "activeDateAssociation": true,
+        "notNewGlobalArtworkApproval": true
+      },
+      "scripture": "John 14:23–31",
+      "sourceObject": {
+        "url": "https://www.google.com/search?q=site%3Acollections.louvre.fr%20INV%2020303",
+        "museumPhotoAcquisitionBlocked": false,
+        "claimedRightsNotIndependentlyVerified": "Public domain"
+      },
+      "catalogReview": {
+        "legacyPreviewMatched": true,
+        "olderOct17DateHasAnyApprovedPreview": true,
+        "possibleOriginalKeys": [
+          {
+            "artworkId": "ART-ean-estout-entecost",
+            "catalogReviewStatus": "APPROVED_LOCKED",
+            "previewAvailable": true,
+            "reproductionCertified": false
+          }
+        ]
+      },
+      "preflight": {
+        "objectIdentity": "NEEDS_VERIFICATION",
+        "photo": "NOT_CERTIFIED",
+        "photoRights": "NOT_CLEARED",
+        "crop": "NOT_CERTIFIED",
+        "app": "NOT_DEPLOYED"
+      },
+      "originalWarnings": [
+        "NO_CERTIFIED_RELEASE_MASTER",
+        "REPRODUCTION_RIGHTS_NOT_YET_VERIFIED",
+        "CROP_AND_RESOLUTION_NOT_CERTIFIED"
+      ],
+      "humanNotes": null,
+      "publicationCertified": false,
+      "productionArtworkPath": null
+    },
+    {
+      "date": "2026-05-25",
+      "observance": "Monday after Pentecost",
+      "selectedArtwork": {
+        "title": "Nicodemus",
+        "artist": "Henry Ossawa Tanner",
+        "iconographicRole": "RELATED_GOSPEL_CONTEXT",
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "activeDateAssociation": true,
+        "notNewGlobalArtworkApproval": false
+      },
+      "scripture": "John 3:16–21",
+      "sourceObject": {
+        "url": null,
+        "museumPhotoAcquisitionBlocked": false,
+        "claimedRightsNotIndependentlyVerified": null
+      },
+      "catalogReview": {
+        "legacyPreviewMatched": false,
+        "olderOct17DateHasAnyApprovedPreview": false,
+        "possibleOriginalKeys": []
+      },
+      "preflight": {
+        "objectIdentity": "NEEDS_VERIFICATION",
+        "photo": "NOT_CERTIFIED",
+        "photoRights": "NOT_CLEARED",
+        "crop": "NOT_CERTIFIED",
+        "app": "NOT_DEPLOYED"
+      },
+      "originalWarnings": [
+        "SOURCE_OBJECT_URL_MISSING_OR_NOT_LINKED_TO_CURRENT_SELECTION",
+        "NO_OCT17_CATALOGUE_PREVIEW_FOR_CURRENT_SELECTION",
+        "NO_CERTIFIED_RELEASE_MASTER",
+        "REPRODUCTION_RIGHTS_NOT_YET_VERIFIED",
+        "CROP_AND_RESOLUTION_NOT_CERTIFIED"
+      ],
+      "humanNotes": null,
+      "publicationCertified": false,
+      "productionArtworkPath": null
+    },
+    {
+      "date": "2026-05-26",
+      "observance": "Tuesday after Pentecost",
+      "selectedArtwork": {
+        "title": "The Parable of the Good Shepherd",
+        "artist": "16th-century Netherlandish; attribution to Pieter Bruegel disputed",
+        "iconographicRole": "GOSPEL_PARABLE_EXACT",
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "activeDateAssociation": true,
+        "notNewGlobalArtworkApproval": false
+      },
+      "scripture": "John 10:1–10",
+      "sourceObject": {
+        "url": "https://figgeartmuseum.org/art/collections/item/the-parable-of-the-good-shepherd-250032/922",
+        "museumPhotoAcquisitionBlocked": false,
+        "claimedRightsNotIndependentlyVerified": null
+      },
+      "catalogReview": {
+        "legacyPreviewMatched": false,
+        "olderOct17DateHasAnyApprovedPreview": false,
+        "possibleOriginalKeys": []
+      },
+      "preflight": {
+        "objectIdentity": "DOCUMENTED",
+        "photo": "NOT_CERTIFIED",
+        "photoRights": "NOT_CLEARED",
+        "crop": "NOT_CERTIFIED",
+        "app": "NOT_DEPLOYED"
+      },
+      "originalWarnings": [
+        "BRUEGEL_ELDER_ATTRIBUTION_DISPUTED",
+        "NO_OCT17_CATALOGUE_PREVIEW_FOR_CURRENT_SELECTION",
+        "NO_CERTIFIED_RELEASE_MASTER",
+        "REPRODUCTION_RIGHTS_NOT_YET_VERIFIED",
+        "CROP_AND_RESOLUTION_NOT_CERTIFIED"
+      ],
+      "humanNotes": null,
+      "publicationCertified": false,
+      "productionArtworkPath": null
+    },
+    {
+      "date": "2026-05-27",
+      "observance": "Ember Wednesday of Pentecost",
+      "selectedArtwork": {
+        "title": "La Cène, dite La Petite Cène",
+        "artist": "Philippe de Champaigne",
+        "iconographicRole": "EUCHARISTIC_THEME_NOT_LITERAL_JOHN6",
+        "editorialBasis": "EXPLICIT_PRIMARY_SELECTED",
+        "activeDateAssociation": true,
+        "notNewGlobalArtworkApproval": false
+      },
+      "scripture": "John 6:44–52",
+      "sourceObject": {
+        "url": "https://collections.louvre.fr/ark:/53355/cl010062076",
+        "museumPhotoAcquisitionBlocked": false,
+        "claimedRightsNotIndependentlyVerified": null
+      },
+      "catalogReview": {
+        "legacyPreviewMatched": true,
+        "olderOct17DateHasAnyApprovedPreview": false,
+        "possibleOriginalKeys": [
+          {
+            "artworkId": "ART-hilippe-de-hampaigne-a-etite-ne",
+            "catalogReviewStatus": "UNREVIEWED",
+            "previewAvailable": true,
+            "reproductionCertified": false
+          }
+        ]
+      },
+      "preflight": {
+        "objectIdentity": "DOCUMENTED",
+        "photo": "NOT_CERTIFIED",
+        "photoRights": "NOT_CLEARED",
+        "crop": "NOT_CERTIFIED",
+        "app": "NOT_DEPLOYED"
+      },
+      "originalWarnings": [
+        "EUCHARISTIC_THEME_NOT_EXACT_JOHN6",
+        "SOME_RMN_OFFICIAL_PHOTOGRAPHS_REQUIRE_PERMISSION",
+        "NO_CERTIFIED_RELEASE_MASTER",
+        "REPRODUCTION_RIGHTS_NOT_YET_VERIFIED",
+        "CROP_AND_RESOLUTION_NOT_CERTIFIED"
+      ],
+      "humanNotes": null,
+      "publicationCertified": false,
+      "productionArtworkPath": null
+    },
+    {
+      "date": "2026-05-28",
+      "observance": "Thursday after Pentecost",
+      "selectedArtwork": {
+        "title": "The Sending Out of the Twelve Disciples",
+        "artist": "Anonymous North Netherlandish",
+        "iconographicRole": "GOSPEL_EXACT_OR_PARALLEL_MISSION",
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "activeDateAssociation": true,
+        "notNewGlobalArtworkApproval": false
+      },
+      "scripture": "Luke 9:1–6",
+      "sourceObject": {
+        "url": null,
+        "museumPhotoAcquisitionBlocked": false,
+        "claimedRightsNotIndependentlyVerified": null
+      },
+      "catalogReview": {
+        "legacyPreviewMatched": false,
+        "olderOct17DateHasAnyApprovedPreview": false,
+        "possibleOriginalKeys": []
+      },
+      "preflight": {
+        "objectIdentity": "NEEDS_VERIFICATION",
+        "photo": "NOT_CERTIFIED",
+        "photoRights": "NOT_CLEARED",
+        "crop": "NOT_CERTIFIED",
+        "app": "NOT_DEPLOYED"
+      },
+      "originalWarnings": [
+        "SOURCE_OBJECT_URL_MISSING_OR_NOT_LINKED_TO_CURRENT_SELECTION",
+        "NO_OCT17_CATALOGUE_PREVIEW_FOR_CURRENT_SELECTION",
+        "NO_CERTIFIED_RELEASE_MASTER",
+        "REPRODUCTION_RIGHTS_NOT_YET_VERIFIED",
+        "CROP_AND_RESOLUTION_NOT_CERTIFIED"
+      ],
+      "humanNotes": null,
+      "publicationCertified": false,
+      "productionArtworkPath": null
+    },
+    {
+      "date": "2026-05-29",
+      "observance": "Ember Friday of Pentecost",
+      "selectedArtwork": {
+        "title": "Christ Healing the Paralytic — AI visual draft after Johannes Wierix",
+        "artist": "AI-derived after Johannes Wierix",
+        "iconographicRole": "GOSPEL_SUBJECT_REINTERPRETED",
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "activeDateAssociation": true,
+        "notNewGlobalArtworkApproval": false
+      },
+      "scripture": "Luke 5:17–26",
+      "sourceObject": {
+        "url": "https://www.rijksmuseum.nl/nl/collectie/object/Christus%2Bgeneest%2Been%2Bverlamde%2Bman%2Bdie%2Bdoor%2Bhet%2Bdak%2Bwerd%2Bneergelaten--384b55d5788d431ef93b4787b63ecdd8",
+        "museumPhotoAcquisitionBlocked": false,
+        "claimedRightsNotIndependentlyVerified": null
+      },
+      "catalogReview": {
+        "legacyPreviewMatched": false,
+        "olderOct17DateHasAnyApprovedPreview": false,
+        "possibleOriginalKeys": []
+      },
+      "preflight": {
+        "objectIdentity": "NEEDS_VERIFICATION",
+        "photo": "NOT_CERTIFIED",
+        "photoRights": "NOT_CLEARED",
+        "crop": "NOT_CERTIFIED",
+        "app": "NOT_DEPLOYED"
+      },
+      "originalWarnings": [
+        "AI_REINTERPRETATION_NOT_COMPOSITION_PRESERVING_COLOURIZATION",
+        "KEEP_DERIVATIVE_LABEL_AND_SOURCE_PROVENANCE",
+        "REVIEW_VISUAL_FIDELITY_BEFORE_PUBLICATION",
+        "NO_OCT17_CATALOGUE_PREVIEW_FOR_CURRENT_SELECTION",
+        "NO_CERTIFIED_RELEASE_MASTER",
+        "REPRODUCTION_RIGHTS_NOT_YET_VERIFIED",
+        "CROP_AND_RESOLUTION_NOT_CERTIFIED"
+      ],
+      "humanNotes": null,
+      "publicationCertified": false,
+      "productionArtworkPath": null
+    },
+    {
+      "date": "2026-05-30",
+      "observance": "Ember Saturday of Pentecost",
+      "selectedArtwork": {
+        "title": "Jesus Restoring to Health Peter's Wife's Mother",
+        "artist": "John Bridges",
+        "iconographicRole": "GOSPEL_EPISODE",
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "activeDateAssociation": true,
+        "notNewGlobalArtworkApproval": false
+      },
+      "scripture": "Luke 4:38–44",
+      "sourceObject": {
+        "url": null,
+        "museumPhotoAcquisitionBlocked": false,
+        "claimedRightsNotIndependentlyVerified": null
+      },
+      "catalogReview": {
+        "legacyPreviewMatched": false,
+        "olderOct17DateHasAnyApprovedPreview": false,
+        "possibleOriginalKeys": []
+      },
+      "preflight": {
+        "objectIdentity": "NEEDS_VERIFICATION",
+        "photo": "NOT_CERTIFIED",
+        "photoRights": "NOT_CLEARED",
+        "crop": "NOT_CERTIFIED",
+        "app": "NOT_DEPLOYED"
+      },
+      "originalWarnings": [
+        "SOURCE_OBJECT_URL_MISSING_OR_NOT_LINKED_TO_CURRENT_SELECTION",
+        "NO_OCT17_CATALOGUE_PREVIEW_FOR_CURRENT_SELECTION",
+        "NO_CERTIFIED_RELEASE_MASTER",
+        "REPRODUCTION_RIGHTS_NOT_YET_VERIFIED",
+        "CROP_AND_RESOLUTION_NOT_CERTIFIED"
+      ],
+      "humanNotes": null,
+      "publicationCertified": false,
+      "productionArtworkPath": null
+    },
+    {
+      "date": "2026-05-31",
+      "observance": "Trinity Sunday",
+      "selectedArtwork": {
+        "title": "The Trinity",
+        "artist": "Laurent Girardin",
+        "iconographicRole": "HISTORICAL_APPROVED_ASSOCIATION",
+        "editorialBasis": "OCT17_PREVIOUSLY_APPROVED_ASSOCIATION_PRIMARY_NOT_EXPLICITLY_RECONFIRMED",
+        "activeDateAssociation": true,
+        "notNewGlobalArtworkApproval": true
+      },
+      "scripture": "Matthew 28:18–20",
+      "sourceObject": {
+        "url": "https://clevelandart.org/art/1960.79",
+        "museumPhotoAcquisitionBlocked": false,
+        "claimedRightsNotIndependentlyVerified": "CC0"
+      },
+      "catalogReview": {
+        "legacyPreviewMatched": false,
+        "olderOct17DateHasAnyApprovedPreview": false,
+        "possibleOriginalKeys": [
+          {
+            "artworkId": "cma-136507",
+            "catalogReviewStatus": "APPROVED_5",
+            "previewAvailable": false,
+            "reproductionCertified": false
+          }
+        ]
+      },
+      "preflight": {
+        "objectIdentity": "NEEDS_VERIFICATION",
+        "photo": "NOT_CERTIFIED",
+        "photoRights": "NOT_CLEARED",
+        "crop": "NOT_CERTIFIED",
+        "app": "NOT_DEPLOYED"
+      },
+      "originalWarnings": [
+        "NO_OCT17_CATALOGUE_PREVIEW_FOR_CURRENT_SELECTION",
+        "NO_CERTIFIED_RELEASE_MASTER",
+        "REPRODUCTION_RIGHTS_NOT_YET_VERIFIED",
+        "CROP_AND_RESOLUTION_NOT_CERTIFIED"
+      ],
+      "humanNotes": null,
+      "publicationCertified": false,
+      "productionArtworkPath": null
+    },
+    {
+      "date": "2026-06-04",
+      "observance": "Corpus Christi",
+      "selectedArtwork": {
+        "title": "The Virgin Adoring the Host",
+        "artist": "Jean-Auguste-Dominique Ingres",
+        "iconographicRole": "EUCHARISTIC_FEAST_THEME",
+        "editorialBasis": "EXPLICIT_PRIMARY_SELECTED",
+        "activeDateAssociation": true,
+        "notNewGlobalArtworkApproval": false
+      },
+      "scripture": "John 6:56–59",
+      "sourceObject": {
+        "url": "https://www.metmuseum.org/art/collection/search/438434",
+        "museumPhotoAcquisitionBlocked": false,
+        "claimedRightsNotIndependentlyVerified": null
+      },
+      "catalogReview": {
+        "legacyPreviewMatched": true,
+        "olderOct17DateHasAnyApprovedPreview": false,
+        "possibleOriginalKeys": [
+          {
+            "artworkId": "met-438434",
+            "catalogReviewStatus": "PREVIOUSLY_RATED_ACCEPTABLE",
+            "previewAvailable": true,
+            "reproductionCertified": false
+          }
+        ]
+      },
+      "preflight": {
+        "objectIdentity": "NEEDS_VERIFICATION",
+        "photo": "NOT_CERTIFIED",
+        "photoRights": "NOT_CLEARED",
+        "crop": "NOT_CERTIFIED",
+        "app": "NOT_DEPLOYED"
+      },
+      "originalWarnings": [
+        "NO_CERTIFIED_RELEASE_MASTER",
+        "REPRODUCTION_RIGHTS_NOT_YET_VERIFIED",
+        "CROP_AND_RESOLUTION_NOT_CERTIFIED"
+      ],
+      "humanNotes": null,
+      "publicationCertified": false,
+      "productionArtworkPath": null
+    },
+    {
+      "date": "2026-06-12",
+      "observance": "Sacred Heart of Jesus",
+      "selectedArtwork": {
+        "title": "The Lance Thrust",
+        "artist": "Anthony van Dyck",
+        "iconographicRole": "HISTORICAL_APPROVED_ASSOCIATION",
+        "editorialBasis": "OCT17_PREVIOUSLY_APPROVED_ASSOCIATION_PRIMARY_NOT_EXPLICITLY_RECONFIRMED",
+        "activeDateAssociation": true,
+        "notNewGlobalArtworkApproval": true
+      },
+      "scripture": "John 19:31–37",
+      "sourceObject": {
+        "url": null,
+        "museumPhotoAcquisitionBlocked": false,
+        "claimedRightsNotIndependentlyVerified": "Public domain"
+      },
+      "catalogReview": {
+        "legacyPreviewMatched": true,
+        "olderOct17DateHasAnyApprovedPreview": true,
+        "possibleOriginalKeys": [
+          {
+            "artworkId": "ART-nthony-van-yck-he-ance-hrust",
+            "catalogReviewStatus": "APPROVED_LOCKED",
+            "previewAvailable": true,
+            "reproductionCertified": false
+          }
+        ]
+      },
+      "preflight": {
+        "objectIdentity": "NEEDS_VERIFICATION",
+        "photo": "NOT_CERTIFIED",
+        "photoRights": "NOT_CLEARED",
+        "crop": "NOT_CERTIFIED",
+        "app": "NOT_DEPLOYED"
+      },
+      "originalWarnings": [
+        "SOURCE_OBJECT_URL_MISSING_OR_NOT_LINKED_TO_CURRENT_SELECTION",
+        "NO_CERTIFIED_RELEASE_MASTER",
+        "REPRODUCTION_RIGHTS_NOT_YET_VERIFIED",
+        "CROP_AND_RESOLUTION_NOT_CERTIFIED"
+      ],
+      "humanNotes": null,
+      "publicationCertified": false,
+      "productionArtworkPath": null
+    },
+    {
+      "date": "2026-06-24",
+      "observance": "Nativity of St. John the Baptist",
+      "selectedArtwork": {
+        "title": "The Birth of Saint John the Baptist",
+        "artist": "Andrea Sacchi",
+        "iconographicRole": "GOSPEL_EXACT",
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "activeDateAssociation": true,
+        "notNewGlobalArtworkApproval": false
+      },
+      "scripture": "Luke 1:57–68",
+      "sourceObject": {
+        "url": null,
+        "museumPhotoAcquisitionBlocked": false,
+        "claimedRightsNotIndependentlyVerified": null
+      },
+      "catalogReview": {
+        "legacyPreviewMatched": false,
+        "olderOct17DateHasAnyApprovedPreview": false,
+        "possibleOriginalKeys": []
+      },
+      "preflight": {
+        "objectIdentity": "NEEDS_VERIFICATION",
+        "photo": "NOT_CERTIFIED",
+        "photoRights": "NOT_CLEARED",
+        "crop": "NOT_CERTIFIED",
+        "app": "NOT_DEPLOYED"
+      },
+      "originalWarnings": [
+        "SOURCE_OBJECT_URL_MISSING_OR_NOT_LINKED_TO_CURRENT_SELECTION",
+        "NO_OCT17_CATALOGUE_PREVIEW_FOR_CURRENT_SELECTION",
+        "NO_CERTIFIED_RELEASE_MASTER",
+        "REPRODUCTION_RIGHTS_NOT_YET_VERIFIED",
+        "CROP_AND_RESOLUTION_NOT_CERTIFIED"
+      ],
+      "humanNotes": null,
+      "publicationCertified": false,
+      "productionArtworkPath": null
+    },
+    {
+      "date": "2026-06-29",
+      "observance": "Sts. Peter & Paul",
+      "selectedArtwork": {
+        "title": "Saints Peter and Paul",
+        "artist": "Bartolomeo Manfredi",
+        "iconographicRole": "HISTORICAL_APPROVED_ASSOCIATION",
+        "editorialBasis": "OCT17_PREVIOUSLY_APPROVED_ASSOCIATION_PRIMARY_NOT_EXPLICITLY_RECONFIRMED",
+        "activeDateAssociation": true,
+        "notNewGlobalArtworkApproval": true
+      },
+      "scripture": "Matthew 16:13–19",
+      "sourceObject": {
+        "url": "https://www.metmuseum.org/art/collection/search/442491",
+        "museumPhotoAcquisitionBlocked": false,
+        "claimedRightsNotIndependentlyVerified": "CC0"
+      },
+      "catalogReview": {
+        "legacyPreviewMatched": false,
+        "olderOct17DateHasAnyApprovedPreview": true,
+        "possibleOriginalKeys": [
+          {
+            "artworkId": "met-442491",
+            "catalogReviewStatus": "APPROVED_LOCKED",
+            "previewAvailable": false,
+            "reproductionCertified": false
+          }
+        ]
+      },
+      "preflight": {
+        "objectIdentity": "NEEDS_VERIFICATION",
+        "photo": "NOT_CERTIFIED",
+        "photoRights": "NOT_CLEARED",
+        "crop": "NOT_CERTIFIED",
+        "app": "NOT_DEPLOYED"
+      },
+      "originalWarnings": [
+        "NO_OCT17_CATALOGUE_PREVIEW_FOR_CURRENT_SELECTION",
+        "NO_CERTIFIED_RELEASE_MASTER",
+        "REPRODUCTION_RIGHTS_NOT_YET_VERIFIED",
+        "CROP_AND_RESOLUTION_NOT_CERTIFIED"
+      ],
+      "humanNotes": null,
+      "publicationCertified": false,
+      "productionArtworkPath": null
+    },
+    {
+      "date": "2026-07-01",
+      "observance": "The Precious Blood of Our Lord Jesus Christ",
+      "selectedArtwork": {
+        "title": "The Lance Thrust",
+        "artist": "Anthony van Dyck",
+        "iconographicRole": "HISTORICAL_APPROVED_ASSOCIATION",
+        "editorialBasis": "OCT17_PREVIOUSLY_APPROVED_ASSOCIATION_PRIMARY_NOT_EXPLICITLY_RECONFIRMED",
+        "activeDateAssociation": true,
+        "notNewGlobalArtworkApproval": true
+      },
+      "scripture": "John 19:30–35",
+      "sourceObject": {
+        "url": null,
+        "museumPhotoAcquisitionBlocked": false,
+        "claimedRightsNotIndependentlyVerified": "Public domain"
+      },
+      "catalogReview": {
+        "legacyPreviewMatched": true,
+        "olderOct17DateHasAnyApprovedPreview": true,
+        "possibleOriginalKeys": [
+          {
+            "artworkId": "ART-nthony-van-yck-he-ance-hrust",
+            "catalogReviewStatus": "APPROVED_LOCKED",
+            "previewAvailable": true,
+            "reproductionCertified": false
+          }
+        ]
+      },
+      "preflight": {
+        "objectIdentity": "NEEDS_VERIFICATION",
+        "photo": "NOT_CERTIFIED",
+        "photoRights": "NOT_CLEARED",
+        "crop": "NOT_CERTIFIED",
+        "app": "NOT_DEPLOYED"
+      },
+      "originalWarnings": [
+        "SOURCE_OBJECT_URL_MISSING_OR_NOT_LINKED_TO_CURRENT_SELECTION",
+        "NO_CERTIFIED_RELEASE_MASTER",
+        "REPRODUCTION_RIGHTS_NOT_YET_VERIFIED",
+        "CROP_AND_RESOLUTION_NOT_CERTIFIED"
+      ],
+      "humanNotes": null,
+      "publicationCertified": false,
+      "productionArtworkPath": null
+    },
+    {
+      "date": "2026-08-15",
+      "observance": "Assumption of the Blessed Virgin Mary",
+      "selectedArtwork": {
+        "title": "Assumption of the Virgin",
+        "artist": "Peter Paul Rubens",
+        "iconographicRole": "HISTORICAL_APPROVED_ASSOCIATION",
+        "editorialBasis": "OCT17_PREVIOUSLY_APPROVED_ASSOCIATION_PRIMARY_NOT_EXPLICITLY_RECONFIRMED",
+        "activeDateAssociation": true,
+        "notNewGlobalArtworkApproval": true
+      },
+      "scripture": "Luke 1:41–50",
+      "sourceObject": {
+        "url": null,
+        "museumPhotoAcquisitionBlocked": false,
+        "claimedRightsNotIndependentlyVerified": "Public domain"
+      },
+      "catalogReview": {
+        "legacyPreviewMatched": true,
+        "olderOct17DateHasAnyApprovedPreview": true,
+        "possibleOriginalKeys": [
+          {
+            "artworkId": "ART-eter-aul-ubens-ssumption-of-the-irgin",
+            "catalogReviewStatus": "APPROVED_LOCKED",
+            "previewAvailable": true,
+            "reproductionCertified": false
+          }
+        ]
+      },
+      "preflight": {
+        "objectIdentity": "NEEDS_VERIFICATION",
+        "photo": "NOT_CERTIFIED",
+        "photoRights": "NOT_CLEARED",
+        "crop": "NOT_CERTIFIED",
+        "app": "NOT_DEPLOYED"
+      },
+      "originalWarnings": [
+        "SOURCE_OBJECT_URL_MISSING_OR_NOT_LINKED_TO_CURRENT_SELECTION",
+        "NO_CERTIFIED_RELEASE_MASTER",
+        "REPRODUCTION_RIGHTS_NOT_YET_VERIFIED",
+        "CROP_AND_RESOLUTION_NOT_CERTIFIED"
+      ],
+      "humanNotes": null,
+      "publicationCertified": false,
+      "productionArtworkPath": null
+    },
+    {
+      "date": "2026-09-29",
+      "observance": "Dedication of St. Michael the Archangel",
+      "selectedArtwork": {
+        "title": "Archangel Michael Defeating Satan",
+        "artist": "Guido Reni",
+        "iconographicRole": "HISTORICAL_APPROVED_ASSOCIATION",
+        "editorialBasis": "OCT17_PREVIOUSLY_APPROVED_ASSOCIATION_PRIMARY_NOT_EXPLICITLY_RECONFIRMED",
+        "activeDateAssociation": true,
+        "notNewGlobalArtworkApproval": true
+      },
+      "scripture": "Matthew 18:1–10",
+      "sourceObject": {
+        "url": null,
+        "museumPhotoAcquisitionBlocked": false,
+        "claimedRightsNotIndependentlyVerified": "Public domain"
+      },
+      "catalogReview": {
+        "legacyPreviewMatched": true,
+        "olderOct17DateHasAnyApprovedPreview": true,
+        "possibleOriginalKeys": [
+          {
+            "artworkId": "ART-uido-eni-rchangel-ichael-efeating-atan",
+            "catalogReviewStatus": "APPROVED_LOCKED",
+            "previewAvailable": true,
+            "reproductionCertified": false
+          }
+        ]
+      },
+      "preflight": {
+        "objectIdentity": "NEEDS_VERIFICATION",
+        "photo": "NOT_CERTIFIED",
+        "photoRights": "NOT_CLEARED",
+        "crop": "NOT_CERTIFIED",
+        "app": "NOT_DEPLOYED"
+      },
+      "originalWarnings": [
+        "SOURCE_OBJECT_URL_MISSING_OR_NOT_LINKED_TO_CURRENT_SELECTION",
+        "NO_CERTIFIED_RELEASE_MASTER",
+        "REPRODUCTION_RIGHTS_NOT_YET_VERIFIED",
+        "CROP_AND_RESOLUTION_NOT_CERTIFIED"
+      ],
+      "humanNotes": null,
+      "publicationCertified": false,
+      "productionArtworkPath": null
+    },
+    {
+      "date": "2026-10-25",
+      "observance": "Christ the King",
+      "selectedArtwork": {
+        "title": "Salvator Mundi",
+        "artist": "Ambrosius Benson",
+        "iconographicRole": "CHRIST_THE_KING_FEAST_ICONOGRAPHY",
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "activeDateAssociation": true,
+        "notNewGlobalArtworkApproval": false
+      },
+      "scripture": "John 18:33–37",
+      "sourceObject": {
+        "url": null,
+        "museumPhotoAcquisitionBlocked": false,
+        "claimedRightsNotIndependentlyVerified": null
+      },
+      "catalogReview": {
+        "legacyPreviewMatched": false,
+        "olderOct17DateHasAnyApprovedPreview": false,
+        "possibleOriginalKeys": []
+      },
+      "preflight": {
+        "objectIdentity": "NEEDS_VERIFICATION",
+        "photo": "NOT_CERTIFIED",
+        "photoRights": "NOT_CLEARED",
+        "crop": "NOT_CERTIFIED",
+        "app": "NOT_DEPLOYED"
+      },
+      "originalWarnings": [
+        "SOURCE_OBJECT_URL_MISSING_OR_NOT_LINKED_TO_CURRENT_SELECTION",
+        "NO_OCT17_CATALOGUE_PREVIEW_FOR_CURRENT_SELECTION",
+        "NO_CERTIFIED_RELEASE_MASTER",
+        "REPRODUCTION_RIGHTS_NOT_YET_VERIFIED",
+        "CROP_AND_RESOLUTION_NOT_CERTIFIED"
+      ],
+      "humanNotes": null,
+      "publicationCertified": false,
+      "productionArtworkPath": null
+    },
+    {
+      "date": "2026-11-01",
+      "observance": "All Saints",
+      "selectedArtwork": {
+        "title": "Paradise",
+        "artist": "Carlo Saraceni",
+        "iconographicRole": "ALL_SAINTS_FEAST_ICONOGRAPHY",
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "activeDateAssociation": true,
+        "notNewGlobalArtworkApproval": false
+      },
+      "scripture": "Matthew 5:1–12",
+      "sourceObject": {
+        "url": null,
+        "museumPhotoAcquisitionBlocked": false,
+        "claimedRightsNotIndependentlyVerified": null
+      },
+      "catalogReview": {
+        "legacyPreviewMatched": false,
+        "olderOct17DateHasAnyApprovedPreview": false,
+        "possibleOriginalKeys": []
+      },
+      "preflight": {
+        "objectIdentity": "NEEDS_VERIFICATION",
+        "photo": "NOT_CERTIFIED",
+        "photoRights": "NOT_CLEARED",
+        "crop": "NOT_CERTIFIED",
+        "app": "NOT_DEPLOYED"
+      },
+      "originalWarnings": [
+        "SOURCE_OBJECT_URL_MISSING_OR_NOT_LINKED_TO_CURRENT_SELECTION",
+        "NO_OCT17_CATALOGUE_PREVIEW_FOR_CURRENT_SELECTION",
+        "NO_CERTIFIED_RELEASE_MASTER",
+        "REPRODUCTION_RIGHTS_NOT_YET_VERIFIED",
+        "CROP_AND_RESOLUTION_NOT_CERTIFIED"
+      ],
+      "humanNotes": null,
+      "publicationCertified": false,
+      "productionArtworkPath": null
+    },
+    {
+      "date": "2026-11-02",
+      "observance": "Commemoration of All Souls",
+      "selectedArtwork": {
+        "title": "An Angel Frees the Souls of Purgatory",
+        "artist": "Ludovico Carracci",
+        "iconographicRole": "ALL_SOULS_FEAST_ICONOGRAPHY",
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "activeDateAssociation": true,
+        "notNewGlobalArtworkApproval": false
+      },
+      "scripture": "John 5:25–29",
+      "sourceObject": {
+        "url": null,
+        "museumPhotoAcquisitionBlocked": false,
+        "claimedRightsNotIndependentlyVerified": null
+      },
+      "catalogReview": {
+        "legacyPreviewMatched": false,
+        "olderOct17DateHasAnyApprovedPreview": false,
+        "possibleOriginalKeys": []
+      },
+      "preflight": {
+        "objectIdentity": "NEEDS_VERIFICATION",
+        "photo": "NOT_CERTIFIED",
+        "photoRights": "NOT_CLEARED",
+        "crop": "NOT_CERTIFIED",
+        "app": "NOT_DEPLOYED"
+      },
+      "originalWarnings": [
+        "SOURCE_OBJECT_URL_MISSING_OR_NOT_LINKED_TO_CURRENT_SELECTION",
+        "NO_OCT17_CATALOGUE_PREVIEW_FOR_CURRENT_SELECTION",
+        "NO_CERTIFIED_RELEASE_MASTER",
+        "REPRODUCTION_RIGHTS_NOT_YET_VERIFIED",
+        "CROP_AND_RESOLUTION_NOT_CERTIFIED"
+      ],
+      "humanNotes": null,
+      "publicationCertified": false,
+      "productionArtworkPath": null
+    },
+    {
+      "date": "2026-11-29",
+      "observance": "I Sunday of Advent",
+      "selectedArtwork": {
+        "title": "The Great Day of His Wrath",
+        "artist": "John Martin",
+        "iconographicRole": "APOCALYPTIC_GOSPEL_THEME",
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "activeDateAssociation": true,
+        "notNewGlobalArtworkApproval": false
+      },
+      "scripture": "Luke 21:25–33",
+      "sourceObject": {
+        "url": null,
+        "museumPhotoAcquisitionBlocked": false,
+        "claimedRightsNotIndependentlyVerified": null
+      },
+      "catalogReview": {
+        "legacyPreviewMatched": false,
+        "olderOct17DateHasAnyApprovedPreview": false,
+        "possibleOriginalKeys": []
+      },
+      "preflight": {
+        "objectIdentity": "NEEDS_VERIFICATION",
+        "photo": "NOT_CERTIFIED",
+        "photoRights": "NOT_CLEARED",
+        "crop": "NOT_CERTIFIED",
+        "app": "NOT_DEPLOYED"
+      },
+      "originalWarnings": [
+        "SOURCE_OBJECT_URL_MISSING_OR_NOT_LINKED_TO_CURRENT_SELECTION",
+        "NO_OCT17_CATALOGUE_PREVIEW_FOR_CURRENT_SELECTION",
+        "NO_CERTIFIED_RELEASE_MASTER",
+        "REPRODUCTION_RIGHTS_NOT_YET_VERIFIED",
+        "CROP_AND_RESOLUTION_NOT_CERTIFIED"
+      ],
+      "humanNotes": null,
+      "publicationCertified": false,
+      "productionArtworkPath": null
+    },
+    {
+      "date": "2026-12-06",
+      "observance": "II Sunday of Advent",
+      "selectedArtwork": {
+        "title": "The Family of Christ",
+        "artist": "Michael Willmann",
+        "iconographicRole": "ROOT_OF_JESSE_EPISTLE_THEME",
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "activeDateAssociation": true,
+        "notNewGlobalArtworkApproval": false
+      },
+      "scripture": "Matthew 11:2–10",
+      "sourceObject": {
+        "url": null,
+        "museumPhotoAcquisitionBlocked": false,
+        "claimedRightsNotIndependentlyVerified": null
+      },
+      "catalogReview": {
+        "legacyPreviewMatched": false,
+        "olderOct17DateHasAnyApprovedPreview": false,
+        "possibleOriginalKeys": []
+      },
+      "preflight": {
+        "objectIdentity": "NEEDS_VERIFICATION",
+        "photo": "NOT_CERTIFIED",
+        "photoRights": "NOT_CLEARED",
+        "crop": "NOT_CERTIFIED",
+        "app": "NOT_DEPLOYED"
+      },
+      "originalWarnings": [
+        "EPISTLE_THEME_NOT_APPOINTED_GOSPEL",
+        "SOURCE_OBJECT_URL_MISSING_OR_NOT_LINKED_TO_CURRENT_SELECTION",
+        "NO_OCT17_CATALOGUE_PREVIEW_FOR_CURRENT_SELECTION",
+        "NO_CERTIFIED_RELEASE_MASTER",
+        "REPRODUCTION_RIGHTS_NOT_YET_VERIFIED",
+        "CROP_AND_RESOLUTION_NOT_CERTIFIED"
+      ],
+      "humanNotes": null,
+      "publicationCertified": false,
+      "productionArtworkPath": null
+    },
+    {
+      "date": "2026-12-08",
+      "observance": "Immaculate Conception of the Blessed Virgin Mary",
+      "selectedArtwork": {
+        "title": "Immaculate Conception",
+        "artist": "Peter Paul Rubens",
+        "iconographicRole": "HISTORICAL_APPROVED_ASSOCIATION",
+        "editorialBasis": "OCT17_PREVIOUSLY_APPROVED_ASSOCIATION_PRIMARY_NOT_EXPLICITLY_RECONFIRMED",
+        "activeDateAssociation": true,
+        "notNewGlobalArtworkApproval": true
+      },
+      "scripture": "Luke 1:26–28",
+      "sourceObject": {
+        "url": "https://www.museodelprado.es/en/the-collection/art-work/the-immaculate-conception/abea9a48-3712-4068-a0dd-c669005430d5",
+        "museumPhotoAcquisitionBlocked": true,
+        "claimedRightsNotIndependentlyVerified": "Public domain"
+      },
+      "catalogReview": {
+        "legacyPreviewMatched": true,
+        "olderOct17DateHasAnyApprovedPreview": true,
+        "possibleOriginalKeys": [
+          {
+            "artworkId": "ART-eter-aul-ubens-mmaculate-onception",
+            "catalogReviewStatus": "APPROVED_LOCKED",
+            "previewAvailable": true,
+            "reproductionCertified": false
+          }
+        ]
+      },
+      "preflight": {
+        "objectIdentity": "NEEDS_VERIFICATION",
+        "photo": "NOT_CERTIFIED",
+        "photoRights": "NOT_CLEARED",
+        "crop": "NOT_CERTIFIED",
+        "app": "NOT_DEPLOYED"
+      },
+      "originalWarnings": [
+        "NO_CERTIFIED_RELEASE_MASTER",
+        "REPRODUCTION_RIGHTS_NOT_YET_VERIFIED",
+        "CROP_AND_RESOLUTION_NOT_CERTIFIED"
+      ],
+      "humanNotes": null,
+      "publicationCertified": false,
+      "productionArtworkPath": null
+    },
+    {
+      "date": "2026-12-13",
+      "observance": "III Sunday of Advent",
+      "selectedArtwork": {
+        "title": "Saint John the Baptist Interrogated about Christ",
+        "artist": "Bernardo Strozzi",
+        "iconographicRole": "GOSPEL_SUBJECT",
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "activeDateAssociation": true,
+        "notNewGlobalArtworkApproval": false
+      },
+      "scripture": "John 1:19–28",
+      "sourceObject": {
+        "url": null,
+        "museumPhotoAcquisitionBlocked": false,
+        "claimedRightsNotIndependentlyVerified": null
+      },
+      "catalogReview": {
+        "legacyPreviewMatched": false,
+        "olderOct17DateHasAnyApprovedPreview": false,
+        "possibleOriginalKeys": []
+      },
+      "preflight": {
+        "objectIdentity": "NEEDS_VERIFICATION",
+        "photo": "NOT_CERTIFIED",
+        "photoRights": "NOT_CLEARED",
+        "crop": "NOT_CERTIFIED",
+        "app": "NOT_DEPLOYED"
+      },
+      "originalWarnings": [
+        "SOURCE_OBJECT_URL_MISSING_OR_NOT_LINKED_TO_CURRENT_SELECTION",
+        "NO_OCT17_CATALOGUE_PREVIEW_FOR_CURRENT_SELECTION",
+        "NO_CERTIFIED_RELEASE_MASTER",
+        "REPRODUCTION_RIGHTS_NOT_YET_VERIFIED",
+        "CROP_AND_RESOLUTION_NOT_CERTIFIED"
+      ],
+      "humanNotes": null,
+      "publicationCertified": false,
+      "productionArtworkPath": null
+    },
+    {
+      "date": "2026-12-20",
+      "observance": "IV Sunday of Advent",
+      "selectedArtwork": {
+        "title": "La Prédication de saint Jean Baptiste",
+        "artist": "Giovanni Battista Gaulli",
+        "iconographicRole": "GOSPEL_SUBJECT",
+        "editorialBasis": "NEW_DATE_SPECIFIC_APPROVAL",
+        "activeDateAssociation": true,
+        "notNewGlobalArtworkApproval": false
+      },
+      "scripture": "Luke 3:1–6",
+      "sourceObject": {
+        "url": null,
+        "museumPhotoAcquisitionBlocked": false,
+        "claimedRightsNotIndependentlyVerified": null
+      },
+      "catalogReview": {
+        "legacyPreviewMatched": false,
+        "olderOct17DateHasAnyApprovedPreview": false,
+        "possibleOriginalKeys": []
+      },
+      "preflight": {
+        "objectIdentity": "NEEDS_VERIFICATION",
+        "photo": "NOT_CERTIFIED",
+        "photoRights": "NOT_CLEARED",
+        "crop": "NOT_CERTIFIED",
+        "app": "NOT_DEPLOYED"
+      },
+      "originalWarnings": [
+        "SOURCE_OBJECT_URL_MISSING_OR_NOT_LINKED_TO_CURRENT_SELECTION",
+        "NO_OCT17_CATALOGUE_PREVIEW_FOR_CURRENT_SELECTION",
+        "NO_CERTIFIED_RELEASE_MASTER",
+        "REPRODUCTION_RIGHTS_NOT_YET_VERIFIED",
+        "CROP_AND_RESOLUTION_NOT_CERTIFIED"
+      ],
+      "humanNotes": null,
+      "publicationCertified": false,
+      "productionArtworkPath": null
+    },
+    {
+      "date": "2026-12-24",
+      "observance": "Vigil of Christmas",
+      "selectedArtwork": {
+        "title": "The Dream of Saint Joseph",
+        "artist": "Philippe de Champaigne",
+        "iconographicRole": "HISTORICAL_APPROVED_ASSOCIATION",
+        "editorialBasis": "OCT17_PREVIOUSLY_APPROVED_ASSOCIATION_PRIMARY_NOT_EXPLICITLY_RECONFIRMED",
+        "activeDateAssociation": true,
+        "notNewGlobalArtworkApproval": true
+      },
+      "scripture": "Matthew 1:18–21",
+      "sourceObject": {
+        "url": "https://www.nationalgallery.org.uk/paintings/philippe-de-champaigne-the-dream-of-saint-joseph",
+        "museumPhotoAcquisitionBlocked": false,
+        "claimedRightsNotIndependentlyVerified": "Public domain"
+      },
+      "catalogReview": {
+        "legacyPreviewMatched": true,
+        "olderOct17DateHasAnyApprovedPreview": true,
+        "possibleOriginalKeys": [
+          {
+            "artworkId": "ART-hilippe-de-hampaigne-he-ream-of-aint-oseph",
+            "catalogReviewStatus": "APPROVED_LOCKED",
+            "previewAvailable": true,
+            "reproductionCertified": false
+          }
+        ]
+      },
+      "preflight": {
+        "objectIdentity": "NEEDS_VERIFICATION",
+        "photo": "NOT_CERTIFIED",
+        "photoRights": "NOT_CLEARED",
+        "crop": "NOT_CERTIFIED",
+        "app": "NOT_DEPLOYED"
+      },
+      "originalWarnings": [
+        "NO_CERTIFIED_RELEASE_MASTER",
+        "REPRODUCTION_RIGHTS_NOT_YET_VERIFIED",
+        "CROP_AND_RESOLUTION_NOT_CERTIFIED"
+      ],
+      "humanNotes": null,
+      "publicationCertified": false,
+      "productionArtworkPath": null
+    },
+    {
+      "date": "2026-12-25",
+      "observance": "The Nativity of Our Lord",
+      "selectedArtwork": {
+        "title": "Adoration of the Shepherds",
+        "artist": "Carlo Dolci",
+        "iconographicRole": "HISTORICAL_APPROVED_ASSOCIATION",
+        "editorialBasis": "OCT17_PREVIOUSLY_APPROVED_ASSOCIATION_PRIMARY_NOT_EXPLICITLY_RECONFIRMED",
+        "activeDateAssociation": true,
+        "notNewGlobalArtworkApproval": true
+      },
+      "scripture": "Luke 2:1–14",
+      "sourceObject": {
+        "url": "https://clevelandart.org/art/1968.22",
+        "museumPhotoAcquisitionBlocked": false,
+        "claimedRightsNotIndependentlyVerified": "CC0"
+      },
+      "catalogReview": {
+        "legacyPreviewMatched": false,
+        "olderOct17DateHasAnyApprovedPreview": false,
+        "possibleOriginalKeys": [
+          {
+            "artworkId": "cma-143784",
+            "catalogReviewStatus": "APPROVED_LOCKED",
+            "previewAvailable": false,
+            "reproductionCertified": false
+          }
+        ]
+      },
+      "preflight": {
+        "objectIdentity": "NEEDS_VERIFICATION",
+        "photo": "NOT_CERTIFIED",
+        "photoRights": "NOT_CLEARED",
+        "crop": "NOT_CERTIFIED",
+        "app": "NOT_DEPLOYED"
+      },
+      "originalWarnings": [
+        "NO_OCT17_CATALOGUE_PREVIEW_FOR_CURRENT_SELECTION",
+        "NO_CERTIFIED_RELEASE_MASTER",
+        "REPRODUCTION_RIGHTS_NOT_YET_VERIFIED",
+        "CROP_AND_RESOLUTION_NOT_CERTIFIED"
+      ],
+      "humanNotes": null,
+      "publicationCertified": false,
+      "productionArtworkPath": null
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+name: Sacred Art · NGA Open Access exact-object acquisition
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "data/research/sacred-art-bulk-source-intake-451-20261020.v1.json"
+      - "tools/calendar/acquire-sacred-art-nga.mjs"
+      - "tools/calendar/sacred-art-source-policy.mjs"
+      - "tests/sacred-art-nga-open-access.mjs"
+      - ".github/workflows/sacred-art-nga-open-access.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  national-gallery-source-batch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Verify object IDs, image-specific permissions, Prado exclusion and CSV handling
+        run: node tests/sacred-art-nga-open-access.mjs
+      - name: Recover all six approved NGA artworks from explicit OA image links
+        run: node tools/calendar/acquire-sacred-art-nga.mjs
+      - name: Archive research images, hashes and review evidence (not released)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-nga-6-sources-for-qa
+          path: artifacts/sacred-art-nga-official/
+          retention-days: 14
+          if-no-files-found: warn
