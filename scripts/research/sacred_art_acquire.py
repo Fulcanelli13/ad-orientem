@@ -21,6 +21,7 @@ FIELDS = ['asset_source_id','record_id','source_sheet','source_row','title','art
 def now():return datetime.now(timezone.utc).isoformat(timespec='seconds')
 def request_json(url):
     req=Request(url,headers={'User-Agent':USER_AGENT,'Accept':'application/json','Accept-Encoding':'identity'})
+    time.sleep(0.18)  # avoid bursts against institutional metadata services
     with urlopen(req,timeout=35) as response:
         return json.load(response)
 def safe_url(url):
