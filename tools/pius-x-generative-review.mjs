@@ -79,8 +79,8 @@ export function selectEvidence(store,input){
  // whether a living person has a valid sacrament, current faculty or canonical
  // penalty. This deterministic preflight is narrow: it does not classify the
  // whole theological question, it prevents an obvious modern-law extrapolation.
- if(/(?:\\b(?:today|right now|currently|present[- ]day|under (?:the )?current(?: canon)? law|still (?:in force|legally|binding))\\b|aujourd['’]hui|actuellement|droit canonique actuel|encore en vigueur)/iu.test(question)&&
-    /(?:\\b(?:penalt(?:y|ies)|excommunicat\\w*|absolut(?:ion|e)|confession|communion|dispensat\\w*|facult(?:y|ies)|valid(?:ity|ly)?|legally|binding|canonical|canon law)\\b|peines?\\b|excommuni\\w*|absolution|confession|communion|facultés|validité|valide|obligatoire)/iu.test(question))
+ if(/(?:\b(?:today|right now|currently|present[- ]day|under (?:the )?current(?: canon)? law|still (?:in force|legally|binding))\b|aujourd['’]hui|actuellement|droit canonique actuel|encore en vigueur)/iu.test(question)&&
+    /(?:\b(?:penalt(?:y|ies)|excommunicat\w*|absolut(?:ion|e)|confession|communion|dispensat\w*|facult(?:y|ies)|valid(?:ity|ly)?|legally|binding|canonical|canon law)\b|peines?\b|excommuni\w*|absolution|confession|communion|facultés|validité|valide|obligatoire)/iu.test(question))
   return held('present_day_canonical_case_requires_current_authority');
  // Visitor questions are untrusted, not authority to override documented-source limits.
  if(/(?:ignore (?:your|the) (?:sources|instructions)|invent (?:a |an )?(?:personal |private )?(?:memory|recollection|quotation)|fabricate (?:a |an )?(?:quote|story|memory)|ignorez (?:vos|les) sources|inventez (?:un|une) souvenir)/i.test(question))
