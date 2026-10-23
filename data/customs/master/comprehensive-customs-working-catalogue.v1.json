@@ -24,7 +24,8 @@
     "STOKES_MUELLER_298_SCREEN_NOT_IDENTITY_ADJUDICATION": "298 rows (198 Stokes + 100 Mueller second-pass annotations) were run through label-only candidate lookup across 490 existing owner/group/source-family labels; 119 have one or more retrieval hints, 179 none. No lexical hit or no-hit establishes identity, nonidentity, distinctness, corroboration or ritual authority; the 100 Mueller annotations also overlap the primary 122.",
     "CHANEY_NEW_AUTHOR_NOT_170_VERIFIED_CUSTOMS": "Chaney's 1955 Grailville Twelve Days of Christmas is a distinct authored book and textual witness, but cites or draws on Mueller and earlier authors and includes modern recommendations alongside reported practice, ritual quotations and firsthand Grailville activities. Index 170 as source observations, not 170 new customs or 170 independent corroborations; avoid old printed page citations.",
     "CHANEY_AUTOMATED_RETRIEVAL_IS_NOT_SEMANTIC_PROOF": "170 Chaney source observations compared lexically to 490 master/provisional/McLoughlin-family labels plus 604 prior named author source-observation labels. Candidate hints include obvious false positives; 65 observations without hints are not proven novel. Do not promote to master or Calendar.",
-    "CHANEY_MANUAL_LABEL_RELATIONS_SCOPE": "24 manually compared source-action labels and Chaney text locator to prior research/source labels: 12 same described action core; 6 explicitly false lexical matches; other relationships include components, preparation or related actions. This is not full dual-source original text verification or proof of separate independent witnesses; zero final merges and no new canonical identities."
+    "CHANEY_MANUAL_LABEL_RELATIONS_SCOPE": "24 manually compared source-action labels and Chaney text locator to prior research/source labels: 12 same described action core; 6 explicitly false lexical matches; other relationships include components, preparation or related actions. This is not full dual-source original text verification or proof of separate independent witnesses; zero final merges and no new canonical identities.",
+    "FRANCE_PCI_127_MULTICOMPONENT_ETHNOGRAPHY": "Two distinct French regional inventory documents: Breton pardons (2020: 71 details) and Basque Besta Berri (2018: 56 details), TWO practice complexes, not 127 newly distinct customs. Includes ritual acts, community preparations, historic variants, and folk beliefs. 1962 ritual authority not checked."
   },
   "summary": {
     "source_observations": {
@@ -44,15 +45,17 @@
         "ch14_to_28": 121
       },
       "mcloughlin_fulltext_source_observations": 70,
-      "total_source_detail_rows_including_external": 1799,
-      "external_plus_weiser_count_note": "1,025 Weiser + 70 McLoughlin + 198 Stokes + 132 Trapp/Berger/Newland online excerpts + 204 Mueller/Kelly EWTN + 170 Elsa Chaney (1955) EWTN = 1,799 non-deduplicated source/detail research rows. Another 100 second-pass Mueller detail rows are preserved separately as NONADDITIVE to the 122 existing Mueller source observations. None is a count of distinct Catholic customs.",
+      "total_source_detail_rows_including_external": 1926,
+      "external_plus_weiser_count_note": "1,025 Weiser + 70 McLoughlin + 198 Stokes + 132 Trapp/Berger/Newland online excerpts + 204 Mueller/Kelly EWTN + 170 Elsa Chaney (1955) EWTN = 1,799 non-deduplicated source/detail research rows. Another 100 second-pass Mueller detail rows are preserved separately as NONADDITIVE to the 122 existing Mueller source observations. None is a count of distinct Catholic customs. Plus 127 French national intangible-heritage inventory detail observations (71 Brittany, 56 Basque), all source components/variants not 127 distinct practice families.",
       "stokes_1955_online_source_action_observations": 198,
       "catholicculture_trapp_berger_newland_excerpt_source_actions": 132,
       "mueller_kelly_ewtn_source_action_observations": 204,
       "mueller_1955_ewtn_action_observations": 122,
       "kelly_1959_ewtn_action_observations": 82,
       "mueller_second_pass_detail_rows_not_added_to_source_total": 100,
-      "chaney_1955_online_source_observations": 170
+      "chaney_1955_online_source_observations": 170,
+      "france_pci_breton_pardon_source_detail_rows": 71,
+      "france_pci_basque_besta_berri_source_detail_rows": 56
     },
     "identity_working_rows": {
       "previously_existing_master_identities": 56,
@@ -157,7 +160,9 @@
     "newland_1956_excerpt": "Mary Reed Newland, The Year and Our Children (1956), as excerpted online",
     "mueller_1955": "Therese Mueller, Our Children's Year of Grace, EWTN complete online 1955 fifth-edition-labelled transcription (original book copyright 1943)",
     "kelly_1959": "Rev. George A. Kelly, The Catholic Family Handbook (1959), EWTN text chapter 16",
-    "chaney_1955": "Elsa Chaney, The Twelve Days of Christmas (Grailville Writing Center, 1955; EWTN full online transcription)"
+    "chaney_1955": "Elsa Chaney, The Twelve Days of Christmas (Grailville Writing Center, 1955; EWTN full online transcription)",
+    "france_pci_breton_pardons_2020": "Les pardons et troménies en Bretagne (2020), French National Intangible Cultural Heritage Inventory",
+    "france_pci_basque_besta_berri_2018": "Besta Berri/Fête-Dieu au Pays Basque (2018), French National Intangible Cultural Heritage Inventory"
   },
   "source_dataset_paths": {
     "master": "data/customs/master/working-master.v1.json",
@@ -192,7 +197,9 @@
     "stokes_mueller_298_label_lookup": "data/customs/master/stokes-mueller-298-source-routing-lexical-screen.v1.json",
     "chaney_1955_source_intake": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
     "chaney_1955_170_candidate_lookup": "data/customs/master/chaney-1955-170-cross-source-nonmerging-candidate-review.v1.json",
-    "chaney_1955_24_label_action_relationships": "data/customs/master/chaney-1955-action-description-24-manual-relations.v1.json"
+    "chaney_1955_24_label_action_relationships": "data/customs/master/chaney-1955-action-description-24-manual-relations.v1.json",
+    "france_pci_breton_pardons": "data/customs/master/france-2020-breton-pardons-pci-regional-detail-pass.v1.json",
+    "france_pci_basque_besta_berri": "data/customs/master/france-2018-basque-besta-berri-pci-detail-pass.v1.json"
   },
   "existing_master_identities": [
     {
@@ -22617,6 +22624,1280 @@
       ],
       "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
       "identity_certified": false
+    }
+  ],
+  "external_source_observations_france_pci_brittany": [
+    {
+      "id": "FRPCI20-PARDON-001",
+      "label": "Schedule local saint's pardon on a patronal feast or nearby Sunday",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "line": 19,
+      "parent_practice_family": "BRETON_PARDON_TROMENIE_COMPLEX",
+      "claim_type": "CONTEMPORARY_ETHNOGRAPHIC_DESCRIPTION",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI20-PARDON-002",
+      "label": "Hold a circular local troménie route rather than a linear procession",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "line": 70,
+      "parent_practice_family": "BRETON_PARDON_TROMENIE_COMPLEX",
+      "claim_type": "CONTEMPORARY_ETHNOGRAPHIC_DESCRIPTION",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI20-PARDON-003",
+      "label": "Carry a maritime pardon procession along or onto the sea",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "line": 70,
+      "parent_practice_family": "BRETON_PARDON_TROMENIE_COMPLEX",
+      "claim_type": "CONTEMPORARY_ETHNOGRAPHIC_DESCRIPTION",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI20-PARDON-004",
+      "label": "Prepare locally chosen readings and sacred songs for the patronal pardon Mass",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "line": 77,
+      "parent_practice_family": "BRETON_PARDON_TROMENIE_COMPLEX",
+      "claim_type": "CONTEMPORARY_ETHNOGRAPHIC_DESCRIPTION",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI20-PARDON-005",
+      "label": "Clear the pathway from chapel to the place of the procession's destination",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "line": 81,
+      "parent_practice_family": "BRETON_PARDON_TROMENIE_COMPLEX",
+      "claim_type": "CONTEMPORARY_ETHNOGRAPHIC_DESCRIPTION",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI20-PARDON-006",
+      "label": "Clean and decorate the fountain used at the pardon",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "line": 81,
+      "parent_practice_family": "BRETON_PARDON_TROMENIE_COMPLEX",
+      "claim_type": "CONTEMPORARY_ETHNOGRAPHIC_DESCRIPTION",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI20-PARDON-007",
+      "label": "Fill the chapel with flowers gathered from local gardens",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "line": 82,
+      "parent_practice_family": "BRETON_PARDON_TROMENIE_COMPLEX",
+      "claim_type": "CONTEMPORARY_ETHNOGRAPHIC_DESCRIPTION",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI20-PARDON-008",
+      "label": "Bring procession banners and devotional objects from the parish church",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "line": 84,
+      "parent_practice_family": "BRETON_PARDON_TROMENIE_COMPLEX",
+      "claim_type": "CONTEMPORARY_ETHNOGRAPHIC_DESCRIPTION",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI20-PARDON-009",
+      "label": "Travel to a local pardon as a penitential pilgrimage rather than only a public celebration",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "line": 100,
+      "parent_practice_family": "BRETON_PARDON_TROMENIE_COMPLEX",
+      "claim_type": "HISTORICAL_REPORTED_PRACTICE",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI20-PARDON-010",
+      "label": "Celebrate a patronal Mass as the religious centre of the pardon",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "line": 103,
+      "parent_practice_family": "BRETON_PARDON_TROMENIE_COMPLEX",
+      "claim_type": "RELIGIOUS_RITUAL_COMPONENT_AUTHORITY_UNVERIFIED",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI20-PARDON-011",
+      "label": "Hold afternoon Vespers as part of the pardon where the local programme retains them",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "line": 104,
+      "parent_practice_family": "BRETON_PARDON_TROMENIE_COMPLEX",
+      "claim_type": "RELIGIOUS_RITUAL_COMPONENT_AUTHORITY_UNVERIFIED",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI20-PARDON-012",
+      "label": "Light a votive candle near the honoured saint's image",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "line": 105,
+      "parent_practice_family": "BRETON_PARDON_TROMENIE_COMPLEX",
+      "claim_type": "CONTEMPORARY_ETHNOGRAPHIC_DESCRIPTION",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI20-PARDON-013",
+      "label": "Touch or kiss the patron saint's reliquary as an act of veneration",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "line": 106,
+      "parent_practice_family": "BRETON_PARDON_TROMENIE_COMPLEX",
+      "claim_type": "CONTEMPORARY_ETHNOGRAPHIC_DESCRIPTION",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI20-PARDON-014",
+      "label": "Conduct the principal pardon thanksgiving procession after Mass",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "line": 108,
+      "parent_practice_family": "BRETON_PARDON_TROMENIE_COMPLEX",
+      "claim_type": "CONTEMPORARY_ETHNOGRAPHIC_DESCRIPTION",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI20-PARDON-015",
+      "label": "Distinguish pilgrims arriving on foot from the post-Mass religious procession",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "line": 109,
+      "parent_practice_family": "BRETON_PARDON_TROMENIE_COMPLEX",
+      "claim_type": "CONTEMPORARY_ETHNOGRAPHIC_DESCRIPTION",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI20-PARDON-016",
+      "label": "In some modern observances place the procession before Mass",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "line": 110,
+      "parent_practice_family": "BRETON_PARDON_TROMENIE_COMPLEX",
+      "claim_type": "CONTEMPORARY_ETHNOGRAPHIC_DESCRIPTION",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI20-PARDON-017",
+      "label": "Circumambulate the sanctuary clockwise in a local procession",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "line": 111,
+      "parent_practice_family": "BRETON_PARDON_TROMENIE_COMPLEX",
+      "claim_type": "CONTEMPORARY_ETHNOGRAPHIC_DESCRIPTION",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI20-PARDON-018",
+      "label": "Complete multiple traditional circuits around the local church before return",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "line": 111,
+      "parent_practice_family": "BRETON_PARDON_TROMENIE_COMPLEX",
+      "claim_type": "CONTEMPORARY_ETHNOGRAPHIC_DESCRIPTION",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI20-PARDON-019",
+      "label": "Pass beneath relics when re-entering sanctuary for protection according to local belief",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "line": 111,
+      "parent_practice_family": "BRETON_PARDON_TROMENIE_COMPLEX",
+      "claim_type": "FOLK_BELIEF_OR_SUPERSTITIOUS_EFFICACY_NOT_ENDORSED",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI20-PARDON-020",
+      "label": "Lead procession with a processional cross and patron's banner",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "line": 113,
+      "parent_practice_family": "BRETON_PARDON_TROMENIE_COMPLEX",
+      "claim_type": "CONTEMPORARY_ETHNOGRAPHIC_DESCRIPTION",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI20-PARDON-021",
+      "label": "Carry the patron saint's statue and relics in the religious procession",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "line": 113,
+      "parent_practice_family": "BRETON_PARDON_TROMENIE_COMPLEX",
+      "claim_type": "CONTEMPORARY_ETHNOGRAPHIC_DESCRIPTION",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI20-PARDON-022",
+      "label": "Include a votive model ship in a maritime patronal procession",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "line": 113,
+      "parent_practice_family": "BRETON_PARDON_TROMENIE_COMPLEX",
+      "claim_type": "CONTEMPORARY_ETHNOGRAPHIC_DESCRIPTION",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI20-PARDON-023",
+      "label": "Carry neighbouring parish banners together with the patron's banner",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "line": 114,
+      "parent_practice_family": "BRETON_PARDON_TROMENIE_COMPLEX",
+      "claim_type": "CONTEMPORARY_ETHNOGRAPHIC_DESCRIPTION",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI20-PARDON-024",
+      "label": "Steady heavy processional banners using side ribbons held by attendants",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "line": 114,
+      "parent_practice_family": "BRETON_PARDON_TROMENIE_COMPLEX",
+      "claim_type": "CONTEMPORARY_ETHNOGRAPHIC_DESCRIPTION",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI20-PARDON-025",
+      "label": "Pause at Sainte-Anne-la-Palud for blessing of land or sea",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "line": 115,
+      "parent_practice_family": "BRETON_PARDON_TROMENIE_COMPLEX",
+      "claim_type": "RELIGIOUS_RITUAL_COMPONENT_AUTHORITY_UNVERIFIED",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI20-PARDON-026",
+      "label": "Sing the Litany of Saints and locally composed Breton hymns while processing",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "line": 116,
+      "parent_practice_family": "BRETON_PARDON_TROMENIE_COMPLEX",
+      "claim_type": "RELIGIOUS_RITUAL_COMPONENT_AUTHORITY_UNVERIFIED",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI20-PARDON-027",
+      "label": "Open a procession with local biniou and bombarde musicians in some parishes",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "line": 116,
+      "parent_practice_family": "BRETON_PARDON_TROMENIE_COMPLEX",
+      "claim_type": "FESTIVE_CIVIC_COMPONENT_NOT_RELIGIOUS_IDENTITY",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI20-PARDON-028",
+      "label": "Bless the water at the destination fountain and bless the assembled faithful",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "line": 119,
+      "parent_practice_family": "BRETON_PARDON_TROMENIE_COMPLEX",
+      "claim_type": "RELIGIOUS_RITUAL_COMPONENT_AUTHORITY_UNVERIFIED",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI20-PARDON-029",
+      "label": "Hold a patronal blessing of horses in pardons dedicated to veterinarian saints",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "line": 119,
+      "parent_practice_family": "BRETON_PARDON_TROMENIE_COMPLEX",
+      "claim_type": "RELIGIOUS_RITUAL_COMPONENT_AUTHORITY_UNVERIFIED",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI20-PARDON-030",
+      "label": "Offer special blessings of cattle or other animals according to patronal dedication",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "line": 119,
+      "parent_practice_family": "BRETON_PARDON_TROMENIE_COMPLEX",
+      "claim_type": "RELIGIOUS_RITUAL_COMPONENT_AUTHORITY_UNVERIFIED",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI20-PARDON-031",
+      "label": "Some contemporary pardons bless tractors, vehicles or other modern equipment",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "line": 119,
+      "parent_practice_family": "BRETON_PARDON_TROMENIE_COMPLEX",
+      "claim_type": "RELIGIOUS_RITUAL_COMPONENT_AUTHORITY_UNVERIFIED",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI20-PARDON-032",
+      "label": "Decorate livestock before taking them for a local animal blessing",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "line": 120,
+      "parent_practice_family": "BRETON_PARDON_TROMENIE_COMPLEX",
+      "claim_type": "CONTEMPORARY_ETHNOGRAPHIC_DESCRIPTION",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI20-PARDON-033",
+      "label": "Dip the end of a processional banner staff in a fountain basin",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "line": 121,
+      "parent_practice_family": "BRETON_PARDON_TROMENIE_COMPLEX",
+      "claim_type": "HISTORICAL_REPORTED_PRACTICE",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI20-PARDON-034",
+      "label": "Immerse the foot of a processional cross in the sacred fountain",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "line": 121,
+      "parent_practice_family": "BRETON_PARDON_TROMENIE_COMPLEX",
+      "claim_type": "HISTORICAL_REPORTED_PRACTICE",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI20-PARDON-035",
+      "label": "Immerse or touch a saint's reliquary in the fountain water in local usage",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "line": 121,
+      "parent_practice_family": "BRETON_PARDON_TROMENIE_COMPLEX",
+      "claim_type": "HISTORICAL_REPORTED_PRACTICE",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI20-PARDON-036",
+      "label": "Lead horses through a fountain or have horses jump across the water in reported fertility folk rites",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "line": 122,
+      "parent_practice_family": "BRETON_PARDON_TROMENIE_COMPLEX",
+      "claim_type": "FOLK_BELIEF_OR_SUPERSTITIOUS_EFFICACY_NOT_ENDORSED",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI20-PARDON-037",
+      "label": "Arrange neighbouring banners for a formal salute before processing",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "line": 123,
+      "parent_practice_family": "BRETON_PARDON_TROMENIE_COMPLEX",
+      "claim_type": "CONTEMPORARY_ETHNOGRAPHIC_DESCRIPTION",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI20-PARDON-038",
+      "label": "Lower two parishes' banners towards one another when processions meet",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "line": 123,
+      "parent_practice_family": "BRETON_PARDON_TROMENIE_COMPLEX",
+      "claim_type": "CONTEMPORARY_ETHNOGRAPHIC_DESCRIPTION",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI20-PARDON-039",
+      "label": "Incline parish banners before the reliquary of Saint Yves in Tréguier",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "line": 125,
+      "parent_practice_family": "BRETON_PARDON_TROMENIE_COMPLEX",
+      "claim_type": "CONTEMPORARY_ETHNOGRAPHIC_DESCRIPTION",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI20-PARDON-040",
+      "label": "Allow pilgrims to pass beneath a statue or reliquary at the local pardon",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "line": 126,
+      "parent_practice_family": "BRETON_PARDON_TROMENIE_COMPLEX",
+      "claim_type": "CONTEMPORARY_ETHNOGRAPHIC_DESCRIPTION",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI20-PARDON-041",
+      "label": "Finish the pardon route at a communal tantad bonfire when locally customary",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "line": 129,
+      "parent_practice_family": "BRETON_PARDON_TROMENIE_COMPLEX",
+      "claim_type": "FESTIVE_CIVIC_COMPONENT_NOT_RELIGIOUS_IDENTITY",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI20-PARDON-042",
+      "label": "Burn an effigy atop the tantad and collect charred remnants as supposed luck objects",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "line": 130,
+      "parent_practice_family": "BRETON_PARDON_TROMENIE_COMPLEX",
+      "claim_type": "FOLK_BELIEF_OR_SUPERSTITIOUS_EFFICACY_NOT_ENDORSED",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI20-PARDON-043",
+      "label": "Bless the tantad firewood before lighting with fountain water",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "line": 131,
+      "parent_practice_family": "BRETON_PARDON_TROMENIE_COMPLEX",
+      "claim_type": "RELIGIOUS_RITUAL_COMPONENT_AUTHORITY_UNVERIFIED",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI20-PARDON-044",
+      "label": "Ignite a pardon bonfire using an angel-shaped fire device in Quelven and neighbouring Morbihan sites",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "line": 132,
+      "parent_practice_family": "BRETON_PARDON_TROMENIE_COMPLEX",
+      "claim_type": "CONTEMPORARY_ETHNOGRAPHIC_DESCRIPTION",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI20-PARDON-045",
+      "label": "Ignite a pardon bonfire using a dove-shaped fire device at Locjean",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "line": 132,
+      "parent_practice_family": "BRETON_PARDON_TROMENIE_COMPLEX",
+      "claim_type": "CONTEMPORARY_ETHNOGRAPHIC_DESCRIPTION",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI20-PARDON-046",
+      "label": "Rub bread against a saint's statue as a reported local popular rite",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "line": 133,
+      "parent_practice_family": "BRETON_PARDON_TROMENIE_COMPLEX",
+      "claim_type": "FOLK_BELIEF_OR_SUPERSTITIOUS_EFFICACY_NOT_ENDORSED",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI20-PARDON-047",
+      "label": "Lower a limb into fountain water as a folk healing gesture",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "line": 133,
+      "parent_practice_family": "BRETON_PARDON_TROMENIE_COMPLEX",
+      "claim_type": "FOLK_BELIEF_OR_SUPERSTITIOUS_EFFICACY_NOT_ENDORSED",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI20-PARDON-048",
+      "label": "Drop an object such as a needle in a fountain as a reported divinatory rite",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "line": 133,
+      "parent_practice_family": "BRETON_PARDON_TROMENIE_COMPLEX",
+      "claim_type": "FOLK_BELIEF_OR_SUPERSTITIOUS_EFFICACY_NOT_ENDORSED",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI20-PARDON-049",
+      "label": "Serve an informal shared drink or refreshments after the patronal celebration",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "line": 138,
+      "parent_practice_family": "BRETON_PARDON_TROMENIE_COMPLEX",
+      "claim_type": "FESTIVE_CIVIC_COMPONENT_NOT_RELIGIOUS_IDENTITY",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI20-PARDON-050",
+      "label": "Organise a communal pardon meal prepared by volunteers",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "line": 139,
+      "parent_practice_family": "BRETON_PARDON_TROMENIE_COMPLEX",
+      "claim_type": "FESTIVE_CIVIC_COMPONENT_NOT_RELIGIOUS_IDENTITY",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI20-PARDON-051",
+      "label": "Hold local fest-deiz or fest-noz dancing at the village patronal festival",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "line": 140,
+      "parent_practice_family": "BRETON_PARDON_TROMENIE_COMPLEX",
+      "claim_type": "FESTIVE_CIVIC_COMPONENT_NOT_RELIGIOUS_IDENTITY",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI20-PARDON-052",
+      "label": "Climb the Sainte-Anne d'Auray Scala Santa on one's knees as a penitential devotion",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "line": 171,
+      "parent_practice_family": "BRETON_PARDON_TROMENIE_COMPLEX",
+      "claim_type": "HISTORICAL_REPORTED_PRACTICE",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI20-PARDON-053",
+      "label": "Climb the Scala Santa at Notre-Dame de Quelven on one's knees during pilgrimage",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "line": 172,
+      "parent_practice_family": "BRETON_PARDON_TROMENIE_COMPLEX",
+      "claim_type": "HISTORICAL_REPORTED_PRACTICE",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI20-PARDON-054",
+      "label": "Throw coins into local fountain as a devotional or propitiatory offering",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "line": 177,
+      "parent_practice_family": "BRETON_PARDON_TROMENIE_COMPLEX",
+      "claim_type": "FOLK_BELIEF_OR_SUPERSTITIOUS_EFFICACY_NOT_ENDORSED",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI20-PARDON-055",
+      "label": "Float bread crumbs to divine a sailor's fate according to reported local belief",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "line": 178,
+      "parent_practice_family": "BRETON_PARDON_TROMENIE_COMPLEX",
+      "claim_type": "FOLK_BELIEF_OR_SUPERSTITIOUS_EFFICACY_NOT_ENDORSED",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI20-PARDON-056",
+      "label": "Fix a pin to a fountain statue in reported marriage divination",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "line": 178,
+      "parent_practice_family": "BRETON_PARDON_TROMENIE_COMPLEX",
+      "claim_type": "FOLK_BELIEF_OR_SUPERSTITIOUS_EFFICACY_NOT_ENDORSED",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI20-PARDON-057",
+      "label": "Carry a smaller patron-saint statue on a litter when altar statue is too large",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "line": 186,
+      "parent_practice_family": "BRETON_PARDON_TROMENIE_COMPLEX",
+      "claim_type": "CONTEMPORARY_ETHNOGRAPHIC_DESCRIPTION",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI20-PARDON-058",
+      "label": "Use a holy-water sprinkler at patronal fountain and faithful's blessing",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "line": 192,
+      "parent_practice_family": "BRETON_PARDON_TROMENIE_COMPLEX",
+      "claim_type": "RELIGIOUS_RITUAL_COMPONENT_AUTHORITY_UNVERIFIED",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI20-PARDON-059",
+      "label": "Bless horses at pardons of Saint-Houarno or Saint-Hervé",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "line": 192,
+      "parent_practice_family": "BRETON_PARDON_TROMENIE_COMPLEX",
+      "claim_type": "RELIGIOUS_RITUAL_COMPONENT_AUTHORITY_UNVERIFIED",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI20-PARDON-060",
+      "label": "Bless cattle at Saint-Herbot or Saint-Cornély pardons",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "line": 192,
+      "parent_practice_family": "BRETON_PARDON_TROMENIE_COMPLEX",
+      "claim_type": "RELIGIOUS_RITUAL_COMPONENT_AUTHORITY_UNVERIFIED",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI20-PARDON-061",
+      "label": "Hold modern blessings of boats at maritime pardons",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "line": 193,
+      "parent_practice_family": "BRETON_PARDON_TROMENIE_COMPLEX",
+      "claim_type": "RELIGIOUS_RITUAL_COMPONENT_AUTHORITY_UNVERIFIED",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI20-PARDON-062",
+      "label": "Carry a second occupational patron's statue in local procession",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "line": 197,
+      "parent_practice_family": "BRETON_PARDON_TROMENIE_COMPLEX",
+      "claim_type": "CONTEMPORARY_ETHNOGRAPHIC_DESCRIPTION",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI20-PARDON-063",
+      "label": "Carry a scale model of a boat to represent a seafaring parish community",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "line": 198,
+      "parent_practice_family": "BRETON_PARDON_TROMENIE_COMPLEX",
+      "claim_type": "CONTEMPORARY_ETHNOGRAPHIC_DESCRIPTION",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI20-PARDON-064",
+      "label": "Carry the historic sailors' donated processional ship model at Notre-Dame de Quelven",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "line": 201,
+      "parent_practice_family": "BRETON_PARDON_TROMENIE_COMPLEX",
+      "claim_type": "HISTORICAL_REPORTED_PRACTICE",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI20-PARDON-065",
+      "label": "Entrust procession banner-carrying positions to honoured lay families in traditional order",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "line": 207,
+      "parent_practice_family": "BRETON_PARDON_TROMENIE_COMPLEX",
+      "claim_type": "HISTORICAL_REPORTED_PRACTICE",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI20-PARDON-066",
+      "label": "Grant paid or honorary precedence in carrying local parish banners in some historical settings",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "line": 208,
+      "parent_practice_family": "BRETON_PARDON_TROMENIE_COMPLEX",
+      "claim_type": "HISTORICAL_REPORTED_PRACTICE",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI20-PARDON-067",
+      "label": "Visit the patronal chapel to seek a historically granted local indulgence",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "line": 224,
+      "parent_practice_family": "BRETON_PARDON_TROMENIE_COMPLEX",
+      "claim_type": "HISTORICAL_REPORTED_PRACTICE",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI20-PARDON-068",
+      "label": "Circumambulate the church barefoot or on knees as a historical penance",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "line": 228,
+      "parent_practice_family": "BRETON_PARDON_TROMENIE_COMPLEX",
+      "claim_type": "HISTORICAL_REPORTED_PRACTICE",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI20-PARDON-069",
+      "label": "Confess and receive Communion as prerequisites when seeking specified indulgences",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "line": 228,
+      "parent_practice_family": "BRETON_PARDON_TROMENIE_COMPLEX",
+      "claim_type": "HISTORICAL_REPORTED_PRACTICE",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI20-PARDON-070",
+      "label": "Carry candles in a historical procession of pilgrims seeking or acknowledging miraculous aid",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "line": 237,
+      "parent_practice_family": "BRETON_PARDON_TROMENIE_COMPLEX",
+      "claim_type": "HISTORICAL_REPORTED_PRACTICE",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI20-PARDON-071",
+      "label": "Light a solemn communal bonfire after Vespers in some eighteenth-century pardons",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/396",
+      "line": 237,
+      "parent_practice_family": "BRETON_PARDON_TROMENIE_COMPLEX",
+      "claim_type": "HISTORICAL_REPORTED_PRACTICE",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    }
+  ],
+  "external_source_observations_france_pci_besta": [
+    {
+      "id": "FRPCI18-BB-001",
+      "label": "Celebrate Besta Berri on the feast and octave Sundays, with morning Mass and afternoon Vespers",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/314-fete-dieu-darmendaritz-fete-dieu-au-pays-basque-besta-berri",
+      "line": 20,
+      "parent_practice_family": "BESTA_BERRI_BASQUE_CORPUS_CHRISTI_COMPLEX",
+      "claim_type": "RITUAL_COMPONENT_MODERN_ETHNOGRAPHY",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI18-BB-002",
+      "label": "Escort the Corpus Christi procession with youth wearing a ceremonial guard uniform",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/314-fete-dieu-darmendaritz-fete-dieu-au-pays-basque-besta-berri",
+      "line": 24,
+      "parent_practice_family": "BESTA_BERRI_BASQUE_CORPUS_CHRISTI_COMPLEX",
+      "claim_type": "SECULAR_ESCORT_OR_FESTIVAL_COMPONENT",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI18-BB-003",
+      "label": "Scatter rose petals during the Blessed Sacrament procession with white-clad girls",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/314-fete-dieu-darmendaritz-fete-dieu-au-pays-basque-besta-berri",
+      "line": 34,
+      "parent_practice_family": "BESTA_BERRI_BASQUE_CORPUS_CHRISTI_COMPLEX",
+      "claim_type": "RITUAL_COMPONENT_MODERN_ETHNOGRAPHY",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI18-BB-004",
+      "label": "Arrange a ceremonial hedge of decorated staffs carried by boys",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/314-fete-dieu-darmendaritz-fete-dieu-au-pays-basque-besta-berri",
+      "line": 34,
+      "parent_practice_family": "BESTA_BERRI_BASQUE_CORPUS_CHRISTI_COMPLEX",
+      "claim_type": "RITUAL_COMPONENT_MODERN_ETHNOGRAPHY",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI18-BB-005",
+      "label": "Assign a youth to carry the banner preceding white-clad girls",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/314-fete-dieu-darmendaritz-fete-dieu-au-pays-basque-besta-berri",
+      "line": 35,
+      "parent_practice_family": "BESTA_BERRI_BASQUE_CORPUS_CHRISTI_COMPLEX",
+      "claim_type": "RITUAL_COMPONENT_MODERN_ETHNOGRAPHY",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI18-BB-006",
+      "label": "Entrust canopy-bearing and other mature processional duties to married men",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/314-fete-dieu-darmendaritz-fete-dieu-au-pays-basque-besta-berri",
+      "line": 37,
+      "parent_practice_family": "BESTA_BERRI_BASQUE_CORPUS_CHRISTI_COMPLEX",
+      "claim_type": "RITUAL_COMPONENT_MODERN_ETHNOGRAPHY",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI18-BB-007",
+      "label": "Have local women decorate the church and maintain procession clothing",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/314-fete-dieu-darmendaritz-fete-dieu-au-pays-basque-besta-berri",
+      "line": 38,
+      "parent_practice_family": "BESTA_BERRI_BASQUE_CORPUS_CHRISTI_COMPLEX",
+      "claim_type": "MATERIAL_PREPARATION_OR_VARIANT",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI18-BB-008",
+      "label": "Escort parish priest and mayor in formal procession",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/314-fete-dieu-darmendaritz-fete-dieu-au-pays-basque-besta-berri",
+      "line": 40,
+      "parent_practice_family": "BESTA_BERRI_BASQUE_CORPUS_CHRISTI_COMPLEX",
+      "claim_type": "SECULAR_ESCORT_OR_FESTIVAL_COMPONENT",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI18-BB-009",
+      "label": "Process between church, fronton square, and decorated repository",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/314-fete-dieu-darmendaritz-fete-dieu-au-pays-basque-besta-berri",
+      "line": 81,
+      "parent_practice_family": "BESTA_BERRI_BASQUE_CORPUS_CHRISTI_COMPLEX",
+      "claim_type": "RITUAL_COMPONENT_MODERN_ETHNOGRAPHY",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI18-BB-010",
+      "label": "Continue the Besta Berri liturgical complex on the second Sunday as an Octave",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/314-fete-dieu-darmendaritz-fete-dieu-au-pays-basque-besta-berri",
+      "line": 81,
+      "parent_practice_family": "BESTA_BERRI_BASQUE_CORPUS_CHRISTI_COMPLEX",
+      "claim_type": "RITUAL_COMPONENT_MODERN_ETHNOGRAPHY",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI18-BB-011",
+      "label": "Arrange the main procession after morning Mass on first Sunday",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/314-fete-dieu-darmendaritz-fete-dieu-au-pays-basque-besta-berri",
+      "line": 82,
+      "parent_practice_family": "BESTA_BERRI_BASQUE_CORPUS_CHRISTI_COMPLEX",
+      "claim_type": "RITUAL_COMPONENT_MODERN_ETHNOGRAPHY",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI18-BB-012",
+      "label": "Hold Octave procession after Vespers on the second Sunday",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/314-fete-dieu-darmendaritz-fete-dieu-au-pays-basque-besta-berri",
+      "line": 82,
+      "parent_practice_family": "BESTA_BERRI_BASQUE_CORPUS_CHRISTI_COMPLEX",
+      "claim_type": "RITUAL_COMPONENT_MODERN_ETHNOGRAPHY",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI18-BB-013",
+      "label": "Traditionally obtain parish priest's permission for the youth guard to organise the feast",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/314-fete-dieu-darmendaritz-fete-dieu-au-pays-basque-besta-berri",
+      "line": 87,
+      "parent_practice_family": "BESTA_BERRI_BASQUE_CORPUS_CHRISTI_COMPLEX",
+      "claim_type": "HISTORICAL_TESTIMONY_VARIANT",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI18-BB-014",
+      "label": "Historically choose ceremonial captain and lieutenant among men with military experience",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/314-fete-dieu-darmendaritz-fete-dieu-au-pays-basque-besta-berri",
+      "line": 88,
+      "parent_practice_family": "BESTA_BERRI_BASQUE_CORPUS_CHRISTI_COMPLEX",
+      "claim_type": "HISTORICAL_TESTIMONY_VARIANT",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI18-BB-015",
+      "label": "Rehearse the youth procession and dances during weeks before Corpus Christi",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/314-fete-dieu-darmendaritz-fete-dieu-au-pays-basque-besta-berri",
+      "line": 95,
+      "parent_practice_family": "BESTA_BERRI_BASQUE_CORPUS_CHRISTI_COMPLEX",
+      "claim_type": "MATERIAL_PREPARATION_OR_VARIANT",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI18-BB-016",
+      "label": "Sew and repair ornamental costume parts including the dancers' sandals and flags",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/314-fete-dieu-darmendaritz-fete-dieu-au-pays-basque-besta-berri",
+      "line": 96,
+      "parent_practice_family": "BESTA_BERRI_BASQUE_CORPUS_CHRISTI_COMPLEX",
+      "claim_type": "MATERIAL_PREPARATION_OR_VARIANT",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI18-BB-017",
+      "label": "Youth participants historically made confession on Friday before Besta Berri",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/314-fete-dieu-darmendaritz-fete-dieu-au-pays-basque-besta-berri",
+      "line": 100,
+      "parent_practice_family": "BESTA_BERRI_BASQUE_CORPUS_CHRISTI_COMPLEX",
+      "claim_type": "HISTORICAL_TESTIMONY_VARIANT",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI18-BB-018",
+      "label": "March with the parish youth guard arranged in two columns",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/314-fete-dieu-darmendaritz-fete-dieu-au-pays-basque-besta-berri",
+      "line": 103,
+      "parent_practice_family": "BESTA_BERRI_BASQUE_CORPUS_CHRISTI_COMPLEX",
+      "claim_type": "SECULAR_ESCORT_OR_FESTIVAL_COMPONENT",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI18-BB-019",
+      "label": "Lead ceremonial procession with paired dancers called coqs",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/314-fete-dieu-darmendaritz-fete-dieu-au-pays-basque-besta-berri",
+      "line": 104,
+      "parent_practice_family": "BESTA_BERRI_BASQUE_CORPUS_CHRISTI_COMPLEX",
+      "claim_type": "SECULAR_ESCORT_OR_FESTIVAL_COMPONENT",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI18-BB-020",
+      "label": "Include sapeurs in festive procession wearing historic military-style costume",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/314-fete-dieu-darmendaritz-fete-dieu-au-pays-basque-besta-berri",
+      "line": 105,
+      "parent_practice_family": "BESTA_BERRI_BASQUE_CORPUS_CHRISTI_COMPLEX",
+      "claim_type": "SECULAR_ESCORT_OR_FESTIVAL_COMPONENT",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI18-BB-021",
+      "label": "Perform the tambour-major's baton-dance manoeuvres",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/314-fete-dieu-darmendaritz-fete-dieu-au-pays-basque-besta-berri",
+      "line": 106,
+      "parent_practice_family": "BESTA_BERRI_BASQUE_CORPUS_CHRISTI_COMPLEX",
+      "claim_type": "SECULAR_ESCORT_OR_FESTIVAL_COMPONENT",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI18-BB-022",
+      "label": "Post a formal honor guard before the Blessed Sacrament",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/314-fete-dieu-darmendaritz-fete-dieu-au-pays-basque-besta-berri",
+      "line": 110,
+      "parent_practice_family": "BESTA_BERRI_BASQUE_CORPUS_CHRISTI_COMPLEX",
+      "claim_type": "RITUAL_COMPONENT_MODERN_ETHNOGRAPHY",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI18-BB-023",
+      "label": "Carry two religious banners as part of the youth guard's procession",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/314-fete-dieu-darmendaritz-fete-dieu-au-pays-basque-besta-berri",
+      "line": 111,
+      "parent_practice_family": "BESTA_BERRI_BASQUE_CORPUS_CHRISTI_COMPLEX",
+      "claim_type": "RITUAL_COMPONENT_MODERN_ETHNOGRAPHY",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI18-BB-024",
+      "label": "Lead a formally commanded guard parade from the village square to church",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/314-fete-dieu-darmendaritz-fete-dieu-au-pays-basque-besta-berri",
+      "line": 124,
+      "parent_practice_family": "BESTA_BERRI_BASQUE_CORPUS_CHRISTI_COMPLEX",
+      "claim_type": "SECULAR_ESCORT_OR_FESTIVAL_COMPONENT",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI18-BB-025",
+      "label": "Send the ceremonial suisse to seek priest's permission for guard entry",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/314-fete-dieu-darmendaritz-fete-dieu-au-pays-basque-besta-berri",
+      "line": 129,
+      "parent_practice_family": "BESTA_BERRI_BASQUE_CORPUS_CHRISTI_COMPLEX",
+      "claim_type": "SECULAR_ESCORT_OR_FESTIVAL_COMPONENT",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI18-BB-026",
+      "label": "Enter church with leading youth dancers before the slowly marching remainder",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/314-fete-dieu-darmendaritz-fete-dieu-au-pays-basque-besta-berri",
+      "line": 130,
+      "parent_practice_family": "BESTA_BERRI_BASQUE_CORPUS_CHRISTI_COMPLEX",
+      "claim_type": "RITUAL_COMPONENT_MODERN_ETHNOGRAPHY",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI18-BB-027",
+      "label": "Place sacramental honor guards on either side of the church altar",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/314-fete-dieu-darmendaritz-fete-dieu-au-pays-basque-besta-berri",
+      "line": 137,
+      "parent_practice_family": "BESTA_BERRI_BASQUE_CORPUS_CHRISTI_COMPLEX",
+      "claim_type": "RITUAL_COMPONENT_MODERN_ETHNOGRAPHY",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI18-BB-028",
+      "label": "Sound three ceremonial halberd taps before a baton-dance display",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/314-fete-dieu-darmendaritz-fete-dieu-au-pays-basque-besta-berri",
+      "line": 142,
+      "parent_practice_family": "BESTA_BERRI_BASQUE_CORPUS_CHRISTI_COMPLEX",
+      "claim_type": "SECULAR_ESCORT_OR_FESTIVAL_COMPONENT",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI18-BB-029",
+      "label": "Swing paired religious flags toward one another before Mass",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/314-fete-dieu-darmendaritz-fete-dieu-au-pays-basque-besta-berri",
+      "line": 142,
+      "parent_practice_family": "BESTA_BERRI_BASQUE_CORPUS_CHRISTI_COMPLEX",
+      "claim_type": "RITUAL_COMPONENT_MODERN_ETHNOGRAPHY",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI18-BB-030",
+      "label": "Arrange white-clad girls with rose-petal baskets on one side of the church nave",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/314-fete-dieu-darmendaritz-fete-dieu-au-pays-basque-besta-berri",
+      "line": 150,
+      "parent_practice_family": "BESTA_BERRI_BASQUE_CORPUS_CHRISTI_COMPLEX",
+      "claim_type": "RITUAL_COMPONENT_MODERN_ETHNOGRAPHY",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI18-BB-031",
+      "label": "Arrange boys bearing decorated sticks on opposite side of nave",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/314-fete-dieu-darmendaritz-fete-dieu-au-pays-basque-besta-berri",
+      "line": 150,
+      "parent_practice_family": "BESTA_BERRI_BASQUE_CORPUS_CHRISTI_COMPLEX",
+      "claim_type": "RITUAL_COMPONENT_MODERN_ETHNOGRAPHY",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI18-BB-032",
+      "label": "Lift decorated sticks during selected church music and procession",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/314-fete-dieu-darmendaritz-fete-dieu-au-pays-basque-besta-berri",
+      "line": 152,
+      "parent_practice_family": "BESTA_BERRI_BASQUE_CORPUS_CHRISTI_COMPLEX",
+      "claim_type": "RITUAL_COMPONENT_MODERN_ETHNOGRAPHY",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI18-BB-033",
+      "label": "Cast rose petals from baskets only during outdoor procession",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/314-fete-dieu-darmendaritz-fete-dieu-au-pays-basque-besta-berri",
+      "line": 152,
+      "parent_practice_family": "BESTA_BERRI_BASQUE_CORPUS_CHRISTI_COMPLEX",
+      "claim_type": "RITUAL_COMPONENT_MODERN_ETHNOGRAPHY",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI18-BB-034",
+      "label": "Use traditional local instrumental music at moments corresponding to offertory and elevation",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/314-fete-dieu-darmendaritz-fete-dieu-au-pays-basque-besta-berri",
+      "line": 153,
+      "parent_practice_family": "BESTA_BERRI_BASQUE_CORPUS_CHRISTI_COMPLEX",
+      "claim_type": "CONTEMPORARY_LOCAL_MASS_USAGE_NOT_1962",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI18-BB-035",
+      "label": "Combine commanded banner-turning and makilari baton movements during music",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/314-fete-dieu-darmendaritz-fete-dieu-au-pays-basque-besta-berri",
+      "line": 154,
+      "parent_practice_family": "BESTA_BERRI_BASQUE_CORPUS_CHRISTI_COMPLEX",
+      "claim_type": "SECULAR_ESCORT_OR_FESTIVAL_COMPONENT",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI18-BB-036",
+      "label": "Lay freshly cut grass along the path between church and village square",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/314-fete-dieu-darmendaritz-fete-dieu-au-pays-basque-besta-berri",
+      "line": 170,
+      "parent_practice_family": "BESTA_BERRI_BASQUE_CORPUS_CHRISTI_COMPLEX",
+      "claim_type": "MATERIAL_PREPARATION_OR_VARIANT",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI18-BB-037",
+      "label": "Decorate the repository on the village square while Mass is underway",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/314-fete-dieu-darmendaritz-fete-dieu-au-pays-basque-besta-berri",
+      "line": 170,
+      "parent_practice_family": "BESTA_BERRI_BASQUE_CORPUS_CHRISTI_COMPLEX",
+      "claim_type": "MATERIAL_PREPARATION_OR_VARIANT",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI18-BB-038",
+      "label": "After Mass reform the youth guard in customary order for the Corpus Christi route",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/314-fete-dieu-darmendaritz-fete-dieu-au-pays-basque-besta-berri",
+      "line": 176,
+      "parent_practice_family": "BESTA_BERRI_BASQUE_CORPUS_CHRISTI_COMPLEX",
+      "claim_type": "RITUAL_COMPONENT_MODERN_ETHNOGRAPHY",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI18-BB-039",
+      "label": "Carry local processional cross, in some historical accounts with small bells",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/314-fete-dieu-darmendaritz-fete-dieu-au-pays-basque-besta-berri",
+      "line": 179,
+      "parent_practice_family": "BESTA_BERRI_BASQUE_CORPUS_CHRISTI_COMPLEX",
+      "claim_type": "HISTORICAL_TESTIMONY_VARIANT",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI18-BB-040",
+      "label": "Lead with a local double-sided parish banner showing Christ and Saint Cyprien",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/314-fete-dieu-darmendaritz-fete-dieu-au-pays-basque-besta-berri",
+      "line": 180,
+      "parent_practice_family": "BESTA_BERRI_BASQUE_CORPUS_CHRISTI_COMPLEX",
+      "claim_type": "RITUAL_COMPONENT_MODERN_ETHNOGRAPHY",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI18-BB-041",
+      "label": "Include a youth-carried religious banner showing Our Lady and Joan of Arc",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/314-fete-dieu-darmendaritz-fete-dieu-au-pays-basque-besta-berri",
+      "line": 187,
+      "parent_practice_family": "BESTA_BERRI_BASQUE_CORPUS_CHRISTI_COMPLEX",
+      "claim_type": "RITUAL_COMPONENT_MODERN_ETHNOGRAPHY",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI18-BB-042",
+      "label": "Carry priest and Blessed Sacrament under a four-person canopy with servers in front",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/314-fete-dieu-darmendaritz-fete-dieu-au-pays-basque-besta-berri",
+      "line": 193,
+      "parent_practice_family": "BESTA_BERRI_BASQUE_CORPUS_CHRISTI_COMPLEX",
+      "claim_type": "RITUAL_COMPONENT_MODERN_ETHNOGRAPHY",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI18-BB-043",
+      "label": "Alternate sacred song and instrumental music while processing through village",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/314-fete-dieu-darmendaritz-fete-dieu-au-pays-basque-besta-berri",
+      "line": 194,
+      "parent_practice_family": "BESTA_BERRI_BASQUE_CORPUS_CHRISTI_COMPLEX",
+      "claim_type": "RITUAL_COMPONENT_MODERN_ETHNOGRAPHY",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI18-BB-044",
+      "label": "Halt procession at intervals for dancing and flag manoeuvres",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/314-fete-dieu-darmendaritz-fete-dieu-au-pays-basque-besta-berri",
+      "line": 194,
+      "parent_practice_family": "BESTA_BERRI_BASQUE_CORPUS_CHRISTI_COMPLEX",
+      "claim_type": "SECULAR_ESCORT_OR_FESTIVAL_COMPONENT",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI18-BB-045",
+      "label": "Kneel ceremonial guard and canopy-bearers at elevation for repository Benediction",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/314-fete-dieu-darmendaritz-fete-dieu-au-pays-basque-besta-berri",
+      "line": 195,
+      "parent_practice_family": "BESTA_BERRI_BASQUE_CORPUS_CHRISTI_COMPLEX",
+      "claim_type": "RITUAL_COMPONENT_MODERN_ETHNOGRAPHY",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI18-BB-046",
+      "label": "Return the canopy and procession to church for concluding Eucharistic Benediction",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/314-fete-dieu-darmendaritz-fete-dieu-au-pays-basque-besta-berri",
+      "line": 196,
+      "parent_practice_family": "BESTA_BERRI_BASQUE_CORPUS_CHRISTI_COMPLEX",
+      "claim_type": "RITUAL_COMPONENT_MODERN_ETHNOGRAPHY",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI18-BB-047",
+      "label": "Circumnavigate village square in martial dance after religious part of festival",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/314-fete-dieu-darmendaritz-fete-dieu-au-pays-basque-besta-berri",
+      "line": 197,
+      "parent_practice_family": "BESTA_BERRI_BASQUE_CORPUS_CHRISTI_COMPLEX",
+      "claim_type": "SECULAR_ESCORT_OR_FESTIVAL_COMPONENT",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI18-BB-048",
+      "label": "Hold afternoon Vespers with customary guard's ceremonial danced entry",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/314-fete-dieu-darmendaritz-fete-dieu-au-pays-basque-besta-berri",
+      "line": 203,
+      "parent_practice_family": "BESTA_BERRI_BASQUE_CORPUS_CHRISTI_COMPLEX",
+      "claim_type": "RITUAL_COMPONENT_MODERN_ETHNOGRAPHY",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI18-BB-049",
+      "label": "On Octave Sunday move procession to afternoon instead of after morning Mass",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/314-fete-dieu-darmendaritz-fete-dieu-au-pays-basque-besta-berri",
+      "line": 206,
+      "parent_practice_family": "BESTA_BERRI_BASQUE_CORPUS_CHRISTI_COMPLEX",
+      "claim_type": "RITUAL_COMPONENT_MODERN_ETHNOGRAPHY",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI18-BB-050",
+      "label": "Suisse leads civil council members to reserved pews before guard entry",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/314-fete-dieu-darmendaritz-fete-dieu-au-pays-basque-besta-berri",
+      "line": 210,
+      "parent_practice_family": "BESTA_BERRI_BASQUE_CORPUS_CHRISTI_COMPLEX",
+      "claim_type": "HISTORICAL_TESTIMONY_VARIANT",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI18-BB-051",
+      "label": "Ceremonial gendarmes straighten guards' dress at start of Mass or Vespers",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/314-fete-dieu-darmendaritz-fete-dieu-au-pays-basque-besta-berri",
+      "line": 211,
+      "parent_practice_family": "BESTA_BERRI_BASQUE_CORPUS_CHRISTI_COMPLEX",
+      "claim_type": "HISTORICAL_TESTIMONY_VARIANT",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI18-BB-052",
+      "label": "Organise Besta Berri Ttipi children's procession in adult-style costume, practised since 1946",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/314-fete-dieu-darmendaritz-fete-dieu-au-pays-basque-besta-berri",
+      "line": 213,
+      "parent_practice_family": "BESTA_BERRI_BASQUE_CORPUS_CHRISTI_COMPLEX",
+      "claim_type": "HISTORICAL_TESTIMONY_VARIANT",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI18-BB-053",
+      "label": "Adorn repository with rugs, ferns, flowers, chandeliers and decorated arches",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/314-fete-dieu-darmendaritz-fete-dieu-au-pays-basque-besta-berri",
+      "line": 217,
+      "parent_practice_family": "BESTA_BERRI_BASQUE_CORPUS_CHRISTI_COMPLEX",
+      "claim_type": "MATERIAL_PREPARATION_OR_VARIANT",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI18-BB-054",
+      "label": "Historically suspend decorated sheets at household windows along procession route",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/314-fete-dieu-darmendaritz-fete-dieu-au-pays-basque-besta-berri",
+      "line": 218,
+      "parent_practice_family": "BESTA_BERRI_BASQUE_CORPUS_CHRISTI_COMPLEX",
+      "claim_type": "HISTORICAL_TESTIMONY_VARIANT",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI18-BB-055",
+      "label": "Historically lay and repeatedly reposition white linen sheets before the Eucharistic canopy",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/314-fete-dieu-darmendaritz-fete-dieu-au-pays-basque-besta-berri",
+      "line": 218,
+      "parent_practice_family": "BESTA_BERRI_BASQUE_CORPUS_CHRISTI_COMPLEX",
+      "claim_type": "HISTORICAL_TESTIMONY_VARIANT",
+      "identity_certified": false,
+      "app_publication": "NONE"
+    },
+    {
+      "id": "FRPCI18-BB-056",
+      "label": "Historically erect an Octave repository at house Hodia",
+      "source": "https://www.pci-lab.fr/fiche-d-inventaire/fiche/314-fete-dieu-darmendaritz-fete-dieu-au-pays-basque-besta-berri",
+      "line": 219,
+      "parent_practice_family": "BESTA_BERRI_BASQUE_CORPUS_CHRISTI_COMPLEX",
+      "claim_type": "HISTORICAL_TESTIMONY_VARIANT",
+      "identity_certified": false,
+      "app_publication": "NONE"
     }
   ]
 }
