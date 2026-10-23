@@ -510,6 +510,8 @@ assert.equal(criticalTrial.status,"FIVE_CRITICAL_SEAMS_CONDITIONALLY_ASSEMBLED_A
 assert.equal(criticalTrial.noAutomatedPromotion,true);
 assert.equal(criticalTrial.hinges,5);
 assert.equal(criticalTrial.sourceOwnerIdsInP0Candidates,7);
+assert.equal(criticalTrial.preferredTrialSourceOwners,6);
+assert.equal(criticalTrial.optionalVisionTrialSourceOwners,1);
 assert.equal(criticalTrial.caseResults.length,5);
 assert.equal(criticalTrial.sourceOwnership,"REUSE_ORIGINAL_BEATS_AND_SOURCE_WORKLIST_NO_PARALLEL_MANUSCRIPT");
 assert.equal(ledger.totals.p0CriticalSeamsMechanicallyCompared,5);
@@ -584,7 +586,13 @@ const sourceRows=criticalTrial.caseResults.map(row=>{
  }
  return {row,variant};
 });
-assert.equal(linkedSourceOwners.size,7);
+assert.equal(linkedSourceOwners.size,6);
+const genreOnlyRow=criticalTrial.caseResults.find(x=>x.hingeId==="HS-HINGE-34");
+assert.deepEqual(genreOnlyRow.sourceDecisionOwnerIds,[]);
+assert.deepEqual(genreOnlyRow.optionalSourceDecisionOwnerIds,["HS-W-SRC-HS-P3-CF-14"]);
+assert.ok(proposedById.has(genreOnlyRow.optionalSourceDecisionOwnerIds[0]));
+assert.equal(proposedById.get(genreOnlyRow.optionalSourceDecisionOwnerIds[0]).approval.selected,false);
+assert.equal(new Set([...linkedSourceOwners,...genreOnlyRow.optionalSourceDecisionOwnerIds]).size,7);
 assert.equal(p0SelectedVerseKeys.size,33);
 const originalCost=criticalTrial.combinedUnapprovedReadingCost;
 assert.equal(originalCost.genreBoundaryMandatoryAdditionalVerses,0);
