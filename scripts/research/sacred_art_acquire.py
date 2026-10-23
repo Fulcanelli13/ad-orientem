@@ -94,6 +94,7 @@ def museum_metadata(rec):
 
 def download(rec, out_dir, budget):
     url=safe_url(rec['resolved_original_url'])
+    if urlsplit(url).hostname=='upload.wikimedia.org':time.sleep(1.5)
     name=rec['asset_source_id']
     base=out_dir/name
     for old in out_dir.glob(name+'.*'):
