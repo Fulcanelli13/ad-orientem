@@ -37,6 +37,12 @@ export function routePilotQuestion(store,input){
  const question=String(input.question||'').trim();
  if(question.length<4||question.length>240)return {status:'unmatched',reason:'invalid_question'};
  const normalized=normalize(question);
+ // Exact questions from the original P6 source owner remain available even
+ // when their ordinary grammar omits our manually chosen topic keyphrases.
+ const exact=chapter.nodes.find(n=>normalize(n.q[input.language])===normalized);
+ if(exact)return {status:'matched',chapterId:chapter.id,nodeId:exact.id,
+  intentKey:'exact_canonical_dialogue_question',
+  method:'ORIGINAL_OWNER_QUESTION_EXACT_MATCH'};
  const found=topics.find(x=>x.pattern.test(normalized));
  if(!found)return {status:'unmatched',reason:'no_explicit_bounded_intent'};
  if(!chapter.nodes.some(x=>x.id===found.nodeId))
