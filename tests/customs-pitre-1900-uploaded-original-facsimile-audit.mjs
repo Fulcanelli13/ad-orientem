@@ -57,4 +57,22 @@ assert.equal(catalog.summary.identity_working_rows.provisional_after_53_no_owner
 assert.equal(catalog.summary.identity_working_rows.final_uniquely_verified_customs_added,0);
 assert.equal(catalog.summary.no_new_app_publications,true);
 assert.equal(catalog.source_dataset_paths.pitre_1900_uploaded_original_scan_page_verification,'data/customs/master/pitre-1900-uploaded-facsimile-25p0-16-wave03-page-gates.v1.json');
+const indexedOld=new Map(catalog.external_source_observations_pitre_original_1900_ocr.map(r=>[r.id,r]));
+const indexedNew=new Map(catalog.external_source_observations_pitre_original_1900_new_ocr.map(r=>[r.id,r]));
+for(const p of source.original_129_p0_page_checks){
+ const idx=indexedOld.get(p.source_id);
+ assert.equal(idx.printed_scan_page_verified,true);
+ assert.equal(idx.original_1900_printed_page,p.printed_page);
+ assert.equal(idx.original_1900_scan_pdf_page_1_based,p.pdf_page_1_based);
+ assert.equal(idx.original_page_evidence_anchor,p.italian_text_layer_anchor);
+}
+for(const p of source.additional_wave03_highrisk_page_checks){
+ const idx=indexedNew.get(p.source_id);
+ assert.equal(idx.original_printed_folio_verified,true);
+ assert.equal(idx.original_1900_printed_page,p.printed_page);
+ assert.equal(idx.original_1900_scan_pdf_page_1_based,p.pdf_page_1_based);
+ assert.equal(idx.original_page_evidence_anchor,p.italian_text_layer_anchor);
+}
+assert.equal(catalog.external_source_observations_pitre_original_1900_ocr.filter(r=>r.printed_scan_page_verified).length,25);
+assert.equal(catalog.external_source_observations_pitre_original_1900_new_ocr.filter(r=>r.original_printed_folio_verified).length,16);
 console.log('Pitrè 1900 UPLOADED SCAN: 25/25 P0 plus 16 high-risk records located in 33 rendered printed original pages, 3407 corpus unchanged, zero rite/identity/publication certification — PASS');
