@@ -25,7 +25,9 @@
     "CHANEY_NEW_AUTHOR_NOT_170_VERIFIED_CUSTOMS": "Chaney's 1955 Grailville Twelve Days of Christmas is a distinct authored book and textual witness, but cites or draws on Mueller and earlier authors and includes modern recommendations alongside reported practice, ritual quotations and firsthand Grailville activities. Index 170 as source observations, not 170 new customs or 170 independent corroborations; avoid old printed page citations.",
     "CHANEY_AUTOMATED_RETRIEVAL_IS_NOT_SEMANTIC_PROOF": "170 Chaney source observations compared lexically to 490 master/provisional/McLoughlin-family labels plus 604 prior named author source-observation labels. Candidate hints include obvious false positives; 65 observations without hints are not proven novel. Do not promote to master or Calendar.",
     "CHANEY_MANUAL_LABEL_RELATIONS_SCOPE": "24 manually compared source-action labels and Chaney text locator to prior research/source labels: 12 same described action core; 6 explicitly false lexical matches; other relationships include components, preparation or related actions. This is not full dual-source original text verification or proof of separate independent witnesses; zero final merges and no new canonical identities.",
-    "FRANCE_PCI_127_MULTICOMPONENT_ETHNOGRAPHY": "Two distinct French regional inventory documents: Breton pardons (2020: 71 details) and Basque Besta Berri (2018: 56 details), TWO practice complexes, not 127 newly distinct customs. Includes ritual acts, community preparations, historic variants, and folk beliefs. 1962 ritual authority not checked."
+    "FRANCE_PCI_127_MULTICOMPONENT_ETHNOGRAPHY": "Two distinct French regional inventory documents: Breton pardons (2020: 71 details) and Basque Besta Berri (2018: 56 details), TWO practice complexes, not 127 newly distinct customs. Includes ritual acts, community preparations, historic variants, and folk beliefs. 1962 ritual authority not checked.",
+    "LENT_EASTER_EXCERPTS_NOT_HISTORIC_VERIFIED_CUSTOMS": "The WFF editor's 1992 family guidance is partly a postconciliar liturgical-context treatment with many modern household suggestions, and Hynes (1977) CatholicCulture pages are selected excerpts not a full-book audit. Source dates, suggestions, 1962 rite distinctions, historical claims, and ministerial blessing boundaries are preserved. 125 is a source observation count only.",
+    "LENT_EASTER_LEXICAL_SCREEN_CANNOT_MERGE": "Automated lexical candidate lookup yielded possible links into prior groups and sources. Similar words do not establish the same primary action, practice identity, historical independent corroboration or ritual approval. No matches are certified."
   },
   "summary": {
     "source_observations": {
@@ -45,8 +47,8 @@
         "ch14_to_28": 121
       },
       "mcloughlin_fulltext_source_observations": 70,
-      "total_source_detail_rows_including_external": 1926,
-      "external_plus_weiser_count_note": "1,025 Weiser + 70 McLoughlin + 198 Stokes + 132 Trapp/Berger/Newland online excerpts + 204 Mueller/Kelly EWTN + 170 Elsa Chaney (1955) EWTN = 1,799 non-deduplicated source/detail research rows. Another 100 second-pass Mueller detail rows are preserved separately as NONADDITIVE to the 122 existing Mueller source observations. None is a count of distinct Catholic customs. Plus 127 French national intangible-heritage inventory detail observations (71 Brittany, 56 Basque), all source components/variants not 127 distinct practice families.",
+      "total_source_detail_rows_including_external": 2051,
+      "external_plus_weiser_count_note": "1,025 Weiser source/detail +70 McLoughlin +198 Stokes +132 Trapp/Berger/Newland excerpts +204 Mueller/Kelly +170 Chaney +127 French PCI Breton/Basque regional detail +68 WFF1992 Lent/Easter excerpts +57 Hynes1977 Lent/Holy Week excerpts =2,051 source/detail observations, NOT verified distinct customs; an additional 100 Mueller same-edition secondary observations remain nonadditive.",
       "stokes_1955_online_source_action_observations": 198,
       "catholicculture_trapp_berger_newland_excerpt_source_actions": 132,
       "mueller_kelly_ewtn_source_action_observations": 204,
@@ -55,7 +57,9 @@
       "mueller_second_pass_detail_rows_not_added_to_source_total": 100,
       "chaney_1955_online_source_observations": 170,
       "france_pci_breton_pardon_source_detail_rows": 71,
-      "france_pci_basque_besta_berri_source_detail_rows": 56
+      "france_pci_basque_besta_berri_source_detail_rows": 56,
+      "wff1992_lent_easter_excerpt_actions": 68,
+      "hynes1977_lent_holy_week_excerpt_actions": 57
     },
     "identity_working_rows": {
       "previously_existing_master_identities": 56,
@@ -147,7 +151,12 @@
       "chaney_1955_manually_reviewed_label_level_relationship_pairs": 24,
       "chaney_1955_action_core_label_matches": 12,
       "chaney_1955_false_lexical_matches_rejected": 6,
-      "chaney_1955_manual_reviews_certifying_historical_identity": 0
+      "chaney_1955_manual_reviews_certifying_historical_identity": 0,
+      "lent_easter_1992_1977_research_only_source_actions": 125,
+      "lent_easter_125_source_rows_with_lexical_owner_hints": 50,
+      "lent_easter_125_source_rows_with_lexical_prior_witness_hints": 84,
+      "lent_easter_125_source_rows_without_search_hint": 34,
+      "lent_easter_125_new_verified_distinct_customs": 0
     },
     "no_new_app_publications": true
   },
@@ -162,7 +171,9 @@
     "kelly_1959": "Rev. George A. Kelly, The Catholic Family Handbook (1959), EWTN text chapter 16",
     "chaney_1955": "Elsa Chaney, The Twelve Days of Christmas (Grailville Writing Center, 1955; EWTN full online transcription)",
     "france_pci_breton_pardons_2020": "Les pardons et troménies en Bretagne (2020), French National Intangible Cultural Heritage Inventory",
-    "france_pci_basque_besta_berri_2018": "Besta Berri/Fête-Dieu au Pays Basque (2018), French National Intangible Cultural Heritage Inventory"
+    "france_pci_basque_besta_berri_2018": "Besta Berri/Fête-Dieu au Pays Basque (2018), French National Intangible Cultural Heritage Inventory",
+    "wff_1992_lent_easter": "Helen Hull Hitchcock (ed.), Women for Faith & Family, Lent & Easter: A Sourcebook for Families (introduction dated 1992), EWTN excerpt",
+    "hynes_1977_holy_week": "Emerson and Arlene Hynes, Lent and Holy Week in the Home (1977), seven CatholicCulture excerpts"
   },
   "source_dataset_paths": {
     "master": "data/customs/master/working-master.v1.json",
@@ -199,7 +210,9 @@
     "chaney_1955_170_candidate_lookup": "data/customs/master/chaney-1955-170-cross-source-nonmerging-candidate-review.v1.json",
     "chaney_1955_24_label_action_relationships": "data/customs/master/chaney-1955-action-description-24-manual-relations.v1.json",
     "france_pci_breton_pardons": "data/customs/master/france-2020-breton-pardons-pci-regional-detail-pass.v1.json",
-    "france_pci_basque_besta_berri": "data/customs/master/france-2018-basque-besta-berri-pci-detail-pass.v1.json"
+    "france_pci_basque_besta_berri": "data/customs/master/france-2018-basque-besta-berri-pci-detail-pass.v1.json",
+    "lent_easter_wff1992_hynes1977": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+    "lent_easter_125_lexical_lookup": "data/customs/master/lent-easter-125-source-candidate-lookup.v1.json"
   },
   "existing_master_identities": [
     {
@@ -23898,6 +23911,1758 @@
       "claim_type": "HISTORICAL_TESTIMONY_VARIANT",
       "identity_certified": false,
       "app_publication": "NONE"
+    }
+  ],
+  "external_source_observations_wff_hynes": [
+    {
+      "id": "WFF92-EWTN-001",
+      "label": "Family confession as preparation on Shrove Tuesday",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "WFF1992_LENT_EASTER_EXCERPT",
+      "section": "LENT",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.ewtn.com/catholicism/library/lent--easter-a-sourcebook-for-families-10456",
+      "web_lines": [
+        156,
+        156
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "WFF92-EWTN-002",
+      "label": "Choose age-appropriate Lenten self-denial commitments with children",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "WFF1992_LENT_EASTER_EXCERPT",
+      "section": "LENT",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.ewtn.com/catholicism/library/lent--easter-a-sourcebook-for-families-10456",
+      "web_lines": [
+        157,
+        157
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "WFF92-EWTN-003",
+      "label": "Establish additional household prayers throughout Lent",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "WFF1992_LENT_EASTER_EXCERPT",
+      "section": "LENT",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.ewtn.com/catholicism/library/lent--easter-a-sourcebook-for-families-10456",
+      "web_lines": [
+        158,
+        158
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "WFF92-EWTN-004",
+      "label": "Add a shared evening Angelus at the family table",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "WFF1992_LENT_EASTER_EXCERPT",
+      "section": "LENT",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.ewtn.com/catholicism/library/lent--easter-a-sourcebook-for-families-10456",
+      "web_lines": [
+        159,
+        159
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "WFF92-EWTN-005",
+      "label": "Introduce a family prayer period using the Daily Office",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "WFF1992_LENT_EASTER_EXCERPT",
+      "section": "LENT",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.ewtn.com/catholicism/library/lent--easter-a-sourcebook-for-families-10456",
+      "web_lines": [
+        159,
+        159
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "WFF92-EWTN-006",
+      "label": "Avoid instrumental music at home between Holy Thursday Gloria and Easter vigil",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "WFF1992_LENT_EASTER_EXCERPT",
+      "section": "LENT",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.ewtn.com/catholicism/library/lent--easter-a-sourcebook-for-families-10456",
+      "web_lines": [
+        174,
+        174
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "WFF92-EWTN-007",
+      "label": "Teach children's voluntary self-denial during Lent",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "WFF1992_LENT_EASTER_EXCERPT",
+      "section": "LENT",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.ewtn.com/catholicism/library/lent--easter-a-sourcebook-for-families-10456",
+      "web_lines": [
+        181,
+        181
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "WFF92-EWTN-008",
+      "label": "Reduce household television during Lenten penance",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "WFF1992_LENT_EASTER_EXCERPT",
+      "section": "LENT",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.ewtn.com/catholicism/library/lent--easter-a-sourcebook-for-families-10456",
+      "web_lines": [
+        182,
+        182
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "WFF92-EWTN-009",
+      "label": "Limit discretionary shopping or leisure outings in Lent",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "WFF1992_LENT_EASTER_EXCERPT",
+      "section": "LENT",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.ewtn.com/catholicism/library/lent--easter-a-sourcebook-for-families-10456",
+      "web_lines": [
+        182,
+        182
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "WFF92-EWTN-010",
+      "label": "Donate clothing or possessions to those in need for Lent",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "WFF1992_LENT_EASTER_EXCERPT",
+      "section": "LENT",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.ewtn.com/catholicism/library/lent--easter-a-sourcebook-for-families-10456",
+      "web_lines": [
+        184,
+        184
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "WFF92-EWTN-011",
+      "label": "Volunteer charitable services in Lent",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "WFF1992_LENT_EASTER_EXCERPT",
+      "section": "LENT",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.ewtn.com/catholicism/library/lent--easter-a-sourcebook-for-families-10456",
+      "web_lines": [
+        184,
+        184
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "WFF92-EWTN-012",
+      "label": "Attend weekday Mass during Lent when possible",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "WFF1992_LENT_EASTER_EXCERPT",
+      "section": "LENT",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.ewtn.com/catholicism/library/lent--easter-a-sourcebook-for-families-10456",
+      "web_lines": [
+        188,
+        188
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "WFF92-EWTN-013",
+      "label": "Create an Alleluia banner to put away for Lent and display at Easter",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "WFF1992_LENT_EASTER_EXCERPT",
+      "section": "LENT",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.ewtn.com/catholicism/library/lent--easter-a-sourcebook-for-families-10456",
+      "web_lines": [
+        190,
+        190
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "WFF92-EWTN-014",
+      "label": "Include an additional Lenten prayer at family meals",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "WFF1992_LENT_EASTER_EXCERPT",
+      "section": "LENT",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.ewtn.com/catholicism/library/lent--easter-a-sourcebook-for-families-10456",
+      "web_lines": [
+        191,
+        191
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "WFF92-EWTN-015",
+      "label": "Read Scripture passages about fasting and penance as family study",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "WFF1992_LENT_EASTER_EXCERPT",
+      "section": "LENT",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.ewtn.com/catholicism/library/lent--easter-a-sourcebook-for-families-10456",
+      "web_lines": [
+        193,
+        193
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "WFF92-EWTN-016",
+      "label": "Replace some television with a structured Lenten family reading program",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "WFF1992_LENT_EASTER_EXCERPT",
+      "section": "LENT",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.ewtn.com/catholicism/library/lent--easter-a-sourcebook-for-families-10456",
+      "web_lines": [
+        196,
+        196
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "WFF92-EWTN-017",
+      "label": "Read aloud the Bible in an evening family session during Lent",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "WFF1992_LENT_EASTER_EXCERPT",
+      "section": "LENT",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.ewtn.com/catholicism/library/lent--easter-a-sourcebook-for-families-10456",
+      "web_lines": [
+        196,
+        196
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "WFF92-EWTN-018",
+      "label": "Read Catholic spiritual classics aloud with family in Lent",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "WFF1992_LENT_EASTER_EXCERPT",
+      "section": "LENT",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.ewtn.com/catholicism/library/lent--easter-a-sourcebook-for-families-10456",
+      "web_lines": [
+        196,
+        196
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "WFF92-EWTN-019",
+      "label": "English medieval Mothering Sunday observance linked to Laetare Sunday",
+      "kind": "HISTORICAL_OR_ORIGIN_REPORT_UNVERIFIED",
+      "source_work": "WFF1992_LENT_EASTER_EXCERPT",
+      "section": "PASSIONTIDE_PALM",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.ewtn.com/catholicism/library/lent--easter-a-sourcebook-for-families-10456",
+      "web_lines": [
+        201,
+        201
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "WFF92-EWTN-020",
+      "label": "Pray Stations of the Cross as Passiontide devotion",
+      "kind": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "source_work": "WFF1992_LENT_EASTER_EXCERPT",
+      "section": "PASSIONTIDE_PALM",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.ewtn.com/catholicism/library/lent--easter-a-sourcebook-for-families-10456",
+      "web_lines": [
+        208,
+        208
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "WFF92-EWTN-021",
+      "label": "Pray the Rosary and Sorrowful Mysteries as Passiontide devotion",
+      "kind": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "source_work": "WFF1992_LENT_EASTER_EXCERPT",
+      "section": "PASSIONTIDE_PALM",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.ewtn.com/catholicism/library/lent--easter-a-sourcebook-for-families-10456",
+      "web_lines": [
+        208,
+        208
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "WFF92-EWTN-022",
+      "label": "Say five prayers in honor of Christ's wounds during Passiontide",
+      "kind": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "source_work": "WFF1992_LENT_EASTER_EXCERPT",
+      "section": "PASSIONTIDE_PALM",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.ewtn.com/catholicism/library/lent--easter-a-sourcebook-for-families-10456",
+      "web_lines": [
+        208,
+        208
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "WFF92-EWTN-023",
+      "label": "Keep a devotional remembrance of Mary's Seven Sorrows in Passiontide",
+      "kind": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "source_work": "WFF1992_LENT_EASTER_EXCERPT",
+      "section": "PASSIONTIDE_PALM",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.ewtn.com/catholicism/library/lent--easter-a-sourcebook-for-families-10456",
+      "web_lines": [
+        209,
+        209
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "WFF92-EWTN-024",
+      "label": "Participate in priestly blessing and distribution of Palm Sunday palms",
+      "kind": "PUBLIC_LITURGICAL_CEREMONY_CONTEXT_NOT_FAMILY_CUSTOM",
+      "source_work": "WFF1992_LENT_EASTER_EXCERPT",
+      "section": "PASSIONTIDE_PALM",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.ewtn.com/catholicism/library/lent--easter-a-sourcebook-for-families-10456",
+      "web_lines": [
+        218,
+        218
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "WFF92-EWTN-025",
+      "label": "Carry blessed palms at Palm Sunday procession",
+      "kind": "PUBLIC_LITURGICAL_CEREMONY_CONTEXT_NOT_FAMILY_CUSTOM",
+      "source_work": "WFF1992_LENT_EASTER_EXCERPT",
+      "section": "PASSIONTIDE_PALM",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.ewtn.com/catholicism/library/lent--easter-a-sourcebook-for-families-10456",
+      "web_lines": [
+        218,
+        218
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "WFF92-EWTN-026",
+      "label": "Medieval Christians' reported fasting across the days of Holy Week",
+      "kind": "HISTORICAL_OR_ORIGIN_REPORT_UNVERIFIED",
+      "source_work": "WFF1992_LENT_EASTER_EXCERPT",
+      "section": "HOLY_WEEK",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.ewtn.com/catholicism/library/lent--easter-a-sourcebook-for-families-10456",
+      "web_lines": [
+        226,
+        226
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "WFF92-EWTN-027",
+      "label": "Attend parish Tenebrae with Lamentations of Jeremiah chants",
+      "kind": "PUBLIC_LITURGICAL_CEREMONY_CONTEXT_NOT_FAMILY_CUSTOM",
+      "source_work": "WFF1992_LENT_EASTER_EXCERPT",
+      "section": "HOLY_WEEK",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.ewtn.com/catholicism/library/lent--easter-a-sourcebook-for-families-10456",
+      "web_lines": [
+        237,
+        237
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "WFF92-EWTN-028",
+      "label": "Pray an adapted family Tenebrae devotion when church service is unavailable",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "WFF1992_LENT_EASTER_EXCERPT",
+      "section": "HOLY_WEEK",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.ewtn.com/catholicism/library/lent--easter-a-sourcebook-for-families-10456",
+      "web_lines": [
+        240,
+        240
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "WFF92-EWTN-029",
+      "label": "Prepare a simplified Christian symbolic Holy Thursday Passover-style meal",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "WFF1992_LENT_EASTER_EXCERPT",
+      "section": "HOLY_WEEK",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.ewtn.com/catholicism/library/lent--easter-a-sourcebook-for-families-10456",
+      "web_lines": [
+        249,
+        249
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "WFF92-EWTN-030",
+      "label": "Spring cleaning associated with Holy Thursday and paschal household preparation",
+      "kind": "HISTORICAL_OR_ORIGIN_REPORT_UNVERIFIED",
+      "source_work": "WFF1992_LENT_EASTER_EXCERPT",
+      "section": "HOLY_WEEK",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.ewtn.com/catholicism/library/lent--easter-a-sourcebook-for-families-10456",
+      "web_lines": [
+        250,
+        250
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "WFF92-EWTN-031",
+      "label": "Return to church after Holy Thursday Mass for adoration",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "WFF1992_LENT_EASTER_EXCERPT",
+      "section": "HOLY_WEEK",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.ewtn.com/catholicism/library/lent--easter-a-sourcebook-for-families-10456",
+      "web_lines": [
+        252,
+        252
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "WFF92-EWTN-032",
+      "label": "Use abbreviated staged elements of Christian symbolic Holy Thursday supper",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "WFF1992_LENT_EASTER_EXCERPT",
+      "section": "HOLY_WEEK",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.ewtn.com/catholicism/library/lent--easter-a-sourcebook-for-families-10456",
+      "web_lines": [
+        263,
+        263
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "WFF92-EWTN-033",
+      "label": "Start symbolic Holy Thursday family meal early to accommodate evening Mass",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "WFF1992_LENT_EASTER_EXCERPT",
+      "section": "HOLY_WEEK",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.ewtn.com/catholicism/library/lent--easter-a-sourcebook-for-families-10456",
+      "web_lines": [
+        265,
+        265
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "WFF92-EWTN-034",
+      "label": "Bring children to parish Stations of the Cross during Lent",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "WFF1992_LENT_EASTER_EXCERPT",
+      "section": "HOLY_WEEK",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.ewtn.com/catholicism/library/lent--easter-a-sourcebook-for-families-10456",
+      "web_lines": [
+        270,
+        270
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "WFF92-EWTN-035",
+      "label": "Prepare a home Stations candelabrum inspired by Tenebrae",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "WFF1992_LENT_EASTER_EXCERPT",
+      "section": "HOLY_WEEK",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.ewtn.com/catholicism/library/lent--easter-a-sourcebook-for-families-10456",
+      "web_lines": [
+        273,
+        273
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "WFF92-EWTN-036",
+      "label": "Family prays Stations together at home on evenings of Holy Week",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "WFF1992_LENT_EASTER_EXCERPT",
+      "section": "HOLY_WEEK",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.ewtn.com/catholicism/library/lent--easter-a-sourcebook-for-families-10456",
+      "web_lines": [
+        274,
+        274
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "WFF92-EWTN-037",
+      "label": "Home Stations especially kept on Wednesday Thursday and Friday of Holy Week",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "WFF1992_LENT_EASTER_EXCERPT",
+      "section": "HOLY_WEEK",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.ewtn.com/catholicism/library/lent--easter-a-sourcebook-for-families-10456",
+      "web_lines": [
+        274,
+        274
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "WFF92-EWTN-038",
+      "label": "Attend Good Friday church services with the family",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "WFF1992_LENT_EASTER_EXCERPT",
+      "section": "GOOD_FRIDAY",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.ewtn.com/catholicism/library/lent--easter-a-sourcebook-for-families-10456",
+      "web_lines": [
+        290,
+        290
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "WFF92-EWTN-039",
+      "label": "Visit church to pray Stations when unable to attend Good Friday services",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "WFF1992_LENT_EASTER_EXCERPT",
+      "section": "GOOD_FRIDAY",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.ewtn.com/catholicism/library/lent--easter-a-sourcebook-for-families-10456",
+      "web_lines": [
+        290,
+        290
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "WFF92-EWTN-040",
+      "label": "Serve European cross-marked buns on Good Friday",
+      "kind": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "source_work": "WFF1992_LENT_EASTER_EXCERPT",
+      "section": "GOOD_FRIDAY",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.ewtn.com/catholicism/library/lent--easter-a-sourcebook-for-families-10456",
+      "web_lines": [
+        291,
+        291
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "WFF92-EWTN-041",
+      "label": "Keep devotional observance during noon-to-three hours of Good Friday",
+      "kind": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "source_work": "WFF1992_LENT_EASTER_EXCERPT",
+      "section": "GOOD_FRIDAY",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.ewtn.com/catholicism/library/lent--easter-a-sourcebook-for-families-10456",
+      "web_lines": [
+        292,
+        292
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "WFF92-EWTN-042",
+      "label": "Maintain quieter household with devotional reading on Good Friday",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "WFF1992_LENT_EASTER_EXCERPT",
+      "section": "GOOD_FRIDAY",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.ewtn.com/catholicism/library/lent--easter-a-sourcebook-for-families-10456",
+      "web_lines": [
+        292,
+        292
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "WFF92-EWTN-043",
+      "label": "Take on an unpleasant overdue household task as Good Friday penance",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "WFF1992_LENT_EASTER_EXCERPT",
+      "section": "GOOD_FRIDAY",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.ewtn.com/catholicism/library/lent--easter-a-sourcebook-for-families-10456",
+      "web_lines": [
+        293,
+        293
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "WFF92-EWTN-044",
+      "label": "Give a religious medal to a child and ask priest to bless it",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "WFF1992_LENT_EASTER_EXCERPT",
+      "section": "GOOD_FRIDAY",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.ewtn.com/catholicism/library/lent--easter-a-sourcebook-for-families-10456",
+      "web_lines": [
+        308,
+        308
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "WFF92-EWTN-045",
+      "label": "Keep holy water at the door for making the Sign of Cross at home",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "WFF1992_LENT_EASTER_EXCERPT",
+      "section": "GOOD_FRIDAY",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.ewtn.com/catholicism/library/lent--easter-a-sourcebook-for-families-10456",
+      "web_lines": [
+        310,
+        310
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "WFF92-EWTN-046",
+      "label": "Ask children to observe priestly and lay signs of cross while attending Mass",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "WFF1992_LENT_EASTER_EXCERPT",
+      "section": "GOOD_FRIDAY",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.ewtn.com/catholicism/library/lent--easter-a-sourcebook-for-families-10456",
+      "web_lines": [
+        312,
+        312
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "WFF92-EWTN-047",
+      "label": "Maintain a quiet domestic atmosphere on Holy Saturday",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "WFF1992_LENT_EASTER_EXCERPT",
+      "section": "HOLY_SATURDAY_EASTER_VIGIL",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.ewtn.com/catholicism/library/lent--easter-a-sourcebook-for-families-10456",
+      "web_lines": [
+        316,
+        316
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "WFF92-EWTN-048",
+      "label": "Prepare Easter foods and home arrangements together on Holy Saturday",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "WFF1992_LENT_EASTER_EXCERPT",
+      "section": "HOLY_SATURDAY_EASTER_VIGIL",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.ewtn.com/catholicism/library/lent--easter-a-sourcebook-for-families-10456",
+      "web_lines": [
+        317,
+        317
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "WFF92-EWTN-049",
+      "label": "Keep Easter decorations put away until Easter itself",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "WFF1992_LENT_EASTER_EXCERPT",
+      "section": "HOLY_SATURDAY_EASTER_VIGIL",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.ewtn.com/catholicism/library/lent--easter-a-sourcebook-for-families-10456",
+      "web_lines": [
+        320,
+        320
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "WFF92-EWTN-050",
+      "label": "Light a family Easter candle at home if unable to attend the Vigil",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "WFF1992_LENT_EASTER_EXCERPT",
+      "section": "HOLY_SATURDAY_EASTER_VIGIL",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.ewtn.com/catholicism/library/lent--easter-a-sourcebook-for-families-10456",
+      "web_lines": [
+        328,
+        328
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "WFF92-EWTN-051",
+      "label": "Keep Easter household candle burning at meals through Easter season",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "WFF1992_LENT_EASTER_EXCERPT",
+      "section": "HOLY_SATURDAY_EASTER_VIGIL",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.ewtn.com/catholicism/library/lent--easter-a-sourcebook-for-families-10456",
+      "web_lines": [
+        328,
+        328
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "WFF92-EWTN-052",
+      "label": "Light a symbolic new Easter fire safely outdoors or in heatproof vessel",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "WFF1992_LENT_EASTER_EXCERPT",
+      "section": "HOLY_SATURDAY_EASTER_VIGIL",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.ewtn.com/catholicism/library/lent--easter-a-sourcebook-for-families-10456",
+      "web_lines": [
+        329,
+        329
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "WFF92-EWTN-053",
+      "label": "Exchange traditional resurrection greetings on Easter morning",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "WFF1992_LENT_EASTER_EXCERPT",
+      "section": "EASTER_DAY",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.ewtn.com/catholicism/library/lent--easter-a-sourcebook-for-families-10456",
+      "web_lines": [
+        333,
+        333
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "WFF92-EWTN-054",
+      "label": "Historical Alleluia sung by laborers during their work in Easter season",
+      "kind": "HISTORICAL_OR_ORIGIN_REPORT_UNVERIFIED",
+      "source_work": "WFF1992_LENT_EASTER_EXCERPT",
+      "section": "EASTER_DAY",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.ewtn.com/catholicism/library/lent--easter-a-sourcebook-for-families-10456",
+      "web_lines": [
+        342,
+        342
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "WFF92-EWTN-055",
+      "label": "Historical Christian mothers teaching Alleluia to children as praise",
+      "kind": "HISTORICAL_OR_ORIGIN_REPORT_UNVERIFIED",
+      "source_work": "WFF1992_LENT_EASTER_EXCERPT",
+      "section": "EASTER_DAY",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.ewtn.com/catholicism/library/lent--easter-a-sourcebook-for-families-10456",
+      "web_lines": [
+        342,
+        342
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "WFF92-EWTN-056",
+      "label": "Lay festive Easter table using the household's best dishes and flowers",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "WFF1992_LENT_EASTER_EXCERPT",
+      "section": "EASTER_DAY",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.ewtn.com/catholicism/library/lent--easter-a-sourcebook-for-families-10456",
+      "web_lines": [
+        349,
+        349
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "WFF92-EWTN-057",
+      "label": "Children search for Easter eggs on Easter morning",
+      "kind": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "source_work": "WFF1992_LENT_EASTER_EXCERPT",
+      "section": "EASTER_DAY",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.ewtn.com/catholicism/library/lent--easter-a-sourcebook-for-families-10456",
+      "web_lines": [
+        351,
+        351
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "WFF92-EWTN-058",
+      "label": "Children receive Easter baskets with sweets and eggs",
+      "kind": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "source_work": "WFF1992_LENT_EASTER_EXCERPT",
+      "section": "EASTER_DAY",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.ewtn.com/catholicism/library/lent--easter-a-sourcebook-for-families-10456",
+      "web_lines": [
+        351,
+        351
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "WFF92-EWTN-059",
+      "label": "Add saints' biographies or small Scripture books to children's Easter baskets",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "WFF1992_LENT_EASTER_EXCERPT",
+      "section": "EASTER_DAY",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.ewtn.com/catholicism/library/lent--easter-a-sourcebook-for-families-10456",
+      "web_lines": [
+        352,
+        352
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "WFF92-EWTN-060",
+      "label": "Add a saint's medal or holy image to Easter basket gifts",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "WFF1992_LENT_EASTER_EXCERPT",
+      "section": "EASTER_DAY",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.ewtn.com/catholicism/library/lent--easter-a-sourcebook-for-families-10456",
+      "web_lines": [
+        352,
+        352
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "WFF92-EWTN-061",
+      "label": "Make an Easter cake in the form of the Lamb",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "WFF1992_LENT_EASTER_EXCERPT",
+      "section": "EASTER_DAY",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.ewtn.com/catholicism/library/lent--easter-a-sourcebook-for-families-10456",
+      "web_lines": [
+        354,
+        354
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "WFF92-EWTN-062",
+      "label": "Make small Easter cakes decorated as egg nests",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "WFF1992_LENT_EASTER_EXCERPT",
+      "section": "EASTER_DAY",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.ewtn.com/catholicism/library/lent--easter-a-sourcebook-for-families-10456",
+      "web_lines": [
+        355,
+        355
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "WFF92-EWTN-063",
+      "label": "Older Ascension Day outdoor processions imitating the journey to Olivet",
+      "kind": "HISTORICAL_OR_ORIGIN_REPORT_UNVERIFIED",
+      "source_work": "WFF1992_LENT_EASTER_EXCERPT",
+      "section": "ASCENSION_PENTECOST",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.ewtn.com/catholicism/library/lent--easter-a-sourcebook-for-families-10456",
+      "web_lines": [
+        365,
+        365
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "WFF92-EWTN-064",
+      "label": "Italian Pentecost custom of scattering rose petals from church roofs",
+      "kind": "HISTORICAL_OR_ORIGIN_REPORT_UNVERIFIED",
+      "source_work": "WFF1992_LENT_EASTER_EXCERPT",
+      "section": "ASCENSION_PENTECOST",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.ewtn.com/catholicism/library/lent--easter-a-sourcebook-for-families-10456",
+      "web_lines": [
+        368,
+        368
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "WFF92-EWTN-065",
+      "label": "French Pentecost custom of trumpet fanfares recalling rushing wind",
+      "kind": "HISTORICAL_OR_ORIGIN_REPORT_UNVERIFIED",
+      "source_work": "WFF1992_LENT_EASTER_EXCERPT",
+      "section": "ASCENSION_PENTECOST",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.ewtn.com/catholicism/library/lent--easter-a-sourcebook-for-families-10456",
+      "web_lines": [
+        368,
+        368
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "WFF92-EWTN-066",
+      "label": "Take a family springtime walk on Easter Monday",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "WFF1992_LENT_EASTER_EXCERPT",
+      "section": "ASCENSION_PENTECOST",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.ewtn.com/catholicism/library/lent--easter-a-sourcebook-for-families-10456",
+      "web_lines": [
+        371,
+        371
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "WFF92-EWTN-067",
+      "label": "Take children to museum or library to view Christian art in Easter week",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "WFF1992_LENT_EASTER_EXCERPT",
+      "section": "ASCENSION_PENTECOST",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.ewtn.com/catholicism/library/lent--easter-a-sourcebook-for-families-10456",
+      "web_lines": [
+        372,
+        372
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "WFF92-EWTN-068",
+      "label": "Pray Regina Coeli in place of mealtime Angelus during Easter season",
+      "kind": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "source_work": "WFF1992_LENT_EASTER_EXCERPT",
+      "section": "ASCENSION_PENTECOST",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.ewtn.com/catholicism/library/lent--easter-a-sourcebook-for-families-10456",
+      "web_lines": [
+        374,
+        374
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "HYN77-CC-001",
+      "label": "Reschedule Holy Week household routine for evening parish Triduum services",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "HYNES1977_CATHOLICCULTURE_EXCERPTS",
+      "section": "PALM",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=511",
+      "web_lines": [
+        130,
+        130
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "HYN77-CC-002",
+      "label": "Gather after Palm Sunday meal for a home palm devotion",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "HYNES1977_CATHOLICCULTURE_EXCERPTS",
+      "section": "PALM",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=511",
+      "web_lines": [
+        134,
+        134
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "HYN77-CC-003",
+      "label": "Form small crosses from blessed palms for household doorways",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "HYNES1977_CATHOLICCULTURE_EXCERPTS",
+      "section": "PALM",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=511",
+      "web_lines": [
+        134,
+        134
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "HYN77-CC-004",
+      "label": "Weave blessed palms for placing behind family crucifixes",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "HYNES1977_CATHOLICCULTURE_EXCERPTS",
+      "section": "PALM",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=511",
+      "web_lines": [
+        134,
+        134
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "HYN77-CC-005",
+      "label": "Read Matthew's account of the Lord's entry into Jerusalem before home procession",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "HYNES1977_CATHOLICCULTURE_EXCERPTS",
+      "section": "PALM",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=511",
+      "web_lines": [
+        134,
+        134
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "HYN77-CC-006",
+      "label": "Mother leads Palm Sunday candlelit procession from room to room",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "HYNES1977_CATHOLICCULTURE_EXCERPTS",
+      "section": "PALM",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=511",
+      "web_lines": [
+        135,
+        135
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "HYN77-CC-007",
+      "label": "Family sings All Glory Laud and Honor during Palm Sunday home procession",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "HYNES1977_CATHOLICCULTURE_EXCERPTS",
+      "section": "PALM",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=511",
+      "web_lines": [
+        135,
+        135
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "HYN77-CC-008",
+      "label": "Children wave blessed palms during household procession",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "HYNES1977_CATHOLICCULTURE_EXCERPTS",
+      "section": "PALM",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=511",
+      "web_lines": [
+        135,
+        135
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "HYN77-CC-009",
+      "label": "Father recites end prayer after the home Palm Sunday procession",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "HYNES1977_CATHOLICCULTURE_EXCERPTS",
+      "section": "PALM",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=511",
+      "web_lines": [
+        136,
+        136
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "HYN77-CC-010",
+      "label": "Keep blessed palm crosses visible in the house through the year",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "HYNES1977_CATHOLICCULTURE_EXCERPTS",
+      "section": "PALM",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=511",
+      "web_lines": [
+        137,
+        137
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "HYN77-CC-011",
+      "label": "Burn old blessed palm reverently the following Ash Wednesday",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "HYNES1977_CATHOLICCULTURE_EXCERPTS",
+      "section": "PALM",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=511",
+      "web_lines": [
+        137,
+        137
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "HYN77-CC-012",
+      "label": "Household cleaning before paschal feast associated with Jewish home traditions",
+      "kind": "HISTORICAL_OR_ORIGIN_REPORT_UNVERIFIED",
+      "source_work": "HYNES1977_CATHOLICCULTURE_EXCERPTS",
+      "section": "HOLY_WEEK_FIRST_DAYS",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=512",
+      "web_lines": [
+        129,
+        129
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "HYN77-CC-013",
+      "label": "Conduct extra housecleaning in first three days of Holy Week",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "HYNES1977_CATHOLICCULTURE_EXCERPTS",
+      "section": "HOLY_WEEK_FIRST_DAYS",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=512",
+      "web_lines": [
+        130,
+        130
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "HYN77-CC-014",
+      "label": "Simplify family meals during Holy Week without depriving necessary food",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "HYNES1977_CATHOLICCULTURE_EXCERPTS",
+      "section": "HOLY_WEEK_FIRST_DAYS",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=512",
+      "web_lines": [
+        131,
+        131
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "HYN77-CC-015",
+      "label": "Omit usual dessert as a voluntary Holy Week penance",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "HYNES1977_CATHOLICCULTURE_EXCERPTS",
+      "section": "HOLY_WEEK_FIRST_DAYS",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=512",
+      "web_lines": [
+        131,
+        131
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "HYN77-CC-016",
+      "label": "Set aside additional home prayer periods during first days of Holy Week",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "HYNES1977_CATHOLICCULTURE_EXCERPTS",
+      "section": "HOLY_WEEK_FIRST_DAYS",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=512",
+      "web_lines": [
+        133,
+        133
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "HYN77-CC-017",
+      "label": "Prepare or repair family's Easter clothing ahead of the feast",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "HYNES1977_CATHOLICCULTURE_EXCERPTS",
+      "section": "HOLY_WEEK_FIRST_DAYS",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=512",
+      "web_lines": [
+        134,
+        134
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "HYN77-CC-018",
+      "label": "Defer wearing prepared Easter garments until Easter morning",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "HYNES1977_CATHOLICCULTURE_EXCERPTS",
+      "section": "HOLY_WEEK_FIRST_DAYS",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=512",
+      "web_lines": [
+        135,
+        135
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "HYN77-CC-019",
+      "label": "Recite selected Psalm 21 passages before or after Holy Week family dinner",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "HYNES1977_CATHOLICCULTURE_EXCERPTS",
+      "section": "HOLY_WEEK_FIRST_DAYS",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=512",
+      "web_lines": [
+        136,
+        136
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "HYN77-CC-020",
+      "label": "Make an extra effort to practice consideration and reconciliation at home on Holy Thursday",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "HYNES1977_CATHOLICCULTURE_EXCERPTS",
+      "section": "HOLY_THURSDAY",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=513",
+      "web_lines": [
+        126,
+        126
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "HYN77-CC-021",
+      "label": "Father performs a humble household service for children on Holy Thursday",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "HYNES1977_CATHOLICCULTURE_EXCERPTS",
+      "section": "HOLY_THURSDAY",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=513",
+      "web_lines": [
+        129,
+        129
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "HYN77-CC-022",
+      "label": "Father may clean children's shoes as symbolic humble work",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "HYNES1977_CATHOLICCULTURE_EXCERPTS",
+      "section": "HOLY_THURSDAY",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=513",
+      "web_lines": [
+        129,
+        129
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "HYN77-CC-023",
+      "label": "Father may wash dishes or clothes as Holy Thursday service",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "HYNES1977_CATHOLICCULTURE_EXCERPTS",
+      "section": "HOLY_THURSDAY",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=513",
+      "web_lines": [
+        129,
+        129
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "HYN77-CC-024",
+      "label": "Share a special family Holy Thursday supper before parish Mass",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "HYNES1977_CATHOLICCULTURE_EXCERPTS",
+      "section": "HOLY_THURSDAY",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=513",
+      "web_lines": [
+        130,
+        130
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "HYN77-CC-025",
+      "label": "Offer unleavened bread at Holy Thursday meal as symbolic food",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "HYNES1977_CATHOLICCULTURE_EXCERPTS",
+      "section": "HOLY_THURSDAY",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=513",
+      "web_lines": [
+        131,
+        131
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "HYN77-CC-026",
+      "label": "Include bitter greens or horseradish at symbolic Holy Thursday supper",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "HYNES1977_CATHOLICCULTURE_EXCERPTS",
+      "section": "HOLY_THURSDAY",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=513",
+      "web_lines": [
+        131,
+        131
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "HYN77-CC-027",
+      "label": "Use fruit-nut haroseth-style dish in Holy Thursday meal symbolism",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "HYNES1977_CATHOLICCULTURE_EXCERPTS",
+      "section": "HOLY_THURSDAY",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=513",
+      "web_lines": [
+        132,
+        132
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "HYN77-CC-028",
+      "label": "Invite neighbors or relatives to share Holy Thursday supper",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "HYNES1977_CATHOLICCULTURE_EXCERPTS",
+      "section": "HOLY_THURSDAY",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=513",
+      "web_lines": [
+        133,
+        133
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "HYN77-CC-029",
+      "label": "Serve roast lamb as symbolic paschal food at Holy Thursday meal",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "HYNES1977_CATHOLICCULTURE_EXCERPTS",
+      "section": "HOLY_THURSDAY",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=513",
+      "web_lines": [
+        133,
+        133
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "HYN77-CC-030",
+      "label": "Present a cake shaped as lamb at the Holy Thursday table",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "HYNES1977_CATHOLICCULTURE_EXCERPTS",
+      "section": "HOLY_THURSDAY",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=513",
+      "web_lines": [
+        134,
+        134
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "HYN77-CC-031",
+      "label": "Sing Ubi Caritas at close of family Holy Thursday meal",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "HYNES1977_CATHOLICCULTURE_EXCERPTS",
+      "section": "HOLY_THURSDAY",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=513",
+      "web_lines": [
+        136,
+        136
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "HYN77-CC-032",
+      "label": "Keep Good Friday family conversation quiet as a penitential practice",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "HYNES1977_CATHOLICCULTURE_EXCERPTS",
+      "section": "GOOD_FRIDAY",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=514",
+      "web_lines": [
+        129,
+        129
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "HYN77-CC-033",
+      "label": "Avoid secular television and entertainment on Good Friday",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "HYNES1977_CATHOLICCULTURE_EXCERPTS",
+      "section": "GOOD_FRIDAY",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=514",
+      "web_lines": [
+        130,
+        130
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "HYN77-CC-034",
+      "label": "Take household pictures down temporarily for Good Friday",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "HYNES1977_CATHOLICCULTURE_EXCERPTS",
+      "section": "GOOD_FRIDAY",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=514",
+      "web_lines": [
+        131,
+        131
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "HYN77-CC-035",
+      "label": "Read Passion narrative aloud during a simple Good Friday family meal",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "HYNES1977_CATHOLICCULTURE_EXCERPTS",
+      "section": "GOOD_FRIDAY",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=514",
+      "web_lines": [
+        132,
+        132
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "HYN77-CC-036",
+      "label": "Use a cross-marked bun as simple Good Friday dessert",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "HYNES1977_CATHOLICCULTURE_EXCERPTS",
+      "section": "GOOD_FRIDAY",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=514",
+      "web_lines": [
+        132,
+        132
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "HYN77-CC-037",
+      "label": "Keep Good Friday Three Hours prayers from noon to three",
+      "kind": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "source_work": "HYNES1977_CATHOLICCULTURE_EXCERPTS",
+      "section": "GOOD_FRIDAY",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=514",
+      "web_lines": [
+        134,
+        134
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "HYN77-CC-038",
+      "label": "Pray at home during parish Good Friday service if unable to attend",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "HYNES1977_CATHOLICCULTURE_EXCERPTS",
+      "section": "GOOD_FRIDAY",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=514",
+      "web_lines": [
+        135,
+        135
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "HYN77-CC-039",
+      "label": "Give a prominent place to uncovered home crucifix on Good Friday",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "HYNES1977_CATHOLICCULTURE_EXCERPTS",
+      "section": "GOOD_FRIDAY",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=514",
+      "web_lines": [
+        136,
+        136
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "HYN77-CC-040",
+      "label": "Keep Holy Thursday and Good Friday evenings free of nonspiritual appointments",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "HYNES1977_CATHOLICCULTURE_EXCERPTS",
+      "section": "GOOD_FRIDAY",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=514",
+      "web_lines": [
+        139,
+        139
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "HYN77-CC-041",
+      "label": "Maintain quiet waiting and avoid festive visiting on Holy Saturday",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "HYNES1977_CATHOLICCULTURE_EXCERPTS",
+      "section": "HOLY_SATURDAY",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=515",
+      "web_lines": [
+        130,
+        130
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "HYN77-CC-042",
+      "label": "Read Easter Vigil stories aloud during Holy Saturday family meals",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "HYNES1977_CATHOLICCULTURE_EXCERPTS",
+      "section": "HOLY_SATURDAY",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=515",
+      "web_lines": [
+        131,
+        131
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "HYN77-CC-043",
+      "label": "Prepare Holy Week text booklets before attending Easter Vigil",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "HYNES1977_CATHOLICCULTURE_EXCERPTS",
+      "section": "HOLY_SATURDAY",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=515",
+      "web_lines": [
+        132,
+        132
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "HYN77-CC-044",
+      "label": "Complete household cooking and decorations before Easter feast",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "HYNES1977_CATHOLICCULTURE_EXCERPTS",
+      "section": "HOLY_SATURDAY",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=515",
+      "web_lines": [
+        133,
+        133
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "HYN77-CC-045",
+      "label": "Host special Easter feast at home with religious family prayer",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "HYNES1977_CATHOLICCULTURE_EXCERPTS",
+      "section": "HOLY_SATURDAY",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=515",
+      "web_lines": [
+        136,
+        136
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "HYN77-CC-046",
+      "label": "Paint Easter eggs with Christological symbols such as Chi Rho",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "HYNES1977_CATHOLICCULTURE_EXCERPTS",
+      "section": "HOLY_SATURDAY",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=515",
+      "web_lines": [
+        137,
+        137
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "HYN77-CC-047",
+      "label": "Bring a vessel for taking Easter water home from Vigil",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "HYNES1977_CATHOLICCULTURE_EXCERPTS",
+      "section": "HOLY_SATURDAY",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=515",
+      "web_lines": [
+        138,
+        138
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "HYN77-CC-048",
+      "label": "Sprinkle rooms at Easter using blessed Easter water",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "HYNES1977_CATHOLICCULTURE_EXCERPTS",
+      "section": "HOLY_SATURDAY",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=515",
+      "web_lines": [
+        138,
+        138
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "HYN77-CC-049",
+      "label": "Sprinkle Easter food at home using Easter water",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "HYNES1977_CATHOLICCULTURE_EXCERPTS",
+      "section": "HOLY_SATURDAY",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=515",
+      "web_lines": [
+        138,
+        138
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "HYN77-CC-050",
+      "label": "Father reads selected baptismal-vigil prayers in household reflection",
+      "kind": "FAMILY_PRAYER_FORMULA_AUTHORITY_UNVERIFIED",
+      "source_work": "HYNES1977_CATHOLICCULTURE_EXCERPTS",
+      "section": "HOLY_SATURDAY",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=515",
+      "web_lines": [
+        138,
+        138
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "HYN77-CC-051",
+      "label": "Place Easter candle at center of family festive table",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "HYNES1977_CATHOLICCULTURE_EXCERPTS",
+      "section": "EASTER_DAY",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=516",
+      "web_lines": [
+        131,
+        131
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "HYN77-CC-052",
+      "label": "Bring Easter foods to church for priestly blessing where customary",
+      "kind": "FAMILY_PRAYER_FORMULA_AUTHORITY_UNVERIFIED",
+      "source_work": "HYNES1977_CATHOLICCULTURE_EXCERPTS",
+      "section": "EASTER_DAY",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=516",
+      "web_lines": [
+        131,
+        131
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "HYN77-CC-053",
+      "label": "Father says home Easter meal blessing when no church blessing available",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "HYNES1977_CATHOLICCULTURE_EXCERPTS",
+      "section": "EASTER_DAY",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=516",
+      "web_lines": [
+        131,
+        131
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "HYN77-CC-054",
+      "label": "Visit lonely or housebound relatives during Easter feast day",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "HYNES1977_CATHOLICCULTURE_EXCERPTS",
+      "section": "EASTER_DAY",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=516",
+      "web_lines": [
+        132,
+        132
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "HYN77-CC-055",
+      "label": "Keep a voluntary Lenten self-denial private rather than announce it",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "HYNES1977_CATHOLICCULTURE_EXCERPTS",
+      "section": "LENT",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=114",
+      "web_lines": [
+        132,
+        132
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "HYN77-CC-056",
+      "label": "Give up a favorite broadcast without complaint as children's Lenten penance",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "HYNES1977_CATHOLICCULTURE_EXCERPTS",
+      "section": "LENT",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=114",
+      "web_lines": [
+        132,
+        132
+      ],
+      "identity_certified": false
+    },
+    {
+      "id": "HYN77-CC-057",
+      "label": "Parent forgoes personal leisure to help children during Lent",
+      "kind": "AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION",
+      "source_work": "HYNES1977_CATHOLICCULTURE_EXCERPTS",
+      "section": "LENT",
+      "source_file": "data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=114",
+      "web_lines": [
+        132,
+        132
+      ],
+      "identity_certified": false
     }
   ]
 }
