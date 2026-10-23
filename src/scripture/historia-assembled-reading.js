@@ -245,6 +245,22 @@ export function assembleHistoriaReading(proof, edition, getWitness) {
           railSubdivisionAccepted:false,accepted: false, publicationApproved: false
         });
         previous = parsed;
+        // Do not add the Judas interruption to beat.refs. It is a separately
+        // labelled exact-witness review trial inside a previously split beat.
+        // Preserve the original omission record even when research displays it.
+        const between=beat.betweenSelectedReadthroughTrial;
+        if(between?.afterReference===ref){
+          if(between.beforeReference!==references[position+1] ||
+             between.accepted!==false || between.publicationApproved!==false ||
+             between.originalUnitRefsUnmodified!==true || between.excludedFromMainSourceSelection!==true)
+            throw new Error("Unsafe Historia inter-segment trial placement: "+beat.id);
+          const selectedGap=gapBetween(parsed,parseHistoriaSpan(between.beforeReference));
+          if(!selectedGap || selectedGap.kind!=="OMITTED_VERSES")
+            throw new Error("Inter-segment trial must preserve a real selected-text omission: "+beat.id);
+          omittedSourceSeams.push({beforeAnchor:movement.id+":"+beat.id+":main-omission",
+            ...selectedGap,mainScriptureOmissionStillOpen:true,evenWhenOptionalTrialShown:true});
+          appendReadingTrial(beat,between,"BETWEEN_SELECTED_SOURCE_READING_TRIAL");
+        }
       }
       if(beat.afterSelectedReadthroughTrial)appendReadingTrial(beat,beat.afterSelectedReadthroughTrial,"ADDITIONAL_CAUSAL_READING_TRIAL");
     }
