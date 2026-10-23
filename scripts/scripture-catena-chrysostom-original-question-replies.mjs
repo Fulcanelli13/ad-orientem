@@ -120,7 +120,7 @@ function inspectPrintedQuotationMarkers(original){
    sourceRole:"unresolved_printed_quotation_not_automatically_Father_speech"});
  }
  return {sourceQuotationCandidates:candidates,
-  visiblePrintedQuoteMarks,unpairedOrOutsideContextQuotationPossible:
+  visiblePrintedQuoteMarks:visibleQuoteMarks,unpairedOrOutsideContextQuotationPossible:
    visibleQuoteMarks!==2*candidates.length};
 }
 const pinnedOriginalWorkEvidence=anchored.map(([seedId,n,first,markLine,last])=>{
