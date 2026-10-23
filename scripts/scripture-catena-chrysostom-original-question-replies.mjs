@@ -107,6 +107,22 @@ const anchored=[
  ["SCH-CHR-003",47,43868,43870,43879],
  ["SCH-CHR-004",47,44008,44010,44018]
 ];
+function inspectPrintedQuotationMarkers(original){
+ // Paired double-quote spans are only typography evidence, not certified
+ // Gospel citations. An unmatched mark indicates that the cropped context
+ // must not be treated as a clean standalone Father answer.
+ const visibleQuoteMarks=[...original.matchAll(/["“”]/g)].length;
+ const candidates=[];
+ for(const match of original.matchAll(/"[^"]{5,550}"/gs)){
+  const text=match[0];
+  candidates.push({startOffset:match.index,endOffset:match.index+text.length,
+   originalQuotedOCR:text,originalQuoteSHA256:digest(text),
+   sourceRole:"unresolved_printed_quotation_not_automatically_Father_speech"});
+ }
+ return {sourceQuotationCandidates:candidates,
+  visiblePrintedQuoteMarks,unpairedOrOutsideContextQuotationPossible:
+   visibleQuoteMarks!==2*candidates.length};
+}
 const pinnedOriginalWorkEvidence=anchored.map(([seedId,n,first,markLine,last])=>{
  const seed=previous.rows.find(x=>x.id===seedId),u=corpus.units[n-1];
  if(!seed||seed.editionId!=="NPNF1-10"||!u||u.unitOrdinal!==n||
@@ -116,6 +132,7 @@ const pinnedOriginalWorkEvidence=anchored.map(([seedId,n,first,markLine,last])=>
  const q=lines.slice(first-1,markLine-1).concat(qline.slice(0,mark+1)).join("\n");
  const trailing=qline.slice(mark+1)+(last>markLine?"\n"+lines.slice(markLine,last).join("\n"):"");
  const combined=lines.slice(first-1,last).join("\n");
+ const quotationEvidence=inspectPrintedQuotationMarkers(trailing);
  if(q+trailing!==combined)throw Error("PINNED_ORIGINAL_OCR_WORDS_CHANGED");
  return {seedId,printedHomily:u.unitLabel,sourceWorkUnitId:u.id,
   originalLineStart:first,questionMarkLine:markLine,originalLineEnd:last,
@@ -123,6 +140,9 @@ const pinnedOriginalWorkEvidence=anchored.map(([seedId,n,first,markLine,last])=>
   completeOriginalOCR:combined,completeOCRSHA256:digest(combined),
   priorCanonicalCatenaPointer:seed.catenaSourcePointer||null,
   questionAndProsePrintedContiguously:true,
+  ensuingProseQuotationEvidence:quotationEvidence,
+  ensuingProseMayIncludeBiblicalQuotation:quotationEvidence.visiblePrintedQuoteMarks>0,
+  sourceQuoteOwnershipUnverified:true,
   speakerOriginalGreekAuthenticated:false,printedPageCollated:false,
   sourceResponseBoundaryEditoriallyAuthenticated:false,
   noveltyComparedAgainstFullCatena:false,publicationEligible:false};
