@@ -35,3 +35,7 @@
  text-align:left;font:15px/1.4 Palatino,Georgia,serif;cursor:pointer}
 .spxm-offline-related:hover,.spxm-offline-related:focus-visible{
  background:#35302a;border-color:#f0d59d}
+
+/* The four reviewed pilot subjects have one question surface, never two.
+ * The underlying 106-subject free-ask remains intact for all other chapters. */
+body.spxc-offline-pilot-active .spxc-free-ask{display:none!important}
