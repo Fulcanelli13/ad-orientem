@@ -37,4 +37,34 @@ const f=folios.entries.find(x=>x.custom_id==="PATR-001");
 assert.equal(f.history_en,card("PATR-001").history.en);
 assert.equal(f.history_fr,card("PATR-001").history.fr);
 assert.equal(seed.customs.filter(c=>c.publication_state==="CONTEXT_ONLY").length,3);
+const acceptedFrench=JSON.parse(readFileSync(new URL("../data/customs/customs-fr-canonical-copy.v1.json",import.meta.url),"utf8"));
+assert.equal(acceptedFrench.entries.length,27);
+assert.deepEqual(new Set(acceptedFrench.entries.filter(x=>!CALENDAR_CUSTOM_ARTICLE_IDS.includes(x.custom_id)).map(x=>x.custom_id)),new Set(["DEV-007","BELL-004","FOOD-001"]));
+const equivalent=(card,path)=>path.split(".").reduce((obj,key)=>obj?.[key],card);
+for(const row of acceptedFrench.entries){
+  const article=calendarCustomArticle(row.custom_id);
+  if(!article)continue; // Three context-only historical identities remain intentionally unpublished.
+  for(const [field,path] of [["title_fr","title.fr"],["description_fr","description.fr"],["caution_fr","caution.fr"]])
+    assert.equal(row[field],equivalent(article,path),row.custom_id+" French canonical owner drift in "+field);
+}
+let guidanceTotal=0;
+for(const path of ["data/customs/customs-p0-guidance-en-fr.v1.json","data/customs/customs-p1-guidance-en-fr.v1.json"]){
+  const guidance=JSON.parse(readFileSync(new URL("../"+path,import.meta.url),"utf8"));
+  for(const row of guidance.entries){
+    guidanceTotal++;
+    const article=calendarCustomArticle(row.custom_id);
+    assert.ok(article,row.custom_id+" missing published Calendar article");
+    assert.equal(row.review_status,"CANONICAL_ID_PUBLISHED_IN_MAIN");
+    for(const [field,destination] of [
+      ["title_en","title.en"],["title_fr","title.fr"],
+      ["description_en","description.en"],["description_fr","description.fr"],
+      ["meaning_en","meaning.en"],["meaning_fr","meaning.fr"],
+      ["how_en","practice.en"],["how_fr","practice.fr"],
+      ["caution_fr","caution.fr"],["scope_en","scope.en"],["scope_fr","scope.fr"]
+    ]) if(row[field]!=null)
+      assert.equal(row[field],equivalent(article,destination),row.custom_id+" obsolete supporting copy "+field);
+  }
+}
+assert.equal(guidanceTotal,11);
+assert.equal(card("XMAS-001").description.fr.includes("hostie de pain"),false);
 console.log("PASS: 35 approved customs retain bilingual copy; regional and sacramental claims have precise scope, Chantelle historical copy is synchronized");
