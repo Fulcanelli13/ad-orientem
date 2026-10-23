@@ -11,6 +11,8 @@ const customSources=read("data/customs/source-registry.v1.json");
 const bridge=read("data/customs/novena-context-links.v1.json");
 const novenas=read("data/pray/novena-sot.v1.json");
 const evidence=read("data/geography/customs-atlas-place-geo-evidence.2026-10-09.json");
+const p11Review=read("data/geography/research/sacred-geography-p11-osm-site-anchor-review.v1.json");
+const p11ByPlace=new Map(p11Review.records.map(row=>[row.place_id,row]));
 const places=new Map(geography.places.map(place=>[place.place_id,place]));
 const published=geography.places.filter(place=>isMapPublishablePlaceGeo(place.geo,place.address?.country_code));
 assert.equal(published.length,347,"261 shared places now have provenance-locked map coordinates");
@@ -20,10 +22,25 @@ for(const record of evidence.records){
   const place=places.get(record.place_id);
   assert.ok(place,"evidence points to unknown canonical Place: "+record.place_id);
   assert.ok(isMapPublishablePlaceGeo(place.geo,place.address?.country_code),place.place_id+" has unpublishable GPS");
-  assert.equal(place.geo.lat,record.lat,place.place_id+" latitude deviated from evidence");
-  assert.equal(place.geo.lng,record.lng,place.place_id+" longitude deviated from evidence");
-  assert.equal(place.geo.source_url,record.source_url,place.place_id+" lost coordinate source link");
-  assert.equal(place.geo.source_ref,record.source_ref,place.place_id+" lost coordinate provenance ref");
+  const upgrade=p11ByPlace.get(place.place_id);
+  if(upgrade){
+    // The dated 9 October original evidence remains immutable. The reviewed 24 October
+    // record must prove both the frozen original and the adopted newer exact OSM feature.
+    assert.equal(record.lat,upgrade.old_geo.lat,place.place_id+" previous latitude provenance lost");
+    assert.equal(record.lng,upgrade.old_geo.lng,place.place_id+" previous longitude provenance lost");
+    assert.equal(record.source_url,upgrade.old_geo.source_url,place.place_id+" old source URL lost");
+    assert.equal(record.source_ref,upgrade.old_geo.source_ref,place.place_id+" old source ref lost");
+    assert.equal(place.geo.lat,upgrade.new_geo.lat,place.place_id+" adopted latitude mismatch");
+    assert.equal(place.geo.lng,upgrade.new_geo.lng,place.place_id+" adopted longitude mismatch");
+    assert.equal(place.geo.source_url,upgrade.new_geo.source_url,place.place_id+" adopted source URL mismatch");
+    assert.equal(place.geo.source_ref,upgrade.new_geo.source_ref,place.place_id+" adopted source ref mismatch");
+    assert.equal(place.geo.precision,"site",place.place_id+" footprint must not assert entrance");
+  }else{
+    assert.equal(place.geo.lat,record.lat,place.place_id+" latitude deviated from evidence");
+    assert.equal(place.geo.lng,record.lng,place.place_id+" longitude deviated from evidence");
+    assert.equal(place.geo.source_url,record.source_url,place.place_id+" lost coordinate source link");
+    assert.equal(place.geo.source_ref,record.source_ref,place.place_id+" lost coordinate provenance ref");
+  }
   assert.ok(/^https:\/\//.test(record.source_url),record.place_id+" requires direct URL");
   if(place.geo.geocoding_source==="OSM")assert.match(place.geo.attribution,/OpenStreetMap/);
 }
