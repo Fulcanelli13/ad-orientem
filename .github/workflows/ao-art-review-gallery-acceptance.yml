@@ -1,0 +1,56 @@
+name: Sacred Art review gallery offline acceptance check
+on:
+  push:
+    branches: [research/b19-original-image-acquisition-probe-20261023]
+    paths: [.github/workflows/ao-art-review-gallery-acceptance.yml]
+  workflow_dispatch:
+permissions:
+  actions: read
+  contents: read
+jobs:
+  accept-review-pack:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          artifact-ids: '12511905467'
+          run-id: '39975137626'
+          repository: Fulcanelli13/ad-orientem
+          github-token: ${{ github.token }}
+          path: retrieved
+      - name: Validate offline HTML, source links, previews and gates
+        shell: bash
+        run: |
+          python - <<'PY'
+          import csv,json,pathlib,re,subprocess
+          matches=list(pathlib.Path('retrieved').rglob('index.html'))
+          assert len(matches)==1, matches
+          root=matches[0].parent
+          summary=json.loads((root/'review-summary.json').read_text())
+          assert summary['source_count']==245
+          assert summary['image_files_prepared_for_visual_review']==159
+          assert summary['genuine_originals']==145
+          assert summary['museum_print_derivatives']==14
+          assert summary['resolution_review_under_2400']==8
+          assert summary['manual_visual_approvals']==summary['publication_approvals']==0
+          thumbs=list((root/'thumbnails').glob('*.jpg'))
+          sheets=list((root/'sheets').glob('*.jpg'))
+          assert len(thumbs)==159,(len(thumbs),root)
+          assert len(sheets)==10,len(sheets)
+          with (root/'visual-review-245-source-queue.csv').open(encoding='utf-8',newline='') as handle:
+              rows=list(csv.DictReader(handle))
+          assert len(rows)==245,len(rows)
+          assert sum(r['visual_review']=='PENDING_HUMAN' for r in rows)==159
+          assert sum(r['visual_review']=='NOT_AVAILABLE' for r in rows)==86
+          for row in rows:
+              if row['review_thumbnail']:
+                  assert (root/row['review_thumbnail']).is_file(),row['asset_source_id']
+          html=(root/'index.html').read_text(encoding='utf-8')
+          js=re.findall(r'<script>(.*?)</script>',html,re.S)
+          assert len(js)==1,len(js)
+          pathlib.Path('gallery-check.js').write_text(js[0])
+          subprocess.run(['node','--check','gallery-check.js'],check=True)
+          print('PASS offline review gallery: 159 previews, 10 sheets, 245 records, JS syntax, no publication approvals')
+          PY
