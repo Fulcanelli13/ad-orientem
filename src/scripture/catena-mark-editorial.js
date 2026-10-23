@@ -88,7 +88,7 @@ export async function loadCatenaMarkEditorialSource(registry,pointer,{
  const segment=section?.segments?.[ordinal];
  if(!segment||segment.father!==record.inheritedFatherLabel||
     segment.text.length!==record.canonicalCharLength||
-    !section.verse_keys?.includes("mark/"+chapter+"/"+verse)||
+    (Array.isArray(section.verse_keys)&&!section.verse_keys.includes("mark/"+chapter+"/"+verse))||
     !/^https:\/\/www\.ecatholic2000\.com\//.test(section.source?.url||""))
   throw Error("CATENA_MARK_CANONICAL_SOURCE_MISMATCH");
  return Object.freeze({section,segment,ordinal,sourcePointer:pointer,
