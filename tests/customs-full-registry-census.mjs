@@ -1628,3 +1628,54 @@ assert.equal(count.identity_working_rows.provisional_after_53_no_owner_action_re
 assert.equal(count.identity_working_rows.final_uniquely_verified_customs_added,0);
 assert.equal(researchCatalogue.summary.no_new_app_publications,true);
 console.log('Pitrè Palermo historical texts: 110 source-located details (92+18), 2985 research rows, 0 certified new identities or app publication — PASS');
+
+
+// Same described action is not proof of an independently observed historical
+// custom. Confirm 41 reviewed label-level contrasts are reversible and cannot
+// merge or certify an action, even when their labels are near-identical.
+const threeWorksManual41=load('data/customs/master/three-household-books-41-manual-action-contrast-review.v1.json');
+assert.equal(threeWorksManual41.records.length,41);
+assert.equal(threeWorksManual41.summary.pairs_reviewed,41);
+assert.equal(threeWorksManual41.summary.source_rows_represented,39);
+assert.equal(threeWorksManual41.summary.confirmed_independent_historical_witnesses,0);
+assert.equal(threeWorksManual41.summary.verified_distinct_custom_identities,0);
+assert.equal(threeWorksManual41.summary.owner_merges,0);
+assert.equal(threeWorksManual41.summary.app_publications,0);
+assert.equal(new Set(threeWorksManual41.records.map(r=>r.relation_id)).size,41);
+const existingOwnersAndSources=new Map([
+ ...researchCatalogue.existing_master_identities,
+ ...researchCatalogue.provisional_handbook_groups,
+ ...researchCatalogue.provisional_historical_groups,
+ ...researchCatalogue.provisional_unindexed_practice_leads,
+ ...researchCatalogue.provisional_unassigned_action_leads,
+ ...researchCatalogue.external_source_action_families_mcloughlin,
+ ...Object.entries(researchCatalogue).filter(([k,v])=>k.startsWith('external_source_observations_')&&Array.isArray(v)).flatMap(([k,v])=>v)
+].map(r=>[r.id,r]));
+const threeWorksById=new Map(threeHouseholdWorks2026.records.map(r=>[r.source_observation_id,r]));
+let negatives=0,sameDescriptions=0;
+for(const r of threeWorksManual41.records){
+ const src=threeWorksById.get(r.source_observation_id);
+ const target=existingOwnersAndSources.get(r.compared_prior_id);
+ assert.ok(src,'source action must exist');
+ assert.ok(target,'review target must exist');
+ assert.equal(r.source_description,src.action_label);
+ assert.equal(r.source_url,src.source_url);
+ assert.equal(r.compared_prior_description,target.label);
+ assert.ok(r.reason.length>=55);
+ assert.equal(r.historical_identity_certified,false);
+ assert.equal(r.source_independence_confirmed,false);
+ assert.equal(r.ritual_approval_verified,false);
+ assert.equal(r.auto_merged,false);
+ assert.equal(r.app_published,false);
+ if(r.action_description_relation.startsWith('FALSE_LEXICAL_MATCH_'))negatives++;
+ if(r.action_description_relation.startsWith('SAME_'))sameDescriptions++;
+}
+assert.ok(negatives>=10);
+assert.ok(sameDescriptions>=10);
+assert.equal(Object.values(threeWorksManual41.summary.relationship_types).reduce((a,b)=>a+b,0),41);
+assert.equal(count.source_review.cc_three_books_label_action_pairs_manually_compared,41);
+assert.equal(count.source_review.cc_three_books_distinct_action_rows_reviewed_at_least_once,39);
+assert.equal(count.source_review.cc_three_books_manual_distinct_custom_identity_certifications,0);
+assert.equal(count.source_observations.total_source_detail_rows_including_external,2985);
+assert.equal(researchCatalogue.summary.no_new_app_publications,true);
+console.log('Domestic 3-work 41 action-description contrasts: >=10 false matches, >=10 same described cores, 0 independent corroboration, 0 certification and 0 publication — PASS');
