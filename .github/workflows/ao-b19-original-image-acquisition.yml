@@ -7,9 +7,11 @@ on:
       - .github/workflows/ao-b19-original-image-acquisition.yml
   workflow_dispatch:
 permissions:
-  contents: read
+  contents: write
 jobs:
   acquire-originals:
+    # Historical acquisition: avoid re-downloading originals merely because the protective workflow was merged.
+    if: github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     timeout-minutes: 25
     steps:
@@ -94,3 +96,8 @@ jobs:
           path: artifacts/b19/
           retention-days: 7
           if-no-files-found: warn
+      - name: P0 gate - archive unchanged acquisition files in an unpublished GitHub Release
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python scripts/research/sacred_art_release_archive_gate.py --wave b19 --source-dir artifacts/b19

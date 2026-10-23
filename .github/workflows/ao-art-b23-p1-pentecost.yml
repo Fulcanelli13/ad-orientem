@@ -11,6 +11,8 @@ concurrency:
   cancel-in-progress: false
 jobs:
   one-file-verify:
+    # Historical acquisition: avoid re-downloading originals merely because the protective workflow was merged.
+    if: github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     timeout-minutes: 12
     steps:
@@ -35,6 +37,11 @@ jobs:
           path: artifacts/b23-p1-pentecost/
           retention-days: 7
           if-no-files-found: warn
+      - name: P0 gate - archive unchanged acquisition files in an unpublished GitHub Release
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python scripts/research/sacred_art_release_archive_gate.py --wave b23p1 --source-dir artifacts/b23-p1-pentecost
       - name: Commit the one-record source audit, regardless of 429
         if: success()
         run: |

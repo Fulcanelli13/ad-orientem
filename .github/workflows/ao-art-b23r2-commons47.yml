@@ -11,6 +11,8 @@ concurrency:
   cancel-in-progress: false
 jobs:
   source-acquisition:
+    # Historical acquisition: avoid replaying old downloads when archive gating merges.
+    if: github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     timeout-minutes: 35
     steps:
@@ -45,6 +47,11 @@ jobs:
           path: artifacts/b23r2-commons47/
           retention-days: 7
           if-no-files-found: warn
+      - name: P0 gate - archive unchanged acquisition files in an unpublished GitHub Release
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python scripts/research/sacred_art_release_archive_gate.py --wave b23r2commons46 --source-dir artifacts/b23r2-commons47
       - name: Preserve permanent source rights and hashed file audit
         if: success()
         run: |
