@@ -6,6 +6,8 @@ on:
       - research/living-catena-corpus-wide-pass-20261021
     paths:
       - scripts/scripture-catena-first-pass.mjs
+      - scripts/scripture-catena-schaff-ocr-ingest.mjs
+      - tests/scripture-catena-schaff-ocr-ingest.mjs
       - .github/workflows/living-catena-corpus-pass.yml
   pull_request:
     paths:
@@ -16,6 +18,8 @@ on:
       - tests/scripture-catena-mark-adjudication.mjs
       - tests/scripture-catena-mark-original-works.mjs
       - tests/scripture-catena-schaff-first-seeds.mjs
+      - scripts/scripture-catena-schaff-ocr-ingest.mjs
+      - tests/scripture-catena-schaff-ocr-ingest.mjs
       - tests/scripture-catena-matthew-batch-two.mjs
       - tests/scripture-catena-matthew-batch-two-reconciliation.mjs
       - tests/scripture-catena-matthew-batch-three.mjs
@@ -74,8 +78,32 @@ jobs:
         run: node tests/scripture-catena-mark-adjudication.mjs
       - name: Verify Schaff 1888 full-work question anchors and three deduplicated canonical pointers
         run: node tests/scripture-catena-schaff-first-seeds.mjs
+      - name: Verify public-domain Schaff OCR parser, corpus-wide overlap hints and source provenance
+        run: node tests/scripture-catena-schaff-ocr-ingest.mjs
       - name: Ensure generated index is up to date for PR
         run: |
           git diff --exit-code -- data/scripture/catena/research/full-corpus-pass-20261021/
           test -z "$(git status --porcelain -- data/scripture/catena/research/full-corpus-pass-20261021/)"
           test -f data/scripture/catena/research/full-corpus-pass-20261021/summary.v1.json
+
+  schaff-public-domain-volume-acquisition:
+    # External full-volume OCR acquisition is an independent research job:
+    # source hosting outages cannot break canonical reader/Schaff schema tests.
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Acquire both complete 1888 print scans and extract internal question windows
+        run: node scripts/scripture-catena-schaff-ocr-ingest.mjs --volume all
+      - name: Attach both full original scan OCR texts and candidate indexes
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: catena-schaff-1888-full-ocr-research-only
+          path: dist/schaff-original-ocr/
+          if-no-files-found: error
+          retention-days: 14
