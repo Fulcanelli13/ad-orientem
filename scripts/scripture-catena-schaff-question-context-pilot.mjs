@@ -48,6 +48,10 @@ function rateQuestion(q,lines){
  if(questionPart.length<20){points-=1;evidence.push("short_question_line_or_column_fragment")}
  const flags=[...new Set([...q.screeningFlags,...evidence.filter(x=>
   x.startsWith("nearby_")||x.startsWith("possible_")||x.startsWith("unusual_"))])];
+ if(q.workUnitId?.startsWith("schaff.npnf1-06.")){
+  flags.push("two_column_harmony_OCR_alignment_unresolved");
+  evidence.push("possible_scripture_interleaved_across_scan_columns");
+ }
  return {preliminaryScore:points,positiveCueEvidence:evidence,
   sourceLayerRisks:flags,
   screeningClass:points>=5?"higher_priority_source_inspection":
@@ -94,6 +98,9 @@ for(const editionId of workIds){
    originalQuestionLineSHA256:q.originalQuestionLineSHA256,
    preliminaryScreening:rateQuestion(q,lines),
    contextEnvelope:buildEnvelope(q,u,lines),
+   columnAlignmentValidated:false,
+   questionAndReplySpeakerSeparated:false,
+   originalPrintedPageChecked:false,
    lexicalCatenaOverlapHints:q.lexicalCatenaOverlapHints,
    fatherAuthorshipEstablished:false,sourceOwnedReplyLocated:false,
    catenaNoveltyEstablished:false,publicationEligible:false
@@ -135,6 +142,8 @@ const data={schema:"ao.catena.schaff-question-source-layer-pilot.v1",
  questionWindowCount:perVolume.reduce((s,x)=>s+x.candidates,0),
  excerptWindowCount:pilot.length,
  sourceAuthorshipCertified:0,sourceRepliesCertified:0,catenaNoveltyConfirmed:0,
+ harmonyColumnInterleavingUnresolved:true,
+ chrysostomPrintedNotesUnresolved:true,
  approvals:0,unchangedOriginalOCR:true,
  volumes:perVolume,showcase:explicitDemonstration,selected:pilot};
 mkdirSync(outDir,{recursive:true});
@@ -147,6 +156,7 @@ const report={schema:"ao.catena.schaff-question-layer-summary.v1",
   screeningBreakdown:x.screeningBreakdown,
   contextEnvelopes:x.contextEnvelopes})),
  certifiedFatherQuestions:0,certifiedSourceReplies:0,confirmedCatenaNovelty:0,
+ harmonyColumnInterleavingUnresolved:true,chrysostomPrintedNotesUnresolved:true,
  publicationApprovals:0};
 writeFileSync(join(outDir,"summary.v1.json"),JSON.stringify(report,null,2)+"\n");
 console.log(JSON.stringify(report));
