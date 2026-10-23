@@ -89,6 +89,17 @@ export function selectEvidence(store,input){
  // Documentary gating precedes inference. Never feed original P6 full answers.
  const scoped=sourceOnlyEvidence(store.sourceOnlyGate,c,selected,lang);
  if(scoped.held)return held(scoped.held);
+ // Obvious requests for invented unrecorded first-person memories are not
+ // ordinary historical questions. Protect them before contacting a model.
+ const privateDisclosure=/(?:\b(?:unrecorded|undocumented|never recorded|never written down|no surviving transcript|without a source|secret|private|made[- ]up)\b|non document[ée]e?s?|sans t[ée]moignage|sans source|pens[ée]es intimes|souvenir secret|conversation secr[èe]te)/iu;
+ const personalTestimony=/(?:\b(?:memory|memories|recollection|conversation|words|whispered|thoughts|feelings|quote|quotation|reminiscence|dialogue)\b|souvenir|pens[ée]es|paroles|conversation|citation|m[ée]moire|confidences?)/iu;
+ if(privateDisclosure.test(question)&&personalTestimony.test(question))
+  return held('unattested_private_historical_testimony');
+ // A personal modern sacramental/canonical verdict is not a historical lesson,
+ // whether or not the question includes the explicit words "today" or "current".
+ const personalCanonical=/(?:\b(?:am i|is my|does my|do i have|can i receive|may i receive)\b.{0,100}\b(?:excommunicat\w*|confession|absolution|communion|canonical penalty|penalty|valid sacrament|sacramental validity)\b|suis[- ]je excommuni[ée]|ma confession est[- ]elle valide|mon absolution est[- ]elle valide|puis[- ]je communier aujourd['’]hui)/iu;
+ if(personalCanonical.test(question))
+  return held('personal_canonical_verdict_requires_lawful_authority');
  // After documentary eligibility is established, a historical document may discuss
  // ecclesiastical discipline without deciding
  // whether a living person has a valid sacrament, current faculty or canonical
