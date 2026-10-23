@@ -21,7 +21,9 @@
     "CATHOLICCULTURE_EXCERPT_WITNESS": "132 independently worded observations from 29 CatholicCulture excerpt pages attributed to Trapp (54), Berger (21), and Newland (57). ONLINE EXCERPT LOCATORS ONLY: No printed pages audited and no full-book completeness claim. CatholicCulture is a reproduction host, not three more independent authors. Do not treat Stokes/McLoughlin retellings as independent confirmation or these observations as distinct Catholic customs. Ritual claims need 1962 Roman Ritual validation.",
     "MUELLER_KELLY_WITNESS_SCOPE": "Mueller 1955-labelled EWTN full-text online transcription 122 line-located descriptions and Kelly 1959 Chapter 16 EWTN text 82 line-located descriptions. No printed editions page-audited. The action labels often split a paragraph into separate related practices, not evidence of 204 unique customs. Church rites, sacraments and family devotions distinct; current approval unverified. Source-dependency links to Weiser, McLoughlin, Stokes and others unresolved.",
     "MUELLER_SECOND_PASS_100_NONADDITIVE": "Another independent indexing pass recorded 100 shorter source-action details from the SAME online fifth-edition Mueller witness already represented by 122 primary Mueller source rows in the Mueller/Kelly intake. 95/100 second-pass entries co-locate to an EWTN line already cited by primary records; five need separate fine-detail review. These 100 are preserved as source-splitting annotations, NOT added to 1,629 total or 122 original Mueller observations, and NOT new independent corroboration.",
-    "STOKES_MUELLER_298_SCREEN_NOT_IDENTITY_ADJUDICATION": "298 rows (198 Stokes + 100 Mueller second-pass annotations) were run through label-only candidate lookup across 490 existing owner/group/source-family labels; 119 have one or more retrieval hints, 179 none. No lexical hit or no-hit establishes identity, nonidentity, distinctness, corroboration or ritual authority; the 100 Mueller annotations also overlap the primary 122."
+    "STOKES_MUELLER_298_SCREEN_NOT_IDENTITY_ADJUDICATION": "298 rows (198 Stokes + 100 Mueller second-pass annotations) were run through label-only candidate lookup across 490 existing owner/group/source-family labels; 119 have one or more retrieval hints, 179 none. No lexical hit or no-hit establishes identity, nonidentity, distinctness, corroboration or ritual authority; the 100 Mueller annotations also overlap the primary 122.",
+    "CHANEY_NEW_AUTHOR_NOT_170_VERIFIED_CUSTOMS": "Chaney's 1955 Grailville Twelve Days of Christmas is a distinct authored book and textual witness, but cites or draws on Mueller and earlier authors and includes modern recommendations alongside reported practice, ritual quotations and firsthand Grailville activities. Index 170 as source observations, not 170 new customs or 170 independent corroborations; avoid old printed page citations.",
+    "CHANEY_AUTOMATED_RETRIEVAL_IS_NOT_SEMANTIC_PROOF": "170 Chaney source observations compared lexically to 490 master/provisional/McLoughlin-family labels plus 604 prior named author source-observation labels. Candidate hints include obvious false positives; 65 observations without hints are not proven novel. Do not promote to master or Calendar."
   },
   "summary": {
     "source_observations": {
@@ -41,14 +43,15 @@
         "ch14_to_28": 121
       },
       "mcloughlin_fulltext_source_observations": 70,
-      "total_source_detail_rows_including_external": 1629,
-      "external_plus_weiser_count_note": "1,025 overlapping Weiser source/detail records + 70 McLoughlin records + 198 Stokes + 132 CatholicCulture historical author excerpt records + 204 Mueller/Kelly EWTN source-action records = 1,629 research rows, NOT 1,629 verified distinct Catholic customs. Authors/compilers overlap; many records are suggestions or variants.",
+      "total_source_detail_rows_including_external": 1799,
+      "external_plus_weiser_count_note": "1,025 Weiser + 70 McLoughlin + 198 Stokes + 132 Trapp/Berger/Newland online excerpts + 204 Mueller/Kelly EWTN + 170 Elsa Chaney (1955) EWTN = 1,799 non-deduplicated source/detail research rows. Another 100 second-pass Mueller detail rows are preserved separately as NONADDITIVE to the 122 existing Mueller source observations. None is a count of distinct Catholic customs.",
       "stokes_1955_online_source_action_observations": 198,
       "catholicculture_trapp_berger_newland_excerpt_source_actions": 132,
       "mueller_kelly_ewtn_source_action_observations": 204,
       "mueller_1955_ewtn_action_observations": 122,
       "kelly_1959_ewtn_action_observations": 82,
-      "mueller_second_pass_detail_rows_not_added_to_source_total": 100
+      "mueller_second_pass_detail_rows_not_added_to_source_total": 100,
+      "chaney_1955_online_source_observations": 170
     },
     "identity_working_rows": {
       "previously_existing_master_identities": 56,
@@ -122,7 +125,21 @@
       "mueller_secondary_without_exact_line_owner": 5,
       "stokes_mueller_source_rows_routed_lexically_noncanonical": 298,
       "stokes_mueller_source_rows_with_label_retrieval_hints": 119,
-      "stokes_mueller_source_rows_without_label_retrieval_hints": 179
+      "stokes_mueller_source_rows_without_label_retrieval_hints": 179,
+      "chaney_1955_claim_characters": {
+        "AUTHOR_SUGGESTION_OR_ADAPTATION": 90,
+        "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED": 52,
+        "HOME_PRAYER_LITURGICAL_TEXT_ADAPTATION_NO_RITE_AUTHORIZATION_CLAIM": 7,
+        "HISTORICAL_OR_COMPARATIVE_CLAIM_NOT_VERIFIED": 6,
+        "EXPLICITLY_ATTRIBUTED_OTHER_AUTHOR": 1,
+        "POSSIBLE_ECCLESIASTICAL_RITUAL_AUTHORITY_NOT_VERIFIED": 9,
+        "GRAILVILLE_AUTHOR_FIRST_PERSON": 5
+      },
+      "chaney_1955_full_source_action_intake": 170,
+      "chaney_1955_candidates_from_existing_labels": 380,
+      "chaney_1955_source_rows_without_any_lexical_hints": 65,
+      "chaney_1955_semantic_equivalences_verified": 0,
+      "chaney_1955_independent_corroborations_certified": 0
     },
     "no_new_app_publications": true
   },
@@ -134,7 +151,8 @@
     "berger_1949_excerpt": "Florence Berger, Cooking for Christ (1949; later reprints), as excerpted online",
     "newland_1956_excerpt": "Mary Reed Newland, The Year and Our Children (1956), as excerpted online",
     "mueller_1955": "Therese Mueller, Our Children's Year of Grace, EWTN complete online 1955 fifth-edition-labelled transcription (original book copyright 1943)",
-    "kelly_1959": "Rev. George A. Kelly, The Catholic Family Handbook (1959), EWTN text chapter 16"
+    "kelly_1959": "Rev. George A. Kelly, The Catholic Family Handbook (1959), EWTN text chapter 16",
+    "chaney_1955": "Elsa Chaney, The Twelve Days of Christmas (Grailville Writing Center, 1955; EWTN full online transcription)"
   },
   "source_dataset_paths": {
     "master": "data/customs/master/working-master.v1.json",
@@ -166,7 +184,9 @@
     "mueller_kelly_ewtn_action_source": "data/customs/master/mueller-1955-kelly-1959-ewtn-action-intake.v1.json",
     "mueller_secondary_100_source_detail": "data/customs/master/mueller-1955-our-childrens-year-of-grace-ewtn-first-pass.v1.json",
     "mueller_secondary_100_to_primary_122_nonadditive": "data/customs/master/mueller-100-second-pass-to-122-nonadditive-source-crosswalk.v1.json",
-    "stokes_mueller_298_label_lookup": "data/customs/master/stokes-mueller-298-source-routing-lexical-screen.v1.json"
+    "stokes_mueller_298_label_lookup": "data/customs/master/stokes-mueller-298-source-routing-lexical-screen.v1.json",
+    "chaney_1955_source_intake": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+    "chaney_1955_170_candidate_lookup": "data/customs/master/chaney-1955-170-cross-source-nonmerging-candidate-review.v1.json"
   },
   "existing_master_identities": [
     {
@@ -20549,6 +20569,2048 @@
       "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
       "identity_certified": false,
       "publication_state": "RESEARCH_ONLY"
+    }
+  ],
+  "external_source_observations_chaney": [
+    {
+      "id": "CHANEY55-EWTN-001",
+      "label": "Sing late-Advent Mass antiphons before family grace at meals",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "ADVENT_FINAL_NINE_DAYS",
+      "web_lines": [
+        150,
+        150
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-002",
+      "label": "Sing seasonal antiphons at family night prayers",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "ADVENT_FINAL_NINE_DAYS",
+      "web_lines": [
+        150,
+        150
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-003",
+      "label": "Families use selected Divine Office psalms and lessons as home prayers",
+      "kind": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "section": "ADVENT_FINAL_NINE_DAYS",
+      "web_lines": [
+        154,
+        154
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-004",
+      "label": "Family reads and meditates Christmas Mass propers over the twelve days",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "ADVENT_FINAL_NINE_DAYS",
+      "web_lines": [
+        157,
+        157
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-005",
+      "label": "Great O antiphons sung in family evening prayer from December 17",
+      "kind": "HOME_PRAYER_LITURGICAL_TEXT_ADAPTATION_NO_RITE_AUTHORIZATION_CLAIM",
+      "section": "ADVENT_FINAL_NINE_DAYS",
+      "web_lines": [
+        166,
+        166
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-006",
+      "label": "Construct a household O Antiphon House with seven symbolic windows",
+      "kind": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "section": "ADVENT_FINAL_NINE_DAYS",
+      "web_lines": [
+        168,
+        168
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-007",
+      "label": "Open each O Antiphon window when that day's antiphon is sung",
+      "kind": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "section": "ADVENT_FINAL_NINE_DAYS",
+      "web_lines": [
+        168,
+        168
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-008",
+      "label": "Reveal the eighth Nativity window at Christmas",
+      "kind": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "section": "ADVENT_FINAL_NINE_DAYS",
+      "web_lines": [
+        168,
+        168
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-009",
+      "label": "Make a foldable symbolic O Antiphon Tower for children",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "ADVENT_FINAL_NINE_DAYS",
+      "web_lines": [
+        169,
+        169
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-010",
+      "label": "Hold a December 16 to 24 domestic Christmas novena",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "ADVENT_FINAL_NINE_DAYS",
+      "web_lines": [
+        181,
+        181
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-011",
+      "label": "Pair each novena day's Magnificat with its O Antiphon",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "ADVENT_FINAL_NINE_DAYS",
+      "web_lines": [
+        181,
+        181
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-012",
+      "label": "Use a special Advent 16th-day antiphon before December 17 O antiphons",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "ADVENT_FINAL_NINE_DAYS",
+      "web_lines": [
+        250,
+        250
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-013",
+      "label": "Do seasonal household preparations with Advent penitential intention",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "PREPARATION_AND_FOOD",
+      "web_lines": [
+        292,
+        292
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-014",
+      "label": "School Christmas plays and parties delayed until Epiphany season",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "PREPARATION_AND_FOOD",
+      "web_lines": [
+        293,
+        293
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-015",
+      "label": "Children make Christmas gifts by sewing small domestic articles",
+      "kind": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "section": "PREPARATION_AND_FOOD",
+      "web_lines": [
+        298,
+        298
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-016",
+      "label": "Children build wooden or crafted gifts under parental supervision",
+      "kind": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "section": "PREPARATION_AND_FOOD",
+      "web_lines": [
+        298,
+        298
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-017",
+      "label": "Prepare Christmas food parcels for poor families",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "PREPARATION_AND_FOOD",
+      "web_lines": [
+        299,
+        299
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-018",
+      "label": "Prepare clothing parcels for the poor in Advent",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "PREPARATION_AND_FOOD",
+      "web_lines": [
+        299,
+        299
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-019",
+      "label": "Deliver charitable Christmas baskets on vigil morning",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "PREPARATION_AND_FOOD",
+      "web_lines": [
+        299,
+        299
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-020",
+      "label": "Family makes Christmas tree and table decorations together",
+      "kind": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "section": "PREPARATION_AND_FOOD",
+      "web_lines": [
+        302,
+        302
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-021",
+      "label": "Place evergreen boughs as backdrop behind domestic Nativity crib",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "PREPARATION_AND_FOOD",
+      "web_lines": [
+        307,
+        307
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-022",
+      "label": "Make evergreen and pine-cone window ornaments at Christmas",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "PREPARATION_AND_FOOD",
+      "web_lines": [
+        307,
+        307
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-023",
+      "label": "Suspend homemade decorative green pompons at Christmas",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "PREPARATION_AND_FOOD",
+      "web_lines": [
+        307,
+        307
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-024",
+      "label": "Make circular evergreen wreaths for front door and windows",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "PREPARATION_AND_FOOD",
+      "web_lines": [
+        307,
+        307
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-025",
+      "label": "Gather pine cones and seed pods on a family autumn outing for Christmas crafts",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "PREPARATION_AND_FOOD",
+      "web_lines": [
+        308,
+        308
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-026",
+      "label": "Display Christmas cards on a decorated tree",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "PREPARATION_AND_FOOD",
+      "web_lines": [
+        309,
+        309
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-027",
+      "label": "Hang incoming Christmas cards along a household staircase",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "PREPARATION_AND_FOOD",
+      "web_lines": [
+        309,
+        309
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-028",
+      "label": "Mount Christmas cards on board for the living room",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "PREPARATION_AND_FOOD",
+      "web_lines": [
+        309,
+        309
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-029",
+      "label": "Children cut out cardboard ornaments and hang them on Christmas tree",
+      "kind": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "section": "PREPARATION_AND_FOOD",
+      "web_lines": [
+        312,
+        312
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-030",
+      "label": "Make typological Scripture and genealogy ornaments for Jesse tree",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "PREPARATION_AND_FOOD",
+      "web_lines": [
+        314,
+        314
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-031",
+      "label": "Jesse tree displays Noah's ark and root of Jesse symbols",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "PREPARATION_AND_FOOD",
+      "web_lines": [
+        315,
+        315
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-032",
+      "label": "Families construct Jesse trees with Old Testament salvation symbols",
+      "kind": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "section": "PREPARATION_AND_FOOD",
+      "web_lines": [
+        316,
+        316
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-033",
+      "label": "Children model or carve homemade crib figures",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "PREPARATION_AND_FOOD",
+      "web_lines": [
+        318,
+        318
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-034",
+      "label": "Make Nativity figures from cardboard cutouts",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "PREPARATION_AND_FOOD",
+      "web_lines": [
+        318,
+        318
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-035",
+      "label": "Make standing paper Nativity figures from Christmas craft kit",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "PREPARATION_AND_FOOD",
+      "web_lines": [
+        320,
+        320
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-036",
+      "label": "Children assist family Christmas baking by shelling nuts and shaping dough",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "PREPARATION_AND_FOOD",
+      "web_lines": [
+        326,
+        326
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-037",
+      "label": "Christmas holiday breads linked symbolically with Bethlehem's name",
+      "kind": "HISTORICAL_OR_COMPARATIVE_CLAIM_NOT_VERIFIED",
+      "section": "PREPARATION_AND_FOOD",
+      "web_lines": [
+        327,
+        327
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-038",
+      "label": "Bake German Christmas Stollen with swaddling clothes symbolism",
+      "kind": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "section": "PREPARATION_AND_FOOD",
+      "web_lines": [
+        331,
+        331
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-039",
+      "label": "Bake festive date-and-nut Christmas fruit bread",
+      "kind": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "section": "PREPARATION_AND_FOOD",
+      "web_lines": [
+        343,
+        343
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-040",
+      "label": "Prepare Polish pierogi for seasonal feast",
+      "kind": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "section": "PREPARATION_AND_FOOD",
+      "web_lines": [
+        348,
+        348
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-041",
+      "label": "Serve pierogi as a traditional Polish Christmas Eve dish",
+      "kind": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "section": "PREPARATION_AND_FOOD",
+      "web_lines": [
+        352,
+        352
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-042",
+      "label": "Keep a quiet household atmosphere on Christmas Eve",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "CHRISTMAS_EVE",
+      "web_lines": [
+        359,
+        359
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-043",
+      "label": "Children polish shoes and ready family clothes on Christmas Eve",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "CHRISTMAS_EVE",
+      "web_lines": [
+        360,
+        360
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-044",
+      "label": "Children decorate and distribute Christmas boxes for poor neighbors",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "CHRISTMAS_EVE",
+      "web_lines": [
+        360,
+        360
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-045",
+      "label": "Some families withhold Christmas tree decorations until Christmas Eve",
+      "kind": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "section": "CHRISTMAS_EVE",
+      "web_lines": [
+        364,
+        364
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-046",
+      "label": "Parents hide decorated Christmas room from children until evening",
+      "kind": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "section": "CHRISTMAS_EVE",
+      "web_lines": [
+        371,
+        371
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-047",
+      "label": "Delayed Christmas room revelation in families described by Mueller",
+      "kind": "EXPLICITLY_ATTRIBUTED_OTHER_AUTHOR",
+      "section": "CHRISTMAS_EVE",
+      "web_lines": [
+        371,
+        371
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-048",
+      "label": "Father leads proposed home blessing of the Christmas tree",
+      "kind": "HOME_PRAYER_LITURGICAL_TEXT_ADAPTATION_NO_RITE_AUTHORIZATION_CLAIM",
+      "section": "CHRISTMAS_EVE",
+      "web_lines": [
+        376,
+        376
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-049",
+      "label": "Father sprinkles Christmas tree with holy water during proposed household rite",
+      "kind": "POSSIBLE_ECCLESIASTICAL_RITUAL_AUTHORITY_NOT_VERIFIED",
+      "section": "CHRISTMAS_EVE",
+      "web_lines": [
+        418,
+        418
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-050",
+      "label": "Change Advent wreath purple ribbons to red for Christmas",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "CHRISTMAS_EVE",
+      "web_lines": [
+        425,
+        425
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-051",
+      "label": "Replace or dress Advent candles in Christmas red",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "CHRISTMAS_EVE",
+      "web_lines": [
+        425,
+        425
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-052",
+      "label": "Light transformed Christmas wreath candles at Christmas breakfast",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "CHRISTMAS_EVE",
+      "web_lines": [
+        425,
+        425
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-053",
+      "label": "Simple Christmas Eve vigil fast and restrained household meals",
+      "kind": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "section": "CHRISTMAS_EVE",
+      "web_lines": [
+        428,
+        428
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-054",
+      "label": "Place straw on Christmas Eve dining table under white linen",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "CHRISTMAS_EVE",
+      "web_lines": [
+        428,
+        428
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-055",
+      "label": "Share unleavened Christmas Eve family wafer before supper",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "CHRISTMAS_EVE",
+      "web_lines": [
+        429,
+        429
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-056",
+      "label": "Father reads a blessing prayer over shared Christmas bread",
+      "kind": "POSSIBLE_ECCLESIASTICAL_RITUAL_AUTHORITY_NOT_VERIFIED",
+      "section": "CHRISTMAS_EVE",
+      "web_lines": [
+        429,
+        429
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-057",
+      "label": "Substitute homemade Christmas bread for unleavened supper wafer",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "CHRISTMAS_EVE",
+      "web_lines": [
+        430,
+        430
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-058",
+      "label": "Latin American Las Posadas traveling from house to house for lodging",
+      "kind": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "section": "CHRISTMAS_EVE",
+      "web_lines": [
+        432,
+        432
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-059",
+      "label": "Christmas Eve Las Posadas procession admitted into final Nativity home",
+      "kind": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "section": "CHRISTMAS_EVE",
+      "web_lines": [
+        433,
+        433
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-060",
+      "label": "Domestic family Las Posadas procession carrying Mary and Joseph statues",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "CHRISTMAS_EVE",
+      "web_lines": [
+        434,
+        434
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-061",
+      "label": "Children knock on household doors until the family admits them to stable",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "CHRISTMAS_EVE",
+      "web_lines": [
+        435,
+        435
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-062",
+      "label": "Neighborhood youth impersonate Mary and Joseph in lantern procession",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "CHRISTMAS_EVE",
+      "web_lines": [
+        436,
+        436
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-063",
+      "label": "Final neighbors' garage becomes symbolic Bethlehem stable",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "CHRISTMAS_EVE",
+      "web_lines": [
+        437,
+        437
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-064",
+      "label": "Midnight Mass Gospel read before staged Christmas stable scene",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "CHRISTMAS_EVE",
+      "web_lines": [
+        437,
+        437
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-065",
+      "label": "Grailville neighbors process along the street for No Room in the Inn",
+      "kind": "GRAILVILLE_AUTHOR_FIRST_PERSON",
+      "section": "CHRISTMAS_EVE",
+      "web_lines": [
+        439,
+        439
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-066",
+      "label": "Christ Child statue carried in a family Christmas Eve enthronement",
+      "kind": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "section": "CHRISTMAS_EVE",
+      "web_lines": [
+        442,
+        442
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-067",
+      "label": "Youngest child carries Christ Child statue in Christmas house procession",
+      "kind": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "section": "CHRISTMAS_EVE",
+      "web_lines": [
+        443,
+        443
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-068",
+      "label": "Older siblings carry candles beside child bearing crib figure",
+      "kind": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "section": "CHRISTMAS_EVE",
+      "web_lines": [
+        443,
+        443
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-069",
+      "label": "Family sings carols during Christ Child procession to manger",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "CHRISTMAS_EVE",
+      "web_lines": [
+        444,
+        444
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-070",
+      "label": "Father reads Nativity proclamation from Martyrology by crib",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "CHRISTMAS_EVE",
+      "web_lines": [
+        445,
+        445
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-071",
+      "label": "Household kneels at birth announcement in Christmas Martyrology recitation",
+      "kind": "HOME_PRAYER_LITURGICAL_TEXT_ADAPTATION_NO_RITE_AUTHORIZATION_CLAIM",
+      "section": "CHRISTMAS_EVE",
+      "web_lines": [
+        454,
+        454
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-072",
+      "label": "Youngest child places the Christ Child into Christmas manger",
+      "kind": "HOME_PRAYER_LITURGICAL_TEXT_ADAPTATION_NO_RITE_AUTHORIZATION_CLAIM",
+      "section": "CHRISTMAS_EVE",
+      "web_lines": [
+        458,
+        458
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-073",
+      "label": "Family prays a Messianic psalm before domestic Christmas crib",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "CHRISTMAS_EVE",
+      "web_lines": [
+        461,
+        461
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-074",
+      "label": "Read Midnight Mass Gospel during family Christmas Eve crib ceremony",
+      "kind": "HOME_PRAYER_LITURGICAL_TEXT_ADAPTATION_NO_RITE_AUTHORIZATION_CLAIM",
+      "section": "CHRISTMAS_EVE",
+      "web_lines": [
+        481,
+        481
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-075",
+      "label": "Open final Christmas window of O Antiphon tower after vigil prayers",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "CHRISTMAS_EVE",
+      "web_lines": [
+        492,
+        492
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-076",
+      "label": "Father recites optional crib blessing text and sprinkles holy water",
+      "kind": "POSSIBLE_ECCLESIASTICAL_RITUAL_AUTHORITY_NOT_VERIFIED",
+      "section": "CHRISTMAS_EVE",
+      "web_lines": [
+        495,
+        495
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-077",
+      "label": "Family opens Christmas gifts after crib prayers on Christmas Eve",
+      "kind": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "section": "CHRISTMAS_EVE",
+      "web_lines": [
+        503,
+        503
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-078",
+      "label": "Family exchanges gifts after return from Midnight Mass",
+      "kind": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "section": "CHRISTMAS_EVE",
+      "web_lines": [
+        505,
+        505
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-079",
+      "label": "Family exchanges Christmas gifts on Christmas morning",
+      "kind": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "section": "CHRISTMAS_EVE",
+      "web_lines": [
+        505,
+        505
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-080",
+      "label": "Children give a cherished Christmas present to poor as gratitude",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "CHRISTMAS_EVE",
+      "web_lines": [
+        506,
+        506
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-081",
+      "label": "New Christmas clothing first worn at church in some families",
+      "kind": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "section": "CHRISTMAS_EVE",
+      "web_lines": [
+        506,
+        506
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-082",
+      "label": "Saint Nicholas visits children on eve of December 6 in bishop costume",
+      "kind": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "section": "CHRISTMAS_EVE",
+      "web_lines": [
+        508,
+        508
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-083",
+      "label": "Candle-bearing family angel awakens children for Christmas Midnight Mass",
+      "kind": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "section": "CHRISTMAS_DAY",
+      "web_lines": [
+        518,
+        518
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-084",
+      "label": "French Reveillon late breakfast or supper after Christmas Midnight Mass",
+      "kind": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "section": "CHRISTMAS_DAY",
+      "web_lines": [
+        519,
+        519
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-085",
+      "label": "Family places Christ Child statue in crib upon returning from Midnight Mass",
+      "kind": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "section": "CHRISTMAS_DAY",
+      "web_lines": [
+        519,
+        519
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-086",
+      "label": "Household Gospel reading after Midnight Mass at Christmas table",
+      "kind": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "section": "CHRISTMAS_DAY",
+      "web_lines": [
+        519,
+        519
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-087",
+      "label": "Read dawn Mass introit while lighting household Christ candle",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "CHRISTMAS_DAY",
+      "web_lines": [
+        521,
+        521
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-088",
+      "label": "Some households avoid Christmas carols until Christmas Eve",
+      "kind": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "section": "CHRISTMAS_DAY",
+      "web_lines": [
+        527,
+        527
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-089",
+      "label": "Older children perform special Christmas carol concert for family",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "CHRISTMAS_DAY",
+      "web_lines": [
+        528,
+        528
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-090",
+      "label": "Family instrumentalists accompany traditional Christmas song evening",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "CHRISTMAS_DAY",
+      "web_lines": [
+        528,
+        528
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-091",
+      "label": "Family shares favorite religious Christmas stories after day's festivities",
+      "kind": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "section": "CHRISTMAS_DAY",
+      "web_lines": [
+        529,
+        529
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-092",
+      "label": "Family adds one or two new Christmas religious stories each year",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "CHRISTMAS_DAY",
+      "web_lines": [
+        529,
+        529
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-093",
+      "label": "Children carry shepherd figures to manger during a Shepherds Mass Gospel reading",
+      "kind": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "section": "CHRISTMAS_DAY",
+      "web_lines": [
+        552,
+        552
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-094",
+      "label": "Magi figures begin a house-wide journey on Christmas Day",
+      "kind": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "section": "CHRISTMAS_DAY",
+      "web_lines": [
+        553,
+        553
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-095",
+      "label": "Magi statues advance daily across furniture until Epiphany",
+      "kind": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "section": "CHRISTMAS_DAY",
+      "web_lines": [
+        553,
+        553
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-096",
+      "label": "Family stages Nativity from Saint Luke with improvised robes and props",
+      "kind": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "section": "CHRISTMAS_DAY",
+      "web_lines": [
+        555,
+        555
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-097",
+      "label": "Christmas family play uses Scripture narrator and actors",
+      "kind": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "section": "CHRISTMAS_DAY",
+      "web_lines": [
+        556,
+        556
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-098",
+      "label": "Community stages salvation-history drama through Advent-Christmas readings",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "CHRISTMAS_DAY",
+      "web_lines": [
+        558,
+        558
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-099",
+      "label": "Some families light central Christ candle each of twelve Christmas days",
+      "kind": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "section": "CHRISTMAS_DAY",
+      "web_lines": [
+        561,
+        561
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-100",
+      "label": "Family places Christmas Christ candle at dinner table for meals",
+      "kind": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "section": "CHRISTMAS_DAY",
+      "web_lines": [
+        561,
+        561
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-101",
+      "label": "Other families light Christ candle beside crib for prayers and singing",
+      "kind": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "section": "CHRISTMAS_DAY",
+      "web_lines": [
+        562,
+        562
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-102",
+      "label": "Irish Christmas light in window historically associated with hospitality",
+      "kind": "HISTORICAL_OR_COMPARATIVE_CLAIM_NOT_VERIFIED",
+      "section": "CHRISTMAS_DAY",
+      "web_lines": [
+        563,
+        563
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-103",
+      "label": "Keep Christmas cookies and hot drink ready for unexpected traveler",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "CHRISTMAS_DAY",
+      "web_lines": [
+        564,
+        564
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-104",
+      "label": "Invite guest without family to Christmas dinner as Christ guest",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "CHRISTMAS_DAY",
+      "web_lines": [
+        566,
+        566
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-105",
+      "label": "Home Christmas meal blessings use Christmas Mass and Office prayers",
+      "kind": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "section": "CHRISTMAS_DAY",
+      "web_lines": [
+        569,
+        569
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-106",
+      "label": "Add Christmas collect to ordinary grace at Christmastide meals",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "CHRISTMAS_DAY",
+      "web_lines": [
+        569,
+        569
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-107",
+      "label": "Continue caroling and storytelling throughout Christmas twelve days",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "CHRISTMAS_OCTAVE",
+      "web_lines": [
+        578,
+        578
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-108",
+      "label": "Invite neighbors on post-Christmas outing ending with carols",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "CHRISTMAS_OCTAVE",
+      "web_lines": [
+        578,
+        578
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-109",
+      "label": "Loveland couples exchange Murder in Cathedral on Saint Thomas Becket day",
+      "kind": "GRAILVILLE_AUTHOR_FIRST_PERSON",
+      "section": "CHRISTMAS_OCTAVE",
+      "web_lines": [
+        579,
+        579
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-110",
+      "label": "Evening prayers at crib incorporate Magi resting places and Christ candle",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "CHRISTMAS_OCTAVE",
+      "web_lines": [
+        582,
+        582
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-111",
+      "label": "Christmas family night prayers include examination of conscience before crib",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "CHRISTMAS_OCTAVE",
+      "web_lines": [
+        593,
+        593
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-112",
+      "label": "Christmas night prayers adopt Psalm 133 from Compline",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "CHRISTMAS_OCTAVE",
+      "web_lines": [
+        602,
+        602
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-113",
+      "label": "Night prayer includes daily saint collect during Christmas season",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "CHRISTMAS_OCTAVE",
+      "web_lines": [
+        638,
+        638
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-114",
+      "label": "Pray especially for persecutors and enemies on Saint Stephen feast",
+      "kind": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "section": "SAINT_STEPHEN",
+      "web_lines": [
+        644,
+        644
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-115",
+      "label": "British Saint Stephen seasonal clay savings boxes distributed to poor",
+      "kind": "HISTORICAL_OR_COMPARATIVE_CLAIM_NOT_VERIFIED",
+      "section": "SAINT_STEPHEN",
+      "web_lines": [
+        645,
+        645
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-116",
+      "label": "Family collects usable gifts in St Stephen box beside Christmas tree",
+      "kind": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "section": "SAINT_STEPHEN",
+      "web_lines": [
+        646,
+        646
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-117",
+      "label": "Read or enact Good King Wenceslaus on Saint Stephen evening",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "SAINT_STEPHEN",
+      "web_lines": [
+        647,
+        647
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-118",
+      "label": "Sing Good King Wenceslaus carol after Stephen story",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "SAINT_STEPHEN",
+      "web_lines": [
+        647,
+        647
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-119",
+      "label": "Priest blesses Saint John wine at church after December 27 Mass",
+      "kind": "POSSIBLE_ECCLESIASTICAL_RITUAL_AUTHORITY_NOT_VERIFIED",
+      "section": "SAINT_JOHN",
+      "web_lines": [
+        649,
+        649
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-120",
+      "label": "Saint John wine passed through family with love greeting",
+      "kind": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "section": "SAINT_JOHN",
+      "web_lines": [
+        655,
+        655
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-121",
+      "label": "Parish priest blesses children at crib on Holy Innocents feast",
+      "kind": "POSSIBLE_ECCLESIASTICAL_RITUAL_AUTHORITY_NOT_VERIFIED",
+      "section": "HOLY_INNOCENTS",
+      "web_lines": [
+        659,
+        659
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-122",
+      "label": "Father leads family prayer for children at home on Holy Innocents",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "HOLY_INNOCENTS",
+      "web_lines": [
+        659,
+        659
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-123",
+      "label": "Proposed father-led child blessing adapts a Roman Ritual prayer",
+      "kind": "POSSIBLE_ECCLESIASTICAL_RITUAL_AUTHORITY_NOT_VERIFIED",
+      "section": "HOLY_INNOCENTS",
+      "web_lines": [
+        660,
+        660
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-124",
+      "label": "Father sprinkles children with holy water after blessing",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "HOLY_INNOCENTS",
+      "web_lines": [
+        668,
+        668
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-125",
+      "label": "Father makes sign of cross on children's foreheads at evening prayer",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "HOLY_INNOCENTS",
+      "web_lines": [
+        669,
+        669
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-126",
+      "label": "Youngest child gets special festive privileges on Holy Innocents",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "HOLY_INNOCENTS",
+      "web_lines": [
+        670,
+        670
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-127",
+      "label": "Holy Innocents dinner candle centerpiece around Christ candle",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "HOLY_INNOCENTS",
+      "web_lines": [
+        671,
+        671
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-128",
+      "label": "Children light small candles from larger Christ candle for Holy Innocents",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "HOLY_INNOCENTS",
+      "web_lines": [
+        672,
+        672
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-129",
+      "label": "New Years Eve families gather for intergenerational party at home",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "NEW_YEARS_EVE",
+      "web_lines": [
+        678,
+        678
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-130",
+      "label": "Hour of Watching prayer kept during last hour of New Years Eve",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "NEW_YEARS_EVE",
+      "web_lines": [
+        679,
+        679
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-131",
+      "label": "Dutch children compose and present poems to parents on New Years Day",
+      "kind": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "section": "NEW_YEARS_DAY",
+      "web_lines": [
+        683,
+        683
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-132",
+      "label": "Chinese younger generations visit elders with gifts on New Years Day",
+      "kind": "HISTORICAL_OR_COMPARATIVE_CLAIM_NOT_VERIFIED",
+      "section": "NEW_YEARS_DAY",
+      "web_lines": [
+        683,
+        683
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-133",
+      "label": "French Canadian children thank parents before New Year family meal",
+      "kind": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "section": "NEW_YEARS_DAY",
+      "web_lines": [
+        684,
+        684
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-134",
+      "label": "Children offer personal services to parents for New Year",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "NEW_YEARS_DAY",
+      "web_lines": [
+        685,
+        685
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-135",
+      "label": "Enthrone the home crib on Epiphany Eve with gold or red cloth",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "EPIPHANY",
+      "web_lines": [
+        723,
+        723
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-136",
+      "label": "Crown domestic Christ Child statue and add symbolic gold scepter",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "EPIPHANY",
+      "web_lines": [
+        723,
+        723
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-137",
+      "label": "Light tall candles beside royal crib at Epiphany family prayers",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "EPIPHANY",
+      "web_lines": [
+        723,
+        723
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-138",
+      "label": "Epiphany Eve water blessing linked in source with baptism tradition",
+      "kind": "HISTORICAL_OR_COMPARATIVE_CLAIM_NOT_VERIFIED",
+      "section": "EPIPHANY",
+      "web_lines": [
+        727,
+        727
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-139",
+      "label": "Parish community attends solemn Epiphany water blessing",
+      "kind": "POSSIBLE_ECCLESIASTICAL_RITUAL_AUTHORITY_NOT_VERIFIED",
+      "section": "EPIPHANY",
+      "web_lines": [
+        728,
+        728
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-140",
+      "label": "Children make decorated small containers for Epiphany holy water",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "EPIPHANY",
+      "web_lines": [
+        728,
+        728
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-141",
+      "label": "Families bring blessed Epiphany water home for day of feast",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "EPIPHANY",
+      "web_lines": [
+        729,
+        729
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-142",
+      "label": "Pastors bless Epiphany chalk used for household door inscriptions",
+      "kind": "POSSIBLE_ECCLESIASTICAL_RITUAL_AUTHORITY_NOT_VERIFIED",
+      "section": "EPIPHANY",
+      "web_lines": [
+        730,
+        730
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-143",
+      "label": "Family Epiphany house blessing goes room to room with chalk",
+      "kind": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "section": "EPIPHANY",
+      "web_lines": [
+        739,
+        739
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-144",
+      "label": "Chalk marks Magi initials and year over home doors at Epiphany",
+      "kind": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "section": "EPIPHANY",
+      "web_lines": [
+        739,
+        739
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-145",
+      "label": "Grailville distributes mimeographed Epiphany household prayer scripts",
+      "kind": "GRAILVILLE_AUTHOR_FIRST_PERSON",
+      "section": "EPIPHANY",
+      "web_lines": [
+        743,
+        743
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-146",
+      "label": "Epiphany home prayers include recitation of the Magnificat",
+      "kind": "HOME_PRAYER_LITURGICAL_TEXT_ADAPTATION_NO_RITE_AUTHORIZATION_CLAIM",
+      "section": "EPIPHANY",
+      "web_lines": [
+        756,
+        756
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-147",
+      "label": "Rooms sprinkled with Epiphany water and incensed during household prayer",
+      "kind": "POSSIBLE_ECCLESIASTICAL_RITUAL_AUTHORITY_NOT_VERIFIED",
+      "section": "EPIPHANY",
+      "web_lines": [
+        758,
+        758
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-148",
+      "label": "Home doors marked with blessed chalk after family Epiphany prayer",
+      "kind": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "section": "EPIPHANY",
+      "web_lines": [
+        782,
+        782
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-149",
+      "label": "Epiphany Twelfth Night cake conceals three beans or nuts",
+      "kind": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "section": "EPIPHANY",
+      "web_lines": [
+        785,
+        785
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-150",
+      "label": "Bean finders dressed as Magi become party kings",
+      "kind": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "section": "EPIPHANY",
+      "web_lines": [
+        786,
+        786
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-151",
+      "label": "Twelfth Night bean kings preside over games and refreshments",
+      "kind": "REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED",
+      "section": "EPIPHANY",
+      "web_lines": [
+        786,
+        786
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-152",
+      "label": "Epiphany place cards use Mass texts and table collect",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "EPIPHANY",
+      "web_lines": [
+        787,
+        787
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-153",
+      "label": "Costumed Magi lead Epiphany procession holding three statues",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "EPIPHANY",
+      "web_lines": [
+        791,
+        791
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-154",
+      "label": "Children offer material charitable gifts before Epiphany crib",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "EPIPHANY",
+      "web_lines": [
+        792,
+        792
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-155",
+      "label": "Children write Epiphany promises of love prayer and self denial",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "EPIPHANY",
+      "web_lines": [
+        793,
+        793
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-156",
+      "label": "Written acts of service deposited by Christ Child at Epiphany crib",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "EPIPHANY",
+      "web_lines": [
+        794,
+        794
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-157",
+      "label": "Children choose nations to pray for during Epiphany octave",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "EPIPHANY",
+      "web_lines": [
+        795,
+        795
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-158",
+      "label": "Children read alternate Psalm verses at end of Epiphany procession",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "EPIPHANY",
+      "web_lines": [
+        797,
+        797
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-159",
+      "label": "Young party host reads Epiphany Gospel at crib ceremony",
+      "kind": "HOME_PRAYER_LITURGICAL_TEXT_ADAPTATION_NO_RITE_AUTHORIZATION_CLAIM",
+      "section": "EPIPHANY",
+      "web_lines": [
+        828,
+        828
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-160",
+      "label": "End Twelfth Night gathering with Christmas carols by kingly crib",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "EPIPHANY",
+      "web_lines": [
+        835,
+        835
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-161",
+      "label": "Epiphany Gospel plays historically used in church and popular culture",
+      "kind": "HISTORICAL_OR_COMPARATIVE_CLAIM_NOT_VERIFIED",
+      "section": "EPIPHANY",
+      "web_lines": [
+        840,
+        840
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-162",
+      "label": "Children put on Epiphany drama for school hospital or parish",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "EPIPHANY",
+      "web_lines": [
+        841,
+        841
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-163",
+      "label": "Attend Eastern-rite Epiphany Mass as ecumenical educational activity",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "EPIPHANY",
+      "web_lines": [
+        854,
+        854
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-164",
+      "label": "Host apostolic-group Twelfth Night party for foreign students or neighbors",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "EPIPHANY",
+      "web_lines": [
+        857,
+        857
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-165",
+      "label": "Community Epiphany Magi procession with psalm verses",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "EPIPHANY",
+      "web_lines": [
+        883,
+        883
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-166",
+      "label": "Grailville group dramatizes Epiphany Gospel manifestations",
+      "kind": "GRAILVILLE_AUTHOR_FIRST_PERSON",
+      "section": "EPIPHANY",
+      "web_lines": [
+        890,
+        890
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-167",
+      "label": "Grailville play sequences Magi Jordan and Cana Gospel episodes",
+      "kind": "GRAILVILLE_AUTHOR_FIRST_PERSON",
+      "section": "EPIPHANY",
+      "web_lines": [
+        891,
+        891
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-168",
+      "label": "Epiphany plays stage the Gospel with all guests participating",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "EPIPHANY",
+      "web_lines": [
+        893,
+        893
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-169",
+      "label": "Apostolic group holds Epiphany missionary study-and-prayer day",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "EPIPHANY",
+      "web_lines": [
+        896,
+        896
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "CHANEY55-EWTN-170",
+      "label": "Epiphany missionary prayer intentions accompany charitable gifts",
+      "kind": "AUTHOR_SUGGESTION_OR_ADAPTATION",
+      "section": "EPIPHANY",
+      "web_lines": [
+        897,
+        897
+      ],
+      "source_file": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
+      "identity_certified": false
     }
   ]
 }
