@@ -107,7 +107,7 @@ function render(){
  const form=make("form");form.id="reviewForm";
  const controls=[];
  if(!c.results.length){
-  const notice=make("p","No original Catena excerpt was returned by the tested search.");
+  const notice=make("p","No excerpt was returned by the tested search. Inspect the full canonical pericope below before deciding whether this abstention missed a useful source.");
   notice.className="notice";form.append(notice);
   const abstain=field(form,"Assess no-result behavior","select",prior.abstentionGrade||"");
   for(const [v,t] of [["","Choose assessment"],["appropriate","Appropriate abstention"],["missed_source","Missed useful source"],["uncertain","Not enough evidence to judge"]]){
@@ -138,6 +138,25 @@ function render(){
   const reason=field(part,"Independent contextual justification","textarea",old.justification||"");
   controls.push({r,grade,phrase,reason});form.append(part);
  });
+ const reference=packet.contexts[c.contextPericopeId];
+ if(!reference||!Array.isArray(reference.segments)||!reference.segments.length)
+  throw Error("Missing canonical context; review blocked");
+ const details=make("details");
+ details.dataset.fullPericopeContext=c.contextPericopeId;
+ const summary=make("summary","Complete Catena pericope — contextual reference only, NOT a retrieved answer");
+ details.append(summary);
+ const caption=make("p","Use this to assess whether a no-result case missed a useful original source. Do not score non-retrieved excerpts as Messenger responses.");
+ caption.className="notice";details.append(caption);
+ reference.segments.forEach((segment,i)=>{
+  const part=make("article");part.className="case";
+  const heading=make("div","Context excerpt "+(i+1)+" · Printed label: "+segment.father);
+  heading.className="eyebrow";part.append(heading);
+  const words=make("p",segment.originalWords);words.className="original";part.append(words);
+  details.append(part);
+ });
+ const link=make("a","Read complete printed Catena source");
+ link.href=reference.sourceUrl;link.target="_blank";link.rel="noopener noreferrer";
+ details.append(link);form.append(details);
  const overall=field(form,"Overall assessment and any qualification","textarea",prior.overallRationale||"");
  const btn=make("button","Save this case");btn.type="submit";form.append(btn);
  form.addEventListener("submit",e=>{
