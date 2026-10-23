@@ -1,0 +1,481 @@
+{
+  "schema": "AO_CHANOINE_UNATTENDED_B20_MODESTY_OCCASIONS_SOURCE_DELTAS_V1",
+  "date": "2026-10-21",
+  "ownerBranch": "research/chanoine-cse-source-dialogue-20261019",
+  "ownerComposite": "research/chanoine/chanoine-cse-147-conversation-editorial-review.v1.json",
+  "ownerCompositeBlob": "bfaa8dcc371ffd8af619a2bb31e8972948c6f68c",
+  "status": "RESEARCH_ONLY_PRELIMINARY_CLAIM_COLLATION",
+  "counts": {
+    "families": 4,
+    "answerUnits": 8,
+    "certified": 0,
+    "published": 0
+  },
+  "records": [
+    {
+      "familyId": "CHA-CSE-CSE030",
+      "sourceQuestionId": "CSE030",
+      "canonicalOwner": "SEX-CORE-07",
+      "originalRecord": {
+        "source_question_id": "CSE030",
+        "conversation_id": "CHA-CSE-CSE030",
+        "canonical_topic_owner": "SEX-CORE-07",
+        "title": "Is modesty objective or merely cultural?",
+        "source_access": "PUBLIC_READER",
+        "source_main_visitor_question": {
+          "en": "Is modesty objective or merely cultural?",
+          "fr": "La modestie est-elle objective ou purement culturelle ?"
+        },
+        "source_main_answer_verbatim": {
+          "en": "The virtue is objective, while many concrete dress conventions vary by time, place and social context. Catholic tradition evaluates moderation, circumstances and intention rather than treating one historical dress code as universal moral law.",
+          "fr": "La vertu est objective, tandis que de nombreuses conventions vestimentaires concrètes varient selon l’époque, le lieu et le contexte social. La tradition catholique évalue la modération, les circonstances et l’intention au lieu de traiter un code vestimentaire historique comme une loi morale universelle."
+        },
+        "pastoral_main_answer_draft": {
+          "en": "Modesty is a virtue, but it should not be reduced to the fashions of one century. Dress and custom vary; intention, propriety, respect for oneself and others, and the circumstances all matter. We ought to form sound judgment, not turn a preferred costume into a universal commandment.",
+          "fr": "La modestie est une vertu, mais elle ne se réduit pas aux usages vestimentaires d’un siècle. Les vêtements et les coutumes varient ; l’intention, la bienséance, le respect de soi et d’autrui et les circonstances comptent. Formons un jugement droit, sans ériger un costume préféré en commandement universel."
+        },
+        "second_turn_origin": "NEW_EDITORIAL_OBJECTION",
+        "visitor_followup_question": {
+          "en": "So must everyone dress according to the standards of one Catholic country or era?",
+          "fr": "Faut-il donc que tous s’habillent selon les usages d’un pays ou d’une époque catholique ?"
+        },
+        "original_source_followup_reply": null,
+        "pastoral_followup_reply_draft": {
+          "en": "No. Local conventions are relevant but are not a universal moral law. The lasting questions are modesty, prudence, respect and the intention and circumstances of dress. Avoid both indifference to virtue and the policing of arbitrary details.",
+          "fr": "Non. Les usages locaux comptent, mais ils ne sont pas une loi morale universelle. Les questions durables sont la modestie, la prudence, le respect ainsi que l’intention et les circonstances. Évitons autant l’indifférence envers la vertu que la surveillance de détails arbitraires."
+        },
+        "source_pointers": {
+          "source_QA_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+          "source_debate_file": null,
+          "source_locator_refs": [
+            {
+              "registry_key": "ST169",
+              "locator": "a.2"
+            },
+            {
+              "registry_key": "SACRA",
+              "locator": "§§58–62"
+            }
+          ],
+          "source_catalog_path": "data/app/content-items-sexual-ethics.v1.json"
+        },
+        "specialist_review_flag": "GENERAL_DOCTRINAL_REVIEW",
+        "review_attention": [],
+        "claimed_historical_author": "NONE_EDITORIAL_FICTIONAL_CHANOINE",
+        "publication_approved": false,
+        "persona_voice_approved": false,
+        "claim_level_certified": false,
+        "safeguarding_approved": false,
+        "english_french_reviewed": false,
+        "source_semantic_alignment_approved": false,
+        "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE"
+      },
+      "proposedTurns": [
+        {
+          "en": "Modesty requires moderation in dress. Aquinas considers local custom and the wearer’s attachments; neither fashionable conformity nor deliberate neglect settles the moral question.",
+          "fr": "La modestie demande de la mesure dans la tenue. Saint Thomas considère les usages locaux et les attachements de celui qui s’habille ; ni la conformité à la mode ni la négligence voulue ne règlent la question morale.",
+          "claims": [
+            {
+              "text": "Bounded moral/source distinction",
+              "refs": [
+                "ST169a1"
+              ],
+              "type": "FAITHFUL_PARAPHRASE"
+            }
+          ]
+        },
+        {
+          "en": "One country’s costume is not thereby binding everywhere. Custom matters, but so do reason, circumstances and intention.",
+          "fr": "Le costume d’un pays ne s’impose pas pour autant partout. Les usages comptent, mais aussi la raison, les circonstances et l’intention.",
+          "claims": [
+            {
+              "text": "Bounded moral/source distinction",
+              "refs": [
+                "ST169a1"
+              ],
+              "type": "EXPLANATORY_APPLICATION"
+            }
+          ]
+        }
+      ],
+      "sourcePrecisionDeltas": [
+        "Add169a1, the direct source for localcustom, excess and neglect;169a2 alone is an incomplete locator",
+        "Do not equate socialcustom with automatic moralpermission or a universal garmentcode"
+      ],
+      "classification": "CHANOINE_EXPLANATORY_APOLOGETICS_NOT_PIUS_X_VOICE",
+      "sourceMatched": true,
+      "humanTheology": false,
+      "humanENFR": false,
+      "personaApproval": false,
+      "publication": false,
+      "routingEnabled": false
+    },
+    {
+      "familyId": "CHA-CSE-CSE035",
+      "sourceQuestionId": "CSE035",
+      "canonicalOwner": "SEX-CORE-09",
+      "originalRecord": {
+        "source_question_id": "CSE035",
+        "conversation_id": "CHA-CSE-CSE035",
+        "canonical_topic_owner": "SEX-CORE-09",
+        "title": "Is cohabitation a sensible way to test compatibility?",
+        "source_access": "PUBLIC_READER",
+        "source_main_visitor_question": {
+          "en": "Is cohabitation a sensible way to test compatibility?",
+          "fr": "La cohabitation est-elle un moyen raisonnable de tester la compatibilité ?"
+        },
+        "source_main_answer_verbatim": {
+          "en": "Catholic morality separates two questions. If cohabitation includes sex, the sexual relations are outside marriage and are judged accordingly. If the couple is genuinely continent, sharing a home is not itself fornication; the remaining questions are prudential—whether the arrangement creates a proximate occasion of sin, gives serious scandal, or creates dependencies that make free discernment harder. The Church does not need to claim that cohabitation is an ineffective “compatibility test” in order to judge those moral issues.",
+          "fr": "La morale catholique distingue deux questions. Si la cohabitation comprend des relations sexuelles, celles-ci ont lieu hors mariage et sont jugées en conséquence. Si le couple vit réellement dans la continence, le simple fait de partager un logement n’est pas en lui-même une fornication ; les questions restantes sont prudentielles : l’arrangement crée-t-il une occasion prochaine de péché, un scandale sérieux, ou des dépendances qui rendent le discernement libre plus difficile ? L’Église n’a pas besoin d’affirmer que la cohabitation serait un mauvais « test de compatibilité » pour juger ces questions morales."
+        },
+        "pastoral_main_answer_draft": {
+          "en": "It is prudent to learn whether you can build a life together; we need not claim that cohabitation is an ineffective test to make the moral distinction. If the couple has sexual relations, those acts take place outside marriage. If both live continently, sharing an address is not itself fornication, but it still calls for judgment about serious temptation, scandal, dependence and genuine freedom to discern.",
+          "fr": "Il est prudent de chercher à savoir si l'on peut construire une vie commune ; nul besoin d'affirmer que la cohabitation est un test inefficace pour faire la distinction morale. Si le couple a des relations sexuelles, ces actes ont lieu hors mariage. Si les deux vivent dans la continence, partager une adresse n'est pas en soi une fornication, mais il faut encore considérer les tentations sérieuses, le scandale, la dépendance et la liberté réelle de discerner."
+        },
+        "second_turn_origin": "EXISTING_SOURCE_OBJECTION",
+        "visitor_followup_question": {
+          "en": "But many married couples discover incompatibilities only after living together. Isn’t cohabitation simply prudent risk reduction?",
+          "fr": "Mais beaucoup de couples découvrent des incompatibilités seulement après avoir vécu ensemble. La cohabitation n’est-elle pas simplement une réduction prudente du risque ?"
+        },
+        "original_source_followup_reply": {
+          "en": "Prudence requires learning enough before marriage, but not every risk-reduction strategy is morally neutral. Discernment can occur through time, family life, conflict, finances, expectations and chastity without treating marital rights as already possessed.",
+          "fr": "La prudence exige de suffisamment connaître l’autre avant le mariage, mais toute stratégie de réduction du risque n’est pas moralement neutre. Le discernement peut se faire dans le temps, la vie familiale, les conflits, les finances, les attentes et la chasteté sans traiter les droits matrimoniaux comme déjà acquis."
+        },
+        "pastoral_followup_reply_draft": {
+          "en": "Prudence certainly requires knowing the person one hopes to marry. But we cannot assume every method of reducing risk is morally indifferent. Time, disagreement, family, finances and shared responsibilities can reveal much without anticipating conjugal rights.",
+          "fr": "La prudence demande certes de bien connaître celui ou celle que l’on espère épouser. Mais toute méthode de réduction du risque n’est pas nécessairement moralement indifférente. Le temps, les désaccords, la famille, les finances et les responsabilités révèlent beaucoup sans anticiper les droits conjugaux."
+        },
+        "source_pointers": {
+          "source_QA_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+          "source_debate_file": "src/learn/sexual-ethics-data/debates-035-064.js",
+          "source_locator_refs": [
+            {
+              "registry_key": "ST154",
+              "locator": "a.2"
+            },
+            {
+              "registry_key": "ST43",
+              "locator": "aa.1, 7"
+            }
+          ],
+          "source_catalog_path": "data/app/content-items-sexual-ethics.v1.json"
+        },
+        "specialist_review_flag": "DOCTRINAL_SOURCE_REVIEW",
+        "review_attention": [
+          "MAIN_ARGUMENT_COMPRESSED_REVIEW_SEMANTIC_EQUIVALENCE",
+          "SOURCE_SEMANTIC_CORRECTION_APPLIED_REQUIRES_EDITORIAL_APPROVAL"
+        ],
+        "claimed_historical_author": "NONE_EDITORIAL_FICTIONAL_CHANOINE",
+        "publication_approved": false,
+        "persona_voice_approved": false,
+        "claim_level_certified": false,
+        "safeguarding_approved": false,
+        "english_french_reviewed": false,
+        "source_semantic_alignment_approved": false,
+        "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE",
+        "semantic_repair_trace": "research/chanoine/chanoine-cse-semantic-repair-proposals-12.v1.json#CSE035"
+      },
+      "proposedTurns": [
+        {
+          "en": "Sharing housing is not identical with sexual intercourse outside marriage. The acts chosen, serious temptation and possible inducement of others to sin need separate examination.",
+          "fr": "Partager un logement ne s’identifie pas aux rapports sexuels hors mariage. Les actes choisis, les tentations sérieuses et le risque d’entraîner autrui au péché demandent des examens distincts.",
+          "claims": [
+            {
+              "text": "Bounded moral/source distinction",
+              "refs": [
+                "ST154a2",
+                "ST43a1",
+                "PX738-740"
+              ],
+              "type": "APOLOGETICAL_APPLICATION"
+            }
+          ]
+        },
+        {
+          "en": "A claimed practical benefit does not by itself justify every means. This moral distinction does not establish whether cohabitation predicts later marital success.",
+          "fr": "Un avantage pratique allégué ne justifie pas à lui seul tous les moyens. Cette distinction morale n’établit pas si la cohabitation prédit la réussite ultérieure du mariage.",
+          "claims": [
+            {
+              "text": "Bounded moral/source distinction",
+              "refs": [
+                "ST154a2"
+              ],
+              "type": "EVIDENCE_SCOPE_BOUNDARY"
+            }
+          ]
+        }
+      ],
+      "sourcePrecisionDeltas": [
+        "Retain prior semantic repair: no unsupported claim cohabitation is an ineffective test",
+        "Replace unsourced prediction about which lifeexperiences reliably reveal compatibility with a clearly bounded moral answer"
+      ],
+      "classification": "CHANOINE_EXPLANATORY_APOLOGETICS_NOT_PIUS_X_VOICE",
+      "sourceMatched": true,
+      "humanTheology": false,
+      "humanENFR": false,
+      "personaApproval": false,
+      "publication": false,
+      "routingEnabled": false
+    },
+    {
+      "familyId": "CHA-CSE-CSE036",
+      "sourceQuestionId": "CSE036",
+      "canonicalOwner": "SEX-CORE-09",
+      "originalRecord": {
+        "source_question_id": "CSE036",
+        "conversation_id": "CHA-CSE-CSE036",
+        "canonical_topic_owner": "SEX-CORE-09",
+        "title": "Can an unmarried couple live together chastely?",
+        "source_access": "PUBLIC_READER",
+        "source_main_visitor_question": {
+          "en": "Can an unmarried couple live together chastely?",
+          "fr": "Un couple non marié peut-il vivre ensemble chastement ?"
+        },
+        "source_main_answer_verbatim": {
+          "en": "Sharing a residence is not automatically the moral species of fornication. A chaste arrangement still requires prudential evaluation of occasions of sin, scandal, public presentation, dependence and concrete circumstances.",
+          "fr": "Partager un logement n’est pas automatiquement l’espèce morale de la fornication. Une situation chaste exige néanmoins une évaluation prudente des occasions de péché, du scandale, de la présentation publique, de la dépendance et des circonstances concrètes."
+        },
+        "pastoral_main_answer_draft": {
+          "en": "A shared address is not by itself fornication. Yet a chaste intention does not settle every practical difficulty. Ask whether your arrangement creates predictable temptations, misleading appearances or dependence that harms genuine freedom; seek prudent counsel rather than slogans.",
+          "fr": "Une adresse commune n’est pas en elle-même une fornication. Mais une intention chaste ne résout pas toutes les difficultés pratiques. Demandez-vous si cet arrangement crée des tentations prévisibles, des apparences trompeuses ou une dépendance nuisible à la liberté ; cherchez un conseil prudent plutôt qu’un slogan."
+        },
+        "second_turn_origin": "NEW_EDITORIAL_OBJECTION",
+        "visitor_followup_question": {
+          "en": "What about a couple who share housing because neither can afford separate rent?",
+          "fr": "Et si les deux ne peuvent payer deux logements séparés ?"
+        },
+        "original_source_followup_reply": null,
+        "pastoral_followup_reply_draft": {
+          "en": "Financial hardship is a serious circumstance, not something to dismiss. The moral questions remain whether they are continent, safe, prudent and free from avoidable scandal; seek workable arrangements rather than pretending that money is irrelevant.",
+          "fr": "La difficulté financière est une circonstance sérieuse, qu’il ne faut pas mépriser. Il reste à examiner la continence, la sécurité, la prudence et le scandale évitable ; cherchons des arrangements possibles sans feindre que l’argent n’importe pas."
+        },
+        "source_pointers": {
+          "source_QA_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+          "source_debate_file": null,
+          "source_locator_refs": [
+            {
+              "registry_key": "ST43",
+              "locator": "aa.1, 7"
+            },
+            {
+              "registry_key": "ST154",
+              "locator": "a.2"
+            }
+          ],
+          "source_catalog_path": "data/app/content-items-sexual-ethics.v1.json"
+        },
+        "specialist_review_flag": "GENERAL_DOCTRINAL_REVIEW",
+        "review_attention": [],
+        "claimed_historical_author": "NONE_EDITORIAL_FICTIONAL_CHANOINE",
+        "publication_approved": false,
+        "persona_voice_approved": false,
+        "claim_level_certified": false,
+        "safeguarding_approved": false,
+        "english_french_reviewed": false,
+        "source_semantic_alignment_approved": false,
+        "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE"
+      },
+      "proposedTurns": [
+        {
+          "en": "A common address alone does not prove fornication. Continence, serious danger of sin and scandal remain distinct questions; scandal concerns leading another into sin, not merely attracting gossip.",
+          "fr": "Une adresse commune ne prouve pas à elle seule la fornication. La continence, le danger sérieux de péché et le scandale restent distincts ; le scandale concerne l’entraînement d’autrui au péché, et non le seul fait de susciter des commérages.",
+          "claims": [
+            {
+              "text": "Bounded moral/source distinction",
+              "refs": [
+                "ST154a2",
+                "ST43a1",
+                "PX738-740"
+              ],
+              "type": "EXPLANATORY_APPLICATION"
+            }
+          ]
+        },
+        {
+          "en": "If hardship makes a danger difficult to avoid, bring the actual circumstances to a confessor for prudent counsel. That is not a general permission for sexual relations outside marriage.",
+          "fr": "Si la précarité rend un danger difficile à éviter, exposez les circonstances réelles à un confesseur pour un conseil prudent. Ce n’est pas une permission générale de rapports sexuels hors mariage.",
+          "claims": [
+            {
+              "text": "Bounded moral/source distinction",
+              "refs": [
+                "PX740",
+                "ST154a2"
+              ],
+              "type": "PASTORAL_APPLICATION_NOT_INDIVIDUAL_RULING"
+            }
+          ]
+        }
+      ],
+      "sourcePrecisionDeltas": [
+        "Do not reduce scandal to mere misleading appearances or gossip; active/passive distinctions matter",
+        "Apply necessaryoccasion counsel without certifying that a particular housing arrangement is necessary or licit"
+      ],
+      "classification": "CHANOINE_EXPLANATORY_APOLOGETICS_NOT_PIUS_X_VOICE",
+      "sourceMatched": true,
+      "humanTheology": false,
+      "humanENFR": false,
+      "personaApproval": false,
+      "publication": false,
+      "routingEnabled": false
+    },
+    {
+      "familyId": "CHA-CSE-CSE037",
+      "sourceQuestionId": "CSE037",
+      "canonicalOwner": "SEX-CORE-10",
+      "originalRecord": {
+        "source_question_id": "CSE037",
+        "conversation_id": "CHA-CSE-CSE037",
+        "canonical_topic_owner": "SEX-CORE-10",
+        "title": "What is a proximate occasion of sin?",
+        "source_access": "PUBLIC_READER",
+        "source_main_visitor_question": {
+          "en": "What is a proximate occasion of sin?",
+          "fr": "Qu’est-ce qu’une occasion prochaine de péché ?"
+        },
+        "source_main_answer_verbatim": {
+          "en": "A situation in which a particular person is seriously and predictably likely to fall into sin. The judgment is partly objective and partly personal: what is a remote danger for one person can be proximate for another.",
+          "fr": "Une situation dans laquelle une personne particulière risque sérieusement et de manière prévisible de tomber dans le péché. Le jugement est en partie objectif et en partie personnel : ce qui est un danger éloigné pour l’un peut être proche pour l’autre."
+        },
+        "pastoral_main_answer_draft": {
+          "en": "An occasion is proximate when you know from experience that it is likely to lead you into sin. It is not identical for every person. Wisdom asks you to know your weaknesses honestly and avoid voluntary exposure to dangers you are not yet equipped to withstand.",
+          "fr": "Une occasion est prochaine lorsque vous savez par expérience qu’elle risque fortement de vous conduire au péché. Elle n’est pas la même pour tous. La sagesse demande de connaître honnêtement ses faiblesses et d’éviter les dangers auxquels on ne sait pas encore résister."
+        },
+        "second_turn_origin": "NEW_EDITORIAL_OBJECTION",
+        "visitor_followup_question": {
+          "en": "How can I know whether something is a near occasion without becoming fearful of everything?",
+          "fr": "Comment reconnaître l’occasion prochaine sans avoir peur de tout ?"
+        },
+        "original_source_followup_reply": null,
+        "pastoral_followup_reply_draft": {
+          "en": "Use experience and proportion: a proximate occasion is a predictable serious danger for you, not every remote possibility. Where doubt becomes obsessive, rely on stable spiritual guidance instead of multiplying restrictions.",
+          "fr": "Appuyez-vous sur l’expérience et la proportion : c’est un danger grave et prévisible pour vous, non toute possibilité lointaine. Si le doute devient obsessionnel, suivez un conseil spirituel stable au lieu de multiplier les interdits."
+        },
+        "source_pointers": {
+          "source_QA_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+          "source_debate_file": null,
+          "source_locator_refs": [
+            {
+              "registry_key": "SACRA",
+              "locator": "§§58–62"
+            },
+            {
+              "registry_key": "ST43",
+              "locator": "aa.1, 7"
+            }
+          ],
+          "source_catalog_path": "data/app/content-items-sexual-ethics.v1.json"
+        },
+        "specialist_review_flag": "GENERAL_DOCTRINAL_REVIEW",
+        "review_attention": [],
+        "claimed_historical_author": "NONE_EDITORIAL_FICTIONAL_CHANOINE",
+        "publication_approved": false,
+        "persona_voice_approved": false,
+        "claim_level_certified": false,
+        "safeguarding_approved": false,
+        "english_french_reviewed": false,
+        "source_semantic_alignment_approved": false,
+        "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE"
+      },
+      "proposedTurns": [
+        {
+          "en": "Danger may arise from the situation itself or our weakness. The catechism calls occasions proximate when they ordinarily lead us into mortal sin; it does not identify every remote possibility with that danger.",
+          "fr": "Le danger peut venir de la situation ou de notre faiblesse. Le catéchisme appelle prochaines les occasions qui nous conduisent ordinairement au péché mortel ; il ne les confond pas avec toute possibilité lointaine.",
+          "claims": [
+            {
+              "text": "Bounded moral/source distinction",
+              "refs": [
+                "PX738-739"
+              ],
+              "type": "FAITHFUL_PARAPHRASE_AND_BOUNDARY"
+            }
+          ]
+        },
+        {
+          "en": "Consider the actual circumstances. If an occasion cannot be avoided, seek the confessor’s counsel rather than inventing either an automatic exemption or an unlimited rule.",
+          "fr": "Considérez les circonstances réelles. Si l’occasion ne peut être évitée, demandez conseil au confesseur sans inventer ni exemption automatique ni règle illimitée.",
+          "claims": [
+            {
+              "text": "Bounded moral/source distinction",
+              "refs": [
+                "PX740"
+              ],
+              "type": "FAITHFUL_PARAPHRASE_AND_APPLICATION"
+            }
+          ]
+        }
+      ],
+      "sourcePrecisionDeltas": [
+        "Replace solely personalexperience definition with source's danger bynature or personalweakness",
+        "Add precise1905questions738–740 instead of treating Aquinas onscandal as a complete definition of proximateoccasion",
+        "Remove generalized instruction for obsessive doubt not sourced to clinical evidence"
+      ],
+      "classification": "CHANOINE_EXPLANATORY_APOLOGETICS_NOT_PIUS_X_VOICE",
+      "sourceMatched": true,
+      "humanTheology": false,
+      "humanENFR": false,
+      "personaApproval": false,
+      "publication": false,
+      "routingEnabled": false
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ST169a1",
+      "work": "Aquinas, Summa theologiae II–II q.169 a.1 corpus, ad1–2",
+      "url": "https://www.newadvent.org/summa/3169.htm#article1",
+      "language": "English Dominican translation1920",
+      "supports": "Custom, inordinateattachment, excess and neglect; no universalcurrent clothingmeasurement"
+    },
+    {
+      "id": "ST43a1",
+      "work": "Same II–II q.43 a.1 corpus, ad2–4; a.7 corpus for limits",
+      "url": "https://www.newadvent.org/summa/3043.htm#article1",
+      "supports": "Inducement/example toward sin; active and passive distinction. Appearance can matter; not every unfounded hostile reaction makes a righteous act active scandal."
+    },
+    {
+      "id": "ST154a2",
+      "work": "Same II–II q.154 a.2 corpus",
+      "url": "https://www.newadvent.org/summa/3154.htm#article2",
+      "supports": "Fornication concerns sexualunion outside marriage; sharedhousing distinction is application, not literalquotation or empiricalcompatibilityresearch"
+    },
+    {
+      "id": "PX738-740",
+      "work": "1905 Compendio della dottrina cristiana, Catechismo maggiore, ParteIV CapoVI §5, editorialquestions738–740",
+      "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "language": "Italian",
+      "supports": "Dangeroussituations bynature or personalweakness; ordinarily leading to mortal sin; unavoidable occasion brought to confessor"
+    },
+    {
+      "id": "PX738-739",
+      "work": "Same editorialquestions738–739",
+      "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "incipitItalian": "Che cosa s’intende per occasioni pericolose di peccare?",
+      "supports": "Distinguish dangerous and proximateoccasion; originalquestionnumbers notauthorial"
+    },
+    {
+      "id": "PX740",
+      "work": "Same editorialquestion740",
+      "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "incipitItalian": "Che cosa deve fare chi non può fuggire qualche occasione di peccato?",
+      "supports": "Counsel for unavoidableoccasion, no blanketexemption"
+    }
+  ],
+  "duplicates": [
+    {
+      "ids": [
+        "CSE035",
+        "CSE036",
+        "CSE037"
+      ],
+      "decision": "Shared danger/scandal principles; distinct compatibilityargument, actualhousingcase and definition. Retain IDs; no automatic followup routing."
+    }
+  ],
+  "humanDecisions": [
+    "Moral theologian reviews application of necessary/proximateoccasion to housing cases and proper meaning of scandal",
+    "Pastoral/safeguarding reviewer checks actualhardship language before release",
+    "OriginalLatin Aquinas notcollated; EN/FR and Chanoinevoice pending"
+  ],
+  "newSubstantiveGaps": [],
+  "approvalsChanged": 0,
+  "continue": true
+}

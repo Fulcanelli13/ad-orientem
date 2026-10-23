@@ -1,0 +1,460 @@
+{
+  "schema": "AO_CHANOINE_UNATTENDED_B22_LOOKING_FIDELITY_BOUNDARIES_V1",
+  "date": "2026-10-21",
+  "ownerBranch": "research/chanoine-cse-source-dialogue-20261019",
+  "ownerComposite": "research/chanoine/chanoine-cse-147-conversation-editorial-review.v1.json",
+  "ownerCompositeBlob": "bfaa8dcc371ffd8af619a2bb31e8972948c6f68c",
+  "status": "RESEARCH_ONLY_PENDING_HUMAN_CERTIFICATION",
+  "counts": {
+    "families": 3,
+    "answerUnits": 6,
+    "certified": 0,
+    "published": 0
+  },
+  "priorReview": {
+    "specialistBriefMatches": [],
+    "meaning": "No matching IDs in the cached 39-record briefs; absence is not approval",
+    "reusedPrinciples": [
+      "B16: kissing and chosen pleasure",
+      "B17: passions and voluntariness",
+      "B20: proximate occasions"
+    ]
+  },
+  "records": [
+    {
+      "familyId": "CHA-CSE-CSE038",
+      "sourceQuestionId": "CSE038",
+      "originalRecord": {
+        "source_question_id": "CSE038",
+        "conversation_id": "CHA-CSE-CSE038",
+        "canonical_topic_owner": "SEX-CORE-10",
+        "title": "Is it sinful to keep looking at attractive women or men for sexual pleasure?",
+        "source_access": "PUBLIC_READER",
+        "source_main_visitor_question": {
+          "en": "Is it sinful to keep looking at attractive women or men for sexual pleasure?",
+          "fr": "Est-ce pécheur de continuer à regarder une femme ou un homme attirant pour le plaisir sexuel ?"
+        },
+        "source_main_answer_verbatim": {
+          "en": "Noticing that someone is attractive is not itself a sin. The moral line is crossed when a person deliberately prolongs the look, returns to it, or mentally uses the other person in order to enjoy lustful sexual pleasure. The issue is consent to lust, not the first involuntary notice.",
+          "fr": "Remarquer qu’une personne est attirante n’est pas en soi un péché. La ligne morale est franchie lorsqu’on prolonge délibérément le regard, qu’on y revient ou qu’on utilise mentalement l’autre personne afin de savourer un plaisir sexuel de convoitise. Le problème est le consentement à la convoitise, non la première perception involontaire."
+        },
+        "pastoral_main_answer_draft": {
+          "en": "To notice beauty is not a fault. The question is whether you freely choose to prolong or repeat a look in order to indulge lust and treat another person as an object of pleasure. Guard your eyes, yes, but do not mistake the first involuntary glance for consent.",
+          "fr": "Remarquer la beauté n’est pas une faute. Il s’agit de savoir si vous choisissez librement de prolonger ou de répéter un regard afin de nourrir la luxure et de réduire autrui à un objet de plaisir. Gardez vos yeux, certes, mais ne confondez pas le premier regard involontaire avec un consentement."
+        },
+        "second_turn_origin": "EXISTING_SOURCE_OBJECTION",
+        "visitor_followup_question": {
+          "en": "But if an attractive person is deliberately dressed to attract attention, isn’t the viewer simply responding to what is offered?",
+          "fr": "Mais si une personne s’habille délibérément pour attirer l’attention, le spectateur ne fait-il pas que répondre à ce qui lui est présenté ?"
+        },
+        "original_source_followup_reply": {
+          "en": "Another person's conduct or clothing can occasion temptation but does not transfer responsibility for one's own deliberate choices. There is no mechanical rule about a 'second glance': the question is whether one knowingly chooses to entertain lust, rather than simply noticing attractiveness.",
+          "fr": "La conduite ou la tenue d'autrui peut occasionner une tentation, sans transférer la responsabilité de ses propres choix délibérés. Il n'existe pas de règle mécanique du « deuxième regard » : la question est de savoir si l'on choisit sciemment d'entretenir la convoitise, plutôt que de simplement remarquer une personne attirante."
+        },
+        "pastoral_followup_reply_draft": {
+          "en": "Another person’s clothing never takes away responsibility for our voluntary choices. Nor is the mere sight of beauty sinful. Let us abandon mechanical rules about a second glance and ask instead whether the will deliberately cultivates lust.",
+          "fr": "Le vêtement d’autrui n’abolit jamais notre responsabilité pour nos choix volontaires. Et voir la beauté n’est pas en soi un péché. Abandonnons les règles mécaniques sur le second regard : demandons plutôt si la volonté entretient délibérément la luxure."
+        },
+        "source_pointers": {
+          "source_QA_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+          "source_debate_file": "src/learn/sexual-ethics-data/debates-practical.js",
+          "source_locator_refs": [
+            {
+              "registry_key": "SCR",
+              "locator": "Mt 5:27–28"
+            },
+            {
+              "registry_key": "ST151",
+              "locator": "a.1"
+            },
+            {
+              "registry_key": "ST18",
+              "locator": "aa.2–6"
+            },
+            {
+              "registry_key": "ST154",
+              "locator": "a.4"
+            }
+          ],
+          "source_catalog_path": "data/app/content-items-sexual-ethics.v1.json"
+        },
+        "specialist_review_flag": "DOCTRINAL_SOURCE_REVIEW",
+        "review_attention": [],
+        "claimed_historical_author": "NONE_EDITORIAL_FICTIONAL_CHANOINE",
+        "publication_approved": false,
+        "persona_voice_approved": false,
+        "claim_level_certified": false,
+        "safeguarding_approved": false,
+        "english_french_reviewed": false,
+        "source_semantic_alignment_approved": false,
+        "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE"
+      },
+      "proposedTurns": [
+        {
+          "en": "Noticing beauty involuntarily is different from choosing a lustful gaze. Christ condemns looking in order to lust; the question concerns the will, not a count of glances.",
+          "fr": "Remarquer involontairement la beauté diffère du choix d’un regard de convoitise. Le Christ condamne le regard qui recherche la convoitise ; la question concerne la volonté, non le nombre de regards.",
+          "claims": [
+            {
+              "text": "Deliberately lustful looking is condemned",
+              "refs": [
+                "MT5"
+              ],
+              "type": "FAITHFUL_PARAPHRASE"
+            },
+            {
+              "text": "An unchosen perception is distinguished from a chosen desire",
+              "refs": [
+                "CCC1767"
+              ],
+              "type": "EXPLANATORY_APPLICATION"
+            }
+          ]
+        },
+        {
+          "en": "Another person’s clothing does not make a deliberately lustful choice good. Clothing and circumstances may affect the temptation, but they do not themselves decide what you choose.",
+          "fr": "Le vêtement d’autrui ne rend pas bon un choix délibéré de convoitise. La tenue et les circonstances peuvent influer sur la tentation, sans déterminer à elles seules votre choix.",
+          "claims": [
+            {
+              "text": "External invitation does not justify a chosen lustful gaze",
+              "refs": [
+                "MT5",
+                "CCC1767"
+              ],
+              "type": "MORAL_APPLICATION"
+            }
+          ]
+        }
+      ],
+      "sourcePrecisionDeltas": [
+        "Replace the broad ST18 range with direct support for the actual looking claim",
+        "No mechanical second-glance rule is asserted; no individualized judgment of full culpability"
+      ],
+      "classification": "CHANOINE_EXPLANATION_AND_APPLICATION_NOT_HISTORICAL_PIUS_X_SPEECH",
+      "sourceMatched": true,
+      "claimLevelCertified": false,
+      "personaApproved": false,
+      "englishFrenchReviewed": false,
+      "publicationApproved": false,
+      "routingEnabled": false
+    },
+    {
+      "familyId": "CHA-CSE-CSE039",
+      "sourceQuestionId": "CSE039",
+      "originalRecord": {
+        "source_question_id": "CSE039",
+        "conversation_id": "CHA-CSE-CSE039",
+        "canonical_topic_owner": "SEX-CORE-10",
+        "title": "When does flirting become sinful or disloyal?",
+        "source_access": "PUBLIC_READER",
+        "source_main_visitor_question": {
+          "en": "When does flirting become sinful or disloyal?",
+          "fr": "Quand le flirt devient-il pécheur ou déloyal ?"
+        },
+        "source_main_answer_verbatim": {
+          "en": "Friendly warmth, humour and ordinary social charm are not automatically sinful. Flirting becomes morally problematic when it is deliberately used to provoke sexual interest, secure romantic attention one has no right to invite, manipulate another person, or cultivate an alternative romantic bond contrary to an existing relationship or marriage.",
+          "fr": "La chaleur amicale, l’humour et le charme social ordinaire ne sont pas automatiquement pécheurs. Le flirt devient moralement problématique lorsqu’il est délibérément utilisé pour provoquer un intérêt sexuel, obtenir une attention romantique qu’on n’a pas le droit de susciter, manipuler autrui ou cultiver un lien romantique alternatif contraire à une relation existante ou au mariage."
+        },
+        "pastoral_main_answer_draft": {
+          "en": "Courtesy and warmth are not sins. Flirtation becomes disloyal when it knowingly invites an intimacy one ought not offer, manipulates another heart or weakens a bond of fidelity. Ask whether you would be willing to explain the conduct truthfully to the person to whom you owe loyalty.",
+          "fr": "La courtoisie et la chaleur humaine ne sont pas des péchés. Le flirt devient déloyal lorsqu’il invite sciemment à une intimité qu’on ne devrait pas offrir, manipule le cœur d’autrui ou affaiblit une fidélité promise. Demandez-vous si vous pourriez expliquer franchement cette conduite à celui ou celle envers qui vous êtes engagé."
+        },
+        "second_turn_origin": "EXISTING_SOURCE_OBJECTION",
+        "visitor_followup_question": {
+          "en": "Does that make harmless attraction to someone else disloyal?",
+          "fr": "Cela rend-il déloyale toute attirance innocente pour quelqu’un d’autre ?"
+        },
+        "original_source_followup_reply": {
+          "en": "No. Attraction can be involuntary. Loyalty concerns what one chooses to cultivate, communicate and pursue. The distinction protects against both laxity and jealous control.",
+          "fr": "Non. L’attirance peut être involontaire. La loyauté concerne ce que l’on choisit de cultiver, de communiquer et de poursuivre. Cette distinction protège à la fois du laxisme et du contrôle jaloux."
+        },
+        "pastoral_followup_reply_draft": {
+          "en": "No. Attraction may arise unbidden; fidelity concerns the relationship we freely encourage and the signals we deliberately send. A jealous spouse must not treat every passing feeling as betrayal. Yet neither should we nourish a competing intimacy and call it harmless.",
+          "fr": "Non. L’attirance peut surgir sans choix ; la fidélité concerne la relation que nous encourageons et les signes que nous envoyons volontairement. Un conjoint jaloux ne doit pas voir une trahison dans chaque sentiment passager. Mais ne cultivons pas non plus une intimité rivale en la disant innocente."
+        },
+        "source_pointers": {
+          "source_QA_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+          "source_debate_file": "src/learn/sexual-ethics-data/debates-practical.js",
+          "source_locator_refs": [
+            {
+              "registry_key": "SCR",
+              "locator": "Mt 5:27–28"
+            },
+            {
+              "registry_key": "CASTI",
+              "locator": "§§19–22, 73"
+            },
+            {
+              "registry_key": "ST18",
+              "locator": "aa.2–6, 10–11"
+            }
+          ],
+          "source_catalog_path": "data/app/content-items-sexual-ethics.v1.json"
+        },
+        "specialist_review_flag": "DOCTRINAL_SOURCE_REVIEW",
+        "review_attention": [],
+        "claimed_historical_author": "NONE_EDITORIAL_FICTIONAL_CHANOINE",
+        "publication_approved": false,
+        "persona_voice_approved": false,
+        "claim_level_certified": false,
+        "safeguarding_approved": false,
+        "english_french_reviewed": false,
+        "source_semantic_alignment_approved": false,
+        "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE"
+      },
+      "proposedTurns": [
+        {
+          "en": "Courtesy is different from deliberately encouraging an adulterous desire or intimacy. Marriage requires fidelity in chosen desires as well as outward conduct; attraction alone does not establish that a person has chosen betrayal.",
+          "fr": "La courtoisie diffère du fait d’encourager délibérément un désir ou une intimité adultères. Le mariage exige la fidélité dans les désirs choisis comme dans les actes ; l’attirance seule ne prouve pas qu’une personne a choisi de trahir.",
+          "claims": [
+            {
+              "text": "Marital fidelity includes voluntary adulterous desires",
+              "refs": [
+                "CC21"
+              ],
+              "type": "FAITHFUL_PARAPHRASE"
+            },
+            {
+              "text": "Unchosen attraction is not itself proof of chosen betrayal",
+              "refs": [
+                "CCC1767"
+              ],
+              "type": "EXPLANATORY_APPLICATION"
+            }
+          ]
+        },
+        {
+          "en": "A passing feeling and a relationship deliberately cultivated are different. Consider the intentions and conduct, rather than treating every attraction as infidelity.",
+          "fr": "Un sentiment passager et une relation délibérément cultivée sont différents. Considérons les intentions et la conduite, sans traiter toute attirance comme une infidélité.",
+          "claims": [
+            {
+              "text": "Distinguish feeling from voluntary pursuit",
+              "refs": [
+                "CCC1767",
+                "CC21"
+              ],
+              "type": "PASTORAL_APPLICATION"
+            }
+          ]
+        }
+      ],
+      "sourcePrecisionDeltas": [
+        "Casti connubii concerns marriage; do not silently impose identical marital obligations on every dating relationship",
+        "Remove truth-to-partner disclosure test as a sufficient moral criterion; shame or jealousy alone is not a source test"
+      ],
+      "classification": "CHANOINE_EXPLANATION_AND_APPLICATION_NOT_HISTORICAL_PIUS_X_SPEECH",
+      "sourceMatched": true,
+      "claimLevelCertified": false,
+      "personaApproved": false,
+      "englishFrenchReviewed": false,
+      "publicationApproved": false,
+      "routingEnabled": false
+    },
+    {
+      "familyId": "CHA-CSE-CSE040",
+      "sourceQuestionId": "CSE040",
+      "originalRecord": {
+        "source_question_id": "CSE040",
+        "conversation_id": "CHA-CSE-CSE040",
+        "canonical_topic_owner": "SEX-CORE-11",
+        "title": "Does avoiding intercourse make other sexual acts acceptable before marriage?",
+        "source_access": "PUBLIC_READER",
+        "source_main_visitor_question": {
+          "en": "Does avoiding intercourse make other sexual acts acceptable before marriage?",
+          "fr": "Éviter les rapports rend-il acceptables les autres actes sexuels avant le mariage ?"
+        },
+        "source_main_answer_verbatim": {
+          "en": "No. Deliberate genital stimulation or the pursuit of sexual climax before marriage is not made chaste by avoiding intercourse. Ordinary affection requires a different judgment of intention, circumstances and occasions of sin. Engagement prepares a couple for marriage; it does not confer conjugal rights.",
+          "fr": "Non. La stimulation génitale délibérée ou la recherche de l’orgasme avant le mariage ne devient pas chaste du seul fait que l’on évite le rapport conjugal. L’affection ordinaire exige un jugement distinct sur l’intention, les circonstances et les occasions de péché. Les fiançailles préparent au mariage ; elles ne confèrent pas les droits conjugaux."
+        },
+        "pastoral_main_answer_draft": {
+          "en": "Avoiding intercourse is not a licence for every other sexual act. The Church distinguishes ordinary affection from deliberately pursuing sexual gratification outside marriage. Neither affection nor an engagement can grant the rights of the marital covenant before it exists.",
+          "fr": "Éviter l’union conjugale n’autorise pas tous les autres actes sexuels. L’Église distingue l’affection ordinaire de la recherche délibérée d’une satisfaction sexuelle hors mariage. Ni l’affection ni les fiançailles ne donnent les droits de l’alliance matrimoniale avant qu’elle existe."
+        },
+        "second_turn_origin": "EXISTING_SOURCE_OBJECTION",
+        "visitor_followup_question": {
+          "en": "What about sleeping in the same bed, nudity or heavy making-out if the couple honestly intends not to orgasm?",
+          "fr": "Qu’en est-il de dormir dans le même lit, d’être nus ensemble ou de s’embrasser intensément si le couple veut sincèrement éviter l’orgasme ?"
+        },
+        "original_source_followup_reply": {
+          "en": "Those are not automatically the same moral act as oral sex or masturbation, but intention is not the only issue. If a couple knowingly creates a situation in which serious sexual sin is predictably likely, the chosen proximate occasion itself becomes morally relevant. A couple that repeatedly loses control should not pretend the setup is neutral because the stated plan was restraint.",
+          "fr": "Ces situations ne sont pas automatiquement le même acte moral que le sexe oral ou la masturbation, mais l’intention n’est pas le seul élément. Si un couple crée sciemment une situation où un péché sexuel grave est prévisiblement probable, l’occasion prochaine choisie devient elle-même moralement pertinente. Un couple qui perd régulièrement le contrôle ne doit pas prétendre que le dispositif est neutre parce que le projet déclaré était la retenue."
+        },
+        "pastoral_followup_reply_draft": {
+          "en": "An intention to stop before a particular point does not erase every foreseeable danger. These gestures are not all morally identical, yet a couple who repeatedly finds that a situation leads to serious wrongdoing must acknowledge the occasion they knowingly choose. Prudence calls for honest boundaries.",
+          "fr": "L’intention de s’arrêter avant un certain point n’efface pas tous les dangers prévisibles. Ces gestes ne sont pas tous moralement identiques ; pourtant un couple qui constate qu’une situation le conduit souvent à une faute grave doit reconnaître l’occasion qu’il choisit sciemment. La prudence demande des limites franches."
+        },
+        "source_pointers": {
+          "source_QA_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+          "source_debate_file": "src/learn/sexual-ethics-data/debates-practical.js",
+          "source_locator_refs": [
+            {
+              "registry_key": "CASTI",
+              "locator": "§18"
+            },
+            {
+              "registry_key": "PH",
+              "locator": "§7 (premarital intercourse); §9 (masturbation)"
+            },
+            {
+              "registry_key": "ST154",
+              "locator": "aa.2, 4, 11"
+            },
+            {
+              "registry_key": "CIC",
+              "locator": "can. 1057 · matrimonial consent"
+            },
+            {
+              "registry_key": "SCR",
+              "locator": "1 Cor 6:18–20"
+            }
+          ],
+          "source_catalog_path": "data/app/content-items-sexual-ethics.v1.json"
+        },
+        "specialist_review_flag": "DOCTRINAL_SOURCE_REVIEW",
+        "review_attention": [],
+        "claimed_historical_author": "NONE_EDITORIAL_FICTIONAL_CHANOINE",
+        "publication_approved": false,
+        "persona_voice_approved": false,
+        "claim_level_certified": false,
+        "safeguarding_approved": false,
+        "english_french_reviewed": false,
+        "source_semantic_alignment_approved": false,
+        "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE"
+      },
+      "proposedTurns": [
+        {
+          "en": "No. Avoiding intercourse does not make deliberate sexual gratification outside marriage chaste. Engagement does not itself establish marriage.",
+          "fr": "Non. Éviter les rapports ne rend pas chaste la recherche délibérée d’une jouissance sexuelle hors mariage. Les fiançailles ne constituent pas à elles seules le mariage.",
+          "claims": [
+            {
+              "text": "The sexual faculty is reserved to marriage",
+              "refs": [
+                "PH7"
+              ],
+              "type": "FAITHFUL_PARAPHRASE"
+            },
+            {
+              "text": "Intention to marry does not itself establish the marital bond",
+              "refs": [
+                "PH7"
+              ],
+              "type": "EXPLANATORY_PARAPHRASE"
+            }
+          ]
+        },
+        {
+          "en": "Avoiding orgasm is not the only criterion. Aquinas distinguishes an ordinary kiss from one chosen for illicit sexual pleasure. Separately, a situation that ordinarily leads you into grave sin must be avoided.",
+          "fr": "Éviter l’orgasme n’est pas le seul critère. Thomas d’Aquin distingue un baiser ordinaire de celui qui est choisi pour un plaisir sexuel illicite. Par ailleurs, il faut éviter une situation qui vous conduit ordinairement au péché grave.",
+          "claims": [
+            {
+              "text": "A gesture can be wrong through chosen illicit pleasure, not merely as an occasion",
+              "refs": [
+                "ST154A4"
+              ],
+              "type": "FAITHFUL_PARAPHRASE"
+            },
+            {
+              "text": "Proximate occasions must be avoided",
+              "refs": [
+                "PX739"
+              ],
+              "type": "PASTORAL_APPLICATION"
+            }
+          ]
+        }
+      ],
+      "sourcePrecisionDeltas": [
+        "Original follow-up focuses on subsequent danger; include the distinct issue of the pleasure already deliberately chosen",
+        "Do not classify every kiss or shared circumstance as the same moral act",
+        "Reuse B16 and B20 source distinctions for this existing family without claiming new doctrinal discovery"
+      ],
+      "classification": "CHANOINE_EXPLANATION_AND_APPLICATION_NOT_HISTORICAL_PIUS_X_SPEECH",
+      "sourceMatched": true,
+      "claimLevelCertified": false,
+      "personaApproved": false,
+      "englishFrenchReviewed": false,
+      "publicationApproved": false,
+      "routingEnabled": false
+    }
+  ],
+  "evidence": [
+    {
+      "id": "MT5",
+      "work": "Matthew 5:27–28",
+      "url": "https://www.vatican.va/archive/bible/nova_vulgata/documents/nova-vulgata_nt_evang-matthaeum_lt.html",
+      "language": "Latin Nova Vulgata, modern ecclesial textual witness",
+      "exactExcerpt": "ad concupiscendum eam",
+      "supports": "Purposefully lustful looking; not a rule counting glances",
+      "limit": "Greek original and historical Vulgate variants not collated"
+    },
+    {
+      "id": "CCC1767",
+      "work": "Catechism 1767–1768",
+      "url": "https://www.vatican.va/content/catechism/en/part_three/section_one/chapter_one/article_5/ii_passions_and_moral_life.html",
+      "language": "Official English",
+      "supports": "Passions acquire moral qualification through reason and will; includes indirect voluntariness, not only explicit command",
+      "limit": "No clinical or individualized culpability diagnosis"
+    },
+    {
+      "id": "CC21",
+      "work": "Pius XI, Casti connubii, English §§19–22, especially 21",
+      "url": "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19301231_casti-connubii.html",
+      "originalLanguageUrl": "https://www.vatican.va/content/pius-xi/la/encyclicals/documents/hf_p-xi_enc_19301231_casti-connubii.html",
+      "originalLocator": "Nec verotantum damnatam voluit Christus Dominus",
+      "exactLatinExcerpt": "ipsas quoque de his omnibus cogitationes voluntarias atque desideria prohibuit",
+      "supports": "Marital fidelity also excludes voluntary adulterous thoughts and desires",
+      "limit": "Not a classification of every dating relationship or social gesture"
+    },
+    {
+      "id": "PH7",
+      "work": "CDF, Persona humana (29 December 1975), §7, read with §5",
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19751229_persona-humana_en.html",
+      "originalLanguageUrl": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19751229_persona-humana_lt.html",
+      "originalLocator": "§7, after introductory account of intended premarital union",
+      "supports": "Intention to marry does not legitimate genital acts before marriage",
+      "limit": "Distinct from case-specific assessment of subjective culpability"
+    },
+    {
+      "id": "ST154A4",
+      "work": "Aquinas, Summa theologiae II–II q.154 a.4, corpus and ad 3",
+      "url": "https://www.newadvent.org/summa/3154.htm#article4",
+      "language": "English Dominican translation; Latin not independently collated",
+      "supports": "Kisses and touches not mortal by species alone; chosen illicit pleasure can make them gravely wrong",
+      "limit": "Article distinguishes the gesture from its lustful cause; do not reduce the latter to future risk"
+    },
+    {
+      "id": "PX739",
+      "work": "Greater Catechism of Pius X, part IV, questions 738–740, especially 739",
+      "url": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "language": "Italian web transcription",
+      "supports": "Avoid occasions ordinarily inducing mortal sin; if unavoidable, tell confessor and follow counsel",
+      "limit": "Not independently collated against a 1905 printed copy"
+    }
+  ],
+  "duplicates": [
+    {
+      "ids": [
+        "CSE040",
+        "CSE033",
+        "CSE034",
+        "CSE037"
+      ],
+      "decision": "Shared sources, distinct questions. Retain canonical IDs; synchronize the chosen-pleasure/occasion distinction during human editing, not automatic runtime consolidation."
+    },
+    {
+      "ids": [
+        "CSE038",
+        "CSE039",
+        "CSE022"
+      ],
+      "decision": "Reuse voluntariness evidence; do not create additional speculative families."
+    }
+  ],
+  "humanDecisions": [
+    "Review whether CSE039 requires a separate treatment of promises made during dating, since marriage sources alone do not settle all such obligations",
+    "Review grave-matter language and pastoral handling of scrupulosity; no categorical individual acquittal or condemnation",
+    "Review EN/FR and Chanoine voice before any certification"
+  ],
+  "newSubstantiveGaps": [],
+  "approvalsChanged": 0
+}

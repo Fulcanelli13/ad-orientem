@@ -1,0 +1,890 @@
+{
+  "schema": "AO_CHANOINE_CSE_PASTORAL_BULK_ADAPTATIONS_V1",
+  "batch": "BATCH02_CSE031_090",
+  "status": "RESEARCH_ONLY_NOT_DEPLOYABLE",
+  "source": "research/chanoine/chanoine-cse-source-conversation-seeds.v1.json",
+  "governing_visibility": "data/learn/formation-qa-recovery-visibility.v1.json",
+  "archival_records_not_rewritten": [
+    "CSE055",
+    "CSE056",
+    "CSE058"
+  ],
+  "description": "First-pass individual bilingual priest-voice adaptations for all 57 nonarchival CSE031–CSE090 questions. No synthetic source attributions, dialogue approvals or public routing.",
+  "record_count": 57,
+  "original_source_answers_never_modified": true,
+  "records": [
+    {
+      "source_question_id": "CSE031",
+      "source_seed_conversation_id": "CHA-CSE-CSE031",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": true,
+      "editorial_main_answer": {
+        "en": "Affection may be very real, but affection alone does not establish marriage. The conjugal act belongs within a covenant of exclusive fidelity and lasting responsibility for children. The Church asks lovers to prepare for that promise rather than assume they have already made it.",
+        "fr": "L’affection peut être très réelle, mais elle ne constitue pas à elle seule le mariage. L’acte conjugal appartient à une alliance de fidélité exclusive et de responsabilité durable envers les enfants. L’Église demande aux fiancés de se préparer à cet engagement, non de supposer qu’il existe déjà."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE032",
+      "source_seed_conversation_id": "CHA-CSE-CSE032",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "Engagement is a serious promise and preparation, but it is not yet marriage. The intention to marry does not confer conjugal rights in advance. Use this time to speak plainly about fidelity, contraception, openness to children, the duties of marriage and any serious disagreement before you exchange matrimonial consent.",
+        "fr": "Les fiançailles sont une promesse sérieuse et une préparation, mais elles ne sont pas encore le mariage. Le projet de se marier ne donne pas d'avance les droits conjugaux. Profitez de ce temps pour parler franchement de la fidélité, de la contraception, de l'accueil des enfants, des devoirs du mariage et de tout désaccord grave avant l'échange des consentements."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE",
+      "editorial_status": "SEMANTIC_CORRECTION_APPLIED_UNREVIEWED",
+      "semantic_repair_trace": "chanoine-cse-semantic-repair-proposals-12.v1.json#CSE032"
+    },
+    {
+      "source_question_id": "CSE033",
+      "source_seed_conversation_id": "CHA-CSE-CSE033",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "Do not look for a measurement in inches or centimetres. Ask instead what you intend and where the gesture is leading you. Genuine tenderness is not identical with deliberately seeking the sexual pleasure reserved to marriage, or placing yourselves in a danger you already know you cannot resist.",
+        "fr": "Ne cherchez pas une mesure en centimètres. Demandez-vous plutôt ce que vous recherchez et où conduit ce geste. La tendresse véritable ne se confond ni avec la recherche délibérée du plaisir sexuel réservé au mariage ni avec le choix d’un danger auquel vous savez ne pas pouvoir résister."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE034",
+      "source_seed_conversation_id": "CHA-CSE-CSE034",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "A kiss or an embrace is not automatically sinful. Intention and circumstances matter: affection may be innocent, while a gesture deliberately chosen to arouse illicit sexual pleasure can become an occasion of serious sin. Exercise prudence without treating ordinary tenderness as suspect.",
+        "fr": "Un baiser ou une étreinte n’est pas automatiquement un péché. L’intention et les circonstances comptent : l’affection peut être innocente, tandis qu’un geste choisi pour éveiller un plaisir sexuel illicite peut devenir une occasion grave de péché. Soyez prudents sans soupçonner toute tendresse ordinaire."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE035",
+      "source_seed_conversation_id": "CHA-CSE-CSE035",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": true,
+      "editorial_main_answer": {
+        "en": "It is prudent to learn whether you can build a life together; we need not claim that cohabitation is an ineffective test to make the moral distinction. If the couple has sexual relations, those acts take place outside marriage. If both live continently, sharing an address is not itself fornication, but it still calls for judgment about serious temptation, scandal, dependence and genuine freedom to discern.",
+        "fr": "Il est prudent de chercher à savoir si l'on peut construire une vie commune ; nul besoin d'affirmer que la cohabitation est un test inefficace pour faire la distinction morale. Si le couple a des relations sexuelles, ces actes ont lieu hors mariage. Si les deux vivent dans la continence, partager une adresse n'est pas en soi une fornication, mais il faut encore considérer les tentations sérieuses, le scandale, la dépendance et la liberté réelle de discerner."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE",
+      "editorial_status": "SEMANTIC_CORRECTION_APPLIED_UNREVIEWED",
+      "semantic_repair_trace": "chanoine-cse-semantic-repair-proposals-12.v1.json#CSE035"
+    },
+    {
+      "source_question_id": "CSE036",
+      "source_seed_conversation_id": "CHA-CSE-CSE036",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "A shared address is not by itself fornication. Yet a chaste intention does not settle every practical difficulty. Ask whether your arrangement creates predictable temptations, misleading appearances or dependence that harms genuine freedom; seek prudent counsel rather than slogans.",
+        "fr": "Une adresse commune n’est pas en elle-même une fornication. Mais une intention chaste ne résout pas toutes les difficultés pratiques. Demandez-vous si cet arrangement crée des tentations prévisibles, des apparences trompeuses ou une dépendance nuisible à la liberté ; cherchez un conseil prudent plutôt qu’un slogan."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE037",
+      "source_seed_conversation_id": "CHA-CSE-CSE037",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "An occasion is proximate when you know from experience that it is likely to lead you into sin. It is not identical for every person. Wisdom asks you to know your weaknesses honestly and avoid voluntary exposure to dangers you are not yet equipped to withstand.",
+        "fr": "Une occasion est prochaine lorsque vous savez par expérience qu’elle risque fortement de vous conduire au péché. Elle n’est pas la même pour tous. La sagesse demande de connaître honnêtement ses faiblesses et d’éviter les dangers auxquels on ne sait pas encore résister."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE038",
+      "source_seed_conversation_id": "CHA-CSE-CSE038",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": true,
+      "editorial_main_answer": {
+        "en": "To notice beauty is not a fault. The question is whether you freely choose to prolong or repeat a look in order to indulge lust and treat another person as an object of pleasure. Guard your eyes, yes, but do not mistake the first involuntary glance for consent.",
+        "fr": "Remarquer la beauté n’est pas une faute. Il s’agit de savoir si vous choisissez librement de prolonger ou de répéter un regard afin de nourrir la luxure et de réduire autrui à un objet de plaisir. Gardez vos yeux, certes, mais ne confondez pas le premier regard involontaire avec un consentement."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE039",
+      "source_seed_conversation_id": "CHA-CSE-CSE039",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": true,
+      "editorial_main_answer": {
+        "en": "Courtesy and warmth are not sins. Flirtation becomes disloyal when it knowingly invites an intimacy one ought not offer, manipulates another heart or weakens a bond of fidelity. Ask whether you would be willing to explain the conduct truthfully to the person to whom you owe loyalty.",
+        "fr": "La courtoisie et la chaleur humaine ne sont pas des péchés. Le flirt devient déloyal lorsqu’il invite sciemment à une intimité qu’on ne devrait pas offrir, manipule le cœur d’autrui ou affaiblit une fidélité promise. Demandez-vous si vous pourriez expliquer franchement cette conduite à celui ou celle envers qui vous êtes engagé."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE040",
+      "source_seed_conversation_id": "CHA-CSE-CSE040",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": true,
+      "editorial_main_answer": {
+        "en": "Avoiding intercourse is not a licence for every other sexual act. The Church distinguishes ordinary affection from deliberately pursuing sexual gratification outside marriage. Neither affection nor an engagement can grant the rights of the marital covenant before it exists.",
+        "fr": "Éviter l’union conjugale n’autorise pas tous les autres actes sexuels. L’Église distingue l’affection ordinaire de la recherche délibérée d’une satisfaction sexuelle hors mariage. Ni l’affection ni les fiançailles ne donnent les droits de l’alliance matrimoniale avant qu’elle existe."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE041",
+      "source_seed_conversation_id": "CHA-CSE-CSE041",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "Marriage is not simply a feeling that lasts while it pleases us. It is a stable covenant of a man and a woman, ordered to their good and to the generation and education of children. Between the baptised, Our Lord has raised this union to a sacrament.",
+        "fr": "Le mariage n’est pas un sentiment qui dure tant qu’il plaît. C’est l’alliance stable d’un homme et d’une femme, ordonnée à leur bien et à la génération et à l’éducation des enfants. Entre baptisés, Notre-Seigneur a élevé cette union à la dignité de sacrement."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE042",
+      "source_seed_conversation_id": "CHA-CSE-CSE042",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "Civil customs differ greatly, but the Church holds that society does not invent the essence of marriage. The spouses freely enter a particular union; they do not create its fundamental goods and obligations at will. The question is what marriage is, not merely what a law happens to call it.",
+        "fr": "Les coutumes civiles varient beaucoup, mais l’Église tient que la société n’invente pas l’essence du mariage. Les époux contractent librement une union particulière ; ils n’en créent pas à volonté les biens et obligations essentiels. Il s’agit de savoir ce qu’est le mariage, non seulement ce que la loi appelle ainsi."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE043",
+      "source_seed_conversation_id": "CHA-CSE-CSE043",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": true,
+      "editorial_main_answer": {
+        "en": "The Catholic understanding rests upon more than affection, which can exist in many worthy relationships. It regards marriage as the union of man and woman, whose bodily form is naturally ordered to generation and parenthood. We should explain that claim without ever diminishing the dignity of anyone who disagrees.",
+        "fr": "La conception catholique repose sur plus que l’affection, présente dans bien des relations estimables. Elle voit dans le mariage l’union de l’homme et de la femme, dont la forme corporelle est naturellement ordonnée à la génération et à la paternité et maternité. Il faut l’exposer sans jamais diminuer la dignité de celui qui n’est pas d’accord."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE044",
+      "source_seed_conversation_id": "CHA-CSE-CSE044",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": true,
+      "editorial_main_answer": {
+        "en": "To be ordered towards children is not the same as guaranteeing conception. Age or illness can prevent a husband and wife from conceiving without changing the kind of conjugal union they enter. The Church must therefore honour infertile marriages without abandoning her account of marriage's nature.",
+        "fr": "Être ordonné aux enfants ne signifie pas garantir une conception. L’âge ou la maladie peuvent empêcher les époux de concevoir sans changer la nature de leur union conjugale. L’Église honore donc les mariages infertiles sans renoncer à sa conception de la nature du mariage."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE045",
+      "source_seed_conversation_id": "CHA-CSE-CSE045",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": true,
+      "editorial_main_answer": {
+        "en": "Christian marriage includes fidelity, mutual help, the procreation and education of children, and the duties Saint Paul teaches in Ephesians 5. Pius XI speaks of the husband's domestic primacy and the wife's willing submission while affirming her dignity and freedom; John Paul II stresses mutual subjection out of reverence for Christ. Their formulations do not simply say the same thing, and genuine theological work is needed to explain their relationship. Neither text allows a husband to dominate, coerce or humiliate his wife; his love must follow Christ's sacrificial example.",
+        "fr": "Le mariage chrétien comporte la fidélité, l'entraide, la procréation et l'éducation des enfants, ainsi que les devoirs enseignés par saint Paul en Éphésiens 5. Pie XI parle de la primauté domestique du mari et de la soumission volontaire de l'épouse tout en affirmant sa dignité et sa liberté ; Jean-Paul II souligne la soumission réciproque dans la crainte du Christ. Leurs formulations ne disent pas simplement la même chose, et leur articulation exige un véritable travail théologique. Aucun de ces textes ne permet au mari de dominer, de contraindre ou d'humilier son épouse ; il doit aimer à l'exemple du sacrifice du Christ."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE",
+      "editorial_status": "SEMANTIC_CORRECTION_APPLIED_UNREVIEWED",
+      "semantic_repair_trace": "chanoine-cse-semantic-repair-proposals-12.v1.json#CSE045"
+    },
+    {
+      "source_question_id": "CSE046",
+      "source_seed_conversation_id": "CHA-CSE-CSE046",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "Our tradition speaks of children and their education, fidelity, an enduring bond, mutual assistance and growth in holiness. Older theology calls procreation and education the primary end. That does not make the spouses mere instruments of reproduction; their faithful union bears many real goods.",
+        "fr": "Notre tradition parle des enfants et de leur éducation, de la fidélité, du lien durable, de l’aide mutuelle et du progrès dans la sainteté. L’ancienne théologie nomme la procréation et l’éducation fin première. Cela ne fait pas des époux de simples instruments de reproduction : leur union fidèle porte plusieurs biens réels."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE047",
+      "source_seed_conversation_id": "CHA-CSE-CSE047",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "Certainly. Marriage is not reserved for those who can conceive. The moral character of conjugal intercourse does not depend upon an actual pregnancy following each act. Natural infertility, whether due to age or illness, does not by itself make marital relations unlawful.",
+        "fr": "Assurément. Le mariage n’est pas réservé à ceux qui peuvent concevoir. La valeur morale de l’union conjugale ne dépend pas d’une grossesse après chaque acte. L’infertilité naturelle, liée à l’âge ou à la maladie, ne rend pas en soi les relations conjugales illicites."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE048",
+      "source_seed_conversation_id": "CHA-CSE-CSE048",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "The body is not acting apart from the person and his promises. Marriage establishes a permanent and exclusive covenant with responsibilities that sexual union expresses. Thus the same physical description need not describe the same moral choice outside and inside that bond.",
+        "fr": "Le corps n’agit pas séparément de la personne et de ses promesses. Le mariage établit une alliance permanente et exclusive dont l’union conjugale exprime les responsabilités. Une même description physique ne désigne donc pas nécessairement le même choix moral hors de ce lien et en son sein."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE049",
+      "source_seed_conversation_id": "CHA-CSE-CSE049",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": true,
+      "editorial_main_answer": {
+        "en": "Our Lord taught that marriage is a permanent bond. A valid, ratified and consummated sacramental marriage cannot be dissolved by any human power (canon 1141), even when common life has failed. Serious danger may justify separation, and canon law treats some other kinds of bonds differently. The permanence of the bond must never be used to demand that someone remain in an abusive home.",
+        "fr": "Notre-Seigneur a enseigné la permanence du lien conjugal. Un mariage sacramentel valide, ratifié et consommé ne peut être dissous par aucune puissance humaine (canon 1141), même lorsque la vie commune a échoué. Un danger grave peut justifier une séparation, et le droit canon traite différemment certains autres liens. La permanence du lien ne saurait jamais servir à imposer à quelqu'un de demeurer dans un foyer violent."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE",
+      "editorial_status": "SEMANTIC_CORRECTION_APPLIED_UNREVIEWED",
+      "semantic_repair_trace": "chanoine-cse-semantic-repair-proposals-12.v1.json#CSE049"
+    },
+    {
+      "source_question_id": "CSE050",
+      "source_seed_conversation_id": "CHA-CSE-CSE050",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": true,
+      "editorial_main_answer": {
+        "en": "The failure of a household may be deeply painful, and separation or a civil remedy can be justified. But if a valid prior marriage bond subsists, civil divorce does not in itself make either spouse free to marry again (canon 1085). A declaration of nullity asks whether a valid bond ever arose; it is not the dissolution of a marriage found to have been valid. Canon law also recognises certain narrowly defined dissolutions, including some non-consummated or non-sacramental bonds. These questions require an actual canonical examination, not an assumption based only on how badly the marriage has failed.",
+        "fr": "L'échec d'un foyer peut être profondément douloureux, et une séparation ou un recours civil peut être justifié. Mais tant qu'un mariage antérieur valide subsiste, le divorce civil ne rend pas en lui-même les époux libres de contracter une nouvelle union (canon 1085). Une déclaration de nullité demande si un lien valide a jamais existé ; elle ne dissout pas un mariage reconnu valide. Le droit canon admet aussi, dans des conditions étroites, la dissolution de certains liens non consommés ou non sacramentels. Ces questions exigent un véritable examen canonique, et non une supposition fondée sur l'échec de la vie commune."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE",
+      "semantic_repair_trace": "research/chanoine/chanoine-cse-specialist-precision-repairs-3.v1.json#CSE050",
+      "editorial_status": "SPECIALIST_PRECISION_REPAIR_APPLIED_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE051",
+      "source_seed_conversation_id": "CHA-CSE-CSE051",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": true,
+      "editorial_main_answer": {
+        "en": "Marriage gives neither spouse ownership over the other's conscience or body. Consent remains essential, but agreement cannot authorise adultery, coercion or an act contrary to the moral meaning of marriage. The first duty is to honour the other person, not to discover how many demands one may make.",
+        "fr": "Le mariage ne rend aucun époux propriétaire du corps ni de la conscience de l’autre. Le consentement demeure essentiel, mais un accord ne peut autoriser l’adultère, la contrainte ou un acte contraire au sens moral du mariage. Le premier devoir est d’honorer l’autre, non de chercher jusqu’où l’on peut exiger."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE052",
+      "source_seed_conversation_id": "CHA-CSE-CSE052",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "The traditional term describes reciprocal conjugal rights and duties, not a debt that may be collected by force. Husband and wife owe one another fidelity and charity, and every request must be governed by reason and legitimate circumstances. Neither spouse is property.",
+        "fr": "Cette expression traditionnelle désigne des droits et devoirs conjugaux réciproques, non une dette qu’on pourrait recouvrer par la force. Les époux se doivent fidélité et charité ; toute demande reste soumise à la raison et aux circonstances légitimes. Aucun conjoint n’est la propriété de l’autre."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE053",
+      "source_seed_conversation_id": "CHA-CSE-CSE053",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "Marital obligations are real, but they are not without limits. Illness, pain, danger, coercion or an immoral demand may give just reason to refuse; prudent and mutually agreed abstinence can also be legitimate. Marriage calls for attentive charity, never intimidation.",
+        "fr": "Les obligations conjugales sont réelles, mais non sans limites. La maladie, la douleur, le danger, la contrainte ou une demande immorale peuvent légitimement justifier un refus ; une abstinence prudente et convenue peut aussi être licite. Le mariage demande une charité attentive, jamais l’intimidation."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE054",
+      "source_seed_conversation_id": "CHA-CSE-CSE054",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": true,
+      "editorial_main_answer": {
+        "en": "Yes. Marriage cannot transform force into consent. Pressuring or compelling a spouse into sexual activity is a grave injustice, no matter what language someone uses about conjugal duties. The person harmed deserves safety and support; no pastoral counsel should require enduring violence.",
+        "fr": "Oui. Le mariage ne transforme pas la force en consentement. Faire pression sur son conjoint ou lui imposer une activité sexuelle est une grave injustice, quelles que soient les paroles invoquées sur les devoirs conjugaux. La personne lésée a droit à la sécurité et au soutien ; aucun conseil pastoral ne doit imposer de subir la violence."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE057",
+      "source_seed_conversation_id": "CHA-CSE-CSE057",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "We should begin with principles rather than an indiscreet catalogue of acts. Respect free consent, mutual dignity and fidelity; then ask whether a chosen act belongs to conjugal union or is intended to replace or frustrate it. Where authoritative teaching has not decided a particular detail, do not pretend it has.",
+        "fr": "Partons des principes plutôt que d’un catalogue indiscret d’actes. Respectons le consentement libre, la dignité mutuelle et la fidélité ; demandons ensuite si l’acte choisi s’intègre à l’union conjugale ou vise à la remplacer ou à la frustrer. Là où l’autorité n’a pas tranché un détail, ne feignons pas qu’elle l’ait fait."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE059",
+      "source_seed_conversation_id": "CHA-CSE-CSE059",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "Age, disability and sickness are not failures of marriage. They change what spouses can reasonably and charitably ask of one another. A genuine duty never calls for recklessness about pain, health or incapacity; the couple must practise patience and mutual care.",
+        "fr": "L’âge, le handicap et la maladie ne sont pas des échecs du mariage. Ils modifient ce que les époux peuvent raisonnablement et charitablement se demander. Un devoir véritable n’ordonne jamais de mépriser la douleur, la santé ou l’incapacité ; le couple doit vivre la patience et le soin mutuel."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE060",
+      "source_seed_conversation_id": "CHA-CSE-CSE060",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "Permanent infertility cannot take away a marriage's dignity or automatically change the morality of conjugal intercourse. The spouses may truly give themselves to one another even when conception is impossible. We distinguish the nature of the act from the outcome that age or illness prevents.",
+        "fr": "L’infertilité permanente ne retire rien à la dignité du mariage et ne change pas automatiquement la moralité de l’union conjugale. Les époux peuvent vraiment se donner l’un à l’autre quand la conception est impossible. Distinguons la nature de l’acte du résultat empêché par l’âge ou la maladie."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE061",
+      "source_seed_conversation_id": "CHA-CSE-CSE061",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": true,
+      "editorial_main_answer": {
+        "en": "The Church's objection is not simply that a method is technological. She judges the deliberate choice to render the conjugal act infertile, separating what was chosen from its procreative meaning. We must distinguish that from treating illness or abstaining for serious reasons.",
+        "fr": "L’objection de l’Église n’est pas qu’une méthode soit technique. Elle juge le choix délibéré de rendre l’acte conjugal infécond, en le séparant de sa signification procréatrice. Distinguons ce choix du traitement d’une maladie ou de l’abstinence pour des raisons graves."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE062",
+      "source_seed_conversation_id": "CHA-CSE-CSE062",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "Certainly. Poverty, illness, exhaustion and obligations towards children can be serious reasons to defer another pregnancy. Conscience should assess those circumstances generously and honestly. But a serious end does not automatically make every means of avoiding conception morally equivalent.",
+        "fr": "Certainement. La pauvreté, la maladie, l’épuisement et les obligations envers les enfants peuvent fournir de graves raisons de différer une grossesse. La conscience doit en peser les circonstances avec loyauté et bienveillance. Mais une fin sérieuse ne rend pas tous les moyens moralement équivalents."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE063",
+      "source_seed_conversation_id": "CHA-CSE-CSE063",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": true,
+      "editorial_main_answer": {
+        "en": "The two couples may seek the same outcome, but moral judgment also concerns what they choose to do. Periodic abstinence means refraining from intercourse at certain times; contraception adds a deliberate act against fertility in intercourse. That distinction deserves explanation rather than a mere appeal to labels.",
+        "fr": "Les deux couples peuvent rechercher le même résultat, mais le jugement moral porte aussi sur ce qu’ils choisissent de faire. La continence périodique consiste à s’abstenir de l’union à certains moments ; la contraception ajoute un choix délibéré contre la fécondité de l’acte. Cette distinction mérite une explication, non une simple étiquette."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE064",
+      "source_seed_conversation_id": "CHA-CSE-CSE064",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": true,
+      "editorial_main_answer": {
+        "en": "Natural methods do not become good merely by being called natural. The Church distinguishes abstaining during fertile days from deliberately contracepting intercourse, yet she also asks whether spouses have upright and proportionate reasons for avoiding conception. Motives and means both matter.",
+        "fr": "Les méthodes naturelles ne deviennent pas bonnes du seul fait de leur nom. L’Église distingue l’abstinence aux jours fertiles de la contraception volontaire de l’acte, mais elle demande aussi si les époux ont des raisons droites et proportionnées d’éviter une conception. Les motifs et les moyens importent tous deux."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE065",
+      "source_seed_conversation_id": "CHA-CSE-CSE065",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "No confessor can furnish a single checklist that replaces prudence in family life. Health, serious financial hardship, the care of existing children and psychological burdens may be important. The couple should examine their true circumstances conscientiously, without selfish convenience or needless harshness towards themselves.",
+        "fr": "Aucun confesseur ne peut fournir une liste qui remplace la prudence dans la vie familiale. La santé, de graves difficultés financières, le soin des enfants et les charges psychologiques peuvent compter. Les époux doivent examiner loyalement leur situation, sans céder à la simple commodité ni se traiter avec une dureté inutile."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE066",
+      "source_seed_conversation_id": "CHA-CSE-CSE066",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "No. The Church has never demanded a child from every marital embrace. She asks that the act itself not be deliberately rendered infertile. A conception is a possible fruit of the union, not a measurable result the spouses must produce every time.",
+        "fr": "Non. L’Église n’a jamais exigé un enfant de chaque étreinte conjugale. Elle demande de ne pas rendre volontairement l’acte infécond. La conception est un fruit possible de l’union, non un résultat mesurable que les époux seraient tenus de produire à chaque fois."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE067",
+      "source_seed_conversation_id": "CHA-CSE-CSE067",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "Yes, for serious and proportionate reasons spouses may use naturally infertile periods. Pius XII expressly recognised that possibility. The moral task remains to judge the reasons sincerely, with concern for each spouse and for children already entrusted to them.",
+        "fr": "Oui, pour des raisons sérieuses et proportionnées, les époux peuvent recourir aux périodes naturellement infécondes. Pie XII a expressément reconnu cette possibilité. Le devoir moral demeure d’examiner loyalement ces raisons, dans le souci de chaque conjoint et des enfants déjà confiés au foyer."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE068",
+      "source_seed_conversation_id": "CHA-CSE-CSE068",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "Direct sterilisation makes infertility itself the object or means of the intervention. That is why the Church distinguishes it from treatment genuinely directed at a diseased organ, where loss of fertility is an unintended though foreseen effect. Precise medical facts must be established before judging an individual procedure.",
+        "fr": "La stérilisation directe fait de l’infécondité même le but ou le moyen de l’intervention. L’Église la distingue donc d’un traitement visant réellement un organe malade, où la perte de fertilité est un effet prévu mais non voulu. Il faut établir les faits médicaux précis avant de juger une intervention particulière."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE069",
+      "source_seed_conversation_id": "CHA-CSE-CSE069",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "A treatment aimed at a genuine pathology can be legitimate even if infertility is a foreseeable side effect, provided it is not chosen as the end or the means. Intending something and foreseeing it are different. This calls for competent clinical facts and careful moral reasoning.",
+        "fr": "Un traitement destiné à une pathologie réelle peut être licite même si l’infertilité en est un effet prévisible, à condition qu’elle ne soit choisie ni comme fin ni comme moyen. Vouloir un effet et le prévoir sont deux choses distinctes. Il faut des faits cliniques sûrs et un raisonnement moral attentif."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE070",
+      "source_seed_conversation_id": "CHA-CSE-CSE070",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": true,
+      "editorial_main_answer": {
+        "en": "If one spouse insists on contraception, we must not automatically attribute the same responsibility to both. Pius XI distinguished the spouse who chooses contraception from one who, for a grave reason, reluctantly tolerates what he or she does not approve. This does not make contraception good, nor does it remove the need to avoid freely intending that choice and, where safe and practicable, to seek to dissuade the other spouse. Such cases need prudent, private counsel, never blame imposed without understanding the circumstances.",
+        "fr": "Lorsqu'un époux insiste pour pratiquer la contraception, n'attribuons pas automatiquement la même responsabilité aux deux. Pie XI distingue l'époux qui choisit la contraception de celui qui, pour une raison grave, tolère à regret ce qu'il n'approuve pas. Cela ne rend pas la contraception bonne ; il faut aussi ne pas vouloir librement ce choix et, lorsque cela peut se faire sans danger et avec prudence, chercher à en détourner l'autre conjoint. Ces cas demandent un conseil discret et prudent, non un blâme porté sans connaître les circonstances."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE",
+      "editorial_status": "SEMANTIC_CORRECTION_APPLIED_UNREVIEWED",
+      "semantic_repair_trace": "chanoine-cse-semantic-repair-proposals-12.v1.json#CSE070"
+    },
+    {
+      "source_question_id": "CSE071",
+      "source_seed_conversation_id": "CHA-CSE-CSE071",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": true,
+      "editorial_main_answer": {
+        "en": "The absence of an obvious victim does not settle every moral question. Catholic teaching holds that sexual pleasure should be integrated into conjugal self-giving, rather than deliberately sought in isolation from it. At the same time, we must distinguish this judgment about an act from the guilt of any individual who struggles.",
+        "fr": "L’absence de victime évidente ne résout pas toute question morale. L’Église enseigne que le plaisir sexuel doit s’intégrer au don conjugal, plutôt qu’être recherché délibérément hors de lui. Il faut néanmoins distinguer ce jugement sur l’acte de la culpabilité d’une personne qui lutte."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE072",
+      "source_seed_conversation_id": "CHA-CSE-CSE072",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "A long-established habit can make resistance more difficult and diminish freedom in particular instances. It does not provide an automatic verdict of innocence or guilt. Consider present awareness, real choice and honest efforts to change, preferably with steady guidance rather than fearful self-interrogation.",
+        "fr": "Une habitude ancienne peut rendre la résistance plus difficile et diminuer la liberté dans certains cas. Elle ne donne pas un verdict automatique d’innocence ou de culpabilité. Considérez la conscience présente, le choix réel et les efforts sincères de changement, de préférence avec une direction stable plutôt qu’une interrogation angoissée."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE073",
+      "source_seed_conversation_id": "CHA-CSE-CSE073",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "A widespread behaviour does not become morally good through its frequency. Adolescence, immaturity and reduced freedom can affect personal responsibility; those matters should be treated without panic or humiliation. Young people need sound formation and patient support, not an adult's presumption about their guilt.",
+        "fr": "Un comportement répandu ne devient pas bon du seul fait de sa fréquence. L’adolescence, l’immaturité et une liberté diminuée peuvent affecter la responsabilité personnelle ; il faut en parler sans panique ni humiliation. Les jeunes ont besoin d’une formation saine et d’un soutien patient, non d’un jugement présomptueux sur leur culpabilité."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE074",
+      "source_seed_conversation_id": "CHA-CSE-CSE074",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": true,
+      "editorial_main_answer": {
+        "en": "Consent matters, but it does not settle whether intimate acts should be exhibited for the gratification of spectators. Pornography turns sexual intimacy into an object of consumption; its production can involve additional exploitation. We must judge both the content and its chosen use.",
+        "fr": "Le consentement importe, mais il ne suffit pas à décider si des actes intimes doivent être exposés pour la satisfaction des spectateurs. La pornographie fait de l’intimité sexuelle un objet de consommation ; sa production peut ajouter de l’exploitation. Il faut juger le contenu et l’usage volontaire qui en est fait."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE075",
+      "source_seed_conversation_id": "CHA-CSE-CSE075",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "Moral responsibility is not limited to cases where we can identify an immediate victim. Deliberately cultivating lust through another person's sexual display contradicts chastity, and the circumstances of production may carry further injustices. The absence of a known victim is not proof that the chosen conduct is good.",
+        "fr": "La responsabilité morale ne se limite pas aux cas où une victime immédiate est connue. Cultiver volontairement la luxure devant l’exposition sexuelle d’autrui contredit la chasteté, et les conditions de production peuvent comporter d’autres injustices. L’absence de victime identifiée ne prouve pas la bonté du choix."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE076",
+      "source_seed_conversation_id": "CHA-CSE-CSE076",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": true,
+      "editorial_main_answer": {
+        "en": "Marriage does not make the sexual display of third parties acceptable. Material kept entirely between spouses raises different questions: charity, modesty, confidentiality and the risk of permanent digital copies. We must not pretend the Magisterium has issued a detailed verdict on every modern medium.",
+        "fr": "Le mariage ne rend pas légitime l’exposition sexuelle de tiers. Des images strictement privées entre époux soulèvent d’autres questions : charité, pudeur, confidentialité et risque de copies numériques permanentes. Ne prétendons pas que le Magistère a statué en détail sur chaque média moderne."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE077",
+      "source_seed_conversation_id": "CHA-CSE-CSE077",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "An artificial image may involve no real performer, and older documents could not have named this technology. But we can still ask whether someone deliberately uses it to excite lust and form disordered habits. We must be exact about what the Church has taught and what is a reasoned application to a new case.",
+        "fr": "Une image artificielle peut ne représenter aucun acteur réel, et les anciens documents ne pouvaient nommer cette technique. Mais demandons si l’on s’en sert volontairement pour exciter la luxure et former des habitudes désordonnées. Distinguons exactement l’enseignement de l’Église de son application raisonnée à un cas nouveau."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE078",
+      "source_seed_conversation_id": "CHA-CSE-CSE078",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "An online feed is not equally dangerous for everyone. If particular material repeatedly leads you towards deliberately entertained lust, prudence requires changing what you follow or how you use it. The purpose is to guard freedom, not to accuse yourself of every accidental image.",
+        "fr": "Un fil de réseau social n’est pas également dangereux pour chacun. Si certains contenus conduisent régulièrement à une luxure volontairement entretenue, la prudence demande de modifier ses abonnements ou son usage. Il s’agit de protéger la liberté, non de s’accuser pour chaque image aperçue par hasard."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE079",
+      "source_seed_conversation_id": "CHA-CSE-CSE079",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "The moral question depends upon the work, why it is viewed and how it is used. Material deliberately chosen to stimulate lust differs from a proportionate encounter for medicine, education, justice or serious artistic study. Do not collapse all depictions into one category or ignore the intentions involved.",
+        "fr": "Le jugement moral dépend de l’œuvre, du motif de sa consultation et de son usage. Un contenu recherché pour exciter la luxure diffère d’une consultation proportionnée à des fins médicales, éducatives, judiciaires ou artistiques sérieuses. Ne confondons pas toutes les représentations et n’ignorons pas les intentions."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE080",
+      "source_seed_conversation_id": "CHA-CSE-CSE080",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "Begin with ordinary means faithfully practised: prayer, honest Confession, regular sleep and work, fewer predictable temptations and sensible digital boundaries. If the habit feels compulsive, professional assistance may help. A fall should lead to renewed effort, neither despair nor indifference.",
+        "fr": "Commencez par les moyens ordinaires fidèlement employés : prière, confession sincère, sommeil et travail réguliers, moins d’occasions prévisibles et des limites numériques sensées. Si l’habitude paraît compulsive, une aide professionnelle peut être utile. Après une chute, reprenez l’effort, sans désespoir ni indifférence."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE081",
+      "source_seed_conversation_id": "CHA-CSE-CSE081",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "An attraction that you have not chosen is not by that fact a personal sin. The Church distinguishes inclination, temptation and freely chosen acts. Every person deserves dignity and friendship; the moral life should never be reduced to a label placed upon someone.",
+        "fr": "Une attirance que vous n’avez pas choisie n’est pas, de ce seul fait, un péché personnel. L’Église distingue inclination, tentation et actes librement choisis. Chaque personne mérite dignité et amitié ; la vie morale ne doit jamais se réduire à une étiquette."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE082",
+      "source_seed_conversation_id": "CHA-CSE-CSE082",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "An inclination may appear without asking your permission; an act chosen knowingly proceeds from the will. This is why a person must not be judged guilty merely for experiencing attraction. We must speak carefully about both moral action and human dignity.",
+        "fr": "Une inclination peut apparaître sans votre permission ; un acte choisi en connaissance de cause procède de la volonté. On ne doit donc pas déclarer une personne coupable du seul fait qu’elle éprouve une attirance. Parlons avec précision de l’action morale et de la dignité humaine."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE083",
+      "source_seed_conversation_id": "CHA-CSE-CSE083",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": true,
+      "editorial_main_answer": {
+        "en": "Affection, constancy and sacrifice can be real virtues in friendship and other relationships. The Church does not deny those goods. Her judgment about sexual acts proceeds from her understanding of marriage as a male-female conjugal union; disagreement about that judgment must never become contempt for persons.",
+        "fr": "L’affection, la constance et le sacrifice peuvent être de véritables vertus dans l’amitié et d’autres relations. L’Église ne nie pas ces biens. Son jugement sur les actes sexuels vient de sa conception du mariage comme union conjugale de l’homme et de la femme ; un désaccord sur ce point ne doit jamais devenir mépris des personnes."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE084",
+      "source_seed_conversation_id": "CHA-CSE-CSE084",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": true,
+      "editorial_main_answer": {
+        "en": "An infertile married couple does not cease to be a man and a woman joined in the kind of union naturally ordered to generation. The Church distinguishes the nature of the conjugal act from whether conception can occur in one particular case. That is the actual argument to examine, not a claim that infertile spouses are less worthy.",
+        "fr": "Un couple infertile demeure l’union d’un homme et d’une femme, du type naturellement ordonné à la génération. L’Église distingue la nature de l’acte conjugal de la possibilité de concevoir dans un cas particulier. Voilà l’argument à examiner, non l’idée que les époux infertiles auraient une moindre dignité."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE085",
+      "source_seed_conversation_id": "CHA-CSE-CSE085",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "Fidelity is good and should not be denied where it truly exists. But a faithful intention does not by itself establish the morality of every sexual act. The Church asks a second question about the kind of union chosen; that question can be debated respectfully without diminishing anyone's humanity.",
+        "fr": "La fidélité est un bien réel qu’il ne faut pas nier là où elle existe. Mais une intention fidèle ne suffit pas à établir la moralité de tout acte sexuel. L’Église pose une seconde question sur la nature de l’union choisie ; on peut en discuter respectueusement sans diminuer l’humanité de personne."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE086",
+      "source_seed_conversation_id": "CHA-CSE-CSE086",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "Certainly not. No person is identical with an attraction, a weakness or even a freely chosen fault. Christian teaching judges acts while affirming the inalienable dignity of the person. If I forget that distinction when speaking to someone, I have forgotten something essential to my priestly duty.",
+        "fr": "Certainement pas. Nulle personne ne se confond avec une attirance, une faiblesse ou même une faute librement commise. L'enseignement chrétien juge les actes tout en affirmant la dignité inaliénable de chacun. Si j'oublie cette distinction en m'adressant à quelqu'un, j'oublie quelque chose d'essentiel à mon devoir de prêtre."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE",
+      "voice_parity_trace": "research/chanoine/chanoine-cse-six-voice-parity-proposals.v1.json#CSE086",
+      "editorial_status": "VOICE_PARITY_DRAFT_APPLIED_STILL_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE087",
+      "source_seed_conversation_id": "CHA-CSE-CSE087",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": true,
+      "editorial_main_answer": {
+        "en": "No moral disagreement licenses cruelty, mockery, violence or unjust discrimination. Catholic teaching asks for respect and protection of the person's dignity even while maintaining its account of marriage and sexual acts. Charity is not optional, nor is truthfulness.",
+        "fr": "Aucun désaccord moral n’autorise la cruauté, la moquerie, la violence ni une discrimination injuste. L’enseignement catholique exige le respect et la protection de la dignité de la personne tout en maintenant sa doctrine du mariage et des actes sexuels. La charité n’est pas facultative, pas davantage que la vérité."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE088",
+      "source_seed_conversation_id": "CHA-CSE-CSE088",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": true,
+      "editorial_main_answer": {
+        "en": "Modern clinical knowledge matters. Same-sex orientation is not classified as a psychiatric illness, and I would be wrong to claim otherwise. The Church's moral teaching concerns marriage and chosen acts; it is not a medical diagnosis. We must correct mistaken facts rather than make them an argument for theology.",
+        "fr": "Les connaissances cliniques modernes comptent. L'orientation homosexuelle n'est pas classée comme maladie psychiatrique, et j'aurais tort de prétendre le contraire. L'enseignement moral de l'Église concerne le mariage et les actes choisis ; il ne constitue pas un diagnostic médical. Corrigeons les erreurs factuelles au lieu de les transformer en arguments théologiques."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE",
+      "voice_parity_trace": "research/chanoine/chanoine-cse-six-voice-parity-proposals.v1.json#CSE088",
+      "editorial_status": "VOICE_PARITY_DRAFT_APPLIED_STILL_UNREVIEWED"
+    },
+    {
+      "source_question_id": "CSE089",
+      "source_seed_conversation_id": "CHA-CSE-CSE089",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": true,
+      "editorial_main_answer": {
+        "en": "The Church does not claim that the mere existence of a civil same-sex marriage directly injures each existing heterosexual marriage. The argument made by the CDF in 2003 concerns how civil law defines the institution: removing sexual difference and the reference to generation changes what the state recognises as marriage. This institutional claim must be argued openly and distinguished from questions about individual civil protections. No moral disagreement can justify contempt, violence or unjust treatment, and empirical claims about children require evidence rather than mere invocation of authority.",
+        "fr": "L'Église ne prétend pas que la simple existence d'un mariage civil entre personnes du même sexe blesse directement chaque mariage hétérosexuel déjà existant. L'argument avancé par la Congrégation pour la doctrine de la foi en 2003 concerne la définition publique de l'institution : supprimer la différence sexuelle et la référence à la génération change ce que l'État reconnaît comme mariage. Il faut exposer cet argument institutionnel et le distinguer des protections civiles des personnes. Aucun désaccord moral ne justifie le mépris, la violence ou un traitement injuste ; les affirmations empiriques concernant les enfants demandent des preuves, non une simple invocation de l'autorité."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE",
+      "editorial_status": "SEMANTIC_CORRECTION_APPLIED_UNREVIEWED",
+      "semantic_repair_trace": "chanoine-cse-semantic-repair-proposals-12.v1.json#CSE089"
+    },
+    {
+      "source_question_id": "CSE090",
+      "source_seed_conversation_id": "CHA-CSE-CSE090",
+      "source_access": "PUBLIC_READER",
+      "source_debate_exists": false,
+      "editorial_main_answer": {
+        "en": "Of course. Christian chastity does not forbid deep friendship, loyal affection or a life rich in service. Celibacy need not mean isolation. Good friends can help one another live in dignity and faith, with whatever prudence their particular circumstances require.",
+        "fr": "Bien sûr. La chasteté chrétienne n’interdit ni l’amitié profonde, ni l’affection fidèle, ni une vie riche de service. Le célibat n’oblige pas à l’isolement. De bons amis peuvent s’entraider à vivre dans la dignité et la foi, avec la prudence qu’exigent leurs circonstances."
+      },
+      "source_verbatim_immutable": true,
+      "claim_level_certified": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "BULK_FIRST_PASS_PASTORAL_EDIT_UNREVIEWED"
+    }
+  ]
+}

@@ -1,0 +1,637 @@
+{
+  "schema": "AO_CHANOINE_360_FRENCH_PARITY_CROSSLINKED_21_DRAFTS_V1",
+  "date": "2026-10-20",
+  "status": "BILINGUAL_PARITY_PILOT_UNAPPROVED_DRAFT_TRANSLATIONS",
+  "source": {
+    "original_file": "Chanoine_Unified_Conversation_Index_360_2026-10-19(1).json",
+    "sha256": "69e882f2dfcad2502c890bb988789d7a01921295a33bf8ff15f7b4ec7ca8e9d5",
+    "source_version": "1",
+    "readonly_manifest": "research/chanoine/chanoine-360-readonly-owner-snapshot.v1.json"
+  },
+  "policy": [
+    "Every French sentence here is an editorial translation of a distinct English-only source record; not a historical quotation in French.",
+    "No original English text, source claim, APOL/CR owner, source locator or review status has been modified.",
+    "No source-owner and publication approval is inferred from translation completeness.",
+    "Specialist safeguards, native French fidelity, theological accuracy and persona tone require human approval."
+  ],
+  "counts": {
+    "original_older_bank": 360,
+    "unique_crosslinked_older_ids": 21,
+    "old_exchanges_translated": 42,
+    "editorial_french_questions": 42,
+    "editorial_french_answers": 42,
+    "remaining_older_bank_without_draft_fr": 339,
+    "publication_approved": 0
+  },
+  "records": [
+    {
+      "existing_conversation_id": "CHA-QA-MOR-001",
+      "original_english_source_sha256": "69e882f2dfcad2502c890bb988789d7a01921295a33bf8ff15f7b4ec7ca8e9d5",
+      "canonical_owner_ids": [
+        "APOL-052"
+      ],
+      "english_title": "What makes a human act morally good?",
+      "fr_title": "Qu'est-ce qui rend un acte humain moralement bon ?",
+      "original_exchange_count": 2,
+      "editorial_french_exchanges": [
+        {
+          "exchange": 1,
+          "visitor_question_fr": "Qu'est-ce qui rend un acte humain moralement bon ?",
+          "chanoine_reply_fr": "Pour être moralement bon, un acte humain doit avoir un objet choisi bon, une intention droite et des circonstances qui ne le corrompent pas. Une seule de ces qualités ne saurait transformer en vertu un choix délibérément mauvais."
+        },
+        {
+          "exchange": 2,
+          "visitor_question_fr": "Et si le résultat profite à beaucoup de personnes ?",
+          "chanoine_reply_fr": "Les conséquences comptent pour la prudence, mais elles ne rendent pas licites tous les moyens. Il faut d'abord déterminer ce que l'on choisit délibérément."
+        }
+      ],
+      "editorial_translation_provenance": "NEW_EDITORIAL_FRENCH_NOT_ORIGINAL_AUTHOR_WORDS",
+      "english_source_changed": false,
+      "needs_native_french_review": true,
+      "doctrinal_review_approved": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "UNREVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "existing_conversation_id": "CHA-QA-MOR-002",
+      "original_english_source_sha256": "69e882f2dfcad2502c890bb988789d7a01921295a33bf8ff15f7b4ec7ca8e9d5",
+      "canonical_owner_ids": [
+        "APOL-052"
+      ],
+      "english_title": "Does a good intention justify a bad means?",
+      "fr_title": "Une bonne intention justifie-t-elle un mauvais moyen ?",
+      "original_exchange_count": 2,
+      "editorial_french_exchanges": [
+        {
+          "exchange": 1,
+          "visitor_question_fr": "Une bonne intention justifie-t-elle un mauvais moyen ?",
+          "chanoine_reply_fr": "Non. La bonté de l'intention ne rend pas licite toute action choisie. Nous devons considérer ce que nous choisissons délibérément, pourquoi nous le choisissons et dans quelles circonstances nous agissons. On peut souhaiter une fin excellente tout en choisissant un moyen intrinsèquement mauvais. La fin ne sanctifie pas ce choix."
+        },
+        {
+          "exchange": 2,
+          "visitor_question_fr": "Mais il arrive qu'en aidant quelqu'un, on lui cause involontairement un dommage. Cela aussi serait-il interdit ?",
+          "chanoine_reply_fr": "C'est une autre question morale. Il faut distinguer un mal choisi comme moyen d'un dommage qui survient sans être voulu. L'intention, la nature de l'acte et la proportionnalité demandent un examen attentif. Un simple calcul des bonnes et mauvaises conséquences ne suffit pas à résoudre ces cas."
+        }
+      ],
+      "editorial_translation_provenance": "NEW_EDITORIAL_FRENCH_NOT_ORIGINAL_AUTHOR_WORDS",
+      "english_source_changed": false,
+      "needs_native_french_review": true,
+      "doctrinal_review_approved": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "UNREVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "existing_conversation_id": "CHA-MAIN-CR-MOR-05",
+      "original_english_source_sha256": "69e882f2dfcad2502c890bb988789d7a01921295a33bf8ff15f7b4ec7ca8e9d5",
+      "canonical_owner_ids": [
+        "CR-MOR-05"
+      ],
+      "english_title": "Proportionalism and consequentialism: can good consequences justify an otherwise evil act?",
+      "fr_title": "Le proportionnalisme et le conséquentialisme : de bonnes conséquences peuvent-elles justifier un acte par ailleurs mauvais ?",
+      "original_exchange_count": 2,
+      "editorial_french_exchanges": [
+        {
+          "exchange": 1,
+          "visitor_question_fr": "Le proportionnalisme et le conséquentialisme : de bonnes conséquences peuvent-elles justifier un acte par ailleurs mauvais ?",
+          "chanoine_reply_fr": "Les conséquences importent pour la prudence, mais elles ne rendent pas bon un acte délibérément mauvais. La théologie morale catholique considère l'objet choisi, l'intention et les circonstances ; celles-ci ne peuvent changer la nature morale d'un moyen intrinsèquement mauvais."
+        },
+        {
+          "exchange": 2,
+          "visitor_question_fr": "Éviter un plus grand mal n'est-il pas une justification suffisante ?",
+          "chanoine_reply_fr": "Cela peut justifier de tolérer un effet nuisible non voulu ou de renoncer à un traitement disproportionné ; ce n'est pas la même chose que choisir le mal comme moyen. Il faut identifier l'acte réellement posé, non trancher la question en additionnant des résultats escomptés."
+        }
+      ],
+      "editorial_translation_provenance": "NEW_EDITORIAL_FRENCH_NOT_ORIGINAL_AUTHOR_WORDS",
+      "english_source_changed": false,
+      "needs_native_french_review": true,
+      "doctrinal_review_approved": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "UNREVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "existing_conversation_id": "CHA-QA-MOR-003",
+      "original_english_source_sha256": "69e882f2dfcad2502c890bb988789d7a01921295a33bf8ff15f7b4ec7ca8e9d5",
+      "canonical_owner_ids": [
+        "APOL-052"
+      ],
+      "english_title": "Are some acts always morally wrong regardless of circumstances?",
+      "fr_title": "Certains actes sont-ils toujours moralement mauvais, quelles que soient les circonstances ?",
+      "original_exchange_count": 2,
+      "editorial_french_exchanges": [
+        {
+          "exchange": 1,
+          "visitor_question_fr": "Certains actes sont-ils toujours moralement mauvais, quelles que soient les circonstances ?",
+          "chanoine_reply_fr": "Oui. La doctrine morale catholique enseigne que certaines espèces d'actes délibérément choisis sont intrinsèquement mauvaises. Aucun motif favorable ni aucune circonstance ne peut rendre bon leur objet moral."
+        },
+        {
+          "exchange": 2,
+          "visitor_question_fr": "Cette règle ignore-t-elle les circonstances personnelles difficiles ?",
+          "chanoine_reply_fr": "Non. Les circonstances peuvent influer sur la responsabilité de la personne et sur la gravité concrète de l'acte. Mais la compassion envers quelqu'un ne doit pas être confondue avec l'affirmation que chacun de ses choix est moralement juste."
+        }
+      ],
+      "editorial_translation_provenance": "NEW_EDITORIAL_FRENCH_NOT_ORIGINAL_AUTHOR_WORDS",
+      "english_source_changed": false,
+      "needs_native_french_review": true,
+      "doctrinal_review_approved": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "UNREVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "existing_conversation_id": "CHA-QA-MOR-004",
+      "original_english_source_sha256": "69e882f2dfcad2502c890bb988789d7a01921295a33bf8ff15f7b4ec7ca8e9d5",
+      "canonical_owner_ids": [
+        "APOL-052"
+      ],
+      "english_title": "Does Catholic morality accept consequentialism or proportionalism?",
+      "fr_title": "La morale catholique admet-elle le conséquentialisme ou le proportionnalisme ?",
+      "original_exchange_count": 2,
+      "editorial_french_exchanges": [
+        {
+          "exchange": 1,
+          "visitor_question_fr": "La morale catholique admet-elle le conséquentialisme ou le proportionnalisme ?",
+          "chanoine_reply_fr": "La morale catholique refuse de faire du calcul des avantages attendus l'unique mesure du bien et du mal. Certains actes sont mauvais par leur objet choisi, même lorsque leur auteur recherche un bon résultat."
+        },
+        {
+          "exchange": 2,
+          "visitor_question_fr": "Les résultats ne comptent donc pour rien ?",
+          "chanoine_reply_fr": "Bien sûr qu'ils comptent lorsqu'il s'agit de choisir prudemment et d'apprécier les effets non voulus. Ils ne peuvent toutefois rendre saint un moyen qui est en lui-même moralement interdit."
+        }
+      ],
+      "editorial_translation_provenance": "NEW_EDITORIAL_FRENCH_NOT_ORIGINAL_AUTHOR_WORDS",
+      "english_source_changed": false,
+      "needs_native_french_review": true,
+      "doctrinal_review_approved": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "UNREVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "existing_conversation_id": "CHA-MAIN-CR-MOR-06",
+      "original_english_source_sha256": "69e882f2dfcad2502c890bb988789d7a01921295a33bf8ff15f7b4ec7ca8e9d5",
+      "canonical_owner_ids": [
+        "CR-MOR-06"
+      ],
+      "english_title": "Fundamental option, mortal sin and intrinsically evil acts",
+      "fr_title": "L'option fondamentale, le péché mortel et les actes intrinsèquement mauvais",
+      "original_exchange_count": 2,
+      "editorial_french_exchanges": [
+        {
+          "exchange": 1,
+          "visitor_question_fr": "L'option fondamentale, le péché mortel et les actes intrinsèquement mauvais",
+          "chanoine_reply_fr": "L'idée d'une orientation fondamentale vers Dieu ou loin de lui peut éclairer la profondeur de la vie morale ; elle ne doit pourtant pas servir à nier qu'une personne puisse choisir sciemment et librement un acte gravement mauvais. La théologie morale ne saurait séparer l'orientation générale d'une vie de ses décisions concrètes."
+        },
+        {
+          "exchange": 2,
+          "visitor_question_fr": "Mais une seule mauvaise action n'efface pas toute une vie de bonté, n'est-ce pas ?",
+          "chanoine_reply_fr": "Un acte n'efface pas tout le bien qu'une personne a accompli. Cependant, un choix grave et pleinement délibéré peut rompre la charité. Il faut examiner la gravité de l'acte, la connaissance, la liberté et le repentir."
+        }
+      ],
+      "editorial_translation_provenance": "NEW_EDITORIAL_FRENCH_NOT_ORIGINAL_AUTHOR_WORDS",
+      "english_source_changed": false,
+      "needs_native_french_review": true,
+      "doctrinal_review_approved": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "UNREVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "existing_conversation_id": "CHA-MAIN-CR-DOC-02",
+      "original_english_source_sha256": "69e882f2dfcad2502c890bb988789d7a01921295a33bf8ff15f7b4ec7ca8e9d5",
+      "canonical_owner_ids": [
+        "CR-DOC-02"
+      ],
+      "english_title": "Can doctrine develop without contradicting earlier doctrine?",
+      "fr_title": "La doctrine peut-elle se développer sans contredire la doctrine antérieure ?",
+      "original_exchange_count": 2,
+      "editorial_french_exchanges": [
+        {
+          "exchange": 1,
+          "visitor_question_fr": "La doctrine peut-elle se développer sans contredire la doctrine antérieure ?",
+          "chanoine_reply_fr": "La doctrine peut croître dans sa compréhension et son expression, mais ce développement doit préserver la vérité révélée par Dieu. Saint Vincent de Lérins distinguait déjà la croissance d'une altération de l'identité. Une explication plus claire de la Trinité ne donne pas licence de contredire la foi antérieure de l'Église."
+        },
+        {
+          "exchange": 2,
+          "visitor_question_fr": "Certaines formulations n'étaient-elles pourtant pas entièrement nouvelles ?",
+          "chanoine_reply_fr": "Un vocabulaire nouveau peut préciser ce qui était déjà cru. La question historique est de savoir si la nouvelle définition conserve le même sujet et le même sens, non si chaque mot était déjà employé au premier siècle."
+        }
+      ],
+      "editorial_translation_provenance": "NEW_EDITORIAL_FRENCH_NOT_ORIGINAL_AUTHOR_WORDS",
+      "english_source_changed": false,
+      "needs_native_french_review": true,
+      "doctrinal_review_approved": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "UNREVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "existing_conversation_id": "CHA-MAIN-CR-MOR-01",
+      "original_english_source_sha256": "69e882f2dfcad2502c890bb988789d7a01921295a33bf8ff15f7b4ec7ca8e9d5",
+      "canonical_owner_ids": [
+        "CR-MOR-01"
+      ],
+      "english_title": "Did the crisis in moral theology begin before Vatican II?",
+      "fr_title": "La crise de la théologie morale a-t-elle commencé avant Vatican II ?",
+      "original_exchange_count": 2,
+      "editorial_french_exchanges": [
+        {
+          "exchange": 1,
+          "visitor_question_fr": "La crise de la théologie morale a-t-elle commencé avant Vatican II ?",
+          "chanoine_reply_fr": "Des débats sur la théologie morale ont précédé le Concile, notamment au sujet de la loi naturelle, de la conscience et de l'influence de philosophies nouvelles. Les controverses ultérieures ne sont pas nées dans un vide intellectuel. Toutefois, leur seule chronologie ne prouve pas que tous les auteurs postérieurs aient soutenu une thèse condamnée."
+        },
+        {
+          "exchange": 2,
+          "visitor_question_fr": "La crise était-elle inévitable dès que la philosophie moderne fut introduite dans les séminaires ?",
+          "chanoine_reply_fr": "Non. Les instruments philosophiques doivent être jugés selon la vérité de leurs prémisses et de leurs conclusions. Un maître sérieux peut étudier la pensée moderne sans abandonner les principes moraux objectifs."
+        }
+      ],
+      "editorial_translation_provenance": "NEW_EDITORIAL_FRENCH_NOT_ORIGINAL_AUTHOR_WORDS",
+      "english_source_changed": false,
+      "needs_native_french_review": true,
+      "doctrinal_review_approved": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "UNREVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "existing_conversation_id": "CHA-QA-MOR-007",
+      "original_english_source_sha256": "69e882f2dfcad2502c890bb988789d7a01921295a33bf8ff15f7b4ec7ca8e9d5",
+      "canonical_owner_ids": [
+        "APOL-051"
+      ],
+      "english_title": "Does conscience determine what is objectively right and wrong?",
+      "fr_title": "La conscience détermine-t-elle ce qui est objectivement bien ou mal ?",
+      "original_exchange_count": 2,
+      "editorial_french_exchanges": [
+        {
+          "exchange": 1,
+          "visitor_question_fr": "La conscience détermine-t-elle ce qui est objectivement bien ou mal ?",
+          "chanoine_reply_fr": "La conscience est notre jugement pratique sur la qualité morale d'un acte ; elle ne fabrique pas le bien et le mal. Il faut la former par la recherche de la vérité, la prière, un enseignement solide et l'attention aux circonstances."
+        },
+        {
+          "exchange": 2,
+          "visitor_question_fr": "Et si j'ai la certitude absolue qu'une action est juste ?",
+          "chanoine_reply_fr": "La sincérité compte dans l'appréciation de la responsabilité, mais elle ne prouve pas à elle seule la justesse objective du jugement. Une conscience certaine oblige celui qui la suit ; voilà pourquoi sa formation honnête est d'autant plus importante. Ne prenons pas un sentiment très fort pour un jugement sûr."
+        }
+      ],
+      "editorial_translation_provenance": "NEW_EDITORIAL_FRENCH_NOT_ORIGINAL_AUTHOR_WORDS",
+      "english_source_changed": false,
+      "needs_native_french_review": true,
+      "doctrinal_review_approved": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "UNREVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "existing_conversation_id": "CHA-MAIN-CR-MOR-02",
+      "original_english_source_sha256": "69e882f2dfcad2502c890bb988789d7a01921295a33bf8ff15f7b4ec7ca8e9d5",
+      "canonical_owner_ids": [
+        "CR-MOR-02"
+      ],
+      "english_title": "Conscience: judge of moral truth or creator of moral truth?",
+      "fr_title": "La conscience juge-t-elle la vérité morale ou la crée-t-elle ?",
+      "original_exchange_count": 2,
+      "editorial_french_exchanges": [
+        {
+          "exchange": 1,
+          "visitor_question_fr": "La conscience juge-t-elle la vérité morale ou la crée-t-elle ?",
+          "chanoine_reply_fr": "La conscience juge si l'on doit accomplir une action ; elle ne crée pas la loi morale. Le jugement sincère d'une personne compte beaucoup pour sa responsabilité, mais la sincérité ne rend pas bon un acte objectivement mauvais."
+        },
+        {
+          "exchange": 2,
+          "visitor_question_fr": "Que dois-je faire lorsque ma conscience demeure incertaine ?",
+          "chanoine_reply_fr": "Évitez de décider témérairement ; recherchez les faits pertinents et un enseignement moral solide, et demandez conseil lorsque c'est nécessaire. La conscience mérite qu'on l'écoute, mais aussi qu'on la forme avec soin."
+        }
+      ],
+      "editorial_translation_provenance": "NEW_EDITORIAL_FRENCH_NOT_ORIGINAL_AUTHOR_WORDS",
+      "english_source_changed": false,
+      "needs_native_french_review": true,
+      "doctrinal_review_approved": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "UNREVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "existing_conversation_id": "CHA-QA-MOR-008",
+      "original_english_source_sha256": "69e882f2dfcad2502c890bb988789d7a01921295a33bf8ff15f7b4ec7ca8e9d5",
+      "canonical_owner_ids": [
+        "APOL-051"
+      ],
+      "english_title": "Must a person obey an erroneous conscience?",
+      "fr_title": "Doit-on obéir à une conscience erronée ?",
+      "original_exchange_count": 2,
+      "editorial_french_exchanges": [
+        {
+          "exchange": 1,
+          "visitor_question_fr": "Doit-on obéir à une conscience erronée ?",
+          "chanoine_reply_fr": "On ne doit pas agir sciemment contre un jugement certain de sa conscience : ce serait choisir ce que l'on croit mauvais. Mais la conscience ne crée pas la loi morale. Nous devons aussi la former, corriger nos erreurs et rechercher humblement la vérité. Une erreur de conscience peut diminuer la responsabilité sans rendre bon l'acte objectivement nuisible."
+        },
+        {
+          "exchange": 2,
+          "visitor_question_fr": "Et si je suis incertain et que deux catholiques sérieux ne sont pas d'accord ?",
+          "chanoine_reply_fr": "Ne faites pas de l'incertitude une permission de choisir à la légère. Cherchez un conseil compétent, examinez les raisons et distinguez la doctrine établie d'une application légitimement débattue. Il ne faut ni livrer sa conscience au caprice privé ni prendre l'anxiété pour une certitude morale."
+        }
+      ],
+      "editorial_translation_provenance": "NEW_EDITORIAL_FRENCH_NOT_ORIGINAL_AUTHOR_WORDS",
+      "english_source_changed": false,
+      "needs_native_french_review": true,
+      "doctrinal_review_approved": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "UNREVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "existing_conversation_id": "CHA-MAIN-CR-MOR-04",
+      "original_english_source_sha256": "69e882f2dfcad2502c890bb988789d7a01921295a33bf8ff15f7b4ec7ca8e9d5",
+      "canonical_owner_ids": [
+        "CR-MOR-04"
+      ],
+      "english_title": "Is ‘responsible dissent’ from non-infallible moral teaching legitimate?",
+      "fr_title": "Une « dissidence responsable » envers un enseignement moral non définitif est-elle légitime ?",
+      "original_exchange_count": 2,
+      "editorial_french_exchanges": [
+        {
+          "exchange": 1,
+          "visitor_question_fr": "Une « dissidence responsable » envers un enseignement moral non définitif est-elle légitime ?",
+          "chanoine_reply_fr": "La recherche théologique peut légitimement étudier les raisons d'un enseignement non définitif et soulever respectueusement des difficultés. Mais publier une invitation à écarter la doctrine morale de l'Église tout en prétendant enseigner en son nom est une autre affaire. Le droit de discuter s'accompagne de devoirs envers la vérité et la communion ecclésiale."
+        },
+        {
+          "exchange": 2,
+          "visitor_question_fr": "Si un théologien est convaincu qu'un enseignement est erroné, doit-il se taire ?",
+          "chanoine_reply_fr": "Qu'il présente des arguments précis par les voies responsables et qu'il évite d'annoncer aux fidèles qu'une conclusion personnelle contestée est déjà l'enseignement établi de l'Église. L'équité et la franchise s'imposent au théologien comme à ses supérieurs."
+        }
+      ],
+      "editorial_translation_provenance": "NEW_EDITORIAL_FRENCH_NOT_ORIGINAL_AUTHOR_WORDS",
+      "english_source_changed": false,
+      "needs_native_french_review": true,
+      "doctrinal_review_approved": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "UNREVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "existing_conversation_id": "CHA-QA-ORTH-024",
+      "original_english_source_sha256": "69e882f2dfcad2502c890bb988789d7a01921295a33bf8ff15f7b4ec7ca8e9d5",
+      "canonical_owner_ids": [
+        "APOL-028"
+      ],
+      "english_title": "Why does Eastern Orthodoxy permit certain remarriages after divorce?",
+      "fr_title": "Pourquoi l'orthodoxie orientale permet-elle parfois un remariage après le divorce ?",
+      "original_exchange_count": 2,
+      "editorial_french_exchanges": [
+        {
+          "exchange": 1,
+          "visitor_question_fr": "Pourquoi l'orthodoxie orientale permet-elle parfois un remariage après le divorce ?",
+          "chanoine_reply_fr": "Les Églises orthodoxes tiennent le mariage en grande révérence et le regardent comme une union pour la vie. Elles peuvent néanmoins permettre un deuxième ou un troisième mariage dans certaines circonstances, au titre de ce qu'elles appellent l'« économie », concession pastorale destinée à tenir compte de la faiblesse humaine et de situations particulières. Ces unions sont généralement célébrées avec un caractère davantage pénitentiel."
+        },
+        {
+          "exchange": 2,
+          "visitor_question_fr": "Pourquoi l'Église catholique n'adopte-t-elle pas cette pratique ?",
+          "chanoine_reply_fr": "Parce que l'Église catholique enseigne qu'un mariage sacramentel valide et consommé ne peut être dissous par une autorité humaine. Elle peut examiner si le mariage a été validement contracté. S'il était nul dès l'origine, une déclaration de nullité reconnaît qu'aucun lien valide n'est né. Ce n'est pas dissoudre un mariage valide parce que la vie commune s'est brisée. Il faut aussi distinguer cette question doctrinale du soin pastoral dû aux personnes éprouvées par l'abandon, la violence ou la ruine de la vie familiale."
+        }
+      ],
+      "editorial_translation_provenance": "NEW_EDITORIAL_FRENCH_NOT_ORIGINAL_AUTHOR_WORDS",
+      "english_source_changed": false,
+      "needs_native_french_review": true,
+      "doctrinal_review_approved": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "UNREVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "existing_conversation_id": "CHA-MAIN-CR-MOR-08",
+      "original_english_source_sha256": "69e882f2dfcad2502c890bb988789d7a01921295a33bf8ff15f7b4ec7ca8e9d5",
+      "canonical_owner_ids": [
+        "CR-MOR-08"
+      ],
+      "english_title": "Amoris laetitia: continuity, qualification or conflict with prior sacramental and moral discipline?",
+      "fr_title": "Amoris laetitia : continuité, précision ou conflit avec la discipline sacramentelle et morale antérieure ?",
+      "original_exchange_count": 2,
+      "editorial_french_exchanges": [
+        {
+          "exchange": 1,
+          "visitor_question_fr": "Amoris laetitia : continuité, précision ou conflit avec la discipline sacramentelle et morale antérieure ?",
+          "chanoine_reply_fr": "Il faut lire les orientations pastorales d'Amoris laetitia à la lumière des enseignements antérieurs sur le mariage, la conscience, le péché et les sacrements. Certaines interprétations ont suscité des débats ; il importe de distinguer le texte lui-même, les clarifications officielles et les mises en œuvre locales."
+        },
+        {
+          "exchange": 2,
+          "visitor_question_fr": "Pouvez-vous porter un jugement universel sur tous les catholiques divorcés puis remariés ?",
+          "chanoine_reply_fr": "Non, sans connaître la discipline applicable ni la situation de la personne. Un prêtre doit sauvegarder la vérité du mariage et offrir un soin pastoral véritablement personnel, au lieu de substituer des jugements généraux à un accompagnement sacramentel."
+        }
+      ],
+      "editorial_translation_provenance": "NEW_EDITORIAL_FRENCH_NOT_ORIGINAL_AUTHOR_WORDS",
+      "english_source_changed": false,
+      "needs_native_french_review": true,
+      "doctrinal_review_approved": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "UNREVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "existing_conversation_id": "CHA-MAIN-CR-MOR-03",
+      "original_english_source_sha256": "69e882f2dfcad2502c890bb988789d7a01921295a33bf8ff15f7b4ec7ca8e9d5",
+      "canonical_owner_ids": [
+        "CR-MOR-03"
+      ],
+      "english_title": "Why did Humanae vitae become a crisis of authority and moral method?",
+      "fr_title": "Pourquoi Humanae vitae a-t-elle provoqué une crise de l'autorité et de la méthode morale ?",
+      "original_exchange_count": 2,
+      "editorial_french_exchanges": [
+        {
+          "exchange": 1,
+          "visitor_question_fr": "Pourquoi Humanae vitae a-t-elle provoqué une crise de l'autorité et de la méthode morale ?",
+          "chanoine_reply_fr": "Humanae vitae a réaffirmé un enseignement moral, tandis que de nombreux commentateurs soutenaient que des circonstances nouvelles exigeaient une autre règle. La controverse est devenue une épreuve de la manière dont les catholiques comprennent la loi naturelle, l'enseignement des évêques, la conscience et la dissidence. Ne prenons pas l'intensité des réactions pour une démonstration que cet enseignement aurait cessé d'obliger."
+        },
+        {
+          "exchange": 2,
+          "visitor_question_fr": "Sa forme non infaillible ne le rend-elle pas simplement facultatif ?",
+          "chanoine_reply_fr": "Non. Le devoir d'assentiment doit être apprécié selon la nature de l'enseignement ; on ne peut le ramener à une opposition binaire entre dogme solennel et opinion privée. Les difficultés demandent une étude sérieuse, non une permission présumée de l'ignorer."
+        }
+      ],
+      "editorial_translation_provenance": "NEW_EDITORIAL_FRENCH_NOT_ORIGINAL_AUTHOR_WORDS",
+      "english_source_changed": false,
+      "needs_native_french_review": true,
+      "doctrinal_review_approved": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "UNREVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "existing_conversation_id": "CHA-QA-MOR-006",
+      "original_english_source_sha256": "69e882f2dfcad2502c890bb988789d7a01921295a33bf8ff15f7b4ec7ca8e9d5",
+      "canonical_owner_ids": [
+        "APOL-052"
+      ],
+      "english_title": "What is the principle of double effect?",
+      "fr_title": "Qu'est-ce que le principe du double effet ?",
+      "original_exchange_count": 2,
+      "editorial_french_exchanges": [
+        {
+          "exchange": 1,
+          "visitor_question_fr": "Qu'est-ce que le principe du double effet ?",
+          "chanoine_reply_fr": "En théologie morale, ce principe aide à distinguer un mal directement voulu ou choisi comme moyen d'un dommage non voulu qui peut accompagner un acte bon ou neutre. L'acte choisi doit être lui-même moralement légitime ; le bien ne doit pas être obtenu par le mal ; il faut une raison proportionnellement grave pour permettre l'effet nuisible. Ce principe ne donne aucune permission de faire le mal dans l'espoir d'un bien."
+        },
+        {
+          "exchange": 2,
+          "visitor_question_fr": "Si un médecin prévoit la mort d'un patient, cela signifie-t-il qu'il l'a voulue ?",
+          "chanoine_reply_fr": "Pas nécessairement. Prévoir et vouloir sont deux choses différentes. Mais il ne suffit pas d'appeler une mort « non voulue ». Il faut examiner l'acte réellement choisi, sa fin, le rapport de causalité et la proportionnalité du traitement. Les cas médicaux concrets exigent des faits cliniques précis, non une formule toute faite."
+        }
+      ],
+      "editorial_translation_provenance": "NEW_EDITORIAL_FRENCH_NOT_ORIGINAL_AUTHOR_WORDS",
+      "english_source_changed": false,
+      "needs_native_french_review": true,
+      "doctrinal_review_approved": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "UNREVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "existing_conversation_id": "CHA-QA-MOR-013",
+      "original_english_source_sha256": "69e882f2dfcad2502c890bb988789d7a01921295a33bf8ff15f7b4ec7ca8e9d5",
+      "canonical_owner_ids": [
+        "APOL-052"
+      ],
+      "english_title": "Is refusing extraordinary treatment a form of suicide?",
+      "fr_title": "Refuser un traitement extraordinaire est-il une forme de suicide ?",
+      "original_exchange_count": 2,
+      "editorial_french_exchanges": [
+        {
+          "exchange": 1,
+          "visitor_question_fr": "Refuser un traitement extraordinaire est-il une forme de suicide ?",
+          "chanoine_reply_fr": "Pas nécessairement. La morale catholique distingue la volonté directe de mourir du fait d'accepter qu'un traitement disproportionné ou excessivement pénible puisse ne pas être poursuivi. Il existe un devoir de soins ordinaires et de traitements proportionnés, mais non d'entreprendre toute intervention imaginable sans égard à ses charges ni au bénéfice escompté."
+        },
+        {
+          "exchange": 2,
+          "visitor_question_fr": "L'arrêt d'un traitement pourrait-il parfois devenir une euthanasie ?",
+          "chanoine_reply_fr": "Oui, si l'objet délibéré est de provoquer la mort plutôt que de mettre fin à une intervention jugée disproportionnée. Les faits cliniques comptent, tout comme les devoirs permanents de soin, le soulagement de la douleur et le respect de la dignité du patient. De telles décisions demandent un avis médical et moral compétent, jamais un simple slogan."
+        }
+      ],
+      "editorial_translation_provenance": "NEW_EDITORIAL_FRENCH_NOT_ORIGINAL_AUTHOR_WORDS",
+      "english_source_changed": false,
+      "needs_native_french_review": true,
+      "doctrinal_review_approved": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "UNREVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "existing_conversation_id": "CHA-MAIN-AQ02",
+      "original_english_source_sha256": "69e882f2dfcad2502c890bb988789d7a01921295a33bf8ff15f7b4ec7ca8e9d5",
+      "canonical_owner_ids": [
+        "APOL-026"
+      ],
+      "english_title": "Why confess sins to a priest? Why not just tell God?",
+      "fr_title": "Pourquoi confesser ses péchés à un prêtre plutôt qu'à Dieu seul ?",
+      "original_exchange_count": 2,
+      "editorial_french_exchanges": [
+        {
+          "exchange": 1,
+          "visitor_question_fr": "Pourquoi confesser ses péchés à un prêtre plutôt qu'à Dieu seul ?",
+          "chanoine_reply_fr": "Notre-Seigneur a confié aux Apôtres le ministère de remettre et de retenir les péchés. Dans la confession, le pénitent reconnaît ses fautes devant un prêtre qui est ministre du pardon du Christ ; ce sacrement demande aussi la contrition et le ferme propos de s'amender."
+        },
+        {
+          "exchange": 2,
+          "visitor_question_fr": "Pourquoi ne pas se confesser à Dieu en privé ?",
+          "chanoine_reply_fr": "Il faut se repentir sans tarder devant Dieu. La confession sacramentelle ne concurrence pas sa miséricorde ; elle est un moyen que le Christ a confié à l'Église et qui offre le pardon et la direction au moyen d'un acte ecclésial objectif."
+        }
+      ],
+      "editorial_translation_provenance": "NEW_EDITORIAL_FRENCH_NOT_ORIGINAL_AUTHOR_WORDS",
+      "english_source_changed": false,
+      "needs_native_french_review": true,
+      "doctrinal_review_approved": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "UNREVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "existing_conversation_id": "CHA-QA-MOR-005",
+      "original_english_source_sha256": "69e882f2dfcad2502c890bb988789d7a01921295a33bf8ff15f7b4ec7ca8e9d5",
+      "canonical_owner_ids": [
+        "APOL-052"
+      ],
+      "english_title": "Does “choose the lesser evil” mean that I may deliberately do a smaller evil?",
+      "fr_title": "« Choisir le moindre mal » signifie-t-il qu'on puisse commettre délibérément un mal moins grave ?",
+      "original_exchange_count": 2,
+      "editorial_french_exchanges": [
+        {
+          "exchange": 1,
+          "visitor_question_fr": "« Choisir le moindre mal » signifie-t-il qu'on puisse commettre délibérément un mal moins grave ?",
+          "chanoine_reply_fr": "On peut tolérer un moindre dommage lorsqu'aucune issue totalement inoffensive n'est possible, mais cela diffère du choix délibéré d'un acte intrinsèquement mauvais comme moyen. Cette distinction est essentielle."
+        },
+        {
+          "exchange": 2,
+          "visitor_question_fr": "Supposons que chaque possibilité entraîne une mauvaise conséquence.",
+          "chanoine_reply_fr": "Il faut alors examiner ce que vous choisissez réellement, ce que vous voulez et quels dommages ne sont que des effets secondaires. Un cas grave demande une analyse morale attentive, non un slogan."
+        }
+      ],
+      "editorial_translation_provenance": "NEW_EDITORIAL_FRENCH_NOT_ORIGINAL_AUTHOR_WORDS",
+      "english_source_changed": false,
+      "needs_native_french_review": true,
+      "doctrinal_review_approved": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "UNREVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "existing_conversation_id": "CHA-QA-ATH-017",
+      "original_english_source_sha256": "69e882f2dfcad2502c890bb988789d7a01921295a33bf8ff15f7b4ec7ca8e9d5",
+      "canonical_owner_ids": [
+        "APOL-050"
+      ],
+      "english_title": "Does objective morality require God?",
+      "fr_title": "La morale objective a-t-elle besoin de Dieu ?",
+      "original_exchange_count": 2,
+      "editorial_french_exchanges": [
+        {
+          "exchange": 1,
+          "visitor_question_fr": "La morale objective a-t-elle besoin de Dieu ?",
+          "chanoine_reply_fr": "La raison et la conscience peuvent reconnaître des devoirs moraux même sans croyance religieuse explicite. Mais le philosophe peut toujours demander ce qui fonde en dernier ressort l'obligation objective et la dignité de la personne."
+        },
+        {
+          "exchange": 2,
+          "visitor_question_fr": "Cela signifie-t-il que les athées ne peuvent pas être vertueux ?",
+          "chanoine_reply_fr": "Pas du tout. Les personnes sans foi peuvent accomplir un bien authentique. L'argument porte sur le fondement ultime de la morale, non sur un jugement de leur conduite individuelle."
+        }
+      ],
+      "editorial_translation_provenance": "NEW_EDITORIAL_FRENCH_NOT_ORIGINAL_AUTHOR_WORDS",
+      "english_source_changed": false,
+      "needs_native_french_review": true,
+      "doctrinal_review_approved": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "UNREVIEWED_RESEARCH_ONLY"
+    },
+    {
+      "existing_conversation_id": "CHA-QA-ATH-013",
+      "original_english_source_sha256": "69e882f2dfcad2502c890bb988789d7a01921295a33bf8ff15f7b4ec7ca8e9d5",
+      "canonical_owner_ids": [
+        "APOL-049"
+      ],
+      "english_title": "Has science disproved God?",
+      "fr_title": "La science a-t-elle réfuté l'existence de Dieu ?",
+      "original_exchange_count": 2,
+      "editorial_french_exchanges": [
+        {
+          "exchange": 1,
+          "visitor_question_fr": "La science a-t-elle réfuté l'existence de Dieu ?",
+          "chanoine_reply_fr": "La science a considérablement élargi notre connaissance de la nature ; toutefois, ses méthodes ne tranchent pas, à elles seules, toutes les questions métaphysiques. Expliquer un processus physique n'explique pas nécessairement pourquoi il existe un monde de réalités dépendantes."
+        },
+        {
+          "exchange": 2,
+          "visitor_question_fr": "Placez-vous Dieu là où la science ne sait pas encore répondre ?",
+          "chanoine_reply_fr": "Non. Ce serait faire dépendre la foi d'une ignorance provisoire. Les arguments classiques s'interrogent sur l'existence, la contingence et l'intelligibilité, non sur un résultat de laboratoire encore inexpliqué."
+        }
+      ],
+      "editorial_translation_provenance": "NEW_EDITORIAL_FRENCH_NOT_ORIGINAL_AUTHOR_WORDS",
+      "english_source_changed": false,
+      "needs_native_french_review": true,
+      "doctrinal_review_approved": false,
+      "persona_voice_approved": false,
+      "publication_approved": false,
+      "status": "UNREVIEWED_RESEARCH_ONLY"
+    }
+  ]
+}

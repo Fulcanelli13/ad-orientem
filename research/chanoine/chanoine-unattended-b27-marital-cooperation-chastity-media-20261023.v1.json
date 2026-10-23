@@ -1,0 +1,280 @@
+{
+  "schema": "AO_CHANOINE_UNATTENDED_B27_SOURCE_BOUNDARIES_V1",
+  "asOf": "2026-10-23",
+  "status": "RESEARCH_ONLY_PENDING_HUMAN_CERTIFICATION",
+  "ownerBranch": "research/chanoine-cse-source-dialogue-20261019",
+  "baseBranchHeadAtRead": "1572aa4c9e5613cd8dba8232facc82d60edd7c4b",
+  "counts": {
+    "distinctFamilies": 6,
+    "proposedAnswerUnits": 12,
+    "humanCertified": 0,
+    "published": 0
+  },
+  "sourceRegistry": {
+    "CC59": {
+      "url": "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19301231_casti-connubii.html",
+      "locus": "Casti connubii §59",
+      "kind": "primary papal encyclical"
+    },
+    "VADEMECUM-3.13": {
+      "url": "https://press.vatican.va/roman_curia/pontifical_councils/family/documents/rc_pc_family_doc_12021997_vademecum_en.html",
+      "locus": "Vademecum for Confessors, Part 3 §13 (12 February 1997)",
+      "kind": "primary Vatican pastoral directive; later than Lefebvre"
+    },
+    "PH-IX": {
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19751229_persona-humana_en.html",
+      "locus": "Persona humana §IX (29 December 1975)",
+      "kind": "primary CDF declaration"
+    },
+    "PH-XII": {
+      "url": "https://www.vatican.va/roman_curia/congregations/cfaith/documents/rc_con_cfaith_doc_19751229_persona-humana_en.html",
+      "locus": "Persona humana §XII",
+      "kind": "primary CDF declaration"
+    },
+    "CCC-2352": {
+      "url": "https://www.vatican.va/content/catechism/en/part_three/section_two/chapter_two/article_6/ii_the_vocation_to_chastity.index.html",
+      "locus": "Catechism of the Catholic Church §2352",
+      "kind": "primary catechism; post-1991 editorial evidence"
+    },
+    "CCC-2354": {
+      "url": "https://www.vatican.va/content/catechism/en/part_three/section_two/chapter_two/article_6/ii_the_vocation_to_chastity.index.html",
+      "locus": "Catechism of the Catholic Church §2354",
+      "kind": "primary catechism; post-1991 editorial evidence"
+    }
+  },
+  "records": [
+    {
+      "familyId": "CHA-CSE-CSE070",
+      "sourceQuestionId": "CSE070",
+      "topicOwner": "SEX-CORE-19",
+      "proposedOpening": {
+        "en": "If a spouse imposes contraception, moral responsibility cannot simply be assigned equally to both spouses. Pius XI distinguishes a person who reluctantly tolerates a partner's wrongful choice for grave cause from one who chooses it. The later Vatican guidance also distinguishes coercion from cooperation and sets further conditions for the latter.",
+        "fr": "Si un conjoint impose la contraception, on ne peut attribuer d'emblée la même responsabilité morale aux deux époux. Pie XI distingue celui qui tolère à regret, pour une cause grave, le choix mauvais de son conjoint de celui qui le veut. Une directive romaine ultérieure distingue également la contrainte de la coopération et précise les conditions de cette dernière."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "Does reluctance alone make cooperation permissible?",
+          "fr": "Le seul fait d'agir à contrecœur suffit-il à rendre la coopération licite ?"
+        },
+        "response": {
+          "en": "No. The 1997 Vademecum §3.13 requires jointly that the cooperating spouse's own act not be intrinsically wrong, that proportionately grave reasons exist, and that the spouse seek to help the other desist. It separately distinguishes violence or unjust imposition that cannot be resisted. A concrete case needs private pastoral assessment.",
+          "fr": "Non. Le Vademecum de 1997, III, §13, exige conjointement que l'acte du conjoint coopérant ne soit pas déjà illicite en lui-même, qu'existent des raisons proportionnellement graves et qu'il cherche à aider l'autre à renoncer. Il distingue séparément la violence ou l'imposition injuste à laquelle on ne peut résister. Un cas concret demande un discernement pastoral privé."
+        }
+      },
+      "sourceRefs": [
+        "CC59",
+        "VADEMECUM-3.13"
+      ],
+      "claimClass": "SOURCE_BOUNDED_EDITORIAL_PARAPHRASE_NOT_VERBATIM_HISTORICAL_SPEECH",
+      "sourcePrecisionDelta": "Critical addition: prior draft quoted Casti §59 but omitted the later Vademecum's three cumulative conditions and separate coercion category. Never retrospectively put 1997 guidance into Lefebvre-era Chanoine speech. No case-specific verdict.",
+      "reviewGate": "SPECIALIST_MARITAL_COOPERATION_AND_SAFEGUARD_REVIEW",
+      "sourceOwner": "research/chanoine/chanoine-cse-147-conversation-editorial-review.v1.json",
+      "release": {
+        "primaryTextLocusReviewed": true,
+        "originalChanoineEnglishSourceVerified": false,
+        "claimCertified": false,
+        "personaVoiceApproved": false,
+        "translationApproved": false,
+        "safeguardingApproved": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "familyId": "CHA-CSE-CSE071",
+      "sourceQuestionId": "CSE071",
+      "topicOwner": "SEX-CORE-20",
+      "proposedOpening": {
+        "en": "Catholic teaching judges more than whether an obvious person has been harmed. It holds that deliberate sexual pleasure sought outside the conjugal relationship contradicts the meaning of sexuality. This describes the act, not a verdict on the guilt of someone who struggles.",
+        "fr": "La morale catholique ne se réduit pas à la recherche d'un dommage visible causé à autrui. Elle enseigne que le plaisir sexuel délibérément recherché hors de l'union conjugale contredit le sens de la sexualité. Ce jugement porte sur l'acte et ne préjuge pas la culpabilité d'une personne en difficulté."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "If the act is gravely disordered, is every person automatically guilty of mortal sin?",
+          "fr": "Si l'acte est gravement désordonné, toute personne commet-elle automatiquement un péché mortel ?"
+        },
+        "response": {
+          "en": "No. Persona humana §IX and the Catechism §2352 distinguish the objective judgment from personal responsibility, which can be reduced by immaturity, anxiety or acquired habit. Neither source grants an automatic acquittal.",
+          "fr": "Non. Persona humana, §IX, et le Catéchisme, §2352, distinguent le jugement objectif de la responsabilité personnelle, que l'immaturité, l'angoisse ou l'habitude peuvent diminuer. Aucun des deux textes ne prononce une innocence automatique."
+        }
+      },
+      "sourceRefs": [
+        "PH-IX",
+        "CCC-2352"
+      ],
+      "claimClass": "SOURCE_BOUNDED_EDITORIAL_PARAPHRASE_NOT_VERBATIM_HISTORICAL_SPEECH",
+      "sourcePrecisionDelta": "Avoid equating 'no identifiable victim' with moral neutrality; also avoid treating objective gravity as proof of subjective mortal guilt.",
+      "reviewGate": "THEOLOGICAL_AND_BILINGUAL_HUMAN_REVIEW",
+      "sourceOwner": "research/chanoine/chanoine-cse-147-conversation-editorial-review.v1.json",
+      "release": {
+        "primaryTextLocusReviewed": true,
+        "originalChanoineEnglishSourceVerified": false,
+        "claimCertified": false,
+        "personaVoiceApproved": false,
+        "translationApproved": false,
+        "safeguardingApproved": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "familyId": "CHA-CSE-CSE072",
+      "sourceQuestionId": "CSE072",
+      "topicOwner": "SEX-CORE-20",
+      "proposedOpening": {
+        "en": "A persistent habit can weaken deliberation and freedom in a particular action, but its existence does not decide culpability by itself. Pastoral judgment must consider awareness, choice, circumstances and efforts to resist without presuming either full guilt or its absence.",
+        "fr": "Une habitude persistante peut diminuer la délibération et la liberté dans un acte particulier, mais elle ne tranche pas à elle seule la culpabilité. Le discernement pastoral considère la conscience, le choix, les circonstances et les efforts de résistance sans présumer ni la pleine faute ni son absence."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "Does a longstanding habit make every later act involuntary?",
+          "fr": "Une habitude ancienne rend-elle involontaire chacun des actes suivants ?"
+        },
+        "response": {
+          "en": "Not necessarily. Persona humana §IX specifically notes the mitigating effect habit can have, but warns against assuming the absence of serious responsibility in every case. Support should aim at genuine freedom and perseverance.",
+          "fr": "Pas nécessairement. Persona humana, §IX, reconnaît l'effet atténuant que peut avoir l'habitude, mais avertit qu'on ne doit pas présumer l'absence de responsabilité grave dans tous les cas. L'accompagnement doit viser la liberté réelle et la persévérance."
+        }
+      },
+      "sourceRefs": [
+        "PH-IX",
+        "CCC-2352"
+      ],
+      "claimClass": "SOURCE_BOUNDED_EDITORIAL_PARAPHRASE_NOT_VERBATIM_HISTORICAL_SPEECH",
+      "sourcePrecisionDelta": "Existing wording leaned toward mitigation without explicitly preserving the 1975 document's warning against universal presumption of no serious responsibility.",
+      "reviewGate": "THEOLOGICAL_AND_BILINGUAL_HUMAN_REVIEW",
+      "sourceOwner": "research/chanoine/chanoine-cse-147-conversation-editorial-review.v1.json",
+      "release": {
+        "primaryTextLocusReviewed": true,
+        "originalChanoineEnglishSourceVerified": false,
+        "claimCertified": false,
+        "personaVoiceApproved": false,
+        "translationApproved": false,
+        "safeguardingApproved": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "familyId": "CHA-CSE-CSE073",
+      "sourceQuestionId": "CSE073",
+      "topicOwner": "SEX-CORE-20",
+      "proposedOpening": {
+        "en": "The frequency of a behaviour during adolescence does not determine whether it is morally good. Yet immaturity can affect a young person's freedom and responsibility. Instruction should be truthful, age-appropriate and free of humiliating judgments about an individual.",
+        "fr": "La fréquence d'un comportement à l'adolescence ne détermine pas sa bonté morale. L'immaturité peut néanmoins affecter la liberté et la responsabilité du jeune. L'enseignement doit être vrai, adapté à l'âge et exempt de jugements humiliants sur une personne."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "Should prevalence statistics decide moral doctrine?",
+          "fr": "Les statistiques de fréquence doivent-elles décider de la doctrine morale ?"
+        },
+        "response": {
+          "en": "No. Persona humana §IX explicitly distinguishes sociological frequency from the moral value of acts, while also requiring serious attention to adolescent maturity in pastoral assessment.",
+          "fr": "Non. Persona humana, §IX, distingue expressément la fréquence sociologique de la valeur morale des actes, tout en demandant de considérer sérieusement la maturité des adolescents dans le discernement pastoral."
+        }
+      },
+      "sourceRefs": [
+        "PH-IX",
+        "CCC-2352"
+      ],
+      "claimClass": "SOURCE_BOUNDED_EDITORIAL_PARAPHRASE_NOT_VERBATIM_HISTORICAL_SPEECH",
+      "sourcePrecisionDelta": "Two separate claims must remain separate: frequency is not moral justification, and adolescence may affect personal imputability. Keep all adolescent-facing prose non-shaming.",
+      "reviewGate": "YOUTH_PASTORAL_AND_THEOLOGICAL_HUMAN_REVIEW",
+      "sourceOwner": "research/chanoine/chanoine-cse-147-conversation-editorial-review.v1.json",
+      "release": {
+        "primaryTextLocusReviewed": true,
+        "originalChanoineEnglishSourceVerified": false,
+        "claimCertified": false,
+        "personaVoiceApproved": false,
+        "translationApproved": false,
+        "safeguardingApproved": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "familyId": "CHA-CSE-CSE074",
+      "sourceQuestionId": "CSE074",
+      "topicOwner": "SEX-CORE-21",
+      "proposedOpening": {
+        "en": "Consent matters because coercion is a serious wrong, but consent alone does not settle the morality of deliberately displaying sexual acts to an audience. The Catechism §2354 describes an injury to chastity and to the dignity of those involved, including spectators.",
+        "fr": "Le consentement importe, car la contrainte constitue un mal grave, mais il ne suffit pas à justifier l'exposition délibérée d'actes sexuels à des spectateurs. Le Catéchisme, §2354, y voit une atteinte à la chasteté et à la dignité des personnes impliquées, y compris les spectateurs."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "What if the participants report no feeling of degradation?",
+          "fr": "Et si les participants ne se sentent pas dégradés ?"
+        },
+        "response": {
+          "en": "Their testimony matters when assessing coercion or exploitation, but the Catechism's objection is not limited to subjective feelings. Its definition concerns deliberate display of real or simulated sexual acts to third parties.",
+          "fr": "Leur témoignage importe pour apprécier une éventuelle contrainte ou exploitation, mais l'objection du Catéchisme ne se limite pas au ressenti subjectif. Sa définition vise l'exhibition délibérée d'actes sexuels réels ou simulés à des tiers."
+        }
+      },
+      "sourceRefs": [
+        "CCC-2354"
+      ],
+      "claimClass": "SOURCE_BOUNDED_EDITORIAL_PARAPHRASE_NOT_VERBATIM_HISTORICAL_SPEECH",
+      "sourcePrecisionDelta": "CCC §2354 is a post-1991 editorial witness, not evidence of Lefebvre's or a historical Chanoine's own wording. Preserve separate questions about coercion, content and use.",
+      "reviewGate": "THEOLOGICAL_AND_BILINGUAL_HUMAN_REVIEW",
+      "sourceOwner": "research/chanoine/chanoine-cse-147-conversation-editorial-review.v1.json",
+      "release": {
+        "primaryTextLocusReviewed": true,
+        "originalChanoineEnglishSourceVerified": false,
+        "claimCertified": false,
+        "personaVoiceApproved": false,
+        "translationApproved": false,
+        "safeguardingApproved": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    },
+    {
+      "familyId": "CHA-CSE-CSE075",
+      "sourceQuestionId": "CSE075",
+      "topicOwner": "SEX-CORE-21",
+      "proposedOpening": {
+        "en": "The absence of a known, immediately harmed person does not prove that a chosen action is morally sound. The Catechism judges the deliberate consumption of sexual display under chastity and human dignity; possible exploitation in production is an additional, distinct concern.",
+        "fr": "L'absence de victime immédiatement identifiable ne prouve pas la bonté morale d'un choix. Le Catéchisme juge la consommation volontaire de l'exhibition sexuelle selon la chasteté et la dignité humaine ; une éventuelle exploitation lors de la production constitue un problème distinct et supplémentaire."
+      },
+      "proposedFollowup": {
+        "question": {
+          "en": "Would proof of non-exploitative production settle the moral question?",
+          "fr": "Prouver l'absence d'exploitation dans la production réglerait-il la question morale ?"
+        },
+        "response": {
+          "en": "No. It would remove one possible wrong, not the Catechism's separate judgment about deliberately exhibiting intimate acts to others for sexual gratification.",
+          "fr": "Non. Cela écarterait un mal possible, mais non le jugement distinct du Catéchisme sur l'exhibition délibérée d'actes intimes à des tiers pour l'excitation sexuelle."
+        }
+      },
+      "sourceRefs": [
+        "CCC-2354"
+      ],
+      "claimClass": "SOURCE_BOUNDED_EDITORIAL_PARAPHRASE_NOT_VERBATIM_HISTORICAL_SPEECH",
+      "sourcePrecisionDelta": "Do not assert unverified empirical harm to a named person. Separate moral object, individual guilt, and independently documented production abuse.",
+      "reviewGate": "THEOLOGICAL_AND_BILINGUAL_HUMAN_REVIEW",
+      "sourceOwner": "research/chanoine/chanoine-cse-147-conversation-editorial-review.v1.json",
+      "release": {
+        "primaryTextLocusReviewed": true,
+        "originalChanoineEnglishSourceVerified": false,
+        "claimCertified": false,
+        "personaVoiceApproved": false,
+        "translationApproved": false,
+        "safeguardingApproved": false,
+        "publicationApproved": false,
+        "routingEnabled": false
+      }
+    }
+  ],
+  "provenanceRules": [
+    "EN/FR passages are newly drafted source-bounded editorial paraphrases, never quotations from a historical Chanoine, Lefebvre, Pius XI or Vatican officials.",
+    "Vademecum 1997 and Catechism 1992+ are post-Lefebvre documents and cannot be attributed to his lifetime persona.",
+    "Existing canonical original source QA, approved statuses and English-source inaccessible hold remain unchanged.",
+    "No individual culpability, coercion, trauma or medical case is adjudicated in the dialogue."
+  ],
+  "nextQueue": [
+    "CSE076–077: distinguish third-party pornography, spousal-private material, and AI-generated content; explicit magisterial ruling vs reasoned application; specialist hold.",
+    "CSE078–080: digital occasions of sin and practical habit guidance; avoid claiming modern platforms in historical voice.",
+    "CSE081 onward: de-duplicate against canonical owner and prior research before source work.",
+    "Original English Chanoine source remains blocked; do not reconstruct."
+  ],
+  "approvalsChanged": false
+}

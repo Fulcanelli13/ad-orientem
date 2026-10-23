@@ -1,0 +1,817 @@
+{
+  "schema": "AO_CHANOINE_UNATTENDED_B23_MARITAL_GOODS_AND_DUTIES_V1",
+  "date": "2026-10-21",
+  "ownerBranch": "research/chanoine-cse-source-dialogue-20261019",
+  "ownerComposite": "research/chanoine/chanoine-cse-147-conversation-editorial-review.v1.json",
+  "ownerCompositeBlob": "bfaa8dcc371ffd8af619a2bb31e8972948c6f68c",
+  "status": "SOURCE_COLLATED_RESEARCH_ONLY",
+  "counts": {
+    "families": 6,
+    "answerUnits": 12,
+    "certified": 0,
+    "published": 0
+  },
+  "priorReview": {
+    "specialistBriefMatches": [],
+    "meaning": "No matching IDs in existing 39-record brief cache; not evidence of approval",
+    "relatedPackets": [
+      "B07 marriage scope and HV13",
+      "B21 sterility and matrimonial consent"
+    ]
+  },
+  "records": [
+    {
+      "familyId": "CHA-CSE-CSE046",
+      "sourceQuestionId": "CSE046",
+      "originalRecord": {
+        "source_question_id": "CSE046",
+        "conversation_id": "CHA-CSE-CSE046",
+        "canonical_topic_owner": "SEX-CORE-12",
+        "title": "What are the ends and goods of marriage?",
+        "source_access": "PUBLIC_READER",
+        "source_main_visitor_question": {
+          "en": "What are the ends and goods of marriage?",
+          "fr": "Quelles sont les fins et les biens du mariage ?"
+        },
+        "source_main_answer_verbatim": {
+          "en": "Traditional Catholic teaching names offspring and their education, fidelity, the indissoluble bond, mutual help and the spouses’ growth in charity and holiness. Older terminology calls procreation and education the primary end without reducing marriage to reproduction alone.",
+          "fr": "L’enseignement catholique traditionnel nomme les enfants et leur éducation, la fidélité, le lien indissoluble, l’aide mutuelle et la croissance des époux dans la charité et la sainteté. La terminologie ancienne appelle la procréation et l’éducation la fin première sans réduire le mariage à la seule reproduction."
+        },
+        "pastoral_main_answer_draft": {
+          "en": "Our tradition speaks of children and their education, fidelity, an enduring bond, mutual assistance and growth in holiness. Older theology calls procreation and education the primary end. That does not make the spouses mere instruments of reproduction; their faithful union bears many real goods.",
+          "fr": "Notre tradition parle des enfants et de leur éducation, de la fidélité, du lien durable, de l’aide mutuelle et du progrès dans la sainteté. L’ancienne théologie nomme la procréation et l’éducation fin première. Cela ne fait pas des époux de simples instruments de reproduction : leur union fidèle porte plusieurs biens réels."
+        },
+        "second_turn_origin": "NEW_EDITORIAL_OBJECTION",
+        "visitor_followup_question": {
+          "en": "Does calling children the primary end make companionship secondary or unimportant?",
+          "fr": "Dire que les enfants sont la fin première rend-il la compagnie secondaire ou négligeable ?"
+        },
+        "original_source_followup_reply": null,
+        "pastoral_followup_reply_draft": {
+          "en": "No. A hierarchy of ends is not a denial of other genuine goods. Mutual help, affection and sanctification remain important even when spouses cannot have children.",
+          "fr": "Non. Une hiérarchie des fins ne nie pas les autres biens véritables. L’entraide, l’affection et la sanctification restent importantes même si les époux ne peuvent avoir d’enfants."
+        },
+        "source_pointers": {
+          "source_QA_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+          "source_debate_file": null,
+          "source_locator_refs": [
+            {
+              "registry_key": "CASTI",
+              "locator": "§§11–30"
+            }
+          ],
+          "source_catalog_path": "data/app/content-items-sexual-ethics.v1.json"
+        },
+        "specialist_review_flag": "GENERAL_DOCTRINAL_REVIEW",
+        "review_attention": [],
+        "claimed_historical_author": "NONE_EDITORIAL_FICTIONAL_CHANOINE",
+        "publication_approved": false,
+        "persona_voice_approved": false,
+        "claim_level_certified": false,
+        "safeguarding_approved": false,
+        "english_french_reviewed": false,
+        "source_semantic_alignment_approved": false,
+        "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE"
+      },
+      "proposedTurns": [
+        {
+          "en": "Casti connubii names offspring, fidelity and the sacrament as marital goods. It calls procreation and education the primary end, while also teaching mutual help and growth in holiness.",
+          "fr": "Casti connubii nomme les enfants, la fidélité et le sacrement comme biens du mariage. Il appelle la procréation et l’éducation fin première, tout en enseignant l’entraide et le progrès dans la sainteté.",
+          "claims": [
+            {
+              "text": "Three goods and primary end in the 1930 source",
+              "refs": [
+                "CC10-17"
+              ],
+              "type": "FAITHFUL_PARAPHRASE"
+            },
+            {
+              "text": "Mutual sanctification is a genuine marital good",
+              "refs": [
+                "CC23"
+              ],
+              "type": "FAITHFUL_PARAPHRASE"
+            }
+          ]
+        },
+        {
+          "en": "Secondary does not mean worthless. The same encyclical permits spouses to seek mutual help and love, while preserving the act’s nature and its ordering to the primary end.",
+          "fr": "Secondaire ne signifie pas sans valeur. La même encyclique permet aux époux de rechercher l’entraide et l’amour, en préservant la nature de l’acte et son ordination à la fin première.",
+          "claims": [
+            {
+              "text": "Secondary ends and retained ordering",
+              "refs": [
+                "CC59"
+              ],
+              "type": "FAITHFUL_PARAPHRASE"
+            }
+          ]
+        }
+      ],
+      "sourcePrecisionDeltas": [
+        "Replace 'older theology' as a vague historical label with an identified magisterial text and its actual terminology",
+        "Do not flatten marital goods, ends of the institution and ends of a particular act into one interchangeable list",
+        "The three-goods formula is Augustine quoted by Pius XI; do not misattribute its origin to Pius XI."
+      ],
+      "classification": "CHANOINE_EXPLANATION_AND_APPLICATION_NOT_PIUS_X_SPEECH",
+      "sourceMatched": true,
+      "claimLevelCertified": false,
+      "personaApproved": false,
+      "englishFrenchReviewed": false,
+      "publicationApproved": false,
+      "routingEnabled": false
+    },
+    {
+      "familyId": "CHA-CSE-CSE047",
+      "sourceQuestionId": "CSE047",
+      "originalRecord": {
+        "source_question_id": "CSE047",
+        "conversation_id": "CHA-CSE-CSE047",
+        "canonical_topic_owner": "SEX-CORE-13",
+        "title": "May infertile or post-menopausal spouses have marital relations?",
+        "source_access": "PUBLIC_READER",
+        "source_main_visitor_question": {
+          "en": "May infertile or post-menopausal spouses have marital relations?",
+          "fr": "Des époux stériles ou après la ménopause peuvent-ils avoir des relations conjugales ?"
+        },
+        "source_main_answer_verbatim": {
+          "en": "Yes. Catholic teaching has never required that each marital act actually result in conception. Natural infertility does not make the marital act illicit.",
+          "fr": "Oui. L’enseignement catholique n’a jamais exigé que chaque acte conjugal aboutisse effectivement à une conception. L’infertilité naturelle ne rend pas l’acte conjugal illicite."
+        },
+        "pastoral_main_answer_draft": {
+          "en": "Certainly. Marriage is not reserved for those who can conceive. The moral character of conjugal intercourse does not depend upon an actual pregnancy following each act. Natural infertility, whether due to age or illness, does not by itself make marital relations unlawful.",
+          "fr": "Assurément. Le mariage n’est pas réservé à ceux qui peuvent concevoir. La valeur morale de l’union conjugale ne dépend pas d’une grossesse après chaque acte. L’infertilité naturelle, liée à l’âge ou à la maladie, ne rend pas en soi les relations conjugales illicites."
+        },
+        "second_turn_origin": "NEW_EDITORIAL_OBJECTION",
+        "visitor_followup_question": {
+          "en": "If conception is impossible, what remains of the procreative meaning?",
+          "fr": "Si la conception est impossible, que reste-t-il du sens procréateur ?"
+        },
+        "original_source_followup_reply": null,
+        "pastoral_followup_reply_draft": {
+          "en": "The Church distinguishes an act's natural kind from whether it succeeds in conceiving in particular circumstances. The spouses' infertility does not turn their conjugal union into a different moral act.",
+          "fr": "L’Église distingue la nature de l’acte de son résultat dans des circonstances particulières. L’infertilité des époux ne transforme pas leur union conjugale en un autre acte moral."
+        },
+        "source_pointers": {
+          "source_QA_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+          "source_debate_file": null,
+          "source_locator_refs": [
+            {
+              "registry_key": "CASTI",
+              "locator": "§59"
+            },
+            {
+              "registry_key": "HV",
+              "locator": "§11"
+            }
+          ],
+          "source_catalog_path": "data/app/content-items-sexual-ethics.v1.json"
+        },
+        "specialist_review_flag": "GENERAL_DOCTRINAL_REVIEW",
+        "review_attention": [],
+        "claimed_historical_author": "NONE_EDITORIAL_FICTIONAL_CHANOINE",
+        "publication_approved": false,
+        "persona_voice_approved": false,
+        "claim_level_certified": false,
+        "safeguarding_approved": false,
+        "english_french_reviewed": false,
+        "source_semantic_alignment_approved": false,
+        "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE"
+      },
+      "proposedTurns": [
+        {
+          "en": "Yes. Natural infertility does not by itself make otherwise rightful marital intercourse wrong.",
+          "fr": "Oui. L’infertilité naturelle ne rend pas à elle seule illicite une union conjugale par ailleurs conforme à l’ordre moral.",
+          "claims": [
+            {
+              "text": "Infertility does not remove legitimacy by itself",
+              "refs": [
+                "HV11",
+                "CC59"
+              ],
+              "type": "FAITHFUL_PARAPHRASE"
+            }
+          ]
+        },
+        {
+          "en": "The distinction is between an act’s ordering and its result. The teaching preserves the unitive and procreative meanings even when conception is not expected.",
+          "fr": "La distinction porte sur l’ordination de l’acte et son résultat. L’enseignement maintient les sens unitif et procréateur même lorsqu’aucune conception n’est attendue.",
+          "claims": [
+            {
+              "text": "Unitive and procreative meanings remain together",
+              "refs": [
+                "HV11-12"
+              ],
+              "type": "EXPLANATORY_PARAPHRASE"
+            }
+          ]
+        }
+      ],
+      "sourcePrecisionDeltas": [
+        "Preserve the source's condition: otherwise rightful conjugal intercourse, not blanket approval of every act by infertile spouses",
+        "Do not equate infertility with impotence or infer permission for contraception"
+      ],
+      "classification": "CHANOINE_EXPLANATION_AND_APPLICATION_NOT_PIUS_X_SPEECH",
+      "sourceMatched": true,
+      "claimLevelCertified": false,
+      "personaApproved": false,
+      "englishFrenchReviewed": false,
+      "publicationApproved": false,
+      "routingEnabled": false
+    },
+    {
+      "familyId": "CHA-CSE-CSE048",
+      "sourceQuestionId": "CSE048",
+      "originalRecord": {
+        "source_question_id": "CSE048",
+        "conversation_id": "CHA-CSE-CSE048",
+        "canonical_topic_owner": "SEX-CORE-13",
+        "title": "How can marriage change the morality of the same physical sexual act?",
+        "source_access": "PUBLIC_READER",
+        "source_main_visitor_question": {
+          "en": "How can marriage change the morality of the same physical sexual act?",
+          "fr": "Comment le mariage peut-il changer la moralité du même acte sexuel physique ?"
+        },
+        "source_main_answer_verbatim": {
+          "en": "Because a moral act is more than a physical movement. Marriage establishes an objective covenant with exclusive rights, duties, permanence and openness to parenthood; intercourse within that bond therefore has a moral relationship absent outside it.",
+          "fr": "Parce qu’un acte moral est plus qu’un mouvement physique. Le mariage établit une alliance objective avec des droits, des devoirs, une permanence et une ouverture à la parentalité ; l’union sexuelle dans ce lien possède donc une relation morale absente hors de lui."
+        },
+        "pastoral_main_answer_draft": {
+          "en": "The body is not acting apart from the person and his promises. Marriage establishes a permanent and exclusive covenant with responsibilities that sexual union expresses. Thus the same physical description need not describe the same moral choice outside and inside that bond.",
+          "fr": "Le corps n’agit pas séparément de la personne et de ses promesses. Le mariage établit une alliance permanente et exclusive dont l’union conjugale exprime les responsabilités. Une même description physique ne désigne donc pas nécessairement le même choix moral hors de ce lien et en son sein."
+        },
+        "second_turn_origin": "NEW_EDITORIAL_OBJECTION",
+        "visitor_followup_question": {
+          "en": "Isn't this just saying a ceremony magically changes biology?",
+          "fr": "N’est-ce pas dire qu’une cérémonie change magiquement la biologie ?"
+        },
+        "original_source_followup_reply": null,
+        "pastoral_followup_reply_draft": {
+          "en": "No. Biology is not the whole moral description. A promise can make giving, taking or intimacy morally different because it creates real obligations; marriage likewise establishes duties the physical description alone omits.",
+          "fr": "Non. La biologie n’épuise pas la description morale. Une promesse peut changer le sens moral d’un don ou d’une intimité en créant de vrais devoirs ; le mariage établit ainsi des obligations que la seule description physique omet."
+        },
+        "source_pointers": {
+          "source_QA_file": "src/learn/sexual-ethics-data/questions-001-050.js",
+          "source_debate_file": null,
+          "source_locator_refs": [
+            {
+              "registry_key": "ST18",
+              "locator": "aa.2–11"
+            },
+            {
+              "registry_key": "CASTI",
+              "locator": "§§5–10, 31–38"
+            }
+          ],
+          "source_catalog_path": "data/app/content-items-sexual-ethics.v1.json"
+        },
+        "specialist_review_flag": "GENERAL_DOCTRINAL_REVIEW",
+        "review_attention": [],
+        "claimed_historical_author": "NONE_EDITORIAL_FICTIONAL_CHANOINE",
+        "publication_approved": false,
+        "persona_voice_approved": false,
+        "claim_level_certified": false,
+        "safeguarding_approved": false,
+        "english_french_reviewed": false,
+        "source_semantic_alignment_approved": false,
+        "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE"
+      },
+      "proposedTurns": [
+        {
+          "en": "The moral act includes whom one is united to and the obligations involved. Marriage establishes a bond; the physical description alone leaves that out.",
+          "fr": "L’acte moral comprend la personne à laquelle on s’unit et les obligations en jeu. Le mariage établit un lien que la seule description physique laisse de côté.",
+          "claims": [
+            {
+              "text": "Marriage involves a real bond, not physical description alone",
+              "refs": [
+                "CIC1057"
+              ],
+              "type": "FAITHFUL_PARAPHRASE"
+            },
+            {
+              "text": "A morally specifying condition is not a mere incidental circumstance",
+              "refs": [
+                "ST18A10"
+              ],
+              "type": "APOLOGETICAL_APPLICATION"
+            }
+          ]
+        },
+        {
+          "en": "A ceremony does not change biology. Matrimonial consent establishes a marriage under its proper conditions; it is different from a promise to marry. Nor does marriage make every sexual act good.",
+          "fr": "Une cérémonie ne change pas la biologie. Le consentement matrimonial établit le mariage dans les conditions requises ; il diffère d’une promesse de mariage. Le mariage ne rend pas non plus bon tout acte sexuel.",
+          "claims": [
+            {
+              "text": "Legitimately manifested matrimonial consent, not a bare future promise",
+              "refs": [
+                "CIC1057",
+                "CIC1062"
+              ],
+              "type": "FAITHFUL_PARAPHRASE"
+            },
+            {
+              "text": "Marriage is not universal authorization",
+              "refs": [
+                "HV12-13"
+              ],
+              "type": "EXPLANATORY_APPLICATION"
+            }
+          ]
+        }
+      ],
+      "sourcePrecisionDeltas": [
+        "Original promise analogy risks reducing matrimony to an engagement; distinguish consent and promise precisely",
+        "Replace broad ST18 aa.2–11 with a.10 corpus/ad1–2 and explain the condition of the object"
+      ],
+      "classification": "CHANOINE_EXPLANATION_AND_APPLICATION_NOT_PIUS_X_SPEECH",
+      "sourceMatched": true,
+      "claimLevelCertified": false,
+      "personaApproved": false,
+      "englishFrenchReviewed": false,
+      "publicationApproved": false,
+      "routingEnabled": false
+    },
+    {
+      "familyId": "CHA-CSE-CSE051",
+      "sourceQuestionId": "CSE051",
+      "originalRecord": {
+        "source_question_id": "CSE051",
+        "conversation_id": "CHA-CSE-CSE051",
+        "canonical_topic_owner": "SEX-CORE-15",
+        "title": "Is everything spouses mutually consent to sexually permissible?",
+        "source_access": "PUBLIC_READER",
+        "source_main_visitor_question": {
+          "en": "Is everything spouses mutually consent to sexually permissible?",
+          "fr": "Tout ce à quoi des époux consentent mutuellement est-il sexuellement permis ?"
+        },
+        "source_main_answer_verbatim": {
+          "en": "No. Consent is necessary, but it does not override the exclusive fidelity or moral obligations of marriage. Casti Connubii §§19–22 says that marital rights may not be granted to a third person, and that spouses cannot authorize conduct contrary to divine law. A choice therefore needs more than agreement: it must respect the spouse, the marriage covenant and the moral nature of the act.",
+          "fr": "Non. Le consentement est nécessaire, mais il ne supprime ni la fidélité exclusive ni les obligations morales du mariage. Casti Connubii, §§19–22, précise que les droits conjugaux ne peuvent être accordés à un tiers et que les époux ne peuvent autoriser ce qui contredit la loi divine. L’accord ne suffit donc pas : le choix doit respecter le conjoint, l’alliance matrimoniale et la nature morale de l’acte."
+        },
+        "pastoral_main_answer_draft": {
+          "en": "Marriage gives neither spouse ownership over the other's conscience or body. Consent remains essential, but agreement cannot authorise adultery, coercion or an act contrary to the moral meaning of marriage. The first duty is to honour the other person, not to discover how many demands one may make.",
+          "fr": "Le mariage ne rend aucun époux propriétaire du corps ni de la conscience de l’autre. Le consentement demeure essentiel, mais un accord ne peut autoriser l’adultère, la contrainte ou un acte contraire au sens moral du mariage. Le premier devoir est d’honorer l’autre, non de chercher jusqu’où l’on peut exiger."
+        },
+        "second_turn_origin": "EXISTING_SOURCE_OBJECTION",
+        "visitor_followup_question": {
+          "en": "But if neither spouse is harmed and both desire the act, what remaining moral problem is there?",
+          "fr": "Mais si aucun conjoint n’est lésé et que les deux désirent l’acte, quel problème moral reste-t-il ?"
+        },
+        "original_source_followup_reply": {
+          "en": "The same issue as in consent generally: the moral object cannot be reduced to mutual willingness. The act must still be compatible with marital fidelity, chastity and the meaning of conjugal union.",
+          "fr": "Le même problème que pour le consentement en général : l’objet moral ne peut être réduit à la volonté mutuelle. L’acte doit encore être compatible avec la fidélité, la chasteté et la signification de l’union conjugale."
+        },
+        "pastoral_followup_reply_draft": {
+          "en": "Consent is indispensable, and its absence a serious wrong; but agreement does not create every moral good. Spouses must also honour fidelity, chastity and the proper meaning of conjugal union. Neither can demand what is contrary to the other’s dignity.",
+          "fr": "Le consentement est indispensable, et son absence constitue une grave injustice ; mais l’accord ne crée pas tout bien moral. Les époux doivent encore respecter la fidélité, la chasteté et le sens de l’union conjugale. Aucun ne peut exiger ce qui porte atteinte à la dignité de l’autre."
+        },
+        "source_pointers": {
+          "source_QA_file": "src/learn/sexual-ethics-data/questions-051-100.js",
+          "source_debate_file": "src/learn/sexual-ethics-data/debates-035-064.js",
+          "source_locator_refs": [
+            {
+              "registry_key": "CASTI",
+              "locator": "§§19–22"
+            },
+            {
+              "registry_key": "HV",
+              "locator": "§§12–14"
+            }
+          ],
+          "source_catalog_path": "data/app/content-items-sexual-ethics.v1.json"
+        },
+        "specialist_review_flag": "DOCTRINAL_SOURCE_REVIEW",
+        "review_attention": [],
+        "claimed_historical_author": "NONE_EDITORIAL_FICTIONAL_CHANOINE",
+        "publication_approved": false,
+        "persona_voice_approved": false,
+        "claim_level_certified": false,
+        "safeguarding_approved": false,
+        "english_french_reviewed": false,
+        "source_semantic_alignment_approved": false,
+        "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE"
+      },
+      "proposedTurns": [
+        {
+          "en": "Agreement alone does not make every act good. Spouses must preserve fidelity and the unitive and procreative meanings of their union.",
+          "fr": "Le seul accord ne rend pas bon tout acte. Les époux doivent respecter la fidélité et les sens unitif et procréateur de leur union.",
+          "claims": [
+            {
+              "text": "Spousal agreement does not cancel fidelity",
+              "refs": [
+                "CC21"
+              ],
+              "type": "FAITHFUL_PARAPHRASE"
+            },
+            {
+              "text": "Both meanings retained",
+              "refs": [
+                "HV12-13"
+              ],
+              "type": "FAITHFUL_PARAPHRASE"
+            }
+          ]
+        },
+        {
+          "en": "Mutual willingness matters, but it cannot by itself justify an act that contradicts those goods.",
+          "fr": "La volonté mutuelle compte, mais elle ne justifie pas à elle seule un acte qui contredit ces biens.",
+          "claims": [
+            {
+              "text": "Agreement is not sufficient for moral goodness",
+              "refs": [
+                "HV12-13"
+              ],
+              "type": "EXPLANATORY_APPLICATION"
+            }
+          ]
+        }
+      ],
+      "sourcePrecisionDeltas": [
+        "Add the necessary source for imposed intercourse, HV13, rather than cite only the adjoining general principles",
+        "Do not deny real reciprocal marital rights by replacing them with a claim that no obligations exist"
+      ],
+      "classification": "CHANOINE_EXPLANATION_AND_APPLICATION_NOT_PIUS_X_SPEECH",
+      "sourceMatched": true,
+      "claimLevelCertified": false,
+      "personaApproved": false,
+      "englishFrenchReviewed": false,
+      "publicationApproved": false,
+      "routingEnabled": false
+    },
+    {
+      "familyId": "CHA-CSE-CSE052",
+      "sourceQuestionId": "CSE052",
+      "originalRecord": {
+        "source_question_id": "CSE052",
+        "conversation_id": "CHA-CSE-CSE052",
+        "canonical_topic_owner": "SEX-CORE-15",
+        "title": "What does the traditional “marital debt” mean?",
+        "source_access": "PUBLIC_READER",
+        "source_main_visitor_question": {
+          "en": "What does the traditional “marital debt” mean?",
+          "fr": "Que signifie le traditionnel « devoir conjugal » ?"
+        },
+        "source_main_answer_verbatim": {
+          "en": "It refers to reciprocal marital rights and duties regarding conjugal relations, not ownership of the other spouse’s body. Traditional theology treats the obligation as mutual and governed by reason, charity and legitimate circumstances.",
+          "fr": "Il désigne les droits et devoirs matrimoniaux réciproques concernant les relations conjugales, non la propriété du corps de l’autre conjoint. La théologie traditionnelle considère cette obligation comme mutuelle et gouvernée par la raison, la charité et les circonstances légitimes."
+        },
+        "pastoral_main_answer_draft": {
+          "en": "The traditional term describes reciprocal conjugal rights and duties, not a debt that may be collected by force. Husband and wife owe one another fidelity and charity, and every request must be governed by reason and legitimate circumstances. Neither spouse is property.",
+          "fr": "Cette expression traditionnelle désigne des droits et devoirs conjugaux réciproques, non une dette qu’on pourrait recouvrer par la force. Les époux se doivent fidélité et charité ; toute demande reste soumise à la raison et aux circonstances légitimes. Aucun conjoint n’est la propriété de l’autre."
+        },
+        "second_turn_origin": "NEW_EDITORIAL_OBJECTION",
+        "visitor_followup_question": {
+          "en": "Does a spouse have to comply whenever the other asks?",
+          "fr": "Un époux doit-il céder chaque fois que l’autre le demande ?"
+        },
+        "original_source_followup_reply": null,
+        "pastoral_followup_reply_draft": {
+          "en": "No. Mutual conjugal duties are bounded by justice, health, reason and charity. A refusal for serious cause can be legitimate, and no conjugal right permits coercion.",
+          "fr": "Non. Les devoirs réciproques sont limités par la justice, la santé, la raison et la charité. Un refus pour cause grave peut être légitime, et aucun droit conjugal n’autorise la contrainte."
+        },
+        "source_pointers": {
+          "source_QA_file": "src/learn/sexual-ethics-data/questions-051-100.js",
+          "source_debate_file": null,
+          "source_locator_refs": [
+            {
+              "registry_key": "ST64SUP",
+              "locator": "marital debt"
+            },
+            {
+              "registry_key": "CASTI",
+              "locator": "§§19–30"
+            },
+            {
+              "registry_key": "HV",
+              "locator": "§13"
+            }
+          ],
+          "source_catalog_path": "data/app/content-items-sexual-ethics.v1.json"
+        },
+        "specialist_review_flag": "GENERAL_DOCTRINAL_REVIEW",
+        "review_attention": [],
+        "claimed_historical_author": "NONE_EDITORIAL_FICTIONAL_CHANOINE",
+        "publication_approved": false,
+        "persona_voice_approved": false,
+        "claim_level_certified": false,
+        "safeguarding_approved": false,
+        "english_french_reviewed": false,
+        "source_semantic_alignment_approved": false,
+        "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE"
+      },
+      "proposedTurns": [
+        {
+          "en": "The traditional term refers to reciprocal conjugal duties. The Supplement itself limits a demand that threatens the spouse’s welfare; it does not make every request obligatory.",
+          "fr": "Le terme traditionnel désigne des devoirs conjugaux réciproques. Le Supplément limite lui-même la demande qui menace le bien du conjoint ; toute demande n’est donc pas obligatoire.",
+          "claims": [
+            {
+              "text": "Reciprocal duties",
+              "refs": [
+                "SUP64A1"
+              ],
+              "type": "FAITHFUL_PARAPHRASE"
+            },
+            {
+              "text": "Unjust exaction outside personal welfare is not owed",
+              "refs": [
+                "SUP64A1"
+              ],
+              "type": "EXPLANATORY_PARAPHRASE"
+            }
+          ]
+        },
+        {
+          "en": "No. An imposed act that disregards a spouse’s condition and reasonable wishes violates the moral order. A marital duty cannot be used to justify that conduct.",
+          "fr": "Non. Un acte imposé sans égard à l’état du conjoint et à ses souhaits raisonnables viole l’ordre moral. Un devoir conjugal ne peut justifier cette conduite.",
+          "claims": [
+            {
+              "text": "Imposition against condition and reasonable wishes",
+              "refs": [
+                "HV13"
+              ],
+              "type": "FAITHFUL_PARAPHRASE"
+            },
+            {
+              "text": "Application to the language of marital duty",
+              "refs": [
+                "HV13",
+                "SUP64A1"
+              ],
+              "type": "PASTORAL_APPLICATION"
+            }
+          ]
+        }
+      ],
+      "sourcePrecisionDeltas": [
+        "Specify Supplement q.64 a.1 corpus/ad2 rather than the entire question",
+        "Do not present medieval medical assumptions or its sexual hierarchy as present-day clinical advice",
+        "Identify the Supplement's compiled provenance; the named compiler is probable, not certain"
+      ],
+      "classification": "CHANOINE_EXPLANATION_AND_APPLICATION_NOT_PIUS_X_SPEECH",
+      "sourceMatched": true,
+      "claimLevelCertified": false,
+      "personaApproved": false,
+      "englishFrenchReviewed": false,
+      "publicationApproved": false,
+      "routingEnabled": false
+    },
+    {
+      "familyId": "CHA-CSE-CSE053",
+      "sourceQuestionId": "CSE053",
+      "originalRecord": {
+        "source_question_id": "CSE053",
+        "conversation_id": "CHA-CSE-CSE053",
+        "canonical_topic_owner": "SEX-CORE-15",
+        "title": "When may a spouse legitimately refuse marital relations?",
+        "source_access": "PUBLIC_READER",
+        "source_main_visitor_question": {
+          "en": "When may a spouse legitimately refuse marital relations?",
+          "fr": "Quand un conjoint peut-il légitimement refuser les relations conjugales ?"
+        },
+        "source_main_answer_verbatim": {
+          "en": "Marriage creates real reciprocal obligations, but they are not absolute. Serious illness, danger, unjust or immoral demands, coercion, reasonable temporary abstinence and other proportionate circumstances can justify refusal.",
+          "fr": "Le mariage crée de véritables obligations réciproques, mais elles ne sont pas absolues. Une maladie grave, un danger, des demandes injustes ou immorales, la contrainte, une abstinence temporaire raisonnable et d’autres circonstances proportionnées peuvent justifier un refus."
+        },
+        "pastoral_main_answer_draft": {
+          "en": "Marital obligations are real, but they are not without limits. Illness, pain, danger, coercion or an immoral demand may give just reason to refuse; prudent and mutually agreed abstinence can also be legitimate. Marriage calls for attentive charity, never intimidation.",
+          "fr": "Les obligations conjugales sont réelles, mais non sans limites. La maladie, la douleur, le danger, la contrainte ou une demande immorale peuvent légitimement justifier un refus ; une abstinence prudente et convenue peut aussi être licite. Le mariage demande une charité attentive, jamais l’intimidation."
+        },
+        "second_turn_origin": "NEW_EDITORIAL_OBJECTION",
+        "visitor_followup_question": {
+          "en": "Can concern about pain or emotional safety justify saying no?",
+          "fr": "La douleur ou la sécurité affective peuvent-elles justifier un refus ?"
+        },
+        "original_source_followup_reply": null,
+        "pastoral_followup_reply_draft": {
+          "en": "Certainly those are morally relevant facts, and safety cannot be dismissed. A spouse must not be pressured to endure injury or fear; difficult cases call for respectful communication and appropriate professional support.",
+          "fr": "Assurément, ce sont des faits moralement pertinents, et la sécurité ne doit pas être écartée. On ne doit pas pousser un conjoint à subir la blessure ou la peur ; les cas difficiles demandent dialogue respectueux et soutien approprié."
+        },
+        "source_pointers": {
+          "source_QA_file": "src/learn/sexual-ethics-data/questions-051-100.js",
+          "source_debate_file": null,
+          "source_locator_refs": [
+            {
+              "registry_key": "ST64SUP",
+              "locator": "marital debt"
+            },
+            {
+              "registry_key": "HV",
+              "locator": "§13"
+            }
+          ],
+          "source_catalog_path": "data/app/content-items-sexual-ethics.v1.json"
+        },
+        "specialist_review_flag": "GENERAL_DOCTRINAL_REVIEW",
+        "review_attention": [],
+        "claimed_historical_author": "NONE_EDITORIAL_FICTIONAL_CHANOINE",
+        "publication_approved": false,
+        "persona_voice_approved": false,
+        "claim_level_certified": false,
+        "safeguarding_approved": false,
+        "english_french_reviewed": false,
+        "source_semantic_alignment_approved": false,
+        "status": "RESEARCH_ONLY_UNREVIEWED_NON_DEPLOYABLE"
+      },
+      "proposedTurns": [
+        {
+          "en": "A request is not unlimited. Serious illness or danger can justify refusing; the person’s condition and reasonable wishes must be respected.",
+          "fr": "Une demande n’est pas sans limites. Une maladie ou un danger graves peuvent justifier un refus ; l’état de la personne et ses souhaits raisonnables doivent être respectés.",
+          "claims": [
+            {
+              "text": "Limits arising from personal welfare",
+              "refs": [
+                "SUP64A1"
+              ],
+              "type": "FAITHFUL_PARAPHRASE"
+            },
+            {
+              "text": "Respect condition and reasonable wishes",
+              "refs": [
+                "HV13"
+              ],
+              "type": "FAITHFUL_PARAPHRASE"
+            }
+          ]
+        },
+        {
+          "en": "Pain and fear deserve careful attention. Serious danger to a spouse or child can also justify separation under canon 1153. These principles require attentive care, not pressure to endure harm.",
+          "fr": "La douleur et la peur méritent une attention sérieuse. Un danger grave pour un conjoint ou un enfant peut aussi justifier la séparation selon le canon 1153. Ces principes demandent des soins attentifs, non une pression pour subir un dommage.",
+          "claims": [
+            {
+              "text": "Pain and fear are relevant to the condition of a spouse",
+              "refs": [
+                "HV13"
+              ],
+              "type": "PASTORAL_APPLICATION"
+            },
+            {
+              "text": "Canonical serious-danger provision",
+              "refs": [
+                "CIC1153"
+              ],
+              "type": "FAITHFUL_PARAPHRASE"
+            },
+            {
+              "text": "Seek care rather than impose harm",
+              "refs": [
+                "HV13",
+                "CIC1153"
+              ],
+              "type": "PASTORAL_APPLICATION"
+            }
+          ]
+        }
+      ],
+      "sourcePrecisionDeltas": [
+        "Broad 'emotional safety' language is not a self-executing canonical test; qualify with actual condition, reasonable wishes and serious danger",
+        "Canon1153 concerns separation, not automatic nullity or permission to remarry",
+        "Do not advise joint confrontation as a universal remedy in a coercive relationship"
+      ],
+      "classification": "CHANOINE_EXPLANATION_AND_APPLICATION_NOT_PIUS_X_SPEECH",
+      "sourceMatched": true,
+      "claimLevelCertified": false,
+      "personaApproved": false,
+      "englishFrenchReviewed": false,
+      "publicationApproved": false,
+      "routingEnabled": false
+    }
+  ],
+  "evidence": [
+    {
+      "id": "CC10-17",
+      "work": "Pius XI, Casti connubii §§10,17",
+      "url": "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19301231_casti-connubii.html",
+      "originalLanguageUrl": "https://www.vatican.va/content/pius-xi/la/encyclicals/documents/hf_p-xi_enc_19301231_casti-connubii.html",
+      "originalLocator": "Haec omnia (Augustine quotation within Quae vero quantaque); Matrimonii finis primarius",
+      "supports": "Three goods; procreation and education named primary end",
+      "limit": "1930 wording identified; not an assertion that later formulations cancel this hierarchy"
+    },
+    {
+      "id": "CC23",
+      "work": "Same §23",
+      "url": "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19301231_casti-connubii.html",
+      "originalLanguageUrl": "https://www.vatican.va/content/pius-xi/la/encyclicals/documents/hf_p-xi_enc_19301231_casti-connubii.html",
+      "originalLocator": "Hoc autem opus in domestica societate",
+      "supports": "Mutual help, interior growth and charity"
+    },
+    {
+      "id": "CC59",
+      "work": "Same §59, second and third textual paragraphs",
+      "url": "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19301231_casti-connubii.html",
+      "originalLanguageUrl": "https://www.vatican.va/content/pius-xi/la/encyclicals/documents/hf_p-xi_enc_19301231_casti-connubii.html",
+      "originalLocator": "Neque contra naturae ordinem agere; Habentur enim",
+      "supports": "Natural infertility; secondary ends with intrinsic nature and primary ordering preserved",
+      "limit": "Do not generalize the preceding paragraph on reluctant toleration into permission for coercion"
+    },
+    {
+      "id": "CC21",
+      "work": "Same §21",
+      "url": "https://www.vatican.va/content/pius-xi/en/encyclicals/documents/hf_p-xi_enc_19301231_casti-connubii.html",
+      "originalLanguageUrl": "https://www.vatican.va/content/pius-xi/la/encyclicals/documents/hf_p-xi_enc_19301231_casti-connubii.html",
+      "originalLocator": "Quae Christi Domini verba ne alterutrius quidem coniugis consensu",
+      "supports": "Spousal agreement cannot cancel the fidelity norm"
+    },
+    {
+      "id": "HV11",
+      "work": "Paul VI, Humanae vitae §11",
+      "url": "https://www.vatican.va/content/paul-vi/en/encyclicals/documents/hf_p-vi_enc_25071968_humanae-vitae.html",
+      "originalLanguageUrl": "https://www.vatican.va/content/paul-vi/la/encyclicals/documents/hf_p-vi_enc_25071968_humanae-vitae.html",
+      "exactLatinExcerpt": "etsi infecundi praevideantur",
+      "supports": "Otherwise rightful intercourse remains legitimate despite infertility independent of the spouses' will"
+    },
+    {
+      "id": "HV11-12",
+      "work": "Same §§11–12",
+      "url": "https://www.vatican.va/content/paul-vi/en/encyclicals/documents/hf_p-vi_enc_25071968_humanae-vitae.html",
+      "originalLanguageUrl": "https://www.vatican.va/content/paul-vi/la/encyclicals/documents/hf_p-vi_enc_25071968_humanae-vitae.html",
+      "supports": "Infertility and inseparable meanings read together"
+    },
+    {
+      "id": "HV12-13",
+      "work": "Same §§12–13",
+      "url": "https://www.vatican.va/content/paul-vi/en/encyclicals/documents/hf_p-vi_enc_25071968_humanae-vitae.html",
+      "originalLanguageUrl": "https://www.vatican.va/content/paul-vi/la/encyclicals/documents/hf_p-vi_enc_25071968_humanae-vitae.html",
+      "supports": "Consent alone is insufficient; both meanings retained"
+    },
+    {
+      "id": "HV13",
+      "work": "Same §13, first sentence",
+      "url": "https://www.vatican.va/content/paul-vi/en/encyclicals/documents/hf_p-vi_enc_25071968_humanae-vitae.html",
+      "originalLanguageUrl": "https://www.vatican.va/content/paul-vi/la/encyclicals/documents/hf_p-vi_enc_25071968_humanae-vitae.html",
+      "exactLatinExcerpt": "nulla ratione habita eius status eiusque iustorum optatorum",
+      "supports": "Imposed intercourse disregarding condition and reasonable wishes violates moral order",
+      "limit": "Keep both qualifiers; not a detailed adjudication of every refusal"
+    },
+    {
+      "id": "SUP64A1",
+      "work": "Summa theologiae, Supplement q.64 a.1, corpus and ad2",
+      "url": "https://www.newadvent.org/summa/5064.htm#article1",
+      "language": "English Dominican translation; Latin not collated",
+      "supports": "Reciprocal obligation limited by welfare; excessive request is unjust exaction",
+      "limit": "Ad4 contains medical assertions not adopted here; do not turn them into present-day advice"
+    },
+    {
+      "id": "SUP-PROVENANCE",
+      "work": "Editor's note to the Supplement",
+      "url": "https://www.newadvent.org/summa/5.htm",
+      "supports": "Compiled from Aquinas's Sentences commentary; editor says probably Rainaldo da Piperno",
+      "classification": "EDITORIAL_PROVENANCE_NOT_AQUINAS_QUOTATION"
+    },
+    {
+      "id": "ST18A10",
+      "work": "Aquinas, Summa theologiae I–II q.18 a.10, corpus/ad1–2",
+      "url": "https://www.newadvent.org/summa/2018.htm#article10",
+      "language": "English translation; Latin not collated",
+      "supports": "A specifying condition belongs to the moral object; not every circumstance changes species"
+    },
+    {
+      "id": "CIC1057",
+      "work": "CIC can.1057 §§1–2",
+      "url": "https://www.vatican.va/archive/cod-iuris-canonici/latin/documents/cic_liberIV_la.html",
+      "language": "Latin",
+      "supports": "Qualified persons, legitimately manifested consent, irrevocable mutual gift"
+    },
+    {
+      "id": "CIC1062",
+      "work": "CIC can.1062 §§1–2",
+      "url": "https://www.vatican.va/archive/cod-iuris-canonici/latin/documents/cic_liberIV_la.html",
+      "language": "Latin",
+      "supports": "Promise to marry is distinct; no action to compel marriage"
+    },
+    {
+      "id": "CIC1153",
+      "work": "CIC can.1153 §§1–2",
+      "url": "https://www.vatican.va/archive/cod-iuris-canonici/latin/documents/cic_liberIV_la.html",
+      "language": "Latin",
+      "exactLatinExcerpt": "grave seu animi seu corporis periculum",
+      "supports": "Serious danger or excessively difficult common life; ordinary's decree, own authority if delay dangerous",
+      "limit": "Separation with bond remaining; paragraph2 conditions apply; no automatic right to remarry"
+    }
+  ],
+  "duplicates": [
+    {
+      "ids": [
+        "CSE051",
+        "CSE052",
+        "CSE053"
+      ],
+      "decision": "Shared non-imposition source; retain consent objection, traditional terminology and refusal questions as different contexts."
+    },
+    {
+      "ids": [
+        "CSE047",
+        "CSE043",
+        "CSE044"
+      ],
+      "decision": "Share infertility evidence; validity versus morality of an act remain distinct."
+    }
+  ],
+  "humanDecisions": [
+    "Theological editor to review how the hierarchy of ends is taught without treating it as merely obsolete vocabulary",
+    "Historical editor to verify Supplement attribution wording and treatment of older medical assumptions",
+    "Moral and pastoral reviewers to evaluate refusal, coercion and individualized culpability; no chatbot adjudication of contested marital duties",
+    "EN/FR editor to review technical terms including unitive/procreative"
+  ],
+  "newSubstantiveGaps": [],
+  "approvalsChanged": 0
+}
