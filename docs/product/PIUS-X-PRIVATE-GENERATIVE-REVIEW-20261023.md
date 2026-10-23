@@ -167,3 +167,18 @@ Original-language Vatican pages were opened. Each document record identifies a s
 Automated CI runs `tests/pius-x-next12-primary-discovery-contract.mjs`: it checks the 53 unique existing chapters, all 195 ordered node IDs against the compiled original P6, confirms 8 short fragments against independently transcribed longer source contexts, and fails if a demonstration quotation is corrupted. The test is documentary **discovery plus literal excerpt presence**, not 195 claim-level passes.
 
 **Next gate:** promote a subset of those eight witnesses only where its excerpt literally supports an identified opening or follow-up claim and its speaker, original language and scope are unambiguous. Then extend full-node claim mapping across the 53 chapters at document level, with exceptions queues for historically overbroad legal, liturgical or doctrinal extrapolation. Treat discovery, mapped excerpts, translations and publication as separate counts.
+
+### P2.6a — Claim-level triage of eight newly found original excerpts
+
+After comparing the eight passage candidates with the existing source-owner *opening answers*, the research batch records **eight explicit claim-limitation reports**. Every new excerpt establishes at most a narrow subclaim; **none establishes the entire existing long answer**. The reports specify what is literally supported, what remains unattested, and the precise further source sections required. No new source excerpt has been promoted into the model's evidence annex.
+
+- *Pascendi*: the preamble witnesses the duty to guard the deposit of faith, **not** by itself the disputed details of Modernism (agnosticism, sentiment, changing dogma).
+- *Acerbo nimis*: lay catechists are attested; present safeguarding and ministerial distinctions are editorial application.
+- *Pieni l'animo*: suitable ordination candidates are attested; no modern personal vocational judgement.
+- *Tra le sollecitudini*: holiness and good form are explicit; universality and theatrical restrictions need additional passages.
+- *Divino afflatu*: weekly complete Psalter recitation is supported; feast displacement and pastoral burden need the surrounding argument.
+- *Singulari quadam*: the labour question is not merely economic; preserve the quoted earlier authority and the particular German mixed-union conditions.
+- *Editae saepe*: saints' deeds are remembered and imitated; the specific examples and quoted Scriptures require separate attribution.
+- *Ad diem illum*: Mary as guide to knowledge of Christ is supported; the entire doctrinal account of intercession/mediation is not attested by this single fragment.
+
+The original eight chapter/node IDs, source-owner answers, translation flags and publication holds are unchanged. CI now requires each newly found witness to be accompanied by an explicit interpretation-gap queue and `eligibleForAutomatedModelPromotion:false`. This is substantive screening, not a claim of eight fully source-authenticated dialogues.
