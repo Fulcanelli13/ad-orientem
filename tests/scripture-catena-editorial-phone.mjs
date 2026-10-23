@@ -262,12 +262,20 @@ try{
  await page.locator('[data-mark-canonical-source="catena.mark.10.17:19"]')
   .waitFor({state:"visible",timeout:20000});
  assert.match(await page.locator('[data-mark-research-witness]').innerText(),/Zacchaeus/);
+ assert.equal(await page.locator('[data-mark-editorial-assessment="3"]').count(),1);
+ assert.match(await page.locator('[data-mark-editorial-assessment]').innerText(),/AI contextual grade 3/);
  assert.doesNotMatch(await page.locator('[data-mark-canonical-source] .body').innerText(),/Zacchaeus/);
  await page.locator('[data-mark-pointer="catena.mark.14.17:2"]').click();
  await page.locator('[data-mark-research-witness="only_secondary_work_attribution_excerpt_found"]')
   .waitFor({state:"visible",timeout:20000});
  assert.match(await page.locator('[data-mark-research-witness]').innerText(),/secondary/i);
+ assert.equal(await page.locator('[data-mark-editorial-assessment="2"]').count(),1);
+ assert.match(await page.locator('[data-mark-editorial-assessment]').innerText(),/human approval pending/i);
+ assert.ok(await page.locator('[data-mark-editorial-assessment] details').count()>0);
  assert.equal(await page.locator("#reviewForm").count(),0);
+ await page.locator('[data-mark-pointer="catena.mark.16.14:3"]').click();
+ await page.locator('[data-mark-editorial-assessment="2"]').waitFor({state:"visible",timeout:20000});
+ assert.match(await page.locator('[data-mark-research-witness]').innerText(),/pre-Ascension/);
  await page.locator("#markQuestion").fill("Did Theophylact prove Christ certainly ate the Passover twice?");
  await page.locator('#markLookup button[type="submit"]').click();
  assert.match(await page.locator("#workspace").innerText(),/No Father reply has been supplied or inferred/);
