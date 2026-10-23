@@ -49,7 +49,7 @@ footer{max-width:1300px;margin:auto;padding:0 20px 30px;font:12px/1.6 system-ui,
 <body>
 <header><div class="kicker">Ad Orientem · Living Catena · human editorial checkpoint</div>
 <h1>The Fathers · Source approval workbench</h1>
-<p>Thirty Matthew editorial candidates and ten Mark research-only leads. Inspect unchanged Oxford/Newman Catena excerpts, original-work witnesses and context. Only Matthew has a local decision-export workflow; Mark remains read-only and unpublished. The Messenger is never altered here.</p>
+<p>Thirty Matthew editorial candidates and ten Mark research-only leads. Inspect unchanged Oxford/Newman Catena excerpts, original-work witnesses and context. Only Matthew has a local decision-export workflow; Mark remains read-only and unpublished. The Messenger is never altered here. Mark also has an independent blind-retrieval grading mode, which cannot approve sources for publication.</p>
 </header>
 <main>
 <nav aria-label="Source candidate navigation">
@@ -62,6 +62,7 @@ footer{max-width:1300px;margin:auto;padding:0 20px 30px;font:12px/1.6 system-ui,
 <button type="button" data-filter="escalated" aria-pressed="false">8 escalations</button>
 <button type="button" data-filter="all" aria-pressed="false">All 30</button>
 <button type="button" data-filter="mark" aria-pressed="false">Mark · 10 research</button>
+<button type="button" data-filter="blind" aria-pressed="false">Mark · blind review</button>
 </div>
 <form id="markLookup" hidden aria-label="Exact Mark research question lookup">
 <label for="markQuestion">Find a reviewed Mark question (exact wording only)</label>
@@ -69,7 +70,14 @@ footer{max-width:1300px;margin:auto;padding:0 20px 30px;font:12px/1.6 system-ui,
 <button type="submit">Find source</button>
 <p class="footnote" id="markLookupStatus" role="status">Unapproved research questions only. No generated Father answers.</p>
 </form>
+<div id="blindPanel" hidden>
+<label for="blindReviewer">Independent reviewer identifier</label>
+<input type="text" id="blindReviewer" autocomplete="off" placeholder="Editorial reviewer ID">
+<button type="button" id="blindChooseReviewer">Use this reviewer</button>
+<p class="footnote" id="blindStatus" role="status">Two independently exported reviews are required. This interface cannot authenticate a reviewer.</p>
+</div>
 <div class="operations">
+<button id="blindExport" type="button" hidden>Export blind grades</button>
 <button id="download" type="button">Export review manifest</button>
 </div>
 </div>
@@ -93,12 +101,14 @@ import {validateCatenaWorkLociPreview} from "../src/scripture/catena-review-work
 import {validateCatenaNineFocus} from "../src/scripture/catena-nine-focus.js";
 import {validateCatenaMarkEditorial,validateCatenaMarkAdjudication,findCatenaMarkResearchQuestion,loadCatenaMarkEditorialSource}
  from "../src/scripture/catena-mark-editorial.js";
+import {validateMarkBlindFixture,retrieveMarkBlindCase,validateMarkBlindCaseDecision,buildMarkBlindReviewExport}
+ from "../src/scripture/catena-mark-blind-review.js";
 const ROOT="../data/scripture/catena/";
 const KEY="ao-catena-matthew-human-review-local-draft-v1";
 const candidateList=document.getElementById("candidateList");
 const workspace=document.getElementById("workspace");
 const count=document.getElementById("countText");
-let registry=null,review=null,workLoci=null,nineFocus=null,markResearch=null,markDossier=null,filter="focus",active=null,sourceCache=new Map(),states=new Map();
+let registry=null,review=null,workLoci=null,nineFocus=null,markResearch=null,markDossier=null,blindFixture=null,blindReviewerId="",blindDecisions=new Map(),filter="focus",active=null,sourceCache=new Map(),states=new Map();
 const $=(tag,className,text)=>{const el=document.createElement(tag);if(className)el.className=className;if(text!==undefined)el.textContent=text;return el};
 const append=(parent,tag,cls,str)=>{const e=$(tag,cls,str);parent.append(e);return e};
 const safe=(s)=>String(s||"");
@@ -135,9 +145,24 @@ function summary(){
 function renderList(){
  candidateList.replaceChildren();
  for(const btn of document.querySelectorAll("[data-filter]"))btn.setAttribute("aria-pressed",String(btn.dataset.filter===filter));
- const markMode=filter==="mark";
+ const markMode=filter==="mark",blindMode=filter==="blind";
  document.getElementById("markLookup").hidden=!markMode;
- document.getElementById("download").disabled=markMode;
+ document.getElementById("blindPanel").hidden=!blindMode;
+ document.getElementById("blindExport").hidden=!blindMode;
+ document.getElementById("download").disabled=markMode||blindMode;
+ if(blindMode){
+  count.textContent="Mark blind review · "+blindDecisions.size+"/23 locally graded · 0 published";
+  for(const caseFile of blindFixture.cases){
+   const btn=$("button","candidate");btn.type="button";
+   btn.dataset.blindCase=caseFile.id;
+   btn.setAttribute("aria-pressed",String(active===caseFile.id));
+   append(btn,"span","eyebrow","Case "+String(caseFile.displayOrder).padStart(2,"0")+
+    " · "+(blindDecisions.has(caseFile.id)?"graded locally":"ungraded"));
+   append(btn,"span",null,caseFile.question);
+   btn.addEventListener("click",()=>void selectBlind(caseFile.id));candidateList.append(btn);
+  }
+  return;
+ }
  if(markMode){
   count.textContent="Mark · 10 source-linked research leads · 0 approved · 0 published";
   for(const rec of markResearch.rows){
@@ -276,6 +301,131 @@ function fillForm(root,rec,source){
  root.append(form);
 }
 let selectedVersion=0;
+function blindStorageKey(){
+ return "ao-catena-mark-blind-review-v1/"+encodeURIComponent(blindReviewerId.toLowerCase());
+}
+function saveBlindDraft(){
+ if(!blindReviewerId)return;
+ try{localStorage.setItem(blindStorageKey(),JSON.stringify({
+  sourceResearchCommit:blindFixture.sourceResearchCommit,
+  reviewerId:blindReviewerId,decisions:Object.fromEntries(blindDecisions)
+ }))}catch{}
+}
+function loadBlindDraft(){
+ blindDecisions=new Map();
+ if(!blindReviewerId)return;
+ try{
+  const saved=JSON.parse(localStorage.getItem(blindStorageKey())||"{}");
+  if(saved.sourceResearchCommit!==blindFixture.sourceResearchCommit||
+    saved.reviewerId!==blindReviewerId)return;
+  for(const [id,entry] of Object.entries(saved.decisions||{})){
+   if(blindFixture.cases.some(c=>c.id===id)&&entry?.caseId===id&&
+      entry.publicationApproval===false)blindDecisions.set(id,entry);
+  }
+ }catch{}
+}
+async function sha256CatenaText(value){
+ const bytes=new TextEncoder().encode(value);
+ return Array.from(new Uint8Array(await crypto.subtle.digest("SHA-256",bytes)),
+  b=>b.toString(16).padStart(2,"0")).join("");
+}
+async function selectBlind(caseId){
+ const caseFile=blindFixture?.cases.find(x=>x.id===caseId);
+ if(!caseFile)return;
+ active=caseId;renderList();const stamp=++selectedVersion;
+ workspace.replaceChildren();
+ append(workspace,"div","kicker","INDEPENDENT BLIND RETRIEVAL REVIEW · "+caseId);
+ append(workspace,"h2",null,caseFile.question);
+ append(workspace,"p","notice","Read and grade the source excerpts actually retrieved. The original research target, AI grade, expected outcome and ranking scores are deliberately hidden. Nothing can be published here.");
+ const loading=append(workspace,"p","subtle","Loading canonical Mark excerpts…");
+ try{
+  const m=/^catena\.mark\.(\d+)\.(\d+)$/.exec(caseFile.pericopeId);
+  if(!m)throw Error("Invalid Mark case");
+  const hits=await loadCatenaForPassage({book:"Mark",chapter:Number(m[1]),
+   verseStart:Number(m[2]),verseEnd:Number(m[2])});
+  const section=hits.find(x=>x.id===caseFile.pericopeId);
+  const messages=retrieveMarkBlindCase(caseFile,section);
+  const hashes=await Promise.all(messages.map(x=>sha256CatenaText(x.originalWords)));
+  if(stamp!==selectedVersion)return;
+  loading.remove();
+  append(workspace,"p","footnote",section.citation+" · "+messages.length+
+    " excerpt(s) retrieved in the first four. All inherited author names must be checked independently.");
+  const form=$("form");form.id="blindForm";form.dataset.caseId=caseId;
+  const prior=blindDecisions.get(caseId)||{};
+  const controls=[];
+  if(!messages.length){
+   append(form,"p","notice","No original excerpt retrieved. Grade whether abstention was appropriate; do not invent a reply.");
+   const lab=append(form,"label",null,"No-result assessment");lab.htmlFor="blindAbstention";
+   const sel=$("select");sel.id="blindAbstention";
+   for(const [v,t] of [["","Select one"],["appropriate","Appropriate abstention"],["missed_source","Missed useful source"],["uncertain","Insufficient evidence to judge"]]){
+    const opt=$("option",null,t);opt.value=v;sel.append(opt);
+   }
+   sel.value=prior.abstentionGrade||"";form.append(sel);
+   controls.push({abstention:sel});
+  }
+  for(let i=0;i<messages.length;i++){
+   const msg=messages[i],existing=prior.messageGrades?.find(x=>x.sourcePointer===msg.id)||{};
+   const unit=$("article","source");unit.dataset.blindResult=msg.id;
+   append(unit,"div","label","Result "+(i+1)+" · "+msg.citation);
+   for(const owner of msg.speakerUnits){
+    append(unit,"div","label","Inherited Catena attribution: "+owner.father);
+    append(unit,"p","body",owner.originalWords);
+   }
+   const a=$("a",null,"Inspect original Catena source ↗");a.href=msg.sourceUrl;
+   a.target="_blank";a.rel="noopener noreferrer";unit.append(a);
+   const hash=hashes[i];
+   append(unit,"p","support","Unchanged excerpt SHA-256: "+hash);
+   const gradeLabel=append(unit,"label",null,"Grade this retrieved excerpt (0 misleading · 1 weak · 2 useful context · 3 direct)");
+   const grade=$("select");grade.dataset.blindGrade=msg.id;
+   gradeLabel.htmlFor="blind-grade-"+i;grade.id="blind-grade-"+i;
+   for(const [v,t] of [["","Select grade"],["0","0 — Unsupported/misleading"],["1","1 — Weak"],["2","2 — Useful context"],["3","3 — Direct"]]){
+    const option=$("option",null,t);option.value=v;grade.append(option);
+   }
+   grade.value=Number.isInteger(existing.grade)?String(existing.grade):"";
+   unit.append(grade);
+   const evidenceLabel=append(unit,"label",null,"Exact source words supporting grade 2 or 3");
+   const evidence=$("input");evidence.id="blind-evidence-"+i;evidenceLabel.htmlFor=evidence.id;
+   evidence.placeholder="Copy a short verbatim phrase from the displayed excerpt";
+   evidence.value=existing.supportingOriginalWords||"";unit.append(evidence);
+   const noteLabel=append(unit,"label",null,"Independent contextual justification");
+   const note=$("textarea");note.id="blind-note-"+i;note.rows=3;
+   noteLabel.htmlFor=note.id;note.value=existing.justification||"";unit.append(note);
+   form.append(unit);controls.push({msg,grade,evidence,note,hash});
+  }
+  const context=$("details");context.append($("summary",null,"Read entire original Catena pericope for context"));
+  const full=$("div");addSourceUnits(full,{section},-999,true);context.append(full);form.append(context);
+  const overallLabel=append(form,"label",null,"Overall verdict and limitations");
+  const overall=$("textarea");overall.id="blindOverall";overall.rows=3;
+  overallLabel.htmlFor=overall.id;overall.value=prior.overallRationale||"";form.append(overall);
+  const submit=$("button",null,"Save independent grade locally");submit.type="submit";form.append(submit);
+  const status=append(form,"p","status","No production or editorial-source approval occurs.");status.id="blindDecisionStatus";
+  form.addEventListener("submit",event=>{
+   event.preventDefault();
+   if(!blindReviewerId||document.getElementById("blindReviewer").value.trim()!==blindReviewerId){
+    status.textContent="Choose a reviewer identifier before recording grades.";return;
+   }
+   try{
+    const gradeRows=messages.map(msg=>{
+     const c=controls.find(x=>x.msg?.id===msg.id);
+     return {sourcePointer:msg.id,grade:c.grade.value===""?null:Number(c.grade.value),
+      supportingOriginalWords:c.evidence.value,justification:c.note.value,
+      sourceSHA256:c.hash};
+    });
+    const entry=validateMarkBlindCaseDecision(blindFixture,caseId,messages,{
+     caseId,abstentionGrade:messages.length?null:controls[0].abstention.value,
+     overallRationale:overall.value,messageGrades:gradeRows,publicationApproval:false
+    });
+    blindDecisions.set(caseId,entry);saveBlindDraft();renderList();
+    status.textContent="Grade saved in this reviewer's local draft only. Nothing has been approved or published.";
+   }catch(err){status.textContent="Not saved: "+err.message}
+  });
+  workspace.append(form);
+ }catch(error){
+  if(stamp!==selectedVersion)return;
+  loading.remove();
+  append(workspace,"p","notice","Source verification failed; grading blocked. "+error.message);
+ }
+}
 /* Mark is a distinct research inspection mode. Never invoke the Matthew
  * review decision form or export for these unapproved sources.
  */
@@ -426,6 +576,32 @@ document.getElementById("download").addEventListener("click",()=>{
   document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1500);
  }catch(err){alert("Export blocked: "+err.message);}
 });
+document.getElementById("blindReviewer").addEventListener("input",()=>{
+ blindReviewerId="";blindDecisions=new Map();if(filter==="blind")renderList();
+});
+document.getElementById("blindChooseReviewer").addEventListener("click",()=>{
+ const v=document.getElementById("blindReviewer").value.trim();
+ if(v.length<3||v.length>100){
+  document.getElementById("blindStatus").textContent="Reviewer identifier must be 3–100 characters.";return;
+ }
+ blindReviewerId=v;loadBlindDraft();renderList();
+ document.getElementById("blindStatus").textContent="Reviewer "+v+
+  " · "+blindDecisions.size+"/23 cases graded locally. Separate exported reviews are not independently authenticated.";
+});
+document.getElementById("blindExport").addEventListener("click",()=>{
+ try{
+  if(document.getElementById("blindReviewer").value.trim()!==blindReviewerId)
+   throw Error("Set the reviewer identity first");
+  const data=buildMarkBlindReviewExport(blindFixture,blindReviewerId,blindDecisions);
+  const blob=new Blob([JSON.stringify(data,null,2)+"\n"],{type:"application/json"});
+  const url=URL.createObjectURL(blob),link=$("a");link.href=url;
+  link.download="catena-mark-blind-"+blindReviewerId.replace(/[^a-zA-Z0-9_-]/g,"_")+".json";
+  document.body.append(link);link.click();link.remove();
+  setTimeout(()=>URL.revokeObjectURL(url),1500);
+  document.getElementById("blindStatus").textContent=
+   data.completedCases+"/23 case grades exported; publication still blocked.";
+ }catch(e){document.getElementById("blindStatus").textContent="Export blocked: "+e.message}
+});
 document.getElementById("markLookup").addEventListener("submit",event=>{
  event.preventDefault();
  if(filter!=="mark")return;
@@ -448,6 +624,10 @@ document.querySelectorAll("[data-filter]").forEach(b=>b.addEventListener("click"
   if(markResearch?.rows.length)void selectMark(markResearch.rows[0].sourcePointer);
   return;
  }
+ if(filter==="blind"){
+  if(blindFixture?.cases.length)void selectBlind(blindFixture.cases[0].id);
+  return;
+ }
  const visible=review.records.filter(r=>filter==="all"||
    (filter==="ready"&&isReady(r))||
    (filter==="escalated"&&!isReady(r))||
@@ -455,13 +635,14 @@ document.querySelectorAll("[data-filter]").forEach(b=>b.addEventListener("click"
  if(!visible.some(x=>x.sourcePointer===active)&&visible.length)void select(visible[0].sourcePointer);
 }));
 try{
- const [index,reviewData,lociData,focusData,markData,markJudgments]=await Promise.all([
+ const [index,reviewData,lociData,focusData,markData,markJudgments,blindCases]=await Promise.all([
   jsonFile("editorial-matthew-routes.v1.json"),
   jsonFile("editorial-matthew-first-30-review.v1.json"),
   jsonFile("editorial-matthew-work-loci.v1.json"),
   jsonFile("editorial-matthew-nine-focus.v1.json"),
   jsonFile("editorial-mark-original-work-crosswalk.v1.json"),
-  jsonFile("editorial-mark-ai-adjudication.v1.json")
+  jsonFile("editorial-mark-ai-adjudication.v1.json"),
+  jsonFile("editorial-mark-blind-cases.v1.json")
  ]);
  registry=validateCatenaEditorialRoutes(index);
  review=validateCatenaEditorialReview(reviewData,registry);
@@ -469,6 +650,7 @@ try{
  nineFocus=validateCatenaNineFocus(focusData,review,workLoci);
  markResearch=validateCatenaMarkEditorial(markData);
  markDossier=validateCatenaMarkAdjudication(markJudgments,markResearch);
+ blindFixture=validateMarkBlindFixture(blindCases);
  loadDraft();renderList();
  const first=review.records.find(r=>nineFocus.byPointer.has(r.sourcePointer));
  void select(first.sourcePointer);
