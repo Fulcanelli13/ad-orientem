@@ -171,7 +171,8 @@ jobs:
             dist/schaff-chrysostom-replies/
             dist/schaff-chrysostom-speech-layers/
             dist/schaff-chrysostom-catena-overlap/
-            dist/schaff-chrysostom-focused-parallels/            data/scripture/catena/research/full-corpus-pass-20261021/chrysostom-24-argument-research-hypotheses.v1.json
+            dist/schaff-chrysostom-focused-parallels/
+            data/scripture/catena/research/full-corpus-pass-20261021/chrysostom-24-argument-research-hypotheses.v1.json
             data/scripture/catena/research/full-corpus-pass-20261021/CHRYSOSTOM_24_ARGUMENT_COMPARISON_20261023.md
           if-no-files-found: error
           retention-days: 14
