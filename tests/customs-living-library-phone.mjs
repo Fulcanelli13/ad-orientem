@@ -4,6 +4,7 @@ import {readFile,mkdir,writeFile} from "node:fs/promises";
 import {resolve,sep,extname} from "node:path";
 import {fileURLToPath} from "node:url";
 import {chromium} from "@playwright/test";
+import {calendarCustomArticle} from "../src/calendar/customs-read-model.js";
 
 const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
 const capture=resolve(root,"artifacts/customs-living-library");
@@ -61,7 +62,7 @@ try{
     await page.locator('[data-cust-id="BLSS-002"]').click();
     const details=await rootLocator.textContent();
     assert.ok(details.includes(language==="fr"?"Assomption : bénédiction des herbes":"Assumption — blessing of herbs"),"language-specific title missing");
-    assert.match(details,language==="fr"?/Ni obligatoire ni universelle/i:/Do not present as mandatory/i,"pastoral qualification missing");
+    assert.ok(details.includes(calendarCustomArticle("BLSS-002").caution[language]),"published pastoral qualification missing or stale in "+language);
     assert.ok(await page.locator(".aoCustArticle a[href^='https://']").count()>=1,"canonical source links missing");
     const historical=page.locator(".aoCustHistorical");
     assert.equal(await historical.count(),1,"Assumption historical witness missing");
