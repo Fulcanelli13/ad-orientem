@@ -19,6 +19,8 @@ on:
       - 'previews/pius-x-study/spx-model-review-client.js'
       - 'previews/pius-x-study/spx-model-review-style.css'
       - 'tests/pius-x-generative-review-e2e.mjs'
+      - 'tools/pius-x-live-eval.mjs'
+      - 'tests/pius-x-live-eval-harness.mjs'
       - 'tools/spx-p0-editorial-normalization.mjs'
       - 'tools/spx-p2-followup-editorial-layer.mjs'
       - '.github/workflows/pius-x-study-standalone-review.yml'
@@ -39,6 +41,8 @@ on:
       - 'previews/pius-x-study/spx-model-review-client.js'
       - 'previews/pius-x-study/spx-model-review-style.css'
       - 'tests/pius-x-generative-review-e2e.mjs'
+      - 'tools/pius-x-live-eval.mjs'
+      - 'tests/pius-x-live-eval-harness.mjs'
       - 'tools/spx-p0-editorial-normalization.mjs'
       - 'tools/spx-p2-followup-editorial-layer.mjs'
       - '.github/workflows/pius-x-study-standalone-review.yml'
@@ -77,6 +81,8 @@ jobs:
         run: node tests/pius-x-study-free-ask-e2e.mjs
       - name: Verify private model-assisted source-constrained research stage
         run: node tests/pius-x-generative-review-e2e.mjs
+      - name: Exercise real-model evaluation harness without external inference
+        run: node tests/pius-x-live-eval-harness.mjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
