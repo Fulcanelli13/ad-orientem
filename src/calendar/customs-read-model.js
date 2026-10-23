@@ -32,8 +32,8 @@ const PUBLISHED_ARTICLES = [
       "fr": "Allumer la bougie correspondante pendant une brève prière ou lecture de l'Écriture, en veillant à la sécurité. Cette dévotion est libre et ne constitue pas une rubrique de la messe de 1962."
     },
     "caution": {
-      "en": "Household devotion only, not an ancient universal Roman rubric. Church and home blessing texts differ across rites and periods; do not insert modern blessing text or priestly gestures into the 1962 Mass.",
-      "fr": "Cette dévotion familiale demeure facultative et ne fait pas partie des rubriques de la messe de 1962. Les bénédictions liturgiques doivent rester distinctes de la prière à la maison."
+      "en": "The wreath is a voluntary household devotion, not part of the 1962 Mass. A liturgical blessing must follow the rite and minister authorized for it; always attend to candle safety.",
+      "fr": "La couronne est une dévotion familiale libre, distincte de la messe de 1962. Une bénédiction liturgique relève du rite et du ministre habilité ; les bougies exigent de la prudence."
     },
     "scope": {
       "en": "Catholic household use; adopted devotional form rather than an original ancient Roman rite",
@@ -81,8 +81,8 @@ const PUBLISHED_ARTICLES = [
       "fr": "À titre de coutume familiale libre, ajouter un peu de paille après un geste de bonté et prier ensemble avant de déposer l'Enfant Jésus dans la crèche à Noël."
     },
     "caution": {
-      "en": "The French origin is a reported attribution, not certification of universal French practice. No in-app good-deed scoring, merit counting, sacramental or required custom.",
-      "fr": "L'origine française de cette coutume est une attribution traditionnelle, non une preuve d'usage universel. La charité n'est pas mesurée par un compteur de bonnes actions et ne donne lieu à aucune obligation."
+      "en": "The custom's precise geographical origin has not been established. The straw is optional and is not a measure of grace, charitable merit or a child's spiritual progress.",
+      "fr": "L'origine géographique précise de cet usage n'est pas établie. La paille est facultative et ne mesure ni la grâce, ni le mérite des bonnes actions, ni les progrès spirituels de l'enfant."
     },
     "scope": {
       "en": "Catholic household Advent custom; French origin is a traditional attribution, not universal local practice",
@@ -130,8 +130,8 @@ const PUBLISHED_ARTICLES = [
       "fr": "Là où la coutume est célébrée, participer à une rencontre paroissiale annoncée ; autrement, lire le récit de l'enfance de Jésus et poser un acte concret d'hospitalité."
     },
     "caution": {
-      "en": "Regional and optional, not a ninth-day 1962 Mass formulary, compulsory celebration, default parish procession, confirmed public route or permission for a priestly ritual.",
-      "fr": "Coutume régionale facultative : aucune procession, visite de foyer ou célébration paroissiale ne peut être présumée disponible. Elle ne modifie pas la messe de 1962."
+      "en": "Las Posadas is an optional regional custom, not a required liturgical procession or an added Mass rite. Household visits and parish gatherings depend on arrangements actually made locally.",
+      "fr": "Les posadas sont une coutume régionale facultative, non une procession liturgique imposée ni un rite ajouté à la messe. Les visites et rencontres dépendent de l'organisation locale réelle."
     },
     "scope": {
       "en": "Mexico and other Latin American Catholic communities; some US parishes",
@@ -221,8 +221,8 @@ const PUBLISHED_ARTICLES = [
       "fr": "Visiter une ou plusieurs églises réellement ouvertes pour la prière, ou demeurer en adoration au reposoir de sa propre paroisse."
     },
     "caution": {
-      "en": "Visits only to actually accessible churches; no inferred schedule, map route, obligatory seven stops, priestly ceremony or new event in the Mass reader.",
-      "fr": "La visite de sept églises est facultative ; le nombre de sept n'est pas une obligation. Aucun horaire, parcours ni accès aux reposoirs ne doit être inventé."
+      "en": "Seven church visits are not required. Pray at a church actually open for the Holy Thursday repository; this devotion does not add a ceremony to the 1962 liturgy.",
+      "fr": "La visite de sept églises n'est pas obligatoire. On prie auprès d'un reposoir réellement accessible ; cette dévotion n'ajoute aucune cérémonie à la liturgie de 1962."
     },
     "scope": {
       "en": "Catholic pilgrimage custom with regionally variable number of churches",
@@ -263,8 +263,8 @@ const PUBLISHED_ARTICLES = [
       "fr": "Faire une courte marche en famille, ou s'arrêter dans un jardin, pour prier pour les agriculteurs et remercier Dieu de la création ; participer aux Rogations paroissiales là où elles existent."
     },
     "caution": {
-      "en": "Domestic walk is voluntary and never an automatic liturgical procession; omit historical family's improvised blessings or ceremonial imitation. No rite, invented route, farm proximity requirement or 1962 rubric change.",
-      "fr": "Cette marche familiale privée ne constitue pas une procession liturgique ni une bénédiction des champs par un prêtre. Ne pas reproduire de formules réservées au ministre."
+      "en": "Private family prayer is distinct from the Church's Rogation processions and priestly blessings of fields. A household walk never implies a scheduled parish procession or permission to perform reserved rites.",
+      "fr": "La prière familiale privée se distingue des processions des Rogations et des bénédictions sacerdotales des champs. Une promenade n'annonce pas de procession paroissiale et n'autorise aucun rite réservé."
     },
     "scope": {
       "en": "Historical Catholic household suggestion; farm, garden or city context",
@@ -485,8 +485,8 @@ const PUBLISHED_ARTICLES = [
       "fr": "Choisir quelques plantes adaptées au climat, en prendre soin et réciter une courte prière mariale en les cultivant."
     },
     "caution": {
-      "en": "Voluntary household devotion connected to existing May custom DEV-001, not a new feast. No magical, medicinal or historically unsupported plant properties.",
-      "fr": "Dévotion familiale facultative ; les légendes relatives aux plantes ne sont ni des faits historiques prouvés ni des promesses médicinales."
+      "en": "Plant names and legends are devotional associations, not proof of medicinal virtues or of a medieval garden layout. A Mary Garden is optional and creates no new feast.",
+      "fr": "Les noms et légendes des plantes sont des associations de piété, non des preuves de vertus médicinales ou d'un aménagement médiéval du jardin. Cet usage libre ne crée aucune nouvelle fête."
     },
     "scope": {
       "en": "Catholic household devotion; flowers' traditional Marian names vary by culture",

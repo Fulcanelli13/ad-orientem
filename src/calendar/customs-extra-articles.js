@@ -157,8 +157,8 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "fr": "La mère peut demander au prêtre la bénédiction traditionnelle là où elle est proposée ; il ne s’agit ni d’une punition ni d’une condition pour rentrer dans l’église."
     },
     "caution": {
-      "en": "Preserve the anti-misconception note prominently.",
-      "fr": "Ne pas présenter les relevailles comme une purification d'une impureté ou comme une obligation après quarante jours."
+      "en": "A mother is not ritually impure after childbirth. This blessing is an optional thanksgiving, not a condition for returning to church or an obligation to wait forty days.",
+      "fr": "La mère n'est pas rituellement impure après l'accouchement. Cette bénédiction d'action de grâce est facultative : elle ne conditionne pas le retour à l'église et n'impose aucune attente de quarante jours."
     },
     "occasion": {
       "en": "Family or local occasion",
@@ -248,8 +248,8 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "fr": "Se rendre si possible à un sanctuaire reconnu, consulter ses horaires et dévotions réels, puis prier ; aucun déplacement ni bienfait particulier n’est garanti."
     },
     "caution": {
-      "en": "Do not turn local pilgrimage calendars into universal app law.",
-      "fr": "Ne pas transformer les calendriers locaux de pèlerinages en prescriptions universelles."
+      "en": "A pilgrimage is voluntary. Consult the particular shrine's current programme before travelling: an earlier announcement does not establish an event or opening hours this year.",
+      "fr": "Le pèlerinage est libre. Avant tout déplacement, consulter le programme actuel du sanctuaire : une annonce passée ne garantit ni manifestation ni horaire pour cette année."
     },
     "occasion": {
       "en": "Family or local occasion",
@@ -399,8 +399,8 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "fr": "Allumer un cierge là où cela est permis, l’accompagner d’une prière et respecter les règles de sécurité du lieu."
     },
     "caution": {
-      "en": "Do not imply payment purchases spiritual effects.",
-      "fr": "Ne pas laisser croire que l'achat d'un cierge procure automatiquement une grâce."
+      "en": "A votive candle expresses prayer; paying for one does not purchase grace or guarantee a spiritual favour. Follow the rules and offerings of the particular shrine.",
+      "fr": "Le cierge votif accompagne la prière : son achat n'achète pas la grâce et ne garantit aucune faveur. Respecter les dispositions propres au sanctuaire."
     },
     "occasion": {
       "en": "Family or local occasion",
@@ -633,8 +633,8 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "fr": "Conserver convenablement un cierge déjà béni par un prêtre et l’utiliser pour prier en respectant les précautions de sécurité."
     },
     "caution": {
-      "en": "The 1962 Candlemas reader owns the liturgical blessing and procession; no home ritual is mandated. Historical use beside the deceased is contextual, never an obligation.",
-      "fr": "La bénédiction et la procession appartiennent à la liturgie de la Chandeleur. L'usage historique de cierges auprès des défunts est un témoignage contextualisé, non une obligation domestique."
+      "en": "The candle must already have received the Church's blessing. Its historic use beside the deceased is a devotional witness, not a required family ceremony or a guarantee of protection.",
+      "fr": "Le cierge doit avoir été béni à l'église. Son usage historique auprès des défunts est un témoignage de piété, non une cérémonie familiale obligatoire ni une garantie de protection."
     },
     "occasion": {
       "en": "02/02 — Candlemas (date owned by Calendar)",
@@ -724,8 +724,8 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "fr": "Recevoir la bénédiction d’un ministre habilité là où elle est proposée ; l’application ne bénit pas et ne promet aucune guérison."
     },
     "caution": {
-      "en": "Voluntary, not a Mass or a third-class feast in the ordinary 1962 calendar, not a promise of healing, and no app-provided or lay-invented priestly ceremony. The historical St Blaise candle blessing and modern Candlemas-candle provision must not be equated. Availability varies by parish.",
-      "fr": "Pratique facultative, sans promesse de guérison ni cérémonie à inventer par les laïcs. Ne pas confondre les prescriptions de l'ancien Rituel romain et du livre moderne des bénédictions."
+      "en": "The blessing is offered only where an authorized minister performs the appropriate rite. The older Roman Ritual and later blessing books differ; receiving it neither guarantees healing nor changes the 1962 Mass.",
+      "fr": "Cette bénédiction se reçoit là où un ministre habilité célèbre le rite approprié. L'ancien Rituel romain et les rituels plus récents diffèrent ; elle ne garantit pas la guérison et ne modifie pas la messe de 1962."
     },
     "occasion": {
       "en": "03/02, St Blaise commemoration in 1962 Roman calendar; Calendar owns calculation and precedence",
@@ -911,8 +911,8 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "fr": "Là où cet usage d’origine sicilienne existe, les familles peuvent partager des aliments ou soutenir une œuvre reconnue ; aucune disposition de table n’est universellement prescrite."
     },
     "caution": {
-      "en": "A domestic St Joseph table is not the celebration of a Mass or a lay-performed priestly blessing. Do not present specific pastries, miracle accounts or dates of transferred Masses as established.",
-      "fr": "Une table domestique de saint Joseph n'est ni une messe ni une bénédiction sacerdotale improvisée par les laïcs."
+      "en": "The foods and table arrangement vary between communities. No particular menu is prescribed, and a family table must not be confused with Mass or a priestly blessing.",
+      "fr": "Les mets et la disposition de la table varient selon les communautés. Aucun menu n'est imposé ; une table familiale ne se confond ni avec la messe ni avec une bénédiction sacerdotale."
     },
     "occasion": {
       "en": "19/03 — St Joseph feast; optional local family and parish practice",
@@ -1143,8 +1143,8 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "fr": "La bénédiction revient à un prêtre habilité là où elle existe ; cette notice n’en donne pas de substitut laïc et n’ordonne pas de boire du vin."
     },
     "caution": {
-      "en": "No implication that wine is the Precious Blood, automatic protection, universal parish availability, medical treatment, compulsory drinking or an invitation to drink alcohol. Blessing is ministerial.",
-      "fr": "Ne pas confondre ce vin avec le Précieux Sang ; aucune protection garantie, prescription médicale ou obligation de boire. Bénédiction réservée au ministre compétent."
+      "en": "The poisoned-wine story is a legend, not established biography. Blessed wine is ordinary wine, not the Precious Blood or a medical treatment; no one is required to drink it.",
+      "fr": "Le récit du vin empoisonné est une légende, non un fait biographique établi. Le vin béni reste du vin ordinaire, non le Précieux Sang ni un remède ; personne n'est tenu d'en boire."
     },
     "occasion": {
       "en": "27 December, feast of St John the Apostle and Evangelist in 1962 Roman calendar",
