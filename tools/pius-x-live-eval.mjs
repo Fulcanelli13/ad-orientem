@@ -61,14 +61,13 @@ export function makeEvaluationCases(store){
 /** Diagnostic signals only: no string metric can certify naturalness or history. */
 export function dialogueQualitySignals(current,previous,question){
  const words=s=>String(s||'').toLowerCase().normalize('NFKC')
-  .match(/[\\p{L}\\p{N}]+/gu)||[];
+  .match(/[\p{L}\p{N}]+/gu)||[];
  const tokens=words(current),prev=words(previous),q=words(question);
  const set=new Set(tokens.filter(w=>w.length>=4));
  const old=new Set(prev.filter(w=>w.length>=4));
  const union=new Set([...set,...old]).size;
  const overlap=union?[...set].filter(t=>old.has(t)).length/union:0;
  const sentences=String(current||'').split(/[.!?]+/).map(s=>s.trim()).filter(Boolean);
- const first=sentences[0]||'';
  const repeatedSentence=!!previous&&sentences.some(x=>x.length>=35&&
   String(previous).toLowerCase().includes(x.toLowerCase()));
  const latestQuestionKeywords=q.filter(x=>x.length>=5);
