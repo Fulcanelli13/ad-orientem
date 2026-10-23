@@ -23,7 +23,8 @@ export function selectEvidence(store,input){
  if(c.partial||c.sourceClass!=='PAPAL_DOCUMENT_ADAPTATION')return held('not_papal_primary_document_adaptation');
  if(/(?:absolve|confess my sins|grant absolution|am i in mortal sin|suicid|je veux me tuer|donnez moi l absolution)/i.test(question))
   return held('personal_sacramental_or_crisis_question');
- const selected=c.nodes.find(n=>n.id===input.nodeId)||c.nodes[0];
+ if(input?.nodeId && !c.nodes.some(n=>n.id===input.nodeId))return held('unknown_source_node');
+ const selected=input?.nodeId?c.nodes.find(n=>n.id===input.nodeId):c.nodes[0];
  const nodes=[c.nodes[0],selected].filter((n,i,a)=>a.findIndex(x=>x.id===n.id)===i);
  const evidence=nodes.map(n=>({id:n.id,text:n.a[lang],question:n.q[lang],
   sourceUrl:n.source?.url||c.source.url,locus:n.source?.locus||c.source.locus,
