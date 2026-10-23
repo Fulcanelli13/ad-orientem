@@ -81,7 +81,7 @@ def museum_metadata(rec):
         img=data.get('primaryImage') or ''
         return dict(metadata_status='SOURCE_METADATA_VERIFIED',metadata_license=lic,institution_public_domain='YES' if data.get('isPublicDomain') is True else 'NO',resolved_original_url=img,rights_gate='OPEN_INSTITUTION_EVIDENCE' if data.get('isPublicDomain') is True else 'RIGHTS_REVIEW_NO_AUTO_DOWNLOAD',source_evidence_link='https://www.metmuseum.org/about-the-met/policies-and-documents/open-access')
     if rec['api_type']=='cleveland':
-        match=re.search(r'/art/([0-9.]+)',url)
+        match=re.search(r'/art/([0-9]+(?:\.[0-9A-Za-z]+)+)',url)
         if not match:raise ValueError('Cleveland accession missing')
         data=request_json('https://openaccess-api.clevelandart.org/api/artworks/'+match.group(1)+'/?cc0').get('data') or {}
         license_name=str(data.get('share_license_status') or '')
