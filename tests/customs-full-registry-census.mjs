@@ -579,3 +579,37 @@ for(const row of ccLex.records){
  }
 }
 console.log('132 excerpt-action lexical review rows, 105 low-confidence suggestions, 0 merges or claims of source independence — PASS');
+
+
+// Therese Mueller / George A. Kelly online full-text source action screening.
+// We verify source non-loss and explicit non-promotion, NOT edition facsimile
+// parity, ecclesiastical rite authority or independent practice identity.
+const muellerKelly=load('data/customs/master/mueller-1955-kelly-1959-ewtn-action-intake.v1.json');
+assert.equal(muellerKelly.records.length,204);
+assert.equal(muellerKelly.summary.total_source_action_observations,204);
+assert.equal(muellerKelly.summary.mueller,122);
+assert.equal(muellerKelly.summary.kelly,82);
+assert.equal(muellerKelly.summary.verified_new_customs,0);
+assert.equal(muellerKelly.summary.publications,0);
+const mkIds=new Set(muellerKelly.records.map(r=>r.observation_id));
+assert.equal(mkIds.size,204);
+assert.equal(muellerKelly.records.filter(r=>r.observation_id.startsWith('MUE55-EWTN-')).length,122);
+assert.equal(muellerKelly.records.filter(r=>r.observation_id.startsWith('KEL59-EWTN-')).length,82);
+for(const r of muellerKelly.records){
+ const s=r.observation_id.startsWith('MUE55-')?'MUELLER':r.observation_id.startsWith('KEL59-')?'KELLY':null;
+ assert.ok(s);
+ assert.ok(r.action_label.length>=12);
+ assert.ok(r.source_locator.html_line_start>=muellerKelly.source_evidence[s].range[0]);
+ assert.ok(r.source_locator.html_line_end<=muellerKelly.source_evidence[s].range[1]);
+ assert.equal(r.source_locator.url,muellerKelly.source_evidence[s].url);
+ assert.equal(r.identity_status,'UNVERIFIED_ACTION_OR_VARIANT_NOT_COUNTED_DISTINCT');
+ assert.equal(r.app_publication,'NONE');
+}
+assert.equal(researchCatalogue.external_source_observations_mueller_kelly.length,204);
+assert.deepEqual(new Set(researchCatalogue.external_source_observations_mueller_kelly.map(x=>x.id)),mkIds);
+assert.equal(count.source_observations.mueller_kelly_ewtn_source_action_observations,204);
+assert.equal(count.source_observations.total_source_detail_rows_including_external,1629);
+assert.equal(count.identity_working_rows.provisional_after_53_no_owner_action_review,408);
+assert.equal(count.identity_working_rows.final_uniquely_verified_customs_added,0);
+assert.equal(researchCatalogue.summary.no_new_app_publications,true);
+console.log('Mueller/Kelly EWTN text source actions: 204/204 non-loss, 1,629 aggregate rows, no publication or new canonical groups — PASS');
