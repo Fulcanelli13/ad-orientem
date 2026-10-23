@@ -591,7 +591,7 @@ try{
     "The plot after Lazarus remains a visibly held source proposal, not silently stitched into Scripture");
   await page.locator("#historiaProofBridges").uncheck();
   await page.waitForFunction(()=>document.querySelector("#historiaProofStatus")
-    ?.textContent?.includes("0 proposed source bridge(s) visible"),null,{timeout:25000});
+    ?.textContent?.includes("0 held source bridge(s)/trial(s) visible"),null,{timeout:25000});
   assert.equal(await page.locator("#historiaProofText .proofSourceBridge").count(),0);
   await page.locator("#historiaProofBridges").check();
   await page.locator("#historiaProofEdition").selectOption("dr-challoner");
