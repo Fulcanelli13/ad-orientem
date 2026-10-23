@@ -1,0 +1,39 @@
+name: Sacred Art final 451-catalogue B22 reconciliation
+on:
+  push:
+    branches: [research/b19-original-image-acquisition-probe-20261023]
+    paths: [.github/workflows/ao-art-b22-full-catalogue-final.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  update-read-only-crosswalk:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate B22 NGA object ID and hash joins against 451 artworks
+        run: |
+          python -m py_compile scripts/research/sacred_art_catalogue_b22_crosswalk.py
+          python scripts/research/sacred_art_catalogue_b22_crosswalk.py
+      - name: Commit immutable updated catalogue/48-gap audit
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/research/sacred-art-catalogue451-after-b22.csv data/research/sacred-art-catalogue451-after-b22.summary.json data/research/sacred-art-missing48-after-b22.csv
+          git commit -m 'research: reconcile 31 NGA IIIF images into 451 art catalogue; 48 gaps remain'
+          git fetch origin research/b19-original-image-acquisition-probe-20261023
+          git rebase origin/research/b19-original-image-acquisition-probe-20261023
+          git push origin HEAD:research/b19-original-image-acquisition-probe-20261023
+      - name: Export Excel-ready final status
+        uses: actions/upload-artifact@v4
+        with:
+          name: ao-sacred-art-b22-451-catalogue-crosswalk
+          path: |
+            data/research/sacred-art-catalogue451-after-b22.csv
+            data/research/sacred-art-catalogue451-after-b22.summary.json
+            data/research/sacred-art-missing48-after-b22.csv
+          retention-days: 45
