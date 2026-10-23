@@ -6,7 +6,7 @@ const html=readFileSync('artifacts/pius-x-study-expanded/SPX_Study_Expanded_106_
 const store=readCorpus(html);
 assert.equal(store.data.counts.allNodes,423);
 assert.equal(store.chapters.size,106);
-assert.equal(store.sourceOnlyGate.size,12);
+assert.equal(store.sourceOnlyGate.size,37);
 assert.equal(store.data.approvals.publishing,false);
 
 let eligible=0, held=0;
@@ -29,8 +29,8 @@ for(const c of store.chapters.values()){
   assert(result.status==='held');
  }
 }
-assert.equal(eligible,12);
-assert.equal(held,94);
+assert.equal(eligible,37);
+assert.equal(held,69);
 assert.equal(all.size,106);
 for(const id of ['SPX-PILOT-07','SPX-NEW-021','SPX-NEW-013','SPX-EXP-037',
  'SPX-NEW-003','SPX-NEW-008','SPX-NEW-007','SPX-013']){
@@ -56,7 +56,7 @@ const mapped=followupTriage.followups.filter(x=>x.witnessIds.length);
 const unmapped=followupTriage.followups.filter(x=>x.witnessIds.length===0);
 assert.equal(mapped.length,14);
 assert.equal(unmapped.length,8);
-assert.equal([...store.sourceOnlyGate.values()].reduce((a,v)=>a+v.size,0),36);
+assert.equal([...store.sourceOnlyGate.values()].reduce((a,v)=>a+v.size,0),87);
 for(const item of followupTriage.followups){
  const c=store.chapters.get(item.chapterId);
  const node=c?.nodes.find(n=>n.id===item.nodeId);
@@ -93,6 +93,42 @@ const music=selectEvidence(store,{chapterId:question38.id,nodeId:question38.node
  language:'en',question:question38.nodes[2].q.en});
 assert.deepEqual(music.evidence[0].originalLanguageWitnesses.map(x=>x.id),
  ['TLS-CHANT','TLS-POLYPHONY','TLS-MODERN']);
+
+
+const wave2=JSON.parse(readFileSync(
+ 'previews/pius-x-study/evidence/pius-x-six-document-wave2-20261023.v1.json','utf8'));
+assert.equal(wave2.summary.newlyMappedNodes,51);
+assert.equal(wave2.summary.distinctChapters,25);
+assert.equal(wave2.summary.newOriginalLanguageSnippets,35);
+assert.equal(wave2.summary.completeAnswersCertified,0);
+const assigned=new Set();
+for(const record of wave2.records){
+ assert(!assigned.has(record.nodeId));assigned.add(record.nodeId);
+ const c=store.chapters.get(record.chapterId);
+ assert(c&&c.nodes.some(x=>x.id===record.nodeId));
+ const node=c.nodes.find(x=>x.id===record.nodeId);
+ assert.equal(record.questionEn,node.q.en);
+ for(const language of ['en','fr']){
+  const result=selectEvidence(store,{chapterId:c.id,nodeId:record.nodeId,
+   question:node.q[language],language});
+  assert.equal(result.status,'eligible');
+  assert.equal(result.evidence[0].primaryWitnessStatus,
+   'WAVE_TWO_BOUNDED_ORIGINAL_EXCERPT_CANDIDATE_UNAPPROVED');
+  assert.deepEqual(result.evidence[0].originalLanguageWitnesses.map(x=>x.id),
+   record.witnessIds);
+  assert(result.evidence[0].editorialWarnings.some(x=>x.includes('not a verified complete')));
+  assert(!JSON.stringify(result.evidence).includes(node.a.en));
+  assert(!JSON.stringify(result.evidence).includes(node.a.fr));
+ }
+}
+assert.equal(assigned.size,51);
+assert.equal(new Set(wave2.witnesses.map(x=>x.id)).size,35);
+assert(wave2.witnesses.every(x=>x.originalText.length>15 &&
+ x.sourceUrl.startsWith('https://www.vatican.va/content/pius-x/') &&
+ x.status==='VATICAN_ORIGINAL_LANGUAGE_TEXT_SPOTCHECK_NOT_FULL_CERTIFICATION'));
+const negative=store.chapters.get('SPX-NEW-011');
+assert.equal(selectEvidence(store,{chapterId:negative.id,nodeId:negative.nodes[3].id,
+ question:negative.nodes[3].q.en,language:'en'}).reason,'followup_not_mapped_to_primary_source_claim');
 
 const legacy=store.chapters.get('SPX-PILOT-01');
 const short=selectEvidence(store,{chapterId:legacy.id,nodeId:legacy.nodes[0].id,
@@ -137,4 +173,4 @@ const second=await composeDraft(store,{...input,nodeId:c.nodes[2].id,question:c.
 assert.equal(second.status,'draft');
 assert.equal(calls,before+4);
 assert(seen.evidence[0].originalLanguageWitnesses.some(x=>x.id==='TLS-POLYPHONY'));
-console.log('PASS SPX_SOURCE_ONLY_GATE: 12 source-backed topics and 36 narrow mapped nodes (14 new followups); eight unsupported followups held, no P6 whole answers supplied, zero release approvals');
+console.log('PASS SPX_SOURCE_ONLY_GATE: 37 source-backed subjects and 87 bounded mapped nodes (14 old followups, 51 wave2), 35 new original-language snippets; eight unsupported followups held, no P6 whole answers supplied, zero release approvals');
