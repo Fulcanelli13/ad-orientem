@@ -22,7 +22,9 @@
     ],
     "canonical_customs_added": 0,
     "certified_distinct_identities": 0,
-    "claimed_full_text_exhaustive": false
+    "claimed_full_text_exhaustive": false,
+    "prior_preview_subject_ids_covered": 16,
+    "prior_preview_distinct_source_observations_with_overlap": 15
   },
   "policy": "Source-claim characterization distinguishes reports, anecdote, author suggestions, ritual context and disputed interpretations. Labels are freshly worded factual notes; no substantial source text is reproduced. Historical assertions, especially origins and folk beliefs, require separate evidence.",
   "records": [
@@ -233,7 +235,10 @@
       "place_universality_claim": "NOT_ESTABLISHED",
       "independent_historical_corroboration": "NOT_CHECKED",
       "editorial_note": "Short independently worded factual label; examine source line range before making public descriptions.",
-      "publication": "RESEARCH_ONLY"
+      "publication": "RESEARCH_ONLY",
+      "additional_previous_preview_ids": [
+        "WEI-FAM-PREV-010"
+      ]
     },
     {
       "observation_id": "WEI-FAM56-012",
