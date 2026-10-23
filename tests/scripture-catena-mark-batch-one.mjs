@@ -24,4 +24,21 @@ flags[r.voiceSignal]=(flags[r.voiceSignal]||0)+1;
 }
 assert.equal(distinct.size,300);assert.deepEqual(flags,batch.voiceCounts);
 assert.deepEqual(batch.voiceCounts,{possible_exegetical_question:14,question_owner_unresolved:143,noninterrogative_context_check:143});
+
+const spot=get(root+"mark-batch-01-contextual-spotchecks.v1.json");
+assert.equal(spot.schema,"ao.catena.mark-batch-one-context-spotchecks.v1");
+assert.equal(spot.recordCount,10);assert.equal(spot.records.length,10);
+assert.equal(spot.full300SemanticReviewComplete,false);
+const batchPointers=new Set(batch.rows.map(r=>r.pointer));
+for(const r of spot.records){
+ assert.ok(batchPointers.has(r.pointer));
+ assert.equal(r.canonicalAnswerReference,r.pointer);
+ assert.equal(r.translationOrFatherSpeechGenerated,false);
+ assert.equal(r.originalHistoricalWorkIndependentCheck,false);
+ assert.equal(r.humanEditorialApproval,false);
+ assert.equal(r.publishStatus,"blocked");
+ assert.equal(r.reviewType,"AI_assisted_original_Catena_excerpt_inspection");
+ assert.ok(r.modernEditorialReaderQuestion.endsWith("?"));
+}
+
 console.log("PASS Mark first 300: source parity, complete batch, 157 interrogative excerpts, zero approved dialogue");
