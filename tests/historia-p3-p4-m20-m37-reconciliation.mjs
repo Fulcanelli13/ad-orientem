@@ -73,7 +73,7 @@ for(const row of data.reviews){
   .flatMap(b=>(kind==="SCRIPTURE"?b.refs:[b.reference]).flatMap(expand)));
  const selected=bucketSource("SCRIPTURE");
  const held=bucketSource("SOURCE_BRIDGE_CANDIDATE");
- const trial=new Set(m.beats.flatMap(b=>b.afterSelectedReadthroughTrial?.refs||[]).flatMap(expand));
+ const trial=new Set(m.beats.flatMap(b=>[...(b.afterSelectedReadthroughTrial?.refs||[]),...(b.betweenSelectedReadthroughTrial?.refs||[])]).flatMap(expand));
  const candidates=[...new Set(row.parallelP4CandidateRanges.flatMap(expand))];
  allCandidates+=candidates.length;
  assert.equal(row.parallelP4HistoricalAdditionalVerseEntries,candidates.length);
