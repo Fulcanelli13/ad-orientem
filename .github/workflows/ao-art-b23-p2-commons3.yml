@@ -42,6 +42,11 @@ jobs:
           path: artifacts/b23-p2-commons3/
           retention-days: 7
           if-no-files-found: warn
+      - name: P0 gate - archive unchanged acquisition files in an unpublished GitHub Release
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python scripts/research/sacred_art_release_archive_gate.py --wave b23p2 --source-dir artifacts/b23-p2-commons3
       - name: Preserve outcome audit regardless of eligibility or HTTP 429
         if: success()
         run: |
