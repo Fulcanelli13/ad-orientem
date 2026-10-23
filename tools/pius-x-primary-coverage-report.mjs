@@ -41,7 +41,7 @@ export function buildPrimaryCoverageReport(store,{nextBatchDocuments=12}={}){
   throw new Error('Original twelve-document source population or hold reconciliation drifted');
  const olderHolds=supplemental.followups.filter(r=>r.witnessIds.length===0);
  const resolvedOlderHolds=olderHolds.filter(r=>gate.get(r.chapterId)?.has(r.nodeId)).length;
- if(olderHolds.length!==8||resolvedOlderHolds!==2)
+ if(olderHolds.length!==8||resolvedOlderHolds!==3)
   throw new Error('Older source holds require reconciliation with newer passage evidence');
  for(const c of store.data.chapters){
   if(c.partial)partialChapters++;
