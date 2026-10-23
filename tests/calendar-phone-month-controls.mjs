@@ -202,7 +202,9 @@ try{
        null,{timeout:15000});
      assert.equal(await page.evaluate(()=>globalThis.AO_RUNTIME_V8?.store?.getState?.()?.selectedDate),"2026-11-02",
        "Returning to the existing Calendar month must preserve the selected day");
-     await page.locator('.aoTodayV2Tabs [data-home-calendar-view="day"]').first().click();
+     // The Month grid itself owns the return to the selected Day (there is
+     // no separate Home "Day" tab while the Month picker owns navigation).
+     await cal.locator('[data-cal-pick-date="2026-11-02"]').click();
      await page.waitForFunction(()=>document.getElementById("ao-calendar-modular-root")?.dataset.aoCalendarView==="day",
        null,{timeout:15000});
      await cal.locator('.aoCalCustomsBlock [data-cal-custom-id="DEAD-003"]').waitFor({state:"visible",timeout:15000});
