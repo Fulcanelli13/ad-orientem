@@ -88,6 +88,25 @@ try {
   await page.locator('#spxc-lang').click();
   assert.equal(await page.locator('html').getAttribute('lang'),'fr');
   assert.match(await page.locator('.spxc-answer').first().innerText(),/Nous ne sommes point monté/);
+  // P1a: the existing authored dialogue, not new AI speech, controls stage presence.
+  assert.equal(await page.locator('#spxc-portrait').getAttribute('data-expression')!== 'none',true);
+  await page.locator('.spxc-choice').first().click();
+  assert.equal(await page.locator('.spxc-turn').count(),2);
+  assert.equal(await page.locator('#spxc-portrait').getAttribute('data-expression'),'explaining');
+  const chosenQuestion=await page.locator('.spxc-turn h3').last().innerText();
+  await page.locator('[data-spxc-index]').first().click();
+  // Navigate away and return: the exact selected branch and language survive in-session.
+  await page.locator('#spxc-main [data-spxc-open="SPX-009"]').first().click();
+  assert.equal(await page.locator('[data-spxc-return]').count(),1);
+  await page.locator('[data-spxc-return]').click();
+  assert.equal(await page.locator('.spxc-turn').count(),2);
+  assert.equal(await page.locator('.spxc-turn h3').last().innerText(),chosenQuestion);
+  assert.equal(await page.locator('#spxc-portrait').getAttribute('data-expression'),'explaining');
+  assert.equal(await page.locator('html').getAttribute('lang'),'fr');
+  await page.locator('[data-spxc-source]').last().click();
+  assert.equal(await page.locator('#spxc-portrait').getAttribute('data-expression'),'thoughtful');
+  await page.locator('.spxc-cite-close').click();
+  assert.equal(await page.locator('#spxc-portrait').getAttribute('data-expression'),'explaining');
   await page.screenshot({path:out+'review-screenshots/'+width+'-p6-106-study.png'});
   assert.deepEqual(errors,[],'browser JS errors');
   assert.deepEqual(requests,[],'not offline');
