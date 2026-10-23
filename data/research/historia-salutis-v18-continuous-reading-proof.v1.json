@@ -593,7 +593,44 @@
           "edition": "cpdv-2009",
           "policy": "EDITION_AWARE_REFERENCE_CORRECTION",
           "hasPartialVerseHold": false,
-          "publicationApproved": false
+          "publicationApproved": false,
+          "semanticEditionAlignment": {
+            "kind": "SAME_WRESTLING_AND_RENAMING_DIFFERENT_VERSE_OFFSETS",
+            "englishBaseRefs": [
+              "Genesis 32:22–32"
+            ],
+            "selectedReferencesByEdition": {
+              "dr-challoner": [
+                "Genesis 32:22–32"
+              ],
+              "cpdv-2009": [
+                "Genesis 32:22–32"
+              ],
+              "crampon-1923": [
+                "Genesis 32:23–33"
+              ]
+            },
+            "wrestlingBeginningByEdition": {
+              "dr-challoner": "Genesis 32:24",
+              "cpdv-2009": "Genesis 32:24",
+              "crampon-1923": "Genesis 32:25"
+            },
+            "namingIsraelByEdition": {
+              "dr-challoner": "Genesis 32:28",
+              "cpdv-2009": "Genesis 32:28",
+              "crampon-1923": "Genesis 32:29"
+            },
+            "closingCustomByEdition": {
+              "dr-challoner": "Genesis 32:32",
+              "cpdv-2009": "Genesis 32:32",
+              "crampon-1923": "Genesis 32:33"
+            },
+            "originalV18SourceReference": "Genesis 32:23–33",
+            "noBlindNumericAlignment": true,
+            "sourceEvidence": "All three existing uncollated Genesis 32 witnesses checked 2026-10-23: Crampon places prelude at 32:23, wrestling at 32:25, naming at 32:29 and sinew custom at 32:33; English verses are one number lower. Do not align by integers or edit the imported texts.",
+            "printedEditionCollationPending": true,
+            "publicationApproved": false
+          }
         },
         {
           "kind": "SCRIPTURE",
