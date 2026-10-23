@@ -119,3 +119,18 @@ Public primary source pages:
 - `Haerent animo` Latin: https://www.vatican.va/content/pius-x/la/apost_exhortations/documents/hf_p-x_exh_19080804_haerent-animo.html
 
 The new `tests/pius-x-primary-witness-expansion.mjs` enforces exact source-owner node ordering, stable passage IDs, original-language provenance, no publication flags, 106/423 parity, language-specific metadata and hard holds on the two unsupported future-facing questions. GitHub CI uses a mocked model only; no external provider or live model call occurs here.
+
+
+## P2.4 — Evidence text verification, not just evidence ID verification (23 October 2026)
+
+The four existing original-language primary-witness annexes are now covered by a **23/23 exact-substring audit** against the Vatican's original-language public HTML. The research annotations record each witness's exact Vatican page line and check date (23 October 2026). One earlier *E supremi* excerpt was corrected: a Vatican numbered note interrupts the Anselm quotation after `Testantur, sic ille`; the stored excerpt now ends there, rather than pretending the footnote-marked text forms one uninterrupted quotation. Speaker remains explicitly `ANSELM_QUOTED_BY_PIUS_X`.
+
+- `tests/pius-x-primary-witness-webtext-audit.mjs` compares **all 23** recorded witness excerpts against separately transcribed, short source-context windows drawn from the four Vatican original pages. It also deliberately corrupts one witness in the independent source fixture and verifies the audit reports failure; missing page windows also fail. It does not infer that all 106 chapters are verified.
+- `tools/pius-x-audit-primary-witnesses.mjs` implements the same exact-string presence check against complete official webpage HTML. Normal CI uses injected, limited source windows and performs no network request. For an **actual current website recheck**, an operator can explicitly opt in:
+  
+      AO_SPX_AUDIT_VATICAN_LIVE=I_WANT_TO_VERIFY_ORIGINAL_TEXT node tools/pius-x-audit-primary-witnesses.mjs
+
+  This command fetches the four original Vatican Pius X pages, requires HTTPS and Vatican host/path, checks **every excerpt**, and prints machine-readable results. It does not call any generative model or need an API credential. Page fetch failures and missing excerpts fail closed. The command is **not claimed to have been run successfully in CI**; CI checks the independent, locally captured text instead.
+- The research status is deliberately limited to **literal excerpt presence**. It does **not** independently verify the full translation, theological interpretation, adjacent context, doctrinal claims of the conversation, embedded quotations' authorial attribution beyond the manually recorded caveat, or a full primary-source collation. The script reports all these approvals as false.
+
+The official original texts are linked in the individual annexes. This adds no new product cards, publishing approvals, quote permissions or corpus mutations. Future larger original-source batches can use the same verifier rather than repeating manual ID-only assertions.
