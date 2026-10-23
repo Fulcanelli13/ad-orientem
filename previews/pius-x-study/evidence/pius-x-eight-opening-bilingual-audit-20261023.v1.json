@@ -1,0 +1,502 @@
+{
+  "schema": "AO_SPX_P2_EIGHT_OPENING_BILINGUAL_AUDIT_V1",
+  "status": "REVIEW_ONLY_PRELIMINARY_SEMANTIC_CROSSCHECK",
+  "date": "2026-10-23",
+  "method": "Exact P6 opening text compared in English and French with bounded Vatican original-language source witness propositions; not an approved translation",
+  "summary": {
+    "subjects": 8,
+    "englishOpeningsExamined": 8,
+    "frenchOpeningsExamined": 8,
+    "alignedBilingualClaimSpans": 25,
+    "editorialCautionSpans": 19,
+    "fullAnswersApproved": 0,
+    "translationsApproved": 0,
+    "modelEvidencePromotions": 0
+  },
+  "records": [
+    {
+      "chapterId": "SPX-PILOT-07",
+      "nodeId": "AO.SPX.DIALOGUE.SPX_PILOT_07.OPEN",
+      "documentKey": "pascendi-dominici-gregis",
+      "originalLanguage": "la",
+      "originalAnswerLayer": "P0",
+      "renderedEnglishChecksumFNV1A32": "f78f3c8b",
+      "renderedFrenchChecksumFNV1A32": "0a86963d",
+      "alignedBilingualSpans": [
+        {
+          "enTextSpan": "Agnosticism restricted what reason could know of God",
+          "frTextSpan": "L'agnosticisme limitait ce que la raison peut connaître de Dieu",
+          "witnessIds": [
+            "PD-AGNOST"
+          ],
+          "assessment": "ORIGINAL_LANGUAGE_CORE_SUPPORT_EN_FR_EDITORIAL_PARAPHRASE",
+          "translationApproved": false
+        },
+        {
+          "enTextSpan": "religious sentiment was made the origin",
+          "frTextSpan": "le sentiment religieux devenait l'origine",
+          "witnessIds": [
+            "PD-SENT"
+          ],
+          "assessment": "ORIGINAL_LANGUAGE_CORE_SUPPORT_EN_FR_EDITORIAL_PARAPHRASE",
+          "translationApproved": false
+        },
+        {
+          "enTextSpan": "dogmatic formulas were treated as liable to change",
+          "frTextSpan": "les formules dogmatiques étaient regardées comme variables",
+          "witnessIds": [
+            "PD-DOGMA"
+          ],
+          "assessment": "ORIGINAL_LANGUAGE_CORE_SUPPORT_EN_FR_EDITORIAL_PARAPHRASE",
+          "translationApproved": false
+        },
+        {
+          "enTextSpan": "a synthesis of heresies",
+          "frTextSpan": "synthèse des hérésies",
+          "witnessIds": [
+            "PD-COLLECT"
+          ],
+          "assessment": "ORIGINAL_LANGUAGE_CORE_SUPPORT_EN_FR_EDITORIAL_PARAPHRASE",
+          "translationApproved": false
+        }
+      ],
+      "exceptionSpans": [
+        {
+          "enTextSpan": "and measure of faith",
+          "frTextSpan": "et la mesure de la foi",
+          "code": "EXPANSION_BEYOND_SHORT_WITNESS",
+          "status": "EDITORIAL_CAUTION_NOT_PRIMARY_TEXT_CERTIFIED"
+        },
+        {
+          "enTextSpan": "private motives or culpability",
+          "frTextSpan": "intentions ou la culpabilité",
+          "code": "MODERN_CONTEXT_NOT_VERBATIM",
+          "status": "EDITORIAL_CAUTION_NOT_PRIMARY_TEXT_CERTIFIED"
+        }
+      ],
+      "translationApproval": false,
+      "originalTextClaimApproval": false,
+      "fullAnswerApproved": false,
+      "modelEvidencePromotions": 0
+    },
+    {
+      "chapterId": "SPX-NEW-021",
+      "nodeId": "AO.SPX.DIALOGUE.SPX-NEW-021.OPEN",
+      "documentKey": "acerbo-nimis",
+      "originalLanguage": "la",
+      "originalAnswerLayer": "ORIGINAL_STAGE",
+      "renderedEnglishChecksumFNV1A32": "343c0bdc",
+      "renderedFrenchChecksumFNV1A32": "8b1174bd",
+      "alignedBilingualSpans": [
+        {
+          "enTextSpan": "Confraternity of Christian Doctrine be established in parishes",
+          "frTextSpan": "Confrérie de la Doctrine chrétienne",
+          "witnessIds": [
+            "AN-PARISH"
+          ],
+          "assessment": "ORIGINAL_LANGUAGE_CORE_SUPPORT_EN_FR_EDITORIAL_PARAPHRASE",
+          "translationApproved": false
+        },
+        {
+          "enTextSpan": "especially where priests were too few",
+          "frTextSpan": "surtout là où les prêtres étaient trop peu nombreux",
+          "witnessIds": [
+            "AN-SHORTAGE"
+          ],
+          "assessment": "ORIGINAL_LANGUAGE_CORE_SUPPORT_EN_FR_EDITORIAL_PARAPHRASE",
+          "translationApproved": false
+        },
+        {
+          "enTextSpan": "Lay helpers could offer valuable service",
+          "frTextSpan": "Des auxiliaires laïcs pouvaient rendre un service précieux",
+          "witnessIds": [
+            "AN-LAY"
+          ],
+          "assessment": "ORIGINAL_LANGUAGE_CORE_SUPPORT_EN_FR_EDITORIAL_PARAPHRASE",
+          "translationApproved": false
+        }
+      ],
+      "exceptionSpans": [
+        {
+          "enTextSpan": "a volunteer catechist with an ordained minister",
+          "frTextSpan": "le catéchiste volontaire avec le ministre ordonné",
+          "code": "DISTINCTION_NOT_LITERAL_IN_SHORT_WITNESS",
+          "status": "EDITORIAL_CAUTION_NOT_PRIMARY_TEXT_CERTIFIED"
+        },
+        {
+          "enTextSpan": "present safeguarding, formation and canonical arrangements",
+          "frTextSpan": "les dispositions actuelles de protection, de formation et de droit canonique",
+          "code": "MODERN_LAW_NOT_1905_PAPAL_TEXT",
+          "status": "EDITORIAL_CAUTION_NOT_PRIMARY_TEXT_CERTIFIED"
+        }
+      ],
+      "translationApproval": false,
+      "originalTextClaimApproval": false,
+      "fullAnswerApproved": false,
+      "modelEvidencePromotions": 0
+    },
+    {
+      "chapterId": "SPX-NEW-013",
+      "nodeId": "AO.SPX.DIALOGUE.SPX-NEW-013.OPEN",
+      "documentKey": "pieni-l-animo",
+      "originalLanguage": "it",
+      "originalAnswerLayer": "ORIGINAL_STAGE",
+      "renderedEnglishChecksumFNV1A32": "d8b9463b",
+      "renderedFrenchChecksumFNV1A32": "1cd90286",
+      "alignedBilingualSpans": [
+        {
+          "enTextSpan": "it is not a profession that a man may claim simply because he desires it",
+          "frTextSpan": "n'est pas une profession qu'un homme pourrait exiger parce qu'il la désire",
+          "witnessIds": [
+            "PL-NOTTRADE"
+          ],
+          "assessment": "ORIGINAL_LANGUAGE_CORE_SUPPORT_EN_FR_EDITORIAL_PARAPHRASE",
+          "translationApproved": false
+        },
+        {
+          "enTextSpan": "The needs of a diocese and the suitability of the candidate",
+          "frTextSpan": "Les besoins du diocèse et l'aptitude du candidat",
+          "witnessIds": [
+            "PL-NEEDS",
+            "PL-FIT"
+          ],
+          "assessment": "ORIGINAL_LANGUAGE_CORE_SUPPORT_EN_FR_EDITORIAL_PARAPHRASE",
+          "translationApproved": false
+        },
+        {
+          "enTextSpan": "We placed responsibility for selection upon the bishops",
+          "frTextSpan": "confiions aux évêques",
+          "witnessIds": [
+            "PL-ASPIRANTS"
+          ],
+          "assessment": "ORIGINAL_LANGUAGE_CORE_SUPPORT_EN_FR_EDITORIAL_PARAPHRASE",
+          "translationApproved": false
+        }
+      ],
+      "exceptionSpans": [
+        {
+          "enTextSpan": "pride and contempt for discipline",
+          "frTextSpan": "l'orgueil et le mépris de la discipline",
+          "code": "STRENGTHENED_READING_OF_INDISCIPLINE_AND_INTELLECTUAL_PRIDE",
+          "status": "EDITORIAL_CAUTION_NOT_PRIMARY_TEXT_CERTIFIED"
+        },
+        {
+          "enTextSpan": "not through an avatar declaring who has been called",
+          "frTextSpan": "non par la déclaration d'un avatar",
+          "code": "ANACHRONISTIC_UI_DISCLAIMER",
+          "status": "EDITORIAL_CAUTION_NOT_PRIMARY_TEXT_CERTIFIED"
+        }
+      ],
+      "translationApproval": false,
+      "originalTextClaimApproval": false,
+      "fullAnswerApproved": false,
+      "modelEvidencePromotions": 0
+    },
+    {
+      "chapterId": "SPX-EXP-037",
+      "nodeId": "AO.SPX.DIALOGUE.SPX_EXP_037.OPEN",
+      "documentKey": "sollecitudini",
+      "originalLanguage": "it",
+      "originalAnswerLayer": "P6",
+      "renderedEnglishChecksumFNV1A32": "5f20ab5a",
+      "renderedFrenchChecksumFNV1A32": "4ec0da6d",
+      "alignedBilingualSpans": [
+        {
+          "enTextSpan": "holiness, true artistic worth",
+          "frTextSpan": "la sainteté, une véritable valeur artistique",
+          "witnessIds": [
+            "TLS-HOLY",
+            "TLS-ART"
+          ],
+          "assessment": "ORIGINAL_LANGUAGE_CORE_SUPPORT_EN_FR_EDITORIAL_PARAPHRASE",
+          "translationApproved": false
+        },
+        {
+          "enTextSpan": "a character suited to the Church's universal prayer",
+          "frTextSpan": "un caractère convenant à la prière universelle de l'Église",
+          "witnessIds": [
+            "TLS-UNIVERSE"
+          ],
+          "assessment": "ORIGINAL_LANGUAGE_CORE_SUPPORT_EN_FR_EDITORIAL_PARAPHRASE",
+          "translationApproved": false
+        },
+        {
+          "enTextSpan": "the spirit of the theatre into the sanctuary",
+          "frTextSpan": "dans le sanctuaire l'esprit du théâtre",
+          "witnessIds": [
+            "TLS-THEATRE"
+          ],
+          "assessment": "ORIGINAL_LANGUAGE_CORE_SUPPORT_EN_FR_EDITORIAL_PARAPHRASE",
+          "translationApproved": false
+        }
+      ],
+      "exceptionSpans": [
+        {
+          "enTextSpan": "Gregorian chant offers the clearest model",
+          "frTextSpan": "Le chant grégorien offre le modèle le plus clair",
+          "code": "MORE_SOURCE_PASSAGE_REQUIRED",
+          "status": "EDITORIAL_CAUTION_NOT_PRIMARY_TEXT_CERTIFIED"
+        },
+        {
+          "enTextSpan": "worthy classical polyphony",
+          "frTextSpan": "la polyphonie classique digne du culte",
+          "code": "MORE_SOURCE_PASSAGE_REQUIRED",
+          "status": "EDITORIAL_CAUTION_NOT_PRIMARY_TEXT_CERTIFIED"
+        },
+        {
+          "enTextSpan": "did not reject all modern composition",
+          "frTextSpan": "n'avons pas rejeté toute composition moderne",
+          "code": "MORE_SOURCE_PASSAGE_REQUIRED",
+          "status": "EDITORIAL_CAUTION_NOT_PRIMARY_TEXT_CERTIFIED"
+        }
+      ],
+      "translationApproval": false,
+      "originalTextClaimApproval": false,
+      "fullAnswerApproved": false,
+      "modelEvidencePromotions": 0
+    },
+    {
+      "chapterId": "SPX-NEW-003",
+      "nodeId": "AO.SPX.DIALOGUE.SPX-NEW-003.OPEN",
+      "documentKey": "divino-afflatu",
+      "originalLanguage": "la",
+      "originalAnswerLayer": "ORIGINAL_STAGE",
+      "renderedEnglishChecksumFNV1A32": "b5d770d8",
+      "renderedFrenchChecksumFNV1A32": "67192319",
+      "alignedBilingualSpans": [
+        {
+          "enTextSpan": "multiplication of feasts and their proper offices",
+          "frTextSpan": "la multiplication des fêtes et de leurs offices propres",
+          "witnessIds": [
+            "DA-OFFICES",
+            "DA-OMISSIONS"
+          ],
+          "assessment": "ORIGINAL_LANGUAGE_CORE_SUPPORT_EN_FR_EDITORIAL_PARAPHRASE",
+          "translationApproved": false
+        },
+        {
+          "enTextSpan": "restore a more complete weekly course",
+          "frTextSpan": "rétablir un parcours hebdomadaire plus complet",
+          "witnessIds": [
+            "DA-RESTORE",
+            "DA-WEEK"
+          ],
+          "assessment": "ORIGINAL_LANGUAGE_CORE_SUPPORT_EN_FR_EDITORIAL_PARAPHRASE",
+          "translationApproved": false
+        },
+        {
+          "enTextSpan": "those bound to the Roman Breviary",
+          "frTextSpan": "ceux qui étaient tenus au Bréviaire romain",
+          "witnessIds": [
+            "DA-OBLIGED"
+          ],
+          "assessment": "ORIGINAL_LANGUAGE_CORE_SUPPORT_EN_FR_EDITORIAL_PARAPHRASE",
+          "translationApproved": false
+        }
+      ],
+      "exceptionSpans": [
+        {
+          "enTextSpan": "a varied rhythm of praise and penitence",
+          "frTextSpan": "un rythme varié de louange et de pénitence",
+          "code": "EDITORIAL_SYNTHESIS_WIDER_PASSAGE_NEEDED",
+          "status": "EDITORIAL_CAUTION_NOT_PRIMARY_TEXT_CERTIFIED"
+        },
+        {
+          "enTextSpan": "nor a rule imposing the whole clerical Office upon every layperson",
+          "frTextSpan": "ni que l'Office clérical entier était imposé à chaque laïc",
+          "code": "HISTORICAL_SCOPE_INFERENCE",
+          "status": "EDITORIAL_CAUTION_NOT_PRIMARY_TEXT_CERTIFIED"
+        }
+      ],
+      "translationApproval": false,
+      "originalTextClaimApproval": false,
+      "fullAnswerApproved": false,
+      "modelEvidencePromotions": 0
+    },
+    {
+      "chapterId": "SPX-NEW-008",
+      "nodeId": "AO.SPX.DIALOGUE.SPX-NEW-008.OPEN",
+      "documentKey": "singulari-quadam",
+      "originalLanguage": "la",
+      "originalAnswerLayer": "ORIGINAL_STAGE",
+      "renderedEnglishChecksumFNV1A32": "b32ab82a",
+      "renderedFrenchChecksumFNV1A32": "6fd4c980",
+      "alignedBilingualSpans": [
+        {
+          "enTextSpan": "the social question in Germany",
+          "frTextSpan": "la question sociale en Allemagne",
+          "witnessIds": [
+            "SQ-GERMANY"
+          ],
+          "assessment": "ORIGINAL_LANGUAGE_CORE_SUPPORT_EN_FR_EDITORIAL_PARAPHRASE",
+          "translationApproved": false
+        },
+        {
+          "enTextSpan": "wages, the duration of labour",
+          "frTextSpan": "les salaires, la durée du travail",
+          "witnessIds": [
+            "SQ-WAGES",
+            "SQ-NOTECON"
+          ],
+          "assessment": "ORIGINAL_LANGUAGE_CORE_SUPPORT_EN_FR_EDITORIAL_PARAPHRASE",
+          "translationApproved": false
+        },
+        {
+          "enTextSpan": "concord rather than enmity between social classes",
+          "frTextSpan": "la concorde plutôt que l'hostilité entre classes sociales",
+          "witnessIds": [
+            "SQ-PEACE"
+          ],
+          "assessment": "ORIGINAL_LANGUAGE_CORE_SUPPORT_EN_FR_EDITORIAL_PARAPHRASE",
+          "translationApproved": false
+        }
+      ],
+      "exceptionSpans": [
+        {
+          "enTextSpan": "demands of justice and charity",
+          "frTextSpan": "exigences de justice et de charité",
+          "code": "SOURCE_CONTEXT_REQUIRED",
+          "status": "EDITORIAL_CAUTION_NOT_PRIMARY_TEXT_CERTIFIED"
+        },
+        {
+          "enTextSpan": "a moral dimension",
+          "frTextSpan": "une dimension morale",
+          "code": "EARLIER_QUOTED_AUTHORITY_ATTRIBUTION",
+          "status": "EDITORIAL_CAUTION_NOT_PRIMARY_TEXT_CERTIFIED"
+        },
+        {
+          "enTextSpan": "a modern formula for calculating the wage",
+          "frTextSpan": "une formule moderne pour calculer le salaire",
+          "code": "MODERN_APPLICATION_NOT_VERBATIM",
+          "status": "EDITORIAL_CAUTION_NOT_PRIMARY_TEXT_CERTIFIED"
+        }
+      ],
+      "translationApproval": false,
+      "originalTextClaimApproval": false,
+      "fullAnswerApproved": false,
+      "modelEvidencePromotions": 0
+    },
+    {
+      "chapterId": "SPX-NEW-007",
+      "nodeId": "AO.SPX.DIALOGUE.SPX-NEW-007.OPEN",
+      "documentKey": "editae-saepe",
+      "originalLanguage": "la",
+      "originalAnswerLayer": "ORIGINAL_STAGE",
+      "renderedEnglishChecksumFNV1A32": "f56804c1",
+      "renderedFrenchChecksumFNV1A32": "94248c5f",
+      "alignedBilingualSpans": [
+        {
+          "enTextSpan": "examples of Christian virtue that can be imitated",
+          "frTextSpan": "des exemples de vertu chrétienne à imiter",
+          "witnessIds": [
+            "ES-IMITATE"
+          ],
+          "assessment": "ORIGINAL_LANGUAGE_CORE_SUPPORT_EN_FR_EDITORIAL_PARAPHRASE",
+          "translationApproved": false
+        },
+        {
+          "enTextSpan": "reform of Christian life must be rooted in Christ",
+          "frTextSpan": "la réforme de la vie chrétienne doit s'enraciner dans le Christ",
+          "witnessIds": [
+            "ES-CHRIST"
+          ],
+          "assessment": "ORIGINAL_LANGUAGE_CORE_SUPPORT_EN_FR_EDITORIAL_PARAPHRASE",
+          "translationApproved": false
+        },
+        {
+          "enTextSpan": "St Charles Borromeo",
+          "frTextSpan": "saint Charles Borromée",
+          "witnessIds": [
+            "ES-CHARLES"
+          ],
+          "assessment": "ORIGINAL_LANGUAGE_CORE_SUPPORT_EN_FR_EDITORIAL_PARAPHRASE",
+          "translationApproved": false
+        }
+      ],
+      "exceptionSpans": [
+        {
+          "enTextSpan": "Gregory the Great and Anselm",
+          "frTextSpan": "Grégoire le Grand et Anselme",
+          "code": "MISSING_JOHN_CHRYSOSTOM_FROM_THREE_NAME_SOURCE_LIST",
+          "status": "EDITORIAL_CAUTION_NOT_PRIMARY_TEXT_CERTIFIED"
+        },
+        {
+          "enTextSpan": "holiness, teaching and pastoral charity",
+          "frTextSpan": "la sainteté, l'enseignement et la charité pastorale",
+          "code": "THEMATIC_SYNTHESIS",
+          "status": "EDITORIAL_CAUTION_NOT_PRIMARY_TEXT_CERTIFIED"
+        }
+      ],
+      "translationApproval": false,
+      "originalTextClaimApproval": false,
+      "fullAnswerApproved": false,
+      "modelEvidencePromotions": 0
+    },
+    {
+      "chapterId": "SPX-013",
+      "nodeId": "AO.SPX.DIALOGUE.SPX_013.OPEN",
+      "documentKey": "ad-diem-illum-laetissimum",
+      "originalLanguage": "la",
+      "originalAnswerLayer": "P1",
+      "renderedEnglishChecksumFNV1A32": "bc74cfa0",
+      "renderedFrenchChecksumFNV1A32": "eb1837e6",
+      "alignedBilingualSpans": [
+        {
+          "enTextSpan": "within the one saving work of Jesus Christ",
+          "frTextSpan": "dans l'unique œuvre salvatrice de Jésus-Christ",
+          "witnessIds": [
+            "ADI-CHRIST",
+            "ADI-MEDIATOR",
+            "ADI-FOUNTAIN"
+          ],
+          "assessment": "ORIGINAL_LANGUAGE_CORE_SUPPORT_EN_FR_EDITORIAL_PARAPHRASE",
+          "translationApproved": false
+        },
+        {
+          "enTextSpan": "Her maternal intercession is not another redemption",
+          "frTextSpan": "Son intercession maternelle n'est pas une autre rédemption",
+          "witnessIds": [
+            "ADI-MARY",
+            "ADI-GRACE"
+          ],
+          "assessment": "ORIGINAL_LANGUAGE_CORE_SUPPORT_EN_FR_EDITORIAL_PARAPHRASE",
+          "translationApproved": false
+        },
+        {
+          "enTextSpan": "true Marian devotion should lead to a more faithful Christian life",
+          "frTextSpan": "la vraie dévotion mariale doit conduire à une vie chrétienne plus fidèle",
+          "witnessIds": [
+            "ADI-KNOW",
+            "ADI-CLOSENESS"
+          ],
+          "assessment": "ORIGINAL_LANGUAGE_CORE_SUPPORT_EN_FR_EDITORIAL_PARAPHRASE",
+          "translationApproved": false
+        }
+      ],
+      "exceptionSpans": [
+        {
+          "enTextSpan": "the imitation of her virtues and obedience to the teaching of her Son",
+          "frTextSpan": "l'imitation de ses vertus et à l'obéissance envers l'enseignement de son Fils",
+          "code": "MORE_MARIAN_SOURCE_TEXT_REQUIRED",
+          "status": "EDITORIAL_CAUTION_NOT_PRIMARY_TEXT_CERTIFIED"
+        },
+        {
+          "enTextSpan": "not a claim that We privately answered this visitor in person",
+          "frTextSpan": "non la prétention d'avoir personnellement répondu au visiteur",
+          "code": "OUT_OF_CHARACTER_EDITORIAL_DISCLAIMER",
+          "status": "EDITORIAL_CAUTION_NOT_PRIMARY_TEXT_CERTIFIED"
+        },
+        {
+          "enTextSpan": "Her maternal intercession",
+          "frTextSpan": "Son intercession maternelle",
+          "code": "PIUS_IX_EMBEDDED_QUOTE_ATTRIBUTION",
+          "status": "EDITORIAL_CAUTION_NOT_PRIMARY_TEXT_CERTIFIED"
+        }
+      ],
+      "translationApproval": false,
+      "originalTextClaimApproval": false,
+      "fullAnswerApproved": false,
+      "modelEvidencePromotions": 0
+    }
+  ]
+}
