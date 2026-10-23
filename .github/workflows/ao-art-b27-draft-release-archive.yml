@@ -1,0 +1,161 @@
+name: P0 Sacred Art zero-euro original rescue to UNPUBLISHED GitHub Release
+
+on:
+  push:
+    branches: [rescue/sacred-art-zero-euro-20261024]
+    paths: [.github/workflows/ao-art-b27-draft-release-archive.yml]
+  workflow_dispatch:
+
+permissions:
+  actions: read
+  contents: write
+
+concurrency:
+  group: ao-sacred-art-zero-euro-draft-release-rescue
+  cancel-in-progress: false
+
+env:
+  ARCHIVE_TAG: sacred-art-originals-b26-20261024
+
+jobs:
+  init-unpublished-release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Create or verify strictly unpublished preservation release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if gh release view "$ARCHIVE_TAG" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            test "$(gh release view "$ARCHIVE_TAG" --repo "$GITHUB_REPOSITORY" --json isDraft --jq .isDraft)" = true
+          else
+            gh release create "$ARCHIVE_TAG" --repo "$GITHUB_REPOSITORY" --target "$GITHUB_SHA" --draft \
+              --title "Sacred Art recovered originals — PRIVATE DRAFT, NOT FOR PUBLICATION" \
+              --notes 'Original research image bytes, checksums and provenance; storage-only unpublished draft. Rights and editorial approvals have NOT been established for every item. Never publish this release without item-level review. Source rescue: B26 workflow run 40021937137. No paid storage services.'
+          fi
+
+  archive-wave:
+    needs: init-unpublished-release
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        include:
+          - {key: b19, artifact_id: 12531425586, min_images: 9}
+          - {key: b20, artifact_id: 12531121192, min_images: 45}
+          - {key: b21, artifact_id: 12530708658, min_images: 74}
+          - {key: b21r1, artifact_id: 12530996817, min_images: 12}
+          - {key: b21r2, artifact_id: 12531530659, min_images: 9}
+          - {key: b20r1, artifact_id: 12531750002, min_images: 10}
+          - {key: b22nga, artifact_id: 12531395771, min_images: 31}
+          - {key: b22kress, artifact_id: 12530218995, min_images: 1}
+          - {key: b23p1, artifact_id: 12531431090, min_images: 1}
+          - {key: b23p2, artifact_id: 12530378695, min_images: 3}
+          - {key: b23commons35, artifact_id: 12531066581, min_images: 35}
+          - {key: b23r2commons46, artifact_id: 12531745054, min_images: 46}
+          - {key: b23r3mpo, artifact_id: 12531136513, min_images: 1}
+          - {key: b24exact8, artifact_id: 12529899905, min_images: 8}
+          - {key: b24exact4, artifact_id: 12530637997, min_images: 4}
+          - {key: b25ribera, artifact_id: 12530408673, min_images: 1}
+    steps:
+      - name: Restore B26 rescue copy of original evidence and unchanged artwork bytes
+        uses: actions/download-artifact@v4
+        with:
+          artifact-ids: ${{ matrix.artifact_id }}
+          run-id: '40021937137'
+          repository: Fulcanelli13/ad-orientem
+          github-token: ${{ github.token }}
+          path: incoming
+          merge-multiple: true
+      - name: Validate every source file against B26 file-level SHA-256 index
+        env:
+          WAVE: ${{ matrix.key }}
+          MIN_IMAGES: ${{ matrix.min_images }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib, json, os, pathlib
+          root = pathlib.Path('incoming')
+          idx = json.loads((root/'AO_PRESERVATION_SHA256_INDEX.json').read_text(encoding='utf-8'))
+          assert idx['wave']==os.environ['WAVE'], 'Unexpected wave'
+          assert idx['publication_rights_checked'] is False, 'Storage workflow must not create rights approvals'
+          assert idx['editorial_approvals_created']==0, 'Storage workflow must not approve publication'
+          rows = idx['file_sha256']
+          assert len(rows)==idx['files_with_image_extensions']>=int(os.environ['MIN_IMAGES']), 'Count mismatch'
+          assert len({r['path'] for r in rows})==len(rows), 'Duplicate names in index'
+          for record in rows:
+              rel=pathlib.PurePosixPath(record['path'])
+              assert not rel.is_absolute() and '..' not in rel.parts, 'Unsafe path'
+              p=root.joinpath(*rel.parts)
+              assert p.is_file(), 'Missing '+record['path']
+              h=hashlib.sha256()
+              with p.open('rb') as stream:
+                  for block in iter(lambda:stream.read(1024*1024),b''):h.update(block)
+              assert h.hexdigest()==record['sha256'], 'Digest mismatch '+record['path']
+              assert p.stat().st_size==record['bytes'], 'Byte size mismatch '+record['path']
+          assert sum(r['bytes'] for r in rows)==idx['source_bytes'], 'Byte total mismatch'
+          extensions={'.jpg','.jpeg','.png','.webp','.tiff','.tif','.mpo','.jp2','.avif'}
+          observed={p.relative_to(root).as_posix() for p in root.rglob('*') if p.is_file() and p.suffix.lower() in extensions}
+          assert observed=={r['path'] for r in rows}, 'Indexed image-file set mismatch'
+          print('VERIFIED',idx['wave'],len(rows),idx['source_bytes'])
+          PY
+      - name: Pack archive without modifying any original
+        env:
+          WAVE: ${{ matrix.key }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          tar -C incoming -cf "ao-source-b26-${WAVE}.tar" .
+          test "$(stat -c %s "ao-source-b26-${WAVE}.tar")" -lt 2147483648
+          sha256sum "ao-source-b26-${WAVE}.tar"
+      - name: Upload to unpublished release and verify the downloaded remote bytes
+        env:
+          GH_TOKEN: ${{ github.token }}
+          WAVE: ${{ matrix.key }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(gh release view "$ARCHIVE_TAG" --repo "$GITHUB_REPOSITORY" --json isDraft --jq .isDraft)" = true
+          file="ao-source-b26-${WAVE}.tar"
+          if ! gh release view "$ARCHIVE_TAG" --repo "$GITHUB_REPOSITORY" --json assets --jq '.assets[].name' | grep -Fxq "$file"; then
+            gh release upload "$ARCHIVE_TAG" "$file" --repo "$GITHUB_REPOSITORY"
+          fi
+          mkdir -p verify
+          gh release download "$ARCHIVE_TAG" --pattern "$file" --dir verify --repo "$GITHUB_REPOSITORY"
+          mkdir -p verify/unpacked
+          tar -xf "verify/$file" -C verify/unpacked
+          diff -qr incoming verify/unpacked
+          sha256sum "verify/$file"
+          echo "REMOTE_BYTES_VERIFIED $WAVE"
+
+  final-gate:
+    needs: archive-wave
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Verify draft-only status and exactly sixteen preserved archives
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(gh release view "$ARCHIVE_TAG" --repo "$GITHUB_REPOSITORY" --json isDraft --jq .isDraft)" = true
+          gh release view "$ARCHIVE_TAG" --repo "$GITHUB_REPOSITORY" --json assets,isDraft,tagName > release.json
+          python - <<'PY'
+          import json
+          release=json.load(open('release.json',encoding='utf-8'))
+          assert release['isDraft'] is True, 'Archive was publicly published'
+          assets={a['name']:a for a in release['assets'] if a['name'].startswith('ao-source-b26-') and a['name'].endswith('.tar')}
+          assert len(assets)==16, ('Expected 16 archive assets, got',len(assets))
+          assert all(x['size']>10000 for x in assets.values()), 'Unexpectedly small archive'
+          summary={'tag':release['tagName'],'draft':release['isDraft'],'source_run_id':40021937137,'archive_assets':len(assets),'bytes':sum(a['size'] for a in assets.values()),'assets':[{'name':a['name'],'bytes':a['size'],'digest':a.get('digest'),'asset_id':a['id']} for a in sorted(assets.values(),key=lambda r:r['name'])],'editorial_approvals_created':0,'public_release_allowed':False}
+          open('AO_ARCHIVE_RELEASE_INDEX.json','w',encoding='utf-8').write(json.dumps(summary,indent=2)+'\n')
+          print('DRAFT_ARCHIVE_VERIFIED',len(assets),'total_bytes',summary['bytes'])
+          PY
+          gh release upload "$ARCHIVE_TAG" AO_ARCHIVE_RELEASE_INDEX.json --repo "$GITHUB_REPOSITORY"
+          echo 'P0 source preservation uploaded to an UNPUBLISHED GitHub Release. Do not publish; legal review and independent backup remain outstanding.'
