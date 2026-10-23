@@ -1,0 +1,54 @@
+name: Sacred Art 159-image offline visual review gallery
+on:
+  push:
+    branches: [research/b19-original-image-acquisition-probe-20261023]
+    paths: [.github/workflows/ao-art-159-review-gallery.yml]
+  workflow_dispatch:
+permissions:
+  actions: read
+  contents: write
+jobs:
+  combine-review-evidence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install Pillow for lossless-source-sheet thumbnail crops
+        run: python -m pip install --disable-pip-version-check 'Pillow>=11,<13'
+      - name: Download six SHA256-verified visual inspection archives, not 1.5GB originals
+        uses: actions/download-artifact@v4
+        with:
+          run-id: '39974008809'
+          repository: Fulcanelli13/ad-orientem
+          github-token: ${{ github.token }}
+          pattern: ad-orientem-visual-review-*
+          path: incoming
+      - name: Cross-check 159 source identities and produce offline HTML review interface
+        run: |
+          python -m py_compile scripts/research/sacred_art_visual_review_pack.py
+          python scripts/research/sacred_art_visual_review_pack.py \
+            --incoming incoming \
+            --output artifacts/sacred-art-review-pack
+      - name: Preserve complete manual review pack (HTML, images, CSV)
+        uses: actions/upload-artifact@v4
+        with:
+          name: ad-orientem-159-source-human-visual-review-pack
+          path: artifacts/sacred-art-review-pack/
+          retention-days: 60
+          if-no-files-found: error
+      - name: Commit compact master QA queue and metrics to research branch
+        shell: bash
+        run: |
+          cp artifacts/sacred-art-review-pack/visual-review-245-source-queue.csv data/research/sacred-art-visual-review-245-queue.csv
+          cp artifacts/sacred-art-review-pack/review-summary.json data/research/sacred-art-visual-review-159.summary.json
+          cp artifacts/sacred-art-review-pack/potential-visual-duplicates.csv data/research/sacred-art-visual-review-potential-duplicates.csv
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/research/sacred-art-visual-review-245-queue.csv data/research/sacred-art-visual-review-159.summary.json data/research/sacred-art-visual-review-potential-duplicates.csv
+          git commit -m 'research: preserve 159-image technical QA and 245-source manual review queue'
+          git fetch origin research/b19-original-image-acquisition-probe-20261023
+          git rebase origin/research/b19-original-image-acquisition-probe-20261023
+          git push origin HEAD:research/b19-original-image-acquisition-probe-20261023
