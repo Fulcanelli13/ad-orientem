@@ -1,0 +1,36 @@
+{
+  "source_workbook": "Ad_Orientem_Complete_Visual_Asset_Master_Batch19_2026-10-23.xlsx",
+  "catalogue_rows": 451,
+  "frozen_previously_approved": 107,
+  "frozen_permanently_rejected": 68,
+  "active_nonrejected_artworks": 383,
+  "acquisition_source_identities": 245,
+  "linked_by_explicit_catalogue_id": 202,
+  "additional_url_alias_candidate_matches": 0,
+  "catalogue_status_counts": {
+    "LEGACY_PREVIEW_ONLY": 150,
+    "ACQUIRED_ORIGINAL": 140,
+    "UNMATCHED_SOURCE_NO_IMAGE": 68,
+    "NO_SOURCE_NO_IMAGE": 7,
+    "COMMONS_429_NO_IMAGE": 4,
+    "ACQUIRED_MUSEUM_PRINT": 14,
+    "FROZEN_REJECTED": 68
+  },
+  "active_artworks_with_either_new_image_or_legacy_preview": 304,
+  "active_artworks_without_any_recorded_image": 79,
+  "missing_image_priority_counts": {
+    "P2": 51,
+    "P1": 28
+  },
+  "not_yet_technically_release_certified": 383,
+  "legacy_release_quality_certified": 0,
+  "new_manual_visual_approvals": 0,
+  "new_publication_approvals": 0,
+  "constraints": [
+    "Existing photo preview is not proof of a distributable image master",
+    "One source may support multiple artwork catalogue IDs; source identities are not artwork counts",
+    "URL alias matches require manual identity reconciliation",
+    "Source-rights and visual/editorial gates independent"
+  ],
+  "generated_utc": "2026-10-23T19:12:34+00:00"
+}

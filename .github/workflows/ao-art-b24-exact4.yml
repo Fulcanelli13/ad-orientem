@@ -1,0 +1,60 @@
+name: B24 four further exact-inventory artwork sources
+on:
+  push:
+    branches: [research/b19-original-image-acquisition-probe-20261023]
+    paths: [.github/workflows/ao-art-b24-exact4.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: ao-b24-exact4-acquisition
+  cancel-in-progress: false
+jobs:
+  acquire:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check 'Pillow>=11,<13'
+      - name: Enforce exact four identity and independent file license checks
+        run: |
+          python - <<'PY'
+          import json,pathlib
+          m=json.loads(pathlib.Path('data/research/sacred-art-b24-exact4-more.manifest.json').read_text())
+          r=m['records']
+          assert len(r)==4 and len({x['record_id'] for x in r})==4
+          assert all(x['download_gate']=='METADATA_FIRST' and x['editorial_gate']=='NOT_APPROVED' for x in r)
+          PY
+          python scripts/research/sacred_art_acquire.py \
+            --manifest data/research/sacred-art-b24-exact4-more.manifest.json \
+            --output artifacts/b24-exact4 \
+            --max-files 4 \
+            --max-bytes 85000000 \
+            --prior-audit data/research/no-prior-b24exact4.csv
+      - name: Retain evidence and source image binaries temporarily
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ao-b24-exact4-image-originals-and-rights-audit
+          path: artifacts/b24-exact4/
+          retention-days: 7
+          if-no-files-found: warn
+      - name: Commit original licence and photo-hash audit
+        if: success()
+        run: |
+          cp artifacts/b24-exact4/Acquisition_results.csv data/research/sacred-art-b24-exact4.audit.csv
+          cp artifacts/b24-exact4/Acquisition_summary.json data/research/sacred-art-b24-exact4.audit-summary.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/research/sacred-art-b24-exact4.audit.csv data/research/sacred-art-b24-exact4.audit-summary.json
+          git commit -m 'research: acquire four more documented museum artworks with SHA256 and publication holds'
+          for i in 1 2 3; do
+            git fetch origin research/b19-original-image-acquisition-probe-20261023
+            git rebase origin/research/b19-original-image-acquisition-probe-20261023
+            git push origin HEAD:research/b19-original-image-acquisition-probe-20261023 && exit 0
+            sleep 4
+          done
+          exit 1

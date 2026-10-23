@@ -1,0 +1,55 @@
+name: B24 43-artwork Commons candidate discovery
+on:
+  push:
+    branches: [research/b19-original-image-acquisition-probe-20261023]
+    paths: [.github/workflows/ao-art-b24-43-discovery.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: ao-sacred-art-b24-commons-discovery
+  cancel-in-progress: false
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check 43 frozen P2 gaps; script compiles and cannot publish
+        run: |
+          python -m py_compile scripts/research/sacred_art_b24_commons_discovery43.py
+          python - <<'PY'
+          import csv
+          with open('data/research/sacred-art-missing-after-b23r2.csv',newline='',encoding='utf-8') as f:r=list(csv.DictReader(f))
+          assert len(r)==43 and len({x['artwork_id'] for x in r})==43
+          assert all(x['priority']=='P2' for x in r)
+          PY
+      - name: Search file records at paced rate; store candidate metadata only
+        run: python scripts/research/sacred_art_b24_commons_discovery43.py
+      - name: Preserve candidate search audit and licence clues in branch
+        run: |
+          cp artifacts/b24-commons-discovery43/Candidates.csv data/research/sacred-art-b24-commons-43-candidates.csv
+          cp artifacts/b24-commons-discovery43/Artwork_screen.csv data/research/sacred-art-b24-commons-43-screen.csv
+          cp artifacts/b24-commons-discovery43/Discovery_summary.json data/research/sacred-art-b24-commons-43.summary.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/research/sacred-art-b24-commons-43-candidates.csv data/research/sacred-art-b24-commons-43-screen.csv data/research/sacred-art-b24-commons-43.summary.json
+          git commit -m 'research: 43 missing artworks searched against Commons file namespace, all decisions remain holds'
+          for i in 1 2 3; do
+            git fetch origin research/b19-original-image-acquisition-probe-20261023
+            git rebase origin/research/b19-original-image-acquisition-probe-20261023
+            git push origin HEAD:research/b19-original-image-acquisition-probe-20261023 && exit 0
+            sleep 4
+          done
+          exit 1
+      - name: Upload candidate evidence and summary
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ao-sacred-art-b24-43-commons-file-candidate-evidence
+          path: artifacts/b24-commons-discovery43/
+          retention-days: 45
+          if-no-files-found: warn

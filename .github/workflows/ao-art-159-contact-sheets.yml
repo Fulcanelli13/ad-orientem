@@ -1,0 +1,54 @@
+name: Sacred Art 159-image offline visual review preparation
+on:
+  push:
+    branches: [research/b19-original-image-acquisition-probe-20261023]
+    paths: [.github/workflows/ao-art-159-contact-sheets.yml]
+  workflow_dispatch:
+permissions:
+  actions: read
+  contents: read
+jobs:
+  per-wave-contact-sheets:
+    name: Review sources ${{ matrix.wave }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    strategy:
+      fail-fast: false
+      max-parallel: 6
+      matrix:
+        include:
+          - {wave: B19, run_id: 39959040002, artifact_id: 12504370160}
+          - {wave: B20, run_id: 39962681470, artifact_id: 12504877967}
+          - {wave: B21, run_id: 39966283017, artifact_id: 12506957700}
+          - {wave: B21R1, run_id: 39971357475, artifact_id: 12508169356}
+          - {wave: B21R2, run_id: 39972025706, artifact_id: 12509437617}
+          - {wave: B20R1, run_id: 39972490442, artifact_id: 12509542476}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install Pillow image decoder
+        run: python -m pip install --disable-pip-version-check 'Pillow>=11,<13'
+      - name: Restore exact prior original/print image acquisition artifact
+        uses: actions/download-artifact@v4
+        with:
+          artifact-ids: '${{ matrix.artifact_id }}'
+          run-id: '${{ matrix.run_id }}'
+          repository: Fulcanelli13/ad-orientem
+          github-token: ${{ github.token }}
+          path: incoming
+      - name: Validate all extracted images against committed SHA-256 source IDs
+        run: |
+          python scripts/research/sacred_art_contact_sheets.py \
+            --wave ${{ matrix.wave }} \
+            --incoming incoming \
+            --output reviews/${{ matrix.wave }}
+      - name: Preserve review contact sheets and source-specific QA CSV
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ad-orientem-visual-review-${{ matrix.wave }}
+          path: reviews/${{ matrix.wave }}/
+          retention-days: 30
+          if-no-files-found: warn

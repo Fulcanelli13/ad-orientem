@@ -1,0 +1,49 @@
+name: B23 controlled P1 Pentecost exact file retry
+on:
+  push:
+    branches: [research/b19-original-image-acquisition-probe-20261023]
+    paths: [.github/workflows/ao-art-b23-p1-pentecost.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: ao-sacred-art-p1-commons-single-file
+  cancel-in-progress: false
+jobs:
+  one-file-verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check 'Pillow>=11,<13'
+      - name: Acquire only the exact earlier deferred painting with fresh source licence metadata
+        run: |
+          python scripts/research/sacred_art_acquire.py \
+            --manifest data/research/sacred-art-b23-p1-pentecost.manifest.json \
+            --output artifacts/b23-p1-pentecost \
+            --max-files 1 \
+            --max-bytes 25000000 \
+            --prior-audit data/research/no-prior-b23.csv
+      - name: Preserve result and image if source permits request
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ao-b23-p1-debray-pentecost-source-evidence
+          path: artifacts/b23-p1-pentecost/
+          retention-days: 7
+          if-no-files-found: warn
+      - name: Commit the one-record source audit, regardless of 429
+        if: success()
+        run: |
+          cp artifacts/b23-p1-pentecost/Acquisition_results.csv data/research/sacred-art-b23-p1-pentecost.audit.csv
+          cp artifacts/b23-p1-pentecost/Acquisition_summary.json data/research/sacred-art-b23-p1-pentecost.audit-summary.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/research/sacred-art-b23-p1-pentecost.audit.csv data/research/sacred-art-b23-p1-pentecost.audit-summary.json
+          git commit -m 'research: record one copyright-gated Salomon de Bray Pentecost original retry'
+          git fetch origin research/b19-original-image-acquisition-probe-20261023
+          git rebase origin/research/b19-original-image-acquisition-probe-20261023
+          git push origin HEAD:research/b19-original-image-acquisition-probe-20261023

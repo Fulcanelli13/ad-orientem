@@ -1,0 +1,55 @@
+name: B24 exact museum object cross-reference verification
+on:
+  push:
+    branches: [research/b19-original-image-acquisition-probe-20261023]
+    paths: [.github/workflows/ao-art-b24-exact-object-check.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: ao-b24-museum-identity-evidence-only
+  cancel-in-progress: false
+jobs:
+  candidate-provenance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check source crosswalk and script syntax
+        run: |
+          python -m py_compile scripts/research/sacred_art_b24_exact_object_evidence.py
+          python - <<'PY'
+          import csv
+          with open('data/research/sacred-art-b24-commons-43-candidates.csv',encoding='utf-8',newline='') as f:rows=list(csv.DictReader(f))
+          assert len(rows)==197,len(rows)
+          with open('data/research/sacred-art-missing-after-b23r2.csv',encoding='utf-8',newline='') as f:art=list(csv.DictReader(f))
+          assert len(art)==43
+          PY
+      - name: Retrieve source-page wikitext in batches and compare exact institutional object IDs
+        run: python scripts/research/sacred_art_b24_exact_object_evidence.py
+      - name: Preserve precise-object source audit, no new publication approvals
+        run: |
+          cp artifacts/b24-objectid-verification/Object_identity_evidence.csv data/research/sacred-art-b24-exact-object-evidence.csv
+          cp artifacts/b24-objectid-verification/Object_identity_summary.json data/research/sacred-art-b24-exact-object-evidence.summary.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/research/sacred-art-b24-exact-object-evidence.csv data/research/sacred-art-b24-exact-object-evidence.summary.json
+          git commit -m 'research: compare 197 art-image candidates with literal institutional object identifiers'
+          for i in 1 2 3; do
+            git fetch origin research/b19-original-image-acquisition-probe-20261023
+            git rebase origin/research/b19-original-image-acquisition-probe-20261023
+            git push origin HEAD:research/b19-original-image-acquisition-probe-20261023 && exit 0
+            sleep 4
+          done
+          exit 1
+      - name: Upload raw compact evidence for research review
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ao-b24-exact-object-identifier-verification
+          path: artifacts/b24-objectid-verification/
+          retention-days: 45
+          if-no-files-found: warn

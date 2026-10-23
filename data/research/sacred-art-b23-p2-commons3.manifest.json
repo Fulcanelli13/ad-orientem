@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0",
+  "wave": "B23_P2_COMMONS3",
+  "source_master": "Ad_Orientem_Complete_Visual_Asset_Master_Batch19_2026-10-23.xlsx",
+  "purpose": "Exact-source 3 Commons artworks, metadata-first, throttle and stop on 429",
+  "records": [
+    {
+      "asset_source_id": "AO-B23-P2-W44-006",
+      "record_id": "W44-006",
+      "source_sheet": "PAINTING CATALOGUE",
+      "source_row": 113,
+      "title": "Saint Benedict in Prayer",
+      "artist": "Jean Restout (attribution in file name)",
+      "recorded_rights": "",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Saint_Beno%C3%AEt_en_pri%C3%A8re_de_Jean_Restout.jpg",
+      "commons_title": "File:Saint Benoît en prière de Jean Restout.jpg",
+      "api_type": "commons",
+      "download_gate": "METADATA_FIRST",
+      "related_records": [
+        "PAINTING CATALOGUE:W44-006"
+      ]
+    },
+    {
+      "asset_source_id": "AO-B23-P2-podesti-margaret-mary-source",
+      "record_id": "podesti-margaret-mary-source",
+      "source_sheet": "PAINTING CATALOGUE",
+      "source_row": 118,
+      "title": "Apparizione a Marguerite Marie Alacoque",
+      "artist": "Attributed on Commons to Francesco Podesti",
+      "recorded_rights": "",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Apparizione_a_Marguerite_Marie_Alacoque.jpg",
+      "commons_title": "File:Apparizione a Marguerite Marie Alacoque.jpg",
+      "api_type": "commons",
+      "download_gate": "METADATA_FIRST",
+      "related_records": [
+        "PAINTING CATALOGUE:podesti-margaret-mary-source"
+      ]
+    },
+    {
+      "asset_source_id": "AO-B23-P2-commons-baroncelli-pentecost",
+      "record_id": "commons-baroncelli-pentecost",
+      "source_sheet": "PAINTING CATALOGUE",
+      "source_row": 444,
+      "title": "Pentecost",
+      "artist": "Master of the Baroncelli Portraits",
+      "recorded_rights": "PUBLIC_DOMAIN_PD_ART_PDM",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Master_of_the_Baroncelli_Portraits_-_Pentecost.jpg",
+      "commons_title": "File:Master of the Baroncelli Portraits - Pentecost.jpg",
+      "api_type": "commons",
+      "download_gate": "METADATA_FIRST",
+      "related_records": [
+        "PAINTING CATALOGUE:commons-baroncelli-pentecost"
+      ]
+    }
+  ]
+}

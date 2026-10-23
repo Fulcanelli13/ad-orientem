@@ -1,0 +1,58 @@
+name: B20 audit-only extraction (no new image downloads)
+on:
+  push:
+    branches: [research/b19-original-image-acquisition-probe-20261023]
+    paths: [.github/workflows/ao-b20-extract-audit.yml]
+  workflow_dispatch:
+permissions:
+  actions: read
+  contents: write
+jobs:
+  extract-evidence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - name: Retrieve completed rights-gated image acquisition run
+        uses: actions/download-artifact@v4
+        with:
+          artifact-ids: '12504877967'
+          run-id: '39962681470'
+          repository: Fulcanelli13/ad-orientem
+          github-token: ${{ github.token }}
+          path: evidence
+      - name: Extract audit only and check manifest scope
+        shell: bash
+        run: |
+          test -s evidence/ao-b20-wave150-source-screen-and-originals/Acquisition_results.csv
+          test -s evidence/ao-b20-wave150-source-screen-and-originals/Acquisition_summary.json
+          mkdir -p audit
+          cp evidence/ao-b20-wave150-source-screen-and-originals/Acquisition_results.csv evidence/ao-b20-wave150-source-screen-and-originals/Acquisition_summary.json audit/
+          python - <<'PY'
+          import csv,json
+          from pathlib import Path
+          rows=list(csv.DictReader(Path('audit/Acquisition_results.csv').open()))
+          summary=json.loads(Path('audit/Acquisition_summary.json').read_text())
+          assert len(rows)==150, len(rows)
+          assert summary['source_screened']==150
+          assert summary['new_publication_approvals']==0
+          print(summary)
+          PY
+      - name: Commit immutable research audit to this branch (no app promotion)
+        shell: bash
+        run: |
+          mkdir -p data/research
+          cp audit/Acquisition_results.csv data/research/sacred-art-b20-wave150.audit.csv
+          cp audit/Acquisition_summary.json data/research/sacred-art-b20-wave150.audit-summary.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/research/sacred-art-b20-wave150.audit.csv data/research/sacred-art-b20-wave150.audit-summary.json
+          git commit -m 'research: preserve 150-source rights-gated B20 acquisition evidence' || true
+          git push origin HEAD:research/b19-original-image-acquisition-probe-20261023
+      - name: Upload just the CSV and JSON evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: ao-b20-wave150-audit-only
+          path: audit/
+          retention-days: 7
+          if-no-files-found: error

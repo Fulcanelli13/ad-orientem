@@ -1,0 +1,43 @@
+name: B24 final 451-artwork exact-source reconciliation
+on:
+  push:
+    branches: [research/b19-original-image-acquisition-probe-20261023]
+    paths: [.github/workflows/ao-art-b24-catalogue451.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Reconcile 8 + 4 verified source images without modifying editorial locks
+        run: |
+          python -m py_compile scripts/research/sacred_art_b24_crosswalk.py
+          python scripts/research/sacred_art_b24_crosswalk.py
+      - name: Commit all 451 source statuses, separate file-quality and image rights gates
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/research/sacred-art-catalogue451-after-b24.csv data/research/sacred-art-missing-after-b24.csv data/research/sacred-art-catalogue451-after-b24.summary.json
+          git commit -m 'research: crosswalk 12 exact-object images into 451 artwork source register, preserve frozen approvals'
+          for i in 1 2 3; do
+            git fetch origin research/b19-original-image-acquisition-probe-20261023
+            git rebase origin/research/b19-original-image-acquisition-probe-20261023
+            git push origin HEAD:research/b19-original-image-acquisition-probe-20261023 && exit 0
+            sleep 4
+          done
+          exit 1
+      - name: Export Excel-compatible 451 source status and remaining gaps
+        uses: actions/upload-artifact@v4
+        with:
+          name: ao-sacred-art-b24-451-12-exact-source-reconciliation
+          path: |
+            data/research/sacred-art-catalogue451-after-b24.csv
+            data/research/sacred-art-missing-after-b24.csv
+            data/research/sacred-art-catalogue451-after-b24.summary.json
+          retention-days: 45

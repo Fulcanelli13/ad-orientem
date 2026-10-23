@@ -1,0 +1,54 @@
+name: B22 NGA 31-source image-level open-access recovery
+on:
+  push:
+    branches: [research/b19-original-image-acquisition-probe-20261023]
+    paths: [.github/workflows/ao-art-b22-nga31.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  research-acquisition:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install image decoding dependency
+        run: python -m pip install --disable-pip-version-check 'Pillow>=11,<13'
+      - name: Audit 31 frozen source IDs, no rejected images or app promotion
+        run: |
+          python -m py_compile scripts/research/sacred_art_nga_openaccess.py
+          python - <<'PY'
+          import json,pathlib
+          m=json.loads(pathlib.Path('data/research/sacred-art-b22-nga31.manifest.json').read_text())
+          rows=m['records']
+          assert len(rows)==31 and len({r['asset_source_id'] for r in rows})==31
+          assert sum(r['priority']=='P1' for r in rows)==26
+          assert sum(r['priority']=='P2' for r in rows)==5
+          assert all(r['download_gate']=='METADATA_AND_IMAGE_OPENACCESS_FIRST' for r in rows)
+          assert all(r['frozen_decision']!='PERMANENTLY_REJECTED' for r in rows)
+          PY
+      - name: Resolve image-level openaccess flags and acquire approved IIIF renditions
+        run: python scripts/research/sacred_art_nga_openaccess.py
+      - name: Upload source renditions and metadata audit (research only)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ao-sacred-art-b22-nga31-source-renditions-and-audit
+          path: artifacts/b22-nga31/
+          retention-days: 7
+          if-no-files-found: warn
+      - name: Preserve compact NGA rights, SHA-256 and source review audit
+        if: success()
+        run: |
+          cp artifacts/b22-nga31/Acquisition_results.csv data/research/sacred-art-b22-nga31.audit.csv
+          cp artifacts/b22-nga31/Acquisition_summary.json data/research/sacred-art-b22-nga31.audit-summary.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/research/sacred-art-b22-nga31.audit.csv data/research/sacred-art-b22-nga31.audit-summary.json
+          git commit -m 'research: preserve image-specific NGA open-access verification and IIIF hashes'
+          git fetch origin research/b19-original-image-acquisition-probe-20261023
+          git rebase origin/research/b19-original-image-acquisition-probe-20261023
+          git push origin HEAD:research/b19-original-image-acquisition-probe-20261023

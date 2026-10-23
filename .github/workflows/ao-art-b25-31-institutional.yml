@@ -1,0 +1,56 @@
+name: B25 institutional 31 artwork source photo metadata pass
+on:
+  push:
+    branches: [research/b19-original-image-acquisition-probe-20261023]
+    paths:
+      - .github/workflows/ao-art-b25-31-institutional.yml
+      - scripts/research/sacred_art_b25_institutional31.py
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: ao-b25-institutional31-metadata
+  cancel-in-progress: false
+jobs:
+  inspect-institutional-pages:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate exactly 31 P2 catalogue gaps and extractor syntax
+        run: |
+          python -m py_compile scripts/research/sacred_art_b25_institutional31.py
+          python - <<'PY'
+          import csv
+          with open('data/research/sacred-art-missing-after-b24.csv',encoding='utf-8',newline='') as f:r=list(csv.DictReader(f))
+          assert len(r)==31 and all(x['priority']=='P2' for x in r)
+          PY
+      - name: Respectfully inspect only HTML/structured photo references, no binaries
+        run: python scripts/research/sacred_art_b25_institutional31.py
+      - name: Preserve source-page evidence and publication-rights holds
+        run: |
+          cp artifacts/b25-institutional31/Institutional31_page_status.csv data/research/sacred-art-b25-institutional31-page-audit.csv
+          cp artifacts/b25-institutional31/Institutional31_image_leads.csv data/research/sacred-art-b25-institutional31-photo-leads.csv
+          cp artifacts/b25-institutional31/Institutional31_summary.json data/research/sacred-art-b25-institutional31.summary.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/research/sacred-art-b25-institutional31*
+          git commit -m 'research: source-photo structured metadata for last 31 art candidates, no licence assumptions'
+          for i in 1 2 3; do
+            git fetch origin research/b19-original-image-acquisition-probe-20261023
+            git rebase origin/research/b19-original-image-acquisition-probe-20261023
+            git push origin HEAD:research/b19-original-image-acquisition-probe-20261023 && exit 0
+            sleep 4
+          done
+          exit 1
+      - name: Retain independent evidence artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ao-b25-institutional31-photo-source-review
+          path: artifacts/b25-institutional31/
+          retention-days: 45
+          if-no-files-found: warn

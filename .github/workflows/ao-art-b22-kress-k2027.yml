@@ -1,0 +1,48 @@
+name: B22 Kress K2027 institutional image acquisition
+on:
+  push:
+    branches: [research/b19-original-image-acquisition-probe-20261023]
+    paths: [.github/workflows/ao-art-b22-kress-k2027.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  verify-and-acquire:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check 'Pillow>=11,<13'
+      - name: Download exact Kress K2027 image, hash and decode
+        run: |
+          python -m py_compile scripts/research/sacred_art_kress_k2027.py
+          python scripts/research/sacred_art_kress_k2027.py
+      - name: Keep image file in temporary research artifact, never app
+        uses: actions/upload-artifact@v4
+        with:
+          name: ao-sacred-art-kress-k2027-verified-image-and-audit
+          path: artifacts/b22-kress-k2027/
+          retention-days: 7
+          if-no-files-found: error
+      - name: Preserve verified institutional image audit in research branch
+        run: |
+          python - <<'PY'
+          import csv,pathlib,re
+          with pathlib.Path('artifacts/b22-kress-k2027/Acquisition_results.csv').open(newline='',encoding='utf-8') as f: rows=list(csv.DictReader(f))
+          assert len(rows)==1
+          assert rows[0]['acquisition_status']=='ACQUIRED_INSTITUTION_JPEG_SHA256'
+          assert re.fullmatch('[a-f0-9]{64}',rows[0]['sha256'])
+          assert rows[0]['publication_status']=='HOLD'
+          PY
+          cp artifacts/b22-kress-k2027/Acquisition_results.csv data/research/sacred-art-b22-kress-k2027.audit.csv
+          cp artifacts/b22-kress-k2027/Acquisition_summary.json data/research/sacred-art-b22-kress-k2027.audit-summary.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/research/sacred-art-b22-kress-k2027.audit.csv data/research/sacred-art-b22-kress-k2027.audit-summary.json
+          git commit -m 'research: preserve Kress K2027 official JPEG file/source/hash evidence'
+          git fetch origin research/b19-original-image-acquisition-probe-20261023
+          git rebase origin/research/b19-original-image-acquisition-probe-20261023
+          git push origin HEAD:research/b19-original-image-acquisition-probe-20261023

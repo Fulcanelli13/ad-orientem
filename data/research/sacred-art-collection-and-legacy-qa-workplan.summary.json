@@ -1,0 +1,52 @@
+{
+  "missing_image_sources": 79,
+  "unverified_legacy_previews": 150,
+  "missing_by_priority": {
+    "P1": 28,
+    "P2": 51
+  },
+  "legacy_qa_by_priority": {
+    "P0": 73,
+    "P1": 4,
+    "P2": 73
+  },
+  "missing_by_retrieval_route": {
+    "NGA_IMAGE_LEVEL_OPENACCESS_DATASET": 31,
+    "COMMONS_DEFERRED_RESPECT_RETRY_AFTER": 4,
+    "OTHER_INSTITUTION_PHOTO_LICENSE_VERIFY": 17,
+    "PRADO_OBJECT_IMAGE_RIGHTS_REVIEW": 6,
+    "SOURCE_DISCOVERY": 7,
+    "PUBLIC_CULTURAL_CATALOGUE_PHOTO_RIGHTS_CHECK": 11,
+    "NGL_SOURCE_IMAGE_RIGHTS_REVIEW": 3
+  },
+  "missing_by_provider": {
+    "nga.gov": 31,
+    "commons.wikimedia.org": 4,
+    "kressfoundation.org": 1,
+    "museodelprado.es": 6,
+    "NO_SOURCE": 7,
+    "archives.carmeldelisieux.fr": 2,
+    "catalogo.beniculturali.it": 6,
+    "catalogo.cultura.gov.it": 1,
+    "pop.culture.gouv.fr": 4,
+    "catalogo.fondazionezeri.unibo.it": 1,
+    "sammlung.pinakothek.de": 1,
+    "fr.ch": 1,
+    "francesconetti.com": 1,
+    "patrimoine-culturel.gouv.qc.ca": 1,
+    "collections.louvre.fr": 1,
+    "catedraldesevilla.es": 1,
+    "nationalgallery.org.uk": 3,
+    "pinacotecabrera.org": 1,
+    "musee-orsay.fr": 1,
+    "collections-mba.nancy.fr": 1,
+    "digitalarchive.rds.ie": 1,
+    "search.smb.museum": 1,
+    "louvre.fr": 1,
+    "google.com": 1
+  },
+  "publication_approvals": 0,
+  "source_master_unchanged": true,
+  "note": "Queues reflect pre-B22 NGA acquisition status; adjust only after verified hash audit and re-run of canonical crosswalk.",
+  "generated_utc": "2026-10-23T19:17:34+00:00"
+}

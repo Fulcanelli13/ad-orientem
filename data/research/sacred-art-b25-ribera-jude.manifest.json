@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "wave": "B25_P001092_JUDE",
+  "purpose": "Exact Prado inventory P001092 Saint Jude Thaddaeus by Ribera. Not misidentified NG6577 apostle; distinct from attributed P001085. Retain 1920px resolution hold and reproduction rights review.",
+  "source_master": "Ad_Orientem_Complete_Visual_Asset_Master_Batch19_2026-10-23.xlsx",
+  "source_gap_audit": "data/research/sacred-art-missing-after-b24.csv",
+  "records": [
+    {
+      "asset_source_id": "AO-B25-RIBERA-P001092",
+      "record_id": "ART-usepe-de-ibera-aint-udas-haddeus",
+      "source_sheet": "PAINTING CATALOGUE",
+      "source_row": 0,
+      "title": "Saint Judas Thaddeus",
+      "artist": "Jusepe de Ribera",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Ribera_-_San_Judas_Tadeo,_P001092.jpg",
+      "commons_title": "File:Ribera - San Judas Tadeo, P001092.jpg",
+      "api_type": "commons",
+      "download_gate": "METADATA_FIRST",
+      "recorded_rights": "PUBLIC_DOMAIN_COMMONS_UNVERIFIED_PHOTO_REUSE",
+      "related_records": [
+        "PAINTING CATALOGUE:ART-usepe-de-ibera-aint-udas-haddeus"
+      ],
+      "institutional_object_url": "https://www.museodelprado.es/coleccion/obra-de-arte/san-judas-tadeo/2a57d413-633a-4bf8-bd02-a5b94f6b170a",
+      "inventory_number": "P001092",
+      "identity_evidence": "EXACT_PRADO_P001092_1630_1635",
+      "resolution_quality_gate": "REVIEW_1920PX_LONG_EDGE",
+      "editorial_gate": "NOT_APPROVED"
+    }
+  ]
+}

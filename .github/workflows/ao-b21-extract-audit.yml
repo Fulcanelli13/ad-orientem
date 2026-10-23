@@ -1,0 +1,57 @@
+name: B21 audit extraction and durable evidence
+on:
+  push:
+    branches: [research/b19-original-image-acquisition-probe-20261023]
+    paths: [.github/workflows/ao-b21-extract-audit.yml]
+  workflow_dispatch:
+permissions:
+  actions: read
+  contents: write
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          artifact-ids: '12506957700'
+          run-id: '39966283017'
+          repository: Fulcanelli13/ad-orientem
+          github-token: ${{ github.token }}
+          path: evidence
+      - name: Check 95-record audit and extract without duplicating original binaries
+        shell: bash
+        run: |
+          test -s evidence/ad-orientem-b21-museum95-originals-and-audit/Acquisition_results.csv
+          test -s evidence/ad-orientem-b21-museum95-originals-and-audit/Acquisition_summary.json
+          mkdir -p audit
+          cp evidence/ad-orientem-b21-museum95-originals-and-audit/Acquisition_results.csv audit/
+          cp evidence/ad-orientem-b21-museum95-originals-and-audit/Acquisition_summary.json audit/
+          python - <<'PY'
+          import csv,json,pathlib
+          rows=list(csv.DictReader(pathlib.Path('audit/Acquisition_results.csv').open(encoding='utf-8')))
+          d=json.loads(pathlib.Path('audit/Acquisition_summary.json').read_text())
+          assert len(rows)==95
+          assert d['source_screened']==95 and d['new_publication_approvals']==0
+          assert d['downloaded_in_this_run']==74
+          assert len({r['asset_source_id'] for r in rows})==95
+          print(d)
+          PY
+      - name: Commit research-only audit on branch
+        run: |
+          cp audit/Acquisition_results.csv data/research/sacred-art-b21-museum95.audit.csv
+          cp audit/Acquisition_summary.json data/research/sacred-art-b21-museum95.audit-summary.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/research/sacred-art-b21-museum95.audit.csv data/research/sacred-art-b21-museum95.audit-summary.json
+          git commit -m 'research: preserve B21 95-source acquisition audit, hashes and failures'
+          git fetch origin research/b19-original-image-acquisition-probe-20261023
+          git rebase origin/research/b19-original-image-acquisition-probe-20261023
+          git push origin HEAD:research/b19-original-image-acquisition-probe-20261023
+      - name: Upload compact audit for workbook import
+        uses: actions/upload-artifact@v4
+        with:
+          name: ao-b21-museum95-audit-only
+          path: audit/
+          retention-days: 30

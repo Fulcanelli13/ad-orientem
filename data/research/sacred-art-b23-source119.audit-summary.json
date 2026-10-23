@@ -1,0 +1,35 @@
+{
+  "source_count": 119,
+  "by_kind": {
+    "P0_LEGACY_PREVIEW_QA": {
+      "count": 73,
+      "status_counts": {
+        "HTTP_OK_PAGE_METADATA": 42,
+        "NO_OBJECT_SOURCE": 7,
+        "RESTRICTED_ACCESS_OR_ANTIBOT": 14,
+        "SEARCH_RESULT_NOT_AUTHORITATIVE_SOURCE": 10
+      },
+      "image_metadata_candidate_count": 20,
+      "explicit_rights_metadata_candidate_count": 0
+    },
+    "P2_MISSING_IMAGE": {
+      "count": 46,
+      "status_counts": {
+        "RESTRICTED_ACCESS_OR_ANTIBOT": 7,
+        "NO_OBJECT_SOURCE": 7,
+        "HTTP_OK_PAGE_METADATA": 23,
+        "FETCH_ERROR_OR_BLOCKED": 8,
+        "SEARCH_RESULT_NOT_AUTHORITATIVE_SOURCE": 1
+      },
+      "image_metadata_candidate_count": 12,
+      "explicit_rights_metadata_candidate_count": 1
+    }
+  },
+  "human_visual_reviews_completed": 0,
+  "artwork_identity_verifications_completed": 0,
+  "source_photo_reuse_rights_approved": 0,
+  "frozen_approvals_changed": 0,
+  "publication_approvals": 0,
+  "limitations": "HTML OG image candidate is a thumbnail hint, never a file download URL or licence grant; HTTP access does not certify artwork identity",
+  "checked_utc": "2026-10-23T19:38:33+00:00"
+}

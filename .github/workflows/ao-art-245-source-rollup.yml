@@ -1,0 +1,38 @@
+name: Sacred Art 245-source acquisition rollup
+on:
+  push:
+    branches: [research/b19-original-image-acquisition-probe-20261023]
+    paths: [.github/workflows/ao-art-245-source-rollup.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  reconcile-audits:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Merge B20/B21 and recovery audits by stable artwork source ID
+        run: |
+          python -m py_compile scripts/research/sacred_art_acquisition_rollup.py
+          python scripts/research/sacred_art_acquisition_rollup.py
+      - name: Preserve CSV and machine-readable summary in research branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/research/sacred-art-acquisition-245-source-rollup.csv data/research/sacred-art-acquisition-245-source-rollup.summary.json
+          git commit -m 'research: reconcile 245 source identities into original vs print-tier master audit'
+          git fetch origin research/b19-original-image-acquisition-probe-20261023
+          git rebase origin/research/b19-original-image-acquisition-probe-20261023
+          git push origin HEAD:research/b19-original-image-acquisition-probe-20261023
+      - name: Upload Excel-importable audit and summary
+        uses: actions/upload-artifact@v4
+        with:
+          name: ao-sacred-art-245-source-acquisition-rollup
+          path: |
+            data/research/sacred-art-acquisition-245-source-rollup.csv
+            data/research/sacred-art-acquisition-245-source-rollup.summary.json
+          retention-days: 30

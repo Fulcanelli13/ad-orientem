@@ -1,0 +1,43 @@
+name: B25 exact Ribera P001092 451-artwork crosswalk
+on:
+  push:
+    branches: [research/b19-original-image-acquisition-probe-20261023]
+    paths: [.github/workflows/ao-art-b25-ribera-crosswalk.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  reconcile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify exact Prado P001092, source hash, original 107 locks
+        run: |
+          python -m py_compile scripts/research/sacred_art_b25_ribera_crosswalk.py
+          python scripts/research/sacred_art_b25_ribera_crosswalk.py
+      - name: Commit canonical read-only reconciled 451 rows and 30 remaining candidates
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/research/sacred-art-catalogue451-after-b25.csv data/research/sacred-art-missing30-after-b25.csv data/research/sacred-art-catalogue451-after-b25.summary.json
+          git commit -m 'research: add verified Prado Ribera Judas file; 30 P2 artworks remain image-less'
+          for i in 1 2 3; do
+            git fetch origin research/b19-original-image-acquisition-probe-20261023
+            git rebase origin/research/b19-original-image-acquisition-probe-20261023
+            git push origin HEAD:research/b19-original-image-acquisition-probe-20261023 && exit 0
+            sleep 4
+          done
+          exit 1
+      - name: Export updated 451-artwork audit
+        uses: actions/upload-artifact@v4
+        with:
+          name: ao-b25-451-master-gap-crosswalk-ribera
+          path: |
+            data/research/sacred-art-catalogue451-after-b25.csv
+            data/research/sacred-art-missing30-after-b25.csv
+            data/research/sacred-art-catalogue451-after-b25.summary.json
+          retention-days: 45

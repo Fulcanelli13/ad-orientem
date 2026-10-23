@@ -1,0 +1,30 @@
+name: Sacred Art 79 missing images and 150 legacy image QA queues
+on:
+  push:
+    branches: [research/b19-original-image-acquisition-probe-20261023]
+    paths: [.github/workflows/ao-art-catalogue-collection-queues.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  classified-queues:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Calculate 79 acquisition and 150 source-photo verification tasks
+        run: |
+          python -m py_compile scripts/research/sacred_art_collection_queues.py
+          python scripts/research/sacred_art_collection_queues.py
+      - name: Save source-identified queues (leave frozen approvals unchanged)
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/research/sacred-art-missing79-source-queue.csv data/research/sacred-art-legacy150-image-qa-queue.csv data/research/sacred-art-collection-and-legacy-qa-workplan.summary.json
+          git commit -m 'research: classify missing-source and legacy preview QA work by frozen priority'
+          git fetch origin research/b19-original-image-acquisition-probe-20261023
+          git rebase origin/research/b19-original-image-acquisition-probe-20261023
+          git push origin HEAD:research/b19-original-image-acquisition-probe-20261023

@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "wave": "B24_EXACT4_MORE",
+  "source_gap_audit": "data/research/sacred-art-missing-after-b23r2.csv",
+  "purpose": "Four additional exact museum artworks including lower-resolution variants, research only",
+  "records": [
+    {
+      "asset_source_id": "AO-B24-EXACT2-W07-006",
+      "record_id": "W07-006",
+      "source_sheet": "PAINTING CATALOGUE",
+      "source_row": 94,
+      "title": "Madonna and Child with Saint Anthony of Padua",
+      "artist": "Anthony van Dyck",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Antoon_van_dyck,_madonna_col_bambino_e_s._antonio_da_padova,_1630-32,_01.jpg",
+      "commons_title": "File:Antoon van dyck, madonna col bambino e s. antonio da padova, 1630-32, 01.jpg",
+      "api_type": "commons",
+      "download_gate": "METADATA_FIRST",
+      "recorded_rights": "UNVERIFIED",
+      "related_records": [
+        "PAINTING CATALOGUE:W07-006"
+      ],
+      "identity_evidence": "EXACT_INSTITUTIONAL_ART_OBJECT_ID",
+      "museum_accession": "PINACOTECA_DI_BRERA_701",
+      "official_object_url": "https://pinacotecabrera.org/collezioni/collezione-on-line/la-madonna-col-bambino-e-santantonio-da-padova/",
+      "editorial_gate": "NOT_APPROVED",
+      "image_rights_gate": "SOURCE_FILE_LICENCE_REVIEW_REQUIRED"
+    },
+    {
+      "asset_source_id": "AO-B24-EXACT2-G17-012",
+      "record_id": "G17-012",
+      "source_sheet": "PAINTING CATALOGUE",
+      "source_row": 93,
+      "title": "Saint Anthony of Padua with the Infant Christ",
+      "artist": "Giuseppe Bazzani",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Bazzani_-_Sant'Antonio_da_Padova_col_Bambino.jpg",
+      "commons_title": "File:Bazzani - Sant'Antonio da Padova col Bambino.jpg",
+      "api_type": "commons",
+      "download_gate": "METADATA_FIRST",
+      "recorded_rights": "UNVERIFIED",
+      "related_records": [
+        "PAINTING CATALOGUE:G17-012"
+      ],
+      "identity_evidence": "EXACT_INSTITUTIONAL_ART_OBJECT_ID",
+      "museum_accession": "NATIONAL_GALLERY_NG3663",
+      "official_object_url": "https://www.nationalgallery.org.uk/paintings/giuseppe-bazzani-saint-anthony-of-padua-with-the-infant-christ",
+      "editorial_gate": "NOT_APPROVED",
+      "image_rights_gate": "SOURCE_FILE_LICENCE_REVIEW_REQUIRED"
+    },
+    {
+      "asset_source_id": "AO-B24-EXACT2-G20-003",
+      "record_id": "G20-003",
+      "source_sheet": "PAINTING CATALOGUE",
+      "source_row": 70,
+      "title": "Bildnis des Petrus Canisius",
+      "artist": "Monogrammist AE von 1546",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Monogrammist_AE_von_1546_-_Bildnis_des_Petrus_Canisius_-_WAF_680_A_-_Bavarian_State_Painting_Collections.jpg",
+      "commons_title": "File:Monogrammist AE von 1546 - Bildnis des Petrus Canisius - WAF 680 A - Bavarian State Painting Collections.jpg",
+      "api_type": "commons",
+      "download_gate": "METADATA_FIRST",
+      "recorded_rights": "UNVERIFIED",
+      "related_records": [
+        "PAINTING CATALOGUE:G20-003"
+      ],
+      "identity_evidence": "EXACT_INSTITUTIONAL_ART_OBJECT_ID",
+      "museum_accession": "BAYERISCHE_WAF_680_A",
+      "official_object_url": "https://www.sammlung.pinakothek.de/de/artwork/JzG6RKJGWO",
+      "editorial_gate": "NOT_APPROVED",
+      "image_rights_gate": "SOURCE_FILE_LICENCE_REVIEW_REQUIRED"
+    },
+    {
+      "asset_source_id": "AO-B24-EXACT2-BERLIN-RUBENS-798H",
+      "record_id": "BERLIN-RUBENS-798H",
+      "source_sheet": "PAINTING CATALOGUE",
+      "source_row": 122,
+      "title": "Saint Sebastian (Berlin, c. 1618) — conditional identification",
+      "artist": "Peter Paul Rubens",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Peter_Paul_Rubens_(1577-1640)_-_Saint_Sebastian_-_798H_-_Gemäldegalerie.jpg",
+      "commons_title": "File:Peter Paul Rubens (1577-1640) - Saint Sebastian - 798H - Gemäldegalerie.jpg",
+      "api_type": "commons",
+      "download_gate": "METADATA_FIRST",
+      "recorded_rights": "UNVERIFIED",
+      "related_records": [
+        "PAINTING CATALOGUE:BERLIN-RUBENS-798H"
+      ],
+      "identity_evidence": "EXACT_INSTITUTIONAL_ART_OBJECT_ID",
+      "museum_accession": "BERLIN_GEMAELDEGALERIE_798H",
+      "official_object_url": "https://search.smb.museum/object/obj-871193",
+      "editorial_gate": "NOT_APPROVED",
+      "image_rights_gate": "SOURCE_FILE_LICENCE_REVIEW_REQUIRED"
+    }
+  ]
+}
