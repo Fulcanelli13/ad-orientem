@@ -10,18 +10,18 @@ root.innerHTML="<div class='spxm-head'><strong>MODEL-ASSISTED PRIVATE EDITORIAL 
  "<p id='spxm-scope'></p><div id='spxm-replies' aria-live='polite'></div>";
 const $=id=>root.querySelector('#'+id);
 const translations={
- en:{label:'Follow up on this documented subject',send:'Draft a reply',scope:'The model can adapt only the existing unpublished editorial passages. This is not authenticated speech of St Pius X.',
+ en:{label:'Follow up on this documented subject',send:'Draft a reply',scope:'The model can adapt only existing unpublished editorial passages. Previous dialogue provides context, never historical evidence. This is not authenticated speech of St Pius X.',
  wait:'Preparing a research draft and independently checking its claims…',
  held:'Reply withheld: the model could not establish support in the supplied passages.',
  intro:'AI-COMPOSED EDITORIAL DRAFT · NOT THE WORDS OF ST PIUS X',sources:'Underlying unapproved editorial source pointers:',
  prompt:'Question from visitor',error:'Unavailable. No invented reply has been displayed.'},
- fr:{label:'Approfondir librement le sujet documentaire',send:'Rédiger une réponse',scope:'Le modèle ne peut adapter que les passages éditoriaux inédits existants. Il ne s’agit pas de paroles authentifiées de saint Pie X.',
+ fr:{label:'Approfondir librement le sujet documentaire',send:'Rédiger une réponse',scope:'Le modèle ne peut adapter que les passages éditoriaux inédits existants. Les réponses précédentes servent au contexte, non de preuve historique. Ce ne sont pas des paroles authentifiées de saint Pie X.',
  wait:'Préparation de la rédaction et contrôle indépendant des affirmations…',
  held:'Réponse suspendue : sources éditoriales insuffisantes pour étayer le propos.',
  intro:'RÉDACTION IA NON APPROUVÉE · NON PAROLES DE SAINT PIE X',sources:'Références éditoriales non approuvées :',
  prompt:'Question du visiteur',error:'Service indisponible. Aucune réponse inventée n’a été affichée.'}
 };
-let context=null,history=[],busy=false,lastSubject=null;
+let context=null,history=[],busy=false,lastSubject=null,lastLanguage=null;
 function attach(){
  const sc=document.querySelector('.spxc-main-scroll');
  if(sc&&!sc.contains(root))sc.append(root);
@@ -35,7 +35,9 @@ function display(lang){
 }
 document.addEventListener('ao-spx-review-context',e=>{
  const v=e.detail||{};context={chapterId:v.chapterId,nodeId:v.nodeId,language:v.language};
- if(lastSubject!==context.chapterId){history=[];lastSubject=context.chapterId;$('spxm-replies').replaceChildren();}
+ if(lastSubject!==context.chapterId||lastLanguage!==context.language){
+  history=[];lastSubject=context.chapterId;lastLanguage=context.language;$('spxm-replies').replaceChildren();
+ }
  root.hidden=!context.chapterId;attach();display(context.language);
 });
 $('spxm-form').addEventListener('submit',async e=>{
@@ -54,7 +56,7 @@ $('spxm-form').addEventListener('submit',async e=>{
    body:JSON.stringify({...snapshot,question,history:previous})});
   const result=await resp.json();
   entry.querySelector('.spxm-status')?.remove();
-  if(context.chapterId!==snapshot.chapterId){entry.remove();return;}
+  if(context.chapterId!==snapshot.chapterId||context.language!==snapshot.language){entry.remove();return;}
   if(result.status!=='draft'||typeof result.reply!=='string'){
    entry.append(paragraph(t.held+' ('+String(result.reason||'not_certified')+')','spxm-held'));return;
   }
@@ -68,7 +70,8 @@ $('spxm-form').addEventListener('submit',async e=>{
    a.textContent=ev.id+' · '+ev.locus+' (NOT COLLATED)';
    line.append(a);entry.append(line);
   }
-  history.push({question,response:result.reply});history=history.slice(-3);
+  history.push({chapterId:snapshot.chapterId,language:snapshot.language,question,response:result.reply});
+  history=history.slice(-3);
   if(result.expression&&document.querySelector('#spxc-portrait:not([hidden])')){
    const art=JSON.parse(document.getElementById('spxData').textContent).art;
    const image=document.getElementById('spxc-portrait');
