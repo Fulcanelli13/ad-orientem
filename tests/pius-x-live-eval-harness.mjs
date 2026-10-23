@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {readCorpus} from '../tools/pius-x-generative-review.mjs';
-import {makeEvaluationCases,evaluateDialogue,makeConversationSequence,evaluateConversationSequence} from '../tools/pius-x-live-eval.mjs';
+import {makeEvaluationCases,evaluateDialogue,makeConversationSequence,evaluateConversationSequence,dialogueQualitySignals} from '../tools/pius-x-live-eval.mjs';
 
 const html=readFileSync('artifacts/pius-x-study-expanded/SPX_Study_Expanded_106_P6.html','utf8');
 const store=readCorpus(html);
@@ -47,6 +47,22 @@ assert.equal(noModel.records.length,4);
 assert.equal(noModel.summary.generatedDrafts,0);
 assert.equal(noModel.summary.rejectedOrHeld,4);
 
+const repeat=dialogueQualitySignals(
+ 'The liturgy draws our attention to prayer. The liturgy draws our attention to prayer.',
+ 'The liturgy draws our attention to prayer.', 'What does the liturgy teach?');
+assert.equal(repeat.classification,'HEURISTIC_SIGNAL_NOT_QUALITY_JUDGEMENT');
+assert.equal(repeat.exactRepeatedSentence,true);
+assert(repeat.highPreviousTurnLexicalOverlap);
+const distinct=dialogueQualitySignals('The Psalms offer many petitions for daily life.',
+ 'Gregorian melodies fittingly elevate the sacred rite.',
+ 'How should I pray using the Psalms?');
+assert.equal(distinct.exactRepeatedSentence,false);
+assert.equal(distinct.highPreviousTurnLexicalOverlap,false);
+assert.equal(distinct.possiblyLongMonologue,false);
+const long=dialogueQualitySignals(('Sentence words that explain too much. ').repeat(14),'','Short question?');
+assert.equal(long.possiblyLongMonologue,true);
+const french=dialogueQualitySignals('La prière élève le cœur vers Dieu.', '', 'Que signifie la prière ?');
+assert(french.wordCount>=7,'accented French words must be tokenized correctly');
 const three=makeConversationSequence(store);
 assert.equal(three.steps.length,3);
 assert(three.steps.every(x=>x.chapterId===three.chapterId));
@@ -59,6 +75,11 @@ assert.equal(sequence.summary.heldTurns,0);
 assert.equal(sequence.summary.crossSourceFailures,0);
 assert.equal(sequence.summary.publicationFailures,0);
 assert.equal(sequence.summary.acceptedDraftsRepeatedVerbatim,2,'identical mock replies must be flagged as dialogue repetition');
+assert.equal(sequence.summary.likelyRepeatedSentences,2);
+assert.equal(sequence.summary.highLexicalOverlapSignals,2);
+assert.equal(sequence.summary.longMonologueSignals,0);
+assert(sequence.records.every(r=>r.qualitySignals?.classification==='HEURISTIC_SIGNAL_NOT_QUALITY_JUDGEMENT'));
+
 assert.deepEqual(sequence.records.map(r=>r.suppliedHistoryLength),[0,1,2]);
 assert.deepEqual(seenInputs.map(i=>i.history.length),[0,1,2],'composer sees only prior accepted turns');
 assert(seenInputs[1].history[0].contextOnly===true);
