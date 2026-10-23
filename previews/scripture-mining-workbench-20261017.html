@@ -456,8 +456,12 @@ async function showHistoriaMovement(){
    if(beat.kind==="SOURCE_BRIDGE_CANDIDATE"&&(!showBridges||(highPriorityBridgesOnly&&!isPriorityHistoriaBridge(beat))))continue;
    const bridge=beat.kind==="SOURCE_BRIDGE_CANDIDATE";
    const section=make("article",undefined,bridge?"proofSourceBridge":"proofBeat");
-   if(bridge){section.append(make("div","Unapproved source-bridge candidate · "+beat.reference,"caption"),
-     make("p",beat.purpose));held++;}
+   if(bridge){
+    section.append(make("div","Unapproved source-bridge candidate · "+beat.reference,"caption"),
+     make("p",beat.purpose));held++;
+    if(beat.id==="HS-P3-CF-16")
+     section.append(make("p","Canonical Revelation ends at 22:21, not the selected 22:5. Revelation 22:6–19 is omitted before this optional, unapproved 22:20–21 conclusion.","proofGap"));
+   }
    else{
     section.append(make("h4",beat.scene));
     if(beat.hasPartialVerseHold)section.append(make("p",
