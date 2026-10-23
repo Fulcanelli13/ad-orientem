@@ -7,8 +7,8 @@
     "sourceOwnerNodesInSixDocuments": 111,
     "previouslyMappedNodesInSixDocuments": 51,
     "remainingNodesScreened": 60,
-    "newBoundedResearchCandidates": 27,
-    "newHeldNodes": 33,
+    "newBoundedResearchCandidates": 24,
+    "newHeldNodes": 36,
     "newOriginalVaticanExcerpts": 23,
     "remainingSixOtherDocumentHolds": 15,
     "fullAnswerCertifications": 0,
@@ -24,14 +24,14 @@
     },
     "A": {
       "screened": 13,
-      "mapped": 4,
-      "held": 9,
+      "mapped": 3,
+      "held": 10,
       "partialHeld": 6
     },
     "E": {
       "screened": 7,
-      "mapped": 7,
-      "held": 0,
+      "mapped": 5,
+      "held": 2,
       "partialHeld": 0
     },
     "I": {
@@ -992,12 +992,10 @@
       "sourceUrl": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_15041905_acerbo-nimis.html",
       "documentGroup": "A",
       "ownerPartial": false,
-      "status": "BOUNDED_ORIGINAL_LANGUAGE_EXCERPT_CANDIDATE",
-      "witnessIds": [
-        "W4-A-EDU"
-      ],
-      "holdReason": null,
-      "narrowClaimScope": "Only the precise original-language propositions witnessed here, not a complete historical reply",
+      "status": "HOLD_NO_PRECISE_SOURCE_FOR_SPECIFIC_PROPOSITION",
+      "witnessIds": [],
+      "holdReason": "Church instruction is necessary; the selected original passage does not itself settle whether it is sufficient for personal virtue",
+      "narrowClaimScope": null,
       "translationApproved": false,
       "completeAnswerApproved": false,
       "publishingApproved": false
@@ -1009,13 +1007,10 @@
       "sourceUrl": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
       "documentGroup": "E",
       "ownerPartial": false,
-      "status": "BOUNDED_ORIGINAL_LANGUAGE_EXCERPT_CANDIDATE",
-      "witnessIds": [
-        "W4-E-ACTION",
-        "ES-4-MOTTO"
-      ],
-      "holdReason": null,
-      "narrowClaimScope": "Only the precise original-language propositions witnessed here, not a complete historical reply",
+      "status": "HOLD_NO_PRECISE_SOURCE_FOR_SPECIFIC_PROPOSITION",
+      "witnessIds": [],
+      "holdReason": "General restoration and practice passages do not precisely establish a dogmatic development rule",
+      "narrowClaimScope": null,
       "translationApproved": false,
       "completeAnswerApproved": false,
       "publishingApproved": false
@@ -1099,12 +1094,10 @@
       "sourceUrl": "https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_04101903_e-supremi.html",
       "documentGroup": "E",
       "ownerPartial": false,
-      "status": "BOUNDED_ORIGINAL_LANGUAGE_EXCERPT_CANDIDATE",
-      "witnessIds": [
-        "W4-E-MOTIVES"
-      ],
-      "holdReason": null,
-      "narrowClaimScope": "Only the precise original-language propositions witnessed here, not a complete historical reply",
+      "status": "HOLD_NO_PRECISE_SOURCE_FOR_SPECIFIC_PROPOSITION",
+      "witnessIds": [],
+      "holdReason": "Opponents may appear worse than they are, but this does not decide a corrector's own hidden motivation",
+      "narrowClaimScope": null,
       "translationApproved": false,
       "completeAnswerApproved": false,
       "publishingApproved": false
