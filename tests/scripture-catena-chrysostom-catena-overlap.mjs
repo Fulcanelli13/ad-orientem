@@ -56,6 +56,8 @@ for(const row of [...out.rows,...out.pinnedWitnesses]){
   const passage=pointers.get(hint.canonicalSourcePointer);
   assert.ok(passage,"Hints must resolve to existing canonical Catena segments");
   assert.equal(hint.canonicalInCatenaFatherLabel,passage.father);
+  assert.equal(hint.canonicalInheritedFatherLabelMatchesChrysostom,
+   passage.father==="Chrysostom","Do not count Pseudo-Chrysostom or other Fathers as Chrysostom");
   assert.equal(hint.originalCatenaSourceUnchanged,true);
   assert.equal(hint.sourceRelationsStatus,
    "lexical_similarity_only_not_source_identity_or_equivalent_argument");
@@ -77,4 +79,17 @@ assert.equal(pinned.knownPointerIsSourceResearchNotLiteralEquivalenceProof,true)
 assert.equal(summary.researchRecordsWithLiteralFiveWordEvidence,
  [...out.rows,...out.pinnedWitnesses].filter(x=>
   x.canonicalLexicalOverlapEvidence.length>0).length);
+assert.equal(summary.recordsWithLiteralEvidenceMatchingChrysostom,
+ [...out.rows,...out.pinnedWitnesses].filter(x=>
+  x.canonicalLexicalOverlapEvidence.some(v=>v.canonicalInheritedFatherLabelMatchesChrysostom)).length);
+assert.equal(summary.recordsWithLiteralEvidenceOnlyOtherInheritedLabels,
+ [...out.rows,...out.pinnedWitnesses].filter(x=>
+  x.canonicalLexicalOverlapEvidence.length>0&&
+  x.canonicalLexicalOverlapEvidence.every(v=>!v.canonicalInheritedFatherLabelMatchesChrysostom)).length);
+assert.equal(summary.recordsWithLiteralEvidenceMatchingChrysostom+
+ summary.recordsWithLiteralEvidenceOnlyOtherInheritedLabels,
+ summary.researchRecordsWithLiteralFiveWordEvidence);
+assert.equal(summary.uniqueCatenaHitPointersNotVerifiedIdenticalToHomilist,
+ new Set([...out.rows,...out.pinnedWitnesses].flatMap(x=>
+  x.canonicalLexicalOverlapEvidence.map(v=>v.canonicalSourcePointer))).size);
 console.log("PASS: 184 source-checked Schaff->Catena Matthew comparison records; every five-word common phrase attested in both texts, with no novelty claims");
