@@ -46,3 +46,24 @@ The original P6 closure ledger reports ZERO independently collated original-sour
 Before public or expanded testing, independently collate primary text for each claim, approve translations, obtain historical and doctrinal editorial acceptance, calibrate source retrieval on independent bilingual questions, stress-test prompt injection and run long multi-turn trials. No publication approval flags were changed.
 
 Related owner PRs: original evidence #1458; period voice #1419; source-only shared router #1443; Living Church #1408; offline P6 stage #1551. This branch is stacked on #1551 and must not merge unapproved research.
+## P2 live-model evaluation protocol (added 23 October)
+
+The new `tools/pius-x-live-eval.mjs` is an explicitly opted-in, bounded local evaluator; unlike the mock CI it **can make real model calls** when the user supplies a compatible local or HTTPS endpoint and understands its costs and privacy implications. It does not ship an LLM, use a hidden provider, or run on import.
+
+Build P6 first as above, configure `AO_SPX_REVIEW_MODE`, `AO_SPX_MODEL_URL`, `AO_SPX_MODEL`, and optional `AO_SPX_MODEL_KEY`. Then explicitly opt in:
+
+    AO_SPX_LIVE_EVAL=I_ACCEPT_MODEL_COSTS_AND_DATA_TRANSFER
+
+Run:
+
+    node tools/pius-x-live-eval.mjs
+
+Default evaluation: four selected, existing documentary subjects/questions plus three requests blocked before inference (personal absolution, speculative childhood testimony, forged source node). Of the four model cases, one follows an existing French answer, one poses a natural reformulation, and one probes an attempted instruction override. The selected original subjects and source IDs are recovered from the unchanged P6 corpus at runtime, not a second knowledge base. `AO_SPX_EVAL_CASES` limits the number of eligible model cases to 0–4. The model adapter performs one draft and one strict verification call for each eligible case. A single local model configured for both calls is **not an independent authority**.
+
+Results are written to `artifacts/pius-x-study-expanded/pius-x-live-eval-PRIVATE-UNAPPROVED.json` unless the operator sets `AO_SPX_EVAL_OUTPUT`. They contain the **newly generated answer texts**, evidence IDs and review questions, so keep them private; the script requests owner-only file permissions. No API secret is printed or stored. Do not upload them to a public repository, nor share sensitive visitor chat. Only preset research scenarios are evaluated, not live visitor conversations.
+
+The JSON records structural pass/fail, refusals, response time and evidence-ID provenance. Its manual review rubric deliberately leaves naturalness, character continuity, historical voice and claim-to-text support unrated. **Original-witness accuracy remains UNASSESSABLE** until direct primary-text collation; theological or editorial publication approval is always false. These are not model accuracy percentages or independently validated historical claims.
+
+The CI-only counterpart `tests/pius-x-live-eval-harness.mjs` exercises all seven scenarios with **mock responses**, asserting that the three disallowed scenarios require no model call, evidence IDs are conserved and no approvals are set. Passing this mock test does not mean that a live model was used.
+
+Remaining before public use: collate exact primary passages, create an editorially checked question gold set, stress test prompt injection and doctrinal hallucinations with several real models, review EN/FR translation, assess visitor privacy and inference costs, then seek actual content and release approvals. Stay on the existing PR stack and do not merge #1570 into the production Ad Orientem app.
