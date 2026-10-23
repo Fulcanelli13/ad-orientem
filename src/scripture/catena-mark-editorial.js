@@ -4,7 +4,7 @@
  */
 import {loadCatenaForPassage} from "./catena-inline.js";
 
-export const CATENA_MARK_RESEARCH_COMMIT="a1c1f9cd68d74f8543ead64a7ca27aa35fdb0dec";
+export const CATENA_MARK_RESEARCH_COMMIT="ec5f5717b8196b27e056ad4c5fd93b61ca31c856";
 export const CATENA_MARK_RESEARCH_SCHEMA="ao.catena.mark-ten-original-work-crosswalk.v1";
 const ALLOWED=new Set([
  "original_work_translation_located","original_language_work_located",
@@ -94,4 +94,56 @@ export async function loadCatenaMarkEditorialSource(registry,pointer,{
  return Object.freeze({section,segment,ordinal,sourcePointer:pointer,
   inheritedFatherLabel:record.inheritedFatherLabel,
   publicationEligibility:"blocked_research_only"});
+}
+
+export function validateCatenaMarkAdjudication(data,registry){
+ if(!registry?.reviewOnly||data?.schema!=="ao.catena.mark-ten-ai-editorial-adjudication.v1"||
+  data.importedFromResearchCommit!==CATENA_MARK_RESEARCH_COMMIT||
+  data.sourceResearchStatus!=="AI_assisted__not_independent_human_verification"||
+  data.reviewOnly!==true||
+  data.state!=="AI_assisted_contextual_grade_not_an_independent_human_peer_review"||
+  data.counts?.contextualAIReviews!==10||data.counts?.provisionalDirect!==8||
+  data.counts?.provisionalUsefulContext!==2||data.counts?.negativeProbes!==13||
+  data.counts?.oneEditorApprovals!==0||data.counts?.twoEditorAdjudications!==0||
+  data.counts?.publicationApprovals!==0||
+  data.rows?.length!==10||data.negatives?.length!==13)
+  throw Error("CATENA_MARK_ADJUDICATION_INVALID");
+ const byPointer=new Map(),questions=new Set();
+ for(const row of data.rows){
+  const source=registry.byPointer.get(row.sourcePointer);
+  if(!source||byPointer.has(row.sourcePointer)||
+   row.editorialQuestion!==source.editorialQuestion||
+   row.sourceCharLength!==source.canonicalCharLength||
+   row.inheritedFatherLabel!==source.inheritedFatherLabel||
+   row.independentWorkTextInspected!==source.independentWorkTextInspected||
+   ![2,3].includes(row.contextualGradeAIAssessment)||
+   row.gradeMeaning!==(row.contextualGradeAIAssessment===3?
+    "AI_assessed_direct_arguments_with_caveats":
+    "AI_assessed_useful_context_requires_nonstandalone_handling")||
+   !row.contextClass||row.editorialScope?.length<40||row.negativeProbe?.length<30||
+   row.negativeExpected!=="no_certified_direct_answer"||
+   !["high","medium"].includes(row.reviewPriority)||
+   row.criticalEditionChecked!==false||row.independentHumanReviewerOne!==false||
+   row.independentHumanReviewerTwo!==false||row.adjudicatedByHuman!==false||
+   row.publicationEligibility!=="blocked_research_only")
+    throw Error("CATENA_MARK_ADJUDICATION_RECORD_INVALID");
+  byPointer.set(row.sourcePointer,Object.freeze({...row}));
+ }
+ const negatives=[];
+ for(const row of data.negatives){
+  if(questions.has(row.id)||!byPointer.has(row.sourcePointer)||
+   row.pericopeId!==row.sourcePointer.split(":")[0]||
+   row.expected!=="no_certified_direct_answer"||
+   typeof row.question!=="string"||!row.question.endsWith("?")||
+   row.reason?.length<25)
+   throw Error("CATENA_MARK_NEGATIVE_PROBE_INVALID");
+  questions.add(row.id);negatives.push(Object.freeze({...row}));
+ }
+ if(byPointer.size!==10||questions.size!==13||
+   [...byPointer.values()].filter(x=>x.contextualGradeAIAssessment===3).length!==8||
+   [...byPointer.values()].filter(x=>x.contextualGradeAIAssessment===2).length!==2||
+   byPointer.get("catena.mark.16.14:3")?.contextualGradeAIAssessment!==2||
+   byPointer.get("catena.mark.14.17:2")?.contextualGradeAIAssessment!==2)
+  throw Error("CATENA_MARK_ADJUDICATION_COUNTS_INVALID");
+ return Object.freeze({byPointer,negatives:Object.freeze(negatives),researchOnly:true});
 }
