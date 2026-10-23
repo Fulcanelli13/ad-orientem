@@ -192,5 +192,36 @@ writeFileSync(join(output,"all-1938-page-coordinate-hints.v1.json"),
   sourceOnlyUnverified:true,sourcePageTextWasNotRewritten:true,
   printedPageAndSpeakerMustStillBeConfirmed:true,
   summary,leaves:pageList,monotonicityExceptions:orderingExceptions,rows},null,2)+"\n");
+const exceptions=rows.filter(x=>x.pageMatchState!=="strong_unique_original_OCR_page_match")
+ .sort((a,b)=>({no_six_word_anchor:0,ambiguous_page_tie:1,
+  weak_unique_original_OCR_page_match:2}[a.pageMatchState]||3)-
+  ({no_six_word_anchor:0,ambiguous_page_tie:1,
+    weak_unique_original_OCR_page_match:2}[b.pageMatchState]||3)||
+   a.originalOCRQuestionLine-b.originalOCRQuestionLine);
+const unresolved=exceptions.filter(x=>x.scannedLeaf===null);
+writeFileSync(join(output,"page-alignment-exception-queue.v1.json"),
+ JSON.stringify({
+  schema:"ao.catena.chrysostom-1888-page-alignment-exception-queue.v1",
+  originalVolumeSHA256:unit.sourceVolumeSHA256,
+  originalPageXMLSHA256:PIN_DJVU,
+  queuePurpose:"Machine-research disambiguation and historical scan-page OCR verification; not human-review or publication",
+  unresolvedPageHints:unresolved.length,
+  weakerUniquePageHints:exceptions.length-unresolved.length,
+  sourcePassagesInQueue:exceptions.length,
+  sourceCriticalPageIdentitiesAuthenticated:0,
+  publicationApprovals:0,
+  entries:exceptions.map(r=>({
+   sourceId:r.id,originalOCRQuestionLine:r.originalOCRQuestionLine,
+   pageMatchState:r.pageMatchState,
+   scannedLeafProvisional:r.scannedLeaf,
+   historicalSourceQuestionSHA256:r.sourceQuestionSHA256,
+   exactSixWordAnchor:r.sixWordEvidence?.exactSixWordSourceOCR||null,
+   machineNextStep:r.scannedLeaf===null?
+    "recover_or_disambiguate_original_scan_coordinate_anchor":
+    "strengthen_page_anchor_with_longer_context_and_printed_scan_location",
+   originalQuestionSpeakerCertified:false,
+   publicationEligible:false
+  }))
+ },null,2)+"\n");
 writeFileSync(join(output,"summary.v1.json"),JSON.stringify(summary,null,2)+"\n");
 console.log(JSON.stringify(summary));
