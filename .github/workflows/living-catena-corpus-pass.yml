@@ -7,6 +7,8 @@ on:
     paths:
       - scripts/scripture-catena-first-pass.mjs
       - scripts/scripture-catena-schaff-ocr-ingest.mjs
+      - scripts/scripture-catena-schaff-section-ingest.mjs
+      - tests/scripture-catena-schaff-section-ingest.mjs
       - tests/scripture-catena-schaff-ocr-ingest.mjs
       - .github/workflows/living-catena-corpus-pass.yml
   pull_request:
@@ -19,6 +21,8 @@ on:
       - tests/scripture-catena-mark-original-works.mjs
       - tests/scripture-catena-schaff-first-seeds.mjs
       - scripts/scripture-catena-schaff-ocr-ingest.mjs
+      - scripts/scripture-catena-schaff-section-ingest.mjs
+      - tests/scripture-catena-schaff-section-ingest.mjs
       - tests/scripture-catena-schaff-ocr-ingest.mjs
       - tests/scripture-catena-matthew-batch-two.mjs
       - tests/scripture-catena-matthew-batch-two-reconciliation.mjs
@@ -99,11 +103,17 @@ jobs:
           node-version: "22"
       - name: Acquire both complete 1888 print scans and extract internal question windows
         run: node scripts/scripture-catena-schaff-ocr-ingest.mjs --volume all
+      - name: Segment books and homilies and link exactly-preserved original OCR questions
+        run: node scripts/scripture-catena-schaff-section-ingest.mjs
+      - name: Verify 94 source units and 4131 source-hashed question candidates
+        run: node tests/scripture-catena-schaff-section-ingest.mjs
       - name: Attach both full original scan OCR texts and candidate indexes
         if: success()
         uses: actions/upload-artifact@v4
         with:
           name: catena-schaff-1888-full-ocr-research-only
-          path: dist/schaff-original-ocr/
+          path: |
+            dist/schaff-original-ocr/
+            dist/schaff-sectioned-research/
           if-no-files-found: error
           retention-days: 14
