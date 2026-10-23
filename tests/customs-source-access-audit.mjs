@@ -31,5 +31,7 @@ assert.deepEqual(
 const counts=Object.fromEntries([...allowed].map(status=>[status,audit.records.filter(r=>r.access_status===status).length]));
 for(const [status,num] of Object.entries(audit.counts.access_statuses))assert.equal(counts[status],num,status);
 assert.equal(audit.records.filter(row=>row.access_status==="REDIRECTED_404").map(row=>row.source_id).join(","),"MAASTRICHT-STERRE-DER-ZEE-CUSTOM");
-assert.equal(audit.records.filter(row=>row.access_status==="FETCH_INCONCLUSIVE").length,7);
+assert.equal(audit.records.filter(row=>row.access_status==="FETCH_INCONCLUSIVE").length,8);
+assert.equal(audit.records.find(row=>row.source_id==="LAGHET-EXVOTO").recheck.status,"DIRECT_FULL_PAGE_RETRIEVED");
+assert.equal(audit.records.find(row=>row.source_id==="STRASBOURG-SAINT-NICOLAS-2022").recheck.status,"OFFICIAL_INDEXED_TEXT_ONLY_ORIGIN_HTTP_502");
 console.log("PASS: Customs source link audit, 91/91 exact HTTPS records, 12 priority excluded, no publication promotion");
