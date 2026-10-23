@@ -16,6 +16,8 @@ on:
       - 'tests/pius-x-study-earlier-94-p6-e2e.mjs'
       - 'tests/pius-x-study-free-ask-e2e.mjs'
       - 'tools/pius-x-generative-review.mjs'
+      - 'tools/pius-x-source-only-gate.mjs'
+      - 'tests/pius-x-source-only-gate.mjs'
       - 'previews/pius-x-study/spx-model-review-client.js'
       - 'previews/pius-x-study/spx-model-review-style.css'
       - 'tests/pius-x-generative-review-e2e.mjs'
@@ -47,6 +49,8 @@ on:
       - 'tests/pius-x-study-earlier-94-p6-e2e.mjs'
       - 'tests/pius-x-study-free-ask-e2e.mjs'
       - 'tools/pius-x-generative-review.mjs'
+      - 'tools/pius-x-source-only-gate.mjs'
+      - 'tests/pius-x-source-only-gate.mjs'
       - 'previews/pius-x-study/spx-model-review-client.js'
       - 'previews/pius-x-study/spx-model-review-style.css'
       - 'tests/pius-x-generative-review-e2e.mjs'
@@ -99,6 +103,8 @@ jobs:
         run: node tests/pius-x-study-free-ask-e2e.mjs
       - name: Verify private model-assisted source-constrained research stage
         run: node tests/pius-x-generative-review-e2e.mjs
+      - name: Reject all uncollated model topics and withhold full P6 editorial answers
+        run: node tests/pius-x-source-only-gate.mjs
       - name: Exercise real-model evaluation harness without external inference
         run: node tests/pius-x-live-eval-harness.mjs
       - name: Validate bounded original E supremi pilot witness metadata
