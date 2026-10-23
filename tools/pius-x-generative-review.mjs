@@ -3,6 +3,17 @@ import {createServer} from 'node:http';
 import {readFileSync} from 'node:fs';
 import {fileURLToPath} from 'node:url';
 
+// Small, explicitly sourced evidence annex for one pilot subject only. The original
+// 106/423 source-owner corpus and public reader remain untouched.
+export function loadPrimaryWitnessAnnex(){
+ const file=new URL('../previews/pius-x-study/evidence/pilot01-e-supremi-primary-witness.v1.json',import.meta.url);
+ const j=JSON.parse(readFileSync(file,'utf8'));
+ if(j.schema!=='AO_SPX_P2_PRIMARY_WITNESS_ANNEX_V1'||j.chapterId!=='SPX-PILOT-01'||
+    j.publicationApproved!==false||j.approvedAsAuthenticQuotation!==false||
+    j.dialogueMappings?.length!==3||j.sourceWitnesses?.length!==8)
+  throw new Error('Primary witness annex differs from reviewed pilot contract');
+ return j;
+}
 export function readCorpus(html){
  const m=String(html).match(/<script type="application\/json" id="spxExpandedCorpus">([\s\S]*?)<\/script>/);
  if(!m)throw new Error('Missing original P6 corpus');
@@ -11,7 +22,7 @@ export function readCorpus(html){
   throw new Error('Original research corpus or publication hold changed');
  const chapters=new Map(data.chapters.map(c=>[c.id,c]));
  if(chapters.size!==106)throw new Error('Duplicated subject IDs');
- return {data,chapters};
+ return {data,chapters,primaryWitnessAnnex:loadPrimaryWitnessAnnex()};
 }
 const held=(reason)=>({status:'held',reason,reply:null,publishingApproved:false,
  label:'NO GENERATED PAPAL SPEECH — PRIVATE RESEARCH'});
@@ -29,9 +40,24 @@ export function selectEvidence(store,input){
  if(input?.nodeId && !c.nodes.some(n=>n.id===input.nodeId))return held('unknown_source_node');
  const selected=input?.nodeId?c.nodes.find(n=>n.id===input.nodeId):c.nodes[0];
  const nodes=[c.nodes[0],selected].filter((n,i,a)=>a.findIndex(x=>x.id===n.id)===i);
- const evidence=nodes.map(n=>({id:n.id,text:n.a[lang],question:n.q[lang],
-  sourceUrl:n.source?.url||c.source.url,locus:n.source?.locus||c.source.locus,
-  status:'UNVERIFIED_EDITORIAL_ADAPTATION_NOT_ORIGINAL_QUOTATION'}));
+ const annex=store.primaryWitnessAnnex;
+ const mapById=new Map((c.id===annex.chapterId?annex.dialogueMappings:[]).map(m=>[m.nodeId,m]));
+ const anchors=new Map(annex.sourceWitnesses.map(w=>[w.id,w]));
+ const evidence=nodes.map(n=>{
+  const witnessMap=mapById.get(n.id);
+  return {id:n.id,text:n.a[lang],question:n.q[lang],
+   sourceUrl:n.source?.url||c.source.url,locus:n.source?.locus||c.source.locus,
+   status:'UNVERIFIED_EDITORIAL_ADAPTATION_NOT_ORIGINAL_QUOTATION',
+   primaryWitnessStatus:witnessMap?'BOUNDED_LATIN_SPOTCHECK_NOT_FULL_VERIFICATION':'NO_COLLATED_PRIMARY_WITNESS',
+   originalLatinWitnesses:witnessMap?witnessMap.witnessIds.map(id=>{
+     const w=anchors.get(id);
+     if(!w)throw new Error('Broken primary witness reference');
+     return {id:w.id,locus:w.locus,latin:w.latin,speaker:w.speaker,
+      sourceUrl:annex.document.sites.la,readingNote:w.meaning};
+    }):[],
+   editorialWarnings:witnessMap?[...witnessMap.editorialFlags]:[]
+  };
+ });
  if(evidence.some(x=>!x.text||!x.sourceUrl?.startsWith('https://')||!x.locus))
   return held('missing_editorial_witness_or_locator');
  // History is visitor-provided conversational orientation, never evidence. Reject
@@ -48,7 +74,10 @@ export function selectEvidence(store,input){
 }
 const composerRules=[
  'Compose a PRIVATE, UNAPPROVED historical-character editorial demonstration, NOT a verified papal quotation.',
- 'Use ONLY the supplied existing editorial text; the source URL is a locator, not verified passage evidence.',
+ 'Use ONLY the supplied existing editorial text, and where provided its short original-Latin witness anchors.',
+ 'Original-Latin snippets are source evidence only for the exact propositions they contain; never extrapolate beyond them. The source URL is a locator, not proof by itself.',
+ 'Do not attribute the embedded quotation of St Anselm in E supremi to Pius X personally; do not claim that Leo XIII is named in the encyclical opening.',
+ 'Where the third pilot question speaks of leading people to Christ and thereby to God, the supporting passage is section 8, NOT only sections 1–4.',
  'No additional doctrine, history, biography, invented facts, recollections, or new examples.',
  'Respond to the actual question naturally using restrained period Catholic prose, without parody.',
  'No quotation marks or first-person historical memories. No absolution, confession, or individualized moral verdict.',
@@ -59,6 +88,8 @@ const composerRules=[
 ].join(' ');
 const verifierRules=[
  'Independently test EVERY factual assertion in the candidate against the literal supplied editorial evidence.',
+ 'If an original Latin witness fragment is supplied, require each corresponding claim to be supported by that fragment or abstain. Respect original speaker attribution and any editorialWarnings.',
+ 'Short primary witnesses are bounded spot checks, not evidence that the entirety of a document or its translation is collated.',
  'Evidence is NOT independently collated with the original work; source titles and locators cannot prove a claim.',
  'Reject any new assertion, unsupported inference, invented biographical detail, fabricated quotation, or individualized pastoral judgement.',
  'The previous dialogue is NOT verified evidence, and apparent references to history do not authorize factual claims.',
