@@ -64,10 +64,13 @@
     "hingesWithActionableFollowup": 32,
     "hingesSufficientAtDeskWithoutNewWork": 4,
     "totalActionableWorkItems": 33,
-    "publicationApproved": 0
+    "publicationApproved": 0,
+    "p0ResearchRecommendations": 8,
+    "p0RecommendedOriginalSourceVerseEntries": 38,
+    "p0AcceptedEditorialDecisions": 0
   },
   "priorityOrder": [
-    "First: P0 exact-source decisions grouped by causal and theological function",
+    "First: eight P0 original-text recommendations prepared (38 distinct source verse entries across five causal/vision groups); no human/editorial acceptances. Compare in the existing P3 workbench, then record explicit future accept/hold/omit decision per source owner.",
     "Second: remaining source-only questions, removing redundant proof material",
     "Third: display/citation tasks in existing reader and workbench, while editing 41 contextual pieces",
     "Fourth: cross-edition print/rights, French localization, uninterrupted human oral/theological approval",
@@ -93,7 +96,7 @@
       ],
       "decisionRequired": "Compare existing 12-verse Genesis 6 original-source trial with abbreviated seven verses and full held fourteen; preserve judgment, covenant, animals and obedience.",
       "candidateComparisonStatus": "EXISTING_VERBATIM_TRIAL_UNAPPROVED",
-      "currentState": "OPEN_HELD_NOT_PUBLISHED",
+      "currentState": "RESEARCH_RECOMMENDATION_READY_NOT_ACCEPTED",
       "dependencyGroups": [
         "SCRIPTURE_EDITION_WITNESS_AUDIT",
         "SOURCE_READING_COMPARISON"
@@ -110,6 +113,27 @@
         "theological": false,
         "printedEditionCertified": false,
         "publication": false
+      },
+      "researchRecommendation": {
+        "status": "SOURCE_EVIDENCE_PROPOSED_NOT_SELECTED",
+        "group": "NOAH_ARK",
+        "recommendation": "PROPOSE_TRIAL_INCLUDE",
+        "refs": [
+          "Genesis 6:9–14",
+          "Genesis 6:17–22"
+        ],
+        "reason": "The twelve native verses introduce Noah, sons, corruption, ark command, announced flood, covenant, animals, provisions and obedience before Genesis 7:1. They already exist as P3's exact-source held trial. Genesis 6:15–16 remains an explicit omission; the more aggressively compressed seven-verse alternative loses meaningful details.",
+        "contrast": "Seven-verse compressed P0 candidate and complete Genesis 6:9–22 held range remain available as separate research alternatives.",
+        "links": [],
+        "dependenciesToAccept": [
+          "UNINTERRUPTED_ORIGINAL_TEXT_READING",
+          "THREE_WITNESS_PRINT_COLLATION",
+          "CATHOLIC_THEOLOGICAL_REVIEW"
+        ],
+        "sourceWordsAndVersesNotRewritten": true,
+        "readyForHumanEditorialDecision": true,
+        "acceptedByHumanEditor": false,
+        "publicationApproved": false
       }
     },
     {
@@ -128,7 +152,7 @@
       "decisionRequired": "Review Exodus 12:29–30 immediately between selected Passover and Pharaoh's release; judgment and Pharaoh's reaction are distinct causal roles.",
       "kind": "SOURCE_SELECTION",
       "ownerRole": "Catholic Scripture editor (unassigned)",
-      "currentState": "OPEN_UNAPPROVED_COMPARISON",
+      "currentState": "RESEARCH_RECOMMENDATION_READY_NOT_ACCEPTED",
       "dependencyGroups": [
         "SCRIPTURE_EDITION_WITNESS_AUDIT",
         "SOURCE_READING_COMPARISON"
@@ -146,7 +170,27 @@
         "publication": false
       },
       "sourceReference": "Exodus 12:29–30",
-      "candidateComparisonStatus": "EXISTING_AFTER_SELECTED_SCRIPTURE_TRIAL"
+      "candidateComparisonStatus": "EXISTING_AFTER_SELECTED_SCRIPTURE_TRIAL",
+      "researchRecommendation": {
+        "status": "SOURCE_EVIDENCE_PROPOSED_NOT_SELECTED",
+        "group": "PASSOVER_EXODUS",
+        "recommendation": "PROPOSE_TRIAL_INCLUDE",
+        "refs": [
+          "Exodus 12:29–30"
+        ],
+        "reason": "Both verses connect the announced firstborn judgment in Exodus 11 with its occurrence and Pharaoh's rising to release the people in 12:31; this is the causal event, not a narrator's paraphrase.",
+        "contrast": "No shorter candidate preserves both the recorded judgment and Pharaoh's response.",
+        "links": [],
+        "dependenciesToAccept": [
+          "UNINTERRUPTED_ORIGINAL_TEXT_READING",
+          "THREE_WITNESS_PRINT_COLLATION",
+          "CATHOLIC_THEOLOGICAL_REVIEW"
+        ],
+        "sourceWordsAndVersesNotRewritten": true,
+        "readyForHumanEditorialDecision": true,
+        "acceptedByHumanEditor": false,
+        "publicationApproved": false
+      }
     },
     {
       "id": "HS-W-SRC-HS-CF-06",
@@ -166,7 +210,7 @@
       ],
       "decisionRequired": "Review John 19:38–42's burial before the Easter tomb; compare immediately alongside the distinct unapproved pierced-side text.",
       "candidateComparisonStatus": "EXISTING_VERBATIM_TRIAL_UNAPPROVED",
-      "currentState": "OPEN_HELD_NOT_PUBLISHED",
+      "currentState": "RESEARCH_RECOMMENDATION_READY_NOT_ACCEPTED",
       "dependencyGroups": [
         "SCRIPTURE_EDITION_WITNESS_AUDIT",
         "SOURCE_READING_COMPARISON"
@@ -183,6 +227,28 @@
         "theological": false,
         "printedEditionCertified": false,
         "publication": false
+      },
+      "researchRecommendation": {
+        "status": "SOURCE_EVIDENCE_PROPOSED_NOT_SELECTED",
+        "group": "JOHN_PASSION",
+        "recommendation": "PROPOSE_COUPLED_TRIAL_INCLUDE",
+        "refs": [
+          "John 19:38–42"
+        ],
+        "reason": "The burial by Joseph and Nicodemus introduces the sepulchre and laid body before the first Easter encounter in John 20:1. Compare it consecutively after the distinct pierced-side witness, without making the two owners into one canonical beat.",
+        "contrast": "John 19:31–42 full twelve-verse side-plus-burial comparison is source-exact; the original 93 selected units stay unchanged.",
+        "links": [
+          "HS-W-SRC-JOHN-19-PIERCED-SIDE"
+        ],
+        "dependenciesToAccept": [
+          "UNINTERRUPTED_ORIGINAL_TEXT_READING",
+          "THREE_WITNESS_PRINT_COLLATION",
+          "CATHOLIC_THEOLOGICAL_REVIEW"
+        ],
+        "sourceWordsAndVersesNotRewritten": true,
+        "readyForHumanEditorialDecision": true,
+        "acceptedByHumanEditor": false,
+        "publicationApproved": false
       }
     },
     {
@@ -201,7 +267,7 @@
       "decisionRequired": "Review Christ's death, blood and water, eyewitness attestation (19:35) and two Scripture fulfilments before deciding whether burial-only would distort John 19.",
       "kind": "SOURCE_SELECTION",
       "ownerRole": "Catholic Scripture editor (unassigned)",
-      "currentState": "OPEN_UNAPPROVED_COMPARISON",
+      "currentState": "RESEARCH_RECOMMENDATION_READY_NOT_ACCEPTED",
       "dependencyGroups": [
         "SCRIPTURE_EDITION_WITNESS_AUDIT",
         "SOURCE_READING_COMPARISON"
@@ -219,7 +285,29 @@
         "publication": false
       },
       "sourceReference": "John 19:31–37",
-      "candidateComparisonStatus": "EXISTING_AFTER_SELECTED_SCRIPTURE_TRIAL"
+      "candidateComparisonStatus": "EXISTING_AFTER_SELECTED_SCRIPTURE_TRIAL",
+      "researchRecommendation": {
+        "status": "SOURCE_EVIDENCE_PROPOSED_NOT_SELECTED",
+        "group": "JOHN_PASSION",
+        "recommendation": "PROPOSE_COUPLED_TRIAL_INCLUDE",
+        "refs": [
+          "John 19:31–37"
+        ],
+        "reason": "Original Johannine source establishes that Jesus' legs were not broken, His side was pierced, blood and water flowed, the eyewitness affirmed his testimony, and two scriptural fulfilments were recorded. Evaluate intact with the burial rather than omitting it merely to optimize length.",
+        "contrast": "Burial-only variant still repairs the sepulchre antecedent but loses separate eyewitness and fulfilment content; doctrinal interpretation requires a qualified Catholic reviewer.",
+        "links": [
+          "HS-W-SRC-HS-CF-06"
+        ],
+        "dependenciesToAccept": [
+          "UNINTERRUPTED_ORIGINAL_TEXT_READING",
+          "THREE_WITNESS_PRINT_COLLATION",
+          "CATHOLIC_THEOLOGICAL_REVIEW"
+        ],
+        "sourceWordsAndVersesNotRewritten": true,
+        "readyForHumanEditorialDecision": true,
+        "acceptedByHumanEditor": false,
+        "publicationApproved": false
+      }
     },
     {
       "id": "HS-W-SRC-HS-CF-11",
@@ -239,7 +327,7 @@
       ],
       "decisionRequired": "Judge Acts 28:16 together with source-attested 28:17–22 and disclose omitted missionary journeys.",
       "candidateComparisonStatus": "EXISTING_VERBATIM_TRIAL_UNAPPROVED",
-      "currentState": "OPEN_HELD_NOT_PUBLISHED",
+      "currentState": "RESEARCH_RECOMMENDATION_READY_NOT_ACCEPTED",
       "dependencyGroups": [
         "SCRIPTURE_EDITION_WITNESS_AUDIT",
         "SOURCE_READING_COMPARISON"
@@ -256,6 +344,28 @@
         "theological": false,
         "printedEditionCertified": false,
         "publication": false
+      },
+      "researchRecommendation": {
+        "status": "SOURCE_EVIDENCE_PROPOSED_NOT_SELECTED",
+        "group": "PAUL_ROME",
+        "recommendation": "PROPOSE_COUPLED_TRIAL_INCLUDE",
+        "refs": [
+          "Acts 28:16"
+        ],
+        "reason": "Paul's arrival in Rome and guarded lodging grounds the later 28:23 audience in an actual place, but does not itself explain why the leaders gather; pair with Acts 28:17–22 and explicitly disclose omitted Acts 16–27 journeys.",
+        "contrast": "A one-verse arrival by itself is not an adequate causal connector for the appointed Roman audience.",
+        "links": [
+          "HS-W-SRC-HS-P3-CF-13"
+        ],
+        "dependenciesToAccept": [
+          "UNINTERRUPTED_ORIGINAL_TEXT_READING",
+          "THREE_WITNESS_PRINT_COLLATION",
+          "CATHOLIC_THEOLOGICAL_REVIEW"
+        ],
+        "sourceWordsAndVersesNotRewritten": true,
+        "readyForHumanEditorialDecision": true,
+        "acceptedByHumanEditor": false,
+        "publicationApproved": false
       }
     },
     {
@@ -276,7 +386,7 @@
       ],
       "decisionRequired": "Review Acts 28:17–22 before 28:23's appointed day; do not treat a separate audience as one uninterrupted journey.",
       "candidateComparisonStatus": "EXISTING_VERBATIM_TRIAL_UNAPPROVED",
-      "currentState": "OPEN_HELD_NOT_PUBLISHED",
+      "currentState": "RESEARCH_RECOMMENDATION_READY_NOT_ACCEPTED",
       "dependencyGroups": [
         "SCRIPTURE_EDITION_WITNESS_AUDIT",
         "SOURCE_READING_COMPARISON"
@@ -293,6 +403,28 @@
         "theological": false,
         "printedEditionCertified": false,
         "publication": false
+      },
+      "researchRecommendation": {
+        "status": "SOURCE_EVIDENCE_PROPOSED_NOT_SELECTED",
+        "group": "PAUL_ROME",
+        "recommendation": "PROPOSE_COUPLED_TRIAL_INCLUDE",
+        "refs": [
+          "Acts 28:17–22"
+        ],
+        "reason": "The Roman Jewish leaders are summoned, Paul's imprisonment and testimony are explained, and they agree to hear him, making Acts 28:23's appointed day intelligible. This does not narrate the preceding ministry, arrest or voyage.",
+        "contrast": "Acts 28:17–22 alone is less adequate than both 28:16 and 17–22 after the Jerusalem Council.",
+        "links": [
+          "HS-W-SRC-HS-CF-11"
+        ],
+        "dependenciesToAccept": [
+          "UNINTERRUPTED_ORIGINAL_TEXT_READING",
+          "THREE_WITNESS_PRINT_COLLATION",
+          "CATHOLIC_THEOLOGICAL_REVIEW"
+        ],
+        "sourceWordsAndVersesNotRewritten": true,
+        "readyForHumanEditorialDecision": true,
+        "acceptedByHumanEditor": false,
+        "publicationApproved": false
       }
     },
     {
@@ -313,7 +445,7 @@
       ],
       "decisionRequired": "Evaluate Revelation 4:1–2 as the antecedent of the heavenly throne in Revelation 5; distinguish visionary text from a historical event.",
       "candidateComparisonStatus": "COORDINATE_HELD_NOT_SELECTED",
-      "currentState": "OPEN_HELD_NOT_PUBLISHED",
+      "currentState": "RESEARCH_RECOMMENDATION_READY_NOT_ACCEPTED",
       "dependencyGroups": [
         "SCRIPTURE_EDITION_WITNESS_AUDIT",
         "SOURCE_READING_COMPARISON"
@@ -330,6 +462,28 @@
         "theological": false,
         "printedEditionCertified": false,
         "publication": false
+      },
+      "researchRecommendation": {
+        "status": "SOURCE_EVIDENCE_PROPOSED_NOT_SELECTED",
+        "group": "APOCALYPTIC_VISION",
+        "recommendation": "PROPOSE_TRIAL_INCLUDE_WITH_GENRE_HEADING",
+        "refs": [
+          "Revelation 4:1–2"
+        ],
+        "reason": "The two native verses supply an open heavenly door, visionary hearing and throne antecedent for Revelation 5:1. A separate clearly non-Scripture book/genre heading is essential for the handoff from Paul's historical Acts narrative.",
+        "contrast": "Genre heading alone is a valid zero-added-verse fallback; a Patmos identification from Revelation 1:9–11 requires a visibly non-contiguous, separately attributed earlier vision.",
+        "links": [
+          "HS-W-UI-04"
+        ],
+        "dependenciesToAccept": [
+          "UNINTERRUPTED_ORIGINAL_TEXT_READING",
+          "THREE_WITNESS_PRINT_COLLATION",
+          "CATHOLIC_THEOLOGICAL_REVIEW"
+        ],
+        "sourceWordsAndVersesNotRewritten": true,
+        "readyForHumanEditorialDecision": true,
+        "acceptedByHumanEditor": false,
+        "publicationApproved": false
       }
     },
     {
@@ -350,7 +504,7 @@
       ],
       "decisionRequired": "Read Revelation 21:9–11 as a single suspended city/angel description before 22:1; keep heavenly city unmapped.",
       "candidateComparisonStatus": "EXISTING_VERBATIM_TRIAL_UNAPPROVED",
-      "currentState": "OPEN_HELD_NOT_PUBLISHED",
+      "currentState": "RESEARCH_RECOMMENDATION_READY_NOT_ACCEPTED",
       "dependencyGroups": [
         "SCRIPTURE_EDITION_WITNESS_AUDIT",
         "SOURCE_READING_COMPARISON"
@@ -367,6 +521,28 @@
         "theological": false,
         "printedEditionCertified": false,
         "publication": false
+      },
+      "researchRecommendation": {
+        "status": "SOURCE_EVIDENCE_PROPOSED_NOT_SELECTED",
+        "group": "NEW_JERUSALEM_VISION",
+        "recommendation": "PROPOSE_TRIAL_INCLUDE",
+        "refs": [
+          "Revelation 21:9–11"
+        ],
+        "reason": "Verse 9 introduces one of the seven angels, verse 10 shows the Bride/city, and verse 11 completes the immediately suspended visual description. This supplies the antecedent for 'he showed me' when the selected river-of-life vision opens in Revelation 22:1.",
+        "contrast": "The original hold is only 21:9–10, while the already P3-owned native readthrough trial includes verse 11; protect this distinction before any promotion.",
+        "links": [
+          "HS-W-UI-05"
+        ],
+        "dependenciesToAccept": [
+          "UNINTERRUPTED_ORIGINAL_TEXT_READING",
+          "THREE_WITNESS_PRINT_COLLATION",
+          "CATHOLIC_THEOLOGICAL_REVIEW"
+        ],
+        "sourceWordsAndVersesNotRewritten": true,
+        "readyForHumanEditorialDecision": true,
+        "acceptedByHumanEditor": false,
+        "publicationApproved": false
       }
     },
     {
@@ -1944,7 +2120,7 @@
     ]
   },
   "nextExecutableBatch": [
-    "Prepare one opt-in 37-movement research reading of existing exact Scripture with candidate variants controlled by stable source decision IDs; selected master must not change.",
+    "Use the existing workbench P0 scope to compare eight proposed native-source inclusions in original chronological position, preserving the 93 selected beat owners and the omissions. Human editorial/theological acceptance remains separately blocked.",
     "Run a high-priority source-and-theology review on P0 grouped originals, prioritizing Noah/Passover/Passion/Rome/New Jerusalem, and log genuine keep/omit/include decisions as proposals only.",
     "Parallelize the edition/rights and 41-note editorial review without asserting either as publication-ready."
   ]
