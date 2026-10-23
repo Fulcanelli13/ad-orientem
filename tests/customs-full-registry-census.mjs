@@ -267,3 +267,22 @@ assert.deepEqual(
 assert.equal(remainingChapters.summary.independently_verified_new_distinct_customs,0);
 assert.equal(remainingChapters.summary.app_published,0);
 console.log('Weiser 1958 chapters 14–28: 121 traceable nested details across 42 printed-page locations, no source loss or new publication — PASS');
+
+
+const secondPassCoverage = load('data/customs/master/weiser-1958-second-pass-page-coverage.v1.json');
+assert.equal(secondPassCoverage.chapters.length,28);
+assert.equal(secondPassCoverage.summary.detail_observations_from_four_second_pass_files,340);
+assert.equal(secondPassCoverage.summary.combined_detail_and_addendum_rows,346);
+assert.equal(secondPassCoverage.summary.distinct_page_locations_having_at_least_one_source_detail,120);
+assert.equal(secondPassCoverage.summary.printed_pages_not_yet_represented_in_detail_pass,222);
+assert.equal(secondPassCoverage.summary.fully_line_by_line_reaudited_pages_certified,0);
+assert.equal(secondPassCoverage.summary.fully_line_by_line_reaudited_chapters,0);
+assert.equal(secondPassCoverage.chapters.reduce((n,r)=>n+r.number_of_first_plus_second_pass_detail_rows,0),346);
+assert.equal(secondPassCoverage.chapters.reduce((n,r)=>n+r.unique_printed_page_locations,0),120);
+for(const r of secondPassCoverage.chapters) {
+ assert.ok(r.main_chapter_page_count>=r.unique_printed_page_locations);
+ assert.equal(new Set(r.unique_printed_pages_with_located_details).size,r.unique_printed_page_locations);
+ assert.ok(r.unique_printed_pages_with_located_details.every(p=>p>=r.printed_page_range[0]&&p<=r.printed_page_range[1]));
+ assert.equal(r.complete_page_by_page_second_read_confirmed,false);
+}
+console.log('Handbook source-page coverage — 28/28 indexed, 120/342 locations touched, 222 without new detail location; no full page reading claimed — PASS');
