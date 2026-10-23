@@ -1,0 +1,59 @@
+name: B23 controlled 82-source Commons cooldown wave
+on:
+  push:
+    branches: [research/b19-original-image-acquisition-probe-20261023]
+    paths: [.github/workflows/ao-art-b23-commons82.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: ao-b23-commons82-single-pacer
+  cancel-in-progress: false
+jobs:
+  paced-rights-checked-source-acquisition:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check 'Pillow>=11,<13'
+      - name: Verify 82 previously deferred source identities without the recovered Pentecost
+        run: |
+          python - <<'PY'
+          import json,pathlib
+          q=json.loads(pathlib.Path('data/research/sacred-art-b23-commons82-cooldown.manifest.json').read_text())
+          rows=q['records']
+          assert len(rows)==82 and len({r['asset_source_id'] for r in rows})==82
+          assert not any(r['record_id']=='commons-debray-pentecost' for r in rows)
+          assert all(r['api_type']=='commons' and r['download_gate']=='METADATA_FIRST' for r in rows)
+          PY
+      - name: Acquire Commons originals sequentially with 1.5s spacing and stop on 429
+        run: |
+          python scripts/research/sacred_art_acquire.py \
+            --manifest data/research/sacred-art-b23-commons82-cooldown.manifest.json \
+            --output artifacts/b23-commons82 \
+            --max-files 35 \
+            --max-bytes 650000000 \
+            --prior-audit data/research/no-prior-b23commons82.csv
+      - name: Retain originals and all row-level reason codes for seven days
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ao-b23-commons82-cooldown-originals-and-evidence
+          path: artifacts/b23-commons82/
+          retention-days: 7
+          if-no-files-found: warn
+      - name: Preserve source metadata, licence and SHA256 audit independent of binary expiry
+        if: success()
+        run: |
+          cp artifacts/b23-commons82/Acquisition_results.csv data/research/sacred-art-b23-commons82.audit.csv
+          cp artifacts/b23-commons82/Acquisition_summary.json data/research/sacred-art-b23-commons82.audit-summary.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/research/sacred-art-b23-commons82.audit.csv data/research/sacred-art-b23-commons82.audit-summary.json
+          git commit -m 'research: preserve paced 82-source Commons acquisition evidence and rate-limit holds'
+          git fetch origin research/b19-original-image-acquisition-probe-20261023
+          git rebase origin/research/b19-original-image-acquisition-probe-20261023
+          git push origin HEAD:research/b19-original-image-acquisition-probe-20261023
