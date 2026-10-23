@@ -1082,5 +1082,63 @@
       "url": "https://www.catholicculture.org/commentary/annunciation-and-lent-celebrating-new-life-through-mary-garden/",
       "contribution": "Modern Catholic family garden devotion, not historical origin evidence"
     }
-  ]
+  ],
+  "historical_context_sources": [
+    {
+      "id": "EBK-ADVENT-WREATH-WICHERN-2025",
+      "custom_id": "ADVT-001",
+      "title": "Der Adventskranz: Bedeutung und Ursprung des Adventskranzes",
+      "issuer": "Erzbistum Köln — Archdiocese of Cologne",
+      "date": "2025-11-12",
+      "url": "https://www.erzbistum-koeln.de/presse_und_medien/magazin/Der-Adventskranz-Bedeutung-und-Ursprung-des-Adventskranzes/",
+      "authority_role": "Official Catholic diocesan retrospective on Advent wreath history",
+      "directness": "OFFICIAL_HISTORICAL_EXPLANATION",
+      "claim_supported": "Wichern introduced a multi-candle wreath in Hamburg in 1839; 4-candle form and Catholic uptake emerged later; first Cologne church example is described as reportedly 1925.",
+      "limitations": "Historical synthesis, not archival proof of unique first occurrence or 1962 rite; source qualifies the 1925 claim."
+    },
+    {
+      "id": "EBK-ADVENT-MANGER-STRAW-2025",
+      "custom_id": "ADVT-002",
+      "title": "Was ist Advent: Ursprung und Bedeutung der Vorweihnachtszeit",
+      "issuer": "Erzbistum Köln — Archdiocese of Cologne",
+      "date": "2025-11-12",
+      "url": "https://www.erzbistum-koeln.de/presse_und_medien/magazin/Was-ist-Advent-Ursprung-und-Bedeutung-der-Vorweihnachtszeit/",
+      "authority_role": "Official Catholic diocesan witness to manger straw in German Catholic areas",
+      "directness": "OFFICIAL_HISTORICAL_EXPLANATION",
+      "claim_supported": "In Catholic regions children put straw into a manger after good deeds. Combined with Catholic Culture this establishes practice across more than one setting.",
+      "limitations": "Neither Cologne nor Catholic Culture proves that the custom originated in France, that it was universal or that it was employed everywhere."
+    },
+    {
+      "id": "MEX-CULTURA-POSADAS-ORIGINS-2017",
+      "custom_id": "ADVT-003",
+      "title": "Y tú, ¿cómo celebras las posadas?",
+      "issuer": "Secretaría de Cultura — Gobierno de México",
+      "date": "2017-12-21",
+      "url": "https://www.gob.mx/cultura/articulos/y-tu-como-celebras-las-posadas?idiom=es",
+      "authority_role": "Mexican government historical account distinguishing competing origin theories",
+      "directness": "OFFICIAL_CULTURAL_HISTORY",
+      "claim_supported": "The Acolman 1587 tradition is one historical attribution; other writers identify Andalusian transmission; colonial Mexican context is established but singular exact origin disputed.",
+      "limitations": "Not a Catholic ritual authorization, nor proof of a fixed 1962 Mass celebration or mandatory parish house visits."
+    },
+    {
+      "id": "DAYTON-MARIAN-MARY-GARDENS-HISTORY",
+      "custom_id": "MARI-002",
+      "title": "Background on Mary's Gardens",
+      "issuer": "University of Dayton — Marian Library / International Marian Research Institute",
+      "date": "Institutional historical repository, accessed 2026-10-23",
+      "url": "https://udayton.edu/marianlibrary/marysgardens/b/background-on-marys-gardens.php",
+      "authority_role": "Specialist Marian library's archival history of modern Mary Garden projects",
+      "directness": "ACADEMIC_INSTITUTIONAL_ARCHIVE",
+      "claim_supported": "The first public United States Mary Garden was established at Woods Hole in 1932; the Philadelphia Mary's Gardens initiative began in 1951 and spread home-garden kits.",
+      "limitations": "Medieval plant names do not prove that today's formal Mary Garden layout dates to the Middle Ages."
+    }
+  ],
+  "historical_context_policy": {
+    "owner": "Existing canonical custom ID, not a new customary attestation",
+    "not_attestations": true,
+    "not_ritual_permission": true,
+    "not_calendar_schedule": true,
+    "not_universal_regional_scope": true,
+    "source_links_belong_to": "Historically bounded explanatory context only"
+  }
 }
