@@ -6,7 +6,7 @@ const html=readFileSync('artifacts/pius-x-study-expanded/SPX_Study_Expanded_106_
 const store=readCorpus(html);
 assert.equal(store.data.counts.allNodes,423);
 assert.equal(store.chapters.size,106);
-assert.equal(store.sourceOnlyGate.size,37);
+assert.equal(store.sourceOnlyGate.size,33);
 assert.equal(store.data.approvals.publishing,false);
 
 let eligible=0, held=0;
@@ -29,8 +29,8 @@ for(const c of store.chapters.values()){
   assert(result.status==='held');
  }
 }
-assert.equal(eligible,37);
-assert.equal(held,69);
+assert.equal(eligible,33);
+assert.equal(held,73);
 assert.equal(all.size,106);
 for(const id of ['SPX-PILOT-07','SPX-NEW-021','SPX-NEW-013','SPX-EXP-037',
  'SPX-NEW-003','SPX-NEW-008','SPX-NEW-007','SPX-013']){
@@ -56,7 +56,7 @@ const mapped=followupTriage.followups.filter(x=>x.witnessIds.length);
 const unmapped=followupTriage.followups.filter(x=>x.witnessIds.length===0);
 assert.equal(mapped.length,14);
 assert.equal(unmapped.length,8);
-assert.equal([...store.sourceOnlyGate.values()].reduce((a,v)=>a+v.size,0),87);
+assert.equal([...store.sourceOnlyGate.values()].reduce((a,v)=>a+v.size,0),82);
 for(const item of followupTriage.followups){
  const c=store.chapters.get(item.chapterId);
  const node=c?.nodes.find(n=>n.id===item.nodeId);
@@ -97,11 +97,14 @@ assert.deepEqual(music.evidence[0].originalLanguageWitnesses.map(x=>x.id),
 
 const wave2=JSON.parse(readFileSync(
  'previews/pius-x-study/evidence/pius-x-six-document-wave2-20261023.v1.json','utf8'));
-assert.equal(wave2.summary.newlyMappedNodes,51);
+assert.equal(wave2.summary.newlyMappedNodes,46);
+assert.equal(wave2.summary.screenedExistingNodeIDs,51);
+assert.equal(wave2.summary.originalP6PartialHolds,5);
 assert.equal(wave2.summary.distinctChapters,25);
 assert.equal(wave2.summary.newOriginalLanguageSnippets,35);
 assert.equal(wave2.summary.completeAnswersCertified,0);
 const assigned=new Set();
+let waveAdmitted=0,waveHeld=0;
 for(const record of wave2.records){
  assert(!assigned.has(record.nodeId));assigned.add(record.nodeId);
  const c=store.chapters.get(record.chapterId);
@@ -111,6 +114,12 @@ for(const record of wave2.records){
  for(const language of ['en','fr']){
   const result=selectEvidence(store,{chapterId:c.id,nodeId:record.nodeId,
    question:node.q[language],language});
+  if(record.status==='HOLD_ORIGINAL_P6_PARTIAL_EVIDENCE'){
+   assert.equal(c.partial,true);
+   assert.equal(result.status,'held');
+   assert.equal(result.reason,'not_papal_primary_document_adaptation');
+   continue;
+  }
   assert.equal(result.status,'eligible');
   assert.equal(result.evidence[0].primaryWitnessStatus,
    'WAVE_TWO_BOUNDED_ORIGINAL_EXCERPT_CANDIDATE_UNAPPROVED');
@@ -120,7 +129,11 @@ for(const record of wave2.records){
   assert(!JSON.stringify(result.evidence).includes(node.a.en));
   assert(!JSON.stringify(result.evidence).includes(node.a.fr));
  }
+ if(record.status==='HOLD_ORIGINAL_P6_PARTIAL_EVIDENCE')waveHeld++;
+ else waveAdmitted++;
 }
+assert.equal(waveAdmitted,46);
+assert.equal(waveHeld,5);
 assert.equal(assigned.size,51);
 assert.equal(new Set(wave2.witnesses.map(x=>x.id)).size,35);
 assert(wave2.witnesses.every(x=>x.originalText.length>15 &&
@@ -173,4 +186,4 @@ const second=await composeDraft(store,{...input,nodeId:c.nodes[2].id,question:c.
 assert.equal(second.status,'draft');
 assert.equal(calls,before+4);
 assert(seen.evidence[0].originalLanguageWitnesses.some(x=>x.id==='TLS-POLYPHONY'));
-console.log('PASS SPX_SOURCE_ONLY_GATE: 37 source-backed subjects and 87 bounded mapped nodes (14 old followups, 51 wave2), 35 new original-language snippets; eight unsupported followups held, no P6 whole answers supplied, zero release approvals');
+console.log('PASS SPX_SOURCE_ONLY_GATE: 33 source-backed subjects and 82 bounded mapped nodes (46 wave2, 5 original partial holds), 35 new snippets; eight unsupported followups held, no P6 whole answers supplied, zero release approvals');
