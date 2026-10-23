@@ -614,8 +614,8 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "fr": "Les familles catholiques emportaient traditionnellement chez elles des cierges bénits à la Chandeleur. Leur lumière rappelle le Christ, lumière des nations ; leur emploi demeure facultatif et ne garantit aucune protection matérielle."
     },
     "history": {
-      "en": "A French liturgical reference records the domestic keeping of blessed Candlemas candles and their occasional traditional use near the dying. Both are devotional uses following the church blessing, not required household ceremonies.",
-      "fr": "Une référence liturgique française signale la conservation domestique des cierges bénits de la Chandeleur et leur emploi traditionnel occasionnel auprès des mourants. Il s'agit d'usages dévotionnels après la bénédiction à l'église, non de cérémonies familiales requises."
+      "en": "A French liturgical reference records the domestic keeping of blessed Candlemas candles and their traditional use beside the deceased as a sign of hope in eternal light. Both are devotional uses following the church blessing, not required household ceremonies.",
+      "fr": "Une référence liturgique française signale la conservation domestique des cierges bénits de la Chandeleur et leur usage traditionnel auprès des défunts, en signe d'espérance de la lumière éternelle. Il s'agit d'usages dévotionnels après la bénédiction à l'église, non de cérémonies familiales requises."
     },
     "meaning": {
       "en": "A blessed Candlemas candle recalls Christ, the light of the nations, presented in the Temple.",
@@ -626,7 +626,7 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "fr": "Conserver convenablement un cierge déjà béni par un prêtre et l’utiliser pour prier en respectant les précautions de sécurité."
     },
     "caution": {
-      "en": "The 1962 Candlemas reader owns the liturgical blessing and procession; no home ritual is mandated. Historical use near the dying is contextual, never an obligation.",
+      "en": "The 1962 Candlemas reader owns the liturgical blessing and procession; no home ritual is mandated. Historical use beside the deceased is contextual, never an obligation.",
       "fr": "La bénédiction et la procession appartiennent à la liturgie de la Chandeleur. Aucun rite domestique n'est obligatoire."
     },
     "occasion": {
