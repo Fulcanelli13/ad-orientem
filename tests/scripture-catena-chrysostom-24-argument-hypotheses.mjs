@@ -23,7 +23,7 @@ for(const row of argument.rows){
   "shared_scriptural_language_context_differs",
   "insufficient_printed_context_for_argument"].includes(row.comparisonHypothesis));
  assert.ok(row.researchReason.length>=85&&row.researchReason.length<=1000);
- assert.equal(row.comparisonUsesCompleteSourceText,true);
+ assert.equal(row.comparisonUsesExactAvailableOCRContext,true);
  assert.equal(row.researchOpinionOnlyNotAQuoteFromFather,true);
  assert.equal(row.originalGreekOrLatinCriticallyChecked,false);
  assert.equal(row.sourceSpeakerAuthenticationPending,true);
