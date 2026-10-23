@@ -53,7 +53,8 @@ $('spxm-form').addEventListener('submit',async e=>{
  try{
   const resp=await fetch('/api/pius-x-review',{method:'POST',
    headers:{'content-type':'application/json','x-ao-review':'1'},
-   body:JSON.stringify({...snapshot,question,history:previous})});
+   body:JSON.stringify({...snapshot,question,history:previous,
+     autoRoute:['SPX-PILOT-01','SPX-PILOT-09','SPX-029','SPX-NEW-012'].includes(snapshot.chapterId)})});
   const result=await resp.json();
   entry.querySelector('.spxm-status')?.remove();
   if(context.chapterId!==snapshot.chapterId||context.language!==snapshot.language){entry.remove();return;}
