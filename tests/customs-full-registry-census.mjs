@@ -1679,3 +1679,78 @@ assert.equal(count.source_review.cc_three_books_manual_distinct_custom_identity_
 assert.equal(count.source_observations.total_source_detail_rows_including_external,2985);
 assert.equal(researchCatalogue.summary.no_new_app_publications,true);
 console.log('Domestic 3-work 41 action-description contrasts: >=10 false matches, >=10 same described cores, 0 independent corroboration, 0 certification and 0 publication — PASS');
+
+
+// Pitrè source reconciliation is historical-context grouping, NOT identity
+// certification or a second intake of already-counted 110 source details.
+const pitreContextReview=load('data/customs/master/pitre-110-context-clusters-31-manual-cross-source-contrast.v1.json');
+assert.equal(pitreContextReview.summary.pitre_source_observations_routed,110);
+assert.equal(pitreContextReview.summary.document_context_clusters,35);
+assert.equal(pitreContextReview.summary.comparison_pairs_manually_triaged,31);
+assert.equal(pitreContextReview.summary.same_author_cross_volume_repetition_candidates,2);
+assert.equal(pitreContextReview.summary.source_rows_added,0);
+assert.equal(pitreContextReview.summary.new_distinct_customs_certified,0);
+assert.equal(pitreContextReview.summary.original_archival_folios_inspected,0);
+assert.equal(pitreContextReview.summary.independent_witnesses_certified,0);
+assert.equal(pitreContextReview.summary.merges,0);
+assert.equal(pitreContextReview.summary.calendar_publications,0);
+const pitreOriginalIds=new Set(pitrePalermo.records.map(r=>r.observation_id));
+assert.equal(pitreOriginalIds.size,110);
+const pitreClusterIds=new Set();
+const pitreSeen=new Set();
+for(const c of pitreContextReview.clusters){
+ assert.ok(!pitreClusterIds.has(c.cluster_id));pitreClusterIds.add(c.cluster_id);
+ assert.equal(c.source_observation_count,c.source_observation_ids.length);
+ assert.equal(c.independent_custom_identity_certified,false);
+ assert.equal(c.calendar_publication,'NONE');
+ for(const id of c.source_observation_ids){
+  assert.ok(pitreOriginalIds.has(id));
+  assert.ok(!pitreSeen.has(id));
+  pitreSeen.add(id);
+ }
+}
+assert.equal(pitreClusterIds.size,35);
+assert.deepEqual(pitreSeen,pitreOriginalIds);
+assert.equal(pitreContextReview.source_action_to_cluster.length,110);
+for(const z of pitreContextReview.source_action_to_cluster){
+ const original=pitrePalermo.records.find(r=>r.observation_id===z.source_id);
+ assert.ok(original);
+ assert.ok(pitreClusterIds.has(z.cluster_id));
+ assert.equal(z.original_volume,original.volume);
+ assert.equal(z.original_source_web_line,original.source_html_line);
+ assert.equal(z.claim_class,original.claim_class);
+ assert.equal(z.canonical_identity,'NONE');
+}
+const pitreReviewOwnerIds=new Set(
+ Object.entries(researchCatalogue)
+ .filter(([key,value])=>Array.isArray(value)&&key!=='external_source_observations_pitre_palermo_1950')
+ .flatMap(([key,rows])=>rows.map(r=>r.id).filter(Boolean))
+);
+assert.equal(pitreContextReview.comparisons.length,31);
+assert.equal(new Set(pitreContextReview.comparisons.map(r=>r.review_id)).size,31);
+for(const r of pitreContextReview.comparisons){
+ assert.ok(pitreOriginalIds.has(r.source_id));
+ assert.ok(pitreClusterIds.has(r.source_cluster_id));
+ assert.ok(pitreReviewOwnerIds.has(r.existing_research_id));
+ assert.ok(r.rationale.length>=70);
+ assert.equal(r.historical_practice_identity_proven,false);
+ assert.equal(r.source_independence_proven,false);
+ assert.equal(r.automatic_merge,false);
+ assert.equal(r.rite_authority_proven,false);
+ assert.equal(r.calendar_publication,false);
+}
+assert.equal(pitreContextReview.same_author_repeated_components.length,2);
+for(const r of pitreContextReview.same_author_repeated_components){
+ assert.ok(pitreOriginalIds.has(r.source_id)&&pitreOriginalIds.has(r.repeated_by));
+ assert.ok(r.status.includes('NOT_IDENTITY_PROVEN'));
+}
+assert.equal(researchCatalogue.source_dataset_paths.pitre_context_clusters_31_cross_source,'data/customs/master/pitre-110-context-clusters-31-manual-cross-source-contrast.v1.json');
+assert.equal(count.source_review.pitre_110_context_cluster_routing_nonadditive,110);
+assert.equal(count.source_review.pitre_historic_event_context_clusters_not_distinct_customs,35);
+assert.equal(count.source_review.pitre_manual_31_action_pair_contrasts_no_merges,31);
+assert.equal(count.source_review.pitre_intervolume_same_author_repetitions_flagged,2);
+assert.equal(count.source_observations.total_source_detail_rows_including_external,2985);
+assert.equal(count.identity_working_rows.provisional_after_53_no_owner_action_review,408);
+assert.equal(count.identity_working_rows.final_uniquely_verified_customs_added,0);
+assert.equal(researchCatalogue.summary.no_new_app_publications,true);
+console.log('Pitrè reconciliation: 110/110 actions mapped to 35 historic contexts; 31 manually compared action labels and 2 same-author repeat flags, 2,985 source rows unchanged, zero mergers/publications — PASS');
