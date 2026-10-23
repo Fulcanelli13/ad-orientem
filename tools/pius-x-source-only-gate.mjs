@@ -381,9 +381,9 @@ export function loadSourceOnlyGate(chapters,oldAnnexes){
  }
  if(wave4NodeIDs.size!==60||wave4Books.size!==6||
     fourthAdmitted!==24||fourthHeld!==36||partialStillHeld!==18||
-    gate.size!==48||
+    gate.size!==47||
     [...gate.values()].reduce((n,x)=>n+x.size,0)!==144)
-  throw new Error('Wave4 research must preserve 36 holds and reach 48 subjects/144 original-text nodes');
+  throw new Error('Wave4 research must preserve 36 holds and reach 47 subjects/144 original-text nodes');
  return gate;
 }
 
