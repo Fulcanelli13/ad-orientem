@@ -14,6 +14,37 @@ export function loadPrimaryWitnessAnnex(){
   throw new Error('Primary witness annex differs from reviewed pilot contract');
  return j;
 }
+const otherWitnessFiles=[
+ 'spx029-il-fermo-proposito-primary-witness.v2.json',
+ 'spx-new012-tribus-circiter-primary-witness.v2.json',
+ 'pilot09-haerent-animo-primary-witness.v2.json'
+];
+export function loadPrimaryWitnessAnnexes(){
+ const first=loadPrimaryWitnessAnnex();
+ const all=new Map([[first.chapterId,first]]);
+ for(const name of otherWitnessFiles){
+  const p=new URL('../previews/pius-x-study/evidence/'+name,import.meta.url);
+  const j=JSON.parse(readFileSync(p,'utf8'));
+  if(j.schema!=='AO_SPX_P2_PRIMARY_WITNESS_ANNEX_V2'||
+     j.status!=='PRIVATE_ORIGINAL_LANGUAGE_EXCERPT_SPOTCHECK_UNAPPROVED'||
+     !['la','it'].includes(j.document?.languageOfOriginal)||
+     !j.document?.sites?.original?.startsWith('https://www.vatican.va/')||
+     j.publicationApproved!==false||j.editorialApproval!==false||
+     j.approvedAsAuthenticQuotation!==false||j.originalRegistryUnmodified!==true||
+     !Array.isArray(j.sourceWitnesses)||!Array.isArray(j.dialogueMappings)||
+     !j.sourceWitnesses.length||!j.dialogueMappings.length||all.has(j.chapterId))
+   throw new Error('Additional original-language witness annex differs from research contract: '+name);
+  const witnessIDs=new Set(j.sourceWitnesses.map(w=>w.id));
+  if(witnessIDs.size!==j.sourceWitnesses.length||
+     j.sourceWitnesses.some(w=>!w.text||!w.locus||w.speaker!=='PIUS_X_AUTHOR')||
+     j.dialogueMappings.some(m=>!Array.isArray(m.witnessIds)||!m.witnessIds.length||
+       m.witnessIds.some(id=>!witnessIDs.has(id))))
+   throw new Error('Additional original-language witness IDs incomplete: '+name);
+  all.set(j.chapterId,j);
+ }
+ if(all.size!==4)throw new Error('Expected four source-bounded pilot chapters');
+ return all;
+}
 export function readCorpus(html){
  const m=String(html).match(/<script type="application\/json" id="spxExpandedCorpus">([\s\S]*?)<\/script>/);
  if(!m)throw new Error('Missing original P6 corpus');
@@ -22,7 +53,16 @@ export function readCorpus(html){
   throw new Error('Original research corpus or publication hold changed');
  const chapters=new Map(data.chapters.map(c=>[c.id,c]));
  if(chapters.size!==106)throw new Error('Duplicated subject IDs');
- return {data,chapters,primaryWitnessAnnex:loadPrimaryWitnessAnnex()};
+ const primaryWitnessAnnexes=loadPrimaryWitnessAnnexes();
+ for(const annex of primaryWitnessAnnexes.values()){
+  const c=chapters.get(annex.chapterId);
+  if(!c||c.nodes.length!==annex.dialogueMappings.length||
+   c.nodes.some((n,i)=>n.id!==annex.dialogueMappings[i].nodeId))
+   throw new Error('Witness mapping must exactly match one existing source-owner chapter: '+annex.chapterId);
+ }
+ return {data,chapters,primaryWitnessAnnex:primaryWitnessAnnexes.get('SPX-PILOT-01'),
+  primaryWitnessAnnexes};
+
 }
 const held=(reason)=>({status:'held',reason,reply:null,publishingApproved:false,
  label:'NO GENERATED PAPAL SPEECH — PRIVATE RESEARCH'});
@@ -40,22 +80,31 @@ export function selectEvidence(store,input){
  if(input?.nodeId && !c.nodes.some(n=>n.id===input.nodeId))return held('unknown_source_node');
  const selected=input?.nodeId?c.nodes.find(n=>n.id===input.nodeId):c.nodes[0];
  const nodes=[c.nodes[0],selected].filter((n,i,a)=>a.findIndex(x=>x.id===n.id)===i);
- const annex=store.primaryWitnessAnnex;
- const mapById=new Map((c.id===annex.chapterId?annex.dialogueMappings:[]).map(m=>[m.nodeId,m]));
- const anchors=new Map(annex.sourceWitnesses.map(w=>[w.id,w]));
+ const annex=store.primaryWitnessAnnexes.get(c.id);
+ const mapById=new Map((annex?.dialogueMappings||[]).map(m=>[m.nodeId,m]));
+ const anchors=new Map((annex?.sourceWitnesses||[]).map(w=>[w.id,w]));
+ const originalLang=annex?.document?.languageOfOriginal;
  const evidence=nodes.map(n=>{
   const witnessMap=mapById.get(n.id);
+  const witnesses=witnessMap?witnessMap.witnessIds.map(id=>{
+   const w=anchors.get(id);
+   if(!w)throw new Error('Broken primary witness reference');
+   return {id:w.id,locus:w.locus,text:w.text||w.latin,
+    originalLanguage:originalLang,speaker:w.speaker,
+    sourceUrl:annex.document.sites.original||annex.document.sites.la,readingNote:w.meaning};
+  }):[];
   return {id:n.id,text:n.a[lang],question:n.q[lang],
    sourceUrl:n.source?.url||c.source.url,locus:n.source?.locus||c.source.locus,
    status:'UNVERIFIED_EDITORIAL_ADAPTATION_NOT_ORIGINAL_QUOTATION',
-   primaryWitnessStatus:witnessMap?'BOUNDED_LATIN_SPOTCHECK_NOT_FULL_VERIFICATION':'NO_COLLATED_PRIMARY_WITNESS',
-   originalLatinWitnesses:witnessMap?witnessMap.witnessIds.map(id=>{
-     const w=anchors.get(id);
-     if(!w)throw new Error('Broken primary witness reference');
-     return {id:w.id,locus:w.locus,latin:w.latin,speaker:w.speaker,
-      sourceUrl:annex.document.sites.la,readingNote:w.meaning};
-    }):[],
-   editorialWarnings:witnessMap?[...witnessMap.editorialFlags]:[]
+   primaryWitnessStatus:witnessMap?
+    'BOUNDED_'+(originalLang==='it'?'ITALIAN':'LATIN')+'_SPOTCHECK_NOT_FULL_VERIFICATION':
+    'NO_COLLATED_PRIMARY_WITNESS',
+   originalLanguageWitnesses:witnesses,
+   originalLatinWitnesses:originalLang==='la'?witnesses.map(w=>({
+    id:w.id,locus:w.locus,latin:w.text,speaker:w.speaker,
+    sourceUrl:w.sourceUrl,readingNote:w.readingNote
+   })):[],
+   editorialWarnings:witnessMap?[...witnessMap.editorialWarnings]:[]
   };
  });
  if(evidence.some(x=>!x.text||!x.sourceUrl?.startsWith('https://')||!x.locus))
@@ -74,8 +123,8 @@ export function selectEvidence(store,input){
 }
 const composerRules=[
  'Compose a PRIVATE, UNAPPROVED historical-character editorial demonstration, NOT a verified papal quotation.',
- 'Use ONLY the supplied existing editorial text, and where provided its short original-Latin witness anchors.',
- 'Original-Latin snippets are source evidence only for the exact propositions they contain; never extrapolate beyond them. The source URL is a locator, not proof by itself.',
+ 'Use ONLY the supplied existing editorial text and, where supplied, short original-language Latin or Italian witness snippets.',
+ 'Original-language snippets support only the literal propositions they contain; never extrapolate. The source URL is a locator, not proof by itself. Il fermo proposito is checked against its Vatican Italian text; Vatican Latin is a version, not our Italian witness.',
  'Do not attribute the embedded quotation of St Anselm in E supremi to Pius X personally; do not claim that Leo XIII is named in the encyclical opening.',
  'Where the third pilot question speaks of leading people to Christ and thereby to God, the supporting passage is section 8, NOT only sections 1–4.',
  'No additional doctrine, history, biography, invented facts, recollections, or new examples.',
@@ -88,8 +137,8 @@ const composerRules=[
 ].join(' ');
 const verifierRules=[
  'Independently test EVERY factual assertion in the candidate against the literal supplied editorial evidence.',
- 'If an original Latin witness fragment is supplied, require each corresponding claim to be supported by that fragment or abstain. Respect original speaker attribution and any editorialWarnings.',
- 'Short primary witnesses are bounded spot checks, not evidence that the entirety of a document or its translation is collated.',
+ 'If original-language Latin or Italian witness fragments are supplied, require each corresponding claim to be supported by those literal fragments or abstain. Respect speaker attribution and editorialWarnings.',
+ 'Original-language witness fragments are bounded spot checks, not certification of an entire document or its EN/FR translation. Where the editorialWarnings identify an inference or modern-status boundary, do not treat it as the Pope\'s original assertion.',
  'Evidence is NOT independently collated with the original work; source titles and locators cannot prove a claim.',
  'Reject any new assertion, unsupported inference, invented biographical detail, fabricated quotation, or individualized pastoral judgement.',
  'The previous dialogue is NOT verified evidence, and apparent references to history do not authorize factual claims.',
