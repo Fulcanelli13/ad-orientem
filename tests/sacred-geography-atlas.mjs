@@ -14,6 +14,33 @@ assert.equal(sacred.relics.length,122);
 assert.equal(sacred.scope,"PARTIAL_VERIFIED_SEED_NOT_COMPLETE_WORLD_CENSUS");
 assert.equal(assertExploreGeographyRegistry(geo).counts.places,347);
 const places=new Map(geo.places.map(p=>[p.place_id,p]));
+const p11ExactChurchFootprints=[
+  ["place:FR:basilique-saint-sernin-toulouse","osm:way:260584755",43.60838,1.44188],
+  ["place:IT:santa-maria-maggiore-rome","osm:way:131564482",41.89761,12.49846],
+  ["place:IT:chiesa-gesu-rome","osm:way:25610962",41.89592,12.47981],
+  ["place:IT:pompei-rosary-shrine","osm:way:28778029",40.75003,14.50055],
+];
+for(const [id,osmId,lat,lng] of p11ExactChurchFootprints){
+  const place=places.get(id);
+  assert.ok(place?.mappable,"P11 existing Place must remain map-enabled: "+id);
+  assert.equal(place.geo?.precision,"site","Church footprint is not a visitor entrance: "+id);
+  assert.equal(place.geo?.geocoding_source,"OSM",id);
+  assert.equal(place.geo?.source_ref,osmId,id);
+  assert.equal(place.geo?.source_url,"https://www.openstreetmap.org/"+osmId.replace(":","/"),id);
+  assert.equal(place.geo?.lat,lat,id);
+  assert.equal(place.geo?.lng,lng,id);
+  assert.ok(isMapPublishablePlaceGeo(place.geo,place.address?.country_code),id);
+}
+// Historic shared-custody and multi-building Places retain their complex-wide anchor.
+for(const id of [
+  "place:ES:santa-maria-de-montserrat-abbey",
+  "place:GB:walsingham-catholic-shrine",
+  "place:PS:holy-sepulchre-jerusalem",
+  "place:PS:nativity-bethlehem"
+]){
+  assert.equal(places.get(id)?.geo?.precision,"complex_anchor",id);
+}
+
 const ids=new Set();
 for(const record of [...sacred.apparitions,...sacred.relics]){
   assert.ok(!ids.has(record.id),"duplicate sacred historical identity");
@@ -114,4 +141,4 @@ assert.equal(notreDame.counts.apparitions,0);
 assert.equal(notreDame.counts.relics,3);
 assert.equal(geo.directoryPlaceLinks.some(link=>link.place_id==="place:FR:abbaye-mont-saint-michel"),false,
   "historical shrine is not automatically a TLM directory venue");
-console.log("PASS 33 qualified apparition traditions, 122 relic holdings, 261 source-anchored physical Places, bilingual status and no TLM/calendar inference");
+console.log(`PASS 33 qualified apparition traditions, 122 relic holdings, ${geo.places.length} source-anchored physical Places, four P11 OSM footprints, bilingual status and no TLM/calendar inference`);
