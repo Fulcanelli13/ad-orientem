@@ -50,9 +50,9 @@ export function buildPrimaryCoverageReport(store,{nextBatchDocuments=12}={}){
    }
   }
  }
- if(nodes!==423||store.data.chapters.length!==106||coveredNodes!==87||
-    gate.size!==37||sourceOwnedInitialNodes!==14||totalResearchWitnesses!==102)
-  throw new Error('Canonical P6 or 87-node original-text source-only coverage changed');
+ if(nodes!==423||store.data.chapters.length!==106||coveredNodes!==82||
+    gate.size!==33||sourceOwnedInitialNodes!==14||totalResearchWitnesses!==102)
+  throw new Error('Canonical P6 or 82-node original-text source-only coverage changed');
  const all=[...groups.values()].map(g=>{
   const {genres,sourceClasses,witnessAnchorIds,...rest}=g;
   return {...rest,genres:[...genres].sort(),sourceClasses:[...sourceClasses].sort(),
@@ -71,7 +71,7 @@ export function buildPrimaryCoverageReport(store,{nextBatchDocuments=12}={}){
    chaptersWithWitnessSpotcheck:gate.size,nodesWithWitnessSpotcheck:coveredNodes,
    oldAnnexDocumentSubjects:annexes.size,oldAnnexMappedNodes:sourceOwnedInitialNodes,
    expandedOpeningNodes:eight.items.length,newBoundedFollowupNodes:supplemental.summary.boundedFollowupCandidates,
-   bulkWave2NewNodes:wave2.summary.newlyMappedNodes,bulkWave2NewExcerpts:wave2.witnesses.length,
+   bulkWave2NewNodes:wave2.summary.newlyMappedNodes,bulkWave2PartialNodeHolds:wave2.summary.originalP6PartialHolds,bulkWave2Screened:wave2.summary.screenedExistingNodeIDs,bulkWave2NewExcerpts:wave2.witnesses.length,
    heldResearchFollowups:supplemental.summary.heldFollowupNodes,
    nodesNotYetMappedToOriginalExcerpt:423-coveredNodes,
    originalLanguageExcerptAnchors:totalResearchWitnesses,
