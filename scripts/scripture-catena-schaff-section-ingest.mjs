@@ -61,6 +61,42 @@ function augustineUnits(lines,scope){
   chapterOrParagraphIdentityNotProven:true
  }));
 }
+function romanValue(romanHeading){
+ const weights={I:1,V:5,X:10,L:50,C:100,D:500,M:1000};
+ let count=0;
+ for(let i=0;i<romanHeading.length;i++){
+  const now=weights[romanHeading[i]],next=weights[romanHeading[i+1]]||0;
+  if(!now)return null;
+  count+=now<next?-now:now;
+ }
+ return count;
+}
+function augustineChapterHeadingCandidates(lines,units){
+ const evidence=[];
+ for(const unit of units){
+  let prev=0;
+  for(let n=unit.startLine;n<=unit.endLine;n++){
+   const raw=lines[n-1]||"",oneLine=clean(raw).toUpperCase();
+   // These are locator *candidates*. OCR two-column reading order mixes
+   // chapter headings and content, so NEVER assign paragraph chapter spans.
+   const match=/^CHAP\.\s+([IVXLCDM]+)\.?\s*[—–-]/.exec(oneLine);
+   if(!match)continue;
+   const chapter=romanValue(match[1]);
+   if(!chapter||chapter>110)continue;
+   const outOfOrder=chapter<=prev;
+   evidence.push({
+    printedWorkUnitId:unit.id,bookOrdinal:unit.unitOrdinal,
+    candidateChapter:chapter,observedRoman:match[1],
+    originalHeadingOCR:raw,originalHeadingSHA256:hash(raw),
+    originalLineNumber:n,
+    chapterNumberDecreasedOrRepeatedInLinearOCR:outOfOrder,
+    completenessUnverified:true,sectionBoundaryNotEstablished:true
+   });
+   prev=chapter;
+  }
+ }
+ return evidence;
+}
 function questionScreening(line,unit,n){
  const normalized=clean(line),flags=[];
  if(n-unit.startLine<20)flags.push("near_printed_unit_heading");
@@ -117,6 +153,8 @@ function processVolume(editionId){
    novelBeyondCatena:false,publicationEligible:false
   });
  }
+ const chapterHeadingCandidates=editionId==="NPNF1-06"?
+  augustineChapterHeadingCandidates(lines,units):[];
  const countKind={candidate_author_rhetoric_unconfirmed:0,needs_source_layer_disambiguation:0};
  for(const item of entries)countKind[item.originScreening]++;
  for(const unit of units){
@@ -136,6 +174,8 @@ function processVolume(editionId){
   printedEditionOCRIsUnverified:true,
   biblicalQuotationAndFootnoteDisambiguationPending:true,
   sourceAttributionAndGenuineNoveltyPending:true,
+  provisionalChapterHeadingCount:chapterHeadingCandidates.length,
+  provisionalChapterHeadingEvidence:chapterHeadingCandidates,
   humanApprovals:0,publicationApprovals:0,units,questions:entries
  };
  writeFileSync(join(output,editionId+".source-units-and-questions.v1.json"),
