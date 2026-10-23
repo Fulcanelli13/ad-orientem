@@ -1,0 +1,1216 @@
+{
+  "schema": "AO_HISTORIA_P3_PROVISIONAL_COVENANT_READING_CHAPTERS_V1",
+  "status": "RESEARCH_NAVIGATION_PROPOSAL_NOT_ACCEPTED",
+  "date": "2026-10-21",
+  "sourceOwners": {
+    "chapterMapping": "data/research/historia-salutis-p3-covenant-arc-chapter-reconciliation-20261021.v1.json",
+    "p3": "data/research/historia-salutis-v18-continuous-reading-proof.v1.json",
+    "editorialMatrix": "Ad_Orientem_Historia_Salutis_Master_Matrix_v13.xlsx"
+  },
+  "editorialPolicy": {
+    "fourActsTwelveCovenantArcsPreserved": true,
+    "allOriginal78ChapterIdsRemainTraceable": true,
+    "noOriginalScriptureCut": true,
+    "noParallelFeatureNow": true,
+    "noGenealogyConflation": true,
+    "doNotInventMissingScripture": true,
+    "keepResearchMovementOrder": true,
+    "protectedCovenantHinges": [
+      "H04",
+      "H08",
+      "H11",
+      "H20",
+      "H22",
+      "H33",
+      "H40",
+      "H60",
+      "H64",
+      "H78"
+    ],
+    "doNotClaim57Final": true
+  },
+  "totals": {
+    "acts": 4,
+    "arcs": 12,
+    "originalOutlines": 78,
+    "proposedReaderChapters": 57,
+    "fewerMajorChapterStops": 21,
+    "sourceWordsRemoved": 0,
+    "consolidatedSourceUnitsRemoved": 0,
+    "unfilledOriginalOutlines": [
+      "H06",
+      "H27",
+      "H42",
+      "H45",
+      "H50",
+      "H55",
+      "H61",
+      "H74"
+    ]
+  },
+  "arcSummaries": [
+    {
+      "number": 1,
+      "title": "Creation, Fall and the First Promise",
+      "originalChapterOutlines": 5,
+      "provisionalReadingChapters": 2,
+      "readingChapterIds": [
+        "R01",
+        "R02"
+      ]
+    },
+    {
+      "number": 2,
+      "title": "Noah, Covenant and Nations",
+      "originalChapterOutlines": 4,
+      "provisionalReadingChapters": 3,
+      "readingChapterIds": [
+        "R03",
+        "R04",
+        "R05"
+      ]
+    },
+    {
+      "number": 3,
+      "title": "Abraham and the Patriarchs",
+      "originalChapterOutlines": 7,
+      "provisionalReadingChapters": 5,
+      "readingChapterIds": [
+        "R06",
+        "R07",
+        "R08",
+        "R09",
+        "R10"
+      ]
+    },
+    {
+      "number": 4,
+      "title": "The Exodus and Sinai Covenant",
+      "originalChapterOutlines": 7,
+      "provisionalReadingChapters": 6,
+      "readingChapterIds": [
+        "R11",
+        "R12",
+        "R13",
+        "R14",
+        "R15",
+        "R16"
+      ]
+    },
+    {
+      "number": 5,
+      "title": "The Promised Land and First Kings",
+      "originalChapterOutlines": 6,
+      "provisionalReadingChapters": 4,
+      "readingChapterIds": [
+        "R17",
+        "R18",
+        "R19",
+        "R20"
+      ]
+    },
+    {
+      "number": 6,
+      "title": "The Davidic Kingdom",
+      "originalChapterOutlines": 6,
+      "provisionalReadingChapters": 5,
+      "readingChapterIds": [
+        "R21",
+        "R22",
+        "R23",
+        "R24",
+        "R25"
+      ]
+    },
+    {
+      "number": 7,
+      "title": "Prophets, Exile and Return",
+      "originalChapterOutlines": 9,
+      "provisionalReadingChapters": 6,
+      "readingChapterIds": [
+        "R26",
+        "R27",
+        "R28",
+        "R29",
+        "R30",
+        "R31"
+      ]
+    },
+    {
+      "number": 8,
+      "title": "The Incarnation and Holy Family",
+      "originalChapterOutlines": 6,
+      "provisionalReadingChapters": 4,
+      "readingChapterIds": [
+        "R32",
+        "R33",
+        "R34",
+        "R35"
+      ]
+    },
+    {
+      "number": 9,
+      "title": "The Public Ministry of Christ",
+      "originalChapterOutlines": 8,
+      "provisionalReadingChapters": 6,
+      "readingChapterIds": [
+        "R36",
+        "R37",
+        "R38",
+        "R39",
+        "R40",
+        "R41"
+      ]
+    },
+    {
+      "number": 10,
+      "title": "The New Covenant: Passion and Resurrection",
+      "originalChapterOutlines": 8,
+      "provisionalReadingChapters": 6,
+      "readingChapterIds": [
+        "R42",
+        "R43",
+        "R44",
+        "R45",
+        "R46",
+        "R47"
+      ]
+    },
+    {
+      "number": 11,
+      "title": "Pentecost and the Apostolic Church",
+      "originalChapterOutlines": 7,
+      "provisionalReadingChapters": 7,
+      "readingChapterIds": [
+        "R48",
+        "R49",
+        "R50",
+        "R51",
+        "R52",
+        "R53",
+        "R54"
+      ]
+    },
+    {
+      "number": 12,
+      "title": "Christ's Triumph and the New Jerusalem",
+      "originalChapterOutlines": 5,
+      "provisionalReadingChapters": 3,
+      "readingChapterIds": [
+        "R55",
+        "R56",
+        "R57"
+      ]
+    }
+  ],
+  "readingChapters": [
+    {
+      "id": "R01",
+      "order": 1,
+      "arcNumber": 1,
+      "act": "The Promise",
+      "title": "Creation and the Vocation of Man",
+      "originalChapterIds": [
+        "H01",
+        "H02"
+      ],
+      "rationale": "Two creation witnesses form a continuous opening without duplicating Scripture.",
+      "sourceTextPolicy": "KEEP_ALL_P3_READABLE_SOURCE_BLOCKS_IN_ACTUAL_ORDER",
+      "protectedCovenantHinges": [],
+      "noSelectedScriptureInSubtopic": [],
+      "unfilledSubtopics": [],
+      "publicationApproved": false
+    },
+    {
+      "id": "R02",
+      "order": 2,
+      "arcNumber": 1,
+      "act": "The Promise",
+      "title": "The Fall and the First Promise",
+      "originalChapterIds": [
+        "H03",
+        "H04",
+        "H05"
+      ],
+      "rationale": "Genesis 3:15 remains a distinct highlighted promise within the Fall; generations continue the consequences.",
+      "sourceTextPolicy": "KEEP_ALL_P3_READABLE_SOURCE_BLOCKS_IN_ACTUAL_ORDER",
+      "protectedCovenantHinges": [
+        "H04"
+      ],
+      "noSelectedScriptureInSubtopic": [
+        "H05"
+      ],
+      "unfilledSubtopics": [],
+      "publicationApproved": false
+    },
+    {
+      "id": "R03",
+      "order": 3,
+      "arcNumber": 2,
+      "act": "The Promise",
+      "title": "A Corrupted World and the Flood",
+      "originalChapterIds": [
+        "H06",
+        "H07"
+      ],
+      "rationale": "World corruption introduces the Flood, not a separate empty stop.",
+      "sourceTextPolicy": "KEEP_ALL_P3_READABLE_SOURCE_BLOCKS_IN_ACTUAL_ORDER",
+      "protectedCovenantHinges": [],
+      "noSelectedScriptureInSubtopic": [
+        "H06"
+      ],
+      "unfilledSubtopics": [
+        "H06"
+      ],
+      "publicationApproved": false
+    },
+    {
+      "id": "R04",
+      "order": 4,
+      "arcNumber": 2,
+      "act": "The Promise",
+      "title": "God's Covenant with Noah",
+      "originalChapterIds": [
+        "H08"
+      ],
+      "rationale": "Maintain distinct Noahic covenant.",
+      "sourceTextPolicy": "KEEP_ALL_P3_READABLE_SOURCE_BLOCKS_IN_ACTUAL_ORDER",
+      "protectedCovenantHinges": [
+        "H08"
+      ],
+      "noSelectedScriptureInSubtopic": [],
+      "unfilledSubtopics": [],
+      "publicationApproved": false
+    },
+    {
+      "id": "R05",
+      "order": 5,
+      "arcNumber": 2,
+      "act": "The Promise",
+      "title": "The Nations and Babel",
+      "originalChapterIds": [
+        "H09"
+      ],
+      "rationale": "Nations and Babel lead to Abraham.",
+      "sourceTextPolicy": "KEEP_ALL_P3_READABLE_SOURCE_BLOCKS_IN_ACTUAL_ORDER",
+      "protectedCovenantHinges": [],
+      "noSelectedScriptureInSubtopic": [
+        "H09"
+      ],
+      "unfilledSubtopics": [],
+      "publicationApproved": false
+    },
+    {
+      "id": "R06",
+      "order": 6,
+      "arcNumber": 3,
+      "act": "The Promise",
+      "title": "God Calls Abraham",
+      "originalChapterIds": [
+        "H10"
+      ],
+      "rationale": "Preserve his divine call.",
+      "sourceTextPolicy": "KEEP_ALL_P3_READABLE_SOURCE_BLOCKS_IN_ACTUAL_ORDER",
+      "protectedCovenantHinges": [],
+      "noSelectedScriptureInSubtopic": [],
+      "unfilledSubtopics": [],
+      "publicationApproved": false
+    },
+    {
+      "id": "R07",
+      "order": 7,
+      "arcNumber": 3,
+      "act": "The Promise",
+      "title": "The Covenant with Abraham",
+      "originalChapterIds": [
+        "H11"
+      ],
+      "rationale": "Preserve the Abrahamic covenant and blessing.",
+      "sourceTextPolicy": "KEEP_ALL_P3_READABLE_SOURCE_BLOCKS_IN_ACTUAL_ORDER",
+      "protectedCovenantHinges": [
+        "H11"
+      ],
+      "noSelectedScriptureInSubtopic": [],
+      "unfilledSubtopics": [],
+      "publicationApproved": false
+    },
+    {
+      "id": "R08",
+      "order": 8,
+      "arcNumber": 3,
+      "act": "The Promise",
+      "title": "The Promised Son and the Trial of Faith",
+      "originalChapterIds": [
+        "H12",
+        "H13"
+      ],
+      "rationale": "Isaac's birth prepares Abraham's trial; keep the full testing episode.",
+      "sourceTextPolicy": "KEEP_ALL_P3_READABLE_SOURCE_BLOCKS_IN_ACTUAL_ORDER",
+      "protectedCovenantHinges": [],
+      "noSelectedScriptureInSubtopic": [],
+      "unfilledSubtopics": [],
+      "publicationApproved": false
+    },
+    {
+      "id": "R09",
+      "order": 9,
+      "arcNumber": 3,
+      "act": "The Promise",
+      "title": "Jacob, Heir of the Promise",
+      "originalChapterIds": [
+        "H14",
+        "H15"
+      ],
+      "rationale": "Family conflict and Jacob's new name are one covenant-development sequence.",
+      "sourceTextPolicy": "KEEP_ALL_P3_READABLE_SOURCE_BLOCKS_IN_ACTUAL_ORDER",
+      "protectedCovenantHinges": [],
+      "noSelectedScriptureInSubtopic": [
+        "H14"
+      ],
+      "unfilledSubtopics": [],
+      "publicationApproved": false
+    },
+    {
+      "id": "R10",
+      "order": 10,
+      "arcNumber": 3,
+      "act": "The Promise",
+      "title": "Joseph and Israel's Descent into Egypt",
+      "originalChapterIds": [
+        "H16"
+      ],
+      "rationale": "Preserve Egyptian descent and reconciliation.",
+      "sourceTextPolicy": "KEEP_ALL_P3_READABLE_SOURCE_BLOCKS_IN_ACTUAL_ORDER",
+      "protectedCovenantHinges": [],
+      "noSelectedScriptureInSubtopic": [],
+      "unfilledSubtopics": [],
+      "publicationApproved": false
+    },
+    {
+      "id": "R11",
+      "order": 11,
+      "arcNumber": 4,
+      "act": "The People of the Covenant",
+      "title": "Israel in Bondage and the Calling of Moses",
+      "originalChapterIds": [
+        "H17",
+        "H18"
+      ],
+      "rationale": "Moses's calling answers Israel's suffering; retain the divine name.",
+      "sourceTextPolicy": "KEEP_ALL_P3_READABLE_SOURCE_BLOCKS_IN_ACTUAL_ORDER",
+      "protectedCovenantHinges": [],
+      "noSelectedScriptureInSubtopic": [],
+      "unfilledSubtopics": [],
+      "publicationApproved": false
+    },
+    {
+      "id": "R12",
+      "order": 12,
+      "arcNumber": 4,
+      "act": "The People of the Covenant",
+      "title": "Pharaoh and the Signs of Judgment",
+      "originalChapterIds": [
+        "H19"
+      ],
+      "rationale": "Keep the plagues as Passover's antecedent.",
+      "sourceTextPolicy": "KEEP_ALL_P3_READABLE_SOURCE_BLOCKS_IN_ACTUAL_ORDER",
+      "protectedCovenantHinges": [],
+      "noSelectedScriptureInSubtopic": [],
+      "unfilledSubtopics": [],
+      "publicationApproved": false
+    },
+    {
+      "id": "R13",
+      "order": 13,
+      "arcNumber": 4,
+      "act": "The People of the Covenant",
+      "title": "The First Passover",
+      "originalChapterIds": [
+        "H20"
+      ],
+      "rationale": "Keep the Paschal event distinct.",
+      "sourceTextPolicy": "KEEP_ALL_P3_READABLE_SOURCE_BLOCKS_IN_ACTUAL_ORDER",
+      "protectedCovenantHinges": [
+        "H20"
+      ],
+      "noSelectedScriptureInSubtopic": [],
+      "unfilledSubtopics": [],
+      "publicationApproved": false
+    },
+    {
+      "id": "R14",
+      "order": 14,
+      "arcNumber": 4,
+      "act": "The People of the Covenant",
+      "title": "The Exodus and the Crossing of the Sea",
+      "originalChapterIds": [
+        "H21"
+      ],
+      "rationale": "Retain Exodus and wilderness sequence.",
+      "sourceTextPolicy": "KEEP_ALL_P3_READABLE_SOURCE_BLOCKS_IN_ACTUAL_ORDER",
+      "protectedCovenantHinges": [],
+      "noSelectedScriptureInSubtopic": [],
+      "unfilledSubtopics": [],
+      "publicationApproved": false
+    },
+    {
+      "id": "R15",
+      "order": 15,
+      "arcNumber": 4,
+      "act": "The People of the Covenant",
+      "title": "The Covenant at Sinai",
+      "originalChapterIds": [
+        "H22"
+      ],
+      "rationale": "Keep Sinai's institution distinct.",
+      "sourceTextPolicy": "KEEP_ALL_P3_READABLE_SOURCE_BLOCKS_IN_ACTUAL_ORDER",
+      "protectedCovenantHinges": [
+        "H22"
+      ],
+      "noSelectedScriptureInSubtopic": [],
+      "unfilledSubtopics": [],
+      "publicationApproved": false
+    },
+    {
+      "id": "R16",
+      "order": 16,
+      "arcNumber": 4,
+      "act": "The People of the Covenant",
+      "title": "Israel's Unfaithfulness and God's Presence",
+      "originalChapterIds": [
+        "H23"
+      ],
+      "rationale": "Golden calf, intercession and Tabernacle.",
+      "sourceTextPolicy": "KEEP_ALL_P3_READABLE_SOURCE_BLOCKS_IN_ACTUAL_ORDER",
+      "protectedCovenantHinges": [],
+      "noSelectedScriptureInSubtopic": [],
+      "unfilledSubtopics": [],
+      "publicationApproved": false
+    },
+    {
+      "id": "R17",
+      "order": 17,
+      "arcNumber": 5,
+      "act": "The People of the Covenant",
+      "title": "From Moses to the Promised Land",
+      "originalChapterIds": [
+        "H24",
+        "H25"
+      ],
+      "rationale": "Moses's farewell and Joshua's entry share one handoff.",
+      "sourceTextPolicy": "KEEP_ALL_P3_READABLE_SOURCE_BLOCKS_IN_ACTUAL_ORDER",
+      "protectedCovenantHinges": [],
+      "noSelectedScriptureInSubtopic": [],
+      "unfilledSubtopics": [],
+      "publicationApproved": false
+    },
+    {
+      "id": "R18",
+      "order": 18,
+      "arcNumber": 5,
+      "act": "The People of the Covenant",
+      "title": "The Judges and Deliverance",
+      "originalChapterIds": [
+        "H26",
+        "H27"
+      ],
+      "rationale": "Do not invent scripture for the unfilled separate judges chapter.",
+      "sourceTextPolicy": "KEEP_ALL_P3_READABLE_SOURCE_BLOCKS_IN_ACTUAL_ORDER",
+      "protectedCovenantHinges": [],
+      "noSelectedScriptureInSubtopic": [
+        "H27"
+      ],
+      "unfilledSubtopics": [
+        "H27"
+      ],
+      "publicationApproved": false
+    },
+    {
+      "id": "R19",
+      "order": 19,
+      "arcNumber": 5,
+      "act": "The People of the Covenant",
+      "title": "Ruth and the Family of David",
+      "originalChapterIds": [
+        "H28"
+      ],
+      "rationale": "Keep the genealogical bridge to David visible.",
+      "sourceTextPolicy": "KEEP_ALL_P3_READABLE_SOURCE_BLOCKS_IN_ACTUAL_ORDER",
+      "protectedCovenantHinges": [],
+      "noSelectedScriptureInSubtopic": [],
+      "unfilledSubtopics": [],
+      "publicationApproved": false
+    },
+    {
+      "id": "R20",
+      "order": 20,
+      "arcNumber": 5,
+      "act": "The People of the Covenant",
+      "title": "Samuel and the First King",
+      "originalChapterIds": [
+        "H29"
+      ],
+      "rationale": "Saul's anointing ends the judges' period.",
+      "sourceTextPolicy": "KEEP_ALL_P3_READABLE_SOURCE_BLOCKS_IN_ACTUAL_ORDER",
+      "protectedCovenantHinges": [],
+      "noSelectedScriptureInSubtopic": [],
+      "unfilledSubtopics": [],
+      "publicationApproved": false
+    },
+    {
+      "id": "R21",
+      "order": 21,
+      "arcNumber": 6,
+      "act": "The People of the Covenant",
+      "title": "David Is Chosen and Tested",
+      "originalChapterIds": [
+        "H30",
+        "H31"
+      ],
+      "rationale": "David's anointing and persecution comprise his emergence.",
+      "sourceTextPolicy": "KEEP_ALL_P3_READABLE_SOURCE_BLOCKS_IN_ACTUAL_ORDER",
+      "protectedCovenantHinges": [],
+      "noSelectedScriptureInSubtopic": [
+        "H31"
+      ],
+      "unfilledSubtopics": [],
+      "publicationApproved": false
+    },
+    {
+      "id": "R22",
+      "order": 22,
+      "arcNumber": 6,
+      "act": "The People of the Covenant",
+      "title": "David Becomes King",
+      "originalChapterIds": [
+        "H32"
+      ],
+      "rationale": "Jerusalem and kingship are the royal transition.",
+      "sourceTextPolicy": "KEEP_ALL_P3_READABLE_SOURCE_BLOCKS_IN_ACTUAL_ORDER",
+      "protectedCovenantHinges": [],
+      "noSelectedScriptureInSubtopic": [],
+      "unfilledSubtopics": [],
+      "publicationApproved": false
+    },
+    {
+      "id": "R23",
+      "order": 23,
+      "arcNumber": 6,
+      "act": "The People of the Covenant",
+      "title": "The Promise to David",
+      "originalChapterIds": [
+        "H33"
+      ],
+      "rationale": "Protect the Davidic royal promise.",
+      "sourceTextPolicy": "KEEP_ALL_P3_READABLE_SOURCE_BLOCKS_IN_ACTUAL_ORDER",
+      "protectedCovenantHinges": [
+        "H33"
+      ],
+      "noSelectedScriptureInSubtopic": [],
+      "unfilledSubtopics": [],
+      "publicationApproved": false
+    },
+    {
+      "id": "R24",
+      "order": 24,
+      "arcNumber": 6,
+      "act": "The People of the Covenant",
+      "title": "David's Sin and Repentance",
+      "originalChapterIds": [
+        "H34"
+      ],
+      "rationale": "Preserve Nathan's rebuke and repentance.",
+      "sourceTextPolicy": "KEEP_ALL_P3_READABLE_SOURCE_BLOCKS_IN_ACTUAL_ORDER",
+      "protectedCovenantHinges": [],
+      "noSelectedScriptureInSubtopic": [
+        "H34"
+      ],
+      "unfilledSubtopics": [],
+      "publicationApproved": false
+    },
+    {
+      "id": "R25",
+      "order": 25,
+      "arcNumber": 6,
+      "act": "The People of the Covenant",
+      "title": "Solomon, the Temple and the Kingdom's Division",
+      "originalChapterIds": [
+        "H35"
+      ],
+      "rationale": "Wisdom, Temple and division.",
+      "sourceTextPolicy": "KEEP_ALL_P3_READABLE_SOURCE_BLOCKS_IN_ACTUAL_ORDER",
+      "protectedCovenantHinges": [],
+      "noSelectedScriptureInSubtopic": [],
+      "unfilledSubtopics": [],
+      "publicationApproved": false
+    },
+    {
+      "id": "R26",
+      "order": 26,
+      "arcNumber": 7,
+      "act": "The People of the Covenant",
+      "title": "The Divided Kingdom and the Prophets",
+      "originalChapterIds": [
+        "H36",
+        "H37"
+      ],
+      "rationale": "Elijah's witness belongs within the divided monarchy; no invented Elisha text.",
+      "sourceTextPolicy": "KEEP_ALL_P3_READABLE_SOURCE_BLOCKS_IN_ACTUAL_ORDER",
+      "protectedCovenantHinges": [],
+      "noSelectedScriptureInSubtopic": [
+        "H37"
+      ],
+      "unfilledSubtopics": [],
+      "publicationApproved": false
+    },
+    {
+      "id": "R27",
+      "order": 27,
+      "arcNumber": 7,
+      "act": "The People of the Covenant",
+      "title": "Isaiah and the Messianic Hope",
+      "originalChapterIds": [
+        "H38"
+      ],
+      "rationale": "Preserve distinct prophetic testimony.",
+      "sourceTextPolicy": "KEEP_ALL_P3_READABLE_SOURCE_BLOCKS_IN_ACTUAL_ORDER",
+      "protectedCovenantHinges": [],
+      "noSelectedScriptureInSubtopic": [],
+      "unfilledSubtopics": [],
+      "publicationApproved": false
+    },
+    {
+      "id": "R28",
+      "order": 28,
+      "arcNumber": 7,
+      "act": "The People of the Covenant",
+      "title": "The Fall of Israel",
+      "originalChapterIds": [
+        "H39"
+      ],
+      "rationale": "Protect historical judgment and fall.",
+      "sourceTextPolicy": "KEEP_ALL_P3_READABLE_SOURCE_BLOCKS_IN_ACTUAL_ORDER",
+      "protectedCovenantHinges": [],
+      "noSelectedScriptureInSubtopic": [],
+      "unfilledSubtopics": [],
+      "publicationApproved": false
+    },
+    {
+      "id": "R29",
+      "order": 29,
+      "arcNumber": 7,
+      "act": "The People of the Covenant",
+      "title": "The New Covenant Foretold",
+      "originalChapterIds": [
+        "H40"
+      ],
+      "rationale": "Jeremiah foretells but does not institute the New Covenant.",
+      "sourceTextPolicy": "KEEP_ALL_P3_READABLE_SOURCE_BLOCKS_IN_ACTUAL_ORDER",
+      "protectedCovenantHinges": [
+        "H40"
+      ],
+      "noSelectedScriptureInSubtopic": [],
+      "unfilledSubtopics": [],
+      "publicationApproved": false
+    },
+    {
+      "id": "R30",
+      "order": 30,
+      "arcNumber": 7,
+      "act": "The People of the Covenant",
+      "title": "Jerusalem Falls and the Exile",
+      "originalChapterIds": [
+        "H41",
+        "H42"
+      ],
+      "rationale": "Exilic stories are literary companions, not a fictitious single chronology.",
+      "sourceTextPolicy": "KEEP_ALL_P3_READABLE_SOURCE_BLOCKS_IN_ACTUAL_ORDER",
+      "protectedCovenantHinges": [],
+      "noSelectedScriptureInSubtopic": [
+        "H42"
+      ],
+      "unfilledSubtopics": [
+        "H42"
+      ],
+      "publicationApproved": false
+    },
+    {
+      "id": "R31",
+      "order": 31,
+      "arcNumber": 7,
+      "act": "The People of the Covenant",
+      "title": "Restoration and Expectation of the Messiah",
+      "originalChapterIds": [
+        "H43",
+        "H44"
+      ],
+      "rationale": "Restoration and subsequent faithfulness lead toward Christ.",
+      "sourceTextPolicy": "KEEP_ALL_P3_READABLE_SOURCE_BLOCKS_IN_ACTUAL_ORDER",
+      "protectedCovenantHinges": [],
+      "noSelectedScriptureInSubtopic": [
+        "H44"
+      ],
+      "unfilledSubtopics": [],
+      "publicationApproved": false
+    },
+    {
+      "id": "R32",
+      "order": 32,
+      "arcNumber": 8,
+      "act": "The Fulfilment",
+      "title": "The Generations and the Annunciation",
+      "originalChapterIds": [
+        "H45",
+        "H46"
+      ],
+      "rationale": "Genealogies not yet text-selected; Matthew and Luke remain distinct.",
+      "sourceTextPolicy": "KEEP_ALL_P3_READABLE_SOURCE_BLOCKS_IN_ACTUAL_ORDER",
+      "protectedCovenantHinges": [],
+      "noSelectedScriptureInSubtopic": [
+        "H45"
+      ],
+      "unfilledSubtopics": [
+        "H45"
+      ],
+      "publicationApproved": false
+    },
+    {
+      "id": "R33",
+      "order": 33,
+      "arcNumber": 8,
+      "act": "The Fulfilment",
+      "title": "The Visitation and Saint Joseph",
+      "originalChapterIds": [
+        "H47"
+      ],
+      "rationale": "Preserve separate Gospel witnesses without harmonizing their speeches.",
+      "sourceTextPolicy": "KEEP_ALL_P3_READABLE_SOURCE_BLOCKS_IN_ACTUAL_ORDER",
+      "protectedCovenantHinges": [],
+      "noSelectedScriptureInSubtopic": [],
+      "unfilledSubtopics": [],
+      "publicationApproved": false
+    },
+    {
+      "id": "R34",
+      "order": 34,
+      "arcNumber": 8,
+      "act": "The Fulfilment",
+      "title": "The Nativity",
+      "originalChapterIds": [
+        "H48"
+      ],
+      "rationale": "Preserve Christ's birth as its own chapter.",
+      "sourceTextPolicy": "KEEP_ALL_P3_READABLE_SOURCE_BLOCKS_IN_ACTUAL_ORDER",
+      "protectedCovenantHinges": [],
+      "noSelectedScriptureInSubtopic": [],
+      "unfilledSubtopics": [],
+      "publicationApproved": false
+    },
+    {
+      "id": "R35",
+      "order": 35,
+      "arcNumber": 8,
+      "act": "The Fulfilment",
+      "title": "Christ's Childhood and Hidden Life",
+      "originalChapterIds": [
+        "H49",
+        "H50"
+      ],
+      "rationale": "Presentation and Magi have no asserted exact shared chronology; hidden years lack selected text.",
+      "sourceTextPolicy": "KEEP_ALL_P3_READABLE_SOURCE_BLOCKS_IN_ACTUAL_ORDER",
+      "protectedCovenantHinges": [],
+      "noSelectedScriptureInSubtopic": [
+        "H50"
+      ],
+      "unfilledSubtopics": [
+        "H50"
+      ],
+      "publicationApproved": false
+    },
+    {
+      "id": "R36",
+      "order": 36,
+      "arcNumber": 9,
+      "act": "The Fulfilment",
+      "title": "The Forerunner, Baptism and First Disciples",
+      "originalChapterIds": [
+        "H51",
+        "H52"
+      ],
+      "rationale": "Public beginning; retain Mark/John existing sequence despite original outline numbering.",
+      "sourceTextPolicy": "KEEP_ALL_P3_READABLE_SOURCE_BLOCKS_IN_ACTUAL_ORDER",
+      "protectedCovenantHinges": [],
+      "noSelectedScriptureInSubtopic": [],
+      "unfilledSubtopics": [],
+      "publicationApproved": false
+    },
+    {
+      "id": "R37",
+      "order": 37,
+      "arcNumber": 9,
+      "act": "The Fulfilment",
+      "title": "The Teaching of the Kingdom",
+      "originalChapterIds": [
+        "H53"
+      ],
+      "rationale": "Preserve core proclamation.",
+      "sourceTextPolicy": "KEEP_ALL_P3_READABLE_SOURCE_BLOCKS_IN_ACTUAL_ORDER",
+      "protectedCovenantHinges": [],
+      "noSelectedScriptureInSubtopic": [],
+      "unfilledSubtopics": [],
+      "publicationApproved": false
+    },
+    {
+      "id": "R38",
+      "order": 38,
+      "arcNumber": 9,
+      "act": "The Fulfilment",
+      "title": "Christ's Signs and Encounters",
+      "originalChapterIds": [
+        "H54",
+        "H55"
+      ],
+      "rationale": "Healings and encounters have no separately selected compulsory readings.",
+      "sourceTextPolicy": "KEEP_ALL_P3_READABLE_SOURCE_BLOCKS_IN_ACTUAL_ORDER",
+      "protectedCovenantHinges": [],
+      "noSelectedScriptureInSubtopic": [
+        "H54",
+        "H55"
+      ],
+      "unfilledSubtopics": [
+        "H55"
+      ],
+      "publicationApproved": false
+    },
+    {
+      "id": "R39",
+      "order": 39,
+      "arcNumber": 9,
+      "act": "The Fulfilment",
+      "title": "The Bread of Life",
+      "originalChapterIds": [
+        "H56"
+      ],
+      "rationale": "Protected Eucharistic discourse.",
+      "sourceTextPolicy": "KEEP_ALL_P3_READABLE_SOURCE_BLOCKS_IN_ACTUAL_ORDER",
+      "protectedCovenantHinges": [],
+      "noSelectedScriptureInSubtopic": [],
+      "unfilledSubtopics": [],
+      "publicationApproved": false
+    },
+    {
+      "id": "R40",
+      "order": 40,
+      "arcNumber": 9,
+      "act": "The Fulfilment",
+      "title": "Peter's Confession and the Transfiguration",
+      "originalChapterIds": [
+        "H57"
+      ],
+      "rationale": "Preserve Christ's revelation.",
+      "sourceTextPolicy": "KEEP_ALL_P3_READABLE_SOURCE_BLOCKS_IN_ACTUAL_ORDER",
+      "protectedCovenantHinges": [],
+      "noSelectedScriptureInSubtopic": [],
+      "unfilledSubtopics": [],
+      "publicationApproved": false
+    },
+    {
+      "id": "R41",
+      "order": 41,
+      "arcNumber": 9,
+      "act": "The Fulfilment",
+      "title": "The Road to Jerusalem",
+      "originalChapterIds": [
+        "H58"
+      ],
+      "rationale": "Keep Lazarus and Passion antecedents.",
+      "sourceTextPolicy": "KEEP_ALL_P3_READABLE_SOURCE_BLOCKS_IN_ACTUAL_ORDER",
+      "protectedCovenantHinges": [],
+      "noSelectedScriptureInSubtopic": [],
+      "unfilledSubtopics": [],
+      "publicationApproved": false
+    },
+    {
+      "id": "R42",
+      "order": 42,
+      "arcNumber": 10,
+      "act": "The Fulfilment",
+      "title": "Christ Enters Jerusalem",
+      "originalChapterIds": [
+        "H59"
+      ],
+      "rationale": "Holy Week entry remains distinctive.",
+      "sourceTextPolicy": "KEEP_ALL_P3_READABLE_SOURCE_BLOCKS_IN_ACTUAL_ORDER",
+      "protectedCovenantHinges": [],
+      "noSelectedScriptureInSubtopic": [],
+      "unfilledSubtopics": [],
+      "publicationApproved": false
+    },
+    {
+      "id": "R43",
+      "order": 43,
+      "arcNumber": 10,
+      "act": "The Fulfilment",
+      "title": "The Last Supper and the New Covenant",
+      "originalChapterIds": [
+        "H60",
+        "H61"
+      ],
+      "rationale": "New Covenant institution distinct; Farewell Discourses still unfilled, not fabricated.",
+      "sourceTextPolicy": "KEEP_ALL_P3_READABLE_SOURCE_BLOCKS_IN_ACTUAL_ORDER",
+      "protectedCovenantHinges": [
+        "H60"
+      ],
+      "noSelectedScriptureInSubtopic": [
+        "H61"
+      ],
+      "unfilledSubtopics": [
+        "H61"
+      ],
+      "publicationApproved": false
+    },
+    {
+      "id": "R44",
+      "order": 44,
+      "arcNumber": 10,
+      "act": "The Fulfilment",
+      "title": "Gethsemane, Arrest and Trial",
+      "originalChapterIds": [
+        "H62",
+        "H63"
+      ],
+      "rationale": "Continuous Passion action before Calvary.",
+      "sourceTextPolicy": "KEEP_ALL_P3_READABLE_SOURCE_BLOCKS_IN_ACTUAL_ORDER",
+      "protectedCovenantHinges": [],
+      "noSelectedScriptureInSubtopic": [],
+      "unfilledSubtopics": [],
+      "publicationApproved": false
+    },
+    {
+      "id": "R45",
+      "order": 45,
+      "arcNumber": 10,
+      "act": "The Fulfilment",
+      "title": "Calvary",
+      "originalChapterIds": [
+        "H64"
+      ],
+      "rationale": "Protected death, piercing of side and burial.",
+      "sourceTextPolicy": "KEEP_ALL_P3_READABLE_SOURCE_BLOCKS_IN_ACTUAL_ORDER",
+      "protectedCovenantHinges": [
+        "H64"
+      ],
+      "noSelectedScriptureInSubtopic": [],
+      "unfilledSubtopics": [],
+      "publicationApproved": false
+    },
+    {
+      "id": "R46",
+      "order": 46,
+      "arcNumber": 10,
+      "act": "The Fulfilment",
+      "title": "The Resurrection",
+      "originalChapterIds": [
+        "H65"
+      ],
+      "rationale": "Keep Easter and appearances in Gospel source order.",
+      "sourceTextPolicy": "KEEP_ALL_P3_READABLE_SOURCE_BLOCKS_IN_ACTUAL_ORDER",
+      "protectedCovenantHinges": [],
+      "noSelectedScriptureInSubtopic": [],
+      "unfilledSubtopics": [],
+      "publicationApproved": false
+    },
+    {
+      "id": "R47",
+      "order": 47,
+      "arcNumber": 10,
+      "act": "The Fulfilment",
+      "title": "The Ascension",
+      "originalChapterIds": [
+        "H66"
+      ],
+      "rationale": "Preserve commission and expectation.",
+      "sourceTextPolicy": "KEEP_ALL_P3_READABLE_SOURCE_BLOCKS_IN_ACTUAL_ORDER",
+      "protectedCovenantHinges": [],
+      "noSelectedScriptureInSubtopic": [],
+      "unfilledSubtopics": [],
+      "publicationApproved": false
+    },
+    {
+      "id": "R48",
+      "order": 48,
+      "arcNumber": 11,
+      "act": "The Church and Consummation",
+      "title": "Pentecost",
+      "originalChapterIds": [
+        "H67"
+      ],
+      "rationale": "Distinct gift of the Spirit.",
+      "sourceTextPolicy": "KEEP_ALL_P3_READABLE_SOURCE_BLOCKS_IN_ACTUAL_ORDER",
+      "protectedCovenantHinges": [],
+      "noSelectedScriptureInSubtopic": [],
+      "unfilledSubtopics": [],
+      "publicationApproved": false
+    },
+    {
+      "id": "R49",
+      "order": 49,
+      "arcNumber": 11,
+      "act": "The Church and Consummation",
+      "title": "The First Christians",
+      "originalChapterIds": [
+        "H68"
+      ],
+      "rationale": "Life and martyrs of early Church.",
+      "sourceTextPolicy": "KEEP_ALL_P3_READABLE_SOURCE_BLOCKS_IN_ACTUAL_ORDER",
+      "protectedCovenantHinges": [],
+      "noSelectedScriptureInSubtopic": [],
+      "unfilledSubtopics": [],
+      "publicationApproved": false
+    },
+    {
+      "id": "R50",
+      "order": 50,
+      "arcNumber": 11,
+      "act": "The Church and Consummation",
+      "title": "The Conversion of Saul",
+      "originalChapterIds": [
+        "H69"
+      ],
+      "rationale": "Preserve Paul's conversion.",
+      "sourceTextPolicy": "KEEP_ALL_P3_READABLE_SOURCE_BLOCKS_IN_ACTUAL_ORDER",
+      "protectedCovenantHinges": [],
+      "noSelectedScriptureInSubtopic": [],
+      "unfilledSubtopics": [],
+      "publicationApproved": false
+    },
+    {
+      "id": "R51",
+      "order": 51,
+      "arcNumber": 11,
+      "act": "The Church and Consummation",
+      "title": "The Gospel Reaches the Gentiles",
+      "originalChapterIds": [
+        "H70"
+      ],
+      "rationale": "Preserve the Cornelius-Peter turning point.",
+      "sourceTextPolicy": "KEEP_ALL_P3_READABLE_SOURCE_BLOCKS_IN_ACTUAL_ORDER",
+      "protectedCovenantHinges": [],
+      "noSelectedScriptureInSubtopic": [],
+      "unfilledSubtopics": [],
+      "publicationApproved": false
+    },
+    {
+      "id": "R52",
+      "order": 52,
+      "arcNumber": 11,
+      "act": "The Church and Consummation",
+      "title": "Antioch and the Missions",
+      "originalChapterIds": [
+        "H71"
+      ],
+      "rationale": "Gentile mission develops.",
+      "sourceTextPolicy": "KEEP_ALL_P3_READABLE_SOURCE_BLOCKS_IN_ACTUAL_ORDER",
+      "protectedCovenantHinges": [],
+      "noSelectedScriptureInSubtopic": [],
+      "unfilledSubtopics": [],
+      "publicationApproved": false
+    },
+    {
+      "id": "R53",
+      "order": 53,
+      "arcNumber": 11,
+      "act": "The Church and Consummation",
+      "title": "The Council of Jerusalem",
+      "originalChapterIds": [
+        "H72"
+      ],
+      "rationale": "Preserve Council as a distinct apostolic decision.",
+      "sourceTextPolicy": "KEEP_ALL_P3_READABLE_SOURCE_BLOCKS_IN_ACTUAL_ORDER",
+      "protectedCovenantHinges": [],
+      "noSelectedScriptureInSubtopic": [],
+      "unfilledSubtopics": [],
+      "publicationApproved": false
+    },
+    {
+      "id": "R54",
+      "order": 54,
+      "arcNumber": 11,
+      "act": "The Church and Consummation",
+      "title": "Witness to the Nations",
+      "originalChapterIds": [
+        "H73"
+      ],
+      "rationale": "Mission and Rome conclude Acts.",
+      "sourceTextPolicy": "KEEP_ALL_P3_READABLE_SOURCE_BLOCKS_IN_ACTUAL_ORDER",
+      "protectedCovenantHinges": [],
+      "noSelectedScriptureInSubtopic": [],
+      "unfilledSubtopics": [],
+      "publicationApproved": false
+    },
+    {
+      "id": "R55",
+      "order": 55,
+      "arcNumber": 12,
+      "act": "The Church and Consummation",
+      "title": "The Vision of Christ and the Heavenly Lamb",
+      "originalChapterIds": [
+        "H74",
+        "H75"
+      ],
+      "rationale": "No selected Revelation 1-3 speech: preserve the Lamb and mark omission.",
+      "sourceTextPolicy": "KEEP_ALL_P3_READABLE_SOURCE_BLOCKS_IN_ACTUAL_ORDER",
+      "protectedCovenantHinges": [],
+      "noSelectedScriptureInSubtopic": [
+        "H74"
+      ],
+      "unfilledSubtopics": [
+        "H74"
+      ],
+      "publicationApproved": false
+    },
+    {
+      "id": "R56",
+      "order": 56,
+      "arcNumber": 12,
+      "act": "The Church and Consummation",
+      "title": "The Conflict and Final Judgment",
+      "originalChapterIds": [
+        "H76",
+        "H77"
+      ],
+      "rationale": "Vision's conflict leads to judgment without invented chronology.",
+      "sourceTextPolicy": "KEEP_ALL_P3_READABLE_SOURCE_BLOCKS_IN_ACTUAL_ORDER",
+      "protectedCovenantHinges": [],
+      "noSelectedScriptureInSubtopic": [
+        "H76"
+      ],
+      "unfilledSubtopics": [],
+      "publicationApproved": false
+    },
+    {
+      "id": "R57",
+      "order": 57,
+      "arcNumber": 12,
+      "act": "The Church and Consummation",
+      "title": "The New Heaven and the New Earth",
+      "originalChapterIds": [
+        "H78"
+      ],
+      "rationale": "Preserve final New Jerusalem vision.",
+      "sourceTextPolicy": "KEEP_ALL_P3_READABLE_SOURCE_BLOCKS_IN_ACTUAL_ORDER",
+      "protectedCovenantHinges": [
+        "H78"
+      ],
+      "noSelectedScriptureInSubtopic": [],
+      "unfilledSubtopics": [],
+      "publicationApproved": false
+    }
+  ],
+  "approval": {
+    "literary": false,
+    "covenantArcHierarchyPreserved": true,
+    "verseEconomyOptimized": false,
+    "publication": false
+  }
+}

@@ -1,0 +1,1941 @@
+{
+  "schema": "ao.historia.v18.main-spine-continuity-desk-pass.v1",
+  "status": "EDITORIAL_DESK_TRIAGE_PENDING_FULL_READALOUD",
+  "date": "2026-10-17",
+  "source": {
+    "originalWorkbook": "Ad_Orientem_Historia_Salutis_Master_Matrix_v18_Abridgment_Decisions.xlsx",
+    "sourceSpine": "data/research/historia-salutis-v18-main-spine-consolidation.v1.json",
+    "sourceSpineSha": "18f73172b814727f835955fd379d751dcf1ba453",
+    "sourceNecessity": "data/research/historia-salutis-v18-necessity-audit.v1.json",
+    "sourceNecessitySha": "e06db54e347382b7abdb240b76ebc19c0ad3b2e5",
+    "newStoryApp": false,
+    "sourceReused": true
+  },
+  "caveat": "Examined source coordinates, key first/last verses and causal seams; NOT a full sequential human oral reading of all principal Scripture or a copyright/translation approval.",
+  "decisionLegend": {
+    "MANDATORY_BRIEF_CONTEXT": "Required meaning, NOT verbatim import of the entire listed passage",
+    "GENEALOGY_NAVIGATION_NOT_PROSE": "Keep distinct witness in existing lineage navigation",
+    "TYPOLOGICAL_REFERENCE_ONLY": "Valid link opportunity, not historical stage",
+    "NO_MAIN_CONTEXT_NEEDED": "No mandatory contextual scene; Scripture remains canonical"
+  },
+  "counts": {
+    "originalV18Units": 217,
+    "originalChapters": 78,
+    "movements": 37,
+    "essentialUnits": 93,
+    "originalBContextUnits": 67,
+    "bContextDisposition": {
+      "MANDATORY_BRIEF_CONTEXT": 29,
+      "GENEALOGY_NAVIGATION_NOT_PROSE": 2,
+      "TYPOLOGICAL_REFERENCE_ONLY": 5,
+      "NO_MAIN_CONTEXT_NEEDED": 31
+    },
+    "independentStoryUnitsStillC": 54,
+    "noFeaturedReadingUnitsStillD": 3,
+    "bridgeSourceCandidates": 11,
+    "bridgesOutsideV18": 7,
+    "fullReadAloudCompleted": false
+  },
+  "contextDecisions": [
+    {
+      "unitId": "H05-02",
+      "movementId": "HS-M03",
+      "originalReference": "Genesis 4:25–26",
+      "originalChapterId": "H05",
+      "dispositionFromNecessity": "B",
+      "readthroughDecision": "MANDATORY_BRIEF_CONTEXT",
+      "contextPurpose": "Adam's descendants continued through Seth, whose line leads to Noah (Genesis 4–5).",
+      "nativeTextPublicationApproved": false,
+      "requiredAsWholePassage": false,
+      "sourceOwner": "ORIGINAL_V18_SEGMENT",
+      "reviewStatus": "DESK_TRIAGED_ORAL_READING_PENDING",
+      "oldEditorialInstruction": "Identify the line through Seth as a genealogical bridge, not read Genesis 4–5 as an extra episode.",
+      "proposedReadingTransition": true,
+      "editorialBatch": "M01_M09"
+    },
+    {
+      "unitId": "H06-01",
+      "movementId": "HS-M03",
+      "originalReference": "Genesis 6:1–8",
+      "originalChapterId": "H06",
+      "dispositionFromNecessity": "B",
+      "readthroughDecision": "NO_MAIN_CONTEXT_NEEDED",
+      "contextPurpose": "Removing this contextual scene does not break an indispensable event transition already present in the nominated spine.",
+      "nativeTextPublicationApproved": false,
+      "requiredAsWholePassage": false,
+      "sourceOwner": "ORIGINAL_V18_SEGMENT",
+      "reviewStatus": "DESK_TRIAGED_ORAL_READING_PENDING"
+    },
+    {
+      "unitId": "H07-01",
+      "movementId": "HS-M03",
+      "originalReference": "Genesis 6:5–8",
+      "originalChapterId": "H07",
+      "dispositionFromNecessity": "B",
+      "readthroughDecision": "NO_MAIN_CONTEXT_NEEDED",
+      "contextPurpose": "Genesis 6:9–22 is separately proposed as a clearly marked Scripture-source bridge establishing Noah's ark; repeating a second description of its construction immediately beforehand is unnecessary.",
+      "nativeTextPublicationApproved": false,
+      "requiredAsWholePassage": false,
+      "sourceOwner": "ORIGINAL_V18_SEGMENT",
+      "reviewStatus": "DESK_TRIAGED_ORAL_READING_PENDING",
+      "oldEditorialInstruction": "Ark construction and divine command are missing before Genesis 7:1 begins with entering the Ark; source context must precede the flood.",
+      "proposedReadingTransition": false,
+      "editorialBatch": "M01_M09"
+    },
+    {
+      "unitId": "H09-01",
+      "movementId": "HS-M03",
+      "originalReference": "Genesis 10:1, 32",
+      "originalChapterId": "H09",
+      "dispositionFromNecessity": "B",
+      "readthroughDecision": "NO_MAIN_CONTEXT_NEEDED",
+      "contextPurpose": "Removing this contextual scene does not break an indispensable event transition already present in the nominated spine.",
+      "nativeTextPublicationApproved": false,
+      "requiredAsWholePassage": false,
+      "sourceOwner": "ORIGINAL_V18_SEGMENT",
+      "reviewStatus": "DESK_TRIAGED_ORAL_READING_PENDING"
+    },
+    {
+      "unitId": "H09-02",
+      "movementId": "HS-M03",
+      "originalReference": "Genesis 11:1–9",
+      "originalChapterId": "H09",
+      "dispositionFromNecessity": "B",
+      "readthroughDecision": "MANDATORY_BRIEF_CONTEXT",
+      "contextPurpose": "After the flood, Noah's descendants spread into peoples and nations; at Babel their language was confounded and they were scattered (Genesis 10–11).",
+      "nativeTextPublicationApproved": false,
+      "requiredAsWholePassage": false,
+      "sourceOwner": "ORIGINAL_V18_SEGMENT",
+      "reviewStatus": "DESK_TRIAGED_ORAL_READING_PENDING",
+      "oldEditorialInstruction": "Keep Babel as an explanatory event for dispersed nations; retain the distinction from Pentecost rather than claiming simple word-for-word symmetry.",
+      "proposedReadingTransition": true,
+      "editorialBatch": "M01_M09"
+    },
+    {
+      "unitId": "H11-01",
+      "movementId": "HS-M04",
+      "originalReference": "Genesis 14:18–20",
+      "originalChapterId": "H11",
+      "dispositionFromNecessity": "B",
+      "readthroughDecision": "TYPOLOGICAL_REFERENCE_ONLY",
+      "contextPurpose": "Keep the biblical witness as a genuine cross-reference or typology when source-verified; it does not advance sequential history by itself.",
+      "nativeTextPublicationApproved": false,
+      "requiredAsWholePassage": false,
+      "sourceOwner": "ORIGINAL_V18_SEGMENT",
+      "reviewStatus": "DESK_TRIAGED_ORAL_READING_PENDING"
+    },
+    {
+      "unitId": "H12-01",
+      "movementId": "HS-M05",
+      "originalReference": "Genesis 18:1–15",
+      "originalChapterId": "H12",
+      "dispositionFromNecessity": "B",
+      "readthroughDecision": "NO_MAIN_CONTEXT_NEEDED",
+      "contextPurpose": "Removing this contextual scene does not break an indispensable event transition already present in the nominated spine.",
+      "nativeTextPublicationApproved": false,
+      "requiredAsWholePassage": false,
+      "sourceOwner": "ORIGINAL_V18_SEGMENT",
+      "reviewStatus": "DESK_TRIAGED_ORAL_READING_PENDING"
+    },
+    {
+      "unitId": "H14-02",
+      "movementId": "HS-M05",
+      "originalReference": "Genesis 25:19–26, 29–34",
+      "originalChapterId": "H14",
+      "dispositionFromNecessity": "B",
+      "readthroughDecision": "MANDATORY_BRIEF_CONTEXT",
+      "contextPurpose": "Isaac and Rebecca had two sons, Esau and Jacob (Genesis 25:19–26).",
+      "nativeTextPublicationApproved": false,
+      "requiredAsWholePassage": false,
+      "sourceOwner": "ORIGINAL_V18_SEGMENT",
+      "reviewStatus": "DESK_TRIAGED_ORAL_READING_PENDING",
+      "oldEditorialInstruction": "Name Esau and Jacob to establish the selected covenant line, not rehearse their entire youth.",
+      "proposedReadingTransition": true,
+      "editorialBatch": "M01_M09"
+    },
+    {
+      "unitId": "H14-03",
+      "movementId": "HS-M05",
+      "originalReference": "Genesis 27:18–29, 34–40",
+      "originalChapterId": "H14",
+      "dispositionFromNecessity": "B",
+      "readthroughDecision": "MANDATORY_BRIEF_CONTEXT",
+      "contextPurpose": "Jacob received his father Isaac's blessing amid the conflict with his elder brother Esau (Genesis 27).",
+      "nativeTextPublicationApproved": false,
+      "requiredAsWholePassage": false,
+      "sourceOwner": "ORIGINAL_V18_SEGMENT",
+      "reviewStatus": "DESK_TRIAGED_ORAL_READING_PENDING",
+      "oldEditorialInstruction": "Indicate the paternal blessing passing to Jacob before the Bethel/Jabbok narrative.",
+      "proposedReadingTransition": true,
+      "editorialBatch": "M01_M09"
+    },
+    {
+      "unitId": "H15-01",
+      "movementId": "HS-M05",
+      "originalReference": "Genesis 28:10–22",
+      "originalChapterId": "H15",
+      "dispositionFromNecessity": "B",
+      "readthroughDecision": "NO_MAIN_CONTEXT_NEEDED",
+      "contextPurpose": "Removing this contextual scene does not break an indispensable event transition already present in the nominated spine.",
+      "nativeTextPublicationApproved": false,
+      "requiredAsWholePassage": false,
+      "sourceOwner": "ORIGINAL_V18_SEGMENT",
+      "reviewStatus": "DESK_TRIAGED_ORAL_READING_PENDING"
+    },
+    {
+      "unitId": "H17-02",
+      "movementId": "HS-M07",
+      "originalReference": "Exodus 2:1–10, 23–25",
+      "originalChapterId": "H17",
+      "dispositionFromNecessity": "B",
+      "readthroughDecision": "MANDATORY_BRIEF_CONTEXT",
+      "contextPurpose": "Moses was a Hebrew child rescued from Pharaoh's decree, raised by Pharaoh's daughter, and later driven into Midian (Exodus 2).",
+      "nativeTextPublicationApproved": false,
+      "requiredAsWholePassage": false,
+      "sourceOwner": "ORIGINAL_V18_SEGMENT",
+      "reviewStatus": "DESK_TRIAGED_ORAL_READING_PENDING",
+      "oldEditorialInstruction": "Identify who Moses is and why the cry of Israel is heard, without needing the full infancy story.",
+      "proposedReadingTransition": true,
+      "editorialBatch": "M01_M09"
+    },
+    {
+      "unitId": "H19-02",
+      "movementId": "HS-M08",
+      "originalReference": "Exodus 8:16–19",
+      "originalChapterId": "H19",
+      "dispositionFromNecessity": "B",
+      "readthroughDecision": "NO_MAIN_CONTEXT_NEEDED",
+      "contextPurpose": "Removing this contextual scene does not break an indispensable event transition already present in the nominated spine.",
+      "nativeTextPublicationApproved": false,
+      "requiredAsWholePassage": false,
+      "sourceOwner": "ORIGINAL_V18_SEGMENT",
+      "reviewStatus": "DESK_TRIAGED_ORAL_READING_PENDING"
+    },
+    {
+      "unitId": "H19-03",
+      "movementId": "HS-M08",
+      "originalReference": "Exodus 9:13–16",
+      "originalChapterId": "H19",
+      "dispositionFromNecessity": "B",
+      "readthroughDecision": "MANDATORY_BRIEF_CONTEXT",
+      "contextPurpose": "Pharaoh repeatedly refused to let Israel go despite the plagues (Exodus 7–10). Moses then warned of the final judgment.",
+      "nativeTextPublicationApproved": false,
+      "requiredAsWholePassage": false,
+      "sourceOwner": "ORIGINAL_V18_SEGMENT",
+      "reviewStatus": "DESK_TRIAGED_ORAL_READING_PENDING",
+      "oldEditorialInstruction": "Pharaoh's hardened resistance makes the Passover's judgment understandable without listing every plague.",
+      "proposedReadingTransition": true,
+      "editorialBatch": "M01_M09"
+    },
+    {
+      "unitId": "H19-04",
+      "movementId": "HS-M08",
+      "originalReference": "Exodus 10:21–23",
+      "originalChapterId": "H19",
+      "dispositionFromNecessity": "B",
+      "readthroughDecision": "NO_MAIN_CONTEXT_NEEDED",
+      "contextPurpose": "Removing this contextual scene does not break an indispensable event transition already present in the nominated spine.",
+      "nativeTextPublicationApproved": false,
+      "requiredAsWholePassage": false,
+      "sourceOwner": "ORIGINAL_V18_SEGMENT",
+      "reviewStatus": "DESK_TRIAGED_ORAL_READING_PENDING"
+    },
+    {
+      "unitId": "H21-02",
+      "movementId": "HS-M09",
+      "originalReference": "Exodus 13:17–22",
+      "originalChapterId": "H21",
+      "dispositionFromNecessity": "B",
+      "readthroughDecision": "MANDATORY_BRIEF_CONTEXT",
+      "contextPurpose": "God guided Israel in the wilderness by a pillar of cloud by day and of fire by night (Exodus 13:21–22).",
+      "nativeTextPublicationApproved": false,
+      "requiredAsWholePassage": false,
+      "sourceOwner": "ORIGINAL_V18_SEGMENT",
+      "reviewStatus": "DESK_TRIAGED_ORAL_READING_PENDING",
+      "oldEditorialInstruction": "Mention the cloud/fire guidance connecting departure to the crossing, without requiring every Exodus travel detail.",
+      "proposedReadingTransition": true,
+      "editorialBatch": "M01_M09"
+    },
+    {
+      "unitId": "H21-04",
+      "movementId": "HS-M09",
+      "originalReference": "Exodus 16:2–4, 12–15",
+      "originalChapterId": "H21",
+      "dispositionFromNecessity": "B",
+      "readthroughDecision": "MANDATORY_BRIEF_CONTEXT",
+      "contextPurpose": "In the wilderness God provided manna to sustain the people of Israel (Exodus 16).",
+      "nativeTextPublicationApproved": false,
+      "requiredAsWholePassage": false,
+      "sourceOwner": "ORIGINAL_V18_SEGMENT",
+      "reviewStatus": "DESK_TRIAGED_ORAL_READING_PENDING",
+      "oldEditorialInstruction": "Mention the manna as divine sustenance in the wilderness and avoid merging it with the later Bread of Life discourse.",
+      "proposedReadingTransition": true,
+      "editorialBatch": "M01_M09"
+    },
+    {
+      "unitId": "H23-02",
+      "movementId": "HS-M10",
+      "originalReference": "Exodus 40:16–21, 34–38",
+      "originalChapterId": "H23",
+      "dispositionFromNecessity": "B",
+      "readthroughDecision": "MANDATORY_BRIEF_CONTEXT",
+      "contextPurpose": "The Lord commanded Israel to erect the Tabernacle, where the Ark of the Covenant signified his dwelling among the people during their journey (Exodus 40:17–38).",
+      "nativeTextPublicationApproved": false,
+      "requiredAsWholePassage": false,
+      "sourceOwner": "ORIGINAL_V18_SEGMENT",
+      "reviewStatus": "DESK_TRIAGED_ORAL_READING_PENDING",
+      "oldEditorialInstruction": "Describe the divine dwelling in the Tabernacle, linking Sinai and Solomon's Temple without repeating architectural inventories.",
+      "editorialBatch": "MOVEMENTS_10_19",
+      "proposedReadingTransition": true
+    },
+    {
+      "unitId": "H24-01",
+      "movementId": "HS-M11",
+      "originalReference": "Deuteronomy 30:11–20",
+      "originalChapterId": "H24",
+      "dispositionFromNecessity": "B",
+      "readthroughDecision": "NO_MAIN_CONTEXT_NEEDED",
+      "contextPurpose": "Removing this contextual scene does not break an indispensable event transition already present in the nominated spine.",
+      "nativeTextPublicationApproved": false,
+      "requiredAsWholePassage": false,
+      "sourceOwner": "ORIGINAL_V18_SEGMENT",
+      "reviewStatus": "DESK_TRIAGED_ORAL_READING_PENDING"
+    },
+    {
+      "unitId": "H24-02",
+      "movementId": "HS-M11",
+      "originalReference": "Deuteronomy 31:1–8",
+      "originalChapterId": "H24",
+      "dispositionFromNecessity": "B",
+      "readthroughDecision": "MANDATORY_BRIEF_CONTEXT",
+      "contextPurpose": "After the years in the wilderness, Moses commissioned Joshua to lead Israel across the Jordan into the promised land (Numbers 14:33–34; Deuteronomy 31:7–8).",
+      "nativeTextPublicationApproved": false,
+      "requiredAsWholePassage": false,
+      "sourceOwner": "ORIGINAL_V18_SEGMENT",
+      "reviewStatus": "DESK_TRIAGED_ORAL_READING_PENDING",
+      "oldEditorialInstruction": "Name Joshua as commissioned successor before the crossing of Jordan.",
+      "editorialBatch": "MOVEMENTS_10_19",
+      "proposedReadingTransition": true
+    },
+    {
+      "unitId": "H25-02",
+      "movementId": "HS-M11",
+      "originalReference": "Joshua 6:1–5, 12–21",
+      "originalChapterId": "H25",
+      "dispositionFromNecessity": "B",
+      "readthroughDecision": "NO_MAIN_CONTEXT_NEEDED",
+      "contextPurpose": "Removing this contextual scene does not break an indispensable event transition already present in the nominated spine.",
+      "nativeTextPublicationApproved": false,
+      "requiredAsWholePassage": false,
+      "sourceOwner": "ORIGINAL_V18_SEGMENT",
+      "reviewStatus": "DESK_TRIAGED_ORAL_READING_PENDING"
+    },
+    {
+      "unitId": "H28-01",
+      "movementId": "HS-M12",
+      "originalReference": "Ruth 1:1–18",
+      "originalChapterId": "H28",
+      "dispositionFromNecessity": "B",
+      "readthroughDecision": "MANDATORY_BRIEF_CONTEXT",
+      "contextPurpose": "Ruth, a Moabite widow, remained faithful to her mother-in-law Naomi and returned with her to Bethlehem (Ruth 1:16–22).",
+      "nativeTextPublicationApproved": false,
+      "requiredAsWholePassage": false,
+      "sourceOwner": "ORIGINAL_V18_SEGMENT",
+      "reviewStatus": "DESK_TRIAGED_ORAL_READING_PENDING",
+      "oldEditorialInstruction": "Identify Ruth as the Moabite who remained faithful to Naomi before Ruth 4 identifies her offspring and David's lineage.",
+      "editorialBatch": "MOVEMENTS_10_19",
+      "proposedReadingTransition": true
+    },
+    {
+      "unitId": "H29-02",
+      "movementId": "HS-M12",
+      "originalReference": "1 Samuel 3:1–21",
+      "originalChapterId": "H29",
+      "dispositionFromNecessity": "B",
+      "readthroughDecision": "MANDATORY_BRIEF_CONTEXT",
+      "contextPurpose": "Samuel served as a prophet during Israel's transition to kingship. Saul, a Benjaminite, came to Samuel, whom the Lord had instructed to anoint him (1 Samuel 3:19–21; 9:15–27).",
+      "nativeTextPublicationApproved": false,
+      "requiredAsWholePassage": false,
+      "sourceOwner": "ORIGINAL_V18_SEGMENT",
+      "reviewStatus": "DESK_TRIAGED_ORAL_READING_PENDING",
+      "oldEditorialInstruction": "Identify Samuel as a prophet entrusted with guiding Israel through its transition to kingship.",
+      "editorialBatch": "MOVEMENTS_10_19",
+      "proposedReadingTransition": true
+    },
+    {
+      "unitId": "H31-04",
+      "movementId": "HS-M13",
+      "originalReference": "1 Samuel 31:1–13",
+      "originalChapterId": "H31",
+      "dispositionFromNecessity": "B",
+      "readthroughDecision": "MANDATORY_BRIEF_CONTEXT",
+      "contextPurpose": "Saul died in battle against the Philistines, and David subsequently began his reign over Judah at Hebron (1 Samuel 31; 2 Samuel 2:1–4).",
+      "nativeTextPublicationApproved": false,
+      "requiredAsWholePassage": false,
+      "sourceOwner": "ORIGINAL_V18_SEGMENT",
+      "reviewStatus": "DESK_TRIAGED_ORAL_READING_PENDING",
+      "oldEditorialInstruction": "Indicate Saul's death before David is shown receiving the kingdom.",
+      "editorialBatch": "MOVEMENTS_10_19",
+      "proposedReadingTransition": true
+    },
+    {
+      "unitId": "H33-02",
+      "movementId": "HS-M13",
+      "originalReference": "Psalm 89:4–5",
+      "originalChapterId": "H33",
+      "dispositionFromNecessity": "B",
+      "readthroughDecision": "TYPOLOGICAL_REFERENCE_ONLY",
+      "contextPurpose": "Keep the biblical witness as a genuine cross-reference or typology when source-verified; it does not advance sequential history by itself.",
+      "nativeTextPublicationApproved": false,
+      "requiredAsWholePassage": false,
+      "sourceOwner": "ORIGINAL_V18_SEGMENT",
+      "reviewStatus": "DESK_TRIAGED_ORAL_READING_PENDING"
+    },
+    {
+      "unitId": "H34-01",
+      "movementId": "HS-M14",
+      "originalReference": "2 Samuel 11:1–5, 14–17",
+      "originalChapterId": "H34",
+      "dispositionFromNecessity": "B",
+      "readthroughDecision": "MANDATORY_BRIEF_CONTEXT",
+      "contextPurpose": "David sinned grievously against Bathsheba and Uriah. Nathan confronted him, and David acknowledged his sin before the Lord (2 Samuel 11–12).",
+      "nativeTextPublicationApproved": false,
+      "requiredAsWholePassage": false,
+      "sourceOwner": "ORIGINAL_V18_SEGMENT",
+      "reviewStatus": "DESK_TRIAGED_ORAL_READING_PENDING",
+      "oldEditorialInstruction": "King David's grave sin supplies a moral counterpoint to the enduring covenant, not a full additional court narrative.",
+      "editorialBatch": "MOVEMENTS_10_19",
+      "proposedReadingTransition": true
+    },
+    {
+      "unitId": "H34-02",
+      "movementId": "HS-M14",
+      "originalReference": "2 Samuel 12:1–13",
+      "originalChapterId": "H34",
+      "dispositionFromNecessity": "B",
+      "readthroughDecision": "NO_MAIN_CONTEXT_NEEDED",
+      "contextPurpose": "The condemnation and repentance of David are already captured in the single H34-01 context line; a second sequential retelling duplicates the same biblical development.",
+      "nativeTextPublicationApproved": false,
+      "requiredAsWholePassage": false,
+      "sourceOwner": "ORIGINAL_V18_SEGMENT",
+      "reviewStatus": "DESK_TRIAGED_ORAL_READING_PENDING",
+      "oldEditorialInstruction": "Keep Nathan's condemnation and David's repentance together, without duplicating the penitential psalm as mandatory narration.",
+      "editorialBatch": "MOVEMENTS_10_19",
+      "proposedReadingTransition": false
+    },
+    {
+      "unitId": "H35-04",
+      "movementId": "HS-M14",
+      "originalReference": "1 Kings 11:1–13",
+      "originalChapterId": "H35",
+      "dispositionFromNecessity": "B",
+      "readthroughDecision": "MANDATORY_BRIEF_CONTEXT",
+      "contextPurpose": "Solomon subsequently turned to foreign gods, and the Lord announced that the kingdom would be torn apart after him, though a portion would remain for David's sake (1 Kings 11:1–13).",
+      "nativeTextPublicationApproved": false,
+      "requiredAsWholePassage": false,
+      "sourceOwner": "ORIGINAL_V18_SEGMENT",
+      "reviewStatus": "DESK_TRIAGED_ORAL_READING_PENDING",
+      "oldEditorialInstruction": "Explain Solomon's infidelity as the direct prelude to the divided kingdom.",
+      "editorialBatch": "MOVEMENTS_10_19",
+      "proposedReadingTransition": true
+    },
+    {
+      "unitId": "H37-02",
+      "movementId": "HS-M15",
+      "originalReference": "1 Kings 18:20–39",
+      "originalChapterId": "H37",
+      "dispositionFromNecessity": "B",
+      "readthroughDecision": "MANDATORY_BRIEF_CONTEXT",
+      "contextPurpose": "Elijah opposed the worship of Baal during Israel's apostasy (1 Kings 18). The following oracles of Isaiah are distinct prophetic witnesses to God's promises, not episodes occurring in one continuous scene (Isaiah 7; 9; 11; 52–53).",
+      "nativeTextPublicationApproved": false,
+      "requiredAsWholePassage": false,
+      "sourceOwner": "ORIGINAL_V18_SEGMENT",
+      "reviewStatus": "DESK_TRIAGED_ORAL_READING_PENDING",
+      "oldEditorialInstruction": "Use Elijah's opposition to Baal as evidence of prophetic fidelity amid idolatry; the dramatic contest is not itself mandatory reading.",
+      "editorialBatch": "MOVEMENTS_10_19",
+      "proposedReadingTransition": true
+    },
+    {
+      "unitId": "H37-03",
+      "movementId": "HS-M15",
+      "originalReference": "1 Kings 19:9–16",
+      "originalChapterId": "H37",
+      "dispositionFromNecessity": "B",
+      "readthroughDecision": "NO_MAIN_CONTEXT_NEEDED",
+      "contextPurpose": "Removing this contextual scene does not break an indispensable event transition already present in the nominated spine.",
+      "nativeTextPublicationApproved": false,
+      "requiredAsWholePassage": false,
+      "sourceOwner": "ORIGINAL_V18_SEGMENT",
+      "reviewStatus": "DESK_TRIAGED_ORAL_READING_PENDING"
+    },
+    {
+      "unitId": "H38-01",
+      "movementId": "HS-M15",
+      "originalReference": "Isaiah 6:1–8",
+      "originalChapterId": "H38",
+      "dispositionFromNecessity": "B",
+      "readthroughDecision": "NO_MAIN_CONTEXT_NEEDED",
+      "contextPurpose": "Removing this contextual scene does not break an indispensable event transition already present in the nominated spine.",
+      "nativeTextPublicationApproved": false,
+      "requiredAsWholePassage": false,
+      "sourceOwner": "ORIGINAL_V18_SEGMENT",
+      "reviewStatus": "DESK_TRIAGED_ORAL_READING_PENDING"
+    },
+    {
+      "unitId": "H39-02",
+      "movementId": "HS-M15",
+      "originalReference": "2 Kings 23:1–3, 21–25",
+      "originalChapterId": "H39",
+      "dispositionFromNecessity": "B",
+      "readthroughDecision": "NO_MAIN_CONTEXT_NEEDED",
+      "contextPurpose": "Removing this contextual scene does not break an indispensable event transition already present in the nominated spine.",
+      "nativeTextPublicationApproved": false,
+      "requiredAsWholePassage": false,
+      "sourceOwner": "ORIGINAL_V18_SEGMENT",
+      "reviewStatus": "DESK_TRIAGED_ORAL_READING_PENDING"
+    },
+    {
+      "unitId": "H42-01",
+      "movementId": "HS-M16",
+      "originalReference": "Daniel 1:1–21",
+      "originalChapterId": "H42",
+      "dispositionFromNecessity": "B",
+      "readthroughDecision": "NO_MAIN_CONTEXT_NEEDED",
+      "contextPurpose": "Removing this contextual scene does not break an indispensable event transition already present in the nominated spine.",
+      "nativeTextPublicationApproved": false,
+      "requiredAsWholePassage": false,
+      "sourceOwner": "ORIGINAL_V18_SEGMENT",
+      "reviewStatus": "DESK_TRIAGED_ORAL_READING_PENDING"
+    },
+    {
+      "unitId": "H42-04",
+      "movementId": "HS-M16",
+      "originalReference": "Ezekiel 1:1–28",
+      "originalChapterId": "H42",
+      "dispositionFromNecessity": "B",
+      "readthroughDecision": "NO_MAIN_CONTEXT_NEEDED",
+      "contextPurpose": "Removing this contextual scene does not break an indispensable event transition already present in the nominated spine.",
+      "nativeTextPublicationApproved": false,
+      "requiredAsWholePassage": false,
+      "sourceOwner": "ORIGINAL_V18_SEGMENT",
+      "reviewStatus": "DESK_TRIAGED_ORAL_READING_PENDING"
+    },
+    {
+      "unitId": "H43-03",
+      "movementId": "HS-M17",
+      "originalReference": "Nehemiah 8:1–12",
+      "originalChapterId": "H43",
+      "dispositionFromNecessity": "B",
+      "readthroughDecision": "MANDATORY_BRIEF_CONTEXT",
+      "contextPurpose": "After the return, Ezra publicly proclaimed the Law and the community renewed its worship of the Lord (Nehemiah 8:1–8).",
+      "nativeTextPublicationApproved": false,
+      "requiredAsWholePassage": false,
+      "sourceOwner": "ORIGINAL_V18_SEGMENT",
+      "reviewStatus": "DESK_TRIAGED_ORAL_READING_PENDING",
+      "oldEditorialInstruction": "Use the return of the Law and communal worship to explain restoration; Nehemiah's whole ceremony is not required.",
+      "editorialBatch": "MOVEMENTS_10_19",
+      "proposedReadingTransition": true
+    },
+    {
+      "unitId": "H44-01",
+      "movementId": "HS-M17",
+      "originalReference": "1 Maccabees 2:15–28",
+      "originalChapterId": "H44",
+      "dispositionFromNecessity": "B",
+      "readthroughDecision": "MANDATORY_BRIEF_CONTEXT",
+      "contextPurpose": "In later generations, foreign rulers pressured the Jewish people to forsake their law. Mattathias resisted enforced idolatry, beginning the Maccabean struggle (1 Maccabees 2:15–28).",
+      "nativeTextPublicationApproved": false,
+      "requiredAsWholePassage": false,
+      "sourceOwner": "ORIGINAL_V18_SEGMENT",
+      "reviewStatus": "DESK_TRIAGED_ORAL_READING_PENDING",
+      "oldEditorialInstruction": "State the Maccabean persecution and resistance to bridge restoration and messianic expectation; do not put it in the Babylonian exile.",
+      "editorialBatch": "MOVEMENTS_10_19",
+      "proposedReadingTransition": true
+    },
+    {
+      "unitId": "H44-03",
+      "movementId": "HS-M17",
+      "originalReference": "2 Maccabees 7:1–42",
+      "originalChapterId": "H44",
+      "dispositionFromNecessity": "B",
+      "readthroughDecision": "MANDATORY_BRIEF_CONTEXT",
+      "contextPurpose": "The martyrs under persecution witnessed to Israel's hope in the resurrection, even in the face of death (2 Maccabees 7).",
+      "nativeTextPublicationApproved": false,
+      "requiredAsWholePassage": false,
+      "sourceOwner": "ORIGINAL_V18_SEGMENT",
+      "reviewStatus": "DESK_TRIAGED_ORAL_READING_PENDING",
+      "oldEditorialInstruction": "Mention witness to resurrection hope under persecution; do not require the full narrative of all seven martyrdoms.",
+      "editorialBatch": "MOVEMENTS_10_19",
+      "proposedReadingTransition": true
+    },
+    {
+      "unitId": "H44-04",
+      "movementId": "HS-M17",
+      "originalReference": "Baruch 5:1–9",
+      "originalChapterId": "H44",
+      "dispositionFromNecessity": "B",
+      "readthroughDecision": "TYPOLOGICAL_REFERENCE_ONLY",
+      "contextPurpose": "Keep the biblical witness as a genuine cross-reference or typology when source-verified; it does not advance sequential history by itself.",
+      "nativeTextPublicationApproved": false,
+      "requiredAsWholePassage": false,
+      "sourceOwner": "ORIGINAL_V18_SEGMENT",
+      "reviewStatus": "DESK_TRIAGED_ORAL_READING_PENDING"
+    },
+    {
+      "unitId": "H44-06",
+      "movementId": "HS-M17",
+      "originalReference": "Wisdom 2:12–20",
+      "originalChapterId": "H44",
+      "dispositionFromNecessity": "B",
+      "readthroughDecision": "TYPOLOGICAL_REFERENCE_ONLY",
+      "contextPurpose": "Keep the biblical witness as a genuine cross-reference or typology when source-verified; it does not advance sequential history by itself.",
+      "nativeTextPublicationApproved": false,
+      "requiredAsWholePassage": false,
+      "sourceOwner": "ORIGINAL_V18_SEGMENT",
+      "reviewStatus": "DESK_TRIAGED_ORAL_READING_PENDING"
+    },
+    {
+      "unitId": "H45-01",
+      "movementId": "HS-M18",
+      "originalReference": "Matthew 1:1–17",
+      "originalChapterId": "H45",
+      "dispositionFromNecessity": "B",
+      "readthroughDecision": "GENEALOGY_NAVIGATION_NOT_PROSE",
+      "contextPurpose": "Preserve this unharmonized Gospel genealogy in the existing genealogy view; the main prose may state its covenantal significance without reciting it.",
+      "nativeTextPublicationApproved": false,
+      "requiredAsWholePassage": false,
+      "sourceOwner": "ORIGINAL_V18_SEGMENT",
+      "reviewStatus": "DESK_TRIAGED_ORAL_READING_PENDING"
+    },
+    {
+      "unitId": "H45-02",
+      "movementId": "HS-M18",
+      "originalReference": "Luke 3:23–38",
+      "originalChapterId": "H45",
+      "dispositionFromNecessity": "B",
+      "readthroughDecision": "GENEALOGY_NAVIGATION_NOT_PROSE",
+      "contextPurpose": "Preserve this unharmonized Gospel genealogy in the existing genealogy view; the main prose may state its covenantal significance without reciting it.",
+      "nativeTextPublicationApproved": false,
+      "requiredAsWholePassage": false,
+      "sourceOwner": "ORIGINAL_V18_SEGMENT",
+      "reviewStatus": "DESK_TRIAGED_ORAL_READING_PENDING"
+    },
+    {
+      "unitId": "H47-01",
+      "movementId": "HS-M19",
+      "originalReference": "Luke 1:39–56",
+      "originalChapterId": "H47",
+      "dispositionFromNecessity": "B",
+      "readthroughDecision": "MANDATORY_BRIEF_CONTEXT",
+      "contextPurpose": "Mary visited Elizabeth, whose child leapt at her greeting, and praised the Lord for his mercy and promises to Israel in the Magnificat (Luke 1:39–56).",
+      "nativeTextPublicationApproved": false,
+      "requiredAsWholePassage": false,
+      "sourceOwner": "ORIGINAL_V18_SEGMENT",
+      "reviewStatus": "DESK_TRIAGED_ORAL_READING_PENDING",
+      "oldEditorialInstruction": "Mention the Visitation/Magnificat briefly, preserving the distinct Lukan episode rather than stitching it into Matthew's Joseph account.",
+      "editorialBatch": "MOVEMENTS_10_19",
+      "proposedReadingTransition": true
+    },
+    {
+      "unitId": "H48-02",
+      "movementId": "HS-M19",
+      "originalReference": "Luke 2:21",
+      "originalChapterId": "H48",
+      "dispositionFromNecessity": "B",
+      "readthroughDecision": "NO_MAIN_CONTEXT_NEEDED",
+      "contextPurpose": "Matthew 1:25 explicitly states Joseph named the child Jesus; repeating the name in another editorial context note adds no new necessary narrative information. Luke 2:21 remains available in Scripture.",
+      "nativeTextPublicationApproved": false,
+      "requiredAsWholePassage": false,
+      "sourceOwner": "ORIGINAL_V18_SEGMENT",
+      "reviewStatus": "DESK_TRIAGED_ORAL_READING_PENDING",
+      "oldEditorialInstruction": "Ensure the child is explicitly named Jesus, without a separate ceremonial chapter.",
+      "editorialBatch": "MOVEMENTS_10_19",
+      "proposedReadingTransition": false
+    },
+    {
+      "unitId": "H49-01",
+      "movementId": "HS-M19",
+      "originalReference": "Luke 2:22–38",
+      "originalChapterId": "H49",
+      "dispositionFromNecessity": "B",
+      "readthroughDecision": "MANDATORY_BRIEF_CONTEXT",
+      "contextPurpose": "Mary and Joseph presented Jesus in the Temple, where Simeon recognised the promised salvation, a light to the Gentiles (Luke 2:22–32).",
+      "nativeTextPublicationApproved": false,
+      "requiredAsWholePassage": false,
+      "sourceOwner": "ORIGINAL_V18_SEGMENT",
+      "reviewStatus": "DESK_TRIAGED_ORAL_READING_PENDING",
+      "oldEditorialInstruction": "Simeon's recognition places the Presentation in Israel's expectation without a separate compulsory temple scene.",
+      "editorialBatch": "MOVEMENTS_10_19",
+      "proposedReadingTransition": true
+    },
+    {
+      "unitId": "H49-03",
+      "movementId": "HS-M19",
+      "originalReference": "Matthew 2:13–23",
+      "originalChapterId": "H49",
+      "dispositionFromNecessity": "B",
+      "readthroughDecision": "MANDATORY_BRIEF_CONTEXT",
+      "contextPurpose": "Warned that Herod threatened the child, Joseph took Jesus and Mary into Egypt. After Herod's death, the family returned and settled in Nazareth (Matthew 2:13–23).",
+      "nativeTextPublicationApproved": false,
+      "requiredAsWholePassage": false,
+      "sourceOwner": "ORIGINAL_V18_SEGMENT",
+      "reviewStatus": "DESK_TRIAGED_ORAL_READING_PENDING",
+      "oldEditorialInstruction": "Identify the return and dwelling in Nazareth as the bridge from infancy to the Forerunner.",
+      "editorialBatch": "MOVEMENTS_10_19",
+      "proposedReadingTransition": true
+    },
+    {
+      "unitId": "H51-02",
+      "movementId": "HS-M20",
+      "originalReference": "Matthew 4:1–11",
+      "originalChapterId": "H51",
+      "dispositionFromNecessity": "B",
+      "readthroughDecision": "MANDATORY_BRIEF_CONTEXT",
+      "contextPurpose": "Christ's temptation may be mentioned briefly as the transition into his public ministry.",
+      "nativeTextPublicationApproved": false,
+      "requiredAsWholePassage": false,
+      "sourceOwner": "ORIGINAL_V18_SEGMENT",
+      "reviewStatus": "DESK_TRIAGED_ORAL_READING_PENDING"
+    },
+    {
+      "unitId": "H52-02",
+      "movementId": "HS-M20",
+      "originalReference": "John 2:1–11",
+      "originalChapterId": "H52",
+      "dispositionFromNecessity": "B",
+      "readthroughDecision": "NO_MAIN_CONTEXT_NEEDED",
+      "contextPurpose": "Removing this contextual scene does not break an indispensable event transition already present in the nominated spine.",
+      "nativeTextPublicationApproved": false,
+      "requiredAsWholePassage": false,
+      "sourceOwner": "ORIGINAL_V18_SEGMENT",
+      "reviewStatus": "DESK_TRIAGED_ORAL_READING_PENDING"
+    },
+    {
+      "unitId": "H53-03",
+      "movementId": "HS-M21",
+      "originalReference": "Matthew 7:24–29",
+      "originalChapterId": "H53",
+      "dispositionFromNecessity": "B",
+      "readthroughDecision": "NO_MAIN_CONTEXT_NEEDED",
+      "contextPurpose": "Removing this contextual scene does not break an indispensable event transition already present in the nominated spine.",
+      "nativeTextPublicationApproved": false,
+      "requiredAsWholePassage": false,
+      "sourceOwner": "ORIGINAL_V18_SEGMENT",
+      "reviewStatus": "DESK_TRIAGED_ORAL_READING_PENDING"
+    },
+    {
+      "unitId": "H53-04",
+      "movementId": "HS-M21",
+      "originalReference": "Matthew 13:1–23",
+      "originalChapterId": "H53",
+      "dispositionFromNecessity": "B",
+      "readthroughDecision": "NO_MAIN_CONTEXT_NEEDED",
+      "contextPurpose": "Removing this contextual scene does not break an indispensable event transition already present in the nominated spine.",
+      "nativeTextPublicationApproved": false,
+      "requiredAsWholePassage": false,
+      "sourceOwner": "ORIGINAL_V18_SEGMENT",
+      "reviewStatus": "DESK_TRIAGED_ORAL_READING_PENDING"
+    },
+    {
+      "unitId": "H54-02",
+      "movementId": "HS-M21",
+      "originalReference": "Mark 2:1–12",
+      "originalChapterId": "H54",
+      "dispositionFromNecessity": "B",
+      "readthroughDecision": "MANDATORY_BRIEF_CONTEXT",
+      "contextPurpose": "A representative forgiveness/healing sign demonstrates authority; this one remains the only nominated main-narrative miracle from H54.",
+      "nativeTextPublicationApproved": false,
+      "requiredAsWholePassage": false,
+      "sourceOwner": "ORIGINAL_V18_SEGMENT",
+      "reviewStatus": "DESK_TRIAGED_ORAL_READING_PENDING"
+    },
+    {
+      "unitId": "H55-01",
+      "movementId": "HS-M21",
+      "originalReference": "John 4:4–26, 39–42",
+      "originalChapterId": "H55",
+      "dispositionFromNecessity": "B",
+      "readthroughDecision": "NO_MAIN_CONTEXT_NEEDED",
+      "contextPurpose": "Removing this contextual scene does not break an indispensable event transition already present in the nominated spine.",
+      "nativeTextPublicationApproved": false,
+      "requiredAsWholePassage": false,
+      "sourceOwner": "ORIGINAL_V18_SEGMENT",
+      "reviewStatus": "DESK_TRIAGED_ORAL_READING_PENDING"
+    },
+    {
+      "unitId": "H56-01",
+      "movementId": "HS-M22",
+      "originalReference": "John 6:1–15",
+      "originalChapterId": "H56",
+      "dispositionFromNecessity": "B",
+      "readthroughDecision": "MANDATORY_BRIEF_CONTEXT",
+      "contextPurpose": "Introduce the loaves once as the setting for Jesus' subsequent Bread of Life declaration; do not repeat H54-04.",
+      "nativeTextPublicationApproved": false,
+      "requiredAsWholePassage": false,
+      "sourceOwner": "ORIGINAL_V18_SEGMENT",
+      "reviewStatus": "DESK_TRIAGED_ORAL_READING_PENDING"
+    },
+    {
+      "unitId": "H59-02",
+      "movementId": "HS-M25",
+      "originalReference": "Luke 19:41–44",
+      "originalChapterId": "H59",
+      "dispositionFromNecessity": "B",
+      "readthroughDecision": "NO_MAIN_CONTEXT_NEEDED",
+      "contextPurpose": "Removing this contextual scene does not break an indispensable event transition already present in the nominated spine.",
+      "nativeTextPublicationApproved": false,
+      "requiredAsWholePassage": false,
+      "sourceOwner": "ORIGINAL_V18_SEGMENT",
+      "reviewStatus": "DESK_TRIAGED_ORAL_READING_PENDING"
+    },
+    {
+      "unitId": "H61-01",
+      "movementId": "HS-M26",
+      "originalReference": "John 13:31–38",
+      "originalChapterId": "H61",
+      "dispositionFromNecessity": "B",
+      "readthroughDecision": "NO_MAIN_CONTEXT_NEEDED",
+      "contextPurpose": "Removing this contextual scene does not break an indispensable event transition already present in the nominated spine.",
+      "nativeTextPublicationApproved": false,
+      "requiredAsWholePassage": false,
+      "sourceOwner": "ORIGINAL_V18_SEGMENT",
+      "reviewStatus": "DESK_TRIAGED_ORAL_READING_PENDING"
+    },
+    {
+      "unitId": "H61-02",
+      "movementId": "HS-M26",
+      "originalReference": "John 14:1–14",
+      "originalChapterId": "H61",
+      "dispositionFromNecessity": "B",
+      "readthroughDecision": "NO_MAIN_CONTEXT_NEEDED",
+      "contextPurpose": "Removing this contextual scene does not break an indispensable event transition already present in the nominated spine.",
+      "nativeTextPublicationApproved": false,
+      "requiredAsWholePassage": false,
+      "sourceOwner": "ORIGINAL_V18_SEGMENT",
+      "reviewStatus": "DESK_TRIAGED_ORAL_READING_PENDING"
+    },
+    {
+      "unitId": "H61-03",
+      "movementId": "HS-M26",
+      "originalReference": "John 15:1–17",
+      "originalChapterId": "H61",
+      "dispositionFromNecessity": "B",
+      "readthroughDecision": "TYPOLOGICAL_REFERENCE_ONLY",
+      "contextPurpose": "Keep the biblical witness as a genuine cross-reference or typology when source-verified; it does not advance sequential history by itself.",
+      "nativeTextPublicationApproved": false,
+      "requiredAsWholePassage": false,
+      "sourceOwner": "ORIGINAL_V18_SEGMENT",
+      "reviewStatus": "DESK_TRIAGED_ORAL_READING_PENDING"
+    },
+    {
+      "unitId": "H61-04",
+      "movementId": "HS-M26",
+      "originalReference": "John 17:1–26",
+      "originalChapterId": "H61",
+      "dispositionFromNecessity": "B",
+      "readthroughDecision": "NO_MAIN_CONTEXT_NEEDED",
+      "contextPurpose": "Removing this contextual scene does not break an indispensable event transition already present in the nominated spine.",
+      "nativeTextPublicationApproved": false,
+      "requiredAsWholePassage": false,
+      "sourceOwner": "ORIGINAL_V18_SEGMENT",
+      "reviewStatus": "DESK_TRIAGED_ORAL_READING_PENDING"
+    },
+    {
+      "unitId": "H63-04",
+      "movementId": "HS-M27",
+      "originalReference": "John 19:1–16",
+      "originalChapterId": "H63",
+      "dispositionFromNecessity": "B",
+      "readthroughDecision": "MANDATORY_BRIEF_CONTEXT",
+      "contextPurpose": "Carry scourging and crowning as a clearly attributed Johannine witness without conflating it with Matthew's separate Pilate scene.",
+      "nativeTextPublicationApproved": false,
+      "requiredAsWholePassage": false,
+      "sourceOwner": "ORIGINAL_V18_SEGMENT",
+      "reviewStatus": "DESK_TRIAGED_ORAL_READING_PENDING"
+    },
+    {
+      "unitId": "H65-03",
+      "movementId": "HS-M29",
+      "originalReference": "Luke 24:13–35",
+      "originalChapterId": "H65",
+      "dispositionFromNecessity": "B",
+      "readthroughDecision": "MANDATORY_BRIEF_CONTEXT",
+      "contextPurpose": "Emmaus may supply the key scriptural interpretation that the Messiah had to suffer; do not require the complete walk dialogue.",
+      "nativeTextPublicationApproved": false,
+      "requiredAsWholePassage": false,
+      "sourceOwner": "ORIGINAL_V18_SEGMENT",
+      "reviewStatus": "DESK_TRIAGED_ORAL_READING_PENDING"
+    },
+    {
+      "unitId": "H68-03",
+      "movementId": "HS-M31",
+      "originalReference": "Acts 4:32–35",
+      "originalChapterId": "H68",
+      "dispositionFromNecessity": "B",
+      "readthroughDecision": "NO_MAIN_CONTEXT_NEEDED",
+      "contextPurpose": "Removing this contextual scene does not break an indispensable event transition already present in the nominated spine.",
+      "nativeTextPublicationApproved": false,
+      "requiredAsWholePassage": false,
+      "sourceOwner": "ORIGINAL_V18_SEGMENT",
+      "reviewStatus": "DESK_TRIAGED_ORAL_READING_PENDING"
+    },
+    {
+      "unitId": "H71-03",
+      "movementId": "HS-M33",
+      "originalReference": "Acts 14:19–28",
+      "originalChapterId": "H71",
+      "dispositionFromNecessity": "B",
+      "readthroughDecision": "NO_MAIN_CONTEXT_NEEDED",
+      "contextPurpose": "Removing this contextual scene does not break an indispensable event transition already present in the nominated spine.",
+      "nativeTextPublicationApproved": false,
+      "requiredAsWholePassage": false,
+      "sourceOwner": "ORIGINAL_V18_SEGMENT",
+      "reviewStatus": "DESK_TRIAGED_ORAL_READING_PENDING"
+    },
+    {
+      "unitId": "H73-03",
+      "movementId": "HS-M34",
+      "originalReference": "Acts 17:16–34",
+      "originalChapterId": "H73",
+      "dispositionFromNecessity": "B",
+      "readthroughDecision": "NO_MAIN_CONTEXT_NEEDED",
+      "contextPurpose": "Removing this contextual scene does not break an indispensable event transition already present in the nominated spine.",
+      "nativeTextPublicationApproved": false,
+      "requiredAsWholePassage": false,
+      "sourceOwner": "ORIGINAL_V18_SEGMENT",
+      "reviewStatus": "DESK_TRIAGED_ORAL_READING_PENDING"
+    },
+    {
+      "unitId": "H74-01",
+      "movementId": "HS-M35",
+      "originalReference": "Revelation 1:9–20",
+      "originalChapterId": "H74",
+      "dispositionFromNecessity": "B",
+      "readthroughDecision": "NO_MAIN_CONTEXT_NEEDED",
+      "contextPurpose": "Removing this contextual scene does not break an indispensable event transition already present in the nominated spine.",
+      "nativeTextPublicationApproved": false,
+      "requiredAsWholePassage": false,
+      "sourceOwner": "ORIGINAL_V18_SEGMENT",
+      "reviewStatus": "DESK_TRIAGED_ORAL_READING_PENDING"
+    },
+    {
+      "unitId": "H75-01",
+      "movementId": "HS-M35",
+      "originalReference": "Revelation 4:1–11",
+      "originalChapterId": "H75",
+      "dispositionFromNecessity": "B",
+      "readthroughDecision": "MANDATORY_BRIEF_CONTEXT",
+      "contextPurpose": "The throne vision supplies the antecedent for the book held by the One upon the throne in Revelation 5.",
+      "nativeTextPublicationApproved": false,
+      "requiredAsWholePassage": false,
+      "sourceOwner": "ORIGINAL_V18_SEGMENT",
+      "reviewStatus": "DESK_TRIAGED_ORAL_READING_PENDING"
+    },
+    {
+      "unitId": "H76-01",
+      "movementId": "HS-M36",
+      "originalReference": "Revelation 6:1–8",
+      "originalChapterId": "H76",
+      "dispositionFromNecessity": "B",
+      "readthroughDecision": "NO_MAIN_CONTEXT_NEEDED",
+      "contextPurpose": "Removing this contextual scene does not break an indispensable event transition already present in the nominated spine.",
+      "nativeTextPublicationApproved": false,
+      "requiredAsWholePassage": false,
+      "sourceOwner": "ORIGINAL_V18_SEGMENT",
+      "reviewStatus": "DESK_TRIAGED_ORAL_READING_PENDING"
+    },
+    {
+      "unitId": "H76-03",
+      "movementId": "HS-M36",
+      "originalReference": "Revelation 12:1–17",
+      "originalChapterId": "H76",
+      "dispositionFromNecessity": "B",
+      "readthroughDecision": "MANDATORY_BRIEF_CONTEXT",
+      "contextPurpose": "Use the woman/dragon vision as symbolic conflict linked to the first promise; never turn apocalyptic imagery into dated literal history.",
+      "nativeTextPublicationApproved": false,
+      "requiredAsWholePassage": false,
+      "sourceOwner": "ORIGINAL_V18_SEGMENT",
+      "reviewStatus": "DESK_TRIAGED_ORAL_READING_PENDING"
+    },
+    {
+      "unitId": "H76-04",
+      "movementId": "HS-M36",
+      "originalReference": "Revelation 13:1–10",
+      "originalChapterId": "H76",
+      "dispositionFromNecessity": "B",
+      "readthroughDecision": "NO_MAIN_CONTEXT_NEEDED",
+      "contextPurpose": "Removing this contextual scene does not break an indispensable event transition already present in the nominated spine.",
+      "nativeTextPublicationApproved": false,
+      "requiredAsWholePassage": false,
+      "sourceOwner": "ORIGINAL_V18_SEGMENT",
+      "reviewStatus": "DESK_TRIAGED_ORAL_READING_PENDING"
+    },
+    {
+      "unitId": "H76-05",
+      "movementId": "HS-M36",
+      "originalReference": "Revelation 18:1–8",
+      "originalChapterId": "H76",
+      "dispositionFromNecessity": "B",
+      "readthroughDecision": "NO_MAIN_CONTEXT_NEEDED",
+      "contextPurpose": "Removing this contextual scene does not break an indispensable event transition already present in the nominated spine.",
+      "nativeTextPublicationApproved": false,
+      "requiredAsWholePassage": false,
+      "sourceOwner": "ORIGINAL_V18_SEGMENT",
+      "reviewStatus": "DESK_TRIAGED_ORAL_READING_PENDING"
+    }
+  ],
+  "sourceBridgeCandidates": [
+    {
+      "id": "HS-CF-01",
+      "movementId": "HS-M03",
+      "reference": "Genesis 6:9–22",
+      "rationale": "Ark construction and Noah's response must precede the instruction to enter the ark in Genesis 7:1",
+      "kind": "ARK_SETUP",
+      "selectionOrigin": "B_CONTEXT_PROMOTED_FROM_PRIOR_HELD_H07-01",
+      "originalV18SourceIdIfAny": "H07-01",
+      "identicalCoordsInCPDVAndDouay": true,
+      "installedSourceVersePresenceVerified": true,
+      "cpVerses": 14,
+      "douayVerses": 14,
+      "originalWorkbookModified": false,
+      "approvedToInsertText": false,
+      "requiresReadAloud": true,
+      "sourceEdition": "cpdv-2009",
+      "comparisonEdition": "dr-challoner",
+      "needsLiteraryConcordanceReview": true
+    },
+    {
+      "id": "HS-CF-02",
+      "movementId": "HS-M04",
+      "reference": "Genesis 11:26–31",
+      "rationale": "From Shem's descendants to Terah/Abram before Genesis 12:1; this is a genealogical transition, not a full story",
+      "kind": "LINEAGE_GAP",
+      "selectionOrigin": "NEW_VERSE_CANDIDATE",
+      "originalV18SourceIdIfAny": null,
+      "identicalCoordsInCPDVAndDouay": true,
+      "installedSourceVersePresenceVerified": true,
+      "cpVerses": 6,
+      "douayVerses": 6,
+      "originalWorkbookModified": false,
+      "approvedToInsertText": false,
+      "requiresReadAloud": true,
+      "sourceEdition": "cpdv-2009",
+      "comparisonEdition": "dr-challoner",
+      "needsLiteraryConcordanceReview": true
+    },
+    {
+      "id": "HS-CF-03",
+      "movementId": "HS-M06",
+      "reference": "Genesis 39:20–21",
+      "rationale": "An Egyptian official purchased Joseph after his sale; following an accusation, his master imprisoned him. Genesis 39:20–21 then records God's continuing presence with Joseph. This is a short causal bridge, not a featured Potiphar episode.",
+      "kind": "DANGLING_JOSEPH_IMPRISONMENT",
+      "selectionOrigin": "C_STORY_REMAINS_OPTIONAL_NATIVE_BRIDGE_ONLY",
+      "originalV18SourceIdIfAny": "H16-02",
+      "identicalCoordsInCPDVAndDouay": true,
+      "installedSourceVersePresenceVerified": true,
+      "cpVerses": 2,
+      "douayVerses": 2,
+      "originalWorkbookModified": false,
+      "approvedToInsertText": false,
+      "requiresReadAloud": true,
+      "sourceEdition": "cpdv-2009",
+      "comparisonEdition": "dr-challoner",
+      "needsLiteraryConcordanceReview": true,
+      "oldRationale": "Genesis 41 summons Joseph from imprisonment; the short bridge identifies when he entered prison without restoring his separate adventures"
+    },
+    {
+      "id": "HS-CF-04",
+      "movementId": "HS-M13",
+      "reference": "1 Samuel 16:1–3",
+      "rationale": "Existing 1 Samuel 16:10–13 opens after Samuel has already seen seven sons; the prophet's commission to Jesse must be supplied",
+      "kind": "MISSING_SAMUEL_COMMISSION",
+      "selectionOrigin": "NEW_VERSE_CANDIDATE",
+      "originalV18SourceIdIfAny": null,
+      "identicalCoordsInCPDVAndDouay": true,
+      "installedSourceVersePresenceVerified": true,
+      "cpVerses": 3,
+      "douayVerses": 3,
+      "originalWorkbookModified": false,
+      "approvedToInsertText": false,
+      "requiresReadAloud": true,
+      "sourceEdition": "cpdv-2009",
+      "comparisonEdition": "dr-challoner",
+      "needsLiteraryConcordanceReview": true
+    },
+    {
+      "id": "HS-CF-05",
+      "movementId": "HS-M24",
+      "reference": "John 11:45–53",
+      "rationale": "The final miracle itself does not explain the decision to put Jesus to death; the explicit plot follows in John 11:45–53",
+      "kind": "LAZARUS_PASSION_CAUSALITY",
+      "selectionOrigin": "NEW_VERSE_CANDIDATE",
+      "originalV18SourceIdIfAny": null,
+      "identicalCoordsInCPDVAndDouay": true,
+      "installedSourceVersePresenceVerified": true,
+      "cpVerses": 9,
+      "douayVerses": 9,
+      "originalWorkbookModified": false,
+      "approvedToInsertText": false,
+      "requiresReadAloud": true,
+      "sourceEdition": "cpdv-2009",
+      "comparisonEdition": "dr-challoner",
+      "needsLiteraryConcordanceReview": true
+    },
+    {
+      "id": "HS-CF-06",
+      "movementId": "HS-M28",
+      "reference": "John 19:38–42",
+      "rationale": "Jesus is placed in a tomb before the next selected text begins with the empty tomb; burial is part of the death-resurrection sequence",
+      "kind": "MISSING_BURIAL",
+      "selectionOrigin": "NEW_VERSE_CANDIDATE",
+      "originalV18SourceIdIfAny": null,
+      "identicalCoordsInCPDVAndDouay": true,
+      "installedSourceVersePresenceVerified": true,
+      "cpVerses": 5,
+      "douayVerses": 5,
+      "originalWorkbookModified": false,
+      "approvedToInsertText": false,
+      "requiresReadAloud": true,
+      "sourceEdition": "cpdv-2009",
+      "comparisonEdition": "dr-challoner",
+      "needsLiteraryConcordanceReview": true
+    },
+    {
+      "id": "HS-CF-07",
+      "movementId": "HS-M30",
+      "reference": "Acts 1:3–5",
+      "rationale": "The risen Christ appeared over forty days and instructed the apostles concerning the Spirit before Acts 1:6–12 opens mid-conversation",
+      "kind": "ASCENSION_PENTECOST_CONTINUITY",
+      "selectionOrigin": "NEW_VERSE_CANDIDATE",
+      "originalV18SourceIdIfAny": null,
+      "identicalCoordsInCPDVAndDouay": true,
+      "installedSourceVersePresenceVerified": true,
+      "cpVerses": 3,
+      "douayVerses": 3,
+      "originalWorkbookModified": false,
+      "approvedToInsertText": false,
+      "requiresReadAloud": true,
+      "sourceEdition": "cpdv-2009",
+      "comparisonEdition": "dr-challoner",
+      "needsLiteraryConcordanceReview": true
+    },
+    {
+      "id": "HS-CF-08",
+      "movementId": "HS-M31",
+      "reference": "Acts 7:51–53",
+      "rationale": "Acts 7:54 begins with the crowd's anger at words not yet included; the preceding accusation is essential context",
+      "kind": "STEPHEN_ACCUSATION_CONTEXT",
+      "selectionOrigin": "NEW_VERSE_CANDIDATE",
+      "originalV18SourceIdIfAny": null,
+      "identicalCoordsInCPDVAndDouay": true,
+      "installedSourceVersePresenceVerified": true,
+      "cpVerses": 3,
+      "douayVerses": 3,
+      "originalWorkbookModified": false,
+      "approvedToInsertText": false,
+      "requiresReadAloud": true,
+      "sourceEdition": "cpdv-2009",
+      "comparisonEdition": "dr-challoner",
+      "needsLiteraryConcordanceReview": true
+    },
+    {
+      "id": "HS-CF-09",
+      "movementId": "HS-M26",
+      "reference": "John 14:16–17",
+      "rationale": "Jesus promises the Spirit of Truth before Pentecost; this can replace compulsory extended farewell-discourse reading",
+      "kind": "PARACLETE_PROMISE",
+      "selectionOrigin": "EXISTING_SPINE_BRIDGE_PROPOSAL",
+      "originalV18SourceIdIfAny": null,
+      "identicalCoordsInCPDVAndDouay": true,
+      "installedSourceVersePresenceVerified": true,
+      "cpVerses": 2,
+      "douayVerses": 2,
+      "originalWorkbookModified": false,
+      "approvedToInsertText": false,
+      "requiresReadAloud": true,
+      "sourceEdition": "cpdv-2009",
+      "comparisonEdition": "dr-challoner",
+      "needsLiteraryConcordanceReview": true
+    },
+    {
+      "id": "HS-CF-10",
+      "movementId": "HS-M34",
+      "reference": "Acts 19:21",
+      "rationale": "Paul's expressed intention to see Rome supplies a short missionary-journey hinge without requiring the Philippi jailer or shipwreck",
+      "kind": "ROME_INTENTION",
+      "selectionOrigin": "NEW_VERSE_CANDIDATE",
+      "originalV18SourceIdIfAny": null,
+      "identicalCoordsInCPDVAndDouay": true,
+      "installedSourceVersePresenceVerified": true,
+      "cpVerses": 1,
+      "douayVerses": 1,
+      "originalWorkbookModified": false,
+      "approvedToInsertText": false,
+      "requiresReadAloud": true,
+      "sourceEdition": "cpdv-2009",
+      "comparisonEdition": "dr-challoner",
+      "needsLiteraryConcordanceReview": true
+    },
+    {
+      "id": "HS-CF-11",
+      "movementId": "HS-M34",
+      "reference": "Acts 28:16",
+      "rationale": "Paul actually arrives in Rome before the final proclamation pericope opens at Acts 28:23",
+      "kind": "ROME_ARRIVAL",
+      "selectionOrigin": "EXISTING_SPINE_BRIDGE_PROPOSAL",
+      "originalV18SourceIdIfAny": null,
+      "identicalCoordsInCPDVAndDouay": true,
+      "installedSourceVersePresenceVerified": true,
+      "cpVerses": 1,
+      "douayVerses": 1,
+      "originalWorkbookModified": false,
+      "approvedToInsertText": false,
+      "requiresReadAloud": true,
+      "sourceEdition": "cpdv-2009",
+      "comparisonEdition": "dr-challoner",
+      "needsLiteraryConcordanceReview": true
+    }
+  ],
+  "movementDecisions": [
+    {
+      "movementId": "HS-M01",
+      "title": "Creation and the human vocation",
+      "necessaryCoreUnitIds": [
+        "H01-01",
+        "H01-02",
+        "H02-01",
+        "H02-02"
+      ],
+      "shortContextIds": [],
+      "noCompulsoryContextIds": [],
+      "sourceBridgeCandidates": [],
+      "mainNarrativeReadyForFullLiteraryReading": false,
+      "sourceSequenceRisk": "READING_JUNCTION_REVIEW_NOT_COMPLETE",
+      "editorialStatus": "CONTEXT_TRIAGED_NOT_PUBLICATION_APPROVED"
+    },
+    {
+      "movementId": "HS-M02",
+      "title": "The Fall and the First Promise",
+      "necessaryCoreUnitIds": [
+        "H03-01",
+        "H04-01"
+      ],
+      "shortContextIds": [],
+      "noCompulsoryContextIds": [],
+      "sourceBridgeCandidates": [],
+      "mainNarrativeReadyForFullLiteraryReading": false,
+      "sourceSequenceRisk": "READING_JUNCTION_REVIEW_NOT_COMPLETE",
+      "editorialStatus": "CONTEXT_TRIAGED_NOT_PUBLICATION_APPROVED"
+    },
+    {
+      "movementId": "HS-M03",
+      "title": "Noah, the covenant and the peoples",
+      "necessaryCoreUnitIds": [
+        "H07-02",
+        "H07-03",
+        "H08-01"
+      ],
+      "shortContextIds": [
+        "H05-02",
+        "H07-01",
+        "H09-02"
+      ],
+      "noCompulsoryContextIds": [
+        "H06-01",
+        "H09-01"
+      ],
+      "sourceBridgeCandidates": [
+        "HS-CF-01"
+      ],
+      "mainNarrativeReadyForFullLiteraryReading": false,
+      "sourceSequenceRisk": "REQUIRES_EXPLICIT_SOURCE_BRIDGE_REVIEW",
+      "editorialStatus": "CONTEXT_TRIAGED_NOT_PUBLICATION_APPROVED"
+    },
+    {
+      "movementId": "HS-M04",
+      "title": "Abraham called into covenant",
+      "necessaryCoreUnitIds": [
+        "H10-01",
+        "H11-02",
+        "H11-03"
+      ],
+      "shortContextIds": [],
+      "noCompulsoryContextIds": [
+        "H11-01"
+      ],
+      "sourceBridgeCandidates": [
+        "HS-CF-02"
+      ],
+      "mainNarrativeReadyForFullLiteraryReading": false,
+      "sourceSequenceRisk": "REQUIRES_EXPLICIT_SOURCE_BRIDGE_REVIEW",
+      "editorialStatus": "CONTEXT_TRIAGED_NOT_PUBLICATION_APPROVED"
+    },
+    {
+      "movementId": "HS-M05",
+      "title": "Isaac, Jacob and Israel",
+      "necessaryCoreUnitIds": [
+        "H12-02",
+        "H13-01",
+        "H15-02",
+        "H15-03"
+      ],
+      "shortContextIds": [
+        "H14-02",
+        "H14-03"
+      ],
+      "noCompulsoryContextIds": [
+        "H12-01",
+        "H15-01"
+      ],
+      "sourceBridgeCandidates": [],
+      "mainNarrativeReadyForFullLiteraryReading": false,
+      "sourceSequenceRisk": "READING_JUNCTION_REVIEW_NOT_COMPLETE",
+      "editorialStatus": "CONTEXT_TRIAGED_NOT_PUBLICATION_APPROVED"
+    },
+    {
+      "movementId": "HS-M06",
+      "title": "Joseph and the descent into Egypt",
+      "necessaryCoreUnitIds": [
+        "H16-01",
+        "H16-03",
+        "H16-04",
+        "H16-05"
+      ],
+      "shortContextIds": [],
+      "noCompulsoryContextIds": [],
+      "sourceBridgeCandidates": [
+        "HS-CF-03"
+      ],
+      "mainNarrativeReadyForFullLiteraryReading": false,
+      "sourceSequenceRisk": "REQUIRES_EXPLICIT_SOURCE_BRIDGE_REVIEW",
+      "editorialStatus": "CONTEXT_TRIAGED_NOT_PUBLICATION_APPROVED"
+    },
+    {
+      "movementId": "HS-M07",
+      "title": "Bondage and the calling of Moses",
+      "necessaryCoreUnitIds": [
+        "H17-01",
+        "H18-01"
+      ],
+      "shortContextIds": [
+        "H17-02"
+      ],
+      "noCompulsoryContextIds": [],
+      "sourceBridgeCandidates": [],
+      "mainNarrativeReadyForFullLiteraryReading": false,
+      "sourceSequenceRisk": "READING_JUNCTION_REVIEW_NOT_COMPLETE",
+      "editorialStatus": "CONTEXT_TRIAGED_NOT_PUBLICATION_APPROVED"
+    },
+    {
+      "movementId": "HS-M08",
+      "title": "Plagues and the first Passover",
+      "necessaryCoreUnitIds": [
+        "H19-01",
+        "H19-05",
+        "H20-01"
+      ],
+      "shortContextIds": [
+        "H19-03"
+      ],
+      "noCompulsoryContextIds": [
+        "H19-02",
+        "H19-04"
+      ],
+      "sourceBridgeCandidates": [],
+      "mainNarrativeReadyForFullLiteraryReading": false,
+      "sourceSequenceRisk": "READING_JUNCTION_REVIEW_NOT_COMPLETE",
+      "editorialStatus": "CONTEXT_TRIAGED_NOT_PUBLICATION_APPROVED"
+    },
+    {
+      "movementId": "HS-M09",
+      "title": "Exodus through the sea",
+      "necessaryCoreUnitIds": [
+        "H21-01",
+        "H21-03"
+      ],
+      "shortContextIds": [
+        "H21-02",
+        "H21-04"
+      ],
+      "noCompulsoryContextIds": [],
+      "sourceBridgeCandidates": [],
+      "mainNarrativeReadyForFullLiteraryReading": false,
+      "sourceSequenceRisk": "READING_JUNCTION_REVIEW_NOT_COMPLETE",
+      "editorialStatus": "CONTEXT_TRIAGED_NOT_PUBLICATION_APPROVED"
+    },
+    {
+      "movementId": "HS-M10",
+      "title": "Sinai: covenant and unfaithfulness",
+      "necessaryCoreUnitIds": [
+        "H22-01",
+        "H22-02",
+        "H22-03",
+        "H23-01"
+      ],
+      "shortContextIds": [
+        "H23-02"
+      ],
+      "noCompulsoryContextIds": [],
+      "sourceBridgeCandidates": [],
+      "mainNarrativeReadyForFullLiteraryReading": false,
+      "sourceSequenceRisk": "READING_JUNCTION_REVIEW_NOT_COMPLETE",
+      "editorialStatus": "CONTEXT_TRIAGED_NOT_PUBLICATION_APPROVED"
+    },
+    {
+      "movementId": "HS-M11",
+      "title": "Israel enters the promised land",
+      "necessaryCoreUnitIds": [
+        "H24-03",
+        "H25-01",
+        "H26-01"
+      ],
+      "shortContextIds": [
+        "H24-02"
+      ],
+      "noCompulsoryContextIds": [
+        "H24-01",
+        "H25-02"
+      ],
+      "sourceBridgeCandidates": [],
+      "mainNarrativeReadyForFullLiteraryReading": false,
+      "sourceSequenceRisk": "READING_JUNCTION_REVIEW_NOT_COMPLETE",
+      "editorialStatus": "CONTEXT_TRIAGED_NOT_PUBLICATION_APPROVED"
+    },
+    {
+      "movementId": "HS-M12",
+      "title": "From Ruth to Samuel and Saul",
+      "necessaryCoreUnitIds": [
+        "H28-04",
+        "H29-03",
+        "H29-04"
+      ],
+      "shortContextIds": [
+        "H28-01",
+        "H29-02"
+      ],
+      "noCompulsoryContextIds": [],
+      "sourceBridgeCandidates": [],
+      "mainNarrativeReadyForFullLiteraryReading": false,
+      "sourceSequenceRisk": "READING_JUNCTION_REVIEW_NOT_COMPLETE",
+      "editorialStatus": "CONTEXT_TRIAGED_NOT_PUBLICATION_APPROVED"
+    },
+    {
+      "movementId": "HS-M13",
+      "title": "David and the enduring royal promise",
+      "necessaryCoreUnitIds": [
+        "H30-01",
+        "H32-01",
+        "H32-02",
+        "H32-03",
+        "H33-01"
+      ],
+      "shortContextIds": [
+        "H31-04"
+      ],
+      "noCompulsoryContextIds": [
+        "H33-02"
+      ],
+      "sourceBridgeCandidates": [
+        "HS-CF-04"
+      ],
+      "mainNarrativeReadyForFullLiteraryReading": false,
+      "sourceSequenceRisk": "REQUIRES_EXPLICIT_SOURCE_BRIDGE_REVIEW",
+      "editorialStatus": "CONTEXT_TRIAGED_NOT_PUBLICATION_APPROVED"
+    },
+    {
+      "movementId": "HS-M14",
+      "title": "The Temple and the divided kingdom",
+      "necessaryCoreUnitIds": [
+        "H35-02",
+        "H35-03",
+        "H36-01",
+        "H36-02"
+      ],
+      "shortContextIds": [
+        "H34-01",
+        "H34-02",
+        "H35-04"
+      ],
+      "noCompulsoryContextIds": [],
+      "sourceBridgeCandidates": [],
+      "mainNarrativeReadyForFullLiteraryReading": false,
+      "sourceSequenceRisk": "READING_JUNCTION_REVIEW_NOT_COMPLETE",
+      "editorialStatus": "CONTEXT_TRIAGED_NOT_PUBLICATION_APPROVED"
+    },
+    {
+      "movementId": "HS-M15",
+      "title": "Prophetic warning and Israel's judgment",
+      "necessaryCoreUnitIds": [
+        "H38-02",
+        "H38-03",
+        "H38-04",
+        "H38-05",
+        "H39-01"
+      ],
+      "shortContextIds": [
+        "H37-02"
+      ],
+      "noCompulsoryContextIds": [
+        "H37-03",
+        "H38-01",
+        "H39-02"
+      ],
+      "sourceBridgeCandidates": [],
+      "mainNarrativeReadyForFullLiteraryReading": false,
+      "sourceSequenceRisk": "READING_JUNCTION_REVIEW_NOT_COMPLETE",
+      "editorialStatus": "CONTEXT_TRIAGED_NOT_PUBLICATION_APPROVED"
+    },
+    {
+      "movementId": "HS-M16",
+      "title": "The New Covenant promised in exile",
+      "necessaryCoreUnitIds": [
+        "H40-01",
+        "H41-01",
+        "H41-02"
+      ],
+      "shortContextIds": [],
+      "noCompulsoryContextIds": [
+        "H42-01",
+        "H42-04"
+      ],
+      "sourceBridgeCandidates": [],
+      "mainNarrativeReadyForFullLiteraryReading": false,
+      "sourceSequenceRisk": "READING_JUNCTION_REVIEW_NOT_COMPLETE",
+      "editorialStatus": "CONTEXT_TRIAGED_NOT_PUBLICATION_APPROVED"
+    },
+    {
+      "movementId": "HS-M17",
+      "title": "Restoration and the expectation of Christ",
+      "necessaryCoreUnitIds": [
+        "H43-01",
+        "H43-02"
+      ],
+      "shortContextIds": [
+        "H43-03",
+        "H44-01",
+        "H44-03"
+      ],
+      "noCompulsoryContextIds": [
+        "H44-04",
+        "H44-06"
+      ],
+      "sourceBridgeCandidates": [],
+      "mainNarrativeReadyForFullLiteraryReading": false,
+      "sourceSequenceRisk": "READING_JUNCTION_REVIEW_NOT_COMPLETE",
+      "editorialStatus": "CONTEXT_TRIAGED_NOT_PUBLICATION_APPROVED"
+    },
+    {
+      "movementId": "HS-M18",
+      "title": "The generations and the Annunciation",
+      "necessaryCoreUnitIds": [
+        "H46-01"
+      ],
+      "shortContextIds": [],
+      "noCompulsoryContextIds": [
+        "H45-01",
+        "H45-02"
+      ],
+      "sourceBridgeCandidates": [],
+      "mainNarrativeReadyForFullLiteraryReading": false,
+      "sourceSequenceRisk": "READING_JUNCTION_REVIEW_NOT_COMPLETE",
+      "editorialStatus": "CONTEXT_TRIAGED_NOT_PUBLICATION_APPROVED"
+    },
+    {
+      "movementId": "HS-M19",
+      "title": "The birth of the Saviour",
+      "necessaryCoreUnitIds": [
+        "H47-02",
+        "H48-01",
+        "H49-02"
+      ],
+      "shortContextIds": [
+        "H47-01",
+        "H48-02",
+        "H49-01",
+        "H49-03"
+      ],
+      "noCompulsoryContextIds": [],
+      "sourceBridgeCandidates": [],
+      "mainNarrativeReadyForFullLiteraryReading": false,
+      "sourceSequenceRisk": "READING_JUNCTION_REVIEW_NOT_COMPLETE",
+      "editorialStatus": "CONTEXT_TRIAGED_NOT_PUBLICATION_APPROVED"
+    },
+    {
+      "movementId": "HS-M20",
+      "title": "The Forerunner and first disciples",
+      "necessaryCoreUnitIds": [
+        "H51-01",
+        "H51-03",
+        "H52-01"
+      ],
+      "shortContextIds": [
+        "H51-02"
+      ],
+      "noCompulsoryContextIds": [
+        "H52-02"
+      ],
+      "sourceBridgeCandidates": [],
+      "mainNarrativeReadyForFullLiteraryReading": false,
+      "sourceSequenceRisk": "READING_JUNCTION_REVIEW_NOT_COMPLETE",
+      "editorialStatus": "CONTEXT_TRIAGED_NOT_PUBLICATION_APPROVED"
+    },
+    {
+      "movementId": "HS-M21",
+      "title": "The Kingdom in Christ's teaching and signs",
+      "necessaryCoreUnitIds": [
+        "H53-01",
+        "H53-02"
+      ],
+      "shortContextIds": [
+        "H54-02"
+      ],
+      "noCompulsoryContextIds": [
+        "H53-03",
+        "H53-04",
+        "H55-01"
+      ],
+      "sourceBridgeCandidates": [],
+      "mainNarrativeReadyForFullLiteraryReading": false,
+      "sourceSequenceRisk": "READING_JUNCTION_REVIEW_NOT_COMPLETE",
+      "editorialStatus": "CONTEXT_TRIAGED_NOT_PUBLICATION_APPROVED"
+    },
+    {
+      "movementId": "HS-M22",
+      "title": "Christ the Bread of Life",
+      "necessaryCoreUnitIds": [
+        "H56-02"
+      ],
+      "shortContextIds": [
+        "H56-01"
+      ],
+      "noCompulsoryContextIds": [],
+      "sourceBridgeCandidates": [],
+      "mainNarrativeReadyForFullLiteraryReading": false,
+      "sourceSequenceRisk": "READING_JUNCTION_REVIEW_NOT_COMPLETE",
+      "editorialStatus": "CONTEXT_TRIAGED_NOT_PUBLICATION_APPROVED"
+    },
+    {
+      "movementId": "HS-M23",
+      "title": "Peter's confession and the Transfiguration",
+      "necessaryCoreUnitIds": [
+        "H57-01",
+        "H57-02"
+      ],
+      "shortContextIds": [],
+      "noCompulsoryContextIds": [],
+      "sourceBridgeCandidates": [],
+      "mainNarrativeReadyForFullLiteraryReading": false,
+      "sourceSequenceRisk": "READING_JUNCTION_REVIEW_NOT_COMPLETE",
+      "editorialStatus": "CONTEXT_TRIAGED_NOT_PUBLICATION_APPROVED"
+    },
+    {
+      "movementId": "HS-M24",
+      "title": "The approach to Jerusalem",
+      "necessaryCoreUnitIds": [
+        "H58-04"
+      ],
+      "shortContextIds": [],
+      "noCompulsoryContextIds": [],
+      "sourceBridgeCandidates": [
+        "HS-CF-05"
+      ],
+      "mainNarrativeReadyForFullLiteraryReading": false,
+      "sourceSequenceRisk": "REQUIRES_EXPLICIT_SOURCE_BRIDGE_REVIEW",
+      "editorialStatus": "CONTEXT_TRIAGED_NOT_PUBLICATION_APPROVED"
+    },
+    {
+      "movementId": "HS-M25",
+      "title": "The King's entry into Jerusalem",
+      "necessaryCoreUnitIds": [
+        "H59-01"
+      ],
+      "shortContextIds": [],
+      "noCompulsoryContextIds": [
+        "H59-02"
+      ],
+      "sourceBridgeCandidates": [],
+      "mainNarrativeReadyForFullLiteraryReading": false,
+      "sourceSequenceRisk": "READING_JUNCTION_REVIEW_NOT_COMPLETE",
+      "editorialStatus": "CONTEXT_TRIAGED_NOT_PUBLICATION_APPROVED"
+    },
+    {
+      "movementId": "HS-M26",
+      "title": "The Last Supper and Christ's final teaching",
+      "necessaryCoreUnitIds": [
+        "H60-01"
+      ],
+      "shortContextIds": [],
+      "noCompulsoryContextIds": [
+        "H61-01",
+        "H61-02",
+        "H61-03",
+        "H61-04"
+      ],
+      "sourceBridgeCandidates": [
+        "HS-CF-09"
+      ],
+      "mainNarrativeReadyForFullLiteraryReading": false,
+      "sourceSequenceRisk": "REQUIRES_EXPLICIT_SOURCE_BRIDGE_REVIEW",
+      "editorialStatus": "CONTEXT_TRIAGED_NOT_PUBLICATION_APPROVED"
+    },
+    {
+      "movementId": "HS-M27",
+      "title": "Gethsemane, betrayal and trial",
+      "necessaryCoreUnitIds": [
+        "H62-01",
+        "H62-02",
+        "H63-01",
+        "H63-02"
+      ],
+      "shortContextIds": [
+        "H63-04"
+      ],
+      "noCompulsoryContextIds": [],
+      "sourceBridgeCandidates": [],
+      "mainNarrativeReadyForFullLiteraryReading": false,
+      "sourceSequenceRisk": "READING_JUNCTION_REVIEW_NOT_COMPLETE",
+      "editorialStatus": "CONTEXT_TRIAGED_NOT_PUBLICATION_APPROVED"
+    },
+    {
+      "movementId": "HS-M28",
+      "title": "The sacrifice on Calvary",
+      "necessaryCoreUnitIds": [
+        "H64-01"
+      ],
+      "shortContextIds": [],
+      "noCompulsoryContextIds": [],
+      "sourceBridgeCandidates": [
+        "HS-CF-06"
+      ],
+      "mainNarrativeReadyForFullLiteraryReading": false,
+      "sourceSequenceRisk": "REQUIRES_EXPLICIT_SOURCE_BRIDGE_REVIEW",
+      "editorialStatus": "CONTEXT_TRIAGED_NOT_PUBLICATION_APPROVED"
+    },
+    {
+      "movementId": "HS-M29",
+      "title": "The risen Lord and his witnesses",
+      "necessaryCoreUnitIds": [
+        "H65-01",
+        "H65-02"
+      ],
+      "shortContextIds": [
+        "H65-03"
+      ],
+      "noCompulsoryContextIds": [],
+      "sourceBridgeCandidates": [],
+      "mainNarrativeReadyForFullLiteraryReading": false,
+      "sourceSequenceRisk": "READING_JUNCTION_REVIEW_NOT_COMPLETE",
+      "editorialStatus": "CONTEXT_TRIAGED_NOT_PUBLICATION_APPROVED"
+    },
+    {
+      "movementId": "HS-M30",
+      "title": "The Ascension and promised mission",
+      "necessaryCoreUnitIds": [
+        "H66-01"
+      ],
+      "shortContextIds": [],
+      "noCompulsoryContextIds": [],
+      "sourceBridgeCandidates": [
+        "HS-CF-07"
+      ],
+      "mainNarrativeReadyForFullLiteraryReading": false,
+      "sourceSequenceRisk": "REQUIRES_EXPLICIT_SOURCE_BRIDGE_REVIEW",
+      "editorialStatus": "CONTEXT_TRIAGED_NOT_PUBLICATION_APPROVED"
+    },
+    {
+      "movementId": "HS-M31",
+      "title": "Pentecost and the first Church",
+      "necessaryCoreUnitIds": [
+        "H67-01",
+        "H68-01",
+        "H68-04"
+      ],
+      "shortContextIds": [],
+      "noCompulsoryContextIds": [
+        "H68-03"
+      ],
+      "sourceBridgeCandidates": [
+        "HS-CF-08"
+      ],
+      "mainNarrativeReadyForFullLiteraryReading": false,
+      "sourceSequenceRisk": "REQUIRES_EXPLICIT_SOURCE_BRIDGE_REVIEW",
+      "editorialStatus": "CONTEXT_TRIAGED_NOT_PUBLICATION_APPROVED"
+    },
+    {
+      "movementId": "HS-M32",
+      "title": "Saul and the Gospel to the Gentiles",
+      "necessaryCoreUnitIds": [
+        "H69-01",
+        "H70-01"
+      ],
+      "shortContextIds": [],
+      "noCompulsoryContextIds": [],
+      "sourceBridgeCandidates": [],
+      "mainNarrativeReadyForFullLiteraryReading": false,
+      "sourceSequenceRisk": "READING_JUNCTION_REVIEW_NOT_COMPLETE",
+      "editorialStatus": "CONTEXT_TRIAGED_NOT_PUBLICATION_APPROVED"
+    },
+    {
+      "movementId": "HS-M33",
+      "title": "Antioch, apostolic missions and the Council",
+      "necessaryCoreUnitIds": [
+        "H71-01",
+        "H71-02",
+        "H72-01"
+      ],
+      "shortContextIds": [],
+      "noCompulsoryContextIds": [
+        "H71-03"
+      ],
+      "sourceBridgeCandidates": [],
+      "mainNarrativeReadyForFullLiteraryReading": false,
+      "sourceSequenceRisk": "READING_JUNCTION_REVIEW_NOT_COMPLETE",
+      "editorialStatus": "CONTEXT_TRIAGED_NOT_PUBLICATION_APPROVED"
+    },
+    {
+      "movementId": "HS-M34",
+      "title": "The Gospel proclaimed in Rome",
+      "necessaryCoreUnitIds": [
+        "H73-07"
+      ],
+      "shortContextIds": [],
+      "noCompulsoryContextIds": [
+        "H73-03"
+      ],
+      "sourceBridgeCandidates": [
+        "HS-CF-10",
+        "HS-CF-11"
+      ],
+      "mainNarrativeReadyForFullLiteraryReading": false,
+      "sourceSequenceRisk": "REQUIRES_EXPLICIT_SOURCE_BRIDGE_REVIEW",
+      "editorialStatus": "CONTEXT_TRIAGED_NOT_PUBLICATION_APPROVED"
+    },
+    {
+      "movementId": "HS-M35",
+      "title": "Christ and the Lamb in heavenly vision",
+      "necessaryCoreUnitIds": [
+        "H75-02"
+      ],
+      "shortContextIds": [
+        "H75-01"
+      ],
+      "noCompulsoryContextIds": [
+        "H74-01"
+      ],
+      "sourceBridgeCandidates": [],
+      "mainNarrativeReadyForFullLiteraryReading": false,
+      "sourceSequenceRisk": "READING_JUNCTION_REVIEW_NOT_COMPLETE",
+      "editorialStatus": "CONTEXT_TRIAGED_NOT_PUBLICATION_APPROVED"
+    },
+    {
+      "movementId": "HS-M36",
+      "title": "The final conflict and judgment",
+      "necessaryCoreUnitIds": [
+        "H77-01",
+        "H77-02"
+      ],
+      "shortContextIds": [
+        "H76-03"
+      ],
+      "noCompulsoryContextIds": [
+        "H76-01",
+        "H76-04",
+        "H76-05"
+      ],
+      "sourceBridgeCandidates": [],
+      "mainNarrativeReadyForFullLiteraryReading": false,
+      "sourceSequenceRisk": "READING_JUNCTION_REVIEW_NOT_COMPLETE",
+      "editorialStatus": "CONTEXT_TRIAGED_NOT_PUBLICATION_APPROVED"
+    },
+    {
+      "movementId": "HS-M37",
+      "title": "The New Creation",
+      "necessaryCoreUnitIds": [
+        "H78-01",
+        "H78-02"
+      ],
+      "shortContextIds": [],
+      "noCompulsoryContextIds": [],
+      "sourceBridgeCandidates": [],
+      "mainNarrativeReadyForFullLiteraryReading": false,
+      "sourceSequenceRisk": "READING_JUNCTION_REVIEW_NOT_COMPLETE",
+      "editorialStatus": "CONTEXT_TRIAGED_NOT_PUBLICATION_APPROVED"
+    }
+  ],
+  "genreAndOwnershipGuards": [
+    {
+      "issue": "Genre-aware sequence",
+      "notes": "Isaiah's pronouncements, Matthew and Luke genealogies, apostolic letters and Revelation visions cannot be presented as dated events within one eyewitness timeline."
+    },
+    {
+      "issue": "Gospel witness boundaries",
+      "notes": "Luke's Last Supper, John's farewell discourse, Matthew's trial and John's scourging must have distinct original citation labels and no composed composite 'Bible quote'."
+    },
+    {
+      "issue": "Narrative without filler",
+      "notes": "No reintroduction of detailed Judges, Daniel/Tobit/Judith/Esther, Philippi prison or Acts shipwreck is authorized merely because a one-verse bridge is needed."
+    },
+    {
+      "issue": "One authoritative Bible",
+      "notes": "Source references remain with existing 73-book Catholic Scripture witnesses; no new parallel or extended experience is proposed."
+    }
+  ],
+  "requiresFollowup": [
+    "Full sequential CPDV reading of the chosen A excerpts with B sentences inserted",
+    "Verse-level compression of overlong A units without inventing paraphrase or changing speaker",
+    "Theological/editorial acceptance of all C/D exclusions",
+    "Verification of actual live destinations before enabling character or event links",
+    "Rights and edition-specific text collation before publishing"
+  ],
+  "publication": {
+    "editorialApproved": false,
+    "sourceEditionCollationApproved": false,
+    "alteredPublicApp": false,
+    "changeDraftPRReviewOnly": true
+  },
+  "contextBatch01_09": {
+    "status": "PROPOSED_READER_FACING_TRANSITIONS_NOT_APPROVED",
+    "activeContextNotesInNine": 8,
+    "oneRedundantNoteRetired": "H07-01",
+    "preservedSourceBridge": "HS-CF-01",
+    "noQuoteConflation": true,
+    "finalLiterarySignoff": false
+  },
+  "contextBatch10_19": {
+    "movementIds": [
+      "HS-M10",
+      "HS-M11",
+      "HS-M12",
+      "HS-M13",
+      "HS-M14",
+      "HS-M15",
+      "HS-M16",
+      "HS-M17",
+      "HS-M18",
+      "HS-M19"
+    ],
+    "status": "READER_TRANSITIONS_DRAFT_NOT_APPROVED",
+    "revisedReaderTransitions": [
+      "H23-02",
+      "H24-02",
+      "H28-01",
+      "H29-02",
+      "H31-04",
+      "H34-01",
+      "H35-04",
+      "H37-02",
+      "H43-03",
+      "H44-01",
+      "H44-03",
+      "H47-01",
+      "H49-01",
+      "H49-03"
+    ],
+    "retiredDuplicateNotes": [
+      "H34-02",
+      "H48-02"
+    ],
+    "distinctPropheticContextsProtected": true,
+    "gospelWitnessesNotHarmonized": true
+  }
+}

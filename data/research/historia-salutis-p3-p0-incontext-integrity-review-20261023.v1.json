@@ -1,0 +1,444 @@
+{
+  "schema": "ao.historia.p3.p0-seam-incontext-textual-integrity-review.v1",
+  "date": "2026-10-23",
+  "status": "NONPUBLISHING_SOURCE_IN_CONTEXT_COMPARISON_NOT_AN_ORAL_READING",
+  "sourceOwners": {
+    "proof": {
+      "path": "data/research/historia-salutis-v18-continuous-reading-proof.v1.json",
+      "sha": "add3510472cafd7c64fad5d10e514951520b1b7e"
+    },
+    "minimumLedger": {
+      "path": "data/research/historia-salutis-p3-five-p0-source-minimum-adjudication-20261023.v1.json",
+      "sha": "6411bd2f32dc49bc3e7a4b186782e61e6214e65a"
+    },
+    "originalDouayManuscript": "data/research/historia-salutis-p3-assembled-dr-challoner.v1.md",
+    "sourceEditionWitnesses": [
+      "dr-challoner",
+      "cpdv-2009",
+      "crampon-1923"
+    ]
+  },
+  "policies": {
+    "reconstructedFromCurrentP3References": true,
+    "allScriptureRangesVerifiedInThreeInstalledUncollatedWitnesses": true,
+    "individualP3BeatOwnerPreserved": true,
+    "sourceWordsNotEdited": true,
+    "newCompulsoryPassages": 0,
+    "genreHeadingNotAsScripture": true,
+    "allEditorialConnectionsNamedAsEditorial": true,
+    "printedEditionCollationStillRequired": true,
+    "humanTheologicalReviewRequired": true,
+    "humanReadAloudStillRequired": true,
+    "existingSelectedScriptureUnchanged": true,
+    "noNewAtlasLocationOrEvent": true,
+    "typologicalCommentaryRemainsOutsideNarrative": true
+  },
+  "totals": {
+    "criticalHinges": 5,
+    "inContextSegments": 19,
+    "uniqueOriginalCurrentSourceOwnerIds": 15,
+    "unapprovedScriptureTrials": 7,
+    "originalTextSelectedPassagesAltered": 0,
+    "canonicalAtlas151Changes": 0,
+    "humanOralAcceptances": 0
+  },
+  "john19IntegrityEconomy": {
+    "sourceBook": "John",
+    "testimonyAndPiercingRef": "John 19:31–37",
+    "burialRef": "John 19:38–42",
+    "testimonyAndPiercingDouayWords": 161,
+    "burialDouayWords": 142,
+    "wholeTrialDouayWords": 303,
+    "incrementalPiercedSideSecondsAt130Wpm": 74,
+    "burialSecondsAt130Wpm": 66,
+    "wholePassageSecondsAt130Wpm": 140,
+    "readingOnlyComparison": true,
+    "doctrinalVerdict": "UNAPPROVED_NEEDS_CATHOLIC_HUMAN_COMMENTARY_AND_LITURGICAL_REVIEW"
+  },
+  "genealogyCorrection": {
+    "beatId": "H05-02",
+    "sourceRefByEdition": {
+      "dr-challoner": [
+        "Genesis 4:25–26",
+        "Genesis 5:28–31"
+      ],
+      "cpdv-2009": [
+        "Genesis 4:25–26",
+        "Genesis 5:28–31"
+      ],
+      "crampon-1923": [
+        "Genesis 4:25–26",
+        "Genesis 5:28–32"
+      ]
+    },
+    "sourceWitnessVerseIdentity": "English Genesis 5:31 contains Lamech's death and Noah's sons together; French Genesis 5:31 ends Lamech's life and 5:32 names Noah's sons",
+    "status": "APPLIED_TO_SOURCE_AWARE_RESEARCH_ASSEMBLY_AND_BOTH_DOUAY_SNAPSHOTS_NO_BIBLE_TEXT_CHANGE",
+    "certifiedPrintedEdition": false
+  },
+  "sections": [
+    {
+      "hinge": "HS-HINGE-02",
+      "leadIn": "Genesis 3:14–24",
+      "sourceOwner": "HS-M03",
+      "sourceBeatId": "HS-CF-01",
+      "mainFirst": "Genesis 7:1–5",
+      "proposedSequence": [
+        {
+          "kind": "EDITORIAL_SOURCE_CONTEXT_UNAPPROVED",
+          "refsByEdition": {
+            "dr-challoner": [
+              "Genesis 4:25–26",
+              "Genesis 5:28–31"
+            ],
+            "cpdv-2009": [
+              "Genesis 4:25–26",
+              "Genesis 5:28–31"
+            ],
+            "crampon-1923": [
+              "Genesis 4:25–26",
+              "Genesis 5:28–32"
+            ]
+          },
+          "originalBeatId": "H05-02"
+        },
+        {
+          "kind": "OPTIONAL_ORIGINAL_SCRIPTURE_NOT_APPROVED",
+          "refs": [
+            "Genesis 6:9–14",
+            "Genesis 6:17–22"
+          ],
+          "originalBeatId": "HS-CF-01"
+        },
+        {
+          "kind": "EXISTING_SELECTED_SCRIPTURE_RESEARCH_NOT_APPROVED",
+          "refs": [
+            "Genesis 7:1–5"
+          ],
+          "originalBeatId": "H07-02"
+        }
+      ],
+      "editorialFinding": "The opening needs the genealogical interval since Adam, Noah's identity, corruption of the earth, the command to make an ark, the covenant and Noah's obedience. The existing twelve-verse held reading is more faithful than the seven-verse option: it retains the explicitly named sons, the detail of corruption, the animals, the provisions and compliance. Architectural measurements Genesis 6:15–16 can remain an honestly disclosed omission.",
+      "essentialVerseRoles": [
+        [
+          "Genesis 6:9–10",
+          "Noah's identity, conduct and sons"
+        ],
+        [
+          "Genesis 6:11–13",
+          "corruption and judgment"
+        ],
+        [
+          "Genesis 6:14",
+          "God orders the construction of the ark"
+        ],
+        [
+          "Genesis 6:17–18",
+          "coming flood and covenant/household"
+        ],
+        [
+          "Genesis 6:19–22",
+          "living creatures, provisions and faithful obedience"
+        ]
+      ],
+      "passesMechanicalCausalTest": true,
+      "trialRecommendation": "RETAIN_EXISTING_TWELVE_VERSE_HELD_SOURCE_FOR_READ_ALOUD",
+      "theologyRisk": "Do not present shortened fragments as a complete Flood account or represent a guessed chronology from the generations of Adam."
+    },
+    {
+      "hinge": "HS-HINGE-08",
+      "leadIn": "Exodus 12:27–28",
+      "sourceOwner": "HS-M08",
+      "sourceBeatId": "H20-01",
+      "mainFirst": "Exodus 12:31–33",
+      "proposedSequence": [
+        {
+          "kind": "EXISTING_SELECTED_SCRIPTURE_RESEARCH_NOT_APPROVED",
+          "refs": [
+            "Exodus 12:27–28"
+          ],
+          "originalBeatId": "H20-01"
+        },
+        {
+          "kind": "OPTIONAL_ORIGINAL_SCRIPTURE_NOT_APPROVED",
+          "refs": [
+            "Exodus 12:29–30"
+          ],
+          "originalBeatId": "H20-01"
+        },
+        {
+          "kind": "EXISTING_SELECTED_SCRIPTURE_RESEARCH_NOT_APPROVED",
+          "refs": [
+            "Exodus 12:31–33"
+          ],
+          "originalBeatId": "H21-01"
+        }
+      ],
+      "editorialFinding": "Exodus 11:4–8 foretells the firstborn judgment, Exodus 12:27–28 closes the Passover instructions, and Exodus 12:29–30 describes their fulfilment and the great cry in Egypt before the release order. Verse 29 gives the cause, verse 30 gives Pharaoh's reaction; the passage is only two verses and has not been included in the obligatory source selection.",
+      "essentialVerseRoles": [
+        [
+          "Exodus 11:4–8",
+          "divine forewarning already selected"
+        ],
+        [
+          "Exodus 12:27–28",
+          "Passover observance already selected"
+        ],
+        [
+          "Exodus 12:29",
+          "firstborn judgment enacted"
+        ],
+        [
+          "Exodus 12:30",
+          "Pharaoh wakes and Egypt cries"
+        ],
+        [
+          "Exodus 12:31–33",
+          "Pharaoh's release and Israel's departure already selected"
+        ]
+      ],
+      "passesMechanicalCausalTest": true,
+      "trialRecommendation": "RETAIN_EXISTING_TWO_VERSE_CAUSAL_COMPARISON_FOR_READ_ALOUD",
+      "theologyRisk": "Do not collapse solemn Passover judgments to an invented narrator's sentence or treat divine forewarning as the actual occurrence."
+    },
+    {
+      "hinge": "HS-HINGE-28",
+      "leadIn": "John 19:17–30",
+      "sourceOwner": "HS-M28",
+      "sourceBeatId": "HS-CF-06",
+      "mainFirst": "John 20:1–3",
+      "proposedSequence": [
+        {
+          "kind": "EXISTING_SELECTED_SCRIPTURE_RESEARCH_NOT_APPROVED",
+          "refs": [
+            "John 19:17–30"
+          ],
+          "originalBeatId": "H64-01"
+        },
+        {
+          "kind": "OPTIONAL_ORIGINAL_SCRIPTURE_NOT_APPROVED",
+          "refs": [
+            "John 19:31–37"
+          ],
+          "originalBeatId": "H64-01"
+        },
+        {
+          "kind": "OPTIONAL_ORIGINAL_SCRIPTURE_NOT_APPROVED",
+          "refs": [
+            "John 19:38–42"
+          ],
+          "originalBeatId": "HS-CF-06"
+        },
+        {
+          "kind": "EXISTING_SELECTED_SCRIPTURE_RESEARCH_NOT_APPROVED",
+          "refs": [
+            "John 20:1–3"
+          ],
+          "originalBeatId": "H65-01"
+        }
+      ],
+      "editorialFinding": "Burial alone repairs the sepulchre antecedent. Yet John 19:31–37 is not redundant: it attests Christ's death, the unbroken bones, the piercing, blood and water, the explicit eyewitness testimony and two fulfilment quotations. At 161 Douay words, retaining this separate witness adds approximately 1 minute 14 seconds at 130 wpm over burial-only, a small economy gain compared with its unique witness content. The strongest integrity trial should compare all John 19:31–42 consecutively (303 Douay words total), without merging the trial ownership or approving either section.",
+      "essentialVerseRoles": [
+        [
+          "John 19:31–33",
+          "preparation day, soldiers, nonbreaking of Jesus' legs"
+        ],
+        [
+          "John 19:34",
+          "piercing of His side and immediate blood and water"
+        ],
+        [
+          "John 19:35",
+          "explicit eyewitness attestation to truth"
+        ],
+        [
+          "John 19:36–37",
+          "two scriptural fulfilment statements"
+        ],
+        [
+          "John 19:38–40",
+          "Joseph's leave and burial with Nicodemus"
+        ],
+        [
+          "John 19:41–42",
+          "new sepulchre and placing the body"
+        ],
+        [
+          "John 20:1–3",
+          "Magdalene's arrival and report at the sepulchre"
+        ]
+      ],
+      "independentTheologicalWitnessReview": {
+        "source": "John 19:31–37",
+        "notAutomaticallyDiscarded": true,
+        "doctrinalTopicsPresentInSource": [
+          "historical death of Christ",
+          "pierced side and blood and water",
+          "eyewitness truth claim",
+          "fulfilment of Scripture"
+        ],
+        "interpretiveTopicsHeldOutsideNarration": [
+          "patristic interpretation of the pierced side",
+          "blood/water sacramental interpretation",
+          "Passover lamb typology",
+          "particular Catholic liturgical references"
+        ],
+        "conclusion": "THEOLOGICAL_MEANING_REQUIRES_AUTHENTIC_SOURCED_COMMENTARY_NOT_GENERATED_NARRATION",
+        "status": "NO_HUMAN_THEOLOGICAL_SIGNOFF"
+      },
+      "passesMechanicalCausalTest": true,
+      "trialRecommendation": "PRIORITIZE_FULL_JOHN_19_31_42_SEPARATE_COMPONENTS_FOR_READ_ALOUD",
+      "theologyRisk": "A minimal burial-only repair misses distinct Johannine testimony in verses 31–37. Do not imply these seven original Scripture verses are expendable, and do not invent sacramental commentary inside the chronological narrative."
+    },
+    {
+      "hinge": "HS-HINGE-33",
+      "leadIn": "Acts 15:22–29",
+      "sourceOwner": "HS-M34",
+      "sourceBeatId": "HS-P3-CF-13",
+      "mainFirst": "Acts 28:23–31",
+      "proposedSequence": [
+        {
+          "kind": "EXISTING_SELECTED_SCRIPTURE_RESEARCH_NOT_APPROVED",
+          "refs": [
+            "Acts 15:22–29"
+          ],
+          "originalBeatId": "H72-01"
+        },
+        {
+          "kind": "EDITORIAL_SOURCE_CONTEXT_UNAPPROVED",
+          "refs": [
+            "Acts 21:27–36",
+            "Acts 25:10–12",
+            "Acts 27:1"
+          ],
+          "originalBeatId": "HS-CF-11"
+        },
+        {
+          "kind": "OPTIONAL_ORIGINAL_SCRIPTURE_NOT_APPROVED",
+          "refs": [
+            "Acts 28:16"
+          ],
+          "originalBeatId": "HS-CF-11"
+        },
+        {
+          "kind": "OPTIONAL_ORIGINAL_SCRIPTURE_NOT_APPROVED",
+          "refs": [
+            "Acts 28:17–22"
+          ],
+          "originalBeatId": "HS-P3-CF-13"
+        },
+        {
+          "kind": "EXISTING_SELECTED_SCRIPTURE_RESEARCH_NOT_APPROVED",
+          "refs": [
+            "Acts 28:23–31"
+          ],
+          "originalBeatId": "H73-07"
+        }
+      ],
+      "editorialFinding": "Paul's public mission between the Jerusalem Council and his Rome lodging has several intervening journeys. The source-labeled editorial transition can cite the arrest, appeal and journey. Exact Acts 28:16 locates the arrival and custody; 17–22 provides the Roman Jewish leaders, Paul's testimony and their request for a later hearing. Acts 28:23's appointed date is now intelligible. The reader must still explicitly mark the Acts 15→28 historical elision.",
+      "essentialVerseRoles": [
+        [
+          "Acts 15:22–29",
+          "Council decision before major historical interval"
+        ],
+        [
+          "Acts 21:27–36",
+          "Jerusalem arrest supporting distinct editorial overview"
+        ],
+        [
+          "Acts 25:10–12",
+          "appeal to Caesar supporting editorial overview"
+        ],
+        [
+          "Acts 27:1",
+          "Roman/Italian transfer supporting editorial overview"
+        ],
+        [
+          "Acts 28:16",
+          "Paul's physical arrival and guard at Rome"
+        ],
+        [
+          "Acts 28:17–20",
+          "his summoning Jewish leaders and giving reasons for imprisonment"
+        ],
+        [
+          "Acts 28:21–22",
+          "audience's interest and request to hear his teaching"
+        ],
+        [
+          "Acts 28:23–31",
+          "later appointed audience and continued proclamation"
+        ]
+      ],
+      "passesMechanicalCausalTest": true,
+      "trialRecommendation": "KEEP_EXPLICIT_HISTORICAL_ELLIPSIS_AND_BOTH_HELD_ROME_SOURCES_FOR_READ_ALOUD",
+      "theologyRisk": "The seven-verse arrival/audience source is a local causal repair only. It cannot substitute a story of all of Acts 16–27 or justify synthesizing Paul's journey."
+    },
+    {
+      "hinge": "HS-HINGE-34",
+      "leadIn": "Acts 28:23–31",
+      "sourceOwner": "HS-M35",
+      "sourceBeatId": "H75-01",
+      "mainFirst": "Revelation 5:1–14",
+      "proposedSequence": [
+        {
+          "kind": "EXISTING_SELECTED_SCRIPTURE_RESEARCH_NOT_APPROVED",
+          "refs": [
+            "Acts 28:23–31"
+          ],
+          "originalBeatId": "H73-07"
+        },
+        {
+          "kind": "REQUIRED_EDITORIAL_GENRE_LABEL_NOT_BIBLE",
+          "refs": [
+            "Revelation 1:9–11",
+            "Revelation 4:1–2"
+          ],
+          "originalBeatId": "H75-01"
+        },
+        {
+          "kind": "OPTIONAL_ORIGINAL_SCRIPTURE_NOT_APPROVED",
+          "refs": [
+            "Revelation 4:1–2"
+          ],
+          "originalBeatId": "HS-P3-CF-14"
+        },
+        {
+          "kind": "EXISTING_SELECTED_SCRIPTURE_RESEARCH_NOT_APPROVED",
+          "refs": [
+            "Revelation 5:1–14"
+          ],
+          "originalBeatId": "H75-02"
+        }
+      ],
+      "editorialFinding": "This is not a missing event in apostolic chronology. Historical Acts ends with Paul's Rome preaching; John's Apocalypse is a different canonical work, speaker and literary genre. A visibly non-Scripture heading is required even if no source verse is added. The held Revelation 4:1–2 provides a throne/voice antecedent for Revelation 5:1; optional Revelation 1:9–11 identifies John and Patmos but must be marked as non-contiguous to Revelation 4.",
+      "essentialVerseRoles": [
+        [
+          "Acts 28:23–31",
+          "end of apostolic historical reading selection"
+        ],
+        [
+          "Revelation 1:9–11",
+          "John's identity, Patmos and addressed revelation in earlier vision chapter"
+        ],
+        [
+          "Revelation 4:1–2",
+          "open door, voice and heavenly throne in an optional vision"
+        ],
+        [
+          "Revelation 5:1–14",
+          "the Lamb and scroll in the existing selected apocalyptic vision"
+        ]
+      ],
+      "passesMechanicalCausalTest": true,
+      "trialRecommendation": "GENRE_HEADING_REQUIRED_REV_4_1_2_OPTIONAL_AS_HELD_SOURCE",
+      "theologyRisk": "Do not turn the vision into a dated historical event, invent an encounter of Paul and John, or obscure major unselected intervening Revelation chapters."
+    }
+  ],
+  "editorialWorkflow": [
+    "Do not decide on minimal verse count alone: source integrity and roles matter, especially John 19:35–37.",
+    "Use original-language per-edition proof for theological and literary readings, not mismatched verse-number citation.",
+    "Read each four-part/boundary sequence continuously in each selected language; this JSON desk assessment does not pretend that happened.",
+    "Retain existing selected 93 Scripture units and 37 P3 movements until an explicit separate source-selection decision is made.",
+    "Preserve the existing production Atlas 151 events, dated liturgical Calendar and non-narrative biblical parallels module."
+  ]
+}

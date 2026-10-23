@@ -1,0 +1,4214 @@
+{
+  "schema": "ao.historia.p3.single-operational-acceptance-backlog.v1",
+  "date": "2026-10-23",
+  "status": "CONSOLIDATED_RESEARCH_TO_EDITORIAL_HANDOFF_ONLY_ALL_PUBLICATION_GATES_UNPASSED",
+  "baseline": {
+    "repo": "Fulcanelli13/ad-orientem",
+    "branch": "research/historia-p3-esther-span-20261017",
+    "prNumber": 1345,
+    "sourceOwnership": "ONE_PRIMARY_P3_MANUSCRIPT_NOT_PARALLEL_P4",
+    "references": [
+      {
+        "key": "proof",
+        "path": "data/research/historia-salutis-v18-continuous-reading-proof.v1.json",
+        "sha": "aea3d55dad3c6ca068b6c38ae242602f63b3175d"
+      },
+      {
+        "key": "audit",
+        "path": "data/research/historia-salutis-p3-continuous-full-story-seam-audit-20261023.v1.json",
+        "sha": "bb767d3a12238dc2fe57fdd0843c6dbd798f60db"
+      },
+      {
+        "key": "p0",
+        "path": "data/research/historia-salutis-p3-five-p0-source-minimum-adjudication-20261023.v1.json",
+        "sha": "6411bd2f32dc49bc3e7a4b186782e61e6214e65a"
+      },
+      {
+        "key": "p1",
+        "path": "data/research/historia-salutis-p3-p1-twenty-seam-disposition-20261023.v1.json",
+        "sha": "04dbe841ef8301e3967efb8cb5268b2f8cb7f026"
+      },
+      {
+        "key": "p2",
+        "path": "data/research/historia-salutis-p3-p2-eleven-seam-disposition-20261023.v1.json",
+        "sha": "475bd675fdda8ba5f80dceeb4f1524fc22a85868"
+      }
+    ],
+    "canonicalSelectedScriptureUnits": 93,
+    "sourceMovements": 37,
+    "canonicalAtlasEvents": 151,
+    "atlasNavChapters": 37,
+    "provisionalReadingChapters": 54
+  },
+  "policy": {
+    "statusesAreNeverPromotions": true,
+    "requirePrintedCatholicBibleEditionCollation": true,
+    "sourceWordingNeverAIReconstructed": true,
+    "neverInventOriginalBiblicalSpeech": true,
+    "sourceVerseCoordinatesEditionAware": true,
+    "allTypologyOutsideChronologicalNarration": true,
+    "noProductionAppChange": true,
+    "noAtlasObjectChange": true,
+    "onlyFreezeAndPromoteAcceptedDiffs": true,
+    "sourceWordCountsAreReferenceNotHumanReadAloud": true
+  },
+  "totals": {
+    "sourceDecisions": 20,
+    "existingHeldBridgeDecisions": 16,
+    "additionalUnapprovedSourceComparisons": 4,
+    "presentationGroups": 7,
+    "editorialProvenanceAndGates": 6,
+    "editorialContextUnits": 29,
+    "editorialConnectorCandidates": 12,
+    "allOriginalHinges": 36,
+    "hingesWithActionableFollowup": 32,
+    "hingesSufficientAtDeskWithoutNewWork": 4,
+    "totalActionableWorkItems": 33,
+    "publicationApproved": 0,
+    "p0ResearchRecommendations": 8,
+    "p0RecommendedOriginalSourceVerseEntries": 38,
+    "p0AcceptedEditorialDecisions": 0,
+    "allSourceResearchRecommendations": 20,
+    "remainingSourceRecommendationResearchQueue": 0,
+    "p1p2ResearchRecommendations": 12,
+    "sourceEditorialAcceptances": 0,
+    "releaseGatesPassed": 0,
+    "editorialDeskProvisionalDispositions": 41,
+    "editorialDeskAcceptedDecisions": 0,
+    "sourceComparedEditorialReductionOptions": 15,
+    "editsActuallyPromoted": 0,
+    "p0CriticalSeamsMechanicallyCompared": 5,
+    "p0ConditionalReadingVerseEntries": 33,
+    "p0CriticalSourceApprovals": 0
+  },
+  "priorityOrder": [
+    "First: eight P0 original-text recommendations prepared (38 distinct source verse entries across five causal/vision groups); no human/editorial acceptances. Compare in the existing P3 workbench, then record explicit future accept/hold/omit decision per source owner.",
+    "Second: all 20 original-source inclusion/keep-held recommendations prepared (eight P0 and twelve P1/P2); compare three native witnesses and eliminate duplicate editorial connectors before any approved source inclusion.",
+    "Third: all 29 current contexts and 12 attached connectors now have research-only desk dispositions in this same unified worklist; compare trial trim/suppress conditions against the 20 source proposals before touching P3 canonical text.",
+    "Fourth: cross-edition print/rights, French localization, uninterrupted human oral/theological approval",
+    "Fifth: regenerate proof and release only specifically certified slices; no wholesale merge"
+  ],
+  "sourceDecisionWorklist": [
+    {
+      "id": "HS-W-SRC-HS-CF-01",
+      "kind": "SOURCE_SELECTION",
+      "priority": "P0",
+      "group": "NOAH_ARK",
+      "ownerRole": "Catholic Scripture editor (unassigned)",
+      "movementId": "HS-M03",
+      "sourceBeatId": "HS-CF-01",
+      "ownership": "P3_EXISTING_HELD_SOURCE_BRIDGE",
+      "sourceReference": "Genesis 6:9–22",
+      "reviewReferences": [
+        "Genesis 6:9–14",
+        "Genesis 6:17–22"
+      ],
+      "hingeIds": [
+        "HS-HINGE-02"
+      ],
+      "decisionRequired": "Compare existing 12-verse Genesis 6 original-source trial with abbreviated seven verses and full held fourteen; preserve judgment, covenant, animals and obedience.",
+      "candidateComparisonStatus": "EXISTING_VERBATIM_TRIAL_UNAPPROVED",
+      "currentState": "RESEARCH_RECOMMENDATION_READY_NOT_ACCEPTED",
+      "dependencyGroups": [
+        "SCRIPTURE_EDITION_WITNESS_AUDIT",
+        "SOURCE_READING_COMPARISON"
+      ],
+      "acceptanceEvidence": [
+        "Unaltered original text in each installed Catholic edition",
+        "Editor chooses keep-held, omit or proposed native verse range with explicit rationale",
+        "Original Scripture speaker and narration roles preserved",
+        "No publication approval inferred from a desk decision"
+      ],
+      "approval": {
+        "selected": false,
+        "oral": false,
+        "theological": false,
+        "printedEditionCertified": false,
+        "publication": false
+      },
+      "researchRecommendation": {
+        "status": "SOURCE_EVIDENCE_PROPOSED_NOT_SELECTED",
+        "group": "NOAH_ARK",
+        "recommendation": "PROPOSE_TRIAL_INCLUDE",
+        "refs": [
+          "Genesis 6:9–14",
+          "Genesis 6:17–22"
+        ],
+        "reason": "The twelve native verses introduce Noah, sons, corruption, ark command, announced flood, covenant, animals, provisions and obedience before Genesis 7:1. They already exist as P3's exact-source held trial. Genesis 6:15–16 remains an explicit omission; the more aggressively compressed seven-verse alternative loses meaningful details.",
+        "contrast": "Seven-verse compressed P0 candidate and complete Genesis 6:9–22 held range remain available as separate research alternatives.",
+        "links": [],
+        "dependenciesToAccept": [
+          "UNINTERRUPTED_ORIGINAL_TEXT_READING",
+          "THREE_WITNESS_PRINT_COLLATION",
+          "CATHOLIC_THEOLOGICAL_REVIEW"
+        ],
+        "sourceWordsAndVersesNotRewritten": true,
+        "readyForHumanEditorialDecision": true,
+        "acceptedByHumanEditor": false,
+        "publicationApproved": false
+      }
+    },
+    {
+      "id": "HS-W-SRC-EXODUS-12-FIRSTBORN",
+      "priority": "P0",
+      "group": "PASSOVER_TO_EXODUS",
+      "movementId": "HS-M08",
+      "sourceBeatId": "H20-01",
+      "hingeIds": [
+        "HS-HINGE-08"
+      ],
+      "reviewReferences": [
+        "Exodus 12:29–30"
+      ],
+      "ownership": "EXISTING_AFTER_SELECTED_SCRIPTURE_TRIAL",
+      "decisionRequired": "Review Exodus 12:29–30 immediately between selected Passover and Pharaoh's release; judgment and Pharaoh's reaction are distinct causal roles.",
+      "kind": "SOURCE_SELECTION",
+      "ownerRole": "Catholic Scripture editor (unassigned)",
+      "currentState": "RESEARCH_RECOMMENDATION_READY_NOT_ACCEPTED",
+      "dependencyGroups": [
+        "SCRIPTURE_EDITION_WITNESS_AUDIT",
+        "SOURCE_READING_COMPARISON"
+      ],
+      "acceptanceEvidence": [
+        "Verify each quoted verse in its native witness",
+        "Choose only actual original verse references or retain omission",
+        "No fabricated chronology, theological speech or implied approval"
+      ],
+      "approval": {
+        "selected": false,
+        "oral": false,
+        "theological": false,
+        "printedEditionCertified": false,
+        "publication": false
+      },
+      "sourceReference": "Exodus 12:29–30",
+      "candidateComparisonStatus": "EXISTING_AFTER_SELECTED_SCRIPTURE_TRIAL",
+      "researchRecommendation": {
+        "status": "SOURCE_EVIDENCE_PROPOSED_NOT_SELECTED",
+        "group": "PASSOVER_EXODUS",
+        "recommendation": "PROPOSE_TRIAL_INCLUDE",
+        "refs": [
+          "Exodus 12:29–30"
+        ],
+        "reason": "Both verses connect the announced firstborn judgment in Exodus 11 with its occurrence and Pharaoh's rising to release the people in 12:31; this is the causal event, not a narrator's paraphrase.",
+        "contrast": "No shorter candidate preserves both the recorded judgment and Pharaoh's response.",
+        "links": [],
+        "dependenciesToAccept": [
+          "UNINTERRUPTED_ORIGINAL_TEXT_READING",
+          "THREE_WITNESS_PRINT_COLLATION",
+          "CATHOLIC_THEOLOGICAL_REVIEW"
+        ],
+        "sourceWordsAndVersesNotRewritten": true,
+        "readyForHumanEditorialDecision": true,
+        "acceptedByHumanEditor": false,
+        "publicationApproved": false
+      }
+    },
+    {
+      "id": "HS-W-SRC-HS-CF-06",
+      "kind": "SOURCE_SELECTION",
+      "priority": "P0",
+      "group": "JOHN_BURIAL",
+      "ownerRole": "Catholic Scripture editor (unassigned)",
+      "movementId": "HS-M28",
+      "sourceBeatId": "HS-CF-06",
+      "ownership": "P3_EXISTING_HELD_SOURCE_BRIDGE",
+      "sourceReference": "John 19:38–42",
+      "reviewReferences": [
+        "John 19:38–42"
+      ],
+      "hingeIds": [
+        "HS-HINGE-28"
+      ],
+      "decisionRequired": "Review John 19:38–42's burial before the Easter tomb; compare immediately alongside the distinct unapproved pierced-side text.",
+      "candidateComparisonStatus": "EXISTING_VERBATIM_TRIAL_UNAPPROVED",
+      "currentState": "RESEARCH_RECOMMENDATION_READY_NOT_ACCEPTED",
+      "dependencyGroups": [
+        "SCRIPTURE_EDITION_WITNESS_AUDIT",
+        "SOURCE_READING_COMPARISON"
+      ],
+      "acceptanceEvidence": [
+        "Unaltered original text in each installed Catholic edition",
+        "Editor chooses keep-held, omit or proposed native verse range with explicit rationale",
+        "Original Scripture speaker and narration roles preserved",
+        "No publication approval inferred from a desk decision"
+      ],
+      "approval": {
+        "selected": false,
+        "oral": false,
+        "theological": false,
+        "printedEditionCertified": false,
+        "publication": false
+      },
+      "researchRecommendation": {
+        "status": "SOURCE_EVIDENCE_PROPOSED_NOT_SELECTED",
+        "group": "JOHN_PASSION",
+        "recommendation": "PROPOSE_COUPLED_TRIAL_INCLUDE",
+        "refs": [
+          "John 19:38–42"
+        ],
+        "reason": "The burial by Joseph and Nicodemus introduces the sepulchre and laid body before the first Easter encounter in John 20:1. Compare it consecutively after the distinct pierced-side witness, without making the two owners into one canonical beat.",
+        "contrast": "John 19:31–42 full twelve-verse side-plus-burial comparison is source-exact; the original 93 selected units stay unchanged.",
+        "links": [
+          "HS-W-SRC-JOHN-19-PIERCED-SIDE"
+        ],
+        "dependenciesToAccept": [
+          "UNINTERRUPTED_ORIGINAL_TEXT_READING",
+          "THREE_WITNESS_PRINT_COLLATION",
+          "CATHOLIC_THEOLOGICAL_REVIEW"
+        ],
+        "sourceWordsAndVersesNotRewritten": true,
+        "readyForHumanEditorialDecision": true,
+        "acceptedByHumanEditor": false,
+        "publicationApproved": false
+      }
+    },
+    {
+      "id": "HS-W-SRC-JOHN-19-PIERCED-SIDE",
+      "priority": "P0",
+      "group": "PASSION_JOHN19",
+      "movementId": "HS-M28",
+      "sourceBeatId": "H64-01",
+      "hingeIds": [
+        "HS-HINGE-28"
+      ],
+      "reviewReferences": [
+        "John 19:31–37"
+      ],
+      "ownership": "EXISTING_AFTER_SELECTED_SCRIPTURE_TRIAL",
+      "decisionRequired": "Review Christ's death, blood and water, eyewitness attestation (19:35) and two Scripture fulfilments before deciding whether burial-only would distort John 19.",
+      "kind": "SOURCE_SELECTION",
+      "ownerRole": "Catholic Scripture editor (unassigned)",
+      "currentState": "RESEARCH_RECOMMENDATION_READY_NOT_ACCEPTED",
+      "dependencyGroups": [
+        "SCRIPTURE_EDITION_WITNESS_AUDIT",
+        "SOURCE_READING_COMPARISON"
+      ],
+      "acceptanceEvidence": [
+        "Verify each quoted verse in its native witness",
+        "Choose only actual original verse references or retain omission",
+        "No fabricated chronology, theological speech or implied approval"
+      ],
+      "approval": {
+        "selected": false,
+        "oral": false,
+        "theological": false,
+        "printedEditionCertified": false,
+        "publication": false
+      },
+      "sourceReference": "John 19:31–37",
+      "candidateComparisonStatus": "EXISTING_AFTER_SELECTED_SCRIPTURE_TRIAL",
+      "researchRecommendation": {
+        "status": "SOURCE_EVIDENCE_PROPOSED_NOT_SELECTED",
+        "group": "JOHN_PASSION",
+        "recommendation": "PROPOSE_COUPLED_TRIAL_INCLUDE",
+        "refs": [
+          "John 19:31–37"
+        ],
+        "reason": "Original Johannine source establishes that Jesus' legs were not broken, His side was pierced, blood and water flowed, the eyewitness affirmed his testimony, and two scriptural fulfilments were recorded. Evaluate intact with the burial rather than omitting it merely to optimize length.",
+        "contrast": "Burial-only variant still repairs the sepulchre antecedent but loses separate eyewitness and fulfilment content; doctrinal interpretation requires a qualified Catholic reviewer.",
+        "links": [
+          "HS-W-SRC-HS-CF-06"
+        ],
+        "dependenciesToAccept": [
+          "UNINTERRUPTED_ORIGINAL_TEXT_READING",
+          "THREE_WITNESS_PRINT_COLLATION",
+          "CATHOLIC_THEOLOGICAL_REVIEW"
+        ],
+        "sourceWordsAndVersesNotRewritten": true,
+        "readyForHumanEditorialDecision": true,
+        "acceptedByHumanEditor": false,
+        "publicationApproved": false
+      }
+    },
+    {
+      "id": "HS-W-SRC-HS-CF-11",
+      "kind": "SOURCE_SELECTION",
+      "priority": "P0",
+      "group": "PAUL_ROME_ARRIVAL",
+      "ownerRole": "Catholic Scripture editor (unassigned)",
+      "movementId": "HS-M34",
+      "sourceBeatId": "HS-CF-11",
+      "ownership": "P3_EXISTING_HELD_SOURCE_BRIDGE",
+      "sourceReference": "Acts 28:16",
+      "reviewReferences": [
+        "Acts 28:16"
+      ],
+      "hingeIds": [
+        "HS-HINGE-33"
+      ],
+      "decisionRequired": "Judge Acts 28:16 together with source-attested 28:17–22 and disclose omitted missionary journeys.",
+      "candidateComparisonStatus": "EXISTING_VERBATIM_TRIAL_UNAPPROVED",
+      "currentState": "RESEARCH_RECOMMENDATION_READY_NOT_ACCEPTED",
+      "dependencyGroups": [
+        "SCRIPTURE_EDITION_WITNESS_AUDIT",
+        "SOURCE_READING_COMPARISON"
+      ],
+      "acceptanceEvidence": [
+        "Unaltered original text in each installed Catholic edition",
+        "Editor chooses keep-held, omit or proposed native verse range with explicit rationale",
+        "Original Scripture speaker and narration roles preserved",
+        "No publication approval inferred from a desk decision"
+      ],
+      "approval": {
+        "selected": false,
+        "oral": false,
+        "theological": false,
+        "printedEditionCertified": false,
+        "publication": false
+      },
+      "researchRecommendation": {
+        "status": "SOURCE_EVIDENCE_PROPOSED_NOT_SELECTED",
+        "group": "PAUL_ROME",
+        "recommendation": "PROPOSE_COUPLED_TRIAL_INCLUDE",
+        "refs": [
+          "Acts 28:16"
+        ],
+        "reason": "Paul's arrival in Rome and guarded lodging grounds the later 28:23 audience in an actual place, but does not itself explain why the leaders gather; pair with Acts 28:17–22 and explicitly disclose omitted Acts 16–27 journeys.",
+        "contrast": "A one-verse arrival by itself is not an adequate causal connector for the appointed Roman audience.",
+        "links": [
+          "HS-W-SRC-HS-P3-CF-13"
+        ],
+        "dependenciesToAccept": [
+          "UNINTERRUPTED_ORIGINAL_TEXT_READING",
+          "THREE_WITNESS_PRINT_COLLATION",
+          "CATHOLIC_THEOLOGICAL_REVIEW"
+        ],
+        "sourceWordsAndVersesNotRewritten": true,
+        "readyForHumanEditorialDecision": true,
+        "acceptedByHumanEditor": false,
+        "publicationApproved": false
+      }
+    },
+    {
+      "id": "HS-W-SRC-HS-P3-CF-13",
+      "kind": "SOURCE_SELECTION",
+      "priority": "P0",
+      "group": "PAUL_ROME_AUDIENCE",
+      "ownerRole": "Catholic Scripture editor (unassigned)",
+      "movementId": "HS-M34",
+      "sourceBeatId": "HS-P3-CF-13",
+      "ownership": "P3_EXISTING_HELD_SOURCE_BRIDGE",
+      "sourceReference": "Acts 28:17–22",
+      "reviewReferences": [
+        "Acts 28:17–22"
+      ],
+      "hingeIds": [
+        "HS-HINGE-33"
+      ],
+      "decisionRequired": "Review Acts 28:17–22 before 28:23's appointed day; do not treat a separate audience as one uninterrupted journey.",
+      "candidateComparisonStatus": "EXISTING_VERBATIM_TRIAL_UNAPPROVED",
+      "currentState": "RESEARCH_RECOMMENDATION_READY_NOT_ACCEPTED",
+      "dependencyGroups": [
+        "SCRIPTURE_EDITION_WITNESS_AUDIT",
+        "SOURCE_READING_COMPARISON"
+      ],
+      "acceptanceEvidence": [
+        "Unaltered original text in each installed Catholic edition",
+        "Editor chooses keep-held, omit or proposed native verse range with explicit rationale",
+        "Original Scripture speaker and narration roles preserved",
+        "No publication approval inferred from a desk decision"
+      ],
+      "approval": {
+        "selected": false,
+        "oral": false,
+        "theological": false,
+        "printedEditionCertified": false,
+        "publication": false
+      },
+      "researchRecommendation": {
+        "status": "SOURCE_EVIDENCE_PROPOSED_NOT_SELECTED",
+        "group": "PAUL_ROME",
+        "recommendation": "PROPOSE_COUPLED_TRIAL_INCLUDE",
+        "refs": [
+          "Acts 28:17–22"
+        ],
+        "reason": "The Roman Jewish leaders are summoned, Paul's imprisonment and testimony are explained, and they agree to hear him, making Acts 28:23's appointed day intelligible. This does not narrate the preceding ministry, arrest or voyage.",
+        "contrast": "Acts 28:17–22 alone is less adequate than both 28:16 and 17–22 after the Jerusalem Council.",
+        "links": [
+          "HS-W-SRC-HS-CF-11"
+        ],
+        "dependenciesToAccept": [
+          "UNINTERRUPTED_ORIGINAL_TEXT_READING",
+          "THREE_WITNESS_PRINT_COLLATION",
+          "CATHOLIC_THEOLOGICAL_REVIEW"
+        ],
+        "sourceWordsAndVersesNotRewritten": true,
+        "readyForHumanEditorialDecision": true,
+        "acceptedByHumanEditor": false,
+        "publicationApproved": false
+      }
+    },
+    {
+      "id": "HS-W-SRC-HS-P3-CF-14",
+      "kind": "SOURCE_SELECTION",
+      "priority": "P0",
+      "group": "HEAVENLY_THRONE_ANTECEDENT",
+      "ownerRole": "Catholic Scripture editor (unassigned)",
+      "movementId": "HS-M35",
+      "sourceBeatId": "HS-P3-CF-14",
+      "ownership": "P3_EXISTING_HELD_SOURCE_BRIDGE",
+      "sourceReference": "Revelation 4:1–2",
+      "reviewReferences": [
+        "Revelation 4:1–2"
+      ],
+      "hingeIds": [
+        "HS-HINGE-34"
+      ],
+      "decisionRequired": "Evaluate Revelation 4:1–2 as the antecedent of the heavenly throne in Revelation 5; distinguish visionary text from a historical event.",
+      "candidateComparisonStatus": "COORDINATE_HELD_NOT_SELECTED",
+      "currentState": "RESEARCH_RECOMMENDATION_READY_NOT_ACCEPTED",
+      "dependencyGroups": [
+        "SCRIPTURE_EDITION_WITNESS_AUDIT",
+        "SOURCE_READING_COMPARISON"
+      ],
+      "acceptanceEvidence": [
+        "Unaltered original text in each installed Catholic edition",
+        "Editor chooses keep-held, omit or proposed native verse range with explicit rationale",
+        "Original Scripture speaker and narration roles preserved",
+        "No publication approval inferred from a desk decision"
+      ],
+      "approval": {
+        "selected": false,
+        "oral": false,
+        "theological": false,
+        "printedEditionCertified": false,
+        "publication": false
+      },
+      "researchRecommendation": {
+        "status": "SOURCE_EVIDENCE_PROPOSED_NOT_SELECTED",
+        "group": "APOCALYPTIC_VISION",
+        "recommendation": "PROPOSE_TRIAL_INCLUDE_WITH_GENRE_HEADING",
+        "refs": [
+          "Revelation 4:1–2"
+        ],
+        "reason": "The two native verses supply an open heavenly door, visionary hearing and throne antecedent for Revelation 5:1. A separate clearly non-Scripture book/genre heading is essential for the handoff from Paul's historical Acts narrative.",
+        "contrast": "Genre heading alone is a valid zero-added-verse fallback; a Patmos identification from Revelation 1:9–11 requires a visibly non-contiguous, separately attributed earlier vision.",
+        "links": [
+          "HS-W-UI-04"
+        ],
+        "dependenciesToAccept": [
+          "UNINTERRUPTED_ORIGINAL_TEXT_READING",
+          "THREE_WITNESS_PRINT_COLLATION",
+          "CATHOLIC_THEOLOGICAL_REVIEW"
+        ],
+        "sourceWordsAndVersesNotRewritten": true,
+        "readyForHumanEditorialDecision": true,
+        "acceptedByHumanEditor": false,
+        "publicationApproved": false
+      }
+    },
+    {
+      "id": "HS-W-SRC-HS-P3-CF-15",
+      "kind": "SOURCE_SELECTION",
+      "priority": "P0",
+      "group": "NEW_JERUSALEM_ANGEL",
+      "ownerRole": "Catholic Scripture editor (unassigned)",
+      "movementId": "HS-M37",
+      "sourceBeatId": "HS-P3-CF-15",
+      "ownership": "P3_EXISTING_HELD_SOURCE_BRIDGE",
+      "sourceReference": "Revelation 21:9–10",
+      "reviewReferences": [
+        "Revelation 21:9–11"
+      ],
+      "hingeIds": [
+        "HS-HINGE-36"
+      ],
+      "decisionRequired": "Read Revelation 21:9–11 as a single suspended city/angel description before 22:1; keep heavenly city unmapped.",
+      "candidateComparisonStatus": "EXISTING_VERBATIM_TRIAL_UNAPPROVED",
+      "currentState": "RESEARCH_RECOMMENDATION_READY_NOT_ACCEPTED",
+      "dependencyGroups": [
+        "SCRIPTURE_EDITION_WITNESS_AUDIT",
+        "SOURCE_READING_COMPARISON"
+      ],
+      "acceptanceEvidence": [
+        "Unaltered original text in each installed Catholic edition",
+        "Editor chooses keep-held, omit or proposed native verse range with explicit rationale",
+        "Original Scripture speaker and narration roles preserved",
+        "No publication approval inferred from a desk decision"
+      ],
+      "approval": {
+        "selected": false,
+        "oral": false,
+        "theological": false,
+        "printedEditionCertified": false,
+        "publication": false
+      },
+      "researchRecommendation": {
+        "status": "SOURCE_EVIDENCE_PROPOSED_NOT_SELECTED",
+        "group": "NEW_JERUSALEM_VISION",
+        "recommendation": "PROPOSE_TRIAL_INCLUDE",
+        "refs": [
+          "Revelation 21:9–11"
+        ],
+        "reason": "Verse 9 introduces one of the seven angels, verse 10 shows the Bride/city, and verse 11 completes the immediately suspended visual description. This supplies the antecedent for 'he showed me' when the selected river-of-life vision opens in Revelation 22:1.",
+        "contrast": "The original hold is only 21:9–10, while the already P3-owned native readthrough trial includes verse 11; protect this distinction before any promotion.",
+        "links": [
+          "HS-W-UI-05"
+        ],
+        "dependenciesToAccept": [
+          "UNINTERRUPTED_ORIGINAL_TEXT_READING",
+          "THREE_WITNESS_PRINT_COLLATION",
+          "CATHOLIC_THEOLOGICAL_REVIEW"
+        ],
+        "sourceWordsAndVersesNotRewritten": true,
+        "readyForHumanEditorialDecision": true,
+        "acceptedByHumanEditor": false,
+        "publicationApproved": false
+      }
+    },
+    {
+      "id": "HS-W-SRC-EXODUS-5-FIRST-REFUSAL",
+      "priority": "P1",
+      "group": "MOSES_PHARAOH",
+      "movementId": "HS-M07",
+      "sourceBeatId": "H18-01",
+      "hingeIds": [
+        "HS-HINGE-07"
+      ],
+      "reviewReferences": [
+        "Exodus 5:1–2",
+        "Exodus 7:1–6"
+      ],
+      "ownership": "P1_REVIEW_ONLY_OPTION_NOT_ADDED_TO_P3_BEAT",
+      "decisionRequired": "Choose whether the first request and Pharaoh's refusal in Exodus 5:1–2 are necessary; separately compare Exodus 7:1–6. Do not mistake divine commissioning for the recorded first refusal.",
+      "kind": "SOURCE_SELECTION",
+      "ownerRole": "Catholic Scripture editor (unassigned)",
+      "currentState": "RESEARCH_RECOMMENDATION_READY_NOT_ACCEPTED",
+      "dependencyGroups": [
+        "SCRIPTURE_EDITION_WITNESS_AUDIT",
+        "SOURCE_READING_COMPARISON"
+      ],
+      "acceptanceEvidence": [
+        "Verify each quoted verse in its native witness",
+        "Choose only actual original verse references or retain omission",
+        "No fabricated chronology, theological speech or implied approval"
+      ],
+      "approval": {
+        "selected": false,
+        "oral": false,
+        "theological": false,
+        "printedEditionCertified": false,
+        "publication": false
+      },
+      "sourceReference": "Exodus 5:1–2",
+      "candidateComparisonStatus": "P1_REVIEW_ONLY_OPTION_NOT_ADDED_TO_P3_BEAT",
+      "researchRecommendation": {
+        "status": "SOURCE_EVIDENCE_PROPOSED_NOT_SELECTED",
+        "group": "MOSES_PHARAOH",
+        "recommendation": "PROPOSE_TRIAL_INCLUDE_FIRST_REFUSAL",
+        "refs": [
+          "Exodus 5:1–2"
+        ],
+        "reason": "This native two-verse exchange records Moses and Aaron's first demand that Pharaoh release Israel and Pharaoh's express refusal. It supplies an actual causal encounter between Moses' Exodus 3 commission and the later selected confrontation in the plagues.",
+        "contrast": "Exodus 7:1–6 is a different six-verse renewed commissioning/foretelling of hardening; it does not record the original Pharaoh refusal, and should stay a separate unapproved comparison. Do not treat either as direct adjacency to Exodus 7:14–17.",
+        "conditionalEdits": [
+          "Keep an explicit elision between the first refusal and the selected plague narrative.",
+          "Do not reword Pharaoh's speech or silently imply Exodus 5–7 are fully recited."
+        ],
+        "dependenciesToAccept": [
+          "ORIGINAL_CATHOLIC_WITNESS_PRINT_COLLATION",
+          "UNINTERRUPTED_SOURCE_READALOUD",
+          "LITERARY_AND_THEOLOGICAL_EDITOR_SIGNOFF"
+        ],
+        "nativeSourceContentNotEdited": true,
+        "original93UnitSelectionUnmodified": true,
+        "acceptedByHumanEditor": false,
+        "publicationApproved": false,
+        "optionalUnselectedComparison": true
+      }
+    },
+    {
+      "id": "HS-W-SRC-HS-CF-05",
+      "kind": "SOURCE_SELECTION",
+      "priority": "P1",
+      "group": "LAZARUS_OPPOSITION",
+      "ownerRole": "Catholic Scripture editor (unassigned)",
+      "movementId": "HS-M24",
+      "sourceBeatId": "HS-CF-05",
+      "ownership": "P3_EXISTING_HELD_SOURCE_BRIDGE",
+      "sourceReference": "John 11:45–53",
+      "reviewReferences": [
+        "John 11:45–53"
+      ],
+      "hingeIds": [
+        "HS-HINGE-24"
+      ],
+      "decisionRequired": "Evaluate all John 11:45–53 for belief, Caiaphas's prophecy and the explicit death-plot, not merely the political response.",
+      "candidateComparisonStatus": "EXISTING_VERBATIM_TRIAL_UNAPPROVED",
+      "currentState": "RESEARCH_RECOMMENDATION_READY_NOT_ACCEPTED",
+      "dependencyGroups": [
+        "SCRIPTURE_EDITION_WITNESS_AUDIT",
+        "SOURCE_READING_COMPARISON"
+      ],
+      "acceptanceEvidence": [
+        "Unaltered original text in each installed Catholic edition",
+        "Editor chooses keep-held, omit or proposed native verse range with explicit rationale",
+        "Original Scripture speaker and narration roles preserved",
+        "No publication approval inferred from a desk decision"
+      ],
+      "approval": {
+        "selected": false,
+        "oral": false,
+        "theological": false,
+        "printedEditionCertified": false,
+        "publication": false
+      },
+      "researchRecommendation": {
+        "status": "SOURCE_EVIDENCE_PROPOSED_NOT_SELECTED",
+        "group": "LAZARUS_OPPOSITION",
+        "recommendation": "PROPOSE_TRIAL_INCLUDE_FULL_GOSPEL_RESPONSE",
+        "refs": [
+          "John 11:45–53"
+        ],
+        "reason": "The original nine verses show belief and reporting after Lazarus, the council's fear, Caiaphas's declaration, John's source-internal prophecy interpretation and the final resolve to kill Christ. Keeping the whole pericope protects John's theological meaning ahead of Jerusalem.",
+        "contrast": "A generic political connector or handpicked one-verse death plot omits the inspired Evangelist's 11:51–52 interpretation. The surrounding selected John 11:38–44 need not be quoted a second time.",
+        "conditionalEdits": [
+          "Avoid an extra editorial paragraph retelling Caiaphas if original John text is included.",
+          "Keep the shift to Matthew's Palm entry source-labelled and do not call the Gospel episodes contemporaneous."
+        ],
+        "dependenciesToAccept": [
+          "ORIGINAL_CATHOLIC_WITNESS_PRINT_COLLATION",
+          "UNINTERRUPTED_SOURCE_READALOUD",
+          "LITERARY_AND_THEOLOGICAL_EDITOR_SIGNOFF"
+        ],
+        "nativeSourceContentNotEdited": true,
+        "original93UnitSelectionUnmodified": true,
+        "acceptedByHumanEditor": false,
+        "publicationApproved": false,
+        "optionalUnselectedComparison": true
+      }
+    },
+    {
+      "id": "HS-W-SRC-HS-CF-07",
+      "kind": "SOURCE_SELECTION",
+      "priority": "P1",
+      "group": "ASCENSION_PRELUDE",
+      "ownerRole": "Catholic Scripture editor (unassigned)",
+      "movementId": "HS-M30",
+      "sourceBeatId": "HS-CF-07",
+      "ownership": "P3_EXISTING_HELD_SOURCE_BRIDGE",
+      "sourceReference": "Acts 1:3–5",
+      "reviewReferences": [
+        "Acts 1:3–5"
+      ],
+      "hingeIds": [
+        "HS-HINGE-29"
+      ],
+      "decisionRequired": "Read Acts 1:3–5 before 1:6–12; preserve forty days, Jerusalem waiting and coming Holy Ghost.",
+      "candidateComparisonStatus": "EXISTING_VERBATIM_TRIAL_UNAPPROVED",
+      "currentState": "RESEARCH_RECOMMENDATION_READY_NOT_ACCEPTED",
+      "dependencyGroups": [
+        "SCRIPTURE_EDITION_WITNESS_AUDIT",
+        "SOURCE_READING_COMPARISON"
+      ],
+      "acceptanceEvidence": [
+        "Unaltered original text in each installed Catholic edition",
+        "Editor chooses keep-held, omit or proposed native verse range with explicit rationale",
+        "Original Scripture speaker and narration roles preserved",
+        "No publication approval inferred from a desk decision"
+      ],
+      "approval": {
+        "selected": false,
+        "oral": false,
+        "theological": false,
+        "printedEditionCertified": false,
+        "publication": false
+      },
+      "researchRecommendation": {
+        "status": "SOURCE_EVIDENCE_PROPOSED_NOT_SELECTED",
+        "group": "ASCENSION_PRELUDE",
+        "recommendation": "PROPOSE_TRIAL_INCLUDE_ASCENSION_PRELUDE",
+        "refs": [
+          "Acts 1:3–5"
+        ],
+        "reason": "All three native verses supply forty days of risen appearances, Christ's instruction to remain in Jerusalem and the imminent baptism with the Holy Ghost before the disciples' question in Acts 1:6.",
+        "contrast": "Acts 1:6 without its causal source opens mid-conversation. A short editor-written chronological claim would be a weaker substitute for these existing exact verses.",
+        "conditionalEdits": [
+          "Preserve the distinct forty-day interval without fabricating unselected appearances.",
+          "Do not repeat the same description in any separately editor-owned Ascension preface."
+        ],
+        "dependenciesToAccept": [
+          "ORIGINAL_CATHOLIC_WITNESS_PRINT_COLLATION",
+          "UNINTERRUPTED_SOURCE_READALOUD",
+          "LITERARY_AND_THEOLOGICAL_EDITOR_SIGNOFF"
+        ],
+        "nativeSourceContentNotEdited": true,
+        "original93UnitSelectionUnmodified": true,
+        "acceptedByHumanEditor": false,
+        "publicationApproved": false,
+        "optionalUnselectedComparison": true
+      }
+    },
+    {
+      "id": "HS-W-SRC-HS-CF-08",
+      "kind": "SOURCE_SELECTION",
+      "priority": "P1",
+      "group": "STEPHEN_REBUKE",
+      "ownerRole": "Catholic Scripture editor (unassigned)",
+      "movementId": "HS-M31",
+      "sourceBeatId": "HS-CF-08",
+      "ownership": "P3_EXISTING_HELD_SOURCE_BRIDGE",
+      "sourceReference": "Acts 7:51–53",
+      "reviewReferences": [
+        "Acts 7:51–53"
+      ],
+      "hingeIds": [
+        "HS-HINGE-31"
+      ],
+      "decisionRequired": "Review Acts 7:51–53 for the crowd's source-attested response to Stephen; retain distinct English/French 7:59/60 death boundaries.",
+      "candidateComparisonStatus": "EXISTING_VERBATIM_TRIAL_UNAPPROVED",
+      "currentState": "RESEARCH_RECOMMENDATION_READY_NOT_ACCEPTED",
+      "dependencyGroups": [
+        "SCRIPTURE_EDITION_WITNESS_AUDIT",
+        "SOURCE_READING_COMPARISON"
+      ],
+      "acceptanceEvidence": [
+        "Unaltered original text in each installed Catholic edition",
+        "Editor chooses keep-held, omit or proposed native verse range with explicit rationale",
+        "Original Scripture speaker and narration roles preserved",
+        "No publication approval inferred from a desk decision"
+      ],
+      "approval": {
+        "selected": false,
+        "oral": false,
+        "theological": false,
+        "printedEditionCertified": false,
+        "publication": false
+      },
+      "researchRecommendation": {
+        "status": "SOURCE_EVIDENCE_PROPOSED_NOT_SELECTED",
+        "group": "STEPHEN_REBUKE",
+        "recommendation": "PROPOSE_TRIAL_INCLUDE_STEVE_REBUKE",
+        "refs": [
+          "Acts 7:51–53"
+        ],
+        "reason": "The speech in these three verses directly occasions the hearers' angry response at Acts 7:54. Its accusations about resisting the Holy Ghost, persecuting prophets and failing to keep the Law are attested Scripture spoken by Stephen, not a newly invented martyrdom speech.",
+        "contrast": "Simply beginning with 'hearing these things' at 7:54 obscures the immediate cause. Retain the established native end alignment: Acts 7:59 in English witnesses and 7:60 in French.",
+        "conditionalEdits": [
+          "If the separate Stephen editorial preface is shown, suppress any summary duplicating the three quotations.",
+          "Do not convert Stephen's historical speech into advice supposedly addressed to the modern reader."
+        ],
+        "dependenciesToAccept": [
+          "ORIGINAL_CATHOLIC_WITNESS_PRINT_COLLATION",
+          "UNINTERRUPTED_SOURCE_READALOUD",
+          "LITERARY_AND_THEOLOGICAL_EDITOR_SIGNOFF"
+        ],
+        "nativeSourceContentNotEdited": true,
+        "original93UnitSelectionUnmodified": true,
+        "acceptedByHumanEditor": false,
+        "publicationApproved": false,
+        "optionalUnselectedComparison": true
+      }
+    },
+    {
+      "id": "HS-W-SRC-HS-P3-CF-12",
+      "kind": "SOURCE_SELECTION",
+      "priority": "P1",
+      "group": "GENTILE_MISSION_HANDOFF",
+      "ownerRole": "Catholic Scripture editor (unassigned)",
+      "movementId": "HS-M33",
+      "sourceBeatId": "HS-P3-CF-12",
+      "ownership": "P3_EXISTING_HELD_SOURCE_BRIDGE",
+      "sourceReference": "Acts 14:26–27",
+      "reviewReferences": [
+        "Acts 14:26–27"
+      ],
+      "hingeIds": [
+        "HS-HINGE-33"
+      ],
+      "decisionRequired": "Compare Acts 14:26–27 before the Jerusalem Council, with no invented travel chronology.",
+      "candidateComparisonStatus": "COORDINATE_HELD_NOT_SELECTED",
+      "currentState": "RESEARCH_RECOMMENDATION_READY_NOT_ACCEPTED",
+      "dependencyGroups": [
+        "SCRIPTURE_EDITION_WITNESS_AUDIT",
+        "SOURCE_READING_COMPARISON"
+      ],
+      "acceptanceEvidence": [
+        "Unaltered original text in each installed Catholic edition",
+        "Editor chooses keep-held, omit or proposed native verse range with explicit rationale",
+        "Original Scripture speaker and narration roles preserved",
+        "No publication approval inferred from a desk decision"
+      ],
+      "approval": {
+        "selected": false,
+        "oral": false,
+        "theological": false,
+        "printedEditionCertified": false,
+        "publication": false
+      },
+      "researchRecommendation": {
+        "status": "SOURCE_EVIDENCE_PROPOSED_NOT_SELECTED",
+        "group": "GENTILE_MISSION_HANDOFF",
+        "recommendation": "PROPOSE_CONDITIONAL_SOURCE_INSTEAD_OF_DUPLICATE_CONNECTOR",
+        "refs": [
+          "Acts 14:26–27"
+        ],
+        "reason": "The two verse-native texts in the three imported Catholic editions record the missionaries reporting that God opened faith to the Gentiles, and their stay with disciples. That is a compact Scripture-owned antecedent to the dispute resolved at the Council.",
+        "contrast": "The existing HS-P3-EC-10 pre-Scripture connector already narrates their Gentile return with Acts 14:21–27. Do not include both unaltered or count the existing note as an unrelated new source requirement.",
+        "conditionalEdits": [
+          "If the exact Acts 14 witness is selected later, separately adjudicate/suppress repetitive HS-P3-EC-10 prose.",
+          "Keep the Apostolic Council's own Acts 15 questions and source witnesses intact."
+        ],
+        "dependenciesToAccept": [
+          "ORIGINAL_CATHOLIC_WITNESS_PRINT_COLLATION",
+          "UNINTERRUPTED_SOURCE_READALOUD",
+          "LITERARY_AND_THEOLOGICAL_EDITOR_SIGNOFF"
+        ],
+        "nativeSourceContentNotEdited": true,
+        "original93UnitSelectionUnmodified": true,
+        "acceptedByHumanEditor": false,
+        "publicationApproved": false,
+        "optionalUnselectedComparison": true
+      }
+    },
+    {
+      "id": "HS-W-SRC-HS-CF-10",
+      "kind": "SOURCE_SELECTION",
+      "priority": "P1",
+      "group": "PAUL_ROMAN_INTENTION",
+      "ownerRole": "Catholic Scripture editor (unassigned)",
+      "movementId": "HS-M34",
+      "sourceBeatId": "HS-CF-10",
+      "ownership": "P3_EXISTING_HELD_SOURCE_BRIDGE",
+      "sourceReference": "Acts 19:21",
+      "reviewReferences": [
+        "Acts 19:21"
+      ],
+      "hingeIds": [
+        "HS-HINGE-33"
+      ],
+      "decisionRequired": "Compare Paul's intention to see Rome at Acts 19:21; cannot substitute for Acts 28:16–22's arrival and audience.",
+      "candidateComparisonStatus": "COORDINATE_HELD_NOT_SELECTED",
+      "currentState": "RESEARCH_RECOMMENDATION_READY_NOT_ACCEPTED",
+      "dependencyGroups": [
+        "SCRIPTURE_EDITION_WITNESS_AUDIT",
+        "SOURCE_READING_COMPARISON"
+      ],
+      "acceptanceEvidence": [
+        "Unaltered original text in each installed Catholic edition",
+        "Editor chooses keep-held, omit or proposed native verse range with explicit rationale",
+        "Original Scripture speaker and narration roles preserved",
+        "No publication approval inferred from a desk decision"
+      ],
+      "approval": {
+        "selected": false,
+        "oral": false,
+        "theological": false,
+        "printedEditionCertified": false,
+        "publication": false
+      },
+      "researchRecommendation": {
+        "status": "SOURCE_EVIDENCE_PROPOSED_NOT_SELECTED",
+        "group": "PAUL_ROMAN_INTENTION",
+        "recommendation": "PREFER_KEEP_HELD_AS_OPTIONAL_GEOGRAPHIC_INTENTION",
+        "refs": [
+          "Acts 19:21"
+        ],
+        "reason": "Paul's stated resolve to see Rome is attested but only names his intention. It does not supply the intervening journeys, arrest, sea voyage or actual arrival; the higher-priority paired Acts 28:16–22 source is already preferred to ground the Roman audience.",
+        "contrast": "Adding a single Rome-intention verse after the Council may make the enormous Acts 15–28 period feel falsely contiguous. The existing historical-ellipsis disclosure and verified Acts 28 arrival better serve this abbreviated reading.",
+        "conditionalEdits": [
+          "Keep Acts 19:21 available as a separate historical source note or optional research variant.",
+          "Do not geolocate an unselected journey or conflate Paul's purpose with the real Rome arrival."
+        ],
+        "dependenciesToAccept": [
+          "ORIGINAL_CATHOLIC_WITNESS_PRINT_COLLATION",
+          "UNINTERRUPTED_SOURCE_READALOUD",
+          "LITERARY_AND_THEOLOGICAL_EDITOR_SIGNOFF"
+        ],
+        "nativeSourceContentNotEdited": true,
+        "original93UnitSelectionUnmodified": true,
+        "acceptedByHumanEditor": false,
+        "publicationApproved": false,
+        "optionalUnselectedComparison": true
+      }
+    },
+    {
+      "id": "HS-W-SRC-HS-CF-02",
+      "kind": "SOURCE_SELECTION",
+      "priority": "P2",
+      "group": "ABRAM_GENEALOGY",
+      "ownerRole": "Catholic Scripture editor (unassigned)",
+      "movementId": "HS-M04",
+      "sourceBeatId": "HS-CF-02",
+      "ownership": "P3_EXISTING_HELD_SOURCE_BRIDGE",
+      "sourceReference": "Genesis 11:26–31",
+      "reviewReferences": [
+        "Genesis 11:26–31"
+      ],
+      "hingeIds": [
+        "HS-HINGE-03"
+      ],
+      "decisionRequired": "Judge whether Abram's father and migration require optional Genesis 11:26–31 or existing editor-attributed genealogy before Genesis 12:1.",
+      "candidateComparisonStatus": "COORDINATE_HELD_NOT_SELECTED",
+      "currentState": "RESEARCH_RECOMMENDATION_READY_NOT_ACCEPTED",
+      "dependencyGroups": [
+        "SCRIPTURE_EDITION_WITNESS_AUDIT",
+        "SOURCE_READING_COMPARISON"
+      ],
+      "acceptanceEvidence": [
+        "Unaltered original text in each installed Catholic edition",
+        "Editor chooses keep-held, omit or proposed native verse range with explicit rationale",
+        "Original Scripture speaker and narration roles preserved",
+        "No publication approval inferred from a desk decision"
+      ],
+      "approval": {
+        "selected": false,
+        "oral": false,
+        "theological": false,
+        "printedEditionCertified": false,
+        "publication": false
+      },
+      "researchRecommendation": {
+        "status": "SOURCE_EVIDENCE_PROPOSED_NOT_SELECTED",
+        "group": "ABRAM_GENEALOGY",
+        "recommendation": "PREFER_KEEP_HELD_WITH_EDITORIAL_GENEALOGY",
+        "refs": [
+          "Genesis 11:26–31"
+        ],
+        "reason": "This six-verse genealogy names Terah, Abram, Lot, Sarai, her barrenness and the family's movement toward Haran. The existing HS-P3-EC-11 before Genesis 12:1 already cites Genesis 11:10–31 and names Abram among Sem's descendants.",
+        "contrast": "In a compact salvation-history narration, six added genealogical verses largely duplicate a short clearly labelled contextual transition. They remain useful as authentic primary sources for the separate genealogy/covenant navigation.",
+        "conditionalEdits": [
+          "Do not omit the fact of Abram's family background from the editor-labelled context.",
+          "Keep Matthew/Luke Gospel genealogies and patriarchal genealogy within their separate sourced navigational apparatus."
+        ],
+        "dependenciesToAccept": [
+          "ORIGINAL_CATHOLIC_WITNESS_PRINT_COLLATION",
+          "UNINTERRUPTED_SOURCE_READALOUD",
+          "LITERARY_AND_THEOLOGICAL_EDITOR_SIGNOFF"
+        ],
+        "nativeSourceContentNotEdited": true,
+        "original93UnitSelectionUnmodified": true,
+        "acceptedByHumanEditor": false,
+        "publicationApproved": false,
+        "optionalUnselectedComparison": true
+      }
+    },
+    {
+      "id": "HS-W-SRC-HS-CF-03",
+      "kind": "SOURCE_SELECTION",
+      "priority": "P2",
+      "group": "JOSEPH_PRISON",
+      "ownerRole": "Catholic Scripture editor (unassigned)",
+      "movementId": "HS-M06",
+      "sourceBeatId": "HS-CF-03",
+      "ownership": "P3_EXISTING_HELD_SOURCE_BRIDGE",
+      "sourceReference": "Genesis 39:20–21",
+      "reviewReferences": [
+        "Genesis 39:19–21"
+      ],
+      "hingeIds": [],
+      "decisionRequired": "Judge whether Genesis 39:19–21 and the already attached editorial preface are needed before Joseph's rise in Genesis 41.",
+      "candidateComparisonStatus": "EXISTING_VERBATIM_TRIAL_UNAPPROVED",
+      "currentState": "RESEARCH_RECOMMENDATION_READY_NOT_ACCEPTED",
+      "dependencyGroups": [
+        "SCRIPTURE_EDITION_WITNESS_AUDIT",
+        "SOURCE_READING_COMPARISON"
+      ],
+      "acceptanceEvidence": [
+        "Unaltered original text in each installed Catholic edition",
+        "Editor chooses keep-held, omit or proposed native verse range with explicit rationale",
+        "Original Scripture speaker and narration roles preserved",
+        "No publication approval inferred from a desk decision"
+      ],
+      "approval": {
+        "selected": false,
+        "oral": false,
+        "theological": false,
+        "printedEditionCertified": false,
+        "publication": false
+      },
+      "researchRecommendation": {
+        "status": "SOURCE_EVIDENCE_PROPOSED_NOT_SELECTED",
+        "group": "JOSEPH_PRISON",
+        "recommendation": "PROPOSE_TRIAL_INCLUDE_JOSEPH_PRISON_CAUSE",
+        "refs": [
+          "Genesis 39:19–21"
+        ],
+        "reason": "The three exact original verses name the master's reaction, Joseph's imprisonment and the Lord's continued favour, making the next selected event—Joseph brought to Pharaoh in Genesis 41:14—intelligible without a fabricated prison episode.",
+        "contrast": "The existing trial already extends the held 39:20–21 coordinate backward to verse 19 to preserve the accusation's result. The optional editor-owned Potiphar preface must not be counted as a separate second episode if the source is added.",
+        "conditionalEdits": [
+          "Retain a clear, separate source attribution from Joseph's earlier sale into Egyptian service.",
+          "Choose whether to suppress or shorten the existing HS-P3-EC-02 prison preface after native text is selected."
+        ],
+        "dependenciesToAccept": [
+          "ORIGINAL_CATHOLIC_WITNESS_PRINT_COLLATION",
+          "UNINTERRUPTED_SOURCE_READALOUD",
+          "LITERARY_AND_THEOLOGICAL_EDITOR_SIGNOFF"
+        ],
+        "nativeSourceContentNotEdited": true,
+        "original93UnitSelectionUnmodified": true,
+        "acceptedByHumanEditor": false,
+        "publicationApproved": false,
+        "optionalUnselectedComparison": true
+      }
+    },
+    {
+      "id": "HS-W-SRC-HS-P3-CF-17",
+      "kind": "SOURCE_SELECTION",
+      "priority": "P2",
+      "group": "BAPTIST_TESTIMONY",
+      "ownerRole": "Catholic Scripture editor (unassigned)",
+      "movementId": "HS-M20",
+      "sourceBeatId": "HS-P3-CF-17",
+      "ownership": "P3_EXISTING_HELD_SOURCE_BRIDGE",
+      "sourceReference": "John 1:29–34",
+      "reviewReferences": [
+        "John 1:29–34"
+      ],
+      "hingeIds": [
+        "HS-HINGE-19"
+      ],
+      "decisionRequired": "Compare John 1:29–34 to the selected first-disciples scene without replaying Matthew's baptism as a second baptism.",
+      "candidateComparisonStatus": "COORDINATE_HELD_NOT_SELECTED",
+      "currentState": "RESEARCH_RECOMMENDATION_READY_NOT_ACCEPTED",
+      "dependencyGroups": [
+        "SCRIPTURE_EDITION_WITNESS_AUDIT",
+        "SOURCE_READING_COMPARISON"
+      ],
+      "acceptanceEvidence": [
+        "Unaltered original text in each installed Catholic edition",
+        "Editor chooses keep-held, omit or proposed native verse range with explicit rationale",
+        "Original Scripture speaker and narration roles preserved",
+        "No publication approval inferred from a desk decision"
+      ],
+      "approval": {
+        "selected": false,
+        "oral": false,
+        "theological": false,
+        "printedEditionCertified": false,
+        "publication": false
+      },
+      "researchRecommendation": {
+        "status": "SOURCE_EVIDENCE_PROPOSED_NOT_SELECTED",
+        "group": "BAPTIST_TESTIMONY",
+        "recommendation": "PREFER_KEEP_HELD_AVOID_REPEAT_BAPTISM",
+        "refs": [
+          "John 1:29–34"
+        ],
+        "reason": "The six John Baptist-testimony verses identify Jesus as the Lamb of God and describe the Spirit's descent, but the selected Matthew 3:11–17 has already narrated Christ's baptism and the selected John 1:35–51 records John's next-day recognition before the disciples.",
+        "contrast": "The existing source-labelled HS-P3-EC-09 connector before John 1:35 records the relevant prior Lamb/Son testimony without replaying a Gospel account as a second baptism. If longer testimony is used, the connector should not repeat it.",
+        "conditionalEdits": [
+          "Keep John and Matthew as distinct Evangelists and preserve the original 'next day' wording.",
+          "Retain all six verses for deeper Gospel/Christology comparison without compulsory insertion."
+        ],
+        "dependenciesToAccept": [
+          "ORIGINAL_CATHOLIC_WITNESS_PRINT_COLLATION",
+          "UNINTERRUPTED_SOURCE_READALOUD",
+          "LITERARY_AND_THEOLOGICAL_EDITOR_SIGNOFF"
+        ],
+        "nativeSourceContentNotEdited": true,
+        "original93UnitSelectionUnmodified": true,
+        "acceptedByHumanEditor": false,
+        "publicationApproved": false,
+        "optionalUnselectedComparison": true
+      }
+    },
+    {
+      "id": "HS-W-SRC-HS-CF-09",
+      "kind": "SOURCE_SELECTION",
+      "priority": "P2",
+      "group": "SUPPER_SPIRIT_PROMISE",
+      "ownerRole": "Catholic Scripture editor (unassigned)",
+      "movementId": "HS-M26",
+      "sourceBeatId": "HS-CF-09",
+      "ownership": "P3_EXISTING_HELD_SOURCE_BRIDGE",
+      "sourceReference": "John 14:16–17",
+      "reviewReferences": [
+        "John 14:16–17"
+      ],
+      "hingeIds": [
+        "HS-HINGE-26"
+      ],
+      "decisionRequired": "Review the optional John 14:16–17 promise as a separate Gospel witness without confusing Luke's Last Supper account.",
+      "candidateComparisonStatus": "COORDINATE_HELD_NOT_SELECTED",
+      "currentState": "RESEARCH_RECOMMENDATION_READY_NOT_ACCEPTED",
+      "dependencyGroups": [
+        "SCRIPTURE_EDITION_WITNESS_AUDIT",
+        "SOURCE_READING_COMPARISON"
+      ],
+      "acceptanceEvidence": [
+        "Unaltered original text in each installed Catholic edition",
+        "Editor chooses keep-held, omit or proposed native verse range with explicit rationale",
+        "Original Scripture speaker and narration roles preserved",
+        "No publication approval inferred from a desk decision"
+      ],
+      "approval": {
+        "selected": false,
+        "oral": false,
+        "theological": false,
+        "printedEditionCertified": false,
+        "publication": false
+      },
+      "researchRecommendation": {
+        "status": "SOURCE_EVIDENCE_PROPOSED_NOT_SELECTED",
+        "group": "SUPPER_SPIRIT_PROMISE",
+        "recommendation": "PREFER_KEEP_HELD_FOR_SEPARATE_FAREWELL_DISCOURSE",
+        "refs": [
+          "John 14:16–17"
+        ],
+        "reason": "Christ's promise of another Paraclete and the Spirit of Truth is authentic John, but its insertion directly after the selected Luke 22:7–20 Supper can blur the distinct Gospel witness and imply one uninterrupted discourse. The subsequent Acts already narrates the Spirit's promise and Pentecost.",
+        "contrast": "This two-verse excerpt is suited to a properly attributed Johannine companion source rather than compulsory Gospel-harmonized dialogue in the chronological readthrough.",
+        "conditionalEdits": [
+          "If any reader displays it, name the Gospel of John as an independently sourced Farewell Discourse.",
+          "Preserve separate theology/typology links outside the chronological narrative."
+        ],
+        "dependenciesToAccept": [
+          "ORIGINAL_CATHOLIC_WITNESS_PRINT_COLLATION",
+          "UNINTERRUPTED_SOURCE_READALOUD",
+          "LITERARY_AND_THEOLOGICAL_EDITOR_SIGNOFF"
+        ],
+        "nativeSourceContentNotEdited": true,
+        "original93UnitSelectionUnmodified": true,
+        "acceptedByHumanEditor": false,
+        "publicationApproved": false,
+        "optionalUnselectedComparison": true
+      }
+    },
+    {
+      "id": "HS-W-SRC-MATTHEW-27-JUDAS",
+      "priority": "P2",
+      "group": "PASSION_JUDAS",
+      "movementId": "HS-M27",
+      "sourceBeatId": "H63-02",
+      "hingeIds": [
+        "HS-HINGE-27"
+      ],
+      "reviewReferences": [
+        "Matthew 27:3–10"
+      ],
+      "ownership": "EXISTING_BETWEEN_SELECTED_SCRIPTURE_TRIAL_WORKBENCH_ONLY",
+      "decisionRequired": "Compare Judas's account strictly between selected Matthew 27:1–2 and 27:11–26; keep the omission visible and do not merge it with John 19.",
+      "kind": "SOURCE_SELECTION",
+      "ownerRole": "Catholic Scripture editor (unassigned)",
+      "currentState": "RESEARCH_RECOMMENDATION_READY_NOT_ACCEPTED",
+      "dependencyGroups": [
+        "SCRIPTURE_EDITION_WITNESS_AUDIT",
+        "SOURCE_READING_COMPARISON"
+      ],
+      "acceptanceEvidence": [
+        "Verify each quoted verse in its native witness",
+        "Choose only actual original verse references or retain omission",
+        "No fabricated chronology, theological speech or implied approval"
+      ],
+      "approval": {
+        "selected": false,
+        "oral": false,
+        "theological": false,
+        "printedEditionCertified": false,
+        "publication": false
+      },
+      "sourceReference": "Matthew 27:3–10",
+      "candidateComparisonStatus": "EXISTING_BETWEEN_SELECTED_SCRIPTURE_TRIAL_WORKBENCH_ONLY",
+      "researchRecommendation": {
+        "status": "SOURCE_EVIDENCE_PROPOSED_NOT_SELECTED",
+        "group": "PASSION_JUDAS",
+        "recommendation": "PREFER_KEEP_HELD_DISTINCT_JUDAS_EPISODE",
+        "refs": [
+          "Matthew 27:3–10"
+        ],
+        "reason": "Matthew's eight verses record Judas's response to Christ's condemnation, the silver, his death, the field and the Gospel's prophetic reference. It is a real separate Gospel episode but does not cause the subsequent Pilate questioning at Matthew 27:11 in the compact Passion sequence.",
+        "contrast": "Keep the exact-text between-selected-segments comparison in the workbench; do not insert explanatory narration into Matthew 27:1–2 and 11–26, invent Judas's internal motives, or conflate Judas's death with the execution of Christ.",
+        "conditionalEdits": [
+          "Retain the original main-scripture omission warning across Matthew 27:2→11.",
+          "If later selected, preserve Matthew's reported prophetic attribution exactly, without silently correcting it by rewriting Scripture."
+        ],
+        "dependenciesToAccept": [
+          "ORIGINAL_CATHOLIC_WITNESS_PRINT_COLLATION",
+          "UNINTERRUPTED_SOURCE_READALOUD",
+          "LITERARY_AND_THEOLOGICAL_EDITOR_SIGNOFF"
+        ],
+        "nativeSourceContentNotEdited": true,
+        "original93UnitSelectionUnmodified": true,
+        "acceptedByHumanEditor": false,
+        "publicationApproved": false,
+        "optionalUnselectedComparison": true
+      }
+    },
+    {
+      "id": "HS-W-SRC-HS-P3-CF-16",
+      "kind": "SOURCE_SELECTION",
+      "priority": "P2",
+      "group": "TRUE_APOCALYPSE_END",
+      "ownerRole": "Catholic Scripture editor (unassigned)",
+      "movementId": "HS-M37",
+      "sourceBeatId": "HS-P3-CF-16",
+      "ownership": "P3_EXISTING_HELD_SOURCE_BRIDGE",
+      "sourceReference": "Revelation 22:20–21",
+      "reviewReferences": [
+        "Revelation 22:20–21"
+      ],
+      "hingeIds": [
+        "HS-HINGE-36"
+      ],
+      "decisionRequired": "Compare Revelation 22:20–21 against 22:17–21 and 22:6–21, disclose the gap, and preserve book-of-life vs tree-of-life witness variant at 22:19.",
+      "candidateComparisonStatus": "COORDINATE_HELD_NOT_SELECTED",
+      "currentState": "RESEARCH_RECOMMENDATION_READY_NOT_ACCEPTED",
+      "dependencyGroups": [
+        "SCRIPTURE_EDITION_WITNESS_AUDIT",
+        "SOURCE_READING_COMPARISON"
+      ],
+      "acceptanceEvidence": [
+        "Unaltered original text in each installed Catholic edition",
+        "Editor chooses keep-held, omit or proposed native verse range with explicit rationale",
+        "Original Scripture speaker and narration roles preserved",
+        "No publication approval inferred from a desk decision"
+      ],
+      "approval": {
+        "selected": false,
+        "oral": false,
+        "theological": false,
+        "printedEditionCertified": false,
+        "publication": false
+      },
+      "researchRecommendation": {
+        "status": "SOURCE_EVIDENCE_PROPOSED_NOT_SELECTED",
+        "group": "TRUE_APOCALYPSE_END",
+        "recommendation": "PROPOSE_TRIAL_INCLUDE_CANON_END_WITH_EXPLICIT_GAP",
+        "refs": [
+          "Revelation 22:20–21"
+        ],
+        "reason": "The two original closing verses supply Christ's final coming declaration and the scriptural closing blessing. The existing selected reading presently ends at Revelation 22:5; including the true closing refrain can provide a faithful bookend at little length cost, provided the omitted Revelation 22:6–19 is unmistakably marked.",
+        "contrast": "A full 22:6–21 epilogue or 22:17–21 invitation/warning is a separate comparison. The latter crosses the significant Rev 22:19 native variant (English book of life / Crampon arbre de la vie) and requires print collation; do not normalize editions or invent missing bridge speech.",
+        "conditionalEdits": [
+          "Display explicit 'Revelation 22:6–19 omitted' before any held 22:20–21 research text.",
+          "Never label Rev 22:5 the actual canonical end or treat the 22:20–21 verses as already selected."
+        ],
+        "dependenciesToAccept": [
+          "ORIGINAL_CATHOLIC_WITNESS_PRINT_COLLATION",
+          "UNINTERRUPTED_SOURCE_READALOUD",
+          "LITERARY_AND_THEOLOGICAL_EDITOR_SIGNOFF"
+        ],
+        "nativeSourceContentNotEdited": true,
+        "original93UnitSelectionUnmodified": true,
+        "acceptedByHumanEditor": false,
+        "publicationApproved": false,
+        "optionalUnselectedComparison": true
+      }
+    }
+  ],
+  "readerPresentationWorklist": [
+    {
+      "id": "HS-W-UI-01",
+      "kind": "READER_PRESENTATION",
+      "priority": "P1",
+      "group": "GOSPEL_PROVENANCE",
+      "ownerRole": "Reader UX/Scripture presentation maintainer (unassigned)",
+      "hingeIds": [
+        "HS-HINGE-18",
+        "HS-HINGE-20",
+        "HS-HINGE-21",
+        "HS-HINGE-22",
+        "HS-HINGE-23",
+        "HS-HINGE-26",
+        "HS-HINGE-27"
+      ],
+      "sourceBeatIds": [
+        "H46-01",
+        "H47-02",
+        "H51-03",
+        "H53-01",
+        "H56-02",
+        "H57-01",
+        "H57-02",
+        "H58-04",
+        "H60-01",
+        "H62-01",
+        "H63-04",
+        "H64-01"
+      ],
+      "decisionRequired": "Show chapter-level Evangelist identity and citation changes at every Matthew/Mark/Luke/John handoff; do not fuse separate Gospel speeches.",
+      "dependencyGroups": [
+        "NATIVE_CITATION_PROVENANCE"
+      ],
+      "currentState": "OPEN_IMPLEMENTATION_AND_HUMAN_REVIEW",
+      "acceptanceEvidence": [
+        "Demo in existing Scripture research workbench; no second reader",
+        "Native Bible citation and edition visibly correct",
+        "Held or editorial prose never looks like literal Scripture",
+        "No page route or Atlas identity regression",
+        "Cross-device visual check and existing mobile/Scripture tests pass"
+      ],
+      "approval": {
+        "product": false,
+        "editorial": false,
+        "publication": false
+      }
+    },
+    {
+      "id": "HS-W-UI-02",
+      "kind": "READER_PRESENTATION",
+      "priority": "P1",
+      "group": "HISTORICAL_ELLIPSES",
+      "ownerRole": "Reader UX/Scripture presentation maintainer (unassigned)",
+      "hingeIds": [
+        "HS-HINGE-03",
+        "HS-HINGE-06",
+        "HS-HINGE-10",
+        "HS-HINGE-17",
+        "HS-HINGE-19",
+        "HS-HINGE-25",
+        "HS-HINGE-33"
+      ],
+      "sourceBeatIds": [
+        "H23-02",
+        "H24-02",
+        "H49-03",
+        "H51-01",
+        "H59-01",
+        "H60-01",
+        "HS-CF-11"
+      ],
+      "decisionRequired": "Where generations, wilderness years, Second Temple period, childhood, Holy Week or missions are skipped, label the interval with cited editorial context, not a fictional same-day transition.",
+      "dependencyGroups": [
+        "NATIVE_CITATION_PROVENANCE"
+      ],
+      "currentState": "OPEN_IMPLEMENTATION_AND_HUMAN_REVIEW",
+      "acceptanceEvidence": [
+        "Demo in existing Scripture research workbench; no second reader",
+        "Native Bible citation and edition visibly correct",
+        "Held or editorial prose never looks like literal Scripture",
+        "No page route or Atlas identity regression",
+        "Cross-device visual check and existing mobile/Scripture tests pass"
+      ],
+      "approval": {
+        "product": false,
+        "editorial": false,
+        "publication": false
+      }
+    },
+    {
+      "id": "HS-W-UI-03",
+      "kind": "READER_PRESENTATION",
+      "priority": "P0",
+      "group": "VISIBLE_HELD_OMISSIONS",
+      "ownerRole": "Reader UX/Scripture presentation maintainer (unassigned)",
+      "hingeIds": [
+        "HS-HINGE-02",
+        "HS-HINGE-07",
+        "HS-HINGE-08",
+        "HS-HINGE-24",
+        "HS-HINGE-28",
+        "HS-HINGE-29",
+        "HS-HINGE-33"
+      ],
+      "sourceBeatIds": [
+        "HS-CF-01",
+        "H18-01",
+        "H20-01",
+        "HS-CF-05",
+        "HS-CF-06",
+        "HS-CF-07",
+        "HS-P3-CF-13"
+      ],
+      "decisionRequired": "Keep selected Scripture, optional trials, omitted native verses and English-only editor's prose visibly distinct in research preview and later reader, with no hidden promotion.",
+      "dependencyGroups": [
+        "SOURCE_READING_COMPARISON"
+      ],
+      "currentState": "OPEN_IMPLEMENTATION_AND_HUMAN_REVIEW",
+      "acceptanceEvidence": [
+        "Demo in existing Scripture research workbench; no second reader",
+        "Native Bible citation and edition visibly correct",
+        "Held or editorial prose never looks like literal Scripture",
+        "No page route or Atlas identity regression",
+        "Cross-device visual check and existing mobile/Scripture tests pass"
+      ],
+      "approval": {
+        "product": false,
+        "editorial": false,
+        "publication": false
+      }
+    },
+    {
+      "id": "HS-W-UI-04",
+      "kind": "READER_PRESENTATION",
+      "priority": "P0",
+      "group": "VISION_GENRE",
+      "ownerRole": "Reader UX/Scripture presentation maintainer (unassigned)",
+      "hingeIds": [
+        "HS-HINGE-34",
+        "HS-HINGE-35",
+        "HS-HINGE-36"
+      ],
+      "sourceBeatIds": [
+        "H75-01",
+        "H75-02",
+        "H76-03",
+        "H78-01",
+        "H78-02"
+      ],
+      "decisionRequired": "Introduce John and the book of Revelation as apocalyptic visions after Acts, mark large omitted cycles, and never geolocate heavenly scenes as earthly itinerary.",
+      "dependencyGroups": [
+        "NATIVE_CITATION_PROVENANCE"
+      ],
+      "currentState": "OPEN_IMPLEMENTATION_AND_HUMAN_REVIEW",
+      "acceptanceEvidence": [
+        "Demo in existing Scripture research workbench; no second reader",
+        "Native Bible citation and edition visibly correct",
+        "Held or editorial prose never looks like literal Scripture",
+        "No page route or Atlas identity regression",
+        "Cross-device visual check and existing mobile/Scripture tests pass"
+      ],
+      "approval": {
+        "product": false,
+        "editorial": false,
+        "publication": false
+      }
+    },
+    {
+      "id": "HS-W-UI-05",
+      "kind": "READER_PRESENTATION",
+      "priority": "P1",
+      "group": "TRUE_BOOK_ENDING",
+      "ownerRole": "Reader UX/Scripture presentation maintainer (unassigned)",
+      "hingeIds": [
+        "HS-HINGE-36"
+      ],
+      "sourceBeatIds": [
+        "H78-02",
+        "HS-P3-CF-16"
+      ],
+      "decisionRequired": "At the final selected Rev 22:5 explicitly mark the *selection* ending, and present held 22:20–21 only as an option until accepted; disclose all intervening omission.",
+      "dependencyGroups": [
+        "NATIVE_CITATION_PROVENANCE"
+      ],
+      "currentState": "OPEN_IMPLEMENTATION_AND_HUMAN_REVIEW",
+      "acceptanceEvidence": [
+        "Demo in existing Scripture research workbench; no second reader",
+        "Native Bible citation and edition visibly correct",
+        "Held or editorial prose never looks like literal Scripture",
+        "No page route or Atlas identity regression",
+        "Cross-device visual check and existing mobile/Scripture tests pass"
+      ],
+      "approval": {
+        "product": false,
+        "editorial": false,
+        "publication": false
+      }
+    },
+    {
+      "id": "HS-W-UI-06",
+      "kind": "READER_PRESENTATION",
+      "priority": "P0",
+      "group": "CITATION_BY_EDITION",
+      "ownerRole": "Reader UX/Scripture presentation maintainer (unassigned)",
+      "hingeIds": [
+        "HS-HINGE-05",
+        "HS-HINGE-09",
+        "HS-HINGE-14",
+        "HS-HINGE-15",
+        "HS-HINGE-31"
+      ],
+      "sourceBeatIds": [
+        "H05-02",
+        "H23-02",
+        "H37-02",
+        "H38-03",
+        "H68-04"
+      ],
+      "decisionRequired": "Display native citations for Isaiah 8/9, Genesis 5, Exodus 40, John 6, Jacob/Israel and Stephen in the chosen witness; never carry an English verse coordinate into Crampon by number.",
+      "dependencyGroups": [
+        "NATIVE_CITATION_PROVENANCE"
+      ],
+      "currentState": "OPEN_IMPLEMENTATION_AND_HUMAN_REVIEW",
+      "acceptanceEvidence": [
+        "Demo in existing Scripture research workbench; no second reader",
+        "Native Bible citation and edition visibly correct",
+        "Held or editorial prose never looks like literal Scripture",
+        "No page route or Atlas identity regression",
+        "Cross-device visual check and existing mobile/Scripture tests pass"
+      ],
+      "approval": {
+        "product": false,
+        "editorial": false,
+        "publication": false
+      }
+    },
+    {
+      "id": "HS-W-UI-07",
+      "kind": "READER_PRESENTATION",
+      "priority": "P1",
+      "group": "ONE_STORY_NO_ATLAS_REWRITE",
+      "ownerRole": "Reader UX/Scripture presentation maintainer (unassigned)",
+      "hingeIds": [
+        "HS-HINGE-11",
+        "HS-HINGE-16",
+        "HS-HINGE-30",
+        "HS-HINGE-32"
+      ],
+      "sourceBeatIds": [
+        "H26-01",
+        "H28-01",
+        "H43-01",
+        "H66-01",
+        "H67-01",
+        "H70-01",
+        "H71-01"
+      ],
+      "decisionRequired": "Preserve the existing 37-movement chronological Bible story, separate provisional 54 reading chapters, 37 Atlas navigation chapters and 151 canonical event objects; no new map pins or parallel reading app.",
+      "dependencyGroups": [
+        "NATIVE_CITATION_PROVENANCE"
+      ],
+      "currentState": "OPEN_IMPLEMENTATION_AND_HUMAN_REVIEW",
+      "acceptanceEvidence": [
+        "Demo in existing Scripture research workbench; no second reader",
+        "Native Bible citation and edition visibly correct",
+        "Held or editorial prose never looks like literal Scripture",
+        "No page route or Atlas identity regression",
+        "Cross-device visual check and existing mobile/Scripture tests pass"
+      ],
+      "approval": {
+        "product": false,
+        "editorial": false,
+        "publication": false
+      }
+    }
+  ],
+  "editorialAndAcceptanceWorklist": [
+    {
+      "id": "HS-W-EDIT-01",
+      "kind": "EDITORIAL_COPY",
+      "priority": "P0",
+      "ownerRole": "Catholic literary Scripture editor (unassigned)",
+      "sourceUnitScope": {
+        "editorialContext": 29,
+        "connectors": 12,
+        "total": 41
+      },
+      "dependencyGroups": [
+        "SOURCE_READING_COMPARISON"
+      ],
+      "decisionRequired": "Review 29 existing labelled editorial context units and 12 existing source-attributed before/held-bridge connectors for truthfulness, source attribution, narrative economy and duplication; consolidate semantically identical transition functions without deleting owners.",
+      "acceptanceEvidence": [
+        "Every candidate explicitly separated from Scripture quotations",
+        "41 candidate owner IDs traced to exact source and never misrepresented as original Bible wording",
+        "No invented dates, geography, dialogue, genealogy or spurious typological narration",
+        "Human editor signs per-piece approved copy"
+      ],
+      "currentState": "OPEN_EDITORIAL_REVIEW",
+      "approval": {
+        "literary": false,
+        "theological": false,
+        "publication": false
+      }
+    },
+    {
+      "id": "HS-W-EDIT-02",
+      "kind": "LOCALIZATION",
+      "priority": "P1",
+      "ownerRole": "Qualified French Catholic editor/translator (unassigned)",
+      "sourceUnitScope": {
+        "editorialContext": 29,
+        "connectors": 12,
+        "total": 41
+      },
+      "dependencyGroups": [
+        "EDITORIAL_EN_COPY_APPROVED",
+        "NATIVE_CITATION_PROVENANCE"
+      ],
+      "decisionRequired": "Translate and source-cite editorial-only copy independently into French after its English meaning is accepted; do not show untranslated English context as French Bible text or simply copy English verse reference numbering.",
+      "acceptanceEvidence": [
+        "No English editorial notes leak into French public reading",
+        "Maintain provenance and devotional diction appropriate to Crampon, independently checked",
+        "Human bilingual Catholic literary review completed"
+      ],
+      "currentState": "WAITING_ON_EDITORIAL_COPY_APPROVAL",
+      "approval": {
+        "translation": false,
+        "publication": false
+      }
+    },
+    {
+      "id": "HS-W-PROV-01",
+      "kind": "SOURCE_AND_RIGHTS",
+      "priority": "P0",
+      "ownerRole": "Biblical edition/provenance and rights reviewer (unassigned)",
+      "sourceUnitScope": {
+        "editions": [
+          "dr-challoner",
+          "cpdv-2009",
+          "crampon-1923"
+        ],
+        "criticalAlignments": [
+          "Genesis 5:28–31 vs French 5:28–32",
+          "Genesis 32:22–32 vs French 32:23–33",
+          "Exodus 40:32–36 vs French 40:34–38",
+          "English Isaiah 9:1–6 vs French Isaiah 8:23 and 9:1–5",
+          "John 6:60 English vs 6:59 French",
+          "Stephen Acts 7:59 English vs 7:60 French",
+          "Revelation 22:19 book of life vs arbre de la vie"
+        ]
+      },
+      "dependencyGroups": [],
+      "decisionRequired": "Collate all selected and proposed native Scripture against identified printed Catholic editions, reconcile source/copyright and redistribution rights, and sign off provenance; imported witness data is explicitly UNCOLLATED.",
+      "acceptanceEvidence": [
+        "Edition names/printing and citation boundaries attested, not inferred",
+        "Rights basis documented for every target locale and text",
+        "Meaningful book-of-life/tree-of-life textual variant preserved in source native edition",
+        "Reviewer certifies no fabricated Bible wording"
+      ],
+      "currentState": "OPEN_PRINT_AND_RIGHTS_CHECK",
+      "approval": {
+        "printedEdition": false,
+        "rights": false,
+        "publication": false
+      }
+    },
+    {
+      "id": "HS-W-THEO-01",
+      "kind": "THEOLOGICAL_REVIEW",
+      "priority": "P0",
+      "ownerRole": "Qualified Catholic theological reviewer (unassigned)",
+      "sourceUnitScope": {
+        "movements": 37,
+        "focus": [
+          "John 19:31–42 eyewitness/blood/water",
+          "Revelation vision genre and 22:19 textual variation",
+          "Jeremiah new covenant and Davidic covenant",
+          "Ad Orientem Roman Catholic theological fidelity"
+        ]
+      },
+      "dependencyGroups": [
+        "SCRIPTURE_DECISIONS_EDITORIALLY_SIGNED",
+        "EDITORIAL_EN_COPY_APPROVED"
+      ],
+      "decisionRequired": "Read source selection and any interpretation for fidelity to Catholic doctrinal teaching, with Johannine witness roles and the distinct canonical visions carefully preserved. Never invent Patristic paraphrases in the story.",
+      "acceptanceEvidence": [
+        "Qualified reviewer records objections/resolutions by original source beat ID",
+        "Typology and parallels remain in their separate sourced compendium",
+        "Approval is explicit and scoped to a specific frozen manuscript revision"
+      ],
+      "currentState": "WAITING_ON_EDITORIAL_DECISIONS",
+      "approval": {
+        "theological": false,
+        "publication": false
+      }
+    },
+    {
+      "id": "HS-W-ORAL-01",
+      "kind": "LITERARY_READALOUD",
+      "priority": "P0",
+      "ownerRole": "Human original-language literary reviewers (unassigned)",
+      "sourceUnitScope": {
+        "movements": 37,
+        "hinges": 36,
+        "englishDouayScriptureWords": 28815
+      },
+      "dependencyGroups": [
+        "SCRIPTURE_DECISIONS_EDITORIALLY_SIGNED",
+        "EDITORIAL_EN_COPY_APPROVED"
+      ],
+      "decisionRequired": "Conduct and record uninterrupted Creation-to-New-Creation English source-faithful reading (and corresponding approved French reading), highlighting transitions, source attribution, repetitions, omissions and pacing. Existing desk audit is NOT that acceptance.",
+      "acceptanceEvidence": [
+        "Recorded pass/hold and detailed note for each of 37 movements and 36 boundaries",
+        "Versions of manuscript and source witness frozen by SHA",
+        "Independent human reader review; not machine-estimated minutes"
+      ],
+      "currentState": "WAITING_ON_FROZEN_EDITORIAL_READING",
+      "approval": {
+        "oralEnglish": false,
+        "oralFrench": false,
+        "publication": false
+      }
+    },
+    {
+      "id": "HS-W-RELEASE-01",
+      "kind": "INTEGRATION_GATE",
+      "priority": "P0",
+      "ownerRole": "Ad Orientem repository integration maintainer (unassigned)",
+      "sourceUnitScope": {
+        "primaryBranch": "research/historia-p3-esther-span-20261017",
+        "existingAtlasEvents": 151,
+        "unapprovedP3SourceUnits": 93
+      },
+      "dependencyGroups": [
+        "SOURCE_EDITION_AND_RIGHTS_CERTIFIED",
+        "THEOLOGICAL_SIGNOFF",
+        "ORAL_ACCEPTANCE_EN_AND_FR",
+        "READER_UX_PARITY_ACCEPTED"
+      ],
+      "decisionRequired": "Integrate only a reviewer-approved, hash-frozen P3 slice with targeted diffs and regenerated per-edition manuscripts; never merge research PR #1345 wholesale to achieve publication.",
+      "acceptanceEvidence": [
+        "Scripture, required main, mobile, Atlas and app convergence pass on final exact SHA",
+        "App reader preserves existing Mass and Bible Atlas architecture",
+        "All public claims cite explicitly signed acceptance and source provenance",
+        "No new unsupported Atlas event, scene, speaker or geolocation"
+      ],
+      "currentState": "BLOCKED_DO_NOT_MERGE_WHOLE_RESEARCH_BRANCH",
+      "approval": {
+        "merge": false,
+        "publication": false
+      }
+    }
+  ],
+  "existingEditorialContextOwners": [
+    {
+      "id": "H05-02",
+      "movementId": "HS-M03"
+    },
+    {
+      "id": "H09-02",
+      "movementId": "HS-M03"
+    },
+    {
+      "id": "H14-02",
+      "movementId": "HS-M05"
+    },
+    {
+      "id": "H14-03",
+      "movementId": "HS-M05"
+    },
+    {
+      "id": "H17-02",
+      "movementId": "HS-M07"
+    },
+    {
+      "id": "H19-03",
+      "movementId": "HS-M08"
+    },
+    {
+      "id": "H21-02",
+      "movementId": "HS-M09"
+    },
+    {
+      "id": "H21-04",
+      "movementId": "HS-M09"
+    },
+    {
+      "id": "H23-02",
+      "movementId": "HS-M10"
+    },
+    {
+      "id": "H24-02",
+      "movementId": "HS-M11"
+    },
+    {
+      "id": "H28-01",
+      "movementId": "HS-M12"
+    },
+    {
+      "id": "H29-02",
+      "movementId": "HS-M12"
+    },
+    {
+      "id": "H31-04",
+      "movementId": "HS-M13"
+    },
+    {
+      "id": "H34-01",
+      "movementId": "HS-M14"
+    },
+    {
+      "id": "H35-04",
+      "movementId": "HS-M14"
+    },
+    {
+      "id": "H37-02",
+      "movementId": "HS-M15"
+    },
+    {
+      "id": "H43-03",
+      "movementId": "HS-M17"
+    },
+    {
+      "id": "H44-01",
+      "movementId": "HS-M17"
+    },
+    {
+      "id": "H44-03",
+      "movementId": "HS-M17"
+    },
+    {
+      "id": "H47-01",
+      "movementId": "HS-M19"
+    },
+    {
+      "id": "H49-01",
+      "movementId": "HS-M19"
+    },
+    {
+      "id": "H49-03",
+      "movementId": "HS-M19"
+    },
+    {
+      "id": "H51-02",
+      "movementId": "HS-M20"
+    },
+    {
+      "id": "H54-02",
+      "movementId": "HS-M21"
+    },
+    {
+      "id": "H56-01",
+      "movementId": "HS-M22"
+    },
+    {
+      "id": "H63-04",
+      "movementId": "HS-M27"
+    },
+    {
+      "id": "H65-03",
+      "movementId": "HS-M29"
+    },
+    {
+      "id": "H75-01",
+      "movementId": "HS-M35"
+    },
+    {
+      "id": "H76-03",
+      "movementId": "HS-M36"
+    }
+  ],
+  "existingEditorConnectorOwners": [
+    {
+      "id": "HS-P3-EC-11",
+      "parentBeatId": "H10-01",
+      "movementId": "HS-M04"
+    },
+    {
+      "id": "HS-P3-EC-02",
+      "parentBeatId": "HS-CF-03",
+      "movementId": "HS-M06"
+    },
+    {
+      "id": "HS-P3-EC-03",
+      "parentBeatId": "H28-04",
+      "movementId": "HS-M12"
+    },
+    {
+      "id": "HS-P3-EC-01",
+      "parentBeatId": "H29-04",
+      "movementId": "HS-M12"
+    },
+    {
+      "id": "HS-P3-EC-04",
+      "parentBeatId": "H30-01",
+      "movementId": "HS-M13"
+    },
+    {
+      "id": "HS-P3-EC-05",
+      "parentBeatId": "H35-02",
+      "movementId": "HS-M14"
+    },
+    {
+      "id": "HS-P3-EC-08",
+      "parentBeatId": "H46-01",
+      "movementId": "HS-M18"
+    },
+    {
+      "id": "HS-P3-EC-12",
+      "parentBeatId": "H51-01",
+      "movementId": "HS-M20"
+    },
+    {
+      "id": "HS-P3-EC-09",
+      "parentBeatId": "H52-01",
+      "movementId": "HS-M20"
+    },
+    {
+      "id": "HS-P3-EC-06",
+      "parentBeatId": "HS-CF-08",
+      "movementId": "HS-M31"
+    },
+    {
+      "id": "HS-P3-EC-10",
+      "parentBeatId": "H72-01",
+      "movementId": "HS-M33"
+    },
+    {
+      "id": "HS-P3-EC-07",
+      "parentBeatId": "HS-CF-11",
+      "movementId": "HS-M34"
+    }
+  ],
+  "allThirtySixHingeAuditMap": [
+    {
+      "id": "HS-HINGE-01",
+      "from": "HS-M01",
+      "to": "HS-M02",
+      "priority": "P2",
+      "assignedWorkIds": [],
+      "triageStatus": "DESK_TRIAGED_NOT_APPROVED",
+      "sourceAuditClosed": true
+    },
+    {
+      "id": "HS-HINGE-02",
+      "from": "HS-M02",
+      "to": "HS-M03",
+      "priority": "P0",
+      "assignedWorkIds": [
+        "HS-W-SRC-HS-CF-01",
+        "HS-W-UI-03"
+      ],
+      "triageStatus": "DESK_TRIAGED_NOT_APPROVED",
+      "sourceAuditClosed": true
+    },
+    {
+      "id": "HS-HINGE-03",
+      "from": "HS-M03",
+      "to": "HS-M04",
+      "priority": "P1",
+      "assignedWorkIds": [
+        "HS-W-SRC-HS-CF-02",
+        "HS-W-UI-02"
+      ],
+      "triageStatus": "DESK_TRIAGED_NOT_APPROVED",
+      "sourceAuditClosed": true
+    },
+    {
+      "id": "HS-HINGE-04",
+      "from": "HS-M04",
+      "to": "HS-M05",
+      "priority": "P2",
+      "assignedWorkIds": [],
+      "triageStatus": "DESK_TRIAGED_NOT_APPROVED",
+      "sourceAuditClosed": true
+    },
+    {
+      "id": "HS-HINGE-05",
+      "from": "HS-M05",
+      "to": "HS-M06",
+      "priority": "P1",
+      "assignedWorkIds": [
+        "HS-W-UI-06"
+      ],
+      "triageStatus": "DESK_TRIAGED_NOT_APPROVED",
+      "sourceAuditClosed": true
+    },
+    {
+      "id": "HS-HINGE-06",
+      "from": "HS-M06",
+      "to": "HS-M07",
+      "priority": "P1",
+      "assignedWorkIds": [
+        "HS-W-UI-02"
+      ],
+      "triageStatus": "DESK_TRIAGED_NOT_APPROVED",
+      "sourceAuditClosed": true
+    },
+    {
+      "id": "HS-HINGE-07",
+      "from": "HS-M07",
+      "to": "HS-M08",
+      "priority": "P1",
+      "assignedWorkIds": [
+        "HS-W-SRC-EXODUS-5-FIRST-REFUSAL",
+        "HS-W-UI-03"
+      ],
+      "triageStatus": "DESK_TRIAGED_NOT_APPROVED",
+      "sourceAuditClosed": true
+    },
+    {
+      "id": "HS-HINGE-08",
+      "from": "HS-M08",
+      "to": "HS-M09",
+      "priority": "P0",
+      "assignedWorkIds": [
+        "HS-W-SRC-EXODUS-12-FIRSTBORN",
+        "HS-W-UI-03"
+      ],
+      "triageStatus": "DESK_TRIAGED_NOT_APPROVED",
+      "sourceAuditClosed": true
+    },
+    {
+      "id": "HS-HINGE-09",
+      "from": "HS-M09",
+      "to": "HS-M10",
+      "priority": "P2",
+      "assignedWorkIds": [
+        "HS-W-UI-06"
+      ],
+      "triageStatus": "DESK_TRIAGED_NOT_APPROVED",
+      "sourceAuditClosed": true
+    },
+    {
+      "id": "HS-HINGE-10",
+      "from": "HS-M10",
+      "to": "HS-M11",
+      "priority": "P1",
+      "assignedWorkIds": [
+        "HS-W-UI-02"
+      ],
+      "triageStatus": "DESK_TRIAGED_NOT_APPROVED",
+      "sourceAuditClosed": true
+    },
+    {
+      "id": "HS-HINGE-11",
+      "from": "HS-M11",
+      "to": "HS-M12",
+      "priority": "P2",
+      "assignedWorkIds": [
+        "HS-W-UI-07"
+      ],
+      "triageStatus": "DESK_TRIAGED_NOT_APPROVED",
+      "sourceAuditClosed": true
+    },
+    {
+      "id": "HS-HINGE-12",
+      "from": "HS-M12",
+      "to": "HS-M13",
+      "priority": "P1",
+      "assignedWorkIds": [],
+      "triageStatus": "DESK_TRIAGED_NOT_APPROVED",
+      "sourceAuditClosed": true
+    },
+    {
+      "id": "HS-HINGE-13",
+      "from": "HS-M13",
+      "to": "HS-M14",
+      "priority": "P1",
+      "assignedWorkIds": [],
+      "triageStatus": "DESK_TRIAGED_NOT_APPROVED",
+      "sourceAuditClosed": true
+    },
+    {
+      "id": "HS-HINGE-14",
+      "from": "HS-M14",
+      "to": "HS-M15",
+      "priority": "P1",
+      "assignedWorkIds": [
+        "HS-W-UI-06"
+      ],
+      "triageStatus": "DESK_TRIAGED_NOT_APPROVED",
+      "sourceAuditClosed": true
+    },
+    {
+      "id": "HS-HINGE-15",
+      "from": "HS-M15",
+      "to": "HS-M16",
+      "priority": "P1",
+      "assignedWorkIds": [
+        "HS-W-UI-06"
+      ],
+      "triageStatus": "DESK_TRIAGED_NOT_APPROVED",
+      "sourceAuditClosed": true
+    },
+    {
+      "id": "HS-HINGE-16",
+      "from": "HS-M16",
+      "to": "HS-M17",
+      "priority": "P2",
+      "assignedWorkIds": [
+        "HS-W-UI-07"
+      ],
+      "triageStatus": "DESK_TRIAGED_NOT_APPROVED",
+      "sourceAuditClosed": true
+    },
+    {
+      "id": "HS-HINGE-17",
+      "from": "HS-M17",
+      "to": "HS-M18",
+      "priority": "P1",
+      "assignedWorkIds": [
+        "HS-W-UI-02"
+      ],
+      "triageStatus": "DESK_TRIAGED_NOT_APPROVED",
+      "sourceAuditClosed": true
+    },
+    {
+      "id": "HS-HINGE-18",
+      "from": "HS-M18",
+      "to": "HS-M19",
+      "priority": "P1",
+      "assignedWorkIds": [
+        "HS-W-UI-01"
+      ],
+      "triageStatus": "DESK_TRIAGED_NOT_APPROVED",
+      "sourceAuditClosed": true
+    },
+    {
+      "id": "HS-HINGE-19",
+      "from": "HS-M19",
+      "to": "HS-M20",
+      "priority": "P1",
+      "assignedWorkIds": [
+        "HS-W-SRC-HS-P3-CF-17",
+        "HS-W-UI-02"
+      ],
+      "triageStatus": "DESK_TRIAGED_NOT_APPROVED",
+      "sourceAuditClosed": true
+    },
+    {
+      "id": "HS-HINGE-20",
+      "from": "HS-M20",
+      "to": "HS-M21",
+      "priority": "P2",
+      "assignedWorkIds": [
+        "HS-W-UI-01"
+      ],
+      "triageStatus": "DESK_TRIAGED_NOT_APPROVED",
+      "sourceAuditClosed": true
+    },
+    {
+      "id": "HS-HINGE-21",
+      "from": "HS-M21",
+      "to": "HS-M22",
+      "priority": "P1",
+      "assignedWorkIds": [
+        "HS-W-UI-01"
+      ],
+      "triageStatus": "DESK_TRIAGED_NOT_APPROVED",
+      "sourceAuditClosed": true
+    },
+    {
+      "id": "HS-HINGE-22",
+      "from": "HS-M22",
+      "to": "HS-M23",
+      "priority": "P2",
+      "assignedWorkIds": [
+        "HS-W-UI-01"
+      ],
+      "triageStatus": "DESK_TRIAGED_NOT_APPROVED",
+      "sourceAuditClosed": true
+    },
+    {
+      "id": "HS-HINGE-23",
+      "from": "HS-M23",
+      "to": "HS-M24",
+      "priority": "P2",
+      "assignedWorkIds": [
+        "HS-W-UI-01"
+      ],
+      "triageStatus": "DESK_TRIAGED_NOT_APPROVED",
+      "sourceAuditClosed": true
+    },
+    {
+      "id": "HS-HINGE-24",
+      "from": "HS-M24",
+      "to": "HS-M25",
+      "priority": "P1",
+      "assignedWorkIds": [
+        "HS-W-SRC-HS-CF-05",
+        "HS-W-UI-03"
+      ],
+      "triageStatus": "DESK_TRIAGED_NOT_APPROVED",
+      "sourceAuditClosed": true
+    },
+    {
+      "id": "HS-HINGE-25",
+      "from": "HS-M25",
+      "to": "HS-M26",
+      "priority": "P1",
+      "assignedWorkIds": [
+        "HS-W-UI-02"
+      ],
+      "triageStatus": "DESK_TRIAGED_NOT_APPROVED",
+      "sourceAuditClosed": true
+    },
+    {
+      "id": "HS-HINGE-26",
+      "from": "HS-M26",
+      "to": "HS-M27",
+      "priority": "P1",
+      "assignedWorkIds": [
+        "HS-W-SRC-HS-CF-09",
+        "HS-W-UI-01"
+      ],
+      "triageStatus": "DESK_TRIAGED_NOT_APPROVED",
+      "sourceAuditClosed": true
+    },
+    {
+      "id": "HS-HINGE-27",
+      "from": "HS-M27",
+      "to": "HS-M28",
+      "priority": "P1",
+      "assignedWorkIds": [
+        "HS-W-SRC-MATTHEW-27-JUDAS",
+        "HS-W-UI-01"
+      ],
+      "triageStatus": "DESK_TRIAGED_NOT_APPROVED",
+      "sourceAuditClosed": true
+    },
+    {
+      "id": "HS-HINGE-28",
+      "from": "HS-M28",
+      "to": "HS-M29",
+      "priority": "P0",
+      "assignedWorkIds": [
+        "HS-W-SRC-HS-CF-06",
+        "HS-W-SRC-JOHN-19-PIERCED-SIDE",
+        "HS-W-UI-03"
+      ],
+      "triageStatus": "DESK_TRIAGED_NOT_APPROVED",
+      "sourceAuditClosed": true
+    },
+    {
+      "id": "HS-HINGE-29",
+      "from": "HS-M29",
+      "to": "HS-M30",
+      "priority": "P1",
+      "assignedWorkIds": [
+        "HS-W-SRC-HS-CF-07",
+        "HS-W-UI-03"
+      ],
+      "triageStatus": "DESK_TRIAGED_NOT_APPROVED",
+      "sourceAuditClosed": true
+    },
+    {
+      "id": "HS-HINGE-30",
+      "from": "HS-M30",
+      "to": "HS-M31",
+      "priority": "P2",
+      "assignedWorkIds": [
+        "HS-W-UI-07"
+      ],
+      "triageStatus": "DESK_TRIAGED_NOT_APPROVED",
+      "sourceAuditClosed": true
+    },
+    {
+      "id": "HS-HINGE-31",
+      "from": "HS-M31",
+      "to": "HS-M32",
+      "priority": "P1",
+      "assignedWorkIds": [
+        "HS-W-SRC-HS-CF-08",
+        "HS-W-UI-06"
+      ],
+      "triageStatus": "DESK_TRIAGED_NOT_APPROVED",
+      "sourceAuditClosed": true
+    },
+    {
+      "id": "HS-HINGE-32",
+      "from": "HS-M32",
+      "to": "HS-M33",
+      "priority": "P2",
+      "assignedWorkIds": [
+        "HS-W-UI-07"
+      ],
+      "triageStatus": "DESK_TRIAGED_NOT_APPROVED",
+      "sourceAuditClosed": true
+    },
+    {
+      "id": "HS-HINGE-33",
+      "from": "HS-M33",
+      "to": "HS-M34",
+      "priority": "P0",
+      "assignedWorkIds": [
+        "HS-W-SRC-HS-CF-11",
+        "HS-W-SRC-HS-P3-CF-13",
+        "HS-W-SRC-HS-P3-CF-12",
+        "HS-W-SRC-HS-CF-10",
+        "HS-W-UI-02",
+        "HS-W-UI-03"
+      ],
+      "triageStatus": "DESK_TRIAGED_NOT_APPROVED",
+      "sourceAuditClosed": true
+    },
+    {
+      "id": "HS-HINGE-34",
+      "from": "HS-M34",
+      "to": "HS-M35",
+      "priority": "P0",
+      "assignedWorkIds": [
+        "HS-W-SRC-HS-P3-CF-14",
+        "HS-W-UI-04"
+      ],
+      "triageStatus": "DESK_TRIAGED_NOT_APPROVED",
+      "sourceAuditClosed": true
+    },
+    {
+      "id": "HS-HINGE-35",
+      "from": "HS-M35",
+      "to": "HS-M36",
+      "priority": "P1",
+      "assignedWorkIds": [
+        "HS-W-UI-04"
+      ],
+      "triageStatus": "DESK_TRIAGED_NOT_APPROVED",
+      "sourceAuditClosed": true
+    },
+    {
+      "id": "HS-HINGE-36",
+      "from": "HS-M36",
+      "to": "HS-M37",
+      "priority": "P2",
+      "assignedWorkIds": [
+        "HS-W-SRC-HS-P3-CF-15",
+        "HS-W-SRC-HS-P3-CF-16",
+        "HS-W-UI-04",
+        "HS-W-UI-05"
+      ],
+      "triageStatus": "DESK_TRIAGED_NOT_APPROVED",
+      "sourceAuditClosed": true
+    }
+  ],
+  "releaseGates": [
+    {
+      "id": "HS-GATE-01",
+      "label": "Scope frozen and source witness collection recorded",
+      "status": "RESEARCH_BASELINE_ONLY",
+      "checks": [
+        "93 original P3 source units unchanged",
+        "37 continuous movements unchanged",
+        "151 Atlas events untouched",
+        "Three imported witness sets marked uncollated"
+      ]
+    },
+    {
+      "id": "HS-GATE-02",
+      "label": "Each candidate Scripture verse selection decided",
+      "status": "NOT_PASSED",
+      "checks": [
+        "20 candidate decisions independently marked include/hold/omit by human editor",
+        "The exact source reference and three witnesses preserved",
+        "P0 source gaps treated before lower-priority choices"
+      ]
+    },
+    {
+      "id": "HS-GATE-03",
+      "label": "Source editions and distribution rights certified",
+      "status": "NOT_PASSED",
+      "checks": [
+        "Printed Catholic edition collation signed",
+        "Meaningful edition-numbering and Revelation 22:19 variation handled",
+        "Legal reuse basis for all target outputs documented"
+      ]
+    },
+    {
+      "id": "HS-GATE-04",
+      "label": "41 editor-owned contexts/connectors and French copy signed",
+      "status": "NOT_PASSED",
+      "checks": [
+        "29 labelled context pieces independently attested",
+        "12 proposed connectors accepted/rewritten/rejected",
+        "French editorial text independently translated and compared"
+      ]
+    },
+    {
+      "id": "HS-GATE-05",
+      "label": "Human literary and theological reading accepted",
+      "status": "NOT_PASSED",
+      "checks": [
+        "37-movement/36-boundary uninterrupted read-through accepted per edition",
+        "Catholic theological objections resolved",
+        "No art, typology or map content masquerades as historical Bible Scripture"
+      ]
+    },
+    {
+      "id": "HS-GATE-06",
+      "label": "Reader presentation parity verified",
+      "status": "NOT_PASSED",
+      "checks": [
+        "Gospel and literary genre switches visible",
+        "Source omissions and optional trials visibly distinct",
+        "Biblical Atlas unchanged and no second reader"
+      ]
+    },
+    {
+      "id": "HS-GATE-07",
+      "label": "Exact approved slice integrated and regression-gated",
+      "status": "NOT_PASSED",
+      "checks": [
+        "Regenerate every output from frozen P3 proof SHA",
+        "All GitHub Scripture/main/mobile/Atlas/convergence checks pass on final slice",
+        "Merge only accepted release slice, never wholesale draft"
+      ]
+    }
+  ],
+  "antiRedundancy": {
+    "parallelP4HistoricalOptionalVerses": 69,
+    "alreadyInP3SelectedSource": 33,
+    "alreadyHeld": 28,
+    "existingUnapprovedJudasComparison": 8,
+    "unaccountedHistoricalP4Options": 0,
+    "disallowedActions": [
+      "Creating a new Calendar or Bible Atlas",
+      "Writing invented abridged direct biblical speech",
+      "Repeating 37-movement desk census as source review",
+      "Duplicating existing 29 editorial context notes or 12 connectors",
+      "Mass-merging P4 research with newer P3 proof"
+    ]
+  },
+  "nextExecutableBatch": [
+    "Preflight 5 critical seam insertion scenarios in the existing P3 reader/worklist: 4 core original-source groups and one no-new-verse apocalyptic genre boundary, without promoting held passages.",
+    "Preserve distinct witness roles for John 19:31–37 and 19:38–42; keep editorial suppression conditional, especially the Acts 28 appeal already covered by original Scripture.",
+    "Keep 93 canonical Scripture units, 37 movements, 151 Atlas events, and all seven release gates unchanged; move next to side-by-side reader behavior, French edition alignment and failure/omission disclosures."
+  ],
+  "editorialDeskDispositionResearch": {
+    "schema": "ao.historia.p3.editorial-owner-desk-disposition.v1",
+    "date": "2026-10-23",
+    "status": "ALL_41_DESK_TRIAGED_RESEARCH_ONLY_NO_COPY_ACCEPTED",
+    "scope": "Existing original P3 29 editorial contexts and 12 attached connectors, not source selection or human review",
+    "sourceProof": "data/research/historia-salutis-v18-continuous-reading-proof.v1.json",
+    "allOwners": 41,
+    "researched": 41,
+    "contextOwners": 29,
+    "connectorOwners": 12,
+    "accepted": 0,
+    "sourceUnitCountUnchanged": 93,
+    "movementCountUnchanged": 37,
+    "atlasEventCountUnchanged": 151,
+    "provisionalDispositionCounts": {
+      "RETAIN_CONTEXT": 26,
+      "TRIM_PROSE": 10,
+      "CONDITIONAL_TRIM": 3,
+      "CONDITIONAL_SUPPRESS": 2
+    },
+    "dispositions": [
+      {
+        "id": "H05-02",
+        "kind": "EXISTING_EDITORIAL_CONTEXT",
+        "movementId": "HS-M03",
+        "sourceBeatId": "H05-02",
+        "sourceCandidateField": "editorialReadingCandidate",
+        "disposition": "RETAIN_CONTEXT",
+        "researchRationale": "Seth-to-Noah genealogy is needed between Genesis 3 and the Ark; current candidate is compact, visibly editorial, and supplies an otherwise absent generational link.",
+        "trialReplacementCopy": null,
+        "sourceHandlingNote": "Keep native Genesis 5 end-verse mapping: English witnesses 5:28–31, Crampon 5:28–32.",
+        "relatedSourceDecisionId": null,
+        "sourceReferences": [
+          "Genesis 4:25–26",
+          "Genesis 5:28–32"
+        ],
+        "editionAwareReferences": {
+          "dr-challoner": [
+            "Genesis 4:25–26",
+            "Genesis 5:28–31"
+          ],
+          "cpdv-2009": [
+            "Genesis 4:25–26",
+            "Genesis 5:28–31"
+          ],
+          "crampon-1923": [
+            "Genesis 4:25–26",
+            "Genesis 5:28–32"
+          ]
+        },
+        "currentCandidateTextUnchanged": true,
+        "originalScriptureUnchanged": true,
+        "selectedForPublication": false,
+        "editorialAccepted": false,
+        "oralAccepted": false,
+        "printedEditionCollated": false,
+        "theologicallyApproved": false,
+        "status": "PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED"
+      },
+      {
+        "id": "H09-02",
+        "kind": "EXISTING_EDITORIAL_CONTEXT",
+        "movementId": "HS-M03",
+        "sourceBeatId": "H09-02",
+        "sourceCandidateField": "editorialReadingCandidate",
+        "disposition": "RETAIN_CONTEXT",
+        "researchRationale": "The dispersion and Babel are not told in selected Genesis 9; this two-sentence transition explains the movement from Noah to the nations and Abram.",
+        "trialReplacementCopy": null,
+        "sourceHandlingNote": "Do not expand this into a second continuous Genesis reading.",
+        "relatedSourceDecisionId": null,
+        "sourceReferences": [
+          "Genesis 10:1–32",
+          "Genesis 11:1–9"
+        ],
+        "editionAwareReferences": null,
+        "currentCandidateTextUnchanged": true,
+        "originalScriptureUnchanged": true,
+        "selectedForPublication": false,
+        "editorialAccepted": false,
+        "oralAccepted": false,
+        "printedEditionCollated": false,
+        "theologicallyApproved": false,
+        "status": "PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED"
+      },
+      {
+        "id": "H14-02",
+        "kind": "EXISTING_EDITORIAL_CONTEXT",
+        "movementId": "HS-M05",
+        "sourceBeatId": "H14-02",
+        "sourceCandidateField": "editorialReadingCandidate",
+        "disposition": "TRIM_PROSE",
+        "researchRationale": "The present 'would inherit the promises' anticipates later developments and risks treating the election as a completed event before the blessing scene.",
+        "trialReplacementCopy": "Isaac and Rebecca had twin sons, Esau and Jacob, whose rivalry divided the family.",
+        "sourceHandlingNote": "Do not confuse Genesis 25 birthright, divine oracle, and Genesis 27 paternal blessing.",
+        "relatedSourceDecisionId": null,
+        "sourceReferences": [
+          "Genesis 25:19–26",
+          "Genesis 25:29–34"
+        ],
+        "editionAwareReferences": null,
+        "currentCandidateTextUnchanged": true,
+        "originalScriptureUnchanged": true,
+        "selectedForPublication": false,
+        "editorialAccepted": false,
+        "oralAccepted": false,
+        "printedEditionCollated": false,
+        "theologicallyApproved": false,
+        "status": "PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED",
+        "readthroughSourceComparison": {
+          "status": "THREE_WITNESS_SOURCE_REFERENCES_DESK_COMPARED_NOT_ACCEPTED",
+          "sourceEvidenceReferences": [
+            "Genesis 25:22–26",
+            "Genesis 25:29–34"
+          ],
+          "sourceEvidenceFinding": "The oracle speaks of two peoples and the older serving the younger; the selected next scene follows their later dispute. Do not present Jacob's blessing as already completed.",
+          "specificRisk": "PROPHETIC_ANTICIPATION",
+          "scenarioPolicy": "SHORTEN_IN_BOTH_SCENARIOS",
+          "withoutNewSource": {
+            "rendering": "USE_SHORTENED_OR_HELD_COPY",
+            "copy": "Isaac and Rebecca had twin sons, Esau and Jacob, whose rivalry divided the family."
+          },
+          "withPairedOriginalSource": null,
+          "originalSourceTextNotCopiedIntoEditorialLedger": true,
+          "sourceEditoriallySelected": false,
+          "changeAppliedToMainManuscript": false,
+          "manualOralLiteraryApproval": false
+        }
+      },
+      {
+        "id": "H14-03",
+        "kind": "EXISTING_EDITORIAL_CONTEXT",
+        "movementId": "HS-M05",
+        "sourceBeatId": "H14-03",
+        "sourceCandidateField": "editorialReadingCandidate",
+        "disposition": "RETAIN_CONTEXT",
+        "researchRationale": "Jacob receiving the blessing is a causally essential omitted event before his later encounter in Genesis 32. The draft does not reproduce Isaac's or Esau's biblical dialogue.",
+        "trialReplacementCopy": null,
+        "sourceHandlingNote": "Keep the distinction between blessing and the subsequent renaming of Jacob.",
+        "relatedSourceDecisionId": null,
+        "sourceReferences": [
+          "Genesis 27:18–29",
+          "Genesis 27:34–40"
+        ],
+        "editionAwareReferences": null,
+        "currentCandidateTextUnchanged": true,
+        "originalScriptureUnchanged": true,
+        "selectedForPublication": false,
+        "editorialAccepted": false,
+        "oralAccepted": false,
+        "printedEditionCollated": false,
+        "theologicallyApproved": false,
+        "status": "PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED"
+      },
+      {
+        "id": "H17-02",
+        "kind": "EXISTING_EDITORIAL_CONTEXT",
+        "movementId": "HS-M07",
+        "sourceBeatId": "H17-02",
+        "sourceCandidateField": "editorialReadingCandidate",
+        "disposition": "RETAIN_CONTEXT",
+        "researchRationale": "The rescue of Moses, his flight and Israel's cry are necessary antecedents of the Burning Bush in the next selected Exodus 3 passages.",
+        "trialReplacementCopy": null,
+        "sourceHandlingNote": "Retain source attribution to Exodus 2; check no implication that his flight immediately followed childhood.",
+        "relatedSourceDecisionId": null,
+        "sourceReferences": [
+          "Exodus 2:1–22",
+          "Exodus 2:23–25"
+        ],
+        "editionAwareReferences": null,
+        "currentCandidateTextUnchanged": true,
+        "originalScriptureUnchanged": true,
+        "selectedForPublication": false,
+        "editorialAccepted": false,
+        "oralAccepted": false,
+        "printedEditionCollated": false,
+        "theologicallyApproved": false,
+        "status": "PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED"
+      },
+      {
+        "id": "H19-03",
+        "kind": "EXISTING_EDITORIAL_CONTEXT",
+        "movementId": "HS-M08",
+        "sourceBeatId": "H19-03",
+        "sourceCandidateField": "editorialReadingCandidate",
+        "disposition": "TRIM_PROSE",
+        "researchRationale": "The first signs in selected Exodus 7 and the next selected judgment oracle in Exodus 11 make a second generalized warning repetitive; the repeated refusal remains useful.",
+        "trialReplacementCopy": "Despite the signs against Egypt, Pharaoh still refused to release Israel.",
+        "sourceHandlingNote": "Compare Exodus 5:1–2 trial as an earlier separate refusal, not a substitute for the later refusals.",
+        "relatedSourceDecisionId": "HS-W-SRC-EXODUS-5-FIRST-REFUSAL",
+        "sourceReferences": [
+          "Exodus 9:13–16",
+          "Exodus 10:27–29"
+        ],
+        "editionAwareReferences": null,
+        "currentCandidateTextUnchanged": true,
+        "originalScriptureUnchanged": true,
+        "selectedForPublication": false,
+        "editorialAccepted": false,
+        "oralAccepted": false,
+        "printedEditionCollated": false,
+        "theologicallyApproved": false,
+        "status": "PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED",
+        "readthroughSourceComparison": {
+          "status": "THREE_WITNESS_SOURCE_REFERENCES_DESK_COMPARED_NOT_ACCEPTED",
+          "sourceEvidenceReferences": [
+            "Exodus 5:1–2",
+            "Exodus 7:14–16",
+            "Exodus 10:27–29"
+          ],
+          "sourceEvidenceFinding": "Exodus 5 is a first refusal and Exodus 7 already records continued refusal. The late-plague handoff must retain that Pharaoh persisted without repeating a second judgment oracle.",
+          "specificRisk": "REPEATED_REFUSAL",
+          "scenarioPolicy": "SHORTEN_IN_BOTH_SCENARIOS",
+          "withoutNewSource": {
+            "rendering": "USE_SHORTENED_OR_HELD_COPY",
+            "copy": "Despite the signs against Egypt, Pharaoh still refused to release Israel."
+          },
+          "withPairedOriginalSource": null,
+          "originalSourceTextNotCopiedIntoEditorialLedger": true,
+          "sourceEditoriallySelected": false,
+          "changeAppliedToMainManuscript": false,
+          "manualOralLiteraryApproval": false
+        }
+      },
+      {
+        "id": "H21-02",
+        "kind": "EXISTING_EDITORIAL_CONTEXT",
+        "movementId": "HS-M09",
+        "sourceBeatId": "H21-02",
+        "sourceCandidateField": "editorialReadingCandidate",
+        "disposition": "RETAIN_CONTEXT",
+        "researchRationale": "Pillars of cloud and fire are introduced in Exodus 13 and supply guidance between the departure and the Sea; the later cloud in Exodus 14 is not the entire antecedent.",
+        "trialReplacementCopy": null,
+        "sourceHandlingNote": "Avoid promoting the pillar to a geographic event with an invented route.",
+        "relatedSourceDecisionId": null,
+        "sourceReferences": [
+          "Exodus 13:17–22"
+        ],
+        "editionAwareReferences": null,
+        "currentCandidateTextUnchanged": true,
+        "originalScriptureUnchanged": true,
+        "selectedForPublication": false,
+        "editorialAccepted": false,
+        "oralAccepted": false,
+        "printedEditionCollated": false,
+        "theologicallyApproved": false,
+        "status": "PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED"
+      },
+      {
+        "id": "H21-04",
+        "kind": "EXISTING_EDITORIAL_CONTEXT",
+        "movementId": "HS-M09",
+        "sourceBeatId": "H21-04",
+        "sourceCandidateField": "editorialReadingCandidate",
+        "disposition": "RETAIN_CONTEXT",
+        "researchRationale": "The manna event records material wilderness provision absent from selected Exodus 14 and is distinct from the separate typological commentary on the Bread of Life.",
+        "trialReplacementCopy": null,
+        "sourceHandlingNote": "Do not add Eucharistic interpretation inside chronological narration.",
+        "relatedSourceDecisionId": null,
+        "sourceReferences": [
+          "Exodus 16:2–4",
+          "Exodus 16:12–15"
+        ],
+        "editionAwareReferences": null,
+        "currentCandidateTextUnchanged": true,
+        "originalScriptureUnchanged": true,
+        "selectedForPublication": false,
+        "editorialAccepted": false,
+        "oralAccepted": false,
+        "printedEditionCollated": false,
+        "theologicallyApproved": false,
+        "status": "PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED"
+      },
+      {
+        "id": "H23-02",
+        "kind": "EXISTING_EDITORIAL_CONTEXT",
+        "movementId": "HS-M10",
+        "sourceBeatId": "H23-02",
+        "sourceCandidateField": "editorialReadingCandidate",
+        "disposition": "RETAIN_CONTEXT",
+        "researchRationale": "The Tabernacle and cloud convey the outcome of the Sinai sequence; the candidate's short historical summary is not redundant with the selected Golden Calf episode.",
+        "trialReplacementCopy": null,
+        "sourceHandlingNote": "Mandatory edition-aware cloud verses: Douay/CPDV Exodus 40:32–36 versus Crampon 40:34–38.",
+        "relatedSourceDecisionId": null,
+        "sourceReferences": [
+          "Exodus 40:16–21",
+          "Exodus 40:34–38"
+        ],
+        "editionAwareReferences": {
+          "dr-challoner": [
+            "Exodus 40:16–21",
+            "Exodus 40:32–36"
+          ],
+          "cpdv-2009": [
+            "Exodus 40:16–21",
+            "Exodus 40:32–36"
+          ],
+          "crampon-1923": [
+            "Exodus 40:16–21",
+            "Exodus 40:34–38"
+          ]
+        },
+        "currentCandidateTextUnchanged": true,
+        "originalScriptureUnchanged": true,
+        "selectedForPublication": false,
+        "editorialAccepted": false,
+        "oralAccepted": false,
+        "printedEditionCollated": false,
+        "theologicallyApproved": false,
+        "status": "PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED"
+      },
+      {
+        "id": "H24-02",
+        "kind": "EXISTING_EDITORIAL_CONTEXT",
+        "movementId": "HS-M11",
+        "sourceBeatId": "H24-02",
+        "sourceCandidateField": "editorialReadingCandidate",
+        "disposition": "RETAIN_CONTEXT",
+        "researchRationale": "Joshua's commission fills an essential leadership antecedent before Moses' death and Joshua's actions, without duplicating the selected Deuteronomy 34 death scene.",
+        "trialReplacementCopy": null,
+        "sourceHandlingNote": "Do not state that Moses himself brought Israel across the Jordan.",
+        "relatedSourceDecisionId": null,
+        "sourceReferences": [
+          "Deuteronomy 31:1–8"
+        ],
+        "editionAwareReferences": null,
+        "currentCandidateTextUnchanged": true,
+        "originalScriptureUnchanged": true,
+        "selectedForPublication": false,
+        "editorialAccepted": false,
+        "oralAccepted": false,
+        "printedEditionCollated": false,
+        "theologicallyApproved": false,
+        "status": "PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED"
+      },
+      {
+        "id": "H28-01",
+        "kind": "EXISTING_EDITORIAL_CONTEXT",
+        "movementId": "HS-M12",
+        "sourceBeatId": "H28-01",
+        "sourceCandidateField": "editorialReadingCandidate",
+        "disposition": "RETAIN_CONTEXT",
+        "researchRationale": "Ruth's choice to accompany Naomi establishes the persons and Bethlehem before the selected Ruth 4 genealogy; absence would leave ancestry context without a story.",
+        "trialReplacementCopy": null,
+        "sourceHandlingNote": "Keep quotation of Ruth's profession in optional original Scripture, not fabricated direct speech.",
+        "relatedSourceDecisionId": null,
+        "sourceReferences": [
+          "Ruth 1:1–22"
+        ],
+        "editionAwareReferences": null,
+        "currentCandidateTextUnchanged": true,
+        "originalScriptureUnchanged": true,
+        "selectedForPublication": false,
+        "editorialAccepted": false,
+        "oralAccepted": false,
+        "printedEditionCollated": false,
+        "theologicallyApproved": false,
+        "status": "PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED"
+      },
+      {
+        "id": "H29-02",
+        "kind": "EXISTING_EDITORIAL_CONTEXT",
+        "movementId": "HS-M12",
+        "sourceBeatId": "H29-02",
+        "sourceCandidateField": "editorialReadingCandidate",
+        "disposition": "RETAIN_CONTEXT",
+        "researchRationale": "Samuel's prophetic call and recognition are otherwise absent before Israel asks for a king; the single candidate sentence is economical.",
+        "trialReplacementCopy": null,
+        "sourceHandlingNote": "Preserve transition across generations instead of implying Ruth directly witnessed Samuel.",
+        "relatedSourceDecisionId": null,
+        "sourceReferences": [
+          "1Samuel 3:1–21"
+        ],
+        "editionAwareReferences": null,
+        "currentCandidateTextUnchanged": true,
+        "originalScriptureUnchanged": true,
+        "selectedForPublication": false,
+        "editorialAccepted": false,
+        "oralAccepted": false,
+        "printedEditionCollated": false,
+        "theologicallyApproved": false,
+        "status": "PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED"
+      },
+      {
+        "id": "H31-04",
+        "kind": "EXISTING_EDITORIAL_CONTEXT",
+        "movementId": "HS-M13",
+        "sourceBeatId": "H31-04",
+        "sourceCandidateField": "editorialReadingCandidate",
+        "disposition": "RETAIN_CONTEXT",
+        "researchRationale": "The candidate already omits David's Hebron anointing, which the next selected 2 Samuel 2:1–4 narrates. Retaining only Saul's death avoids doubling the scene.",
+        "trialReplacementCopy": null,
+        "sourceHandlingNote": "Do not restore the earlier rejected Hebron sentence.",
+        "relatedSourceDecisionId": null,
+        "sourceReferences": [
+          "1Samuel 31:1–13"
+        ],
+        "editionAwareReferences": null,
+        "currentCandidateTextUnchanged": true,
+        "originalScriptureUnchanged": true,
+        "selectedForPublication": false,
+        "editorialAccepted": false,
+        "oralAccepted": false,
+        "printedEditionCollated": false,
+        "theologicallyApproved": false,
+        "status": "PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED"
+      },
+      {
+        "id": "H34-01",
+        "kind": "EXISTING_EDITORIAL_CONTEXT",
+        "movementId": "HS-M14",
+        "sourceBeatId": "H34-01",
+        "sourceCandidateField": "editorialReadingCandidate",
+        "disposition": "TRIM_PROSE",
+        "researchRationale": "The current generalized phrase 'sinned grievously in his dealings' obscures the two historically distinct injuries and is less exact than the cited narrative.",
+        "trialReplacementCopy": "David took Bathsheba, the wife of Uriah, and arranged Uriah's death in battle. When Nathan rebuked him, David confessed his sin.",
+        "sourceHandlingNote": "Verify references against 2 Samuel 11–12; do not narrate Nathan's parable as invented direct speech.",
+        "relatedSourceDecisionId": null,
+        "sourceReferences": [
+          "2Samuel 11:1–17",
+          "2Samuel 12:1–13"
+        ],
+        "editionAwareReferences": null,
+        "currentCandidateTextUnchanged": true,
+        "originalScriptureUnchanged": true,
+        "selectedForPublication": false,
+        "editorialAccepted": false,
+        "oralAccepted": false,
+        "printedEditionCollated": false,
+        "theologicallyApproved": false,
+        "status": "PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED",
+        "readthroughSourceComparison": {
+          "status": "THREE_WITNESS_SOURCE_REFERENCES_DESK_COMPARED_NOT_ACCEPTED",
+          "sourceEvidenceReferences": [
+            "2Samuel 11:3–5",
+            "2Samuel 11:14–17",
+            "2Samuel 12:7–13"
+          ],
+          "sourceEvidenceFinding": "The source attributes the taking of Bathsheba and arrangement of Uriah's death to David; avoid implying a shared culpability not established by these verses.",
+          "specificRisk": "MORAL_AGENCY_ATTRIBUTION",
+          "scenarioPolicy": "SHORTEN_IN_BOTH_SCENARIOS",
+          "withoutNewSource": {
+            "rendering": "USE_SHORTENED_OR_HELD_COPY",
+            "copy": "David took Bathsheba, the wife of Uriah, and arranged Uriah's death in battle. When Nathan rebuked him, David confessed his sin."
+          },
+          "withPairedOriginalSource": null,
+          "originalSourceTextNotCopiedIntoEditorialLedger": true,
+          "sourceEditoriallySelected": false,
+          "changeAppliedToMainManuscript": false,
+          "manualOralLiteraryApproval": false
+        }
+      },
+      {
+        "id": "H35-04",
+        "kind": "EXISTING_EDITORIAL_CONTEXT",
+        "movementId": "HS-M14",
+        "sourceBeatId": "H35-04",
+        "sourceCandidateField": "editorialReadingCandidate",
+        "disposition": "TRIM_PROSE",
+        "researchRationale": "The next selected 1 Kings 11:29–32 announces the division of the kingdom; the present context tells that same result before the Scripture reaches it.",
+        "trialReplacementCopy": "In later years Solomon turned to other gods, provoking the Lord's judgment upon his kingdom.",
+        "sourceHandlingNote": "Preserve why judgment follows without restating the detail narrated by Ahijah.",
+        "relatedSourceDecisionId": null,
+        "sourceReferences": [
+          "1Kings 11:1–13"
+        ],
+        "editionAwareReferences": null,
+        "currentCandidateTextUnchanged": true,
+        "originalScriptureUnchanged": true,
+        "selectedForPublication": false,
+        "editorialAccepted": false,
+        "oralAccepted": false,
+        "printedEditionCollated": false,
+        "theologicallyApproved": false,
+        "status": "PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED",
+        "readthroughSourceComparison": {
+          "status": "THREE_WITNESS_SOURCE_REFERENCES_DESK_COMPARED_NOT_ACCEPTED",
+          "sourceEvidenceReferences": [
+            "1Kings 11:1–8",
+            "1Kings 11:29–32"
+          ],
+          "sourceEvidenceFinding": "Solomon's turn to other gods is explanatory, while Ahijah's speech in selected 1 Kings 11:29–32 announces the division. Remove the anticipatory retelling of the division.",
+          "specificRisk": "DIRECT_NEXT_PASSAGE_REPETITION",
+          "scenarioPolicy": "SHORTEN_IN_BOTH_SCENARIOS",
+          "withoutNewSource": {
+            "rendering": "USE_SHORTENED_OR_HELD_COPY",
+            "copy": "In later years Solomon turned to other gods, provoking the Lord's judgment upon his kingdom."
+          },
+          "withPairedOriginalSource": null,
+          "originalSourceTextNotCopiedIntoEditorialLedger": true,
+          "sourceEditoriallySelected": false,
+          "changeAppliedToMainManuscript": false,
+          "manualOralLiteraryApproval": false
+        }
+      },
+      {
+        "id": "H37-02",
+        "kind": "EXISTING_EDITORIAL_CONTEXT",
+        "movementId": "HS-M15",
+        "sourceBeatId": "H37-02",
+        "sourceCandidateField": "editorialReadingCandidate",
+        "disposition": "TRIM_PROSE",
+        "researchRationale": "Isaiah's ensuing selected oracles contain the righteous-ruler and suffering-servant promises. The introduction need only distinguish Elijah from Isaiah and identify Achaz.",
+        "trialReplacementCopy": "Elijah confronted the prophets of Baal as Israel turned aside. Later in Judah, Isaiah addressed King Achaz; the oracles that follow are distinct prophetic witnesses.",
+        "sourceHandlingNote": "Preserve Isaiah 9 English 9:1–6 versus Crampon 8:23 plus 9:1–5, without harmonizing textual witness boundaries.",
+        "relatedSourceDecisionId": null,
+        "sourceReferences": [
+          "1Kings 18:20–39",
+          "Isaiah 7:1–17",
+          "Isaiah 9:1–6",
+          "Isaiah 11:1–10",
+          "Isaiah 52:13–53:12"
+        ],
+        "editionAwareReferences": {
+          "dr-challoner": [
+            "1Kings 18:20–39",
+            "Isaiah 7:1–17",
+            "Isaiah 9:1–6",
+            "Isaiah 11:1–10",
+            "Isaiah 52:13–53:12"
+          ],
+          "cpdv-2009": [
+            "1Kings 18:20–39",
+            "Isaiah 7:1–17",
+            "Isaiah 9:1–6",
+            "Isaiah 11:1–10",
+            "Isaiah 52:13–53:12"
+          ],
+          "crampon-1923": [
+            "1Kings 18:20–39",
+            "Isaiah 7:1–17",
+            "Isaiah 8:23",
+            "Isaiah 9:1–5",
+            "Isaiah 11:1–10",
+            "Isaiah 52:13–53:12"
+          ]
+        },
+        "currentCandidateTextUnchanged": true,
+        "originalScriptureUnchanged": true,
+        "selectedForPublication": false,
+        "editorialAccepted": false,
+        "oralAccepted": false,
+        "printedEditionCollated": false,
+        "theologicallyApproved": false,
+        "status": "PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED",
+        "readthroughSourceComparison": {
+          "status": "THREE_WITNESS_SOURCE_REFERENCES_DESK_COMPARED_NOT_ACCEPTED",
+          "sourceEvidenceReferences": [
+            "1Kings 18:20–21",
+            "Isaiah 7:10–14"
+          ],
+          "sourceEvidenceFinding": "A short Elijah-to-Isaiah witness handoff is necessary; do not summarize Isaiah's subsequent selected Messiah and servant oracles before they are read.",
+          "specificRisk": "PROPHECY_PREEMPTION",
+          "scenarioPolicy": "SHORTEN_IN_BOTH_SCENARIOS",
+          "withoutNewSource": {
+            "rendering": "USE_SHORTENED_OR_HELD_COPY",
+            "copy": "Elijah confronted the prophets of Baal as Israel turned aside. Later in Judah, Isaiah addressed King Achaz; the oracles that follow are distinct prophetic witnesses."
+          },
+          "withPairedOriginalSource": null,
+          "originalSourceTextNotCopiedIntoEditorialLedger": true,
+          "sourceEditoriallySelected": false,
+          "changeAppliedToMainManuscript": false,
+          "manualOralLiteraryApproval": false
+        }
+      },
+      {
+        "id": "H43-03",
+        "kind": "EXISTING_EDITORIAL_CONTEXT",
+        "movementId": "HS-M17",
+        "sourceBeatId": "H43-03",
+        "sourceCandidateField": "editorialReadingCandidate",
+        "disposition": "RETAIN_CONTEXT",
+        "researchRationale": "After Ezra 6 rebuild, public reading and renewal of the Law in Nehemiah 8 explain the restored people's religious life and are absent from selected text.",
+        "trialReplacementCopy": null,
+        "sourceHandlingNote": "Keep Ezra/Nehemiah distinct books and events.",
+        "relatedSourceDecisionId": null,
+        "sourceReferences": [
+          "Nehemiah 8:1–12"
+        ],
+        "editionAwareReferences": null,
+        "currentCandidateTextUnchanged": true,
+        "originalScriptureUnchanged": true,
+        "selectedForPublication": false,
+        "editorialAccepted": false,
+        "oralAccepted": false,
+        "printedEditionCollated": false,
+        "theologicallyApproved": false,
+        "status": "PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED"
+      },
+      {
+        "id": "H44-01",
+        "kind": "EXISTING_EDITORIAL_CONTEXT",
+        "movementId": "HS-M17",
+        "sourceBeatId": "H44-01",
+        "sourceCandidateField": "editorialReadingCandidate",
+        "disposition": "RETAIN_CONTEXT",
+        "researchRationale": "Mattathias and the imposed sacrifice provide the first cause of Maccabean resistance; keeping the introduction prevents the persecution era from appearing without a historical antecedent.",
+        "trialReplacementCopy": null,
+        "sourceHandlingNote": "Avoid turning the later martyrdom account into the same episode.",
+        "relatedSourceDecisionId": null,
+        "sourceReferences": [
+          "1Maccabees 2:15–28"
+        ],
+        "editionAwareReferences": null,
+        "currentCandidateTextUnchanged": true,
+        "originalScriptureUnchanged": true,
+        "selectedForPublication": false,
+        "editorialAccepted": false,
+        "oralAccepted": false,
+        "printedEditionCollated": false,
+        "theologicallyApproved": false,
+        "status": "PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED"
+      },
+      {
+        "id": "H44-03",
+        "kind": "EXISTING_EDITORIAL_CONTEXT",
+        "movementId": "HS-M17",
+        "sourceBeatId": "H44-03",
+        "sourceCandidateField": "editorialReadingCandidate",
+        "disposition": "RETAIN_CONTEXT",
+        "researchRationale": "The martyrs' fidelity and explicit resurrection hope are distinct from Mattathias' initial act and are essential in a Catholic account of the period.",
+        "trialReplacementCopy": null,
+        "sourceHandlingNote": "Maintain 2 Maccabees as a primary deuterocanonical witness, not a generic historical anecdote.",
+        "relatedSourceDecisionId": null,
+        "sourceReferences": [
+          "2Maccabees 7:1–42"
+        ],
+        "editionAwareReferences": null,
+        "currentCandidateTextUnchanged": true,
+        "originalScriptureUnchanged": true,
+        "selectedForPublication": false,
+        "editorialAccepted": false,
+        "oralAccepted": false,
+        "printedEditionCollated": false,
+        "theologicallyApproved": false,
+        "status": "PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED"
+      },
+      {
+        "id": "H47-01",
+        "kind": "EXISTING_EDITORIAL_CONTEXT",
+        "movementId": "HS-M19",
+        "sourceBeatId": "H47-01",
+        "sourceCandidateField": "editorialReadingCandidate",
+        "disposition": "RETAIN_CONTEXT",
+        "researchRationale": "Visitation and Magnificat are distinct from the selected Joseph announcement in Matthew 1 and link Elizabeth to the birth sequence without reproducing Mary's biblical hymn.",
+        "trialReplacementCopy": null,
+        "sourceHandlingNote": "Keep the Magnificat quotation available in the Scripture/Marian apparatus rather than inventing a paraphrased speech.",
+        "relatedSourceDecisionId": null,
+        "sourceReferences": [
+          "Luke 1:39–56"
+        ],
+        "editionAwareReferences": null,
+        "currentCandidateTextUnchanged": true,
+        "originalScriptureUnchanged": true,
+        "selectedForPublication": false,
+        "editorialAccepted": false,
+        "oralAccepted": false,
+        "printedEditionCollated": false,
+        "theologicallyApproved": false,
+        "status": "PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED"
+      },
+      {
+        "id": "H49-01",
+        "kind": "EXISTING_EDITORIAL_CONTEXT",
+        "movementId": "HS-M19",
+        "sourceBeatId": "H49-01",
+        "sourceCandidateField": "editorialReadingCandidate",
+        "disposition": "RETAIN_CONTEXT",
+        "researchRationale": "Luke's Presentation and Simeon are meaningful distinct witnesses between Luke's Nativity and Matthew's Magi; 'Luke also recounts' intentionally avoids asserting an exact cross-Gospel chronology.",
+        "trialReplacementCopy": null,
+        "sourceHandlingNote": "Do not conflate Presentation and Magi or silently reorder one Evangelist's source.",
+        "relatedSourceDecisionId": null,
+        "sourceReferences": [
+          "Luke 2:22–38"
+        ],
+        "editionAwareReferences": null,
+        "currentCandidateTextUnchanged": true,
+        "originalScriptureUnchanged": true,
+        "selectedForPublication": false,
+        "editorialAccepted": false,
+        "oralAccepted": false,
+        "printedEditionCollated": false,
+        "theologicallyApproved": false,
+        "status": "PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED"
+      },
+      {
+        "id": "H49-03",
+        "kind": "EXISTING_EDITORIAL_CONTEXT",
+        "movementId": "HS-M19",
+        "sourceBeatId": "H49-03",
+        "sourceCandidateField": "editorialReadingCandidate",
+        "disposition": "RETAIN_CONTEXT",
+        "researchRationale": "Flight and return from Egypt explain how the family settles in Nazareth following Matthew's Magi, while selected Matthew 2:1–12 stops before Herod's pursuit.",
+        "trialReplacementCopy": null,
+        "sourceHandlingNote": "Preserve Matthew attribution and avoid unnecessary geographical route inference.",
+        "relatedSourceDecisionId": null,
+        "sourceReferences": [
+          "Matthew 2:13–23"
+        ],
+        "editionAwareReferences": null,
+        "currentCandidateTextUnchanged": true,
+        "originalScriptureUnchanged": true,
+        "selectedForPublication": false,
+        "editorialAccepted": false,
+        "oralAccepted": false,
+        "printedEditionCollated": false,
+        "theologicallyApproved": false,
+        "status": "PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED"
+      },
+      {
+        "id": "H51-02",
+        "kind": "EXISTING_EDITORIAL_CONTEXT",
+        "movementId": "HS-M20",
+        "sourceBeatId": "H51-02",
+        "sourceCandidateField": "editorialReadingCandidate",
+        "disposition": "RETAIN_CONTEXT",
+        "researchRationale": "The Temptation belongs between Matthew's Baptism and Christ's public preaching; the present one-sentence account names no invented dialogue.",
+        "trialReplacementCopy": null,
+        "sourceHandlingNote": "Avoid repeating the Baptism already selected.",
+        "relatedSourceDecisionId": null,
+        "sourceReferences": [
+          "Matthew 4:1–11"
+        ],
+        "editionAwareReferences": null,
+        "currentCandidateTextUnchanged": true,
+        "originalScriptureUnchanged": true,
+        "selectedForPublication": false,
+        "editorialAccepted": false,
+        "oralAccepted": false,
+        "printedEditionCollated": false,
+        "theologicallyApproved": false,
+        "status": "PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED"
+      },
+      {
+        "id": "H54-02",
+        "kind": "EXISTING_EDITORIAL_CONTEXT",
+        "movementId": "HS-M21",
+        "sourceBeatId": "H54-02",
+        "sourceCandidateField": "editorialReadingCandidate",
+        "disposition": "RETAIN_CONTEXT",
+        "researchRationale": "This concise Mark 2 sign uniquely illustrates forgiveness of sins in the teaching movement and remains the sole nominated main-narrative miracle from the H54 selection.",
+        "trialReplacementCopy": null,
+        "sourceHandlingNote": "Do not expand into all miracles or harmonize unnamed eyewitnesses.",
+        "relatedSourceDecisionId": null,
+        "sourceReferences": [
+          "Mark 2:1–12"
+        ],
+        "editionAwareReferences": null,
+        "currentCandidateTextUnchanged": true,
+        "originalScriptureUnchanged": true,
+        "selectedForPublication": false,
+        "editorialAccepted": false,
+        "oralAccepted": false,
+        "printedEditionCollated": false,
+        "theologicallyApproved": false,
+        "status": "PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED"
+      },
+      {
+        "id": "H56-01",
+        "kind": "EXISTING_EDITORIAL_CONTEXT",
+        "movementId": "HS-M22",
+        "sourceBeatId": "H56-01",
+        "sourceCandidateField": "editorialReadingCandidate",
+        "disposition": "RETAIN_CONTEXT",
+        "researchRationale": "The feeding and subsequent return of the crowd explain why John 6:26 begins with Jesus replying to seekers; removing the second sentence reopens an already identified seam.",
+        "trialReplacementCopy": null,
+        "sourceHandlingNote": "Maintain the next-day transition and avoid repeating the meal inside the discourse.",
+        "relatedSourceDecisionId": null,
+        "sourceReferences": [
+          "John 6:1–15",
+          "John 6:22–25"
+        ],
+        "editionAwareReferences": null,
+        "currentCandidateTextUnchanged": true,
+        "originalScriptureUnchanged": true,
+        "selectedForPublication": false,
+        "editorialAccepted": false,
+        "oralAccepted": false,
+        "printedEditionCollated": false,
+        "theologicallyApproved": false,
+        "status": "PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED"
+      },
+      {
+        "id": "H63-04",
+        "kind": "EXISTING_EDITORIAL_CONTEXT",
+        "movementId": "HS-M27",
+        "sourceBeatId": "H63-04",
+        "sourceCandidateField": "editorialReadingCandidate",
+        "disposition": "RETAIN_CONTEXT",
+        "researchRationale": "The Johannine crowning and mockery are distinct from Matthew's selected Pilate questioning; explicit attribution prevents fused Gospel speech.",
+        "trialReplacementCopy": null,
+        "sourceHandlingNote": "Matthew 27:26 already states scourging; do not recount it twice or merge John's Pilate speech.",
+        "relatedSourceDecisionId": null,
+        "sourceReferences": [
+          "John 19:1–16"
+        ],
+        "editionAwareReferences": null,
+        "currentCandidateTextUnchanged": true,
+        "originalScriptureUnchanged": true,
+        "selectedForPublication": false,
+        "editorialAccepted": false,
+        "oralAccepted": false,
+        "printedEditionCollated": false,
+        "theologicallyApproved": false,
+        "status": "PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED"
+      },
+      {
+        "id": "H65-03",
+        "kind": "EXISTING_EDITORIAL_CONTEXT",
+        "movementId": "HS-M29",
+        "sourceBeatId": "H65-03",
+        "sourceCandidateField": "editorialReadingCandidate",
+        "disposition": "RETAIN_CONTEXT",
+        "researchRationale": "Luke's Emmaus narrative explains a separate Easter-day appearance and scriptural interpretation between John's Magdalene scene and later upper-room scenes.",
+        "trialReplacementCopy": null,
+        "sourceHandlingNote": "Maintain Luke/John witness separation and Thomas's eight-days-later timing within John 20.",
+        "relatedSourceDecisionId": null,
+        "sourceReferences": [
+          "Luke 24:13–35"
+        ],
+        "editionAwareReferences": null,
+        "currentCandidateTextUnchanged": true,
+        "originalScriptureUnchanged": true,
+        "selectedForPublication": false,
+        "editorialAccepted": false,
+        "oralAccepted": false,
+        "printedEditionCollated": false,
+        "theologicallyApproved": false,
+        "status": "PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED"
+      },
+      {
+        "id": "H75-01",
+        "kind": "EXISTING_EDITORIAL_CONTEXT",
+        "movementId": "HS-M35",
+        "sourceBeatId": "H75-01",
+        "sourceCandidateField": "editorialReadingCandidate",
+        "disposition": "RETAIN_CONTEXT",
+        "researchRationale": "John's Patmos introduction and heavenly throne supply the literary genre shift and the antecedent of Revelation 5, not a new terrestrial chronological event.",
+        "trialReplacementCopy": null,
+        "sourceHandlingNote": "Maintain vision labels and avoid making Patmos a fabricated dated itinerary.",
+        "relatedSourceDecisionId": null,
+        "sourceReferences": [
+          "Revelation 1:9–11",
+          "Revelation 4:1–11"
+        ],
+        "editionAwareReferences": null,
+        "currentCandidateTextUnchanged": true,
+        "originalScriptureUnchanged": true,
+        "selectedForPublication": false,
+        "editorialAccepted": false,
+        "oralAccepted": false,
+        "printedEditionCollated": false,
+        "theologicallyApproved": false,
+        "status": "PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED"
+      },
+      {
+        "id": "H76-03",
+        "kind": "EXISTING_EDITORIAL_CONTEXT",
+        "movementId": "HS-M36",
+        "sourceBeatId": "H76-03",
+        "sourceCandidateField": "editorialReadingCandidate",
+        "disposition": "RETAIN_CONTEXT",
+        "researchRationale": "The woman and dragon represent the apocalyptic conflict before the selected Revelation 19 victory; the source must remain visionary-symbolic, not literal event chronology.",
+        "trialReplacementCopy": null,
+        "sourceHandlingNote": "Keep doctrinal/typological links outside the chronological text.",
+        "relatedSourceDecisionId": null,
+        "sourceReferences": [
+          "Revelation 12:1–17"
+        ],
+        "editionAwareReferences": null,
+        "currentCandidateTextUnchanged": true,
+        "originalScriptureUnchanged": true,
+        "selectedForPublication": false,
+        "editorialAccepted": false,
+        "oralAccepted": false,
+        "printedEditionCollated": false,
+        "theologicallyApproved": false,
+        "status": "PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED"
+      },
+      {
+        "id": "HS-P3-EC-11",
+        "kind": "EXISTING_EDITOR_CONNECTOR",
+        "movementId": "HS-M04",
+        "sourceBeatId": "H10-01",
+        "sourceCandidateField": "beforeScriptureConnectorCandidate",
+        "disposition": "TRIM_PROSE",
+        "researchRationale": "The connector's claim that the Lord called Abram duplicates Genesis 12:1–9 immediately following it; retain only the missing descent from Sem.",
+        "trialReplacementCopy": "Among the descendants of Sem was Abram.",
+        "sourceHandlingNote": "Genesis 11:26–31 remains a held genealogy option; do not insert a second ancestry scene.",
+        "relatedSourceDecisionId": "HS-W-SRC-HS-CF-02",
+        "sourceReferences": [
+          "Genesis 11:10–31",
+          "Genesis 12:1"
+        ],
+        "editionAwareReferences": null,
+        "currentCandidateTextUnchanged": true,
+        "originalScriptureUnchanged": true,
+        "selectedForPublication": false,
+        "editorialAccepted": false,
+        "oralAccepted": false,
+        "printedEditionCollated": false,
+        "theologicallyApproved": false,
+        "status": "PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED",
+        "readthroughSourceComparison": {
+          "status": "THREE_WITNESS_SOURCE_REFERENCES_DESK_COMPARED_NOT_ACCEPTED",
+          "sourceEvidenceReferences": [
+            "Genesis 11:26–31",
+            "Genesis 12:1–3"
+          ],
+          "sourceEvidenceFinding": "Genesis 12:1 contains the divine command to Abram so the connector should only supply Sem-to-Abram ancestry, and should disappear if the held Genesis 11 genealogy is selected.",
+          "specificRisk": "DUPLICATED_CALL_OR_GENEALOGY",
+          "scenarioPolicy": "SUPPRESS_IF_SOURCE_SELECTED",
+          "withoutNewSource": {
+            "rendering": "USE_SHORTENED_OR_HELD_COPY",
+            "copy": "Among the descendants of Sem was Abram."
+          },
+          "withPairedOriginalSource": {
+            "rendering": "OMIT_EDITORIAL",
+            "copy": null,
+            "sourceDecisionIds": [
+              "HS-W-SRC-HS-CF-02"
+            ]
+          },
+          "originalSourceTextNotCopiedIntoEditorialLedger": true,
+          "sourceEditoriallySelected": false,
+          "changeAppliedToMainManuscript": false,
+          "manualOralLiteraryApproval": false
+        }
+      },
+      {
+        "id": "HS-P3-EC-02",
+        "kind": "EXISTING_EDITOR_CONNECTOR",
+        "movementId": "HS-M06",
+        "sourceBeatId": "HS-CF-03",
+        "sourceCandidateField": "readthroughTrial.editorialPreface",
+        "disposition": "CONDITIONAL_TRIM",
+        "researchRationale": "Joseph's service in Potiphar's house and false accusation are needed, but the existing longer preface should not duplicate the husband's reaction when Genesis 39:19–21 is selected.",
+        "trialReplacementCopy": "In Egypt Joseph served Potiphar. When Joseph resisted Potiphar's wife's advances, she falsely accused him.",
+        "sourceHandlingNote": "This connector is attached to an unapproved held source trial; do not surface it as a selected standalone event.",
+        "relatedSourceDecisionId": "HS-W-SRC-HS-CF-03",
+        "sourceReferences": [
+          "Genesis 39:1",
+          "Genesis 39:7–19"
+        ],
+        "editionAwareReferences": null,
+        "currentCandidateTextUnchanged": true,
+        "originalScriptureUnchanged": true,
+        "selectedForPublication": false,
+        "editorialAccepted": false,
+        "oralAccepted": false,
+        "printedEditionCollated": false,
+        "theologicallyApproved": false,
+        "status": "PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED",
+        "readthroughSourceComparison": {
+          "status": "THREE_WITNESS_SOURCE_REFERENCES_DESK_COMPARED_NOT_ACCEPTED",
+          "sourceEvidenceReferences": [
+            "Genesis 39:1",
+            "Genesis 39:7–10",
+            "Genesis 39:19–21"
+          ],
+          "sourceEvidenceFinding": "The preface covers service and false accusation but Genesis 39:19–21 provides the master's reaction, imprisonment and divine favour. Do not pre-retell the master's reaction.",
+          "specificRisk": "PREFACE_DUPLICATES_ORIGIN",
+          "scenarioPolicy": "DISPLAY_SHORTER_ONLY_WITH_HELD_SOURCE_TRIAL",
+          "withoutNewSource": {
+            "rendering": "NOT_RENDERED",
+            "copy": null
+          },
+          "withPairedOriginalSource": {
+            "rendering": "USE_SHORTENED",
+            "copy": "In Egypt Joseph served Potiphar. When Joseph resisted Potiphar's wife's advances, she falsely accused him.",
+            "sourceDecisionIds": [
+              "HS-W-SRC-HS-CF-03"
+            ]
+          },
+          "originalSourceTextNotCopiedIntoEditorialLedger": true,
+          "sourceEditoriallySelected": false,
+          "changeAppliedToMainManuscript": false,
+          "manualOralLiteraryApproval": false
+        }
+      },
+      {
+        "id": "HS-P3-EC-03",
+        "kind": "EXISTING_EDITOR_CONNECTOR",
+        "movementId": "HS-M12",
+        "sourceBeatId": "H28-04",
+        "sourceCandidateField": "beforeScriptureConnectorCandidate",
+        "disposition": "TRIM_PROSE",
+        "researchRationale": "Ruth 4:13 directly says Boaz took Ruth; the connector should explain gleaning and the nearer kinsman without narrating the marriage twice.",
+        "trialReplacementCopy": "Ruth gleaned in Boaz's fields, and a nearer kinsman relinquished his claim, leaving Boaz free to marry her.",
+        "sourceHandlingNote": "Keep source references to Ruth 2 and Ruth 4; avoid conflating Naomi's and Ruth's family relationships.",
+        "relatedSourceDecisionId": null,
+        "sourceReferences": [
+          "Ruth 2:1–13",
+          "Ruth 4:1–12"
+        ],
+        "editionAwareReferences": null,
+        "currentCandidateTextUnchanged": true,
+        "originalScriptureUnchanged": true,
+        "selectedForPublication": false,
+        "editorialAccepted": false,
+        "oralAccepted": false,
+        "printedEditionCollated": false,
+        "theologicallyApproved": false,
+        "status": "PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED",
+        "readthroughSourceComparison": {
+          "status": "THREE_WITNESS_SOURCE_REFERENCES_DESK_COMPARED_NOT_ACCEPTED",
+          "sourceEvidenceReferences": [
+            "Ruth 2:3",
+            "Ruth 4:1–12",
+            "Ruth 4:13"
+          ],
+          "sourceEvidenceFinding": "Selected Ruth 4:13 already states Boaz takes Ruth; the connector should give the earlier gleaning and nearer kinsman background, not repeat the marriage itself.",
+          "specificRisk": "DUPLICATED_MARRIAGE",
+          "scenarioPolicy": "SHORTEN_IN_BOTH_SCENARIOS",
+          "withoutNewSource": {
+            "rendering": "USE_SHORTENED_OR_HELD_COPY",
+            "copy": "Ruth gleaned in Boaz's fields, and a nearer kinsman relinquished his claim, leaving Boaz free to marry her."
+          },
+          "withPairedOriginalSource": null,
+          "originalSourceTextNotCopiedIntoEditorialLedger": true,
+          "sourceEditoriallySelected": false,
+          "changeAppliedToMainManuscript": false,
+          "manualOralLiteraryApproval": false,
+          "unresolvedEditionWitnessSlot": {
+            "edition": "cpdv-2009",
+            "reference": "Ruth 2:2",
+            "finding": "Ruth 2:2 is absent from the imported, uncollated CPDV verse table; it exists in the Douay–Challoner and Crampon witnesses. Ruth 2:3 independently attests gleaning in all three installed witnesses.",
+            "disposition": "RECORD_IMPORT_WITNESS_GAP_DO_NOT_RECONSTRUCT_OR_CERTIFY",
+            "textRestored": false,
+            "printedEditionCollationPending": true
+          }
+        }
+      },
+      {
+        "id": "HS-P3-EC-01",
+        "kind": "EXISTING_EDITOR_CONNECTOR",
+        "movementId": "HS-M12",
+        "sourceBeatId": "H29-04",
+        "sourceCandidateField": "beforeScriptureConnectorCandidate",
+        "disposition": "RETAIN_CONTEXT",
+        "researchRationale": "The Lord's prior notice to Samuel and Saul's arrival explain why 1 Samuel 10 begins with anointing before an account of their first meeting.",
+        "trialReplacementCopy": null,
+        "sourceHandlingNote": "Keep this as a short sourced transition, not a new selection of 1 Samuel 9.",
+        "relatedSourceDecisionId": null,
+        "sourceReferences": [
+          "1Samuel 9:15–17",
+          "1Samuel 9:25–27"
+        ],
+        "editionAwareReferences": null,
+        "currentCandidateTextUnchanged": true,
+        "originalScriptureUnchanged": true,
+        "selectedForPublication": false,
+        "editorialAccepted": false,
+        "oralAccepted": false,
+        "printedEditionCollated": false,
+        "theologicallyApproved": false,
+        "status": "PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED"
+      },
+      {
+        "id": "HS-P3-EC-04",
+        "kind": "EXISTING_EDITOR_CONNECTOR",
+        "movementId": "HS-M13",
+        "sourceBeatId": "H30-01",
+        "sourceCandidateField": "beforeScriptureConnectorCandidate",
+        "disposition": "TRIM_PROSE",
+        "researchRationale": "Selected 1 Samuel 16:1 already names Saul's rejection; the connector should preserve the reason and Samuel's rebuke without preempting the following text.",
+        "trialReplacementCopy": "Samuel had rebuked Saul for disobedience, declaring that obedience was better than sacrifice.",
+        "sourceHandlingNote": "Do not recast Samuel's words as an unattributed direct biblical quotation.",
+        "relatedSourceDecisionId": null,
+        "sourceReferences": [
+          "1Samuel 15:10–23"
+        ],
+        "editionAwareReferences": null,
+        "currentCandidateTextUnchanged": true,
+        "originalScriptureUnchanged": true,
+        "selectedForPublication": false,
+        "editorialAccepted": false,
+        "oralAccepted": false,
+        "printedEditionCollated": false,
+        "theologicallyApproved": false,
+        "status": "PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED",
+        "readthroughSourceComparison": {
+          "status": "THREE_WITNESS_SOURCE_REFERENCES_DESK_COMPARED_NOT_ACCEPTED",
+          "sourceEvidenceReferences": [
+            "1Samuel 15:22–23",
+            "1Samuel 16:1–3"
+          ],
+          "sourceEvidenceFinding": "Selected 1 Samuel 16:1 already announces rejection of Saul. The connector need only explain disobedience and Samuel's rebuke, without retelling the rejection.",
+          "specificRisk": "REPEATED_REJECTION",
+          "scenarioPolicy": "SHORTEN_IN_BOTH_SCENARIOS",
+          "withoutNewSource": {
+            "rendering": "USE_SHORTENED_OR_HELD_COPY",
+            "copy": "Samuel had rebuked Saul for disobedience, declaring that obedience was better than sacrifice."
+          },
+          "withPairedOriginalSource": null,
+          "originalSourceTextNotCopiedIntoEditorialLedger": true,
+          "sourceEditoriallySelected": false,
+          "changeAppliedToMainManuscript": false,
+          "manualOralLiteraryApproval": false
+        }
+      },
+      {
+        "id": "HS-P3-EC-05",
+        "kind": "EXISTING_EDITOR_CONNECTOR",
+        "movementId": "HS-M14",
+        "sourceBeatId": "H35-02",
+        "sourceCandidateField": "beforeScriptureConnectorCandidate",
+        "disposition": "RETAIN_CONTEXT",
+        "researchRationale": "David's death and Solomon's succession are not supplied by the selected 1 Kings 6:1; the current sentence prevents an unexplained change of reigning king.",
+        "trialReplacementCopy": null,
+        "sourceHandlingNote": "Do not repeat the following Temple-building text.",
+        "relatedSourceDecisionId": null,
+        "sourceReferences": [
+          "1Kings 2:10–12"
+        ],
+        "editionAwareReferences": null,
+        "currentCandidateTextUnchanged": true,
+        "originalScriptureUnchanged": true,
+        "selectedForPublication": false,
+        "editorialAccepted": false,
+        "oralAccepted": false,
+        "printedEditionCollated": false,
+        "theologicallyApproved": false,
+        "status": "PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED"
+      },
+      {
+        "id": "HS-P3-EC-08",
+        "kind": "EXISTING_EDITOR_CONNECTOR",
+        "movementId": "HS-M18",
+        "sourceBeatId": "H46-01",
+        "sourceCandidateField": "beforeScriptureConnectorCandidate",
+        "disposition": "TRIM_PROSE",
+        "researchRationale": "Luke 1:26–38 repeats the six-month interval and Elizabeth's conception. The introduction only needs the short prior Zachary context that explains Gabriel's reference.",
+        "trialReplacementCopy": "In the days of Herod, an angel had promised a son to the priest Zachary and his wife Elizabeth.",
+        "sourceHandlingNote": "Keep Luke's conception and Annunciation distinct; do not create scriptural speech.",
+        "relatedSourceDecisionId": null,
+        "sourceReferences": [
+          "Luke 1:5–25",
+          "Luke 1:26",
+          "Luke 1:36"
+        ],
+        "editionAwareReferences": null,
+        "currentCandidateTextUnchanged": true,
+        "originalScriptureUnchanged": true,
+        "selectedForPublication": false,
+        "editorialAccepted": false,
+        "oralAccepted": false,
+        "printedEditionCollated": false,
+        "theologicallyApproved": false,
+        "status": "PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED",
+        "readthroughSourceComparison": {
+          "status": "THREE_WITNESS_SOURCE_REFERENCES_DESK_COMPARED_NOT_ACCEPTED",
+          "sourceEvidenceReferences": [
+            "Luke 1:5–13",
+            "Luke 1:26",
+            "Luke 1:36"
+          ],
+          "sourceEvidenceFinding": "Selected Luke 1:26–38 states Elizabeth's sixth month and Gabriel's declaration; the connector should establish Zachary and the prior promise without doubling the six-month narrative.",
+          "specificRisk": "REPEATED_ANNUNCIATION_TIMING",
+          "scenarioPolicy": "SHORTEN_IN_BOTH_SCENARIOS",
+          "withoutNewSource": {
+            "rendering": "USE_SHORTENED_OR_HELD_COPY",
+            "copy": "In the days of Herod, an angel had promised a son to the priest Zachary and his wife Elizabeth."
+          },
+          "withPairedOriginalSource": null,
+          "originalSourceTextNotCopiedIntoEditorialLedger": true,
+          "sourceEditoriallySelected": false,
+          "changeAppliedToMainManuscript": false,
+          "manualOralLiteraryApproval": false
+        }
+      },
+      {
+        "id": "HS-P3-EC-12",
+        "kind": "EXISTING_EDITOR_CONNECTOR",
+        "movementId": "HS-M20",
+        "sourceBeatId": "H51-01",
+        "sourceCandidateField": "beforeScriptureConnectorCandidate",
+        "disposition": "TRIM_PROSE",
+        "researchRationale": "Matthew 3:1–6 opens with John's preaching, so stating that John began preaching immediately before the selected passage doubles the beginning.",
+        "trialReplacementCopy": "Jesus grew up in Nazareth.",
+        "sourceHandlingNote": "Source Luke 2:51–52 establishes the infancy-to-ministry bridge; Matthew opens John's scene.",
+        "relatedSourceDecisionId": null,
+        "sourceReferences": [
+          "Luke 2:51–52",
+          "Luke 3:1–3",
+          "Matthew 3:1–3"
+        ],
+        "editionAwareReferences": null,
+        "currentCandidateTextUnchanged": true,
+        "originalScriptureUnchanged": true,
+        "selectedForPublication": false,
+        "editorialAccepted": false,
+        "oralAccepted": false,
+        "printedEditionCollated": false,
+        "theologicallyApproved": false,
+        "status": "PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED",
+        "readthroughSourceComparison": {
+          "status": "THREE_WITNESS_SOURCE_REFERENCES_DESK_COMPARED_NOT_ACCEPTED",
+          "sourceEvidenceReferences": [
+            "Luke 2:51–52",
+            "Matthew 3:1–3"
+          ],
+          "sourceEvidenceFinding": "Matthew 3:1–3 already introduces John's preaching, so this prior transition should cover only Christ's intervening youth in Nazareth.",
+          "specificRisk": "REPEATED_BAPTIST_PREACHING",
+          "scenarioPolicy": "SHORTEN_IN_BOTH_SCENARIOS",
+          "withoutNewSource": {
+            "rendering": "USE_SHORTENED_OR_HELD_COPY",
+            "copy": "Jesus grew up in Nazareth."
+          },
+          "withPairedOriginalSource": null,
+          "originalSourceTextNotCopiedIntoEditorialLedger": true,
+          "sourceEditoriallySelected": false,
+          "changeAppliedToMainManuscript": false,
+          "manualOralLiteraryApproval": false
+        }
+      },
+      {
+        "id": "HS-P3-EC-09",
+        "kind": "EXISTING_EDITOR_CONNECTOR",
+        "movementId": "HS-M20",
+        "sourceBeatId": "H52-01",
+        "sourceCandidateField": "beforeScriptureConnectorCandidate",
+        "disposition": "CONDITIONAL_SUPPRESS",
+        "researchRationale": "The brief Baptist testimony is useful only while John 1:29–34 stays unselected; if its exact source is adopted, the connector must disappear to avoid repetition.",
+        "trialReplacementCopy": null,
+        "sourceHandlingNote": "Keep the connector if the John 1:29–34 research variant stays held; do not depict a second Baptism.",
+        "relatedSourceDecisionId": "HS-W-SRC-HS-P3-CF-17",
+        "sourceReferences": [
+          "John 1:29–34"
+        ],
+        "editionAwareReferences": null,
+        "currentCandidateTextUnchanged": true,
+        "originalScriptureUnchanged": true,
+        "selectedForPublication": false,
+        "editorialAccepted": false,
+        "oralAccepted": false,
+        "printedEditionCollated": false,
+        "theologicallyApproved": false,
+        "status": "PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED",
+        "readthroughSourceComparison": {
+          "status": "THREE_WITNESS_SOURCE_REFERENCES_DESK_COMPARED_NOT_ACCEPTED",
+          "sourceEvidenceReferences": [
+            "John 1:29–36",
+            "John 1:49"
+          ],
+          "sourceEvidenceFinding": "John 1:36 repeats Lamb of God inside the already selected first-disciples passage, while the earlier Baptist Son-of-God testimony is distinct. Keep that distinct claim only when John 1:29–34 stays held.",
+          "specificRisk": "DUPLICATED_LAMB_TESTIMONY",
+          "scenarioPolicy": "SHORTEN_WHILE_HELD_SUPPRESS_IF_SOURCE_SELECTED",
+          "withoutNewSource": {
+            "rendering": "USE_SHORTENED_OR_HELD_COPY",
+            "copy": "John had also testified that Jesus was the Son of God."
+          },
+          "withPairedOriginalSource": {
+            "rendering": "OMIT_EDITORIAL",
+            "copy": null,
+            "sourceDecisionIds": [
+              "HS-W-SRC-HS-P3-CF-17"
+            ]
+          },
+          "originalSourceTextNotCopiedIntoEditorialLedger": true,
+          "sourceEditoriallySelected": false,
+          "changeAppliedToMainManuscript": false,
+          "manualOralLiteraryApproval": false
+        }
+      },
+      {
+        "id": "HS-P3-EC-06",
+        "kind": "EXISTING_EDITOR_CONNECTOR",
+        "movementId": "HS-M31",
+        "sourceBeatId": "HS-CF-08",
+        "sourceCandidateField": "readthroughTrial.editorialPreface",
+        "disposition": "CONDITIONAL_TRIM",
+        "researchRationale": "Acts 7:51–53 rebuke trial cannot by itself explain Stephen's arrest and defence; keep a minimal orientation before that trial, not a duplicate rebuke.",
+        "trialReplacementCopy": "Stephen was brought before the council; in his defence he recalled God's dealings with Israel.",
+        "sourceHandlingNote": "This preface belongs only to a held Stephen source bridge, not the already selected martyrdom.",
+        "relatedSourceDecisionId": "HS-W-SRC-HS-CF-08",
+        "sourceReferences": [
+          "Acts 6:5–15",
+          "Acts 7:1–50"
+        ],
+        "editionAwareReferences": null,
+        "currentCandidateTextUnchanged": true,
+        "originalScriptureUnchanged": true,
+        "selectedForPublication": false,
+        "editorialAccepted": false,
+        "oralAccepted": false,
+        "printedEditionCollated": false,
+        "theologicallyApproved": false,
+        "status": "PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED",
+        "readthroughSourceComparison": {
+          "status": "THREE_WITNESS_SOURCE_REFERENCES_DESK_COMPARED_NOT_ACCEPTED",
+          "sourceEvidenceReferences": [
+            "Acts 6:5–15",
+            "Acts 7:51–55"
+          ],
+          "sourceEvidenceFinding": "Acts 7:54 reacts to Stephen's rebuke in Acts 7:51–53; the short preface supplies Stephen's arrest and hearing, while the verbatim rebuke must come from the original-source trial.",
+          "specificRisk": "MISSING_REBUKE_CAUSALITY",
+          "scenarioPolicy": "DISPLAY_SHORTER_ONLY_WITH_HELD_SOURCE_TRIAL",
+          "withoutNewSource": {
+            "rendering": "NOT_RENDERED",
+            "copy": null
+          },
+          "withPairedOriginalSource": {
+            "rendering": "USE_SHORTENED",
+            "copy": "Stephen was brought before the council; in his defence he recalled God's dealings with Israel.",
+            "sourceDecisionIds": [
+              "HS-W-SRC-HS-CF-08"
+            ]
+          },
+          "originalSourceTextNotCopiedIntoEditorialLedger": true,
+          "sourceEditoriallySelected": false,
+          "changeAppliedToMainManuscript": false,
+          "manualOralLiteraryApproval": false
+        }
+      },
+      {
+        "id": "HS-P3-EC-10",
+        "kind": "EXISTING_EDITOR_CONNECTOR",
+        "movementId": "HS-M33",
+        "sourceBeatId": "H72-01",
+        "sourceCandidateField": "beforeScriptureConnectorCandidate",
+        "disposition": "CONDITIONAL_SUPPRESS",
+        "researchRationale": "The existing connector restates Acts 14:26–27, which is independently proposed as an exact source; select either the source or the explanatory bridge, never both.",
+        "trialReplacementCopy": null,
+        "sourceHandlingNote": "Retain an abridged connector only if Acts 14:26–27 remains unselected.",
+        "relatedSourceDecisionId": "HS-W-SRC-HS-P3-CF-12",
+        "sourceReferences": [
+          "Acts 14:21–27"
+        ],
+        "editionAwareReferences": null,
+        "currentCandidateTextUnchanged": true,
+        "originalScriptureUnchanged": true,
+        "selectedForPublication": false,
+        "editorialAccepted": false,
+        "oralAccepted": false,
+        "printedEditionCollated": false,
+        "theologicallyApproved": false,
+        "status": "PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED",
+        "readthroughSourceComparison": {
+          "status": "THREE_WITNESS_SOURCE_REFERENCES_DESK_COMPARED_NOT_ACCEPTED",
+          "sourceEvidenceReferences": [
+            "Acts 14:25–27",
+            "Acts 15:1–2"
+          ],
+          "sourceEvidenceFinding": "Acts 14:26–27 directly reports the return and Gentile mission; if chosen it replaces rather than accompanies this prose bridge into the Jerusalem council.",
+          "specificRisk": "DUPLICATED_GENTILE_RETURN",
+          "scenarioPolicy": "SUPPRESS_IF_SOURCE_SELECTED",
+          "withoutNewSource": {
+            "rendering": "USE_SHORTENED_OR_HELD_COPY",
+            "copy": null
+          },
+          "withPairedOriginalSource": {
+            "rendering": "OMIT_EDITORIAL",
+            "copy": null,
+            "sourceDecisionIds": [
+              "HS-W-SRC-HS-P3-CF-12"
+            ]
+          },
+          "originalSourceTextNotCopiedIntoEditorialLedger": true,
+          "sourceEditoriallySelected": false,
+          "changeAppliedToMainManuscript": false,
+          "manualOralLiteraryApproval": false
+        }
+      },
+      {
+        "id": "HS-P3-EC-07",
+        "kind": "EXISTING_EDITOR_CONNECTOR",
+        "movementId": "HS-M34",
+        "sourceBeatId": "HS-CF-11",
+        "sourceCandidateField": "readthroughTrial.editorialPreface",
+        "disposition": "CONDITIONAL_TRIM",
+        "researchRationale": "Arrest in Jerusalem and appeal to Caesar explain the otherwise abrupt Acts 28 Rome scene; this is distinct from the selected arrival and Roman audience in the proposed source trials.",
+        "trialReplacementCopy": "After further journeys, Paul was arrested in Jerusalem, appealed to Caesar and was sent to Italy as a prisoner.",
+        "sourceHandlingNote": "If Acts 28:16–22 is selected, keep only this earlier arrest-and-appeal antecedent without retelling his arrival.",
+        "relatedSourceDecisionId": "HS-W-SRC-HS-CF-11",
+        "sourceReferences": [
+          "Acts 21:27–36",
+          "Acts 25:10–12",
+          "Acts 27:1"
+        ],
+        "editionAwareReferences": null,
+        "currentCandidateTextUnchanged": true,
+        "originalScriptureUnchanged": true,
+        "selectedForPublication": false,
+        "editorialAccepted": false,
+        "oralAccepted": false,
+        "printedEditionCollated": false,
+        "theologicallyApproved": false,
+        "status": "PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED",
+        "readthroughSourceComparison": {
+          "status": "THREE_WITNESS_SOURCE_REFERENCES_DESK_COMPARED_NOT_ACCEPTED",
+          "sourceEvidenceReferences": [
+            "Acts 21:27–33",
+            "Acts 25:10–12",
+            "Acts 27:1",
+            "Acts 28:16–20"
+          ],
+          "sourceEvidenceFinding": "Acts 28:17–19 explicitly reports Paul's appeal to Caesar. If the Acts 28 arrival-and-address proposal is chosen, the short preface should supply Jerusalem arrest and voyage only, not Paul's already quoted explanation.",
+          "specificRisk": "DUPLICATED_APPEAL",
+          "scenarioPolicy": "DISPLAY_SHORTER_ONLY_WITH_HELD_SOURCE_TRIAL",
+          "withoutNewSource": {
+            "rendering": "NOT_RENDERED",
+            "copy": null
+          },
+          "withPairedOriginalSource": {
+            "rendering": "USE_SPECIAL_SHORTENED",
+            "copy": "After further journeys, Paul was arrested in Jerusalem and sent to Italy as a prisoner.",
+            "sourceDecisionIds": [
+              "HS-W-SRC-HS-CF-11",
+              "HS-W-SRC-HS-P3-CF-13"
+            ]
+          },
+          "originalSourceTextNotCopiedIntoEditorialLedger": true,
+          "sourceEditoriallySelected": false,
+          "changeAppliedToMainManuscript": false,
+          "manualOralLiteraryApproval": false
+        }
+      }
+    ],
+    "releasePolicy": "None of these proposals edits native Scripture or the existing reading candidates, accepts a passage, signs off a literary reading, passes a release gate, or authorizes a merge.",
+    "sourceComparisonPhase": {
+      "schema": "ao.historia.p3.proposed-copy-and-optional-source-sequential-readthrough.v1",
+      "date": "2026-10-23",
+      "status": "15_SOURCE_EVIDENCE_COMPARISONS_COMPLETED_PROVISIONAL_NO_ORAL_ACCEPTANCE",
+      "changeOwnersCompared": 15,
+      "contextAndBeforeScriptureUnitsInTrial": 38,
+      "heldBridgeAttachedPrefacesNotShownUnlessTheirSourceTrialIsVisible": 3,
+      "originalContextAndBeforeConnectorApproximateWords": 907,
+      "shortenedTrialContextAndBeforeConnectorApproximateWords": 780,
+      "wordCountIsEditorialProseOnlyExcludesScripture": true,
+      "originalSelectedScriptureWordsFromSeparateAudit": 28815,
+      "originalScriptureUnitCount": 93,
+      "movementProjectionsChecked": 37,
+      "interMovementHingesCrossReferenced": 36,
+      "unresolvedHighestPriorityHinges": [
+        "HS-HINGE-02",
+        "HS-HINGE-08",
+        "HS-HINGE-28",
+        "HS-HINGE-33",
+        "HS-HINGE-34"
+      ],
+      "structuralOutcome": "NO_UNOWNED_EDITORIAL_UNIT_OR_NEW_SELECTED_SCRIPTURE_IN_DESK_TRIAL",
+      "semanticOutcome": "UNINTERRUPTED_HUMAN_ORAL_AND_FINAL_CATHOLIC_EDITORIAL_APPROVAL_STILL_REQUIRED",
+      "scope": "Existing original P3 contexts and nine independently displayed connectors; three bridge-attached prefaces are compared only alongside held source trials, never treated as already narrated.",
+      "applicationPolicy": "This worklist only records linked alternatives. Do not alter reading proof, Scripture selection, Bible witnesses, production Atlas or UI based on unapproved variants.",
+      "editionWitnessExceptions": [
+        {
+          "ownerId": "HS-P3-EC-03",
+          "edition": "cpdv-2009",
+          "reference": "Ruth 2:2",
+          "status": "UNRESOLVED_IMPORT_GAP_FAIL_CLOSED"
+        }
+      ],
+      "witnessNote": "All listed comparison anchors resolve in the three installed uncollated witnesses; the adjacent Ruth 2:2 CPDV import gap remains explicitly held. No claims of printed-edition certification."
+    }
+  },
+  "criticalSeamInsertionPreflight": {
+    "schema": "ao.historia.p3.five-p0-seam-reader-insertion-preflight.v1",
+    "date": "2026-10-23",
+    "status": "FIVE_CRITICAL_SEAMS_CONDITIONALLY_ASSEMBLED_AT_DESK_NOT_SOURCE_SELECTED",
+    "sourceOfEvidence": "data/research/historia-salutis-p3-five-p0-source-minimum-adjudication-20261023.v1.json",
+    "sourceMovementProof": "data/research/historia-salutis-v18-continuous-reading-proof.v1.json",
+    "sourceSeamAudit": "data/research/historia-salutis-p3-continuous-full-story-seam-audit-20261023.v1.json",
+    "sourceOwnership": "REUSE_ORIGINAL_BEATS_AND_SOURCE_WORKLIST_NO_PARALLEL_MANUSCRIPT",
+    "hinges": 5,
+    "sourceOwnerIdsInP0Candidates": 7,
+    "caseResults": [
+      {
+        "hingeId": "HS-HINGE-02",
+        "group": "NOAH_ARK",
+        "priority": "P0",
+        "fromMovement": "HS-M02",
+        "toMovement": "HS-M03",
+        "sourceDecisionOwnerIds": [
+          "HS-W-SRC-HS-CF-01"
+        ],
+        "sourceInReadingOrderBeatIds": [
+          "H05-02",
+          "HS-CF-01",
+          "H07-02"
+        ],
+        "anchorBefore": "Genesis 3:14–24",
+        "anchorAfter": "Genesis 7:1–5",
+        "preferredExistingP0OptionId": "ARK_EXISTING_P3_TRIAL",
+        "preferredNativeRefs": [
+          "Genesis 6:9–14",
+          "Genesis 6:17–22"
+        ],
+        "preferredWitnessMetrics": {
+          "dr-challoner": {
+            "verseEntries": 12,
+            "sourceWords": 285,
+            "validated": true
+          },
+          "cpdv-2009": {
+            "verseEntries": 12,
+            "sourceWords": 317,
+            "validated": true
+          },
+          "crampon-1923": {
+            "verseEntries": 12,
+            "sourceWords": 281,
+            "validated": true
+          }
+        },
+        "alternativeExistingP0OptionIds": [
+          "ARK_MORE_AGGRESSIVE_SEVEN_VERSES",
+          "ARK_WHOLE_EXISTING_HELD_SOURCE"
+        ],
+        "exactSourcePresentationRule": "Show genealogical context as editorial. Show the original Noah identity, corruption, ark command, covenant, provisions and obedience before the selected command to enter the ark.",
+        "requiredOmissionOrAttributionDisclosure": "Genesis 6:15–16 dimensions omitted within the held native-source trial; do not imply Genesis 3 to 6 is an uninterrupted episode.",
+        "heldWithoutPromotionBehavior": "If the trial is not selected, retain the visible unresolved ark antecedent; do not claim the missing command to build the ark has been supplied.",
+        "disposition": "PREFERRED_MECHANICAL_RESEARCH_TRIAL_NOT_SELECTED",
+        "causalIssueStillReleaseBlocking": true,
+        "sourceComparisonCompleteAtDesk": true,
+        "oralAccepted": false,
+        "theologicalAccepted": false,
+        "printedEditionCertified": false,
+        "sourceSelectionAccepted": false,
+        "productionAppChanged": false,
+        "atlas151Changed": false
+      },
+      {
+        "hingeId": "HS-HINGE-08",
+        "group": "PASSOVER_FIRSTBORN",
+        "priority": "P0",
+        "fromMovement": "HS-M08",
+        "toMovement": "HS-M09",
+        "sourceDecisionOwnerIds": [
+          "HS-W-SRC-EXODUS-12-FIRSTBORN"
+        ],
+        "sourceInReadingOrderBeatIds": [
+          "H20-01",
+          "H20-01",
+          "H21-01"
+        ],
+        "anchorBefore": "Exodus 12:27–28",
+        "anchorAfter": "Exodus 12:31–33",
+        "preferredExistingP0OptionId": "FIRSTBORN_TWO_VERSES",
+        "preferredNativeRefs": [
+          "Exodus 12:29–30"
+        ],
+        "preferredWitnessMetrics": {
+          "dr-challoner": {
+            "verseEntries": 2,
+            "sourceWords": 78,
+            "validated": true
+          },
+          "cpdv-2009": {
+            "verseEntries": 2,
+            "sourceWords": 84,
+            "validated": true
+          },
+          "crampon-1923": {
+            "verseEntries": 2,
+            "sourceWords": 74,
+            "validated": true
+          }
+        },
+        "alternativeExistingP0OptionIds": [],
+        "exactSourcePresentationRule": "Retain the selected Passover lamb and observance; display unaltered Exodus 12:29–30 immediately after Exodus 12:27–28 and before the selected Pharaoh release in 12:31.",
+        "requiredOmissionOrAttributionDisclosure": "The source distinction between firstborn judgment occurring and Pharaoh subsequently commanding departure cannot be reduced to one editorial line without losing a causal event.",
+        "heldWithoutPromotionBehavior": "Without the original trial, keep the narrative hinge flagged as incomplete; do not say Pharaoh's reaction was narrated. This fallback does not supply the narrated occurrence of the firstborn judgment between instructions and Pharaoh's order.",
+        "disposition": "PREFERRED_MECHANICAL_RESEARCH_TRIAL_NOT_SELECTED",
+        "causalIssueStillReleaseBlocking": true,
+        "sourceComparisonCompleteAtDesk": true,
+        "oralAccepted": false,
+        "theologicalAccepted": false,
+        "printedEditionCertified": false,
+        "sourceSelectionAccepted": false,
+        "productionAppChanged": false,
+        "atlas151Changed": false
+      },
+      {
+        "hingeId": "HS-HINGE-28",
+        "group": "JOHN_PASSION_TO_EASTER",
+        "priority": "P0",
+        "fromMovement": "HS-M28",
+        "toMovement": "HS-M29",
+        "sourceDecisionOwnerIds": [
+          "HS-W-SRC-JOHN-19-PIERCED-SIDE",
+          "HS-W-SRC-HS-CF-06"
+        ],
+        "sourceInReadingOrderBeatIds": [
+          "H64-01",
+          "HS-CF-06",
+          "H65-01"
+        ],
+        "anchorBefore": "John 19:17–30",
+        "anchorAfter": "John 20:1–3",
+        "preferredExistingP0OptionId": "JOHN_COMPLETE_AFTER_DEATH",
+        "preferredNativeRefs": [
+          "John 19:31–42"
+        ],
+        "preferredWitnessMetrics": {
+          "dr-challoner": {
+            "verseEntries": 12,
+            "sourceWords": 303,
+            "validated": true
+          },
+          "cpdv-2009": {
+            "verseEntries": 12,
+            "sourceWords": 317,
+            "validated": true
+          },
+          "crampon-1923": {
+            "verseEntries": 12,
+            "sourceWords": 288,
+            "validated": true
+          }
+        },
+        "alternativeExistingP0OptionIds": [
+          "JOHN_BURIAL_FIVE_VERSES",
+          "PIERCED_SIDE_SEPARATE_WITNESS"
+        ],
+        "exactSourcePresentationRule": "After the selected death, show the two separate native witnesses consecutively: John 19:31–37 (side, eyewitness and fulfilment), then 19:38–42 (burial), before the selected empty tomb.",
+        "requiredOmissionOrAttributionDisclosure": "The pierced-side witness has separate doctrinal and source status and is not strictly necessary to repair the burial causal gap; avoid treating a full-span trial as one accepted beat.",
+        "heldWithoutPromotionBehavior": "A burial-only exact-source trial restores the tomb antecedent at lower reading cost but leaves the side and fulfilment witness held for separate assessment.",
+        "disposition": "PREFERRED_MECHANICAL_RESEARCH_TRIAL_NOT_SELECTED",
+        "causalIssueStillReleaseBlocking": true,
+        "sourceComparisonCompleteAtDesk": true,
+        "oralAccepted": false,
+        "theologicalAccepted": false,
+        "printedEditionCertified": false,
+        "sourceSelectionAccepted": false,
+        "productionAppChanged": false,
+        "atlas151Changed": false
+      },
+      {
+        "hingeId": "HS-HINGE-33",
+        "group": "ACTS_JERUSALEM_TO_ROME",
+        "priority": "P0",
+        "fromMovement": "HS-M33",
+        "toMovement": "HS-M34",
+        "sourceDecisionOwnerIds": [
+          "HS-W-SRC-HS-CF-11",
+          "HS-W-SRC-HS-P3-CF-13"
+        ],
+        "sourceInReadingOrderBeatIds": [
+          "H72-01",
+          "HS-CF-11",
+          "HS-P3-CF-13",
+          "H73-07"
+        ],
+        "anchorBefore": "Acts 15:22–29",
+        "anchorAfter": "Acts 28:23–31",
+        "preferredExistingP0OptionId": "ROME_ARRIVAL_AND_FULL_AUDIENCE",
+        "preferredNativeRefs": [
+          "Acts 28:16",
+          "Acts 28:17–22"
+        ],
+        "preferredWitnessMetrics": {
+          "dr-challoner": {
+            "verseEntries": 7,
+            "sourceWords": 189,
+            "validated": true
+          },
+          "cpdv-2009": {
+            "verseEntries": 7,
+            "sourceWords": 212,
+            "validated": true
+          },
+          "crampon-1923": {
+            "verseEntries": 7,
+            "sourceWords": 194,
+            "validated": true
+          }
+        },
+        "alternativeExistingP0OptionIds": [
+          "ROME_AUDIENCE_ONLY"
+        ],
+        "exactSourcePresentationRule": "Explicitly label the large omitted Acts 16–27 historical interval. If selected, keep a concise editor-attributed Jerusalem arrest and Italy-transfer lead-in; then Acts 28:16 and 17–22 before the existing 28:23 audience.",
+        "requiredOmissionOrAttributionDisclosure": "Acts 28:17–19 already recounts Paul's appeal to Caesar. Remove the repetitive appeal from the editor-owned connector if the whole audience witness is shown; Acts 19:21 is only an intention to see Rome.",
+        "heldWithoutPromotionBehavior": "Acts 28:17–22 alone leaves arrival unanchored; leaving both passages held must not be represented as a continuous historical narrative.",
+        "disposition": "PREFERRED_MECHANICAL_RESEARCH_TRIAL_NOT_SELECTED",
+        "causalIssueStillReleaseBlocking": true,
+        "sourceComparisonCompleteAtDesk": true,
+        "oralAccepted": false,
+        "theologicalAccepted": false,
+        "printedEditionCertified": false,
+        "sourceSelectionAccepted": false,
+        "productionAppChanged": false,
+        "atlas151Changed": false
+      },
+      {
+        "hingeId": "HS-HINGE-34",
+        "group": "ACTS_TO_REVELATION_GENRE",
+        "priority": "P0",
+        "fromMovement": "HS-M34",
+        "toMovement": "HS-M35",
+        "sourceDecisionOwnerIds": [],
+        "sourceInReadingOrderBeatIds": [
+          "H73-07",
+          "H75-01",
+          "H75-02"
+        ],
+        "anchorBefore": "Acts 28:23–31",
+        "anchorAfter": "Revelation 5:1–14",
+        "preferredExistingP0OptionId": "VISION_GENRE_HEADING_ONLY",
+        "preferredNativeRefs": [],
+        "preferredWitnessMetrics": {
+          "dr-challoner": {
+            "verseEntries": 0,
+            "sourceWords": 0,
+            "validated": true
+          },
+          "cpdv-2009": {
+            "verseEntries": 0,
+            "sourceWords": 0,
+            "validated": true
+          },
+          "crampon-1923": {
+            "verseEntries": 0,
+            "sourceWords": 0,
+            "validated": true
+          }
+        },
+        "alternativeExistingP0OptionIds": [
+          "OPEN_HEAVENLY_VISION",
+          "JOHN_PATMOS_AND_THRONE"
+        ],
+        "exactSourcePresentationRule": "Show a visibly non-Scripture shift from Paul's historical Acts ministry to John's apocalyptic vision. Keep the throne/Patmos context separately attributed and avoid implying that Paul witnessed Revelation.",
+        "requiredOmissionOrAttributionDisclosure": "A genre heading needs zero inserted Scripture verses. If Revelation 4:1–2 is trialled, attribute it to John's vision, and do not turn Revelation 1:9–11 into an immediately preceding event.",
+        "heldWithoutPromotionBehavior": "The current genre-labelled editorial context is a viable no-new-verse alternative; without an explicit transition the reader could misread two separate witnesses as a contiguous episode.",
+        "disposition": "PREFERRED_MECHANICAL_RESEARCH_TRIAL_NOT_SELECTED",
+        "causalIssueStillReleaseBlocking": true,
+        "sourceComparisonCompleteAtDesk": true,
+        "oralAccepted": false,
+        "theologicalAccepted": false,
+        "printedEditionCertified": false,
+        "sourceSelectionAccepted": false,
+        "productionAppChanged": false,
+        "atlas151Changed": false,
+        "optionalSourceDecisionOwnerIds": [
+          "HS-W-SRC-HS-P3-CF-14"
+        ]
+      }
+    ],
+    "combinedUnapprovedReadingCost": {
+      "readingRateWpmForReferenceOnly": 130,
+      "measurementsByEdition": {
+        "dr-challoner": {
+          "coreUnapprovedTrialVerseEntries": 33,
+          "coreUnapprovedTrialWords": 855,
+          "includingOptionalVisionTrialVerseEntries": 35,
+          "includingOptionalVisionTrialWords": 922,
+          "alternativeBurialOnlyVerseEntries": 26,
+          "alternativeBurialOnlyWords": 694
+        },
+        "cpdv-2009": {
+          "coreUnapprovedTrialVerseEntries": 33,
+          "coreUnapprovedTrialWords": 930,
+          "includingOptionalVisionTrialVerseEntries": 35,
+          "includingOptionalVisionTrialWords": 997,
+          "alternativeBurialOnlyVerseEntries": 26,
+          "alternativeBurialOnlyWords": 762
+        },
+        "crampon-1923": {
+          "coreUnapprovedTrialVerseEntries": 33,
+          "coreUnapprovedTrialWords": 837,
+          "includingOptionalVisionTrialVerseEntries": 35,
+          "includingOptionalVisionTrialWords": 903,
+          "alternativeBurialOnlyVerseEntries": 26,
+          "alternativeBurialOnlyWords": 677
+        }
+      },
+      "coreFourSourceTrialsIncludePairedJohn19EyewitnessAndBurial": true,
+      "genreBoundaryMandatoryAdditionalVerses": 0,
+      "optionalRevelation4Verses": 2,
+      "passionBurialOnlyComparedAsSeparateExistingOption": true,
+      "addedScriptureWordsNotAChangeToOriginal28815": true
+    },
+    "movementSequenceDeskGate": {
+      "existingScriptureUnits": 93,
+      "existingMovements": 37,
+      "interMovementSeams": 36,
+      "selectedScriptureTextChanged": false,
+      "acceptedSourceAdditions": 0,
+      "readerRuntimeChanged": false,
+      "priorityP0StillBlockedForPublication": 5,
+      "actualUninterruptedOralReadingCompleted": false,
+      "omissionDisclosureRequired": true,
+      "threeNativeWitnessesStillUncollated": true
+    },
+    "noAutomatedPromotion": true,
+    "preferredTrialSourceOwners": 6,
+    "optionalVisionTrialSourceOwners": 1
+  }
+}

@@ -1,0 +1,603 @@
+{
+  "schema": "ao.historia.p3.five-critical-hinges-source-minimum-options.v1",
+  "date": "2026-10-23",
+  "status": "SOURCE_BOUND_COMPARATIVE_RESEARCH_ONLY_NO_ADOPTED_PASSAGE_CHANGES",
+  "proof": {
+    "branch": "research/historia-p3-esther-span-20261017",
+    "path": "data/research/historia-salutis-v18-continuous-reading-proof.v1.json",
+    "sha": "ee75b8bc8a2ffcd6d32723ccf8ace69ad21e3446"
+  },
+  "seamAudit": {
+    "branch": "research/historia-p3-esther-span-20261017",
+    "path": "data/research/historia-salutis-p3-continuous-full-story-seam-audit-20261023.v1.json",
+    "sha": "bb767d3a12238dc2fe57fdd0843c6dbd798f60db"
+  },
+  "textWitnesses": [
+    {
+      "path": "data/scripture/witness/dr-challoner/Genesis.json",
+      "edition": "dr-challoner",
+      "book": "Genesis",
+      "sha": "ea1cceb2867b9b92d236a86af87d8880e1b2baf1",
+      "sourceStatus": "UNCOLLATED_SOURCE_WITNESS"
+    },
+    {
+      "path": "data/scripture/witness/dr-challoner/Exodus.json",
+      "edition": "dr-challoner",
+      "book": "Exodus",
+      "sha": "09b43d38baf0889623f0d30c15c01e0fe7b85da8",
+      "sourceStatus": "UNCOLLATED_SOURCE_WITNESS"
+    },
+    {
+      "path": "data/scripture/witness/dr-challoner/John.json",
+      "edition": "dr-challoner",
+      "book": "John",
+      "sha": "a146e78ec89ad15d3df29a49462c8373e9dee3f8",
+      "sourceStatus": "UNCOLLATED_SOURCE_WITNESS"
+    },
+    {
+      "path": "data/scripture/witness/dr-challoner/Acts.json",
+      "edition": "dr-challoner",
+      "book": "Acts",
+      "sha": "790769859646ecd4ca6b45f6b61b9ecaec1da826",
+      "sourceStatus": "UNCOLLATED_SOURCE_WITNESS"
+    },
+    {
+      "path": "data/scripture/witness/dr-challoner/Revelation.json",
+      "edition": "dr-challoner",
+      "book": "Revelation",
+      "sha": "1fb2ff7f04f8ab798f892c4fb6174e39ce9f8075",
+      "sourceStatus": "UNCOLLATED_SOURCE_WITNESS"
+    },
+    {
+      "path": "data/scripture/witness/cpdv-2009/Genesis.json",
+      "edition": "cpdv-2009",
+      "book": "Genesis",
+      "sha": "f51b19ae0a41419b592e9e0b58fcdfd2d3cdd135",
+      "sourceStatus": "UNCOLLATED_SOURCE_WITNESS"
+    },
+    {
+      "path": "data/scripture/witness/cpdv-2009/Exodus.json",
+      "edition": "cpdv-2009",
+      "book": "Exodus",
+      "sha": "fdd0d5685e5be2d32b29f0369dba4c3de47ea120",
+      "sourceStatus": "UNCOLLATED_SOURCE_WITNESS"
+    },
+    {
+      "path": "data/scripture/witness/cpdv-2009/John.json",
+      "edition": "cpdv-2009",
+      "book": "John",
+      "sha": "5c0f7929ec052ae1aa92c583219087bb25c32655",
+      "sourceStatus": "UNCOLLATED_SOURCE_WITNESS"
+    },
+    {
+      "path": "data/scripture/witness/cpdv-2009/Acts.json",
+      "edition": "cpdv-2009",
+      "book": "Acts",
+      "sha": "5eaaa125d14538d00305e49624196b55033da41d",
+      "sourceStatus": "UNCOLLATED_SOURCE_WITNESS"
+    },
+    {
+      "path": "data/scripture/witness/cpdv-2009/Revelation.json",
+      "edition": "cpdv-2009",
+      "book": "Revelation",
+      "sha": "facbe04cd3626f862044884ad3aa68c4a09ddb51",
+      "sourceStatus": "UNCOLLATED_SOURCE_WITNESS"
+    },
+    {
+      "path": "data/scripture/witness/crampon-1923/Genesis.json",
+      "edition": "crampon-1923",
+      "book": "Genesis",
+      "sha": "634c4f21b9667ffc91a7d82b00f0eff0871a286f",
+      "sourceStatus": "UNCOLLATED_SOURCE_WITNESS"
+    },
+    {
+      "path": "data/scripture/witness/crampon-1923/Exodus.json",
+      "edition": "crampon-1923",
+      "book": "Exodus",
+      "sha": "49a299cc21b04ffcd5729e8df41327fa52c2806b",
+      "sourceStatus": "UNCOLLATED_SOURCE_WITNESS"
+    },
+    {
+      "path": "data/scripture/witness/crampon-1923/John.json",
+      "edition": "crampon-1923",
+      "book": "John",
+      "sha": "0f49d89ad2fb1754ef966305caf70f2a3b2b7790",
+      "sourceStatus": "UNCOLLATED_SOURCE_WITNESS"
+    },
+    {
+      "path": "data/scripture/witness/crampon-1923/Acts.json",
+      "edition": "crampon-1923",
+      "book": "Acts",
+      "sha": "25fde9eaaff3412445430f4ae1fa87b0c6aae244",
+      "sourceStatus": "UNCOLLATED_SOURCE_WITNESS"
+    },
+    {
+      "path": "data/scripture/witness/crampon-1923/Revelation.json",
+      "edition": "crampon-1923",
+      "book": "Revelation",
+      "sha": "ff790a5e9ad1e7a3eacf6bdfbf164ed15a7383a7",
+      "sourceStatus": "UNCOLLATED_SOURCE_WITNESS"
+    }
+  ],
+  "policies": {
+    "canonicalSourcePassagesModified": false,
+    "unapprovedBridgeIdsPreserved": true,
+    "independentEnglishAndFrenchWording": false,
+    "sourceWitnessWordingUnmodified": true,
+    "sourceVerseCountsAreOriginalEditionEntries": true,
+    "recommendedOptionsNotFinalApprovals": true,
+    "shortestDoesNotImplyBestTheologicalChoice": true,
+    "exactFrenchPrintEditionAndEnglishEditionCollationPending": true,
+    "nonScripturalGenreHeadingMustBeExplicitlyLabeled": true,
+    "neverInventPaulsJourneyOrNoahArkBuildingDialogue": true,
+    "noHistoricalCoordinates": true,
+    "allResearchOptionsRequireUninterruptedOralCheck": true,
+    "noNewBibleReaderOrAtlas": true
+  },
+  "headings": {
+    "totalHinges": 5,
+    "preferredOrNeededSourceVerseCounts": {
+      "genesisArk": 12,
+      "passover": 2,
+      "johnBurial": 5,
+      "romeArrivalAndAudience": 7,
+      "actsToRevelationGenreLabel": 0
+    },
+    "optionalTheologicalAndGenrePassages": {
+      "johnPiercedSide": 7,
+      "revelationThrone": 2,
+      "revelationPatmosAndThrone": 5
+    }
+  },
+  "options": [
+    {
+      "hinge": "HS-HINGE-02",
+      "stage": "CREATION_TO_NOAH",
+      "destination": "HS-M03",
+      "ownerBeat": "HS-CF-01",
+      "causalNeed": "Introduce a named just man Noah, God's command to make an ark, the coming flood, the covenant, the household and living creatures before God says Enter the ark in 7:1.",
+      "choices": [
+        {
+          "id": "ARK_EXISTING_P3_TRIAL",
+          "refs": [
+            "Genesis 6:9–14",
+            "Genesis 6:17–22"
+          ],
+          "measurements": {
+            "dr-challoner": {
+              "verseEntries": 12,
+              "sourceWords": 285,
+              "validated": true
+            },
+            "cpdv-2009": {
+              "verseEntries": 12,
+              "sourceWords": 317,
+              "validated": true
+            },
+            "crampon-1923": {
+              "verseEntries": 12,
+              "sourceWords": 281,
+              "validated": true
+            }
+          },
+          "sourceStatus": "EXACT_UNCOLLATED_CATHOLIC_WITNESS",
+          "publicationApproved": false,
+          "oralValidated": false,
+          "disposition": "PREFERRED_PRESERVE_EXISTING_HELD_TRIAL",
+          "reason": "12 source verses keep moral cause (6:11–13), ark design command (14), flood/covenant (17–18), living creatures, food and obedience (19–22), excluding only dimensions/windows (15–16). No new source addition required beyond existing held trial."
+        },
+        {
+          "id": "ARK_MORE_AGGRESSIVE_SEVEN_VERSES",
+          "refs": [
+            "Genesis 6:9",
+            "Genesis 6:13–14",
+            "Genesis 6:17–19",
+            "Genesis 6:22"
+          ],
+          "measurements": {
+            "dr-challoner": {
+              "verseEntries": 7,
+              "sourceWords": 177,
+              "validated": true
+            },
+            "cpdv-2009": {
+              "verseEntries": 7,
+              "sourceWords": 195,
+              "validated": true
+            },
+            "crampon-1923": {
+              "verseEntries": 7,
+              "sourceWords": 180,
+              "validated": true
+            }
+          },
+          "sourceStatus": "EXACT_UNCOLLATED_CATHOLIC_WITNESS",
+          "publicationApproved": false,
+          "oralValidated": false,
+          "disposition": "COMPACT_ALTERNATIVE_UNAPPROVED",
+          "reason": "Seven verses could preserve identity, moral judgment, ark command, flood and covenant, animals and obedience, but omit 6:10–12,20–21 (Noah's sons, corruption, details and stored provisions); only trial if twelve proves too lengthy."
+        },
+        {
+          "id": "ARK_WHOLE_EXISTING_HELD_SOURCE",
+          "refs": [
+            "Genesis 6:9–22"
+          ],
+          "measurements": {
+            "dr-challoner": {
+              "verseEntries": 14,
+              "sourceWords": 356,
+              "validated": true
+            },
+            "cpdv-2009": {
+              "verseEntries": 14,
+              "sourceWords": 387,
+              "validated": true
+            },
+            "crampon-1923": {
+              "verseEntries": 14,
+              "sourceWords": 342,
+              "validated": true
+            }
+          },
+          "sourceStatus": "EXACT_UNCOLLATED_CATHOLIC_WITNESS",
+          "publicationApproved": false,
+          "oralValidated": false,
+          "disposition": "FULL_COMPARISON_NONSELECTED",
+          "reason": "All fourteen verses preserve the architectural dimensions and chambers (6:15–16). Appropriate for exhaustive witness/illustrated background; not necessary merely to explain the first ark entry."
+        }
+      ],
+      "requiredNonSourceContext": "The previous movement ends at Genesis 3, and the P3 source-backed Seth-to-Noah genealogical text remains editorial, not Scripture; no claim of immediate chronology.",
+      "selectionNotApplied": true,
+      "fromMovement": "HS-M02",
+      "toMovement": "HS-M03",
+      "firstSelectedAfter": "Genesis 7:1–5",
+      "lastSelectedBefore": "Genesis 3:14–24",
+      "sourceDeskAcceptedAsFinal": false,
+      "printEditionCollationApproved": false,
+      "theologicalApproval": false,
+      "oralLiteraryApproval": false,
+      "noAutoPublication": true
+    },
+    {
+      "hinge": "HS-HINGE-08",
+      "stage": "PASSOVER_TO_EXODUS",
+      "destination": "HS-M08",
+      "ownerBeat": "H20-01",
+      "causalNeed": "The plague foretold in Exodus 11 must actually strike and Pharaoh must rise and hear Egypt's cry before his release command at 12:31.",
+      "choices": [
+        {
+          "id": "FIRSTBORN_TWO_VERSES",
+          "refs": [
+            "Exodus 12:29–30"
+          ],
+          "measurements": {
+            "dr-challoner": {
+              "verseEntries": 2,
+              "sourceWords": 78,
+              "validated": true
+            },
+            "cpdv-2009": {
+              "verseEntries": 2,
+              "sourceWords": 84,
+              "validated": true
+            },
+            "crampon-1923": {
+              "verseEntries": 2,
+              "sourceWords": 74,
+              "validated": true
+            }
+          },
+          "sourceStatus": "EXACT_UNCOLLATED_CATHOLIC_WITNESS",
+          "publicationApproved": false,
+          "oralValidated": false,
+          "disposition": "PREFERRED_RETAIN_EXISTING_UNAPPROVED_AFTER_TRIAL",
+          "reason": "Two exact verses are the direct recorded causal link, with the firstborn judgment and Pharaoh's reaction. Both necessary; 12:29 alone omits Pharaoh rising, and 12:30 alone leaves judgment unexplained."
+        }
+      ],
+      "requiredNonSourceContext": "Preserve the selected Passover lamb, blood, memorial and household observance. Do not replace judgment with a generic editorial summary.",
+      "selectionNotApplied": true,
+      "fromMovement": "HS-M08",
+      "toMovement": "HS-M09",
+      "firstSelectedAfter": "Exodus 12:31–33",
+      "lastSelectedBefore": "Exodus 12:27–28",
+      "sourceDeskAcceptedAsFinal": false,
+      "printEditionCollationApproved": false,
+      "theologicalApproval": false,
+      "oralLiteraryApproval": false,
+      "noAutoPublication": true
+    },
+    {
+      "hinge": "HS-HINGE-28",
+      "stage": "CALVARY_TO_RESURRECTION",
+      "destination": "HS-M28",
+      "ownerBeat": "HS-CF-06",
+      "causalNeed": "John 20 opens at an already established tomb; Jesus' death in 19:30 cannot jump to Mary at 20:1 without explicitly accounting for His burial.",
+      "choices": [
+        {
+          "id": "JOHN_BURIAL_FIVE_VERSES",
+          "refs": [
+            "John 19:38–42"
+          ],
+          "measurements": {
+            "dr-challoner": {
+              "verseEntries": 5,
+              "sourceWords": 142,
+              "validated": true
+            },
+            "cpdv-2009": {
+              "verseEntries": 5,
+              "sourceWords": 149,
+              "validated": true
+            },
+            "crampon-1923": {
+              "verseEntries": 5,
+              "sourceWords": 128,
+              "validated": true
+            }
+          },
+          "sourceStatus": "EXACT_UNCOLLATED_CATHOLIC_WITNESS",
+          "publicationApproved": false,
+          "oralValidated": false,
+          "disposition": "PREFERRED_EXISTING_HELD_BURIAL",
+          "reason": "Joseph's request, Nicodemus, the shrouding and placing of Christ in the new tomb establish the burial and tomb's identity without inventing it."
+        },
+        {
+          "id": "PIERCED_SIDE_SEPARATE_WITNESS",
+          "refs": [
+            "John 19:31–37"
+          ],
+          "measurements": {
+            "dr-challoner": {
+              "verseEntries": 7,
+              "sourceWords": 161,
+              "validated": true
+            },
+            "cpdv-2009": {
+              "verseEntries": 7,
+              "sourceWords": 168,
+              "validated": true
+            },
+            "crampon-1923": {
+              "verseEntries": 7,
+              "sourceWords": 160,
+              "validated": true
+            }
+          },
+          "sourceStatus": "EXACT_UNCOLLATED_CATHOLIC_WITNESS",
+          "publicationApproved": false,
+          "oralValidated": false,
+          "disposition": "INDEPENDENT_THEOLOGICAL_EYEWITNESS_REVIEW_REQUIRED",
+          "reason": "Seven original verses contain the unbroken bones, spear piercing, blood/water, John 19:35's eyewitness statement and Scripture fulfilment. This is not expendable just because burial alone repairs actor/location continuity."
+        },
+        {
+          "id": "JOHN_COMPLETE_AFTER_DEATH",
+          "refs": [
+            "John 19:31–42"
+          ],
+          "measurements": {
+            "dr-challoner": {
+              "verseEntries": 12,
+              "sourceWords": 303,
+              "validated": true
+            },
+            "cpdv-2009": {
+              "verseEntries": 12,
+              "sourceWords": 317,
+              "validated": true
+            },
+            "crampon-1923": {
+              "verseEntries": 12,
+              "sourceWords": 288,
+              "validated": true
+            }
+          },
+          "sourceStatus": "EXACT_UNCOLLATED_CATHOLIC_WITNESS",
+          "publicationApproved": false,
+          "oralValidated": false,
+          "disposition": "FULL_UNABRIDGED_CONTINUITY_COMPARISON",
+          "reason": "Twelve consecutive original verses preserve piercing testimony and burial without gap; compare reading length and canonical doctrinal coverage before deciding whether to keep both sections."
+        }
+      ],
+      "requiredNonSourceContext": "John 19:31–37 and 38–42 remain distinct unapproved trial statuses even if compared consecutively; do not change Christ's Passion liturgical theology by silently dropping the former.",
+      "selectionNotApplied": true,
+      "fromMovement": "HS-M28",
+      "toMovement": "HS-M29",
+      "firstSelectedAfter": "John 20:1–3",
+      "lastSelectedBefore": "John 19:17–30",
+      "sourceDeskAcceptedAsFinal": false,
+      "printEditionCollationApproved": false,
+      "theologicalApproval": false,
+      "oralLiteraryApproval": false,
+      "noAutoPublication": true
+    },
+    {
+      "hinge": "HS-HINGE-33",
+      "stage": "COUNCIL_TO_ROME",
+      "destination": "HS-M34",
+      "ownerBeat": "HS-P3-CF-13",
+      "causalNeed": "Acts 28:23 assumes Paul is in Rome and an audience has already appointed a subsequent hearing.",
+      "choices": [
+        {
+          "id": "ROME_ARRIVAL_AND_FULL_AUDIENCE",
+          "refs": [
+            "Acts 28:16",
+            "Acts 28:17–22"
+          ],
+          "measurements": {
+            "dr-challoner": {
+              "verseEntries": 7,
+              "sourceWords": 189,
+              "validated": true
+            },
+            "cpdv-2009": {
+              "verseEntries": 7,
+              "sourceWords": 212,
+              "validated": true
+            },
+            "crampon-1923": {
+              "verseEntries": 7,
+              "sourceWords": 194,
+              "validated": true
+            }
+          },
+          "sourceStatus": "EXACT_UNCOLLATED_CATHOLIC_WITNESS",
+          "publicationApproved": false,
+          "oralValidated": false,
+          "disposition": "PREFERRED_USE_BOTH_EXISTING_HELD_SOURCE_OWNERS",
+          "reason": "Arrival and guard (16), leaders summoned and Paul's situation (17–20), response and interest in further teaching (21–22) make the meeting and appointment in 28:23 intelligible. The one-verse arrival alone is insufficient."
+        },
+        {
+          "id": "ROME_AUDIENCE_ONLY",
+          "refs": [
+            "Acts 28:17–22"
+          ],
+          "measurements": {
+            "dr-challoner": {
+              "verseEntries": 6,
+              "sourceWords": 169,
+              "validated": true
+            },
+            "cpdv-2009": {
+              "verseEntries": 6,
+              "sourceWords": 191,
+              "validated": true
+            },
+            "crampon-1923": {
+              "verseEntries": 6,
+              "sourceWords": 173,
+              "validated": true
+            }
+          },
+          "sourceStatus": "EXACT_UNCOLLATED_CATHOLIC_WITNESS",
+          "publicationApproved": false,
+          "oralValidated": false,
+          "disposition": "REJECT_AS_STANDALONE_FOR_FULL_CROSS_MOVEMENT_HINGE",
+          "reason": "The audience exchange is intelligible internally but, following the Jerusalem Council, never independently situates Paul's Roman arrival. Requires 28:16 or explicitly sourced place/period framing."
+        }
+      ],
+      "requiredNonSourceContext": "Even Acts 28:16–22 cannot stand for Acts 16–27. The existing editorial preface may state Paul's arrest, appeal and transfer with its three precise Acts sources, visibly non-scriptural; do not invent an apostolic journey route.",
+      "selectionNotApplied": true,
+      "fromMovement": "HS-M33",
+      "toMovement": "HS-M34",
+      "firstSelectedAfter": "Acts 28:23–31",
+      "lastSelectedBefore": "Acts 15:22–29",
+      "sourceDeskAcceptedAsFinal": false,
+      "printEditionCollationApproved": false,
+      "theologicalApproval": false,
+      "oralLiteraryApproval": false,
+      "noAutoPublication": true
+    },
+    {
+      "hinge": "HS-HINGE-34",
+      "stage": "ACTS_HISTORY_TO_APOCALYPTIC_VISION",
+      "destination": "HS-M35",
+      "ownerBeat": "H75-01",
+      "causalNeed": "Show that Acts' report of apostolic history has concluded and the reader is now entering John's attributed apocalyptic visions, not a terrestrial sequel to Paul's imprisonment.",
+      "choices": [
+        {
+          "id": "VISION_GENRE_HEADING_ONLY",
+          "refs": [],
+          "measurements": {
+            "dr-challoner": {
+              "verseEntries": 0,
+              "sourceWords": 0,
+              "validated": true
+            },
+            "cpdv-2009": {
+              "verseEntries": 0,
+              "sourceWords": 0,
+              "validated": true
+            },
+            "crampon-1923": {
+              "verseEntries": 0,
+              "sourceWords": 0,
+              "validated": true
+            }
+          },
+          "sourceStatus": "EXACT_UNCOLLATED_CATHOLIC_WITNESS",
+          "publicationApproved": false,
+          "oralValidated": false,
+          "disposition": "PREFERRED_REQUIRED_EDITORIAL_GENRE_BOUNDARY_NOT_SCRIPTURE",
+          "reason": "A chapter-level source/genre heading distinguishing Acts from Revelation supplies the necessary change of work, literary form and visionary setting without claiming an event on a timeline; not a Bible quote."
+        },
+        {
+          "id": "OPEN_HEAVENLY_VISION",
+          "refs": [
+            "Revelation 4:1–2"
+          ],
+          "measurements": {
+            "dr-challoner": {
+              "verseEntries": 2,
+              "sourceWords": 67,
+              "validated": true
+            },
+            "cpdv-2009": {
+              "verseEntries": 2,
+              "sourceWords": 67,
+              "validated": true
+            },
+            "crampon-1923": {
+              "verseEntries": 2,
+              "sourceWords": 66,
+              "validated": true
+            }
+          },
+          "sourceStatus": "EXACT_UNCOLLATED_CATHOLIC_WITNESS",
+          "publicationApproved": false,
+          "oralValidated": false,
+          "disposition": "EXISTING_HELD_SCRIPTURE_OPTION",
+          "reason": "The two verses introduce a heavenly door, first voice, inspired vision and throne before Revelation 5:1 says 'him that sat on the throne'. Already held in P3."
+        },
+        {
+          "id": "JOHN_PATMOS_AND_THRONE",
+          "refs": [
+            "Revelation 1:9–11",
+            "Revelation 4:1–2"
+          ],
+          "measurements": {
+            "dr-challoner": {
+              "verseEntries": 5,
+              "sourceWords": 162,
+              "validated": true
+            },
+            "cpdv-2009": {
+              "verseEntries": 5,
+              "sourceWords": 168,
+              "validated": true
+            },
+            "crampon-1923": {
+              "verseEntries": 5,
+              "sourceWords": 158,
+              "validated": true
+            }
+          },
+          "sourceStatus": "EXACT_UNCOLLATED_CATHOLIC_WITNESS",
+          "publicationApproved": false,
+          "oralValidated": false,
+          "disposition": "OPTIONAL_FULL_NATIVE_PROVENANCE_REVIEW",
+          "reason": "Five verses explicitly identify John on Patmos, a commanded written vision and a later heavenly throne. Revelation 1:9–11 is currently only cited in an editorial context; do not confuse the two nonadjacent vision chapters with a continuous scene."
+        }
+      ],
+      "requiredNonSourceContext": "No Apostle Paul→John journey, no Patmos date invented, no new Atlas event/pin or pseudo-historical chronology. Revelation's visionary sequence is distinct from the historical chapters of Acts.",
+      "selectionNotApplied": true,
+      "fromMovement": "HS-M34",
+      "toMovement": "HS-M35",
+      "firstSelectedAfter": "Revelation 5:1–14",
+      "lastSelectedBefore": "Acts 28:23–31",
+      "sourceDeskAcceptedAsFinal": false,
+      "printEditionCollationApproved": false,
+      "theologicalApproval": false,
+      "oralLiteraryApproval": false,
+      "noAutoPublication": true
+    }
+  ],
+  "approvalChecklist": [
+    "Three named witness spans exist, but no printed-edition collation is certified.",
+    "Reassess Genesis 6:9–14 and 17–22 orally before making it compulsory; compare shorter 7-verse trial without blurring God's covenant.",
+    "Exodus 12:29–30 should remain exact original source when evaluating judgment and Pharaoh's release; assess both verses together.",
+    "Review John 19:31–37 and burial John 19:38–42 distinctly with Catholic theology; don't reduce the Passion to a transition convenience.",
+    "Use both Acts 28:16 and 17–22 for the immediate Rome audience, plus clearly editor-owned period jump.",
+    "Mark the Acts to Apocalypse genre/author handoff even if the Revelation 4 source bridge is not selected.",
+    "After decisions, update the P3 source owner (not this research ledger), regenerate exact-source manuscripts per witness, rerun all Scripture and mobile tests, and only later approve publication."
+  ]
+}

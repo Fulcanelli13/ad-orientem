@@ -1,0 +1,2241 @@
+{
+  "schema": "ao.historia.v18.provisional-main-spine-consolidation.v1",
+  "createdOn": "2026-10-17",
+  "status": "EDITORIAL_PROPOSAL_ONLY_NOT_PUBLICATION",
+  "source": {
+    "auditPath": "data/research/historia-salutis-v18-necessity-audit.v1.json",
+    "auditBlobSha": "e06db54e347382b7abdb240b76ebc19c0ad3b2e5",
+    "original78Chapters": true,
+    "original217Segments": true,
+    "editsToCanonicalText": false
+  },
+  "intent": "One continuous historia; no extended Bible mode, no newly built independent story catalogue. Consolidated movements are navigational editorial planning units, not final public chapters.",
+  "rules": [
+    "Main spine contains all A beats, not full chapter text",
+    "B is short contextual stitching, not automatic passage import",
+    "C remains optional via pre-existing person/event/Scripture routes only if verified",
+    "D never duplicates a featured passage",
+    "Keep the exact original pericope, chapter ownership and Gospel differences at source; no new blended verse text",
+    "Original biblical books' chronology, especially exile witnesses and Apocalypse, cannot be forced into one literal sequence",
+    "Final public chapter count is not selected by an arbitrary numeric target"
+  ],
+  "stats": {
+    "proposedNarrativeMovements": 37,
+    "originalChaptersCovered": 78,
+    "originalSegmentsClassified": 217,
+    "essentialUnits": 93,
+    "shortContextCandidateUnits": 58,
+    "otherContextNotSelected": 9,
+    "independentStoriesExcludedFromMain": 54,
+    "noExtraPresentations": 3,
+    "highPrioritySourceBridges": 2
+  },
+  "movements": [
+    {
+      "id": "HS-M01",
+      "proposedEditorialOrder": 1,
+      "title": "Creation and the human vocation",
+      "purpose": "The world, humanity made for communion with God, and the Sabbath complete the opening frame",
+      "originalChapterSpan": {
+        "first": "H01",
+        "last": "H02",
+        "chapterIds": [
+          "H01",
+          "H02"
+        ]
+      },
+      "indispensable": {
+        "sourceUnitIds": [
+          "H01-01",
+          "H01-02",
+          "H02-01",
+          "H02-02"
+        ],
+        "sourceReferences": [
+          {
+            "unitId": "H01-01",
+            "reference": "Genesis 1:1–31",
+            "approved": false
+          },
+          {
+            "unitId": "H01-02",
+            "reference": "2:1–3",
+            "approved": false
+          },
+          {
+            "unitId": "H02-01",
+            "reference": "Genesis 2:7–9",
+            "approved": false
+          },
+          {
+            "unitId": "H02-02",
+            "reference": "2:15–25",
+            "approved": false
+          }
+        ]
+      },
+      "optionalBriefBridges": [],
+      "secondaryContextHeld": [],
+      "independentStoriesNotMandatory": [],
+      "noExtraPresentation": [],
+      "editorialRisk": "CONTINUITY_AND_CATHOLIC_EDITORIAL_REVIEW_REQUIRED",
+      "isFinalChapter": false,
+      "appChanges": false
+    },
+    {
+      "id": "HS-M02",
+      "proposedEditorialOrder": 2,
+      "title": "The Fall and the First Promise",
+      "purpose": "Disobedience, death and the first announced victory over evil form one continuous Genesis 3 account",
+      "originalChapterSpan": {
+        "first": "H03",
+        "last": "H04",
+        "chapterIds": [
+          "H03",
+          "H04"
+        ]
+      },
+      "indispensable": {
+        "sourceUnitIds": [
+          "H03-01",
+          "H04-01"
+        ],
+        "sourceReferences": [
+          {
+            "unitId": "H03-01",
+            "reference": "Genesis 3:1–13",
+            "approved": false
+          },
+          {
+            "unitId": "H04-01",
+            "reference": "Genesis 3:14–24",
+            "approved": false
+          }
+        ]
+      },
+      "optionalBriefBridges": [],
+      "secondaryContextHeld": [],
+      "independentStoriesNotMandatory": [],
+      "noExtraPresentation": [],
+      "editorialRisk": "CONTINUITY_AND_CATHOLIC_EDITORIAL_REVIEW_REQUIRED",
+      "isFinalChapter": false,
+      "appChanges": false
+    },
+    {
+      "id": "HS-M03",
+      "proposedEditorialOrder": 3,
+      "title": "Noah, the covenant and the peoples",
+      "purpose": "Human corruption, judgment, preservation and the rainbow covenant; the nations and Babel close this transition",
+      "originalChapterSpan": {
+        "first": "H05",
+        "last": "H09",
+        "chapterIds": [
+          "H05",
+          "H06",
+          "H07",
+          "H08",
+          "H09"
+        ]
+      },
+      "indispensable": {
+        "sourceUnitIds": [
+          "H07-02",
+          "H07-03",
+          "H08-01"
+        ],
+        "sourceReferences": [
+          {
+            "unitId": "H07-02",
+            "reference": "7:1–5, 10–12, 17–23",
+            "approved": false
+          },
+          {
+            "unitId": "H07-03",
+            "reference": "8:6–12, 15–22",
+            "approved": false
+          },
+          {
+            "unitId": "H08-01",
+            "reference": "Genesis 9:8–17",
+            "approved": false
+          }
+        ]
+      },
+      "optionalBriefBridges": [
+        {
+          "unitId": "H05-02",
+          "sourceReference": "Genesis 4:25–26",
+          "mode": "SHORT_CONTEXT_NOT_FULL_REQUIRED_READING"
+        },
+        {
+          "unitId": "H06-01",
+          "sourceReference": "Genesis 6:1–8",
+          "mode": "SHORT_CONTEXT_NOT_FULL_REQUIRED_READING"
+        },
+        {
+          "unitId": "H09-02",
+          "sourceReference": "Genesis 11:1–9",
+          "mode": "SHORT_CONTEXT_NOT_FULL_REQUIRED_READING"
+        }
+      ],
+      "secondaryContextHeld": [
+        "H07-01",
+        "H09-01"
+      ],
+      "independentStoriesNotMandatory": [
+        "H05-01",
+        "H05-03"
+      ],
+      "noExtraPresentation": [],
+      "editorialRisk": "CONTINUITY_AND_CATHOLIC_EDITORIAL_REVIEW_REQUIRED",
+      "isFinalChapter": false,
+      "appChanges": false
+    },
+    {
+      "id": "HS-M04",
+      "proposedEditorialOrder": 4,
+      "title": "Abraham called into covenant",
+      "purpose": "God elects Abraham and makes a promise for Israel and all nations",
+      "originalChapterSpan": {
+        "first": "H10",
+        "last": "H11",
+        "chapterIds": [
+          "H10",
+          "H11"
+        ]
+      },
+      "indispensable": {
+        "sourceUnitIds": [
+          "H10-01",
+          "H11-02",
+          "H11-03"
+        ],
+        "sourceReferences": [
+          {
+            "unitId": "H10-01",
+            "reference": "Genesis 12:1–9",
+            "approved": false
+          },
+          {
+            "unitId": "H11-02",
+            "reference": "Genesis 15:1–6, 17–21",
+            "approved": false
+          },
+          {
+            "unitId": "H11-03",
+            "reference": "Genesis 17:1–11",
+            "approved": false
+          }
+        ]
+      },
+      "optionalBriefBridges": [
+        {
+          "unitId": "H11-01",
+          "sourceReference": "Genesis 14:18–20",
+          "mode": "SHORT_CONTEXT_NOT_FULL_REQUIRED_READING"
+        }
+      ],
+      "secondaryContextHeld": [],
+      "independentStoriesNotMandatory": [],
+      "noExtraPresentation": [],
+      "editorialRisk": "CONTINUITY_AND_CATHOLIC_EDITORIAL_REVIEW_REQUIRED",
+      "isFinalChapter": false,
+      "appChanges": false
+    },
+    {
+      "id": "HS-M05",
+      "proposedEditorialOrder": 5,
+      "title": "Isaac, Jacob and Israel",
+      "purpose": "The promised line passes through Isaac and Jacob and Israel receives his identity",
+      "originalChapterSpan": {
+        "first": "H12",
+        "last": "H15",
+        "chapterIds": [
+          "H12",
+          "H13",
+          "H14",
+          "H15"
+        ]
+      },
+      "indispensable": {
+        "sourceUnitIds": [
+          "H12-02",
+          "H13-01",
+          "H15-02",
+          "H15-03"
+        ],
+        "sourceReferences": [
+          {
+            "unitId": "H12-02",
+            "reference": "Genesis 21:1–7",
+            "approved": false
+          },
+          {
+            "unitId": "H13-01",
+            "reference": "Genesis 22:1–2, 6–14, 15–19",
+            "approved": false
+          },
+          {
+            "unitId": "H15-02",
+            "reference": "Genesis 32:23–33",
+            "approved": false
+          },
+          {
+            "unitId": "H15-03",
+            "reference": "Genesis 35:9–15",
+            "approved": false
+          }
+        ]
+      },
+      "optionalBriefBridges": [
+        {
+          "unitId": "H12-01",
+          "sourceReference": "Genesis 18:1–15",
+          "mode": "SHORT_CONTEXT_NOT_FULL_REQUIRED_READING"
+        },
+        {
+          "unitId": "H14-02",
+          "sourceReference": "Genesis 25:19–26, 29–34",
+          "mode": "SHORT_CONTEXT_NOT_FULL_REQUIRED_READING"
+        },
+        {
+          "unitId": "H14-03",
+          "sourceReference": "Genesis 27:18–29, 34–40",
+          "mode": "SHORT_CONTEXT_NOT_FULL_REQUIRED_READING"
+        },
+        {
+          "unitId": "H15-01",
+          "sourceReference": "Genesis 28:10–22",
+          "mode": "SHORT_CONTEXT_NOT_FULL_REQUIRED_READING"
+        }
+      ],
+      "secondaryContextHeld": [],
+      "independentStoriesNotMandatory": [
+        "H14-01"
+      ],
+      "noExtraPresentation": [],
+      "editorialRisk": "CONTINUITY_AND_CATHOLIC_EDITORIAL_REVIEW_REQUIRED",
+      "isFinalChapter": false,
+      "appChanges": false
+    },
+    {
+      "id": "HS-M06",
+      "proposedEditorialOrder": 6,
+      "title": "Joseph and the descent into Egypt",
+      "purpose": "Joseph's providential reconciliation places the family of Israel in Egypt",
+      "originalChapterSpan": {
+        "first": "H16",
+        "last": "H16",
+        "chapterIds": [
+          "H16"
+        ]
+      },
+      "indispensable": {
+        "sourceUnitIds": [
+          "H16-01",
+          "H16-03",
+          "H16-04",
+          "H16-05"
+        ],
+        "sourceReferences": [
+          {
+            "unitId": "H16-01",
+            "reference": "Genesis 37:3–4, 12–28",
+            "approved": false
+          },
+          {
+            "unitId": "H16-03",
+            "reference": "Genesis 41:14–16, 37–45",
+            "approved": false
+          },
+          {
+            "unitId": "H16-04",
+            "reference": "Genesis 45:1–15",
+            "approved": false
+          },
+          {
+            "unitId": "H16-05",
+            "reference": "Genesis 46:1–7",
+            "approved": false
+          }
+        ]
+      },
+      "optionalBriefBridges": [],
+      "secondaryContextHeld": [],
+      "independentStoriesNotMandatory": [
+        "H16-02"
+      ],
+      "noExtraPresentation": [],
+      "editorialRisk": "CONTINUITY_AND_CATHOLIC_EDITORIAL_REVIEW_REQUIRED",
+      "isFinalChapter": false,
+      "appChanges": false
+    },
+    {
+      "id": "HS-M07",
+      "proposedEditorialOrder": 7,
+      "title": "Bondage and the calling of Moses",
+      "purpose": "Oppression prepares Israel's deliverance and the divine name is revealed",
+      "originalChapterSpan": {
+        "first": "H17",
+        "last": "H18",
+        "chapterIds": [
+          "H17",
+          "H18"
+        ]
+      },
+      "indispensable": {
+        "sourceUnitIds": [
+          "H17-01",
+          "H18-01"
+        ],
+        "sourceReferences": [
+          {
+            "unitId": "H17-01",
+            "reference": "Exodus 1:7–14, 22",
+            "approved": false
+          },
+          {
+            "unitId": "H18-01",
+            "reference": "Exodus 3:1–8a, 10–15",
+            "approved": false
+          }
+        ]
+      },
+      "optionalBriefBridges": [
+        {
+          "unitId": "H17-02",
+          "sourceReference": "Exodus 2:1–10, 23–25",
+          "mode": "SHORT_CONTEXT_NOT_FULL_REQUIRED_READING"
+        }
+      ],
+      "secondaryContextHeld": [],
+      "independentStoriesNotMandatory": [],
+      "noExtraPresentation": [],
+      "editorialRisk": "CONTINUITY_AND_CATHOLIC_EDITORIAL_REVIEW_REQUIRED",
+      "isFinalChapter": false,
+      "appChanges": false
+    },
+    {
+      "id": "HS-M08",
+      "proposedEditorialOrder": 8,
+      "title": "Plagues and the first Passover",
+      "purpose": "God judges Pharaoh, gives the saving Passover and prepares the Exodus",
+      "originalChapterSpan": {
+        "first": "H19",
+        "last": "H20",
+        "chapterIds": [
+          "H19",
+          "H20"
+        ]
+      },
+      "indispensable": {
+        "sourceUnitIds": [
+          "H19-01",
+          "H19-05",
+          "H20-01"
+        ],
+        "sourceReferences": [
+          {
+            "unitId": "H19-01",
+            "reference": "Exodus 7:14–21",
+            "approved": false
+          },
+          {
+            "unitId": "H19-05",
+            "reference": "Exodus 11:4–8",
+            "approved": false
+          },
+          {
+            "unitId": "H20-01",
+            "reference": "Exodus 12:1–8, 11–14, 21–28",
+            "approved": false
+          }
+        ]
+      },
+      "optionalBriefBridges": [
+        {
+          "unitId": "H19-03",
+          "sourceReference": "Exodus 9:13–16",
+          "mode": "SHORT_CONTEXT_NOT_FULL_REQUIRED_READING"
+        },
+        {
+          "unitId": "H19-04",
+          "sourceReference": "Exodus 10:21–23",
+          "mode": "SHORT_CONTEXT_NOT_FULL_REQUIRED_READING"
+        }
+      ],
+      "secondaryContextHeld": [
+        "H19-02"
+      ],
+      "independentStoriesNotMandatory": [],
+      "noExtraPresentation": [],
+      "editorialRisk": "CONTINUITY_AND_CATHOLIC_EDITORIAL_REVIEW_REQUIRED",
+      "isFinalChapter": false,
+      "appChanges": false
+    },
+    {
+      "id": "HS-M09",
+      "proposedEditorialOrder": 9,
+      "title": "Exodus through the sea",
+      "purpose": "Israel leaves Egypt and passes through the sea toward Sinai; wilderness provision is kept brief",
+      "originalChapterSpan": {
+        "first": "H21",
+        "last": "H21",
+        "chapterIds": [
+          "H21"
+        ]
+      },
+      "indispensable": {
+        "sourceUnitIds": [
+          "H21-01",
+          "H21-03"
+        ],
+        "sourceReferences": [
+          {
+            "unitId": "H21-01",
+            "reference": "Exodus 12:31–42",
+            "approved": false
+          },
+          {
+            "unitId": "H21-03",
+            "reference": "Exodus 14:15–31",
+            "approved": false
+          }
+        ]
+      },
+      "optionalBriefBridges": [
+        {
+          "unitId": "H21-02",
+          "sourceReference": "Exodus 13:17–22",
+          "mode": "SHORT_CONTEXT_NOT_FULL_REQUIRED_READING"
+        },
+        {
+          "unitId": "H21-04",
+          "sourceReference": "Exodus 16:2–4, 12–15",
+          "mode": "SHORT_CONTEXT_NOT_FULL_REQUIRED_READING"
+        }
+      ],
+      "secondaryContextHeld": [],
+      "independentStoriesNotMandatory": [
+        "H21-05"
+      ],
+      "noExtraPresentation": [],
+      "editorialRisk": "CONTINUITY_AND_CATHOLIC_EDITORIAL_REVIEW_REQUIRED",
+      "isFinalChapter": false,
+      "appChanges": false
+    },
+    {
+      "id": "HS-M10",
+      "proposedEditorialOrder": 10,
+      "title": "Sinai: covenant and unfaithfulness",
+      "purpose": "Law and blood of covenant meet the golden calf and intercession; the divine dwelling supplies its resolution",
+      "originalChapterSpan": {
+        "first": "H22",
+        "last": "H23",
+        "chapterIds": [
+          "H22",
+          "H23"
+        ]
+      },
+      "indispensable": {
+        "sourceUnitIds": [
+          "H22-01",
+          "H22-02",
+          "H22-03",
+          "H23-01"
+        ],
+        "sourceReferences": [
+          {
+            "unitId": "H22-01",
+            "reference": "Exodus 19:3–8",
+            "approved": false
+          },
+          {
+            "unitId": "H22-02",
+            "reference": "20:1–17",
+            "approved": false
+          },
+          {
+            "unitId": "H22-03",
+            "reference": "24:3–8",
+            "approved": false
+          },
+          {
+            "unitId": "H23-01",
+            "reference": "Exodus 32:1–14, 19–35",
+            "approved": false
+          }
+        ]
+      },
+      "optionalBriefBridges": [
+        {
+          "unitId": "H23-02",
+          "sourceReference": "Exodus 40:16–21, 34–38",
+          "mode": "SHORT_CONTEXT_NOT_FULL_REQUIRED_READING"
+        }
+      ],
+      "secondaryContextHeld": [],
+      "independentStoriesNotMandatory": [
+        "H23-03"
+      ],
+      "noExtraPresentation": [],
+      "editorialRisk": "CONTINUITY_AND_CATHOLIC_EDITORIAL_REVIEW_REQUIRED",
+      "isFinalChapter": false,
+      "appChanges": false
+    },
+    {
+      "id": "HS-M11",
+      "proposedEditorialOrder": 11,
+      "title": "Israel enters the promised land",
+      "purpose": "Moses dies, Joshua leads Israel into the land, and the cycle of the Judges explains why kingship follows",
+      "originalChapterSpan": {
+        "first": "H24",
+        "last": "H26",
+        "chapterIds": [
+          "H24",
+          "H25",
+          "H26"
+        ]
+      },
+      "indispensable": {
+        "sourceUnitIds": [
+          "H24-03",
+          "H25-01",
+          "H26-01"
+        ],
+        "sourceReferences": [
+          {
+            "unitId": "H24-03",
+            "reference": "Deuteronomy 34:1–12",
+            "approved": false
+          },
+          {
+            "unitId": "H25-01",
+            "reference": "Joshua 3:7–17",
+            "approved": false
+          },
+          {
+            "unitId": "H26-01",
+            "reference": "Judges 2:6–19",
+            "approved": false
+          }
+        ]
+      },
+      "optionalBriefBridges": [
+        {
+          "unitId": "H24-01",
+          "sourceReference": "Deuteronomy 30:11–20",
+          "mode": "SHORT_CONTEXT_NOT_FULL_REQUIRED_READING"
+        },
+        {
+          "unitId": "H24-02",
+          "sourceReference": "Deuteronomy 31:1–8",
+          "mode": "SHORT_CONTEXT_NOT_FULL_REQUIRED_READING"
+        },
+        {
+          "unitId": "H25-02",
+          "sourceReference": "Joshua 6:1–5, 12–21",
+          "mode": "SHORT_CONTEXT_NOT_FULL_REQUIRED_READING"
+        }
+      ],
+      "secondaryContextHeld": [],
+      "independentStoriesNotMandatory": [
+        "H26-02"
+      ],
+      "noExtraPresentation": [],
+      "editorialRisk": "CONTINUITY_AND_CATHOLIC_EDITORIAL_REVIEW_REQUIRED",
+      "isFinalChapter": false,
+      "appChanges": false
+    },
+    {
+      "id": "HS-M12",
+      "proposedEditorialOrder": 12,
+      "title": "From Ruth to Samuel and Saul",
+      "purpose": "The Ruth-to-David family bridge and Israel's request for a king supply the transition from Judges to monarchy",
+      "originalChapterSpan": {
+        "first": "H27",
+        "last": "H29",
+        "chapterIds": [
+          "H27",
+          "H28",
+          "H29"
+        ]
+      },
+      "indispensable": {
+        "sourceUnitIds": [
+          "H28-04",
+          "H29-03",
+          "H29-04"
+        ],
+        "sourceReferences": [
+          {
+            "unitId": "H28-04",
+            "reference": "Ruth 4:1–13, 17–22",
+            "approved": false
+          },
+          {
+            "unitId": "H29-03",
+            "reference": "1 Samuel 8:4–22",
+            "approved": false
+          },
+          {
+            "unitId": "H29-04",
+            "reference": "1 Samuel 10:1–8",
+            "approved": false
+          }
+        ]
+      },
+      "optionalBriefBridges": [
+        {
+          "unitId": "H28-01",
+          "sourceReference": "Ruth 1:1–18",
+          "mode": "SHORT_CONTEXT_NOT_FULL_REQUIRED_READING"
+        },
+        {
+          "unitId": "H29-02",
+          "sourceReference": "1 Samuel 3:1–21",
+          "mode": "SHORT_CONTEXT_NOT_FULL_REQUIRED_READING"
+        }
+      ],
+      "secondaryContextHeld": [],
+      "independentStoriesNotMandatory": [
+        "H27-01",
+        "H27-02",
+        "H27-03",
+        "H27-04",
+        "H27-05",
+        "H28-02",
+        "H28-03",
+        "H29-01"
+      ],
+      "noExtraPresentation": [],
+      "editorialRisk": "CONTINUITY_AND_CATHOLIC_EDITORIAL_REVIEW_REQUIRED",
+      "isFinalChapter": false,
+      "appChanges": false
+    },
+    {
+      "id": "HS-M13",
+      "proposedEditorialOrder": 13,
+      "title": "David and the enduring royal promise",
+      "purpose": "David is chosen, receives Jerusalem and the Ark, and hears God's promise of an enduring throne",
+      "originalChapterSpan": {
+        "first": "H30",
+        "last": "H33",
+        "chapterIds": [
+          "H30",
+          "H31",
+          "H32",
+          "H33"
+        ]
+      },
+      "indispensable": {
+        "sourceUnitIds": [
+          "H30-01",
+          "H32-01",
+          "H32-02",
+          "H32-03",
+          "H33-01"
+        ],
+        "sourceReferences": [
+          {
+            "unitId": "H30-01",
+            "reference": "1 Samuel 16:10–13",
+            "approved": false
+          },
+          {
+            "unitId": "H32-01",
+            "reference": "2 Samuel 2:1–4",
+            "approved": false
+          },
+          {
+            "unitId": "H32-02",
+            "reference": "2 Samuel 5:1–10",
+            "approved": false
+          },
+          {
+            "unitId": "H32-03",
+            "reference": "2 Samuel 6:12–19",
+            "approved": false
+          },
+          {
+            "unitId": "H33-01",
+            "reference": "2 Samuel 7:8–16",
+            "approved": false
+          }
+        ]
+      },
+      "optionalBriefBridges": [
+        {
+          "unitId": "H31-04",
+          "sourceReference": "1 Samuel 31:1–13",
+          "mode": "SHORT_CONTEXT_NOT_FULL_REQUIRED_READING"
+        },
+        {
+          "unitId": "H33-02",
+          "sourceReference": "Psalm 89:4–5",
+          "mode": "SHORT_CONTEXT_NOT_FULL_REQUIRED_READING"
+        }
+      ],
+      "secondaryContextHeld": [],
+      "independentStoriesNotMandatory": [
+        "H30-02",
+        "H31-01",
+        "H31-02",
+        "H31-03"
+      ],
+      "noExtraPresentation": [],
+      "editorialRisk": "CONTINUITY_AND_CATHOLIC_EDITORIAL_REVIEW_REQUIRED",
+      "isFinalChapter": false,
+      "appChanges": false
+    },
+    {
+      "id": "HS-M14",
+      "proposedEditorialOrder": 14,
+      "title": "The Temple and the divided kingdom",
+      "purpose": "The moral frailty of kings, Temple worship, Solomon's infidelity and division after him",
+      "originalChapterSpan": {
+        "first": "H34",
+        "last": "H36",
+        "chapterIds": [
+          "H34",
+          "H35",
+          "H36"
+        ]
+      },
+      "indispensable": {
+        "sourceUnitIds": [
+          "H35-02",
+          "H35-03",
+          "H36-01",
+          "H36-02"
+        ],
+        "sourceReferences": [
+          {
+            "unitId": "H35-02",
+            "reference": "1 Kings 6:1–2",
+            "approved": false
+          },
+          {
+            "unitId": "H35-03",
+            "reference": "1 Kings 8:1–13, 22–30",
+            "approved": false
+          },
+          {
+            "unitId": "H36-01",
+            "reference": "1 Kings 11:29–32",
+            "approved": false
+          },
+          {
+            "unitId": "H36-02",
+            "reference": "1 Kings 12:1–24",
+            "approved": false
+          }
+        ]
+      },
+      "optionalBriefBridges": [
+        {
+          "unitId": "H34-01",
+          "sourceReference": "2 Samuel 11:1–5, 14–17",
+          "mode": "SHORT_CONTEXT_NOT_FULL_REQUIRED_READING"
+        },
+        {
+          "unitId": "H34-02",
+          "sourceReference": "2 Samuel 12:1–13",
+          "mode": "SHORT_CONTEXT_NOT_FULL_REQUIRED_READING"
+        },
+        {
+          "unitId": "H35-04",
+          "sourceReference": "1 Kings 11:1–13",
+          "mode": "SHORT_CONTEXT_NOT_FULL_REQUIRED_READING"
+        }
+      ],
+      "secondaryContextHeld": [],
+      "independentStoriesNotMandatory": [
+        "H34-03",
+        "H35-01",
+        "H36-03"
+      ],
+      "noExtraPresentation": [],
+      "editorialRisk": "CONTINUITY_AND_CATHOLIC_EDITORIAL_REVIEW_REQUIRED",
+      "isFinalChapter": false,
+      "appChanges": false
+    },
+    {
+      "id": "HS-M15",
+      "proposedEditorialOrder": 15,
+      "title": "Prophetic warning and Israel's judgment",
+      "purpose": "Prophetic voices and messianic promises interpret the divisions and Israel's catastrophe",
+      "originalChapterSpan": {
+        "first": "H37",
+        "last": "H39",
+        "chapterIds": [
+          "H37",
+          "H38",
+          "H39"
+        ]
+      },
+      "indispensable": {
+        "sourceUnitIds": [
+          "H38-02",
+          "H38-03",
+          "H38-04",
+          "H38-05",
+          "H39-01"
+        ],
+        "sourceReferences": [
+          {
+            "unitId": "H38-02",
+            "reference": "Isaiah 7:10–17",
+            "approved": false
+          },
+          {
+            "unitId": "H38-03",
+            "reference": "Isaiah 9:1–6",
+            "approved": false
+          },
+          {
+            "unitId": "H38-04",
+            "reference": "Isaiah 11:1–10",
+            "approved": false
+          },
+          {
+            "unitId": "H38-05",
+            "reference": "Isaiah 52:13–53:12",
+            "approved": false
+          },
+          {
+            "unitId": "H39-01",
+            "reference": "2 Kings 17:5–18",
+            "approved": false
+          }
+        ]
+      },
+      "optionalBriefBridges": [
+        {
+          "unitId": "H37-02",
+          "sourceReference": "1 Kings 18:20–39",
+          "mode": "SHORT_CONTEXT_NOT_FULL_REQUIRED_READING"
+        },
+        {
+          "unitId": "H37-03",
+          "sourceReference": "1 Kings 19:9–16",
+          "mode": "SHORT_CONTEXT_NOT_FULL_REQUIRED_READING"
+        }
+      ],
+      "secondaryContextHeld": [
+        "H38-01",
+        "H39-02"
+      ],
+      "independentStoriesNotMandatory": [
+        "H37-01",
+        "H37-04",
+        "H37-05"
+      ],
+      "noExtraPresentation": [],
+      "editorialRisk": "CONTINUITY_AND_CATHOLIC_EDITORIAL_REVIEW_REQUIRED",
+      "isFinalChapter": false,
+      "appChanges": false
+    },
+    {
+      "id": "HS-M16",
+      "proposedEditorialOrder": 16,
+      "title": "The New Covenant promised in exile",
+      "purpose": "Jeremiah promises a new covenant; Jerusalem falls, and distinct voices witness exile without forced chronology",
+      "originalChapterSpan": {
+        "first": "H40",
+        "last": "H42",
+        "chapterIds": [
+          "H40",
+          "H41",
+          "H42"
+        ]
+      },
+      "indispensable": {
+        "sourceUnitIds": [
+          "H40-01",
+          "H41-01",
+          "H41-02"
+        ],
+        "sourceReferences": [
+          {
+            "unitId": "H40-01",
+            "reference": "Jeremiah 31:31–34",
+            "approved": false
+          },
+          {
+            "unitId": "H41-01",
+            "reference": "2 Kings 25:1–12",
+            "approved": false
+          },
+          {
+            "unitId": "H41-02",
+            "reference": "2 Kings 25:18–21",
+            "approved": false
+          }
+        ]
+      },
+      "optionalBriefBridges": [
+        {
+          "unitId": "H42-01",
+          "sourceReference": "Daniel 1:1–21",
+          "mode": "SHORT_CONTEXT_NOT_FULL_REQUIRED_READING"
+        },
+        {
+          "unitId": "H42-04",
+          "sourceReference": "Ezekiel 1:1–28",
+          "mode": "SHORT_CONTEXT_NOT_FULL_REQUIRED_READING"
+        }
+      ],
+      "secondaryContextHeld": [],
+      "independentStoriesNotMandatory": [
+        "H42-02",
+        "H42-03",
+        "H42-05",
+        "H42-06",
+        "H42-07"
+      ],
+      "noExtraPresentation": [],
+      "editorialRisk": "CONTINUITY_AND_CATHOLIC_EDITORIAL_REVIEW_REQUIRED",
+      "isFinalChapter": false,
+      "appChanges": false
+    },
+    {
+      "id": "HS-M17",
+      "proposedEditorialOrder": 17,
+      "title": "Restoration and the expectation of Christ",
+      "purpose": "Exiles return, the Temple is rebuilt, and the period before Christ is oriented by fidelity and hope",
+      "originalChapterSpan": {
+        "first": "H43",
+        "last": "H44",
+        "chapterIds": [
+          "H43",
+          "H44"
+        ]
+      },
+      "indispensable": {
+        "sourceUnitIds": [
+          "H43-01",
+          "H43-02"
+        ],
+        "sourceReferences": [
+          {
+            "unitId": "H43-01",
+            "reference": "Ezra 1:1–6",
+            "approved": false
+          },
+          {
+            "unitId": "H43-02",
+            "reference": "Ezra 6:13–22",
+            "approved": false
+          }
+        ]
+      },
+      "optionalBriefBridges": [
+        {
+          "unitId": "H43-03",
+          "sourceReference": "Nehemiah 8:1–12",
+          "mode": "SHORT_CONTEXT_NOT_FULL_REQUIRED_READING"
+        },
+        {
+          "unitId": "H44-01",
+          "sourceReference": "1 Maccabees 2:15–28",
+          "mode": "SHORT_CONTEXT_NOT_FULL_REQUIRED_READING"
+        },
+        {
+          "unitId": "H44-03",
+          "sourceReference": "2 Maccabees 7:1–42",
+          "mode": "SHORT_CONTEXT_NOT_FULL_REQUIRED_READING"
+        },
+        {
+          "unitId": "H44-06",
+          "sourceReference": "Wisdom 2:12–20",
+          "mode": "SHORT_CONTEXT_NOT_FULL_REQUIRED_READING"
+        }
+      ],
+      "secondaryContextHeld": [
+        "H44-04"
+      ],
+      "independentStoriesNotMandatory": [
+        "H44-02",
+        "H44-05"
+      ],
+      "noExtraPresentation": [],
+      "editorialRisk": "CONTINUITY_AND_CATHOLIC_EDITORIAL_REVIEW_REQUIRED",
+      "isFinalChapter": false,
+      "appChanges": false
+    },
+    {
+      "id": "HS-M18",
+      "proposedEditorialOrder": 18,
+      "title": "The generations and the Annunciation",
+      "purpose": "The Abraham-David-Christ lineage frames the Incarnation; Matthew and Luke remain distinct navigation witnesses",
+      "originalChapterSpan": {
+        "first": "H45",
+        "last": "H46",
+        "chapterIds": [
+          "H45",
+          "H46"
+        ]
+      },
+      "indispensable": {
+        "sourceUnitIds": [
+          "H46-01"
+        ],
+        "sourceReferences": [
+          {
+            "unitId": "H46-01",
+            "reference": "Luke 1:26–38",
+            "approved": false
+          }
+        ]
+      },
+      "optionalBriefBridges": [
+        {
+          "unitId": "H45-01",
+          "sourceReference": "Matthew 1:1–17",
+          "mode": "SHORT_CONTEXT_NOT_FULL_REQUIRED_READING"
+        },
+        {
+          "unitId": "H45-02",
+          "sourceReference": "Luke 3:23–38",
+          "mode": "SHORT_CONTEXT_NOT_FULL_REQUIRED_READING"
+        }
+      ],
+      "secondaryContextHeld": [],
+      "independentStoriesNotMandatory": [],
+      "noExtraPresentation": [],
+      "editorialRisk": "CONTINUITY_AND_CATHOLIC_EDITORIAL_REVIEW_REQUIRED",
+      "isFinalChapter": false,
+      "appChanges": false
+    },
+    {
+      "id": "HS-M19",
+      "proposedEditorialOrder": 19,
+      "title": "The birth of the Saviour",
+      "purpose": "Joseph accepts Mary's Son, Christ is born, and the Magi signal the Gospel's universal horizon",
+      "originalChapterSpan": {
+        "first": "H47",
+        "last": "H50",
+        "chapterIds": [
+          "H47",
+          "H48",
+          "H49",
+          "H50"
+        ]
+      },
+      "indispensable": {
+        "sourceUnitIds": [
+          "H47-02",
+          "H48-01",
+          "H49-02"
+        ],
+        "sourceReferences": [
+          {
+            "unitId": "H47-02",
+            "reference": "Matthew 1:18–25",
+            "approved": false
+          },
+          {
+            "unitId": "H48-01",
+            "reference": "Luke 2:1–20",
+            "approved": false
+          },
+          {
+            "unitId": "H49-02",
+            "reference": "Matthew 2:1–12",
+            "approved": false
+          }
+        ]
+      },
+      "optionalBriefBridges": [
+        {
+          "unitId": "H47-01",
+          "sourceReference": "Luke 1:39–56",
+          "mode": "SHORT_CONTEXT_NOT_FULL_REQUIRED_READING"
+        },
+        {
+          "unitId": "H48-02",
+          "sourceReference": "Luke 2:21",
+          "mode": "SHORT_CONTEXT_NOT_FULL_REQUIRED_READING"
+        },
+        {
+          "unitId": "H49-01",
+          "sourceReference": "Luke 2:22–38",
+          "mode": "SHORT_CONTEXT_NOT_FULL_REQUIRED_READING"
+        },
+        {
+          "unitId": "H49-03",
+          "sourceReference": "Matthew 2:13–23",
+          "mode": "SHORT_CONTEXT_NOT_FULL_REQUIRED_READING"
+        }
+      ],
+      "secondaryContextHeld": [],
+      "independentStoriesNotMandatory": [
+        "H50-01"
+      ],
+      "noExtraPresentation": [],
+      "editorialRisk": "CONTINUITY_AND_CATHOLIC_EDITORIAL_REVIEW_REQUIRED",
+      "isFinalChapter": false,
+      "appChanges": false
+    },
+    {
+      "id": "HS-M20",
+      "proposedEditorialOrder": 20,
+      "title": "The Forerunner and first disciples",
+      "purpose": "Jesus is baptized, proclaims the Kingdom and gathers disciples; the first sign is context not a miracle catalogue",
+      "originalChapterSpan": {
+        "first": "H51",
+        "last": "H52",
+        "chapterIds": [
+          "H51",
+          "H52"
+        ]
+      },
+      "indispensable": {
+        "sourceUnitIds": [
+          "H51-01",
+          "H51-03",
+          "H52-01"
+        ],
+        "sourceReferences": [
+          {
+            "unitId": "H51-01",
+            "reference": "Matthew 3:1–17",
+            "approved": false
+          },
+          {
+            "unitId": "H51-03",
+            "reference": "Mark 1:14–15",
+            "approved": false
+          },
+          {
+            "unitId": "H52-01",
+            "reference": "John 1:35–51",
+            "approved": false
+          }
+        ]
+      },
+      "optionalBriefBridges": [
+        {
+          "unitId": "H51-02",
+          "sourceReference": "Matthew 4:1–11",
+          "mode": "SHORT_CONTEXT_NOT_FULL_REQUIRED_READING"
+        },
+        {
+          "unitId": "H52-02",
+          "sourceReference": "John 2:1–11",
+          "mode": "SHORT_CONTEXT_NOT_FULL_REQUIRED_READING"
+        }
+      ],
+      "secondaryContextHeld": [],
+      "independentStoriesNotMandatory": [
+        "H52-03"
+      ],
+      "noExtraPresentation": [],
+      "editorialRisk": "CONTINUITY_AND_CATHOLIC_EDITORIAL_REVIEW_REQUIRED",
+      "isFinalChapter": false,
+      "appChanges": false
+    },
+    {
+      "id": "HS-M21",
+      "proposedEditorialOrder": 21,
+      "title": "The Kingdom in Christ's teaching and signs",
+      "purpose": "The Beatitudes, prayer and forgiveness reveal the Kingdom; use one representative healing, not serial miracle anthologies",
+      "originalChapterSpan": {
+        "first": "H53",
+        "last": "H55",
+        "chapterIds": [
+          "H53",
+          "H54",
+          "H55"
+        ]
+      },
+      "indispensable": {
+        "sourceUnitIds": [
+          "H53-01",
+          "H53-02"
+        ],
+        "sourceReferences": [
+          {
+            "unitId": "H53-01",
+            "reference": "Matthew 5:1–12",
+            "approved": false
+          },
+          {
+            "unitId": "H53-02",
+            "reference": "Matthew 6:9–15",
+            "approved": false
+          }
+        ]
+      },
+      "optionalBriefBridges": [
+        {
+          "unitId": "H53-03",
+          "sourceReference": "Matthew 7:24–29",
+          "mode": "SHORT_CONTEXT_NOT_FULL_REQUIRED_READING"
+        },
+        {
+          "unitId": "H53-04",
+          "sourceReference": "Matthew 13:1–23",
+          "mode": "SHORT_CONTEXT_NOT_FULL_REQUIRED_READING"
+        },
+        {
+          "unitId": "H54-02",
+          "sourceReference": "Mark 2:1–12",
+          "mode": "SHORT_CONTEXT_NOT_FULL_REQUIRED_READING"
+        },
+        {
+          "unitId": "H55-01",
+          "sourceReference": "John 4:4–26, 39–42",
+          "mode": "SHORT_CONTEXT_NOT_FULL_REQUIRED_READING"
+        }
+      ],
+      "secondaryContextHeld": [],
+      "independentStoriesNotMandatory": [
+        "H54-01",
+        "H54-03",
+        "H54-05",
+        "H55-02",
+        "H55-03"
+      ],
+      "noExtraPresentation": [
+        "H54-04"
+      ],
+      "editorialRisk": "CONTINUITY_AND_CATHOLIC_EDITORIAL_REVIEW_REQUIRED",
+      "isFinalChapter": false,
+      "appChanges": false
+    },
+    {
+      "id": "HS-M22",
+      "proposedEditorialOrder": 22,
+      "title": "Christ the Bread of Life",
+      "purpose": "The sign of the loaves leads to Christ's explicit discourse on the Bread of Life",
+      "originalChapterSpan": {
+        "first": "H56",
+        "last": "H56",
+        "chapterIds": [
+          "H56"
+        ]
+      },
+      "indispensable": {
+        "sourceUnitIds": [
+          "H56-02"
+        ],
+        "sourceReferences": [
+          {
+            "unitId": "H56-02",
+            "reference": "John 6:24–35, 47–59",
+            "approved": false
+          }
+        ]
+      },
+      "optionalBriefBridges": [
+        {
+          "unitId": "H56-01",
+          "sourceReference": "John 6:1–15",
+          "mode": "SHORT_CONTEXT_NOT_FULL_REQUIRED_READING"
+        }
+      ],
+      "secondaryContextHeld": [],
+      "independentStoriesNotMandatory": [],
+      "noExtraPresentation": [],
+      "editorialRisk": "CONTINUITY_AND_CATHOLIC_EDITORIAL_REVIEW_REQUIRED",
+      "isFinalChapter": false,
+      "appChanges": false
+    },
+    {
+      "id": "HS-M23",
+      "proposedEditorialOrder": 23,
+      "title": "Peter's confession and the Transfiguration",
+      "purpose": "Peter identifies the Christ and the Transfiguration reveals his glory before the Passion",
+      "originalChapterSpan": {
+        "first": "H57",
+        "last": "H57",
+        "chapterIds": [
+          "H57"
+        ]
+      },
+      "indispensable": {
+        "sourceUnitIds": [
+          "H57-01",
+          "H57-02"
+        ],
+        "sourceReferences": [
+          {
+            "unitId": "H57-01",
+            "reference": "Matthew 16:13–28",
+            "approved": false
+          },
+          {
+            "unitId": "H57-02",
+            "reference": "Matthew 17:1–13",
+            "approved": false
+          }
+        ]
+      },
+      "optionalBriefBridges": [],
+      "secondaryContextHeld": [],
+      "independentStoriesNotMandatory": [],
+      "noExtraPresentation": [],
+      "editorialRisk": "CONTINUITY_AND_CATHOLIC_EDITORIAL_REVIEW_REQUIRED",
+      "isFinalChapter": false,
+      "appChanges": false
+    },
+    {
+      "id": "HS-M24",
+      "proposedEditorialOrder": 24,
+      "title": "The approach to Jerusalem",
+      "purpose": "The raising of Lazarus anticipates Christ's death and Resurrection without requiring every Bethany or Jericho encounter",
+      "originalChapterSpan": {
+        "first": "H58",
+        "last": "H58",
+        "chapterIds": [
+          "H58"
+        ]
+      },
+      "indispensable": {
+        "sourceUnitIds": [
+          "H58-04"
+        ],
+        "sourceReferences": [
+          {
+            "unitId": "H58-04",
+            "reference": "John 11:1–44",
+            "approved": false
+          }
+        ]
+      },
+      "optionalBriefBridges": [],
+      "secondaryContextHeld": [],
+      "independentStoriesNotMandatory": [
+        "H58-01",
+        "H58-02",
+        "H58-03",
+        "H58-05"
+      ],
+      "noExtraPresentation": [],
+      "editorialRisk": "CONTINUITY_AND_CATHOLIC_EDITORIAL_REVIEW_REQUIRED",
+      "isFinalChapter": false,
+      "appChanges": false
+    },
+    {
+      "id": "HS-M25",
+      "proposedEditorialOrder": 25,
+      "title": "The King's entry into Jerusalem",
+      "purpose": "Christ enters Jerusalem and approaches the Passion",
+      "originalChapterSpan": {
+        "first": "H59",
+        "last": "H59",
+        "chapterIds": [
+          "H59"
+        ]
+      },
+      "indispensable": {
+        "sourceUnitIds": [
+          "H59-01"
+        ],
+        "sourceReferences": [
+          {
+            "unitId": "H59-01",
+            "reference": "Matthew 21:1–11",
+            "approved": false
+          }
+        ]
+      },
+      "optionalBriefBridges": [
+        {
+          "unitId": "H59-02",
+          "sourceReference": "Luke 19:41–44",
+          "mode": "SHORT_CONTEXT_NOT_FULL_REQUIRED_READING"
+        }
+      ],
+      "secondaryContextHeld": [],
+      "independentStoriesNotMandatory": [],
+      "noExtraPresentation": [],
+      "editorialRisk": "CONTINUITY_AND_CATHOLIC_EDITORIAL_REVIEW_REQUIRED",
+      "isFinalChapter": false,
+      "appChanges": false
+    },
+    {
+      "id": "HS-M26",
+      "proposedEditorialOrder": 26,
+      "title": "The Last Supper and Christ's final teaching",
+      "purpose": "The Eucharist and new covenant at the Supper; Christ's promise of the Father's house and union with him",
+      "originalChapterSpan": {
+        "first": "H60",
+        "last": "H61",
+        "chapterIds": [
+          "H60",
+          "H61"
+        ]
+      },
+      "indispensable": {
+        "sourceUnitIds": [
+          "H60-01"
+        ],
+        "sourceReferences": [
+          {
+            "unitId": "H60-01",
+            "reference": "Luke 22:7–20",
+            "approved": false
+          }
+        ]
+      },
+      "optionalBriefBridges": [
+        {
+          "unitId": "H61-02",
+          "sourceReference": "John 14:1–14",
+          "mode": "SHORT_CONTEXT_NOT_FULL_REQUIRED_READING"
+        },
+        {
+          "unitId": "H61-03",
+          "sourceReference": "John 15:1–17",
+          "mode": "SHORT_CONTEXT_NOT_FULL_REQUIRED_READING"
+        }
+      ],
+      "secondaryContextHeld": [
+        "H61-01",
+        "H61-04"
+      ],
+      "independentStoriesNotMandatory": [],
+      "noExtraPresentation": [],
+      "editorialRisk": "CONTINUITY_AND_CATHOLIC_EDITORIAL_REVIEW_REQUIRED",
+      "isFinalChapter": false,
+      "appChanges": false,
+      "proposedNonV18SourceBridgeIds": [
+        "HS-BRIDGE-PARACLETE"
+      ]
+    },
+    {
+      "id": "HS-M27",
+      "proposedEditorialOrder": 27,
+      "title": "Gethsemane, betrayal and trial",
+      "purpose": "Christ accepts the cup, is betrayed and condemned; the Johannine account is separately referenced, not silently merged",
+      "originalChapterSpan": {
+        "first": "H62",
+        "last": "H63",
+        "chapterIds": [
+          "H62",
+          "H63"
+        ]
+      },
+      "indispensable": {
+        "sourceUnitIds": [
+          "H62-01",
+          "H62-02",
+          "H63-01",
+          "H63-02"
+        ],
+        "sourceReferences": [
+          {
+            "unitId": "H62-01",
+            "reference": "Matthew 26:36–46",
+            "approved": false
+          },
+          {
+            "unitId": "H62-02",
+            "reference": "Matthew 26:47–56",
+            "approved": false
+          },
+          {
+            "unitId": "H63-01",
+            "reference": "Matthew 26:57–75",
+            "approved": false
+          },
+          {
+            "unitId": "H63-02",
+            "reference": "Matthew 27:1–26",
+            "approved": false
+          }
+        ]
+      },
+      "optionalBriefBridges": [
+        {
+          "unitId": "H63-04",
+          "sourceReference": "John 19:1–16",
+          "mode": "SHORT_CONTEXT_NOT_FULL_REQUIRED_READING"
+        }
+      ],
+      "secondaryContextHeld": [],
+      "independentStoriesNotMandatory": [],
+      "noExtraPresentation": [
+        "H63-03"
+      ],
+      "editorialRisk": "CONTINUITY_AND_CATHOLIC_EDITORIAL_REVIEW_REQUIRED",
+      "isFinalChapter": false,
+      "appChanges": false
+    },
+    {
+      "id": "HS-M28",
+      "proposedEditorialOrder": 28,
+      "title": "The sacrifice on Calvary",
+      "purpose": "The Cross accomplishes the saving death of Christ",
+      "originalChapterSpan": {
+        "first": "H64",
+        "last": "H64",
+        "chapterIds": [
+          "H64"
+        ]
+      },
+      "indispensable": {
+        "sourceUnitIds": [
+          "H64-01"
+        ],
+        "sourceReferences": [
+          {
+            "unitId": "H64-01",
+            "reference": "John 19:17–30",
+            "approved": false
+          }
+        ]
+      },
+      "optionalBriefBridges": [],
+      "secondaryContextHeld": [],
+      "independentStoriesNotMandatory": [],
+      "noExtraPresentation": [],
+      "editorialRisk": "CONTINUITY_AND_CATHOLIC_EDITORIAL_REVIEW_REQUIRED",
+      "isFinalChapter": false,
+      "appChanges": false
+    },
+    {
+      "id": "HS-M29",
+      "proposedEditorialOrder": 29,
+      "title": "The risen Lord and his witnesses",
+      "purpose": "The empty tomb and encounters with Mary Magdalene, the Apostles and Thomas establish the Resurrection",
+      "originalChapterSpan": {
+        "first": "H65",
+        "last": "H65",
+        "chapterIds": [
+          "H65"
+        ]
+      },
+      "indispensable": {
+        "sourceUnitIds": [
+          "H65-01",
+          "H65-02"
+        ],
+        "sourceReferences": [
+          {
+            "unitId": "H65-01",
+            "reference": "John 20:1–18",
+            "approved": false
+          },
+          {
+            "unitId": "H65-02",
+            "reference": "John 20:19–29",
+            "approved": false
+          }
+        ]
+      },
+      "optionalBriefBridges": [
+        {
+          "unitId": "H65-03",
+          "sourceReference": "Luke 24:13–35",
+          "mode": "SHORT_CONTEXT_NOT_FULL_REQUIRED_READING"
+        }
+      ],
+      "secondaryContextHeld": [],
+      "independentStoriesNotMandatory": [
+        "H65-04"
+      ],
+      "noExtraPresentation": [],
+      "editorialRisk": "CONTINUITY_AND_CATHOLIC_EDITORIAL_REVIEW_REQUIRED",
+      "isFinalChapter": false,
+      "appChanges": false
+    },
+    {
+      "id": "HS-M30",
+      "proposedEditorialOrder": 30,
+      "title": "The Ascension and promised mission",
+      "purpose": "Christ ascends and commissions the Apostles for the nations",
+      "originalChapterSpan": {
+        "first": "H66",
+        "last": "H66",
+        "chapterIds": [
+          "H66"
+        ]
+      },
+      "indispensable": {
+        "sourceUnitIds": [
+          "H66-01"
+        ],
+        "sourceReferences": [
+          {
+            "unitId": "H66-01",
+            "reference": "Acts 1:6–12",
+            "approved": false
+          }
+        ]
+      },
+      "optionalBriefBridges": [],
+      "secondaryContextHeld": [],
+      "independentStoriesNotMandatory": [],
+      "noExtraPresentation": [],
+      "editorialRisk": "CONTINUITY_AND_CATHOLIC_EDITORIAL_REVIEW_REQUIRED",
+      "isFinalChapter": false,
+      "appChanges": false
+    },
+    {
+      "id": "HS-M31",
+      "proposedEditorialOrder": 31,
+      "title": "Pentecost and the first Church",
+      "purpose": "The Holy Ghost descends, the Church forms its common life, and Stephen witnesses unto death",
+      "originalChapterSpan": {
+        "first": "H67",
+        "last": "H68",
+        "chapterIds": [
+          "H67",
+          "H68"
+        ]
+      },
+      "indispensable": {
+        "sourceUnitIds": [
+          "H67-01",
+          "H68-01",
+          "H68-04"
+        ],
+        "sourceReferences": [
+          {
+            "unitId": "H67-01",
+            "reference": "Acts 2:1–21, 37–41",
+            "approved": false
+          },
+          {
+            "unitId": "H68-01",
+            "reference": "Acts 2:42–47",
+            "approved": false
+          },
+          {
+            "unitId": "H68-04",
+            "reference": "Acts 7:54–60",
+            "approved": false
+          }
+        ]
+      },
+      "optionalBriefBridges": [
+        {
+          "unitId": "H68-03",
+          "sourceReference": "Acts 4:32–35",
+          "mode": "SHORT_CONTEXT_NOT_FULL_REQUIRED_READING"
+        }
+      ],
+      "secondaryContextHeld": [],
+      "independentStoriesNotMandatory": [
+        "H68-02",
+        "H68-05"
+      ],
+      "noExtraPresentation": [],
+      "editorialRisk": "CONTINUITY_AND_CATHOLIC_EDITORIAL_REVIEW_REQUIRED",
+      "isFinalChapter": false,
+      "appChanges": false
+    },
+    {
+      "id": "HS-M32",
+      "proposedEditorialOrder": 32,
+      "title": "Saul and the Gospel to the Gentiles",
+      "purpose": "Saul is converted and Cornelius is received; no repetition of the same Cornelius event",
+      "originalChapterSpan": {
+        "first": "H69",
+        "last": "H70",
+        "chapterIds": [
+          "H69",
+          "H70"
+        ]
+      },
+      "indispensable": {
+        "sourceUnitIds": [
+          "H69-01",
+          "H70-01"
+        ],
+        "sourceReferences": [
+          {
+            "unitId": "H69-01",
+            "reference": "Acts 9:1–22",
+            "approved": false
+          },
+          {
+            "unitId": "H70-01",
+            "reference": "Acts 10:1–48",
+            "approved": false
+          }
+        ]
+      },
+      "optionalBriefBridges": [],
+      "secondaryContextHeld": [],
+      "independentStoriesNotMandatory": [],
+      "noExtraPresentation": [
+        "H70-02"
+      ],
+      "editorialRisk": "CONTINUITY_AND_CATHOLIC_EDITORIAL_REVIEW_REQUIRED",
+      "isFinalChapter": false,
+      "appChanges": false
+    },
+    {
+      "id": "HS-M33",
+      "proposedEditorialOrder": 33,
+      "title": "Antioch, apostolic missions and the Council",
+      "purpose": "Antioch sends missionaries, and the Council settles Gentile inclusion",
+      "originalChapterSpan": {
+        "first": "H71",
+        "last": "H72",
+        "chapterIds": [
+          "H71",
+          "H72"
+        ]
+      },
+      "indispensable": {
+        "sourceUnitIds": [
+          "H71-01",
+          "H71-02",
+          "H72-01"
+        ],
+        "sourceReferences": [
+          {
+            "unitId": "H71-01",
+            "reference": "Acts 11:19–26",
+            "approved": false
+          },
+          {
+            "unitId": "H71-02",
+            "reference": "Acts 13:1–12",
+            "approved": false
+          },
+          {
+            "unitId": "H72-01",
+            "reference": "Acts 15:1–29",
+            "approved": false
+          }
+        ]
+      },
+      "optionalBriefBridges": [
+        {
+          "unitId": "H71-03",
+          "sourceReference": "Acts 14:19–28",
+          "mode": "SHORT_CONTEXT_NOT_FULL_REQUIRED_READING"
+        }
+      ],
+      "secondaryContextHeld": [],
+      "independentStoriesNotMandatory": [],
+      "noExtraPresentation": [],
+      "editorialRisk": "CONTINUITY_AND_CATHOLIC_EDITORIAL_REVIEW_REQUIRED",
+      "isFinalChapter": false,
+      "appChanges": false
+    },
+    {
+      "id": "HS-M34",
+      "proposedEditorialOrder": 34,
+      "title": "The Gospel proclaimed in Rome",
+      "purpose": "The universal apostolic mission reaches Rome; individual missionary episodes need not be read in sequence",
+      "originalChapterSpan": {
+        "first": "H73",
+        "last": "H73",
+        "chapterIds": [
+          "H73"
+        ]
+      },
+      "indispensable": {
+        "sourceUnitIds": [
+          "H73-07"
+        ],
+        "sourceReferences": [
+          {
+            "unitId": "H73-07",
+            "reference": "Acts 28:23–31",
+            "approved": false
+          }
+        ]
+      },
+      "optionalBriefBridges": [
+        {
+          "unitId": "H73-03",
+          "sourceReference": "Acts 17:16–34",
+          "mode": "SHORT_CONTEXT_NOT_FULL_REQUIRED_READING"
+        }
+      ],
+      "secondaryContextHeld": [],
+      "independentStoriesNotMandatory": [
+        "H73-01",
+        "H73-02",
+        "H73-04",
+        "H73-05",
+        "H73-06"
+      ],
+      "noExtraPresentation": [],
+      "editorialRisk": "CONTINUITY_AND_CATHOLIC_EDITORIAL_REVIEW_REQUIRED",
+      "isFinalChapter": false,
+      "appChanges": false,
+      "proposedNonV18SourceBridgeIds": [
+        "HS-BRIDGE-ROME-ARRIVAL"
+      ]
+    },
+    {
+      "id": "HS-M35",
+      "proposedEditorialOrder": 35,
+      "title": "Christ and the Lamb in heavenly vision",
+      "purpose": "Christ addresses his Church and the slain Lamb stands at the center of God's heavenly plan",
+      "originalChapterSpan": {
+        "first": "H74",
+        "last": "H75",
+        "chapterIds": [
+          "H74",
+          "H75"
+        ]
+      },
+      "indispensable": {
+        "sourceUnitIds": [
+          "H75-02"
+        ],
+        "sourceReferences": [
+          {
+            "unitId": "H75-02",
+            "reference": "Revelation 5:1–14",
+            "approved": false
+          }
+        ]
+      },
+      "optionalBriefBridges": [
+        {
+          "unitId": "H74-01",
+          "sourceReference": "Revelation 1:9–20",
+          "mode": "SHORT_CONTEXT_NOT_FULL_REQUIRED_READING"
+        },
+        {
+          "unitId": "H75-01",
+          "sourceReference": "Revelation 4:1–11",
+          "mode": "SHORT_CONTEXT_NOT_FULL_REQUIRED_READING"
+        }
+      ],
+      "secondaryContextHeld": [],
+      "independentStoriesNotMandatory": [
+        "H74-02",
+        "H74-03"
+      ],
+      "noExtraPresentation": [],
+      "editorialRisk": "CONTINUITY_AND_CATHOLIC_EDITORIAL_REVIEW_REQUIRED",
+      "isFinalChapter": false,
+      "appChanges": false
+    },
+    {
+      "id": "HS-M36",
+      "proposedEditorialOrder": 36,
+      "title": "The final conflict and judgment",
+      "purpose": "Visionary images of conflict lead to Christ's victory and judgment without a contrived literal timeline",
+      "originalChapterSpan": {
+        "first": "H76",
+        "last": "H77",
+        "chapterIds": [
+          "H76",
+          "H77"
+        ]
+      },
+      "indispensable": {
+        "sourceUnitIds": [
+          "H77-01",
+          "H77-02"
+        ],
+        "sourceReferences": [
+          {
+            "unitId": "H77-01",
+            "reference": "Revelation 19:11–21",
+            "approved": false
+          },
+          {
+            "unitId": "H77-02",
+            "reference": "Revelation 20:1–15",
+            "approved": false
+          }
+        ]
+      },
+      "optionalBriefBridges": [
+        {
+          "unitId": "H76-01",
+          "sourceReference": "Revelation 6:1–8",
+          "mode": "SHORT_CONTEXT_NOT_FULL_REQUIRED_READING"
+        },
+        {
+          "unitId": "H76-03",
+          "sourceReference": "Revelation 12:1–17",
+          "mode": "SHORT_CONTEXT_NOT_FULL_REQUIRED_READING"
+        },
+        {
+          "unitId": "H76-05",
+          "sourceReference": "Revelation 18:1–8",
+          "mode": "SHORT_CONTEXT_NOT_FULL_REQUIRED_READING"
+        }
+      ],
+      "secondaryContextHeld": [
+        "H76-04"
+      ],
+      "independentStoriesNotMandatory": [
+        "H76-02"
+      ],
+      "noExtraPresentation": [],
+      "editorialRisk": "CONTINUITY_AND_CATHOLIC_EDITORIAL_REVIEW_REQUIRED",
+      "isFinalChapter": false,
+      "appChanges": false
+    },
+    {
+      "id": "HS-M37",
+      "proposedEditorialOrder": 37,
+      "title": "The New Creation",
+      "purpose": "God's renewed dwelling with his people, the river of life and consummation of the promise",
+      "originalChapterSpan": {
+        "first": "H78",
+        "last": "H78",
+        "chapterIds": [
+          "H78"
+        ]
+      },
+      "indispensable": {
+        "sourceUnitIds": [
+          "H78-01",
+          "H78-02"
+        ],
+        "sourceReferences": [
+          {
+            "unitId": "H78-01",
+            "reference": "Revelation 21:1–7",
+            "approved": false
+          },
+          {
+            "unitId": "H78-02",
+            "reference": "22:1–5",
+            "approved": false
+          }
+        ]
+      },
+      "optionalBriefBridges": [],
+      "secondaryContextHeld": [],
+      "independentStoriesNotMandatory": [],
+      "noExtraPresentation": [],
+      "editorialRisk": "CONTINUITY_AND_CATHOLIC_EDITORIAL_REVIEW_REQUIRED",
+      "isFinalChapter": false,
+      "appChanges": false
+    }
+  ],
+  "continuityChecks": [
+    {
+      "id": "GS-01",
+      "between": [
+        "HS-M03",
+        "HS-M04"
+      ],
+      "severity": "REVIEW",
+      "issue": "Noah→Abraham requires the descendants through Shem and the passage of generations, not merely an abrupt scene cut.",
+      "candidateNativeRefs": [
+        "Genesis 11:10–32"
+      ],
+      "status": "NATIVE_SOURCE_REFERENCE_NOT_SELECTED_OR_APPROVED"
+    },
+    {
+      "id": "GS-02",
+      "between": [
+        "HS-M11",
+        "HS-M12"
+      ],
+      "severity": "REVIEW",
+      "issue": "The judges' recurring cycle needs an explicit hinge from tribal Israel to Samuel and the request for a king; Deborah and Samson are not essential prerequisite biographies.",
+      "candidateNativeRefs": [
+        "Judges 2:10–23",
+        "1 Samuel 8:1–22"
+      ],
+      "status": "MAPPED_ORIGINAL_V18_CONTEXT_PENDING_READ"
+    },
+    {
+      "id": "GS-03",
+      "between": [
+        "HS-M12",
+        "HS-M13"
+      ],
+      "severity": "REVIEW",
+      "issue": "Ruth 4 genealogy should introduce David's line without requiring full Ruth stories or inventing a chronology with Samuel.",
+      "candidateNativeRefs": [
+        "Ruth 4:17–22",
+        "1 Samuel 16:1–13"
+      ],
+      "status": "MAPPED_ORIGINAL_V18_CONTEXT_PENDING_READ"
+    },
+    {
+      "id": "GS-04",
+      "between": [
+        "HS-M15",
+        "HS-M16"
+      ],
+      "severity": "REVIEW",
+      "issue": "Messianic prophecies in Isaiah are literary witnesses, not one event dated immediately before Samaria's fall. The two kingdoms must stay distinct.",
+      "candidateNativeRefs": [
+        "Isaiah 7:14",
+        "Isaiah 11:1–10",
+        "2 Kings 17:1–18"
+      ],
+      "status": "PROPHECY_GENRE_BOUNDARY"
+    },
+    {
+      "id": "GS-05",
+      "between": [
+        "HS-M16",
+        "HS-M17"
+      ],
+      "severity": "REVIEW",
+      "issue": "Daniel, Tobit, Judith and Esther are independent witnesses of fidelity, not chronological stages in one exile. Return under Persia cannot presuppose their order.",
+      "candidateNativeRefs": [
+        "2 Kings 25:1–12",
+        "Ezra 1:1–6"
+      ],
+      "status": "INDEPENDENT_STORIES_NONCHRONOLOGICAL"
+    },
+    {
+      "id": "GS-06",
+      "between": [
+        "HS-M17",
+        "HS-M18"
+      ],
+      "severity": "REVIEW",
+      "issue": "The time between restoration, the Maccabees and the Incarnation must be introduced succinctly; neither invented dates nor forced overlap.",
+      "candidateNativeRefs": [
+        "1 Maccabees 2:15–28",
+        "Luke 1:26–38"
+      ],
+      "status": "HISTORICAL_INTERVAL_CONTEXT_REQUIRED"
+    },
+    {
+      "id": "GS-07",
+      "between": [
+        "HS-M18",
+        "HS-M19"
+      ],
+      "severity": "REVIEW",
+      "issue": "Matthew 1 and Luke 3 genealogies have distinct order and content: do not read them as a stitched narrative or claim Luke gives Mary's biological descent.",
+      "candidateNativeRefs": [
+        "Matthew 1:1–17",
+        "Luke 3:23–38"
+      ],
+      "status": "GENEALOGICAL_WITNESS_SEPARATION"
+    },
+    {
+      "id": "GS-08",
+      "between": [
+        "HS-M21",
+        "HS-M22"
+      ],
+      "severity": "REVIEW",
+      "issue": "One representative miracle demonstrating authority, such as forgiveness and healing in Mark 2:1–12, prevents a Kingdom narrative consisting only of sayings; John 6 feeding remains once in HS-M22.",
+      "candidateNativeRefs": [
+        "Mark 2:1–12",
+        "John 6:1–15"
+      ],
+      "status": "EXACT_CHRISTOLOGICAL_SIGN_REVIEW"
+    },
+    {
+      "id": "GS-09",
+      "between": [
+        "HS-M26",
+        "HS-M30"
+      ],
+      "severity": "HIGH",
+      "issue": "The source proposal for farewell teaching stops at John 14:14. The Holy Spirit/Paraclete promise in John 14:16–17 or John 16:7–13 is not yet carried and is a crucial bridge to Pentecost.",
+      "candidateNativeRefs": [
+        "John 14:16–17",
+        "John 16:7–13"
+      ],
+      "status": "SOURCE_VERSE_PRESENCE_CHECKED_CP_DOUAY_EDITORIAL_CHOICE_PENDING"
+    },
+    {
+      "id": "GS-10",
+      "between": [
+        "HS-M29",
+        "HS-M30"
+      ],
+      "severity": "REVIEW",
+      "issue": "Some resurrection appearances occur at different times and in distinct Gospel witnesses; avoid compressing them into a single encounter.",
+      "candidateNativeRefs": [
+        "John 20:1–29",
+        "Luke 24:13–35",
+        "Acts 1:6–12"
+      ],
+      "status": "MULTIPLE_GOSPEL_WITNESSES"
+    },
+    {
+      "id": "GS-11",
+      "between": [
+        "HS-M33",
+        "HS-M34"
+      ],
+      "severity": "HIGH",
+      "issue": "Acts 28:23–31 is not itself Paul's arrival in Rome. Acts 28:16 explicitly describes the arrival; his mission must not appear as a teleport after Acts 15.",
+      "candidateNativeRefs": [
+        "Acts 28:16",
+        "Acts 28:23–31"
+      ],
+      "status": "SOURCE_VERSE_PRESENCE_CHECKED_CP_DOUAY_EDITORIAL_CHOICE_PENDING"
+    },
+    {
+      "id": "GS-12",
+      "between": [
+        "HS-M35",
+        "HS-M37"
+      ],
+      "severity": "REVIEW",
+      "issue": "Revelation's liturgy, conflict, judgment and new creation are symbolic visions, not episodes falsely dated after Paul's imprisonment. Christ/Lamb remain central; visions not literalized.",
+      "candidateNativeRefs": [
+        "Revelation 5:1–14",
+        "Revelation 19:11–21",
+        "Revelation 20:11–15",
+        "Revelation 21:1–7"
+      ],
+      "status": "APOCALYPTIC_GENRE_LOCK"
+    }
+  ],
+  "editorialGates": {
+    "originalV18Unmodified": true,
+    "all93EssentialAnchorsAssigned": true,
+    "all67ContextCandidatesDispositioned": true,
+    "all54IndependentStoriesNotMandatory": true,
+    "all3DuplicateOrIncidentalNoFeatured": true,
+    "sourceBridgeVersesChecked": true,
+    "readAloudVerified": false,
+    "catholicEditorialReview": false,
+    "userAccepted": false,
+    "publicReaderChanged": false,
+    "sourceBridgeVersesPublicationApproved": false,
+    "sourceOwnershipReconciled": false
+  },
+  "sourceBridgeCandidates": [
+    {
+      "id": "HS-BRIDGE-PARACLETE",
+      "movementId": "HS-M26",
+      "priorTo": "HS-M31",
+      "reference": "John 14:16–17",
+      "scenePurpose": "Christ promises the Advocate/Spirit of Truth before the Pentecost narrative",
+      "biblicalBooksNotExtended": [
+        "John"
+      ],
+      "internalDispositions": "OUTSIDE_ORIGINAL_217_ADD_SOURCE_REFERENCES_ONLY",
+      "whyRequired": "The currently proposed H61 source John 14:1–14 omits the promised Paraclete. A reader could reach Pentecost without Christ's explicitly spoken promise of the Holy Ghost.",
+      "sourcePresence": "VERIFIED_BOTH_INSTALLED_CATHOLIC_ENGLISH_WITNESSES",
+      "cpdvVerseCount": 2,
+      "drVerseCount": 2,
+      "approval": "NOT_EDITORIALLY_APPROVED",
+      "needsExactWordingCollation": true,
+      "sourceOwnership": "Existing canonical Bible reader; reference overlay only; no duplicate verse record"
+    },
+    {
+      "id": "HS-BRIDGE-ROME-ARRIVAL",
+      "movementId": "HS-M34",
+      "priorTo": null,
+      "reference": "Acts 28:16",
+      "scenePurpose": "Acts explicitly announces Paul's arrival in Rome before his final uninterrupted proclamation",
+      "biblicalBooksNotExtended": [
+        "Acts"
+      ],
+      "internalDispositions": "OUTSIDE_ORIGINAL_217_ADD_SOURCE_REFERENCES_ONLY",
+      "whyRequired": "H73-07 starts at Acts 28:23; without the earlier arrival verse, the main story leaps directly from the Council to an unexplained Roman setting.",
+      "sourcePresence": "VERIFIED_BOTH_INSTALLED_CATHOLIC_ENGLISH_WITNESSES",
+      "cpdvVerseCount": 1,
+      "drVerseCount": 1,
+      "approval": "NOT_EDITORIALLY_APPROVED",
+      "needsExactWordingCollation": true,
+      "sourceOwnership": "Existing canonical Bible reader; reference overlay only; no duplicate verse record"
+    }
+  ]
+}

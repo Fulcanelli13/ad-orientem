@@ -9,6 +9,7 @@ import {loadScriptureWitness} from "./witness-loader.js";
 import {loadCatenaForPassage,isCatenaGospel} from "./catena-inline.js";
 import {sourceReadingLink} from "./links.js";
 import {scriptureReferenceWarning,scriptureParallelReferenceState} from "./reference-safety.js";
+import {estherParallelSpans} from "./esther-span-crosswalk.js";
 
 export const SCRIPTURE_MINING_SCHEMA="ao.scripture.mining.v1";
 export const MINING_ENGLISH_EDITIONS=Object.freeze(["cpdv-2009","dr-challoner"]);
@@ -27,7 +28,7 @@ const onlyVerses=(records,p)=>records
  * A textual source error is reported per edition rather than substituted.
  */
 export async function mineScriptureReference(reference,{
- origin=null,fetcher=globalThis.fetch?.bind(globalThis),
+ origin=null,referenceEdition="cpdv-2009",fetcher=globalThis.fetch?.bind(globalThis),
  cacheStorage=globalThis.caches,cryptoProvider=globalThis.crypto,
  witnessLoader=loadScriptureWitness,commentaryLoader=loadCatenaForPassage
 }={}){
@@ -35,28 +36,40 @@ export async function mineScriptureReference(reference,{
  if(!parsed)throw new Error("INVALID_CATHOLIC_SCRIPTURE_REFERENCE");
  const p=parsed.passage;
  if(p.verseEnd-p.verseStart+1>MAX_RANGE)throw new Error("MINING_RANGE_OVER_100_VERSES");
+ if(!MINING_ENGLISH_EDITIONS.includes(referenceEdition))
+  throw new Error("UNSUPPORTED_MINING_REFERENCE_EDITION");
+ // Explicit traditional Esther coordinates are allowed: a v18 Douay 4:1-17
+ // must never be silently misread as CPDV Esther 4:1-17.
+ if(referenceEdition!=="cpdv-2009"&&p.book!=="Esther")
+  throw new Error("REFERENCE_EDITION_OVERRIDE_ONLY_FOR_ESTHER");
  const parallel=scriptureParallelReferenceState(p,"cpdv-2009","dr-challoner");
- // The same numeric coordinates are unsafe in these three Catholic books.
- // Use a source-collated destination where available; otherwise withhold
- // the Douay comparison rather than display a different biblical verse.
  const exceptional=["Psalms","Esther","SongOfSongs"].includes(p.book);
- const douayPassage=exceptional?(parallel.canAutoParallel?parallel.reference:null):p;
+ const cpSpans=p.book==="Esther"&&referenceEdition==="dr-challoner"
+  ?estherParallelSpans(p,"dr-challoner","cpdv-2009")
+  :Object.freeze([p]);
+ const drSpans=p.book==="Esther"
+  ?(referenceEdition==="dr-challoner"
+    ?Object.freeze([p])
+    :estherParallelSpans(p,"cpdv-2009","dr-challoner"))
+  :(exceptional?(parallel.canAutoParallel?Object.freeze([parallel.reference]):null):Object.freeze([p]));
  const results=await Promise.all(MINING_ENGLISH_EDITIONS.map(async editionId=>{
-   const selected=editionId==="dr-challoner"?douayPassage:p;
-   if(!selected)return Object.freeze({editionId,available:false,
+   const spans=editionId==="dr-challoner"?drSpans:cpSpans;
+   if(!spans)return Object.freeze({editionId,available:false,
      sourceStatus:"CROSS_EDITION_REFERENCE_UNVERIFIED",verses:Object.freeze([]),
      error:"Exact cross-edition coordinates are not verified for this span.",
-     sourceUrl:null,passage:null});
+     sourceUrl:null,sourceUrls:Object.freeze([]),passage:null,passages:Object.freeze([])});
+   const urls=Object.freeze(spans.map(x=>sourceReadingLink(x,editionId)));
+   const single=spans.length===1?spans[0]:null;
    try{
-     const rows=await witnessLoader(editionId,selected.book,{fetcher,cacheStorage});
+     const rows=await witnessLoader(editionId,spans[0].book,{fetcher,cacheStorage});
      if(!Array.isArray(rows))throw new Error("INVALID_WITNESS_LOADER_RESULT");
      return Object.freeze({editionId,available:true,sourceStatus:"UNCOLLATED_SOURCE_WITNESS",
-       verses:Object.freeze(onlyVerses(rows,selected)),passage:selected,
-       sourceUrl:sourceReadingLink(selected,editionId)});
+       verses:Object.freeze(spans.flatMap(span=>onlyVerses(rows,span))),
+       passage:single,passages:spans,sourceUrls:urls,sourceUrl:single?urls[0]:null});
    }catch(error){
      return Object.freeze({editionId,available:false,sourceStatus:"SOURCE_UNAVAILABLE",
        verses:Object.freeze([]),error:String(error?.message??error),
-       sourceUrl:sourceReadingLink(selected,editionId),passage:selected});
+       sourceUrl:single?urls[0]:null,sourceUrls:urls,passage:single,passages:spans});
    }
  }));
  let catena=Object.freeze({available:false,sections:Object.freeze([])});
@@ -74,13 +87,14 @@ export async function mineScriptureReference(reference,{
  const warning=scriptureReferenceWarning(p.book,"en");
  return Object.freeze({
    schema:SCRIPTURE_MINING_SCHEMA,
-   reference:parsed.reference,passage:p,origin:origin?Object.freeze({...origin}):null,
+   reference:parsed.reference,passage:p,referenceEdition,origin:origin?Object.freeze({...origin}):null,
    primaryEdition:"cpdv-2009",comparisonEdition:"dr-challoner",
    readings:Object.freeze(Object.fromEntries(results.map(x=>[x.editionId,x]))),
    commentary:catena,
    otherCommentarySource:verifiedScriptureCommentary(p),
    referenceWarning:warning||null,
-   exactEditionParallelVerified:parallel.canAutoParallel===true,
+   exactEditionParallelVerified:p.book==="Esther"
+     ?Boolean(cpSpans&&drSpans):parallel.canAutoParallel===true,
    editorialStatus:"RESEARCH_NOT_APPROVED_FOR_VERBATIM_ROSARY_CUES"
  });
 }
@@ -91,6 +105,8 @@ export function validateScriptureMiningDecision(value){
    typeof value.reference!=="string"||!parseScriptureContext(value.reference)||
    !Number.isInteger(value.rating)||value.rating<0||value.rating>5||
    !["KEEP_HERE","SUITABLE_ELSEWHERE","REJECT","UNDECIDED"].includes(value.disposition)||
+   (value.referenceEdition!==undefined&&
+    !MINING_ENGLISH_EDITIONS.includes(value.referenceEdition))||
    typeof value.originModule!=="string"||!["rosary","mass","formation","historia","novena","stations","prayer","other"].includes(value.originModule)||
    typeof value.originId!=="string"||value.originId.length>150||
    (value.originBead!==undefined&&value.originBead!==null&&
@@ -101,7 +117,8 @@ export function validateScriptureMiningDecision(value){
    typeof value.duplicate!=="boolean")
    throw new Error("INVALID_SCRIPTURE_MINING_DECISION");
  return Object.freeze({schema:"ao.scripture.mining-decision.v1",
-   reference:value.reference,rating:value.rating,disposition:value.disposition,
+   reference:value.reference,referenceEdition:value.referenceEdition??"cpdv-2009",
+   rating:value.rating,disposition:value.disposition,
    originModule:value.originModule,originId:value.originId,
    originBead:value.originBead??null,
    destinationId:value.destinationId,destinationBead:value.destinationBead,
