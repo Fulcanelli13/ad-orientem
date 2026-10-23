@@ -182,3 +182,31 @@ After comparing the eight passage candidates with the existing source-owner *ope
 - *Ad diem illum*: Mary as guide to knowledge of Christ is supported; the entire doctrinal account of intercession/mediation is not attested by this single fragment.
 
 The original eight chapter/node IDs, source-owner answers, translation flags and publication holds are unchanged. CI now requires each newly found witness to be accompanied by an explicit interpretation-gap queue and `eligibleForAutomatedModelPromotion:false`. This is substantive screening, not a claim of eight fully source-authenticated dialogues.
+
+
+## P2.7 — Eight opening paragraphs in fuller primary-text context (23 October 2026)
+
+The first twelve-document discovery round identified eight source-document groups lacking a bounded original-language source annex for their opening conversation. We returned to the original Vatican **Latin or Italian** text, locating **41 exact short fragments** across those eight documents and mapping them to the **existing opening node** of each corresponding original dialogue chapter. This is a tangible improvement over the former one-quotation-per-document approach.
+
+    previews/pius-x-study/evidence/pius-x-next12-eight-opening-context-evidence-20261023.v1.json
+
+The corpus remains unmodified. Every fragment records original text, official Vatican URL, original language, source line, proposition supported, speaker classification, and specific unresolved claims. Eight sample openings are covered: `SPX-PILOT-07` (*Pascendi*, 5 anchors); `SPX-NEW-021` (*Acerbo nimis*, 4); `SPX-NEW-013` (*Pieni l'animo*, 5); `SPX-EXP-037` (*Tra le sollecitudini*, 5); `SPX-NEW-003` (*Divino afflatu*, 5); `SPX-NEW-008` (*Singulari quadam*, 6); `SPX-NEW-007` (*Editae saepe*, 4); `SPX-013` (*Ad diem illum*, 7).
+
+### Findings for editorial claims
+
+- *Pascendi*: opening and later sections support a *connected* characterization of Modernism, identifying agnosticism, religious sentiment, evolving dogmatic formulations and the final description of a collection of heresies. Be precise that these are positions *attributed to Modernists and criticized by Pius X*, not Pius X's own beliefs.
+- *Acerbo nimis*: the 1905 church directive expressly envisages lay catechetical helpers, particularly where there are few priests; it does **not** itself set modern safeguarding requirements.
+- *Pieni l'animo*: the source calls on bishops to consider suitability, diocesan needs, discipline and pride in ordination candidates, but cannot pronounce upon any modern applicant's individual vocation.
+- *Tra le sollecitudini*: holiness, good form, genuine art and universality are expressly described; theatrical style is criticized within its historical sacred-music policy. Do not silently rewrite present liturgical law.
+- *Divino afflatu*: the multiplication of saints' offices and omission of psalms are linked to restoring weekly coverage, while the directive addresses persons obliged to the Office. Distinguish 1911 historical rubrics from the 1962 Roman rite still used by Ad Orientem.
+- *Singulari quadam*: social questions, working hours, wages, moral judgment and charity between social classes occur in the text; a prominent characterization of the social question as religious and moral is **quoted earlier authority**, not original words coined by Pius X.
+- *Editae saepe*: imitation of saints, the Christ-centred governing programme and named examples are supported; the original list includes **John Chrysostom** between Gregory the Great and Anselm. St Charles Borromeo is discussed subsequently. Quotations of St Paul and predecessor Popes should remain attributed.
+- *Ad diem illum*: original Latin explicitly presents Mary guiding believers toward Christ, while Christ is affirmed as mediator and source of grace. An especially strong title of Marian mediation is inside a quotation attributed to **Pius IX**; the aqueduct image comes from St Bernard. No autonomous or rival mediation should be attributed to Mary.
+
+A new structural and original-context test:
+
+    node tests/pius-x-eight-opening-context-witnesses.mjs
+
+It compares all 41 excerpts to **separately transcribed, longer original-language Vatican context windows**, fails on a deliberately falsified fragment, checks exact source-owner opening IDs and protects speaker attribution. It does not mean that all eight opening answers, their remaining follow-ups or the 195 nodes across the twelve-document discovery batch have undergone complete claim-level verification.
+
+**Deliberate gate:** `newModelEvidencePromotions:0`, `newlyApprovedFullDialogues:0`. These newly widened contexts are still a *research evidence dossier*, not an authenticated papal transcript or an automatic permission for generative publication. Next work is a claim-by-claim EN/FR equivalence check and a secure, source-scoped model evaluation that can use only the supported propositions; no entire answer should pass merely because five correct excerpts were found nearby.
