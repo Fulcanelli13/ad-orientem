@@ -89,6 +89,7 @@ try{
   p.on('pageerror',e=>errors.push(String(e)));
   p.on('request',r=>{if(/^https?:/.test(r.url()))requests.push(r.url());});
   await p.goto(pathToFileURL(file).href,{waitUntil:'load'});
+  assert.match(await p.locator('#spxc-launch').innerText(),/82/);
   await p.locator('#spxc-launch').click();
   assert.equal(await p.locator('#spxc-overlay').isVisible(),true);
   if(width===390)await p.locator('#spxc-menu').click();
