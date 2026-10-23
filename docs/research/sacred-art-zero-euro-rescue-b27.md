@@ -49,6 +49,19 @@ tar -xf sacred-art-original-backup/ao-source-b26-b19.tar -C <existing-directory>
 
 Keep a second full copy on storage already owned, if possible. GitHub Releases are materially longer-lived than expiring Actions artifacts, but **GitHub must not be described as an archival permanence guarantee**.
 
+
+## Confirmed result (October 23, 2026)
+
+- **Primary B27 archive:** [run 40026183662](https://github.com/Fulcanelli13/ad-orientem/actions/runs/40026183662) completed successfully. Exactly **16 of 16** source TAR archives have passed SHA-256 source verification and release download/content comparison. Final gate output: `DRAFT_ARCHIVE_VERIFIED 16 total_bytes 3077273600`. It also uploaded `AO_ARCHIVE_RELEASE_INDEX.json` inside the **unpublished draft release**.
+- **Supplemental B27 archive:** [run 40026198621](https://github.com/Fulcanelli13/ad-orientem/actions/runs/40026198621) completed successfully, preserving **9 additional packages** (the earlier successful and partial B20 runs, the 159-image visual-review gallery pack, and six contact-sheet packs). These were kept separate from the 290-file primary count because some source images may be duplicates.
+- **Safety:** The release remains an unpublished draft and is not suitable for public distribution. No new acquisitions or editorial approvals were performed.
+- **Cost:** Only GitHub Releases and standard runners for this public repository were used; no paid cloud service or upgraded plan was configured.
+- **Still outstanding:** Independent backup to already-owned storage; audited de-duplication; accession/rights review; making archiving a mandatory success gate for all future acquisition workflows.
+
+### Why the early workflow runs failed
+
+An initial transfer run used a parent-folder path instead of the artifact's extraction directory. After that was corrected, all 16 wave uploads/downloads succeeded but the inventory step queried GitHub's public release REST-by-tag URL, which does not expose the unpublished draft. The verification was corrected to use authenticated `gh release view`. Repeated TAR packages also differed in timestamps, though image files were unchanged; retries now compare complete extracted original files instead. The final successful runs and per-file checks supersede these failed implementation attempts.
+
 ## Important limits
 
 - This rescue does **not** establish uniqueness, completeness of the entire sacred-art catalogue, copyright permissions, quality or publication suitability.
