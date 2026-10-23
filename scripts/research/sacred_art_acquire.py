@@ -33,7 +33,7 @@ def safe_url(url):
 
 def license_ok(name):
     n=re.sub(r'\s+',' ',(name or '').strip().lower().replace('-', ' '))
-    return n.startswith(('cc0','cc by','public domain','pd art','public domain mark'))
+    return n.startswith(('cc0','cc by','public domain','pd art','public domain mark')) and ' nc ' not in (' '+n+' ') and ' nd ' not in (' '+n+' ')
 
 def get_str(obj,key):
     val=obj.get(key,{}) if isinstance(obj,dict) else {}
