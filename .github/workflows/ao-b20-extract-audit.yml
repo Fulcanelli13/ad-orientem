@@ -1,0 +1,46 @@
+name: B20 audit-only extraction (no new image downloads)
+on:
+  push:
+    branches: [research/b19-original-image-acquisition-probe-20261023]
+    paths: [.github/workflows/ao-b20-extract-audit.yml]
+  workflow_dispatch:
+permissions:
+  actions: read
+  contents: read
+jobs:
+  extract-evidence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Retrieve completed rights-gated image acquisition run
+        uses: actions/download-artifact@v4
+        with:
+          artifact-ids: '12504877967'
+          run-id: '39962681470'
+          repository: Fulcanelli13/ad-orientem
+          github-token: ${{ github.token }}
+          path: evidence
+      - name: Extract audit only and check manifest scope
+        shell: bash
+        run: |
+          test -s evidence/Acquisition_results.csv
+          test -s evidence/Acquisition_summary.json
+          mkdir -p audit
+          cp evidence/Acquisition_results.csv evidence/Acquisition_summary.json audit/
+          python - <<'PY'
+          import csv,json
+          from pathlib import Path
+          rows=list(csv.DictReader(Path('audit/Acquisition_results.csv').open()))
+          summary=json.loads(Path('audit/Acquisition_summary.json').read_text())
+          assert len(rows)==150, len(rows)
+          assert summary['source_screened']==150
+          assert summary['new_publication_approvals']==0
+          print(summary)
+          PY
+      - name: Upload just the CSV and JSON evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: ao-b20-wave150-audit-only
+          path: audit/
+          retention-days: 7
+          if-no-files-found: error
