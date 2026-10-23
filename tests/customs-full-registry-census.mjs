@@ -444,7 +444,7 @@ assert.equal(allMcLReferences.length,70);
 assert.deepEqual(new Set(allMcLReferences),mclIds);
 assert.equal(mcloughlinGroups.summary.certified_distinct_new_catholic_customs,0);
 assert.equal(mcloughlinGroups.summary.publication_changes,0);
-assert.equal(count.source_observations.total_source_detail_rows_including_external,1095);
+assert.equal(count.source_observations.total_source_detail_rows_including_external,1293);
 assert.equal(count.source_observations.all_book_research_rows_including_nested_details,1025);
 assert.equal(researchCatalogue.external_source_observations_mcloughlin.length,70);
 assert.equal(researchCatalogue.external_source_action_families_mcloughlin.length,26);
@@ -462,3 +462,54 @@ for(const g of mcloughlinGroups.families){
  for(const id of g.possible_provisional_group_ids) assert.ok(priorGroupIds.has(id));
 }
 console.log('Helen McLoughlin online textual witness: 70 source observations, 26 reversible action families, 1,095 aggregate research rows — PASS');
+
+
+// Source-witness expansion after McLoughlin: 1955 Stokes compilation. These
+// are source-located action observations, NOT distinct customs or independent
+// corroborations of Stokes's cited authors (Trapp, Mueller, Attwater, Byles).
+const stokes55 = load('data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json');
+assert.equal(stokes55.records.length,198);
+assert.equal(stokes55.summary.records,198);
+assert.equal(stokes55.summary.verified_distinct_customs_added,0);
+assert.equal(stokes55.summary.prior_provisional_group_count_unchanged,408);
+assert.equal(stokes55.summary.app_published,0);
+assert.equal(stokes55.summary.source_does_not_independently_corroborate_cited_authors,true);
+assert.equal(stokes55.source.imprimatur_date,'1955-09-24');
+const stokesIds=new Set(stokes55.records.map(r=>r.observation_id));
+assert.equal(stokesIds.size,198);
+const expectedStokesClaims={
+  REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED:98,
+  AUTHOR_SUGGESTED_PRACTICE:49,
+  POSSIBLE_RITUAL_OR_AUTHORITY_CLAIM_REQUIRES_PRIMARY_CHECK:14,
+  FOLK_BELIEF_OR_DRAMATIZATION_NOT_ENDORSED:3,
+  SECONDARY_NAMED_SOURCE_OR_FAMILY_REPORT:27,
+  HISTORICAL_CUSTOM_CLAIM_NOT_VERIFIED:7
+};
+const actualStokesClaims=Object.fromEntries(Object.keys(expectedStokesClaims).map(k=>[k,stokes55.records.filter(r=>r.claim_characterization===k).length]));
+assert.deepEqual(actualStokesClaims,expectedStokesClaims);
+assert.deepEqual(stokes55.summary.claim_characters,expectedStokesClaims);
+for(const [i,r] of stokes55.records.entries()){
+  assert.equal(r.observation_id,'STOKES55-EWTN-'+String(i+1).padStart(3,'0'));
+  assert.ok(r.action_label && r.source_section);
+  assert.ok(r.source_locator.html_line_start>=132 && r.source_locator.html_line_end<=570);
+  assert.ok(r.source_locator.html_line_start<=r.source_locator.html_line_end);
+  assert.equal(r.source_locator.url,stokes55.source.url);
+  assert.equal(r.identity_status,'SOURCE_ACTION_ONLY_NOT_VERIFIED_DISTINCT_CUSTOM');
+  assert.equal(r.ritual_authority,'NOT_VALIDATED_AGAINST_1962_ROMAN_RITUAL');
+  assert.equal(r.app_publication,'NONE');
+}
+assert.equal(researchCatalogue.external_source_observations_stokes.length,198);
+assert.deepEqual(new Set(researchCatalogue.external_source_observations_stokes.map(r=>r.id)),stokesIds);
+assert.equal(count.source_observations.stokes_1955_online_source_action_observations,198);
+assert.equal(count.identity_working_rows.provisional_after_53_no_owner_action_review,408);
+assert.equal(count.identity_working_rows.final_uniquely_verified_customs_added,0);
+assert.equal(researchCatalogue.summary.no_new_app_publications,true);
+for(const r of researchCatalogue.external_source_observations_stokes){
+  const orig=stokes55.records.find(o=>o.observation_id===r.id);
+  assert.ok(orig);
+  assert.deepEqual(r.web_lines,[orig.source_locator.html_line_start,orig.source_locator.html_line_end]);
+  assert.equal(r.label,orig.action_label);
+  assert.equal(r.type,orig.claim_characterization);
+  assert.equal(r.identity_certified,false);
+}
+console.log('Stokes 1955 family practices: 198 separately indexed witness details, 1,293 aggregate research rows, 408 prior provisional groups preserved, no publication — PASS');
