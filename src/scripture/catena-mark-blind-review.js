@@ -84,6 +84,7 @@ export function validateMarkBlindCaseDecision(fixture,caseId,messages,entry){
    data.justification.length>4000||
    !DIGEST.test(String(data.sourceSHA256||""))||
    typeof data.supportingOriginalWords!=="string"||
+   (data.supportingOriginalWords.length>200)||
    (data.grade>=2&&data.supportingOriginalWords.trim().length<6)||
    (data.supportingOriginalWords&&
     !originalWords.includes(data.supportingOriginalWords)))
@@ -116,7 +117,7 @@ export function buildMarkBlindReviewExport(fixture,reviewer,decisions){
   sourceResearchCommit:fixture.sourceResearchCommit,
   reviewMode:"independent_blind_editor_retrieval_grade",
   reviewerId:reviewer.trim(),casesTotal:23,completedCases:entries.length,
-  entries,sourceTextIncluded:false,
+  entries,fullCanonicalExcerptsIncluded:false,
   independentApprovalNotAuthenticated:true,
   publicationApproval:false,
   mayAutoPromoteToMessenger:false});
