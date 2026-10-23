@@ -147,6 +147,65 @@ export async function evaluateConversationSequence(store,model,options={}){
   limitation:'An actual character interaction requires more than generated mini-essays. These fields are structural, not quality or original-source accuracy ratings.'};
 }
 
+
+/**
+ * English and French are independent chronological sessions: history from one
+ * language must never leak into the other. Both use the same owned E supremi
+ * source-IDs and permitted witness sets, not invented follow-up questions.
+ * This function can be exercised with mock models; it is NOT proof of live inference.
+ */
+export async function evaluateBilingualConversationSequences(store,model,{chapterId='SPX-PILOT-01'}={}){
+ const languages=['en','fr'];
+ for(const language of languages)makeConversationSequence(store,{chapterId,language});
+ const sessions=[];
+ for(const language of languages) sessions.push(await evaluateConversationSequence(
+  store,model,{chapterId,language}));
+ const totals={
+  languagesAttempted:languages.length,turnsAttempted:sessions.reduce((n,s)=>n+s.summary.totalTurns,0),
+  acceptedEditorialDrafts:sessions.reduce((n,s)=>n+s.summary.acceptedEditorialDrafts,0),
+  heldTurns:sessions.reduce((n,s)=>n+s.summary.heldTurns,0),
+  sourceReferenceFailures:sessions.reduce((n,s)=>n+s.summary.crossSourceFailures,0),
+  publicationFlagFailures:sessions.reduce((n,s)=>n+s.summary.publicationFailures,0),
+  exactRepeatSignals:sessions.reduce((n,s)=>n+s.summary.acceptedDraftsRepeatedVerbatim,0),
+  repeatedSentenceSignals:sessions.reduce((n,s)=>n+s.summary.likelyRepeatedSentences,0),
+  longMonologueSignals:sessions.reduce((n,s)=>n+s.summary.longMonologueSignals,0),
+  independentHumanSourceAudits:0,translationsCertified:0,publicationApproved:false};
+ return {schema:'AO_SPX_PRIVATE_BILINGUAL_SEQUENTIAL_EVAL_V1',
+  status:'STRUCTURAL_TRIAL_NOT_AUTHENTICITY_OR_CONVERSATION_CERTIFICATION',
+  chapterId,languages,sessions,summary:totals,
+  modelProviderConfirmed:false,
+  note:'Only the explicit configured-provider command can establish that an actual inference endpoint was reached. Mock replay proves harness behavior only.'};
+}
+
+/** Never print keys or send material in readiness mode. */
+export function liveEvaluationReadiness(env={}){
+ const canOptIn=env.AO_SPX_LIVE_EVAL==='I_ACCEPT_MODEL_COSTS_AND_DATA_TRANSFER'&&
+  env.AO_SPX_REVIEW_MODE==='1';
+ const missing=[
+  ...(!env.AO_SPX_MODEL_URL?['AO_SPX_MODEL_URL']:[]),
+  ...(!env.AO_SPX_MODEL?['AO_SPX_MODEL']:[]),
+  ...(!canOptIn?['explicit cost/data-transfer and private-review opt-in']:[])
+ ];
+ let endpointValid=false,protocolReason=null;
+ if(env.AO_SPX_MODEL_URL){
+  try{
+   const u=new URL(env.AO_SPX_MODEL_URL);
+   endpointValid=u.protocol==='https:'||
+    (u.protocol==='http:'&&['localhost','127.0.0.1','[::1]'].includes(u.hostname));
+   if(u.username||u.password)endpointValid=false;
+   if(!endpointValid)protocolReason='HTTPS_OR_LOCALHOST_ONLY';
+  }catch{protocolReason='INVALID_MODEL_URL';}
+ }
+ return {schema:'AO_SPX_LIVE_MODEL_READINESS_V1',
+  status:missing.length===0&&endpointValid?'CONFIGURED_NOT_YET_CALLED':'BLOCKED_NO_LIVE_MODEL',
+  endpointValid,configuredModelIdentifier:env.AO_SPX_MODEL||null,
+  endpointPresent:!!env.AO_SPX_MODEL_URL,
+  apiKeyPresent:!!env.AO_SPX_MODEL_KEY,
+  // Security: a public endpoint might accept anonymous requests. A key is optional.
+  missing,protocolReason,modelEndpointCalled:false,
+  originalTextCertified:false,publicationApproved:false};
+}
+
 const serialize=r=>JSON.parse(JSON.stringify(r));
 export async function evaluateDialogue(store,model,{maxModelCases=4}={}){
  if(!Number.isInteger(maxModelCases)||maxModelCases<0||maxModelCases>4)
@@ -200,12 +259,42 @@ export async function runConfiguredLiveEvaluation(){
  if(process.env.AO_SPX_LIVE_EVAL!=='I_ACCEPT_MODEL_COSTS_AND_DATA_TRANSFER'||
     process.env.AO_SPX_REVIEW_MODE!=='1')
   throw new Error('Live evaluation requires explicit AO_SPX_LIVE_EVAL and AO_SPX_REVIEW_MODE opt-in');
- const model=configuredModel();
- if(!model)throw new Error('Configure AO_SPX_MODEL_URL and AO_SPX_MODEL. No provider is supplied.');
+ const readiness=liveEvaluationReadiness(process.env);
+ if(readiness.status!=='CONFIGURED_NOT_YET_CALLED')
+  throw new Error('No permitted live-model endpoint: '+readiness.missing.join(', ')+
+   (readiness.protocolReason?' ('+readiness.protocolReason+')':''));
+ const rawModel=configuredModel();
+ if(!rawModel)throw new Error('Configure AO_SPX_MODEL_URL and AO_SPX_MODEL. No provider is supplied.');
+ const invocations={compose:0,verify:0};
+ const model=async (purpose,messages)=>{
+  if(purpose!=='compose'&&purpose!=='verify')throw new Error('Unknown model purpose');
+  invocations[purpose]++;
+  return rawModel(purpose,messages);
+ };
  const store=readCorpus(readFileSync(original,'utf8'));
- const maxModelCases=Number(process.env.AO_SPX_EVAL_CASES||4);
+ const maxModelCases=Number(process.env.AO_SPX_EVAL_CASES??4);
  const result=await evaluateDialogue(store,model,{maxModelCases});
- if(process.env.AO_SPX_EVAL_MULTITURN==='1'){
+ result.providerExecution={
+  mode:'CONFIGURED_ENDPOINT_ACTUALLY_REQUESTED',
+  modelIdentifier:process.env.AO_SPX_MODEL,
+  transport:'HTTPS_OR_LOCALHOST_HTTP',
+  apiKeyLogged:false,
+  composeRequestsAttempted:0,
+  verifyRequestsAttempted:0,
+  postInferenceHumanClaimsValidated:0};
+ if(process.env.AO_SPX_EVAL_BILINGUAL==='1'){
+  if(process.env.AO_SPX_EVAL_MULTITURN!=='1')
+   throw new Error('Set AO_SPX_EVAL_MULTITURN=1 for the bilingual sequence');
+  const bilingual=await evaluateBilingualConversationSequences(store,model,{
+   chapterId:process.env.AO_SPX_EVAL_CHAPTER||'SPX-PILOT-01'});
+  result.bilingualMultiturn=bilingual;
+  result.summary.multiTurnDrafts=bilingual.summary.acceptedEditorialDrafts;
+  result.summary.multiTurnRepeatCount=bilingual.summary.exactRepeatSignals;
+  result.summary.multiTurnReferenceFailures=bilingual.summary.sourceReferenceFailures;
+  result.summary.multiTurnPublicationFailures=bilingual.summary.publicationFlagFailures;
+  result.summary.languagesAttempted=2;
+  result.summary.multiTurnAttempts=bilingual.summary.turnsAttempted;
+ }else if(process.env.AO_SPX_EVAL_MULTITURN==='1'){
   const sequence=await evaluateConversationSequence(store,model,{
    chapterId:process.env.AO_SPX_EVAL_CHAPTER||'SPX-PILOT-01',
    language:process.env.AO_SPX_EVAL_LANGUAGE||'en'});
@@ -213,7 +302,14 @@ export async function runConfiguredLiveEvaluation(){
   result.summary.multiTurnDrafts=sequence.summary.acceptedEditorialDrafts;
   result.summary.multiTurnRepeatCount=sequence.summary.acceptedDraftsRepeatedVerbatim;
   result.summary.multiTurnReferenceFailures=sequence.summary.crossSourceFailures;
+  result.summary.multiTurnPublicationFailures=sequence.summary.publicationFailures;
  }
+ result.providerExecution.composeRequestsAttempted=invocations.compose;
+ result.providerExecution.verifyRequestsAttempted=invocations.verify;
+ result.providerExecution.actualDraftsAccepted=result.summary.generatedDrafts+
+  (result.summary.multiTurnDrafts||0);
+ result.providerExecution.providerProvenanceNotIndependentlyAuthenticated=true;
+
  const out=resolve(process.env.AO_SPX_EVAL_OUTPUT||
   'artifacts/pius-x-study-expanded/pius-x-live-eval-PRIVATE-UNAPPROVED.json');
  mkdirSync(dirname(out),{recursive:true});
@@ -222,8 +318,14 @@ export async function runConfiguredLiveEvaluation(){
   note:'Review generated records manually before assessing authenticity; no approvals.'})+'\n');
  if(result.summary.violatedPreflightHolds||result.summary.structuralReferenceFailures||
     result.summary.publicationFlagFailures||result.summary.multiTurnReferenceFailures||
-    result.multiturn?.summary.publicationFailures)process.exitCode=1;
+    result.summary.multiTurnPublicationFailures||
+    (process.env.AO_SPX_EVAL_BILINGUAL==='1'&&result.summary.multiTurnDrafts===0)||
+    (result.providerExecution.composeRequestsAttempted===0))
+   process.exitCode=1;
  return result;
 }
-if(process.argv[1]&&fileURLToPath(import.meta.url)===resolve(process.argv[1]))
- await runConfiguredLiveEvaluation();
+if(process.argv[1]&&fileURLToPath(import.meta.url)===resolve(process.argv[1])){
+ if(process.env.AO_SPX_EVAL_READINESS_ONLY==='1')
+  process.stdout.write(JSON.stringify(liveEvaluationReadiness(process.env),null,2)+'\n');
+ else await runConfiguredLiveEvaluation();
+}
