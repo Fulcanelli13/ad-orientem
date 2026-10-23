@@ -8,13 +8,15 @@
 - All 35 articles were structurally checked for English and French title, description, history, meaning, voluntary practice, caution, occasion, and scope fields.
 - Each of the 35 articles' source IDs matches canonical attestations and the current 108-entry source registry. No new source or custom identity was silently created.
 - **11** P0/P1 articles had identical Description and History in both languages. These eleven histories have been replaced with independently worded, bounded contextual notes based on already attributed sources, with no invented antiquity, universal law or event schedule.
-- **11** published claims now received targeted source-text checks, including direct confirmation and correction of Candlemas usage; the remaining **24** have a provenance crosswalk but have **not** had complete claim-by-claim original-text verification.
+- **19** published customs now have targeted source-level review, including all **13 P1** records. The remaining **16** have a provenance crosswalk, but not source-level text signoff. No record has received full historical/editorial certification.
 - Four independently verified institutional historical references are now registered in the **same source-registry file** under `historical_context_sources` (outside the original 108 customary attestation sources). The Calendar presents their links separately as Historical sources / Sources historiques for ADVT-001, ADVT-002, ADVT-003 and MARI-002.
 - **0 of 35** are declared finally editorially certified. The article register is a first-pass gating instrument, not retroactive source approval.
 
 Complete review notes and one explicit priority per custom: `data/customs/research/customs-published-35-editorial-first-pass.20261023.v1.json`.
 
-## Highest-risk gates (13 P1 IDs)
+## High-priority source-level adjudication (13 P1 IDs)
+
+All 13 priority customs have now been checked at least against a directly retrieved source. For each, the JSON ledger identifies what the source supports and exactly what remains held. **Source-level adjudication is not full bilingual publication signoff.**
 
 | ID | Action before full signoff |
 | --- | --- |
