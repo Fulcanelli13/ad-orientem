@@ -101,7 +101,7 @@ for(const p of data.packets){
  observed.incomplete+=p.quotationSourceEvidence.unpairedOrUnresolvedDelimiters.length>0?1:0;
  const rank=data.prioritizedForFurtherSourceResearch.find(x=>x.id===p.id);
  assert.ok(rank);
- assert.equal(rank.originalPrintedHomilyLabel,p.originalPrintedHomily);
+ assert.equal(rank.originalPrintedHomilyLabel,p.originalPrintedHomilyLabel);
  assert.deepEqual(rank.sameInheritedAuthorPointers,
   p.catenaParallels.filter(x=>x.inheritedFatherLabel==="Chrysostom").map(x=>x.pointer));
  assert.equal(rank.safeToPublish,false);
