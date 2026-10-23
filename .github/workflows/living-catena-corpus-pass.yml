@@ -15,6 +15,7 @@ on:
       - tests/scripture-catena-mark-batch-one.mjs
       - tests/scripture-catena-mark-adjudication.mjs
       - tests/scripture-catena-mark-original-works.mjs
+      - tests/scripture-catena-schaff-first-seeds.mjs
       - tests/scripture-catena-matthew-batch-two.mjs
       - tests/scripture-catena-matthew-batch-two-reconciliation.mjs
       - tests/scripture-catena-matthew-batch-three.mjs
@@ -71,6 +72,8 @@ jobs:
         run: node tests/scripture-catena-mark-original-works.mjs
       - name: Verify Mark AI-only editorial assessment and adversarial probes
         run: node tests/scripture-catena-mark-adjudication.mjs
+      - name: Verify Schaff 1888 full-work question anchors and three deduplicated canonical pointers
+        run: node tests/scripture-catena-schaff-first-seeds.mjs
       - name: Ensure generated index is up to date for PR
         run: |
           git diff --exit-code -- data/scripture/catena/research/full-corpus-pass-20261021/
