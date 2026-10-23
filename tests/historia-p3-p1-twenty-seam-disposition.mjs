@@ -129,7 +129,7 @@ assert.equal(measure(["John 11:45–53"],"dr-challoner").sourceWords,181);
 assert.equal(measure(["Acts 1:3–5"],"dr-challoner").sourceWords,78);
 for(const ed of editionIds){
  const fr=ed==="crampon-1923";
- assert.match(witness(ed,"Exodus").get("5:2"),fr?/Pharaon/i:/Pharaoh|Pharao/i);
+ assert.match(witness(ed,"Exodus").get("5:2"),fr?/Qui est Yahweh/i:/Who is the Lord/i);
  assert.match(witness(ed,"John").get("11:51"),fr?/prophétisa/i:/prophesied|prophesying/i);
  assert.match(witness(ed,"Acts").get("1:3"),fr?/quarante jours/i:/forty days/i);
  assert.match(witness(ed,"Genesis").get("35:10"),fr?/Israël/i:/Israel/i);
