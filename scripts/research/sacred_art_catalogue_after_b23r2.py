@@ -22,7 +22,6 @@ def main():
     merged={}
     for record in a+b:
         sid=record["asset_source_id"]
-        assert sid not in seen or (record in b and sid in seen) is False
         # 47 R2 identities are repeated in the earlier 82-row research manifest.
         # The initial queue status is intentionally superseded only by R2.
         if sid in merged and merged[sid]["download_status"]!="QUEUED_AFTER_FILE_LIMIT":
