@@ -34,7 +34,7 @@ export function validationErrors(manifest){
         for(const k of ["reviewer","reviewed_on","content_sha256","review_note"])if(value[k]!==null)errors.push(id+": pending "+part+" has fabricated signoff metadata");
       }else{
         if(!String(value.reviewer||"").trim()||value.reviewer==="ChatGPT"||value.reviewer==="AI")errors.push(id+": "+part+" requires real responsible reviewer");
-        if(!/^\\d{4}-\\d{2}-\\d{2}$/.test(value.reviewed_on||"")||!Number.isFinite(Date.parse(value.reviewed_on||"")))errors.push(id+": "+part+" requires review date");
+        if(!/^\d{4}-\d{2}-\d{2}$/.test(value.reviewed_on||"")||!Number.isFinite(Date.parse(value.reviewed_on||"")))errors.push(id+": "+part+" requires review date");
         if(value.content_sha256!==fingerprint(id,part))errors.push(id+": "+part+" approval was not for current text");
         if(value.decision==="CHANGES_REQUESTED"&&!String(value.review_note||"").trim())errors.push(id+": "+part+" rejected without explanation");
       }
