@@ -2,13 +2,13 @@
   "schema": "AO_SPX_P2_EIGHT_OPENING_BILINGUAL_AUDIT_V1",
   "status": "REVIEW_ONLY_PRELIMINARY_SEMANTIC_CROSSCHECK",
   "date": "2026-10-23",
-  "method": "Exact P6 opening text compared in English and French with bounded Vatican original-language source witness propositions; not an approved translation",
+  "method": "Exact P6 opening text compared in English and French with bounded Vatican original-language source witness propositions; not an approved translation. P5 voice revisions applied to SPX-NEW-013 and SPX-NEW-021; source-owner P4 paragraphs are not the rendered text.",
   "summary": {
     "subjects": 8,
     "englishOpeningsExamined": 8,
     "frenchOpeningsExamined": 8,
     "alignedBilingualClaimSpans": 25,
-    "editorialCautionSpans": 19,
+    "editorialCautionSpans": 21,
     "fullAnswersApproved": 0,
     "translationsApproved": 0,
     "modelEvidencePromotions": 0
@@ -84,13 +84,13 @@
       "nodeId": "AO.SPX.DIALOGUE.SPX-NEW-021.OPEN",
       "documentKey": "acerbo-nimis",
       "originalLanguage": "la",
-      "originalAnswerLayer": "ORIGINAL_STAGE",
-      "renderedEnglishChecksumFNV1A32": "343c0bdc",
-      "renderedFrenchChecksumFNV1A32": "8b1174bd",
+      "originalAnswerLayer": "P5_VOICE_REVIEW",
+      "renderedEnglishChecksumFNV1A32": "772ecbc1",
+      "renderedFrenchChecksumFNV1A32": "d2ab454b",
       "alignedBilingualSpans": [
         {
-          "enTextSpan": "Confraternity of Christian Doctrine be established in parishes",
-          "frTextSpan": "Confrérie de la Doctrine chrétienne",
+          "enTextSpan": "a Confraternity of Christian Doctrine be established in every parish",
+          "frTextSpan": "une Confrérie de la Doctrine chrétienne dans chaque paroisse",
           "witnessIds": [
             "AN-PARISH"
           ],
@@ -98,19 +98,19 @@
           "translationApproved": false
         },
         {
-          "enTextSpan": "especially where priests were too few",
-          "frTextSpan": "surtout là où les prêtres étaient trop peu nombreux",
+          "enTextSpan": "lay helpers might assist their pastors",
+          "frTextSpan": "des auxiliaires laïcs aident les pasteurs",
           "witnessIds": [
-            "AN-SHORTAGE"
+            "AN-LAY"
           ],
           "assessment": "ORIGINAL_LANGUAGE_CORE_SUPPORT_EN_FR_EDITORIAL_PARAPHRASE",
           "translationApproved": false
         },
         {
-          "enTextSpan": "Lay helpers could offer valuable service",
-          "frTextSpan": "Des auxiliaires laïcs pouvaient rendre un service précieux",
+          "enTextSpan": "especially where priests are few",
+          "frTextSpan": "surtout là où les prêtres sont peu nombreux",
           "witnessIds": [
-            "AN-LAY"
+            "AN-SHORTAGE"
           ],
           "assessment": "ORIGINAL_LANGUAGE_CORE_SUPPORT_EN_FR_EDITORIAL_PARAPHRASE",
           "translationApproved": false
@@ -118,15 +118,21 @@
       ],
       "exceptionSpans": [
         {
-          "enTextSpan": "a volunteer catechist with an ordained minister",
-          "frTextSpan": "le catéchiste volontaire avec le ministre ordonné",
-          "code": "DISTINCTION_NOT_LITERAL_IN_SHORT_WITNESS",
+          "enTextSpan": "the little ones must be taught",
+          "frTextSpan": "il faut enseigner aux petits",
+          "code": "CHILD_INSTRUCTION_NEEDS_MORE_PASSAGE_CONTEXT",
           "status": "EDITORIAL_CAUTION_NOT_PRIMARY_TEXT_CERTIFIED"
         },
         {
-          "enTextSpan": "present safeguarding, formation and canonical arrangements",
-          "frTextSpan": "les dispositions actuelles de protection, de formation et de droit canonique",
-          "code": "MODERN_LAW_NOT_1905_PAPAL_TEXT",
+          "enTextSpan": "the helper does not take the pastor's office upon himself",
+          "frTextSpan": "l'auxiliaire ne s'attribue pas la charge du pasteur",
+          "code": "REASONABLE_ROLE_BOUNDARY_NOT_VERBATIM",
+          "status": "EDITORIAL_CAUTION_NOT_PRIMARY_TEXT_CERTIFIED"
+        },
+        {
+          "enTextSpan": "knowledge and careful preparation",
+          "frTextSpan": "la connaissance et à une préparation soigneuse",
+          "code": "TRAINING_EXPECTATION_MORE_SOURCE_TEXT_REQUIRED",
           "status": "EDITORIAL_CAUTION_NOT_PRIMARY_TEXT_CERTIFIED"
         }
       ],
@@ -140,13 +146,13 @@
       "nodeId": "AO.SPX.DIALOGUE.SPX-NEW-013.OPEN",
       "documentKey": "pieni-l-animo",
       "originalLanguage": "it",
-      "originalAnswerLayer": "ORIGINAL_STAGE",
-      "renderedEnglishChecksumFNV1A32": "d8b9463b",
-      "renderedFrenchChecksumFNV1A32": "1cd90286",
+      "originalAnswerLayer": "P5_VOICE_REVIEW",
+      "renderedEnglishChecksumFNV1A32": "b825fc1f",
+      "renderedFrenchChecksumFNV1A32": "828d03a1",
       "alignedBilingualSpans": [
         {
-          "enTextSpan": "it is not a profession that a man may claim simply because he desires it",
-          "frTextSpan": "n'est pas une profession qu'un homme pourrait exiger parce qu'il la désire",
+          "enTextSpan": "No man may claim the priesthood merely because he desires it",
+          "frTextSpan": "Nul ne peut réclamer le sacerdoce comme un droit au seul motif qu'il le désire",
           "witnessIds": [
             "PL-NOTTRADE"
           ],
@@ -154,20 +160,20 @@
           "translationApproved": false
         },
         {
-          "enTextSpan": "The needs of a diocese and the suitability of the candidate",
-          "frTextSpan": "Les besoins du diocèse et l'aptitude du candidat",
+          "enTextSpan": "the needs of his diocese",
+          "frTextSpan": "les besoins du diocèse",
           "witnessIds": [
-            "PL-NEEDS",
-            "PL-FIT"
+            "PL-NEEDS"
           ],
           "assessment": "ORIGINAL_LANGUAGE_CORE_SUPPORT_EN_FR_EDITORIAL_PARAPHRASE",
           "translationApproved": false
         },
         {
-          "enTextSpan": "We placed responsibility for selection upon the bishops",
-          "frTextSpan": "confiions aux évêques",
+          "enTextSpan": "seek men whose character and discipline promise faithful service",
+          "frTextSpan": "choisir des hommes dont le caractère et la discipline promettent un service fidèle",
           "witnessIds": [
-            "PL-ASPIRANTS"
+            "PL-FIT",
+            "PL-DISC"
           ],
           "assessment": "ORIGINAL_LANGUAGE_CORE_SUPPORT_EN_FR_EDITORIAL_PARAPHRASE",
           "translationApproved": false
@@ -175,15 +181,21 @@
       ],
       "exceptionSpans": [
         {
-          "enTextSpan": "pride and contempt for discipline",
-          "frTextSpan": "l'orgueil et le mépris de la discipline",
-          "code": "STRENGTHENED_READING_OF_INDISCIPLINE_AND_INTELLECTUAL_PRIDE",
+          "enTextSpan": "not to lay hands hastily upon candidates",
+          "frTextSpan": "à ne pas imposer les mains avec précipitation",
+          "code": "SCRIPTURAL_ADMONITION_ATTRIBUTION_MUST_BE_CHECKED",
           "status": "EDITORIAL_CAUTION_NOT_PRIMARY_TEXT_CERTIFIED"
         },
         {
-          "enTextSpan": "not through an avatar declaring who has been called",
-          "frTextSpan": "non par la déclaration d'un avatar",
-          "code": "ANACHRONISTIC_UI_DISCLAIMER",
+          "enTextSpan": "A spirit that disdains obedience",
+          "frTextSpan": "L'esprit d'indépendance qui méprise l'obéissance",
+          "code": "STRONGER_CHARACTER_JUDGMENT_THAN_SIMPLE_INDISCIPLINE",
+          "status": "EDITORIAL_CAUTION_NOT_PRIMARY_TEXT_CERTIFIED"
+        },
+        {
+          "enTextSpan": "tested with patience",
+          "frTextSpan": "éprouvé avec patience",
+          "code": "EDITORIAL_INFERENCE_NOT_LITERAL_IN_WITNESS",
           "status": "EDITORIAL_CAUTION_NOT_PRIMARY_TEXT_CERTIFIED"
         }
       ],
