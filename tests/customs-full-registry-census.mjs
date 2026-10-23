@@ -153,3 +153,37 @@ const bridgeCoverage = new Set(familyBridge.records.flatMap(r => [
 ]));
 assert.deepEqual(bridgeCoverage,previewIds);
 console.log('Weiser historical/context/disputed 181-case audit, 39 recovered leads, 6 PDF-checked addendum observations and full 16 preview bridge — PASS');
+
+
+const researchCatalogue = load('data/customs/master/comprehensive-customs-working-catalogue.v1.json');
+const count = researchCatalogue.summary;
+assert.equal(count.source_observations.combined_distinct_source_rows, 685);
+assert.equal(count.source_observations.handbook_current_total, 574);
+assert.equal(count.source_observations.family_1956_direct_scan, 111);
+assert.equal(researchCatalogue.existing_master_identities.length, 56);
+assert.equal(researchCatalogue.provisional_handbook_groups.length, 308);
+assert.equal(researchCatalogue.provisional_historical_groups.length, 39);
+assert.equal(researchCatalogue.addendum_unresolved_practice_leads.length, 6);
+assert.equal(researchCatalogue.family_1956_source_observations.length, 111);
+const allWorkingRows = [
+  ...researchCatalogue.existing_master_identities,
+  ...researchCatalogue.provisional_handbook_groups,
+  ...researchCatalogue.provisional_historical_groups,
+  ...researchCatalogue.addendum_unresolved_practice_leads
+];
+assert.equal(new Set(allWorkingRows.map(r => r.id)).size, allWorkingRows.length);
+const allHandbookIds = new Set([...priorSourceIds, ...addendum.records.map(r => r.id)]);
+assert.equal(allHandbookIds.size, 574);
+for(const g of researchCatalogue.provisional_handbook_groups) for(const id of g.source_observations)
+  assert.ok(priorSourceIds.has(id));
+for(const g of researchCatalogue.provisional_historical_groups) for(const id of g.source_observations)
+  assert.ok(priorSourceIds.has(id));
+for(const g of researchCatalogue.addendum_unresolved_practice_leads) for(const id of g.source_observations)
+  assert.ok(allHandbookIds.has(id));
+assert.deepEqual(
+  new Set(researchCatalogue.family_1956_source_observations.map(x => x.observation_id)),
+  new Set(family1956.records.map(x => x.observation_id))
+);
+assert.equal(count.identity_working_rows.final_uniquely_verified_customs_added,0);
+assert.equal(count.no_new_app_publications,true);
+console.log('Unified independent customs workbench index — 685 source mentions, 56 master identities, 347 provisional groups, 6 addendum leads — PASS');
