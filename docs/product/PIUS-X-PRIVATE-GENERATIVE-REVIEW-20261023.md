@@ -134,3 +134,20 @@ The four existing original-language primary-witness annexes are now covered by a
 - The research status is deliberately limited to **literal excerpt presence**. It does **not** independently verify the full translation, theological interpretation, adjacent context, doctrinal claims of the conversation, embedded quotations' authorial attribution beyond the manually recorded caveat, or a full primary-source collation. The script reports all these approvals as false.
 
 The official original texts are linked in the individual annexes. This adds no new product cards, publishing approvals, quote permissions or corpus mutations. Future larger original-source batches can use the same verifier rather than repeating manual ID-only assertions.
+
+
+## P2.5 — Full-corpus coverage accounting and higher-volume source batches (23 October 2026)
+
+The original P6 remains **106 distinct subjects / 423 bilingual dialogue nodes**. Four documentary subjects, with **14 nodes**, have bounded original-language source-excerpt mapping using **23 short verified text anchors**. The other **409 nodes do not yet have one of these P2 excerpt mappings**. This is a measurable research coverage gap, **not** 409 uniformly suitable original papal statements: some are biography, approved-catechism exposition, or other historical contexts where a papal-first-person answer would be inappropriate. **Zero subjects are certified as fully authenticated**; no generated reply is release-approved.
+
+`tools/pius-x-primary-coverage-report.mjs` now groups **all 106 existing source-owner chapters by underlying document**, normalizing Vatican language variants to one document identifier where applicable. It preserves document/source-class distinctions, counts existing dialogue nodes and excerpt-mapped nodes, and generates a prioritized **twelve-document original-source research batch** from eligible uncompleted papal-document groups. It does not fabricate citations, alter the original registry, or pretend the grouped titles prove document content.
+
+A repeatable JSON report is written into the existing **private CI review artifact**:
+
+    artifacts/pius-x-study-expanded/PiusX_Private_Source_Coverage.json
+
+It contains all document-group counts and the next twelve source-document candidates. Developers can regenerate it after building P6 using:
+
+    AO_SPX_COVERAGE_REPORT_OUTPUT=artifacts/pius-x-study-expanded/PiusX_Private_Source_Coverage.json node tools/pius-x-primary-coverage-report.mjs
+
+The report's unit of progress is **source spot-check coverage by node**, with original-language snippet counts separately. For next batches, work by original document, assess all associated existing questions together, and attach original-language witness snippets with speaker attribution, exact source location and interpretation/translation caveats. Do not convert unsupported biography or catechism exposition into imagined personal testimony. No replacement app architecture or new canonical registry is intended.
