@@ -500,4 +500,120 @@ assert.ok(exactVerse("Ruth 2:2","dr-challoner").length===1);
 assert.ok(exactVerse("Ruth 2:2","crampon-1923").length===1);
 assert.ok(editions.every(ed=>exactVerse("Ruth 2:3",ed).length===1));
 
+
+// Every P0 insertion choice must come from the original five-hinge P3 minimum ledger.
+// This is a strictly non-publishing projection: no reader variant becomes selected.
+const criticalTrial=ledger.criticalSeamInsertionPreflight;
+const minimum=read(criticalTrial.sourceOfEvidence);
+assert.equal(criticalTrial.schema,"ao.historia.p3.five-p0-seam-reader-insertion-preflight.v1");
+assert.equal(criticalTrial.status,"FIVE_CRITICAL_SEAMS_CONDITIONALLY_ASSEMBLED_AT_DESK_NOT_SOURCE_SELECTED");
+assert.equal(criticalTrial.noAutomatedPromotion,true);
+assert.equal(criticalTrial.hinges,5);
+assert.equal(criticalTrial.sourceOwnerIdsInP0Candidates,7);
+assert.equal(criticalTrial.caseResults.length,5);
+assert.equal(criticalTrial.sourceOwnership,"REUSE_ORIGINAL_BEATS_AND_SOURCE_WORKLIST_NO_PARALLEL_MANUSCRIPT");
+assert.equal(ledger.totals.p0CriticalSeamsMechanicallyCompared,5);
+assert.equal(ledger.totals.p0ConditionalReadingVerseEntries,33);
+assert.equal(ledger.totals.p0CriticalSourceApprovals,0);
+assert.equal(criticalTrial.movementSequenceDeskGate.existingScriptureUnits,93);
+assert.equal(criticalTrial.movementSequenceDeskGate.existingMovements,37);
+assert.equal(criticalTrial.movementSequenceDeskGate.interMovementSeams,36);
+assert.equal(criticalTrial.movementSequenceDeskGate.selectedScriptureTextChanged,false);
+assert.equal(criticalTrial.movementSequenceDeskGate.acceptedSourceAdditions,0);
+assert.equal(criticalTrial.movementSequenceDeskGate.readerRuntimeChanged,false);
+assert.equal(criticalTrial.movementSequenceDeskGate.priorityP0StillBlockedForPublication,5);
+assert.equal(criticalTrial.movementSequenceDeskGate.actualUninterruptedOralReadingCompleted,false);
+assert.equal(criticalTrial.movementSequenceDeskGate.omissionDisclosureRequired,true);
+assert.equal(criticalTrial.movementSequenceDeskGate.threeNativeWitnessesStillUncollated,true);
+assert.deepEqual(criticalTrial.caseResults.map(x=>x.hingeId),[
+ "HS-HINGE-02","HS-HINGE-08","HS-HINGE-28","HS-HINGE-33","HS-HINGE-34"
+]);
+const p0SelectedVerseKeys=new Set();
+const baselineSelectedVerseKeys=new Set();
+for(const movement of proof.movements)for(const b of movement.beats)if(b.kind==="SCRIPTURE")
+ for(const ref of b.refs){const s=parse(ref);for(let v=s.lo;v<=s.hi;v++)baselineSelectedVerseKeys.add(s.book+" "+s.chapter+":"+v);}
+let linkedSourceOwners=new Set();
+const sourceRows=criticalTrial.caseResults.map(row=>{
+ const seam=audit.betweenMovementSeams.find(s=>s.id===row.hingeId);
+ const recorded=minimum.options.find(o=>o.hinge===row.hingeId);
+ assert.ok(seam && recorded,"No independently source-owned critical seam "+row.hingeId);
+ assert.equal(seam.priority,"P0");
+ assert.equal(row.priority,"P0");
+ assert.equal(row.fromMovement,seam.fromMovement);
+ assert.equal(row.toMovement,seam.toMovement);
+ assert.equal(row.anchorBefore,seam.fromLastSelectedSource);
+ assert.equal(row.anchorAfter,seam.toFirstSelectedSource);
+ assert.equal(row.causalIssueStillReleaseBlocking,true);
+ assert.equal(row.sourceComparisonCompleteAtDesk,true);
+ assert.equal(row.sourceSelectionAccepted,false);
+ assert.equal(row.oralAccepted,false);
+ assert.equal(row.theologicalAccepted,false);
+ assert.equal(row.printedEditionCertified,false);
+ assert.equal(row.productionAppChanged,false);
+ assert.equal(row.atlas151Changed,false);
+ assert.equal(row.disposition,"PREFERRED_MECHANICAL_RESEARCH_TRIAL_NOT_SELECTED");
+ assert.ok(row.exactSourcePresentationRule.length>140);
+ assert.ok(row.requiredOmissionOrAttributionDisclosure.length>125);
+ assert.ok(row.heldWithoutPromotionBehavior.length>125);
+ const variant=recorded.choices.find(c=>c.id===row.preferredExistingP0OptionId);
+ assert.ok(variant,"Referenced P0 alternative was not researched: "+row.preferredExistingP0OptionId);
+ assert.deepEqual(row.preferredNativeRefs,variant.refs);
+ assert.deepEqual(row.preferredWitnessMetrics,variant.measurements);
+ assert.equal(new Set(row.sourceInReadingOrderBeatIds).size+ (row.hingeId==="HS-HINGE-08"?1:0),
+              row.sourceInReadingOrderBeatIds.length);
+ for(const bid of row.sourceInReadingOrderBeatIds)assert.ok(allBeats.has(bid),"Source order invented new P3 beat "+bid);
+ assert.ok(row.alternativeExistingP0OptionIds.every(id=>recorded.choices.some(c=>c.id===id)));
+ for(const wid of row.sourceDecisionOwnerIds){
+  assert.ok(proposedById.has(wid),"Critical hinge must use an unapproved P0 source owner "+wid);
+  linkedSourceOwners.add(wid);
+ }
+ for(const ref of variant.refs){
+  const coords=parse(ref);
+  for(let v=coords.lo;v<=coords.hi;v++){
+   const k=coords.book+" "+coords.chapter+":"+v;
+   assert.equal(baselineSelectedVerseKeys.has(k),false,"P0 trial overlaps the original 93 Scripture owners: "+k);
+   assert.equal(p0SelectedVerseKeys.has(k),false,"Newly proposed critical hinge duplicates native Scripture: "+k);
+   p0SelectedVerseKeys.add(k);
+  }
+  for(const ed of editions)assert.ok(exactVerse(ref,ed).length>0,"Missing native P0 trial "+ed+" "+ref);
+ }
+ for(const ed of editions){
+  const nativeWords=variant.refs.flatMap(ref=>exactVerse(ref,ed)).join(" ").trim();
+  const count=nativeWords?nativeWords.split(/\s+/).length:0;
+  assert.equal(count,variant.measurements[ed].sourceWords,"Never rewrite or invent P0 witness text count: "+ed+" "+row.hingeId);
+ }
+ return {row,variant};
+});
+assert.equal(linkedSourceOwners.size,7);
+assert.equal(p0SelectedVerseKeys.size,33);
+const originalCost=criticalTrial.combinedUnapprovedReadingCost;
+assert.equal(originalCost.genreBoundaryMandatoryAdditionalVerses,0);
+assert.equal(originalCost.optionalRevelation4Verses,2);
+assert.equal(originalCost.addedScriptureWordsNotAChangeToOriginal28815,true);
+assert.equal(originalCost.readingRateWpmForReferenceOnly,130);
+for(const ed of editions){
+ const core=sourceRows.slice(0,4).reduce((z,x)=>z+x.variant.measurements[ed].sourceWords,0);
+ const verses=sourceRows.slice(0,4).reduce((z,x)=>z+x.variant.measurements[ed].verseEntries,0);
+ const opt=minimum.options.find(x=>x.hinge==="HS-HINGE-34").choices.find(c=>c.id==="OPEN_HEAVENLY_VISION");
+ const skip=minimum.options.find(x=>x.hinge==="HS-HINGE-28").choices.find(c=>c.id==="PIERCED_SIDE_SEPARATE_WITNESS");
+ const measured=originalCost.measurementsByEdition[ed];
+ assert.equal(core,measured.coreUnapprovedTrialWords);
+ assert.equal(verses,measured.coreUnapprovedTrialVerseEntries);
+ assert.equal(measured.coreUnapprovedTrialVerseEntries,33);
+ assert.equal(measured.includingOptionalVisionTrialVerseEntries,verses+opt.measurements[ed].verseEntries);
+ assert.equal(measured.includingOptionalVisionTrialWords,core+opt.measurements[ed].sourceWords);
+ assert.equal(measured.alternativeBurialOnlyVerseEntries,verses-skip.measurements[ed].verseEntries);
+ assert.equal(measured.alternativeBurialOnlyWords,core-skip.measurements[ed].sourceWords);
+}
+assert.equal(originalCost.measurementsByEdition["dr-challoner"].coreUnapprovedTrialWords,855);
+assert.equal(originalCost.measurementsByEdition["dr-challoner"].includingOptionalVisionTrialWords,922);
+assert.equal(originalCost.measurementsByEdition["dr-challoner"].alternativeBurialOnlyWords,694);
+assert.deepEqual(sourceRows.find(x=>x.row.hingeId==="HS-HINGE-34").variant.refs,[]);
+assert.deepEqual(sourceRows.find(x=>x.row.hingeId==="HS-HINGE-33").row.sourceDecisionOwnerIds,
+ ["HS-W-SRC-HS-CF-11","HS-W-SRC-HS-P3-CF-13"]);
+assert.deepEqual(sourceRows.find(x=>x.row.hingeId==="HS-HINGE-28").row.sourceDecisionOwnerIds,
+ ["HS-W-SRC-JOHN-19-PIERCED-SIDE","HS-W-SRC-HS-CF-06"]);
+assert.match(sourceRows.find(x=>x.row.hingeId==="HS-HINGE-33").row.requiredOmissionOrAttributionDisclosure,/28:17–19/);
+assert.match(sourceRows.find(x=>x.row.hingeId==="HS-HINGE-34").row.exactSourcePresentationRule,/non-Scripture/);
+
 console.log("PASS Historia unified worklist: 36 fully owned hinge dispositions, 20 optional native-source decisions, 7 grouped reader tasks, 29 original contexts + 12 connectors (41 desk-triaged and 15 witness-linked comparisons, 0 accepted), 6 editorial/acceptance tracks, seven unopened release gates, no new Atlas/Scripture publication");
