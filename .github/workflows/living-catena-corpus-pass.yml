@@ -8,6 +8,8 @@ on:
       - scripts/scripture-catena-first-pass.mjs
       - scripts/scripture-catena-schaff-ocr-ingest.mjs
       - scripts/scripture-catena-schaff-section-ingest.mjs
+      - scripts/scripture-catena-schaff-question-context-pilot.mjs
+      - tests/scripture-catena-schaff-question-context-pilot.mjs
       - tests/scripture-catena-schaff-section-ingest.mjs
       - tests/scripture-catena-schaff-ocr-ingest.mjs
       - .github/workflows/living-catena-corpus-pass.yml
@@ -22,6 +24,8 @@ on:
       - tests/scripture-catena-schaff-first-seeds.mjs
       - scripts/scripture-catena-schaff-ocr-ingest.mjs
       - scripts/scripture-catena-schaff-section-ingest.mjs
+      - scripts/scripture-catena-schaff-question-context-pilot.mjs
+      - tests/scripture-catena-schaff-question-context-pilot.mjs
       - tests/scripture-catena-schaff-section-ingest.mjs
       - tests/scripture-catena-schaff-ocr-ingest.mjs
       - tests/scripture-catena-matthew-batch-two.mjs
@@ -107,6 +111,10 @@ jobs:
         run: node scripts/scripture-catena-schaff-section-ingest.mjs
       - name: Verify 94 source units and 4131 source-hashed question candidates
         run: node tests/scripture-catena-schaff-section-ingest.mjs
+      - name: Screen OCR question attribution and extract source-exact nearby context for 94 work units
+        run: node scripts/scripture-catena-schaff-question-context-pilot.mjs
+      - name: Verify question classification and immutable original-word envelopes
+        run: node tests/scripture-catena-schaff-question-context-pilot.mjs
       - name: Attach both full original scan OCR texts and candidate indexes
         if: success()
         uses: actions/upload-artifact@v4
@@ -115,5 +123,6 @@ jobs:
           path: |
             dist/schaff-original-ocr/
             dist/schaff-sectioned-research/
+            dist/schaff-context-pilot/
           if-no-files-found: error
           retention-days: 14
