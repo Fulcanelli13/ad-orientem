@@ -23,7 +23,8 @@
     "MUELLER_SECOND_PASS_100_NONADDITIVE": "Another independent indexing pass recorded 100 shorter source-action details from the SAME online fifth-edition Mueller witness already represented by 122 primary Mueller source rows in the Mueller/Kelly intake. 95/100 second-pass entries co-locate to an EWTN line already cited by primary records; five need separate fine-detail review. These 100 are preserved as source-splitting annotations, NOT added to 1,629 total or 122 original Mueller observations, and NOT new independent corroboration.",
     "STOKES_MUELLER_298_SCREEN_NOT_IDENTITY_ADJUDICATION": "298 rows (198 Stokes + 100 Mueller second-pass annotations) were run through label-only candidate lookup across 490 existing owner/group/source-family labels; 119 have one or more retrieval hints, 179 none. No lexical hit or no-hit establishes identity, nonidentity, distinctness, corroboration or ritual authority; the 100 Mueller annotations also overlap the primary 122.",
     "CHANEY_NEW_AUTHOR_NOT_170_VERIFIED_CUSTOMS": "Chaney's 1955 Grailville Twelve Days of Christmas is a distinct authored book and textual witness, but cites or draws on Mueller and earlier authors and includes modern recommendations alongside reported practice, ritual quotations and firsthand Grailville activities. Index 170 as source observations, not 170 new customs or 170 independent corroborations; avoid old printed page citations.",
-    "CHANEY_AUTOMATED_RETRIEVAL_IS_NOT_SEMANTIC_PROOF": "170 Chaney source observations compared lexically to 490 master/provisional/McLoughlin-family labels plus 604 prior named author source-observation labels. Candidate hints include obvious false positives; 65 observations without hints are not proven novel. Do not promote to master or Calendar."
+    "CHANEY_AUTOMATED_RETRIEVAL_IS_NOT_SEMANTIC_PROOF": "170 Chaney source observations compared lexically to 490 master/provisional/McLoughlin-family labels plus 604 prior named author source-observation labels. Candidate hints include obvious false positives; 65 observations without hints are not proven novel. Do not promote to master or Calendar.",
+    "CHANEY_MANUAL_LABEL_RELATIONS_SCOPE": "24 manually compared source-action labels and Chaney text locator to prior research/source labels: 12 same described action core; 6 explicitly false lexical matches; other relationships include components, preparation or related actions. This is not full dual-source original text verification or proof of separate independent witnesses; zero final merges and no new canonical identities."
   },
   "summary": {
     "source_observations": {
@@ -139,7 +140,11 @@
       "chaney_1955_candidates_from_existing_labels": 380,
       "chaney_1955_source_rows_without_any_lexical_hints": 65,
       "chaney_1955_semantic_equivalences_verified": 0,
-      "chaney_1955_independent_corroborations_certified": 0
+      "chaney_1955_independent_corroborations_certified": 0,
+      "chaney_1955_manually_reviewed_label_level_relationship_pairs": 24,
+      "chaney_1955_action_core_label_matches": 12,
+      "chaney_1955_false_lexical_matches_rejected": 6,
+      "chaney_1955_manual_reviews_certifying_historical_identity": 0
     },
     "no_new_app_publications": true
   },
@@ -186,7 +191,8 @@
     "mueller_secondary_100_to_primary_122_nonadditive": "data/customs/master/mueller-100-second-pass-to-122-nonadditive-source-crosswalk.v1.json",
     "stokes_mueller_298_label_lookup": "data/customs/master/stokes-mueller-298-source-routing-lexical-screen.v1.json",
     "chaney_1955_source_intake": "data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json",
-    "chaney_1955_170_candidate_lookup": "data/customs/master/chaney-1955-170-cross-source-nonmerging-candidate-review.v1.json"
+    "chaney_1955_170_candidate_lookup": "data/customs/master/chaney-1955-170-cross-source-nonmerging-candidate-review.v1.json",
+    "chaney_1955_24_label_action_relationships": "data/customs/master/chaney-1955-action-description-24-manual-relations.v1.json"
   },
   "existing_master_identities": [
     {
