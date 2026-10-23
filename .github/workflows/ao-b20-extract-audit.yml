@@ -6,12 +6,13 @@ on:
   workflow_dispatch:
 permissions:
   actions: read
-  contents: read
+  contents: write
 jobs:
   extract-evidence:
     runs-on: ubuntu-latest
     timeout-minutes: 12
     steps:
+      - uses: actions/checkout@v4
       - name: Retrieve completed rights-gated image acquisition run
         uses: actions/download-artifact@v4
         with:
@@ -37,6 +38,17 @@ jobs:
           assert summary['new_publication_approvals']==0
           print(summary)
           PY
+      - name: Commit immutable research audit to this branch (no app promotion)
+        shell: bash
+        run: |
+          mkdir -p data/research
+          cp audit/Acquisition_results.csv data/research/sacred-art-b20-wave150.audit.csv
+          cp audit/Acquisition_summary.json data/research/sacred-art-b20-wave150.audit-summary.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/research/sacred-art-b20-wave150.audit.csv data/research/sacred-art-b20-wave150.audit-summary.json
+          git commit -m 'research: preserve 150-source rights-gated B20 acquisition evidence' || true
+          git push origin HEAD:research/b19-original-image-acquisition-probe-20261023
       - name: Upload just the CSV and JSON evidence
         uses: actions/upload-artifact@v4
         with:
