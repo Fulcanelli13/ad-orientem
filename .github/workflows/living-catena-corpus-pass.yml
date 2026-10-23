@@ -9,6 +9,8 @@ on:
       - scripts/scripture-catena-schaff-ocr-ingest.mjs
       - scripts/scripture-catena-schaff-section-ingest.mjs
       - scripts/scripture-catena-schaff-question-context-pilot.mjs
+      - scripts/scripture-catena-schaff-seed-to-scan-crosswalk.mjs
+      - tests/scripture-catena-schaff-seed-to-scan-crosswalk.mjs
       - tests/scripture-catena-schaff-question-context-pilot.mjs
       - tests/scripture-catena-schaff-section-ingest.mjs
       - tests/scripture-catena-schaff-ocr-ingest.mjs
@@ -25,6 +27,8 @@ on:
       - scripts/scripture-catena-schaff-ocr-ingest.mjs
       - scripts/scripture-catena-schaff-section-ingest.mjs
       - scripts/scripture-catena-schaff-question-context-pilot.mjs
+      - scripts/scripture-catena-schaff-seed-to-scan-crosswalk.mjs
+      - tests/scripture-catena-schaff-seed-to-scan-crosswalk.mjs
       - tests/scripture-catena-schaff-question-context-pilot.mjs
       - tests/scripture-catena-schaff-section-ingest.mjs
       - tests/scripture-catena-schaff-ocr-ingest.mjs
@@ -115,6 +119,10 @@ jobs:
         run: node scripts/scripture-catena-schaff-question-context-pilot.mjs
       - name: Verify question classification and immutable original-word envelopes
         run: node tests/scripture-catena-schaff-question-context-pilot.mjs
+      - name: Anchor existing fourteen Schaff question seeds against printed historical source units
+        run: node scripts/scripture-catena-schaff-seed-to-scan-crosswalk.mjs
+      - name: Verify ten exact historical OCR anchors and four unresolved printed variants
+        run: node tests/scripture-catena-schaff-seed-to-scan-crosswalk.mjs
       - name: Attach both full original scan OCR texts and candidate indexes
         if: success()
         uses: actions/upload-artifact@v4
