@@ -1,17 +1,19 @@
 {
   "schema": "AO_SPX_P2_EIGHT_OPENING_BILINGUAL_AUDIT_V1",
-  "status": "REVIEW_ONLY_PRELIMINARY_SEMANTIC_CROSSCHECK",
+  "status": "PRIVATE_SOURCE_CORRECTIONS_APPLIED_REMAINDER_NOT_APPROVED",
   "date": "2026-10-23",
   "method": "Exact P6 opening text compared in English and French with bounded Vatican original-language source witness propositions; not an approved translation. P5 voice revisions applied to SPX-NEW-013 and SPX-NEW-021; source-owner P4 paragraphs are not the rendered text.",
   "summary": {
     "subjects": 8,
     "englishOpeningsExamined": 8,
     "frenchOpeningsExamined": 8,
-    "alignedBilingualClaimSpans": 25,
-    "editorialCautionSpans": 21,
+    "alignedBilingualClaimSpans": 27,
+    "editorialCautionSpans": 17,
     "fullAnswersApproved": 0,
     "translationsApproved": 0,
-    "modelEvidencePromotions": 0
+    "modelEvidencePromotions": 0,
+    "correctionsAppliedInPrivateBranch": 4,
+    "correctionsRemainingInOriginalQueue": 17
   },
   "records": [
     {
@@ -147,8 +149,8 @@
       "documentKey": "pieni-l-animo",
       "originalLanguage": "it",
       "originalAnswerLayer": "P5_VOICE_REVIEW",
-      "renderedEnglishChecksumFNV1A32": "b825fc1f",
-      "renderedFrenchChecksumFNV1A32": "828d03a1",
+      "renderedEnglishChecksumFNV1A32": "a28c1dc4",
+      "renderedFrenchChecksumFNV1A32": "bde69473",
       "alignedBilingualSpans": [
         {
           "enTextSpan": "No man may claim the priesthood merely because he desires it",
@@ -177,21 +179,18 @@
           ],
           "assessment": "ORIGINAL_LANGUAGE_CORE_SUPPORT_EN_FR_EDITORIAL_PARAPHRASE",
           "translationApproved": false
+        },
+        {
+          "enTextSpan": "Indiscipline, particularly when fostered by intellectual pride",
+          "frTextSpan": "L'indiscipline, particulièrement lorsqu'elle est nourrie par l'orgueil de l'esprit",
+          "witnessIds": [
+            "PL-DISC"
+          ],
+          "assessment": "ORIGINAL_LANGUAGE_CORE_SUPPORT_EN_FR_EDITORIAL_PARAPHRASE",
+          "translationApproved": false
         }
       ],
       "exceptionSpans": [
-        {
-          "enTextSpan": "not to lay hands hastily upon candidates",
-          "frTextSpan": "à ne pas imposer les mains avec précipitation",
-          "code": "SCRIPTURAL_ADMONITION_ATTRIBUTION_MUST_BE_CHECKED",
-          "status": "EDITORIAL_CAUTION_NOT_PRIMARY_TEXT_CERTIFIED"
-        },
-        {
-          "enTextSpan": "A spirit that disdains obedience",
-          "frTextSpan": "L'esprit d'indépendance qui méprise l'obéissance",
-          "code": "STRONGER_CHARACTER_JUDGMENT_THAN_SIMPLE_INDISCIPLINE",
-          "status": "EDITORIAL_CAUTION_NOT_PRIMARY_TEXT_CERTIFIED"
-        },
         {
           "enTextSpan": "tested with patience",
           "frTextSpan": "éprouvé avec patience",
@@ -394,8 +393,8 @@
       "documentKey": "editae-saepe",
       "originalLanguage": "la",
       "originalAnswerLayer": "ORIGINAL_STAGE",
-      "renderedEnglishChecksumFNV1A32": "f56804c1",
-      "renderedFrenchChecksumFNV1A32": "94248c5f",
+      "renderedEnglishChecksumFNV1A32": "aaf656e1",
+      "renderedFrenchChecksumFNV1A32": "ae5c2adb",
       "alignedBilingualSpans": [
         {
           "enTextSpan": "examples of Christian virtue that can be imitated",
@@ -423,15 +422,18 @@
           ],
           "assessment": "ORIGINAL_LANGUAGE_CORE_SUPPORT_EN_FR_EDITORIAL_PARAPHRASE",
           "translationApproved": false
+        },
+        {
+          "enTextSpan": "Gregory the Great, John Chrysostom and Anselm",
+          "frTextSpan": "Grégoire le Grand, Jean Chrysostome et Anselme",
+          "witnessIds": [
+            "ES-THREE"
+          ],
+          "assessment": "ORIGINAL_LANGUAGE_CORE_SUPPORT_EN_FR_EDITORIAL_PARAPHRASE",
+          "translationApproved": false
         }
       ],
       "exceptionSpans": [
-        {
-          "enTextSpan": "Gregory the Great and Anselm",
-          "frTextSpan": "Grégoire le Grand et Anselme",
-          "code": "MISSING_JOHN_CHRYSOSTOM_FROM_THREE_NAME_SOURCE_LIST",
-          "status": "EDITORIAL_CAUTION_NOT_PRIMARY_TEXT_CERTIFIED"
-        },
         {
           "enTextSpan": "holiness, teaching and pastoral charity",
           "frTextSpan": "la sainteté, l'enseignement et la charité pastorale",
@@ -450,8 +452,8 @@
       "documentKey": "ad-diem-illum-laetissimum",
       "originalLanguage": "la",
       "originalAnswerLayer": "P1",
-      "renderedEnglishChecksumFNV1A32": "bc74cfa0",
-      "renderedFrenchChecksumFNV1A32": "eb1837e6",
+      "renderedEnglishChecksumFNV1A32": "fa170980",
+      "renderedFrenchChecksumFNV1A32": "476248db",
       "alignedBilingualSpans": [
         {
           "enTextSpan": "within the one saving work of Jesus Christ",
@@ -493,12 +495,6 @@
           "status": "EDITORIAL_CAUTION_NOT_PRIMARY_TEXT_CERTIFIED"
         },
         {
-          "enTextSpan": "not a claim that We privately answered this visitor in person",
-          "frTextSpan": "non la prétention d'avoir personnellement répondu au visiteur",
-          "code": "OUT_OF_CHARACTER_EDITORIAL_DISCLAIMER",
-          "status": "EDITORIAL_CAUTION_NOT_PRIMARY_TEXT_CERTIFIED"
-        },
-        {
           "enTextSpan": "Her maternal intercession",
           "frTextSpan": "Son intercession maternelle",
           "code": "PIUS_IX_EMBEDDED_QUOTE_ATTRIBUTION",
@@ -509,6 +505,32 @@
       "originalTextClaimApproval": false,
       "fullAnswerApproved": false,
       "modelEvidencePromotions": 0
+    }
+  ],
+  "resolvedSourceCorrections": [
+    {
+      "chapterId": "SPX-NEW-013",
+      "code": "SCRIPTURAL_ADMONITION_ATTRIBUTION_MUST_BE_CHECKED",
+      "status": "CORRECTED_IN_PRIVATE_EDITORIAL_LAYER",
+      "translationApproved": false
+    },
+    {
+      "chapterId": "SPX-NEW-013",
+      "code": "STRONGER_CHARACTER_JUDGMENT_THAN_SIMPLE_INDISCIPLINE",
+      "status": "CORRECTED_IN_PRIVATE_EDITORIAL_LAYER",
+      "translationApproved": false
+    },
+    {
+      "chapterId": "SPX-NEW-007",
+      "code": "MISSING_JOHN_CHRYSOSTOM_FROM_THREE_NAME_SOURCE_LIST",
+      "status": "CORRECTED_IN_PRIVATE_EDITORIAL_LAYER",
+      "translationApproved": false
+    },
+    {
+      "chapterId": "SPX-013",
+      "code": "OUT_OF_CHARACTER_EDITORIAL_DISCLAIMER",
+      "status": "CORRECTED_IN_PRIVATE_EDITORIAL_LAYER",
+      "translationApproved": false
     }
   ]
 }
