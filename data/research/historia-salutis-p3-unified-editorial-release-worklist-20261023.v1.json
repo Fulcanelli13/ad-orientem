@@ -4155,7 +4155,10 @@
         "printedEditionCertified": false,
         "sourceSelectionAccepted": false,
         "productionAppChanged": false,
-        "atlas151Changed": false
+        "atlas151Changed": false,
+        "optionalSourceDecisionOwnerIds": [
+          "HS-W-SRC-HS-P3-CF-14"
+        ]
       }
     ],
     "combinedUnapprovedReadingCost": {
@@ -4204,6 +4207,8 @@
       "omissionDisclosureRequired": true,
       "threeNativeWitnessesStillUncollated": true
     },
-    "noAutomatedPromotion": true
+    "noAutomatedPromotion": true,
+    "preferredTrialSourceOwners": 6,
+    "optionalVisionTrialSourceOwners": 1
   }
 }
