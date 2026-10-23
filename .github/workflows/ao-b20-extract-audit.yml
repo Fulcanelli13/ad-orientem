@@ -23,10 +23,10 @@ jobs:
       - name: Extract audit only and check manifest scope
         shell: bash
         run: |
-          test -s evidence/Acquisition_results.csv
-          test -s evidence/Acquisition_summary.json
+          test -s evidence/ao-b20-wave150-source-screen-and-originals/Acquisition_results.csv
+          test -s evidence/ao-b20-wave150-source-screen-and-originals/Acquisition_summary.json
           mkdir -p audit
-          cp evidence/Acquisition_results.csv evidence/Acquisition_summary.json audit/
+          cp evidence/ao-b20-wave150-source-screen-and-originals/Acquisition_results.csv evidence/ao-b20-wave150-source-screen-and-originals/Acquisition_summary.json audit/
           python - <<'PY'
           import csv,json
           from pathlib import Path
