@@ -4,12 +4,13 @@ on:
     types: [opened, synchronize, reopened, ready_for_review]
     paths:
       - "src/calendar/customs-read-model.js"
-      - "src/calendar/customs-extra-articles.js"
       - "src/calendar/calendar-runtime.js"
       - "data/customs/source-registry.v1.json"
       - "data/customs/customs-historical-folios.v1.json"
+      - "src/calendar/customs-extra-articles.js"
       - "data/customs/research/customs-published-35-editorial-first-pass.20261023.v1.json"
       - "tests/customs-35-editorial-first-pass.mjs"
+      - "tests/customs-bilingual-scope-parity.mjs"
       - ".github/workflows/customs-35-editorial-parity.yml"
   workflow_dispatch:
 permissions:
@@ -26,5 +27,6 @@ jobs:
       - name: Check English/French article history and editorial register
         run: |
           node tests/customs-35-editorial-first-pass.mjs
+          node tests/customs-bilingual-scope-parity.mjs
           node tests/calendar-customs-context.mjs
           node tests/customs-living-library.mjs
