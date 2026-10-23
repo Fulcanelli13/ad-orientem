@@ -25,6 +25,8 @@ on:
       - 'tests/pius-x-primary-witness-expansion.mjs'
       - 'tools/pius-x-audit-primary-witnesses.mjs'
       - 'tests/pius-x-primary-witness-webtext-audit.mjs'
+      - 'tools/pius-x-primary-coverage-report.mjs'
+      - 'tests/pius-x-primary-coverage-report.mjs'
       - 'tools/spx-p0-editorial-normalization.mjs'
       - 'tools/spx-p2-followup-editorial-layer.mjs'
       - '.github/workflows/pius-x-study-standalone-review.yml'
@@ -51,6 +53,8 @@ on:
       - 'tests/pius-x-primary-witness-expansion.mjs'
       - 'tools/pius-x-audit-primary-witnesses.mjs'
       - 'tests/pius-x-primary-witness-webtext-audit.mjs'
+      - 'tools/pius-x-primary-coverage-report.mjs'
+      - 'tests/pius-x-primary-coverage-report.mjs'
       - 'tools/spx-p0-editorial-normalization.mjs'
       - 'tools/spx-p2-followup-editorial-layer.mjs'
       - '.github/workflows/pius-x-study-standalone-review.yml'
@@ -97,6 +101,8 @@ jobs:
         run: node tests/pius-x-primary-witness-expansion.mjs
       - name: Test 23 Vatican excerpt presence against independently transcribed source windows
         run: node tests/pius-x-primary-witness-webtext-audit.mjs
+      - name: Account for all 106 research chapters and next primary-document targets
+        run: node tests/pius-x-primary-coverage-report.mjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
