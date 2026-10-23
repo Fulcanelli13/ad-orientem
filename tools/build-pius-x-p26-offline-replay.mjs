@@ -33,8 +33,10 @@ const originals=new Map();
 for(const annex of sources){
  assert(['la','it'].includes(annex.document.languageOfOriginal));
  for(const w of annex.sourceWitnesses){
+  // The original E supremi annex also holds St Anselm quoted by Pius X.
+  // Quoted authorities remain research evidence but never become papal speech.
+  if(w.speaker!=='PIUS_X_AUTHOR')continue;
   const text=w.text||w.latin;
-  assert(w.speaker==='PIUS_X_AUTHOR');
   assert(typeof text==='string'&&text.length>=12);
   assert(!originals.has(w.id));
   originals.set(w.id,{
