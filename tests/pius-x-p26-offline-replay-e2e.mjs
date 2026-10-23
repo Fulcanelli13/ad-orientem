@@ -78,6 +78,8 @@ try{
   await page.locator('[data-spxc-open="SPX-PILOT-01"]').first().click();
   assert.equal(await page.locator('#spxc-offline-replay').count(),1);
   assert.equal(await page.locator('#spxc-offline-replay').isVisible(),true);
+  assert.equal(await page.locator('.spxc-free-ask').isVisible(),false,
+   'Four source-replay subjects must not show a competing free-question form');
   assert.equal(await page.locator('.spxm-offline-choice').count(),3);
   assert.match(await page.locator('#spxm-offline-example').innerText(),/Try different wording/);
   await page.locator('.spxm-offline-choice').first().click();
@@ -142,6 +144,11 @@ try{
   assert.match(await page.locator('#spxm-offline-replies .spxm-draft').first().innerText(),
    /association fut supprimée/);
   await page.screenshot({path:screenshots+width+'-p26-offline-bilingual.png'});
+  // Other subjects still own their original offline documented-question search.
+  if(width===390)await page.locator('#spxc-menu').click();
+  await page.locator('#spxc-nav [data-spxc-open="SPX-EXP-001"]').first().click();
+  assert.equal(await page.locator('#spxc-offline-replay').isVisible(),false);
+  assert.equal(await page.locator('.spxc-free-ask').isVisible(),true);
   assert.deepEqual(errors,[],'No inline script exceptions');
   assert.deepEqual(requests,[],'No external HTTP(S) network requests during offline replay');
   await page.close();
