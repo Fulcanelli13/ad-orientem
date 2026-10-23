@@ -7,7 +7,8 @@
     "PREVIEW_DUPLICATION": "16 preview items overlap 15 of the 111 1956 scan records, not additional observations.",
     "INTRA_AUTHOR_SOURCES": "Two Weiser books do not amount to independent corroboration.",
     "FULLNESS": "1958 Handbook's six overlooked observations prove its earlier 568-item index was not exhaustive. 1956 book full-scan pass likewise not certified page-by-page exhaustive.",
-    "PRODUCT_BOUNDARY": "No Ad Orientem runtime publication or prioritization."
+    "PRODUCT_BOUNDARY": "No Ad Orientem runtime publication or prioritization.",
+    "GRANULAR_DETAIL_NON_ADDITIVITY": "57 source details are often narrower subpractices of 568 earlier Handbook observations; count as research rows, not necessarily as new independent source observations or new identities."
   },
   "summary": {
     "source_observations": {
@@ -16,21 +17,26 @@
       "handbook_current_total": 574,
       "family_1956_direct_scan": 111,
       "combined_distinct_source_rows": 685,
-      "preview_subjects_extra_counted": 0
+      "preview_subjects_extra_counted": 0,
+      "handbook_nested_granular_detail_mentions": 57,
+      "all_book_research_rows_including_nested_details": 742,
+      "combined_distinct_source_rows_note": "685 non-nested separately identified source observations; plus 57 nested source details that may refer to the same source passages or practices. Do not infer 742 independent customs or independent mentions."
     },
     "identity_working_rows": {
       "previously_existing_master_identities": 56,
       "provisional_handbook_groups": 308,
       "provisional_historical_leads": 39,
       "page_checked_addendum_leads_without_identity_adjudication": 6,
-      "final_uniquely_verified_customs_added": 0
+      "final_uniquely_verified_customs_added": 0,
+      "new_identity_proposals_from_nested_details": 0
     },
     "source_review": {
       "historical_context_disputed_cases_index_assessed": 181,
       "ambiguous_historical_label_cases": 3,
       "family_records_with_handbook_proposed_overlap": 54,
       "family_records_with_master_proposed_overlap": 16,
-      "family_records_without_direct_match": 56
+      "family_records_without_direct_match": 56,
+      "handbook_ch10_to_ch13_page_detail_records": 57
     },
     "no_new_app_publications": true
   },
@@ -48,7 +54,9 @@
     "fam": "data/customs/master/weiser-family-1956-fullscan-source-pass01.v1.json",
     "cross": "data/customs/master/full-registry-observation-crosswalk.v1.json",
     "context": "data/customs/master/context-historical-contested-181-review.v1.json",
-    "relation": "data/customs/master/weiser-two-book-relationship-review.v1.json"
+    "relation": "data/customs/master/weiser-two-book-relationship-review.v1.json",
+    "handbook_ch10_13_granular": "data/customs/master/weiser-handbook-targeted-addendum-ch10-13.v1.json",
+    "weiser_precursor_acquisition": "data/customs/master/weiser-precursor-works-acquisition.v1.json"
   },
   "existing_master_identities": [
     {
@@ -6864,6 +6872,1034 @@
         }
       ],
       "scope": "Ireland and reported British Isles St Stephen's Day folk custom"
+    }
+  ],
+  "handbook_granular_source_details": [
+    {
+      "id": "WEI58-ADD-2-001",
+      "label": "Suspending nonessential farm work across Christmas week",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REPORTED_SEASONAL_ACTION",
+      "chapter": 10,
+      "printed_page": 123,
+      "pdf_page_zero_index": 140,
+      "ocr_line_range": [
+        4919,
+        4926
+      ],
+      "existing_parent_source_observation": "WEI58-10-002",
+      "relation_type": "POSSIBLE_VARIANT_OR_COMPONENT_OF_EXISTING_RESEARCH_OBSERVATION",
+      "parent_in_current_practice_groups": true,
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch10-13.v1.json"
+    },
+    {
+      "id": "WEI58-ADD-2-002",
+      "label": "Family Rosary by the lit Christmas tree during the twelve Holy Evenings",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REPORTED_DEVOTION_VARIANT",
+      "chapter": 10,
+      "printed_page": 123,
+      "pdf_page_zero_index": 140,
+      "ocr_line_range": [
+        4922,
+        4926
+      ],
+      "existing_parent_source_observation": "WEI58-10-002",
+      "relation_type": "POSSIBLE_VARIANT_OR_COMPONENT_OF_EXISTING_RESEARCH_OBSERVATION",
+      "parent_in_current_practice_groups": true,
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch10-13.v1.json"
+    },
+    {
+      "id": "WEI58-ADD-2-003",
+      "label": "Children gather for evening Nativity-crib devotions in church",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REPORTED_PARISH_CUSTOM",
+      "chapter": 10,
+      "printed_page": 124,
+      "pdf_page_zero_index": 141,
+      "ocr_line_range": [
+        4943,
+        4946
+      ],
+      "existing_parent_source_observation": "WEI58-10-006",
+      "relation_type": "POSSIBLE_VARIANT_OR_COMPONENT_OF_EXISTING_RESEARCH_OBSERVATION",
+      "parent_in_current_practice_groups": true,
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch10-13.v1.json"
+    },
+    {
+      "id": "WEI58-ADD-2-004",
+      "label": "Children recite poems or short sermons before the Santo Bambino in Rome",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REPORTED_LOCAL_VARIANT",
+      "chapter": 10,
+      "printed_page": 124,
+      "pdf_page_zero_index": 141,
+      "ocr_line_range": [
+        4946,
+        4950
+      ],
+      "existing_parent_source_observation": "WEI58-10-006",
+      "relation_type": "POSSIBLE_VARIANT_OR_COMPONENT_OF_EXISTING_RESEARCH_OBSERVATION",
+      "parent_in_current_practice_groups": true,
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch10-13.v1.json"
+    },
+    {
+      "id": "WEI58-ADD-2-005",
+      "label": "Whip cracking and gun salutes accompanying winter masquerade processions",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "FOLK_ACTION_CONTEXT",
+      "chapter": 10,
+      "printed_page": 125,
+      "pdf_page_zero_index": 142,
+      "ocr_line_range": [
+        4970,
+        4979
+      ],
+      "existing_parent_source_observation": "WEI58-10-007",
+      "relation_type": "POSSIBLE_VARIANT_OR_COMPONENT_OF_EXISTING_RESEARCH_OBSERVATION",
+      "parent_in_current_practice_groups": false,
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch10-13.v1.json"
+    },
+    {
+      "id": "WEI58-ADD-2-006",
+      "label": "Incantations addressed to fruit trees and fields during midwinter",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "CONTESTED_FOLK_ACTION",
+      "chapter": 10,
+      "printed_page": 125,
+      "pdf_page_zero_index": 142,
+      "ocr_line_range": [
+        4976,
+        4979
+      ],
+      "existing_parent_source_observation": "WEI58-10-007",
+      "relation_type": "POSSIBLE_VARIANT_OR_COMPONENT_OF_EXISTING_RESEARCH_OBSERVATION",
+      "parent_in_current_practice_groups": false,
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch10-13.v1.json"
+    },
+    {
+      "id": "WEI58-ADD-2-007",
+      "label": "Historical Christmastide rank-feasts for deacons priests choirboys and subdeacons",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_CEREMONIAL",
+      "chapter": 10,
+      "printed_page": 126,
+      "pdf_page_zero_index": 143,
+      "ocr_line_range": [
+        5010,
+        5017
+      ],
+      "existing_parent_source_observation": "WEI58-10-008",
+      "relation_type": "POSSIBLE_VARIANT_OR_COMPONENT_OF_EXISTING_RESEARCH_OBSERVATION",
+      "parent_in_current_practice_groups": true,
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch10-13.v1.json"
+    },
+    {
+      "id": "WEI58-ADD-2-008",
+      "label": "Choosing a mock Bishop of Fools to preside over medieval choir Office",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_CONTESTED_CEREMONIAL",
+      "chapter": 10,
+      "printed_page": 126,
+      "pdf_page_zero_index": 143,
+      "ocr_line_range": [
+        5022,
+        5029
+      ],
+      "existing_parent_source_observation": "WEI58-10-008",
+      "relation_type": "POSSIBLE_VARIANT_OR_COMPONENT_OF_EXISTING_RESEARCH_OBSERVATION",
+      "parent_in_current_practice_groups": true,
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch10-13.v1.json"
+    },
+    {
+      "id": "WEI58-ADD-2-009",
+      "label": "Decorated horses ridden three times round the church after St Stephen blessing",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REPORTED_REGIONAL_VARIANT",
+      "chapter": 10,
+      "printed_page": 129,
+      "pdf_page_zero_index": 146,
+      "ocr_line_range": [
+        5108,
+        5118
+      ],
+      "existing_parent_source_observation": "WEI58-10-010",
+      "relation_type": "POSSIBLE_VARIANT_OR_COMPONENT_OF_EXISTING_RESEARCH_OBSERVATION",
+      "parent_in_current_practice_groups": true,
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch10-13.v1.json"
+    },
+    {
+      "id": "WEI58-ADD-2-010",
+      "label": "Family festive horse-drawn ride on St Stephen Day",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REPORTED_REGIONAL_CUSTOM",
+      "chapter": 10,
+      "printed_page": 129,
+      "pdf_page_zero_index": 146,
+      "ocr_line_range": [
+        5111,
+        5124
+      ],
+      "existing_parent_source_observation": "WEI58-10-011",
+      "relation_type": "POSSIBLE_VARIANT_OR_COMPONENT_OF_EXISTING_RESEARCH_OBSERVATION",
+      "parent_in_current_practice_groups": true,
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch10-13.v1.json"
+    },
+    {
+      "id": "WEI58-ADD-2-011",
+      "label": "Swedish Staffan Riders sing through towns on St Stephen Day",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REPORTED_REGIONAL_CUSTOM",
+      "chapter": 10,
+      "printed_page": 129,
+      "pdf_page_zero_index": 146,
+      "ocr_line_range": [
+        5114,
+        5128
+      ],
+      "existing_parent_source_observation": "WEI58-10-011",
+      "relation_type": "POSSIBLE_VARIANT_OR_COMPONENT_OF_EXISTING_RESEARCH_OBSERVATION",
+      "parent_in_current_practice_groups": true,
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch10-13.v1.json"
+    },
+    {
+      "id": "WEI58-ADD-2-012",
+      "label": "Blessed St John wine or cider poured into home wine barrels",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REPORTED_SACRAMENTAL_USE_VARIANT",
+      "chapter": 10,
+      "printed_page": 130,
+      "pdf_page_zero_index": 147,
+      "ocr_line_range": [
+        5174,
+        5178
+      ],
+      "existing_parent_source_observation": "WEI58-10-013",
+      "relation_type": "POSSIBLE_VARIANT_OR_COMPONENT_OF_EXISTING_RESEARCH_OBSERVATION",
+      "parent_in_current_practice_groups": false,
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch10-13.v1.json"
+    },
+    {
+      "id": "WEI58-ADD-2-013",
+      "label": "Blessed St John wine retained and shared at Dec 27 family meal",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REPORTED_SACRAMENTAL_USE_VARIANT",
+      "chapter": 10,
+      "printed_page": 130,
+      "pdf_page_zero_index": 147,
+      "ocr_line_range": [
+        5179,
+        5182
+      ],
+      "existing_parent_source_observation": "WEI58-10-013",
+      "relation_type": "POSSIBLE_VARIANT_OR_COMPONENT_OF_EXISTING_RESEARCH_OBSERVATION",
+      "parent_in_current_practice_groups": false,
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch10-13.v1.json"
+    },
+    {
+      "id": "WEI58-ADD-2-014",
+      "label": "Historical Boy Bishop conducts catechetical questioning and distributes small rewards",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_CEREMONIAL_VARIANT",
+      "chapter": 10,
+      "printed_page": 132,
+      "pdf_page_zero_index": 149,
+      "ocr_line_range": [
+        5257,
+        5268
+      ],
+      "existing_parent_source_observation": "WEI58-10-017",
+      "relation_type": "POSSIBLE_VARIANT_OR_COMPONENT_OF_EXISTING_RESEARCH_OBSERVATION",
+      "parent_in_current_practice_groups": true,
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch10-13.v1.json"
+    },
+    {
+      "id": "WEI58-ADD-2-015",
+      "label": "Junior novices take precedence at table on Holy Innocents Day",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REPORTED_RELIGIOUS_COMMUNITY_VARIANT",
+      "chapter": 10,
+      "printed_page": 133,
+      "pdf_page_zero_index": 150,
+      "ocr_line_range": [
+        5289,
+        5294
+      ],
+      "existing_parent_source_observation": "WEI58-10-018",
+      "relation_type": "POSSIBLE_VARIANT_OR_COMPONENT_OF_EXISTING_RESEARCH_OBSERVATION",
+      "parent_in_current_practice_groups": true,
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch10-13.v1.json"
+    },
+    {
+      "id": "WEI58-ADD-2-016",
+      "label": "Last professed member symbolically acts as community superior on Holy Innocents Day",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REPORTED_RELIGIOUS_COMMUNITY_VARIANT",
+      "chapter": 10,
+      "printed_page": 133,
+      "pdf_page_zero_index": 150,
+      "ocr_line_range": [
+        5292,
+        5296
+      ],
+      "existing_parent_source_observation": "WEI58-10-018",
+      "relation_type": "POSSIBLE_VARIANT_OR_COMPONENT_OF_EXISTING_RESEARCH_OBSERVATION",
+      "parent_in_current_practice_groups": true,
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch10-13.v1.json"
+    },
+    {
+      "id": "WEI58-ADD-2-017",
+      "label": "Holy Innocents festivities feature special food and congratulations for younger religious",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REPORTED_RELIGIOUS_COMMUNITY_VARIANT",
+      "chapter": 10,
+      "printed_page": 133,
+      "pdf_page_zero_index": 150,
+      "ocr_line_range": [
+        5292,
+        5296
+      ],
+      "existing_parent_source_observation": "WEI58-10-018",
+      "relation_type": "POSSIBLE_VARIANT_OR_COMPONENT_OF_EXISTING_RESEARCH_OBSERVATION",
+      "parent_in_current_practice_groups": true,
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch10-13.v1.json"
+    },
+    {
+      "id": "WEI58-ADD-2-018",
+      "label": "Alpine parish brass bands play religious New Year music from church towers",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REPORTED_LOCAL_MUSIC_VARIANT",
+      "chapter": 11,
+      "printed_page": 139,
+      "pdf_page_zero_index": 156,
+      "ocr_line_range": [
+        5513,
+        5517
+      ],
+      "existing_parent_source_observation": "WEI58-11-008",
+      "relation_type": "POSSIBLE_VARIANT_OR_COMPONENT_OF_EXISTING_RESEARCH_OBSERVATION",
+      "parent_in_current_practice_groups": true,
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch10-13.v1.json"
+    },
+    {
+      "id": "WEI58-ADD-2-019",
+      "label": "Mounted New Year carollers ride between farms",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REPORTED_LOCAL_MUSIC_VARIANT",
+      "chapter": 11,
+      "printed_page": 139,
+      "pdf_page_zero_index": 156,
+      "ocr_line_range": [
+        5516,
+        5519
+      ],
+      "existing_parent_source_observation": "WEI58-11-008",
+      "relation_type": "POSSIBLE_VARIANT_OR_COMPONENT_OF_EXISTING_RESEARCH_OBSERVATION",
+      "parent_in_current_practice_groups": true,
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch10-13.v1.json"
+    },
+    {
+      "id": "WEI58-ADD-2-020",
+      "label": "Central European New Year noise salutes with whips and household clanging",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REPORTED_SECULAR_FOLK_CONTEXT",
+      "chapter": 11,
+      "printed_page": 139,
+      "pdf_page_zero_index": 156,
+      "ocr_line_range": [
+        5525,
+        5532
+      ],
+      "existing_parent_source_observation": "WEI58-11-008",
+      "relation_type": "POSSIBLE_VARIANT_OR_COMPONENT_OF_EXISTING_RESEARCH_OBSERVATION",
+      "parent_in_current_practice_groups": true,
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch10-13.v1.json"
+    },
+    {
+      "id": "WEI58-ADD-2-021",
+      "label": "New Year marriage divination with mirrors dreams or leaves",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "CONTESTED_FOLK_ACTION",
+      "chapter": 11,
+      "printed_page": 139,
+      "pdf_page_zero_index": 156,
+      "ocr_line_range": [
+        5533,
+        5542
+      ],
+      "existing_parent_source_observation": "WEI58-11-010",
+      "relation_type": "POSSIBLE_VARIANT_OR_COMPONENT_OF_EXISTING_RESEARCH_OBSERVATION",
+      "parent_in_current_practice_groups": false,
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch10-13.v1.json"
+    },
+    {
+      "id": "WEI58-ADD-2-022",
+      "label": "New Year monetary gifts to regular household delivery workers",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REPORTED_CIVIC_GIFT_CUSTOM",
+      "chapter": 11,
+      "printed_page": 140,
+      "pdf_page_zero_index": 157,
+      "ocr_line_range": [
+        5556,
+        5559
+      ],
+      "existing_parent_source_observation": "WEI58-11-011",
+      "relation_type": "POSSIBLE_VARIANT_OR_COMPONENT_OF_EXISTING_RESEARCH_OBSERVATION",
+      "parent_in_current_practice_groups": true,
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch10-13.v1.json"
+    },
+    {
+      "id": "WEI58-ADD-2-023",
+      "label": "New Year gifts collectively distributed to traffic policemen families",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REPORTED_CIVIC_GIFT_CUSTOM",
+      "chapter": 11,
+      "printed_page": 140,
+      "pdf_page_zero_index": 157,
+      "ocr_line_range": [
+        5559,
+        5564
+      ],
+      "existing_parent_source_observation": "WEI58-11-011",
+      "relation_type": "POSSIBLE_VARIANT_OR_COMPONENT_OF_EXISTING_RESEARCH_OBSERVATION",
+      "parent_in_current_practice_groups": true,
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch10-13.v1.json"
+    },
+    {
+      "id": "WEI58-ADD-2-024",
+      "label": "Epiphany pilgrimage to blessed Jordan river with ritual immersion",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_OTHER_RITE_ACTION",
+      "chapter": 12,
+      "printed_page": 148,
+      "pdf_page_zero_index": 165,
+      "ocr_line_range": [
+        5865,
+        5873
+      ],
+      "existing_parent_source_observation": "WEI58-12-006",
+      "relation_type": "POSSIBLE_VARIANT_OR_COMPONENT_OF_EXISTING_RESEARCH_OBSERVATION",
+      "parent_in_current_practice_groups": true,
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch10-13.v1.json"
+    },
+    {
+      "id": "WEI58-ADD-2-025",
+      "label": "Nile Epiphany blessing followed by ritual water immersion of people animals or objects",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_OTHER_RITE_ACTION",
+      "chapter": 12,
+      "printed_page": 149,
+      "pdf_page_zero_index": 166,
+      "ocr_line_range": [
+        5873,
+        5879
+      ],
+      "existing_parent_source_observation": "WEI58-12-006",
+      "relation_type": "POSSIBLE_VARIANT_OR_COMPONENT_OF_EXISTING_RESEARCH_OBSERVATION",
+      "parent_in_current_practice_groups": true,
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch10-13.v1.json"
+    },
+    {
+      "id": "WEI58-ADD-2-026",
+      "label": "Families carry home blessed Epiphany water in East Roman churches",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REPORTED_OTHER_RITE_VARIANT",
+      "chapter": 12,
+      "printed_page": 149,
+      "pdf_page_zero_index": 166,
+      "ocr_line_range": [
+        5880,
+        5883
+      ],
+      "existing_parent_source_observation": "WEI58-12-006",
+      "relation_type": "POSSIBLE_VARIANT_OR_COMPONENT_OF_EXISTING_RESEARCH_OBSERVATION",
+      "parent_in_current_practice_groups": true,
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch10-13.v1.json"
+    },
+    {
+      "id": "WEI58-ADD-2-027",
+      "label": "Mid-Pentecost Slavonic water blessing and procession to well or river",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REPORTED_OTHER_RITE_DISTINCT_OCCASION",
+      "chapter": 12,
+      "printed_page": 149,
+      "pdf_page_zero_index": 166,
+      "ocr_line_range": [
+        5884,
+        5889
+      ],
+      "existing_parent_source_observation": "WEI58-12-006",
+      "relation_type": "POSSIBLE_VARIANT_OR_COMPONENT_OF_EXISTING_RESEARCH_OBSERVATION",
+      "parent_in_current_practice_groups": true,
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch10-13.v1.json"
+    },
+    {
+      "id": "WEI58-ADD-2-028",
+      "label": "Faithful take Latin Epiphany-blessed water for domestic use",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REPORTED_SACRAMENTAL_VARIANT",
+      "chapter": 12,
+      "printed_page": 149,
+      "pdf_page_zero_index": 166,
+      "ocr_line_range": [
+        5890,
+        5896
+      ],
+      "existing_parent_source_observation": "WEI58-12-008",
+      "relation_type": "POSSIBLE_VARIANT_OR_COMPONENT_OF_EXISTING_RESEARCH_OBSERVATION",
+      "parent_in_current_practice_groups": true,
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch10-13.v1.json"
+    },
+    {
+      "id": "WEI58-ADD-2-029",
+      "label": "Epiphany blessed chalk used to write Magi initials over door",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REPORTED_SACRAMENTAL_VARIANT",
+      "chapter": 12,
+      "printed_page": 149,
+      "pdf_page_zero_index": 166,
+      "ocr_line_range": [
+        5909,
+        5914
+      ],
+      "existing_parent_source_observation": "WEI58-12-010",
+      "relation_type": "POSSIBLE_VARIANT_OR_COMPONENT_OF_EXISTING_RESEARCH_OBSERVATION",
+      "parent_in_current_practice_groups": true,
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch10-13.v1.json"
+    },
+    {
+      "id": "WEI58-ADD-2-030",
+      "label": "Feast of the Star medieval extra-liturgical Epiphany play",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_DRAMA_DISTINCT_FORM",
+      "chapter": 12,
+      "printed_page": 150,
+      "pdf_page_zero_index": 167,
+      "ocr_line_range": [
+        5927,
+        5931
+      ],
+      "existing_parent_source_observation": "WEI58-12-011",
+      "relation_type": "POSSIBLE_VARIANT_OR_COMPONENT_OF_EXISTING_RESEARCH_OBSERVATION",
+      "parent_in_current_practice_groups": true,
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch10-13.v1.json"
+    },
+    {
+      "id": "WEI58-ADD-2-031",
+      "label": "Historic French Dutch English Austrian and Slavic star-carol house visits",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_REGIONAL_VARIANTS",
+      "chapter": 12,
+      "printed_page": 151,
+      "pdf_page_zero_index": 168,
+      "ocr_line_range": [
+        5971,
+        5979
+      ],
+      "existing_parent_source_observation": "WEI58-12-013",
+      "relation_type": "POSSIBLE_VARIANT_OR_COMPONENT_OF_EXISTING_RESEARCH_OBSERVATION",
+      "parent_in_current_practice_groups": false,
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch10-13.v1.json"
+    },
+    {
+      "id": "WEI58-ADD-2-032",
+      "label": "Magi gifts received at grandparents houses on Epiphany afternoon",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REPORTED_HOUSEHOLD_VARIANT",
+      "chapter": 12,
+      "printed_page": 152,
+      "pdf_page_zero_index": 169,
+      "ocr_line_range": [
+        6001,
+        6004
+      ],
+      "existing_parent_source_observation": "WEI58-12-016",
+      "relation_type": "POSSIBLE_VARIANT_OR_COMPONENT_OF_EXISTING_RESEARCH_OBSERVATION",
+      "parent_in_current_practice_groups": false,
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch10-13.v1.json"
+    },
+    {
+      "id": "WEI58-ADD-2-033",
+      "label": "Costumed Three Kings deliver gifts in person to Spanish children",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REPORTED_COMMUNITY_VARIANT",
+      "chapter": 12,
+      "printed_page": 152,
+      "pdf_page_zero_index": 169,
+      "ocr_line_range": [
+        6004,
+        6007
+      ],
+      "existing_parent_source_observation": "WEI58-12-016",
+      "relation_type": "POSSIBLE_VARIANT_OR_COMPONENT_OF_EXISTING_RESEARCH_OBSERVATION",
+      "parent_in_current_practice_groups": false,
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch10-13.v1.json"
+    },
+    {
+      "id": "WEI58-ADD-2-034",
+      "label": "Epiphany cake contains both a bean and pea to choose king and queen",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REPORTED_FOOD_VARIANT",
+      "chapter": 12,
+      "printed_page": 152,
+      "pdf_page_zero_index": 169,
+      "ocr_line_range": [
+        6012,
+        6016
+      ],
+      "existing_parent_source_observation": "WEI58-12-017",
+      "relation_type": "POSSIBLE_VARIANT_OR_COMPONENT_OF_EXISTING_RESEARCH_OBSERVATION",
+      "parent_in_current_practice_groups": false,
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch10-13.v1.json"
+    },
+    {
+      "id": "WEI58-ADD-2-035",
+      "label": "Byzantine Meatfare and Cheesefare progressive pre-Lenten food abstinence",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "OTHER_RITE_FAST_CUSTOM",
+      "chapter": 13,
+      "printed_page": 157,
+      "pdf_page_zero_index": 174,
+      "ocr_line_range": [
+        6177,
+        6186
+      ],
+      "existing_parent_source_observation": "WEI58-13-002",
+      "relation_type": "POSSIBLE_VARIANT_OR_COMPONENT_OF_EXISTING_RESEARCH_OBSERVATION",
+      "parent_in_current_practice_groups": true,
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch10-13.v1.json"
+    },
+    {
+      "id": "WEI58-ADD-2-036",
+      "label": "Christian mothers teach babies Alleluia as early spoken prayer",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_HOUSEHOLD_DEVOTION",
+      "chapter": 13,
+      "printed_page": 158,
+      "pdf_page_zero_index": 175,
+      "ocr_line_range": [
+        6214,
+        6222
+      ],
+      "existing_parent_source_observation": "WEI58-13-005",
+      "relation_type": "POSSIBLE_VARIANT_OR_COMPONENT_OF_EXISTING_RESEARCH_OBSERVATION",
+      "parent_in_current_practice_groups": true,
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch10-13.v1.json"
+    },
+    {
+      "id": "WEI58-ADD-2-037",
+      "label": "Gaulish Christian boatmen sing Alleluia while rowing",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_WORK_SONG",
+      "chapter": 13,
+      "printed_page": 158,
+      "pdf_page_zero_index": 175,
+      "ocr_line_range": [
+        6223,
+        6228
+      ],
+      "existing_parent_source_observation": "WEI58-13-005",
+      "relation_type": "POSSIBLE_VARIANT_OR_COMPONENT_OF_EXISTING_RESEARCH_OBSERVATION",
+      "parent_in_current_practice_groups": true,
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch10-13.v1.json"
+    },
+    {
+      "id": "WEI58-ADD-2-038",
+      "label": "Alleluia used as a battle cry by early Christian armies",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_NARRATIVE_REVIEW",
+      "chapter": 13,
+      "printed_page": 158,
+      "pdf_page_zero_index": 175,
+      "ocr_line_range": [
+        6229,
+        6233
+      ],
+      "existing_parent_source_observation": "WEI58-13-005",
+      "relation_type": "POSSIBLE_VARIANT_OR_COMPONENT_OF_EXISTING_RESEARCH_OBSERVATION",
+      "parent_in_current_practice_groups": true,
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch10-13.v1.json"
+    },
+    {
+      "id": "WEI58-ADD-2-039",
+      "label": "Auxerre extended twenty-eight Alleluias and special farewell hymns",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_LOCAL_LITURGICAL_VARIANT",
+      "chapter": 13,
+      "printed_page": 159,
+      "pdf_page_zero_index": 176,
+      "ocr_line_range": [
+        6257,
+        6266
+      ],
+      "existing_parent_source_observation": "WEI58-13-006",
+      "relation_type": "POSSIBLE_VARIANT_OR_COMPONENT_OF_EXISTING_RESEARCH_OBSERVATION",
+      "parent_in_current_practice_groups": true,
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch10-13.v1.json"
+    },
+    {
+      "id": "WEI58-ADD-2-040",
+      "label": "Brandsonntag first-Lent-Sunday fiery wheels rolled down German hills",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_SEASONAL_FIRE_CUSTOM",
+      "chapter": 13,
+      "printed_page": 161,
+      "pdf_page_zero_index": 178,
+      "ocr_line_range": [
+        6339,
+        6345
+      ],
+      "existing_parent_source_observation": "WEI58-13-015",
+      "relation_type": "POSSIBLE_VARIANT_OR_COMPONENT_OF_EXISTING_RESEARCH_OBSERVATION",
+      "parent_in_current_practice_groups": false,
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch10-13.v1.json"
+    },
+    {
+      "id": "WEI58-ADD-2-041",
+      "label": "French Fête des brandons young people carry firebrands",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_SEASONAL_FIRE_CUSTOM",
+      "chapter": 13,
+      "printed_page": 161,
+      "pdf_page_zero_index": 178,
+      "ocr_line_range": [
+        6345,
+        6348
+      ],
+      "existing_parent_source_observation": "WEI58-13-015",
+      "relation_type": "POSSIBLE_VARIANT_OR_COMPONENT_OF_EXISTING_RESEARCH_OBSERVATION",
+      "parent_in_current_practice_groups": false,
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch10-13.v1.json"
+    },
+    {
+      "id": "WEI58-ADD-2-042",
+      "label": "Winter or Carnival straw effigy ritually buried or burned",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_FOLK_CUSTOM",
+      "chapter": 13,
+      "printed_page": 161,
+      "pdf_page_zero_index": 178,
+      "ocr_line_range": [
+        6349,
+        6363
+      ],
+      "existing_parent_source_observation": "WEI58-14-025",
+      "relation_type": "POSSIBLE_VARIANT_OR_COMPONENT_OF_EXISTING_RESEARCH_OBSERVATION",
+      "parent_in_current_practice_groups": true,
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch10-13.v1.json"
+    },
+    {
+      "id": "WEI58-ADD-2-043",
+      "label": "Masked summer-versus-winter folk play",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_FOLK_DRAMA",
+      "chapter": 13,
+      "printed_page": 161,
+      "pdf_page_zero_index": 178,
+      "ocr_line_range": [
+        6364,
+        6367
+      ],
+      "existing_parent_source_observation": "WEI58-14-025",
+      "relation_type": "POSSIBLE_VARIANT_OR_COMPONENT_OF_EXISTING_RESEARCH_OBSERVATION",
+      "parent_in_current_practice_groups": true,
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch10-13.v1.json"
+    },
+    {
+      "id": "WEI58-ADD-2-044",
+      "label": "Plough Monday or Blochziehen ceremonial spring plough-drawing",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_FOLK_CUSTOM",
+      "chapter": 13,
+      "printed_page": 162,
+      "pdf_page_zero_index": 179,
+      "ocr_line_range": [
+        6385,
+        6394
+      ],
+      "existing_parent_source_observation": "WEI58-13-012",
+      "relation_type": "POSSIBLE_VARIANT_OR_COMPONENT_OF_EXISTING_RESEARCH_OBSERVATION",
+      "parent_in_current_practice_groups": false,
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch10-13.v1.json"
+    },
+    {
+      "id": "WEI58-ADD-2-045",
+      "label": "Seasonal water splashing of young men and women at carnival or Easter",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "FOLK_ACTION_WITH_CONTESTED_INTERPRETATION",
+      "chapter": 13,
+      "printed_page": 162,
+      "pdf_page_zero_index": 179,
+      "ocr_line_range": [
+        6400,
+        6406
+      ],
+      "existing_parent_source_observation": "WEI58-13-013",
+      "relation_type": "POSSIBLE_VARIANT_OR_COMPONENT_OF_EXISTING_RESEARCH_OBSERVATION",
+      "parent_in_current_practice_groups": false,
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch10-13.v1.json"
+    },
+    {
+      "id": "WEI58-ADD-2-046",
+      "label": "Easter morning face washing in rivers and brooks in France and central Europe",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "FOLK_ACTION_WITH_CONTESTED_INTERPRETATION",
+      "chapter": 13,
+      "printed_page": 162,
+      "pdf_page_zero_index": 179,
+      "ocr_line_range": [
+        6407,
+        6412
+      ],
+      "existing_parent_source_observation": "WEI58-13-013",
+      "relation_type": "POSSIBLE_VARIANT_OR_COMPONENT_OF_EXISTING_RESEARCH_OBSERVATION",
+      "parent_in_current_practice_groups": false,
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch10-13.v1.json"
+    },
+    {
+      "id": "WEI58-ADD-2-047",
+      "label": "French Canadian Easter dawn stream-water washing and bottling",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "FOLK_ACTION_WITH_CONTESTED_INTERPRETATION",
+      "chapter": 13,
+      "printed_page": 163,
+      "pdf_page_zero_index": 180,
+      "ocr_line_range": [
+        6416,
+        6419
+      ],
+      "existing_parent_source_observation": "WEI58-13-013",
+      "relation_type": "POSSIBLE_VARIANT_OR_COMPONENT_OF_EXISTING_RESEARCH_OBSERVATION",
+      "parent_in_current_practice_groups": false,
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch10-13.v1.json"
+    },
+    {
+      "id": "WEI58-ADD-2-048",
+      "label": "Wedding couple sprinkled with Easter-drawn water in Germany or Austria",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "FOLK_ACTION_WITH_CONTESTED_INTERPRETATION",
+      "chapter": 13,
+      "printed_page": 163,
+      "pdf_page_zero_index": 180,
+      "ocr_line_range": [
+        6420,
+        6422
+      ],
+      "existing_parent_source_observation": "WEI58-13-013",
+      "relation_type": "POSSIBLE_VARIANT_OR_COMPONENT_OF_EXISTING_RESEARCH_OBSERVATION",
+      "parent_in_current_practice_groups": false,
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch10-13.v1.json"
+    },
+    {
+      "id": "WEI58-ADD-2-049",
+      "label": "Horses ritually ridden into Easter river water",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "FOLK_ACTION_WITH_CONTESTED_INTERPRETATION",
+      "chapter": 13,
+      "printed_page": 163,
+      "pdf_page_zero_index": 180,
+      "ocr_line_range": [
+        6423,
+        6426
+      ],
+      "existing_parent_source_observation": "WEI58-13-013",
+      "relation_type": "POSSIBLE_VARIANT_OR_COMPONENT_OF_EXISTING_RESEARCH_OBSERVATION",
+      "parent_in_current_practice_groups": false,
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch10-13.v1.json"
+    },
+    {
+      "id": "WEI58-ADD-2-050",
+      "label": "Holy Saturday blessed water taken home by family",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REPORTED_HOME_SACRAMENTAL_USE",
+      "chapter": 13,
+      "printed_page": 163,
+      "pdf_page_zero_index": 180,
+      "ocr_line_range": [
+        6434,
+        6439
+      ],
+      "existing_parent_source_observation": "WEI58-13-013",
+      "relation_type": "POSSIBLE_VARIANT_OR_COMPONENT_OF_EXISTING_RESEARCH_OBSERVATION",
+      "parent_in_current_practice_groups": false,
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch10-13.v1.json"
+    },
+    {
+      "id": "WEI58-ADD-2-051",
+      "label": "Tyrolean maypole left at newlyweds house until first child's birth",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REPORTED_REGIONAL_FOLK_CUSTOM",
+      "chapter": 13,
+      "printed_page": 164,
+      "pdf_page_zero_index": 181,
+      "ocr_line_range": [
+        6464,
+        6470
+      ],
+      "existing_parent_source_observation": "WEI58-13-015",
+      "relation_type": "POSSIBLE_VARIANT_OR_COMPONENT_OF_EXISTING_RESEARCH_OBSERVATION",
+      "parent_in_current_practice_groups": false,
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch10-13.v1.json"
+    },
+    {
+      "id": "WEI58-ADD-2-052",
+      "label": "Northern English Collop Monday fried bacon and eggs",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_PRELENT_FOOD",
+      "chapter": 13,
+      "printed_page": 166,
+      "pdf_page_zero_index": 183,
+      "ocr_line_range": [
+        6532,
+        6535
+      ],
+      "existing_parent_source_observation": "WEI58-13-017",
+      "relation_type": "POSSIBLE_VARIANT_OR_COMPONENT_OF_EXISTING_RESEARCH_OBSERVATION",
+      "parent_in_current_practice_groups": true,
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch10-13.v1.json"
+    },
+    {
+      "id": "WEI58-ADD-2-053",
+      "label": "Scottish Crowdie butter-and-milk porridge before Lent",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_PRELENT_FOOD",
+      "chapter": 13,
+      "printed_page": 166,
+      "pdf_page_zero_index": 183,
+      "ocr_line_range": [
+        6535,
+        6536
+      ],
+      "existing_parent_source_observation": "WEI58-13-017",
+      "relation_type": "POSSIBLE_VARIANT_OR_COMPONENT_OF_EXISTING_RESEARCH_OBSERVATION",
+      "parent_in_current_practice_groups": true,
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch10-13.v1.json"
+    },
+    {
+      "id": "WEI58-ADD-2-054",
+      "label": "Norwegian Fastelavnsboller cream buns at carnival",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REPORTED_PRELENT_FOOD",
+      "chapter": 13,
+      "printed_page": 166,
+      "pdf_page_zero_index": 183,
+      "ocr_line_range": [
+        6538,
+        6542
+      ],
+      "existing_parent_source_observation": "WEI58-13-018",
+      "relation_type": "POSSIBLE_VARIANT_OR_COMPONENT_OF_EXISTING_RESEARCH_OBSERVATION",
+      "parent_in_current_practice_groups": true,
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch10-13.v1.json"
+    },
+    {
+      "id": "WEI58-ADD-2-055",
+      "label": "Russian Butter Week Maslenitsa effigy carried and burned",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_COMMUNITY_FOLK_CUSTOM",
+      "chapter": 13,
+      "printed_page": 166,
+      "pdf_page_zero_index": 183,
+      "ocr_line_range": [
+        6543,
+        6553
+      ],
+      "existing_parent_source_observation": "WEI58-13-019",
+      "relation_type": "POSSIBLE_VARIANT_OR_COMPONENT_OF_EXISTING_RESEARCH_OBSERVATION",
+      "parent_in_current_practice_groups": true,
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch10-13.v1.json"
+    },
+    {
+      "id": "WEI58-ADD-2-056",
+      "label": "Russian Maslenitsa household blini pancakes",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_PRELENT_FOOD",
+      "chapter": 13,
+      "printed_page": 166,
+      "pdf_page_zero_index": 183,
+      "ocr_line_range": [
+        6552,
+        6553
+      ],
+      "existing_parent_source_observation": "WEI58-13-019",
+      "relation_type": "POSSIBLE_VARIANT_OR_COMPONENT_OF_EXISTING_RESEARCH_OBSERVATION",
+      "parent_in_current_practice_groups": true,
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch10-13.v1.json"
+    },
+    {
+      "id": "WEI58-ADD-2-057",
+      "label": "Papal-Roman carnival races on the Corso",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_CIVIC_FESTIVAL",
+      "chapter": 13,
+      "printed_page": 167,
+      "pdf_page_zero_index": 184,
+      "ocr_line_range": [
+        6567,
+        6574
+      ],
+      "existing_parent_source_observation": "WEI58-13-016",
+      "relation_type": "POSSIBLE_VARIANT_OR_COMPONENT_OF_EXISTING_RESEARCH_OBSERVATION",
+      "parent_in_current_practice_groups": true,
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch10-13.v1.json"
     }
   ]
 }
