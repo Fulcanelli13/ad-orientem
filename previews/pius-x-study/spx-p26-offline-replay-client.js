@@ -73,6 +73,9 @@ function contextChanged(context){
  active=context.chapterId;
  language=context.language==='fr'?'fr':'en';
  root.hidden=!groups.has(active);
+ // In the four pilot subjects, the source-dialogue panel is the sole active
+ // question surface. All 102 other subjects keep the original offline search.
+ document.body.classList.toggle('spxc-offline-pilot-active',!root.hidden);
  const scroll=document.querySelector('.spxc-main-scroll');
  if(scroll&&!scroll.contains(root))scroll.append(root);
  if(root.hidden)return;
