@@ -79,3 +79,11 @@ The key strategic next steps are (1) advance full-page source coverage of all 28
 - `tests/customs-full-registry-census.mjs` extended
 
 All results remain in draft PR #1572, dependent on draft research master PR #1536.
+
+## Same-turn supplemental identity grouping (after the source extraction)
+
+A second manual check classified all **34** source details without a suitable match in the earlier 568-observation Handbook index. Rather than assign them to a possibly unrelated existing identity, the reviewer recorded **24 provisional practice-identity leads** and **10 other relationships**: **3 reported folk beliefs**, **2 potential variants of older observations**, **2 historical civic contexts**, **1 liturgical/rubric context**, and **2 comparative other-rite discussions**. Original evidence locators and null relations remain preserved in `weiser-ch01-09-unindexed-leads-adjudication.v1.json`.
+
+This increases the **provisional practice-group working population from 347 to 371** (308 original + 39 historical + 24 early-orphan leads). The 56 master identity records are separate and may duplicate or contextualize these groups. The new 24 labels are **not** yet independent evidence of 24 distinct living Catholic customs, and some specifically concern historical customs or mixed Christian-season folk practice.
+
+The unified `comprehensive-customs-working-catalogue.v1.json` now includes these 24 proposals under `provisional_unindexed_practice_leads`; source observation totals remain **685 base + 340 nested = 1,025 research rows**. No new source observations, no app publications, and no claim that a page was comprehensively verified came from this classification step.
