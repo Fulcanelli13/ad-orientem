@@ -21,6 +21,19 @@ const manifest=JSON.parse(readFileSync(root+
  "research/full-corpus-pass-20261021/schaff-ocr-source-manifest.v1.json","utf8"));
 if(manifest?.schema!=="ao.catena.schaff-ocr-source-manifest.v1"||
  manifest.editions?.length!==2)throw Error("UNPINNED_SCHAFF_SOURCE_MANIFEST");
+const scopes=JSON.parse(readFileSync(root+
+ "research/full-corpus-pass-20261021/schaff-ocr-work-scope.v1.json","utf8"));
+if(scopes.schema!=="ao.catena.schaff-historical-scan-work-scope.v1"||
+ scopes.volumes?.length!==2)throw Error("SCHAFF_OCR_SCOPE_MANIFEST_INVALID");
+for(const volume of scopes.volumes){
+ if(!/^[a-f0-9]{64}$/.test(volume.ocrSHA256)||
+    volume.scopes[0]?.start!==1||
+    volume.scopes.at(-1)?.end!==volume.maxLines)
+  throw Error("INVALID_SCHAFF_OCR_BOUNDARIES");
+ for(let i=1;i<volume.scopes.length;i++)
+  if(volume.scopes[i].start!==volume.scopes[i-1].end+1)
+   throw Error("SCHAFF_OCR_WORK_SCOPES_NOT_CONTIGUOUS");
+}
 const argv=process.argv.slice(2);
 const arg=(name,fallback)=>{const i=argv.indexOf(name);return i<0?fallback:argv[i+1]};
 const chosen=arg("--volume","all"),output=resolve(arg("--output-dir","dist/schaff-original-ocr"));
@@ -119,7 +132,13 @@ export function findLexicalOverlapHints(content,index){
     a.pointer.localeCompare(b.pointer)).slice(0,3);
 }
 const BAD=/^\s*(?:copyright|table of contents|index of|publisher|contents|page\s+\d+)\b/i;
-export function extractOCRQuestionWindows(text,index,source){
+export function resolvePrintedWorkScope(sourceId,digest,lineNumber){
+ const pinned=scopes.volumes.find(x=>x.editionId===sourceId&&x.ocrSHA256===digest);
+ if(!pinned)return "unclassified_source_digest_changed_or_local_test";
+ const match=pinned.scopes.find(x=>x.start<=lineNumber&&x.end>=lineNumber);
+ return match?.unit||"unclassified_outside_printed_work_boundaries";
+}
+export function extractOCRQuestionWindows(text,index,source,digest){
  const lines=text.replace(/\r/g,"").split("\n");
  const found=[],seen=new Set();
  for(let i=0;i<lines.length;i++){
@@ -137,6 +156,8 @@ export function extractOCRQuestionWindows(text,index,source){
    id:"schaff-ocr-"+source.editionId.toLowerCase()+"-"+sha(key).slice(0,16),
    editionId:source.editionId,
    sourceVolumeUrl:source.archiveDetailUrl,
+   printedWorkScope:resolvePrintedWorkScope(source.editionId,digest,i+1),
+   printedWorkScopeStatus:"sha_pinned_ocr_range_heuristic_not_authorship",
    ocrLineStart:a+1,ocrLineQuestion:i+1,ocrLineEnd:b,
    originalOCRWindow:context,
    originalOCRWindowSHA256:sha(context),
@@ -164,7 +185,11 @@ for(const source of sources){
  const base=join(output,source.editionId);
  const rawPath=base+".raw-ocr.txt",candidatePath=base+".question-candidates.json";
  writeFileSync(rawPath,item.text,"utf8");
- const result=extractOCRQuestionWindows(item.text,index,source);
+ const result=extractOCRQuestionWindows(item.text,index,source,digest);
+ const workScopeCounts=Object.fromEntries(
+  [...new Set(result.windows.map(w=>w.printedWorkScope))].sort()
+   .map(scope=>[scope,result.windows.filter(w=>w.printedWorkScope===scope).length])
+ );
  const research={
   schema:"ao.catena.schaff-whole-volume-ocr-question-candidates.v1",
   editionId:source.editionId,sourceScan:source.archiveDetailUrl,
@@ -176,6 +201,9 @@ for(const source of sources){
   questionMarkCandidates:result.totalQuestionWindows,
   overlapCandidateCount:result.windows.filter(r=>r.catenaOverlapHints.length>0).length,
   novelQuestionRecordsConfirmed:0,
+  printedWorkBoundariesMatchedVerifiedScanDigest:
+   scopes.volumes.some(x=>x.editionId===source.editionId&&x.ocrSHA256===digest),
+  printedWorkScopeCounts:workScopeCounts,
   windows:result.windows
  };
  writeFileSync(candidatePath,JSON.stringify(research,null,2)+"\n","utf8");
@@ -187,7 +215,8 @@ for(const source of sources){
   characters:item.text.length,lines:result.lineCount,
   questionMarkCandidates:result.totalQuestionWindows,
   possibleLexicalCatenaOverlap:research.overlapCandidateCount,
-  confirmedNovelQuestions:0,publicationApprovals:0
+  confirmedNovelQuestions:0,publicationApprovals:0,
+  printedWorkScopeCounts:workScopeCounts
  });
  process.stdout.write(JSON.stringify(summaries[summaries.length-1])+"\n");
 }
