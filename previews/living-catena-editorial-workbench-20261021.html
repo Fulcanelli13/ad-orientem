@@ -91,14 +91,14 @@ import {CATENA_REVIEW_CHECKS,isCatenaReviewRouteEligible,
   validateCatenaReviewDecision,buildCatenaReviewExport} from "../src/scripture/catena-review-decisions.js";
 import {validateCatenaWorkLociPreview} from "../src/scripture/catena-review-work-loci.js";
 import {validateCatenaNineFocus} from "../src/scripture/catena-nine-focus.js";
-import {validateCatenaMarkEditorial,findCatenaMarkResearchQuestion,loadCatenaMarkEditorialSource}
+import {validateCatenaMarkEditorial,validateCatenaMarkAdjudication,findCatenaMarkResearchQuestion,loadCatenaMarkEditorialSource}
  from "../src/scripture/catena-mark-editorial.js";
 const ROOT="../data/scripture/catena/";
 const KEY="ao-catena-matthew-human-review-local-draft-v1";
 const candidateList=document.getElementById("candidateList");
 const workspace=document.getElementById("workspace");
 const count=document.getElementById("countText");
-let registry=null,review=null,workLoci=null,nineFocus=null,markResearch=null,filter="focus",active=null,sourceCache=new Map(),states=new Map();
+let registry=null,review=null,workLoci=null,nineFocus=null,markResearch=null,markDossier=null,filter="focus",active=null,sourceCache=new Map(),states=new Map();
 const $=(tag,className,text)=>{const el=document.createElement(tag);if(className)el.className=className;if(text!==undefined)el.textContent=text;return el};
 const append=(parent,tag,cls,str)=>{const e=$(tag,cls,str);parent.append(e);return e};
 const safe=(s)=>String(s||"");
@@ -310,6 +310,25 @@ async function selectMark(pointer){
   if(stamp!==selectedVersion)return;
   append(frame,"p","support","Canonical excerpt SHA-256: "+hash);
   workspace.append(frame);
+  const assessment=markDossier?.byPointer.get(pointer);
+  if(!assessment)throw Error("AI editorial assessment not located");
+  const rubric=$("section","source");rubric.dataset.markEditorialAssessment=String(assessment.contextualGradeAIAssessment);
+  append(rubric,"h3",null,"Research-only editorial assessment");
+  append(rubric,"p","notice","AI contextual grade "+assessment.contextualGradeAIAssessment+
+   " · "+(assessment.contextualGradeAIAssessment===3?"Relevant direct source argument, qualified":"Useful context; not a standalone answer")+
+   " · human approval pending.");
+  append(rubric,"p",null,assessment.editorialScope);
+  append(rubric,"p","footnote","Risk: "+assessment.principalRisk.replaceAll("_"," ")+
+   " · Review priority: "+assessment.reviewPriority+". Neither grade independently authenticates the Father or licenses publication.");
+  const probes=markDossier.negatives.filter(x=>x.sourcePointer===pointer);
+  const negative=$("details");negative.append($("summary",null,"Unsupported or misleading reader-question probes ("+probes.length+")"));
+  for(const probe of probes){
+   const row=$("div","contextUnit");append(row,"p",null,probe.question);
+   append(row,"p","footnote","Not a certified direct answer. "+probe.reason);
+   negative.append(row);
+  }
+  rubric.append(negative);
+  workspace.append(rubric);
   const evidence=$("article","source");
   evidence.dataset.markResearchWitness=rec.witnessAssessment;
   append(evidence,"h3",null,"Original-work cross-reference");
@@ -436,18 +455,20 @@ document.querySelectorAll("[data-filter]").forEach(b=>b.addEventListener("click"
  if(!visible.some(x=>x.sourcePointer===active)&&visible.length)void select(visible[0].sourcePointer);
 }));
 try{
- const [index,reviewData,lociData,focusData,markData]=await Promise.all([
+ const [index,reviewData,lociData,focusData,markData,markJudgments]=await Promise.all([
   jsonFile("editorial-matthew-routes.v1.json"),
   jsonFile("editorial-matthew-first-30-review.v1.json"),
   jsonFile("editorial-matthew-work-loci.v1.json"),
   jsonFile("editorial-matthew-nine-focus.v1.json"),
-  jsonFile("editorial-mark-original-work-crosswalk.v1.json")
+  jsonFile("editorial-mark-original-work-crosswalk.v1.json"),
+  jsonFile("editorial-mark-ai-adjudication.v1.json")
  ]);
  registry=validateCatenaEditorialRoutes(index);
  review=validateCatenaEditorialReview(reviewData,registry);
  workLoci=validateCatenaWorkLociPreview(lociData,review);
  nineFocus=validateCatenaNineFocus(focusData,review,workLoci);
  markResearch=validateCatenaMarkEditorial(markData);
+ markDossier=validateCatenaMarkAdjudication(markJudgments,markResearch);
  loadDraft();renderList();
  const first=review.records.find(r=>nineFocus.byPointer.has(r.sourcePointer));
  void select(first.sourcePointer);
