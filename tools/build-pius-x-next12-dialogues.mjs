@@ -104,12 +104,10 @@ const review={
 const encoded=JSON.stringify(review).replace(/</g,'\\u003c').replace(/>/g,'\\u003e');
 let output=base.replace(mark[0],
  '<script type="application/json" id="spxExpandedCorpus">'+encoded+'</script>');
-output=output.replace('launch:"Explore 82 conversations"',
- 'launch:"Explore 94 conversations"').replace('launch:"82 conversations"',
- 'launch:"94 conversations"');
+
 output=output.replace('const starters=["SPX-001","SPX-009","SPX-EXP-012","SPX-EXP-001"]',
  'const starters=["SPX-NEW-001","SPX-NEW-010","SPX-NEW-003","SPX-001"]');
-assert(output.includes('Explore 94 conversations'));
+assert(output.includes('launch:"Explore {count} conversations"'),'shared stage count template missing');
 assert(output.includes('const starters=["SPX-NEW-001"'));
 assert(!/<script[^>]+src=/.test(output),'single file must be offline');
 const htmlPath=root+'SPX_Study_Expanded_94.html';
