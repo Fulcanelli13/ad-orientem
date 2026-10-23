@@ -40,7 +40,8 @@
     "PITRE_PALERMO_POSTHUMOUS_RETROSPECTIVE_VOL1_VOL2_110": "Directly read 110 source-detail observations from two accessible full Pitrè Palermo text editions (vol II published posthumously 1950, vol I publication date not checked). This is NOT the separately bibliographically located original 1881 Spettacoli or 1900 Feste Patronali; original 18th-century diarists and event documents not yet checked. Material,civic,folklore,penitential and liturgical-related actions are source components, often duplicated within processions; no 110 new independent historical customs or approved rites.",
     "CC_THREE_WORKS_41_MANUAL_ACTION_RELATIONS": "41 manual comparisons (39 distinct new source observations) distinguish same described action cores from derivative documentary attestations, localized and calendar variants, and false lexical matches. A same-action label is not verified historical practice identity, and original work dependence, source independence and liturgical approval were not certified. No automatic merges.",
     "PITRE_110_SEMANTIC_RECONCILIATION_NO_COUNT_CHANGE": "All 110 directly read posthumous Pitre Palermo work observations routed to 35 source-document historical event contexts; 31 comparisons to extant research actions judged label-level with occasion and place, zero practice equivalences or independent corroborations certified, zero mergers or publications; two self-repeating cross-volume passages flagged (St Rosalia September and Assumption ceri). The 35 contexts are NOT verified distinct Catholic customs, and the 31 pair decisions were NOT verified against all original archival manuscripts.",
-    "PITRE_1900_ORIGINAL_PRINT_DIRECT_OCR_NONCANONICAL": "129 detailed historical observations in Giuseppe Pitre's original 1900 Feste patronali in Sicilia, vol XXI, scanned copy OCR line spans via Internet Archive, distinct textual work from the earlier posthumous Palermo historical volumes. OCR original-edition text was directly read, though facsimile page images were not visually checked and printed folio numbers have not been certified. 14 named localities; many observations are components or variants of one patronal festival, folk beliefs or civic contexts. Pitre relied on questionnaires/correspondents, quotes earlier writers and may repeat his own 1881 work. This is one compiled book witness, not 129 independent historical testimonies, and 0 verified Catholic distinct customs or 1962 Roman Ritual authorizations."
+    "PITRE_1900_ORIGINAL_PRINT_DIRECT_OCR_NONCANONICAL": "129 detailed historical observations in Giuseppe Pitre's original 1900 Feste patronali in Sicilia, vol XXI, scanned copy OCR line spans via Internet Archive, distinct textual work from the earlier posthumous Palermo historical volumes. OCR original-edition text was directly read, though facsimile page images were not visually checked and printed folio numbers have not been certified. 14 named localities; many observations are components or variants of one patronal festival, folk beliefs or civic contexts. Pitre relied on questionnaires/correspondents, quotes earlier writers and may repeat his own 1881 work. This is one compiled book witness, not 129 independent historical testimonies, and 0 verified Catholic distinct customs or 1962 Roman Ritual authorizations.",
+    "PITRE_1900_129_CROSS_SOURCE_AND_71_PAIR_DECISION_BOUNDARY": "All 129 earlier OCR-observation IDs retain provenance and were screened against earlier label pools. 74 have candidate lexical hints (166 edges); 55 no lexical hints. Separate 71 manually judged action-description pairs distinguish local shared St Joseph family actions, date/saint/region variants, and false equivalences. Neither hints nor action-pair relation types certify a global distinct custom, independently checked old eyewitness manuscripts, original printed page facsimile, 1962 rite authority, or current continuance. This is nonadditive: existing counted source-detail row total unchanged."
   },
   "summary": {
     "source_observations": {
@@ -209,7 +210,15 @@
       "pitre_110_context_cluster_routing_nonadditive": 110,
       "pitre_historic_event_context_clusters_not_distinct_customs": 35,
       "pitre_manual_31_action_pair_contrasts_no_merges": 31,
-      "pitre_intervolume_same_author_repetitions_flagged": 2
+      "pitre_intervolume_same_author_repetitions_flagged": 2,
+      "pitre_1900_original_129_rows_screened_for_identity_retrieval": 129,
+      "pitre_1900_129_rows_with_lexical_hints": 74,
+      "pitre_1900_129_rows_without_lexical_hints": 55,
+      "pitre_1900_lexical_links_retained_not_verified": 166,
+      "pitre_1900_action_description_pairs_reviewed_nonmerging": 71,
+      "pitre_1900_same_compilation_pairs": 45,
+      "pitre_1900_cross_to_prior_owner_regional_pairs": 26,
+      "pitre_1900_new_unique_practice_identities_approved": 0
     },
     "no_new_app_publications": true,
     "source_discovery_leads": {
@@ -298,7 +307,9 @@
     "pitre_palermo_retrospective_vol1_vol2": "data/customs/master/pitre-palermo-retrospective-vol1-vol2-source-details-wave01.v1.json",
     "cc_three_works_41_manual_action_relations": "data/customs/master/three-household-books-41-manual-action-contrast-review.v1.json",
     "pitre_context_clusters_31_cross_source": "data/customs/master/pitre-110-context-clusters-31-manual-cross-source-contrast.v1.json",
-    "pitre_1900_original_feste_patronali": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json"
+    "pitre_1900_original_feste_patronali": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
+    "pitre_original_1900_129_registry_routing": "data/customs/master/pitre-1900-129-nonmerging-registry-cross-source-routing.v1.json",
+    "pitre_original_1900_71_action_relationship_reviews": "data/customs/master/pitre-1900-action-family-71-manual-comparisons.v1.json"
   },
   "existing_master_identities": [
     {
