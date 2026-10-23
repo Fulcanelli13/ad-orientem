@@ -1,0 +1,381 @@
+{
+  "schema": "AO_SACRED_PLACES_P12_RESEARCH_DISPOSITIONS_V1",
+  "created_at": "2026-10-24",
+  "purpose": "Research-only reconciliation after merged P11 OSM upgrades. Avoid unrelated or unproved feature substitutions and invalid shrine-title aliases.",
+  "base_registry": "data/geography/seed-registry.v1.json",
+  "source_workbook": "Ad_Orientem_Sacred_Places_Pass11_OSM_Adoption_Review_2026-10-24.xlsx",
+  "counts": {
+    "canonical_places_baseline": 347,
+    "source_exception_cases": 23,
+    "dated_source_updates": 6,
+    "georeferences_rechecked_and_held": 6,
+    "geo_relocations": 0,
+    "new_places": 0,
+    "new_pins": 0,
+    "source_exceptions_declared_fully_closed": 0,
+    "canonical_addresses_source_upgraded": 3
+  },
+  "georeferencing_holds": [
+    {
+      "place_id": "place:ES:santiago-compostela-cathedral",
+      "place_name": "Catedral de Santiago de Compostela",
+      "authority_url": "https://catedraldesantiago.es/en/cathedral/",
+      "disposition": "RETAIN_CURRENT_SITE_OR_COMPLEX_POINT_NO_OSM_PROMOTION",
+      "reason": "Custodian establishes cathedral identity; the current Mapcarta point is from Wikidata/GeoNames, not an exact church OSM feature.",
+      "visitor_entrance_certified": false,
+      "coordinates_changed": false
+    },
+    {
+      "place_id": "place:ES:real-monasterio-santa-maria-guadalupe",
+      "place_name": "Real Monasterio de Santa María de Guadalupe",
+      "authority_url": "https://whc.unesco.org/en/list/665/maps/",
+      "disposition": "RETAIN_CURRENT_SITE_OR_COMPLEX_POINT_NO_OSM_PROMOTION",
+      "reason": "UNESCO complex-level reference appropriate; OSM node 9110510217 is tourist information and node 9168281973 is ticket shop, neither a monastery footprint.",
+      "visitor_entrance_certified": false,
+      "coordinates_changed": false
+    },
+    {
+      "place_id": "place:IT:ortona-san-tommaso",
+      "place_name": "Basilica Concattedrale di San Tommaso, Ortona",
+      "authority_url": "https://mapy.com/en/?id=12439035&source=osm",
+      "disposition": "RETAIN_CURRENT_SITE_OR_COMPLEX_POINT_NO_OSM_PROMOTION",
+      "reason": "No independent named OSM church polygon/source ID verified from original Mapy linked location.",
+      "visitor_entrance_certified": false,
+      "coordinates_changed": false
+    },
+    {
+      "place_id": "place:IT:sant-ambrogio-milano",
+      "place_name": "Basilica di Sant'Ambrogio, Milano",
+      "authority_url": "https://basilicasantambrogio.it/en/complesso-monumentale",
+      "disposition": "RETAIN_CURRENT_SITE_OR_COMPLEX_POINT_NO_OSM_PROMOTION",
+      "reason": "The custodian establishes church/monumental complex; OSM node 9570994727 is museum; way 493214756 is nearby Oratorio Sant'Agostino; neither matches the basilica.",
+      "visitor_entrance_certified": false,
+      "coordinates_changed": false
+    },
+    {
+      "place_id": "place:IT:salerno-duomo",
+      "place_name": "Duomo di San Matteo, Salerno",
+      "authority_url": "https://cultura.comune.salerno.it/en/luoghi/cattedrale-di-san-matteo-duomo-di-salerno-en/",
+      "disposition": "RETAIN_CURRENT_SITE_OR_COMPLEX_POINT_NO_OSM_PROMOTION",
+      "reason": "Municipal site validates cathedral identity; OSM way 109261164 is Diocesan Museum, not the cathedral.",
+      "visitor_entrance_certified": false,
+      "coordinates_changed": false
+    },
+    {
+      "place_id": "place:IT:sacra-famiglia-bakhita-schio",
+      "place_name": "Santuario Santa Giuseppina Bakhita, Schio",
+      "authority_url": "https://canossianebakhitaschio.org/visita-santuario-2/",
+      "disposition": "RETAIN_CURRENT_SITE_OR_COMPLEX_POINT_NO_OSM_PROMOTION",
+      "reason": "Custodian confirms exact Via Fusinato 51 address and separate via Baratto access; no matching OSM polygon/way independently certified. Visitor photo rights not inferred.",
+      "visitor_entrance_certified": false,
+      "coordinates_changed": false
+    }
+  ],
+  "source_exceptions": [
+    {
+      "candidate_id": "candidate:SG-INV-0702",
+      "wave": "W4",
+      "name": "Our Lady of Assiut shrine (Coptic Orthodox)",
+      "country_code": "EG",
+      "source_stage": "OPEN_ORIGINAL_EVIDENCE_HOLD",
+      "research_update_20261024": null,
+      "publication_gate": "HOLD_NO_NEW_PLACE_NO_PIN",
+      "canonical_place_id": null
+    },
+    {
+      "candidate_id": "candidate:SG-INV-0587",
+      "wave": "W4",
+      "name": "Sanctuary of Our Lady of Perpetual Help, Goa",
+      "country_code": "IN",
+      "source_stage": "OPEN_ORIGINAL_EVIDENCE_HOLD",
+      "research_update_20261024": null,
+      "publication_gate": "HOLD_NO_NEW_PLACE_NO_PIN",
+      "canonical_place_id": null
+    },
+    {
+      "candidate_id": "candidate:SG-INV-0071",
+      "wave": "W4",
+      "name": "Sanctuary of Our Lady of the Snow, Santa Maria Maggiore (Bergamo)",
+      "country_code": "IT",
+      "source_stage": "OPEN_ORIGINAL_EVIDENCE_HOLD",
+      "research_update_20261024": null,
+      "publication_gate": "HOLD_NO_NEW_PLACE_NO_PIN",
+      "canonical_place_id": null
+    },
+    {
+      "candidate_id": "candidate:SG-INV-0093",
+      "wave": "W4",
+      "name": "Sanctuary of Saint Paul of the Cross, Ovada",
+      "country_code": "IT",
+      "source_stage": "HISTORIC_PERSON_LINK_NOT_SHRINE_PROOF",
+      "research_update_20261024": {
+        "status": "HISTORIC_PERSON_LINK_NOT_SHRINE_PROOF",
+        "official_title": "Saint Paul of the Cross birthplace",
+        "actual_locality": "Ovada, Italy",
+        "url": "https://passionist.org/es/quienes-somos/santos-y-beatos/san-pablo-de-la-cruz/",
+        "finding": "Passionists confirm that the saint was born in Ovada; this biographical fact does not establish an extant sanctuary or independently mappable shrine building.",
+        "next": "Require Passionist or diocesan building-specific title and location, not the birthplace alone."
+      },
+      "publication_gate": "HOLD_NO_NEW_PLACE_NO_PIN",
+      "canonical_place_id": null
+    },
+    {
+      "candidate_id": "candidate:SG-INV-0735",
+      "wave": "W4",
+      "name": "Shrine of Our Lady of Itasy, Ampefy",
+      "country_code": "MG",
+      "source_stage": "OPEN_ORIGINAL_EVIDENCE_HOLD",
+      "research_update_20261024": null,
+      "publication_gate": "HOLD_NO_NEW_PLACE_NO_PIN",
+      "canonical_place_id": null
+    },
+    {
+      "candidate_id": "candidate:SG-INV-0475",
+      "wave": "W4",
+      "name": "Shrine of Our Lady of the Angels, Kingston",
+      "country_code": "JM",
+      "source_stage": "OPEN_ORIGINAL_EVIDENCE_HOLD",
+      "research_update_20261024": null,
+      "publication_gate": "HOLD_NO_NEW_PLACE_NO_PIN",
+      "canonical_place_id": null
+    },
+    {
+      "candidate_id": "candidate:SG-INV-0696",
+      "wave": "W5",
+      "name": "Ancient Basilica of Saint Cyprian, Carthage",
+      "country_code": "TN",
+      "source_stage": "OPEN_ORIGINAL_EVIDENCE_HOLD",
+      "research_update_20261024": null,
+      "publication_gate": "HOLD_NO_NEW_PLACE_NO_PIN",
+      "canonical_place_id": null
+    },
+    {
+      "candidate_id": "candidate:SG-INV-0230",
+      "wave": "W5",
+      "name": "Chapel of Our Lady, Echt",
+      "country_code": "NL",
+      "source_stage": "OPEN_ORIGINAL_EVIDENCE_HOLD",
+      "research_update_20261024": null,
+      "publication_gate": "HOLD_NO_NEW_PLACE_NO_PIN",
+      "canonical_place_id": null
+    },
+    {
+      "candidate_id": "candidate:SG-INV-0229",
+      "wave": "W5",
+      "name": "Chapel of Our Lady, Sittard",
+      "country_code": "NL",
+      "source_stage": "OPEN_ORIGINAL_EVIDENCE_HOLD",
+      "research_update_20261024": null,
+      "publication_gate": "HOLD_NO_NEW_PLACE_NO_PIN",
+      "canonical_place_id": null
+    },
+    {
+      "candidate_id": "candidate:SG-INV-0654",
+      "wave": "W5",
+      "name": "Church of the Holy Cross, Tarlac Monastery",
+      "country_code": "PH",
+      "source_stage": "OPEN_ORIGINAL_EVIDENCE_HOLD",
+      "research_update_20261024": null,
+      "publication_gate": "HOLD_NO_NEW_PLACE_NO_PIN",
+      "canonical_place_id": null
+    },
+    {
+      "candidate_id": "candidate:SG-INV-0402",
+      "wave": "W5",
+      "name": "National Shrine of the Sacred Heart, Milwaukee",
+      "country_code": "US",
+      "source_stage": "SOURCE_CONFLICT_CONFIRMED_RETAIN_HOLD",
+      "research_update_20261024": {
+        "status": "SOURCE_CONFLICT_CONFIRMED_RETAIN_HOLD",
+        "official_title": "Sacred Heart Shrine",
+        "actual_locality": "Hales Corners, Wisconsin",
+        "url": "https://www.archmil.org/shrines",
+        "finding": "Archdiocese lists Sacred Heart Shrine (1989), Hales Corners, 7335 S Highway 100; it does not list the candidate as a National Shrine in Milwaukee. The archdiocesan National Shrine is Holy Hill in Hubertus.",
+        "next": "Reconcile original candidate scope/title, prevent false National Shrine designation, and validate separate physical site before any new canonical Place."
+      },
+      "publication_gate": "HOLD_NO_NEW_PLACE_NO_PIN",
+      "canonical_place_id": null
+    },
+    {
+      "candidate_id": "candidate:SG-INV-0747",
+      "wave": "W5",
+      "name": "Sanctuary of Blessed Peter To Rot, Rakunai",
+      "country_code": "PG",
+      "source_stage": "OPEN_ORIGINAL_EVIDENCE_HOLD",
+      "research_update_20261024": null,
+      "publication_gate": "HOLD_NO_NEW_PLACE_NO_PIN",
+      "canonical_place_id": null
+    },
+    {
+      "candidate_id": "candidate:SG-INV-0525",
+      "wave": "W5",
+      "name": "Sanctuary of Saint Martin de Porres, Lima",
+      "country_code": "PE",
+      "source_stage": "SITE_FOUND_AT_CORRECTED_LOCALITY_SCOPE_REVIEW",
+      "research_update_20261024": {
+        "status": "SITE_FOUND_AT_CORRECTED_LOCALITY_SCOPE_REVIEW",
+        "official_title": "Centro de Espiritualidad y Santuario San Martín de Porres",
+        "actual_locality": "Jicamarca Anexo 22, San Antonio de Huarochirí; Diocese of Chosica, Peru",
+        "url": "https://santuariosanmartindeporres.wordpress.com/vicaria-3/",
+        "corroboration_url": "https://gcatholic.org/churches/america-south/149553",
+        "finding": "Sanctuary's own location page and ecclesiastical secondary directory identify a shrine in Jicamarca, a different site from central Lima Santo Domingo and St Martin's birthplace.",
+        "next": "Candidate can be reconciled to Jicamarca; check exact 2026 operating status, administrative boundary and location coordinates before publication."
+      },
+      "publication_gate": "HOLD_NO_NEW_PLACE_NO_PIN",
+      "canonical_place_id": null
+    },
+    {
+      "candidate_id": "candidate:SG-INV-0521",
+      "wave": "W5",
+      "name": "Shrine of Our Lady of Mercy, Lima",
+      "country_code": "PE",
+      "source_stage": "TITLE_MISMATCH_CONFIRMED_RETAIN_HOLD",
+      "research_update_20261024": {
+        "status": "TITLE_MISMATCH_CONFIRMED_RETAIN_HOLD",
+        "official_title": "Basílica Menor de La Merced",
+        "actual_locality": "Cercado de Lima, Peru",
+        "url": "https://www.gob.pe/institucion/munilima/noticias/1371737-semana-santa-2026-municipalidad-de-lima-presenta-lista-de-21-iglesias-habilitadas-para-ser-visitadas",
+        "corroboration_url": "https://www.arzobispadodelima.org/actividades/directorio-parroquias-arquidiocesis-lima/",
+        "finding": "Lima's official 2026 visitation list names Basílica Menor de La Merced as a church, not as a formally designated shrine. The archdiocesan directory also contains similar Merced parish titles requiring disambiguation.",
+        "next": "Correct church title if reusing Basilica de la Merced; do not infer an ecclesiastically designated shrine."
+      },
+      "publication_gate": "HOLD_NO_NEW_PLACE_NO_PIN",
+      "canonical_place_id": null
+    },
+    {
+      "candidate_id": "candidate:SG-INV-0534",
+      "wave": "W5",
+      "name": "Shrine of Our Lady of Mount Carmel, Colonia",
+      "country_code": "UY",
+      "source_stage": "OPEN_ORIGINAL_EVIDENCE_HOLD",
+      "research_update_20261024": null,
+      "publication_gate": "HOLD_NO_NEW_PLACE_NO_PIN",
+      "canonical_place_id": null
+    },
+    {
+      "candidate_id": "candidate:SG-INV-0530",
+      "wave": "W5",
+      "name": "Shrine of Our Lady of the Assumption, Asunción",
+      "country_code": "PY",
+      "source_stage": "DEVOTION_NOT_PHYSICAL_SHRINE_RETAIN_HOLD",
+      "research_update_20261024": {
+        "status": "DEVOTION_NOT_PHYSICAL_SHRINE_RETAIN_HOLD",
+        "official_title": "Our Lady of the Assumption (patronal devotion)",
+        "actual_locality": "Asunción, Paraguay",
+        "url": "https://www.vaticannews.va/es/iglesia/news/2022-08/paraguay-nuestrasenora-asuncion-fiesta.html",
+        "finding": "Vatican account supports the devotion and national patronage, not that a separate Shrine of Our Lady of the Assumption is located at a verified physical building in Asunción.",
+        "next": "Identify explicit diocesan sanctuary title or reject the asserted shrine category; cathedral and monument require separate identities."
+      },
+      "publication_gate": "HOLD_NO_NEW_PLACE_NO_PIN",
+      "canonical_place_id": null
+    },
+    {
+      "candidate_id": "candidate:SG-INV-0676",
+      "wave": "W5",
+      "name": "Shrine of Saint Jude, Kuala Lumpur",
+      "country_code": "MY",
+      "source_stage": "SOURCE_CONFLICT_CONFIRMED_RETAIN_HOLD",
+      "research_update_20261024": {
+        "status": "SOURCE_CONFLICT_CONFIRMED_RETAIN_HOLD",
+        "official_title": "Church of St Jude",
+        "actual_locality": "Rawang, Selangor",
+        "url": "https://www.archkl.org/north-west-district",
+        "finding": "Archdiocese of Kuala Lumpur lists Church of St Jude at Jalan Lim Kak, Bandar Baru Rawang. Rawang is outside central Kuala Lumpur. No evidence on the official page that the church is canonically designated a shrine.",
+        "next": "Keep the Rawang church and a putative Kuala Lumpur shrine distinct until an independent formal shrine reference is documented."
+      },
+      "publication_gate": "HOLD_NO_NEW_PLACE_NO_PIN",
+      "canonical_place_id": null
+    },
+    {
+      "candidate_id": "candidate:SG-INV-0612",
+      "wave": "LEGACY",
+      "name": "Our Lady of Lourdes Shrine, Tianjin",
+      "country_code": "CN",
+      "source_stage": "OPEN_ORIGINAL_EVIDENCE_HOLD",
+      "research_update_20261024": null,
+      "publication_gate": "HOLD_NO_NEW_PLACE_NO_PIN",
+      "canonical_place_id": null
+    },
+    {
+      "candidate_id": "candidate:SG-INV-0456",
+      "wave": "LEGACY",
+      "name": "Shrine of Our Lady of Guadalupe, Matagalpa",
+      "country_code": "NI",
+      "source_stage": "OPEN_ORIGINAL_EVIDENCE_HOLD",
+      "research_update_20261024": null,
+      "publication_gate": "HOLD_NO_NEW_PLACE_NO_PIN",
+      "canonical_place_id": null
+    },
+    {
+      "candidate_id": "candidate:SG-INV-0683",
+      "wave": "LEGACY",
+      "name": "Shrine of Our Lady of Fátima, Dili",
+      "country_code": "TL",
+      "source_stage": "OPEN_ORIGINAL_EVIDENCE_HOLD",
+      "research_update_20261024": null,
+      "publication_gate": "HOLD_NO_NEW_PLACE_NO_PIN",
+      "canonical_place_id": null
+    },
+    {
+      "candidate_id": "UNMAPPED-1",
+      "wave": "LEGACY",
+      "name": "Unreconciled historical record",
+      "country_code": null,
+      "source_stage": "OPEN_ORIGINAL_EVIDENCE_HOLD",
+      "research_update_20261024": null,
+      "publication_gate": "HOLD_NO_NEW_PLACE_NO_PIN",
+      "canonical_place_id": null
+    },
+    {
+      "candidate_id": "UNMAPPED-2",
+      "wave": "LEGACY",
+      "name": "Unreconciled historical record",
+      "country_code": null,
+      "source_stage": "OPEN_ORIGINAL_EVIDENCE_HOLD",
+      "research_update_20261024": null,
+      "publication_gate": "HOLD_NO_NEW_PLACE_NO_PIN",
+      "canonical_place_id": null
+    },
+    {
+      "candidate_id": "UNMAPPED-3",
+      "wave": "LEGACY",
+      "name": "Unreconciled historical record",
+      "country_code": null,
+      "source_stage": "OPEN_ORIGINAL_EVIDENCE_HOLD",
+      "research_update_20261024": null,
+      "publication_gate": "HOLD_NO_NEW_PLACE_NO_PIN",
+      "canonical_place_id": null
+    }
+  ],
+  "policy": [
+    "Do not promote named Catholic devotions into physically distinct shrines from patronage evidence alone.",
+    "Reject mismatched nearby OSM features and do not equate an OSM polygon centre with the entrance.",
+    "All prior stable candidate IDs remain present; older three unreconciled slots must not be assigned invented IDs.",
+    "Research-source conflict or qualified alternative does not automatically resolve publication eligibility.",
+    "No 1962 Mass venue or visiting-hour inference from institutional identity.",
+    "Official street addresses may be added without claiming visitor entrance coordinates; coordinates retain their previous source and precision."
+  ],
+  "canonical_address_upgrades": [
+    {
+      "place_id": "place:IT:sacra-famiglia-bakhita-schio",
+      "line1": "Via Fusinato 51",
+      "postal_code": "36015",
+      "formatted": "Via Fusinato 51, 36015 Schio (VI), Italy",
+      "custodian": "https://canossianebakhitaschio.org/visita-santuario-2/"
+    },
+    {
+      "place_id": "place:IT:sant-ambrogio-milano",
+      "line1": "Piazza Sant'Ambrogio 15",
+      "postal_code": "20123",
+      "formatted": "Piazza Sant'Ambrogio 15, 20123 Milano, Italy",
+      "custodian": "https://www.basilicasantambrogio.it/contatti"
+    },
+    {
+      "place_id": "place:IT:salerno-duomo",
+      "line1": "Piazza Alfano I",
+      "postal_code": "84125",
+      "formatted": "Piazza Alfano I, 84125 Salerno, Italy",
+      "custodian": "https://www.duomodisalerno.it/contatti/"
+    }
+  ]
+}
