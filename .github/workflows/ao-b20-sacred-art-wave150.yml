@@ -1,0 +1,41 @@
+name: Ad Orientem B20 sacred art wave150 acquisition
+on:
+  push:
+    branches:
+      - research/b19-original-image-acquisition-probe-20261023
+    paths:
+      - .github/workflows/ao-b20-sacred-art-wave150.yml
+      - scripts/research/sacred_art_acquire.py
+      - data/research/sacred-art-b20-wave150.manifest.json
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: b20-sacred-art-wave150-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  screen-and-acquire:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install Pillow image decoder
+        run: python -m pip install --disable-pip-version-check 'Pillow>=11,<13'
+      - name: Resolve 150 existing sources and download eligible originals
+        run: |
+          python scripts/research/sacred_art_acquire.py \
+            --manifest data/research/sacred-art-b20-wave150.manifest.json \
+            --output artifacts/art-wave150 \
+            --max-files 50 \
+            --max-bytes 650000000
+      - name: Preserve source audit and downloaded research originals
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ao-b20-wave150-source-screen-and-originals
+          path: artifacts/art-wave150/
+          retention-days: 7
+          if-no-files-found: warn
