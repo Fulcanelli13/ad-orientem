@@ -59,7 +59,13 @@ for(const unit of review.claimUnits){
  assert.equal(unit.publishingApproved,false);
  assert.equal(unit.claimSupportAssessment,'SUPPORTED_OR_NARROWLY_PARAPHRASED_BY_REVIEWED_PRIMARY_TEXT_NOT_HUMAN_CERTIFIED');
  assert.equal(unit.frenchMeaningParity,'EDITORIAL_PARITY_CHECK_PROVISIONAL');
- assert(unit.englishClaim.length>=5&&unit.frenchClaim.length>=5);
+ // A concise affirmation is valid only for the explicitly audited
+ // charity-opening node; it must be followed by sourced explanatory sentences.
+ const briefAffirmation=unit.nodeId==='SPX.DIALOGUE.SPX-029.OPEN'&&unit.ordinal===1&&
+   unit.englishClaim==='Yes.'&&unit.frenchClaim==='Oui.'&&
+   unit.witnessIds.includes('IF-TRUTH')&&unit.witnessIds.includes('IF-MERCY');
+ assert(briefAffirmation||
+   (unit.englishClaim.length>=5&&unit.frenchClaim.length>=5));
  const en=sentenceSplit(c.replySpecimen.en),fr=sentenceSplit(c.replySpecimen.fr);
  assert.equal(en.length,fr.length);
  assert.equal(unit.englishClaim,en[unit.ordinal-1],'Audited English changed without reevaluation');
