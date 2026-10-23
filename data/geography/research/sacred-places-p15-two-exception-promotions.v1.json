@@ -1,0 +1,84 @@
+{
+  "schema": "AO_SACRED_PLACES_P15_TWO_SOURCE_BACKED_RELEASES_V1",
+  "date": "2026-10-24",
+  "status": "PROPOSED_VIA_PULL_REQUEST",
+  "owner_paths": [
+    "data/geography/seed-registry.v1.json",
+    "data/shrines/source-registry.v1.json",
+    "data/explore/heritage-place-reconciliation.review.v1.json"
+  ],
+  "baseline": {
+    "places": 348,
+    "source_registry": 624,
+    "heritage_crosswalk": 348,
+    "areas": 141,
+    "directory_place_links": 9,
+    "exception_slots_p13": 23
+  },
+  "proposed": {
+    "places": 350,
+    "source_registry": 630,
+    "heritage_crosswalk": 350,
+    "new_places": 2,
+    "new_pins": 2,
+    "new_country_areas": 0,
+    "new_directory_place_links": 0,
+    "new_approved_images": 0,
+    "source_identity_candidates_original": 2
+  },
+  "published_new": [
+    {
+      "place_id": "place:PH:monasterio-de-tarlac-risen-christ-chapel",
+      "research_id": "candidate:SG-INV-0654",
+      "name": "Chapel of the Risen Christ, Monasterio de Tarlac",
+      "type": "chapel",
+      "lat": 15.43665,
+      "lng": 120.43124,
+      "osm_way": 108344758,
+      "identity_sources": [
+        "AO-P15-TARLAC-CUSTODIAN",
+        "AO-P15-TARLAC-DIOCESE"
+      ],
+      "map_source": "AO-P15-TARLAC-GEO",
+      "notes": "Chapel inside monastery, separately from monastery grounds polygon way 108344922 and distinct Holy Cross Parish. No inference of relic authentication or 1962 liturgy."
+    },
+    {
+      "place_id": "place:PE:basilica-nuestra-senora-merced-lima",
+      "research_id": "candidate:SG-INV-0521",
+      "name": "Basílica Menor de Nuestra Señora de la Merced, Lima",
+      "type": "basilica",
+      "lat": -12.04842,
+      "lng": -77.03252,
+      "osm_way": 126587274,
+      "identity_sources": [
+        "AO-P15-MERCED-LIMA-MUNICIPAL",
+        "AO-P15-MERCED-LIMA-ADDRESS"
+      ],
+      "map_source": "AO-P15-MERCED-LIMA-GEO",
+      "notes": "Corrected research alias originally labeled shrine; competent authorities identify Catholic minor basilica; do not infer an additional ecclesiastical Shrine title."
+    }
+  ],
+  "hold_remainder": {
+    "source_identity_candidates_prior": 20,
+    "one_prior_resolved_footprint_cleared": "candidate:SG-INV-0654",
+    "one_prior_title_mismatch_resolved": "candidate:SG-INV-0521",
+    "remaining_source_identity_or_title_holds": 19,
+    "three_legacy_unmapped_slots_retained": true,
+    "explanation": "P13 left 20 source-identity cases held; only the Lima La Merced title correction resolves one of those. Tarlac's physical identity was already among P13's three resolved cases and P15 resolves its geometry/publication gate, not a second source-identity hold."
+  },
+  "limits": [
+    "Coordinates represent named church building footprint centers rounded to five decimal places, never verified visitor entrances.",
+    "No 1962 Missal schedules, no automatic Mass-directory relationship.",
+    "No shrine title inferred for Lima basilica; no Church of Holy Cross conflation at Tarlac.",
+    "No direct shrine-pilgrimage-relic-apparition-association created from presence in a canonical Place.",
+    "All imagery unapproved; text and maps only. Remain compliant with OSM ODbL attribution.",
+    "New Places do not alter any preexisting Place ID, coordinates, official sources or other release manifest."
+  ],
+  "tests": [
+    "Exact two canonical Place IDs and physical site footprints",
+    "Both original exception IDs trace into P13 / P12 without dropping history",
+    "All six new source IDs unique, directness and URL contract",
+    "350 Places, 630 sources, 350 heritage crosswalk with 91 no-owner placeholders",
+    "No 1962, shrine, relic, approved photo or fabricated entrance"
+  ]
+}

@@ -1,0 +1,75 @@
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+import {assertExploreGeographyRegistry,isMapPublishablePlaceGeo} from "../src/find/geography-contracts.js";
+import {assertShrinesPilgrimagesRegistry} from "../src/find/shrines-contracts.js";
+
+const read=p=>JSON.parse(readFileSync(new URL("../"+p,import.meta.url),"utf8"));
+const geo=read("data/geography/seed-registry.v1.json");
+const sources=read("data/shrines/source-registry.v1.json");
+const cross=read("data/explore/heritage-place-reconciliation.review.v1.json");
+const own=read("data/shrines/shrines-pilgrimages-seed.v1.json");
+const release=read("data/geography/research/sacred-places-p15-two-exception-promotions.v1.json");
+const p13=read("data/geography/research/sacred-places-p13-identity-adjudication.v1.json");
+const p12=read("data/geography/research/sacred-places-p12-six-georef-and-23-source-exceptions.v1.json");
+assert.equal(release.schema,"AO_SACRED_PLACES_P15_TWO_SOURCE_BACKED_RELEASES_V1");
+assert.equal(release.baseline.places,348);
+assert.equal(release.baseline.source_registry,624);
+assert.equal(release.published_new.length,2);
+assert.equal(release.proposed.places,350);
+assert.equal(release.proposed.source_registry,630);
+assert.equal(geo.places.length,350);
+assert.equal(sources.sources.length,630);
+assert.equal(geo.geoAreas.length,141);
+assert.equal(geo.directoryPlaceLinks.length,9);
+assert.equal(cross.place_crosswalk.length,350);
+assert.equal(cross.counts.places,350);
+assert.equal(cross.counts.places_without_direct_claim,91);
+assert.equal(cross.exception_queues.places_without_direct_claim.length,91);
+assert.equal(new Set(geo.places.map(p=>p.place_id)).size,geo.places.length);
+assert.equal(new Set(sources.sources.map(s=>s.id)).size,sources.sources.length);
+assert.equal(assertExploreGeographyRegistry(geo).pass,true);
+assert.equal(assertShrinesPilgrimagesRegistry({...own,sources:sources.sources,places:geo.places}).pass,true);
+const byPlace=new Map(geo.places.map(p=>[p.place_id,p]));
+const bySource=new Map(sources.sources.map(s=>[s.id,s]));
+const exceptions=new Set(p13.decisions.map(x=>x.candidate_id));
+const older=new Set(p12.source_exceptions.map(x=>x.candidate_id));
+let sourceIds=0;
+for(const r of release.published_new){
+  assert.ok(exceptions.has(r.research_id),"No original P13 candidate: "+r.research_id);
+  assert.ok(older.has(r.research_id),"P12 legacy provenance lost");
+  const p=byPlace.get(r.place_id);
+  assert.ok(p,"Missing P15 physical Place: "+r.place_id);
+  assert.equal(p.name.official,r.name);
+  assert.equal(p.place_type,r.type);
+  assert.equal(p.mappable,true);
+  assert.equal(p.geo.precision,"site","Footprint not visitor entrance");
+  assert.equal(p.geo.geocoding_source,"OSM");
+  assert.equal(p.geo.lat,r.lat);
+  assert.equal(p.geo.lng,r.lng);
+  assert.equal(p.geo.source_ref,"osm:way:"+r.osm_way);
+  assert.equal(p.geo.source_url,"https://www.openstreetmap.org/way/"+r.osm_way);
+  assert.match(p.geo.attribution,/OpenStreetMap/);
+  assert.equal(p.address.country_code,p.geo.matched_country_code);
+  assert.ok(isMapPublishablePlaceGeo(p.geo,p.address.country_code));
+  const canonicalSources=[...r.identity_sources,r.map_source];
+  assert.deepEqual(p.source_ids,canonicalSources);
+  for(const id of canonicalSources){
+    const original=bySource.get(id);
+    assert.ok(original&&/^https:\/\//.test(original.url),"Missing original site or geometry source: "+id);
+    assert.ok(original.contribution&&original.directness, "Provenance not typed: "+id);
+    sourceIds++;
+  }
+  const match=cross.place_crosswalk.filter(x=>x.place_id===r.place_id);
+  assert.equal(match.length,1,"Place crosswalk must be exactly one per physical building");
+  assert.deepEqual(match[0].record_ids,{},"No unsupported shrine/pilgrimage/relic joins");
+  assert.ok(cross.exception_queues.places_without_direct_claim.includes(r.place_id));
+  assert.equal(geo.directoryPlaceLinks.some(link=>link.place_id===r.place_id),false,
+    "A named Catholic church is not proof of a 1962 Mass venue");
+}
+assert.equal(sourceIds,6);
+assert.equal(byPlace.get("place:PH:monasterio-de-tarlac-risen-christ-chapel").place_type,"chapel");
+assert.equal(byPlace.get("place:PE:basilica-nuestra-senora-merced-lima").place_type,"basilica");
+assert.equal(own.shrines.some(r=>release.published_new.some(p=>p.place_id===r.place_id)),false);
+assert.equal(release.proposed.new_directory_place_links,0);
+assert.equal(release.proposed.new_approved_images,0);
+console.log("PASS P15 two distinct Catholic buildings, six typed sources, 350 canonical Places, zero inferred shrine/1962/entrance/photo associations");

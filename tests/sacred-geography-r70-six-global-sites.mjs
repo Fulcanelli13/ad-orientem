@@ -15,7 +15,7 @@ const board=read("data/geography/research/sacred-geography-coverage-first-r70.v1
 const illustrated=[...read("data/shrines/illustrated-place-guides-ireland.v1.json").guides,...read("data/shrines/illustrated-place-guides-france.v1.json").guides,...read("data/shrines/illustrated-place-guides-france-r67.v1.json").guides];
 const hero=read("data/geography/approved-place-media.v1.json");
 const gallery=read("data/geography/approved-place-gallery.v1.json");
-assert.deepEqual([geo.places.length,seed.shrines.length,seed.pilgrimages.length,source.sources.length],[348,257,240,624]);
+assert.deepEqual([geo.places.length,seed.shrines.length,seed.pilgrimages.length,source.sources.length],[350,257,240,630]);
 assert.equal(newSites.length,6);
 assert.equal(new Set(newSites.map(x=>x.id)).size,6);
 assert.deepEqual(new Set(newSites.map(x=>x.country)),new Set(["SG","MA","CA","ZM"]));

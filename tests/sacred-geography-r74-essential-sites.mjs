@@ -9,7 +9,7 @@ const g=read("data/geography/seed-registry.v1.json"),s=read("data/shrines/shrine
 const r=read("data/geography/research/sacred-geography-coverage-first-r70.v1.json"),q=read("data/geography/research/sacred-geography-r70-worldwide-coverage-queue.v1.json"),h=read("data/explore/heritage-place-reconciliation.review.v1.json"),m=read("data/geography/research/sacred-geography-r74-essential-sites.v1.json");
 assert.equal(m.schema,"AO_SACRED_GEOGRAPHY_R74_ESSENTIAL_RECONCILIATION_V1");
 assert.deepEqual([m.published_new.length,m.existing_confirmed.length,m.existing_pilgrimage_enrichment.length,m.held.length],[1,13,1,1]);
-assert.deepEqual([g.places.length,s.shrines.length,s.pilgrimages.length,sources.sources.length],[348,257,240,624]);
+assert.deepEqual([g.places.length,s.shrines.length,s.pilgrimages.length,sources.sources.length],[350,257,240,630]);
 assert.equal(assertExploreGeographyRegistry(g).pass,true);
 assert.equal(assertShrinesPilgrimagesRegistry({...s,sources:sources.sources,places:g.places}).pass,true);
 assert.equal(r.candidates.length,750);
@@ -51,7 +51,7 @@ assert.equal(pilgrimages.get(lv.pilgrimage_id)?.destination_shrine_id,lv.shrine_
 assert.equal(q.rows.find(x=>x.candidate_id==="SG-INV-0673")?.name,"National Marian Shrine of Our Lady of La Vang");
 assert.equal(q.rows.find(x=>x.candidate_id==="SG-INV-0746")?.status,"TEXT_HINT_REVIEW");
 assert.equal(places.get("place:NZ:st-peter-chanel-russell").geo.indicative_only,true);
-assert.equal(h.place_crosswalk.length,348);
+assert.equal(h.place_crosswalk.length,350);
 assert.equal(exploreMapFeatures(projected.byLens.shrines).length,257);
 assert.equal(exploreMapFeatures(projected.byLens.pilgrimages).length,240);
 console.log("PASS R74: 14 essential dispositions, Rigaud, La Vang and no new revelation/relic claims");

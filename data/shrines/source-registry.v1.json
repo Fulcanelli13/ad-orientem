@@ -4993,6 +4993,54 @@
       "directness": "SECONDARY",
       "url": "https://www.openstreetmap.org/way/48892861",
       "contribution": "Named OSM church polygon way 48892861 (amenity=place_of_worship, building=church, denomination=catholic, Wikidata Q3950028), approx 44.63312° N, 8.63989° E rounded site/footprint centroid. Not entrance geocoding. ODbL attribution retained."
+    },
+    {
+      "id": "AO-P15-TARLAC-CUSTODIAN",
+      "title": "Monasterio de Tarlac — present-day monastic site and pilgrimage chapel",
+      "issuer": "Servants and Oblates of the Risen Christ — Monasterio de Tarlac",
+      "directness": "OFFICIAL_CHURCH",
+      "url": "https://monasterio-de-tarlac.weebly.com/contact-us.html",
+      "contribution": "Community site locates Monasterio de Tarlac at Mt Resurrection, San Jose, Tarlac; the published chapel is the Chapel of the Risen Christ within the monastery, not Holy Cross Parish elsewhere in Tarlac."
+    },
+    {
+      "id": "AO-P15-TARLAC-DIOCESE",
+      "title": "Monasterio de Tarlac — Catholic diocesan recognition",
+      "issuer": "Roman Catholic Diocese of Tarlac",
+      "directness": "OFFICIAL_DIOCESAN",
+      "url": "https://dioceseoftarlac.com/priests-under-each-vicariate/",
+      "contribution": "Diocese lists Monasterio de Tarlac, San Jose, and priest assignment; confirms Catholic site, distinct from diocesan Holy Cross Parish. Does not certify image rights, 1962 Masses or visitor opening times."
+    },
+    {
+      "id": "AO-P15-TARLAC-GEO",
+      "title": "Chapel of the Risen Christ, Monasterio de Tarlac — OSM Catholic chapel polygon",
+      "issuer": "OpenStreetMap contributors; Mapcarta named feature record",
+      "directness": "SECONDARY",
+      "url": "https://www.openstreetmap.org/way/108344758",
+      "contribution": "Named chapel-building OSM way 108344758, denomination=catholic, approximate footprint point 15.43665 N, 120.43124 E; distinct from wider Tarlac Monastery way 108344922 and Holy Cross parish. Site anchor, not entrance."
+    },
+    {
+      "id": "AO-P15-MERCED-LIMA-MUNICIPAL",
+      "title": "Basílica Menor de La Merced, Lima — 2026 named Catholic worship site",
+      "issuer": "Municipalidad Metropolitana de Lima — Gobierno del Perú",
+      "directness": "PRIMARY_INSTITUTIONAL",
+      "url": "https://www.gob.pe/institucion/munilima/noticias/1371737-semana-santa-2026-municipalidad-de-lima-presenta-lista-de-21-iglesias-habilitadas-para-ser-visitadas",
+      "contribution": "Official Lima municipal 2026 Semana Santa list explicitly identifies Basílica Menor de La Merced as church open for Holy Week, not a separately named Shrine of Our Lady of Mercy; no permanent hours asserted."
+    },
+    {
+      "id": "AO-P15-MERCED-LIMA-ADDRESS",
+      "title": "Iglesia Nuestra Señora de La Merced — Lima historic visitor identity and street address",
+      "issuer": "Visita Lima — local heritage visitor guide",
+      "directness": "SECONDARY",
+      "url": "https://visita-lima.limaciudaddelosreyes.com.pe/es/iglesias/iglesia-de-nuestra-senora-de-la-merced",
+      "contribution": "Named historic Basilica of La Merced at Jr de la Unión 621, Peru, describing Mercedarian Catholic church and basilica status; source is visitor guide, not evidence of current 1962 Masses or entrance coordinates."
+    },
+    {
+      "id": "AO-P15-MERCED-LIMA-GEO",
+      "title": "Iglesia de la Merced, Lima — named Catholic OSM church polygon",
+      "issuer": "OpenStreetMap contributors; Mapcarta named feature record",
+      "directness": "SECONDARY",
+      "url": "https://www.openstreetmap.org/way/126587274",
+      "contribution": "Matching Catholic church footprint OSM way 126587274, denominator=catholic, approximate site centre -12.04842,-77.03252; distinctly identified from other La Merced parish sites in Greater Lima. Not a verified doorway."
     }
   ]
 }
