@@ -8,10 +8,15 @@ const $=id=>document.getElementById(id);
 const esc=t=>String(t??"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#39;");
 const fold=t=>String(t??"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[’‘']/g," ").replace(/[^a-z0-9 ]/g," ").replace(/\s+/g," ").trim();
 const chapters=corpus.chapters, byId=new Map(chapters.map(c=>[c.id,c]));
-const ui={open:false,lang:"en",id:null,selected:[],menu:false,query:"",source:false};
+const ui={open:false,lang:"en",id:null,selected:[],menu:false,query:"",source:false,history:[],interaction:"opening"};
+function rememberPlace(){
+ if(!ui.id)return;
+ ui.history.push({id:ui.id,selected:[...ui.selected],interaction:ui.interaction});
+ if(ui.history.length>20)ui.history.shift();
+}
 const term={
-en:{launch:"Explore 82 conversations",back:"Return to the original study",library:"Conversation library",search:"Search subjects and questions",entry:"Explore a subject",welcome:"Choose a question. These are documentary educational reconstructions, not verified speech of St Pius X.",review:"EDITORIAL REVIEW · NOT A HISTORICAL TRANSCRIPT",chapter:"Conversation",follow:"Where would you like to go next?",depth:"Ask a more specific question",related:"Related subjects",source:"Original source",sourceTitle:"Source and attribution",close:"Close",startOver:"Return to this subject",again:"Choose another subject",noResults:"No documented question matches that search. No reply has been invented.",special:"This subject requires fuller source review. Read the text as editorial commentary, not an authenticated papal statement.",biography:"Historical biography · editorial narrator",partialSource:"Source evidence incomplete · editorial voice only",editorialExplanation:"Historical editorial explanation · not Pope's testimony",catechism:"Catechetical reconstruction · not personally spoken by the Pope",documents:"Source-bound editorial recreation · not verbatim",foot:"The original source records remain unchanged. No doctrine, translation, papal voice or publication has been independently approved.",go:"Read this question",sourceLocus:"Document passage",all:"All conversations",recent:"Start here",fr:"Français",questions:"Questions",backPath:"Previous exchange",reviewOnly:"Review only",enrichedNote:"Expanded editorial answer — not a historical quotation",compare:"Read earlier short draft",citationLimit:"Document locator only; source wording and translations await independent verification."},
-fr:{launch:"82 conversations",back:"Retour à l'étude initiale",library:"Bibliothèque des conversations",search:"Rechercher un sujet ou une question",entry:"Explorer un sujet",welcome:"Choisissez une question. Il s'agit de reconstitutions pédagogiques documentaires, non de paroles authentifiées de saint Pie X.",review:"RÉVISION ÉDITORIALE · NON UNE TRANSCRIPTION HISTORIQUE",chapter:"Conversation",follow:"Quelle question souhaitez-vous approfondir ?",depth:"Poser une question plus précise",related:"Sujets connexes",source:"Source originale",sourceTitle:"Source et attribution",close:"Fermer",startOver:"Reprendre ce sujet",again:"Choisir un autre sujet",noResults:"Aucune question documentée ne correspond à cette recherche. Aucune réponse n'a été inventée.",special:"Ce sujet exige une vérification plus approfondie. Ce texte est un commentaire éditorial, non une parole pontificale authentifiée.",biography:"Biographie historique · rédaction éditoriale",partialSource:"Source incomplète · rédaction éditoriale uniquement",editorialExplanation:"Explication historique éditoriale · non témoignage pontifical",catechism:"Adaptation catéchétique · non personnellement prononcée par le pape",documents:"Reconstitution éditoriale fondée sur les sources · non verbatim",foot:"Les sources originales n'ont pas été modifiées. Aucune approbation indépendante doctrinale, linguistique, stylistique ou de publication.",go:"Ouvrir cette question",sourceLocus:"Passage cité",all:"Toutes les conversations",recent:"Pour commencer",fr:"English",questions:"Questions",backPath:"Échange précédent",reviewOnly:"Révision seulement",enrichedNote:"Réponse éditoriale développée — non une citation historique",compare:"Lire la première version abrégée",citationLimit:"Renvoi au passage uniquement ; textes et traductions à vérifier indépendamment."}};
+en:{launch:"Explore 82 conversations",back:"Return to the original study",library:"Conversation library",search:"Search subjects and questions",entry:"Explore a subject",welcome:"Choose a question. These are documentary educational reconstructions, not verified speech of St Pius X.",review:"EDITORIAL REVIEW · NOT A HISTORICAL TRANSCRIPT",chapter:"Conversation",follow:"Where would you like to go next?",depth:"Ask a more specific question",related:"Related subjects",source:"Original source",sourceTitle:"Source and attribution",close:"Close",startOver:"Return to this subject",again:"Choose another subject",noResults:"No documented question matches that search. No reply has been invented.",special:"This subject requires fuller source review. Read the text as editorial commentary, not an authenticated papal statement.",biography:"Historical biography · editorial narrator",partialSource:"Source evidence incomplete · editorial voice only",editorialExplanation:"Historical editorial explanation · not Pope's testimony",catechism:"Catechetical reconstruction · not personally spoken by the Pope",documents:"Source-bound editorial recreation · not verbatim",foot:"The original source records remain unchanged. No doctrine, translation, papal voice or publication has been independently approved.",go:"Read this question",sourceLocus:"Document passage",all:"All conversations",recent:"Start here",prior:"Return to previous conversation",fr:"Français",questions:"Questions",backPath:"Previous exchange",reviewOnly:"Review only",enrichedNote:"Expanded editorial answer — not a historical quotation",compare:"Read earlier short draft",citationLimit:"Document locator only; source wording and translations await independent verification."},
+fr:{launch:"82 conversations",back:"Retour à l'étude initiale",library:"Bibliothèque des conversations",search:"Rechercher un sujet ou une question",entry:"Explorer un sujet",welcome:"Choisissez une question. Il s'agit de reconstitutions pédagogiques documentaires, non de paroles authentifiées de saint Pie X.",review:"RÉVISION ÉDITORIALE · NON UNE TRANSCRIPTION HISTORIQUE",chapter:"Conversation",follow:"Quelle question souhaitez-vous approfondir ?",depth:"Poser une question plus précise",related:"Sujets connexes",source:"Source originale",sourceTitle:"Source et attribution",close:"Fermer",startOver:"Reprendre ce sujet",again:"Choisir un autre sujet",noResults:"Aucune question documentée ne correspond à cette recherche. Aucune réponse n'a été inventée.",special:"Ce sujet exige une vérification plus approfondie. Ce texte est un commentaire éditorial, non une parole pontificale authentifiée.",biography:"Biographie historique · rédaction éditoriale",partialSource:"Source incomplète · rédaction éditoriale uniquement",editorialExplanation:"Explication historique éditoriale · non témoignage pontifical",catechism:"Adaptation catéchétique · non personnellement prononcée par le pape",documents:"Reconstitution éditoriale fondée sur les sources · non verbatim",foot:"Les sources originales n'ont pas été modifiées. Aucune approbation indépendante doctrinale, linguistique, stylistique ou de publication.",go:"Ouvrir cette question",sourceLocus:"Passage cité",all:"Toutes les conversations",recent:"Pour commencer",prior:"Revenir à la conversation précédente",fr:"English",questions:"Questions",backPath:"Échange précédent",reviewOnly:"Révision seulement",enrichedNote:"Réponse éditoriale développée — non une citation historique",compare:"Lire la première version abrégée",citationLimit:"Renvoi au passage uniquement ; textes et traductions à vérifier indépendamment."}};
 const T=()=>term[ui.lang], lang=v=>v?.[ui.lang]||v?.en||"", current=()=>byId.get(ui.id)||null;
 function isNarration(c){
 return !!c&&c.sourceClass==="BIOGRAPHICAL_NARRATOR";
@@ -73,7 +78,7 @@ return "<div class='spxc-bread'>"+esc(T().reviewOnly)+" · "+esc(c.source.locus)
  (deep?"<div class='spxc-next'><h3>"+esc(T().depth)+"</h3>"+deep+"</div>":"")+
  (side?"<div class='spxc-next'><h3>"+esc(T().follow)+"</h3>"+side+"</div>":"")+
  (related.length?"<div class='spxc-next'><h3>"+esc(T().related)+"</h3>"+related.map(x=>card(x,true)).join("")+"</div>":"")+
- "<div class='spxc-bottom'><button data-spxc-restart='1'>"+esc(T().startOver)+"</button><button data-spxc-index='1'>"+esc(T().again)+"</button></div>";
+ "<div class='spxc-bottom'>"+(ui.history.length?"<button data-spxc-return='1'>"+esc(T().prior)+"</button>":"")+"<button data-spxc-restart='1'>"+esc(T().startOver)+"</button><button data-spxc-index='1'>"+esc(T().again)+"</button></div>";
 }
 function welcomeHTML(){
 const starters=["SPX-001","SPX-009","SPX-EXP-012","SPX-EXP-001"].map(id=>byId.get(id)).filter(Boolean);
@@ -107,7 +112,9 @@ $("spxc-nav").innerHTML=nav();
 $("spxc-main").innerHTML=conversationHTML();
 $("spxc-cite-slot").innerHTML=citationHTML();
 const c=current(),narration=isNarration(c)||isPartial(c)||isCatechism(c)||c?.sourceClass==="SOURCE_BOUNDED_EDITORIAL_EXPLANATION";
-$("spxc-portrait").src=artwork[narration?"neutral":(c?.pose||"thoughtful")]||artwork.neutral;
+const expression=ui.source?"thoughtful":ui.interaction==="followup"?"explaining":(c?.pose||"thoughtful");
+$("spxc-portrait").dataset.expression=narration?"none":expression;
+$("spxc-portrait").src=artwork[expression]||artwork.neutral;
 $("spxc-portrait").hidden=narration;
 $("spxc-overlay").style.setProperty("--spxc-study","url('"+artwork.study+"')");
 $("spxc-menu").setAttribute("aria-expanded",String(ui.menu));
@@ -126,11 +133,12 @@ overlay.innerHTML="<div class='spxc-background'></div><img id='spxc-portrait' al
 document.body.append(overlay);
 function openChapter(id){
 if(!byId.has(id))return;
-ui.id=id;ui.selected=[];ui.source=false;ui.menu=false;
+if(ui.id!==id)rememberPlace();
+ui.id=id;ui.selected=[];ui.source=false;ui.menu=false;ui.interaction="opening";
 render();$("spxc-main").closest(".spxc-main-scroll").scrollTop=0;
 }
 function close(){ui.open=false;overlay.hidden=true;document.documentElement.lang=JSON.parse(document.getElementById("spxData").textContent)?.docs?"en":"en";}
-launch.addEventListener("click",()=>{ui.open=true;ui.id=null;ui.selected=[];ui.source=false;ui.query="";render();});
+launch.addEventListener("click",()=>{ui.open=true;ui.id=null;ui.selected=[];ui.source=false;ui.query="";ui.history=[];ui.interaction="opening";render();});
 overlay.addEventListener("click",e=>{
 const el=e.target.closest("button");if(!el)return;
 if(el.id==="spxc-close"){close();return;}
@@ -141,9 +149,14 @@ if(el.dataset.spxcChoose){const c=current(),n=c?.nodes.find(n=>n.id===el.dataset
 if(n.parentId&&!ui.selected.includes(n.parentId))return;
 // A conversation is one visitor-selected branch, never accumulated siblings.
 ui.selected=n.parentId?[n.parentId,n.id]:[n.id];
-ui.source=false;render();const sc=document.querySelector(".spxc-main-scroll");sc.scrollTop=sc.scrollHeight;return;}
+ui.source=false;ui.interaction="followup";render();const sc=document.querySelector(".spxc-main-scroll");sc.scrollTop=sc.scrollHeight;return;}
 if(el.dataset.spxcSource){ui.source=el.dataset.spxcSource==="close"?false:el.dataset.spxcSource;render();return;}
-if(el.dataset.spxcIndex){ui.id=null;ui.selected=[];render();return;}
+if(el.dataset.spxcIndex){rememberPlace();ui.id=null;ui.selected=[];ui.source=false;ui.interaction="opening";render();return;}
+if(el.dataset.spxcReturn){
+ const prev=ui.history.pop();if(!prev||!byId.has(prev.id))return;
+ ui.id=prev.id;ui.selected=prev.selected;ui.interaction=prev.interaction;ui.source=false;ui.menu=false;
+ render();document.querySelector(".spxc-main-scroll").scrollTop=0;return;
+}
 if(el.dataset.spxcRestart){openChapter(ui.id);return;}
 });
 $("spxc-search").addEventListener("input",e=>{ui.query=e.target.value;$("spxc-nav").innerHTML=nav();});
