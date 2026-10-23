@@ -26,19 +26,32 @@
         "la",
         "fr",
         "en"
-      ]
+      ],
+      "webTextVerification": {
+        "status": "MATCHED_ORIGINAL_LANGUAGE_VATICAN_PAGE_TEXT",
+        "checkedOn": "2026-10-23",
+        "sourcePageLine": 46,
+        "method": "Exact substring in original-language Vatican webpage (transcription audit only; not independent doctrinal or translation approval)"
+      }
     },
     {
       "id": "ES-INTRO-ANSELM",
       "locus": "Opening embedded citation of St Anselm",
-      "latin": "Testantur, sic ille, lacrymae meae",
+      "latin": "Testantur, sic ille",
       "meaning": "Quoted third-party testimony by Anselm; do not transfer his specific personal experiences to Pius X",
       "speaker": "ANSELM_QUOTED_BY_PIUS_X",
       "checkedLanguages": [
         "la",
         "fr",
         "en"
-      ]
+      ],
+      "footnoteCaveat": "Vatican edition inserts a numbered citation marker after ille, before the quoted Anselm testimony continues; do not concatenate across marker",
+      "webTextVerification": {
+        "status": "MATCHED_ORIGINAL_LANGUAGE_VATICAN_PAGE_TEXT",
+        "checkedOn": "2026-10-23",
+        "sourcePageLine": 47,
+        "method": "Exact substring in original-language Vatican webpage (transcription audit only; not independent doctrinal or translation approval)"
+      }
     },
     {
       "id": "ES-2-UNWORTHY",
@@ -50,7 +63,13 @@
         "la",
         "fr",
         "en"
-      ]
+      ],
+      "webTextVerification": {
+        "status": "MATCHED_ORIGINAL_LANGUAGE_VATICAN_PAGE_TEXT",
+        "checkedOn": "2026-10-23",
+        "sourcePageLine": 51,
+        "method": "Exact substring in original-language Vatican webpage (transcription audit only; not independent doctrinal or translation approval)"
+      }
     },
     {
       "id": "ES-2-PREDECESSOR",
@@ -62,7 +81,13 @@
         "la",
         "fr",
         "en"
-      ]
+      ],
+      "webTextVerification": {
+        "status": "MATCHED_ORIGINAL_LANGUAGE_VATICAN_PAGE_TEXT",
+        "checkedOn": "2026-10-23",
+        "sourcePageLine": 51,
+        "method": "Exact substring in original-language Vatican webpage (transcription audit only; not independent doctrinal or translation approval)"
+      }
     },
     {
       "id": "ES-3-FEAR",
@@ -74,7 +99,13 @@
         "la",
         "fr",
         "en"
-      ]
+      ],
+      "webTextVerification": {
+        "status": "MATCHED_ORIGINAL_LANGUAGE_VATICAN_PAGE_TEXT",
+        "checkedOn": "2026-10-23",
+        "sourcePageLine": 53,
+        "method": "Exact substring in original-language Vatican webpage (transcription audit only; not independent doctrinal or translation approval)"
+      }
     },
     {
       "id": "ES-4-STRENGTH",
@@ -86,7 +117,13 @@
         "la",
         "fr",
         "en"
-      ]
+      ],
+      "webTextVerification": {
+        "status": "MATCHED_ORIGINAL_LANGUAGE_VATICAN_PAGE_TEXT",
+        "checkedOn": "2026-10-23",
+        "sourcePageLine": 54,
+        "method": "Exact substring in original-language Vatican webpage (transcription audit only; not independent doctrinal or translation approval)"
+      }
     },
     {
       "id": "ES-4-MOTTO",
@@ -98,7 +135,13 @@
         "la",
         "fr",
         "en"
-      ]
+      ],
+      "webTextVerification": {
+        "status": "MATCHED_ORIGINAL_LANGUAGE_VATICAN_PAGE_TEXT",
+        "checkedOn": "2026-10-23",
+        "sourcePageLine": 54,
+        "method": "Exact substring in original-language Vatican webpage (transcription audit only; not independent doctrinal or translation approval)"
+      }
     },
     {
       "id": "ES-8-CHRIST",
@@ -110,7 +153,13 @@
         "la",
         "fr",
         "en"
-      ]
+      ],
+      "webTextVerification": {
+        "status": "MATCHED_ORIGINAL_LANGUAGE_VATICAN_PAGE_TEXT",
+        "checkedOn": "2026-10-23",
+        "sourcePageLine": 67,
+        "method": "Exact substring in original-language Vatican webpage (transcription audit only; not independent doctrinal or translation approval)"
+      }
     }
   ],
   "dialogueMappings": [
@@ -182,5 +231,10 @@
     "The third node's source owner's locus needs §8 added to support its Christ-to-God theme.",
     "The source text describes the predecessor without giving the predecessor's personal name in the relevant sentence.",
     "This annex is external review metadata and does not change original dialogue answers or global registry."
-  ]
+  ],
+  "webTextAudit": {
+    "checkedOn": "2026-10-23",
+    "matchedCount": 8,
+    "notClaiming": "Full diplomatic collation, context-independent speaker approval, or publication eligibility"
+  }
 }
