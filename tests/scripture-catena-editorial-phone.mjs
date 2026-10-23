@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import http from "node:http";
 import {readFile} from "node:fs/promises";
 import {extname,resolve,sep} from "node:path";
-import {fileURLToPath} from "node:url";
+import {fileURLToPath,pathToFileURL} from "node:url";
 import {chromium} from "@playwright/test";
 const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
 const mime={".html":"text/html; charset=utf-8",".js":"text/javascript; charset=utf-8",".json":"application/json; charset=utf-8",".css":"text/css; charset=utf-8"};
@@ -333,6 +333,60 @@ try{
  await page.locator('[data-focused-source="english-parallel-checked"]')
   .waitFor({state:"visible",timeout:20000});
  assert.equal(await page.locator("#download").isDisabled(),false);
+
+ // A source-verified, single-file packet should work directly via file://,
+ // with no repository web server, build process, or external CSS/JS.
+ const offline=pathToFileURL(resolve(root,"dist/catena-mark-blind-review-offline.html")).href;
+ await page.goto(offline,{waitUntil:"domcontentloaded",timeout:60000});
+ await page.locator("#caseDetail h2").waitFor({state:"visible",timeout:15000});
+ assert.equal(await page.locator("#cases option").count(),23);
+ const packet=await page.evaluate(()=>JSON.parse(document.getElementById("catenaPacket").textContent));
+ assert.equal(packet.cases.length,23);
+ assert.ok(packet.cases.every(c=>!Object.hasOwn(c,"targetSourcePointer")&&
+  !Object.hasOwn(c,"aiGrade")));
+ assert.equal(await page.locator('script[src]').count(),0);
+ const picked=packet.cases.findIndex(c=>c.results.length>0);
+ const silent=packet.cases.findIndex(c=>c.results.length===0);
+ assert.ok(picked>=0&&silent>=0);
+ await page.locator("#reviewer").fill("Independent External Reviewer A");
+ await page.locator("#cases").selectOption(String(picked));
+ await page.locator("#reviewForm article.case").first().waitFor({state:"visible",timeout:15000});
+ const retrieved=await page.locator("#reviewForm article.case").count();
+ assert.ok(retrieved>=1&&retrieved<=4);
+ for(let i=0;i<retrieved;i++){
+  const card=page.locator("#reviewForm article.case").nth(i);
+  await card.locator("select").selectOption("1");
+  await card.locator("textarea").fill("Source excerpt preserved, but independent theological relevance remains unverified.");
+ }
+ await page.locator("#reviewForm > textarea").fill("Source review example, not an attested human editorial judgment or publication approval.");
+ await page.locator('#reviewForm button[type="submit"]').click();
+ assert.match(await page.locator("#progress").innerText(),/1 of 23/);
+ await page.locator("#cases").selectOption(String(silent));
+ await page.locator("#reviewForm select[data-abstain]").waitFor({state:"visible",timeout:15000});
+ await page.locator("#reviewForm select[data-abstain]").selectOption("uncertain");
+ await page.locator("#reviewForm > textarea").fill("No-source result assessed only as a synthetic regression of the offline reviewer interface.");
+ await page.locator('#reviewForm button[type="submit"]').click();
+ assert.match(await page.locator("#progress").innerText(),/2 of 23/);
+ const offlineDownload=page.waitForEvent("download");
+ await page.locator("#export").click();
+ const exported=await offlineDownload;
+ assert.match(exported.suggestedFilename(),/catena-mark-blind-Independent_External_Reviewer_A\.json/);
+ const raw=await readFile(await exported.path(),"utf8");
+ const decision=JSON.parse(raw);
+ assert.equal(decision.completedCases,2);
+ assert.equal(decision.publicationApproval,false);
+ assert.equal(decision.mayAutoPromoteToMessenger,false);
+ await page.reload({waitUntil:"domcontentloaded"});
+ assert.match(await page.locator("#progress").innerText(),/0 of 23/);
+ await page.locator("#import").setInputFiles({name:"review-progress.json",
+  mimeType:"application/json",buffer:Buffer.from(raw)});
+ assert.match(await page.locator("#progress").innerText(),/2 of 23/);
+ assert.equal(await page.locator("#reviewer").inputValue(),"Independent External Reviewer A");
+ await page.locator("#reviewer").fill("Independent External Reviewer B");
+ await page.locator("#reviewer").dispatchEvent("change");
+ assert.equal(await page.locator("#reviewer").inputValue(),"Independent External Reviewer A",
+  "A reviewer cannot silently reassign another person's offline draft");
+ assert.ok((await page.locator("body").evaluate(el=>el.scrollWidth-el.clientWidth))<=2);
  assert.deepEqual(errors,[],"Messenger and editorial workbench browser runtime errors");
  console.log("PASS: opt-in research question Messenger phone flow, source labels, author boundary and no overflow");
 }finally{
