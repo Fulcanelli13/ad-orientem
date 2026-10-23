@@ -12,7 +12,8 @@
     "geo_relocations": 0,
     "new_places": 0,
     "new_pins": 0,
-    "source_exceptions_declared_fully_closed": 0
+    "source_exceptions_declared_fully_closed": 0,
+    "canonical_addresses_source_upgraded": 3
   },
   "georeferencing_holds": [
     {
@@ -351,6 +352,30 @@
     "Reject mismatched nearby OSM features and do not equate an OSM polygon centre with the entrance.",
     "All prior stable candidate IDs remain present; older three unreconciled slots must not be assigned invented IDs.",
     "Research-source conflict or qualified alternative does not automatically resolve publication eligibility.",
-    "No 1962 Mass venue or visiting-hour inference from institutional identity."
+    "No 1962 Mass venue or visiting-hour inference from institutional identity.",
+    "Official street addresses may be added without claiming visitor entrance coordinates; coordinates retain their previous source and precision."
+  ],
+  "canonical_address_upgrades": [
+    {
+      "place_id": "place:IT:sacra-famiglia-bakhita-schio",
+      "line1": "Via Fusinato 51",
+      "postal_code": "36015",
+      "formatted": "Via Fusinato 51, 36015 Schio (VI), Italy",
+      "custodian": "https://canossianebakhitaschio.org/visita-santuario-2/"
+    },
+    {
+      "place_id": "place:IT:sant-ambrogio-milano",
+      "line1": "Piazza Sant'Ambrogio 15",
+      "postal_code": "20123",
+      "formatted": "Piazza Sant'Ambrogio 15, 20123 Milano, Italy",
+      "custodian": "https://www.basilicasantambrogio.it/contatti"
+    },
+    {
+      "place_id": "place:IT:salerno-duomo",
+      "line1": "Piazza Alfano I",
+      "postal_code": "84125",
+      "formatted": "Piazza Alfano I, 84125 Salerno, Italy",
+      "custodian": "https://www.duomodisalerno.it/contatti/"
+    }
   ]
 }
