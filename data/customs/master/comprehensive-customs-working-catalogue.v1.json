@@ -41,7 +41,8 @@
     "CC_THREE_WORKS_41_MANUAL_ACTION_RELATIONS": "41 manual comparisons (39 distinct new source observations) distinguish same described action cores from derivative documentary attestations, localized and calendar variants, and false lexical matches. A same-action label is not verified historical practice identity, and original work dependence, source independence and liturgical approval were not certified. No automatic merges.",
     "PITRE_110_SEMANTIC_RECONCILIATION_NO_COUNT_CHANGE": "All 110 directly read posthumous Pitre Palermo work observations routed to 35 source-document historical event contexts; 31 comparisons to extant research actions judged label-level with occasion and place, zero practice equivalences or independent corroborations certified, zero mergers or publications; two self-repeating cross-volume passages flagged (St Rosalia September and Assumption ceri). The 35 contexts are NOT verified distinct Catholic customs, and the 31 pair decisions were NOT verified against all original archival manuscripts.",
     "PITRE_1900_ORIGINAL_PRINT_DIRECT_OCR_NONCANONICAL": "129 detailed historical observations in Giuseppe Pitre's original 1900 Feste patronali in Sicilia, vol XXI, scanned copy OCR line spans via Internet Archive, distinct textual work from the earlier posthumous Palermo historical volumes. OCR original-edition text was directly read, though facsimile page images were not visually checked and printed folio numbers have not been certified. 14 named localities; many observations are components or variants of one patronal festival, folk beliefs or civic contexts. Pitre relied on questionnaires/correspondents, quotes earlier writers and may repeat his own 1881 work. This is one compiled book witness, not 129 independent historical testimonies, and 0 verified Catholic distinct customs or 1962 Roman Ritual authorizations.",
-    "PITRE_1900_129_CROSS_SOURCE_AND_71_PAIR_DECISION_BOUNDARY": "All 129 earlier OCR-observation IDs retain provenance and were screened against earlier label pools. 74 have candidate lexical hints (166 edges); 55 no lexical hints. Separate 71 manually judged action-description pairs distinguish local shared St Joseph family actions, date/saint/region variants, and false equivalences. Neither hints nor action-pair relation types certify a global distinct custom, independently checked old eyewitness manuscripts, original printed page facsimile, 1962 rite authority, or current continuance. This is nonadditive: existing counted source-detail row total unchanged."
+    "PITRE_1900_129_CROSS_SOURCE_AND_71_PAIR_DECISION_BOUNDARY": "All 129 earlier OCR-observation IDs retain provenance and were screened against earlier label pools. 74 have candidate lexical hints (166 edges); 55 no lexical hints. Separate 71 manually judged action-description pairs distinguish local shared St Joseph family actions, date/saint/region variants, and false equivalences. Neither hints nor action-pair relation types certify a global distinct custom, independently checked old eyewitness manuscripts, original printed page facsimile, 1962 rite authority, or current continuance. This is nonadditive: existing counted source-detail row total unchanged.",
+    "PITRE1900_COMPLETE_ACTION_TRIAGE_NOT_COMPLETE_TEXT_MINING": "All 129 already extracted Pitrè 1900 OCR source-detail records are covered by 7 noncanonical patronal research families, 71 previous action-description pair reviews touching 82 source IDs, and 47 individually screened unpaired source IDs; zero 1900 OCR chapters newly extracted in this pass because original OCR remote endpoint currently inaccessible. The 7 sampled feast chapters remain NONEXHAUSTIVE relative to author's 60 reported festival subjects; printed-page images and original cited earlier witnesses remain unread. No new distinct customs, master owner IDs or publications."
   },
   "summary": {
     "source_observations": {
@@ -218,7 +219,13 @@
       "pitre_1900_action_description_pairs_reviewed_nonmerging": 71,
       "pitre_1900_same_compilation_pairs": 45,
       "pitre_1900_cross_to_prior_owner_regional_pairs": 26,
-      "pitre_1900_new_unique_practice_identities_approved": 0
+      "pitre_1900_new_unique_practice_identities_approved": 0,
+      "pitre_1900_all_129_source_rows_action_families_reconciled": 129,
+      "pitre_1900_prior_action_pair_reviews_integrated": 71,
+      "pitre_1900_distinct_source_rows_covered_by_71_reviews": 82,
+      "pitre_1900_previously_unpaired_source_rows_triaged": 47,
+      "pitre_1900_noncanonical_festival_parent_families": 7,
+      "pitre_1900_prehistoric_claims_newly_certified": 0
     },
     "no_new_app_publications": true,
     "source_discovery_leads": {
@@ -309,7 +316,8 @@
     "pitre_context_clusters_31_cross_source": "data/customs/master/pitre-110-context-clusters-31-manual-cross-source-contrast.v1.json",
     "pitre_1900_original_feste_patronali": "data/customs/master/pitre-1900-feste-patronali-original-edition-ocr-actions-wave01.v1.json",
     "pitre_original_1900_129_registry_routing": "data/customs/master/pitre-1900-129-nonmerging-registry-cross-source-routing.v1.json",
-    "pitre_original_1900_71_action_relationship_reviews": "data/customs/master/pitre-1900-action-family-71-manual-comparisons.v1.json"
+    "pitre_original_1900_71_action_relationship_reviews": "data/customs/master/pitre-1900-action-family-71-manual-comparisons.v1.json",
+    "pitre_original_1900_complete_129_71_47_reconciliation": "data/customs/master/pitre-1900-full-129-coverage-47-unpaired-action-triage.v1.json"
   },
   "existing_master_identities": [
     {
