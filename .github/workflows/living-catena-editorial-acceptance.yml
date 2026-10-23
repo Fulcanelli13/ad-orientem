@@ -45,6 +45,8 @@ jobs:
         run: node tests/scripture-catena-mark-editorial.mjs
       - name: Diagnose Mark AI-only reviewer challenges and native lexical recall
         run: node tests/scripture-catena-mark-adjudication.mjs
+      - name: Verify 23-case blind Mark grading and two-reviewer reconciliation
+        run: node tests/scripture-catena-mark-blind-review.mjs
   phone-acceptance:
     runs-on: ubuntu-latest
     timeout-minutes: 15
