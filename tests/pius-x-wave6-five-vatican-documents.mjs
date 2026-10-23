@@ -40,7 +40,7 @@ for(const [key,expected] of Object.entries(expectedDocCounts)){
 // Separately transcribed surrounding sentences from the publicly readable
 // Vatican language-edition pages. These guard against corrupt short-span edits;
 // they do NOT by themselves certify interpretation, translations or edition provenance.
-const normalizeText=s=>String(s).normalize('NFKC').replace(/\\s+/g,' ').trim();
+const normalizeText=s=>String(s).normalize('NFKC').replace(/\s+/g,' ').trim();
 const independentlyCapturedVaticanContext={
   "S": [
     "Hac nempe de causa, hoc est, ut in praesenti dimicatione subeunda confirmentur bonorum animi, opportunum duximus memorati Nostri documenti sententias et praescripta referre hisce verbis expressa:",
