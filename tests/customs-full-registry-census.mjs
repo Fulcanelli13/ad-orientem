@@ -431,3 +431,34 @@ assert.equal(pairReview54.summary.clearly_different_reported_actions,25);
 assert.equal(pairReview54.summary.remaining_context_related,22);
 assert.equal(researchCatalogue.summary.source_review.coassociation_pair_label_relationships_reviewed,54);
 console.log('53 orphan details adjudicated; 37 newly staged action groups (408 provisional total); 54 pair comparisons, zero automatic merges — PASS');
+
+
+const mcloughlinText = load('data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json');
+const mcloughlinGroups = load('data/customs/master/mcloughlin-family-advent-action-family-reconciliation.v1.json');
+assert.equal(mcloughlinText.records.length,70);
+assert.equal(mcloughlinGroups.families.length,26);
+const mclIds = new Set(mcloughlinText.records.map(r=>r.observation_id));
+assert.equal(mclIds.size,70);
+const allMcLReferences = mcloughlinGroups.families.flatMap(g=>g.included_source_observation_ids);
+assert.equal(allMcLReferences.length,70);
+assert.deepEqual(new Set(allMcLReferences),mclIds);
+assert.equal(mcloughlinGroups.summary.certified_distinct_new_catholic_customs,0);
+assert.equal(mcloughlinGroups.summary.publication_changes,0);
+assert.equal(count.source_observations.total_source_detail_rows_including_external,1095);
+assert.equal(count.source_observations.all_book_research_rows_including_nested_details,1025);
+assert.equal(researchCatalogue.external_source_observations_mcloughlin.length,70);
+assert.equal(researchCatalogue.external_source_action_families_mcloughlin.length,26);
+assert.equal(new Set(researchCatalogue.external_source_action_families_mcloughlin.map(g=>g.id)).size,26);
+const priorGroupIds = new Set([...researchCatalogue.provisional_handbook_groups, ...researchCatalogue.provisional_historical_groups, ...researchCatalogue.provisional_unindexed_practice_leads, ...researchCatalogue.provisional_unassigned_action_leads, ...researchCatalogue.addendum_unresolved_practice_leads].map(r=>r.id));
+for(const r of mcloughlinText.records){
+ assert.equal(r.identity_status,'SOURCE_OBSERVATION_ONLY_DISTINCTNESS_UNDECIDED');
+ assert.equal(r.app_publication,'NONE');
+ assert.ok(r.source_locator.html_line_start>=104 && r.source_locator.html_line_end<=421);
+ assert.ok(r.source_locator.html_line_end>=r.source_locator.html_line_start);
+}
+for(const g of mcloughlinGroups.families){
+ assert.equal(g.app_publication,false);
+ for(const id of g.possible_master_ids) assert.ok(masterSet.has(id));
+ for(const id of g.possible_provisional_group_ids) assert.ok(priorGroupIds.has(id));
+}
+console.log('Helen McLoughlin online textual witness: 70 source observations, 26 reversible action families, 1,095 aggregate research rows — PASS');
