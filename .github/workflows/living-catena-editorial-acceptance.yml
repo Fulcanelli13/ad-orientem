@@ -10,6 +10,8 @@ on:
       - 'data/scripture/catena/editorial-*.json'
       - 'tests/scripture-catena-*.mjs'
       - 'previews/living-catena-editorial-workbench-20261021.html'
+      - 'previews/living-catena-mark-blind-offline-template.html'
+      - 'tools/scripture/build-catena-mark-blind-offline.mjs'
   pull_request:
     paths:
       - '.github/workflows/living-catena-editorial-acceptance.yml'
@@ -17,6 +19,8 @@ on:
       - 'data/scripture/catena/editorial-*.json'
       - 'tests/scripture-catena-*.mjs'
       - 'previews/living-catena-editorial-workbench-20261021.html'
+      - 'previews/living-catena-mark-blind-offline-template.html'
+      - 'tools/scripture/build-catena-mark-blind-offline.mjs'
   workflow_dispatch:
 
 permissions:
@@ -47,6 +51,15 @@ jobs:
         run: node tests/scripture-catena-mark-adjudication.mjs
       - name: Verify 23-case blind Mark grading and two-reviewer reconciliation
         run: node tests/scripture-catena-mark-blind-review.mjs
+      - name: Build and check distributable offline blind Mark reviewer packet
+        run: node tests/scripture-catena-mark-offline-packet.mjs
+      - name: Attach source-verified standalone reviewer packet
+        uses: actions/upload-artifact@v4
+        with:
+          name: living-catena-mark-blind-offline-review
+          path: dist/catena-mark-blind-review-offline.html
+          if-no-files-found: error
+          retention-days: 30
   phone-acceptance:
     runs-on: ubuntu-latest
     timeout-minutes: 15
@@ -59,6 +72,8 @@ jobs:
       - run: npx playwright install --with-deps chromium
       - name: Verify native Scripture-to-Living-Catena flow on phone
         run: node tests/scripture-reader-mobile.mjs
+      - name: Prepare offline Mark reviewer packet for browser acceptance
+        run: node tools/scripture/build-catena-mark-blind-offline.mjs
       - name: Verify experimental Messenger and human-editor phone workbench
         run: node tests/scripture-catena-editorial-phone.mjs
 
