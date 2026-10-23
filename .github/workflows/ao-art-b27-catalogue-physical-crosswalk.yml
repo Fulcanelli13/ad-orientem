@@ -1,0 +1,87 @@
+name: B27 P1 reconcile all 451 artwork IDs against archived original image bytes
+
+on:
+  push:
+    branches: [research/sacred-art-p0-p1-archive-reconcile-20261024]
+    paths:
+      - .github/workflows/ao-art-b27-catalogue-physical-crosswalk.yml
+      - scripts/research/sacred_art_b27_physical_crosswalk.py
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sacred-art-b27-physical-crosswalk
+  cancel-in-progress: false
+
+jobs:
+  reconcile-451:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          ref: research/sacred-art-p0-p1-archive-reconcile-20261024
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Confirm fixed catalogue and no paid-service dependencies
+        run: |
+          python -m py_compile scripts/research/sacred_art_b27_physical_crosswalk.py scripts/research/sacred_art_release_archive_gate.py
+          python - <<'PY'
+          import csv,json
+          from pathlib import Path
+          with Path('data/research/sacred-art-catalogue451-after-b25.csv').open(newline='',encoding='utf-8') as f:
+              rows=list(csv.DictReader(f))
+          assert len(rows)==451 and len({r['artwork_id'] for r in rows})==451
+          baseline=json.loads(Path('data/research/sacred-art-catalogue451-after-b25.summary.json').read_text())
+          assert baseline['active_artworks']==383 and baseline['rejected_preserved']==68
+          PY
+      - name: Download only the 16 existing UNPUBLISHED GitHub Release source archives
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          TAG=sacred-art-originals-b26-20261024
+          test "$(gh release view "$TAG" -R "$GITHUB_REPOSITORY" --json isDraft --jq .isDraft)" = true
+          mkdir -p artifacts/sacred-art-b27-archive
+          gh release download "$TAG" -R "$GITHUB_REPOSITORY" \
+            --pattern 'ao-source-b26-*.tar' \
+            --dir artifacts/sacred-art-b27-archive
+          test "$(find artifacts/sacred-art-b27-archive -maxdepth 1 -name 'ao-source-b26-*.tar' -type f | wc -l)" -eq 16
+      - name: Hash ALL 290 archived image files and join to 451 frozen catalogue IDs
+        run: |
+          python scripts/research/sacred_art_b27_physical_crosswalk.py \
+            --archive-dir artifacts/sacred-art-b27-archive \
+            --output-dir artifacts/sacred-art-b27-crosswalk
+      - name: Preserve compact P1 output independently of Actions artifact expiration
+        run: |
+          set -euo pipefail
+          mkdir -p data/research
+          cp artifacts/sacred-art-b27-crosswalk/sacred-art-b27-451-physical-crosswalk.csv data/research/
+          cp artifacts/sacred-art-b27-crosswalk/sacred-art-b27-physical-image-inventory.csv data/research/
+          cp artifacts/sacred-art-b27-crosswalk/sacred-art-b27-physical-summary.json data/research/
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/research/sacred-art-b27-*.csv data/research/sacred-art-b27-physical-summary.json
+          if git diff --cached --quiet; then
+            echo 'Compact results already committed'
+            exit 0
+          fi
+          git commit -m 'research: 451 artwork to SHA-verified B27 physical archive crosswalk'
+          for attempt in 1 2 3; do
+            git fetch origin research/sacred-art-p0-p1-archive-reconcile-20261024
+            git rebase origin/research/sacred-art-p0-p1-archive-reconcile-20261024
+            git push origin HEAD:research/sacred-art-p0-p1-archive-reconcile-20261024 && exit 0
+            sleep 5
+          done
+          exit 1
+      - name: Also retain downloadable compact QA package
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-b27-451-verified-physical-crosswalk
+          path: artifacts/sacred-art-b27-crosswalk/
+          retention-days: 90
+          if-no-files-found: error
