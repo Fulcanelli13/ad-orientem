@@ -14,7 +14,8 @@ assert.equal(wave.summary.sourceOwnerSubjects,24);
 assert.equal(wave.summary.sourceLocusGroups,24);
 assert.equal(wave.summary.contextLevelResearchCandidates,87);
 assert.equal(wave.summary.explicitScopeHolds,33);
-assert.equal(wave.summary.nonSalzanoOutsideTwelveNodesStillUntriaged,108);
+assert.equal(wave.summary.otherOutsideTwelveNodesPreviouslyReviewed,18);
+assert.equal(wave.summary.otherOutsideTwelveNodesPendingSourceReview,90);
 for(const k of ['additionalOriginalManuscriptVerbatimExcerptAnchors','newModelSourceGateAdmissions','completeAnswersCertified','approvedTranslations','publicationApprovals'])
  assert.equal(wave.summary[k],0,k);
 assert.equal(wave.records.length,120);
