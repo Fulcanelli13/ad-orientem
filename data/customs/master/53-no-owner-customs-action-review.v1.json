@@ -1,0 +1,1439 @@
+{
+  "schema": "AO_53_UNASSIGNED_DETAIL_ACTION_REVIEW_V1",
+  "as_of": "2026-10-23",
+  "purpose": "Preserve and adjudicate 53 source-detail actions previously lacking any candidate source-group/master, without conflating Catholic customs and secular folklore or certifying distinctness from label similarity",
+  "status": "HUMAN_CURATED_RESEARCH_TRIAGE_SPOT_CHECKED_SELECTION_ONLY",
+  "summary": {
+    "input_unassigned_detail_records": 53,
+    "source_detail_records_adjudicated": 53,
+    "new_provisional_action_group_labels": 37,
+    "already_existing_group_relations": 1,
+    "original_pages_visually_spot_checked": 14,
+    "distinct_verified_new_customs": 0,
+    "automatic_mergers": 0,
+    "publication_changes": 0,
+    "disposition_counts": {
+      "RELATE_TO_EXISTING_GROUP_FOR_POSSIBLE_REGIONAL_VARIANT": 1,
+      "PROVISIONAL_ACTION_OR_REPORTED_FOLK_PRACTICE_LEAD": 36,
+      "FOLK_BELIEF_OR_NARRATIVE_CONTEXT": 3,
+      "COMPARATIVE_OTHER_RITE_CONTEXT": 3,
+      "HISTORICAL_CULTURAL_OR_SOURCE_CONTEXT": 3,
+      "RITE_HYMN_MATERIAL_OR_FEAST_CONTEXT": 7
+    }
+  },
+  "records": [
+    {
+      "source_detail_id": "WEI58-ADD-2-005",
+      "source_label": "Whip cracking and gun salutes accompanying winter masquerade processions",
+      "source_page": 125,
+      "earlier_reconciliation": "NO_PRACTICE_OR_MASTER_CANDIDATE",
+      "disposition": "RELATE_TO_EXISTING_GROUP_FOR_POSSIBLE_REGIONAL_VARIANT",
+      "proposed_provisional_group_ids": [],
+      "related_previous_group_candidates": [
+        "CAT-WEISER-C-005"
+      ],
+      "original_page_visually_spot_checked_in_this_turn": false,
+      "source_page_pointer": null,
+      "proof_limit": "INDEX_LABEL_AND_PREVIOUS_PAGE_LOCATOR_ONLY",
+      "original_historical_or_comparative_material_retained": true,
+      "practice_identity_verified": false,
+      "catholic_specificity_not_assumed": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "source_detail_id": "WEI58-ADD-2-006",
+      "source_label": "Incantations addressed to fruit trees and fields during midwinter",
+      "source_page": 125,
+      "earlier_reconciliation": "NO_PRACTICE_OR_MASTER_CANDIDATE",
+      "disposition": "PROVISIONAL_ACTION_OR_REPORTED_FOLK_PRACTICE_LEAD",
+      "proposed_provisional_group_ids": [
+        "CAT-WEISER-GAP-001"
+      ],
+      "related_previous_group_candidates": [],
+      "original_page_visually_spot_checked_in_this_turn": false,
+      "source_page_pointer": null,
+      "proof_limit": "INDEX_LABEL_AND_PREVIOUS_PAGE_LOCATOR_ONLY",
+      "original_historical_or_comparative_material_retained": true,
+      "practice_identity_verified": false,
+      "catholic_specificity_not_assumed": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "source_detail_id": "WEI58-ADD-2-021",
+      "source_label": "New Year marriage divination with mirrors dreams or leaves",
+      "source_page": 139,
+      "earlier_reconciliation": "NO_PRACTICE_OR_MASTER_CANDIDATE",
+      "disposition": "PROVISIONAL_ACTION_OR_REPORTED_FOLK_PRACTICE_LEAD",
+      "proposed_provisional_group_ids": [
+        "CAT-WEISER-GAP-002"
+      ],
+      "related_previous_group_candidates": [],
+      "original_page_visually_spot_checked_in_this_turn": true,
+      "source_page_pointer": "PDF_PAGE_INDEX_156",
+      "proof_limit": "ORIGINAL_PAGE_SPOT_READ_NOT_FULL_LINE_BY_LINE_EDITION_AUDIT",
+      "original_historical_or_comparative_material_retained": true,
+      "practice_identity_verified": false,
+      "catholic_specificity_not_assumed": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "source_detail_id": "WEI58-ADD-2-040",
+      "source_label": "Brandsonntag first-Lent-Sunday fiery wheels rolled down German hills",
+      "source_page": 161,
+      "earlier_reconciliation": "NO_PRACTICE_OR_MASTER_CANDIDATE",
+      "disposition": "PROVISIONAL_ACTION_OR_REPORTED_FOLK_PRACTICE_LEAD",
+      "proposed_provisional_group_ids": [
+        "CAT-WEISER-GAP-003"
+      ],
+      "related_previous_group_candidates": [],
+      "original_page_visually_spot_checked_in_this_turn": true,
+      "source_page_pointer": "PDF_PAGE_INDEX_178",
+      "proof_limit": "ORIGINAL_PAGE_SPOT_READ_NOT_FULL_LINE_BY_LINE_EDITION_AUDIT",
+      "original_historical_or_comparative_material_retained": true,
+      "practice_identity_verified": false,
+      "catholic_specificity_not_assumed": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "source_detail_id": "WEI58-ADD-2-041",
+      "source_label": "French Fête des brandons young people carry firebrands",
+      "source_page": 161,
+      "earlier_reconciliation": "NO_PRACTICE_OR_MASTER_CANDIDATE",
+      "disposition": "PROVISIONAL_ACTION_OR_REPORTED_FOLK_PRACTICE_LEAD",
+      "proposed_provisional_group_ids": [
+        "CAT-WEISER-GAP-004"
+      ],
+      "related_previous_group_candidates": [],
+      "original_page_visually_spot_checked_in_this_turn": true,
+      "source_page_pointer": "PDF_PAGE_INDEX_178",
+      "proof_limit": "ORIGINAL_PAGE_SPOT_READ_NOT_FULL_LINE_BY_LINE_EDITION_AUDIT",
+      "original_historical_or_comparative_material_retained": true,
+      "practice_identity_verified": false,
+      "catholic_specificity_not_assumed": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "source_detail_id": "WEI58-ADD-2-044",
+      "source_label": "Plough Monday or Blochziehen ceremonial spring plough-drawing",
+      "source_page": 162,
+      "earlier_reconciliation": "NO_PRACTICE_OR_MASTER_CANDIDATE",
+      "disposition": "PROVISIONAL_ACTION_OR_REPORTED_FOLK_PRACTICE_LEAD",
+      "proposed_provisional_group_ids": [
+        "CAT-WEISER-GAP-005"
+      ],
+      "related_previous_group_candidates": [],
+      "original_page_visually_spot_checked_in_this_turn": true,
+      "source_page_pointer": "PDF_PAGE_INDEX_179",
+      "proof_limit": "ORIGINAL_PAGE_SPOT_READ_NOT_FULL_LINE_BY_LINE_EDITION_AUDIT",
+      "original_historical_or_comparative_material_retained": true,
+      "practice_identity_verified": false,
+      "catholic_specificity_not_assumed": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "source_detail_id": "WEI58-ADD-2-045",
+      "source_label": "Seasonal water splashing of young men and women at carnival or Easter",
+      "source_page": 162,
+      "earlier_reconciliation": "NO_PRACTICE_OR_MASTER_CANDIDATE",
+      "disposition": "PROVISIONAL_ACTION_OR_REPORTED_FOLK_PRACTICE_LEAD",
+      "proposed_provisional_group_ids": [
+        "CAT-WEISER-GAP-006"
+      ],
+      "related_previous_group_candidates": [],
+      "original_page_visually_spot_checked_in_this_turn": true,
+      "source_page_pointer": "PDF_PAGE_INDEX_179",
+      "proof_limit": "ORIGINAL_PAGE_SPOT_READ_NOT_FULL_LINE_BY_LINE_EDITION_AUDIT",
+      "original_historical_or_comparative_material_retained": true,
+      "practice_identity_verified": false,
+      "catholic_specificity_not_assumed": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "source_detail_id": "WEI58-ADD-2-046",
+      "source_label": "Easter morning face washing in rivers and brooks in France and central Europe",
+      "source_page": 162,
+      "earlier_reconciliation": "NO_PRACTICE_OR_MASTER_CANDIDATE",
+      "disposition": "PROVISIONAL_ACTION_OR_REPORTED_FOLK_PRACTICE_LEAD",
+      "proposed_provisional_group_ids": [
+        "CAT-WEISER-GAP-007"
+      ],
+      "related_previous_group_candidates": [],
+      "original_page_visually_spot_checked_in_this_turn": true,
+      "source_page_pointer": "PDF_PAGE_INDEX_179",
+      "proof_limit": "ORIGINAL_PAGE_SPOT_READ_NOT_FULL_LINE_BY_LINE_EDITION_AUDIT",
+      "original_historical_or_comparative_material_retained": true,
+      "practice_identity_verified": false,
+      "catholic_specificity_not_assumed": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "source_detail_id": "WEI58-ADD-2-047",
+      "source_label": "French Canadian Easter dawn stream-water washing and bottling",
+      "source_page": 163,
+      "earlier_reconciliation": "NO_PRACTICE_OR_MASTER_CANDIDATE",
+      "disposition": "PROVISIONAL_ACTION_OR_REPORTED_FOLK_PRACTICE_LEAD",
+      "proposed_provisional_group_ids": [
+        "CAT-WEISER-GAP-008"
+      ],
+      "related_previous_group_candidates": [],
+      "original_page_visually_spot_checked_in_this_turn": false,
+      "source_page_pointer": null,
+      "proof_limit": "INDEX_LABEL_AND_PREVIOUS_PAGE_LOCATOR_ONLY",
+      "original_historical_or_comparative_material_retained": true,
+      "practice_identity_verified": false,
+      "catholic_specificity_not_assumed": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "source_detail_id": "WEI58-ADD-2-048",
+      "source_label": "Wedding couple sprinkled with Easter-drawn water in Germany or Austria",
+      "source_page": 163,
+      "earlier_reconciliation": "NO_PRACTICE_OR_MASTER_CANDIDATE",
+      "disposition": "PROVISIONAL_ACTION_OR_REPORTED_FOLK_PRACTICE_LEAD",
+      "proposed_provisional_group_ids": [
+        "CAT-WEISER-GAP-009"
+      ],
+      "related_previous_group_candidates": [],
+      "original_page_visually_spot_checked_in_this_turn": false,
+      "source_page_pointer": null,
+      "proof_limit": "INDEX_LABEL_AND_PREVIOUS_PAGE_LOCATOR_ONLY",
+      "original_historical_or_comparative_material_retained": true,
+      "practice_identity_verified": false,
+      "catholic_specificity_not_assumed": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "source_detail_id": "WEI58-ADD-2-049",
+      "source_label": "Horses ritually ridden into Easter river water",
+      "source_page": 163,
+      "earlier_reconciliation": "NO_PRACTICE_OR_MASTER_CANDIDATE",
+      "disposition": "PROVISIONAL_ACTION_OR_REPORTED_FOLK_PRACTICE_LEAD",
+      "proposed_provisional_group_ids": [
+        "CAT-WEISER-GAP-010"
+      ],
+      "related_previous_group_candidates": [],
+      "original_page_visually_spot_checked_in_this_turn": false,
+      "source_page_pointer": null,
+      "proof_limit": "INDEX_LABEL_AND_PREVIOUS_PAGE_LOCATOR_ONLY",
+      "original_historical_or_comparative_material_retained": true,
+      "practice_identity_verified": false,
+      "catholic_specificity_not_assumed": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "source_detail_id": "WEI58-ADD-2-050",
+      "source_label": "Holy Saturday blessed water taken home by family",
+      "source_page": 163,
+      "earlier_reconciliation": "NO_PRACTICE_OR_MASTER_CANDIDATE",
+      "disposition": "PROVISIONAL_ACTION_OR_REPORTED_FOLK_PRACTICE_LEAD",
+      "proposed_provisional_group_ids": [
+        "CAT-WEISER-GAP-011"
+      ],
+      "related_previous_group_candidates": [],
+      "original_page_visually_spot_checked_in_this_turn": false,
+      "source_page_pointer": null,
+      "proof_limit": "INDEX_LABEL_AND_PREVIOUS_PAGE_LOCATOR_ONLY",
+      "original_historical_or_comparative_material_retained": true,
+      "practice_identity_verified": false,
+      "catholic_specificity_not_assumed": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "source_detail_id": "WEI58-ADD-2-051",
+      "source_label": "Tyrolean maypole left at newlyweds house until first child's birth",
+      "source_page": 164,
+      "earlier_reconciliation": "NO_PRACTICE_OR_MASTER_CANDIDATE",
+      "disposition": "PROVISIONAL_ACTION_OR_REPORTED_FOLK_PRACTICE_LEAD",
+      "proposed_provisional_group_ids": [
+        "CAT-WEISER-GAP-012"
+      ],
+      "related_previous_group_candidates": [],
+      "original_page_visually_spot_checked_in_this_turn": false,
+      "source_page_pointer": null,
+      "proof_limit": "INDEX_LABEL_AND_PREVIOUS_PAGE_LOCATOR_ONLY",
+      "original_historical_or_comparative_material_retained": true,
+      "practice_identity_verified": false,
+      "catholic_specificity_not_assumed": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "source_detail_id": "WEI58-DETAIL-B-001",
+      "source_label": "Papal golden rose carried after Laetare Mass and blessed for presentation",
+      "source_page": 178,
+      "earlier_reconciliation": "NO_PRACTICE_OR_MASTER_CANDIDATE",
+      "disposition": "PROVISIONAL_ACTION_OR_REPORTED_FOLK_PRACTICE_LEAD",
+      "proposed_provisional_group_ids": [
+        "CAT-WEISER-GAP-013"
+      ],
+      "related_previous_group_candidates": [],
+      "original_page_visually_spot_checked_in_this_turn": false,
+      "source_page_pointer": null,
+      "proof_limit": "INDEX_LABEL_AND_PREVIOUS_PAGE_LOCATOR_ONLY",
+      "original_historical_or_comparative_material_retained": true,
+      "practice_identity_verified": false,
+      "catholic_specificity_not_assumed": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "source_detail_id": "WEI58-DETAIL-B-017",
+      "source_label": "Last Supper church reenactment with twelve Apostles in Mexico and South America",
+      "source_page": 196,
+      "earlier_reconciliation": "NO_PRACTICE_OR_MASTER_CANDIDATE",
+      "disposition": "PROVISIONAL_ACTION_OR_REPORTED_FOLK_PRACTICE_LEAD",
+      "proposed_provisional_group_ids": [
+        "CAT-WEISER-GAP-014"
+      ],
+      "related_previous_group_candidates": [],
+      "original_page_visually_spot_checked_in_this_turn": true,
+      "source_page_pointer": "PDF_PAGE_INDEX_213",
+      "proof_limit": "ORIGINAL_PAGE_SPOT_READ_NOT_FULL_LINE_BY_LINE_EDITION_AUDIT",
+      "original_historical_or_comparative_material_retained": true,
+      "practice_identity_verified": false,
+      "catholic_specificity_not_assumed": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "source_detail_id": "WEI58-DETAIL-B-061",
+      "source_label": "Walking barefoot through Pentecost dew for folk healing belief",
+      "source_page": 253,
+      "earlier_reconciliation": "NO_PRACTICE_OR_MASTER_CANDIDATE",
+      "disposition": "PROVISIONAL_ACTION_OR_REPORTED_FOLK_PRACTICE_LEAD",
+      "proposed_provisional_group_ids": [
+        "CAT-WEISER-GAP-015"
+      ],
+      "related_previous_group_candidates": [],
+      "original_page_visually_spot_checked_in_this_turn": false,
+      "source_page_pointer": null,
+      "proof_limit": "INDEX_LABEL_AND_PREVIOUS_PAGE_LOCATOR_ONLY",
+      "original_historical_or_comparative_material_retained": true,
+      "practice_identity_verified": false,
+      "catholic_specificity_not_assumed": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "source_detail_id": "WEI58-DETAIL-B-062",
+      "source_label": "Dew collected on bread and fed to animals for claimed protection",
+      "source_page": 253,
+      "earlier_reconciliation": "NO_PRACTICE_OR_MASTER_CANDIDATE",
+      "disposition": "PROVISIONAL_ACTION_OR_REPORTED_FOLK_PRACTICE_LEAD",
+      "proposed_provisional_group_ids": [
+        "CAT-WEISER-GAP-016"
+      ],
+      "related_previous_group_candidates": [],
+      "original_page_visually_spot_checked_in_this_turn": false,
+      "source_page_pointer": null,
+      "proof_limit": "INDEX_LABEL_AND_PREVIOUS_PAGE_LOCATOR_ONLY",
+      "original_historical_or_comparative_material_retained": true,
+      "practice_identity_verified": false,
+      "catholic_specificity_not_assumed": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "source_detail_id": "WEI58-DETAIL-B-065",
+      "source_label": "Trinity rain and midnight flowers as healing and treasure folklore",
+      "source_page": 258,
+      "earlier_reconciliation": "NO_PRACTICE_OR_MASTER_CANDIDATE",
+      "disposition": "FOLK_BELIEF_OR_NARRATIVE_CONTEXT",
+      "proposed_provisional_group_ids": [],
+      "related_previous_group_candidates": [],
+      "original_page_visually_spot_checked_in_this_turn": false,
+      "source_page_pointer": null,
+      "proof_limit": "INDEX_LABEL_AND_PREVIOUS_PAGE_LOCATOR_ONLY",
+      "original_historical_or_comparative_material_retained": true,
+      "practice_identity_verified": false,
+      "catholic_specificity_not_assumed": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "source_detail_id": "WEI58-DETAIL-B-066",
+      "source_label": "Trinity Sunday avoidance of sewing or metal work due to lightning legend",
+      "source_page": 258,
+      "earlier_reconciliation": "NO_PRACTICE_OR_MASTER_CANDIDATE",
+      "disposition": "PROVISIONAL_ACTION_OR_REPORTED_FOLK_PRACTICE_LEAD",
+      "proposed_provisional_group_ids": [
+        "CAT-WEISER-GAP-017"
+      ],
+      "related_previous_group_candidates": [],
+      "original_page_visually_spot_checked_in_this_turn": false,
+      "source_page_pointer": null,
+      "proof_limit": "INDEX_LABEL_AND_PREVIOUS_PAGE_LOCATOR_ONLY",
+      "original_historical_or_comparative_material_retained": true,
+      "practice_identity_verified": false,
+      "catholic_specificity_not_assumed": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "source_detail_id": "WEI58-DETAIL-B-088",
+      "source_label": "Eastern commemorations for departed priests, displaced dead and others on distinct days",
+      "source_page": 310,
+      "earlier_reconciliation": "NO_PRACTICE_OR_MASTER_CANDIDATE",
+      "disposition": "COMPARATIVE_OTHER_RITE_CONTEXT",
+      "proposed_provisional_group_ids": [],
+      "related_previous_group_candidates": [],
+      "original_page_visually_spot_checked_in_this_turn": false,
+      "source_page_pointer": null,
+      "proof_limit": "INDEX_LABEL_AND_PREVIOUS_PAGE_LOCATOR_ONLY",
+      "original_historical_or_comparative_material_retained": true,
+      "practice_identity_verified": false,
+      "catholic_specificity_not_assumed": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "source_detail_id": "WEI58-DETAIL-B-105",
+      "source_label": "Gathering and presenting St John herbs for blessing",
+      "source_page": 331,
+      "earlier_reconciliation": "NO_PRACTICE_OR_MASTER_CANDIDATE",
+      "disposition": "PROVISIONAL_ACTION_OR_REPORTED_FOLK_PRACTICE_LEAD",
+      "proposed_provisional_group_ids": [
+        "CAT-WEISER-GAP-018"
+      ],
+      "related_previous_group_candidates": [],
+      "original_page_visually_spot_checked_in_this_turn": false,
+      "source_page_pointer": null,
+      "proof_limit": "INDEX_LABEL_AND_PREVIOUS_PAGE_LOCATOR_ONLY",
+      "original_historical_or_comparative_material_retained": true,
+      "practice_identity_verified": false,
+      "catholic_specificity_not_assumed": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "source_detail_id": "WEI58-DETAIL-B-106",
+      "source_label": "Saint John bonfire straw effigies and noisy demon-averting folklore",
+      "source_page": 331,
+      "earlier_reconciliation": "NO_PRACTICE_OR_MASTER_CANDIDATE",
+      "disposition": "PROVISIONAL_ACTION_OR_REPORTED_FOLK_PRACTICE_LEAD",
+      "proposed_provisional_group_ids": [
+        "CAT-WEISER-GAP-019"
+      ],
+      "related_previous_group_candidates": [],
+      "original_page_visually_spot_checked_in_this_turn": false,
+      "source_page_pointer": null,
+      "proof_limit": "INDEX_LABEL_AND_PREVIOUS_PAGE_LOCATOR_ONLY",
+      "original_historical_or_comparative_material_retained": true,
+      "practice_identity_verified": false,
+      "catholic_specificity_not_assumed": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "source_detail_id": "WEI58-DETAIL-B-111",
+      "source_label": "Saint Lucy inscriptions and figure drawings on doors and fences",
+      "source_page": 342,
+      "earlier_reconciliation": "NO_PRACTICE_OR_MASTER_CANDIDATE",
+      "disposition": "PROVISIONAL_ACTION_OR_REPORTED_FOLK_PRACTICE_LEAD",
+      "proposed_provisional_group_ids": [
+        "CAT-WEISER-GAP-020"
+      ],
+      "related_previous_group_candidates": [],
+      "original_page_visually_spot_checked_in_this_turn": true,
+      "source_page_pointer": "PDF_PAGE_INDEX_359",
+      "proof_limit": "ORIGINAL_PAGE_SPOT_READ_NOT_FULL_LINE_BY_LINE_EDITION_AUDIT",
+      "original_historical_or_comparative_material_retained": true,
+      "practice_identity_verified": false,
+      "catholic_specificity_not_assumed": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "source_detail_id": "WEI58-DETAIL-B-112",
+      "source_label": "Saint Lucy incense-and-bonfire customs tied to folkloric healing claims",
+      "source_page": 342,
+      "earlier_reconciliation": "NO_PRACTICE_OR_MASTER_CANDIDATE",
+      "disposition": "PROVISIONAL_ACTION_OR_REPORTED_FOLK_PRACTICE_LEAD",
+      "proposed_provisional_group_ids": [
+        "CAT-WEISER-GAP-021"
+      ],
+      "related_previous_group_candidates": [],
+      "original_page_visually_spot_checked_in_this_turn": true,
+      "source_page_pointer": "PDF_PAGE_INDEX_359",
+      "proof_limit": "ORIGINAL_PAGE_SPOT_READ_NOT_FULL_LINE_BY_LINE_EDITION_AUDIT",
+      "original_historical_or_comparative_material_retained": true,
+      "practice_identity_verified": false,
+      "catholic_specificity_not_assumed": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "source_detail_id": "WEI58-DETAIL-B-113",
+      "source_label": "Harvest baby last sheaf carried in a folk procession",
+      "source_page": 269,
+      "earlier_reconciliation": "NO_PRACTICE_OR_MASTER_CANDIDATE",
+      "disposition": "PROVISIONAL_ACTION_OR_REPORTED_FOLK_PRACTICE_LEAD",
+      "proposed_provisional_group_ids": [
+        "CAT-WEISER-GAP-022"
+      ],
+      "related_previous_group_candidates": [],
+      "original_page_visually_spot_checked_in_this_turn": true,
+      "source_page_pointer": "PDF_PAGE_INDEX_286",
+      "proof_limit": "ORIGINAL_PAGE_SPOT_READ_NOT_FULL_LINE_BY_LINE_EDITION_AUDIT",
+      "original_historical_or_comparative_material_retained": true,
+      "practice_identity_verified": false,
+      "catholic_specificity_not_assumed": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "source_detail_id": "WEI58-DETAIL-B-114",
+      "source_label": "Austrian Erntebraut with last-sheaf wreath as harvest bride",
+      "source_page": 269,
+      "earlier_reconciliation": "NO_PRACTICE_OR_MASTER_CANDIDATE",
+      "disposition": "PROVISIONAL_ACTION_OR_REPORTED_FOLK_PRACTICE_LEAD",
+      "proposed_provisional_group_ids": [
+        "CAT-WEISER-GAP-023"
+      ],
+      "related_previous_group_candidates": [],
+      "original_page_visually_spot_checked_in_this_turn": true,
+      "source_page_pointer": "PDF_PAGE_INDEX_286",
+      "proof_limit": "ORIGINAL_PAGE_SPOT_READ_NOT_FULL_LINE_BY_LINE_EDITION_AUDIT",
+      "original_historical_or_comparative_material_retained": true,
+      "practice_identity_verified": false,
+      "catholic_specificity_not_assumed": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "source_detail_id": "WEI58-DETAIL-B-115",
+      "source_label": "English horkey cart and Scottish kirn doll last-sheaf practices",
+      "source_page": 269,
+      "earlier_reconciliation": "NO_PRACTICE_OR_MASTER_CANDIDATE",
+      "disposition": "PROVISIONAL_ACTION_OR_REPORTED_FOLK_PRACTICE_LEAD",
+      "proposed_provisional_group_ids": [
+        "CAT-WEISER-GAP-024",
+        "CAT-WEISER-GAP-025"
+      ],
+      "related_previous_group_candidates": [],
+      "original_page_visually_spot_checked_in_this_turn": true,
+      "source_page_pointer": "PDF_PAGE_INDEX_286",
+      "proof_limit": "ORIGINAL_PAGE_SPOT_READ_NOT_FULL_LINE_BY_LINE_EDITION_AUDIT",
+      "original_historical_or_comparative_material_retained": true,
+      "practice_identity_verified": false,
+      "catholic_specificity_not_assumed": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "source_detail_id": "WEI58-DETAIL-C-001",
+      "source_label": "Weekday saints' celebrations repeated on the following Sunday in local solemnity",
+      "source_page": 13,
+      "earlier_reconciliation": "NO_PRACTICE_OR_MASTER_CANDIDATE",
+      "disposition": "HISTORICAL_CULTURAL_OR_SOURCE_CONTEXT",
+      "proposed_provisional_group_ids": [],
+      "related_previous_group_candidates": [],
+      "original_page_visually_spot_checked_in_this_turn": false,
+      "source_page_pointer": null,
+      "proof_limit": "INDEX_LABEL_AND_PREVIOUS_PAGE_LOCATOR_ONLY",
+      "original_historical_or_comparative_material_retained": true,
+      "practice_identity_verified": false,
+      "catholic_specificity_not_assumed": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "source_detail_id": "WEI58-DETAIL-C-002",
+      "source_label": "Medieval Sunday pre-Mass sprinkling of the faithful",
+      "source_page": 15,
+      "earlier_reconciliation": "NO_PRACTICE_OR_MASTER_CANDIDATE",
+      "disposition": "RITE_HYMN_MATERIAL_OR_FEAST_CONTEXT",
+      "proposed_provisional_group_ids": [],
+      "related_previous_group_candidates": [],
+      "original_page_visually_spot_checked_in_this_turn": false,
+      "source_page_pointer": null,
+      "proof_limit": "INDEX_LABEL_AND_PREVIOUS_PAGE_LOCATOR_ONLY",
+      "original_historical_or_comparative_material_retained": true,
+      "practice_identity_verified": false,
+      "catholic_specificity_not_assumed": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "source_detail_id": "WEI58-DETAIL-C-010",
+      "source_label": "Sunday-born child fortune and supernatural gifts folklore",
+      "source_page": 17,
+      "earlier_reconciliation": "NO_PRACTICE_OR_MASTER_CANDIDATE",
+      "disposition": "FOLK_BELIEF_OR_NARRATIVE_CONTEXT",
+      "proposed_provisional_group_ids": [],
+      "related_previous_group_candidates": [],
+      "original_page_visually_spot_checked_in_this_turn": false,
+      "source_page_pointer": null,
+      "proof_limit": "INDEX_LABEL_AND_PREVIOUS_PAGE_LOCATOR_ONLY",
+      "original_historical_or_comparative_material_retained": true,
+      "practice_identity_verified": false,
+      "catholic_specificity_not_assumed": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "source_detail_id": "WEI58-DETAIL-C-011",
+      "source_label": "Punishment legends for breaking Sunday rest",
+      "source_page": 17,
+      "earlier_reconciliation": "NO_PRACTICE_OR_MASTER_CANDIDATE",
+      "disposition": "FOLK_BELIEF_OR_NARRATIVE_CONTEXT",
+      "proposed_provisional_group_ids": [],
+      "related_previous_group_candidates": [],
+      "original_page_visually_spot_checked_in_this_turn": false,
+      "source_page_pointer": null,
+      "proof_limit": "INDEX_LABEL_AND_PREVIOUS_PAGE_LOCATOR_ONLY",
+      "original_historical_or_comparative_material_retained": true,
+      "practice_identity_verified": false,
+      "catholic_specificity_not_assumed": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "source_detail_id": "WEI58-DETAIL-C-014",
+      "source_label": "Stations of the Cross incorporated into private prayer hours",
+      "source_page": 22,
+      "earlier_reconciliation": "NO_PRACTICE_OR_MASTER_CANDIDATE",
+      "disposition": "PROVISIONAL_ACTION_OR_REPORTED_FOLK_PRACTICE_LEAD",
+      "proposed_provisional_group_ids": [
+        "CAT-WEISER-GAP-026"
+      ],
+      "related_previous_group_candidates": [],
+      "original_page_visually_spot_checked_in_this_turn": false,
+      "source_page_pointer": null,
+      "proof_limit": "INDEX_LABEL_AND_PREVIOUS_PAGE_LOCATOR_ONLY",
+      "original_historical_or_comparative_material_retained": true,
+      "practice_identity_verified": false,
+      "catholic_specificity_not_assumed": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "source_detail_id": "WEI58-DETAIL-C-033",
+      "source_label": "Ember seasonal quarter-term payment of debts and tithes",
+      "source_page": 37,
+      "earlier_reconciliation": "NO_PRACTICE_OR_MASTER_CANDIDATE",
+      "disposition": "PROVISIONAL_ACTION_OR_REPORTED_FOLK_PRACTICE_LEAD",
+      "proposed_provisional_group_ids": [
+        "CAT-WEISER-GAP-027"
+      ],
+      "related_previous_group_candidates": [],
+      "original_page_visually_spot_checked_in_this_turn": false,
+      "source_page_pointer": null,
+      "proof_limit": "INDEX_LABEL_AND_PREVIOUS_PAGE_LOCATOR_ONLY",
+      "original_historical_or_comparative_material_retained": true,
+      "practice_identity_verified": false,
+      "catholic_specificity_not_assumed": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "source_detail_id": "WEI58-DETAIL-C-034",
+      "source_label": "Rogation procession antiphons once sung at the beginning of Major Litany",
+      "source_page": 43,
+      "earlier_reconciliation": "NO_PRACTICE_OR_MASTER_CANDIDATE",
+      "disposition": "RITE_HYMN_MATERIAL_OR_FEAST_CONTEXT",
+      "proposed_provisional_group_ids": [],
+      "related_previous_group_candidates": [],
+      "original_page_visually_spot_checked_in_this_turn": false,
+      "source_page_pointer": null,
+      "proof_limit": "INDEX_LABEL_AND_PREVIOUS_PAGE_LOCATOR_ONLY",
+      "original_historical_or_comparative_material_retained": true,
+      "practice_identity_verified": false,
+      "catholic_specificity_not_assumed": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "source_detail_id": "WEI58-DETAIL-C-035",
+      "source_label": "Eastern pre-Lent Fast of Ninevites or Fast of Adam as comparative discipline",
+      "source_page": 44,
+      "earlier_reconciliation": "NO_PRACTICE_OR_MASTER_CANDIDATE",
+      "disposition": "COMPARATIVE_OTHER_RITE_CONTEXT",
+      "proposed_provisional_group_ids": [],
+      "related_previous_group_candidates": [],
+      "original_page_visually_spot_checked_in_this_turn": false,
+      "source_page_pointer": null,
+      "proof_limit": "INDEX_LABEL_AND_PREVIOUS_PAGE_LOCATOR_ONLY",
+      "original_historical_or_comparative_material_retained": true,
+      "practice_identity_verified": false,
+      "catholic_specificity_not_assumed": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "source_detail_id": "WEI58-DETAIL-C-041",
+      "source_label": "Superstitious circumambulation of farmland with protective-effect claim",
+      "source_page": 45,
+      "earlier_reconciliation": "NO_PRACTICE_OR_MASTER_CANDIDATE",
+      "disposition": "PROVISIONAL_ACTION_OR_REPORTED_FOLK_PRACTICE_LEAD",
+      "proposed_provisional_group_ids": [
+        "CAT-WEISER-GAP-028"
+      ],
+      "related_previous_group_candidates": [],
+      "original_page_visually_spot_checked_in_this_turn": false,
+      "source_page_pointer": null,
+      "proof_limit": "INDEX_LABEL_AND_PREVIOUS_PAGE_LOCATOR_ONLY",
+      "original_historical_or_comparative_material_retained": true,
+      "practice_identity_verified": false,
+      "catholic_specificity_not_assumed": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "source_detail_id": "WEI58-DETAIL-D-001",
+      "source_label": "Historical Advent fast limited to particular weekdays in Latin countries",
+      "source_page": 50,
+      "earlier_reconciliation": "NO_PRACTICE_OR_MASTER_CANDIDATE",
+      "disposition": "PROVISIONAL_ACTION_OR_REPORTED_FOLK_PRACTICE_LEAD",
+      "proposed_provisional_group_ids": [
+        "CAT-WEISER-GAP-029"
+      ],
+      "related_previous_group_candidates": [],
+      "original_page_visually_spot_checked_in_this_turn": false,
+      "source_page_pointer": null,
+      "proof_limit": "INDEX_LABEL_AND_PREVIOUS_PAGE_LOCATOR_ONLY",
+      "original_historical_or_comparative_material_retained": true,
+      "practice_identity_verified": false,
+      "catholic_specificity_not_assumed": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "source_detail_id": "WEI58-DETAIL-D-002",
+      "source_label": "Byzantine Saint Philip's Nativity fast and Syriac Armenian Coptic variants",
+      "source_page": 51,
+      "earlier_reconciliation": "NO_PRACTICE_OR_MASTER_CANDIDATE",
+      "disposition": "COMPARATIVE_OTHER_RITE_CONTEXT",
+      "proposed_provisional_group_ids": [],
+      "related_previous_group_candidates": [],
+      "original_page_visually_spot_checked_in_this_turn": false,
+      "source_page_pointer": null,
+      "proof_limit": "INDEX_LABEL_AND_PREVIOUS_PAGE_LOCATOR_ONLY",
+      "original_historical_or_comparative_material_retained": true,
+      "practice_identity_verified": false,
+      "catholic_specificity_not_assumed": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "source_detail_id": "WEI58-DETAIL-D-026",
+      "source_label": "Central European Christmas Eve joyful fast with abstinence from meat",
+      "source_page": 69,
+      "earlier_reconciliation": "NO_PRACTICE_OR_MASTER_CANDIDATE",
+      "disposition": "HISTORICAL_CULTURAL_OR_SOURCE_CONTEXT",
+      "proposed_provisional_group_ids": [],
+      "related_previous_group_candidates": [],
+      "original_page_visually_spot_checked_in_this_turn": false,
+      "source_page_pointer": null,
+      "proof_limit": "INDEX_LABEL_AND_PREVIOUS_PAGE_LOCATOR_ONLY",
+      "original_historical_or_comparative_material_retained": true,
+      "practice_identity_verified": false,
+      "catholic_specificity_not_assumed": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "source_detail_id": "WEI58-DETAIL-D-027",
+      "source_label": "Papal Christmas Day dawn station to honour St Anastasia",
+      "source_page": 70,
+      "earlier_reconciliation": "NO_PRACTICE_OR_MASTER_CANDIDATE",
+      "disposition": "RITE_HYMN_MATERIAL_OR_FEAST_CONTEXT",
+      "proposed_provisional_group_ids": [],
+      "related_previous_group_candidates": [],
+      "original_page_visually_spot_checked_in_this_turn": false,
+      "source_page_pointer": null,
+      "proof_limit": "INDEX_LABEL_AND_PREVIOUS_PAGE_LOCATOR_ONLY",
+      "original_historical_or_comparative_material_retained": true,
+      "practice_identity_verified": false,
+      "catholic_specificity_not_assumed": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "source_detail_id": "WEI58-DETAIL-D-028",
+      "source_label": "Bethlehem Christmas visitors search dark well for the Magi star",
+      "source_page": 73,
+      "earlier_reconciliation": "NO_PRACTICE_OR_MASTER_CANDIDATE",
+      "disposition": "PROVISIONAL_ACTION_OR_REPORTED_FOLK_PRACTICE_LEAD",
+      "proposed_provisional_group_ids": [
+        "CAT-WEISER-GAP-030"
+      ],
+      "related_previous_group_candidates": [],
+      "original_page_visually_spot_checked_in_this_turn": false,
+      "source_page_pointer": null,
+      "proof_limit": "INDEX_LABEL_AND_PREVIOUS_PAGE_LOCATOR_ONLY",
+      "original_historical_or_comparative_material_retained": true,
+      "practice_identity_verified": false,
+      "catholic_specificity_not_assumed": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "source_detail_id": "WEI58-DETAIL-D-047",
+      "source_label": "Franciscan Nativity hymns sung in medieval Italy",
+      "source_page": 80,
+      "earlier_reconciliation": "NO_PRACTICE_OR_MASTER_CANDIDATE",
+      "disposition": "RITE_HYMN_MATERIAL_OR_FEAST_CONTEXT",
+      "proposed_provisional_group_ids": [],
+      "related_previous_group_candidates": [],
+      "original_page_visually_spot_checked_in_this_turn": false,
+      "source_page_pointer": null,
+      "proof_limit": "INDEX_LABEL_AND_PREVIOUS_PAGE_LOCATOR_ONLY",
+      "original_historical_or_comparative_material_retained": true,
+      "practice_identity_verified": false,
+      "catholic_specificity_not_assumed": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "source_detail_id": "WEI58-DETAIL-D-048",
+      "source_label": "Dominican-inspired German carols combining vernacular and Latin",
+      "source_page": 80,
+      "earlier_reconciliation": "NO_PRACTICE_OR_MASTER_CANDIDATE",
+      "disposition": "RITE_HYMN_MATERIAL_OR_FEAST_CONTEXT",
+      "proposed_provisional_group_ids": [],
+      "related_previous_group_candidates": [],
+      "original_page_visually_spot_checked_in_this_turn": false,
+      "source_page_pointer": null,
+      "proof_limit": "INDEX_LABEL_AND_PREVIOUS_PAGE_LOCATOR_ONLY",
+      "original_historical_or_comparative_material_retained": true,
+      "practice_identity_verified": false,
+      "catholic_specificity_not_assumed": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "source_detail_id": "WEI58-DETAIL-D-058",
+      "source_label": "Macaronic Latin-and-vernacular carol singing",
+      "source_page": 89,
+      "earlier_reconciliation": "NO_PRACTICE_OR_MASTER_CANDIDATE",
+      "disposition": "RITE_HYMN_MATERIAL_OR_FEAST_CONTEXT",
+      "proposed_provisional_group_ids": [],
+      "related_previous_group_candidates": [],
+      "original_page_visually_spot_checked_in_this_turn": false,
+      "source_page_pointer": null,
+      "proof_limit": "INDEX_LABEL_AND_PREVIOUS_PAGE_LOCATOR_ONLY",
+      "original_historical_or_comparative_material_retained": true,
+      "practice_identity_verified": false,
+      "catholic_specificity_not_assumed": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "source_detail_id": "WEI58-DETAIL-D-066",
+      "source_label": "Nativity crib displays traditional ox and ass from Isaiah and Habakkuk",
+      "source_page": 95,
+      "earlier_reconciliation": "NO_PRACTICE_OR_MASTER_CANDIDATE",
+      "disposition": "RITE_HYMN_MATERIAL_OR_FEAST_CONTEXT",
+      "proposed_provisional_group_ids": [],
+      "related_previous_group_candidates": [],
+      "original_page_visually_spot_checked_in_this_turn": false,
+      "source_page_pointer": null,
+      "proof_limit": "INDEX_LABEL_AND_PREVIOUS_PAGE_LOCATOR_ONLY",
+      "original_historical_or_comparative_material_retained": true,
+      "practice_identity_verified": false,
+      "catholic_specificity_not_assumed": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "source_detail_id": "WEI58-DETAIL-D-078",
+      "source_label": "Undecorated evergreen Yule tree kept distinct from decorated Christmas tree",
+      "source_page": 98,
+      "earlier_reconciliation": "NO_PRACTICE_OR_MASTER_CANDIDATE",
+      "disposition": "PROVISIONAL_ACTION_OR_REPORTED_FOLK_PRACTICE_LEAD",
+      "proposed_provisional_group_ids": [
+        "CAT-WEISER-GAP-031"
+      ],
+      "related_previous_group_candidates": [],
+      "original_page_visually_spot_checked_in_this_turn": false,
+      "source_page_pointer": null,
+      "proof_limit": "INDEX_LABEL_AND_PREVIOUS_PAGE_LOCATOR_ONLY",
+      "original_historical_or_comparative_material_retained": true,
+      "practice_identity_verified": false,
+      "catholic_specificity_not_assumed": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "source_detail_id": "WEI58-DETAIL-D-081",
+      "source_label": "Mistletoe seasonal greetings and kissing in English custom",
+      "source_page": 104,
+      "earlier_reconciliation": "NO_PRACTICE_OR_MASTER_CANDIDATE",
+      "disposition": "PROVISIONAL_ACTION_OR_REPORTED_FOLK_PRACTICE_LEAD",
+      "proposed_provisional_group_ids": [
+        "CAT-WEISER-GAP-032"
+      ],
+      "related_previous_group_candidates": [],
+      "original_page_visually_spot_checked_in_this_turn": false,
+      "source_page_pointer": null,
+      "proof_limit": "INDEX_LABEL_AND_PREVIOUS_PAGE_LOCATOR_ONLY",
+      "original_historical_or_comparative_material_retained": true,
+      "practice_identity_verified": false,
+      "catholic_specificity_not_assumed": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "source_detail_id": "WEI58-DETAIL-D-082",
+      "source_label": "Historical York Cathedral mistletoe display at Christmas",
+      "source_page": 104,
+      "earlier_reconciliation": "NO_PRACTICE_OR_MASTER_CANDIDATE",
+      "disposition": "PROVISIONAL_ACTION_OR_REPORTED_FOLK_PRACTICE_LEAD",
+      "proposed_provisional_group_ids": [
+        "CAT-WEISER-GAP-033"
+      ],
+      "related_previous_group_candidates": [],
+      "original_page_visually_spot_checked_in_this_turn": false,
+      "source_page_pointer": null,
+      "proof_limit": "INDEX_LABEL_AND_PREVIOUS_PAGE_LOCATOR_ONLY",
+      "original_historical_or_comparative_material_retained": true,
+      "practice_identity_verified": false,
+      "catholic_specificity_not_assumed": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "source_detail_id": "WEI58-DETAIL-D-084",
+      "source_label": "Holly kept against alleged witchcraft or lightning effects",
+      "source_page": 105,
+      "earlier_reconciliation": "NO_PRACTICE_OR_MASTER_CANDIDATE",
+      "disposition": "PROVISIONAL_ACTION_OR_REPORTED_FOLK_PRACTICE_LEAD",
+      "proposed_provisional_group_ids": [
+        "CAT-WEISER-GAP-034"
+      ],
+      "related_previous_group_candidates": [],
+      "original_page_visually_spot_checked_in_this_turn": true,
+      "source_page_pointer": "PDF_PAGE_INDEX_122",
+      "proof_limit": "ORIGINAL_PAGE_SPOT_READ_NOT_FULL_LINE_BY_LINE_EDITION_AUDIT",
+      "original_historical_or_comparative_material_retained": true,
+      "practice_identity_verified": false,
+      "catholic_specificity_not_assumed": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "source_detail_id": "WEI58-DETAIL-D-085",
+      "source_label": "English medieval resistance to ivy inside Christmas households",
+      "source_page": 105,
+      "earlier_reconciliation": "NO_PRACTICE_OR_MASTER_CANDIDATE",
+      "disposition": "PROVISIONAL_ACTION_OR_REPORTED_FOLK_PRACTICE_LEAD",
+      "proposed_provisional_group_ids": [
+        "CAT-WEISER-GAP-035"
+      ],
+      "related_previous_group_candidates": [],
+      "original_page_visually_spot_checked_in_this_turn": true,
+      "source_page_pointer": "PDF_PAGE_INDEX_122",
+      "proof_limit": "ORIGINAL_PAGE_SPOT_READ_NOT_FULL_LINE_BY_LINE_EDITION_AUDIT",
+      "original_historical_or_comparative_material_retained": true,
+      "practice_identity_verified": false,
+      "catholic_specificity_not_assumed": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "source_detail_id": "WEI58-DETAIL-D-099",
+      "source_label": "Russian Babushka Christmas gift-bringer story",
+      "source_page": 112,
+      "earlier_reconciliation": "NO_PRACTICE_OR_MASTER_CANDIDATE",
+      "disposition": "HISTORICAL_CULTURAL_OR_SOURCE_CONTEXT",
+      "proposed_provisional_group_ids": [],
+      "related_previous_group_candidates": [],
+      "original_page_visually_spot_checked_in_this_turn": false,
+      "source_page_pointer": null,
+      "proof_limit": "INDEX_LABEL_AND_PREVIOUS_PAGE_LOCATOR_ONLY",
+      "original_historical_or_comparative_material_retained": true,
+      "practice_identity_verified": false,
+      "catholic_specificity_not_assumed": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "source_detail_id": "WEI58-DETAIL-D-103",
+      "source_label": "Kutia tossed at ceiling as earlier agrarian fortune custom",
+      "source_page": 117,
+      "earlier_reconciliation": "NO_PRACTICE_OR_MASTER_CANDIDATE",
+      "disposition": "PROVISIONAL_ACTION_OR_REPORTED_FOLK_PRACTICE_LEAD",
+      "proposed_provisional_group_ids": [
+        "CAT-WEISER-GAP-036"
+      ],
+      "related_previous_group_candidates": [],
+      "original_page_visually_spot_checked_in_this_turn": false,
+      "source_page_pointer": null,
+      "proof_limit": "INDEX_LABEL_AND_PREVIOUS_PAGE_LOCATOR_ONLY",
+      "original_historical_or_comparative_material_retained": true,
+      "practice_identity_verified": false,
+      "catholic_specificity_not_assumed": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "source_detail_id": "WEI58-DETAIL-D-120",
+      "source_label": "English traditional festive goose or capon Christmas dinner",
+      "source_page": 119,
+      "earlier_reconciliation": "NO_PRACTICE_OR_MASTER_CANDIDATE",
+      "disposition": "PROVISIONAL_ACTION_OR_REPORTED_FOLK_PRACTICE_LEAD",
+      "proposed_provisional_group_ids": [
+        "CAT-WEISER-GAP-037"
+      ],
+      "related_previous_group_candidates": [],
+      "original_page_visually_spot_checked_in_this_turn": false,
+      "source_page_pointer": null,
+      "proof_limit": "INDEX_LABEL_AND_PREVIOUS_PAGE_LOCATOR_ONLY",
+      "original_historical_or_comparative_material_retained": true,
+      "practice_identity_verified": false,
+      "catholic_specificity_not_assumed": true,
+      "publication_state": "RESEARCH_ONLY"
+    }
+  ],
+  "new_provisional_groups": [
+    {
+      "provisional_group_id": "CAT-WEISER-GAP-001",
+      "source_detail_ids": [
+        "WEI58-ADD-2-006"
+      ],
+      "working_label": "Incantations addressed to fruit trees and fields during midwinter",
+      "practice_scope": "Reported incantation/fertility folklore, not an endorsed Catholic sacramental practice",
+      "claim_type": "HISTORICAL_REPORTED_FOLK_ACTION",
+      "distinctness_verified": false,
+      "modern_observance_verified": false,
+      "source_context_independently_checked": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "provisional_group_id": "CAT-WEISER-GAP-002",
+      "source_detail_ids": [
+        "WEI58-ADD-2-021"
+      ],
+      "working_label": "New Year marriage divination with mirrors dreams or leaves",
+      "practice_scope": "Reported New Year divination; no validity of its fortune-telling claim inferred",
+      "claim_type": "HISTORICAL_REPORTED_FOLK_ACTION",
+      "distinctness_verified": false,
+      "modern_observance_verified": false,
+      "source_context_independently_checked": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "provisional_group_id": "CAT-WEISER-GAP-003",
+      "source_detail_ids": [
+        "WEI58-ADD-2-040"
+      ],
+      "working_label": "Brandsonntag first-Lent-Sunday fiery wheels rolled down German hills",
+      "practice_scope": "South German first-Lent-Sunday Brandsonntag, rolling burning wheels",
+      "claim_type": "HISTORICAL_OR_REGIONAL_PRACTICE_NEEDING_IDENTITY_REVIEW",
+      "distinctness_verified": false,
+      "modern_observance_verified": false,
+      "source_context_independently_checked": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "provisional_group_id": "CAT-WEISER-GAP-004",
+      "source_detail_ids": [
+        "WEI58-ADD-2-041"
+      ],
+      "working_label": "French Fête des brandons young people carry firebrands",
+      "practice_scope": "French Fête des brandons, torch-running; separate action from wheel rolling",
+      "claim_type": "HISTORICAL_OR_REGIONAL_PRACTICE_NEEDING_IDENTITY_REVIEW",
+      "distinctness_verified": false,
+      "modern_observance_verified": false,
+      "source_context_independently_checked": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "provisional_group_id": "CAT-WEISER-GAP-005",
+      "source_detail_ids": [
+        "WEI58-ADD-2-044"
+      ],
+      "working_label": "Plough Monday or Blochziehen ceremonial spring plough-drawing",
+      "practice_scope": "Early spring ceremonial plough-drawing associated with fertility folklore; not a Catholic blessing",
+      "claim_type": "HISTORICAL_REPORTED_FOLK_ACTION",
+      "distinctness_verified": false,
+      "modern_observance_verified": false,
+      "source_context_independently_checked": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "provisional_group_id": "CAT-WEISER-GAP-006",
+      "source_detail_ids": [
+        "WEI58-ADD-2-045"
+      ],
+      "working_label": "Seasonal water splashing of young men and women at carnival or Easter",
+      "practice_scope": "Water-splashing seasonal game; speculative fertility effect excluded",
+      "claim_type": "HISTORICAL_OR_REGIONAL_PRACTICE_NEEDING_IDENTITY_REVIEW",
+      "distinctness_verified": false,
+      "modern_observance_verified": false,
+      "source_context_independently_checked": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "provisional_group_id": "CAT-WEISER-GAP-007",
+      "source_detail_ids": [
+        "WEI58-ADD-2-046"
+      ],
+      "working_label": "Easter morning face washing in rivers and brooks in France and central Europe",
+      "practice_scope": "Easter morning washing in running water; claimed supernatural blessing not verified",
+      "claim_type": "HISTORICAL_OR_REGIONAL_PRACTICE_NEEDING_IDENTITY_REVIEW",
+      "distinctness_verified": false,
+      "modern_observance_verified": false,
+      "source_context_independently_checked": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "provisional_group_id": "CAT-WEISER-GAP-008",
+      "source_detail_ids": [
+        "WEI58-ADD-2-047"
+      ],
+      "working_label": "French Canadian Easter dawn stream-water washing and bottling",
+      "practice_scope": "French Canadian form of Easter dawn water gathering or washing",
+      "claim_type": "HISTORICAL_OR_REGIONAL_PRACTICE_NEEDING_IDENTITY_REVIEW",
+      "distinctness_verified": false,
+      "modern_observance_verified": false,
+      "source_context_independently_checked": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "provisional_group_id": "CAT-WEISER-GAP-009",
+      "source_detail_ids": [
+        "WEI58-ADD-2-048"
+      ],
+      "working_label": "Wedding couple sprinkled with Easter-drawn water in Germany or Austria",
+      "practice_scope": "Easter river water applied to wedding couple, distinct participants and action",
+      "claim_type": "HISTORICAL_OR_REGIONAL_PRACTICE_NEEDING_IDENTITY_REVIEW",
+      "distinctness_verified": false,
+      "modern_observance_verified": false,
+      "source_context_independently_checked": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "provisional_group_id": "CAT-WEISER-GAP-010",
+      "source_detail_ids": [
+        "WEI58-ADD-2-049"
+      ],
+      "working_label": "Horses ritually ridden into Easter river water",
+      "practice_scope": "Horse bathing/riding into Easter water; not proof of Catholic blessing",
+      "claim_type": "HISTORICAL_OR_REGIONAL_PRACTICE_NEEDING_IDENTITY_REVIEW",
+      "distinctness_verified": false,
+      "modern_observance_verified": false,
+      "source_context_independently_checked": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "provisional_group_id": "CAT-WEISER-GAP-011",
+      "source_detail_ids": [
+        "WEI58-ADD-2-050"
+      ],
+      "working_label": "Holy Saturday blessed water taken home by family",
+      "practice_scope": "Holy Saturday blessed water carried home, distinct from seasonal natural-water magic",
+      "claim_type": "HISTORICAL_REPORTED_FOLK_ACTION",
+      "distinctness_verified": false,
+      "modern_observance_verified": false,
+      "source_context_independently_checked": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "provisional_group_id": "CAT-WEISER-GAP-012",
+      "source_detail_ids": [
+        "WEI58-ADD-2-051"
+      ],
+      "working_label": "Tyrolean maypole left at newlyweds house until first child's birth",
+      "practice_scope": "Tyrolean marital maypole custom, lifetime marker rather than liturgical act",
+      "claim_type": "HISTORICAL_OR_REGIONAL_PRACTICE_NEEDING_IDENTITY_REVIEW",
+      "distinctness_verified": false,
+      "modern_observance_verified": false,
+      "source_context_independently_checked": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "provisional_group_id": "CAT-WEISER-GAP-013",
+      "source_detail_ids": [
+        "WEI58-DETAIL-B-001"
+      ],
+      "working_label": "Papal golden rose carried after Laetare Mass and blessed for presentation",
+      "practice_scope": "Papal Golden Rose action is ecclesiastical ceremony, not lay household custom",
+      "claim_type": "HISTORICAL_OR_REGIONAL_PRACTICE_NEEDING_IDENTITY_REVIEW",
+      "distinctness_verified": false,
+      "modern_observance_verified": false,
+      "source_context_independently_checked": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "provisional_group_id": "CAT-WEISER-GAP-014",
+      "source_detail_ids": [
+        "WEI58-DETAIL-B-017"
+      ],
+      "working_label": "Last Supper church reenactment with twelve Apostles in Mexico and South America",
+      "practice_scope": "Last Supper dramatization in church with twelve participants; verified against printed p.196",
+      "claim_type": "HISTORICAL_OR_REGIONAL_PRACTICE_NEEDING_IDENTITY_REVIEW",
+      "distinctness_verified": false,
+      "modern_observance_verified": false,
+      "source_context_independently_checked": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "provisional_group_id": "CAT-WEISER-GAP-015",
+      "source_detail_ids": [
+        "WEI58-DETAIL-B-061"
+      ],
+      "working_label": "Walking barefoot through Pentecost dew for folk healing belief",
+      "practice_scope": "Pentecost morning dew bathing tied to claimed folk healing, not Catholic miracle",
+      "claim_type": "HISTORICAL_REPORTED_FOLK_ACTION",
+      "distinctness_verified": false,
+      "modern_observance_verified": false,
+      "source_context_independently_checked": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "provisional_group_id": "CAT-WEISER-GAP-016",
+      "source_detail_ids": [
+        "WEI58-DETAIL-B-062"
+      ],
+      "working_label": "Dew collected on bread and fed to animals for claimed protection",
+      "practice_scope": "Feeding dew-moistened food to livestock under folk-protection beliefs",
+      "claim_type": "HISTORICAL_REPORTED_FOLK_ACTION",
+      "distinctness_verified": false,
+      "modern_observance_verified": false,
+      "source_context_independently_checked": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "provisional_group_id": "CAT-WEISER-GAP-017",
+      "source_detail_ids": [
+        "WEI58-DETAIL-B-066"
+      ],
+      "working_label": "Trinity Sunday avoidance of sewing or metal work due to lightning legend",
+      "practice_scope": "Reported Trinity Sunday avoidance of sewing under lightning lore, not Church precept",
+      "claim_type": "HISTORICAL_OR_REGIONAL_PRACTICE_NEEDING_IDENTITY_REVIEW",
+      "distinctness_verified": false,
+      "modern_observance_verified": false,
+      "source_context_independently_checked": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "provisional_group_id": "CAT-WEISER-GAP-018",
+      "source_detail_ids": [
+        "WEI58-DETAIL-B-105"
+      ],
+      "working_label": "Gathering and presenting St John herbs for blessing",
+      "practice_scope": "Gathering St John herbs for blessing; blessing existence/rite specifics still require proof",
+      "claim_type": "HISTORICAL_OR_REGIONAL_PRACTICE_NEEDING_IDENTITY_REVIEW",
+      "distinctness_verified": false,
+      "modern_observance_verified": false,
+      "source_context_independently_checked": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "provisional_group_id": "CAT-WEISER-GAP-019",
+      "source_detail_ids": [
+        "WEI58-DETAIL-B-106"
+      ],
+      "working_label": "Saint John bonfire straw effigies and noisy demon-averting folklore",
+      "practice_scope": "St John straw effigies as part of seasonal fire folklore",
+      "claim_type": "HISTORICAL_REPORTED_FOLK_ACTION",
+      "distinctness_verified": false,
+      "modern_observance_verified": false,
+      "source_context_independently_checked": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "provisional_group_id": "CAT-WEISER-GAP-020",
+      "source_detail_ids": [
+        "WEI58-DETAIL-B-111"
+      ],
+      "working_label": "Saint Lucy inscriptions and figure drawings on doors and fences",
+      "practice_scope": "St Lucy's name and image inscribed on doors and fences; p.342 checked",
+      "claim_type": "HISTORICAL_OR_REGIONAL_PRACTICE_NEEDING_IDENTITY_REVIEW",
+      "distinctness_verified": false,
+      "modern_observance_verified": false,
+      "source_context_independently_checked": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "provisional_group_id": "CAT-WEISER-GAP-021",
+      "source_detail_ids": [
+        "WEI58-DETAIL-B-112"
+      ],
+      "working_label": "Saint Lucy incense-and-bonfire customs tied to folkloric healing claims",
+      "practice_scope": "Scandinavian St Lucy bonfires and incense as reported folklore; p.342 checked",
+      "claim_type": "HISTORICAL_REPORTED_FOLK_ACTION",
+      "distinctness_verified": false,
+      "modern_observance_verified": false,
+      "source_context_independently_checked": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "provisional_group_id": "CAT-WEISER-GAP-022",
+      "source_detail_ids": [
+        "WEI58-DETAIL-B-113"
+      ],
+      "working_label": "Harvest baby last sheaf carried in a folk procession",
+      "practice_scope": "Last-sheaf harvest baby carried publicly, folk harvest action on p.269",
+      "claim_type": "HISTORICAL_REPORTED_FOLK_ACTION",
+      "distinctness_verified": false,
+      "modern_observance_verified": false,
+      "source_context_independently_checked": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "provisional_group_id": "CAT-WEISER-GAP-023",
+      "source_detail_ids": [
+        "WEI58-DETAIL-B-114"
+      ],
+      "working_label": "Austrian Erntebraut with last-sheaf wreath as harvest bride",
+      "practice_scope": "Austrian harvest bride sheaf/wreath custom, p.269",
+      "claim_type": "HISTORICAL_OR_REGIONAL_PRACTICE_NEEDING_IDENTITY_REVIEW",
+      "distinctness_verified": false,
+      "modern_observance_verified": false,
+      "source_context_independently_checked": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "provisional_group_id": "CAT-WEISER-GAP-024",
+      "source_detail_ids": [
+        "WEI58-DETAIL-B-115"
+      ],
+      "working_label": "English horkey-cart last harvest wagon procession",
+      "practice_scope": "English horkey-cart and Scottish kirn-doll traditions both in one source row; split as 2 provisional working actions",
+      "claim_type": "HISTORICAL_OR_REGIONAL_PRACTICE_NEEDING_IDENTITY_REVIEW",
+      "distinctness_verified": false,
+      "modern_observance_verified": false,
+      "source_context_independently_checked": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "provisional_group_id": "CAT-WEISER-GAP-025",
+      "source_detail_ids": [
+        "WEI58-DETAIL-B-115"
+      ],
+      "working_label": "Scottish kirn-doll last sheaf harvest figure",
+      "practice_scope": "English horkey-cart and Scottish kirn-doll traditions both in one source row; split as 2 provisional working actions",
+      "claim_type": "HISTORICAL_OR_REGIONAL_PRACTICE_NEEDING_IDENTITY_REVIEW",
+      "distinctness_verified": false,
+      "modern_observance_verified": false,
+      "source_context_independently_checked": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "provisional_group_id": "CAT-WEISER-GAP-026",
+      "source_detail_ids": [
+        "WEI58-DETAIL-C-014"
+      ],
+      "working_label": "Stations of the Cross incorporated into private prayer hours",
+      "practice_scope": "Stations of the Cross made part of personal prayer hours; devotional variant",
+      "claim_type": "HISTORICAL_OR_REGIONAL_PRACTICE_NEEDING_IDENTITY_REVIEW",
+      "distinctness_verified": false,
+      "modern_observance_verified": false,
+      "source_context_independently_checked": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "provisional_group_id": "CAT-WEISER-GAP-027",
+      "source_detail_ids": [
+        "WEI58-DETAIL-C-033"
+      ],
+      "working_label": "Ember seasonal quarter-term payment of debts and tithes",
+      "practice_scope": "Ember seasonal debts and tithes: civic/agrarian custom; religious-calendar association not Catholic devotional approval",
+      "claim_type": "HISTORICAL_OR_REGIONAL_PRACTICE_NEEDING_IDENTITY_REVIEW",
+      "distinctness_verified": false,
+      "modern_observance_verified": false,
+      "source_context_independently_checked": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "provisional_group_id": "CAT-WEISER-GAP-028",
+      "source_detail_ids": [
+        "WEI58-DETAIL-C-041"
+      ],
+      "working_label": "Superstitious circumambulation of farmland with protective-effect claim",
+      "practice_scope": "Protective field circumambulation recorded with magical explanations; claimed efficacy excluded",
+      "claim_type": "HISTORICAL_REPORTED_FOLK_ACTION",
+      "distinctness_verified": false,
+      "modern_observance_verified": false,
+      "source_context_independently_checked": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "provisional_group_id": "CAT-WEISER-GAP-029",
+      "source_detail_ids": [
+        "WEI58-DETAIL-D-001"
+      ],
+      "working_label": "Historical Advent fast limited to particular weekdays in Latin countries",
+      "practice_scope": "Historical Advent fasting pattern, not assumed binding in 1962 or today",
+      "claim_type": "HISTORICAL_OR_REGIONAL_PRACTICE_NEEDING_IDENTITY_REVIEW",
+      "distinctness_verified": false,
+      "modern_observance_verified": false,
+      "source_context_independently_checked": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "provisional_group_id": "CAT-WEISER-GAP-030",
+      "source_detail_ids": [
+        "WEI58-DETAIL-D-028"
+      ],
+      "working_label": "Bethlehem Christmas visitors search dark well for the Magi star",
+      "practice_scope": "Pilgrims/searchers peering into Bethlehem water well for Star of Magi",
+      "claim_type": "HISTORICAL_OR_REGIONAL_PRACTICE_NEEDING_IDENTITY_REVIEW",
+      "distinctness_verified": false,
+      "modern_observance_verified": false,
+      "source_context_independently_checked": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "provisional_group_id": "CAT-WEISER-GAP-031",
+      "source_detail_ids": [
+        "WEI58-DETAIL-D-078"
+      ],
+      "working_label": "Undecorated evergreen Yule tree kept distinct from decorated Christmas tree",
+      "practice_scope": "Historical plain evergreen Yule tree differs from decorated Christmas tree",
+      "claim_type": "HISTORICAL_OR_REGIONAL_PRACTICE_NEEDING_IDENTITY_REVIEW",
+      "distinctness_verified": false,
+      "modern_observance_verified": false,
+      "source_context_independently_checked": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "provisional_group_id": "CAT-WEISER-GAP-032",
+      "source_detail_ids": [
+        "WEI58-DETAIL-D-081"
+      ],
+      "working_label": "Mistletoe seasonal greetings and kissing in English custom",
+      "practice_scope": "Mistletoe greeting/kissing, secular seasonal custom, not specifically Catholic",
+      "claim_type": "HISTORICAL_REPORTED_FOLK_ACTION",
+      "distinctness_verified": false,
+      "modern_observance_verified": false,
+      "source_context_independently_checked": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "provisional_group_id": "CAT-WEISER-GAP-033",
+      "source_detail_ids": [
+        "WEI58-DETAIL-D-082"
+      ],
+      "working_label": "Historical York Cathedral mistletoe display at Christmas",
+      "practice_scope": "Historical mistletoe in York church decoration, distinct site and institution",
+      "claim_type": "HISTORICAL_REPORTED_FOLK_ACTION",
+      "distinctness_verified": false,
+      "modern_observance_verified": false,
+      "source_context_independently_checked": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "provisional_group_id": "CAT-WEISER-GAP-034",
+      "source_detail_ids": [
+        "WEI58-DETAIL-D-084"
+      ],
+      "working_label": "Holly kept against alleged witchcraft or lightning effects",
+      "practice_scope": "Historical holly charm carried home; supernatural effects are folklore only; printed p.105 checked",
+      "claim_type": "HISTORICAL_REPORTED_FOLK_ACTION",
+      "distinctness_verified": false,
+      "modern_observance_verified": false,
+      "source_context_independently_checked": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "provisional_group_id": "CAT-WEISER-GAP-035",
+      "source_detail_ids": [
+        "WEI58-DETAIL-D-085"
+      ],
+      "working_label": "English medieval resistance to ivy inside Christmas households",
+      "practice_scope": "Medieval English avoidance of ivy indoors, noted on p.105, distinct negative seasonal practice",
+      "claim_type": "HISTORICAL_OR_REGIONAL_PRACTICE_NEEDING_IDENTITY_REVIEW",
+      "distinctness_verified": false,
+      "modern_observance_verified": false,
+      "source_context_independently_checked": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "provisional_group_id": "CAT-WEISER-GAP-036",
+      "source_detail_ids": [
+        "WEI58-DETAIL-D-103"
+      ],
+      "working_label": "Kutia tossed at ceiling as earlier agrarian fortune custom",
+      "practice_scope": "Kutia tossed at ceiling as divination, not a Catholic blessing",
+      "claim_type": "HISTORICAL_REPORTED_FOLK_ACTION",
+      "distinctness_verified": false,
+      "modern_observance_verified": false,
+      "source_context_independently_checked": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "provisional_group_id": "CAT-WEISER-GAP-037",
+      "source_detail_ids": [
+        "WEI58-DETAIL-D-120"
+      ],
+      "working_label": "English traditional festive goose or capon Christmas dinner",
+      "practice_scope": "Christmas goose/capon table custom; domestic food rather than specific Catholic sacrament",
+      "claim_type": "HISTORICAL_OR_REGIONAL_PRACTICE_NEEDING_IDENTITY_REVIEW",
+      "distinctness_verified": false,
+      "modern_observance_verified": false,
+      "source_context_independently_checked": false,
+      "publication_state": "RESEARCH_ONLY"
+    }
+  ],
+  "source_scan": "https://www.fisheaters.com/srpdf/Weiser--ChristianFeastsandCustoms.pdf",
+  "qualifiers": [
+    "Source-level actions are first-class historical research records even when locally reported or no longer practised.",
+    "Not every seasonal folk action is a Catholic custom. Folk acts remain with explicit religious-context uncertainties.",
+    "Source page checks were made only on named spot pages; others are based on the already indexed Weiser source labels and locators.",
+    "Multiple labels from same passage can be distinct or variants; no merger is authorized here."
+  ]
+}
