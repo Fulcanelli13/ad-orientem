@@ -1694,7 +1694,7 @@ assert.equal(pitreContextReview.summary.original_archival_folios_inspected,0);
 assert.equal(pitreContextReview.summary.independent_witnesses_certified,0);
 assert.equal(pitreContextReview.summary.merges,0);
 assert.equal(pitreContextReview.summary.calendar_publications,0);
-const pitreOriginalIds=new Set(pitrePalermo.records.map(r=>r.observation_id));
+const pitreOriginalIds=new Set(pitrePalermo110.records.map(r=>r.observation_id));
 assert.equal(pitreOriginalIds.size,110);
 const pitreClusterIds=new Set();
 const pitreSeen=new Set();
@@ -1713,7 +1713,7 @@ assert.equal(pitreClusterIds.size,35);
 assert.deepEqual(pitreSeen,pitreOriginalIds);
 assert.equal(pitreContextReview.source_action_to_cluster.length,110);
 for(const z of pitreContextReview.source_action_to_cluster){
- const original=pitrePalermo.records.find(r=>r.observation_id===z.source_id);
+ const original=pitrePalermo110.records.find(r=>r.observation_id===z.source_id);
  assert.ok(original);
  assert.ok(pitreClusterIds.has(z.cluster_id));
  assert.equal(z.original_volume,original.volume);
