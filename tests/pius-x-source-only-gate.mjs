@@ -49,7 +49,7 @@ const legacy=store.chapters.get('SPX-PILOT-01');
 const short=selectEvidence(store,{chapterId:legacy.id,nodeId:legacy.nodes[0].id,
  language:'en',question:legacy.nodes[0].q.en});
 assert.equal(short.status,'eligible');
-assert.equal(short.evidence[0].primaryWitnessStatus,'BOUNDED_ORIGINAL_EXCERPTS_UNAPPROVED');
+assert.equal(short.evidence[0].primaryWitnessStatus,'BOUNDED_LATIN_SPOTCHECK_NOT_FULL_VERIFICATION');
 const unresolved=[...store.chapters.values()].find(c=>c.sourceClass==='PAPAL_DOCUMENT_ADAPTATION'&& !c.partial&&!store.sourceOnlyGate.has(c.id));
 assert(unresolved,'need at least one papal-document subject with no source-backed passage');
 const unresolvedInput={chapterId:unresolved.id,nodeId:unresolved.nodes[0].id,
