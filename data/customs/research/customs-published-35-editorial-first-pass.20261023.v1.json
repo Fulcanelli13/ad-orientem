@@ -1,0 +1,1105 @@
+{
+  "schema": "AO_CUSTOMS_35_PUBLISHED_EDITORIAL_FIRST_PASS_V1",
+  "as_of": "2026-10-23",
+  "authoritative_publication_branch": "main",
+  "publication_principle": "NON_PUBLISHING_RESEARCH_AUDIT_PRESERVE_35_3_AND_UNPUBLISHED_18",
+  "review_basis": [
+    "data/customs/customs-atlas-seed.v1.json",
+    "src/calendar/customs-read-model.js",
+    "src/calendar/customs-extra-articles.js",
+    "data/customs/source-registry.v1.json"
+  ],
+  "policy": {
+    "true_claim_certification_requires_independent_claim_level_primary_text_review": true,
+    "source_page_retrieval_alone_is_not_claim_certification": true,
+    "english_french_semantic_editorial_signoff_pending": true,
+    "local_2025_2026_events_not_annual_schedules": true,
+    "roman_ritual_not_proof_of_local_custom": true,
+    "no_1962_mass_or_calendar_modifications": true,
+    "do_not_auto_promote_unpublished_research": true
+  },
+  "counts": {
+    "published_records": 35,
+    "p1_priority": 13,
+    "p2_priority": 22,
+    "targeted_primary_text_reviews": 10,
+    "history_duplicate_fixes_proposed": 11,
+    "fully_editorially_certified": 0,
+    "new_publications": 0
+  },
+  "records": [
+    {
+      "custom_id": "DOM-002",
+      "title": "Domestic holy-water font / bénitier de chevet",
+      "publication_state": "PUBLISHED",
+      "copy_fields": [
+        "title",
+        "description",
+        "history",
+        "meaning",
+        "practice",
+        "caution",
+        "scope",
+        "occasion"
+      ],
+      "language_structure": "EN_FR_NONEMPTY_NOT_SEMANTICALLY_CERTIFIED",
+      "review_stage": "EDITORIAL_FIRST_PASS_NOT_FINAL_CERTIFIED",
+      "priority": "P2",
+      "claim_boundary": "Material culture directly establishes the bedside holy-water vessel; document what the museum object shows, not the prevalence of domestic prayer.",
+      "representative_source_id": "MUCEM-BENITIER",
+      "representative_source_url": "https://mucem.org/les-collections-du-mucem/explorez-les-collections/?keyword=b%C3%A9nitier+de+chevet",
+      "all_attestation_source_ids": [
+        "MUCEM-BENITIER"
+      ],
+      "primary_text_review_this_batch": "REFERENCE_CROSSWALK_ONLY",
+      "verified_witness_urls": [],
+      "history_copy_action": "PRESERVED",
+      "new_custom_approved": false,
+      "needs_additional_historical_or_regional_signoff": true
+    },
+    {
+      "custom_id": "DOM-006",
+      "title": "Family consecration to the Sacred Heart",
+      "publication_state": "PUBLISHED",
+      "copy_fields": [
+        "title",
+        "description",
+        "history",
+        "meaning",
+        "practice",
+        "caution",
+        "scope",
+        "occasion"
+      ],
+      "language_structure": "EN_FR_NONEMPTY_NOT_SEMANTICALLY_CERTIFIED",
+      "review_stage": "EDITORIAL_FIRST_PASS_NOT_FINAL_CERTIFIED",
+      "priority": "P2",
+      "claim_boundary": "Paray sanctuary supports voluntary family consecration; priestly or parish ceremonies must remain separate from household prayer.",
+      "representative_source_id": "PARAY-CONSECRATION",
+      "representative_source_url": "https://sacrecoeur-paray.org/consecration-sacre-coeur/",
+      "all_attestation_source_ids": [
+        "PARAY-CONSECRATION"
+      ],
+      "primary_text_review_this_batch": "REFERENCE_CROSSWALK_ONLY",
+      "verified_witness_urls": [],
+      "history_copy_action": "PRESERVED",
+      "new_custom_approved": false,
+      "needs_additional_historical_or_regional_signoff": true
+    },
+    {
+      "custom_id": "DOM-007",
+      "title": "Intronement of a Sacred Heart image in the home",
+      "publication_state": "PUBLISHED",
+      "copy_fields": [
+        "title",
+        "description",
+        "history",
+        "meaning",
+        "practice",
+        "caution",
+        "scope",
+        "occasion"
+      ],
+      "language_structure": "EN_FR_NONEMPTY_NOT_SEMANTICALLY_CERTIFIED",
+      "review_stage": "EDITORIAL_FIRST_PASS_NOT_FINAL_CERTIFIED",
+      "priority": "P2",
+      "claim_boundary": "Paray sanctuary supports enthroning a Sacred Heart image; do not imply mandatory blessing or universal ritual.",
+      "representative_source_id": "PARAY-INTRONISATION",
+      "representative_source_url": "https://sacrecoeur-paray.org/prier/introniser-le-sacre-coeur/",
+      "all_attestation_source_ids": [
+        "PARAY-INTRONISATION"
+      ],
+      "primary_text_review_this_batch": "REFERENCE_CROSSWALK_ONLY",
+      "verified_witness_urls": [],
+      "history_copy_action": "PRESERVED",
+      "new_custom_approved": false,
+      "needs_additional_historical_or_regional_signoff": true
+    },
+    {
+      "custom_id": "LIFE-002",
+      "title": "Relevailles / blessing after childbirth",
+      "publication_state": "PUBLISHED",
+      "copy_fields": [
+        "title",
+        "description",
+        "history",
+        "meaning",
+        "practice",
+        "caution",
+        "scope",
+        "occasion"
+      ],
+      "language_structure": "EN_FR_NONEMPTY_NOT_SEMANTICALLY_CERTIFIED",
+      "review_stage": "EDITORIAL_FIRST_PASS_NOT_FINAL_CERTIFIED",
+      "priority": "P1",
+      "claim_boundary": "Historical post-childbirth blessing must not be described as purifying impurity, imposing forty days or excluding the mother from worship.",
+      "representative_source_id": "RIT-1878",
+      "representative_source_url": "https://objects.library.uu.nl/download/1874-315174/fulltext",
+      "all_attestation_source_ids": [
+        "RIT-1878",
+        "SCHOLA-RELEVAILLES"
+      ],
+      "primary_text_review_this_batch": "REFERENCE_CROSSWALK_ONLY",
+      "verified_witness_urls": [],
+      "history_copy_action": "PRESERVED",
+      "new_custom_approved": false,
+      "needs_additional_historical_or_regional_signoff": true
+    },
+    {
+      "custom_id": "DEV-001",
+      "title": "May as the month of Mary",
+      "publication_state": "PUBLISHED",
+      "copy_fields": [
+        "title",
+        "description",
+        "history",
+        "meaning",
+        "practice",
+        "caution",
+        "scope",
+        "occasion"
+      ],
+      "language_structure": "EN_FR_NONEMPTY_NOT_SEMANTICALLY_CERTIFIED",
+      "review_stage": "EDITORIAL_FIRST_PASS_NOT_FINAL_CERTIFIED",
+      "priority": "P2",
+      "claim_boundary": "French bishops directly describe May devotion as popular piety, not a new Roman liturgical season.",
+      "representative_source_id": "ECF-MAY",
+      "representative_source_url": "https://eglise.catholique.fr/approfondir-sa-foi/connaitre-et-aimer-dieu/marie/499023-mois-de-marie-coutume-recente/",
+      "all_attestation_source_ids": [
+        "ECF-MAY"
+      ],
+      "primary_text_review_this_batch": "TARGETED_MATCH_AND_SCOPE",
+      "verified_witness_urls": [
+        "https://eglise.catholique.fr/approfondir-sa-foi/connaitre-et-aimer-dieu/marie/499023-mois-de-marie-coutume-recente/"
+      ],
+      "history_copy_action": "PRESERVED",
+      "new_custom_approved": false,
+      "needs_additional_historical_or_regional_signoff": true
+    },
+    {
+      "custom_id": "DEV-006",
+      "title": "Pilgrimage to a shrine or holy place",
+      "publication_state": "PUBLISHED",
+      "copy_fields": [
+        "title",
+        "description",
+        "history",
+        "meaning",
+        "practice",
+        "caution",
+        "scope",
+        "occasion"
+      ],
+      "language_structure": "EN_FR_NONEMPTY_NOT_SEMANTICALLY_CERTIFIED",
+      "review_stage": "EDITORIAL_FIRST_PASS_NOT_FINAL_CERTIFIED",
+      "priority": "P1",
+      "claim_boundary": "The Directory establishes pilgrimage in general; the numerous locally dated shrine witnesses vary in accessibility and may not establish today's schedule.",
+      "representative_source_id": "DPP-2001",
+      "representative_source_url": "https://www.vatican.va/content/dam/wss/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html",
+      "all_attestation_source_ids": [
+        "DPP-2001",
+        "ECF-PILGRIMAGE",
+        "BEAURAING-PILGRIMAGE-CUSTOM",
+        "NEUMANN-PILGRIMAGE-CUSTOM",
+        "CZESTOCHOWA-US-WALK-CUSTOM",
+        "SETON-SEA-SERVICES-CUSTOM",
+        "BERMONT-PILGRIMAGE-CUSTOM",
+        "PELLEVOISIN-ANNUAL-CUSTOM",
+        "RUE-DU-BAC-PILGRIMAGE-CUSTOM",
+        "WIGRATZBAD-PILGRIMAGE-CUSTOM",
+        "BETTBRUNN-PILGRIMAGE-CUSTOM",
+        "AURIESVILLE-RESTORATION-CUSTOM",
+        "LITCHFIELD-LOURDES-PILGRIMAGE-CUSTOM"
+      ],
+      "primary_text_review_this_batch": "REFERENCE_CROSSWALK_ONLY",
+      "verified_witness_urls": [],
+      "history_copy_action": "PRESERVED",
+      "new_custom_approved": false,
+      "needs_additional_historical_or_regional_signoff": true
+    },
+    {
+      "custom_id": "DEV-009",
+      "title": "Ex-votos",
+      "publication_state": "PUBLISHED",
+      "copy_fields": [
+        "title",
+        "description",
+        "history",
+        "meaning",
+        "practice",
+        "caution",
+        "scope",
+        "occasion"
+      ],
+      "language_structure": "EN_FR_NONEMPTY_NOT_SEMANTICALLY_CERTIFIED",
+      "review_stage": "EDITORIAL_FIRST_PASS_NOT_FINAL_CERTIFIED",
+      "priority": "P2",
+      "claim_boundary": "Laghet demonstrates shrine ex-votos; Altötting page was access-inconclusive and requires later browser validation.",
+      "representative_source_id": "LAGHET-EXVOTO",
+      "representative_source_url": "https://sanctuaire-laghet.fr/ex-votos/",
+      "all_attestation_source_ids": [
+        "LAGHET-EXVOTO",
+        "ALTOETTING-EXVOTO"
+      ],
+      "primary_text_review_this_batch": "REFERENCE_CROSSWALK_ONLY",
+      "verified_witness_urls": [],
+      "history_copy_action": "PRESERVED",
+      "new_custom_approved": false,
+      "needs_additional_historical_or_regional_signoff": true
+    },
+    {
+      "custom_id": "DEV-010",
+      "title": "Votive candle at a shrine",
+      "publication_state": "PUBLISHED",
+      "copy_fields": [
+        "title",
+        "description",
+        "history",
+        "meaning",
+        "practice",
+        "caution",
+        "scope",
+        "occasion"
+      ],
+      "language_structure": "EN_FR_NONEMPTY_NOT_SEMANTICALLY_CERTIFIED",
+      "review_stage": "EDITORIAL_FIRST_PASS_NOT_FINAL_CERTIFIED",
+      "priority": "P1",
+      "claim_boundary": "Shrine candles are devotional offerings, never payments for spiritual effects; some cited local offers are dated or not always accessible.",
+      "representative_source_id": "LOURDES-CANDLES",
+      "representative_source_url": "https://www.lourdes-france.com/pelerin-dun-jour/les-cierges/",
+      "all_attestation_source_ids": [
+        "LOURDES-CANDLES",
+        "MARIAZELL-VOTIVE-CANDLES",
+        "GUADALUPE-VOTIVE-CANDLES",
+        "NDC-VOTIVE-CANDLE",
+        "MIRACULOUS-MEDAL-CANDLE-CUSTOM",
+        "PONTMAIN-CANDLE-CUSTOM",
+        "BETTBRUNN-VOTIVE-CANDLES-CUSTOM"
+      ],
+      "primary_text_review_this_batch": "REFERENCE_CROSSWALK_ONLY",
+      "verified_witness_urls": [],
+      "history_copy_action": "PRESERVED",
+      "new_custom_approved": false,
+      "needs_additional_historical_or_regional_signoff": true
+    },
+    {
+      "custom_id": "DEAD-001",
+      "title": "Prayerful cemetery visit",
+      "publication_state": "PUBLISHED",
+      "copy_fields": [
+        "title",
+        "description",
+        "history",
+        "meaning",
+        "practice",
+        "caution",
+        "scope",
+        "occasion"
+      ],
+      "language_structure": "EN_FR_NONEMPTY_NOT_SEMANTICALLY_CERTIFIED",
+      "review_stage": "EDITORIAL_FIRST_PASS_NOT_FINAL_CERTIFIED",
+      "priority": "P2",
+      "claim_boundary": "Distinguish prayer at cemeteries from an assumed local indulgence or universally required November visit.",
+      "representative_source_id": "DPP-2001",
+      "representative_source_url": "https://www.vatican.va/content/dam/wss/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html",
+      "all_attestation_source_ids": [
+        "DPP-2001",
+        "ECF-DEAD"
+      ],
+      "primary_text_review_this_batch": "REFERENCE_CROSSWALK_ONLY",
+      "verified_witness_urls": [],
+      "history_copy_action": "PRESERVED",
+      "new_custom_approved": false,
+      "needs_additional_historical_or_regional_signoff": true
+    },
+    {
+      "custom_id": "DEAD-003",
+      "title": "Prayer for the dead on 2 November",
+      "publication_state": "PUBLISHED",
+      "copy_fields": [
+        "title",
+        "description",
+        "history",
+        "meaning",
+        "practice",
+        "caution",
+        "scope",
+        "occasion"
+      ],
+      "language_structure": "EN_FR_NONEMPTY_NOT_SEMANTICALLY_CERTIFIED",
+      "review_stage": "EDITORIAL_FIRST_PASS_NOT_FINAL_CERTIFIED",
+      "priority": "P2",
+      "claim_boundary": "2 November liturgical commemoration is separate from Polish wypominki parish custom and local prayer schedules.",
+      "representative_source_id": "ECF-DEAD",
+      "representative_source_url": "https://eglise.catholique.fr/approfondir-sa-foi/la-celebration-de-la-foi/les-grandes-fetes-chretiennes/toussaint/429069-jour-priere-defunts/",
+      "all_attestation_source_ids": [
+        "ECF-DEAD",
+        "DPP-2001",
+        "MONTLIGEON-DEAD-CUSTOM",
+        "POLAND-WYPOMINKI-2025"
+      ],
+      "primary_text_review_this_batch": "REFERENCE_CROSSWALK_ONLY",
+      "verified_witness_urls": [],
+      "history_copy_action": "PRESERVED",
+      "new_custom_approved": false,
+      "needs_additional_historical_or_regional_signoff": true
+    },
+    {
+      "custom_id": "DOM-003",
+      "title": "Using holy water at home",
+      "publication_state": "PUBLISHED",
+      "copy_fields": [
+        "title",
+        "description",
+        "history",
+        "meaning",
+        "practice",
+        "caution",
+        "scope",
+        "occasion"
+      ],
+      "language_structure": "EN_FR_NONEMPTY_NOT_SEMANTICALLY_CERTIFIED",
+      "review_stage": "EDITORIAL_FIRST_PASS_NOT_FINAL_CERTIFIED",
+      "priority": "P2",
+      "claim_boundary": "Blessing holy water is a reserved rite; use of already blessed water in the home is lay devotion distinct from the DOM-002 vessel.",
+      "representative_source_id": "RIT-WELLER",
+      "representative_source_url": "https://www.ewtn.com/catholicism/library/roman-ritual-index-11884",
+      "all_attestation_source_ids": [
+        "MUCEM-BENITIER",
+        "RIT-WELLER"
+      ],
+      "primary_text_review_this_batch": "REFERENCE_CROSSWALK_ONLY",
+      "verified_witness_urls": [],
+      "history_copy_action": "PRESERVED",
+      "new_custom_approved": false,
+      "needs_additional_historical_or_regional_signoff": true
+    },
+    {
+      "custom_id": "DOM-011",
+      "title": "Keeping blessed Candlemas candles at home",
+      "publication_state": "PUBLISHED",
+      "copy_fields": [
+        "title",
+        "description",
+        "history",
+        "meaning",
+        "practice",
+        "caution",
+        "scope",
+        "occasion"
+      ],
+      "language_structure": "EN_FR_NONEMPTY_NOT_SEMANTICALLY_CERTIFIED",
+      "review_stage": "EDITORIAL_FIRST_PASS_NOT_FINAL_CERTIFIED",
+      "priority": "P1",
+      "claim_boundary": "The Candlemas lexicon requires a close citation check for the separate domestic retention/near-the-dying claim, not merely the church feast.",
+      "representative_source_id": "ECF-CHANDLEUR-HOME",
+      "representative_source_url": "https://liturgie.catholique.fr/lexique/chandeleur/",
+      "all_attestation_source_ids": [
+        "ECF-CHANDLEUR-HOME"
+      ],
+      "primary_text_review_this_batch": "REFERENCE_CROSSWALK_ONLY",
+      "verified_witness_urls": [],
+      "history_copy_action": "PRESERVED",
+      "new_custom_approved": false,
+      "needs_additional_historical_or_regional_signoff": true
+    },
+    {
+      "custom_id": "DOM-013",
+      "title": "Keeping blessed Palm Sunday branches at home",
+      "publication_state": "PUBLISHED",
+      "copy_fields": [
+        "title",
+        "description",
+        "history",
+        "meaning",
+        "practice",
+        "caution",
+        "scope",
+        "occasion"
+      ],
+      "language_structure": "EN_FR_NONEMPTY_NOT_SEMANTICALLY_CERTIFIED",
+      "review_stage": "EDITORIAL_FIRST_PASS_NOT_FINAL_CERTIFIED",
+      "priority": "P2",
+      "claim_boundary": "Keep blessed Palm branches and home crucifix custom distinct from 1962 liturgical blessing/procession; exclude magical claims.",
+      "representative_source_id": "DPP-2001",
+      "representative_source_url": "https://www.vatican.va/content/dam/wss/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html",
+      "all_attestation_source_ids": [
+        "ECF-RAMEAUX-HOME",
+        "DPP-2001"
+      ],
+      "primary_text_review_this_batch": "REFERENCE_CROSSWALK_ONLY",
+      "verified_witness_urls": [],
+      "history_copy_action": "PRESERVED",
+      "new_custom_approved": false,
+      "needs_additional_historical_or_regional_signoff": true
+    },
+    {
+      "custom_id": "BLSS-001",
+      "title": "St Blaise — blessing of throats",
+      "publication_state": "PUBLISHED",
+      "copy_fields": [
+        "title",
+        "description",
+        "history",
+        "meaning",
+        "practice",
+        "caution",
+        "scope",
+        "occasion"
+      ],
+      "language_structure": "EN_FR_NONEMPTY_NOT_SEMANTICALLY_CERTIFIED",
+      "review_stage": "EDITORIAL_FIRST_PASS_NOT_FINAL_CERTIFIED",
+      "priority": "P1",
+      "claim_boundary": "Traditional Roman Ritual and modern Book of Blessings use different formulas and ministerial permissions; do not conflate them or infer treatment of illness.",
+      "representative_source_id": "SCHOLA-BLAISE-LATIN",
+      "representative_source_url": "https://schola-sainte-cecile.com/2013/02/02/benedictions-de-saint-blaise-contre-les-maux-de-gorge/",
+      "all_attestation_source_ids": [
+        "ROMR-BLAISE-1956",
+        "SCHOLA-BLAISE-LATIN",
+        "BOOK-BLESSINGS-BLAISE",
+        "ORDO-BLAISE-1962"
+      ],
+      "primary_text_review_this_batch": "REFERENCE_CROSSWALK_ONLY",
+      "verified_witness_urls": [],
+      "history_copy_action": "PRESERVED",
+      "new_custom_approved": false,
+      "needs_additional_historical_or_regional_signoff": true
+    },
+    {
+      "custom_id": "NDAY-001",
+      "title": "Baptismal patron's name day",
+      "publication_state": "PUBLISHED",
+      "copy_fields": [
+        "title",
+        "description",
+        "history",
+        "meaning",
+        "practice",
+        "caution",
+        "scope",
+        "occasion"
+      ],
+      "language_structure": "EN_FR_NONEMPTY_NOT_SEMANTICALLY_CERTIFIED",
+      "review_stage": "EDITORIAL_FIRST_PASS_NOT_FINAL_CERTIFIED",
+      "priority": "P2",
+      "claim_boundary": "Personal baptismal patron must be chosen or known; source attests family name-day celebrations but not automatic feast lookup from a first name.",
+      "representative_source_id": "EWTN-MCLOUGHLIN-NAMEDAY",
+      "representative_source_url": "https://www.ewtn.com/catholicism/library/my-namedaycome-for-desert-10465",
+      "all_attestation_source_ids": [
+        "EWTN-MCLOUGHLIN-NAMEDAY"
+      ],
+      "primary_text_review_this_batch": "REFERENCE_CROSSWALK_ONLY",
+      "verified_witness_urls": [],
+      "history_copy_action": "PRESERVED",
+      "new_custom_approved": false,
+      "needs_additional_historical_or_regional_signoff": true
+    },
+    {
+      "custom_id": "PATR-001",
+      "title": "French fête patronale / village patronal celebration",
+      "publication_state": "PUBLISHED",
+      "copy_fields": [
+        "title",
+        "description",
+        "history",
+        "meaning",
+        "practice",
+        "caution",
+        "scope",
+        "occasion"
+      ],
+      "language_structure": "EN_FR_NONEMPTY_NOT_SEMANTICALLY_CERTIFIED",
+      "review_stage": "EDITORIAL_FIRST_PASS_NOT_FINAL_CERTIFIED",
+      "priority": "P2",
+      "claim_boundary": "French bishops explicitly attest Chantelle patronal feast after Ascension and relic procession; locality cannot set national feast date.",
+      "representative_source_id": "ECF-CHANTELLE-PATRONAL",
+      "representative_source_url": "https://eglise.catholique.fr/conference-des-eveques-de-france/guide-de-leglise/dioceses/a-decouverte-dioceses-de-france/diocese-de-moulins/493837-abbaye-de-chantelle/",
+      "all_attestation_source_ids": [
+        "ECF-CHANTELLE-PATRONAL"
+      ],
+      "primary_text_review_this_batch": "TARGETED_MATCH_AND_SCOPE",
+      "verified_witness_urls": [
+        "https://eglise.catholique.fr/conference-des-eveques-de-france/guide-de-leglise/dioceses/a-decouverte-dioceses-de-france/diocese-de-moulins/493837-abbaye-de-chantelle/"
+      ],
+      "history_copy_action": "PRESERVED",
+      "new_custom_approved": false,
+      "needs_additional_historical_or_regional_signoff": true
+    },
+    {
+      "custom_id": "MARI-001",
+      "title": "French Assumption Marian processions",
+      "publication_state": "PUBLISHED",
+      "copy_fields": [
+        "title",
+        "description",
+        "history",
+        "meaning",
+        "practice",
+        "caution",
+        "scope",
+        "occasion"
+      ],
+      "language_structure": "EN_FR_NONEMPTY_NOT_SEMANTICALLY_CERTIFIED",
+      "review_stage": "EDITORIAL_FIRST_PASS_NOT_FINAL_CERTIFIED",
+      "priority": "P2",
+      "claim_boundary": "Paris 2026 Assumption announcement attests a named procession; no countrywide or annual event availability inferred.",
+      "representative_source_id": "DIOCESE-PARIS-ASSOMPTION-2026",
+      "representative_source_url": "https://dioceseparis.fr/fete-de-l-assomption-a-notre-dame-68561.html",
+      "all_attestation_source_ids": [
+        "DIOCESE-PARIS-ASSOMPTION-2026"
+      ],
+      "primary_text_review_this_batch": "REFERENCE_CROSSWALK_ONLY",
+      "verified_witness_urls": [],
+      "history_copy_action": "PRESERVED",
+      "new_custom_approved": false,
+      "needs_additional_historical_or_regional_signoff": true
+    },
+    {
+      "custom_id": "SJOS-001",
+      "title": "St Joseph's table and gifts to the poor",
+      "publication_state": "PUBLISHED",
+      "copy_fields": [
+        "title",
+        "description",
+        "history",
+        "meaning",
+        "practice",
+        "caution",
+        "scope",
+        "occasion"
+      ],
+      "language_structure": "EN_FR_NONEMPTY_NOT_SEMANTICALLY_CERTIFIED",
+      "review_stage": "EDITORIAL_FIRST_PASS_NOT_FINAL_CERTIFIED",
+      "priority": "P1",
+      "claim_boundary": "2026 diocesan St Joseph altar witnesses charitable sharing; a single US celebration is not definitive documentation of Sicilian historical origin.",
+      "representative_source_id": "BR-DIOCESE-STJOSEPH-2026",
+      "representative_source_url": "https://www.diobr.org/news/st-joseph-cathedral-st-joseph-altar-1",
+      "all_attestation_source_ids": [
+        "BR-DIOCESE-STJOSEPH-2026"
+      ],
+      "primary_text_review_this_batch": "REFERENCE_CROSSWALK_ONLY",
+      "verified_witness_urls": [],
+      "history_copy_action": "PRESERVED",
+      "new_custom_approved": false,
+      "needs_additional_historical_or_regional_signoff": true
+    },
+    {
+      "custom_id": "SANT-001",
+      "title": "St Anthony's Bread / Pain des pauvres",
+      "publication_state": "PUBLISHED",
+      "copy_fields": [
+        "title",
+        "description",
+        "history",
+        "meaning",
+        "practice",
+        "caution",
+        "scope",
+        "occasion"
+      ],
+      "language_structure": "EN_FR_NONEMPTY_NOT_SEMANTICALLY_CERTIFIED",
+      "review_stage": "EDITORIAL_FIRST_PASS_NOT_FINAL_CERTIFIED",
+      "priority": "P2",
+      "claim_boundary": "Sanctuary documents Louise Bouffier and 1890 Toulon revival; associated miracle tradition is not independently certified.",
+      "representative_source_id": "ERMITAGE-ANTHONY-POOR-BREAD",
+      "representative_source_url": "https://st-antoine.org/fr/sanctuaire/faire-un-don/loeuvre-du-pain-des-pauvres/",
+      "all_attestation_source_ids": [
+        "ERMITAGE-ANTHONY-POOR-BREAD"
+      ],
+      "primary_text_review_this_batch": "TARGETED_MATCH_AND_SCOPE",
+      "verified_witness_urls": [
+        "https://st-antoine.org/fr/sanctuaire/faire-un-don/loeuvre-du-pain-des-pauvres/"
+      ],
+      "history_copy_action": "PRESERVED",
+      "new_custom_approved": false,
+      "needs_additional_historical_or_regional_signoff": true
+    },
+    {
+      "custom_id": "SCHR-001",
+      "title": "St Christopher — vehicles and travellers' blessing",
+      "publication_state": "PUBLISHED",
+      "copy_fields": [
+        "title",
+        "description",
+        "history",
+        "meaning",
+        "practice",
+        "caution",
+        "scope",
+        "occasion"
+      ],
+      "language_structure": "EN_FR_NONEMPTY_NOT_SEMANTICALLY_CERTIFIED",
+      "review_stage": "EDITORIAL_FIRST_PASS_NOT_FINAL_CERTIFIED",
+      "priority": "P2",
+      "claim_boundary": "Laval vehicle blessing is a local 2026 event and no assurance of future availability or safety.",
+      "representative_source_id": "DIOCESE-LAVAL-CHRISTOPHER-2026",
+      "representative_source_url": "https://paroisse.diocesedelaval.fr/benediction-des-voitures-a-st-christophe/",
+      "all_attestation_source_ids": [
+        "DIOCESE-LAVAL-CHRISTOPHER-2026"
+      ],
+      "primary_text_review_this_batch": "REFERENCE_CROSSWALK_ONLY",
+      "verified_witness_urls": [],
+      "history_copy_action": "PRESERVED",
+      "new_custom_approved": false,
+      "needs_additional_historical_or_regional_signoff": true
+    },
+    {
+      "custom_id": "SNIC-001",
+      "title": "St Nicholas's visit and small gifts to children",
+      "publication_state": "PUBLISHED",
+      "copy_fields": [
+        "title",
+        "description",
+        "history",
+        "meaning",
+        "practice",
+        "caution",
+        "scope",
+        "occasion"
+      ],
+      "language_structure": "EN_FR_NONEMPTY_NOT_SEMANTICALLY_CERTIFIED",
+      "review_stage": "EDITORIAL_FIRST_PASS_NOT_FINAL_CERTIFIED",
+      "priority": "P2",
+      "claim_boundary": "Strasbourg source attests regional St Nicholas visits and gifts; distinguish regional folklore from the historical bishop.",
+      "representative_source_id": "STRASBOURG-SAINT-NICOLAS-2022",
+      "representative_source_url": "https://www.alsace.catholique.fr/actualites/dossiers-thematiques/418575-6-decembre-fete-de-saint-nicolas/",
+      "all_attestation_source_ids": [
+        "STRASBOURG-SAINT-NICOLAS-2022"
+      ],
+      "primary_text_review_this_batch": "REFERENCE_CROSSWALK_ONLY",
+      "verified_witness_urls": [],
+      "history_copy_action": "PRESERVED",
+      "new_custom_approved": false,
+      "needs_additional_historical_or_regional_signoff": true
+    },
+    {
+      "custom_id": "BLSS-002",
+      "title": "Assumption — blessing of herbs, flowers and fruits",
+      "publication_state": "PUBLISHED",
+      "copy_fields": [
+        "title",
+        "description",
+        "history",
+        "meaning",
+        "practice",
+        "caution",
+        "scope",
+        "occasion"
+      ],
+      "language_structure": "EN_FR_NONEMPTY_NOT_SEMANTICALLY_CERTIFIED",
+      "review_stage": "EDITORIAL_FIRST_PASS_NOT_FINAL_CERTIFIED",
+      "priority": "P2",
+      "claim_boundary": "Directory 181 locates Assumption herb blessing in Germanic regions; traditional ritual witness and current parish example are distinct.",
+      "representative_source_id": "DPP-ASSUMPTION-HERBS-181",
+      "representative_source_url": "https://www.vatican.va/content/dam/wss/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html",
+      "all_attestation_source_ids": [
+        "DPP-ASSUMPTION-HERBS-181",
+        "RIT-ASSUMPTION-WELLER",
+        "PARISH-ASSUMPTION-HERBS-NEWTON"
+      ],
+      "primary_text_review_this_batch": "REFERENCE_CROSSWALK_ONLY",
+      "verified_witness_urls": [],
+      "history_copy_action": "PRESERVED",
+      "new_custom_approved": false,
+      "needs_additional_historical_or_regional_signoff": true
+    },
+    {
+      "custom_id": "BLSS-003",
+      "title": "St John the Evangelist — blessing of wine",
+      "publication_state": "PUBLISHED",
+      "copy_fields": [
+        "title",
+        "description",
+        "history",
+        "meaning",
+        "practice",
+        "caution",
+        "scope",
+        "occasion"
+      ],
+      "language_structure": "EN_FR_NONEMPTY_NOT_SEMANTICALLY_CERTIFIED",
+      "review_stage": "EDITORIAL_FIRST_PASS_NOT_FINAL_CERTIFIED",
+      "priority": "P1",
+      "claim_boundary": "Separate traditional wine blessing, contemporary parish witness, non-Eucharistic nature, and the legendary poisoned-wine narrative.",
+      "representative_source_id": "RIT-STJOHN-WINE-1962-TRANSCRIPTION",
+      "representative_source_url": "https://materdeiparish.com/2016/12/blessing-wine-feast-st-john-tuesday-december-27th/",
+      "all_attestation_source_ids": [
+        "RIT-STJOHN-WINE-1962-TRANSCRIPTION",
+        "UK-PARISH-STJOHN-WINE"
+      ],
+      "primary_text_review_this_batch": "REFERENCE_CROSSWALK_ONLY",
+      "verified_witness_urls": [],
+      "history_copy_action": "PRESERVED",
+      "new_custom_approved": false,
+      "needs_additional_historical_or_regional_signoff": true
+    },
+    {
+      "custom_id": "BLSS-004",
+      "title": "Holy Saturday — blessing of Easter foods",
+      "publication_state": "PUBLISHED",
+      "copy_fields": [
+        "title",
+        "description",
+        "history",
+        "meaning",
+        "practice",
+        "caution",
+        "scope",
+        "occasion"
+      ],
+      "language_structure": "EN_FR_NONEMPTY_NOT_SEMANTICALLY_CERTIFIED",
+      "review_stage": "EDITORIAL_FIRST_PASS_NOT_FINAL_CERTIFIED",
+      "priority": "P2",
+      "claim_boundary": "Roman Ritual food blessings and Slavic-rooted Holy Saturday baskets must not be assumed identical or universally available.",
+      "representative_source_id": "RIT-EASTER-FOOD-WELLER",
+      "representative_source_url": "https://www.catholicculture.org/culture/liturgicalyear/prayers/view.cfm?id=1028",
+      "all_attestation_source_ids": [
+        "RIT-EASTER-FOOD-WELLER",
+        "US-DIOCESE-EASTER-BASKETS",
+        "DPP-2001"
+      ],
+      "primary_text_review_this_batch": "REFERENCE_CROSSWALK_ONLY",
+      "verified_witness_urls": [],
+      "history_copy_action": "PRESERVED",
+      "new_custom_approved": false,
+      "needs_additional_historical_or_regional_signoff": true
+    },
+    {
+      "custom_id": "ADVT-001",
+      "title": "Family Advent wreath and Sunday candle prayer",
+      "publication_state": "PUBLISHED",
+      "copy_fields": [
+        "title",
+        "description",
+        "history",
+        "meaning",
+        "practice",
+        "caution",
+        "scope",
+        "occasion"
+      ],
+      "language_structure": "EN_FR_NONEMPTY_NOT_SEMANTICALLY_CERTIFIED",
+      "review_stage": "EDITORIAL_FIRST_PASS_NOT_FINAL_CERTIFIED",
+      "priority": "P1",
+      "claim_boundary": "Published history was a duplicate; revised to documented Catholic home use. Köln 1839 Wichern and Catholic uptake sources remain proposed historical references, not yet registered.",
+      "representative_source_id": "USCCB-ADVENT-WREATH-HOME",
+      "representative_source_url": "https://www.usccb.org/prayers/blessing-advent-wreath",
+      "all_attestation_source_ids": [
+        "USCCB-ADVENT-WREATH-HOME"
+      ],
+      "primary_text_review_this_batch": "TARGETED_MATCH_AND_SCOPE",
+      "verified_witness_urls": [
+        "https://www.erzbistum-koeln.de/presse_und_medien/magazin/Der-Adventskranz-Bedeutung-und-Ursprung-des-Adventskranzes/",
+        "https://www.usccb.org/prayers/blessing-advent-wreath"
+      ],
+      "history_copy_action": "REPLACED_DESCRIPTION_DUPLICATION_SOURCE_BOUNDED",
+      "new_custom_approved": false,
+      "needs_additional_historical_or_regional_signoff": true
+    },
+    {
+      "custom_id": "ADVT-002",
+      "title": "Advent manger straw after acts of charity",
+      "publication_state": "PUBLISHED",
+      "copy_fields": [
+        "title",
+        "description",
+        "history",
+        "meaning",
+        "practice",
+        "caution",
+        "scope",
+        "occasion"
+      ],
+      "language_structure": "EN_FR_NONEMPTY_NOT_SEMANTICALLY_CERTIFIED",
+      "review_stage": "EDITORIAL_FIRST_PASS_NOT_FINAL_CERTIFIED",
+      "priority": "P1",
+      "claim_boundary": "Single contemporary family description attributes manger straw to France; does not prove national or ancient French customary origin.",
+      "representative_source_id": "CATHCULTURE-ADVENT-MANGER-STRAW-2014",
+      "representative_source_url": "https://www.catholicculture.org/commentary/straws-in-manger-preparing-our-hearts-for-christs-birth/",
+      "all_attestation_source_ids": [
+        "CATHCULTURE-ADVENT-MANGER-STRAW-2014"
+      ],
+      "primary_text_review_this_batch": "REFERENCE_CROSSWALK_ONLY",
+      "verified_witness_urls": [],
+      "history_copy_action": "REPLACED_DESCRIPTION_DUPLICATION_SOURCE_BOUNDED",
+      "new_custom_approved": false,
+      "needs_additional_historical_or_regional_signoff": true
+    },
+    {
+      "custom_id": "ADVT-003",
+      "title": "Las Posadas — Holy Family lodging procession",
+      "publication_state": "PUBLISHED",
+      "copy_fields": [
+        "title",
+        "description",
+        "history",
+        "meaning",
+        "practice",
+        "caution",
+        "scope",
+        "occasion"
+      ],
+      "language_structure": "EN_FR_NONEMPTY_NOT_SEMANTICALLY_CERTIFIED",
+      "review_stage": "EDITORIAL_FIRST_PASS_NOT_FINAL_CERTIFIED",
+      "priority": "P1",
+      "claim_boundary": "USCCB establishes living Las Posadas, not sole historical origin. Mexican Culture Ministry presents Acolman 1587 and Andalusian transmission as competing accounts.",
+      "representative_source_id": "USCCB-POSADAS-DEC16",
+      "representative_source_url": "https://www.usccb.org/prayer-and-worship/liturgical-year/advent/advent-december-16",
+      "all_attestation_source_ids": [
+        "USCCB-POSADAS-DEC16"
+      ],
+      "primary_text_review_this_batch": "TARGETED_MATCH_AND_SCOPE",
+      "verified_witness_urls": [
+        "https://www.gob.mx/cultura/articulos/54852",
+        "https://www.usccb.org/prayer-and-worship/liturgical-year/advent/advent-december-16"
+      ],
+      "history_copy_action": "REPLACED_DESCRIPTION_DUPLICATION_SOURCE_BOUNDED",
+      "new_custom_approved": false,
+      "needs_additional_historical_or_regional_signoff": true
+    },
+    {
+      "custom_id": "XMAS-001",
+      "title": "Sharing opłatek on Polish Christmas Eve",
+      "publication_state": "PUBLISHED",
+      "copy_fields": [
+        "title",
+        "description",
+        "history",
+        "meaning",
+        "practice",
+        "caution",
+        "scope",
+        "occasion"
+      ],
+      "language_structure": "EN_FR_NONEMPTY_NOT_SEMANTICALLY_CERTIFIED",
+      "review_stage": "EDITORIAL_FIRST_PASS_NOT_FINAL_CERTIFIED",
+      "priority": "P2",
+      "claim_boundary": "Polish opłatek sharing is family bread, never Holy Communion; one diaspora parish cannot establish precise original date.",
+      "representative_source_id": "SJV-VERMONT-OPLATKI",
+      "representative_source_url": "https://stjohnvianney.vermontcatholic.org/oplatki",
+      "all_attestation_source_ids": [
+        "SJV-VERMONT-OPLATKI"
+      ],
+      "primary_text_review_this_batch": "REFERENCE_CROSSWALK_ONLY",
+      "verified_witness_urls": [],
+      "history_copy_action": "REPLACED_DESCRIPTION_DUPLICATION_SOURCE_BOUNDED",
+      "new_custom_approved": false,
+      "needs_additional_historical_or_regional_signoff": true
+    },
+    {
+      "custom_id": "HTHU-001",
+      "title": "Holy Thursday visits to altars of repose",
+      "publication_state": "PUBLISHED",
+      "copy_fields": [
+        "title",
+        "description",
+        "history",
+        "meaning",
+        "practice",
+        "caution",
+        "scope",
+        "occasion"
+      ],
+      "language_structure": "EN_FR_NONEMPTY_NOT_SEMANTICALLY_CERTIFIED",
+      "review_stage": "EDITORIAL_FIRST_PASS_NOT_FINAL_CERTIFIED",
+      "priority": "P1",
+      "claim_boundary": "2026 Catholic press supports voluntary Holy Thursday repose visits; St Philip Neri Roman seven-basilica pilgrimage is not established as identical origin.",
+      "representative_source_id": "CHICAGO-CATHOLIC-HOLY-THURSDAY-2026",
+      "representative_source_url": "https://www.chicagocatholic.com/chicagoland/-/article/2026/03/18/visiting-seven-churches-on-holy-thursday-a-longstanding-tradition",
+      "all_attestation_source_ids": [
+        "CHICAGO-CATHOLIC-HOLY-THURSDAY-2026"
+      ],
+      "primary_text_review_this_batch": "TARGETED_MATCH_AND_SCOPE",
+      "verified_witness_urls": [
+        "https://www.chicagocatholic.com/chicagoland/-/article/2026/03/18/visiting-seven-churches-on-holy-thursday-a-longstanding-tradition"
+      ],
+      "history_copy_action": "REPLACED_DESCRIPTION_DUPLICATION_SOURCE_BOUNDED",
+      "new_custom_approved": false,
+      "needs_additional_historical_or_regional_signoff": true
+    },
+    {
+      "custom_id": "ROGA-001",
+      "title": "Family Rogation walk and prayer for the harvest",
+      "publication_state": "PUBLISHED",
+      "copy_fields": [
+        "title",
+        "description",
+        "history",
+        "meaning",
+        "practice",
+        "caution",
+        "scope",
+        "occasion"
+      ],
+      "language_structure": "EN_FR_NONEMPTY_NOT_SEMANTICALLY_CERTIFIED",
+      "review_stage": "EDITORIAL_FIRST_PASS_NOT_FINAL_CERTIFIED",
+      "priority": "P1",
+      "claim_boundary": "Mid-twentieth-century family prayer walk is an optional adaptation, not the Roman Church's formal Rogation procession or a lay blessing rite.",
+      "representative_source_id": "NEWLAND-ROGATION-FAMILY-1956",
+      "representative_source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1234",
+      "all_attestation_source_ids": [
+        "NEWLAND-ROGATION-FAMILY-1956"
+      ],
+      "primary_text_review_this_batch": "REFERENCE_CROSSWALK_ONLY",
+      "verified_witness_urls": [],
+      "history_copy_action": "REPLACED_DESCRIPTION_DUPLICATION_SOURCE_BOUNDED",
+      "new_custom_approved": false,
+      "needs_additional_historical_or_regional_signoff": true
+    },
+    {
+      "custom_id": "EPIP-001",
+      "title": "German Epiphany star singers / Sternsinger",
+      "publication_state": "PUBLISHED",
+      "copy_fields": [
+        "title",
+        "description",
+        "history",
+        "meaning",
+        "practice",
+        "caution",
+        "scope",
+        "occasion"
+      ],
+      "language_structure": "EN_FR_NONEMPTY_NOT_SEMANTICALLY_CERTIFIED",
+      "review_stage": "EDITORIAL_FIRST_PASS_NOT_FINAL_CERTIFIED",
+      "priority": "P2",
+      "claim_boundary": "Kindermissionswerk supports modern German charity singers, not the full medieval practice or guaranteed local house blessing.",
+      "representative_source_id": "STERN-KINDERMISSIONSWERK-2026",
+      "representative_source_url": "https://www.kindermissionswerk.org/en/ueber-uns/the-carol-singers-campaign",
+      "all_attestation_source_ids": [
+        "STERN-KINDERMISSIONSWERK-2026"
+      ],
+      "primary_text_review_this_batch": "TARGETED_MATCH_AND_SCOPE",
+      "verified_witness_urls": [
+        "https://www.kindermissionswerk.org/en/ueber-uns/the-carol-singers-campaign"
+      ],
+      "history_copy_action": "REPLACED_DESCRIPTION_DUPLICATION_SOURCE_BOUNDED",
+      "new_custom_approved": false,
+      "needs_additional_historical_or_regional_signoff": true
+    },
+    {
+      "custom_id": "EPIP-002",
+      "title": "French Galette des Rois and the poor person's portion",
+      "publication_state": "PUBLISHED",
+      "copy_fields": [
+        "title",
+        "description",
+        "history",
+        "meaning",
+        "practice",
+        "caution",
+        "scope",
+        "occasion"
+      ],
+      "language_structure": "EN_FR_NONEMPTY_NOT_SEMANTICALLY_CERTIFIED",
+      "review_stage": "EDITORIAL_FIRST_PASS_NOT_FINAL_CERTIFIED",
+      "priority": "P2",
+      "claim_boundary": "French bishops directly describe galette, fève, paper crown and optional poor person's share; Roman antiquity and separate school-fees story not established.",
+      "representative_source_id": "ECF-GALETTE-EPIPHANIE",
+      "representative_source_url": "https://eglise.catholique.fr/approfondir-sa-foi/la-celebration-de-la-foi/les-grandes-fetes-chretiennes/epiphanie/426637-feter-lepiphanie/",
+      "all_attestation_source_ids": [
+        "ECF-GALETTE-EPIPHANIE"
+      ],
+      "primary_text_review_this_batch": "TARGETED_MATCH_AND_SCOPE",
+      "verified_witness_urls": [
+        "https://eglise.catholique.fr/approfondir-sa-foi/la-celebration-de-la-foi/les-grandes-fetes-chretiennes/epiphanie/426637-feter-lepiphanie/"
+      ],
+      "history_copy_action": "REPLACED_DESCRIPTION_DUPLICATION_SOURCE_BOUNDED",
+      "new_custom_approved": false,
+      "needs_additional_historical_or_regional_signoff": true
+    },
+    {
+      "custom_id": "CORP-001",
+      "title": "Corpus Christi flower carpets and window decorations",
+      "publication_state": "PUBLISHED",
+      "copy_fields": [
+        "title",
+        "description",
+        "history",
+        "meaning",
+        "practice",
+        "caution",
+        "scope",
+        "occasion"
+      ],
+      "language_structure": "EN_FR_NONEMPTY_NOT_SEMANTICALLY_CERTIFIED",
+      "review_stage": "EDITORIAL_FIRST_PASS_NOT_FINAL_CERTIFIED",
+      "priority": "P2",
+      "claim_boundary": "UNESCO supports Polish family flower carpets (inscribed 2021); other regional flower customs need distinct citations, no universal procession event.",
+      "representative_source_id": "UNESCO-CORPUS-FLOWER-CARPETS",
+      "representative_source_url": "https://ich.unesco.org/en/RL/flower-carpets-tradition-for-corpus-christi-processions-01743",
+      "all_attestation_source_ids": [
+        "UNESCO-CORPUS-FLOWER-CARPETS",
+        "VATICAN-DPP-CORPUS-FLOWERS-162"
+      ],
+      "primary_text_review_this_batch": "TARGETED_MATCH_AND_SCOPE",
+      "verified_witness_urls": [
+        "https://ich.unesco.org/en/RL/flower-carpets-tradition-for-corpus-christi-processions-01743"
+      ],
+      "history_copy_action": "REPLACED_DESCRIPTION_DUPLICATION_SOURCE_BOUNDED",
+      "new_custom_approved": false,
+      "needs_additional_historical_or_regional_signoff": true
+    },
+    {
+      "custom_id": "EAST-001",
+      "title": "Easter Monday Emmaus walk",
+      "publication_state": "PUBLISHED",
+      "copy_fields": [
+        "title",
+        "description",
+        "history",
+        "meaning",
+        "practice",
+        "caution",
+        "scope",
+        "occasion"
+      ],
+      "language_structure": "EN_FR_NONEMPTY_NOT_SEMANTICALLY_CERTIFIED",
+      "review_stage": "EDITORIAL_FIRST_PASS_NOT_FINAL_CERTIFIED",
+      "priority": "P2",
+      "claim_boundary": "Archdiocesan account documents Bavarian Easter Monday Emmaus walks; neither historical start date nor 2026 parish itinerary generalizes.",
+      "representative_source_id": "MUNICH-FREISING-EMMAUSGANG",
+      "representative_source_url": "https://www2.erzbistum-muenchen.de/news/STK-Rosenheim/Emmausgang-30834.news",
+      "all_attestation_source_ids": [
+        "MUNICH-FREISING-EMMAUSGANG"
+      ],
+      "primary_text_review_this_batch": "REFERENCE_CROSSWALK_ONLY",
+      "verified_witness_urls": [],
+      "history_copy_action": "REPLACED_DESCRIPTION_DUPLICATION_SOURCE_BOUNDED",
+      "new_custom_approved": false,
+      "needs_additional_historical_or_regional_signoff": true
+    },
+    {
+      "custom_id": "MARI-002",
+      "title": "Mary garden — flowers and herbs dedicated to Our Lady",
+      "publication_state": "PUBLISHED",
+      "copy_fields": [
+        "title",
+        "description",
+        "history",
+        "meaning",
+        "practice",
+        "caution",
+        "scope",
+        "occasion"
+      ],
+      "language_structure": "EN_FR_NONEMPTY_NOT_SEMANTICALLY_CERTIFIED",
+      "review_stage": "EDITORIAL_FIRST_PASS_NOT_FINAL_CERTIFIED",
+      "priority": "P1",
+      "claim_boundary": "Catholic Culture documents contemporary Marian gardening; 1932 Woods Hole/1951 Philadelphia history is documented separately at Dayton, not yet registered.",
+      "representative_source_id": "CATHCULTURE-MARY-GARDEN",
+      "representative_source_url": "https://www.catholicculture.org/commentary/annunciation-and-lent-celebrating-new-life-through-mary-garden/",
+      "all_attestation_source_ids": [
+        "CATHCULTURE-MARY-GARDEN"
+      ],
+      "primary_text_review_this_batch": "TARGETED_MATCH_AND_SCOPE",
+      "verified_witness_urls": [
+        "https://udayton.edu/marianlibrary/marysgardens/b/background-on-marys-gardens.php",
+        "https://www.catholicculture.org/commentary/annunciation-and-lent-celebrating-new-life-through-mary-garden/"
+      ],
+      "history_copy_action": "REPLACED_DESCRIPTION_DUPLICATION_SOURCE_BOUNDED",
+      "new_custom_approved": false,
+      "needs_additional_historical_or_regional_signoff": true
+    }
+  ]
+}
