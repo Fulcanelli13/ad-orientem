@@ -14,6 +14,8 @@ assert.equal(data.sourceAuthorshipCertified,0);
 assert.equal(data.sourceRepliesCertified,0);
 assert.equal(data.catenaNoveltyConfirmed,0);
 assert.equal(data.approvals,0);
+assert.equal(data.harmonyColumnInterleavingUnresolved,true);
+assert.equal(data.chrysostomPrintedNotesUnresolved,true);
 assert.ok(data.excerptWindowCount>=94&&data.excerptWindowCount<=220);
 assert.equal(summary.contextEnvelopes,data.excerptWindowCount);
 assert.equal(data.selected.length,data.excerptWindowCount);
@@ -56,6 +58,15 @@ for(const id of ["NPNF1-06","NPNF1-10"]){
   assert.equal(w.textRole,"neighboring_unverified_OCR_not_a_verified_answer");
   assert.equal(w.sourceOwnedWordsOnly,false);
   assert.equal(w.containsPotentialBibleAndEditorialText,true);
+  assert.equal(candidate.columnAlignmentValidated,false);
+  assert.equal(candidate.questionAndReplySpeakerSeparated,false);
+  assert.equal(candidate.originalPrintedPageChecked,false);
+  if(id==="NPNF1-06"){
+   assert.ok(candidate.preliminaryScreening.sourceLayerRisks.includes(
+    "two_column_harmony_OCR_alignment_unresolved"));
+   assert.ok(candidate.preliminaryScreening.positiveCueEvidence.includes(
+    "possible_scripture_interleaved_across_scan_columns"));
+  }
   assert.equal(candidate.fatherAuthorshipEstablished,false);
   assert.equal(candidate.sourceOwnedReplyLocated,false);
   assert.equal(candidate.catenaNoveltyEstablished,false);
