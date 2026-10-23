@@ -18,13 +18,14 @@
     "no_1962_mass_or_calendar_modifications": true,
     "do_not_auto_promote_unpublished_research": true,
     "contextual_history_sources_are_not_custom_attestations": true,
-    "contextual_history_sources_are_displayed_separately": true
+    "contextual_history_sources_are_displayed_separately": true,
+    "indexed_sources_and_partial_evidence_are_holds_not_automatic_approval": true
   },
   "counts": {
     "published_records": 35,
     "p1_priority": 13,
     "p2_priority": 22,
-    "targeted_primary_text_reviews": 19,
+    "targeted_primary_text_reviews": 35,
     "history_duplicate_fixes_proposed": 11,
     "fully_editorially_certified": 0,
     "new_publications": 0,
@@ -32,7 +33,11 @@
     "p1_source_wording_discrepancies_corrected": 1,
     "history_narratives_with_direct_institutional_witnesses": 4,
     "p1_source_level_adjudications": 13,
-    "p1_final_editorial_certifications": 0
+    "p1_final_editorial_certifications": 0,
+    "p2_source_level_adjudications": 16,
+    "p2_indexed_only_or_access_limited": 3,
+    "final_english_french_editorial_signoffs": 0,
+    "final_release_approval": 0
   },
   "records": [
     {
@@ -58,11 +63,19 @@
       "all_attestation_source_ids": [
         "MUCEM-BENITIER"
       ],
-      "primary_text_review_this_batch": "REFERENCE_CROSSWALK_ONLY",
+      "primary_text_review_this_batch": "TARGETED_MATCH_AND_SCOPE",
       "verified_witness_urls": [],
       "history_copy_action": "PRESERVED",
       "new_custom_approved": false,
-      "needs_additional_historical_or_regional_signoff": true
+      "needs_additional_historical_or_regional_signoff": true,
+      "p2_source_text_review": {
+        "status": "SOURCE_SCOPE_BOUND",
+        "access_basis": "DIRECT_MUSEUM_CATALOGUE",
+        "source_url": "https://mucem.org/les-collections-du-mucem/explorez-les-collections/?keyword=b%C3%A9nitier+de+chevet",
+        "claim_supported": "Six Mucem catalog results include French bedside holy-water fonts from 1900–1925 and 1950.",
+        "remaining_hold": "Objects prove historical household vessels, not rates of use or a universal prayer routine.",
+        "review_signoff": "SOURCE_SCOPE_ONLY_NOT_FINAL_BILINGUAL_ACCEPTANCE"
+      }
     },
     {
       "custom_id": "DOM-006",
@@ -87,11 +100,19 @@
       "all_attestation_source_ids": [
         "PARAY-CONSECRATION"
       ],
-      "primary_text_review_this_batch": "REFERENCE_CROSSWALK_ONLY",
+      "primary_text_review_this_batch": "TARGETED_MATCH_AND_SCOPE",
       "verified_witness_urls": [],
       "history_copy_action": "PRESERVED",
       "new_custom_approved": false,
-      "needs_additional_historical_or_regional_signoff": true
+      "needs_additional_historical_or_regional_signoff": true,
+      "p2_source_text_review": {
+        "status": "SOURCE_SCOPE_BOUND",
+        "access_basis": "DIRECT_SHRINE_TEXT",
+        "source_url": "https://sacrecoeur-paray.org/consecration-sacre-coeur/",
+        "claim_supported": "Paray sanctuary describes voluntary family consecration, daily renewal and Jesuit promotion since 1870.",
+        "remaining_hold": "Some consecrations take place during Mass; this does not create a universal 1962 Mass ceremony.",
+        "review_signoff": "SOURCE_SCOPE_ONLY_NOT_FINAL_BILINGUAL_ACCEPTANCE"
+      }
     },
     {
       "custom_id": "DOM-007",
@@ -116,11 +137,19 @@
       "all_attestation_source_ids": [
         "PARAY-INTRONISATION"
       ],
-      "primary_text_review_this_batch": "REFERENCE_CROSSWALK_ONLY",
+      "primary_text_review_this_batch": "TARGETED_MATCH_AND_SCOPE",
       "verified_witness_urls": [],
       "history_copy_action": "PRESERVED",
       "new_custom_approved": false,
-      "needs_additional_historical_or_regional_signoff": true
+      "needs_additional_historical_or_regional_signoff": true,
+      "p2_source_text_review": {
+        "status": "SOURCE_SCOPE_BOUND",
+        "access_basis": "DIRECT_SHRINE_TEXT",
+        "source_url": "https://sacrecoeur-paray.org/prier/introniser-le-sacre-coeur/",
+        "claim_supported": "Paray describes family enthronement of an image and its relation to consecration.",
+        "remaining_hold": "Attributed devotional promises are not verified outcomes or compulsory ministerial blessings.",
+        "review_signoff": "SOURCE_SCOPE_ONLY_NOT_FINAL_BILINGUAL_ACCEPTANCE"
+      }
     },
     {
       "custom_id": "LIFE-002",
@@ -260,11 +289,19 @@
         "LAGHET-EXVOTO",
         "ALTOETTING-EXVOTO"
       ],
-      "primary_text_review_this_batch": "REFERENCE_CROSSWALK_ONLY",
+      "primary_text_review_this_batch": "TARGETED_MATCH_AND_SCOPE",
       "verified_witness_urls": [],
       "history_copy_action": "PRESERVED",
       "new_custom_approved": false,
-      "needs_additional_historical_or_regional_signoff": true
+      "needs_additional_historical_or_regional_signoff": true,
+      "p2_source_text_review": {
+        "status": "INDEXED_SOURCE_RECHECK_REQUIRED",
+        "access_basis": "OFFICIAL_INDEXED_COPY_DIRECT_TIMEOUT",
+        "source_url": "https://sanctuaire-laghet.fr/ex-votos/",
+        "claim_supported": "Laghet sanctuary indexed page reports over 4,000 ex-votos and historical thanksgiving objects.",
+        "remaining_hold": "Direct live page timed out; no verification of every alleged miracle or artwork reuse rights.",
+        "review_signoff": "SOURCE_SCOPE_ONLY_NOT_FINAL_BILINGUAL_ACCEPTANCE"
+      }
     },
     {
       "custom_id": "DEV-010",
@@ -331,11 +368,19 @@
         "DPP-2001",
         "ECF-DEAD"
       ],
-      "primary_text_review_this_batch": "REFERENCE_CROSSWALK_ONLY",
+      "primary_text_review_this_batch": "TARGETED_MATCH_AND_SCOPE",
       "verified_witness_urls": [],
       "history_copy_action": "PRESERVED",
       "new_custom_approved": false,
-      "needs_additional_historical_or_regional_signoff": true
+      "needs_additional_historical_or_regional_signoff": true,
+      "p2_source_text_review": {
+        "status": "SOURCE_SCOPE_BOUND",
+        "access_basis": "DIRECT_VATICAN_AND_FRENCH_BISHOPS",
+        "source_url": "https://www.vatican.va/content/dam/wss/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html",
+        "claim_supported": "Directory §260 describes public and private cemetery visits; French bishops note many Catholics tending graves on 2 November.",
+        "remaining_hold": "No duty arising from superstition, guaranteed indulgence or compulsory local date.",
+        "review_signoff": "SOURCE_SCOPE_ONLY_NOT_FINAL_BILINGUAL_ACCEPTANCE"
+      }
     },
     {
       "custom_id": "DEAD-003",
@@ -363,11 +408,19 @@
         "MONTLIGEON-DEAD-CUSTOM",
         "POLAND-WYPOMINKI-2025"
       ],
-      "primary_text_review_this_batch": "REFERENCE_CROSSWALK_ONLY",
+      "primary_text_review_this_batch": "TARGETED_MATCH_AND_SCOPE",
       "verified_witness_urls": [],
       "history_copy_action": "PRESERVED",
       "new_custom_approved": false,
-      "needs_additional_historical_or_regional_signoff": true
+      "needs_additional_historical_or_regional_signoff": true,
+      "p2_source_text_review": {
+        "status": "SOURCE_SCOPE_BOUND",
+        "access_basis": "DIRECT_FRENCH_BISHOPS_AND_VATICAN",
+        "source_url": "https://eglise.catholique.fr/approfondir-sa-foi/la-celebration-de-la-foi/les-grandes-fetes-chretiennes/toussaint/429069-jour-priere-defunts/",
+        "claim_supported": "French bishops identify 2 November intercession for the dead; Directory §255–260 discusses Mass and prayer.",
+        "remaining_hold": "Polish wypominki and local memorial services require distinct regional attestation.",
+        "review_signoff": "SOURCE_SCOPE_ONLY_NOT_FINAL_BILINGUAL_ACCEPTANCE"
+      }
     },
     {
       "custom_id": "DOM-003",
@@ -393,11 +446,19 @@
         "MUCEM-BENITIER",
         "RIT-WELLER"
       ],
-      "primary_text_review_this_batch": "REFERENCE_CROSSWALK_ONLY",
+      "primary_text_review_this_batch": "TARGETED_MATCH_AND_SCOPE",
       "verified_witness_urls": [],
       "history_copy_action": "PRESERVED",
       "new_custom_approved": false,
-      "needs_additional_historical_or_regional_signoff": true
+      "needs_additional_historical_or_regional_signoff": true,
+      "p2_source_text_review": {
+        "status": "SOURCE_SCOPE_BOUND",
+        "access_basis": "DIRECT_MUSEUM_PLUS_RITUAL_INDEX",
+        "source_url": "https://www.ewtn.com/catholicism/library/roman-ritual-index-11884",
+        "claim_supported": "Weller Roman Ritual index establishes historical blessings; Mucem artifacts establish domestic holy-water vessels.",
+        "remaining_hold": "Ritual index alone does not prove frequency of personal routines; lay users do not confer reserved blessings.",
+        "review_signoff": "SOURCE_SCOPE_ONLY_NOT_FINAL_BILINGUAL_ACCEPTANCE"
+      }
     },
     {
       "custom_id": "DOM-011",
@@ -459,11 +520,19 @@
         "ECF-RAMEAUX-HOME",
         "DPP-2001"
       ],
-      "primary_text_review_this_batch": "REFERENCE_CROSSWALK_ONLY",
+      "primary_text_review_this_batch": "TARGETED_MATCH_AND_SCOPE",
       "verified_witness_urls": [],
       "history_copy_action": "PRESERVED",
       "new_custom_approved": false,
-      "needs_additional_historical_or_regional_signoff": true
+      "needs_additional_historical_or_regional_signoff": true,
+      "p2_source_text_review": {
+        "status": "SOURCE_SCOPE_BOUND",
+        "access_basis": "DIRECT_VATICAN_DIRECTORY_139",
+        "source_url": "https://www.vatican.va/content/dam/wss/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html",
+        "claim_supported": "Directory §139 explicitly documents keeping blessed greenery at home and warns against amuletic use.",
+        "remaining_hold": "No mandated plant, placement, talisman effect or 1962 rubric change.",
+        "review_signoff": "SOURCE_SCOPE_ONLY_NOT_FINAL_BILINGUAL_ACCEPTANCE"
+      }
     },
     {
       "custom_id": "BLSS-001",
@@ -526,11 +595,19 @@
       "all_attestation_source_ids": [
         "EWTN-MCLOUGHLIN-NAMEDAY"
       ],
-      "primary_text_review_this_batch": "REFERENCE_CROSSWALK_ONLY",
+      "primary_text_review_this_batch": "TARGETED_MATCH_AND_SCOPE",
       "verified_witness_urls": [],
       "history_copy_action": "PRESERVED",
       "new_custom_approved": false,
-      "needs_additional_historical_or_regional_signoff": true
+      "needs_additional_historical_or_regional_signoff": true,
+      "p2_source_text_review": {
+        "status": "SOURCE_SCOPE_BOUND",
+        "access_basis": "DIRECT_1962_CATHOLIC_HOUSEHOLD_BOOK",
+        "source_url": "https://www.ewtn.com/catholicism/library/my-namedaycome-for-desert-10465",
+        "claim_supported": "Helen McLoughlin's 1962 approved handbook details nameday family celebration, dessert, prayer and optional Mass.",
+        "remaining_hold": "A first name does not identify a patron automatically; copyrighted 1962 book is not for wholesale republication.",
+        "review_signoff": "SOURCE_SCOPE_ONLY_NOT_FINAL_BILINGUAL_ACCEPTANCE"
+      }
     },
     {
       "custom_id": "PATR-001",
@@ -586,11 +663,19 @@
       "all_attestation_source_ids": [
         "DIOCESE-PARIS-ASSOMPTION-2026"
       ],
-      "primary_text_review_this_batch": "REFERENCE_CROSSWALK_ONLY",
+      "primary_text_review_this_batch": "TARGETED_MATCH_AND_SCOPE",
       "verified_witness_urls": [],
       "history_copy_action": "PRESERVED",
       "new_custom_approved": false,
-      "needs_additional_historical_or_regional_signoff": true
+      "needs_additional_historical_or_regional_signoff": true,
+      "p2_source_text_review": {
+        "status": "SOURCE_SCOPE_BOUND",
+        "access_basis": "DIRECT_OFFICIAL_2026_DIOCESAN_PROGRAMME",
+        "source_url": "https://dioceseparis.fr/fete-de-l-assomption-a-notre-dame-68561.html",
+        "claim_supported": "Paris diocese specifies Notre-Dame processions on 14 and 15 August 2026.",
+        "remaining_hold": "Dated Paris event is not a default procession elsewhere or a future-year schedule.",
+        "review_signoff": "SOURCE_SCOPE_ONLY_NOT_FINAL_BILINGUAL_ACCEPTANCE"
+      }
     },
     {
       "custom_id": "SJOS-001",
@@ -681,11 +766,19 @@
       "all_attestation_source_ids": [
         "DIOCESE-LAVAL-CHRISTOPHER-2026"
       ],
-      "primary_text_review_this_batch": "REFERENCE_CROSSWALK_ONLY",
+      "primary_text_review_this_batch": "TARGETED_MATCH_AND_SCOPE",
       "verified_witness_urls": [],
       "history_copy_action": "PRESERVED",
       "new_custom_approved": false,
-      "needs_additional_historical_or_regional_signoff": true
+      "needs_additional_historical_or_regional_signoff": true,
+      "p2_source_text_review": {
+        "status": "SOURCE_SCOPE_BOUND",
+        "access_basis": "DIRECT_OFFICIAL_2026_PARISH_NOTICE",
+        "source_url": "https://paroisse.diocesedelaval.fr/benediction-des-voitures-a-st-christophe/",
+        "claim_supported": "Laval parish scheduled 11 AM Mass and noon vehicle blessing at Saint-Christophe-du-Luat on 19 July 2026.",
+        "remaining_hold": "The attested celebration was 19 July, not 25 July; no annually repeated service or physical safety guarantee.",
+        "review_signoff": "SOURCE_SCOPE_ONLY_NOT_FINAL_BILINGUAL_ACCEPTANCE"
+      }
     },
     {
       "custom_id": "SNIC-001",
@@ -710,11 +803,19 @@
       "all_attestation_source_ids": [
         "STRASBOURG-SAINT-NICOLAS-2022"
       ],
-      "primary_text_review_this_batch": "REFERENCE_CROSSWALK_ONLY",
+      "primary_text_review_this_batch": "TARGETED_MATCH_AND_SCOPE",
       "verified_witness_urls": [],
       "history_copy_action": "PRESERVED",
       "new_custom_approved": false,
-      "needs_additional_historical_or_regional_signoff": true
+      "needs_additional_historical_or_regional_signoff": true,
+      "p2_source_text_review": {
+        "status": "INDEXED_SOURCE_RECHECK_REQUIRED",
+        "access_basis": "OFFICIAL_INDEXED_COPY_LIVE_502",
+        "source_url": "https://www.alsace.catholique.fr/actualites/dossiers-thematiques/418575-6-decembre-fete-de-saint-nicolas/",
+        "claim_supported": "Strasbourg diocesan 2022 text describes sweets, gifts and visits in Alsace and Lorraine.",
+        "remaining_hold": "Live fetch 502; later folklore and threatening companions are not saint biography or prescribed liturgy.",
+        "review_signoff": "SOURCE_SCOPE_ONLY_NOT_FINAL_BILINGUAL_ACCEPTANCE"
+      }
     },
     {
       "custom_id": "BLSS-002",
@@ -741,11 +842,19 @@
         "RIT-ASSUMPTION-WELLER",
         "PARISH-ASSUMPTION-HERBS-NEWTON"
       ],
-      "primary_text_review_this_batch": "REFERENCE_CROSSWALK_ONLY",
+      "primary_text_review_this_batch": "TARGETED_MATCH_AND_SCOPE",
       "verified_witness_urls": [],
       "history_copy_action": "PRESERVED",
       "new_custom_approved": false,
-      "needs_additional_historical_or_regional_signoff": true
+      "needs_additional_historical_or_regional_signoff": true,
+      "p2_source_text_review": {
+        "status": "SOURCE_SCOPE_BOUND",
+        "access_basis": "DIRECT_VATICAN_DIRECTORY_181",
+        "source_url": "https://www.vatican.va/content/dam/wss/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html",
+        "claim_supported": "Directory §181 locates Assumption herb blessing especially in Germanic countries and refers to ritual incorporation.",
+        "remaining_hold": "Ministerial blessing remains optional and is not a universal rule.",
+        "review_signoff": "SOURCE_SCOPE_ONLY_NOT_FINAL_BILINGUAL_ACCEPTANCE"
+      }
     },
     {
       "custom_id": "BLSS-003",
@@ -808,11 +917,19 @@
         "US-DIOCESE-EASTER-BASKETS",
         "DPP-2001"
       ],
-      "primary_text_review_this_batch": "REFERENCE_CROSSWALK_ONLY",
+      "primary_text_review_this_batch": "TARGETED_MATCH_AND_SCOPE",
       "verified_witness_urls": [],
       "history_copy_action": "PRESERVED",
       "new_custom_approved": false,
-      "needs_additional_historical_or_regional_signoff": true
+      "needs_additional_historical_or_regional_signoff": true,
+      "p2_source_text_review": {
+        "status": "SOURCE_SCOPE_BOUND",
+        "access_basis": "DIRECT_HISTORICAL_RITUAL_TRANSCRIPTION",
+        "source_url": "https://www.catholicculture.org/culture/liturgicalyear/prayers/view.cfm?id=1028",
+        "claim_supported": "Catholic Culture supplies Weller Roman Ritual blessings for lamb, eggs and bread, distinct from Polish/Slovak basket witnesses.",
+        "remaining_hold": "1952/1964 edition references do not by themselves certify the exact 1962 ritual text.",
+        "review_signoff": "SOURCE_SCOPE_ONLY_NOT_FINAL_BILINGUAL_ACCEPTANCE"
+      }
     },
     {
       "custom_id": "ADVT-001",
@@ -960,11 +1077,19 @@
       "all_attestation_source_ids": [
         "SJV-VERMONT-OPLATKI"
       ],
-      "primary_text_review_this_batch": "REFERENCE_CROSSWALK_ONLY",
+      "primary_text_review_this_batch": "TARGETED_MATCH_AND_SCOPE",
       "verified_witness_urls": [],
       "history_copy_action": "REPLACED_DESCRIPTION_DUPLICATION_SOURCE_BOUNDED",
       "new_custom_approved": false,
-      "needs_additional_historical_or_regional_signoff": true
+      "needs_additional_historical_or_regional_signoff": true,
+      "p2_source_text_review": {
+        "status": "SOURCE_SCOPE_BOUND",
+        "access_basis": "DIRECT_CATHOLIC_PARISH_ACCOUNT",
+        "source_url": "https://stjohnvianney.vermontcatholic.org/oplatki",
+        "claim_supported": "Vermont Catholic parish describes Polish Christmas Eve opłatek as unconsecrated thin bread, distinct from the Eucharist.",
+        "remaining_hold": "Dated local blessing announcement does not establish future schedules.",
+        "review_signoff": "SOURCE_SCOPE_ONLY_NOT_FINAL_BILINGUAL_ACCEPTANCE"
+      }
     },
     {
       "custom_id": "HTHU-001",
@@ -1155,11 +1280,19 @@
       "all_attestation_source_ids": [
         "MUNICH-FREISING-EMMAUSGANG"
       ],
-      "primary_text_review_this_batch": "REFERENCE_CROSSWALK_ONLY",
+      "primary_text_review_this_batch": "TARGETED_MATCH_AND_SCOPE",
       "verified_witness_urls": [],
       "history_copy_action": "REPLACED_DESCRIPTION_DUPLICATION_SOURCE_BOUNDED",
       "new_custom_approved": false,
-      "needs_additional_historical_or_regional_signoff": true
+      "needs_additional_historical_or_regional_signoff": true,
+      "p2_source_text_review": {
+        "status": "INDEXED_SOURCE_RECHECK_REQUIRED",
+        "access_basis": "OFFICIAL_INDEXED_COPY_DIRECT_TIMEOUT",
+        "source_url": "https://www2.erzbistum-muenchen.de/news/STK-Rosenheim/Emmausgang-30834.news",
+        "claim_supported": "Munich–Freising indexed text describes southern German/Austrian Easter Monday Emmaus walks associated with Luke 24.",
+        "remaining_hold": "Direct article fetch timed out; no universal origin, precise inception or current parish itinerary.",
+        "review_signoff": "SOURCE_SCOPE_ONLY_NOT_FINAL_BILINGUAL_ACCEPTANCE"
+      }
     },
     {
       "custom_id": "MARI-002",
