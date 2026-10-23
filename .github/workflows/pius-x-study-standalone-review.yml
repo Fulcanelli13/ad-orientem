@@ -22,9 +22,11 @@ on:
       - 'tests/pius-x-wave5-bulk-inventory.mjs'
       - 'tests/pius-x-wave6-five-vatican-documents.mjs'
       - 'tests/pius-x-salzano-wave7-transcription-research.mjs'
+      - 'tests/pius-x-catechismo-maggiore-wave8-all59.mjs'
       - 'tests/pius-x-wave5-bulk-inventory.mjs'
       - 'tests/pius-x-wave6-five-vatican-documents.mjs'
       - 'tests/pius-x-salzano-wave7-transcription-research.mjs'
+      - 'tests/pius-x-catechismo-maggiore-wave8-all59.mjs'
       - 'previews/pius-x-study/spx-model-review-client.js'
       - 'previews/pius-x-study/spx-model-review-style.css'
       - 'tests/pius-x-generative-review-e2e.mjs'
@@ -125,6 +127,8 @@ jobs:
         run: node tests/pius-x-wave6-five-vatican-documents.mjs
       - name: Audit all 120 Salzano source-owner nodes against numbered Italian manuscript-transcription loci
         run: node tests/pius-x-salzano-wave7-transcription-research.mjs
+      - name: Validate all 59 Italian 1905 Catechismo Maggiore evidence decisions without papal authorship inflation
+        run: node tests/pius-x-catechismo-maggiore-wave8-all59.mjs
       - name: Exercise real-model evaluation harness without external inference
         run: node tests/pius-x-live-eval-harness.mjs
       - name: Exercise provider HTTP integration against loopback fake model (no paid inference)
