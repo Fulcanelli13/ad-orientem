@@ -10,6 +10,10 @@ on:
       - prototype/pius-x-standalone-study-20261021
     paths:
       - 'previews/pius-x-study/**'
+      - 'tools/build-pius-x-p26-offline-replay.mjs'
+      - 'previews/pius-x-study/spx-p26-offline-replay-client.js'
+      - 'previews/pius-x-study/spx-p26-offline-replay-style.css'
+      - 'tests/pius-x-p26-offline-replay-e2e.mjs'
       - 'tests/pius-x-study-standalone-e2e.mjs'
       - 'tests/pius-x-study-expanded-82-e2e.mjs'
       - 'tests/pius-x-study-next12-dialogues-e2e.mjs'
@@ -56,6 +60,10 @@ on:
   pull_request:
     paths:
       - 'previews/pius-x-study/**'
+      - 'tools/build-pius-x-p26-offline-replay.mjs'
+      - 'previews/pius-x-study/spx-p26-offline-replay-client.js'
+      - 'previews/pius-x-study/spx-p26-offline-replay-style.css'
+      - 'tests/pius-x-p26-offline-replay-e2e.mjs'
       - 'tests/pius-x-study-standalone-e2e.mjs'
       - 'tests/pius-x-study-expanded-82-e2e.mjs'
       - 'tests/pius-x-study-next12-dialogues-e2e.mjs'
@@ -118,6 +126,10 @@ jobs:
         run: node tests/pius-x-study-next12-pastoral-e2e.mjs
       - name: Build separate P6 voice-review artifact for twelve earlier subjects
         run: node tools/build-pius-x-earlier-94-p6.mjs
+      - name: Build free one-file offline Pius X source-dialogue trial with preserved sprites
+        run: node tools/build-pius-x-p26-offline-replay.mjs
+      - name: Browser-test offline source dialogue, French/English and original Vatican witnesses
+        run: node tests/pius-x-p26-offline-replay-e2e.mjs
       - name: Validate P6 preserved sources and bilingual offline interaction
         run: node tests/pius-x-study-earlier-94-p6-e2e.mjs
       - name: Test typed questions, conservative source navigation and short-form follow-ups
