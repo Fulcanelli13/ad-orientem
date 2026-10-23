@@ -13,6 +13,8 @@ on:
       - scripts/scripture-catena-chrysostom-original-question-replies.mjs
       - scripts/scripture-catena-chrysostom-speech-layers.mjs
       - scripts/scripture-catena-chrysostom-catena-overlap.mjs
+      - scripts/scripture-catena-chrysostom-focused-parallels.mjs
+      - tests/scripture-catena-chrysostom-focused-parallels.mjs
       - tests/scripture-catena-chrysostom-catena-overlap.mjs
       - tests/scripture-catena-chrysostom-speech-layers.mjs
       - tests/scripture-catena-chrysostom-original-question-replies.mjs
@@ -37,6 +39,8 @@ on:
       - scripts/scripture-catena-chrysostom-original-question-replies.mjs
       - scripts/scripture-catena-chrysostom-speech-layers.mjs
       - scripts/scripture-catena-chrysostom-catena-overlap.mjs
+      - scripts/scripture-catena-chrysostom-focused-parallels.mjs
+      - tests/scripture-catena-chrysostom-focused-parallels.mjs
       - tests/scripture-catena-chrysostom-catena-overlap.mjs
       - tests/scripture-catena-chrysostom-speech-layers.mjs
       - tests/scripture-catena-chrysostom-original-question-replies.mjs
@@ -147,6 +151,10 @@ jobs:
         run: node scripts/scripture-catena-chrysostom-catena-overlap.mjs
       - name: Verify every literal overlap phrase against original text of both historic English editions
         run: node tests/scripture-catena-chrysostom-catena-overlap.mjs
+      - name: Build 24 source-faithful Chrysostom/Catena original-text parallel research records
+        run: node scripts/scripture-catena-chrysostom-focused-parallels.mjs
+      - name: Verify 24 full original-source and canonical Catena excerpts with exact quotation evidence
+        run: node tests/scripture-catena-chrysostom-focused-parallels.mjs
       - name: Attach both full original scan OCR texts and candidate indexes
         if: success()
         uses: actions/upload-artifact@v4
@@ -159,5 +167,6 @@ jobs:
             dist/schaff-chrysostom-replies/
             dist/schaff-chrysostom-speech-layers/
             dist/schaff-chrysostom-catena-overlap/
+            dist/schaff-chrysostom-focused-parallels/
           if-no-files-found: error
           retention-days: 14
