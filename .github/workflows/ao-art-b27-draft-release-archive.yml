@@ -70,6 +70,7 @@ jobs:
           repository: Fulcanelli13/ad-orientem
           github-token: ${{ github.token }}
           path: incoming
+          merge-multiple: true
       - name: Validate every source file against B26 file-level SHA-256 index
         env:
           WAVE: ${{ matrix.key }}
