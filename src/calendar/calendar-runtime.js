@@ -707,7 +707,7 @@ function disciplineReference(discipline){
 
 function calendarCustomArticleMarkup(article){
   const isFr=fr(),lang=isFr?"fr":"en",Lcopy=(en,frText)=>isFr?frText:en;
-  const sources=article.sources||[];
+  const sources=article.sources||[],historySources=article.history_sources||[];
   return `<details class="aoCalCustomArticle" data-cal-custom-id="${esc(article.id)}">
     <summary><span><strong>${esc(article.title[lang])}</strong><small>${esc(article.occasion[lang]||"")}</small></span><span aria-hidden="true">›</span></summary>
     <div class="aoCalCustomArticleContent">
@@ -717,6 +717,7 @@ function calendarCustomArticleMarkup(article){
       <h5>${esc(Lcopy("Traditional household practice","Pratique traditionnelle"))}</h5><p>${esc(article.practice[lang])}</p>
       <h5>${esc(Lcopy("Scope and cautions","Portée et précautions"))}</h5><p>${esc(article.scope[lang])}</p><p>${esc(article.caution[lang])}</p>
       ${sources.length?`<h5>${esc(Lcopy("Sources","Sources"))}</h5><ul>${sources.map(source=>`<li><a href="${esc(source.url)}" target="_blank" rel="noopener noreferrer">${esc(source.title)} ↗</a></li>`).join("")}</ul>`:""}
+      ${historySources.length?`<h5>${esc(Lcopy("Historical sources","Sources historiques"))}</h5><ul>${historySources.map(source=>`<li><a href="${esc(source.url)}" target="_blank" rel="noopener noreferrer">${esc(source.title)} ↗</a></li>`).join("")}</ul>`:""}
     </div>
   </details>`;
 }
