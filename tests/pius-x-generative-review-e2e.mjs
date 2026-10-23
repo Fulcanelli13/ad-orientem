@@ -19,15 +19,19 @@ assert.equal(historical.reason,'not_papal_primary_document_adaptation');
 let calls=0;
 let sabotage=false;
 let rejectVerification=false;
+let emitWitnesses=false;
 const fakeModel=async(kind,messages)=>{
  calls++;
  const input=JSON.parse(messages[1].content);
  if(kind==='compose'){
   const id=input.evidence[0].id;
   return {mode:'answer',text:'The existing editorial material emphasizes the task of encouraging faithful Christian instruction and pastoral care.',
-   evidenceIds:[sabotage?'NEVER-IN-THIS-SOURCE':id],expression:'explaining'};
+   evidenceIds:[sabotage?'NEVER-IN-THIS-SOURCE':id],
+   ...(emitWitnesses?{witnessIds:[input.evidence[0].originalLanguageWitnesses[0].id]}:{}),
+   expression:'explaining'};
  }
- return {supported:!rejectVerification,allClaimsSupported:!rejectVerification,ids:input.candidate.ids};
+ return {supported:!rejectVerification,allClaimsSupported:!rejectVerification,ids:input.candidate.ids,
+  ...(emitWitnesses?{witnessIds:input.candidate.witnessIds}: {})};
 };
 const eligible={chapterId:'SPX-PILOT-01',language:'en',question:'Could you explain your pastoral approach?'};
 const chosen=selectEvidence(store,eligible);
@@ -61,6 +65,7 @@ try{
  assert.equal(wrongOrigin.status,403);
  browser=await chromium.launch({headless:true,args:['--no-sandbox']});
  for(const width of [1280,390]){
+  emitWitnesses=width===1280; // cover original-fragment pointers and legacy node-only fallback
   const page=await browser.newPage({viewport:{width,height:844}});
   const errs=[];page.on('pageerror',e=>errs.push(String(e)));
   await page.goto(base+'/',{waitUntil:'load'});
@@ -72,7 +77,17 @@ try{
   await page.locator('#spxm-send').click();
   await page.locator('.spxm-draft').first().waitFor();
   assert.match(await page.locator('.spxm-warning').first().innerText(),/NOT THE WORDS OF ST PIUS X/);
-  assert.match(await page.locator('.spxm-entry a').first().innerText(),/NOT COLLATED/);
+  const firstSource=await page.locator('.spxm-entry a').first().innerText();
+  assert.match(firstSource,/NOT COLLATED/);
+  if(emitWitnesses){
+   assert.match(firstSource,/ES-INTRO-TEARS/);
+   assert.match(firstSource,/PIUS X AUTHOR/);
+   assert.match(firstSource,/LA/);
+   assert.match(await page.locator('.spxm-source-label').first().innerText(),/Matched original-language excerpt locators/);
+  }else{
+   assert.match(firstSource,/AO.SPX.DIALOGUE.SPX_PILOT_01.OPEN/);
+   assert.match(await page.locator('.spxm-source-label').first().innerText(),/Underlying unapproved editorial source pointers/);
+  }
   assert.equal(await page.locator('#spxc-portrait').getAttribute('data-expression'),'explaining');
   await page.locator('#spxc-lang').click();
   assert.equal(await page.locator('html').getAttribute('lang'),'fr');
