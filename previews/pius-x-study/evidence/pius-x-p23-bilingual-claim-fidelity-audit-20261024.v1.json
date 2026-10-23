@@ -367,10 +367,16 @@
       "englishClaim": "The encyclical speaks of tears and prayers before so grave a charge, and of a strength to be sought from God rather than from personal merit.",
       "frenchClaim": "L'encyclique évoque des larmes et des prières devant un devoir si grave, puis la force cherchée auprès de Dieu plutôt que dans les mérites personnels.",
       "witnessIds": [
+        "ES-INTRO-TEARS",
         "ES-2-UNWORTHY",
         "ES-4-STRENGTH"
       ],
       "officialVaticanLineRanges": [
+        {
+          "witnessId": "ES-INTRO-TEARS",
+          "start": 46,
+          "end": 46
+        },
         {
           "witnessId": "ES-2-UNWORTHY",
           "start": 51,
@@ -554,7 +560,8 @@
       "frenchClaim": "L'exhortation lui demande de réserver chaque jour un temps à la méditation, au lieu de la laisser écarter par le ministère.",
       "witnessIds": [
         "HA-DAILY",
-        "HA-MINISTRY"
+        "HA-MINISTRY",
+        "HA-REJECT"
       ],
       "officialVaticanLineRanges": [
         {
@@ -564,6 +571,11 @@
         },
         {
           "witnessId": "HA-MINISTRY",
+          "start": 96,
+          "end": 96
+        },
+        {
+          "witnessId": "HA-REJECT",
           "start": 96,
           "end": 96
         }
