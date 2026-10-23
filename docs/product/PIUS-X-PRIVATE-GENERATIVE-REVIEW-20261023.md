@@ -213,3 +213,24 @@ It compares all 41 excerpts to **separately transcribed, longer original-languag
 
 
 A separate evidence-to-claim map is maintained at `previews/pius-x-study/evidence/pius-x-eight-opening-source-claims-20261023.v1.json`. It preserves **41 narrow propositions** with the exact original-language snippets and speaker identifiers, alongside explicit unresolved claims for all eight openings. This is **claim-level original-text support** and expressly not a verified EN/FR translation, approval of the original full authored replies, or automatic permission to use the source as a generated historical quote. The existing CI check enforces exact parity with the 41 recorded primary witness IDs. The model review runtime's automatic source promotions remain at zero.
+
+
+## P2.8 — Eight bilingual opening comparisons and minimal corrections (23 October 2026)
+
+The eight opening answers selected during the twelve-document primary-source round have now been checked against their **actual rendered P6 English/French dialogue** and the 41 original Latin/Italian witness phrases:
+
+    previews/pius-x-study/evidence/pius-x-eight-opening-bilingual-audit-20261023.v1.json
+
+This audit attaches exact EN and FR phrase spans to original witness IDs, plus an exception queue for extra context, potentially stronger translation, embedded quotations, or modern editorial disclaimers. It records **25 aligned EN/FR claim spans** and **21 editorial cautions** across eight opening subjects. These figures describe *limited review classifications*, not percentages of correctly translated words or proof of complete source fidelity. No independent certified translation has been produced.
+
+A useful implementation finding emerged during the first CI check: two existing openings (`SPX-NEW-013`, `SPX-NEW-021`) had already been substantially rewritten by the **P5 conversational-voice overlay**. Reviewing their original P4 source records therefore examined obsolete text rather than the actual P6 user-facing experience. The audit was repaired to use the final P5 answers; CI hashes the actual rendered EN/FR opening paragraphs and checks every reviewed text span against the rebuilt P6 source. Future reviews must always use the *resolved P6 answer* rather than an older stage input.
+
+The remaining cautions include: `Pieni l'animo` Italian **indisciplinatezza / orgoglio della mente** can be strengthened unhelpfully by English/French words implying deliberate contempt; `Editae saepe` lists Gregory the Great, **John Chrysostom** and Anselm, while the two existing versions omit Chrysostom in their introductory comparison; `Ad diem illum` distinguishes Christ's sole redemptive authority and includes a Marian title quoted from **Pius IX**; and several answers mix historical papal voice with modern interface disclaimers. The disclaimers belong in the source/attribution UI, not unmarked pseudo-historical dialogue.
+
+Four conservative bilingual correction proposals are recorded **without applying them** to owner data or P6 generated dialogue:
+
+    previews/pius-x-study/evidence/pius-x-opening-bilingual-correction-proposals-20261023.v1.json
+
+They include restoring the missing third saint's name, tightening discipline/intellectual-pride wording, crediting the apostolic admonition quoted in `Pieni l'animo`, and moving a visitor/AI disclaimer out of character speech into the source drawer. These proposals must be reconciled through the existing source/voice owners; the PR deliberately does not create another content registry or overwrite the running reader.
+
+`tests/pius-x-eight-opening-bilingual-audit.mjs` asserts all exact source-to-translation spans, the 21 explicit cautions, the immutable canonical dialogue counts, P5/P6 overlay parity, and that the four suggested changes remain **unapplied**. **Eight openings examined, zero bilingual translations approved, zero complete answers authenticated, zero new model-evidence promotions.**
