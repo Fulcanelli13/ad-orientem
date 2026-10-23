@@ -8,7 +8,7 @@
 - All 35 articles were structurally checked for English and French title, description, history, meaning, voluntary practice, caution, occasion, and scope fields.
 - Each of the 35 articles' source IDs matches canonical attestations and the current 108-entry source registry. No new source or custom identity was silently created.
 - **11** P0/P1 articles had identical Description and History in both languages. These eleven histories have been replaced with independently worded, bounded contextual notes based on already attributed sources, with no invented antiquity, universal law or event schedule.
-- **19** published customs now have targeted source-level review, including all **13 P1** records. The remaining **16** have a provenance crosswalk, but not source-level text signoff. No record has received full historical/editorial certification.
+- **35 of 35** published customs now have individual source-level dispositions. This comprises all **13 P1**, the remaining **16 previously unreviewed records** and 6 P2 already checked earlier. **Three** new source comparisons relied on indexed official copies after direct public retrieval errors, so their access limits remain open. No record has received full historical/editorial/bilingual certification.
 - Four independently verified institutional historical references are now registered in the **same source-registry file** under `historical_context_sources` (outside the original 108 customary attestation sources). The Calendar presents their links separately as Historical sources / Sources historiques for ADVT-001, ADVT-002, ADVT-003 and MARI-002.
 - **0 of 35** are declared finally editorially certified. The article register is a first-pass gating instrument, not retroactive source approval.
 
@@ -53,4 +53,4 @@ Editorial history corrections cite only source-bounded events or explicitly iden
 
 Run `node tests/customs-35-editorial-first-pass.mjs`, `node tests/calendar-customs-context.mjs` and `node tests/customs-living-library.mjs` in the PR's dedicated GitHub Action. The test locks published identity and attestation/source parity, language structure and non-duplicate historical sections. **Structural parity does not automatically approve translations.**
 
-Next pass: review remaining 25 against exact source passages, settle the 13 P1 gates, reconcile accepted new witnesses with canonical registries, then obtain human EN/FR editorial acceptance. Do not merge research-only identities, grant art rights or create a second Calendar.
+Next pass: no further broad source-inventory sweeps. Close **specific access/evidence holds** (Laghet, Strasbourg and Munich-Freising official pages; routine-use claim for DOM-003), then carry out final content-by-content EN/FR semantic/editorial acceptance; existing 35 publication approvals are not retroactively rescinded or relabelled. Do not merge research-only identities, grant art rights or create a second Calendar.
