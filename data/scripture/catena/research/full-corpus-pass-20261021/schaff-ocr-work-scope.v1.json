@@ -1,0 +1,84 @@
+{
+  "schema": "ao.catena.schaff-historical-scan-work-scope.v1",
+  "researchDate": "2026-10-23",
+  "status": "sha_pinned_volume_level_ocr_work_boundary_heuristics_not_author_edition_signoff",
+  "lineNumbering": "1_based_original_Internet_Archive_djvu_OCR",
+  "sourceEvidence": "Printed first chapter title, translated-work title pages, and beginning of printed subject index observed directly in historical scan OCR; boundaries approximate and include notes and quotations.",
+  "volumes": [
+    {
+      "editionId": "NPNF1-06",
+      "ocrSHA256": "d1dbf01ad9047a00252cec6ef5822c5c2131bf6cad46c5209212c1cdf9417b34",
+      "maxLines": 84176,
+      "scopes": [
+        {
+          "start": 1,
+          "end": 499,
+          "unit": "preface_or_editorial",
+          "authorSpeechUnverified": true
+        },
+        {
+          "start": 500,
+          "end": 9384,
+          "unit": "augustine_sermon_on_mount_provisional",
+          "authorSpeechUnverified": true
+        },
+        {
+          "start": 9385,
+          "end": 10198,
+          "unit": "harmony_editorial_intro",
+          "authorSpeechUnverified": true
+        },
+        {
+          "start": 10199,
+          "end": 32249,
+          "unit": "augustine_harmony_of_gospels_provisional",
+          "authorSpeechUnverified": true
+        },
+        {
+          "start": 32250,
+          "end": 32722,
+          "unit": "gospel_sermons_editorial_intro",
+          "authorSpeechUnverified": true
+        },
+        {
+          "start": 32723,
+          "end": 75800,
+          "unit": "augustine_gospel_sermons_provisional",
+          "authorSpeechUnverified": true
+        },
+        {
+          "start": 75801,
+          "end": 84176,
+          "unit": "index_or_printed_appendix",
+          "authorSpeechUnverified": true
+        }
+      ]
+    },
+    {
+      "editionId": "NPNF1-10",
+      "ocrSHA256": "4be619e9e01c9c6d5538fff17ac951e18775186814aa255a5540e2955c0ca6f2",
+      "maxLines": 86358,
+      "scopes": [
+        {
+          "start": 1,
+          "end": 1070,
+          "unit": "preface_or_editorial",
+          "authorSpeechUnverified": true
+        },
+        {
+          "start": 1071,
+          "end": 79086,
+          "unit": "chrysostom_matthew_homilies_provisional",
+          "authorSpeechUnverified": true
+        },
+        {
+          "start": 79087,
+          "end": 86358,
+          "unit": "index_or_printed_appendix",
+          "authorSpeechUnverified": true
+        }
+      ]
+    }
+  ],
+  "publicationApprovals": 0
+}
