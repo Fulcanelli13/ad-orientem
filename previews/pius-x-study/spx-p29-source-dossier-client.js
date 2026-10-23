@@ -29,7 +29,9 @@ const translations={
  attributionUnknown:'Attribution under review',
  open:'Inspect primary-source excerpt',source:'Vatican original document',
  notice:'No complete answer, translation or historical voice has been approved',
- extra:'Research cautions'
+ extra:'Research cautions',
+ showDraft:'Inspect earlier unverified editorial reconstruction',
+ hideDraft:'Return to original-source-first study'
  },
  fr:{
  title:'DOSSIER DES SOURCES ORIGINALES',
@@ -41,7 +43,9 @@ const translations={
  attributionUnknown:'Attribution à vérifier',
  open:'Examiner le passage original',source:'Document original du Vatican',
  notice:'Aucune réponse complète, traduction ou voix historique n’est approuvée',
- extra:'Réserves de recherche'
+ extra:'Réserves de recherche',
+ showDraft:'Consulter l’ancienne reconstitution éditoriale non vérifiée',
+ hideDraft:'Revenir aux sources originales'
  }
 };
 const section=document.createElement('section');
@@ -49,14 +53,23 @@ section.id='spxc-primary-source-dossier';
 section.hidden=true;
 section.innerHTML="<div class='spxm-head'><strong id='spxp29-title'></strong>"+
  "<small id='spxp29-sub'></small></div>"+
- "<p id='spxp29-intro'></p><div id='spxp29-questions'></div>"+
+ "<p id='spxp29-intro'></p><button type='button' id='spxp29-draft-toggle' aria-pressed='false'></button>"+
+ "<div id='spxp29-questions'></div>"+
  "<div id='spxp29-content' aria-live='polite'></div>";
 const $=name=>section.querySelector('#'+name);
 const element=(type,cls,text,parent)=>{
  const e=document.createElement(type);if(cls)e.className=cls;
  e.textContent=text;parent.append(e);return e;
 };
-let context=null,language='en';
+let context=null,language='en',draftVisible=false;
+function setDraftVisibility(show){
+ draftVisible=!!show;
+ document.body.classList.toggle('spxc-source-dossier-show-draft',draftVisible);
+ const toggle=$('spxp29-draft-toggle'),t=translations[language];
+ toggle.setAttribute('aria-pressed',String(draftVisible));
+ toggle.textContent=draftVisible?t.hideDraft:t.showDraft;
+}
+$('spxp29-draft-toggle').addEventListener('click',()=>setDraftVisibility(!draftVisible));
 const speak=(speaker,t)=>{
  if(speaker==='PIUS_X_AUTHOR')return t.author;
  if(speaker)return t.other+' ('+speaker.replaceAll('_',' ')+')';
@@ -90,9 +103,18 @@ document.addEventListener('ao-spx-review-context',e=>{
  context=ctx.chapterId;language=ctx.language==='fr'?'fr':'en';
  const docs=groups.get(context)||[];
  section.hidden=!docs.length;
- const container=document.querySelector('.spxc-main-scroll');
- if(container&&!container.contains(section))container.append(section);
- if(section.hidden)return;
+ document.body.classList.toggle('spxc-source-dossier-active',!section.hidden);
+ if(section.hidden){
+  document.body.classList.remove('spxc-source-dossier-show-draft');
+  draftVisible=false;
+  return;
+ }
+ // Put documentary questions before any unverified P6 character dialogue.
+ // Host replaces #spxc-main during navigation, so reattach on every render.
+ const main=document.querySelector('#spxc-main');
+ const before=main?.querySelector('.spxc-turn');
+ if(main&&!main.contains(section))main.insertBefore(section,before||null);
+ setDraftVisibility(false);
  const t=translations[language];
  $('spxp29-title').textContent=t.title;
  $('spxp29-sub').textContent=t.sub;
