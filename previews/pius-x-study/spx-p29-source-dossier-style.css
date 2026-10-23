@@ -22,3 +22,17 @@
 .spxp29-caution{margin:7px 0}
 @media(max-width:600px){#spxc-primary-source-dossier{padding:14px 16px}
  .spxp29-excerpt-view{padding:11px}.spxp29-original{font-size:16px}}
+
+/* P2.30 source-first study: pre-existing P6 text is never the default answer
+ * in a documentary-only chapter; it stays available through explicit review. */
+#spxp29-draft-toggle{display:block;margin:12px 0 17px;border:1px solid #8c7a5f;
+ background:#161a20;padding:10px 13px;text-align:left;color:#dcc7a4;
+ font:12px/1.55 system-ui,sans-serif;cursor:pointer}
+#spxp29-draft-toggle:hover,#spxp29-draft-toggle:focus-visible{
+ border-color:#cfb385;background:#282727}
+body.spxc-source-dossier-active:not(.spxc-source-dossier-show-draft)
+ #spxc-main .spxc-turn,
+body.spxc-source-dossier-active:not(.spxc-source-dossier-show-draft)
+ #spxc-main .spxc-next,
+body.spxc-source-dossier-active:not(.spxc-source-dossier-show-draft)
+ #spxc-main .spxc-free-ask{display:none!important}
