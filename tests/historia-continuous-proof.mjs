@@ -113,7 +113,7 @@ const betweenRenderer=html.split("if(!bridge&&showBridges&&(!highPriorityBridges
 assert.ok(betweenRenderer&&!betweenRenderer.includes("previous=pp")&&!betweenRenderer.includes("previous=p"),
  "Optional original witness must not close omitted main-source boundaries");
 assert.ok(html.includes("const afterTrial=beat.afterSelectedReadthroughTrial"));
-assert.ok(html.includes("if(!bridge&&showBridges&&afterTrial)"),"Research trials must be opt-in, never main reading");
+assert.ok(html.includes("if(!bridge&&showBridges&&(!highPriorityBridgesOnly||isPriorityHistoriaBridge(beat))&&afterTrial)"),"Research trials must be opt-in, never main reading");
 assert.ok(html.includes("The main reading still omits this text"));
 const researchTrialRenderer=html.split("const afterTrial=beat.afterSelectedReadthroughTrial")[1].split("host.append(compare);held++;")[0];
 assert.ok(researchTrialRenderer&&!researchTrialRenderer.includes("previous=p"),
