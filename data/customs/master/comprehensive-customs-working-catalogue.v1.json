@@ -43,7 +43,8 @@
     "PITRE_1900_ORIGINAL_PRINT_DIRECT_OCR_NONCANONICAL": "129 detailed historical observations in Giuseppe Pitre's original 1900 Feste patronali in Sicilia, vol XXI, scanned copy OCR line spans via Internet Archive, distinct textual work from the earlier posthumous Palermo historical volumes. OCR original-edition text was directly read, though facsimile page images were not visually checked and printed folio numbers have not been certified. 14 named localities; many observations are components or variants of one patronal festival, folk beliefs or civic contexts. Pitre relied on questionnaires/correspondents, quotes earlier writers and may repeat his own 1881 work. This is one compiled book witness, not 129 independent historical testimonies, and 0 verified Catholic distinct customs or 1962 Roman Ritual authorizations.",
     "PITRE_1900_129_CROSS_SOURCE_AND_71_PAIR_DECISION_BOUNDARY": "All 129 earlier OCR-observation IDs retain provenance and were screened against earlier label pools. 74 have candidate lexical hints (166 edges); 55 no lexical hints. Separate 71 manually judged action-description pairs distinguish local shared St Joseph family actions, date/saint/region variants, and false equivalences. Neither hints nor action-pair relation types certify a global distinct custom, independently checked old eyewitness manuscripts, original printed page facsimile, 1962 rite authority, or current continuance. This is nonadditive: existing counted source-detail row total unchanged.",
     "PITRE1900_COMPLETE_ACTION_TRIAGE_NOT_COMPLETE_TEXT_MINING": "All 129 already extracted Pitrè 1900 OCR source-detail records are covered by 7 noncanonical patronal research families, 71 previous action-description pair reviews touching 82 source IDs, and 47 individually screened unpaired source IDs; zero 1900 OCR chapters newly extracted in this pass because original OCR remote endpoint currently inaccessible. The 7 sampled feast chapters remain NONEXHAUSTIVE relative to author's 60 reported festival subjects; printed-page images and original cited earlier witnesses remain unread. No new distinct customs, master owner IDs or publications.",
-    "PITRE_ORIGINAL_TEXT_ACCESS_HOLD_OCT24": "129 previously source-located Pitrè 1900 observations retain original OCR evidence. This session could read Google Books' original 1900 catalogue and 1881 precursor contents, but no complete new original 1900 OCR chapter: Internet Archive text denied, Google Books direct text denied/download CAPTCHA, large Wikimedia complete PDF exceeded reader limit, runtime container has no outbound network. Six bibliographic scan routes are NOT independent authors. Original 1881 same-author Santa Lucia page-424 source is a known comparison target but original body not read. Strictly nonadditive."
+    "PITRE_ORIGINAL_TEXT_ACCESS_HOLD_OCT24": "129 previously source-located Pitrè 1900 observations retain original OCR evidence. This session could read Google Books' original 1900 catalogue and 1881 precursor contents, but no complete new original 1900 OCR chapter: Internet Archive text denied, Google Books direct text denied/download CAPTCHA, large Wikimedia complete PDF exceeded reader limit, runtime container has no outbound network. Six bibliographic scan routes are NOT independent authors. Original 1881 same-author Santa Lucia page-424 source is a known comparison target but original body not read. Strictly nonadditive.",
+    "PITRE_ORIGINAL_FACSIMILE_NEW_EVIDENCE": "24 Oct 2026: a compressed 1900 Michigan volume was directly supplied and scanned, original printed pages located for all 25 pre-existing P0 critical Pitrè records and 16 additional high-risk Wave03 records. 41 observations span 33 original PDF pages. Existing 129-row source-access register preserves its old pre-acquisition zero-image snapshot and is superseded on these page checks by pitre-1900-uploaded-facsimile-25p0-16-wave03-page-gates.v1.json. Source authenticity of previous historiography, 1881 same-author dependence, rite approval, uniquely distinct identities and publication remain unverified."
   },
   "summary": {
     "source_observations": {
@@ -235,15 +236,20 @@
       "pitre_1900_129_context_p1": 17,
       "pitre_1900_129_standard_p2": 87,
       "pitre_1900_six_bibliographic_access_routes_nonindependent": 6,
-      "pitre_1900_original_folio_images_visually_checked": 0,
+      "pitre_1900_original_folio_images_visually_checked": 25,
       "pitre_1900_new_121_original_ocr_source_rows_indexed": 121,
       "pitre_1900_new_121_distinct_1900_section_labels": 7,
       "pitre_1900_new_121_original_folio_images_verified": 0,
       "pitre_1900_new_121_verified_unique_customs": 0,
       "pitre_1900_new_293_original_ocr_source_rows_indexed": 293,
       "pitre_1900_new_293_distinct_local_festival_complexes": 13,
-      "pitre_1900_new_293_original_folio_images_verified": 0,
-      "pitre_1900_new_293_verified_unique_customs": 0
+      "pitre_1900_new_293_original_folio_images_verified": 16,
+      "pitre_1900_new_293_verified_unique_customs": 0,
+      "pitre_1900_uploaded_facsimile_priority_p0_25_source_checks": 25,
+      "pitre_1900_uploaded_facsimile_new_highrisk_16_source_checks": 16,
+      "pitre_1900_uploaded_facsimile_unique_pdf_pages_checked": 33,
+      "pitre_1900_uploaded_facsimile_total_located_observations": 41,
+      "pitre_1900_uploaded_facsimile_independently_approved_rituals": 0
     },
     "no_new_app_publications": true,
     "source_discovery_leads": {
@@ -339,7 +345,8 @@
     "pitre_original_1900_witness_and_1881_dependency_gates": "data/customs/master/pitre-1900-129-original-witness-facsimile-and-1881-dependency-gates.v1.json",
     "pitre_1900_new_original_ocr_three_sections": "data/customs/master/pitre-1900-new-rosalia-cosmas-piazza-original-ocr-stage01.v1.json",
     "pitre_1900_new_original_ocr_four_sections": "data/customs/master/pitre-1900-new-gangi-gratteri-geraci-marineo-original-ocr-stage02.v1.json",
-    "pitre_1900_original_ocr_six_untouched_complexes_wave03": "data/customs/master/pitre-1900-original-ocr-unmined-messina-ragusa-scicli-comiso-mazara-calatafimi-wave03.v1.json"
+    "pitre_1900_original_ocr_six_untouched_complexes_wave03": "data/customs/master/pitre-1900-original-ocr-unmined-messina-ragusa-scicli-comiso-mazara-calatafimi-wave03.v1.json",
+    "pitre_1900_uploaded_original_scan_page_verification": "data/customs/master/pitre-1900-uploaded-facsimile-25p0-16-wave03-page-gates.v1.json"
   },
   "existing_master_identities": [
     {
