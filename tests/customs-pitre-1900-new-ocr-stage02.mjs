@@ -43,6 +43,12 @@ assert.equal(ids.size,250);
 assert.equal(two.records.some(r=>r.classification==='HOUSEHOLD_BLESSING_AUTHORITY_HOLD'),true);
 assert.equal(two.records.some(r=>r.classification==='FOLK_EFFICACY_CLAIM_HOLD'),true);
 assert.equal(two.records.some(r=>r.classification==='HISTORICAL_ALTERNATING_VARIANT'),true);
+
+assert.equal(currentCatalog.external_source_observations_pitre_original_1900_new_ocr.length,121);
+assert.equal(currentCatalog.summary.source_observations.total_source_detail_rows_including_external,3235);
+assert.equal(currentCatalog.summary.source_observations.pitre_1900_original_new_seven_sections_ocr_details,121);
+assert.equal(currentCatalog.summary.identity_working_rows.provisional_after_53_no_owner_action_review,408);
+assert.equal(currentCatalog.summary.identity_working_rows.final_uniquely_verified_customs_added,0);
 assert.equal(currentCatalog.external_source_observations_pitre_original_1900_ocr.length,129,
   'Original 129 remain in unified catalogue; 121 new staging records must not silently be counted as certified customs');
 assert.equal(currentCatalog.summary.no_new_app_publications,true);
