@@ -122,5 +122,23 @@ assert.equal(proof.movements.find(m=>m.id==="HS-M35").beats.find(b=>b.id==="HS-P
 assert.ok(!proof.movements.find(m=>m.id==="HS-M35").beats.some(b=>b.kind==="SCRIPTURE"&&b.refs.some(r=>r.startsWith("Revelation 1:9"))));
 assert.deepEqual(doc.headings.preferredOrNeededSourceVerseCounts,
  {genesisArk:12,passover:2,johnBurial:5,romeArrivalAndAudience:7,actsToRevelationGenreLabel:0});
+// Count-equality alone cannot establish content identity: assert the five actual
+// causal/genre anchors in every original Catholic witness at their verse keys.
+for(const ed of editions){
+ const src=(book,chapter,verse)=>map.get(ed+"|"+book).get(chapter+":"+verse);
+ const french=ed==="crampon-1923";
+ assert.match(src("Genesis",6,14),french?/arche/i:/ark/i);
+ assert.match(src("Genesis",6,18),french?/alliance/i:/covenant/i);
+ assert.match(src("Exodus",12,29),french?/premiers.nés/i:/firstborn/i);
+ assert.match(src("Exodus",12,30),french?/Pharaon/i:/Pharaoh|Pharao/i);
+ assert.match(src("John",19,34),french?/sang/i:/blood/i);
+ assert.match(src("John",19,34),french?/eau/i:/water/i);
+ assert.match(src("John",19,38),french?/Joseph.*Arimathie/i:/Joseph.*Arimathea/i);
+ assert.match(src("John",19,42),french?/déposèrent Jésus/i:/laid Jesus|placed Jesus/i);
+ assert.match(src("Acts",28,16),/Rome/i);
+ assert.match(src("Acts",28,22),french?/entendre/i:/hear/i);
+ assert.match(src("Revelation",1,9),/Patmos/i);
+ assert.match(src("Revelation",4,2),french?/trône/i:/throne/i);
+}
 assert.equal(doc.options.every(q=>q.choices.every(c=>c.publicationApproved===false)),true);
 console.log("PASS Historia five P0 source-economy decisions: 12 unapproved options, 15 Catholic source witness files, original-source word counts, no publication, no altered 93 source units or 151 Atlas objects.");
