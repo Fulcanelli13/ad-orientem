@@ -24,6 +24,8 @@ for(const row of read("data/geography/research/sacred-geography-r77-essential-co
 for(const row of read("data/geography/research/sacred-geography-r79-major-church-sites.v1.json").new_sites)publishedAfterFreeze.add(row.place_id);
 // R87 physical Place additions also postdate the historical Europe survey freeze.
 for(const row of read("data/geography/research/sacred-geography-r87-first-canonical-release.v1.json").published_new)publishedAfterFreeze.add(row.place_id);
+// The P14 Ovada release is later than this frozen original Europe research census.
+publishedAfterFreeze.add(read("data/geography/research/sacred-places-p14-ovada-canonical-release.v1.json").published_new.place_id);
 const historicalPlaces=G.places.filter(p=>!publishedAfterFreeze.has(p.place_id));
 assert.equal(A.schema,"AO_EXPLORE_EUROPE_FOUR_WAVE_MASTER_REVIEW_V1");
 assert.equal(A.status,"REGISTRY_RESEARCH_IN_PROGRESS_NONE_COMPLETE");
