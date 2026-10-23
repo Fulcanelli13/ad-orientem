@@ -18,6 +18,15 @@ assert.equal(proof.literaryReviewProgress.movementsDeskExamined,37);
 assert.equal(proof.literaryReviewProgress.fullSequentialReadthroughComplete,false);
 // Ensure the single research reader actually shows the authored, attributed
 // *editorial candidates*, not older explanatory metadata or synthetic Bible.
+// Editorial references sometimes cross chapter boundaries. The shared reader
+// parser accepts a single chapter at a time; preserve the original citation
+// while validating *both* original endpoints rather than changing source data.
+function validEditorialSourceReference(ref){
+ if(parseScriptureContext(ref))return true;
+ const match=ref.match(/^(.+?) (\\d+):(\\d+)[–-](\\d+):(\\d+)$/);
+ return !!match&&!!parseScriptureContext(match[1]+" "+match[2]+":"+match[3])&&
+  !!parseScriptureContext(match[1]+" "+match[4]+":"+match[5]);
+}
 const originalContext=proof.movements.flatMap(m=>m.beats.filter(b=>b.kind==="EDITORIAL_CONTEXT_NOT_BIBLE"));
 const preScriptureConnectors=proof.movements.flatMap(m=>m.beats.filter(b=>b.beforeScriptureConnectorCandidate).map(b=>b.beforeScriptureConnectorCandidate));
 assert.equal(originalContext.length,29);
@@ -28,13 +37,13 @@ for(const beat of originalContext){
  assert.ok(candidate&&candidate.text&&candidate.text.length>15,"Missing proposed literary text: "+beat.id);
  assert.equal(candidate.publicationApproved,false);
  assert.ok(candidate.sourceReferences?.length>0,"Unsourced editorial note "+beat.id);
- for(const ref of candidate.sourceReferences)assert.ok(parseScriptureContext(ref),"Unparsed note source "+ref);
+ for(const ref of candidate.sourceReferences)assert.ok(validEditorialSourceReference(ref),"Unparsed note source "+ref);
 }
 for(const candidate of preScriptureConnectors){
  assert.ok(candidate.text&&candidate.sourceReferences?.length>0,"Missing source-supported connector");
  assert.equal(candidate.accepted,false);
  assert.equal(candidate.publicationApproved,false);
- for(const ref of candidate.sourceReferences)assert.ok(parseScriptureContext(ref),"Unparsed connector source "+ref);
+ for(const ref of candidate.sourceReferences)assert.ok(validEditorialSourceReference(ref),"Unparsed connector source "+ref);
 }
 assert.match(html,/Proposed editorial transition · not Scripture · not approved/);
 assert.match(html,/Proposed continuity · not Scripture · not approved/);
