@@ -39,3 +39,5 @@ jobs:
         run: |
           node --check tests/customs-pitre-1900-new-ocr-stage01.mjs
           node tests/customs-pitre-1900-new-ocr-stage01.mjs
+          node --check tests/customs-pitre-1900-new-ocr-stage02.mjs
+          node tests/customs-pitre-1900-new-ocr-stage02.mjs
