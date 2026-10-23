@@ -90,13 +90,13 @@ const offline={
 const client=readFileSync('previews/pius-x-study/spx-p26-offline-replay-client.js','utf8');
 const css=readFileSync('previews/pius-x-study/spx-model-review-style.css','utf8')+'\n'+
  readFileSync('previews/pius-x-study/spx-p26-offline-replay-style.css','utf8');
-assert(!/<\\/script/i.test(client)&&!/<\\/style/i.test(css));
+assert(!/<\/script/i.test(client)&&!/<\/style/i.test(css));
 const safe=JSON.stringify(offline).replace(/</g,'\\u003c').replace(/>/g,'\\u003e').replace(/&/g,'\\u0026');
 const sourceHTML=html.replace('</body>',
  '<script type="application/json" id="spxOfflineReplayData">'+safe+'</script></body>');
 const final=makeReviewHTML(sourceHTML,client,css);
 assert(!/<script[^>]+src=/.test(final));
-assert(!/<link[^>]+https?:\\/\\//.test(final));
+assert(!/<link[^>]+https?:\/\//.test(final));
 assert.equal(final.match(/id="spxOfflineReplayData"/g)?.length,1);
 assert.equal(final.match(/id="spxExpandedCorpus"/g)?.length,1);
 assert.equal(final.match(/id="spxData"/g)?.length,1);
