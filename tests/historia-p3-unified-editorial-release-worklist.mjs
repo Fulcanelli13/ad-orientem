@@ -1,0 +1,183 @@
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+import {buildBibleAtlas} from "../src/find/bible-atlas.js";
+import {ATLAS_READING_CHAPTERS} from "../src/find/bible-atlas-reading-chapters.js";
+const read=p=>JSON.parse(readFileSync(new URL("../"+p,import.meta.url),"utf8"));
+const ledger=read("data/research/historia-salutis-p3-unified-editorial-release-worklist-20261023.v1.json");
+const sources=Object.fromEntries(ledger.baseline.references.map(r=>[r.key,read(r.path)]));
+const proof=sources.proof,audit=sources.audit,p0=sources.p0,p1=sources.p1,p2=sources.p2;
+const allBeats=new Map(proof.movements.flatMap(m=>m.beats.map(b=>[b.id,{...b,movementId:m.id}])));
+const allHinges=new Map(audit.betweenMovementSeams.map(h=>[h.id,h]));
+const verseCache=new Map();
+function parse(ref){
+ const m=/^([1-3]?[A-Za-z]+) (\d+):(\d+)(?:[–-](\d+))?$/.exec(ref||"");
+ assert.ok(m,"Invalid source reference in master worklist "+ref);
+ const book=m[1],chapter=+m[2],lo=+m[3],hi=+(m[4]||m[3]);
+ assert.ok(lo<=hi);
+ return{book,chapter,lo,hi};
+}
+function exactVerse(ref,edition){
+ const a=parse(ref),key=edition+"/"+a.book;
+ if(!verseCache.has(key)){
+  const s=read("data/scripture/witness/"+edition+"/"+a.book+".json");
+  assert.equal(s.sourceStatus,"UNCOLLATED_SOURCE_WITNESS");
+  assert.equal(s.editionId,edition);
+  verseCache.set(key,new Map(s.verses.map(([ch,v,t])=>[ch+":"+v,t])));
+ }
+ const w=verseCache.get(key),text=[];
+ for(let v=a.lo;v<=a.hi;v++){
+  const t=w.get(a.chapter+":"+v);
+  assert.ok(t?.trim(),"Native Catholic Scripture witness missing "+edition+" "+ref+" v="+v);
+  text.push(t);
+ }
+ return text;
+}
+const editions=["dr-challoner","cpdv-2009","crampon-1923"];
+assert.equal(ledger.schema,"ao.historia.p3.single-operational-acceptance-backlog.v1");
+assert.equal(ledger.status,"CONSOLIDATED_RESEARCH_TO_EDITORIAL_HANDOFF_ONLY_ALL_PUBLICATION_GATES_UNPASSED");
+assert.equal(ledger.policy.statusesAreNeverPromotions,true);
+assert.equal(ledger.policy.sourceWordingNeverAIReconstructed,true);
+assert.equal(ledger.policy.noProductionAppChange,true);
+assert.equal(ledger.policy.noAtlasObjectChange,true);
+assert.equal(ledger.policy.onlyFreezeAndPromoteAcceptedDiffs,true);
+assert.equal(ledger.baseline.sourceOwnership,"ONE_PRIMARY_P3_MANUSCRIPT_NOT_PARALLEL_P4");
+assert.equal(ledger.baseline.prNumber,1345);
+assert.equal(proof.movements.length,37);
+assert.equal(proof.totals.essentialUnits,93);
+assert.equal(ledger.baseline.canonicalSelectedScriptureUnits,93);
+assert.equal(ledger.baseline.sourceMovements,37);
+assert.equal(ledger.baseline.canonicalAtlasEvents,151);
+assert.equal(ledger.baseline.atlasNavChapters,37);
+assert.equal(ledger.baseline.provisionalReadingChapters,54);
+assert.equal(buildBibleAtlas(read("data/explore/bible-places-compact.v1.json").entries).length,151);
+assert.equal(ATLAS_READING_CHAPTERS.length,37);
+assert.equal(p0.options.length,5);
+assert.equal(p1.priorityOneHinges.length,20);
+assert.equal(p2.priorityTwoHinges.length,11);
+assert.equal(audit.betweenMovementSeams.length,36);
+assert.equal(ledger.releaseGates.length,7);
+assert.equal(ledger.releaseGates.filter(g=>g.status==="NOT_PASSED").length,6);
+assert.equal(ledger.releaseGates[0].status,"RESEARCH_BASELINE_ONLY");
+assert.ok(ledger.releaseGates.every(g=>g.status!=="PASSED"));
+assert.ok(ledger.releaseGates.every(g=>g.checks.length>=3));
+const originalHolds=proof.movements.flatMap(m=>m.beats.filter(b=>b.kind==="SOURCE_BRIDGE_CANDIDATE").map(b=>b.id));
+const items=ledger.sourceDecisionWorklist;
+assert.equal(originalHolds.length,16);
+assert.equal(items.length,20);
+assert.equal(items.filter(x=>x.ownership==="P3_EXISTING_HELD_SOURCE_BRIDGE").length,16);
+assert.equal(items.filter(x=>x.ownership!=="P3_EXISTING_HELD_SOURCE_BRIDGE").length,4);
+assert.deepEqual(new Set(items.filter(x=>x.ownership==="P3_EXISTING_HELD_SOURCE_BRIDGE").map(x=>x.sourceBeatId)),new Set(originalHolds));
+assert.equal(new Set(items.map(x=>x.id)).size,20);
+assert.deepEqual(items.map(x=>x.priority).slice(0,8),Array(8).fill("P0"));
+for(const item of items){
+ assert.equal(item.kind,"SOURCE_SELECTION");
+ assert.equal(item.approval.selected,false);
+ assert.equal(item.approval.publication,false);
+ assert.equal(item.approval.oral,false);
+ assert.equal(item.approval.printedEditionCertified,false);
+ assert.equal(item.approval.theological,false);
+ assert.equal(item.dependencyGroups.length,2);
+ assert.ok(item.decisionRequired.length>85);
+ assert.ok(item.acceptanceEvidence.length>=3);
+ assert.ok(item.reviewReferences.length>=1);
+ const beat=allBeats.get(item.sourceBeatId);
+ assert.ok(beat,"No invented Scripture beat "+item.sourceBeatId);
+ assert.equal(item.movementId,beat.movementId);
+ if(item.ownership==="P3_EXISTING_HELD_SOURCE_BRIDGE"){
+  assert.equal(beat.kind,"SOURCE_BRIDGE_CANDIDATE");
+  assert.equal(item.sourceReference,beat.reference);
+  assert.deepEqual(item.reviewReferences,beat.readthroughTrial?.refs||[beat.reference]);
+  assert.equal(item.candidateComparisonStatus,
+   beat.readthroughTrial?"EXISTING_VERBATIM_TRIAL_UNAPPROVED":"COORDINATE_HELD_NOT_SELECTED");
+ }else{
+  assert.equal(beat.kind,"SCRIPTURE");
+  if(item.id==="HS-W-SRC-EXODUS-5-FIRST-REFUSAL"){
+   assert.deepEqual(item.reviewReferences,["Exodus 5:1–2","Exodus 7:1–6"]);
+   assert.ok(p1.optionalSourceComparisons.find(x=>x.hinge==="HS-HINGE-07"));
+  }else if(item.id==="HS-W-SRC-EXODUS-12-FIRSTBORN"){
+   assert.deepEqual(beat.afterSelectedReadthroughTrial.refs,item.reviewReferences);
+  }else if(item.id==="HS-W-SRC-MATTHEW-27-JUDAS"){
+   assert.deepEqual(beat.betweenSelectedReadthroughTrial.refs,item.reviewReferences);
+   assert.equal(beat.betweenSelectedReadthroughTrial.publicationApproved,false);
+  }else if(item.id==="HS-W-SRC-JOHN-19-PIERCED-SIDE"){
+   assert.deepEqual(beat.afterSelectedReadthroughTrial.refs,item.reviewReferences);
+  }else assert.fail("Unknown optional non-held source comparison "+item.id);
+ }
+ for(const h of item.hingeIds)assert.ok(allHinges.has(h),"Unknown hinge "+h);
+ for(const r of item.reviewReferences)for(const ed of editions)assert.ok(exactVerse(r,ed).length>0);
+}
+const ux=ledger.readerPresentationWorklist;
+assert.equal(ux.length,7);
+assert.equal(new Set(ux.map(x=>x.id)).size,7);
+assert.ok(ux.some(x=>x.group==="VISION_GENRE"));
+assert.ok(ux.some(x=>x.group==="CITATION_BY_EDITION"));
+for(const item of ux){
+ assert.equal(item.kind,"READER_PRESENTATION");
+ assert.equal(item.approval.publication,false);
+ assert.equal(item.approval.product,false);
+ assert.equal(item.approval.editorial,false);
+ assert.ok(item.acceptanceEvidence.length>=5);
+ assert.ok(item.decisionRequired.length>80);
+ assert.ok(item.hingeIds.length>=1);
+ assert.ok(item.sourceBeatIds.length>=2);
+ for(const id of item.sourceBeatIds)assert.ok(allBeats.has(id),"No invented P3 UI source owner "+id);
+ for(const h of item.hingeIds)assert.ok(allHinges.has(h),"No fake UI seam "+h);
+}
+const editorial=ledger.editorialAndAcceptanceWorklist;
+assert.equal(editorial.length,6);
+assert.deepEqual(editorial.map(x=>x.id),[
+ "HS-W-EDIT-01","HS-W-EDIT-02","HS-W-PROV-01",
+ "HS-W-THEO-01","HS-W-ORAL-01","HS-W-RELEASE-01"
+]);
+assert.ok(editorial.every(x=>x.approval.publication===false));
+assert.equal(editorial.find(x=>x.id==="HS-W-EDIT-01").sourceUnitScope.total,41);
+assert.equal(editorial.find(x=>x.id==="HS-W-EDIT-02").sourceUnitScope.total,41);
+const currentContext=proof.movements.flatMap(m=>m.beats.filter(b=>b.kind==="EDITORIAL_CONTEXT_NOT_BIBLE").map(b=>({id:b.id,movementId:m.id})));
+assert.deepEqual(ledger.existingEditorialContextOwners,currentContext);
+assert.equal(currentContext.length,29);
+const connector=[];
+for(const m of proof.movements)for(const b of m.beats){
+ if(b.beforeScriptureConnectorCandidate)connector.push({id:b.beforeScriptureConnectorCandidate.id,parentBeatId:b.id,movementId:m.id});
+ if(b.kind==="SOURCE_BRIDGE_CANDIDATE"&&b.readthroughTrial?.editorialPreface)
+  connector.push({id:b.readthroughTrial.editorialPreface.id,parentBeatId:b.id,movementId:m.id});
+}
+assert.deepEqual(ledger.existingEditorConnectorOwners,connector);
+assert.equal(connector.length,12);
+assert.equal(new Set(connector.map(x=>x.id)).size,12);
+assert.equal(ledger.allThirtySixHingeAuditMap.length,36);
+const ids=new Set([...items,...ux,...editorial].map(x=>x.id));
+assert.equal(ids.size,33);
+let active=0,deskOnly=0;
+for(let i=0;i<36;i++){
+ const row=ledger.allThirtySixHingeAuditMap[i],h=audit.betweenMovementSeams[i];
+ assert.equal(row.id,h.id);
+ assert.equal(row.from,h.fromMovement);
+ assert.equal(row.to,h.toMovement);
+ assert.equal(row.priority,h.priority);
+ assert.equal(row.triageStatus,"DESK_TRIAGED_NOT_APPROVED");
+ assert.equal(row.sourceAuditClosed,true);
+ assert.deepEqual(row.assignedWorkIds,
+  [...new Set([...items,...ux].filter(w=>w.hingeIds?.includes(h.id)).map(w=>w.id))]);
+ for(const id of row.assignedWorkIds)assert.ok(ids.has(id));
+ if(row.assignedWorkIds.length)active++;else deskOnly++;
+}
+assert.equal(ledger.totals.totalActionableWorkItems,33);
+assert.equal(ledger.totals.sourceDecisions,20);
+assert.equal(ledger.totals.existingHeldBridgeDecisions,16);
+assert.equal(ledger.totals.additionalUnapprovedSourceComparisons,4);
+assert.equal(ledger.totals.presentationGroups,7);
+assert.equal(ledger.totals.editorialProvenanceAndGates,6);
+assert.equal(ledger.totals.editorialContextUnits,29);
+assert.equal(ledger.totals.editorialConnectorCandidates,12);
+assert.equal(ledger.totals.allOriginalHinges,36);
+assert.equal(ledger.totals.hingesWithActionableFollowup,active);
+assert.equal(ledger.totals.hingesSufficientAtDeskWithoutNewWork,deskOnly);
+assert.equal(ledger.totals.hingesWithActionableFollowup,32);
+assert.equal(ledger.totals.publicationApproved,0);
+assert.equal(ledger.antiRedundancy.parallelP4HistoricalOptionalVerses,69);
+assert.equal(ledger.antiRedundancy.alreadyInP3SelectedSource+ledger.antiRedundancy.alreadyHeld+ledger.antiRedundancy.existingUnapprovedJudasComparison,69);
+assert.equal(ledger.antiRedundancy.unaccountedHistoricalP4Options,0);
+const originalSelected=proof.movements.flatMap(m=>m.beats.filter(b=>b.kind==="SCRIPTURE"));
+assert.equal(originalSelected.length,93);
+assert.ok(originalSelected.every(b=>b.publicationApproved===false));
+console.log("PASS Historia unified worklist: 36 fully owned hinge dispositions, 20 optional native-source decisions, 7 grouped reader tasks, 29 original contexts + 12 connectors, 6 editorial/acceptance tracks, seven unopened release gates, no new Atlas/Scripture publication");
