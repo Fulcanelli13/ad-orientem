@@ -122,7 +122,7 @@ jobs:
           set -euo pipefail
           test "$(gh release view "$ARCHIVE_TAG" --repo "$GITHUB_REPOSITORY" --json isDraft --jq .isDraft)" = true
           file="ao-source-b26-${WAVE}.tar"
-          if ! gh api "repos/$GITHUB_REPOSITORY/releases/tags/$ARCHIVE_TAG" --jq '.assets[].name' | grep -Fxq "$file"; then
+          if ! gh release view "$ARCHIVE_TAG" --repo "$GITHUB_REPOSITORY" --json assets --jq '.assets[].name' | grep -Fxq "$file"; then
             gh release upload "$ARCHIVE_TAG" "$file" --repo "$GITHUB_REPOSITORY"
           fi
           mkdir -p verify
@@ -143,15 +143,15 @@ jobs:
         run: |
           set -euo pipefail
           test "$(gh release view "$ARCHIVE_TAG" --repo "$GITHUB_REPOSITORY" --json isDraft --jq .isDraft)" = true
-          gh api "repos/$GITHUB_REPOSITORY/releases/tags/$ARCHIVE_TAG" > release.json
+          gh release view "$ARCHIVE_TAG" --repo "$GITHUB_REPOSITORY" --json assets,isDraft,tagName > release.json
           python - <<'PY'
           import json
           release=json.load(open('release.json',encoding='utf-8'))
-          assert release['draft'] is True, 'Archive was publicly published'
+          assert release['isDraft'] is True, 'Archive was publicly published'
           assets={a['name']:a for a in release['assets'] if a['name'].startswith('ao-source-b26-') and a['name'].endswith('.tar')}
           assert len(assets)==16, ('Expected 16 archive assets, got',len(assets))
           assert all(x['size']>10000 for x in assets.values()), 'Unexpectedly small archive'
-          summary={'tag':release['tag_name'],'draft':release['draft'],'source_run_id':40021937137,'archive_assets':len(assets),'bytes':sum(a['size'] for a in assets.values()),'assets':[{'name':a['name'],'bytes':a['size'],'digest':a.get('digest'),'asset_id':a['id']} for a in sorted(assets.values(),key=lambda r:r['name'])],'editorial_approvals_created':0,'public_release_allowed':False}
+          summary={'tag':release['tagName'],'draft':release['isDraft'],'source_run_id':40021937137,'archive_assets':len(assets),'bytes':sum(a['size'] for a in assets.values()),'assets':[{'name':a['name'],'bytes':a['size'],'digest':a.get('digest'),'asset_id':a['id']} for a in sorted(assets.values(),key=lambda r:r['name'])],'editorial_approvals_created':0,'public_release_allowed':False}
           open('AO_ARCHIVE_RELEASE_INDEX.json','w',encoding='utf-8').write(json.dumps(summary,indent=2)+'\n')
           print('DRAFT_ARCHIVE_VERIFIED',len(assets),'total_bytes',summary['bytes'])
           PY
