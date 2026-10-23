@@ -1,0 +1,494 @@
+{
+  "schema": "ao.historia.p3.p2-eleven-seam-evidence-disposition.v1",
+  "date": "2026-10-23",
+  "status": "ALL_P2_SEAMS_TRIAGED_SOURCE_DESK_ONLY_RELEASE_NOT_APPROVED",
+  "sourceOwners": {
+    "audit": {
+      "path": "data/research/historia-salutis-p3-continuous-full-story-seam-audit-20261023.v1.json",
+      "sha": "bb767d3a12238dc2fe57fdd0843c6dbd798f60db"
+    },
+    "p3Proof": {
+      "path": "data/research/historia-salutis-v18-continuous-reading-proof.v1.json",
+      "sha": "aea3d55dad3c6ca068b6c38ae242602f63b3175d"
+    },
+    "priorityOneRegister": {
+      "path": "data/research/historia-salutis-p3-p1-twenty-seam-disposition-20261023.v1.json",
+      "sha": "04dbe841ef8301e3967efb8cb5268b2f8cb7f026"
+    },
+    "witnesses": [
+      {
+        "edition": "dr-challoner",
+        "path": "data/scripture/witness/dr-challoner/Revelation.json",
+        "sha": "1fb2ff7f04f8ab798f892c4fb6174e39ce9f8075"
+      },
+      {
+        "edition": "cpdv-2009",
+        "path": "data/scripture/witness/cpdv-2009/Revelation.json",
+        "sha": "facbe04cd3626f862044884ad3aa68c4a09ddb51"
+      },
+      {
+        "edition": "crampon-1923",
+        "path": "data/scripture/witness/crampon-1923/Revelation.json",
+        "sha": "ff790a5e9ad1e7a3eacf6bdfbf164ed15a7383a7"
+      }
+    ]
+  },
+  "policies": {
+    "noCanonAtlasEventsAdded": true,
+    "noAlteredScriptureSelectedText": true,
+    "noCreatedAdditionalBibleModule": true,
+    "singlePrimaryP3SourceOwner": true,
+    "exactVerseNativeWitnessesOnly": true,
+    "markOriginalSourceBookForGospelChanges": true,
+    "unselectedVisionsAreNotEarthlyHistoricalEvents": true,
+    "noChronologyFabrication": true,
+    "keepCanonicalEndingOmissionExplicit": true,
+    "citeSourcedEditorialContextSeparately": true,
+    "noHumanOralReviewAssumed": true,
+    "notAPrintEditionOrRightsCertificate": true,
+    "noAutomaticPublicationApproval": true
+  },
+  "totals": {
+    "p2Hinges": 11,
+    "alreadyCoveredByNativeSelectedSources": 6,
+    "existingEditorialContextAdequate": 1,
+    "gospelAttributionPresentation": 3,
+    "trueCanonicalEndingStillHeld": 1,
+    "sourceVerseAdditions": 0,
+    "publicationApprovals": 0
+  },
+  "priorityTwoHinges": [
+    {
+      "hingeId": "HS-HINGE-01",
+      "priority": "P2",
+      "fromMovement": "HS-M01",
+      "toMovement": "HS-M02",
+      "lastSelectedOriginalSource": "Genesis 2:21–25",
+      "firstSelectedOriginalSource": "Genesis 3:1–13",
+      "seamType": "DIRECT_NARRATIVE",
+      "classification": "CONTIGUOUS_SOURCE_SUFFICIENT",
+      "existingP3SourceBeatIds": [
+        "H02-02",
+        "H03-01"
+      ],
+      "sourceWitnessReferences": [
+        "Genesis 2:21–25",
+        "Genesis 3:1–13"
+      ],
+      "sourceCriticalFinding": "Keep existing Genesis chapter boundary. Innocence and the serpent's approach are consecutive selected native Scripture sources; no invented date or narration.",
+      "nonSourcePresentation": "EXISTING_MOVEMENT_AND_GENESIS_CHAPTER_HEADING",
+      "followUp": "SOURCE_PROOF_ONLY_NO_NEW_TEXT",
+      "selectedScriptureEdits": 0,
+      "newAtlasEvents": 0,
+      "bookEndingCertified": false,
+      "editorialPublicationApproved": false,
+      "oralReadthroughAccepted": false,
+      "printedEditionCollationCertified": false
+    },
+    {
+      "hingeId": "HS-HINGE-04",
+      "priority": "P2",
+      "fromMovement": "HS-M04",
+      "toMovement": "HS-M05",
+      "lastSelectedOriginalSource": "Genesis 17:1–11",
+      "firstSelectedOriginalSource": "Genesis 21:1–7",
+      "seamType": "GENEALOGICAL_INTERVAL",
+      "classification": "CONTIGUOUS_SOURCE_SUFFICIENT",
+      "existingP3SourceBeatIds": [
+        "H11-03",
+        "H12-02"
+      ],
+      "sourceWitnessReferences": [
+        "Genesis 17:1–11",
+        "Genesis 21:1–7"
+      ],
+      "sourceCriticalFinding": "The covenant naming and circumcision precede the birth of Isaac in the selected Genesis witnesses. An original Bible chapter shift represents the passage of time; do not fabricate an intervening chronology.",
+      "nonSourcePresentation": "KEEP_ABRAHAM_COVENANT_TO_ISAAC_BIRTH_BOUNDARY",
+      "followUp": "SOURCE_PROOF_ONLY_NO_NEW_TEXT",
+      "selectedScriptureEdits": 0,
+      "newAtlasEvents": 0,
+      "bookEndingCertified": false,
+      "editorialPublicationApproved": false,
+      "oralReadthroughAccepted": false,
+      "printedEditionCollationCertified": false
+    },
+    {
+      "hingeId": "HS-HINGE-09",
+      "priority": "P2",
+      "fromMovement": "HS-M09",
+      "toMovement": "HS-M10",
+      "lastSelectedOriginalSource": "Exodus 14:26–31",
+      "firstSelectedOriginalSource": "Exodus 19:1–8",
+      "seamType": "HISTORICAL_INTERVAL",
+      "classification": "CONTIGUOUS_SOURCE_SUFFICIENT",
+      "existingP3SourceBeatIds": [
+        "H21-03",
+        "H21-04",
+        "H22-01"
+      ],
+      "sourceWitnessReferences": [
+        "Exodus 14:26–31",
+        "Exodus 16:2–4",
+        "Exodus 19:1–8"
+      ],
+      "sourceCriticalFinding": "Israel crosses the sea, then the omitted wilderness experiences are partly attributed in the already existing editorial manna note. The opening of Exodus 19 explicitly locates the Sinai encounter in the third month: keep the exact source's dating, not an invented short journey.",
+      "nonSourcePresentation": "PRESERVE_SINAI_THIRD_MONTH_TEXT_AND_EDITORIAL_WITNESS_LABEL",
+      "followUp": "SOURCE_PROOF_ONLY_NO_NEW_TEXT",
+      "selectedScriptureEdits": 0,
+      "newAtlasEvents": 0,
+      "bookEndingCertified": false,
+      "editorialPublicationApproved": false,
+      "oralReadthroughAccepted": false,
+      "printedEditionCollationCertified": false
+    },
+    {
+      "hingeId": "HS-HINGE-11",
+      "priority": "P2",
+      "fromMovement": "HS-M11",
+      "toMovement": "HS-M12",
+      "lastSelectedOriginalSource": "Judges 2:16–19",
+      "firstSelectedOriginalSource": "Ruth 4:13",
+      "seamType": "HISTORICAL_INTERVAL",
+      "classification": "EXISTING_EDITORIAL_CONTEXT_SUFFICIENT",
+      "existingP3SourceBeatIds": [
+        "H26-01",
+        "H28-01",
+        "H28-04"
+      ],
+      "sourceWitnessReferences": [
+        "Judges 2:16–19",
+        "Ruth 1:1–22",
+        "Ruth 4:13",
+        "Ruth 4:17–22"
+      ],
+      "sourceCriticalFinding": "Judges' cycle leads to an already source-labelled Ruth introductory context, followed by the birth of Obed and David's lineage in selected Ruth 4. This is an editorial introduction to a new person and book, not missing Ruth Scripture requiring compulsory verse insertion.",
+      "nonSourcePresentation": "MARK_RUTH_1_EDITORIAL_SOURCE_AND_JUDGES_TO_RUTH_PERIOD",
+      "followUp": "NO_NEW_RUTH_PASSAGE_REQUIRED",
+      "selectedScriptureEdits": 0,
+      "newAtlasEvents": 0,
+      "bookEndingCertified": false,
+      "editorialPublicationApproved": false,
+      "oralReadthroughAccepted": false,
+      "printedEditionCollationCertified": false
+    },
+    {
+      "hingeId": "HS-HINGE-16",
+      "priority": "P2",
+      "fromMovement": "HS-M16",
+      "toMovement": "HS-M17",
+      "lastSelectedOriginalSource": "2Kings 25:18–21",
+      "firstSelectedOriginalSource": "Ezra 1:1–6",
+      "seamType": "HISTORICAL_INTERVAL",
+      "classification": "CONTIGUOUS_SOURCE_SUFFICIENT",
+      "existingP3SourceBeatIds": [
+        "H41-02",
+        "H43-01"
+      ],
+      "sourceWitnessReferences": [
+        "2Kings 25:18–21",
+        "Ezra 1:1–6"
+      ],
+      "sourceCriticalFinding": "The original 2 Kings exile and subsequent Cyrus proclamation in Ezra already signal that Judah's captivity has given way to a different ruling power. Preserve book/period boundary rather than asserting an invented continuous year-by-year story.",
+      "nonSourcePresentation": "KEEP_2KINGS_TO_EZRA_HISTORICAL_CHAPTER_DIVIDE",
+      "followUp": "SOURCE_PROOF_ONLY_NO_NEW_TEXT",
+      "selectedScriptureEdits": 0,
+      "newAtlasEvents": 0,
+      "bookEndingCertified": false,
+      "editorialPublicationApproved": false,
+      "oralReadthroughAccepted": false,
+      "printedEditionCollationCertified": false
+    },
+    {
+      "hingeId": "HS-HINGE-20",
+      "priority": "P2",
+      "fromMovement": "HS-M20",
+      "toMovement": "HS-M21",
+      "lastSelectedOriginalSource": "Mark 1:14–15",
+      "firstSelectedOriginalSource": "Matthew 5:1–12",
+      "seamType": "CROSS_GOSPEL_SOURCE",
+      "classification": "VISIBLE_CANONICAL_AUTHOR_LABEL",
+      "existingP3SourceBeatIds": [
+        "H51-03",
+        "H53-01"
+      ],
+      "sourceWitnessReferences": [
+        "Mark 1:14–15",
+        "Matthew 5:1–12"
+      ],
+      "sourceCriticalFinding": "Mark's Gospel declaration and Matthew's Sermon are differently attributed quotations, not one unbroken speech of Jesus. Existing passage references permit a visible Gospel-by-author attribution without inserting an invented connecting dialogue.",
+      "nonSourcePresentation": "SHOW_MARK_TO_MATTHEW_AND_SERMON_SECTION_LABEL",
+      "followUp": "READER_PRESENTATION_CHECK_PENDING",
+      "selectedScriptureEdits": 0,
+      "newAtlasEvents": 0,
+      "bookEndingCertified": false,
+      "editorialPublicationApproved": false,
+      "oralReadthroughAccepted": false,
+      "printedEditionCollationCertified": false
+    },
+    {
+      "hingeId": "HS-HINGE-22",
+      "priority": "P2",
+      "fromMovement": "HS-M22",
+      "toMovement": "HS-M23",
+      "lastSelectedOriginalSource": "John 6:47–59",
+      "firstSelectedOriginalSource": "Matthew 16:13–28",
+      "seamType": "CROSS_GOSPEL_SOURCE",
+      "classification": "VISIBLE_CANONICAL_AUTHOR_LABEL",
+      "existingP3SourceBeatIds": [
+        "H56-02",
+        "H57-01"
+      ],
+      "sourceWitnessReferences": [
+        "John 6:47–59",
+        "Matthew 16:13–28"
+      ],
+      "sourceCriticalFinding": "John's Bread of Life discourse and Matthew's testimony to Peter's confession are separate Gospel witnesses. Their source/section labels must remain visible; never assert that the confession occurs immediately after the Capernaum teaching.",
+      "nonSourcePresentation": "SHOW_JOHN_TO_MATTHEW_AND_MINISTRY_SECTION_LABEL",
+      "followUp": "READER_PRESENTATION_CHECK_PENDING",
+      "selectedScriptureEdits": 0,
+      "newAtlasEvents": 0,
+      "bookEndingCertified": false,
+      "editorialPublicationApproved": false,
+      "oralReadthroughAccepted": false,
+      "printedEditionCollationCertified": false
+    },
+    {
+      "hingeId": "HS-HINGE-23",
+      "priority": "P2",
+      "fromMovement": "HS-M23",
+      "toMovement": "HS-M24",
+      "lastSelectedOriginalSource": "Matthew 17:1–9",
+      "firstSelectedOriginalSource": "John 11:1–7",
+      "seamType": "CROSS_GOSPEL_SOURCE",
+      "classification": "VISIBLE_CANONICAL_AUTHOR_LABEL",
+      "existingP3SourceBeatIds": [
+        "H57-02",
+        "H58-04"
+      ],
+      "sourceWitnessReferences": [
+        "Matthew 17:1–9",
+        "John 11:1–7"
+      ],
+      "sourceCriticalFinding": "Matthew's Transfiguration testimony ends and John's Lazarus account begins. Retain both authors' attribution and the implicit omitted ministry period; the transition cannot be rewritten as a single continuous Gospel scene.",
+      "nonSourcePresentation": "SHOW_MATTHEW_TO_JOHN_AND_LAZARUS_SECTION_LABEL",
+      "followUp": "READER_PRESENTATION_CHECK_PENDING",
+      "selectedScriptureEdits": 0,
+      "newAtlasEvents": 0,
+      "bookEndingCertified": false,
+      "editorialPublicationApproved": false,
+      "oralReadthroughAccepted": false,
+      "printedEditionCollationCertified": false
+    },
+    {
+      "hingeId": "HS-HINGE-30",
+      "priority": "P2",
+      "fromMovement": "HS-M30",
+      "toMovement": "HS-M31",
+      "lastSelectedOriginalSource": "Acts 1:6–12",
+      "firstSelectedOriginalSource": "Acts 2:1–10",
+      "seamType": "DIRECT_NARRATIVE",
+      "classification": "CONTIGUOUS_SOURCE_SUFFICIENT",
+      "existingP3SourceBeatIds": [
+        "H66-01",
+        "H67-01"
+      ],
+      "sourceWitnessReferences": [
+        "Acts 1:6–12",
+        "Acts 2:1–10"
+      ],
+      "sourceCriticalFinding": "Luke's Acts of the Apostles records Ascension then Pentecost as distinct events in successive source chapters. Keep both Acts chapter references; the unselected Acts 1 remainder is an omission, not a request for new geographical coordinates.",
+      "nonSourcePresentation": "KEEP_ASCENSION_AND_PENTECOST_IN_OWN_ACTS_SECTION",
+      "followUp": "SOURCE_PROOF_ONLY_NO_NEW_TEXT",
+      "selectedScriptureEdits": 0,
+      "newAtlasEvents": 0,
+      "bookEndingCertified": false,
+      "editorialPublicationApproved": false,
+      "oralReadthroughAccepted": false,
+      "printedEditionCollationCertified": false
+    },
+    {
+      "hingeId": "HS-HINGE-32",
+      "priority": "P2",
+      "fromMovement": "HS-M32",
+      "toMovement": "HS-M33",
+      "lastSelectedOriginalSource": "Acts 10:33–48",
+      "firstSelectedOriginalSource": "Acts 11:19–26",
+      "seamType": "DIRECT_NARRATIVE",
+      "classification": "CONTIGUOUS_SOURCE_SUFFICIENT",
+      "existingP3SourceBeatIds": [
+        "H70-01",
+        "H71-01"
+      ],
+      "sourceWitnessReferences": [
+        "Acts 10:33–48",
+        "Acts 11:19–26"
+      ],
+      "sourceCriticalFinding": "Cornelius's household reception and Antioch's Gospel mission already have independent, exact Acts book chapter sources. A chapter/scene change must not imply a same-day journey or one invented speech.",
+      "nonSourcePresentation": "KEEP_CORNELIUS_TO_ANTIOCH_DISTINCT_ACTS_CHAPTERS",
+      "followUp": "SOURCE_PROOF_ONLY_NO_NEW_TEXT",
+      "selectedScriptureEdits": 0,
+      "newAtlasEvents": 0,
+      "bookEndingCertified": false,
+      "editorialPublicationApproved": false,
+      "oralReadthroughAccepted": false,
+      "printedEditionCollationCertified": false
+    },
+    {
+      "hingeId": "HS-HINGE-36",
+      "priority": "P2",
+      "fromMovement": "HS-M36",
+      "toMovement": "HS-M37",
+      "lastSelectedOriginalSource": "Revelation 20:1–15",
+      "firstSelectedOriginalSource": "Revelation 21:1–7",
+      "seamType": "DIRECT_VISION_SEQUENCE",
+      "classification": "UNAPPROVED_CANONICAL_BOOK_ENDING_DECISION",
+      "existingP3SourceBeatIds": [
+        "H77-02",
+        "H78-01",
+        "HS-P3-CF-15",
+        "H78-02",
+        "HS-P3-CF-16"
+      ],
+      "sourceWitnessReferences": [
+        "Revelation 20:1–15",
+        "Revelation 21:1–7",
+        "Revelation 21:9–11",
+        "Revelation 22:1–5",
+        "Revelation 22:20–21"
+      ],
+      "sourceCriticalFinding": "Revelation 20's judgment flows into selected Revelation 21's new creation. The angel and heavenly city antecedent Rev 21:9–11 is already held before 22:1. The selected text then stops at 22:5: optional true epilogue 22:20–21 is held, and omission of 22:6–19 must be conspicuously stated. Do not claim the canonical book ends at 22:5, treat Rev 21:9–11 as accepted, or append two concluding verses without disclosing the intervening original text.",
+      "nonSourcePresentation": "EXPLICIT_SOURCE_ENDING_AND_HELD_APOCALYPSE_EPILOGUE_LABEL",
+      "followUp": "ORIGINAL_EPILOGUE_TRIAL_AND_PRINT_VARIANT_COLLATION_PENDING",
+      "selectedScriptureEdits": 0,
+      "newAtlasEvents": 0,
+      "bookEndingCertified": false,
+      "editorialPublicationApproved": false,
+      "oralReadthroughAccepted": false,
+      "printedEditionCollationCertified": false
+    }
+  ],
+  "apocalypseEnding": {
+    "ownedMovement": "HS-M37",
+    "fullBookEndsAt": "Revelation 22:21",
+    "existingSelectedEndsAt": "Revelation 22:5",
+    "angelAntecedentHeld": "HS-P3-CF-15",
+    "angelSourceTrial": [
+      "Revelation 21:9–11"
+    ],
+    "epilogueHeld": "HS-P3-CF-16",
+    "existingHeldReference": "Revelation 22:20–21",
+    "unselectedGapBeforeEpilogue": "Revelation 22:6–19",
+    "options": [
+      {
+        "id": "SHORT_TRUE_CANONICAL_ENDING",
+        "refs": [
+          "Revelation 22:20–21"
+        ],
+        "sourceTrialStatus": "TWO_VERSE_EXISTING_HELD_SOURCE",
+        "reason": "A direct final response and grace; it must explicitly disclose the omission of Revelation 22:6–19, lest 22:5 be mistaken for the book's end.",
+        "measure": {
+          "dr-challoner": {
+            "verseEntries": 2,
+            "wordCount": 28,
+            "sourceStatus": "UNCOLLATED_SOURCE_WITNESS"
+          },
+          "cpdv-2009": {
+            "verseEntries": 2,
+            "wordCount": 30,
+            "sourceStatus": "UNCOLLATED_SOURCE_WITNESS"
+          },
+          "crampon-1923": {
+            "verseEntries": 2,
+            "wordCount": 28,
+            "sourceStatus": "UNCOLLATED_SOURCE_WITNESS"
+          }
+        },
+        "publicationApproved": false,
+        "printedEditionCollated": false,
+        "oralReadthroughAccepted": false
+      },
+      {
+        "id": "FIVE_VERSE_FINAL_INVITATION_AND_WARNING",
+        "refs": [
+          "Revelation 22:17–21"
+        ],
+        "sourceTrialStatus": "OPTIONAL_ORIGINAL_SOURCE_TRIAL_NOT_OWNED_BY_P3_HELD_RANGE",
+        "reason": "The Spirit-and-Bride invitation and warnings against addition/subtraction precede the final response; still disclose the omission of 22:6–16.",
+        "measure": {
+          "dr-challoner": {
+            "verseEntries": 5,
+            "wordCount": 142,
+            "sourceStatus": "UNCOLLATED_SOURCE_WITNESS"
+          },
+          "cpdv-2009": {
+            "verseEntries": 5,
+            "wordCount": 143,
+            "sourceStatus": "UNCOLLATED_SOURCE_WITNESS"
+          },
+          "crampon-1923": {
+            "verseEntries": 5,
+            "wordCount": 123,
+            "sourceStatus": "UNCOLLATED_SOURCE_WITNESS"
+          }
+        },
+        "publicationApproved": false,
+        "printedEditionCollated": false,
+        "oralReadthroughAccepted": false
+      },
+      {
+        "id": "FULL_APOCALYPSE_BOOK_EPILOGUE",
+        "refs": [
+          "Revelation 22:6–21"
+        ],
+        "sourceTrialStatus": "COMPARISON_ONLY_FULL_CANONICAL_SOURCE",
+        "reason": "The uninterrupted epilogue includes John's vision testimony, worship warning, prophetic urgency, invitation, closing book warning and final blessing; compare against briefer versions before any literary acceptance.",
+        "measure": {
+          "dr-challoner": {
+            "verseEntries": 16,
+            "wordCount": 442,
+            "sourceStatus": "UNCOLLATED_SOURCE_WITNESS"
+          },
+          "cpdv-2009": {
+            "verseEntries": 16,
+            "wordCount": 453,
+            "sourceStatus": "UNCOLLATED_SOURCE_WITNESS"
+          },
+          "crampon-1923": {
+            "verseEntries": 16,
+            "wordCount": 397,
+            "sourceStatus": "UNCOLLATED_SOURCE_WITNESS"
+          }
+        },
+        "publicationApproved": false,
+        "printedEditionCollated": false,
+        "oralReadthroughAccepted": false
+      }
+    ],
+    "meaningfulWitnessDivergence": {
+      "verse": "Revelation 22:19",
+      "englishWitnesses": [
+        "dr-challoner",
+        "cpdv-2009"
+      ],
+      "frenchWitness": "crampon-1923",
+      "englishMeaning": "book of life",
+      "frenchMeaning": "arbre de la vie (tree of life)",
+      "status": "WITNESS_TEXTUAL_VARIANT_IDENTIFIED_NOT_PRINT_COLLATED",
+      "note": "The three installed witness texts differ materially at Revelation 22:19. Do not rewrite the source witnesses, normalize the translated word to one common English reading, or infer a certified printed edition. If 22:17–21 or 22:6–21 is ever trialled in the readable text, preserve this editorially significant variant and present commentary externally."
+    },
+    "oralAndTheologicalDecision": false,
+    "publicationApproved": false
+  },
+  "completeThirtySixSeamPosition": {
+    "p0": 5,
+    "p1": 20,
+    "p2": 11,
+    "all36DeskClassified": true,
+    "noneCertifiedForPublication": true
+  },
+  "nextStep": [
+    "Separate final original Scripture source selection from editorial rendering and choose whether to keep the canonical epilogue as held, brief or full only after uninterrupted native-source review.",
+    "Retain current Scripture beat map until readthrough decisions are accepted; do not fabricate time/place links or new Atlas sites.",
+    "Preserve non-narrative Catholic patristic and typology commentary outside the chronological reading."
+  ]
+}
