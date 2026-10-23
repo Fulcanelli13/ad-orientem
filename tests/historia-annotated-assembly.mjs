@@ -76,7 +76,9 @@ for (const edition of HISTORIA_EDITIONS) {
         assert.equal(segment.editionIndependent,false);
       } else if(segment.kind==="SCRIPTURE_READING_TRIAL_NOT_APPROVED"){
         const trial=segment.trialType==="HELD_BRIDGE_RESEARCH_TRIAL"?
-          original.readthroughTrial:original.afterSelectedReadthroughTrial;
+          original.readthroughTrial:
+          segment.trialType==="BETWEEN_SELECTED_SOURCE_READING_TRIAL"?
+          original.betweenSelectedReadthroughTrial:original.afterSelectedReadthroughTrial;
         assert.ok(trial);
         assert.ok(trial.refs.includes(segment.reference));
         assert.equal(trial.accepted,false);
