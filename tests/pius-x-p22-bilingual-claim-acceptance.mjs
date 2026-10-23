@@ -6,7 +6,9 @@ const json=JSON.parse(readFileSync('previews/pius-x-study/evidence/pius-x-p22-bi
 const html=readFileSync('artifacts/pius-x-study-expanded/SPX_Study_Expanded_106_P6.html','utf8');
 const store=readCorpus(html);
 assert.equal(json.schema,'AO_SPX_P2_P22_BILINGUAL_CLAIM_ACCEPTANCE_PILOT_V1');
-assert.equal(json.status,'PRIVATE_EDITORIAL_TEST_ONLY_NO_PUBLICATION_OR_HISTORIC_VOICE_CERTIFICATION');
+assert.equal(json.status,'PRIVATE_EDITORIAL_TEST_REVISED_AFTER_DIRECT_VATICAN_CLAIM_READING_NO_PUBLICATION');
+assert.equal(json.summary.specimensRevisedForSourcePrecision,5);
+assert.equal(json.summary.newModelSourceGateAdmissions,0);
 assert.equal(json.summary.chapterCount,4);
 assert.equal(json.summary.sourceSelectedNodes,11);
 assert.equal(json.summary.bilingualSpecimens,22);
