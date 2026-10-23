@@ -27,7 +27,7 @@ All 91 per-record dispositions, URLs, restrictions and review notes are preserve
 4. **Holywell St Winefride**: the target page explicitly concerns pilgrimages and group bookings in 2022; do not treat it as a current timetable.
 5. **Svatá Hora and Einsiedeln**: the linked 2025 PDF programmes are historical witnesses, not 2026 schedules or perpetual ceremonial commitments.
 6. **Auckland St Peter Chanel**: the route PDF establishes location and pilgrimage relevance; it does not prove an annually recurrent patronal observance.
-7. **Chantelle**: the French bishops' abbey article is contextual, but does not itself verify the details of a particular patronal celebration.
+7. **Chantelle — verified correction**: the French bishops' abbey article explicitly describes the local patronal feast on the Sunday after Ascension, including a procession of relics, while distinguishing this place-specific observance from universal Calendar scheduling. Direct check: https://eglise.catholique.fr/conference-des-eveques-de-france/guide-de-leglise/dioceses/a-decouverte-dioceses-de-france/diocese-de-moulins/493837-abbaye-de-chantelle/ .
 8. **1983 Canon Law**: the `CIC-1249-1253` entry is modern canonical discipline and must not replace 1962 discipline sources.
 9. **Saint Blaise**: the cited modern *Book of Blessings* (1989) must remain separate from the separately attested traditional Roman Ritual; a corresponding ritual does not imply every region or parish uses it.
 10. **Notre-Dame-du-Cap**: the 2026 sanctuary lampion offer validates that year's practice, not an indefinite service or current purchase price.
