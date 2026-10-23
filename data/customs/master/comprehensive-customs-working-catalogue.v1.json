@@ -30,7 +30,8 @@
     "LENT_EASTER_LEXICAL_SCREEN_CANNOT_MERGE": "Automated lexical candidate lookup yielded possible links into prior groups and sources. Similar words do not establish the same primary action, practice identity, historical independent corroboration or ritual approval. No matches are certified.",
     "FRANCE_SANCH_DIRECT_MINISTRY_86_NONCANONICAL": "One 36-page French Ministry of Culture national intangible-heritage inventory of Roussillon La Sanch penitential processions was directly inspected, including a rendered PDF page and line-localized text. 86 independently worded action/material/regional/historical observations all belong to this ONE related processional tradition, with Perpignan, Arles-sur-Tech and Collioure variants and period-specific differences. This is NOT 86 distinct customs, 86 independent documentary witnesses or Roman 1962 ritual authority.",
     "ITALIAN_UNESCO_SOURCE_DETAIL_NON_DISTINCTNESS": "110 details from four already known festival complexes (Nola 30, Sassari 41, Palmi 18, Viterbo 21). They are components, regional/dated variants, events or historical assertions, not 110 independently corroborated practices or new customs. UNESCO 00721 is ONE network designation for four separate local festival traditions. Festival programme entries for 2026 and Palmi event page 2023 are edition-specific and must not be universalized. No ritual authority inferred.",
-    "ITALY_SICILY_ENNA_TRAPANI_CALTANISSETTA_2024_2025_PROGRAMME_CAUTION": "Three Sicilian cities (Enna, Trapani, Caltanissetta) newly recorded independently from pre-existing four UNESCO shoulder-machine festivals. 96 separately located municipal, diocesan and local archive description rows from 12 HTML pages; related actions nested in THREE local Holy Week complexes, not 96 distinct Catholic customs. Many municipal records are a 2024 or 2025 programme; date/time/size cannot be projected into past or future. Enna municipal Easter/In Albis page mixes two feast descriptions and must be checked before calendrical reuse. Diocese Trapani 2019 modern pastoral restrictions are not 1962 ritual law."
+    "ITALY_SICILY_ENNA_TRAPANI_CALTANISSETTA_2024_2025_PROGRAMME_CAUTION": "Three Sicilian cities (Enna, Trapani, Caltanissetta) newly recorded independently from pre-existing four UNESCO shoulder-machine festivals. 96 separately located municipal, diocesan and local archive description rows from 12 HTML pages; related actions nested in THREE local Holy Week complexes, not 96 distinct Catholic customs. Many municipal records are a 2024 or 2025 programme; date/time/size cannot be projected into past or future. Enna municipal Easter/In Albis page mixes two feast descriptions and must be checked before calendrical reuse. Diocese Trapani 2019 modern pastoral restrictions are not 1962 ritual law.",
+    "IRISH_1930S_SCHOOLS_DISCOVERY_ACCESS_LEVEL": "157 short action/folklore leads extracted from search-engine indexed snippets representing 36 distinct Irish Schools Collection 1937–1939 folio references. Dúchas website returned a security verification page on direct access, so none of 36 complete original school folios/images is certified inspected. Counts remain NONADDITIVE to catalogue source detail total. Folklore beliefs and magical claims are quarantined and not Catholic devotional approval. Individual action/components repeat within and among folios. Research queue only."
   },
   "summary": {
     "source_observations": {
@@ -167,7 +168,14 @@
       "italy_four_source_details_screened": 110,
       "italy_four_new_verified_distinct_customs": 0
     },
-    "no_new_app_publications": true
+    "no_new_app_publications": true,
+    "source_discovery_leads": {
+      "irish_cbes_1937_1939_folio_references_index_only": 36,
+      "irish_cbes_indexed_action_belief_leads_queued_nonadditive": 157,
+      "irish_cbes_full_manuscript_pages_verified": 0,
+      "irish_cbes_promoted_to_source_detail_count": 0,
+      "irish_cbes_folk_belief_magic_leads_quarantined": 34
+    }
   },
   "sources": {
     "weiser_1958": "Handbook of Christian Feasts and Customs",
@@ -227,7 +235,9 @@
     "lent_easter_125_lexical_lookup": "data/customs/master/lent-easter-125-source-candidate-lookup.v1.json",
     "france_sanch_2023": "data/customs/master/france-2023-la-sanch-ministry-inventory-source-actions.v1.json",
     "italy_four_2013_unesco_complex_detail_pass": "data/customs/master/italy-four-unesco-processional-complexes-local-detail-pass.v1.json",
-    "italy_sicily_three_cities_holy_week": "data/customs/master/italy-sicily-enna-trapani-caltanissetta-holyweek-source-actions.v1.json"
+    "italy_sicily_three_cities_holy_week": "data/customs/master/italy-sicily-enna-trapani-caltanissetta-holyweek-source-actions.v1.json",
+    "irish_cbes_1930s_index_only_157_leads": "data/customs/master/irish-cbes-1930s-easter-brigid-john-may-indexed-excerpt-leads.v1.json",
+    "irish_cbes_1930s_157_nonmerging_motif_screen": "data/customs/master/irish-cbes-157-indexed-folklore-motif-screen.v1.json"
   },
   "existing_master_identities": [
     {
