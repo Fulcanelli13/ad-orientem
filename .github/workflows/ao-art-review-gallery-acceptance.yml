@@ -15,8 +15,8 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/download-artifact@v4
         with:
-          artifact-ids: '12511905467'
-          run-id: '39975137626'
+          artifact-ids: '12511636001'
+          run-id: '39975762727'
           repository: Fulcanelli13/ad-orientem
           github-token: ${{ github.token }}
           path: retrieved
