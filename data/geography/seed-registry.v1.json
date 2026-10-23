@@ -15488,6 +15488,47 @@
         "AO-R93-SITE-AO-R82-DISC-099",
         "AO-R93-GEO-AO-R82-DISC-099"
       ]
+    },
+    {
+      "place_id": "place:IT:santuario-san-paolo-della-croce-ovada",
+      "name": {
+        "official": "Santuario di San Paolo della Croce, Ovada",
+        "aliases": [
+          "Santuario San Paolo della Croce",
+          "Sanctuary of Saint Paul of the Cross, Ovada"
+        ]
+      },
+      "place_type": "shrine",
+      "geo_area_ids": [
+        "geo:country:IT"
+      ],
+      "mappable": true,
+      "geo": {
+        "lat": 44.63312,
+        "lng": 8.63989,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/48892861",
+        "source_ref": "osm:way:48892861",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "IT",
+        "verified_at": "2026-10-24"
+      },
+      "address": {
+        "line1": "Corso Italia",
+        "line2": null,
+        "postal_code": "15076",
+        "city": "Ovada",
+        "region": "Piemonte",
+        "country_code": "IT",
+        "country": "Italy",
+        "formatted": "Corso Italia, 15076 Ovada (AL), Italy"
+      },
+      "source_ids": [
+        "AO-P14-OVADA-SITE",
+        "AO-P14-OVADA-MASSES",
+        "AO-P14-OVADA-GEO"
+      ]
     }
   ],
   "directoryPlaceLinks": [
