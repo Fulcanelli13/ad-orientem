@@ -20,8 +20,8 @@ const PUBLISHED_ARTICLES = [
       "fr": "Une couronne de feuillage portant quatre bougies peut accompagner la prière familiale durant l'Avent. Chaque dimanche, une bougie supplémentaire est allumée pour marquer l'approche de Noël et l'attente du Christ."
     },
     "history": {
-      "en": "The United States bishops document the Advent wreath as a devotion used in churches and homes. That source establishes accepted Catholic use but does not establish the wreath's precise historical origin or make it a rubric of the 1962 Mass.",
-      "fr": "La conférence épiscopale américaine atteste l'emploi de la couronne de l'Avent dans les églises et les foyers. Cette source confirme son usage catholique, sans en établir l'origine historique précise ni en faire une rubrique de la messe de 1962."
+      "en": "The Archdiocese of Cologne traces the modern Advent wreath to the Protestant pastor Johann Hinrich Wichern, who used a multi-candle wheel at a Hamburg institution in 1839. The familiar four-candle form developed later, and its use in Catholic churches spread substantially in the twentieth century. This family devotion is not an ancient Roman Mass rite.",
+      "fr": "L'archidiocèse de Cologne fait remonter la couronne de l'Avent moderne au pasteur protestant Johann Hinrich Wichern, qui employait une roue munie de bougies dans un établissement de Hambourg en 1839. La forme actuelle à quatre bougies s'est développée ensuite, et son usage dans les églises catholiques s'est largement diffusé au XXe siècle. Cette dévotion familiale n'est pas un ancien rite de la messe romaine."
     },
     "meaning": {
       "en": "Its growing light reminds the household of hope and preparation for the Saviour.",
@@ -43,6 +43,13 @@ const PUBLISHED_ARTICLES = [
       "en": "The four Sundays of Advent",
       "fr": "Les quatre dimanches de l’Avent"
     },
+    "history_sources": [
+      {
+        "id": "EBK-ADVENT-WREATH-WICHERN-2025",
+        "title": "Der Adventskranz: Bedeutung und Ursprung des Adventskranzes",
+        "url": "https://www.erzbistum-koeln.de/presse_und_medien/magazin/Der-Adventskranz-Bedeutung-und-Ursprung-des-Adventskranzes/"
+      }
+    ],
     "sources": [
       {
         "id": "USCCB-ADVENT-WREATH-HOME",
@@ -62,8 +69,8 @@ const PUBLISHED_ARTICLES = [
       "fr": "Dans certaines familles catholiques, les enfants déposent un peu de paille dans une mangeoire après une bonne action ou une prière. La coutume rend visible leur préparation à la venue de l'Enfant Jésus, sans mesurer la grâce ni transformer la charité en compétition."
     },
     "history": {
-      "en": "A Catholic family account published in 2014 describes adding straw to the manger after acts of kindness and calls it a French custom. This is evidence of a contemporary household devotion, not proof of its date of origin or prevalence throughout France.",
-      "fr": "Un témoignage familial catholique publié en 2014 décrit l'ajout de paille à la crèche après des actes de bonté et qualifie cet usage de français. Il atteste une dévotion domestique contemporaine, sans prouver sa date d'origine ni sa diffusion dans toute la France."
+      "en": "A 2014 Catholic family account describes manger straw after good deeds and calls it French. Independently, the Archdiocese of Cologne describes the same preparation of the crib in Catholic German regions. These witnesses attest the devotion across settings, but neither establishes a specifically French origin, a precise starting date or universal practice.",
+      "fr": "Un témoignage familial catholique de 2014 décrit la paille ajoutée à la crèche après de bonnes actions et qualifie l'usage de français. Indépendamment, l'archidiocèse de Cologne atteste une préparation semblable de la crèche dans des régions catholiques allemandes. Ces témoins confirment la dévotion dans plusieurs milieux, sans en prouver une origine exclusivement française, une date précise ni un usage universel."
     },
     "meaning": {
       "en": "The empty crib reminds everyone to make room for Christ through charity and conversion.",
@@ -85,6 +92,13 @@ const PUBLISHED_ARTICLES = [
       "en": "Advent; especially family preparations before Christmas",
       "fr": "Pendant l’Avent, surtout dans les préparatifs de Noël"
     },
+    "history_sources": [
+      {
+        "id": "EBK-ADVENT-MANGER-STRAW-2025",
+        "title": "Was ist Advent: Ursprung und Bedeutung der Vorweihnachtszeit",
+        "url": "https://www.erzbistum-koeln.de/presse_und_medien/magazin/Was-ist-Advent-Ursprung-und-Bedeutung-der-Vorweihnachtszeit/"
+      }
+    ],
     "sources": [
       {
         "id": "CATHCULTURE-ADVENT-MANGER-STRAW-2014",
@@ -104,8 +118,8 @@ const PUBLISHED_ARTICLES = [
       "fr": "Pendant les posadas, des familles ou des groupes paroissiaux rappellent la recherche d'un abri par Marie et Joseph avant Noël. Le groupe passe de maison en maison, souvent en chantant, jusqu'à l'accueil symbolique dans un foyer."
     },
     "history": {
-      "en": "The United States bishops describe Las Posadas as a Latin American Advent observance beginning around 16 December, with visits and singing between homes. This source documents the living practice, not a settled account of its colonial origins.",
-      "fr": "La conférence épiscopale américaine décrit les posadas comme une coutume de l'Avent en Amérique latine, commençant vers le 16 décembre, avec des visites et des chants de maison en maison. La source atteste l'usage vivant, non une histoire définitivement établie de ses origines coloniales."
+      "en": "Mexico's Ministry of Culture describes Las Posadas as a tradition deeply rooted in colonial Mexican Christianity. It records one origin account locating it at San Agustín de Acolman in 1587 and another attributing transmission to Andalusia. The precise origin is therefore debated; the customary visits between households must not be confused with a mandatory liturgical procession.",
+      "fr": "Le ministère mexicain de la Culture situe les posadas dans le christianisme du Mexique colonial. Il rapporte une hypothèse d'origine à San Agustín de Acolman en 1587 et une autre faisant intervenir une transmission depuis l'Andalousie. L'origine exacte reste donc discutée ; les visites coutumières de foyer en foyer ne constituent pas une procession liturgique obligatoire."
     },
     "meaning": {
       "en": "Christ's coming invites Christians to hospitality and charity toward those looking for shelter.",
@@ -127,6 +141,13 @@ const PUBLISHED_ARTICLES = [
       "en": "Advent, traditionally beginning 16 December",
       "fr": "Avent, traditionnellement à partir du 16 décembre"
     },
+    "history_sources": [
+      {
+        "id": "MEX-CULTURA-POSADAS-ORIGINS-2017",
+        "title": "Y tú, ¿cómo celebras las posadas?",
+        "url": "https://www.gob.mx/cultura/articulos/y-tu-como-celebras-las-posadas?idiom=es"
+      }
+    ],
     "sources": [
       {
         "id": "USCCB-POSADAS-DEC16",
@@ -445,8 +466,8 @@ const PUBLISHED_ARTICLES = [
       "fr": "Dans un jardin marial, une famille cultive des fleurs ou des herbes parfumées qui rappellent la Sainte Vierge. Quelques pots et une petite image de Marie suffisent. Les noms et les légendes attachés aux plantes peuvent nourrir la méditation sans être présentés comme des faits historiques certains."
     },
     "history": {
-      "en": "A Catholic household account describes a garden of plants associated with Our Lady as a way to encourage prayer and reflection. It is evidence of contemporary Marian gardening, not by itself proof that the modern garden arrangement dates to the Middle Ages.",
-      "fr": "Un témoignage familial catholique présente un jardin de plantes associées à la Sainte Vierge comme une invitation à la prière et à la méditation. Il atteste une pratique mariale contemporaine, non la preuve que la forme moderne du jardin remonte au Moyen Âge."
+      "en": "The University of Dayton's Marian Library dates a public Mary Garden at Woods Hole, Massachusetts, to 1932 and the Philadelphia Mary's Gardens initiative to 1951. That initiative distributed guidance and seeds for household gardens. Medieval names for Marian plants are older devotional material, not evidence that the modern garden arrangement itself is medieval.",
+      "fr": "La bibliothèque mariale de l'université de Dayton situe un jardin marial public à Woods Hole (Massachusetts) en 1932 et la fondation de l'initiative Mary's Gardens à Philadelphie en 1951. Celle-ci diffusait des conseils et des graines pour des jardins familiaux. Les anciens noms marials de plantes relèvent d'une tradition symbolique plus ancienne, sans prouver que l'aménagement moderne du jardin date du Moyen Âge."
     },
     "meaning": {
       "en": "The beauty of creation leads the mind toward gratitude and the virtues of Our Lady.",
@@ -468,6 +489,13 @@ const PUBLISHED_ARTICLES = [
       "en": "Spring, May, or another suitable gardening season",
       "fr": "Au printemps, en mai ou pendant une saison de jardinage appropriée"
     },
+    "history_sources": [
+      {
+        "id": "DAYTON-MARIAN-MARY-GARDENS-HISTORY",
+        "title": "Background on Mary's Gardens",
+        "url": "https://udayton.edu/marianlibrary/marysgardens/b/background-on-marys-gardens.php"
+      }
+    ],
     "sources": [
       {
         "id": "CATHCULTURE-MARY-GARDEN",
