@@ -309,3 +309,66 @@ for(const g of researchCatalogue.provisional_unindexed_practice_leads){
  assert.equal(g.identity_status,'UNVERIFIED_DISTINCTNESS_OR_CATHOLIC_SPECIFICITY');
 }
 console.log('Unindexed 34 source details: 24 provisional group leads, 10 contextual/variant dispositions — PASS');
+
+
+const all340 = load('data/customs/master/all-340-granular-to-practice-reconciliation.v1.json');
+const all371 = load('data/customs/master/371-group-family-geographic-reconciliation.v1.json');
+const sharedPairReview = load('data/customs/master/54-coassociation-pairs-nonmerger-review.v1.json');
+assert.equal(all340.records.length,340);
+assert.equal(new Set(all340.records.map(x=>x.detail_id)).size,340);
+assert.deepEqual(
+ new Set(all340.records.map(x=>x.detail_id)),
+ new Set(researchCatalogue.handbook_granular_source_details.map(x=>x.id))
+);
+assert.equal(all340.summary.with_group_candidates,242);
+assert.equal(all340.summary.with_master_candidates,71);
+assert.equal(all340.summary.without_group_or_master_candidates,53);
+const allGroupIds=new Set([
+ ...researchCatalogue.provisional_handbook_groups.map(x=>x.id),
+ ...researchCatalogue.provisional_historical_groups.map(x=>x.id),
+ ...researchCatalogue.provisional_unindexed_practice_leads.map(x=>x.id)
+]);
+assert.equal(allGroupIds.size,371);
+for(const detail of all340.records){
+ assert.equal(detail.source_retained,true);
+ assert.equal(detail.distinctness_verified,false);
+ assert.equal(detail.publication_state,'RESEARCH_ONLY');
+ if(detail.parent_source_observation_id)assert.ok(priorSourceIds.has(detail.parent_source_observation_id));
+ for(const id of detail.candidate_provisional_group_ids)assert.ok(allGroupIds.has(id));
+ for(const m of detail.candidate_working_master_ids)assert.ok(masterSet.has(m.identity_id));
+}
+assert.equal(all371.provisional_groups.length,371);
+assert.deepEqual(new Set(all371.provisional_groups.map(x=>x.provisional_group_id)),allGroupIds);
+assert.equal(all371.summary.groups_with_explicit_owner_candidate,47);
+assert.equal(all371.summary.groups_without_explicit_owner_candidate,324);
+assert.equal(all371.family_1956_cross_links.length,111);
+assert.equal(all371.geographic_families.length,53);
+const familyObsIds = new Set(family1956.records.map(x=>x.observation_id));
+for(const f of all371.family_1956_cross_links){
+ assert.ok(familyObsIds.has(f.family_1956_observation_id));
+ assert.equal(f.unique_new_custom_verified,false);
+ for(const id of f.candidate_provisional_group_ids)assert.ok(allGroupIds.has(id));
+ for(const id of f.candidate_master_identity_ids)assert.ok(masterSet.has(id));
+}
+for(const row of all371.provisional_groups){
+ assert.equal(row.identity_verified,false);
+ assert.equal(row.publication_state,'RESEARCH_ONLY');
+ for(const m of row.owner_identity_candidates)assert.ok(masterSet.has(m.id));
+}
+for(const g of all371.geographic_families) if(g.working_master_custom_id) assert.ok(masterSet.has(g.working_master_custom_id));
+assert.equal(all371.summary.geographic_families_with_master_relation,23);
+assert.equal(all371.summary.geographic_families_without_master_relation,30);
+assert.equal(all371.summary.family_1956_with_any_owner_candidate,49);
+assert.equal(all371.summary.family_1956_without_owner_candidate,62);
+assert.equal(sharedPairReview.pair_candidates.length,54);
+assert.equal(new Set(sharedPairReview.pair_candidates.map(p=>[p.group_a,p.group_b].sort().join('|'))).size,54);
+for(const p of sharedPairReview.pair_candidates){
+ assert.ok(allGroupIds.has(p.group_a)&&allGroupIds.has(p.group_b));
+ assert.equal(p.identity_equivalence_verified,false);
+ assert.equal(p.app_publication,false);
+}
+assert.equal(researchCatalogue.summary.identity_working_rows.provisional_groups_with_explicit_existing_owner_relation,47);
+assert.equal(researchCatalogue.summary.source_review.shared_owner_or_family_source_coassociation_edges,54);
+assert.equal(all371.summary.certified_distinct_new_practices,0);
+assert.equal(all340.summary.automatic_merges,0);
+console.log('Independent customs identity graph — 340 nested details, 371 group rows, 111 family observations, 53 geographic families, 54 non-merging co-associations — PASS');
