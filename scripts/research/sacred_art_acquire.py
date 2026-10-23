@@ -16,6 +16,8 @@ DEFAULT_LIMIT = 45
 DEFAULT_BYTE_BUDGET = 650 * 1024 * 1024
 MAX_SINGLE_BYTES = 95 * 1024 * 1024
 Image.MAX_IMAGE_PIXELS = 165_000_000
+class WaveBudgetDeferred(Exception): pass
+class IndividualFileSizeHold(Exception): pass
 FIELDS = ['asset_source_id','record_id','source_sheet','source_row','title','artist','source_type','rights_claim_unverified','metadata_status','metadata_license','metadata_license_url','institution_public_domain','resolved_original_url','reported_width','reported_height','reported_bytes','download_status','bytes_acquired','sha256','decoded_width','decoded_height','format','resolution_gate','rights_gate','editorial_gate','failure','source_url','source_evidence_link','related_records','checked_utc']
 
 def now():return datetime.now(timezone.utc).isoformat(timespec='seconds')
@@ -107,12 +109,16 @@ def download(rec, out_dir, budget):
             ct=response.headers.get('Content-Type','').lower()
             if ct and not (ct.startswith('image/') or ct=='application/octet-stream'):
                 raise ValueError('Not an image content-type: '+ct)
+            declared=response.headers.get('Content-Length')
+            declared_bytes=int(declared) if declared and declared.isdecimal() else None
+            if declared_bytes and declared_bytes>MAX_SINGLE_BYTES:raise IndividualFileSizeHold('over individual size cap (declared size)')
+            if declared_bytes and declared_bytes>budget:raise WaveBudgetDeferred('over remaining wave byte budget (declared size)')
             while True:
                 block=response.read(1024*1024)
                 if not block:break
                 size+=len(block)
-                if size>MAX_SINGLE_BYTES:raise ValueError('over individual size cap')
-                if size>budget:raise ValueError('over wave byte budget')
+                if size>MAX_SINGLE_BYTES:raise IndividualFileSizeHold('over individual size cap')
+                if size>budget:raise WaveBudgetDeferred('over remaining wave byte budget')
                 sha.update(block);dest.write(block)
         if size<10000:raise ValueError('downloaded response too small')
         with Image.open(temp) as im:
@@ -142,7 +148,7 @@ def main():
     if args.prior_audit and pathlib.Path(args.prior_audit).is_file():
         with pathlib.Path(args.prior_audit).open(encoding='utf-8',newline='') as file:
             prior={r['asset_source_id']:r for r in csv.DictReader(file) if r.get('download_status') in ('ACQUIRED_DECODED_SHA256','VERIFIED_PRIOR_BATCH20')}
-    downloaded=0;bytes_used=0;results=[];commons_rate_limited=False
+    downloaded=0;bytes_used=0;results=[];commons_rate_limited=False;byte_budget_blocked=False
     for i,rec in enumerate(sources,1):
         id=rec['asset_source_id']
         entry={k:'' for k in FIELDS}
@@ -165,11 +171,17 @@ def main():
             elif args.metadata_only:entry['download_status']='METADATA_ONLY'
             elif rec['api_type']=='commons' and commons_rate_limited:entry['download_status']='DEFERRED_COMMONS_RATE_LIMIT'
             elif downloaded>=args.max_files:entry['download_status']='QUEUED_AFTER_FILE_LIMIT'
+            elif byte_budget_blocked:entry['download_status']='QUEUED_AFTER_BYTE_BUDGET'
             elif bytes_used>=args.max_bytes:entry['download_status']='QUEUED_AFTER_BYTE_BUDGET'
             else:
                 try:
                     data,delta=download(entry,image_dir,args.max_bytes-bytes_used)
                     entry.update(data);bytes_used+=delta;downloaded+=1
+                except WaveBudgetDeferred as exc:
+                    byte_budget_blocked=True
+                    entry.update(download_status='QUEUED_AFTER_BYTE_BUDGET',failure=str(exc)[:260])
+                except IndividualFileSizeHold as exc:
+                    entry.update(download_status='HELD_FILE_EXCEEDS_SIZE_CAP',failure=str(exc)[:260])
                 except (HTTPError,URLError,ValueError,OSError,Image.DecompressionBombError) as exc:
                     if isinstance(exc,HTTPError) and exc.code==429 and rec['api_type']=='commons':
                         commons_rate_limited=True
