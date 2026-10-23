@@ -28,6 +28,7 @@ on:
       - 'tools/pius-x-primary-coverage-report.mjs'
       - 'tests/pius-x-primary-coverage-report.mjs'
       - 'tests/pius-x-next12-primary-discovery-contract.mjs'
+      - 'tests/pius-x-eight-opening-context-witnesses.mjs'
       - 'tools/spx-p0-editorial-normalization.mjs'
       - 'tools/spx-p2-followup-editorial-layer.mjs'
       - '.github/workflows/pius-x-study-standalone-review.yml'
@@ -57,6 +58,7 @@ on:
       - 'tools/pius-x-primary-coverage-report.mjs'
       - 'tests/pius-x-primary-coverage-report.mjs'
       - 'tests/pius-x-next12-primary-discovery-contract.mjs'
+      - 'tests/pius-x-eight-opening-context-witnesses.mjs'
       - 'tools/spx-p0-editorial-normalization.mjs'
       - 'tools/spx-p2-followup-editorial-layer.mjs'
       - '.github/workflows/pius-x-study-standalone-review.yml'
@@ -107,6 +109,8 @@ jobs:
         run: node tests/pius-x-primary-coverage-report.mjs
       - name: Verify twelve Vatican document groups and eight unpromoted textual witnesses
         run: node tests/pius-x-next12-primary-discovery-contract.mjs
+      - name: Verify 41 contextual original-language source snippets against independent text windows
+        run: node tests/pius-x-eight-opening-context-witnesses.mjs
       - name: Attach private P2 source-coverage inventory and next twelve document candidates
         run: AO_SPX_COVERAGE_REPORT_OUTPUT=artifacts/pius-x-study-expanded/PiusX_Private_Source_Coverage.json node tools/pius-x-primary-coverage-report.mjs
       - uses: actions/upload-artifact@v4
