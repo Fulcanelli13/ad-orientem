@@ -1178,3 +1178,78 @@ assert.equal(count.identity_working_rows.provisional_after_53_no_owner_action_re
 assert.equal(count.identity_working_rows.final_uniquely_verified_customs_added,0);
 assert.equal(researchCatalogue.summary.no_new_app_publications,true);
 console.log('Sicilian Holy Week: 48 Enna + 20 Trapani + 28 Caltanissetta = 96 indexed action/details; 2343 nonunique source rows; 0 custom promotions — PASS');
+
+
+// Irish Schools' Collection: the Dúchas full-story pages were protected by a
+// website security gate in this source pass. Only web-index-excerpt discovery
+// leads are supported. These 157 rows must NOT be added to 2,343 master rows.
+const irishCbesIndexedLeads=load('data/customs/master/irish-cbes-1930s-easter-brigid-john-may-indexed-excerpt-leads.v1.json');
+const irishCbesMotifs=load('data/customs/master/irish-cbes-157-indexed-folklore-motif-screen.v1.json');
+assert.equal(irishCbesIndexedLeads.sources.length,36);
+assert.equal(irishCbesIndexedLeads.records.length,157);
+assert.equal(irishCbesIndexedLeads.summary.unique_indexed_folio_references,36);
+assert.equal(irishCbesIndexedLeads.summary.indexed_folklore_action_or_belief_leads,157);
+assert.equal(irishCbesIndexedLeads.summary.direct_manuscript_pages_visually_verified,0);
+assert.equal(irishCbesIndexedLeads.summary.folklore_leads_promoted_to_source_detail_master,0);
+assert.equal(irishCbesIndexedLeads.summary.distinct_customs_certified,0);
+assert.equal(irishCbesIndexedLeads.summary.app_publications,0);
+assert.deepEqual(irishCbesIndexedLeads.summary.by_claim_type,{
+ REPORTED_HOUSEHOLD_OR_COMMUNAL_PRACTICE:108,
+ FOLK_BELIEF_OR_MAGIC_QUARANTINED_NOT_RECOMMENDED:34,
+ REPORTED_BLESSING_OR_DEVOTIONAL_CONTEXT_RITUAL_APPROVAL_UNCHECKED:10,
+ SECONDARY_HISTORICAL_EXPLANATION_OR_CESSATION_CLAIM:5
+});
+const irSourceKeys=new Set(irishCbesIndexedLeads.sources.map(s=>s.source_key));
+assert.equal(irSourceKeys.size,36);
+for(const s of irishCbesIndexedLeads.sources){
+ assert.match(s.indexed_url,/^https:\/\/www\.duchas\.ie\//);
+ assert.equal(s.original_manuscript_facsimile_inspected,false);
+ assert.equal(s.locality_verified,false);
+ assert.equal(s.access_verification,'DIRECT_OPEN_PRODUCED_SECURITY_CHALLENGE_SOURCE_MATERIAL_FROM_WEB_SEARCH_INDEX');
+ assert.ok(s.volume && s.page);
+}
+const irLeadIds=new Set(irishCbesIndexedLeads.records.map(r=>r.observation_id));
+assert.equal(irLeadIds.size,157);
+for(const [i,r] of irishCbesIndexedLeads.records.entries()){
+ assert.equal(r.observation_id,'IR-CBES-IDX-'+String(i+1).padStart(3,'0'));
+ assert.ok(irSourceKeys.has(r.source_key));
+ assert.equal(r.source_access_level,'INDEXED_DUCHAS_TRANSCRIPT_EXCERPT_NOT_OPENED_MANUSCRIPT');
+ assert.equal(r.not_canonical_custom_identity,true);
+ assert.equal(r.source_independence_unverified,true);
+ assert.equal(r.no_ritual_authority_claim,true);
+ assert.equal(r.app_publication,'NONE');
+}
+assert.equal(irishCbesMotifs.records.length,157);
+assert.deepEqual(new Set(irishCbesMotifs.records.map(r=>r.source_observation_id)),irLeadIds);
+assert.equal(irishCbesMotifs.summary.source_rows_screened,157);
+assert.equal(irishCbesMotifs.summary.folio_references,36);
+assert.equal(irishCbesMotifs.summary.controlled_motif_classes,31);
+assert.equal(irishCbesMotifs.summary.rows_with_controlled_motif_hints,143);
+assert.equal(irishCbesMotifs.summary.rows_without_controlled_motif_hints,14);
+assert.equal(irishCbesMotifs.summary.certified_distinct_new_customs,0);
+assert.equal(irishCbesMotifs.summary.full_folio_verifications,0);
+assert.equal(irishCbesMotifs.summary.app_publications,0);
+const irThemes={};
+for(const r of irishCbesMotifs.records){
+ const detail=irishCbesIndexedLeads.records.find(x=>x.observation_id===r.source_observation_id);
+ assert.ok(detail);
+ assert.equal(r.source_folio_key,detail.source_key);
+ assert.equal(r.claim_type,detail.claim_type);
+ assert.equal(r.full_page_compared,false);
+ assert.equal(r.informant_independence_checked,false);
+ assert.equal(r.ecclesiastical_approval_checked,false);
+ assert.equal(r.automatic_custom_merge,false);
+ assert.equal(r.published,false);
+ irThemes[r.theme]=(irThemes[r.theme]||0)+1;
+}
+assert.deepEqual(irThemes,{EASTER:55,BRIGID:63,JOHN:18,MAY:17,PATTERN:4});
+assert.equal(count.source_discovery_leads.irish_cbes_1937_1939_folio_references_index_only,36);
+assert.equal(count.source_discovery_leads.irish_cbes_indexed_action_belief_leads_queued_nonadditive,157);
+assert.equal(count.source_discovery_leads.irish_cbes_full_manuscript_pages_verified,0);
+assert.equal(count.source_discovery_leads.irish_cbes_promoted_to_source_detail_count,0);
+assert.equal(count.source_discovery_leads.irish_cbes_folk_belief_magic_leads_quarantined,34);
+assert.equal(count.source_observations.total_source_detail_rows_including_external,2343);
+assert.equal(count.identity_working_rows.provisional_after_53_no_owner_action_review,408);
+assert.equal(count.identity_working_rows.final_uniquely_verified_customs_added,0);
+assert.equal(researchCatalogue.summary.no_new_app_publications,true);
+console.log('Irish indexed Dúchas folklore queue: 36 CBÉS folio references, 157 discovery descriptions, 143 motif-tagged, 34 folk claims quarantined, 0 verified folios and 0 additions to 2,343 source rows — PASS');
