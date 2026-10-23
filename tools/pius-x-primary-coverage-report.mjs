@@ -27,8 +27,18 @@ export function buildPrimaryCoverageReport(store,{nextBatchDocuments=12}={}){
  const eight=JSON.parse(readFileSync(new URL('../previews/pius-x-study/evidence/pius-x-next12-eight-opening-context-evidence-20261023.v1.json',import.meta.url),'utf8'));
  const wave2=JSON.parse(readFileSync(new URL('../previews/pius-x-study/evidence/pius-x-six-document-wave2-20261023.v1.json',import.meta.url),'utf8'));
  const wave3=JSON.parse(readFileSync(new URL('../previews/pius-x-study/evidence/pius-x-six-document-wave3-20261023.v1.json',import.meta.url),'utf8'));
+ const wave4=JSON.parse(readFileSync(new URL('../previews/pius-x-study/evidence/pius-x-six-document-wave4-remaining60-20261023.v1.json',import.meta.url),'utf8'));
+ const discovery=JSON.parse(readFileSync(new URL('../previews/pius-x-study/evidence/pius-x-next12-primary-document-discovery-20261023.v1.json',import.meta.url),'utf8'));
  const totalResearchWitnesses=[...annexes.values()].reduce((n,a)=>n+a.sourceWitnesses.length,0)+
-   eight.items.reduce((n,a)=>n+a.witnesses.length,0)+supplemental.additionalOriginalWitnesses.length+wave2.witnesses.length+wave3.witnesses.length;
+   eight.items.reduce((n,a)=>n+a.witnesses.length,0)+supplemental.additionalOriginalWitnesses.length+wave2.witnesses.length+wave3.witnesses.length+wave4.witnesses.length;
+ const discoveredNodeIds=new Set(discovery.documents.flatMap(d=>d.chapters.flatMap(c=>c.nodeIds)));
+ const sourceGateNodeIds=new Set([...gate.values()].flatMap(m=>[...m.keys()]));
+ const mappedInDiscovery=[...sourceGateNodeIds].filter(id=>discoveredNodeIds.has(id)).length;
+ if(discoveredNodeIds.size!==195||mappedInDiscovery!==144||
+    sourceGateNodeIds.size!==144||wave4.summary.newHeldNodes!==36||
+    wave3.summary.newResearchHolds!==15||
+    discovery.summary.documentGroups!==12)
+  throw new Error('Original twelve-document source population or hold reconciliation drifted');
  const olderHolds=supplemental.followups.filter(r=>r.witnessIds.length===0);
  const resolvedOlderHolds=olderHolds.filter(r=>gate.get(r.chapterId)?.has(r.nodeId)).length;
  if(olderHolds.length!==8||resolvedOlderHolds!==2)
@@ -55,9 +65,9 @@ export function buildPrimaryCoverageReport(store,{nextBatchDocuments=12}={}){
    }
   }
  }
- if(nodes!==423||store.data.chapters.length!==106||coveredNodes!==120||
-    gate.size!==41||sourceOwnedInitialNodes!==14||totalResearchWitnesses!==142)
-  throw new Error('Canonical P6 or 120-node original-text source-only coverage changed');
+ if(nodes!==423||store.data.chapters.length!==106||coveredNodes!==144||
+    gate.size!==48||sourceOwnedInitialNodes!==14||totalResearchWitnesses!==165)
+  throw new Error('Canonical P6 or 144-node original-text source-only coverage changed');
  const all=[...groups.values()].map(g=>{
   const {genres,sourceClasses,witnessAnchorIds,...rest}=g;
   return {...rest,genres:[...genres].sort(),sourceClasses:[...sourceClasses].sort(),
@@ -81,6 +91,13 @@ export function buildPrimaryCoverageReport(store,{nextBatchDocuments=12}={}){
    bulkWave3NewNodes:wave3.summary.newBoundedResearchCandidates,
    bulkWave3Holds:wave3.summary.newResearchHolds,
    bulkWave3NewExcerpts:wave3.witnesses.length,
+   bulkWave4Screened:wave4.summary.remainingNodesScreened,
+   bulkWave4NewNodes:wave4.summary.newBoundedResearchCandidates,
+   bulkWave4Holds:wave4.summary.newHeldNodes,
+   bulkWave4NewExcerpts:wave4.witnesses.length,
+   originalTwelveDocumentNodeCount:discoveredNodeIds.size,
+   originalTwelveDocumentUnmappedNodes:discoveredNodeIds.size-mappedInDiscovery,
+   originalTwelveDocumentHistoricalHolds:wave3.summary.newResearchHolds+wave4.summary.newHeldNodes,
    historicallyHeldFollowups:supplemental.summary.heldFollowupNodes,
    priorFollowupHoldsNowResolved:resolvedOlderHolds,
    heldResearchFollowups:olderHolds.length-resolvedOlderHolds,
