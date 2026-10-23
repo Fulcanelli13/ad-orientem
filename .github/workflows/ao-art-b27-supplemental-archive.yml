@@ -74,7 +74,7 @@ jobs:
           asset="ao-supplement-b27-${WAVE}.tar"
           tar -C incoming -cf "$asset" .
           test "$(stat -c %s "$asset")" -lt 2147483648
-          if ! gh api "repos/$GITHUB_REPOSITORY/releases/tags/$ARCHIVE_TAG" --jq '.assets[].name' | grep -Fxq "$asset"; then
+          if ! gh release view "$ARCHIVE_TAG" -R "$GITHUB_REPOSITORY" --json assets --jq '.assets[].name' | grep -Fxq "$asset"; then
             gh release upload "$ARCHIVE_TAG" "$asset" -R "$GITHUB_REPOSITORY"
           fi
           mkdir verify
@@ -90,5 +90,5 @@ jobs:
         run: |
           set -euo pipefail
           test "$(gh release view "$ARCHIVE_TAG" -R "$GITHUB_REPOSITORY" --json isDraft --jq .isDraft)" = true
-          gh api "repos/$GITHUB_REPOSITORY/releases/tags/$ARCHIVE_TAG" --jq '[.assets[].name | select(startswith("ao-supplement-b27-"))] | length' | grep -qx '9'
+          gh release view "$ARCHIVE_TAG" -R "$GITHUB_REPOSITORY" --json assets --jq '[.assets[].name | select(startswith("ao-supplement-b27-"))] | length' | grep -qx '9'
           echo '9 supplementary source/evidence packs verified in draft release. No public distribution.'
