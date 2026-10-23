@@ -11,6 +11,8 @@ concurrency:
   cancel-in-progress: false
 jobs:
   source-acquisition:
+    # Historical acquisition: avoid replaying old downloads when archive gating merges.
+    if: github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     timeout-minutes: 35
     steps:
