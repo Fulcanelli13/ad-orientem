@@ -1,0 +1,178 @@
+{
+  "schema_version": "1.0",
+  "wave": "B20R1",
+  "purpose": "Retry seven museum CC0 originals deferred by B20 byte budget; acquire three explicitly labelled museum print derivatives for original TIFFs exceeding cap; zero automatic editorial approvals",
+  "source_manifest": "data/research/sacred-art-b20-wave150.manifest.json",
+  "records": [
+    {
+      "asset_source_id": "AO-SRC-86B4D0A4AF4F23",
+      "record_id": "cma-127572",
+      "source_sheet": "PAINTING CATALOGUE",
+      "source_row": 305,
+      "title": "The Annunciation",
+      "artist": "Workshop of Paolo Veronese",
+      "recorded_rights": "CC0",
+      "source_url": "https://clevelandart.org/art/1950.251",
+      "api_type": "cleveland",
+      "download_gate": "METADATA_FIRST",
+      "related_records": [
+        "PAINTING CATALOGUE:cma-127572"
+      ],
+      "planned_retrieval": "CMA_PRINT_DERIVATIVE_3400PX",
+      "prior_original_status": "over individual size cap"
+    },
+    {
+      "asset_source_id": "AO-SRC-4E8BBDC6CBAD58",
+      "record_id": "cma-148758",
+      "source_sheet": "PAINTING CATALOGUE",
+      "source_row": 386,
+      "title": "The Crucifixion of Saint Andrew",
+      "artist": "Caravaggio",
+      "recorded_rights": "CC0",
+      "source_url": "https://clevelandart.org/art/1976.2",
+      "api_type": "cleveland",
+      "download_gate": "METADATA_FIRST",
+      "related_records": [
+        "PAINTING CATALOGUE:cma-148758"
+      ],
+      "planned_retrieval": "CMA_PRINT_DERIVATIVE_3400PX",
+      "prior_original_status": "over individual size cap"
+    },
+    {
+      "asset_source_id": "AO-SRC-59E3A0F107260B",
+      "record_id": "cma-143784",
+      "source_sheet": "PAINTING CATALOGUE",
+      "source_row": 419,
+      "title": "Adoration of the Shepherds",
+      "artist": "Carlo Dolci",
+      "recorded_rights": "CC0",
+      "source_url": "https://clevelandart.org/art/1968.22",
+      "api_type": "cleveland",
+      "download_gate": "METADATA_FIRST",
+      "related_records": [
+        "PAINTING CATALOGUE:cma-143784"
+      ],
+      "planned_retrieval": "CMA_PRINT_DERIVATIVE_3400PX",
+      "prior_original_status": "over individual size cap"
+    },
+    {
+      "asset_source_id": "AO-SRC-C7B4DFDCC6F785",
+      "record_id": "cma-137195",
+      "source_sheet": "PAINTING CATALOGUE",
+      "source_row": 155,
+      "title": "Rest on the Flight into Egypt",
+      "artist": "Claude Lorrain",
+      "recorded_rights": "CC0",
+      "source_url": "https://clevelandart.org/art/1962.151",
+      "api_type": "cleveland",
+      "download_gate": "METADATA_FIRST",
+      "related_records": [
+        "PAINTING CATALOGUE:cma-137195"
+      ],
+      "planned_retrieval": "CMA_BUDGET_RETRY_ORIGINAL",
+      "prior_original_status": "over wave byte budget"
+    },
+    {
+      "asset_source_id": "AO-SRC-2F563491DF7525",
+      "record_id": "cma-143138",
+      "source_sheet": "PAINTING CATALOGUE",
+      "source_row": 156,
+      "title": "Rest on the Flight into Egypt",
+      "artist": "Guercino",
+      "recorded_rights": "CC0",
+      "source_url": "https://clevelandart.org/art/1967.123",
+      "api_type": "cleveland",
+      "download_gate": "METADATA_FIRST",
+      "related_records": [
+        "PAINTING CATALOGUE:cma-143138"
+      ],
+      "planned_retrieval": "CMA_BUDGET_RETRY_ORIGINAL",
+      "prior_original_status": "over wave byte budget"
+    },
+    {
+      "asset_source_id": "AO-SRC-2EE006D73018C5",
+      "record_id": "cma-127746",
+      "source_sheet": "PAINTING CATALOGUE",
+      "source_row": 158,
+      "title": "Baptism of Christ",
+      "artist": "workshop of Jacopo Tintoretto",
+      "recorded_rights": "CC0 (CMA open access)",
+      "source_url": "https://clevelandart.org/art/1950.400",
+      "api_type": "cleveland",
+      "download_gate": "METADATA_FIRST",
+      "related_records": [
+        "PAINTING CATALOGUE:cma-127746"
+      ],
+      "planned_retrieval": "CMA_BUDGET_RETRY_ORIGINAL",
+      "prior_original_status": "over wave byte budget"
+    },
+    {
+      "asset_source_id": "AO-SRC-51B0B7F1D269F2",
+      "record_id": "cma-150040",
+      "source_sheet": "PAINTING CATALOGUE",
+      "source_row": 171,
+      "title": "The Good Samaritan",
+      "artist": "Alexandre-Gabriel Decamps",
+      "recorded_rights": "CC0",
+      "source_url": "https://clevelandart.org/art/1980.253",
+      "api_type": "cleveland",
+      "download_gate": "METADATA_FIRST",
+      "related_records": [
+        "PAINTING CATALOGUE:cma-150040"
+      ],
+      "planned_retrieval": "CMA_BUDGET_RETRY_ORIGINAL",
+      "prior_original_status": "over wave byte budget"
+    },
+    {
+      "asset_source_id": "AO-SRC-3C74847B90D518",
+      "record_id": "cma-112626",
+      "source_sheet": "PAINTING CATALOGUE",
+      "source_row": 180,
+      "title": "The Supper at Emmaus",
+      "artist": "Giovanni Battista Piazzetta",
+      "recorded_rights": "CC0",
+      "source_url": "https://clevelandart.org/art/1931.245",
+      "api_type": "cleveland",
+      "download_gate": "METADATA_FIRST",
+      "related_records": [
+        "PAINTING CATALOGUE:cma-112626"
+      ],
+      "planned_retrieval": "CMA_BUDGET_RETRY_ORIGINAL",
+      "prior_original_status": "over wave byte budget"
+    },
+    {
+      "asset_source_id": "AO-SRC-E5856E8FC7EF19",
+      "record_id": "cma-159488",
+      "source_sheet": "PAINTING CATALOGUE",
+      "source_row": 247,
+      "title": "The Trinity",
+      "artist": "Hendrik van Balen",
+      "recorded_rights": "CC0",
+      "source_url": "https://clevelandart.org/art/1996.26",
+      "api_type": "cleveland",
+      "download_gate": "METADATA_FIRST",
+      "related_records": [
+        "PAINTING CATALOGUE:cma-159488"
+      ],
+      "planned_retrieval": "CMA_BUDGET_RETRY_ORIGINAL",
+      "prior_original_status": "over wave byte budget"
+    },
+    {
+      "asset_source_id": "AO-SRC-33226D9CE6FFEC",
+      "record_id": "cma-130980",
+      "source_sheet": "PAINTING CATALOGUE",
+      "source_row": 296,
+      "title": "The Annunciation and The Nativity",
+      "artist": "Jaume Ferrer the Younger",
+      "recorded_rights": "CC0",
+      "source_url": "https://clevelandart.org/art/1953.660",
+      "api_type": "cleveland",
+      "download_gate": "METADATA_FIRST",
+      "related_records": [
+        "PAINTING CATALOGUE:cma-130980"
+      ],
+      "planned_retrieval": "CMA_BUDGET_RETRY_ORIGINAL",
+      "prior_original_status": "over wave byte budget"
+    }
+  ]
+}
