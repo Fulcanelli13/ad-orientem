@@ -110,7 +110,7 @@ export function selectEvidence(store,input){
     id:w.id,locus:w.locus,latin:w.text,speaker:w.speaker,
     sourceUrl:w.sourceUrl,readingNote:w.readingNote
    })):[],
-   editorialWarnings:witnessMap?[...witnessMap.editorialWarnings]:[]
+   editorialWarnings:witnessMap?[...(witnessMap.editorialWarnings||witnessMap.editorialFlags||[])]:[]
   };
  });
  if(evidence.some(x=>!x.text||!x.sourceUrl?.startsWith('https://')||!x.locus))
