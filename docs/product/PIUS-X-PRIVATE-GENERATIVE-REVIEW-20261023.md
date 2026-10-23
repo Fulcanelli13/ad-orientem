@@ -95,3 +95,27 @@ Two findings are important. First, the original text cites St Anselm's anguish a
 The localhost review-only composer receives **short original-Latin witness anchors and editorial warnings** when the visitor has selected one of the three mapped nodes. Its verifier is now instructed to ground relevant factual claims in the Latin fragments instead of considering the unapproved editorial adaptation alone. **This is a bounded spot-check, not full passage collation, doctrinal certification, quotation authentication, or guaranteed model fact-checking.** All existing `publishingApproved` values remain false, the 106/423 owner corpus remains unchanged, and no generated output is promoted.
 
 `tests/pius-x-primary-witness-contract.mjs` checks original chapter IDs, node ordering, original-speaker classifications, the §8 boundary flag, source pointers, and that the reviewer-only evidence reaches both the composer and mock verifier. These structural tests cannot replace expert comparison with original printed witnesses.
+
+
+## P2.3 — Three more original-language document pilots (23 October 2026)
+
+Three **additional source-witness annexes** are preserved beside the existing `E supremi` evidence. These contain short, explicitly located excerpts from the official Vatican original-language documents, exact mappings to unchanged source-owner dialogue IDs, and separately stated interpretation/attribution boundaries:
+
+| Source and canonical subject | Original witness language | Source-owner nodes | Short anchors | Important limitation |
+| --- | --- | --- | --- | --- |
+| `SPX-029` — *Il fermo proposito* §3 | Italian (with separate Vatican Latin version) | 4 | 4 | The §3 passage supports corporal/spiritual works and Christian virtues; absence of any association-membership requirement is an **inference**, not a direct papal ruling |
+| `SPX-NEW-012` — *Tribus circiter* §§11–12 | Latin | 4 | 7 | Reception of repentant Mariavite priests is conditional; do not turn the 1906 ruling into a present-day canonical-status determination |
+| `SPX-PILOT-09` — *Haerent animo* §§15–18 | Latin | 3 | 4 | Priestly exhortation, not a universal rule imposed identically on laity; St Bernard is quoted as a distinct authority |
+
+The new annexes are at `previews/pius-x-study/evidence/spx029-il-fermo-proposito-primary-witness.v2.json`, `spx-new012-tribus-circiter-primary-witness.v2.json`, and `pilot09-haerent-animo-primary-witness.v2.json`. They do not alter the original 106-chapter/423-answer corpus, and should not be conflated with the independently owned papal-source research PR #1458.
+
+The private composer now loads **four** bounded original-language annexes total and supplies the appropriate Latin or Italian fragments, exact original speaker identification and editorial limitations alongside the already unapproved bilingual editorial answers. The original Latin `E supremi` annex remains fully backward compatible. The reviewer-only model verifier must compare relevant claims to these excerpts and abstain on unsupported extrapolations. Two follow-up nodes that require outside context are explicitly held *before inference*: `SPX.DIALOGUE.SPX-029.F3` (categorical membership rule) and `AO.SPX.DIALOGUE.SPX-NEW-012.FOLLOW_3` (modern canonical-status decision).
+
+**Evidence methodology:** These are short excerpt spot checks, **not** full diplomatic transcriptions, comprehensive historical-source collation, verified EN/FR translations, doctrinal approvals, or model-accuracy measurements. Written editorialWarnings identify claims outside the text. Even when the local model and automatic verifier agree, the conclusion is never authenticated papal speech.
+
+Public primary source pages:
+- `Il fermo proposito` Italian: https://www.vatican.va/content/pius-x/it/encyclicals/documents/hf_p-x_enc_11061905_il-fermo-proposito.html
+- `Tribus circiter` Latin: https://www.vatican.va/content/pius-x/la/encyclicals/documents/hf_p-x_enc_05041906_tribus-circiter.html
+- `Haerent animo` Latin: https://www.vatican.va/content/pius-x/la/apost_exhortations/documents/hf_p-x_exh_19080804_haerent-animo.html
+
+The new `tests/pius-x-primary-witness-expansion.mjs` enforces exact source-owner node ordering, stable passage IDs, original-language provenance, no publication flags, 106/423 parity, language-specific metadata and hard holds on the two unsupported future-facing questions. GitHub CI uses a mocked model only; no external provider or live model call occurs here.
