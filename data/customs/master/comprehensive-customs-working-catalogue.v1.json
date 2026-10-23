@@ -11,7 +11,9 @@
     "GRANULAR_DETAIL_NON_ADDITIVITY": "340 source detail rows comprise subpractices, regional variants, historical context and potential missing customs. Their overlap with the 568 Handbook original observations and one another is not yet resolved. 1025 research rows are NOT 1025 unique customs.",
     "POTENTIAL_UNINDEXED_NEED_GATE": "34 early-chapter details lack an appropriate source-index parent; they require manual identity review before being counted as distinct customs.",
     "EARLY_UNINDEXED_PRACTICE_LEADS": "24 additional source-bounded group leads were created from 34 early-chapter unmatched detail observations. 10 others are either variants, historical background, other-rite comparison, or folk belief. Do not sum 371 provisional groups and the 56 master identities as confirmed distinct customs.",
-    "RECONCILIATION_INTERPRETATION": "340 detail records now have explicit routes; 371 provisional practice groups each have an identity-review row; 111 Family observations and 53 geographic families have relation rows. 54 co-association pairs are NOT verified same customs. No merges or new practice certification."
+    "RECONCILIATION_INTERPRETATION": "340 detail records now have explicit routes; 371 provisional practice groups each have an identity-review row; 111 Family observations and 53 geographic families have relation rows. 54 co-association pairs are NOT verified same customs. No merges or new practice certification.",
+    "POST_53_UNASSIGNED_CASE_REVIEW": "All 53 formerly unassigned detail records now have specific action-level triage; 37 noncanonical practice or reported folklore groups from 36 cases, one related to a prior group, 16 contextual/comparative. No exact identity merges or global distinctness certified. Older 371-group reconciliation remains its own immutable snapshot.",
+    "POST_54_COASSOCIATION_REVIEW": "All 54 shared-owner/source pairs classified by likely action mismatch or possible regional subpractice. No pair was certified as identical; shared feast/master label never justifies automatic merging."
   },
   "summary": {
     "source_observations": {
@@ -23,7 +25,7 @@
       "preview_subjects_extra_counted": 0,
       "handbook_nested_granular_detail_mentions": 340,
       "all_book_research_rows_including_nested_details": 1025,
-      "combined_distinct_source_rows_note": "685 non-nested separately identified source observations; plus 57 nested source details that may refer to the same source passages or practices. Do not infer 742 independent customs or independent mentions.",
+      "combined_distinct_source_rows_note": "685 independently numbered base source-observation rows (574 Handbook + 111 Family), plus 340 overlapping Handbook detail records = 1,025 research rows, not 1,025 distinct customs.",
       "granular_details_spread_by_batch": {
         "ch01_to_04": 41,
         "ch05_to_09": 121,
@@ -41,7 +43,9 @@
       "provisional_early_chapter_unindexed_groups": 24,
       "total_provisional_groups_including_unindexed": 371,
       "provisional_groups_with_explicit_existing_owner_relation": 47,
-      "provisional_groups_without_explicit_existing_owner_relation": 324
+      "provisional_groups_without_explicit_existing_owner_relation": 324,
+      "provisional_after_53_no_owner_action_review": 408,
+      "provisional_no_owner_detail_leads_new": 37
     },
     "source_review": {
       "historical_context_disputed_cases_index_assessed": 181,
@@ -65,7 +69,15 @@
       "family_records_without_group_or_master_relation": 62,
       "geographic_families_with_existing_master_relation": 23,
       "geographic_families_without_existing_master_relation": 30,
-      "shared_owner_or_family_source_coassociation_edges": 54
+      "shared_owner_or_family_source_coassociation_edges": 54,
+      "all_53_unassigned_detail_cases_action_classified": 53,
+      "unassigned_detail_cases_with_new_provisional_group": 36,
+      "unassigned_detail_cases_related_to_existing_group": 1,
+      "unassigned_detail_cases_preserved_as_context_or_comparison": 16,
+      "coassociation_pair_label_relationships_reviewed": 54,
+      "coassociation_pair_possibly_same_family_variants": 7,
+      "coassociation_pair_distinct_primary_actions": 25,
+      "coassociation_pair_other_related_context": 22
     },
     "no_new_app_publications": true
   },
@@ -93,7 +105,9 @@
     "weiser_1958_printed_page_coverage": "data/customs/master/weiser-1958-second-pass-page-coverage.v1.json",
     "all_340_source_detail_relationships": "data/customs/master/all-340-granular-to-practice-reconciliation.v1.json",
     "all_371_group_family_geographic_relationships": "data/customs/master/371-group-family-geographic-reconciliation.v1.json",
-    "shared_family_master_coassociation_review": "data/customs/master/54-coassociation-pairs-nonmerger-review.v1.json"
+    "shared_family_master_coassociation_review": "data/customs/master/54-coassociation-pairs-nonmerger-review.v1.json",
+    "no_owner_detail_adjudication": "data/customs/master/53-no-owner-customs-action-review.v1.json",
+    "coassociation_action_level": "data/customs/master/54-coassociation-action-level-relationship-review.v1.json"
   },
   "existing_master_identities": [
     {
@@ -12990,6 +13004,526 @@
       "printed_page": 119,
       "identity_status": "UNVERIFIED_DISTINCTNESS_OR_CATHOLIC_SPECIFICITY",
       "source_file": "data/customs/master/weiser-ch01-09-unindexed-leads-adjudication.v1.json"
+    }
+  ],
+  "provisional_unassigned_action_leads": [
+    {
+      "id": "CAT-WEISER-GAP-001",
+      "label": "Incantations addressed to fruit trees and fields during midwinter",
+      "working_type": "PROVISIONAL_ACTION_FROM_PREVIOUSLY_UNASSIGNED_DETAIL",
+      "source_observation_ids": [
+        "WEI58-ADD-2-006"
+      ],
+      "reported_scope": "Reported incantation/fertility folklore, not an endorsed Catholic sacramental practice",
+      "claim_type": "HISTORICAL_REPORTED_FOLK_ACTION",
+      "identity_verified": false,
+      "modern_observance_verified": false,
+      "source_page_spot_checked": false,
+      "source_file": "data/customs/master/53-no-owner-customs-action-review.v1.json"
+    },
+    {
+      "id": "CAT-WEISER-GAP-002",
+      "label": "New Year marriage divination with mirrors dreams or leaves",
+      "working_type": "PROVISIONAL_ACTION_FROM_PREVIOUSLY_UNASSIGNED_DETAIL",
+      "source_observation_ids": [
+        "WEI58-ADD-2-021"
+      ],
+      "reported_scope": "Reported New Year divination; no validity of its fortune-telling claim inferred",
+      "claim_type": "HISTORICAL_REPORTED_FOLK_ACTION",
+      "identity_verified": false,
+      "modern_observance_verified": false,
+      "source_page_spot_checked": true,
+      "source_file": "data/customs/master/53-no-owner-customs-action-review.v1.json"
+    },
+    {
+      "id": "CAT-WEISER-GAP-003",
+      "label": "Brandsonntag first-Lent-Sunday fiery wheels rolled down German hills",
+      "working_type": "PROVISIONAL_ACTION_FROM_PREVIOUSLY_UNASSIGNED_DETAIL",
+      "source_observation_ids": [
+        "WEI58-ADD-2-040"
+      ],
+      "reported_scope": "South German first-Lent-Sunday Brandsonntag, rolling burning wheels",
+      "claim_type": "HISTORICAL_OR_REGIONAL_PRACTICE_NEEDING_IDENTITY_REVIEW",
+      "identity_verified": false,
+      "modern_observance_verified": false,
+      "source_page_spot_checked": true,
+      "source_file": "data/customs/master/53-no-owner-customs-action-review.v1.json"
+    },
+    {
+      "id": "CAT-WEISER-GAP-004",
+      "label": "French Fête des brandons young people carry firebrands",
+      "working_type": "PROVISIONAL_ACTION_FROM_PREVIOUSLY_UNASSIGNED_DETAIL",
+      "source_observation_ids": [
+        "WEI58-ADD-2-041"
+      ],
+      "reported_scope": "French Fête des brandons, torch-running; separate action from wheel rolling",
+      "claim_type": "HISTORICAL_OR_REGIONAL_PRACTICE_NEEDING_IDENTITY_REVIEW",
+      "identity_verified": false,
+      "modern_observance_verified": false,
+      "source_page_spot_checked": true,
+      "source_file": "data/customs/master/53-no-owner-customs-action-review.v1.json"
+    },
+    {
+      "id": "CAT-WEISER-GAP-005",
+      "label": "Plough Monday or Blochziehen ceremonial spring plough-drawing",
+      "working_type": "PROVISIONAL_ACTION_FROM_PREVIOUSLY_UNASSIGNED_DETAIL",
+      "source_observation_ids": [
+        "WEI58-ADD-2-044"
+      ],
+      "reported_scope": "Early spring ceremonial plough-drawing associated with fertility folklore; not a Catholic blessing",
+      "claim_type": "HISTORICAL_REPORTED_FOLK_ACTION",
+      "identity_verified": false,
+      "modern_observance_verified": false,
+      "source_page_spot_checked": true,
+      "source_file": "data/customs/master/53-no-owner-customs-action-review.v1.json"
+    },
+    {
+      "id": "CAT-WEISER-GAP-006",
+      "label": "Seasonal water splashing of young men and women at carnival or Easter",
+      "working_type": "PROVISIONAL_ACTION_FROM_PREVIOUSLY_UNASSIGNED_DETAIL",
+      "source_observation_ids": [
+        "WEI58-ADD-2-045"
+      ],
+      "reported_scope": "Water-splashing seasonal game; speculative fertility effect excluded",
+      "claim_type": "HISTORICAL_OR_REGIONAL_PRACTICE_NEEDING_IDENTITY_REVIEW",
+      "identity_verified": false,
+      "modern_observance_verified": false,
+      "source_page_spot_checked": true,
+      "source_file": "data/customs/master/53-no-owner-customs-action-review.v1.json"
+    },
+    {
+      "id": "CAT-WEISER-GAP-007",
+      "label": "Easter morning face washing in rivers and brooks in France and central Europe",
+      "working_type": "PROVISIONAL_ACTION_FROM_PREVIOUSLY_UNASSIGNED_DETAIL",
+      "source_observation_ids": [
+        "WEI58-ADD-2-046"
+      ],
+      "reported_scope": "Easter morning washing in running water; claimed supernatural blessing not verified",
+      "claim_type": "HISTORICAL_OR_REGIONAL_PRACTICE_NEEDING_IDENTITY_REVIEW",
+      "identity_verified": false,
+      "modern_observance_verified": false,
+      "source_page_spot_checked": true,
+      "source_file": "data/customs/master/53-no-owner-customs-action-review.v1.json"
+    },
+    {
+      "id": "CAT-WEISER-GAP-008",
+      "label": "French Canadian Easter dawn stream-water washing and bottling",
+      "working_type": "PROVISIONAL_ACTION_FROM_PREVIOUSLY_UNASSIGNED_DETAIL",
+      "source_observation_ids": [
+        "WEI58-ADD-2-047"
+      ],
+      "reported_scope": "French Canadian form of Easter dawn water gathering or washing",
+      "claim_type": "HISTORICAL_OR_REGIONAL_PRACTICE_NEEDING_IDENTITY_REVIEW",
+      "identity_verified": false,
+      "modern_observance_verified": false,
+      "source_page_spot_checked": false,
+      "source_file": "data/customs/master/53-no-owner-customs-action-review.v1.json"
+    },
+    {
+      "id": "CAT-WEISER-GAP-009",
+      "label": "Wedding couple sprinkled with Easter-drawn water in Germany or Austria",
+      "working_type": "PROVISIONAL_ACTION_FROM_PREVIOUSLY_UNASSIGNED_DETAIL",
+      "source_observation_ids": [
+        "WEI58-ADD-2-048"
+      ],
+      "reported_scope": "Easter river water applied to wedding couple, distinct participants and action",
+      "claim_type": "HISTORICAL_OR_REGIONAL_PRACTICE_NEEDING_IDENTITY_REVIEW",
+      "identity_verified": false,
+      "modern_observance_verified": false,
+      "source_page_spot_checked": false,
+      "source_file": "data/customs/master/53-no-owner-customs-action-review.v1.json"
+    },
+    {
+      "id": "CAT-WEISER-GAP-010",
+      "label": "Horses ritually ridden into Easter river water",
+      "working_type": "PROVISIONAL_ACTION_FROM_PREVIOUSLY_UNASSIGNED_DETAIL",
+      "source_observation_ids": [
+        "WEI58-ADD-2-049"
+      ],
+      "reported_scope": "Horse bathing/riding into Easter water; not proof of Catholic blessing",
+      "claim_type": "HISTORICAL_OR_REGIONAL_PRACTICE_NEEDING_IDENTITY_REVIEW",
+      "identity_verified": false,
+      "modern_observance_verified": false,
+      "source_page_spot_checked": false,
+      "source_file": "data/customs/master/53-no-owner-customs-action-review.v1.json"
+    },
+    {
+      "id": "CAT-WEISER-GAP-011",
+      "label": "Holy Saturday blessed water taken home by family",
+      "working_type": "PROVISIONAL_ACTION_FROM_PREVIOUSLY_UNASSIGNED_DETAIL",
+      "source_observation_ids": [
+        "WEI58-ADD-2-050"
+      ],
+      "reported_scope": "Holy Saturday blessed water carried home, distinct from seasonal natural-water magic",
+      "claim_type": "HISTORICAL_REPORTED_FOLK_ACTION",
+      "identity_verified": false,
+      "modern_observance_verified": false,
+      "source_page_spot_checked": false,
+      "source_file": "data/customs/master/53-no-owner-customs-action-review.v1.json"
+    },
+    {
+      "id": "CAT-WEISER-GAP-012",
+      "label": "Tyrolean maypole left at newlyweds house until first child's birth",
+      "working_type": "PROVISIONAL_ACTION_FROM_PREVIOUSLY_UNASSIGNED_DETAIL",
+      "source_observation_ids": [
+        "WEI58-ADD-2-051"
+      ],
+      "reported_scope": "Tyrolean marital maypole custom, lifetime marker rather than liturgical act",
+      "claim_type": "HISTORICAL_OR_REGIONAL_PRACTICE_NEEDING_IDENTITY_REVIEW",
+      "identity_verified": false,
+      "modern_observance_verified": false,
+      "source_page_spot_checked": false,
+      "source_file": "data/customs/master/53-no-owner-customs-action-review.v1.json"
+    },
+    {
+      "id": "CAT-WEISER-GAP-013",
+      "label": "Papal golden rose carried after Laetare Mass and blessed for presentation",
+      "working_type": "PROVISIONAL_ACTION_FROM_PREVIOUSLY_UNASSIGNED_DETAIL",
+      "source_observation_ids": [
+        "WEI58-DETAIL-B-001"
+      ],
+      "reported_scope": "Papal Golden Rose action is ecclesiastical ceremony, not lay household custom",
+      "claim_type": "HISTORICAL_OR_REGIONAL_PRACTICE_NEEDING_IDENTITY_REVIEW",
+      "identity_verified": false,
+      "modern_observance_verified": false,
+      "source_page_spot_checked": false,
+      "source_file": "data/customs/master/53-no-owner-customs-action-review.v1.json"
+    },
+    {
+      "id": "CAT-WEISER-GAP-014",
+      "label": "Last Supper church reenactment with twelve Apostles in Mexico and South America",
+      "working_type": "PROVISIONAL_ACTION_FROM_PREVIOUSLY_UNASSIGNED_DETAIL",
+      "source_observation_ids": [
+        "WEI58-DETAIL-B-017"
+      ],
+      "reported_scope": "Last Supper dramatization in church with twelve participants; verified against printed p.196",
+      "claim_type": "HISTORICAL_OR_REGIONAL_PRACTICE_NEEDING_IDENTITY_REVIEW",
+      "identity_verified": false,
+      "modern_observance_verified": false,
+      "source_page_spot_checked": true,
+      "source_file": "data/customs/master/53-no-owner-customs-action-review.v1.json"
+    },
+    {
+      "id": "CAT-WEISER-GAP-015",
+      "label": "Walking barefoot through Pentecost dew for folk healing belief",
+      "working_type": "PROVISIONAL_ACTION_FROM_PREVIOUSLY_UNASSIGNED_DETAIL",
+      "source_observation_ids": [
+        "WEI58-DETAIL-B-061"
+      ],
+      "reported_scope": "Pentecost morning dew bathing tied to claimed folk healing, not Catholic miracle",
+      "claim_type": "HISTORICAL_REPORTED_FOLK_ACTION",
+      "identity_verified": false,
+      "modern_observance_verified": false,
+      "source_page_spot_checked": false,
+      "source_file": "data/customs/master/53-no-owner-customs-action-review.v1.json"
+    },
+    {
+      "id": "CAT-WEISER-GAP-016",
+      "label": "Dew collected on bread and fed to animals for claimed protection",
+      "working_type": "PROVISIONAL_ACTION_FROM_PREVIOUSLY_UNASSIGNED_DETAIL",
+      "source_observation_ids": [
+        "WEI58-DETAIL-B-062"
+      ],
+      "reported_scope": "Feeding dew-moistened food to livestock under folk-protection beliefs",
+      "claim_type": "HISTORICAL_REPORTED_FOLK_ACTION",
+      "identity_verified": false,
+      "modern_observance_verified": false,
+      "source_page_spot_checked": false,
+      "source_file": "data/customs/master/53-no-owner-customs-action-review.v1.json"
+    },
+    {
+      "id": "CAT-WEISER-GAP-017",
+      "label": "Trinity Sunday avoidance of sewing or metal work due to lightning legend",
+      "working_type": "PROVISIONAL_ACTION_FROM_PREVIOUSLY_UNASSIGNED_DETAIL",
+      "source_observation_ids": [
+        "WEI58-DETAIL-B-066"
+      ],
+      "reported_scope": "Reported Trinity Sunday avoidance of sewing under lightning lore, not Church precept",
+      "claim_type": "HISTORICAL_OR_REGIONAL_PRACTICE_NEEDING_IDENTITY_REVIEW",
+      "identity_verified": false,
+      "modern_observance_verified": false,
+      "source_page_spot_checked": false,
+      "source_file": "data/customs/master/53-no-owner-customs-action-review.v1.json"
+    },
+    {
+      "id": "CAT-WEISER-GAP-018",
+      "label": "Gathering and presenting St John herbs for blessing",
+      "working_type": "PROVISIONAL_ACTION_FROM_PREVIOUSLY_UNASSIGNED_DETAIL",
+      "source_observation_ids": [
+        "WEI58-DETAIL-B-105"
+      ],
+      "reported_scope": "Gathering St John herbs for blessing; blessing existence/rite specifics still require proof",
+      "claim_type": "HISTORICAL_OR_REGIONAL_PRACTICE_NEEDING_IDENTITY_REVIEW",
+      "identity_verified": false,
+      "modern_observance_verified": false,
+      "source_page_spot_checked": false,
+      "source_file": "data/customs/master/53-no-owner-customs-action-review.v1.json"
+    },
+    {
+      "id": "CAT-WEISER-GAP-019",
+      "label": "Saint John bonfire straw effigies and noisy demon-averting folklore",
+      "working_type": "PROVISIONAL_ACTION_FROM_PREVIOUSLY_UNASSIGNED_DETAIL",
+      "source_observation_ids": [
+        "WEI58-DETAIL-B-106"
+      ],
+      "reported_scope": "St John straw effigies as part of seasonal fire folklore",
+      "claim_type": "HISTORICAL_REPORTED_FOLK_ACTION",
+      "identity_verified": false,
+      "modern_observance_verified": false,
+      "source_page_spot_checked": false,
+      "source_file": "data/customs/master/53-no-owner-customs-action-review.v1.json"
+    },
+    {
+      "id": "CAT-WEISER-GAP-020",
+      "label": "Saint Lucy inscriptions and figure drawings on doors and fences",
+      "working_type": "PROVISIONAL_ACTION_FROM_PREVIOUSLY_UNASSIGNED_DETAIL",
+      "source_observation_ids": [
+        "WEI58-DETAIL-B-111"
+      ],
+      "reported_scope": "St Lucy's name and image inscribed on doors and fences; p.342 checked",
+      "claim_type": "HISTORICAL_OR_REGIONAL_PRACTICE_NEEDING_IDENTITY_REVIEW",
+      "identity_verified": false,
+      "modern_observance_verified": false,
+      "source_page_spot_checked": true,
+      "source_file": "data/customs/master/53-no-owner-customs-action-review.v1.json"
+    },
+    {
+      "id": "CAT-WEISER-GAP-021",
+      "label": "Saint Lucy incense-and-bonfire customs tied to folkloric healing claims",
+      "working_type": "PROVISIONAL_ACTION_FROM_PREVIOUSLY_UNASSIGNED_DETAIL",
+      "source_observation_ids": [
+        "WEI58-DETAIL-B-112"
+      ],
+      "reported_scope": "Scandinavian St Lucy bonfires and incense as reported folklore; p.342 checked",
+      "claim_type": "HISTORICAL_REPORTED_FOLK_ACTION",
+      "identity_verified": false,
+      "modern_observance_verified": false,
+      "source_page_spot_checked": true,
+      "source_file": "data/customs/master/53-no-owner-customs-action-review.v1.json"
+    },
+    {
+      "id": "CAT-WEISER-GAP-022",
+      "label": "Harvest baby last sheaf carried in a folk procession",
+      "working_type": "PROVISIONAL_ACTION_FROM_PREVIOUSLY_UNASSIGNED_DETAIL",
+      "source_observation_ids": [
+        "WEI58-DETAIL-B-113"
+      ],
+      "reported_scope": "Last-sheaf harvest baby carried publicly, folk harvest action on p.269",
+      "claim_type": "HISTORICAL_REPORTED_FOLK_ACTION",
+      "identity_verified": false,
+      "modern_observance_verified": false,
+      "source_page_spot_checked": true,
+      "source_file": "data/customs/master/53-no-owner-customs-action-review.v1.json"
+    },
+    {
+      "id": "CAT-WEISER-GAP-023",
+      "label": "Austrian Erntebraut with last-sheaf wreath as harvest bride",
+      "working_type": "PROVISIONAL_ACTION_FROM_PREVIOUSLY_UNASSIGNED_DETAIL",
+      "source_observation_ids": [
+        "WEI58-DETAIL-B-114"
+      ],
+      "reported_scope": "Austrian harvest bride sheaf/wreath custom, p.269",
+      "claim_type": "HISTORICAL_OR_REGIONAL_PRACTICE_NEEDING_IDENTITY_REVIEW",
+      "identity_verified": false,
+      "modern_observance_verified": false,
+      "source_page_spot_checked": true,
+      "source_file": "data/customs/master/53-no-owner-customs-action-review.v1.json"
+    },
+    {
+      "id": "CAT-WEISER-GAP-024",
+      "label": "English horkey-cart last harvest wagon procession",
+      "working_type": "PROVISIONAL_ACTION_FROM_PREVIOUSLY_UNASSIGNED_DETAIL",
+      "source_observation_ids": [
+        "WEI58-DETAIL-B-115"
+      ],
+      "reported_scope": "English horkey-cart and Scottish kirn-doll traditions both in one source row; split as 2 provisional working actions",
+      "claim_type": "HISTORICAL_OR_REGIONAL_PRACTICE_NEEDING_IDENTITY_REVIEW",
+      "identity_verified": false,
+      "modern_observance_verified": false,
+      "source_page_spot_checked": true,
+      "source_file": "data/customs/master/53-no-owner-customs-action-review.v1.json"
+    },
+    {
+      "id": "CAT-WEISER-GAP-025",
+      "label": "Scottish kirn-doll last sheaf harvest figure",
+      "working_type": "PROVISIONAL_ACTION_FROM_PREVIOUSLY_UNASSIGNED_DETAIL",
+      "source_observation_ids": [
+        "WEI58-DETAIL-B-115"
+      ],
+      "reported_scope": "English horkey-cart and Scottish kirn-doll traditions both in one source row; split as 2 provisional working actions",
+      "claim_type": "HISTORICAL_OR_REGIONAL_PRACTICE_NEEDING_IDENTITY_REVIEW",
+      "identity_verified": false,
+      "modern_observance_verified": false,
+      "source_page_spot_checked": true,
+      "source_file": "data/customs/master/53-no-owner-customs-action-review.v1.json"
+    },
+    {
+      "id": "CAT-WEISER-GAP-026",
+      "label": "Stations of the Cross incorporated into private prayer hours",
+      "working_type": "PROVISIONAL_ACTION_FROM_PREVIOUSLY_UNASSIGNED_DETAIL",
+      "source_observation_ids": [
+        "WEI58-DETAIL-C-014"
+      ],
+      "reported_scope": "Stations of the Cross made part of personal prayer hours; devotional variant",
+      "claim_type": "HISTORICAL_OR_REGIONAL_PRACTICE_NEEDING_IDENTITY_REVIEW",
+      "identity_verified": false,
+      "modern_observance_verified": false,
+      "source_page_spot_checked": false,
+      "source_file": "data/customs/master/53-no-owner-customs-action-review.v1.json"
+    },
+    {
+      "id": "CAT-WEISER-GAP-027",
+      "label": "Ember seasonal quarter-term payment of debts and tithes",
+      "working_type": "PROVISIONAL_ACTION_FROM_PREVIOUSLY_UNASSIGNED_DETAIL",
+      "source_observation_ids": [
+        "WEI58-DETAIL-C-033"
+      ],
+      "reported_scope": "Ember seasonal debts and tithes: civic/agrarian custom; religious-calendar association not Catholic devotional approval",
+      "claim_type": "HISTORICAL_OR_REGIONAL_PRACTICE_NEEDING_IDENTITY_REVIEW",
+      "identity_verified": false,
+      "modern_observance_verified": false,
+      "source_page_spot_checked": false,
+      "source_file": "data/customs/master/53-no-owner-customs-action-review.v1.json"
+    },
+    {
+      "id": "CAT-WEISER-GAP-028",
+      "label": "Superstitious circumambulation of farmland with protective-effect claim",
+      "working_type": "PROVISIONAL_ACTION_FROM_PREVIOUSLY_UNASSIGNED_DETAIL",
+      "source_observation_ids": [
+        "WEI58-DETAIL-C-041"
+      ],
+      "reported_scope": "Protective field circumambulation recorded with magical explanations; claimed efficacy excluded",
+      "claim_type": "HISTORICAL_REPORTED_FOLK_ACTION",
+      "identity_verified": false,
+      "modern_observance_verified": false,
+      "source_page_spot_checked": false,
+      "source_file": "data/customs/master/53-no-owner-customs-action-review.v1.json"
+    },
+    {
+      "id": "CAT-WEISER-GAP-029",
+      "label": "Historical Advent fast limited to particular weekdays in Latin countries",
+      "working_type": "PROVISIONAL_ACTION_FROM_PREVIOUSLY_UNASSIGNED_DETAIL",
+      "source_observation_ids": [
+        "WEI58-DETAIL-D-001"
+      ],
+      "reported_scope": "Historical Advent fasting pattern, not assumed binding in 1962 or today",
+      "claim_type": "HISTORICAL_OR_REGIONAL_PRACTICE_NEEDING_IDENTITY_REVIEW",
+      "identity_verified": false,
+      "modern_observance_verified": false,
+      "source_page_spot_checked": false,
+      "source_file": "data/customs/master/53-no-owner-customs-action-review.v1.json"
+    },
+    {
+      "id": "CAT-WEISER-GAP-030",
+      "label": "Bethlehem Christmas visitors search dark well for the Magi star",
+      "working_type": "PROVISIONAL_ACTION_FROM_PREVIOUSLY_UNASSIGNED_DETAIL",
+      "source_observation_ids": [
+        "WEI58-DETAIL-D-028"
+      ],
+      "reported_scope": "Pilgrims/searchers peering into Bethlehem water well for Star of Magi",
+      "claim_type": "HISTORICAL_OR_REGIONAL_PRACTICE_NEEDING_IDENTITY_REVIEW",
+      "identity_verified": false,
+      "modern_observance_verified": false,
+      "source_page_spot_checked": false,
+      "source_file": "data/customs/master/53-no-owner-customs-action-review.v1.json"
+    },
+    {
+      "id": "CAT-WEISER-GAP-031",
+      "label": "Undecorated evergreen Yule tree kept distinct from decorated Christmas tree",
+      "working_type": "PROVISIONAL_ACTION_FROM_PREVIOUSLY_UNASSIGNED_DETAIL",
+      "source_observation_ids": [
+        "WEI58-DETAIL-D-078"
+      ],
+      "reported_scope": "Historical plain evergreen Yule tree differs from decorated Christmas tree",
+      "claim_type": "HISTORICAL_OR_REGIONAL_PRACTICE_NEEDING_IDENTITY_REVIEW",
+      "identity_verified": false,
+      "modern_observance_verified": false,
+      "source_page_spot_checked": false,
+      "source_file": "data/customs/master/53-no-owner-customs-action-review.v1.json"
+    },
+    {
+      "id": "CAT-WEISER-GAP-032",
+      "label": "Mistletoe seasonal greetings and kissing in English custom",
+      "working_type": "PROVISIONAL_ACTION_FROM_PREVIOUSLY_UNASSIGNED_DETAIL",
+      "source_observation_ids": [
+        "WEI58-DETAIL-D-081"
+      ],
+      "reported_scope": "Mistletoe greeting/kissing, secular seasonal custom, not specifically Catholic",
+      "claim_type": "HISTORICAL_REPORTED_FOLK_ACTION",
+      "identity_verified": false,
+      "modern_observance_verified": false,
+      "source_page_spot_checked": false,
+      "source_file": "data/customs/master/53-no-owner-customs-action-review.v1.json"
+    },
+    {
+      "id": "CAT-WEISER-GAP-033",
+      "label": "Historical York Cathedral mistletoe display at Christmas",
+      "working_type": "PROVISIONAL_ACTION_FROM_PREVIOUSLY_UNASSIGNED_DETAIL",
+      "source_observation_ids": [
+        "WEI58-DETAIL-D-082"
+      ],
+      "reported_scope": "Historical mistletoe in York church decoration, distinct site and institution",
+      "claim_type": "HISTORICAL_REPORTED_FOLK_ACTION",
+      "identity_verified": false,
+      "modern_observance_verified": false,
+      "source_page_spot_checked": false,
+      "source_file": "data/customs/master/53-no-owner-customs-action-review.v1.json"
+    },
+    {
+      "id": "CAT-WEISER-GAP-034",
+      "label": "Holly kept against alleged witchcraft or lightning effects",
+      "working_type": "PROVISIONAL_ACTION_FROM_PREVIOUSLY_UNASSIGNED_DETAIL",
+      "source_observation_ids": [
+        "WEI58-DETAIL-D-084"
+      ],
+      "reported_scope": "Historical holly charm carried home; supernatural effects are folklore only; printed p.105 checked",
+      "claim_type": "HISTORICAL_REPORTED_FOLK_ACTION",
+      "identity_verified": false,
+      "modern_observance_verified": false,
+      "source_page_spot_checked": true,
+      "source_file": "data/customs/master/53-no-owner-customs-action-review.v1.json"
+    },
+    {
+      "id": "CAT-WEISER-GAP-035",
+      "label": "English medieval resistance to ivy inside Christmas households",
+      "working_type": "PROVISIONAL_ACTION_FROM_PREVIOUSLY_UNASSIGNED_DETAIL",
+      "source_observation_ids": [
+        "WEI58-DETAIL-D-085"
+      ],
+      "reported_scope": "Medieval English avoidance of ivy indoors, noted on p.105, distinct negative seasonal practice",
+      "claim_type": "HISTORICAL_OR_REGIONAL_PRACTICE_NEEDING_IDENTITY_REVIEW",
+      "identity_verified": false,
+      "modern_observance_verified": false,
+      "source_page_spot_checked": true,
+      "source_file": "data/customs/master/53-no-owner-customs-action-review.v1.json"
+    },
+    {
+      "id": "CAT-WEISER-GAP-036",
+      "label": "Kutia tossed at ceiling as earlier agrarian fortune custom",
+      "working_type": "PROVISIONAL_ACTION_FROM_PREVIOUSLY_UNASSIGNED_DETAIL",
+      "source_observation_ids": [
+        "WEI58-DETAIL-D-103"
+      ],
+      "reported_scope": "Kutia tossed at ceiling as divination, not a Catholic blessing",
+      "claim_type": "HISTORICAL_REPORTED_FOLK_ACTION",
+      "identity_verified": false,
+      "modern_observance_verified": false,
+      "source_page_spot_checked": false,
+      "source_file": "data/customs/master/53-no-owner-customs-action-review.v1.json"
+    },
+    {
+      "id": "CAT-WEISER-GAP-037",
+      "label": "English traditional festive goose or capon Christmas dinner",
+      "working_type": "PROVISIONAL_ACTION_FROM_PREVIOUSLY_UNASSIGNED_DETAIL",
+      "source_observation_ids": [
+        "WEI58-DETAIL-D-120"
+      ],
+      "reported_scope": "Christmas goose/capon table custom; domestic food rather than specific Catholic sacrament",
+      "claim_type": "HISTORICAL_OR_REGIONAL_PRACTICE_NEEDING_IDENTITY_REVIEW",
+      "identity_verified": false,
+      "modern_observance_verified": false,
+      "source_page_spot_checked": false,
+      "source_file": "data/customs/master/53-no-owner-customs-action-review.v1.json"
     }
   ]
 }
