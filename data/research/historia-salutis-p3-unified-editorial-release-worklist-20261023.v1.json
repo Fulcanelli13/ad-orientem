@@ -74,7 +74,9 @@
     "sourceEditorialAcceptances": 0,
     "releaseGatesPassed": 0,
     "editorialDeskProvisionalDispositions": 41,
-    "editorialDeskAcceptedDecisions": 0
+    "editorialDeskAcceptedDecisions": 0,
+    "sourceComparedEditorialReductionOptions": 15,
+    "editsActuallyPromoted": 0
   },
   "priorityOrder": [
     "First: eight P0 original-text recommendations prepared (38 distinct source verse entries across five causal/vision groups); no human/editorial acceptances. Compare in the existing P3 workbench, then record explicit future accept/hold/omit decision per source owner.",
@@ -2415,9 +2417,9 @@
     ]
   },
   "nextExecutableBatch": [
-    "Compare provisional trim/suppress copy against the existing P3 reader and the 20 source trials; no source selection, deletion or promotion at this stage.",
-    "Preserve printed-edition-specific citations (Genesis 5, Exodus 40, Isaiah 9) and perform uncollated three-witness source verification for each proposed edit.",
-    "After source comparison, record editorial selections and verify uninterrupted reading; no human/editorial, oral, theological or publication gate is passed by this desk census."
+    "Run the new 15-owner exact-witness and 37-movement desk-simulation contract; inspect failed and pending CI checks explicitly.",
+    "Address the open causal/source-selection hinges, prioritising Noah, Passover, Passion burial, Paul in Rome and Revelation transitions; do not invent prose to close omitted original Scripture.",
+    "Perform edition-aware printed witness collation, French literary review and actual uninterrupted read-aloud before considering any editorial acceptance or public release."
   ],
   "editorialDeskDispositionResearch": {
     "schema": "ao.historia.p3.editorial-owner-desk-disposition.v1",
@@ -2526,7 +2528,26 @@
         "oralAccepted": false,
         "printedEditionCollated": false,
         "theologicallyApproved": false,
-        "status": "PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED"
+        "status": "PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED",
+        "readthroughSourceComparison": {
+          "status": "THREE_WITNESS_SOURCE_REFERENCES_DESK_COMPARED_NOT_ACCEPTED",
+          "sourceEvidenceReferences": [
+            "Genesis 25:22–26",
+            "Genesis 25:29–34"
+          ],
+          "sourceEvidenceFinding": "The oracle speaks of two peoples and the older serving the younger; the selected next scene follows their later dispute. Do not present Jacob's blessing as already completed.",
+          "specificRisk": "PROPHETIC_ANTICIPATION",
+          "scenarioPolicy": "SHORTEN_IN_BOTH_SCENARIOS",
+          "withoutNewSource": {
+            "rendering": "USE_SHORTENED_OR_HELD_COPY",
+            "copy": "Isaac and Rebecca had twin sons, Esau and Jacob, whose rivalry divided the family."
+          },
+          "withPairedOriginalSource": null,
+          "originalSourceTextNotCopiedIntoEditorialLedger": true,
+          "sourceEditoriallySelected": false,
+          "changeAppliedToMainManuscript": false,
+          "manualOralLiteraryApproval": false
+        }
       },
       {
         "id": "H14-03",
@@ -2601,7 +2622,27 @@
         "oralAccepted": false,
         "printedEditionCollated": false,
         "theologicallyApproved": false,
-        "status": "PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED"
+        "status": "PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED",
+        "readthroughSourceComparison": {
+          "status": "THREE_WITNESS_SOURCE_REFERENCES_DESK_COMPARED_NOT_ACCEPTED",
+          "sourceEvidenceReferences": [
+            "Exodus 5:1–2",
+            "Exodus 7:14–16",
+            "Exodus 10:27–29"
+          ],
+          "sourceEvidenceFinding": "Exodus 5 is a first refusal and Exodus 7 already records continued refusal. The late-plague handoff must retain that Pharaoh persisted without repeating a second judgment oracle.",
+          "specificRisk": "REPEATED_REFUSAL",
+          "scenarioPolicy": "SHORTEN_IN_BOTH_SCENARIOS",
+          "withoutNewSource": {
+            "rendering": "USE_SHORTENED_OR_HELD_COPY",
+            "copy": "Despite the signs against Egypt, Pharaoh still refused to release Israel."
+          },
+          "withPairedOriginalSource": null,
+          "originalSourceTextNotCopiedIntoEditorialLedger": true,
+          "sourceEditoriallySelected": false,
+          "changeAppliedToMainManuscript": false,
+          "manualOralLiteraryApproval": false
+        }
       },
       {
         "id": "H21-02",
@@ -2794,7 +2835,7 @@
         "sourceCandidateField": "editorialReadingCandidate",
         "disposition": "TRIM_PROSE",
         "researchRationale": "The current generalized phrase 'sinned grievously in his dealings' obscures the two historically distinct injuries and is less exact than the cited narrative.",
-        "trialReplacementCopy": "David committed adultery with Bathsheba and arranged the death of her husband Uriah. When Nathan confronted him, David confessed his sin.",
+        "trialReplacementCopy": "David took Bathsheba, the wife of Uriah, and arranged Uriah's death in battle. When Nathan rebuked him, David confessed his sin.",
         "sourceHandlingNote": "Verify references against 2 Samuel 11–12; do not narrate Nathan's parable as invented direct speech.",
         "relatedSourceDecisionId": null,
         "sourceReferences": [
@@ -2809,7 +2850,27 @@
         "oralAccepted": false,
         "printedEditionCollated": false,
         "theologicallyApproved": false,
-        "status": "PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED"
+        "status": "PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED",
+        "readthroughSourceComparison": {
+          "status": "THREE_WITNESS_SOURCE_REFERENCES_DESK_COMPARED_NOT_ACCEPTED",
+          "sourceEvidenceReferences": [
+            "2Samuel 11:3–5",
+            "2Samuel 11:14–17",
+            "2Samuel 12:7–13"
+          ],
+          "sourceEvidenceFinding": "The source attributes the taking of Bathsheba and arrangement of Uriah's death to David; avoid implying a shared culpability not established by these verses.",
+          "specificRisk": "MORAL_AGENCY_ATTRIBUTION",
+          "scenarioPolicy": "SHORTEN_IN_BOTH_SCENARIOS",
+          "withoutNewSource": {
+            "rendering": "USE_SHORTENED_OR_HELD_COPY",
+            "copy": "David took Bathsheba, the wife of Uriah, and arranged Uriah's death in battle. When Nathan rebuked him, David confessed his sin."
+          },
+          "withPairedOriginalSource": null,
+          "originalSourceTextNotCopiedIntoEditorialLedger": true,
+          "sourceEditoriallySelected": false,
+          "changeAppliedToMainManuscript": false,
+          "manualOralLiteraryApproval": false
+        }
       },
       {
         "id": "H35-04",
@@ -2833,7 +2894,26 @@
         "oralAccepted": false,
         "printedEditionCollated": false,
         "theologicallyApproved": false,
-        "status": "PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED"
+        "status": "PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED",
+        "readthroughSourceComparison": {
+          "status": "THREE_WITNESS_SOURCE_REFERENCES_DESK_COMPARED_NOT_ACCEPTED",
+          "sourceEvidenceReferences": [
+            "1Kings 11:1–8",
+            "1Kings 11:29–32"
+          ],
+          "sourceEvidenceFinding": "Solomon's turn to other gods is explanatory, while Ahijah's speech in selected 1 Kings 11:29–32 announces the division. Remove the anticipatory retelling of the division.",
+          "specificRisk": "DIRECT_NEXT_PASSAGE_REPETITION",
+          "scenarioPolicy": "SHORTEN_IN_BOTH_SCENARIOS",
+          "withoutNewSource": {
+            "rendering": "USE_SHORTENED_OR_HELD_COPY",
+            "copy": "In later years Solomon turned to other gods, provoking the Lord's judgment upon his kingdom."
+          },
+          "withPairedOriginalSource": null,
+          "originalSourceTextNotCopiedIntoEditorialLedger": true,
+          "sourceEditoriallySelected": false,
+          "changeAppliedToMainManuscript": false,
+          "manualOralLiteraryApproval": false
+        }
       },
       {
         "id": "H37-02",
@@ -2884,7 +2964,26 @@
         "oralAccepted": false,
         "printedEditionCollated": false,
         "theologicallyApproved": false,
-        "status": "PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED"
+        "status": "PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED",
+        "readthroughSourceComparison": {
+          "status": "THREE_WITNESS_SOURCE_REFERENCES_DESK_COMPARED_NOT_ACCEPTED",
+          "sourceEvidenceReferences": [
+            "1Kings 18:20–21",
+            "Isaiah 7:10–14"
+          ],
+          "sourceEvidenceFinding": "A short Elijah-to-Isaiah witness handoff is necessary; do not summarize Isaiah's subsequent selected Messiah and servant oracles before they are read.",
+          "specificRisk": "PROPHECY_PREEMPTION",
+          "scenarioPolicy": "SHORTEN_IN_BOTH_SCENARIOS",
+          "withoutNewSource": {
+            "rendering": "USE_SHORTENED_OR_HELD_COPY",
+            "copy": "Elijah confronted the prophets of Baal as Israel turned aside. Later in Judah, Isaiah addressed King Achaz; the oracles that follow are distinct prophetic witnesses."
+          },
+          "withPairedOriginalSource": null,
+          "originalSourceTextNotCopiedIntoEditorialLedger": true,
+          "sourceEditoriallySelected": false,
+          "changeAppliedToMainManuscript": false,
+          "manualOralLiteraryApproval": false
+        }
       },
       {
         "id": "H43-03",
@@ -3223,7 +3322,32 @@
         "oralAccepted": false,
         "printedEditionCollated": false,
         "theologicallyApproved": false,
-        "status": "PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED"
+        "status": "PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED",
+        "readthroughSourceComparison": {
+          "status": "THREE_WITNESS_SOURCE_REFERENCES_DESK_COMPARED_NOT_ACCEPTED",
+          "sourceEvidenceReferences": [
+            "Genesis 11:26–31",
+            "Genesis 12:1–3"
+          ],
+          "sourceEvidenceFinding": "Genesis 12:1 contains the divine command to Abram so the connector should only supply Sem-to-Abram ancestry, and should disappear if the held Genesis 11 genealogy is selected.",
+          "specificRisk": "DUPLICATED_CALL_OR_GENEALOGY",
+          "scenarioPolicy": "SUPPRESS_IF_SOURCE_SELECTED",
+          "withoutNewSource": {
+            "rendering": "USE_SHORTENED_OR_HELD_COPY",
+            "copy": "Among the descendants of Sem was Abram."
+          },
+          "withPairedOriginalSource": {
+            "rendering": "OMIT_EDITORIAL",
+            "copy": null,
+            "sourceDecisionIds": [
+              "HS-W-SRC-HS-CF-02"
+            ]
+          },
+          "originalSourceTextNotCopiedIntoEditorialLedger": true,
+          "sourceEditoriallySelected": false,
+          "changeAppliedToMainManuscript": false,
+          "manualOralLiteraryApproval": false
+        }
       },
       {
         "id": "HS-P3-EC-02",
@@ -3248,7 +3372,33 @@
         "oralAccepted": false,
         "printedEditionCollated": false,
         "theologicallyApproved": false,
-        "status": "PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED"
+        "status": "PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED",
+        "readthroughSourceComparison": {
+          "status": "THREE_WITNESS_SOURCE_REFERENCES_DESK_COMPARED_NOT_ACCEPTED",
+          "sourceEvidenceReferences": [
+            "Genesis 39:1",
+            "Genesis 39:7–10",
+            "Genesis 39:19–21"
+          ],
+          "sourceEvidenceFinding": "The preface covers service and false accusation but Genesis 39:19–21 provides the master's reaction, imprisonment and divine favour. Do not pre-retell the master's reaction.",
+          "specificRisk": "PREFACE_DUPLICATES_ORIGIN",
+          "scenarioPolicy": "DISPLAY_SHORTER_ONLY_WITH_HELD_SOURCE_TRIAL",
+          "withoutNewSource": {
+            "rendering": "NOT_RENDERED",
+            "copy": null
+          },
+          "withPairedOriginalSource": {
+            "rendering": "USE_SHORTENED",
+            "copy": "In Egypt Joseph served Potiphar. When Joseph resisted Potiphar's wife's advances, she falsely accused him.",
+            "sourceDecisionIds": [
+              "HS-W-SRC-HS-CF-03"
+            ]
+          },
+          "originalSourceTextNotCopiedIntoEditorialLedger": true,
+          "sourceEditoriallySelected": false,
+          "changeAppliedToMainManuscript": false,
+          "manualOralLiteraryApproval": false
+        }
       },
       {
         "id": "HS-P3-EC-03",
@@ -3273,7 +3423,27 @@
         "oralAccepted": false,
         "printedEditionCollated": false,
         "theologicallyApproved": false,
-        "status": "PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED"
+        "status": "PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED",
+        "readthroughSourceComparison": {
+          "status": "THREE_WITNESS_SOURCE_REFERENCES_DESK_COMPARED_NOT_ACCEPTED",
+          "sourceEvidenceReferences": [
+            "Ruth 2:1–3",
+            "Ruth 4:1–12",
+            "Ruth 4:13"
+          ],
+          "sourceEvidenceFinding": "Selected Ruth 4:13 already states Boaz takes Ruth; the connector should give the earlier gleaning and nearer kinsman background, not repeat the marriage itself.",
+          "specificRisk": "DUPLICATED_MARRIAGE",
+          "scenarioPolicy": "SHORTEN_IN_BOTH_SCENARIOS",
+          "withoutNewSource": {
+            "rendering": "USE_SHORTENED_OR_HELD_COPY",
+            "copy": "Ruth gleaned in Boaz's fields, and a nearer kinsman relinquished his claim, leaving Boaz free to marry her."
+          },
+          "withPairedOriginalSource": null,
+          "originalSourceTextNotCopiedIntoEditorialLedger": true,
+          "sourceEditoriallySelected": false,
+          "changeAppliedToMainManuscript": false,
+          "manualOralLiteraryApproval": false
+        }
       },
       {
         "id": "HS-P3-EC-01",
@@ -3322,7 +3492,26 @@
         "oralAccepted": false,
         "printedEditionCollated": false,
         "theologicallyApproved": false,
-        "status": "PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED"
+        "status": "PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED",
+        "readthroughSourceComparison": {
+          "status": "THREE_WITNESS_SOURCE_REFERENCES_DESK_COMPARED_NOT_ACCEPTED",
+          "sourceEvidenceReferences": [
+            "1Samuel 15:22–23",
+            "1Samuel 16:1–3"
+          ],
+          "sourceEvidenceFinding": "Selected 1 Samuel 16:1 already announces rejection of Saul. The connector need only explain disobedience and Samuel's rebuke, without retelling the rejection.",
+          "specificRisk": "REPEATED_REJECTION",
+          "scenarioPolicy": "SHORTEN_IN_BOTH_SCENARIOS",
+          "withoutNewSource": {
+            "rendering": "USE_SHORTENED_OR_HELD_COPY",
+            "copy": "Samuel had rebuked Saul for disobedience, declaring that obedience was better than sacrifice."
+          },
+          "withPairedOriginalSource": null,
+          "originalSourceTextNotCopiedIntoEditorialLedger": true,
+          "sourceEditoriallySelected": false,
+          "changeAppliedToMainManuscript": false,
+          "manualOralLiteraryApproval": false
+        }
       },
       {
         "id": "HS-P3-EC-05",
@@ -3372,7 +3561,27 @@
         "oralAccepted": false,
         "printedEditionCollated": false,
         "theologicallyApproved": false,
-        "status": "PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED"
+        "status": "PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED",
+        "readthroughSourceComparison": {
+          "status": "THREE_WITNESS_SOURCE_REFERENCES_DESK_COMPARED_NOT_ACCEPTED",
+          "sourceEvidenceReferences": [
+            "Luke 1:5–13",
+            "Luke 1:26",
+            "Luke 1:36"
+          ],
+          "sourceEvidenceFinding": "Selected Luke 1:26–38 states Elizabeth's sixth month and Gabriel's declaration; the connector should establish Zachary and the prior promise without doubling the six-month narrative.",
+          "specificRisk": "REPEATED_ANNUNCIATION_TIMING",
+          "scenarioPolicy": "SHORTEN_IN_BOTH_SCENARIOS",
+          "withoutNewSource": {
+            "rendering": "USE_SHORTENED_OR_HELD_COPY",
+            "copy": "In the days of Herod, an angel had promised a son to the priest Zachary and his wife Elizabeth."
+          },
+          "withPairedOriginalSource": null,
+          "originalSourceTextNotCopiedIntoEditorialLedger": true,
+          "sourceEditoriallySelected": false,
+          "changeAppliedToMainManuscript": false,
+          "manualOralLiteraryApproval": false
+        }
       },
       {
         "id": "HS-P3-EC-12",
@@ -3398,7 +3607,26 @@
         "oralAccepted": false,
         "printedEditionCollated": false,
         "theologicallyApproved": false,
-        "status": "PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED"
+        "status": "PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED",
+        "readthroughSourceComparison": {
+          "status": "THREE_WITNESS_SOURCE_REFERENCES_DESK_COMPARED_NOT_ACCEPTED",
+          "sourceEvidenceReferences": [
+            "Luke 2:51–52",
+            "Matthew 3:1–3"
+          ],
+          "sourceEvidenceFinding": "Matthew 3:1–3 already introduces John's preaching, so this prior transition should cover only Christ's intervening youth in Nazareth.",
+          "specificRisk": "REPEATED_BAPTIST_PREACHING",
+          "scenarioPolicy": "SHORTEN_IN_BOTH_SCENARIOS",
+          "withoutNewSource": {
+            "rendering": "USE_SHORTENED_OR_HELD_COPY",
+            "copy": "Jesus grew up in Nazareth."
+          },
+          "withPairedOriginalSource": null,
+          "originalSourceTextNotCopiedIntoEditorialLedger": true,
+          "sourceEditoriallySelected": false,
+          "changeAppliedToMainManuscript": false,
+          "manualOralLiteraryApproval": false
+        }
       },
       {
         "id": "HS-P3-EC-09",
@@ -3422,7 +3650,32 @@
         "oralAccepted": false,
         "printedEditionCollated": false,
         "theologicallyApproved": false,
-        "status": "PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED"
+        "status": "PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED",
+        "readthroughSourceComparison": {
+          "status": "THREE_WITNESS_SOURCE_REFERENCES_DESK_COMPARED_NOT_ACCEPTED",
+          "sourceEvidenceReferences": [
+            "John 1:29–36",
+            "John 1:49"
+          ],
+          "sourceEvidenceFinding": "John 1:36 repeats Lamb of God inside the already selected first-disciples passage, while the earlier Baptist Son-of-God testimony is distinct. Keep that distinct claim only when John 1:29–34 stays held.",
+          "specificRisk": "DUPLICATED_LAMB_TESTIMONY",
+          "scenarioPolicy": "SHORTEN_WHILE_HELD_SUPPRESS_IF_SOURCE_SELECTED",
+          "withoutNewSource": {
+            "rendering": "USE_SHORTENED_OR_HELD_COPY",
+            "copy": "John had also testified that Jesus was the Son of God."
+          },
+          "withPairedOriginalSource": {
+            "rendering": "OMIT_EDITORIAL",
+            "copy": null,
+            "sourceDecisionIds": [
+              "HS-W-SRC-HS-P3-CF-17"
+            ]
+          },
+          "originalSourceTextNotCopiedIntoEditorialLedger": true,
+          "sourceEditoriallySelected": false,
+          "changeAppliedToMainManuscript": false,
+          "manualOralLiteraryApproval": false
+        }
       },
       {
         "id": "HS-P3-EC-06",
@@ -3447,7 +3700,32 @@
         "oralAccepted": false,
         "printedEditionCollated": false,
         "theologicallyApproved": false,
-        "status": "PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED"
+        "status": "PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED",
+        "readthroughSourceComparison": {
+          "status": "THREE_WITNESS_SOURCE_REFERENCES_DESK_COMPARED_NOT_ACCEPTED",
+          "sourceEvidenceReferences": [
+            "Acts 6:5–15",
+            "Acts 7:51–55"
+          ],
+          "sourceEvidenceFinding": "Acts 7:54 reacts to Stephen's rebuke in Acts 7:51–53; the short preface supplies Stephen's arrest and hearing, while the verbatim rebuke must come from the original-source trial.",
+          "specificRisk": "MISSING_REBUKE_CAUSALITY",
+          "scenarioPolicy": "DISPLAY_SHORTER_ONLY_WITH_HELD_SOURCE_TRIAL",
+          "withoutNewSource": {
+            "rendering": "NOT_RENDERED",
+            "copy": null
+          },
+          "withPairedOriginalSource": {
+            "rendering": "USE_SHORTENED",
+            "copy": "Stephen was brought before the council; in his defence he recalled God's dealings with Israel.",
+            "sourceDecisionIds": [
+              "HS-W-SRC-HS-CF-08"
+            ]
+          },
+          "originalSourceTextNotCopiedIntoEditorialLedger": true,
+          "sourceEditoriallySelected": false,
+          "changeAppliedToMainManuscript": false,
+          "manualOralLiteraryApproval": false
+        }
       },
       {
         "id": "HS-P3-EC-10",
@@ -3471,7 +3749,32 @@
         "oralAccepted": false,
         "printedEditionCollated": false,
         "theologicallyApproved": false,
-        "status": "PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED"
+        "status": "PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED",
+        "readthroughSourceComparison": {
+          "status": "THREE_WITNESS_SOURCE_REFERENCES_DESK_COMPARED_NOT_ACCEPTED",
+          "sourceEvidenceReferences": [
+            "Acts 14:25–27",
+            "Acts 15:1–2"
+          ],
+          "sourceEvidenceFinding": "Acts 14:26–27 directly reports the return and Gentile mission; if chosen it replaces rather than accompanies this prose bridge into the Jerusalem council.",
+          "specificRisk": "DUPLICATED_GENTILE_RETURN",
+          "scenarioPolicy": "SUPPRESS_IF_SOURCE_SELECTED",
+          "withoutNewSource": {
+            "rendering": "USE_SHORTENED_OR_HELD_COPY",
+            "copy": null
+          },
+          "withPairedOriginalSource": {
+            "rendering": "OMIT_EDITORIAL",
+            "copy": null,
+            "sourceDecisionIds": [
+              "HS-W-SRC-HS-P3-CF-12"
+            ]
+          },
+          "originalSourceTextNotCopiedIntoEditorialLedger": true,
+          "sourceEditoriallySelected": false,
+          "changeAppliedToMainManuscript": false,
+          "manualOralLiteraryApproval": false
+        }
       },
       {
         "id": "HS-P3-EC-07",
@@ -3497,9 +3800,63 @@
         "oralAccepted": false,
         "printedEditionCollated": false,
         "theologicallyApproved": false,
-        "status": "PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED"
+        "status": "PROVISIONAL_SOURCE_LINKED_DESK_DISPOSITION_NOT_ACCEPTED",
+        "readthroughSourceComparison": {
+          "status": "THREE_WITNESS_SOURCE_REFERENCES_DESK_COMPARED_NOT_ACCEPTED",
+          "sourceEvidenceReferences": [
+            "Acts 21:27–33",
+            "Acts 25:10–12",
+            "Acts 27:1",
+            "Acts 28:16–20"
+          ],
+          "sourceEvidenceFinding": "Acts 28:17–19 explicitly reports Paul's appeal to Caesar. If the Acts 28 arrival-and-address proposal is chosen, the short preface should supply Jerusalem arrest and voyage only, not Paul's already quoted explanation.",
+          "specificRisk": "DUPLICATED_APPEAL",
+          "scenarioPolicy": "DISPLAY_SHORTER_ONLY_WITH_HELD_SOURCE_TRIAL",
+          "withoutNewSource": {
+            "rendering": "NOT_RENDERED",
+            "copy": null
+          },
+          "withPairedOriginalSource": {
+            "rendering": "USE_SPECIAL_SHORTENED",
+            "copy": "After further journeys, Paul was arrested in Jerusalem and sent to Italy as a prisoner.",
+            "sourceDecisionIds": [
+              "HS-W-SRC-HS-CF-11",
+              "HS-W-SRC-HS-P3-CF-13"
+            ]
+          },
+          "originalSourceTextNotCopiedIntoEditorialLedger": true,
+          "sourceEditoriallySelected": false,
+          "changeAppliedToMainManuscript": false,
+          "manualOralLiteraryApproval": false
+        }
       }
     ],
-    "releasePolicy": "None of these proposals edits native Scripture or the existing reading candidates, accepts a passage, signs off a literary reading, passes a release gate, or authorizes a merge."
+    "releasePolicy": "None of these proposals edits native Scripture or the existing reading candidates, accepts a passage, signs off a literary reading, passes a release gate, or authorizes a merge.",
+    "sourceComparisonPhase": {
+      "schema": "ao.historia.p3.proposed-copy-and-optional-source-sequential-readthrough.v1",
+      "date": "2026-10-23",
+      "status": "15_SOURCE_EVIDENCE_COMPARISONS_COMPLETED_PROVISIONAL_NO_ORAL_ACCEPTANCE",
+      "changeOwnersCompared": 15,
+      "contextAndBeforeScriptureUnitsInTrial": 38,
+      "heldBridgeAttachedPrefacesNotShownUnlessTheirSourceTrialIsVisible": 3,
+      "originalContextAndBeforeConnectorApproximateWords": 907,
+      "shortenedTrialContextAndBeforeConnectorApproximateWords": 780,
+      "wordCountIsEditorialProseOnlyExcludesScripture": true,
+      "originalSelectedScriptureWordsFromSeparateAudit": 28815,
+      "originalScriptureUnitCount": 93,
+      "movementProjectionsChecked": 37,
+      "interMovementHingesCrossReferenced": 36,
+      "unresolvedHighestPriorityHinges": [
+        "HS-HINGE-02",
+        "HS-HINGE-08",
+        "HS-HINGE-28",
+        "HS-HINGE-33",
+        "HS-HINGE-34"
+      ],
+      "structuralOutcome": "NO_UNOWNED_EDITORIAL_UNIT_OR_NEW_SELECTED_SCRIPTURE_IN_DESK_TRIAL",
+      "semanticOutcome": "UNINTERRUPTED_HUMAN_ORAL_AND_FINAL_CATHOLIC_EDITORIAL_APPROVAL_STILL_REQUIRED",
+      "scope": "Existing original P3 contexts and nine independently displayed connectors; three bridge-attached prefaces are compared only alongside held source trials, never treated as already narrated.",
+      "applicationPolicy": "This worklist only records linked alternatives. Do not alter reading proof, Scripture selection, Bible witnesses, production Atlas or UI based on unapproved variants."
+    }
   }
 }
