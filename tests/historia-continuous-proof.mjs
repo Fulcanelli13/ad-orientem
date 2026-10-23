@@ -23,7 +23,7 @@ assert.equal(proof.literaryReviewProgress.fullSequentialReadthroughComplete,fals
 // while validating *both* original endpoints rather than changing source data.
 function validEditorialSourceReference(ref){
  if(parseScriptureContext(ref))return true;
- const match=ref.match(/^(.+?) (\\d+):(\\d+)[–-](\\d+):(\\d+)$/);
+ const match=ref.match(/^(.+?) (\d+):(\d+)[–-](\d+):(\d+)$/);
  return !!match&&!!parseScriptureContext(match[1]+" "+match[2]+":"+match[3])&&
   !!parseScriptureContext(match[1]+" "+match[4]+":"+match[5]);
 }
