@@ -26,7 +26,7 @@ for(const [id,osmId,lat,lng] of p11ExactChurchFootprints){
   assert.equal(place.geo?.precision,"site","Church footprint is not a visitor entrance: "+id);
   assert.equal(place.geo?.geocoding_source,"OSM",id);
   assert.equal(place.geo?.source_ref,osmId,id);
-  assert.equal(place.geo?.source_url,"https://www.openstreetmap.org/"+osmId.replace(":","/"),id);
+  assert.equal(place.geo?.source_url,"https://www.openstreetmap.org/"+osmId.replace("osm:","").replace(":","/"),id);
   assert.equal(place.geo?.lat,lat,id);
   assert.equal(place.geo?.lng,lng,id);
   assert.ok(isMapPublishablePlaceGeo(place.geo,place.address?.country_code),id);
