@@ -20,6 +20,8 @@ assert.equal(data.canonicalNodes,11);
 assert.equal(data.bilingualEditorialPairs,22);
 assert.equal(data.originalWitnessFragments,18);
 assert.equal(data.originalCorpusNodes,423);
+assert.equal(data.claimTraceUnits,23);
+assert.equal(data.humanClaimCertifications,0);
 assert.equal(data.navigationAliasCount,32);
 assert.equal(data.navigationAliases.length,32);
 assert.equal(data.navigationAliases.filter(x=>x.language==='en').length,16);
@@ -41,7 +43,8 @@ assert(!/<link[^>]+https?:\/\//.test(html));
 assert(!html.includes('AO_SPX_MODEL_KEY'));
 const keyed=new Set(data.cases.map(c=>c.nodeId));
 assert.equal(keyed.size,11);
-const seen=new Set();
+const seen=new Set(),seenClaims=new Set();
+const splitSentences=text=>text.trim().split(/(?<=[.!?])\s+/u).filter(Boolean);
 for(const row of data.cases){
  const chapter=corpus.chapters.find(c=>c.id===row.chapterId);
  const node=chapter?.nodes.find(n=>n.id===row.nodeId);
@@ -51,6 +54,26 @@ for(const row of data.cases){
  assert.equal(row.fullClaimReviewCertified,false);
  assert.equal(row.bilingualTranslationsCertified,false);
  assert(row.reply.en.length>=85&&row.reply.fr.length>=85);
+ const en=splitSentences(row.reply.en),fr=splitSentences(row.reply.fr);
+ assert.equal(row.claimTrace.length,en.length);
+ assert.equal(en.length,fr.length);
+ const allowed=new Set(row.witnesses.map(x=>x.id));
+ for(const [i,unit] of row.claimTrace.entries()){
+  assert(!seenClaims.has(unit.id));seenClaims.add(unit.id);
+  assert.equal(unit.ordinal,i+1);
+  assert.deepEqual(unit.claim,{en:en[i],fr:fr[i]});
+  assert.equal(unit.humanReviewApproved,false);
+  assert.equal(unit.translationApproved,false);
+  assert.equal(unit.verbatimPapalSpeech,false);
+  assert.equal(unit.supportStatus,'EDITORIAL_SOURCE_MAPPING_PROVISIONAL_NOT_HUMAN_APPROVED');
+  assert(unit.fragments.length>=1);
+  for(const w of unit.fragments){
+   assert(allowed.has(w.id),'Unlicensed witness in displayed sentence');
+   assert.equal(w.speaker,'PIUS_X_AUTHOR');
+   assert(w.sourceUrl.startsWith('https://www.vatican.va/'));
+   assert.equal(w.sourceWebTextLines.length,2);
+  }
+ }
  for(const w of row.witnesses){
   assert(w.sourceUrl.startsWith('https://www.vatican.va/'));
   assert(['la','it'].includes(w.originalLanguage));
@@ -60,6 +83,7 @@ for(const row of data.cases){
  }
 }
 assert.equal(seen.size,18);
+assert.equal(seenClaims.size,23);
 const browser=await chromium.launch({headless:true,args:['--no-sandbox']});
 const screenshots=out+'review-screenshots/';
 mkdirSync(screenshots,{recursive:true});
@@ -90,6 +114,17 @@ try{
   assert.match(await first.locator('.spxm-warning').innerText(),
    /NOT THE VERBATIM WORDS OF ST PIUS X/);
   assert.equal(await first.locator('details.spxm-offline-source').count(),3);
+  const evidenceMap=first.locator('details.spxm-claim-audit');
+  assert.equal(await evidenceMap.count(),1);
+  assert.match(await evidenceMap.locator('summary').innerText(),/sentence-by-sentence evidence/);
+  await evidenceMap.locator('summary').click();
+  assert.equal(await evidenceMap.locator('section.spxm-trace-unit').count(),2);
+  assert.equal(await evidenceMap.locator('.spxm-trace-claim').first().innerText(),
+   data.cases.find(c=>c.chapterId==='SPX-PILOT-01').claimTrace[0].claim.en);
+  assert.match(await evidenceMap.locator('.spxm-trace-original').first().innerText(),
+   /quibus Nos lacrymis/);
+  assert.match(await evidenceMap.locator('.spxm-trace-caution').innerText(),
+   /not an independently certified translation/);
   await first.locator('details.spxm-offline-source summary').first().click();
   assert.match(await first.locator('details.spxm-offline-source').first().innerText(),
    /quibus Nos lacrymis/);
@@ -123,6 +158,12 @@ try{
   assert.equal(await french.locator('.spxm-draft').innerText(),
    data.cases.find(c=>c.chapterId==='SPX-PILOT-01').reply.fr);
   assert.match(await french.locator('.spxm-warning').innerText(),/NON PAROLES TEXTUELLES/);
+  const evidenceFr=french.locator('details.spxm-claim-audit');
+  await evidenceFr.locator('summary').click();
+  assert.match(await evidenceFr.locator('summary').innerText(),/sources phrase par phrase/);
+  assert.equal(await evidenceFr.locator('.spxm-trace-claim').first().innerText(),
+   data.cases.find(c=>c.chapterId==='SPX-PILOT-01').claimTrace[0].claim.fr);
+  assert.match(await evidenceFr.locator('.spxm-trace-caution').innerText(),/interprétation éditoriale/);
   await page.locator('#spxm-offline-question').fill('Que signifie tout restaurer dans le Christ dans ce texte ?');
   await page.locator('#spxm-offline-send').click();
   const suggestedFr=page.locator('#spxm-offline-replies .spxm-entry').nth(1);
@@ -154,4 +195,4 @@ try{
   await page.close();
  }
 }finally{await browser.close();}
-console.log('PASS SPX_P27_OFFLINE_ROUTING: 32 navigation aliases + 11 verified question pairs,  one HTML, original 423 nodes, four papal chapters, 11 source-owned questions, 22 EN/FR responses, exact 18 Latin/Italian snippets, two viewport/language flows, no model or external requests');
+console.log('PASS SPX_P28_CLAIM_SOURCE_UI: 23 provisional bilingual sentence traces, 32 navigation aliases + 11 reviewed question pairs,  one HTML, original 423 nodes, four papal chapters, 11 source-owned questions, 22 EN/FR responses, exact 18 Latin/Italian snippets, two viewport/language flows, no model or external requests');
