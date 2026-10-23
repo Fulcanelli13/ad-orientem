@@ -164,7 +164,7 @@ const PUBLISHED_ARTICLES = [
     },
     "description": {
       "en": "Before Christmas Eve dinner, family members share a thin unleavened opłatek wafer while offering one another good wishes and reconciliation. It is ordinary blessed-or-unblessed festive bread, not Holy Communion.",
-      "fr": "Avant le repas de la veille de Noël, les membres de la famille partagent une fine hostie de pain non consacré appelée opłatek, en échangeant des vœux et des paroles de réconciliation. Ce pain de fête n'est pas la sainte communion."
+      "fr": "Avant le repas de la veille de Noël, les membres de la famille partagent une fine feuille de pain azyme non consacré, appelée opłatek, en échangeant des vœux et des paroles de réconciliation. Ce pain de fête n'est pas l'Eucharistie."
     },
     "history": {
       "en": "A Catholic parish account documents the Polish Christmas Eve sharing of opłatek and its continued use among families outside Poland. It witnesses a living Polish-rooted custom without establishing an exact date of origin.",
@@ -175,16 +175,16 @@ const PUBLISHED_ARTICLES = [
       "fr": "Un geste concret de paix familiale et de charité mutuelle avant la célébration de la Nativité."
     },
     "practice": {
-      "en": "If this is part of your family tradition, share opłatek with a simple blessing of thanks and personal good wishes; where a priest offers a blessing of the wafers, keep that ministerial act distinct.",
-      "fr": "Si cette tradition appartient à votre famille, partager l'opłatek dans la reconnaissance et adresser des vœux personnels ; si un prêtre bénit le pain, distinguer cet acte sacerdotal du partage familial."
+      "en": "If this is part of your family tradition, share opłatek with a prayer of thanksgiving and personal good wishes; where a priest blesses the wafers, keep that ministerial act distinct.",
+      "fr": "Si cette tradition appartient à votre famille, partager l'opłatek avec des vœux et une prière d'action de grâce ; lorsqu'un prêtre bénit ce pain, distinguer cette bénédiction du partage familial."
     },
     "caution": {
       "en": "Opłatek is not the Eucharist or consecrated host; no pretend Communion, required priestly home blessing, universal Christmas obligation or fabricated fixed 1962 liturgical formula.",
-      "fr": "L'opłatek est un pain non consacré, et non l'Eucharistie. Le partage domestique ne remplace ni la communion ni une bénédiction sacerdotale éventuelle."
+      "fr": "L'opłatek est un pain azyme non consacré, et non une hostie consacrée. Ce partage n'est pas une communion sacramentelle ; il ne requiert ni une bénédiction sacerdotale à domicile ni une formule liturgique inventée."
     },
     "scope": {
       "en": "Poland and Polish-heritage Catholic households abroad",
-      "fr": "Coutume des familles catholiques polonaises."
+      "fr": "Pologne et familles catholiques d'origine polonaise établies à l'étranger."
     },
     "occasion": {
       "en": "Christmas Eve; Polish Catholic family custom",
@@ -268,7 +268,7 @@ const PUBLISHED_ARTICLES = [
     },
     "scope": {
       "en": "Historical Catholic household suggestion; farm, garden or city context",
-      "fr": "Adaptation familiale facultative de la tradition des Rogations."
+      "fr": "Adaptation familiale facultative des Rogations, à la campagne, dans un jardin ou même en ville."
     },
     "occasion": {
       "en": "Major and Minor Rogation days, where traditionally observed",
@@ -490,7 +490,7 @@ const PUBLISHED_ARTICLES = [
     },
     "scope": {
       "en": "Catholic household devotion; flowers' traditional Marian names vary by culture",
-      "fr": "Dévotion domestique adaptable au climat et à la saison."
+      "fr": "Dévotion domestique adaptable au climat ; les noms marials traditionnels des plantes varient selon les cultures."
     },
     "occasion": {
       "en": "Spring, May, or another suitable gardening season",

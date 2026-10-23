@@ -528,8 +528,8 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "fr": "2 novembre"
     },
     "scope": {
-      "en": "France · Poland",
-      "fr": "France · Pologne"
+      "en": "Roman Catholic liturgical commemoration; French and Polish devotional practices are illustrative, not the limits of its observance.",
+      "fr": "Commémoraison du calendrier liturgique romain ; les usages de piété français et polonais sont des exemples locaux, non ses seules expressions."
     },
     "editorialCopyStatus": "CALENDAR_ARTICLE_SCOPE_ACCEPTED",
     "sources": [
@@ -586,8 +586,8 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "fr": "Occasion familiale ou locale"
     },
     "scope": {
-      "en": "France",
-      "fr": "France"
+      "en": "French household holy-water vessels and North American Catholic pastoral testimony; voluntary domestic practice.",
+      "fr": "Bénitiers domestiques attestés en France et témoignage pastoral catholique nord-américain ; usage libre à la maison."
     },
     "editorialCopyStatus": "CALENDAR_ARTICLE_SCOPE_ACCEPTED",
     "supporting_sources": [
@@ -634,7 +634,7 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
     },
     "caution": {
       "en": "The 1962 Candlemas reader owns the liturgical blessing and procession; no home ritual is mandated. Historical use beside the deceased is contextual, never an obligation.",
-      "fr": "La bénédiction et la procession appartiennent à la liturgie de la Chandeleur. Aucun rite domestique n'est obligatoire."
+      "fr": "La bénédiction et la procession appartiennent à la liturgie de la Chandeleur. L'usage historique de cierges auprès des défunts est un témoignage contextualisé, non une obligation domestique."
     },
     "occasion": {
       "en": "02/02 — Candlemas (date owned by Calendar)",
@@ -732,8 +732,8 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "fr": "3 février — commémoraison de saint Blaise dans le calendrier romain de 1962 ; préséance réglée par le Calendrier"
     },
     "scope": {
-      "en": "International devotional practice",
-      "fr": "Pratique dévotionnelle internationale"
+      "en": "Historically documented Roman Ritual blessing; voluntary parish availability varies locally.",
+      "fr": "Bénédiction attestée dans l'ancien Rituel romain, proposée facultativement selon les usages paroissiaux."
     },
     "editorialCopyStatus": "CALENDAR_ARTICLE_SCOPE_ACCEPTED",
     "sources": [
@@ -790,8 +790,8 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "fr": "Occasion familiale ou locale"
     },
     "scope": {
-      "en": "United States",
-      "fr": "États-Unis"
+      "en": "Catholic family name-day tradition attested in a 1962 United States handbook; not exclusively American.",
+      "fr": "Coutume familiale catholique attestée dans un manuel américain de 1962, sans être réservée aux États-Unis."
     },
     "editorialCopyStatus": "CALENDAR_ARTICLE_SCOPE_ACCEPTED",
     "sources": [
@@ -813,8 +813,8 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "fr": "Une église ou une communauté villageoise française peut fêter son saint patron par une messe, une procession et des réjouissances communes. La date et les formes sont propres au lieu."
     },
     "history": {
-      "en": "A French report on Chantelle documents a local patronal celebration. The witness demonstrates that some communities preserve these feast customs; it does not define the form, date or status of every patronal celebration in France.",
-      "fr": "Un reportage français sur Chantelle documente une fête patronale locale. Ce témoignage montre que certaines communautés conservent ces usages, sans déterminer la forme, la date ou le statut de toutes les fêtes patronales françaises."
+      "en": "The French Bishops' Conference records Chantelle's patronal celebration on the Sunday following Ascension, including a local procession carrying relics through the village. This specific testimony does not define the date, form or 1962 liturgical rank of patronal feasts elsewhere.",
+      "fr": "La conférence des évêques de France décrit à Chantelle la fête patronale célébrée le dimanche suivant l'Ascension, avec une procession de reliques dans le village. Ce témoignage local ne fixe ni la date, ni la forme, ni le rang liturgique de 1962 des fêtes patronales ailleurs."
     },
     "meaning": {
       "en": "The patronal feast recalls a parish or village's heavenly protector and builds Christian community.",
@@ -919,8 +919,8 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "fr": "19 mars — saint Joseph ; pratique familiale ou paroissiale facultative"
     },
     "scope": {
-      "en": "United States",
-      "fr": "États-Unis"
+      "en": "Sicilian-rooted Catholic tradition documented in immigrant parishes in the United States.",
+      "fr": "Tradition catholique d'origine sicilienne, attestée notamment dans des paroisses de la diaspora aux États-Unis."
     },
     "editorialCopyStatus": "CALENDAR_ARTICLE_SCOPE_ACCEPTED",
     "sources": [
@@ -982,7 +982,7 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
     },
     "description": {
       "en": "Some French parishes celebrate St Christopher and arrange a ministerial blessing of drivers, travellers and vehicles near 25 July; one 2026 parish example took place on 19 July.",
-      "fr": "Certaines paroisses françaises célèbrent saint Christophe et organisent une bénédiction des conducteurs, voyageurs et véhicules autour du 25 juillet ; la date effective peut varier localement."
+      "fr": "Certaines paroisses françaises célèbrent saint Christophe et proposent une bénédiction des conducteurs, voyageurs et véhicules autour du 25 juillet ; un exemple paroissial documenté en 2026 a eu lieu le 19 juillet."
     },
     "history": {
       "en": "A diocesan announcement from Laval documents a real local vehicle blessing around St Christopher's feast in 2026. Such ministerial blessings depend on actual parish arrangements and are neither universal nor guarantees against accidents.",
@@ -1091,8 +1091,8 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "fr": "15 août — Assomption ; date et rang de la messe fixés par le Calendrier"
     },
     "scope": {
-      "en": "International devotional practice",
-      "fr": "Pratique dévotionnelle internationale"
+      "en": "Regional Catholic custom, particularly in German-speaking Europe; only where a priest offers the blessing.",
+      "fr": "Coutume catholique régionale, notamment dans l'Europe germanophone, là où un prêtre propose la bénédiction."
     },
     "editorialCopyStatus": "CALENDAR_ARTICLE_SCOPE_ACCEPTED",
     "sources": [
@@ -1144,8 +1144,8 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "fr": "27 décembre — saint Jean, apôtre et évangéliste, dans le calendrier romain de 1962"
     },
     "scope": {
-      "en": "International devotional practice",
-      "fr": "Pratique dévotionnelle internationale"
+      "en": "Historical Roman Ritual custom for St John's feast on 27 December; availability varies by parish.",
+      "fr": "Coutume de l'ancien Rituel romain pour la fête de saint Jean le 27 décembre, pratiquée selon les paroisses."
     },
     "editorialCopyStatus": "CALENDAR_ARTICLE_SCOPE_ACCEPTED",
     "sources": [
@@ -1192,8 +1192,8 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "fr": "Samedi saint, calculé par le Calendrier ; partage domestique des aliments à Pâques"
     },
     "scope": {
-      "en": "International devotional practice",
-      "fr": "Pratique dévotionnelle internationale"
+      "en": "Regional Polish and Central/Eastern European Easter basket traditions; distinct historical Roman Ritual food blessings.",
+      "fr": "Traditions régionales polonaises et centre-orientales des paniers de Pâques ; bénédictions distinctes de l'ancien Rituel romain."
     },
     "editorialCopyStatus": "CALENDAR_ARTICLE_SCOPE_ACCEPTED",
     "sources": [
