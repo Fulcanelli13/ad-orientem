@@ -414,3 +414,26 @@ The original **twelve Vatican documents now have exhaustive research disposition
 The existing `tools/pius-x-source-only-gate.mjs` rejects every wave4 hold, preserves all P6 `partial` flags, and exposes only exact original-language excerpts and limited evidence glosses for the 24 accepted research nodes. It never treats the complete original authored English/French P6 reply as papal evidence. Dedicated regression checks validate all 60 record-to-node IDs in English and French, 24 admissions, 36 holds and the 47/144/165/279 aggregation.
 
 **Release approvals remain zero**: no full answer approved, no original-language-to-EN/FR translation certified, no unauthorized modern individual ruling and no model provider quality test. The live provider remains unconfigured and is a distinct dependency. To scale next, triage the **228 nodes outside** this original twelve-document sample by the existing project priorities (catechetical and pastoral usefulness and source accessibility), not by bulk redoing this entire verified discovery population.
+
+
+## P2.17 — Wave 5: 228-node original-owner bulk source routing (24 October 2026)
+
+All **228 nodes outside the previously completed twelve-document evidence batch** have now been enumerated in one non-generative, source-owner-preserving classification pass. Inputs are the original P1 stages (37 + 25 + 20 chapters), their 36 dependent follow-ups, the 12 P3 chapters and the 12 P4 chapters, reconciled by immutable IDs against the twelve-document discovery register's 195 nodes. This exhausts inventory triage, **not original-language excerpt verification**: the source-only research gate still admits just **144/423**, with 165 excerpt records; the original 12-document batch has 51 holds. The new 228 classification rows create **0 new original-source excerpts, 0 new model admissions, 0 complete-answer approvals, 0 EN/FR translation approvals and 0 publication approvals**.
+
+    previews/pius-x-study/evidence/pius-x-outside12-wave5-bulk-inventory-228-20261024.v1.json
+
+The 228 previously out-of-scope dialogue nodes break down as follows, on only twelve existing source URLs (53 source-owner subjects):
+
+| Source ownership family | Nodes | Subjects | Next action |
+|---|---:|---:|---|
+| Salzano manuscript/transcription (Giuseppe Sarto's pre-papal catechetical notebooks) | 120 | 24 | Primary Italian manuscript-text/modern-editor commentary separation, numbered-locus claim verification |
+| 1905 *Catechismo Maggiore* | 59 | 14 | Historical edition and individual propositions; **not assumed personally composed by Pius X** |
+| Secondary biography | 27 | 9 | Historical fact check and third-person narrator; never invented first-person papal memories |
+| Five further Vatican primary papal documents | 18 | 5 | Original Latin/Italian Vatican paragraph extraction, speaker attribution and historical scope |
+| *Quam singulari* Congregational decree | 4 | 1 | Congregational document distinguished from Pius X's approval |
+
+The primary Italian Museo San Pio X Salzano presentation notes that the surviving notebooks contain Sarto's handwritten revisions, but the web presentation also includes later editorial analysis; treating the *whole page* as papal speech would be a serious error. Its 1905 *Catechismo Maggiore* preliminaries reproduce Pius X's explicit explanation that he adopted a previously episcopally approved Italian catechism with minor revisions. Thus papal prescription is not direct authorship of every question/answer. The *Quam singulari* document is a Sacred Congregation decree approved and ordered published by Pius X, not a personally authored encyclical.
+
+**Nonredundant execution order:** (1) original-source passages in the five Vatican works; (2) the Salzano manuscript with original-vs-editorial provenance and claim-level admission; (3) catechism edition verification with an attributed catechetical narrator distinct from purported papal quotations; (4) selective biography; (5) Congregational-decree attribution. Batch against the existing sidecar, not a replica catalogue. Source-unsupported personal memories, anachronistic legal rulings and post-1905 doctrine extrapolation remain on explicit hold. Do not conflate complete node routing with completed evidence, approval, model quality, or publication.
+
+The dedicated regression `tests/pius-x-wave5-bulk-inventory.mjs` checks that the 228 IDs plus the original 195 comprise exactly the 423 immutable P6 nodes, preserves each bilingual question and source locus, verifies all five family totals and asserts **no new node crosses the source-only model gate**. It is wired into the existing `pius-x-study-standalone-review.yml` CI; a passing run on the new commit must still be confirmed. PR #1570 remains draft and must not be merged or released on the basis of this inventory.
