@@ -76,6 +76,7 @@ try {
   page.on('pageerror',err=>errors.push(String(err)));
   page.on('request',request=>{if(/^https?:/.test(request.url()))requests.push(request.url())});
   await page.goto(pathToFileURL(resolve(out+'SPX_Study_Expanded_106_P6.html')).href,{waitUntil:'load'});
+  assert.match(await page.locator('#spxc-launch').innerText(),/106/);
   await page.locator('#spxc-launch').click();
   if(width===390)await page.locator('#spxc-menu').click();
   await page.locator('[data-spxc-open="SPX-PILOT-01"]').first().click();
