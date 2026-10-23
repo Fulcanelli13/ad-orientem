@@ -179,8 +179,8 @@ const PUBLISHED_ARTICLES = [
       "fr": "Si cette tradition appartient à votre famille, partager l'opłatek avec des vœux et une prière d'action de grâce ; lorsqu'un prêtre bénit ce pain, distinguer cette bénédiction du partage familial."
     },
     "caution": {
-      "en": "Opłatek is not the Eucharist or consecrated host; no pretend Communion, required priestly home blessing, universal Christmas obligation or fabricated fixed 1962 liturgical formula.",
-      "fr": "L'opłatek est un pain azyme non consacré, et non une hostie consacrée. Ce partage n'est pas une communion sacramentelle ; il ne requiert ni une bénédiction sacerdotale à domicile ni une formule liturgique inventée."
+      "en": "Opłatek is unconsecrated bread, not Holy Communion. Sharing it is a voluntary family custom; no priestly blessing at home or special Mass formula is required.",
+      "fr": "L'opłatek est un pain non consacré, et non la sainte communion. Son partage est une coutume familiale libre : il n'exige ni bénédiction sacerdotale à domicile ni formule particulière de la messe."
     },
     "scope": {
       "en": "Poland and Polish-heritage Catholic households abroad",
@@ -305,8 +305,8 @@ const PUBLISHED_ARTICLES = [
       "fr": "Participer uniquement à une action paroissiale organisée, accueillir les chanteurs annoncés ou prier pour les enfants défavorisés."
     },
     "caution": {
-      "en": "This is a German organised Catholic charitable custom, not universal priestly house blessing. Never infer local schedules, rites, donations or 1962 ceremony.",
-      "fr": "Cette coutume caritative allemande dépend d'une organisation paroissiale. Aucune visite ni bénédiction sacerdotale n'est garantie ou automatiquement programmée."
+      "en": "Sternsinger visits depend on the local parish campaign. The children's songs and charitable collection do not necessarily include a priestly house blessing; confirm any planned visit locally.",
+      "fr": "Les visites des Sternsinger dépendent de la campagne paroissiale locale. Les chants et la collecte des enfants ne constituent pas nécessairement une bénédiction sacerdotale de la maison ; se renseigner auprès de la paroisse."
     },
     "scope": {
       "en": "Germany: Catholic parish-organised Sternsinger charity campaigns",
@@ -347,8 +347,8 @@ const PUBLISHED_ARTICLES = [
       "fr": "Partager une galette en famille et, si cela convient, pratiquer un geste d'hospitalité ou offrir une part à une personne dans le besoin."
     },
     "caution": {
-      "en": "Optional French household culture; the separate Weiser school-fees claim is not independently corroborated and is excluded.",
-      "fr": "Coutume familiale française facultative, et non une rubrique de la Messe. Les récits historiques non corroborés ne sont pas repris."
+      "en": "The bean, crown and extra portion are household customs, not rites of the Epiphany Mass. Cakes and practices differ locally, and a direct ancient Roman origin is not established.",
+      "fr": "La fève, la couronne et la part supplémentaire relèvent de la coutume familiale, non des rites de la messe de l'Épiphanie. Les usages varient selon les régions et une origine directement romaine antique n'est pas démontrée."
     },
     "scope": {
       "en": "Documented French household custom; regional cakes differ",
@@ -389,8 +389,8 @@ const PUBLISHED_ARTICLES = [
       "fr": "Demander l'accord de la paroisse avant d'orner le parcours d'une procession annoncée ou une fenêtre voisine ; autrement, prier pour la fête."
     },
     "caution": {
-      "en": "One canonical ID for two distinct regional floral forms. Neither a procession route nor a priestly blessing is automatically created. Weiser's precise candles-and-images claim is unverified.",
-      "fr": "Les tapis et fleurs aux fenêtres sont des formes locales distinctes. Ni parcours, ni procession, ni bénédiction sacerdotale ne sont présumés."
+      "en": "Flower carpets and decorated windows are optional local traditions, not conditions for a Corpus Christi procession. A route or celebration exists only where it is actually organized.",
+      "fr": "Les tapis de fleurs et les fenêtres fleuries sont des coutumes locales facultatives, non des conditions de la procession de la Fête-Dieu. Seules les processions et les étapes réellement organisées doivent être suivies."
     },
     "scope": {
       "en": "Documented Polish local Corpus Christi heritage, including Spycimierz",
@@ -436,8 +436,8 @@ const PUBLISHED_ARTICLES = [
       "fr": "Lire Luc 24, 13–35, marcher paisiblement en famille ou avec des amis et prier ensemble ; participer à une marche paroissiale là où elle est proposée."
     },
     "caution": {
-      "en": "No invented itinerary, time, local event or Eucharistic procession. Optional regional custom, separate from the 1962 Mass.",
-      "fr": "Marche familiale régionale facultative ; ne présumer aucun itinéraire, horaire, événement paroissial ni rite liturgique."
+      "en": "The Emmaus walk is a voluntary regional devotion, sometimes private and sometimes parish-organized. No itinerary or departure time is implied, and the walk is not a Eucharistic procession or part of Mass.",
+      "fr": "La marche d'Emmaüs est une dévotion régionale libre, familiale ou paroissiale selon les lieux. Aucun itinéraire ni horaire n'est présumé ; elle ne constitue ni une procession eucharistique ni une partie de la messe."
     },
     "scope": {
       "en": "Regional Roman Catholic walks especially in Bavaria and Austria, optional",

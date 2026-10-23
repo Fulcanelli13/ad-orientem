@@ -28,8 +28,8 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "fr": "Une famille peut conserver un bénitier propre et employer respectueusement de l’eau déjà bénite, sans emplacement prescrit."
     },
     "caution": {
-      "en": "Present as a historical/traditional domestic practice, not a requirement.",
-      "fr": "Présenter cette pratique comme une coutume domestique traditionnelle et historique, non comme une obligation."
+      "en": "A household holy-water font is optional and does not bless its own contents. Use water already blessed according to the Church's rite, and keep the vessel clean.",
+      "fr": "Un bénitier domestique est facultatif et ne bénit pas lui-même l'eau qu'il contient. Employer de l'eau déjà bénite selon le rite de l'Église et entretenir proprement le récipient."
     },
     "occasion": {
       "en": "Family or local occasion",
@@ -71,8 +71,8 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "fr": "Une famille peut réciter librement une prière de consécration reconnue et la renouveler en privé ; une célébration paroissiale se prépare avec le prêtre."
     },
     "caution": {
-      "en": "Keep distinct from the liturgy and from priestly house blessing.",
-      "fr": "Ne pas confondre cette dévotion avec la liturgie ni avec la bénédiction sacerdotale d'une maison."
+      "en": "Family consecration to the Sacred Heart is a free devotion, not a substitute for Mass or an automatic blessing of the house. Arrange any formal priestly celebration with the parish.",
+      "fr": "La consécration familiale au Sacré-Cœur est une dévotion libre, qui ne remplace pas la messe et ne bénit pas automatiquement la maison. Toute célébration sacerdotale se prépare avec la paroisse."
     },
     "occasion": {
       "en": "Sacred Heart season / family use",
@@ -114,8 +114,8 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "fr": "Là où la dévotion est pratiquée, la famille peut disposer dignement une image et prier ensemble ; une bénédiction liturgique relève du ministre habilité."
     },
     "caution": {
-      "en": "Any blessing of the image remains ministerial where required.",
-      "fr": "Toute bénédiction de l'image doit être confiée au ministre compétent lorsqu'elle lui est réservée."
+      "en": "Displaying and venerating a Sacred Heart image at home is voluntary; placing it on a wall does not itself confer a liturgical blessing. Ask an authorized minister when such a blessing is desired.",
+      "fr": "Exposer et vénérer une image du Sacré-Cœur à la maison est facultatif ; sa simple installation ne vaut pas bénédiction liturgique. Pour une telle bénédiction, s'adresser au ministre habilité."
     },
     "occasion": {
       "en": "Family or local occasion",
@@ -205,8 +205,8 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "fr": "Les familles peuvent ajouter le chapelet, un chant marial ou des fleurs près d’une image digne, sans en faire une obligation."
     },
     "caution": {
-      "en": "Calendar points to the practice; devotional modules own prayer content.",
-      "fr": "Le Calendrier situe la coutume dans l'année ; les modules de prière restent responsables des textes de dévotion."
+      "en": "May devotions to Our Lady are voluntary and do not establish an additional liturgical season. The Roman Calendar continues to determine each day's Mass.",
+      "fr": "Les dévotions mariales de mai sont facultatives et n'ajoutent pas un temps liturgique au calendrier romain. La messe du jour reste déterminée par le calendrier liturgique."
     },
     "occasion": {
       "en": "May",
@@ -351,8 +351,8 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "fr": "Une offrande peut être déposée selon les règles du sanctuaire, sans présenter des miracles non vérifiés ni attendre une faveur en échange."
     },
     "caution": {
-      "en": "Avoid superstition framing.",
-      "fr": "Les présenter comme des expressions de reconnaissance, et non comme des transactions superstitieuses."
+      "en": "An ex-voto expresses gratitude; it neither purchases a favor nor independently proves a reported miracle. Follow the shrine's rules before leaving an object or image.",
+      "fr": "Un ex-voto exprime la reconnaissance : il n'achète aucune faveur et ne prouve pas à lui seul un miracle rapporté. Respecter les règles du sanctuaire avant d'y déposer un objet ou une image."
     },
     "occasion": {
       "en": "Family or local occasion",
@@ -472,8 +472,8 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "fr": "Une visite au cimetière peut comprendre une prière pour les défunts et l’entretien respectueux d’une tombe ; aucun usage local particulier n’est imposé."
     },
     "caution": {
-      "en": "Explain as prayer and bonds with the dead, not superstitious obligation.",
-      "fr": "Souligner la prière pour les défunts et les liens de charité, sans en faire une obligation superstitieuse."
+      "en": "A cemetery visit with prayer can take place on a suitable day; it is not a superstitious duty. Do not presume a particular indulgence without its actual conditions.",
+      "fr": "On peut visiter un cimetière et prier pour les défunts à un moment approprié, sans obligation superstitieuse. Une indulgence particulière ne doit pas être présumée sans ses conditions propres."
     },
     "occasion": {
       "en": "02/11; November; anniversaries",
@@ -520,8 +520,8 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "fr": "Prier pour les fidèles défunts, assister à la messe si possible ou offrir une intention personnelle ; ne pas présumer automatiquement d’un rite local ou d’une indulgence."
     },
     "caution": {
-      "en": "Calendar owns the date; Pray owns prayer texts.",
-      "fr": "Le Calendrier fixe le jour ; les textes de prière relèvent du module Prier."
+      "en": "The Church commemorates all the faithful departed on 2 November, but cemetery customs and lists of named dead vary by region. No special local rite or indulgence applies automatically.",
+      "fr": "L'Église commémore tous les fidèles défunts le 2 novembre, mais les usages des cimetières et les listes nominatives varient selon les régions. Aucun rite local ni indulgence ne s'applique automatiquement."
     },
     "occasion": {
       "en": "02/11",
@@ -578,8 +578,8 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "fr": "Employer avec respect de l’eau réellement bénite, par exemple en faisant le signe de croix ; elle ne remplace pas les sacrements."
     },
     "caution": {
-      "en": "Using holy water is voluntary and is not a substitute for sacramental worship; do not reproduce or claim to perform reserved blessings. Keep distinct from DOM-002, which documents the vessel.",
-      "fr": "Usage facultatif, qui ne remplace pas les sacrements ; ne pas simuler une bénédiction réservée à un ministre. Distinguer l'usage de l'eau et le bénitier lui-même."
+      "en": "Holy water must have been blessed before personal use; it is a sacramental, not a replacement for the sacraments. Using it at home does not authorize a blessing reserved to a minister.",
+      "fr": "L'eau bénite doit avoir reçu sa bénédiction avant l'usage personnel ; c'est un sacramental, non un remplacement des sacrements. Son emploi domestique n'autorise pas une bénédiction réservée au ministre."
     },
     "occasion": {
       "en": "Family or local occasion",
@@ -676,8 +676,8 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "fr": "Conserver un rameau réellement béni pendant les cérémonies locales des Rameaux et s’en défaire respectueusement lorsqu’il n’est plus utilisé."
     },
     "caution": {
-      "en": "Blessed branches are not talismans; branches and regional plant species vary. The Palm Sunday reader retains exclusive ownership of ceremonial mechanics.",
-      "fr": "Les rameaux ne sont pas des talismans ; les espèces végétales varient selon les régions. Les gestes liturgiques appartiennent au missel."
+      "en": "Blessed palms signify faith in Christ and are not protective talismans. Branch types vary by region; keeping them at home is optional and does not replace Palm Sunday worship.",
+      "fr": "Les rameaux bénits sont des signes de foi dans le Christ, non des talismans protecteurs. Les végétaux varient selon les régions ; les conserver chez soi est facultatif et ne remplace pas la liturgie des Rameaux."
     },
     "occasion": {
       "en": "Palm Sunday (calculated by Calendar)",
@@ -782,8 +782,8 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "fr": "Identifier son véritable patron et sa fête traditionnelle, prier, lire sa vie et marquer modestement la journée selon son souhait."
     },
     "caution": {
-      "en": "Only display after a user chooses a patron and the relevant traditional saint feast. Never infer a patron from a first name, invent an obligation, or create a second feast.",
-      "fr": "Ne jamais déduire le patron du seul prénom ; la date doit être liée au saint effectivement choisi et à sa fête traditionnelle."
+      "en": "Celebrate the feast of the person's actual baptismal patron; a similar first name does not determine the patron automatically. A family name day is not a second liturgical feast.",
+      "fr": "Célébrer la fête du saint réellement choisi comme patron de baptême : la ressemblance d'un prénom ne suffit pas à déterminer ce patron. La fête familiale ne crée pas une seconde fête liturgique."
     },
     "occasion": {
       "en": "Family or local occasion",
@@ -825,8 +825,8 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "fr": "Consulter le patron et le programme réels de la paroisse, assister si possible à la messe ou aux célébrations annoncées ; la date civile ne fixe pas automatiquement l’observance liturgique de 1962."
     },
     "caution": {
-      "en": "The documented Chantelle celebration after Ascension does not establish a national date, a 1962 Mass rank or automatic procession.",
-      "fr": "Un exemple documenté ne fixe ni une date nationale, ni un rang liturgique universel, ni une procession automatique."
+      "en": "A patronal celebration belongs to a particular parish or village. The date, relic procession and arrangements documented at Chantelle do not prescribe the same observance or liturgical rank elsewhere.",
+      "fr": "La fête patronale dépend de l'église ou du village concerné. La date, la procession des reliques et l'organisation attestées à Chantelle n'imposent ni célébration identique ni même rang liturgique ailleurs."
     },
     "occasion": {
       "en": "Family or local occasion",
@@ -868,8 +868,8 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "fr": "Participer uniquement à une procession mariale réellement annoncée ; le 15 août ne suffit pas à supposer une procession ou un parcours."
     },
     "caution": {
-      "en": "The feast date is not a procession flag. Existing Mass and ceremonial reader remains exclusively responsible for an explicitly selected local rite.",
-      "fr": "La date de l'Assomption ne déclenche pas automatiquement une procession dans l'application."
+      "en": "An Assumption procession takes place only where one is locally announced. The feast on 15 August does not itself establish a procession, route or public gathering.",
+      "fr": "Une procession de l'Assomption n'a lieu que lorsqu'elle est annoncée localement. La fête du 15 août n'implique pas à elle seule une procession, un parcours ou un rassemblement public."
     },
     "occasion": {
       "en": "15/08 — Assumption; regional context, never automatic ritual",
@@ -954,8 +954,8 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "fr": "Donner des aliments ou soutenir une œuvre caritative reconnue en l’honneur du saint ; ne pas transformer l’aumône historique en échange miraculeux garanti."
     },
     "caution": {
-      "en": "Almsgiving is not a payment for favours, fundraising functionality, or a guarantee of a miracle. No contact or money spending is required by the app.",
-      "fr": "L'aumône n'achète ni faveur ni miracle ; l'application ne demande ni don d'argent ni contact extérieur."
+      "en": "St Anthony's Bread is voluntary almsgiving, never payment for a miracle. No donation, fixed sum or contact with a charity is required to honor the saint.",
+      "fr": "Le Pain de saint Antoine est une aumône libre, jamais le paiement d'un miracle. Aucun don, montant fixé ou contact avec une œuvre n'est obligatoire pour honorer le saint."
     },
     "occasion": {
       "en": "13/06 — St Anthony of Padua; charity can be practised on any day",
@@ -997,8 +997,8 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "fr": "Un prêtre peut bénir les véhicules ou voyageurs là où le rite est proposé ; la prudence et l’entretien restent indispensables."
     },
     "caution": {
-      "en": "Optional and only if arranged locally; no guarantee of physical safety, no invented lay blessing formula, no universal parish offering.",
-      "fr": "Facultatif et dépendant d'une célébration locale ; aucune promesse de sécurité, formule laïque inventée ni offre universelle."
+      "en": "A vehicle blessing is available only where it is announced locally; it does not replace careful driving and maintenance or guarantee protection from accidents. Dates vary from parish to parish.",
+      "fr": "Une bénédiction de véhicule n'est disponible que là où elle est annoncée. Elle ne remplace ni la prudence au volant ni l'entretien et ne garantit pas l'absence d'accidents ; les dates varient selon les paroisses."
     },
     "occasion": {
       "en": "25/07 — St Christopher commemoration; parish event date may differ",
@@ -1040,8 +1040,8 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "fr": "Là où existe cette coutume, une famille ou paroisse peut offrir de petits cadeaux en racontant la vie du saint ; distinguer le personnage historique du folklore ultérieur."
     },
     "caution": {
-      "en": "The historical biography of Nicholas must be distinguished from later folklore. Exclude threatening costumed helpers and claims that gifts are liturgically required.",
-      "fr": "Distinguer les récits historiques du saint des personnages folkloriques et exclure les mises en scène menaçantes pour les enfants ; les cadeaux ne sont pas une obligation liturgique."
+      "en": "St Nicholas's historical charity should be distinguished from later costumed folklore. Gifts and visits are optional local customs, and children's celebrations should avoid frightening portrayals.",
+      "fr": "La charité historique de saint Nicolas se distingue du folklore costumé plus récent. Cadeaux et visites sont des coutumes locales facultatives ; les mises en scène effrayantes pour les enfants sont à éviter."
     },
     "occasion": {
       "en": "06/12 — St Nicholas; regional household custom",
@@ -1090,8 +1090,8 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "fr": "Apporter un bouquet adapté là où un prêtre propose publiquement la bénédiction locale ; ne pas présumer de la disponibilité automatique du rite."
     },
     "caution": {
-      "en": "Do not present as mandatory, universal, a guarantee of healing, or a magical protection. No Mass/ceremonial mechanics or ministerial blessing formula in lay guidance. Availability depends on local clergy.",
-      "fr": "Ni obligatoire ni universelle : pas de promesse de guérison ou de protection magique. Ne pas inventer de formule de bénédiction."
+      "en": "This priestly blessing is an optional regional custom, not a requirement of the Assumption. Blessed herbs are neither medicine nor protective charms; ask whether the parish actually offers the rite.",
+      "fr": "Cette bénédiction sacerdotale est une coutume régionale facultative, non une obligation de l'Assomption. Les herbes bénites ne sont ni des médicaments ni des talismans ; vérifier que la paroisse propose le rite."
     },
     "occasion": {
       "en": "15 August, Assumption; date and Mass rank owned by Calendar",
@@ -1191,8 +1191,8 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "fr": "Là où la paroisse propose la bénédiction régionale traditionnelle, apporter des aliments adaptés au prêtre ; distinguer cet usage de la liturgie de la Vigile pascale."
     },
     "caution": {
-      "en": "No obligation, no universal standard basket contents or Holy Saturday schedule. Distinguish a minister's ritual blessing from family prayer before the Easter meal and do not displace the Easter Vigil.",
-      "fr": "Aucune obligation ni contenu de panier universel ; distinguer bénédiction ministérielle et prière familiale, sans supplanter la Vigile pascale."
+      "en": "Easter food baskets and their timing vary between communities; no fixed contents are required everywhere. A minister's blessing differs from family prayer and never replaces the Easter Vigil.",
+      "fr": "Le contenu des paniers de Pâques et le moment de leur bénédiction varient selon les communautés ; aucun modèle universel n'est imposé. La bénédiction du ministre se distingue de la prière familiale et ne remplace pas la Vigile pascale."
     },
     "occasion": {
       "en": "Holy Saturday (calculated from 1962 Easter by Calendar), with domestic use on Easter Sunday",

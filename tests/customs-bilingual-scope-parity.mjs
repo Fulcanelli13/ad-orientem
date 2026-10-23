@@ -33,7 +33,7 @@ assert.match(card("DOM-011").caution.fr,/auprès des défunts/);
 assert.match(card("SCHR-001").description.fr,/19 juillet/);
 assert.match(card("SNIC-001").history.fr,/2024/);
 assert.match(card("SNIC-001").scope.fr,/Alsace et Lorraine/);
-assert.match(card("SNIC-001").caution.fr,/mises en scène menaçantes/);
+assert.match(card("SNIC-001").caution.fr,/mises en scène effrayantes/);
 assert.match(card("SNIC-001").supporting_sources[0].url,/metz\.catholique\.fr/);
 assert.match(card("PATR-001").history.fr,/dimanche suivant l'Ascension/);
 assert.match(card("PATR-001").history.en,/procession carrying relics/);
