@@ -42,6 +42,11 @@ jobs:
           name: ao-b23r3-delacroix-original-MPO-and-audit
           path: artifacts/b23r3-mpo1/
           retention-days: 7
+      - name: P0 gate - archive unchanged acquisition files in an unpublished GitHub Release
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python scripts/research/sacred_art_release_archive_gate.py --wave b23r3mpo --source-dir artifacts/b23r3-mpo1
       - name: Persist MPO original format and hash in research branch
         run: |
           cp artifacts/b23r3-mpo1/Acquisition_results.csv data/research/sacred-art-b23r3-mpo1.audit.csv
