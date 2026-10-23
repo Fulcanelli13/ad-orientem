@@ -364,3 +364,27 @@ The original Latin/Italian source documents were inspected directly at Vatican U
 CI checks all 51 node-ID research decisions, with 46 candidate admissions and five immutable P6 partial holds, all 35 added excerpt records, full research source grouping and the original 106/423 P6 structure. The aggregate coverage report reads the actual source-only gate rather than reporting the obsolete 14/36-node counts.
 
 **Next substantive evidence batch:** address the 108 currently unmapped nodes in the original 195-node twelve-document discovery population, starting with uncovered full-papal subjects and keeping historical counterexamples, personal judgments and P6 `partial` cases separate. No other source master, replica dialogue system or publication release is created.
+
+
+## P2.15 — Remaining-node sweep across six original papal documents (23 October 2026)
+
+A larger complementary pass screens **every remaining unmapped P6 dialogue node in six Vatican-document families**, without duplicating any of the earlier source-owner records. The batch input is the existing twelve-document discovery register, earlier four original-language witness annexes, 8-opening context research, 22-follow-up triage, six-document wave2, and original **106 subjects / 423 bilingual nodes** (including added dependent follow-ups). The immutable canonical source remains the original P6 and its P1/P3/P5 owners.
+
+    previews/pius-x-study/evidence/pius-x-six-document-wave3-20261023.v1.json
+
+Documents are *Haerent animo* (Latin), *Pieni l'animo* (Italian), *Singulari quadam* (Latin), *Ad diem illum* (Latin), *Editae saepe* (Latin), and *Tribus circiter* (Latin). Across these works the original register contains **20 subjects / 84 existing dialogue nodes**, of which **31 already had source-only evidence entries**. We classified the **53 previously unmapped nodes** in one batch: **38** narrow original-language source candidates and **15** explicit holds, with **40** additional brief original-language Vatican text fragments. The individual counts and exemptions are logged by document, including a held modern-schism judgement in *Tribus circiter*. We did not silently promote a modern personal, wage, sacramental or ecclesiastical legal ruling.
+
+Some concrete attribution outcomes:
+
+- *Haerent animo*: annual priestly retreats, monthly recollection, priestly associations, spiritual reading and actual meditation-to-life duties. The original text **does** record that Pius X supported a priestly association while he was a bishop. That fact is therefore sourced as a personal testimony; invented additional private recollections remain forbidden.
+- *Pieni l'animo*: Scripture and the Fathers in preaching; a prudent spiritual director in seminary; beneficial social work with priests' particular ministry safeguarded. Importantly the passages about some social institutions and preserving a priest's character are a **quotation of Leo XIII's 1902 instructions embedded in Pius X**, and retain `LEO_XIII_1902_QUOTED_BY_PIUS_X` attribution, not original Pius X wording.
+- *Singulari quadam*: guarded cooperation with non-Catholics for workers' welfare, conditional toleration of mixed associations and explicit limitation to **the German situation of 1912**.
+- *Ad diem illum*: Marian devotion flowing from the heart, obedience to Christ, imitation, and faith/hope/charity at Calvary. Suffering is not falsely described as absent: the Latin discussion refers to Mary's own grief.
+- *Editae saepe*: encouragement of frequent Communion paired with reverence and worthy reception. A warning against unworthy approach appears in **words quoted from St Charles Borromeo** and is labelled `ST_CHARLES_BORROMEO_QUOTED_BY_PIUS_X`, not silently passed off as Pius X's own formulation.
+- *Tribus circiter*: the outstanding modern-schism judgment remains **held**; historical reception and conditional restoration passages were already covered by prior annexes.
+
+The existing `tools/pius-x-source-only-gate.mjs` and CI test now incorporate the 53 explicit new node decisions and exact original-evidence IDs without creating another content registry, overwriting previous mappings or weakening any original `partial` holds. Each admitted node yields only a **limited research claim plus Latin/Italian text**; original whole EN/FR P6 answers are withheld from inference.
+
+**Current cumulative research coverage: 41 existing subjects / 120 of 423 nodes (28.4%) / 142 recorded short original-language excerpt records**, including 38 new candidates from this sweep. **303 nodes remain** outside the research source-only gate, and in the original twelve-document discovery population specifically **75 nodes remain** without this mapping. These numbers express bounded documentary research, **not** source-authenticated complete dialogues. Full-answer authenticity certification, bilingual editorial approval and publishing approval are all **zero**.
+
+The new regression gates assert that the 84-node population is not inflated, all 53 newly triaged nodes are stable owner IDs, exactly 38 can be used in the research-only source gate, 15 cannot, and original P6 106/423 cards, existing six-turn test and approved sprites remain untouched. Next substantive work is the other six Vatican-document groups in the twelve-document source acquisition register, not a third parallel avatar pipeline.
