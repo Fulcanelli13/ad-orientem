@@ -74,6 +74,12 @@ try{
   assert.match(await page.locator('.spxm-warning').first().innerText(),/NOT THE WORDS OF ST PIUS X/);
   assert.match(await page.locator('.spxm-entry a').first().innerText(),/NOT COLLATED/);
   assert.equal(await page.locator('#spxc-portrait').getAttribute('data-expression'),'explaining');
+  await page.locator('#spxc-lang').click();
+  assert.equal(await page.locator('html').getAttribute('lang'),'fr');
+  assert.equal(await page.locator('#spxm-replies .spxm-entry').count(),0,
+   'Changing language clears previous-language generated history and display');
+  await page.locator('#spxc-lang').click();
+  assert.equal(await page.locator('html').getAttribute('lang'),'en');
   if(width===390)await page.locator('#spxc-menu').click();
   await page.locator('#spxc-nav [data-spxc-open="SPX-EXP-001"]').first().click();
   await page.locator('#spxm-question').fill('Please tell me about your childhood');
