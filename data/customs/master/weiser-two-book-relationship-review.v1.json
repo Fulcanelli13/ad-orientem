@@ -14,7 +14,9 @@
       "POSSIBLE_OVERLAP_REVIEW": 46,
       "MULTIPLE_POSSIBLE_PRACTICE_COMPONENTS": 9
     },
-    "new_distinct_practice_ids": 0
+    "new_distinct_practice_ids": 0,
+    "preview_subject_ids_covered": 16,
+    "preview_source_records_linked": 15
   },
   "records": [
     {
@@ -169,7 +171,10 @@
       "provisional_cross_source_state": "NO_DIRECT_OVERLAP_RECORDED_YET",
       "source_independence_note": "Both books are by Francis X. Weiser. A match across them is NOT independent corroboration; treat as an additional intra-author witness.",
       "identity_decision": "UNRESOLVED_NOT_NEW_CUSTOM_CONFIRMED",
-      "publication_state": "RESEARCH_ONLY"
+      "publication_state": "RESEARCH_ONLY",
+      "additional_earlier_preview_overlap_ids": [
+        "WEI-FAM-PREV-010"
+      ]
     },
     {
       "family_observation_id": "WEI-FAM56-012",
