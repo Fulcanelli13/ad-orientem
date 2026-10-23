@@ -2,6 +2,7 @@
 import {createServer} from 'node:http';
 import {readFileSync} from 'node:fs';
 import {fileURLToPath} from 'node:url';
+import {loadSourceOnlyGate,sourceOnlyEvidence} from './pius-x-source-only-gate.mjs';
 
 // Small, explicitly sourced evidence annex for one pilot subject only. The original
 // 106/423 source-owner corpus and public reader remain untouched.
@@ -61,7 +62,7 @@ export function readCorpus(html){
    throw new Error('Witness mapping must exactly match one existing source-owner chapter: '+annex.chapterId);
  }
  return {data,chapters,primaryWitnessAnnex:primaryWitnessAnnexes.get('SPX-PILOT-01'),
-  primaryWitnessAnnexes};
+  primaryWitnessAnnexes,sourceOnlyGate:loadSourceOnlyGate(chapters,primaryWitnessAnnexes)};
 
 }
 const held=(reason)=>({status:'held',reason,reply:null,publishingApproved:false,
@@ -85,36 +86,10 @@ export function selectEvidence(store,input){
    w.startsWith('NEGATIVE_CLAIM_NOT_DIRECTLY_ATTESTED')||
    w.startsWith('PRESENT_LAW_NOT_IN_SOURCE')))
   return held('selected_question_outside_attested_historical_passage');
- const nodes=[c.nodes[0],selected].filter((n,i,a)=>a.findIndex(x=>x.id===n.id)===i);
- const annex=store.primaryWitnessAnnexes.get(c.id);
- const mapById=new Map((annex?.dialogueMappings||[]).map(m=>[m.nodeId,m]));
- const anchors=new Map((annex?.sourceWitnesses||[]).map(w=>[w.id,w]));
- const originalLang=annex?.document?.languageOfOriginal;
- const evidence=nodes.map(n=>{
-  const witnessMap=mapById.get(n.id);
-  const witnesses=witnessMap?witnessMap.witnessIds.map(id=>{
-   const w=anchors.get(id);
-   if(!w)throw new Error('Broken primary witness reference');
-   return {id:w.id,locus:w.locus,text:w.text||w.latin,
-    originalLanguage:originalLang,speaker:w.speaker,
-    sourceUrl:annex.document.sites.original||annex.document.sites.la,readingNote:w.meaning};
-  }):[];
-  return {id:n.id,text:n.a[lang],question:n.q[lang],
-   sourceUrl:n.source?.url||c.source.url,locus:n.source?.locus||c.source.locus,
-   status:'UNVERIFIED_EDITORIAL_ADAPTATION_NOT_ORIGINAL_QUOTATION',
-   primaryWitnessStatus:witnessMap?
-    'BOUNDED_'+(originalLang==='it'?'ITALIAN':'LATIN')+'_SPOTCHECK_NOT_FULL_VERIFICATION':
-    'NO_COLLATED_PRIMARY_WITNESS',
-   originalLanguageWitnesses:witnesses,
-   originalLatinWitnesses:originalLang==='la'?witnesses.map(w=>({
-    id:w.id,locus:w.locus,latin:w.text,speaker:w.speaker,
-    sourceUrl:w.sourceUrl,readingNote:w.readingNote
-   })):[],
-   editorialWarnings:witnessMap?[...(witnessMap.editorialWarnings||witnessMap.editorialFlags||[])]:[]
-  };
- });
- if(evidence.some(x=>!x.text||!x.sourceUrl?.startsWith('https://')||!x.locus))
-  return held('missing_editorial_witness_or_locator');
+ // Documentary gating precedes inference. Never feed original P6 full answers.
+ const scoped=sourceOnlyEvidence(store.sourceOnlyGate,c,selected,lang);
+ if(scoped.held)return held(scoped.held);
+ const evidence=scoped.evidence;
  // History is visitor-provided conversational orientation, never evidence. Reject
  // entries not anchored to the same source chapter AND the same language.
  const history=Array.isArray(input.history)?input.history.slice(-3)
@@ -129,7 +104,7 @@ export function selectEvidence(store,input){
 }
 const composerRules=[
  'Compose a PRIVATE, UNAPPROVED historical-character editorial demonstration, NOT a verified papal quotation.',
- 'Use ONLY the supplied existing editorial text and, where supplied, short original-language Latin or Italian witness snippets.',
+ 'Use ONLY the narrow supported-claim notes and their original Latin/Italian textual witnesses. The complete unverified P6 answers have been deliberately withheld.'
  'Original-language snippets support only the literal propositions they contain; never extrapolate. The source URL is a locator, not proof by itself. Il fermo proposito is checked against its Vatican Italian text; Vatican Latin is a version, not our Italian witness.',
  'Do not attribute the embedded quotation of St Anselm in E supremi to Pius X personally; do not claim that Leo XIII is named in the encyclical opening.',
  'Where the third pilot question speaks of leading people to Christ and thereby to God, the supporting passage is section 8, NOT only sections 1–4.',
@@ -142,10 +117,10 @@ const composerRules=[
  'Output JSON ONLY: {"mode":"answer"|"abstain","text":"...","evidenceIds":["exact evidence ID"],"expression":"neutral"|"welcoming"|"explaining"|"thoughtful"|"grave"}.'
 ].join(' ');
 const verifierRules=[
- 'Independently test EVERY factual assertion in the candidate against the literal supplied editorial evidence.',
+ 'Independently test each assertion against the short original-language witnesses and narrowly scoped claim notes; the absent full P6 answer is NOT evidence.'
  'If original-language Latin or Italian witness fragments are supplied, require each corresponding claim to be supported by those literal fragments or abstain. Respect speaker attribution and editorialWarnings.',
  'Original-language witness fragments are bounded spot checks, not certification of an entire document or its EN/FR translation. Where the editorialWarnings identify an inference or modern-status boundary, do not treat it as the Pope\'s original assertion.',
- 'Evidence is NOT independently collated with the original work; source titles and locators cannot prove a claim.',
+ 'Only short original-language fragments were literally spot checked, not full contexts/translations. Source titles and locators cannot prove additional claims.'
  'Reject any new assertion, unsupported inference, invented biographical detail, fabricated quotation, or individualized pastoral judgement.',
  'The previous dialogue is NOT verified evidence, and apparent references to history do not authorize factual claims.',
  'If unsure, reject. Output JSON ONLY: {"supported":true|false,"allClaimsSupported":true|false,"ids":["exact evidence ID"]}.'
