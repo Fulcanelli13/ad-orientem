@@ -636,7 +636,32 @@ try{
   assert.doesNotMatch(await page.locator("#historiaProofText").innerText(),/Revelation 22:20–21/,
     "Lower-priority book epilogue remains held, even when P0 angel source is shown");
   assert.equal(await page.locator("#historiaProofDecisionReview .proofDecision").count(),1);
-  assert.deepEqual(pageErrors,[],"P0 comparisons must not disrupt mobile Scripture workbench");
+  assert.equal(await page.locator("#historiaProofOtherJump option").count(),13,
+    "The lower-priority navigator must have one entry for each of twelve source movements");
+  await page.locator("#historiaProofOtherJump").selectOption("HS-M06");
+  await page.waitForFunction(()=>document.querySelector("#historiaProofStatus")
+    ?.textContent?.includes("source verses displayed"),null,{timeout:25000});
+  assert.equal(await page.locator("#historiaProofBridgeFilter").inputValue(),"all");
+  assert.equal(await page.locator("#historiaProofDecisionReview .proofDecision").count(),1);
+  assert.match(await page.locator("#historiaProofDecisionReview").innerText(),/JOSEPH_PRISON|PRISON_CAUSE/);
+  assert.match(await page.locator("#historiaProofText").innerText(),/Genesis 39:19–21/);
+  assert.equal(await page.locator("#historiaProofText .proofSourceBridge .proofVerse").count(),3,
+    "Joseph's 3-verse proposed native reading is never truncated to the older 2-verse hold");
+  await page.locator("#historiaProofOtherJump").selectOption("HS-M27");
+  await page.waitForFunction(()=>document.querySelector("#historiaProofStatus")
+    ?.textContent?.includes("source verses displayed"),null,{timeout:25000});
+  assert.match(await page.locator("#historiaProofDecisionReview").innerText(),/PREFER_KEEP_HELD_DISTINCT_JUDAS_EPISODE/);
+  assert.match(await page.locator("#historiaProofText").innerText(),/Matthew 27:3–10/);
+  assert.match(await page.locator("#historiaProofText").innerText(),/Source omission remains in the main manuscript/);
+  await page.locator("#historiaProofOtherJump").selectOption("HS-M37");
+  await page.waitForFunction(()=>document.querySelector("#historiaProofStatus")
+    ?.textContent?.includes("source verses displayed"),null,{timeout:25000});
+  assert.equal(await page.locator("#historiaProofDecisionReview .proofDecision").count(),2,
+    "One P0 angel and one P2 canonical-end recommendation must remain separate");
+  assert.match(await page.locator("#historiaProofText").innerText(),/Revelation 22:20–21/);
+  assert.match(await page.locator("#historiaProofText").innerText(),/Revelation 22:6–19/,
+    "Jump to canonical epilogue must explicitly disclose omitted original Scripture");
+    assert.deepEqual(pageErrors,[],"P0 comparisons must not disrupt mobile Scripture workbench");
   await page.locator("#historiaProofToggle").click();
   assert.equal(await page.locator("#historiaProof").isVisible(),false);
   assert.equal(await page.locator("#historiaUnitControls").isVisible(),true);
