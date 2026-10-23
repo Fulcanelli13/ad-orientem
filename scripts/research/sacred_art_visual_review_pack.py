@@ -27,7 +27,7 @@ def build_page(entries,summary):
     compact=[{k:r.get(k,"") for k in ("asset_source_id","title","artist","source_url","source_type","acquisition_tier","resolution_gate","measured_width","measured_height","icc_profile_present","review_thumbnail","original_contact_sheet","potential_duplicate_group")} for r in entries]
     js=json.dumps(compact,ensure_ascii=False).replace("</","<\\/")
     stats=json.dumps(summary,ensure_ascii=False)
-    return """<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"/>
+    return r"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>Ad Orientem — Sacred-Art Editorial Review</title>
 <style>
 :root{color-scheme:dark;--bg:#080d13;--card:#161e27;--line:#34404b;--fg:#e9e4d8;--soft:#a9afb0;--accent:#bea77d}
