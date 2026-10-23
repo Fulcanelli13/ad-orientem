@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark"><title>Living Catena · Independent Mark Review</title>
+<style>
+:root{color-scheme:dark;--bg:#080c12;--panel:#131c26;--muted:#c0b5a5;--line:#5d564c;--text:#f2e9db;--gold:#d9bb89}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.55 Georgia,serif}
+header{border-bottom:1px solid var(--line);padding:22px max(15px,calc((100% - 1050px)/2));background:#18232d}
+h1{font:normal clamp(24px,4vw,34px)/1.3 Georgia,serif;margin:4px 0}
+h2{font:normal 25px/1.35 Georgia,serif;margin:10px 0}
+h3{font:normal 19px Georgia,serif;color:var(--gold);margin:5px 0 12px}
+p{margin:6px 0 12px}.muted,small{color:var(--muted)}.eyebrow{color:var(--gold);font:600 11px/1.5 system-ui,sans-serif;text-transform:uppercase;letter-spacing:.12em}
+main{max-width:1050px;margin:auto;padding:16px;display:grid;grid-template-columns:minmax(250px,300px) minmax(0,1fr);gap:16px}
+aside,.detail{min-width:0;padding:17px;border:1px solid var(--line);background:var(--panel);border-radius:9px}
+label{display:block;margin:14px 0 5px;color:var(--gold);font:500 13px/1.4 system-ui,sans-serif}
+input,select,textarea{width:100%;min-width:0;background:#0c151e;color:var(--text);border:1px solid #80705b;border-radius:6px;padding:10px;font:14px/1.45 system-ui,sans-serif}
+textarea{min-height:88px;resize:vertical}
+button{min-height:43px;background:#293745;color:var(--text);border:1px solid #967950;border-radius:6px;padding:8px 11px;font:500 13px/1.3 system-ui,sans-serif;cursor:pointer}
+button:focus-visible,a:focus-visible{outline:2px solid #e4c48b;outline-offset:2px}
+.actions{display:flex;gap:7px;flex-wrap:wrap;margin:14px 0}.actions button{flex:1}
+.case{margin:14px 0;padding:15px;border:1px solid #52616a;border-radius:8px;background:#192732}
+.original{font:17px/1.7 Georgia,serif;white-space:pre-wrap;overflow-wrap:anywhere}
+.meta{font:12px/1.5 system-ui,sans-serif;color:var(--muted)}.notice{border-left:3px solid #aa8b60;padding:10px 12px;background:#24303a;font:13px/1.5 system-ui,sans-serif}
+a{color:#ecd09a}
+#status{font:13px/1.45 system-ui,sans-serif;color:#e4c38e;min-height:22px}
+footer{max-width:1050px;margin:0 auto;padding:5px 17px 28px;font:12px/1.6 system-ui,sans-serif;color:var(--muted)}
+@media(max-width:750px){main{display:block;padding:8px}aside{margin-bottom:12px}.detail{padding:12px}}
+</style>
+</head>
+<body>
+<header><div class="eyebrow">Ad Orientem · Living Catena · source-faithful editorial review</div>
+<h1>Independent Mark retrieval review</h1>
+<p class="muted">Offline, self-contained reviewer packet. Assess the original words actually retrieved, not an invented Father answer. Your grades cannot approve or publish any passage.</p></header>
+<main>
+<aside>
+<label for="reviewer">Reviewer identifier</label>
+<input id="reviewer" autocomplete="off" placeholder="Unique reviewer identifier">
+<p class="meta">One reviewer per packet. Reviewer identity is self-declared, not authenticated.</p>
+<label for="cases">Choose a case</label>
+<select id="cases" aria-label="Blind case"></select>
+<p id="progress" class="meta">0 of 23 locally assessed</p>
+<div class="actions">
+<button type="button" id="prev">Previous</button>
+<button type="button" id="next">Next</button>
+</div>
+<div class="actions"><button type="button" id="export">Export JSON progress</button></div>
+<label for="import">Resume from previously exported JSON</label>
+<input id="import" type="file" accept=".json,application/json">
+<p id="status" role="status"></p>
+<p class="notice">Save by exporting JSON regularly. Closing the file without exporting can lose unsaved assessments. Two genuinely independent reviewers must work separately.</p>
+</aside>
+<section class="detail" aria-label="Original source retrieval assessment">
+<div id="caseDetail"></div>
+</section>
+</main>
+<footer>Oxford/Newman Catena excerpts are preserved exactly as in the canonical source packs. Printed Father attributions require separate editorial verification. AI-selected targets and grades are intentionally absent. A source match is not a doctrinal certification.</footer>
+<script type="application/json" id="catenaPacket">__CATENA_MARK_BLIND_PAYLOAD__</script>
+<script>
+"use strict";
+const packet=JSON.parse(document.getElementById("catenaPacket").textContent);
+if(packet.schema!=="ao.catena.mark-offline-blind-packet.v1"||packet.cases.length!==23){throw Error("Invalid blind packet")}
+const el=id=>document.getElementById(id);
+const make=(tag,text)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=text;return n};
+const drafts=new Map();
+let owner="",active=0;
+const status=text=>{el("status").textContent=text};
+function caseRow(id){return packet.cases.find(x=>x.id===id)}
+function exportValue(){
+ if(!owner)throw Error("Set a reviewer identifier before exporting");
+ const entries=[...drafts.values()].sort((a,b)=>a.caseId.localeCompare(b.caseId));
+ return {schema:"ao.catena.mark-blind-human-grades.v1",sourceResearchCommit:packet.sourceResearchCommit,
+ reviewMode:"independent_blind_editor_retrieval_grade",reviewerId:owner,casesTotal:23,
+ completedCases:entries.length,entries,fullCanonicalExcerptsIncluded:false,
+ independentApprovalNotAuthenticated:true,publicationApproval:false,
+ mayAutoPromoteToMessenger:false};
+}
+function download(text,name){
+ const file=new Blob([text],{type:"application/json"}),url=URL.createObjectURL(file),a=make("a");
+ a.href=url;a.download=name;document.body.append(a);a.click();a.remove();
+ setTimeout(()=>URL.revokeObjectURL(url),1000);
+}
+function renderSelector(){
+ const picker=el("cases");picker.replaceChildren();
+ packet.cases.forEach((c,i)=>{
+  const option=make("option",String(i+1).padStart(2,"0")+" · "+(drafts.has(c.id)?"✓ ":"")+c.question);
+  option.value=String(i);picker.append(option);
+ });
+ picker.value=String(active);
+ el("progress").textContent=drafts.size+" of 23 locally assessed; no publication approval";
+}
+function field(group,title,kind,value){
+ const label=make("label",title),n=make(kind);
+ const id="f"+Math.random().toString(36).slice(2);
+ label.htmlFor=id;n.id=id;
+ if(kind==="textarea")n.rows=3;
+ if(value!==undefined)n.value=value;
+ group.append(label,n);return n;
+}
+function render(){
+ renderSelector();
+ const c=packet.cases[active],prior=drafts.get(c.id)||{};
+ const root=el("caseDetail");root.replaceChildren();
+ root.append(make("div", "Case "+String(active+1).padStart(2,"0")+" · "+c.citation));
+ root.append(make("h2",c.question));
+ root.append(make("p","The selected target, AI rationale and whether the question was adversarial are hidden."));
+ const form=make("form");form.id="reviewForm";
+ const controls=[];
+ if(!c.results.length){
+  const notice=make("p","No original Catena excerpt was returned by the tested search.");
+  notice.className="notice";form.append(notice);
+  const abstain=field(form,"Assess no-result behavior","select",prior.abstentionGrade||"");
+  for(const [v,t] of [["","Choose assessment"],["appropriate","Appropriate abstention"],["missed_source","Missed useful source"],["uncertain","Not enough evidence to judge"]]){
+   const o=make("option",t);o.value=v;abstain.append(o);
+  }abstain.value=prior.abstentionGrade||"";
+  abstain.dataset.abstain="true";
+  controls.push({abstain});
+ }
+ c.results.forEach((r,i)=>{
+  const part=make("article");part.className="case";
+  part.dataset.sourcePointer=r.id;
+  part.append(make("h3","Result "+(i+1)+" · "+r.citation));
+  r.speakerUnits.forEach(u=>{
+   const lab=make("div","Printed Catena attribution: "+u.father);lab.className="eyebrow";part.append(lab);
+   const text=make("p",u.originalWords);text.className="original";part.append(text);
+  });
+  const a=make("a","Read printed Catena source");
+  a.href=r.sourceUrl;a.target="_blank";a.rel="noopener noreferrer";part.append(a);
+  const digest=make("p","Verbatim source SHA-256: "+r.sourceSHA256);
+  digest.className="meta";part.append(digest);
+  const old=prior.messageGrades?.find(x=>x.sourcePointer===r.id)||{};
+  const grade=field(part,"Score this excerpt · 0 misleading · 1 weak · 2 context · 3 direct","select");
+  for(const [v,t] of [["","Choose grade"],["0","0 — Unsupported or misleading"],["1","1 — Weak"],["2","2 — Useful context"],["3","3 — Direct"]]){
+   const opt=make("option",t);opt.value=v;grade.append(opt);
+  }grade.value=Number.isInteger(old.grade)?String(old.grade):"";
+  const phrase=field(part,"Exact supporting words in the original (required for 2–3)","input",old.supportingOriginalWords||"");
+  phrase.maxLength=200;
+  const reason=field(part,"Independent contextual justification","textarea",old.justification||"");
+  controls.push({r,grade,phrase,reason});form.append(part);
+ });
+ const overall=field(form,"Overall assessment and any qualification","textarea",prior.overallRationale||"");
+ const btn=make("button","Save this case");btn.type="submit";form.append(btn);
+ form.addEventListener("submit",e=>{
+  e.preventDefault();
+  try{
+   const identity=el("reviewer").value.trim();
+   if(identity.length<3||identity.length>100)throw Error("Reviewer identifier must be 3–100 characters");
+   if(owner&&identity!==owner)throw Error("This packet is locked to another reviewer. Open a fresh packet for the second editor.");
+   if(overall.value.trim().length<25||overall.value.length>4000)throw Error("Write an overall assessment of at least 25 characters");
+   const result={caseId:c.id,abstentionGrade:c.results.length?null:controls[0].abstain.value,
+    overallRationale:overall.value.trim(),messageGrades:[],publicationApproval:false};
+   if(!c.results.length&&!["appropriate","missed_source","uncertain"].includes(result.abstentionGrade))
+    throw Error("Choose a no-result assessment");
+   for(const control of controls){
+    if(!control.r)continue;
+    const grade=Number(control.grade.value);
+    if(control.grade.value===""||![0,1,2,3].includes(grade))throw Error("Grade every retrieved excerpt");
+    const words=control.phrase.value,reason=control.reason.value.trim();
+    if(reason.length<25||reason.length>4000)throw Error("Explain each excerpt grade in at least 25 characters");
+    if(words.length>200||words&&!control.r.originalWords.includes(words)||
+       grade>=2&&words.trim().length<6)throw Error("Supply an exact, short source phrase for grades 2–3");
+    result.messageGrades.push({sourcePointer:control.r.id,grade,
+     justification:reason,supportingOriginalWords:words,sourceSHA256:control.r.sourceSHA256});
+   }
+   owner=identity;drafts.set(c.id,result);status("Saved in memory only. Export JSON to preserve your work.");renderSelector();
+  }catch(err){status("Not saved: "+err.message)}
+ });
+ root.append(form);
+}
+el("cases").addEventListener("change",()=>{active=Number(el("cases").value);render()});
+el("next").addEventListener("click",()=>{active=Math.min(22,active+1);render()});
+el("prev").addEventListener("click",()=>{active=Math.max(0,active-1);render()});
+el("reviewer").addEventListener("change",()=>{
+ if(owner&&el("reviewer").value.trim()!==owner){
+  el("reviewer").value=owner;status("Reviewer identity is locked after the first saved case.");
+ }
+});
+el("export").addEventListener("click",()=>{
+ try{const out=exportValue();download(JSON.stringify(out,null,2)+"\n",
+  "catena-mark-blind-"+owner.replace(/[^a-zA-Z0-9_-]/g,"_")+".json");
+  status(out.completedCases+"/23 cases exported. Publication remains blocked.");
+ }catch(e){status("Export blocked: "+e.message)}
+});
+el("import").addEventListener("change",async()=>{
+ const file=el("import").files?.[0];if(!file)return;
+ try{
+  const data=JSON.parse(await file.text());
+  if(data.schema!=="ao.catena.mark-blind-human-grades.v1"||
+    data.sourceResearchCommit!==packet.sourceResearchCommit||
+    data.reviewMode!=="independent_blind_editor_retrieval_grade"||
+    data.publicationApproval!==false||data.mayAutoPromoteToMessenger!==false||
+    data.casesTotal!==23||!Array.isArray(data.entries)||
+    data.completedCases!==data.entries.length||
+    typeof data.reviewerId!=="string"||data.reviewerId.trim().length<3||
+    owner&&owner!==data.reviewerId)throw Error("This manifest is incompatible with this reviewer packet");
+  const next=new Map();
+  for(const row of data.entries){
+   const c=caseRow(row.caseId);
+   if(!c||next.has(row.caseId)||row.publicationApproval!==false||
+     row.messageGrades?.length!==c.results.length)throw Error("Invalid or duplicate case");
+   if(!c.results.length&&!["appropriate","missed_source","uncertain"].includes(row.abstentionGrade))
+    throw Error("Invalid no-result grade");
+   if(c.results.length&&row.abstentionGrade!==null)throw Error("Unexpected no-result grade");
+   for(let i=0;i<c.results.length;i++){
+    const g=row.messageGrades[i],r=c.results[i];
+    if(g.sourcePointer!==r.id||g.sourceSHA256!==r.sourceSHA256||
+      ![0,1,2,3].includes(g.grade)||g.justification?.trim().length<25||
+      typeof g.supportingOriginalWords!=="string"||
+      g.supportingOriginalWords.length>200||
+      (g.supportingOriginalWords&&!r.originalWords.includes(g.supportingOriginalWords))||
+      (g.grade>=2&&g.supportingOriginalWords.trim().length<6))
+      throw Error("Changed source, digest or grade");
+   }
+   if(row.overallRationale?.trim().length<25)throw Error("Missing independent rationale");
+   next.set(row.caseId,row);
+  }
+  owner=data.reviewerId;el("reviewer").value=owner;
+  drafts.clear();next.forEach((v,k)=>drafts.set(k,v));render();status(drafts.size+" saved cases restored from your export.");
+ }catch(e){status("Import rejected: "+e.message)}
+ el("import").value="";
+});
+render();
+</script>
+</body></html>
