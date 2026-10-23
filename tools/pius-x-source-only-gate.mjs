@@ -298,6 +298,92 @@ export function loadSourceOnlyGate(chapters,oldAnnexes){
     gate.size!==41||
     [...gate.values()].reduce((n,x)=>n+x.size,0)!==120)
   throw new Error('Wave3 safe research gate should contain 41 subjects, 120 source-bounded nodes and 15 holds');
+
+ // Final half of the original twelve Vatican-source-document discovery batch:
+ // reuse the immutable P6 node identifiers and earlier literal witnesses.
+ const fourth=json('pius-x-six-document-wave4-remaining60-20261023.v1.json');
+ if(fourth.schema!=='AO_SPX_P2_SIX_DOCUMENT_WAVE4_REMAINING60_V1'||
+    fourth.status!=='PRIVATE_BOUNDED_SNIPPET_RESEARCH_WITH_EXPLICIT_HOLDS'||
+    fourth.summary?.documents!==6||fourth.summary?.sourceOwnerNodesInSixDocuments!==111||
+    fourth.summary?.previouslyMappedNodesInSixDocuments!==51||
+    fourth.summary?.remainingNodesScreened!==60||
+    fourth.summary?.newBoundedResearchCandidates!==24||
+    fourth.summary?.newHeldNodes!==36||
+    fourth.summary?.newOriginalVaticanExcerpts!==23||
+    fourth.summary?.fullAnswerCertifications!==0||
+    fourth.summary?.bilingualTranslationCertifications!==0||
+    fourth.summary?.publishingApprovals!==0||
+    fourth.witnesses?.length!==23||fourth.records?.length!==60)
+  throw new Error('Six-document remaining-node research contract drift');
+ const fourthDocuments=new Map([
+  ['P','pascendi-dominici-gregis'],['A','acerbo-nimis'],
+  ['E','e-supremi'],['I','il-fermo-proposito'],
+  ['M','sollecitudini'],['R','divino-afflatu']]);
+ const fourthWitnesses=new Map();
+ for(const w of fourth.witnesses){
+  if(fourthWitnesses.has(w.id)||!fourthDocuments.has(w.documentGroup)||
+     !w.id.startsWith('W4-'+w.documentGroup+'-')||
+     w.originalLanguage!==(['I','M'].includes(w.documentGroup)?'it':'la')||
+     !w.originalText||!w.claimSupported||!Number.isInteger(w.sourcePageLine)||
+     !w.sourceUrl?.startsWith('https://www.vatican.va/content/pius-x/')||
+     !w.sourceUrl.includes(fourthDocuments.get(w.documentGroup))||
+     w.verification!=='OFFICIAL_VATICAN_EXACT_SHORT_TEXT_NOT_COMPLETE_SOURCE_CERTIFICATION'||
+     w.translationApproved!==false||w.publishingApproved!==false||
+     !['PIUS_X_AUTHOR','PIUS_X_REPORTS_MODERNIST_VIEW',
+       'VATICAN_I_QUOTED_BY_PIUS_X','ST_BASIL_QUOTED_BY_PIUS_X'].includes(w.speaker))
+   throw new Error('Invalid new papal-language witness '+w.id);
+  fourthWitnesses.set(w.id,{id:w.id,text:w.originalText,
+   readingNote:w.claimSupported,locus:'Vatican webpage line '+w.sourcePageLine,
+   sourceUrl:w.sourceUrl,originalLanguage:w.originalLanguage,speaker:w.speaker,
+   documentGroup:w.documentGroup});
+ }
+ let fourthAdmitted=0,fourthHeld=0,partialStillHeld=0;
+ const wave4NodeIDs=new Set(),wave4Groups=new Set(),wave4Books=new Set();
+ for(const r of fourth.records){
+  const c=chapters.get(r.chapterId),node=c?.nodes.find(n=>n.id===r.nodeId);
+  if(!c||!node||wave4NodeIDs.has(r.nodeId)||
+     r.questionEn!==node.q.en||!fourthDocuments.has(r.documentGroup)||
+     !c.source?.url?.includes(fourthDocuments.get(r.documentGroup))||
+     normalize(r.sourceUrl)!==normalize(c.source.url)||
+     Boolean(c.partial)!==r.ownerPartial||
+     r.translationApproved!==false||r.completeAnswerApproved!==false||
+     r.publishingApproved!==false||gate.get(c.id)?.has(node.id))
+   throw new Error('Wave4 overlap, original source-owner mismatch or false approval '+r.nodeId);
+  wave4NodeIDs.add(node.id);wave4Books.add(r.documentGroup);
+  if(r.status!=='BOUNDED_ORIGINAL_LANGUAGE_EXCERPT_CANDIDATE'){
+   if(!['HOLD_ORIGINAL_SOURCE_PARTIAL','HOLD_MISSING_PRECISE_ORIGINAL_EVIDENCE',
+          'HOLD_NO_PRECISE_SOURCE_FOR_SPECIFIC_PROPOSITION'].includes(r.status)||
+      r.witnessIds.length||!r.holdReason||r.narrowClaimScope!==null||
+      (c.partial&&r.status!=='HOLD_ORIGINAL_SOURCE_PARTIAL'))
+    throw new Error('Unattested or P6 partial answer cannot enter inference');
+   fourthHeld++;if(c.partial)partialStillHeld++;continue;
+  }
+  if(c.partial||c.sourceClass!=='PAPAL_DOCUMENT_ADAPTATION'||
+     !r.witnessIds?.length||!r.narrowClaimScope)
+   throw new Error('Wave4 full papal-source ownership required for each narrow candidate');
+  const parts=r.witnessIds.map(id=>{
+   const p=fourthWitnesses.get(id)||allPieces.get(id);
+   if(!p||!p.text||!p.readingNote||!p.locus||
+      normalize(p.sourceUrl)!==normalize(c.source.url))
+    throw new Error('Wave4 missing or wrong-document source excerpt '+id);
+   return p;
+  });
+  if(new Set(parts.map(w=>w.originalLanguage)).size!==1)
+   throw new Error('Wave4 original source languages inconsistent');
+  if(!gate.has(c.id))gate.set(c.id,new Map());
+  gate.get(c.id).set(node.id,{status:'WAVE_FOUR_NARROW_ORIGINAL_SOURCE_CANDIDATE_UNAPPROVED',
+   pieces:parts,caution:[
+    'Research scope only: '+r.narrowClaimScope,
+    'These snippets do not authenticate a whole P6 answer in either language',
+    'Quoted council or Father and reported Modernist positions must retain attribution',
+    'No live-person judgment or present-day canonical/liturgical determination is supplied']});
+  fourthAdmitted++;wave4Groups.add(c.id);
+ }
+ if(wave4NodeIDs.size!==60||wave4Books.size!==6||
+    fourthAdmitted!==24||fourthHeld!==36||partialStillHeld!==18||
+    gate.size!==48||
+    [...gate.values()].reduce((n,x)=>n+x.size,0)!==144)
+  throw new Error('Wave4 research must preserve 36 holds and reach 48 subjects/144 original-text nodes');
  return gate;
 }
 
