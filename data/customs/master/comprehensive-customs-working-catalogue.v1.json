@@ -15,7 +15,9 @@
     "POST_53_UNASSIGNED_CASE_REVIEW": "All 53 formerly unassigned detail records now have specific action-level triage; 37 noncanonical practice or reported folklore groups from 36 cases, one related to a prior group, 16 contextual/comparative. No exact identity merges or global distinctness certified. Older 371-group reconciliation remains its own immutable snapshot.",
     "POST_54_COASSOCIATION_REVIEW": "All 54 shared-owner/source pairs classified by likely action mismatch or possible regional subpractice. No pair was certified as identical; shared feast/master label never justifies automatic merging.",
     "MCLOUGHLIN_REPRINT_CAUTION": "EWTN transcription attributed to Helen McLoughlin's 1954 Family Advent Customs includes postal ZIP codes in endnotes (which postdate 1954), so it cannot automatically be treated as a word-for-word 1954 first edition. Use EWTN online line locators and independently worded labels; do not attribute each wording to 1954.",
-    "MCLOUGHLIN_NOT_UNIQUE_CUSTOMS": "70 new source observations grouped into 26 source action families, not 70 new customs or 26 confirmed distinct identities. Same action may appear in both Weiser and McLoughlin; author cites Weiser."
+    "MCLOUGHLIN_NOT_UNIQUE_CUSTOMS": "70 new source observations grouped into 26 source action families, not 70 new customs or 26 confirmed distinct identities. Same action may appear in both Weiser and McLoughlin; author cites Weiser.",
+    "STOKES_COMPILATION_DEPENDENCY": "Fr. Stokes 1955 is an additional separately authored source, but substantial passages depend on Maria von Trapp, Therese Mueller, Donald Attwater, Katherine Byles and other prior witnesses. 198 EWTN source-located action observations do NOT establish 198 independently attested or distinct practices.",
+    "STOKES_RITUAL_AND_DATE_CAUTION": "Stokes's 1955 imprimatur is historical and does not validate specific blessing texts, indulgences, or current/1962 Roman Ritual ownership. No printed page numbers claimed; all locators refer to EWTN web lines, which may shift."
   },
   "summary": {
     "source_observations": {
@@ -35,8 +37,9 @@
         "ch14_to_28": 121
       },
       "mcloughlin_fulltext_source_observations": 70,
-      "total_source_detail_rows_including_external": 1095,
-      "external_plus_weiser_count_note": "1,025 Weiser research rows (685 base + 340 nested) plus 70 independent McLoughlin textual witness observation rows = 1,095 research rows. This is NOT 1,095 distinct customs; McLoughlin borrows from Weiser and may use later online revisions."
+      "total_source_detail_rows_including_external": 1293,
+      "external_plus_weiser_count_note": "1,025 earlier Weiser research rows + 70 McLoughlin web-text observations + 198 Stokes 1955 compiled-source action observations = 1,293 research rows. Counts are non-deduplicated, non-additive with respect to unique customs; Stokes draws extensively on prior authors.",
+      "stokes_1955_online_source_action_observations": 198
     },
     "identity_working_rows": {
       "previously_existing_master_identities": 56,
@@ -95,13 +98,23 @@
       },
       "mcloughlin_source_family_clusters": 26,
       "mcloughlin_families_with_existing_owner_candidates": 11,
-      "mcloughlin_families_without_existing_owner_candidates": 15
+      "mcloughlin_families_without_existing_owner_candidates": 15,
+      "stokes_1955_claim_characterizations": {
+        "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED": 98,
+        "AUTHOR_SUGGESTED_PRACTICE": 49,
+        "POSSIBLE_RITUAL_OR_AUTHORITY_CLAIM_REQUIRES_PRIMARY_CHECK": 14,
+        "FOLK_BELIEF_OR_DRAMATIZATION_NOT_ENDORSED": 3,
+        "SECONDARY_NAMED_SOURCE_OR_FAMILY_REPORT": 27,
+        "HISTORICAL_CUSTOM_CLAIM_NOT_VERIFIED": 7
+      },
+      "stokes_1955_records_mapped_to_distinct_verified_customs": 0
     },
     "no_new_app_publications": true
   },
   "sources": {
     "weiser_1958": "Handbook of Christian Feasts and Customs",
-    "weiser_1956": "Religious Customs in the Family"
+    "weiser_1956": "Religious Customs in the Family",
+    "stokes_1955": "Bernward Stokes, How to Make Your House a Home: Family Liturgy and Religious Practices (imprimatur 24 Sep 1955), EWTN transcription"
   },
   "source_dataset_paths": {
     "master": "data/customs/master/working-master.v1.json",
@@ -127,7 +140,8 @@
     "no_owner_detail_adjudication": "data/customs/master/53-no-owner-customs-action-review.v1.json",
     "coassociation_action_level": "data/customs/master/54-coassociation-action-level-relationship-review.v1.json",
     "mcloughlin_family_advent": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
-    "mcloughlin_family_advent_reconciliation": "data/customs/master/mcloughlin-family-advent-action-family-reconciliation.v1.json"
+    "mcloughlin_family_advent_reconciliation": "data/customs/master/mcloughlin-family-advent-action-family-reconciliation.v1.json",
+    "stokes_family_liturgy_1955": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json"
   },
   "existing_master_identities": [
     {
@@ -14768,6 +14782,2384 @@
       "kind": "HISTORICAL_CLAIM_REVIEW",
       "identity_certified": false,
       "source_file": "data/customs/master/mcloughlin-family-advent-action-family-reconciliation.v1.json"
+    }
+  ],
+  "external_source_observations_stokes": [
+    {
+      "id": "STOKES55-EWTN-001",
+      "label": "Evergreen Advent wreath fashioned for the household",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Advent",
+      "web_lines": [
+        133,
+        133
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-002",
+      "label": "Successive Advent candles lit at family gatherings",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Advent",
+      "web_lines": [
+        135,
+        135
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-003",
+      "label": "Family blessing prayer over the Advent wreath",
+      "type": "AUTHOR_SUGGESTED_PRACTICE",
+      "section": "Advent",
+      "web_lines": [
+        135,
+        135
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-004",
+      "label": "Holy water sprinkled on the family Advent wreath",
+      "type": "AUTHOR_SUGGESTED_PRACTICE",
+      "section": "Advent",
+      "web_lines": [
+        143,
+        143
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-005",
+      "label": "Rorate hymn sung after wreath prayers",
+      "type": "AUTHOR_SUGGESTED_PRACTICE",
+      "section": "Advent",
+      "web_lines": [
+        143,
+        143
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-006",
+      "label": "Marian Advent candle lit at the home altar",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Advent",
+      "web_lines": [
+        146,
+        146
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-007",
+      "label": "Clothing sewn for the poor during Advent",
+      "type": "AUTHOR_SUGGESTED_PRACTICE",
+      "section": "Advent",
+      "web_lines": [
+        147,
+        147
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-008",
+      "label": "Toys repaired or made for Advent charity",
+      "type": "AUTHOR_SUGGESTED_PRACTICE",
+      "section": "Advent",
+      "web_lines": [
+        147,
+        147
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-009",
+      "label": "Parish priest asked to bless seasonal charitable gifts",
+      "type": "POSSIBLE_RITUAL_OR_AUTHORITY_CLAIM_REQUIRES_PRIMARY_CHECK",
+      "section": "Advent",
+      "web_lines": [
+        148,
+        148
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-010",
+      "label": "Childrens acts of self-denial offered during Advent",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Advent",
+      "web_lines": [
+        149,
+        149
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-011",
+      "label": "Additional daily Mass and Communion in Advent",
+      "type": "AUTHOR_SUGGESTED_PRACTICE",
+      "section": "Advent",
+      "web_lines": [
+        150,
+        150
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-012",
+      "label": "German children's Advent letters to Christ Child",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Advent",
+      "web_lines": [
+        151,
+        151
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-013",
+      "label": "Children's letters placed on windowsill overnight",
+      "type": "FOLK_BELIEF_OR_DRAMATIZATION_NOT_ENDORSED",
+      "section": "Advent",
+      "web_lines": [
+        152,
+        152
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-014",
+      "label": "Saint Barbara fruit-tree branches forced into Christmas blossom",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Advent",
+      "web_lines": [
+        155,
+        155
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-015",
+      "label": "Costumed Saint Nicholas visiting children with Krampus",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Advent",
+      "web_lines": [
+        156,
+        156
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-016",
+      "label": "Krampus threats forming part of Saint Nicholas visit",
+      "type": "FOLK_BELIEF_OR_DRAMATIZATION_NOT_ENDORSED",
+      "section": "Advent",
+      "web_lines": [
+        157,
+        157
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-017",
+      "label": "Saint Nicholas story retold in the family",
+      "type": "AUTHOR_SUGGESTED_PRACTICE",
+      "section": "Advent",
+      "web_lines": [
+        158,
+        158
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-018",
+      "label": "Slovak Christmas Eve vigil fast",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Christmas and Holy Name",
+      "web_lines": [
+        163,
+        163
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-019",
+      "label": "Slovak Generous Supper family reunion",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Christmas and Holy Name",
+      "web_lines": [
+        163,
+        163
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-020",
+      "label": "Christmas supper prayer for deceased relations",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Christmas and Holy Name",
+      "web_lines": [
+        164,
+        164
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-021",
+      "label": "Slovak honeyed Christmas oblatky distributed",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Christmas and Holy Name",
+      "web_lines": [
+        165,
+        165
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-022",
+      "label": "Poor or isolated guests welcomed to Christmas supper",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Christmas and Holy Name",
+      "web_lines": [
+        166,
+        166
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-023",
+      "label": "Polish Christmas supper begins after first star",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Christmas and Holy Name",
+      "web_lines": [
+        167,
+        167
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-024",
+      "label": "Hay placed beneath Polish Christmas tablecloth",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Christmas and Holy Name",
+      "web_lines": [
+        167,
+        167
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-025",
+      "label": "Polish Christmas oplatek shared after reconciliation",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Christmas and Holy Name",
+      "web_lines": [
+        168,
+        168
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-026",
+      "label": "Polish carols sung before Midnight Mass",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Christmas and Holy Name",
+      "web_lines": [
+        169,
+        169
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-027",
+      "label": "Irish household Christmas candles at windows",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Christmas and Holy Name",
+      "web_lines": [
+        171,
+        171
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-028",
+      "label": "Irish Christmas Eve door left unlocked",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Christmas and Holy Name",
+      "web_lines": [
+        171,
+        171
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-029",
+      "label": "Family attendance at Christmas Midnight Mass",
+      "type": "AUTHOR_SUGGESTED_PRACTICE",
+      "section": "Christmas and Holy Name",
+      "web_lines": [
+        172,
+        172
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-030",
+      "label": "Symbolic Christmas tree ornaments displayed",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Christmas and Holy Name",
+      "web_lines": [
+        173,
+        173
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-031",
+      "label": "German edible nuts and cookies hung on tree",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Christmas and Holy Name",
+      "web_lines": [
+        174,
+        174
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-032",
+      "label": "Christmas tree set up only on Christmas Eve",
+      "type": "SECONDARY_NAMED_SOURCE_OR_FAMILY_REPORT",
+      "section": "Christmas and Holy Name",
+      "web_lines": [
+        176,
+        176
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-033",
+      "label": "Household Nativity crib made with children",
+      "type": "AUTHOR_SUGGESTED_PRACTICE",
+      "section": "Christmas and Holy Name",
+      "web_lines": [
+        178,
+        178
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-034",
+      "label": "Christ Child figure added after Midnight Mass",
+      "type": "AUTHOR_SUGGESTED_PRACTICE",
+      "section": "Christmas and Holy Name",
+      "web_lines": [
+        179,
+        179
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-035",
+      "label": "German crib candles lit for each family member",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Christmas and Holy Name",
+      "web_lines": [
+        181,
+        181
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-036",
+      "label": "Family kneels before crib singing Silent Night",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Christmas and Holy Name",
+      "web_lines": [
+        181,
+        181
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-037",
+      "label": "Children stage a domestic Nativity play",
+      "type": "AUTHOR_SUGGESTED_PRACTICE",
+      "section": "Christmas and Holy Name",
+      "web_lines": [
+        182,
+        182
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-038",
+      "label": "Mexican Los Pastores neighborhood mystery play",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Christmas and Holy Name",
+      "web_lines": [
+        184,
+        184
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-039",
+      "label": "Mexican Las Posadas nightly household procession",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Christmas and Holy Name",
+      "web_lines": [
+        187,
+        187
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-040",
+      "label": "Christmas novena procession refused lodging at homes",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Christmas and Holy Name",
+      "web_lines": [
+        188,
+        188
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-041",
+      "label": "Italian Epiphany gift giving",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Christmas and Holy Name",
+      "web_lines": [
+        190,
+        190
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-042",
+      "label": "Children offer sacrifices as Christmas gifts",
+      "type": "AUTHOR_SUGGESTED_PRACTICE",
+      "section": "Christmas and Holy Name",
+      "web_lines": [
+        190,
+        190
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-043",
+      "label": "Religious Christmas cards exchanged",
+      "type": "AUTHOR_SUGGESTED_PRACTICE",
+      "section": "Christmas and Holy Name",
+      "web_lines": [
+        197,
+        197
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-044",
+      "label": "English manger-shaped Christmas mince pies",
+      "type": "HISTORICAL_CUSTOM_CLAIM_NOT_VERIFIED",
+      "section": "Christmas and Holy Name",
+      "web_lines": [
+        200,
+        200
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-045",
+      "label": "Saint Stephen's Day alms-box distribution",
+      "type": "HISTORICAL_CUSTOM_CLAIM_NOT_VERIFIED",
+      "section": "Christmas and Holy Name",
+      "web_lines": [
+        202,
+        202
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-046",
+      "label": "Dutch or German Christmas feast-pig savings boxes",
+      "type": "HISTORICAL_CUSTOM_CLAIM_NOT_VERIFIED",
+      "section": "Christmas and Holy Name",
+      "web_lines": [
+        204,
+        204
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-047",
+      "label": "Saint John's Day wine blessed in church",
+      "type": "POSSIBLE_RITUAL_OR_AUTHORITY_CLAIM_REQUIRES_PRIMARY_CHECK",
+      "section": "Christmas and Holy Name",
+      "web_lines": [
+        205,
+        205
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-048",
+      "label": "Saint John's wine passed with loving greetings",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Christmas and Holy Name",
+      "web_lines": [
+        206,
+        206
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-049",
+      "label": "Youngest child leads Holy Innocents household celebration",
+      "type": "SECONDARY_NAMED_SOURCE_OR_FAMILY_REPORT",
+      "section": "Christmas and Holy Name",
+      "web_lines": [
+        207,
+        207
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-050",
+      "label": "Family attends year-end parish thanksgiving",
+      "type": "AUTHOR_SUGGESTED_PRACTICE",
+      "section": "Christmas and Holy Name",
+      "web_lines": [
+        208,
+        208
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-051",
+      "label": "Home Te Deum sung on New Year's Eve",
+      "type": "AUTHOR_SUGGESTED_PRACTICE",
+      "section": "Christmas and Holy Name",
+      "web_lines": [
+        209,
+        209
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-052",
+      "label": "German New Year's family pretzel supper",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Christmas and Holy Name",
+      "web_lines": [
+        210,
+        210
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-053",
+      "label": "Children thank parents during New Year's gathering",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Christmas and Holy Name",
+      "web_lines": [
+        210,
+        210
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-054",
+      "label": "Holy Name litany used in family prayer",
+      "type": "AUTHOR_SUGGESTED_PRACTICE",
+      "section": "Christmas and Holy Name",
+      "web_lines": [
+        211,
+        211
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-055",
+      "label": "Epiphany Magi story staged as mystery play",
+      "type": "HISTORICAL_CUSTOM_CLAIM_NOT_VERIFIED",
+      "section": "Epiphany",
+      "web_lines": [
+        215,
+        215
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-056",
+      "label": "Magi crib figures moved progressively toward Christ Child",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Epiphany",
+      "web_lines": [
+        217,
+        217
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-057",
+      "label": "Epiphany blessed chalk inscriptions over door",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Epiphany",
+      "web_lines": [
+        219,
+        219
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-058",
+      "label": "Epiphany bread salt and eggs taken for blessing",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Epiphany",
+      "web_lines": [
+        220,
+        220
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-059",
+      "label": "Blessed Epiphany bread distributed to poor",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Epiphany",
+      "web_lines": [
+        221,
+        221
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-060",
+      "label": "Epiphany incense burned at household altar",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Epiphany",
+      "web_lines": [
+        221,
+        221
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-061",
+      "label": "Epiphany gold and frankincense blessed",
+      "type": "POSSIBLE_RITUAL_OR_AUTHORITY_CLAIM_REQUIRES_PRIMARY_CHECK",
+      "section": "Epiphany",
+      "web_lines": [
+        222,
+        222
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-062",
+      "label": "Epiphany vigil water blessed for domestic use",
+      "type": "POSSIBLE_RITUAL_OR_AUTHORITY_CLAIM_REQUIRES_PRIMARY_CHECK",
+      "section": "Epiphany",
+      "web_lines": [
+        223,
+        223
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-063",
+      "label": "Pastoral Epiphany house blessing",
+      "type": "POSSIBLE_RITUAL_OR_AUTHORITY_CLAIM_REQUIRES_PRIMARY_CHECK",
+      "section": "Epiphany",
+      "web_lines": [
+        224,
+        224
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-064",
+      "label": "Father sprinkles rooms with Epiphany water",
+      "type": "AUTHOR_SUGGESTED_PRACTICE",
+      "section": "Epiphany",
+      "web_lines": [
+        227,
+        227
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-065",
+      "label": "English Twelfth Night cake with concealed beans",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Epiphany",
+      "web_lines": [
+        228,
+        228
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-066",
+      "label": "Twelfth Night bean kings crowned for party",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Epiphany",
+      "web_lines": [
+        229,
+        229
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-067",
+      "label": "Household candles carried to Candlemas blessing",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Candlemas",
+      "web_lines": [
+        238,
+        238
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-068",
+      "label": "Candlemas candle procession through rooms at home",
+      "type": "AUTHOR_SUGGESTED_PRACTICE",
+      "section": "Candlemas",
+      "web_lines": [
+        239,
+        239
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-069",
+      "label": "Blessed Candlemas candles used during sickness",
+      "type": "AUTHOR_SUGGESTED_PRACTICE",
+      "section": "Candlemas",
+      "web_lines": [
+        242,
+        242
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-070",
+      "label": "German Candlemas Rosary before decorated crib",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Candlemas",
+      "web_lines": [
+        243,
+        243
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-071",
+      "label": "Christmas tree branches removed on Candlemas",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Candlemas",
+      "web_lines": [
+        243,
+        243
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-072",
+      "label": "Moderate pre-Lenten carnival at home",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Lent and Palm Sunday",
+      "web_lines": [
+        250,
+        250
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-073",
+      "label": "Family Shrove Tuesday procession collecting old palms",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Lent and Palm Sunday",
+      "web_lines": [
+        252,
+        252
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-074",
+      "label": "Old blessed palms burned before Ash Wednesday",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Lent and Palm Sunday",
+      "web_lines": [
+        252,
+        252
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-075",
+      "label": "Lenten acts counted with small sacrifice beads",
+      "type": "SECONDARY_NAMED_SOURCE_OR_FAMILY_REPORT",
+      "section": "Lent and Palm Sunday",
+      "web_lines": [
+        254,
+        254
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-076",
+      "label": "Palm Sunday blessed palms placed in every room",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Lent and Palm Sunday",
+      "web_lines": [
+        257,
+        257
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-077",
+      "label": "Small palm crosses worn during Holy Week",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Lent and Palm Sunday",
+      "web_lines": [
+        257,
+        257
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-078",
+      "label": "Trapp family puts palms throughout farm property",
+      "type": "SECONDARY_NAMED_SOURCE_OR_FAMILY_REPORT",
+      "section": "Lent and Palm Sunday",
+      "web_lines": [
+        258,
+        258
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-079",
+      "label": "Spruce and palm bouquets blessed on Palm Sunday",
+      "type": "SECONDARY_NAMED_SOURCE_OR_FAMILY_REPORT",
+      "section": "Lent and Palm Sunday",
+      "web_lines": [
+        259,
+        259
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-080",
+      "label": "Early Holy Week seasonal household cleaning",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Lent and Palm Sunday",
+      "web_lines": [
+        260,
+        260
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-081",
+      "label": "Trapp Holy Week hand clapper replaces dinner bell",
+      "type": "SECONDARY_NAMED_SOURCE_OR_FAMILY_REPORT",
+      "section": "Holy Week and Easter Vigil",
+      "web_lines": [
+        262,
+        262
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-082",
+      "label": "Trapp Holy Thursday spring herb soup",
+      "type": "SECONDARY_NAMED_SOURCE_OR_FAMILY_REPORT",
+      "section": "Holy Week and Easter Vigil",
+      "web_lines": [
+        262,
+        262
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-083",
+      "label": "Trapp Holy Thursday family bread-and-wine observance",
+      "type": "SECONDARY_NAMED_SOURCE_OR_FAMILY_REPORT",
+      "section": "Holy Week and Easter Vigil",
+      "web_lines": [
+        263,
+        263
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-084",
+      "label": "Trapp Holy Thursday Easter lamb supper",
+      "type": "SECONDARY_NAMED_SOURCE_OR_FAMILY_REPORT",
+      "section": "Holy Week and Easter Vigil",
+      "web_lines": [
+        264,
+        264
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-085",
+      "label": "Trapp family watches at altar of repose",
+      "type": "SECONDARY_NAMED_SOURCE_OR_FAMILY_REPORT",
+      "section": "Holy Week and Easter Vigil",
+      "web_lines": [
+        264,
+        264
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-086",
+      "label": "Mexican Holy Thursday visits to multiple churches",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Holy Week and Easter Vigil",
+      "web_lines": [
+        265,
+        265
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-087",
+      "label": "Trapp Good Friday silence and simple standing meal",
+      "type": "SECONDARY_NAMED_SOURCE_OR_FAMILY_REPORT",
+      "section": "Holy Week and Easter Vigil",
+      "web_lines": [
+        266,
+        266
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-088",
+      "label": "Trapp Good Friday noon-to-three household devotions",
+      "type": "SECONDARY_NAMED_SOURCE_OR_FAMILY_REPORT",
+      "section": "Holy Week and Easter Vigil",
+      "web_lines": [
+        267,
+        267
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-089",
+      "label": "New Easter fire carried home in lantern",
+      "type": "SECONDARY_NAMED_SOURCE_OR_FAMILY_REPORT",
+      "section": "Holy Week and Easter Vigil",
+      "web_lines": [
+        269,
+        269
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-090",
+      "label": "Blessed Easter firewood burnt during thunderstorms",
+      "type": "FOLK_BELIEF_OR_DRAMATIZATION_NOT_ENDORSED",
+      "section": "Holy Week and Easter Vigil",
+      "web_lines": [
+        270,
+        270
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-091",
+      "label": "Holy Saturday domestic procession with Easter water",
+      "type": "AUTHOR_SUGGESTED_PRACTICE",
+      "section": "Holy Week and Easter Vigil",
+      "web_lines": [
+        271,
+        271
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-092",
+      "label": "Holy Saturday family baptismal vow renewal",
+      "type": "AUTHOR_SUGGESTED_PRACTICE",
+      "section": "Holy Week and Easter Vigil",
+      "web_lines": [
+        274,
+        274
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-093",
+      "label": "Easter-water procession through farm outbuildings",
+      "type": "AUTHOR_SUGGESTED_PRACTICE",
+      "section": "Holy Week and Easter Vigil",
+      "web_lines": [
+        275,
+        275
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-094",
+      "label": "Easter eggs decorated with Resurrection symbols",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Holy Week and Easter Vigil",
+      "web_lines": [
+        276,
+        276
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-095",
+      "label": "Slovak Easter basket blessed on Holy Saturday",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Holy Week and Easter Vigil",
+      "web_lines": [
+        277,
+        277
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-096",
+      "label": "Blessed Easter foods eaten across Easter days",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Holy Week and Easter Vigil",
+      "web_lines": [
+        280,
+        280
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-097",
+      "label": "Polish Easter butter lamb and shared egg",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Holy Week and Easter Vigil",
+      "web_lines": [
+        281,
+        281
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-098",
+      "label": "Roman Easter table and lamb blessed",
+      "type": "HISTORICAL_CUSTOM_CLAIM_NOT_VERIFIED",
+      "section": "Holy Week and Easter Vigil",
+      "web_lines": [
+        282,
+        282
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-099",
+      "label": "Easter liturgical symbols arranged around home",
+      "type": "AUTHOR_SUGGESTED_PRACTICE",
+      "section": "Easter and Ascension",
+      "web_lines": [
+        286,
+        286
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-100",
+      "label": "Family Easter hymn and prayer celebration",
+      "type": "AUTHOR_SUGGESTED_PRACTICE",
+      "section": "Easter and Ascension",
+      "web_lines": [
+        288,
+        288
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-101",
+      "label": "Easter octave triple Alleluia used before dinner",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Easter and Ascension",
+      "web_lines": [
+        289,
+        289
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-102",
+      "label": "Families join Rogation procession and Mass",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Easter and Ascension",
+      "web_lines": [
+        293,
+        293
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-103",
+      "label": "Rogation Litany prayed at home altar",
+      "type": "AUTHOR_SUGGESTED_PRACTICE",
+      "section": "Easter and Ascension",
+      "web_lines": [
+        293,
+        293
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-104",
+      "label": "Ascension mystery play staged by families",
+      "type": "SECONDARY_NAMED_SOURCE_OR_FAMILY_REPORT",
+      "section": "Easter and Ascension",
+      "web_lines": [
+        297,
+        297
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-105",
+      "label": "Veni Creator sung at family Ascension prayer",
+      "type": "AUTHOR_SUGGESTED_PRACTICE",
+      "section": "Easter and Ascension",
+      "web_lines": [
+        298,
+        298
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-106",
+      "label": "Pentecost neighborhood family outing",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Pentecost",
+      "web_lines": [
+        301,
+        301
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-107",
+      "label": "Pentecost altar decorated in red with dove",
+      "type": "AUTHOR_SUGGESTED_PRACTICE",
+      "section": "Pentecost",
+      "web_lines": [
+        302,
+        302
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-108",
+      "label": "Family confirmation thanksgiving on Pentecost",
+      "type": "AUTHOR_SUGGESTED_PRACTICE",
+      "section": "Pentecost",
+      "web_lines": [
+        304,
+        304
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-109",
+      "label": "May flowers maintained at domestic Marian altar",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "May Marian devotions",
+      "web_lines": [
+        342,
+        342
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-110",
+      "label": "Family Rosary prayed during May",
+      "type": "AUTHOR_SUGGESTED_PRACTICE",
+      "section": "May Marian devotions",
+      "web_lines": [
+        342,
+        342
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-111",
+      "label": "May crowning of household Marian statue",
+      "type": "AUTHOR_SUGGESTED_PRACTICE",
+      "section": "May Marian devotions",
+      "web_lines": [
+        344,
+        344
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-112",
+      "label": "Children scatter flowers at Corpus Christi procession",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "After Pentecost / Sacred Heart / Christ the King",
+      "web_lines": [
+        350,
+        350
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-113",
+      "label": "Corpus Christi family Gospel and blessed-bread supper",
+      "type": "AUTHOR_SUGGESTED_PRACTICE",
+      "section": "After Pentecost / Sacred Heart / Christ the King",
+      "web_lines": [
+        350,
+        350
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-114",
+      "label": "Sacred Heart enthronement image placed at home",
+      "type": "AUTHOR_SUGGESTED_PRACTICE",
+      "section": "After Pentecost / Sacred Heart / Christ the King",
+      "web_lines": [
+        351,
+        351
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-115",
+      "label": "Family consecration read before Sacred Heart image",
+      "type": "AUTHOR_SUGGESTED_PRACTICE",
+      "section": "After Pentecost / Sacred Heart / Christ the King",
+      "web_lines": [
+        352,
+        352
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-116",
+      "label": "Family members sign Sacred Heart consecration document",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "After Pentecost / Sacred Heart / Christ the King",
+      "web_lines": [
+        361,
+        361
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-117",
+      "label": "Monthly family Holy Hour before First Friday",
+      "type": "SECONDARY_NAMED_SOURCE_OR_FAMILY_REPORT",
+      "section": "After Pentecost / Sacred Heart / Christ the King",
+      "web_lines": [
+        363,
+        363
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-118",
+      "label": "Overnight family home adoration vigil",
+      "type": "SECONDARY_NAMED_SOURCE_OR_FAMILY_REPORT",
+      "section": "After Pentecost / Sacred Heart / Christ the King",
+      "web_lines": [
+        365,
+        365
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-119",
+      "label": "Christ the King household novena or triduum",
+      "type": "AUTHOR_SUGGESTED_PRACTICE",
+      "section": "After Pentecost / Sacred Heart / Christ the King",
+      "web_lines": [
+        366,
+        366
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-120",
+      "label": "Assumption wild herb and flower bouquets gathered",
+      "type": "SECONDARY_NAMED_SOURCE_OR_FAMILY_REPORT",
+      "section": "Assumption and All Souls",
+      "web_lines": [
+        370,
+        370
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-121",
+      "label": "Assumption herb bundles blessed and distributed on property",
+      "type": "SECONDARY_NAMED_SOURCE_OR_FAMILY_REPORT",
+      "section": "Assumption and All Souls",
+      "web_lines": [
+        371,
+        371
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-122",
+      "label": "All Saints family litany of patron saints",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Assumption and All Souls",
+      "web_lines": [
+        375,
+        375
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-123",
+      "label": "Louisiana French clean and flower graves before All Saints",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Assumption and All Souls",
+      "web_lines": [
+        376,
+        376
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-124",
+      "label": "Louisiana All Saints cemetery procession and Rosary",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Assumption and All Souls",
+      "web_lines": [
+        376,
+        376
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-125",
+      "label": "Louisiana graveside All Souls night candle vigil",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Assumption and All Souls",
+      "web_lines": [
+        379,
+        379
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-126",
+      "label": "Mexican All Souls paper wreaths for graves",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Assumption and All Souls",
+      "web_lines": [
+        380,
+        380
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-127",
+      "label": "Mexican All Souls graveside blessing and candles",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Assumption and All Souls",
+      "web_lines": [
+        381,
+        381
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-128",
+      "label": "Children visit family graves at All Souls",
+      "type": "AUTHOR_SUGGESTED_PRACTICE",
+      "section": "Assumption and All Souls",
+      "web_lines": [
+        383,
+        383
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-129",
+      "label": "Mock-up of last rites explained to children",
+      "type": "SECONDARY_NAMED_SOURCE_OR_FAMILY_REPORT",
+      "section": "Assumption and All Souls",
+      "web_lines": [
+        384,
+        384
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-130",
+      "label": "Mexican baptism sponsors host celebration",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Sacraments and initiation",
+      "web_lines": [
+        389,
+        389
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-131",
+      "label": "Mexican padrinos lifelong spiritual kinship",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Sacraments and initiation",
+      "web_lines": [
+        391,
+        391
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-132",
+      "label": "Sponsors carry infant to Mexican baptism",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Sacraments and initiation",
+      "web_lines": [
+        393,
+        393
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-133",
+      "label": "Mexican children named for feast-day saint",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Sacraments and initiation",
+      "web_lines": [
+        396,
+        396
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-134",
+      "label": "Baptism anniversary attended by godparents",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Sacraments and initiation",
+      "web_lines": [
+        397,
+        397
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-135",
+      "label": "Baptismal promises renewed on baptism anniversary",
+      "type": "AUTHOR_SUGGESTED_PRACTICE",
+      "section": "Sacraments and initiation",
+      "web_lines": [
+        399,
+        399
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-136",
+      "label": "Religious books and symbols given as baptism gifts",
+      "type": "AUTHOR_SUGGESTED_PRACTICE",
+      "section": "Sacraments and initiation",
+      "web_lines": [
+        400,
+        400
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-137",
+      "label": "Baptismal candle preserved for life events",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Sacraments and initiation",
+      "web_lines": [
+        401,
+        401
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-138",
+      "label": "Confirmation marked by new family responsibility",
+      "type": "SECONDARY_NAMED_SOURCE_OR_FAMILY_REPORT",
+      "section": "Sacraments and initiation",
+      "web_lines": [
+        403,
+        403
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-139",
+      "label": "Mexican infant confirmation reported historically",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Sacraments and initiation",
+      "web_lines": [
+        405,
+        405
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-140",
+      "label": "Slovak family asks mutual forgiveness before confession",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Sacraments and initiation",
+      "web_lines": [
+        407,
+        407
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-141",
+      "label": "Portuguese children kneel for parents forgiveness before confession",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Sacraments and initiation",
+      "web_lines": [
+        408,
+        408
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-142",
+      "label": "Spouses reconcile faults at examination of conscience",
+      "type": "SECONDARY_NAMED_SOURCE_OR_FAMILY_REPORT",
+      "section": "Sacraments and initiation",
+      "web_lines": [
+        409,
+        409
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-143",
+      "label": "Portuguese family Communion at major life events",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Sacraments and initiation",
+      "web_lines": [
+        412,
+        412
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-144",
+      "label": "Family prepares religious First Communion celebration",
+      "type": "AUTHOR_SUGGESTED_PRACTICE",
+      "section": "Sacraments and initiation",
+      "web_lines": [
+        416,
+        416
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-145",
+      "label": "First Communion home thanksgiving hymns",
+      "type": "AUTHOR_SUGGESTED_PRACTICE",
+      "section": "Sacraments and initiation",
+      "web_lines": [
+        419,
+        419
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-146",
+      "label": "Mexican First Communion celebration with sponsors",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Sacraments and initiation",
+      "web_lines": [
+        420,
+        420
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-147",
+      "label": "Mexican supervised courtship in family home",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Marriage",
+      "web_lines": [
+        425,
+        425
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-148",
+      "label": "Mexican wedding padrinos organized by objects",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Marriage",
+      "web_lines": [
+        426,
+        426
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-149",
+      "label": "Mexican wedding arras coins exchanged",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Marriage",
+      "web_lines": [
+        427,
+        427
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-150",
+      "label": "Mexican wedding lazo draped around couple",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Marriage",
+      "web_lines": [
+        428,
+        428
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-151",
+      "label": "Bride offers bouquet at Marian altar",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Marriage",
+      "web_lines": [
+        429,
+        429
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-152",
+      "label": "Russian German wedding intermediaries act for groom",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Marriage",
+      "web_lines": [
+        431,
+        431
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-153",
+      "label": "Russian German couple receive parental blessing",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Marriage",
+      "web_lines": [
+        432,
+        432
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-154",
+      "label": "Formal nuptial blessing during marriage Mass",
+      "type": "POSSIBLE_RITUAL_OR_AUTHORITY_CLAIM_REQUIRES_PRIMARY_CHECK",
+      "section": "Marriage",
+      "web_lines": [
+        433,
+        433
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-155",
+      "label": "Couple renews marriage promises on anniversary",
+      "type": "AUTHOR_SUGGESTED_PRACTICE",
+      "section": "Marriage",
+      "web_lines": [
+        438,
+        438
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-156",
+      "label": "Jubilee marriage blessing proposed from secondary manual",
+      "type": "POSSIBLE_RITUAL_OR_AUTHORITY_CLAIM_REQUIRES_PRIMARY_CHECK",
+      "section": "Marriage",
+      "web_lines": [
+        439,
+        439
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-157",
+      "label": "Louisiana funeral clocks stopped and mirrors veiled",
+      "type": "HISTORICAL_CUSTOM_CLAIM_NOT_VERIFIED",
+      "section": "Death and burial",
+      "web_lines": [
+        466,
+        466
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-158",
+      "label": "Louisiana customary graded mourning dress",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Death and burial",
+      "web_lines": [
+        467,
+        467
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-159",
+      "label": "Louisiana funeral attendees cast earth on coffin",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Death and burial",
+      "web_lines": [
+        470,
+        470
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-160",
+      "label": "Annual Mass requested for family dead",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Death and burial",
+      "web_lines": [
+        471,
+        471
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-161",
+      "label": "Louisiana tomb pictures and household memorials",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Death and burial",
+      "web_lines": [
+        471,
+        471
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-162",
+      "label": "Mexican extended family gathers for night wake",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Death and burial",
+      "web_lines": [
+        472,
+        472
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-163",
+      "label": "Mexican mourners kiss and cast earth on coffin",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Death and burial",
+      "web_lines": [
+        473,
+        473
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-164",
+      "label": "Home holy-water font and evening child blessing",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Sacramentals and blessings",
+      "web_lines": [
+        475,
+        475
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-165",
+      "label": "Mexican children taught triple Gospel crosses",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Sacramentals and blessings",
+      "web_lines": [
+        478,
+        478
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-166",
+      "label": "Mexican crossed fingers kissed after devotional signs",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Sacramentals and blessings",
+      "web_lines": [
+        480,
+        480
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-167",
+      "label": "Slovak homemaker crosses loaf before slicing",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Sacramentals and blessings",
+      "web_lines": [
+        481,
+        481
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-168",
+      "label": "Hand-carved family crucifix preserved across generations",
+      "type": "HISTORICAL_CUSTOM_CLAIM_NOT_VERIFIED",
+      "section": "Sacramentals and blessings",
+      "web_lines": [
+        483,
+        483
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-169",
+      "label": "Family crucifix displayed and blessed",
+      "type": "AUTHOR_SUGGESTED_PRACTICE",
+      "section": "Sacramentals and blessings",
+      "web_lines": [
+        484,
+        484
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-170",
+      "label": "Catholic religious prints displayed in home",
+      "type": "AUTHOR_SUGGESTED_PRACTICE",
+      "section": "Sacramentals and blessings",
+      "web_lines": [
+        486,
+        486
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-171",
+      "label": "Blessed candles used at family altar",
+      "type": "AUTHOR_SUGGESTED_PRACTICE",
+      "section": "Sacramentals and blessings",
+      "web_lines": [
+        498,
+        498
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-172",
+      "label": "Blessed wedding ring kissed with prayer",
+      "type": "POSSIBLE_RITUAL_OR_AUTHORITY_CLAIM_REQUIRES_PRIMARY_CHECK",
+      "section": "Sacramentals and blessings",
+      "web_lines": [
+        500,
+        500
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-173",
+      "label": "Priest blesses new household on moving in",
+      "type": "POSSIBLE_RITUAL_OR_AUTHORITY_CLAIM_REQUIRES_PRIMARY_CHECK",
+      "section": "Sacramentals and blessings",
+      "web_lines": [
+        503,
+        503
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-174",
+      "label": "Priest blesses bridal chamber",
+      "type": "POSSIBLE_RITUAL_OR_AUTHORITY_CLAIM_REQUIRES_PRIMARY_CHECK",
+      "section": "Sacramentals and blessings",
+      "web_lines": [
+        505,
+        505
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-175",
+      "label": "Expectant mother blessed by priest",
+      "type": "POSSIBLE_RITUAL_OR_AUTHORITY_CLAIM_REQUIRES_PRIMARY_CHECK",
+      "section": "Sacramentals and blessings",
+      "web_lines": [
+        509,
+        509
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-176",
+      "label": "Churching of mother after childbirth",
+      "type": "POSSIBLE_RITUAL_OR_AUTHORITY_CLAIM_REQUIRES_PRIMARY_CHECK",
+      "section": "Sacramentals and blessings",
+      "web_lines": [
+        511,
+        511
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-177",
+      "label": "Special blessing of children at church",
+      "type": "POSSIBLE_RITUAL_OR_AUTHORITY_CLAIM_REQUIRES_PRIMARY_CHECK",
+      "section": "Sacramentals and blessings",
+      "web_lines": [
+        514,
+        514
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-178",
+      "label": "Philadelphia diocesan infant-blessing gatherings",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Sacramentals and blessings",
+      "web_lines": [
+        518,
+        518
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-179",
+      "label": "Parental blessings given to children",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Sacramentals and blessings",
+      "web_lines": [
+        520,
+        520
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-180",
+      "label": "Parent traces cross on kneeling child's forehead",
+      "type": "SECONDARY_NAMED_SOURCE_OR_FAMILY_REPORT",
+      "section": "Sacramentals and blessings",
+      "web_lines": [
+        524,
+        524
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-181",
+      "label": "Farm implements and livestock blessed",
+      "type": "POSSIBLE_RITUAL_OR_AUTHORITY_CLAIM_REQUIRES_PRIMARY_CHECK",
+      "section": "Sacramentals and blessings",
+      "web_lines": [
+        529,
+        529
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-182",
+      "label": "Blessing of boats at local US harbors",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Sacramentals and blessings",
+      "web_lines": [
+        531,
+        531
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-183",
+      "label": "Household prayer altar set up",
+      "type": "AUTHOR_SUGGESTED_PRACTICE",
+      "section": "Family prayer and domestic devotion",
+      "web_lines": [
+        533,
+        533
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-184",
+      "label": "Garden Marian or Sacred Heart grotto built",
+      "type": "AUTHOR_SUGGESTED_PRACTICE",
+      "section": "Family prayer and domestic devotion",
+      "web_lines": [
+        535,
+        535
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-185",
+      "label": "Children compile Catholic image scrapbooks",
+      "type": "SECONDARY_NAMED_SOURCE_OR_FAMILY_REPORT",
+      "section": "Family prayer and domestic devotion",
+      "web_lines": [
+        536,
+        536
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-186",
+      "label": "Sacred family singing practiced at home",
+      "type": "SECONDARY_NAMED_SOURCE_OR_FAMILY_REPORT",
+      "section": "Family prayer and domestic devotion",
+      "web_lines": [
+        538,
+        538
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-187",
+      "label": "Children sing Gregorian melodies in family",
+      "type": "SECONDARY_NAMED_SOURCE_OR_FAMILY_REPORT",
+      "section": "Family prayer and domestic devotion",
+      "web_lines": [
+        540,
+        540
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-188",
+      "label": "Children stage religious plays for feasts",
+      "type": "AUTHOR_SUGGESTED_PRACTICE",
+      "section": "Family prayer and domestic devotion",
+      "web_lines": [
+        541,
+        541
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-189",
+      "label": "Family prayers said communally at home",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Family prayer and domestic devotion",
+      "web_lines": [
+        546,
+        546
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-190",
+      "label": "Mass readings and collect included in night prayers",
+      "type": "SECONDARY_NAMED_SOURCE_OR_FAMILY_REPORT",
+      "section": "Family prayer and domestic devotion",
+      "web_lines": [
+        547,
+        547
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-191",
+      "label": "Laity recite some hours of Divine Office",
+      "type": "AUTHOR_SUGGESTED_PRACTICE",
+      "section": "Family prayer and domestic devotion",
+      "web_lines": [
+        554,
+        554
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-192",
+      "label": "Laity pray Little Office of Blessed Virgin",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Family prayer and domestic devotion",
+      "web_lines": [
+        555,
+        555
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-193",
+      "label": "Family Rosary with mystery meditation",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Family prayer and domestic devotion",
+      "web_lines": [
+        558,
+        558
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-194",
+      "label": "Irish Rosary extended with family intentions",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Family prayer and domestic devotion",
+      "web_lines": [
+        559,
+        559
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-195",
+      "label": "Louisiana neighborhood block Rosary gatherings",
+      "type": "REPORTED_OR_DESCRIBED_PRACTICE_UNVERIFIED",
+      "section": "Family prayer and domestic devotion",
+      "web_lines": [
+        560,
+        560
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-196",
+      "label": "October household Rosary frequently prayed",
+      "type": "AUTHOR_SUGGESTED_PRACTICE",
+      "section": "Family prayer and domestic devotion",
+      "web_lines": [
+        562,
+        562
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-197",
+      "label": "Family spiritual reading shared aloud",
+      "type": "AUTHOR_SUGGESTED_PRACTICE",
+      "section": "Family prayer and domestic devotion",
+      "web_lines": [
+        563,
+        563
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
+    },
+    {
+      "id": "STOKES55-EWTN-198",
+      "label": "Children read Mass lessons and father reads Martyrology at dinner",
+      "type": "SECONDARY_NAMED_SOURCE_OR_FAMILY_REPORT",
+      "section": "Family prayer and domestic devotion",
+      "web_lines": [
+        570,
+        570
+      ],
+      "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+      "identity_certified": false
     }
   ]
 }
