@@ -58,10 +58,13 @@ try{
   page.on('pageerror',e=>errors.push(String(e)));
   page.on('request',request=>{if(/^https?:/.test(request.url()))requests.push(request.url());});
   await page.goto(pathToFileURL(resolve(file)).href,{waitUntil:'load'});
-  assert.equal(await page.locator('#spxc-offline-replay').count(),1);
+  // The private replay panel is intentionally attached only when a documented
+  // subject opens; it is not a homepage dashboard.
+  assert.equal(await page.locator('#spxc-offline-replay').count(),0);
   await page.locator('#spxc-launch').click();
   if(width===390)await page.locator('#spxc-menu').click();
   await page.locator('[data-spxc-open="SPX-PILOT-01"]').first().click();
+  assert.equal(await page.locator('#spxc-offline-replay').count(),1);
   assert.equal(await page.locator('#spxc-offline-replay').isVisible(),true);
   assert.equal(await page.locator('.spxm-offline-choice').count(),3);
   await page.locator('.spxm-offline-choice').first().click();
