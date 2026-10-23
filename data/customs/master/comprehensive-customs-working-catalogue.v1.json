@@ -17,7 +17,8 @@
     "MCLOUGHLIN_REPRINT_CAUTION": "EWTN transcription attributed to Helen McLoughlin's 1954 Family Advent Customs includes postal ZIP codes in endnotes (which postdate 1954), so it cannot automatically be treated as a word-for-word 1954 first edition. Use EWTN online line locators and independently worded labels; do not attribute each wording to 1954.",
     "MCLOUGHLIN_NOT_UNIQUE_CUSTOMS": "70 new source observations grouped into 26 source action families, not 70 new customs or 26 confirmed distinct identities. Same action may appear in both Weiser and McLoughlin; author cites Weiser.",
     "STOKES_COMPILATION_DEPENDENCY": "Fr. Stokes 1955 is an additional separately authored source, but substantial passages depend on Maria von Trapp, Therese Mueller, Donald Attwater, Katherine Byles and other prior witnesses. 198 EWTN source-located action observations do NOT establish 198 independently attested or distinct practices.",
-    "STOKES_RITUAL_AND_DATE_CAUTION": "Stokes's 1955 imprimatur is historical and does not validate specific blessing texts, indulgences, or current/1962 Roman Ritual ownership. No printed page numbers claimed; all locators refer to EWTN web lines, which may shift."
+    "STOKES_RITUAL_AND_DATE_CAUTION": "Stokes's 1955 imprimatur is historical and does not validate specific blessing texts, indulgences, or current/1962 Roman Ritual ownership. No printed page numbers claimed; all locators refer to EWTN web lines, which may shift.",
+    "CATHOLICCULTURE_EXCERPT_WITNESS": "132 independently worded observations from 29 CatholicCulture excerpt pages attributed to Trapp (54), Berger (21), and Newland (57). ONLINE EXCERPT LOCATORS ONLY: No printed pages audited and no full-book completeness claim. CatholicCulture is a reproduction host, not three more independent authors. Do not treat Stokes/McLoughlin retellings as independent confirmation or these observations as distinct Catholic customs. Ritual claims need 1962 Roman Ritual validation."
   },
   "summary": {
     "source_observations": {
@@ -37,9 +38,10 @@
         "ch14_to_28": 121
       },
       "mcloughlin_fulltext_source_observations": 70,
-      "total_source_detail_rows_including_external": 1293,
-      "external_plus_weiser_count_note": "1,025 earlier Weiser research rows + 70 McLoughlin web-text observations + 198 Stokes 1955 compiled-source action observations = 1,293 research rows. Counts are non-deduplicated, non-additive with respect to unique customs; Stokes draws extensively on prior authors.",
-      "stokes_1955_online_source_action_observations": 198
+      "total_source_detail_rows_including_external": 1425,
+      "external_plus_weiser_count_note": "1,025 indexed Weiser book/detail research rows + 70 McLoughlin online observations + 198 Stokes compilation observations + 132 source-located Trapp/Berger/Newland excerpt actions = 1,425 research rows. These are not unique Catholic customs; author reuse, closely related actions and personal suggestions abound.",
+      "stokes_1955_online_source_action_observations": 198,
+      "catholicculture_trapp_berger_newland_excerpt_source_actions": 132
     },
     "identity_working_rows": {
       "previously_existing_master_identities": 56,
@@ -114,7 +116,10 @@
   "sources": {
     "weiser_1958": "Handbook of Christian Feasts and Customs",
     "weiser_1956": "Religious Customs in the Family",
-    "stokes_1955": "Bernward Stokes, How to Make Your House a Home: Family Liturgy and Religious Practices (imprimatur 24 Sep 1955), EWTN transcription"
+    "stokes_1955": "Bernward Stokes, How to Make Your House a Home: Family Liturgy and Religious Practices (imprimatur 24 Sep 1955), EWTN transcription",
+    "trapp_1955_excerpt": "Maria Augusta von Trapp, Around the Year with the Trapp Family (1955), as excerpted online; a Holy Thursday Trapp passage appears via later Family Life Bureau anthology",
+    "berger_1949_excerpt": "Florence Berger, Cooking for Christ (1949; later reprints), as excerpted online",
+    "newland_1956_excerpt": "Mary Reed Newland, The Year and Our Children (1956), as excerpted online"
   },
   "source_dataset_paths": {
     "master": "data/customs/master/working-master.v1.json",
@@ -141,7 +146,8 @@
     "coassociation_action_level": "data/customs/master/54-coassociation-action-level-relationship-review.v1.json",
     "mcloughlin_family_advent": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
     "mcloughlin_family_advent_reconciliation": "data/customs/master/mcloughlin-family-advent-action-family-reconciliation.v1.json",
-    "stokes_family_liturgy_1955": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json"
+    "stokes_family_liturgy_1955": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
+    "catholicculture_historical_author_excerpt_wave01": "data/customs/master/trapp-berger-newland-catholicculture-excerpts-wave01.v1.json"
   },
   "existing_master_identities": [
     {
@@ -17160,6 +17166,1328 @@
       ],
       "source_file": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
       "identity_certified": false
+    }
+  ],
+  "external_source_observations_catholicculture_excerpts": [
+    {
+      "id": "CCEX26-TRAPP-0381-01",
+      "label": "Make Christmas Eve an occasion for sacramental confession",
+      "source_key": "TRAPP-381",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=381",
+      "section": "DIRECTIONS",
+      "occasion": "Christmas Eve",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-TRAPP-0381-02",
+      "label": "Keep the Christmas gift room closed until its ceremonial opening",
+      "source_key": "TRAPP-381",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=381",
+      "section": "DIRECTIONS",
+      "occasion": "Christmas Eve",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-TRAPP-0381-03",
+      "label": "Set the Christmas crib alongside the Christmas tree",
+      "source_key": "TRAPP-381",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=381",
+      "section": "DIRECTIONS",
+      "occasion": "Christmas Eve",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-TRAPP-0381-04",
+      "label": "Tidy the household and dress for a feast before the vigil",
+      "source_key": "TRAPP-381",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=381",
+      "section": "DIRECTIONS",
+      "occasion": "Christmas Eve",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-TRAPP-0381-05",
+      "label": "Gather for a household rosary and Advent hymns before the Christmas-room opening",
+      "source_key": "TRAPP-381",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=381",
+      "section": "DIRECTIONS",
+      "occasion": "Christmas Eve",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-TRAPP-0381-06",
+      "label": "Ring a small bell to announce the Christ Child's arrival",
+      "source_key": "TRAPP-381",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=381",
+      "section": "DIRECTIONS",
+      "occasion": "Christmas Eve",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-TRAPP-0381-07",
+      "label": "Have the youngest child proclaim the Nativity narrative from Luke",
+      "source_key": "TRAPP-381",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=381",
+      "section": "DIRECTIONS",
+      "occasion": "Christmas Eve",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-TRAPP-0381-08",
+      "label": "Sing Silent Night in German and English before opening gifts",
+      "source_key": "TRAPP-381",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=381",
+      "section": "DIRECTIONS",
+      "occasion": "Christmas Eve",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-TRAPP-0381-09",
+      "label": "Exchange the greeting of a blessed Christmas before the gifts",
+      "source_key": "TRAPP-381",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=381",
+      "section": "DIRECTIONS",
+      "occasion": "Christmas Eve",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-TRAPP-0381-10",
+      "label": "Distribute Christmas gifts after a family religious observance",
+      "source_key": "TRAPP-381",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=381",
+      "section": "DIRECTIONS",
+      "occasion": "Christmas Eve",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-TRAPP-0381-11",
+      "label": "Serve carp with potato salad for the Christmas Eve supper",
+      "source_key": "TRAPP-381",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=381",
+      "section": "DIRECTIONS",
+      "occasion": "Christmas Eve",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-TRAPP-0381-12",
+      "label": "Rest before attending Midnight Mass",
+      "source_key": "TRAPP-381",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=381",
+      "section": "DIRECTIONS",
+      "occasion": "Christmas Eve",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-TRAPP-0789-01",
+      "label": "Replace household meal bell with wooden clapper during the Triduum",
+      "source_key": "TRAPP-789",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=789",
+      "section": "DIRECTIONS",
+      "occasion": "Holy Thursday",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-TRAPP-0789-02",
+      "label": "Assign the youngest family member to sound the clapper",
+      "source_key": "TRAPP-789",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=789",
+      "section": "DIRECTIONS",
+      "occasion": "Holy Thursday",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-TRAPP-0789-03",
+      "label": "Serve a Holy Thursday noon meal of spring-herb soup and spinach with eggs",
+      "source_key": "TRAPP-789",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=789",
+      "section": "DIRECTIONS",
+      "occasion": "Holy Thursday",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-TRAPP-0789-04",
+      "label": "Prepare a festive Holy Thursday family supper in Sunday attire",
+      "source_key": "TRAPP-789",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=789",
+      "section": "DIRECTIONS",
+      "occasion": "Holy Thursday",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-TRAPP-0789-05",
+      "label": "Distribute hot-cross buns after the father signs the first bun with a cross",
+      "source_key": "TRAPP-789",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=789",
+      "section": "DIRECTIONS",
+      "occasion": "Holy Thursday",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-TRAPP-0789-06",
+      "label": "Share household bread and wine in a father-led remembrance meal",
+      "source_key": "TRAPP-789",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=789",
+      "section": "DIRECTIONS",
+      "occasion": "Holy Thursday",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-TRAPP-0789-07",
+      "label": "Read the Gospel account of the Last Supper at the family meal",
+      "source_key": "TRAPP-789",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=789",
+      "section": "DIRECTIONS",
+      "occasion": "Holy Thursday",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-TRAPP-0789-08",
+      "label": "Serve roast paschal lamb at the household supper",
+      "source_key": "TRAPP-789",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=789",
+      "section": "DIRECTIONS",
+      "occasion": "Holy Thursday",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-TRAPP-0789-09",
+      "label": "Take turns praying before the reserved Sacrament at the altar of repose",
+      "source_key": "TRAPP-789",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=789",
+      "section": "DIRECTIONS",
+      "occasion": "Holy Thursday",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-TRAPP-0390-01",
+      "label": "Observe a quiet Good Friday family fast",
+      "source_key": "TRAPP-390",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=390",
+      "section": "DIRECTIONS",
+      "occasion": "Good Friday",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-TRAPP-0390-02",
+      "label": "Eat a sparse Good Friday soup standing at an uncovered table",
+      "source_key": "TRAPP-390",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=390",
+      "section": "DIRECTIONS",
+      "occasion": "Good Friday",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-TRAPP-0390-03",
+      "label": "Restrict household conversation on Good Friday",
+      "source_key": "TRAPP-390",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=390",
+      "section": "DIRECTIONS",
+      "occasion": "Good Friday",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-TRAPP-0390-04",
+      "label": "Extinguish a household vigil light before the Marian image",
+      "source_key": "TRAPP-390",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=390",
+      "section": "DIRECTIONS",
+      "occasion": "Good Friday",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-TRAPP-0390-05",
+      "label": "Stop ordinary household activity from noon to three on Good Friday",
+      "source_key": "TRAPP-390",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=390",
+      "section": "DIRECTIONS",
+      "occasion": "Good Friday",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-TRAPP-0390-06",
+      "label": "Spend the three hours before the cross in reading and meditation",
+      "source_key": "TRAPP-390",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=390",
+      "section": "DIRECTIONS",
+      "occasion": "Good Friday",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-TRAPP-0390-07",
+      "label": "Interleave the three hours of silence with Passion hymns",
+      "source_key": "TRAPP-390",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=390",
+      "section": "DIRECTIONS",
+      "occasion": "Good Friday",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-TRAPP-0391-01",
+      "label": "Serve blessed Easter foods at the festive family breakfast",
+      "source_key": "TRAPP-391",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=391",
+      "section": "DIRECTIONS",
+      "occasion": "Easter",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-TRAPP-0391-02",
+      "label": "Decorate the Easter breakfast with eggs, spring branches and ribbons",
+      "source_key": "TRAPP-391",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=391",
+      "section": "DIRECTIONS",
+      "occasion": "Easter",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-TRAPP-0391-03",
+      "label": "Keep artistically painted Easter eggs as mementos through the year",
+      "source_key": "TRAPP-391",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=391",
+      "section": "DIRECTIONS",
+      "occasion": "Easter",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-TRAPP-0391-04",
+      "label": "Play Eierpecken egg-tapping at the Easter breakfast table",
+      "source_key": "TRAPP-391",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=391",
+      "section": "DIRECTIONS",
+      "occasion": "Easter",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-TRAPP-0393-01",
+      "label": "Begin nine days of household Pentecost preparation at the Ascension",
+      "source_key": "TRAPP-393",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=393",
+      "section": "DIRECTIONS",
+      "occasion": "Ascension-to-Pentecost",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-TRAPP-0393-02",
+      "label": "Discuss one gift of the Holy Ghost each evening of the preparation",
+      "source_key": "TRAPP-393",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=393",
+      "section": "DIRECTIONS",
+      "occasion": "Ascension-to-Pentecost",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-TRAPP-0393-03",
+      "label": "Reserve the eighth day for a reflection on the fruits of the Holy Ghost",
+      "source_key": "TRAPP-393",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=393",
+      "section": "DIRECTIONS",
+      "occasion": "Ascension-to-Pentecost",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-TRAPP-0393-04",
+      "label": "Meditate together on Veni Sancte Spiritus and Veni Creator Spiritus on the ninth day",
+      "source_key": "TRAPP-393",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=393",
+      "section": "DIRECTIONS",
+      "occasion": "Ascension-to-Pentecost",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-TRAPP-0393-05",
+      "label": "Attend Pentecost High Mass after the home preparation",
+      "source_key": "TRAPP-393",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=393",
+      "section": "DIRECTIONS",
+      "occasion": "Ascension-to-Pentecost",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-TRAPP-0075-01",
+      "label": "Plant Hungarian Christmas wheat on Saint Lucy's feast",
+      "source_key": "TRAPP-75",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=75",
+      "section": "DIRECTIONS",
+      "occasion": "Advent",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-TRAPP-0075-02",
+      "label": "Tend the sprouting wheat as an Advent devotional symbol",
+      "source_key": "TRAPP-75",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=75",
+      "section": "DIRECTIONS",
+      "occasion": "Advent",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-TRAPP-0075-03",
+      "label": "Set the sprouted wheat at the Christmas crib until Epiphany",
+      "source_key": "TRAPP-75",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=75",
+      "section": "DIRECTIONS",
+      "occasion": "Advent",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-TRAPP-1109-01",
+      "label": "Choose the Sacred Heart feast as a household family day",
+      "source_key": "TRAPP-1109",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1109",
+      "section": "DIRECTIONS",
+      "occasion": "Sacred Heart",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-TRAPP-1109-02",
+      "label": "Attend a festive Mass and breakfast for the chosen household feast",
+      "source_key": "TRAPP-1109",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1109",
+      "section": "DIRECTIONS",
+      "occasion": "Sacred Heart",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-TRAPP-1109-03",
+      "label": "Convene an annual family conference on the Sacred Heart feast",
+      "source_key": "TRAPP-1109",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1109",
+      "section": "DIRECTIONS",
+      "occasion": "Sacred Heart",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-TRAPP-1109-04",
+      "label": "Discuss family plans and personal commitments at the annual family gathering",
+      "source_key": "TRAPP-1109",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1109",
+      "section": "DIRECTIONS",
+      "occasion": "Sacred Heart",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-TRAPP-1109-05",
+      "label": "Report alternatives of Holy Family or Saint Joseph as a family feast day",
+      "source_key": "TRAPP-1109",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1109",
+      "section": "DIRECTIONS",
+      "occasion": "Sacred Heart",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-TRAPP-0411-01",
+      "label": "Prepare for Confirmation by studying the gifts and fruits of the Holy Ghost",
+      "source_key": "TRAPP-411",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=411",
+      "section": "DIRECTIONS",
+      "occasion": "Confirmation",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-TRAPP-0411-02",
+      "label": "Mark Confirmation with a responsibility-symbolizing gift such as a desk or watch",
+      "source_key": "TRAPP-411",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=411",
+      "section": "DIRECTIONS",
+      "occasion": "Confirmation",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-TRAPP-0411-03",
+      "label": "Commemorate anniversaries of children's sacraments with family feasting",
+      "source_key": "TRAPP-411",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=411",
+      "section": "DIRECTIONS",
+      "occasion": "Confirmation",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-TRAPP-0398-01",
+      "label": "Make a Marian feast pilgrimage to Maria Plain near Salzburg",
+      "source_key": "TRAPP-398",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=398",
+      "section": "DIRECTIONS",
+      "occasion": "Marian feasts",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-TRAPP-0398-02",
+      "label": "Pray repeated rosaries while walking to a pilgrimage shrine",
+      "source_key": "TRAPP-398",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=398",
+      "section": "DIRECTIONS",
+      "occasion": "Marian feasts",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-TRAPP-0398-03",
+      "label": "Light candles on arrival at the pilgrimage sanctuary",
+      "source_key": "TRAPP-398",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=398",
+      "section": "DIRECTIONS",
+      "occasion": "Marian feasts",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-TRAPP-1165-01",
+      "label": "Explain Holy Orders to children on an Ember Saturday",
+      "source_key": "TRAPP-1165",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1165",
+      "section": "DIRECTIONS",
+      "occasion": "Ember Days",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-TRAPP-1165-02",
+      "label": "Encourage household prayer for priests and attendance at ordinations",
+      "source_key": "TRAPP-1165",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1165",
+      "section": "DIRECTIONS",
+      "occasion": "Ember Days",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-TRAPP-0316-01",
+      "label": "Wake the family with a traditional Austrian Christmas morning carol",
+      "source_key": "TRAPP-316",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=316",
+      "section": "DIRECTIONS",
+      "occasion": "Christmas",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-BERGER-0463-01",
+      "label": "Collect bouquets of fragrant herbs for the Assumption",
+      "source_key": "BERGER-463",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=463",
+      "section": "DIRECTIONS",
+      "occasion": "Assumption",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-BERGER-0463-02",
+      "label": "Decorate the chapel with herbs and flowers on the Assumption",
+      "source_key": "BERGER-463",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=463",
+      "section": "DIRECTIONS",
+      "occasion": "Assumption",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-BERGER-0463-03",
+      "label": "Bring herbs and first fruits to an Assumption blessing",
+      "source_key": "BERGER-463",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=463",
+      "section": "DIRECTIONS",
+      "occasion": "Assumption",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-BERGER-0463-04",
+      "label": "Wear herb boutonnieres after the feast blessing",
+      "source_key": "BERGER-463",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=463",
+      "section": "DIRECTIONS",
+      "occasion": "Assumption",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-BERGER-0463-05",
+      "label": "Bring sheaves of wheat into an Assumption harvest procession",
+      "source_key": "BERGER-463",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=463",
+      "section": "DIRECTIONS",
+      "occasion": "Assumption",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-BERGER-0463-06",
+      "label": "Gather household garden fruits and herbs on the vigil of the Assumption",
+      "source_key": "BERGER-463",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=463",
+      "section": "DIRECTIONS",
+      "occasion": "Assumption",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-BERGER-0463-07",
+      "label": "Prepare a fruit-and-herb drink for the Assumption family table",
+      "source_key": "BERGER-463",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=463",
+      "section": "DIRECTIONS",
+      "occasion": "Assumption",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-BERGER-0463-08",
+      "label": "Serve an herb-themed dessert at an Assumption meal",
+      "source_key": "BERGER-463",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=463",
+      "section": "DIRECTIONS",
+      "occasion": "Assumption",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-BERGER-1103-01",
+      "label": "Decorate Yorkshire fishing boats for Saint Peter's patronal day",
+      "source_key": "BERGER-1103",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1103",
+      "section": "DIRECTIONS",
+      "occasion": "Saints Peter and Paul",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-BERGER-1103-02",
+      "label": "Seek a priestly blessing for new boats at the Saint Peter feast",
+      "source_key": "BERGER-1103",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1103",
+      "section": "DIRECTIONS",
+      "occasion": "Saints Peter and Paul",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-BERGER-1103-03",
+      "label": "Hold a fishermen's communal fork supper after waterfront ceremonies",
+      "source_key": "BERGER-1103",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1103",
+      "section": "DIRECTIONS",
+      "occasion": "Saints Peter and Paul",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-BERGER-1103-04",
+      "label": "Serve fish salad for a household or communal Saint Peter feast",
+      "source_key": "BERGER-1103",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1103",
+      "section": "DIRECTIONS",
+      "occasion": "Saints Peter and Paul",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-BERGER-1151-01",
+      "label": "Observe a fast on the Exaltation of the Holy Cross as a reported historic custom",
+      "source_key": "BERGER-1151",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1151",
+      "section": "DIRECTIONS",
+      "occasion": "Exaltation of the Cross",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-BERGER-1151-02",
+      "label": "Hold autumn trade fairs after Holy Cross Day",
+      "source_key": "BERGER-1151",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1151",
+      "section": "DIRECTIONS",
+      "occasion": "Exaltation of the Cross",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-BERGER-1151-03",
+      "label": "Associate named fairs with the patronage of a saint such as Saint Luke",
+      "source_key": "BERGER-1151",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1151",
+      "section": "DIRECTIONS",
+      "occasion": "Exaltation of the Cross",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-BERGER-0454-01",
+      "label": "Set a substantial Saint Joseph buffet for invited guests in Sicily",
+      "source_key": "BERGER-454",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=454",
+      "section": "DIRECTIONS",
+      "occasion": "Saint Joseph",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-BERGER-0454-02",
+      "label": "Invite the poor and disadvantaged to share a Saint Joseph feast",
+      "source_key": "BERGER-454",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=454",
+      "section": "DIRECTIONS",
+      "occasion": "Saint Joseph",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-BERGER-0454-03",
+      "label": "Arrange a cooperative village Saint Joseph feast in a public square",
+      "source_key": "BERGER-454",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=454",
+      "section": "DIRECTIONS",
+      "occasion": "Saint Joseph",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-BERGER-0454-04",
+      "label": "Begin a Saint Joseph meal with Holy Family dramatic roles",
+      "source_key": "BERGER-454",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=454",
+      "section": "DIRECTIONS",
+      "occasion": "Saint Joseph",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-BERGER-0454-05",
+      "label": "Prepare traditional sfinge cream puffs for the Saint Joseph celebration",
+      "source_key": "BERGER-454",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=454",
+      "section": "DIRECTIONS",
+      "occasion": "Saint Joseph",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-BERGER-0454-06",
+      "label": "Serve a vegetarian pasta-and-fennel dish at the Saint Joseph feast",
+      "source_key": "BERGER-454",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=454",
+      "section": "DIRECTIONS",
+      "occasion": "Saint Joseph",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-NEWLAND-0272-01",
+      "label": "Make an evergreen Advent wreath as a household project",
+      "source_key": "NEWLAND-272",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=272",
+      "section": "DIRECTIONS",
+      "occasion": "Advent",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-NEWLAND-0272-02",
+      "label": "Build a wreath from fresh greens in wet sand or a water pan",
+      "source_key": "NEWLAND-272",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=272",
+      "section": "DIRECTIONS",
+      "occasion": "Advent",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-NEWLAND-0272-03",
+      "label": "Set out four Advent candles in a circle with penitential ribbon",
+      "source_key": "NEWLAND-272",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=272",
+      "section": "DIRECTIONS",
+      "occasion": "Advent",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-NEWLAND-0272-04",
+      "label": "Assign family members to light successive Advent candles",
+      "source_key": "NEWLAND-272",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=272",
+      "section": "DIRECTIONS",
+      "occasion": "Advent",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-NEWLAND-0272-05",
+      "label": "Recite Advent Sunday collects at the domestic wreath",
+      "source_key": "NEWLAND-272",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=272",
+      "section": "DIRECTIONS",
+      "occasion": "Advent",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-NEWLAND-0272-06",
+      "label": "Let children explain the Advent wreath to houseguests",
+      "source_key": "NEWLAND-272",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=272",
+      "section": "DIRECTIONS",
+      "occasion": "Advent",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-NEWLAND-0433-01",
+      "label": "Make a home Advent calendar with opening picture-and-Scripture doors",
+      "source_key": "NEWLAND-433",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=433",
+      "section": "DIRECTIONS",
+      "occasion": "Advent",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-NEWLAND-0433-02",
+      "label": "Read the Advent calendar Scripture at evening prayers",
+      "source_key": "NEWLAND-433",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=433",
+      "section": "DIRECTIONS",
+      "occasion": "Advent",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-NEWLAND-0433-03",
+      "label": "Mark daily Advent mortifications on a homemade calendar",
+      "source_key": "NEWLAND-433",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=433",
+      "section": "DIRECTIONS",
+      "occasion": "Advent",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-NEWLAND-0433-04",
+      "label": "Make a paper Christmas-tree Advent calendar with one decoration per day",
+      "source_key": "NEWLAND-433",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=433",
+      "section": "DIRECTIONS",
+      "occasion": "Advent",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-NEWLAND-0273-01",
+      "label": "Present voluntary Advent self-denial as a gift to the Christ Child",
+      "source_key": "NEWLAND-273",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=273",
+      "section": "DIRECTIONS",
+      "occasion": "Advent",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-NEWLAND-0273-02",
+      "label": "Give up household desserts or treats on selected Advent days",
+      "source_key": "NEWLAND-273",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=273",
+      "section": "DIRECTIONS",
+      "occasion": "Advent",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-NEWLAND-0273-03",
+      "label": "Offer household chores done without complaint as Advent sacrifices",
+      "source_key": "NEWLAND-273",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=273",
+      "section": "DIRECTIONS",
+      "occasion": "Advent",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-NEWLAND-0273-04",
+      "label": "Count daily acts of Advent self-denial with beans in a gift box",
+      "source_key": "NEWLAND-273",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=273",
+      "section": "DIRECTIONS",
+      "occasion": "Advent",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-NEWLAND-0273-05",
+      "label": "Set aside quiet family craft-and-conversation time for Advent recollection",
+      "source_key": "NEWLAND-273",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=273",
+      "section": "DIRECTIONS",
+      "occasion": "Advent",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-NEWLAND-0273-06",
+      "label": "Make a Christ candle as a family Advent meditation project",
+      "source_key": "NEWLAND-273",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=273",
+      "section": "DIRECTIONS",
+      "occasion": "Advent",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-NEWLAND-0300-01",
+      "label": "Renew baptismal promises in the home during Easter night",
+      "source_key": "NEWLAND-300",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=300",
+      "section": "DIRECTIONS",
+      "occasion": "Easter Vigil",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-NEWLAND-0300-02",
+      "label": "Hold blessed candles during a home renewal of baptismal promises",
+      "source_key": "NEWLAND-300",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=300",
+      "section": "DIRECTIONS",
+      "occasion": "Easter Vigil",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-NEWLAND-0300-03",
+      "label": "Use holy water for the family after renewing baptismal promises",
+      "source_key": "NEWLAND-300",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=300",
+      "section": "DIRECTIONS",
+      "occasion": "Easter Vigil",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-NEWLAND-0300-04",
+      "label": "Repeat domestic baptismal-promise renewal on a child's baptism anniversary",
+      "source_key": "NEWLAND-300",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=300",
+      "section": "DIRECTIONS",
+      "occasion": "Easter Vigil",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-NEWLAND-1215-01",
+      "label": "Create Jesse-tree ornaments representing biblical salvation history",
+      "source_key": "NEWLAND-1215",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1215",
+      "section": "DIRECTIONS",
+      "occasion": "Advent",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-NEWLAND-1215-02",
+      "label": "Add individual patron-saint symbols made by children to the Jesse tree",
+      "source_key": "NEWLAND-1215",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1215",
+      "section": "DIRECTIONS",
+      "occasion": "Advent",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-NEWLAND-1215-03",
+      "label": "Search Scripture together for ornament themes and biblical figures",
+      "source_key": "NEWLAND-1215",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1215",
+      "section": "DIRECTIONS",
+      "occasion": "Advent",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-NEWLAND-1215-04",
+      "label": "Conduct a household tree blessing described in the source, with formula authority unverified",
+      "source_key": "NEWLAND-1215",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1215",
+      "section": "DIRECTIONS",
+      "occasion": "Advent",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-NEWLAND-1215-05",
+      "label": "Rehearse Advent songs and the O Antiphons during Jesse-tree preparation",
+      "source_key": "NEWLAND-1215",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1215",
+      "section": "DIRECTIONS",
+      "occasion": "Advent",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-NEWLAND-0274-01",
+      "label": "Make a decorated Christ candle for Christmas Eve",
+      "source_key": "NEWLAND-274",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=274",
+      "section": "DIRECTIONS",
+      "occasion": "Advent",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-NEWLAND-0274-02",
+      "label": "Cover a German-style Christ candle with a Marian blue mantle",
+      "source_key": "NEWLAND-274",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=274",
+      "section": "DIRECTIONS",
+      "occasion": "Advent",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-NEWLAND-0274-03",
+      "label": "Design candle imagery tracing Adam and Eve to the Nativity",
+      "source_key": "NEWLAND-274",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=274",
+      "section": "DIRECTIONS",
+      "occasion": "Advent",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-NEWLAND-0274-04",
+      "label": "Read Genesis and other biblical passages while preparing the Christ candle",
+      "source_key": "NEWLAND-274",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=274",
+      "section": "DIRECTIONS",
+      "occasion": "Advent",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-NEWLAND-0274-05",
+      "label": "Light the Christ candle on Christmas Eve at midnight",
+      "source_key": "NEWLAND-274",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=274",
+      "section": "DIRECTIONS",
+      "occasion": "Advent",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-NEWLAND-1065-01",
+      "label": "Prepare a home Paschal candle during Lent",
+      "source_key": "NEWLAND-1065",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1065",
+      "section": "DIRECTIONS",
+      "occasion": "Holy Saturday",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-NEWLAND-1065-02",
+      "label": "Mark the candle with cross, Alpha, Omega and year",
+      "source_key": "NEWLAND-1065",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1065",
+      "section": "DIRECTIONS",
+      "occasion": "Holy Saturday",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-NEWLAND-1065-03",
+      "label": "Decorate the candle with pelican, phoenix, lamb, grapes and wheat symbols",
+      "source_key": "NEWLAND-1065",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1065",
+      "section": "DIRECTIONS",
+      "occasion": "Holy Saturday",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-NEWLAND-1065-04",
+      "label": "Insert five cloves into a home Paschal candle as a devotional image",
+      "source_key": "NEWLAND-1065",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1065",
+      "section": "DIRECTIONS",
+      "occasion": "Holy Saturday",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-NEWLAND-1065-05",
+      "label": "Have the first child awake light the candle on Easter morning",
+      "source_key": "NEWLAND-1065",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1065",
+      "section": "DIRECTIONS",
+      "occasion": "Holy Saturday",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-NEWLAND-0911-01",
+      "label": "Construct a twelve-candle family Stations candelabrum",
+      "source_key": "NEWLAND-911",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=911",
+      "section": "DIRECTIONS",
+      "occasion": "Lent",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-NEWLAND-0911-02",
+      "label": "Use a purple-bean counter for children's Lenten self-denial",
+      "source_key": "NEWLAND-911",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=911",
+      "section": "DIRECTIONS",
+      "occasion": "Lent",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-NEWLAND-0911-03",
+      "label": "Veil household sacred pictures with purple cloth for Passiontide",
+      "source_key": "NEWLAND-911",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=911",
+      "section": "DIRECTIONS",
+      "occasion": "Lent",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-NEWLAND-0911-04",
+      "label": "Extinguish one candle after each family Stations meditation",
+      "source_key": "NEWLAND-911",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=911",
+      "section": "DIRECTIONS",
+      "occasion": "Lent",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-NEWLAND-0911-05",
+      "label": "Put out the last light at the twelfth Station to represent Christ's death",
+      "source_key": "NEWLAND-911",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=911",
+      "section": "DIRECTIONS",
+      "occasion": "Lent",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-NEWLAND-0277-01",
+      "label": "Wrap a homemade Christmas surprise ball around a small Christ Child or devotional medal",
+      "source_key": "NEWLAND-277",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=277",
+      "section": "DIRECTIONS",
+      "occasion": "Advent",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-NEWLAND-0277-02",
+      "label": "Conceal saint-symbolic trinkets in successive layers of the surprise ball",
+      "source_key": "NEWLAND-277",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=277",
+      "section": "DIRECTIONS",
+      "occasion": "Advent",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-NEWLAND-1214-01",
+      "label": "Celebrate Saint Barbara at dinner with a feast-day greeting",
+      "source_key": "NEWLAND-1214",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1214",
+      "section": "DIRECTIONS",
+      "occasion": "Saint Barbara",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-NEWLAND-1214-02",
+      "label": "Tell Saint Barbara's martyrdom narrative to children",
+      "source_key": "NEWLAND-1214",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1214",
+      "section": "DIRECTIONS",
+      "occasion": "Saint Barbara",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-NEWLAND-1214-03",
+      "label": "Pray the collect of Saint Barbara at night prayers",
+      "source_key": "NEWLAND-1214",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1214",
+      "section": "DIRECTIONS",
+      "occasion": "Saint Barbara",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-NEWLAND-1218-01",
+      "label": "Make handmade presents in Advent as a purposeful family devotion",
+      "source_key": "NEWLAND-1218",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1218",
+      "section": "DIRECTIONS",
+      "occasion": "Immaculate Conception",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-NEWLAND-1218-02",
+      "label": "Discuss the mysteries of the Annunciation and Immaculate Conception while crafting Advent presents",
+      "source_key": "NEWLAND-1218",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1218",
+      "section": "DIRECTIONS",
+      "occasion": "Immaculate Conception",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-NEWLAND-1256-01",
+      "label": "Use Jonah and gourd symbols when decorating Easter eggs",
+      "source_key": "NEWLAND-1256",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1256",
+      "section": "DIRECTIONS",
+      "occasion": "Holy Week",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-NEWLAND-0286-01",
+      "label": "Move Magi figures gradually toward the household crib during Christmastide",
+      "source_key": "NEWLAND-286",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=286",
+      "section": "DIRECTIONS",
+      "occasion": "Epiphany",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-NEWLAND-0286-02",
+      "label": "Offer the Advent-made gifts to the Christ Child on Epiphany",
+      "source_key": "NEWLAND-286",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=286",
+      "section": "DIRECTIONS",
+      "occasion": "Epiphany",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-NEWLAND-0286-03",
+      "label": "Bake a crown-shaped Epiphany cake",
+      "source_key": "NEWLAND-286",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=286",
+      "section": "DIRECTIONS",
+      "occasion": "Epiphany",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-NEWLAND-0286-04",
+      "label": "Hide a bean and pea in a cake for mock king-and-queen roles",
+      "source_key": "NEWLAND-286",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=286",
+      "section": "DIRECTIONS",
+      "occasion": "Epiphany",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-NEWLAND-0286-05",
+      "label": "Make children's crowns for a Twelfth Night family feast",
+      "source_key": "NEWLAND-286",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=286",
+      "section": "DIRECTIONS",
+      "occasion": "Epiphany",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-NEWLAND-1234-01",
+      "label": "Hold a family Rogation procession to pray for crops",
+      "source_key": "NEWLAND-1234",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1234",
+      "section": "DIRECTIONS",
+      "occasion": "Rogation Days",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-NEWLAND-1234-02",
+      "label": "Invite a priest to lead prayers or bless crops when available",
+      "source_key": "NEWLAND-1234",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1234",
+      "section": "DIRECTIONS",
+      "occasion": "Rogation Days",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-NEWLAND-1234-03",
+      "label": "Report French-Canadian blessed grain scattered in fields on Rogation days",
+      "source_key": "NEWLAND-1234",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1234",
+      "section": "DIRECTIONS",
+      "occasion": "Rogation Days",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "CCEX26-NEWLAND-1234-04",
+      "label": "Join a monastery's Rogation procession before Mass when nearby",
+      "source_key": "NEWLAND-1234",
+      "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1234",
+      "section": "DIRECTIONS",
+      "occasion": "Rogation Days",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
     }
   ]
 }
