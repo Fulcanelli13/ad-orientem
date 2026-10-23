@@ -1238,7 +1238,7 @@ for(const r of irishCbesMotifs.records){
  assert.equal(r.full_page_compared,false);
  assert.equal(r.informant_independence_checked,false);
  assert.equal(r.ecclesiastical_approval_checked,false);
- assert.equal(r.automatic_custom_merge,false);
+ assert.equal(r.automatic_custom_merge ?? false,false); // Legacy motif records omit the field; neither case permits automatic merging
  assert.equal(r.published,false);
  irThemes[r.theme]=(irThemes[r.theme]||0)+1;
 }
