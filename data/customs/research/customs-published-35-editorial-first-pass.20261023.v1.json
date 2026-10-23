@@ -24,13 +24,15 @@
     "published_records": 35,
     "p1_priority": 13,
     "p2_priority": 22,
-    "targeted_primary_text_reviews": 11,
+    "targeted_primary_text_reviews": 19,
     "history_duplicate_fixes_proposed": 11,
     "fully_editorially_certified": 0,
     "new_publications": 0,
     "historical_context_witnesses": 4,
     "p1_source_wording_discrepancies_corrected": 1,
-    "history_narratives_with_direct_institutional_witnesses": 4
+    "history_narratives_with_direct_institutional_witnesses": 4,
+    "p1_source_level_adjudications": 13,
+    "p1_final_editorial_certifications": 0
   },
   "records": [
     {
@@ -144,11 +146,17 @@
         "RIT-1878",
         "SCHOLA-RELEVAILLES"
       ],
-      "primary_text_review_this_batch": "REFERENCE_CROSSWALK_ONLY",
+      "primary_text_review_this_batch": "TARGETED_MATCH_AND_SCOPE",
       "verified_witness_urls": [],
       "history_copy_action": "PRESERVED",
       "new_custom_approved": false,
-      "needs_additional_historical_or_regional_signoff": true
+      "needs_additional_historical_or_regional_signoff": true,
+      "p1_source_text_review": {
+        "status": "PRACTICE_CONFIRMED_HISTORICAL_RITUAL_REQUIREMENT_BOUNDED",
+        "url": "https://schola-sainte-cecile.com/2015/02/02/benediction-des-relevailles/",
+        "finding": "Traditional 40-day timing is attested as imitation of the Presentation; not evidence for an obligatory waiting period, maternal impurity or a bar to entering church.",
+        "claim_level_signoff": "SOURCE_SCOPE_ONLY_NOT_FINAL_BILINGUAL_ACCEPTANCE"
+      }
     },
     {
       "custom_id": "DEV-001",
@@ -216,11 +224,17 @@
         "AURIESVILLE-RESTORATION-CUSTOM",
         "LITCHFIELD-LOURDES-PILGRIMAGE-CUSTOM"
       ],
-      "primary_text_review_this_batch": "REFERENCE_CROSSWALK_ONLY",
+      "primary_text_review_this_batch": "TARGETED_MATCH_AND_SCOPE",
       "verified_witness_urls": [],
       "history_copy_action": "PRESERVED",
       "new_custom_approved": false,
-      "needs_additional_historical_or_regional_signoff": true
+      "needs_additional_historical_or_regional_signoff": true,
+      "p1_source_text_review": {
+        "status": "GENERAL_PILGRIMAGE_CONFIRMED_LOCAL_SCHEDULE_HELD",
+        "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html",
+        "finding": "2001 Vatican Directory treats pilgrimage as popular piety. Does not verify each 2025/2026 shrine event or universal 1962 pilgrimage schedule.",
+        "claim_level_signoff": "SOURCE_SCOPE_ONLY_NOT_FINAL_BILINGUAL_ACCEPTANCE"
+      }
     },
     {
       "custom_id": "DEV-009",
@@ -281,11 +295,17 @@
         "PONTMAIN-CANDLE-CUSTOM",
         "BETTBRUNN-VOTIVE-CANDLES-CUSTOM"
       ],
-      "primary_text_review_this_batch": "REFERENCE_CROSSWALK_ONLY",
+      "primary_text_review_this_batch": "TARGETED_MATCH_AND_SCOPE",
       "verified_witness_urls": [],
       "history_copy_action": "PRESERVED",
       "new_custom_approved": false,
-      "needs_additional_historical_or_regional_signoff": true
+      "needs_additional_historical_or_regional_signoff": true,
+      "p1_source_text_review": {
+        "status": "PRACTICE_CONFIRMED_LOCAL_OFFER_DETAILS_HELD",
+        "url": "https://www.lourdes-france.com/pelerin-dun-jour/les-cierges/",
+        "finding": "Lourdes shrine explicitly presents lighting a candle as extending a pilgrim's prayer. No universal prices or spiritual effects can be inferred.",
+        "claim_level_signoff": "SOURCE_SCOPE_ONLY_NOT_FINAL_BILINGUAL_ACCEPTANCE"
+      }
     },
     {
       "custom_id": "DEAD-001",
@@ -407,7 +427,13 @@
       "history_copy_action": "PRESERVED",
       "new_custom_approved": false,
       "needs_additional_historical_or_regional_signoff": true,
-      "source_text_disposition": "EXACT_PRIMARY_FRENCH_WITNESS_CHECKED_AND_PUBLIC_COPY_CORRECTED"
+      "source_text_disposition": "EXACT_PRIMARY_FRENCH_WITNESS_CHECKED_AND_PUBLIC_COPY_CORRECTED",
+      "p1_source_text_review": {
+        "status": "EXACT_SOURCE_TEXT_CORRECTED",
+        "url": "https://liturgie.catholique.fr/lexique/chandeleur/",
+        "finding": "The French liturgical lexicon says candles were traditionally burned auprès des morts, beside the deceased, not mourants (dying); article, folio and registry corrected.",
+        "claim_level_signoff": "SOURCE_SCOPE_ONLY_NOT_FINAL_BILINGUAL_ACCEPTANCE"
+      }
     },
     {
       "custom_id": "DOM-013",
@@ -465,11 +491,17 @@
         "BOOK-BLESSINGS-BLAISE",
         "ORDO-BLAISE-1962"
       ],
-      "primary_text_review_this_batch": "REFERENCE_CROSSWALK_ONLY",
+      "primary_text_review_this_batch": "TARGETED_MATCH_AND_SCOPE",
       "verified_witness_urls": [],
       "history_copy_action": "PRESERVED",
       "new_custom_approved": false,
-      "needs_additional_historical_or_regional_signoff": true
+      "needs_additional_historical_or_regional_signoff": true,
+      "p1_source_text_review": {
+        "status": "HISTORICAL_RITUAL_TEXT_CONFIRMED_MODERN_DISTINCT",
+        "url": "https://www.ewtn.com/catholicism/library/roman-ritual-part-2-11883",
+        "finding": "Philip T Weller's Roman Ritual transcription has a blessing of candles specifically for St Blaise, followed by the blessing with crossed candles; distinguish from the modern Book of Blessings.",
+        "claim_level_signoff": "SOURCE_SCOPE_ONLY_NOT_FINAL_BILINGUAL_ACCEPTANCE"
+      }
     },
     {
       "custom_id": "NDAY-001",
@@ -583,11 +615,17 @@
       "all_attestation_source_ids": [
         "BR-DIOCESE-STJOSEPH-2026"
       ],
-      "primary_text_review_this_batch": "REFERENCE_CROSSWALK_ONLY",
+      "primary_text_review_this_batch": "TARGETED_MATCH_AND_SCOPE",
       "verified_witness_urls": [],
       "history_copy_action": "PRESERVED",
       "new_custom_approved": false,
-      "needs_additional_historical_or_regional_signoff": true
+      "needs_additional_historical_or_regional_signoff": true,
+      "p1_source_text_review": {
+        "status": "PRACTICE_AND_SICILIAN_ATTRIBUTION_CONFIRMED_EXACT_AGE_HELD",
+        "url": "https://www.diobr.org/news/st-joseph-cathedral-st-joseph-altar-1",
+        "finding": "19 March 2026 Baton Rouge diocesan account explicitly identifies Sicilian Catholic roots, St Joseph food altar, charitable purpose and local parish blessing; it does not establish an exact medieval foundation.",
+        "claim_level_signoff": "SOURCE_SCOPE_ONLY_NOT_FINAL_BILINGUAL_ACCEPTANCE"
+      }
     },
     {
       "custom_id": "SANT-001",
@@ -733,11 +771,17 @@
         "RIT-STJOHN-WINE-1962-TRANSCRIPTION",
         "UK-PARISH-STJOHN-WINE"
       ],
-      "primary_text_review_this_batch": "REFERENCE_CROSSWALK_ONLY",
+      "primary_text_review_this_batch": "TARGETED_MATCH_AND_SCOPE",
       "verified_witness_urls": [],
       "history_copy_action": "PRESERVED",
       "new_custom_approved": false,
-      "needs_additional_historical_or_regional_signoff": true
+      "needs_additional_historical_or_regional_signoff": true,
+      "p1_source_text_review": {
+        "status": "HISTORICAL_RITUAL_TEXT_CONFIRMED_EVENT_AVAILABILITY_HELD",
+        "url": "https://www.catholicculture.org/culture/liturgicalyear/prayers/view.cfm?id=1380",
+        "finding": "Philip T Weller 1964 Roman Ritual transcription describes priest blessing wine on St John feast, after last Gospel. Legendary poison story belongs to ritual's explanatory account; not an established historical event or automatic local offering.",
+        "claim_level_signoff": "SOURCE_SCOPE_ONLY_NOT_FINAL_BILINGUAL_ACCEPTANCE"
+      }
     },
     {
       "custom_id": "BLSS-004",
@@ -804,7 +848,13 @@
       "historical_context_source_ids": [
         "EBK-ADVENT-WREATH-WICHERN-2025"
       ],
-      "historical_context_decision": "VERIFIED_INSTITUTIONAL_WITNESS_WITH_EXPLICIT_LIMITATIONS"
+      "historical_context_decision": "VERIFIED_INSTITUTIONAL_WITNESS_WITH_EXPLICIT_LIMITATIONS",
+      "p1_source_text_review": {
+        "status": "HISTORICAL_SOURCE_VERIFIED_AND_LINKED",
+        "url": "https://www.erzbistum-koeln.de/presse_und_medien/magazin/Der-Adventskranz-Bedeutung-und-Ursprung-des-Adventskranzes/",
+        "finding": "Cologne archdiocese describes Wichern 1839 multi-candle model and later Catholic four-candle adoption; official historic source separately linked in published article.",
+        "claim_level_signoff": "SOURCE_SCOPE_ONLY_NOT_FINAL_BILINGUAL_ACCEPTANCE"
+      }
     },
     {
       "custom_id": "ADVT-002",
@@ -829,7 +879,7 @@
       "all_attestation_source_ids": [
         "CATHCULTURE-ADVENT-MANGER-STRAW-2014"
       ],
-      "primary_text_review_this_batch": "REFERENCE_CROSSWALK_ONLY",
+      "primary_text_review_this_batch": "TARGETED_MATCH_AND_SCOPE",
       "verified_witness_urls": [],
       "history_copy_action": "PUBLISHED_SOURCE_BOUNDED_INSTITUTIONAL_HISTORICAL_CONTEXT",
       "new_custom_approved": false,
@@ -837,7 +887,13 @@
       "historical_context_source_ids": [
         "EBK-ADVENT-MANGER-STRAW-2025"
       ],
-      "historical_context_decision": "VERIFIED_INSTITUTIONAL_WITNESS_WITH_EXPLICIT_LIMITATIONS"
+      "historical_context_decision": "VERIFIED_INSTITUTIONAL_WITNESS_WITH_EXPLICIT_LIMITATIONS",
+      "p1_source_text_review": {
+        "status": "HISTORICAL_SOURCE_VERIFIED_FRENCH_ORIGIN_HELD",
+        "url": "https://www.erzbistum-koeln.de/presse_und_medien/magazin/Was-ist-Advent-Ursprung-und-Bedeutung-der-Vorweihnachtszeit/",
+        "finding": "Cologne archdiocese also describes manger straw after good deeds in German Catholic regions; 2014 Catholic Culture French attribution is not proof of French-only origin.",
+        "claim_level_signoff": "SOURCE_SCOPE_ONLY_NOT_FINAL_BILINGUAL_ACCEPTANCE"
+      }
     },
     {
       "custom_id": "ADVT-003",
@@ -873,7 +929,13 @@
       "historical_context_source_ids": [
         "MEX-CULTURA-POSADAS-ORIGINS-2017"
       ],
-      "historical_context_decision": "VERIFIED_INSTITUTIONAL_WITNESS_WITH_EXPLICIT_LIMITATIONS"
+      "historical_context_decision": "VERIFIED_INSTITUTIONAL_WITNESS_WITH_EXPLICIT_LIMITATIONS",
+      "p1_source_text_review": {
+        "status": "HISTORICAL_SOURCE_VERIFIED_COMPETING_ORIGINS_SHOWN",
+        "url": "https://www.gob.mx/cultura/articulos/y-tu-como-celebras-las-posadas?idiom=es",
+        "finding": "Mexican Ministry of Culture explicitly gives Acolman 1587 and Andalusian transmission as rival origin accounts; do not choose an exclusive origin.",
+        "claim_level_signoff": "SOURCE_SCOPE_ONLY_NOT_FINAL_BILINGUAL_ACCEPTANCE"
+      }
     },
     {
       "custom_id": "XMAS-001",
@@ -933,7 +995,13 @@
       ],
       "history_copy_action": "REPLACED_DESCRIPTION_DUPLICATION_SOURCE_BOUNDED",
       "new_custom_approved": false,
-      "needs_additional_historical_or_regional_signoff": true
+      "needs_additional_historical_or_regional_signoff": true,
+      "p1_source_text_review": {
+        "status": "PRACTICE_CONFIRMED_ST_PHILIP_LINK_QUALIFIED",
+        "url": "https://www.chicagocatholic.com/chicagoland/-/article/2026/03/18/visiting-seven-churches-on-holy-thursday-a-longstanding-tradition",
+        "finding": "Chicago Catholic March 2026 documents visits after Mass; St Philip Neri ancestry is attributed to what many say, not independent origin proof; no fixed seven-stop requirement.",
+        "claim_level_signoff": "SOURCE_SCOPE_ONLY_NOT_FINAL_BILINGUAL_ACCEPTANCE"
+      }
     },
     {
       "custom_id": "ROGA-001",
@@ -958,11 +1026,17 @@
       "all_attestation_source_ids": [
         "NEWLAND-ROGATION-FAMILY-1956"
       ],
-      "primary_text_review_this_batch": "REFERENCE_CROSSWALK_ONLY",
+      "primary_text_review_this_batch": "TARGETED_MATCH_AND_SCOPE",
       "verified_witness_urls": [],
       "history_copy_action": "REPLACED_DESCRIPTION_DUPLICATION_SOURCE_BOUNDED",
       "new_custom_approved": false,
-      "needs_additional_historical_or_regional_signoff": true
+      "needs_additional_historical_or_regional_signoff": true,
+      "p1_source_text_review": {
+        "status": "FAMILY_ADAPTATION_CONFIRMED_NO_LAY_RITUAL_PERMISSION",
+        "url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1234",
+        "finding": "Family guide proposes household processional prayer for crops, distinct from formal Church Rogations; does not authorize faithful to simulate prescribed blessings reserved to clergy.",
+        "claim_level_signoff": "SOURCE_SCOPE_ONLY_NOT_FINAL_BILINGUAL_ACCEPTANCE"
+      }
     },
     {
       "custom_id": "EPIP-001",
@@ -1121,7 +1195,13 @@
       "historical_context_source_ids": [
         "DAYTON-MARIAN-MARY-GARDENS-HISTORY"
       ],
-      "historical_context_decision": "VERIFIED_INSTITUTIONAL_WITNESS_WITH_EXPLICIT_LIMITATIONS"
+      "historical_context_decision": "VERIFIED_INSTITUTIONAL_WITNESS_WITH_EXPLICIT_LIMITATIONS",
+      "p1_source_text_review": {
+        "status": "HISTORICAL_SOURCE_VERIFIED_AND_LINKED",
+        "url": "https://udayton.edu/marianlibrary/marysgardens/b/background-on-marys-gardens.php",
+        "finding": "Dayton Marian Library documents 1932 Woods Hole public garden and 1951 Philadelphia initiative; medieval Marian plant-name symbolism does not establish a medieval origin for modern formal garden layouts.",
+        "claim_level_signoff": "SOURCE_SCOPE_ONLY_NOT_FINAL_BILINGUAL_ACCEPTANCE"
+      }
     }
   ],
   "history_source_registry_property": "data/customs/source-registry.v1.json#historical_context_sources"
