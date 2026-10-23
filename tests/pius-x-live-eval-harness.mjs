@@ -37,7 +37,7 @@ assert.equal(result.summary.originalPassagesIndependentlyCollated,0);
 assert.equal(result.summary.semanticRetrievalTested,false);
 assert.equal(composeCalls,3);
 assert.equal(verifyCalls,3);
-assert(result.records.every(r=>r.manualRubric.originalWitnessAccuracy==='UNASSESSABLE UNTIL PRIMARY TEXT COLLATED'));
+assert(result.records.every(r=>r.manualRubric.originalWitnessAccuracy==='ORIGINAL LANGUAGE FRAGMENTS PRESENT; FULL CONTEXT AND TRANSLATION NOT CERTIFIED'));
 assert(result.records.every(r=>r.manualVerdict==='NOT_REVIEWED'));
 const holds=result.records.filter(r=>r.expected==='MUST_HOLD_BEFORE_MODEL');
 assert.deepEqual(holds.map(x=>x.status),['held','held','held','held']);
