@@ -46,6 +46,42 @@ for(const record of p12.source_exceptions){
   }
 }
 
+
+const p13=read("data/geography/research/sacred-places-p13-identity-adjudication.v1.json");
+assert.equal(p13.schema,"AO_SACRED_PLACES_P13_IDENTITY_ADJUDICATION_V1");
+assert.equal(p13.summary.original_exception_slots,23);
+assert.equal(p13.summary.source_identity_resolved_this_pass,3);
+assert.equal(p13.summary.source_identity_still_open,20);
+assert.equal(p13.summary.new_source_bounded_reviews,13);
+assert.equal(p13.summary.canonical_places_changed,0);
+assert.equal(p13.summary.canonical_pins_added,0);
+assert.equal(p13.summary.new_publication_approvals,0);
+assert.equal(p13.decisions.length,23);
+assert.deepEqual(
+  p13.decisions.map(x=>x.candidate_id).sort(),
+  p12.source_exceptions.map(x=>x.candidate_id).sort(),
+  "P13 cannot drop or invent source-exception stable IDs"
+);
+const resolvedP13=p13.decisions.filter(row=>row.source_identity_gate==="RESOLVED");
+assert.deepEqual(resolvedP13.map(x=>x.candidate_id).sort(),[
+  "candidate:SG-INV-0093",
+  "candidate:SG-INV-0654",
+  "candidate:SG-INV-0696"
+]);
+assert.equal(p13.decisions.filter(x=>x.source_review_20261024).length,13);
+for(const row of p13.decisions){
+  assert.equal(row.publication_status,"HOLD_NO_NEW_PLACE_NO_PIN");
+  assert.equal(row.canonical_match,"NO_EXACT_PLACE_ID_CONFIRMED");
+  if(!row.source_review_20261024)continue;
+  assert.ok(row.source_review_20261024.urls.length>0);
+  assert.ok(row.source_review_20261024.urls.every(url=>/^https:\/\//.test(url)),
+    "Site-specific adjudication must carry direct URLs: "+row.candidate_id);
+  assert.ok(row.source_review_20261024.basis,"Missing evidence boundary: "+row.candidate_id);
+  assert.ok(row.source_review_20261024.next,"Missing publication hold: "+row.candidate_id);
+}
+assert.equal(p13.map_or_publication_proposals.length,3);
+assert.equal(geo.places.length,347,"P13 is evidence-only; no canonical Place addition");
+
 const p11ExactChurchFootprints=[
   ["place:FR:basilique-saint-sernin-toulouse","osm:way:260584755",43.60838,1.44188],
   ["place:IT:santa-maria-maggiore-rome","osm:way:131564482",41.89761,12.49846],
