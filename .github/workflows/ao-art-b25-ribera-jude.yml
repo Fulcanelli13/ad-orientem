@@ -1,0 +1,60 @@
+name: B25 verified Ribera Saint Judas P001092 acquisition
+on:
+  push:
+    branches: [research/b19-original-image-acquisition-probe-20261023]
+    paths: [.github/workflows/ao-art-b25-ribera-jude.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  exact-object:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check 'Pillow>=11,<13'
+      - name: Check Prado original object P001092 and rights-gated source acquisition
+        run: |
+          python - <<'PY'
+          import pathlib,json
+          p=pathlib.Path('data/research/sacred-art-b25-ribera-jude.manifest.json')
+          m=json.loads(p.read_text(encoding='utf-8'))
+          assert len(m['records'])==1
+          x=m['records'][0]
+          assert x['inventory_number']=='P001092'
+          assert x['editorial_gate']=='NOT_APPROVED'
+          assert x['record_id']=='ART-usepe-de-ibera-aint-udas-haddeus'
+          PY
+          python scripts/research/sacred_art_acquire.py \
+            --manifest data/research/sacred-art-b25-ribera-jude.manifest.json \
+            --output artifacts/b25-ribera-jude \
+            --max-files 1 \
+            --max-bytes 12000000 \
+            --prior-audit data/research/no-prior-b25-ribera.csv
+      - name: Preserve original file and full rights metadata as research artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ao-b25-ribera-p001092-original-and-audit
+          path: artifacts/b25-ribera-jude/
+          retention-days: 7
+          if-no-files-found: warn
+      - name: Commit file hash audit with original inventory and resolution hold
+        if: success()
+        run: |
+          cp artifacts/b25-ribera-jude/Acquisition_results.csv data/research/sacred-art-b25-ribera-jude.audit.csv
+          cp artifacts/b25-ribera-jude/Acquisition_summary.json data/research/sacred-art-b25-ribera-jude.audit-summary.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/research/sacred-art-b25-ribera-jude.audit.csv data/research/sacred-art-b25-ribera-jude.audit-summary.json
+          git commit -m 'research: retain source evidence for exact Prado Saint Judas P001092 and resolution hold'
+          for i in 1 2 3; do
+            git fetch origin research/b19-original-image-acquisition-probe-20261023
+            git rebase origin/research/b19-original-image-acquisition-probe-20261023
+            git push origin HEAD:research/b19-original-image-acquisition-probe-20261023 && exit 0
+            sleep 4
+          done
+          exit 1
