@@ -69,6 +69,59 @@ assert.equal(items.filter(x=>x.ownership!=="P3_EXISTING_HELD_SOURCE_BRIDGE").len
 assert.deepEqual(new Set(items.filter(x=>x.ownership==="P3_EXISTING_HELD_SOURCE_BRIDGE").map(x=>x.sourceBeatId)),new Set(originalHolds));
 assert.equal(new Set(items.map(x=>x.id)).size,20);
 assert.deepEqual(items.map(x=>x.priority).slice(0,8),Array(8).fill("P0"));
+const proposals=items.filter(x=>x.priority==="P0");
+assert.equal(proposals.length,8);
+assert.equal(ledger.totals.p0ResearchRecommendations,8);
+assert.equal(ledger.totals.p0RecommendedOriginalSourceVerseEntries,38);
+assert.equal(ledger.totals.p0AcceptedEditorialDecisions,0);
+const proposedById=new Map(proposals.map(x=>[x.id,x]));
+assert.deepEqual(proposals.map(x=>x.researchRecommendation.group),[
+ "NOAH_ARK","PASSOVER_EXODUS","JOHN_PASSION","JOHN_PASSION",
+ "PAUL_ROME","PAUL_ROME","APOCALYPTIC_VISION","NEW_JERUSALEM_VISION"
+]);
+let originalEntries=0;
+for(const item of proposals){
+ const recommendation=item.researchRecommendation;
+ assert.equal(item.currentState,"RESEARCH_RECOMMENDATION_READY_NOT_ACCEPTED");
+ assert.equal(recommendation.status,"SOURCE_EVIDENCE_PROPOSED_NOT_SELECTED");
+ assert.equal(recommendation.acceptedByHumanEditor,false);
+ assert.equal(recommendation.publicationApproved,false);
+ assert.equal(recommendation.sourceWordsAndVersesNotRewritten,true);
+ assert.equal(recommendation.readyForHumanEditorialDecision,true);
+ assert.deepEqual(recommendation.refs,item.reviewReferences);
+ assert.equal(recommendation.dependenciesToAccept.length,3);
+ assert.ok(recommendation.reason.length>100);
+ assert.ok(recommendation.contrast.length>65);
+ for(const ref of recommendation.refs){
+  originalEntries+=exactVerse(ref,"dr-challoner").length;
+  for(const ed of editions)assert.ok(exactVerse(ref,ed).length>0);
+ }
+ for(const linked of recommendation.links)
+  assert.ok(linked.startsWith("HS-W-UI-")||proposedById.has(linked),
+    "Paired decisions must be owned by an existing source/UI item");
+}
+assert.equal(originalEntries,38);
+const p0Trial=id=>proposedById.get(id).researchRecommendation;
+assert.deepEqual(p0Trial("HS-W-SRC-HS-CF-01").refs,["Genesis 6:9–14","Genesis 6:17–22"]);
+assert.deepEqual(p0Trial("HS-W-SRC-EXODUS-12-FIRSTBORN").refs,["Exodus 12:29–30"]);
+assert.deepEqual(p0Trial("HS-W-SRC-JOHN-19-PIERCED-SIDE").refs,["John 19:31–37"]);
+assert.deepEqual(p0Trial("HS-W-SRC-HS-CF-06").refs,["John 19:38–42"]);
+assert.deepEqual(p0Trial("HS-W-SRC-HS-CF-11").refs,["Acts 28:16"]);
+assert.deepEqual(p0Trial("HS-W-SRC-HS-P3-CF-13").refs,["Acts 28:17–22"]);
+assert.deepEqual(p0Trial("HS-W-SRC-HS-P3-CF-14").refs,["Revelation 4:1–2"]);
+assert.deepEqual(p0Trial("HS-W-SRC-HS-P3-CF-15").refs,["Revelation 21:9–11"]);
+assert.deepEqual(p0Trial("HS-W-SRC-HS-CF-06").links,["HS-W-SRC-JOHN-19-PIERCED-SIDE"]);
+assert.deepEqual(p0Trial("HS-W-SRC-HS-CF-11").links,["HS-W-SRC-HS-P3-CF-13"]);
+const workbench=readFileSync(new URL("../previews/scripture-mining-workbench-20261017.html",import.meta.url),"utf8");
+assert.ok(workbench.includes("historiaProofP0Jump"));
+assert.ok(workbench.includes("historiaProofDecisionReview"));
+assert.ok(workbench.includes("historiaP0Worklist.sourceDecisionWorklist"));
+assert.ok(workbench.includes("if(!bridge)previous=p;"),
+ "Held source comparisons cannot silently close the omitted main Scripture span");
+assert.ok(workbench.includes('if(bridge&&highPriorityBridgesOnly&&beat.readthroughTrial?.refs)'));
+assert.ok(workbench.includes('if(!bridge&&showBridges&&(!highPriorityBridgesOnly||isPriorityHistoriaBridge(beat))&&afterTrial)'));
+assert.ok(workbench.includes('recommendation.acceptedByHumanEditor!==false'));
+
 for(const item of items){
  assert.equal(item.kind,"SOURCE_SELECTION");
  assert.equal(item.approval.selected,false);
