@@ -138,8 +138,10 @@ export function loadSourceOnlyGate(chapters,oldAnnexes){
  // canonical node ID and narrow-proposition claim. Never load full P6 answers.
  const wave=json('pius-x-six-document-wave2-20261023.v1.json');
  if(wave.schema!=='AO_SPX_P2_SIX_DOCUMENT_BULK_WAVE2_V1'||
-    wave.status!=='PRIVATE_BOUNDED_SOURCE_RESEARCH_ONLY'||
-    wave.summary?.documents!==6||wave.summary?.newlyMappedNodes!==51||
+    wave.status!=='PRIVATE_BOUNDED_SOURCE_RESEARCH_WITH_IMMUTABLE_P6_PARTIAL_HOLDS'||
+    wave.summary?.documents!==6||wave.summary?.screenedExistingNodeIDs!==51||
+    wave.summary?.newlyMappedNodes!==46||wave.summary?.originalP6PartialHolds!==5||
+    wave.summary?.eligibleOriginalSubjects!==21||
     wave.summary?.distinctChapters!==25||wave.summary?.newOriginalLanguageSnippets!==35||
     wave.summary?.completeAnswersCertified!==0||wave.summary?.publicationApprovals!==0||
     wave.witnesses?.length!==35||wave.records?.length!==51)
@@ -167,16 +169,25 @@ export function loadSourceOnlyGate(chapters,oldAnnexes){
   const u=new URL(url);
   return u.pathname.replace(/\/(?:en|fr|it|la|de|es|pt|pl|ar)\//,'/{lang}/');
  };
- const seen2=new Set(),waveChapters=new Set();
+ const seen2=new Set(),waveChapters=new Set();let heldPartial=0;
  for(const r of wave.records){
   const c=chapters.get(r.chapterId);
-  if(!c||c.partial||c.sourceClass!=='PAPAL_DOCUMENT_ADAPTATION'||
+  if(!c||
      r.translationApproved!==false||r.fullAnswerApproved!==false||
      r.publicationApproved!==false||
      r.status!=='ORIGINAL_LANGUAGE_SOURCE_SPOTCHECK_NOT_FULL_ANSWER_CERTIFIED'||
      seen2.has(r.nodeId)||!r.witnessIds?.length||
      !r.narrowClaimScope||r.narrowClaimScope.length<12)
    throw new Error('Invalid source-owner wave two research mapping '+r.nodeId);
+  if(c.partial||c.sourceClass==='SOURCE_SCOPE_EDITORIAL_HOLD'){
+   if(!c.partial||r.status!=='HOLD_ORIGINAL_P6_PARTIAL_EVIDENCE'||
+      r.narrowClaimScope!==null||!r.holdReason||gate.has(c.id))
+    throw new Error('A partially sourced papal subject cannot enter live inference');
+   heldPartial++;continue;
+  }
+  if(c.sourceClass!=='PAPAL_DOCUMENT_ADAPTATION'||
+     r.status!=='ORIGINAL_LANGUAGE_SOURCE_SPOTCHECK_NOT_FULL_ANSWER_CERTIFIED')
+   throw new Error('Wave-two source owner is not approved for even narrow inference');
   if(gate.get(c.id)?.has(r.nodeId))throw new Error('Cannot overwrite older original-language research mapping');
   const node=c.nodes.find(x=>x.id===r.nodeId);
   if(!node||node.q.en!==r.questionEn)throw new Error('Original P6 dialogue ID/question mismatch');
@@ -198,9 +209,9 @@ export function loadSourceOnlyGate(chapters,oldAnnexes){
     'Any contemporary personal judgement, later liturgical law, or quoted authority requires separate sources',
     'Do not treat original P6 English or French editorial wording as papal quotation']});
  }
- if(seen2.size!==51||waveChapters.size!==25||gate.size!==37||
-    [...gate.values()].reduce((n,x)=>n+x.size,0)!==87)
-  throw new Error('Wave-two source-only coverage must equal 37 subjects and 87 of 423 nodes');
+ if(seen2.size!==46||heldPartial!==5||waveChapters.size!==21||gate.size!==33||
+    [...gate.values()].reduce((n,x)=>n+x.size,0)!==82)
+  throw new Error('Wave-two source-only coverage must equal 33 subjects and 82 nodes while preserving five partial holds');
  return gate;
 }
 
