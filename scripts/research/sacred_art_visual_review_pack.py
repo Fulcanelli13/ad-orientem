@@ -65,11 +65,11 @@ const $=id=>document.getElementById(id);
 function esc(t){return String(t??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function save(){try{localStorage.setItem(STORE,JSON.stringify(reviews))}catch(e){}}
 const opts=['PENDING','SUITABLE_VISUALLY','REJECT_VISUALLY','NEEDS_SOURCE_RECHECK'];
-function visible(r){const query=$('q').value.toLocaleLowerCase().trim(), d=reviews[r.asset_source_id]||{};return
+function visible(r){const query=$('q').value.toLocaleLowerCase().trim(), d=reviews[r.asset_source_id]||{};return (
  (!query||[r.title,r.artist,r.asset_source_id].some(v=>v.toLocaleLowerCase().includes(query)))&&
  (!$('tier').value||r.acquisition_tier===$('tier').value)&&
  (!$('resolution').value||($('resolution').value==='low'?Math.max(+r.measured_width,+r.measured_height)<2400:Math.max(+r.measured_width,+r.measured_height)>=2400))&&
- (!$('decision').value||(d.visual||'PENDING')===$('decision').value);}
+ (!$('decision').value||(d.visual||'PENDING')===$('decision').value));}
 function render(){
  const shown=records.filter(visible);
  const reviewed=records.filter(r=>(reviews[r.asset_source_id]?.visual||'PENDING')!=='PENDING').length;
