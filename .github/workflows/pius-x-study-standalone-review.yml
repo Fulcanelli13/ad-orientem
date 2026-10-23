@@ -23,6 +23,7 @@ on:
       - 'tests/pius-x-generative-review-e2e.mjs'
       - 'tools/pius-x-live-eval.mjs'
       - 'tests/pius-x-live-eval-harness.mjs'
+      - 'tests/pius-x-live-bilingual-loopback-adapter.mjs'
       - 'tests/pius-x-inchat-bilingual-conversation-specimen.mjs'
       - 'tests/pius-x-primary-witness-contract.mjs'
       - 'tests/pius-x-primary-witness-expansion.mjs'
@@ -57,6 +58,7 @@ on:
       - 'tests/pius-x-generative-review-e2e.mjs'
       - 'tools/pius-x-live-eval.mjs'
       - 'tests/pius-x-live-eval-harness.mjs'
+      - 'tests/pius-x-live-bilingual-loopback-adapter.mjs'
       - 'tests/pius-x-inchat-bilingual-conversation-specimen.mjs'
       - 'tests/pius-x-primary-witness-contract.mjs'
       - 'tests/pius-x-primary-witness-expansion.mjs'
@@ -109,6 +111,8 @@ jobs:
         run: node tests/pius-x-source-only-gate.mjs
       - name: Exercise real-model evaluation harness without external inference
         run: node tests/pius-x-live-eval-harness.mjs
+      - name: Exercise provider HTTP integration against loopback fake model (no paid inference)
+        run: node tests/pius-x-live-bilingual-loopback-adapter.mjs
       - name: Replay six in-chat GPT-6 source-scoped specimen replies (not live inference)
         run: node tests/pius-x-inchat-bilingual-conversation-specimen.mjs
       - name: Validate bounded original E supremi pilot witness metadata
