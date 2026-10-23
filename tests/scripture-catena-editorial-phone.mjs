@@ -1,10 +1,14 @@
 import assert from "node:assert/strict";
+import {execFileSync} from "node:child_process";
 import http from "node:http";
 import {readFile} from "node:fs/promises";
 import {extname,resolve,sep} from "node:path";
 import {fileURLToPath,pathToFileURL} from "node:url";
 import {chromium} from "@playwright/test";
 const root=resolve(fileURLToPath(new URL("..",import.meta.url)));
+// Also run this test from the independent Scripture phone workflow, where no
+// earlier CI job prepares the offline artifact.
+execFileSync(process.execPath,["tools/scripture/build-catena-mark-blind-offline.mjs"],{cwd:root,stdio:"pipe"});
 const mime={".html":"text/html; charset=utf-8",".js":"text/javascript; charset=utf-8",".json":"application/json; charset=utf-8",".css":"text/css; charset=utf-8"};
 const server=http.createServer(async(req,res)=>{
  try{
