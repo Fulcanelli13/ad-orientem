@@ -17,6 +17,8 @@ on:
       - scripts/scripture-catena-chrysostom-extended-context.mjs
       - scripts/scripture-catena-chrysostom-bulk-context.mjs
       - scripts/scripture-catena-chrysostom-full-structural-context.mjs
+      - scripts/scripture-catena-chrysostom-ocr-blocks.mjs
+      - tests/scripture-catena-chrysostom-ocr-blocks.mjs
       - tests/scripture-catena-chrysostom-full-structural-context.mjs
       - tests/scripture-catena-chrysostom-bulk-context.mjs
       - tests/scripture-catena-chrysostom-extended-context.mjs
@@ -50,6 +52,8 @@ on:
       - scripts/scripture-catena-chrysostom-extended-context.mjs
       - scripts/scripture-catena-chrysostom-bulk-context.mjs
       - scripts/scripture-catena-chrysostom-full-structural-context.mjs
+      - scripts/scripture-catena-chrysostom-ocr-blocks.mjs
+      - tests/scripture-catena-chrysostom-ocr-blocks.mjs
       - tests/scripture-catena-chrysostom-full-structural-context.mjs
       - tests/scripture-catena-chrysostom-bulk-context.mjs
       - tests/scripture-catena-chrysostom-extended-context.mjs
@@ -183,6 +187,10 @@ jobs:
         run: node scripts/scripture-catena-chrysostom-full-structural-context.mjs
       - name: Validate 1938 original text windows and conservative paragraph and speaker locator clues
         run: node tests/scripture-catena-chrysostom-full-structural-context.mjs
+      - name: Derive original blank-line OCR block locators and 1938 question-continuation pointers
+        run: node scripts/scripture-catena-chrysostom-ocr-blocks.mjs
+      - name: Verify source-hashed OCR blocks, next-block links and all 1938 structural candidate origins
+        run: node tests/scripture-catena-chrysostom-ocr-blocks.mjs
       - name: Attach both full original scan OCR texts and candidate indexes
         if: success()
         uses: actions/upload-artifact@v4
@@ -199,6 +207,7 @@ jobs:
             dist/schaff-chrysostom-extended/
             dist/schaff-chrysostom-bulk-research/
             dist/schaff-chrysostom-full-structural/
+            dist/schaff-chrysostom-ocr-blocks/
             data/scripture/catena/research/full-corpus-pass-20261021/chrysostom-24-argument-research-hypotheses.v1.json
             data/scripture/catena/research/full-corpus-pass-20261021/CHRYSOSTOM_24_ARGUMENT_COMPARISON_20261023.md
           if-no-files-found: error
