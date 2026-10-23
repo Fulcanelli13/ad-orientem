@@ -19,7 +19,7 @@ assert.equal(r89.published_new.length,12);
 assert.equal(r89.country_areas_added.length,11);
 assert.equal(main.places.length,294+r89.published_new.length+r90.published_new.length+r91.published_new.length+r92.published_new.length+r93.published_new.length+1);
 assert.equal(main.geoAreas.length,89+r89.country_areas_added.length+r90.country_areas_added.length+r91.country_areas_added.length+r92.country_areas_added.length+r93.country_areas_added.length);
-assert.equal(sources.sources.length,515+2*r89.published_new.length+2*r90.published_new.length+2*r91.published_new.length+2*r92.published_new.length+2*r93.published_new.length+3);
+assert.equal(sources.sources.length,515+2*r89.published_new.length+2*r90.published_new.length+2*r91.published_new.length+2*r92.published_new.length+2*r93.published_new.length+9);
 assert.equal(main.directoryPlaceLinks.length,9);
 assert.equal(heritage.place_crosswalk.length,main.places.length);
 assert.equal(heritage.counts.places,main.places.length);
