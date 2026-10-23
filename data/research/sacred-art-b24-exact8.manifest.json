@@ -1,0 +1,178 @@
+{
+  "schema_version": "1.0",
+  "wave": "B24_EXACT8",
+  "purpose": "Eight exact museum-inventory corroborated Commons images, research acquisition only; object identity photo fidelity and commercial reproduction still review",
+  "source_master": "Ad_Orientem_Complete_Visual_Asset_Master_Batch19_2026-10-23.xlsx",
+  "source_gap_audit": "data/research/sacred-art-missing-after-b23r2.csv",
+  "record_count": 8,
+  "records": [
+    {
+      "asset_source_id": "AO-B24-EXACT-W05-004",
+      "record_id": "W05-004",
+      "source_sheet": "PAINTING CATALOGUE",
+      "source_row": 6,
+      "title": "Saint Andrew",
+      "artist": "Peter Paul Rubens",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Rubens_apostel_andreas_grt.jpg",
+      "commons_title": "File:Rubens apostel andreas grt.jpg",
+      "api_type": "commons",
+      "download_gate": "METADATA_FIRST",
+      "recorded_rights": "UNVERIFIED_UNTIL_FILE_API",
+      "identity_evidence_kind": "EXACT_PRADO_P001649_UUID",
+      "exact_institutional_inventory": "P001649",
+      "institutional_object_url": "https://www.museodelprado.es/en/the-collection/art-work/saint-andrew/3b512d00-0e07-47f9-944e-159058552dbf",
+      "photo_reproduction_rights_gate": "COMMONS_EXACT_FILE_LICENSE_AND_INSTITUTION_RIGHTS_REVIEW_BEFORE_APP",
+      "related_records": [
+        "PAINTING CATALOGUE:W05-004"
+      ],
+      "editorial_gate": "NOT_APPROVED"
+    },
+    {
+      "asset_source_id": "AO-B24-EXACT-W05-008",
+      "record_id": "W05-008",
+      "source_sheet": "PAINTING CATALOGUE",
+      "source_row": 18,
+      "title": "Saint Matthias",
+      "artist": "Peter Paul Rubens",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Rubens_apostle_Matthias_grt.jpg",
+      "commons_title": "File:Rubens apostle Matthias grt.jpg",
+      "api_type": "commons",
+      "download_gate": "METADATA_FIRST",
+      "recorded_rights": "UNVERIFIED_UNTIL_FILE_API",
+      "identity_evidence_kind": "EXACT_PRADO_P001653_UUID",
+      "exact_institutional_inventory": "P001653",
+      "institutional_object_url": "https://www.museodelprado.es/en/the-collection/art-work/saint-mathias/7266e04d-6251-4769-a1c1-7d2711eceb3b",
+      "photo_reproduction_rights_gate": "COMMONS_EXACT_FILE_LICENSE_AND_INSTITUTION_RIGHTS_REVIEW_BEFORE_APP",
+      "related_records": [
+        "PAINTING CATALOGUE:W05-008"
+      ],
+      "editorial_gate": "NOT_APPROVED"
+    },
+    {
+      "asset_source_id": "AO-B24-EXACT-W05-012",
+      "record_id": "W05-012",
+      "source_sheet": "PAINTING CATALOGUE",
+      "source_row": 20,
+      "title": "Saint Paul",
+      "artist": "Peter Paul Rubens",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Saint_Paul,_by_Peter_Paul_Rubens_(Museo_del_Prado).jpg",
+      "commons_title": "File:Saint Paul, by Peter Paul Rubens (Museo del Prado).jpg",
+      "api_type": "commons",
+      "download_gate": "METADATA_FIRST",
+      "recorded_rights": "UNVERIFIED_UNTIL_FILE_API",
+      "identity_evidence_kind": "EXACT_PRADO_P001657_UUID",
+      "exact_institutional_inventory": "P001657",
+      "institutional_object_url": "https://www.museodelprado.es/en/the-collection/art-work/saint-paul/d9ce01ba-2d87-4bb2-adc1-266482f24875",
+      "photo_reproduction_rights_gate": "COMMONS_EXACT_FILE_LICENSE_AND_INSTITUTION_RIGHTS_REVIEW_BEFORE_APP",
+      "related_records": [
+        "PAINTING CATALOGUE:W05-012"
+      ],
+      "editorial_gate": "NOT_APPROVED"
+    },
+    {
+      "asset_source_id": "AO-B24-EXACT-G25-016",
+      "record_id": "G25-016",
+      "source_sheet": "PAINTING CATALOGUE",
+      "source_row": 105,
+      "title": "Martyrdom of Saint Lawrence",
+      "artist": "Valentin de Boulogne",
+      "source_url": "https://commons.wikimedia.org/wiki/File:El_martirio_de_san_Lorenzo,_por_Valentin_de_Boulogne.jpg",
+      "commons_title": "File:El martirio de san Lorenzo, por Valentin de Boulogne.jpg",
+      "api_type": "commons",
+      "download_gate": "METADATA_FIRST",
+      "recorded_rights": "UNVERIFIED_UNTIL_FILE_API",
+      "identity_evidence_kind": "EXACT_PRADO_P002346_UUID",
+      "exact_institutional_inventory": "P002346",
+      "institutional_object_url": "https://www.museodelprado.es/coleccion/obra-de-arte/el-martirio-de-san-lorenzo/ddd22152-fe21-475c-a9b6-911bd7736048",
+      "photo_reproduction_rights_gate": "COMMONS_EXACT_FILE_LICENSE_AND_INSTITUTION_RIGHTS_REVIEW_BEFORE_APP",
+      "related_records": [
+        "PAINTING CATALOGUE:G25-016"
+      ],
+      "editorial_gate": "NOT_APPROVED"
+    },
+    {
+      "asset_source_id": "AO-B24-EXACT-sevilla-murillo-vision-san-antonio",
+      "record_id": "sevilla-murillo-vision-san-antonio",
+      "source_sheet": "PAINTING CATALOGUE",
+      "source_row": 92,
+      "title": "La visión de san Antonio de Padua",
+      "artist": "Bartolomé Esteban Murillo",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Visión_de_San_Antonio,_Bartolomé_Esteban_Murillo.jpg",
+      "commons_title": "File:Visión de San Antonio, Bartolomé Esteban Murillo.jpg",
+      "api_type": "commons",
+      "download_gate": "METADATA_FIRST",
+      "recorded_rights": "UNVERIFIED_UNTIL_FILE_API",
+      "identity_evidence_kind": "EXACT_SEVILLE_CATHEDRAL_1656_PAINTER_ALTARPIECE",
+      "exact_institutional_inventory": "Sevilla Catedral San Antonio",
+      "institutional_object_url": "https://www.catedraldesevilla.es/la-vision-de-san-antonio-la-historia-secreta-de-una-obra-maestra-de-murillo/",
+      "photo_reproduction_rights_gate": "COMMONS_EXACT_FILE_LICENSE_AND_INSTITUTION_RIGHTS_REVIEW_BEFORE_APP",
+      "related_records": [
+        "PAINTING CATALOGUE:sevilla-murillo-vision-san-antonio"
+      ],
+      "editorial_gate": "NOT_APPROVED"
+    },
+    {
+      "asset_source_id": "AO-B24-EXACT-ART-ietro-da-ortona-aint-ecilia",
+      "record_id": "ART-ietro-da-ortona-aint-ecilia",
+      "source_sheet": "PAINTING CATALOGUE",
+      "source_row": 130,
+      "title": "Saint Cecilia",
+      "artist": "Pietro da Cortona",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Pietro_da_Cortona_Saint_Cecilia_NG5284.jpg",
+      "commons_title": "File:Pietro da Cortona Saint Cecilia NG5284.jpg",
+      "api_type": "commons",
+      "download_gate": "METADATA_FIRST",
+      "recorded_rights": "UNVERIFIED_UNTIL_FILE_API",
+      "identity_evidence_kind": "EXACT_NG5284_INVENTORY",
+      "exact_institutional_inventory": "NG5284",
+      "institutional_object_url": "https://www.nationalgallery.org.uk/paintings/pietro-da-cortona-saint-cecilia",
+      "photo_reproduction_rights_gate": "COMMONS_EXACT_FILE_LICENSE_AND_INSTITUTION_RIGHTS_REVIEW_BEFORE_APP",
+      "related_records": [
+        "PAINTING CATALOGUE:ART-ietro-da-ortona-aint-ecilia"
+      ],
+      "editorial_gate": "NOT_APPROVED"
+    },
+    {
+      "asset_source_id": "AO-B24-EXACT-NG5931",
+      "record_id": "NG5931",
+      "source_sheet": "PAINTING CATALOGUE",
+      "source_row": 168,
+      "title": "Christ Healing the Paralytic at the Pool of Bethesda",
+      "artist": "Bartolomé Esteban Murillo",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Curacion_del_paralitico_Murillo_1670.jpg",
+      "commons_title": "File:Curacion del paralitico Murillo 1670.jpg",
+      "api_type": "commons",
+      "download_gate": "METADATA_FIRST",
+      "recorded_rights": "UNVERIFIED_UNTIL_FILE_API",
+      "identity_evidence_kind": "EXACT_NG5931_INVENTORY",
+      "exact_institutional_inventory": "NG5931",
+      "institutional_object_url": "https://www.nationalgallery.org.uk/paintings/bartolome-esteban-murillo-christ-healing-the-paralytic-at-the-pool-of-bethesda",
+      "photo_reproduction_rights_gate": "COMMONS_EXACT_FILE_LICENSE_AND_INSTITUTION_RIGHTS_REVIEW_BEFORE_APP",
+      "related_records": [
+        "PAINTING CATALOGUE:NG5931"
+      ],
+      "editorial_gate": "NOT_APPROVED"
+    },
+    {
+      "asset_source_id": "AO-B24-EXACT-louvre-veronese-cana",
+      "record_id": "louvre-veronese-cana",
+      "source_sheet": "PAINTING CATALOGUE",
+      "source_row": 164,
+      "title": "The Wedding Feast at Cana",
+      "artist": "Paolo Veronese",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Les_Noces_de_Cana_-_Paolo_Veronese_-_Musée_du_Louvre_Peintures_INV_142_;_MR_384.jpg",
+      "commons_title": "File:Les Noces de Cana - Paolo Veronese - Musée du Louvre Peintures INV 142 ; MR 384.jpg",
+      "api_type": "commons",
+      "download_gate": "METADATA_FIRST",
+      "recorded_rights": "UNVERIFIED_UNTIL_FILE_API",
+      "identity_evidence_kind": "EXACT_LOUVRE_INV142_MR384",
+      "exact_institutional_inventory": "INV 142; MR 384",
+      "institutional_object_url": "https://www.louvre.fr/en/explore/visitor-trails/the-louvre-s-masterpieces/a-superstar-and-a-wedding-crowd",
+      "photo_reproduction_rights_gate": "COMMONS_EXACT_FILE_LICENSE_AND_INSTITUTION_RIGHTS_REVIEW_BEFORE_APP",
+      "related_records": [
+        "PAINTING CATALOGUE:louvre-veronese-cana"
+      ],
+      "editorial_gate": "NOT_APPROVED"
+    }
+  ]
+}
