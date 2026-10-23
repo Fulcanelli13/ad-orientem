@@ -114,7 +114,7 @@ const genesis=(ed,chapter,verse)=>witnesses[ed].get(chapter+":"+verse);
 assert.match(genesis("dr-challoner",3,15),/she shall crush/);
 assert.match(genesis("cpdv-2009",3,15),/She will crush/);
 assert.match(genesis("crampon-1923",3,15),/celle-ci/);
-assert.match(genesis("dr-challoner",8,4),/twenty.seventh.*Armenia/);
+assert.match(genesis("dr-challoner",8,4),/seven and twentieth.*Armenia/);
 assert.match(genesis("crampon-1923",8,4),/dix-septième.*Ararat/);
 assert.deepEqual({totalBeats,scripture,context,bridges,atlasKeys:shownEventKeys.size},
  {totalBeats:12,scripture:9,context:2,bridges:1,atlasKeys:5});
