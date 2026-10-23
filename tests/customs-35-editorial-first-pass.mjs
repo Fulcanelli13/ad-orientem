@@ -19,7 +19,21 @@ assert.equal(audit.records.length,35);
 assert.equal(records.size,35);
 assert.equal(audit.counts.fully_editorially_certified,0);
 assert.equal(audit.counts.new_publications,0);
-assert.equal(audit.counts.targeted_primary_text_reviews,19);
+assert.equal(audit.counts.targeted_primary_text_reviews,35);
+assert.equal(audit.counts.p2_source_level_adjudications,16);
+assert.equal(audit.counts.p2_indexed_only_or_access_limited,3);
+assert.equal(audit.counts.final_english_french_editorial_signoffs,0);
+assert.equal(audit.counts.final_release_approval,0);
+const newlyReviewed=audit.records.filter(row=>row.p2_source_text_review);
+assert.equal(newlyReviewed.length,16);
+for(const row of newlyReviewed){
+  const review=row.p2_source_text_review;
+  assert.equal(row.primary_text_review_this_batch,"TARGETED_MATCH_AND_SCOPE");
+  assert.ok(review.claim_supported.length>70&&review.remaining_hold.length>50,row.custom_id+" unsupported review");
+  assert.equal(review.source_url,row.representative_source_url);
+  assert.equal(review.review_signoff,"SOURCE_SCOPE_ONLY_NOT_FINAL_BILINGUAL_ACCEPTANCE");
+}
+assert.equal(newlyReviewed.filter(row=>row.p2_source_text_review.status==="INDEXED_SOURCE_RECHECK_REQUIRED").length,3);
 assert.equal(audit.counts.p1_source_level_adjudications,13);
 assert.equal(audit.counts.p1_final_editorial_certifications,0);
 assert.equal(audit.records.filter(row=>row.p1_source_text_review?.status).length,13);
