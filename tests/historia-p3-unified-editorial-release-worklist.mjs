@@ -187,7 +187,13 @@ assert.ok(workbench.includes("historiaProofDecisionReview"));
 assert.ok(workbench.includes("historiaP0Worklist.sourceDecisionWorklist"));
 assert.ok(workbench.includes("if(!bridge)previous=p;"),
  "Held source comparisons cannot silently close the omitted main Scripture span");
-assert.ok(workbench.includes('if(bridge&&highPriorityBridgesOnly&&beat.readthroughTrial?.refs)'));
+assert.ok(workbench.includes('if(bridge&&proposedComparison)'));
+assert.ok(workbench.includes("historiaProofOtherJump"));
+assert.ok(workbench.includes('originalRecommendation?.recommendation?.startsWith("PROPOSE")'),
+ "Only proposed source trials may expand the existing held source scope; keep-held alternatives must stay held");
+assert.ok(workbench.includes("historiaProofBridgeFilter").valueOf());
+assert.ok(workbench.includes('recommendation.acceptedByHumanEditor!==false'));
+assert.ok(workbench.includes('recommendation.publicationApproved!==false'));
 assert.ok(workbench.includes('if(!bridge&&showBridges&&(!highPriorityBridgesOnly||isPriorityHistoriaBridge(beat))&&afterTrial)'));
 assert.ok(workbench.includes('recommendation.acceptedByHumanEditor!==false'));
 
