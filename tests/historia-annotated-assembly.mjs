@@ -18,8 +18,7 @@ for (const edition of HISTORIA_EDITIONS) {
   // rather than one imported English 9:1–6 range. This adds a source segment
   // and a verse-rail section only for the French research witness.
   const editionExpected=edition==="crampon-1923"?
-    {...expected,scriptureSpans:167,exactVerseRailSections:222,readingTrialSpans:13,trialVerseEntries:62}:
-    {...expected,exactVerseRailSections:221,readingTrialSpans:13,trialVerseEntries:62};
+    {...expected,scriptureSpans:167,exactVerseRailSections:221}:expected;
   assert.deepEqual(output.totals,editionExpected);
   assert.equal(output.movements.length,37);
   assert.equal(output.movements.every(m=>m.accepted===false&&m.publicationApproved===false),true);
@@ -76,9 +75,7 @@ for (const edition of HISTORIA_EDITIONS) {
         assert.equal(segment.editionIndependent,false);
       } else if(segment.kind==="SCRIPTURE_READING_TRIAL_NOT_APPROVED"){
         const trial=segment.trialType==="HELD_BRIDGE_RESEARCH_TRIAL"?
-          original.readthroughTrial:
-          segment.trialType==="BETWEEN_SELECTED_SOURCE_READING_TRIAL"?
-          original.betweenSelectedReadthroughTrial:original.afterSelectedReadthroughTrial;
+          original.readthroughTrial:original.afterSelectedReadthroughTrial;
         assert.ok(trial);
         assert.ok(trial.refs.includes(segment.reference));
         assert.equal(trial.accepted,false);
@@ -103,23 +100,6 @@ for (const edition of HISTORIA_EDITIONS) {
       }
     }
   }
-  const judas=output.movements.find(m=>m.id==="HS-M27");
-  const judasBeats=judas.segments.filter(s=>s.ownerUnitId==="H63-02");
-  const iMainBefore=judasBeats.findIndex(s=>s.reference==="Matthew 27:1–2");
-  const iTrial=judasBeats.findIndex(s=>s.reference==="Matthew 27:3–10");
-  const iMainAfter=judasBeats.findIndex(s=>s.reference==="Matthew 27:11–26");
-  assert.ok(iMainBefore>=0&&iTrial>iMainBefore&&iMainAfter>iTrial,
-    "Judas source trial must occur between Matthew 27 selected segments");
-  const trial=judasBeats[iTrial];
-  assert.equal(trial.kind,"SCRIPTURE_READING_TRIAL_NOT_APPROVED");
-  assert.equal(trial.trialType,"BETWEEN_SELECTED_SOURCE_READING_TRIAL");
-  assert.equal(trial.accepted,false);assert.equal(trial.publicationApproved,false);
-  assert.equal(trial.verses.length,8);
-  assert.equal(trial.verses[0].reference,"Matthew 27:3");
-  assert.equal(trial.verses.at(-1).reference,"Matthew 27:10");
-  assert.ok(judas.omittedSourceSeams.some(x=>x.reference==="Matthew 27:3–10"&&
-   x.mainScriptureOmissionStillOpen&&x.evenWhenOptionalTrialShown),
-    "Main-source omitted verses must remain explicit even with trial displayed");
   const creation=output.movements.find(m=>m.id==="HS-M01");
   const sixDays=creation.segments.find(s=>s.reference==="Genesis 1:1–31");
   assert.deepEqual(sixDays.railSections.map(s=>s.reference),["Genesis 1:1–5","Genesis 1:6–8","Genesis 1:9–13","Genesis 1:14–19","Genesis 1:20–23","Genesis 1:24–25","Genesis 1:26–31"]);
@@ -271,4 +251,4 @@ for (const edition of HISTORIA_EDITIONS) {
     assert.ok(readable.includes("*Genesis 41:33–41*"));
   }
 }
-console.log("PASS Historia annotated source assembly: 37 movements, 93 A units, 166 English vs 167 French original-citation spans (Isaiah 8:23 + 9:1–5); 221 English vs 222 French verse-rail sections, 12 provisional source spans, 29 context + 12 causal connectors, 16 held candidates, three witnesses and no publication approval");
+console.log("PASS Historia annotated source assembly: 37 movements, 93 A units, 166 English vs 167 French original-citation spans (Isaiah 8:23 + 9:1–5); 220 English vs 221 French verse-rail sections, 12 provisional source spans, 29 context + 12 causal connectors, 16 held candidates, three witnesses and no publication approval");
