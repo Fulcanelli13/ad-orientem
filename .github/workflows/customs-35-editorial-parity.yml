@@ -13,6 +13,7 @@ on:
       - "tests/customs-bilingual-scope-parity.mjs"
       - "tests/customs-final-editorial-acceptance.mjs"
       - "tests/customs-critical-13-prose-pass.mjs"
+      - "tests/customs-standard-22-prose-pass.mjs"
       - "data/customs/customs-fr-canonical-copy.v1.json"
       - "data/customs/customs-p0-guidance-en-fr.v1.json"
       - "data/customs/customs-p1-guidance-en-fr.v1.json"
@@ -38,6 +39,7 @@ jobs:
           node tests/customs-bilingual-scope-parity.mjs
           node tests/customs-final-editorial-acceptance.mjs
           node tests/customs-critical-13-prose-pass.mjs
+          node tests/customs-standard-22-prose-pass.mjs
           node tests/calendar-customs-context.mjs
           node tests/customs-living-library.mjs
       - name: Build full bilingual editor review packet
