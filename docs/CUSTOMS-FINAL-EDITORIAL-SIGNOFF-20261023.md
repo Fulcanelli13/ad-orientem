@@ -9,6 +9,8 @@ This PR introduces `data/customs/editorial-final-acceptance.v1.json` as a **pend
 
 Run `node tools/customs/export-final-editorial-review.mjs > customs-review.md` in the repository. The generated packet shows **all eight published EN and FR text fields**, current article sources and contextual witnesses, the earlier research claim boundary, the single most relevant reviewer question, and separate current text SHA-256 fingerprints for English, French and historical claims.
 
+The same packet is generated and attached as the `customs-final-editorial-review` artifact by the existing Customs 35-article editorial parity GitHub Actions workflow. This attachment is regenerated from the live source on each applicable PR run and remains available from the workflow run for 30 days. It is a review snapshot, not an independent source-of-truth copy.
+
 Start with the **13 CRITICAL_SCOPE** articles: Advent wreath, manger straw, Posadas, St Joseph's Table, St Blaise, St John's wine, post-childbirth blessing, Holy Thursday repose visits, Rogation family walk, votive candles, general pilgrimages, Candlemas household candles and Mary Gardens. The other 22 are a shorter standard review tier, not an automatic approval.
 
 A responsible human reviewer records each actual decision and identity/date with the precise current-text fingerprint. The test rejects unsupported approvals, stale fingerprints, missing reviewers, and promotion of research-only/context-only identities. Any text change invalidates approval for the altered dimension. `CHANGES_REQUESTED` requires an explanatory note; it never opens the release gate.
