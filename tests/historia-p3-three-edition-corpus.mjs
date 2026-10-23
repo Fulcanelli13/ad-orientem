@@ -75,6 +75,11 @@ assert.deepEqual(jacob.semanticEditionAlignment.selectedReferencesByEdition["dr-
 assert.equal(jacob.semanticEditionAlignment.wrestlingBeginningByEdition["crampon-1923"],"Genesis 32:25");
 assert.equal(jacob.semanticEditionAlignment.namingIsraelByEdition["crampon-1923"],"Genesis 32:29");
 assert.ok(counters.differences.some(x=>x.id==="H15-02"&&x.edition==="crampon-1923"));
+const isaiah=proof.movements.find(m=>m.id==="HS-M15").beats.find(b=>b.id==="H38-03");
+assert.deepEqual(isaiah.semanticEditionAlignment.selectedReferencesByEdition["crampon-1923"],["Isaiah 8:23","Isaiah 9:1–5"]);
+assert.equal(isaiah.semanticEditionAlignment.childIsBornByEdition["dr-challoner"],"Isaiah 9:6");
+assert.equal(isaiah.semanticEditionAlignment.childIsBornByEdition["crampon-1923"],"Isaiah 9:5");
+assert.ok(counters.differences.some(x=>x.id==="H38-03"&&x.edition==="crampon-1923"));
 const steve=proof.movements.find(m=>m.id==="HS-M31").beats.find(b=>b.id==="H68-04");
 assert.deepEqual(steve.semanticEditionAlignment.selectedReferencesByEdition["crampon-1923"],["Acts 7:54–60"]);
 assert.deepEqual(steve.refs,["Acts 7:54–59"]);
