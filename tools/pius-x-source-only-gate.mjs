@@ -72,6 +72,67 @@ export function loadSourceOnlyGate(chapters,oldAnnexes){
    caution:[...d.unresolvedClaims,'The complete existing editorial answer remains unverified and is excluded from inference']
   }]]));
  }
+
+ // Extend evidence *inside the same 8 existing source-owner subjects*.
+ // Every unmapped follow-up remains held before model inference.
+ const batch=json('pius-x-eight-document-followup-triage-20261023.v1.json');
+ if(batch.schema!=='AO_SPX_P2_EIGHT_DOCUMENT_FOLLOWUP_TRIAGE_V1'||
+    batch.status!=='PRIVATE_FOLLOWUP_EVIDENCE_BOUNDED_UNAPPROVED'||
+    batch.summary?.followupNodes!==22||
+    batch.summary?.boundedFollowupCandidates!==14||
+    batch.summary?.heldFollowupNodes!==8||
+    batch.additionalOriginalWitnesses?.length!==3||
+    batch.followups?.length!==22)throw new Error('Follow-up original witness audit drifted');
+ const supplemental=new Map(batch.additionalOriginalWitnesses.map(w=>[w.id,w]));
+ if(supplemental.size!==3)throw new Error('Duplicated supplemental original excerpt');
+ for(const w of supplemental.values()){
+  if(w.originalLanguage!=='it'||w.speaker!=='PIUS_X_AUTHOR'||
+     !w.sourceUrl?.startsWith('https://www.vatican.va/content/pius-x/it/')||
+     !w.originalText||!w.webLine||!w.readingNote)
+   throw new Error('Supplemental witness incomplete');
+ }
+ const classified=new Set();let admitted=0,rejected=0;
+ for(const item of batch.followups){
+  const c=chapters.get(item.chapterId),src=research.items.find(x=>x.chapterId===item.chapterId);
+  const entry=gate.get(item.chapterId);
+  if(!c||!src||!entry||src.documentKey!==item.documentKey||
+     classified.has(item.nodeId)||item.translationApproved!==false||
+     item.completeAnswerApproved!==false||item.publicationApproved!==false)
+   throw new Error('Follow-up candidate cannot cross source-only contract');
+  const node=c.nodes.find(n=>n.id===item.nodeId);
+  if(!node||node.id===c.nodes[0].id||node.q.en!==item.questionEn)
+   throw new Error('Follow-up source-owner question drift');
+  classified.add(item.nodeId);
+  if(item.status==='HOLD_FOLLOWUP_OUTSIDE_CURRENT_EXCERPTS'){
+   if(item.witnessIds.length||!item.holdReason)throw new Error('Invalid follow-up hold');
+   rejected++;continue;
+  }
+  if(item.status!=='BOUNDED_ORIGINAL_LANGUAGE_FOLLOWUP_CANDIDATE'||
+     !item.narrowAnswerScope||!item.witnessIds.length)
+   throw new Error('Unclassified follow-up source');
+  const originals=new Map(src.witnesses.map(w=>[w.id,w]));
+  const parts=item.witnessIds.map(id=>{
+   const w=originals.get(id)||supplemental.get(id);
+   if(!w||w.language&&w.language!==src.originalLanguage||
+      w.originalLanguage&&w.originalLanguage!==src.originalLanguage||
+      !(w.originalText||w.text)||!(w.webLine)||!(w.speaker))
+    throw new Error('Unattested follow-up witness '+id);
+   const note=w.claimSupported||w.readingNote;
+   if(!note)throw new Error('Unexplained source witness '+id);
+   return {id,locus:'Vatican webpage line '+w.webLine,text:w.originalText||w.text,
+    originalLanguage:src.originalLanguage,speaker:w.speaker,
+    sourceUrl:src.originalUrl,readingNote:note};
+  });
+  entry.set(node.id,{status:'NARROW_SOURCE_FOLLOWUP_CANDIDATE_UNAPPROVED',
+    pieces:parts,caution:[item.caution,
+     'Answer only this bounded scope: '+item.narrowAnswerScope,
+     'The original P6 bilingual full reply is NOT evidence and has not been certified']});
+  admitted++;
+ }
+ if(classified.size!==22||admitted!==14||rejected!==8||
+    [...gate.values()].reduce((a,g)=>a+g.size,0)!==36)
+  throw new Error('Follow-up source coverage must equal 36 of 423 nodes');
+
  if(gate.size!==12)throw new Error('Expected 12 distinct source-scoped study subjects');
  return gate;
 }
