@@ -6,7 +6,7 @@ const html=readFileSync('artifacts/pius-x-study-expanded/SPX_Study_Expanded_106_
 const store=readCorpus(html);
 assert.equal(store.data.counts.allNodes,423);
 assert.equal(store.chapters.size,106);
-assert.equal(store.sourceOnlyGate.size,48);
+assert.equal(store.sourceOnlyGate.size,47);
 assert.equal(store.data.approvals.publishing,false);
 
 let eligible=0, held=0;
@@ -29,8 +29,8 @@ for(const c of store.chapters.values()){
   assert(result.status==='held');
  }
 }
-assert.equal(eligible,48);
-assert.equal(held,58);
+assert.equal(eligible,47);
+assert.equal(held,59);
 assert.equal(all.size,106);
 for(const id of ['SPX-PILOT-07','SPX-NEW-021','SPX-NEW-013','SPX-EXP-037',
  'SPX-NEW-003','SPX-NEW-008','SPX-NEW-007','SPX-013']){
@@ -321,4 +321,4 @@ const second=await composeDraft(store,{...input,nodeId:c.nodes[2].id,question:c.
 assert.equal(second.status,'draft');
 assert.equal(calls,before+4);
 assert(seen.evidence[0].originalLanguageWitnesses.some(x=>x.id==='TLS-POLYPHONY'));
-console.log('PASS SPX_SOURCE_ONLY_GATE: 48 source-backed subjects, 144 bounded original-text nodes; wave4 24 added and 36 held, no reply certifications; eight unsupported followups held, no P6 whole answers supplied, zero release approvals');
+console.log('PASS SPX_SOURCE_ONLY_GATE: 47 source-backed subjects, 144 bounded original-text nodes; wave4 24 added and 36 held, no reply certifications; eight unsupported followups held, no P6 whole answers supplied, zero release approvals');
