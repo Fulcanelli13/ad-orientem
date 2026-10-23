@@ -205,6 +205,8 @@ try{
      // The Month grid itself owns the return to the selected Day (there is
      // no separate Home "Day" tab while the Month picker owns navigation).
      await cal.locator('[data-cal-pick-date="2026-11-02"]').click();
+     assert.equal(await cal.getAttribute("data-ao-calendar-view"),"day",
+       "Reopening the already-resolved selected feast should immediately render Day, not rerun the weekly loader");
      await page.waitForFunction(()=>document.getElementById("ao-calendar-modular-root")?.dataset.aoCalendarView==="day",
        null,{timeout:15000});
      await cal.locator('.aoCalCustomsBlock [data-cal-custom-id="DEAD-003"]').waitFor({state:"visible",timeout:15000});
