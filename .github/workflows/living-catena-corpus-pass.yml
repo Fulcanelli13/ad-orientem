@@ -10,6 +10,8 @@ on:
       - scripts/scripture-catena-schaff-section-ingest.mjs
       - scripts/scripture-catena-schaff-question-context-pilot.mjs
       - scripts/scripture-catena-schaff-seed-to-scan-crosswalk.mjs
+      - scripts/scripture-catena-chrysostom-original-question-replies.mjs
+      - tests/scripture-catena-chrysostom-original-question-replies.mjs
       - tests/scripture-catena-schaff-seed-to-scan-crosswalk.mjs
       - tests/scripture-catena-schaff-question-context-pilot.mjs
       - tests/scripture-catena-schaff-section-ingest.mjs
@@ -28,6 +30,8 @@ on:
       - scripts/scripture-catena-schaff-section-ingest.mjs
       - scripts/scripture-catena-schaff-question-context-pilot.mjs
       - scripts/scripture-catena-schaff-seed-to-scan-crosswalk.mjs
+      - scripts/scripture-catena-chrysostom-original-question-replies.mjs
+      - tests/scripture-catena-chrysostom-original-question-replies.mjs
       - tests/scripture-catena-schaff-seed-to-scan-crosswalk.mjs
       - tests/scripture-catena-schaff-question-context-pilot.mjs
       - tests/scripture-catena-schaff-section-ingest.mjs
@@ -123,6 +127,10 @@ jobs:
         run: node scripts/scripture-catena-schaff-seed-to-scan-crosswalk.mjs
       - name: Verify ten exact historical OCR anchors and four unresolved printed variants
         run: node tests/scripture-catena-schaff-seed-to-scan-crosswalk.mjs
+      - name: Recover exact printed question and ensuing prose for Chrysostom's 90 Matthew homilies
+        run: node scripts/scripture-catena-chrysostom-original-question-replies.mjs
+      - name: Verify all source words, 180 research envelopes and four prior historical-work questions
+        run: node tests/scripture-catena-chrysostom-original-question-replies.mjs
       - name: Attach both full original scan OCR texts and candidate indexes
         if: success()
         uses: actions/upload-artifact@v4
@@ -132,5 +140,6 @@ jobs:
             dist/schaff-original-ocr/
             dist/schaff-sectioned-research/
             dist/schaff-context-pilot/
+            dist/schaff-chrysostom-replies/
           if-no-files-found: error
           retention-days: 14
