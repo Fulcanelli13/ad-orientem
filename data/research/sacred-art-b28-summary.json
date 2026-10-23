@@ -1,0 +1,47 @@
+{
+  "catalogue_total": 451,
+  "active_total": 383,
+  "frozen_rejected_unmodified": 68,
+  "frozen_approved_unmodified": 107,
+  "previously_sha_matched_active": 245,
+  "new_direct_id_and_byte_sha_links_including_rejected": 2,
+  "new_active_direct_id_sha_links": 0,
+  "rejected_direct_id_sha_links_held": 2,
+  "active_with_stable_id_and_sha_research_link_after_adjudication": 245,
+  "active_without_a_stable_id_sha_research_link_after_adjudication": 138,
+  "unlinked_physical_file_instances_reviewed": 45,
+  "b23r2_unlinked_files": 37,
+  "b23r2_direct_catalogue_sha_links": 2,
+  "b23r2_direct_matches_to_frozen_rejected": 2,
+  "b23r2_other_research_file_instances": 35,
+  "b19_other_research_file_instances": 8,
+  "b19_url_only_candidates": 0,
+  "b23r2_audit_hash_discrepancies": 0,
+  "legacy_only_items_reviewed": 108,
+  "legacy_only_by_priority": {
+    "P0": 64,
+    "P1": 4,
+    "P2": 40
+  },
+  "legacy_selected_sha_recorded": 17,
+  "legacy_selected_sha_present_in_b26_archives": 0,
+  "image_less_p2_reviewed": 30,
+  "image_less_by_source_gate": {
+    "SOURCE_IDENTITY_AND_RIGHTS_CONFIRMATION": 24,
+    "OBJECT_DISCOVERY_REQUIRED": 6
+  },
+  "physical_sha_with_multiple_catalogue_ids_held": 3,
+  "editorial_approvals_created": 0,
+  "publication_approvals_created": 0,
+  "canonical_master_modified": false,
+  "scope": "Research evidence and byte identities, not proof of artwork identity, sufficient reproduction rights, or release approval",
+  "source_references": [
+    "data/research/sacred-art-catalogue451-after-b25.csv",
+    "data/research/sacred-art-b27-451-physical-crosswalk.csv",
+    "data/research/sacred-art-b27-physical-image-inventory.csv",
+    "data/research/sacred-art-b23r2-commons47.audit.csv",
+    "data/research/sacred-art-b26-legacy108-repo-photo-audit.csv",
+    "data/research/sacred-art-missing30-after-b25.csv",
+    ".github/workflows/ao-b19-original-image-acquisition.yml"
+  ]
+}

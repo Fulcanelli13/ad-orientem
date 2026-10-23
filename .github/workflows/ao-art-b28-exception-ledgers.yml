@@ -1,0 +1,62 @@
+name: B28 bulk legacy original and source identity exception adjudication
+on:
+  push:
+    branches: [research/sacred-art-b28-legacy-exceptions-20261024]
+    paths:
+      - .github/workflows/ao-art-b28-exception-ledgers.yml
+      - scripts/research/sacred_art_b28_exceptions.py
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: sacred-art-b28-ledger-one-pass
+  cancel-in-progress: false
+jobs:
+  evidence-only-bulk:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-b28-legacy-exceptions-20261024
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate script and 451-record inventory
+        run: |
+          python -m py_compile scripts/research/sacred_art_b28_exceptions.py
+          python - <<'PY'
+          import csv, pathlib
+          base=pathlib.Path('data/research')
+          for file,n in (('sacred-art-catalogue451-after-b25.csv',451),
+                         ('sacred-art-b27-physical-image-inventory.csv',290),
+                         ('sacred-art-b26-legacy108-repo-photo-audit.csv',108),
+                         ('sacred-art-missing30-after-b25.csv',30)):
+              with (base/file).open(encoding='utf-8',newline='') as f:
+                  assert len(list(csv.DictReader(f)))==n,(file,n)
+          PY
+      - name: Reconcile all legacy and orphan files using original provenance, no downloads
+        run: python scripts/research/sacred_art_b28_exceptions.py
+      - name: Commit five full exception ledgers and compact summary only
+        run: |
+          set -euo pipefail
+          cp artifacts/sacred-art-b28-exception-adjudication/* data/research/
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/research/sacred-art-b28-*.csv data/research/sacred-art-b28-summary.json
+          git commit -m 'research: preserve B28 108+45+30 bulk exception adjudication' || exit 1
+          for attempt in 1 2 3; do
+            git fetch origin research/sacred-art-b28-legacy-exceptions-20261024
+            git rebase origin/research/sacred-art-b28-legacy-exceptions-20261024
+            git push origin HEAD:research/sacred-art-b28-legacy-exceptions-20261024 && exit 0
+            sleep 3
+          done
+          exit 1
+      - name: Keep convenient read-only CSV/JSON review artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: sacred-art-b28-bulk-exceptions-report
+          path: artifacts/sacred-art-b28-exception-adjudication/
+          retention-days: 30
+          if-no-files-found: error
