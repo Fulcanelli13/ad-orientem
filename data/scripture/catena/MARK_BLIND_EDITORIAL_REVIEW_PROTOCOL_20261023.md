@@ -17,6 +17,8 @@ This is an **editorial retrieval evaluation** for the existing Living Catena Mes
 2. Reviewer A exports their manifest and stores it securely outside the browser. It cannot grant publication permission. An incomplete manifest remains marked incomplete; only 23 completed cases count as a full blind pass.
 3. Reviewer B repeats independently using a different reviewer identifier, without seeing Reviewer A's export.
 4. Compare the two completed exports by exact case/source-pointer grades and abstention judgments. Record discrepancies and resolve them with an explicitly reasoned third-stage adjudication. Record source phrases, speaker ownership, qualifiers and any missing source.
+
+   Run from the repository root: `node tools/scripture/reconcile-catena-mark-blind.mjs reviewer-a.json reviewer-b.json`. This rejects incomplete manifests, mismatched source hashes and the same reviewer identifier; it emits a JSON disagreement report. Do not identify the CLI comparison with genuine human independence or doctrinal signoff.
 5. Only after separate historical-source, attribution, edition/translation/rights checks and explicit editorial signoff should any new **source-pointer navigation route** be proposed. Do **not** auto-create new Father speech or treat a high score as permission to publish.
 
 The workbench is an editorial convenience, not a secure blind-study server: repository readers can inspect research data if they seek it. Genuine independent reviewing requires process discipline and external authentication of reviewer identity.
