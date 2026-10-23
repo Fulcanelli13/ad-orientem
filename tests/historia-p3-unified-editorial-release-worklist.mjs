@@ -457,7 +457,7 @@ for(const x of copied){
  assert.equal(comparison.manualOralLiteraryApproval,false);
  assert.ok(comparison.sourceEvidenceFinding.length>90);
  assert.ok(comparison.sourceEvidenceReferences.length>=1);
- assert.ok(comparison.sourceEvidenceReferences.every(r=>typeof r==="string"&&r.length>=10));
+ assert.ok(comparison.sourceEvidenceReferences.every(r=>typeof r==="string" && /^([1-3]?[A-Za-z]+) [1-9]\d*:[1-9]\d*(?:[–-][1-9]\d*)?$/.test(r)));
  for(const sourceRef of comparison.sourceEvidenceReferences){
   for(const edition of editions)assert.ok(exactVerse(sourceRef,edition).length>0,
    "Research edit lost a native Catholic witness: "+x.id+" / "+sourceRef+" / "+edition);
