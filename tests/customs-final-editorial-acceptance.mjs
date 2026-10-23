@@ -24,7 +24,7 @@ for(const row of m.records){
   assert.equal(row.final_status,"BLOCKED_PENDING_HUMAN_SIGNOFF");
 }
 const review=renderReviewPacket();
-assert.equal((review.match(/\\n## \\d+\\. /g)||[]).length,35);
+assert.equal((review.match(/\n## \d+\. /g)||[]).length,35);
 assert.match(review,/ADVT-001/);
 assert.match(review,/SNIC-001/);
 assert.match(review,/hostie/); // Some articles may contain the word when warning against confusion; full text is shown faithfully
