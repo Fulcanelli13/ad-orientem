@@ -25,12 +25,14 @@ on:
       - 'tests/pius-x-catechismo-maggiore-wave8-all59.mjs'
       - 'tests/pius-x-wave9-biography-quam-singulari-all31.mjs'
       - 'tests/pius-x-p22-bilingual-claim-acceptance.mjs'
+      - 'tests/pius-x-p23-bilingual-fidelity-review.mjs'
       - 'tests/pius-x-wave5-bulk-inventory.mjs'
       - 'tests/pius-x-wave6-five-vatican-documents.mjs'
       - 'tests/pius-x-salzano-wave7-transcription-research.mjs'
       - 'tests/pius-x-catechismo-maggiore-wave8-all59.mjs'
       - 'tests/pius-x-wave9-biography-quam-singulari-all31.mjs'
       - 'tests/pius-x-p22-bilingual-claim-acceptance.mjs'
+      - 'tests/pius-x-p23-bilingual-fidelity-review.mjs'
       - 'previews/pius-x-study/spx-model-review-client.js'
       - 'previews/pius-x-study/spx-model-review-style.css'
       - 'tests/pius-x-generative-review-e2e.mjs'
@@ -137,6 +139,8 @@ jobs:
         run: node tests/pius-x-wave9-biography-quam-singulari-all31.mjs
       - name: Check eleven source-bound bilingual conversation specimens, six present-law refusals and two historical holds
         run: node tests/pius-x-p22-bilingual-claim-acceptance.mjs
+      - name: Validate 23 bilingual claim sentences against source-specific Latin or Italian fragments
+        run: node tests/pius-x-p23-bilingual-fidelity-review.mjs
       - name: Exercise real-model evaluation harness without external inference
         run: node tests/pius-x-live-eval-harness.mjs
       - name: Exercise provider HTTP integration against loopback fake model (no paid inference)
