@@ -89,6 +89,20 @@ try{
    assert.match(await page.locator('.spxm-source-label').first().innerText(),/Underlying unapproved editorial source pointers/);
   }
   assert.equal(await page.locator('#spxc-portrait').getAttribute('data-expression'),'explaining');
+  // A user stays on the election-opening card but asks about the restoration
+  // mission; the private source router must switch to the section-eight node.
+  await page.locator('#spxm-question').fill('What does restoring everything in Christ mean in the cited passage?');
+  await page.locator('#spxm-send').click();
+  const secondEntry=page.locator('.spxm-entry').nth(1);
+  await secondEntry.locator('.spxm-draft').waitFor();
+  const secondSource=await secondEntry.locator('a').first().innerText();
+  if(emitWitnesses){
+   assert.match(secondSource,/ES-4-MOTTO/);
+  }else{
+   assert.match(secondSource,/AO.SPX.DIALOGUE.SPX_PILOT_01.FOLLOW_2/);
+  }
+  assert.match(secondSource,/NOT COLLATED/);
+
   await page.locator('#spxc-lang').click();
   assert.equal(await page.locator('html').getAttribute('lang'),'fr');
   assert.equal(await page.locator('#spxm-replies .spxm-entry').count(),0,
