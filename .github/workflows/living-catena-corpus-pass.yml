@@ -8,6 +8,8 @@ on:
       - scripts/scripture-catena-first-pass.mjs
       - scripts/scripture-catena-schaff-ocr-ingest.mjs
       - scripts/scripture-catena-schaff-layout-acquire.mjs
+      - scripts/scripture-catena-schaff-page-align.mjs
+      - tests/scripture-catena-schaff-page-align.mjs
       - scripts/scripture-catena-schaff-section-ingest.mjs
       - scripts/scripture-catena-schaff-question-context-pilot.mjs
       - scripts/scripture-catena-schaff-seed-to-scan-crosswalk.mjs
@@ -44,6 +46,8 @@ on:
       - tests/scripture-catena-schaff-first-seeds.mjs
       - scripts/scripture-catena-schaff-ocr-ingest.mjs
       - scripts/scripture-catena-schaff-layout-acquire.mjs
+      - scripts/scripture-catena-schaff-page-align.mjs
+      - tests/scripture-catena-schaff-page-align.mjs
       - scripts/scripture-catena-schaff-section-ingest.mjs
       - scripts/scripture-catena-schaff-question-context-pilot.mjs
       - scripts/scripture-catena-schaff-seed-to-scan-crosswalk.mjs
@@ -216,6 +220,7 @@ jobs:
           retention-days: 14
 
   schaff-historical-scan-coordinate-layout:
+    needs: schaff-public-domain-volume-acquisition
     # A separate optional research job: the coordinate archive is substantial.
     # Never let network failures gate the canonical scripture reader.
     runs-on: ubuntu-latest
@@ -228,11 +233,22 @@ jobs:
           node-version: "22"
       - name: Acquire original 1888 Chrysostom page coordinates and printed scan metadata
         run: node scripts/scripture-catena-schaff-layout-acquire.mjs --edition NPNF1-10
+      - name: Download the matching immutable original 1888 print text research sources
+        uses: actions/download-artifact@v4
+        with:
+          name: catena-schaff-1888-full-ocr-research-only
+          path: .
+      - name: Align every one of 1938 Schaff source questions to actual word-coordinate scan leaves
+        run: node scripts/scripture-catena-schaff-page-align.mjs
+      - name: Verify 1938 source-pinned page matches, original six-word OCR evidence and original word coordinates
+        run: node tests/scripture-catena-schaff-page-align.mjs
       - name: Attach original coordinate OCR and source-identification hashes
         if: success()
         uses: actions/upload-artifact@v4
         with:
           name: catena-chrysostom-1888-original-layout-source
-          path: dist/schaff-layout-1888/
+          path: |
+            dist/schaff-layout-1888/
+            dist/schaff-chrysostom-page-alignment/
           if-no-files-found: error
           retention-days: 7
