@@ -159,13 +159,18 @@ body.historiaProofFocus #historiaAudit>h3,body.historiaProofFocus #historiaAudit
    Include held source-bridge proposals</label>
   <label>Bridge review scope
    <select id="historiaProofBridgeFilter">
-    <option value="all">All 16 held research passages</option>
+    <option value="all">All held original-source comparisons · 20 decision recommendations</option>
     <option value="p0">Eight P0 worklist source decisions · unapproved</option>
    </select>
   </label>
-  <label>Priority source decision
-   <select id="historiaProofP0Jump" aria-label="Jump to a priority source decision">
-    <option value="">Go to one of six priority source movements…</option>
+  <label>Eight critical source decisions
+   <select id="historiaProofP0Jump" aria-label="Jump to a critical source decision">
+    <option value="">Go to one of six critical source movements…</option>
+   </select>
+  </label>
+  <label>Other twelve source decisions
+   <select id="historiaProofOtherJump" aria-label="Jump to another reviewed source decision">
+    <option value="">Jump to one of twelve lower-priority source movements…</option>
    </select>
   </label>
  </div>
@@ -317,11 +322,15 @@ async function initializeHistoriaProof(){
  $("historiaProofMovement").replaceChildren();
  for(const m of data.movements)$("historiaProofMovement").append(
   new Option(String(m.sequence).padStart(2,"0")+" · "+m.title,m.id));
- $("historiaProofP0Jump").replaceChildren(new Option("Go to one of six priority source movements…",""));
- for(const id of [...new Set(historiaP0Worklist.sourceDecisionWorklist.filter(w=>w.priority==="P0").map(w=>w.movementId))]){
-  const movement=data.movements.find(m=>m.id===id);
-  if(!movement)throw Error("P0 decision not owned by current Historia manuscript: "+id);
-  $("historiaProofP0Jump").append(new Option(String(movement.sequence).padStart(2,"0")+" · "+movement.title,id));
+ $("historiaProofP0Jump").replaceChildren(new Option("Go to one of six critical source movements…",""));
+ $("historiaProofOtherJump").replaceChildren(new Option("Jump to one of twelve lower-priority source movements…",""));
+ for(const [priority,selector] of [["P0","historiaProofP0Jump"],["other","historiaProofOtherJump"]]){
+  for(const id of [...new Set(historiaP0Worklist.sourceDecisionWorklist.filter(w=>
+    priority==="P0"?w.priority==="P0":w.priority!=="P0").map(w=>w.movementId))]){
+   const movement=data.movements.find(m=>m.id===id);
+   if(!movement)throw Error("Source decision not owned by current Historia manuscript: "+id);
+   $(""+selector).append(new Option(String(movement.sequence).padStart(2,"0")+" · "+movement.title,id));
+  }
  }
  const wanted=params.get("movement");
  if(wanted&&data.movements.some(m=>m.id===wanted))$("historiaProofMovement").value=wanted;
@@ -363,21 +372,23 @@ async function showHistoriaMovement(){
  const edition=$("historiaProofEdition").value,showBridges=$("historiaProofBridges").checked;
  const highPriorityBridgesOnly=$("historiaProofBridgeFilter").value==="p0";
  const reviewHost=$("historiaProofDecisionReview");reviewHost.replaceChildren();
- if(highPriorityBridgesOnly){
+ if(showBridges){
   const current=historiaP0Worklist.sourceDecisionWorklist.filter(
-   d=>d.priority==="P0"&&d.movementId===m.id);
+   d=>d.movementId===m.id&&(!highPriorityBridgesOnly||d.priority==="P0"));
   if(current.length){
-   reviewHost.append(make("h3","P0 source decisions · research recommendations only"));
+   reviewHost.append(make("h3",highPriorityBridgesOnly?"P0 source decisions · unapproved":
+    "Original Scripture inclusion/keep-held recommendations · unapproved"));
    for(const item of current){
     const recommendation=item.researchRecommendation;
     if(!recommendation||recommendation.status!=="SOURCE_EVIDENCE_PROPOSED_NOT_SELECTED"||
-       recommendation.acceptedByHumanEditor!==false||item.approval.selected!==false)
-     throw Error("Unsafe P0 source recommendation "+item.id);
+       recommendation.acceptedByHumanEditor!==false||recommendation.publicationApproved!==false||
+       item.approval.selected!==false)
+     throw Error("Unapproved source recommendation unexpectedly promoted: "+item.id);
     const panel=make("aside",undefined,"proofContext proofDecision");
-    panel.append(make("span",item.id+" · unapproved proposed native Scripture","caption"),
+    panel.append(make("span",item.id+" · editorial recommendation, not selected or approved","caption"),
      make("div",recommendation.refs.join("; ")+" · "+recommendation.recommendation,"proofCitation"),
      make("p",recommendation.reason),
-     make("p","Pending editor, print-edition and Catholic theology acceptance. Original selection is unchanged."));
+     make("p",recommendation.contrast));
     reviewHost.append(panel);
    }
   }
@@ -464,12 +475,16 @@ async function showHistoriaMovement(){
    if(beat.semanticEditionAlignment?.kind==="CAPERNAUM_LOCATION_VERSE_SHIFT"){
     section.append(make("p","Source alignment: the Capernaum synagogue sentence is John 6:60 in Douay/CPDV and John 6:59 in Crampon. Verse numbers are not interchangeable across these witnesses.","proofGap"));
    }
+   const originalRecommendation=bridge?historiaP0Worklist.sourceDecisionWorklist.find(
+    d=>d.sourceBeatId===beat.id)?.researchRecommendation:null;
+   const proposedComparison=bridge&&originalRecommendation?.recommendation?.startsWith("PROPOSE");
    const references=bridge?
-    (highPriorityBridgesOnly&&beat.readthroughTrial?.refs?beat.readthroughTrial.refs:[beat.reference]):
+    (proposedComparison?originalRecommendation.refs:[beat.reference]):
     (beat.semanticEditionAlignment?.selectedReferencesByEdition?.[edition]||beat.refs);
-   if(bridge&&highPriorityBridgesOnly&&beat.readthroughTrial?.refs)
-    section.append(make("p","Comparing held original Scripture "+references.join("; ")+
-     "; original P3 held coordinate remains "+beat.reference+". This is not selected.","proofGap"));
+   if(bridge&&proposedComparison)
+    section.append(make("p","Comparing exact proposed original Scripture "+references.join("; ")+
+     "; original P3 held coordinate remains "+beat.reference+
+     ". This comparison remains unselected.","proofGap"));
    for(const reference of references){
     const parsed=parseScriptureContext(reference);
     if(!parsed)throw Error("Unknown Catholic Bible coordinate "+reference);
@@ -588,6 +603,14 @@ $("historiaProofP0Jump").addEventListener("change",()=>{
  const id=$("historiaProofP0Jump").value;
  if(!id)return;
  $("historiaProofBridgeFilter").value="p0";
+ $("historiaProofBridges").checked=true;
+ $("historiaProofMovement").value=id;
+ void showHistoriaMovement();
+});
+$("historiaProofOtherJump").addEventListener("change",()=>{
+ const id=$("historiaProofOtherJump").value;
+ if(!id)return;
+ $("historiaProofBridgeFilter").value="all";
  $("historiaProofBridges").checked=true;
  $("historiaProofMovement").value=id;
  void showHistoriaMovement();
