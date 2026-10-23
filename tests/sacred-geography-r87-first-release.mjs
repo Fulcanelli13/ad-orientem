@@ -16,7 +16,7 @@ const r91 = load("../data/geography/research/sacred-geography-r91-coverage-first
 const r92 = load("../data/geography/research/sacred-geography-r92-verified-site-cohort.v1.json");
 const r93 = load("../data/geography/research/sacred-geography-r93-first-presence-release.v1.json");
 assert.equal(geography.places.length,294+r89.published_new.length+r90.published_new.length+r91.published_new.length+r92.published_new.length+r93.published_new.length+1);
-assert.equal(sources.sources.length,515+r89.published_new.length*2+r90.published_new.length*2+r91.published_new.length*2+r92.published_new.length*2+r93.published_new.length*2+3);
+assert.equal(sources.sources.length,515+r89.published_new.length*2+r90.published_new.length*2+r91.published_new.length*2+r92.published_new.length*2+r93.published_new.length*2+9);
 assert.equal(geography.geoAreas.length,89+r89.country_areas_added.length+r90.country_areas_added.length+r91.country_areas_added.length+r92.country_areas_added.length+r93.country_areas_added.length);
 assert.equal(release.country_areas_added.length,17);
 assert.equal(new Set(release.published_new.map(row=>row.place_id)).size,33);
