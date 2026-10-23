@@ -75,13 +75,6 @@ export function selectEvidence(store,input){
  if(c.partial||c.sourceClass!=='PAPAL_DOCUMENT_ADAPTATION')return held('not_papal_primary_document_adaptation');
  if(/(?:absolve|confess my sins|grant absolution|am i in mortal sin|suicid|je veux me tuer|donnez moi l absolution)/i.test(question))
   return held('personal_sacramental_or_crisis_question');
- // A historical document may discuss ecclesiastical discipline without deciding
- // whether a living person has a valid sacrament, current faculty or canonical
- // penalty. This deterministic preflight is narrow: it does not classify the
- // whole theological question, it prevents an obvious modern-law extrapolation.
- if(/(?:\b(?:today|right now|currently|present[- ]day|under (?:the )?current(?: canon)? law|still (?:in force|legally|binding))\b|aujourd['’]hui|actuellement|droit canonique actuel|encore en vigueur)/iu.test(question)&&
-    /(?:\b(?:penalt(?:y|ies)|excommunicat\w*|absolut(?:ion|e)|confession|communion|dispensat\w*|facult(?:y|ies)|valid(?:ity|ly)?|legally|binding|canonical|canon law)\b|peines?\b|excommuni\w*|absolution|confession|communion|facultés|validité|valide|obligatoire)/iu.test(question))
-  return held('present_day_canonical_case_requires_current_authority');
  // Visitor questions are untrusted, not authority to override documented-source limits.
  if(/(?:ignore (?:your|the) (?:sources|instructions)|invent (?:a |an )?(?:personal |private )?(?:memory|recollection|quotation)|fabricate (?:a |an )?(?:quote|story|memory)|ignorez (?:vos|les) sources|inventez (?:un|une) souvenir)/i.test(question))
   return held('unsupported_request_to_invent_historical_testimony');
@@ -96,6 +89,15 @@ export function selectEvidence(store,input){
  // Documentary gating precedes inference. Never feed original P6 full answers.
  const scoped=sourceOnlyEvidence(store.sourceOnlyGate,c,selected,lang);
  if(scoped.held)return held(scoped.held);
+ // After documentary eligibility is established, a historical document may discuss
+ // ecclesiastical discipline without deciding
+ // whether a living person has a valid sacrament, current faculty or canonical
+ // penalty. Placing this after the source-only gate preserves its specific hold
+ // reasons for unmapped nodes without weakening the modern-law safety barrier. This deterministic preflight is narrow: it does not classify the
+ // whole theological question, it prevents an obvious modern-law extrapolation.
+ if(/(?:\b(?:today|right now|currently|present[- ]day|under (?:the )?current(?: canon)? law|still (?:in force|legally|binding))\b|aujourd['’]hui|actuellement|droit canonique actuel|encore en vigueur)/iu.test(question)&&
+    /(?:\b(?:penalt(?:y|ies)|excommunicat\w*|absolut(?:ion|e)|confession|communion|dispensat\w*|facult(?:y|ies)|valid(?:ity|ly)?|legally|binding|canonical|canon law)\b|peines?\b|excommuni\w*|absolution|confession|communion|facultés|validité|valide|obligatoire)/iu.test(question))
+  return held('present_day_canonical_case_requires_current_authority');
  const evidence=scoped.evidence;
  // History is visitor-provided conversational orientation, never evidence. Reject
  // entries not anchored to the same source chapter AND the same language.
