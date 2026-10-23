@@ -41,6 +41,8 @@ jobs:
         run: node tests/scripture-catena-reader-curated.mjs
       - name: Verify nine English witnesses and local-only human review exports
         run: node tests/scripture-catena-review-workbench.mjs
+      - name: Verify ten Mark work witnesses, read-only retrieval and abstention
+        run: node tests/scripture-catena-mark-editorial.mjs
   phone-acceptance:
     runs-on: ubuntu-latest
     timeout-minutes: 15
