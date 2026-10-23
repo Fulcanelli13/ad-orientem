@@ -1,0 +1,36 @@
+{
+  "scope": "B19-B25 SHA-exact archived originals vs canonical B25 451-artwork register",
+  "archive_release_tag": "sacred-art-originals-b26-20261024",
+  "catalogue_rows": 451,
+  "active_artworks": 383,
+  "rejected_preserved": 68,
+  "frozen_approved_preserved": 107,
+  "active_with_recorded_image_or_preview": 353,
+  "active_without_recorded_image": 30,
+  "archive_packages_byte_verified": 16,
+  "physical_image_instances_byte_verified": 290,
+  "physical_source_bytes_byte_verified": 3076497763,
+  "distinct_binary_sha256": 287,
+  "repeated_sha256_groups": 3,
+  "repeated_image_file_instances_above_unique": 3,
+  "active_artwork_ids_with_exact_sha256_linked_archive_file": 245,
+  "active_artwork_ids_without_exact_sha256_linked_archive_file": 138,
+  "active_sha_matches_by_basis": {
+    "REGISTERED_SOURCE_SHA": 154,
+    "EXPLICIT_CATALOGUE_SHA": 91
+  },
+  "archive_file_instances_not_linked_to_canonical_id": 45,
+  "archive_file_instances_linked_to_multiple_ids": 3,
+  "matching_rejected_artworks": 0,
+  "new_editorial_approvals": 0,
+  "new_publication_approvals": 0,
+  "not_release_certified": 383,
+  "limitations": [
+    "An exact hash match proves only file identity, not artistic subject correctness or copyright.",
+    "Multiple catalogue IDs per exact hash require identity review, not automatic promotion.",
+    "Source-registration and URL alias matching are research claims, not independent identity certification.",
+    "Originals captured in earlier alternative B20 or supplemental packs not counted here.",
+    "Existing previews and approved editorial decisions do not automatically imply distributable assets.",
+    "No canonical workbook, approval status, or production asset has been altered."
+  ]
+}
