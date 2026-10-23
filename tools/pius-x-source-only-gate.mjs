@@ -211,6 +211,93 @@ export function loadSourceOnlyGate(chapters,oldAnnexes){
  if(seen2.size!==46||heldPartial!==5||waveChapters.size!==21||gate.size!==33||
     [...gate.values()].reduce((n,x)=>n+x.size,0)!==82)
   throw new Error('Wave-two source-only coverage must equal 33 subjects and 82 nodes while preserving five partial holds');
+
+ // Wave 3: exhaustive remaining-node triage for six existing original-language
+ // Vatican document families. Existing candidate mappings are never overwritten.
+ const third=json('pius-x-six-document-wave3-20261023.v1.json');
+ if(third.schema!=='AO_SPX_P2_SIX_DOCUMENT_WAVE3_EVIDENCE_TRIAGE_V1'||
+   third.status!=='PRIVATE_ORIGINAL_LANGUAGE_NODE_TRIAGE_WITH_EXPLICIT_HOLDS'||
+   third.summary?.documents!==6||third.summary?.sourceNodesInSixDocuments!==84||
+   third.summary?.previouslySourceMappedNodes!==31||
+   third.summary?.previouslyUnmappedNodesScreened!==53||
+   third.summary?.newBoundedResearchCandidates!==38||
+   third.summary?.newResearchHolds!==15||
+   third.summary?.newOriginalVaticanSnippets!==40||
+   third.summary?.approvedTranslations!==0||
+   third.summary?.approvedCompleteAnswers!==0||
+   third.summary?.publishedReplies!==0||
+   third.witnesses?.length!==40||third.records?.length!==53)
+  throw new Error('Six-document wave3 source research contract drift');
+ const originalByDocument={
+  H:'haerent-animo',P:'pieni-l-animo',S:'singulari-quadam',
+  A:'ad-diem-illum-laetissimum',E:'editae-saepe',T:'tribus-circiter'};
+ const thirdWitnesses=new Map();
+ for(const w of third.witnesses){
+  if(thirdWitnesses.has(w.id)||!originalByDocument[w.documentGroup]||
+     w.originalLanguage!==(w.documentGroup==='P'?'it':'la')||
+     !w.originalText||!w.readingNote||!Number.isInteger(w.webLine)||
+     w.webLine<=0||!w.sourceUrl?.startsWith('https://www.vatican.va/content/pius-x/')||
+     !w.sourceUrl.includes(originalByDocument[w.documentGroup])||
+     w.verificationStatus!=='VERBATIM_SHORT_SPAN_ON_OFFICIAL_VATICAN_WEB_PAGE_RESEARCH_ONLY'||
+     w.translationApproved!==false||w.publishingApproved!==false||
+     !['PIUS_X_AUTHOR','LEO_XIII_1902_QUOTED_BY_PIUS_X',
+       'ST_CHARLES_BORROMEO_QUOTED_BY_PIUS_X'].includes(w.speaker))
+   throw new Error('Wave3 historical source witness or attribution invalid '+w.id);
+  thirdWitnesses.set(w.id,w);
+ }
+ let wave3Mapped=0,wave3Held=0;
+ const wave3IDs=new Set(),wave3Groups=new Set(),wave3DocGroups=new Set();
+ for(const r of third.records){
+  const chapter=chapters.get(r.chapterId),node=chapter?.nodes.find(x=>x.id===r.nodeId);
+  if(!chapter||!node||wave3IDs.has(r.nodeId)||
+     r.questionEn!==node.q.en||!originalByDocument[r.documentGroup]||
+     !chapter.source?.url?.includes(originalByDocument[r.documentGroup])||
+     normalize(r.sourceUrl)!==normalize(chapter.source.url)||
+     r.translationCertified!==false||r.completeAnswerApproved!==false||
+     r.historicalSpeakerApproval!==false||r.publishingApproved!==false||
+     Boolean(r.ownerPartial)!==Boolean(chapter.partial)||
+     gate.get(chapter.id)?.has(r.nodeId))
+   throw new Error('Wave3 source owner overlap, question drift, or approval '+r.nodeId);
+  wave3IDs.add(r.nodeId);wave3DocGroups.add(r.documentGroup);
+  if(r.status!=='BOUNDED_VATICAN_EXCERPT_CANDIDATE_UNAPPROVED'){
+   if(!['HOLD_NO_SUFFICIENT_NARROW_SOURCE_ATTESTATION',
+         'HOLD_IMMUTABLE_ORIGINAL_SOURCE_PARTIAL'].includes(r.status)||
+      r.witnessIds.length||!r.holdReason||r.narrowClaimScope!==null||
+      (r.status==='HOLD_IMMUTABLE_ORIGINAL_SOURCE_PARTIAL'&&!chapter.partial))
+    throw new Error('Wave3 ungrounded node cannot be admitted '+r.nodeId);
+   wave3Held++;continue;
+  }
+  if(chapter.partial||chapter.sourceClass!=='PAPAL_DOCUMENT_ADAPTATION'||
+     !r.narrowClaimScope||!r.witnessIds?.length)
+   throw new Error('Wave3 cannot bypass original source-owner papal hold');
+  const pieces=r.witnessIds.map(id=>{
+   const w=thirdWitnesses.get(id);
+   if(!w||w.documentGroup!==r.documentGroup||
+      normalize(w.sourceUrl)!==normalize(chapter.source.url))
+    throw new Error('Wave3 excerpt document mismatch '+r.nodeId+' '+id);
+   return {id:w.id,text:w.originalText,originalLanguage:w.originalLanguage,
+    speaker:w.speaker,sourceUrl:w.sourceUrl,readingNote:w.readingNote,
+    locus:'Vatican webpage line '+w.webLine};
+  });
+  if(new Set(pieces.map(x=>x.originalLanguage)).size!==1)
+   throw new Error('Wave3 mixed original-language evidence');
+  if(!gate.has(chapter.id))gate.set(chapter.id,new Map());
+  gate.get(chapter.id).set(node.id,{
+   status:'WAVE_THREE_NARROW_ORIGINAL_TEXT_RESEARCH_ONLY',
+   pieces,caution:[
+    'Only a narrow source-grounded research candidate, never a full approved papal reply',
+    'Permitted proposition: '+r.narrowClaimScope,
+    'Preserve named earlier authority when a text is quoted by Pius X',
+    'Do not infer a present-day personal, sacramental or canonical judgement',
+    'Neither the original P6 English nor French answer is authenticated']
+  });
+  wave3Mapped++;wave3Groups.add(chapter.id);
+ }
+ if(wave3DocGroups.size!==6||wave3IDs.size!==53||
+    wave3Mapped!==38||wave3Held!==15||
+    gate.size!==41||
+    [...gate.values()].reduce((n,x)=>n+x.size,0)!==120)
+  throw new Error('Wave3 safe research gate should contain 41 subjects, 120 source-bounded nodes and 15 holds');
  return gate;
 }
 
