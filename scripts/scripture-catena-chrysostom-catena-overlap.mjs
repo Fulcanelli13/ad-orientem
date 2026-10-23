@@ -64,6 +64,7 @@ function compare(text){
    const ordered=[...phrases].sort();
    return {canonicalSourcePointer:pointer,canonicalInCatenaFatherLabel:original.father,
     sharedIndependentFiveWordPhrases:ordered.length,
+    canonicalInheritedFatherLabelMatchesChrysostom:original.father==="Chrysostom",
     phraseEvidence:ordered.slice(0,8),
     sourceRelationsStatus:"lexical_similarity_only_not_source_identity_or_equivalent_argument",
     originalCatenaSourceUnchanged:true};
@@ -108,6 +109,13 @@ const all=[...rows,...pinned],summary={
  historicalPinnedBibliographicWitnessesCompared:pinned.length,
  researchRecordsWithLiteralFiveWordEvidence:all.filter(x=>
   x.canonicalLexicalOverlapEvidence.length>0).length,
+ recordsWithLiteralEvidenceMatchingChrysostom:all.filter(x=>
+  x.canonicalLexicalOverlapEvidence.some(v=>v.canonicalInheritedFatherLabelMatchesChrysostom)).length,
+ recordsWithLiteralEvidenceOnlyOtherInheritedLabels:all.filter(x=>
+  x.canonicalLexicalOverlapEvidence.length>0&&
+  x.canonicalLexicalOverlapEvidence.every(v=>!v.canonicalInheritedFatherLabelMatchesChrysostom)).length,
+ uniqueCatenaHitPointersNotVerifiedIdenticalToHomilist:
+  new Set(all.flatMap(x=>x.canonicalLexicalOverlapEvidence.map(v=>v.canonicalSourcePointer))).size,
  previouslyEstablishedCanonicalPointerLinks:pinned.filter(x=>
   x.separatelyEstablishedExistingCatenaPointer).length,
  unresolvedSubstantiveNovelty:all.length,
