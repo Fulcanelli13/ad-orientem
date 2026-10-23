@@ -3104,7 +3104,23 @@
           "edition": "cpdv-2009",
           "policy": "PROPOSED_CURATED_TRIM",
           "hasPartialVerseHold": false,
-          "publicationApproved": false
+          "publicationApproved": false,
+          "betweenSelectedReadthroughTrial": {
+            "status": "UNAPPROVED_JUDAS_CAUSAL_SOURCE_COMPARISON_WITHIN_SELECTED_BEAT",
+            "afterReference": "Matthew 27:1–2",
+            "beforeReference": "Matthew 27:11–26",
+            "refs": [
+              "Matthew 27:3–10"
+            ],
+            "sourceReference": "Matthew 27:3–10",
+            "reason": "The P3 reading passes directly from the handing over to Pilate (Matthew 27:1–2) to Jesus before the governor (27:11–26). The omitted verses narrate Judas's return of the silver and his death. Compare the exact Catholic witness text as a distinct, optional internal interruption; never fold this into Matthew's trial scene, invent a speech, or equate the omitted passage with an editorial approval.",
+            "accepted": false,
+            "publicationApproved": false,
+            "originalUnitRefsUnmodified": true,
+            "printedEditionCollationPending": true,
+            "excludedFromMainSourceSelection": true,
+            "sourceStatus": "UNCOLLATED_SOURCE_WITNESS"
+          }
         },
         {
           "kind": "EDITORIAL_CONTEXT_NOT_BIBLE",
