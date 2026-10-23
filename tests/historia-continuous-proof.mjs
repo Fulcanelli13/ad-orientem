@@ -8,6 +8,7 @@ import "./historia-p3-five-p0-source-minimum-adjudication.mjs";
 import "./historia-p3-p0-incontext-integrity-review.mjs";
 import "./historia-p3-p1-twenty-seam-disposition.mjs";
 import "./historia-p3-p2-eleven-seam-disposition.mjs";
+import "./historia-p3-unified-editorial-release-worklist.mjs";
 import {readFileSync} from "node:fs";
 import {parseScriptureContext} from "../src/scripture/context.js";
 
