@@ -1,0 +1,30 @@
+name: Customs canonical P0/P1 guidance parity
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    paths:
+      - "data/customs/customs-p0-guidance-en-fr.v1.json"
+      - "data/customs/customs-p1-guidance-en-fr.v1.json"
+      - "tests/customs-weiser-p0-six.mjs"
+      - "tests/customs-weiser-p1-five.mjs"
+      - ".github/workflows/customs-guidance-parity.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  publication-parity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Verify P0/P1 canonical IDs, bilingual copy and source boundaries
+        run: |
+          node tests/customs-weiser-p0-six.mjs
+          node tests/customs-weiser-p1-five.mjs
+      - name: Protect existing calendar and living-library projections
+        run: |
+          node tests/calendar-customs-context.mjs
+          node tests/customs-living-library.mjs
