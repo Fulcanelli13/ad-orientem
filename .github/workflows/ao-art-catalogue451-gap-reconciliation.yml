@@ -1,0 +1,38 @@
+name: Sacred Art canonical 451-catalogue gap reconciliation
+on:
+  push:
+    branches: [research/b19-original-image-acquisition-probe-20261023]
+    paths: [.github/workflows/ao-art-catalogue451-gap-reconciliation.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  audit-catalogue:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Reconcile frozen 451 art IDs with 245 source-file identities
+        run: |
+          python -m py_compile scripts/research/sacred_art_catalogue451_reconcile.py
+          python scripts/research/sacred_art_catalogue451_reconcile.py
+      - name: Persist read-only 451-row reconciliation and metrics
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/research/sacred-art-catalogue451-reconciliation.csv data/research/sacred-art-catalogue451-reconciliation.summary.json
+          git commit -m 'research: audit whole 451-entry sacred art catalogue without changing frozen selections'
+          git fetch origin research/b19-original-image-acquisition-probe-20261023
+          git rebase origin/research/b19-original-image-acquisition-probe-20261023
+          git push origin HEAD:research/b19-original-image-acquisition-probe-20261023
+      - name: Export crosswalk for master import
+        uses: actions/upload-artifact@v4
+        with:
+          name: ao-sacred-art-451-frozen-catalogue-gap-reconciliation
+          path: |
+            data/research/sacred-art-catalogue451-reconciliation.csv
+            data/research/sacred-art-catalogue451-reconciliation.summary.json
+          retention-days: 60
