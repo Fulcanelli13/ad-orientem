@@ -1,0 +1,85 @@
+{
+  "schema": "AO_SACRED_PLACES_P14_OVADA_CANONICAL_RELEASE_V1",
+  "date": "2026-10-24",
+  "status": "PROPOSED_VIA_PULL_REQUEST",
+  "base": {
+    "places": 347,
+    "shrine_sources": 621,
+    "heritage_crosswalk": 347,
+    "unresolved_exception_slots": 23,
+    "source_identity_held": 20
+  },
+  "proposed": {
+    "places": 348,
+    "shrine_sources": 624,
+    "heritage_crosswalk": 348,
+    "new_places": 1,
+    "new_pins": 1,
+    "directory_place_links_added": 0,
+    "approved_media_added": 0,
+    "source_identity_resolved_from_exception": "candidate:SG-INV-0093",
+    "source_identity_holds_after": 20
+  },
+  "published_new": {
+    "place_id": "place:IT:santuario-san-paolo-della-croce-ovada",
+    "research_id": "candidate:SG-INV-0093",
+    "country": "IT",
+    "canonical_name": "Santuario di San Paolo della Croce, Ovada",
+    "type": "shrine",
+    "site_locality": "Corso Italia, 15076 Ovada (AL), Italy",
+    "site_coordinate": {
+      "lat": 44.63312,
+      "lng": 8.63989,
+      "precision": "site",
+      "interpretation": "Named OSM Catholic church polygon approximate centre; NOT a surveyed entrance",
+      "source_ref": "osm:way:48892861",
+      "source_url": "https://www.openstreetmap.org/way/48892861"
+    },
+    "identity_provenance": [
+      {
+        "source_id": "AO-P14-OVADA-SITE",
+        "url": "https://www.parrocchiaovada.it/wordpress/santuario-di-san-paolo-della-croce",
+        "issuer": "Parrocchia di Nostra Signora Assunta — Diocese of Acqui",
+        "directness": "OFFICIAL_CHURCH",
+        "scope": "Dedicated existing Catholic sanctuary and physical church on Corso Italia; explicitly distinguishes church from house where saint born"
+      },
+      {
+        "source_id": "AO-P14-OVADA-MASSES",
+        "url": "https://www.parrocchiaovada.it/wordpress/orari-sante-messe",
+        "issuer": "Parrocchia di Nostra Signora Assunta — Diocese of Acqui",
+        "directness": "OFFICIAL_CHURCH",
+        "scope": "Parish lists church worship, without certifying 1962 liturgy or future Mass times"
+      },
+      {
+        "source_id": "AO-P14-OVADA-GEO",
+        "url": "https://www.openstreetmap.org/way/48892861",
+        "issuer": "OpenStreetMap contributors; Mapcarta feature attributes",
+        "directness": "SECONDARY",
+        "scope": "Exact named Catholic building footprint, OSM way 48892861, amenity=place_of_worship, building=church, denomination=catholic, Wikidata Q3950028"
+      }
+    ],
+    "rights_status": "TEXT_MAP_ONLY_NO_APPROVED_PHOTO",
+    "tlm_status": "NO_1962_MISSAL_ASSERTION",
+    "access_status": "CURRENT_VISITOR_HOURS_NOT_ASSERTED",
+    "crosswalk_policy": "NO_AUTOMATIC_SHRINE_RELIC_APPARITION_CUSTOM_PILGRIMAGE_DIRECTORY_JOIN"
+  },
+  "nonpublic_held_cases": [
+    {
+      "research_id": "candidate:SG-INV-0696",
+      "name": "UNESCO Saint Cyprian Carthage",
+      "reason": "Historic Christian basilica as an archaeological ruin: retain research/heritage classification, not active Catholic church."
+    },
+    {
+      "research_id": "candidate:SG-INV-0654",
+      "name": "Church of the Risen Christ, Monasterio de Tarlac",
+      "reason": "Catholic monastery chapel identity supported, but specific footprint and custodian rights/access release gate not certified."
+    }
+  ],
+  "acceptance_requirements": [
+    "Present OSM building way is independent of parish site identity and must match named building.",
+    "Use one stable new place ID; 348 unique IDs and 624 unique source IDs.",
+    "Canonical Geography and crosswalk must remain one-to-one, 348/348.",
+    "No modified existing coordinates, source URLs, Mass links or published media.",
+    "Every publication test and full CI suite must pass before merge."
+  ]
+}
