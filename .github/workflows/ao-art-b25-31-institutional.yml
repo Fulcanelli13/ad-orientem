@@ -2,7 +2,9 @@ name: B25 institutional 31 artwork source photo metadata pass
 on:
   push:
     branches: [research/b19-original-image-acquisition-probe-20261023]
-    paths: [.github/workflows/ao-art-b25-31-institutional.yml]
+    paths:
+      - .github/workflows/ao-art-b25-31-institutional.yml
+      - scripts/research/sacred_art_b25_institutional31.py
   workflow_dispatch:
 permissions:
   contents: write
