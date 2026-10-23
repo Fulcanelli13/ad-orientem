@@ -1,0 +1,19 @@
+#spxc-model-review{max-width:680px;margin:20px 0 50px;padding:18px 21px;background:#0b101aee;border:1px solid #9f8456a0;box-shadow:0 18px 34px #0007}
+#spxc-model-review[hidden]{display:none!important}
+.spxm-head{display:flex;gap:10px;justify-content:space-between;align-items:center;flex-wrap:wrap;margin-bottom:14px}
+.spxm-head strong{color:#dbc394;font:11px/1.3 system-ui,sans-serif;letter-spacing:.1em}
+.spxm-head small{color:#ae9c80;font:10px/1.4 system-ui,sans-serif}
+#spxm-label{display:block;color:#ead9b8;margin:10px 0;font:17px Palatino,serif}
+.spxm-row{display:flex;gap:9px}
+#spxm-question{flex:1;min-width:0;background:#111a25;border:1px solid #937c53;color:#f3e8d4;padding:12px;font:16px Palatino,serif}
+#spxm-send{color:#efd5a2;background:#29251f;border:1px solid #c4a777;padding:10px 13px;cursor:pointer;font:12px system-ui,sans-serif}
+#spxm-send:disabled{opacity:.5;cursor:progress}
+#spxm-scope{color:#b9a990;font:11px/1.65 system-ui,sans-serif}
+.spxm-entry{margin:17px 0 0;padding:15px;border-left:2px solid #9d8358;background:#141b26c9}
+.spxm-question{font:14px Palatino,serif;color:#d7c19b}
+.spxm-warning{font:10px/1.55 system-ui,sans-serif;letter-spacing:.06em;color:#ddc391;margin:13px 0}
+.spxm-draft{font:19px/1.62 Palatino,Georgia,serif;white-space:pre-wrap;color:#f0e4d0}
+.spxm-status,.spxm-held{color:#c3b095;font:13px/1.55 system-ui,sans-serif}
+.spxm-source-label{font:11px system-ui,sans-serif;color:#b7a284}
+.spxm-entry a{display:block;margin:8px 0;color:#d8bd8b;font:11px/1.45 system-ui,sans-serif;overflow-wrap:anywhere}
+@media(max-width:600px){#spxc-model-review{padding:14px}.spxm-row{flex-direction:column}#spxm-send{min-height:42px}}
