@@ -18,7 +18,8 @@
     "MCLOUGHLIN_NOT_UNIQUE_CUSTOMS": "70 new source observations grouped into 26 source action families, not 70 new customs or 26 confirmed distinct identities. Same action may appear in both Weiser and McLoughlin; author cites Weiser.",
     "STOKES_COMPILATION_DEPENDENCY": "Fr. Stokes 1955 is an additional separately authored source, but substantial passages depend on Maria von Trapp, Therese Mueller, Donald Attwater, Katherine Byles and other prior witnesses. 198 EWTN source-located action observations do NOT establish 198 independently attested or distinct practices.",
     "STOKES_RITUAL_AND_DATE_CAUTION": "Stokes's 1955 imprimatur is historical and does not validate specific blessing texts, indulgences, or current/1962 Roman Ritual ownership. No printed page numbers claimed; all locators refer to EWTN web lines, which may shift.",
-    "CATHOLICCULTURE_EXCERPT_WITNESS": "132 independently worded observations from 29 CatholicCulture excerpt pages attributed to Trapp (54), Berger (21), and Newland (57). ONLINE EXCERPT LOCATORS ONLY: No printed pages audited and no full-book completeness claim. CatholicCulture is a reproduction host, not three more independent authors. Do not treat Stokes/McLoughlin retellings as independent confirmation or these observations as distinct Catholic customs. Ritual claims need 1962 Roman Ritual validation."
+    "CATHOLICCULTURE_EXCERPT_WITNESS": "132 independently worded observations from 29 CatholicCulture excerpt pages attributed to Trapp (54), Berger (21), and Newland (57). ONLINE EXCERPT LOCATORS ONLY: No printed pages audited and no full-book completeness claim. CatholicCulture is a reproduction host, not three more independent authors. Do not treat Stokes/McLoughlin retellings as independent confirmation or these observations as distinct Catholic customs. Ritual claims need 1962 Roman Ritual validation.",
+    "MUELLER_KELLY_WITNESS_SCOPE": "Mueller 1955-labelled EWTN full-text online transcription 122 line-located descriptions and Kelly 1959 Chapter 16 EWTN text 82 line-located descriptions. No printed editions page-audited. The action labels often split a paragraph into separate related practices, not evidence of 204 unique customs. Church rites, sacraments and family devotions distinct; current approval unverified. Source-dependency links to Weiser, McLoughlin, Stokes and others unresolved."
   },
   "summary": {
     "source_observations": {
@@ -38,10 +39,13 @@
         "ch14_to_28": 121
       },
       "mcloughlin_fulltext_source_observations": 70,
-      "total_source_detail_rows_including_external": 1425,
-      "external_plus_weiser_count_note": "1,025 indexed Weiser book/detail research rows + 70 McLoughlin online observations + 198 Stokes compilation observations + 132 source-located Trapp/Berger/Newland excerpt actions = 1,425 research rows. These are not unique Catholic customs; author reuse, closely related actions and personal suggestions abound.",
+      "total_source_detail_rows_including_external": 1629,
+      "external_plus_weiser_count_note": "1,025 overlapping Weiser source/detail records + 70 McLoughlin records + 198 Stokes + 132 CatholicCulture historical author excerpt records + 204 Mueller/Kelly EWTN source-action records = 1,629 research rows, NOT 1,629 verified distinct Catholic customs. Authors/compilers overlap; many records are suggestions or variants.",
       "stokes_1955_online_source_action_observations": 198,
-      "catholicculture_trapp_berger_newland_excerpt_source_actions": 132
+      "catholicculture_trapp_berger_newland_excerpt_source_actions": 132,
+      "mueller_kelly_ewtn_source_action_observations": 204,
+      "mueller_1955_ewtn_action_observations": 122,
+      "kelly_1959_ewtn_action_observations": 82
     },
     "identity_working_rows": {
       "previously_existing_master_identities": 56,
@@ -119,7 +123,9 @@
     "stokes_1955": "Bernward Stokes, How to Make Your House a Home: Family Liturgy and Religious Practices (imprimatur 24 Sep 1955), EWTN transcription",
     "trapp_1955_excerpt": "Maria Augusta von Trapp, Around the Year with the Trapp Family (1955), as excerpted online; a Holy Thursday Trapp passage appears via later Family Life Bureau anthology",
     "berger_1949_excerpt": "Florence Berger, Cooking for Christ (1949; later reprints), as excerpted online",
-    "newland_1956_excerpt": "Mary Reed Newland, The Year and Our Children (1956), as excerpted online"
+    "newland_1956_excerpt": "Mary Reed Newland, The Year and Our Children (1956), as excerpted online",
+    "mueller_1955": "Therese Mueller, Our Children's Year of Grace, EWTN complete online 1955 fifth-edition-labelled transcription (original book copyright 1943)",
+    "kelly_1959": "Rev. George A. Kelly, The Catholic Family Handbook (1959), EWTN text chapter 16"
   },
   "source_dataset_paths": {
     "master": "data/customs/master/working-master.v1.json",
@@ -147,7 +153,8 @@
     "mcloughlin_family_advent": "data/customs/master/mcloughlin-family-advent-fulltext-ewtn-first-pass.v1.json",
     "mcloughlin_family_advent_reconciliation": "data/customs/master/mcloughlin-family-advent-action-family-reconciliation.v1.json",
     "stokes_family_liturgy_1955": "data/customs/master/stokes-1955-family-liturgy-ewtn-first-pass.v1.json",
-    "catholicculture_historical_author_excerpt_wave01": "data/customs/master/trapp-berger-newland-catholicculture-excerpts-wave01.v1.json"
+    "catholicculture_historical_author_excerpt_wave01": "data/customs/master/trapp-berger-newland-catholicculture-excerpts-wave01.v1.json",
+    "mueller_kelly_ewtn_action_source": "data/customs/master/mueller-1955-kelly-1959-ewtn-action-intake.v1.json"
   },
   "existing_master_identities": [
     {
@@ -18486,6 +18493,2048 @@
       "source_url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1234",
       "section": "DIRECTIONS",
       "occasion": "Rogation Days",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    }
+  ],
+  "external_source_observations_mueller_kelly": [
+    {
+      "id": "MUE55-EWTN-001",
+      "label": "Make an Advent wreath of evergreen or holly with four candles",
+      "section": "Advent",
+      "claim_characterization": "AUTHOR_RECOMMENDATION_OR_DESCRIBED_PRACTICE",
+      "web_line": 128,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-002",
+      "label": "Hang the completed wreath visibly in the family living room",
+      "section": "Advent",
+      "claim_characterization": "AUTHOR_RECOMMENDATION_OR_DESCRIBED_PRACTICE",
+      "web_line": 128,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-003",
+      "label": "Make the wreath collectively while discussing the cycle of seasons and Advent meaning",
+      "section": "Advent",
+      "claim_characterization": "AUTHOR_RECOMMENDATION_OR_DESCRIBED_PRACTICE",
+      "web_line": 129,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-004",
+      "label": "Study the First Advent Sunday Mass from the household missal",
+      "section": "Advent",
+      "claim_characterization": "AUTHOR_RECOMMENDATION_OR_DESCRIBED_PRACTICE",
+      "web_line": 131,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-005",
+      "label": "Gather under the Advent wreath for Sunday evening reflection",
+      "section": "Advent",
+      "claim_characterization": "AUTHOR_RECOMMENDATION_OR_DESCRIBED_PRACTICE",
+      "web_line": 135,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-006",
+      "label": "Recite or sing the Rorate Coeli as part of the family's Advent prayers",
+      "section": "Advent",
+      "claim_characterization": "AUTHOR_RECOMMENDATION_OR_DESCRIBED_PRACTICE",
+      "web_line": 135,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-007",
+      "label": "Sing Advent hymns at the weekly household wreath devotion",
+      "section": "Advent",
+      "claim_characterization": "AUTHOR_RECOMMENDATION_OR_DESCRIBED_PRACTICE",
+      "web_line": 135,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-008",
+      "label": "Make a drawing or clay model of the road described in Advent Gospel imagery",
+      "section": "Advent",
+      "claim_characterization": "AUTHOR_RECOMMENDATION_OR_DESCRIBED_PRACTICE",
+      "web_line": 142,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-009",
+      "label": "Stage a simple domestic prayer-drama of Annunciation and Visitation on Advent Ember days",
+      "section": "Advent Ember Days",
+      "claim_characterization": "AUTHOR_SUGGESTED_ADAPTATION",
+      "web_line": 143,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-010",
+      "label": "Organize Christmas gift-giving around Saint Nicholas's example of charity toward children and the poor",
+      "section": "St Nicholas",
+      "claim_characterization": "AUTHOR_SUGGESTED_ADAPTATION",
+      "web_line": 147,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-011",
+      "label": "Hold a quiet family Advent-wreath hour before the Christmas-room opening",
+      "section": "Christmas Eve",
+      "claim_characterization": "AUTHOR_RECOMMENDATION_OR_DESCRIBED_PRACTICE",
+      "web_line": 157,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-012",
+      "label": "Light the Christmas tree only on Christmas Eve rather than earlier",
+      "section": "Christmas Eve",
+      "claim_characterization": "AUTHOR_SUGGESTED_ADAPTATION",
+      "web_line": 158,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-013",
+      "label": "Lead children into a separately prepared Christmas room containing the crib and tree",
+      "section": "Christmas Eve",
+      "claim_characterization": "AUTHOR_RECOMMENDATION_OR_DESCRIBED_PRACTICE",
+      "web_line": 159,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-014",
+      "label": "Sing Christmas hymns together around the Nativity crib",
+      "section": "Christmas Eve",
+      "claim_characterization": "AUTHOR_RECOMMENDATION_OR_DESCRIBED_PRACTICE",
+      "web_line": 160,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-015",
+      "label": "Read the Christmas Gospel from the shepherds' Mass before family gifts",
+      "section": "Christmas Eve",
+      "claim_characterization": "AUTHOR_RECOMMENDATION_OR_DESCRIBED_PRACTICE",
+      "web_line": 160,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-016",
+      "label": "Read the Christmas Collect and Epistle in the domestic gathering",
+      "section": "Christmas Eve",
+      "claim_characterization": "AUTHOR_RECOMMENDATION_OR_DESCRIBED_PRACTICE",
+      "web_line": 160,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-017",
+      "label": "Exchange blessings and good wishes before distributing Christmas presents",
+      "section": "Christmas Eve",
+      "claim_characterization": "AUTHOR_RECOMMENDATION_OR_DESCRIBED_PRACTICE",
+      "web_line": 161,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-018",
+      "label": "Add one Nativity-scene element per day of Advent",
+      "section": "Advent crib-building",
+      "claim_characterization": "REPORTED_FAMILY_EXAMPLE",
+      "web_line": 163,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-019",
+      "label": "Delay placing the Holy Family in a progressively assembled crib until Christmas Eve",
+      "section": "Advent crib-building",
+      "claim_characterization": "REPORTED_FAMILY_EXAMPLE",
+      "web_line": 163,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-020",
+      "label": "Spend the year gathering materials for the Christmas crib",
+      "section": "Nativity crib",
+      "claim_characterization": "AUTHOR_SUGGESTED_ADAPTATION",
+      "web_line": 165,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-021",
+      "label": "Make household Nativity figures from wood clay or other simple materials",
+      "section": "Nativity crib",
+      "claim_characterization": "AUTHOR_SUGGESTED_ADAPTATION",
+      "web_line": 165,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-022",
+      "label": "Use an ordinary basket or other reused object as a handmade Nativity stable",
+      "section": "Nativity crib",
+      "claim_characterization": "AUTHOR_PERSONAL_FAMILY_TESTIMONY",
+      "web_line": 166,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-023",
+      "label": "Enlarge a family crib gradually over successive Christmases",
+      "section": "Nativity crib",
+      "claim_characterization": "AUTHOR_RECOMMENDATION_OR_DESCRIBED_PRACTICE",
+      "web_line": 167,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-024",
+      "label": "Move the Magi figures toward the crib through the Christmas season until Epiphany",
+      "section": "Nativity crib",
+      "claim_characterization": "AUTHOR_RECOMMENDATION_OR_DESCRIBED_PRACTICE",
+      "web_line": 168,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-025",
+      "label": "Observe the older Saint John's Day ceremonial drinking of charity in households",
+      "section": "St John Apostle",
+      "claim_characterization": "REPORTED_HISTORIC_CUSTOM",
+      "web_line": 169,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-026",
+      "label": "Serve specially blessed wine before the principal Saint John's Day meal",
+      "section": "St John Apostle",
+      "claim_characterization": "REPORTED_HISTORIC_CUSTOM_RITUAL_CHECK",
+      "web_line": 170,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-027",
+      "label": "Pass the Saint John's cup among household members with exchanged goodwill wishes",
+      "section": "St John Apostle",
+      "claim_characterization": "REPORTED_HISTORIC_CUSTOM_RITUAL_CHECK",
+      "web_line": 170,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-028",
+      "label": "Record an analogous festive household drinking observance linked by the author to Saint Gertrude",
+      "section": "St Gertrude of Nivelles",
+      "claim_characterization": "REPORTED_HISTORIC_CUSTOM",
+      "web_line": 171,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-029",
+      "label": "Invite young children to church for a special feast-day blessing",
+      "section": "Holy Innocents",
+      "claim_characterization": "REPORTED_PARISH_PRACTICE_RITUAL_CHECK",
+      "web_line": 173,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-030",
+      "label": "Assign the youngest child authority over family songs prayers menu and games on Holy Innocents",
+      "section": "Holy Innocents",
+      "claim_characterization": "REPORTED_AND_SUGGESTED_VARIANTS",
+      "web_line": 174,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-031",
+      "label": "Allow a school's youngest pupil to serve as symbolic principal or superior for the day",
+      "section": "Holy Innocents",
+      "claim_characterization": "REPORTED_AND_SUGGESTED_VARIANTS",
+      "web_line": 174,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-032",
+      "label": "Carry the Magi figures in a singing children's procession to the Nativity crib",
+      "section": "Epiphany",
+      "claim_characterization": "AUTHOR_SUGGESTED_ADAPTATION",
+      "web_line": 177,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-033",
+      "label": "Place symbolic Magi gifts at the crib on Epiphany",
+      "section": "Epiphany",
+      "claim_characterization": "AUTHOR_SUGGESTED_ADAPTATION",
+      "web_line": 177,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-034",
+      "label": "Describe the parish's Epiphany house-blessing performed in four directions from church or tower where homes are too numerous to visit",
+      "section": "Epiphany",
+      "claim_characterization": "REPORTED_PARISH_PRACTICE_RITUAL_CHECK",
+      "web_line": 180,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-035",
+      "label": "Gather at a household altar while a collective parish house blessing is performed",
+      "section": "Epiphany",
+      "claim_characterization": "AUTHOR_SUGGESTED_ADAPTATION_RITUAL_CHECK",
+      "web_line": 181,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-036",
+      "label": "Walk through domestic rooms with holy water during the house-blessing prayers",
+      "section": "Epiphany",
+      "claim_characterization": "AUTHOR_SUGGESTED_ADAPTATION_RITUAL_CHECK",
+      "web_line": 181,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-037",
+      "label": "Bring gold or frankincense for a church blessing near Epiphany",
+      "section": "Epiphany",
+      "claim_characterization": "REPORTED_AND_SUGGESTED_VARIANTS_RITUAL_CHECK",
+      "web_line": 182,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-038",
+      "label": "Offer blessed gold toward sacred vessels in the parish",
+      "section": "Epiphany",
+      "claim_characterization": "REPORTED_AND_SUGGESTED_VARIANTS_RITUAL_CHECK",
+      "web_line": 182,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-039",
+      "label": "Burn blessed Epiphany incense during household prayers",
+      "section": "Epiphany",
+      "claim_characterization": "REPORTED_AND_SUGGESTED_VARIANTS_RITUAL_CHECK",
+      "web_line": 182,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-040",
+      "label": "Mark the lintel with Epiphany blessed chalk and Magi initials plus year",
+      "section": "Epiphany",
+      "claim_characterization": "REPORTED_HISTORIC_CUSTOM_RITUAL_CHECK",
+      "web_line": 183,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-041",
+      "label": "Bring bread eggs and salt to the church for Epiphany food blessings",
+      "section": "Epiphany",
+      "claim_characterization": "REPORTED_HISTORIC_CUSTOM_RITUAL_CHECK",
+      "web_line": 184,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-042",
+      "label": "Consume blessed Epiphany foods at the festive family meal",
+      "section": "Epiphany",
+      "claim_characterization": "REPORTED_HISTORIC_CUSTOM_RITUAL_CHECK",
+      "web_line": 184,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-043",
+      "label": "Process through the home carrying blessed Candlemas candles",
+      "section": "Candlemas",
+      "claim_characterization": "AUTHOR_SUGGESTED_ADAPTATION_RITUAL_CHECK",
+      "web_line": 192,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-044",
+      "label": "Bring a candle for each family member to the Candlemas church blessing",
+      "section": "Candlemas",
+      "claim_characterization": "AUTHOR_SUGGESTED_ADAPTATION_RITUAL_CHECK",
+      "web_line": 193,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-045",
+      "label": "Reserve additional blessed candles for visits to sick family members",
+      "section": "Candlemas",
+      "claim_characterization": "AUTHOR_SUGGESTED_ADAPTATION_RITUAL_CHECK",
+      "web_line": 193,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-046",
+      "label": "Repeat a household candle procession in the evening for relatives absent from church",
+      "section": "Candlemas",
+      "claim_characterization": "AUTHOR_SUGGESTED_ADAPTATION_RITUAL_CHECK",
+      "web_line": 194,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-047",
+      "label": "Sing and pray while the father leads Candlemas candles through the rooms",
+      "section": "Candlemas",
+      "claim_characterization": "AUTHOR_SUGGESTED_ADAPTATION_RITUAL_CHECK",
+      "web_line": 194,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-048",
+      "label": "Light preserved blessed candles for patronal feasts personal anniversaries or family decisions",
+      "section": "Candlemas",
+      "claim_characterization": "AUTHOR_SUGGESTED_ADAPTATION",
+      "web_line": 196,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-049",
+      "label": "Celebrate the farewell to Alleluia with final pre-Lenten Alleluia singing",
+      "section": "Septuagesima",
+      "claim_characterization": "REPORTED_REVIVAL",
+      "web_line": 206,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-050",
+      "label": "Compare garden ploughing and sowing with spiritual preparation during Sexagesima",
+      "section": "Septuagesima",
+      "claim_characterization": "AUTHOR_SUGGESTED_ADAPTATION",
+      "web_line": 210,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-051",
+      "label": "Hold a short period of festive household carnival food and recreation before Ash Wednesday",
+      "section": "Shrovetide",
+      "claim_characterization": "AUTHOR_SUGGESTED_ADAPTATION",
+      "web_line": 212,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-052",
+      "label": "Collect old Palm Sunday palm fronds from household religious images in silent procession",
+      "section": "Shrovetide",
+      "claim_characterization": "AUTHOR_SUGGESTED_ADAPTATION_RITUAL_CHECK",
+      "web_line": 213,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-053",
+      "label": "Burn last year's palms as a symbolic pre-Lenten observance",
+      "section": "Shrovetide",
+      "claim_characterization": "AUTHOR_SUGGESTED_ADAPTATION_RITUAL_CHECK",
+      "web_line": 213,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-054",
+      "label": "Keep children's self-denial offerings discreet rather than publicly rewarded",
+      "section": "Lent",
+      "claim_characterization": "AUTHOR_SUGGESTED_ADAPTATION",
+      "web_line": 215,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-055",
+      "label": "Study the next day's Lenten Mass text in the evening before attending Mass",
+      "section": "Lent",
+      "claim_characterization": "AUTHOR_SUGGESTED_ADAPTATION",
+      "web_line": 218,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-056",
+      "label": "Extract one or two memorable ideas from daily Lenten Mass propers for household meditation",
+      "section": "Lent",
+      "claim_characterization": "AUTHOR_SUGGESTED_ADAPTATION",
+      "web_line": 218,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-057",
+      "label": "Attend blessing and procession of palms with children",
+      "section": "Palm Sunday",
+      "claim_characterization": "AUTHOR_SUGGESTED_ADAPTATION",
+      "web_line": 223,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-058",
+      "label": "Carry blessed palms home through the house",
+      "section": "Palm Sunday",
+      "claim_characterization": "AUTHOR_SUGGESTED_ADAPTATION",
+      "web_line": 223,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-059",
+      "label": "Decorate individual rooms with newly blessed Palm Sunday fronds",
+      "section": "Palm Sunday",
+      "claim_characterization": "AUTHOR_SUGGESTED_ADAPTATION",
+      "web_line": 223,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-060",
+      "label": "Wear a small cross fashioned from palm leaves during Holy Week",
+      "section": "Holy Week",
+      "claim_characterization": "AUTHOR_SUGGESTED_ADAPTATION",
+      "web_line": 224,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-061",
+      "label": "Complete Easter housecleaning before the sacred days to avoid interrupting services",
+      "section": "Holy Week",
+      "claim_characterization": "AUTHOR_SUGGESTED_ADAPTATION",
+      "web_line": 226,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-062",
+      "label": "Attend Holy Thursday cathedral services when possible",
+      "section": "Holy Thursday",
+      "claim_characterization": "AUTHOR_SUGGESTED_ADAPTATION",
+      "web_line": 227,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-063",
+      "label": "Witness the mandatum or foot-washing rite if offered",
+      "section": "Holy Thursday",
+      "claim_characterization": "AUTHOR_SUGGESTED_ADAPTATION",
+      "web_line": 227,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-064",
+      "label": "Witness the diocesan consecration of holy oils at the cathedral",
+      "section": "Holy Thursday",
+      "claim_characterization": "AUTHOR_SUGGESTED_ADAPTATION",
+      "web_line": 228,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-065",
+      "label": "Serve deliberately simple Holy Week meals",
+      "section": "Holy Week",
+      "claim_characterization": "AUTHOR_SUGGESTED_ADAPTATION",
+      "web_line": 229,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-066",
+      "label": "Serve unleavened bread and wine as a household symbolic meal",
+      "section": "Holy Week",
+      "claim_characterization": "AUTHOR_SUGGESTED_ADAPTATION",
+      "web_line": 229,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-067",
+      "label": "Mark Holy Thursday with a more elaborate family meal",
+      "section": "Holy Week",
+      "claim_characterization": "AUTHOR_SUGGESTED_ADAPTATION",
+      "web_line": 229,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-068",
+      "label": "Sing Ubi Caritas at the Holy Thursday family supper",
+      "section": "Holy Week",
+      "claim_characterization": "AUTHOR_SUGGESTED_ADAPTATION",
+      "web_line": 229,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-069",
+      "label": "Keep hours of household silence during Holy Week",
+      "section": "Triduum",
+      "claim_characterization": "AUTHOR_SUGGESTED_ADAPTATION",
+      "web_line": 230,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-070",
+      "label": "Read spiritual literature and explain each day's Church services at home",
+      "section": "Triduum",
+      "claim_characterization": "AUTHOR_SUGGESTED_ADAPTATION",
+      "web_line": 230,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-071",
+      "label": "Attend Tenebrae with older family members where offered",
+      "section": "Triduum",
+      "claim_characterization": "AUTHOR_SUGGESTED_ADAPTATION",
+      "web_line": 230,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-072",
+      "label": "Display baptismal robes and candles on a home altar",
+      "section": "Holy Saturday",
+      "claim_characterization": "AUTHOR_PERSONAL_FAMILY_TESTIMONY",
+      "web_line": 238,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-073",
+      "label": "Renew baptismal vows collectively before Easter",
+      "section": "Holy Saturday",
+      "claim_characterization": "AUTHOR_PERSONAL_FAMILY_TESTIMONY",
+      "web_line": 238,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-074",
+      "label": "Sing thanksgiving after household renewal of baptismal promises",
+      "section": "Holy Saturday",
+      "claim_characterization": "AUTHOR_PERSONAL_FAMILY_TESTIMONY",
+      "web_line": 238,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-075",
+      "label": "Carry newly blessed Easter water home in a specially decorated bottle",
+      "section": "Holy Saturday",
+      "claim_characterization": "AUTHOR_PERSONAL_FAMILY_TESTIMONY_RITUAL_CHECK",
+      "web_line": 239,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-076",
+      "label": "Sprinkle members of the family and domestic surroundings with Easter holy water",
+      "section": "Holy Saturday",
+      "claim_characterization": "AUTHOR_PERSONAL_FAMILY_TESTIMONY_RITUAL_CHECK",
+      "web_line": 239,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-077",
+      "label": "Decorate an Easter-water container with Baptism or Trinity symbols",
+      "section": "Holy Saturday",
+      "claim_characterization": "AUTHOR_PERSONAL_FAMILY_TESTIMONY_RITUAL_CHECK",
+      "web_line": 239,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-078",
+      "label": "Decorate the home with greenery and flowers for Easter",
+      "section": "Easter",
+      "claim_characterization": "AUTHOR_SUGGESTED_ADAPTATION",
+      "web_line": 245,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-079",
+      "label": "Paint Easter eggs with Christian resurrection symbols",
+      "section": "Easter",
+      "claim_characterization": "AUTHOR_SUGGESTED_ADAPTATION",
+      "web_line": 245,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-080",
+      "label": "Display handmade Alleluia and Resurrexit inscriptions",
+      "section": "Easter",
+      "claim_characterization": "AUTHOR_SUGGESTED_ADAPTATION",
+      "web_line": 245,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-081",
+      "label": "String oranges as part of household Easter decoration",
+      "section": "Easter",
+      "claim_characterization": "AUTHOR_SUGGESTED_ADAPTATION",
+      "web_line": 245,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-082",
+      "label": "Arrange a decorative household Easter-food basket with bread and eggs",
+      "section": "Easter",
+      "claim_characterization": "REPORTED_AND_SUGGESTED_VARIANTS_RITUAL_CHECK",
+      "web_line": 247,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-083",
+      "label": "Bring Easter foods for blessing by a priest when that custom is observed",
+      "section": "Easter",
+      "claim_characterization": "REPORTED_AND_SUGGESTED_VARIANTS_RITUAL_CHECK",
+      "web_line": 247,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-084",
+      "label": "Share part of the blessed Easter provisions with poor parishioners",
+      "section": "Easter",
+      "claim_characterization": "REPORTED_AND_SUGGESTED_VARIANTS_RITUAL_CHECK",
+      "web_line": 247,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-085",
+      "label": "Recite traditional Easter food blessing prayers in a household response format",
+      "section": "Easter",
+      "claim_characterization": "AUTHOR_SUGGESTED_ADAPTATION_RITUAL_CHECK",
+      "web_line": 248,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-086",
+      "label": "Paint Easter eggs with crosses and other symbols of Christ's victory",
+      "section": "Easter",
+      "claim_characterization": "AUTHOR_RECOMMENDATION_OR_DESCRIBED_PRACTICE",
+      "web_line": 249,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-087",
+      "label": "Repeat the Exsultet before the household baptismal candle",
+      "section": "Easter",
+      "claim_characterization": "AUTHOR_SUGGESTED_ADAPTATION",
+      "web_line": 250,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-088",
+      "label": "Sing Easter Alleluia melodies with the family",
+      "section": "Easter",
+      "claim_characterization": "AUTHOR_SUGGESTED_ADAPTATION",
+      "web_line": 250,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-089",
+      "label": "Recite the Easter Sequence and Regina Coeli as domestic Easter devotion",
+      "section": "Easter",
+      "claim_characterization": "AUTHOR_SUGGESTED_ADAPTATION",
+      "web_line": 250,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-090",
+      "label": "Read and explain the following day's Easter Octave Mass propers at evening family prayers",
+      "section": "Easter Octave",
+      "claim_characterization": "AUTHOR_SUGGESTED_ADAPTATION",
+      "web_line": 251,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-091",
+      "label": "Keep Rogation-day household petitions and devotions",
+      "section": "Ascension to Pentecost",
+      "claim_characterization": "AUTHOR_SUGGESTED_ADAPTATION",
+      "web_line": 258,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-092",
+      "label": "Hold a household novena after Ascension for the coming of the Holy Ghost",
+      "section": "Ascension to Pentecost",
+      "claim_characterization": "AUTHOR_SUGGESTED_ADAPTATION",
+      "web_line": 258,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-093",
+      "label": "Sing Veni Creator at night prayers during the Pentecost novena",
+      "section": "Ascension to Pentecost",
+      "claim_characterization": "AUTHOR_SUGGESTED_ADAPTATION",
+      "web_line": 258,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-094",
+      "label": "Place a red-paper Holy Ghost symbol at the home altar for Pentecost",
+      "section": "Pentecost",
+      "claim_characterization": "AUTHOR_PERSONAL_FAMILY_TESTIMONY",
+      "web_line": 261,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-095",
+      "label": "Decorate the Pentecost devotional setting with red roses",
+      "section": "Pentecost",
+      "claim_characterization": "AUTHOR_PERSONAL_FAMILY_TESTIMONY",
+      "web_line": 261,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-096",
+      "label": "Arrange a paper tableau with dove seven gifts and cosmos symbols for Pentecost",
+      "section": "Pentecost",
+      "claim_characterization": "AUTHOR_PERSONAL_FAMILY_TESTIMONY",
+      "web_line": 262,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-097",
+      "label": "Gather on Pentecost eve to celebrate the Church's birthday and a family Confirmation anniversary",
+      "section": "Pentecost",
+      "claim_characterization": "AUTHOR_PERSONAL_FAMILY_TESTIMONY",
+      "web_line": 264,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-098",
+      "label": "Recall the words and actions of each member's Confirmation ceremony in a family devotion",
+      "section": "Pentecost",
+      "claim_characterization": "AUTHOR_PERSONAL_FAMILY_TESTIMONY",
+      "web_line": 266,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-099",
+      "label": "Ask for renewal of Confirmation grace during the Pentecost home celebration",
+      "section": "Pentecost",
+      "claim_characterization": "AUTHOR_PERSONAL_FAMILY_TESTIMONY",
+      "web_line": 266,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-100",
+      "label": "Prepare for Sunday spiritually and domestically on Saturday evening",
+      "section": "Sundays after Pentecost",
+      "claim_characterization": "AUTHOR_SUGGESTED_ADAPTATION",
+      "web_line": 279,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-101",
+      "label": "Recall a childhood custom of making Sunday-eve cleaning and fresh linen a solemn family preparation",
+      "section": "Sundays after Pentecost",
+      "claim_characterization": "AUTHOR_CHILDHOOD_MEMORY",
+      "web_line": 280,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-102",
+      "label": "Set apart Saturday evening hours to prepare mentally for Sunday worship",
+      "section": "Sundays after Pentecost",
+      "claim_characterization": "AUTHOR_SUGGESTED_ADAPTATION",
+      "web_line": 282,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-103",
+      "label": "Report outdoor Corpus Christi processions through villages and fields",
+      "section": "Corpus Christi",
+      "claim_characterization": "REPORTED_TRANSREGIONAL_PRACTICE",
+      "web_line": 291,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-104",
+      "label": "Carry banners flowers and other symbolic objects in Corpus Christi processions",
+      "section": "Corpus Christi",
+      "claim_characterization": "REPORTED_TRANSREGIONAL_PRACTICE",
+      "web_line": 291,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-105",
+      "label": "Decorate procession roads with greenery flowers and garlands",
+      "section": "Corpus Christi",
+      "claim_characterization": "REPORTED_TRANSREGIONAL_PRACTICE",
+      "web_line": 291,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-106",
+      "label": "Decorate household windows and doorways for the Corpus Christi procession",
+      "section": "Corpus Christi",
+      "claim_characterization": "REPORTED_TRANSREGIONAL_PRACTICE",
+      "web_line": 291,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-107",
+      "label": "Prepare neighborhood procession altars for Benediction",
+      "section": "Corpus Christi",
+      "claim_characterization": "REPORTED_TRANSREGIONAL_PRACTICE",
+      "web_line": 291,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-108",
+      "label": "Celebrate the Visitation as a special domestic commemoration for mothers",
+      "section": "Visitation",
+      "claim_characterization": "AUTHOR_SUGGESTED_ADAPTATION",
+      "web_line": 302,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-109",
+      "label": "Pray the Magnificat as a household Visitation devotion",
+      "section": "Visitation",
+      "claim_characterization": "AUTHOR_SUGGESTED_ADAPTATION",
+      "web_line": 302,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-110",
+      "label": "Visit and assist an expectant mother as a family act of charity on the Visitation",
+      "section": "Visitation",
+      "claim_characterization": "AUTHOR_SUGGESTED_ADAPTATION",
+      "web_line": 303,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-111",
+      "label": "Children gather numerous wild herbs and flowers into a traditional Assumption bouquet",
+      "section": "Assumption",
+      "claim_characterization": "AUTHOR_CHILDHOOD_MEMORY",
+      "web_line": 305,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-112",
+      "label": "Bring gathered Assumption herbs to a blessing before High Mass",
+      "section": "Assumption",
+      "claim_characterization": "AUTHOR_CHILDHOOD_MEMORY_RITUAL_CHECK",
+      "web_line": 306,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-113",
+      "label": "Distribute Assumption blessed herbs through stable pantry gardens and fields",
+      "section": "Assumption",
+      "claim_characterization": "AUTHOR_CHILDHOOD_MEMORY_RITUAL_CHECK",
+      "web_line": 306,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-114",
+      "label": "Offer garden fruit or city-picked flowers for the Assumption blessing",
+      "section": "Assumption",
+      "claim_characterization": "AUTHOR_SUGGESTED_ADAPTATION_RITUAL_CHECK",
+      "web_line": 307,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-115",
+      "label": "Keep September and November Marian observances at home with psalms hymns and reflections",
+      "section": "Marian feasts",
+      "claim_characterization": "AUTHOR_SUGGESTED_ADAPTATION",
+      "web_line": 308,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-116",
+      "label": "Create a household saint-of-the-month reading club",
+      "section": "Saints",
+      "claim_characterization": "AUTHOR_SUGGESTED_ADAPTATION",
+      "web_line": 309,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-117",
+      "label": "Study the saint-of-the-week as a family devotional exercise",
+      "section": "Saints",
+      "claim_characterization": "AUTHOR_SUGGESTED_ADAPTATION",
+      "web_line": 309,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-118",
+      "label": "Recite or sing the Litany of the Saints at home",
+      "section": "All Saints",
+      "claim_characterization": "AUTHOR_SUGGESTED_ADAPTATION",
+      "web_line": 314,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-119",
+      "label": "Compile and recite a family litany of members' patron saints",
+      "section": "All Saints",
+      "claim_characterization": "AUTHOR_SUGGESTED_ADAPTATION",
+      "web_line": 314,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-120",
+      "label": "Read or discuss the Office of the Dead with children on All Souls",
+      "section": "All Souls",
+      "claim_characterization": "AUTHOR_SUGGESTED_ADAPTATION",
+      "web_line": 315,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-121",
+      "label": "Sustain household conversations on death and Christian hope during November",
+      "section": "All Souls",
+      "claim_characterization": "AUTHOR_SUGGESTED_ADAPTATION",
+      "web_line": 315,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "MUE55-EWTN-122",
+      "label": "Recount stories of the deaths of saints and deceased relatives during November",
+      "section": "All Souls",
+      "claim_characterization": "AUTHOR_SUGGESTED_ADAPTATION",
+      "web_line": 316,
+      "web_url": "https://www.ewtn.com/catholicism/library/our-childrens-year-of-grace-10488",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-001",
+      "label": "Make a small family prayer shrine with a crucifix and candles",
+      "section": "Domestic objects",
+      "claim_characterization": "AUTHOR_RECOMMENDATION_OR_DESCRIBED_PRACTICE",
+      "web_line": 1481,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-002",
+      "label": "Place sacred pictures or statues in main rooms and bedrooms",
+      "section": "Domestic objects",
+      "claim_characterization": "AUTHOR_RECOMMENDATION_OR_DESCRIBED_PRACTICE",
+      "web_line": 1481,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-003",
+      "label": "Install a holy-water font near the domestic doorway",
+      "section": "Domestic objects",
+      "claim_characterization": "REPORTED_OR_RECOMMENDED_CUSTOM",
+      "web_line": 1482,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-004",
+      "label": "Establish a small garden grotto honoring Jesus or Mary",
+      "section": "Domestic objects",
+      "claim_characterization": "REPORTED_OR_RECOMMENDED_CUSTOM",
+      "web_line": 1482,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-005",
+      "label": "Pray morning and night as a household",
+      "section": "Daily family prayer",
+      "claim_characterization": "AUTHOR_RECOMMENDATION_OR_DESCRIBED_PRACTICE",
+      "web_line": 1485,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-006",
+      "label": "Say grace and thanksgiving together at family meals",
+      "section": "Daily family prayer",
+      "claim_characterization": "AUTHOR_RECOMMENDATION_OR_DESCRIBED_PRACTICE",
+      "web_line": 1485,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-007",
+      "label": "Wait to begin the meal until grace has been said and to depart until thanksgiving is complete",
+      "section": "Daily family prayer",
+      "claim_characterization": "AUTHOR_RECOMMENDATION_OR_DESCRIBED_PRACTICE",
+      "web_line": 1486,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-008",
+      "label": "Pray after dinner as a regular evening family routine",
+      "section": "Daily family prayer",
+      "claim_characterization": "REPORTED_DOMESTIC_VARIANTS",
+      "web_line": 1487,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-009",
+      "label": "Pray with children together immediately before bedtime",
+      "section": "Daily family prayer",
+      "claim_characterization": "REPORTED_DOMESTIC_VARIANTS",
+      "web_line": 1487,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-010",
+      "label": "Recite the rosary in the evening with the whole family",
+      "section": "Rosary",
+      "claim_characterization": "AUTHOR_RECOMMENDATION_OR_DESCRIBED_PRACTICE",
+      "web_line": 1488,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-011",
+      "label": "Rotate who leads the domestic rosary or its individual decades",
+      "section": "Rosary",
+      "claim_characterization": "AUTHOR_RECOMMENDATION_OR_DESCRIBED_PRACTICE",
+      "web_line": 1488,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-012",
+      "label": "Briefly explain each rosary mystery to children before beginning a decade",
+      "section": "Rosary",
+      "claim_characterization": "AUTHOR_RECOMMENDATION_OR_DESCRIBED_PRACTICE",
+      "web_line": 1489,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-013",
+      "label": "Read the Bible together every night",
+      "section": "Bible reading",
+      "claim_characterization": "REPORTED_DOMESTIC_VARIANTS",
+      "web_line": 1490,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-014",
+      "label": "Frame family Scripture reading with opening and closing prayers",
+      "section": "Bible reading",
+      "claim_characterization": "REPORTED_DOMESTIC_VARIANTS",
+      "web_line": 1490,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-015",
+      "label": "Discuss the selected Scripture passage after domestic reading",
+      "section": "Bible reading",
+      "claim_characterization": "REPORTED_DOMESTIC_VARIANTS",
+      "web_line": 1490,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-016",
+      "label": "Read that day's Mass Gospel and Epistle at home",
+      "section": "Bible reading",
+      "claim_characterization": "REPORTED_DOMESTIC_VARIANTS",
+      "web_line": 1490,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-017",
+      "label": "Attend Mass and receive Communion together as a family",
+      "section": "Family Mass",
+      "claim_characterization": "REPORTED_DOMESTIC_VARIANTS",
+      "web_line": 1491,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-018",
+      "label": "Share a festive household breakfast after family Communion",
+      "section": "Family Mass",
+      "claim_characterization": "REPORTED_DOMESTIC_VARIANTS",
+      "web_line": 1491,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-019",
+      "label": "Set up a small domestic Nativity manger to prepare for Christmas",
+      "section": "Christmas",
+      "claim_characterization": "AUTHOR_RECOMMENDATION_OR_DESCRIBED_PRACTICE",
+      "web_line": 1494,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-020",
+      "label": "Place a four-candle evergreen Advent wreath at the family dining table",
+      "section": "Advent",
+      "claim_characterization": "AUTHOR_RECOMMENDATION_OR_DESCRIBED_PRACTICE",
+      "web_line": 1495,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-021",
+      "label": "Darken the room for the first Advent candle-lighting",
+      "section": "Advent",
+      "claim_characterization": "AUTHOR_RECOMMENDATION_OR_DESCRIBED_PRACTICE",
+      "web_line": 1495,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-022",
+      "label": "Let the youngest child light the first wreath candle while family prays",
+      "section": "Advent",
+      "claim_characterization": "AUTHOR_RECOMMENDATION_OR_DESCRIBED_PRACTICE",
+      "web_line": 1495,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-023",
+      "label": "Rekindle the weekly Advent candle each evening at dinner",
+      "section": "Advent",
+      "claim_characterization": "AUTHOR_RECOMMENDATION_OR_DESCRIBED_PRACTICE",
+      "web_line": 1495,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-024",
+      "label": "Assign each Advent Sunday candle-lighting to successive younger family members",
+      "section": "Advent",
+      "claim_characterization": "AUTHOR_RECOMMENDATION_OR_DESCRIBED_PRACTICE",
+      "web_line": 1496,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-025",
+      "label": "Light all four Advent wreath candles at the meals before Christmas",
+      "section": "Advent",
+      "claim_characterization": "REPORTED_DOMESTIC_VARIANTS",
+      "web_line": 1497,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-026",
+      "label": "Eat family Advent meals by wreath candlelight alone",
+      "section": "Advent",
+      "claim_characterization": "REPORTED_DOMESTIC_VARIANTS",
+      "web_line": 1497,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-027",
+      "label": "Prepare a strawless Nativity manger several weeks before Christmas",
+      "section": "Advent France",
+      "claim_characterization": "REPORTED_FRENCH_CUSTOM",
+      "web_line": 1498,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-028",
+      "label": "Award straw to children to place in the manger for acts of service",
+      "section": "Advent France",
+      "claim_characterization": "REPORTED_FRENCH_CUSTOM",
+      "web_line": 1498,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-029",
+      "label": "Place a large Christ-symbolizing Advent candle before a Marian-and-Child picture",
+      "section": "Advent Germany",
+      "claim_characterization": "REPORTED_GERMAN_CUSTOM",
+      "web_line": 1500,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-030",
+      "label": "Light the special German Advent candle during evening family prayers",
+      "section": "Advent Germany",
+      "claim_characterization": "REPORTED_GERMAN_CUSTOM",
+      "web_line": 1500,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-031",
+      "label": "Set three candles in Irish household windows on Christmas Eve",
+      "section": "Christmas Ireland",
+      "claim_characterization": "REPORTED_IRISH_CUSTOM",
+      "web_line": 1501,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-032",
+      "label": "Leave an Irish household door unlocked on Christmas Eve as symbolic welcome for the Holy Family",
+      "section": "Christmas Ireland",
+      "claim_characterization": "REPORTED_IRISH_CUSTOM",
+      "web_line": 1501,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-033",
+      "label": "Maintain a daytime Christmas Eve fast before a Slovak family reunion supper",
+      "section": "Christmas Slovakia",
+      "claim_characterization": "REPORTED_SLOVAK_CUSTOM",
+      "web_line": 1501,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-034",
+      "label": "Lead collective penitential and intercessory prayers at a Slovak Christmas family reunion supper",
+      "section": "Christmas Slovakia",
+      "claim_characterization": "REPORTED_SLOVAK_CUSTOM",
+      "web_line": 1502,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-035",
+      "label": "Divide Polish Christmas opłatek wafers among family members",
+      "section": "Christmas Poland",
+      "claim_characterization": "REPORTED_POLISH_CUSTOM",
+      "web_line": 1502,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-036",
+      "label": "Exchange forgiveness and reconciliation before sharing the Polish Christmas wafer",
+      "section": "Christmas Poland",
+      "claim_characterization": "REPORTED_POLISH_CUSTOM",
+      "web_line": 1503,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-037",
+      "label": "Read the Nativity Gospel aloud to the gathered family on Christmas Eve",
+      "section": "Christmas Eve",
+      "claim_characterization": "REPORTED_DOMESTIC_VARIANTS",
+      "web_line": 1504,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-038",
+      "label": "Sing traditional Christmas carols after the family Gospel reading",
+      "section": "Christmas Eve",
+      "claim_characterization": "REPORTED_DOMESTIC_VARIANTS",
+      "web_line": 1504,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-039",
+      "label": "Agree on family Lenten resolutions before Ash Wednesday",
+      "section": "Lent",
+      "claim_characterization": "AUTHOR_SUGGESTED_ADAPTATION",
+      "web_line": 1506,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-040",
+      "label": "Adopt extra weekday Mass attendance during Lent",
+      "section": "Lent",
+      "claim_characterization": "AUTHOR_SUGGESTED_ADAPTATION",
+      "web_line": 1506,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-041",
+      "label": "Abstain from household desserts during Lent",
+      "section": "Lent",
+      "claim_characterization": "AUTHOR_SUGGESTED_ADAPTATION",
+      "web_line": 1506,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-042",
+      "label": "Replace favorite television with Lenten spiritual reading",
+      "section": "Lent",
+      "claim_characterization": "AUTHOR_SUGGESTED_ADAPTATION",
+      "web_line": 1506,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-043",
+      "label": "Donate money saved through family Lenten self-denial to the poor",
+      "section": "Lent",
+      "claim_characterization": "REPORTED_DOMESTIC_VARIANTS",
+      "web_line": 1507,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-044",
+      "label": "Attend the imposition of ashes as a whole family",
+      "section": "Ash Wednesday",
+      "claim_characterization": "REPORTED_DOMESTIC_VARIANTS",
+      "web_line": 1508,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-045",
+      "label": "Serve traditional small pretzels with Lenten dinners",
+      "section": "Ash Wednesday",
+      "claim_characterization": "REPORTED_DOMESTIC_VARIANTS",
+      "web_line": 1508,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-046",
+      "label": "Prepare an evening family meal recalling the Last Supper",
+      "section": "Holy Thursday",
+      "claim_characterization": "REPORTED_DOMESTIC_VARIANTS",
+      "web_line": 1510,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-047",
+      "label": "Serve unleavened bread at a Holy Thursday family meal",
+      "section": "Holy Thursday",
+      "claim_characterization": "REPORTED_DOMESTIC_VARIANTS",
+      "web_line": 1510,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-048",
+      "label": "Remove devotional furnishings from the family altar on Good Friday",
+      "section": "Good Friday",
+      "claim_characterization": "REPORTED_DOMESTIC_VARIANTS",
+      "web_line": 1510,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-049",
+      "label": "Stand during the household Good Friday supper",
+      "section": "Good Friday",
+      "claim_characterization": "REPORTED_DOMESTIC_VARIANTS",
+      "web_line": 1510,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-050",
+      "label": "Serve a very plain Good Friday evening meal",
+      "section": "Good Friday",
+      "claim_characterization": "REPORTED_DOMESTIC_VARIANTS",
+      "web_line": 1510,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-051",
+      "label": "Renew baptismal promises before the domestic altar on Holy Saturday",
+      "section": "Holy Saturday",
+      "claim_characterization": "REPORTED_DOMESTIC_VARIANTS_RITUAL_CHECK",
+      "web_line": 1511,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-052",
+      "label": "Pray thanksgiving together in a household baptismal-renewal ceremony",
+      "section": "Holy Saturday",
+      "claim_characterization": "REPORTED_DOMESTIC_VARIANTS_RITUAL_CHECK",
+      "web_line": 1511,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-053",
+      "label": "Sprinkle children or household Easter meal with blessed Easter water",
+      "section": "Holy Saturday",
+      "claim_characterization": "REPORTED_DOMESTIC_VARIANTS_RITUAL_CHECK",
+      "web_line": 1511,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-054",
+      "label": "Read Gospel accounts of the Passion and Resurrection together on Holy Saturday night",
+      "section": "Holy Saturday",
+      "claim_characterization": "AUTHOR_SUGGESTED_ADAPTATION",
+      "web_line": 1512,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-055",
+      "label": "Bring bread eggs and salt for Epiphany blessings in church",
+      "section": "Epiphany",
+      "claim_characterization": "REPORTED_EUROPEAN_CUSTOM_RITUAL_CHECK",
+      "web_line": 1519,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-056",
+      "label": "Donate Epiphany-blessed bread and eggs to the poor",
+      "section": "Epiphany",
+      "claim_characterization": "REPORTED_EUROPEAN_CUSTOM_RITUAL_CHECK",
+      "web_line": 1520,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-057",
+      "label": "Seek the traditional feast-day throat blessing of Saint Blaise",
+      "section": "St Blaise",
+      "claim_characterization": "REPORTED_LITURGICAL_SACRAMENTAL_CHECK",
+      "web_line": 1521,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-058",
+      "label": "Pray the rosary daily during May",
+      "section": "May Marian devotion",
+      "claim_characterization": "AUTHOR_SUGGESTED_ADAPTATION",
+      "web_line": 1526,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-059",
+      "label": "Place fresh flowers before a household image of Our Lady during May",
+      "section": "May Marian devotion",
+      "claim_characterization": "AUTHOR_SUGGESTED_ADAPTATION",
+      "web_line": 1526,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-060",
+      "label": "Recite the Litany of the Blessed Virgin Mary in May",
+      "section": "May Marian devotion",
+      "claim_characterization": "AUTHOR_SUGGESTED_ADAPTATION",
+      "web_line": 1526,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-061",
+      "label": "Keep a St Christopher medal in the family motorcar",
+      "section": "St Christopher",
+      "claim_characterization": "REPORTED_DEVOTIONAL_CUSTOM",
+      "web_line": 1529,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-062",
+      "label": "Bring motorcars for a Saint Christopher feast-day blessing in places where observed",
+      "section": "St Christopher",
+      "claim_characterization": "REPORTED_REGIONAL_SACRAMENTAL_CHECK",
+      "web_line": 1530,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-063",
+      "label": "Attend All Souls Mass in a family group for departed relatives",
+      "section": "All Souls",
+      "claim_characterization": "REPORTED_IN_SOME_COUNTRIES",
+      "web_line": 1535,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-064",
+      "label": "Perform family devotions for the dead throughout All Souls Day",
+      "section": "All Souls",
+      "claim_characterization": "REPORTED_IN_SOME_COUNTRIES",
+      "web_line": 1535,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-065",
+      "label": "Hold a festive family meal on each child's baptism anniversary",
+      "section": "Baptism anniversary",
+      "claim_characterization": "REPORTED_DOMESTIC_VARIANTS",
+      "web_line": 1538,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-066",
+      "label": "Invite the child's godparents to baptism-anniversary dinner",
+      "section": "Baptism anniversary",
+      "claim_characterization": "REPORTED_DOMESTIC_VARIANTS",
+      "web_line": 1538,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-067",
+      "label": "Light the original baptismal candle on the child's anniversary",
+      "section": "Baptism anniversary",
+      "claim_characterization": "REPORTED_EUROPEAN_CUSTOM",
+      "web_line": 1539,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-068",
+      "label": "Renew baptismal vows at the home altar on the baptism anniversary",
+      "section": "Baptism anniversary",
+      "claim_characterization": "REPORTED_EUROPEAN_CUSTOM",
+      "web_line": 1539,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-069",
+      "label": "Attend Mass and Communion on a child's patron saint name-day",
+      "section": "Name day",
+      "claim_characterization": "REPORTED_DOMESTIC_VARIANTS",
+      "web_line": 1540,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-070",
+      "label": "Allow the child to choose a name-day meal",
+      "section": "Name day",
+      "claim_characterization": "REPORTED_DOMESTIC_VARIANTS",
+      "web_line": 1540,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-071",
+      "label": "Read a short patron saint biography at home on the name-day",
+      "section": "Name day",
+      "claim_characterization": "REPORTED_DOMESTIC_VARIANTS",
+      "web_line": 1540,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-072",
+      "label": "Receive Communion as a family on the child's First Communion day",
+      "section": "First Communion",
+      "claim_characterization": "REPORTED_DOMESTIC_VARIANTS",
+      "web_line": 1542,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-073",
+      "label": "Celebrate the first Communion with a family observance afterward",
+      "section": "First Communion",
+      "claim_characterization": "REPORTED_DOMESTIC_VARIANTS",
+      "web_line": 1542,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-074",
+      "label": "Give a child a crucifix or devotional image as a First Communion keepsake",
+      "section": "First Communion",
+      "claim_characterization": "REPORTED_DOMESTIC_VARIANTS",
+      "web_line": 1543,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-075",
+      "label": "Attend Confirmation together with parents receiving Communion if possible",
+      "section": "Confirmation",
+      "claim_characterization": "REPORTED_DOMESTIC_VARIANTS",
+      "web_line": 1544,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-076",
+      "label": "Give a religious gift to mark a child's Confirmation",
+      "section": "Confirmation",
+      "claim_characterization": "REPORTED_DOMESTIC_VARIANTS",
+      "web_line": 1544,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-077",
+      "label": "Have the newly confirmed child say thanksgiving prayers before a family supper",
+      "section": "Confirmation",
+      "claim_characterization": "REPORTED_DOMESTIC_VARIANTS",
+      "web_line": 1544,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-078",
+      "label": "Prepare a white-covered table with crucifix and candles for the priest's visit to the ill",
+      "section": "Sickroom preparation",
+      "claim_characterization": "PRACTICAL_PASTORAL_INSTRUCTION_CHECK",
+      "web_line": 1545,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-079",
+      "label": "Keep water linens and a small bell ready for a sickroom sacramental visit",
+      "section": "Sickroom preparation",
+      "claim_characterization": "PRACTICAL_PASTORAL_INSTRUCTION_CHECK",
+      "web_line": 1545,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-080",
+      "label": "Welcome a visiting priest at the doorway with a lit candle",
+      "section": "Sickroom reception",
+      "claim_characterization": "REPORTED_PASTORAL_SACRAMENTAL_CHECK",
+      "web_line": 1549,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-081",
+      "label": "Escort the priest to the sickroom during sacramental visitation",
+      "section": "Sickroom reception",
+      "claim_characterization": "REPORTED_PASTORAL_SACRAMENTAL_CHECK",
+      "web_line": 1549,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+      "identity_certified": false,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "id": "KEL59-EWTN-082",
+      "label": "Ring a household bell to summon relatives after confession",
+      "section": "Sickroom reception",
+      "claim_characterization": "REPORTED_PASTORAL_SACRAMENTAL_CHECK",
+      "web_line": 1549,
+      "web_url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
       "identity_certified": false,
       "publication_state": "RESEARCH_ONLY"
     }
