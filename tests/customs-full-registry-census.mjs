@@ -444,7 +444,7 @@ assert.equal(allMcLReferences.length,70);
 assert.deepEqual(new Set(allMcLReferences),mclIds);
 assert.equal(mcloughlinGroups.summary.certified_distinct_new_catholic_customs,0);
 assert.equal(mcloughlinGroups.summary.publication_changes,0);
-assert.equal(count.source_observations.total_source_detail_rows_including_external,1629);
+assert.equal(count.source_observations.total_source_detail_rows_including_external,1799);
 assert.equal(count.source_observations.all_book_research_rows_including_nested_details,1025);
 assert.equal(researchCatalogue.external_source_observations_mcloughlin.length,70);
 assert.equal(researchCatalogue.external_source_action_families_mcloughlin.length,26);
@@ -545,7 +545,7 @@ for(const r of ccEx.records) {
 assert.equal(researchCatalogue.external_source_observations_catholicculture_excerpts.length,132);
 assert.deepEqual(new Set(researchCatalogue.external_source_observations_catholicculture_excerpts.map(r=>r.id)),ccIds);
 assert.equal(count.source_observations.catholicculture_trapp_berger_newland_excerpt_source_actions,132);
-assert.equal(count.source_observations.total_source_detail_rows_including_external,1629);
+assert.equal(count.source_observations.total_source_detail_rows_including_external,1799);
 assert.equal(count.identity_working_rows.provisional_after_53_no_owner_action_review,408);
 assert.equal(count.identity_working_rows.final_uniquely_verified_customs_added,0);
 assert.equal(researchCatalogue.summary.no_new_app_publications,true);
@@ -608,7 +608,7 @@ for(const r of muellerKelly.records){
 assert.equal(researchCatalogue.external_source_observations_mueller_kelly.length,204);
 assert.deepEqual(new Set(researchCatalogue.external_source_observations_mueller_kelly.map(x=>x.id)),mkIds);
 assert.equal(count.source_observations.mueller_kelly_ewtn_source_action_observations,204);
-assert.equal(count.source_observations.total_source_detail_rows_including_external,1629);
+assert.equal(count.source_observations.total_source_detail_rows_including_external,1799);
 assert.equal(count.identity_working_rows.provisional_after_53_no_owner_action_review,408);
 assert.equal(count.identity_working_rows.final_uniquely_verified_customs_added,0);
 assert.equal(researchCatalogue.summary.no_new_app_publications,true);
@@ -697,7 +697,7 @@ for(const r of muellerCross.records){
  }
 }
 assert.equal(coLocated,95);
-assert.equal(count.source_observations.total_source_detail_rows_including_external,1629);
+assert.equal(count.source_observations.total_source_detail_rows_including_external,1799);
 assert.equal(count.source_observations.mueller_second_pass_detail_rows_not_added_to_source_total,100);
 assert.equal(count.source_review.mueller_secondary_exact_text_line_colocated,95);
 assert.equal(count.source_review.mueller_secondary_without_exact_line_owner,5);
@@ -748,3 +748,105 @@ assert.equal(count.source_review.stokes_mueller_source_rows_routed_lexically_non
 assert.equal(count.source_review.stokes_mueller_source_rows_with_label_retrieval_hints,119);
 assert.equal(count.source_review.stokes_mueller_source_rows_without_label_retrieval_hints,179);
 console.log('Stokes 198 + Mueller 100 second-pass source observations: 298/298 nonmerging label routes, 119 with hints, no source duplication or app publication — PASS');
+
+
+// Elsa Chaney, Grailville Writing Center, 1955: 170 individually located
+// action/variant source observations. These are NOT 170 distinct customs, and
+// text overlap with Stokes/Mueller/Weiser/others is not independent corroboration.
+const chaney55=load('data/customs/master/chaney-1955-twelve-days-christmas-ewtn-source-intake.v1.json');
+const chaneyCross=load('data/customs/master/chaney-1955-170-cross-source-nonmerging-candidate-review.v1.json');
+assert.equal(chaney55.records.length,170);
+assert.equal(chaney55.summary.observations,170);
+assert.equal(chaney55.source.original_publication_year,1955);
+assert.equal(chaney55.source.imprimatur_date,'1955-05-25');
+assert.equal(chaney55.source.original_printed_pages_verified,false);
+assert.equal(chaney55.summary.certified_independent_corroborations,0);
+assert.equal(chaney55.summary.verified_distinct_new_customs,0);
+assert.equal(chaney55.summary.app_publications,0);
+assert.deepEqual(chaney55.summary.claims,{
+ AUTHOR_SUGGESTION_OR_ADAPTATION:90,
+ REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED:52,
+ HOME_PRAYER_LITURGICAL_TEXT_ADAPTATION_NO_RITE_AUTHORIZATION_CLAIM:7,
+ HISTORICAL_OR_COMPARATIVE_CLAIM_NOT_VERIFIED:6,
+ EXPLICITLY_ATTRIBUTED_OTHER_AUTHOR:1,
+ POSSIBLE_ECCLESIASTICAL_RITUAL_AUTHORITY_NOT_VERIFIED:9,
+ GRAILVILLE_AUTHOR_FIRST_PERSON:5
+});
+const chaneyIds=new Set(chaney55.records.map(x=>x.observation_id));
+assert.equal(chaneyIds.size,170);
+const chaneySections=new Set();
+for(const [i,r] of chaney55.records.entries()){
+ assert.equal(r.observation_id,'CHANEY55-EWTN-'+String(i+1).padStart(3,'0'));
+ assert.equal(r.source_locator.url,chaney55.source.url);
+ assert.ok(r.action_label && r.action_label.length>16);
+ assert.ok(r.source_locator.html_line_start>=150 && r.source_locator.html_line_end<=897);
+ assert.ok(r.source_locator.html_line_end>=r.source_locator.html_line_start);
+ assert.equal(r.source_independence_status,'DIFFERENT_BOOK_AND_AUTHOR_NOT_INDEPENDENT_CORROBORATION_CERTIFIED');
+ assert.equal(r.identity_status,'SOURCE_OBSERVATION_UNVERIFIED_DISTINCTNESS_OR_VARIANT');
+ assert.equal(r.ritual_authority,'NOT_CHECKED_AGAINST_APPLICABLE_1962_ROMAN_RITUAL');
+ assert.equal(r.app_publication,'NONE');
+ chaneySections.add(r.source_section);
+}
+assert.ok(chaneySections.size>=9);
+assert.equal(researchCatalogue.external_source_observations_chaney.length,170);
+assert.deepEqual(new Set(researchCatalogue.external_source_observations_chaney.map(r=>r.id)),chaneyIds);
+assert.equal(count.source_observations.chaney_1955_online_source_observations,170);
+assert.equal(count.source_observations.total_source_detail_rows_including_external,1799);
+assert.equal(count.source_observations.mueller_second_pass_detail_rows_not_added_to_source_total,100);
+assert.equal(count.identity_working_rows.provisional_after_53_no_owner_action_review,408);
+assert.equal(count.identity_working_rows.final_uniquely_verified_customs_added,0);
+assert.equal(researchCatalogue.summary.no_new_app_publications,true);
+for(const r of researchCatalogue.external_source_observations_chaney){
+ const orig=chaney55.records.find(x=>x.observation_id===r.id);
+ assert.ok(orig);
+ assert.equal(r.label,orig.action_label);
+ assert.deepEqual(r.web_lines,[orig.source_locator.html_line_start,orig.source_locator.html_line_end]);
+ assert.equal(r.identity_certified,false);
+}
+assert.equal(chaneyCross.records.length,170);
+assert.deepEqual(new Set(chaneyCross.records.map(r=>r.source_id)),chaneyIds);
+assert.equal(chaneyCross.summary.prior_group_pool,490);
+assert.equal(chaneyCross.summary.prior_other_author_source_pool,604);
+assert.equal(chaneyCross.summary.records_with_group_hints,50);
+assert.equal(chaneyCross.summary.records_with_other_author_hints,103);
+assert.equal(chaneyCross.summary.total_hints,380);
+assert.equal(chaneyCross.summary.rows_without_any_lexical_hints,65);
+assert.equal(chaneyCross.summary.certified_equivalences,0);
+assert.equal(chaneyCross.summary.certified_distinct_new_customs,0);
+assert.equal(chaneyCross.summary.app_publications,0);
+const chaneyOwnerTargets=new Set([
+ ...researchCatalogue.existing_master_identities,
+ ...researchCatalogue.provisional_handbook_groups,
+ ...researchCatalogue.provisional_historical_groups,
+ ...researchCatalogue.provisional_unindexed_practice_leads,
+ ...researchCatalogue.provisional_unassigned_action_leads,
+ ...researchCatalogue.external_source_action_families_mcloughlin
+].map(x=>x.id));
+const chaneySourceTargets=new Set([
+ ...researchCatalogue.external_source_observations_mcloughlin,
+ ...researchCatalogue.external_source_observations_stokes,
+ ...researchCatalogue.external_source_observations_catholicculture_excerpts,
+ ...researchCatalogue.external_source_observations_mueller_kelly
+].map(x=>x.id));
+assert.equal(chaneyOwnerTargets.size,490);
+assert.equal(chaneySourceTargets.size,604);
+let hintCount=0;
+for(const r of chaneyCross.records){
+ assert.equal(r.review_state,'RETRIEVAL_HINTS_NOT_MANUAL_SEMANTIC_RECONCILIATION');
+ assert.equal(r.independent_witness_certified,false);
+ assert.equal(r.distinct_custom_certified,false);
+ assert.equal(r.automatic_merge,false);
+ assert.equal(r.publication_state,'RESEARCH_ONLY');
+ for(const x of r.prior_group_lookup){
+  assert.ok(chaneyOwnerTargets.has(x.target_id));
+  assert.equal(x.relationship,'LEXICAL_DISCOVERY_ONLY_NO_ACTION_EQUIVALENCE');
+  hintCount++;
+ }
+ for(const x of r.other_author_observation_lookup){
+  assert.ok(chaneySourceTargets.has(x.target_id));
+  assert.equal(x.relationship,'LEXICAL_DISCOVERY_ONLY_NO_ACTION_EQUIVALENCE');
+  hintCount++;
+ }
+}
+assert.equal(hintCount,380);
+console.log('Chaney 1955: 170/170 source actions, 380 search-only cross-source hints, 1,799 research rows, 408 unchanged provisional groups, zero publications — PASS');
