@@ -9,14 +9,16 @@
       "work": "St Augustine: Sermon on the Mount; Harmony of the Gospels; Homilies",
       "historicalPrintYear": 1888,
       "publicDomainPrintEdition": true,
-      "toc": "https://www.ccel.org/ccel/schaff/npnf106.toc.html"
+      "toc": "https://www.ccel.org/ccel/schaff/npnf106.toc.html",
+      "originalPrintScan": "https://archive.org/details/aselectlibrary06unknuoft"
     },
     {
       "id": "NPNF1-10",
       "work": "St Chrysostom: Homilies on Matthew",
       "historicalPrintYear": 1888,
       "publicDomainPrintEdition": true,
-      "toc": "https://www.ccel.org/ccel/schaff/npnf110.toc.html"
+      "toc": "https://www.ccel.org/ccel/schaff/npnf110.toc.html",
+      "originalPrintScan": "https://archive.org/details/selectlibraryofn10auguuoft"
     }
   ],
   "counts": {
@@ -323,5 +325,7 @@
       "publicationEligibility": "blocked_research_only",
       "fullTextImported": false
     }
-  ]
+  ],
+  "reuseBasis": "Historical 1888 English printed editions and public-domain original scans. CCEL is a work/section locator and secondary transcription witness; prefer original print scans to resolve variant text and missing pages. No permission-request process.",
+  "nextResearchStage": "Ingest full original printed public-domain source text from authenticated scans/transcriptions, segment by book/homily and section, separate author speech from biblical quotations and modern apparatus, and compute actual overlap against canonical Catena before publication eligibility."
 }
