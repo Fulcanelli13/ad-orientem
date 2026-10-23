@@ -9,6 +9,19 @@ const root="data/scripture/catena/";
 const source=read(root+"research/full-corpus-pass-20261021/schaff-ocr-source-manifest.v1.json");
 assert.equal(source.schema,"ao.catena.schaff-ocr-source-manifest.v1");
 assert.equal(source.editions.length,2);
+const scope=read(root+"research/full-corpus-pass-20261021/schaff-ocr-work-scope.v1.json");
+assert.equal(scope.schema,"ao.catena.schaff-historical-scan-work-scope.v1");
+assert.equal(scope.volumes.length,2);
+for(const volume of scope.volumes){
+ assert.ok(source.editions.some(x=>x.editionId===volume.editionId));
+ assert.match(volume.ocrSHA256,/^[a-f0-9]{64}$/);
+ assert.equal(volume.scopes[0].start,1);
+ assert.equal(volume.scopes.at(-1).end,volume.maxLines);
+ for(let i=1;i<volume.scopes.length;i++)
+  assert.equal(volume.scopes[i-1].end+1,volume.scopes[i].start);
+ assert.ok(volume.scopes.every(x=>x.authorSpeechUnverified===true));
+}
+assert.equal(scope.publicationApprovals,0);
 for(const e of source.editions){
  assert.match(e.archiveDetailUrl,new RegExp("^https://archive\\.org/details/"+e.archiveId+"$"));
  assert.match(e.downloadUrl,new RegExp("^https://archive\\.org/download/"+e.archiveId+"/"));
@@ -48,6 +61,14 @@ try{
  assert.equal(candidate.publicationEligible,false);
  assert.equal(candidate.unsegmentedOCR,true);
  assert.equal(candidate.novelQuestionRecordsConfirmed,0);
+ assert.equal(candidate.printedWorkBoundariesMatchedVerifiedScanDigest,false,
+   "Local synthetic OCR must not assume a printed historical author");
+ assert.deepEqual(candidate.printedWorkScopeCounts,{
+  unclassified_source_digest_changed_or_local_test:candidate.questionMarkCandidates
+ });
+ assert.ok(candidate.windows.every(x=>
+   x.printedWorkScope==="unclassified_source_digest_changed_or_local_test"&&
+   x.printedWorkScopeStatus==="sha_pinned_ocr_range_heuristic_not_authorship"));
  assert.ok(candidate.windows.every(c=>!c.publicationEligible&&!c.novelContentConfirmed&&
    c.ownership.startsWith("unresolved_")&&
    c.originalOCRWindowSHA256===createHash("sha256").update(c.originalOCRWindow).digest("hex")));
