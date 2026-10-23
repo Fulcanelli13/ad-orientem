@@ -1,0 +1,48 @@
+name: B27 P0 smoke - verify zero-euro unpublished original archive gate
+on:
+  push:
+    branches: [research/sacred-art-p0-p1-archive-reconcile-20261024]
+    paths:
+      - .github/workflows/ao-art-b27-archive-gate-smoke.yml
+      - scripts/research/sacred_art_release_archive_gate.py
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  synthetic-test-no-external-images:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Create tiny synthetic fixture, never download any artwork
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import base64,json
+          folder=Path('artifacts/b27-gate-smoke-fixture')
+          folder.mkdir(parents=True,exist_ok=True)
+          folder.joinpath('synthetic-test-only.png').write_bytes(base64.b64decode(
+              'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQIHWP4z8DwHwAFgAI/ScLytQAAAABJRU5ErkJggg=='))
+          folder.joinpath('fixture-metadata.json').write_text(json.dumps({
+              'synthetic_test':True,'real_artworks':0,'rights_approved':False,
+              'publication_allowed':False},indent=2),encoding='utf-8')
+          PY
+      - name: P0 archive must upload, remotely download, rehash, and stay unpublished
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python scripts/research/sacred_art_release_archive_gate.py \
+            --wave synthetic-test-only \
+            --source-dir artifacts/b27-gate-smoke-fixture
+      - name: Verify source files still exist and draft remains private
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          test -f artifacts/b27-gate-smoke-fixture/synthetic-test-only.png
+          TAG="ao-art-originals-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+          test "$(gh release view "$TAG" -R "$GITHUB_REPOSITORY" --json isDraft --jq .isDraft)" = true
+          echo 'P0 draft-only physical rescue gate passed with synthetic non-catalogue fixture'
