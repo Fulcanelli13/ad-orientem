@@ -39,3 +39,22 @@
 /* The four reviewed pilot subjects have one question surface, never two.
  * The underlying 106-subject free-ask remains intact for all other chapters. */
 body.spxc-offline-pilot-active .spxc-free-ask{display:none!important}
+
+/* Opt-in editorial comparison, kept separate from the readable reply. */
+.spxm-claim-audit{margin:16px 0 8px;padding:12px 14px;
+ border:1px solid #8b775b70;background:#10161e}
+.spxm-claim-audit>summary{cursor:pointer;color:#e0ca9d;
+ font:13px/1.5 system-ui,sans-serif}
+.spxm-trace-caution{font:12px/1.6 system-ui,sans-serif;
+ color:#baa789;border-bottom:1px solid #75634855;padding-bottom:10px}
+.spxm-trace-unit{padding:8px 0 12px;border-bottom:1px solid #74634644}
+.spxm-trace-unit:last-child{border-bottom:0}
+.spxm-trace-label{margin:12px 0 5px;color:#af9c7c;
+ font:11px/1.5 system-ui,sans-serif;letter-spacing:.02em}
+.spxm-trace-claim{font:16px/1.48 Palatino,Georgia,serif;color:#e9d9bd;margin:4px 0 12px}
+.spxm-trace-witness{padding:9px 12px;margin:7px 0;border-left:1px solid #baa27370;
+ background:#151a22}
+.spxm-trace-original{color:#dbcfb8;font:italic 14px/1.55 Palatino,Georgia,serif;
+ overflow-wrap:anywhere}
+.spxm-trace-witness a{color:#ddc18b;font:11px/1.45 system-ui,sans-serif}
+@media(max-width:600px){.spxm-claim-audit{padding:10px}.spxm-trace-witness{padding:8px}}
