@@ -13,12 +13,12 @@ const translations={
  en:{label:'Follow up on this documented subject',send:'Draft a reply',scope:'The model can adapt only existing unpublished editorial passages. Previous dialogue provides context, never historical evidence. This is not authenticated speech of St Pius X.',
  wait:'Preparing a research draft and independently checking its claims…',
  held:'Reply withheld: the model could not establish support in the supplied passages.',
- intro:'AI-COMPOSED EDITORIAL DRAFT · NOT THE WORDS OF ST PIUS X',sources:'Underlying unapproved editorial source pointers:',
+ intro:'AI-COMPOSED EDITORIAL DRAFT · NOT THE WORDS OF ST PIUS X',sources:'Underlying unapproved editorial source pointers:',witnessSources:'Matched original-language excerpt locators · editorial only:',
  prompt:'Question from visitor',error:'Unavailable. No invented reply has been displayed.'},
  fr:{label:'Approfondir librement le sujet documentaire',send:'Rédiger une réponse',scope:'Le modèle ne peut adapter que les passages éditoriaux inédits existants. Les réponses précédentes servent au contexte, non de preuve historique. Ce ne sont pas des paroles authentifiées de saint Pie X.',
  wait:'Préparation de la rédaction et contrôle indépendant des affirmations…',
  held:'Réponse suspendue : sources éditoriales insuffisantes pour étayer le propos.',
- intro:'RÉDACTION IA NON APPROUVÉE · NON PAROLES DE SAINT PIE X',sources:'Références éditoriales non approuvées :',
+ intro:'RÉDACTION IA NON APPROUVÉE · NON PAROLES DE SAINT PIE X',sources:'Références éditoriales non approuvées :',witnessSources:'Références exactes aux passages originaux · étude éditoriale seulement :',
  prompt:'Question du visiteur',error:'Service indisponible. Aucune réponse inventée n’a été affichée.'}
 };
 let context=null,history=[],busy=false,lastSubject=null,lastLanguage=null;
@@ -61,13 +61,20 @@ $('spxm-form').addEventListener('submit',async e=>{
    entry.append(paragraph(t.held+' ('+String(result.reason||'not_certified')+')','spxm-held'));return;
   }
   entry.append(paragraph(t.intro,'spxm-warning'),paragraph(result.reply,'spxm-draft'));
-  entry.append(paragraph(t.sources,'spxm-source-label'));
-  for(const ev of result.evidence||[]){
+  const citedWitnesses=Array.isArray(result.claimWitnesses)&&
+   result.claimWitnesses.length>0;
+  entry.append(paragraph(citedWitnesses?t.witnessSources:t.sources,'spxm-source-label'));
+  // Witness IDs have already been checked against the selected node by the
+  // private server. Legacy replies retain their weaker node-only references.
+  const cited=citedWitnesses?result.claimWitnesses:(result.evidence||[]);
+  for(const ev of cited){
    const line=document.createElement('div'),a=document.createElement('a');
    const u=String(ev.sourceUrl||'');
-   if(!u.startsWith('https://'))continue;
+   if(!u.startsWith('https://www.vatican.va/'))continue;
    a.href=u;a.target='_blank';a.rel='noopener noreferrer';
-   a.textContent=ev.id+' · '+ev.locus+' (NOT COLLATED)';
+   const edition=ev.originalLanguage?String(ev.originalLanguage).toUpperCase()+' · ':'';
+   const speaker=ev.speaker?String(ev.speaker).replaceAll('_',' ')+' · ':'';
+   a.textContent=String(ev.id)+' · '+edition+speaker+String(ev.locus||'')+' (NOT COLLATED)';
    line.append(a);entry.append(line);
   }
   history.push({chapterId:snapshot.chapterId,language:snapshot.language,question,response:result.reply});
