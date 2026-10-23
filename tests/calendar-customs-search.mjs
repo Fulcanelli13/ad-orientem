@@ -1,0 +1,42 @@
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+import {calendarCustomArticle,CALENDAR_CUSTOM_ARTICLE_IDS,calendarCustomRecommendations} from "../src/calendar/customs-read-model.js";
+import {normaliseCustomSearch,calendarCustomSearchIndex,calendarCustomSearchMatches} from "../src/calendar/customs-search.js";
+const list=CALENDAR_CUSTOM_ARTICLE_IDS.map(calendarCustomArticle);
+const seed=JSON.parse(readFileSync(new URL("../data/customs/customs-atlas-seed.v1.json",import.meta.url),"utf8"));
+assert.equal(list.length,35);
+assert.equal(seed.customs.filter(x=>x.publication_state==="PUBLISHED").length,35);
+assert.equal(seed.customs.filter(x=>x.publication_state==="CONTEXT_ONLY").length,3);
+const indexes=new Map(list.map(a=>[a.id,calendarCustomSearchIndex(a)]));
+assert.equal(indexes.size,35);
+const find=q=>list.filter(a=>calendarCustomSearchMatches(indexes.get(a.id),q)).map(a=>a.id);
+const has=(q,id)=>assert.ok(find(q).includes(id),JSON.stringify(q)+" must find "+id);
+for(const a of list){
+ has(a.title.en,a.id);
+ has(a.title.fr,a.id);
+ has(normaliseCustomSearch(a.title.fr),a.id);
+ assert.match(indexes.get(a.id),/^[a-z0-9 ]+$/,"Search index must be accent/punctuation neutral");
+}
+has("Wichern 1839","ADVT-001");
+has("Spycimierz","CORP-001");
+has("aupres des defunts","DOM-011");
+has("Saint Nicolas chocolats","SNIC-001");
+has("Priere pour les fideles defunts","DEAD-003");
+has("pain azyme non consacre","XMAS-001");
+has("book of blessings","BLSS-001");
+has("Metz","SNIC-001"); // independent accessible diocesan source, not an event schedule
+has("Woods Hole","MARI-002");
+has("Blaise gorge","BLSS-001");
+has("St Christopher 19 July","SCHR-001");
+assert.ok(find("").length===35);
+assert.deepEqual(find("imaginary term qzxwv1984"),[]);
+assert.deepEqual(find("Wichern Spycimierz"),[],"All search tokens must match one article, not separate items");
+assert.equal(normaliseCustomSearch("  Épiphanie — à l’Église  "),"epiphanie a l eglise");
+assert.equal(normaliseCustomSearch("Saint-Nicolas"),"saint nicolas");
+assert.deepEqual(calendarCustomRecommendations("2026-10-21").map(x=>x.id).filter(x=>x==="SNIC-001"),[],"Search does not invent dated custom recommendations");
+const runtime=readFileSync(new URL("../src/calendar/calendar-runtime.js",import.meta.url),"utf8");
+assert.match(runtime,/calendarCustomSearchIndex\(article\)/);
+assert.match(runtime,/normaliseCustomSearch\(input\.value\)/);
+assert.match(runtime,/calendarCustomSearchMatches\(row\.dataset\.calCustomTerms\|\|""\,term\)/);
+assert.match(runtime,/calendarCustomArticleMarkup\(article\)/);
+console.log("PASS 35 published customs: English/French complete-article and source-title search, accent-neutral token matching; date context unchanged");

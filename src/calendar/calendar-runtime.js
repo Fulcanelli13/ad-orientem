@@ -7,6 +7,7 @@ import { calendarIntelligenceForDate, calendarPracticeMonthEntries } from "./int
 import { pilgrimagePlacesForCalendarKeys } from "./pilgrimage-places.js";
 import { renderYearJourney, yearJourneyCss } from "./year-journey.js";
 import { calendarCustomRecommendations, calendarCustomSeasonalMonthEntries, calendarCustomArticleIds, calendarCustomArticle } from "./customs-read-model.js";
+import { normaliseCustomSearch, calendarCustomSearchIndex, calendarCustomSearchMatches } from "./customs-search.js";
 import { personalCustomsForDate } from "../customs/personal-store.js";
 import { calendarMassColour } from "./colour-projection.js";
 import { calendarPaletteColour, yearDailyProjection, yearSeasonGradient } from "./year-colour-wheel.js";
@@ -728,7 +729,7 @@ function calendarCustomCatalogueMarkup(){
   const articles=calendarCustomArticleIds().map(calendarCustomArticle).filter(Boolean);
   const isFr=fr();
   const item=article=>{
-    const searchable=[article.title.en,article.title.fr,article.description.en,article.description.fr].join(" ").toLocaleLowerCase();
+    const searchable=calendarCustomSearchIndex(article);
     return '<div data-cal-custom-item data-cal-custom-terms="'+esc(searchable)+'">'+calendarCustomArticleMarkup(article)+'</div>';
   };
   return '<section class="aoCalCustomCatalogueSection"><details class="aoCalCustomCatalogue">'
@@ -1470,10 +1471,10 @@ function bind(r){
     const input=event.target.closest?.("[data-cal-custom-search]");
     if(!input)return;
     const container=input.closest(".aoCalCustomCatalogue");
-    const term=input.value.trim().toLocaleLowerCase();
+    const term=normaliseCustomSearch(input.value);
     let visible=0;
     for(const row of container?.querySelectorAll("[data-cal-custom-item]")||[]){
-      const matches=String(row.dataset.calCustomTerms||"").includes(term);
+      const matches=calendarCustomSearchMatches(row.dataset.calCustomTerms||"",term);
       row.hidden=!matches;
       if(matches)visible++;
     }
