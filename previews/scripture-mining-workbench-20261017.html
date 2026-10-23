@@ -446,6 +446,41 @@ async function showHistoriaMovement(){
      section.append(line);
     }
     previous=p;rendered+=rows.length;
+    const between=beat.betweenSelectedReadthroughTrial;
+    if(!bridge&&showBridges&&between?.afterReference===reference){
+     if(between.beforeReference!==references[references.indexOf(reference)+1]||
+        between.accepted!==false||between.publicationApproved!==false||
+        between.originalUnitRefsUnmodified!==true||
+        between.excludedFromMainSourceSelection!==true)
+      throw Error("Unsafe unapproved Matthew source-trial placement: "+beat.id);
+     const compare=make("article",undefined,"proofSourceBridge");
+     compare.append(
+      make("div","Optional original Scripture comparison · not selected or approved","caption"),
+      make("p",between.reason),
+      make("p","Source omission remains in the main manuscript; the following text is a separate Catholic witness for research only.","proofGap")
+     );
+     for(const trialRef of between.refs){
+      const coords=parseScriptureContext(trialRef);
+      if(!coords)throw Error("Invalid Matthew source-comparison citation "+trialRef);
+      const pp=coords.passage;
+      const source=await sharedWitnessLoader(edition,pp.book,{fetcher:bridgeFetch});
+      if(token!==historiaProofToken)return;
+      const quoted=source.filter(v=>v.chapter===pp.chapter&&v.verseStart>=pp.verseStart&&v.verseStart<=pp.verseEnd);
+      if(quoted.length!==pp.verseEnd-pp.verseStart+1)
+       throw Error("Incomplete source comparison "+trialRef);
+      compare.append(make("div",trialRef+" · "+historiaEditionName(edition),"proofCitation"));
+      for(const verse of quoted){
+       const line=make("p",undefined,"proofVerse");
+       line.lang=edition==="crampon-1923"?"fr":"en";
+       line.append(make("span",verse.chapter+":"+verse.verseStart,"verse"),make("span",verse.text));
+       compare.append(line);
+      }
+      rendered+=quoted.length;
+     }
+     section.append(compare);held++;
+     // NEVER change previous here: the next selected span must still disclose
+     // the original omitted verses, despite the optional comparison.
+    }
    }
    host.append(section);
    // These source-backed after-selection trials already exist in the P3 master.
