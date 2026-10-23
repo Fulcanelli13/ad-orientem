@@ -590,6 +590,13 @@ export const CANONICAL_EXTRA_CUSTOM_ARTICLES=[
       "fr": "France"
     },
     "editorialCopyStatus": "CALENDAR_ARTICLE_SCOPE_ACCEPTED",
+    "supporting_sources": [
+      {
+        "id": "BASILICA-HOLYWATER-HOME-O-CONNOR",
+        "title": "History and usage of Holy Water",
+        "url": "https://www.stmarybasilicaarchives.org/archives-desk/history-and-usage-of-holy-water/"
+      }
+    ],
     "sources": [
       {
         "id": "MUCEM-BENITIER",
