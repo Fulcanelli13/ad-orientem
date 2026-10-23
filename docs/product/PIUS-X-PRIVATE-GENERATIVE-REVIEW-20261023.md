@@ -234,3 +234,19 @@ Four conservative bilingual correction proposals are recorded **without applying
 They include restoring the missing third saint's name, tightening discipline/intellectual-pride wording, crediting the apostolic admonition quoted in `Pieni l'animo`, and moving a visitor/AI disclaimer out of character speech into the source drawer. These proposals must be reconciled through the existing source/voice owners; the PR deliberately does not create another content registry or overwrite the running reader.
 
 `tests/pius-x-eight-opening-bilingual-audit.mjs` asserts all exact source-to-translation spans, the 21 explicit cautions, the immutable canonical dialogue counts, P5/P6 overlay parity, and that the four suggested changes remain **unapplied**. **Eight openings examined, zero bilingual translations approved, zero complete answers authenticated, zero new model-evidence promotions.**
+
+
+## P2.9 — Four source-fidelity edits applied in the existing editorial layers (23 October 2026)
+
+The prior eight-opening EN/FR review identified four high-confidence changes. Those changes have now been **applied in this private, draft P2 branch** to the existing editors/source-owner layers; no new voice overlay or dialogue corpus was created:
+
+1. **`SPX-NEW-013`, `Pieni l'animo`:** The P5 conversational-voice record now says "Indiscipline, particularly when fostered by intellectual pride" / "L'indiscipline, particulièrement lorsqu'elle est nourrie par l'orgueil de l'esprit", reflecting the original Italian `indisciplinatezza ... l'orgoglio della mente`. The previous "disdains obedience" / "méprise l'obéissance" statement strengthened the source's wording.
+2. **`SPX-NEW-013` (same record):** The warning against hasty laying on of hands is explicitly identified as **the Apostle's warning to Timothy**, which Pius X quotes in the encyclical, rather than portrayed as an entirely original papal formulation.
+3. **`SPX-NEW-007`, `Editae saepe`:** The existing P3 bilingual chapter now names **Gregory the Great, John Chrysostom and Anselm**. This matches the original Latin triad and corrects the earlier two-person enumeration.
+4. **`SPX-013`, `Ad diem illum`:** The existing P1 bilingual opening no longer ends by discussing a supposed private reply to an **app visitor**, which is anachronistic within the visual-novel historical voice. The existing independent English/French reader labels (`EDITORIAL REVIEW · NOT A HISTORICAL TRANSCRIPT` and its French equivalent, plus the source attribution surface) remain visible; the disclaimer has not been silently deleted from the experience.
+
+Files edited: `previews/pius-x-study/spx-p5-conversational-voice-revisions-4.v1.json`, `spx-p3-new-chapters-saints-social-4.v1.json`, and `spx-p1-openings-bio-partial-16.v1.json`. The original source-owner commits and preceding text remain available in Git history, and the stacked base PR #1551 has not been modified by these branch-only changes.
+
+The original draft-and-suggestion pair for all four is retained in `evidence/pius-x-opening-bilingual-correction-proposals-20261023.v1.json` with the new `APPLIED_TO_PRIVATE_REVIEW_BRANCH_NOT_RELEASE_APPROVED` status. The eight-opening bilingual review sidecar now follows the **actual rendered P6 answer bytes**, and records **27 bounded EN/FR source alignments**, **17 remaining cautions**, and the four resolved cautions. These are editorial screening counts, not a certification of the French or English or a claim that the other source-backed statements were independently authenticated.
+
+All existing **106 subjects / 423 bilingual nodes** are preserved. All model and publication gates remain false. CI regenerates the P6 standalone HTML and checks the proposed edits against the currently rendered English and French opening; no live inference or model endpoint was run.
