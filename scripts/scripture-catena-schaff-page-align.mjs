@@ -194,9 +194,9 @@ writeFileSync(join(output,"all-1938-page-coordinate-hints.v1.json"),
   summary,leaves:pageList,monotonicityExceptions:orderingExceptions,rows},null,2)+"\n");
 const exceptions=rows.filter(x=>x.pageMatchState!=="strong_unique_original_OCR_page_match")
  .sort((a,b)=>({no_six_word_anchor:0,ambiguous_page_tie:1,
-  weak_unique_original_OCR_page_match:2}[a.pageMatchState]||3)-
+  weak_unique_original_OCR_page_match:2}[a.pageMatchState]??3)-
   ({no_six_word_anchor:0,ambiguous_page_tie:1,
-    weak_unique_original_OCR_page_match:2}[b.pageMatchState]||3)||
+    weak_unique_original_OCR_page_match:2}[b.pageMatchState]??3)||
    a.originalOCRQuestionLine-b.originalOCRQuestionLine);
 const unresolved=exceptions.filter(x=>x.scannedLeaf===null);
 writeFileSync(join(output,"page-alignment-exception-queue.v1.json"),
