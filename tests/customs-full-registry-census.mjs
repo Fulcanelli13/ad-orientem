@@ -1392,6 +1392,12 @@ assert.equal(italianOriginalArchives.summary.archival_and_print_source_accession
 assert.deepEqual(italianOriginalArchives.summary.by_area,{GUBBIO:19,TRAPANI_SALEMI:8});
 assert.deepEqual(italianOriginalArchives.summary.by_priority,{P0:15,P1:8,P2:4});
 assert.equal(italianOriginalArchives.summary.pre1962_original_folios_directly_read,0);
+assert.equal(italianOriginalArchives.verified_archival_inventory_context.inventory_archive_box,'busta 18');
+assert.deepEqual(italianOriginalArchives.verified_archival_inventory_context.case_numbers,[42,43]);
+assert.deepEqual(italianOriginalArchives.verified_archival_inventory_context.pdf_page_indices_zero_based,[36,37]);
+assert.equal(italianOriginalArchives.verified_archival_inventory_context.year,1868);
+assert.ok(italianOriginalArchives.verified_archival_inventory_context.interpretation.includes('NOT verify'));
+
 assert.equal(italianOriginalArchives.summary.independent_historic_customs_verified,0);
 assert.equal(italianOriginalArchives.summary.source_detail_count_increment,0);
 assert.equal(italianOriginalArchives.summary.app_calendar_publications,0);
