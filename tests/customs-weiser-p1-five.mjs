@@ -21,6 +21,8 @@ const specs=[
  ["MARI-002","US",["CATHCULTURE-MARY-GARDEN"]]
 ];
 assert.deepEqual([atlas.customs.length,atlas.attestations.length,sources.sources.length,extensions.extensions.length,negative.entries.length,p1.entries.length],[38,97,108,22,7,5]);
+assert.equal(p0.publication,"SUPPORTING_COPY_FOR_PUBLISHED_CANONICAL_IDS");
+assert.equal(p1.publication,"SUPPORTING_COPY_FOR_PUBLISHED_CANONICAL_IDS");
 for(const [id,country,ids] of specs){
  const custom=atlas.customs.find(row=>row.custom_id===id);
  const att=atlas.attestations.filter(row=>row.custom_id===id);
@@ -28,6 +30,7 @@ for(const [id,country,ids] of specs){
  const extension=extensions.extensions.find(row=>row.custom_id===id);
  assert.ok(custom&&guide&&extension,id+" missing source-backed owner");
  assert.equal(custom.publication_state,"PUBLISHED");
+ assert.equal(guide.review_status,"CANONICAL_ID_PUBLISHED_IN_MAIN");
  assert.equal(att.length,1,id+" should not mint duplicate practice");
  assert.equal(att[0].attestation_id,`att:${id}:${country}`);
  assert.equal(att[0].geo_area_id,`geo:country:${country}`);
