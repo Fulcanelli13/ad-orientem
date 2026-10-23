@@ -1,0 +1,59 @@
+name: B23R2 controlled 47 remaining Commons originals
+on:
+  push:
+    branches: [research/b19-original-image-acquisition-probe-20261023]
+    paths: [.github/workflows/ao-art-b23r2-commons47.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: ao-b23r2-commons47-single-pacer
+  cancel-in-progress: false
+jobs:
+  source-acquisition:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check 'Pillow>=11,<13'
+      - name: Confirm all 47 sources were only queued by previous file cap
+        run: |
+          python - <<'PY'
+          import csv,json,pathlib
+          m=json.loads(pathlib.Path('data/research/sacred-art-b23r2-commons47.manifest.json').read_text())
+          with pathlib.Path('data/research/sacred-art-b23-commons82.audit.csv').open(encoding='utf-8',newline='') as f:
+              audit={r['asset_source_id']:r for r in csv.DictReader(f)}
+          assert len(m['records'])==47 and len({r['asset_source_id'] for r in m['records']})==47
+          assert all(audit[r['asset_source_id']]['download_status']=='QUEUED_AFTER_FILE_LIMIT' for r in m['records'])
+          PY
+      - name: Download all remaining eligible Commons sources, sequential and rate-limited
+        run: |
+          python scripts/research/sacred_art_acquire.py \
+            --manifest data/research/sacred-art-b23r2-commons47.manifest.json \
+            --output artifacts/b23r2-commons47 \
+            --max-files 47 \
+            --max-bytes 650000000 \
+            --prior-audit data/research/no-prior-b23r2.csv
+      - name: Retain binary originals in short-lived research artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ao-b23r2-commons47-originals-and-evidence
+          path: artifacts/b23r2-commons47/
+          retention-days: 7
+          if-no-files-found: warn
+      - name: Preserve permanent source rights and hashed file audit
+        if: success()
+        run: |
+          cp artifacts/b23r2-commons47/Acquisition_results.csv data/research/sacred-art-b23r2-commons47.audit.csv
+          cp artifacts/b23r2-commons47/Acquisition_summary.json data/research/sacred-art-b23r2-commons47.audit-summary.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/research/sacred-art-b23r2-commons47.audit.csv data/research/sacred-art-b23r2-commons47.audit-summary.json
+          git commit -m 'research: close 47 remaining prior Commons rate-limited source acquisitions where eligible'
+          git fetch origin research/b19-original-image-acquisition-probe-20261023
+          git rebase origin/research/b19-original-image-acquisition-probe-20261023
+          git push origin HEAD:research/b19-original-image-acquisition-probe-20261023
