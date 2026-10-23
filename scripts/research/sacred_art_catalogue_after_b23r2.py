@@ -17,27 +17,31 @@ def main():
     master=read("sacred-art-catalogue451-after-b23.csv")
     a=read("sacred-art-b23-commons82.audit.csv")
     b=read("sacred-art-b23r2-commons47.audit.csv")
-    assert len(master)==451 and len(a)==82 and len(b)==47
+    c=read("sacred-art-b23r3-mpo1.audit.csv")
+    assert len(master)==451 and len(a)==82 and len(b)==47 and len(c)==1
     seen=set()
     merged={}
-    for record in a+b:
+    for record in a+b+c:
         sid=record["asset_source_id"]
         # 47 R2 identities are repeated in the earlier 82-row research manifest.
         # The initial queue status is intentionally superseded only by R2.
         if sid in merged and merged[sid]["download_status"]!="QUEUED_AFTER_FILE_LIMIT":
-            raise ValueError("Unexpected prior result overwritten for "+sid)
+            if not (sid=="AO-SRC-D731162493ACD4" and merged[sid]["download_status"]=="DOWNLOAD_OR_DECODE_FAILED" and record["format"]=="MPO"):
+                raise ValueError("Unexpected prior result overwritten for "+sid)
         seen.add(sid)
         merged[sid]=record
     assert len(merged)==82
     acquired={sid:r for sid,r in merged.items() if r["download_status"]=="ACQUIRED_DECODED_SHA256"}
     assert all(re.fullmatch(r"[0-9a-f]{64}",r["sha256"]) for r in acquired.values())
     assert all(r["editorial_gate"]=="NOT_APPROVED" for r in acquired.values())
+    assert len(acquired)==82
+    assert sum(r["format"]=="MPO" for r in acquired.values())==1
     columns=list(master[0])+["b23_bulk_source_ids","b23_bulk_original_sha256","b23_bulk_original_url",
-             "b23_bulk_license_metadata","b23_bulk_resolution_gate"]
+             "b23_bulk_license_metadata","b23_bulk_resolution_gate","b23_bulk_mpo_format_hold"]
     result=[];enhanced=[];missing_gaps_recovered=[]
     for item in master:
         row=dict(item,b23_bulk_source_ids="",b23_bulk_original_sha256="",b23_bulk_original_url="",
-                 b23_bulk_license_metadata="",b23_bulk_resolution_gate="")
+                 b23_bulk_license_metadata="",b23_bulk_resolution_gate="",b23_bulk_mpo_format_hold="NO")
         sid_list=[x.strip() for x in row["matched_acquisition_ids"].split("|") if x.strip()]
         additions=[acquired[sid] for sid in sid_list if sid in acquired]
         if item["catalogue_bucket"]=="FROZEN_REJECTED":
@@ -48,7 +52,8 @@ def main():
                 b23_bulk_original_sha256=" | ".join(x["sha256"] for x in additions),
                 b23_bulk_original_url=" | ".join(x["resolved_original_url"] for x in additions),
                 b23_bulk_license_metadata=" | ".join(x["metadata_license"] for x in additions),
-                b23_bulk_resolution_gate=" | ".join(x["resolution_gate"] for x in additions))
+                b23_bulk_resolution_gate=" | ".join(x["resolution_gate"] for x in additions),
+                b23_bulk_mpo_format_hold="YES" if any(x["format"]=="MPO" for x in additions) else "NO")
             if int(item["acquired_original_count"] or 0)==0 and not item["nga_iiif_sha256"] and not item["kress_image_sha256"] and int(item["acquired_print_count"] or 0)==0:
                 row["catalogue_bucket"]="ACQUIRED_B23_COOLDOWN_ORIGINAL_WITH_LEGACY_PREVIEW" if item["legacy_preview"]=="YES" else "ACQUIRED_B23_COOLDOWN_ORIGINAL"
                 row["collection_need"]="ORIGINAL_FILE_ACQUIRED_FROM_VERIFIED_SOURCE_PENDING_EDITORIAL_QA"
@@ -80,6 +85,7 @@ def main():
         "B23_82_identity_status_counts":dict(statuses),
         "B23_artwork_entries_with_new_original_source":len(enhanced),
         "B23_previously_image_less_artworks_recovered":len(missing_gaps_recovered),
+        "B23_native_MPO_originals_under_format_hold":1,
         "B23_newly_covered_frozen_ids":missing_gaps_recovered,
         "B23_legacy_preview_only_remaining":sum(r["catalogue_bucket"]=="LEGACY_PREVIEW_ONLY" for r in result),
         "canonical_excel_modified":False,"new_editorial_approvals":0,"new_publication_approvals":0,
