@@ -49,7 +49,7 @@ And the Lord God said to the serpent: Because thou hast done this thing, thou ar
 
 ## 03 · Noah, the covenant and the peoples
 
-*⟦Editorial connector · source: Genesis 4:25–26; Genesis 5:28–32 · NOT APPROVED⟧*
+*⟦Editorial connector · source: Genesis 4:25–26; Genesis 5:28–31 · NOT APPROVED⟧*
 
 *The generations after Adam continued through Seth, and from his line came Noah.*
 
