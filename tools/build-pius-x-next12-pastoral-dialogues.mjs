@@ -130,13 +130,11 @@ const expanded={...base,
 const safe=JSON.stringify(expanded).replace(/</g,'\\u003c').replace(/>/g,'\\u003e');
 let html=older.replace(hit[0],
  '<script type="application/json" id="spxExpandedCorpus">'+safe+'</script>');
-html=html.replace('launch:"Explore 94 conversations"',
- 'launch:"Explore 106 conversations"').replace('launch:"94 conversations"',
- 'launch:"106 conversations"');
+
 html=html.replace(
  'const starters=["SPX-NEW-001","SPX-NEW-010","SPX-NEW-003","SPX-001"]',
  'const starters=["SPX-NEW-020","SPX-NEW-014","SPX-NEW-021","SPX-NEW-010"]');
-assert(html.includes('Explore 106 conversations'));
+assert(html.includes('launch:"Explore {count} conversations"'),'shared stage count template missing');
 assert(html.includes('const starters=["SPX-NEW-020"'));
 assert(!/<script[^>]+src=/.test(html),'external script forbidden in offline build');
 const filename=out+'SPX_Study_Expanded_106.html';
