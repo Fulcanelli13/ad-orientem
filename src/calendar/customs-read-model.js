@@ -447,6 +447,13 @@ const PUBLISHED_ARTICLES = [
       "en": "Easter Monday, especially in southern Germany and Austria",
       "fr": "Lundi de Pâques, notamment en Bavière et en Autriche"
     },
+    "supporting_sources": [
+      {
+        "id": "MUNICH-EMMAUS-2026-CURIA",
+        "title": "Mit Magdalena unterwegs — 2026 diocesan events including Emmausgang",
+        "url": "https://www.erzbistum-muenchen.de/ueber-das-erzbistum/pressebereich/pressemitteilungen/2026-pm/maria-magdalena-suche-nach-spuren-der-apostelin-der-apostel"
+      }
+    ],
     "sources": [
       {
         "id": "MUNICH-FREISING-EMMAUSGANG",
