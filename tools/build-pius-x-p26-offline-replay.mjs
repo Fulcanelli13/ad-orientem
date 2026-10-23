@@ -162,17 +162,73 @@ for(const item of eligible){
 assert.equal(navigationAliases.length,32);
 assert.equal(navigationAliases.filter(x=>x.language==='en').length,16);
 assert.equal(navigationAliases.filter(x=>x.language==='fr').length,16);
+// P2.29: cover the existing source gate at high volume WITHOUT inventing
+// Pius X answers. The 11 provisional editorial specimens above stay distinct.
+// The new dossiers reveal only original-language fragments and pre-existing
+// narrow English research notes; no unpublished P6 reply is copied into them.
+const sourceDossiers=[],sourceDossierHeld=[],sourceDossierWitnessIds=new Set();
+const reviewedNodeIds=new Set(cases.map(x=>x.nodeId));
+const gateSize=[...store.sourceOnlyGate.values()].reduce((n,entry)=>n+entry.size,0);
+assert.equal(gateSize,144);
+for(const chapter of store.data.chapters){
+ const gate=store.sourceOnlyGate.get(chapter.id);
+ if(!gate)continue;
+ assert.equal(chapter.sourceClass,'PAPAL_DOCUMENT_ADAPTATION');
+ assert.equal(!!chapter.partial,false); // eligible gate subjects are nonpartial
+ for(const node of chapter.nodes){
+  if(!gate.has(node.id))continue;
+  if(reviewedNodeIds.has(node.id))continue;
+  const check=selectEvidence(store,{chapterId:chapter.id,nodeId:node.id,
+   language:'en',question:node.q.en});
+  if(check.status!=='eligible'){
+   sourceDossierHeld.push({chapterId:chapter.id,nodeId:node.id,reason:check.reason});
+   continue;
+  }
+  assert.equal(check.evidence.length,1);
+  assert.equal(check.evidence[0].id,node.id);
+  const entry=check.evidence[0];
+  const parts=entry.originalLanguageWitnesses.map(w=>{
+   assert(typeof w.id==='string'&&typeof w.text==='string'&&w.text.length>=8);
+   assert(typeof w.readingNote==='string'&&w.readingNote.length>=4);
+   assert(['la','it'].includes(w.originalLanguage));
+   assert(w.sourceUrl.startsWith('https://www.vatican.va/'));
+   sourceDossierWitnessIds.add(w.id);
+   return {id:w.id,originalText:w.text,originalLanguage:w.originalLanguage,
+    sourceUrl:w.sourceUrl,locus:w.locus,speaker:w.speaker,
+    editorialResearchNoteEnglish:w.readingNote,
+    answerCertified:false,translationCertified:false};
+  });
+  assert(parts.length>0);
+  sourceDossiers.push({chapterId:chapter.id,nodeId:node.id,
+   question:{...node.q},sourceStatus:entry.primaryWitnessStatus,
+   originalWitnesses:parts,
+   researchCautions:entry.editorialWarnings,
+   status:'ORIGINAL_EXCERPT_RESEARCH_ONLY_NO_EDITORIAL_ANSWER',
+   answerApproved:false,publicationApproved:false});
+ }
+}
+assert.equal(sourceDossiers.length+sourceDossierHeld.length+cases.length,144);
+assert(sourceDossiers.length>75,'Corpus-level original source browsing should reach far beyond 11');
+assert(sourceDossiers.every(x=>!reviewedNodeIds.has(x.nodeId)));
+const sourceDossierChapterIds=new Set(sourceDossiers.map(x=>x.chapterId));
 const offline={
  schema:'AO_SPX_P26_OFFLINE_REVIEW_CASES_V1',status:'PRIVATE_STATIC_NO_MODEL_INFERENCE',
  modelProviderEnabled:false,publishingApproved:false,sourceOnlyGateAdmissions:0,
  canonicalChapters:4,canonicalNodes:11,bilingualEditorialPairs:22,
  originalWitnessFragments:distinctWitnesses.size,originalCorpusNodes:423,
  claimTraceUnits:23,humanClaimCertifications:0,
- navigationAliasCount:32,navigationAliases,cases
+ navigationAliasCount:32,navigationAliases,cases,
+ sourceGateSize:144,sourceDossierCount:sourceDossiers.length,
+ sourceDossierHeldCount:sourceDossierHeld.length,
+ sourceDossierDistinctFragments:sourceDossierWitnessIds.size,
+ sourceDossierChapterCount:sourceDossierChapterIds.size,
+ sourceDossiers,sourceDossierHeld
 };
-const client=readFileSync('previews/pius-x-study/spx-p26-offline-replay-client.js','utf8');
+const client=readFileSync('previews/pius-x-study/spx-p26-offline-replay-client.js','utf8')+'\n'+
+ readFileSync('previews/pius-x-study/spx-p29-source-dossier-client.js','utf8');
 const css=readFileSync('previews/pius-x-study/spx-model-review-style.css','utf8')+'\n'+
- readFileSync('previews/pius-x-study/spx-p26-offline-replay-style.css','utf8');
+ readFileSync('previews/pius-x-study/spx-p26-offline-replay-style.css','utf8')+'\n'+
+ readFileSync('previews/pius-x-study/spx-p29-source-dossier-style.css','utf8');
 assert(!/<\/script/i.test(client)&&!/<\/style/i.test(css));
 const safe=JSON.stringify(offline).replace(/</g,'\\u003c').replace(/>/g,'\\u003e').replace(/&/g,'\\u0026');
 const sourceHTML=html.replace('</body>',
@@ -189,6 +245,10 @@ writeFileSync(dest,final);
 console.log('PASS SPX_P26_OFFLINE_BUILD '+JSON.stringify({
  path:dest,bytes:Buffer.byteLength(final),chapterCount:4,sourceOwnedQuestions:11,
  bilingualEditorialDrafts:22,originalFragments:18,claimTraceUnits:23,
- navigationAliases:32,networkCalls:0,
+ navigationAliases:32,sourceDossierCount:sourceDossiers.length,
+ sourceDossierChapterCount:sourceDossierChapterIds.size,
+ sourceDossierHeldCount:sourceDossierHeld.length,
+ sourceDossierDistinctFragments:sourceDossierWitnessIds.size,
+ networkCalls:0,
  sourceOwnerNodes:423,generativeGateNodes:144,published:false
 }));
