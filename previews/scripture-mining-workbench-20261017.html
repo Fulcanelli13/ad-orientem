@@ -417,6 +417,9 @@ async function showHistoriaMovement(){
    if(beat.semanticEditionAlignment?.kind==="SAME_WRESTLING_AND_RENAMING_DIFFERENT_VERSE_OFFSETS"){
     section.append(make("p","Source-numbering alignment: Jacob wrestles in Genesis 32:24 and receives the name Israel at 32:28 in the English Douay/CPDV witnesses; the same episodes are 32:25 and 32:29 in French Crampon. Display the selected witness's own verse numbers, not an inferred textual equivalence.","proofGap"));
    }
+   if(beat.semanticEditionAlignment?.kind==="CROSS_CHAPTER_ISAIAH_CHILD_ORACLE_VERSE_SHIFT"){
+    section.append(make("p","Edition-sensitive oracle: English Douay/CPDV use Isaiah 9:1–6 (Zebulun and Naphtali to the Child); French Crampon uses Isaiah 8:23, then 9:1–5. Both are uncollated witnesses; the words and verse numbering must not be interchanged.","proofGap"));
+   }
    if(beat.semanticEditionAlignment?.kind==="CAPERNAUM_LOCATION_VERSE_SHIFT"){
     section.append(make("p","Source alignment: the Capernaum synagogue sentence is John 6:60 in Douay/CPDV and John 6:59 in Crampon. Verse numbers are not interchangeable across these witnesses.","proofGap"));
    }
