@@ -370,10 +370,36 @@ async function showHistoriaMovement(){
   for(const beat of m.beats){
    if(token!==historiaProofToken)return;
    if(beat.kind==="EDITORIAL_CONTEXT_NOT_BIBLE"){
+    // The approved/source text remains solely in the separate Scripture beats.
+    // Reading copy is a *proposed* editor's connection, never biblical wording.
+    const draft=beat.editorialReadingCandidate;
+    if(!draft||draft.publicationApproved!==false||!Array.isArray(draft.sourceReferences))
+     throw Error("Missing held, source-attributed context: "+beat.id);
     const note=make("aside",undefined,"proofContext");
-    note.append(make("span","Editorial context · not Scripture","caption"),
-     make("p",beat.explanation));
+    note.append(make("span","Proposed editorial transition · not Scripture · not approved","caption"),
+     make("p",draft.text),
+     make("div","Scripture basis: "+draft.sourceReferences.join("; "),"proofCitation"));
     host.append(note);continue;
+   }
+   // These nine additional links were already written and source-attributed in
+   // the P3 master; the research workbench previously hid them altogether.
+   // Suppress an editorial description when that same complete passage is
+   // visible as an explicitly unapproved source-bridge reading instead.
+   const connector=beat.beforeScriptureConnectorCandidate;
+   if(connector){
+    if(connector.publicationApproved!==false||connector.accepted!==false)
+     throw Error("Unapproved source connector unexpectedly promoted: "+connector.id);
+    const shownAsScriptureBridge=showBridges&&m.beats.some(other=>
+     other.kind==="SOURCE_BRIDGE_CANDIDATE"&&
+     (!highPriorityBridgesOnly||isPriorityHistoriaBridge(other))&&
+     connector.sourceReferences?.includes(other.reference));
+    if(!shownAsScriptureBridge){
+     const note=make("aside",undefined,"proofContext");
+     note.append(make("span","Proposed continuity · not Scripture · not approved","caption"),
+      make("p",connector.text),
+      make("div","Scripture basis: "+connector.sourceReferences.join("; "),"proofCitation"));
+     host.append(note);
+    }
    }
    if(beat.kind==="SOURCE_BRIDGE_CANDIDATE"&&(!showBridges||(highPriorityBridgesOnly&&!isPriorityHistoriaBridge(beat))))continue;
    const bridge=beat.kind==="SOURCE_BRIDGE_CANDIDATE";
