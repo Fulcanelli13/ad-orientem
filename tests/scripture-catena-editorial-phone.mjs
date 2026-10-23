@@ -367,6 +367,14 @@ try{
  assert.match(await page.locator("#progress").innerText(),/1 of 23/);
  await page.locator("#cases").selectOption(String(silent));
  await page.locator("#reviewForm select[data-abstain]").waitFor({state:"visible",timeout:15000});
+ const canonicalContext=page.locator('#reviewForm details[data-full-pericope-context]');
+ assert.equal(await canonicalContext.count(),1);
+ await canonicalContext.locator('summary').click();
+ assert.ok(await canonicalContext.locator('article.case').count()>0,
+  "An abstention reviewer must be able to read the whole canonical pericope");
+ assert.match(await canonicalContext.locator('summary').innerText(),/NOT a retrieved answer/);
+ assert.equal(await page.locator('#reviewForm > article.case').count(),0,
+  "Complete context must not be mistaken for retrieved answers");
  await page.locator("#reviewForm select[data-abstain]").selectOption("uncertain");
  await page.locator("#reviewForm > textarea").fill("No-source result assessed only as a synthetic regression of the offline reviewer interface.");
  await page.locator('#reviewForm button[type="submit"]').click();
