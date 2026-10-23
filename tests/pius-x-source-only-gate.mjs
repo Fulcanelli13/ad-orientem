@@ -6,7 +6,7 @@ const html=readFileSync('artifacts/pius-x-study-expanded/SPX_Study_Expanded_106_
 const store=readCorpus(html);
 assert.equal(store.data.counts.allNodes,423);
 assert.equal(store.chapters.size,106);
-assert.equal(store.sourceOnlyGate.size,33);
+assert.equal(store.sourceOnlyGate.size,41);
 assert.equal(store.data.approvals.publishing,false);
 
 let eligible=0, held=0;
@@ -29,8 +29,8 @@ for(const c of store.chapters.values()){
   assert(result.status==='held');
  }
 }
-assert.equal(eligible,33);
-assert.equal(held,73);
+assert.equal(eligible,41);
+assert.equal(held,65);
 assert.equal(all.size,106);
 for(const id of ['SPX-PILOT-07','SPX-NEW-021','SPX-NEW-013','SPX-EXP-037',
  'SPX-NEW-003','SPX-NEW-008','SPX-NEW-007','SPX-013']){
@@ -56,7 +56,7 @@ const mapped=followupTriage.followups.filter(x=>x.witnessIds.length);
 const unmapped=followupTriage.followups.filter(x=>x.witnessIds.length===0);
 assert.equal(mapped.length,14);
 assert.equal(unmapped.length,8);
-assert.equal([...store.sourceOnlyGate.values()].reduce((a,v)=>a+v.size,0),82);
+assert.equal([...store.sourceOnlyGate.values()].reduce((a,v)=>a+v.size,0),120);
 for(const item of followupTriage.followups){
  const c=store.chapters.get(item.chapterId);
  const node=c?.nodes.find(n=>n.id===item.nodeId);
@@ -143,6 +143,66 @@ const negative=store.chapters.get('SPX-NEW-011');
 assert.equal(selectEvidence(store,{chapterId:negative.id,nodeId:negative.nodes[3].id,
  question:negative.nodes[3].q.en,language:'en'}).reason,'followup_not_mapped_to_primary_source_claim');
 
+
+const wave3=JSON.parse(readFileSync(
+ 'previews/pius-x-study/evidence/pius-x-six-document-wave3-20261023.v1.json','utf8'));
+assert.equal(wave3.schema,'AO_SPX_P2_SIX_DOCUMENT_WAVE3_EVIDENCE_TRIAGE_V1');
+assert.equal(wave3.summary.sourceNodesInSixDocuments,84);
+assert.equal(wave3.summary.previouslySourceMappedNodes,31);
+assert.equal(wave3.summary.previouslyUnmappedNodesScreened,53);
+assert.equal(wave3.summary.newBoundedResearchCandidates,38);
+assert.equal(wave3.summary.newResearchHolds,15);
+assert.equal(wave3.summary.newOriginalVaticanSnippets,40);
+assert.equal(wave3.summary.approvedCompleteAnswers,0);
+assert.equal(wave3.summary.approvedTranslations,0);
+assert.equal(wave3.summary.publishedReplies,0);
+const all3=new Set();let thirdMapped=0,thirdHeld=0;
+for(const row of wave3.records){
+ assert(!all3.has(row.nodeId));all3.add(row.nodeId);
+ const chapter=store.chapters.get(row.chapterId);
+ assert(chapter,'all 53 are original P6 nodes');
+ const node=chapter.nodes.find(x=>x.id===row.nodeId);
+ assert(node&&node.q.en===row.questionEn);
+ assert.equal(row.publishingApproved,false);
+ assert.equal(row.historicalSpeakerApproval,false);
+ assert.equal(row.completeAnswerApproved,false);
+ assert.equal(row.translationCertified,false);
+ for(const language of ['en','fr']){
+  const check=selectEvidence(store,{chapterId:row.chapterId,
+   nodeId:row.nodeId,question:node.q[language],language});
+  if(row.witnessIds.length){
+   assert.equal(check.status,'eligible');
+   assert.equal(check.evidence[0].primaryWitnessStatus,
+    'WAVE_THREE_NARROW_ORIGINAL_TEXT_RESEARCH_ONLY');
+   assert.deepEqual(check.evidence[0].originalLanguageWitnesses.map(x=>x.id),row.witnessIds);
+   assert(check.evidence[0].editorialWarnings.some(x=>x.includes('not authenticated')));
+   assert(!JSON.stringify(check.evidence).includes(node.a.en));
+   assert(!JSON.stringify(check.evidence).includes(node.a.fr));
+  }else{
+   assert.equal(check.status,'held');
+   assert(['no_original_language_witness_for_selected_subject',
+    'followup_not_mapped_to_primary_source_claim',
+    'not_papal_primary_document_adaptation'].includes(check.reason));
+  }
+ }
+ if(row.witnessIds.length)thirdMapped++;else thirdHeld++;
+}
+assert.equal(all3.size,53);
+assert.equal(thirdMapped,38);
+assert.equal(thirdHeld,15);
+const witness3=new Set(wave3.witnesses.map(x=>x.id));
+assert.equal(witness3.size,40);
+assert(wave3.witnesses.every(x=>x.sourceUrl.startsWith('https://www.vatican.va/')&&
+ x.originalText.length>15&&x.translationApproved===false&&x.publishingApproved===false));
+assert(wave3.witnesses.some(x=>x.speaker==='ST_CHARLES_BORROMEO_QUOTED_BY_PIUS_X'));
+assert(wave3.witnesses.some(x=>x.speaker==='LEO_XIII_1902_QUOTED_BY_PIUS_X'));
+const priestAssociation=wave3.records.find(x=>x.chapterId==='SPX-NEW-019'&&
+ x.witnessIds.some(id=>id.endsWith('H-EXPERIENCE')));
+assert(priestAssociation,'actual biographical firsthand passage must be mapped, not invented');
+const unsupportedModern=store.chapters.get('SPX-NEW-002');
+assert.equal(selectEvidence(store,{chapterId:unsupportedModern.id,
+ nodeId:unsupportedModern.nodes[3].id,question:unsupportedModern.nodes[3].q.en,language:'en'}).status,'held');
+
 const legacy=store.chapters.get('SPX-PILOT-01');
 const short=selectEvidence(store,{chapterId:legacy.id,nodeId:legacy.nodes[0].id,
  language:'en',question:legacy.nodes[0].q.en});
@@ -186,4 +246,4 @@ const second=await composeDraft(store,{...input,nodeId:c.nodes[2].id,question:c.
 assert.equal(second.status,'draft');
 assert.equal(calls,before+4);
 assert(seen.evidence[0].originalLanguageWitnesses.some(x=>x.id==='TLS-POLYPHONY'));
-console.log('PASS SPX_SOURCE_ONLY_GATE: 33 source-backed subjects and 82 bounded mapped nodes (46 wave2, 5 original partial holds), 35 new snippets; eight unsupported followups held, no P6 whole answers supplied, zero release approvals');
+console.log('PASS SPX_SOURCE_ONLY_GATE: 41 source-backed subjects and 120 bounded mapped nodes (38 wave3, 15 additional holds), no full text certification; eight unsupported followups held, no P6 whole answers supplied, zero release approvals');
