@@ -85,6 +85,21 @@ for(let i=0;i<expected.length;i++){
  assert.equal(hash(row.completeOriginalOCR),row.completeOCRSHA256);
  assert.equal(row.exactOCRQuestionUpToMark+row.exactOCREnsuingProse,row.completeOriginalOCR);
  assert.equal(row.questionAndProsePrintedContiguously,true);
+ assert.equal(row.sourceQuoteOwnershipUnverified,true);
+ assert.equal(row.ensuingProseMayIncludeBiblicalQuotation,
+  row.ensuingProseQuotationEvidence.visiblePrintedQuoteMarks>0);
+ assert.equal(row.ensuingProseQuotationEvidence.sourceQuotationCandidates.length,
+  [0,1,0,1][i],"Preserve exact paired quotation spans in two historic Gospel-heavy examples");
+ assert.equal(row.ensuingProseQuotationEvidence.unpairedOrOutsideContextQuotationPossible,
+  [false,false,true,false][i]);
+ for(const quoted of row.ensuingProseQuotationEvidence.sourceQuotationCandidates){
+  assert.equal(row.exactOCREnsuingProse.slice(quoted.startOffset,quoted.endOffset),
+   quoted.originalQuotedOCR);
+  assert.equal(hash(quoted.originalQuotedOCR),quoted.originalQuoteSHA256);
+  assert.equal(quoted.sourceRole,
+   "unresolved_printed_quotation_not_automatically_Father_speech");
+ }
+
  for(const field of ["speakerOriginalGreekAuthenticated","printedPageCollated",
   "sourceResponseBoundaryEditoriallyAuthenticated",
   "noveltyComparedAgainstFullCatena","publicationEligible"])
