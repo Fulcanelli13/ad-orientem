@@ -236,7 +236,24 @@
             "preservesOriginalDeskCopy": true,
             "printedEditionCollationPending": true,
             "finalLiteraryAcceptance": false,
-            "publicationApproved": false
+            "publicationApproved": false,
+            "sourceReferencesByEdition": {
+              "dr-challoner": [
+                "Genesis 4:25–26",
+                "Genesis 5:28–31"
+              ],
+              "cpdv-2009": [
+                "Genesis 4:25–26",
+                "Genesis 5:28–31"
+              ],
+              "crampon-1923": [
+                "Genesis 4:25–26",
+                "Genesis 5:28–32"
+              ]
+            },
+            "editionAlignmentStatus": "FIVE_CHAPTER_END_MERGED_VERSE_IN_INSTALLED_ENGLISH_WITNESSES_NOT_PRINT_COLLATED",
+            "editionAlignmentNote": "In the imported Douay–Challoner and CPDV Genesis 5 witnesses, the birth of Noah's sons is included within verse 31 and verse 32 does not exist. In imported Crampon, Genesis 5:31 ends Lamech's life and verse 32 names Noah's sons. Preserve original source citation as audit history, render source-specific reference ranges. No Bible verse text is changed.",
+            "originalSourceReferencesUnmodified": true
           }
         },
         {
