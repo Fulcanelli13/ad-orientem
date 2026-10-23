@@ -20,8 +20,8 @@ const PUBLISHED_ARTICLES = [
       "fr": "Une couronne de feuillage portant quatre bougies peut accompagner la prière familiale durant l'Avent. Chaque dimanche, une bougie supplémentaire est allumée pour marquer l'approche de Noël et l'attente du Christ."
     },
     "history": {
-      "en": "A ring of evergreen branches with four candles can accompany a family's Advent prayers. One more candle is lighted each Sunday, marking the approach of Christmas and the expectation of Christ's coming.",
-      "fr": "Une couronne de feuillage portant quatre bougies peut accompagner la prière familiale durant l'Avent. Chaque dimanche, une bougie supplémentaire est allumée pour marquer l'approche de Noël et l'attente du Christ."
+      "en": "The United States bishops document the Advent wreath as a devotion used in churches and homes. That source establishes accepted Catholic use but does not establish the wreath's precise historical origin or make it a rubric of the 1962 Mass.",
+      "fr": "La conférence épiscopale américaine atteste l'emploi de la couronne de l'Avent dans les églises et les foyers. Cette source confirme son usage catholique, sans en établir l'origine historique précise ni en faire une rubrique de la messe de 1962."
     },
     "meaning": {
       "en": "Its growing light reminds the household of hope and preparation for the Saviour.",
@@ -62,8 +62,8 @@ const PUBLISHED_ARTICLES = [
       "fr": "Dans certaines familles catholiques, les enfants déposent un peu de paille dans une mangeoire après une bonne action ou une prière. La coutume rend visible leur préparation à la venue de l'Enfant Jésus, sans mesurer la grâce ni transformer la charité en compétition."
     },
     "history": {
-      "en": "Children in some Catholic families place a little straw in an empty manger after doing a good deed or saying a prayer. The custom makes their preparation for the coming of the Christ Child visible, without measuring grace or turning charity into a competition.",
-      "fr": "Dans certaines familles catholiques, les enfants déposent un peu de paille dans une mangeoire après une bonne action ou une prière. La coutume rend visible leur préparation à la venue de l'Enfant Jésus, sans mesurer la grâce ni transformer la charité en compétition."
+      "en": "A Catholic family account published in 2014 describes adding straw to the manger after acts of kindness and calls it a French custom. This is evidence of a contemporary household devotion, not proof of its date of origin or prevalence throughout France.",
+      "fr": "Un témoignage familial catholique publié en 2014 décrit l'ajout de paille à la crèche après des actes de bonté et qualifie cet usage de français. Il atteste une dévotion domestique contemporaine, sans prouver sa date d'origine ni sa diffusion dans toute la France."
     },
     "meaning": {
       "en": "The empty crib reminds everyone to make room for Christ through charity and conversion.",
@@ -104,8 +104,8 @@ const PUBLISHED_ARTICLES = [
       "fr": "Pendant les posadas, des familles ou des groupes paroissiaux rappellent la recherche d'un abri par Marie et Joseph avant Noël. Le groupe passe de maison en maison, souvent en chantant, jusqu'à l'accueil symbolique dans un foyer."
     },
     "history": {
-      "en": "In Las Posadas, neighbours or parish groups remember Mary and Joseph seeking lodging before the Nativity. The community moves between homes or stations, singing, until a household symbolically offers welcome.",
-      "fr": "Pendant les posadas, des familles ou des groupes paroissiaux rappellent la recherche d'un abri par Marie et Joseph avant Noël. Le groupe passe de maison en maison, souvent en chantant, jusqu'à l'accueil symbolique dans un foyer."
+      "en": "The United States bishops describe Las Posadas as a Latin American Advent observance beginning around 16 December, with visits and singing between homes. This source documents the living practice, not a settled account of its colonial origins.",
+      "fr": "La conférence épiscopale américaine décrit les posadas comme une coutume de l'Avent en Amérique latine, commençant vers le 16 décembre, avec des visites et des chants de maison en maison. La source atteste l'usage vivant, non une histoire définitivement établie de ses origines coloniales."
     },
     "meaning": {
       "en": "Christ's coming invites Christians to hospitality and charity toward those looking for shelter.",
@@ -146,8 +146,8 @@ const PUBLISHED_ARTICLES = [
       "fr": "Avant le repas de la veille de Noël, les membres de la famille partagent une fine hostie de pain non consacré appelée opłatek, en échangeant des vœux et des paroles de réconciliation. Ce pain de fête n'est pas la sainte communion."
     },
     "history": {
-      "en": "Before Christmas Eve dinner, family members share a thin unleavened opłatek wafer while offering one another good wishes and reconciliation. It is ordinary blessed-or-unblessed festive bread, not Holy Communion.",
-      "fr": "Avant le repas de la veille de Noël, les membres de la famille partagent une fine hostie de pain non consacré appelée opłatek, en échangeant des vœux et des paroles de réconciliation. Ce pain de fête n'est pas la sainte communion."
+      "en": "A Catholic parish account documents the Polish Christmas Eve sharing of opłatek and its continued use among families outside Poland. It witnesses a living Polish-rooted custom without establishing an exact date of origin.",
+      "fr": "Un témoignage paroissial catholique décrit le partage de l'opłatek la veille de Noël et le maintien de cet usage dans des familles hors de Pologne. Il atteste une coutume vivante d'origine polonaise sans fixer sa date de naissance."
     },
     "meaning": {
       "en": "A tangible act of family peace and mutual charity as the household prepares to celebrate the Nativity.",
@@ -188,8 +188,8 @@ const PUBLISHED_ARTICLES = [
       "fr": "Après la messe de la Cène du Seigneur, certains fidèles visitent plusieurs églises pour prier devant le Saint-Sacrement au reposoir. Le nombre de sept est traditionnel dans certains lieux, sans constituer une obligation."
     },
     "history": {
-      "en": "After the Mass of the Lord's Supper, some faithful visit several churches to pray before the Blessed Sacrament at an altar of repose. Seven is a common traditional number but is not mandatory.",
-      "fr": "Après la messe de la Cène du Seigneur, certains fidèles visitent plusieurs églises pour prier devant le Saint-Sacrement au reposoir. Le nombre de sept est traditionnel dans certains lieux, sans constituer une obligation."
+      "en": "A Catholic newspaper account in March 2026 describes voluntary visits to churches after the Holy Thursday Mass and notes that the number of stops varies. Links sometimes drawn to St Philip Neri's Roman pilgrimages should not be treated as proof of one exclusive historical origin.",
+      "fr": "Un article de presse catholique paru en mars 2026 décrit les visites facultatives aux églises après la messe du Jeudi saint et précise que leur nombre varie. Le rapprochement parfois établi avec les pèlerinages romains de saint Philippe Néri ne prouve pas une origine historique unique."
     },
     "meaning": {
       "en": "A voluntary way to keep watch with Christ before His Passion.",
@@ -230,8 +230,8 @@ const PUBLISHED_ARTICLES = [
       "fr": "Un ancien guide familial catholique propose une promenade de prière aux Rogations pour confier à Dieu les jardins, les récoltes et le travail de ceux qui produisent la nourriture. Ce geste privé est distinct des litanies et des bénédictions sacerdotales."
     },
     "history": {
-      "en": "A Catholic family guide describes going on a simple prayer walk during the Rogations, asking God's blessing on gardens, crops and the labour of those who provide food. This private act is distinct from the priest-led litanies or blessings.",
-      "fr": "Un ancien guide familial catholique propose une promenade de prière aux Rogations pour confier à Dieu les jardins, les récoltes et le travail de ceux qui produisent la nourriture. Ce geste privé est distinct des litanies et des bénédictions sacerdotales."
+      "en": "The cited Catholic family guide supplies an example of private Rogation prayer for crops and household walks. This adaptation is distinct from formal ecclesiastical Rogation processions and does not establish that every Catholic region kept the same domestic practice.",
+      "fr": "Le guide familial catholique cité propose un exemple de prière privée des Rogations pour les récoltes et de promenade familiale. Cette adaptation se distingue des processions ecclésiastiques et ne prouve pas que toutes les régions catholiques aient connu le même usage domestique."
     },
     "meaning": {
       "en": "Prayer for the harvest recognises dependence on God's providence and the dignity of human labour.",
@@ -272,8 +272,8 @@ const PUBLISHED_ARTICLES = [
       "fr": "Autour de l'Épiphanie, des enfants costumés en mages rendent visite aux familles, chantent et portent un message de bénédiction tout en recueillant une aide pour les enfants dans le besoin. En Allemagne, l'action est organisée par les paroisses catholiques."
     },
     "history": {
-      "en": "Children dressed as the Magi visit homes around Epiphany, bringing a Christian blessing, singing and gathering support for children in need. In Germany the practice is organised through Catholic parishes and the Sternsinger campaign.",
-      "fr": "Autour de l'Épiphanie, des enfants costumés en mages rendent visite aux familles, chantent et portent un message de bénédiction tout en recueillant une aide pour les enfants dans le besoin. En Allemagne, l'action est organisée par les paroisses catholiques."
+      "en": "The German Catholic children's missionary organisation documents its present-day carol-singers campaign around Epiphany, joining household visits and charitable collections. This establishes the organised contemporary form, not the precise origin of every older regional singing custom.",
+      "fr": "L'organisme missionnaire catholique allemand pour les enfants présente sa campagne actuelle des chanteurs de l'Épiphanie, qui associe visites aux foyers et collecte caritative. La source atteste cette forme organisée contemporaine, non l'origine précise de tous les usages régionaux plus anciens."
     },
     "meaning": {
       "en": "The Magi's homage becomes a lesson in mission, charity and bringing Christ's light into homes.",
@@ -314,8 +314,8 @@ const PUBLISHED_ARTICLES = [
       "fr": "À l'Épiphanie, on partage en France une galette ou un gâteau des Rois contenant une fève, souvent accompagnée d'une couronne. Certaines formes de la coutume prévoient une part supplémentaire pour une personne pauvre ou un invité inattendu."
     },
     "history": {
-      "en": "French families may share a King Cake or galette with a hidden bean and a symbolic paper crown. Some historical forms set aside an extra portion for a poor neighbour or unexpected guest.",
-      "fr": "À l'Épiphanie, on partage en France une galette ou un gâteau des Rois contenant une fève, souvent accompagnée d'une couronne. Certaines formes de la coutume prévoient une part supplémentaire pour une personne pauvre ou un invité inattendu."
+      "en": "The French Bishops' Conference describes sharing a galette or cake with a hidden bean and sometimes reserving an extra portion for a poor person or stranger. This supports the household custom without proving claims of direct descent from ancient Roman festivals.",
+      "fr": "La conférence des évêques de France décrit le partage d'une galette ou d'un gâteau contenant une fève, avec parfois une part réservée au pauvre ou à l'étranger. Ce témoignage confirme la coutume familiale sans démontrer une filiation directe avec les fêtes de la Rome antique."
     },
     "meaning": {
       "en": "The feast of the Magi can connect domestic joy with generosity to others.",
@@ -356,8 +356,8 @@ const PUBLISHED_ARTICLES = [
       "fr": "Dans certaines communautés catholiques, les familles réalisent des tapis de fleurs sur le parcours de la procession de la Fête-Dieu ; ailleurs, les rues et les fenêtres sont fleuries. Une tradition polonaise est reconnue comme patrimoine culturel."
     },
     "history": {
-      "en": "In some Catholic communities, families lay floral carpets along Corpus Christi procession routes; in others, flowers decorate nearby streets and windows. A specific Polish tradition is recognised as cultural heritage.",
-      "fr": "Dans certaines communautés catholiques, les familles réalisent des tapis de fleurs sur le parcours de la procession de la Fête-Dieu ; ailleurs, les rues et les fenêtres sont fleuries. Une tradition polonaise est reconnue comme patrimoine culturel."
+      "en": "UNESCO documented the Polish tradition of families laying flower carpets for Corpus Christi processions and inscribed it in 2021. The Church's general guidance on Eucharistic processions does not make the Polish floral arrangement a universal liturgical requirement.",
+      "fr": "L'UNESCO a documenté la tradition polonaise des tapis de fleurs réalisés en famille pour les processions de la Fête-Dieu et l'a inscrite en 2021. Les directives générales de l'Église sur les processions eucharistiques ne font pas de cet aménagement floral une prescription liturgique universelle."
     },
     "meaning": {
       "en": "Flowers along the route express public reverence for Christ in the Blessed Sacrament, without creating a liturgical rite.",
@@ -403,8 +403,8 @@ const PUBLISHED_ARTICLES = [
       "fr": "Dans certaines régions du sud de l'Allemagne et d'Autriche, une promenade du lundi de Pâques rappelle la rencontre des disciples avec le Christ ressuscité sur le chemin d'Emmaüs. Des familles ou paroisses marchent parfois vers une église ou un sanctuaire en priant."
     },
     "history": {
-      "en": "In parts of southern Germany and Austria, a traditional Easter Monday walk commemorates the disciples' encounter with the risen Christ on the road to Emmaus. Some families or parishes walk toward a church or shrine, with moments of prayer and Scripture.",
-      "fr": "Dans certaines régions du sud de l'Allemagne et d'Autriche, une promenade du lundi de Pâques rappelle la rencontre des disciples avec le Christ ressuscité sur le chemin d'Emmaüs. Des familles ou paroisses marchent parfois vers une église ou un sanctuaire en priant."
+      "en": "An account from the Archdiocese of Munich and Freising documents an Emmaus walk in a Bavarian Catholic setting. It attests a local Easter Monday practice without fixing its original date or announcing an event in every parish.",
+      "fr": "Un témoignage de l'archidiocèse de Munich et Freising documente une marche d'Emmaüs dans un milieu catholique bavarois. Il atteste un usage local du lundi de Pâques sans en fixer la date d'origine ni annoncer une manifestation dans chaque paroisse."
     },
     "meaning": {
       "en": "The walk encourages recognition of the risen Lord in Scripture and ordinary companionship.",
@@ -445,8 +445,8 @@ const PUBLISHED_ARTICLES = [
       "fr": "Dans un jardin marial, une famille cultive des fleurs ou des herbes parfumées qui rappellent la Sainte Vierge. Quelques pots et une petite image de Marie suffisent. Les noms et les légendes attachés aux plantes peuvent nourrir la méditation sans être présentés comme des faits historiques certains."
     },
     "history": {
-      "en": "In a Marian garden, a family grows flowers or fragrant herbs chosen to recall the Blessed Virgin. The arrangement may be as modest as a few plants in pots, with a small Marian image or inscription. Some traditional plant names and legends offer subjects for reflection, not historical facts to be accepted without evidence.",
-      "fr": "Dans un jardin marial, une famille cultive des fleurs ou des herbes parfumées qui rappellent la Sainte Vierge. Quelques pots et une petite image de Marie suffisent. Les noms et les légendes attachés aux plantes peuvent nourrir la méditation sans être présentés comme des faits historiques certains."
+      "en": "A Catholic household account describes a garden of plants associated with Our Lady as a way to encourage prayer and reflection. It is evidence of contemporary Marian gardening, not by itself proof that the modern garden arrangement dates to the Middle Ages.",
+      "fr": "Un témoignage familial catholique présente un jardin de plantes associées à la Sainte Vierge comme une invitation à la prière et à la méditation. Il atteste une pratique mariale contemporaine, non la preuve que la forme moderne du jardin remonte au Moyen Âge."
     },
     "meaning": {
       "en": "The beauty of creation leads the mind toward gratitude and the virtues of Our Lady.",
