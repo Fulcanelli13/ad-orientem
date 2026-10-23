@@ -1,0 +1,96 @@
+name: Ad Orientem B19 original-file acquisition probe
+on:
+  push:
+    branches:
+      - research/b19-original-image-acquisition-probe-20261023
+    paths:
+      - .github/workflows/ao-b19-original-image-acquisition.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  acquire-originals:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install image decoder
+        run: python -m pip install --disable-pip-version-check 'Pillow>=11,<13'
+      - name: Download rights-eligible original images and retain QA evidence
+        shell: bash
+        run: |
+          python - <<'PY'
+            import csv, hashlib, json, pathlib, time, urllib.parse, urllib.request
+            from datetime import datetime, timezone
+            from PIL import Image
+            root = pathlib.Path("artifacts/b19")
+            root.mkdir(parents=True, exist_ok=True)
+            data = json.loads("[{\"id\":\"B17-01\",\"artist\":\"Jan Pynas\",\"artwork\":\"Aaron Changing the Water of the River into Blood\",\"gate\":\"SOURCE_OPEN_EVIDENCE\",\"url\":\"https://upload.wikimedia.org/wikipedia/commons/d/db/A%C3%A4ron_verandert_het_water_van_de_rivier_in_bloed%2C_SK-A-1626.jpg\",\"w\":5676,\"h\":2256},{\"id\":\"B17-02\",\"artist\":\"Huybrecht Beuckelaer\",\"artwork\":\"The First Passover Feast\",\"gate\":\"REPRODUCTION_RIGHTS_HOLD\"},{\"id\":\"B17-03\",\"artist\":\"Leonaert Bramer\",\"artwork\":\"The Judgment of Solomon\",\"gate\":\"SOURCE_OPEN_EVIDENCE\",\"url\":\"https://upload.wikimedia.org/wikipedia/commons/c/c9/The_Judgment_of_Solomon_MET_DP145897.jpg\",\"w\":3810,\"h\":2924},{\"id\":\"B17-04\",\"artist\":\"Bernardo Strozzi\",\"artwork\":\"The Healing of Tobit\",\"gate\":\"SOURCE_OPEN_EVIDENCE\",\"url\":\"https://upload.wikimedia.org/wikipedia/commons/5/5c/Bernardo_Strozzi_-_The_Healing_of_Tobit_-_1993.5_-_Cleveland_Museum_of_Art.jpg\",\"w\":3400,\"h\":2196},{\"id\":\"B17-05\",\"artist\":\"Jan Steen\",\"artwork\":\"Esther, Ahasuerus, and Haman\",\"gate\":\"SOURCE_OPEN_EVIDENCE\",\"url\":\"https://upload.wikimedia.org/wikipedia/commons/3/37/Jan_Steen_-_Esther%2C_Ahasuerus%2C_and_Haman_-_1964.153_-_Cleveland_Museum_of_Art.tif\",\"w\":7436,\"h\":5608},{\"id\":\"B17-06\",\"artist\":\"Andrea di Lione\",\"artwork\":\"Tobit Burying the Dead\",\"gate\":\"SOURCE_OPEN_EVIDENCE\",\"url\":\"https://upload.wikimedia.org/wikipedia/commons/e/e2/Tobit_Burying_the_Dead_MET_DT6144.jpg\",\"w\":3809,\"h\":2784},{\"id\":\"B17-07\",\"artist\":\"Francesco Guardi\",\"artwork\":\"Tobias and the Angel\",\"gate\":\"SOURCE_OPEN_EVIDENCE\",\"source\":\"https://commons.wikimedia.org/wiki/File:Francesco_Guardi_-_Tobias_and_the_Angel_-_1952.235.2_-_Cleveland_Museum_of_Art.tiff\",\"w\":5316,\"h\":3941},{\"id\":\"B17-08\",\"artist\":\"Rembrandt van Rijn\",\"artwork\":\"Daniel and Cyrus Before the Idol Bel\",\"gate\":\"REPRODUCTION_RIGHTS_REVIEW\"},{\"id\":\"B17-09\",\"artist\":\"Artemisia Gentileschi\",\"artwork\":\"Esther before Ahasuerus\",\"gate\":\"SOURCE_OPEN_EVIDENCE\",\"url\":\"https://upload.wikimedia.org/wikipedia/commons/b/bf/Gentileschi%2C_Artemisia_-_Esther_before_Ahasuerus_-_c._1628%E2%80%931635.jpg\",\"w\":3771,\"h\":2875},{\"id\":\"B17-10\",\"artist\":\"Master of Apollo and Daphne Legend\",\"artwork\":\"Susanna: Trial and Stoning of the Elders\",\"gate\":\"SOURCE_OPEN_EVIDENCE\",\"url\":\"https://art.thewalters.org/object/37.490/?download=PS1_37.490_Fnt_DD_T10.jpg\"},{\"id\":\"B17-11\",\"artist\":\"Jacob de Wet\",\"artwork\":\"Daniel Killing the Dragon of Baal\",\"gate\":\"RESOLUTION_AND_RIGHTS_HOLD\"},{\"id\":\"B17-12\",\"artist\":\"Peter Paul Rubens\",\"artwork\":\"The Meeting of Abraham and Melchizedek\",\"gate\":\"SOURCE_OPEN_EVIDENCE\",\"url\":\"https://upload.wikimedia.org/wikipedia/commons/7/72/Sir_Peter_Paul_Rubens%2C_The_Meeting_of_Abraham_and_Melchizedek%2C_c._1626%2C_NGA_45640.jpg\",\"w\":4000,\"h\":3193}]")
+            headers = {"User-Agent":"AdOrientemResearch/2.0 (+https://github.com/Fulcanelli13/ad-orientem)", "Accept":"image/*,application/json;q=0.9"}
+            def utc(): return datetime.now(timezone.utc).isoformat(timespec="seconds")
+            def get(url):
+                if urllib.parse.urlparse(url).scheme != "https": raise ValueError("HTTPS-only")
+                return urllib.request.urlopen(urllib.request.Request(url,headers=headers),timeout=45)
+            def resolve(page):
+                title=urllib.parse.unquote(page.split("/wiki/",1)[1]).replace("_"," ")
+                api="https://commons.wikimedia.org/w/api.php?action=query&prop=imageinfo&iiprop=url&format=json&titles="+urllib.parse.quote(title)
+                with get(api) as resp: payload=json.load(resp)
+                for obj in payload.get("query",{}).get("pages",{}).values():
+                    info=obj.get("imageinfo",[])
+                    if info: return info[0].get("url","")
+                raise ValueError("Commons API imageinfo missing original URL")
+            fields=["ID","Artist","Artwork","RightsGate","AcquisitionStatus","SourceUsed","Bytes","SHA256","WidthPx","HeightPx","ExpectedDimensionsMatch","DecodedFormat","ErrorOrHold","LastCheckedUTC","ReleaseApproval"]
+            rows=[]
+            for record in data:
+                result={"ID":record["id"],"Artist":record["artist"],"Artwork":record["artwork"],"RightsGate":record["gate"],"AcquisitionStatus":"NOT_ATTEMPTED","SourceUsed":"","Bytes":"","SHA256":"","WidthPx":"","HeightPx":"","ExpectedDimensionsMatch":"NOT_TESTED","DecodedFormat":"","ErrorOrHold":"","LastCheckedUTC":utc(),"ReleaseApproval":"NOT_APPROVED"}
+                if record["gate"]!="SOURCE_OPEN_EVIDENCE":
+                    result.update(AcquisitionStatus="SKIPPED_RIGHTS_HOLD",ErrorOrHold="Not cleared for automatic acquisition")
+                else:
+                    for attempt in range(2):
+                        path=None
+                        try:
+                            url=record.get("url") or resolve(record["source"])
+                            path=root/(record["id"]+".source.part")
+                            sha=hashlib.sha256(); total=0
+                            with get(url) as response, open(path,"wb") as dest:
+                                while True:
+                                    block=response.read(1024*1024)
+                                    if not block: break
+                                    total+=len(block)
+                                    if total>256*1024*1024: raise ValueError("Image exceeds 256 MB cap")
+                                    sha.update(block);dest.write(block)
+                            if total<10000: raise ValueError("Non-image or unusually small response")
+                            with Image.open(path) as im:
+                                width,height=im.size
+                                fmt=(im.format or "").upper()
+                                im.load()
+                            compare=(width,height)==(record.get("w",width),record.get("h",height))
+                            ext={"JPEG":".jpg","TIFF":".tiff","PNG":".png","WEBP":".webp"}.get(fmt)
+                            if not ext: raise ValueError("Unsupported decoded image format: "+fmt)
+                            final=root/(record["id"]+ext);path.replace(final)
+                            result.update(SourceUsed=url,Bytes=total,SHA256=sha.hexdigest(),WidthPx=width,HeightPx=height,ExpectedDimensionsMatch=("MATCH" if compare else "MISMATCH"),DecodedFormat=fmt,AcquisitionStatus=("DOWNLOADED_TECHNICAL_QA" if compare else "DOWNLOADED_TECHNICAL_HOLD"),ErrorOrHold=("" if compare else "Manifest dimensions differ; review"))
+                            break
+                        except Exception as exc:
+                            if path and path.exists(): path.unlink()
+                            result.update(AcquisitionStatus=("MANUAL_SOURCE_RESOLUTION" if record["id"]=="B17-10" else "FAILED_DOWNLOAD_OR_SOURCE"),ErrorOrHold=str(exc)[:400])
+                            if attempt==0: time.sleep(2)
+                rows.append(result)
+                with open(root/"Acquisition_results.csv","w",encoding="utf-8",newline="") as file:
+                    writer=csv.DictWriter(file,fieldnames=fields);writer.writeheader();writer.writerows(rows)
+                print(record["id"],result["AcquisitionStatus"],result["ErrorOrHold"][:120],flush=True)
+            summary={"manifest_count":len(data),"source_open_evidence":sum(r["gate"]=="SOURCE_OPEN_EVIDENCE" for r in data),"rights_held":sum(r["gate"]!="SOURCE_OPEN_EVIDENCE" for r in data),"downloaded_technical_qa":sum(r["AcquisitionStatus"]=="DOWNLOADED_TECHNICAL_QA" for r in rows),"editorial_approvals_created":0,"statuses":{s:sum(r["AcquisitionStatus"]==s for r in rows) for s in sorted({r["AcquisitionStatus"] for r in rows})},"timestamp_utc":utc()}
+            (root/"Acquisition_summary.json").write_text(json.dumps(summary,indent=2),encoding="utf-8")
+            print(json.dumps(summary,indent=2))
+            
+          PY
+      - name: Upload source originals and audit results (not release assets)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ad-orientem-b19-originals-and-audit
+          path: artifacts/b19/
+          retention-days: 7
+          if-no-files-found: warn
