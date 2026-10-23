@@ -1802,3 +1802,92 @@ assert.equal(count.identity_working_rows.provisional_after_53_no_owner_action_re
 assert.equal(count.identity_working_rows.final_uniquely_verified_customs_added,0);
 assert.equal(researchCatalogue.summary.no_new_app_publications,true);
 console.log('Pitre ORIGINAL 1900: 129 direct OCR text line observations across 14 localities, no independent-witness claims, 3114 source-detail total, zero publication — PASS');
+
+
+// Complete nonadditive reconciliation of the EXISTING 129 first-pass Pitrè
+// 1900 OCR observations. Exactly 82 rows are involved in the 71 prior
+// human action-description comparison edges. The remaining 47 rows are
+// individually triaged as components, feast contexts, older unread witnesses,
+// folk belief holds or public historical/civic context. NOT a new OCR intake.
+const pitre1900Previous71=load('data/customs/master/pitre-1900-action-family-71-manual-comparisons.v1.json');
+const pitre1900Exhaustive=load('data/customs/master/pitre-1900-full-129-coverage-47-unpaired-action-triage.v1.json');
+assert.equal(pitre1900Previous71.records.length,71);
+assert.equal(pitre1900Exhaustive.records.length,129);
+assert.equal(pitre1900Exhaustive.families.length,7);
+assert.equal(pitre1900Exhaustive.summary.prior_pitre_1900_source_rows,129);
+assert.equal(pitre1900Exhaustive.summary.prior_pitre_1900_action_relation_edges,71);
+assert.equal(pitre1900Exhaustive.summary.existing_relation_coverage_rows,82);
+assert.equal(pitre1900Exhaustive.summary.unpaired_source_rows_triaged,47);
+assert.equal(pitre1900Exhaustive.summary.locality_buckets,14);
+assert.equal(pitre1900Exhaustive.summary.intra_pitre_pairs,45);
+assert.equal(pitre1900Exhaustive.summary.new_source_details,0);
+assert.equal(pitre1900Exhaustive.summary.proven_new_distinct_customs,0);
+assert.equal(pitre1900Exhaustive.summary.source_folio_images_verified,0);
+assert.equal(pitre1900Exhaustive.summary.source_independence_certified,0);
+assert.equal(pitre1900Exhaustive.summary.automatic_merges,0);
+assert.equal(pitre1900Exhaustive.summary.app_publications,0);
+assert.deepEqual(pitre1900Exhaustive.summary.unpaired_route_classes,{
+ COMPLEX_ROOT_OR_FEAST_SCOPE:6,
+ COMPONENT_OR_MATERIAL_OF_KNOWN_COMPLEX:31,
+ REPORTED_FOLK_EFFICACY_HOLD:5,
+ REFERENCED_OLDER_DOCUMENT_NOT_DIRECTLY_VERIFIED:2,
+ HISTORICAL_OR_SOCIAL_CONTEXT:3
+});
+assert.equal(new Set(pitre1900Previous71.records.map(r=>r.review_id)).size,71);
+const p1900ReviewsById=new Map(pitre1900OriginalOCR.records.map(r=>[r.id,[]]));
+for(const rel of pitre1900Previous71.records){
+ assert.ok(p1900Ids.has(rel.source_id));
+ assert.equal(rel.source_action,pitre1900OriginalOCR.records.find(r=>r.id===rel.source_id).reported_action_or_component);
+ assert.equal(rel.source_independence_certified,false);
+ assert.equal(rel.one_shared_historical_custom_identity_certified,false);
+ assert.equal(rel.ritual_1962_approved,false);
+ assert.equal(rel.automatic_master_owner_merge,false);
+ assert.equal(rel.app_publication,false);
+ p1900ReviewsById.get(rel.source_id).push(rel.review_id);
+ if(p1900Ids.has(rel.comparison_id))p1900ReviewsById.get(rel.comparison_id).push(rel.review_id);
+}
+assert.equal(pitre1900Exhaustive.families[0].start,1);
+assert.equal(pitre1900Exhaustive.families.at(-1).end,129);
+let reviewedPitre=0,unpairedPitre=0,claimFolkPitre=0;
+const pitreBySourceId=new Map(pitre1900OriginalOCR.records.map(r=>[r.id,r]));
+for(const row of pitre1900Exhaustive.records){
+ const original=pitreBySourceId.get(row.source_id);
+ assert.ok(original);
+ assert.equal(row.original_source_url,original.source_url);
+ assert.equal(row.original_html_ocr_line,original.html_ocr_line);
+ assert.equal(row.original_location,original.location);
+ assert.equal(row.original_occasion,original.occasion);
+ assert.equal(row.source_claim_type,original.claim_type);
+ assert.deepEqual(new Set(row.previous_71_review_edges),new Set(p1900ReviewsById.get(row.source_id)));
+ assert.ok(pitre1900Exhaustive.families.some(x=>x.id===row.provisional_parent_festival_family));
+ assert.equal(row.original_facsimile_verified,false);
+ assert.equal(row.original_witness_independence_verified,false);
+ assert.equal(row.canonical_custom_identity_verified,false);
+ assert.equal(row.ministerial_ritual_text_verified,false);
+ assert.equal(row.master_owner_assignment,null);
+ assert.equal(row.published,false);
+ if(row.previous_71_review_edges.length){
+  reviewedPitre++;
+  assert.equal(row.review_route,'PRIOR_MANUAL_ACTION_PAIR_REFERENCED');
+  assert.equal(row.unpaired_screen_disposition,null);
+  assert.equal(row.unpaired_screen_specific_focus,null);
+ }else{
+  unpairedPitre++;
+  assert.equal(row.review_route,'NEW_EDITORIAL_SCREEN_OF_UNPAIRED_OBSERVATION');
+  assert.ok(row.unpaired_screen_specific_focus.length>=30);
+  if(row.unpaired_screen_disposition==='REPORTED_FOLK_EFFICACY_HOLD')claimFolkPitre++;
+ }
+}
+assert.equal(reviewedPitre,82);
+assert.equal(unpairedPitre,47);
+assert.equal(claimFolkPitre,5);
+assert.equal(count.source_review.pitre_1900_all_129_source_rows_action_families_reconciled,129);
+assert.equal(count.source_review.pitre_1900_prior_action_pair_reviews_integrated,71);
+assert.equal(count.source_review.pitre_1900_distinct_source_rows_covered_by_71_reviews,82);
+assert.equal(count.source_review.pitre_1900_previously_unpaired_source_rows_triaged,47);
+assert.equal(researchCatalogue.source_dataset_paths.pitre_original_1900_complete_129_71_47_reconciliation,'data/customs/master/pitre-1900-full-129-coverage-47-unpaired-action-triage.v1.json');
+assert.equal(count.source_observations.total_source_detail_rows_including_external,3114);
+assert.equal(count.identity_working_rows.provisional_after_53_no_owner_action_review,408);
+assert.equal(count.identity_working_rows.final_uniquely_verified_customs_added,0);
+assert.equal(researchCatalogue.summary.no_new_app_publications,true);
+console.log('Pitrè 1900: 129/129 first-pass source observations accounted for; 71 comparison links covering 82 and 47 explicit exceptions; 0 new source rows, identities or publications — PASS');
