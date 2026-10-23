@@ -1,0 +1,86 @@
+name: B26 preserve 290 acquired artwork source files with 90-day retention
+on:
+  push:
+    branches: [research/b19-original-image-acquisition-probe-20261023]
+    paths: [.github/workflows/ao-art-b26-artifact-preservation.yml]
+  workflow_dispatch:
+permissions:
+  actions: read
+  contents: read
+concurrency:
+  group: ao-b26-research-source-archive-preservation
+  cancel-in-progress: false
+jobs:
+  extend-retention:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        include:
+          - {key: b19, run_id: 39959040002, artifact_id: 12504370160, min_images: 9}
+          - {key: b20, run_id: 39962681470, artifact_id: 12504877967, min_images: 45}
+          - {key: b21, run_id: 39966283017, artifact_id: 12506957700, min_images: 74}
+          - {key: b21r1, run_id: 39971357475, artifact_id: 12508169356, min_images: 12}
+          - {key: b21r2, run_id: 39972025706, artifact_id: 12509437617, min_images: 9}
+          - {key: b20r1, run_id: 39972490442, artifact_id: 12509542476, min_images: 10}
+          - {key: b22nga, run_id: 40009972526, artifact_id: 12525379414, min_images: 31}
+          - {key: b22kress, run_id: 40010964040, artifact_id: 12525609702, min_images: 1}
+          - {key: b23p1, run_id: 40012218573, artifact_id: 12527340464, min_images: 1}
+          - {key: b23p2, run_id: 40012966632, artifact_id: 12526353988, min_images: 3}
+          - {key: b23commons35, run_id: 40013771599, artifact_id: 12527781133, min_images: 35}
+          - {key: b23r2commons46, run_id: 40014209277, artifact_id: 12526834547, min_images: 46}
+          - {key: b23r3mpo, run_id: 40014875615, artifact_id: 12528001581, min_images: 1}
+          - {key: b24exact8, run_id: 40017453995, artifact_id: 12528967278, min_images: 8}
+          - {key: b24exact4, run_id: 40018053881, artifact_id: 12529242468, min_images: 4}
+          - {key: b25ribera, run_id: 40019833555, artifact_id: 12530870159, min_images: 1}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Restore exact original archival research artifact
+        uses: actions/download-artifact@v4
+        with:
+          artifact-ids: '${{ matrix.artifact_id }}'
+          run-id: '${{ matrix.run_id }}'
+          repository: Fulcanelli13/ad-orientem
+          github-token: ${{ github.token }}
+          path: incoming
+      - name: Hash every image file and attach a preservation evidence manifest
+        env:
+          WAVE: ${{ matrix.key }}
+          SOURCE_RUN: ${{ matrix.run_id }}
+          SOURCE_ARTIFACT: ${{ matrix.artifact_id }}
+          MIN_IMAGES: ${{ matrix.min_images }}
+        run: |
+          python - <<'PY'
+          import os,pathlib,hashlib,json,datetime,sys
+          root=pathlib.Path("incoming")
+          exts={".jpg",".jpeg",".png",".webp",".tiff",".tif",".mpo",".jp2",".avif"}
+          photos=[x for x in root.rglob("*") if x.is_file() and x.suffix.lower() in exts]
+          expected=int(os.environ["MIN_IMAGES"])
+          assert len(photos)>=expected,(os.environ["WAVE"],len(photos),expected)
+          listing=[]
+          for item in sorted(photos):
+              sha=hashlib.sha256()
+              with item.open("rb") as f:
+                  for piece in iter(lambda:f.read(1<<20),b""):sha.update(piece)
+              listing.append({"path":str(item.relative_to(root)),"sha256":sha.hexdigest(),"bytes":item.stat().st_size})
+          index={
+              "wave":os.environ["WAVE"],"source_run_id":os.environ["SOURCE_RUN"],
+              "source_artifact_id":os.environ["SOURCE_ARTIFACT"],"files_with_image_extensions":len(listing),
+              "expected_at_least":expected,"source_bytes":sum(x["bytes"] for x in listing),
+              "created_utc":datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds"),
+              "file_sha256":listing,"publication_rights_checked":False,"editorial_approvals_created":0,
+              "retention_mode":"TEMPORARY_RENEWED_GITHUB_ACTIONS_ARTIFACT_NOT_DURABLE_EXTERNAL_STORAGE",
+              "original_source_artifact_binary_files_unchanged":True}
+          (root/"AO_PRESERVATION_SHA256_INDEX.json").write_text(json.dumps(index,indent=2),encoding="utf-8")
+          print("PRESERVED",os.environ["WAVE"],len(listing),sum(x["bytes"] for x in listing))
+          PY
+      - name: Renew temporary research archive retention from 7 to 90 days
+        uses: actions/upload-artifact@v4
+        with:
+          name: ao-source-preserved-b26-${{ matrix.key }}
+          path: incoming/
+          retention-days: 90
+          compression-level: 3
+          if-no-files-found: error
