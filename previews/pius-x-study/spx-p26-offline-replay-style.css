@@ -1,0 +1,23 @@
+/* Restrained private Pius X source replay. Reuses model-review typography. */
+#spxc-offline-replay{max-width:700px;margin:20px 0 54px;padding:21px 23px;
+ background:#0b101af2;border:1px solid #a58b5e9c;box-shadow:0 18px 34px #0008}
+#spxc-offline-replay[hidden]{display:none!important}
+#spxm-offline-scope{color:#baaa91;font:12px/1.6 system-ui,sans-serif}
+#spxm-offline-choices{display:grid;grid-template-columns:1fr;gap:8px;margin:17px 0 19px}
+.spxm-offline-choice{text-align:left;border:1px solid #82704f66;background:#151b24;
+ padding:12px 14px;color:#e6d6b7;font:15px/1.3 Palatino,Georgia,serif;cursor:pointer}
+.spxm-offline-choice:hover,.spxm-offline-choice:focus-visible{border-color:#d1b982;background:#24272d}
+#spxm-offline-label{display:block;margin:11px 0;color:#d6c29d;font:13px/1.4 system-ui,sans-serif}
+#spxm-offline-question{flex:1;min-width:0;background:#111a25;
+ border:1px solid #937c53;color:#f3e8d4;padding:12px;font:16px Palatino,Georgia,serif}
+#spxm-offline-send{border:1px solid #c4a777;background:#29251f;color:#efd5a2;
+ padding:10px 13px;font:12px system-ui,sans-serif;cursor:pointer}
+.spxm-offline-source{margin:9px 0;border-top:1px solid #8e795b43;padding:8px 0;
+ color:#ddcba9;font:13px/1.55 Palatino,Georgia,serif}
+.spxm-offline-source summary{cursor:pointer;color:#e0c390;overflow-wrap:anywhere}
+.spxm-offline-original{margin:10px 0;color:#d6cbb6;font-style:italic}
+.spxm-offline-source a{display:inline-block;color:#c4ae80;font:11px/1.4 system-ui,sans-serif}
+.spxm-offline-disclaimer{color:#a99678;font:11px/1.5 system-ui,sans-serif}
+@media(max-width:600px){#spxc-offline-replay{padding:15px}#spxc-offline-replay .spxm-row{
+ display:flex;flex-direction:column;gap:8px}#spxm-offline-send{min-height:44px}}
+@media(prefers-reduced-motion:reduce){.spxm-offline-choice{scroll-behavior:auto}}
