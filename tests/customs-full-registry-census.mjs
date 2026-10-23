@@ -444,7 +444,7 @@ assert.equal(allMcLReferences.length,70);
 assert.deepEqual(new Set(allMcLReferences),mclIds);
 assert.equal(mcloughlinGroups.summary.certified_distinct_new_catholic_customs,0);
 assert.equal(mcloughlinGroups.summary.publication_changes,0);
-assert.equal(count.source_observations.total_source_detail_rows_including_external,1293);
+assert.equal(count.source_observations.total_source_detail_rows_including_external,1425);
 assert.equal(count.source_observations.all_book_research_rows_including_nested_details,1025);
 assert.equal(researchCatalogue.external_source_observations_mcloughlin.length,70);
 assert.equal(researchCatalogue.external_source_action_families_mcloughlin.length,26);
@@ -513,3 +513,40 @@ for(const r of researchCatalogue.external_source_observations_stokes){
   assert.equal(r.identity_certified,false);
 }
 console.log('Stokes 1955 family practices: 198 separately indexed witness details, 1,293 aggregate research rows, 408 prior provisional groups preserved, no publication — PASS');
+
+
+// Independent-author online excerpt intake: this is NOT an exhaustive source read
+// or confirmation of historically distinct practices. Secondary-host caveats apply.
+const ccEx = load('data/customs/master/trapp-berger-newland-catholicculture-excerpts-wave01.v1.json');
+assert.equal(ccEx.records.length,132);
+assert.equal(ccEx.source_pages.length,29);
+assert.equal(ccEx.summary.source_observation_rows,132);
+assert.deepEqual(ccEx.summary.by_author,{TRAPP:54,BERGER:21,NEWLAND:57});
+assert.equal(ccEx.summary.verified_distinct_new_customs,0);
+assert.equal(ccEx.summary.app_publications,0);
+assert.equal(ccEx.original_source_pages_not_inspected,true);
+const ccIds = new Set(ccEx.records.map(r=>r.observation_id));
+assert.equal(ccIds.size,132);
+const ccPageIndex=new Map(ccEx.source_pages.map(p=>[p.source_key,p]));
+assert.equal(ccPageIndex.size,29);
+for(const p of ccEx.source_pages) {
+ assert.equal(p.evidence_scope,'ONLY_THE_ONLINE_EXCERPT_NOT_FULL_BOOK');
+ assert.ok(p.online_url.startsWith('https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id='));
+ assert.ok(p.record_count>0);
+}
+for(const r of ccEx.records) {
+ assert.ok(ccPageIndex.has(r.source_key));
+ assert.ok(r.independently_worded_action_label.length>14);
+ assert.equal(r.app_publication,'NONE');
+ assert.equal(r.existing_identity,'UNMATCHED_REVIEW_REQUIRED_NO_NEW_CUSTOM_ASSERTED');
+ assert.equal(r.rite_approval,'NOT_CHECKED_AGAINST_1962_RITUAL');
+ assert.equal(r.source_locator.url,ccPageIndex.get(r.source_key).online_url);
+}
+assert.equal(researchCatalogue.external_source_observations_catholicculture_excerpts.length,132);
+assert.deepEqual(new Set(researchCatalogue.external_source_observations_catholicculture_excerpts.map(r=>r.id)),ccIds);
+assert.equal(count.source_observations.catholicculture_trapp_berger_newland_excerpt_source_actions,132);
+assert.equal(count.source_observations.total_source_detail_rows_including_external,1425);
+assert.equal(count.identity_working_rows.provisional_after_53_no_owner_action_review,408);
+assert.equal(count.identity_working_rows.final_uniquely_verified_customs_added,0);
+assert.equal(researchCatalogue.summary.no_new_app_publications,true);
+console.log('Historical author excerpts: 132 observations on 29 URLs, 1,425 aggregate research rows, no identity/publishing promotion — PASS');
