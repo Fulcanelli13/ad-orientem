@@ -484,4 +484,20 @@ assert.deepEqual(copyOwners.get("HS-P3-EC-06").readthroughSourceComparison.sourc
  "Acts 6:5–15","Acts 7:51–55"
 ]);
 assert.ok(sourceComparisonPhase.semanticOutcome.includes("STILL_REQUIRED"));
+
+const ruthCase=copyOwners.get("HS-P3-EC-03").readthroughSourceComparison;
+assert.deepEqual(ruthCase.sourceEvidenceReferences,["Ruth 2:3","Ruth 4:1–12","Ruth 4:13"]);
+assert.equal(ruthCase.unresolvedEditionWitnessSlot.reference,"Ruth 2:2");
+assert.equal(ruthCase.unresolvedEditionWitnessSlot.edition,"cpdv-2009");
+assert.equal(ruthCase.unresolvedEditionWitnessSlot.textRestored,false);
+assert.equal(ruthCase.unresolvedEditionWitnessSlot.printedEditionCollationPending,true);
+assert.deepEqual(sourceComparisonPhase.editionWitnessExceptions,[{
+ ownerId:"HS-P3-EC-03",edition:"cpdv-2009",reference:"Ruth 2:2",
+ status:"UNRESOLVED_IMPORT_GAP_FAIL_CLOSED"
+}]);
+assert.throws(()=>exactVerse("Ruth 2:2","cpdv-2009"),/Native Catholic Scripture witness missing/);
+assert.ok(exactVerse("Ruth 2:2","dr-challoner").length===1);
+assert.ok(exactVerse("Ruth 2:2","crampon-1923").length===1);
+assert.ok(editions.every(ed=>exactVerse("Ruth 2:3",ed).length===1));
+
 console.log("PASS Historia unified worklist: 36 fully owned hinge dispositions, 20 optional native-source decisions, 7 grouped reader tasks, 29 original contexts + 12 connectors (41 desk-triaged and 15 witness-linked comparisons, 0 accepted), 6 editorial/acceptance tracks, seven unopened release gates, no new Atlas/Scripture publication");
