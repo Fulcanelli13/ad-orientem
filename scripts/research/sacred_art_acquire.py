@@ -130,19 +130,27 @@ def main():
     parser.add_argument('--max-files',type=int,default=DEFAULT_LIMIT)
     parser.add_argument('--max-bytes',type=int,default=DEFAULT_BYTE_BUDGET)
     parser.add_argument('--metadata-only',action='store_true')
+    parser.add_argument('--prior-audit',default='data/research/sacred-art-b20-wave150.audit.csv')
     args=parser.parse_args()
     out=pathlib.Path(args.output);out.mkdir(parents=True,exist_ok=True)
     image_dir=out/'originals';image_dir.mkdir(exist_ok=True)
     manifest=json.loads(pathlib.Path(args.manifest).read_text(encoding='utf-8'))
     sources=manifest['records']
     commons_metadata=batch_commons_metadata(sources)
-    downloaded=0;bytes_used=0;results=[]
+    prior={}
+    if args.prior_audit and pathlib.Path(args.prior_audit).is_file():
+        with pathlib.Path(args.prior_audit).open(encoding='utf-8',newline='') as file:
+            prior={r['asset_source_id']:r for r in csv.DictReader(file) if r.get('download_status') in ('ACQUIRED_DECODED_SHA256','VERIFIED_PRIOR_BATCH20')}
+    downloaded=0;bytes_used=0;results=[];commons_rate_limited=False
     for i,rec in enumerate(sources,1):
         id=rec['asset_source_id']
         entry={k:'' for k in FIELDS}
         entry.update(asset_source_id=id,record_id=rec['record_id'],source_sheet=rec['source_sheet'],source_row=rec['source_row'],title=rec['title'],artist=rec['artist'],source_type=rec['api_type'],rights_claim_unverified=rec.get('recorded_rights',''),source_url=rec['source_url'],related_records=' | '.join(rec.get('related_records',[])),metadata_status='NOT_CHECKED',download_status='NOT_ATTEMPTED',editorial_gate='NOT_APPROVED',rights_gate='PENDING',checked_utc=now())
         gate=rec['download_gate']
-        if gate=='MANUAL_HOLD':entry.update(metadata_status='MANUAL_HOLD_PRESERVED',download_status='SKIPPED_HOLD',rights_gate='MANUAL_HOLD')
+        if id in prior and not args.metadata_only:
+            previous=prior[id]
+            entry.update(metadata_status='PRIOR_B20_AUDIT_VERIFIED',download_status='VERIFIED_PRIOR_BATCH20',sha256=previous.get('sha256',''),resolved_original_url=previous.get('resolved_original_url',''),bytes_acquired=previous.get('bytes_acquired',''),decoded_width=previous.get('decoded_width',''),decoded_height=previous.get('decoded_height',''),format=previous.get('format',''),rights_gate='PRIOR_OPEN_SOURCE_EVIDENCE_RETAINED')
+        elif gate=='MANUAL_HOLD':entry.update(metadata_status='MANUAL_HOLD_PRESERVED',download_status='SKIPPED_HOLD',rights_gate='MANUAL_HOLD')
         elif gate=='SKIP_PREVIOUSLY_ACQUIRED':entry.update(metadata_status='PREVIOUS_BATCH19_VERIFIED',download_status='VERIFIED_PRIOR_BATCH19',sha256=rec.get('prior_sha256',''),rights_gate='RETAIN_B19_RESEARCH_EVIDENCE')
         else:
             if rec['api_type']=='commons': entry.update(commons_metadata.get(id,{'metadata_status':'COMMONS_METADATA_UNAVAILABLE'}))
@@ -154,6 +162,7 @@ def main():
             if not permissible:entry['download_status']='SKIPPED_RIGHTS_OR_METADATA_GATE'
             elif not entry.get('resolved_original_url'):entry['download_status']='ORIGINAL_ROUTE_UNAVAILABLE'
             elif args.metadata_only:entry['download_status']='METADATA_ONLY'
+            elif rec['api_type']=='commons' and commons_rate_limited:entry['download_status']='DEFERRED_COMMONS_RATE_LIMIT'
             elif downloaded>=args.max_files:entry['download_status']='QUEUED_AFTER_FILE_LIMIT'
             elif bytes_used>=args.max_bytes:entry['download_status']='QUEUED_AFTER_BYTE_BUDGET'
             else:
@@ -161,7 +170,11 @@ def main():
                     data,delta=download(entry,image_dir,args.max_bytes-bytes_used)
                     entry.update(data);bytes_used+=delta;downloaded+=1
                 except (HTTPError,URLError,ValueError,OSError,Image.DecompressionBombError) as exc:
-                    entry.update(download_status='DOWNLOAD_OR_DECODE_FAILED',failure=str(exc)[:260])
+                    if isinstance(exc,HTTPError) and exc.code==429 and rec['api_type']=='commons':
+                        commons_rate_limited=True
+                        entry.update(download_status='DEFERRED_COMMONS_RATE_LIMIT',failure=str(exc)[:260])
+                    else:
+                        entry.update(download_status='DOWNLOAD_OR_DECODE_FAILED',failure=str(exc)[:260])
         results.append(entry)
         if i%10==0 or i==len(sources):print(f'PROGRESS {i}/{len(sources)} acquired={downloaded} bytes={bytes_used}',flush=True)
         with (out/'Acquisition_results.csv').open('w',newline='',encoding='utf-8') as f:
