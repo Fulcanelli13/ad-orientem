@@ -23,6 +23,23 @@ assert.equal(specimens.cases.length,11);
 assert.equal(specimens.summary.bilingualSpecimens,22);
 assert.equal(specimens.summary.newModelSourceGateAdmissions,0);
 assert.equal(specimens.summary.publicationApprovals,0);
+const audit=JSON.parse(readFileSync(evidenceRoot+
+ 'pius-x-p23-bilingual-claim-fidelity-audit-20261024.v1.json','utf8'));
+assert.equal(audit.schema,'AO_SPX_P23_BILINGUAL_CLAIM_SOURCE_FIDELITY_AUDIT_V1');
+assert.equal(audit.summary.sentenceLevelClaimUnits,23);
+assert.equal(audit.claimUnits.length,23);
+assert.equal(audit.manualReviewRequired,true);
+const claimGroups=new Map();
+for(const unit of audit.claimUnits){
+ assert.equal(unit.qualifiedHumanReviewed,false);
+ assert.equal(unit.bilingualTranslationCertified,false);
+ assert.equal(unit.publishingApproved,false);
+ assert.equal(unit.originalSpeechVerbatim,false);
+ if(!claimGroups.has(unit.nodeId))claimGroups.set(unit.nodeId,[]);
+ claimGroups.get(unit.nodeId).push(unit);
+}
+assert.equal(claimGroups.size,11);
+const splitSentences=text=>text.trim().split(/(?<=[.!?])\s+/u).filter(Boolean);
 const annexNames=[
  'pilot01-e-supremi-primary-witness.v1.json',
  'pilot09-haerent-animo-primary-witness.v2.json',
@@ -70,6 +87,35 @@ for(const c of specimens.cases){
   language:'en',question:c.question.en});
  const allowedIds=new Set(scoped.evidence.flatMap(e=>e.originalLanguageWitnesses.map(w=>w.id)));
  assert(c.evidenceIds.length>0);
+ const claimUnits=claimGroups.get(c.nodeId);
+ assert(claimUnits&&claimUnits.length>0,'Missing sentence-level audit for '+c.nodeId);
+ const sentences={en:splitSentences(c.replySpecimen.en),fr:splitSentences(c.replySpecimen.fr)};
+ assert.equal(sentences.en.length,sentences.fr.length);
+ assert.equal(sentences.en.length,claimUnits.length);
+ const allowedClaimWitnessIds=new Set(c.evidenceIds);
+ const claimTrace=[...claimUnits].sort((a,b)=>a.ordinal-b.ordinal).map((unit,i)=>{
+  assert.equal(unit.chapterId,c.chapterId);
+  assert.equal(unit.ordinal,i+1);
+  assert.equal(unit.englishClaim,sentences.en[i]);
+  assert.equal(unit.frenchClaim,sentences.fr[i]);
+  assert(unit.witnessIds.length>0);
+  assert.equal(unit.witnessIds.length,unit.officialVaticanLineRanges.length);
+  const fragments=unit.witnessIds.map((id,n)=>{
+   assert(allowedClaimWitnessIds.has(id),'Claim uses unlicensed witness: '+id);
+   const fragment=originals.get(id);
+   assert(fragment,'Claim cites missing original fragment: '+id);
+   const locator=unit.officialVaticanLineRanges[n];
+   assert.equal(locator.witnessId,id);
+   assert(Number.isInteger(locator.start)&&Number.isInteger(locator.end));
+   return {...fragment,sourceWebTextLines:[locator.start,locator.end]};
+  });
+  assert.equal(unit.claimSupportAssessment,
+   'SUPPORTED_OR_NARROWLY_PARAPHRASED_BY_REVIEWED_PRIMARY_TEXT_NOT_HUMAN_CERTIFIED');
+  return {id:unit.id,ordinal:unit.ordinal,
+   claim:{en:unit.englishClaim,fr:unit.frenchClaim},fragments,
+   supportStatus:'EDITORIAL_SOURCE_MAPPING_PROVISIONAL_NOT_HUMAN_APPROVED',
+   humanReviewApproved:false,translationApproved:false,verbatimPapalSpeech:false};
+ });
  const witnesses=c.evidenceIds.map(id=>{
   assert(allowedIds.has(id),'Off-node Latin/Italian evidence '+id);
   const w=originals.get(id);assert(w&&w.sourceUrl.startsWith('https://www.vatican.va/'));
@@ -77,13 +123,16 @@ for(const c of specimens.cases){
   return w;
  });
  cases.push({chapterId:c.chapterId,nodeId:c.nodeId,
-  question:c.question,reply:c.replySpecimen,witnesses,
+  question:c.question,reply:c.replySpecimen,witnesses,claimTrace,
   expression:expressions[cases.length%expressions.length],
   editorialStatus:'PRIVATE_UNAPPROVED_HISTORICAL_SOURCE_PARAPHRASE',
   bilingualTranslationsCertified:false,fullClaimReviewCertified:false,publishingApproved:false});
 }
 assert.equal(cases.length,11);
 assert.equal(distinctWitnesses.size,18);
+assert.equal(cases.reduce((n,c)=>n+c.claimTrace.length,0),23);
+assert(cases.every(c=>c.claimTrace.every(u=>
+ u.fragments.every(w=>c.witnesses.some(x=>x.id===w.id)))));
 // Navigation-only aliases are never user-facing replies. They are allowed only
 // when the restricted router points to one of the 11 already reviewed nodes.
 const visitorBank=JSON.parse(readFileSync(evidenceRoot+
@@ -118,6 +167,7 @@ const offline={
  modelProviderEnabled:false,publishingApproved:false,sourceOnlyGateAdmissions:0,
  canonicalChapters:4,canonicalNodes:11,bilingualEditorialPairs:22,
  originalWitnessFragments:distinctWitnesses.size,originalCorpusNodes:423,
+ claimTraceUnits:23,humanClaimCertifications:0,
  navigationAliasCount:32,navigationAliases,cases
 };
 const client=readFileSync('previews/pius-x-study/spx-p26-offline-replay-client.js','utf8');
@@ -138,6 +188,7 @@ const dest=out+'SPX_P26_Offline_Source_Dialogue_Demo.html';
 writeFileSync(dest,final);
 console.log('PASS SPX_P26_OFFLINE_BUILD '+JSON.stringify({
  path:dest,bytes:Buffer.byteLength(final),chapterCount:4,sourceOwnedQuestions:11,
- bilingualEditorialDrafts:22,originalFragments:18,navigationAliases:32,networkCalls:0,
+ bilingualEditorialDrafts:22,originalFragments:18,claimTraceUnits:23,
+ navigationAliases:32,networkCalls:0,
  sourceOwnerNodes:423,generativeGateNodes:144,published:false
 }));
