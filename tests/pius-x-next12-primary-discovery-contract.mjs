@@ -13,6 +13,15 @@ assert.equal(batch.summary.documentGroups,12);
 assert.equal(batch.summary.chaptersInGroups,53);
 assert.equal(batch.summary.sourceNodesInGroups,195);
 assert.equal(batch.summary.shortExcerptsLocated,8);
+assert.equal(batch.summary.shortExcerptsWithClaimLevelLimitationsRecorded,8);
+assert.equal(batch.summary.newlyPromotedModelWitnesses,0);
+assert(batch.documents.every(d=>d.excerptCandidate.claimTriage?.eligibleForAutomatedModelPromotion===false));
+assert(batch.documents.every(d=>d.excerptCandidate.claimTriage?.publicationApproved===false));
+assert(batch.documents.every(d=>d.excerptCandidate.claimTriage?.editorialOpeningVerdict.startsWith('HOLD_FULL_ANSWER')));
+assert(batch.documents.filter(d=>d.excerptCandidate.originalLanguageText).every(d=>
+ d.excerptCandidate.claimTriage.notEstablished.length>0&&
+ d.excerptCandidate.claimTriage.additionalSourceLoci.length>0));
+
 assert.equal(batch.summary.alreadyMappedPilotChapters,4);
 assert.equal(batch.summary.chaptersFullyCertified,0);
 assert.equal(batch.summary.translatedSourceClaimsApproved,0);
