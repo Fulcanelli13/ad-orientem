@@ -175,9 +175,7 @@ export function loadSourceOnlyGate(chapters,oldAnnexes){
   if(!c||
      r.translationApproved!==false||r.fullAnswerApproved!==false||
      r.publicationApproved!==false||
-     r.status!=='ORIGINAL_LANGUAGE_SOURCE_SPOTCHECK_NOT_FULL_ANSWER_CERTIFIED'||
-     seen2.has(r.nodeId)||!r.witnessIds?.length||
-     !r.narrowClaimScope||r.narrowClaimScope.length<12)
+     seen2.has(r.nodeId)||!r.witnessIds?.length)
    throw new Error('Invalid source-owner wave two research mapping '+r.nodeId);
   if(c.partial||c.sourceClass==='SOURCE_SCOPE_EDITORIAL_HOLD'){
    if(!c.partial||r.status!=='HOLD_ORIGINAL_P6_PARTIAL_EVIDENCE'||
@@ -186,7 +184,8 @@ export function loadSourceOnlyGate(chapters,oldAnnexes){
    heldPartial++;continue;
   }
   if(c.sourceClass!=='PAPAL_DOCUMENT_ADAPTATION'||
-     r.status!=='ORIGINAL_LANGUAGE_SOURCE_SPOTCHECK_NOT_FULL_ANSWER_CERTIFIED')
+     r.status!=='ORIGINAL_LANGUAGE_SOURCE_SPOTCHECK_NOT_FULL_ANSWER_CERTIFIED'||
+     !r.narrowClaimScope||r.narrowClaimScope.length<12)
    throw new Error('Wave-two source owner is not approved for even narrow inference');
   if(gate.get(c.id)?.has(r.nodeId))throw new Error('Cannot overwrite older original-language research mapping');
   const node=c.nodes.find(x=>x.id===r.nodeId);
