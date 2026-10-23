@@ -13,7 +13,13 @@ for (const edition of HISTORIA_EDITIONS) {
   };
   const output=assembleHistoriaReading(proof,edition,getWitness);
   assert.equal(output.stage,"RESEARCH_TEXT_ASSEMBLY_NOT_APPROVED");
-  assert.deepEqual(output.totals,expected);
+  // The original 93 scripture units have not changed. Crampon's equivalent
+  // Isaiah 9 child oracle necessarily uses two native citations (8:23, 9:1–5)
+  // rather than one imported English 9:1–6 range. This adds a source segment
+  // and a verse-rail section only for the French research witness.
+  const editionExpected=edition==="crampon-1923"?
+    {...expected,scriptureSpans:167,exactVerseRailSections:221}:expected;
+  assert.deepEqual(output.totals,editionExpected);
   assert.equal(output.movements.length,37);
   assert.equal(output.movements.every(m=>m.accepted===false&&m.publicationApproved===false),true);
   for(const movement of output.movements){
@@ -245,4 +251,4 @@ for (const edition of HISTORIA_EDITIONS) {
     assert.ok(readable.includes("*Genesis 41:33–41*"));
   }
 }
-console.log("PASS Historia annotated source assembly: 37 movements, 93 A units, 166 original + 12 provisional source spans, 29 original + 12 causal editorial connectors, 16 held candidates (9 tested/7 not included); 220 verse-traceable rail sections from 18 proposed semantic splits; all three witnesses; no publication approval");
+console.log("PASS Historia annotated source assembly: 37 movements, 93 A units, 166 English vs 167 French original-citation spans (Isaiah 8:23 + 9:1–5); 220 English vs 221 French verse-rail sections, 12 provisional source spans, 29 context + 12 causal connectors, 16 held candidates, three witnesses and no publication approval");
