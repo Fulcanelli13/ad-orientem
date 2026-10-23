@@ -2,7 +2,9 @@ name: Sacred Art 159-image offline visual review gallery
 on:
   push:
     branches: [research/b19-original-image-acquisition-probe-20261023]
-    paths: [.github/workflows/ao-art-159-review-gallery.yml]
+    paths:
+      - .github/workflows/ao-art-159-review-gallery.yml
+      - scripts/research/sacred_art_visual_review_pack.py
   workflow_dispatch:
 permissions:
   actions: read
