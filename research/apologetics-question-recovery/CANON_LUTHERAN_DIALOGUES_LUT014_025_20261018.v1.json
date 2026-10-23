@@ -1,0 +1,466 @@
+{
+  "schema": "AO_CANON_LUTHERAN_DIALOGUE_BANK_V1_PART_B",
+  "date": "2026-10-18",
+  "range": "LUT-014–LUT-025",
+  "researchStatus": "BILINGUAL_SOURCE_ANCHORED_EDITORIAL_DRAFT_NOT_PUBLISHED",
+  "important": "Historical recovered excerpts not original chat byte-verified. Catholic and Lutheran sources are research pointers. Objections are editorial questions, not quotes. Nothing is authorized to appear in Canon UI.",
+  "questionCount": 12,
+  "questions": [
+    {
+      "id": "LUT-014",
+      "originalEnglishQuestion": "What do Lutherans think absolution is?",
+      "originalQuestionTranscriptCertified": false,
+      "editorialFrenchQuestion": "Que signifie l’absolution pour les luthériens ?",
+      "canonicalOwnerCandidates": [
+        "APOL-026"
+      ],
+      "topicOwnership": "READ_ONLY_ROUTING_TO_ORIGINAL_SOURCE_RECORD",
+      "answer": {
+        "en": "In the Augsburg Confession's account, absolution announces the free forgiveness of sins for Christ's sake and is to be believed as the divine Gospel addressed to the penitent. It is not dismissed as merely advice or therapy. Catholic theology likewise takes absolution seriously but differs on sacramental priesthood, confession's integral requirements, and penance's ecclesial-sacramental structure.",
+        "fr": "Selon la Confession d’Augsbourg, l’absolution annonce gratuitement le pardon des péchés à cause du Christ, et le pénitent doit l’accueillir avec foi comme l’Évangile qui lui est adressé. Ce n’est pas un simple conseil psychologique. La doctrine catholique prend aussi l’absolution au sérieux, mais diffère sur le sacerdoce sacramentel, les exigences de la confession et la structure ecclésiale de la pénitence."
+      },
+      "opposition": {
+        "en": "Does the Lutheran minister claim to forgive sins by personal merit?",
+        "fr": "Le ministre luthérien prétend-il pardonner les péchés par son mérite personnel ?",
+        "status": "EDITORIAL_CHALLENGE_NOT_LITERAL_OPPONENT_QUOTATION"
+      },
+      "reply": {
+        "en": "No. The confession grounds absolution in Christ's promise and divine command, not the minister's private holiness.",
+        "fr": "Non. La confession rattache l’absolution à la promesse et au commandement du Christ, non à la sainteté personnelle du ministre."
+      },
+      "followupQuestionIds": [
+        "LUT-015",
+        "LUT-015"
+      ],
+      "sourcePointerIds": [
+        "ACXI",
+        "ACXXV",
+        "APXI"
+      ],
+      "sourceManifest": "CANON_LUTHERAN_PRIMARY_SOURCE_MANIFEST_20261018.v1.json",
+      "additionalReview": "COMPARE_ABSOLUTION_FORMULAE_AND_CATHOLIC_CANONICAL_OWNER",
+      "publicationAllowed": false,
+      "doctrinalReviewed": false,
+      "claimContextApproved": false,
+      "frenchNativeApproved": false,
+      "conversationCharacter": "MONSIEUR_LE_CHANOINE"
+    },
+    {
+      "id": "LUT-015",
+      "originalEnglishQuestion": "Do Lutherans recognize exactly two sacraments?",
+      "originalQuestionTranscriptCertified": false,
+      "editorialFrenchQuestion": "Les luthériens reconnaissent-ils exactement deux sacrements ?",
+      "canonicalOwnerCandidates": [
+        "APOL-023"
+      ],
+      "topicOwnership": "READ_ONLY_ROUTING_TO_ORIGINAL_SOURCE_RECORD",
+      "answer": {
+        "en": "Not as an uncomplicated universal formula. The Apology of the Augsburg Confession says the number depends upon the definition used: it gives Baptism, the Lord's Supper and Absolution as clear examples of rites with divine command and the promise of grace. It discusses further possible enumerations with qualifications. Saying 'Lutherans have exactly two, therefore no absolution' misrepresents that original text.",
+        "fr": "Pas sous la forme d’une formule universelle aussi simple. L’Apologie de la Confession d’Augsbourg explique que le nombre dépend de la définition retenue : elle cite le baptême, la Cène et l’absolution comme exemples de rites institués par Dieu et porteurs d’une promesse de grâce. Elle discute aussi d’autres classements sous certaines réserves. Affirmer « deux sacrements, donc aucune absolution » déforme ce texte."
+      },
+      "opposition": {
+        "en": "Does that mean Lutherans accept the Catholic seven in the same sense?",
+        "fr": "Cela signifie-t-il que les luthériens admettent les sept sacrements au même sens que les catholiques ?",
+        "status": "EDITORIAL_CHALLENGE_NOT_LITERAL_OPPONENT_QUOTATION"
+      },
+      "reply": {
+        "en": "No. The different principle of classification and theology of the rites remain central differences.",
+        "fr": "Non. Les principes de classement et la théologie des rites demeurent des différences essentielles."
+      },
+      "followupQuestionIds": [
+        "LUT-016",
+        "LUT-011"
+      ],
+      "sourcePointerIds": [
+        "APXIII",
+        "ACXIII"
+      ],
+      "sourceManifest": "CANON_LUTHERAN_PRIMARY_SOURCE_MANIFEST_20261018.v1.json",
+      "additionalReview": "REQUIRES_APOLOGY_XIII_PRECISE_NUMBER_CHECK",
+      "publicationAllowed": false,
+      "doctrinalReviewed": false,
+      "claimContextApproved": false,
+      "frenchNativeApproved": false,
+      "conversationCharacter": "MONSIEUR_LE_CHANOINE"
+    },
+    {
+      "id": "LUT-016",
+      "originalEnglishQuestion": "Does Lutheranism have ordained ministry?",
+      "originalQuestionTranscriptCertified": false,
+      "editorialFrenchQuestion": "Le luthéranisme possède-t-il un ministère ordonné ?",
+      "canonicalOwnerCandidates": [
+        "APOL-029"
+      ],
+      "topicOwnership": "READ_ONLY_ROUTING_TO_ORIGINAL_SOURCE_RECORD",
+      "answer": {
+        "en": "Yes. Augsburg V affirms a ministry of preaching the Gospel and administering the sacraments, while XIV requires a regular call for public teaching and sacramental administration. The Apology XIV discusses the desire to preserve ecclesiastical order. The Catholic question is not whether Lutheran congregations have ministers, but whether those ministries are equivalent to Catholic sacramental Holy Orders.",
+        "fr": "Oui. La Confession d’Augsbourg V affirme un ministère chargé de prêcher l’Évangile et d’administrer les sacrements ; XIV exige un appel régulier pour l’enseignement public et l’administration sacramentelle. L’Apologie XIV évoque le maintien d’un ordre ecclésiastique. La question catholique n’est donc pas l’existence de ministres luthériens, mais leur équivalence avec le sacrement catholique de l’Ordre."
+      },
+      "opposition": {
+        "en": "Is a regular calling identical to Catholic sacramental ordination?",
+        "fr": "Un appel régulier est-il identique à l’ordination sacramentelle catholique ?",
+        "status": "EDITORIAL_CHALLENGE_NOT_LITERAL_OPPONENT_QUOTATION"
+      },
+      "reply": {
+        "en": "No. A Church office may be recognized within Lutheran polity without automatically meeting the Catholic theology and conditions of Orders.",
+        "fr": "Non. Une charge peut être reconnue dans une communauté luthérienne sans satisfaire automatiquement à la théologie catholique du sacrement de l’Ordre."
+      },
+      "followupQuestionIds": [
+        "LUT-017",
+        "LUT-011"
+      ],
+      "sourcePointerIds": [
+        "ACV",
+        "ACXIV"
+      ],
+      "sourceManifest": "CANON_LUTHERAN_PRIMARY_SOURCE_MANIFEST_20261018.v1.json",
+      "additionalReview": "CONTEXTUAL_CATHOLIC_ORDERS_JUDGMENT_REQUIRED",
+      "publicationAllowed": false,
+      "doctrinalReviewed": false,
+      "claimContextApproved": false,
+      "frenchNativeApproved": false,
+      "conversationCharacter": "MONSIEUR_LE_CHANOINE"
+    },
+    {
+      "id": "LUT-017",
+      "originalEnglishQuestion": "Is Lutheran ministry the same as Catholic priesthood?",
+      "originalQuestionTranscriptCertified": false,
+      "editorialFrenchQuestion": "Le ministère luthérien est-il identique au sacerdoce catholique ?",
+      "canonicalOwnerCandidates": [
+        "APOL-029"
+      ],
+      "topicOwnership": "READ_ONLY_ROUTING_TO_ORIGINAL_SOURCE_RECORD",
+      "answer": {
+        "en": "No. The confessional Lutheran office has a real teaching and sacramental function, but Catholic priesthood is an ordained sacramental participation in Christ's priesthood, intrinsically related to the Eucharistic sacrifice. The two traditions' accounts of ecclesial office, sacrificial priesthood and succession therefore cannot simply be declared equivalent, although an individual Lutheran minister's sincere pastoral vocation should not be dismissed.",
+        "fr": "Non. Le ministère luthérien confessionnel exerce réellement des fonctions de prédication et d’administration sacramentelle, tandis que le sacerdoce catholique relève d’un sacrement de l’Ordre participant au sacerdoce du Christ et lié au sacrifice eucharistique. Les conceptions de l’office, du sacerdoce sacrificiel et de la succession ne sont donc pas simplement identiques ; cela ne nie pas la sincérité de la vocation pastorale d’un ministre luthérien."
+      },
+      "opposition": {
+        "en": "Are all forms of Lutheran ministry historically the same?",
+        "fr": "Toutes les formes de ministère luthérien sont-elles historiquement identiques ?",
+        "status": "EDITORIAL_CHALLENGE_NOT_LITERAL_OPPONENT_QUOTATION"
+      },
+      "reply": {
+        "en": "No. Present-day church structures vary, so distinguish the confessional text from particular communities and succession claims.",
+        "fr": "Non. Les structures actuelles varient : il faut distinguer la confession historique des communautés et des revendications de succession particulières."
+      },
+      "followupQuestionIds": [
+        "LUT-018",
+        "LUT-011"
+      ],
+      "sourcePointerIds": [
+        "ACV",
+        "ACXIV",
+        "APXXIV"
+      ],
+      "sourceManifest": "CANON_LUTHERAN_PRIMARY_SOURCE_MANIFEST_20261018.v1.json",
+      "additionalReview": "COMPARE_APOL029_ORIGINAL_HOLY_ORDERS_CATHOLIC_SOURCES",
+      "publicationAllowed": false,
+      "doctrinalReviewed": false,
+      "claimContextApproved": false,
+      "frenchNativeApproved": false,
+      "conversationCharacter": "MONSIEUR_LE_CHANOINE"
+    },
+    {
+      "id": "LUT-018",
+      "originalEnglishQuestion": "Did Lutherans simply abolish the Mass?",
+      "originalQuestionTranscriptCertified": false,
+      "editorialFrenchQuestion": "Les luthériens ont-ils simplement aboli la Messe ?",
+      "canonicalOwnerCandidates": [
+        "APOL-031"
+      ],
+      "topicOwnership": "READ_ONLY_ROUTING_TO_ORIGINAL_SOURCE_RECORD",
+      "answer": {
+        "en": "No. Augsburg XXIV explicitly says that the Mass was retained in their churches, with ceremonies and the Eucharist, although interpreted and reformed differently. Its Apology disputes treating the Mass as a work applied to obtain forgiveness for others. Thus the historical Lutheran service retained the name and much outward structure, while rejecting the Catholic understanding of the propitiatory Eucharistic sacrifice.",
+        "fr": "Non. La Confession d’Augsbourg XXIV déclare expressément que la Messe fut conservée, avec diverses cérémonies et la Cène, tout en étant comprise et réformée autrement. Son Apologie conteste l’idée d’une œuvre appliquée pour obtenir le pardon d’autrui. Le culte luthérien ancien a donc conservé le nom et une part de la forme extérieure de la Messe, tout en rejetant la compréhension catholique du sacrifice eucharistique propitiatoire."
+      },
+      "opposition": {
+        "en": "Does retaining a ritual named Mass mean retaining Catholic sacrificial doctrine?",
+        "fr": "Le maintien d’un rite appelé Messe implique-t-il la doctrine sacrificielle catholique ?",
+        "status": "EDITORIAL_CHALLENGE_NOT_LITERAL_OPPONENT_QUOTATION"
+      },
+      "reply": {
+        "en": "No. Historical ritual names do not settle differences about priesthood, offering and the application of Christ's unique sacrifice.",
+        "fr": "Non. Le nom du rite ne règle pas les divergences sur le sacerdoce, l’offrande et l’application de l’unique sacrifice du Christ."
+      },
+      "followupQuestionIds": [
+        "LUT-019",
+        "LUT-011"
+      ],
+      "sourcePointerIds": [
+        "ACXXIV",
+        "APXXIV",
+        "SMII"
+      ],
+      "sourceManifest": "CANON_LUTHERAN_PRIMARY_SOURCE_MANIFEST_20261018.v1.json",
+      "additionalReview": "DISTINGUISH_HISTORIC_RETAINED_MASS_AND_CONDEMNATION_OF_ROMAN_SACRIFICE",
+      "publicationAllowed": false,
+      "doctrinalReviewed": false,
+      "claimContextApproved": false,
+      "frenchNativeApproved": false,
+      "conversationCharacter": "MONSIEUR_LE_CHANOINE"
+    },
+    {
+      "id": "LUT-019",
+      "originalEnglishQuestion": "Why do Lutherans insist on Communion under both kinds?",
+      "originalQuestionTranscriptCertified": false,
+      "editorialFrenchQuestion": "Pourquoi les luthériens insistent-ils sur la communion sous les deux espèces ?",
+      "canonicalOwnerCandidates": [
+        "APOL-030"
+      ],
+      "topicOwnership": "READ_ONLY_ROUTING_TO_ORIGINAL_SOURCE_RECORD",
+      "answer": {
+        "en": "Augsburg XXII argues that Christ instituted the cup for the faithful as well as the bread and appeals to the Scriptural form of the Lord's Supper. This was a significant Reformation grievance against restricting the chalice to the celebrant. Catholic doctrine, by contrast, holds that Christ is received whole and entire under either Eucharistic species; the dispute therefore involves sacramental integrity, institution and ecclesiastical discipline as well as practice.",
+        "fr": "La Confession d’Augsbourg XXII soutient que le Christ a institué la communion au calice pour les fidèles comme celle au pain et invoque la forme scripturaire de la Cène. Ce fut une revendication importante de la Réforme contre la restriction du calice au célébrant. La doctrine catholique enseigne, quant à elle, que le Christ est reçu tout entier sous chacune des espèces ; le débat touche donc à la discipline, à l’institution et à l’intégrité du rite."
+      },
+      "opposition": {
+        "en": "Did Catholics believe that Christ's Blood was absent from the Host?",
+        "fr": "Les catholiques croyaient-ils que le Sang du Christ était absent de l’Hostie ?",
+        "status": "EDITORIAL_CHALLENGE_NOT_LITERAL_OPPONENT_QUOTATION"
+      },
+      "reply": {
+        "en": "No. Catholic concomitance means the whole Christ is present under each species; Lutheran criticism addresses withholding the chalice despite the institution narrative.",
+        "fr": "Non. Selon la concomitance, le Christ tout entier est présent sous chaque espèce ; la critique luthérienne vise la privation du calice malgré le récit de l’institution."
+      },
+      "followupQuestionIds": [
+        "LUT-020",
+        "LUT-011"
+      ],
+      "sourcePointerIds": [
+        "ACXXII",
+        "CCC1376"
+      ],
+      "sourceManifest": "CANON_LUTHERAN_PRIMARY_SOURCE_MANIFEST_20261018.v1.json",
+      "additionalReview": "CHECK_CATHOLIC_CHALICE_DISCIPLINE_HISTORY_AND_CCC1390",
+      "publicationAllowed": false,
+      "doctrinalReviewed": false,
+      "claimContextApproved": false,
+      "frenchNativeApproved": false,
+      "conversationCharacter": "MONSIEUR_LE_CHANOINE"
+    },
+    {
+      "id": "LUT-020",
+      "originalEnglishQuestion": "Do Lutherans reject saints altogether?",
+      "originalQuestionTranscriptCertified": false,
+      "editorialFrenchQuestion": "Les luthériens rejettent-ils absolument les saints ?",
+      "canonicalOwnerCandidates": [
+        "APOL-035"
+      ],
+      "topicOwnership": "READ_ONLY_ROUTING_TO_ORIGINAL_SOURCE_RECORD",
+      "answer": {
+        "en": "No. Augsburg XXI approves remembering the saints as examples of faith and good works. It rejects invoking them for help on the grounds that Christ alone is our mediator and intercessor in the relevant saving sense. Catholicism similarly worships God alone but permits petitions for saintly intercession in dependence on Christ. Distinguish honour, example, prayer and adoration.",
+        "fr": "Non. La Confession d’Augsbourg XXI approuve la mémoire des saints comme modèles de foi et de bonnes œuvres. Elle refuse de les invoquer, invoquant l’unique médiation du Christ. Le catholicisme réserve lui aussi l’adoration à Dieu seul, mais permet de demander l’intercession des saints dans la dépendance du Christ. Il faut distinguer honneur, exemple, prière et adoration."
+      },
+      "opposition": {
+        "en": "Does admiring saints automatically imply asking them to pray?",
+        "fr": "Admirer les saints revient-il nécessairement à demander leur intercession ?",
+        "status": "EDITORIAL_CHALLENGE_NOT_LITERAL_OPPONENT_QUOTATION"
+      },
+      "reply": {
+        "en": "No. Lutheran confession explicitly accepts remembrance while rejecting invocation; that is the actual point of dispute.",
+        "fr": "Non. La confession luthérienne accepte expressément leur mémoire tout en refusant leur invocation ; c’est le vrai point de désaccord."
+      },
+      "followupQuestionIds": [
+        "LUT-021",
+        "LUT-011"
+      ],
+      "sourcePointerIds": [
+        "ACXXI",
+        "APXXI"
+      ],
+      "sourceManifest": "CANON_LUTHERAN_PRIMARY_SOURCE_MANIFEST_20261018.v1.json",
+      "additionalReview": "TRIDENTINE_INTERCESSION_SOURCES_IN_APOL035_PENDING_CLAIM_REVIEW",
+      "publicationAllowed": false,
+      "doctrinalReviewed": false,
+      "claimContextApproved": false,
+      "frenchNativeApproved": false,
+      "conversationCharacter": "MONSIEUR_LE_CHANOINE"
+    },
+    {
+      "id": "LUT-021",
+      "originalEnglishQuestion": "Is Lutheran Mariology simply modern evangelicalism?",
+      "originalQuestionTranscriptCertified": false,
+      "editorialFrenchQuestion": "La doctrine mariale luthérienne équivaut-elle simplement à celle de l’évangélisme moderne ?",
+      "canonicalOwnerCandidates": [
+        "APOL-032"
+      ],
+      "topicOwnership": "READ_ONLY_ROUTING_TO_ORIGINAL_SOURCE_RECORD",
+      "answer": {
+        "en": "No. Historic Lutheran confessions unequivocally affirm Christ's birth from the Virgin Mary and speak of her with honour. One cannot infer from this that every later Marian Catholic dogma is equally accepted, nor treat all modern Evangelical communities as doctrinally identical. To make claims about Lutheran views on perpetual virginity, the Immaculate Conception or the Assumption, each source and later Lutheran tradition must be checked individually.",
+        "fr": "Non. Les confessions luthériennes historiques affirment sans équivoque la naissance du Christ de la Vierge Marie et la mentionnent avec respect. Il ne s’ensuit ni l’acceptation de tous les dogmes mariaux catholiques postérieurs ni l’identité de toutes les communautés évangéliques modernes. Pour la virginité perpétuelle, l’Immaculée Conception ou l’Assomption, il faut examiner les textes propres à chaque question et les traditions luthériennes ultérieures."
+      },
+      "opposition": {
+        "en": "Does calling Mary 'blessed Virgin' mean acceptance of the Immaculate Conception?",
+        "fr": "L’expression « bienheureuse Vierge » signifie-t-elle l’acceptation de l’Immaculée Conception ?",
+        "status": "EDITORIAL_CHALLENGE_NOT_LITERAL_OPPONENT_QUOTATION"
+      },
+      "reply": {
+        "en": "No. Her virginal maternity is not the same doctrinal claim as freedom from original sin at her own conception.",
+        "fr": "Non. Sa maternité virginale n’est pas la même affirmation doctrinale que sa préservation du péché originel dès sa conception."
+      },
+      "followupQuestionIds": [
+        "LUT-022",
+        "LUT-005"
+      ],
+      "sourcePointerIds": [
+        "ACIII"
+      ],
+      "sourceManifest": "CANON_LUTHERAN_PRIMARY_SOURCE_MANIFEST_20261018.v1.json",
+      "additionalReview": "MARIAN_CONSENSUS_AND_DIFFERENCE_REQUIRE_MORE_LUTHERAN_TEXTS",
+      "publicationAllowed": false,
+      "doctrinalReviewed": false,
+      "claimContextApproved": false,
+      "frenchNativeApproved": false,
+      "conversationCharacter": "MONSIEUR_LE_CHANOINE"
+    },
+    {
+      "id": "LUT-022",
+      "originalEnglishQuestion": "Does Lutheranism accept Purgatory?",
+      "originalQuestionTranscriptCertified": false,
+      "editorialFrenchQuestion": "Le luthéranisme admet-il le Purgatoire ?",
+      "canonicalOwnerCandidates": [
+        "APOL-040"
+      ],
+      "topicOwnership": "READ_ONLY_ROUTING_TO_ORIGINAL_SOURCE_RECORD",
+      "answer": {
+        "en": "Classical Lutheran confessional doctrine rejects Catholic Purgatory, especially Masses understood as liberating souls by applied ritual works. In the Smalcald Articles, Luther explicitly attacks Purgatory and its associated economy of suffrages. That criticism should be addressed from the actual Catholic defined doctrine of purification and prayer for the dead, not from sensational legends or commercial abuses.",
+        "fr": "Le luthéranisme confessionnel classique rejette le Purgatoire catholique, particulièrement les Messes comprises comme des œuvres rituelles libérant les âmes par leur application. Dans les Articles de Smalkalde, Luther attaque explicitement le Purgatoire et les pratiques qui lui sont associées. Cette critique doit être comparée à la doctrine catholique définie de la purification et de la prière pour les morts, non à des récits sensationnels ou à des abus commerciaux."
+      },
+      "opposition": {
+        "en": "Is the entire Catholic doctrine simply selling Masses for the dead?",
+        "fr": "Toute la doctrine catholique consiste-t-elle à vendre des Messes pour les défunts ?",
+        "status": "EDITORIAL_CHALLENGE_NOT_LITERAL_OPPONENT_QUOTATION"
+      },
+      "reply": {
+        "en": "No. The Catholic dogma of purification and intercession is distinct from the historical abuse of trafficking in spiritual things.",
+        "fr": "Non. Le dogme catholique de la purification et de l’intercession est distinct de tout trafic de choses spirituelles."
+      },
+      "followupQuestionIds": [
+        "LUT-023",
+        "LUT-005"
+      ],
+      "sourcePointerIds": [
+        "SMII",
+        "APXXIV"
+      ],
+      "sourceManifest": "CANON_LUTHERAN_PRIMARY_SOURCE_MANIFEST_20261018.v1.json",
+      "additionalReview": "LINK_APOL040_CATHOLIC_PURGATORY_AND_INDULGENCE_SUBJECT_SEPARATELY",
+      "publicationAllowed": false,
+      "doctrinalReviewed": false,
+      "claimContextApproved": false,
+      "frenchNativeApproved": false,
+      "conversationCharacter": "MONSIEUR_LE_CHANOINE"
+    },
+    {
+      "id": "LUT-023",
+      "originalEnglishQuestion": "What does Lutheranism teach about free will?",
+      "originalQuestionTranscriptCertified": false,
+      "editorialFrenchQuestion": "Que dit le luthéranisme du libre arbitre ?",
+      "canonicalOwnerCandidates": [
+        "APOL-043"
+      ],
+      "topicOwnership": "READ_ONLY_ROUTING_TO_ORIGINAL_SOURCE_RECORD",
+      "answer": {
+        "en": "Augsburg XVIII allows a measure of freedom concerning civil and rational affairs but denies that fallen man, without the Holy Spirit, can produce saving spiritual righteousness. The Formula of Concord expands this account by distinguishing the will before conversion from the renewed will's cooperation in good works afterward. It is misleading either to say Lutherans deny every human choice or to reduce their doctrine to Catholic terminology.",
+        "fr": "La Confession d’Augsbourg XVIII reconnaît une certaine liberté dans les affaires civiles et raisonnables, mais nie que l’homme déchu puisse, sans l’Esprit Saint, produire la justice spirituelle salvifique. La Formule de Concorde distingue encore la volonté avant la conversion et sa coopération, renouvelée, dans les bonnes œuvres après celle-ci. Il serait trompeur de prétendre que le luthéranisme nie tout choix humain ou d’y plaquer simplement les termes catholiques."
+      },
+      "opposition": {
+        "en": "Does lack of power to convert oneself mean that people cannot act freely in ordinary life?",
+        "fr": "L’impuissance à se convertir soi-même signifie-t-elle qu’on ne peut choisir librement dans la vie ordinaire ?",
+        "status": "EDITORIAL_CHALLENGE_NOT_LITERAL_OPPONENT_QUOTATION"
+      },
+      "reply": {
+        "en": "No. The Lutheran confession explicitly separates civic freedom from the supernatural work of conversion.",
+        "fr": "Non. La confession luthérienne distingue explicitement la liberté civile de l’œuvre surnaturelle de la conversion."
+      },
+      "followupQuestionIds": [
+        "LUT-024",
+        "LUT-005"
+      ],
+      "sourcePointerIds": [
+        "ACXVIII",
+        "FCII"
+      ],
+      "sourceManifest": "CANON_LUTHERAN_PRIMARY_SOURCE_MANIFEST_20261018.v1.json",
+      "additionalReview": "PRE_AND_POST_CONVERSION_COOPERATION_DISTINCTION_MUST_REMAIN_VISIBLE",
+      "publicationAllowed": false,
+      "doctrinalReviewed": false,
+      "claimContextApproved": false,
+      "frenchNativeApproved": false,
+      "conversationCharacter": "MONSIEUR_LE_CHANOINE"
+    },
+    {
+      "id": "LUT-024",
+      "originalEnglishQuestion": "Does Lutheran predestination equal Calvinist double predestination?",
+      "originalQuestionTranscriptCertified": false,
+      "editorialFrenchQuestion": "La prédestination luthérienne est-elle identique à la double prédestination calviniste ?",
+      "canonicalOwnerCandidates": [
+        "APOL-043"
+      ],
+      "topicOwnership": "READ_ONLY_ROUTING_TO_ORIGINAL_SOURCE_RECORD",
+      "answer": {
+        "en": "No. The Formula of Concord XI distinguishes God's foreknowledge of all things from saving election and concentrates election upon those saved in Christ. It rejects making God the author of sin and warns against speculative decrees of damnation. Thus it should not be flattened into the claim that God positively elects some people to sin and damnation in the same way he elects others to salvation.",
+        "fr": "Non. La Formule de Concorde XI distingue la prescience divine, qui s’étend à toutes choses, de l’élection salvifique en Jésus-Christ. Elle refuse de faire de Dieu l’auteur du péché et met en garde contre les spéculations sur les décrets de damnation. Il ne faut donc pas lui attribuer une élection positive au péché et à la damnation conçue de la même manière que l’élection au salut."
+      },
+      "opposition": {
+        "en": "Does this mean every Reformed writer describes predestination in the same terms?",
+        "fr": "Tous les auteurs réformés exposent-ils la prédestination de la même manière ?",
+        "status": "EDITORIAL_CHALLENGE_NOT_LITERAL_OPPONENT_QUOTATION"
+      },
+      "reply": {
+        "en": "No. A complete comparison needs the original Reformed confessional text and careful distinction between reprobation, permission of sin and God's causality.",
+        "fr": "Non. Une comparaison complète exige les confessions réformées originales et distingue réprobation, permission du péché et causalité divine."
+      },
+      "followupQuestionIds": [
+        "LUT-025",
+        "LUT-005"
+      ],
+      "sourcePointerIds": [
+        "FCXI"
+      ],
+      "sourceManifest": "CANON_LUTHERAN_PRIMARY_SOURCE_MANIFEST_20261018.v1.json",
+      "additionalReview": "DIRECT_CALVINIST_WESTMINSTER_AND_DORT_COMPARISON_NOT_COMPLETED",
+      "publicationAllowed": false,
+      "doctrinalReviewed": false,
+      "claimContextApproved": false,
+      "frenchNativeApproved": false,
+      "conversationCharacter": "MONSIEUR_LE_CHANOINE"
+    },
+    {
+      "id": "LUT-025",
+      "originalEnglishQuestion": "What is the deepest Catholic–Lutheran division after justification is clarified?",
+      "originalQuestionTranscriptCertified": false,
+      "editorialFrenchQuestion": "Quelle est la divergence la plus profonde entre catholiques et luthériens, une fois la justification clarifiée ?",
+      "canonicalOwnerCandidates": [],
+      "topicOwnership": "READ_ONLY_ROUTING_TO_ORIGINAL_SOURCE_RECORD",
+      "answer": {
+        "en": "There is no single agreed ranking of every remaining division. A crucial cluster concerns the Church's apostolic authority, the nature of sacramental ministry, the Eucharistic sacrifice and full ecclesial communion. The 1999 justification statement explicitly calls for continuing dialogue toward full communion. It cannot be used to declare the Catholic and Lutheran churches fully doctrinally identical.",
+        "fr": "Il n’existe pas de classement universel des divergences restantes. Un groupe décisif de questions concerne l’autorité apostolique de l’Église, la nature du ministère sacramentel, le sacrifice eucharistique et la pleine communion ecclésiale. La déclaration de 1999 sur la justification demande expressément de poursuivre le dialogue en vue de cette pleine communion ; elle ne permet pas d’affirmer une identité doctrinale complète."
+      },
+      "opposition": {
+        "en": "Would agreement on grace alone establish full sacramental communion?",
+        "fr": "L’accord sur la grâce suffit-il à établir la pleine communion sacramentelle ?",
+        "status": "EDITORIAL_CHALLENGE_NOT_LITERAL_OPPONENT_QUOTATION"
+      },
+      "reply": {
+        "en": "No. Eucharist, Orders, ecclesiology and the Church's visible unity require their own source-grounded treatment.",
+        "fr": "Non. L’Eucharistie, l’Ordre, l’ecclésiologie et l’unité visible de l’Église exigent une étude distincte fondée sur les sources."
+      },
+      "followupQuestionIds": [
+        "LUT-018",
+        "LUT-005"
+      ],
+      "sourcePointerIds": [
+        "JDDJ99",
+        "APXXIV",
+        "ACV"
+      ],
+      "sourceManifest": "CANON_LUTHERAN_PRIMARY_SOURCE_MANIFEST_20261018.v1.json",
+      "additionalReview": "SYNTHESIS_NEEDS_DIRECT_CATHOLIC_LUTHERAN_ECCLESIOLOGY_DOCS",
+      "publicationAllowed": false,
+      "doctrinalReviewed": false,
+      "claimContextApproved": false,
+      "frenchNativeApproved": false,
+      "conversationCharacter": "MONSIEUR_LE_CHANOINE"
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "status": "SEARCH_SUMMARY_OF_PRIOR_ASSISTANT_RESPONSE_NOT_FULL_ORIGINAL_CHAT_TRANSCRIPT",
+  "witness_timestamp_utc": "2026-10-07T20:12:43Z",
+  "source": "prior conversation search extraction",
+  "scope": "alternative historical A-series topical schema",
+  "evidence_level": "BAND_ONLY",
+  "warning": "This historical witness conflicts in range segmentation with the later GitHub recovery file. The band labels do not prove any individual original A-series question text or per-ID ownership. Do not replace the forensic register.",
+  "bands": [
+    {
+      "section": "A1",
+      "start": 1,
+      "end": 14,
+      "title": "God, Reason, Revelation"
+    },
+    {
+      "section": "A2",
+      "start": 15,
+      "end": 30,
+      "title": "Jesus Christ"
+    },
+    {
+      "section": "A3",
+      "start": 31,
+      "end": 50,
+      "title": "Scripture, Tradition, Rule of Faith"
+    },
+    {
+      "section": "A4",
+      "start": 51,
+      "end": 66,
+      "title": "Church"
+    },
+    {
+      "section": "A5",
+      "start": 67,
+      "end": 86,
+      "title": "Papacy and Authority"
+    },
+    {
+      "section": "A6",
+      "start": 87,
+      "end": 112,
+      "title": "Protestantism and Anglicanism"
+    },
+    {
+      "section": "A7",
+      "start": 113,
+      "end": 130,
+      "title": "Sacraments and Priesthood"
+    },
+    {
+      "section": "A8",
+      "start": 131,
+      "end": 150,
+      "title": "Eucharist and Mass"
+    },
+    {
+      "section": "A9",
+      "start": 151,
+      "end": 174,
+      "title": "Mary, Saints and Devotions"
+    },
+    {
+      "section": "A10",
+      "start": 175,
+      "end": 196,
+      "title": "Salvation and Last Things"
+    },
+    {
+      "section": "A11",
+      "start": 197,
+      "end": 214,
+      "title": "Judaism and Covenants"
+    },
+    {
+      "section": "A12",
+      "start": 215,
+      "end": 232,
+      "title": "Islam and Other Religions"
+    },
+    {
+      "section": "A13",
+      "start": 233,
+      "end": 248,
+      "title": "Moral Reasoning"
+    },
+    {
+      "section": "A14",
+      "start": 249,
+      "end": 270,
+      "title": "Church and State"
+    }
+  ],
+  "unrecovered_ranges": [
+    {
+      "start": 271,
+      "end": 318,
+      "reason": "Search excerpt mentions later historical objections/ideological material but does not provide stable full labelled range boundaries."
+    }
+  ],
+  "question_text_recovered": 0
+}

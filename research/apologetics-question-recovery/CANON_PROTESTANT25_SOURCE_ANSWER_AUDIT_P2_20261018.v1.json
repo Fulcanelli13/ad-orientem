@@ -1,0 +1,628 @@
+{
+  "schema": "AO_CANON_PROTESTANT25_DRAFT_CONTENT_AUDIT_P2_V1",
+  "date": "2026-10-18",
+  "state": "EDITORIAL_DRAFT_AUDIT_NO_CONTENT_APPROVAL",
+  "inputs": {
+    "historical": "research/apologetics-question-recovery/ORIGINAL_QUESTION_BANK_EVIDENCE.v1.json",
+    "concordance": "research/apologetics-question-recovery/CANON_HISTORICAL_452_TOPIC_CONCORDANCE_P1_20261018.v1.json",
+    "contentSources": [
+      "data/learn/formation-canonical-synthesis-batch1-2026-10-09.v1.json",
+      "data/learn/formation-canonical-synthesis-batch2-2026-10-09.v1.json",
+      "data/learn/formation-canonical-synthesis-batch3-2026-10-09.v1.json",
+      "data/learn/formation-canonical-sourcefirst-batch4-2026-10-09.v1.json",
+      "data/learn/formation-canonical-sourcefirst-batch5-2026-10-09.v1.json",
+      "data/learn/formation-crisis-sourcefirst-batch6-2026-10-09.v1.json",
+      "data/learn/formation-crisis-sourcefirst-batch7-2026-10-09.v1.json",
+      "data/learn/formation-crisis-sourcefirst-batch8-2026-10-09.v1.json"
+    ]
+  },
+  "policy": "DIRECT_TOPIC_IN_DRAFT means the current dossier text substantially discusses the issue, NOT that exact historical question, opponent position, citation context, EN/FR wording or doctrinal publication has been approved.",
+  "summary": {
+    "questions": 25,
+    "DIRECT_TOPIC_IN_DRAFT": 18,
+    "PARTIAL_TOPIC_IN_DRAFT": 5,
+    "NO_DEDICATED_ANSWER": 2,
+    "publiclyApprovedByThisReview": 0,
+    "rawHistoricalVerbatimVerified": 0
+  },
+  "questions": [
+    {
+      "historicalId": "PROT-001",
+      "originalQuestion": "What does “Protestant” mean?",
+      "status": "NO_DEDICATED_ANSWER",
+      "observation": "Defining Protestantism and its historical/denominational scope needs a source-owned article; the canonical Catholic-topic catalogue has no direct entry.",
+      "candidateDraftSourceOwners": [],
+      "questionPreciselyVerifiedWithOriginalChat": false,
+      "questionLevelClaimCertification": false,
+      "publicUsePermitted": false
+    },
+    {
+      "historicalId": "PROT-002",
+      "originalQuestion": "Is sola Scriptura simply “Catholics don't believe the Bible”?",
+      "status": "DIRECT_TOPIC_IN_DRAFT",
+      "observation": "APOL-014 distinguishes the Protestant sola Scriptura claim from a false claim that Catholics reject Scripture.",
+      "candidateDraftSourceOwners": [
+        {
+          "canonicalId": "APOL-014",
+          "path": "data/learn/formation-canonical-sourcefirst-batch4-2026-10-09.v1.json",
+          "sections": 4,
+          "answerRoleEnPresent": true,
+          "answerRoleFrPresent": true,
+          "allSourceRefs": 10,
+          "publicationAllowed": false,
+          "claimContextCertified": false,
+          "independentTheologicalApproval": false,
+          "nativeFrenchApproval": false
+        }
+      ],
+      "questionPreciselyVerifiedWithOriginalChat": false,
+      "questionLevelClaimCertification": false,
+      "publicUsePermitted": false
+    },
+    {
+      "historicalId": "PROT-003",
+      "originalQuestion": "Does Catholicism place Tradition above Scripture?",
+      "status": "DIRECT_TOPIC_IN_DRAFT",
+      "observation": "APOL-015 explicitly distinguishes apostolic Tradition from local human customs.",
+      "candidateDraftSourceOwners": [
+        {
+          "canonicalId": "APOL-015",
+          "path": "data/learn/formation-canonical-sourcefirst-batch4-2026-10-09.v1.json",
+          "sections": 4,
+          "answerRoleEnPresent": true,
+          "answerRoleFrPresent": true,
+          "allSourceRefs": 11,
+          "publicationAllowed": false,
+          "claimContextCertified": false,
+          "independentTheologicalApproval": false,
+          "nativeFrenchApproval": false
+        }
+      ],
+      "questionPreciselyVerifiedWithOriginalChat": false,
+      "questionLevelClaimCertification": false,
+      "publicUsePermitted": false
+    },
+    {
+      "historicalId": "PROT-004",
+      "originalQuestion": "How does a Protestant know the biblical canon?",
+      "status": "DIRECT_TOPIC_IN_DRAFT",
+      "observation": "APOL-013 and APOL-014 discuss received canon and the historical Reformed alternative.",
+      "candidateDraftSourceOwners": [
+        {
+          "canonicalId": "APOL-013",
+          "path": "data/learn/formation-canonical-synthesis-batch1-2026-10-09.v1.json",
+          "sections": 4,
+          "answerRoleEnPresent": true,
+          "answerRoleFrPresent": true,
+          "allSourceRefs": 9,
+          "publicationAllowed": false,
+          "claimContextCertified": false,
+          "independentTheologicalApproval": false,
+          "nativeFrenchApproval": false
+        }
+      ],
+      "questionPreciselyVerifiedWithOriginalChat": false,
+      "questionLevelClaimCertification": false,
+      "publicUsePermitted": false
+    },
+    {
+      "historicalId": "PROT-005",
+      "originalQuestion": "Are all traditions condemned in Scripture?",
+      "status": "DIRECT_TOPIC_IN_DRAFT",
+      "observation": "APOL-015 treats human traditions versus the apostolic deposit, but the exact polemical verses still require question-level verification.",
+      "candidateDraftSourceOwners": [
+        {
+          "canonicalId": "APOL-015",
+          "path": "data/learn/formation-canonical-sourcefirst-batch4-2026-10-09.v1.json",
+          "sections": 4,
+          "answerRoleEnPresent": true,
+          "answerRoleFrPresent": true,
+          "allSourceRefs": 11,
+          "publicationAllowed": false,
+          "claimContextCertified": false,
+          "independentTheologicalApproval": false,
+          "nativeFrenchApproval": false
+        }
+      ],
+      "questionPreciselyVerifiedWithOriginalChat": false,
+      "questionLevelClaimCertification": false,
+      "publicUsePermitted": false
+    },
+    {
+      "historicalId": "PROT-006",
+      "originalQuestion": "Can the visible Church or councils teach authoritatively?",
+      "status": "PARTIAL_TOPIC_IN_DRAFT",
+      "observation": "Visible-Church authority and conciliar fallibility are spread over APOL-016/020; the full council distinction is not one standalone answer.",
+      "candidateDraftSourceOwners": [
+        {
+          "canonicalId": "APOL-016",
+          "path": "data/learn/formation-canonical-sourcefirst-batch4-2026-10-09.v1.json",
+          "sections": 4,
+          "answerRoleEnPresent": true,
+          "answerRoleFrPresent": true,
+          "allSourceRefs": 11,
+          "publicationAllowed": false,
+          "claimContextCertified": false,
+          "independentTheologicalApproval": false,
+          "nativeFrenchApproval": false
+        },
+        {
+          "canonicalId": "APOL-020",
+          "path": "data/learn/formation-canonical-sourcefirst-batch4-2026-10-09.v1.json",
+          "sections": 4,
+          "answerRoleEnPresent": true,
+          "answerRoleFrPresent": true,
+          "allSourceRefs": 11,
+          "publicationAllowed": false,
+          "claimContextCertified": false,
+          "independentTheologicalApproval": false,
+          "nativeFrenchApproval": false
+        }
+      ],
+      "questionPreciselyVerifiedWithOriginalChat": false,
+      "questionLevelClaimCertification": false,
+      "publicUsePermitted": false
+    },
+    {
+      "historicalId": "PROT-007",
+      "originalQuestion": "What is justification?",
+      "status": "DIRECT_TOPIC_IN_DRAFT",
+      "observation": "APOL-038 provides a careful grace, faith, renewal and works distinction.",
+      "candidateDraftSourceOwners": [
+        {
+          "canonicalId": "APOL-038",
+          "path": "data/learn/formation-canonical-sourcefirst-batch5-2026-10-09.v1.json",
+          "sections": 4,
+          "answerRoleEnPresent": true,
+          "answerRoleFrPresent": true,
+          "allSourceRefs": 11,
+          "publicationAllowed": false,
+          "claimContextCertified": false,
+          "independentTheologicalApproval": false,
+          "nativeFrenchApproval": false
+        }
+      ],
+      "questionPreciselyVerifiedWithOriginalChat": false,
+      "questionLevelClaimCertification": false,
+      "publicUsePermitted": false
+    },
+    {
+      "historicalId": "PROT-008",
+      "originalQuestion": "Does Catholicism teach salvation by human works?",
+      "status": "DIRECT_TOPIC_IN_DRAFT",
+      "observation": "APOL-038 directly denies salvation earned by unaided works.",
+      "candidateDraftSourceOwners": [
+        {
+          "canonicalId": "APOL-038",
+          "path": "data/learn/formation-canonical-sourcefirst-batch5-2026-10-09.v1.json",
+          "sections": 4,
+          "answerRoleEnPresent": true,
+          "answerRoleFrPresent": true,
+          "allSourceRefs": 11,
+          "publicationAllowed": false,
+          "claimContextCertified": false,
+          "independentTheologicalApproval": false,
+          "nativeFrenchApproval": false
+        }
+      ],
+      "questionPreciselyVerifiedWithOriginalChat": false,
+      "questionLevelClaimCertification": false,
+      "publicUsePermitted": false
+    },
+    {
+      "historicalId": "PROT-009",
+      "originalQuestion": "What does “faith alone” actually mean?",
+      "status": "DIRECT_TOPIC_IN_DRAFT",
+      "observation": "APOL-038 gives actual Reformed imputation as the documented position, not an invented antinomian claim.",
+      "candidateDraftSourceOwners": [
+        {
+          "canonicalId": "APOL-038",
+          "path": "data/learn/formation-canonical-sourcefirst-batch5-2026-10-09.v1.json",
+          "sections": 4,
+          "answerRoleEnPresent": true,
+          "answerRoleFrPresent": true,
+          "allSourceRefs": 11,
+          "publicationAllowed": false,
+          "claimContextCertified": false,
+          "independentTheologicalApproval": false,
+          "nativeFrenchApproval": false
+        }
+      ],
+      "questionPreciselyVerifiedWithOriginalChat": false,
+      "questionLevelClaimCertification": false,
+      "publicUsePermitted": false
+    },
+    {
+      "historicalId": "PROT-010",
+      "originalQuestion": "What is the Catholic objection to sola fide?",
+      "status": "DIRECT_TOPIC_IN_DRAFT",
+      "observation": "APOL-038 identifies the issue of imputation versus infused renewal and cites Trent.",
+      "candidateDraftSourceOwners": [
+        {
+          "canonicalId": "APOL-038",
+          "path": "data/learn/formation-canonical-sourcefirst-batch5-2026-10-09.v1.json",
+          "sections": 4,
+          "answerRoleEnPresent": true,
+          "answerRoleFrPresent": true,
+          "allSourceRefs": 11,
+          "publicationAllowed": false,
+          "claimContextCertified": false,
+          "independentTheologicalApproval": false,
+          "nativeFrenchApproval": false
+        }
+      ],
+      "questionPreciselyVerifiedWithOriginalChat": false,
+      "questionLevelClaimCertification": false,
+      "publicUsePermitted": false
+    },
+    {
+      "historicalId": "PROT-011",
+      "originalQuestion": "Are there two sacraments or seven?",
+      "status": "DIRECT_TOPIC_IN_DRAFT",
+      "observation": "APOL-023 actually enumerates seven sacraments and contrasts the Baptist/Reformed recognition of two; supersedes earlier unverified P0 suspicion.",
+      "candidateDraftSourceOwners": [
+        {
+          "canonicalId": "APOL-023",
+          "path": "data/learn/formation-canonical-sourcefirst-batch4-2026-10-09.v1.json",
+          "sections": 4,
+          "answerRoleEnPresent": true,
+          "answerRoleFrPresent": true,
+          "allSourceRefs": 11,
+          "publicationAllowed": false,
+          "claimContextCertified": false,
+          "independentTheologicalApproval": false,
+          "nativeFrenchApproval": false
+        }
+      ],
+      "questionPreciselyVerifiedWithOriginalChat": false,
+      "questionLevelClaimCertification": false,
+      "publicUsePermitted": false
+    },
+    {
+      "historicalId": "PROT-012",
+      "originalQuestion": "Is Baptism merely symbolic?",
+      "status": "DIRECT_TOPIC_IN_DRAFT",
+      "observation": "APOL-024 treats baptismal regeneration explicitly.",
+      "candidateDraftSourceOwners": [
+        {
+          "canonicalId": "APOL-024",
+          "path": "data/learn/formation-canonical-sourcefirst-batch4-2026-10-09.v1.json",
+          "sections": 4,
+          "answerRoleEnPresent": true,
+          "answerRoleFrPresent": true,
+          "allSourceRefs": 11,
+          "publicationAllowed": false,
+          "claimContextCertified": false,
+          "independentTheologicalApproval": false,
+          "nativeFrenchApproval": false
+        }
+      ],
+      "questionPreciselyVerifiedWithOriginalChat": false,
+      "questionLevelClaimCertification": false,
+      "publicUsePermitted": false
+    },
+    {
+      "historicalId": "PROT-013",
+      "originalQuestion": "Is infant Baptism ‘Catholic versus Protestant’?",
+      "status": "PARTIAL_TOPIC_IN_DRAFT",
+      "observation": "APOL-024 contrasts Catholics and Baptist believers' baptism, but the question requires showing Lutheran, Methodist and Reformed infant baptism traditions too.",
+      "candidateDraftSourceOwners": [
+        {
+          "canonicalId": "APOL-024",
+          "path": "data/learn/formation-canonical-sourcefirst-batch4-2026-10-09.v1.json",
+          "sections": 4,
+          "answerRoleEnPresent": true,
+          "answerRoleFrPresent": true,
+          "allSourceRefs": 11,
+          "publicationAllowed": false,
+          "claimContextCertified": false,
+          "independentTheologicalApproval": false,
+          "nativeFrenchApproval": false
+        }
+      ],
+      "questionPreciselyVerifiedWithOriginalChat": false,
+      "questionLevelClaimCertification": false,
+      "publicUsePermitted": false
+    },
+    {
+      "historicalId": "PROT-014",
+      "originalQuestion": "Did Protestants abolish confession entirely?",
+      "status": "PARTIAL_TOPIC_IN_DRAFT",
+      "observation": "APOL-026 accurately presents Westminster's position; it does not separately establish Lutheran/Anglican absolution practices.",
+      "candidateDraftSourceOwners": [
+        {
+          "canonicalId": "APOL-026",
+          "path": "data/learn/formation-canonical-sourcefirst-batch4-2026-10-09.v1.json",
+          "sections": 4,
+          "answerRoleEnPresent": true,
+          "answerRoleFrPresent": true,
+          "allSourceRefs": 10,
+          "publicationAllowed": false,
+          "claimContextCertified": false,
+          "independentTheologicalApproval": false,
+          "nativeFrenchApproval": false
+        }
+      ],
+      "questionPreciselyVerifiedWithOriginalChat": false,
+      "questionLevelClaimCertification": false,
+      "publicUsePermitted": false
+    },
+    {
+      "historicalId": "PROT-015",
+      "originalQuestion": "Do all Protestants believe the Eucharist is only a symbol?",
+      "status": "PARTIAL_TOPIC_IN_DRAFT",
+      "observation": "APOL-030 presents the Westminster Reformed spiritual-feeding position; full general Protestant comparison additionally needs Lutheran and other accounts.",
+      "candidateDraftSourceOwners": [
+        {
+          "canonicalId": "APOL-030",
+          "path": "data/learn/formation-canonical-sourcefirst-batch5-2026-10-09.v1.json",
+          "sections": 4,
+          "answerRoleEnPresent": true,
+          "answerRoleFrPresent": true,
+          "allSourceRefs": 11,
+          "publicationAllowed": false,
+          "claimContextCertified": false,
+          "independentTheologicalApproval": false,
+          "nativeFrenchApproval": false
+        }
+      ],
+      "questionPreciselyVerifiedWithOriginalChat": false,
+      "questionLevelClaimCertification": false,
+      "publicUsePermitted": false
+    },
+    {
+      "historicalId": "PROT-016",
+      "originalQuestion": "Is transubstantiation the same as ‘Christ is really present’?",
+      "status": "DIRECT_TOPIC_IN_DRAFT",
+      "observation": "APOL-030 directly defines Catholic substantial Eucharistic presence and distinguishes it from the merely symbolic interpretation.",
+      "candidateDraftSourceOwners": [
+        {
+          "canonicalId": "APOL-030",
+          "path": "data/learn/formation-canonical-sourcefirst-batch5-2026-10-09.v1.json",
+          "sections": 4,
+          "answerRoleEnPresent": true,
+          "answerRoleFrPresent": true,
+          "allSourceRefs": 11,
+          "publicationAllowed": false,
+          "claimContextCertified": false,
+          "independentTheologicalApproval": false,
+          "nativeFrenchApproval": false
+        }
+      ],
+      "questionPreciselyVerifiedWithOriginalChat": false,
+      "questionLevelClaimCertification": false,
+      "publicUsePermitted": false
+    },
+    {
+      "historicalId": "PROT-017",
+      "originalQuestion": "Is the Catholic Mass a repetition of Calvary?",
+      "status": "DIRECT_TOPIC_IN_DRAFT",
+      "observation": "APOL-031 directly differentiates sacramental sacrifice from another death on Calvary.",
+      "candidateDraftSourceOwners": [
+        {
+          "canonicalId": "APOL-031",
+          "path": "data/learn/formation-canonical-sourcefirst-batch5-2026-10-09.v1.json",
+          "sections": 4,
+          "answerRoleEnPresent": true,
+          "answerRoleFrPresent": true,
+          "allSourceRefs": 11,
+          "publicationAllowed": false,
+          "claimContextCertified": false,
+          "independentTheologicalApproval": false,
+          "nativeFrenchApproval": false
+        }
+      ],
+      "questionPreciselyVerifiedWithOriginalChat": false,
+      "questionLevelClaimCertification": false,
+      "publicUsePermitted": false
+    },
+    {
+      "historicalId": "PROT-018",
+      "originalQuestion": "Does Hebrews’ ‘once for all’ disprove the Mass?",
+      "status": "DIRECT_TOPIC_IN_DRAFT",
+      "observation": "APOL-031 addresses the Hebrews once-for-all objection and cites Hebrews 10 and Trent XXII.",
+      "candidateDraftSourceOwners": [
+        {
+          "canonicalId": "APOL-031",
+          "path": "data/learn/formation-canonical-sourcefirst-batch5-2026-10-09.v1.json",
+          "sections": 4,
+          "answerRoleEnPresent": true,
+          "answerRoleFrPresent": true,
+          "allSourceRefs": 11,
+          "publicationAllowed": false,
+          "claimContextCertified": false,
+          "independentTheologicalApproval": false,
+          "nativeFrenchApproval": false
+        }
+      ],
+      "questionPreciselyVerifiedWithOriginalChat": false,
+      "questionLevelClaimCertification": false,
+      "publicUsePermitted": false
+    },
+    {
+      "historicalId": "PROT-019",
+      "originalQuestion": "Did Christ establish a distinct ministerial priesthood?",
+      "status": "DIRECT_TOPIC_IN_DRAFT",
+      "observation": "APOL-029 distinguishes ordained ministerial priesthood and the common priesthood.",
+      "candidateDraftSourceOwners": [
+        {
+          "canonicalId": "APOL-029",
+          "path": "data/learn/formation-canonical-sourcefirst-batch5-2026-10-09.v1.json",
+          "sections": 4,
+          "answerRoleEnPresent": true,
+          "answerRoleFrPresent": true,
+          "allSourceRefs": 11,
+          "publicationAllowed": false,
+          "claimContextCertified": false,
+          "independentTheologicalApproval": false,
+          "nativeFrenchApproval": false
+        }
+      ],
+      "questionPreciselyVerifiedWithOriginalChat": false,
+      "questionLevelClaimCertification": false,
+      "publicUsePermitted": false
+    },
+    {
+      "historicalId": "PROT-020",
+      "originalQuestion": "Is apostolic succession merely succession of teaching?",
+      "status": "DIRECT_TOPIC_IN_DRAFT",
+      "observation": "APOL-019 treats episcopal succession as sacramental office plus doctrine, not a title alone.",
+      "candidateDraftSourceOwners": [
+        {
+          "canonicalId": "APOL-019",
+          "path": "data/learn/formation-canonical-sourcefirst-batch4-2026-10-09.v1.json",
+          "sections": 4,
+          "answerRoleEnPresent": true,
+          "answerRoleFrPresent": true,
+          "allSourceRefs": 11,
+          "publicationAllowed": false,
+          "claimContextCertified": false,
+          "independentTheologicalApproval": false,
+          "nativeFrenchApproval": false
+        }
+      ],
+      "questionPreciselyVerifiedWithOriginalChat": false,
+      "questionLevelClaimCertification": false,
+      "publicUsePermitted": false
+    },
+    {
+      "historicalId": "PROT-021",
+      "originalQuestion": "Did Christ establish the papacy?",
+      "status": "DIRECT_TOPIC_IN_DRAFT",
+      "observation": "APOL-018 treats Petrine primacy with its bounds.",
+      "candidateDraftSourceOwners": [
+        {
+          "canonicalId": "APOL-018",
+          "path": "data/learn/formation-canonical-sourcefirst-batch4-2026-10-09.v1.json",
+          "sections": 4,
+          "answerRoleEnPresent": true,
+          "answerRoleFrPresent": true,
+          "allSourceRefs": 11,
+          "publicationAllowed": false,
+          "claimContextCertified": false,
+          "independentTheologicalApproval": false,
+          "nativeFrenchApproval": false
+        }
+      ],
+      "questionPreciselyVerifiedWithOriginalChat": false,
+      "questionLevelClaimCertification": false,
+      "publicUsePermitted": false
+    },
+    {
+      "historicalId": "PROT-022",
+      "originalQuestion": "Is Marian doctrine simply ‘worshipping Mary’?",
+      "status": "DIRECT_TOPIC_IN_DRAFT",
+      "observation": "APOL-034 distinguishes Mary's honour from adoration.",
+      "candidateDraftSourceOwners": [
+        {
+          "canonicalId": "APOL-034",
+          "path": "data/learn/formation-canonical-sourcefirst-batch5-2026-10-09.v1.json",
+          "sections": 4,
+          "answerRoleEnPresent": true,
+          "answerRoleFrPresent": true,
+          "allSourceRefs": 11,
+          "publicationAllowed": false,
+          "claimContextCertified": false,
+          "independentTheologicalApproval": false,
+          "nativeFrenchApproval": false
+        }
+      ],
+      "questionPreciselyVerifiedWithOriginalChat": false,
+      "questionLevelClaimCertification": false,
+      "publicUsePermitted": false
+    },
+    {
+      "historicalId": "PROT-023",
+      "originalQuestion": "Does invoking saints deny Christ’s unique mediation?",
+      "status": "DIRECT_TOPIC_IN_DRAFT",
+      "observation": "APOL-035 presents saintly intercession and responds to the Westminster mediation objection.",
+      "candidateDraftSourceOwners": [
+        {
+          "canonicalId": "APOL-035",
+          "path": "data/learn/formation-canonical-sourcefirst-batch5-2026-10-09.v1.json",
+          "sections": 4,
+          "answerRoleEnPresent": true,
+          "answerRoleFrPresent": true,
+          "allSourceRefs": 11,
+          "publicationAllowed": false,
+          "claimContextCertified": false,
+          "independentTheologicalApproval": false,
+          "nativeFrenchApproval": false
+        }
+      ],
+      "questionPreciselyVerifiedWithOriginalChat": false,
+      "questionLevelClaimCertification": false,
+      "publicUsePermitted": false
+    },
+    {
+      "historicalId": "PROT-024",
+      "originalQuestion": "Are images, relics and purgatory later Catholic inventions?",
+      "status": "PARTIAL_TOPIC_IN_DRAFT",
+      "observation": "Three existing dossiers defend sacred images, relics, and Purgatory separately, but historic timing/origin assertions for the compound invention claim are not fully collated.",
+      "candidateDraftSourceOwners": [
+        {
+          "canonicalId": "APOL-036",
+          "path": "data/learn/formation-canonical-sourcefirst-batch5-2026-10-09.v1.json",
+          "sections": 4,
+          "answerRoleEnPresent": true,
+          "answerRoleFrPresent": true,
+          "allSourceRefs": 12,
+          "publicationAllowed": false,
+          "claimContextCertified": false,
+          "independentTheologicalApproval": false,
+          "nativeFrenchApproval": false
+        },
+        {
+          "canonicalId": "APOL-037",
+          "path": "data/learn/formation-canonical-sourcefirst-batch5-2026-10-09.v1.json",
+          "sections": 4,
+          "answerRoleEnPresent": true,
+          "answerRoleFrPresent": true,
+          "allSourceRefs": 13,
+          "publicationAllowed": false,
+          "claimContextCertified": false,
+          "independentTheologicalApproval": false,
+          "nativeFrenchApproval": false
+        },
+        {
+          "canonicalId": "APOL-040",
+          "path": "data/learn/formation-canonical-sourcefirst-batch5-2026-10-09.v1.json",
+          "sections": 4,
+          "answerRoleEnPresent": true,
+          "answerRoleFrPresent": true,
+          "allSourceRefs": 11,
+          "publicationAllowed": false,
+          "claimContextCertified": false,
+          "independentTheologicalApproval": false,
+          "nativeFrenchApproval": false
+        }
+      ],
+      "questionPreciselyVerifiedWithOriginalChat": false,
+      "questionLevelClaimCertification": false,
+      "publicUsePermitted": false
+    },
+    {
+      "historicalId": "PROT-025",
+      "originalQuestion": "What are indulgences actually supposed to forgive?",
+      "status": "NO_DEDICATED_ANSWER",
+      "observation": "APOL-040's four sections discuss Purgatory, but do not directly define what indulgences remit; requires the authentic indulgence norm/doctrine and pastoral cautions.",
+      "candidateDraftSourceOwners": [
+        {
+          "canonicalId": "APOL-040",
+          "path": "data/learn/formation-canonical-sourcefirst-batch5-2026-10-09.v1.json",
+          "sections": 4,
+          "answerRoleEnPresent": true,
+          "answerRoleFrPresent": true,
+          "allSourceRefs": 11,
+          "publicationAllowed": false,
+          "claimContextCertified": false,
+          "independentTheologicalApproval": false,
+          "nativeFrenchApproval": false
+        }
+      ],
+      "questionPreciselyVerifiedWithOriginalChat": false,
+      "questionLevelClaimCertification": false,
+      "publicUsePermitted": false
+    }
+  ]
+}

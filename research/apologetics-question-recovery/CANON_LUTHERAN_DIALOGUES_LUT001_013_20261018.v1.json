@@ -1,0 +1,507 @@
+{
+  "schema": "AO_CANON_LUTHERAN_DIALOGUE_BANK_V1_PART_A",
+  "date": "2026-10-18",
+  "range": "LUT-001–LUT-013",
+  "researchStatus": "BILINGUAL_SOURCE_ANCHORED_EDITORIAL_DRAFT_NOT_PUBLISHED",
+  "important": "Historical recovered excerpts not original chat byte-verified. Catholic and Lutheran sources are research pointers. Objections are editorial questions, not quotes. Nothing is authorized to appear in Canon UI.",
+  "questionCount": 13,
+  "questions": [
+    {
+      "id": "LUT-001",
+      "originalEnglishQuestion": "What counts as ‘Lutheran doctrine’?",
+      "originalQuestionTranscriptCertified": false,
+      "editorialFrenchQuestion": "Qu’entend-on par « doctrine luthérienne » ?",
+      "canonicalOwnerCandidates": [],
+      "topicOwnership": "READ_ONLY_ROUTING_TO_ORIGINAL_SOURCE_RECORD",
+      "answer": {
+        "en": "Historically, confessional Lutheran teaching is expressed in the Augsburg Confession, its Apology, Luther's catechisms and the Formula of Concord, collected in the Book of Concord. Individual Lutheran churches do not all bind themselves to these texts in precisely the same manner, so we should distinguish a particular denomination's current teaching from sixteenth-century confessional doctrine.",
+        "fr": "Historiquement, l’enseignement luthérien confessionnel s’exprime dans la Confession d’Augsbourg, son Apologie, les catéchismes de Luther et la Formule de Concorde, réunis dans le Livre de Concorde. Toutes les Églises luthériennes actuelles ne se réfèrent pas à ces écrits avec la même autorité ; il faut distinguer leur doctrine confessionnelle ancienne de leurs positions contemporaines."
+      },
+      "opposition": {
+        "en": "Does one official Lutheran church speak for every Lutheran?",
+        "fr": "Une seule Église officielle parle-t-elle au nom de tous les luthériens ?",
+        "status": "EDITORIAL_CHALLENGE_NOT_LITERAL_OPPONENT_QUOTATION"
+      },
+      "reply": {
+        "en": "No. The texts establish a historically significant doctrinal baseline, not a universally identical modern practice.",
+        "fr": "Non. Ces textes offrent un point de référence doctrinal historique, mais non une pratique contemporaine universellement identique."
+      },
+      "followupQuestionIds": [
+        "LUT-002",
+        "LUT-011"
+      ],
+      "sourcePointerIds": [
+        "ACIV",
+        "ACX",
+        "FCVII"
+      ],
+      "sourceManifest": "CANON_LUTHERAN_PRIMARY_SOURCE_MANIFEST_20261018.v1.json",
+      "additionalReview": "DENOMINATION_IDENTITY_NEEDS_CONTEXT",
+      "publicationAllowed": false,
+      "doctrinalReviewed": false,
+      "claimContextApproved": false,
+      "frenchNativeApproved": false,
+      "conversationCharacter": "MONSIEUR_LE_CHANOINE"
+    },
+    {
+      "id": "LUT-002",
+      "originalEnglishQuestion": "What is the central Lutheran doctrine of justification?",
+      "originalQuestionTranscriptCertified": false,
+      "editorialFrenchQuestion": "Quelle est la doctrine luthérienne centrale de la justification ?",
+      "canonicalOwnerCandidates": [
+        "APOL-038"
+      ],
+      "topicOwnership": "READ_ONLY_ROUTING_TO_ORIGINAL_SOURCE_RECORD",
+      "answer": {
+        "en": "The Augsburg Confession IV teaches that sinners cannot win justification by their own merits; they are justified for Christ's sake through faith, receiving forgiveness as God's gift. A careful Catholic comparison must distinguish the gratuitous beginning of salvation, which Catholics also affirm, from disputed accounts of justifying righteousness and interior renewal.",
+        "fr": "La Confession d’Augsbourg IV enseigne que le pécheur ne peut mériter sa justification par ses propres forces ; il est justifié à cause du Christ, par la foi, en recevant gratuitement le pardon divin. La comparaison catholique doit distinguer la gratuité du salut, également affirmée par l’Église, des divergences sur la justice justifiante et la transformation intérieure."
+      },
+      "opposition": {
+        "en": "Does that mean Catholics believe in saving themselves by meritorious works?",
+        "fr": "Cela signifie-t-il que les catholiques prétendent se sauver par leurs propres mérites ?",
+        "status": "EDITORIAL_CHALLENGE_NOT_LITERAL_OPPONENT_QUOTATION"
+      },
+      "reply": {
+        "en": "No; Catholic teaching also attributes the beginning of justification to divine grace. The controversy concerns the character of justification, not whether Christ is necessary.",
+        "fr": "Non ; la doctrine catholique attribue aussi l’origine de la justification à la grâce divine. Le débat porte sur sa nature, non sur la nécessité du Christ."
+      },
+      "followupQuestionIds": [
+        "LUT-003",
+        "LUT-011"
+      ],
+      "sourcePointerIds": [
+        "ACIV",
+        "JDDJ99"
+      ],
+      "sourceManifest": "CANON_LUTHERAN_PRIMARY_SOURCE_MANIFEST_20261018.v1.json",
+      "additionalReview": "PRIMARY_CONFESSION_REFERENCED",
+      "publicationAllowed": false,
+      "doctrinalReviewed": false,
+      "claimContextApproved": false,
+      "frenchNativeApproved": false,
+      "conversationCharacter": "MONSIEUR_LE_CHANOINE"
+    },
+    {
+      "id": "LUT-003",
+      "originalEnglishQuestion": "Does Lutheranism teach that good works are unnecessary or bad?",
+      "originalQuestionTranscriptCertified": false,
+      "editorialFrenchQuestion": "Le luthéranisme enseigne-t-il que les bonnes œuvres sont inutiles ou mauvaises ?",
+      "canonicalOwnerCandidates": [
+        "APOL-038"
+      ],
+      "topicOwnership": "READ_ONLY_ROUTING_TO_ORIGINAL_SOURCE_RECORD",
+      "answer": {
+        "en": "No. Augsburg VI says living faith is bound to bear good fruit and good works commanded by God are necessary as a Christian duty; it denies that such works purchase the initial forgiveness of sins. A Canon who presents Lutheranism as opposing moral obedience has misrepresented its own confession.",
+        "fr": "Non. La Confession d’Augsbourg VI enseigne que la foi vivante doit porter de bons fruits et que les œuvres commandées par Dieu sont nécessaires à la vie chrétienne ; elle refuse seulement d’en faire le prix du pardon initial. Présenter le luthéranisme comme hostile à l’obéissance morale serait contraire à sa propre confession."
+      },
+      "opposition": {
+        "en": "Then where is the Catholic disagreement?",
+        "fr": "Où se situe alors le désaccord catholique ?",
+        "status": "EDITORIAL_CHALLENGE_NOT_LITERAL_OPPONENT_QUOTATION"
+      },
+      "reply": {
+        "en": "Primarily in justification's theological account and the role of grace-enabled good works, not in a claim that holiness is optional.",
+        "fr": "Principalement dans l’explication de la justification et du rôle des œuvres accomplies sous la grâce, non dans l’idée que la sainteté serait facultative."
+      },
+      "followupQuestionIds": [
+        "LUT-004",
+        "LUT-011"
+      ],
+      "sourcePointerIds": [
+        "ACVI",
+        "ACXX",
+        "JDDJ99"
+      ],
+      "sourceManifest": "CANON_LUTHERAN_PRIMARY_SOURCE_MANIFEST_20261018.v1.json",
+      "additionalReview": "PRIMARY_CONFESSION_REFERENCED",
+      "publicationAllowed": false,
+      "doctrinalReviewed": false,
+      "claimContextApproved": false,
+      "frenchNativeApproved": false,
+      "conversationCharacter": "MONSIEUR_LE_CHANOINE"
+    },
+    {
+      "id": "LUT-004",
+      "originalEnglishQuestion": "Is ‘faith alone’ simply ‘say you believe and live however you want’?",
+      "originalQuestionTranscriptCertified": false,
+      "editorialFrenchQuestion": "La « foi seule » signifie-t-elle simplement « dire que l’on croit et vivre comme on veut » ?",
+      "canonicalOwnerCandidates": [
+        "APOL-038"
+      ],
+      "topicOwnership": "READ_ONLY_ROUTING_TO_ORIGINAL_SOURCE_RECORD",
+      "answer": {
+        "en": "No. Lutheran confessions reject that caricature: saving faith is not a licence to persist comfortably in vice, and Augsburg VI expects new obedience. The classical controversy is whether the believer's interior renewal and graced good works belong to the account of justification or are distinguished from it as fruits.",
+        "fr": "Non. Les confessions luthériennes rejettent cette caricature : la foi salvatrice n’autorise pas à demeurer tranquillement dans le vice, et la Confession d’Augsbourg VI attend une obéissance nouvelle. La controverse classique concerne le rapport entre la justification, le renouvellement intérieur et les œuvres produites par la grâce."
+      },
+      "opposition": {
+        "en": "Could good works still matter if they do not earn justification?",
+        "fr": "Les bonnes œuvres peuvent-elles compter sans mériter la justification ?",
+        "status": "EDITORIAL_CHALLENGE_NOT_LITERAL_OPPONENT_QUOTATION"
+      },
+      "reply": {
+        "en": "Yes. The confession insists that genuine faith bears the works God commands; it rejects works as the ground of God's forgiveness.",
+        "fr": "Oui. La confession insiste sur les œuvres que la vraie foi doit produire ; elle rejette ces œuvres comme fondement du pardon divin."
+      },
+      "followupQuestionIds": [
+        "LUT-005",
+        "LUT-011"
+      ],
+      "sourcePointerIds": [
+        "ACIV",
+        "ACVI",
+        "ACXX"
+      ],
+      "sourceManifest": "CANON_LUTHERAN_PRIMARY_SOURCE_MANIFEST_20261018.v1.json",
+      "additionalReview": "PRIMARY_CONFESSION_REFERENCED",
+      "publicationAllowed": false,
+      "doctrinalReviewed": false,
+      "claimContextApproved": false,
+      "frenchNativeApproved": false,
+      "conversationCharacter": "MONSIEUR_LE_CHANOINE"
+    },
+    {
+      "id": "LUT-005",
+      "originalEnglishQuestion": "Are Catholic and Lutheran justification doctrines still completely opposed?",
+      "originalQuestionTranscriptCertified": false,
+      "editorialFrenchQuestion": "Les doctrines catholique et luthérienne de la justification sont-elles encore complètement opposées ?",
+      "canonicalOwnerCandidates": [
+        "APOL-038"
+      ],
+      "topicOwnership": "READ_ONLY_ROUTING_TO_ORIGINAL_SOURCE_RECORD",
+      "answer": {
+        "en": "No. The Catholic Church and the Lutheran World Federation recorded a consensus in basic truths of justification in 1999. That is a significant official clarification, not a claim that every historic formula has become identical. The Catholic 1998 response and the 1999 common statement distinguish what the consensus establishes from remaining differences.",
+        "fr": "Non. L’Église catholique et la Fédération luthérienne mondiale ont reconnu en 1999 un consensus sur des vérités fondamentales de la justification. Cette clarification importante ne signifie pas que toutes les formulations anciennes soient devenues identiques. La réponse catholique de 1998 et la déclaration commune de 1999 distinguent les accords des divergences persistantes."
+      },
+      "opposition": {
+        "en": "Did the sixteenth-century condemnations simply vanish?",
+        "fr": "Les condamnations du XVIe siècle ont-elles simplement disparu ?",
+        "status": "EDITORIAL_CHALLENGE_NOT_LITERAL_OPPONENT_QUOTATION"
+      },
+      "reply": {
+        "en": "The 1999 statement specifies that those condemnations do not apply to the respective teachings as presented in that agreement. It neither abolishes their historical record nor settles all other doctrinal disputes.",
+        "fr": "La déclaration de 1999 précise que ces condamnations ne visent pas les enseignements respectifs tels qu’ils y sont exposés. Elle n’efface ni leur histoire ni les autres divergences doctrinales."
+      },
+      "followupQuestionIds": [
+        "LUT-006",
+        "LUT-011"
+      ],
+      "sourcePointerIds": [
+        "JDDJ98",
+        "JDDJ99",
+        "ACIV"
+      ],
+      "sourceManifest": "CANON_LUTHERAN_PRIMARY_SOURCE_MANIFEST_20261018.v1.json",
+      "additionalReview": "CATHOLIC_LUTHERAN_DIALOGUE_DISTINCTION_REQUIRED",
+      "publicationAllowed": false,
+      "doctrinalReviewed": false,
+      "claimContextApproved": false,
+      "frenchNativeApproved": false,
+      "conversationCharacter": "MONSIEUR_LE_CHANOINE"
+    },
+    {
+      "id": "LUT-006",
+      "originalEnglishQuestion": "Did the Joint Declaration abolish every Catholic–Lutheran difference on justification?",
+      "originalQuestionTranscriptCertified": false,
+      "editorialFrenchQuestion": "La Déclaration commune a-t-elle aboli toute divergence sur la justification ?",
+      "canonicalOwnerCandidates": [
+        "APOL-038"
+      ],
+      "topicOwnership": "READ_ONLY_ROUTING_TO_ORIGINAL_SOURCE_RECORD",
+      "answer": {
+        "en": "No. Its 1999 common statement says a consensus in basic truths exists, while continued dialogue is needed on remaining questions and full communion. One must not confuse the 1998 Catholic reservations with the subsequently adopted common statement and annex, nor claim the final agreement rendered sacramental or ecclesial differences irrelevant.",
+        "fr": "Non. La déclaration commune de 1999 constate un consensus sur des vérités fondamentales, tout en demandant la poursuite du dialogue sur les questions ouvertes et la pleine communion. Il ne faut ni confondre les réserves catholiques de 1998 avec la déclaration et son annexe ultérieures, ni en déduire que les divergences sacramentelles ou ecclésiologiques sont devenues sans importance."
+      },
+      "opposition": {
+        "en": "Does agreement on basic truths mean no disagreements survive?",
+        "fr": "Un consensus sur l’essentiel signifie-t-il qu’aucune divergence ne subsiste ?",
+        "status": "EDITORIAL_CHALLENGE_NOT_LITERAL_OPPONENT_QUOTATION"
+      },
+      "reply": {
+        "en": "No; it bounds how particular condemnations apply to the presented doctrines and explicitly calls for further theological work.",
+        "fr": "Non ; il précise à quels enseignements les condamnations s’appliquent et appelle expressément à poursuivre le travail théologique."
+      },
+      "followupQuestionIds": [
+        "LUT-007",
+        "LUT-011"
+      ],
+      "sourcePointerIds": [
+        "JDDJ98",
+        "JDDJ99"
+      ],
+      "sourceManifest": "CANON_LUTHERAN_PRIMARY_SOURCE_MANIFEST_20261018.v1.json",
+      "additionalReview": "MUST_CONSULT_ANNEX_AND_FINAL_COMMON_STATEMENT",
+      "publicationAllowed": false,
+      "doctrinalReviewed": false,
+      "claimContextApproved": false,
+      "frenchNativeApproved": false,
+      "conversationCharacter": "MONSIEUR_LE_CHANOINE"
+    },
+    {
+      "id": "LUT-007",
+      "originalEnglishQuestion": "What is the remaining justification difference?",
+      "originalQuestionTranscriptCertified": false,
+      "editorialFrenchQuestion": "Quelle différence demeure dans la doctrine de la justification ?",
+      "canonicalOwnerCandidates": [
+        "APOL-038"
+      ],
+      "topicOwnership": "READ_ONLY_ROUTING_TO_ORIGINAL_SOURCE_RECORD",
+      "answer": {
+        "en": "An important continuing issue concerns how to articulate the justified Christian as simultaneously righteous and still affected by sin, the role of interior transformation, and the relation between faith, grace and renewed moral life. The 1998 Catholic response identifies such questions; the 1999 common statement and annex clarify the shared core without supplying a licence to ignore the remaining distinctions.",
+        "fr": "Une question durable concerne la manière de parler du chrétien justifié, à la fois déclaré juste et encore marqué par le péché, ainsi que du renouvellement intérieur et du rapport entre foi, grâce et vie morale. La réponse catholique de 1998 relève ces difficultés ; la déclaration commune et son annexe de 1999 explicitent l’accord essentiel sans autoriser à négliger les distinctions restantes."
+      },
+      "opposition": {
+        "en": "Is 'simul iustus et peccator' just a meaningless disagreement over words?",
+        "fr": "« Simul iustus et peccator » est-il un simple désaccord verbal ?",
+        "status": "EDITORIAL_CHALLENGE_NOT_LITERAL_OPPONENT_QUOTATION"
+      },
+      "reply": {
+        "en": "No. It is bound up with real theological accounts of original sin, remaining concupiscence and transforming grace; explain the terms before judging equivalence.",
+        "fr": "Non. La formule touche réellement au péché originel, à la concupiscence et à l’action transformatrice de la grâce ; il faut préciser les termes avant de juger leur équivalence."
+      },
+      "followupQuestionIds": [
+        "LUT-008",
+        "LUT-011"
+      ],
+      "sourcePointerIds": [
+        "JDDJ98",
+        "JDDJ99"
+      ],
+      "sourceManifest": "CANON_LUTHERAN_PRIMARY_SOURCE_MANIFEST_20261018.v1.json",
+      "additionalReview": "REQUIRES_JDDJ_ANNEX_AND_TRENT_LINE_BY_LINE",
+      "publicationAllowed": false,
+      "doctrinalReviewed": false,
+      "claimContextApproved": false,
+      "frenchNativeApproved": false,
+      "conversationCharacter": "MONSIEUR_LE_CHANOINE"
+    },
+    {
+      "id": "LUT-008",
+      "originalEnglishQuestion": "Does Lutheranism believe Baptism actually does something?",
+      "originalQuestionTranscriptCertified": false,
+      "editorialFrenchQuestion": "Le luthéranisme enseigne-t-il que le baptême produit réellement quelque chose ?",
+      "canonicalOwnerCandidates": [
+        "APOL-024"
+      ],
+      "topicOwnership": "READ_ONLY_ROUTING_TO_ORIGINAL_SOURCE_RECORD",
+      "answer": {
+        "en": "Yes. Augsburg IX says that God's grace is offered through Baptism, which is not merely an outward declaration of membership. Lutheran theology therefore differs sharply from forms of Christian thought that interpret Baptism as a wholly ineffectual symbol. Catholic and Lutheran accounts still deserve comparison on their own terms.",
+        "fr": "Oui. La Confession d’Augsbourg IX affirme que la grâce de Dieu est offerte par le baptême : celui-ci n’est pas une simple déclaration extérieure d’appartenance. Le luthéranisme se distingue donc nettement des positions qui ne voient dans le baptême qu’un symbole sans efficacité. Les différences qui subsistent avec la doctrine catholique doivent être examinées précisément."
+      },
+      "opposition": {
+        "en": "Does agreeing that Baptism conveys grace settle every sacramental question?",
+        "fr": "L’accord sur la grâce baptismale règle-t-il toutes les questions sacramentelles ?",
+        "status": "EDITORIAL_CHALLENGE_NOT_LITERAL_OPPONENT_QUOTATION"
+      },
+      "reply": {
+        "en": "No. Church membership, sacramental theology and other differences remain, even where both confess Baptism as efficacious.",
+        "fr": "Non. L’appartenance ecclésiale, la théologie sacramentelle et d’autres différences subsistent, même lorsque les deux confessions reconnaissent l’efficacité du baptême."
+      },
+      "followupQuestionIds": [
+        "LUT-009",
+        "LUT-013"
+      ],
+      "sourcePointerIds": [
+        "ACIX",
+        "ACXIII"
+      ],
+      "sourceManifest": "CANON_LUTHERAN_PRIMARY_SOURCE_MANIFEST_20261018.v1.json",
+      "additionalReview": "PRIMARY_CONFESSION_REFERENCED",
+      "publicationAllowed": false,
+      "doctrinalReviewed": false,
+      "claimContextApproved": false,
+      "frenchNativeApproved": false,
+      "conversationCharacter": "MONSIEUR_LE_CHANOINE"
+    },
+    {
+      "id": "LUT-009",
+      "originalEnglishQuestion": "Do Lutherans baptize infants?",
+      "originalQuestionTranscriptCertified": false,
+      "editorialFrenchQuestion": "Les luthériens baptisent-ils les petits enfants ?",
+      "canonicalOwnerCandidates": [
+        "APOL-024"
+      ],
+      "topicOwnership": "READ_ONLY_ROUTING_TO_ORIGINAL_SOURCE_RECORD",
+      "answer": {
+        "en": "Yes. Augsburg IX expressly teaches that infants are to be baptized and rejects Anabaptist rejection of infant Baptism. That is why 'Protestants do not baptize babies' is historically false. Lutheran infant Baptism should not be conflated with Baptist teaching, although Lutheran and Catholic theological accounts still differ.",
+        "fr": "Oui. La Confession d’Augsbourg IX enseigne explicitement qu’il faut baptiser les petits enfants et rejette le refus anabaptiste. Dire que « les protestants ne baptisent pas les bébés » est donc historiquement faux. Il ne faut pas confondre baptême luthérien et doctrine baptiste, même si des divergences subsistent avec la doctrine catholique."
+      },
+      "opposition": {
+        "en": "Could it be nothing more than an infant dedication ceremony?",
+        "fr": "Ne s’agit-il pas seulement d’une présentation de l’enfant ?",
+        "status": "EDITORIAL_CHALLENGE_NOT_LITERAL_OPPONENT_QUOTATION"
+      },
+      "reply": {
+        "en": "No. The Lutheran confession attributes the offer of grace to Baptism itself; that is stronger than mere dedication.",
+        "fr": "Non. La confession luthérienne affirme que le baptême offre la grâce elle-même ; c’est bien davantage qu’une simple présentation."
+      },
+      "followupQuestionIds": [
+        "LUT-010",
+        "LUT-013"
+      ],
+      "sourcePointerIds": [
+        "ACIX"
+      ],
+      "sourceManifest": "CANON_LUTHERAN_PRIMARY_SOURCE_MANIFEST_20261018.v1.json",
+      "additionalReview": "PRIMARY_CONFESSION_REFERENCED",
+      "publicationAllowed": false,
+      "doctrinalReviewed": false,
+      "claimContextApproved": false,
+      "frenchNativeApproved": false,
+      "conversationCharacter": "MONSIEUR_LE_CHANOINE"
+    },
+    {
+      "id": "LUT-010",
+      "originalEnglishQuestion": "Is Lutheran Eucharistic theology symbolic?",
+      "originalQuestionTranscriptCertified": false,
+      "editorialFrenchQuestion": "La théologie eucharistique luthérienne est-elle symbolique ?",
+      "canonicalOwnerCandidates": [
+        "APOL-030"
+      ],
+      "topicOwnership": "READ_ONLY_ROUTING_TO_ORIGINAL_SOURCE_RECORD",
+      "answer": {
+        "en": "Not merely symbolic. Augsburg X confesses that Christ's Body and Blood are truly present and distributed in the Lord's Supper. The Formula of Concord deliberately rejects an account in which the bread and wine are only signs of an absent Body and Blood. A serious Catholic response must begin by acknowledging this substantial Lutheran claim.",
+        "fr": "Elle n’est pas simplement symbolique. La Confession d’Augsbourg X affirme que le Corps et le Sang du Christ sont réellement présents et distribués dans la Cène. La Formule de Concorde rejette expressément l’idée que pain et vin ne soient que les signes d’un Corps et d’un Sang absents. Une réponse catholique sérieuse doit d’abord reconnaître cette affirmation luthérienne substantielle."
+      },
+      "opposition": {
+        "en": "So does a Lutheran merely remember Christ while taking bread?",
+        "fr": "Le luthérien ne fait-il donc que se souvenir du Christ en mangeant le pain ?",
+        "status": "EDITORIAL_CHALLENGE_NOT_LITERAL_OPPONENT_QUOTATION"
+      },
+      "reply": {
+        "en": "No. Such a description contradicts the confessional statement of the real presence.",
+        "fr": "Non. Une telle description contredit la confession luthérienne de la présence réelle."
+      },
+      "followupQuestionIds": [
+        "LUT-011",
+        "LUT-013"
+      ],
+      "sourcePointerIds": [
+        "ACX",
+        "FCVII"
+      ],
+      "sourceManifest": "CANON_LUTHERAN_PRIMARY_SOURCE_MANIFEST_20261018.v1.json",
+      "additionalReview": "PRIMARY_CONFESSION_REFERENCED",
+      "publicationAllowed": false,
+      "doctrinalReviewed": false,
+      "claimContextApproved": false,
+      "frenchNativeApproved": false,
+      "conversationCharacter": "MONSIEUR_LE_CHANOINE"
+    },
+    {
+      "id": "LUT-011",
+      "originalEnglishQuestion": "Is Lutheran Real Presence the same as Catholic transubstantiation?",
+      "originalQuestionTranscriptCertified": false,
+      "editorialFrenchQuestion": "La Présence réelle luthérienne est-elle identique à la transsubstantiation catholique ?",
+      "canonicalOwnerCandidates": [
+        "APOL-030"
+      ],
+      "topicOwnership": "READ_ONLY_ROUTING_TO_ORIGINAL_SOURCE_RECORD",
+      "answer": {
+        "en": "No. Both affirm Christ's real presence, but the Catholic dogma of transubstantiation teaches the conversion of the whole substance of bread and wine into Christ's Body and Blood, while their appearances remain. The Lutheran Formula of Concord instead teaches sacramental union and explicitly declines transubstantiation. Calling this simply 'consubstantiation' can obscure the Lutheran source's own terminology.",
+        "fr": "Non. Les deux traditions affirment la Présence réelle, mais la transsubstantiation catholique signifie la conversion de toute la substance du pain et du vin au Corps et au Sang du Christ, les apparences demeurant. La Formule de Concorde luthérienne parle d’union sacramentelle et rejette expressément la transsubstantiation. Le mot « consubstantiation » peut fausser le langage de la confession luthérienne elle-même."
+      },
+      "opposition": {
+        "en": "Does denying transubstantiation mean denying every kind of real presence?",
+        "fr": "Refuser la transsubstantiation revient-il à nier toute présence réelle ?",
+        "status": "EDITORIAL_CHALLENGE_NOT_LITERAL_OPPONENT_QUOTATION"
+      },
+      "reply": {
+        "en": "No. The dispute concerns the manner of Eucharistic presence and what happens to the bread and wine, not simply whether Christ is present.",
+        "fr": "Non. Le débat porte sur le mode de la présence eucharistique et le devenir du pain et du vin, non sur la seule question de savoir si le Christ est présent."
+      },
+      "followupQuestionIds": [
+        "LUT-012",
+        "LUT-013"
+      ],
+      "sourcePointerIds": [
+        "FCVII",
+        "CCC1376"
+      ],
+      "sourceManifest": "CANON_LUTHERAN_PRIMARY_SOURCE_MANIFEST_20261018.v1.json",
+      "additionalReview": "LUTHERAN_CATHOLIC_SACRAMENTAL_DISTINCTION",
+      "publicationAllowed": false,
+      "doctrinalReviewed": false,
+      "claimContextApproved": false,
+      "frenchNativeApproved": false,
+      "conversationCharacter": "MONSIEUR_LE_CHANOINE"
+    },
+    {
+      "id": "LUT-012",
+      "originalEnglishQuestion": "Is the Lutheran Eucharist closer to Zwingli or Catholicism?",
+      "originalQuestionTranscriptCertified": false,
+      "editorialFrenchQuestion": "La Cène luthérienne est-elle plus proche de Zwingli ou du catholicisme ?",
+      "canonicalOwnerCandidates": [
+        "APOL-030"
+      ],
+      "topicOwnership": "READ_ONLY_ROUTING_TO_ORIGINAL_SOURCE_RECORD",
+      "answer": {
+        "en": "On the issue of bodily Real Presence, historic confessional Lutheranism rejects a merely memorialist reading and thus shares an important affirmation with Catholicism. Yet its account of sacramental union is not Catholic transubstantiation, and its understanding of Eucharistic sacrifice differs from the Catholic Mass. So 'closer' depends on the precise question.",
+        "fr": "Au sujet de la Présence réelle corporelle, le luthéranisme confessionnel rejette la lecture purement mémorialiste et partage ainsi un élément important avec le catholicisme. Toutefois, l’union sacramentelle qu’il confesse n’est pas la transsubstantiation catholique et sa conception du sacrifice eucharistique diffère de celle de la Messe. Le mot « proche » dépend donc de la question étudiée."
+      },
+      "opposition": {
+        "en": "Then may we call the two Eucharistic doctrines identical?",
+        "fr": "Peut-on alors dire que les deux doctrines eucharistiques sont identiques ?",
+        "status": "EDITORIAL_CHALLENGE_NOT_LITERAL_OPPONENT_QUOTATION"
+      },
+      "reply": {
+        "en": "No. Agreement against a purely symbolic interpretation does not settle the transformation of the elements or sacrificial theology.",
+        "fr": "Non. L’accord contre une interprétation purement symbolique ne règle ni le devenir des espèces ni la théologie du sacrifice."
+      },
+      "followupQuestionIds": [
+        "LUT-013",
+        "LUT-013"
+      ],
+      "sourcePointerIds": [
+        "FCVII",
+        "CCC1376",
+        "APXXIV"
+      ],
+      "sourceManifest": "CANON_LUTHERAN_PRIMARY_SOURCE_MANIFEST_20261018.v1.json",
+      "additionalReview": "NEEDS_DIRECT_ZWINGLI_PRIMARY_COMPARISON",
+      "publicationAllowed": false,
+      "doctrinalReviewed": false,
+      "claimContextApproved": false,
+      "frenchNativeApproved": false,
+      "conversationCharacter": "MONSIEUR_LE_CHANOINE"
+    },
+    {
+      "id": "LUT-013",
+      "originalEnglishQuestion": "Did Lutherans abolish confession?",
+      "originalQuestionTranscriptCertified": false,
+      "editorialFrenchQuestion": "Les luthériens ont-ils aboli la confession ?",
+      "canonicalOwnerCandidates": [
+        "APOL-026"
+      ],
+      "topicOwnership": "READ_ONLY_ROUTING_TO_ORIGINAL_SOURCE_RECORD",
+      "answer": {
+        "en": "No. Augsburg XI and XXV explicitly retain confession and private absolution; the latter strongly values absolution as a proclamation of divine forgiveness. The confession rejects the necessity of enumerating every sin in the Catholic manner. Present-day frequency of private confession varies among Lutheran churches and cannot be inferred solely from sixteenth-century texts.",
+        "fr": "Non. La Confession d’Augsbourg XI et XXV conserve explicitement la confession et l’absolution privée, et attache une grande importance à l’annonce du pardon divin. Elle refuse toutefois la nécessité de dénombrer tous les péchés selon l’obligation catholique. La fréquence actuelle de la confession privée varie selon les Églises luthériennes et ne se déduit pas des seuls textes du XVIe siècle."
+      },
+      "opposition": {
+        "en": "Does retaining absolution imply full Catholic agreement about Penance?",
+        "fr": "Le maintien de l’absolution signifie-t-il un accord complet sur la pénitence catholique ?",
+        "status": "EDITORIAL_CHALLENGE_NOT_LITERAL_OPPONENT_QUOTATION"
+      },
+      "reply": {
+        "en": "No. The Lutheran treatment of contrition, enumeration and the theological role of faith must be compared carefully with the Catholic sacrament.",
+        "fr": "Non. Il faut comparer précisément la contrition, l’énumération des péchés et le rôle de la foi dans la doctrine luthérienne avec le sacrement catholique."
+      },
+      "followupQuestionIds": [
+        "LUT-014",
+        "LUT-015"
+      ],
+      "sourcePointerIds": [
+        "ACXI",
+        "ACXXV",
+        "APXI"
+      ],
+      "sourceManifest": "CANON_LUTHERAN_PRIMARY_SOURCE_MANIFEST_20261018.v1.json",
+      "additionalReview": "HISTORIC_AND_CURRENT_LUTHERAN_PRACTICE_DISTINCTION",
+      "publicationAllowed": false,
+      "doctrinalReviewed": false,
+      "claimContextApproved": false,
+      "frenchNativeApproved": false,
+      "conversationCharacter": "MONSIEUR_LE_CHANOINE"
+    }
+  ]
+}
