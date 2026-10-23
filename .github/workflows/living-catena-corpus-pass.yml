@@ -12,6 +12,8 @@ on:
       - scripts/scripture-catena-schaff-seed-to-scan-crosswalk.mjs
       - scripts/scripture-catena-chrysostom-original-question-replies.mjs
       - scripts/scripture-catena-chrysostom-speech-layers.mjs
+      - scripts/scripture-catena-chrysostom-catena-overlap.mjs
+      - tests/scripture-catena-chrysostom-catena-overlap.mjs
       - tests/scripture-catena-chrysostom-speech-layers.mjs
       - tests/scripture-catena-chrysostom-original-question-replies.mjs
       - tests/scripture-catena-schaff-seed-to-scan-crosswalk.mjs
@@ -34,6 +36,8 @@ on:
       - scripts/scripture-catena-schaff-seed-to-scan-crosswalk.mjs
       - scripts/scripture-catena-chrysostom-original-question-replies.mjs
       - scripts/scripture-catena-chrysostom-speech-layers.mjs
+      - scripts/scripture-catena-chrysostom-catena-overlap.mjs
+      - tests/scripture-catena-chrysostom-catena-overlap.mjs
       - tests/scripture-catena-chrysostom-speech-layers.mjs
       - tests/scripture-catena-chrysostom-original-question-replies.mjs
       - tests/scripture-catena-schaff-seed-to-scan-crosswalk.mjs
@@ -139,6 +143,10 @@ jobs:
         run: node scripts/scripture-catena-chrysostom-speech-layers.mjs
       - name: Verify every source quote offset, original digest and blocked Father attribution
         run: node tests/scripture-catena-chrysostom-speech-layers.mjs
+      - name: Compare the 184 historical Chrysostom research contexts with the frozen Matthew Catena
+        run: node scripts/scripture-catena-chrysostom-catena-overlap.mjs
+      - name: Verify every literal overlap phrase against original text of both historic English editions
+        run: node tests/scripture-catena-chrysostom-catena-overlap.mjs
       - name: Attach both full original scan OCR texts and candidate indexes
         if: success()
         uses: actions/upload-artifact@v4
@@ -150,5 +158,6 @@ jobs:
             dist/schaff-context-pilot/
             dist/schaff-chrysostom-replies/
             dist/schaff-chrysostom-speech-layers/
+            dist/schaff-chrysostom-catena-overlap/
           if-no-files-found: error
           retention-days: 14
