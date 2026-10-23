@@ -11,7 +11,9 @@
     "shortExcerptsLocated": 8,
     "alreadyMappedPilotChapters": 4,
     "chaptersFullyCertified": 0,
-    "translatedSourceClaimsApproved": 0
+    "translatedSourceClaimsApproved": 0,
+    "shortExcerptsWithClaimLevelLimitationsRecorded": 8,
+    "newlyPromotedModelWitnesses": 0
   },
   "documents": [
     {
@@ -165,7 +167,27 @@
         "sourceWebPageLine": 38,
         "status": "SHORT_EXCERPT_SPOTTED_ON_VATICAN_PAGE_NOT_YET_NODE_PROMOTED",
         "supportScope": "Papal duty to safeguard the received deposit of faith",
-        "interpretationCaveat": "Preamble duty is not, alone, detailed support for every argument about Modernist positions"
+        "interpretationCaveat": "Preamble duty is not, alone, detailed support for every argument about Modernist positions",
+        "claimTriage": {
+          "degree": "INSUFFICIENT_FOR_OPENING_ANSWER",
+          "established": [
+            "Papal obligation to guard the deposit of faith"
+          ],
+          "notEstablished": [
+            "Modernism's integrated philosophical components",
+            "Reduction of faith to sentiment",
+            "Specific claim that it is a synthesis of heresies"
+          ],
+          "additionalSourceLoci": [
+            "Pascendi sections on the Modernist philosopher, believer, theologian, historical critic, and concluding synthesis"
+          ],
+          "reviewClass": "NEEDS_SOURCE_DEPENDENT_CONTEXT",
+          "editorialOpeningVerdict": "HOLD_FULL_ANSWER_NOT_ATTESTED_BY_THIS_SINGLE_EXCERPT",
+          "documentExcerptVerbatimPresence": "LOCATED_ON_OFFICIAL_ORIGINAL_LANGUAGE_VATICAN_PAGE",
+          "translationCheckedAgainstOriginal": false,
+          "eligibleForAutomatedModelPromotion": false,
+          "publicationApproved": false
+        }
       },
       "existingPilotNode": null
     },
@@ -287,7 +309,23 @@
         "sourceWebPageLine": null,
         "status": "EXISTING_DOCUMENT_ANCHORS_NOT_YET_REUSED_FOR_THIS_CHAPTER",
         "supportScope": "Existing mapped passage on prayer addresses priests; remaining chapters need separate sections",
-        "interpretationCaveat": "First-person anniversary memoir vs quoted authorities requires distinct review"
+        "interpretationCaveat": "First-person anniversary memoir vs quoted authorities requires distinct review",
+        "claimTriage": {
+          "degree": "EXISTING_DOCUMENT_WITNESS_ONLY",
+          "established": [],
+          "notEstablished": [
+            "This specific candidate chapter has no new node-level witness mapping in the discovery batch"
+          ],
+          "additionalSourceLoci": [
+            "Haerent animo (4 August 1908), §§25–28: conscience and the sacrament of Penance"
+          ],
+          "reviewClass": "NEEDS_NODE_LEVEL_ORIGINAL_PASSAGES",
+          "editorialOpeningVerdict": "HOLD_FULL_ANSWER_NO_NEW_WITNESS",
+          "documentExcerptVerbatimPresence": "NOT_APPLICABLE_EXISTING_DOCUMENT_ANNEX",
+          "translationCheckedAgainstOriginal": false,
+          "eligibleForAutomatedModelPromotion": false,
+          "publicationApproved": false
+        }
       },
       "existingPilotNode": "SPX-PILOT-09"
     },
@@ -401,7 +439,26 @@
         "sourceWebPageLine": 103,
         "status": "SHORT_EXCERPT_SPOTTED_ON_VATICAN_PAGE_NOT_YET_NODE_PROMOTED",
         "supportScope": "Lay helpers in catechesis in parochial confraternities",
-        "interpretationCaveat": "The rule is situated in historical parish structures; not automatic present-day licensing"
+        "interpretationCaveat": "The rule is situated in historical parish structures; not automatic present-day licensing",
+        "claimTriage": {
+          "degree": "PARTIAL_OPENING_SUPPORT",
+          "established": [
+            "The 1905 prescription envisages lay helpers teaching catechism alongside parish clergy"
+          ],
+          "notEstablished": [
+            "Current safeguarding and canonical requirements",
+            "The full distinction between volunteer catechist and ordained minister"
+          ],
+          "additionalSourceLoci": [
+            "Norm IV with the surrounding prescription on parish confraternities; current law must be separate"
+          ],
+          "reviewClass": "HISTORICAL_NORMS_NOT_PRESENT_DAY_RULES",
+          "editorialOpeningVerdict": "HOLD_FULL_ANSWER_NOT_ATTESTED_BY_THIS_SINGLE_EXCERPT",
+          "documentExcerptVerbatimPresence": "LOCATED_ON_OFFICIAL_ORIGINAL_LANGUAGE_VATICAN_PAGE",
+          "translationCheckedAgainstOriginal": false,
+          "eligibleForAutomatedModelPromotion": false,
+          "publicationApproved": false
+        }
       },
       "existingPilotNode": null
     },
@@ -482,7 +539,23 @@
         "sourceWebPageLine": null,
         "status": "EXISTING_DOCUMENT_ANCHORS_NOT_YET_REUSED_FOR_THIS_CHAPTER",
         "supportScope": "Existing witnesses include the motto and §8; further node claims need individual check",
-        "interpretationCaveat": "Earlier third-node source-range correction to §8 still remains open"
+        "interpretationCaveat": "Earlier third-node source-range correction to §8 still remains open",
+        "claimTriage": {
+          "degree": "EXISTING_DOCUMENT_WITNESS_ONLY",
+          "established": [],
+          "notEstablished": [
+            "This specific candidate chapter has no new node-level witness mapping in the discovery batch"
+          ],
+          "additionalSourceLoci": [
+            "E supremi §§4 and 8–9"
+          ],
+          "reviewClass": "NEEDS_NODE_LEVEL_ORIGINAL_PASSAGES",
+          "editorialOpeningVerdict": "HOLD_FULL_ANSWER_NO_NEW_WITNESS",
+          "documentExcerptVerbatimPresence": "NOT_APPLICABLE_EXISTING_DOCUMENT_ANNEX",
+          "translationCheckedAgainstOriginal": false,
+          "eligibleForAutomatedModelPromotion": false,
+          "publicationApproved": false
+        }
       },
       "existingPilotNode": "SPX-PILOT-01"
     },
@@ -552,7 +625,27 @@
         "sourceWebPageLine": 46,
         "status": "SHORT_EXCERPT_SPOTTED_ON_VATICAN_PAGE_NOT_YET_NODE_PROMOTED",
         "supportScope": "Selection of suitable candidates for priestly ordination",
-        "interpretationCaveat": "Not a modern canonical ruling on an individual applicant"
+        "interpretationCaveat": "Not a modern canonical ruling on an individual applicant",
+        "claimTriage": {
+          "degree": "PARTIAL_OPENING_SUPPORT",
+          "established": [
+            "Suitable candidates, rather than all aspirants, should be selected for priestly ordination"
+          ],
+          "notEstablished": [
+            "Full justification for refusal",
+            "Bishops' entire process of discernment",
+            "Assessment of any current individual vocation"
+          ],
+          "additionalSourceLoci": [
+            "Paragraphs on aspiration, diocesan need, candidate suitability, humility and discipline"
+          ],
+          "reviewClass": "VOCATION_INDIVIDUAL_JUDGMENT_NOT_PERMITTED",
+          "editorialOpeningVerdict": "HOLD_FULL_ANSWER_NOT_ATTESTED_BY_THIS_SINGLE_EXCERPT",
+          "documentExcerptVerbatimPresence": "LOCATED_ON_OFFICIAL_ORIGINAL_LANGUAGE_VATICAN_PAGE",
+          "translationCheckedAgainstOriginal": false,
+          "eligibleForAutomatedModelPromotion": false,
+          "publicationApproved": false
+        }
       },
       "existingPilotNode": null
     },
@@ -608,7 +701,23 @@
         "sourceWebPageLine": null,
         "status": "EXISTING_DOCUMENT_ANCHORS_NOT_YET_REUSED_FOR_THIS_CHAPTER",
         "supportScope": "Earlier §3 witnesses do not support the new §§20–22 episcopal scope without separate checking",
-        "interpretationCaveat": "Do not recycle charity excerpt as proof of specific episcopal governance"
+        "interpretationCaveat": "Do not recycle charity excerpt as proof of specific episcopal governance",
+        "claimTriage": {
+          "degree": "EXISTING_DOCUMENT_WITNESS_ONLY",
+          "established": [],
+          "notEstablished": [
+            "This specific candidate chapter has no new node-level witness mapping in the discovery batch"
+          ],
+          "additionalSourceLoci": [
+            "Il fermo proposito §§20–22"
+          ],
+          "reviewClass": "NEEDS_NODE_LEVEL_ORIGINAL_PASSAGES",
+          "editorialOpeningVerdict": "HOLD_FULL_ANSWER_NO_NEW_WITNESS",
+          "documentExcerptVerbatimPresence": "NOT_APPLICABLE_EXISTING_DOCUMENT_ANNEX",
+          "translationCheckedAgainstOriginal": false,
+          "eligibleForAutomatedModelPromotion": false,
+          "publicationApproved": false
+        }
       },
       "existingPilotNode": "SPX-029"
     },
@@ -663,7 +772,27 @@
         "sourceWebPageLine": 58,
         "status": "SHORT_EXCERPT_SPOTTED_ON_VATICAN_PAGE_NOT_YET_NODE_PROMOTED",
         "supportScope": "Two required qualities of liturgical sacred music",
-        "interpretationCaveat": "The source also discusses universality; one fragment cannot certify a full music policy"
+        "interpretationCaveat": "The source also discusses universality; one fragment cannot certify a full music policy",
+        "claimTriage": {
+          "degree": "PARTIAL_OPENING_SUPPORT",
+          "established": [
+            "Holiness and goodness of form are specified qualities of sacred music"
+          ],
+          "notEstablished": [
+            "Full universality requirement",
+            "Specific prohibition on theatrical practices",
+            "Complete normative music policy"
+          ],
+          "additionalSourceLoci": [
+            "Sacred-music instruction opening §§1–2; theatrical abuses in preamble"
+          ],
+          "reviewClass": "ADDITIONAL_LITURGICAL_SOURCE_CLAIMS_REQUIRED",
+          "editorialOpeningVerdict": "HOLD_FULL_ANSWER_NOT_ATTESTED_BY_THIS_SINGLE_EXCERPT",
+          "documentExcerptVerbatimPresence": "LOCATED_ON_OFFICIAL_ORIGINAL_LANGUAGE_VATICAN_PAGE",
+          "translationCheckedAgainstOriginal": false,
+          "eligibleForAutomatedModelPromotion": false,
+          "publicationApproved": false
+        }
       },
       "existingPilotNode": null
     },
@@ -709,7 +838,27 @@
         "sourceWebPageLine": 52,
         "status": "SHORT_EXCERPT_SPOTTED_ON_VATICAN_PAGE_NOT_YET_NODE_PROMOTED",
         "supportScope": "Renewed weekly recitation of the whole Psalter",
-        "interpretationCaveat": "The full reform balances saints' offices and clergy's existing burdens"
+        "interpretationCaveat": "The full reform balances saints' offices and clergy's existing burdens",
+        "claimTriage": {
+          "degree": "PARTIAL_OPENING_SUPPORT",
+          "established": [
+            "A return to weekly recitation of the entire Psalter was sought"
+          ],
+          "notEstablished": [
+            "How multiplication of saints' offices displaced weekday/sunday psalmody",
+            "The balance between clerical workload and the weekly psalter",
+            "Limits on the application of Office obligations to laity"
+          ],
+          "additionalSourceLoci": [
+            "Preamble on new saints' offices and omitted psalms; 1911 reform's burden and new schedule"
+          ],
+          "reviewClass": "HISTORICAL_LITURGICAL_SCOPE",
+          "editorialOpeningVerdict": "HOLD_FULL_ANSWER_NOT_ATTESTED_BY_THIS_SINGLE_EXCERPT",
+          "documentExcerptVerbatimPresence": "LOCATED_ON_OFFICIAL_ORIGINAL_LANGUAGE_VATICAN_PAGE",
+          "translationCheckedAgainstOriginal": false,
+          "eligibleForAutomatedModelPromotion": false,
+          "publicationApproved": false
+        }
       },
       "existingPilotNode": null
     },
@@ -755,7 +904,27 @@
         "sourceWebPageLine": 51,
         "status": "SHORT_EXCERPT_SPOTTED_ON_VATICAN_PAGE_NOT_YET_NODE_PROMOTED",
         "supportScope": "The social/labour question is not merely economic",
-        "interpretationCaveat": "Case concerns German Catholic and mixed workers' associations; avoid generalizing conditional allowances"
+        "interpretationCaveat": "Case concerns German Catholic and mixed workers' associations; avoid generalizing conditional allowances",
+        "claimTriage": {
+          "degree": "PARTIAL_OPENING_SUPPORT",
+          "established": [
+            "Social questions about working arrangements and wages are not merely economic"
+          ],
+          "notEstablished": [
+            "The exact moral and religious claim without examining the citation of prior papal teaching",
+            "Conditions for Catholic participation in mixed trade unions",
+            "Wages of present-day particular workers"
+          ],
+          "additionalSourceLoci": [
+            "Paragraphs on Catholic social duties, moral/religious significance, German mixed associations and safeguards"
+          ],
+          "reviewClass": "QUOTED_EARLIER_AUTHORITY_AND_CONTEXT",
+          "editorialOpeningVerdict": "HOLD_FULL_ANSWER_NOT_ATTESTED_BY_THIS_SINGLE_EXCERPT",
+          "documentExcerptVerbatimPresence": "LOCATED_ON_OFFICIAL_ORIGINAL_LANGUAGE_VATICAN_PAGE",
+          "translationCheckedAgainstOriginal": false,
+          "eligibleForAutomatedModelPromotion": false,
+          "publicationApproved": false
+        }
       },
       "existingPilotNode": null
     },
@@ -801,7 +970,26 @@
         "sourceWebPageLine": 43,
         "status": "SHORT_EXCERPT_SPOTTED_ON_VATICAN_PAGE_NOT_YET_NODE_PROMOTED",
         "supportScope": "The saints' deeds are meant to be remembered and imitated",
-        "interpretationCaveat": "This passage invokes biblical authorities separately from Pius X's remarks"
+        "interpretationCaveat": "This passage invokes biblical authorities separately from Pius X's remarks",
+        "claimTriage": {
+          "degree": "PARTIAL_OPENING_SUPPORT",
+          "established": [
+            "The saints' deeds are to be remembered and imitated"
+          ],
+          "notEstablished": [
+            "Every detail of the comparison between Gregory, Anselm and St Charles Borromeo",
+            "Specific historical contextualization of each saint's reform"
+          ],
+          "additionalSourceLoci": [
+            "Opening commemoration argument and passages identifying the three exemplars and St Charles"
+          ],
+          "reviewClass": "DISTINGUISH_PAPAL_NARRATION_FROM_CITED_SCRIPTURE",
+          "editorialOpeningVerdict": "HOLD_FULL_ANSWER_NOT_ATTESTED_BY_THIS_SINGLE_EXCERPT",
+          "documentExcerptVerbatimPresence": "LOCATED_ON_OFFICIAL_ORIGINAL_LANGUAGE_VATICAN_PAGE",
+          "translationCheckedAgainstOriginal": false,
+          "eligibleForAutomatedModelPromotion": false,
+          "publicationApproved": false
+        }
       },
       "existingPilotNode": null
     },
@@ -847,7 +1035,23 @@
         "sourceWebPageLine": null,
         "status": "EXISTING_DOCUMENT_ANCHORS_NOT_YET_REUSED_FOR_THIS_CHAPTER",
         "supportScope": "Earlier §11–12 mapping does not cover opening §§1–5 on unauthorized devotional leadership",
-        "interpretationCaveat": "Mariavite case is historically particular; refusal of present-status judgements remains"
+        "interpretationCaveat": "Mariavite case is historically particular; refusal of present-status judgements remains",
+        "claimTriage": {
+          "degree": "EXISTING_DOCUMENT_WITNESS_ONLY",
+          "established": [],
+          "notEstablished": [
+            "This specific candidate chapter has no new node-level witness mapping in the discovery batch"
+          ],
+          "additionalSourceLoci": [
+            "Tribus circiter (5 April 1906), §§1–5"
+          ],
+          "reviewClass": "NEEDS_NODE_LEVEL_ORIGINAL_PASSAGES",
+          "editorialOpeningVerdict": "HOLD_FULL_ANSWER_NO_NEW_WITNESS",
+          "documentExcerptVerbatimPresence": "NOT_APPLICABLE_EXISTING_DOCUMENT_ANNEX",
+          "translationCheckedAgainstOriginal": false,
+          "eligibleForAutomatedModelPromotion": false,
+          "publicationApproved": false
+        }
       },
       "existingPilotNode": "SPX-NEW-012"
     },
@@ -893,7 +1097,26 @@
         "sourceWebPageLine": 59,
         "status": "SHORT_EXCERPT_SPOTTED_ON_VATICAN_PAGE_NOT_YET_NODE_PROMOTED",
         "supportScope": "The Virgin Mary's singular ability to lead the faithful to know Christ",
-        "interpretationCaveat": "Theological interpretation requires full-context review; avoid invented Marian statements"
+        "interpretationCaveat": "Theological interpretation requires full-context review; avoid invented Marian statements",
+        "claimTriage": {
+          "degree": "PARTIAL_OPENING_SUPPORT",
+          "established": [
+            "Mary's singular role as a guide to knowledge of Christ"
+          ],
+          "notEstablished": [
+            "Intercession in its fuller theological sense from this isolated excerpt",
+            "The scope of Marian mediation and how it relates to Christ's unique mediation"
+          ],
+          "additionalSourceLoci": [
+            "Later Marian mediation and Christological limitations in Ad diem illum"
+          ],
+          "reviewClass": "THEOLOGICAL_EXTRAPOLATION_NEEDS_MORE_TEXT",
+          "editorialOpeningVerdict": "HOLD_FULL_ANSWER_NOT_ATTESTED_BY_THIS_SINGLE_EXCERPT",
+          "documentExcerptVerbatimPresence": "LOCATED_ON_OFFICIAL_ORIGINAL_LANGUAGE_VATICAN_PAGE",
+          "translationCheckedAgainstOriginal": false,
+          "eligibleForAutomatedModelPromotion": false,
+          "publicationApproved": false
+        }
       },
       "existingPilotNode": null
     }
