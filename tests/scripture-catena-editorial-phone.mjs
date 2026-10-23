@@ -312,7 +312,7 @@ try{
  await page.locator('#blindForm button[type="submit"]').click();
  assert.match(await page.locator('#blindDecisionStatus').innerText(),/saved in this reviewer/);
  assert.match(await page.locator('#countText').innerText(),/1\/23/);
- await page.locator('[data-blind-case="MARK_BLIND_01"]').click();
+ await page.locator('[data-blind-case="MARK_BLIND_02"]').click();
  await page.locator('#blindAbstention').waitFor({state:"visible",timeout:20000});
  await page.locator('#blindAbstention').selectOption('uncertain');
  await page.locator('#blindOverall').fill('This is a synthetic abstention review; the actual relevance remains unassessed.');
