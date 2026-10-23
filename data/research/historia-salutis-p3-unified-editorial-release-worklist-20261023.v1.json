@@ -67,11 +67,16 @@
     "publicationApproved": 0,
     "p0ResearchRecommendations": 8,
     "p0RecommendedOriginalSourceVerseEntries": 38,
-    "p0AcceptedEditorialDecisions": 0
+    "p0AcceptedEditorialDecisions": 0,
+    "allSourceResearchRecommendations": 20,
+    "remainingSourceRecommendationResearchQueue": 0,
+    "p1p2ResearchRecommendations": 12,
+    "sourceEditorialAcceptances": 0,
+    "releaseGatesPassed": 0
   },
   "priorityOrder": [
     "First: eight P0 original-text recommendations prepared (38 distinct source verse entries across five causal/vision groups); no human/editorial acceptances. Compare in the existing P3 workbench, then record explicit future accept/hold/omit decision per source owner.",
-    "Second: remaining source-only questions, removing redundant proof material",
+    "Second: all 20 original-source inclusion/keep-held recommendations prepared (eight P0 and twelve P1/P2); compare three native witnesses and eliminate duplicate editorial connectors before any approved source inclusion.",
     "Third: display/citation tasks in existing reader and workbench, while editing 41 contextual pieces",
     "Fourth: cross-edition print/rights, French localization, uninterrupted human oral/theological approval",
     "Fifth: regenerate proof and release only specifically certified slices; no wholesale merge"
@@ -562,7 +567,7 @@
       "decisionRequired": "Choose whether the first request and Pharaoh's refusal in Exodus 5:1–2 are necessary; separately compare Exodus 7:1–6. Do not mistake divine commissioning for the recorded first refusal.",
       "kind": "SOURCE_SELECTION",
       "ownerRole": "Catholic Scripture editor (unassigned)",
-      "currentState": "OPEN_UNAPPROVED_COMPARISON",
+      "currentState": "RESEARCH_RECOMMENDATION_READY_NOT_ACCEPTED",
       "dependencyGroups": [
         "SCRIPTURE_EDITION_WITNESS_AUDIT",
         "SOURCE_READING_COMPARISON"
@@ -580,7 +585,31 @@
         "publication": false
       },
       "sourceReference": "Exodus 5:1–2",
-      "candidateComparisonStatus": "P1_REVIEW_ONLY_OPTION_NOT_ADDED_TO_P3_BEAT"
+      "candidateComparisonStatus": "P1_REVIEW_ONLY_OPTION_NOT_ADDED_TO_P3_BEAT",
+      "researchRecommendation": {
+        "status": "SOURCE_EVIDENCE_PROPOSED_NOT_SELECTED",
+        "group": "MOSES_PHARAOH",
+        "recommendation": "PROPOSE_TRIAL_INCLUDE_FIRST_REFUSAL",
+        "refs": [
+          "Exodus 5:1–2"
+        ],
+        "reason": "This native two-verse exchange records Moses and Aaron's first demand that Pharaoh release Israel and Pharaoh's express refusal. It supplies an actual causal encounter between Moses' Exodus 3 commission and the later selected confrontation in the plagues.",
+        "contrast": "Exodus 7:1–6 is a different six-verse renewed commissioning/foretelling of hardening; it does not record the original Pharaoh refusal, and should stay a separate unapproved comparison. Do not treat either as direct adjacency to Exodus 7:14–17.",
+        "conditionalEdits": [
+          "Keep an explicit elision between the first refusal and the selected plague narrative.",
+          "Do not reword Pharaoh's speech or silently imply Exodus 5–7 are fully recited."
+        ],
+        "dependenciesToAccept": [
+          "ORIGINAL_CATHOLIC_WITNESS_PRINT_COLLATION",
+          "UNINTERRUPTED_SOURCE_READALOUD",
+          "LITERARY_AND_THEOLOGICAL_EDITOR_SIGNOFF"
+        ],
+        "nativeSourceContentNotEdited": true,
+        "original93UnitSelectionUnmodified": true,
+        "acceptedByHumanEditor": false,
+        "publicationApproved": false,
+        "optionalUnselectedComparison": true
+      }
     },
     {
       "id": "HS-W-SRC-HS-CF-05",
@@ -600,7 +629,7 @@
       ],
       "decisionRequired": "Evaluate all John 11:45–53 for belief, Caiaphas's prophecy and the explicit death-plot, not merely the political response.",
       "candidateComparisonStatus": "EXISTING_VERBATIM_TRIAL_UNAPPROVED",
-      "currentState": "OPEN_HELD_NOT_PUBLISHED",
+      "currentState": "RESEARCH_RECOMMENDATION_READY_NOT_ACCEPTED",
       "dependencyGroups": [
         "SCRIPTURE_EDITION_WITNESS_AUDIT",
         "SOURCE_READING_COMPARISON"
@@ -617,6 +646,30 @@
         "theological": false,
         "printedEditionCertified": false,
         "publication": false
+      },
+      "researchRecommendation": {
+        "status": "SOURCE_EVIDENCE_PROPOSED_NOT_SELECTED",
+        "group": "LAZARUS_OPPOSITION",
+        "recommendation": "PROPOSE_TRIAL_INCLUDE_FULL_GOSPEL_RESPONSE",
+        "refs": [
+          "John 11:45–53"
+        ],
+        "reason": "The original nine verses show belief and reporting after Lazarus, the council's fear, Caiaphas's declaration, John's source-internal prophecy interpretation and the final resolve to kill Christ. Keeping the whole pericope protects John's theological meaning ahead of Jerusalem.",
+        "contrast": "A generic political connector or handpicked one-verse death plot omits the inspired Evangelist's 11:51–52 interpretation. The surrounding selected John 11:38–44 need not be quoted a second time.",
+        "conditionalEdits": [
+          "Avoid an extra editorial paragraph retelling Caiaphas if original John text is included.",
+          "Keep the shift to Matthew's Palm entry source-labelled and do not call the Gospel episodes contemporaneous."
+        ],
+        "dependenciesToAccept": [
+          "ORIGINAL_CATHOLIC_WITNESS_PRINT_COLLATION",
+          "UNINTERRUPTED_SOURCE_READALOUD",
+          "LITERARY_AND_THEOLOGICAL_EDITOR_SIGNOFF"
+        ],
+        "nativeSourceContentNotEdited": true,
+        "original93UnitSelectionUnmodified": true,
+        "acceptedByHumanEditor": false,
+        "publicationApproved": false,
+        "optionalUnselectedComparison": true
       }
     },
     {
@@ -637,7 +690,7 @@
       ],
       "decisionRequired": "Read Acts 1:3–5 before 1:6–12; preserve forty days, Jerusalem waiting and coming Holy Ghost.",
       "candidateComparisonStatus": "EXISTING_VERBATIM_TRIAL_UNAPPROVED",
-      "currentState": "OPEN_HELD_NOT_PUBLISHED",
+      "currentState": "RESEARCH_RECOMMENDATION_READY_NOT_ACCEPTED",
       "dependencyGroups": [
         "SCRIPTURE_EDITION_WITNESS_AUDIT",
         "SOURCE_READING_COMPARISON"
@@ -654,6 +707,30 @@
         "theological": false,
         "printedEditionCertified": false,
         "publication": false
+      },
+      "researchRecommendation": {
+        "status": "SOURCE_EVIDENCE_PROPOSED_NOT_SELECTED",
+        "group": "ASCENSION_PRELUDE",
+        "recommendation": "PROPOSE_TRIAL_INCLUDE_ASCENSION_PRELUDE",
+        "refs": [
+          "Acts 1:3–5"
+        ],
+        "reason": "All three native verses supply forty days of risen appearances, Christ's instruction to remain in Jerusalem and the imminent baptism with the Holy Ghost before the disciples' question in Acts 1:6.",
+        "contrast": "Acts 1:6 without its causal source opens mid-conversation. A short editor-written chronological claim would be a weaker substitute for these existing exact verses.",
+        "conditionalEdits": [
+          "Preserve the distinct forty-day interval without fabricating unselected appearances.",
+          "Do not repeat the same description in any separately editor-owned Ascension preface."
+        ],
+        "dependenciesToAccept": [
+          "ORIGINAL_CATHOLIC_WITNESS_PRINT_COLLATION",
+          "UNINTERRUPTED_SOURCE_READALOUD",
+          "LITERARY_AND_THEOLOGICAL_EDITOR_SIGNOFF"
+        ],
+        "nativeSourceContentNotEdited": true,
+        "original93UnitSelectionUnmodified": true,
+        "acceptedByHumanEditor": false,
+        "publicationApproved": false,
+        "optionalUnselectedComparison": true
       }
     },
     {
@@ -674,7 +751,7 @@
       ],
       "decisionRequired": "Review Acts 7:51–53 for the crowd's source-attested response to Stephen; retain distinct English/French 7:59/60 death boundaries.",
       "candidateComparisonStatus": "EXISTING_VERBATIM_TRIAL_UNAPPROVED",
-      "currentState": "OPEN_HELD_NOT_PUBLISHED",
+      "currentState": "RESEARCH_RECOMMENDATION_READY_NOT_ACCEPTED",
       "dependencyGroups": [
         "SCRIPTURE_EDITION_WITNESS_AUDIT",
         "SOURCE_READING_COMPARISON"
@@ -691,6 +768,30 @@
         "theological": false,
         "printedEditionCertified": false,
         "publication": false
+      },
+      "researchRecommendation": {
+        "status": "SOURCE_EVIDENCE_PROPOSED_NOT_SELECTED",
+        "group": "STEPHEN_REBUKE",
+        "recommendation": "PROPOSE_TRIAL_INCLUDE_STEVE_REBUKE",
+        "refs": [
+          "Acts 7:51–53"
+        ],
+        "reason": "The speech in these three verses directly occasions the hearers' angry response at Acts 7:54. Its accusations about resisting the Holy Ghost, persecuting prophets and failing to keep the Law are attested Scripture spoken by Stephen, not a newly invented martyrdom speech.",
+        "contrast": "Simply beginning with 'hearing these things' at 7:54 obscures the immediate cause. Retain the established native end alignment: Acts 7:59 in English witnesses and 7:60 in French.",
+        "conditionalEdits": [
+          "If the separate Stephen editorial preface is shown, suppress any summary duplicating the three quotations.",
+          "Do not convert Stephen's historical speech into advice supposedly addressed to the modern reader."
+        ],
+        "dependenciesToAccept": [
+          "ORIGINAL_CATHOLIC_WITNESS_PRINT_COLLATION",
+          "UNINTERRUPTED_SOURCE_READALOUD",
+          "LITERARY_AND_THEOLOGICAL_EDITOR_SIGNOFF"
+        ],
+        "nativeSourceContentNotEdited": true,
+        "original93UnitSelectionUnmodified": true,
+        "acceptedByHumanEditor": false,
+        "publicationApproved": false,
+        "optionalUnselectedComparison": true
       }
     },
     {
@@ -711,7 +812,7 @@
       ],
       "decisionRequired": "Compare Acts 14:26–27 before the Jerusalem Council, with no invented travel chronology.",
       "candidateComparisonStatus": "COORDINATE_HELD_NOT_SELECTED",
-      "currentState": "OPEN_HELD_NOT_PUBLISHED",
+      "currentState": "RESEARCH_RECOMMENDATION_READY_NOT_ACCEPTED",
       "dependencyGroups": [
         "SCRIPTURE_EDITION_WITNESS_AUDIT",
         "SOURCE_READING_COMPARISON"
@@ -728,6 +829,30 @@
         "theological": false,
         "printedEditionCertified": false,
         "publication": false
+      },
+      "researchRecommendation": {
+        "status": "SOURCE_EVIDENCE_PROPOSED_NOT_SELECTED",
+        "group": "GENTILE_MISSION_HANDOFF",
+        "recommendation": "PROPOSE_CONDITIONAL_SOURCE_INSTEAD_OF_DUPLICATE_CONNECTOR",
+        "refs": [
+          "Acts 14:26–27"
+        ],
+        "reason": "The two verse-native texts in the three imported Catholic editions record the missionaries reporting that God opened faith to the Gentiles, and their stay with disciples. That is a compact Scripture-owned antecedent to the dispute resolved at the Council.",
+        "contrast": "The existing HS-P3-EC-10 pre-Scripture connector already narrates their Gentile return with Acts 14:21–27. Do not include both unaltered or count the existing note as an unrelated new source requirement.",
+        "conditionalEdits": [
+          "If the exact Acts 14 witness is selected later, separately adjudicate/suppress repetitive HS-P3-EC-10 prose.",
+          "Keep the Apostolic Council's own Acts 15 questions and source witnesses intact."
+        ],
+        "dependenciesToAccept": [
+          "ORIGINAL_CATHOLIC_WITNESS_PRINT_COLLATION",
+          "UNINTERRUPTED_SOURCE_READALOUD",
+          "LITERARY_AND_THEOLOGICAL_EDITOR_SIGNOFF"
+        ],
+        "nativeSourceContentNotEdited": true,
+        "original93UnitSelectionUnmodified": true,
+        "acceptedByHumanEditor": false,
+        "publicationApproved": false,
+        "optionalUnselectedComparison": true
       }
     },
     {
@@ -748,7 +873,7 @@
       ],
       "decisionRequired": "Compare Paul's intention to see Rome at Acts 19:21; cannot substitute for Acts 28:16–22's arrival and audience.",
       "candidateComparisonStatus": "COORDINATE_HELD_NOT_SELECTED",
-      "currentState": "OPEN_HELD_NOT_PUBLISHED",
+      "currentState": "RESEARCH_RECOMMENDATION_READY_NOT_ACCEPTED",
       "dependencyGroups": [
         "SCRIPTURE_EDITION_WITNESS_AUDIT",
         "SOURCE_READING_COMPARISON"
@@ -765,6 +890,30 @@
         "theological": false,
         "printedEditionCertified": false,
         "publication": false
+      },
+      "researchRecommendation": {
+        "status": "SOURCE_EVIDENCE_PROPOSED_NOT_SELECTED",
+        "group": "PAUL_ROMAN_INTENTION",
+        "recommendation": "PREFER_KEEP_HELD_AS_OPTIONAL_GEOGRAPHIC_INTENTION",
+        "refs": [
+          "Acts 19:21"
+        ],
+        "reason": "Paul's stated resolve to see Rome is attested but only names his intention. It does not supply the intervening journeys, arrest, sea voyage or actual arrival; the higher-priority paired Acts 28:16–22 source is already preferred to ground the Roman audience.",
+        "contrast": "Adding a single Rome-intention verse after the Council may make the enormous Acts 15–28 period feel falsely contiguous. The existing historical-ellipsis disclosure and verified Acts 28 arrival better serve this abbreviated reading.",
+        "conditionalEdits": [
+          "Keep Acts 19:21 available as a separate historical source note or optional research variant.",
+          "Do not geolocate an unselected journey or conflate Paul's purpose with the real Rome arrival."
+        ],
+        "dependenciesToAccept": [
+          "ORIGINAL_CATHOLIC_WITNESS_PRINT_COLLATION",
+          "UNINTERRUPTED_SOURCE_READALOUD",
+          "LITERARY_AND_THEOLOGICAL_EDITOR_SIGNOFF"
+        ],
+        "nativeSourceContentNotEdited": true,
+        "original93UnitSelectionUnmodified": true,
+        "acceptedByHumanEditor": false,
+        "publicationApproved": false,
+        "optionalUnselectedComparison": true
       }
     },
     {
@@ -785,7 +934,7 @@
       ],
       "decisionRequired": "Judge whether Abram's father and migration require optional Genesis 11:26–31 or existing editor-attributed genealogy before Genesis 12:1.",
       "candidateComparisonStatus": "COORDINATE_HELD_NOT_SELECTED",
-      "currentState": "OPEN_HELD_NOT_PUBLISHED",
+      "currentState": "RESEARCH_RECOMMENDATION_READY_NOT_ACCEPTED",
       "dependencyGroups": [
         "SCRIPTURE_EDITION_WITNESS_AUDIT",
         "SOURCE_READING_COMPARISON"
@@ -802,6 +951,30 @@
         "theological": false,
         "printedEditionCertified": false,
         "publication": false
+      },
+      "researchRecommendation": {
+        "status": "SOURCE_EVIDENCE_PROPOSED_NOT_SELECTED",
+        "group": "ABRAM_GENEALOGY",
+        "recommendation": "PREFER_KEEP_HELD_WITH_EDITORIAL_GENEALOGY",
+        "refs": [
+          "Genesis 11:26–31"
+        ],
+        "reason": "This six-verse genealogy names Terah, Abram, Lot, Sarai, her barrenness and the family's movement toward Haran. The existing HS-P3-EC-11 before Genesis 12:1 already cites Genesis 11:10–31 and names Abram among Sem's descendants.",
+        "contrast": "In a compact salvation-history narration, six added genealogical verses largely duplicate a short clearly labelled contextual transition. They remain useful as authentic primary sources for the separate genealogy/covenant navigation.",
+        "conditionalEdits": [
+          "Do not omit the fact of Abram's family background from the editor-labelled context.",
+          "Keep Matthew/Luke Gospel genealogies and patriarchal genealogy within their separate sourced navigational apparatus."
+        ],
+        "dependenciesToAccept": [
+          "ORIGINAL_CATHOLIC_WITNESS_PRINT_COLLATION",
+          "UNINTERRUPTED_SOURCE_READALOUD",
+          "LITERARY_AND_THEOLOGICAL_EDITOR_SIGNOFF"
+        ],
+        "nativeSourceContentNotEdited": true,
+        "original93UnitSelectionUnmodified": true,
+        "acceptedByHumanEditor": false,
+        "publicationApproved": false,
+        "optionalUnselectedComparison": true
       }
     },
     {
@@ -820,7 +993,7 @@
       "hingeIds": [],
       "decisionRequired": "Judge whether Genesis 39:19–21 and the already attached editorial preface are needed before Joseph's rise in Genesis 41.",
       "candidateComparisonStatus": "EXISTING_VERBATIM_TRIAL_UNAPPROVED",
-      "currentState": "OPEN_HELD_NOT_PUBLISHED",
+      "currentState": "RESEARCH_RECOMMENDATION_READY_NOT_ACCEPTED",
       "dependencyGroups": [
         "SCRIPTURE_EDITION_WITNESS_AUDIT",
         "SOURCE_READING_COMPARISON"
@@ -837,6 +1010,30 @@
         "theological": false,
         "printedEditionCertified": false,
         "publication": false
+      },
+      "researchRecommendation": {
+        "status": "SOURCE_EVIDENCE_PROPOSED_NOT_SELECTED",
+        "group": "JOSEPH_PRISON",
+        "recommendation": "PROPOSE_TRIAL_INCLUDE_JOSEPH_PRISON_CAUSE",
+        "refs": [
+          "Genesis 39:19–21"
+        ],
+        "reason": "The three exact original verses name the master's reaction, Joseph's imprisonment and the Lord's continued favour, making the next selected event—Joseph brought to Pharaoh in Genesis 41:14—intelligible without a fabricated prison episode.",
+        "contrast": "The existing trial already extends the held 39:20–21 coordinate backward to verse 19 to preserve the accusation's result. The optional editor-owned Potiphar preface must not be counted as a separate second episode if the source is added.",
+        "conditionalEdits": [
+          "Retain a clear, separate source attribution from Joseph's earlier sale into Egyptian service.",
+          "Choose whether to suppress or shorten the existing HS-P3-EC-02 prison preface after native text is selected."
+        ],
+        "dependenciesToAccept": [
+          "ORIGINAL_CATHOLIC_WITNESS_PRINT_COLLATION",
+          "UNINTERRUPTED_SOURCE_READALOUD",
+          "LITERARY_AND_THEOLOGICAL_EDITOR_SIGNOFF"
+        ],
+        "nativeSourceContentNotEdited": true,
+        "original93UnitSelectionUnmodified": true,
+        "acceptedByHumanEditor": false,
+        "publicationApproved": false,
+        "optionalUnselectedComparison": true
       }
     },
     {
@@ -857,7 +1054,7 @@
       ],
       "decisionRequired": "Compare John 1:29–34 to the selected first-disciples scene without replaying Matthew's baptism as a second baptism.",
       "candidateComparisonStatus": "COORDINATE_HELD_NOT_SELECTED",
-      "currentState": "OPEN_HELD_NOT_PUBLISHED",
+      "currentState": "RESEARCH_RECOMMENDATION_READY_NOT_ACCEPTED",
       "dependencyGroups": [
         "SCRIPTURE_EDITION_WITNESS_AUDIT",
         "SOURCE_READING_COMPARISON"
@@ -874,6 +1071,30 @@
         "theological": false,
         "printedEditionCertified": false,
         "publication": false
+      },
+      "researchRecommendation": {
+        "status": "SOURCE_EVIDENCE_PROPOSED_NOT_SELECTED",
+        "group": "BAPTIST_TESTIMONY",
+        "recommendation": "PREFER_KEEP_HELD_AVOID_REPEAT_BAPTISM",
+        "refs": [
+          "John 1:29–34"
+        ],
+        "reason": "The six John Baptist-testimony verses identify Jesus as the Lamb of God and describe the Spirit's descent, but the selected Matthew 3:11–17 has already narrated Christ's baptism and the selected John 1:35–51 records John's next-day recognition before the disciples.",
+        "contrast": "The existing source-labelled HS-P3-EC-09 connector before John 1:35 records the relevant prior Lamb/Son testimony without replaying a Gospel account as a second baptism. If longer testimony is used, the connector should not repeat it.",
+        "conditionalEdits": [
+          "Keep John and Matthew as distinct Evangelists and preserve the original 'next day' wording.",
+          "Retain all six verses for deeper Gospel/Christology comparison without compulsory insertion."
+        ],
+        "dependenciesToAccept": [
+          "ORIGINAL_CATHOLIC_WITNESS_PRINT_COLLATION",
+          "UNINTERRUPTED_SOURCE_READALOUD",
+          "LITERARY_AND_THEOLOGICAL_EDITOR_SIGNOFF"
+        ],
+        "nativeSourceContentNotEdited": true,
+        "original93UnitSelectionUnmodified": true,
+        "acceptedByHumanEditor": false,
+        "publicationApproved": false,
+        "optionalUnselectedComparison": true
       }
     },
     {
@@ -894,7 +1115,7 @@
       ],
       "decisionRequired": "Review the optional John 14:16–17 promise as a separate Gospel witness without confusing Luke's Last Supper account.",
       "candidateComparisonStatus": "COORDINATE_HELD_NOT_SELECTED",
-      "currentState": "OPEN_HELD_NOT_PUBLISHED",
+      "currentState": "RESEARCH_RECOMMENDATION_READY_NOT_ACCEPTED",
       "dependencyGroups": [
         "SCRIPTURE_EDITION_WITNESS_AUDIT",
         "SOURCE_READING_COMPARISON"
@@ -911,6 +1132,30 @@
         "theological": false,
         "printedEditionCertified": false,
         "publication": false
+      },
+      "researchRecommendation": {
+        "status": "SOURCE_EVIDENCE_PROPOSED_NOT_SELECTED",
+        "group": "SUPPER_SPIRIT_PROMISE",
+        "recommendation": "PREFER_KEEP_HELD_FOR_SEPARATE_FAREWELL_DISCOURSE",
+        "refs": [
+          "John 14:16–17"
+        ],
+        "reason": "Christ's promise of another Paraclete and the Spirit of Truth is authentic John, but its insertion directly after the selected Luke 22:7–20 Supper can blur the distinct Gospel witness and imply one uninterrupted discourse. The subsequent Acts already narrates the Spirit's promise and Pentecost.",
+        "contrast": "This two-verse excerpt is suited to a properly attributed Johannine companion source rather than compulsory Gospel-harmonized dialogue in the chronological readthrough.",
+        "conditionalEdits": [
+          "If any reader displays it, name the Gospel of John as an independently sourced Farewell Discourse.",
+          "Preserve separate theology/typology links outside the chronological narrative."
+        ],
+        "dependenciesToAccept": [
+          "ORIGINAL_CATHOLIC_WITNESS_PRINT_COLLATION",
+          "UNINTERRUPTED_SOURCE_READALOUD",
+          "LITERARY_AND_THEOLOGICAL_EDITOR_SIGNOFF"
+        ],
+        "nativeSourceContentNotEdited": true,
+        "original93UnitSelectionUnmodified": true,
+        "acceptedByHumanEditor": false,
+        "publicationApproved": false,
+        "optionalUnselectedComparison": true
       }
     },
     {
@@ -929,7 +1174,7 @@
       "decisionRequired": "Compare Judas's account strictly between selected Matthew 27:1–2 and 27:11–26; keep the omission visible and do not merge it with John 19.",
       "kind": "SOURCE_SELECTION",
       "ownerRole": "Catholic Scripture editor (unassigned)",
-      "currentState": "OPEN_UNAPPROVED_COMPARISON",
+      "currentState": "RESEARCH_RECOMMENDATION_READY_NOT_ACCEPTED",
       "dependencyGroups": [
         "SCRIPTURE_EDITION_WITNESS_AUDIT",
         "SOURCE_READING_COMPARISON"
@@ -947,7 +1192,31 @@
         "publication": false
       },
       "sourceReference": "Matthew 27:3–10",
-      "candidateComparisonStatus": "EXISTING_BETWEEN_SELECTED_SCRIPTURE_TRIAL_WORKBENCH_ONLY"
+      "candidateComparisonStatus": "EXISTING_BETWEEN_SELECTED_SCRIPTURE_TRIAL_WORKBENCH_ONLY",
+      "researchRecommendation": {
+        "status": "SOURCE_EVIDENCE_PROPOSED_NOT_SELECTED",
+        "group": "PASSION_JUDAS",
+        "recommendation": "PREFER_KEEP_HELD_DISTINCT_JUDAS_EPISODE",
+        "refs": [
+          "Matthew 27:3–10"
+        ],
+        "reason": "Matthew's eight verses record Judas's response to Christ's condemnation, the silver, his death, the field and the Gospel's prophetic reference. It is a real separate Gospel episode but does not cause the subsequent Pilate questioning at Matthew 27:11 in the compact Passion sequence.",
+        "contrast": "Keep the exact-text between-selected-segments comparison in the workbench; do not insert explanatory narration into Matthew 27:1–2 and 11–26, invent Judas's internal motives, or conflate Judas's death with the execution of Christ.",
+        "conditionalEdits": [
+          "Retain the original main-scripture omission warning across Matthew 27:2→11.",
+          "If later selected, preserve Matthew's reported prophetic attribution exactly, without silently correcting it by rewriting Scripture."
+        ],
+        "dependenciesToAccept": [
+          "ORIGINAL_CATHOLIC_WITNESS_PRINT_COLLATION",
+          "UNINTERRUPTED_SOURCE_READALOUD",
+          "LITERARY_AND_THEOLOGICAL_EDITOR_SIGNOFF"
+        ],
+        "nativeSourceContentNotEdited": true,
+        "original93UnitSelectionUnmodified": true,
+        "acceptedByHumanEditor": false,
+        "publicationApproved": false,
+        "optionalUnselectedComparison": true
+      }
     },
     {
       "id": "HS-W-SRC-HS-P3-CF-16",
@@ -967,7 +1236,7 @@
       ],
       "decisionRequired": "Compare Revelation 22:20–21 against 22:17–21 and 22:6–21, disclose the gap, and preserve book-of-life vs tree-of-life witness variant at 22:19.",
       "candidateComparisonStatus": "COORDINATE_HELD_NOT_SELECTED",
-      "currentState": "OPEN_HELD_NOT_PUBLISHED",
+      "currentState": "RESEARCH_RECOMMENDATION_READY_NOT_ACCEPTED",
       "dependencyGroups": [
         "SCRIPTURE_EDITION_WITNESS_AUDIT",
         "SOURCE_READING_COMPARISON"
@@ -984,6 +1253,30 @@
         "theological": false,
         "printedEditionCertified": false,
         "publication": false
+      },
+      "researchRecommendation": {
+        "status": "SOURCE_EVIDENCE_PROPOSED_NOT_SELECTED",
+        "group": "TRUE_APOCALYPSE_END",
+        "recommendation": "PROPOSE_TRIAL_INCLUDE_CANON_END_WITH_EXPLICIT_GAP",
+        "refs": [
+          "Revelation 22:20–21"
+        ],
+        "reason": "The two original closing verses supply Christ's final coming declaration and the scriptural closing blessing. The existing selected reading presently ends at Revelation 22:5; including the true closing refrain can provide a faithful bookend at little length cost, provided the omitted Revelation 22:6–19 is unmistakably marked.",
+        "contrast": "A full 22:6–21 epilogue or 22:17–21 invitation/warning is a separate comparison. The latter crosses the significant Rev 22:19 native variant (English book of life / Crampon arbre de la vie) and requires print collation; do not normalize editions or invent missing bridge speech.",
+        "conditionalEdits": [
+          "Display explicit 'Revelation 22:6–19 omitted' before any held 22:20–21 research text.",
+          "Never label Rev 22:5 the actual canonical end or treat the 22:20–21 verses as already selected."
+        ],
+        "dependenciesToAccept": [
+          "ORIGINAL_CATHOLIC_WITNESS_PRINT_COLLATION",
+          "UNINTERRUPTED_SOURCE_READALOUD",
+          "LITERARY_AND_THEOLOGICAL_EDITOR_SIGNOFF"
+        ],
+        "nativeSourceContentNotEdited": true,
+        "original93UnitSelectionUnmodified": true,
+        "acceptedByHumanEditor": false,
+        "publicationApproved": false,
+        "optionalUnselectedComparison": true
       }
     }
   ],
@@ -2120,8 +2413,8 @@
     ]
   },
   "nextExecutableBatch": [
-    "Use the existing workbench P0 scope to compare eight proposed native-source inclusions in original chronological position, preserving the 93 selected beat owners and the omissions. Human editorial/theological acceptance remains separately blocked.",
-    "Run a high-priority source-and-theology review on P0 grouped originals, prioritizing Noah/Passover/Passion/Rome/New Jerusalem, and log genuine keep/omit/include decisions as proposals only.",
-    "Parallelize the edition/rights and 41-note editorial review without asserting either as publication-ready."
+    "Source-recommendation desk triage is now complete 20/20; do not open another Scripture discovery batch. Begin scoped human editor acceptance of highest-risk paired P0 source units and defer all official publication promotion.",
+    "Review the 29 current editorial contexts and 12 existing connectors against the selected/held alternatives, checking truthful source ownership, accuracy, necessity and French translation readiness; mark per-piece revisions, not a second research catalogue.",
+    "Run print-edition witness and rights collation independently, then undertake whole-story source read-aloud and qualified Catholic theological review on an exact hash-frozen draft."
   ]
 }
