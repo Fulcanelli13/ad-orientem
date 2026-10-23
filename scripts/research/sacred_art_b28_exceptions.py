@@ -112,12 +112,18 @@ def main():
                 # Source record claims a canonical painting-catalogue stable ID,
                 # and the actual archived image matches that audit SHA.
                 canonical_id = audit["record_id"]
-                extra["triage_status"] = "DIRECT_STABLE_CATALOGUE_ID_AND_EXACT_FILE_SHA"
+                extra["triage_status"] = ("DIRECT_STABLE_ID_SHA_FROZEN_REJECTED_QUARANTINE"
+                                          if cat[canonical_id]["frozen_decision"] == "PERMANENTLY_REJECTED"
+                                          else "DIRECT_STABLE_CATALOGUE_ID_AND_EXACT_FILE_SHA")
                 extra["source_identity_match"] = "STABLE_ID_PLUS_BYTE_HASH"
                 extra["candidate_canonical_ids"] = canonical_id
-                extra["next_action"] = "REGISTER_RESEARCH_SHA_LINK_DO_NOT_APPROVE_PUBLICATION"
+                extra["next_action"] = ("RETAIN_FILE_EVIDENCE_DO_NOT_PROMOTE_OR_REACQUIRE_REJECTED_WORK"
+                                        if cat[canonical_id]["frozen_decision"] == "PERMANENTLY_REJECTED"
+                                        else "REGISTER_RESEARCH_SHA_LINK_DO_NOT_APPROVE_PUBLICATION")
                 strict_links.append({"artwork_id": canonical_id, "source_id": sourceid,
-                                     "sha256": item["sha256"], "wave": wave})
+                                     "sha256": item["sha256"], "wave": wave,
+                                     "frozen_decision": cat[canonical_id]["frozen_decision"],
+                                     "release_allowed": "NO"})
             else:
                 extra["triage_status"] = "SEPARATE_SOURCE_RESEARCH_NOT_IN_451_BY_STABLE_ID"
                 extra["next_action"] = "RETAIN_AS_SEPARATE_RESEARCH_CANDIDATE_NO_FORCED_IDENTITY"
@@ -142,9 +148,11 @@ def main():
     assert all(r["audit_sha_matches_binary"] != "NO_HOLD" for r in unmatched_rows
                if r["archive_wave"] == "b23r2commons46")
     strict_ids = {r["artwork_id"] for r in strict_links}
+    active_new_links = {cid for cid in strict_ids if cat[cid]["frozen_decision"] != "PERMANENTLY_REJECTED"}
+    rejected_new_links = strict_ids - active_new_links
     assert len(strict_links) == 2 and len(strict_ids) == 2
     assert all(cw[cid]["verified_distinct_sha256"] == "0" for cid in strict_ids)
-    assert all(cat[cid]["frozen_decision"] != "PERMANENTLY_REJECTED" for cid in strict_ids)
+    assert len(active_new_links) == 0 and len(rejected_new_links) == 2, "Frozen rejection evidence drift"
 
     # The 108 preview-only entries have already been checked against tracked Git
     # assets. Repeat the check specifically against all 290 recovered image hashes.
@@ -224,11 +232,14 @@ def main():
         "active_total": 383, "frozen_rejected_unmodified": 68,
         "frozen_approved_unmodified": baseline["frozen_approved_preserved"],
         "previously_sha_matched_active": 245,
-        "new_provisional_direct_id_and_byte_sha_links": len(strict_ids),
-        "active_with_stable_id_and_sha_research_link_after_adjudication": 245 + len(strict_ids),
-        "active_without_a_stable_id_sha_research_link_after_adjudication": 138 - len(strict_ids),
+        "new_direct_id_and_byte_sha_links_including_rejected": len(strict_ids),
+        "new_active_direct_id_sha_links": len(active_new_links),
+        "rejected_direct_id_sha_links_held": len(rejected_new_links),
+        "active_with_stable_id_and_sha_research_link_after_adjudication": 245 + len(active_new_links),
+        "active_without_a_stable_id_sha_research_link_after_adjudication": 138 - len(active_new_links),
         "unlinked_physical_file_instances_reviewed": 45,
         "b23r2_unlinked_files": 37, "b23r2_direct_catalogue_sha_links": len(strict_ids),
+        "b23r2_direct_matches_to_frozen_rejected": len(rejected_new_links),
         "b23r2_other_research_file_instances": 37 - len(strict_ids),
         "b19_other_research_file_instances": 8,
         "b19_url_only_candidates": sum("URL_REVIEW" in x["triage_status"] for x in unmatched_rows),
