@@ -48,4 +48,49 @@ for(const id of CALENDAR_CUSTOM_ARTICLE_IDS){
 }
 for(const x of contextual)assert.ok(!CALENDAR_CUSTOM_ARTICLE_IDS.includes(x.custom_id),x.custom_id+" context-only article promoted");
 assert.ok(!CALENDAR_CUSTOM_ARTICLE_IDS.some(id=>id.startsWith("CUST-")),"research proposal promoted");
-console.log("PASS customs 35-article EN/FR structural parity, 11 real historical sections, 35 source chains, no new customs or Calendar rule");
+const historical=registry.historical_context_sources||[];
+assert.equal(registry.sources.length,108,"Existing attestation source pool must remain unchanged");
+assert.equal(historical.length,4,"Historical context must use independently categorized source ownership");
+const histIds=new Set(historical.map(row=>row.id));
+assert.equal(histIds.size,4,"Historical witnesses must be uniquely identified");
+for(const h of historical){
+  assert.ok(published.has(h.custom_id),"Historical source cannot approve a new custom");
+  assert.ok(!src.has(h.id),"Historical sources must not masquerade as canonical attestation sources");
+  assert.match(h.url,/^https:\/\//);
+  assert.ok(h.claim_supported.length>75&&h.limitations.length>70,h.id+" must be carefully bounded");
+  const a=calendarCustomArticle(h.custom_id);
+  const row=(a.history_sources||[]).find(row=>row.id===h.id);
+  assert.ok(row,h.id+" missing historical article link");
+  assert.equal(row.url,h.url,h.id+" link not identical to source registry");
+}
+for(const id of CALENDAR_CUSTOM_ARTICLE_IDS){
+  const a=calendarCustomArticle(id);
+  for(const h of a.history_sources||[]){
+    assert.ok(histIds.has(h.id),id+" has unregistered historical source");
+    assert.equal(historical.find(x=>x.id===h.id)?.custom_id,id,id+" historical source assigned to wrong custom");
+    assert.ok(!a.sources.some(x=>x.id===h.id),id+" historical source misrepresented as existence attestation");
+  }
+}
+const actual=Object.fromEntries(historical.map(row=>[row.custom_id,row.id]));
+assert.deepEqual(actual,{
+  "ADVT-001":"EBK-ADVENT-WREATH-WICHERN-2025",
+  "ADVT-002":"EBK-ADVENT-MANGER-STRAW-2025",
+  "ADVT-003":"MEX-CULTURA-POSADAS-ORIGINS-2017",
+  "MARI-002":"DAYTON-MARIAN-MARY-GARDENS-HISTORY"
+});
+assert.match(calendarCustomArticle("ADVT-001").history.en,/1839/);
+assert.match(calendarCustomArticle("ADVT-003").history.en,/Andalusia/);
+assert.match(calendarCustomArticle("MARI-002").history.en,/1932.*1951/);
+assert.match(calendarCustomArticle("ADVT-002").history.en,/German regions/);
+const candle=calendarCustomArticle("DOM-011");
+assert.match(candle.history.en,/beside the deceased/);
+assert.match(candle.history.fr,/auprès des défunts/);
+assert.doesNotMatch(candle.history.en,/near the dying/);
+const liturgicalHistory=read("data/customs/customs-historical-folios.v1.json").entries.find(x=>x.custom_id==="DOM-011");
+assert.match(liturgicalHistory.history_fr,/auprès des défunts/);
+const storedCandle=registry.sources.find(x=>x.id==="ECF-CHANDLEUR-HOME");
+assert.match(storedCandle.contribution,/auprès des morts/);
+const calendarRuntime=readFileSync(new URL("../src/calendar/calendar-runtime.js",import.meta.url),"utf8");
+assert.match(calendarRuntime,/historySources=article\.history_sources\|\|\[\]/);
+assert.match(calendarRuntime,/Historical sources","Sources historiques/);
+console.log("PASS customs 35 published, 4 distinct historical sources shown, Candlemas EN\/FR source corrected, 108 attestation sources invariant");
