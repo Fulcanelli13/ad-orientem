@@ -1382,3 +1382,34 @@ assert.equal(count.identity_working_rows.provisional_after_53_no_owner_action_re
 assert.equal(count.identity_working_rows.final_uniquely_verified_customs_added,0);
 assert.equal(researchCatalogue.summary.no_new_app_publications,true);
 console.log('Spain 145 source details (72 Elche, 36 Berga, 37 Caravaca) + 20 source-action contrasts; 2602 nonunique research rows, 0 new custom certifications and 0 app publication — PASS');
+
+
+// Italian archival-source accession is *only* a worklist for inspecting
+// original documents. Do not count bibliography or archive holdings as customs.
+const italianOriginalArchives=load('data/customs/master/italy-gubbio-salemi-pitre-original-archives-acquisition.v1.json');
+assert.equal(italianOriginalArchives.records.length,27);
+assert.equal(italianOriginalArchives.summary.archival_and_print_source_accession_tasks,27);
+assert.deepEqual(italianOriginalArchives.summary.by_area,{GUBBIO:19,TRAPANI_SALEMI:8});
+assert.deepEqual(italianOriginalArchives.summary.by_priority,{P0:15,P1:8,P2:4});
+assert.equal(italianOriginalArchives.summary.pre1962_original_folios_directly_read,0);
+assert.equal(italianOriginalArchives.summary.independent_historic_customs_verified,0);
+assert.equal(italianOriginalArchives.summary.source_detail_count_increment,0);
+assert.equal(italianOriginalArchives.summary.app_calendar_publications,0);
+assert.equal(new Set(italianOriginalArchives.records.map(r=>r.id)).size,27);
+for(const [i,r] of italianOriginalArchives.records.entries()){
+ assert.equal(r.id,'ITA-ARCH-26-'+String(i+1).padStart(3,'0'));
+ assert.ok(r.public_locator.url.startsWith('https://'));
+ assert.ok(r.public_locator.anchor.length>=5);
+ assert.ok(r.verification_questions.length>=1);
+ assert.equal(r.primary_document_directly_inspected,false);
+ assert.equal(r.standalone_custom_certified,false);
+ assert.equal(r.source_detail_count_increment,0);
+ assert.equal(r.publication_state,'RESEARCH_ONLY');
+}
+assert.equal(researchCatalogue.source_dataset_paths.italy_archival_original_acquisition,'data/customs/master/italy-gubbio-salemi-pitre-original-archives-acquisition.v1.json');
+assert.equal(count.source_review.italian_original_archival_acquisition_tasks_nonadditive,27);
+assert.equal(count.source_review.italian_original_archival_folios_inspected,0);
+assert.equal(count.source_observations.total_source_detail_rows_including_external,2602);
+assert.equal(count.identity_working_rows.final_uniquely_verified_customs_added,0);
+assert.equal(researchCatalogue.summary.no_new_app_publications,true);
+console.log('Italy archival originals: 27 acquisition tasks, 0 original folios opened, 0 new customs or added research rows — PASS');
