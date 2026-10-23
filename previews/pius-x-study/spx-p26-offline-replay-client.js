@@ -6,39 +6,59 @@ const seed=document.getElementById('spxOfflineReplayData');
 if(!seed)return;
 const data=JSON.parse(seed.textContent);
 if(data.schema!=='AO_SPX_P26_OFFLINE_REVIEW_CASES_V1'||data.publishingApproved!==false||
-   data.modelProviderEnabled!==false||data.cases.length!==11)throw Error('Unexpected offline dialogue evidence');
+   data.modelProviderEnabled!==false||data.cases.length!==11||
+   data.navigationAliasCount!==32||data.navigationAliases.length!==32)
+ throw Error('Unexpected offline dialogue evidence');
 const groups=new Map();
 for(const c of data.cases){
  if(!groups.has(c.chapterId))groups.set(c.chapterId,[]);
  groups.get(c.chapterId).push(c);
 }
+const normalize=x=>String(x||'').trim().normalize('NFC').toLocaleLowerCase();
+const aliases=new Map();
+for(const a of data.navigationAliases){
+ if(a.status!=='NAVIGATION_SUGGESTION_ONLY_NOT_SOURCE_ANSWER_CERTIFIED'||
+    !['en','fr'].includes(a.language)||
+    !(groups.get(a.chapterId)||[]).some(c=>c.nodeId===a.matchedNodeId))
+  throw Error('Invalid offline navigation alias');
+ const key=a.chapterId+'|'+a.language+'|'+normalize(a.question);
+ if(aliases.has(key))throw Error('Duplicated offline suggestion');
+ aliases.set(key,a);
+}
 const tr={
  en:{
  title:'OFFLINE SOURCE DIALOGUE · PRIVATE DEMONSTRATION',
  limit:'11 reviewed questions · no API · no publication',
- label:'Choose a documented question, or type it exactly below',
+ label:'Choose a reviewed question, or find a related documented exchange',
  question:'Documented question',send:'Read editorial response',
  intro:'EDITORIAL RESPONSE · NOT THE VERBATIM WORDS OF ST PIUS X',
  sources:'Original-language source fragments · whole document not collated',
  none:'This question has no reviewed offline response. No papal speech has been invented.',
  scope:'This scripted study replays 11 unapproved EN/FR editorial drafts. It does not generate new answers or determine current sacramental law.',
- source:'Open the Vatican source',draft:'Private editorial draft, not a certified translation or pastoral ruling'
+ source:'Open the Vatican source',draft:'Private editorial draft, not a certified translation or pastoral ruling',
+ example:'Try different wording',related:'A related reviewed exchange exists. It may not answer every part of your question.',
+ relatedAction:'Open documented question',relatedCaution:'This is only a navigation suggestion. No new historical reply has been generated.'
  },
  fr:{
  title:'DIALOGUE DOCUMENTAIRE HORS LIGNE · ÉTUDE PRIVÉE',
  limit:'11 questions étudiées · sans API · non publié',
- label:'Choisissez une question documentée ou saisissez-la exactement',
+ label:'Choisissez une question étudiée, ou cherchez un échange documentaire connexe',
  question:'Question documentée',send:'Lire la réponse éditoriale',
  intro:'RÉPONSE ÉDITORIALE · NON PAROLES TEXTUELLES DE SAINT PIE X',
  sources:'Extraits originaux · document complet non collationné',
  none:'Cette question ne possède aucune réponse hors ligne vérifiée. Aucune parole pontificale n’a été inventée.',
  scope:'Cette étude scénarisée reprend 11 rédactions provisoires en anglais et français. Elle ne crée aucune réponse et ne décide aucune question sacramentelle actuelle.',
- source:'Ouvrir la source vaticane',draft:'Rédaction éditoriale privée, non traduction ni avis pastoral certifiés'
+ source:'Ouvrir la source vaticane',draft:'Rédaction éditoriale privée, non traduction ni avis pastoral certifiés',
+ example:'Essayer une autre formulation',
+ related:'Un échange documentaire connexe existe ; il ne répond pas nécessairement à toute votre question.',
+ relatedAction:'Ouvrir la question documentée',
+ relatedCaution:'Il s’agit uniquement d’une suggestion de navigation. Aucune réponse historique nouvelle n’a été créée.'
  }
 };
 const root=document.createElement('section');root.id='spxc-offline-replay';root.hidden=true;
 root.innerHTML="<div class='spxm-head'><strong id='spxm-offline-title'></strong><small id='spxm-offline-limit'></small></div>"+
  "<p id='spxm-offline-scope'></p><div id='spxm-offline-choices'></div>"+
+ "<button type='button' id='spxm-offline-example' class='spxm-offline-example'></button>"+
  "<form id='spxm-offline-form'><label for='spxm-offline-question' id='spxm-offline-label'></label>"+
  "<div class='spxm-row'><input id='spxm-offline-question' maxlength='240' autocomplete='off'>"+
  "<button id='spxm-offline-send' type='submit'></button></div></form>"+
@@ -67,6 +87,15 @@ function contextChanged(context){
   $('spxm-offline-replies').replaceChildren();
   lastChapter=active;lastLanguage=language;
  }
+ const sample=data.navigationAliases.find(a=>
+  a.chapterId===active&&a.language===language);
+ const example=$('spxm-offline-example');
+ example.hidden=!sample;
+ example.textContent=sample?t.example+': '+sample.question:'';
+ example.onclick=sample?()=>{
+  $('spxm-offline-question').value=sample.question;
+  $('spxm-offline-form').requestSubmit();
+ }:null;
  const choices=$('spxm-offline-choices');choices.replaceChildren();
  for(const c of groups.get(active)){
   const button=add('button','spxm-offline-choice',c.question[language],choices);
@@ -87,10 +116,27 @@ $('spxm-offline-form').addEventListener('submit',e=>{
  add('p','spxm-question',t.question+': '+q,entry);
  // Strict exact-question playback: no similarity ranking that might make
  // unsupported claims appear applicable to an unrelated free-form request.
- const chosen=(groups.get(active)||[]).find(c=>c.question[language].normalize('NFC').toLocaleLowerCase()===
-  q.normalize('NFC').toLocaleLowerCase());
+ const group=groups.get(active)||[];
+ const chosen=group.find(c=>normalize(c.question[language])===normalize(q));
  if(!chosen){
-  add('p','spxm-held',t.none,entry);
+  // A manually triaged alternative formulation only suggests its source-owned
+  // question; it NEVER silently reuses an answer to another visitor question.
+  const alias=aliases.get(active+'|'+language+'|'+normalize(q));
+  const target=alias&&group.find(c=>c.nodeId===alias.matchedNodeId);
+  if(!target){
+   add('p','spxm-held',t.none,entry);
+   return;
+  }
+  add('p','spxm-related-notice',t.related,entry);
+  const button=add('button','spxm-offline-related',
+   t.relatedAction+': '+target.question[language],entry);
+  button.type='button';
+  button.addEventListener('click',()=>{
+   $('spxm-offline-question').value=target.question[language];
+   $('spxm-offline-form').requestSubmit();
+  });
+  add('p','spxm-offline-disclaimer',t.relatedCaution,entry);
+  $('spxm-offline-question').value='';
   return;
  }
  add('p','spxm-warning',t.intro,entry);
