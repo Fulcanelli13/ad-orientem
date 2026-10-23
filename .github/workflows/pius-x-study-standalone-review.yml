@@ -14,6 +14,7 @@ on:
       - 'tools/build-pius-x-next12-pastoral-dialogues.mjs'
       - 'tools/build-pius-x-earlier-94-p6.mjs'
       - 'tests/pius-x-study-earlier-94-p6-e2e.mjs'
+      - 'tests/pius-x-study-free-ask-e2e.mjs'
       - 'tools/spx-p0-editorial-normalization.mjs'
       - 'tools/spx-p2-followup-editorial-layer.mjs'
       - '.github/workflows/pius-x-study-standalone-review.yml'
@@ -29,6 +30,7 @@ on:
       - 'tools/build-pius-x-next12-pastoral-dialogues.mjs'
       - 'tools/build-pius-x-earlier-94-p6.mjs'
       - 'tests/pius-x-study-earlier-94-p6-e2e.mjs'
+      - 'tests/pius-x-study-free-ask-e2e.mjs'
       - 'tools/spx-p0-editorial-normalization.mjs'
       - 'tools/spx-p2-followup-editorial-layer.mjs'
       - '.github/workflows/pius-x-study-standalone-review.yml'
@@ -63,6 +65,8 @@ jobs:
         run: node tools/build-pius-x-earlier-94-p6.mjs
       - name: Validate P6 preserved sources and bilingual offline interaction
         run: node tests/pius-x-study-earlier-94-p6-e2e.mjs
+      - name: Test typed questions, conservative source navigation and short-form follow-ups
+        run: node tests/pius-x-study-free-ask-e2e.mjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
