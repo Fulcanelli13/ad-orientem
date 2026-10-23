@@ -1,6 +1,10 @@
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {createHash} from "node:crypto";
+import {mkdtempSync,writeFileSync,rmSync} from "node:fs";
+import {tmpdir} from "node:os";
+import {join} from "node:path";
+import {execFileSync} from "node:child_process";
 import {selectCatenaPericopes} from "../src/scripture/catena-inline.js";
 import {validateMarkBlindFixture,retrieveMarkBlindCase,validateMarkBlindCaseDecision,
  buildMarkBlindReviewExport,reconcileMarkBlindReviews,CATENA_MARK_BLIND_EXPORT_SCHEMA}
@@ -91,6 +95,32 @@ const changed={...original,messageGrades:original.messageGrades.map((r,i)=>i===0
 switched.set(sample.c.id,changed);
 const expoC=buildMarkBlindReviewExport(fixture,"Editor Beta — synthetic test",switched);
 assert.equal(reconcileMarkBlindReviews(fixture,expoA,expoC).disagreements.length,1);
+const tmp=mkdtempSync(join(tmpdir(),"ao-catena-mark-blind-"));
+try{
+ const one=join(tmp,"reviewerA.json"),two=join(tmp,"reviewerB.json");
+ writeFileSync(one,JSON.stringify(expoA));writeFileSync(two,JSON.stringify(expoC));
+ const output=execFileSync(process.execPath,
+  ["tools/scripture/reconcile-catena-mark-blind.mjs",one,two],
+  {encoding:"utf8"});
+ const checked=JSON.parse(output);
+ assert.equal(checked.caseCount,23);
+ assert.equal(checked.disagreementsTotal,1);
+ assert.equal(checked.sourceDigestsReverified,true);
+ assert.equal(checked.publicationApproval,false);
+ const corrupt={...expoC,entries:expoC.entries.map((e,i)=>i!==0?e:{
+  ...e,messageGrades:e.messageGrades.map((m,j)=>j===0?{...m,sourceSHA256:"f".repeat(64)}:m)})};
+ // The altered record may have no retrieved messages, so deliberately locate
+ // a graded excerpt before tampering with a canonical digest.
+ const hit=corrupt.entries.findIndex(e=>e.messageGrades.length>0);
+ assert.ok(hit>=0);
+ corrupt.entries[hit]={...corrupt.entries[hit],
+  messageGrades:corrupt.entries[hit].messageGrades.map((m,i)=>
+   i===0?{...m,sourceSHA256:"f".repeat(64)}:m)};
+ writeFileSync(two,JSON.stringify(corrupt));
+ assert.throws(()=>execFileSync(process.execPath,
+  ["tools/scripture/reconcile-catena-mark-blind.mjs",one,two],
+  {encoding:"utf8",stdio:["ignore","pipe","pipe"]}),/Command failed/);
+}finally{rmSync(tmp,{recursive:true,force:true})}
 const tampered={...data,cases:[{...data.cases[0],sourcePointer:"catena.mark.1.1:1"},...data.cases.slice(1)]};
 assert.throws(()=>validateMarkBlindFixture(tampered),/CASE_INVALID/);
 const malformed={...data,cases:data.cases.slice(1)};
