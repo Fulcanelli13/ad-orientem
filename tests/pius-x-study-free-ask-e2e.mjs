@@ -41,7 +41,7 @@ try{
   assert((await page.locator('[data-spxc-ask-pick]').count())>0,'requires explicit selection for inferred matches');
   await page.locator('[data-spxc-ask-pick]').first().click();
   assert.equal(await page.locator('.spxc-turn').count()>=1,true);
-  await ask('zzzz qqqq this question does not exist');
+  await ask('zzzzqqqq vvvvxxxx impossiblemadeup');
   assert.match(await page.locator('.spxc-ask-result').innerText(),/No documented question was confidently located/);
   assert.equal(await page.locator('[data-spxc-ask-pick]').count(),0,'no unsupported inferred answer');
   await page.locator('#spxc-lang').click();
