@@ -58,6 +58,34 @@ assert.equal(proof.movements.filter(m=>m.literaryDeskPass?.editorialApproval===f
 assert.equal(proof.literaryReviewProgress.historicSourceBridgesAbsorbedIntoEssentialText,1);
 assert.equal(proof.literaryReviewProgress.oralReadingsApproved,0);
 assert.equal(proof.totals.sourceBridgeCandidates,16);
+const afterTrials=proof.movements.flatMap(m=>m.beats.filter(b=>b.afterSelectedReadthroughTrial)
+ .map(b=>({movement:m.id,beat:b})));
+assert.deepEqual(afterTrials.map(x=>x.beat.id),["H20-01","H64-01"]);
+assert.deepEqual(afterTrials.map(x=>x.beat.afterSelectedReadthroughTrial.refs),
+ [["Exodus 12:29–30"],["John 19:31–37"]]);
+for(const {beat} of afterTrials){
+ const trial=beat.afterSelectedReadthroughTrial;
+ assert.equal(trial.accepted,false);
+ assert.equal(trial.publicationApproved,false);
+ assert.equal(trial.originalUnitRefsUnmodified,true);
+ for(const ref of trial.refs){
+  assert.ok(!beat.refs.includes(ref),"Trial verse must not silently become selected Scripture");
+  const parsed=parseScriptureContext(ref);
+  assert.ok(parsed);
+  for(const edition of ["dr-challoner","cpdv-2009","crampon-1923"]){
+   const verses=new Map(get("data/scripture/witness/"+edition+"/"+parsed.passage.book+".json")
+    .verses.map(([ch,v,t])=>[ch+":"+v,t]));
+   for(let v=parsed.passage.verseStart;v<=parsed.passage.verseEnd;v++)
+    assert.ok(verses.get(parsed.passage.chapter+":"+v)?.trim(),edition+" missing trial "+ref);
+  }
+ }
+}
+assert.ok(html.includes("const afterTrial=beat.afterSelectedReadthroughTrial"));
+assert.ok(html.includes("if(!bridge&&showBridges&&afterTrial)"),"Research trials must be opt-in, never main reading");
+assert.ok(html.includes("The main reading still omits this text"));
+const researchTrialRenderer=html.split("const afterTrial=beat.afterSelectedReadthroughTrial")[1].split("host.append(compare);held++;")[0];
+assert.ok(researchTrialRenderer&&!researchTrialRenderer.includes("previous=p"),
+ "Trial source must not change the canonical omitted-seam pointer");
 assert.equal(proof.totals.independentlyReadAndApproved,false);
 assert.equal(proof.displayRules.neverCombineDifferentWitnessText,true);
 assert.equal(proof.displayRules.showEveryDroppedSpanBetweenAdjacentScriptureFragments,true);
