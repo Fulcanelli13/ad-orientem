@@ -1895,7 +1895,40 @@
           "edition": "cpdv-2009",
           "policy": "DOCTRINAL_OR_NARRATIVE_FULL_PASSAGE_LOCK",
           "hasPartialVerseHold": false,
-          "publicationApproved": false
+          "publicationApproved": false,
+          "semanticEditionAlignment": {
+            "kind": "CROSS_CHAPTER_ISAIAH_CHILD_ORACLE_VERSE_SHIFT",
+            "englishBaseRefs": [
+              "Isaiah 9:1–6"
+            ],
+            "selectedReferencesByEdition": {
+              "dr-challoner": [
+                "Isaiah 9:1–6"
+              ],
+              "cpdv-2009": [
+                "Isaiah 9:1–6"
+              ],
+              "crampon-1923": [
+                "Isaiah 8:23",
+                "Isaiah 9:1–5"
+              ]
+            },
+            "zebulunNephtaliByEdition": {
+              "dr-challoner": "Isaiah 9:1",
+              "cpdv-2009": "Isaiah 9:1",
+              "crampon-1923": "Isaiah 8:23"
+            },
+            "childIsBornByEdition": {
+              "dr-challoner": "Isaiah 9:6",
+              "cpdv-2009": "Isaiah 9:6",
+              "crampon-1923": "Isaiah 9:5"
+            },
+            "noBlindNumericAlignment": true,
+            "originalV18SourceReference": "Isaiah 9:1–6",
+            "sourceEvidence": "Verified direct text in three uncollated Catholic Isaiah witnesses on 2026-10-23; French Crampon carries the 9:1 prelude in 8:23, with the child at 9:5, not 9:6.",
+            "printedEditionCollationPending": true,
+            "publicationApproved": false
+          }
         },
         {
           "kind": "SCRIPTURE",
