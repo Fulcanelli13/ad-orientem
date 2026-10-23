@@ -3,6 +3,7 @@ import {readFileSync} from "node:fs";
 import {CATENA_MARK_RESEARCH_COMMIT,validateCatenaMarkEditorial,
  findCatenaMarkResearchQuestion,loadCatenaMarkEditorialSource}
  from "../src/scripture/catena-mark-editorial.js";
+import {selectCatenaPericopes} from "../src/scripture/catena-inline.js";
 const original=JSON.parse(readFileSync("data/scripture/catena/editorial-mark-original-work-crosswalk.v1.json","utf8"));
 const registry=validateCatenaMarkEditorial(original);
 assert.equal(original.importedFromResearchCommit,CATENA_MARK_RESEARCH_COMMIT);
@@ -19,7 +20,10 @@ function sectionFor(pointer){
  const pericopeId=pointer.slice(0,pointer.lastIndexOf(":"));
  const section=chunks.get(filename).pericopes.find(p=>p.id===pericopeId);
  assert.ok(section,pointer);
- return {section:{...section,source:{url:section.source_url}},segment:section.segments[Number(m[3])]};
+ const display=selectCatenaPericopes([section],{book:"Mark",chapter,verseStart:Number(m[2]),verseEnd:Number(m[2])})[0];
+ assert.ok(display,"canonical loader must return the selected Mark pericope");
+ assert.equal(Object.hasOwn(display,"verse_keys"),false,"display records intentionally omit raw verse keys");
+ return {section:display,segment:display.segments[Number(m[3])]};
 }
 for(const row of registry.rows){
  const {section,segment}=sectionFor(row.sourcePointer);
