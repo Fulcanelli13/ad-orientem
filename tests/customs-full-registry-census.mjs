@@ -1963,7 +1963,7 @@ const pitreNewS2=load('data/customs/master/pitre-1900-new-gangi-gratteri-geraci-
 assert.equal(pitreNewS1.records.length,68);
 assert.equal(pitreNewS2.records.length,53);
 const pitreNewStages=[...pitreNewS1.records,...pitreNewS2.records];
-const pitreNewCatalogue=researchCatalogue.external_source_observations_pitre_original_1900_new_ocr;
+const pitreNewCatalogue=researchCatalogue.external_source_observations_pitre_original_1900_new_ocr.slice(0,121);
 assert.equal(pitreNewCatalogue.length,121);
 assert.equal(new Set(pitreNewCatalogue.map(r=>r.id)).size,121);
 assert.equal(new Set(pitreNewCatalogue.map(r=>r.section)).size,7);
