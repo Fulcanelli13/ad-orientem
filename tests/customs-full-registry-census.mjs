@@ -657,3 +657,94 @@ for(const r of mkReview.records){
 assert.equal(candidates,380);
 for(const ex of mkReview.manual_review_priority_examples) assert.ok(mkIds.has(ex.source_id));
 console.log('Mueller/Kelly: 204 safely routed to 380 lexical comparison leads, zero equivalences or independent witnesses claimed — PASS');
+
+
+// Concurrent-research collision guard: second independent source-action pass
+// of the SAME 1955 Mueller EWTN witness is preserved as annotated detail, NOT
+// 100 new source witnesses or new customs.
+const muellerSecond=load('data/customs/master/mueller-1955-our-childrens-year-of-grace-ewtn-first-pass.v1.json');
+const muellerCross=load('data/customs/master/mueller-100-second-pass-to-122-nonadditive-source-crosswalk.v1.json');
+assert.equal(muellerSecond.records.length,100);
+assert.equal(muellerSecond.summary.observations,100);
+assert.equal(muellerSecond.summary.distinct_custom_identities_certified,0);
+assert.equal(muellerCross.records.length,100);
+assert.equal(muellerCross.summary.primary_mueller_source_obs,122);
+assert.equal(muellerCross.summary.secondary_mueller_detail_obs,100);
+assert.equal(muellerCross.summary.exact_ewtn_line_co_located,95);
+assert.equal(muellerCross.summary.without_exact_line,5);
+assert.equal(muellerCross.summary.secondary_obs_added_to_catalogue_source_count,0);
+assert.equal(muellerCross.summary.app_publications,0);
+const secondaryIds=new Set(muellerSecond.records.map(r=>r.observation_id));
+assert.equal(secondaryIds.size,100);
+assert.deepEqual(new Set(muellerCross.records.map(r=>r.secondary_source_observation_id)),secondaryIds);
+const priorMuellerIds=new Set(muellerKelly.records.filter(r=>r.observation_id.startsWith('MUE55-')).map(r=>r.observation_id));
+assert.equal(priorMuellerIds.size,122);
+const priorMuellerById=new Map(muellerKelly.records.filter(r=>priorMuellerIds.has(r.observation_id)).map(r=>[r.observation_id,r]));
+const secondMuellerById=new Map(muellerSecond.records.map(r=>[r.observation_id,r]));
+let coLocated=0;
+for(const r of muellerCross.records){
+ const detail=secondMuellerById.get(r.secondary_source_observation_id);
+ assert.ok(detail);
+ assert.equal(r.ewtn_line,detail.source_locator.html_line_start);
+ assert.equal(r.add_to_1629_source_rows,false);
+ assert.equal(r.separate_distinct_custom_verified,false);
+ assert.equal(r.independent_second_author_corroboration,false);
+ if(r.co_located_prior_mueller_source_ids.length)coLocated++;
+ for(const id of r.co_located_prior_mueller_source_ids){
+  const prior=priorMuellerById.get(id);
+  assert.ok(prior);
+  assert.equal(prior.source_locator.html_line_start,r.ewtn_line);
+ }
+}
+assert.equal(coLocated,95);
+assert.equal(count.source_observations.total_source_detail_rows_including_external,1629);
+assert.equal(count.source_observations.mueller_second_pass_detail_rows_not_added_to_source_total,100);
+assert.equal(count.source_review.mueller_secondary_exact_text_line_colocated,95);
+assert.equal(count.source_review.mueller_secondary_without_exact_line_owner,5);
+assert.equal(researchCatalogue.summary.no_new_app_publications,true);
+console.log('Mueller concurrent second-pass overlap: 100 preserved, 95 same-line, 5 unmatched; 1,629 unique source-detail indexing rows unchanged — PASS');
+
+// Search-hint extraction over 198 Stokes source observations + 100 NONADDITIVE
+// Mueller second-pass details, with ALL 298 routed explicitly. These are
+// retrieval aids only, never source-level semantic identity decisions.
+const stokesMuellerRouting=load('data/customs/master/stokes-mueller-298-source-routing-lexical-screen.v1.json');
+assert.equal(stokesMuellerRouting.records.length,298);
+assert.equal(stokesMuellerRouting.summary.input_stokes,198);
+assert.equal(stokesMuellerRouting.summary.input_mueller,100);
+assert.equal(stokesMuellerRouting.summary.candidate_pool_size,490);
+assert.equal(stokesMuellerRouting.summary.rows_with_automated_lexical_hints,119);
+assert.equal(stokesMuellerRouting.summary.rows_without_automated_hints,179);
+assert.equal(stokesMuellerRouting.summary.individual_hints,208);
+assert.equal(stokesMuellerRouting.summary.verified_identity_equivalences,0);
+assert.equal(stokesMuellerRouting.summary.confirmed_independent_corroborations,0);
+assert.equal(stokesMuellerRouting.summary.app_publications,0);
+const allSourceIds=new Set([...stokesIds,...secondaryIds]);
+assert.deepEqual(new Set(stokesMuellerRouting.records.map(r=>r.source_observation_id)),allSourceIds);
+const candidateOwners=new Set([
+ ...researchCatalogue.existing_master_identities,
+ ...researchCatalogue.provisional_handbook_groups,
+ ...researchCatalogue.provisional_historical_groups,
+ ...researchCatalogue.provisional_unindexed_practice_leads,
+ ...researchCatalogue.provisional_unassigned_action_leads,
+ ...researchCatalogue.external_source_action_families_mcloughlin
+].map(r=>r.id));
+assert.equal(candidateOwners.size,490);
+let hints=0;
+for(const r of stokesMuellerRouting.records){
+ assert.equal(r.identity_verification,'NOT_PERFORMED');
+ assert.equal(r.corroboration_status,'NOT_EVALUATED_PRIMARY_WITNESS_VS_DERIVATIVE');
+ assert.equal(r.normalized_unique_custom_owner,null);
+ assert.equal(r.app_publication,false);
+ assert.ok(r.candidate_lookup_hints.length<=3);
+ for(const c of r.candidate_lookup_hints){
+  assert.ok(candidateOwners.has(c.candidate_id));
+  assert.equal(c.status,'RETRIEVAL_HINT_NOT_SEMANTICALLY_ADJUDICATED');
+  assert.ok(c.shared.length>=2);
+  hints++;
+ }
+}
+assert.equal(hints,208);
+assert.equal(count.source_review.stokes_mueller_source_rows_routed_lexically_noncanonical,298);
+assert.equal(count.source_review.stokes_mueller_source_rows_with_label_retrieval_hints,119);
+assert.equal(count.source_review.stokes_mueller_source_rows_without_label_retrieval_hints,179);
+console.log('Stokes 198 + Mueller 100 second-pass source observations: 298/298 nonmerging label routes, 119 with hints, no source duplication or app publication — PASS');
