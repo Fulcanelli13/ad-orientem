@@ -613,3 +613,47 @@ assert.equal(count.identity_working_rows.provisional_after_53_no_owner_action_re
 assert.equal(count.identity_working_rows.final_uniquely_verified_customs_added,0);
 assert.equal(researchCatalogue.summary.no_new_app_publications,true);
 console.log('Mueller/Kelly EWTN text source actions: 204/204 non-loss, 1,629 aggregate rows, no publication or new canonical groups — PASS');
+
+
+// Read-only cross-corpus lexical match leads for new Mueller / Kelly actions.
+// These cannot be used as evidence of practice identity, source independence,
+// ritual authority or release eligibility.
+const mkReview=load('data/customs/master/mueller-kelly-204-cross-source-candidate-review.v1.json');
+assert.equal(mkReview.schema,'AO_CUSTOMS_MUELLER_KELLY_204_CROSS_CORPUS_NONMERGING_CANDIDATE_WORKLIST_V1');
+assert.equal(mkReview.records.length,204);
+assert.deepEqual(new Set(mkReview.records.map(x=>x.source_id)),mkIds);
+assert.equal(mkReview.summary.rows_with_candidate,138);
+assert.equal(mkReview.summary.rows_without_candidate,66);
+assert.equal(mkReview.summary.candidate_links,380);
+assert.equal(mkReview.summary.independent_witnesses_certified,0);
+assert.equal(mkReview.summary.equivalent_customs_certified,0);
+assert.equal(mkReview.summary.automatic_merges,0);
+assert.equal(mkReview.summary.published_customs,0);
+const mkComparisonTargets=new Set([
+...researchCatalogue.existing_master_identities,
+...researchCatalogue.provisional_handbook_groups,
+...researchCatalogue.provisional_historical_groups,
+...researchCatalogue.provisional_unindexed_practice_leads,
+...researchCatalogue.provisional_unassigned_action_leads,
+...researchCatalogue.external_source_observations_mcloughlin,
+...researchCatalogue.external_source_observations_stokes,
+...researchCatalogue.external_source_observations_catholicculture_excerpts
+].map(x=>x.id));
+let candidates=0;
+for(const r of mkReview.records){
+ assert.equal(r.identity_decision,'UNDECIDED');
+ assert.equal(r.source_dependency_decision,'UNDECIDED');
+ assert.equal(r.ecclesiastical_authority_decision,'UNDECIDED');
+ assert.equal(r.app_publication,'NONE');
+ assert.ok(r.candidate_links.length<=5);
+ for(const c of r.candidate_links){
+  assert.ok(mkComparisonTargets.has(c.target_id),'Unknown lexical target '+c.target_id);
+  assert.equal(c.relation,'TEXT_OVERLAP_LEAD_ONLY_IDENTITY_UNDECIDED');
+  assert.ok(c.similarity_score>=0.31);
+  assert.ok(c.shared_tokens.length>=2);
+  candidates++;
+ }
+}
+assert.equal(candidates,380);
+for(const ex of mkReview.manual_review_priority_examples) assert.ok(mkIds.has(ex.source_id));
+console.log('Mueller/Kelly: 204 safely routed to 380 lexical comparison leads, zero equivalences or independent witnesses claimed — PASS');
