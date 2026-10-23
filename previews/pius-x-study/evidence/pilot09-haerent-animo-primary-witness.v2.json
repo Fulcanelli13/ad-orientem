@@ -23,28 +23,52 @@
       "locus": "§15, daily meditation",
       "text": "meditationi certum aliquod spatium quotidie concedatur",
       "meaning": "Priests are to set aside time for meditation daily",
-      "speaker": "PIUS_X_AUTHOR"
+      "speaker": "PIUS_X_AUTHOR",
+      "webTextVerification": {
+        "status": "MATCHED_ORIGINAL_LANGUAGE_VATICAN_PAGE_TEXT",
+        "checkedOn": "2026-10-23",
+        "sourcePageLine": 87,
+        "method": "Exact substring in original-language Vatican webpage (transcription audit only; not independent doctrinal or translation approval)"
+      }
     },
     {
       "id": "HA-MINISTRY",
       "locus": "§18, pastoral work as pretext",
       "text": "se totos agitationi ministerii dedidisse",
       "meaning": "Some plead total absorption in the activities of ministry",
-      "speaker": "PIUS_X_AUTHOR"
+      "speaker": "PIUS_X_AUTHOR",
+      "webTextVerification": {
+        "status": "MATCHED_ORIGINAL_LANGUAGE_VATICAN_PAGE_TEXT",
+        "checkedOn": "2026-10-23",
+        "sourcePageLine": 96,
+        "method": "Exact substring in original-language Vatican webpage (transcription audit only; not independent doctrinal or translation approval)"
+      }
     },
     {
       "id": "HA-REJECT",
       "locus": "§18, rejection of excuse",
       "text": "Verum falluntur misere",
       "meaning": "Pius X rejects the ministerial-work excuse",
-      "speaker": "PIUS_X_AUTHOR"
+      "speaker": "PIUS_X_AUTHOR",
+      "webTextVerification": {
+        "status": "MATCHED_ORIGINAL_LANGUAGE_VATICAN_PAGE_TEXT",
+        "checkedOn": "2026-10-23",
+        "sourcePageLine": 96,
+        "method": "Exact substring in original-language Vatican webpage (transcription audit only; not independent doctrinal or translation approval)"
+      }
     },
     {
       "id": "HA-COLLOQUY",
       "locus": "§18, speaking with God",
       "text": "Nec enim assueti cum Deo colloqui",
       "meaning": "Those unaccustomed to speaking with God lose vitality in instructing others",
-      "speaker": "PIUS_X_AUTHOR"
+      "speaker": "PIUS_X_AUTHOR",
+      "webTextVerification": {
+        "status": "MATCHED_ORIGINAL_LANGUAGE_VATICAN_PAGE_TEXT",
+        "checkedOn": "2026-10-23",
+        "sourcePageLine": 97,
+        "method": "Exact substring in original-language Vatican webpage (transcription audit only; not independent doctrinal or translation approval)"
+      }
     }
   ],
   "dialogueMappings": [
@@ -87,5 +111,10 @@
     "The Vatican Latin document is explicitly addressed to Catholic clergy",
     "§18 rejects the argument that the exertions of ministry excuse failure to meditate",
     "The longer preceding discussion quotes St Bernard and other authorities; do not invent personal Pius X experience from these citations"
-  ]
+  ],
+  "webTextAudit": {
+    "checkedOn": "2026-10-23",
+    "matchedCount": 4,
+    "notClaiming": "Full diplomatic collation, context-independent speaker approval, or publication eligibility"
+  }
 }
