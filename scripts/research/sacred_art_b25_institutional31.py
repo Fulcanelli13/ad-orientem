@@ -18,7 +18,7 @@ CAT=ROOT/"sacred-art-missing-after-b24.csv"
 OUTPUT=pathlib.Path("artifacts/b25-institutional31");OUTPUT.mkdir(parents=True,exist_ok=True)
 AGENT="AdOrientem-OriginalSacredArtInstitutionalResearch/1.0 (+https://github.com/Fulcanelli13/ad-orientem)"
 CF=["artwork_id","title","artist","source_url","source_host","http_status","page_status",
-    "html_page_title","canonical_url","structured_object_metadata","image_candidates_found","high_relevance_candidates",
+    "html_page_title","canonical_url","final_url","structured_object_metadata","image_candidates_found","high_relevance_candidates",
     "visible_copyright_text","rights_caveat","media_rights_certified","identity_certified",
     "source_binary_acquired","editorial_status","checked_utc","error"]
 IM=["artwork_id","title","source_url","asset_url_candidate","image_alt","image_title","image_context",
