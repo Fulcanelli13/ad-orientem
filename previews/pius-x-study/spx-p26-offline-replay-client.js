@@ -7,7 +7,8 @@ if(!seed)return;
 const data=JSON.parse(seed.textContent);
 if(data.schema!=='AO_SPX_P26_OFFLINE_REVIEW_CASES_V1'||data.publishingApproved!==false||
    data.modelProviderEnabled!==false||data.cases.length!==11||
-   data.navigationAliasCount!==32||data.navigationAliases.length!==32)
+   data.navigationAliasCount!==32||data.navigationAliases.length!==32||
+   data.claimTraceUnits!==23||data.humanClaimCertifications!==0)
  throw Error('Unexpected offline dialogue evidence');
 const groups=new Map();
 for(const c of data.cases){
@@ -15,6 +16,10 @@ for(const c of data.cases){
  groups.get(c.chapterId).push(c);
 }
 const normalize=x=>String(x||'').trim().normalize('NFC').toLocaleLowerCase();
+if(data.cases.reduce((n,c)=>n+c.claimTrace.length,0)!==23||
+   data.cases.some(c=>c.claimTrace.some(t=>t.humanReviewApproved!==false||
+    t.translationApproved!==false||t.verbatimPapalSpeech!==false)))
+ throw Error('Private per-sentence documentary gate failed');
 const aliases=new Map();
 for(const a of data.navigationAliases){
  if(a.status!=='NAVIGATION_SUGGESTION_ONLY_NOT_SOURCE_ANSWER_CERTIFIED'||
@@ -37,7 +42,9 @@ const tr={
  scope:'This scripted study replays 11 unapproved EN/FR editorial drafts. It does not generate new answers or determine current sacramental law.',
  source:'Open the Vatican source',draft:'Private editorial draft, not a certified translation or pastoral ruling',
  example:'Try different wording',related:'A related reviewed exchange exists. It may not answer every part of your question.',
- relatedAction:'Open documented question',relatedCaution:'This is only a navigation suggestion. No new historical reply has been generated.'
+ relatedAction:'Open documented question',relatedCaution:'This is only a navigation suggestion. No new historical reply has been generated.',
+ traceTitle:'Inspect sentence-by-sentence evidence',traceCaution:'Each link is an editorial interpretation of the cited original-language excerpt, not an independently certified translation or proof of the full sentence.',
+ claimLabel:'Editorial sentence',witnessLabel:'Original source excerpt',webLine:'Vatican web-text line',sourceReview:'Source correspondence pending human review'
  },
  fr:{
  title:'DIALOGUE DOCUMENTAIRE HORS LIGNE · ÉTUDE PRIVÉE',
@@ -52,7 +59,9 @@ const tr={
  example:'Essayer une autre formulation',
  related:'Un échange documentaire connexe existe ; il ne répond pas nécessairement à toute votre question.',
  relatedAction:'Ouvrir la question documentée',
- relatedCaution:'Il s’agit uniquement d’une suggestion de navigation. Aucune réponse historique nouvelle n’a été créée.'
+ relatedCaution:'Il s’agit uniquement d’une suggestion de navigation. Aucune réponse historique nouvelle n’a été créée.',
+ traceTitle:'Examiner les sources phrase par phrase',traceCaution:'Chaque rapprochement est une interprétation éditoriale de l’extrait original, non une traduction certifiée ni une preuve indépendante de toute la phrase.',
+ claimLabel:'Phrase éditoriale',witnessLabel:'Extrait du texte original',webLine:'Ligne du texte sur le site du Vatican',sourceReview:'Correspondance avec la source à vérifier'
  }
 };
 const root=document.createElement('section');root.id='spxc-offline-replay';root.hidden=true;
@@ -154,6 +163,25 @@ $('spxm-offline-form').addEventListener('submit',e=>{
   link.href=witness.sourceUrl;link.target='_blank';link.rel='noopener noreferrer';
   entry.append(details);
  }
+ // Keep the full response readable. Only on request expose the individual
+ // sentence-to-fragment *editorial* comparisons, never as verified quotations.
+ const audit=document.createElement('details');audit.className='spxm-claim-audit';
+ add('summary','',t.traceTitle+' · '+chosen.claimTrace.length, audit);
+ add('p','spxm-trace-caution',t.traceCaution,audit);
+ for(const unit of chosen.claimTrace){
+  const section=add('section','spxm-trace-unit','',audit);
+  add('p','spxm-trace-label',t.claimLabel+' '+unit.ordinal+' · '+t.sourceReview,section);
+  add('p','spxm-trace-claim',unit.claim[language],section);
+  for(const witness of unit.fragments){
+   const block=add('div','spxm-trace-witness','',section);
+   add('p','spxm-trace-label',t.witnessLabel+' · '+witness.id+
+    ' · '+witness.originalLanguage.toUpperCase()+' · '+witness.locus,block);
+   add('p','spxm-trace-original',witness.text,block);
+   const link=add('a','',t.source,block);
+   link.href=witness.sourceUrl;link.target='_blank';link.rel='noopener noreferrer';
+  }
+ }
+ entry.append(audit);
  add('p','spxm-offline-disclaimer',t.draft,entry);
  $('spxm-offline-question').value='';
  // The five pre-approved sprite expressions are visual staging only.
