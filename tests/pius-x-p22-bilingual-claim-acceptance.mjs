@@ -42,8 +42,11 @@ for(const r of json.cases){
   assert(!/\b(?:I remember|I witnessed|my mother said|I personally)\b/i.test(reply));
   const choice=selectEvidence(store,{chapterId:r.chapterId,nodeId:r.nodeId,language:lang,question:r.question[lang]});
   assert.equal(choice.status,'eligible','Not source-gated '+r.nodeId+'/'+lang+': '+choice.reason);
-  const known=new Set(choice.evidence.map(e=>e.id));
+  assert.equal(choice.evidence.length,1,'Existing composer binds one source-evidence object to its original node');
+  assert.equal(choice.evidence[0].id,r.nodeId);
+  const known=new Set(choice.evidence.flatMap(e=>e.originalLanguageWitnesses.map(w=>w.id)));
   for(const evidenceId of r.evidenceIds)assert(known.has(evidenceId),'Witness not in source-only gate: '+r.nodeId+' '+evidenceId);
+  assert(choice.evidence[0].originalLanguageWitnesses.every(w=>w.speaker&&w.text&&w.locus),'Unattributed original witness');
   const k=lang+'|'+r.question[lang];
   assert(!questions.has(k),'Duplicated question '+k);questions.set(k,r);
   allowedByQuestion.set(k,r.evidenceIds);
@@ -57,7 +60,7 @@ const mockModel=async(purpose,messages)=>{
  if(purpose==='compose'){
   const r=questions.get(data.language+'|'+data.question);
   if(!r)throw new Error('A source-only mock has no approved review question');
-  return {mode:'answer',text:r.replySpecimen[data.language],evidenceIds:r.evidenceIds,expression:'explaining'};
+  return {mode:'answer',text:r.replySpecimen[data.language],evidenceIds:[data.evidence[0].id],expression:'explaining'};
  }
  return {supported:true,allClaimsSupported:true,ids:data.candidate.ids};
 };
@@ -68,7 +71,9 @@ for(const r of json.cases)for(const lang of ['en','fr']){
  assert.equal(response.reply,r.replySpecimen[lang]);
  assert.equal(response.publishingApproved,false);
  assert.equal(response.originalTextCollated,false);
- assert.deepEqual(response.evidence.map(e=>e.id),r.evidenceIds);
+ assert.deepEqual(response.evidence.map(e=>e.id),[r.nodeId]);
+ // The reply API returns node-level locators; witness-level claims are audited above
+ // and must not be represented as full papal-word or translation certification.
  assert(response.label.includes('NOT AN AUTHENTIC ST PIUS X QUOTATION'));
 }
 assert.equal(callCount.compose,22);
