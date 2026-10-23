@@ -42,6 +42,11 @@ jobs:
           path: artifacts/b25-ribera-jude/
           retention-days: 7
           if-no-files-found: warn
+      - name: P0 gate - archive unchanged acquisition files in an unpublished GitHub Release
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python scripts/research/sacred_art_release_archive_gate.py --wave b25ribera --source-dir artifacts/b25-ribera-jude
       - name: Commit file hash audit with original inventory and resolution hold
         if: success()
         run: |
