@@ -26,8 +26,9 @@ export function buildPrimaryCoverageReport(store,{nextBatchDocuments=12}={}){
  const supplemental=JSON.parse(readFileSync(new URL('../previews/pius-x-study/evidence/pius-x-eight-document-followup-triage-20261023.v1.json',import.meta.url),'utf8'));
  const eight=JSON.parse(readFileSync(new URL('../previews/pius-x-study/evidence/pius-x-next12-eight-opening-context-evidence-20261023.v1.json',import.meta.url),'utf8'));
  const wave2=JSON.parse(readFileSync(new URL('../previews/pius-x-study/evidence/pius-x-six-document-wave2-20261023.v1.json',import.meta.url),'utf8'));
+ const wave3=JSON.parse(readFileSync(new URL('../previews/pius-x-study/evidence/pius-x-six-document-wave3-20261023.v1.json',import.meta.url),'utf8'));
  const totalResearchWitnesses=[...annexes.values()].reduce((n,a)=>n+a.sourceWitnesses.length,0)+
-   eight.items.reduce((n,a)=>n+a.witnesses.length,0)+supplemental.additionalOriginalWitnesses.length+wave2.witnesses.length;
+   eight.items.reduce((n,a)=>n+a.witnesses.length,0)+supplemental.additionalOriginalWitnesses.length+wave2.witnesses.length+wave3.witnesses.length;
  for(const c of store.data.chapters){
   if(c.partial)partialChapters++;
   const sourceUrl=c.source?.url||c.nodes?.[0]?.source?.url||'';
@@ -50,9 +51,9 @@ export function buildPrimaryCoverageReport(store,{nextBatchDocuments=12}={}){
    }
   }
  }
- if(nodes!==423||store.data.chapters.length!==106||coveredNodes!==82||
-    gate.size!==33||sourceOwnedInitialNodes!==14||totalResearchWitnesses!==102)
-  throw new Error('Canonical P6 or 82-node original-text source-only coverage changed');
+ if(nodes!==423||store.data.chapters.length!==106||coveredNodes!==120||
+    gate.size!==41||sourceOwnedInitialNodes!==14||totalResearchWitnesses!==142)
+  throw new Error('Canonical P6 or 120-node original-text source-only coverage changed');
  const all=[...groups.values()].map(g=>{
   const {genres,sourceClasses,witnessAnchorIds,...rest}=g;
   return {...rest,genres:[...genres].sort(),sourceClasses:[...sourceClasses].sort(),
@@ -72,6 +73,10 @@ export function buildPrimaryCoverageReport(store,{nextBatchDocuments=12}={}){
    oldAnnexDocumentSubjects:annexes.size,oldAnnexMappedNodes:sourceOwnedInitialNodes,
    expandedOpeningNodes:eight.items.length,newBoundedFollowupNodes:supplemental.summary.boundedFollowupCandidates,
    bulkWave2NewNodes:wave2.summary.newlyMappedNodes,bulkWave2PartialNodeHolds:wave2.summary.originalP6PartialHolds,bulkWave2Screened:wave2.summary.screenedExistingNodeIDs,bulkWave2NewExcerpts:wave2.witnesses.length,
+   bulkWave3Screened:wave3.summary.previouslyUnmappedNodesScreened,
+   bulkWave3NewNodes:wave3.summary.newBoundedResearchCandidates,
+   bulkWave3Holds:wave3.summary.newResearchHolds,
+   bulkWave3NewExcerpts:wave3.witnesses.length,
    heldResearchFollowups:supplemental.summary.heldFollowupNodes,
    nodesNotYetMappedToOriginalExcerpt:423-coveredNodes,
    originalLanguageExcerptAnchors:totalResearchWitnesses,
