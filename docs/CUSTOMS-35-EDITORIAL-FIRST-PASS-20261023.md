@@ -21,7 +21,7 @@ Complete review notes and one explicit priority per custom: `data/customs/resear
 | LIFE-002 | Retain distinction between thanksgiving and purported impurity; verify ritual edition/scope |
 | DEV-006 | Distinguish pilgrimage generally from changing local schedules and access-inconclusive links |
 | DEV-010 | Separate votive practice from dated candle offerings or financial promises |
-| DOM-011 | Confirm that linked Candlemas lexicon supports domestic keeping of blessed candles |
+| DOM-011 | **Source wording corrected:** French lexicon says candles were traditionally burned *auprès des morts* (beside the dead), not *auprès des mourants* (near the dying); history article, folio and registry now agree |
 | BLSS-001 | Verify historical vs modern ritual text and distinct ministerial provisions |
 | SJOS-001 | Source Sicilian origin independently of a 2026 US altar announcement |
 | BLSS-003 | Traditional wine blessing, historical legend, non-Eucharistic status and parish choice |
