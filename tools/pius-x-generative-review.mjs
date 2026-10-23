@@ -79,6 +79,12 @@ export function selectEvidence(store,input){
   return held('unsupported_request_to_invent_historical_testimony');
  if(input?.nodeId && !c.nodes.some(n=>n.id===input.nodeId))return held('unknown_source_node');
  const selected=input?.nodeId?c.nodes.find(n=>n.id===input.nodeId):c.nodes[0];
+ const selectedAnnex=store.primaryWitnessAnnexes.get(c.id);
+ const selectedMapping=selectedAnnex?.dialogueMappings.find(m=>m.nodeId===selected.id);
+ if(selectedMapping?.editorialWarnings?.some(w=>
+   w.startsWith('NEGATIVE_CLAIM_NOT_DIRECTLY_ATTESTED')||
+   w.startsWith('PRESENT_LAW_NOT_IN_SOURCE')))
+  return held('selected_question_outside_attested_historical_passage');
  const nodes=[c.nodes[0],selected].filter((n,i,a)=>a.findIndex(x=>x.id===n.id)===i);
  const annex=store.primaryWitnessAnnexes.get(c.id);
  const mapById=new Map((annex?.dialogueMappings||[]).map(m=>[m.nodeId,m]));
