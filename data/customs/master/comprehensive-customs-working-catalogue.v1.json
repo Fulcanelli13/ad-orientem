@@ -8,7 +8,7 @@
     "INTRA_AUTHOR_SOURCES": "Two Weiser books do not amount to independent corroboration.",
     "FULLNESS": "1958 Handbook's six overlooked observations prove its earlier 568-item index was not exhaustive. 1956 book full-scan pass likewise not certified page-by-page exhaustive.",
     "PRODUCT_BOUNDARY": "No Ad Orientem runtime publication or prioritization.",
-    "GRANULAR_DETAIL_NON_ADDITIVITY": "57 source details are often narrower subpractices of 568 earlier Handbook observations; count as research rows, not necessarily as new independent source observations or new identities."
+    "GRANULAR_DETAIL_NON_ADDITIVITY": "178 source details are nested under existing 568 Handbook observations; they are finer local or historical variants, not automatically 178 new independent custom identities. Base source-observation rows remain 685 across two Weiser books."
   },
   "summary": {
     "source_observations": {
@@ -18,9 +18,13 @@
       "family_1956_direct_scan": 111,
       "combined_distinct_source_rows": 685,
       "preview_subjects_extra_counted": 0,
-      "handbook_nested_granular_detail_mentions": 57,
-      "all_book_research_rows_including_nested_details": 742,
-      "combined_distinct_source_rows_note": "685 non-nested separately identified source observations; plus 57 nested source details that may refer to the same source passages or practices. Do not infer 742 independent customs or independent mentions."
+      "handbook_nested_granular_detail_mentions": 178,
+      "all_book_research_rows_including_nested_details": 863,
+      "combined_distinct_source_rows_note": "685 non-nested separately identified source observations; plus 57 nested source details that may refer to the same source passages or practices. Do not infer 742 independent customs or independent mentions.",
+      "granular_details_spread_by_batch": {
+        "ch10_to_13": 57,
+        "ch14_to_28": 121
+      }
     },
     "identity_working_rows": {
       "previously_existing_master_identities": 56,
@@ -36,7 +40,9 @@
       "family_records_with_handbook_proposed_overlap": 54,
       "family_records_with_master_proposed_overlap": 16,
       "family_records_without_direct_match": 56,
-      "handbook_ch10_to_ch13_page_detail_records": 57
+      "handbook_ch10_to_ch13_page_detail_records": 57,
+      "handbook_ch14_to_ch28_page_detail_records": 121,
+      "handbook_ch14_to_ch28_unique_page_locations": 42
     },
     "no_new_app_publications": true
   },
@@ -56,7 +62,8 @@
     "context": "data/customs/master/context-historical-contested-181-review.v1.json",
     "relation": "data/customs/master/weiser-two-book-relationship-review.v1.json",
     "handbook_ch10_13_granular": "data/customs/master/weiser-handbook-targeted-addendum-ch10-13.v1.json",
-    "weiser_precursor_acquisition": "data/customs/master/weiser-precursor-works-acquisition.v1.json"
+    "weiser_precursor_acquisition": "data/customs/master/weiser-precursor-works-acquisition.v1.json",
+    "handbook_ch14_28_granular": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
   },
   "existing_master_identities": [
     {
@@ -7900,6 +7907,2063 @@
       "parent_in_current_practice_groups": true,
       "verified_distinct_identity": false,
       "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch10-13.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-001",
+      "label": "Papal golden rose carried after Laetare Mass and blessed for presentation",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_CHURCH_CEREMONIAL",
+      "chapter": 14,
+      "printed_page": 178,
+      "pdf_page_zero_index": 195,
+      "ocr_line_range": [
+        6990,
+        7002
+      ],
+      "existing_parent_source_observation": "WEI58-14-010",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-002",
+      "label": "Apprentices returning to their baptismal mother church on Mothering Sunday",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "LOCAL_OR_HISTORICAL_VARIANT",
+      "chapter": 14,
+      "printed_page": 178,
+      "pdf_page_zero_index": 195,
+      "ocr_line_range": [
+        7008,
+        7014
+      ],
+      "existing_parent_source_observation": "WEI58-14-012",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-003",
+      "label": "Mothering Sunday visiting mothers with simnel cakes and relieving their chores",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "LOCAL_OR_HISTORICAL_VARIANT",
+      "chapter": 14,
+      "printed_page": 178,
+      "pdf_page_zero_index": 195,
+      "ocr_line_range": [
+        7015,
+        7020
+      ],
+      "existing_parent_source_observation": "WEI58-14-013",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-004",
+      "label": "Black or mourning attire during Lent at European courts",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_DOMESTIC_DISCIPLINE",
+      "chapter": 14,
+      "printed_page": 182,
+      "pdf_page_zero_index": 199,
+      "ocr_line_range": [
+        7150,
+        7159
+      ],
+      "existing_parent_source_observation": "WEI58-14-019",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-005",
+      "label": "Russian Lent abstention from secular music, jewellery and festivities",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_DOMESTIC_DISCIPLINE",
+      "chapter": 14,
+      "printed_page": 182,
+      "pdf_page_zero_index": 199,
+      "ocr_line_range": [
+        7160,
+        7167
+      ],
+      "existing_parent_source_observation": "WEI58-14-019",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-006",
+      "label": "Polish Ash Wednesday removal of colourful dress and dancing",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_DOMESTIC_DISCIPLINE",
+      "chapter": 14,
+      "printed_page": 182,
+      "pdf_page_zero_index": 199,
+      "ocr_line_range": [
+        7163,
+        7169
+      ],
+      "existing_parent_source_observation": "WEI58-14-019",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-007",
+      "label": "Spanish Italian and French Lenten parish missions preparing for Confession",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "LOCAL_OR_HISTORICAL_VARIANT",
+      "chapter": 14,
+      "printed_page": 183,
+      "pdf_page_zero_index": 200,
+      "ocr_line_range": [
+        7175,
+        7182
+      ],
+      "existing_parent_source_observation": "WEI58-14-020",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-008",
+      "label": "Russian household mutual forgiveness before Easter Confession",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "OTHER_RITE_DOMESTIC",
+      "chapter": 14,
+      "printed_page": 183,
+      "pdf_page_zero_index": 200,
+      "ocr_line_range": [
+        7184,
+        7191
+      ],
+      "existing_parent_source_observation": "WEI58-14-021",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-009",
+      "label": "Festive Russian household reception following Easter Communion",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "OTHER_RITE_DOMESTIC",
+      "chapter": 14,
+      "printed_page": 183,
+      "pdf_page_zero_index": 200,
+      "ocr_line_range": [
+        7191,
+        7195
+      ],
+      "existing_parent_source_observation": "WEI58-14-021",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-010",
+      "label": "Historical Palm procession kneeling before image and strewing cloths, branches, flowers",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_PROCESSIONAL_VARIANT",
+      "chapter": 15,
+      "printed_page": 190,
+      "pdf_page_zero_index": 207,
+      "ocr_line_range": [
+        7436,
+        7443
+      ],
+      "existing_parent_source_observation": "WEI58-15-004",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-011",
+      "label": "Palm Sunday family prayer at churchyard graves during procession",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_CHURCH_CEMETERY",
+      "chapter": 15,
+      "printed_page": 190,
+      "pdf_page_zero_index": 207,
+      "ocr_line_range": [
+        7444,
+        7453
+      ],
+      "existing_parent_source_observation": "WEI58-15-005",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-012",
+      "label": "Willow and yew named or used as palms in northern European regions",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_SACRAMENTAL_MATERIAL",
+      "chapter": 15,
+      "printed_page": 190,
+      "pdf_page_zero_index": 207,
+      "ocr_line_range": [
+        7462,
+        7472
+      ],
+      "existing_parent_source_observation": "WEI58-15-006",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-013",
+      "label": "Latin-country monumento altar of repose arranged as a high illuminated stairway",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_CHURCH_DECORATION",
+      "chapter": 15,
+      "printed_page": 195,
+      "pdf_page_zero_index": 212,
+      "ocr_line_range": [
+        7619,
+        7627
+      ],
+      "existing_parent_source_observation": "WEI58-15-016",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-014",
+      "label": "Dressed-in-black visits to seven Holy Thursday repositories with the Rosary",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_DEVOTIONAL_VARIANT",
+      "chapter": 15,
+      "printed_page": 195,
+      "pdf_page_zero_index": 212,
+      "ocr_line_range": [
+        7623,
+        7627
+      ],
+      "existing_parent_source_observation": "WEI58-15-015",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-015",
+      "label": "Washing stripped Holy Thursday altars with water and wine using branches",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_CHURCH_CEREMONIAL",
+      "chapter": 15,
+      "printed_page": 195,
+      "pdf_page_zero_index": 212,
+      "ocr_line_range": [
+        7635,
+        7639
+      ],
+      "existing_parent_source_observation": "WEI58-15-017",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-016",
+      "label": "Royal Maundy footwashing followed by alms and food to the poor",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_CHARITY_CEREMONIAL",
+      "chapter": 15,
+      "printed_page": 196,
+      "pdf_page_zero_index": 213,
+      "ocr_line_range": [
+        7655,
+        7666
+      ],
+      "existing_parent_source_observation": "WEI58-15-019",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-017",
+      "label": "Last Supper church reenactment with twelve Apostles in Mexico and South America",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_CHURCH_DRAMA",
+      "chapter": 15,
+      "printed_page": 196,
+      "pdf_page_zero_index": 213,
+      "ocr_line_range": [
+        7667,
+        7673
+      ],
+      "existing_parent_source_observation": "WEI58-15-018",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-018",
+      "label": "Maltese Holy Thursday Last Supper food table benefiting the poor",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_CHARITY_FOOD",
+      "chapter": 15,
+      "printed_page": 196,
+      "pdf_page_zero_index": 213,
+      "ocr_line_range": [
+        7672,
+        7673
+      ],
+      "existing_parent_source_observation": "WEI58-15-019",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-019",
+      "label": "Eastern Twelve Gospels vigil for Holy Thursday and Good Friday",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "OTHER_RITE_RITUAL",
+      "chapter": 15,
+      "printed_page": 196,
+      "pdf_page_zero_index": 213,
+      "ocr_line_range": [
+        7686,
+        7696
+      ],
+      "existing_parent_source_observation": "WEI58-15-026",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-020",
+      "label": "Russian family icon lamps lit from Holy Thursday vigil candles",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "OTHER_RITE_DOMESTIC",
+      "chapter": 15,
+      "printed_page": 196,
+      "pdf_page_zero_index": 213,
+      "ocr_line_range": [
+        7692,
+        7697
+      ],
+      "existing_parent_source_observation": "WEI58-15-026",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-021",
+      "label": "Good Friday prayer vigil at decorated Holy Sepulchre shrines",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_CHURCH_DEVOTION",
+      "chapter": 15,
+      "printed_page": 200,
+      "pdf_page_zero_index": 217,
+      "ocr_line_range": [
+        7818,
+        7836
+      ],
+      "existing_parent_source_observation": "WEI58-15-024",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-022",
+      "label": "Central European symbolic burial procession and Eucharistic shrine veneration",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_CHURCH_CEREMONIAL",
+      "chapter": 15,
+      "printed_page": 201,
+      "pdf_page_zero_index": 218,
+      "ocr_line_range": [
+        7838,
+        7849
+      ],
+      "existing_parent_source_observation": "WEI58-15-024",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-023",
+      "label": "Austrian military honour guards before Holy Sepulchre shrines",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_CHURCH_DEVOTION",
+      "chapter": 15,
+      "printed_page": 201,
+      "pdf_page_zero_index": 218,
+      "ocr_line_range": [
+        7850,
+        7853
+      ],
+      "existing_parent_source_observation": "WEI58-15-024",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-024",
+      "label": "Spanish-speaking Calvary image deposition and thirty-three Credo prayers",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_CHURCH_DRAMA",
+      "chapter": 15,
+      "printed_page": 201,
+      "pdf_page_zero_index": 218,
+      "ocr_line_range": [
+        7854,
+        7864
+      ],
+      "existing_parent_source_observation": "WEI58-15-025",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-025",
+      "label": "Byzantine Holy Shroud procession and kneeling veneration",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "OTHER_RITE_RITUAL",
+      "chapter": 15,
+      "printed_page": 201,
+      "pdf_page_zero_index": 218,
+      "ocr_line_range": [
+        7865,
+        7876
+      ],
+      "existing_parent_source_observation": "WEI58-15-026",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-026",
+      "label": "Milan four-season Forty Hours Eucharistic visits",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_DEVOTION",
+      "chapter": 15,
+      "printed_page": 201,
+      "pdf_page_zero_index": 218,
+      "ocr_line_range": [
+        7877,
+        7884
+      ],
+      "existing_parent_source_observation": "WEI58-15-027",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-027",
+      "label": "Irish Good Friday black fast taking only tea or water",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_PENANCE",
+      "chapter": 15,
+      "printed_page": 205,
+      "pdf_page_zero_index": 222,
+      "ocr_line_range": [
+        8016,
+        8023
+      ],
+      "existing_parent_source_observation": "WEI58-15-030",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-028",
+      "label": "English Good Friday simple rice-and-milk meal",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_FOOD",
+      "chapter": 15,
+      "printed_page": 205,
+      "pdf_page_zero_index": 222,
+      "ocr_line_range": [
+        8019,
+        8022
+      ],
+      "existing_parent_source_observation": "WEI58-15-030",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-029",
+      "label": "Central European silent standing Good Friday simple meals",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_DOMESTIC_PENANCE",
+      "chapter": 15,
+      "printed_page": 205,
+      "pdf_page_zero_index": 222,
+      "ocr_line_range": [
+        8022,
+        8027
+      ],
+      "existing_parent_source_observation": "WEI58-15-030",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-030",
+      "label": "Syrian and Chaldean Good Friday replacement of ordinary peace greeting",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "OTHER_RITE_GREETING",
+      "chapter": 15,
+      "printed_page": 206,
+      "pdf_page_zero_index": 223,
+      "ocr_line_range": [
+        8041,
+        8047
+      ],
+      "existing_parent_source_observation": "WEI58-15-030",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-031",
+      "label": "Cross marked on loaves for Christmas Lent and Good Friday",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_FOOD",
+      "chapter": 15,
+      "printed_page": 206,
+      "pdf_page_zero_index": 223,
+      "ocr_line_range": [
+        8053,
+        8060
+      ],
+      "existing_parent_source_observation": "WEI58-15-032",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-032",
+      "label": "Austrian Good Friday cross-marked loaf",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_FOOD",
+      "chapter": 15,
+      "printed_page": 206,
+      "pdf_page_zero_index": 223,
+      "ocr_line_range": [
+        8060,
+        8065
+      ],
+      "existing_parent_source_observation": "WEI58-15-032",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-033",
+      "label": "Austrian Easter sunrise singing and folk dancing on hilltops",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_FESTIVE_CUSTOM",
+      "chapter": 16,
+      "printed_page": 219,
+      "pdf_page_zero_index": 236,
+      "ocr_line_range": [
+        8580,
+        8587
+      ],
+      "existing_parent_source_observation": "WEI58-16-019",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-034",
+      "label": "English and Irish Easter sunrise mirrored in an east-window water pan",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_FOLK_BELIEF_PRACTICE",
+      "chapter": 16,
+      "printed_page": 220,
+      "pdf_page_zero_index": 237,
+      "ocr_line_range": [
+        8593,
+        8596
+      ],
+      "existing_parent_source_observation": "WEI58-16-019",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-035",
+      "label": "Alpine sunrise salutes with Easter hymns, bells and cannon",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_COMMUNAL",
+      "chapter": 16,
+      "printed_page": 220,
+      "pdf_page_zero_index": 237,
+      "ocr_line_range": [
+        8596,
+        8602
+      ],
+      "existing_parent_source_observation": "WEI58-16-019",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-036",
+      "label": "Maltese Easter sunrise running procession of the Risen Christ",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_PROCESSION",
+      "chapter": 16,
+      "printed_page": 220,
+      "pdf_page_zero_index": 237,
+      "ocr_line_range": [
+        8603,
+        8612
+      ],
+      "existing_parent_source_observation": "WEI58-16-020",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-037",
+      "label": "Easter neophytes wear baptismal white in special sanctuary group",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_RITUAL_CUSTOM",
+      "chapter": 16,
+      "printed_page": 224,
+      "pdf_page_zero_index": 241,
+      "ocr_line_range": [
+        8691,
+        8705
+      ],
+      "existing_parent_source_observation": "WEI58-16-027",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-038",
+      "label": "Slavic Easter willow switching house visits exchanging gifts and songs",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_FOLK_CUSTOM",
+      "chapter": 16,
+      "printed_page": 225,
+      "pdf_page_zero_index": 242,
+      "ocr_line_range": [
+        8749,
+        8762
+      ],
+      "existing_parent_source_observation": "WEI58-16-029",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-039",
+      "label": "Norwegian Fastelavn decorated-rod visiting",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_FOLK_CUSTOM",
+      "chapter": 16,
+      "printed_page": 225,
+      "pdf_page_zero_index": 242,
+      "ocr_line_range": [
+        8763,
+        8766
+      ],
+      "existing_parent_source_observation": "WEI58-16-029",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-040",
+      "label": "English Easter Monday and Tuesday chair lifting and forfeit custom",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_FOLK_CUSTOM",
+      "chapter": 16,
+      "printed_page": 225,
+      "pdf_page_zero_index": 242,
+      "ocr_line_range": [
+        8767,
+        8775
+      ],
+      "existing_parent_source_observation": "WEI58-16-029",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-041",
+      "label": "Slavic Easter Thursday graves decorated with family photographs and flowers",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_DEAD_DEVOTION",
+      "chapter": 16,
+      "printed_page": 225,
+      "pdf_page_zero_index": 242,
+      "ocr_line_range": [
+        8776,
+        8786
+      ],
+      "existing_parent_source_observation": "WEI58-16-030",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-042",
+      "label": "Easter Friday cross-and-banner pilgrimage to neighbouring shrine on foot or horseback",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_PILGRIMAGE",
+      "chapter": 16,
+      "printed_page": 225,
+      "pdf_page_zero_index": 242,
+      "ocr_line_range": [
+        8788,
+        8798
+      ],
+      "existing_parent_source_observation": "WEI58-16-031",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-043",
+      "label": "Historical English royal Easter distribution of decorated eggs",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_FAMILY_GIFT",
+      "chapter": 17,
+      "printed_page": 234,
+      "pdf_page_zero_index": 251,
+      "ocr_line_range": [
+        9132,
+        9139
+      ],
+      "existing_parent_source_observation": "WEI58-17-012",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-044",
+      "label": "Pace-egging children request eggs by traditional seasonal rhymes",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_FOLK_CUSTOM",
+      "chapter": 17,
+      "printed_page": 234,
+      "pdf_page_zero_index": 251,
+      "ocr_line_range": [
+        9139,
+        9144
+      ],
+      "existing_parent_source_observation": "WEI58-17-012",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-045",
+      "label": "Eastern Christian exchanges of crimson Easter eggs",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "OTHER_RITE_HOUSEHOLD",
+      "chapter": 17,
+      "printed_page": 234,
+      "pdf_page_zero_index": 251,
+      "ocr_line_range": [
+        9145,
+        9152
+      ],
+      "existing_parent_source_observation": "WEI58-17-013",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-046",
+      "label": "Maundy Thursday green eggs distinct from Easter eggs in German areas",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_EGG_VARIANT",
+      "chapter": 17,
+      "printed_page": 234,
+      "pdf_page_zero_index": 251,
+      "ocr_line_range": [
+        9148,
+        9151
+      ],
+      "existing_parent_source_observation": "WEI58-17-013",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-047",
+      "label": "Pysanky eggs elaborated during Lent and blessed before distribution",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_EGG_VARIANT",
+      "chapter": 17,
+      "printed_page": 235,
+      "pdf_page_zero_index": 252,
+      "ocr_line_range": [
+        9154,
+        9171
+      ],
+      "existing_parent_source_observation": "WEI58-17-014",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-048",
+      "label": "Keeping Ukrainian decorated Easter eggs year-to-year as heirlooms",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_HOUSEHOLD_OBJECT",
+      "chapter": 17,
+      "printed_page": 235,
+      "pdf_page_zero_index": 252,
+      "ocr_line_range": [
+        9168,
+        9171
+      ],
+      "existing_parent_source_observation": "WEI58-17-014",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-049",
+      "label": "Blowing eggshells intact for children's Easter decoration",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_EGG_VARIANT",
+      "chapter": 17,
+      "printed_page": 235,
+      "pdf_page_zero_index": 252,
+      "ocr_line_range": [
+        9172,
+        9175
+      ],
+      "existing_parent_source_observation": "WEI58-17-014",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-050",
+      "label": "German Ascension lifting of Cross at Gospel",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_CHURCH_VARIANT",
+      "chapter": 18,
+      "printed_page": 244,
+      "pdf_page_zero_index": 261,
+      "ocr_line_range": [
+        9474,
+        9480
+      ],
+      "existing_parent_source_observation": "WEI58-18-008",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-051",
+      "label": "Raising a Christ statue through church ceiling at Ascension",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_CHURCH_PAGEANT",
+      "chapter": 18,
+      "printed_page": 244,
+      "pdf_page_zero_index": 261,
+      "ocr_line_range": [
+        9481,
+        9494
+      ],
+      "existing_parent_source_observation": "WEI58-18-009",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-052",
+      "label": "Eating pigeons or other birds for Ascension meal",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_FOOD",
+      "chapter": 18,
+      "printed_page": 245,
+      "pdf_page_zero_index": 262,
+      "ocr_line_range": [
+        9555,
+        9563
+      ],
+      "existing_parent_source_observation": "WEI58-18-012",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-053",
+      "label": "Bird-shaped pastries given to German innkeeper customers",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_FOOD",
+      "chapter": 18,
+      "printed_page": 245,
+      "pdf_page_zero_index": 262,
+      "ocr_line_range": [
+        9558,
+        9561
+      ],
+      "existing_parent_source_observation": "WEI58-18-013",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-054",
+      "label": "Ascension hilltop picnics, climbing and horse races",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_FESTIVITY",
+      "chapter": 18,
+      "printed_page": 245,
+      "pdf_page_zero_index": 262,
+      "ocr_line_range": [
+        9560,
+        9563
+      ],
+      "existing_parent_source_observation": "WEI58-18-014",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-055",
+      "label": "Choirboys create wind sounds as Pentecost dove descends",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_CHURCH_PAGEANT",
+      "chapter": 19,
+      "printed_page": 252,
+      "pdf_page_zero_index": 269,
+      "ocr_line_range": [
+        9807,
+        9819
+      ],
+      "existing_parent_source_observation": "WEI58-19-014",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-056",
+      "label": "Pentecost dove display followed by flower and water shower",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_CHURCH_PAGEANT",
+      "chapter": 19,
+      "printed_page": 252,
+      "pdf_page_zero_index": 269,
+      "ocr_line_range": [
+        9820,
+        9829
+      ],
+      "existing_parent_source_observation": "WEI58-19-014",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-057",
+      "label": "Burning wicks or straw dropped for Pentecost tongues of fire",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_DISCONTINUED_PAGEANT",
+      "chapter": 19,
+      "printed_page": 252,
+      "pdf_page_zero_index": 269,
+      "ocr_line_range": [
+        9823,
+        9829
+      ],
+      "existing_parent_source_observation": "WEI58-19-014",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-058",
+      "label": "White pigeons and rose petals released in French cathedrals at Pentecost",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_CHURCH_PAGEANT",
+      "chapter": 19,
+      "printed_page": 252,
+      "pdf_page_zero_index": 269,
+      "ocr_line_range": [
+        9829,
+        9832
+      ],
+      "existing_parent_source_observation": "WEI58-19-016",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-059",
+      "label": "Carved Pentecost dove in glass sphere hung over family dining table",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HOUSEHOLD_MATERIAL",
+      "chapter": 19,
+      "printed_page": 253,
+      "pdf_page_zero_index": 270,
+      "ocr_line_range": [
+        9839,
+        9845
+      ],
+      "existing_parent_source_observation": "WEI58-19-017",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-060",
+      "label": "Pentecost dawn hilltop prayer known as catching the Holy Ghost",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_FESTIVE_DEVOTION",
+      "chapter": 19,
+      "printed_page": 253,
+      "pdf_page_zero_index": 270,
+      "ocr_line_range": [
+        9847,
+        9854
+      ],
+      "existing_parent_source_observation": "WEI58-19-018",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-061",
+      "label": "Walking barefoot through Pentecost dew for folk healing belief",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "FOLK_ACTION_WITH_DISPUTED_EFFICACY",
+      "chapter": 19,
+      "printed_page": 253,
+      "pdf_page_zero_index": 270,
+      "ocr_line_range": [
+        9855,
+        9860
+      ],
+      "existing_parent_source_observation": "WEI58-19-019",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-062",
+      "label": "Dew collected on bread and fed to animals for claimed protection",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "FOLK_ACTION_WITH_DISPUTED_EFFICACY",
+      "chapter": 19,
+      "printed_page": 253,
+      "pdf_page_zero_index": 270,
+      "ocr_line_range": [
+        9858,
+        9860
+      ],
+      "existing_parent_source_observation": "WEI58-19-019",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-063",
+      "label": "Vienna Trinity-column feast celebration with public sermon and instrumental fanfare",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_PUBLIC_DEVOTION",
+      "chapter": 20,
+      "printed_page": 258,
+      "pdf_page_zero_index": 275,
+      "ocr_line_range": [
+        10046,
+        10055
+      ],
+      "existing_parent_source_observation": "WEI58-20-011",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-064",
+      "label": "Seventeenth-century confraternities dedicated to the Holy Trinity",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_CONFRATERNITY",
+      "chapter": 20,
+      "printed_page": 258,
+      "pdf_page_zero_index": 275,
+      "ocr_line_range": [
+        10056,
+        10060
+      ],
+      "existing_parent_source_observation": "WEI58-20-012",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-065",
+      "label": "Trinity rain and midnight flowers as healing and treasure folklore",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "FOLK_ACTION_WITH_DISPUTED_EFFICACY",
+      "chapter": 20,
+      "printed_page": 258,
+      "pdf_page_zero_index": 275,
+      "ocr_line_range": [
+        10061,
+        10067
+      ],
+      "existing_parent_source_observation": "WEI58-20-013",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-066",
+      "label": "Trinity Sunday avoidance of sewing or metal work due to lightning legend",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "FOLK_ACTION_WITH_DISPUTED_EFFICACY",
+      "chapter": 20,
+      "printed_page": 258,
+      "pdf_page_zero_index": 275,
+      "ocr_line_range": [
+        10068,
+        10075
+      ],
+      "existing_parent_source_observation": "WEI58-20-014",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-067",
+      "label": "Gigantes y Cabezudos figures and traditional street dancing during Corpus Christi",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_FESTIVITY",
+      "chapter": 21,
+      "printed_page": 265,
+      "pdf_page_zero_index": 282,
+      "ocr_line_range": [
+        10306,
+        10314
+      ],
+      "existing_parent_source_observation": "WEI58-21-016",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-068",
+      "label": "Seville Eucharistic choirboy dances on Corpus Christi",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_CHURCH_CEREMONIAL",
+      "chapter": 21,
+      "printed_page": 265,
+      "pdf_page_zero_index": 282,
+      "ocr_line_range": [
+        10311,
+        10314
+      ],
+      "existing_parent_source_observation": "WEI58-21-017",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-069",
+      "label": "Corpus Christi floral wreaths worn by clergy, carried by girls or attached to banners",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_FLOWER_CUSTOM",
+      "chapter": 21,
+      "printed_page": 265,
+      "pdf_page_zero_index": 282,
+      "ocr_line_range": [
+        10315,
+        10324
+      ],
+      "existing_parent_source_observation": "WEI58-21-018",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-070",
+      "label": "Polish Corpus Christi wreaths blessed and placed at homes and fields",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_BLESSING_OBJECT",
+      "chapter": 21,
+      "printed_page": 265,
+      "pdf_page_zero_index": 282,
+      "ocr_line_range": [
+        10324,
+        10329
+      ],
+      "existing_parent_source_observation": "WEI58-21-019",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-071",
+      "label": "Irish distinction between Muire and Máire in Marian baptismal naming",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_NAMING",
+      "chapter": 23,
+      "printed_page": 282,
+      "pdf_page_zero_index": 299,
+      "ocr_line_range": [
+        10847,
+        10850
+      ],
+      "existing_parent_source_observation": "WEI58-23-013",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-072",
+      "label": "Spanish use of Marian attributes such as Dolores and Concepción as girls names",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_NAMING",
+      "chapter": 23,
+      "printed_page": 282,
+      "pdf_page_zero_index": 299,
+      "ocr_line_range": [
+        10851,
+        10861
+      ],
+      "existing_parent_source_observation": "WEI58-23-013",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-073",
+      "label": "Syrian and Chaldean use of Marian attribute names at baptism",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "OTHER_RITE_NAMING",
+      "chapter": 23,
+      "printed_page": 282,
+      "pdf_page_zero_index": 299,
+      "ocr_line_range": [
+        10862,
+        10866
+      ],
+      "existing_parent_source_observation": "WEI58-23-013",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-074",
+      "label": "All-night vigil at martyr tomb on patron's anniversary",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_PILGRIMAGE",
+      "chapter": 23,
+      "printed_page": 282,
+      "pdf_page_zero_index": 299,
+      "ocr_line_range": [
+        10872,
+        10879
+      ],
+      "existing_parent_source_observation": "WEI58-23-014",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-075",
+      "label": "Hungarian Assumption national ceremonial pageants and parades",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_MARIAN_PUBLIC",
+      "chapter": 24,
+      "printed_page": 289,
+      "pdf_page_zero_index": 306,
+      "ocr_line_range": [
+        11124,
+        11133
+      ],
+      "existing_parent_source_observation": "WEI58-24-003",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-076",
+      "label": "French historical angelic Assumption figure ascension in church",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_CHURCH_PAGEANT",
+      "chapter": 24,
+      "printed_page": 289,
+      "pdf_page_zero_index": 306,
+      "ocr_line_range": [
+        11133,
+        11138
+      ],
+      "existing_parent_source_observation": "WEI58-24-003",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-077",
+      "label": "French Assumption town procession carrying Marian statue",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_MARIAN_PROCESSION",
+      "chapter": 24,
+      "printed_page": 290,
+      "pdf_page_zero_index": 307,
+      "ocr_line_range": [
+        11149,
+        11153
+      ],
+      "existing_parent_source_observation": "WEI58-24-005",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-078",
+      "label": "Italian Inchinata ritual bowing between statues of Christ and Mary",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_MARIAN_PAGEANT",
+      "chapter": 24,
+      "printed_page": 290,
+      "pdf_page_zero_index": 307,
+      "ocr_line_range": [
+        11155,
+        11165
+      ],
+      "existing_parent_source_observation": "WEI58-24-006",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-079",
+      "label": "Sardinian Candelieri giant votive candles carried to Assumption church",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_MARIAN_PROCESSION",
+      "chapter": 24,
+      "printed_page": 290,
+      "pdf_page_zero_index": 307,
+      "ocr_line_range": [
+        11166,
+        11172
+      ],
+      "existing_parent_source_observation": "WEI58-24-007",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-080",
+      "label": "Sicilian La Quindicina abstinence from fruit before Assumption",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_DOMESTIC_PENANCE",
+      "chapter": 24,
+      "printed_page": 291,
+      "pdf_page_zero_index": 308,
+      "ocr_line_range": [
+        11201,
+        11205
+      ],
+      "existing_parent_source_observation": "WEI58-24-011",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-081",
+      "label": "Sicilian blessing and exchange of fruit baskets on Assumption",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_FRUIT_BLESSING",
+      "chapter": 24,
+      "printed_page": 291,
+      "pdf_page_zero_index": 308,
+      "ocr_line_range": [
+        11201,
+        11205
+      ],
+      "existing_parent_source_observation": "WEI58-24-011",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-082",
+      "label": "French Alpine clergy bless gathered livestock at decorated pasture crosses",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_AGRICULTURAL_BLESSING",
+      "chapter": 24,
+      "printed_page": 291,
+      "pdf_page_zero_index": 308,
+      "ocr_line_range": [
+        11215,
+        11220
+      ],
+      "existing_parent_source_observation": "WEI58-24-013",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-083",
+      "label": "Blessing of fishing boats and ocean on Assumption in maritime towns",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_MARITIME_BLESSING",
+      "chapter": 24,
+      "printed_page": 291,
+      "pdf_page_zero_index": 308,
+      "ocr_line_range": [
+        11221,
+        11225
+      ],
+      "existing_parent_source_observation": "WEI58-24-014",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-084",
+      "label": "Decorating Candlemas tapers with saint images and floral symbols",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_SACRAMENTAL_MATERIAL",
+      "chapter": 25,
+      "printed_page": 299,
+      "pdf_page_zero_index": 316,
+      "ocr_line_range": [
+        11537,
+        11545
+      ],
+      "existing_parent_source_observation": "WEI58-25-007",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-085",
+      "label": "Syrian Chaldean parish prepares gold-adorned unbleached Candlemas candles",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "OTHER_RITE_SACRAMENTAL_MATERIAL",
+      "chapter": 25,
+      "printed_page": 299,
+      "pdf_page_zero_index": 316,
+      "ocr_line_range": [
+        11538,
+        11544
+      ],
+      "existing_parent_source_observation": "WEI58-25-007",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-086",
+      "label": "Retaining Candlemas candles to light during illness or at dying bedside",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HOUSEHOLD_SACRAMENTAL",
+      "chapter": 25,
+      "printed_page": 300,
+      "pdf_page_zero_index": 317,
+      "ocr_line_range": [
+        11540,
+        11545
+      ],
+      "existing_parent_source_observation": "WEI58-25-008",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-087",
+      "label": "Candlemas landlord rent feast and rural workers change residence",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_CIVIC_CUSTOM",
+      "chapter": 25,
+      "printed_page": 300,
+      "pdf_page_zero_index": 317,
+      "ocr_line_range": [
+        11553,
+        11559
+      ],
+      "existing_parent_source_observation": "WEI58-25-010",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-088",
+      "label": "Eastern commemorations for departed priests, displaced dead and others on distinct days",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "OTHER_RITE_MEMORIAL",
+      "chapter": 26,
+      "printed_page": 310,
+      "pdf_page_zero_index": 327,
+      "ocr_line_range": [
+        11917,
+        11928
+      ],
+      "existing_parent_source_observation": "WEI58-26-004",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-089",
+      "label": "Priest's All Souls cemetery blessing followed by private family grave prayers",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "CEMETERY_PRACTICE",
+      "chapter": 26,
+      "printed_page": 311,
+      "pdf_page_zero_index": 328,
+      "ocr_line_range": [
+        11956,
+        11958
+      ],
+      "existing_parent_source_observation": "WEI58-26-008",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-090",
+      "label": "Graves decorated with white gravel, flowers and glass candle lanterns before All Souls",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "CEMETERY_PRACTICE",
+      "chapter": 26,
+      "printed_page": 311,
+      "pdf_page_zero_index": 328,
+      "ocr_line_range": [
+        11959,
+        11969
+      ],
+      "existing_parent_source_observation": "WEI58-26-011",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-091",
+      "label": "All Saints evening family gathers by saved Candlemas candle for prayer",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HOUSEHOLD_SACRAMENTAL",
+      "chapter": 26,
+      "printed_page": 311,
+      "pdf_page_zero_index": 328,
+      "ocr_line_range": [
+        11970,
+        11979
+      ],
+      "existing_parent_source_observation": "WEI58-26-013",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-092",
+      "label": "Breton bell-ringers and midnight farmhouse prayers for Holy Souls",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_FOLK_DEVOTION",
+      "chapter": 26,
+      "printed_page": 311,
+      "pdf_page_zero_index": 328,
+      "ocr_line_range": [
+        11980,
+        11986
+      ],
+      "existing_parent_source_observation": "WEI58-26-014",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-093",
+      "label": "Philippine nine-night grave care and door-to-door carolling",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_HOUSEHOLD_CEMETERY",
+      "chapter": 26,
+      "printed_page": 312,
+      "pdf_page_zero_index": 329,
+      "ocr_line_range": [
+        12002,
+        12012
+      ],
+      "existing_parent_source_observation": "WEI58-26-017",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-094",
+      "label": "Polish Wypominki written deceased-name slips read at parish",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_PUBLIC_PRAYER",
+      "chapter": 26,
+      "printed_page": 312,
+      "pdf_page_zero_index": 329,
+      "ocr_line_range": [
+        12013,
+        12019
+      ],
+      "existing_parent_source_observation": "WEI58-26-019",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-095",
+      "label": "Soul Nights home family Rosary, Candlemas candle and morning Mass",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_HOME_DEVOTION",
+      "chapter": 26,
+      "printed_page": 312,
+      "pdf_page_zero_index": 329,
+      "ocr_line_range": [
+        12020,
+        12027
+      ],
+      "existing_parent_source_observation": "WEI58-26-020",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-096",
+      "label": "All Souls breads distributed to poor and children in named European regions",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_CHARITY_FOOD",
+      "chapter": 26,
+      "printed_page": 313,
+      "pdf_page_zero_index": 330,
+      "ocr_line_range": [
+        12050,
+        12054
+      ],
+      "existing_parent_source_observation": "WEI58-26-022",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-097",
+      "label": "All Souls hare and hen shaped cakes for boys and girls",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_FESTIVE_FOOD",
+      "chapter": 26,
+      "printed_page": 313,
+      "pdf_page_zero_index": 330,
+      "ocr_line_range": [
+        12055,
+        12063
+      ],
+      "existing_parent_source_observation": "WEI58-26-023",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-098",
+      "label": "Huesos de Santo and Panellets pastries for All Souls in Spanish regions",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_FESTIVE_FOOD",
+      "chapter": 26,
+      "printed_page": 314,
+      "pdf_page_zero_index": 331,
+      "ocr_line_range": [
+        12074,
+        12079
+      ],
+      "existing_parent_source_observation": "WEI58-26-027",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-099",
+      "label": "Hungarian All Souls families host orphans with meals and gifts",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_CHARITY",
+      "chapter": 26,
+      "printed_page": 314,
+      "pdf_page_zero_index": 331,
+      "ocr_line_range": [
+        12081,
+        12085
+      ],
+      "existing_parent_source_observation": "WEI58-26-028",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-100",
+      "label": "Breton milk libation at graves after prayers with holy water",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_FOLK_ACTION",
+      "chapter": 26,
+      "printed_page": 314,
+      "pdf_page_zero_index": 331,
+      "ocr_line_range": [
+        12086,
+        12092
+      ],
+      "existing_parent_source_observation": "WEI58-26-029",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-101",
+      "label": "Italian Saint Blaise throat blessing with oil-dipped wick",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_BLESSING_VARIANT",
+      "chapter": 27,
+      "printed_page": 318,
+      "pdf_page_zero_index": 335,
+      "ocr_line_range": [
+        12215,
+        12226
+      ],
+      "existing_parent_source_observation": "WEI58-27-004",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-102",
+      "label": "Valentine partner-name drawing and greeting cards",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_COURTSHIP_CUSTOM",
+      "chapter": 27,
+      "printed_page": 318,
+      "pdf_page_zero_index": 335,
+      "ocr_line_range": [
+        12231,
+        12239
+      ],
+      "existing_parent_source_observation": "WEI58-27-006",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-103",
+      "label": "Recitation of Saint Patrick's Breastplate as morning prayer",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "DEVOTION",
+      "chapter": 27,
+      "printed_page": 323,
+      "pdf_page_zero_index": 340,
+      "ocr_line_range": [
+        12422,
+        12427
+      ],
+      "existing_parent_source_observation": "WEI58-27-014",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-104",
+      "label": "Historical military devotion invoking Saint Anthony before battle",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "HISTORICAL_SAINTS_DEVOTION",
+      "chapter": 27,
+      "printed_page": 326,
+      "pdf_page_zero_index": 343,
+      "ocr_line_range": [
+        12545,
+        12558
+      ],
+      "existing_parent_source_observation": "WEI58-27-025",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-105",
+      "label": "Gathering and presenting St John herbs for blessing",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_PLANT_BLESSING_WITH_FOLK_CONTEXT",
+      "chapter": 27,
+      "printed_page": 331,
+      "pdf_page_zero_index": 348,
+      "ocr_line_range": [
+        12721,
+        12728
+      ],
+      "existing_parent_source_observation": "WEI58-27-033",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-106",
+      "label": "Saint John bonfire straw effigies and noisy demon-averting folklore",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "FOLK_ACTION_WITH_DISPUTED_EFFICACY",
+      "chapter": 27,
+      "printed_page": 331,
+      "pdf_page_zero_index": 348,
+      "ocr_line_range": [
+        12729,
+        12734
+      ],
+      "existing_parent_source_observation": "WEI58-27-034",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-107",
+      "label": "Prayer, songs and dancing beside St John night fires",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_COMMUNITY_DEVOTION",
+      "chapter": 27,
+      "printed_page": 331,
+      "pdf_page_zero_index": 348,
+      "ocr_line_range": [
+        12735,
+        12745
+      ],
+      "existing_parent_source_observation": "WEI58-27-035",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-108",
+      "label": "Large annual St Christopher vehicle-blessing lines before patronal shrines",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_VEHICLE_BLESSING",
+      "chapter": 28,
+      "printed_page": 336,
+      "pdf_page_zero_index": 353,
+      "ocr_line_range": [
+        12920,
+        12933
+      ],
+      "existing_parent_source_observation": "WEI58-28-011",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-109",
+      "label": "Blessed Saint Christopher medals or plaques carried in vehicles",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_SACRAMENTAL_MATERIAL",
+      "chapter": 28,
+      "printed_page": 336,
+      "pdf_page_zero_index": 353,
+      "ocr_line_range": [
+        12941,
+        12950
+      ],
+      "existing_parent_source_observation": "WEI58-28-012",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-110",
+      "label": "Saint Lucy girl brings candle-wreathed coffee and saffron buns to family",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_HOUSEHOLD_FEAST",
+      "chapter": 28,
+      "printed_page": 342,
+      "pdf_page_zero_index": 359,
+      "ocr_line_range": [
+        13144,
+        13162
+      ],
+      "existing_parent_source_observation": "WEI58-28-025",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-111",
+      "label": "Saint Lucy inscriptions and figure drawings on doors and fences",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_FOLK_ACTION",
+      "chapter": 28,
+      "printed_page": 342,
+      "pdf_page_zero_index": 359,
+      "ocr_line_range": [
+        13163,
+        13169
+      ],
+      "existing_parent_source_observation": "WEI58-28-026",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-112",
+      "label": "Saint Lucy incense-and-bonfire customs tied to folkloric healing claims",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "FOLK_ACTION_WITH_DISPUTED_EFFICACY",
+      "chapter": 28,
+      "printed_page": 342,
+      "pdf_page_zero_index": 359,
+      "ocr_line_range": [
+        13170,
+        13176
+      ],
+      "existing_parent_source_observation": "WEI58-28-027",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-113",
+      "label": "Harvest baby last sheaf carried in a folk procession",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "FOLK_PRECHRISTIAN_CONTEXT",
+      "chapter": 22,
+      "printed_page": 269,
+      "pdf_page_zero_index": 286,
+      "ocr_line_range": [
+        10453,
+        10459
+      ],
+      "existing_parent_source_observation": "WEI58-22-003",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-114",
+      "label": "Austrian Erntebraut with last-sheaf wreath as harvest bride",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "FOLK_PRECHRISTIAN_CONTEXT",
+      "chapter": 22,
+      "printed_page": 269,
+      "pdf_page_zero_index": 286,
+      "ocr_line_range": [
+        10459,
+        10461
+      ],
+      "existing_parent_source_observation": "WEI58-22-003",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-115",
+      "label": "English horkey cart and Scottish kirn doll last-sheaf practices",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "FOLK_PRECHRISTIAN_CONTEXT",
+      "chapter": 22,
+      "printed_page": 269,
+      "pdf_page_zero_index": 286,
+      "ocr_line_range": [
+        10461,
+        10464
+      ],
+      "existing_parent_source_observation": "WEI58-22-003",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-116",
+      "label": "Northern French harvest workers sing Kyrie-o-ole from the last wagon",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_HARVEST_SONG",
+      "chapter": 22,
+      "printed_page": 269,
+      "pdf_page_zero_index": 286,
+      "ocr_line_range": [
+        10465,
+        10470
+      ],
+      "existing_parent_source_observation": "WEI58-22-004",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-117",
+      "label": "Southern French decorated cross-shaped last sheaf stored at home",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_HARVEST_SYMBOL",
+      "chapter": 22,
+      "printed_page": 269,
+      "pdf_page_zero_index": 286,
+      "ocr_line_range": [
+        10470,
+        10474
+      ],
+      "existing_parent_source_observation": "WEI58-22-005",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-118",
+      "label": "Hungarian Assumption harvest delegates bring first produce to procession",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_HARVEST_PROCESSION",
+      "chapter": 22,
+      "printed_page": 270,
+      "pdf_page_zero_index": 287,
+      "ocr_line_range": [
+        10494,
+        10502
+      ],
+      "existing_parent_source_observation": "WEI58-22-007",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-119",
+      "label": "Polish harvest wreaths from last sheaves blessed at church",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_HARVEST_BLESSING",
+      "chapter": 22,
+      "printed_page": 270,
+      "pdf_page_zero_index": 287,
+      "ocr_line_range": [
+        10502,
+        10507
+      ],
+      "existing_parent_source_observation": "WEI58-22-006",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-120",
+      "label": "Martinmas thanksgiving Mass followed by village games and harvest festivities",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_HARVEST_FEAST",
+      "chapter": 22,
+      "printed_page": 270,
+      "pdf_page_zero_index": 287,
+      "ocr_line_range": [
+        10508,
+        10513
+      ],
+      "existing_parent_source_observation": "WEI58-22-008",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
+    },
+    {
+      "id": "WEI58-DETAIL-B-121",
+      "label": "Martinmas goose with first harvest wine at table",
+      "working_type": "GRANULAR_SOURCE_DETAIL_LINKED_TO_PRIOR_OBSERVATION",
+      "category": "REGIONAL_FESTIVE_FOOD",
+      "chapter": 22,
+      "printed_page": 271,
+      "pdf_page_zero_index": 288,
+      "ocr_line_range": [
+        10514,
+        10522
+      ],
+      "existing_parent_source_observation": "WEI58-22-009",
+      "relation_type": "MORE_SPECIFIC_ACTION_VARIANT_OR_LOCALIZED_EVIDENCE_IN_SAME_PASSAGE",
+      "verified_distinct_identity": false,
+      "source_file": "data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json"
     }
   ]
 }
