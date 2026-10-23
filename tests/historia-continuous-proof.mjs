@@ -82,6 +82,30 @@ for(const {beat} of afterTrials){
   }
  }
 }
+const middle=p3JudasTrial(proof);
+function p3JudasTrial(source){
+ const beat=source.movements.find(m=>m.id==="HS-M27")?.beats.find(b=>b.id==="H63-02");
+ assert.ok(beat);
+ assert.deepEqual(beat.refs,["Matthew 27:1–2","Matthew 27:11–26"]);
+ const trial=beat.betweenSelectedReadthroughTrial;
+ assert.ok(trial);
+ assert.deepEqual(trial.refs,["Matthew 27:3–10"]);
+ assert.equal(trial.afterReference,"Matthew 27:1–2");
+ assert.equal(trial.beforeReference,"Matthew 27:11–26");
+ assert.equal(trial.accepted,false);
+ assert.equal(trial.publicationApproved,false);
+ assert.equal(trial.originalUnitRefsUnmodified,true);
+ assert.equal(trial.excludedFromMainSourceSelection,true);
+ return trial;
+}
+assert.ok(middle);
+assert.ok(html.includes("if(!bridge&&showBridges&&between?.afterReference===reference)"),
+ "Judas witness comparison must be hidden unless explicitly opted in");
+assert.ok(html.includes("Source omission remains in the main manuscript"));
+const betweenRenderer=html.split("if(!bridge&&showBridges&&between?.afterReference===reference)")[1]
+ .split("section.append(compare);held++;")[0];
+assert.ok(betweenRenderer&&!betweenRenderer.includes("previous=pp")&&!betweenRenderer.includes("previous=p"),
+ "Optional original witness must not close omitted main-source boundaries");
 assert.ok(html.includes("const afterTrial=beat.afterSelectedReadthroughTrial"));
 assert.ok(html.includes("if(!bridge&&showBridges&&afterTrial)"),"Research trials must be opt-in, never main reading");
 assert.ok(html.includes("The main reading still omits this text"));
