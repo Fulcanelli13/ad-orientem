@@ -5,6 +5,14 @@ import {canonicalSourceText} from '../tools/pius-x-audit-primary-witnesses.mjs';
 
 const p='previews/pius-x-study/evidence/pius-x-next12-eight-opening-context-evidence-20261023.v1.json';
 const pack=JSON.parse(readFileSync(p,'utf8'));
+const map=JSON.parse(readFileSync(
+ 'previews/pius-x-study/evidence/pius-x-eight-opening-source-claims-20261023.v1.json','utf8'));
+assert.equal(map.schema,'AO_SPX_P2_EIGHT_OPENING_SOURCE_CLAIM_MAP_V1');
+assert.equal(map.status,'CLAIM_LEVEL_ORIGINAL_EXCERPT_SUPPORT_ONLY');
+assert.equal(map.summary.openingSubjects,8);
+assert.equal(map.summary.claimSupportLinks,41);
+assert.equal(map.summary.fullAnswersCertified,0);
+
 const batch=JSON.parse(readFileSync('previews/pius-x-study/evidence/pius-x-next12-primary-document-discovery-20261023.v1.json','utf8'));
 const store=readCorpus(readFileSync('artifacts/pius-x-study-expanded/SPX_Study_Expanded_106_P6.html','utf8'));
 assert.equal(pack.schema,'AO_SPX_P2_NEXT12_EIGHT_OPENING_CONTEXT_EVIDENCE_V1');
@@ -99,6 +107,17 @@ for(const item of pack.items){
  counts[item.documentKey]=item.witnesses.length;
 }
 assert.equal(ids.size,41);
+assert.equal(map.items.length,pack.items.length);
+for(const summary of map.items){
+ const src=pack.items.find(x=>x.chapterId===summary.chapterId);
+ assert(src);
+ assert.equal(summary.answerFullyApproved,false);
+ assert.deepEqual(summary.unverifiedRemainder,src.unresolvedClaims);
+ assert.deepEqual(summary.sourceBackedClaims.map(c=>c.witnessId),
+  src.witnesses.map(w=>w.id),'claim ID map must derive from existing original excerpts only');
+ assert(summary.sourceBackedClaims.every(c=>c.claim&&c.originalText&&c.speaker));
+}
+
 assert.equal(opened.size,8);
 assert.equal(pack.items.reduce((s,x)=>s+x.witnesses.length,0),41);
 assert.equal(pack.items.find(x=>x.documentKey==='singulari-quadam').witnesses.find(x=>x.id==='SQ-PREVPOPE').speaker,
