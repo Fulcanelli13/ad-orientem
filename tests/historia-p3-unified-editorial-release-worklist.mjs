@@ -382,7 +382,7 @@ assert.equal(ledger.totals.editsActuallyPromoted,0);
 const copied=desktopEditorial.dispositions.filter(x=>x.disposition!=="RETAIN_CONTEXT");
 assert.equal(copied.length,15);
 assert.equal(new Set(copied.map(x=>x.id)).size,15);
-const editorialTokenCount=s=>String(s||"").trim().split(/\\s+/).filter(Boolean).length;
+const editorialTokenCount=s=>String(s||"").trim().split(/\s+/).filter(Boolean).length;
 const copyOwners=new Map(desktopEditorial.dispositions.map(x=>[x.id,x]));
 let originalTrialWords=0,editedTrialWords=0,visibleContextCount=0,visibleTrialCount=0,originalScriptureCount=0;
 const projection=[];
