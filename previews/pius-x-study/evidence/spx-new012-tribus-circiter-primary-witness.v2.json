@@ -23,49 +23,91 @@
       "locus": "§11, suppression of the Mariavite association",
       "text": "omnino supprimitur",
       "meaning": "The particular Mariavite society is suppressed",
-      "speaker": "PIUS_X_AUTHOR"
+      "speaker": "PIUS_X_AUTHOR",
+      "webTextVerification": {
+        "status": "MATCHED_ORIGINAL_LANGUAGE_VATICAN_PAGE_TEXT",
+        "checkedOn": "2026-10-23",
+        "sourcePageLine": 65,
+        "method": "Exact substring in original-language Vatican webpage (transcription audit only; not independent doctrinal or translation approval)"
+      }
     },
     {
       "id": "TC-REPENT",
       "locus": "§12, condition of sincere repentance",
       "text": "statim ac sincere resipuerint",
       "meaning": "Reception follows genuine repentance",
-      "speaker": "PIUS_X_AUTHOR"
+      "speaker": "PIUS_X_AUTHOR",
+      "webTextVerification": {
+        "status": "MATCHED_ORIGINAL_LANGUAGE_VATICAN_PAGE_TEXT",
+        "checkedOn": "2026-10-23",
+        "sourcePageLine": 66,
+        "method": "Exact substring in original-language Vatican webpage (transcription audit only; not independent doctrinal or translation approval)"
+      }
     },
     {
       "id": "TC-MERCY",
       "locus": "§12, exhortation to bishops",
       "text": "paterna charitate amplectamini",
       "meaning": "Receive repentant erring priests with fatherly charity",
-      "speaker": "PIUS_X_AUTHOR"
+      "speaker": "PIUS_X_AUTHOR",
+      "webTextVerification": {
+        "status": "MATCHED_ORIGINAL_LANGUAGE_VATICAN_PAGE_TEXT",
+        "checkedOn": "2026-10-23",
+        "sourcePageLine": 66,
+        "method": "Exact substring in original-language Vatican webpage (transcription audit only; not independent doctrinal or translation approval)"
+      }
     },
     {
       "id": "TC-WORTHY",
       "locus": "§12, qualified return",
       "text": "eosque rite probatos",
       "meaning": "Suitability must first be established",
-      "speaker": "PIUS_X_AUTHOR"
+      "speaker": "PIUS_X_AUTHOR",
+      "webTextVerification": {
+        "status": "MATCHED_ORIGINAL_LANGUAGE_VATICAN_PAGE_TEXT",
+        "checkedOn": "2026-10-23",
+        "sourcePageLine": 66,
+        "method": "Exact substring in original-language Vatican webpage (transcription audit only; not independent doctrinal or translation approval)"
+      }
     },
     {
       "id": "TC-EPISCOPAL",
       "locus": "§12, episcopal direction",
       "text": "ductu vestro",
       "meaning": "Return takes place under the bishops' direction",
-      "speaker": "PIUS_X_AUTHOR"
+      "speaker": "PIUS_X_AUTHOR",
+      "webTextVerification": {
+        "status": "MATCHED_ORIGINAL_LANGUAGE_VATICAN_PAGE_TEXT",
+        "checkedOn": "2026-10-23",
+        "sourcePageLine": 66,
+        "method": "Exact substring in original-language Vatican webpage (transcription audit only; not independent doctrinal or translation approval)"
+      }
     },
     {
       "id": "TC-FAITHFUL",
       "locus": "§12, care for those misled",
       "text": "in rectam reducere viam studeatis",
       "meaning": "Bishops are urged to guide misled faithful back to the right path",
-      "speaker": "PIUS_X_AUTHOR"
+      "speaker": "PIUS_X_AUTHOR",
+      "webTextVerification": {
+        "status": "MATCHED_ORIGINAL_LANGUAGE_VATICAN_PAGE_TEXT",
+        "checkedOn": "2026-10-23",
+        "sourcePageLine": 67,
+        "method": "Exact substring in original-language Vatican webpage (transcription audit only; not independent doctrinal or translation approval)"
+      }
     },
     {
       "id": "TC-PIETY",
       "locus": "§12, approved devotions",
       "text": "christianae pietatis exercitia",
       "meaning": "Encouragement of Catholic devotional practices within official approval context",
-      "speaker": "PIUS_X_AUTHOR"
+      "speaker": "PIUS_X_AUTHOR",
+      "webTextVerification": {
+        "status": "MATCHED_ORIGINAL_LANGUAGE_VATICAN_PAGE_TEXT",
+        "checkedOn": "2026-10-23",
+        "sourcePageLine": 67,
+        "method": "Exact substring in original-language Vatican webpage (transcription audit only; not independent doctrinal or translation approval)"
+      }
     }
   ],
   "dialogueMappings": [
@@ -122,5 +164,10 @@
     "Original Latin paragraph 12 makes conditional reception and restoration explicit",
     "Source-owner citation §§11–13 broadly includes the relevant material, though restoration comes from §12",
     "Present-day disciplinary status is not determined by a 1906 document"
-  ]
+  ],
+  "webTextAudit": {
+    "checkedOn": "2026-10-23",
+    "matchedCount": 7,
+    "notClaiming": "Full diplomatic collation, context-independent speaker approval, or publication eligibility"
+  }
 }
