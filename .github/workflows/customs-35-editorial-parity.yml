@@ -11,6 +11,10 @@ on:
       - "data/customs/research/customs-published-35-editorial-first-pass.20261023.v1.json"
       - "tests/customs-35-editorial-first-pass.mjs"
       - "tests/customs-bilingual-scope-parity.mjs"
+      - "tests/customs-final-editorial-acceptance.mjs"
+      - "data/customs/editorial-final-acceptance.v1.json"
+      - "tools/customs/editorial-acceptance-contract.mjs"
+      - "tools/customs/export-final-editorial-review.mjs"
       - ".github/workflows/customs-35-editorial-parity.yml"
   workflow_dispatch:
 permissions:
@@ -28,5 +32,6 @@ jobs:
         run: |
           node tests/customs-35-editorial-first-pass.mjs
           node tests/customs-bilingual-scope-parity.mjs
+          node tests/customs-final-editorial-acceptance.mjs
           node tests/calendar-customs-context.mjs
           node tests/customs-living-library.mjs
