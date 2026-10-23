@@ -46,3 +46,15 @@ node tests/scripture-catena-chrysostom-original-question-replies.mjs
 The generated `dist/schaff-chrysostom-replies/chrysostom-question-ensuing-prose.v1.json` includes all 180 records plus the four pinned original-work passages. The exact original 1888 OCR remains in the external research artifact, not the production reader. The test verifies all four text divisions concatenate **byte-for-byte back to the original OCR lines**, every selected source word and context hash, all 90 homily identities, and explicit no-publication invariants.
 
 **Next internal research target:** reliably tag biblical citation subspans and nineteenth-century footnotes inside these four exemplars and the strongest per-homily candidates, then compare substantive original-work arguments with the matching canonical Catena pericopes. Augustine's two-column OCR requires a separate column-aware pipeline. **No human review workflow is being initiated.**
+
+
+### Printed quotation-source boundaries — follow-up
+
+The focused four original-work anchors now also retain **literal quoted-text subspans and SHA-256s**, and a separate flag where only one quotation delimiter is visible inside the cropped context:
+
+- `SCH-CHR-001` (*Homily XLIV*, reported objection): no double-quoted passage in its printed ensuing-prose excerpt, but the *saith one* question is explicitly a **reported interlocutor**, not necessarily the author's direct question.
+- `SCH-CHR-002` (*Homily XLVII*, disciples' confidence): one **paired printed quoted passage** within the following words; this is a candidate Gospel quotation, **not automatically authored speech**.
+- `SCH-CHR-003` (*Homily XLVII*, tares versus leaven and mustard seed): one **unpaired quotation marker** in the cropped passage; the source slice cannot be treated as a complete quoted/textual unit.
+- `SCH-CHR-004` (*Homily XLVII*, private explanation): one **paired printed quoted passage** representing words of the Gospel embedded in Chrysostom's exposition.
+
+These are **typographical OCR indicators**, not independently verified Scripture-boundary or Greek-text checks. The regression asserts that the exact extracted strings and source SHA-256s match their offsets in the printed English OCR. This prevents downstream indexing from silently converting Gospel quotations or an imagined interlocutor into new patristic dialogue. The next research work remains comprehensive Gospel/footnote ownership discrimination before source-authenticated answer extraction.
