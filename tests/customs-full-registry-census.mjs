@@ -444,7 +444,7 @@ assert.equal(allMcLReferences.length,70);
 assert.deepEqual(new Set(allMcLReferences),mclIds);
 assert.equal(mcloughlinGroups.summary.certified_distinct_new_catholic_customs,0);
 assert.equal(mcloughlinGroups.summary.publication_changes,0);
-assert.equal(count.source_observations.total_source_detail_rows_including_external,2051);
+assert.equal(count.source_observations.total_source_detail_rows_including_external,2137);
 assert.equal(count.source_observations.all_book_research_rows_including_nested_details,1025);
 assert.equal(researchCatalogue.external_source_observations_mcloughlin.length,70);
 assert.equal(researchCatalogue.external_source_action_families_mcloughlin.length,26);
@@ -545,7 +545,7 @@ for(const r of ccEx.records) {
 assert.equal(researchCatalogue.external_source_observations_catholicculture_excerpts.length,132);
 assert.deepEqual(new Set(researchCatalogue.external_source_observations_catholicculture_excerpts.map(r=>r.id)),ccIds);
 assert.equal(count.source_observations.catholicculture_trapp_berger_newland_excerpt_source_actions,132);
-assert.equal(count.source_observations.total_source_detail_rows_including_external,2051);
+assert.equal(count.source_observations.total_source_detail_rows_including_external,2137);
 assert.equal(count.identity_working_rows.provisional_after_53_no_owner_action_review,408);
 assert.equal(count.identity_working_rows.final_uniquely_verified_customs_added,0);
 assert.equal(researchCatalogue.summary.no_new_app_publications,true);
@@ -608,7 +608,7 @@ for(const r of muellerKelly.records){
 assert.equal(researchCatalogue.external_source_observations_mueller_kelly.length,204);
 assert.deepEqual(new Set(researchCatalogue.external_source_observations_mueller_kelly.map(x=>x.id)),mkIds);
 assert.equal(count.source_observations.mueller_kelly_ewtn_source_action_observations,204);
-assert.equal(count.source_observations.total_source_detail_rows_including_external,2051);
+assert.equal(count.source_observations.total_source_detail_rows_including_external,2137);
 assert.equal(count.identity_working_rows.provisional_after_53_no_owner_action_review,408);
 assert.equal(count.identity_working_rows.final_uniquely_verified_customs_added,0);
 assert.equal(researchCatalogue.summary.no_new_app_publications,true);
@@ -697,7 +697,7 @@ for(const r of muellerCross.records){
  }
 }
 assert.equal(coLocated,95);
-assert.equal(count.source_observations.total_source_detail_rows_including_external,2051);
+assert.equal(count.source_observations.total_source_detail_rows_including_external,2137);
 assert.equal(count.source_observations.mueller_second_pass_detail_rows_not_added_to_source_total,100);
 assert.equal(count.source_review.mueller_secondary_exact_text_line_colocated,95);
 assert.equal(count.source_review.mueller_secondary_without_exact_line_owner,5);
@@ -791,7 +791,7 @@ assert.ok(chaneySections.size>=9);
 assert.equal(researchCatalogue.external_source_observations_chaney.length,170);
 assert.deepEqual(new Set(researchCatalogue.external_source_observations_chaney.map(r=>r.id)),chaneyIds);
 assert.equal(count.source_observations.chaney_1955_online_source_observations,170);
-assert.equal(count.source_observations.total_source_detail_rows_including_external,2051);
+assert.equal(count.source_observations.total_source_detail_rows_including_external,2137);
 assert.equal(count.source_observations.mueller_second_pass_detail_rows_not_added_to_source_total,100);
 assert.equal(count.identity_working_rows.provisional_after_53_no_owner_action_review,408);
 assert.equal(count.identity_working_rows.final_uniquely_verified_customs_added,0);
@@ -887,7 +887,7 @@ for(const row of chaneyManual24.records) {
  if(row.action_description_relationship==='DISTINCT_ACTION_FALSE_LEXICAL_MATCH')falseCandidates++;
 }
 assert.equal(falseCandidates,6);
-assert.equal(count.source_observations.total_source_detail_rows_including_external,2051);
+assert.equal(count.source_observations.total_source_detail_rows_including_external,2137);
 assert.equal(researchCatalogue.summary.no_new_app_publications,true);
 console.log('Chaney 24 source-description comparisons: 12 same action core, 6 false lexical matches, 0 verified source-independent identities, 0 merges — PASS');
 
@@ -941,7 +941,7 @@ for(const [source,expected] of [[frBreton,71],[frBasque,56]]){
 }
 assert.equal(count.source_observations.france_pci_breton_pardon_source_detail_rows,71);
 assert.equal(count.source_observations.france_pci_basque_besta_berri_source_detail_rows,56);
-assert.equal(count.source_observations.total_source_detail_rows_including_external,2051);
+assert.equal(count.source_observations.total_source_detail_rows_including_external,2137);
 assert.equal(count.identity_working_rows.provisional_after_53_no_owner_action_review,408);
 assert.equal(count.identity_working_rows.final_uniquely_verified_customs_added,0);
 assert.equal(researchCatalogue.summary.no_new_app_publications,true);
@@ -999,7 +999,7 @@ assert.equal(researchCatalogue.external_source_observations_wff_hynes.length,125
 assert.deepEqual(new Set(researchCatalogue.external_source_observations_wff_hynes.map(r=>r.id)),leIds);
 assert.equal(count.source_observations.wff1992_lent_easter_excerpt_actions,68);
 assert.equal(count.source_observations.hynes1977_lent_holy_week_excerpt_actions,57);
-assert.equal(count.source_observations.total_source_detail_rows_including_external,2051);
+assert.equal(count.source_observations.total_source_detail_rows_including_external,2137);
 assert.equal(count.identity_working_rows.provisional_after_53_no_owner_action_review,408);
 assert.equal(count.identity_working_rows.final_uniquely_verified_customs_added,0);
 assert.equal(researchCatalogue.summary.no_new_app_publications,true);
@@ -1043,3 +1043,41 @@ for(const r of lentEasterLookup.rows){
 }
 assert.equal(leHints,372);
 console.log('Lent/Easter 125 sourced actions from 1992 and 1977 excerpts: complete 125/125, 372 search-only hints, 2,051 working rows, 0 verified custom identities and 0 publication — PASS');
+
+
+// Dedicated French regional primary-document lane: La Sanch ministerial inventory.
+// Historical variants, material aspects and processional details are NOT new
+// distinct customs; the 2023 inventory is one secondary archival witness.
+const frSanch23=load('data/customs/master/france-2023-la-sanch-ministry-inventory-source-actions.v1.json');
+assert.equal(frSanch23.records.length,86);
+assert.equal(frSanch23.summary.source_action_and_historical_variant_details,86);
+assert.equal(frSanch23.summary.direct_source_document_count,1);
+assert.equal(frSanch23.summary.regional_complexes,1);
+assert.equal(frSanch23.summary.verified_new_distinct_customs,0);
+assert.equal(frSanch23.summary.new_provisional_custom_ids,0);
+assert.equal(frSanch23.summary.app_publications,0);
+assert.equal(frSanch23.source.pdf_pages,36);
+assert.equal(researchCatalogue.external_source_observations_france_sanch.length,86);
+const frSanchIds=new Set(frSanch23.records.map(r=>r.observation_id));
+assert.equal(frSanchIds.size,86);
+assert.deepEqual(new Set(researchCatalogue.external_source_observations_france_sanch.map(r=>r.id)),frSanchIds);
+const frSanchKinds={};
+for(const [i,r] of frSanch23.records.entries()){
+ assert.equal(r.observation_id,'FRSAN23-'+String(i+1).padStart(3,'0'));
+ assert.ok(r.label.length>=18);
+ assert.ok(r.source_locator.pdf_page>=1&&r.source_locator.pdf_page<=36);
+ assert.ok(Number.isInteger(r.source_locator.web_extracted_line));
+ assert.ok(r.source_locator.web_extracted_line>=0&&r.source_locator.web_extracted_line<=1373);
+ assert.equal(r.source_locator.pdf_url,frSanch23.source.url);
+ assert.equal(r.parent_complex,'LA_SANCH_ROUSSILLON_HOLY_WEEK_CONFRATERNITY_PROCESSIONS');
+ assert.equal(r.app_publication,'NONE');
+ assert.equal(r.identity_status,'ONE_COMPONENT_OR_REGIONAL_VARIANT_NOT_CERTIFIED_DISTINCT');
+ frSanchKinds[r.kind]=(frSanchKinds[r.kind]||0)+1;
+}
+assert.deepEqual(frSanchKinds,frSanch23.summary.kinds);
+assert.equal(count.source_observations.france_sanch_2023_source_detail_rows,86);
+assert.equal(count.source_observations.total_source_detail_rows_including_external,2137);
+assert.equal(count.identity_working_rows.provisional_after_53_no_owner_action_review,408);
+assert.equal(count.identity_working_rows.final_uniquely_verified_customs_added,0);
+assert.equal(researchCatalogue.summary.no_new_app_publications,true);
+console.log('France La Sanch source PDF: 86 page/line-located details, 2137 aggregate source-detail rows, zero identity merges or app publication — PASS');
