@@ -11,9 +11,9 @@
     "novena_context": "data/customs/novena-context-links.v1.json"
   },
   "counts": {
-    "places": 347,
+    "places": 348,
     "places_with_linked_records": 259,
-    "places_without_direct_claim": 88,
+    "places_without_direct_claim": 89,
     "multicategory_heritage_places": 212,
     "shrines": 257,
     "pilgrimages": 240,
@@ -63,6 +63,7 @@
       "place:IN:santhome-cathedral-basilica-chennai",
       "place:IN:st-thomas-mount-shrine-chennai",
       "place:IS:christ-king-cathedral-reykjavik",
+      "place:IT:santuario-san-paolo-della-croce-ovada",
       "place:JM:holy-trinity-cathedral-kingston",
       "place:JO:memorial-moses-mount-nebo",
       "place:JP:oura-cathedral-nagasaki",
@@ -3069,6 +3070,12 @@
       "geo_source_status": "GEO_SOURCE_URL_PRESENT"
     },
     {
+      "place_id": "place:IT:santuario-san-paolo-della-croce-ovada",
+      "display_name": "Santuario di San Paolo della Croce, Ovada",
+      "record_ids": {},
+      "geo_source_status": "GEO_SOURCE_URL_PRESENT"
+    },
+    {
       "place_id": "place:IT:santuario-san-pio-rotondo",
       "display_name": "Santuario di San Pio da Pietrelcina, San Giovanni Rotondo",
       "record_ids": {
@@ -4851,5 +4858,13 @@
       "place:PG:holy-cross-procathedral-vanimo"
     ],
     "rule": "4 named OSM Catholic church features and 7 independently source-owned Plus Code site square centers; no visitor entrance or 1962 rite assertion; no inferred shrine or relic joins."
+  },
+  "georeference_tranche_20261024_p14": {
+    "release": "P14",
+    "release_manifest": "data/geography/research/sacred-places-p14-ovada-canonical-release.v1.json",
+    "new_sites": [
+      "place:IT:santuario-san-paolo-della-croce-ovada"
+    ],
+    "rule": "Direct Catholic parish confirms extant Ovada sanctuary, independent OSM names same Catholic church polygon (site centre only). Do not infer 1962-Missal venue, visiting entrance, new shrine/relic joins, or approved photo."
   }
 }

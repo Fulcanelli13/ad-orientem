@@ -19,6 +19,8 @@ for(const row of JSON.parse(readFileSync("data/geography/research/sacred-geograp
 for(const row of JSON.parse(readFileSync("data/geography/research/sacred-geography-r79-major-church-sites.v1.json","utf8")).new_sites)publishedAfterFreeze.add(row.place_id);
 // R87 canonical promotions postdate the original Europe acquisition freeze as well.
 for(const row of JSON.parse(readFileSync("data/geography/research/sacred-geography-r87-first-canonical-release.v1.json","utf8")).published_new)publishedAfterFreeze.add(row.place_id);
+// P14 Ovada publication also postdates the frozen Wave 1 Europe source census.
+publishedAfterFreeze.add(JSON.parse(readFileSync("data/geography/research/sacred-places-p14-ovada-canonical-release.v1.json","utf8")).published_new.place_id);
 const historicalPlaces=G.places.filter(p=>!publishedAfterFreeze.has(p.place_id));
 const oldPlaces=new Map(historicalPlaces.map(x=>[x.place_id,x]));
 const names=new Set(R.place_candidates.map(x=>x.lead_id));
