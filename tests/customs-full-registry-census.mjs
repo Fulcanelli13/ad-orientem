@@ -204,13 +204,13 @@ for (const row of weiserFine.records) {
   assert.equal(row.approved_distinct_custom_identity,false);
   assert.equal(row.app_publication,'NONE');
 }
-assert.equal(count.source_observations.handbook_nested_granular_detail_mentions,178);
-assert.equal(count.source_observations.all_book_research_rows_including_nested_details,863);
-assert.equal(researchCatalogue.handbook_granular_source_details.length,178);
+assert.equal(count.source_observations.handbook_nested_granular_detail_mentions,340);
+assert.equal(count.source_observations.all_book_research_rows_including_nested_details,1025);
+assert.equal(researchCatalogue.handbook_granular_source_details.length,340);
 const compiledDetailIds = new Set(researchCatalogue.handbook_granular_source_details.map(x=>x.id));
 for (const r of weiserFine.records) assert.ok(compiledDetailIds.has(r.id), 'Earlier ch10–13 detail lost');
 assert.equal(count.identity_working_rows.new_identity_proposals_from_nested_details,0);
-console.log('Handbook ch10–13 research details — original 57 rows retained within 863-row workbench — PASS');
+console.log('Handbook ch10–13 research details — original 57 rows retained within expanded 1025-row workbench — PASS');
 
 
 const remainingChapters = load('data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json');
@@ -218,9 +218,36 @@ assert.equal(remainingChapters.entries.length,121);
 assert.equal(new Set(remainingChapters.entries.map(x=>x.id)).size,121);
 assert.deepEqual(remainingChapters.summary.source_chapters_covered,Array.from({length:15},(_,i)=>i+14));
 assert.equal(remainingChapters.summary.unique_printed_page_locations,42);
-assert.equal(count.source_observations.handbook_nested_granular_detail_mentions,178);
-assert.equal(count.source_observations.all_book_research_rows_including_nested_details,863);
-assert.equal(researchCatalogue.handbook_granular_source_details.length,178);
+assert.equal(count.source_observations.handbook_nested_granular_detail_mentions,340);
+assert.equal(count.source_observations.all_book_research_rows_including_nested_details,1025);
+assert.equal(researchCatalogue.handbook_granular_source_details.length,340);
+
+const ch01_04 = load('data/customs/master/weiser-handbook-targeted-addendum-ch01-04.v1.json');
+const ch05_09 = load('data/customs/master/weiser-handbook-targeted-addendum-ch05-09.v1.json');
+assert.equal(ch01_04.records.length,41);
+assert.equal(ch05_09.records.length,121);
+assert.equal(ch01_04.summary.possibly_unindexed_source_details,12);
+assert.equal(ch05_09.summary.possibly_unindexed_source_details,22);
+assert.equal(count.source_review.handbook_ch01_to_09_potential_unindexed_details,34);
+const earlyDetails = [...ch01_04.records,...ch05_09.records];
+const earlyDetailIds = new Set(earlyDetails.map(r=>r.id));
+assert.equal(earlyDetailIds.size,162);
+assert.equal(count.source_observations.granular_details_spread_by_batch.ch01_to_04,41);
+assert.equal(count.source_observations.granular_details_spread_by_batch.ch05_to_09,121);
+for(const r of earlyDetails){
+ const p = r.source?.printed_page ?? r.source_locator?.printed_page;
+ const pdfp = r.source?.pdf_page_zero_based ?? r.source_locator?.pdf_page_zero_based;
+ const parent = r.reference_to_original_index ?? r.original_observation_link ?? null;
+ assert.equal(pdfp,p+17,'Printed page maps to zero-based 1958 PDF page');
+ if(parent) assert.ok(priorSourceIds.has(parent),'Existing source parent must exist');
+ assert.equal(r.app_publication,'NONE');
+ assert.equal(r.uniqueness_status ?? r.actual_unique_practice_identity,'NOT_CERTIFIED'===r.uniqueness_status?'NOT_CERTIFIED':'UNRESOLVED');
+}
+const mappedTotals = earlyDetails.filter(r=>(r.reference_to_original_index ?? r.original_observation_link ?? null)===null).length;
+assert.equal(mappedTotals,34);
+assert.equal(new Set(researchCatalogue.handbook_granular_source_details.map(x=>x.id)).size,340);
+console.log('Weiser ch01–09 source text extraction — 162 details across 9 chapters, 34 unmatched source actions, all retained — PASS');
+
 const originalSubDetailIds = new Set(weiserFine.records.map(r=>r.id));
 const newSubDetailIds = new Set(remainingChapters.entries.map(r=>r.id));
 for(const row of remainingChapters.entries){
@@ -235,7 +262,7 @@ for(const row of remainingChapters.entries){
 }
 assert.deepEqual(
   new Set(researchCatalogue.handbook_granular_source_details.map(x=>x.id)),
-  new Set([...originalSubDetailIds,...newSubDetailIds])
+  new Set([...originalSubDetailIds,...newSubDetailIds,...earlyDetailIds])
 );
 assert.equal(remainingChapters.summary.independently_verified_new_distinct_customs,0);
 assert.equal(remainingChapters.summary.app_published,0);
