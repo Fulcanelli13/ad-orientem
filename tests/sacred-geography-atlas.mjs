@@ -14,6 +14,38 @@ assert.equal(sacred.relics.length,122);
 assert.equal(sacred.scope,"PARTIAL_VERIFIED_SEED_NOT_COMPLETE_WORLD_CENSUS");
 assert.equal(assertExploreGeographyRegistry(geo).counts.places,347);
 const places=new Map(geo.places.map(p=>[p.place_id,p]));
+const p12=read("data/geography/research/sacred-places-p12-six-georef-and-23-source-exceptions.v1.json");
+assert.equal(p12.schema,"AO_SACRED_PLACES_P12_RESEARCH_DISPOSITIONS_V1");
+assert.equal(p12.source_exceptions.length,23,"P12 must preserve every original exception or unresolved slot");
+assert.equal(new Set(p12.source_exceptions.map(x=>x.candidate_id)).size,23);
+assert.equal(p12.georeferencing_holds.length,6,"All weak-geo review records must remain visible");
+assert.equal(new Set(p12.georeferencing_holds.map(x=>x.place_id)).size,6);
+for(const review of p12.georeferencing_holds){
+  const place=places.get(review.place_id);
+  assert.ok(place&&isMapPublishablePlaceGeo(place.geo,place.address?.country_code),
+    "Research georeference hold must link an actual mapped Place: "+review.place_id);
+  assert.match(review.authority_url,/^https:\/\//);
+}
+assert.equal(p12.canonical_address_upgrades.length,3);
+for(const upgrade of p12.canonical_address_upgrades){
+  const place=places.get(upgrade.place_id);
+  assert.ok(place,"Missing upgraded canonical address: "+upgrade.place_id);
+  assert.equal(place.address.line1,upgrade.line1,upgrade.place_id);
+  assert.equal(place.address.postal_code,upgrade.postal_code,upgrade.place_id);
+  assert.equal(place.address.formatted,upgrade.formatted,upgrade.place_id);
+  assert.match(upgrade.custodian,/^https:\/\//);
+  assert.equal(place.geo.precision,"site","Official address does not prove mapped entrance");
+}
+for(const record of p12.source_exceptions){
+  assert.equal(record.publication_gate,"HOLD_NO_NEW_PLACE_NO_PIN");
+  assert.equal(record.canonical_place_id,null);
+  if(record.research_update_20261024){
+    assert.match(record.research_update_20261024.url,/^https:\/\//);
+    assert.ok(record.research_update_20261024.finding);
+    assert.ok(record.research_update_20261024.next);
+  }
+}
+
 const p11ExactChurchFootprints=[
   ["place:FR:basilique-saint-sernin-toulouse","osm:way:260584755",43.60838,1.44188],
   ["place:IT:santa-maria-maggiore-rome","osm:way:131564482",41.89761,12.49846],
