@@ -37,6 +37,7 @@ const normalize=s=>(s||"").normalize("NFKD").replace(/[\u0300-\u036f]/g,"")
  .toLowerCase().replace(/[^a-z0-9]+/g," ").trim().split(/\s+/).filter(Boolean);
 const originalRows=new Map(source.records.map(x=>[x.id,x]));
 const lines=historic.replace(/\r/g,"").split("\n");
+const historicalTextSHA256=sha(historic),historicalPageXMLSHA256=sha(xml);
 const pages=new Map();
 for(const page of xml.matchAll(/<OBJECT\b[^>]*>([\s\S]*?)<\/OBJECT\s*>/gi)){
  const leaf=/<PARAM\s+name="PAGE"\s+value="[^"]*_(\d+)\.djvu"\s*\/>/i.exec(page[1]);
@@ -52,8 +53,8 @@ for(const r of out.rows){
  assert.ok(original);
  assert.equal(r.originalOCRQuestionLine,original.originalQuestionLine);
  assert.equal(r.sourceQuestionSHA256,original.originalQuestionSourceSpanSHA256);
- assert.equal(r.original1888PlainTextVolumeSHA256,sha(historic));
- assert.equal(r.originalDjVuXMLSHA256,sha(xml));
+ assert.equal(r.original1888PlainTextVolumeSHA256,historicalTextSHA256);
+ assert.equal(r.originalDjVuXMLSHA256,historicalPageXMLSHA256);
  assert.equal(original.exactQuestionLineOCR,lines[r.originalOCRQuestionLine-1]);
  assert.equal(sha(original.originalQuestionSourceSpan),r.sourceQuestionSHA256);
  assert.equal(r.notAVisuallyVerifiedPrintedPageCitation,true);
