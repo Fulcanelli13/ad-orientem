@@ -7,6 +7,7 @@
 import assert from 'node:assert/strict';
 import {readFileSync,writeFileSync,mkdirSync} from 'node:fs';
 import {readCorpus,selectEvidence,makeReviewHTML} from './pius-x-generative-review.mjs';
+import {routePilotQuestion} from './pius-x-pilot-question-router.mjs';
 
 const out='artifacts/pius-x-study-expanded/';
 const evidenceRoot='previews/pius-x-study/evidence/';
@@ -83,11 +84,41 @@ for(const c of specimens.cases){
 }
 assert.equal(cases.length,11);
 assert.equal(distinctWitnesses.size,18);
+// Navigation-only aliases are never user-facing replies. They are allowed only
+// when the restricted router points to one of the 11 already reviewed nodes.
+const visitorBank=JSON.parse(readFileSync(evidenceRoot+
+ 'pius-x-p24-unexpected-visitor-bank-80-20261024.v1.json','utf8'));
+assert.equal(visitorBank.schema,'AO_SPX_P24_80_UNEXPECTED_BILINGUAL_VISITOR_PROMPTS_V1');
+const eligible=visitorBank.cases.filter(item=>
+ item.expected==='EVIDENCE_ELIGIBLE_NOT_ANSWER_CERTIFIED');
+assert.equal(eligible.length,32);
+const navigationAliases=[],aliasKeys=new Set();
+for(const item of eligible){
+ assert(allowedChapterIds.has(item.chapterId));
+ assert(['en','fr'].includes(item.language));
+ const match=routePilotQuestion(store,{chapterId:item.chapterId,
+  language:item.language,question:item.question});
+ assert.equal(match.status,'matched',item.id+' expected original source match');
+ assert(used.has(match.nodeId),'Alias must point to one of the 11 edited specimens');
+ const target=cases.find(x=>x.nodeId===match.nodeId);
+ assert(target&&target.chapterId===item.chapterId);
+ const key=item.chapterId+'|'+item.language+'|'+item.question.trim().toLocaleLowerCase();
+ assert(!aliasKeys.has(key));aliasKeys.add(key);
+ assert(!cases.some(x=>x.chapterId===item.chapterId&&
+  x.question[item.language].trim().toLocaleLowerCase()===item.question.trim().toLocaleLowerCase()));
+ navigationAliases.push({id:item.id,chapterId:item.chapterId,
+  language:item.language,question:item.question,matchedNodeId:match.nodeId,
+  intentKey:match.intentKey,status:'NAVIGATION_SUGGESTION_ONLY_NOT_SOURCE_ANSWER_CERTIFIED'});
+}
+assert.equal(navigationAliases.length,32);
+assert.equal(navigationAliases.filter(x=>x.language==='en').length,16);
+assert.equal(navigationAliases.filter(x=>x.language==='fr').length,16);
 const offline={
  schema:'AO_SPX_P26_OFFLINE_REVIEW_CASES_V1',status:'PRIVATE_STATIC_NO_MODEL_INFERENCE',
  modelProviderEnabled:false,publishingApproved:false,sourceOnlyGateAdmissions:0,
  canonicalChapters:4,canonicalNodes:11,bilingualEditorialPairs:22,
- originalWitnessFragments:distinctWitnesses.size,originalCorpusNodes:423,cases
+ originalWitnessFragments:distinctWitnesses.size,originalCorpusNodes:423,
+ navigationAliasCount:32,navigationAliases,cases
 };
 const client=readFileSync('previews/pius-x-study/spx-p26-offline-replay-client.js','utf8');
 const css=readFileSync('previews/pius-x-study/spx-model-review-style.css','utf8')+'\n'+
@@ -107,6 +138,6 @@ const dest=out+'SPX_P26_Offline_Source_Dialogue_Demo.html';
 writeFileSync(dest,final);
 console.log('PASS SPX_P26_OFFLINE_BUILD '+JSON.stringify({
  path:dest,bytes:Buffer.byteLength(final),chapterCount:4,sourceOwnedQuestions:11,
- bilingualEditorialDrafts:22,originalFragments:18,networkCalls:0,
+ bilingualEditorialDrafts:22,originalFragments:18,navigationAliases:32,networkCalls:0,
  sourceOwnerNodes:423,generativeGateNodes:144,published:false
 }));
