@@ -19,6 +19,8 @@ on:
       - 'tools/pius-x-source-only-gate.mjs'
       - 'tests/pius-x-source-only-gate.mjs'
       - 'tests/pius-x-wave4-original-contexts.mjs'
+      - 'tests/pius-x-wave5-bulk-inventory.mjs'
+      - 'tests/pius-x-wave5-bulk-inventory.mjs'
       - 'previews/pius-x-study/spx-model-review-client.js'
       - 'previews/pius-x-study/spx-model-review-style.css'
       - 'tests/pius-x-generative-review-e2e.mjs'
@@ -113,6 +115,8 @@ jobs:
         run: node tests/pius-x-source-only-gate.mjs
       - name: Verify 23 wave4 Latin and Italian excerpts against independent Vatican text windows
         run: node tests/pius-x-wave4-original-contexts.mjs
+      - name: Reconcile all 228 outside-batch St Pius X source-owner nodes without evidence admissions
+        run: node tests/pius-x-wave5-bulk-inventory.mjs
       - name: Exercise real-model evaluation harness without external inference
         run: node tests/pius-x-live-eval-harness.mjs
       - name: Exercise provider HTTP integration against loopback fake model (no paid inference)
