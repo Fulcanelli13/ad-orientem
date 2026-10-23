@@ -2017,6 +2017,8 @@ assert.equal(pitreWave03.summary.app_publications,0);
 assert.equal(researchCatalogue.external_source_observations_pitre_original_1900_new_ocr.length,293);
 const indexedPitre3=researchCatalogue.external_source_observations_pitre_original_1900_new_ocr.slice(121);
 assert.equal(indexedPitre3.length,172);
+const scanPitre20261024=load('data/customs/master/pitre-1900-uploaded-facsimile-25p0-16-wave03-page-gates.v1.json');
+const scanPitreNewVerifiedIds=new Set(scanPitre20261024.additional_wave03_highrisk_page_checks.map(r=>r.source_id));
 const p3Seen=new Set();
 for(let i=0;i<172;i++){
  const raw=pitreWave03.records[i], idx=indexedPitre3[i];
@@ -2039,7 +2041,7 @@ for(let i=0;i<172;i++){
  assert.equal(raw.modern_practice_verified,false);
  assert.equal(raw.automatic_group_or_master_merge,false);
  assert.equal(raw.app_publication,false);
- assert.equal(idx.original_printed_folio_verified,false);
+ assert.equal(idx.original_printed_folio_verified,scanPitreNewVerifiedIds.has(idx.id));
  assert.equal(idx.source_independence_certified,false);
  assert.equal(idx.official_1962_rite_approved,false);
  assert.equal(idx.unique_practice_identity_certified,false);
