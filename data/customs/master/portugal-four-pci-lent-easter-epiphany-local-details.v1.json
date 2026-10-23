@@ -1,0 +1,2868 @@
+{
+  "schema": "AO_PORTUGAL_PCI_FOUR_REGIONAL_LITURGICAL_FOLK_COMPLEXES_ACTION_PASS_V1",
+  "research_date": "2026-10-23",
+  "scope": "RESEARCH_ONLY_SOURCE_COMPONENT_OR_LOCAL_VARIANT_NOT_DISTINCT_CUSTOM_CENSUS",
+  "sources": [
+    {
+      "code": "B",
+      "source_inventory": "INPCI_2022_004",
+      "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/525?dirPesq=3",
+      "title": "Quaresma e Solenidades da Semana Santa de Braga",
+      "place": "Braga, Portugal",
+      "umbrella": "BRAGA_HOLY_WEEK_AND_NEIGHBORHOOD_EASTER",
+      "min": 50,
+      "max": 124,
+      "kind": "PORTUGUESE_NATIONAL_INTANGIBLE_CULTURAL_HERITAGE_INVENTORY"
+    },
+    {
+      "code": "E",
+      "source_inventory": "INPCI_2015_003",
+      "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/293?dirPesq=3",
+      "title": "Endoenças de Entre-os-Rios",
+      "place": "Entre-os-Rios, northern Portugal",
+      "umbrella": "ENTRE_OS_RIOS_ENDOENCAS_EASTER_COMPLEX",
+      "min": 94,
+      "max": 122,
+      "kind": "PORTUGUESE_NATIONAL_INTANGIBLE_CULTURAL_HERITAGE_INVENTORY"
+    },
+    {
+      "code": "A",
+      "source_inventory": "INPCI_2021_002",
+      "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/539?dirPesq=3",
+      "title": "Pintar e Cantar dos Reis",
+      "place": "Alenquer, Portugal",
+      "umbrella": "ALENQUER_EPIPHANY_PAINTING_AND_SINGING",
+      "min": 55,
+      "max": 145,
+      "kind": "PORTUGUESE_NATIONAL_INTANGIBLE_CULTURAL_HERITAGE_INVENTORY"
+    },
+    {
+      "code": "V",
+      "source_inventory": "INPCI_2023_015",
+      "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/763?dirPesq=3",
+      "title": "Canto a vozes de mulheres",
+      "place": "Northern and central Portugal",
+      "umbrella": "PORTUGAL_LENTEN_SOULS_SINGING_AS_PART_OF_WOMENS_POLYPHONY",
+      "min": 28,
+      "max": 108,
+      "kind": "PORTUGUESE_NATIONAL_INTANGIBLE_CULTURAL_HERITAGE_INVENTORY"
+    }
+  ],
+  "method": "Read four direct Matriz PCI inventory HTML documents, paraphrase distinct actions, rituals, documented historical change and region-specific subactions; source locator is HTML extracted line (not original archival folio). Records are nested components under four broader research themes. Some Braga and Entre-os-Rios actions share Easter devotion as typological related practices, not single historical local custom. Alenquer Epiphany family wall marking combines Catholic narratives, house inscriptions and local social symbolism; not every mark is ecclesiastical approval. The women’s singing record is broad non-Christian as well as local religious cultural heritage; only Lenten souls prayer / parish worship portions should qualify for candidate Catholic customs. Bracarense local rite remains separate from 1962 Roman liturgy. No automatic merges or ritual rubrics appropriated.",
+  "summary": {
+    "source_detail_records": 140,
+    "by_umbrella": {
+      "B": 49,
+      "E": 32,
+      "A": 42,
+      "V": 17
+    },
+    "consulted_national_inventory_documents": 4,
+    "contextualized_regional_umbrella_records": 4,
+    "new_unique_verified_customs": 0,
+    "new_independent_archival_witnesses": 0,
+    "app_publications": 0
+  },
+  "records": [
+    {
+      "observation_id": "PT-PCI26-B-001",
+      "action_label": "Braga parishes organize a cycle of Lenten and Holy Week public devotions",
+      "theme": "B",
+      "source_inventory_id": "INPCI_2022_004",
+      "parent_record": "BRAGA_HOLY_WEEK_AND_NEIGHBORHOOD_EASTER",
+      "reported_location": "Braga, Portugal",
+      "claim_classification": "SEASONAL_CYCLE",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/525?dirPesq=3",
+        "html_extracted_line": 56,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-B-002",
+      "action_label": "Pass the Lenten Eucharistic adoration observance between designated city churches",
+      "theme": "B",
+      "source_inventory_id": "INPCI_2022_004",
+      "parent_record": "BRAGA_HOLY_WEEK_AND_NEIGHBORHOOD_EASTER",
+      "reported_location": "Braga, Portugal",
+      "claim_classification": "PUBLIC_EUCHARISTIC_DEVOTION",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/525?dirPesq=3",
+        "html_extracted_line": 57,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-B-003",
+      "action_label": "Expose the Blessed Sacrament for two consecutive days in each assigned church",
+      "theme": "B",
+      "source_inventory_id": "INPCI_2022_004",
+      "parent_record": "BRAGA_HOLY_WEEK_AND_NEIGHBORHOOD_EASTER",
+      "reported_location": "Braga, Portugal",
+      "claim_classification": "PUBLIC_EUCHARISTIC_DEVOTION",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/525?dirPesq=3",
+        "html_extracted_line": 57,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-B-004",
+      "action_label": "Prepare the church sanctuary with flowers candles and cloth hangings for Lausperene",
+      "theme": "B",
+      "source_inventory_id": "INPCI_2022_004",
+      "parent_record": "BRAGA_HOLY_WEEK_AND_NEIGHBORHOOD_EASTER",
+      "reported_location": "Braga, Portugal",
+      "claim_classification": "CHURCH_DECORATION",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/525?dirPesq=3",
+        "html_extracted_line": 58,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-B-005",
+      "action_label": "Adorn the central Eucharistic throne during the Lenten exposition",
+      "theme": "B",
+      "source_inventory_id": "INPCI_2022_004",
+      "parent_record": "BRAGA_HOLY_WEEK_AND_NEIGHBORHOOD_EASTER",
+      "reported_location": "Braga, Portugal",
+      "claim_classification": "CHURCH_DECORATION",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/525?dirPesq=3",
+        "html_extracted_line": 59,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-B-006",
+      "action_label": "Hang a large purple curtain across the main doorway of a Lausperene church",
+      "theme": "B",
+      "source_inventory_id": "INPCI_2022_004",
+      "parent_record": "BRAGA_HOLY_WEEK_AND_NEIGHBORHOOD_EASTER",
+      "reported_location": "Braga, Portugal",
+      "claim_classification": "CHURCH_DECORATION",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/525?dirPesq=3",
+        "html_extracted_line": 60,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-B-007",
+      "action_label": "Local sweet vendors offer Senhor sweets to worshippers at church entrances",
+      "theme": "B",
+      "source_inventory_id": "INPCI_2022_004",
+      "parent_record": "BRAGA_HOLY_WEEK_AND_NEIGHBORHOOD_EASTER",
+      "reported_location": "Braga, Portugal",
+      "claim_classification": "LOCAL_FOOD_COMMERCE",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/525?dirPesq=3",
+        "html_extracted_line": 60,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-B-008",
+      "action_label": "Braga residents visit different churches during the Lausperene days",
+      "theme": "B",
+      "source_inventory_id": "INPCI_2022_004",
+      "parent_record": "BRAGA_HOLY_WEEK_AND_NEIGHBORHOOD_EASTER",
+      "reported_location": "Braga, Portugal",
+      "claim_classification": "LOCAL_PILGRIMAGE",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/525?dirPesq=3",
+        "html_extracted_line": 61,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-B-009",
+      "action_label": "Braga Passion procession passes eight outdoor Passion stations on Palm Sunday",
+      "theme": "B",
+      "source_inventory_id": "INPCI_2022_004",
+      "parent_record": "BRAGA_HOLY_WEEK_AND_NEIGHBORHOOD_EASTER",
+      "reported_location": "Braga, Portugal",
+      "claim_classification": "PUBLIC_PROCESSION",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/525?dirPesq=3",
+        "html_extracted_line": 64,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-B-010",
+      "action_label": "Processional images of Christ carrying the Cross and Our Lady pause at each station",
+      "theme": "B",
+      "source_inventory_id": "INPCI_2022_004",
+      "parent_record": "BRAGA_HOLY_WEEK_AND_NEIGHBORHOOD_EASTER",
+      "reported_location": "Braga, Portugal",
+      "claim_classification": "PUBLIC_PROCESSION_COMPONENT",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/525?dirPesq=3",
+        "html_extracted_line": 64,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-B-011",
+      "action_label": "Transfer the Lord of the Steps image to the starting church the previous evening",
+      "theme": "B",
+      "source_inventory_id": "INPCI_2022_004",
+      "parent_record": "BRAGA_HOLY_WEEK_AND_NEIGHBORHOOD_EASTER",
+      "reported_location": "Braga, Portugal",
+      "claim_classification": "PROCESSIONAL_PREPARATION",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/525?dirPesq=3",
+        "html_extracted_line": 65,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-B-012",
+      "action_label": "Sing a Miserere at Largo de Santiago before the main Palm Sunday procession",
+      "theme": "B",
+      "source_inventory_id": "INPCI_2022_004",
+      "parent_record": "BRAGA_HOLY_WEEK_AND_NEIGHBORHOOD_EASTER",
+      "reported_location": "Braga, Portugal",
+      "claim_classification": "DEVOTIONAL_MUSIC",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/525?dirPesq=3",
+        "html_extracted_line": 65,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-B-013",
+      "action_label": "Walk an evening outdoor Way of the Cross at the city's small Passion altars",
+      "theme": "B",
+      "source_inventory_id": "INPCI_2022_004",
+      "parent_record": "BRAGA_HOLY_WEEK_AND_NEIGHBORHOOD_EASTER",
+      "reported_location": "Braga, Portugal",
+      "claim_classification": "DEVOTIONAL_WALK",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/525?dirPesq=3",
+        "html_extracted_line": 65,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-B-014",
+      "action_label": "Religious brotherhood banners lead the Palm Sunday procession",
+      "theme": "B",
+      "source_inventory_id": "INPCI_2022_004",
+      "parent_record": "BRAGA_HOLY_WEEK_AND_NEIGHBORHOOD_EASTER",
+      "reported_location": "Braga, Portugal",
+      "claim_classification": "PUBLIC_PROCESSION_COMPONENT",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/525?dirPesq=3",
+        "html_extracted_line": 66,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-B-015",
+      "action_label": "Pause for the Sermon of the Encounter when Christ and Mary's processional images meet",
+      "theme": "B",
+      "source_inventory_id": "INPCI_2022_004",
+      "parent_record": "BRAGA_HOLY_WEEK_AND_NEIGHBORHOOD_EASTER",
+      "reported_location": "Braga, Portugal",
+      "claim_classification": "DEVOTIONAL_PREACHING",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/525?dirPesq=3",
+        "html_extracted_line": 67,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-B-016",
+      "action_label": "Incline the Marian and Christ images toward each other for the Encounter tableau",
+      "theme": "B",
+      "source_inventory_id": "INPCI_2022_004",
+      "parent_record": "BRAGA_HOLY_WEEK_AND_NEIGHBORHOOD_EASTER",
+      "reported_location": "Braga, Portugal",
+      "claim_classification": "PUBLIC_PROCESSION_COMPONENT",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/525?dirPesq=3",
+        "html_extracted_line": 69,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-B-017",
+      "action_label": "Continue the Passion procession incorporating Our Lady after the encounter",
+      "theme": "B",
+      "source_inventory_id": "INPCI_2022_004",
+      "parent_record": "BRAGA_HOLY_WEEK_AND_NEIGHBORHOOD_EASTER",
+      "reported_location": "Braga, Portugal",
+      "claim_classification": "PUBLIC_PROCESSION_COMPONENT",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/525?dirPesq=3",
+        "html_extracted_line": 70,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-B-018",
+      "action_label": "Carry an SPQR standard as a Passion narrative object",
+      "theme": "B",
+      "source_inventory_id": "INPCI_2022_004",
+      "parent_record": "BRAGA_HOLY_WEEK_AND_NEIGHBORHOOD_EASTER",
+      "reported_location": "Braga, Portugal",
+      "claim_classification": "PUBLIC_PROCESSION_COMPONENT",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/525?dirPesq=3",
+        "html_extracted_line": 71,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-B-019",
+      "action_label": "Depict the seven sorrows of Mary with seven separate dramatic representations",
+      "theme": "B",
+      "source_inventory_id": "INPCI_2022_004",
+      "parent_record": "BRAGA_HOLY_WEEK_AND_NEIGHBORHOOD_EASTER",
+      "reported_location": "Braga, Portugal",
+      "claim_classification": "PUBLIC_PROCESSION_COMPONENT",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/525?dirPesq=3",
+        "html_extracted_line": 72,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-B-020",
+      "action_label": "Penitents follow the images in a reserved part of the Braga Passion procession",
+      "theme": "B",
+      "source_inventory_id": "INPCI_2022_004",
+      "parent_record": "BRAGA_HOLY_WEEK_AND_NEIGHBORHOOD_EASTER",
+      "reported_location": "Braga, Portugal",
+      "claim_classification": "PENITENTIAL_PARTICIPATION",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/525?dirPesq=3",
+        "html_extracted_line": 73,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-B-021",
+      "action_label": "A presiding priest carries a claimed True Cross relic beneath the canopy",
+      "theme": "B",
+      "source_inventory_id": "INPCI_2022_004",
+      "parent_record": "BRAGA_HOLY_WEEK_AND_NEIGHBORHOOD_EASTER",
+      "reported_location": "Braga, Portugal",
+      "claim_classification": "PUBLIC_RELIC_VENERATION_CLAIM",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/525?dirPesq=3",
+        "html_extracted_line": 73,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-B-022",
+      "action_label": "Present a Holy Wednesday salvation history street pageant called Burrinha",
+      "theme": "B",
+      "source_inventory_id": "INPCI_2022_004",
+      "parent_record": "BRAGA_HOLY_WEEK_AND_NEIGHBORHOOD_EASTER",
+      "reported_location": "Braga, Portugal",
+      "claim_classification": "BIBLICAL_THEATRE_NOT_RITE",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/525?dirPesq=3",
+        "html_extracted_line": 76,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-B-023",
+      "action_label": "Represent the flight to Egypt with a Marian image riding a donkey",
+      "theme": "B",
+      "source_inventory_id": "INPCI_2022_004",
+      "parent_record": "BRAGA_HOLY_WEEK_AND_NEIGHBORHOOD_EASTER",
+      "reported_location": "Braga, Portugal",
+      "claim_classification": "BIBLICAL_THEATRE_NOT_RITE",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/525?dirPesq=3",
+        "html_extracted_line": 78,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-B-024",
+      "action_label": "Stage the biblical salvation-history pageant as a series of numbered tableaux",
+      "theme": "B",
+      "source_inventory_id": "INPCI_2022_004",
+      "parent_record": "BRAGA_HOLY_WEEK_AND_NEIGHBORHOOD_EASTER",
+      "reported_location": "Braga, Portugal",
+      "claim_classification": "BIBLICAL_THEATRE_NOT_RITE",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/525?dirPesq=3",
+        "html_extracted_line": 80,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-B-025",
+      "action_label": "Place choirs along the street to sing during the Holy Wednesday pageant",
+      "theme": "B",
+      "source_inventory_id": "INPCI_2022_004",
+      "parent_record": "BRAGA_HOLY_WEEK_AND_NEIGHBORHOOD_EASTER",
+      "reported_location": "Braga, Portugal",
+      "claim_classification": "BIBLICAL_THEATRE_NOT_RITE",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/525?dirPesq=3",
+        "html_extracted_line": 81,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-B-026",
+      "action_label": "Thursday Ecce Homo procession includes depictions of works of mercy",
+      "theme": "B",
+      "source_inventory_id": "INPCI_2022_004",
+      "parent_record": "BRAGA_HOLY_WEEK_AND_NEIGHBORHOOD_EASTER",
+      "reported_location": "Braga, Portugal",
+      "claim_classification": "PUBLIC_PROCESSION_COMPONENT",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/525?dirPesq=3",
+        "html_extracted_line": 85,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-B-027",
+      "action_label": "Black-clad farricocos carry torches and wooden rattles on Holy Thursday",
+      "theme": "B",
+      "source_inventory_id": "INPCI_2022_004",
+      "parent_record": "BRAGA_HOLY_WEEK_AND_NEIGHBORHOOD_EASTER",
+      "reported_location": "Braga, Portugal",
+      "claim_classification": "PENITENTIAL_PROCESSION",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/525?dirPesq=3",
+        "html_extracted_line": 88,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-B-028",
+      "action_label": "Devout spectators kneel as the Ecce Homo image passes",
+      "theme": "B",
+      "source_inventory_id": "INPCI_2022_004",
+      "parent_record": "BRAGA_HOLY_WEEK_AND_NEIGHBORHOOD_EASTER",
+      "reported_location": "Braga, Portugal",
+      "claim_classification": "DEVOTIONAL_GESTURE",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/525?dirPesq=3",
+        "html_extracted_line": 88,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-B-029",
+      "action_label": "Process with the image of the dead Lord on Good Friday night in Braga",
+      "theme": "B",
+      "source_inventory_id": "INPCI_2022_004",
+      "parent_record": "BRAGA_HOLY_WEEK_AND_NEIGHBORHOOD_EASTER",
+      "reported_location": "Braga, Portugal",
+      "claim_classification": "PUBLIC_PROCESSION",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/525?dirPesq=3",
+        "html_extracted_line": 92,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-B-030",
+      "action_label": "Confraternity members and cathedral clergy cover heads for Good Friday procession",
+      "theme": "B",
+      "source_inventory_id": "INPCI_2022_004",
+      "parent_record": "BRAGA_HOLY_WEEK_AND_NEIGHBORHOOD_EASTER",
+      "reported_location": "Braga, Portugal",
+      "claim_classification": "MOURNING_SIGN",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/525?dirPesq=3",
+        "html_extracted_line": 94,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-B-031",
+      "action_label": "Turn off exterior city lights while the Good Friday procession passes",
+      "theme": "B",
+      "source_inventory_id": "INPCI_2022_004",
+      "parent_record": "BRAGA_HOLY_WEEK_AND_NEIGHBORHOOD_EASTER",
+      "reported_location": "Braga, Portugal",
+      "claim_classification": "MOURNING_SIGN",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/525?dirPesq=3",
+        "html_extracted_line": 95,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-B-032",
+      "action_label": "Carry the farricocos rattles silently on Good Friday in contrast with Thursday",
+      "theme": "B",
+      "source_inventory_id": "INPCI_2022_004",
+      "parent_record": "BRAGA_HOLY_WEEK_AND_NEIGHBORHOOD_EASTER",
+      "reported_location": "Braga, Portugal",
+      "claim_classification": "MOURNING_SIGN",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/525?dirPesq=3",
+        "html_extracted_line": 95,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-B-033",
+      "action_label": "Drag the torch staffs close along pavement during the funeral procession",
+      "theme": "B",
+      "source_inventory_id": "INPCI_2022_004",
+      "parent_record": "BRAGA_HOLY_WEEK_AND_NEIGHBORHOOD_EASTER",
+      "reported_location": "Braga, Portugal",
+      "claim_classification": "MOURNING_SIGN",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/525?dirPesq=3",
+        "html_extracted_line": 95,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-B-034",
+      "action_label": "Preserve Braga-rite specific Holy Week celebrations separately from Roman 1962 Missal customs",
+      "theme": "B",
+      "source_inventory_id": "INPCI_2022_004",
+      "parent_record": "BRAGA_HOLY_WEEK_AND_NEIGHBORHOOD_EASTER",
+      "reported_location": "Braga, Portugal",
+      "claim_classification": "ALTERNATIVE_RITE_CONTEXT",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/525?dirPesq=3",
+        "html_extracted_line": 108,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "BRACARENSE_RITE_NOT_1962_ROMAN_CUSTOM",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-B-035",
+      "action_label": "Braga rite describes a distinctive Easter Vigil Resurrection procession",
+      "theme": "B",
+      "source_inventory_id": "INPCI_2022_004",
+      "parent_record": "BRAGA_HOLY_WEEK_AND_NEIGHBORHOOD_EASTER",
+      "reported_location": "Braga, Portugal",
+      "claim_classification": "ALTERNATIVE_RITE_CONTEXT",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/525?dirPesq=3",
+        "html_extracted_line": 110,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "BRACARENSE_RITE_NOT_1962_ROMAN_CUSTOM",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-B-036",
+      "action_label": "Braga rite describes Pascal Vespers with visit to the baptistery",
+      "theme": "B",
+      "source_inventory_id": "INPCI_2022_004",
+      "parent_record": "BRAGA_HOLY_WEEK_AND_NEIGHBORHOOD_EASTER",
+      "reported_location": "Braga, Portugal",
+      "claim_classification": "ALTERNATIVE_RITE_CONTEXT",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/525?dirPesq=3",
+        "html_extracted_line": 110,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "BRACARENSE_RITE_NOT_1962_ROMAN_CUSTOM",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-B-037",
+      "action_label": "Keep a feast of Our Lady of Sorrows at Congregados before Palm Sunday",
+      "theme": "B",
+      "source_inventory_id": "INPCI_2022_004",
+      "parent_record": "BRAGA_HOLY_WEEK_AND_NEIGHBORHOOD_EASTER",
+      "reported_location": "Braga, Portugal",
+      "claim_classification": "LOCAL_MARIAN_DEVOTION",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/525?dirPesq=3",
+        "html_extracted_line": 114,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-B-038",
+      "action_label": "Clothe the Sorrows statue and decorate it with flowers and candles for the feast",
+      "theme": "B",
+      "source_inventory_id": "INPCI_2022_004",
+      "parent_record": "BRAGA_HOLY_WEEK_AND_NEIGHBORHOOD_EASTER",
+      "reported_location": "Braga, Portugal",
+      "claim_classification": "LOCAL_MARIAN_DEVOTION",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/525?dirPesq=3",
+        "html_extracted_line": 116,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-B-039",
+      "action_label": "Remove seven swords successively from the Sorrows image during the Easter Vigil ceremony",
+      "theme": "B",
+      "source_inventory_id": "INPCI_2022_004",
+      "parent_record": "BRAGA_HOLY_WEEK_AND_NEIGHBORHOOD_EASTER",
+      "reported_location": "Braga, Portugal",
+      "claim_classification": "LOCAL_MARIAN_DEVOTION",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/525?dirPesq=3",
+        "html_extracted_line": 117,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-B-040",
+      "action_label": "Replace the Sorrows image radiance with a royal crown after removing the swords",
+      "theme": "B",
+      "source_inventory_id": "INPCI_2022_004",
+      "parent_record": "BRAGA_HOLY_WEEK_AND_NEIGHBORHOOD_EASTER",
+      "reported_location": "Braga, Portugal",
+      "claim_classification": "LOCAL_MARIAN_DEVOTION",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/525?dirPesq=3",
+        "html_extracted_line": 117,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-B-041",
+      "action_label": "Celebrate the Senhor das Ansias neighborhood Easter festival through Easter Monday",
+      "theme": "B",
+      "source_inventory_id": "INPCI_2022_004",
+      "parent_record": "BRAGA_HOLY_WEEK_AND_NEIGHBORHOOD_EASTER",
+      "reported_location": "Braga, Portugal",
+      "claim_classification": "LOCAL_FESTIVAL_TIMING",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/525?dirPesq=3",
+        "html_extracted_line": 120,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-B-042",
+      "action_label": "Neighborhood families take turns in managing the Rua da Conega Easter event",
+      "theme": "B",
+      "source_inventory_id": "INPCI_2022_004",
+      "parent_record": "BRAGA_HOLY_WEEK_AND_NEIGHBORHOOD_EASTER",
+      "reported_location": "Braga, Portugal",
+      "claim_classification": "HOUSEHOLD_FESTIVAL_ORGANIZATION",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/525?dirPesq=3",
+        "html_extracted_line": 120,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-B-043",
+      "action_label": "Burn a Judas effigy with fireworks after the Easter Vigil",
+      "theme": "B",
+      "source_inventory_id": "INPCI_2022_004",
+      "parent_record": "BRAGA_HOLY_WEEK_AND_NEIGHBORHOOD_EASTER",
+      "reported_location": "Braga, Portugal",
+      "claim_classification": "CIVIC_FESTIVAL_NOT_LITURGY",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/525?dirPesq=3",
+        "html_extracted_line": 121,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-B-044",
+      "action_label": "Hold an Easter Sunday night neighborhood concert and fireworks",
+      "theme": "B",
+      "source_inventory_id": "INPCI_2022_004",
+      "parent_record": "BRAGA_HOLY_WEEK_AND_NEIGHBORHOOD_EASTER",
+      "reported_location": "Braga, Portugal",
+      "claim_classification": "CIVIC_FESTIVAL_NOT_LITURGY",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/525?dirPesq=3",
+        "html_extracted_line": 122,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-B-045",
+      "action_label": "Celebrate an Easter Monday Mass at the Senhor das Ansias chapel",
+      "theme": "B",
+      "source_inventory_id": "INPCI_2022_004",
+      "parent_record": "BRAGA_HOLY_WEEK_AND_NEIGHBORHOOD_EASTER",
+      "reported_location": "Braga, Portugal",
+      "claim_classification": "PUBLIC_LITURGY_CONTEXT",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/525?dirPesq=3",
+        "html_extracted_line": 122,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-B-046",
+      "action_label": "Four Easter blessing parties process from Braga cathedral to visit local homes",
+      "theme": "B",
+      "source_inventory_id": "INPCI_2022_004",
+      "parent_record": "BRAGA_HOLY_WEEK_AND_NEIGHBORHOOD_EASTER",
+      "reported_location": "Braga, Portugal",
+      "claim_classification": "PARISH_HOME_VISIT",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/525?dirPesq=3",
+        "html_extracted_line": 123,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-B-047",
+      "action_label": "Begin the Compasso house visit with a prayer in Braga cathedral",
+      "theme": "B",
+      "source_inventory_id": "INPCI_2022_004",
+      "parent_record": "BRAGA_HOLY_WEEK_AND_NEIGHBORHOOD_EASTER",
+      "reported_location": "Braga, Portugal",
+      "claim_classification": "PARISH_HOME_VISIT",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/525?dirPesq=3",
+        "html_extracted_line": 123,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-B-048",
+      "action_label": "Decorate house windows with customary patterned cloths for Easter Monday visit",
+      "theme": "B",
+      "source_inventory_id": "INPCI_2022_004",
+      "parent_record": "BRAGA_HOLY_WEEK_AND_NEIGHBORHOOD_EASTER",
+      "reported_location": "Braga, Portugal",
+      "claim_classification": "HOUSEHOLD_RECEPTION",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/525?dirPesq=3",
+        "html_extracted_line": 124,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-B-049",
+      "action_label": "Families welcome the Paschal visiting cross to every participating house on the street",
+      "theme": "B",
+      "source_inventory_id": "INPCI_2022_004",
+      "parent_record": "BRAGA_HOLY_WEEK_AND_NEIGHBORHOOD_EASTER",
+      "reported_location": "Braga, Portugal",
+      "claim_classification": "HOUSEHOLD_RECEPTION",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/525?dirPesq=3",
+        "html_extracted_line": 124,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-E-001",
+      "action_label": "Entre-os-Rios communities hold the solemn encounter procession on Holy Thursday",
+      "theme": "E",
+      "source_inventory_id": "INPCI_2015_003",
+      "parent_record": "ENTRE_OS_RIOS_ENDOENCAS_EASTER_COMPLEX",
+      "reported_location": "Entre-os-Rios, northern Portugal",
+      "claim_classification": "HOLY_WEEK_CYCLE",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/293?dirPesq=3",
+        "html_extracted_line": 94,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-E-002",
+      "action_label": "During prior Easter house visits recruit next year's volunteer mordomos",
+      "theme": "E",
+      "source_inventory_id": "INPCI_2015_003",
+      "parent_record": "ENTRE_OS_RIOS_ENDOENCAS_EASTER_COMPLEX",
+      "reported_location": "Entre-os-Rios, northern Portugal",
+      "claim_classification": "PROCESSIONAL_ORGANIZATION",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/293?dirPesq=3",
+        "html_extracted_line": 95,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-E-003",
+      "action_label": "Devotees volunteer to sponsor procession expenses in fulfilment of vows",
+      "theme": "E",
+      "source_inventory_id": "INPCI_2015_003",
+      "parent_record": "ENTRE_OS_RIOS_ENDOENCAS_EASTER_COMPLEX",
+      "reported_location": "Entre-os-Rios, northern Portugal",
+      "claim_classification": "VOTIVE_PARTICIPATION",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/293?dirPesq=3",
+        "html_extracted_line": 95,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-E-004",
+      "action_label": "On Holy Wednesday volunteers prepare processional images and biers",
+      "theme": "E",
+      "source_inventory_id": "INPCI_2015_003",
+      "parent_record": "ENTRE_OS_RIOS_ENDOENCAS_EASTER_COMPLEX",
+      "reported_location": "Entre-os-Rios, northern Portugal",
+      "claim_classification": "PROCESSIONAL_PREPARATION",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/293?dirPesq=3",
+        "html_extracted_line": 98,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-E-005",
+      "action_label": "Quietly transfer images between opposite riverbanks the night before Endoencas",
+      "theme": "E",
+      "source_inventory_id": "INPCI_2015_003",
+      "parent_record": "ENTRE_OS_RIOS_ENDOENCAS_EASTER_COMPLEX",
+      "reported_location": "Entre-os-Rios, northern Portugal",
+      "claim_classification": "PROCESSIONAL_PREPARATION",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/293?dirPesq=3",
+        "html_extracted_line": 99,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-E-006",
+      "action_label": "Cross the bridge secretly with the two image parties meeting at the midpoint",
+      "theme": "E",
+      "source_inventory_id": "INPCI_2015_003",
+      "parent_record": "ENTRE_OS_RIOS_ENDOENCAS_EASTER_COMPLEX",
+      "reported_location": "Entre-os-Rios, northern Portugal",
+      "claim_classification": "HISTORICAL_ROUTE_VARIANT",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/293?dirPesq=3",
+        "html_extracted_line": 100,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "HISTORICAL_REPORTED_VARIANT_NOT_CURRENT_VERIFIED",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-E-007",
+      "action_label": "Households clean and decorate homes before the Holy Thursday procession",
+      "theme": "E",
+      "source_inventory_id": "INPCI_2015_003",
+      "parent_record": "ENTRE_OS_RIOS_ENDOENCAS_EASTER_COMPLEX",
+      "reported_location": "Entre-os-Rios, northern Portugal",
+      "claim_classification": "HOUSEHOLD_PREPARATION",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/293?dirPesq=3",
+        "html_extracted_line": 102,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-E-008",
+      "action_label": "Families tend roadside Passion crosses with flowers or purple cloth",
+      "theme": "E",
+      "source_inventory_id": "INPCI_2015_003",
+      "parent_record": "ENTRE_OS_RIOS_ENDOENCAS_EASTER_COMPLEX",
+      "reported_location": "Entre-os-Rios, northern Portugal",
+      "claim_classification": "STREET_DEVOTIONAL_DECORATION",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/293?dirPesq=3",
+        "html_extracted_line": 102,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-E-009",
+      "action_label": "Place temporary lights by home facades for Holy Thursday Endoencas",
+      "theme": "E",
+      "source_inventory_id": "INPCI_2015_003",
+      "parent_record": "ENTRE_OS_RIOS_ENDOENCAS_EASTER_COMPLEX",
+      "reported_location": "Entre-os-Rios, northern Portugal",
+      "claim_classification": "HOUSEHOLD_PREPARATION",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/293?dirPesq=3",
+        "html_extracted_line": 103,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-E-010",
+      "action_label": "Bake customary cakes and Easter bread in the days before the procession",
+      "theme": "E",
+      "source_inventory_id": "INPCI_2015_003",
+      "parent_record": "ENTRE_OS_RIOS_ENDOENCAS_EASTER_COMPLEX",
+      "reported_location": "Entre-os-Rios, northern Portugal",
+      "claim_classification": "SEASONAL_FOOD",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/293?dirPesq=3",
+        "html_extracted_line": 103,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-E-011",
+      "action_label": "Serve locally caught river fish for the pre-Easter abstinence meals",
+      "theme": "E",
+      "source_inventory_id": "INPCI_2015_003",
+      "parent_record": "ENTRE_OS_RIOS_ENDOENCAS_EASTER_COMPLEX",
+      "reported_location": "Entre-os-Rios, northern Portugal",
+      "claim_classification": "LOCAL_FEAST_MEAL",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/293?dirPesq=3",
+        "html_extracted_line": 104,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-E-012",
+      "action_label": "Serve roasted lamb with rice during the Easter Sunday household feast",
+      "theme": "E",
+      "source_inventory_id": "INPCI_2015_003",
+      "parent_record": "ENTRE_OS_RIOS_ENDOENCAS_EASTER_COMPLEX",
+      "reported_location": "Entre-os-Rios, northern Portugal",
+      "claim_classification": "LOCAL_FEAST_MEAL",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/293?dirPesq=3",
+        "html_extracted_line": 104,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-E-013",
+      "action_label": "Light many small flames along three riverbanks for Holy Thursday night",
+      "theme": "E",
+      "source_inventory_id": "INPCI_2015_003",
+      "parent_record": "ENTRE_OS_RIOS_ENDOENCAS_EASTER_COMPLEX",
+      "reported_location": "Entre-os-Rios, northern Portugal",
+      "claim_classification": "PUBLIC_LIGHT_DEVOTION",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/293?dirPesq=3",
+        "html_extracted_line": 105,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-E-014",
+      "action_label": "Light vessels and boats in the rivers during the solemn night",
+      "theme": "E",
+      "source_inventory_id": "INPCI_2015_003",
+      "parent_record": "ENTRE_OS_RIOS_ENDOENCAS_EASTER_COMPLEX",
+      "reported_location": "Entre-os-Rios, northern Portugal",
+      "claim_classification": "PUBLIC_LIGHT_DEVOTION",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/293?dirPesq=3",
+        "html_extracted_line": 105,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-E-015",
+      "action_label": "Residents collectively illuminate streets whenever sacred processions pass",
+      "theme": "E",
+      "source_inventory_id": "INPCI_2015_003",
+      "parent_record": "ENTRE_OS_RIOS_ENDOENCAS_EASTER_COMPLEX",
+      "reported_location": "Entre-os-Rios, northern Portugal",
+      "claim_classification": "HOUSEHOLD_COMMUNAL_PARTICIPATION",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/293?dirPesq=3",
+        "html_extracted_line": 106,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-E-016",
+      "action_label": "Children dress as Passion or biblical figures for the Holy Thursday procession",
+      "theme": "E",
+      "source_inventory_id": "INPCI_2015_003",
+      "parent_record": "ENTRE_OS_RIOS_ENDOENCAS_EASTER_COMPLEX",
+      "reported_location": "Entre-os-Rios, northern Portugal",
+      "claim_classification": "BIBLICAL_PAGEANT_CONTEXT",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/293?dirPesq=3",
+        "html_extracted_line": 107,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-E-017",
+      "action_label": "Follow the Lord of the Steps image barefoot in fulfilment of a vow",
+      "theme": "E",
+      "source_inventory_id": "INPCI_2015_003",
+      "parent_record": "ENTRE_OS_RIOS_ENDOENCAS_EASTER_COMPLEX",
+      "reported_location": "Entre-os-Rios, northern Portugal",
+      "claim_classification": "PENITENTIAL_PARTICIPATION",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/293?dirPesq=3",
+        "html_extracted_line": 108,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-E-018",
+      "action_label": "Carry an individual candle in Holy Thursday procession",
+      "theme": "E",
+      "source_inventory_id": "INPCI_2015_003",
+      "parent_record": "ENTRE_OS_RIOS_ENDOENCAS_EASTER_COMPLEX",
+      "reported_location": "Entre-os-Rios, northern Portugal",
+      "claim_classification": "PENITENTIAL_PARTICIPATION",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/293?dirPesq=3",
+        "html_extracted_line": 108,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-E-019",
+      "action_label": "Spectators and street vendors silence music as the processional images draw near",
+      "theme": "E",
+      "source_inventory_id": "INPCI_2015_003",
+      "parent_record": "ENTRE_OS_RIOS_ENDOENCAS_EASTER_COMPLEX",
+      "reported_location": "Entre-os-Rios, northern Portugal",
+      "claim_classification": "PUBLIC_SILENCE",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/293?dirPesq=3",
+        "html_extracted_line": 109,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-E-020",
+      "action_label": "Prior to bridge construction ferry the processional statues across the Tamega in boats",
+      "theme": "E",
+      "source_inventory_id": "INPCI_2015_003",
+      "parent_record": "ENTRE_OS_RIOS_ENDOENCAS_EASTER_COMPLEX",
+      "reported_location": "Entre-os-Rios, northern Portugal",
+      "claim_classification": "HISTORICAL_ROUTE_VARIANT",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/293?dirPesq=3",
+        "html_extracted_line": 110,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "HISTORICAL_REPORTED_VARIANT_NOT_CURRENT_VERIFIED",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-E-021",
+      "action_label": "Split the procession so the Marian and Christ images travel separate routes",
+      "theme": "E",
+      "source_inventory_id": "INPCI_2015_003",
+      "parent_record": "ENTRE_OS_RIOS_ENDOENCAS_EASTER_COMPLEX",
+      "reported_location": "Entre-os-Rios, northern Portugal",
+      "claim_classification": "PROCESSION_SPLIT",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/293?dirPesq=3",
+        "html_extracted_line": 112,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-E-022",
+      "action_label": "Preach an outdoor Encounter sermon near the river-square",
+      "theme": "E",
+      "source_inventory_id": "INPCI_2015_003",
+      "parent_record": "ENTRE_OS_RIOS_ENDOENCAS_EASTER_COMPLEX",
+      "reported_location": "Entre-os-Rios, northern Portugal",
+      "claim_classification": "DEVOTIONAL_PREACHING",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/293?dirPesq=3",
+        "html_extracted_line": 114,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-E-023",
+      "action_label": "Tilt the two processional images toward each other for the symbolic kiss of mother and son",
+      "theme": "E",
+      "source_inventory_id": "INPCI_2015_003",
+      "parent_record": "ENTRE_OS_RIOS_ENDOENCAS_EASTER_COMPLEX",
+      "reported_location": "Entre-os-Rios, northern Portugal",
+      "claim_classification": "DEVOTIONAL_GESTURE",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/293?dirPesq=3",
+        "html_extracted_line": 115,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-E-024",
+      "action_label": "Follow the Christ procession toward the hilltop Calvary",
+      "theme": "E",
+      "source_inventory_id": "INPCI_2015_003",
+      "parent_record": "ENTRE_OS_RIOS_ENDOENCAS_EASTER_COMPLEX",
+      "reported_location": "Entre-os-Rios, northern Portugal",
+      "claim_classification": "PUBLIC_WAY_OF_CROSS",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/293?dirPesq=3",
+        "html_extracted_line": 116,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-E-025",
+      "action_label": "Serve late bread and hot drink to relatives returning from midnight Passion procession",
+      "theme": "E",
+      "source_inventory_id": "INPCI_2015_003",
+      "parent_record": "ENTRE_OS_RIOS_ENDOENCAS_EASTER_COMPLEX",
+      "reported_location": "Entre-os-Rios, northern Portugal",
+      "claim_classification": "HOUSEHOLD_REFRESHMENT",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/293?dirPesq=3",
+        "html_extracted_line": 117,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-E-026",
+      "action_label": "Carry a symbolic coffin and Sorrows image on Good Friday",
+      "theme": "E",
+      "source_inventory_id": "INPCI_2015_003",
+      "parent_record": "ENTRE_OS_RIOS_ENDOENCAS_EASTER_COMPLEX",
+      "reported_location": "Entre-os-Rios, northern Portugal",
+      "claim_classification": "PUBLIC_FUNERAL_PROCESSION",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/293?dirPesq=3",
+        "html_extracted_line": 119,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-E-027",
+      "action_label": "On Good Friday retrace the Thursday Passion route in reverse",
+      "theme": "E",
+      "source_inventory_id": "INPCI_2015_003",
+      "parent_record": "ENTRE_OS_RIOS_ENDOENCAS_EASTER_COMPLEX",
+      "reported_location": "Entre-os-Rios, northern Portugal",
+      "claim_classification": "PROCESSIONAL_ROUTE_VARIANT",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/293?dirPesq=3",
+        "html_extracted_line": 120,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-E-028",
+      "action_label": "Attend Easter Vigil Alleluia celebrations at the parish church",
+      "theme": "E",
+      "source_inventory_id": "INPCI_2015_003",
+      "parent_record": "ENTRE_OS_RIOS_ENDOENCAS_EASTER_COMPLEX",
+      "reported_location": "Entre-os-Rios, northern Portugal",
+      "claim_classification": "PUBLIC_LITURGY_CONTEXT",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/293?dirPesq=3",
+        "html_extracted_line": 121,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-E-029",
+      "action_label": "Organize the Easter Sunday Compasso visit with two visiting crosses",
+      "theme": "E",
+      "source_inventory_id": "INPCI_2015_003",
+      "parent_record": "ENTRE_OS_RIOS_ENDOENCAS_EASTER_COMPLEX",
+      "reported_location": "Entre-os-Rios, northern Portugal",
+      "claim_classification": "PARISH_HOME_VISIT",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/293?dirPesq=3",
+        "html_extracted_line": 121,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-E-030",
+      "action_label": "Present folares of almonds or sponge cake as Easter gifts",
+      "theme": "E",
+      "source_inventory_id": "INPCI_2015_003",
+      "parent_record": "ENTRE_OS_RIOS_ENDOENCAS_EASTER_COMPLEX",
+      "reported_location": "Entre-os-Rios, northern Portugal",
+      "claim_classification": "HOUSEHOLD_GIFT",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/293?dirPesq=3",
+        "html_extracted_line": 122,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-E-031",
+      "action_label": "Families welcome emigrant relatives home for Holy Week and Easter",
+      "theme": "E",
+      "source_inventory_id": "INPCI_2015_003",
+      "parent_record": "ENTRE_OS_RIOS_ENDOENCAS_EASTER_COMPLEX",
+      "reported_location": "Entre-os-Rios, northern Portugal",
+      "claim_classification": "FAMILY_REUNION",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/293?dirPesq=3",
+        "html_extracted_line": 122,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-E-032",
+      "action_label": "Share lamprey roast lamb and regional cakes at an Easter home table",
+      "theme": "E",
+      "source_inventory_id": "INPCI_2015_003",
+      "parent_record": "ENTRE_OS_RIOS_ENDOENCAS_EASTER_COMPLEX",
+      "reported_location": "Entre-os-Rios, northern Portugal",
+      "claim_classification": "LOCAL_FEAST_MEAL",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/293?dirPesq=3",
+        "html_extracted_line": 122,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-A-001",
+      "action_label": "Paint and sing the Epiphany on the night of January fifth into January sixth",
+      "theme": "A",
+      "source_inventory_id": "INPCI_2021_002",
+      "parent_record": "ALENQUER_EPIPHANY_PAINTING_AND_SINGING",
+      "reported_location": "Alenquer, Portugal",
+      "claim_classification": "CALENDAR_OCCASION",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/539?dirPesq=3",
+        "html_extracted_line": 57,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-A-002",
+      "action_label": "Neighborhood groups assemble to paint and sing the traditional Reis",
+      "theme": "A",
+      "source_inventory_id": "INPCI_2021_002",
+      "parent_record": "ALENQUER_EPIPHANY_PAINTING_AND_SINGING",
+      "reported_location": "Alenquer, Portugal",
+      "claim_classification": "COMMUNITY_SINGING",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/539?dirPesq=3",
+        "html_extracted_line": 59,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-A-003",
+      "action_label": "Painters go silently ahead of the singing party during Epiphany rounds",
+      "theme": "A",
+      "source_inventory_id": "INPCI_2021_002",
+      "parent_record": "ALENQUER_EPIPHANY_PAINTING_AND_SINGING",
+      "reported_location": "Alenquer, Portugal",
+      "claim_classification": "ROUTE_AND_PARTICIPATION",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/539?dirPesq=3",
+        "html_extracted_line": 60,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-A-004",
+      "action_label": "Paint traditional Reis symbols at the doors and exterior walls of houses",
+      "theme": "A",
+      "source_inventory_id": "INPCI_2021_002",
+      "parent_record": "ALENQUER_EPIPHANY_PAINTING_AND_SINGING",
+      "reported_location": "Alenquer, Portugal",
+      "claim_classification": "HOUSEHOLD_MARKING",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/539?dirPesq=3",
+        "html_extracted_line": 60,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-A-005",
+      "action_label": "Draw flowered vases and hearts reflecting composition of the resident household",
+      "theme": "A",
+      "source_inventory_id": "INPCI_2021_002",
+      "parent_record": "ALENQUER_EPIPHANY_PAINTING_AND_SINGING",
+      "reported_location": "Alenquer, Portugal",
+      "claim_classification": "HOUSEHOLD_MARKING",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/539?dirPesq=3",
+        "html_extracted_line": 61,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-A-006",
+      "action_label": "Paint occupations and local trades beside participating doorways",
+      "theme": "A",
+      "source_inventory_id": "INPCI_2021_002",
+      "parent_record": "ALENQUER_EPIPHANY_PAINTING_AND_SINGING",
+      "reported_location": "Alenquer, Portugal",
+      "claim_classification": "HOUSEHOLD_MARKING",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/539?dirPesq=3",
+        "html_extracted_line": 61,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-A-007",
+      "action_label": "Paint a Star of the Orient sign near the house door",
+      "theme": "A",
+      "source_inventory_id": "INPCI_2021_002",
+      "parent_record": "ALENQUER_EPIPHANY_PAINTING_AND_SINGING",
+      "reported_location": "Alenquer, Portugal",
+      "claim_classification": "EPIPHANY_SYMBOLISM",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/539?dirPesq=3",
+        "html_extracted_line": 61,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-A-008",
+      "action_label": "Record the feast year beside the Epiphany signs",
+      "theme": "A",
+      "source_inventory_id": "INPCI_2021_002",
+      "parent_record": "ALENQUER_EPIPHANY_PAINTING_AND_SINGING",
+      "reported_location": "Alenquer, Portugal",
+      "claim_classification": "HOUSEHOLD_MARKING",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/539?dirPesq=3",
+        "html_extracted_line": 61,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-A-009",
+      "action_label": "Gather Epiphany singers spontaneously at customary central village meeting point",
+      "theme": "A",
+      "source_inventory_id": "INPCI_2021_002",
+      "parent_record": "ALENQUER_EPIPHANY_PAINTING_AND_SINGING",
+      "reported_location": "Alenquer, Portugal",
+      "claim_classification": "LOCAL_ORGANIZATION",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/539?dirPesq=3",
+        "html_extracted_line": 75,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-A-010",
+      "action_label": "A lead singer coordinates the call and response of the Epiphany chorus",
+      "theme": "A",
+      "source_inventory_id": "INPCI_2021_002",
+      "parent_record": "ALENQUER_EPIPHANY_PAINTING_AND_SINGING",
+      "reported_location": "Alenquer, Portugal",
+      "claim_classification": "MUSIC_PARTICIPATION",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/539?dirPesq=3",
+        "html_extracted_line": 76,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-A-011",
+      "action_label": "In Catem and Casal Monteiro sing and paint from door to door",
+      "theme": "A",
+      "source_inventory_id": "INPCI_2021_002",
+      "parent_record": "ALENQUER_EPIPHANY_PAINTING_AND_SINGING",
+      "reported_location": "Alenquer, Portugal",
+      "claim_classification": "LOCAL_ROUTE_VARIANT",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/539?dirPesq=3",
+        "html_extracted_line": 77,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-A-012",
+      "action_label": "In Ota and Abrigada sing from strategically chosen village public squares",
+      "theme": "A",
+      "source_inventory_id": "INPCI_2021_002",
+      "parent_record": "ALENQUER_EPIPHANY_PAINTING_AND_SINGING",
+      "reported_location": "Alenquer, Portugal",
+      "claim_classification": "LOCAL_ROUTE_VARIANT",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/539?dirPesq=3",
+        "html_extracted_line": 77,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-A-013",
+      "action_label": "In Olhalvo paint houses individually but sing from gathering points",
+      "theme": "A",
+      "source_inventory_id": "INPCI_2021_002",
+      "parent_record": "ALENQUER_EPIPHANY_PAINTING_AND_SINGING",
+      "reported_location": "Alenquer, Portugal",
+      "claim_classification": "LOCAL_ROUTE_VARIANT",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/539?dirPesq=3",
+        "html_extracted_line": 77,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-A-014",
+      "action_label": "Older remembered Epiphany singers were male-only groups of unmarried adolescents",
+      "theme": "A",
+      "source_inventory_id": "INPCI_2021_002",
+      "parent_record": "ALENQUER_EPIPHANY_PAINTING_AND_SINGING",
+      "reported_location": "Alenquer, Portugal",
+      "claim_classification": "HISTORICAL_PARTICIPATION_VARIANT",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/539?dirPesq=3",
+        "html_extracted_line": 79,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "HISTORICAL_REPORTED_VARIANT_NOT_CURRENT_VERIFIED",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-A-015",
+      "action_label": "Villagers assess the wall paintings the morning after Epiphany",
+      "theme": "A",
+      "source_inventory_id": "INPCI_2021_002",
+      "parent_record": "ALENQUER_EPIPHANY_PAINTING_AND_SINGING",
+      "reported_location": "Alenquer, Portugal",
+      "claim_classification": "HISTORICAL_SOCIAL_CONTEXT",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/539?dirPesq=3",
+        "html_extracted_line": 81,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-A-016",
+      "action_label": "Residents invite Epiphany singers indoors to eat after they have completed their singing",
+      "theme": "A",
+      "source_inventory_id": "INPCI_2021_002",
+      "parent_record": "ALENQUER_EPIPHANY_PAINTING_AND_SINGING",
+      "reported_location": "Alenquer, Portugal",
+      "claim_classification": "HOUSEHOLD_RECEPTION",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/539?dirPesq=3",
+        "html_extracted_line": 83,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-A-017",
+      "action_label": "Offer Christmas cake fritters and Porto wine to the visiting singers",
+      "theme": "A",
+      "source_inventory_id": "INPCI_2021_002",
+      "parent_record": "ALENQUER_EPIPHANY_PAINTING_AND_SINGING",
+      "reported_location": "Alenquer, Portugal",
+      "claim_classification": "HOUSEHOLD_RECEPTION",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/539?dirPesq=3",
+        "html_extracted_line": 83,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-A-018",
+      "action_label": "Some groups expanded to include female painters or singers from late twentieth century",
+      "theme": "A",
+      "source_inventory_id": "INPCI_2021_002",
+      "parent_record": "ALENQUER_EPIPHANY_PAINTING_AND_SINGING",
+      "reported_location": "Alenquer, Portugal",
+      "claim_classification": "PARTICIPATION_PERIOD_CHANGE",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/539?dirPesq=3",
+        "html_extracted_line": 84,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-A-019",
+      "action_label": "Painters work by lantern light using red and blue pigments",
+      "theme": "A",
+      "source_inventory_id": "INPCI_2021_002",
+      "parent_record": "ALENQUER_EPIPHANY_PAINTING_AND_SINGING",
+      "reported_location": "Alenquer, Portugal",
+      "claim_classification": "PAINTING_TECHNIQUE",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/539?dirPesq=3",
+        "html_extracted_line": 88,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-A-020",
+      "action_label": "Young novices initially carried the light before being permitted to sing",
+      "theme": "A",
+      "source_inventory_id": "INPCI_2021_002",
+      "parent_record": "ALENQUER_EPIPHANY_PAINTING_AND_SINGING",
+      "reported_location": "Alenquer, Portugal",
+      "claim_classification": "HISTORICAL_APPRENTICESHIP",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/539?dirPesq=3",
+        "html_extracted_line": 89,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-A-021",
+      "action_label": "Vary the drawing of flowered hearts or vases to reflect birth and marital status",
+      "theme": "A",
+      "source_inventory_id": "INPCI_2021_002",
+      "parent_record": "ALENQUER_EPIPHANY_PAINTING_AND_SINGING",
+      "reported_location": "Alenquer, Portugal",
+      "claim_classification": "HOUSEHOLD_MARKING",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/539?dirPesq=3",
+        "html_extracted_line": 92,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-A-022",
+      "action_label": "Draw signs that depict household trades such as shop scales or wine barrels",
+      "theme": "A",
+      "source_inventory_id": "INPCI_2021_002",
+      "parent_record": "ALENQUER_EPIPHANY_PAINTING_AND_SINGING",
+      "reported_location": "Alenquer, Portugal",
+      "claim_classification": "HOUSEHOLD_MARKING",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/539?dirPesq=3",
+        "html_extracted_line": 93,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-A-023",
+      "action_label": "Depict the Magi star with points rays or a small compass-drawn hexagram",
+      "theme": "A",
+      "source_inventory_id": "INPCI_2021_002",
+      "parent_record": "ALENQUER_EPIPHANY_PAINTING_AND_SINGING",
+      "reported_location": "Alenquer, Portugal",
+      "claim_classification": "EPIPHANY_SYMBOLISM",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/539?dirPesq=3",
+        "html_extracted_line": 94,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-A-024",
+      "action_label": "In Mata paint a small cross enclosed in a circle as a Magi sign",
+      "theme": "A",
+      "source_inventory_id": "INPCI_2021_002",
+      "parent_record": "ALENQUER_EPIPHANY_PAINTING_AND_SINGING",
+      "reported_location": "Alenquer, Portugal",
+      "claim_classification": "EPIPHANY_SYMBOLISM",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/539?dirPesq=3",
+        "html_extracted_line": 95,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-A-025",
+      "action_label": "Paint locality-specific initial letters for greetings to the Three Kings",
+      "theme": "A",
+      "source_inventory_id": "INPCI_2021_002",
+      "parent_record": "ALENQUER_EPIPHANY_PAINTING_AND_SINGING",
+      "reported_location": "Alenquer, Portugal",
+      "claim_classification": "HOUSEHOLD_MARKING",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/539?dirPesq=3",
+        "html_extracted_line": 96,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-A-026",
+      "action_label": "A diamond inside the vase has differing household interpretations by locality",
+      "theme": "A",
+      "source_inventory_id": "INPCI_2021_002",
+      "parent_record": "ALENQUER_EPIPHANY_PAINTING_AND_SINGING",
+      "reported_location": "Alenquer, Portugal",
+      "claim_classification": "LOCAL_SYMBOLIC_VARIANT",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/539?dirPesq=3",
+        "html_extracted_line": 98,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-A-027",
+      "action_label": "Depict the five wounds of Christ as five small heraldic dots",
+      "theme": "A",
+      "source_inventory_id": "INPCI_2021_002",
+      "parent_record": "ALENQUER_EPIPHANY_PAINTING_AND_SINGING",
+      "reported_location": "Alenquer, Portugal",
+      "claim_classification": "CHRISTIAN_SYMBOLISM",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/539?dirPesq=3",
+        "html_extracted_line": 99,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-A-028",
+      "action_label": "Frame the painted signs with dotted border marks",
+      "theme": "A",
+      "source_inventory_id": "INPCI_2021_002",
+      "parent_record": "ALENQUER_EPIPHANY_PAINTING_AND_SINGING",
+      "reported_location": "Alenquer, Portugal",
+      "claim_classification": "HOUSEHOLD_MARKING",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/539?dirPesq=3",
+        "html_extracted_line": 100,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-A-029",
+      "action_label": "Retain previous years' painted Epiphany inscriptions on house walls",
+      "theme": "A",
+      "source_inventory_id": "INPCI_2021_002",
+      "parent_record": "ALENQUER_EPIPHANY_PAINTING_AND_SINGING",
+      "reported_location": "Alenquer, Portugal",
+      "claim_classification": "PRESERVATION",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/539?dirPesq=3",
+        "html_extracted_line": 101,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-A-030",
+      "action_label": "End the night by painting a group vase with participating singers initials",
+      "theme": "A",
+      "source_inventory_id": "INPCI_2021_002",
+      "parent_record": "ALENQUER_EPIPHANY_PAINTING_AND_SINGING",
+      "reported_location": "Alenquer, Portugal",
+      "claim_classification": "COMMUNAL_RECORD",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/539?dirPesq=3",
+        "html_extracted_line": 102,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-A-031",
+      "action_label": "Mark bereaved houses only with blue drawings to avoid festive red",
+      "theme": "A",
+      "source_inventory_id": "INPCI_2021_002",
+      "parent_record": "ALENQUER_EPIPHANY_PAINTING_AND_SINGING",
+      "reported_location": "Alenquer, Portugal",
+      "claim_classification": "HOUSEHOLD_MOURNING_VARIANT",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/539?dirPesq=3",
+        "html_extracted_line": 103,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-A-032",
+      "action_label": "Use modern watercolors or spray stencils instead of historical mineral pigments",
+      "theme": "A",
+      "source_inventory_id": "INPCI_2021_002",
+      "parent_record": "ALENQUER_EPIPHANY_PAINTING_AND_SINGING",
+      "reported_location": "Alenquer, Portugal",
+      "claim_classification": "MATERIAL_VARIANT",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/539?dirPesq=3",
+        "html_extracted_line": 105,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-A-033",
+      "action_label": "Sing the narrative of the Magi journey toward the Christ Child",
+      "theme": "A",
+      "source_inventory_id": "INPCI_2021_002",
+      "parent_record": "ALENQUER_EPIPHANY_PAINTING_AND_SINGING",
+      "reported_location": "Alenquer, Portugal",
+      "claim_classification": "BIBLICAL_SONG",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/539?dirPesq=3",
+        "html_extracted_line": 108,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-A-034",
+      "action_label": "Solo leader intones each portion before chorus response",
+      "theme": "A",
+      "source_inventory_id": "INPCI_2021_002",
+      "parent_record": "ALENQUER_EPIPHANY_PAINTING_AND_SINGING",
+      "reported_location": "Alenquer, Portugal",
+      "claim_classification": "MUSIC_STRUCTURE",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/539?dirPesq=3",
+        "html_extracted_line": 109,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-A-035",
+      "action_label": "Whisper the Epiphany stanzas through a doorway before a loud choral response",
+      "theme": "A",
+      "source_inventory_id": "INPCI_2021_002",
+      "parent_record": "ALENQUER_EPIPHANY_PAINTING_AND_SINGING",
+      "reported_location": "Alenquer, Portugal",
+      "claim_classification": "LOCAL_SINGING_VARIANT",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/539?dirPesq=3",
+        "html_extracted_line": 128,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-A-036",
+      "action_label": "Conclude the Epiphany verse with a call for prayers for souls",
+      "theme": "A",
+      "source_inventory_id": "INPCI_2021_002",
+      "parent_record": "ALENQUER_EPIPHANY_PAINTING_AND_SINGING",
+      "reported_location": "Alenquer, Portugal",
+      "claim_classification": "DEVOTIONAL_INTENTION",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/539?dirPesq=3",
+        "html_extracted_line": 129,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-A-037",
+      "action_label": "In Mata lead the doorstep song in full voice and let chorus answer farther away",
+      "theme": "A",
+      "source_inventory_id": "INPCI_2021_002",
+      "parent_record": "ALENQUER_EPIPHANY_PAINTING_AND_SINGING",
+      "reported_location": "Alenquer, Portugal",
+      "claim_classification": "LOCAL_SINGING_VARIANT",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/539?dirPesq=3",
+        "html_extracted_line": 134,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-A-038",
+      "action_label": "In Paúla the lead singer performs some distance from the choir in the village square",
+      "theme": "A",
+      "source_inventory_id": "INPCI_2021_002",
+      "parent_record": "ALENQUER_EPIPHANY_PAINTING_AND_SINGING",
+      "reported_location": "Alenquer, Portugal",
+      "claim_classification": "LOCAL_SINGING_VARIANT",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/539?dirPesq=3",
+        "html_extracted_line": 137,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-A-039",
+      "action_label": "Sing only abbreviated Magi story verses at secondary stops during the night",
+      "theme": "A",
+      "source_inventory_id": "INPCI_2021_002",
+      "parent_record": "ALENQUER_EPIPHANY_PAINTING_AND_SINGING",
+      "reported_location": "Alenquer, Portugal",
+      "claim_classification": "LOCAL_SINGING_VARIANT",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/539?dirPesq=3",
+        "html_extracted_line": 140,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-A-040",
+      "action_label": "Collect contributions in a later Epiphany house-to-house alms round",
+      "theme": "A",
+      "source_inventory_id": "INPCI_2021_002",
+      "parent_record": "ALENQUER_EPIPHANY_PAINTING_AND_SINGING",
+      "reported_location": "Alenquer, Portugal",
+      "claim_classification": "COMMUNAL_DONATION",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/539?dirPesq=3",
+        "html_extracted_line": 143,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-A-041",
+      "action_label": "Use some Epiphany alms to request Masses for deceased souls",
+      "theme": "A",
+      "source_inventory_id": "INPCI_2021_002",
+      "parent_record": "ALENQUER_EPIPHANY_PAINTING_AND_SINGING",
+      "reported_location": "Alenquer, Portugal",
+      "claim_classification": "SOULS_DEVOTION",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/539?dirPesq=3",
+        "html_extracted_line": 144,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-A-042",
+      "action_label": "Share a collective post-Epiphany meal with the singing and painting group",
+      "theme": "A",
+      "source_inventory_id": "INPCI_2021_002",
+      "parent_record": "ALENQUER_EPIPHANY_PAINTING_AND_SINGING",
+      "reported_location": "Alenquer, Portugal",
+      "claim_classification": "COMMUNAL_MEAL",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/539?dirPesq=3",
+        "html_extracted_line": 145,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-V-001",
+      "action_label": "Women sing polyphonic songs in rural labor and some religious rituals",
+      "theme": "V",
+      "source_inventory_id": "INPCI_2023_015",
+      "parent_record": "PORTUGAL_LENTEN_SOULS_SINGING_AS_PART_OF_WOMENS_POLYPHONY",
+      "reported_location": "Northern and central Portugal",
+      "claim_classification": "QUARANTINE_NON_SEASONAL",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/763?dirPesq=3",
+        "html_extracted_line": 48,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-V-002",
+      "action_label": "Use three-to-five unaccompanied simultaneous voices in traditional local singing",
+      "theme": "V",
+      "source_inventory_id": "INPCI_2023_015",
+      "parent_record": "PORTUGAL_LENTEN_SOULS_SINGING_AS_PART_OF_WOMENS_POLYPHONY",
+      "reported_location": "Northern and central Portugal",
+      "claim_classification": "MUSICAL_COMPONENT",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/763?dirPesq=3",
+        "html_extracted_line": 63,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-V-003",
+      "action_label": "Sustain an initial low voice while successive higher voices enter",
+      "theme": "V",
+      "source_inventory_id": "INPCI_2023_015",
+      "parent_record": "PORTUGAL_LENTEN_SOULS_SINGING_AS_PART_OF_WOMENS_POLYPHONY",
+      "reported_location": "Northern and central Portugal",
+      "claim_classification": "MUSICAL_COMPONENT",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/763?dirPesq=3",
+        "html_extracted_line": 64,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-V-004",
+      "action_label": "End a stanza in a prolonged shared vocal suspension",
+      "theme": "V",
+      "source_inventory_id": "INPCI_2023_015",
+      "parent_record": "PORTUGAL_LENTEN_SOULS_SINGING_AS_PART_OF_WOMENS_POLYPHONY",
+      "reported_location": "Northern and central Portugal",
+      "claim_classification": "MUSICAL_COMPONENT",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/763?dirPesq=3",
+        "html_extracted_line": 65,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-V-005",
+      "action_label": "Women's community singing forms part of Lenten Encomendacao das Almas",
+      "theme": "V",
+      "source_inventory_id": "INPCI_2023_015",
+      "parent_record": "PORTUGAL_LENTEN_SOULS_SINGING_AS_PART_OF_WOMENS_POLYPHONY",
+      "reported_location": "Northern and central Portugal",
+      "claim_classification": "SEASONAL_RELIGIOUS_USE",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/763?dirPesq=3",
+        "html_extracted_line": 98,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-V-006",
+      "action_label": "Walk through the village by night singing prayers for souls in Purgatory",
+      "theme": "V",
+      "source_inventory_id": "INPCI_2023_015",
+      "parent_record": "PORTUGAL_LENTEN_SOULS_SINGING_AS_PART_OF_WOMENS_POLYPHONY",
+      "reported_location": "Northern and central Portugal",
+      "claim_classification": "LENTEN_SOULS_DEVOTION",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/763?dirPesq=3",
+        "html_extracted_line": 103,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-V-007",
+      "action_label": "Stop at crossroads or village balconies while singing the Lenten souls chant",
+      "theme": "V",
+      "source_inventory_id": "INPCI_2023_015",
+      "parent_record": "PORTUGAL_LENTEN_SOULS_SINGING_AS_PART_OF_WOMENS_POLYPHONY",
+      "reported_location": "Northern and central Portugal",
+      "claim_classification": "LENTEN_SOULS_DEVOTION",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/763?dirPesq=3",
+        "html_extracted_line": 103,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-V-008",
+      "action_label": "At Figueiredo de Alva singers perform Encomendacao das Almas in Lent",
+      "theme": "V",
+      "source_inventory_id": "INPCI_2023_015",
+      "parent_record": "PORTUGAL_LENTEN_SOULS_SINGING_AS_PART_OF_WOMENS_POLYPHONY",
+      "reported_location": "Northern and central Portugal",
+      "claim_classification": "LOCAL_VARIANT",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/763?dirPesq=3",
+        "html_extracted_line": 103,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-V-009",
+      "action_label": "At Sobral de Pinho singers perform Lenten songs for departed souls",
+      "theme": "V",
+      "source_inventory_id": "INPCI_2023_015",
+      "parent_record": "PORTUGAL_LENTEN_SOULS_SINGING_AS_PART_OF_WOMENS_POLYPHONY",
+      "reported_location": "Northern and central Portugal",
+      "claim_classification": "LOCAL_VARIANT",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/763?dirPesq=3",
+        "html_extracted_line": 103,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-V-010",
+      "action_label": "At Alcofra perform the Lenten Encomendacao chant on local dates",
+      "theme": "V",
+      "source_inventory_id": "INPCI_2023_015",
+      "parent_record": "PORTUGAL_LENTEN_SOULS_SINGING_AS_PART_OF_WOMENS_POLYPHONY",
+      "reported_location": "Northern and central Portugal",
+      "claim_classification": "LOCAL_VARIANT",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/763?dirPesq=3",
+        "html_extracted_line": 103,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-V-011",
+      "action_label": "Older singing practitioners teach new volunteers the three-part Martirios do Senhor",
+      "theme": "V",
+      "source_inventory_id": "INPCI_2023_015",
+      "parent_record": "PORTUGAL_LENTEN_SOULS_SINGING_AS_PART_OF_WOMENS_POLYPHONY",
+      "reported_location": "Northern and central Portugal",
+      "claim_classification": "REVIVAL_TRANSMISSION",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/763?dirPesq=3",
+        "html_extracted_line": 104,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-V-012",
+      "action_label": "Teach the locally named Grito das Almas through group rehearsals",
+      "theme": "V",
+      "source_inventory_id": "INPCI_2023_015",
+      "parent_record": "PORTUGAL_LENTEN_SOULS_SINGING_AS_PART_OF_WOMENS_POLYPHONY",
+      "reported_location": "Northern and central Portugal",
+      "claim_classification": "REVIVAL_TRANSMISSION",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/763?dirPesq=3",
+        "html_extracted_line": 104,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-V-013",
+      "action_label": "Modern Lenten singing groups revive a night-time neighborhood route",
+      "theme": "V",
+      "source_inventory_id": "INPCI_2023_015",
+      "parent_record": "PORTUGAL_LENTEN_SOULS_SINGING_AS_PART_OF_WOMENS_POLYPHONY",
+      "reported_location": "Northern and central Portugal",
+      "claim_classification": "REVIVAL_TRANSMISSION",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/763?dirPesq=3",
+        "html_extracted_line": 105,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-V-014",
+      "action_label": "Singers combine thirds and fifths in local three-part Lenten chants",
+      "theme": "V",
+      "source_inventory_id": "INPCI_2023_015",
+      "parent_record": "PORTUGAL_LENTEN_SOULS_SINGING_AS_PART_OF_WOMENS_POLYPHONY",
+      "reported_location": "Northern and central Portugal",
+      "claim_classification": "MUSICAL_COMPONENT",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/763?dirPesq=3",
+        "html_extracted_line": 105,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-V-015",
+      "action_label": "At Manhouce sing traditional polyphony during the New Year Mass",
+      "theme": "V",
+      "source_inventory_id": "INPCI_2023_015",
+      "parent_record": "PORTUGAL_LENTEN_SOULS_SINGING_AS_PART_OF_WOMENS_POLYPHONY",
+      "reported_location": "Northern and central Portugal",
+      "claim_classification": "MASS_SINGING_CONTEXT",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/763?dirPesq=3",
+        "html_extracted_line": 106,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-V-016",
+      "action_label": "Traditional women singers perform at village patron saint festivities",
+      "theme": "V",
+      "source_inventory_id": "INPCI_2023_015",
+      "parent_record": "PORTUGAL_LENTEN_SOULS_SINGING_AS_PART_OF_WOMENS_POLYPHONY",
+      "reported_location": "Northern and central Portugal",
+      "claim_classification": "PATRONAL_FESTIVAL_CONTEXT",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/763?dirPesq=3",
+        "html_extracted_line": 107,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    },
+    {
+      "observation_id": "PT-PCI26-V-017",
+      "action_label": "Women folk polyphony accompanies Mass on locally significant patronal feasts",
+      "theme": "V",
+      "source_inventory_id": "INPCI_2023_015",
+      "parent_record": "PORTUGAL_LENTEN_SOULS_SINGING_AS_PART_OF_WOMENS_POLYPHONY",
+      "reported_location": "Northern and central Portugal",
+      "claim_classification": "MASS_SINGING_CONTEXT",
+      "source_locator": {
+        "url": "https://matrizpci.patrimoniocultural.gov.pt/InventarioNacional/DetalheFicha/763?dirPesq=3",
+        "html_extracted_line": 108,
+        "access": "PORTUGUESE_NATIONAL_INTANGIBLE_HERITAGE_INVENTORY_HTML_DIRECT",
+        "original_historical_primary_documents_inspected": false
+      },
+      "date_or_rite_scope": "AS_DESCRIBED_BY_MODERN_HERITAGE_INVENTORY",
+      "classification_status": "SOURCE_ACTION_OR_VARIANT_NOT_SEPARATE_CERTIFIED_CUSTOM",
+      "independent_firsthand_witnesses_certified": 0,
+      "roman_1962_ritual_approval": "NOT_ESTABLISHED",
+      "app_publication": false
+    }
+  ]
+}
