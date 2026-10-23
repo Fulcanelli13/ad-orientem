@@ -250,3 +250,23 @@ Files edited: `previews/pius-x-study/spx-p5-conversational-voice-revisions-4.v1.
 The original draft-and-suggestion pair for all four is retained in `evidence/pius-x-opening-bilingual-correction-proposals-20261023.v1.json` with the new `APPLIED_TO_PRIVATE_REVIEW_BRANCH_NOT_RELEASE_APPROVED` status. The eight-opening bilingual review sidecar now follows the **actual rendered P6 answer bytes**, and records **27 bounded EN/FR source alignments**, **17 remaining cautions**, and the four resolved cautions. These are editorial screening counts, not a certification of the French or English or a claim that the other source-backed statements were independently authenticated.
 
 All existing **106 subjects / 423 bilingual nodes** are preserved. All model and publication gates remain false. CI regenerates the P6 standalone HTML and checks the proposed edits against the currently rendered English and French opening; no live inference or model endpoint was run.
+
+
+## P2.10 — Source-only inference gate: no complete unverified P6 answer sent to a model (23 October 2026)
+
+The most important generative-bench weakness was that the composer previously received `evidence[].text` containing **the complete unapproved EN/FR P6 editorial answer**, even when only a few original-language excerpts had been checked. A model and its verifier could agree with the draft without establishing what Pius X originally wrote. This was a documentary claim-laundering risk.
+
+The private review composer now uses `tools/pius-x-source-only-gate.mjs` and a strict pre-inference hold. From the existing 106 original topics, **twelve** documentary subjects have sufficient *bounded original-language excerpt mappings to enter a limited experiment*: the four previously attested small pilot subjects and eight newly researched opening subjects. **Ninety-four** other openings cannot invoke a model via the private review API. In the eight newly researched chapters **only the original opening node** is eligible: all uncollated follow-up nodes are held. The earlier four pilots can use only individually mapped original-language fragments, subject to prior explicit safety/overreach holds.
+
+For a supported input, the model receives only:
+
+- The current visitor question and narrow topic/node ID.
+- Short English editorial **glosses of specific source-backed propositions**, not the full pre-authored P6 answer.
+- Each original Latin/Italian fragment, its exact source link/location, speaker/quoted-author label and interpretive cautions.
+- Up to three same-subject, same-language past conversation turns as **untrusted orientation only**, never as new evidence.
+
+Any answer whose cited node is not in this bounded evidence set is refused before inference; the old source-owner EN/FR prose is never passed as evidence. The composer and secondary verifier are prompted to abstain on other claims. This cannot mechanically prove the meaning of free-form generated natural language: the same model provider's second response is **not** independent ecclesiastical review or certification. Publication and historical-authenticity flags remain false.
+
+`tests/pius-x-source-only-gate.mjs` checks all 106 subjects, the 12-opening research scope, eight new opening-only node limits, exclusion of existing complete P6 answers from model payloads, and refusal of uncollated subjects before any model call. `tools/pius-x-live-eval.mjs` chooses only gate-eligible research cases and replaces a previously injected long editorial-history snippet with a neutral context note. Tests still use a mock provider in CI.
+
+**Terminology clarification:** this is a new **private experiment exposure** of previously collated candidate fragments, not a source-owner promotion, a release gate, a certified translation or a fully verified papal answer. Existing source discovery's `newModelEvidencePromotions:0` refers to **approved/persistent evidence promotion**, which remains zero; these short fragments are exposed only to an explicitly configured and opted-in trial. No paid endpoint or external model was run during this work.
