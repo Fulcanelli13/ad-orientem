@@ -43,3 +43,7 @@ jobs:
           node tests/customs-pitre-1900-new-ocr-stage02.mjs
           node --check tests/customs-pitre-1900-original-ocr-wave03.mjs
           node tests/customs-pitre-1900-original-ocr-wave03.mjs
+      - name: Verify user-supplied original Pitrè page checks and source provenance
+        run: |
+          node --check tests/customs-pitre-1900-uploaded-original-facsimile-audit.mjs
+          node tests/customs-pitre-1900-uploaded-original-facsimile-audit.mjs
