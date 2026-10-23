@@ -272,6 +272,8 @@ export async function runConfiguredLiveEvaluation(){
   return rawModel(purpose,messages);
  };
  const store=readCorpus(readFileSync(original,'utf8'));
+ if(process.env.AO_SPX_EVAL_BILINGUAL==='1'&&process.env.AO_SPX_EVAL_MULTITURN!=='1')
+  throw new Error('Bilingual sequential evaluation requires AO_SPX_EVAL_MULTITURN=1');
  const maxModelCases=Number(process.env.AO_SPX_EVAL_CASES??4);
  const result=await evaluateDialogue(store,model,{maxModelCases});
  result.providerExecution={
@@ -319,7 +321,7 @@ export async function runConfiguredLiveEvaluation(){
  if(result.summary.violatedPreflightHolds||result.summary.structuralReferenceFailures||
     result.summary.publicationFlagFailures||result.summary.multiTurnReferenceFailures||
     result.summary.multiTurnPublicationFailures||
-    (process.env.AO_SPX_EVAL_BILINGUAL==='1'&&result.summary.multiTurnDrafts===0)||
+    (process.env.AO_SPX_EVAL_BILINGUAL==='1'&&result.summary.multiTurnDrafts!==6)||
     (result.providerExecution.composeRequestsAttempted===0))
    process.exitCode=1;
  return result;
