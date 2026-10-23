@@ -50,7 +50,8 @@ const short=selectEvidence(store,{chapterId:legacy.id,nodeId:legacy.nodes[0].id,
  language:'en',question:legacy.nodes[0].q.en});
 assert.equal(short.status,'eligible');
 assert.equal(short.evidence[0].primaryWitnessStatus,'BOUNDED_ORIGINAL_EXCERPTS_UNAPPROVED');
-const unresolved=store.chapters.get('SPX-EXP-014');
+const unresolved=[...store.chapters.values()].find(c=>c.sourceClass==='PAPAL_DOCUMENT_ADAPTATION'&& !c.partial&&!store.sourceOnlyGate.has(c.id));
+assert(unresolved,'need at least one papal-document subject with no source-backed passage');
 const unresolvedInput={chapterId:unresolved.id,nodeId:unresolved.nodes[0].id,
  language:'en',question:unresolved.nodes[0].q.en};
 assert.equal(selectEvidence(store,unresolvedInput).reason,'no_original_language_witness_for_selected_subject');
