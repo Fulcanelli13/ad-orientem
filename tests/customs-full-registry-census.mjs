@@ -444,7 +444,7 @@ assert.equal(allMcLReferences.length,70);
 assert.deepEqual(new Set(allMcLReferences),mclIds);
 assert.equal(mcloughlinGroups.summary.certified_distinct_new_catholic_customs,0);
 assert.equal(mcloughlinGroups.summary.publication_changes,0);
-assert.equal(count.source_observations.total_source_detail_rows_including_external,2457);
+assert.equal(count.source_observations.total_source_detail_rows_including_external,2602);
 assert.equal(count.source_observations.all_book_research_rows_including_nested_details,1025);
 assert.equal(researchCatalogue.external_source_observations_mcloughlin.length,70);
 assert.equal(researchCatalogue.external_source_action_families_mcloughlin.length,26);
@@ -545,7 +545,7 @@ for(const r of ccEx.records) {
 assert.equal(researchCatalogue.external_source_observations_catholicculture_excerpts.length,132);
 assert.deepEqual(new Set(researchCatalogue.external_source_observations_catholicculture_excerpts.map(r=>r.id)),ccIds);
 assert.equal(count.source_observations.catholicculture_trapp_berger_newland_excerpt_source_actions,132);
-assert.equal(count.source_observations.total_source_detail_rows_including_external,2457);
+assert.equal(count.source_observations.total_source_detail_rows_including_external,2602);
 assert.equal(count.identity_working_rows.provisional_after_53_no_owner_action_review,408);
 assert.equal(count.identity_working_rows.final_uniquely_verified_customs_added,0);
 assert.equal(researchCatalogue.summary.no_new_app_publications,true);
@@ -608,7 +608,7 @@ for(const r of muellerKelly.records){
 assert.equal(researchCatalogue.external_source_observations_mueller_kelly.length,204);
 assert.deepEqual(new Set(researchCatalogue.external_source_observations_mueller_kelly.map(x=>x.id)),mkIds);
 assert.equal(count.source_observations.mueller_kelly_ewtn_source_action_observations,204);
-assert.equal(count.source_observations.total_source_detail_rows_including_external,2457);
+assert.equal(count.source_observations.total_source_detail_rows_including_external,2602);
 assert.equal(count.identity_working_rows.provisional_after_53_no_owner_action_review,408);
 assert.equal(count.identity_working_rows.final_uniquely_verified_customs_added,0);
 assert.equal(researchCatalogue.summary.no_new_app_publications,true);
@@ -697,7 +697,7 @@ for(const r of muellerCross.records){
  }
 }
 assert.equal(coLocated,95);
-assert.equal(count.source_observations.total_source_detail_rows_including_external,2457);
+assert.equal(count.source_observations.total_source_detail_rows_including_external,2602);
 assert.equal(count.source_observations.mueller_second_pass_detail_rows_not_added_to_source_total,100);
 assert.equal(count.source_review.mueller_secondary_exact_text_line_colocated,95);
 assert.equal(count.source_review.mueller_secondary_without_exact_line_owner,5);
@@ -791,7 +791,7 @@ assert.ok(chaneySections.size>=9);
 assert.equal(researchCatalogue.external_source_observations_chaney.length,170);
 assert.deepEqual(new Set(researchCatalogue.external_source_observations_chaney.map(r=>r.id)),chaneyIds);
 assert.equal(count.source_observations.chaney_1955_online_source_observations,170);
-assert.equal(count.source_observations.total_source_detail_rows_including_external,2457);
+assert.equal(count.source_observations.total_source_detail_rows_including_external,2602);
 assert.equal(count.source_observations.mueller_second_pass_detail_rows_not_added_to_source_total,100);
 assert.equal(count.identity_working_rows.provisional_after_53_no_owner_action_review,408);
 assert.equal(count.identity_working_rows.final_uniquely_verified_customs_added,0);
@@ -887,7 +887,7 @@ for(const row of chaneyManual24.records) {
  if(row.action_description_relationship==='DISTINCT_ACTION_FALSE_LEXICAL_MATCH')falseCandidates++;
 }
 assert.equal(falseCandidates,6);
-assert.equal(count.source_observations.total_source_detail_rows_including_external,2457);
+assert.equal(count.source_observations.total_source_detail_rows_including_external,2602);
 assert.equal(researchCatalogue.summary.no_new_app_publications,true);
 console.log('Chaney 24 source-description comparisons: 12 same action core, 6 false lexical matches, 0 verified source-independent identities, 0 merges — PASS');
 
@@ -941,7 +941,7 @@ for(const [source,expected] of [[frBreton,71],[frBasque,56]]){
 }
 assert.equal(count.source_observations.france_pci_breton_pardon_source_detail_rows,71);
 assert.equal(count.source_observations.france_pci_basque_besta_berri_source_detail_rows,56);
-assert.equal(count.source_observations.total_source_detail_rows_including_external,2457);
+assert.equal(count.source_observations.total_source_detail_rows_including_external,2602);
 assert.equal(count.identity_working_rows.provisional_after_53_no_owner_action_review,408);
 assert.equal(count.identity_working_rows.final_uniquely_verified_customs_added,0);
 assert.equal(researchCatalogue.summary.no_new_app_publications,true);
@@ -999,7 +999,7 @@ assert.equal(researchCatalogue.external_source_observations_wff_hynes.length,125
 assert.deepEqual(new Set(researchCatalogue.external_source_observations_wff_hynes.map(r=>r.id)),leIds);
 assert.equal(count.source_observations.wff1992_lent_easter_excerpt_actions,68);
 assert.equal(count.source_observations.hynes1977_lent_holy_week_excerpt_actions,57);
-assert.equal(count.source_observations.total_source_detail_rows_including_external,2457);
+assert.equal(count.source_observations.total_source_detail_rows_including_external,2602);
 assert.equal(count.identity_working_rows.provisional_after_53_no_owner_action_review,408);
 assert.equal(count.identity_working_rows.final_uniquely_verified_customs_added,0);
 assert.equal(researchCatalogue.summary.no_new_app_publications,true);
@@ -1076,7 +1076,7 @@ for(const [i,r] of frSanch23.records.entries()){
 }
 assert.deepEqual(frSanchKinds,frSanch23.summary.kinds);
 assert.equal(count.source_observations.france_sanch_2023_source_detail_rows,86);
-assert.equal(count.source_observations.total_source_detail_rows_including_external,2457);
+assert.equal(count.source_observations.total_source_detail_rows_including_external,2602);
 assert.equal(count.identity_working_rows.provisional_after_53_no_owner_action_review,408);
 assert.equal(count.identity_working_rows.final_uniquely_verified_customs_added,0);
 assert.equal(researchCatalogue.summary.no_new_app_publications,true);
@@ -1140,7 +1140,7 @@ for(const r of researchCatalogue.external_source_observations_italy_four_unesco)
  assert.equal(r.identity_certified,false);
 }
 assert.equal(count.source_observations.italy_four_unesco_festival_source_details,110);
-assert.equal(count.source_observations.total_source_detail_rows_including_external,2457);
+assert.equal(count.source_observations.total_source_detail_rows_including_external,2602);
 assert.equal(count.source_review.italy_2013_unesco_processional_festival_complexes,4);
 assert.equal(count.identity_working_rows.provisional_after_53_no_owner_action_review,408);
 assert.equal(count.identity_working_rows.final_uniquely_verified_customs_added,0);
@@ -1173,7 +1173,7 @@ for(const r of sicilyHolyWeek26.records){
  assert.equal(r.app_publication,'NONE');
  assert.equal(r.ritual_1962_status,'NOT_CHECKED');
 }
-assert.equal(count.source_observations.total_source_detail_rows_including_external,2457);
+assert.equal(count.source_observations.total_source_detail_rows_including_external,2602);
 assert.equal(count.identity_working_rows.provisional_after_53_no_owner_action_review,408);
 assert.equal(count.identity_working_rows.final_uniquely_verified_customs_added,0);
 assert.equal(researchCatalogue.summary.no_new_app_publications,true);
@@ -1248,7 +1248,7 @@ assert.equal(count.source_discovery_leads.irish_cbes_indexed_action_belief_leads
 assert.equal(count.source_discovery_leads.irish_cbes_full_manuscript_pages_verified,0);
 assert.equal(count.source_discovery_leads.irish_cbes_promoted_to_source_detail_count,0);
 assert.equal(count.source_discovery_leads.irish_cbes_folk_belief_magic_leads_quarantined,34);
-assert.equal(count.source_observations.total_source_detail_rows_including_external,2457);
+assert.equal(count.source_observations.total_source_detail_rows_including_external,2602);
 assert.equal(count.identity_working_rows.provisional_after_53_no_owner_action_review,408);
 assert.equal(count.identity_working_rows.final_uniquely_verified_customs_added,0);
 assert.equal(researchCatalogue.summary.no_new_app_publications,true);
@@ -1288,8 +1288,97 @@ for(let i=0;i<itLocalFeastsWave02.records.length;i++){
 }
 assert.deepEqual(localTypeCount,itLocalFeastsWave02.summary.by_class);
 assert.equal(count.source_observations.italy_abruzzo_umbria_sicily_feast_detail_rows,114);
-assert.equal(count.source_observations.total_source_detail_rows_including_external,2457);
+assert.equal(count.source_observations.total_source_detail_rows_including_external,2602);
 assert.equal(count.identity_working_rows.provisional_after_53_no_owner_action_review,408);
 assert.equal(count.identity_working_rows.final_uniquely_verified_customs_added,0);
 assert.equal(researchCatalogue.summary.no_new_app_publications,true);
 console.log('Italy regional local feasts: 21 Cocullo + 21 Gubbio + 72 Sicily source details, 2457 total nonunique research rows, zero custom promotions — PASS');
+
+
+// Three Spanish regional religious/festival complexes (Elche Marian sacred
+// drama, Berga Corpus-related Patum, Caravaca Vera Cruz). A stage scene,
+// dated 2026 parade substep, civic competition or modern ministerial festival
+// description is neither an independent Catholic custom nor approval of a
+// 1962 rite. No overlap allowed with Italian or Irish discovery pipelines.
+const spRegions26=load('data/customs/master/spain-elche-berga-caravaca-three-regional-complexes-action-detail-pass.v1.json');
+const spReview20=load('data/customs/master/spain-regional-20-working-owner-action-contrast-review.v1.json');
+assert.equal(spRegions26.records.length,145);
+assert.equal(spRegions26.summary.source_detail_records,145);
+assert.deepEqual(spRegions26.summary.by_complex,{E:72,B:36,C:37});
+assert.equal(spRegions26.summary.unique_local_festival_complexes,3);
+assert.equal(spRegions26.summary.verified_distinct_new_customs,0);
+assert.equal(spRegions26.summary.independent_primary_archival_witnesses_certified,0);
+assert.equal(spRegions26.summary.app_publications,0);
+assert.equal(Object.values(spRegions26.summary.claim_types).reduce((a,b)=>a+b,0),145);
+assert.equal(spRegions26.critical_notes.length,4);
+const spCount={E:0,B:0,C:0};
+const spIds=new Set();
+const spById=new Map();
+for(const r of spRegions26.records){
+ const g=r.observation_id.split('-')[1];
+ assert.ok(['E','B','C'].includes(g));
+ spCount[g]++;
+ assert.equal(r.observation_id,'SPREG26-'+g+'-'+String(spCount[g]).padStart(3,'0'));
+ assert.ok(!spIds.has(r.observation_id));
+ spIds.add(r.observation_id);
+ spById.set(r.observation_id,r);
+ assert.ok(r.label.length>=19);
+ assert.ok(r.detail_type.length>=4);
+ assert.ok(r.source_locator.url.startsWith('https://'));
+ if(r.source_locator.web_line!==null)assert.ok(Number.isInteger(r.source_locator.web_line)&&r.source_locator.web_line>=1);
+ else assert.equal(r.source_locator.source_access,'WEB_SEARCH_STRUCTURED_EXCERPT_NOT_FULL_PAGE_LINE_NUMBER');
+ assert.equal(r.ritual_authority,'NOT_VERIFIED_FOR_1962_USE');
+ assert.equal(r.custom_identity_certified,false);
+ assert.equal(r.app_publication,false);
+ if(r.detail_type==='EXPLICIT_2026_PROGRAM')assert.equal(r.period,'EXPLICIT_2026_EVENT_ONLY');
+}
+assert.deepEqual(spCount,{E:72,B:36,C:37});
+assert.equal(researchCatalogue.external_source_observations_spain_elche_berga_caravaca.length,145);
+assert.deepEqual(new Set(researchCatalogue.external_source_observations_spain_elche_berga_caravaca.map(r=>r.id)),spIds);
+for(const r of researchCatalogue.external_source_observations_spain_elche_berga_caravaca){
+ const base=spById.get(r.id);
+ assert.ok(base);
+ assert.equal(r.label,base.label);
+ assert.equal(r.url,base.source_locator.url);
+ assert.equal(r.web_line,base.source_locator.web_line);
+ assert.equal(r.regional_complex_id,base.regional_complex);
+ assert.equal(r.identity_certified,false);
+}
+assert.equal(spReview20.records.length,20);
+assert.equal(spReview20.summary.compared_pairs,20);
+assert.equal(spReview20.summary.verified_same_custom_identities,0);
+assert.equal(spReview20.summary.automatic_merges,0);
+assert.equal(spReview20.summary.confirmed_independent_witnesses,0);
+assert.equal(spReview20.summary.app_publications,0);
+const spOwnerIds=new Set([
+ ...researchCatalogue.existing_master_identities,
+ ...researchCatalogue.provisional_handbook_groups,
+ ...researchCatalogue.provisional_historical_groups,
+ ...researchCatalogue.provisional_unindexed_practice_leads,
+ ...researchCatalogue.provisional_unassigned_action_leads
+].map(r=>r.id));
+assert.equal(new Set(spReview20.records.map(r=>r.review_id)).size,20);
+for(const r of spReview20.records){
+ const action=spById.get(r.new_source_id);
+ assert.ok(action);
+ assert.equal(r.source_action_label,action.label);
+ assert.equal(r.source_url,action.source_locator.url);
+ assert.equal(r.source_line,action.source_locator.web_line);
+ assert.ok(spOwnerIds.has(r.existing_research_id));
+ assert.ok(r.rationale.length>=50);
+ assert.equal(r.practice_identity_confirmed,false);
+ assert.equal(r.evidence_independence_confirmed,false);
+ assert.equal(r.ecclesiastical_authority_confirmed,false);
+ assert.equal(r.automatic_owner_assignment,false);
+ assert.equal(r.app_publication,false);
+}
+assert.equal(count.source_observations.spain_three_source_detail_records,145);
+assert.equal(count.source_observations.total_source_detail_rows_including_external,2602);
+assert.equal(count.source_review.spain_twenty_label_level_action_relationships_reviewed,20);
+assert.equal(count.source_review.spain_new_verified_distinct_customs,0);
+assert.equal(count.source_review.spain_relations_auto_merged,0);
+assert.equal(count.source_review.spain_verified_1962_ritual_authorizations,0);
+assert.equal(count.identity_working_rows.provisional_after_53_no_owner_action_review,408);
+assert.equal(count.identity_working_rows.final_uniquely_verified_customs_added,0);
+assert.equal(researchCatalogue.summary.no_new_app_publications,true);
+console.log('Spain 145 source details (72 Elche, 36 Berga, 37 Caravaca) + 20 source-action contrasts; 2602 nonunique research rows, 0 new custom certifications and 0 app publication — PASS');
