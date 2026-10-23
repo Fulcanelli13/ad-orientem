@@ -37,7 +37,8 @@
     "ITALY_ARCHIVAL_ACCESSION_NONADDITIVE": "27 targeted original-document and publication accessions for Gubbio/Salemi/Pitre are archival/bibliographic ACQUISITION TASKS only, not twenty-seven additional customs or directly inspected primary folios. SIUSA locates 1761–1797 Gubbio guild minutes in busta 20; SIAS Trapani records religious suppressions 1402–1899 but does NOT independently identify the purported 1779 Salemi Augustinian bread expense ledger. No manuscript facsimile seen, no 1962 ritual approval, no historical source-independent corroborations granted.",
     "PORTUGAL_PCI_FOUR_HERITAGE_RECORDS_NONCANONICAL": "Four national cultural-heritage inventories are modern syntheses of regional Easter, Holy Week, Epiphany painting and Lenten women's singing. 140 extracted details are components/variants, not 140 independent customs. Braga local rite separate from Roman 1962. Parish crosses, civil ceremonies, women's prayer, painted houses and Mass liturgy have separate authority boundaries. The 28 review decisions are first-source-versus-older-label action contrasts, not dual original source proof. Zero merges or publications.",
     "CC_THREE_WORKS_SOURCE_OWNERSHIP_GUARD": "CatholicCulture is a modern republisher of numerous books. These 133 action components stem from only THREE original written works despite appearing in 26 online articles. McLoughlin 1956 Easter-Pentecost is a distinct title from her Family Advent Customs; some themes recur in Weiser, Trapp, Mueller, Stokes and McLoughlin's own pages, and many individual rows are subactions or repeated component statements. Content is short paraphrase, not original full-book text; page numbers and independent witness proofs are NOT established. 133 rows add zero certified customs; religious ritual claims need primary validation.",
-    "PITRE_PALERMO_POSTHUMOUS_RETROSPECTIVE_VOL1_VOL2_110": "Directly read 110 source-detail observations from two accessible full Pitrè Palermo text editions (vol II published posthumously 1950, vol I publication date not checked). This is NOT the separately bibliographically located original 1881 Spettacoli or 1900 Feste Patronali; original 18th-century diarists and event documents not yet checked. Material,civic,folklore,penitential and liturgical-related actions are source components, often duplicated within processions; no 110 new independent historical customs or approved rites."
+    "PITRE_PALERMO_POSTHUMOUS_RETROSPECTIVE_VOL1_VOL2_110": "Directly read 110 source-detail observations from two accessible full Pitrè Palermo text editions (vol II published posthumously 1950, vol I publication date not checked). This is NOT the separately bibliographically located original 1881 Spettacoli or 1900 Feste Patronali; original 18th-century diarists and event documents not yet checked. Material,civic,folklore,penitential and liturgical-related actions are source components, often duplicated within processions; no 110 new independent historical customs or approved rites.",
+    "CC_THREE_WORKS_41_MANUAL_ACTION_RELATIONS": "41 manual comparisons (39 distinct new source observations) distinguish same described action cores from derivative documentary attestations, localized and calendar variants, and false lexical matches. A same-action label is not verified historical practice identity, and original work dependence, source independence and liturgical approval were not certified. No automatic merges."
   },
   "summary": {
     "source_observations": {
@@ -198,7 +199,10 @@
       "cc_three_article_urls_reviewed": 26,
       "cc_three_lookup_hints": 329,
       "cc_three_semantic_identity_equivalences_certified": 0,
-      "cc_three_independent_historical_corroborations_certified": 0
+      "cc_three_independent_historical_corroborations_certified": 0,
+      "cc_three_books_label_action_pairs_manually_compared": 41,
+      "cc_three_books_distinct_action_rows_reviewed_at_least_once": 39,
+      "cc_three_books_manual_distinct_custom_identity_certifications": 0
     },
     "no_new_app_publications": true,
     "source_discovery_leads": {
@@ -283,7 +287,8 @@
     "portugal_four_pci_28_nonmerging_owner_contrasts": "data/customs/master/portugal-four-pci-28-action-contrast-review.v1.json",
     "cc_family_books_mcl1956_craig1945_flb1950s": "data/customs/master/mcloughlin1956-craig1945-familylife1950s-article-source-actions.v1.json",
     "cc_family_books_133_search_routes": "data/customs/master/three-works-133-prior-source-action-lookup.v1.json",
-    "pitre_palermo_retrospective_vol1_vol2": "data/customs/master/pitre-palermo-retrospective-vol1-vol2-source-details-wave01.v1.json"
+    "pitre_palermo_retrospective_vol1_vol2": "data/customs/master/pitre-palermo-retrospective-vol1-vol2-source-details-wave01.v1.json",
+    "cc_three_works_41_manual_action_relations": "data/customs/master/three-household-books-41-manual-action-contrast-review.v1.json"
   },
   "existing_master_identities": [
     {
