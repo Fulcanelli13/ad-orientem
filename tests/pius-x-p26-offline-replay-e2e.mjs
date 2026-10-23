@@ -229,7 +229,18 @@ try{
   await page.locator('#spxc-nav [data-spxc-open="'+dossier.chapterId+'"]').first().click();
   assert.equal(await page.locator('#spxc-primary-source-dossier').isVisible(),true);
   assert.equal(await page.locator('#spxc-offline-replay').isVisible(),false);
+  assert.equal(await page.locator('.spxc-free-ask').isVisible(),false,
+   'Source-only chapter must not default to unverified papal dialogue search');
+  assert.equal(await page.locator('.spxc-turn').first().isVisible(),false,
+   'Unreviewed legacy P6 reply must not be the default documentary answer');
+  assert.equal(await page.locator('#spxp29-draft-toggle').getAttribute('aria-pressed'),'false');
+  await page.locator('#spxp29-draft-toggle').click();
+  assert.equal(await page.locator('.spxc-turn').first().isVisible(),true,
+   'Earlier P6 editorial draft remains explicitly inspectable');
   assert.equal(await page.locator('.spxc-free-ask').isVisible(),true);
+  assert.equal(await page.locator('#spxp29-draft-toggle').getAttribute('aria-pressed'),'true');
+  await page.locator('#spxp29-draft-toggle').click();
+  assert.equal(await page.locator('.spxc-turn').first().isVisible(),false);
   const count=data.sourceDossiers.filter(x=>x.chapterId===dossier.chapterId).length;
   assert.equal(await page.locator('.spxp29-source-question').count(),count);
   assert.equal(await page.locator('#spxp29-content .spxp29-original').count(),0);
@@ -247,6 +258,9 @@ try{
    'Switching language invalidates selected excerpt view');
   assert.equal(await page.locator('.spxp29-source-question').first().innerText(),
    expected.question.en);
+  assert.equal(await page.locator('#spxp29-draft-toggle').getAttribute('aria-pressed'),'false',
+   'Switching language returns to original-source-first, not legacy papal speech');
+  assert.equal(await page.locator('.spxc-turn').first().isVisible(),false);
   assert.deepEqual(errors,[],'No inline script exceptions');
   assert.deepEqual(requests,[],'No external HTTP(S) network requests during offline replay');
   await page.close();
