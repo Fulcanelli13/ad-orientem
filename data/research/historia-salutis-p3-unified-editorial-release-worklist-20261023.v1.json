@@ -76,7 +76,10 @@
     "editorialDeskProvisionalDispositions": 41,
     "editorialDeskAcceptedDecisions": 0,
     "sourceComparedEditorialReductionOptions": 15,
-    "editsActuallyPromoted": 0
+    "editsActuallyPromoted": 0,
+    "p0CriticalSeamsMechanicallyCompared": 5,
+    "p0ConditionalReadingVerseEntries": 33,
+    "p0CriticalSourceApprovals": 0
   },
   "priorityOrder": [
     "First: eight P0 original-text recommendations prepared (38 distinct source verse entries across five causal/vision groups); no human/editorial acceptances. Compare in the existing P3 workbench, then record explicit future accept/hold/omit decision per source owner.",
@@ -2417,9 +2420,9 @@
     ]
   },
   "nextExecutableBatch": [
-    "Run the new 15-owner exact-witness and 37-movement desk-simulation contract; inspect failed and pending CI checks explicitly.",
-    "Address the open causal/source-selection hinges, prioritising Noah, Passover, Passion burial, Paul in Rome and Revelation transitions; do not invent prose to close omitted original Scripture.",
-    "Perform edition-aware printed witness collation, French literary review and actual uninterrupted read-aloud before considering any editorial acceptance or public release."
+    "Preflight 5 critical seam insertion scenarios in the existing P3 reader/worklist: 4 core original-source groups and one no-new-verse apocalyptic genre boundary, without promoting held passages.",
+    "Preserve distinct witness roles for John 19:31–37 and 19:38–42; keep editorial suppression conditional, especially the Acts 28 appeal already covered by original Scripture.",
+    "Keep 93 canonical Scripture units, 37 movements, 151 Atlas events, and all seven release gates unchanged; move next to side-by-side reader behavior, French edition alignment and failure/omission disclosures."
   ],
   "editorialDeskDispositionResearch": {
     "schema": "ao.historia.p3.editorial-owner-desk-disposition.v1",
@@ -3875,5 +3878,326 @@
       ],
       "witnessNote": "All listed comparison anchors resolve in the three installed uncollated witnesses; the adjacent Ruth 2:2 CPDV import gap remains explicitly held. No claims of printed-edition certification."
     }
+  },
+  "criticalSeamInsertionPreflight": {
+    "schema": "ao.historia.p3.five-p0-seam-reader-insertion-preflight.v1",
+    "date": "2026-10-23",
+    "status": "FIVE_CRITICAL_SEAMS_CONDITIONALLY_ASSEMBLED_AT_DESK_NOT_SOURCE_SELECTED",
+    "sourceOfEvidence": "data/research/historia-salutis-p3-five-p0-source-minimum-adjudication-20261023.v1.json",
+    "sourceMovementProof": "data/research/historia-salutis-v18-continuous-reading-proof.v1.json",
+    "sourceSeamAudit": "data/research/historia-salutis-p3-continuous-full-story-seam-audit-20261023.v1.json",
+    "sourceOwnership": "REUSE_ORIGINAL_BEATS_AND_SOURCE_WORKLIST_NO_PARALLEL_MANUSCRIPT",
+    "hinges": 5,
+    "sourceOwnerIdsInP0Candidates": 7,
+    "caseResults": [
+      {
+        "hingeId": "HS-HINGE-02",
+        "group": "NOAH_ARK",
+        "priority": "P0",
+        "fromMovement": "HS-M02",
+        "toMovement": "HS-M03",
+        "sourceDecisionOwnerIds": [
+          "HS-W-SRC-HS-CF-01"
+        ],
+        "sourceInReadingOrderBeatIds": [
+          "H05-02",
+          "HS-CF-01",
+          "H07-02"
+        ],
+        "anchorBefore": "Genesis 3:14–24",
+        "anchorAfter": "Genesis 7:1–5",
+        "preferredExistingP0OptionId": "ARK_EXISTING_P3_TRIAL",
+        "preferredNativeRefs": [
+          "Genesis 6:9–14",
+          "Genesis 6:17–22"
+        ],
+        "preferredWitnessMetrics": {
+          "dr-challoner": {
+            "verseEntries": 12,
+            "sourceWords": 285,
+            "validated": true
+          },
+          "cpdv-2009": {
+            "verseEntries": 12,
+            "sourceWords": 317,
+            "validated": true
+          },
+          "crampon-1923": {
+            "verseEntries": 12,
+            "sourceWords": 281,
+            "validated": true
+          }
+        },
+        "alternativeExistingP0OptionIds": [
+          "ARK_MORE_AGGRESSIVE_SEVEN_VERSES",
+          "ARK_WHOLE_EXISTING_HELD_SOURCE"
+        ],
+        "exactSourcePresentationRule": "Show genealogical context as editorial. Show the original Noah identity, corruption, ark command, covenant, provisions and obedience before the selected command to enter the ark.",
+        "requiredOmissionOrAttributionDisclosure": "Genesis 6:15–16 dimensions omitted within the held native-source trial; do not imply Genesis 3 to 6 is an uninterrupted episode.",
+        "heldWithoutPromotionBehavior": "If the trial is not selected, retain the visible unresolved ark antecedent; do not claim the missing command to build the ark has been supplied.",
+        "disposition": "PREFERRED_MECHANICAL_RESEARCH_TRIAL_NOT_SELECTED",
+        "causalIssueStillReleaseBlocking": true,
+        "sourceComparisonCompleteAtDesk": true,
+        "oralAccepted": false,
+        "theologicalAccepted": false,
+        "printedEditionCertified": false,
+        "sourceSelectionAccepted": false,
+        "productionAppChanged": false,
+        "atlas151Changed": false
+      },
+      {
+        "hingeId": "HS-HINGE-08",
+        "group": "PASSOVER_FIRSTBORN",
+        "priority": "P0",
+        "fromMovement": "HS-M08",
+        "toMovement": "HS-M09",
+        "sourceDecisionOwnerIds": [
+          "HS-W-SRC-EXODUS-12-FIRSTBORN"
+        ],
+        "sourceInReadingOrderBeatIds": [
+          "H20-01",
+          "H20-01",
+          "H21-01"
+        ],
+        "anchorBefore": "Exodus 12:27–28",
+        "anchorAfter": "Exodus 12:31–33",
+        "preferredExistingP0OptionId": "FIRSTBORN_TWO_VERSES",
+        "preferredNativeRefs": [
+          "Exodus 12:29–30"
+        ],
+        "preferredWitnessMetrics": {
+          "dr-challoner": {
+            "verseEntries": 2,
+            "sourceWords": 78,
+            "validated": true
+          },
+          "cpdv-2009": {
+            "verseEntries": 2,
+            "sourceWords": 84,
+            "validated": true
+          },
+          "crampon-1923": {
+            "verseEntries": 2,
+            "sourceWords": 74,
+            "validated": true
+          }
+        },
+        "alternativeExistingP0OptionIds": [],
+        "exactSourcePresentationRule": "Retain the selected Passover lamb and observance; display unaltered Exodus 12:29–30 immediately after Exodus 12:27–28 and before the selected Pharaoh release in 12:31.",
+        "requiredOmissionOrAttributionDisclosure": "The source distinction between firstborn judgment occurring and Pharaoh subsequently commanding departure cannot be reduced to one editorial line without losing a causal event.",
+        "heldWithoutPromotionBehavior": "Without the original trial, keep the narrative hinge flagged as incomplete; do not say Pharaoh's reaction was narrated.",
+        "disposition": "PREFERRED_MECHANICAL_RESEARCH_TRIAL_NOT_SELECTED",
+        "causalIssueStillReleaseBlocking": true,
+        "sourceComparisonCompleteAtDesk": true,
+        "oralAccepted": false,
+        "theologicalAccepted": false,
+        "printedEditionCertified": false,
+        "sourceSelectionAccepted": false,
+        "productionAppChanged": false,
+        "atlas151Changed": false
+      },
+      {
+        "hingeId": "HS-HINGE-28",
+        "group": "JOHN_PASSION_TO_EASTER",
+        "priority": "P0",
+        "fromMovement": "HS-M28",
+        "toMovement": "HS-M29",
+        "sourceDecisionOwnerIds": [
+          "HS-W-SRC-JOHN-19-PIERCED-SIDE",
+          "HS-W-SRC-HS-CF-06"
+        ],
+        "sourceInReadingOrderBeatIds": [
+          "H64-01",
+          "HS-CF-06",
+          "H65-01"
+        ],
+        "anchorBefore": "John 19:17–30",
+        "anchorAfter": "John 20:1–3",
+        "preferredExistingP0OptionId": "JOHN_COMPLETE_AFTER_DEATH",
+        "preferredNativeRefs": [
+          "John 19:31–42"
+        ],
+        "preferredWitnessMetrics": {
+          "dr-challoner": {
+            "verseEntries": 12,
+            "sourceWords": 303,
+            "validated": true
+          },
+          "cpdv-2009": {
+            "verseEntries": 12,
+            "sourceWords": 317,
+            "validated": true
+          },
+          "crampon-1923": {
+            "verseEntries": 12,
+            "sourceWords": 288,
+            "validated": true
+          }
+        },
+        "alternativeExistingP0OptionIds": [
+          "JOHN_BURIAL_FIVE_VERSES",
+          "PIERCED_SIDE_SEPARATE_WITNESS"
+        ],
+        "exactSourcePresentationRule": "After the selected death, show the two separate native witnesses consecutively: John 19:31–37 (side, eyewitness and fulfilment), then 19:38–42 (burial), before the selected empty tomb.",
+        "requiredOmissionOrAttributionDisclosure": "The pierced-side witness has separate doctrinal and source status and is not strictly necessary to repair the burial causal gap; avoid treating a full-span trial as one accepted beat.",
+        "heldWithoutPromotionBehavior": "A burial-only exact-source trial restores the tomb antecedent at lower reading cost but leaves the side and fulfilment witness held for separate assessment.",
+        "disposition": "PREFERRED_MECHANICAL_RESEARCH_TRIAL_NOT_SELECTED",
+        "causalIssueStillReleaseBlocking": true,
+        "sourceComparisonCompleteAtDesk": true,
+        "oralAccepted": false,
+        "theologicalAccepted": false,
+        "printedEditionCertified": false,
+        "sourceSelectionAccepted": false,
+        "productionAppChanged": false,
+        "atlas151Changed": false
+      },
+      {
+        "hingeId": "HS-HINGE-33",
+        "group": "ACTS_JERUSALEM_TO_ROME",
+        "priority": "P0",
+        "fromMovement": "HS-M33",
+        "toMovement": "HS-M34",
+        "sourceDecisionOwnerIds": [
+          "HS-W-SRC-HS-CF-11",
+          "HS-W-SRC-HS-P3-CF-13"
+        ],
+        "sourceInReadingOrderBeatIds": [
+          "H72-01",
+          "HS-CF-11",
+          "HS-P3-CF-13",
+          "H73-07"
+        ],
+        "anchorBefore": "Acts 15:22–29",
+        "anchorAfter": "Acts 28:23–31",
+        "preferredExistingP0OptionId": "ROME_ARRIVAL_AND_FULL_AUDIENCE",
+        "preferredNativeRefs": [
+          "Acts 28:16",
+          "Acts 28:17–22"
+        ],
+        "preferredWitnessMetrics": {
+          "dr-challoner": {
+            "verseEntries": 7,
+            "sourceWords": 189,
+            "validated": true
+          },
+          "cpdv-2009": {
+            "verseEntries": 7,
+            "sourceWords": 212,
+            "validated": true
+          },
+          "crampon-1923": {
+            "verseEntries": 7,
+            "sourceWords": 194,
+            "validated": true
+          }
+        },
+        "alternativeExistingP0OptionIds": [
+          "ROME_AUDIENCE_ONLY"
+        ],
+        "exactSourcePresentationRule": "Explicitly label the large omitted Acts 16–27 historical interval. If selected, keep a concise editor-attributed Jerusalem arrest and Italy-transfer lead-in; then Acts 28:16 and 17–22 before the existing 28:23 audience.",
+        "requiredOmissionOrAttributionDisclosure": "Acts 28:17–19 already recounts Paul's appeal to Caesar. Remove the repetitive appeal from the editor-owned connector if the whole audience witness is shown; Acts 19:21 is only an intention to see Rome.",
+        "heldWithoutPromotionBehavior": "Acts 28:17–22 alone leaves arrival unanchored; leaving both passages held must not be represented as a continuous historical narrative.",
+        "disposition": "PREFERRED_MECHANICAL_RESEARCH_TRIAL_NOT_SELECTED",
+        "causalIssueStillReleaseBlocking": true,
+        "sourceComparisonCompleteAtDesk": true,
+        "oralAccepted": false,
+        "theologicalAccepted": false,
+        "printedEditionCertified": false,
+        "sourceSelectionAccepted": false,
+        "productionAppChanged": false,
+        "atlas151Changed": false
+      },
+      {
+        "hingeId": "HS-HINGE-34",
+        "group": "ACTS_TO_REVELATION_GENRE",
+        "priority": "P0",
+        "fromMovement": "HS-M34",
+        "toMovement": "HS-M35",
+        "sourceDecisionOwnerIds": [],
+        "sourceInReadingOrderBeatIds": [
+          "H73-07",
+          "H75-01",
+          "H75-02"
+        ],
+        "anchorBefore": "Acts 28:23–31",
+        "anchorAfter": "Revelation 5:1–14",
+        "preferredExistingP0OptionId": "VISION_GENRE_HEADING_ONLY",
+        "preferredNativeRefs": [],
+        "preferredWitnessMetrics": {
+          "dr-challoner": {
+            "verseEntries": 0,
+            "sourceWords": 0,
+            "validated": true
+          },
+          "cpdv-2009": {
+            "verseEntries": 0,
+            "sourceWords": 0,
+            "validated": true
+          },
+          "crampon-1923": {
+            "verseEntries": 0,
+            "sourceWords": 0,
+            "validated": true
+          }
+        },
+        "alternativeExistingP0OptionIds": [
+          "OPEN_HEAVENLY_VISION",
+          "JOHN_PATMOS_AND_THRONE"
+        ],
+        "exactSourcePresentationRule": "Show a visibly non-Scripture shift from Paul's historical Acts ministry to John's apocalyptic vision. Keep the throne/Patmos context separately attributed and avoid implying that Paul witnessed Revelation.",
+        "requiredOmissionOrAttributionDisclosure": "A genre heading needs zero inserted Scripture verses. If Revelation 4:1–2 is trialled, attribute it to John's vision, and do not turn Revelation 1:9–11 into an immediately preceding event.",
+        "heldWithoutPromotionBehavior": "The current genre-labelled editorial context is a viable no-new-verse alternative; without an explicit transition the reader could misread two separate witnesses as a contiguous episode.",
+        "disposition": "PREFERRED_MECHANICAL_RESEARCH_TRIAL_NOT_SELECTED",
+        "causalIssueStillReleaseBlocking": true,
+        "sourceComparisonCompleteAtDesk": true,
+        "oralAccepted": false,
+        "theologicalAccepted": false,
+        "printedEditionCertified": false,
+        "sourceSelectionAccepted": false,
+        "productionAppChanged": false,
+        "atlas151Changed": false
+      }
+    ],
+    "combinedUnapprovedReadingCost": {
+      "readingRateWpmForReferenceOnly": 130,
+      "measurementsByEdition": {
+        "dr-challoner": {
+          "coreUnapprovedTrialVerseEntries": 33,
+          "coreUnapprovedTrialWords": 855,
+          "includingOptionalVisionTrialVerseEntries": 33,
+          "includingOptionalVisionTrialWords": 922
+        },
+        "cpdv-2009": {
+          "coreUnapprovedTrialVerseEntries": 33,
+          "coreUnapprovedTrialWords": 930,
+          "includingOptionalVisionTrialVerseEntries": 33,
+          "includingOptionalVisionTrialWords": 997
+        },
+        "crampon-1923": {
+          "coreUnapprovedTrialVerseEntries": 33,
+          "coreUnapprovedTrialWords": 837,
+          "includingOptionalVisionTrialVerseEntries": 33,
+          "includingOptionalVisionTrialWords": 903
+        }
+      },
+      "coreFourSourceTrialsIncludePairedJohn19EyewitnessAndBurial": true,
+      "genreBoundaryMandatoryAdditionalVerses": 0,
+      "optionalRevelation4Verses": 2,
+      "passionBurialOnlyComparedAsSeparateExistingOption": true,
+      "addedScriptureWordsNotAChangeToOriginal28815": true
+    },
+    "movementSequenceDeskGate": {
+      "existingScriptureUnits": 93,
+      "existingMovements": 37,
+      "interMovementSeams": 36,
+      "selectedScriptureTextChanged": false,
+      "acceptedSourceAdditions": 0,
+      "readerRuntimeChanged": false,
+      "priorityP0StillBlockedForPublication": 5,
+      "actualUninterruptedOralReadingCompleted": false,
+      "omissionDisclosureRequired": true,
+      "threeNativeWitnessesStillUncollated": true
+    },
+    "noAutomatedPromotion": true
   }
 }
