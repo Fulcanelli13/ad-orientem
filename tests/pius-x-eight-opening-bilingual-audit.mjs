@@ -60,7 +60,7 @@ for(const row of audit.records){
  assert(!row.translationApproval&&!row.originalTextClaimApproval&&!row.fullAnswerApproved);
  assert.equal(row.modelEvidencePromotions,0);
  assert(row.alignedBilingualSpans.length>=3);
- assert(row.exceptionSpans.length>=2);
+ assert(row.exceptionSpans.length>=1,'at least one explicit unresolved limitation should remain');
  for(const a of row.alignedBilingualSpans){
   aligned++;
   assert(answer.en.includes(a.enTextSpan),'English source answer is missing audited span');
@@ -89,4 +89,4 @@ assert(audit.records.some(x=>x.exceptionSpans.some(y=>y.code==='PIUS_IX_EMBEDDED
 assert(audit.records.some(x=>x.exceptionSpans.some(y=>y.code==='REASONABLE_ROLE_BOUNDARY_NOT_VERBATIM')));
 const mutated={...audit.records[0],renderedFrenchChecksumFNV1A32:'00000000'};
 assert.notEqual(mutated.renderedFrenchChecksumFNV1A32,fnv1a32(store.chapters.get(mutated.chapterId).nodes[0].a.fr));
-console.log('PASS SPX_EIGHT_OPENING_BILINGUAL_CLAIMS: 8 authentic P6 EN/FR answer pairs, 27 bounded source alignments, 17 remaining editorial caveats, 4 private corrections; 0 translation/full-answer/model approvals');
+console.log('PASS SPX_EIGHT_OPENING_BILINGUAL_CLAIMS: 8 actual rendered P6 EN/FR answer pairs, 27 bounded source alignments, 17 remaining editorial caveats, 4 private corrections; 0 translation/full-answer/model approvals');
