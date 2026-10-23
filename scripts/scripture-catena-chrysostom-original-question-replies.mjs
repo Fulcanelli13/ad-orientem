@@ -84,10 +84,11 @@ function candidate(q,u){
   materialBeyondCatenaVerified:false,publicationEligible:false
  };
 }
-const homilies=[],samples=[];
+const homilies=[],samples=[],allStructural=[];
 for(const u of corpus.units){
  const q=corpus.questions.filter(x=>x.workUnitId===u.id);
  const matches=q.map(x=>candidate(x,u)).filter(Boolean);
+ allStructural.push(...matches);
  const ranked=matches.sort((a,b)=>b.searchPriorityScore-a.searchPriorityScore||
    a.originalQuestionLine-b.originalQuestionLine),pick=[];
  for(const row of ranked){
@@ -149,6 +150,7 @@ const pinnedOriginalWorkEvidence=anchored.map(([seedId,n,first,markLine,last])=>
 });
 const sorted=samples.sort((a,b)=>a.sourceWorkUnitId.localeCompare(b.sourceWorkUnitId)||
  a.originalQuestionLine-b.originalQuestionLine);
+allStructural.sort((a,b)=>a.originalQuestionLine-b.originalQuestionLine||a.id.localeCompare(b.id));
 const result={
  schema:"ao.catena.chrysostom-historical-OCR-question-ensuing-prose.v1",
  sourceEdition:"Schaff NPNF I/X, 1888 print scan OCR",
@@ -164,6 +166,19 @@ const result={
  pinnedOriginalWorkEvidence,homilies,rows:sorted
 };
 mkdirSync(output,{recursive:true});
+if(allStructural.length!==result.structuralQuestionAndProseCandidates||
+ new Set(allStructural.map(x=>x.id)).size!==allStructural.length)
+ throw Error("ALL_STRUCTURAL_QUESTION_RECORDS_NOT_EXHAUSTIVE");
+writeFileSync(join(output,"chrysostom-all-structural-candidates.v1.json"),
+ JSON.stringify({
+  schema:"ao.catena.chrysostom-all-structural-question-prose-ocr.v1",
+  historicalVolumeSHA256:corpus.sourceVolumeSHA256,
+  homiliesScreened:90,questionMarksScreened:3650,
+  structuralCandidatesPreserved:allStructural.length,
+  sourceQuestionSpeakerAuthenticated:0,sourceReplyBoundariesAuthenticated:0,
+  novelPatristicAnswersConfirmed:0,publicationApprovals:0,
+  records:allStructural
+ },null,2)+"\n");
 writeFileSync(join(output,"chrysostom-question-ensuing-prose.v1.json"),
  JSON.stringify(result,null,2)+"\n");
 writeFileSync(join(output,"summary.v1.json"),JSON.stringify({
