@@ -1,0 +1,34 @@
+name: B26 adjudicate 30-art accession search false matches
+on:
+  push:
+    branches: [research/b19-original-image-acquisition-probe-20261023]
+    paths: [.github/workflows/ao-art-b26-accession-adjudication.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  adjudicate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Classify exact institutional ID collisions without image publication
+        run: |
+          python -m py_compile scripts/research/sacred_art_b26_accession_adjudicate.py
+          python scripts/research/sacred_art_b26_accession_adjudicate.py
+      - name: Commit source identity error audit and immutable editorial holds
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/research/sacred-art-b26-accession30-adjudicated.csv data/research/sacred-art-b26-accession30-adjudicated.summary.json
+          git commit -m 'research: exclude P000362 US politician bio from Prado art sources'
+          for i in 1 2 3; do
+            git fetch origin research/b19-original-image-acquisition-probe-20261023
+            git rebase origin/research/b19-original-image-acquisition-probe-20261023
+            git push origin HEAD:research/b19-original-image-acquisition-probe-20261023 && exit 0
+            sleep 4
+          done
+          exit 1
