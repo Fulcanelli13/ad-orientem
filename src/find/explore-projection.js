@@ -241,7 +241,7 @@ export function projectShrineItems({shrines=[],places=[],placeRelationships=[],s
 
 export function projectTraditionItems({customs=[],attestations=[],places=[],geoAreas=[],sources=[],guidance=[],novenaLinks=[],novenas=[]}={}){
   // Editorial detail is keyed by existing canonical identity: no new attestation, Place or Mass rite.
-  const guideMap=new Map(arr(guidance).filter(g=>g?.custom_id&&g?.review_status==="STAGED_IN_DRAFT_BRANCH_NOT_MERGED")
+  const guideMap=new Map(arr(guidance).filter(g=>g?.custom_id&&g?.review_status==="CANONICAL_ID_PUBLISHED_IN_MAIN")
     .map(g=>[g.custom_id,g]));
   const customMap=new Map(arr(customs).map(custom=>[custom?.custom_id,custom]).filter(([id])=>id));
   const placeMap=new Map(arr(places).map(place=>[place?.place_id,place]).filter(([id])=>id));

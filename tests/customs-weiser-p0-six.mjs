@@ -23,6 +23,7 @@ assert.equal(sources.sources.length,108);
 assert.equal(extensions.extensions.length,22);
 assert.equal(negatives.entries.length,7);
 assert.equal(guidance.entries.length,6);
+assert.equal(guidance.publication,"SUPPORTING_COPY_FOR_PUBLISHED_CANONICAL_IDS");
 assert.equal(new Set(atlas.customs.map(x=>x.custom_id)).size,38);
 assert.equal(new Set(atlas.attestations.map(x=>x.attestation_id)).size,97);
 assert.equal(new Set(sources.sources.map(x=>x.id)).size,108);
@@ -47,7 +48,7 @@ for(const [id,country,sourceId] of planned){
  assert.deepEqual(extension.source_ids,[sourceId]);
  assert.deepEqual(card.source_ids,[sourceId]);
  assert.ok(card.weiser_observation_ids.length>0);
- assert.equal(card.review_status,"STAGED_IN_DRAFT_BRANCH_NOT_MERGED");
+ assert.equal(card.review_status,"CANONICAL_ID_PUBLISHED_IN_MAIN");
  assert.ok(!negatives.entries.some(x=>x.custom_id===id));
  assert.ok(source.url.startsWith("https://"));
  for(const field of ["title_en","title_fr","description_en","description_fr","meaning_en","meaning_fr","how_en","how_fr"]){
