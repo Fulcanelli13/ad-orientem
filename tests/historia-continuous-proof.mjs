@@ -16,6 +16,31 @@ assert.equal(proof.totals.essentialUnits,93);
 assert.equal(proof.totals.briefEditorialContextNotes,29);
 assert.equal(proof.literaryReviewProgress.movementsDeskExamined,37);
 assert.equal(proof.literaryReviewProgress.fullSequentialReadthroughComplete,false);
+// Ensure the single research reader actually shows the authored, attributed
+// *editorial candidates*, not older explanatory metadata or synthetic Bible.
+const originalContext=proof.movements.flatMap(m=>m.beats.filter(b=>b.kind==="EDITORIAL_CONTEXT_NOT_BIBLE"));
+const preScriptureConnectors=proof.movements.flatMap(m=>m.beats.filter(b=>b.beforeScriptureConnectorCandidate).map(b=>b.beforeScriptureConnectorCandidate));
+assert.equal(originalContext.length,29);
+assert.equal(preScriptureConnectors.length,9);
+assert.equal(new Set(preScriptureConnectors.map(c=>c.id)).size,9);
+for(const beat of originalContext){
+ const candidate=beat.editorialReadingCandidate;
+ assert.ok(candidate&&candidate.text&&candidate.text.length>15,"Missing proposed literary text: "+beat.id);
+ assert.equal(candidate.publicationApproved,false);
+ assert.ok(candidate.sourceReferences?.length>0,"Unsourced editorial note "+beat.id);
+ for(const ref of candidate.sourceReferences)assert.ok(parseScriptureContext(ref),"Unparsed note source "+ref);
+}
+for(const candidate of preScriptureConnectors){
+ assert.ok(candidate.text&&candidate.sourceReferences?.length>0,"Missing source-supported connector");
+ assert.equal(candidate.accepted,false);
+ assert.equal(candidate.publicationApproved,false);
+ for(const ref of candidate.sourceReferences)assert.ok(parseScriptureContext(ref),"Unparsed connector source "+ref);
+}
+assert.match(html,/Proposed editorial transition · not Scripture · not approved/);
+assert.match(html,/Proposed continuity · not Scripture · not approved/);
+assert.match(html,/draft\.text/);
+assert.match(html,/connector\.text/);
+assert.doesNotMatch(html,/make\("p",beat\.explanation\)/);
 assert.equal(proof.literaryReviewProgress.seamRestorationsThisPass,2);
 assert.equal(proof.literaryReviewProgress.scriptureVersesRestoredThisPass,3);
 assert.equal(proof.movements.filter(m=>m.literaryDeskPass?.editorialApproval===false).length,37);
