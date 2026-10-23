@@ -60,6 +60,7 @@ assert.doesNotMatch(pericopes.get("catena.mark.10.17").segments[19].text,/Zaccha
 const theoph=byPointer.get("catena.mark.14.17:2");
 assert.equal(theoph.independentWorkTextInspected,false);
 assert.match(theoph.readerGuard,/probable/);
-assert.match(byPointer.get("catena.mark.16.14:3").readerGuard,/alternative/);
+assert.match(byPointer.get("catena.mark.16.14:3").readerGuard,/pre-Ascension/);
+assert.match(byPointer.get("catena.mark.16.14:3").contextFinding,/favors/);
 assert.match(byPointer.get("catena.mark.15.29:4").readerGuard,/adjacent alternative/);
 console.log("PASS Mark ten original-work crosswalk: 10 exact Catena pointers, 9 inspected witnesses, 3 Latin, 0 approvals; Bede and Theophylact exceptions preserved");
