@@ -97,7 +97,8 @@ try {
   const chosenQuestion=await page.locator('.spxc-turn h3').last().innerText();
   await page.locator('[data-spxc-index]').first().click();
   // Navigate away and return: the exact selected branch and language survive in-session.
-  await page.locator('#spxc-main [data-spxc-open="SPX-009"]').first().click();
+  if(width===390)await page.locator("#spxc-menu").click();
+  await page.locator('#spxc-nav [data-spxc-open="SPX-009"]').first().click();
   assert.equal(await page.locator('[data-spxc-return]').count(),1);
   await page.locator('[data-spxc-return]').click();
   assert.equal(await page.locator('.spxc-turn').count(),2);
