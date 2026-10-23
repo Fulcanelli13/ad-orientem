@@ -119,6 +119,16 @@ assert.ok(anno.includes("Genesis 4:25–26; Genesis 5:28–31"));
 assert.ok(reading.includes("Genesis 4:25–26; Genesis 5:28–31"));
 assert.ok(!anno.includes("Genesis 5:28–32"));
 assert.ok(!reading.includes("Genesis 5:28–32"));
+const tabernacle=proof.movements.find(m=>m.id==="HS-M10").beats
+ .find(b=>b.id==="H23-02").editorialReadingCandidate;
+assert.deepEqual(tabernacle.sourceReferencesByEdition["dr-challoner"],["Exodus 40:16–21","Exodus 40:32–36"]);
+assert.deepEqual(tabernacle.sourceReferencesByEdition["cpdv-2009"],["Exodus 40:16–21","Exodus 40:32–36"]);
+assert.deepEqual(tabernacle.sourceReferencesByEdition["crampon-1923"],["Exodus 40:16–21","Exodus 40:34–38"]);
+for(const ed of editions)for(const p of tabernacle.sourceReferencesByEdition[ed])span(p,ed);
+assert.ok(anno.includes("Exodus 40:16–21; Exodus 40:32–36"));
+assert.ok(reading.includes("Exodus 40:16–21; Exodus 40:32–36"));
+assert.ok(!anno.includes("Exodus 40:16–21; Exodus 40:34–38"));
+assert.ok(!reading.includes("Exodus 40:16–21; Exodus 40:34–38"));
 const j=audit.john19IntegrityEconomy;
 assert.deepEqual([j.testimonyAndPiercingRef,j.burialRef],["John 19:31–37","John 19:38–42"]);
 assert.equal(j.readingOnlyComparison,true);
