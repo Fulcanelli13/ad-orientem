@@ -340,3 +340,27 @@ Source-only evidence coverage in the **existing twelve mapped papal-document sub
 The coverage report and its CI assertions now derive each source-mapped node from the actual source-only gate, rather than repeating the obsolete 14-node earlier metric. The new source-only test covers **all 22 follow-up classifications**, checks 14 precise allowlisted excerpt sets against existing node IDs, verifies that all eight unsupported follow-ups are refused before inference, and confirms the Italian music witnesses against separate source-context excerpts.
 
 **Next unblocked task:** original-language mining across the 53 already discovered chapters in the twelve-document batch, working in substantial documentary batches and separating narrow evidence links from full-answer approval. **Next blocked task:** an externally authorized model endpoint plus safe credential injection and, only then, a paid/real sequential English/French inference trial.
+
+
+## P2.14 — Six-document bulk original-text research wave (23 October 2026)
+
+This pass deliberately increases throughput by working against **six original Vatican source documents at once**, reusing paragraphs across all related dialogue questions rather than generating new paraphrased answers. The existing 106-subject, 423-node P6 is unchanged.
+
+    previews/pius-x-study/evidence/pius-x-six-document-wave2-20261023.v1.json
+
+- **Pascendi dominici gregis (Latin):** original §6 Modernist agnosticism and religious feeling plus additional original-language source witnesses for scholasticism, historical inquiry, seminary oversight and bishops' supervision of writings.
+- **Acerbo nimis (Latin):** children, first Communion preparation, religious instruction in secular schools, adult catechesis beyond the homily, accessible expression, and the four-/five-year Roman Catechism subject cycle.
+- **E supremi (Latin):** restoring society in Christ, charity and mildness toward those in error, perseverance and hope.
+- **Il fermo proposito (Italian):** ecclesiastical oversight of Catholic action alongside appropriate temporal organizational freedom, and the material/moral needs of disadvantaged people.
+- **Tribus circiter (Latin):** unauthorized Mariavite association, explicitly praiseworthy devotional practices when properly observed, false revelations and legitimate episcopal discipline. This must never become a blanket judgement of later groups.
+- **Haerent animo (Latin):** priests' example, meditation on Christ, spiritual reading, personal penance and the spiritual gift desired at the Pope's priestly jubilee. Ancient scriptural or patristic excerpts cited by Pius X are not represented as papal autobiographical testimony.
+
+**Source-acquisition volume:** **35** additional short original-language Vatican excerpts, mapped to **51** existing bilingual dialogue node IDs in **25** existing subjects. Original P6 source-owner policy identifies **four** of those subjects as `partial` and forbids papal-persona inference from them; the five associated node proposals were explicitly held (SPX-EXP-014, SPX-EXP-015, SPX-EXP-022 twice, SPX-EXP-044). **46** narrower subject/node candidate mappings across **21** other existing subjects were admitted to the **research-only** source gate. Thus the full private gate now covers **33 distinct source-owner subjects / 82 P6 node IDs** (previous 36 + new 46). **341** existing nodes remain without such a candidate original-text mapping. In total the research evidence layers record **102** source excerpts (23 original + 41 subsequent + 3 music additions + 35 six-document additions).
+
+This is **a research eligibility gate, not authentication**. Each allowed node receives only its specific original excerpt, narrow English explanatory claim and textual attribution. Original full P6 EN/FR replies are never used as model evidence. P6 `partial` subjects cannot be admitted, however plausible the quote. The five held nodes stay in the discovery register for research but are not passed to the model.
+
+The original Latin/Italian source documents were inspected directly at Vatican URLs in the batch record. This is *excerpt-level* inspection, not a line-by-line collation of all six full texts or a certification of the English/French answers. Embedded quotations from the Scriptures or an earlier Pope require speaker attribution at final source-verification gate. Modern personal canonical rulings, claims about live persons, disputed ecclesiastical practice and today's liturgical obligations remain out of scope unless separately attested.
+
+CI checks all 51 node-ID research decisions, with 46 candidate admissions and five immutable P6 partial holds, all 35 added excerpt records, full research source grouping and the original 106/423 P6 structure. The aggregate coverage report reads the actual source-only gate rather than reporting the obsolete 14/36-node counts.
+
+**Next substantive evidence batch:** address the 108 currently unmapped nodes in the original 195-node twelve-document discovery population, starting with uncovered full-papal subjects and keeping historical counterexamples, personal judgments and P6 `partial` cases separate. No other source master, replica dialogue system or publication release is created.
