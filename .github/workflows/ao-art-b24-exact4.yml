@@ -42,6 +42,11 @@ jobs:
           path: artifacts/b24-exact4/
           retention-days: 7
           if-no-files-found: warn
+      - name: P0 gate - archive unchanged acquisition files in an unpublished GitHub Release
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python scripts/research/sacred_art_release_archive_gate.py --wave b24exact4 --source-dir artifacts/b24-exact4
       - name: Commit original licence and photo-hash audit
         if: success()
         run: |
