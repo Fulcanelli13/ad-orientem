@@ -35,3 +35,7 @@ jobs:
         run: |
           node --check tests/customs-weiser-readiness-pages.mjs
           node tests/customs-weiser-readiness-pages.mjs
+      - name: Verify original Pitrè 1900 recovered-OCR staging and zero promotion
+        run: |
+          node --check tests/customs-pitre-1900-new-ocr-stage01.mjs
+          node tests/customs-pitre-1900-new-ocr-stage01.mjs
