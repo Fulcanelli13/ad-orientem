@@ -8,6 +8,8 @@ permissions:
   contents: write
 jobs:
   ten-cma:
+    # Historical acquisition: avoid re-downloading originals merely because the protective workflow was merged.
+    if: github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
