@@ -60,9 +60,9 @@ const mockModel=async(purpose,messages)=>{
  if(purpose==='compose'){
   const r=questions.get(data.language+'|'+data.question);
   if(!r)throw new Error('A source-only mock has no approved review question');
-  return {mode:'answer',text:r.replySpecimen[data.language],evidenceIds:[data.evidence[0].id],expression:'explaining'};
+  return {mode:'answer',text:r.replySpecimen[data.language],evidenceIds:[data.evidence[0].id],witnessIds:r.evidenceIds,expression:'explaining'};
  }
- return {supported:true,allClaimsSupported:true,ids:data.candidate.ids};
+ return {supported:true,allClaimsSupported:true,ids:data.candidate.ids,witnessIds:data.candidate.witnessIds};
 };
 for(const r of json.cases)for(const lang of ['en','fr']){
  const input={chapterId:r.chapterId,nodeId:r.nodeId,language:lang,question:r.question[lang]};
@@ -72,12 +72,59 @@ for(const r of json.cases)for(const lang of ['en','fr']){
  assert.equal(response.publishingApproved,false);
  assert.equal(response.originalTextCollated,false);
  assert.deepEqual(response.evidence.map(e=>e.id),[r.nodeId]);
- // The reply API returns node-level locators; witness-level claims are audited above
- // and must not be represented as full papal-word or translation certification.
+ assert.deepEqual(response.claimWitnesses.map(w=>w.id),r.evidenceIds);
+ assert.equal(response.claimWitnessStatus,'EXACT_ORIGINAL_WITNESS_IDS_MATCHED_TO_NODE_NOT_CERTIFIED');
+ assert(response.claimWitnesses.every(w=>w.sourceUrl.startsWith('https://www.vatican.va/')&&w.speaker&&w.locus));
+ // Source-node and exact excerpt IDs are separately linked here; neither is
+ // a translation, period-voice or complete doctrinal-answer certification.
  assert(response.label.includes('NOT AN AUTHENTIC ST PIUS X QUOTATION'));
 }
 assert.equal(callCount.compose,22);
 assert.equal(callCount.verify,22);
+// The composer must reject an invented original-language witness ID before
+// any verifier call and reject a verifier that refuses to affirm a real ID.
+const first=json.cases[0],request={
+ chapterId:first.chapterId,nodeId:first.nodeId,language:'en',
+ question:first.question.en
+};
+let invalidVerifyCalls=0;
+const forge=async(purpose,messages)=>{
+ if(purpose==='verify'){invalidVerifyCalls++;return {supported:true,allClaimsSupported:true,ids:[],witnessIds:[]};}
+ const selected=JSON.parse(messages[1].content);
+ return {mode:'answer',text:first.replySpecimen.en,
+  evidenceIds:[selected.evidence[0].id],
+  witnessIds:['WITNESS_ID_NOT_IN_ORIGINAL_SOURCE'],expression:'thoughtful'};
+};
+const forged=await composeDraft(store,request,forge);
+assert.equal(forged.status,'held');
+assert.equal(forged.reason,'invalid_generated_witness_reference');
+assert.equal(invalidVerifyCalls,0);
+let refusedVerification=0;
+const disavow=async(purpose,messages)=>{
+ const selected=JSON.parse(messages[1].content);
+ if(purpose==='compose')return {mode:'answer',text:first.replySpecimen.en,
+  evidenceIds:[selected.evidence[0].id],witnessIds:first.evidenceIds,expression:'thoughtful'};
+ refusedVerification++;return {supported:true,allClaimsSupported:true,
+  ids:selected.candidate.ids,witnessIds:[]};
+};
+const unverified=await composeDraft(store,request,disavow);
+assert.equal(unverified.status,'held');
+assert.equal(unverified.reason,'unsupported_or_unverified_generated_claim');
+assert.equal(refusedVerification,1);
+// Older providers that cite only a canonical dialogue node continue to work,
+// but their returned evidence is explicitly weaker and never release-ready.
+const legacy=async(purpose,messages)=>{
+ const obj=JSON.parse(messages[1].content);
+ if(purpose==='compose')return {mode:'answer',text:first.replySpecimen.en,
+  evidenceIds:[obj.evidence[0].id],expression:'neutral'};
+ return {supported:true,allClaimsSupported:true,ids:obj.candidate.ids};
+};
+const legacyResult=await composeDraft(store,request,legacy);
+assert.equal(legacyResult.status,'draft');
+assert.equal(legacyResult.claimWitnessStatus,'LEGACY_CANONICAL_NODE_REFERENCE_ONLY');
+assert.deepEqual(legacyResult.claimWitnesses,[]);
+assert.equal(legacyResult.publishingApproved,false);
+
 for(const blocked of json.preflightHoldCases)for(const lang of ['en','fr']){
  const before=callCount.compose;
  const res=await composeDraft(store,{chapterId:blocked.chapterId,nodeId:blocked.nodeId,language:lang,question:blocked.question[lang]},mockModel);
