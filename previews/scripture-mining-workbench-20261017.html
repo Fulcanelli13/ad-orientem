@@ -445,9 +445,44 @@ async function showHistoriaMovement(){
     previous=p;rendered+=rows.length;
    }
    host.append(section);
+   // These source-backed after-selection trials already exist in the P3 master.
+   // Read exact witness text only when explicitly showing held research, with
+   // NO mutation to canonical beat.refs, the prior source-seam pointer, or the
+   // approved-passage contract. They do not close a main-reading omission.
+   const afterTrial=beat.afterSelectedReadthroughTrial;
+   if(!bridge&&showBridges&&afterTrial){
+    if(afterTrial.accepted!==false||afterTrial.publicationApproved!==false||
+       afterTrial.originalUnitRefsUnmodified!==true)
+     throw Error("Research trial erroneously promoted or source-changed: "+beat.id);
+    const compare=make("article",undefined,"proofSourceBridge");
+    compare.append(
+     make("div","Optional exact Scripture for editorial comparison · held, not included in main reading","caption"),
+     make("p",afterTrial.reason),
+     make("p","The main reading still omits this text; the following source seams and publication status remain unchanged.","proofGap")
+    );
+    for(const reference of afterTrial.refs){
+     const parsed=parseScriptureContext(reference);
+     if(!parsed)throw Error("Unparseable existing P3 source-trial coordinate: "+reference);
+     const p=parsed.passage;
+     const verses=await sharedWitnessLoader(edition,p.book,{fetcher:bridgeFetch});
+     if(token!==historiaProofToken)return;
+     const rows=verses.filter(v=>v.chapter===p.chapter&&v.verseStart>=p.verseStart&&v.verseStart<=p.verseEnd);
+     if(rows.length!==p.verseEnd-p.verseStart+1)throw Error("Unavailable exact research trial source: "+reference);
+     compare.append(make("div",reference+" · "+historiaEditionName(edition),"proofCitation"));
+     for(const v of rows){
+      const line=make("p",undefined,"proofVerse");
+      line.lang=edition==="crampon-1923"?"fr":"en";
+      line.append(make("span",v.chapter+":"+v.verseStart,"verse"),make("span",v.text));
+      compare.append(line);
+     }
+     // Count visible text, but preserve previous: this is not approved reading.
+     rendered+=rows.length;
+    }
+    host.append(compare);held++;
+   }
   }
   $("historiaProofStatus").textContent=rendered+" source verses displayed, "+
-    held+" proposed source bridge(s) visible · "+historiaEditionName(edition)+
+    held+" held source bridge(s)/trial(s) visible · "+historiaEditionName(edition)+
     " · Never approved; omissions and contextual text are signposted.";
  }catch(error){
   if(token===historiaProofToken)$("historiaProofStatus").textContent=
