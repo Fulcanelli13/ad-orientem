@@ -13,6 +13,7 @@ on:
       - tests/scripture-catena-first-pass.mjs
       - tests/scripture-catena-matthew-batch-one.mjs
       - tests/scripture-catena-mark-batch-one.mjs
+      - tests/scripture-catena-mark-original-works.mjs
       - tests/scripture-catena-matthew-batch-two.mjs
       - tests/scripture-catena-matthew-batch-two-reconciliation.mjs
       - tests/scripture-catena-matthew-batch-three.mjs
@@ -65,6 +66,8 @@ jobs:
         run: node tests/scripture-catena-nine-focus.mjs
       - name: Verify Mark first 300 source pointers
         run: node tests/scripture-catena-mark-batch-one.mjs
+      - name: Verify Mark original-work crosswalk without publication approval
+        run: node tests/scripture-catena-mark-original-works.mjs
       - name: Ensure generated index is up to date for PR
         run: |
           git diff --exit-code -- data/scripture/catena/research/full-corpus-pass-20261021/
