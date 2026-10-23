@@ -21,6 +21,37 @@ assert.equal(data.bilingualEditorialPairs,22);
 assert.equal(data.originalWitnessFragments,18);
 assert.equal(data.originalCorpusNodes,423);
 assert.equal(data.claimTraceUnits,23);
+assert.equal(data.sourceGateSize,144);
+assert(data.sourceDossierCount>75);
+assert.equal(data.sourceDossiers.length,data.sourceDossierCount);
+assert.equal(data.sourceDossierHeld.length,data.sourceDossierHeldCount);
+assert.equal(data.sourceDossierCount+data.sourceDossierHeldCount+data.cases.length,144);
+assert.equal(new Set(data.sourceDossiers.map(x=>x.nodeId)).size,data.sourceDossierCount);
+assert.equal(new Set(data.sourceDossiers.map(x=>x.chapterId)).size,data.sourceDossierChapterCount);
+const sourceWitnesses=new Set();
+for(const dossier of data.sourceDossiers){
+ const chapter=corpus.chapters.find(c=>c.id===dossier.chapterId);
+ const node=chapter?.nodes.find(n=>n.id===dossier.nodeId);
+ assert(chapter&&!chapter.partial&&chapter.sourceClass==='PAPAL_DOCUMENT_ADAPTATION');
+ assert(node);
+ assert.deepEqual(dossier.question,node.q);
+ assert.equal(dossier.answerApproved,false);
+ assert.equal(dossier.publicationApproved,false);
+ assert.equal(dossier.status,'ORIGINAL_EXCERPT_RESEARCH_ONLY_NO_EDITORIAL_ANSWER');
+ assert(dossier.originalWitnesses.length>0);
+ assert(!('reply' in dossier)&&!('answer' in dossier),
+  'Unreviewed full P6 answer was copied into source-only dossier');
+ for(const w of dossier.originalWitnesses){
+  assert(['la','it'].includes(w.originalLanguage));
+  assert(w.sourceUrl.startsWith('https://www.vatican.va/'));
+  assert(w.editorialResearchNoteEnglish.length>=4);
+  assert(w.originalText.length>=8);
+  assert.equal(w.answerCertified,false);
+  assert.equal(w.translationCertified,false);
+  sourceWitnesses.add(w.id);
+ }
+}
+assert.equal(sourceWitnesses.size,data.sourceDossierDistinctFragments);
 assert.equal(data.humanClaimCertifications,0);
 assert.equal(data.navigationAliasCount,32);
 assert.equal(data.navigationAliases.length,32);
@@ -190,9 +221,35 @@ try{
   await page.locator('#spxc-nav [data-spxc-open="SPX-EXP-001"]').first().click();
   assert.equal(await page.locator('#spxc-offline-replay').isVisible(),false);
   assert.equal(await page.locator('.spxc-free-ask').isVisible(),true);
+  // Explore a genuinely additional, non-pilot original-text dossier. The
+  // published P6 text remains in the original host, never used as evidence.
+  const dossier=data.sourceDossiers.find(x=>!data.cases.some(c=>c.chapterId===x.chapterId));
+  assert(dossier,'Expect source-only coverage outside the four dialogue pilots');
+  if(width===390)await page.locator('#spxc-menu').click();
+  await page.locator('#spxc-nav [data-spxc-open="'+dossier.chapterId+'"]').first().click();
+  assert.equal(await page.locator('#spxc-primary-source-dossier').isVisible(),true);
+  assert.equal(await page.locator('#spxc-offline-replay').isVisible(),false);
+  assert.equal(await page.locator('.spxc-free-ask').isVisible(),true);
+  const count=data.sourceDossiers.filter(x=>x.chapterId===dossier.chapterId).length;
+  assert.equal(await page.locator('.spxp29-source-question').count(),count);
+  assert.equal(await page.locator('#spxp29-content .spxp29-original').count(),0);
+  await page.locator('.spxp29-source-question').first().click();
+  const expected=data.sourceDossiers.find(x=>x.chapterId===dossier.chapterId);
+  assert.equal(await page.locator('#spxp29-content .spxp29-original').first().innerText(),
+   expected.originalWitnesses[0].originalText);
+  assert.match(await page.locator('#spxp29-content .spxp29-notice').innerText(),/Aucune réponse complète/);
+  assert.equal(await page.locator('#spxp29-content .spxm-draft').count(),0);
+  assert.equal(await page.locator('#spxp29-content a').first().getAttribute('href'),
+   expected.originalWitnesses[0].sourceUrl);
+  await page.locator('#spxc-lang').click();
+  assert.equal(await page.locator('html').getAttribute('lang'),'en');
+  assert.equal(await page.locator('#spxp29-content .spxp29-original').count(),0,
+   'Switching language invalidates selected excerpt view');
+  assert.equal(await page.locator('.spxp29-source-question').first().innerText(),
+   expected.question.en);
   assert.deepEqual(errors,[],'No inline script exceptions');
   assert.deepEqual(requests,[],'No external HTTP(S) network requests during offline replay');
   await page.close();
  }
 }finally{await browser.close();}
-console.log('PASS SPX_P28_CLAIM_SOURCE_UI: 23 provisional bilingual sentence traces, 32 navigation aliases + 11 reviewed question pairs,  one HTML, original 423 nodes, four papal chapters, 11 source-owned questions, 22 EN/FR responses, exact 18 Latin/Italian snippets, two viewport/language flows, no model or external requests');
+console.log('PASS SPX_P29_BROAD_SOURCE_DOSSIERS: source-only gate expansion,  23 provisional bilingual sentence traces, 32 navigation aliases + 11 reviewed question pairs,  one HTML, original 423 nodes, four papal chapters, 11 source-owned questions, 22 EN/FR responses, exact 18 Latin/Italian snippets, two viewport/language flows, no model or external requests');
