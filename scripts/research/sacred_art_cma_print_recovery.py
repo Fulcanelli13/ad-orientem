@@ -1,16 +1,21 @@
 #!/usr/bin/env python3
 """Research-only Cleveland CC0 source print derivative recovery; no publishing."""
-import csv, hashlib, json, pathlib, re, time, urllib.parse, urllib.request
+import argparse, csv, hashlib, json, pathlib, re, time, urllib.parse, urllib.request
 from datetime import datetime, timezone
 from urllib.error import HTTPError, URLError
 from PIL import Image, UnidentifiedImageError
 
-ROOT = pathlib.Path("artifacts/b21r2")
+PARSER=argparse.ArgumentParser()
+PARSER.add_argument("--manifest",default="data/research/sacred-art-b21r2-cleveland9.manifest.json")
+PARSER.add_argument("--output",default="artifacts/b21r2")
+ARGS=PARSER.parse_args()
+ROOT = pathlib.Path(ARGS.output)
 ROOT.mkdir(parents=True, exist_ok=True)
 IMAGES = ROOT / "images"
 IMAGES.mkdir(exist_ok=True)
-MANIFEST = pathlib.Path("data/research/sacred-art-b21r2-cleveland9.manifest.json")
-RECORDS = json.loads(MANIFEST.read_text(encoding="utf-8"))["records"]
+MANIFEST = pathlib.Path(ARGS.manifest)
+MANIFEST_DATA = json.loads(MANIFEST.read_text(encoding="utf-8"))
+RECORDS = MANIFEST_DATA["records"]
 HEADERS = ["asset_source_id", "record_id", "artwork_title", "artist", "source_url", "exact_accession_requested",
            "api_accession_returned", "share_license_status", "rights_gate", "acquisition_status", "image_tier",
            "image_url", "bytes_acquired", "sha256", "decoded_width", "decoded_height", "decoded_format",
@@ -85,7 +90,7 @@ for record in RECORDS:
             if not isinstance(pr,dict):pr={}
             # Original TIFF attempted only for the exact-subpart 404 repair; high-res museum
             # print JPEG is explicitly a derivative, never a substitute original master.
-            if record["planned_retrieval"]=="EXACT_ACCESSION_RECHECK":
+            if record["planned_retrieval"] in ("EXACT_ACCESSION_RECHECK","CMA_BUDGET_RETRY_ORIGINAL"):
                 u=full.get("url") or ""
                 if u:
                     try:
@@ -105,6 +110,6 @@ for record in RECORDS:
     with (ROOT/"Acquisition_results.csv").open("w",newline="",encoding="utf-8") as out:
         w=csv.DictWriter(out,fieldnames=HEADERS);w.writeheader();w.writerows(rows)
     print(sid,ent["acquisition_status"],ent["error"],flush=True)
-summary={"wave":"B21R2","records":len(RECORDS),"acquired_originals":sum(x["acquisition_status"]=="ACQUIRED_ORIGINAL_SHA256" for x in rows),"acquired_museum_print_derivatives":sum(x["acquisition_status"]=="ACQUIRED_PRINT_DERIVATIVE_SHA256" for x in rows),"rights_or_identity_exceptions":sum(x["acquisition_status"] not in ("ACQUIRED_ORIGINAL_SHA256","ACQUIRED_PRINT_DERIVATIVE_SHA256") for x in rows),"visual_qa_completed":0,"publication_approvals_created":0,"timestamp_utc":now()}
+summary={"wave":MANIFEST_DATA.get("wave","UNKNOWN"),"records":len(RECORDS),"acquired_originals":sum(x["acquisition_status"]=="ACQUIRED_ORIGINAL_SHA256" for x in rows),"acquired_museum_print_derivatives":sum(x["acquisition_status"]=="ACQUIRED_PRINT_DERIVATIVE_SHA256" for x in rows),"rights_or_identity_exceptions":sum(x["acquisition_status"] not in ("ACQUIRED_ORIGINAL_SHA256","ACQUIRED_PRINT_DERIVATIVE_SHA256") for x in rows),"visual_qa_completed":0,"publication_approvals_created":0,"timestamp_utc":now()}
 (ROOT/"Acquisition_summary.json").write_text(json.dumps(summary,indent=2),encoding="utf-8")
 print("SUMMARY",json.dumps(summary,sort_keys=True),flush=True)
