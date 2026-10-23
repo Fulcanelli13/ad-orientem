@@ -67,3 +67,37 @@ assert.equal(new Set(family.records.map(r => r.id)).size,16);
 assert.equal(new Set(family.records.map(r => r.grouping_proposal)).size,14);
 assert.equal(family.summary.book_fully_mined, false);
 console.log('Customs comprehensive census: 568/568 source parity, 308 provisional groups, 309 mentions grouped, 16 Family-book preview mentions, zero publications — PASS');
+
+
+const family1956 = load('data/customs/master/weiser-family-1956-fullscan-source-pass01.v1.json');
+const familyBridge = load('data/customs/master/weiser-two-book-relationship-review.v1.json');
+assert.equal(family1956.records.length, 111);
+assert.equal(new Set(family1956.records.map(r => r.observation_id)).size, 111);
+assert.equal(family1956.summary.claimed_full_text_exhaustive, false);
+const previewIds = new Set(family.records.map(r => r.id));
+for (const r of family1956.records) {
+  assert.ok(r.source_locator.original_printed_page >= 1);
+  assert.ok(r.source_locator.pdf_page_index >= 1);
+  assert.ok(r.source_locator.extracted_line_start >= 1);
+  assert.ok(r.source_locator.extracted_line_end >= r.source_locator.extracted_line_start);
+  assert.equal(r.publication, 'RESEARCH_ONLY');
+  if (r.prior_preview_id) assert.ok(previewIds.has(r.prior_preview_id));
+}
+const fullIds = new Set(family1956.records.map(r => r.observation_id));
+assert.equal(familyBridge.records.length, 111);
+assert.deepEqual(new Set(familyBridge.records.map(r => r.family_observation_id)), fullIds);
+assert.equal(new Set(familyBridge.records.map(r => r.family_observation_id)).size, 111);
+const priorSourceIds = new Set(source.records.map(r => r.id));
+const masterSet = new Set(master.records.map(r => r.id));
+for (const r of familyBridge.records) {
+  assert.equal(r.identity_decision, 'UNRESOLVED_NOT_NEW_CUSTOM_CONFIRMED');
+  assert.equal(r.publication_state, 'RESEARCH_ONLY');
+  for (const link of r.proposed_handbook_observation_relations) assert.ok(priorSourceIds.has(link.observation_id));
+  for (const link of r.proposed_master_identity_relations) assert.ok(masterSet.has(link.identity_id));
+  if (r.earlier_preview_overlap_id) assert.ok(previewIds.has(r.earlier_preview_overlap_id));
+}
+assert.equal(familyBridge.records.filter(r => r.proposed_handbook_observation_relations.length).length, 54);
+assert.equal(familyBridge.records.filter(r => r.proposed_master_identity_relations.length).length, 16);
+assert.equal(familyBridge.records.filter(r => !r.proposed_handbook_observation_relations.length && !r.proposed_master_identity_relations.length).length, 56);
+assert.equal(familyBridge.records.filter(r => !!r.earlier_preview_overlap_id).length, 15);
+console.log('Weiser family 1956 direct scan + cross-book candidate relationships — PASS');
