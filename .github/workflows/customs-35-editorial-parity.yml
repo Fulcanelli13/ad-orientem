@@ -4,7 +4,6 @@ on:
     types: [opened, synchronize, reopened, ready_for_review]
     paths:
       - "src/calendar/customs-read-model.js"
-      - "src/calendar/customs-extra-articles.js"
       - "src/calendar/calendar-runtime.js"
       - "data/customs/source-registry.v1.json"
       - "data/customs/customs-historical-folios.v1.json"
