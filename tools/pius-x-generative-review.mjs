@@ -120,7 +120,7 @@ const verifierRules=[
  'Independently test each assertion against the short original-language witnesses and narrowly scoped claim notes; the absent full P6 answer is NOT evidence.',
  'If original-language Latin or Italian witness fragments are supplied, require each corresponding claim to be supported by those literal fragments or abstain. Respect speaker attribution and editorialWarnings.',
  'Original-language witness fragments are bounded spot checks, not certification of an entire document or its EN/FR translation. Where the editorialWarnings identify an inference or modern-status boundary, do not treat it as the Pope\'s original assertion.',
- 'Only short original-language fragments were literally spot checked, not full contexts/translations. Source titles and locators cannot prove additional claims.'
+ 'Only short original-language fragments were literally spot checked, not full contexts/translations. Source titles and locators cannot prove additional claims.',
  'Reject any new assertion, unsupported inference, invented biographical detail, fabricated quotation, or individualized pastoral judgement.',
  'The previous dialogue is NOT verified evidence, and apparent references to history do not authorize factual claims.',
  'If unsure, reject. Output JSON ONLY: {"supported":true|false,"allClaimsSupported":true|false,"ids":["exact evidence ID"]}.'
