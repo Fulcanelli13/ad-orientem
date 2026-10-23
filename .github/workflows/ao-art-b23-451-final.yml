@@ -1,0 +1,39 @@
+name: B23 canonical 451-artwork final gap reconciliation
+on:
+  push:
+    branches: [research/b19-original-image-acquisition-probe-20261023]
+    paths: [.github/workflows/ao-art-b23-451-final.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  reconcile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify exact source-photo hashes and four catalogue joins
+        run: |
+          python -m py_compile scripts/research/sacred_art_catalogue_after_b23.py
+          python scripts/research/sacred_art_catalogue_after_b23.py
+      - name: Commit final 43 image-less source queue, preserve all frozen decisions
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/research/sacred-art-catalogue451-after-b23.csv data/research/sacred-art-missing43-after-b23.csv data/research/sacred-art-catalogue451-after-b23.summary.json
+          git commit -m 'research: 340 of 383 active artworks image-covered, 43 P2-only missing'
+          git fetch origin research/b19-original-image-acquisition-probe-20261023
+          git rebase origin/research/b19-original-image-acquisition-probe-20261023
+          git push origin HEAD:research/b19-original-image-acquisition-probe-20261023
+      - name: Upload Excel-compatible 451 crosswalk and new 43-source queue
+        uses: actions/upload-artifact@v4
+        with:
+          name: ao-art-b23-canonical-451-43-gap-reconciliation
+          path: |
+            data/research/sacred-art-catalogue451-after-b23.csv
+            data/research/sacred-art-missing43-after-b23.csv
+            data/research/sacred-art-catalogue451-after-b23.summary.json
+          retention-days: 60
