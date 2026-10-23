@@ -94,7 +94,7 @@
       "SACRED_DRAMA_STAGE": 16,
       "SACRED_DRAMA_SYMBOLIC_OBJECT": 2,
       "SACRED_DRAMA_ACT_SEQUENCE": 2,
-      "PUBLIC_LITURGY_CONTEXT": 4,
+      "PUBLIC_LITURGY_CONTEXT": 7,
       "SACRED_DRAMA_CEREMONIAL_ENTRY": 3,
       "SACRED_DRAMA_PROCESSION": 8,
       "SACRED_DRAMA_SOUND": 1,
@@ -111,10 +111,25 @@
       "CHILD_TRANSMISSION": 1,
       "CIVIC_FESTIVAL_ORGANIZATION": 1,
       "VERA_CRUZ_DEVOTIONAL_RITE_REQUIRES_CHECK": 1,
-      "WINE_HORSES_CIVIC_FESTIVAL": 4,
+      "WINE_HORSES_CIVIC_FESTIVAL": 8,
       "HISTORICAL_ORIGIN_UNVERIFIED": 2,
       "FESTIVAL_VOTIVE_SOCIAL": 1,
-      "FESTIVAL_COSTUME": 1
+      "FESTIVAL_COSTUME": 1,
+      "MAY1_FLORAL_OFFERING_NOT_YET_BLESSED": 1,
+      "CIVIC_MUSIC": 1,
+      "WINE_HORSES_EMBROIDERY": 2,
+      "MATERIAL_PREPARATION": 1,
+      "FESTIVAL_SIGNAL": 1,
+      "WINE_AND_FLOWERS_RITE_AUTHORITY_NOT_VERIFIED": 4,
+      "VERA_CRUZ_PROCESSION": 2,
+      "CIVIC_ESCORT_DISTINCT_FROM_RELIGIOUS_RITE": 1,
+      "CHILD_FESTIVAL_TRANSMISSION": 1,
+      "HISTORICAL_ORIGIN_CLAIM_NOT_ARCHIVE_CHECKED": 1,
+      "AGRICULTURAL_BLESSING_AUTHORITY_UNVERIFIED": 1,
+      "SOCIAL_GIFT_CROSS_NOT_ASSUMED_RITUAL": 1,
+      "HISTORICAL_GIFT_EVIDENCE_NEEDS_ARCHIVE": 1,
+      "JUBILEE_PILGRIMAGE_HISTORY_NOT_DOCUMENT_CHECKED": 1,
+      "INDULGENCE_HISTORY_REQUIRES_PRIMARY_TEXT": 1
     },
     "verified_distinct_new_customs": 0,
     "independent_primary_archival_witnesses_certified": 0,
@@ -2296,5 +2311,11 @@
       "custom_identity_certified": false,
       "app_publication": false
     }
+  ],
+  "critical_notes": [
+    "Data consistency: classification counts recomputed after supplementary Caravaca municipal passage.",
+    "Elche religious theatre scenes are NOT themselves sacramental Catholic rites; simulated baptism, bodily Assumption, coronation and staged funerary gestures remain under one performance complex.",
+    "Berga source observations tagged EXPLICIT_2026_PROGRAM are year-specific, not timeless liturgical dates or universal prescriptions.",
+    "Caravaca 2026 and later historic ceremonial descriptions do not prove the minister's 1962 Roman Ritual authorization, the truth of locust-clearing miracles, or all reported papal privileges."
   ]
 }
