@@ -372,3 +372,62 @@ assert.equal(researchCatalogue.summary.source_review.shared_owner_or_family_sour
 assert.equal(all371.summary.certified_distinct_new_practices,0);
 assert.equal(all340.summary.automatic_merges,0);
 console.log('Independent customs identity graph — 340 nested details, 371 group rows, 111 family observations, 53 geographic families, 54 non-merging co-associations — PASS');
+
+
+const actionReview53 = load('data/customs/master/53-no-owner-customs-action-review.v1.json');
+const pairReview54 = load('data/customs/master/54-coassociation-action-level-relationship-review.v1.json');
+assert.equal(actionReview53.records.length,53);
+assert.equal(new Set(actionReview53.records.map(x => x.source_detail_id)).size,53);
+assert.equal(actionReview53.new_provisional_groups.length,37);
+assert.equal(new Set(actionReview53.new_provisional_groups.map(x=>x.provisional_group_id)).size,37);
+assert.equal(actionReview53.summary.new_provisional_action_group_labels,37);
+assert.equal(actionReview53.summary.input_unassigned_detail_records,53);
+const noCandidates = new Set(
+ load('data/customs/master/all-340-granular-to-practice-reconciliation.v1.json').records
+ .filter(r=>!r.candidate_provisional_group_ids.length&&!r.candidate_working_master_ids.length)
+ .map(r=>r.detail_id)
+);
+assert.equal(noCandidates.size,53);
+assert.deepEqual(new Set(actionReview53.records.map(x=>x.source_detail_id)),noCandidates);
+const knownDetailIds = new Set(researchCatalogue.handbook_granular_source_details.map(x=>x.id));
+const previousGroupIds = new Set([
+ ...researchCatalogue.provisional_handbook_groups.map(x=>x.id),
+ ...researchCatalogue.provisional_historical_groups.map(x=>x.id),
+ ...researchCatalogue.provisional_unindexed_practice_leads.map(x=>x.id)
+]);
+for(const r of actionReview53.records) {
+  assert.ok(knownDetailIds.has(r.source_detail_id));
+  assert.equal(r.practice_identity_verified,false);
+  assert.equal(r.publication_state,'RESEARCH_ONLY');
+  for(const id of r.related_previous_group_candidates) assert.ok(previousGroupIds.has(id));
+  for(const id of r.proposed_provisional_group_ids)
+    assert.ok(actionReview53.new_provisional_groups.some(g=>g.provisional_group_id===id));
+}
+for(const r of actionReview53.new_provisional_groups) {
+  assert.ok(!previousGroupIds.has(r.provisional_group_id));
+  assert.equal(r.distinctness_verified,false);
+  assert.equal(r.publication_state,'RESEARCH_ONLY');
+  for(const id of r.source_detail_ids) assert.ok(noCandidates.has(id));
+}
+assert.equal(researchCatalogue.provisional_unassigned_action_leads.length,37);
+assert.equal(researchCatalogue.summary.identity_working_rows.provisional_after_53_no_owner_action_review,408);
+assert.equal(researchCatalogue.summary.source_review.all_53_unassigned_detail_cases_action_classified,53);
+assert.equal(researchCatalogue.summary.source_observations.all_book_research_rows_including_nested_details,1025);
+assert.equal(pairReview54.records.length,54);
+assert.equal(new Set(pairReview54.records.map(r=>r.pair_id)).size,54);
+assert.equal(pairReview54.summary.final_mergers,0);
+assert.equal(pairReview54.summary.source_verified_sameness,0);
+const priorPairs = load('data/customs/master/54-coassociation-pairs-nonmerger-review.v1.json').pair_candidates;
+assert.deepEqual(new Set(priorPairs.map(p=>p.relation_review_id)),new Set(pairReview54.records.map(p=>p.pair_id)));
+for(const r of pairReview54.records){
+  assert.ok(previousGroupIds.has(r.group_a));
+  assert.ok(previousGroupIds.has(r.group_b));
+  assert.equal(r.equivalence_certified,false);
+  assert.equal(r.automatic_merge_allowed,false);
+  assert.equal(r.publication_state,'RESEARCH_ONLY');
+}
+assert.equal(pairReview54.summary.plausibly_related_action_variants,7);
+assert.equal(pairReview54.summary.clearly_different_reported_actions,25);
+assert.equal(pairReview54.summary.remaining_context_related,22);
+assert.equal(researchCatalogue.summary.source_review.coassociation_pair_label_relationships_reviewed,54);
+console.log('53 orphan details adjudicated; 37 newly staged action groups (408 provisional total); 54 pair comparisons, zero automatic merges — PASS');
