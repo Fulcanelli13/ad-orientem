@@ -1,0 +1,55 @@
+name: B26 bulk 30-art museum accession Commons candidate research
+on:
+  push:
+    branches: [research/b19-original-image-acquisition-probe-20261023]
+    paths: [.github/workflows/ao-art-b26-30-accession.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: ao-b26-file-metadata-30-source-pacer
+  cancel-in-progress: false
+jobs:
+  provenance-research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify exactly 30 P2 artwork records; no reintroducing rejected images
+        run: |
+          python -m py_compile scripts/research/sacred_art_b26_accession30.py
+          python - <<'PY'
+          import csv
+          with open('data/research/sacred-art-missing30-after-b25.csv',encoding='utf-8',newline='') as f:r=list(csv.DictReader(f))
+          assert len(r)==30 and all(x['priority']=='P2' for x in r)
+          assert len({x['artwork_id'] for x in r})==30
+          PY
+      - name: Search original file-namespace references by inventory/accession
+        run: python scripts/research/sacred_art_b26_accession30.py
+      - name: Preserve source-level candidate metadata without image downloading
+        run: |
+          cp artifacts/b26-targeted30/Accession_file_candidates.csv data/research/sacred-art-b26-accession30-candidates.csv
+          cp artifacts/b26-targeted30/Accession_search30.csv data/research/sacred-art-b26-accession30-screen.csv
+          cp artifacts/b26-targeted30/Accession_search_summary.json data/research/sacred-art-b26-accession30.summary.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/research/sacred-art-b26-accession30*
+          git commit -m 'research: 30 P2 art candidates searched by exact institutional inventory, no new approval'
+          for i in 1 2 3; do
+            git fetch origin research/b19-original-image-acquisition-probe-20261023
+            git rebase origin/research/b19-original-image-acquisition-probe-20261023
+            git push origin HEAD:research/b19-original-image-acquisition-probe-20261023 && exit 0
+            sleep 4
+          done
+          exit 1
+      - name: Upload provenance evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ao-b26-30-inventory-source-identity-screen
+          path: artifacts/b26-targeted30/
+          retention-days: 45
+          if-no-files-found: warn
