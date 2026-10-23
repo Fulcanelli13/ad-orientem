@@ -1,0 +1,203 @@
+{
+  "schema": "AO_SACRED_GEOGRAPHY_P11_OSM_ADOPTION_REVIEW_V1",
+  "reviewed_at": "2026-10-24",
+  "owner_path": "data/geography/seed-registry.v1.json",
+  "source_main_blob_sha": "59532d32adbe2fa66fc822bce72cec257102ce5f",
+  "record_counts": {
+    "canonical_places": 347,
+    "site_georefs_upgraded": 4,
+    "new_places": 0,
+    "new_pins": 0
+  },
+  "data_release_boundary": "Existing map-enabled canonical Places only; geocoding update is site-footprint scope, no entrance or new publication approval.",
+  "osm_credit": "© OpenStreetMap contributors, ODbL 1.0",
+  "records": [
+    {
+      "place_id": "place:FR:basilique-saint-sernin-toulouse",
+      "place_name": "Basilique Saint-Sernin de Toulouse",
+      "action": "UPGRADE_EXISTING_SITE_GEOREF_ON_REVIEW_BRANCH",
+      "source_kind": "OSM_WAY_CHURCH_FOOTPRINT",
+      "site_scope": "Catholic basilica footprint",
+      "source_osm": "https://www.openstreetmap.org/way/260584755",
+      "secondary_evidence": "https://mapcarta.com/24949506",
+      "wikidata_crosscheck": "https://www.wikidata.org/wiki/Q1010268",
+      "wikidata_id": "Q1010268",
+      "old_geo": {
+        "lat": 43.608486,
+        "lng": 1.442125,
+        "precision": "site",
+        "geocoding_source": "OTHER",
+        "source_url": "https://www.wikidata.org/wiki/Q1010268",
+        "source_ref": "wikidata:Q1010268",
+        "attribution": "Wikidata contributors, CC0",
+        "matched_country_code": "FR",
+        "verified_at": "2026-10-09"
+      },
+      "new_geo": {
+        "lat": 43.60838,
+        "lng": 1.44188,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/260584755",
+        "source_ref": "osm:way:260584755",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "FR",
+        "verified_at": "2026-10-24"
+      },
+      "approximate_offset_m": 23,
+      "verified_at": "2026-10-24",
+      "limitations": [
+        "OSM-derived feature centroid rounded to five decimal places",
+        "Not a surveyed visitor entrance",
+        "Catholic building identity and historical claims are separate publication gates",
+        "Subject to PR CI and independent acceptance before merging"
+      ]
+    },
+    {
+      "place_id": "place:IT:santa-maria-maggiore-rome",
+      "place_name": "Basilica Papale di Santa Maria Maggiore",
+      "action": "UPGRADE_EXISTING_SITE_GEOREF_ON_REVIEW_BRANCH",
+      "source_kind": "OSM_WAY_CHURCH_FOOTPRINT",
+      "site_scope": "Papal basilica footprint",
+      "source_osm": "https://www.openstreetmap.org/way/131564482",
+      "secondary_evidence": "https://mapcarta.com/26253902",
+      "wikidata_crosscheck": "https://www.wikidata.org/wiki/Q186282",
+      "wikidata_id": "Q186282",
+      "old_geo": {
+        "lat": 41.8975,
+        "lng": 12.498611,
+        "precision": "site",
+        "geocoding_source": "OTHER",
+        "source_url": "https://www.wikidata.org/wiki/Q186282",
+        "source_ref": "wikidata:Q186282",
+        "matched_country_code": "IT",
+        "verified_at": "2026-10-09"
+      },
+      "new_geo": {
+        "lat": 41.89761,
+        "lng": 12.49846,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/131564482",
+        "source_ref": "osm:way:131564482",
+        "matched_country_code": "IT",
+        "verified_at": "2026-10-24",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0"
+      },
+      "approximate_offset_m": 17,
+      "verified_at": "2026-10-24",
+      "limitations": [
+        "OSM-derived feature centroid rounded to five decimal places",
+        "Not a surveyed visitor entrance",
+        "Catholic building identity and historical claims are separate publication gates",
+        "Subject to PR CI and independent acceptance before merging"
+      ]
+    },
+    {
+      "place_id": "place:IT:chiesa-gesu-rome",
+      "place_name": "Chiesa del Gesù, Rome",
+      "action": "UPGRADE_EXISTING_SITE_GEOREF_ON_REVIEW_BRANCH",
+      "source_kind": "OSM_WAY_CHURCH_FOOTPRINT",
+      "site_scope": "Jesuit mother church footprint",
+      "source_osm": "https://www.openstreetmap.org/way/25610962",
+      "secondary_evidence": "https://mapcarta.com/28375974",
+      "wikidata_crosscheck": "https://www.wikidata.org/wiki/Q719794",
+      "wikidata_id": "Q719794",
+      "old_geo": {
+        "lat": 41.895773,
+        "lng": 12.479007,
+        "precision": "site",
+        "geocoding_source": "OTHER",
+        "source_url": "https://turismoroma.it/en/places/church-jesus",
+        "source_ref": "turismoroma:gesu",
+        "attribution": "Public heritage/location data; source as linked",
+        "matched_country_code": "IT",
+        "verified_at": "2026-10-09"
+      },
+      "new_geo": {
+        "lat": 41.89592,
+        "lng": 12.47981,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/25610962",
+        "source_ref": "osm:way:25610962",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0",
+        "matched_country_code": "IT",
+        "verified_at": "2026-10-24"
+      },
+      "approximate_offset_m": 68,
+      "verified_at": "2026-10-24",
+      "limitations": [
+        "OSM-derived feature centroid rounded to five decimal places",
+        "Not a surveyed visitor entrance",
+        "Catholic building identity and historical claims are separate publication gates",
+        "Subject to PR CI and independent acceptance before merging"
+      ]
+    },
+    {
+      "place_id": "place:IT:pompei-rosary-shrine",
+      "place_name": "Pontificio Santuario della Beata Maria Vergine del Santo Rosario di Pompei",
+      "action": "UPGRADE_EXISTING_SITE_GEOREF_ON_REVIEW_BRANCH",
+      "source_kind": "OSM_WAY_CHURCH_FOOTPRINT",
+      "site_scope": "Roman Catholic shrine basilica footprint",
+      "source_osm": "https://www.openstreetmap.org/way/28778029",
+      "secondary_evidence": "https://mapcarta.com/W28778029",
+      "wikidata_crosscheck": "https://www.wikidata.org/wiki/Q980745",
+      "wikidata_id": "Q980745",
+      "old_geo": {
+        "lat": 40.75,
+        "lng": 14.500556,
+        "precision": "site",
+        "geocoding_source": "OTHER",
+        "source_url": "https://www.wikidata.org/wiki/Q980745",
+        "source_ref": "wikidata:Q980745",
+        "matched_country_code": "IT",
+        "verified_at": "2026-10-09"
+      },
+      "new_geo": {
+        "lat": 40.75003,
+        "lng": 14.50055,
+        "precision": "site",
+        "geocoding_source": "OSM",
+        "source_url": "https://www.openstreetmap.org/way/28778029",
+        "source_ref": "osm:way:28778029",
+        "matched_country_code": "IT",
+        "verified_at": "2026-10-24",
+        "attribution": "© OpenStreetMap contributors, ODbL 1.0"
+      },
+      "approximate_offset_m": 3,
+      "verified_at": "2026-10-24",
+      "limitations": [
+        "OSM-derived feature centroid rounded to five decimal places",
+        "Not a surveyed visitor entrance",
+        "Catholic building identity and historical claims are separate publication gates",
+        "Subject to PR CI and independent acceptance before merging"
+      ]
+    }
+  ],
+  "held_components": [
+    {
+      "place_id": "place:ES:santa-maria-de-montserrat-abbey",
+      "candidate_osm": "way/77162089",
+      "reason": "Basilica component not equal to entire abbey."
+    },
+    {
+      "place_id": "place:GB:walsingham-catholic-shrine",
+      "candidate_osm": "way/387358850",
+      "reason": "Slipper Chapel component not automatically whole sanctuary."
+    },
+    {
+      "place_id": "place:PS:holy-sepulchre-jerusalem",
+      "candidate_osm": "way/1022672085",
+      "reason": "Shared-custody basilica and internal chapels need differentiated navigation; retain old complex anchor."
+    },
+    {
+      "place_id": "place:PS:nativity-bethlehem",
+      "candidate_osm": "way/550081368",
+      "reason": "Shared-custody complex and adjacent St Catherine Catholic church must remain distinct."
+    }
+  ],
+  "remaining_weak_geocodes_not_changed": 6,
+  "open_source_exceptions_unmodified": 23,
+  "photography": "Not a media release; 10 previously approved photos remain approved and 42 without approvals do not prevent text/map presentation."
+}
