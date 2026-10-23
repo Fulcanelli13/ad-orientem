@@ -444,7 +444,7 @@ assert.equal(allMcLReferences.length,70);
 assert.deepEqual(new Set(allMcLReferences),mclIds);
 assert.equal(mcloughlinGroups.summary.certified_distinct_new_catholic_customs,0);
 assert.equal(mcloughlinGroups.summary.publication_changes,0);
-assert.equal(count.source_observations.total_source_detail_rows_including_external,1926);
+assert.equal(count.source_observations.total_source_detail_rows_including_external,2051);
 assert.equal(count.source_observations.all_book_research_rows_including_nested_details,1025);
 assert.equal(researchCatalogue.external_source_observations_mcloughlin.length,70);
 assert.equal(researchCatalogue.external_source_action_families_mcloughlin.length,26);
@@ -545,7 +545,7 @@ for(const r of ccEx.records) {
 assert.equal(researchCatalogue.external_source_observations_catholicculture_excerpts.length,132);
 assert.deepEqual(new Set(researchCatalogue.external_source_observations_catholicculture_excerpts.map(r=>r.id)),ccIds);
 assert.equal(count.source_observations.catholicculture_trapp_berger_newland_excerpt_source_actions,132);
-assert.equal(count.source_observations.total_source_detail_rows_including_external,1926);
+assert.equal(count.source_observations.total_source_detail_rows_including_external,2051);
 assert.equal(count.identity_working_rows.provisional_after_53_no_owner_action_review,408);
 assert.equal(count.identity_working_rows.final_uniquely_verified_customs_added,0);
 assert.equal(researchCatalogue.summary.no_new_app_publications,true);
@@ -608,7 +608,7 @@ for(const r of muellerKelly.records){
 assert.equal(researchCatalogue.external_source_observations_mueller_kelly.length,204);
 assert.deepEqual(new Set(researchCatalogue.external_source_observations_mueller_kelly.map(x=>x.id)),mkIds);
 assert.equal(count.source_observations.mueller_kelly_ewtn_source_action_observations,204);
-assert.equal(count.source_observations.total_source_detail_rows_including_external,1926);
+assert.equal(count.source_observations.total_source_detail_rows_including_external,2051);
 assert.equal(count.identity_working_rows.provisional_after_53_no_owner_action_review,408);
 assert.equal(count.identity_working_rows.final_uniquely_verified_customs_added,0);
 assert.equal(researchCatalogue.summary.no_new_app_publications,true);
@@ -697,7 +697,7 @@ for(const r of muellerCross.records){
  }
 }
 assert.equal(coLocated,95);
-assert.equal(count.source_observations.total_source_detail_rows_including_external,1926);
+assert.equal(count.source_observations.total_source_detail_rows_including_external,2051);
 assert.equal(count.source_observations.mueller_second_pass_detail_rows_not_added_to_source_total,100);
 assert.equal(count.source_review.mueller_secondary_exact_text_line_colocated,95);
 assert.equal(count.source_review.mueller_secondary_without_exact_line_owner,5);
@@ -791,7 +791,7 @@ assert.ok(chaneySections.size>=9);
 assert.equal(researchCatalogue.external_source_observations_chaney.length,170);
 assert.deepEqual(new Set(researchCatalogue.external_source_observations_chaney.map(r=>r.id)),chaneyIds);
 assert.equal(count.source_observations.chaney_1955_online_source_observations,170);
-assert.equal(count.source_observations.total_source_detail_rows_including_external,1926);
+assert.equal(count.source_observations.total_source_detail_rows_including_external,2051);
 assert.equal(count.source_observations.mueller_second_pass_detail_rows_not_added_to_source_total,100);
 assert.equal(count.identity_working_rows.provisional_after_53_no_owner_action_review,408);
 assert.equal(count.identity_working_rows.final_uniquely_verified_customs_added,0);
@@ -887,7 +887,7 @@ for(const row of chaneyManual24.records) {
  if(row.action_description_relationship==='DISTINCT_ACTION_FALSE_LEXICAL_MATCH')falseCandidates++;
 }
 assert.equal(falseCandidates,6);
-assert.equal(count.source_observations.total_source_detail_rows_including_external,1926);
+assert.equal(count.source_observations.total_source_detail_rows_including_external,2051);
 assert.equal(researchCatalogue.summary.no_new_app_publications,true);
 console.log('Chaney 24 source-description comparisons: 12 same action core, 6 false lexical matches, 0 verified source-independent identities, 0 merges — PASS');
 
@@ -941,8 +941,105 @@ for(const [source,expected] of [[frBreton,71],[frBasque,56]]){
 }
 assert.equal(count.source_observations.france_pci_breton_pardon_source_detail_rows,71);
 assert.equal(count.source_observations.france_pci_basque_besta_berri_source_detail_rows,56);
-assert.equal(count.source_observations.total_source_detail_rows_including_external,1926);
+assert.equal(count.source_observations.total_source_detail_rows_including_external,2051);
 assert.equal(count.identity_working_rows.provisional_after_53_no_owner_action_review,408);
 assert.equal(count.identity_working_rows.final_uniquely_verified_customs_added,0);
 assert.equal(researchCatalogue.summary.no_new_app_publications,true);
 console.log('French PCI regional: 71 Breton + 56 Basque source action/variant details, 1926 combined source/detail rows, zero new identities or app publications — PASS');
+
+
+// Domestic Lent–Easter family source intake: the 1992 editor's EWTN
+// excerpt and seven Hynes 1977 reprinted CatholicCulture pages. The 125
+// independently labelled source actions are neither historical custom
+// identities nor approval of liturgical or family blessing formulas.
+const lentEaster125=load('data/customs/master/lent-easter-wff92-hynes77-source-action-intake.v1.json');
+const lentEasterLookup=load('data/customs/master/lent-easter-125-source-candidate-lookup.v1.json');
+assert.equal(lentEaster125.records.length,125);
+assert.equal(lentEaster125.summary.wff_source_actions,68);
+assert.equal(lentEaster125.summary.hynes_source_actions,57);
+assert.equal(lentEaster125.summary.total_source_action_observations,125);
+assert.equal(lentEaster125.summary.unique_community_customs_certified,0);
+assert.equal(lentEaster125.summary.independent_corroborations_certified,0);
+assert.equal(lentEaster125.summary.app_publications,0);
+assert.deepEqual(lentEaster125.summary.claim_types,{
+ AUTHOR_SUGGESTION_OR_FAMILY_ADAPTATION:101,
+ HISTORICAL_OR_ORIGIN_REPORT_UNVERIFIED:9,
+ REPORTED_PRACTICE_NOT_INDEPENDENTLY_VERIFIED:10,
+ PUBLIC_LITURGICAL_CEREMONY_CONTEXT_NOT_FAMILY_CUSTOM:3,
+ FAMILY_PRAYER_FORMULA_AUTHORITY_UNVERIFIED:2
+});
+const leIds=new Set(lentEaster125.records.map(x=>x.observation_id));
+assert.equal(leIds.size,125);
+const wffRows=lentEaster125.records.filter(x=>x.observation_id.startsWith('WFF92-EWTN-'));
+const hRows=lentEaster125.records.filter(x=>x.observation_id.startsWith('HYN77-CC-'));
+assert.equal(wffRows.length,68);
+assert.equal(hRows.length,57);
+for(const [i,r] of wffRows.entries()){
+ assert.equal(r.observation_id,'WFF92-EWTN-'+String(i+1).padStart(3,'0'));
+ assert.equal(r.locator.online_url,'https://www.ewtn.com/catholicism/library/lent--easter-a-sourcebook-for-families-10456');
+ assert.ok(r.locator.web_line_start>=150&&r.locator.web_line_start<=374);
+}
+const hPages=new Set();
+for(const [i,r] of hRows.entries()){
+ assert.equal(r.observation_id,'HYN77-CC-'+String(i+1).padStart(3,'0'));
+ assert.ok(r.locator.web_line_start>=125&&r.locator.web_line_start<=148);
+ assert.equal(r.locator.online_url,'https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id='+r.locator.excerpt_activity_id);
+ hPages.add(r.locator.excerpt_activity_id);
+}
+assert.deepEqual(hPages,new Set([114,511,512,513,514,515,516]));
+for(const r of lentEaster125.records){
+ assert.ok(r.action_label && r.action_label.length>16);
+ assert.equal(r.locator.printed_page,'NOT_VERIFIED');
+ assert.equal(r.historical_authority,'NOT_INFERRED');
+ assert.equal(r.current_1962_rite_compatibility,'NOT_ASSESSED');
+ assert.equal(r.canonical_custom_owner,null);
+ assert.equal(r.app_publication,'NONE');
+}
+assert.equal(researchCatalogue.external_source_observations_wff_hynes.length,125);
+assert.deepEqual(new Set(researchCatalogue.external_source_observations_wff_hynes.map(r=>r.id)),leIds);
+assert.equal(count.source_observations.wff1992_lent_easter_excerpt_actions,68);
+assert.equal(count.source_observations.hynes1977_lent_holy_week_excerpt_actions,57);
+assert.equal(count.source_observations.total_source_detail_rows_including_external,2051);
+assert.equal(count.identity_working_rows.provisional_after_53_no_owner_action_review,408);
+assert.equal(count.identity_working_rows.final_uniquely_verified_customs_added,0);
+assert.equal(researchCatalogue.summary.no_new_app_publications,true);
+assert.equal(lentEasterLookup.rows.length,125);
+assert.deepEqual(new Set(lentEasterLookup.rows.map(x=>x.source_id)),leIds);
+assert.equal(lentEasterLookup.summary.owner_candidates_total,490);
+assert.equal(lentEasterLookup.summary.prior_source_observation_candidates_total,901);
+assert.equal(lentEasterLookup.summary.rows_with_owner_hints,50);
+assert.equal(lentEasterLookup.summary.rows_with_source_hints,84);
+assert.equal(lentEasterLookup.summary.rows_without_either,34);
+assert.equal(lentEasterLookup.summary.hint_links,372);
+assert.equal(lentEasterLookup.summary.certified_independent_witnesses,0);
+assert.equal(lentEasterLookup.summary.automated_merges,0);
+let leHints=0;
+const historicalTargets=new Set([
+ ...researchCatalogue.existing_master_identities,
+ ...researchCatalogue.provisional_handbook_groups,
+ ...researchCatalogue.provisional_historical_groups,
+ ...researchCatalogue.provisional_unindexed_practice_leads,
+ ...researchCatalogue.provisional_unassigned_action_leads,
+ ...researchCatalogue.external_source_action_families_mcloughlin,
+ ...researchCatalogue.external_source_observations_mcloughlin,
+ ...researchCatalogue.external_source_observations_stokes,
+ ...researchCatalogue.external_source_observations_catholicculture_excerpts,
+ ...researchCatalogue.external_source_observations_mueller_kelly,
+ ...researchCatalogue.external_source_observations_chaney,
+ ...researchCatalogue.external_source_observations_france_pci_brittany,
+ ...researchCatalogue.external_source_observations_france_pci_besta
+].map(r=>r.id));
+assert.equal(historicalTargets.size,1391);
+for(const r of lentEasterLookup.rows){
+ assert.equal(r.manual_identity_decision,'UNREVIEWED');
+ assert.equal(r.source_independence,'UNREVIEWED');
+ assert.equal(r.canonical_owner,null);
+ assert.equal(r.app_publication,false);
+ for(const c of [...r.owner_hints,...r.prior_source_hints]){
+  assert.ok(historicalTargets.has(c.target_id));
+  assert.equal(c.status,'LEXICAL_HINT_ONLY_NO_EQUIVALENCE_OR_INDEPENDENT_WITNESS');
+  leHints++;
+ }
+}
+assert.equal(leHints,372);
+console.log('Lent/Easter 125 sourced actions from 1992 and 1977 excerpts: complete 125/125, 372 search-only hints, 2,051 working rows, 0 verified custom identities and 0 publication — PASS');
