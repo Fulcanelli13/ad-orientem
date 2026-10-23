@@ -444,7 +444,7 @@ assert.equal(allMcLReferences.length,70);
 assert.deepEqual(new Set(allMcLReferences),mclIds);
 assert.equal(mcloughlinGroups.summary.certified_distinct_new_catholic_customs,0);
 assert.equal(mcloughlinGroups.summary.publication_changes,0);
-assert.equal(count.source_observations.total_source_detail_rows_including_external,2137);
+assert.equal(count.source_observations.total_source_detail_rows_including_external,2247);
 assert.equal(count.source_observations.all_book_research_rows_including_nested_details,1025);
 assert.equal(researchCatalogue.external_source_observations_mcloughlin.length,70);
 assert.equal(researchCatalogue.external_source_action_families_mcloughlin.length,26);
@@ -545,7 +545,7 @@ for(const r of ccEx.records) {
 assert.equal(researchCatalogue.external_source_observations_catholicculture_excerpts.length,132);
 assert.deepEqual(new Set(researchCatalogue.external_source_observations_catholicculture_excerpts.map(r=>r.id)),ccIds);
 assert.equal(count.source_observations.catholicculture_trapp_berger_newland_excerpt_source_actions,132);
-assert.equal(count.source_observations.total_source_detail_rows_including_external,2137);
+assert.equal(count.source_observations.total_source_detail_rows_including_external,2247);
 assert.equal(count.identity_working_rows.provisional_after_53_no_owner_action_review,408);
 assert.equal(count.identity_working_rows.final_uniquely_verified_customs_added,0);
 assert.equal(researchCatalogue.summary.no_new_app_publications,true);
@@ -608,7 +608,7 @@ for(const r of muellerKelly.records){
 assert.equal(researchCatalogue.external_source_observations_mueller_kelly.length,204);
 assert.deepEqual(new Set(researchCatalogue.external_source_observations_mueller_kelly.map(x=>x.id)),mkIds);
 assert.equal(count.source_observations.mueller_kelly_ewtn_source_action_observations,204);
-assert.equal(count.source_observations.total_source_detail_rows_including_external,2137);
+assert.equal(count.source_observations.total_source_detail_rows_including_external,2247);
 assert.equal(count.identity_working_rows.provisional_after_53_no_owner_action_review,408);
 assert.equal(count.identity_working_rows.final_uniquely_verified_customs_added,0);
 assert.equal(researchCatalogue.summary.no_new_app_publications,true);
@@ -697,7 +697,7 @@ for(const r of muellerCross.records){
  }
 }
 assert.equal(coLocated,95);
-assert.equal(count.source_observations.total_source_detail_rows_including_external,2137);
+assert.equal(count.source_observations.total_source_detail_rows_including_external,2247);
 assert.equal(count.source_observations.mueller_second_pass_detail_rows_not_added_to_source_total,100);
 assert.equal(count.source_review.mueller_secondary_exact_text_line_colocated,95);
 assert.equal(count.source_review.mueller_secondary_without_exact_line_owner,5);
@@ -791,7 +791,7 @@ assert.ok(chaneySections.size>=9);
 assert.equal(researchCatalogue.external_source_observations_chaney.length,170);
 assert.deepEqual(new Set(researchCatalogue.external_source_observations_chaney.map(r=>r.id)),chaneyIds);
 assert.equal(count.source_observations.chaney_1955_online_source_observations,170);
-assert.equal(count.source_observations.total_source_detail_rows_including_external,2137);
+assert.equal(count.source_observations.total_source_detail_rows_including_external,2247);
 assert.equal(count.source_observations.mueller_second_pass_detail_rows_not_added_to_source_total,100);
 assert.equal(count.identity_working_rows.provisional_after_53_no_owner_action_review,408);
 assert.equal(count.identity_working_rows.final_uniquely_verified_customs_added,0);
@@ -887,7 +887,7 @@ for(const row of chaneyManual24.records) {
  if(row.action_description_relationship==='DISTINCT_ACTION_FALSE_LEXICAL_MATCH')falseCandidates++;
 }
 assert.equal(falseCandidates,6);
-assert.equal(count.source_observations.total_source_detail_rows_including_external,2137);
+assert.equal(count.source_observations.total_source_detail_rows_including_external,2247);
 assert.equal(researchCatalogue.summary.no_new_app_publications,true);
 console.log('Chaney 24 source-description comparisons: 12 same action core, 6 false lexical matches, 0 verified source-independent identities, 0 merges — PASS');
 
@@ -941,7 +941,7 @@ for(const [source,expected] of [[frBreton,71],[frBasque,56]]){
 }
 assert.equal(count.source_observations.france_pci_breton_pardon_source_detail_rows,71);
 assert.equal(count.source_observations.france_pci_basque_besta_berri_source_detail_rows,56);
-assert.equal(count.source_observations.total_source_detail_rows_including_external,2137);
+assert.equal(count.source_observations.total_source_detail_rows_including_external,2247);
 assert.equal(count.identity_working_rows.provisional_after_53_no_owner_action_review,408);
 assert.equal(count.identity_working_rows.final_uniquely_verified_customs_added,0);
 assert.equal(researchCatalogue.summary.no_new_app_publications,true);
@@ -999,7 +999,7 @@ assert.equal(researchCatalogue.external_source_observations_wff_hynes.length,125
 assert.deepEqual(new Set(researchCatalogue.external_source_observations_wff_hynes.map(r=>r.id)),leIds);
 assert.equal(count.source_observations.wff1992_lent_easter_excerpt_actions,68);
 assert.equal(count.source_observations.hynes1977_lent_holy_week_excerpt_actions,57);
-assert.equal(count.source_observations.total_source_detail_rows_including_external,2137);
+assert.equal(count.source_observations.total_source_detail_rows_including_external,2247);
 assert.equal(count.identity_working_rows.provisional_after_53_no_owner_action_review,408);
 assert.equal(count.identity_working_rows.final_uniquely_verified_customs_added,0);
 assert.equal(researchCatalogue.summary.no_new_app_publications,true);
@@ -1076,8 +1076,73 @@ for(const [i,r] of frSanch23.records.entries()){
 }
 assert.deepEqual(frSanchKinds,frSanch23.summary.kinds);
 assert.equal(count.source_observations.france_sanch_2023_source_detail_rows,86);
-assert.equal(count.source_observations.total_source_detail_rows_including_external,2137);
+assert.equal(count.source_observations.total_source_detail_rows_including_external,2247);
 assert.equal(count.identity_working_rows.provisional_after_53_no_owner_action_review,408);
 assert.equal(count.identity_working_rows.final_uniquely_verified_customs_added,0);
 assert.equal(researchCatalogue.summary.no_new_app_publications,true);
 console.log('France La Sanch source PDF: 86 page/line-located details, 2137 aggregate source-detail rows, zero identity merges or app publication — PASS');
+
+
+// Italian UNESCO network comprises FOUR localized festival complexes, not
+// 110 newly discovered distinct or ecclesiastically approved Catholic customs.
+// Local foundation, municipal, practitioner and secondary research anchors
+// preserve page-specific actions, period scope and provenance.
+const itProcessions4=load('data/customs/master/italy-four-unesco-processional-complexes-local-detail-pass.v1.json');
+assert.equal(itProcessions4.records.length,110);
+assert.equal(itProcessions4.summary.observations,110);
+assert.deepEqual(itProcessions4.summary.by_region,{N:30,S:41,P:18,V:21});
+assert.equal(itProcessions4.summary.regional_complexes,4);
+assert.equal(itProcessions4.summary.independent_festival_complexes_on_UNESCO_list,4);
+assert.equal(itProcessions4.summary.distinct_new_catholic_custom_identities_certified,0);
+assert.equal(itProcessions4.summary.independent_archival_witnesses_verified,0);
+assert.equal(itProcessions4.summary.app_publications,0);
+assert.ok(itProcessions4.unesco_reference.includes('unesco.cultura.gov.it'));
+const itIds=new Set(itProcessions4.records.map(r=>r.observation_id));
+assert.equal(itIds.size,110);
+const regionMap={
+ N:'NOLA_SAN_PAOLINO_GIGLI',
+ S:'SASSARI_ASSUMPTION_CANDELIERI',
+ P:'PALMI_MARIAN_SACRED_LETTER_VARIA',
+ V:'VITERBO_SANTA_ROSA_MACCHINA'
+};
+const regionCounters={N:0,S:0,P:0,V:0};
+const sourceUrls=new Set(itProcessions4.sources.map(s=>s.url));
+assert.equal(sourceUrls.size,8);
+for(const r of itProcessions4.records){
+ const reg=r.observation_id.split('-')[2];
+ assert.ok(regionMap[reg]);
+ regionCounters[reg]++;
+ assert.equal(r.observation_id,'IT-BSSP26-'+reg+'-'+String(regionCounters[reg]).padStart(3,'0'));
+ assert.equal(r.regional_complex_id,regionMap[reg]);
+ assert.ok(r.label.length>=22);
+ assert.ok(r.detail_type.length>=4);
+ assert.ok(sourceUrls.has(r.source_locator.url),'unknown source URL');
+ assert.ok(Number.isInteger(r.source_locator.web_text_line)&&r.source_locator.web_text_line>=1);
+ assert.equal(r.source_locator.source_edition,'ONLINE_CULTURAL_OR_FESTIVAL_DESCRIPTION_EXACT_PAGE_NOT_HISTORICAL_PRIMARY_ARCHIVE');
+ assert.equal(r.independent_witness_class,'THIS_IS_ONE_COMPONENT_OF_REGIONAL_FESTIVAL_COMPLEX_NOT_INDEPENDENT_CUSTOM_OR_ATTESTATION');
+ assert.equal(r.roman_1962_ritual_authority,'NOT_VERIFIED');
+ assert.equal(r.final_custom_identity_certified,false);
+ assert.equal(r.calendar_published,false);
+ if(r.source_locator.url.includes('/programma/'))assert.equal(r.period_scope,'EXPLICIT_2026_PROGRAMME');
+ if(r.source_locator.url.includes('palmiviva.it'))assert.equal(r.period_scope,'SPECIFIC_2023_TOURIST_EVENT');
+}
+assert.deepEqual(regionCounters,{N:30,S:41,P:18,V:21});
+assert.equal(researchCatalogue.external_source_observations_italy_four_unesco.length,110);
+assert.deepEqual(new Set(researchCatalogue.external_source_observations_italy_four_unesco.map(r=>r.id)),itIds);
+const itById=new Map(itProcessions4.records.map(r=>[r.observation_id,r]));
+for(const r of researchCatalogue.external_source_observations_italy_four_unesco){
+ const original=itById.get(r.id);
+ assert.ok(original);
+ assert.equal(r.label,original.label);
+ assert.equal(r.regional_complex_id,original.regional_complex_id);
+ assert.equal(r.source_url,original.source_locator.url);
+ assert.equal(r.web_line,original.source_locator.web_text_line);
+ assert.equal(r.identity_certified,false);
+}
+assert.equal(count.source_observations.italy_four_unesco_festival_source_details,110);
+assert.equal(count.source_observations.total_source_detail_rows_including_external,2247);
+assert.equal(count.source_review.italy_2013_unesco_processional_festival_complexes,4);
+assert.equal(count.identity_working_rows.provisional_after_53_no_owner_action_review,408);
+assert.equal(count.identity_working_rows.final_uniquely_verified_customs_added,0);
+assert.equal(researchCatalogue.summary.no_new_app_publications,true);
+console.log('Italian UNESCO four festival complexes: 110/110 local sourced components, 2,247 research rows, 408 provisional groups retained, zero new customs or app publication — PASS');
