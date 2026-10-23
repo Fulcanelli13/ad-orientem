@@ -1,0 +1,317 @@
+{
+  "schema": "AO_WEISER_INDEPENDENT_SOURCE_CORROBORATION_V1",
+  "version": "1.0.0",
+  "as_of": "2026-10-20",
+  "source_inventory": "data/customs/research/weiser-handbook-inventory.v0.json",
+  "selected_queue": "data/customs/research/weiser-production-reconciliation.v0.json",
+  "claim": "Evidence corroborates bounded facts, not a published custom or exact 1962 ritual text.",
+  "verified_count": 12,
+  "publication_releases": 0,
+  "source_records": [
+    {
+      "weiser_id": "WEI58-23-006",
+      "title": "French patronal feast",
+      "claim_class": "FRENCH_LOCAL_PATRONAL",
+      "geographic_scope": "France—Chantelle",
+      "evidence_state": "INDEPENDENT_CATHOLIC_WITNESS_CORROBORATED",
+      "source_basis": "Catholic national/diocesan witness",
+      "scope_verified": "Patronal village procession documented at Chantelle; no universal date or automatic 1962 patronal rank.",
+      "corroboration": [
+        {
+          "issuer": "Église catholique en France — Abbaye de Chantelle",
+          "url": "https://eglise.catholique.fr/guide-eglise-catholique-france/eveques-dioceses-france/liste-des-dioceses/a-decouverte-dioceses-de-france/diocese-de-moulins/493837-abbaye-de-chantelle/",
+          "contribution": "Contemporary account of patronal celebrations and village procession with relics"
+        },
+        {
+          "issuer": "Église catholique en France — Assumption 2008",
+          "url": "https://eglise.catholique.fr/espace-presse/communiques-de-presse/368107-le-15-aout-fete-de-lassomption/",
+          "contribution": "Examples of feast-day Masses, local pilgrimages and processions"
+        }
+      ],
+      "publication_state": "NOT_PUBLISHED",
+      "integrate_as": "EXISTING_OWNER_ENRICHMENT_OR_SEPARATE_REGIONAL_CUSTOM_AS_APPROPRIATE",
+      "remaining_gates": [
+        "Exact patron and 1962 proper must be selected locally, not derived from civil festival."
+      ]
+    },
+    {
+      "weiser_id": "WEI58-23-008",
+      "title": "Baptismal patron name day",
+      "claim_class": "FAMILY_NAMEDAY",
+      "geographic_scope": "Catholic household; variable countries",
+      "evidence_state": "INDEPENDENT_CATHOLIC_WITNESS_CORROBORATED",
+      "source_basis": "Independent Catholic books at EWTN",
+      "scope_verified": "A household patron feast with Mass when feasible, life of saint, prayer and meal; not a second feast in the liturgical calendar.",
+      "corroboration": [
+        {
+          "issuer": "EWTN — The Catholic Family Handbook",
+          "url": "https://www.ewtn.com/catholicism/library/catholic-family-handbook-10441",
+          "contribution": "Separately authored Catholic family source on Mass, saints' lives, and household meals"
+        },
+        {
+          "issuer": "EWTN — My Nameday, Come for Dessert (1962)",
+          "url": "https://www.ewtn.com/catholicism/library/my-namedaycome-for-desert-10465",
+          "contribution": "Independent traditional Catholic nameday guide with household celebration examples"
+        }
+      ],
+      "publication_state": "NOT_PUBLISHED",
+      "integrate_as": "EXISTING_OWNER_ENRICHMENT_OR_SEPARATE_REGIONAL_CUSTOM_AS_APPROPRIATE",
+      "remaining_gates": [
+        "Map named saint explicitly; support multiple patrons and traditional feast/date variations; opt-in only."
+      ]
+    },
+    {
+      "weiser_id": "WEI58-24-005",
+      "title": "Assumption Marian processions",
+      "claim_class": "FRENCH_MARIAN_PROCESSION",
+      "geographic_scope": "France—Paris and Pyrénées-Atlantiques",
+      "evidence_state": "INDEPENDENT_CATHOLIC_WITNESS_CORROBORATED",
+      "source_basis": "Direct French Catholic event witnesses",
+      "scope_verified": "Assumption Marian processions with statue occur locally; the date alone never activates a ceremony in the Mass reader.",
+      "corroboration": [
+        {
+          "issuer": "Notre-Dame de Paris — Assomption celebrations",
+          "url": "https://www.notredamedeparis.fr/solennite-assomption-notre-dame-de-paris/",
+          "contribution": "Cathedral account of Assumption Marian processions including statue"
+        },
+        {
+          "issuer": "Diocese 64 — 15 août 2025",
+          "url": "https://diocese64.org/15-aout-assomption-de-la-vierge-marie/",
+          "contribution": "Multiple enumerated local Assumption processions in the diocese"
+        }
+      ],
+      "publication_state": "NOT_PUBLISHED",
+      "integrate_as": "EXISTING_OWNER_ENRICHMENT_OR_SEPARATE_REGIONAL_CUSTOM_AS_APPROPRIATE",
+      "remaining_gates": [
+        "Regional context only; the parish must actually announce a procession."
+      ]
+    },
+    {
+      "weiser_id": "WEI58-24-014",
+      "title": "Assumption sea and boat blessings",
+      "claim_class": "FRENCH_MARITIME_BLESSING",
+      "geographic_scope": "France—Yport, Diocese of Le Havre",
+      "evidence_state": "INDEPENDENT_CATHOLIC_WITNESS_CORROBORATED",
+      "source_basis": "Direct 2025 diocesan schedule",
+      "scope_verified": "Local Assumption procession of ex-votos and blessing of boats at Yport; this is not a universal Assumption blessing.",
+      "corroboration": [
+        {
+          "issuer": "Diocese of Le Havre — Assumption Masses, 15 August 2025",
+          "url": "https://www.lehavre.catholique.fr/horaires-des-messes-de-lassomption-15-aout-2025/",
+          "contribution": "Parish schedule identifies Yport procession and blessing of boats"
+        }
+      ],
+      "publication_state": "NOT_PUBLISHED",
+      "integrate_as": "EXISTING_OWNER_ENRICHMENT_OR_SEPARATE_REGIONAL_CUSTOM_AS_APPROPRIATE",
+      "remaining_gates": [
+        "Optional ministerial blessing; specific rite edition remains unverified; no generalized coast map pins."
+      ]
+    },
+    {
+      "weiser_id": "WEI58-26-019",
+      "title": "Polish Wypominki prayers",
+      "claim_class": "POLISH_ALL_SOULS_CUSTOM",
+      "geographic_scope": "Poland—two named parishes",
+      "evidence_state": "INDEPENDENT_CATHOLIC_WITNESS_CORROBORATED",
+      "source_basis": "Direct Catholic parish records 2025",
+      "scope_verified": "Lists of names of deceased are remembered in parish prayer, with locally variable services; no mandatory public handling of names.",
+      "corroboration": [
+        {
+          "issuer": "Parafia Matki Bożej Ostrobramskiej — Wypominki 2025",
+          "url": "https://parafiaboernerowo.pl/wypominki-2025/",
+          "contribution": "2025 November prayers for named deceased, including rosary and Mass intention practice"
+        },
+        {
+          "issuer": "Parafia Bartąg — Wypominki Parafialne 2025",
+          "url": "https://parafiabartag.pl/wypominki-parafialne-2025/",
+          "contribution": "Names submitted and read in prayer at parish celebrations"
+        }
+      ],
+      "publication_state": "NOT_PUBLISHED",
+      "integrate_as": "EXISTING_OWNER_ENRICHMENT_OR_SEPARATE_REGIONAL_CUSTOM_AS_APPROPRIATE",
+      "remaining_gates": [
+        "Maintain confidential family submission practices; connect to DEAD-003; not a prescribed 1962 rite."
+      ]
+    },
+    {
+      "weiser_id": "WEI58-27-019",
+      "title": "St Joseph tables and charity",
+      "claim_class": "SICILIAN_JOSEPH_TABLE",
+      "geographic_scope": "Sicilian Catholic tradition; contemporary USA Catholic parish",
+      "evidence_state": "INDEPENDENT_CATHOLIC_WITNESS_CORROBORATED",
+      "source_basis": "Direct 2026 diocesan and parish witnesses",
+      "scope_verified": "March 19 St Joseph food altar/table, hospitality and donations for poor; distinguish charitable meal from priest's blessing.",
+      "corroboration": [
+        {
+          "issuer": "Diocese of Baton Rouge — St Joseph Altar 2026",
+          "url": "https://www.diobr.org/news/st-joseph-cathedral-st-joseph-altar-1",
+          "contribution": "March 19 2026 cathedral celebration and donated surplus food"
+        },
+        {
+          "issuer": "Our Lady of the Assumption Catholic Church — St Joseph Table 2026",
+          "url": "https://www.olachurch.org/post/st-joseph-s-table-and-food-drive",
+          "contribution": "2026 parish food drive associated with St Joseph table"
+        }
+      ],
+      "publication_state": "NOT_PUBLISHED",
+      "integrate_as": "EXISTING_OWNER_ENRICHMENT_OR_SEPARATE_REGIONAL_CUSTOM_AS_APPROPRIATE",
+      "remaining_gates": [
+        "Do not generalize distinct fritelli pastry from this record; treat famine miracle as legend."
+      ]
+    },
+    {
+      "weiser_id": "WEI58-27-023",
+      "title": "St Anthony's Bread charity",
+      "claim_class": "FRENCH_ANTHONY_BREAD",
+      "geographic_scope": "France—Toulon origin; Franciscan devotional network",
+      "evidence_state": "INDEPENDENT_CATHOLIC_WITNESS_CORROBORATED",
+      "source_basis": "Institutional Franciscan witness",
+      "scope_verified": "The Toulon/Louise Bouffier 1890 episode underlies modern charitable fundraising in honour of St Anthony; associated miracle stories remain legend.",
+      "corroboration": [
+        {
+          "issuer": "Ermitage St Antoine — Pain des pauvres",
+          "url": "https://st-antoine.org/fr/sanctuaire/faire-un-don/loeuvre-du-pain-des-pauvres/",
+          "contribution": "Franciscan institutional explanation of 1890 Toulon episode and purpose of alms"
+        },
+        {
+          "issuer": "Ermitage St Antoine — Saint Antoine de Padoue",
+          "url": "https://st-antoine.org/fr/a-propos/saint-antoine-de-padoue/",
+          "contribution": "Independent page on the same institutional site; additional narrative, not independent issuer"
+        }
+      ],
+      "publication_state": "NOT_PUBLISHED",
+      "integrate_as": "EXISTING_OWNER_ENRICHMENT_OR_SEPARATE_REGIONAL_CUSTOM_AS_APPROPRIATE",
+      "remaining_gates": [
+        "Charity rather than guaranteed intercession or favors in exchange for donations; no payment workflow."
+      ]
+    },
+    {
+      "weiser_id": "WEI58-28-011",
+      "title": "St Christopher vehicle blessings",
+      "claim_class": "FRENCH_CHRISTOPHER_VEHICLES",
+      "geographic_scope": "France—Mayenne and Charente",
+      "evidence_state": "INDEPENDENT_CATHOLIC_WITNESS_CORROBORATED",
+      "source_basis": "Direct 2026 diocesan parish notices",
+      "scope_verified": "Blessing of road users and their vehicles around St Christopher celebrations is locally provided, not universal or guaranteed protection.",
+      "corroboration": [
+        {
+          "issuer": "Diocese of Laval — Saint-Christophe du Luat, 19 July 2026",
+          "url": "https://paroisse.diocesedelaval.fr/benediction-des-voitures-a-st-christophe/",
+          "contribution": "Parish Mass and post-Mass blessing of drivers and cars scheduled"
+        },
+        {
+          "issuer": "Diocese of Angoulême — Saint-Christophe 2026",
+          "url": "https://charente.catholique.fr/est-charente/agenda/venez-feter-saint-christophe-2026/",
+          "contribution": "Parish celebration and blessing of vehicles/travellers July 26"
+        }
+      ],
+      "publication_state": "NOT_PUBLISHED",
+      "integrate_as": "EXISTING_OWNER_ENRICHMENT_OR_SEPARATE_REGIONAL_CUSTOM_AS_APPROPRIATE",
+      "remaining_gates": [
+        "Actual date varies with parish schedule; no promised protection; ministerial blessing not self-performed."
+      ]
+    },
+    {
+      "weiser_id": "WEI58-28-020",
+      "title": "St Nicholas visits to children",
+      "claim_class": "FRENCH_NICHOLAS_CHILDREN",
+      "geographic_scope": "France—Alsace and Lorraine",
+      "evidence_state": "INDEPENDENT_CATHOLIC_WITNESS_CORROBORATED",
+      "source_basis": "Diocesan cultural explainer and 2025 parish evidence",
+      "scope_verified": "Regionally observed 6 December St Nicholas visit, children and simple gifts; distinguish saint's historical life from local folklore.",
+      "corroboration": [
+        {
+          "issuer": "Diocese of Metz — Hagondange St Nicholas visit, Dec 2025",
+          "url": "https://metz.catholique.fr/actualites/actualites-paroisses/469066-hagondange-visite-de-saint-nicolas/",
+          "contribution": "Parish children's visit/teaching in December 2025"
+        },
+        {
+          "issuer": "Diocese of Strasbourg — Local St Nicholas traditions",
+          "url": "https://www.alsace.catholique.fr/actualites/dossiers-thematiques/418575-6-decembre-fete-de-saint-nicolas/",
+          "contribution": "Explains gifts and customs in Alsace and Lorraine"
+        }
+      ],
+      "publication_state": "NOT_PUBLISHED",
+      "integrate_as": "EXISTING_OWNER_ENRICHMENT_OR_SEPARATE_REGIONAL_CUSTOM_AS_APPROPRIATE",
+      "remaining_gates": [
+        "Avoid fear/punishment customs in recommendations, no factual endorsement of miracle folklore."
+      ]
+    },
+    {
+      "weiser_id": "WEI58-27-012",
+      "title": "Irish St Patrick ribbon crosses",
+      "claim_class": "HISTORICAL_IRISH_ST_PATRICK_CROSSES",
+      "geographic_scope": "Ireland, documented historical domestic and children’s feast custom",
+      "evidence_state": "INDEPENDENT_MUSEUM_AND_FOLKLORE_CORROBORATED",
+      "source_basis": "National Museum of Ireland and Irish National Folklore Collection",
+      "scope_verified": "17 March ribbon-and-card crosses, especially for children and girls, historically documented; faded from routine use and now a revival craft rather than universal living practice.",
+      "corroboration": [
+        {
+          "issuer": "National Museum of Ireland — St Patrick Folklife Collection",
+          "url": "https://source.museum.ie/en-IE/Collections-Research/Folklife-Collections/Folklife-Collections-List-%281%29/Religion-and-Calendar-Customs/St-Patrick",
+          "contribution": "Museum explanation of Irish ribbon crosses and gendered variants"
+        },
+        {
+          "issuer": "National Folklore Collection UCD — Schools' Collection",
+          "url": "https://www.duchas.ie/en/cbes/4644827/4613040/4651174",
+          "contribution": "Recorded Irish historical oral testimony of ribbons and St Patrick crosses"
+        }
+      ],
+      "publication_state": "NOT_PUBLISHED",
+      "integrate_as": "HISTORICAL_HOME_CUSTOM_OPTIONAL_NOT_LITURGICAL_RITE",
+      "remaining_gates": [
+        "March 17 date from 1962 calendar; household craft is not prescribed worship",
+        "Flag historical period, not universal current usage."
+      ]
+    },
+    {
+      "weiser_id": "WEI58-27-026",
+      "title": "St Anthony and lost objects",
+      "claim_class": "ANTHONY_PATRONAL_DEVOTION",
+      "geographic_scope": "Padua Franciscan devotional witness; international tradition",
+      "evidence_state": "INDEPENDENT_FRANCISCAN_INSTITUTIONAL_WITNESS",
+      "source_basis": "Basilica-related Franciscan prayer site and Saint Anthony shrine",
+      "scope_verified": "Catholics have traditionally sought St Anthony's intercession in relation to lost objects; the saint's narrative associated with a missing psalter is not established historical proof.",
+      "corroboration": [
+        {
+          "issuer": "Franciscan Province of St Anthony of Padua — Cher Saint Antoine",
+          "url": "https://chersaintantoine.org/fr/content/aide-moi-trouver",
+          "contribution": "Official Franciscan devotional prayer and explanatory introduction"
+        },
+        {
+          "issuer": "Ermitage St Antoine — Saint Antoine de Padoue",
+          "url": "https://st-antoine.org/fr/a-propos/saint-antoine-de-padoue/",
+          "contribution": "Franciscan explanation of custom; manuscript recovery narrated cautiously"
+        }
+      ],
+      "publication_state": "NOT_PUBLISHED",
+      "integrate_as": "EXISTING_SAINTS_OR_PRAY_OWNER_ONLY_NO_NEW_PRAYER_MODULE",
+      "remaining_gates": [
+        "Reconcile with existing Novena/Pray owners before adding",
+        "Do not assert guaranteed recovery or the historical psalter incident as fact."
+      ]
+    },
+    {
+      "weiser_id": "WEI58-26-022",
+      "title": "All Souls bread almsgiving",
+      "claim_class": "POLISH_HISTORICAL_ALL_SOULS_BREAD_ALMS",
+      "geographic_scope": "Poland only in independently corroborated evidence; not a French practice certificate",
+      "evidence_state": "INDEPENDENT_ETHNOGRAPHIC_ATTESTATION_POLAND_ONLY",
+      "source_basis": "Published Polish Ethnographic Atlas research from 1969–1977 surveys",
+      "scope_verified": "Bread and baked goods given to poorer people outside churches or at cemeteries on All Souls' Day in surveyed Polish communities; historical charity, not a universal rule.",
+      "corroboration": [
+        {
+          "issuer": "Cyfrowe Archiwum Polskiego Atlasu Etnograficznego — map 43",
+          "url": "https://pae.us.edu.pl/index.php/items/show/4913",
+          "contribution": "Published field-survey map specifically documenting All Souls bread alms to poor people, 1969–1977"
+        }
+      ],
+      "publication_state": "NOT_PUBLISHED",
+      "integrate_as": "HISTORICAL_CONTEXT_OR_CHARITY_SUGGESTION_NOT_PRESCRIBED_LITURGY",
+      "remaining_gates": [
+        "French variants remain separately unverified",
+        "No inference that practice is common today or spiritually effective as payment."
+      ]
+    }
+  ]
+}

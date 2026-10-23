@@ -1,0 +1,639 @@
+{
+  "schema": "AO_WEISER_POST_EXTRACTION_EDITORIAL_GATE_V0",
+  "version": "0.4.0",
+  "as_of": "2026-10-20",
+  "status": "SELECTED_RECONCILIATION_QUEUE_ONLY_NOT_CANONICAL",
+  "purpose": "Pilot crosswalk of high-signal Weiser feast customs after full book first pass. Not a comprehensive decision for all 568 records.",
+  "source_registry": "data/customs/research/weiser-handbook-inventory.v0.json",
+  "source_book": "WEISER-HANDBOOK-1958",
+  "source_locator": "https://www.scribd.com/document/447017805/Handbook-of-Christian-Feasts-and-Customs",
+  "inventory_totals": {
+    "observations": 568,
+    "screened_chapters": 28,
+    "publication_releases": 0,
+    "selected_priority_rows": 30,
+    "source_corroborated_selected_rows": 12,
+    "selected_rows_not_yet_source_corroborated": 18,
+    "verified_existing_owner_links": 4,
+    "open_pr_owner_links": 1,
+    "implementation_staged_selected_rows": 8,
+    "new_custom_identities_in_draft_pr": 7,
+    "existing_owner_enrichments_in_draft_pr": 1
+  },
+  "active_app_baseline": {
+    "main_canonical_customs_at_start": 17,
+    "pr1512": "OPEN_UNMERGED_BLSS-002_TO_BLSS-004",
+    "pr1513": "RESEARCH_DRAFT_ONLY",
+    "sot07_rows": 63,
+    "negative_knowledge_protected": 7
+  },
+  "global_gates": [
+    "No Weiser-only claim becomes active custom without secondary/local attestation where required.",
+    "1962 Calendar and Roman Ritual define feast/ritual; publisher's 1958 summary cannot replace them.",
+    "No place pins from country or historic citations.",
+    "Legends and disputed origins flagged, no magic/medical/indulgence promises.",
+    "Do not duplicate existing prayer modules, saint profiles, pilgrimages, or accepted Customs Atlas records.",
+    "Authorship copyright: labels and original paraphrase only."
+  ],
+  "selected_priority": [
+    {
+      "weiser_id": "WEI58-23-006",
+      "chapter": 23,
+      "printed_page": 280,
+      "title": "French fête patronale with Mass and village celebrations",
+      "cohort": "FRENCH_PRIORITY",
+      "owner": "Customs Atlas / Calendar",
+      "disposition": "EVIDENCE_CORROBORATED_AWAIT_CANONICAL_OWNER_GATE",
+      "canonical_ids": [],
+      "source_state": "INDEPENDENT_CATHOLIC_OR_DOCUMENTARY_WITNESS",
+      "independent_verification": "REQUIRED_UNLESS_LINKED_TO_EXISTING_OWNER",
+      "checks_needed": [
+        "FRANCE_LOCALITY_ATTESTATION",
+        "PATRON_SAINT_CALENDAR_ID"
+      ],
+      "editorial_note": "Fête patronale: distinguish local civil festival from actual 1962 patronal Mass rank. Evidence now recorded independently; still unpublished.",
+      "source_evidence": {
+        "path": "data/customs/research/weiser-source-corroboration-batch-01.v1.json",
+        "ref": "WEI58-23-006"
+      },
+      "implementation_state": "STAGED_IN_DRAFT_PR_1516_UNMERGED",
+      "implementation_custom_id": "PATR-001",
+      "implementation_pr_url": "https://github.com/Fulcanelli13/ad-orientem/pull/1516",
+      "release_certified": false
+    },
+    {
+      "weiser_id": "WEI58-23-008",
+      "chapter": 23,
+      "printed_page": 280,
+      "title": "Personal baptismal patron name-day observance",
+      "cohort": "FAMILY_PRIORITY",
+      "owner": "Customs Atlas / Saints",
+      "disposition": "EVIDENCE_CORROBORATED_AWAIT_CANONICAL_OWNER_GATE",
+      "canonical_ids": [],
+      "source_state": "INDEPENDENT_CATHOLIC_OR_DOCUMENTARY_WITNESS",
+      "independent_verification": "REQUIRED_UNLESS_LINKED_TO_EXISTING_OWNER",
+      "checks_needed": [
+        "1962_SAINT_ID",
+        "PRACTICE_CURRENT_ATTESTATION"
+      ],
+      "editorial_note": "Name-day celebration is not a second saint feast. Evidence now recorded independently; still unpublished.",
+      "source_evidence": {
+        "path": "data/customs/research/weiser-source-corroboration-batch-01.v1.json",
+        "ref": "WEI58-23-008"
+      },
+      "implementation_state": "STAGED_IN_DRAFT_PR_1516_UNMERGED",
+      "implementation_custom_id": "NDAY-001",
+      "implementation_pr_url": "https://github.com/Fulcanelli13/ad-orientem/pull/1516",
+      "release_certified": false
+    },
+    {
+      "weiser_id": "WEI58-24-005",
+      "chapter": 24,
+      "printed_page": 289,
+      "title": "French Assumption statue carried through towns",
+      "cohort": "FRENCH_PRIORITY",
+      "owner": "Calendar / Customs Atlas",
+      "disposition": "EVIDENCE_CORROBORATED_AWAIT_CANONICAL_OWNER_GATE",
+      "canonical_ids": [],
+      "source_state": "INDEPENDENT_CATHOLIC_OR_DOCUMENTARY_WITNESS",
+      "independent_verification": "REQUIRED_UNLESS_LINKED_TO_EXISTING_OWNER",
+      "checks_needed": [
+        "FRENCH_REGIONAL_ATTESTATION",
+        "1962_ASSUMPTION_CONTEXT"
+      ],
+      "editorial_note": "French processional practice; no automatic liturgical procession from date alone. Evidence now recorded independently; still unpublished.",
+      "source_evidence": {
+        "path": "data/customs/research/weiser-source-corroboration-batch-01.v1.json",
+        "ref": "WEI58-24-005"
+      },
+      "implementation_state": "STAGED_IN_DRAFT_PR_1516_UNMERGED",
+      "implementation_custom_id": "MARI-001",
+      "implementation_pr_url": "https://github.com/Fulcanelli13/ad-orientem/pull/1516",
+      "release_certified": false
+    },
+    {
+      "weiser_id": "WEI58-24-008",
+      "chapter": 24,
+      "printed_page": 290,
+      "title": "Assumption blessing of gathered herbs",
+      "cohort": "KNOWN_OWNER",
+      "owner": "Customs Atlas",
+      "disposition": "LINK_PENDING_PR",
+      "canonical_ids": [
+        "BLSS-002"
+      ],
+      "source_state": "WEISER_1958_ONLY",
+      "independent_verification": "REQUIRED_UNLESS_LINKED_TO_EXISTING_OWNER",
+      "checks_needed": [
+        "PR_1512_RESOLUTION",
+        "1962_RITUAL_SOURCE"
+      ],
+      "editorial_note": "Assumption herbs already in unmerged blessing PR.",
+      "owner_link_status": "OPEN_PR_1512_UNMERGED_NOT_IN_MAIN"
+    },
+    {
+      "weiser_id": "WEI58-24-013",
+      "chapter": 24,
+      "printed_page": 291,
+      "title": "French Alpine pasture and livestock blessing",
+      "cohort": "FRENCH_PRIORITY",
+      "owner": "Customs Atlas / Explore",
+      "disposition": "SOURCE_LOCK_REQUIRED",
+      "canonical_ids": [],
+      "source_state": "WEISER_1958_ONLY",
+      "independent_verification": "REQUIRED_UNLESS_LINKED_TO_EXISTING_OWNER",
+      "checks_needed": [
+        "FRENCH_ALPINE_DIRECT_ATTESTATION",
+        "MINISTER_RITE_WITNESS"
+      ],
+      "editorial_note": "Blessing of livestock and high pastures; no unsupported local map pin."
+    },
+    {
+      "weiser_id": "WEI58-24-014",
+      "chapter": 24,
+      "printed_page": 291,
+      "title": "Blessing fishing boats and sea on Assumption",
+      "cohort": "PILGRIMAGE_BLESSING",
+      "owner": "Customs Atlas / Explore",
+      "disposition": "EVIDENCE_CORROBORATED_AWAIT_CANONICAL_OWNER_GATE",
+      "canonical_ids": [],
+      "source_state": "INDEPENDENT_CATHOLIC_OR_DOCUMENTARY_WITNESS",
+      "independent_verification": "REQUIRED_UNLESS_LINKED_TO_EXISTING_OWNER",
+      "checks_needed": [
+        "COASTAL_LOCAL_ATTESTATION",
+        "RITUAL_WITNESS"
+      ],
+      "editorial_note": "Assumption maritime blessings locally; don't promise parish availability. Evidence now recorded independently; still unpublished.",
+      "source_evidence": {
+        "path": "data/customs/research/weiser-source-corroboration-batch-01.v1.json",
+        "ref": "WEI58-24-014"
+      }
+    },
+    {
+      "weiser_id": "WEI58-25-008",
+      "chapter": 25,
+      "printed_page": 300,
+      "title": "Candlemas candle kept in home and sickroom",
+      "cohort": "EXISTING_CANONICAL",
+      "owner": "Customs Atlas",
+      "disposition": "ENRICH_EXISTING",
+      "canonical_ids": [
+        "DOM-011"
+      ],
+      "source_state": "WEISER_1958_ONLY",
+      "independent_verification": "REQUIRED_UNLESS_LINKED_TO_EXISTING_OWNER",
+      "checks_needed": [
+        "BILINGUAL_COPY_REVIEW"
+      ],
+      "editorial_note": "Candlemas candles already owned by DOM-011.",
+      "owner_link_status": "VERIFIED_IN_MAIN_CUSTOMS_SEED"
+    },
+    {
+      "weiser_id": "WEI58-25-012",
+      "chapter": 25,
+      "printed_page": 300,
+      "title": "Taking down Christmas crib on Candlemas",
+      "cohort": "HOUSEHOLD_PRIORITY",
+      "owner": "Calendar / Customs Atlas",
+      "disposition": "SOURCE_LOCK_REQUIRED",
+      "canonical_ids": [],
+      "source_state": "WEISER_1958_ONLY",
+      "independent_verification": "REQUIRED_UNLESS_LINKED_TO_EXISTING_OWNER",
+      "checks_needed": [
+        "HISTORICAL_FEAST_CONTEXT"
+      ],
+      "editorial_note": "Packing away Nativity crib at Candlemas distinct from Church obligation."
+    },
+    {
+      "weiser_id": "WEI58-25-025",
+      "chapter": 25,
+      "printed_page": 305,
+      "title": "Our Lady of Grape Harvest family festive meal",
+      "cohort": "FRENCH_PRIORITY",
+      "owner": "Customs Atlas / Calendar",
+      "disposition": "SOURCE_LOCK_REQUIRED",
+      "canonical_ids": [],
+      "source_state": "WEISER_1958_ONLY",
+      "independent_verification": "REQUIRED_UNLESS_LINKED_TO_EXISTING_OWNER",
+      "checks_needed": [
+        "DIRECT_FRENCH_GRAPE_SOURCE",
+        "ROMAN_RITUAL_GRAIN_FRUIT_BLESSING"
+      ],
+      "editorial_note": "8 September French grape blessing; do not conflate with 15 August herbs."
+    },
+    {
+      "weiser_id": "WEI58-25-024",
+      "chapter": 25,
+      "printed_page": 305,
+      "title": "French vineyard grapes brought for priestly blessing",
+      "cohort": "FRENCH_PRIORITY",
+      "owner": "Customs Atlas / Calendar",
+      "disposition": "SOURCE_LOCK_REQUIRED",
+      "canonical_ids": [],
+      "source_state": "WEISER_1958_ONLY",
+      "independent_verification": "REQUIRED_UNLESS_LINKED_TO_EXISTING_OWNER",
+      "checks_needed": [
+        "FRENCH_HARVEST_LOCALITY"
+      ],
+      "editorial_note": "Our Lady of the Grape Harvest meal context."
+    },
+    {
+      "weiser_id": "WEI58-26-010",
+      "chapter": 26,
+      "printed_page": 311,
+      "title": "Cleaning and decorating graves before November",
+      "cohort": "EXISTING_CANONICAL",
+      "owner": "Customs Atlas",
+      "disposition": "ENRICH_EXISTING",
+      "canonical_ids": [
+        "DEAD-001"
+      ],
+      "source_state": "WEISER_1958_ONLY",
+      "independent_verification": "REQUIRED_UNLESS_LINKED_TO_EXISTING_OWNER",
+      "checks_needed": [
+        "GEOGRAPHY_NOTE"
+      ],
+      "editorial_note": "Cleaning and decorating family graves.",
+      "owner_link_status": "VERIFIED_IN_MAIN_CUSTOMS_SEED"
+    },
+    {
+      "weiser_id": "WEI58-26-013",
+      "chapter": 26,
+      "printed_page": 311,
+      "title": "Family prayer with saved Candlemas candle at All Souls",
+      "cohort": "HOUSEHOLD_PRIORITY",
+      "owner": "Customs Atlas / Calendar",
+      "disposition": "LINK_AND_ENRICH",
+      "canonical_ids": [
+        "DOM-011",
+        "DEAD-003"
+      ],
+      "source_state": "WEISER_1958_ONLY",
+      "independent_verification": "REQUIRED_UNLESS_LINKED_TO_EXISTING_OWNER",
+      "checks_needed": [
+        "HOUSEHOLD_PRACTICE_ATTESTATION"
+      ],
+      "editorial_note": "Candlemas candle used in evening prayer for the departed.",
+      "owner_link_status": "VERIFIED_IN_MAIN_CUSTOMS_SEED"
+    },
+    {
+      "weiser_id": "WEI58-26-014",
+      "chapter": 26,
+      "printed_page": 311,
+      "title": "Breton all-night prayer bells and farmhouse visits",
+      "cohort": "FRENCH_PRIORITY",
+      "owner": "Customs Atlas / Calendar",
+      "disposition": "SOURCE_LOCK_REQUIRED",
+      "canonical_ids": [
+        "BELL-004",
+        "DEAD-003"
+      ],
+      "source_state": "WEISER_1958_ONLY",
+      "independent_verification": "REQUIRED_UNLESS_LINKED_TO_EXISTING_OWNER",
+      "checks_needed": [
+        "BRETON_LOCAL_ATTESTATION",
+        "CHECK_BELL_OWNERSHIP"
+      ],
+      "editorial_note": "All Saints' eve Breton farmhouse prayer and bell custom."
+    },
+    {
+      "weiser_id": "WEI58-26-019",
+      "chapter": 26,
+      "printed_page": 312,
+      "title": "Polish Wypominki lists of departed names read at parish",
+      "cohort": "REGIONAL_PRIORITY",
+      "owner": "Calendar / Customs Atlas",
+      "disposition": "EVIDENCE_CORROBORATED_AWAIT_CANONICAL_OWNER_GATE",
+      "canonical_ids": [
+        "DEAD-003"
+      ],
+      "source_state": "INDEPENDENT_CATHOLIC_OR_DOCUMENTARY_WITNESS",
+      "independent_verification": "REQUIRED_UNLESS_LINKED_TO_EXISTING_OWNER",
+      "checks_needed": [
+        "POLISH_PARISH_DIRECT_ATTESTATION"
+      ],
+      "editorial_note": "Wypominki named-intention lists read in church. Evidence now recorded independently; still unpublished.",
+      "source_evidence": {
+        "path": "data/customs/research/weiser-source-corroboration-batch-01.v1.json",
+        "ref": "WEI58-26-019"
+      },
+      "implementation_state": "STAGED_IN_DRAFT_PR_1516_UNMERGED",
+      "implementation_custom_id": "DEAD-003",
+      "implementation_pr_url": "https://github.com/Fulcanelli13/ad-orientem/pull/1516",
+      "release_certified": false
+    },
+    {
+      "weiser_id": "WEI58-26-020",
+      "chapter": 26,
+      "printed_page": 312,
+      "title": "Eight days of family Soul Nights after All Souls",
+      "cohort": "HOUSEHOLD_PRIORITY",
+      "owner": "Customs Atlas",
+      "disposition": "SOURCE_LOCK_REQUIRED",
+      "canonical_ids": [
+        "DEAD-003"
+      ],
+      "source_state": "WEISER_1958_ONLY",
+      "independent_verification": "REQUIRED_UNLESS_LINKED_TO_EXISTING_OWNER",
+      "checks_needed": [
+        "NO_LITURGICAL_OCTAVE_CLAIM"
+      ],
+      "editorial_note": "Eight devotional Soul Nights must not be a liturgical octave."
+    },
+    {
+      "weiser_id": "WEI58-26-022",
+      "chapter": 26,
+      "printed_page": 313,
+      "title": "All Souls soul bread distributed to poor or children",
+      "cohort": "FRENCH_PRIORITY",
+      "owner": "Customs Atlas / Calendar",
+      "disposition": "EVIDENCE_CORROBORATED_AWAIT_CANONICAL_OWNER_GATE",
+      "canonical_ids": [],
+      "source_state": "INDEPENDENT_CATHOLIC_OR_DOCUMENTARY_WITNESS",
+      "independent_verification": "REQUIRED_UNLESS_LINKED_TO_EXISTING_OWNER",
+      "checks_needed": [
+        "SOUL_BREAD_FRANCE_SECONDARY_SOURCE",
+        "ALMSGIVING_CONTEXT"
+      ],
+      "editorial_note": "Soul bread for poor in France and other countries.",
+      "source_evidence": {
+        "path": "data/customs/research/weiser-source-corroboration-batch-01.v1.json",
+        "ref": "WEI58-26-022"
+      }
+    },
+    {
+      "weiser_id": "WEI58-26-029",
+      "chapter": 26,
+      "printed_page": 314,
+      "title": "Brittany graveside milk pouring accompanying holy water",
+      "cohort": "HISTORY_ONLY",
+      "owner": "Learn / Research",
+      "disposition": "DO_NOT_PUBLISH_AS_INSTRUCTION",
+      "canonical_ids": [],
+      "source_state": "WEISER_1958_ONLY",
+      "independent_verification": "REQUIRED_UNLESS_LINKED_TO_EXISTING_OWNER",
+      "checks_needed": [
+        "BRETON_SUPERSTITION_SCREEN"
+      ],
+      "editorial_note": "Graveside milk pouring remains folklore; not a Catholic prescribed ritual."
+    },
+    {
+      "weiser_id": "WEI58-27-003",
+      "chapter": 27,
+      "printed_page": 317,
+      "title": "St Blaise crossed-candle throat blessing",
+      "cohort": "EXISTING_CANONICAL",
+      "owner": "Customs Atlas",
+      "disposition": "ENRICH_EXISTING",
+      "canonical_ids": [
+        "BLSS-001"
+      ],
+      "source_state": "WEISER_1958_ONLY",
+      "independent_verification": "REQUIRED_UNLESS_LINKED_TO_EXISTING_OWNER",
+      "checks_needed": [
+        "RITUAL_CONFORMITY"
+      ],
+      "editorial_note": "St Blaise crossed candles already canonical.",
+      "owner_link_status": "VERIFIED_IN_MAIN_CUSTOMS_SEED"
+    },
+    {
+      "weiser_id": "WEI58-27-012",
+      "chapter": 27,
+      "printed_page": 323,
+      "title": "Traditional ribbon crosses on girls' dresses for Patrick",
+      "cohort": "REGIONAL_PRIORITY",
+      "owner": "Customs Atlas / Saints",
+      "disposition": "EVIDENCE_CORROBORATED_AWAIT_CANONICAL_OWNER_GATE",
+      "canonical_ids": [],
+      "source_state": "INDEPENDENT_CATHOLIC_OR_DOCUMENTARY_WITNESS",
+      "independent_verification": "REQUIRED_UNLESS_LINKED_TO_EXISTING_OWNER",
+      "checks_needed": [
+        "IRISH_PARISH_SOURCE"
+      ],
+      "editorial_note": "St Patrick ribbon crosses as locally reported.",
+      "source_evidence": {
+        "path": "data/customs/research/weiser-source-corroboration-batch-01.v1.json",
+        "ref": "WEI58-27-012"
+      }
+    },
+    {
+      "weiser_id": "WEI58-27-018",
+      "chapter": 27,
+      "printed_page": 324,
+      "title": "St Joseph small breads fritelli shared at feast",
+      "cohort": "HOUSEHOLD_PRIORITY",
+      "owner": "Customs Atlas / Calendar",
+      "disposition": "SOURCE_LOCK_REQUIRED",
+      "canonical_ids": [],
+      "source_state": "WEISER_1958_ONLY",
+      "independent_verification": "REQUIRED_UNLESS_LINKED_TO_EXISTING_OWNER",
+      "checks_needed": [
+        "ITALIAN_PARISH_HISTORICAL_SOURCE"
+      ],
+      "editorial_note": "St Joseph's loaves distinct from church priestly blessings."
+    },
+    {
+      "weiser_id": "WEI58-27-019",
+      "chapter": 27,
+      "printed_page": 324,
+      "title": "St Joseph table statue portions subsequently given to poor",
+      "cohort": "CHARITY_PRIORITY",
+      "owner": "Customs Atlas / Saints",
+      "disposition": "EVIDENCE_CORROBORATED_AWAIT_CANONICAL_OWNER_GATE",
+      "canonical_ids": [],
+      "source_state": "INDEPENDENT_CATHOLIC_OR_DOCUMENTARY_WITNESS",
+      "independent_verification": "REQUIRED_UNLESS_LINKED_TO_EXISTING_OWNER",
+      "checks_needed": [
+        "ST_JOSEPH_TABLE_SOURCE"
+      ],
+      "editorial_note": "Meal portions distributed to poor during Joseph's feast. Evidence now recorded independently; still unpublished.",
+      "source_evidence": {
+        "path": "data/customs/research/weiser-source-corroboration-batch-01.v1.json",
+        "ref": "WEI58-27-019"
+      },
+      "implementation_state": "STAGED_IN_DRAFT_PR_1516_UNMERGED",
+      "implementation_custom_id": "SJOS-001",
+      "implementation_pr_url": "https://github.com/Fulcanelli13/ad-orientem/pull/1516",
+      "release_certified": false
+    },
+    {
+      "weiser_id": "WEI58-27-023",
+      "chapter": 27,
+      "printed_page": 326,
+      "title": "Saint Anthony's Bread alms project from Toulon",
+      "cohort": "FRENCH_PRIORITY",
+      "owner": "Customs Atlas / Saints",
+      "disposition": "EVIDENCE_CORROBORATED_AWAIT_CANONICAL_OWNER_GATE",
+      "canonical_ids": [],
+      "source_state": "INDEPENDENT_CATHOLIC_OR_DOCUMENTARY_WITNESS",
+      "independent_verification": "REQUIRED_UNLESS_LINKED_TO_EXISTING_OWNER",
+      "checks_needed": [
+        "TOULON_HISTORICAL_SOURCE",
+        "PRACTICE_PRESENT_DAY_STATUS"
+      ],
+      "editorial_note": "Saint Anthony's Bread charity was organised under that name at Toulon; the practice predates that 1890 institutionalisation. Evidence now recorded independently; still unpublished.",
+      "source_evidence": {
+        "path": "data/customs/research/weiser-source-corroboration-batch-01.v1.json",
+        "ref": "WEI58-27-023"
+      },
+      "implementation_state": "STAGED_IN_DRAFT_PR_1516_UNMERGED",
+      "implementation_custom_id": "SANT-001",
+      "implementation_pr_url": "https://github.com/Fulcanelli13/ad-orientem/pull/1516",
+      "release_certified": false
+    },
+    {
+      "weiser_id": "WEI58-27-026",
+      "chapter": 27,
+      "printed_page": 327,
+      "title": "Invocation of St Anthony for lost things",
+      "cohort": "SAINTS_PRIORITY",
+      "owner": "Saints / Customs Atlas",
+      "disposition": "EVIDENCE_CORROBORATED_AWAIT_CANONICAL_OWNER_GATE",
+      "canonical_ids": [],
+      "source_state": "INDEPENDENT_CATHOLIC_OR_DOCUMENTARY_WITNESS",
+      "independent_verification": "REQUIRED_UNLESS_LINKED_TO_EXISTING_OWNER",
+      "checks_needed": [
+        "NOVENA_OWNER_RECONCILE"
+      ],
+      "editorial_note": "St Anthony Tuesday devotions; don't duplicate prayer modules.",
+      "source_evidence": {
+        "path": "data/customs/research/weiser-source-corroboration-batch-01.v1.json",
+        "ref": "WEI58-27-026"
+      }
+    },
+    {
+      "weiser_id": "WEI58-27-031",
+      "chapter": 27,
+      "printed_page": 330,
+      "title": "Brittany fishermen St John sea fires and crew prayers",
+      "cohort": "FRENCH_PRIORITY",
+      "owner": "Customs Atlas",
+      "disposition": "SOURCE_LOCK_REQUIRED",
+      "canonical_ids": [],
+      "source_state": "WEISER_1958_ONLY",
+      "independent_verification": "REQUIRED_UNLESS_LINKED_TO_EXISTING_OWNER",
+      "checks_needed": [
+        "BRETON_FISHERMEN_DIRECT_SOURCE",
+        "SAFETY_AND_CONTEXT"
+      ],
+      "editorial_note": "St John's eve bonfires on Breton fishing boats were regional and historical, not a present-day activity to encourage."
+    },
+    {
+      "weiser_id": "WEI58-28-004",
+      "chapter": 28,
+      "printed_page": 334,
+      "title": "Priestly grain blessing on feast of Peter and Paul",
+      "cohort": "REGIONAL_PRIORITY",
+      "owner": "Customs Atlas / Calendar",
+      "disposition": "SOURCE_LOCK_REQUIRED",
+      "canonical_ids": [],
+      "source_state": "WEISER_1958_ONLY",
+      "independent_verification": "REQUIRED_UNLESS_LINKED_TO_EXISTING_OWNER",
+      "checks_needed": [
+        "HUNGARY_BLESSING_RITUAL_AND_LOCAL_SOURCE"
+      ],
+      "editorial_note": "Hungarian grain blessings Peter and Paul June 29."
+    },
+    {
+      "weiser_id": "WEI58-28-006",
+      "chapter": 28,
+      "printed_page": 334,
+      "title": "Special bread blessing for Peter and Paul",
+      "cohort": "REGIONAL_PRIORITY",
+      "owner": "Customs Atlas",
+      "disposition": "SOURCE_LOCK_REQUIRED",
+      "canonical_ids": [],
+      "source_state": "WEISER_1958_ONLY",
+      "independent_verification": "REQUIRED_UNLESS_LINKED_TO_EXISTING_OWNER",
+      "checks_needed": [
+        "HUNGARIAN_PARISH_SOURCE"
+      ],
+      "editorial_note": "Priestly bread blessing separate from home food."
+    },
+    {
+      "weiser_id": "WEI58-28-011",
+      "chapter": 28,
+      "printed_page": 336,
+      "title": "Vehicle blessings on St Christopher feast day",
+      "cohort": "BLESSING_PRIORITY",
+      "owner": "Customs Atlas / Saints",
+      "disposition": "EVIDENCE_CORROBORATED_AWAIT_CANONICAL_OWNER_GATE",
+      "canonical_ids": [],
+      "source_state": "INDEPENDENT_CATHOLIC_OR_DOCUMENTARY_WITNESS",
+      "independent_verification": "REQUIRED_UNLESS_LINKED_TO_EXISTING_OWNER",
+      "checks_needed": [
+        "ROMAN_RITUAL_VEHICLE_BLESSING",
+        "LOCAL_PARISH_SOURCE"
+      ],
+      "editorial_note": "St Christopher-associated car blessing must not be treated as a guaranteed travel protection. Evidence now recorded independently; still unpublished.",
+      "source_evidence": {
+        "path": "data/customs/research/weiser-source-corroboration-batch-01.v1.json",
+        "ref": "WEI58-28-011"
+      },
+      "implementation_state": "STAGED_IN_DRAFT_PR_1516_UNMERGED",
+      "implementation_custom_id": "SCHR-001",
+      "implementation_pr_url": "https://github.com/Fulcanelli13/ad-orientem/pull/1516",
+      "release_certified": false
+    },
+    {
+      "weiser_id": "WEI58-28-020",
+      "chapter": 28,
+      "printed_page": 340,
+      "title": "St Nicholas eve bishop-costumed visitor to children",
+      "cohort": "HOUSEHOLD_PRIORITY",
+      "owner": "Customs Atlas / Calendar",
+      "disposition": "EVIDENCE_CORROBORATED_AWAIT_CANONICAL_OWNER_GATE",
+      "canonical_ids": [],
+      "source_state": "INDEPENDENT_CATHOLIC_OR_DOCUMENTARY_WITNESS",
+      "independent_verification": "REQUIRED_UNLESS_LINKED_TO_EXISTING_OWNER",
+      "checks_needed": [
+        "NICHOLAS_REGIONAL_FAMILY_SOURCE"
+      ],
+      "editorial_note": "Saint Nicholas bishop visit with childhood catechesis. Evidence now recorded independently; still unpublished.",
+      "source_evidence": {
+        "path": "data/customs/research/weiser-source-corroboration-batch-01.v1.json",
+        "ref": "WEI58-28-020"
+      },
+      "implementation_state": "STAGED_IN_DRAFT_PR_1516_UNMERGED",
+      "implementation_custom_id": "SNIC-001",
+      "implementation_pr_url": "https://github.com/Fulcanelli13/ad-orientem/pull/1516",
+      "release_certified": false
+    },
+    {
+      "weiser_id": "WEI58-28-025",
+      "chapter": 28,
+      "printed_page": 342,
+      "title": "Lucy bride white-dressed breakfast tray and candle wreath",
+      "cohort": "REGIONAL_PRIORITY",
+      "owner": "Customs Atlas / Calendar",
+      "disposition": "SOURCE_LOCK_REQUIRED",
+      "canonical_ids": [],
+      "source_state": "WEISER_1958_ONLY",
+      "independent_verification": "REQUIRED_UNLESS_LINKED_TO_EXISTING_OWNER",
+      "checks_needed": [
+        "SWEDISH_CATHOLIC_PRACTICE_VS_POST_REFORMATION"
+      ],
+      "editorial_note": "St Lucy breakfast and candle wreath includes Scandinavian post-Reformation adoption."
+    },
+    {
+      "weiser_id": "WEI58-23-021",
+      "chapter": 23,
+      "printed_page": 284,
+      "title": "Pseudo-relics and amulet treatment condemned",
+      "cohort": "HISTORY_ONLY",
+      "owner": "Explore / Learn",
+      "disposition": "DO_NOT_PUBLISH_AS_INSTRUCTION",
+      "canonical_ids": [],
+      "source_state": "WEISER_1958_ONLY",
+      "independent_verification": "REQUIRED_UNLESS_LINKED_TO_EXISTING_OWNER",
+      "checks_needed": [
+        "RELIC_AUTHENTICITY_GUARDRAIL"
+      ],
+      "editorial_note": "Never promote pseudo-relics; preserve authenticity and permissions gates."
+    }
+  ],
+  "backlog": {
+    "unreviewed_for_release": 538,
+    "meaning": "Records still in research inventory, not rejected and not forgotten; this is a targeted pilot mapping only."
+  }
+}

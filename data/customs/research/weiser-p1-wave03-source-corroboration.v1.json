@@ -1,0 +1,236 @@
+{
+  "schema": "AO_WEISER_P1_WAVE03_CORROBORATION_V1",
+  "version": "1.0.0",
+  "as_of": "2026-10-20",
+  "state": "RESEARCH_ONLY_INDEPENDENT_SOURCE_SCREENING",
+  "original_crosswalk": "data/customs/research/weiser-p1-wave02-full-reconciliation.v1.json",
+  "source_policy": [
+    "Weiser printed text is only a historical locator; each independent witness is bounded to the exact factual claim.",
+    "No journalistic or modern rite automatically proves a 1962 priestly formula or obligation.",
+    "Partial witnesses are registered but not promoted to finished app summaries.",
+    "All items map to previously unmapped P1 observations, without changing the frozen wave02 ledger.",
+    "No mass reader, calendar or app content automatically changed."
+  ],
+  "totals": {
+    "previously_bounded_p1_observations": 14,
+    "new_bounded_p1_observations": 12,
+    "new_partial_p1_observations": 5,
+    "new_bounded_topics": 11,
+    "new_partial_topics": 5,
+    "distinct_p1_observations_reviewed": 17,
+    "cumulative_p1_evidence_reviewed": 31,
+    "remaining_p1_without_independent_topic": 113,
+    "publication_releases": 0
+  },
+  "witnesses": [
+    {
+      "witness_id": "W58B3-WREATH",
+      "observation_ids": [
+        "WEI58-05-002"
+      ],
+      "title": "Family Advent wreath",
+      "issuer": "United States Conference of Catholic Bishops",
+      "url": "https://www.usccb.org/prayers/blessing-advent-wreath",
+      "verified_scope": "Modern Catholic household wreath and family prayer in Advent, optional; original Protestant historical origin is not independently verified here.",
+      "source_status": "BOUNDED_INDEPENDENT",
+      "legal_liturgical_owner": "CALENDAR_AND_RITES_EXISTING_AUTHORITIES",
+      "publication_state": "RESEARCH_ONLY_NO_AUTO_PUBLISH"
+    },
+    {
+      "witness_id": "W58B3-CRIB",
+      "observation_ids": [
+        "WEI58-06-007"
+      ],
+      "title": "Family prayer at a Christmas crib",
+      "issuer": "Holy See — Directory on Popular Piety and the Liturgy, n. 109",
+      "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html",
+      "verified_scope": "Family Christmas Eve Nativity-crib prayers including Luke's account and carols, not a required 1962 pre-Mass ceremony.",
+      "source_status": "BOUNDED_INDEPENDENT",
+      "legal_liturgical_owner": "CALENDAR_AND_RITES_EXISTING_AUTHORITIES",
+      "publication_state": "RESEARCH_ONLY_NO_AUTO_PUBLISH"
+    },
+    {
+      "witness_id": "W58B3-IRISH_CANDLE",
+      "observation_ids": [
+        "WEI58-08-004",
+        "WEI58-08-008"
+      ],
+      "title": "Irish Christmas household and window candles",
+      "issuer": "National Museum of Ireland — Christmas in years gone by; National Folklore Collection UCD",
+      "url": "https://source.museum.ie/en-IE/Collections-Research/Folklife-Collections/Folklife-Collections-List-%281%29/Religion-and-Calendar-Customs/Generations-past-how-Christmas-was-celebrated-in-y",
+      "verified_scope": "Irish household candles remembering the departed; local folk archive separately documents Christmas Eve window candle for hospitality. Folklore of guaranteed blessings/returning spirits is not promoted.",
+      "source_status": "BOUNDED_INDEPENDENT",
+      "legal_liturgical_owner": "CALENDAR_AND_RITES_EXISTING_AUTHORITIES",
+      "publication_state": "RESEARCH_ONLY_NO_AUTO_PUBLISH"
+    },
+    {
+      "witness_id": "W58B3-EPIPH_PROCL",
+      "observation_ids": [
+        "WEI58-12-005"
+      ],
+      "title": "Epiphany announcement of Easter",
+      "issuer": "United States Conference of Catholic Bishops",
+      "url": "https://www.usccb.org/prayer-and-worship/liturgical-year-and-calendar/christmas/announcement-of-easter-and-the-moveable-feasts",
+      "verified_scope": "Custom of solemnly announcing movable feasts on Epiphany, linked to Easter's centrality; source gives contemporary text, not certified 1962 use.",
+      "source_status": "BOUNDED_INDEPENDENT",
+      "legal_liturgical_owner": "CALENDAR_AND_RITES_EXISTING_AUTHORITIES",
+      "publication_state": "RESEARCH_ONLY_NO_AUTO_PUBLISH"
+    },
+    {
+      "witness_id": "W58B3-PALM_FRONDS",
+      "observation_ids": [
+        "WEI58-15-006"
+      ],
+      "title": "Regional Palm Sunday branches",
+      "issuer": "Église catholique en France — Semaine Sainte et Pâques",
+      "url": "https://eglise.catholique.fr/espace-presse/dossiers-de-presse/368505-semaine-sainte-et-paques/",
+      "verified_scope": "French Catholic use of buis, olive, laurel or palm according to region, blessed by priest and brought home; no magical protection.",
+      "source_status": "BOUNDED_INDEPENDENT",
+      "legal_liturgical_owner": "CALENDAR_AND_RITES_EXISTING_AUTHORITIES",
+      "publication_state": "RESEARCH_ONLY_NO_AUTO_PUBLISH"
+    },
+    {
+      "witness_id": "W58B3-PALM_CROSS",
+      "observation_ids": [
+        "WEI58-15-007"
+      ],
+      "title": "Palm fronds made into devotional crosses",
+      "issuer": "Catholic Culture — Blessed Palms in the Home",
+      "url": "https://www.catholicculture.org/culture/liturgicalyear/activities/view.cfm?id=1035",
+      "verified_scope": "Modern Catholic household devotional practice making crosses from blessed Palm Sunday fronds; historical exact weaving and Weiser's geographic scope remain unverified.",
+      "source_status": "BOUNDED_INDEPENDENT",
+      "legal_liturgical_owner": "CALENDAR_AND_RITES_EXISTING_AUTHORITIES",
+      "publication_state": "RESEARCH_ONLY_NO_AUTO_PUBLISH"
+    },
+    {
+      "witness_id": "W58B3-HOLYWEEK_POPAYAN",
+      "observation_ids": [
+        "WEI58-15-025"
+      ],
+      "title": "Colombian Holy Week entombment processions",
+      "issuer": "UNESCO Intangible Cultural Heritage — Popayán Holy Week processions",
+      "url": "https://ich.unesco.org/en/RL/holy-week-processions-in-popayan-00259",
+      "verified_scope": "Longstanding local Holy Week processions in Popayán, Colombia, including Laying in the Tomb. No evidence of identical celebration in every Spanish or Latin American church.",
+      "source_status": "BOUNDED_INDEPENDENT",
+      "legal_liturgical_owner": "CALENDAR_AND_RITES_EXISTING_AUTHORITIES",
+      "publication_state": "RESEARCH_ONLY_NO_AUTO_PUBLISH"
+    },
+    {
+      "witness_id": "W58B3-ANDALUSIAN_HOODS",
+      "observation_ids": [
+        "WEI58-15-028"
+      ],
+      "title": "Andalusian Holy Week confraternities and hooded penitents",
+      "issuer": "Turismo de Andalucía — Términos de Semana Santa",
+      "url": "https://www.andalucia.org/eventos/semana-santa/terminos-de-semana-santa/",
+      "verified_scope": "Local Andalusian Semana Santa brotherhoods with nazareno, tunic and capirote; this is a public confraternity tradition, not a Roman Mass rubric.",
+      "source_status": "BOUNDED_INDEPENDENT",
+      "legal_liturgical_owner": "CALENDAR_AND_RITES_EXISTING_AUTHORITIES",
+      "publication_state": "RESEARCH_ONLY_NO_AUTO_PUBLISH"
+    },
+    {
+      "witness_id": "W58B3-EASTER_EGG",
+      "observation_ids": [
+        "WEI58-17-010"
+      ],
+      "title": "Easter egg as Christian symbol of life",
+      "issuer": "Holy See — Directory on Popular Piety and the Liturgy, n. 150",
+      "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html",
+      "verified_scope": "Easter eggs symbolize life in Christian popular piety; the Vatican documents egg blessings. Specific imagery of the tomb and historical 1962 Roman Ritual text not authenticated.",
+      "source_status": "BOUNDED_INDEPENDENT",
+      "legal_liturgical_owner": "CALENDAR_AND_RITES_EXISTING_AUTHORITIES",
+      "publication_state": "RESEARCH_ONLY_NO_AUTO_PUBLISH"
+    },
+    {
+      "witness_id": "W58B3-VENI_CREATOR",
+      "observation_ids": [
+        "WEI58-19-009"
+      ],
+      "title": "Veni Creator at Pentecost",
+      "issuer": "Holy See — John Paul II, First Vespers of Pentecost, 29 May 2004",
+      "url": "https://www.vatican.va/content/john-paul-ii/en/homilies/2004/documents/hf_jp-ii_hom_20040529_vigil-pentecost.html",
+      "verified_scope": "The hymn Veni Creator Spiritus is directly attested for Pentecost prayer; this source does not establish all Weiser-described councils and retreats usages.",
+      "source_status": "BOUNDED_INDEPENDENT",
+      "legal_liturgical_owner": "CALENDAR_AND_RITES_EXISTING_AUTHORITIES",
+      "publication_state": "RESEARCH_ONLY_NO_AUTO_PUBLISH"
+    },
+    {
+      "witness_id": "W58B3-CORPUS_WINDOWS",
+      "observation_ids": [
+        "WEI58-21-007"
+      ],
+      "title": "Corpus Christi route-side household windows",
+      "issuer": "Holy See — Directory on Popular Piety and the Liturgy, n. 162",
+      "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html",
+      "verified_scope": "Decorating streets and windows with flowers accompanying Eucharistic processions. It does not independently verify Weiser's exact candles-and-images detail.",
+      "source_status": "BOUNDED_INDEPENDENT",
+      "legal_liturgical_owner": "CALENDAR_AND_RITES_EXISTING_AUTHORITIES",
+      "publication_state": "RESEARCH_ONLY_NO_AUTO_PUBLISH"
+    },
+    {
+      "witness_id": "W58B3-MALTA_RUNNING",
+      "observation_ids": [
+        "WEI58-16-020"
+      ],
+      "title": "Maltese Resurrection procession with running statue",
+      "issuer": "Archdiocese of Malta — Holy Week processions in Malta and Gozo",
+      "url": "https://church.mt/holy-week-processions-in-malta-and-gozo/",
+      "verified_scope": "Easter Sunday local processions with image of the Risen Christ are independently attested; this notice does not establish their exact running choreography.",
+      "source_status": "PARTIAL_RITE_MOVEMENT",
+      "legal_liturgical_owner": "CALENDAR_AND_RITES_EXISTING_AUTHORITIES",
+      "publication_state": "RESEARCH_ONLY_NO_AUTO_PUBLISH"
+    },
+    {
+      "witness_id": "W58B3-ROGATION_FIELDS",
+      "observation_ids": [
+        "WEI58-04-002"
+      ],
+      "title": "Rogation fields sprinkled by priest",
+      "issuer": "Église catholique en France — Le retour des rogations",
+      "url": "https://eglise.catholique.fr/approfondir-sa-foi/la-celebration-de-la-foi/les-grandes-fetes-chretiennes/lascension-du-christ/499355-le-retour-des-rogations/",
+      "verified_scope": "Documented local priestly agricultural-equipment, livestock and seed blessing; NOT a witness to the exact priestly sprinkling of fields in the Weiser row.",
+      "source_status": "PARTIAL_DIFFERENT_OBJECT",
+      "legal_liturgical_owner": "CALENDAR_AND_RITES_EXISTING_AUTHORITIES",
+      "publication_state": "RESEARCH_ONLY_NO_AUTO_PUBLISH"
+    },
+    {
+      "witness_id": "W58B3-SHROVE_CONFESSION",
+      "observation_ids": [
+        "WEI58-13-003"
+      ],
+      "title": "Shrove Tuesday confession immediately before Ash Wednesday",
+      "issuer": "USCCB — Promoting Participation in the Sacrament of Penance",
+      "url": "https://www.usccb.org/prayer-and-worship/sacraments-and-sacramentals/penance/sacrament-of-penance-diocesan-resources",
+      "verified_scope": "Confession as Lenten preparation documented, but no independent Shrove Tuesday date-specific practice or mandate.",
+      "source_status": "PARTIAL_DIFFERENT_DATE",
+      "legal_liturgical_owner": "CALENDAR_AND_RITES_EXISTING_AUTHORITIES",
+      "publication_state": "RESEARCH_ONLY_NO_AUTO_PUBLISH"
+    },
+    {
+      "witness_id": "W58B3-IRISH_TO_AMERICA",
+      "observation_ids": [
+        "WEI58-06-001"
+      ],
+      "title": "Irish Christmas candle adopted in America",
+      "issuer": "National Folklore Collection UCD — Festival Customs, Co. Cork",
+      "url": "https://www.duchas.ie/en/cbes/4921616/4885347/5149585",
+      "verified_scope": "Irish Christmas candle use is independently attested in County Cork; migration or historical adoption of the custom in America is not proved.",
+      "source_status": "PARTIAL_MIGRATION_UNVERIFIED",
+      "legal_liturgical_owner": "CALENDAR_AND_RITES_EXISTING_AUTHORITIES",
+      "publication_state": "RESEARCH_ONLY_NO_AUTO_PUBLISH"
+    },
+    {
+      "witness_id": "W58B3-ROMAN_EASTER_EGG_RITE",
+      "observation_ids": [
+        "WEI58-17-011"
+      ],
+      "title": "Historical Roman Ritual Easter egg blessing",
+      "issuer": "Holy See — Directory on Popular Piety and the Liturgy, n. 150",
+      "url": "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20020513_vers-direttorio_en.html",
+      "verified_scope": "Church acknowledges egg blessing as popular piety, but does not certify the text, edition, minister or 1962 availability of the Roman Ritual rite.",
+      "source_status": "PARTIAL_1962_RITUAL_REQUIRED",
+      "legal_liturgical_owner": "CALENDAR_AND_RITES_EXISTING_AUTHORITIES",
+      "publication_state": "RESEARCH_ONLY_NO_AUTO_PUBLISH"
+    }
+  ]
+}
