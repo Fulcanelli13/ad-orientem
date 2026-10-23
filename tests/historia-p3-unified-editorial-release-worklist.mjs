@@ -101,6 +101,75 @@ for(const item of proposals){
     "Paired decisions must be owned by an existing source/UI item");
 }
 assert.equal(originalEntries,38);
+const lowerPriority=items.filter(x=>x.priority!=="P0");
+assert.equal(lowerPriority.length,12);
+assert.equal(ledger.totals.allSourceResearchRecommendations,20);
+assert.equal(ledger.totals.remainingSourceRecommendationResearchQueue,0);
+assert.equal(ledger.totals.p1p2ResearchRecommendations,12);
+assert.equal(ledger.totals.sourceEditorialAcceptances,0);
+assert.equal(ledger.totals.releaseGatesPassed,0);
+const expectedDispositions=new Map([
+ ["HS-W-SRC-EXODUS-5-FIRST-REFUSAL","PROPOSE_TRIAL_INCLUDE_FIRST_REFUSAL"],
+ ["HS-W-SRC-HS-CF-05","PROPOSE_TRIAL_INCLUDE_FULL_GOSPEL_RESPONSE"],
+ ["HS-W-SRC-HS-CF-07","PROPOSE_TRIAL_INCLUDE_ASCENSION_PRELUDE"],
+ ["HS-W-SRC-HS-CF-08","PROPOSE_TRIAL_INCLUDE_STEVE_REBUKE"],
+ ["HS-W-SRC-HS-P3-CF-12","PROPOSE_CONDITIONAL_SOURCE_INSTEAD_OF_DUPLICATE_CONNECTOR"],
+ ["HS-W-SRC-HS-CF-10","PREFER_KEEP_HELD_AS_OPTIONAL_GEOGRAPHIC_INTENTION"],
+ ["HS-W-SRC-HS-CF-02","PREFER_KEEP_HELD_WITH_EDITORIAL_GENEALOGY"],
+ ["HS-W-SRC-HS-CF-03","PROPOSE_TRIAL_INCLUDE_JOSEPH_PRISON_CAUSE"],
+ ["HS-W-SRC-HS-P3-CF-17","PREFER_KEEP_HELD_AVOID_REPEAT_BAPTISM"],
+ ["HS-W-SRC-HS-CF-09","PREFER_KEEP_HELD_FOR_SEPARATE_FAREWELL_DISCOURSE"],
+ ["HS-W-SRC-MATTHEW-27-JUDAS","PREFER_KEEP_HELD_DISTINCT_JUDAS_EPISODE"],
+ ["HS-W-SRC-HS-P3-CF-16","PROPOSE_TRIAL_INCLUDE_CANON_END_WITH_EXPLICIT_GAP"]
+]);
+assert.equal(expectedDispositions.size,12);
+for(const item of lowerPriority){
+ const d=item.researchRecommendation;
+ assert.ok(d,"Every lower-risk source owner must have a proposed researched disposition");
+ assert.equal(d.recommendation,expectedDispositions.get(item.id));
+ assert.equal(d.group,item.group);
+ assert.equal(d.status,"SOURCE_EVIDENCE_PROPOSED_NOT_SELECTED");
+ assert.equal(item.currentState,"RESEARCH_RECOMMENDATION_READY_NOT_ACCEPTED");
+ assert.equal(d.acceptedByHumanEditor,false);
+ assert.equal(d.publicationApproved,false);
+ assert.equal(d.nativeSourceContentNotEdited,true);
+ assert.equal(d.original93UnitSelectionUnmodified,true);
+ assert.equal(d.optionalUnselectedComparison,true);
+ assert.equal(d.dependenciesToAccept.length,3);
+ assert.ok(d.reason.length>150);
+ assert.ok(d.contrast.length>110);
+ assert.ok(d.conditionalEdits.length>=2);
+ assert.ok(d.refs.length>0);
+ assert.ok(d.refs.every(ref=>item.reviewReferences.includes(ref)),
+   "No extra original Scripture introduced outside the P3 reviewed range "+item.id);
+ for(const ref of d.refs)for(const edition of editions)
+  assert.ok(exactVerse(ref,edition).length>0,"Missing three witness source "+item.id);
+}
+const low=id=>lowerPriority.find(w=>w.id===id).researchRecommendation;
+assert.deepEqual(low("HS-W-SRC-EXODUS-5-FIRST-REFUSAL").refs,["Exodus 5:1–2"]);
+assert.ok(low("HS-W-SRC-EXODUS-5-FIRST-REFUSAL").contrast.includes("Exodus 7:1–6"));
+assert.deepEqual(low("HS-W-SRC-HS-CF-05").refs,["John 11:45–53"]);
+assert.ok(low("HS-W-SRC-HS-CF-05").reason.includes("11:51–52")||
+ low("HS-W-SRC-HS-CF-05").contrast.includes("11:51–52"));
+assert.deepEqual(low("HS-W-SRC-HS-CF-07").refs,["Acts 1:3–5"]);
+assert.deepEqual(low("HS-W-SRC-HS-CF-08").refs,["Acts 7:51–53"]);
+assert.deepEqual(low("HS-W-SRC-HS-P3-CF-12").refs,["Acts 14:26–27"]);
+assert.ok(low("HS-W-SRC-HS-P3-CF-12").conditionalEdits[0].includes("HS-P3-EC-10"));
+assert.deepEqual(low("HS-W-SRC-HS-CF-10").refs,["Acts 19:21"]);
+assert.deepEqual(low("HS-W-SRC-HS-CF-02").refs,["Genesis 11:26–31"]);
+assert.deepEqual(low("HS-W-SRC-HS-CF-03").refs,["Genesis 39:19–21"]);
+assert.deepEqual(low("HS-W-SRC-HS-P3-CF-17").refs,["John 1:29–34"]);
+assert.deepEqual(low("HS-W-SRC-HS-CF-09").refs,["John 14:16–17"]);
+assert.deepEqual(low("HS-W-SRC-MATTHEW-27-JUDAS").refs,["Matthew 27:3–10"]);
+assert.deepEqual(low("HS-W-SRC-HS-P3-CF-16").refs,["Revelation 22:20–21"]);
+const endingDouay=exactVerse("Revelation 22:19","dr-challoner").join(" ");
+const endingFrench=exactVerse("Revelation 22:19","crampon-1923").join(" ");
+assert.match(endingDouay,/book of life/i);
+assert.match(endingFrench,/arbre de la vie/i);
+assert.ok(low("HS-W-SRC-HS-P3-CF-16").conditionalEdits[0].includes("22:6–19"));
+assert.ok(items.every(item=>item.researchRecommendation?.publicationApproved===false));
+assert.equal(items.filter(x=>x.researchRecommendation?.acceptedByHumanEditor===true).length,0);
+
 const p0Trial=id=>proposedById.get(id).researchRecommendation;
 assert.deepEqual(p0Trial("HS-W-SRC-HS-CF-01").refs,["Genesis 6:9–14","Genesis 6:17–22"]);
 assert.deepEqual(p0Trial("HS-W-SRC-EXODUS-12-FIRSTBORN").refs,["Exodus 12:29–30"]);
