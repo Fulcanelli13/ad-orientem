@@ -287,6 +287,48 @@ try{
  assert.equal(await page.locator("#reviewForm").count(),0);
  assert.ok((await page.locator("body").evaluate(el=>el.scrollWidth-el.clientWidth))<=2,
    "Mark editorial source overflows 390px phone width");
+ await page.locator('[data-filter="blind"]').click();
+ await page.locator('[data-blind-case="MARK_BLIND_01"]').waitFor({state:"visible",timeout:20000});
+ assert.equal(await page.locator('#candidateList [data-blind-case]').count(),23);
+ assert.equal(await page.locator('#blindPanel').isVisible(),true);
+ assert.equal(await page.locator('#download').isDisabled(),true);
+ assert.equal(await page.locator('[data-mark-editorial-assessment]').count(),0,
+  "Blind review must hide the researcher AI grade and source-target information");
+ await page.locator('#blindReviewer').fill('Blind Editor Alpha');
+ await page.locator('#blindChooseReviewer').click();
+ await page.locator('[data-blind-case="MARK_BLIND_07"]').click();
+ await page.locator('#blindForm [data-blind-grade]').first().waitFor({state:"visible",timeout:20000});
+ assert.ok(await page.locator('#blindForm [data-blind-grade]').count()>=1);
+ assert.equal(await page.locator('[data-mark-editorial-assessment]').count(),0);
+ assert.ok((await page.locator('#blindForm .source .body').first().innerText()).length>50);
+ await page.locator('#blindForm [data-blind-grade]').first().selectOption('1');
+ const gradeCount=await page.locator('#blindForm [data-blind-grade]').count();
+ for(let i=0;i<gradeCount;i++){
+  if(i>0)await page.locator('#blindForm [data-blind-grade]').nth(i).selectOption('1');
+  await page.locator('#blindForm .source textarea').nth(i).fill(
+   'Synthetic browser regression review only. No independent theological relevance is certified.');
+ }
+ await page.locator('#blindOverall').fill('Synthetic browser-review grading, used to confirm submission and export restrictions.');
+ await page.locator('#blindForm button[type="submit"]').click();
+ assert.match(await page.locator('#blindDecisionStatus').innerText(),/saved in this reviewer/);
+ assert.match(await page.locator('#countText').innerText(),/1\/23/);
+ await page.locator('[data-blind-case="MARK_BLIND_01"]').click();
+ await page.locator('#blindAbstention').waitFor({state:"visible",timeout:20000});
+ await page.locator('#blindAbstention').selectOption('uncertain');
+ await page.locator('#blindOverall').fill('This is a synthetic abstention review; the actual relevance remains unassessed.');
+ await page.locator('#blindForm button[type="submit"]').click();
+ assert.match(await page.locator('#countText').innerText(),/2\/23/);
+ const blindDownload=page.waitForEvent('download');
+ await page.locator('#blindExport').click();
+ const blindExportFile=await blindDownload;
+ assert.match(blindExportFile.suggestedFilename(),/catena-mark-blind-Blind_Editor_Alpha\.json/);
+ assert.match(await page.locator('#blindStatus').innerText(),/2\/23 case grades exported/);
+ await page.locator('#blindReviewer').fill('Blind Editor Beta');
+ await page.locator('#blindChooseReviewer').click();
+ assert.match(await page.locator('#countText').innerText(),/0\/23/);
+ assert.equal(await page.locator('#reviewForm').count(),0,
+  "Blind editorial scoring is not Matthew approval or Mark publication");
+ assert.ok((await page.locator('body').evaluate(el=>el.scrollWidth-el.clientWidth))<=2);
  await page.locator('[data-filter="focus"]').click();
  await page.locator('[data-focused-source="english-parallel-checked"]')
   .waitFor({state:"visible",timeout:20000});
