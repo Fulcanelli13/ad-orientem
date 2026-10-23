@@ -45,6 +45,55 @@ for(const id of ['SPX-PILOT-07','SPX-NEW-021','SPX-NEW-013','SPX-EXP-037',
   assert.equal(next.evidence[0].primaryWitnessStatus,'NARROW_SOURCE_FOLLOWUP_CANDIDATE_UNAPPROVED');
  }
 }
+
+const followupTriage=JSON.parse(readFileSync(
+ 'previews/pius-x-study/evidence/pius-x-eight-document-followup-triage-20261023.v1.json','utf8'));
+assert.equal(followupTriage.schema,'AO_SPX_P2_EIGHT_DOCUMENT_FOLLOWUP_TRIAGE_V1');
+assert.deepEqual(followupTriage.summary,{
+ documents:8,followupNodes:22,boundedFollowupCandidates:14,heldFollowupNodes:8,
+ newOriginalWitnessFragments:3,fullAnswersVerified:0,translationsCertified:0,published:0});
+const mapped=followupTriage.followups.filter(x=>x.witnessIds.length);
+const unmapped=followupTriage.followups.filter(x=>x.witnessIds.length===0);
+assert.equal(mapped.length,14);
+assert.equal(unmapped.length,8);
+assert.equal([...store.sourceOnlyGate.values()].reduce((a,v)=>a+v.size,0),36);
+for(const item of followupTriage.followups){
+ const c=store.chapters.get(item.chapterId);
+ const node=c?.nodes.find(n=>n.id===item.nodeId);
+ assert(node,'all records must identify canonical P6 node IDs');
+ assert.equal(item.questionEn,node.q.en);
+ const result=selectEvidence(store,{chapterId:c.id,nodeId:node.id,language:'fr',question:node.q.fr});
+ if(item.witnessIds.length){
+  assert.equal(result.status,'eligible');
+  assert.deepEqual(result.evidence[0].originalLanguageWitnesses.map(w=>w.id),item.witnessIds);
+  assert.equal(result.evidence[0].primaryWitnessStatus,'NARROW_SOURCE_FOLLOWUP_CANDIDATE_UNAPPROVED');
+  assert(result.evidence[0].editorialWarnings.some(w=>w.includes('NOT evidence')));
+  assert(!JSON.stringify(result.evidence).includes(node.a.en));
+  assert(!JSON.stringify(result.evidence).includes(node.a.fr));
+ }else{
+  assert.equal(result.status,'held');
+  assert.equal(result.reason,'followup_not_mapped_to_primary_source_claim');
+ }
+}
+const chant=followupTriage.additionalOriginalWitnesses;
+assert.equal(chant.length,3);
+const originalVaticanContext=[
+ 'Per tali motivi il canto gregoriano fu sempre considerato come il supremo modello della musica sacra',
+ 'Le anzidette qualità sono pure possedute in ottimo grado dalla classica polifonia',
+ 'Per conseguenza la musica più moderna è pure ammessa in chiesa'
+].join(' ');
+for(const excerpt of chant){
+ assert(originalVaticanContext.includes(excerpt.originalText),
+  'Vatican source-context spotcheck missing '+excerpt.id);
+ assert.equal(excerpt.status,'VATICAN_VERBATIM_SPOTCHECK_NOT_TRANSLATION_APPROVED');
+ assert.equal(excerpt.originalLanguage,'it');
+}
+const question38=store.chapters.get('SPX-EXP-037');
+const music=selectEvidence(store,{chapterId:question38.id,nodeId:question38.nodes[2].id,
+ language:'en',question:question38.nodes[2].q.en});
+assert.deepEqual(music.evidence[0].originalLanguageWitnesses.map(x=>x.id),
+ ['TLS-CHANT','TLS-POLYPHONY','TLS-MODERN']);
+
 const legacy=store.chapters.get('SPX-PILOT-01');
 const short=selectEvidence(store,{chapterId:legacy.id,nodeId:legacy.nodes[0].id,
  language:'en',question:legacy.nodes[0].q.en});
