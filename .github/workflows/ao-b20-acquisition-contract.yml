@@ -1,0 +1,26 @@
+name: B20 acquisition offline contract
+on:
+  push:
+    branches: [research/b19-original-image-acquisition-probe-20261023]
+    paths:
+      - .github/workflows/ao-b20-acquisition-contract.yml
+      - scripts/research/sacred_art_acquire.py
+      - tests/test_sacred_art_acquire_contract.py
+      - data/research/sacred-art-b20-wave150.manifest.json
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  no-network-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check 'Pillow>=11,<13'
+      - name: Validate runner syntax and licences without network downloads
+        run: |
+          python -m py_compile scripts/research/sacred_art_acquire.py
+          python -m unittest discover -s tests -p 'test_sacred_art_acquire_contract.py' -v
