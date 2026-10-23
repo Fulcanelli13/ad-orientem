@@ -64,7 +64,7 @@ for(const c of fixture.cases){
   assert.throws(()=>validateMarkBlindCaseDecision(fixture,c.id,retrieved,missing),
    /MESSAGES_INCOMPLETE/);
   assert.throws(()=>validateMarkBlindCaseDecision(fixture,c.id,retrieved,{
-   ...entry,messageGrades:messageGrades.map((r,i)=>i? r:{...r,grade:3,supportingOriginalWords:"Made up evidence"}
+   ...entry,messageGrades:messageGrades.map((r,i)=>i? r:{...r,grade:3,supportingOriginalWords:"Made up evidence"})
   }),/MESSAGE_GRADE_INVALID/);
  }else assert.throws(()=>validateMarkBlindCaseDecision(fixture,c.id,retrieved,{
   ...entry,abstentionGrade:"approved"
