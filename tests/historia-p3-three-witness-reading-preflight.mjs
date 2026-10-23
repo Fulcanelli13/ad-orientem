@@ -76,6 +76,20 @@ assert.match(verseByEdition("dr-challoner",28),/Israel/i);
 assert.match(verseByEdition("crampon-1923",29),/Israël/i);
 assert.match(verseByEdition("dr-challoner",32),/sinew/i);
 assert.match(verseByEdition("crampon-1923",33),/nerf/i);
+const cloud=proof.movements.find(m=>m.id==="HS-M10").beats.find(b=>b.id==="H23-02").editorialReadingCandidate;
+assert.deepEqual(cloud.sourceReferencesByEdition["dr-challoner"],["Exodus 40:16–21","Exodus 40:32–36"]);
+assert.deepEqual(cloud.sourceReferencesByEdition["cpdv-2009"],["Exodus 40:16–21","Exodus 40:32–36"]);
+assert.deepEqual(cloud.sourceReferencesByEdition["crampon-1923"],["Exodus 40:16–21","Exodus 40:34–38"]);
+assert.equal(cloud.publicationApproved,false);
+for(const edition of editions){
+ const source=witness(edition,"Exodus");
+ for(const r of cloud.sourceReferencesByEdition[edition]){
+  const q=passage(r);
+  for(let v=q.startVerse;v<=q.endVerse;v++)assert.ok(source.get(q.startChapter+":"+v)?.trim());
+ }
+}
+assert.match(witness("dr-challoner","Exodus").get("40:32"),/cloud covered/i);
+assert.match(witness("crampon-1923","Exodus").get("40:34"),/nuée couvrit/i);
 const stephen=proof.movements.find(m=>m.id==="HS-M31").beats.find(b=>b.id==="H68-04");
 assert.deepEqual(stephen.semanticEditionAlignment.selectedReferencesByEdition["crampon-1923"],["Acts 7:54–60"]);
 assert.deepEqual(stephen.semanticEditionAlignment.selectedReferencesByEdition["dr-challoner"],["Acts 7:54–59"]);
