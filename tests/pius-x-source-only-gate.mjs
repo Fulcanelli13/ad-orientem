@@ -187,7 +187,8 @@ for(const row of wave3.records){
    assert.equal(check.evidence[0].primaryWitnessStatus,
     'WAVE_THREE_NARROW_ORIGINAL_TEXT_RESEARCH_ONLY');
    assert.deepEqual(check.evidence[0].originalLanguageWitnesses.map(x=>x.id),row.witnessIds);
-   assert(check.evidence[0].editorialWarnings.some(x=>x.includes('not authenticated')));
+   assert(check.evidence[0].editorialWarnings.some(x=>
+     x.includes('Neither the original P6 English nor French answer is authenticated')));
    assert(!JSON.stringify(check.evidence).includes(node.a.en));
    assert(!JSON.stringify(check.evidence).includes(node.a.fr));
   }else{
