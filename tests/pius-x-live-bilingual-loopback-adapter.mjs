@@ -25,8 +25,9 @@ const server=createServer(async(req,res)=>{
   assert.equal(parsed.messages.length,2);
   const input=JSON.parse(parsed.messages[1].content);
   const compose=parsed.messages[0].content.includes('Compose a PRIVATE, UNAPPROVED');
-  assert(parsed.messages[0].content.includes('original-language')||
-   parsed.messages[0].content.includes('Latin or Italian'));
+  const system=parsed.messages[0].content.toLowerCase();
+  assert(system.includes('original-language')||system.includes('latin/italian'),
+   'source-only system prompt must reach the adapter');
   let output;
   if(compose){
    assert.equal(input.chapterId,'SPX-PILOT-01');
