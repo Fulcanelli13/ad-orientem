@@ -29,6 +29,10 @@ export function buildPrimaryCoverageReport(store,{nextBatchDocuments=12}={}){
  const wave3=JSON.parse(readFileSync(new URL('../previews/pius-x-study/evidence/pius-x-six-document-wave3-20261023.v1.json',import.meta.url),'utf8'));
  const totalResearchWitnesses=[...annexes.values()].reduce((n,a)=>n+a.sourceWitnesses.length,0)+
    eight.items.reduce((n,a)=>n+a.witnesses.length,0)+supplemental.additionalOriginalWitnesses.length+wave2.witnesses.length+wave3.witnesses.length;
+ const olderHolds=supplemental.followups.filter(r=>r.witnessIds.length===0);
+ const resolvedOlderHolds=olderHolds.filter(r=>gate.get(r.chapterId)?.has(r.nodeId)).length;
+ if(olderHolds.length!==8||resolvedOlderHolds!==2)
+  throw new Error('Older source holds require reconciliation with newer passage evidence');
  for(const c of store.data.chapters){
   if(c.partial)partialChapters++;
   const sourceUrl=c.source?.url||c.nodes?.[0]?.source?.url||'';
@@ -77,7 +81,9 @@ export function buildPrimaryCoverageReport(store,{nextBatchDocuments=12}={}){
    bulkWave3NewNodes:wave3.summary.newBoundedResearchCandidates,
    bulkWave3Holds:wave3.summary.newResearchHolds,
    bulkWave3NewExcerpts:wave3.witnesses.length,
-   heldResearchFollowups:supplemental.summary.heldFollowupNodes,
+   historicallyHeldFollowups:supplemental.summary.heldFollowupNodes,
+   priorFollowupHoldsNowResolved:resolvedOlderHolds,
+   heldResearchFollowups:olderHolds.length-resolvedOlderHolds,
    nodesNotYetMappedToOriginalExcerpt:423-coveredNodes,
    originalLanguageExcerptAnchors:totalResearchWitnesses,
    chaptersFullyAuthenticated:0,publishedAnswers:0},
