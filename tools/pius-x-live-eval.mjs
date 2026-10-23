@@ -13,28 +13,35 @@ const rubric={
  responseToQuestion:'MANUAL 1–5: does the draft address the user question?',
  conversationalContinuity:'MANUAL 1–5: is the follow-up natural, specific, and coherent?',
  historicalVoice:'MANUAL 1–5: restrained period style, not caricature?',
- claimSupportInEditorialExcerpt:'MANUAL 1–5: is every claim literally supported by the supplied editorial excerpt?',
- originalWitnessAccuracy:'UNASSESSABLE UNTIL PRIMARY TEXT COLLATED',
+ claimSupportInEditorialExcerpt:'MANUAL 1–5: are all claims bounded by the supplied original-language excerpts and short glosses?',
+ originalWitnessAccuracy:'ORIGINAL LANGUAGE FRAGMENTS PRESENT; FULL CONTEXT AND TRANSLATION NOT CERTIFIED',
  translationAccuracy:'UNASSESSED',
  publicationApproved:false
 };
 export function makeEvaluationCases(store){
  const eligible=[...store.chapters.values()]
-  .filter(c=>c.sourceClass==='PAPAL_DOCUMENT_ADAPTATION'&&!c.partial&&c.nodes.length>=2)
+  .filter(c=>c.sourceClass==='PAPAL_DOCUMENT_ADAPTATION'&&!c.partial&&
+   selectEvidence(store,{chapterId:c.id,nodeId:c.nodes[0].id,language:'en',
+    question:c.nodes[0].q.en}).status==='eligible')
   .sort((a,b)=>a.id.localeCompare(b.id));
  if(eligible.length<5)throw new Error('Source-owned corpus has insufficient documented dialogue');
  // Spread samples across different original documentary chapters; never invent a reply or source.
  const selections=[eligible[0],eligible[Math.floor(eligible.length/3)],
   eligible[Math.floor(eligible.length*2/3)],eligible.at(-1)];
  if(new Set(selections.map(c=>c.id)).size!==4)throw new Error('Duplicate evaluation source sample');
- const A=selections[0],B=selections[1],C=selections[2],D=selections[3];
- const follow=B.nodes.find(n=>n.id!==B.nodes[0].id&&!n.parentId)||B.nodes[1];
+ const A=selections[0],C=selections[2],D=selections[3];
+ const B=eligible.find(c=>c.id==='SPX-PILOT-01');
+ if(!B)throw new Error('Three-question originally witnessed pilot was not selected');
+ const follow=B.nodes.find(n=>n.id!==B.nodes[0].id&&!n.parentId&&
+   selectEvidence(store,{chapterId:B.id,nodeId:n.id,language:'fr',question:n.q.fr}).status==='eligible');
+ if(!follow)throw new Error('No source-witnessed French follow-up');
+
  const cases=[
   {id:'document-opening-en',kind:'source-selected',input:{chapterId:A.id,nodeId:A.nodes[0].id,
    language:'en',question:A.nodes[0].q.en},expected:'DRAFT_OR_REASONED_ABSTENTION'},
   {id:'document-followup-fr',kind:'contextual-follow-up',input:{chapterId:B.id,nodeId:follow.id,
    language:'fr',question:follow.q.fr,history:[{chapterId:B.id,language:'fr',
-    question:B.nodes[0].q.fr,response:B.nodes[0].a.fr.slice(0,600)}]},expected:'DRAFT_OR_REASONED_ABSTENTION'},
+    question:B.nodes[0].q.fr,response:'We were discussing the opening; please continue with the documentary question.'}]},expected:'DRAFT_OR_REASONED_ABSTENTION'},
   {id:'natural-rephrasing-en',kind:'unseen-formulation',input:{chapterId:C.id,nodeId:C.nodes[0].id,
    language:'en',question:'Can you explain the principal point in this teaching: '+C.nodes[0].q.en},
    expected:'DRAFT_OR_REASONED_ABSTENTION'},
@@ -58,7 +65,9 @@ export function makeConversationSequence(store,{chapterId='SPX-PILOT-01',languag
  if(!chapter||chapter.partial||chapter.sourceClass!=='PAPAL_DOCUMENT_ADAPTATION')
   throw new Error('Selected chapter not eligible for editorial-character conversation');
  const steps=chapter.nodes.filter(n=>!n.parentId).slice(0,3);
- if(steps.length!==3)throw new Error('Three documented questions required for in-chapter sequence');
+ if(steps.length!==3||steps.some(n=>selectEvidence(store,{
+  chapterId,language,nodeId:n.id,question:n.q[language]}).status!=='eligible'))
+  throw new Error('Three original-language-witnessed questions required for in-chapter sequence');
  return {chapterId,language,status:'EDITORIAL_TEST_NOT_HISTORICAL_TRANSCRIPT',
   steps:steps.map((node,i)=>({
    turn:i+1,chapterId,language,nodeId:node.id,question:node.q[language],
@@ -156,7 +165,7 @@ export async function evaluateDialogue(store,model,{maxModelCases=4}={}){
   status:'LOCAL_UNAPPROVED_MODEL_TRIAL',sourceVersion:store.data.version,
   modelProvider:'CONFIGURED_PRIVATE_ENDPOINT_NOT_RECORDED',
   summary,records,
-  limitation:'Second-model agreement with UNCOLLATED editorial adaptations does not prove historical or doctrinal truth.'};
+  limitation:'Second-model agreement with short, literal original-language excerpts and editorial claim glosses does not establish doctrinal accuracy or natural dialogue.'};
 }
 export async function runConfiguredLiveEvaluation(){
  if(process.env.AO_SPX_LIVE_EVAL!=='I_ACCEPT_MODEL_COSTS_AND_DATA_TRANSFER'||
