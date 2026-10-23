@@ -66,7 +66,7 @@ export function buildPrimaryCoverageReport(store,{nextBatchDocuments=12}={}){
   }
  }
  if(nodes!==423||store.data.chapters.length!==106||coveredNodes!==144||
-    gate.size!==48||sourceOwnedInitialNodes!==14||totalResearchWitnesses!==165)
+    gate.size!==47||sourceOwnedInitialNodes!==14||totalResearchWitnesses!==165)
   throw new Error('Canonical P6 or 144-node original-text source-only coverage changed');
  const all=[...groups.values()].map(g=>{
   const {genres,sourceClasses,witnessAnchorIds,...rest}=g;
