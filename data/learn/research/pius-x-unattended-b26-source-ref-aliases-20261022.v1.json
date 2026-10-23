@@ -1,0 +1,25 @@
+{
+  "schema": "AO_SPX_B26_SOURCE_REF_ALIAS_PATCH_V1",
+  "date": "2026-10-22",
+  "appliesTo": "data/learn/research/pius-x-unattended-b26-easter-communion-child-discipline-20261022.v1.json",
+  "status": "RESEARCH_ONLY_NOT_CERTIFIED",
+  "aliases": {
+    "PX646": {
+      "sourceKey": "PX646-648",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "locator": "Parte IV Capo IV §5, editorial question 646"
+    },
+    "PX647": {
+      "sourceKey": "PX646-648",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "locator": "Parte IV Capo IV §5, editorial question 647"
+    },
+    "PX648": {
+      "sourceKey": "PX646-648",
+      "sourceUrl": "https://www.museosanpiox.it/documenti-scritti-da-pio-x/il-catechismo-maggiore-di-san-pio-x/parte-quarta-dei-sacramenti/",
+      "locator": "Parte IV Capo IV §5, editorial question 648"
+    }
+  },
+  "reason": "B26 primary evidence groups the three catechism question locators under PX646-648; this alias resolves each record's individual PX reference without modifying approved owners.",
+  "publicationApproved": false
+}
