@@ -187,3 +187,29 @@ assert.deepEqual(
 assert.equal(count.identity_working_rows.final_uniquely_verified_customs_added,0);
 assert.equal(count.no_new_app_publications,true);
 console.log('Unified independent customs workbench index — 685 source mentions, 56 master identities, 347 provisional groups, 6 addendum leads — PASS');
+
+
+const weiserFine = load('data/customs/master/weiser-handbook-targeted-addendum-ch10-13.v1.json');
+const precursorWorks = load('data/customs/master/weiser-precursor-works-acquisition.v1.json');
+assert.equal(weiserFine.records.length, 57);
+assert.equal(new Set(weiserFine.records.map(r => r.id)).size, 57);
+assert.equal(precursorWorks.works.length, 4);
+assert.equal(new Set(precursorWorks.works.map(w => w.source_id)).size,4);
+for (const row of weiserFine.records) {
+  assert.ok(!allHandbookIds.has(row.id), 'Nested observation IDs cannot collide with original 574');
+  assert.ok(priorSourceIds.has(row.relation.previous_source_observation));
+  assert.equal(row.source.pdf_page_index_zero_based, row.source.printed_page+17, '1958 PDF mapping from sample screenshots');
+  assert.ok(Number.isInteger(row.source.ocr_extracted_line_range[0]));
+  assert.ok(row.source.ocr_extracted_line_range[1] > row.source.ocr_extracted_line_range[0]);
+  assert.equal(row.approved_distinct_custom_identity,false);
+  assert.equal(row.app_publication,'NONE');
+}
+assert.equal(count.source_observations.handbook_nested_granular_detail_mentions,57);
+assert.equal(count.source_observations.all_book_research_rows_including_nested_details,742);
+assert.equal(researchCatalogue.handbook_granular_source_details.length,57);
+assert.deepEqual(
+  new Set(researchCatalogue.handbook_granular_source_details.map(x=>x.id)),
+  new Set(weiserFine.records.map(x=>x.id))
+);
+assert.equal(count.identity_working_rows.new_identity_proposals_from_nested_details,0);
+console.log('Handbook granular second pass — 57 nested details on 24 distinct printed pages, 742 research rows without claiming 742 customs — PASS');
