@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import "./historia-p3-first-slice-evidence.mjs";
 import {readFileSync} from "node:fs";
 import {parseScriptureContext} from "../src/scripture/context.js";
 
