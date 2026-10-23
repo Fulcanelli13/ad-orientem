@@ -63,6 +63,19 @@ for(const ed of editions){
  assert.equal(unique[ed].bridgeSpans,16);
  assert.ok(unique[ed].selected.size>900);
 }
+const jacob=proof.movements.find(m=>m.id==="HS-M05").beats.find(b=>b.id==="H15-02");
+assert.deepEqual(jacob.refs,["Genesis 32:22–32"]);
+assert.deepEqual(jacob.semanticEditionAlignment.selectedReferencesByEdition["dr-challoner"],["Genesis 32:22–32"]);
+assert.deepEqual(jacob.semanticEditionAlignment.selectedReferencesByEdition["cpdv-2009"],["Genesis 32:22–32"]);
+assert.deepEqual(jacob.semanticEditionAlignment.selectedReferencesByEdition["crampon-1923"],["Genesis 32:23–33"]);
+assert.equal(jacob.semanticEditionAlignment.noBlindNumericAlignment,true);
+const verseByEdition=(edition,v)=>witness(edition,"Genesis").get("32:"+v);
+assert.match(verseByEdition("dr-challoner",24),/wrestled with him/i);
+assert.match(verseByEdition("crampon-1923",25),/lutta avec lui/i);
+assert.match(verseByEdition("dr-challoner",28),/Israel/i);
+assert.match(verseByEdition("crampon-1923",29),/Israël/i);
+assert.match(verseByEdition("dr-challoner",32),/sinew/i);
+assert.match(verseByEdition("crampon-1923",33),/nerf/i);
 const stephen=proof.movements.find(m=>m.id==="HS-M31").beats.find(b=>b.id==="H68-04");
 assert.deepEqual(stephen.semanticEditionAlignment.selectedReferencesByEdition["crampon-1923"],["Acts 7:54–60"]);
 assert.deepEqual(stephen.semanticEditionAlignment.selectedReferencesByEdition["dr-challoner"],["Acts 7:54–59"]);
