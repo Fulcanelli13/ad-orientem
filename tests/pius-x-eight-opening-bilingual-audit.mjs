@@ -7,6 +7,22 @@ const audit=JSON.parse(readFileSync(home+'pius-x-eight-opening-bilingual-audit-2
 const original=JSON.parse(readFileSync(home+'pius-x-next12-eight-opening-context-evidence-20261023.v1.json','utf8'));
 const sourceClaims=JSON.parse(readFileSync(home+'pius-x-eight-opening-source-claims-20261023.v1.json','utf8'));
 const store=readCorpus(readFileSync('artifacts/pius-x-study-expanded/SPX_Study_Expanded_106_P6.html','utf8'));
+const corrections=JSON.parse(readFileSync(
+ home+'pius-x-opening-bilingual-correction-proposals-20261023.v1.json','utf8'));
+assert.equal(corrections.schema,'AO_SPX_P2_SELECTED_BILINGUAL_CORRECTIONS_PROPOSED_V1');
+assert.equal(corrections.status,'PRIVATE_TEXT_EDIT_CANDIDATES_NOT_APPLIED');
+assert.deepEqual(corrections.summary,{proposals:4,distinctChapters:3,applied:0,released:0});
+const uniqueCorrections=new Set();
+for(const c of corrections.proposals){
+ const node=store.chapters.get(c.chapterId)?.nodes.find(n=>n.id===c.nodeId);
+ assert(node&&node.a.en.includes(c.current.en)&&node.a.fr.includes(c.current.fr));
+ assert.equal(c.status,'PROPOSAL_ONLY_NO_CANONICAL_CHANGE');
+ assert(c.suggested.en!==c.current.en && c.suggested.fr!==c.current.fr);
+ assert(c.source.startsWith('https://www.vatican.va/content/pius-x/'));
+ uniqueCorrections.add(c.chapterId);
+}
+assert.equal(uniqueCorrections.size,3);
+
 function fnv1a32(s){let n=2166136261;for(let i=0;i<s.length;i++){n^=s.charCodeAt(i);n=Math.imul(n,16777619)}return(n>>>0).toString(16).padStart(8,'0')}
 assert.equal(audit.schema,'AO_SPX_P2_EIGHT_OPENING_BILINGUAL_AUDIT_V1');
 assert.equal(audit.status,'REVIEW_ONLY_PRELIMINARY_SEMANTIC_CROSSCHECK');
