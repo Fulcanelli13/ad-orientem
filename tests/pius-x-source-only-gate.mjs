@@ -6,7 +6,7 @@ const html=readFileSync('artifacts/pius-x-study-expanded/SPX_Study_Expanded_106_
 const store=readCorpus(html);
 assert.equal(store.data.counts.allNodes,423);
 assert.equal(store.chapters.size,106);
-assert.equal(store.sourceOnlyGate.size,41);
+assert.equal(store.sourceOnlyGate.size,48);
 assert.equal(store.data.approvals.publishing,false);
 
 let eligible=0, held=0;
@@ -29,8 +29,8 @@ for(const c of store.chapters.values()){
   assert(result.status==='held');
  }
 }
-assert.equal(eligible,41);
-assert.equal(held,65);
+assert.equal(eligible,48);
+assert.equal(held,58);
 assert.equal(all.size,106);
 for(const id of ['SPX-PILOT-07','SPX-NEW-021','SPX-NEW-013','SPX-EXP-037',
  'SPX-NEW-003','SPX-NEW-008','SPX-NEW-007','SPX-013']){
@@ -56,7 +56,7 @@ const mapped=followupTriage.followups.filter(x=>x.witnessIds.length);
 const unmapped=followupTriage.followups.filter(x=>x.witnessIds.length===0);
 assert.equal(mapped.length,14);
 assert.equal(unmapped.length,8);
-assert.equal([...store.sourceOnlyGate.values()].reduce((a,v)=>a+v.size,0),120);
+assert.equal([...store.sourceOnlyGate.values()].reduce((a,v)=>a+v.size,0),144);
 for(const item of followupTriage.followups){
  const c=store.chapters.get(item.chapterId);
  const node=c?.nodes.find(n=>n.id===item.nodeId);
@@ -216,6 +216,68 @@ const unsupportedModern=store.chapters.get('SPX-NEW-002');
 assert.equal(selectEvidence(store,{chapterId:unsupportedModern.id,
  nodeId:unsupportedModern.nodes[3].id,question:unsupportedModern.nodes[3].q.en,language:'en'}).status,'held');
 
+
+const fourth=JSON.parse(readFileSync(
+ 'previews/pius-x-study/evidence/pius-x-six-document-wave4-remaining60-20261023.v1.json','utf8'));
+assert.equal(fourth.schema,'AO_SPX_P2_SIX_DOCUMENT_WAVE4_REMAINING60_V1');
+assert.equal(fourth.status,'PRIVATE_BOUNDED_SNIPPET_RESEARCH_WITH_EXPLICIT_HOLDS');
+assert.deepEqual({
+ prior:fourth.summary.previouslyMappedNodesInSixDocuments,
+ screened:fourth.summary.remainingNodesScreened,
+ included:fourth.summary.newBoundedResearchCandidates,
+ held:fourth.summary.newHeldNodes,
+ snippets:fourth.summary.newOriginalVaticanExcerpts
+},{prior:51,screened:60,included:24,held:36,snippets:23});
+assert.equal(fourth.summary.fullAnswerCertifications,0);
+assert.equal(fourth.summary.publishingApprovals,0);
+assert.equal(fourth.summary.bilingualTranslationCertifications,0);
+const p6Ids=new Set();let mapped4=0,held4=0,partial4=0;
+for(const x of fourth.records){
+ const c=store.chapters.get(x.chapterId),node=c?.nodes.find(y=>y.id===x.nodeId);
+ assert(c&&node&&node.q.en===x.questionEn);
+ assert(!p6Ids.has(x.nodeId));p6Ids.add(x.nodeId);
+ assert.equal(x.completeAnswerApproved,false);
+ assert.equal(x.publishingApproved,false);
+ assert.equal(x.translationApproved,false);
+ for(const language of ['en','fr']){
+  const result=selectEvidence(store,{chapterId:x.chapterId,nodeId:x.nodeId,
+   language,question:node.q[language]});
+  if(x.witnessIds.length){
+   assert.equal(result.status,'eligible');
+   assert.equal(result.evidence[0].primaryWitnessStatus,
+    'WAVE_FOUR_NARROW_ORIGINAL_SOURCE_CANDIDATE_UNAPPROVED');
+   assert.deepEqual(result.evidence[0].originalLanguageWitnesses.map(w=>w.id),x.witnessIds);
+   assert(result.evidence[0].editorialWarnings.some(w=>w.includes('do not authenticate')));
+   assert(!JSON.stringify(result.evidence).includes(node.a.en));
+   assert(!JSON.stringify(result.evidence).includes(node.a.fr));
+   for(const witness of result.evidence[0].originalLanguageWitnesses)
+    assert(witness.sourceUrl.startsWith('https://www.vatican.va/'));
+  }else{
+   assert.equal(result.status,'held');
+   assert(['no_original_language_witness_for_selected_subject',
+    'followup_not_mapped_to_primary_source_claim',
+    'not_papal_primary_document_adaptation'].includes(result.reason));
+  }
+ }
+ if(x.witnessIds.length)mapped4++;
+ else{held4++;if(x.ownerPartial)partial4++;}
+}
+assert.equal(p6Ids.size,60);
+assert.equal(mapped4,24);
+assert.equal(held4,36);
+assert.equal(partial4,18);
+assert.equal(new Set(fourth.witnesses.map(x=>x.id)).size,23);
+assert(fourth.witnesses.every(x=>x.verification==='OFFICIAL_VATICAN_EXACT_SHORT_TEXT_NOT_COMPLETE_SOURCE_CERTIFICATION'));
+assert(fourth.witnesses.some(x=>x.speaker==='VATICAN_I_QUOTED_BY_PIUS_X'));
+assert(fourth.witnesses.some(x=>x.speaker==='ST_BASIL_QUOTED_BY_PIUS_X'));
+// A bounded witness is evidence of its own proposition, never of adjacent claims.
+assert.equal(selectEvidence(store,{chapterId:'SPX-EXP-021',
+ nodeId:store.chapters.get('SPX-EXP-021').nodes[2].id,
+ question:store.chapters.get('SPX-EXP-021').nodes[2].q.en,language:'en'}).status,'held');
+assert.equal(selectEvidence(store,{chapterId:'SPX-032',
+ nodeId:store.chapters.get('SPX-032').nodes[5].id,
+ question:store.chapters.get('SPX-032').nodes[5].q.en,language:'en'}).status,'held');
+
 const legacy=store.chapters.get('SPX-PILOT-01');
 const short=selectEvidence(store,{chapterId:legacy.id,nodeId:legacy.nodes[0].id,
  language:'en',question:legacy.nodes[0].q.en});
@@ -259,4 +321,4 @@ const second=await composeDraft(store,{...input,nodeId:c.nodes[2].id,question:c.
 assert.equal(second.status,'draft');
 assert.equal(calls,before+4);
 assert(seen.evidence[0].originalLanguageWitnesses.some(x=>x.id==='TLS-POLYPHONY'));
-console.log('PASS SPX_SOURCE_ONLY_GATE: 41 source-backed subjects and 120 bounded mapped nodes (38 wave3, 15 additional holds), no full text certification; eight unsupported followups held, no P6 whole answers supplied, zero release approvals');
+console.log('PASS SPX_SOURCE_ONLY_GATE: 48 source-backed subjects, 144 bounded original-text nodes; wave4 24 added and 36 held, no reply certifications; eight unsupported followups held, no P6 whole answers supplied, zero release approvals');
