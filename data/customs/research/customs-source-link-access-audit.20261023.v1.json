@@ -8,8 +8,8 @@
     "scope_records": 91,
     "unique_urls": 90,
     "access_statuses": {
-      "PAGE_RETRIEVED": 80,
-      "FETCH_INCONCLUSIVE": 7,
+      "PAGE_RETRIEVED": 79,
+      "FETCH_INCONCLUSIVE": 8,
       "PDF_TEXT_RETRIEVED_VISUAL_LIMIT": 2,
       "REDIRECTED_404": 1,
       "PAGE_PARSED_EMPTY": 1
@@ -124,7 +124,12 @@
       "attention": "NONE_IDENTIFIED_IN_FIRST_PASS",
       "review_note": "",
       "owner_review_status": "NO_CANONICAL_ID_CHANGE",
-      "audited_on": "2026-10-23"
+      "audited_on": "2026-10-23",
+      "recheck": {
+        "date": "2026-10-23",
+        "status": "DIRECT_FULL_PAGE_RETRIEVED",
+        "finding": "Official Laghet ex-votos page directly readable, describes >4,000 ex-votos, original object collection and origins since 1652; individual miracle claims remain source-attributed."
+      }
     },
     {
       "source_id": "LOURDES-CANDLES",
@@ -933,12 +938,18 @@
       "source_id": "STRASBOURG-SAINT-NICOLAS-2022",
       "url": "https://www.alsace.catholique.fr/actualites/dossiers-thematiques/418575-6-decembre-fete-de-saint-nicolas/",
       "source_title": "6 décembre : Fête de Saint-Nicolas",
-      "access_status": "PAGE_RETRIEVED",
+      "access_status": "FETCH_INCONCLUSIVE",
       "claim_review": "NOT_FINAL_CERTIFIED",
-      "attention": "NONE_IDENTIFIED_IN_FIRST_PASS",
-      "review_note": "",
+      "attention": "ACCESS_RECHECK",
+      "review_note": "Exact article text retrieved from official diocesan indexed results; direct source origin returns HTTP 502. Separate official diocesan parish report documents named St Nicholas celebration, but also returned HTTP 502 when opened.",
       "owner_review_status": "NO_CANONICAL_ID_CHANGE",
-      "audited_on": "2026-10-23"
+      "audited_on": "2026-10-23",
+      "recheck": {
+        "date": "2026-10-23",
+        "status": "OFFICIAL_INDEXED_TEXT_ONLY_ORIGIN_HTTP_502",
+        "alternative_url": "https://www.alsace.catholique.fr/zp-sundgau/notre-dame-des-7-douleurs/cp-portes-sundgau/",
+        "finding": "Full indexed page text is readable and supports gifts/folklore, but this research client cannot confirm live origin accessibility."
+      }
     },
     {
       "source_id": "POLAND-WYPOMINKI-2025",
@@ -1028,5 +1039,12 @@
       "owner_review_status": "NO_CANONICAL_ID_CHANGE",
       "audited_on": "2026-10-23"
     }
-  ]
+  ],
+  "recheck_summary": {
+    "date": "2026-10-23",
+    "laghet_direct_confirmed": true,
+    "strasbourg_origin_502": true,
+    "munich_freising_priority_reference_separate_from_this_91_url_batch": true,
+    "does_not_confer_final_claim_approval": true
+  }
 }

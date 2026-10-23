@@ -760,7 +760,7 @@
       "authority_role": "French Catholic liturgical explanation and domestic custom witness",
       "directness": "OFFICIAL_CURRENT",
       "url": "https://liturgie.catholique.fr/lexique/chandeleur/",
-      "contribution": "The faithful take Candlemas candles home; candles may be lit near the dying as a sign of eternal hope."
+      "contribution": "The French liturgical lexicon records the faithful taking blessed candles home and the custom of burning them beside the deceased as a sign of hope in eternal light (auprès des morts). It does not assert a rite for the dying."
     },
     {
       "id": "ECF-RAMEAUX-HOME",
@@ -1082,5 +1082,95 @@
       "url": "https://www.catholicculture.org/commentary/annunciation-and-lent-celebrating-new-life-through-mary-garden/",
       "contribution": "Modern Catholic family garden devotion, not historical origin evidence"
     }
-  ]
+  ],
+  "historical_context_sources": [
+    {
+      "id": "EBK-ADVENT-WREATH-WICHERN-2025",
+      "custom_id": "ADVT-001",
+      "title": "Der Adventskranz: Bedeutung und Ursprung des Adventskranzes",
+      "issuer": "Erzbistum Köln — Archdiocese of Cologne",
+      "date": "2025-11-12",
+      "url": "https://www.erzbistum-koeln.de/presse_und_medien/magazin/Der-Adventskranz-Bedeutung-und-Ursprung-des-Adventskranzes/",
+      "authority_role": "Official Catholic diocesan retrospective on Advent wreath history",
+      "directness": "OFFICIAL_HISTORICAL_EXPLANATION",
+      "claim_supported": "Wichern introduced a multi-candle wreath in Hamburg in 1839; 4-candle form and Catholic uptake emerged later; first Cologne church example is described as reportedly 1925.",
+      "limitations": "Historical synthesis, not archival proof of unique first occurrence or 1962 rite; source qualifies the 1925 claim."
+    },
+    {
+      "id": "EBK-ADVENT-MANGER-STRAW-2025",
+      "custom_id": "ADVT-002",
+      "title": "Was ist Advent: Ursprung und Bedeutung der Vorweihnachtszeit",
+      "issuer": "Erzbistum Köln — Archdiocese of Cologne",
+      "date": "2025-11-12",
+      "url": "https://www.erzbistum-koeln.de/presse_und_medien/magazin/Was-ist-Advent-Ursprung-und-Bedeutung-der-Vorweihnachtszeit/",
+      "authority_role": "Official Catholic diocesan witness to manger straw in German Catholic areas",
+      "directness": "OFFICIAL_HISTORICAL_EXPLANATION",
+      "claim_supported": "In Catholic regions children put straw into a manger after good deeds. Combined with Catholic Culture this establishes practice across more than one setting.",
+      "limitations": "Neither Cologne nor Catholic Culture proves that the custom originated in France, that it was universal or that it was employed everywhere."
+    },
+    {
+      "id": "MEX-CULTURA-POSADAS-ORIGINS-2017",
+      "custom_id": "ADVT-003",
+      "title": "Y tú, ¿cómo celebras las posadas?",
+      "issuer": "Secretaría de Cultura — Gobierno de México",
+      "date": "2017-12-21",
+      "url": "https://www.gob.mx/cultura/articulos/y-tu-como-celebras-las-posadas?idiom=es",
+      "authority_role": "Mexican government historical account distinguishing competing origin theories",
+      "directness": "OFFICIAL_CULTURAL_HISTORY",
+      "claim_supported": "The Acolman 1587 tradition is one historical attribution; other writers identify Andalusian transmission; colonial Mexican context is established but singular exact origin disputed.",
+      "limitations": "Not a Catholic ritual authorization, nor proof of a fixed 1962 Mass celebration or mandatory parish house visits."
+    },
+    {
+      "id": "DAYTON-MARIAN-MARY-GARDENS-HISTORY",
+      "custom_id": "MARI-002",
+      "title": "Background on Mary's Gardens",
+      "issuer": "University of Dayton — Marian Library / International Marian Research Institute",
+      "date": "Institutional historical repository, accessed 2026-10-23",
+      "url": "https://udayton.edu/marianlibrary/marysgardens/b/background-on-marys-gardens.php",
+      "authority_role": "Specialist Marian library's archival history of modern Mary Garden projects",
+      "directness": "ACADEMIC_INSTITUTIONAL_ARCHIVE",
+      "claim_supported": "The first public United States Mary Garden was established at Woods Hole in 1932; the Philadelphia Mary's Gardens initiative began in 1951 and spread home-garden kits.",
+      "limitations": "Medieval plant names do not prove that today's formal Mary Garden layout dates to the Middle Ages."
+    }
+  ],
+  "historical_context_policy": {
+    "owner": "Existing canonical custom ID, not a new customary attestation",
+    "not_attestations": true,
+    "not_ritual_permission": true,
+    "not_calendar_schedule": true,
+    "not_universal_regional_scope": true,
+    "source_links_belong_to": "Historically bounded explanatory context only"
+  },
+  "supplemental_claim_sources": [
+    {
+      "id": "BASILICA-HOLYWATER-HOME-O-CONNOR",
+      "custom_id": "DOM-003",
+      "title": "History and usage of Holy Water",
+      "issuer": "St Mary Basilica Archives — Rev. David O'Connor",
+      "url": "https://www.stmarybasilicaarchives.org/archives-desk/history-and-usage-of-holy-water/",
+      "directness": "DIRECT_PARISH_PRIEST_EXPLANATION",
+      "claim_supported": "Catholics traditionally obtained blessed water from church, kept it in entrance or bedroom fonts at home, made the Sign of the Cross, and sometimes blessed children; devotional use is distinct from priestly blessing of the water.",
+      "limitations": "Pastoral account, not population-level frequency study, universal liturgical prescription, or authorization for lay people to perform reserved clerical rites.",
+      "published_authority": "SECONDARY_PASTORAL_CORROBORATION_NOT_CANONICAL_ATTESTATION"
+    },
+    {
+      "id": "MUNICH-EMMAUS-2026-CURIA",
+      "custom_id": "EAST-001",
+      "title": "Mit Magdalena unterwegs — 2026 diocesan events including Emmausgang",
+      "issuer": "Erzbistum München und Freising — Pressestelle",
+      "url": "https://www.erzbistum-muenchen.de/ueber-das-erzbistum/pressebereich/pressemitteilungen/2026-pm/maria-magdalena-suche-nach-spuren-der-apostelin-der-apostel",
+      "directness": "DIRECT_DIOCESAN_2026_EVENT",
+      "claim_supported": "The Archdiocese announced an Emmausgang in Ruhpolding on Easter Monday, 6 April 2026, with walking stages and spiritual reflections. This corroborates actual contemporary Bavarian Catholic practice.",
+      "limitations": "A dated local event is not a recurrent universal schedule; an ecumenical activity in 2026 does not change the traditional 1962 Mass or mandate any route.",
+      "published_authority": "DATED_LOCAL_EVENT_CORROBORATION_NOT_CANONICAL_ATTESTATION"
+    }
+  ],
+  "supplemental_claim_sources_policy": {
+    "relation": "One existing published custom ID; strengthens a bounded claim without changing 108 attestation source owners",
+    "not_attestation": true,
+    "not_calendar_schedule": true,
+    "not_ritual_permission": true,
+    "not_new_custom_identity": true,
+    "review_date": "2026-10-23"
+  }
 }
