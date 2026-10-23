@@ -90,6 +90,24 @@ for(const edition of editions){
 }
 assert.match(witness("dr-challoner","Exodus").get("40:32"),/cloud covered/i);
 assert.match(witness("crampon-1923","Exodus").get("40:34"),/nuée couvrit/i);
+const isaiah=proof.movements.find(m=>m.id==="HS-M15").beats.find(b=>b.id==="H38-03");
+assert.deepEqual(isaiah.refs,["Isaiah 9:1–6"]);
+assert.deepEqual(isaiah.semanticEditionAlignment.selectedReferencesByEdition["dr-challoner"],["Isaiah 9:1–6"]);
+assert.deepEqual(isaiah.semanticEditionAlignment.selectedReferencesByEdition["cpdv-2009"],["Isaiah 9:1–6"]);
+assert.deepEqual(isaiah.semanticEditionAlignment.selectedReferencesByEdition["crampon-1923"],["Isaiah 8:23","Isaiah 9:1–5"]);
+assert.equal(isaiah.semanticEditionAlignment.noBlindNumericAlignment,true);
+for(const edition of editions){
+ const source=witness(edition,"Isaiah");
+ const refs=isaiah.semanticEditionAlignment.selectedReferencesByEdition[edition];
+ for(const ref of refs){
+  const p=passage(ref);
+  for(let v=p.startVerse;v<=p.endVerse;v++)assert.ok(source.get(p.startChapter+":"+v)?.trim());
+ }
+}
+assert.match(witness("dr-challoner","Isaiah").get("9:1"),/Zabulon/i);
+assert.match(witness("crampon-1923","Isaiah").get("8:23"),/Zabulon/i);
+assert.match(witness("dr-challoner","Isaiah").get("9:6"),/CHILD IS BORN/i);
+assert.match(witness("crampon-1923","Isaiah").get("9:5"),/enfant nous est né/i);
 const stephen=proof.movements.find(m=>m.id==="HS-M31").beats.find(b=>b.id==="H68-04");
 assert.deepEqual(stephen.semanticEditionAlignment.selectedReferencesByEdition["crampon-1923"],["Acts 7:54–60"]);
 assert.deepEqual(stephen.semanticEditionAlignment.selectedReferencesByEdition["dr-challoner"],["Acts 7:54–59"]);
