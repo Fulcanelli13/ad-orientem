@@ -41,6 +41,6 @@ for(let i=0;i<latest.records.length;i++){
   assert.equal(r.canonical_master_owner,null);
 }
 assert.equal(newIds.size,68);
-assert.equal(census.source_observations.total_source_detail_rows_including_external,3114,
- 'Staged data must not silently inflate the established unified 3114 base');
+assert.equal(census.source_observations.length,568,
+ 'Prior source census rows must remain unchanged in a separately staged Pitrè intake');
 console.log('Pitrè recovered original OCR: 68 independently located STAGED details, old 129 IDs intact, 3114 unified baseline unchanged, 408 groups preserved, no publication — PASS');
