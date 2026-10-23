@@ -1,0 +1,59 @@
+name: B20R1 recover 10 Cleveland CC0 sources
+on:
+  push:
+    branches: [research/b19-original-image-acquisition-probe-20261023]
+    paths: [.github/workflows/ao-b20r1-cma10.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  ten-cma:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check 'Pillow>=11,<13'
+      - name: Validate exact set of ten B20 failures
+        shell: bash
+        run: |
+          python -m py_compile scripts/research/sacred_art_cma_print_recovery.py
+          python - <<'PY'
+          import json,csv,pathlib
+          records=json.loads(pathlib.Path('data/research/sacred-art-b20r1-cleveland10.manifest.json').read_text())['records']
+          with pathlib.Path('data/research/sacred-art-b20-wave150.audit.csv').open(newline='',encoding='utf-8') as f:
+              audit={r['asset_source_id']:r for r in csv.DictReader(f)}
+          assert len(records)==10 and len({r['asset_source_id'] for r in records})==10
+          assert sum(r['planned_retrieval']=='CMA_BUDGET_RETRY_ORIGINAL' for r in records)==7
+          assert sum(r['planned_retrieval']=='CMA_PRINT_DERIVATIVE_3400PX' for r in records)==3
+          assert all(r['api_type']=='cleveland' for r in records)
+          assert all(audit[r['asset_source_id']]['failure'] in ('over wave byte budget','over individual size cap') for r in records)
+          PY
+      - name: Download eligible originals and explicit museum print derivatives
+        run: |
+          python scripts/research/sacred_art_cma_print_recovery.py \
+            --manifest data/research/sacred-art-b20r1-cleveland10.manifest.json \
+            --output artifacts/b20r1
+      - name: Upload source files and audit (research-only, 7-day retention)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ao-b20r1-cleveland10-technical-sources
+          path: artifacts/b20r1/
+          retention-days: 7
+          if-no-files-found: warn
+      - name: Persist audited source/rights/image tier evidence in git
+        if: success()
+        shell: bash
+        run: |
+          cp artifacts/b20r1/Acquisition_results.csv data/research/sacred-art-b20r1-cma10.audit.csv
+          cp artifacts/b20r1/Acquisition_summary.json data/research/sacred-art-b20r1-cma10.audit-summary.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/research/sacred-art-b20r1-cma10.audit.csv data/research/sacred-art-b20r1-cma10.audit-summary.json
+          git commit -m 'research: preserve B20R1 original and print-tier acquisition audit'
+          git fetch origin research/b19-original-image-acquisition-probe-20261023
+          git rebase origin/research/b19-original-image-acquisition-probe-20261023
+          git push origin HEAD:research/b19-original-image-acquisition-probe-20261023
