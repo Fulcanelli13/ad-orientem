@@ -550,3 +550,32 @@ assert.equal(count.identity_working_rows.provisional_after_53_no_owner_action_re
 assert.equal(count.identity_working_rows.final_uniquely_verified_customs_added,0);
 assert.equal(researchCatalogue.summary.no_new_app_publications,true);
 console.log('Historical author excerpts: 132 observations on 29 URLs, 1,425 aggregate research rows, no identity/publishing promotion — PASS');
+
+
+// The lexical relation pass is discovery-only. It must never silently merge
+// a source observation or manufacture an independent evidence witness.
+const ccLex=load('data/customs/master/132-excerpt-actions-cross-source-lexical-review.v1.json');
+assert.equal(ccLex.schema,'AO_CUSTOMS_132_CATHOLICCULTURE_SOURCE_ACTION_LEXICAL_REVIEW_V1');
+assert.equal(ccLex.records.length,132);
+assert.equal(ccLex.summary.observations_routed,132);
+assert.equal(ccLex.summary.with_lexical_candidate,61);
+assert.equal(ccLex.summary.without_lexical_candidate,71);
+assert.equal(ccLex.summary.lexical_suggestion_links,105);
+assert.equal(ccLex.summary.automatic_merges,0);
+assert.equal(ccLex.summary.verified_unique_customs,0);
+assert.equal(ccLex.summary.app_publications,0);
+assert.equal(ccLex.summary.manual_identity_reviews_completed,0);
+assert.equal(ccLex.summary.source_independence_certified,0);
+assert.deepEqual(new Set(ccLex.records.map(r=>r.source_id)),ccIds);
+const pastTargets=new Set([...researchCatalogue.existing_master_identities,...researchCatalogue.provisional_handbook_groups,...researchCatalogue.provisional_historical_groups,...researchCatalogue.provisional_unindexed_practice_leads,...researchCatalogue.provisional_unassigned_action_leads,...researchCatalogue.external_source_observations_mcloughlin,...researchCatalogue.external_source_observations_stokes].map(r=>r.id));
+for(const row of ccLex.records){
+ assert.equal(row.manual_action_identity_decision,'UNREVIEWED');
+ assert.equal(row.source_independence_decision,'UNREVIEWED');
+ assert.equal(row.automatic_merges,0);
+ assert.equal(row.app_publication,'NONE');
+ for(const c of row.candidate_links){
+   assert.ok(pastTargets.has(c.target_id));
+   assert.equal(c.review_status,'LEXICAL_REVIEW_ONLY_NOT_EQUIVALENCE');
+ }
+}
+console.log('132 excerpt-action lexical review rows, 105 low-confidence suggestions, 0 merges or claims of source independence — PASS');
