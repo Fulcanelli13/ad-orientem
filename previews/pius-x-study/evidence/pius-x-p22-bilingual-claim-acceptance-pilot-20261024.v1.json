@@ -1,6 +1,6 @@
 {
   "schema": "AO_SPX_P2_P22_BILINGUAL_CLAIM_ACCEPTANCE_PILOT_V1",
-  "status": "PRIVATE_EDITORIAL_TEST_ONLY_NO_PUBLICATION_OR_HISTORIC_VOICE_CERTIFICATION",
+  "status": "PRIVATE_EDITORIAL_TEST_REVISED_AFTER_DIRECT_VATICAN_CLAIM_READING_NO_PUBLICATION",
   "asOf": "2026-10-24",
   "reason": "Eleven pre-existing source-only eligible papal-document nodes receive short, independently edited bilingual answer specimens grounded in precise original-text witness IDs. No source-owner answer is replaced.",
   "owner": "Existing 106-chapter 423-node P6 HTML and source-only research gate; parallel voice pipeline remains authoritative for stylistic decisions",
@@ -45,7 +45,10 @@
     "certifiedHistoricalQuotes": 0,
     "certifiedWholeAnswers": 0,
     "certifiedTranslations": 0,
-    "publicationApprovals": 0
+    "publicationApprovals": 0,
+    "specimensRevisedForSourcePrecision": 5,
+    "originalBilingualSpecimensPreservedInPrecedingGitCommit": true,
+    "newModelSourceGateAdmissions": 0
   },
   "rules": [
     "Do not quote the unverified original P6 English/French answer as historic source.",
@@ -128,8 +131,8 @@
         }
       ],
       "replySpecimen": {
-        "en": "The gravity lay both in the office and in the times. Its duties were formidable, the preceding pontificate illustrious, and the author's own weakness plainly acknowledged.",
-        "fr": "Cette gravité tenait à la charge et aux circonstances. Les devoirs étaient redoutables, le précédent pontificat illustre, et l'auteur reconnaissait sans détour sa propre faiblesse."
+        "en": "The responsibility seemed formidable because he recognized his own weakness and was succeeding a greatly admired predecessor. The encyclical does not present that charge as something he could bear through personal confidence alone.",
+        "fr": "Cette responsabilité lui paraissait redoutable : il reconnaissait sa propre faiblesse et succédait à un prédécesseur très admiré. L’encyclique ne présente pas cette charge comme une tâche qu’il pouvait porter par la seule confiance en lui-même."
       },
       "unlicensedExtensions": [
         "Do not invent an inner psychological episode",
@@ -141,7 +144,9 @@
       "translationCertified": false,
       "historicalVoiceCertified": false,
       "liveModelTested": false,
-      "publishingApproved": false
+      "publishingApproved": false,
+      "contentRevisionReason": "Removed broad contextual assertion about troubled historical times from limited selected witness set.",
+      "sourceScopeRecheckedAgainstVaticanText": true
     },
     {
       "chapterId": "SPX-PILOT-01",
@@ -170,8 +175,8 @@
         }
       ],
       "replySpecimen": {
-        "en": "One purpose is made central: to restore all things in Christ. The encyclical goes on to explain that drawing souls under Christ's rule is the way of leading them to God.",
-        "fr": "Un seul dessein est placé au centre : tout restaurer dans le Christ. L'encyclique explique ensuite que ramener les âmes sous Son autorité est la voie qui les conduit à Dieu."
+        "en": "One purpose stands at the centre: to restore all things in Christ. The encyclical explains that bringing humanity under Christ’s rule is the way of leading mankind back to God.",
+        "fr": "Un seul dessein est placé au centre : tout restaurer dans le Christ. L’encyclique explique que ramener les hommes sous l’autorité du Christ est la voie qui les reconduit à Dieu."
       },
       "unlicensedExtensions": [
         "The supporting second claim requires section eight, not merely sections one to four",
@@ -183,7 +188,9 @@
       "translationCertified": false,
       "historicalVoiceCertified": false,
       "liveModelTested": false,
-      "publishingApproved": false
+      "publishingApproved": false,
+      "contentRevisionReason": "Replaced the narrower souls/âmes formulation with humanity/hommes, closer to the Latin genus hominum in section eight.",
+      "sourceScopeRecheckedAgainstVaticanText": true
     },
     {
       "chapterId": "SPX-PILOT-09",
@@ -255,8 +262,8 @@
         }
       ],
       "replySpecimen": {
-        "en": "Not even a generous pastoral workload removes the need for meditation. The text warns precisely against making ministry an excuse, lest a priest labour among souls while neglecting to speak with God.",
-        "fr": "Même une activité pastorale généreuse ne supprime pas le besoin de méditer. Le texte met précisément en garde contre ce prétexte : travailler pour les âmes tout en négligeant de s'entretenir avec Dieu."
+        "en": "Even extensive pastoral work does not dispense a priest from daily meditation. The exhortation specifically rejects the argument that the demands of ministry justify neglecting that duty.",
+        "fr": "Même un ministère très chargé ne dispense pas le prêtre de la méditation quotidienne. L’exhortation rejette expressément l’argument selon lequel les exigences du ministère justifieraient cette négligence."
       },
       "unlicensedExtensions": [
         "Do not ascribe St Bernard's separate quotation to Pius X",
@@ -268,7 +275,9 @@
       "translationCertified": false,
       "historicalVoiceCertified": false,
       "liveModelTested": false,
-      "publishingApproved": false
+      "publishingApproved": false,
+      "contentRevisionReason": "Removed allusion to conversation with God whose HA-COLLOQUY snippet is not licensed by this dialogue-node witness set.",
+      "sourceScopeRecheckedAgainstVaticanText": true
     },
     {
       "chapterId": "SPX-PILOT-09",
@@ -296,8 +305,8 @@
         }
       ],
       "replySpecimen": {
-        "en": "The exhortation was addressed to Catholic priests. Its counsel can instruct others, but the daily duty is presented in relation to priestly ministry, not imposed in identical terms on every layperson.",
-        "fr": "L'exhortation était adressée au clergé catholique. Ses conseils peuvent éclairer d'autres fidèles, mais le devoir quotidien y est formulé pour le ministère sacerdotal, non imposé en termes identiques à tous les laïcs."
+        "en": "The exhortation is expressly addressed to Catholic clergy. Its instruction on daily meditation concerns priests; the passage does not impose that particular priestly obligation in identical terms on every lay Catholic.",
+        "fr": "L’exhortation s’adresse expressément au clergé catholique. Son instruction sur la méditation quotidienne concerne les prêtres ; ce passage n’impose pas cette obligation propre au ministère sacerdotal dans les mêmes termes à tous les fidèles laïcs."
       },
       "unlicensedExtensions": [
         "Audience limitation comes partly from source header, not just the abbreviated witness snippet"
@@ -308,7 +317,9 @@
       "translationCertified": false,
       "historicalVoiceCertified": false,
       "liveModelTested": false,
-      "publishingApproved": false
+      "publishingApproved": false,
+      "contentRevisionReason": "Removed an ungrounded universal prediction of the counsel's benefit for every lay reader while preserving the historical audience limitation.",
+      "sourceScopeRecheckedAgainstVaticanText": true
     },
     {
       "chapterId": "SPX-029",
@@ -405,8 +416,8 @@
         }
       ],
       "replySpecimen": {
-        "en": "The passage joins the diffusion of revealed truth to the exercise of Christian virtues and to spiritual and corporal mercy. Instruction, example and practical assistance thus belong together, without exhausting every possible work.",
-        "fr": "Le passage unit la diffusion de la vérité révélée, la pratique des vertus chrétiennes et la miséricorde spirituelle et corporelle. L'instruction, l'exemple et l'aide concrète sont ainsi liés, sans prétendre énumérer toutes les œuvres possibles."
+        "en": "The passage includes spreading revealed truth, practicing Christian virtues, and works of spiritual and corporal mercy. These are complementary aspects of Christian action, not an exhaustive list of every possible form of help.",
+        "fr": "Le passage comprend la diffusion de la vérité révélée, la pratique des vertus chrétiennes et les œuvres de miséricorde spirituelle et corporelle. Ce sont des aspects complémentaires de l’action chrétienne, et non une liste exhaustive de toutes les aides possibles."
       },
       "unlicensedExtensions": [
         "Do not invent specific charity institutions, dates or modern programme categories"
@@ -417,7 +428,9 @@
       "translationCertified": false,
       "historicalVoiceCertified": false,
       "liveModelTested": false,
-      "publishingApproved": false
+      "publishingApproved": false,
+      "contentRevisionReason": "Replaced the inferred triad instruction/example/practical help with the precise three categories in the Italian text.",
+      "sourceScopeRecheckedAgainstVaticanText": true
     },
     {
       "chapterId": "SPX-NEW-012",
@@ -525,5 +538,6 @@
       "reason": "A 1906 historical norm cannot determine a living person's current canonical status",
       "expected": "SOURCE_ONLY_PREFLIGHT_HOLD"
     }
-  ]
+  ],
+  "methodNote": "P2.23 adjusted five paired EN/FR editorial specimens after a closer reading of the actual Latin or Italian Vatican context; independent qualified human translation and claim sign-off remain pending."
 }
