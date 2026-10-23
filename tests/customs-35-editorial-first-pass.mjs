@@ -105,7 +105,7 @@ assert.match(calendarCustomArticle("MARI-002").history.en,/1932.*1951/);
 assert.match(calendarCustomArticle("ADVT-002").history.en,/German regions/);
 const supporting=registry.supplemental_claim_sources||[];
 assert.equal(supporting.length,3,"Basilica, 2026 Emmaus and Metz St Nicholas witnesses remain distinct from 108 canonical attestations");
-assert.equal(new Set(supporting.map(row=>row.id)).size,2);
+assert.equal(new Set(supporting.map(row=>row.id)).size,3);
 for(const evidence of supporting){
   assert.ok(published.has(evidence.custom_id),"Supplementary witness cannot publish a new custom");
   assert.ok(!src.has(evidence.id),"Supplementary source cannot masquerade as an attestation");
