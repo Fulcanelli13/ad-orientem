@@ -133,7 +133,74 @@ export function loadSourceOnlyGate(chapters,oldAnnexes){
     [...gate.values()].reduce((a,g)=>a+g.size,0)!==36)
   throw new Error('Follow-up source coverage must equal 36 of 423 nodes');
 
- if(gate.size!==12)throw new Error('Expected 12 distinct source-scoped study subjects');
+ if(gate.size!==12)throw new Error('Expected twelve initial source-scoped study subjects');
+ // Six-document evidence wave: original text is admitted only with an explicit
+ // canonical node ID and narrow-proposition claim. Never load full P6 answers.
+ const wave=json('pius-x-six-document-wave2-20261023.v1.json');
+ if(wave.schema!=='AO_SPX_P2_SIX_DOCUMENT_BULK_WAVE2_V1'||
+    wave.status!=='PRIVATE_BOUNDED_SOURCE_RESEARCH_ONLY'||
+    wave.summary?.documents!==6||wave.summary?.newlyMappedNodes!==51||
+    wave.summary?.distinctChapters!==25||wave.summary?.newOriginalLanguageSnippets!==35||
+    wave.summary?.completeAnswersCertified!==0||wave.summary?.publicationApprovals!==0||
+    wave.witnesses?.length!==35||wave.records?.length!==51)
+  throw new Error('Wave-two original-language registry counts or research status drifted');
+ const allPieces=new Map();
+ for(const d of research.items)for(const w of d.witnesses)allPieces.set(w.id,{
+  id:w.id,text:w.originalText,readingNote:w.claimSupported,
+  sourceUrl:d.originalUrl,originalLanguage:d.originalLanguage,speaker:w.speaker,
+  locus:'Vatican webpage line '+w.webLine});
+ for(const [id,d] of oldAnnexes)for(const w of d.sourceWitnesses)if(!allPieces.has(w.id))
+  allPieces.set(w.id,{id:w.id,text:w.text||w.latin,readingNote:w.meaning,
+   sourceUrl:d.document.sites.original||d.document.sites.la,
+   originalLanguage:d.document.languageOfOriginal||'la',speaker:w.speaker,
+   locus:'Vatican webpage line '+w.webTextVerification?.sourcePageLine});
+ for(const w of wave.witnesses){
+  if(allPieces.has(w.id)||!w.originalText||!w.readingNote||!w.webLine||
+     w.speaker!=='PIUS_X_AUTHOR'||!['it','la'].includes(w.originalLanguage)||
+     !w.sourceUrl?.startsWith('https://www.vatican.va/content/pius-x/'))
+   throw new Error('New wave original excerpt is missing or conflicts: '+w.id);
+  allPieces.set(w.id,{id:w.id,text:w.originalText,readingNote:w.readingNote,
+   sourceUrl:w.sourceUrl,originalLanguage:w.originalLanguage,speaker:w.speaker,
+   locus:'Vatican webpage line '+w.webLine});
+ }
+ const normalize=url=>{
+  const u=new URL(url);
+  return u.pathname.replace(/\/(?:en|fr|it|la|de|es|pt|pl|ar)\//,'/{lang}/');
+ };
+ const seen2=new Set(),waveChapters=new Set();
+ for(const r of wave.records){
+  const c=chapters.get(r.chapterId);
+  if(!c||c.partial||c.sourceClass!=='PAPAL_DOCUMENT_ADAPTATION'||
+     r.translationApproved!==false||r.fullAnswerApproved!==false||
+     r.publicationApproved!==false||
+     r.status!=='ORIGINAL_LANGUAGE_SOURCE_SPOTCHECK_NOT_FULL_ANSWER_CERTIFIED'||
+     seen2.has(r.nodeId)||!r.witnessIds?.length||
+     !r.narrowClaimScope||r.narrowClaimScope.length<12)
+   throw new Error('Invalid source-owner wave two research mapping '+r.nodeId);
+  if(gate.get(c.id)?.has(r.nodeId))throw new Error('Cannot overwrite older original-language research mapping');
+  const node=c.nodes.find(x=>x.id===r.nodeId);
+  if(!node||node.q.en!==r.questionEn)throw new Error('Original P6 dialogue ID/question mismatch');
+  const pieces=r.witnessIds.map(wid=>{
+   const piece=allPieces.get(wid);
+   if(!piece||!piece.text||!piece.readingNote||!piece.locus||
+      normalize(piece.sourceUrl)!==normalize(c.source.url))
+    throw new Error('Wrong document or missing Vatican excerpt for '+r.nodeId+': '+wid);
+   return piece;
+  });
+  if(new Set(pieces.map(x=>x.originalLanguage)).size!==1)
+   throw new Error('Mixed original-source languages on one node');
+  seen2.add(r.nodeId);waveChapters.add(c.id);
+  if(!gate.has(c.id))gate.set(c.id,new Map());
+  gate.get(c.id).set(r.nodeId,{status:'WAVE_TWO_BOUNDED_ORIGINAL_EXCERPT_CANDIDATE_UNAPPROVED',
+   pieces,caution:[
+    'Only the following narrow statements are source-grounded: '+r.narrowClaimScope,
+    'This is an excerpt-level research sample, not a verified complete dialogue',
+    'Any contemporary personal judgement, later liturgical law, or quoted authority requires separate sources',
+    'Do not treat original P6 English or French editorial wording as papal quotation']});
+ }
+ if(seen2.size!==51||waveChapters.size!==25||gate.size!==37||
+    [...gate.values()].reduce((n,x)=>n+x.size,0)!==87)
+  throw new Error('Wave-two source-only coverage must equal 37 subjects and 87 of 423 nodes');
  return gate;
 }
 
