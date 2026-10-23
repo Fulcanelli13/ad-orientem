@@ -42,7 +42,8 @@ for(const seq of specimen.sequences){
    assert(data.history.every(h=>h.contextOnly===true));
    assert.equal(data.evidence.length,1);
    assert.equal(data.evidence[0].id,next.nodeId);
-   assert.deepEqual(data.evidence[0].originalLanguageWitnesses.map(w=>w.id),next.evidenceIds);
+   const available=new Set(data.evidence[0].originalLanguageWitnesses.map(w=>w.id));
+   assert(next.evidenceIds.every(id=>available.has(id)),'the script cites only a subset of the original-node witnesses');
    // Critical boundary: full unverified P6 authored answers are not used as evidence.
    for(const answer of store.chapters.get('SPX-PILOT-01').nodes.map(n=>n.a)){
     assert(!JSON.stringify(data).includes(answer.en));
