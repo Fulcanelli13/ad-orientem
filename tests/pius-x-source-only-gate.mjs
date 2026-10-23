@@ -71,8 +71,20 @@ for(const item of followupTriage.followups){
   assert(!JSON.stringify(result.evidence).includes(node.a.en));
   assert(!JSON.stringify(result.evidence).includes(node.a.fr));
  }else{
-  assert.equal(result.status,'held');
-  assert.equal(result.reason,'followup_not_mapped_to_primary_source_claim');
+  const subsequentlyDocumented={
+   'AO.SPX.DIALOGUE.SPX-NEW-007.FOLLOW_2':['W3-E-EXAMPLES'],
+   'AO.SPX.DIALOGUE.SPX_013.F3':['W3-A-DEVOTION','W3-A-OBEY','W3-A-IMITATION']
+  };
+  if(subsequentlyDocumented[item.nodeId]){
+   assert.equal(result.status,'eligible');
+   assert.equal(result.evidence[0].primaryWitnessStatus,
+    'WAVE_THREE_NARROW_ORIGINAL_TEXT_RESEARCH_ONLY');
+   assert.deepEqual(result.evidence[0].originalLanguageWitnesses.map(w=>w.id),
+    subsequentlyDocumented[item.nodeId]);
+  }else{
+   assert.equal(result.status,'held');
+   assert.equal(result.reason,'followup_not_mapped_to_primary_source_claim');
+  }
  }
 }
 const chant=followupTriage.additionalOriginalWitnesses;
