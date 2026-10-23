@@ -124,7 +124,7 @@ const dataset=buildDataset();
 const projection=projectExploreDataset(dataset);
 const profiles=buildExplorePlaceProfiles(dataset,projection,{today:"2026-10-07"});
 
-assert.equal(profiles.length,348,"every seeded canonical Place should have one Place profile");
+assert.equal(profiles.length,350,"every seeded canonical Place should have one Place profile");
 
 // Twenty featured places must render two independently source-credited,
 // bilingual passages without creating facts or cross-Place associations.
