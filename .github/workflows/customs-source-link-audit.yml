@@ -1,0 +1,21 @@
+name: Customs public-source audit integrity
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    paths:
+      - "data/customs/research/customs-source-link-access-audit.20261023.v1.json"
+      - "tests/customs-source-access-audit.mjs"
+      - ".github/workflows/customs-source-link-audit.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node tests/customs-source-access-audit.mjs
