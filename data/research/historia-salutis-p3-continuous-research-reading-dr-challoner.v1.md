@@ -75,7 +75,7 @@ Thus also said God to Noe, and to his sons with him: Behold I will establish my 
 <details>
 <summary>References and editorial audit · 4 notes</summary>
 
-- e1 — **Editorial, not Scripture** · Genesis 4:25–26; Genesis 5:28–32 · approval pending
+- e1 — **Editorial, not Scripture** · Genesis 4:25–26; Genesis 5:28–31 · approval pending
 - **Unapproved Scripture bridge** · Genesis 6:9–14 · witnessed but not approved
 - **Unapproved Scripture bridge** · Genesis 6:17–22 · witnessed but not approved
 - e2 — **Editorial, not Scripture** · Genesis 10:1–32; Genesis 11:1–9 · approval pending
