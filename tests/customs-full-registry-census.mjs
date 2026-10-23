@@ -101,3 +101,55 @@ assert.equal(familyBridge.records.filter(r => r.proposed_master_identity_relatio
 assert.equal(familyBridge.records.filter(r => !r.proposed_handbook_observation_relations.length && !r.proposed_master_identity_relations.length).length, 56);
 assert.equal(familyBridge.records.filter(r => !!r.earlier_preview_overlap_id).length, 15);
 console.log('Weiser family 1956 direct scan + cross-book candidate relationships — PASS');
+
+
+const historical = load('data/customs/master/historical-practice-recovery-ch01-28.v1.json');
+const context181 = load('data/customs/master/context-historical-contested-181-review.v1.json');
+const addendum = load('data/customs/master/weiser-handbook-addendum-st-stephen.v1.json');
+assert.equal(historical.records.length,39);
+assert.equal(new Set(historical.records.map(r => r.source_observation_id)).size,39);
+const historicalIds = new Set(historical.records.map(r => r.research_group_id));
+assert.equal(historicalIds.size,39);
+assert.equal(context181.records.length,181);
+const contextIds = new Set(context181.records.map(r => r.source_observation_id));
+assert.equal(contextIds.size,181);
+for (const r of context181.records) {
+  assert.ok(priorSourceIds.has(r.source_observation_id));
+  assert.equal(r.research_retained, true);
+  assert.equal(r.distinctness_certified, false);
+  assert.equal(r.app_publication, false);
+  if(r.proposed_historical_group_id) assert.ok(historicalIds.has(r.proposed_historical_group_id));
+}
+assert.equal(context181.records.filter(r => r.proposed_historical_group_id).length,39);
+assert.deepEqual(
+  new Set(context181.records.map(r => r.source_observation_id)),
+  new Set(crosswalk.records.filter(r => [
+    'OTHER_LITURGY_OR_EXISTING_PRACTICE_OWNER_RECHECK',
+    'HISTORICAL_PRACTICE_VERSUS_CONTEXT_RECHECK',
+    'DISPUTED_FOLKLORE_OR_NON_CATHOLIC_CONTEXT_RECHECK'
+  ].includes(r.route)).map(r => r.source_id))
+);
+assert.equal(addendum.records.length,6);
+assert.equal(new Set(addendum.records.map(r => r.id)).size,6);
+for (const r of addendum.records) {
+  assert.ok(!priorSourceIds.has(r.id), 'Addendum must not overwrite the 568-record source');
+  assert.ok([128,129].includes(r.printed_page));
+  assert.equal(r.research_status,'PRIMARY_PAGE_VISUALLY_CHECKED_NOT_IDENTITY_CERTIFIED');
+  assert.equal(r.app_publication,'NONE');
+  for (const otherId of r.possible_existing_links) assert.ok(priorSourceIds.has(otherId));
+}
+assert.equal(addendum.records.filter(r => r.secondary_witnesses.length).length,1);
+const previewCoverage = new Set(
+  family1956.records.flatMap(r => [
+    ...(r.prior_preview_id ? [r.prior_preview_id] : []),
+    ...(r.additional_previous_preview_ids || [])
+  ])
+);
+assert.equal(previewCoverage.size,16);
+assert.deepEqual(previewCoverage,previewIds);
+const bridgeCoverage = new Set(familyBridge.records.flatMap(r => [
+  ...(r.earlier_preview_overlap_id ? [r.earlier_preview_overlap_id] : []),
+  ...(r.additional_earlier_preview_overlap_ids || [])
+]));
+assert.deepEqual(bridgeCoverage,previewIds);
+console.log('Weiser historical/context/disputed 181-case audit, 39 recovered leads, 6 PDF-checked addendum observations and full 16 preview bridge — PASS');
