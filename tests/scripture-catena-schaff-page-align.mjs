@@ -6,6 +6,7 @@ const sha=s=>createHash("sha256").update(s).digest("hex");
 const base="dist/";
 const out=read(base+"schaff-chrysostom-page-alignment/all-1938-page-coordinate-hints.v1.json");
 const summary=read(base+"schaff-chrysostom-page-alignment/summary.v1.json");
+const queue=read(base+"schaff-chrysostom-page-alignment/page-alignment-exception-queue.v1.json");
 const source=read(base+"schaff-chrysostom-replies/chrysostom-all-structural-candidates.v1.json");
 const coords=read(base+"schaff-layout-1888/acquisition-summary.v1.json");
 const historic=readFileSync(base+"schaff-original-ocr/NPNF1-10.raw-ocr.txt","utf8");
@@ -31,6 +32,32 @@ assert.equal(summary.ambiguousPageTies,18);
 assert.equal(summary.noSixWordMatch,2);
 assert.equal(summary.fallbackToPriorQuestionContextForShortLine,21);
 assert.equal(summary.originalOCRLineToScanLeafOrderReversals,0);
+assert.equal(queue.schema,"ao.catena.chrysostom-1888-page-alignment-exception-queue.v1");
+assert.equal(queue.unresolvedPageHints,20);
+assert.equal(queue.weakerUniquePageHints,634);
+assert.equal(queue.sourcePassagesInQueue,654);
+assert.equal(queue.entries.length,654);
+assert.equal(queue.originalVolumeSHA256,source.historicalVolumeSHA256);
+assert.equal(queue.originalPageXMLSHA256,coords.djvuXMLSHA256);
+assert.equal(queue.sourceCriticalPageIdentitiesAuthenticated,0);
+assert.equal(queue.publicationApprovals,0);
+assert.deepEqual(queue.entries.slice(0,2).map(x=>x.pageMatchState),
+ ["no_six_word_anchor","no_six_word_anchor"]);
+assert.ok(queue.entries.slice(2,20).every(x=>x.pageMatchState==="ambiguous_page_tie"));
+assert.ok(queue.entries.slice(20).every(x=>x.pageMatchState==="weak_unique_original_OCR_page_match"));
+const mappedRows=new Map(out.rows.map(r=>[r.id,r]));
+for(const exception of queue.entries){
+ const sourceRow=mappedRows.get(exception.sourceId);
+ assert.ok(sourceRow);
+ assert.equal(exception.originalOCRQuestionLine,sourceRow.originalOCRQuestionLine);
+ assert.equal(exception.pageMatchState,sourceRow.pageMatchState);
+ assert.equal(exception.scannedLeafProvisional,sourceRow.scannedLeaf);
+ assert.equal(exception.historicalSourceQuestionSHA256,sourceRow.sourceQuestionSHA256);
+ assert.equal(exception.exactSixWordAnchor,
+  sourceRow.sixWordEvidence?.exactSixWordSourceOCR||null);
+ assert.equal(exception.originalQuestionSpeakerCertified,false);
+ assert.equal(exception.publicationEligible,false);
+}
 for(const k of ["sourceSpeakerCertifications","originalGreekCollations",
  "authenticatedAnswers","publicationApprovals"])assert.equal(summary[k],0);
 const normalize=s=>(s||"").normalize("NFKD").replace(/[\u0300-\u036f]/g,"")
