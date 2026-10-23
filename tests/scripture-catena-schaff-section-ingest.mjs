@@ -32,6 +32,24 @@ for(const volume of manifest.volumes){
  assert.equal(unitData.sourceAttributionAndGenuineNoveltyPending,true);
  assert.equal(unitData.humanApprovals,0);
  assert.equal(unitData.publicationApprovals,0);
+ if(vol==="NPNF1-06"){
+  assert.equal(unitData.provisionalChapterHeadingCount,123);
+  assert.equal(unitData.provisionalChapterHeadingEvidence.length,123);
+  const reversed=unitData.provisionalChapterHeadingEvidence.filter(h=>
+   h.chapterNumberDecreasedOrRepeatedInLinearOCR);
+  assert.ok(reversed.length>=2,"Two-column historical OCR must not be trusted as strictly chapter ordered");
+  for(const h of unitData.provisionalChapterHeadingEvidence){
+   assert.ok(unitData.units.some(u=>u.id===h.printedWorkUnitId&&
+    u.startLine<=h.originalLineNumber&&u.endLine>=h.originalLineNumber));
+   assert.equal(hash(h.originalHeadingOCR),h.originalHeadingSHA256);
+   assert.equal(h.originalHeadingOCR,lines[h.originalLineNumber-1]);
+   assert.equal(h.sectionBoundaryNotEstablished,true);
+   assert.equal(h.completenessUnverified,true);
+  }
+ }else{
+  assert.equal(unitData.provisionalChapterHeadingCount,0);
+  assert.deepEqual(unitData.provisionalChapterHeadingEvidence,[]);
+ }
  const sourceIds=new Set(candidates.windows.map(w=>w.id));
  const unitIds=new Set(),headingFixes=[];
  for(let i=0;i<unitData.units.length;i++){
