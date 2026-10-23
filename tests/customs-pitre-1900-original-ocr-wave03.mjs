@@ -6,6 +6,8 @@ const old1=load('data/customs/master/pitre-1900-new-rosalia-cosmas-piazza-origin
 const old2=load('data/customs/master/pitre-1900-new-gangi-gratteri-geraci-marineo-original-ocr-stage02.v1.json');
 const wave=load('data/customs/master/pitre-1900-original-ocr-unmined-messina-ragusa-scicli-comiso-mazara-calatafimi-wave03.v1.json');
 const master=load('data/customs/master/comprehensive-customs-working-catalogue.v1.json');
+const scan=load('data/customs/master/pitre-1900-uploaded-facsimile-25p0-16-wave03-page-gates.v1.json');
+const scannedNew=new Set(scan.additional_wave03_highrisk_page_checks.map(r=>r.source_id));
 assert.equal(previous.records.length,129);
 assert.equal(old1.records.length+old2.records.length,121);
 assert.equal(wave.records.length,172);
@@ -20,7 +22,7 @@ for(let i=0;i<raw.length;i++){
  assert.equal(r.id,'PIT1900-NEW-'+String(i+1).padStart(3,'0'));
  assert.ok(!ids.has(r.id)); ids.add(r.id);
  assert.equal(m.id,r.id);
- assert.equal(m.original_printed_folio_verified,false);
+ assert.equal(m.original_printed_folio_verified,scannedNew.has(m.id));
  assert.equal(m.official_1962_rite_approved,false);
  assert.equal(m.unique_practice_identity_certified,false);
  assert.equal(m.source_independence_certified,false);
