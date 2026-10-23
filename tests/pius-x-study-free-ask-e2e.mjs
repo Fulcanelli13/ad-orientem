@@ -6,7 +6,7 @@ import {chromium} from '@playwright/test';
 
 const path=resolve('artifacts/pius-x-study-expanded/SPX_Study_Expanded_106_P6.html');
 const html=readFileSync(path,'utf8');
-const match=html.match(/<script type="application\\/json" id="spxExpandedCorpus">([\\s\\S]*?)<\\/script>/);
+const match=html.match(/<script type="application\/json" id="spxExpandedCorpus">([\s\S]*?)<\/script>/);
 assert(match,'missing source-owned corpus');
 const c=JSON.parse(match[1]);
 assert.equal(c.chapters.length,106);
