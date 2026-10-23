@@ -19,7 +19,9 @@ assert.equal(audit.records.length,35);
 assert.equal(records.size,35);
 assert.equal(audit.counts.fully_editorially_certified,0);
 assert.equal(audit.counts.new_publications,0);
-assert.equal(audit.counts.targeted_primary_text_reviews,10);
+assert.equal(audit.counts.targeted_primary_text_reviews,11);
+assert.equal(audit.counts.historical_context_witnesses,4);
+assert.equal(audit.counts.p1_source_wording_discrepancies_corrected,1);
 assert.equal(audit.counts.history_duplicate_fixes_proposed,11);
 for(const id of CALENDAR_CUSTOM_ARTICLE_IDS){
   assert.ok(published.has(id),id+" cannot publish a context/research-only identity");
