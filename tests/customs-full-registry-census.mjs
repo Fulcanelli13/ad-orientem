@@ -850,3 +850,43 @@ for(const r of chaneyCross.records){
 }
 assert.equal(hintCount,380);
 console.log('Chaney 1955: 170/170 source actions, 380 search-only cross-source hints, 1,799 research rows, 408 unchanged provisional groups, zero publications — PASS');
+
+
+// Action-label relation reviews are review evidence, NOT verified historic
+// source independence or canonical identity. Prevent inadvertent promotion.
+const chaneyManual24=load('data/customs/master/chaney-1955-action-description-24-manual-relations.v1.json');
+assert.equal(chaneyManual24.records.length,24);
+assert.equal(chaneyManual24.summary.pairs_reviewed,24);
+assert.equal(chaneyManual24.summary.SAME_REPORTED_ACTION_CORE,12);
+assert.equal(chaneyManual24.summary.SPECIFIC_COMPONENT_OF_RELATED_PRACTICE,2);
+assert.equal(chaneyManual24.summary.RITUAL_PREPARATION_FOR_RELATED_ACTION,1);
+assert.equal(chaneyManual24.summary.SAME_PROPOSED_ACTION_RITUAL_AUTHORITY_UNCERTAIN,1);
+assert.equal(chaneyManual24.summary.DISTINCT_ACTION_FALSE_LEXICAL_MATCH,6);
+assert.equal(chaneyManual24.summary.RELATED_DIFFERENT_PRIMARY_ACTION,2);
+assert.equal(chaneyManual24.summary.verified_distinct_customs,0);
+assert.equal(chaneyManual24.summary.final_mergers,0);
+assert.equal(chaneyManual24.summary.independent_corrob_confirmed,0);
+assert.equal(chaneyManual24.summary.app_publications,0);
+assert.equal(new Set(chaneyManual24.records.map(r=>r.review_id)).size,24);
+assert.equal(count.source_review.chaney_1955_manually_reviewed_label_level_relationship_pairs,24);
+assert.equal(count.source_review.chaney_1955_action_core_label_matches,12);
+assert.equal(count.source_review.chaney_1955_false_lexical_matches_rejected,6);
+const allPriorOwners=new Set([...chaneyOwnerTargets,...chaneySourceTargets]);
+let falseCandidates=0;
+for(const row of chaneyManual24.records) {
+ assert.ok(chaneyIds.has(row.source_id));
+ assert.ok(allPriorOwners.has(row.compared_prior_id));
+ assert.ok(chaney55.records.some(r=>r.observation_id===row.source_id && r.source_locator.html_line_start===row.source_ewtn_line));
+ assert.equal(row.exact_historical_practice_identity_certified,false);
+ assert.equal(row.independence_of_historical_witnesses_certified,false);
+ assert.equal(row.ritual_approval_certified,false);
+ assert.equal(row.regional_scope_equality_certified,false);
+ assert.equal(row.automatic_merge,false);
+ assert.equal(row.app_publication,false);
+ assert.ok(row.reason.length>=35);
+ if(row.action_description_relationship==='DISTINCT_ACTION_FALSE_LEXICAL_MATCH')falseCandidates++;
+}
+assert.equal(falseCandidates,6);
+assert.equal(count.source_observations.total_source_detail_rows_including_external,1799);
+assert.equal(researchCatalogue.summary.no_new_app_publications,true);
+console.log('Chaney 24 source-description comparisons: 12 same action core, 6 false lexical matches, 0 verified source-independent identities, 0 merges — PASS');
