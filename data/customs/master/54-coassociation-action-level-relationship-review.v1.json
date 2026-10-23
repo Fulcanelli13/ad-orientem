@@ -1,0 +1,1163 @@
+{
+  "schema": "AO_COASSOCIATION_54_PAIR_ACTION_LEVEL_PROVISIONAL_DISPOSITIONS_V1",
+  "date": "2026-10-23",
+  "scope": "Further action-level comparison of 54 previously discovered potential duplicate pairs; fully retains distinct reported procedures and regional forms.",
+  "evidence_level": "SOURCE_INDEX_LABEL_COMPARISON_WITH_SHARED_MASTER_OR_FAMILY_WITNESS; NOT 54 SEPARATE FULL TEXT PASSAGE RECHECKS",
+  "summary": {
+    "reviewed": 54,
+    "clearly_different_reported_actions": 25,
+    "plausibly_related_action_variants": 7,
+    "remaining_context_related": 22,
+    "source_verified_sameness": 0,
+    "final_mergers": 0,
+    "app_publications": 0,
+    "classification_counts": {
+      "RELATED_CONTEXT_DIFFERENT_TIMING_ACTION_OR_SCOPE": 22,
+      "DISTINCT_REPORTED_PRIMARY_ACTIONS_RETAIN_SEPARATE": 25,
+      "SAME_ACTOR_ROLE_DISTINCT_FEAST_OCCASION": 1,
+      "POSSIBLE_SAME_CORE_EGG_DECORATING_ACTION_REGIONAL_MATERIAL_VARIANT": 1,
+      "POSSIBLE_SAME_GRAVE_CARE_ACTION_REGIONAL_VARIANT": 1,
+      "POSSIBLE_CANDLE_SUBPRACTICE_WITHIN_REGIONAL_CEMETERY_VISIT": 1,
+      "POSSIBLE_CANDLE_SUBPRACTICE_WITHIN_REGIONAL_CEMETERY_VIGIL": 1,
+      "POSSIBLE_SAME_CORE_CEMETERY_VISIT_DIFFERENT_REGIONAL_FORMS": 1,
+      "POSSIBLE_SAME_FIRE_FESTIVAL_FAMILY_DISTINCT_RITUAL_VARIANTS": 1
+    }
+  },
+  "records": [
+    {
+      "pair_id": "COASSOC-001",
+      "group_a": "CAT-WEISER-A-007",
+      "group_b": "CAT-WEISER-A-016",
+      "group_a_label": "Monday household or personal prayers for the Holy Souls",
+      "group_b_label": "Ember-day remembrance of the departed",
+      "shared_coassociation_evidence": [
+        {
+          "kind": "SHARED_EXISTING_MASTER_UMBRELLA",
+          "source_or_owner_id": "DEAD-003"
+        }
+      ],
+      "proposed_label_level_relationship": "RELATED_CONTEXT_DIFFERENT_TIMING_ACTION_OR_SCOPE",
+      "reason": "The labels differ by occasion, scope or action; their shared umbrella/master owner is insufficient for an exact same-practice equivalence.",
+      "next_action": "KEEP_SEPARATE_PENDING_MORE_GRANULAR_PASSAGE_READ",
+      "specific_source_passage_directly_read_for_this_pair": false,
+      "equivalence_certified": false,
+      "automatic_merge_allowed": false,
+      "master_umbrella_is_not_identity": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "pair_id": "COASSOC-002",
+      "group_a": "CAT-WEISER-A-007",
+      "group_b": "CAT-WEISER-B-034",
+      "group_a_label": "Monday household or personal prayers for the Holy Souls",
+      "group_b_label": "Easter Thursday remembrance of deceased",
+      "shared_coassociation_evidence": [
+        {
+          "kind": "SHARED_EXISTING_MASTER_UMBRELLA",
+          "source_or_owner_id": "DEAD-003"
+        }
+      ],
+      "proposed_label_level_relationship": "RELATED_CONTEXT_DIFFERENT_TIMING_ACTION_OR_SCOPE",
+      "reason": "The labels differ by occasion, scope or action; their shared umbrella/master owner is insufficient for an exact same-practice equivalence.",
+      "next_action": "KEEP_SEPARATE_PENDING_MORE_GRANULAR_PASSAGE_READ",
+      "specific_source_passage_directly_read_for_this_pair": false,
+      "equivalence_certified": false,
+      "automatic_merge_allowed": false,
+      "master_umbrella_is_not_identity": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "pair_id": "COASSOC-003",
+      "group_a": "CAT-WEISER-A-007",
+      "group_b": "CAT-WEISER-B-128",
+      "group_a_label": "Monday household or personal prayers for the Holy Souls",
+      "group_b_label": "Seventh- and thirtieth-day prayers for deceased",
+      "shared_coassociation_evidence": [
+        {
+          "kind": "SHARED_EXISTING_MASTER_UMBRELLA",
+          "source_or_owner_id": "DEAD-003"
+        }
+      ],
+      "proposed_label_level_relationship": "RELATED_CONTEXT_DIFFERENT_TIMING_ACTION_OR_SCOPE",
+      "reason": "The labels differ by occasion, scope or action; their shared umbrella/master owner is insufficient for an exact same-practice equivalence.",
+      "next_action": "KEEP_SEPARATE_PENDING_MORE_GRANULAR_PASSAGE_READ",
+      "specific_source_passage_directly_read_for_this_pair": false,
+      "equivalence_certified": false,
+      "automatic_merge_allowed": false,
+      "master_umbrella_is_not_identity": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "pair_id": "COASSOC-004",
+      "group_a": "CAT-WEISER-A-007",
+      "group_b": "CAT-WEISER-B-141",
+      "group_a_label": "Monday household or personal prayers for the Holy Souls",
+      "group_b_label": "All Souls soul bread given to poor and children",
+      "shared_coassociation_evidence": [
+        {
+          "kind": "SHARED_EXISTING_MASTER_UMBRELLA",
+          "source_or_owner_id": "DEAD-003"
+        }
+      ],
+      "proposed_label_level_relationship": "DISTINCT_REPORTED_PRIMARY_ACTIONS_RETAIN_SEPARATE",
+      "reason": "The described actions, participants or objects are materially different even though a broad owner or source paragraph mentions both.",
+      "next_action": "PRESERVE_SEPARATE_PROVISIONAL_ACTION_IDS_AND_SHARED_FEAST_FAMILY",
+      "specific_source_passage_directly_read_for_this_pair": false,
+      "equivalence_certified": false,
+      "automatic_merge_allowed": false,
+      "master_umbrella_is_not_identity": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "pair_id": "COASSOC-005",
+      "group_a": "CAT-WEISER-A-016",
+      "group_b": "CAT-WEISER-B-034",
+      "group_a_label": "Ember-day remembrance of the departed",
+      "group_b_label": "Easter Thursday remembrance of deceased",
+      "shared_coassociation_evidence": [
+        {
+          "kind": "SHARED_EXISTING_MASTER_UMBRELLA",
+          "source_or_owner_id": "DEAD-003"
+        }
+      ],
+      "proposed_label_level_relationship": "RELATED_CONTEXT_DIFFERENT_TIMING_ACTION_OR_SCOPE",
+      "reason": "The labels differ by occasion, scope or action; their shared umbrella/master owner is insufficient for an exact same-practice equivalence.",
+      "next_action": "KEEP_SEPARATE_PENDING_MORE_GRANULAR_PASSAGE_READ",
+      "specific_source_passage_directly_read_for_this_pair": false,
+      "equivalence_certified": false,
+      "automatic_merge_allowed": false,
+      "master_umbrella_is_not_identity": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "pair_id": "COASSOC-006",
+      "group_a": "CAT-WEISER-A-016",
+      "group_b": "CAT-WEISER-B-128",
+      "group_a_label": "Ember-day remembrance of the departed",
+      "group_b_label": "Seventh- and thirtieth-day prayers for deceased",
+      "shared_coassociation_evidence": [
+        {
+          "kind": "SHARED_EXISTING_MASTER_UMBRELLA",
+          "source_or_owner_id": "DEAD-003"
+        }
+      ],
+      "proposed_label_level_relationship": "RELATED_CONTEXT_DIFFERENT_TIMING_ACTION_OR_SCOPE",
+      "reason": "The labels differ by occasion, scope or action; their shared umbrella/master owner is insufficient for an exact same-practice equivalence.",
+      "next_action": "KEEP_SEPARATE_PENDING_MORE_GRANULAR_PASSAGE_READ",
+      "specific_source_passage_directly_read_for_this_pair": false,
+      "equivalence_certified": false,
+      "automatic_merge_allowed": false,
+      "master_umbrella_is_not_identity": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "pair_id": "COASSOC-007",
+      "group_a": "CAT-WEISER-A-016",
+      "group_b": "CAT-WEISER-B-141",
+      "group_a_label": "Ember-day remembrance of the departed",
+      "group_b_label": "All Souls soul bread given to poor and children",
+      "shared_coassociation_evidence": [
+        {
+          "kind": "SHARED_EXISTING_MASTER_UMBRELLA",
+          "source_or_owner_id": "DEAD-003"
+        }
+      ],
+      "proposed_label_level_relationship": "DISTINCT_REPORTED_PRIMARY_ACTIONS_RETAIN_SEPARATE",
+      "reason": "The described actions, participants or objects are materially different even though a broad owner or source paragraph mentions both.",
+      "next_action": "PRESERVE_SEPARATE_PROVISIONAL_ACTION_IDS_AND_SHARED_FEAST_FAMILY",
+      "specific_source_passage_directly_read_for_this_pair": false,
+      "equivalence_certified": false,
+      "automatic_merge_allowed": false,
+      "master_umbrella_is_not_identity": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "pair_id": "COASSOC-008",
+      "group_a": "CAT-WEISER-A-023",
+      "group_b": "CAT-WEISER-C-001",
+      "group_a_label": "Named child lighting the family Advent candle",
+      "group_b_label": "Named family member lights Christmas candles",
+      "shared_coassociation_evidence": [
+        {
+          "kind": "FAMILY_BOOK_SUMMARY_CO_MENTION",
+          "source_or_owner_id": "WEI-FAM56-041"
+        }
+      ],
+      "proposed_label_level_relationship": "SAME_ACTOR_ROLE_DISTINCT_FEAST_OCCASION",
+      "reason": "The labels suggest a related action, location or material, but do not establish documentary identity. Compare detailed procedures and original local contexts.",
+      "next_action": "PRIMARY_SOURCE_PASSAGE_COMPARISON_BEFORE_VARIANT_LINK",
+      "specific_source_passage_directly_read_for_this_pair": false,
+      "equivalence_certified": false,
+      "automatic_merge_allowed": false,
+      "master_umbrella_is_not_identity": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "pair_id": "COASSOC-009",
+      "group_a": "CAT-WEISER-A-027",
+      "group_b": "CAT-WEISER-A-029",
+      "group_a_label": "Alpine Marian-image visits between homes in Advent",
+      "group_b_label": "Herbergsuchen lodging-search devotional drama",
+      "shared_coassociation_evidence": [
+        {
+          "kind": "SHARED_EXISTING_MASTER_UMBRELLA",
+          "source_or_owner_id": "CUST-ADVT-HERBERGSUCHE"
+        }
+      ],
+      "proposed_label_level_relationship": "RELATED_CONTEXT_DIFFERENT_TIMING_ACTION_OR_SCOPE",
+      "reason": "The labels differ by occasion, scope or action; their shared umbrella/master owner is insufficient for an exact same-practice equivalence.",
+      "next_action": "KEEP_SEPARATE_PENDING_MORE_GRANULAR_PASSAGE_READ",
+      "specific_source_passage_directly_read_for_this_pair": false,
+      "equivalence_certified": false,
+      "automatic_merge_allowed": false,
+      "master_umbrella_is_not_identity": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "pair_id": "COASSOC-010",
+      "group_a": "CAT-WEISER-A-052",
+      "group_b": "CAT-WEISER-A-053",
+      "group_a_label": "Holly symbolizing the Nativity and Passion",
+      "group_b_label": "Christmas laurel wreath with victory symbolism",
+      "shared_coassociation_evidence": [
+        {
+          "kind": "FAMILY_BOOK_SUMMARY_CO_MENTION",
+          "source_or_owner_id": "WEI-FAM56-055"
+        }
+      ],
+      "proposed_label_level_relationship": "DISTINCT_REPORTED_PRIMARY_ACTIONS_RETAIN_SEPARATE",
+      "reason": "The described actions, participants or objects are materially different even though a broad owner or source paragraph mentions both.",
+      "next_action": "PRESERVE_SEPARATE_PROVISIONAL_ACTION_IDS_AND_SHARED_FEAST_FAMILY",
+      "specific_source_passage_directly_read_for_this_pair": false,
+      "equivalence_certified": false,
+      "automatic_merge_allowed": false,
+      "master_umbrella_is_not_identity": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "pair_id": "COASSOC-011",
+      "group_a": "CAT-WEISER-A-052",
+      "group_b": "CAT-WEISER-A-055",
+      "group_a_label": "Holly symbolizing the Nativity and Passion",
+      "group_b_label": "Mexican Christmas poinsettia decoration",
+      "shared_coassociation_evidence": [
+        {
+          "kind": "FAMILY_BOOK_SUMMARY_CO_MENTION",
+          "source_or_owner_id": "WEI-FAM56-055"
+        }
+      ],
+      "proposed_label_level_relationship": "DISTINCT_REPORTED_PRIMARY_ACTIONS_RETAIN_SEPARATE",
+      "reason": "The described actions, participants or objects are materially different even though a broad owner or source paragraph mentions both.",
+      "next_action": "PRESERVE_SEPARATE_PROVISIONAL_ACTION_IDS_AND_SHARED_FEAST_FAMILY",
+      "specific_source_passage_directly_read_for_this_pair": false,
+      "equivalence_certified": false,
+      "automatic_merge_allowed": false,
+      "master_umbrella_is_not_identity": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "pair_id": "COASSOC-012",
+      "group_a": "CAT-WEISER-A-053",
+      "group_b": "CAT-WEISER-A-055",
+      "group_a_label": "Christmas laurel wreath with victory symbolism",
+      "group_b_label": "Mexican Christmas poinsettia decoration",
+      "shared_coassociation_evidence": [
+        {
+          "kind": "FAMILY_BOOK_SUMMARY_CO_MENTION",
+          "source_or_owner_id": "WEI-FAM56-055"
+        }
+      ],
+      "proposed_label_level_relationship": "DISTINCT_REPORTED_PRIMARY_ACTIONS_RETAIN_SEPARATE",
+      "reason": "The described actions, participants or objects are materially different even though a broad owner or source paragraph mentions both.",
+      "next_action": "PRESERVE_SEPARATE_PROVISIONAL_ACTION_IDS_AND_SHARED_FEAST_FAMILY",
+      "specific_source_passage_directly_read_for_this_pair": false,
+      "equivalence_certified": false,
+      "automatic_merge_allowed": false,
+      "master_umbrella_is_not_identity": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "pair_id": "COASSOC-013",
+      "group_a": "CAT-WEISER-B-003",
+      "group_b": "CAT-WEISER-B-130",
+      "group_a_label": "Palm Sunday cemetery visits accompanying the procession",
+      "group_b_label": "Cleaning and decorating graves before All Souls",
+      "shared_coassociation_evidence": [
+        {
+          "kind": "SHARED_EXISTING_MASTER_UMBRELLA",
+          "source_or_owner_id": "DEAD-001"
+        }
+      ],
+      "proposed_label_level_relationship": "RELATED_CONTEXT_DIFFERENT_TIMING_ACTION_OR_SCOPE",
+      "reason": "The labels differ by occasion, scope or action; their shared umbrella/master owner is insufficient for an exact same-practice equivalence.",
+      "next_action": "KEEP_SEPARATE_PENDING_MORE_GRANULAR_PASSAGE_READ",
+      "specific_source_passage_directly_read_for_this_pair": false,
+      "equivalence_certified": false,
+      "automatic_merge_allowed": false,
+      "master_umbrella_is_not_identity": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "pair_id": "COASSOC-014",
+      "group_a": "CAT-WEISER-B-003",
+      "group_b": "CAT-WEISER-B-131",
+      "group_a_label": "Palm Sunday cemetery visits accompanying the procession",
+      "group_b_label": "All Souls graveside lanterns and votive candles",
+      "shared_coassociation_evidence": [
+        {
+          "kind": "SHARED_EXISTING_MASTER_UMBRELLA",
+          "source_or_owner_id": "DEAD-001"
+        }
+      ],
+      "proposed_label_level_relationship": "RELATED_CONTEXT_DIFFERENT_TIMING_ACTION_OR_SCOPE",
+      "reason": "The labels differ by occasion, scope or action; their shared umbrella/master owner is insufficient for an exact same-practice equivalence.",
+      "next_action": "KEEP_SEPARATE_PENDING_MORE_GRANULAR_PASSAGE_READ",
+      "specific_source_passage_directly_read_for_this_pair": false,
+      "equivalence_certified": false,
+      "automatic_merge_allowed": false,
+      "master_umbrella_is_not_identity": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "pair_id": "COASSOC-015",
+      "group_a": "CAT-WEISER-B-003",
+      "group_b": "CAT-WEISER-B-135",
+      "group_a_label": "Palm Sunday cemetery visits accompanying the procession",
+      "group_b_label": "Brazilian All Souls cemetery visit and candles",
+      "shared_coassociation_evidence": [
+        {
+          "kind": "SHARED_EXISTING_MASTER_UMBRELLA",
+          "source_or_owner_id": "DEAD-001"
+        }
+      ],
+      "proposed_label_level_relationship": "RELATED_CONTEXT_DIFFERENT_TIMING_ACTION_OR_SCOPE",
+      "reason": "The labels differ by occasion, scope or action; their shared umbrella/master owner is insufficient for an exact same-practice equivalence.",
+      "next_action": "KEEP_SEPARATE_PENDING_MORE_GRANULAR_PASSAGE_READ",
+      "specific_source_passage_directly_read_for_this_pair": false,
+      "equivalence_certified": false,
+      "automatic_merge_allowed": false,
+      "master_umbrella_is_not_identity": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "pair_id": "COASSOC-016",
+      "group_a": "CAT-WEISER-B-003",
+      "group_b": "CAT-WEISER-B-136",
+      "group_a_label": "Palm Sunday cemetery visits accompanying the procession",
+      "group_b_label": "Puerto Rican All Souls vigil at graves with prayer",
+      "shared_coassociation_evidence": [
+        {
+          "kind": "SHARED_EXISTING_MASTER_UMBRELLA",
+          "source_or_owner_id": "DEAD-001"
+        }
+      ],
+      "proposed_label_level_relationship": "RELATED_CONTEXT_DIFFERENT_TIMING_ACTION_OR_SCOPE",
+      "reason": "The labels differ by occasion, scope or action; their shared umbrella/master owner is insufficient for an exact same-practice equivalence.",
+      "next_action": "KEEP_SEPARATE_PENDING_MORE_GRANULAR_PASSAGE_READ",
+      "specific_source_passage_directly_read_for_this_pair": false,
+      "equivalence_certified": false,
+      "automatic_merge_allowed": false,
+      "master_umbrella_is_not_identity": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "pair_id": "COASSOC-017",
+      "group_a": "CAT-WEISER-B-003",
+      "group_b": "CAT-WEISER-B-137",
+      "group_a_label": "Palm Sunday cemetery visits accompanying the procession",
+      "group_b_label": "Philippine grave repair preceding All Souls novena",
+      "shared_coassociation_evidence": [
+        {
+          "kind": "SHARED_EXISTING_MASTER_UMBRELLA",
+          "source_or_owner_id": "DEAD-001"
+        }
+      ],
+      "proposed_label_level_relationship": "RELATED_CONTEXT_DIFFERENT_TIMING_ACTION_OR_SCOPE",
+      "reason": "The labels differ by occasion, scope or action; their shared umbrella/master owner is insufficient for an exact same-practice equivalence.",
+      "next_action": "KEEP_SEPARATE_PENDING_MORE_GRANULAR_PASSAGE_READ",
+      "specific_source_passage_directly_read_for_this_pair": false,
+      "equivalence_certified": false,
+      "automatic_merge_allowed": false,
+      "master_umbrella_is_not_identity": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "pair_id": "COASSOC-018",
+      "group_a": "CAT-WEISER-B-004",
+      "group_b": "CAT-WEISER-B-005",
+      "group_a_label": "Use of blessed palms for reconciliation between neighbours",
+      "group_b_label": "Slavic Palm Sunday willow tapping / Boże Rany",
+      "shared_coassociation_evidence": [
+        {
+          "kind": "SHARED_EXISTING_MASTER_UMBRELLA",
+          "source_or_owner_id": "DOM-013"
+        }
+      ],
+      "proposed_label_level_relationship": "DISTINCT_REPORTED_PRIMARY_ACTIONS_RETAIN_SEPARATE",
+      "reason": "The described actions, participants or objects are materially different even though a broad owner or source paragraph mentions both.",
+      "next_action": "PRESERVE_SEPARATE_PROVISIONAL_ACTION_IDS_AND_SHARED_FEAST_FAMILY",
+      "specific_source_passage_directly_read_for_this_pair": false,
+      "equivalence_certified": false,
+      "automatic_merge_allowed": false,
+      "master_umbrella_is_not_identity": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "pair_id": "COASSOC-019",
+      "group_a": "CAT-WEISER-B-004",
+      "group_b": "CAT-WEISER-B-006",
+      "group_a_label": "Use of blessed palms for reconciliation between neighbours",
+      "group_b_label": "Placing blessed Palm branches in barns and farms",
+      "shared_coassociation_evidence": [
+        {
+          "kind": "SHARED_EXISTING_MASTER_UMBRELLA",
+          "source_or_owner_id": "DOM-013"
+        }
+      ],
+      "proposed_label_level_relationship": "DISTINCT_REPORTED_PRIMARY_ACTIONS_RETAIN_SEPARATE",
+      "reason": "The described actions, participants or objects are materially different even though a broad owner or source paragraph mentions both.",
+      "next_action": "PRESERVE_SEPARATE_PROVISIONAL_ACTION_IDS_AND_SHARED_FEAST_FAMILY",
+      "specific_source_passage_directly_read_for_this_pair": false,
+      "equivalence_certified": false,
+      "automatic_merge_allowed": false,
+      "master_umbrella_is_not_identity": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "pair_id": "COASSOC-020",
+      "group_a": "CAT-WEISER-B-005",
+      "group_b": "CAT-WEISER-B-006",
+      "group_a_label": "Slavic Palm Sunday willow tapping / Boże Rany",
+      "group_b_label": "Placing blessed Palm branches in barns and farms",
+      "shared_coassociation_evidence": [
+        {
+          "kind": "SHARED_EXISTING_MASTER_UMBRELLA",
+          "source_or_owner_id": "DOM-013"
+        }
+      ],
+      "proposed_label_level_relationship": "DISTINCT_REPORTED_PRIMARY_ACTIONS_RETAIN_SEPARATE",
+      "reason": "The described actions, participants or objects are materially different even though a broad owner or source paragraph mentions both.",
+      "next_action": "PRESERVE_SEPARATE_PROVISIONAL_ACTION_IDS_AND_SHARED_FEAST_FAMILY",
+      "specific_source_passage_directly_read_for_this_pair": false,
+      "equivalence_certified": false,
+      "automatic_merge_allowed": false,
+      "master_umbrella_is_not_identity": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "pair_id": "COASSOC-021",
+      "group_a": "CAT-WEISER-B-017",
+      "group_b": "CAT-WEISER-B-038",
+      "group_a_label": "Holy Saturday family Easter egg dyeing and baking",
+      "group_b_label": "Giving decorated Easter eggs to children and household staff",
+      "shared_coassociation_evidence": [
+        {
+          "kind": "SHARED_EXISTING_MASTER_UMBRELLA",
+          "source_or_owner_id": "CANDIDATE-EASTER-EGG-CRAFT"
+        }
+      ],
+      "proposed_label_level_relationship": "DISTINCT_REPORTED_PRIMARY_ACTIONS_RETAIN_SEPARATE",
+      "reason": "The described actions, participants or objects are materially different even though a broad owner or source paragraph mentions both.",
+      "next_action": "PRESERVE_SEPARATE_PROVISIONAL_ACTION_IDS_AND_SHARED_FEAST_FAMILY",
+      "specific_source_passage_directly_read_for_this_pair": false,
+      "equivalence_certified": false,
+      "automatic_merge_allowed": false,
+      "master_umbrella_is_not_identity": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "pair_id": "COASSOC-022",
+      "group_a": "CAT-WEISER-B-017",
+      "group_b": "CAT-WEISER-B-039",
+      "group_a_label": "Holy Saturday family Easter egg dyeing and baking",
+      "group_b_label": "Red or coloured Easter eggs in regional celebrations",
+      "shared_coassociation_evidence": [
+        {
+          "kind": "SHARED_EXISTING_MASTER_UMBRELLA",
+          "source_or_owner_id": "CANDIDATE-EASTER-EGG-CRAFT"
+        }
+      ],
+      "proposed_label_level_relationship": "POSSIBLE_SAME_CORE_EGG_DECORATING_ACTION_REGIONAL_MATERIAL_VARIANT",
+      "reason": "The labels suggest a related action, location or material, but do not establish documentary identity. Compare detailed procedures and original local contexts.",
+      "next_action": "PRIMARY_SOURCE_PASSAGE_COMPARISON_BEFORE_VARIANT_LINK",
+      "specific_source_passage_directly_read_for_this_pair": false,
+      "equivalence_certified": false,
+      "automatic_merge_allowed": false,
+      "master_umbrella_is_not_identity": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "pair_id": "COASSOC-023",
+      "group_a": "CAT-WEISER-B-018",
+      "group_b": "CAT-WEISER-B-042",
+      "group_a_label": "Holy Saturday priestly blessing of foods at home",
+      "group_b_label": "Shared blessed Easter egg at family breakfast",
+      "shared_coassociation_evidence": [
+        {
+          "kind": "SHARED_EXISTING_MASTER_UMBRELLA",
+          "source_or_owner_id": "BLSS-004"
+        }
+      ],
+      "proposed_label_level_relationship": "DISTINCT_REPORTED_PRIMARY_ACTIONS_RETAIN_SEPARATE",
+      "reason": "The described actions, participants or objects are materially different even though a broad owner or source paragraph mentions both.",
+      "next_action": "PRESERVE_SEPARATE_PROVISIONAL_ACTION_IDS_AND_SHARED_FEAST_FAMILY",
+      "specific_source_passage_directly_read_for_this_pair": false,
+      "equivalence_certified": false,
+      "automatic_merge_allowed": false,
+      "master_umbrella_is_not_identity": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "pair_id": "COASSOC-024",
+      "group_a": "CAT-WEISER-B-018",
+      "group_b": "CAT-WEISER-B-044",
+      "group_a_label": "Holy Saturday priestly blessing of foods at home",
+      "group_b_label": "Easter paska bread decorated with crosses",
+      "shared_coassociation_evidence": [
+        {
+          "kind": "SHARED_EXISTING_MASTER_UMBRELLA",
+          "source_or_owner_id": "BLSS-004"
+        }
+      ],
+      "proposed_label_level_relationship": "DISTINCT_REPORTED_PRIMARY_ACTIONS_RETAIN_SEPARATE",
+      "reason": "The described actions, participants or objects are materially different even though a broad owner or source paragraph mentions both.",
+      "next_action": "PRESERVE_SEPARATE_PROVISIONAL_ACTION_IDS_AND_SHARED_FEAST_FAMILY",
+      "specific_source_passage_directly_read_for_this_pair": false,
+      "equivalence_certified": false,
+      "automatic_merge_allowed": false,
+      "master_umbrella_is_not_identity": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "pair_id": "COASSOC-025",
+      "group_a": "CAT-WEISER-B-028",
+      "group_b": "CAT-WEISER-B-033",
+      "group_a_label": "Easter walking pilgrimage with Cross and prayer",
+      "group_b_label": "Easter Monday visits to grandparents",
+      "shared_coassociation_evidence": [
+        {
+          "kind": "SHARED_EXISTING_MASTER_UMBRELLA",
+          "source_or_owner_id": "EAST-001"
+        }
+      ],
+      "proposed_label_level_relationship": "DISTINCT_REPORTED_PRIMARY_ACTIONS_RETAIN_SEPARATE",
+      "reason": "The described actions, participants or objects are materially different even though a broad owner or source paragraph mentions both.",
+      "next_action": "PRESERVE_SEPARATE_PROVISIONAL_ACTION_IDS_AND_SHARED_FEAST_FAMILY",
+      "specific_source_passage_directly_read_for_this_pair": false,
+      "equivalence_certified": false,
+      "automatic_merge_allowed": false,
+      "master_umbrella_is_not_identity": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "pair_id": "COASSOC-026",
+      "group_a": "CAT-WEISER-B-034",
+      "group_b": "CAT-WEISER-B-128",
+      "group_a_label": "Easter Thursday remembrance of deceased",
+      "group_b_label": "Seventh- and thirtieth-day prayers for deceased",
+      "shared_coassociation_evidence": [
+        {
+          "kind": "SHARED_EXISTING_MASTER_UMBRELLA",
+          "source_or_owner_id": "DEAD-003"
+        }
+      ],
+      "proposed_label_level_relationship": "RELATED_CONTEXT_DIFFERENT_TIMING_ACTION_OR_SCOPE",
+      "reason": "The labels differ by occasion, scope or action; their shared umbrella/master owner is insufficient for an exact same-practice equivalence.",
+      "next_action": "KEEP_SEPARATE_PENDING_MORE_GRANULAR_PASSAGE_READ",
+      "specific_source_passage_directly_read_for_this_pair": false,
+      "equivalence_certified": false,
+      "automatic_merge_allowed": false,
+      "master_umbrella_is_not_identity": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "pair_id": "COASSOC-027",
+      "group_a": "CAT-WEISER-B-034",
+      "group_b": "CAT-WEISER-B-141",
+      "group_a_label": "Easter Thursday remembrance of deceased",
+      "group_b_label": "All Souls soul bread given to poor and children",
+      "shared_coassociation_evidence": [
+        {
+          "kind": "SHARED_EXISTING_MASTER_UMBRELLA",
+          "source_or_owner_id": "DEAD-003"
+        }
+      ],
+      "proposed_label_level_relationship": "DISTINCT_REPORTED_PRIMARY_ACTIONS_RETAIN_SEPARATE",
+      "reason": "The described actions, participants or objects are materially different even though a broad owner or source paragraph mentions both.",
+      "next_action": "PRESERVE_SEPARATE_PROVISIONAL_ACTION_IDS_AND_SHARED_FEAST_FAMILY",
+      "specific_source_passage_directly_read_for_this_pair": false,
+      "equivalence_certified": false,
+      "automatic_merge_allowed": false,
+      "master_umbrella_is_not_identity": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "pair_id": "COASSOC-028",
+      "group_a": "CAT-WEISER-B-038",
+      "group_b": "CAT-WEISER-B-039",
+      "group_a_label": "Giving decorated Easter eggs to children and household staff",
+      "group_b_label": "Red or coloured Easter eggs in regional celebrations",
+      "shared_coassociation_evidence": [
+        {
+          "kind": "SHARED_EXISTING_MASTER_UMBRELLA",
+          "source_or_owner_id": "CANDIDATE-EASTER-EGG-CRAFT"
+        }
+      ],
+      "proposed_label_level_relationship": "RELATED_CONTEXT_DIFFERENT_TIMING_ACTION_OR_SCOPE",
+      "reason": "The labels differ by occasion, scope or action; their shared umbrella/master owner is insufficient for an exact same-practice equivalence.",
+      "next_action": "KEEP_SEPARATE_PENDING_MORE_GRANULAR_PASSAGE_READ",
+      "specific_source_passage_directly_read_for_this_pair": false,
+      "equivalence_certified": false,
+      "automatic_merge_allowed": false,
+      "master_umbrella_is_not_identity": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "pair_id": "COASSOC-029",
+      "group_a": "CAT-WEISER-B-039",
+      "group_b": "CAT-WEISER-B-043",
+      "group_a_label": "Red or coloured Easter eggs in regional celebrations",
+      "group_b_label": "Easter lily in church and household decoration",
+      "shared_coassociation_evidence": [
+        {
+          "kind": "FAMILY_BOOK_SUMMARY_CO_MENTION",
+          "source_or_owner_id": "WEI-FAM56-084"
+        }
+      ],
+      "proposed_label_level_relationship": "DISTINCT_REPORTED_PRIMARY_ACTIONS_RETAIN_SEPARATE",
+      "reason": "The described actions, participants or objects are materially different even though a broad owner or source paragraph mentions both.",
+      "next_action": "PRESERVE_SEPARATE_PROVISIONAL_ACTION_IDS_AND_SHARED_FEAST_FAMILY",
+      "specific_source_passage_directly_read_for_this_pair": false,
+      "equivalence_certified": false,
+      "automatic_merge_allowed": false,
+      "master_umbrella_is_not_identity": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "pair_id": "COASSOC-030",
+      "group_a": "CAT-WEISER-B-042",
+      "group_b": "CAT-WEISER-B-044",
+      "group_a_label": "Shared blessed Easter egg at family breakfast",
+      "group_b_label": "Easter paska bread decorated with crosses",
+      "shared_coassociation_evidence": [
+        {
+          "kind": "SHARED_EXISTING_MASTER_UMBRELLA",
+          "source_or_owner_id": "BLSS-004"
+        }
+      ],
+      "proposed_label_level_relationship": "DISTINCT_REPORTED_PRIMARY_ACTIONS_RETAIN_SEPARATE",
+      "reason": "The described actions, participants or objects are materially different even though a broad owner or source paragraph mentions both.",
+      "next_action": "PRESERVE_SEPARATE_PROVISIONAL_ACTION_IDS_AND_SHARED_FEAST_FAMILY",
+      "specific_source_passage_directly_read_for_this_pair": false,
+      "equivalence_certified": false,
+      "automatic_merge_allowed": false,
+      "master_umbrella_is_not_identity": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "pair_id": "COASSOC-031",
+      "group_a": "CAT-WEISER-B-044",
+      "group_b": "CAT-WEISER-B-045",
+      "group_a_label": "Easter paska bread decorated with crosses",
+      "group_b_label": "Osterstollen and Austrian Easter cross loaves",
+      "shared_coassociation_evidence": [
+        {
+          "kind": "FAMILY_BOOK_SUMMARY_CO_MENTION",
+          "source_or_owner_id": "WEI-FAM56-088"
+        }
+      ],
+      "proposed_label_level_relationship": "DISTINCT_REPORTED_PRIMARY_ACTIONS_RETAIN_SEPARATE",
+      "reason": "The described actions, participants or objects are materially different even though a broad owner or source paragraph mentions both.",
+      "next_action": "PRESERVE_SEPARATE_PROVISIONAL_ACTION_IDS_AND_SHARED_FEAST_FAMILY",
+      "specific_source_passage_directly_read_for_this_pair": false,
+      "equivalence_certified": false,
+      "automatic_merge_allowed": false,
+      "master_umbrella_is_not_identity": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "pair_id": "COASSOC-032",
+      "group_a": "CAT-WEISER-B-044",
+      "group_b": "CAT-WEISER-B-046",
+      "group_a_label": "Easter paska bread decorated with crosses",
+      "group_b_label": "Polish mazurki and South German Easter cakes",
+      "shared_coassociation_evidence": [
+        {
+          "kind": "FAMILY_BOOK_SUMMARY_CO_MENTION",
+          "source_or_owner_id": "WEI-FAM56-088"
+        }
+      ],
+      "proposed_label_level_relationship": "DISTINCT_REPORTED_PRIMARY_ACTIONS_RETAIN_SEPARATE",
+      "reason": "The described actions, participants or objects are materially different even though a broad owner or source paragraph mentions both.",
+      "next_action": "PRESERVE_SEPARATE_PROVISIONAL_ACTION_IDS_AND_SHARED_FEAST_FAMILY",
+      "specific_source_passage_directly_read_for_this_pair": false,
+      "equivalence_certified": false,
+      "automatic_merge_allowed": false,
+      "master_umbrella_is_not_identity": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "pair_id": "COASSOC-033",
+      "group_a": "CAT-WEISER-B-045",
+      "group_b": "CAT-WEISER-B-046",
+      "group_a_label": "Osterstollen and Austrian Easter cross loaves",
+      "group_b_label": "Polish mazurki and South German Easter cakes",
+      "shared_coassociation_evidence": [
+        {
+          "kind": "FAMILY_BOOK_SUMMARY_CO_MENTION",
+          "source_or_owner_id": "WEI-FAM56-088"
+        }
+      ],
+      "proposed_label_level_relationship": "DISTINCT_REPORTED_PRIMARY_ACTIONS_RETAIN_SEPARATE",
+      "reason": "The described actions, participants or objects are materially different even though a broad owner or source paragraph mentions both.",
+      "next_action": "PRESERVE_SEPARATE_PROVISIONAL_ACTION_IDS_AND_SHARED_FEAST_FAMILY",
+      "specific_source_passage_directly_read_for_this_pair": false,
+      "equivalence_certified": false,
+      "automatic_merge_allowed": false,
+      "master_umbrella_is_not_identity": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "pair_id": "COASSOC-034",
+      "group_a": "CAT-WEISER-B-076",
+      "group_b": "CAT-WEISER-B-077",
+      "group_a_label": "Corpus Christi windows adorned with candles and sacred images",
+      "group_b_label": "Birch greenery decorating Corpus Christi homes and routes",
+      "shared_coassociation_evidence": [
+        {
+          "kind": "SHARED_EXISTING_MASTER_UMBRELLA",
+          "source_or_owner_id": "CORP-001"
+        }
+      ],
+      "proposed_label_level_relationship": "RELATED_CONTEXT_DIFFERENT_TIMING_ACTION_OR_SCOPE",
+      "reason": "The labels differ by occasion, scope or action; their shared umbrella/master owner is insufficient for an exact same-practice equivalence.",
+      "next_action": "KEEP_SEPARATE_PENDING_MORE_GRANULAR_PASSAGE_READ",
+      "specific_source_passage_directly_read_for_this_pair": false,
+      "equivalence_certified": false,
+      "automatic_merge_allowed": false,
+      "master_umbrella_is_not_identity": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "pair_id": "COASSOC-035",
+      "group_a": "CAT-WEISER-B-076",
+      "group_b": "CAT-WEISER-B-084",
+      "group_a_label": "Corpus Christi windows adorned with candles and sacred images",
+      "group_b_label": "Flower wreaths for Corpus Christi homes, flags and banners",
+      "shared_coassociation_evidence": [
+        {
+          "kind": "SHARED_EXISTING_MASTER_UMBRELLA",
+          "source_or_owner_id": "CORP-001"
+        }
+      ],
+      "proposed_label_level_relationship": "RELATED_CONTEXT_DIFFERENT_TIMING_ACTION_OR_SCOPE",
+      "reason": "The labels differ by occasion, scope or action; their shared umbrella/master owner is insufficient for an exact same-practice equivalence.",
+      "next_action": "KEEP_SEPARATE_PENDING_MORE_GRANULAR_PASSAGE_READ",
+      "specific_source_passage_directly_read_for_this_pair": false,
+      "equivalence_certified": false,
+      "automatic_merge_allowed": false,
+      "master_umbrella_is_not_identity": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "pair_id": "COASSOC-036",
+      "group_a": "CAT-WEISER-B-077",
+      "group_b": "CAT-WEISER-B-084",
+      "group_a_label": "Birch greenery decorating Corpus Christi homes and routes",
+      "group_b_label": "Flower wreaths for Corpus Christi homes, flags and banners",
+      "shared_coassociation_evidence": [
+        {
+          "kind": "SHARED_EXISTING_MASTER_UMBRELLA",
+          "source_or_owner_id": "CORP-001"
+        }
+      ],
+      "proposed_label_level_relationship": "RELATED_CONTEXT_DIFFERENT_TIMING_ACTION_OR_SCOPE",
+      "reason": "The labels differ by occasion, scope or action; their shared umbrella/master owner is insufficient for an exact same-practice equivalence.",
+      "next_action": "KEEP_SEPARATE_PENDING_MORE_GRANULAR_PASSAGE_READ",
+      "specific_source_passage_directly_read_for_this_pair": false,
+      "equivalence_certified": false,
+      "automatic_merge_allowed": false,
+      "master_umbrella_is_not_identity": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "pair_id": "COASSOC-037",
+      "group_a": "CAT-WEISER-B-092",
+      "group_b": "CAT-WEISER-B-093",
+      "group_a_label": "Martinmas thanksgiving Mass followed by village harvest feast",
+      "group_b_label": "Saint Martin goose at the family table",
+      "shared_coassociation_evidence": [
+        {
+          "kind": "FAMILY_BOOK_SUMMARY_CO_MENTION",
+          "source_or_owner_id": "WEI-FAM56-103"
+        }
+      ],
+      "proposed_label_level_relationship": "DISTINCT_REPORTED_PRIMARY_ACTIONS_RETAIN_SEPARATE",
+      "reason": "The described actions, participants or objects are materially different even though a broad owner or source paragraph mentions both.",
+      "next_action": "PRESERVE_SEPARATE_PROVISIONAL_ACTION_IDS_AND_SHARED_FEAST_FAMILY",
+      "specific_source_passage_directly_read_for_this_pair": false,
+      "equivalence_certified": false,
+      "automatic_merge_allowed": false,
+      "master_umbrella_is_not_identity": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "pair_id": "COASSOC-038",
+      "group_a": "CAT-WEISER-B-092",
+      "group_b": "CAT-WEISER-B-094",
+      "group_a_label": "Martinmas thanksgiving Mass followed by village harvest feast",
+      "group_b_label": "Tasting new harvest wine at Martinmas",
+      "shared_coassociation_evidence": [
+        {
+          "kind": "FAMILY_BOOK_SUMMARY_CO_MENTION",
+          "source_or_owner_id": "WEI-FAM56-103"
+        }
+      ],
+      "proposed_label_level_relationship": "DISTINCT_REPORTED_PRIMARY_ACTIONS_RETAIN_SEPARATE",
+      "reason": "The described actions, participants or objects are materially different even though a broad owner or source paragraph mentions both.",
+      "next_action": "PRESERVE_SEPARATE_PROVISIONAL_ACTION_IDS_AND_SHARED_FEAST_FAMILY",
+      "specific_source_passage_directly_read_for_this_pair": false,
+      "equivalence_certified": false,
+      "automatic_merge_allowed": false,
+      "master_umbrella_is_not_identity": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "pair_id": "COASSOC-039",
+      "group_a": "CAT-WEISER-B-093",
+      "group_b": "CAT-WEISER-B-094",
+      "group_a_label": "Saint Martin goose at the family table",
+      "group_b_label": "Tasting new harvest wine at Martinmas",
+      "shared_coassociation_evidence": [
+        {
+          "kind": "FAMILY_BOOK_SUMMARY_CO_MENTION",
+          "source_or_owner_id": "WEI-FAM56-103"
+        }
+      ],
+      "proposed_label_level_relationship": "DISTINCT_REPORTED_PRIMARY_ACTIONS_RETAIN_SEPARATE",
+      "reason": "The described actions, participants or objects are materially different even though a broad owner or source paragraph mentions both.",
+      "next_action": "PRESERVE_SEPARATE_PROVISIONAL_ACTION_IDS_AND_SHARED_FEAST_FAMILY",
+      "specific_source_passage_directly_read_for_this_pair": false,
+      "equivalence_certified": false,
+      "automatic_merge_allowed": false,
+      "master_umbrella_is_not_identity": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "pair_id": "COASSOC-040",
+      "group_a": "CAT-WEISER-B-096",
+      "group_b": "CAT-WEISER-B-177",
+      "group_a_label": "Household name-day exemption from chores",
+      "group_b_label": "Saint Anne's nameday observance for Anne",
+      "shared_coassociation_evidence": [
+        {
+          "kind": "SHARED_EXISTING_MASTER_UMBRELLA",
+          "source_or_owner_id": "NDAY-001"
+        }
+      ],
+      "proposed_label_level_relationship": "RELATED_CONTEXT_DIFFERENT_TIMING_ACTION_OR_SCOPE",
+      "reason": "The labels differ by occasion, scope or action; their shared umbrella/master owner is insufficient for an exact same-practice equivalence.",
+      "next_action": "KEEP_SEPARATE_PENDING_MORE_GRANULAR_PASSAGE_READ",
+      "specific_source_passage_directly_read_for_this_pair": false,
+      "equivalence_certified": false,
+      "automatic_merge_allowed": false,
+      "master_umbrella_is_not_identity": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "pair_id": "COASSOC-041",
+      "group_a": "CAT-WEISER-B-101",
+      "group_b": "CAT-WEISER-B-105",
+      "group_a_label": "Assumption field procession with priest",
+      "group_b_label": "Blessing fishing vessels and sea at Assumption",
+      "shared_coassociation_evidence": [
+        {
+          "kind": "SHARED_EXISTING_MASTER_UMBRELLA",
+          "source_or_owner_id": "MARI-001"
+        }
+      ],
+      "proposed_label_level_relationship": "DISTINCT_REPORTED_PRIMARY_ACTIONS_RETAIN_SEPARATE",
+      "reason": "The described actions, participants or objects are materially different even though a broad owner or source paragraph mentions both.",
+      "next_action": "PRESERVE_SEPARATE_PROVISIONAL_ACTION_IDS_AND_SHARED_FEAST_FAMILY",
+      "specific_source_passage_directly_read_for_this_pair": false,
+      "equivalence_certified": false,
+      "automatic_merge_allowed": false,
+      "master_umbrella_is_not_identity": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "pair_id": "COASSOC-042",
+      "group_a": "CAT-WEISER-B-128",
+      "group_b": "CAT-WEISER-B-141",
+      "group_a_label": "Seventh- and thirtieth-day prayers for deceased",
+      "group_b_label": "All Souls soul bread given to poor and children",
+      "shared_coassociation_evidence": [
+        {
+          "kind": "SHARED_EXISTING_MASTER_UMBRELLA",
+          "source_or_owner_id": "DEAD-003"
+        }
+      ],
+      "proposed_label_level_relationship": "DISTINCT_REPORTED_PRIMARY_ACTIONS_RETAIN_SEPARATE",
+      "reason": "The described actions, participants or objects are materially different even though a broad owner or source paragraph mentions both.",
+      "next_action": "PRESERVE_SEPARATE_PROVISIONAL_ACTION_IDS_AND_SHARED_FEAST_FAMILY",
+      "specific_source_passage_directly_read_for_this_pair": false,
+      "equivalence_certified": false,
+      "automatic_merge_allowed": false,
+      "master_umbrella_is_not_identity": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "pair_id": "COASSOC-043",
+      "group_a": "CAT-WEISER-B-130",
+      "group_b": "CAT-WEISER-B-131",
+      "group_a_label": "Cleaning and decorating graves before All Souls",
+      "group_b_label": "All Souls graveside lanterns and votive candles",
+      "shared_coassociation_evidence": [
+        {
+          "kind": "SHARED_EXISTING_MASTER_UMBRELLA",
+          "source_or_owner_id": "DEAD-001"
+        }
+      ],
+      "proposed_label_level_relationship": "DISTINCT_REPORTED_PRIMARY_ACTIONS_RETAIN_SEPARATE",
+      "reason": "The described actions, participants or objects are materially different even though a broad owner or source paragraph mentions both.",
+      "next_action": "PRESERVE_SEPARATE_PROVISIONAL_ACTION_IDS_AND_SHARED_FEAST_FAMILY",
+      "specific_source_passage_directly_read_for_this_pair": false,
+      "equivalence_certified": false,
+      "automatic_merge_allowed": false,
+      "master_umbrella_is_not_identity": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "pair_id": "COASSOC-044",
+      "group_a": "CAT-WEISER-B-130",
+      "group_b": "CAT-WEISER-B-135",
+      "group_a_label": "Cleaning and decorating graves before All Souls",
+      "group_b_label": "Brazilian All Souls cemetery visit and candles",
+      "shared_coassociation_evidence": [
+        {
+          "kind": "SHARED_EXISTING_MASTER_UMBRELLA",
+          "source_or_owner_id": "DEAD-001"
+        }
+      ],
+      "proposed_label_level_relationship": "RELATED_CONTEXT_DIFFERENT_TIMING_ACTION_OR_SCOPE",
+      "reason": "The labels differ by occasion, scope or action; their shared umbrella/master owner is insufficient for an exact same-practice equivalence.",
+      "next_action": "KEEP_SEPARATE_PENDING_MORE_GRANULAR_PASSAGE_READ",
+      "specific_source_passage_directly_read_for_this_pair": false,
+      "equivalence_certified": false,
+      "automatic_merge_allowed": false,
+      "master_umbrella_is_not_identity": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "pair_id": "COASSOC-045",
+      "group_a": "CAT-WEISER-B-130",
+      "group_b": "CAT-WEISER-B-136",
+      "group_a_label": "Cleaning and decorating graves before All Souls",
+      "group_b_label": "Puerto Rican All Souls vigil at graves with prayer",
+      "shared_coassociation_evidence": [
+        {
+          "kind": "SHARED_EXISTING_MASTER_UMBRELLA",
+          "source_or_owner_id": "DEAD-001"
+        }
+      ],
+      "proposed_label_level_relationship": "RELATED_CONTEXT_DIFFERENT_TIMING_ACTION_OR_SCOPE",
+      "reason": "The labels differ by occasion, scope or action; their shared umbrella/master owner is insufficient for an exact same-practice equivalence.",
+      "next_action": "KEEP_SEPARATE_PENDING_MORE_GRANULAR_PASSAGE_READ",
+      "specific_source_passage_directly_read_for_this_pair": false,
+      "equivalence_certified": false,
+      "automatic_merge_allowed": false,
+      "master_umbrella_is_not_identity": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "pair_id": "COASSOC-046",
+      "group_a": "CAT-WEISER-B-130",
+      "group_b": "CAT-WEISER-B-137",
+      "group_a_label": "Cleaning and decorating graves before All Souls",
+      "group_b_label": "Philippine grave repair preceding All Souls novena",
+      "shared_coassociation_evidence": [
+        {
+          "kind": "SHARED_EXISTING_MASTER_UMBRELLA",
+          "source_or_owner_id": "DEAD-001"
+        }
+      ],
+      "proposed_label_level_relationship": "POSSIBLE_SAME_GRAVE_CARE_ACTION_REGIONAL_VARIANT",
+      "reason": "The labels suggest a related action, location or material, but do not establish documentary identity. Compare detailed procedures and original local contexts.",
+      "next_action": "PRIMARY_SOURCE_PASSAGE_COMPARISON_BEFORE_VARIANT_LINK",
+      "specific_source_passage_directly_read_for_this_pair": false,
+      "equivalence_certified": false,
+      "automatic_merge_allowed": false,
+      "master_umbrella_is_not_identity": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "pair_id": "COASSOC-047",
+      "group_a": "CAT-WEISER-B-131",
+      "group_b": "CAT-WEISER-B-135",
+      "group_a_label": "All Souls graveside lanterns and votive candles",
+      "group_b_label": "Brazilian All Souls cemetery visit and candles",
+      "shared_coassociation_evidence": [
+        {
+          "kind": "SHARED_EXISTING_MASTER_UMBRELLA",
+          "source_or_owner_id": "DEAD-001"
+        }
+      ],
+      "proposed_label_level_relationship": "POSSIBLE_CANDLE_SUBPRACTICE_WITHIN_REGIONAL_CEMETERY_VISIT",
+      "reason": "The labels suggest a related action, location or material, but do not establish documentary identity. Compare detailed procedures and original local contexts.",
+      "next_action": "PRIMARY_SOURCE_PASSAGE_COMPARISON_BEFORE_VARIANT_LINK",
+      "specific_source_passage_directly_read_for_this_pair": false,
+      "equivalence_certified": false,
+      "automatic_merge_allowed": false,
+      "master_umbrella_is_not_identity": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "pair_id": "COASSOC-048",
+      "group_a": "CAT-WEISER-B-131",
+      "group_b": "CAT-WEISER-B-136",
+      "group_a_label": "All Souls graveside lanterns and votive candles",
+      "group_b_label": "Puerto Rican All Souls vigil at graves with prayer",
+      "shared_coassociation_evidence": [
+        {
+          "kind": "SHARED_EXISTING_MASTER_UMBRELLA",
+          "source_or_owner_id": "DEAD-001"
+        }
+      ],
+      "proposed_label_level_relationship": "POSSIBLE_CANDLE_SUBPRACTICE_WITHIN_REGIONAL_CEMETERY_VIGIL",
+      "reason": "The labels suggest a related action, location or material, but do not establish documentary identity. Compare detailed procedures and original local contexts.",
+      "next_action": "PRIMARY_SOURCE_PASSAGE_COMPARISON_BEFORE_VARIANT_LINK",
+      "specific_source_passage_directly_read_for_this_pair": false,
+      "equivalence_certified": false,
+      "automatic_merge_allowed": false,
+      "master_umbrella_is_not_identity": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "pair_id": "COASSOC-049",
+      "group_a": "CAT-WEISER-B-131",
+      "group_b": "CAT-WEISER-B-137",
+      "group_a_label": "All Souls graveside lanterns and votive candles",
+      "group_b_label": "Philippine grave repair preceding All Souls novena",
+      "shared_coassociation_evidence": [
+        {
+          "kind": "SHARED_EXISTING_MASTER_UMBRELLA",
+          "source_or_owner_id": "DEAD-001"
+        }
+      ],
+      "proposed_label_level_relationship": "RELATED_CONTEXT_DIFFERENT_TIMING_ACTION_OR_SCOPE",
+      "reason": "The labels differ by occasion, scope or action; their shared umbrella/master owner is insufficient for an exact same-practice equivalence.",
+      "next_action": "KEEP_SEPARATE_PENDING_MORE_GRANULAR_PASSAGE_READ",
+      "specific_source_passage_directly_read_for_this_pair": false,
+      "equivalence_certified": false,
+      "automatic_merge_allowed": false,
+      "master_umbrella_is_not_identity": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "pair_id": "COASSOC-050",
+      "group_a": "CAT-WEISER-B-135",
+      "group_b": "CAT-WEISER-B-136",
+      "group_a_label": "Brazilian All Souls cemetery visit and candles",
+      "group_b_label": "Puerto Rican All Souls vigil at graves with prayer",
+      "shared_coassociation_evidence": [
+        {
+          "kind": "SHARED_EXISTING_MASTER_UMBRELLA",
+          "source_or_owner_id": "DEAD-001"
+        }
+      ],
+      "proposed_label_level_relationship": "POSSIBLE_SAME_CORE_CEMETERY_VISIT_DIFFERENT_REGIONAL_FORMS",
+      "reason": "The labels suggest a related action, location or material, but do not establish documentary identity. Compare detailed procedures and original local contexts.",
+      "next_action": "PRIMARY_SOURCE_PASSAGE_COMPARISON_BEFORE_VARIANT_LINK",
+      "specific_source_passage_directly_read_for_this_pair": false,
+      "equivalence_certified": false,
+      "automatic_merge_allowed": false,
+      "master_umbrella_is_not_identity": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "pair_id": "COASSOC-051",
+      "group_a": "CAT-WEISER-B-135",
+      "group_b": "CAT-WEISER-B-137",
+      "group_a_label": "Brazilian All Souls cemetery visit and candles",
+      "group_b_label": "Philippine grave repair preceding All Souls novena",
+      "shared_coassociation_evidence": [
+        {
+          "kind": "SHARED_EXISTING_MASTER_UMBRELLA",
+          "source_or_owner_id": "DEAD-001"
+        }
+      ],
+      "proposed_label_level_relationship": "RELATED_CONTEXT_DIFFERENT_TIMING_ACTION_OR_SCOPE",
+      "reason": "The labels differ by occasion, scope or action; their shared umbrella/master owner is insufficient for an exact same-practice equivalence.",
+      "next_action": "KEEP_SEPARATE_PENDING_MORE_GRANULAR_PASSAGE_READ",
+      "specific_source_passage_directly_read_for_this_pair": false,
+      "equivalence_certified": false,
+      "automatic_merge_allowed": false,
+      "master_umbrella_is_not_identity": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "pair_id": "COASSOC-052",
+      "group_a": "CAT-WEISER-B-136",
+      "group_b": "CAT-WEISER-B-137",
+      "group_a_label": "Puerto Rican All Souls vigil at graves with prayer",
+      "group_b_label": "Philippine grave repair preceding All Souls novena",
+      "shared_coassociation_evidence": [
+        {
+          "kind": "SHARED_EXISTING_MASTER_UMBRELLA",
+          "source_or_owner_id": "DEAD-001"
+        }
+      ],
+      "proposed_label_level_relationship": "RELATED_CONTEXT_DIFFERENT_TIMING_ACTION_OR_SCOPE",
+      "reason": "The labels differ by occasion, scope or action; their shared umbrella/master owner is insufficient for an exact same-practice equivalence.",
+      "next_action": "KEEP_SEPARATE_PENDING_MORE_GRANULAR_PASSAGE_READ",
+      "specific_source_passage_directly_read_for_this_pair": false,
+      "equivalence_certified": false,
+      "automatic_merge_allowed": false,
+      "master_umbrella_is_not_identity": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "pair_id": "COASSOC-053",
+      "group_a": "CAT-WEISER-B-149",
+      "group_b": "CAT-WEISER-B-150",
+      "group_a_label": "Saint Blaise blessed bread sticks / pan bendito",
+      "group_b_label": "Saint Blaise throat blessing with oil-dipped wick",
+      "shared_coassociation_evidence": [
+        {
+          "kind": "SHARED_EXISTING_MASTER_UMBRELLA",
+          "source_or_owner_id": "BLSS-001"
+        }
+      ],
+      "proposed_label_level_relationship": "DISTINCT_REPORTED_PRIMARY_ACTIONS_RETAIN_SEPARATE",
+      "reason": "The described actions, participants or objects are materially different even though a broad owner or source paragraph mentions both.",
+      "next_action": "PRESERVE_SEPARATE_PROVISIONAL_ACTION_IDS_AND_SHARED_FEAST_FAMILY",
+      "specific_source_passage_directly_read_for_this_pair": false,
+      "equivalence_certified": false,
+      "automatic_merge_allowed": false,
+      "master_umbrella_is_not_identity": true,
+      "publication_state": "RESEARCH_ONLY"
+    },
+    {
+      "pair_id": "COASSOC-054",
+      "group_a": "CAT-WEISER-B-165",
+      "group_b": "CAT-WEISER-B-166",
+      "group_a_label": "Breton fishermen's Saint John fires and crew prayers",
+      "group_b_label": "Saint John eve fire wheels and torches in France and Spain",
+      "shared_coassociation_evidence": [
+        {
+          "kind": "SHARED_EXISTING_MASTER_UMBRELLA",
+          "source_or_owner_id": "CANDIDATE-STJOHN-BONFIRE"
+        }
+      ],
+      "proposed_label_level_relationship": "POSSIBLE_SAME_FIRE_FESTIVAL_FAMILY_DISTINCT_RITUAL_VARIANTS",
+      "reason": "The labels suggest a related action, location or material, but do not establish documentary identity. Compare detailed procedures and original local contexts.",
+      "next_action": "PRIMARY_SOURCE_PASSAGE_COMPARISON_BEFORE_VARIANT_LINK",
+      "specific_source_passage_directly_read_for_this_pair": false,
+      "equivalence_certified": false,
+      "automatic_merge_allowed": false,
+      "master_umbrella_is_not_identity": true,
+      "publication_state": "RESEARCH_ONLY"
+    }
+  ],
+  "interpretation": "A label-level relationship is useful for planning exact passage comparison, not proof of historical or Catholic practice identity. Closely related rituals may require several source-backed variant records rather than one merged ID."
+}
