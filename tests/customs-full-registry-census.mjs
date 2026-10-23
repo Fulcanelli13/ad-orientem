@@ -213,3 +213,32 @@ assert.deepEqual(
 );
 assert.equal(count.identity_working_rows.new_identity_proposals_from_nested_details,0);
 console.log('Handbook granular second pass — 57 nested details on 24 distinct printed pages, 742 research rows without claiming 742 customs — PASS');
+
+
+const remainingChapters = load('data/customs/master/weiser-handbook-targeted-addendum-ch14-28.v1.json');
+assert.equal(remainingChapters.entries.length,121);
+assert.equal(new Set(remainingChapters.entries.map(x=>x.id)).size,121);
+assert.deepEqual(remainingChapters.summary.source_chapters_covered,Array.from({length:15},(_,i)=>i+14));
+assert.equal(remainingChapters.summary.unique_printed_page_locations,42);
+assert.equal(count.source_observations.handbook_nested_granular_detail_mentions,178);
+assert.equal(count.source_observations.all_book_research_rows_including_nested_details,863);
+assert.equal(researchCatalogue.handbook_granular_source_details.length,178);
+const originalSubDetailIds = new Set(weiserFine.records.map(r=>r.id));
+const newSubDetailIds = new Set(remainingChapters.entries.map(r=>r.id));
+for(const row of remainingChapters.entries){
+  assert.ok(!originalSubDetailIds.has(row.id), 'Do not overwrite previous 57 details');
+  assert.ok(!allHandbookIds.has(row.id), 'Do not overwrite first-pass Handbook observations');
+  assert.ok(priorSourceIds.has(row.parent.source_observation_id), 'Unknown source observation parent');
+  assert.equal(row.location.pdf_page_zero_based,row.location.printed_page+17);
+  assert.ok(row.location.ocr_line_start>=1);
+  assert.ok(row.location.ocr_line_end>row.location.ocr_line_start);
+  assert.equal(row.app_publication,'NONE');
+  assert.equal(row.current_practice_claim,'NOT_ESTABLISHED');
+}
+assert.deepEqual(
+  new Set(researchCatalogue.handbook_granular_source_details.map(x=>x.id)),
+  new Set([...originalSubDetailIds,...newSubDetailIds])
+);
+assert.equal(remainingChapters.summary.independently_verified_new_distinct_customs,0);
+assert.equal(remainingChapters.summary.app_published,0);
+console.log('Weiser 1958 chapters 14–28: 121 traceable nested details across 42 printed-page locations, no source loss or new publication — PASS');
