@@ -96,11 +96,20 @@ for(const key of statuses)assert.equal(data.totals[key],count[key]);
 assert.deepEqual(count,{
  alreadyInUnapprovedP3SelectedScripture:33,
  alreadyExistingUnapprovedP3HeldBridge:28,
- existingUnapprovedSourceComparisonTrial:0,
- stillOutsideP3SourceAndHeldText:8
+ existingUnapprovedSourceComparisonTrial:8,
+ stillOutsideP3SourceAndHeldText:0
 });
 const row=id=>data.reviews.find(m=>m.movementId===id);
-assert.deepEqual(row("HS-M27").reconciliation.stillOutsideP3SourceAndHeldText,expand("Matthew 27:3–10"));
+assert.deepEqual(row("HS-M27").reconciliation.existingUnapprovedSourceComparisonTrial,expand("Matthew 27:3–10"));
+assert.deepEqual(row("HS-M27").reconciliation.stillOutsideP3SourceAndHeldText,[]);
+const judas=p3.movements.find(m=>m.id==="HS-M27").beats.find(b=>b.id==="H63-02");
+assert.deepEqual(judas.refs,["Matthew 27:1–2","Matthew 27:11–26"]);
+assert.deepEqual(judas.betweenSelectedReadthroughTrial.refs,["Matthew 27:3–10"]);
+assert.equal(judas.betweenSelectedReadthroughTrial.accepted,false);
+assert.equal(judas.betweenSelectedReadthroughTrial.publicationApproved,false);
+assert.equal(judas.betweenSelectedReadthroughTrial.excludedFromMainSourceSelection,true);
+for(const ed of editions)assert.match(witness(ed,"Matthew").get("Matthew 27:3"),/Judas/i);
+
 assert.deepEqual(row("HS-M20").originalP3BeatIds,["H51-01","H51-02","HS-P3-CF-17","H52-01","H51-03"]);
 assert.equal(row("HS-M21").title,"The Kingdom in Christ's teaching");
 assert.equal(row("HS-M26").title,"The Last Supper");
@@ -116,4 +125,4 @@ const stephen=p3.movements.find(m=>m.id==="HS-M31").beats.find(b=>b.id==="H68-04
 assert.deepEqual(stephen.semanticEditionAlignment.selectedReferencesByEdition["crampon-1923"],["Acts 7:54–60"]);
 assert.deepEqual(stephen.semanticEditionAlignment.selectedReferencesByEdition["dr-challoner"],["Acts 7:54–59"]);
 assert.ok(!data.reviews.some(r=>r.acceptedForOralReading||r.publicationApproved));
-console.log("PASS Historia P3↔P4 reconciliation: 18 movements, 53 P3 beats, 69 earlier source options = 33 already selected (unapproved) + 28 held + 8 genuinely unmodeled, 3 Catholic witnesses, 151 original Atlas events, no publication");
+console.log("PASS Historia P3↔P4 reconciliation: 18 movements, 53 P3 beats, 69 earlier source options = 33 selected (unapproved) + 28 held + 8 optional exact-text trials, 3 Catholic witnesses, 151 original Atlas events, no publication");
