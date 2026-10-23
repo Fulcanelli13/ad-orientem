@@ -7,6 +7,7 @@ import { scriptureReferenceWarning, scriptureParallelReferenceState } from "./re
 import { cpdvTextualNotesFor } from "./cpdv-textual-notes.js";
 import { verifiedScriptureCommentary } from "./context.js";
 import {loadCatenaForPassage,isCatenaGospel} from "./catena-inline.js";
+import {mountCatenaMessenger} from "./catena-messenger.js";
 import {scriptureChapterLimit} from "./chapter-counts.js";
 import {scriptureSegments,scriptureSegmentsReference} from "./segments.js";
 import {hasScriptureWitness} from "./witness-loader.js";
@@ -289,22 +290,7 @@ export function mountScriptureLibrary(root,{
            if(!area.isConnected||!commentaryVisible||lang!=="en")return;
            status.remove();
            if(!nodes.length)area.append(element("p","No source fragment matches these exact verses.","aoScriptureCommentaryDisclosure"));
-           for(const node of nodes){
-             const item=element("section",null,"aoScriptureCatenaPericope");
-             item.append(element("h4",node.citation,"aoScriptureCatenaHeading"));
-             node.segments.forEach((segment,i)=>{
-               const father=element("details",null,"aoScriptureFather");father.open=i<2;
-               father.append(element("summary",segment.father));
-               father.append(element("p",segment.text,"aoScriptureFatherText"));
-               item.append(father);
-             });
-             if(node.source?.url){
-               const link=element("a","Original Catena source ↗");link.href=node.source.url;
-               link.target="_blank";link.rel="noopener noreferrer";
-               link.dataset.scriptureCommentarySource="verified";item.append(link);
-             }
-             area.append(item);
-           }
+           if(nodes.length)mountCatenaMessenger(area,nodes,{language:lang,fetcher:fetchCommentary});
          }).catch(()=>{if(area.isConnected)status.textContent="Source unavailable; no commentary has been invented.";});
        }else if(isCatenaGospel(location)&&lang==="fr"){
          area.append(element("p","Le commentaire patristique français n’est pas encore intégré. Aucun texte anglais n’est substitué.","aoScriptureCommentaryDisclosure"));
@@ -415,6 +401,24 @@ export function mountScriptureLibrary(root,{
      actions.append(button);
    }
    main.append(actions);
+   // The conversation is anchored to the exact existing Bible witness.
+   // Never invent, retranslate or cache a parallel copy of Scripture here.
+   if(commentaryVisible&&context?.reference&&isCatenaGospel(location)&&lang==="en"){
+     const scriptureAnchor=element("details",null,"aoCatenaScriptureAnchor");
+     scriptureAnchor.open=location.verseEnd-location.verseStart<=2;
+     scriptureAnchor.setAttribute("aria-label","Selected Scripture alongside the Living Catena");
+     scriptureAnchor.append(element("summary",passageReference(location)));
+     scriptureAnchor.append(textBlock.cloneNode(true));
+     if(url){
+       const openSource=element("button","Read Scripture at source ↗");
+       openSource.type="button";
+       openSource.addEventListener("click",()=>linkToSource(editionSource()));
+       scriptureAnchor.append(openSource);
+     }
+     const before=wrap.querySelector(".aoScriptureContextBar");
+     if(before)wrap.insertBefore(scriptureAnchor,before);
+     else wrap.append(scriptureAnchor);
+   }
    // Commentary is a reading-depth panel, not an additional section competing with Scripture.
    if(!commentaryVisible||!context?.reference)wrap.append(main);
    // One secondary disclosure shared by every source-owned Scripture entry.

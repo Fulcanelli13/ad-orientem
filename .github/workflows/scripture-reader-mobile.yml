@@ -6,6 +6,8 @@ on:
       - 'data/scripture/catena/**'
       - 'src/home/presentation.js'
       - 'tests/scripture-reader-mobile.mjs'
+      - 'tests/scripture-catena-editorial-phone.mjs'
+      - 'previews/living-catena-messenger-editorial-integration-20261021.html'
       - 'tests/calendar-reciprocal-scripture-phone.mjs'
       - '.github/workflows/scripture-reader-mobile.yml'
   push:
@@ -32,5 +34,7 @@ jobs:
       - run: npx playwright install --with-deps chromium
       - name: Native phone Scripture reader
         run: node tests/scripture-reader-mobile.mjs
+      - name: Living Catena research Messenger phone preview
+        run: node tests/scripture-catena-editorial-phone.mjs
       - name: Reciprocal selected Calendar Mass Gospel
         run: node tests/calendar-reciprocal-scripture-phone.mjs

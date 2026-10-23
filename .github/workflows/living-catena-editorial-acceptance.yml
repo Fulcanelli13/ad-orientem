@@ -1,0 +1,90 @@
+name: Living Catena editorial source acceptance
+
+on:
+  push:
+    branches:
+      - feature/living-catena-messenger-source-linked-20261021
+    paths:
+      - '.github/workflows/living-catena-editorial-acceptance.yml'
+      - 'src/scripture/catena-*.js'
+      - 'data/scripture/catena/editorial-*.json'
+      - 'tests/scripture-catena-*.mjs'
+      - 'previews/living-catena-editorial-workbench-20261021.html'
+      - 'previews/living-catena-mark-blind-offline-template.html'
+      - 'tools/scripture/build-catena-mark-blind-offline.mjs'
+  pull_request:
+    paths:
+      - '.github/workflows/living-catena-editorial-acceptance.yml'
+      - 'src/scripture/catena-*.js'
+      - 'data/scripture/catena/editorial-*.json'
+      - 'tests/scripture-catena-*.mjs'
+      - 'previews/living-catena-editorial-workbench-20261021.html'
+      - 'previews/living-catena-mark-blind-offline-template.html'
+      - 'tools/scripture/build-catena-mark-blind-offline.mjs'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: catena-editorial-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  source-contracts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify pinned canonical source fragments and editorial-route blockers
+        run: node tests/scripture-catena-editorial-routes.mjs
+      - name: Verify nineteen reader theological question pointers against exact canonical source
+        run: node tests/scripture-catena-reader-curated.mjs
+      - name: Verify nine English witnesses and local-only human review exports
+        run: node tests/scripture-catena-review-workbench.mjs
+      - name: Verify ten Mark work witnesses, read-only retrieval and abstention
+        run: node tests/scripture-catena-mark-editorial.mjs
+      - name: Diagnose Mark AI-only reviewer challenges and native lexical recall
+        run: node tests/scripture-catena-mark-adjudication.mjs
+      - name: Verify 23-case blind Mark grading and two-reviewer reconciliation
+        run: node tests/scripture-catena-mark-blind-review.mjs
+      - name: Build and check distributable offline blind Mark reviewer packet
+        run: node tests/scripture-catena-mark-offline-packet.mjs
+      - name: Attach source-verified standalone reviewer packet
+        uses: actions/upload-artifact@v4
+        with:
+          name: living-catena-mark-blind-offline-review
+          path: dist/catena-mark-blind-review-offline.html
+          if-no-files-found: error
+          retention-days: 30
+  phone-acceptance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - name: Verify native Scripture-to-Living-Catena flow on phone
+        run: node tests/scripture-reader-mobile.mjs
+      - name: Prepare offline Mark reviewer packet for browser acceptance
+        run: node tools/scripture/build-catena-mark-blind-offline.mjs
+      - name: Verify experimental Messenger and human-editor phone workbench
+        run: node tests/scripture-catena-editorial-phone.mjs
+
+  native-scripture-regressions:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - name: Run the complete current Scripture suite with the Living Catena reader
+        run: npm run test:scripture

@@ -79,6 +79,12 @@ export function installScriptureStyles(doc=globalThis.document){
  .aoScriptureCommentaryParagraph strong{font-weight:600;color:#e7d3a4}
  .aoScriptureContextCommentary .aoScriptureCommentaryDisclosure{font:13px/1.5 var(--ao-font-ui,"EB Garamond",Georgia,serif);color:#a9a08e;margin:8px 0}
  .aoScriptureContextCommentary a{display:inline-block;margin-top:14px;font:500 13px/1.5 var(--ao-font-ui,"EB Garamond",Georgia,serif)}
+ .aoCatenaScriptureAnchor{position:sticky;top:58px;z-index:2;background:#101d29;border:1px solid rgba(193,160,103,.5);border-radius:9px;margin:10px 0;padding:7px 12px;box-shadow:0 4px 16px rgba(0,0,0,.2)}
+ .aoScriptureLibrary .aoCatenaScriptureAnchor>summary{min-height:44px;display:flex;align-items:center;color:#ebd2a5;font:600 14px/1.4 var(--ao-font-ui,Georgia,serif)}
+ .aoCatenaScriptureAnchor .aoScriptureText{max-height:145px;overflow:auto;font:16px/1.55 var(--ao-font-liturgical,Georgia,serif);min-height:0}
+ .aoCatenaScriptureAnchor .aoScriptureVerse{margin:0 0 6px}
+ .aoScriptureLibrary .aoCatenaScriptureAnchor button{min-height:44px;background:transparent;border:1px solid #816c4b;color:#e4ca9e;margin:6px 0}
+ @media(max-width:520px){.aoCatenaScriptureAnchor .aoScriptureText{max-height:105px}}
  .aoScriptureCatenaPericope{border-top:1px solid rgba(205,182,135,.24);padding:14px 0 18px}
  .aoScriptureCatenaHeading{font:500 14px/1.5 var(--ao-font-ui,"EB Garamond",Georgia,serif);color:#dbcca9;margin:0 0 12px}
  .aoScriptureFather{border-bottom:1px solid rgba(205,182,135,.12);padding:8px 0}

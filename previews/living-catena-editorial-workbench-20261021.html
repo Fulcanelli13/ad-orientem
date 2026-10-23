@@ -1,0 +1,667 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="dark">
+<title>Living Catena · Editorial approval workbench</title>
+<style>
+:root{color-scheme:dark;--bg:#080c12;--panel:#111923;--panel2:#192530;--line:#675b47;--gold:#d8c095;--text:#f1e9dc;--muted:#bdb1a1;--alert:#ebc18c}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.57 Georgia,serif}
+header{background:linear-gradient(110deg,#1d2932,#080c12);border-bottom:1px solid var(--line);padding:24px max(18px,calc((100% - 1280px)/2))}
+.kicker{font:600 11px/1.4 system-ui,sans-serif;letter-spacing:.17em;text-transform:uppercase;color:var(--gold)}
+h1{font:normal clamp(25px,3.6vw,37px)/1.2 Georgia,serif;margin:6px 0 9px}
+h2{font:normal 26px/1.23 Georgia,serif;color:#f0d9b6;margin:9px 0 13px}
+h3{font:normal 20px/1.35 Georgia,serif;color:var(--gold);margin:8px 0}
+p{margin:7px 0 12px}small,.subtle{color:var(--muted)}a{color:var(--gold)}
+header p{max-width:850px;color:var(--muted);margin:0;font-size:15px}
+main{max-width:1300px;margin:auto;padding:16px;display:grid;grid-template-columns: minmax(265px,345px) minmax(0,1fr);gap:17px}
+nav,.workspace{border:1px solid var(--line);background:var(--panel);border-radius:10px;min-width:0;overflow:hidden}
+nav{align-self:start;position:sticky;top:12px}
+.navigator{padding:16px;border-bottom:1px solid var(--line)}.counts{font:12px/1.5 system-ui,sans-serif;color:var(--muted);margin:5px 0}
+.filter{display:flex;gap:5px;margin:12px 0 0;flex-wrap:wrap}
+button,.export{background:#263542;color:#f1dfbe;border:1px solid #77634a;border-radius:7px;padding:9px 11px;min-height:43px;cursor:pointer;font:500 12px/1.35 system-ui,sans-serif}
+button:hover,button:focus-visible{border-color:#e7c991}button[aria-pressed=true]{background:#594c37;color:#fff0d0;border-color:#d0ad72}
+#candidateList{max-height:calc(100dvh - 260px);overflow:auto;padding:10px}
+.candidate{display:block;text-align:left;width:100%;margin:0 0 7px;background:#15202b;border-color:#46515c;font:16px/1.35 Georgia,serif;padding:12px}
+.candidate .eyebrow{font:600 11px/1.5 system-ui,sans-serif;color:var(--gold);display:block;margin-bottom:5px}
+.candidate .sub{font:11px/1.5 system-ui,sans-serif;color:var(--muted);display:block;margin-top:8px}
+.workspace{padding:20px}
+.notice{border-left:3px solid #aa8657;background:#1c252d;color:#e5cfaa;padding:11px 14px;font:13px/1.5 system-ui,sans-serif;margin:12px 0 20px}
+.footnote{font:12px/1.55 system-ui,sans-serif;color:var(--muted)}
+.source{border:1px solid #4f5c62;border-radius:9px;background:#17232e;padding:16px;margin:14px 0}
+.source .body{font:17px/1.75 Georgia,serif;white-space:pre-wrap;overflow-wrap:anywhere;color:#f1e8db}
+.source .label{font:600 12px/1.4 system-ui,sans-serif;color:#e7c793;margin-bottom:7px}
+.source .support{font:12px/1.5 system-ui,sans-serif;color:#b5ab9e}
+details{border:1px solid #4c535b;border-radius:7px;padding:8px 12px;margin:12px 0}
+details summary{min-height:36px;display:flex;align-items:center;cursor:pointer;color:#dfc99e;font:14px system-ui,sans-serif}
+.contextUnit{padding:11px 0;border-bottom:1px solid #394650}.contextUnit:last-child{border:0}
+.contextUnit p{font-size:15px;white-space:pre-wrap;line-height:1.62;overflow-wrap:anywhere}
+label{font:500 13px/1.5 system-ui,sans-serif;color:#e5cd9f;display:block;margin:12px 0 5px}
+input,textarea,select{color:var(--text);background:#0d1720;border:1px solid #756751;border-radius:7px;padding:10px 12px;width:100%;font:14px/1.5 system-ui,sans-serif;min-height:43px}
+textarea{min-height:90px;resize:vertical}.check{display:flex;align-items:start;gap:10px;font:13px/1.5 system-ui,sans-serif;color:var(--text);margin:12px 0}
+.check input{width:20px;min-width:20px;height:20px;min-height:20px;margin:0}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.operations{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px}
+.operations button{flex:1}.status{font:13px/1.55 system-ui,sans-serif;color:#d9b683}
+footer{max-width:1300px;margin:auto;padding:0 20px 30px;font:12px/1.6 system-ui,sans-serif;color:var(--muted)}
+@media(max-width:800px){main{display:block;padding:8px}nav{position:static;margin-bottom:10px}#candidateList{max-height:265px}.workspace{padding:14px}.two{display:block}.source{padding:12px}}
+</style>
+</head>
+<body>
+<header><div class="kicker">Ad Orientem · Living Catena · human editorial checkpoint</div>
+<h1>The Fathers · Source approval workbench</h1>
+<p>Thirty Matthew editorial candidates and ten Mark research-only leads. Inspect unchanged Oxford/Newman Catena excerpts, original-work witnesses and context. Only Matthew has a local decision-export workflow; Mark remains read-only and unpublished. The Messenger is never altered here. Mark also has an independent blind-retrieval grading mode, which cannot approve sources for publication.</p>
+</header>
+<main>
+<nav aria-label="Source candidate navigation">
+<div class="navigator">
+<div class="kicker">Thirty source candidates</div>
+<div class="counts" id="countText" aria-live="polite">Loading source metadata…</div>
+<div class="filter" role="group" aria-label="Review scope">
+<button type="button" data-filter="focus" aria-pressed="true">9 source-matched</button>
+<button type="button" data-filter="ready" aria-pressed="false">22 candidates</button>
+<button type="button" data-filter="escalated" aria-pressed="false">8 escalations</button>
+<button type="button" data-filter="all" aria-pressed="false">All 30</button>
+<button type="button" data-filter="mark" aria-pressed="false">Mark · 10 research</button>
+<button type="button" data-filter="blind" aria-pressed="false">Mark · blind review</button>
+</div>
+<form id="markLookup" hidden aria-label="Exact Mark research question lookup">
+<label for="markQuestion">Find a reviewed Mark question (exact wording only)</label>
+<input id="markQuestion" type="search" autocomplete="off" placeholder="Paste a reviewed question">
+<button type="submit">Find source</button>
+<p class="footnote" id="markLookupStatus" role="status">Unapproved research questions only. No generated Father answers.</p>
+</form>
+<div id="blindPanel" hidden>
+<label for="blindReviewer">Independent reviewer identifier</label>
+<input type="text" id="blindReviewer" autocomplete="off" placeholder="Editorial reviewer ID">
+<button type="button" id="blindChooseReviewer">Use this reviewer</button>
+<p class="footnote" id="blindStatus" role="status">Two independently exported reviews are required. This interface cannot authenticate a reviewer.</p>
+</div>
+<div class="operations">
+<button id="blindExport" type="button" hidden>Export blind grades</button>
+<button id="download" type="button">Export review manifest</button>
+</div>
+</div>
+<div id="candidateList"></div>
+</nav>
+<section class="workspace" aria-label="Editorial review record" id="workspace">
+<div class="kicker">Original source examination</div>
+<h2>Select a candidate</h2>
+<p class="subtle">No candidate is automatically approved. The source, authorship, question and rights require human judgment before publication.</p>
+</section>
+</main>
+<footer>Working drafts are saved only in this browser's local storage. Export the JSON manifest to retain the record or share it for an independently verified repository import. Clearing browser data removes the local draft. Do not treat an exported approval as a published statement by a Church Father.</footer>
+<script type="module">
+import {loadCatenaForPassage} from "../src/scripture/catena-inline.js";
+import {catenaOwnerUnits} from "../src/scripture/catena-messenger.js";
+import {validateCatenaEditorialRoutes,validateCatenaEditorialReview,
+  catenaEditorialReviewLabel} from "../src/scripture/catena-editorial-routes.js";
+import {CATENA_REVIEW_CHECKS,isCatenaReviewRouteEligible,
+  validateCatenaReviewDecision,buildCatenaReviewExport} from "../src/scripture/catena-review-decisions.js";
+import {validateCatenaWorkLociPreview} from "../src/scripture/catena-review-work-loci.js";
+import {validateCatenaNineFocus} from "../src/scripture/catena-nine-focus.js";
+import {validateCatenaMarkEditorial,validateCatenaMarkAdjudication,findCatenaMarkResearchQuestion,loadCatenaMarkEditorialSource}
+ from "../src/scripture/catena-mark-editorial.js";
+import {validateMarkBlindFixture,retrieveMarkBlindCase,validateMarkBlindCaseDecision,buildMarkBlindReviewExport}
+ from "../src/scripture/catena-mark-blind-review.js";
+const ROOT="../data/scripture/catena/";
+const KEY="ao-catena-matthew-human-review-local-draft-v1";
+const candidateList=document.getElementById("candidateList");
+const workspace=document.getElementById("workspace");
+const count=document.getElementById("countText");
+let registry=null,review=null,workLoci=null,nineFocus=null,markResearch=null,markDossier=null,blindFixture=null,blindReviewerId="",blindDecisions=new Map(),filter="focus",active=null,sourceCache=new Map(),states=new Map();
+const $=(tag,className,text)=>{const el=document.createElement(tag);if(className)el.className=className;if(text!==undefined)el.textContent=text;return el};
+const append=(parent,tag,cls,str)=>{const e=$(tag,cls,str);parent.append(e);return e};
+const safe=(s)=>String(s||"");
+const isReady=r=>isCatenaReviewRouteEligible(r);
+async function jsonFile(path){
+ const response=await fetch(ROOT+path,{cache:"force-cache"});
+ if(!response.ok)throw Error("Could not load verified research metadata: "+path);
+ return response.json();
+}
+function loadDraft(){
+ try{
+  const obj=JSON.parse(localStorage.getItem(KEY)||"{}");
+  if(obj?.schema!=="ao.catena.editorial-local-draft.v1"||obj.sourceResearchCommit!==review.sourceResearchCommit)return;
+  for(const [p,v] of Object.entries(obj.decisions||{})){
+   if(review.records.some(r=>r.sourcePointer===p)&&v?.sourcePointer===p&&
+      ["pending","hold","revise","reject","approve"].includes(v.disposition))states.set(p,v);
+  }
+ }catch{}
+}
+function saveDraft(){
+ try{localStorage.setItem(KEY,JSON.stringify({
+  schema:"ao.catena.editorial-local-draft.v1",
+  sourceResearchCommit:review.sourceResearchCommit,
+  decisions:Object.fromEntries(states)
+ }))}catch{}
+}
+function showMessage(msg){const s=document.getElementById("decisionStatus");if(s)s.textContent=msg}
+function summary(){
+ const counted=Object.fromEntries(["approve","hold","revise","reject"].map(k=>[k,0]));
+ for(const row of states.values())if(counted[row.disposition]!==undefined)counted[row.disposition]++;
+ count.textContent="0 published · "+counted.approve+" proposed approvals · "+
+  (counted.hold+counted.revise+counted.reject)+" other decisions";
+}
+function renderList(){
+ candidateList.replaceChildren();
+ for(const btn of document.querySelectorAll("[data-filter]"))btn.setAttribute("aria-pressed",String(btn.dataset.filter===filter));
+ const markMode=filter==="mark",blindMode=filter==="blind";
+ document.getElementById("markLookup").hidden=!markMode;
+ document.getElementById("blindPanel").hidden=!blindMode;
+ document.getElementById("blindExport").hidden=!blindMode;
+ document.getElementById("download").disabled=markMode||blindMode;
+ if(blindMode){
+  count.textContent="Mark blind review · "+blindDecisions.size+"/23 locally graded · 0 published";
+  for(const caseFile of blindFixture.cases){
+   const btn=$("button","candidate");btn.type="button";
+   btn.dataset.blindCase=caseFile.id;
+   btn.setAttribute("aria-pressed",String(active===caseFile.id));
+   append(btn,"span","eyebrow","Case "+String(caseFile.displayOrder).padStart(2,"0")+
+    " · "+(blindDecisions.has(caseFile.id)?"graded locally":"ungraded"));
+   append(btn,"span",null,caseFile.question);
+   btn.addEventListener("click",()=>void selectBlind(caseFile.id));candidateList.append(btn);
+  }
+  return;
+ }
+ if(markMode){
+  count.textContent="Mark · 10 source-linked research leads · 0 approved · 0 published";
+  for(const rec of markResearch.rows){
+   const btn=$("button","candidate");btn.type="button";
+   btn.dataset.markPointer=rec.sourcePointer;
+   btn.setAttribute("aria-pressed",String(active===rec.sourcePointer));
+   append(btn,"span","eyebrow",rec.inheritedFatherLabel+" · research only");
+   append(btn,"span",null,rec.editorialQuestion);
+   append(btn,"span","sub",rec.sourcePointer+" · "+(rec.independentWorkTextInspected?"Work witness found":"Original-language witness still needed"));
+   btn.addEventListener("click",()=>void selectMark(rec.sourcePointer));
+   candidateList.append(btn);
+  }
+  return;
+ }
+ for(const rec of review.records){
+  if((filter==="ready"&&!isReady(rec))||(filter==="escalated"&&isReady(rec))||
+    (filter==="focus"&&!nineFocus?.byPointer.has(rec.sourcePointer)))continue;
+  const b=$("button","candidate");b.type="button";b.dataset.pointer=rec.sourcePointer;b.setAttribute("aria-pressed",String(active===rec.sourcePointer));
+  append(b,"span","eyebrow","#"+rec.rank+" · "+rec.inheritedFatherLabel+" · "+rec.AIContextAssessment.replaceAll("_"," "));
+  append(b,"span",null,rec.originalReaderQuestion);
+  const choice=states.get(rec.sourcePointer)?.disposition||"pending";
+  append(b,"span","sub",rec.sourcePointer+" · "+choice);
+  b.addEventListener("click",()=>void select(rec.sourcePointer));
+  candidateList.append(b);
+ }
+ summary();
+}
+function field(group,textName,name,value=""){
+ const label=append(group,"label",null,textName);
+ const id="review-"+name;label.htmlFor=id;
+ const inp=(name==="editorialReason")?$ ("textarea"):$( "input");
+ inp.id=id;inp.dataset.reviewField=name;
+ if(name==="editorialReason")inp.rows=4;
+ inp.value=value;
+ group.append(inp);return inp;
+}
+function prefixPointer(pointer){const at=pointer.lastIndexOf(":");return [pointer.slice(0,at),Number(pointer.slice(at+1))]}
+async function loadSource(rec){
+ if(sourceCache.has(rec.sourcePointer))return sourceCache.get(rec.sourcePointer);
+ const [id,ordinal]=prefixPointer(rec.sourcePointer),keys=registry.byPointer.get(rec.sourcePointer)?.verseKeys||[];
+ const [a,b,c]=keys[0]?.split("/")||[];
+ if(a!=="matthew"||!Number(b)||!Number(c))throw Error("Unexpected source location");
+ const hits=await loadCatenaForPassage({book:"Matthew",chapter:Number(b),verseStart:Number(c),verseEnd:Number(c)});
+ const section=hits.find(x=>x.id===id),segment=section?.segments?.[ordinal];
+ if(!section||!segment||segment.father!==rec.inheritedFatherLabel||
+  segment.text.length!==rec.sourceCharacterCount||
+  !segment.text.includes(rec.originalSourceEvidencePhrase)||
+  !/^https:\/\/www\.ecatholic2000\.com\//.test(section.source?.url||""))
+   throw Error("The original text, author, or evidence does not match the frozen research record");
+ const bytes=new TextEncoder().encode(segment.text);
+ const hash=Array.from(new Uint8Array(await crypto.subtle.digest("SHA-256",bytes)),
+  x=>x.toString(16).padStart(2,"0")).join("");
+ const output={section,segment,ordinal,hash};
+ sourceCache.set(rec.sourcePointer,output);
+ return output;
+}
+function addSourceUnits(parent,source,ordinal,full=false){
+ const {section}=source;
+ const listing=full?section.segments.map((x,i)=>({x,i})):section.segments
+  .map((x,i)=>({x,i})).filter(({i})=>Math.abs(i-ordinal)<=1);
+ for(const {x,i} of listing){
+  const units=catenaOwnerUnits({id:section.id+":"+i,father:x.father,text:x.text});
+  const item=$("div","contextUnit");
+  if(!units){append(item,"p","notice","Mixed-author boundary not verified; this neighboring source excerpt is withheld.");parent.append(item);continue}
+  for(const unit of units){
+   append(item,"div","label","Excerpt "+(i+1)+" · Catena attribution: "+unit.father);
+   append(item,"p",null,unit.originalWords);
+  }
+  parent.append(item);
+ }
+}
+function fillForm(root,rec,source){
+ const prior=states.get(rec.sourcePointer)||{};
+ const form=$("form");form.id="reviewForm";
+ append(form,"h3",null,"Independent editorial decision");
+ append(form,"p","footnote","A direct AI contextual match is not proof of authentic attribution, translation accuracy, doctrinal validity or publication eligibility.");
+ const reviewer=field(form,"Reviewer name or editorial identifier","reviewer",prior.reviewer||"");
+ const originalWork=field(form,"Verified primary work / edition / location (required to propose approval)","originalWorkReference",prior.originalWorkReference||"");
+ const note=field(form,"Reasoned decision, qualifications, or required correction","editorialReason",prior.editorialReason||"");
+ const options=$("div","two");
+ const lab=append(options,"label",null,"Decision");lab.htmlFor="review-disposition";
+ const sel=$("select");sel.id="review-disposition";sel.dataset.reviewField="disposition";
+ const variants=[["pending","Not yet reviewed"],["approve","Propose source approval — export only"],
+ ["revise","Revise reader question or source handling"],["hold","Hold for further source work"],["reject","Reject this question–source pairing"]];
+ for(const [v,label] of variants){
+  if(v==="approve"&&!isReady(rec))continue;
+  const el=$("option",null,label);el.value=v;sel.append(el);
+ }
+ sel.value=(prior.disposition==="approve"&&!isReady(rec))?"hold":(prior.disposition||"pending");
+ options.append(sel);form.append(options);
+ const checklist=$("fieldset");checklist.style.border="0";checklist.style.padding="5px 0";
+ append(checklist,"legend","kicker","Required attestations for approval proposal");
+ const texts={
+  verbatim:"I compared the entire original excerpt with the source.",
+  fullContext:"I inspected the surrounding commentary and qualifying context.",
+  speaker:"I verified author identity, adversarial quotations and speaker ownership.",
+  originalWork:"I independently identified the original patristic work, not only the Catena label.",
+  readerQuestion:"The editorial question faithfully matches what this excerpt actually argues.",
+  editionAndRights:"I verified the edition, translation reliability and reuse rights."
+ };
+ const boxes=new Map();
+ for(const k of CATENA_REVIEW_CHECKS){
+  const row=$("label","check"),check=$("input");check.type="checkbox";check.dataset.reviewCheck=k;
+  check.checked=(prior.checks||prior.verifiedChecklist||{})[k]===true;row.append(check,$("span",null,texts[k]));checklist.append(row);boxes.set(k,check);
+ }
+ form.append(checklist);
+ const buttons=$("div","operations"),save=$("button",null,"Save decision locally");save.type="submit";
+ const reset=$("button",null,"Reset this candidate");reset.type="button";
+ buttons.append(save,reset);form.append(buttons);
+ const status=append(form,"p","status","No editorial approval recorded. Publication remains blocked.");status.id="decisionStatus";status.setAttribute("role","status");
+ function collect(){
+  return {
+   sourcePointer:rec.sourcePointer,disposition:sel.value,
+   reviewer:reviewer.value,editorialReason:note.value,
+   originalWorkReference:originalWork.value,
+   sourceSHA256:source.hash,checks:Object.fromEntries([...boxes].map(([k,v])=>[k,v.checked])),
+   recordedAt:new Date().toISOString()
+  };
+ }
+ form.addEventListener("submit",e=>{
+  e.preventDefault();
+  try{
+   const decision=validateCatenaReviewDecision(rec,collect());
+   states.set(rec.sourcePointer,decision);saveDraft();renderList();
+   showMessage(decision.disposition==="approve"?
+    "Approval proposed in local draft only. Nothing was published. Export for independent repository verification.":
+    "Decision stored locally. Nothing was published.");
+  }catch(err){showMessage("Not saved: "+err.message);}
+ });
+ reset.addEventListener("click",()=>{
+  states.delete(rec.sourcePointer);saveDraft();renderList();
+  showMessage("Local decision cleared for this source.");
+  reviewer.value="";note.value="";originalWork.value="";sel.value="pending";
+  boxes.forEach(x=>x.checked=false);
+ });
+ root.append(form);
+}
+let selectedVersion=0;
+function blindStorageKey(){
+ return "ao-catena-mark-blind-review-v1/"+encodeURIComponent(blindReviewerId.toLowerCase());
+}
+function saveBlindDraft(){
+ if(!blindReviewerId)return;
+ try{localStorage.setItem(blindStorageKey(),JSON.stringify({
+  sourceResearchCommit:blindFixture.sourceResearchCommit,
+  reviewerId:blindReviewerId,decisions:Object.fromEntries(blindDecisions)
+ }))}catch{}
+}
+function loadBlindDraft(){
+ blindDecisions=new Map();
+ if(!blindReviewerId)return;
+ try{
+  const saved=JSON.parse(localStorage.getItem(blindStorageKey())||"{}");
+  if(saved.sourceResearchCommit!==blindFixture.sourceResearchCommit||
+    saved.reviewerId!==blindReviewerId)return;
+  for(const [id,entry] of Object.entries(saved.decisions||{})){
+   if(blindFixture.cases.some(c=>c.id===id)&&entry?.caseId===id&&
+      entry.publicationApproval===false)blindDecisions.set(id,entry);
+  }
+ }catch{}
+}
+async function sha256CatenaText(value){
+ const bytes=new TextEncoder().encode(value);
+ return Array.from(new Uint8Array(await crypto.subtle.digest("SHA-256",bytes)),
+  b=>b.toString(16).padStart(2,"0")).join("");
+}
+async function selectBlind(caseId){
+ const caseFile=blindFixture?.cases.find(x=>x.id===caseId);
+ if(!caseFile)return;
+ active=caseId;renderList();const stamp=++selectedVersion;
+ workspace.replaceChildren();
+ append(workspace,"div","kicker","INDEPENDENT BLIND RETRIEVAL REVIEW · "+caseId);
+ append(workspace,"h2",null,caseFile.question);
+ append(workspace,"p","notice","Read and grade the source excerpts actually retrieved. The original research target, AI grade, expected outcome and ranking scores are deliberately hidden. Nothing can be published here.");
+ const loading=append(workspace,"p","subtle","Loading canonical Mark excerpts…");
+ try{
+  const m=/^catena\.mark\.(\d+)\.(\d+)$/.exec(caseFile.pericopeId);
+  if(!m)throw Error("Invalid Mark case");
+  const hits=await loadCatenaForPassage({book:"Mark",chapter:Number(m[1]),
+   verseStart:Number(m[2]),verseEnd:Number(m[2])});
+  const section=hits.find(x=>x.id===caseFile.pericopeId);
+  const messages=retrieveMarkBlindCase(caseFile,section);
+  const hashes=await Promise.all(messages.map(x=>sha256CatenaText(x.originalWords)));
+  if(stamp!==selectedVersion)return;
+  loading.remove();
+  append(workspace,"p","footnote",section.citation+" · "+messages.length+
+    " excerpt(s) retrieved in the first four. All inherited author names must be checked independently.");
+  const form=$("form");form.id="blindForm";form.dataset.caseId=caseId;
+  const prior=blindDecisions.get(caseId)||{};
+  const controls=[];
+  if(!messages.length){
+   append(form,"p","notice","No original excerpt retrieved. Grade whether abstention was appropriate; do not invent a reply.");
+   const lab=append(form,"label",null,"No-result assessment");lab.htmlFor="blindAbstention";
+   const sel=$("select");sel.id="blindAbstention";
+   for(const [v,t] of [["","Select one"],["appropriate","Appropriate abstention"],["missed_source","Missed useful source"],["uncertain","Insufficient evidence to judge"]]){
+    const opt=$("option",null,t);opt.value=v;sel.append(opt);
+   }
+   sel.value=prior.abstentionGrade||"";form.append(sel);
+   controls.push({abstention:sel});
+  }
+  for(let i=0;i<messages.length;i++){
+   const msg=messages[i],existing=prior.messageGrades?.find(x=>x.sourcePointer===msg.id)||{};
+   const unit=$("article","source");unit.dataset.blindResult=msg.id;
+   append(unit,"div","label","Result "+(i+1)+" · "+msg.citation);
+   for(const owner of msg.speakerUnits){
+    append(unit,"div","label","Inherited Catena attribution: "+owner.father);
+    append(unit,"p","body",owner.originalWords);
+   }
+   const a=$("a",null,"Inspect original Catena source ↗");a.href=msg.sourceUrl;
+   a.target="_blank";a.rel="noopener noreferrer";unit.append(a);
+   const hash=hashes[i];
+   append(unit,"p","support","Unchanged excerpt SHA-256: "+hash);
+   const gradeLabel=append(unit,"label",null,"Grade this retrieved excerpt (0 misleading · 1 weak · 2 useful context · 3 direct)");
+   const grade=$("select");grade.dataset.blindGrade=msg.id;
+   gradeLabel.htmlFor="blind-grade-"+i;grade.id="blind-grade-"+i;
+   for(const [v,t] of [["","Select grade"],["0","0 — Unsupported/misleading"],["1","1 — Weak"],["2","2 — Useful context"],["3","3 — Direct"]]){
+    const option=$("option",null,t);option.value=v;grade.append(option);
+   }
+   grade.value=Number.isInteger(existing.grade)?String(existing.grade):"";
+   unit.append(grade);
+   const evidenceLabel=append(unit,"label",null,"Exact source words supporting grade 2 or 3");
+   const evidence=$("input");evidence.id="blind-evidence-"+i;evidenceLabel.htmlFor=evidence.id;
+   evidence.placeholder="Copy a short verbatim phrase from the displayed excerpt";
+   evidence.value=existing.supportingOriginalWords||"";unit.append(evidence);
+   const noteLabel=append(unit,"label",null,"Independent contextual justification");
+   const note=$("textarea");note.id="blind-note-"+i;note.rows=3;
+   noteLabel.htmlFor=note.id;note.value=existing.justification||"";unit.append(note);
+   form.append(unit);controls.push({msg,grade,evidence,note,hash});
+  }
+  const context=$("details");context.append($("summary",null,"Read entire original Catena pericope for context"));
+  const full=$("div");addSourceUnits(full,{section},-999,true);context.append(full);form.append(context);
+  const overallLabel=append(form,"label",null,"Overall verdict and limitations");
+  const overall=$("textarea");overall.id="blindOverall";overall.rows=3;
+  overallLabel.htmlFor=overall.id;overall.value=prior.overallRationale||"";form.append(overall);
+  const submit=$("button",null,"Save independent grade locally");submit.type="submit";form.append(submit);
+  const status=append(form,"p","status","No production or editorial-source approval occurs.");status.id="blindDecisionStatus";
+  form.addEventListener("submit",event=>{
+   event.preventDefault();
+   if(!blindReviewerId||document.getElementById("blindReviewer").value.trim()!==blindReviewerId){
+    status.textContent="Choose a reviewer identifier before recording grades.";return;
+   }
+   try{
+    const gradeRows=messages.map(msg=>{
+     const c=controls.find(x=>x.msg?.id===msg.id);
+     return {sourcePointer:msg.id,grade:c.grade.value===""?null:Number(c.grade.value),
+      supportingOriginalWords:c.evidence.value,justification:c.note.value,
+      sourceSHA256:c.hash};
+    });
+    const entry=validateMarkBlindCaseDecision(blindFixture,caseId,messages,{
+     caseId,abstentionGrade:messages.length?null:controls[0].abstention.value,
+     overallRationale:overall.value,messageGrades:gradeRows,publicationApproval:false
+    });
+    blindDecisions.set(caseId,entry);saveBlindDraft();renderList();
+    status.textContent="Grade saved in this reviewer's local draft only. Nothing has been approved or published.";
+   }catch(err){status.textContent="Not saved: "+err.message}
+  });
+  workspace.append(form);
+ }catch(error){
+  if(stamp!==selectedVersion)return;
+  loading.remove();
+  append(workspace,"p","notice","Source verification failed; grading blocked. "+error.message);
+ }
+}
+/* Mark is a distinct research inspection mode. Never invoke the Matthew
+ * review decision form or export for these unapproved sources.
+ */
+async function selectMark(pointer){
+ const rec=markResearch?.byPointer.get(pointer);
+ if(!rec)return;
+ active=pointer;renderList();
+ const stamp=++selectedVersion;
+ workspace.replaceChildren();
+ append(workspace,"div","kicker","MARK · UNAPPROVED RESEARCH · "+pointer);
+ append(workspace,"h2",null,rec.editorialQuestion);
+ append(workspace,"p","notice","Modern editorial navigation, not an attested question or direct quotation from a Father. No human publication approval.");
+ const spinner=append(workspace,"p","subtle","Loading integrity-checked canonical Mark commentary…");
+ try{
+  const source=await loadCatenaMarkEditorialSource(markResearch,pointer);
+  if(stamp!==selectedVersion)return;
+  spinner.remove();
+  const units=catenaOwnerUnits({id:pointer,father:source.segment.father,text:source.segment.text});
+  if(!units)throw Error("Unresolved speaker ownership: the excerpt is withheld");
+  const frame=$("article","source");
+  frame.dataset.markCanonicalSource=pointer;
+  append(frame,"div","label","Original Oxford/Newman Catena · "+source.section.citation);
+  units.forEach(unit=>{
+   append(frame,"div","label","Printed Catena label: "+unit.father);
+   append(frame,"p","body",unit.originalWords);
+  });
+  const a=$("a",null,"Open original Catena source ↗");
+  a.href=source.section.source.url;a.target="_blank";a.rel="noopener noreferrer";frame.append(a);
+  const bytes=new TextEncoder().encode(source.segment.text);
+  const hash=Array.from(new Uint8Array(await crypto.subtle.digest("SHA-256",bytes)),
+   x=>x.toString(16).padStart(2,"0")).join("");
+  if(stamp!==selectedVersion)return;
+  append(frame,"p","support","Canonical excerpt SHA-256: "+hash);
+  workspace.append(frame);
+  const assessment=markDossier?.byPointer.get(pointer);
+  if(!assessment)throw Error("AI editorial assessment not located");
+  const rubric=$("section","source");rubric.dataset.markEditorialAssessment=String(assessment.contextualGradeAIAssessment);
+  append(rubric,"h3",null,"Research-only editorial assessment");
+  append(rubric,"p","notice","AI contextual grade "+assessment.contextualGradeAIAssessment+
+   " · "+(assessment.contextualGradeAIAssessment===3?"Relevant direct source argument, qualified":"Useful context; not a standalone answer")+
+   " · human approval pending.");
+  append(rubric,"p",null,assessment.editorialScope);
+  append(rubric,"p","footnote","Risk: "+assessment.principalRisk.replaceAll("_"," ")+
+   " · Review priority: "+assessment.reviewPriority+". Neither grade independently authenticates the Father or licenses publication.");
+  const probes=markDossier.negatives.filter(x=>x.sourcePointer===pointer);
+  const negative=$("details");negative.append($("summary",null,"Unsupported or misleading reader-question probes ("+probes.length+")"));
+  for(const probe of probes){
+   const row=$("div","contextUnit");append(row,"p",null,probe.question);
+   append(row,"p","footnote","Not a certified direct answer. "+probe.reason);
+   negative.append(row);
+  }
+  rubric.append(negative);
+  workspace.append(rubric);
+  const evidence=$("article","source");
+  evidence.dataset.markResearchWitness=rec.witnessAssessment;
+  append(evidence,"h3",null,"Original-work cross-reference");
+  append(evidence,"p",null,rec.originalWork+" · "+rec.originalWorkLocus);
+  append(evidence,"p","footnote","Research witness: "+rec.witnessLanguage+". "+rec.witnessAssessment.replaceAll("_"," ")+".");
+  if(!rec.independentWorkTextInspected)
+   append(evidence,"p","notice","Only a secondary work-labelled excerpt located. Independent original-work verification is pending.");
+  append(evidence,"p","footnote","Source navigation anchor: "+rec.witnessAnchor);
+  append(evidence,"p","notice",rec.readerGuard);
+  append(evidence,"p",null,rec.contextFinding);
+  const ext=$("a",null,"Examine external work witness ↗");
+  ext.href=rec.witnessUrl;ext.target="_blank";ext.rel="noopener noreferrer";evidence.append(ext);
+  append(evidence,"p","footnote","Original-language critical collation: not complete. Human editorial approval: none. Publication blocked.");
+  workspace.append(evidence);
+  const details=$("details");details.append($("summary",null,"Read neighboring canonical Catena excerpts"));
+  const nearby=$("div");addSourceUnits(nearby,source,source.ordinal);
+  details.append(nearby);workspace.append(details);
+  append(workspace,"p","notice","Read-only research. A source link is not permission to publish a Father-attributed answer. No approval form is available for Mark.");
+ }catch(err){
+  if(stamp!==selectedVersion)return;
+  spinner.remove();
+  append(workspace,"p","notice","Exact Mark source could not be verified; no answer or approval is available. "+err.message);
+ }
+}
+async function select(pointer){
+ const rec=review.records.find(x=>x.sourcePointer===pointer);
+ if(!rec)return;
+ active=pointer;renderList();const stamp=++selectedVersion;
+ workspace.replaceChildren();
+ append(workspace,"div","kicker",rec.inheritedFatherLabel+" · "+rec.sourcePointer);
+ append(workspace,"h2",null,rec.originalReaderQuestion);
+ append(workspace,"p","notice","AI source assessment · "+
+  catenaEditorialReviewLabel(rec.AIContextAssessment)+". "+rec.contextualWarning);
+ append(workspace,"p","footnote",
+  "The question is modern editorial navigation, not an utterance of the Father. Neither the Catena's inherited attribution nor its original work citation has been independently authenticated here.");
+ const spinner=append(workspace,"p","subtle","Loading and verifying the exact original excerpt…");
+ try{
+  const source=await loadSource(rec);if(stamp!==selectedVersion)return;spinner.remove();
+  const frame=$("article","source");
+  append(frame,"div","label","Verified canonical Catena excerpt · "+source.section.citation+
+   " · extract "+(source.ordinal+1));
+  const units=catenaOwnerUnits({id:rec.sourcePointer,father:source.segment.father,text:source.segment.text});
+  if(!units)throw Error("Cannot resolve exact internal speaker ownership");
+  units.forEach(unit=>{
+   append(frame,"div","label","Printed source owner: "+unit.father);
+   append(frame,"p","body",unit.originalWords);
+  });
+  const link=$("a",null,"Consult source edition ↗");link.href=source.section.source.url;
+  link.target="_blank";link.rel="noopener noreferrer";frame.append(link);
+  append(frame,"p","support","SHA-256 of unchanged original excerpt: "+source.hash);
+  workspace.append(frame);
+  const reference=workLoci?.byPointer.get(rec.sourcePointer);
+  const primary=$("section","source");
+  primary.dataset.originalWorkEvidence=reference?"translated-parallel-found":"not-located";
+  append(primary,"h3",null,"Underlying patristic work");
+  const pinned=nineFocus?.byPointer.get(rec.sourcePointer);
+  if(pinned){
+   primary.dataset.focusedSource="english-parallel-checked";
+   append(primary,"p","notice","FOCUSED EDITORIAL CHECK · Exact whole-work English passage located. Still requires independent source, speaker and rights verification.");
+   append(primary,"p","footnote","Parallel English wording to locate inside the full work: “"+pinned.shortParallelTranslationAnchor+"”");
+   append(primary,"p","footnote","English translation checked "+pinned.englishWitnessCheck.checkedOn+
+    " at "+pinned.englishWitnessCheck.checkedSection+
+    "; neither original-language critical collation nor independent human approval has been completed.");
+   append(primary,"p","footnote","Research has compared meaning between distinct English translations; this is not a verbatim original-language or edition-level collation.");
+  }
+  if(reference){
+   append(primary,"p","footnote","Located in a full-work ENGLISH translation; no Greek/Latin collation, authorship certificate or licence clearance.");
+   append(primary,"p",null,reference.patristicWork+" · "+reference.workLocus);
+   append(primary,"p","subtle",reference.translatedParallelEvidence);
+   append(primary,"p","notice",reference.qualification);
+   const a=$("a",null,"Read the complete translated work ↗");
+   a.href=reference.externalWorkTextURL;a.target="_blank";a.rel="noopener noreferrer";
+   primary.append(a);
+  }else append(primary,"p","notice",
+   "Original-work passage not yet independently located in the external research. Do not infer that the printed Catena attribution constitutes original-work verification.");
+  append(primary,"p","footnote",
+   "This panel is an investigative aid only. All six review attestations remain unchecked unless an actual editor deliberately completes them.");
+  workspace.append(primary);
+  const details=$("details"),summary=$("summary",null,"Examine adjacent commentary and other Fathers");
+  details.append(summary);
+  const context=$("div");addSourceUnits(context,source,source.ordinal);
+  details.append(context);
+  const all=$("details");all.append($("summary",null,"Read the entire Catena pericope"));
+  const entire=$("div");addSourceUnits(entire,source,source.ordinal,true);
+  all.append(entire);details.append(all);workspace.append(details);
+  fillForm(workspace,rec,source);
+ }catch(err){spinner.remove();append(workspace,"p","notice",
+  "Original source could not be verified. No approval is possible: "+err.message);}
+}
+document.getElementById("download").addEventListener("click",()=>{
+ try{
+  const data=buildCatenaReviewExport(review.records,states,{sourceResearchCommit:review.sourceResearchCommit});
+  const blob=new Blob([JSON.stringify(data,null,2)+"\n"],{type:"application/json"});
+  const url=URL.createObjectURL(blob),a=$("a");a.href=url;a.download="catena-matthew-editorial-review-export.json";
+  document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1500);
+ }catch(err){alert("Export blocked: "+err.message);}
+});
+document.getElementById("blindReviewer").addEventListener("input",()=>{
+ blindReviewerId="";blindDecisions=new Map();
+ if(filter==="blind"){
+  renderList();++selectedVersion;
+  workspace.replaceChildren();
+  append(workspace,"p","notice","Reviewer identity changed. Existing review fields are cleared; select or confirm a reviewer before grading.");
+ }
+});
+document.getElementById("blindChooseReviewer").addEventListener("click",()=>{
+ const v=document.getElementById("blindReviewer").value.trim();
+ if(v.length<3||v.length>100){
+  document.getElementById("blindStatus").textContent="Reviewer identifier must be 3–100 characters.";return;
+ }
+ blindReviewerId=v;loadBlindDraft();renderList();
+ if(filter==="blind"&&active)void selectBlind(active);
+ document.getElementById("blindStatus").textContent="Reviewer "+v+
+  " · "+blindDecisions.size+"/23 cases graded locally. Separate exported reviews are not independently authenticated.";
+});
+document.getElementById("blindExport").addEventListener("click",()=>{
+ try{
+  if(document.getElementById("blindReviewer").value.trim()!==blindReviewerId)
+   throw Error("Set the reviewer identity first");
+  const data=buildMarkBlindReviewExport(blindFixture,blindReviewerId,blindDecisions);
+  const blob=new Blob([JSON.stringify(data,null,2)+"\n"],{type:"application/json"});
+  const url=URL.createObjectURL(blob),link=$("a");link.href=url;
+  link.download="catena-mark-blind-"+blindReviewerId.replace(/[^a-zA-Z0-9_-]/g,"_")+".json";
+  document.body.append(link);link.click();link.remove();
+  setTimeout(()=>URL.revokeObjectURL(url),1500);
+  document.getElementById("blindStatus").textContent=
+   data.completedCases+"/23 case grades exported; publication still blocked.";
+ }catch(e){document.getElementById("blindStatus").textContent="Export blocked: "+e.message}
+});
+document.getElementById("markLookup").addEventListener("submit",event=>{
+ event.preventDefault();
+ if(filter!=="mark")return;
+ const input=document.getElementById("markQuestion").value;
+ const result=findCatenaMarkResearchQuestion(markResearch,input);
+ if(!result){
+  active=null;renderList();++selectedVersion;
+  workspace.replaceChildren();
+  append(workspace,"h2",null,"No verified research question match");
+  append(workspace,"p","notice","This question is not one of the ten reviewed Mark leads. No Father reply has been supplied or inferred.");
+  document.getElementById("markLookupStatus").textContent="No match · no attributed answer generated.";
+  return;
+ }
+ document.getElementById("markLookupStatus").textContent="Exact research navigation only · no human approval.";
+ void selectMark(result.sourcePointer);
+});
+document.querySelectorAll("[data-filter]").forEach(b=>b.addEventListener("click",()=>{
+ filter=b.dataset.filter;renderList();
+ if(filter==="mark"){
+  if(markResearch?.rows.length)void selectMark(markResearch.rows[0].sourcePointer);
+  return;
+ }
+ if(filter==="blind"){
+  if(blindFixture?.cases.length)void selectBlind(blindFixture.cases[0].id);
+  return;
+ }
+ const visible=review.records.filter(r=>filter==="all"||
+   (filter==="ready"&&isReady(r))||
+   (filter==="escalated"&&!isReady(r))||
+   (filter==="focus"&&nineFocus?.byPointer.has(r.sourcePointer)));
+ if(!visible.some(x=>x.sourcePointer===active)&&visible.length)void select(visible[0].sourcePointer);
+}));
+try{
+ const [index,reviewData,lociData,focusData,markData,markJudgments,blindCases]=await Promise.all([
+  jsonFile("editorial-matthew-routes.v1.json"),
+  jsonFile("editorial-matthew-first-30-review.v1.json"),
+  jsonFile("editorial-matthew-work-loci.v1.json"),
+  jsonFile("editorial-matthew-nine-focus.v1.json"),
+  jsonFile("editorial-mark-original-work-crosswalk.v1.json"),
+  jsonFile("editorial-mark-ai-adjudication.v1.json"),
+  jsonFile("editorial-mark-blind-cases.v1.json")
+ ]);
+ registry=validateCatenaEditorialRoutes(index);
+ review=validateCatenaEditorialReview(reviewData,registry);
+ workLoci=validateCatenaWorkLociPreview(lociData,review);
+ nineFocus=validateCatenaNineFocus(focusData,review,workLoci);
+ markResearch=validateCatenaMarkEditorial(markData);
+ markDossier=validateCatenaMarkAdjudication(markJudgments,markResearch);
+ blindFixture=validateMarkBlindFixture(blindCases);
+ loadDraft();renderList();
+ const first=review.records.find(r=>nineFocus.byPointer.has(r.sourcePointer));
+ void select(first.sourcePointer);
+}catch(error){
+ count.textContent="Research source unavailable";
+ workspace.replaceChildren($("p","notice","Source registry unavailable: "+error.message+". No review actions can be recorded."));
+}
+</script></body></html>
