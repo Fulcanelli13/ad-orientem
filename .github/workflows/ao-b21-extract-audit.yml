@@ -46,6 +46,8 @@ jobs:
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add data/research/sacred-art-b21-museum95.audit.csv data/research/sacred-art-b21-museum95.audit-summary.json
           git commit -m 'research: preserve B21 95-source acquisition audit, hashes and failures'
+          git fetch origin research/b19-original-image-acquisition-probe-20261023
+          git rebase origin/research/b19-original-image-acquisition-probe-20261023
           git push origin HEAD:research/b19-original-image-acquisition-probe-20261023
       - name: Upload compact audit for workbook import
         uses: actions/upload-artifact@v4
