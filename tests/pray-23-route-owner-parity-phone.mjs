@@ -39,6 +39,10 @@ try{
    assert.equal(await page.evaluate(()=>globalThis.AO_PRAY_V435930.open("pray.hub",{returnContext:null})),true);
    await page.waitForFunction(()=>document.querySelector("#aoPray435930.open .aoP435930Mount")?.dataset.aoPrayView==="home");
  };
+ const openFamilyDoor=async family=>{
+   if(family!=="daily")await page.locator("#aoPray435930 .aoP435930QuietMore>summary").click();
+   await openFamilyDoor(family);
+ };
  const identify=async()=>page.evaluate(()=>{
    if(document.querySelector("#aoPrayerBookRoot.open .pbShell"))
      return {owner:"rosary",body:"canonical bead player",visible:true};
@@ -67,7 +71,7 @@ try{
  const discovered=new Map();
  for(const family of ["daily","eucharistic","penance","passion","devotions"]){
   await hub();
-  await page.locator('#aoPray435930.open [data-p435930-family="'+family+'"]').tap();
+  await openFamilyDoor(family);
   await page.waitForFunction(()=>document.querySelector("#aoPray435930.open .aoP435930Mount")?.dataset.aoPrayView==="family");
   const list=await page.locator('#aoPray435930.open .aoP435930ModuleGrid [data-p435930-own],#aoPray435930.open .aoP435930ModuleGrid [data-p435930-external]')
    .evaluateAll(buttons=>buttons.map(button=>({id:button.dataset.p435930Own||button.dataset.p435930External,kind:button.dataset.p435930Own?"own":"external"})));
@@ -89,7 +93,7 @@ try{
    assert.ok(expected,"No authoritative owner for "+id);
    await hub();
    if(entry.family){
-     await page.locator('#aoPray435930.open [data-p435930-family="'+entry.family+'"]').tap();
+     await openFamilyDoor(entry.family);
      await page.waitForFunction(()=>document.querySelector("#aoPray435930.open .aoP435930Mount")?.dataset.aoPrayView==="family");
    }
    const attr=entry.kind==="own"?"data-p435930-own":"data-p435930-external";
