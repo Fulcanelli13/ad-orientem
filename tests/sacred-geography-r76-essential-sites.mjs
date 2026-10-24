@@ -1,3 +1,4 @@
+import {LIVE} from "./helpers/sacred-places-live-baseline.mjs";
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {assertExploreGeographyRegistry,isMapPublishablePlaceGeo} from "../src/find/geography-contracts.js";
@@ -10,7 +11,7 @@ const r=read("data/geography/research/sacred-geography-coverage-first-r70.v1.jso
 assert.equal(m.schema,"AO_SACRED_GEOGRAPHY_R76_FINAL_ESSENTIAL_AUDIT_V1");
 assert.equal(m.published_new.length,3);
 assert.equal(m.held.length,10);
-assert.deepEqual([g.geoAreas.length,g.places.length,s.shrines.length,s.pilgrimages.length,sources.sources.length],[141,371,257,240,669]);
+assert.deepEqual([g.geoAreas.length,g.places.length,s.shrines.length,s.pilgrimages.length,sources.sources.length],[141,LIVE.places,257,240,LIVE.sources]);
 assert.equal(assertExploreGeographyRegistry(g).pass,true);
 assert.equal(assertShrinesPilgrimagesRegistry({...s,sources:sources.sources,places:g.places}).pass,true);
 assert.equal(r.candidates.length,750);
@@ -44,7 +45,7 @@ for(const row of m.published_new){
   assert.equal(s.pilgrimages.some(x=>x.destination_shrine_id===row.shrine_id),false,"Kumasi cathedral does not imply invented pilgrimage");
  }
 }
-assert.equal(h.place_crosswalk.length,371);
+assert.equal(h.place_crosswalk.length,LIVE.places);
 assert.equal(exploreMapFeatures(projection.byLens.shrines).length,257);
 assert.equal(exploreMapFeatures(projection.byLens.pilgrimages).length,240);
 // The historical ten R76 holds are an immutable audit; later independent site research resolves a subset.

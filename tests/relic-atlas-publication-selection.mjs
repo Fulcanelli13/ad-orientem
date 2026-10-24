@@ -1,3 +1,4 @@
+import {LIVE} from "./helpers/sacred-places-live-baseline.mjs";
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {execFileSync} from "node:child_process";
@@ -92,5 +93,5 @@ assert.equal(preview.new_site_candidates,39);
 assert.equal(preview.exceptional_sacred_object_groupings,15);
 assert.equal(preview.production_pins_created,0);
 assert.equal(published.relics.length,122);
-assert.equal(places.places.length,371,"R87 added 33 sourced Place identities; relic subject assignments remain separately owned");
+assert.equal(places.places.length,LIVE.places,"R87 added 33 sourced Place identities; relic subject assignments remain separately owned");
 console.log("PASS relic selection: 133 subject reach screens, "+assessed+" traceable reach indicators including "+universals+" apostolic roles, 71 associations → 66 sites (39 new candidates), 15 exceptional groups, 18 nonpin decisions; 0 production pins");

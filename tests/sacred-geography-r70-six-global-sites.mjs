@@ -1,3 +1,4 @@
+import {LIVE} from "./helpers/sacred-places-live-baseline.mjs";
 import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {auditPlaceGeo} from "../src/find/geography-contracts.js";
@@ -15,7 +16,7 @@ const board=read("data/geography/research/sacred-geography-coverage-first-r70.v1
 const illustrated=[...read("data/shrines/illustrated-place-guides-ireland.v1.json").guides,...read("data/shrines/illustrated-place-guides-france.v1.json").guides,...read("data/shrines/illustrated-place-guides-france-r67.v1.json").guides];
 const hero=read("data/geography/approved-place-media.v1.json");
 const gallery=read("data/geography/approved-place-gallery.v1.json");
-assert.deepEqual([geo.places.length,seed.shrines.length,seed.pilgrimages.length,source.sources.length],[371,257,240,669]);
+assert.deepEqual([geo.places.length,seed.shrines.length,seed.pilgrimages.length,source.sources.length],[LIVE.places,257,240,LIVE.sources]);
 assert.equal(newSites.length,6);
 assert.equal(new Set(newSites.map(x=>x.id)).size,6);
 assert.deepEqual(new Set(newSites.map(x=>x.country)),new Set(["SG","MA","CA","ZM"]));
