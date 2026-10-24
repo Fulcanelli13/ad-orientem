@@ -102,6 +102,97 @@ try{
 
   console.log("PASS real phone "+width+"px Follow Mass opens Mass preparation, not LIVE",JSON.stringify(data));
   if(errors.length)console.log("Other page warnings",errors.slice(0,3));
+
   await page.close();
  }
+ // Sunday 25 October 2026: exercise REAL Home -> folio -> Start Mass ->
+ // native reader in each mode. The generic preflight test above only opens
+ // the setup, while the 65-card fixture test bypasses actual Home/Start.
+ for(const mode of ["LIVE","SIMPLE","MISSAL"]){
+  const context=await browser.newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true,locale:"en-GB"});
+  try{
+   const page=await context.newPage(),errors=[];
+   page.on("pageerror",e=>errors.push(String(e?.message??e)));
+   await page.goto("http://127.0.0.1:"+server.address().port+"/index.html?aoR17Reader=native",
+    {waitUntil:"domcontentloaded",timeout:60000});
+   await page.waitForFunction(()=>Boolean(globalThis.AO_APP_SHELL_V1?.installed&&
+    globalThis.AO_CELEBRATION_API?.openPreflight&&globalThis.AO_RUNTIME_V8?.resolver?.resolveDay),null,{timeout:45000});
+   // Source date is selected through the REAL 1962 Calendar owner, not a
+   // mocked Proper or a clock-dependent "tomorrow" inference in CI.
+   const selected=await page.evaluate(async()=>{
+    if(!globalThis.AO_CALENDAR_APP_V1?.select)
+     await import("/src/calendar/calendar-runtime.js");
+    return globalThis.AO_CALENDAR_APP_V1.select("2026-10-25");
+   });
+   assert.equal(selected,true,mode+" Calendar could not select Christ the King");
+   await page.waitForFunction(()=>{
+    const s=globalThis.AO_RUNTIME_V8?.store?.getState?.();
+    return s?.selectedDate==="2026-10-25"&&!s.resolving&&
+      s.resolution?.date==="2026-10-25"&&s.resolution?.day?.main;
+   },null,{timeout:40000});
+   const calendar=await page.evaluate(()=>{
+    const s=globalThis.AO_RUNTIME_V8.store.getState();
+    return {date:s.selectedDate,title:String(s.resolution.day.main.title??""),
+      source:s.resolution.proper?.data?.sourcePath,
+      commemorations:(s.resolution.day.commemorations??[]).length};
+   });
+   assert.match(calendar.title,/Christ.*King/i,mode+" picked wrong Sunday: "+JSON.stringify(calendar));
+   assert.equal(calendar.source,"Sancti/10-DU",mode+" Proper source wrong");
+   assert.equal(calendar.commemorations,0,mode+" invented an impeded-Sunday commemoration");
+   const home=page.locator(".homeScreen [data-home-mass-entry]");
+   await home.waitFor({state:"visible",timeout:20000});
+   await home.click();
+   const prep=page.locator("[data-ao-full-mass-preflight]");
+   await prep.waitFor({state:"visible",timeout:20000});
+   await page.waitForFunction(()=>document.querySelector("[data-ao-full-mass-preflight]")?.dataset.aoProperSource==="Sancti/10-DU",null,{timeout:20000});
+   // No devotional interlude obscuring this critical entry proof.
+   await prep.locator('[data-folio-before][value="none"]').check();
+   await prep.locator('[data-folio-goto="reader"]').first().click();
+   await prep.locator('[data-full-mass-reader-mode][value="'+mode+'"]').check();
+   await page.waitForFunction(expected=>{
+    const p=document.querySelector("[data-ao-full-mass-preflight]");
+    return p?.dataset.aoChosenReaderMode===expected&&p.dataset.aoProperReady==="true";
+   },mode,{timeout:30000});
+   const launch=page.locator("#ao-mass-flow-v1 [data-ao-start-live]").first();
+   assert.equal(await launch.count(),1,mode+" missing authoritative Start Mass action");
+   await launch.click();
+   await page.waitForFunction(expected=>{
+    const preview=document.querySelector("#ao-r17-native-reader-preview");
+    return !!preview?.isConnected&&
+      preview.querySelector("[data-ao-reader-shell]")?.dataset.mode===expected&&
+      Boolean(globalThis.AO_R17_NATIVE_READER_PREVIEW);
+   },mode,{timeout:45000});
+   const opened=await page.evaluate(()=>{
+    const root=document.querySelector("#ao-r17-native-reader-preview");
+    const shell=root.querySelector("[data-ao-reader-shell]");
+    const paragraph=root.querySelector('[data-role="paragraphs"]');
+    return {mode:shell?.dataset.mode,owner:globalThis.AO_R17_MASS_RUNTIME?.uiOwner,
+      title:root.querySelector('[data-role="section-title"]')?.textContent?.trim()??"",
+      progress:root.querySelector('[data-role="progress"]')?.textContent?.trim()??"",
+      paragraphCount:paragraph?.querySelectorAll(".ao-reader-paragraph").length??0,
+      visible:getComputedStyle(root).display!=="none"&&root.getBoundingClientRect().width>250,
+      globalRibbonHidden:document.querySelector("#ao-global-ribbon")?.hidden===true,
+      activeMassDate:globalThis.AO_R17_ACTIVE_MASS?.session?.resolvedMass?.date??null,
+      activeMassSource:globalThis.AO_R17_ACTIVE_MASS?.session?.resolvedMass?.proper?.sourcePath??null};
+   });
+   assert.equal(opened.owner,"R17_NATIVE_PRODUCTION",mode+" launched an obsolete reader");
+   assert.equal(opened.mode,mode);
+   assert.ok(opened.visible&&opened.paragraphCount>0,
+    mode+" opened blank or hidden Mass: "+JSON.stringify(opened));
+   assert.equal(opened.globalRibbonHidden,true,mode+" bottom app ribbon obscures Mass");
+   const previous=opened.progress;
+   const next=page.locator("#ao-r17-native-reader-preview [data-reader-nav='next']");
+   await next.click();
+   await page.waitForFunction(old=>{
+    const progress=document.querySelector("#ao-r17-native-reader-preview [data-role='progress']");
+    return !!progress&&progress.textContent.trim()!==old;
+   },previous,{timeout:12000});
+   assert.equal(await page.locator("#ao-r17-native-reader-preview [data-ao-reader-shell]").getAttribute("data-mode"),mode,
+     "Reader mode silently changed on next Mass section");
+   assert.deepEqual(errors.filter(x=>!/ResizeObserver loop/.test(x)),[],
+    mode+" actual Sunday Mass produced JS page errors");
+   console.log("PASS 25 Oct Home -> Christ King Proper -> folio -> "+mode+" -> native reader next",JSON.stringify(opened));
+  }finally{await context.close()}
+ }
 }finally{await browser?.close();await new Promise(resolve=>server.close(resolve))}
+
