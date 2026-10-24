@@ -88,3 +88,7 @@ jobs:
         run: |
           node --check tests/customs-pitre-1900-wave09-200-page-source-integrity.mjs
           node tests/customs-pitre-1900-wave09-200-page-source-integrity.mjs
+      - name: Verify 150-candidate customs consolidation and unchanged master release gates
+        run: |
+          node --check tests/customs-unified-identity-consolidation-cohort01.mjs
+          node tests/customs-unified-identity-consolidation-cohort01.mjs
