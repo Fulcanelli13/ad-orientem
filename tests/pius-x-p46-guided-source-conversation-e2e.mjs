@@ -80,6 +80,12 @@ try{
   await page.locator('#spxm-guided-start').click();
   assert.equal(await page.locator('#spxm-offline-replies .spxm-draft').first().innerText(),pilot[0].reply.fr);
   assert.match(await page.locator('#spxm-guided-state').innerText(),/Question fondée sur les sources 2 \/ 3/);
+  await page.locator('.spxm-guided-question').click();
+  assert.equal(await page.locator('#spxm-offline-replies .spxm-draft').nth(1).innerText(),pilot[1].reply.fr);
+  await page.locator('.spxm-guided-question').click();
+  assert.equal(await page.locator('#spxm-offline-replies .spxm-draft').nth(2).innerText(),pilot[2].reply.fr);
+  assert.equal(await page.locator('.spxm-guided-question').count(),0);
+  assert.match(await page.locator('#spxm-guided-state').innerText(),/terminé/);
   // Subject switch clears all pending continuation and starts a new, 2-turn path.
   await page.evaluate(()=>document.dispatchEvent(new CustomEvent('ao-spx-review-context',
    {detail:{chapterId:'SPX-NEW-012',language:'en'}})));
