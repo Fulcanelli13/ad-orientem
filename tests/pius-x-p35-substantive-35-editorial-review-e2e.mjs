@@ -23,7 +23,7 @@ assert.equal(report.release.humanSignedOff,0);
 assert.equal(report.release.sourceClaimCertified,0);
 assert.equal(report.release.englishCertified,0);
 assert.equal(report.release.frenchCertified,0);
-assert.equal(report.release.docrinalCertified??0,0);
+assert.equal(report.release.doctrinalCertified,0);
 assert.equal(report.release.publicRuntimeUpdates,0);
 const normalize=text=>String(text).normalize('NFD').replace(/[\u0300-\u036f]/g,'')
  .toLowerCase().replace(/[^a-z0-9]+/g,' ').trim().replace(/\s+/g,' ');
