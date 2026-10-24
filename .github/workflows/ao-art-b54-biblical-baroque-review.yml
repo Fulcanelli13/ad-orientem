@@ -1,0 +1,66 @@
+name: B54 Sacred Art 383 — Biblical narratives and Baroque quality screening, private reviewer
+on:
+  push:
+    branches: [research/sacred-art-b54-aesthetic-scripture-383-review-20261024]
+    paths:
+      - .github/workflows/ao-art-b54-biblical-baroque-review.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: b54-scripture-baroque-383-private-review
+  cancel-in-progress: false
+jobs:
+  verified-biblical-baroque-review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: research/sacred-art-b54-aesthetic-scripture-383-review-20261024
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Check no public gallery image bytes were checked into Git
+        run: |
+          set -euo pipefail
+          test ! -e previews/sacred-art-b54-all383-biblical-baroque-offline.html
+          python -m py_compile scripts/research/sacred_art_b54_subject_aesthetic_triage.py scripts/research/sacred_art_b54_rebuild_383_thematic_reviewer.py scripts/research/sacred_art_b54_publish_private_review.py
+          node tests/sacred-art-b53-all383-placement-review-integrity.mjs >/dev/null 2>&1 || test ! -f previews/sacred-art-b53-review-all383-placement-offline.html
+          python - <<'PY'
+          import sys
+          sys.path.insert(0,"scripts/research")
+          from sacred_art_b54_subject_aesthetic_triage import classify
+          assert classify("Cain and Abel","Rubens")["primarySubject"]=="old_testament"
+          assert classify("The Taking of Christ","Caravaggio")["aestheticAffinity"]=="baroque_reference_circle"
+          assert classify("The Crucifixion of Saint Peter","Caravaggio")["primarySubject"]!="passion"
+          assert not classify("Saint François de Sales donnant la règle de la Visitation à sainte Jeanne de Chantal","Noël Hallé")["biblicalEpisodeCandidate"]
+          assert classify("The Marriage Feast at Cana","Juan de Flandes")["biblicalEpisodeCandidate"]
+          assert classify("The Holy Family","Guido Reni")["primarySubject"]=="marian"
+          assert classify("Our Lady of Perpetual Help","Byzantine iconographer")["aestheticAffinity"]=="historically_different_style"
+          print("B54_PRECHECK_PASS 7 subject/style distinctions; no automatic artistic or licencing decision")
+          PY
+      - name: Authentically re-read B53 privately preserved 383-image HTML and independently rehash each preview
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python scripts/research/sacred_art_b54_rebuild_383_thematic_reviewer.py
+      - name: Verify each artistic source, subject label, human verdict and all unchanged placement choices
+        run: node tests/sacred-art-b54-383-aesthetic-biblical-review.mjs
+      - name: Preserve enhanced full-383 art reviewer as UNPUBLISHED draft asset and verify SHA after redownload
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python scripts/research/sacred_art_b54_publish_private_review.py
+      - name: Commit original source and curatorial triage only; no review photographs or image rights
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/research/sacred-art-b54-383-aesthetic-biblical-review-summary.json data/research/sacred-art-b54-383-aesthetic-biblical-review-ledger.csv
+          git commit -m 'research: B54 383 titles organized by Scripture narrative and historic Baroque affinity, all user decisions pending'
+          for n in 1 2 3; do
+            git fetch origin research/sacred-art-b54-aesthetic-scripture-383-review-20261024
+            git rebase origin/research/sacred-art-b54-aesthetic-scripture-383-review-20261024
+            git push origin HEAD:research/sacred-art-b54-aesthetic-scripture-383-review-20261024 && exit 0
+            sleep 3
+          done
+          exit 1
