@@ -23,6 +23,8 @@ on:
       - 'previews/pius-x-study/evidence/pius-x-p38-sixtyfive-new-italian-source-assessments-20261024.v1.json'
       - 'previews/pius-x-study/evidence/pius-x-p39-bilingual29-and-specialist36-20261024.v1.json'
       - 'tests/pius-x-p39-bilingual-candidate-queue-contract.mjs'
+      - 'previews/pius-x-study/evidence/pius-x-p40-65-answer-second-pass-20261024.v1.json'
+      - 'tests/pius-x-p40-source-second-pass-contract.mjs'
       - 'tests/pius-x-p37-second-pass-eleven-e2e.mjs'
       - 'previews/pius-x-study/evidence/pius-x-p37-eleven-second-pass-translation-review-20261024.v1.json'
       - 'tests/pius-x-p36-bilingual-corrections-e2e.mjs'
@@ -100,6 +102,8 @@ on:
       - 'previews/pius-x-study/evidence/pius-x-p38-sixtyfive-new-italian-source-assessments-20261024.v1.json'
       - 'previews/pius-x-study/evidence/pius-x-p39-bilingual29-and-specialist36-20261024.v1.json'
       - 'tests/pius-x-p39-bilingual-candidate-queue-contract.mjs'
+      - 'previews/pius-x-study/evidence/pius-x-p40-65-answer-second-pass-20261024.v1.json'
+      - 'tests/pius-x-p40-source-second-pass-contract.mjs'
       - 'tests/pius-x-p37-second-pass-eleven-e2e.mjs'
       - 'previews/pius-x-study/evidence/pius-x-p37-eleven-second-pass-translation-review-20261024.v1.json'
       - 'tests/pius-x-p36-bilingual-corrections-e2e.mjs'
@@ -216,6 +220,8 @@ jobs:
         run: node tests/pius-x-p38-bulk-89-review-e2e.mjs
       - name: Verify P1.39 29 bilingual candidate corrections and 36 specialist queue records (structural, not human approval)
         run: node tests/pius-x-p39-bilingual-candidate-queue-contract.mjs
+      - name: Verify P1.40 65-answer original-language second-pass partitions (editorial, not human translation approval)
+        run: node tests/pius-x-p40-source-second-pass-contract.mjs
       - name: Build free one-file offline Pius X source-dialogue trial with preserved sprites
         run: node tools/build-pius-x-p26-offline-replay.mjs
       - name: Browser-test offline source dialogue, French/English and original Vatican witnesses
