@@ -29,8 +29,8 @@ jobs:
           python - <<'PY'
           from pathlib import Path
           w=Path('.github/workflows/ao-art-b33-readonly-evidence.yml').read_text()
-          assert 'contents: read' in w
-          assert 'contents: write' not in w
-          assert 'git push' not in w
-          assert 'gh release' not in w
+          assert 'permissions:\n  contents: read' in w
+          assert w.count('contents:') == 1
+          assert 'git' + ' push' not in w
+          assert 'gh' + ' release' not in w
           PY
